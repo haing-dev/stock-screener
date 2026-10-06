@@ -1,0 +1,126 @@
+name: Screen
+# Full screen of every NYSE + Nasdaq company from SEC filings, every company priced, portal rebuilt.
+# Runs on the 1st and 16th of each month (about every 15 days). Actions > Screen > Run workflow starts it by hand.
+on:
+  schedule:
+    - cron: "17 9 1,16 * *"
+  workflow_dispatch:
+
+concurrency:
+  group: portal
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
+      MASSIVE_API_KEY: ${{ secrets.MASSIVE_API_KEY }}
+      PORTAL_PASSWORD: ${{ secrets.PORTAL_PASSWORD }}
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the secrets are set
+        run: |
+          missing=""
+          for v in SEC_USER_AGENT MASSIVE_API_KEY PORTAL_PASSWORD; do
+            if [ -z "${!v}" ]; then missing="$missing $v"; fi
+          done
+          if [ -n "$missing" ]; then
+            echo "::error::Missing repository secrets:$missing (Settings > Secrets and variables > Actions)"; exit 1
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Restore SEC data cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            cache/facts
+            cache/submissions
+            cache/universe.json.gz
+          key: sec-v1-${{ github.run_id }}
+          restore-keys: sec-v1-
+
+      - name: Restore price cache
+        uses: actions/cache/restore@v4
+        with:
+          path: cache/prices
+          key: prices-v1-${{ github.run_id }}
+          restore-keys: prices-v1-
+
+      - name: Run all screens
+        run: python screener.py portal-screen
+
+      - name: Save SEC data cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            cache/facts
+            cache/submissions
+            cache/universe.json.gz
+          key: sec-v1-${{ github.run_id }}
+
+      - name: Save price cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: cache/prices
+          key: prices-v1-${{ github.run_id }}
+
+      - name: Save screen state (cache, read by the daily price job)
+        uses: actions/cache/save@v4
+        with:
+          path: cache/state
+          key: state-v1-${{ github.run_id }}
+
+      - name: Save screen state (artifact, backup if the cache is evicted)
+        uses: actions/upload-artifact@v4
+        with:
+          name: portal-state
+          path: cache/state
+          retention-days: 35
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Company descriptions (Claude)
+        continue-on-error: true
+        timeout-minutes: 120
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then echo "No CLAUDE_CODE_OAUTH_TOKEN secret - skipping descriptions"; exit 0; fi
+          npm install -g @anthropic-ai/claude-code >/dev/null 2>&1 || npm install -g @anthropic-ai/claude-code
+          python screener.py portal-summaries --max "$(python -c "import json;print(json.load(open('config.json'))['portal']['summaries_per_screen_run'])")"
+
+      - name: Build portal data
+        run: python screener.py portal-export
+
+      - name: Publish
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: bash scripts/publish.sh "Screen $(date -u +%Y-%m-%d)"
+
+      - name: Keep the workbook
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screen-results
+          path: output/*.xlsx
+          retention-days: 30
+          if-no-files-found: ignore

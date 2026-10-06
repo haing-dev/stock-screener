@@ -1,0 +1,355 @@
+{
+  "_readme": "Edit thresholds here. Every rule in the output workbook's 'Rules' sheet points back to these keys. Ratios are decimals (0.15 = 15%). Money in US dollars.",
+  "user_agent": "",
+  "_user_agent_note": "Your SEC name + email and your Twelve Data key live in local_settings.json (private, never share it).",
+  "exchanges": [
+    "NYSE",
+    "Nasdaq"
+  ],
+  "requests_per_second": 8,
+  "parallel_downloads": 4,
+  "cache_days_universe": 7,
+  "cache_days_submissions": 7,
+  "cache_days_facts": 30,
+  "lookback_years": 10,
+  "min_years_data": 8,
+  "max_years_since_latest_fy": 1.6,
+  "min_revenue_usd": 200000000,
+  "default_tax_rate": 0.25,
+  "tax_rate_bounds": [
+    0.0,
+    0.4
+  ],
+  "gates": {
+    "max_operating_loss_years": 1,
+    "min_median_roic": 0.15,
+    "roic_floor": 0.1,
+    "min_share_of_years_above_floor": 0.8,
+    "min_revenue_cagr": 0.05,
+    "min_fcf_conversion": 0.8,
+    "max_net_debt_to_ocf": 3.0
+  },
+  "sensitivity": 0.2,
+  "_sensitivity_note": "Shortlist column 'Robust' = still passes when every numeric gate is made this much stricter. Run_Info shows how many pass at -20% / base / +20%.",
+  "flags": {
+    "serial_acquirer_acq_to_ocf": 0.4,
+    "goodwill_to_assets": 0.4,
+    "sbc_to_revenue": 0.08,
+    "restatement_tolerance": 0.05
+  },
+  "pillar_weights": {
+    "predictability": 20,
+    "pricing_power": 25,
+    "returns_moat_direction": 25,
+    "growth_runway": 15,
+    "capital_allocation": 10,
+    "balance_sheet": 5
+  },
+  "exclude_sic": [
+    {
+      "from": 100,
+      "to": 999,
+      "label": "Agriculture",
+      "why": "Commodity producers / price takers",
+      "source": "Hohn, Dorsey"
+    },
+    {
+      "from": 1000,
+      "to": 1499,
+      "label": "Mining, oil & gas extraction",
+      "why": "Commodity producers / price takers",
+      "source": "Hohn, Dorsey"
+    },
+    {
+      "from": 2911,
+      "to": 2911,
+      "label": "Petroleum refining",
+      "why": "Commodity",
+      "source": "Hohn, Dorsey"
+    },
+    {
+      "from": 3300,
+      "to": 3399,
+      "label": "Primary metals (steel, aluminium, smelting)",
+      "why": "Commodity",
+      "source": "Hohn, Dorsey"
+    },
+    {
+      "from": 3711,
+      "to": 3716,
+      "label": "Autos & auto parts",
+      "why": "On Hohn's avoid list; Dorsey: price takers",
+      "source": "Hohn, Dorsey"
+    },
+    {
+      "from": 4512,
+      "to": 4522,
+      "label": "Airlines & air courier",
+      "why": "'Grew ~5%/yr for 100 years with minimal cumulative profit'",
+      "source": "Hohn, Dorsey"
+    },
+    {
+      "from": 4812,
+      "to": 4813,
+      "label": "Telecom carriers",
+      "why": "Wireless telecom on avoid list",
+      "source": "Hohn"
+    },
+    {
+      "from": 4832,
+      "to": 4841,
+      "label": "Broadcasting & cable",
+      "why": "Media on avoid list; cable 'structurally doomed'",
+      "source": "Hohn, Orr"
+    },
+    {
+      "from": 4900,
+      "to": 4949,
+      "label": "Utilities",
+      "why": "Fossil utilities on avoid list; regulated returns",
+      "source": "Hohn"
+    },
+    {
+      "from": 4960,
+      "to": 4991,
+      "label": "Utilities (steam, irrigation, cogeneration)",
+      "why": "Fossil utilities on avoid list; regulated returns",
+      "source": "Hohn"
+    },
+    {
+      "from": 6000,
+      "to": 6199,
+      "label": "Banks & lenders",
+      "why": "Leverage and opacity",
+      "source": "Hohn"
+    },
+    {
+      "from": 6211,
+      "to": 6221,
+      "label": "Brokers & dealers",
+      "why": "Balance-sheet businesses; exchanges (6200) are kept",
+      "source": "Hohn"
+    },
+    {
+      "from": 6282,
+      "to": 6282,
+      "label": "Asset managers",
+      "why": "Traditional asset managers on avoid list",
+      "source": "Hohn"
+    },
+    {
+      "from": 6300,
+      "to": 6399,
+      "label": "Insurance carriers",
+      "why": "On avoid list",
+      "source": "Hohn"
+    },
+    {
+      "from": 6500,
+      "to": 6599,
+      "label": "Real estate",
+      "why": "Asset-heavy; not comparable on ROIC",
+      "source": "Dorsey"
+    },
+    {
+      "from": 6700,
+      "to": 6793,
+      "label": "Holding cos, funds, REITs, SPACs",
+      "why": "Not operating businesses; 6794 (patent owners/lessors) kept",
+      "source": "screen design"
+    },
+    {
+      "from": 6795,
+      "to": 6799,
+      "label": "Other investment offices",
+      "why": "Not operating businesses",
+      "source": "screen design"
+    },
+    {
+      "from": 2711,
+      "to": 2711,
+      "label": "Newspapers",
+      "why": "Media on avoid list",
+      "source": "Hohn"
+    },
+    {
+      "from": 7311,
+      "to": 7311,
+      "label": "Ad agencies",
+      "why": "On avoid list",
+      "source": "Hohn"
+    }
+  ],
+  "_screen_anyway_note": "Tickers screened even though their industry code is excluded above (the code doesn't describe the business). Add your own: \"TICKER\": \"reason\".",
+  "screen_anyway": {
+    "MORN": "SEC code 'investment advice', but a data & research business",
+    "MKTX": "SEC code 'brokers & dealers', but an electronic trading platform with no balance-sheet risk"
+  },
+  "flag_sic": [
+    {
+      "from": 5200,
+      "to": 5999,
+      "label": "Retail",
+      "why": "Hohn avoids retail; Dorsey likes 'scale economies shared' (Costco). Kept but flagged.",
+      "source": "Hohn vs Dorsey"
+    },
+    {
+      "from": 6411,
+      "to": 6411,
+      "label": "Insurance brokers",
+      "why": "Not carriers; Pilecki doubts AI displaces brokers. Kept but flagged.",
+      "source": "Hohn vs Pilecki"
+    },
+    {
+      "from": 2834,
+      "to": 2836,
+      "label": "Pharma / biotech",
+      "why": "Kantesaria avoids drug development as unpredictable. Kept but flagged.",
+      "source": "Kantesaria"
+    },
+    {
+      "from": 8731,
+      "to": 8731,
+      "label": "Commercial R&D / biotech",
+      "why": "Unpredictable outcomes",
+      "source": "Kantesaria"
+    },
+    {
+      "from": 7370,
+      "to": 7379,
+      "label": "Software & IT services",
+      "why": "ROIC flatters asset-light software (expensed code); judge moat qualitatively",
+      "source": "Dorsey"
+    },
+    {
+      "from": 5500,
+      "to": 5599,
+      "label": "Auto dealers, parts & gas stations",
+      "why": "Dealers are cyclical, floor-plan financed; auto-parts retailers (O'Reilly, AutoZone) and Copart are classic compounders - screened, judge which kind it is.",
+      "source": "Hohn vs Dorsey"
+    }
+  ],
+  "fx_to_usd": {
+    "_note": "Approximate, used ONLY for the minimum-size gate and peer revenue shares. Ratios/margins are currency-neutral.",
+    "USD": 1.0,
+    "EUR": 1.1,
+    "GBP": 1.3,
+    "CHF": 1.15,
+    "JPY": 0.0068,
+    "CAD": 0.73,
+    "AUD": 0.66,
+    "TWD": 0.031,
+    "KRW": 0.00073,
+    "CNY": 0.14,
+    "HKD": 0.128,
+    "INR": 0.012,
+    "BRL": 0.18,
+    "MXN": 0.054,
+    "DKK": 0.147,
+    "SEK": 0.095,
+    "NOK": 0.094,
+    "ILS": 0.27,
+    "ZAR": 0.055,
+    "SGD": 0.75,
+    "CLP": 0.00105,
+    "COP": 0.00024,
+    "ARS": 0.001,
+    "PEN": 0.27,
+    "IDR": 6.2e-05,
+    "PHP": 0.017,
+    "THB": 0.029,
+    "NZD": 0.6
+  },
+  "twelvedata_api_key": "",
+  "massive_api_key": "",
+  "price_max_age_days": 3,
+  "price_max_staleness_days": 7,
+  "event_window_months": 36,
+  "screens": {
+    "_note": "Core uses the top-level keys min_years_data, max_years_since_latest_fy, min_revenue_usd and 'gates'.",
+    "emerging": {
+      "min_years": 4,
+      "max_years_since_latest_fy": 1.6,
+      "min_revenue_cagr_3y": 0.15,
+      "min_recent_growth": 0.08,
+      "min_gross_margin": 0.35,
+      "max_share_count_cagr_3y": 0.03,
+      "max_net_debt_to_ebitda": 2.5,
+      "min_market_cap_usd": 150000000,
+      "max_market_cap_usd": 10000000000,
+      "max_ev_ebitda": 20,
+      "min_adv_usd": 200000
+    },
+    "special": {
+      "max_years_since_latest_fy": 1.6,
+      "max_net_debt_to_ebitda": 4.0,
+      "max_ev_ebit": 15,
+      "min_market_cap_usd": 100000000,
+      "min_adv_usd": 200000
+    },
+    "fortress": {
+      "min_years": 9,
+      "max_years_since_latest_fy": 1.6,
+      "min_revenue_usd": 500000000,
+      "min_recession_revenue_change": -0.05,
+      "min_recession_op_income_change": -0.15,
+      "min_recession_2009_revenue_change": -0.1,
+      "min_recession_2009_op_income_change": -0.25,
+      "max_operating_loss_years": 0,
+      "max_operating_margin_std": 0.05,
+      "min_median_roic": 0.1,
+      "max_net_debt_to_ebitda": 2.0,
+      "min_interest_coverage": 6.0,
+      "max_negative_fcf_years": 1,
+      "min_margin_change_2021_2023": -0.02
+    },
+    "hc_commercial": {
+      "min_years": 5,
+      "max_years_since_latest_fy": 1.6,
+      "min_revenue_usd": 200000000,
+      "max_operating_loss_years_5y": 1,
+      "min_median_roic": 0.12,
+      "min_gross_margin_products": 0.5,
+      "min_fcf_conversion": 0.7,
+      "max_net_debt_to_ebitda": 3.0,
+      "min_revenue_cagr": 0.03
+    },
+    "hc_clinical": {
+      "max_revenue_usd": 200000000,
+      "max_balance_sheet_age_days": 200,
+      "min_cash_runway_years": 2.0,
+      "max_debt_to_liquid_assets": 0.5,
+      "min_market_cap_usd": 50000000,
+      "min_adv_usd": 200000,
+      "max_ev_to_liquid_assets": 0.25,
+      "pre_revenue_below_usd": 5000000
+    },
+    "cyclicals": {
+      "min_years": 8,
+      "max_years_since_latest_fy": 1.6,
+      "min_revenue_usd": 200000000,
+      "min_median_roic": 0.1,
+      "min_positive_ebit_years": 7,
+      "max_net_debt_to_norm_ebitda": 2.5,
+      "max_margin_percentile": 0.5,
+      "max_ev_normalized_ebit": 12,
+      "industry_trough_percentile": 0.3
+    }
+  },
+  "price_also": {
+    "_note": "Also price these lists for valuation columns (costs Twelve Data credits).",
+    "core_pass": true,
+    "fortress_pass": true,
+    "hc_commercial_pass": true
+  },
+  "_exclude_note": "SIC 4950-4959 (waste management) is deliberately NOT excluded: essential, local-scale toll collectors.",
+  "portal": {
+    "_note": "Web portal (GitHub + Cloudflare). Prices: Massive end-of-day for every stock; Twelve Data only as backup.",
+    "summary_model": "haiku",
+    "summaries_per_screen_run": 150,
+    "summaries_per_daily_run": 30,
+    "twelvedata_backup_quotes_screen_run": 60,
+    "twelvedata_backup_quotes_daily": 16,
+    "peer_min_companies": 6
+  }
+}

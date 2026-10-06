@@ -1,0 +1,9 @@
+local_settings.json
+cache/
+output/
+__pycache__/
+*.pyc
+tests/fixtures/
+node_modules/
+*.tmp
+site/data/
