@@ -69,6 +69,13 @@
   "source": "10-K filed 2026-02-27",
   "text": "Watsco is the largest HVAC/R distributor in North America, distributing air conditioning, heating, refrigeration equipment, and related supplies. Operating 695 locations across 43 U.S. states, Canada, Mexico, and Puerto Rico, Watsco serves over 130,000 active contractors in the replacement and new construction markets."
  },
+ "1051627": {
+  "accn": "0001437749-26-008612",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-03-17",
+  "text": "AXTI develops and produces high-performance semiconductor substrates used in fiber optics, 5G infrastructure, and optoelectronic applications. All manufacturing is conducted in China through subsidiaries."
+ },
  "105634": {
   "accn": "0000105634-26-000025",
   "date": "2026-10-07",
@@ -174,6 +181,13 @@
   "source": "10-K filed 2026-02-25",
   "text": "Edwards Lifesciences develops and markets medical devices for structural heart disease treatment, including transcatheter and surgical valve replacement and repair systems. It operates globally, with commercialization in North America, Europe, and Asia. The company serves cardiac surgeons and interventional cardiologists."
  },
+ "1107843": {
+  "accn": "0001107843-26-000008",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-20",
+  "text": "Qlys provides cloud-based IT, security and compliance solutions delivered through a global platform. It serves over 10,000 customers worldwide, including large organizations and small businesses, through subscription-based software-as-a-service offerings."
+ },
  "1116132": {
   "accn": "0001116132-26-000018",
   "date": "2026-10-07",
@@ -251,6 +265,13 @@
   "source": "10-K filed 2026-02-26",
   "text": "Westlake is a vertically integrated global manufacturer with two segments: Housing and Infrastructure Products (residential siding, trim, windows, PVC pipe and compounds) and Performance and Essential Materials. The company serves residential construction, commercial, industrial and other markets worldwide."
  },
+ "1278021": {
+  "accn": "0001193125-26-067009",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-24",
+  "text": "MKTX operates electronic trading platforms for fixed-income markets, connecting approximately 2,100 institutional investor and broker-dealer clients globally across 90 countries. Its Open Trading marketplace provides anonymous all-to-all trading and price discovery. MKTX also offers execution solutions, data analytics, and post-trade services."
+ },
  "1282637": {
   "accn": "0001282637-26-000005",
   "date": "2026-10-07",
@@ -279,6 +300,13 @@
   "source": "10-K filed 2026-02-27",
   "text": "Texas Roadhouse operates three casual dining concepts: Texas Roadhouse offering steaks and seafood, Bubba's 33 featuring burgers and pizza, and Jaggers fast-casual restaurants. It operates 714 company-owned and 102 franchised locations across 49 states, one U.S. territory, and ten foreign countries, serving consumers seeking affordable casual dining."
  },
+ "1297989": {
+  "accn": "0001297989-26-000008",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-24",
+  "text": "EXLS is a global data and AI services company helping enterprises transform through analytics and digital operations. It serves industries including insurance, healthcare, banking, and energy across operations in North America, Europe, Asia, and Africa."
+ },
  "1300514": {
   "accn": "0001300514-26-000013",
   "date": "2026-10-07",
@@ -293,6 +321,13 @@
   "source": "10-K filed 2026-01-29",
   "text": "Meta develops social media platforms (Facebook, Instagram, WhatsApp, Threads, Messenger) and virtual reality products (Meta Quest, Ray-Ban Meta glasses). It generates revenue primarily through advertising on its apps to reach consumers, and through sales of consumer hardware and content."
  },
+ "1352010": {
+  "accn": "0001352010-26-000015",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-26",
+  "text": "EPAM is a global provider of digital engineering, cloud and AI-enabled transformation services. It offers software development, product engineering, cloud solutions, data analytics, AI services, customer experience design, marketing, and cybersecurity services. EPAM serves global enterprises and start-ups."
+ },
  "1393052": {
   "accn": "0001393052-26-000014",
   "date": "2026-10-07",
@@ -306,6 +341,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-17",
   "text": "Lululemon designs, distributes, and retails technical athletic apparel, footwear, and accessories. It operates in 30 countries through an omni-channel model with physical retail locations and e-commerce. The company serves individual customers and wholesale partners including fitness studios, athletic organizations, and corporate entities."
+ },
+ "1398659": {
+  "accn": "0001398659-26-000004",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-26",
+  "text": "G is an agentic and advanced technology solutions company with 146,500 employees serving clients across 35+ countries. It provides AI and data solutions, business process services, technology services, and digital operations. G serves leading enterprises in financial services, insurance, and other industries."
  },
  "1403161": {
   "accn": "0001403161-25-000089",
@@ -356,6 +398,13 @@
   "source": "10-K filed 2026-08-21",
   "text": "Ubiquiti develops and sells networking equipment and software platforms for high-capacity internet access and unified network management, distributing products globally through over 100 distributors to service providers, enterprises and customers across more than 200 countries and territories."
  },
+ "1521036": {
+  "accn": "0001193125-26-073498",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-26",
+  "text": "Lnth is a radiopharmaceutical company producing diagnostic and oncology products for clinical use. It markets products throughout the United States and internationally through direct and third-party distribution to hospitals, imaging centers and government facilities."
+ },
  "1521332": {
   "accn": "0001521332-26-000009",
   "date": "2026-10-07",
@@ -397,6 +446,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-17",
   "text": "Allegion develops and markets security and access control products including door controls, electronic locks, access control systems and related software. The company operates globally across North America, Europe, Asia and Oceania. It serves commercial, institutional and residential customers including education, healthcare, government, hospitality and retail sectors."
+ },
+ "1580905": {
+  "accn": "0001580905-26-000004",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-26",
+  "text": "IBP is one of the largest insulation installers in the U.S., operating 250 branches across 48 states. It serves residential and commercial builders with insulation, waterproofing, garage doors, and complementary building products."
  },
  "1583708": {
   "accn": "0001583708-26-000020",
@@ -461,6 +517,13 @@
   "source": "10-K filed 2026-02-03",
   "text": "PayPal operates a digital payments platform connecting consumers and merchants across approximately 200 markets. It provides digital wallets (PayPal and Venmo), point-of-sale solutions, buy-now-pay-later services, and international money transfers. As of December 2025, the platform had 439 million active accounts."
  },
+ "1639300": {
+  "accn": "0001140361-26-010409",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-03-19",
+  "text": "OLLI operates 645 off-price retail stores selling brand name household products at discounts up to 70% off traditional retailers. It serves value-conscious consumers in 34 states through a treasure hunt shopping environment."
+ },
  "1652044": {
   "accn": "0001652044-26-000018",
   "date": "2026-10-07",
@@ -482,12 +545,33 @@
   "source": "10-K filed 2026-02-10",
   "text": "MEDP is a leading clinical contract research organization providing Phase I-IV clinical development services to biotechnology, pharmaceutical and medical device companies. It operates from facilities in Cincinnati, Belgium, Shanghai and Singapore, serving small, mid-sized and large pharmaceutical customers."
  },
+ "1671933": {
+  "accn": "0001671933-26-000014",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-27",
+  "text": "TTD is a global advertising technology platform empowering ad buyers to create, manage and optimize digital advertising campaigns across formats, channels and devices. TTD's AI-driven platform integrates inventory, publisher and data partners. Clients include advertising agencies, advertisers, and service providers."
+ },
  "1673358": {
   "accn": "0001193125-26-082824",
   "date": "2026-10-07",
   "model": "haiku",
   "source": "10-K filed 2026-02-27",
   "text": "Yum China operates KFC, Pizza Hut, Lavazza, Huang Ji Huang, Little Sheep and Taco Bell restaurants in China. The company operates over 18,100 units across more than 2,500 cities primarily in mainland China. It serves consumers seeking quick-service and casual dining options."
+ },
+ "1699031": {
+  "accn": "0001628280-26-017319",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-03-12",
+  "text": "GRAL develops Galleri, a multi-cancer early detection test from a blood draw that screens for multiple cancer types and identifies the tissue of origin. Through partnerships, GRAL serves healthcare systems, employers, digital health platforms, payors, and life insurance providers."
+ },
+ "1727263": {
+  "accn": "0001193125-26-076548",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-26",
+  "text": "FTDR is the leading U.S. provider of home warranties protecting against breakdowns of home systems and appliances. It operates five brands and serves approximately 2.1 million homeowner customers through annual service plans and new home builder warranty products."
  },
  "1800667": {
   "accn": "0001193125-26-051382",
@@ -510,6 +594,13 @@
   "source": "10-K filed 2026-02-11",
   "text": "Unity is a platform for developing and monetizing games and interactive experiences across mobile, PC, console, and extended reality. Create Solutions provide development tools and engines; Grow Solutions enable user acquisition and monetization. The platform serves creators globally across gaming and non-gaming industries."
  },
+ "1819848": {
+  "accn": "0001819848-26-000160",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-27",
+  "text": "JOBY develops piloted, all-electric eVTOL aircraft designed to transport a pilot and up to four passengers at 200 mph speeds with up to 100-mile range. JOBY plans to operate air taxi services in markets including the United States and Dubai, and pursue aircraft sales. It operates manufacturing facilities in California and Ohio."
+ },
  "1824920": {
   "accn": "0001193125-26-071562",
   "date": "2026-10-07",
@@ -524,12 +615,47 @@
   "source": "10-K filed 2026-02-11",
   "text": "Aurora Innovation develops the Aurora Driver, a self-driving technology platform for autonomous vehicles. Founded in 2017, the company focuses initially on trucking, with plans to expand to passenger mobility and local goods delivery. Aurora partners with major vehicle manufacturers and logistics companies and operates in the United States."
  },
+ "1838359": {
+  "accn": "0001104659-26-023454",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-03-04",
+  "text": "RGTI develops superconducting quantum computers and provides cloud-based and on-premises quantum computing services. It serves commercial enterprises and government organizations including AWS, DOE, and DARPA, operating from facilities in the U.S., UK, and India."
+ },
+ "1866175": {
+  "accn": "0001866175-26-000026",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-25",
+  "text": "Crescent Energy develops and produces oil, natural gas and natural gas liquids. It operates upstream assets in the United States and owns a 12% interest in the Springfield Gathering System in southeast Texas's Eagle Ford Shale."
+ },
+ "1897762": {
+  "accn": "0001628280-26-013588",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-03-03",
+  "text": "Ingm is an IT solutions provider supplying technology products and services across four global segments. It delivers solutions to vendor and reseller partners through its B2B platform, offering client endpoint solutions, advanced enterprise solutions, cloud-based offerings and logistics services."
+ },
+ "1907982": {
+  "accn": "0001907982-26-000026",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-26",
+  "text": "D-Wave provides commercial annealing and gate-model quantum computing systems, software, and services. The company offers quantum computers with sub-second response times deployable on-premises or accessed through its Leap cloud service. D-Wave serves enterprise customers solving complex computational problems."
+ },
  "1932393": {
   "accn": "0001932393-26-000007",
   "date": "2026-10-07",
   "model": "haiku",
   "source": "10-K filed 2026-02-04",
   "text": "GE HealthCare is a global healthcare solutions provider of medical devices, pharmaceutical diagnostics, and AI-enabled cloud and software solutions. It operates in over 160 countries through four segments: Imaging, Advanced Visualization Solutions, Patient Care Solutions, and Pharmaceutical Diagnostics. Customers include hospitals, health systems, and research institutions."
+ },
+ "19584": {
+  "accn": "0001562762-26-000020",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-27",
+  "text": "Che operates VITAS, which provides hospice and palliative care services primarily in Florida through Medicare. Roto-Rooter, its second segment, provides plumbing, drain cleaning and water restoration services to residential and commercial customers in the United States."
  },
  "1964738": {
   "accn": "0001964738-26-000007",
@@ -545,6 +671,13 @@
   "source": "10-K filed 2026-02-25",
   "text": "TKO is a premium sports and entertainment company operating UFC, WWE, and Professional Bull Riders, along with sports marketing agency IMG and experiential hospitality business On Location. Its properties reach over 1 billion households across 210 countries. Revenue sources include media rights licensing, live events, partnerships with major brands, and consumer products."
  },
+ "1977102": {
+  "accn": "0001193125-25-323599",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "20-F filed 2025-12-18",
+  "text": "Birk designs and manufactures footwear products featuring its iconic footbed, with production and assembly in Germany and the EU. It sells globally through direct-to-consumer retail and e-commerce channels as well as wholesale partnerships to consumers worldwide."
+ },
  "200406": {
   "accn": "0000200406-26-000016",
   "date": "2026-10-07",
@@ -558,6 +691,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-18",
   "text": "Amrize is a North American building solutions company offering cement, aggregates, ready-mix concrete, roofing systems, and wall solutions. The company operates more than 1,000 sites across the United States, Canada, Colombia, Switzerland, and Jamaica, serving more than 23,000 customers in infrastructure, commercial, and residential construction."
+ },
+ "2067876": {
+  "accn": "0002067876-26-000010",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-03-03",
+  "text": "Versant operates television networks including CNBC, USA Network, Golf Channel, E!, SYFY and Oxygen, along with digital platforms GolfNow, Fandango and Rotten Tomatoes. The company generates revenue through network distribution, advertising, digital platform services and content licensing, serving audiences, advertisers and distributors primarily in the United States."
  },
  "2099039": {
   "accn": "0001193125-26-282911",
@@ -593,6 +733,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-12",
   "text": "CSX is a railroad transportation company based in Jacksonville, Florida operating a 20,000 route-mile network across 26 eastern U.S. states and Canadian provinces. It provides freight transportation services including rail, intermodal and coal transport. CSX serves manufacturers, automotive companies, retailers, farmers, energy producers and other businesses."
+ },
+ "278166": {
+  "accn": "0001628280-26-037782",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-05-22",
+  "text": "Cavco designs and manufactures factory-built homes, park model RVs, and commercial structures through 33 production lines in the United States and Mexico. It distributes through independent retailers and 92 company-owned stores in 48 states and Canada, serving homebuyers, developers, and community operators."
  },
  "29644": {
   "accn": "0000029644-26-000085",
@@ -664,6 +811,13 @@
   "source": "10-K filed 2026-03-18",
   "text": "Home Depot is the world's largest home improvement retailer, offering home improvement products, building materials and installation services. It operates 2,359 stores in the U.S., Canada and Mexico, serving homeowners and professional contractors."
  },
+ "355811": {
+  "accn": "0000355811-26-000010",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-24",
+  "text": "Gentex designs and manufactures automatic-dimming rearview mirrors using electrochromic technology for automotive applications, along with premium audio systems, dimmable aircraft windows, fire protection devices, and medical devices. It operates globally with sales, engineering and distribution locations supporting all major automotive producing regions and serves automotive manufacturers, consumer electronics companies, and aviation customers."
+ },
  "40533": {
   "accn": "0000040533-26-000006",
   "date": "2026-10-07",
@@ -712,6 +866,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-25",
   "text": "Lincoln Electric is a global industrial machinery leader making arc welding equipment, cutting systems, wire feeders, and automation solutions. With operations in 20 countries, it serves manufacturers, fabricators, and integrators through distributors and direct sales."
+ },
+ "60519": {
+  "accn": "0000060519-26-000012",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-17",
+  "text": "LPX manufactures high-performance building solutions including engineered wood siding and OSB structural panels across over 20 facilities in North and South America. It serves home builders, remodelers, retailers, and wholesalers."
  },
  "723254": {
   "accn": "0000723254-26-000028",
@@ -762,6 +923,13 @@
   "source": "40-F filed 2026-03-27",
   "text": "MGA is based in Aurora, Ontario, Canada and operates in the motor vehicle parts and accessories industry. The excerpt provided contains only filing cover pages without detailed business description."
  },
+ "772406": {
+  "accn": "0000772406-26-000018",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-05-21",
+  "text": "CRUS is a leader in low-power, high-precision mixed-signal processing solutions for mobile and consumer applications. It designs audio products including amplifiers, codecs, and converters, plus high-performance mixed-signal products such as camera controllers, haptics solutions, and power management ICs. CRUS operates globally and primarily serves major electronics manufacturers including Apple."
+ },
  "77360": {
   "accn": "0000077360-26-000007",
   "date": "2026-10-07",
@@ -803,6 +971,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-19",
   "text": "PPG manufactures and distributes paints, coatings, and specialty products for industrial, automotive, aerospace, marine, and consumer applications. It operates in more than 50 countries, serving original equipment manufacturers, contractors, and consumers."
+ },
+ "802481": {
+  "accn": "0000802481-26-000011",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-12",
+  "text": "PPC produces, processes and distributes fresh, frozen and value-added chicken and pork products across the U.S., U.K., continental Europe, Mexico and over 120 countries. It serves foodservice operators, chain restaurants and retail customers including grocery chains and warehouse clubs."
  },
  "804328": {
   "accn": "0000804328-25-000085",
@@ -958,12 +1133,33 @@
   "source": "10-K filed 2025-10-08",
   "text": "Costco operates membership warehouses and e-commerce sites selling nationally-branded and private-label products. It operates 914 warehouses in the U.S., Puerto Rico, Canada, Mexico, Japan, the UK, Korea, Australia, Taiwan, China, Spain, France, Sweden, Iceland and New Zealand. Members purchase foods, non-foods and fresh foods."
  },
+ "910521": {
+  "accn": "0001628280-26-037664",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-05-22",
+  "text": "Deck designs, markets and distributes footwear, apparel and accessories under the HOKA, UGG and Teva brands for casual lifestyle and high-performance use. It operates globally through wholesale retailers and distributors, as well as direct-to-consumer e-commerce and retail stores."
+ },
  "91142": {
   "accn": "0000091142-26-000008",
   "date": "2026-10-07",
   "model": "haiku",
   "source": "10-K filed 2026-02-10",
   "text": "A. O. Smith manufactures and markets residential and commercial water heaters, boilers, heat pumps, tanks and water treatment products through two segments: North America (78% of sales) and Rest of World. The company serves residential and commercial markets through wholesale distribution, retail channels and direct-to-consumer sales."
+ },
+ "912615": {
+  "accn": "0001193125-26-137916",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-04-01",
+  "text": "Urbn operates global lifestyle brands including Anthropologie, Free People, Urban Outfitters and Nuuly, offering fashion apparel, accessories, home goods and apparel subscription services. It sells through Company-owned stores in North America and Europe, franchisee stores in the Middle East, and digital channels."
+ },
+ "912767": {
+  "accn": "0001104659-26-019567",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-25",
+  "text": "UFP Industries manufactures wood and composite products through three business segments: Retail Solutions, Packaging, and Construction. Operating across the United States, Mexico, Canada, Spain, India and Australia, it serves retailers, distributors, building materials companies, and industrial customers."
  },
  "914475": {
   "accn": "0000914475-26-000007",
@@ -979,6 +1175,13 @@
   "source": "10-K filed 2026-02-19",
   "text": "Tractor Supply is the largest rural lifestyle retailer in the U.S., operating 2,602 stores in 49 states and online. It sells farm, ranch, pet, and garden products to recreational farmers, ranchers, homesteaders, and rural consumers."
  },
+ "91767": {
+  "accn": "0000091767-26-000008",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-26",
+  "text": "SON designs and manufactures engineered and sustainable packaging across 265 locations in 37 countries. The company serves global brands in food, beverage, household, personal care, and pharmaceutical industries."
+ },
  "920371": {
   "accn": "0001628280-26-012920",
   "date": "2026-10-07",
@@ -992,6 +1195,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-01-28",
   "text": "LEN is one of the largest U.S. homebuilders and also originates residential mortgage loans and provides title insurance. The company operates in over 20 states, primarily selling single-family and multifamily homes to first-time, move-up, active adult and luxury homebuyers."
+ },
+ "922621": {
+  "accn": "0001628280-26-010666",
+  "date": "2026-10-07",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-23",
+  "text": "Erie Indemnity acts as attorney-in-fact for the Erie Insurance Exchange, providing policy issuance, claims handling and investment management services. The Exchange writes property and casualty insurance including auto, homeowners, commercial multi-peril and workers compensation through independent agencies."
  },
  "927653": {
   "accn": "0000927653-26-000069",
