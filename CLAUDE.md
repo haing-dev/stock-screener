@@ -12,7 +12,7 @@ Read this first. User preference: be concise and direct; use only context from t
 - 13 screens in `qs/screens.py`: first batch Core, Emerging, Special, Fortress, HC Commercial, HC Clinical, Cyclicals; second batch (strict) Owners, Hard Assets, Asset-Floor, Trough Cash, Hidden Earnings, Red Flags (avoid list). Thresholds in `config.json`.
 - Gate statuses PASS/FAIL/NO DATA/N/A; company classes PASS/CHECK/NEAR/PRICE/ONE/FAIL. HARD_GATES = defining rules; VALUATION_GATES = E12,C8,O11,R10,T8,X9. `site/app.js` statusOf mirrors the Python logic.
 - Portal: AES-GCM encrypted data (PBKDF2 from PORTAL_PASSWORD); peer medians by SIC 4->3->2 digit (min 6), display only.
-- Tests: `python -m tests...` see README; must print "ALL TESTS PASSED".
+- Tests: `python3 tests/run_tests.py` must print "ALL TESTS PASSED".
 
 ## Deployment
 - Repo `haing-dev/stock-screener` (private). Branches: `main` (code), `site` (published site, force-pushed by workflow), `reports` (check_report.md), `research` (transcript store, see below).
