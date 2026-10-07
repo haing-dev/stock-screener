@@ -90,7 +90,7 @@ the list without it), and for each company the open/close price, what it does, t
 median of its industry peers (same SEC industry code; broader group when fewer than 6 companies).
 
 **Secrets** (repository Settings > Secrets and variables > Actions): `SEC_USER_AGENT` (your name and email),
-`MASSIVE_API_KEY`, `TWELVEDATA_API_KEY`, `CLAUDE_CODE_OAUTH_TOKEN` (from `claude setup-token`, uses your Claude
+`MASSIVE_API_KEY`, `TWELVEDATA_API_KEY`, and either `ANTHROPIC_API_KEY` (from console.anthropic.com, pay per use) or `CLAUDE_CODE_OAUTH_TOKEN` (from `claude setup-token`, uses your Claude
 subscription), `PORTAL_PASSWORD`. None of them is ever written to the repository or the site.
 
 **Privacy**: the site's data files are encrypted (AES-256-GCM, key derived from `PORTAL_PASSWORD` with PBKDF2);

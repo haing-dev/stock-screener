@@ -103,8 +103,9 @@ jobs:
         timeout-minutes: 120
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then echo "No CLAUDE_CODE_OAUTH_TOKEN secret - skipping descriptions"; exit 0; fi
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ] && [ -z "$ANTHROPIC_API_KEY" ]; then echo "No ANTHROPIC_API_KEY or CLAUDE_CODE_OAUTH_TOKEN secret - skipping descriptions"; exit 0; fi
           npm install -g @anthropic-ai/claude-code >/dev/null 2>&1 || npm install -g @anthropic-ai/claude-code
           python screener.py portal-summaries --max "$(python -c "import json;print(json.load(open('config.json'))['portal']['summaries_per_screen_run'])")"
 
