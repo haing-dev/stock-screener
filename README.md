@@ -1,6 +1,6 @@
-# Stock screener: six screens on SEC filings
+# Stock screener: thirteen screens on SEC filings
 
-Six screens over every NYSE and Nasdaq company, built from what the investors in your interview library
+Thirteen screens over every NYSE and Nasdaq company, built from what the investors in your interview library
 look for. Financials come from SEC filings (10-K, 10-Q, 20-F, 40-F); share prices and FX rates from
 Twelve Data. **Every number links back to the filing it came from.**
 
@@ -13,6 +13,16 @@ Twelve Data. **Every number links back to the filing it came from.**
 | 5a | Healthcare - commercial | Profitable pharma, medtech, tools, services, insurers with durable returns | Terry Smith, Chen, Flynn |
 | 5b | Healthcare - pre-revenue & clinical | Biotech/medtech valued near or below its cash, with 2+ years of runway | Johnson (Caligan), Chen, Greenblatt |
 | 6 | Capacity-cycle Cyclicals | Good businesses in cyclical industries at low points of their own cycle, cheap on cycle-average earnings | Druckenmiller, Haley, Greenblatt |
+| 7 | Owner-Operators | Profitable, high-return companies where insiders own 20%+ (1 - reported public float / market value on the float date) | Stahl, Haley, Watsa |
+| 8 | Hard Assets & Royalties | Land, mineral, royalty, water, timber and pipeline owners with capex under 20% of operating cash flow and 30%+ margins | Stahl, Alfred, Einhorn |
+| 9 | Asset-Floor Value | Market cap at or below net cash, or price at or below tangible book; not burning cash; usually profitable | Watsa, Greenblatt, Davis |
+| 10 | Trough Cyclical Cash | Cyclicals at depressed margins with a 10%+ cycle-average FCF yield, not adding capacity | Einhorn, Druckenmiller |
+| 11 | Hidden Earnings | Profitable companies that just sold or spun off a unit, or trade 40%+ below their 12-month high | Einhorn, Stahl, Sandler, Greenblatt |
+| 12 | Red Flags (**avoid list**) | Priced at 6x+ sales AND at least two deterioration signals (fading growth, falling margins, losses, dilution, shrinking sales) | Einhorn, Sandler, Marques, Nadella, Cohen |
+
+Screens 7-12 come from the second batch of interviews. On them, a defining rule that couldn't be checked (e.g. an
+insider stake that couldn't be measured) keeps a company off the near-miss lists: it goes to 'Check manually' if
+nothing fails, else it fails.
 
 ## How each company is classified (per screen)
 
@@ -71,7 +81,7 @@ The screener runs itself in GitHub and publishes a password-protected website (C
 
 | When | What (GitHub Actions) |
 |---|---|
-| 1st and 16th of each month | **Screen**: every NYSE + Nasdaq company from SEC filings, priced, all six screens (about 1 hour) |
+| 1st and 16th of each month | **Screen**: every NYSE + Nasdaq company from SEC filings, priced, all thirteen screens (about 1-2 hours) |
 | Every weekday evening | **Daily prices**: end-of-day open/close for every company (Massive), screens re-applied |
 | Both | 2-3 line company descriptions written by Claude from the annual report (a batch per run until all are done) |
 
@@ -107,7 +117,7 @@ portal-export`.
 
 | Step | Double-click | What happens |
 |---|---|---|
-| 1 | `1_TEST_RUN.bat` | All six screens on ~45 well-known companies -> `output\test_results.xlsx` |
+| 1 | `1_TEST_RUN.bat` | All thirteen screens on ~50 well-known companies -> `output\test_results.xlsx` |
 | 2 | `2_RUN_ALL_SCREENS.bat` | Every NYSE + Nasdaq company -> `output\screen_results_<date>.xlsx` + `_evidence.csv`. The first run re-downloads SEC data (new format, 30-50 min). |
 | 3 | `3_MAKE_AI_PACK.bat` | Pick a screen; downloads the top companies' latest annual reports and builds a blind evidence pack for Claude's review |
 | 4 | `4_VERIFY_QUOTES.bat` | Checks every quote in Claude's review word-for-word against the filing |
@@ -124,7 +134,7 @@ plan finishes in one go.
 |---|---|
 | Read_Me | Run details; counts per screen |
 | Overlap | Companies passing several screens - the strongest signals |
-| 1 Core ... 6 Cyclicals | Ranked PASS list per screen, with pillar scores and key metrics |
+| 1 Core ... 12 Red flags (avoid) | Ranked PASS list per screen, with pillar scores and key metrics (on Red flags, PASS = flagged) |
 | ... - watch | CHECK manually + NEAR misses, each with the reason |
 | Events | Every spin-off / bankruptcy / IPO found, pass or not |
 | Industry_Cycle | Each cyclical industry's aggregate margin vs its 10-year range |
@@ -145,7 +155,15 @@ newspapers, ad agencies, airlines and commodity producers are excluded from Core
 Cyclicals screen. Special Situations excludes only balance-sheet businesses (banks, insurers, crypto treasuries,
 funds, REITs) - EV/EBIT means nothing for them. Auto-parts retailers and auctions (O'Reilly, AutoZone, Copart)
 are screened. To screen a company whose SEC industry code is excluded but doesn't describe the business, add it
-to `screen_anyway` in `config.json` (Morningstar and MarketAxess are there).
+to `screen_anyway` in `config.json` (Morningstar and MarketAxess are there). Owner-Operators uses Core's industries;
+Hard Assets & Royalties looks only at land, mineral, royalty, water, timber and pipeline codes; Asset-Floor Value,
+Hidden Earnings and Red Flags look at every operating company outside banks, insurers, funds and real estate
+(Red Flags also leaves out pre-revenue drug developers, which burn cash by design).
+
+Past prices: insider share needs the close on each company's public-float date, and Hidden Earnings needs the
+12-month high. With Massive (the portal) both come from Massive's all-stocks daily files (one request per date,
+re-downloaded every 12 days so splits are adjusted); a local run uses Twelve Data (its 52-week high, and up to 120
+float-date prices per run).
 
 ## Rules
 

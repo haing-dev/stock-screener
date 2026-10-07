@@ -1,4 +1,5 @@
-"""The six screens. Each screen = a universe (which industries it looks at) + gates (pass/fail rules) +
+"""The screens (seven from the first batch of interviews, six from the second). Each screen = a universe
+(which industries it looks at) + gates (pass/fail rules) +
 pillars (how passing companies are ranked).
 
 Every gate returns PASS, FAIL, NO DATA or N/A (rule doesn't apply). A company is classified as:
@@ -15,7 +16,7 @@ So missing data never silently removes a company, and doubtful data never puts o
 import pandas as pd
 
 from .industry import (CLINICAL_STAGE, CYCLICAL, EMERGING_EXTRA_EXCLUDE, HEALTHCARE,
-                       HEALTHCARE_PRODUCT, NEVER, in_ranges)
+                       HEALTHCARE_PRODUCT, NEVER, REAL_ASSETS, in_ranges)
 
 PASS, FAIL, NODATA, NA = "PASS", "FAIL", "NO DATA", "N/A"
 HOLD_FLAG_MARKERS = ("isn't in SEC's XBRL data yet", "estimated from net income", "check free cash flow by hand",
@@ -95,7 +96,10 @@ QUALITY_WARNINGS = ("margin_collapse", "revenue_shrinking", "lost_money_2009")
 
 class Screen:
     def __init__(self, sid, title, purpose, sources, universe, gates, pillars, weights, columns, rubric,
-                 warnings=()):
+                 warnings=(), strict=False):
+        # strict: a defining (hard) rule that couldn't be checked keeps the company off the 'price too high' and
+        # 'missed 1 rule' lists (e.g. Owner-Operators without a measured insider stake)
+        self.strict = strict
         self.sid, self.title, self.purpose, self.sources = sid, title, purpose, sources
         self.universe, self.gates, self.pillars, self.weights = universe, gates, pillars, weights
         self.columns, self.rubric = columns, rubric
@@ -127,6 +131,8 @@ class Screen:
             cls = PASS
         elif not fails:
             cls = "CHECK"
+        elif self.strict and any(not g.one_ok for g in nodata):
+            cls = FAIL
         elif priced and all(g.valuation for g in fails):
             cls = "PRICE"
         elif len(fails) == 1:
@@ -941,14 +947,524 @@ CYCLICALS = Screen(
     "cyclical or structural (a 'temporary or permanent' problem)? Balance sheet through another down year?")
 
 
-SCREENS = [CORE, EMERGING, SPECIAL, FORTRESS, HC_COMMERCIAL, HC_CLINICAL, CYCLICALS]
+# ====================================================================== screens from the second batch of interviews
+# Shared universe: operating companies outside balance-sheet finance (EV and margins mean nothing for banks, insurers,
+# funds and real-estate holders). Used by Asset-Floor Value, Hidden Earnings and Red Flags.
+def broad_ok(info, cfg):
+    if in_ranges(info.get("sic"), NEVER):
+        return False
+    r = in_ranges(info.get("sic"), STRUCTURAL_EXCLUDE)
+    return not (r and not in_ranges(info.get("sic"), STRUCTURAL_KEEP) and not screen_anyway(info, cfg))
+
+
+def u_broad(info, m, cfg):
+    if in_ranges(info.get("sic"), NEVER):
+        return False, "fund / SPAC / REIT / shell"
+    r = in_ranges(info.get("sic"), STRUCTURAL_EXCLUDE)
+    if r and not in_ranges(info.get("sic"), STRUCTURAL_KEEP) and not screen_anyway(info, cfg):
+        return False, f"excluded industry: {r[2]}"
+    return True, info.get("sicDescription") or ""
+
+
+def u_real_assets(info, m, cfg):
+    if in_ranges(info.get("sic"), NEVER):
+        return False, "fund / SPAC / REIT / shell"
+    r = in_ranges(info.get("sic"), REAL_ASSETS)
+    return (True, r[2]) if r else (False, "not a land, mineral, water, timber or pipeline owner")
+
+
+def u_red_flags(info, m, cfg):
+    ok, why = u_broad(info, m, cfg)
+    if not ok:
+        return ok, why
+    # pre-revenue drug and device developers burn cash by design: they have their own screen
+    if in_ranges(info.get("sic"), CLINICAL_STAGE) and not _is_commercial(m, cfg):
+        return False, "clinical-stage healthcare (see the clinical screen)"
+    return True, why
+
+
+def _thr(cfg, scope, name, s=0.0, op=">="):
+    t = cfg_get(cfg, f"screens.{scope}.{name}")
+    return _scaled(op, t, s) if s else t
+
+
+def g_price_size(gid, key="min_market_cap_usd", insight="Tradeable size."):
+    return Gate(gid, "Size (market cap)", "market_cap_usd", ">=", key, insight, needs_price=True, fmt="usd",
+                near=False, nodata_note=lambda c: c.get("val_issue") or "no market cap")
+
+
+def g_liquidity(gid, key="min_adv_usd"):
+    return Gate(gid, "Liquidity", "adv_usd", ">=", key, "Tradeable volume.", needs_price=True, fmt="usd", near=False,
+                nodata_note="no trading volume in the quote")
+
+
+def _fcf_custom(scope, key):
+    def fn(ctx, cfg, sc, s=0.0):
+        return _g7_custom(ctx, cfg_get(cfg, f"screens.{sc}.{key}"), s)
+    return fn
+
+
+# ---------------------------------------------------------------------- 7. OWNER-OPERATORS (Stahl)
+def _insider(ctx, cfg, scope, s=0.0):
+    thr = _thr(cfg, scope, "min_insider_share", s)
+    v = ctx.get("insider_share")
+    if v is None:
+        if ctx.get("insider_share_unverified") is not None:
+            return NODATA, None, thr, ("market cap unverified (" + (ctx.get("val_issue") or "share count") +
+                                       ") - insider share can't be trusted")
+        if not ctx.get("public_float"):
+            return NODATA, None, thr, "no public float on the annual report's cover page"
+        if ctx.get("insider_issue"):
+            return NODATA, None, thr, ctx["insider_issue"]
+        if ctx.get("price") is None:
+            return NODATA, None, thr, ctx.get("val_issue") or "no price"
+        return NODATA, None, thr, ctx.get("pf_close_note") or "no price on the public-float date"
+    note = (f"public float ${ctx['public_float'] / 1e6:,.0f}M on {ctx.get('public_float_date')} at "
+            f"${ctx.get('pf_close', 0):.2f}, against {ctx.get('insider_basis') or 'the share count'}")
+    if v >= 0.5:
+        note += " - controlled company: founder/family, or a parent company's subsidiary? (check the proxy)"
+    return (PASS if v >= thr else FAIL), v, thr, note
+
+
+OWNERS_GATES = [
+    Gate("O1", "History", "years_with_data", ">=", "min_years", "Enough years to judge returns.", near=False,
+         fmt="int"),
+    g_recent("O2", "screens.owners.max_years_since_latest_fy"),
+    g_size("O3", "screens.owners.min_revenue_usd"),
+    Gate("O4", "Insider ownership", "insider_share", ">=", "min_insider_share",
+         "Stahl: owner-operators run a company 'because they own more equity than anyone else' and earned 'the bulk "
+         "of the return' in the S&P 500 back to 1957, yet index weighting by free float under-owns them. Insider "
+         "share = 1 - the public float the company reports / its market value on that date.",
+         needs_price=True, fn=_insider, fmt="pct"),
+    Gate("O5", "Consistent profits", "operating_loss_years", "<=", "max_operating_loss_years",
+         "A real business, not a lottery ticket.", near=False, fmt="int"),
+    Gate("O6", "High returns", "roic_median", ">=", "min_median_roic",
+         "Owners compound only if the business earns well on capital.", fmt="pct"),
+    Gate("O7", "Cash conversion", "fcf_conversion", ">=", "min_fcf_conversion", "Profits must turn into cash.",
+         fn=_fcf_custom("owners", "min_fcf_conversion"), fmt="mult"),
+    _gate_lev("O8", "max_net_debt_to_ebitda", "Owners who borrow heavily can lose the company in one bad year."),
+    g_price_size("O9"),
+    g_liquidity("O10"),
+    Gate("O11", "Valuation", "ev_ebit", "<=", "max_ev_ebit",
+         "Stahl: owner-operators often carry the lowest valuations ('It shouldn't exist, yet it does').",
+         needs_price=True, fmt="mult", nodata_note=lambda c: c.get("val_issue") or "EV/EBIT unavailable"),
+]
+OWNERS = Screen(
+    "owners", "Owner-Operators",
+    "Profitable, high-return companies where insiders own a large stake (at least 20% by default). Index funds "
+    "weight by freely traded shares, so these are under-owned and often cheaper. Insider share comes from the "
+    "public float each company reports on its annual report cover.",
+    "Murray Stahl (Horizon Kinetics), Connor Haley (insider ownership), Watsa",
+    u_core, OWNERS_GATES,
+    {"ownership": [("insider_share", True)],
+     "returns": [("roic_median", True), ("cash_roic_median", True)],
+     "growth": [("revenue_cagr", True), ("fcf_per_share_cagr", True)],
+     "capital_allocation": [("share_count_cagr", False), ("acquisitions_to_ocf", False)],
+     "value": [("earnings_yield", True), ("fcf_yield", True)],
+     "unindexed": [("market_cap_usd", False)]},
+    {"ownership": 25, "returns": 20, "growth": 15, "capital_allocation": 15, "value": 15, "unindexed": 10},
+    ["insider_share", "public_float_date", "market_cap_usd", "roic_median", "cash_roic_median", "revenue_cagr",
+     "fcf_conversion", "share_count_cagr", "net_debt_to_ebitda", "ev_ebit", "fcf_yield", "pe", "adv_usd"],
+    "Who are the insiders: founder/family (owner-operator) or a parent company (a subsidiary; minority holders "
+    "may be second-class)? Is management paid 'independent of the long-term value of the shares' (an "
+    "agent-operator)? Related-party dealings, share classes with extra votes, succession, and what the owner does "
+    "with the cash (Stahl, Watsa).",
+    warnings=("margin_collapse", "revenue_shrinking"))
+
+
+# ---------------------------------------------------------------------- 8. HARD ASSETS & ROYALTIES (Stahl, Alfred)
+def _low_reinvest(ctx, cfg, scope, s=0.0):
+    thr = _thr(cfg, scope, "max_capex_to_ocf", s, "<=")
+    if ctx.get("ocf_avg_3y") is not None and ctx["ocf_avg_3y"] <= 0:
+        return FAIL, None, thr, "operating cash flow <= 0 over the last 3 years"
+    v = ctx.get("capex_to_ocf_3y")
+    if v is None:
+        if not ctx.get("capex_found"):
+            return NODATA, None, thr, "capital expenditure isn't tagged with a standard XBRL tag"
+        return NODATA, None, thr, "no capex / operating cash flow for the last 3 years"
+    return (PASS if v <= thr else FAIL), v, thr, ""
+
+
+REAL_GATES = [
+    Gate("R1", "History", "years_with_data", ">=", "min_years", "Enough years to see a cycle.", near=False,
+         fmt="int"),
+    g_recent("R2", "screens.real_assets.max_years_since_latest_fy"),
+    g_size("R3", "screens.real_assets.min_revenue_usd"),
+    Gate("R4", "Little reinvestment", "capex_to_ocf_3y", "<=", "max_capex_to_ocf",
+         "Stahl: royalty and land owners need no reinvestment - 'a call option on everything'. Capex as a share "
+         "of operating cash flow, last 3 years; producers and builders fail here.", fn=_low_reinvest, fmt="pct"),
+    Gate("R5", "Royalty-like margins", "operating_margin_median", ">=", "min_operating_margin_median",
+         "Owning the asset rather than working it shows up as very high margins (10-year median).", fmt="pct"),
+    Gate("R6", "Consistent profits", "operating_loss_years", "<=", "max_operating_loss_years",
+         "Profitable through commodity cycles.", near=False, fmt="int"),
+    _gate_lev("R7", "max_net_debt_to_ebitda", "No leverage a commodity slump can break."),
+    g_price_size("R8"),
+    g_liquidity("R9"),
+    Gate("R10", "Valuation", "ev_ebit", "<=", "max_ev_ebit",
+         "Even a perfect royalty can be bought too dear.", needs_price=True, fmt="mult",
+         nodata_note=lambda c: c.get("val_issue") or "EV/EBIT unavailable"),
+]
+REAL_ASSETS_SCREEN = Screen(
+    "real_assets", "Hard Assets & Royalties",
+    "Owners of land, minerals, royalties, water, timber and pipelines that need little reinvestment and earn "
+    "very high margins - the assets Stahl expected to gain as disinflation ends. Excluded from Core as price "
+    "takers; kept here only if they barely reinvest.",
+    "Murray Stahl (Horizon Kinetics), Mike Alfred (Alpine Fox), Einhorn (supply discipline)",
+    u_real_assets, REAL_GATES,
+    {"margins": [("operating_margin_median", True), ("ttm_operating_margin", True)],
+     "low_reinvestment": [("capex_to_ocf_3y", False)],
+     "cash": [("fcf_yield", True), ("fcf_conversion", True)],
+     "growth": [("revenue_cagr", True), ("revenue_cagr_3y", True)],
+     "balance_sheet": [("net_debt_to_ebitda", False)]},
+    {"margins": 25, "low_reinvestment": 25, "cash": 20, "growth": 15, "balance_sheet": 15},
+    ["capex_to_ocf_3y", "operating_margin_median", "ttm_operating_margin", "revenue_cagr", "revenue_cagr_3y",
+     "fcf_conversion", "net_debt_to_ebitda", "market_cap_usd", "ev_ebit", "fcf_yield", "pe", "adv_usd"],
+    "Dormant assets the accounts don't value (land carried at no value, unexplored acreage, non-producing "
+    "royalties); how much depends on one commodity price; trust termination dates; water and surface rights; "
+    "who operates the assets and how reliably (Stahl, Alfred).")
+
+
+# ---------------------------------------------------------------------- 9. ASSET-FLOOR VALUE (Watsa)
+def _floor(ctx, cfg, scope, s=0.0):
+    t_cash = _thr(cfg, scope, "max_mcap_to_net_cash", s, "<=")
+    t_tb = _thr(cfg, scope, "max_price_to_tangible_book", s, "<=")
+    nc, tb = ctx.get("mcap_to_net_cash"), ctx.get("price_to_tangible_book")
+    if nc is None and tb is None:
+        if ctx.get("mcap_to_net_cash_unverified") is not None or ctx.get("price_to_tangible_book_unverified") is not None:
+            return NODATA, None, (t_cash, t_tb), "market cap unverified (" + (ctx.get("val_issue") or "") + ")"
+        if ctx.get("price") is None:
+            return NODATA, None, (t_cash, t_tb), ctx.get("val_issue") or "no price"
+        if (ctx.get("net_cash") is not None and ctx["net_cash"] <= 0) and \
+                (ctx.get("tangible_book") is not None and ctx["tangible_book"] <= 0):
+            return FAIL, None, (t_cash, t_tb), "no net cash and no positive tangible book"
+        return NODATA, None, (t_cash, t_tb), "no balance sheet to measure the floor"
+    if nc is not None and nc <= t_cash and ctx.get("bs_debt_found"):
+        return PASS, nc, (t_cash, t_tb), f"market cap {nc:.2f}x net cash (cash + investments - all debt)"
+    if tb is not None and tb <= t_tb:
+        return PASS, tb, (t_cash, t_tb), f"price {tb:.2f}x tangible book (equity - goodwill - intangibles)"
+    if nc is not None and nc <= t_cash:
+        # below cash only if it really has no debt: no debt tag at all needs a look at the balance sheet
+        return NODATA, nc, (t_cash, t_tb), (f"market cap {nc:.2f}x cash, but no debt tag found: check the balance "
+                                            "sheet")
+    best = min(x for x in (nc, tb) if x is not None)
+    return FAIL, best, (t_cash, t_tb), ""
+
+
+def _not_burning(ctx, cfg, scope, s=0.0):
+    thr = _thr(cfg, scope, "min_runway_if_burning", s)
+    ocf = ctx.get("ttm_ocf")
+    if ocf is None:
+        return NODATA, None, thr, "no operating cash flow"
+    if ocf >= 0:
+        return PASS, ocf, thr, "cash flow positive"
+    v = ctx.get("cash_runway_years")
+    if v is None:
+        return NODATA, None, thr, "no cash figure"
+    return (PASS if v >= thr else FAIL), v, thr, f"burning cash: {v:.1f} years of runway"
+
+
+def _profit_share(ctx, cfg, scope, s=0.0):
+    thr = _thr(cfg, scope, "min_profitable_share", s)
+    v = ctx.get("positive_ebit_share")
+    if v is None:
+        return NODATA, None, thr, "fewer than 3 years of operating results"
+    return (PASS if v >= thr else FAIL), v, thr, ""
+
+
+FLOOR_GATES = [
+    Gate("K1", "History", "years_total", ">=", "min_years", "Enough years to see a record.", near=False, fmt="int"),
+    g_recent("K2", "screens.asset_floor.max_years_since_latest_fy"),
+    Gate("K3", "Recent balance sheet", "bs_age_days", "<=", "max_balance_sheet_age_days",
+         "The floor is measured on the latest balance sheet, so it must be recent.", fn=_fresh_bs, fmt="int",
+         near=False),
+    Gate("K4", "Below a hard floor", "mcap_to_net_cash", "<=", None,
+         "Watsa: buy below cash per share and you get the plants and inventories 'for free' (Seagram at $65 vs "
+         "~$70 of cash doubled and tripled). Passes at market cap <= net cash, or price <= tangible book.",
+         needs_price=True, fn=_floor, fmt="mult",
+         desc=lambda c, s: (f"market cap at most {cfg_get(c, 'screens.asset_floor.max_mcap_to_net_cash'):.1f}× "
+                            f"net cash, or price at most "
+                            f"{cfg_get(c, 'screens.asset_floor.max_price_to_tangible_book'):.1f}× tangible book")),
+    Gate("K5", "Not burning the floor", "ttm_ocf", ">=", None,
+         "A floor a company is burning through isn't a floor.", fn=_not_burning, fmt="years",
+         desc=lambda c, s: (f"operating cash flow positive, or at least "
+                            f"{cfg_get(c, 'screens.asset_floor.min_runway_if_burning'):.0f} years of cash")),
+    Gate("K6", "Usually profitable", "positive_ebit_share", ">=", "min_profitable_share",
+         "Davis/Greenblatt: a cheap business that never earns is a value trap.", fn=_profit_share, fmt="pct"),
+    _gate_lev("K7", "max_net_debt_to_ebitda", "Debt ahead of shareholders erodes the floor."),
+    g_price_size("K8"),
+    g_liquidity("K9"),
+]
+ASSET_FLOOR = Screen(
+    "asset_floor", "Asset-Floor Value",
+    "Companies priced at or below their net cash, or below tangible book, that still generate cash and are "
+    "usually profitable. The extreme margin of safety: the market fears management will waste the assets.",
+    "Prem Watsa (Fairfax), Greenblatt (net cash as a free option), Davis (value traps)",
+    u_broad, FLOOR_GATES,
+    {"floor": [("mcap_to_net_cash", False), ("price_to_tangible_book", False)],
+     "cash": [("fcf_yield", True), ("fcf_yield_5y", True)],
+     "quality": [("roic_median", True), ("positive_ebit_share", True)],
+     "balance_sheet": [("net_debt_to_ebitda", False)]},
+    {"floor": 40, "cash": 25, "quality": 20, "balance_sheet": 15},
+    ["mcap_to_net_cash", "price_to_tangible_book", "net_cash", "tangible_book", "market_cap_usd", "fcf_yield",
+     "fcf_yield_5y", "roic_median", "positive_ebit_share", "ttm_operating_margin", "net_debt_to_ebitda", "adv_usd",
+     "bs_date"],
+    "Why is it this cheap? Will management waste the cash (Seagram's did - but ~25 years later)? Is the cash "
+    "trapped abroad, pledged or owed to a parent (VIE structures, China ADRs)? Are inventories and receivables "
+    "real, or due for a write-down? Pensions, lawsuits or leases off the balance sheet? A catalyst - buybacks, a "
+    "sale, an activist (Watsa)?")
+
+
+# ---------------------------------------------------------------------- 10. TROUGH CYCLICAL CASH (Einhorn)
+def _cash_years(ctx, cfg, scope, s=0.0):
+    n, tot = ctx.get("fcf_positive_years"), ctx.get("fcf_years")
+    if not tot or tot < 5:
+        return NODATA, None, None, "fewer than 5 years of free cash flow (capex not tagged?)"
+    allowed = cfg_get(cfg, f"screens.{scope}.max_negative_fcf_years")
+    if ctx.get("fcf_avg_5y") is not None and ctx["fcf_avg_5y"] <= 0:
+        return FAIL, n / tot, allowed, f"{n} of {tot} years FCF-positive, but the 5-year average is negative"
+    return (PASS if tot - n <= allowed else FAIL), n / tot, allowed, f"{n} of {tot} years FCF-positive"
+
+
+def _capex_discipline(ctx, cfg, scope, s=0.0):
+    thr = _thr(cfg, scope, "max_capex_to_da_3y", s, "<=")
+    v = ctx.get("capex_to_da_3y")
+    if v is None:
+        return NODATA, None, thr, "capex or depreciation not tagged"
+    return (PASS if v <= thr else FAIL), v, thr, ""
+
+
+def _fcf5_yield(ctx, cfg, scope, s=0.0):
+    thr = _thr(cfg, scope, "min_fcf_yield_5y", s)
+    v = ctx.get("fcf_yield_5y")
+    if v is None:
+        if ctx.get("fcf_avg_5y") is None:
+            return NODATA, None, thr, "fewer than 4 of the last 5 years with free cash flow"
+        return NODATA, None, thr, ctx.get("val_issue") or "no market cap"
+    return (PASS if v >= thr else FAIL), v, thr, ""
+
+
+TROUGH_GATES = [
+    Gate("T1", "Full cycle of history", "years_with_data", ">=", "min_years", "Need a full cycle to judge.",
+         near=False, fmt="int"),
+    g_recent("T2", "screens.trough_cash.max_years_since_latest_fy"),
+    g_size("T3", "screens.trough_cash.min_revenue_usd"),
+    Gate("T4", "Margins below normal", "op_margin_percentile_10y", "<=", "max_margin_percentile",
+         "Einhorn on Solvay: buy at the trough, not at mid-cycle. Latest operating margin vs the company's own "
+         "10-year range.", fmt="pct", nodata_note="need 5+ years of margins"),
+    Gate("T5", "Cash through the cycle", "fcf_positive_years", None, None,
+         "A cash machine pays you to wait: free cash flow positive in most years, troughs included.",
+         fn=_cash_years, fmt="pct", near=False,
+         desc=lambda c, s: f"at most {c['screens'][s]['max_negative_fcf_years']} year(s) with negative FCF"),
+    Gate("T6", "Not adding capacity", "capex_to_da_3y", "<=", "max_capex_to_da_3y",
+         "Einhorn: 'higher prices aren't fueling new capacity instead they're fueling buybacks'. Capex / "
+         "depreciation over 3 years near 1 = maintaining, not expanding.", fn=_capex_discipline, fmt="mult"),
+    _gate_lev("T7", "max_net_debt_to_norm_ebitda", "A trough can't break it (net debt / cycle-average EBITDA).",
+              basis="normalized", name="Normalized leverage"),
+    Gate("T8", "Cash yield on the cycle", "fcf_yield_5y", ">=", "min_fcf_yield_5y",
+         "Einhorn: Solvay's 5-year post-capex free cash flow roughly equalled its market cap. 5-year average free "
+         "cash flow / market cap.", needs_price=True, fn=_fcf5_yield, fmt="pct"),
+    g_price_size("T9"),
+    g_liquidity("T10"),
+]
+TROUGH_CASH = Screen(
+    "trough_cash", "Trough Cyclical Cash",
+    "Cyclical producers at depressed margins that still throw off cash through the cycle, aren't adding "
+    "capacity, and trade at a high cycle-average free-cash-flow yield. Industries returning cash instead of "
+    "building rank higher.",
+    "David Einhorn (Greenlight: Solvay, 'eventually is now'), Druckenmiller (capacity cycle), Stahl",
+    u_cyclicals, TROUGH_GATES,
+    {"cash_yield": [("fcf_yield_5y", True), ("fcf_yield", True)],
+     "industry_discipline": [("industry_returns_to_capex", True), ("industry_capex_to_da", False)],
+     "company_discipline": [("returns_to_capex_5y", True), ("capex_to_da_3y", False)],
+     "trough": [("op_margin_percentile_10y", False), ("industry_margin_percentile", False)],
+     "balance_sheet": [("net_debt_to_norm_ebitda", False)]},
+    {"cash_yield": 30, "industry_discipline": 20, "company_discipline": 15, "trough": 20, "balance_sheet": 15},
+    ["cycle_group", "fcf_yield_5y", "fcf_yield", "op_margin_percentile_10y", "industry_margin_percentile",
+     "industry_returns_to_capex", "industry_capex_to_da", "returns_to_capex_5y", "capex_to_da_3y",
+     "net_debt_to_norm_ebitda", "market_cap_usd", "ev_normalized_ebit", "adv_usd"],
+    "Trough or mid-cycle (Einhorn on Solvay, Apr 2024)? Is supply leaving the industry (closures, no new "
+    "capacity announced)? Is the bear case about one segment while most revenue sits elsewhere? Is the low "
+    "margin cyclical or structural? Freight or regulation protecting regional prices?")
+
+
+# ---------------------------------------------------------------------- 11. HIDDEN EARNINGS (Einhorn, Stahl, Sandler)
+def _hidden_trigger(ctx, cfg, scope, s=0.0):
+    thr = _thr(cfg, scope, "max_drawdown_12m", s, "<=")
+    if ctx.get("disc_ops_material"):
+        return PASS, None, thr, "unit sold or spun off: " + (ctx.get("disc_ops_note") or "discontinued operations")
+    v = ctx.get("drawdown_12m")
+    if v is None:
+        if ctx.get("price") is None:
+            return NODATA, None, thr, "no discontinued operations; no price to measure a fall"
+        return NODATA, None, thr, "no discontinued operations; no 12-month price history"
+    if v <= -0.9:
+        return NODATA, v, thr, (f"price {v:.0%} from its 12-month high - check for a split, reverse split or "
+                                "ticker change before trusting this")
+    if ctx.get("splits_unknown") and v <= thr and any(abs((1 + v) * k - 1) < 0.04 for k in range(2, 11)):
+        return NODATA, v, thr, (f"price {v:.0%} from its 12-month high - about what a stock split would show, and "
+                                "the split list was unavailable: check before trusting this")
+    note = f"price {v:.0%} from its 12-month high (${ctx.get('high_12m_used', 0):,.2f})"
+    return (PASS if v <= thr else FAIL), v, thr, note
+
+
+def _ttm_positive(metric, label):
+    def fn(ctx, cfg, scope, s=0.0):
+        v = ctx.get(metric)
+        if v is None:
+            return NODATA, None, 0, f"no {label}"
+        return (PASS if v > 0 else FAIL), v, 0, ""
+    return fn
+
+
+HIDDEN_GATES = [
+    Gate("X1", "History", "years_with_data", ">=", "min_years", "Enough years to know the business.", near=False,
+         fmt="int"),
+    g_recent("X2", "screens.hidden.max_years_since_latest_fy"),
+    Gate("X3", "Something the market is ignoring", "drawdown_12m", "<=", "max_drawdown_12m",
+         "Einhorn/Stahl: coverage fixates on a feared segment, and a spin-off or sale lifts the remaining "
+         "business's numbers ('It's just a different way of calculating'). Sandler: quants bucket on trailing "
+         "figures. Passes with material discontinued operations (last 3 years) or a price far below its 12-month "
+         "high.", needs_price=True, fn=_hidden_trigger, fmt="pct",
+         desc=lambda c, s: ("discontinued operations in the last 3 years, or price at least "
+                            f"{-cfg_get(c, 'screens.hidden.max_drawdown_12m'):.0%} below its 12-month high")),
+    Gate("X4", "Still earning", "ttm_operating_income", ">", None,
+         "The remaining business must be profitable now (operating income excludes discontinued operations).",
+         fn=_ttm_positive("ttm_operating_income", "operating income"), fmt="usd", near=False,
+         desc="operating income, last 12 months, > 0"),
+    Gate("X5", "Sales holding up", "revenue_cagr_3y", ">=", "min_revenue_cagr_3y",
+         "Temporary or permanent (Greenblatt)? Revenue mustn't be in steady decline.", fmt="pct",
+         nodata_note="need revenue 3 years ago"),
+    Gate("X6", "Still generating cash", "ttm_fcf", ">", None, "Free cash flow positive over the last 12 months.",
+         fn=_ttm_positive("ttm_fcf", "free cash flow (capex not tagged?)"), fmt="usd", near=False,
+         desc="free cash flow, last 12 months, > 0"),
+    Gate("X7", "Decent returns", "roic_median", ">=", "min_median_roic", "A good business behind the mess.",
+         fmt="pct"),
+    _gate_lev("X8", "max_net_debt_to_ebitda", "Gaines: debt turns a messy situation into an option bet."),
+    Gate("X9", "Cheap", "ev_ebit", "<=", "max_ev_ebit",
+         "Greenblatt: special situations work best bought cheaply.", needs_price=True, fmt="mult",
+         nodata_note=lambda c: c.get("val_issue") or "EV/EBIT unavailable"),
+    g_price_size("X10"),
+    g_liquidity("X11"),
+]
+HIDDEN = Screen(
+    "hidden", "Hidden Earnings",
+    "Profitable, cash-generating businesses the market is looking past: parents that just sold or spun off a "
+    "unit (their averages improve once it's gone), and sound companies whose price has fallen far below its "
+    "12-month high. A shortlist for reading the segment notes.",
+    "David Einhorn (Solvay), Murray Stahl (spin-off parents), Ricky Sandler (Zillow, quant buckets), Greenblatt",
+    u_broad, HIDDEN_GATES,
+    {"value": [("earnings_yield", True), ("fcf_yield", True)],
+     "quality": [("roic_median", True), ("ttm_operating_margin", True)],
+     "dislocation": [("drawdown_12m", False)],
+     "balance_sheet": [("net_debt_to_ebitda", False)]},
+    {"value": 35, "quality": 25, "dislocation": 20, "balance_sheet": 20},
+    ["disc_ops_note", "drawdown_12m", "high_12m_used", "market_cap_usd", "ev_ebit", "fcf_yield", "earnings_yield",
+     "roic_median", "ttm_operating_margin", "revenue_cagr_3y", "net_debt_to_ebitda", "adv_usd"],
+    "Which segment is the market fixated on, and how much revenue sits elsewhere (Solvay: ~70% outside soda "
+    "ash)? Is a trailing loss from a business being exited (Zillow)? What does the parent look like without the "
+    "unit it shed? Why did the price fall - temporary or permanent - and who is forced to sell (index deletion, "
+    "'AI loser' baskets with 'literally no buyers')?")
+
+
+# ---------------------------------------------------------------------- 12. RED FLAGS (avoid list)
+def _expensive(ctx, cfg, scope, s=0.0):
+    thr = _thr(cfg, scope, "min_ev_sales", s)
+    v = ctx.get("ev_sales")
+    if v is None:
+        if ctx.get("ev_sales_unverified") is not None:
+            return NODATA, None, thr, "market cap unverified (" + (ctx.get("val_issue") or "") + ")"
+        return NODATA, None, thr, ctx.get("val_issue") or "EV / sales unavailable"
+    return (PASS if v >= thr else FAIL), v, thr, ""
+
+
+def red_flag_signals(ctx, cfg, scope="red_flags"):
+    c = cfg["screens"][scope]
+    out = []
+    g3, now = ctx.get("revenue_cagr_3y"), ctx.get("ytd_revenue_growth")
+    src = "year-to-date"
+    if now is None:
+        now, src = ctx.get("revenue_growth_latest_fy"), "latest fiscal year"
+    if g3 is not None and now is not None and g3 >= c["fading_min_cagr_3y"] and now < c["fading_ratio"] * g3:
+        out.append(f"growth fading: {now:+.0%} ({src}) vs {g3:+.0%}/yr over 3 years (Cohen)")
+    if ctx.get("gross_margin_down_3y"):
+        out.append(f"gross margin down 3 years running ({ctx.get('gross_margin_change_3y', 0):+.1%}) (Nadella)")
+    om = ctx.get("operating_margin_change_3y")
+    op = ctx.get("ttm_operating_income")
+    if op is not None and op <= 0:
+        # a loss usually also shows as a margin drop: counted once, so one bad year isn't two signals
+        out.append("losing money (operating loss, last 12 months) (Einhorn's 'bubble basket')")
+    elif om is not None and om <= -c["margin_drop_3y"]:
+        out.append(f"operating margin {om:+.1%} over 3 years")
+    dil = ctx.get("share_count_cagr_3y")
+    if dil is not None and dil >= c["dilution_3y"]:
+        out.append(f"share count +{dil:.0%}/yr over 3 years")
+    if g3 is not None and g3 < 0:
+        out.append(f"revenue shrinking {g3:+.0%}/yr over 3 years")
+    return out
+
+
+def _deteriorating(ctx, cfg, scope, s=0.0):
+    thr = cfg_get(cfg, f"screens.{scope}.min_signals")
+    sig = red_flag_signals(ctx, cfg, scope)
+    if not sig and ctx.get("revenue_cagr_3y") is None and ctx.get("operating_margin_change_3y") is None:
+        return NODATA, None, thr, "not enough history to judge deterioration"
+    return (PASS if len(sig) >= thr else FAIL), len(sig), thr, "; ".join(sig)
+
+
+RED_GATES = [
+    Gate("W1", "History", "years_total", ">=", "min_years", "Enough years to see a trend.", near=False, fmt="int"),
+    g_recent("W2", "screens.red_flags.max_years_since_latest_fy"),
+    Gate("W3", "Priced for perfection", "ev_sales", ">=", "min_ev_sales",
+         "Overvaluation is the first half of a short (Einhorn); high EV/sales names de-rate even without misses "
+         "(Druckenmiller).", needs_price=True, fn=_expensive, fmt="mult"),
+    Gate("W4", "Something is breaking", "red_flag_count", ">=", "min_signals",
+         "Einhorn: 'we've always insisted on over valuation combined with some kind of deterioration'. Signals: "
+         "growth fading to under half its 3-year rate, gross margin down 3 years running, operating margin down "
+         "5+ points, operating losses, 5%+ yearly dilution, shrinking revenue.", fn=_deteriorating, fmt="int",
+         near=False,
+         desc=lambda c, s: f"at least {cfg_get(c, 'screens.red_flags.min_signals')} deterioration signal(s)"),
+    g_price_size("W5", insight="Big enough to matter to a portfolio."),
+    g_liquidity("W6"),
+]
+RED_FLAGS = Screen(
+    "red_flags", "Red Flags (avoid list)",
+    "NOT a buy list: companies priced for perfection (high EV/sales) where something is already deteriorating. "
+    "Use it to check what you own, and to avoid crowded names. 'Flagged' = every rule matched.",
+    "David Einhorn (overvaluation + deterioration), Ricky Sandler, Eduardo Marques, Satya Nadella, Steve Cohen",
+    u_red_flags, RED_GATES,
+    {"expensive": [("ev_sales", True)],
+     "deterioration": [("red_flag_count", True), ("operating_margin_change_3y", False),
+                       ("gross_margin_change_3y", False)],
+     "dilution": [("share_count_cagr_3y", True)]},
+    {"expensive": 40, "deterioration": 45, "dilution": 15},
+    ["red_flag_notes", "ev_sales", "ev_ebit", "pe", "revenue_cagr_3y", "ytd_revenue_growth",
+     "operating_margin_change_3y", "gross_margin_change_3y", "share_count_cagr_3y", "market_cap_usd", "adv_usd"],
+    "Is the deterioration real or a one-off (an acquisition, a mix shift)? Short interest and squeeze risk "
+    "(Sandler sizes shorts to survive a 100% squeeze). Will AI deflate its service levels before earnings show "
+    "it (Marques)? Insider selling, accounting changes, customer losses to startups or LLMs (Bravo).")
+
+SECOND_BATCH = [OWNERS, REAL_ASSETS_SCREEN, ASSET_FLOOR, TROUGH_CASH, HIDDEN, RED_FLAGS]
+for _s in SECOND_BATCH:
+    _s.strict = True
+AVOID_SCREENS = {"red_flags"}
+
+
+FIRST_BATCH = [CORE, EMERGING, SPECIAL, FORTRESS, HC_COMMERCIAL, HC_CLINICAL, CYCLICALS]
+SCREENS = FIRST_BATCH + SECOND_BATCH
 BY_ID = {s.sid: s for s in SCREENS}
-VALUATION_GATES = {"E12", "C8"}                                    # failing only these -> PRICE
+VALUATION_GATES = {"E12", "C8", "O11", "R10", "T8", "X9"}           # failing only these -> PRICE
 # never 'failed 1 rule': tradeability (size / volume) and each screen's defining test (emerging = profitable and
 # growing fast, special = profitable and cheap, clinical = cash runway, little debt and priced near cash, fortress =
 # held up in recessions, healthcare = high returns, cyclicals = decent mid-cycle returns and not at peak margins)
 HARD_GATES = {"E3", "E4", "E10", "E11", "E13", "S2", "S4", "S5", "S6", "B1", "B2", "B3", "B4", "B5", "B6",
-              "F4", "F5", "H5", "C4", "C7"}
+              "F4", "F5", "H5", "C4", "C7",
+              # second batch: owners = insider stake; hard assets = little reinvestment + royalty-like margins;
+              # asset floor = below the floor and not burning it; trough cash = depressed margins; hidden earnings =
+              # the trigger and a profitable remaining business; red flags = expensive AND deteriorating
+              "O4", "O9", "O10", "R4", "R5", "R8", "R9", "K4", "K5", "K8", "K9", "T4", "T9", "T10",
+              "X3", "X4", "X10", "X11", "W3", "W4", "W5", "W6"}
+_ids = [g.gid for s_ in SCREENS for g in s_.gates]
+assert len(_ids) == len(set(_ids)), "gate ids must be unique across screens"
 for _s in SCREENS:
     for _g in _s.gates:
         _g.valuation = _g.gid in VALUATION_GATES

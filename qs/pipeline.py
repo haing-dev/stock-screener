@@ -3,17 +3,17 @@
 import os
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 
 import pandas as pd
 
 from . import __version__
 from .config import CACHE_DIR, OUTPUT_DIR
 from .extract import SUBSET_VERSION, CompanyData, _d, facts_subset, submissions_subset
-from .industry import CLINICAL_STAGE, CYCLICAL, HEALTHCARE, NEVER, in_ranges
+from .industry import CLINICAL_STAGE, CYCLICAL, HEALTHCARE, NEVER, REAL_ASSETS, in_ranges
 from .metrics import compute, post_event_dilution
 from .rules import concentration, flags_for
-from .screens import BY_ID, SCREENS, data_holds, screen_anyway
+from .screens import BY_ID, SCREENS, broad_ok, data_holds, screen_anyway
 from .sec import FACTS_URL, SUBMISSIONS_URL, TICKERS_URL, NotFound, cache_read, cache_write, filing_index_url
 
 
@@ -312,6 +312,9 @@ def build_ctx(u, info, m, rows, cd, cfg, fx, today):
                             "build-out? (Maverick)")
     if m.get("maturities_covered") is False:
         ctx["flags"].append("debt due within 2 years exceeds cash + 2 years of free cash flow (refinancing risk)")
+    from .screens import red_flag_signals
+    sig = red_flag_signals(ctx, cfg) if "red_flags" in cfg.get("screens", {}) else []
+    ctx["red_flag_count"], ctx["red_flag_notes"] = len(sig), "; ".join(sig)
     ctx["data_gap_candidates"] = cd.candidates
     ctx["latest_annual_form"] = la.get("form")
     ctx["latest_annual_filed"] = la.get("filingDate")
@@ -333,9 +336,10 @@ def industry_cycle(ctxs, series, cfg):
     for g, ciks in groups.items():
         years = {}
         for cik in ciks:
-            for fy, (rev, op, capex, da) in series[cik].items():
+            for fy, (rev, op, capex, da, *rest) in series[cik].items():
                 if rev and op is not None and rev > 0:
-                    y = years.setdefault(fy, {"rev": 0.0, "op": 0.0, "n": 0, "capex": 0.0, "da": 0.0, "n_cd": 0})
+                    y = years.setdefault(fy, {"rev": 0.0, "op": 0.0, "n": 0, "capex": 0.0, "da": 0.0, "n_cd": 0,
+                                              "ret": 0.0, "capex_r": 0.0})
                     rate = ctxs[cik].get("fx_rate") or 0
                     if not rate:
                         continue
@@ -346,6 +350,11 @@ def industry_cycle(ctxs, series, cfg):
                         y["capex"] += capex * rate
                         y["da"] += abs(da) * rate
                         y["n_cd"] += 1
+                    if capex is not None and rest:
+                        # buybacks + dividends vs capex (Einhorn: "higher prices aren't fueling new capacity
+                        # instead they're fueling buybacks")
+                        y["ret"] += rest[0] * rate
+                        y["capex_r"] += capex * rate
         if not years:
             continue
         max_n = max(v["n"] for v in years.values())
@@ -364,8 +373,82 @@ def industry_cycle(ctxs, series, cfg):
                   "industry_margin_latest": last, "industry_margin_median_10y": sorted(margins)[len(margins) // 2],
                   "industry_margin_percentile": pct, "industry_capex_to_da": (cap / da) if da else None,
                   "industry_trough_zone": pct <= cfg["screens"]["cyclicals"]["industry_trough_percentile"],
+                  "industry_returns_to_capex": (sum(years[fy]["ret"] for fy in l3) / sum(years[fy]["capex_r"] for fy in l3)
+                                                if sum(years[fy]["capex_r"] for fy in l3) > 0 else None),
                   "years_used": f"{good[0]}-{good[-1]}"}
     return out
+
+
+# ------------------------------------------------------------------ past prices (Owner-Operators, Hidden Earnings)
+def enrich_price_history(ctxs, results, prices, cfg, today, log=print):
+    """Inputs that need past prices or split history:
+      * recent_splits: every split of the last ~13 months (Massive's split list). value() uses it to put a share
+        count reported before a split on today's basis, and the 12-month high is split-adjusted with it.
+      * high_12m: highest month-end close of the last 12 months (Massive: 12 all-stocks requests). Without Massive
+        (or its split list) Twelve Data's 52-week high is used instead.
+      * pf_close_raw / pf_close: the close on the date of the public float each company reports (last day of its
+        second fiscal quarter), to turn the float in dollars into shares and so insider ownership. Massive gives the
+        close as printed that day (matched with the cover-page share count from the same time, so a later split
+        can't distort it); Twelve Data (local runs, capped) gives a split-adjusted close, matched with today's
+        share count. Only for companies the Owner-Operators screen hasn't already ruled out."""
+    if prices is None or not prices.available():
+        return
+    from .prices import td_symbol
+    pc = cfg.get("price_history") or {}
+    massive = hasattr(prices, "m") and prices.m.available()
+    splits = prices.splits((today - timedelta(days=760)).isoformat()) if massive else None
+    for ctx in ctxs.values():
+        for k in ("high_12m", "high_12m_date", "high_12m_asof", "recent_splits", "splits_unknown"):
+            ctx.pop(k, None)
+        if massive:
+            if splits is None:
+                ctx["splits_unknown"] = True
+            else:
+                from .massive import m_symbol
+                ctx["recent_splits"] = splits.get(m_symbol(ctx["ticker"])) or []
+    if massive and splits is not None:
+        tick = [ctx["ticker"] for ctx in ctxs.values() if not ctx.get("events_only")]
+        highs = prices.month_end_highs(tick, months=int(pc.get("months_for_high", 12)), splits=splits)
+        for ctx in ctxs.values():
+            h = highs.get(ctx["ticker"])
+            if h:
+                ctx["high_12m"], ctx["high_12m_date"] = h
+                ctx["high_12m_asof"] = today.isoformat()
+    elif massive:
+        log("  WARNING: Massive's split list is unavailable - 12-month highs skipped (a split could look like a fall)")
+    own = results.get("owners") or {}
+    # companies failing at most one financial rule: the rest fail the screen whatever their insider stake, and a
+    # 'missed 1 rule' entry must have its insider share measured. Companies failing nothing come first.
+    cands = [c for c, r in own.items() if len(r.get("failed") or []) <= 1 and ctxs[c].get("public_float")
+             and ctxs[c].get("public_float_date")]
+    if not cands:
+        return
+    cap = None if massive else int(pc.get("float_price_lookups_without_massive", 120))
+    cands.sort(key=lambda c: (len(own[c].get("failed") or []), ctxs[c]["public_float_date"],
+                              -(ctxs[c].get("latest_revenue_usd") or 0)))
+    got = tried = 0
+    for c in cands:
+        ctx = ctxs[c]
+        for k in ("pf_close", "pf_close_raw", "pf_close_note"):
+            ctx.pop(k, None)
+        if cap is not None and tried >= cap:
+            ctx["pf_close_note"] = f"price on the float date not looked up (limit of {cap} without Massive)"
+            continue
+        tried += 1
+        sym = td_symbol(ctx["ticker"])
+        if massive:
+            close = prices.close_on(sym, ctx["public_float_date"], adjusted=False)
+            if close:
+                ctx["pf_close_raw"] = close
+        else:
+            close = prices.close_on(sym, ctx["public_float_date"])
+            if close:
+                ctx["pf_close"] = close
+        if close:
+            got += 1
+        else:
+            ctx["pf_close_note"] = f"no price found for {ctx['public_float_date']} (the public float date)"
+    log(f"  Price on the public-float date found for {got} of {len(cands)} Owner-Operator candidates")
 
 
 # ------------------------------------------------------------------ main
@@ -404,7 +487,7 @@ def run_screens(client, cfg, tickers=None, out_name=None, today=None, screens=No
         else:
             core_ex = None if screen_anyway(info, cfg) else sic_match(cfg["exclude_sic"], info.get("sic"))
             needed = (not core_ex) or in_ranges(info.get("sic"), HEALTHCARE) or in_ranges(info.get("sic"), CYCLICAL) \
-                or bool(ev)
+                or in_ranges(info.get("sic"), REAL_ASSETS) or bool(ev) or broad_ok(info, cfg)
             if needed:
                 rec["stage"] = "pending"
                 to_fetch.append(c)
@@ -453,7 +536,8 @@ def run_screens(client, cfg, tickers=None, out_name=None, today=None, screens=No
                 if raw3 is not None and (m["share_count_cagr_3y"] is None or abs(raw3 - m["share_count_cagr_3y"]) > 0.02):
                     cd.flags.add(f"share count {raw3:+.0%}/yr including pre-listing years (preferred converting at the "
                                  f"IPO / spin) - dilution measured after the listing instead")
-            compact = [{k: r[k] for k in ("fy", "revenue", "operating_income", "capex", "da", "ebitda", "roic")}
+            compact = [{k: r[k] for k in ("fy", "revenue", "operating_income", "capex", "da", "ebitda", "roic",
+                                          "buybacks", "dividends")}
                        for r in rows]
             raw[c] = (m, compact, sorted(cd.flags), cd.candidates)
             rec["stage"] = "screened"
@@ -494,7 +578,8 @@ def run_screens(client, cfg, tickers=None, out_name=None, today=None, screens=No
             ctx["event_filing_url"] = filing_index_url(c, first["accn"]) if first.get("accn") else None
         ctxs[c] = ctx
         if ctx.get("cycle_group"):
-            series[c] = {r["fy"]: (r["revenue"], r["operating_income"], r["capex"], r["da"]) for r in compact}
+            series[c] = {r["fy"]: (r["revenue"], r["operating_income"], r["capex"], r["da"],
+                                   abs(r.get("buybacks") or 0) + abs(r.get("dividends") or 0)) for r in compact}
 
     # event companies without usable financials yet (new spin-offs / IPOs): keep them so the Special
     # Situations screen lists them as CHECK ('no annual report yet') instead of silently dropping them
@@ -519,7 +604,7 @@ def run_screens(client, cfg, tickers=None, out_name=None, today=None, screens=No
         g = ctx.get("cycle_group")
         if g and g in cyc:
             for k in ("industry_margin_percentile", "industry_capex_to_da", "industry_trough_zone",
-                      "industry_margin_latest"):
+                      "industry_margin_latest", "industry_returns_to_capex"):
                 ctx[k] = cyc[g].get(k)
 
     # ---- financial-statement rules first; collect who needs a price
@@ -538,7 +623,9 @@ def run_screens(client, cfg, tickers=None, out_name=None, today=None, screens=No
             r["universe_note"] = why
             results[s.sid][c] = r
             pending = any(v[0] == "PENDING" for v in r["gates"].values())
-            if pending and not r["failed"]:
+            # strict screens (second batch) also price their one-rule misses: without a price their defining rules
+            # stay unchecked and a near miss couldn't be shown
+            if pending and (not r["failed"] or (s.strict and len(r["failed"]) <= 1)):
                 to_price[c] = min(to_price.get(c, 9), 0)   # a price decides the result: fetch first
             pa = cfg.get("price_also") or {}
             if not s.needs_price and r["class"] in ("PASS", "CHECK") and pa.get(f"{s.sid}_pass"):
@@ -558,6 +645,7 @@ def run_screens(client, cfg, tickers=None, out_name=None, today=None, screens=No
             quotes = prices.quotes(items)
         else:
             quotes = {t: {"ok": False, "reason": "prices not requested"} for t, _ in items}
+    enrich_price_history(ctxs, results, prices, cfg, today)
     from .valuation import value
     from .prices import td_symbol
     foreign = [c for c in order if ((subs.get(c) or {}).get("latest_annual") or {}).get("form", "").startswith("20-F")]

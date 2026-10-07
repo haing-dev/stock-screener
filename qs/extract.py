@@ -18,7 +18,7 @@ import re
 from collections import Counter, defaultdict
 from datetime import date, timedelta
 
-SUBSET_VERSION = 4
+SUBSET_VERSION = 5   # 5: discontinued operations (Hidden Earnings screen)
 ANNUAL_FORMS = {"10-K", "10-K/A", "10-KT", "10-KT/A", "20-F", "20-F/A", "40-F", "40-F/A"}
 QUARTERLY_FORMS = {"10-Q", "10-Q/A"}
 
@@ -108,6 +108,17 @@ CONCEPTS = {
         (G, "InterestPaidNet"), (G, "InterestPaid"), (I, "InterestPaidClassifiedAsOperatingActivities"),
         (I, "InterestPaidClassifiedAsFinancingActivities")]},
     "reorganization_items": {"kind": "duration", "agg": "first", "tags": [(G, "ReorganizationItems")]},
+    # discontinued operations (a unit sold or spun off): marks spin-off parents and divestitures (Hidden Earnings)
+    "disc_ops": {"kind": "duration", "agg": "first", "tags": [
+        (G, "IncomeLossFromDiscontinuedOperationsNetOfTax"),
+        (G, "IncomeLossFromDiscontinuedOperationsNetOfTaxAttributableToReportingEntity"),
+        (G, "DiscontinuedOperationIncomeLossFromDiscontinuedOperationNetOfTax"),
+        (G, "IncomeLossFromDiscontinuedOperationsNetOfTaxIncludingPortionAttributableToNoncontrollingInterest"),
+        (G, "DiscontinuedOperationIncomeLossFromDiscontinuedOperationBeforeIncomeTax"),
+        (G, "IncomeLossFromDiscontinuedOperationsBeforeIncomeTax"),
+        (I, "ProfitLossFromDiscontinuedOperations")]},
+    "disc_ops_revenue": {"kind": "duration", "agg": "first", "tags": [
+        (G, "DisposalGroupIncludingDiscontinuedOperationRevenue"), (I, "RevenueFromDiscontinuedOperations")]},
     "diluted_shares": {"kind": "duration", "agg": "first", "unit": "shares", "tags": [
         (G, "WeightedAverageNumberOfDilutedSharesOutstanding"),
         (G, "WeightedAverageNumberOfSharesOutstandingBasic"),
@@ -195,7 +206,7 @@ DEI_TAGS = {"EntityCommonStockSharesOutstanding": "shares", "EntityPublicFloat":
 TTM_CONCEPTS = ("revenue", "gross_profit", "cost_of_revenue", "sga", "operating_income", "pretax_income",
                 "income_tax", "net_income", "ocf", "capex_ppe", "capex_software", "da", "interest_expense",
                 "interest_paid", "nonoperating_income", "reorganization_items", "diluted_shares",
-                "costs_and_expenses", "eps_diluted")
+                "costs_and_expenses", "eps_diluted", "disc_ops", "disc_ops_revenue")
 BS_CONCEPTS = tuple(k for k, v in CONCEPTS.items() if v["kind"] == "instant")
 QUARTERLY_KEEP = set(TTM_CONCEPTS) | set(BS_CONCEPTS)
 QUARTERLY_MAX_AGE_DAYS = 3 * 366
@@ -870,6 +881,32 @@ class CompanyData:
         return {"val": val, "end": (e.get("end") or "")[:10], "unit": unit, "accn": e.get("accn"),
                 "form": e.get("form"), "classes": len(same)}
 
+    def dei_shares_near(self, day, max_days=150):
+        """Cover-page shares outstanding from the filing whose cover date is closest to `day` (e.g. the public-float
+        date), summed over share classes reported in that filing; None if none within max_days."""
+        units = (self.facts.get(D) or {}).get("EntityCommonStockSharesOutstanding") or {}
+        try:
+            target = _d(day)
+        except (TypeError, ValueError):
+            return None
+        best = None
+        for unit, ents in units.items():
+            for e in ents:
+                try:
+                    gap = abs((_d(e.get("end") or "") - target).days)
+                except ValueError:
+                    continue
+                if gap <= max_days and (best is None or gap < best[0]):
+                    best = (gap, e, unit)
+        if best is None:
+            return None
+        _, e, unit = best
+        # one entry per share class in the same filing and date (same summing as dei_latest)
+        same = {float(x["val"]) for x in units[unit]
+                if (x.get("end") or "")[:10] == (e.get("end") or "")[:10] and x.get("accn") == e.get("accn")
+                and x.get("val") is not None}
+        return {"val": sum(same), "end": (e.get("end") or "")[:10]}
+
     def latest_diluted_shares(self):
         """Weighted diluted shares from the latest period (10-Q quarter/YTD or fiscal year)."""
         best = None
@@ -885,4 +922,4 @@ class CompanyData:
             return None
         _, e, tag = best
         return Point("diluted_shares", float(e["val"]), e["end"][:10], f"weighted diluted ({e.get('form')})", tag,
-                     [e.get("accn")])
+                     [e.get("accn")], {"filed": (e.get("filed") or "")[:10]})

@@ -136,7 +136,7 @@ e = ctxs[T["EMRG"]]
 check("market cap = price x cover-page shares", close(e["market_cap_usd"], 18.0 * 60e6, 1))
 check("EV = market cap + debt - cash", close(e["ev_usd"], e["market_cap_usd"] + e["bs_debt"] - e["bs_cash_and_sti"], 1))
 check("EV/EBITDA uses TTM EBITDA", close(e["ev_ebitda"], e["ev_usd"] / e["ttm_ebitda"], 1e-9))
-bad = value(dict(e), {"all_tickers": ["A", "B"], "latest_annual": {"form": "10-K"}},
+bad = value(dict(e, pf_close=None), {"all_tickers": ["A", "B"], "latest_annual": {"form": "10-K"}},
             {"ok": True, "price": 18.0 * 1500, "price_date": "2025-06-27"}, 1.0, TODAY)
 check("market cap far from the reported public float is held for checking (share-class mix-up)",
       not bad["val_ok"] and "public float" in bad["val_issue"])
@@ -154,6 +154,13 @@ expect = {
     "hc_commercial": {"PHRM": "PASS", "BIOX": "FAIL", "GOOD": "outside"},
     "hc_clinical": {"BIOX": "PASS", "BURN": "FAIL", "PHRM": "outside"},
     "cyclicals": {"STEL": "PASS", "STL2": "ONE", "PEAK": "FAIL", "GOOD": "outside"},
+    # second batch
+    "owners": {"OWNR": "PASS", "GOOD": "FAIL", "STEL": "outside", "BANK": "outside"},
+    "real_assets": {"ROYL": "PASS", "OILP": "FAIL", "GOOD": "outside"},
+    "asset_floor": {"CASH": "PASS", "GOOD": "FAIL", "BANK": "outside"},
+    "trough_cash": {"TRGH": "PASS", "PEAK": "FAIL", "GOOD": "outside"},
+    "hidden": {"SPUN": "PASS", "DROP": "PASS", "GOOD": "FAIL", "BANK": "outside"},
+    "red_flags": {"HYPE": "PASS", "EMRG": "FAIL", "GOOD": "FAIL", "BIOX": "outside"},
 }
 for sid, exp in expect.items():
     for t, want in exp.items():
@@ -175,12 +182,39 @@ check("old-history company with an S-1 is not called an IPO", "IPO" not in (ctxs
 check("steel industry signal computed from 3 companies",
       ctxs[T["STEL"]].get("industry_margin_percentile") is not None)
 check("robustness flag computed for passes", results["core"][T["GOOD"]].get("robust") in (True, False))
+o = ctxs[T["OWNR"]]
+check("owners: insider share = 1 - public float / value on the float date (45%)",
+      close(o.get("insider_share"), 0.45, 1e-6), o.get("insider_share"))
+_is = ctxs[T["ISSU"]]
+check("owners: insider share uses the shares outstanding at the float date (6%, not 25% after an issue)",
+      close(_is.get("insider_share"), 1 - 75 / 80, 1e-6) and results["owners"][T["ISSU"]]["class"] == "FAIL",
+      (_is.get("insider_share"), _is.get("insider_basis")))
+check("owners: a 10% insider stake fails the defining rule", results["owners"][T["GOOD"]]["failed"][:1] == ["O4"]
+      or "O4" in results["owners"][T["GOOD"]]["failed"], results["owners"][T["GOOD"]]["failed"])
+check("hard assets: a capex-heavy producer fails 'little reinvestment'",
+      "R4" in results["real_assets"][T["OILP"]]["failed"])
+check("asset floor: market cap below net cash", ctxs[T["CASH"]]["mcap_to_net_cash"] < 1.0,
+      ctxs[T["CASH"]]["mcap_to_net_cash"])
+check("trough cash: PEAK fails 'margins below normal'", "T4" in results["trough_cash"][T["PEAK"]]["failed"])
+check("trough cash: 5-year average FCF yield computed", ctxs[T["TRGH"]].get("fcf_yield_5y", 0) >= 0.10,
+      ctxs[T["TRGH"]].get("fcf_yield_5y"))
+check("hidden: discontinued operations mark a spin-off parent", ctxs[T["SPUN"]]["disc_ops_material"] is True
+      and "discontinued" in results["hidden"][T["SPUN"]]["gates"]["X3"][3], ctxs[T["SPUN"]].get("disc_ops_note"))
+check("hidden: 50% below the 12-month high triggers", close(ctxs[T["DROP"]]["drawdown_12m"], -0.5, 1e-6),
+      ctxs[T["DROP"]].get("drawdown_12m"))
+check("hidden: ordinary 23% dip doesn't", "X3" in results["hidden"][T["GOOD"]]["failed"])
+check("red flags: growth fading under half its 3-year rate is named",
+      "growth fading" in ctxs[T["HYPE"]]["red_flag_notes"], ctxs[T["HYPE"]]["red_flag_notes"])
+check("red flags: an expensive company with nothing breaking isn't flagged",
+      results["red_flags"][T["GOOD"]]["failed"] == ["W4"], results["red_flags"][T["GOOD"]]["failed"])
 
 print("\nOutputs")
 import openpyxl  # noqa: E402
 wb = openpyxl.load_workbook(out, read_only=True)
 need = ["Read_Me", "Overlap", "1 Core", "1 Core - watch", "2 Emerging", "3 Special sits", "4 Fortress",
-        "5a HC commercial", "5b HC clinical", "6 Cyclicals", "Events", "Industry_Cycle", "Data_Gaps",
+        "5a HC commercial", "5b HC clinical", "6 Cyclicals", "7 Owner-operators", "8 Hard assets", "9 Asset floor",
+        "10 Trough cash", "11 Hidden earnings", "12 Red flags (avoid)", "12 Red flags (avoid) - watch",
+        "Events", "Industry_Cycle", "Data_Gaps",
         "All_Companies", "Annual_Data", "Rules", "Industry_Groups"]
 missing = [s for s in need if s not in wb.sheetnames]
 check("workbook has every sheet", not missing, ", ".join(missing))
@@ -534,6 +568,41 @@ _ps2 = PriceSource(Massive("", _os.path.join(TMP, "pcache2"), fixtures_dir=_fx, 
                            log=lambda *a: None), None, log=lambda *a: None)
 check("Massive: a price older than 7 days is refused", not _ps2.quote("ABC")["ok"], str(_ps2.quote("ABC")))
 
+# month-end closes for the 12-month high (one all-stocks file per month); 2026-08-31 was a Monday
+for _me, _c in (("2026-09-30", 11.0), ("2026-08-31", 14.0), ("2026-07-31", 12.0), ("2026-06-30", 9.0)):
+    _js.dump({"status": "OK", "results": [{"T": "ABC", "o": _c, "c": _c, "v": 1.0, "vw": _c}]}, open(_os.path.join(
+        _fx, "massive", f"v2_aggs_grouped_locale_us_market_stocks_{_me}.json"), "w"))
+from qs.valuation import value as _value  # noqa: E402
+_hi = _ps.month_end_highs(["ABC", "NOPE"], months=12, splits={})
+check("Massive: 12-month high = highest month-end close (14.0 at end of August)",
+      _hi.get("ABC") == (14.0, "2026-08-31") and "NOPE" not in _hi, str(_hi))
+_hi2 = _ps.month_end_highs(["ABC"], months=12, splits={"ABC": [("2026-09-15", 1.0, 2.0)]})
+check("Massive: a 2-for-1 split halves earlier closes - a split never looks like a fall",
+      _hi2.get("ABC") == (11.0, "2026-09-30"), str(_hi2))
+check("Massive: no split list -> no 12-month high from Massive (Twelve Data's 52-week high instead)",
+      _ps.month_end_highs(["ABC"], months=12, splits=None) == {})
+_vs = _value({"currency": "USD", "dei_shares": 1e6, "dei_shares_date": "2026-08-01", "bs_cash_and_sti": 0,
+              "public_float": 6e6, "public_float_date": "2026-06-30", "pf_close_raw": 20.0,
+              "dei_shares_near_float": 0.5e6, "dei_shares_near_float_date": "2026-07-25",
+              "recent_splits": [("2026-09-15", 1.0, 2.0)]},
+             {"all_tickers": ["ABC"], "name": "ABC Holdings"}, _q["ABC"], 1.0, _today)
+check("after a 2-for-1 split: share count put on today's basis, insider share measured on the float date's basis",
+      _vs["shares_used"] == 2e6 and abs(_vs["insider_share"] - 0.4) < 1e-9, str(_vs))
+_v = _value({"currency": "USD", "dei_shares": 1e6, "dei_shares_date": "2026-08-01", "high_12m": 14.0,
+             "public_float": 6e6, "public_float_date": "2026-06-30", "pf_close": 10.0, "bs_cash_and_sti": 0},
+            {"all_tickers": ["ABC"], "name": "ABC Holdings"}, _q["ABC"], 1.0, _today)
+check("drawdown from the 12-month high, and insider share from the float-date price",
+      abs(_v["drawdown_12m"] - (10.2 / 14.0 - 1)) < 1e-9 and abs(_v["insider_share"] - 0.4) < 1e-9, str(_v))
+_m2 = Massive("", _os.path.join(TMP, "pcache3"), fixtures_dir=_fx, today=_today, log=lambda *a: None)
+_m2.day("2026-08-31", folder="hist")
+_path = _os.path.join(TMP, "pcache3", "prices", "massive", "hist", "2026-08-31.json.gz")
+_old = _js.load(_gz.open(_path, "rt"))
+_old["fetched"] = "2025-01-01"
+_old["bars"]["ABC"][1] = 999.0                     # as if fetched before a split
+_js.dump(_old, _gz.open(_path, "wt"))
+check("past closes older than the refresh window are downloaded again (split-adjusted today)",
+      _m2.close_on("ABC", "2026-08-31", fresh_days=12) == 14.0 and _m2.close_on("ABC", "2026-08-31") == 14.0)
+
 _kp = _os.path.join(TMP, "keyinfo.json")
 _s1 = P.Sealer("correct horse battery", _kp)
 _blob = _s1.seal({"x": [1, 2.5, float("nan")]})
@@ -564,6 +633,25 @@ check("peers: same 4-digit industry when 6+ companies; median uses verified, pos
       _assign["1"] == "4:7372" and _groups["4:7372"]["med"]["pe"] == 13.5, str(_groups.get("4:7372")))
 check("peers: a company in a thin industry falls back to the broader 3-digit group",
       _assign["7"] == "3:737" and "SIC 737x" in _groups["3:737"]["label"], str(_assign.get("7")))
+
+from qs.screens import _floor, red_flag_signals, _hidden_trigger  # noqa: E402
+check("asset floor: no debt tag doesn't block the tangible-book test",
+      _floor({"mcap_to_net_cash": 0.7, "price_to_tangible_book": 0.6, "bs_debt_found": False}, cfg,
+             "asset_floor")[0] == "PASS")
+check("asset floor: below cash with no debt tag (and above tangible book) -> check by hand",
+      _floor({"mcap_to_net_cash": 0.7, "price_to_tangible_book": 1.5, "bs_debt_found": False}, cfg,
+             "asset_floor")[0] == "NO DATA")
+check("red flags: a loss year and its margin drop count as one signal",
+      len(red_flag_signals({"ttm_operating_income": -5, "operating_margin_change_3y": -0.2}, cfg)) == 1)
+check("hidden: a -50% 'fall' when the split list was unavailable is held, not passed",
+      _hidden_trigger({"drawdown_12m": -0.5, "price": 10, "splits_unknown": True, "high_12m_used": 20}, cfg,
+                      "hidden")[0] == "NO DATA")
+_rf = P.screen_payload(BY_ID["red_flags"], results["red_flags"], ctxs, cfg)
+_ow = P.screen_payload(BY_ID["owners"], results["owners"], ctxs, cfg)
+check("portal: Red Flags is marked as an avoid list; other screens aren't", _rf["avoid"] and not _ow["avoid"])
+check("portal: plain-English rule for insider ownership",
+      any(g["rule"] == "at least 20% owned by insiders" for g in _ow["gates"]), [g["rule"] for g in _ow["gates"]][:4])
+check("portal: all 13 screens, unique gate ids", len(BY_ID) == 13)
 
 check("summaries: Claude's JSON answer is parsed even with text around it",
       SU._parse('Here you go:\n{"12": "Makes widgets.", "13": ""}') == {"12": "Makes widgets."})

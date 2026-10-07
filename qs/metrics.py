@@ -686,6 +686,79 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
     else:
         m["cash_runway_years"] = liquid / burn
 
+    # ---------- hard floors (Watsa): net cash and tangible book at the latest balance sheet
+    m["net_cash"] = None
+    if m["liquid_assets"] is not None:
+        m["net_cash"] = m["liquid_assets"] - (m["bs_debt"] or 0) - (m["bs_preferred"] or 0) - \
+            (m["bs_minority_interest"] or 0)
+    m["tangible_book"] = None
+    if m["bs_equity"] is not None:
+        # a 10-Q that doesn't tag goodwill / intangibles: use the latest annual figure rather than zero
+        gw_b = bs("goodwill")
+        gw_b = gw_b if gw_b is not None else (lr["goodwill"] or 0)
+        in_b = bs("intangibles")
+        in_b = in_b if in_b is not None else (lr["intangibles"] or 0)
+        eq_pt = cd.bs_at("equity", bs_date)
+        nci = (m["bs_minority_interest"] or 0) if (eq_pt is not None and eq_pt.tag in (
+            "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest", "Equity")) else 0
+        m["tangible_book"] = m["bs_equity"] - nci - gw_b - in_b - (m["bs_preferred"] or 0)
+
+    # ---------- inputs for the screens from the second batch of interviews
+    # (Owner-Operators, Hard Assets & Royalties, Asset-Floor Value, Trough Cyclical Cash, Hidden Earnings, Red Flags)
+    fcf5 = col("fcf", l5)
+    m["fcf_avg_5y"] = _avg(fcf5) if len(fcf5) >= 4 else None          # cycle-average free cash flow (Einhorn)
+    cap5 = col("capex", l5)
+    ret5 = sum(abs(x) for x in col("buybacks", l5)) + sum(abs(x) for x in col("dividends", l5))
+    m["returns_to_capex_5y"] = (ret5 / sum(cap5)) if (cap5 and sum(cap5) > 0) else None
+    ebits_all = col("operating_income")
+    m["positive_ebit_share"] = (sum(1 for x in ebits_all if x > 0) / len(ebits_all)) if len(ebits_all) >= 3 else None
+    # gross margin falling three years in a row (Nadella: AI adds a real marginal cost to software)
+    l4 = [y for y in range(latest - 3, latest + 1)]
+    gm4 = [by_all[y]["gross_margin"] if y in by_all else None for y in l4]
+    if None not in gm4:
+        m["gross_margin_change_3y"] = gm4[-1] - gm4[0]
+        m["gross_margin_down_3y"] = all(b < a for a, b in zip(gm4, gm4[1:])) and gm4[-1] - gm4[0] <= -0.02
+    else:
+        m["gross_margin_change_3y"], m["gross_margin_down_3y"] = None, None
+    # discontinued operations in the last three fiscal years or the latest twelve months (a unit sold or spun off)
+    m["disc_ops_material"], m["disc_ops_note"] = False, None
+    floor_share = float(cfg.get("disc_ops_min_share_of_revenue", 0.01))
+    dsc = cd.series.get("disc_ops") or {}
+    dsr = cd.series.get("disc_ops_revenue") or {}
+    found = []
+    for y in range(latest - 2, latest + 1):
+        rev_y = (by_all.get(y) or {}).get("revenue")
+        for s_, what in ((dsc, "income"), (dsr, "revenue")):
+            f = s_.get(y)
+            if f is not None and f.val and rev_y and abs(f.val) >= floor_share * abs(rev_y):
+                found.append(f"FY{y} discontinued-operations {what} {f.val / 1e6:,.0f}M")
+                break
+    # 10-Q year-to-date figures after the latest fiscal year (a spin-off or sale happening now)
+    fy_end_latest = cd.label_end.get(latest) or ""
+    rev_ref = abs(lr["revenue"] or 0)
+    for concept, what in (("disc_ops", "income"), ("disc_ops_revenue", "revenue")):
+        best = None
+        for tax, tag in cd._tags(concept):
+            for (qs_, qe), e in (cd._q_durations(tax, tag, "money") or {}).items():
+                try:
+                    val = float(e["val"])
+                except (TypeError, ValueError, KeyError):
+                    continue
+                if qe <= fy_end_latest or not val or qs_ < fy_end_latest:
+                    continue
+                dur = (_d(qe) - _d(qs_)).days
+                if best is None or (qe, dur) > (best[0], best[1]):
+                    best = (qe, dur, val)
+        if best and rev_ref:
+            qe, days, val = best
+            days = max(days, 1)
+            if abs(val) >= floor_share * rev_ref * days / 365.0:
+                found.append(f"discontinued-operations {what} {val / 1e6:,.0f}M in the {days // 30} months to {qe}")
+                break
+    if found:
+        m["disc_ops_material"] = True
+        m["disc_ops_note"] = "; ".join(found[:2])
+
     # ---------- shares for market cap
     dei = cd.dei_latest("EntityCommonStockSharesOutstanding")
     m["dei_shares"] = dei["val"] if dei else None
@@ -693,13 +766,20 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
     ds = cd.latest_diluted_shares()
     m["diluted_shares_latest"] = ds.val if ds else None
     m["diluted_shares_date"] = ds.end if ds else None
+    m["diluted_shares_filed"] = (ds.extra.get("filed") or None) if ds else None
     fl = cd.dei_latest("EntityPublicFloat")
     m["public_float"] = fl["val"] if fl and fl["unit"] == "USD" else None
     m["public_float_date"] = fl["end"] if fl else None
+    # share count around the float date, so insider share isn't distorted by shares issued or bought back since
+    near = cd.dei_shares_near(m["public_float_date"]) if m["public_float_date"] else None
+    m["dei_shares_near_float"] = near["val"] if near else None
+    m["dei_shares_near_float_date"] = near["end"] if near else None
     # share count implied by the income statement (multi-class companies often tag share counts only per class)
     eps, ni_fy = cd.get("eps_diluted", latest), lr["net_income"]
     m["eps_shares"] = (ni_fy / eps) if (eps and ni_fy and eps > 0.01 and ni_fy > 0) else None
     m["eps_shares_date"] = cd.label_end.get(latest) if m["eps_shares"] else None
+    _ef = cd.fact("eps_diluted", latest)
+    m["eps_shares_filed"] = ((_ef.filed or "")[:10] or None) if (_ef is not None and m["eps_shares"]) else None
 
     # ---------- quality warnings (Core / Fortress / Healthcare / Emerging only - a trough is the point in Cyclicals)
     med_om, t_om = m["operating_margin_median"], m["ttm_operating_margin"]

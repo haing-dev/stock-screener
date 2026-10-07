@@ -60,6 +60,18 @@ def value(m, info, quote, fx, today=None, td=None, listing_type=None):
     if not shares:
         v["val_issue"] = "no share count in SEC data"
         return v
+    # a split after the date of that share count (before the next filing) would put the market cap off by the
+    # split ratio: put the count on today's basis with the split list (Massive)
+    # (statements filed after a split already restate share counts retroactively, so the FILING date counts for
+    # weighted and EPS-implied shares; the cover-page count is dated at the cover date, close to filing)
+    sdate = {"cover": dei_date, "weighted": m.get("diluted_shares_filed"),
+             "net": m.get("eps_shares_filed")}.get(src.split(" ")[0])
+    if m.get("recent_splits") and sdate:
+        from .massive import split_factor
+        f = split_factor(m["recent_splits"], after=sdate, until=quote.get("price_date"))
+        if f != 1.0:
+            shares = shares / f
+            src += f" x {1 / f:g} for a split since then"
     v["shares_used"], v["shares_source"] = shares, src
     mcap = quote["price"] * shares
     v["market_cap_usd"] = mcap
@@ -81,13 +93,14 @@ def value(m, info, quote, fx, today=None, td=None, listing_type=None):
             # ownership (Ubiquiti) - or a wrong share count. Decide with the price ON the float date.
             ok = None
             pf_date = m.get("public_float_date")
-            if td is not None and pf_date and quote.get("symbol"):
+            close = m.get("pf_close")
+            if not close and td is not None and pf_date and quote.get("symbol"):
                 close = td.close_on(quote["symbol"], pf_date)
-                if close:
-                    float_shares = pf / close
-                    ok = shares >= 0.7 * float_shares and float_shares >= 0.02 * shares
-                    v["float_check"] = (f"public float ${pf / 1e6:,.0f}M at ${close:.2f} on {pf_date} = "
-                                        f"{float_shares / 1e6:,.1f}M shares vs {shares / 1e6:,.1f}M shares used")
+            if close:
+                float_shares = pf / close
+                ok = shares >= 0.7 * float_shares and float_shares >= 0.02 * shares
+                v["float_check"] = (f"public float ${pf / 1e6:,.0f}M at ${close:.2f} on {pf_date} = "
+                                    f"{float_shares / 1e6:,.1f}M shares vs {shares / 1e6:,.1f}M shares used")
             if ok is None:
                 issues.append(f"market cap is {r:.1f}x the public float the company reported - share count or "
                               f"share class mismatch likely")
@@ -123,6 +136,55 @@ def value(m, info, quote, fx, today=None, td=None, listing_type=None):
         v["ev_incl_lt_investments_usd"] = ev_cash
         v["ev_to_liquid_assets"] = ev_cash / (liquid * fx)
         v["mcap_to_liquid_assets"] = mcap / (liquid * fx)
+    # ---- second-batch screens
+    tb, nc, f5 = m.get("tangible_book"), m.get("net_cash"), m.get("fcf_avg_5y")
+    v["price_to_tangible_book"] = (mcap / (tb * fx)) if (tb and tb > 0) else None
+    v["mcap_to_net_cash"] = (mcap / (nc * fx)) if (nc and nc > 0) else None
+    v["fcf_yield_5y"] = (f5 * fx / mcap) if (f5 is not None and mcap > 0) else None
+    # insider (affiliate) ownership = 1 - public float / market value, both on the float date: the float the company
+    # reported divided by the close on that date gives the non-affiliate shares (Stahl's owner-operators)
+    raw, near = m.get("pf_close_raw"), m.get("dei_shares_near_float")
+    adj = m.get("pf_close")
+    if pf and pf > 0 and raw and near:
+        # both as of the float date: the close as printed that day and the cover-page share count of that time
+        nd = m.get("dei_shares_near_float_date")
+        if m.get("recent_splits"):
+            # a split between the float date and that cover date: back to the float date's basis
+            from .massive import split_factor
+            lo, hi = sorted([str(m.get("public_float_date")), str(nd)])
+            f = split_factor(m["recent_splits"], after=lo, until=hi)
+            near = near * f if str(nd) >= str(m.get("public_float_date")) else near / f
+        float_shares, shares_then = pf / raw, near
+        basis = f"{near / 1e6:,.1f}M shares outstanding near {m.get('public_float_date')} (cover page of {nd})"
+    elif pf and pf > 0 and adj and shares:
+        # Twelve Data: split-adjusted close (today's basis). The cover-page count near the float date is used unless
+        # the change since looks like a split (then today's count, already on the new basis)
+        r = (shares / near) if near else None
+        split_like = r is not None and any(abs(r * k - 1) < 0.04 or abs(r / k - 1) < 0.04 for k in range(2, 11))
+        if near and not split_like:
+            float_shares, shares_then = pf / adj, near
+            basis = f"{near / 1e6:,.1f}M shares on the {m.get('dei_shares_near_float_date')} cover page"
+        else:
+            float_shares, shares_then = pf / adj, shares
+            basis = "today's share count"
+    else:
+        float_shares = shares_then = basis = None
+        if pf and raw and not near:
+            v["insider_issue"] = "no cover-page share count near the public-float date"
+    if float_shares and shares_then:
+        if float_shares <= 1.05 * shares_then:
+            v["insider_share"] = max(0.0, 1 - float_shares / shares_then)
+            v["insider_basis"] = basis
+        else:
+            v["insider_issue"] = (f"public float ({float_shares / 1e6:,.1f}M shares on {m.get('public_float_date')}) "
+                                  f"exceeds the {shares_then / 1e6:,.1f}M shares outstanding then")
+    # fall from the 12-month high (month-end closes from Massive, or Twelve Data's 52-week high)
+    highs = [x for x in (m.get("high_12m"), quote.get("fifty_two_week_high"))
+             if isinstance(x, (int, float)) and x > 0]
+    if highs:
+        h = max(highs + [quote["price"]])
+        v["high_12m_used"] = h
+        v["drawdown_12m"] = quote["price"] / h - 1
     if not names_match(quote.get("name"), info.get("name")):
         issues.append(f"quote name '{quote.get('name')}' doesn't match the SEC name - recycled ticker?")
     v["val_issue"] = "; ".join(issues)
@@ -137,7 +199,8 @@ def value(m, info, quote, fx, today=None, td=None, listing_type=None):
 
 
 GATE_INPUTS = ("market_cap_usd", "ev_usd", "ev_ebit", "ev_ebitda", "ev_sales", "pe", "earnings_yield", "fcf_yield",
-               "ev_normalized_ebit", "ev_to_liquid_assets", "mcap_to_liquid_assets", "ev_incl_lt_investments_usd")
+               "ev_normalized_ebit", "ev_to_liquid_assets", "mcap_to_liquid_assets", "ev_incl_lt_investments_usd",
+               "price_to_tangible_book", "mcap_to_net_cash", "fcf_yield_5y", "insider_share")
 AUX_SUFFIXES = ("W", "WS", "WT", "U", "UN", "R", "RT", "RW")
 STOP = {"inc", "corp", "corporation", "co", "company", "ltd", "plc", "the", "holdings", "group", "class", "common",
         "stock", "shares", "sa", "nv", "ag", "se", "llc", "lp", "de"}

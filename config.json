@@ -334,6 +334,84 @@
       "max_margin_percentile": 0.5,
       "max_ev_normalized_ebit": 12,
       "industry_trough_percentile": 0.3
+    },
+    "owners": {
+      "_note": "Owner-Operators (Stahl). Insider share = 1 - public float / market value on the float date.",
+      "min_years": 5,
+      "max_years_since_latest_fy": 1.6,
+      "min_revenue_usd": 50000000,
+      "min_insider_share": 0.2,
+      "max_operating_loss_years": 2,
+      "min_median_roic": 0.12,
+      "min_fcf_conversion": 0.6,
+      "max_net_debt_to_ebitda": 2.5,
+      "min_market_cap_usd": 100000000,
+      "min_adv_usd": 100000,
+      "max_ev_ebit": 20
+    },
+    "real_assets": {
+      "_note": "Hard Assets & Royalties (Stahl, Alfred).",
+      "min_years": 5,
+      "max_years_since_latest_fy": 1.6,
+      "min_revenue_usd": 25000000,
+      "max_capex_to_ocf": 0.2,
+      "min_operating_margin_median": 0.3,
+      "max_operating_loss_years": 2,
+      "max_net_debt_to_ebitda": 2.0,
+      "min_market_cap_usd": 100000000,
+      "min_adv_usd": 100000,
+      "max_ev_ebit": 25
+    },
+    "asset_floor": {
+      "_note": "Asset-Floor Value (Watsa). Floor = market cap <= net cash OR price <= tangible book.",
+      "min_years": 3,
+      "max_years_since_latest_fy": 1.6,
+      "max_balance_sheet_age_days": 200,
+      "max_mcap_to_net_cash": 1.0,
+      "max_price_to_tangible_book": 1.0,
+      "min_runway_if_burning": 4.0,
+      "min_profitable_share": 0.6,
+      "max_net_debt_to_ebitda": 3.0,
+      "min_market_cap_usd": 50000000,
+      "min_adv_usd": 100000
+    },
+    "trough_cash": {
+      "_note": "Trough Cyclical Cash (Einhorn).",
+      "min_years": 7,
+      "max_years_since_latest_fy": 1.6,
+      "min_revenue_usd": 200000000,
+      "max_margin_percentile": 0.5,
+      "max_negative_fcf_years": 3,
+      "max_capex_to_da_3y": 1.3,
+      "max_net_debt_to_norm_ebitda": 2.5,
+      "min_fcf_yield_5y": 0.1,
+      "min_market_cap_usd": 200000000,
+      "min_adv_usd": 200000
+    },
+    "hidden": {
+      "_note": "Hidden Earnings (Einhorn, Stahl, Sandler). Trigger = discontinued operations (3 years) or a big fall from the 12-month high.",
+      "min_years": 5,
+      "max_years_since_latest_fy": 1.6,
+      "max_drawdown_12m": -0.4,
+      "min_revenue_cagr_3y": -0.05,
+      "min_median_roic": 0.08,
+      "max_net_debt_to_ebitda": 3.0,
+      "max_ev_ebit": 15,
+      "min_market_cap_usd": 100000000,
+      "min_adv_usd": 200000
+    },
+    "red_flags": {
+      "_note": "Red Flags - an AVOID list (Einhorn: overvaluation + deterioration). min_signals: how many deterioration signals must appear together (2 avoids flagging a one-off charge).",
+      "min_years": 3,
+      "max_years_since_latest_fy": 1.6,
+      "min_ev_sales": 6.0,
+      "min_signals": 2,
+      "fading_min_cagr_3y": 0.1,
+      "fading_ratio": 0.5,
+      "margin_drop_3y": 0.05,
+      "dilution_3y": 0.05,
+      "min_market_cap_usd": 500000000,
+      "min_adv_usd": 1000000
     }
   },
   "price_also": {
@@ -351,5 +429,14 @@
     "twelvedata_backup_quotes_screen_run": 60,
     "twelvedata_backup_quotes_daily": 16,
     "peer_min_companies": 6
+  },
+  "disc_ops_min_share_of_revenue": 0.01,
+  "_disc_ops_note": "Hidden Earnings: discontinued operations count when at least this share of revenue (ignores small legacy items).",
+  "price_history": {
+    "_note": "Past prices for Owner-Operators (price on the public-float date) and Hidden Earnings (12-month high).",
+    "months_for_high": 12,
+    "refresh_past_prices_days": 12,
+    "float_td_backup_max": 40,
+    "float_price_lookups_without_massive": 120
   }
 }

@@ -65,20 +65,24 @@ function niceDate(d) {
 
 /* ------------------------------------------------------------------ status under the current rule switches */
 const LABEL = { PASS: "Passes", CHECK: "Check manually", ONE: "Missed 1 rule", FAIL: "Fails" };
+/* the Red Flags screen is an avoid list: 'passing' every rule means 'flagged' */
+const LABEL_AVOID = { PASS: "Flagged", CHECK: "Check manually", ONE: "Nearly flagged", FAIL: "Not flagged" };
+const labelFor = (scr, s) => (scr && scr.avoid ? LABEL_AVOID : LABEL)[s];
 /* Same classification as the screener: PASS, CHECK (nothing fails but data is missing or needs a look),
    ONE = a near miss on one rule, only valuation rules fail ('price too high'), or one non-defining rule fails with
    everything else verified; FAIL otherwise. With every rule on this reproduces the screener's own lists. */
 function statusOf(row, scr, off) {
   const fails = [];
-  let nd = 0, ndBiz = 0;
+  let nd = 0, ndBiz = 0, ndHard = 0;
   scr.gates.forEach((g, i) => {
     if (off.has(g.id)) return;
     const c = row.g[i];
     if (c === "F") fails.push(g);
-    else if (c === "D") { nd++; if (!g.price) ndBiz++; }
+    else if (c === "D") { nd++; if (!g.price) ndBiz++; if (g.hard) ndHard++; }
   });
   const warns = row.w.filter((w) => !off.has(w)).length;
   if (!fails.length) return { s: nd || warns || row.h.length ? "CHECK" : "PASS", fails };
+  if (scr.strict && ndHard) return { s: "FAIL", fails };
   if (fails.every((g) => g.valuation)) return { s: "ONE", fails, kind: "price" };
   if (fails.length === 1) {
     const g = fails[0];
@@ -88,7 +92,7 @@ function statusOf(row, scr, off) {
   return { s: "FAIL", fails };
 }
 const VIEWS = [
-  { id: "pass", label: "Passing", set: ["PASS"] },
+  { id: "pass", label: "Passing", avoid: "Flagged", set: ["PASS"] },
   { id: "check", label: "+ check manually", set: ["PASS", "CHECK"] },
   { id: "one", label: "+ near misses", set: ["PASS", "CHECK", "ONE"] },
 ];
@@ -185,6 +189,7 @@ async function start() {
 function renderNav() {
   const nav = $("#screenNav");
   nav.innerHTML = S.meta.screens.map((s) =>
+    (s.group ? `<div class="sep"></div><div class="nav-h">${esc(s.group)}</div>` : "") +
     `<button type="button" data-sid="${s.id}"><span>${esc(s.title)}</span><span class="n" data-count="${s.id}">${s.counts.PASS ?? 0}</span></button>`
   ).join("") + `<div class="sep"></div><button type="button" data-sid="gaps"><span>Couldn't screen</span><span class="n">${S.meta.gaps.length}</span></button>`;
   nav.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { go(b.dataset.sid); }));
@@ -223,6 +228,7 @@ function render() {
   const off = offFor(S.cur);
   $("#title").textContent = scr.title;
   $("#purpose").textContent = scr.purpose;
+  $("#purpose").classList.toggle("avoid", !!scr.avoid);
   document.title = scr.title + " – Stock Screener";
   renderRules(scr, off);
   renderViews(scr, off);
@@ -265,7 +271,7 @@ function renderViews(scr, off) {
   scr.rows.forEach((r) => { const s = statusOf(r, scr, off).s; if (s in n) n[s]++; });
   const counts = { pass: n.PASS, check: n.PASS + n.CHECK, one: n.PASS + n.CHECK + n.ONE };
   $("#viewSwitch").innerHTML = VIEWS.map((v) =>
-    `<button type="button" role="radio" aria-checked="${v.id === S.view}" data-v="${v.id}">${v.label} <span>(${counts[v.id]})</span></button>`).join("");
+    `<button type="button" role="radio" aria-checked="${v.id === S.view}" data-v="${v.id}">${scr.avoid && v.avoid ? v.avoid : v.label} <span>(${counts[v.id]})</span></button>`).join("");
   $("#viewSwitch").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { S.view = b.dataset.v; render(); }));
   const navCount = document.querySelector(`[data-count="${S.cur}"]`);
   if (navCount) navCount.textContent = n.PASS;
@@ -302,7 +308,7 @@ function renderTable(scr, off) {
     mk.map((k) => head(k, M[k][0], "mt")).join("") + "</div>";
   const shown = rows.slice(0, 400);
   html += shown.map((x) => rowHTML(x, scr, mk, off)).join("");
-  $("#table").innerHTML = shown.length ? html : html + `<div class="empty">${S.q ? "No company matches that search in this screen." : "No company qualifies with these rules. Switch a rule off, or widen the list above."}</div>`;
+  $("#table").innerHTML = shown.length ? html : html + `<div class="empty">${S.q ? "No company matches that search in this screen." : scr.avoid ? "No company is flagged with these rules." : "No company qualifies with these rules. Switch a rule off, or widen the list above."}</div>`;
   $("#listNote").textContent = `${rows.length} shown of ${scr.rows.length} companies in this screen's industries` +
     (rows.length > shown.length ? ` (first ${shown.length}; search to find others)` : "") +
     ". Under each figure: the median of its industry peers – green where the company looks better, red where it looks worse.";
@@ -331,7 +337,7 @@ function cmpPeer(k, v, med) {
 function rowHTML(x, scr, mk, off) {
   const c = x.c, r = x.r;
   const peers = c.pg ? S.comp.peers[c.pg] : null;
-  const pill = x.st.s !== "ONE" ? LABEL[x.st.s]
+  const pill = x.st.s !== "ONE" ? labelFor(scr, x.st.s)
     : x.st.kind === "price" ? "Price too high" : x.st.kind === "near" ? `Just misses: ${x.st.fails[0].name}` : `Missed: ${x.st.fails[0].name}`;
   let px = '<div class="px">–</div>';
   if (c.px) {

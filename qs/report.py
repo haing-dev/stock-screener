@@ -15,7 +15,9 @@ from .screens import FAIL, PASS, SCREENS
 from .sec import filing_index_url
 
 SHEET = {"core": "1 Core", "emerging": "2 Emerging", "special": "3 Special sits", "fortress": "4 Fortress",
-         "hc_commercial": "5a HC commercial", "hc_clinical": "5b HC clinical", "cyclicals": "6 Cyclicals"}
+         "hc_commercial": "5a HC commercial", "hc_clinical": "5b HC clinical", "cyclicals": "6 Cyclicals",
+         "owners": "7 Owner-operators", "real_assets": "8 Hard assets", "asset_floor": "9 Asset floor",
+         "trough_cash": "10 Trough cash", "hidden": "11 Hidden earnings", "red_flags": "12 Red flags (avoid)"}
 
 PCT = {"revenue_cagr", "roic_median", "roic_share_above_floor", "roic_trend", "incremental_roic",
        "gross_margin_median", "gross_margin_std", "gross_margin_change_2021_2023", "operating_margin_median",
@@ -30,14 +32,25 @@ PCT = {"revenue_cagr", "roic_median", "roic_share_above_floor", "roic_trend", "i
        "ebitda_margin_change_3y", "sga_ratio_change_3y", "share_count_cagr_3y", "ttm_operating_margin",
        "operating_margin_latest", "op_margin_percentile_10y", "industry_margin_percentile",
        "industry_margin_latest", "share_count_change_latest", "revenue_growth_latest_fy", "ttm_gross_margin",
-       "roic_latest", "cash_roic", "roc_tangible", "ebitda_margin", "sga_ratio", "gp_to_tangible_assets"}
+       "roic_latest", "cash_roic", "roc_tangible", "ebitda_margin", "sga_ratio", "gp_to_tangible_assets",
+       "insider_share", "capex_to_ocf_3y", "fcf_yield_5y", "positive_ebit_share", "drawdown_12m",
+       "gross_margin_change_3y", "industry_returns_to_capex", "returns_to_capex_5y"}
 MULT = {"net_debt_to_ocf", "net_debt_to_ebitda", "net_debt_to_norm_ebitda", "ev_ebit", "ev_ebitda", "ev_sales",
         "pe", "ev_normalized_ebit", "interest_coverage", "ev_to_liquid_assets", "debt_to_liquid_assets",
-        "cash_runway_years", "industry_capex_to_da", "capex_to_da_3y", "mcap_to_public_float", "composite"}
+        "cash_runway_years", "industry_capex_to_da", "capex_to_da_3y", "mcap_to_public_float", "composite",
+        "mcap_to_net_cash", "price_to_tangible_book"}
 MILLIONS = {"latest_revenue_usd", "market_cap_usd", "ev_usd", "adv_usd", "liquid_assets_usd", "ttm_revenue_usd"}
-LOCAL_MILLIONS = {"ttm_revenue", "annual_cash_burn", "debt_due_2y_total", "bs_net_debt"}
+LOCAL_MILLIONS = {"ttm_revenue", "annual_cash_burn", "debt_due_2y_total", "bs_net_debt", "net_cash", "tangible_book"}
 HEADERS = {
     "composite": "Composite score (0-100)", "robust": "Robust (passes 20% stricter)",
+    "insider_share": "Insider share (1 - float / mkt value)", "public_float_date": "Public float date",
+    "capex_to_ocf_3y": "Capex / operating cash flow (3y)", "mcap_to_net_cash": "Market cap / net cash",
+    "price_to_tangible_book": "Price / tangible book", "net_cash": "Net cash (M, reporting ccy)",
+    "tangible_book": "Tangible book (M, reporting ccy)", "positive_ebit_share": "Share of years profitable",
+    "fcf_yield_5y": "5y avg FCF / market cap", "industry_returns_to_capex": "Industry buybacks+divs / capex (3y)",
+    "returns_to_capex_5y": "Buybacks+divs / capex (5y)", "disc_ops_note": "Discontinued operations",
+    "drawdown_12m": "Fall from 12-month high", "high_12m_used": "12-month high ($)",
+    "red_flag_notes": "Deterioration signals", "gross_margin_change_3y": "Gross margin chg (3y)",
     "latest_revenue_usd": "Revenue latest FY ($M)", "market_cap_usd": "Market cap ($M)", "ev_usd": "EV ($M)",
     "adv_usd": "Avg daily $ traded ($M)", "liquid_assets_usd": "Cash + investments ($M)",
     "ttm_revenue": "Revenue TTM (M, reporting ccy)", "annual_cash_burn": "Cash burn / yr (M, reporting ccy)",
@@ -476,7 +489,7 @@ def write_outputs(path, cfg, run_info, screens, results, ctxs, records, cyc, tod
         gr.to_excel(w, sheet_name="Industry_Groups", index=False)
         _format_sheet(w.sheets["Industry_Groups"], gr, widths={"label": 60})
 
-        info = [("What this is", "Six screens of NYSE + Nasdaq companies built on SEC filings (and Twelve Data "
+        info = [("What this is", "Thirteen screens of NYSE + Nasdaq companies built on SEC filings (and Twelve Data "
                                  "prices). Each screen has a ranked PASS sheet and a '- watch' sheet (CHECK manually, "
                                  "NEAR misses, 'Price too high (rest passes)', 'Failed 1 rule'). Start with 'Overlap' for names passing several screens. Every input is "
                                  "in the evidence CSV with a link to its SEC filing.")]

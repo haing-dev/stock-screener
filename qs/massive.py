@@ -130,18 +130,27 @@ class Massive:
             return json.load(fh)
 
     # ------------------------------------------------------------ one trading day, all US stocks
-    def day(self, d, refresh=False, folder=""):
+    def day(self, d, refresh=False, folder="", fresh_days=None, adjusted=True):
         """{SYMBOL: [open, close, volume, vwap]} for trading day d (date or 'YYYY-MM-DD'); {} if the market was
         closed or the day isn't available yet. Cached for good once a day has data (folder 'hist' is never
-        pruned: past dates used for the public-float check)."""
+        pruned: past dates used for the public-float check). fresh_days: re-download a cached day older than
+        that - closes are split-adjusted as of the download, so a split since then would make old closes wrong."""
         d = d if isinstance(d, str) else d.isoformat()
         path = os.path.join(self.dir, folder, f"{d}.json.gz")
         hit = _load(path)
+        if hit is not None and fresh_days is not None:
+            try:
+                age = (self.today - date.fromisoformat(str(hit.get("fetched") or "")[:10])).days
+            except ValueError:
+                age = 10 ** 6
+            if age > fresh_days:
+                hit = None
         if hit is not None and (hit.get("bars") or not refresh and hit.get("closed_checked")):
             return hit.get("bars") or {}
         recent = d >= (self.today - timedelta(days=1)).isoformat()
         try:
-            data = self._get(f"/v2/aggs/grouped/locale/us/market/stocks/{d}", {"adjusted": "true"})
+            data = self._get(f"/v2/aggs/grouped/locale/us/market/stocks/{d}",
+                             {"adjusted": "true" if adjusted else "false"})
         except MassiveAuthError:
             raise
         except MassiveError:
@@ -155,7 +164,8 @@ class Massive:
                 bars[str(t).upper()] = [o, c, v, r.get("vw")]
         past = d < (self.today - timedelta(days=4)).isoformat()
         # a past weekday with no data = market holiday (remember it); a recent empty day may simply not be out yet
-        _save(path, {"date": d, "bars": bars, "closed_checked": bool(not bars and past)})
+        _save(path, {"date": d, "bars": bars, "closed_checked": bool(not bars and past),
+                     "fetched": self.today.isoformat()})
         return bars
 
     def recent_days(self, n=20, max_lookback=40):
@@ -192,19 +202,23 @@ class Massive:
         except OSError:
             pass
 
-    def close_on(self, symbol, day):
+    def close_on(self, symbol, day, fresh_days=None, adjusted=True):
         """Close on (or up to 4 days before) a past date, from that day's all-stocks file (one request per date,
-        cached). Free plan history covers ~2 years; None if unavailable."""
+        cached). adjusted=False: the close as it actually printed that day (never changes, cached for good) -
+        used with share counts from the same date. Free plan history covers ~2 years; None if unavailable."""
+        folder = "hist" if adjusted else "hist_raw"
+        if not adjusted:
+            fresh_days = None
         try:
             d = date.fromisoformat(str(day)[:10])
         except ValueError:
             return None
-        if (self.today - d).days > 720:
+        if (self.today - d).days > 720 or d > self.today:
             return None
         for _ in range(5):
             if d.weekday() < 5:
                 try:
-                    bars = self.day(d, folder="hist")
+                    bars = self.day(d, folder=folder, fresh_days=fresh_days, adjusted=adjusted)
                 except MassiveError:
                     return None
                 if bars:
@@ -212,6 +226,63 @@ class Massive:
                     return b[1] if b else None
             d -= timedelta(days=1)
         return None
+
+    def month_end_days(self, months=12):
+        """The last trading day of each of the last `months` calendar months: [(date, bars)], UNADJUSTED closes
+        (one all-stocks request per month, cached for good; splits are applied by the caller from the split list)."""
+        out = []
+        first = self.today.replace(day=1)
+        for _ in range(months):
+            d = first - timedelta(days=1)             # last calendar day of the previous month
+            first = d.replace(day=1)
+            for _ in range(6):
+                if d.weekday() < 5:
+                    try:
+                        bars = self.day(d, folder="hist_raw", adjusted=False)
+                    except MassiveAuthError:
+                        raise
+                    except MassiveError as e:
+                        self.log(f"  Massive {d.isoformat()}: {e}")
+                        bars = {}
+                    if bars:
+                        out.append((d.isoformat(), bars))
+                        break
+                d -= timedelta(days=1)
+        return out
+
+    def splits(self, since, max_age_days=1):
+        """{SYMBOL: [(execution_date, split_from, split_to)]} for splits executed on or after `since`, from Massive's
+        reference list (cached a day). None if it couldn't be read - callers then treat split-sensitive figures
+        as unverified."""
+        path = os.path.join(self.dir, "reference_splits.json.gz")
+        since = since if isinstance(since, str) else since.isoformat()
+        hit = _load(path)
+        try:
+            if hit and hit.get("since", "9999") <= since and \
+                    (self.today - date.fromisoformat(hit["fetched"][:10])).days < max_age_days:
+                return {k: [tuple(x) for x in v] for k, v in hit["splits"].items()}
+        except (KeyError, ValueError):
+            pass
+        out = {}
+        try:
+            data = self._get("/v3/reference/splits", {"execution_date.gte": since, "limit": 1000})
+            pages = 0
+            while isinstance(data, dict):
+                for r in data.get("results") or []:
+                    t, d = r.get("ticker"), r.get("execution_date")
+                    fr, to = r.get("split_from"), r.get("split_to")
+                    if t and d and fr and to:
+                        out.setdefault(str(t).upper(), []).append((d, float(fr), float(to)))
+                nxt = data.get("next_url")
+                pages += 1
+                if not nxt or pages > 20 or self.fixtures_dir:
+                    break
+                data = self._get(None, url=nxt)
+        except MassiveError as e:
+            self.log(f"  Massive split list unavailable: {e}")
+            return None
+        _save(path, {"fetched": self.today.isoformat(), "since": since, "splits": out})
+        return out
 
     # ------------------------------------------------------------ reference data (names, listing types)
     def tickers(self, max_age_days=7):
@@ -242,6 +313,16 @@ class Massive:
         if out:
             _save(path, {"fetched": datetime.now().isoformat(timespec="seconds"), "tickers": out})
         return out
+
+
+def split_factor(splits, after, until=None):
+    """Price multiplier for splits executed after `after` (and on/before `until`): a 2-for-1 split (from 1 to 2)
+    halves old prices -> 0.5. Share counts move the other way (1 / factor)."""
+    f = 1.0
+    for d, fr, to in splits or []:
+        if d > str(after)[:10] and (until is None or d <= str(until)[:10]) and fr and to:
+            f *= fr / to
+    return f
 
 
 class PriceSource:
@@ -330,11 +411,45 @@ class PriceSource:
             return self.td.instrument_types(max_age_days)
         return types
 
-    def close_on(self, symbol, day):
-        c = self.m.close_on(symbol, day) if self.m.available() else None
-        if c is None and self.td is not None and self.td.available():
+    def close_on(self, symbol, day, fresh_days=12, allow_td=True, adjusted=True):
+        """Split-adjusted close on a past date (re-downloaded after fresh_days so later splits are reflected), or
+        the unadjusted close (adjusted=False: Massive only - Twelve Data prices are always adjusted)."""
+        c = self.m.close_on(symbol, day, fresh_days=fresh_days, adjusted=adjusted) if self.m.available() else None
+        if c is None and adjusted and allow_td and self.td is not None and self.td.available():
             c = self.td.close_on(symbol, day)
         return c
+
+    def splits(self, since):
+        return self.m.splits(since) if self.m.available() else None
+
+    def month_end_highs(self, symbols, months=12, splits=None):
+        """{sec_ticker: (highest month-end close of the last `months` months, its date)} from Massive (12 requests
+        for the whole market). Closes are downloaded unadjusted and adjusted here with the split list, so a split
+        can never pass for a price fall. Month-end closes slightly understate the true 12-month high, so a drawdown
+        measured from them is never overstated. {} without Massive or without a split list (Twelve Data quotes
+        carry a 52-week high instead)."""
+        if not self.m.available() or splits is None:
+            return {}
+        try:
+            days = self.m.month_end_days(months)
+        except MassiveAuthError as e:
+            self.log(f"  Massive: {e}")
+            return {}
+        out = {}
+        for t in symbols:
+            sym = m_symbol(t)
+            best = None
+            for d, bars in days:
+                b = bars.get(sym)
+                if not b or not b[1]:
+                    continue
+                c = b[1] * split_factor(splits.get(sym), after=d)
+                if best is None or c > best[0]:
+                    best = (c, d)
+            if best:
+                out[t] = best
+        self.log(f"  12-month highs from {len(days)} month-end closes for {len(out)} companies")
+        return out
 
     def fx_rates(self, currencies, static):
         if self.td is not None and self.td.available():

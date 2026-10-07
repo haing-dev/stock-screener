@@ -28,7 +28,9 @@ PBKDF2_ITER = 250000
 VAL_KEYS = ("price", "price_date", "price_open", "price_source", "market_cap_usd", "ev_usd", "val_ok", "val_issue",
             "shares_used", "shares_source", "adv_usd", "listing_type", "mcap_to_public_float", "float_check",
             "ev_ebit", "ev_ebitda", "ev_sales", "pe", "earnings_yield", "fcf_yield", "ev_normalized_ebit",
-            "ev_incl_lt_investments_usd", "ev_to_liquid_assets", "mcap_to_liquid_assets")
+            "ev_incl_lt_investments_usd", "ev_to_liquid_assets", "mcap_to_liquid_assets",
+            "price_to_tangible_book", "mcap_to_net_cash", "fcf_yield_5y", "insider_share", "insider_issue", "insider_basis",
+            "drawdown_12m", "high_12m_used")
 
 # metric: (label, format, which direction is better[, True = only positive values are meaningful, e.g. P/E])
 METRICS = {
@@ -53,9 +55,19 @@ METRICS = {
     "debt_to_liquid_assets": ("Debt / cash", "x", "low"),
     "market_cap_usd": ("Market cap", "usd", None),
     "ttm_revenue_usd": ("Revenue (TTM)", "usd", None),
+    "insider_share": ("Insider share", "pct", None),
+    "capex_to_ocf_3y": ("Capex / op. cash flow", "pct", "low"),
+    "mcap_to_net_cash": ("Mkt cap / net cash", "x", "low", True),
+    "price_to_tangible_book": ("Price / tangible book", "x", "low", True),
+    "fcf_yield_5y": ("FCF yield (5y avg)", "pct", "high"),
+    "returns_to_capex_5y": ("Buybacks+divs / capex", "x", "high"),
+    "drawdown_12m": ("From 12m high", "pct", None),
+    "red_flag_count": ("Red flags", "n", None),
+    "operating_margin_change_3y": ("Op. margin chg (3y)", "pct", "high"),
 }
 PRICE_METRICS = {"pe", "ev_ebitda", "ev_ebit", "ev_sales", "ev_normalized_ebit", "ev_to_liquid_assets", "fcf_yield",
-                 "market_cap_usd"}
+                 "market_cap_usd", "insider_share", "mcap_to_net_cash", "price_to_tangible_book", "fcf_yield_5y",
+                 "drawdown_12m"}
 SCREEN_METRICS = {
     "core": ["pe", "ev_ebitda", "fcf_yield", "roic_median", "revenue_cagr", "gross_margin_latest"],
     "emerging": ["ev_ebitda", "pe", "ev_sales", "roic_latest", "revenue_cagr_3y", "gross_margin_latest"],
@@ -66,7 +78,16 @@ SCREEN_METRICS = {
                     "ttm_revenue_usd"],
     "cyclicals": ["ev_normalized_ebit", "ev_ebit", "pe", "roic_median", "op_margin_percentile_10y",
                   "net_debt_to_norm_ebitda"],
+    "owners": ["insider_share", "pe", "ev_ebit", "fcf_yield", "roic_median", "revenue_cagr"],
+    "real_assets": ["ev_ebit", "pe", "fcf_yield", "capex_to_ocf_3y", "operating_margin_median", "net_debt_to_ebitda"],
+    "asset_floor": ["mcap_to_net_cash", "price_to_tangible_book", "fcf_yield", "pe", "roic_median", "market_cap_usd"],
+    "trough_cash": ["fcf_yield_5y", "fcf_yield", "ev_normalized_ebit", "op_margin_percentile_10y",
+                    "returns_to_capex_5y", "net_debt_to_norm_ebitda"],
+    "hidden": ["drawdown_12m", "ev_ebit", "pe", "fcf_yield", "roic_median", "revenue_cagr_3y"],
+    "red_flags": ["ev_sales", "red_flag_count", "revenue_cagr_3y", "operating_margin_change_3y", "pe",
+                  "market_cap_usd"],
 }
+SCREEN_GROUPS = {"owners": "From the new interviews", "red_flags": "Avoid list"}
 WARNING_LABELS = {"margin_collapse": "Margins haven't collapsed",
                   "revenue_shrinking": "Revenue isn't shrinking",
                   "lost_money_2009": "No loss in 2008-09 on falling sales"}
@@ -177,6 +198,23 @@ def reprice(state, prices, cfg, today, log=print):
         for k in list(ctx):
             if k in VAL_KEYS or k.endswith("_unverified"):
                 del ctx[k]
+    # splits since the screen run: today's prices are on the new basis, so the stored 12-month high and share
+    # counts must be too
+    if hasattr(prices, "splits"):
+        from datetime import timedelta
+        from .massive import m_symbol, split_factor
+        sp = prices.splits((today - timedelta(days=760)).isoformat())
+        for ctx in ctxs.values():
+            if sp is None:
+                if prices.m.available():
+                    ctx["splits_unknown"] = True
+                continue
+            ctx.pop("splits_unknown", None)
+            mine = sp.get(m_symbol(ctx["ticker"])) or []
+            ctx["recent_splits"] = mine
+            if ctx.get("high_12m") and ctx.get("high_12m_asof"):
+                ctx["high_12m"] *= split_factor(mine, after=ctx["high_12m_asof"], until=today.isoformat())
+                ctx["high_12m_asof"] = today.isoformat()
     order = sorted(ctxs, key=lambda c: -(ctxs[c].get("latest_revenue_usd") or 0))
     quotes = prices.quotes([(ctxs[c]["ticker"], ctxs[c].get("exchange")) for c in order])
     stale_days = cfg.get("price_max_staleness_days", 7)
@@ -298,7 +336,11 @@ RULE_UNITS = {"years_with_data": " years of data", "years_total": " years of dat
               "operating_margin_std": " swing in operating margin (std. dev.)",
               "op_margin_percentile_10y": " of its own 10-year margin range", "market_cap_usd": " market cap",
               "latest_revenue_usd": " revenue", "adv_usd": " traded a day",
-              "gross_margin_change_2021_2023": " change in margin 2021-23"}
+              "gross_margin_change_2021_2023": " change in margin 2021-23",
+              "insider_share": " owned by insiders", "capex_to_ocf_3y": " of operating cash flow spent on capex (3y)",
+              "operating_margin_median": " operating margin, 10-year median", "positive_ebit_share": " of years profitable",
+              "capex_to_da_3y": " (capex / depreciation, 3y)", "fcf_yield_5y": " 5-year average FCF yield",
+              "ev_sales": " EV/Sales", "drawdown_12m": " from the 12-month high"}
 
 
 def _thr_text(thr, fmt):
@@ -350,8 +392,10 @@ def screen_payload(s, results, ctxs, cfg):
         rows.append({"c": c, "g": "".join(codes), "v": vals, "nt": notes, "h": holds, "w": warn_ids,
                      "wt": warn_txt, "cls": r["class"], "un": r.get("universe_note") or "",
                      "nr": r["failed"][0] if r["class"] == "NEAR" and r.get("failed") else None})
+    from .screens import AVOID_SCREENS
     return {"id": s.sid, "title": s.title, "purpose": s.purpose, "sources": s.sources, "review": s.rubric,
-            "gates": gates, "warnings": warnings, "metrics": SCREEN_METRICS.get(s.sid, []), "rows": rows}
+            "gates": gates, "warnings": warnings, "metrics": SCREEN_METRICS.get(s.sid, []), "rows": rows,
+            "avoid": s.sid in AVOID_SCREENS, "strict": bool(getattr(s, "strict", False))}
 
 
 def company_payload(c, ctx, summaries, group_id):
@@ -472,7 +516,8 @@ def export_site(state, results, cfg, summaries, password, out_dir=SITE_DATA, tod
         "version": __version__, "built": datetime.now().isoformat(timespec="minutes"),
         "screened_on": state.get("screened_on"), "priced_on": state.get("priced_on"),
         "price_day": max((c.get("price_date") or "" for c in ctxs.values()), default=None),
-        "screens": [{"id": s.sid, "title": s.title, "counts": counts.get(s.sid, {})} for s in SCREENS if s.sid in counts],
+        "screens": [{"id": s.sid, "title": s.title, "counts": counts.get(s.sid, {}), "group": SCREEN_GROUPS.get(s.sid)}
+                    for s in SCREENS if s.sid in counts],
         "universe": len(state.get("records") or {}), "screened": len(ctxs),
         "gaps": sorted(gaps, key=lambda g: str(g["t"])), "excluded": excluded.most_common(),
         "summaries": sum(1 for c in companies.values() if c.get("sum")), "companies": len(companies),

@@ -66,6 +66,23 @@ CYCLICAL = [
     (4512, 4513, "Airlines & air freight"),
 ]
 
+# Hard Assets & Royalties screen: owners of land, minerals, water, timber and pipelines. Most of these codes are
+# excluded from Core as price takers; the screen keeps only those that need little reinvestment (Stahl: a royalty
+# is "a call option on everything"; "Being in energy or some other industry is not predictive. It's just descriptive").
+REAL_ASSETS = [
+    (800, 899, "Forestry & timberland"),
+    (1000, 1099, "Metal mining & royalties"),
+    (1311, 1389, "Oil & gas (incl. mineral & royalty owners)"),
+    (1400, 1499, "Aggregates & non-metal mining"),
+    (2400, 2411, "Timber"),
+    (4610, 4619, "Pipelines"),
+    (4922, 4925, "Gas transmission & storage"),
+    (4941, 4941, "Water supply"),
+    (6500, 6553, "Land & real-estate owners (not REITs)"),
+    (6792, 6792, "Oil & gas royalty owners"),
+    (6795, 6795, "Mineral royalty owners"),
+]
+
 # Extra exclusions for Emerging Compounders (Haley's study excluded energy, materials and financials;
 # energy, metals, mining and financials are already in config exclude_sic).
 EMERGING_EXTRA_EXCLUDE = [
@@ -85,7 +102,8 @@ FINANCIALS = [(6000, 6799, "Financials")]
 def group_rows():
     rows = []
     for name, lst in (("Healthcare", HEALTHCARE), ("Healthcare - clinical stage book", CLINICAL_STAGE),
-                      ("Cyclicals", CYCLICAL), ("Emerging - extra exclusions", EMERGING_EXTRA_EXCLUDE),
+                      ("Cyclicals", CYCLICAL), ("Hard assets & royalties", REAL_ASSETS),
+                      ("Emerging - extra exclusions", EMERGING_EXTRA_EXCLUDE),
                       ("Never screened", NEVER)):
         for lo, hi, label in lst:
             rows.append({"screen": name, "sic_from": lo, "sic_to": hi, "label": label})

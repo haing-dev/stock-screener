@@ -1,8 +1,8 @@
-"""Stock screener - six screens on SEC filings + Twelve Data prices.
+"""Stock screener - thirteen screens on SEC filings + Twelve Data prices.
 
   python screener.py setup-check            check SEC access, your Twelve Data key/plan, and known answers
   python screener.py test                   quick run on ~40 well-known companies (5-10 minutes)
-  python screener.py run                    all NYSE + Nasdaq companies, all six screens
+  python screener.py run                    all NYSE + Nasdaq companies, all thirteen screens
   python screener.py run --screens core,fortress      only some screens
   python screener.py run --tickers V,MA     only these tickers
   python screener.py check MCO              every rule of every screen for one company, with the evidence
@@ -15,7 +15,8 @@ Web portal (run by GitHub Actions - see README 'Web portal'):
   python screener.py portal-summaries --max 30    2-3 line company descriptions (Claude)
   python screener.py portal-export          write the encrypted data files for the site (site/data)
 
-Screens: core, emerging, special, fortress, hc_commercial, hc_clinical, cyclicals
+Screens: core, emerging, special, fortress, hc_commercial, hc_clinical, cyclicals,
+         owners, real_assets, asset_floor, trough_cash, hidden, red_flags
 """
 import argparse
 import os
@@ -35,10 +36,13 @@ TEST_TICKERS = [
     "LLY", "JNJ", "VRTX", "ISRG", "TMO", "UNH", "SRPT", "ALLO",
     # cyclicals
     "NUE", "STLD", "CAT", "DOW", "LRCX", "XOM", "DHI",
+    # second batch: owner-operators, royalties / land, cash-rich, cyclical cash
+    "TPL", "RGLD", "BSM", "MLI", "UI", "WSO",
     # controls that must be excluded or fail
     "JPM", "T", "F", "INTC", "TSM", "ASML",
 ]
-SCREEN_IDS = ["core", "emerging", "special", "fortress", "hc_commercial", "hc_clinical", "cyclicals"]
+SCREEN_IDS = ["core", "emerging", "special", "fortress", "hc_commercial", "hc_clinical", "cyclicals",
+              "owners", "real_assets", "asset_floor", "trough_cash", "hidden", "red_flags"]
 
 
 def make_client(cfg):

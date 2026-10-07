@@ -71,7 +71,7 @@ COMPANIES = [
     D(cik=1202, ticker="DILU", name="Dilutive Growth Corp", exchange="Nasdaq", sic="7372",
       sicd="Services-Prepackaged Software", growth=0.30, gm=0.65, om_path={2020: 0.05, 2021: 0.07, 2022: 0.09,
                                                                           2023: 0.11, 2024: 0.13},
-      debt_x_rev=0.0, start=2020, base=120, buyback=-0.08, price=20.0, dei_shares=70e6),
+      debt_x_rev=0.0, start=2020, base=120, buyback=-0.08, price=17.0, dei_shares=70e6),
     D(cik=1203, ticker="PRCY", name="Pricey Growth Inc", exchange="Nasdaq", sic="7372",
       sicd="Services-Prepackaged Software", growth=0.25, gm=0.62, om_path={2020: 0.06, 2021: 0.08, 2022: 0.10,
                                                                           2023: 0.12, 2024: 0.14},
@@ -121,6 +121,38 @@ COMPANIES = [
       om_path={2015: 0.08, 2016: 0.08, 2017: 0.09, 2018: 0.08, 2019: 0.08, 2020: 0.07, 2021: 0.09, 2022: 0.10,
                2023: 0.20, 2024: 0.24}, surge={2023: 1.4, 2024: 1.65}, debt_x_rev=0.2, ic_x_rev=0.5, start=2012,
       base=1000),
+    # ---------------- second batch: owners, hard assets, asset floor, trough cash, hidden earnings, red flags ----
+    D(cik=1601, ticker="OWNR", name="Ownerco Services Inc", exchange="NYSE", sic="7389",
+      sicd="Services-Business Services, NEC", growth=0.08, gm=0.50, om=0.25, debt_x_rev=0.2, price=50.0,
+      dei_shares=100e6, float_frac=0.55),        # insiders own 45%
+    D(cik=1609, ticker="ISSU", name="Issuer Equity Services Inc", exchange="NYSE", sic="7389",
+      sicd="Services-Business Services, NEC", growth=0.08, gm=0.50, om=0.25, debt_x_rev=0.2, price=50.0,
+      dei_shares=100e6, float_frac=0.75, shares_at_float=80e6),
+      # public float = 75M shares of the 80M outstanding then (insiders 6%); 20M new shares issued since -
+      # measured against today's 100M it would look like 25% insiders
+    D(cik=1602, ticker="ROYL", name="Royalland Minerals Trust Corp", exchange="NYSE", sic="6792",
+      sicd="Oil Royalty Traders", growth=0.06, gm=0.95, om=0.65, debt_x_rev=0.0, capex_x_rev=0.02, price=200.0,
+      dei_shares=100e6),
+    D(cik=1603, ticker="OILP", name="Oilpump Producers Inc", exchange="NYSE", sic="1311",
+      sicd="Crude Petroleum & Natural Gas", growth=0.04, gm=0.60, om=0.35, debt_x_rev=0.3, capex_x_rev=0.45,
+      price=40.0, dei_shares=100e6),
+    D(cik=1604, ticker="CASH", name="Cashpile Networks Inc", exchange="Nasdaq", sic="3576",
+      sicd="Computer Communications Equipment", growth=0.02, gm=0.40, om=0.06, debt_x_rev=0.0, cash_x_rev=1.0,
+      price=9.0, dei_shares=100e6),
+    D(cik=1605, ticker="TRGH", name="Troughboard Paper Co", exchange="NYSE", sic="2650",
+      sicd="Paperboard Containers & Boxes", growth=0.03, gm=0.20,
+      om_path={2015: 0.06, 2016: 0.08, 2017: 0.12, 2018: 0.16, 2019: 0.10, 2020: 0.05, 2021: 0.20, 2022: 0.22,
+               2023: 0.12, 2024: 0.07}, debt_x_rev=0.1, ic_x_rev=0.5, start=2012, base=3000, price=25.0,
+      dei_shares=100e6),
+    D(cik=1606, ticker="SPUN", name="Spunoff Parent Machinery Inc", exchange="NYSE", sic="3560",
+      sicd="General Industrial Machinery & Equipment", growth=0.03, gm=0.35, om=0.15, debt_x_rev=0.3, price=20.0,
+      dei_shares=100e6, disc_ops={2024: -0.05}),
+    D(cik=1607, ticker="DROP", name="Droppedco Software Inc", exchange="Nasdaq", sic="7372",
+      sicd="Services-Prepackaged Software", growth=0.05, gm=0.70, om=0.20, debt_x_rev=0.1, price=30.0,
+      dei_shares=100e6, high52=60.0),
+    D(cik=1608, ticker="HYPE", name="Hypergrowth Cloud Inc", exchange="Nasdaq", sic="7372",
+      sicd="Services-Prepackaged Software", growth=0.30, gm=0.75, om=0.10, debt_x_rev=0.0, start=2018, base=100,
+      price=60.0, dei_shares=100e6, ytd_growth=0.05, buyback=-0.06),     # growth fading + 6%/yr dilution
 ]
 
 END_YEAR = 2024
@@ -180,9 +212,9 @@ def model(c):
             ocf, capex = -c["clinical"]["burn"], 1e6
         else:
             ocf = ni * 1.15 + r * 0.02
-            capex = r * 0.04
+            capex = r * c.get("capex_x_rev", 0.04)
         ic = r * c.get("ic_x_rev", 0.6)
-        cash = r * 0.10 if not c.get("clinical") else c["clinical"]["cash"]
+        cash = r * c.get("cash_x_rev", 0.10) if not c.get("clinical") else c["clinical"]["cash"]
         debt = r * c.get("debt_x_rev", 0) if not c.get("clinical") else c["clinical"]["debt"]
         cl = abs(r) * 0.25 if not c.get("clinical") else 20e6
         cur_debt = debt * 0.05
@@ -198,12 +230,14 @@ def model(c):
                       ocf=ocf, capex=capex, cash=cash, debt=debt, cur_debt=cur_debt, cl=cl, assets=assets,
                       equity=equity, shares=shares, sbc=abs(r) * 0.02, acq=abs(r) * 0.03, goodwill=max(assets, 0) * 0.1,
                       buyback=abs(r) * 0.05, div=abs(r) * 0.04, da=da, interest=interest, sga=sga, ca=ca, ppe=ppe,
-                      due1=debt * 0.05, due2=debt * 0.05)
+                      due1=debt * 0.05, due2=debt * 0.05,
+                      disc=(r * (c.get("disc_ops") or {})[y] if y in (c.get("disc_ops") or {}) else None))
     # quarterly: Q1 of year y = 25% of the annual figure, grown at the company's growth rate for 2025
     last = out[END_YEAR]
     g = c.get("growth", 0.05)
     q24 = {k: (v * 0.25 if isinstance(v, (int, float)) else v) for k, v in last.items()}
-    q25 = {k: (v * 0.25 * (1 + g) if isinstance(v, (int, float)) else v) for k, v in last.items()}
+    g_now = c.get("ytd_growth", g)
+    q25 = {k: (v * 0.25 * (1 + g_now) if isinstance(v, (int, float)) else v) for k, v in last.items()}
     if c.get("clinical"):
         q25 = {k: (v * 0.25 if isinstance(v, (int, float)) else v) for k, v in last.items()}
     bs25 = {k: last[k] * (1 + g) ** 0.25 for k in ("cash", "debt", "cur_debt", "cl", "assets", "equity", "goodwill",
@@ -270,9 +304,10 @@ def build(c):
         "goodwill": "Goodwill",
         "due1": "LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths",
         "due2": "LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo",
+        "disc": "IncomeLossFromDiscontinuedOperationsNetOfTax",
     }
     flow_keys = ("rev", "gp", "op", "pretax", "tax", "ni", "ocf", "capex", "sbc", "acq", "buyback", "div", "da",
-                 "interest", "sga")
+                 "interest", "sga", "disc")
     inst_keys = ("assets", "cl", "ca", "ppe", "equity", "cash", "goodwill")
     filings = []
     n = 0
@@ -347,10 +382,14 @@ def build(c):
     facts.setdefault("dei", {})["EntityCommonStockSharesOutstanding"] = {"units": {"shares": [
         {"end": "2025-04-25", "val": round(dei_sh), "accn": "x", "fy": 2025, "fp": "Q1", "form": "10-Q",
          "filed": "2025-05-05"}]}}
+    if c.get("shares_at_float"):
+        facts["dei"]["EntityCommonStockSharesOutstanding"]["units"]["shares"].append(
+            {"end": "2024-07-26", "val": round(c["shares_at_float"]), "accn": "y", "fy": 2024, "fp": "Q2",
+             "form": "10-Q", "filed": "2024-08-05"})
     if c.get("price") and not ifrs:
         facts["dei"]["EntityPublicFloat"] = {"units": {"USD": [
-            {"end": "2024-06-30", "val": round(dei_sh * c["price"] * 0.9), "accn": "x", "fy": 2024, "fp": "FY",
-             "form": "10-K", "filed": "2025-02-20"}]}}
+            {"end": "2024-06-30", "val": round(dei_sh * c["price"] * c.get("float_frac", 0.9)), "accn": "x",
+             "fy": 2024, "fp": "FY", "form": "10-K", "filed": "2025-02-20"}]}}
     w(f"data.sec.gov/api/xbrl/companyfacts/CIK{c['cik']:010d}.json", cf)
 
     recent = {"accessionNumber": [], "filingDate": [], "reportDate": [], "form": [], "primaryDocument": [],
@@ -415,7 +454,8 @@ def twelvedata():
                           "close": str(c["price"]), "volume": "100000", "previous_close": str(c["price"]),
                           "change": "0", "percent_change": "0",
                           "average_volume": str(c.get("avg_volume", 2000000)), "is_market_open": False,
-                          "fifty_two_week": {"low": str(c["price"] * 0.7), "high": str(c["price"] * 1.3)}}
+                          "fifty_two_week": {"low": str(c["price"] * 0.7),
+                                             "high": str(c.get("high52") or c["price"] * 1.3)}}
     # a quote that comes back from the wrong market must be rejected
     if "GOOD" in q:
         pass
@@ -429,7 +469,11 @@ def twelvedata():
          "exchange": {"Nasdaq": "NASDAQ"}.get(c["exchange"], c["exchange"]),
          "type": "Depositary Receipt" if c.get("form") == "20-F" else "Common Stock"} for c in COMPANIES]})
     # closing prices on past dates (public-float date checks)
-    w("twelvedata/time_series.json", {})
+    # every priced company traded at its current price on the float date (2024-06-30 was a Sunday)
+    w("twelvedata/time_series.json", {
+        c["ticker"]: {"meta": {"symbol": c["ticker"]}, "status": "ok",
+                      "values": [{"datetime": "2024-06-28", "close": str(c.get("pf_price", c["price"]))}]}
+        for c in COMPANIES if c.get("price") and not c.get("ifrs")})
 
 
 def main():
