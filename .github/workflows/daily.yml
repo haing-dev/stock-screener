@@ -68,7 +68,7 @@ jobs:
           restore-keys: prices-v1-
 
       - name: Re-price
-        run: python screener.py portal-daily
+        run: bash scripts/run_logged.sh python screener.py portal-daily
 
       - name: Save price cache
         if: always()
@@ -102,7 +102,7 @@ jobs:
 
       - name: Build portal data
         if: hashFiles('cache/state/state.json.gz') != ''
-        run: python screener.py portal-export
+        run: bash scripts/run_logged.sh python screener.py portal-export
 
       - name: Publish
         if: hashFiles('cache/state/state.json.gz') != ''

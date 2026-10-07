@@ -62,7 +62,7 @@ jobs:
           restore-keys: prices-v1-
 
       - name: Run all screens
-        run: python screener.py portal-screen
+        run: bash scripts/run_logged.sh python screener.py portal-screen
 
       - name: Save SEC data cache
         if: always()
@@ -110,7 +110,7 @@ jobs:
           python screener.py portal-summaries --max "$(python -c "import json;print(json.load(open('config.json'))['portal']['summaries_per_screen_run'])")"
 
       - name: Build portal data
-        run: python screener.py portal-export
+        run: bash scripts/run_logged.sh python screener.py portal-export
 
       - name: Publish
         env:

@@ -50,6 +50,9 @@ def ensure_user_agent(cfg, path=CONFIG_PATH):
     ua = (cfg.get("user_agent") or "").strip()
     if ua and "@" in ua:
         return ua
+    if os.environ.get("GITHUB_ACTIONS") or not os.isatty(0):
+        raise SystemExit("ERROR: no SEC user agent. Set the SEC_USER_AGENT secret to your name and email, e.g. "
+                         "'Jane Doe jane@example.com' (it must contain an @).")
     print()
     print("The SEC asks anyone downloading its data to identify themselves")
     print("(name + email, sent only to sec.gov). This is saved in local_settings.json.")
