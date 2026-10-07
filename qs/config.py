@@ -15,12 +15,17 @@ def load_config(path=CONFIG_PATH):
     if os.path.exists(LOCAL_PATH) and path == CONFIG_PATH:
         with open(LOCAL_PATH, encoding="utf-8") as f:
             cfg.update(json.load(f))
-    if os.environ.get("TWELVEDATA_API_KEY"):
-        cfg["twelvedata_api_key"] = os.environ["TWELVEDATA_API_KEY"]
-    if os.environ.get("SEC_USER_AGENT"):
-        cfg["user_agent"] = os.environ["SEC_USER_AGENT"]
-    if os.environ.get("MASSIVE_API_KEY"):
-        cfg["massive_api_key"] = os.environ["MASSIVE_API_KEY"]
+    # secrets pasted into GitHub often carry a trailing space or line break: strip them (an HTTP header can't
+    # contain a line break, and a key with a space is refused)
+    for env, key in (("TWELVEDATA_API_KEY", "twelvedata_api_key"), ("SEC_USER_AGENT", "user_agent"),
+                     ("MASSIVE_API_KEY", "massive_api_key")):
+        if (os.environ.get(env) or "").strip():
+            cfg[key] = os.environ[env]
+    for key in ("twelvedata_api_key", "massive_api_key"):
+        if isinstance(cfg.get(key), str):
+            cfg[key] = "".join(cfg[key].split())
+    if isinstance(cfg.get("user_agent"), str):
+        cfg["user_agent"] = " ".join(cfg["user_agent"].split())
     return cfg
 
 

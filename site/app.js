@@ -144,7 +144,7 @@ $("#lockForm").addEventListener("submit", async (ev) => {
   btn.textContent = "Opening…";
   $("#lockMsg").textContent = "";
   try {
-    const key = await deriveKey($("#pw").value, S.info);
+    const key = await deriveKey($("#pw").value.trim(), S.info);
     if (!(await tryKey(key))) {
       $("#lockMsg").textContent = "That password didn't open the data. Check it and try again.";
       return;

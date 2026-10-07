@@ -130,7 +130,7 @@ def cmd_portal_export(args):
         return
     cfg = load_config()
     results = evaluate_state(state, cfg)
-    export_site(state, results, cfg, load_summaries(), os.environ.get("PORTAL_PASSWORD", ""),
+    export_site(state, results, cfg, load_summaries(), os.environ.get("PORTAL_PASSWORD", "").strip(),
                 allow_plain=args.allow_plain)
 
 
