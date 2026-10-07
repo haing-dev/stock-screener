@@ -1,0 +1,42 @@
+name: Check report
+# On demand: writes reports/check_report.md (why companies are on 'check manually') to the 'reports' branch.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Restore screen state
+        id: state
+        uses: actions/cache/restore@v4
+        with:
+          path: cache/state
+          key: state-v1-${{ github.run_id }}
+          restore-keys: state-v1-
+      - name: Screen state from the last screen run (if the cache was evicted)
+        if: steps.state.outputs.cache-matched-key == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          id="$(gh run list --workflow screen.yml --status success --limit 1 --json databaseId -q '.[0].databaseId' || true)"
+          if [ -n "$id" ]; then gh run download "$id" -n portal-state -D cache/state || echo "no state artifact on run $id"; fi
+      - name: Build the report
+        run: bash scripts/run_logged.sh python screener.py portal-report
+      - name: Publish to branch 'reports'
+        run: |
+          tmp="$(mktemp -d)"; cp reports/check_report.md "$tmp/"; cd "$tmp"
+          git init -q -b reports && git add -A
+          git -c user.name=screener-bot -c user.email=screener-bot@users.noreply.github.com commit -q -m "Check report"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" reports

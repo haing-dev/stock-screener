@@ -240,6 +240,7 @@ def main():
     sub.add_parser("portal-daily", help="web portal: re-price the saved screen")
     ps = sub.add_parser("portal-summaries", help="web portal: company descriptions (Claude)")
     ps.add_argument("--max", type=int, default=30)
+    sub.add_parser("portal-report", help="web portal: why companies are on 'check manually' (markdown)")
     pe = sub.add_parser("portal-export", help="web portal: write site/data")
     pe.add_argument("--allow-plain", action="store_true", help="local testing only: write unencrypted data")
     args = ap.parse_args()
@@ -264,6 +265,16 @@ def main():
         cmd_portal_summaries(args)
     elif args.cmd == "portal-export":
         cmd_portal_export(args)
+    elif args.cmd == "portal-report":
+        from qs.checkreport import build
+        from qs.portal import load_state
+        st = load_state()
+        if not st:
+            raise SystemExit("No saved screen state.")
+        os.makedirs("reports", exist_ok=True)
+        with open(os.path.join("reports", "check_report.md"), "w", encoding="utf-8") as f:
+            f.write(build(st, load_config()))
+        print("reports/check_report.md written")
     else:
         ap.print_help()
 
