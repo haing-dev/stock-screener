@@ -1,0 +1,10 @@
+// Cloudflare Workers (static assets): serves this folder as the website. Used when Cloudflare is set up with
+// "Create application" (Workers) instead of Pages. Deploy command: npx wrangler deploy
+{
+  "name": "stock-screener",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "404-page"
+  }
+}
