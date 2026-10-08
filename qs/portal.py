@@ -42,6 +42,7 @@ METRICS = {
     "ev_to_liquid_assets": ("EV / cash", "x", "low"),
     "fcf_yield": ("FCF yield", "pct", "high"),
     "roic_median": ("ROIC (10y median)", "pct", "high"),
+    "revenue_cagr_5y": ("Revenue CAGR (5y)", "pct", "high"),
     "roic_latest": ("ROIC (latest)", "pct", "high"),
     "revenue_cagr": ("Sales growth /yr", "pct", "high"),
     "revenue_cagr_3y": ("Sales growth /yr (3y)", "pct", "high"),
@@ -68,29 +69,10 @@ METRICS = {
 PRICE_METRICS = {"pe", "ev_ebitda", "ev_ebit", "ev_sales", "ev_normalized_ebit", "ev_to_liquid_assets", "fcf_yield",
                  "market_cap_usd", "insider_share", "mcap_to_net_cash", "price_to_tangible_book", "fcf_yield_5y",
                  "drawdown_12m"}
-SCREEN_METRICS = {
-    "core": ["pe", "ev_ebitda", "fcf_yield", "roic_median", "revenue_cagr", "gross_margin_latest"],
-    "emerging": ["ev_ebitda", "pe", "ev_sales", "roic_latest", "revenue_cagr_3y", "gross_margin_latest"],
-    "special": ["ev_ebit", "pe", "ev_ebitda", "fcf_yield", "roic_latest", "ttm_operating_margin"],
-    "fortress": ["pe", "ev_ebitda", "fcf_yield", "roic_median", "operating_margin_median", "net_debt_to_ebitda"],
-    "hc_commercial": ["pe", "ev_ebitda", "fcf_yield", "roic_median", "gross_margin_latest", "revenue_cagr"],
-    "hc_clinical": ["ev_to_liquid_assets", "market_cap_usd", "cash_runway_years", "debt_to_liquid_assets",
-                    "ttm_revenue_usd"],
-    "cyclicals": ["ev_normalized_ebit", "ev_ebit", "pe", "roic_median", "op_margin_percentile_10y",
-                  "net_debt_to_norm_ebitda"],
-    "owners": ["insider_share", "pe", "ev_ebit", "fcf_yield", "roic_median", "revenue_cagr"],
-    "real_assets": ["ev_ebit", "pe", "fcf_yield", "capex_to_ocf_3y", "operating_margin_median", "net_debt_to_ebitda"],
-    "asset_floor": ["mcap_to_net_cash", "price_to_tangible_book", "fcf_yield", "pe", "roic_median", "market_cap_usd"],
-    "trough_cash": ["fcf_yield_5y", "fcf_yield", "ev_normalized_ebit", "op_margin_percentile_10y",
-                    "returns_to_capex_5y", "net_debt_to_norm_ebitda"],
-    "hidden": ["drawdown_12m", "ev_ebit", "pe", "fcf_yield", "roic_median", "revenue_cagr_3y"],
-    "red_flags": ["ev_sales", "red_flag_count", "revenue_cagr_3y", "operating_margin_change_3y", "pe",
-                  "market_cap_usd"],
-}
+# the same columns on every screen (company, price vs open and the 52-week range are fixed columns on the site)
+TABLE_METRICS = ["pe", "ev_ebit", "fcf_yield", "roic_median", "revenue_cagr_5y"]
+SCREEN_METRICS = {}
 SCREEN_GROUPS = {"owners": "From the new interviews", "red_flags": "Avoid list"}
-WARNING_LABELS = {"margin_collapse": "Margins haven't collapsed",
-                  "revenue_shrinking": "Revenue isn't shrinking",
-                  "lost_money_2009": "No loss in 2008-09 on falling sales"}
 STATUS_KEEP = ("PASS", "CHECK", "NEAR", "PRICE", "ONE")
 
 
@@ -145,7 +127,7 @@ def classes_of(results):
     return {sid: {str(c): r["class"] for c, r in res.items()} for sid, res in results.items()}
 
 
-def save_state(results, ctxs, records, run_info, today, path=STATE_PATH):
+def save_state(results, ctxs, records, run_info, today, path=STATE_PATH, models=None):
     state = {
         "version": 1, "screener_version": __version__, "screened_on": today.isoformat(),
         "priced_on": today.isoformat(), "run_info": run_info,
@@ -155,6 +137,7 @@ def save_state(results, ctxs, records, run_info, today, path=STATE_PATH):
         "classes": classes_of(results),
         "records": {str(c): {k: rec.get(k) for k in ("ticker", "name", "exchange", "sic", "industry", "stage")}
                     for c, rec in records.items()},
+        "models": {str(c): mdl for c, mdl in (models or {}).items()},
     }
     write_gz_json(path, state)
     return state
@@ -322,7 +305,7 @@ def _op_text(op):
 
 RULE_UNITS = {"years_with_data": " years of data", "years_total": " years of data",
               "years_since_latest_fy": " years since the last annual report",
-              "operating_loss_years": " year(s) with an operating loss", "operating_loss_years_5y":
+              "operating_loss_years": " operating-loss years in 10", "operating_loss_years_5y":
               " loss year(s) in the last 5", "positive_ebit_years": " profitable years of the last 10",
               "bs_age_days": " days old", "fcf_conversion": " (free cash flow / net income)",
               "net_debt_to_ocf": " (net debt / operating cash flow)",
@@ -331,7 +314,7 @@ RULE_UNITS = {"years_with_data": " years of data", "years_total": " years of dat
               "debt_to_liquid_assets": " (debt / cash)", "ev_to_liquid_assets": " (EV / cash)",
               "ev_ebitda": " EV/EBITDA", "ev_ebit": " EV/EBIT", "ev_normalized_ebit": " EV / cycle-average EBIT",
               "roic_median": " ROIC, 10-year median", "roic_share_above_floor": " of years with ROIC above 10%",
-              "revenue_cagr": " revenue growth a year", "revenue_cagr_3y": " revenue growth a year (3 years)",
+              "revenue_cagr": " revenue growth a year", "revenue_cagr_3y": " revenue growth a year over 3 years",
               "share_count_cagr_3y": " share-count growth a year", "gross_margin_latest": " gross margin",
               "operating_margin_std": " swing in operating margin (std. dev.)",
               "op_margin_percentile_10y": " of its own 10-year margin range", "market_cap_usd": " market cap",
@@ -374,11 +357,10 @@ GATE_CODE = {"PASS": "P", "FAIL": "F", "NO DATA": "D", "N/A": "N", "PENDING": "D
 
 def screen_payload(s, results, ctxs, cfg):
     gates = [{"id": g.gid, "name": g.name, "rule": rule_label(g, cfg, s.sid), "why": g.insight,
-              "hard": not g.one_ok, "valuation": bool(g.valuation), "price": bool(g.needs_price)} for g in s.gates]
-    warnings = [{"id": "W:" + w, "name": WARNING_LABELS[w]} for w in s.warnings]
+              "hard": not g.one_ok, "valuation": bool(g.valuation), "price": bool(g.needs_price),
+              "hidden": bool(getattr(g, "hidden", False))} for g in s.gates]
     rows = []
     for c, r in results.items():
-        ctx = ctxs[c]
         codes, vals, notes = [], [], {}
         for g in s.gates:
             st, val, thr, note = r["gates"][g.gid]
@@ -386,19 +368,15 @@ def screen_payload(s, results, ctxs, cfg):
             vals.append("" if val is None else _fmt_val(val, g.fmt))
             if note:
                 notes[g.gid] = note
-        warn_ids = ["W:" + w for w in s.warnings if ctx.get("warn_" + w)]
-        warn_txt = {"W:" + w: ctx["warn_" + w] for w in s.warnings if ctx.get("warn_" + w)}
-        holds = [h for h in r.get("holds", []) if h not in warn_txt.values()]
-        rows.append({"c": c, "g": "".join(codes), "v": vals, "nt": notes, "h": holds, "w": warn_ids,
-                     "wt": warn_txt, "cls": r["class"], "un": r.get("universe_note") or "",
-                     "nr": r["failed"][0] if r["class"] == "NEAR" and r.get("failed") else None})
+        rows.append({"c": c, "g": "".join(codes), "v": vals, "nt": notes, "h": list(r.get("holds", [])),
+                     "cls": r["class"], "nr": r["failed"][0] if r["class"] == "NEAR" and r.get("failed") else None})
     from .screens import AVOID_SCREENS
-    return {"id": s.sid, "title": s.title, "purpose": s.purpose, "sources": s.sources, "review": s.rubric,
-            "gates": gates, "warnings": warnings, "metrics": SCREEN_METRICS.get(s.sid, []), "rows": rows,
+    return {"id": s.sid, "title": s.title, "purpose": s.purpose, "gates": gates,
+            "metrics": SCREEN_METRICS.get(s.sid, TABLE_METRICS), "rows": rows,
             "avoid": s.sid in AVOID_SCREENS, "strict": bool(getattr(s, "strict", False))}
 
 
-def company_payload(c, ctx, summaries, group_id):
+def company_payload(c, ctx, summaries, group_id, pv=None, has_model=False):
     m, unverified = {}, []
     for k in METRICS:
         v, ok = metric_value(ctx, k)
@@ -410,14 +388,15 @@ def company_payload(c, ctx, summaries, group_id):
     ev = None
     if ctx.get("event_types"):
         ev = {"types": ctx.get("event_types"), "date": ctx.get("event_date"), "url": ctx.get("event_filing_url")}
+    px = None
+    if ctx.get("price") is not None:
+        px = {"o": ctx.get("price_open"), "c": ctx.get("price"), "d": ctx.get("price_date"),
+              "hi": ctx.get("hi_52w"), "lo": ctx.get("lo_52w")}
     return {"t": ctx["ticker"], "n": ctx.get("name"), "ex": ctx.get("exchange"), "sic": ctx.get("sic"),
-            "ind": ctx.get("industry"), "cur": ctx.get("currency"),
-            "px": {"o": ctx.get("price_open"), "c": ctx.get("price"), "d": ctx.get("price_date"),
-                   "src": ctx.get("price_source")} if ctx.get("price") is not None else None,
+            "ind": ctx.get("industry"), "cur": ctx.get("currency"), "px": px,
             "m": m, "mu": unverified, "vi": ctx.get("val_issue") or "", "pg": group_id,
-            "sum": s.get("text"), "sumsrc": s.get("source"), "url": ctx.get("latest_annual_url"),
-            "fy": ctx.get("latest_fy"), "flags": ctx.get("flags") or [], "ev": ev,
-            "other": ctx.get("other_tickers") or ""}
+            "sum": s.get("text"), "url": ctx.get("latest_annual_url"), "fy": ctx.get("latest_fy"), "ev": ev,
+            "other": ctx.get("other_tickers") or "", "pv": pv, "mdl": bool(has_model)}
 
 
 SALT_PATH = os.path.join(ROOT, "data", "portal_salt.json")
@@ -491,8 +470,33 @@ def export_site(state, results, cfg, summaries, password, out_dir=SITE_DATA, tod
     shown = set()
     for res in results.values():
         shown.update(res)
-    companies = {c: company_payload(c, ctxs[c], summaries, assign.get(c)) for c in shown}
+    from . import history as hist
+    from .prices import TwelveData
+    td_cache = TwelveData._load(os.path.join(CACHE_DIR, "prices", "monthly_history.json.gz"))
+    if "peers10" not in state:
+        state["peers10"] = hist.closest_peers(ctxs, int((cfg.get("portal") or {}).get("peers", 10)))
+    listed = hist.listed_ciks(state)
+    models = state.get("models") or {}
+    ym_cache = {}
+    companies = {}
+    for c in shown:
+        pv = None
+        if c in listed and not ctxs[c].get("events_only"):
+            try:
+                pv = hist.peer_valuation(c, state, td_cache, ym_cache)
+            except Exception as e:  # noqa: BLE001 - information only
+                log(f"  peer valuation failed for {ctxs[c].get('ticker')}: {type(e).__name__}: {e}")
+        companies[c] = company_payload(c, ctxs[c], summaries, assign.get(c), pv, c in models)
     files = {}
+    shards = int((cfg.get("portal") or {}).get("model_shards", 64))
+    for c in shown:
+        mdl = models.get(c)
+        if not mdl:
+            continue
+        name = f"model_{int(c) % shards:02d}"
+        files.setdefault(name, {})[c] = dict(mdl, px=hist.fy_prices(c, state, td_cache), t=ctxs[c]["ticker"],
+                                             n=ctxs[c].get("name"), ind=ctxs[c].get("industry"),
+                                             fye=ctxs[c].get("latest_fy_end"))
     counts = {}
     for s in SCREENS:
         if s.sid not in results:
@@ -513,7 +517,7 @@ def export_site(state, results, cfg, summaries, password, out_dir=SITE_DATA, tod
     excluded = Counter(rec.get("stage") for rec in (state.get("records") or {}).values()
                        if (rec.get("stage") or "").startswith("not screened: ") and "check by hand" not in rec["stage"])
     files["meta"] = {
-        "version": __version__, "built": datetime.now().isoformat(timespec="minutes"),
+        "version": __version__, "model_shards": shards, "built": datetime.now().isoformat(timespec="minutes"),
         "screened_on": state.get("screened_on"), "priced_on": state.get("priced_on"),
         "price_day": max((c.get("price_date") or "" for c in ctxs.values()), default=None),
         "screens": [{"id": s.sid, "title": s.title, "counts": counts.get(s.sid, {}), "group": SCREEN_GROUPS.get(s.sid)}

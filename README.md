@@ -85,9 +85,13 @@ The screener runs itself in GitHub and publishes a password-protected website (C
 | Every weekday evening | **Daily prices**: end-of-day open/close for every company (Massive), screens re-applied |
 | Both | 2-3 line company descriptions written by Claude from the annual report (a batch per run until all are done) |
 
-On the site: one page per screen, a switch for every rule (the number on a rule = how many companies would join
-the list without it), and for each company the open/close price, what it does, the screen's key metrics and the
-median of its industry peers (same SEC industry code; broader group when fewer than 6 companies).
+On the site: one page per screen with a rules table (rule, criteria, rationale, on/off switch; +n = companies that
+would join without it), two lists (Pass; Near misses, each with the rule it missed or what to check by hand) and the
+same columns everywhere: price vs open, 52-week range, industry, P/E, EV/EBIT, FCF yield, ROIC (10-year median) and
+5-year revenue CAGR. Each company has its own page: what it does, valuation against its 10 closest peers and its own
+3- and 10-year average multiples (information only), and a button that builds an Excel file with its income
+statement, balance sheet, cash flow and a metrics page (up to 10 years, from SEC filings, built in the browser).
+Local preview with demo data: `python tests/demo_portal.py OUT_DIR`, then serve OUT_DIR.
 
 **Secrets** (repository Settings > Secrets and variables > Actions): `SEC_USER_AGENT` (your name and email),
 `MASSIVE_API_KEY`, `TWELVEDATA_API_KEY`, and either `ANTHROPIC_API_KEY` (from console.anthropic.com, pay per use) or `CLAUDE_CODE_OAUTH_TOKEN` (from `claude setup-token`, uses your Claude
@@ -99,7 +103,8 @@ the page decrypts them in your browser. Changing the password: update the secret
 **Run by hand**: Actions > Screen (or Daily prices) > Run workflow. The workbook of each screen run is attached to
 that run (Artifacts: screen-results) for 30 days.
 
-**Settings**: `config.json` > `portal` (descriptions per run, Claude model, peer group size). Thresholds are the
+**Settings**: `config.json` > `portal` (descriptions per run, Claude model, peer group size, price-history budgets:
+Massive requests for 52-week ranges and Twelve Data credits for month-end price history per run). Thresholds are the
 same `config.json` keys as before.
 
 Commands used by the workflows: `python screener.py portal-screen | portal-daily | portal-summaries --max N |

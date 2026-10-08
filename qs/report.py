@@ -218,8 +218,7 @@ def rules_rows(cfg):
              f"{cfg['sensitivity']:.0%}. 'Price too high (rest passes)' = every business rule passes, only the valuation "
              "rule fails (revisit when the price drops). 'Failed 1 rule' = exactly one business rule failed by a wider "
              "margin (e.g. more debt than allowed) and every other rule was verified - judge whether that rule matters. "
-             "Quality warnings (margin collapse, shrinking revenue, 2008-09 loss with falling sales) turn a PASS into "
-             "CHECK. All_Companies shows the failed rule codes (e.g. 'FAIL: G5a G8'). Passing companies are ranked by pillar scores (percentile within the screen's "
+             "On the web portal, CHECK, NEAR, PRICE and 'Failed 1 rule' together form the Near-miss list. All_Companies shows the failed rule codes (e.g. 'FAIL: G5a G8'). Passing companies are ranked by pillar scores (percentile within the screen's "
              "PASS + watch lists, 0-100). 'Robust' = still passes with every numeric threshold 20% stricter. Flags "
              "never remove a company; they tell you what to check.")]
     for s in SCREENS:

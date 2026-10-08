@@ -11,7 +11,7 @@ from . import __version__
 from .config import CACHE_DIR, OUTPUT_DIR
 from .extract import SUBSET_VERSION, CompanyData, _d, facts_subset, submissions_subset
 from .industry import CLINICAL_STAGE, CYCLICAL, HEALTHCARE, NEVER, REAL_ASSETS, in_ranges
-from .metrics import compute, post_event_dilution
+from .metrics import compute, model_years, post_event_dilution
 from .rules import concentration, flags_for
 from .screens import BY_ID, SCREENS, broad_ok, data_holds, screen_anyway
 from .sec import FACTS_URL, SUBMISSIONS_URL, TICKERS_URL, NotFound, cache_read, cache_write, filing_index_url
@@ -275,19 +275,6 @@ def build_ctx(u, info, m, rows, cd, cfg, fx, today):
     ctx["hc_stage"] = ("pre-revenue" if (ctx["ttm_revenue_usd"] or 0) < pre else "early commercial") if hc else None
     cy = in_ranges(info.get("sic"), CYCLICAL)
     ctx["cycle_group"] = cy[2] if cy else None
-    # quality warnings (texts; each screen decides which ones turn a PASS into 'Check manually')
-    if m.get("margin_collapse"):
-        ctx["warn_margin_collapse"] = (f"operating margin {m['ttm_operating_margin']:.0%} (last 12 months) is less "
-                                       f"than half its 10-year median {m['operating_margin_median']:.0%} - "
-                                       "temporary or permanent problem?")
-    if m.get("revenue_shrinking"):
-        ctx["warn_revenue_shrinking"] = (f"revenue shrinking {m['revenue_cagr_3y']:+.1%}/yr over the last 3 years - "
-                                         "a cyclical dip or a structural decline?")
-    rc = m.get("recession_2009_revenue_change")
-    if m.get("lost_money_2009") and (ctx["cycle_group"] or (rc is not None and rc <= -0.10)):
-        # a one-off charge (Mastercard's 2008 litigation settlement) isn't the point; a loss WITH falling sales is
-        ctx["warn_lost_money_2009"] = ("lost money in the 2008-09 recession as sales fell (before the 10-year "
-                                       "window) - a compounder, or a cyclical at a good point of its cycle?")
     la = info.get("latest_annual") or {}
     rd, fe = la.get("reportDate"), m.get("latest_fy_end")
     if rd and fe and (_d(rd) - _d(fe)).days > 60:
@@ -453,7 +440,8 @@ def enrich_price_history(ctxs, results, prices, cfg, today, log=print):
 
 # ------------------------------------------------------------------ main
 def run_screens(client, cfg, tickers=None, out_name=None, today=None, screens=None, prices=None,
-                detail_all=False, price_all=False):
+                detail_all=False, price_all=False, models_out=None):
+    """models_out: a dict to fill with {cik: per-year statement lines} (Excel model, historical multiples)."""
     today = today or date.today()
     started = datetime.now()
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -540,6 +528,10 @@ def run_screens(client, cfg, tickers=None, out_name=None, today=None, screens=No
                                           "buybacks", "dividends")}
                        for r in rows]
             raw[c] = (m, compact, sorted(cd.flags), cd.candidates)
+            if models_out is not None:
+                mdl = model_years(cd, rows)
+                if mdl:
+                    models_out[c] = mdl
             rec["stage"] = "screened"
         except Exception as e:  # noqa: BLE001 - unusual filings should not stop the run
             rec["stage"] = f"processing error: {type(e).__name__}: {str(e)[:100]}"

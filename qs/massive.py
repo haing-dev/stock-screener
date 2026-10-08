@@ -161,7 +161,7 @@ class Massive:
         for r in (data.get("results") or []) if isinstance(data, dict) else []:
             t, o, c, v = r.get("T"), r.get("o"), r.get("c"), r.get("v")
             if t and c:
-                bars[str(t).upper()] = [o, c, v, r.get("vw")]
+                bars[str(t).upper()] = [o, c, v, r.get("vw"), r.get("h"), r.get("l")]
         past = d < (self.today - timedelta(days=4)).isoformat()
         # a past weekday with no data = market holiday (remember it); a recent empty day may simply not be out yet
         _save(path, {"date": d, "bars": bars, "closed_checked": bool(not bars and past),
@@ -226,6 +226,123 @@ class Massive:
                     return b[1] if b else None
             d -= timedelta(days=1)
         return None
+
+    # ------------------------------------------------------------ 52-week range (weekly high/low aggregates)
+    def _week_path(self, monday):
+        return os.path.join(self.dir, "weeks", f"{monday}.json.gz")
+
+    def backfill_weeks(self, symbols, splits, budget, days=371, log_every=25):
+        """Fold each trading day of the last `days` into weekly high/low files (one all-stocks request per day not
+        yet folded in, at most `budget` requests this run). Values are split-adjusted as of the day they were
+        downloaded; a week file is kept on one basis ('asof') using the split list. Returns (days added, missing)."""
+        if splits is None:
+            return 0, None
+        want = {m_symbol(t) for t in symbols}
+        added, missing, spent = 0, 0, 0
+        weeks = {}
+        d = self.today - timedelta(days=1)
+        stop = self.today - timedelta(days=days)
+        while d >= stop:
+            if d.weekday() < 5:
+                monday = (d - timedelta(days=d.weekday())).isoformat()
+                w = weeks.get(monday)
+                if w is None:
+                    w = weeks[monday] = _load(self._week_path(monday)) or {"days": [], "closed": [], "hl": {},
+                                                                             "asof": None}
+                ds = d.isoformat()
+                if ds not in w["days"] and ds not in w["closed"]:
+                    if spent >= budget:
+                        missing += 1
+                    else:
+                        cached = _load(os.path.join(self.dir, f"{ds}.json.gz"))
+                        cb = (cached or {}).get("bars") or {}
+                        if cb and len(next(iter(cb.values()))) >= 6:
+                            bars, fetched = cb, (cached.get("fetched") or self.today.isoformat())
+                        else:
+                            spent += 1
+                            try:
+                                bars = self.day(d, fresh_days=0)    # re-download a day cached without high/low
+                            except MassiveError as e:
+                                self.log(f"  Massive {ds}: {e}")
+                                d -= timedelta(days=1)
+                                continue
+                            fetched = self.today.isoformat()
+                        if not bars:
+                            if ds < (self.today - timedelta(days=4)).isoformat():
+                                w["closed"].append(ds)
+                                w["dirty"] = True
+                        else:
+                            asof = w["asof"] or fetched
+                            new_asof = max(asof, fetched)
+                            hl = w["hl"]
+                            if new_asof != asof:      # bring the week onto the newer basis
+                                for sym, (h, lo) in list(hl.items()):
+                                    f = split_factor(splits.get(sym), after=asof, until=new_asof)
+                                    if f != 1.0:
+                                        hl[sym] = [h * f, lo * f]
+                            for sym in want:
+                                b = bars.get(sym)
+                                if not b or len(b) < 6 or b[4] is None or b[5] is None:
+                                    continue
+                                f = split_factor(splits.get(sym), after=fetched, until=new_asof)
+                                h, lo = b[4] * f, b[5] * f
+                                cur = hl.get(sym)
+                                hl[sym] = [max(cur[0], h), min(cur[1], lo)] if cur else [h, lo]
+                            w["asof"] = new_asof
+                            w["days"].append(ds)
+                            w["dirty"] = True
+                            added += 1
+                            if log_every and added % log_every == 0:
+                                self.log(f"  52-week range: {added} days added")
+            d -= timedelta(days=1)
+        for monday, w in weeks.items():
+            if w.pop("dirty", False):
+                _save(self._week_path(monday), w)
+        self.prune(keep_after=(self.today - timedelta(days=60)).isoformat())
+        self._prune_weeks()
+        return added, missing
+
+    def _prune_weeks(self, keep_days=400):
+        folder = os.path.join(self.dir, "weeks")
+        cut = (self.today - timedelta(days=keep_days)).isoformat()
+        try:
+            for f in os.listdir(folder):
+                if f[:10] < cut:
+                    os.remove(os.path.join(folder, f))
+        except OSError:
+            pass
+
+    def ranges_52w(self, symbols, splits):
+        """{sec_ticker: {'hi', 'lo', 'days'}} over the last 52 weeks from the weekly files, split-adjusted to today
+        (None without a split list)."""
+        if splits is None:
+            return {}
+        first = self.today - timedelta(days=364)
+        monday0 = first - timedelta(days=first.weekday())
+        files = []
+        d = monday0
+        while d <= self.today:
+            w = _load(self._week_path(d.isoformat()))
+            if w:
+                files.append(w)
+            d += timedelta(days=7)
+        out = {}
+        for t in symbols:
+            sym = m_symbol(t)
+            hi = lo = None
+            n = 0
+            for w in files:
+                v = w["hl"].get(sym)
+                if not v:
+                    continue
+                f = split_factor(splits.get(sym), after=w["asof"])
+                h, l_ = v[0] * f, v[1] * f
+                hi = h if hi is None else max(hi, h)
+                lo = l_ if lo is None else min(lo, l_)
+                n += sum(1 for x in w["days"] if x >= first.isoformat())
+            if hi is not None:
+                out[t] = {"hi": hi, "lo": lo, "days": n}
+        return out
 
     def month_end_days(self, months=12):
         """The last trading day of each of the last `months` calendar months: [(date, bars)], UNADJUSTED closes
@@ -363,7 +480,7 @@ class PriceSource:
         found = [(d, bars[sym]) for d, bars in days if sym in bars]
         if not found:
             return {"ok": False, "reason": "not in Massive's end-of-day data", "symbol": sym}
-        d, (o, c, v, vw) = found[0]
+        d, (o, c, v, vw, *_hl) = found[0]
         prev = found[1][1][1] if len(found) > 1 else None
         vols = [b[2] * (b[3] or b[1]) for _, b in found[:self.adv_days] if b[2] is not None]
         name, typ = self.ref().get(sym, ("", ""))
@@ -421,6 +538,23 @@ class PriceSource:
 
     def splits(self, since):
         return self.m.splits(since) if self.m.available() else None
+
+    def ranges_52w(self, symbols, budget=0):
+        """52-week high/low per ticker. Spends at most `budget` Massive requests first to fill missing days."""
+        if not self.m.available():
+            return {}
+        from datetime import timedelta as _td
+        sp = self.splits((self.today - _td(days=760)).isoformat())
+        if budget:
+            try:
+                added, missing = self.m.backfill_weeks(symbols, sp, budget)
+                if missing is None:
+                    self.log("  52-week range skipped: split list unavailable")
+                else:
+                    self.log(f"  52-week range: {added} trading days added, {missing} still to fetch")
+            except MassiveAuthError as e:
+                self.log(f"  Massive: {e}")
+        return self.m.ranges_52w(symbols, sp)
 
     def month_end_highs(self, symbols, months=12, splits=None):
         """{sec_ticker: (highest month-end close of the last `months` months, its date)} from Massive (12 requests

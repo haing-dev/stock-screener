@@ -282,8 +282,8 @@ r, _ = core_class("adp")
 check("real data: ADP (capex tag not in the old cache) is now CHECK, not FAIL", r["class"] == "CHECK",
       f"{r['class']} {r['check_notes'][:1]}")
 r, _ = core_class("odfl")
-check("real data: ODFL is a near miss on cash conversion", r["class"] == "NEAR" and r["failed"] == ["G7"],
-      f"{r['class']} {r['failed']}")
+check("real data: ODFL fails cash conversion and 'revenue not shrinking' (sales below 3 years ago)",
+      r["class"] == "FAIL" and r["failed"] == ["G7", "G10"], f"{r['class']} {r['failed']}")
 r, _ = core_class("spgi")
 check("real data: SPGI is a near miss on ROIC consistency", r["class"] == "NEAR" and r["failed"] == ["G5b"],
       f"{r['class']} {r['failed']}")
@@ -408,15 +408,22 @@ check("ABEV: IFRS finance costs (FX etc.) don't trigger 'debt partly missed'",
       not any("debt" in h for h in c["hold_reasons"]), str(c["hold_reasons"]))
 c, _, _ = screen_ctx("tol", "1531")
 r = BY_ID["core"].evaluate(c, cfg, priced=False)
-check("TOL: homebuilder that lost money in 2008-09 -> Core 'check manually', not PASS",
-      r["class"] == "CHECK" and any("2008-09" in h for h in r["holds"]), f"{r['class']} {r['holds']}")
+check("TOL: 2008-09 losses but no 2007-08 sales in SEC data -> downturn rule unverified (near miss with the reason)",
+      r["class"] == "CHECK" and r["no_data"] == ["G9"] and any("FY2008" in n for n in r["check_notes"]),
+      f"{r['class']} {r['check_notes']}")
 c, _, _ = screen_ctx("pool", "5090")
 r = BY_ID["core"].evaluate(c, cfg, priced=False)
-check("POOL: revenue shrinking 5%/yr over 3 years -> Core 'check manually' with the reason",
-      r["class"] == "CHECK" and any("shrinking" in h for h in r["holds"]), f"{r['class']} {r['holds']}")
+check("POOL: revenue shrinking 5%/yr over 3 years -> fails only 'revenue not shrinking' (a near miss, not dropped)",
+      r["class"] == "ONE" and r["failed"] == ["G10"], f"{r['class']} {r['failed']}")
+c, _, _ = screen_ctx("asml", "3559")
+r = BY_ID["core"].evaluate(c, cfg, priced=False)
+check("ASML: operating loss in FY2009 as sales fell 46% -> fails 'profitable in downturns'",
+      "G9" in r["failed"] and "FY2009" in r["gates"]["G9"][3], str(r["gates"]["G9"]))
+check("downturn windows tested: 2008-09, 2015-16, 2020, 2022", c["downturns_tested"] == ["2008-09", "2015-16", "2020", "2022"],
+      str(c["downturns_tested"]))
 r, c = core_class("ma")
-check("MA: 2008 litigation charge (sales still grew) does not trigger the 2008-09 warning", r["class"] == "PASS",
-      f"{r['class']} {r['holds']}")
+check("MA: 2008 litigation charge (sales still grew) passes the downturn rule", r["class"] == "PASS"
+      and r["gates"]["G9"][0] == "PASS", f"{r['class']} {r['gates']['G9']}")
 cni_info = json.load(gzip.open(os.path.join(ROOT, "tests", "real_samples", "cni_submissions_subset.json.gz"), "rt"))
 check("CNI: 40-F filer without XBRL statements is explained, not silently missing",
       "40-F" in qp.no_data_hint(cni_info), qp.no_data_hint(cni_info))
@@ -652,6 +659,65 @@ check("portal: Red Flags is marked as an avoid list; other screens aren't", _rf[
 check("portal: plain-English rule for insider ownership",
       any(g["rule"] == "at least 20% owned by insiders" for g in _ow["gates"]), [g["rule"] for g in _ow["gates"]][:4])
 check("portal: all 13 screens, unique gate ids", len(BY_ID) == 13)
+_cp = P.screen_payload(BY_ID["core"], results["core"], ctxs, cfg)
+check("portal: 'recent report' is applied but hidden from the rules table; no investor names in rationales",
+      [g["id"] for g in _cp["gates"] if g["hidden"]] == ["G2"]
+      and not any(n in g["why"] for g in _cp["gates"] for n in ("Kantesaria", "Dorsey", "Smith", "Haley", "Stahl")))
+check("portal: same table columns on every screen (P/E, EV/EBIT, FCF yield, ROIC 10y median, 5y revenue CAGR)",
+      _cp["metrics"] == ["pe", "ev_ebit", "fcf_yield", "roic_median", "revenue_cagr_5y"]
+      and _rf["metrics"] == _cp["metrics"])
+
+# statement model: diluted shares restated to today's basis through GOOD's 2-for-1 split (2020)
+from qs.metrics import model_years  # noqa: E402
+from qs import history as H  # noqa: E402
+_cdg = CompanyData(qp.get_facts(client, T["GOOD"], cfg))
+(_mm, _rows), _ = compute(_cdg, cfg, TODAY)
+_mdl = model_years(_cdg, _rows)
+_yrs = {y["fy"]: y for y in _mdl["years"]}
+check("model: up to 10 fiscal years with statement lines", 5 <= len(_mdl["years"]) <= 10
+      and all(k in _mdl["years"][-1] for k in ("revenue", "net_income", "x_operating_income")))
+check("model: shares on today's basis are split-proof (2019 x 2 = 2020 basis, falling 2%/yr)",
+      close(_yrs[2019]["shares_basis"] / _yrs[2018]["shares_basis"], 0.98, 1e-6)
+      and close(_yrs[2021]["shares_basis"] / _yrs[2019]["shares_basis"], 0.98 ** 2, 1e-6),
+      f"{_yrs[2018].get('shares_basis')} {_yrs[2019].get('shares_basis')} {_yrs[2021].get('shares_basis')}")
+
+# historical multiples: price at each fiscal year end x today's-basis shares vs that year's figures
+_hctx = {"currency": "USD", "market_cap_usd": 100.0 * _mdl["years"][-1]["shares_basis"], "price": 100.0}
+_ser = {f"{y['end'][:7]}": 100.0 for y in _mdl["years"]}
+_ym, _why = H.year_multiples(_hctx, _mdl, _ser)
+_last = _mdl["years"][-1]
+check("history: P/E at a fiscal year end = price x shares / net income",
+      _ym and close(_ym[-1][1]["pe"], 100.0 * _last["shares_basis"] / _last["net_income"], 1e-6), str(_why))
+_ym2, _why2 = H.year_multiples(dict(_hctx, market_cap_usd=_hctx["market_cap_usd"] * 3), _mdl, _ser)
+check("history: share count that doesn't match the market cap (share classes) -> no history, with the reason",
+      _ym2 is None and "share" in _why2, _why2)
+_av = H.averages(_ym)
+check("history: 3-year and 10-year averages", "pe" in _av and _av["pe"][2] == len(_ym), str(_av.get("pe")))
+check("valuation verdict: cheaper than own history and peers by >10% -> cheap; dearer on both -> expensive",
+      H._verdict("pe", 15, 20, 22) == "cheap" and H._verdict("pe", 30, 20, 22) == "expensive"
+      and H._verdict("pe", 15, 20, 12) == "mixed" and H._verdict("fcf_yield", 0.06, 0.04, 0.05) == "cheap")
+_pc = {str(i): {"ticker": f"P{i}", "sic": "7372" if i < 4 else "7371", "latest_revenue_usd": 10.0 ** i}
+       for i in range(1, 8)}
+_pp = H.closest_peers(_pc, 4)
+check("closest peers: same 4-digit code first (nearest revenue), then the 3-digit group",
+      _pp["2"][:2] == ["1", "3"] and len(_pp["2"]) == 4 and _pp["2"][2] in ("4", "5"), str(_pp["2"]))
+check("multiples by industry: banks -> P/E, P/B; loss-makers -> EV/Sales; else P/E, EV/EBIT, FCF yield",
+      H.choose_multiples({"sic": "6022"}, [], {}) == ["pe", "pb"]
+      and H.choose_multiples({"sic": "7372", "ttm_operating_income": -1}, [], {}) == ["ev_sales"]
+      and H.choose_multiples({"sic": "3561", "ttm_operating_income": 5}, [], {})[:3] == ["pe", "ev_ebit", "fcf_yield"])
+
+# 52-week range from weekly high/low files (Massive), split-adjusted
+for _dd in (date(2026, 10, 2), date(2026, 10, 1)):
+    _js.dump({"status": "OK", "results": [{"T": "ABC", "o": 10, "c": 10, "v": 1, "vw": 10, "h": 12.0 if _dd.day == 2 else 11.0,
+                                           "l": 8.0 if _dd.day == 1 else 9.0}]},
+             open(_os.path.join(_fx, "massive", f"v2_aggs_grouped_locale_us_market_stocks_{_dd.isoformat()}.json"), "w"))
+_m5 = Massive("", _os.path.join(TMP, "pcache5"), fixtures_dir=_fx, today=_today, log=lambda *a: None)
+_added, _miss = _m5.backfill_weeks(["ABC"], {}, budget=3, days=6)
+_r52 = _m5.ranges_52w(["ABC"], {})
+check("52-week range: days folded into weekly high/low within the request budget",
+      _added >= 2 and _r52["ABC"]["hi"] == 12.0 and _r52["ABC"]["lo"] == 8.0, f"{_added} {_miss} {_r52}")
+_r52s = _m5.ranges_52w(["ABC"], {"ABC": [("2026-10-06", 1.0, 2.0)]})
+check("52-week range: a 2-for-1 split after the download halves the stored high/low", _r52s["ABC"]["hi"] == 6.0, str(_r52s))
 
 check("summaries: Claude's JSON answer is parsed even with text around it",
       SU._parse('Here you go:\n{"12": "Makes widgets.", "13": ""}') == {"12": "Makes widgets."})

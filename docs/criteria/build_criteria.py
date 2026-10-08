@@ -53,9 +53,9 @@ S["Core Compounders"] = [
     ("U", "Universe", "No funds/SPACs/REITs/shells; excludes banks, insurers, real estate, commodity producers, autos, airlines, telecom, utilities, media, ad agencies", "Universe",
      "Price takers and balance-sheet businesses make ROIC/FCF misleading.", "Only businesses that can have pricing power.", "Easy", SIC),
     ("G1",) + hist(8, "A moat must show over many years, not one good stretch.", "Proves durability."),
-    ("G2",) + recent(),
+    ("G2",) + recent()[:-1] + (REP + " Applied but not shown on the site.",),
     ("G3",) + rev("$200M"),
-    ("G4", "Consistent profits", "<= 1 operating-loss year in 10", "Quality",
+    ("G4", "Consistent profits", "<= 2 operating-loss years in 10", "Quality",
      "Great businesses rarely lose money.", "Predictability.", "Easy", ""),
     ("G5a", "High returns (median)", "10-yr median ROIC >= 15%", "Quality",
      "High return on capital for years is the clearest sign of a moat.", "Moat evidence (core of the thesis).", "Easy", DEBT),
@@ -67,15 +67,11 @@ S["Core Compounders"] = [
      "Profits must turn into real cash.", "Earnings quality.", "Easy", CAPEX),
     ("G8", "Balance sheet", "Net debt / operating cash flow <= 3x", "Safety",
      "Too much debt can sink a good business.", "Survival / downside protection.", "Easy", DEBT),
-    ("Flag", "Margin collapse", "TTM operating margin < half its 10-yr median", "Warning",
-     "Might mean the moat is cracking.", "Stops buying a broken compounder.", "No", WARN),
-    ("Flag", "Revenue shrinking", "3-yr revenue CAGR < 0", "Warning",
-     "Cyclical dip or structural decline?", "Same.", "No", WARN),
-    ("Flag", "Lost money in 2008-09", "Operating loss on falling sales in 2008-09", "Warning",
-     "May be a cyclical at a good point, not a compounder.", "Avoids mistaking a cycle for a moat.", "No", WARN),
-    ("V", "Valuation", "None (price-blind by design); P/E, EV/EBITDA, FCF yield and peer medians shown only", "Valuation",
-     "Quality first; price decides timing, not inclusion.", "Keeps great businesses on the list even when dear.", "n/a", "No 'cheap enough' test - see Valuation sheet."),
-    ("J",) + judg("Moat durability, switching costs, management and capital allocation, AI disruption, why mispriced"),
+    ("G9", "Profitable in downturns", "No operating loss in a downturn fiscal year (2008-09, 2015-16, 2020, 2022) while sales fell vs the prior year", "Quality",
+     "A compounder stays profitable through downturns.", "Separates secular from cyclical growers.", "Partly",
+     "Only downturns inside the company's SEC data are tested; SEC XBRL mostly starts 2009-11, so 2008 is often missing. A loss year with no prior-year sales in the data -> near miss 'check manually'."),
+    ("G10", "Revenue not shrinking", "3-yr revenue CAGR >= 0%", "Growth",
+     "Shrinking sales need a reason: cyclical dip or structural decline.", "Flags fading franchises; a sole failure stays a near miss.", "Easy", ""),
 ]
 S["Emerging Compounders"] = [
     ("U", "Universe", "Core universe, also minus commodity materials (chemicals, paper, building materials, non-metal mining)", "Universe",
@@ -316,7 +312,7 @@ S["Red Flags (avoid)"] = [
 ]
 
 VAL = [
-    ("Core Compounders", "None (price-blind)", "-"),
+    ("Core Compounders", "None (price-blind); valuation vs peers and own history shown on the company page", "-"),
     ("Emerging Compounders", "EV/EBITDA <= 20x", "Absolute multiple"),
     ("Special Situations", "EV/EBIT <= 15x", "Absolute multiple"),
     ("Fortress", "None (price-blind)", "-"),
@@ -337,6 +333,45 @@ for _f in _g.glob("docs/criteria/out_*.json"):
     RAT.update(_j.load(open(_f)))
 for _n, _rows in S.items():
     S[_n] = [r[:4] + (RAT[f"{_n}|{r[0]}|{r[1]}"],) + r[5:] for r in _rows]
+
+# Unverifiable items (Oct 2026): warning flags and judgment items are no longer part of any screen. They are listed on
+# the 'Unverifiable' sheet with a way to verify them later; partly-verifiable rules stay in the screens (companies
+# whose data can't settle them go to Near misses with the reason) and are listed there too.
+STRATEGY = {
+    "Margin collapse": "Make it a rule: TTM operating margin >= half the 10-yr median (verifiable from 10-K/10-Q), with a sole failure kept as a near miss.",
+    "Margin collapse / revenue shrinking": "Make each a rule from 10-K data (as Core G10), sole failure kept as a near miss; or drop.",
+    "Human / AI review": "Keep out of screens. Proxies that are verifiable: gross-margin stability (pricing power), proxy-statement (DEF 14A) parsing for insider stake and pay, customer-concentration XBRL tags.",
+}
+UNVER = [
+    ("Core Compounders", "Margin collapse", "TTM operating margin < half its 10-yr median", "Removed from the screen", WARN,
+     STRATEGY["Margin collapse"]),
+    ("Core Compounders", "Human / AI review (moat)", "Moat durability, switching costs, management, AI disruption, why mispriced",
+     "Removed from the screen", HUMAN, STRATEGY["Human / AI review"]),
+]
+for _n in list(S):
+    keep = []
+    for r in S[_n]:
+        if r[0] in ("Flag", "J"):
+            UNVER.append((_n, r[1], r[2], "Removed from the screen", r[7] or "Needs judgment",
+                          STRATEGY.get(r[1], "Keep for manual review.")))
+        else:
+            keep.append(r)
+    S[_n] = keep
+PARTLY_STRATEGY = {
+    "Price x SEC share count": "Use share counts and ADR ratios from Massive reference data (ticker details) instead of SEC cover-page counts.",
+    "maturity schedule": "Parse the debt-maturity table in the 10-K debt note, or fall back to debt due within 12 months.",
+    "cover-page public float": "Parse the beneficial-ownership table in the proxy statement (DEF 14A) and insider filings (Form 4).",
+    "2008": "Use SEC Financial Statement Data Sets or the prior-year columns of the FY2009-10 10-Ks.",
+    "quarterly": "Use 6-K interim reports where filed; otherwise keep as a near miss with the reason.",
+    "Discontinued": "Read segment and discontinued-operations data from each filing's own XBRL instance (companyfacts omits dimensions).",
+    "capex": "Add fallback capex / D&A tags used by energy producers.",
+    "tagged history": "Wait for 3 years of data or read the S-1 / Form 10 financials.",
+}
+for _n, rows in S.items():
+    for r in rows:
+        if r[6] == "Partly":
+            strat = next((v for k, v in PARTLY_STRATEGY.items() if k.lower() in (r[7] or "").lower()), "Fill the data gap by hand for the affected companies.")
+            UNVER.append((_n, r[1], r[2], "Kept (verifiable for most; gaps -> Near misses with the reason)", r[7], strat))
 ARIAL = "Arial"
 hdr_font = Font(name=ARIAL, bold=True, color="FFFFFF", size=10)
 hdr_fill = PatternFill("solid", start_color="1F3864")
@@ -385,7 +420,7 @@ wv = wb.create_sheet("Valuation")
 vcols = ["Screen", "'Cheap enough' rule (pass/fail)", "Kind", "Vs peers", "Vs own history", "Implied return / DCF"]
 header(wv, vcols, [24, 34, 28, 30, 26, 20])
 for i, (s, rule, kind) in enumerate(VAL, 2):
-    vals = [s, rule, kind, "Shown on site (industry median, green/red); not a rule", "No", "No"]
+    vals = [s, rule, kind, "Company page: 10 closest peers (information only)", "Company page: own 3- and 10-yr averages (information only)", "No"]
     for c, v in enumerate(vals, 1):
         cell = wv.cell(row=i, column=c, value=v)
         cell.font = bold if c == 1 else body
@@ -393,8 +428,8 @@ for i, (s, rule, kind) in enumerate(VAL, 2):
 n = len(VAL) + 3
 notes = [
     "Answer: 9 of 13 screens have an absolute 'cheap enough' rule. None compares price to peers or to the company's own past multiples as a pass/fail rule.",
-    "Core, Fortress and HC Commercial are price-blind by design: they show P/E, EV/EBITDA, FCF yield and peer medians, but never exclude on price.",
-    "Possible adds: (1) peer-relative rule, e.g. EV/EBIT <= industry median (data already computed); (2) FCF-yield hurdle for Core/Fortress/HC; (3) own 5-10 yr multiple percentile (needs multi-year price history, not stored now).",
+    "Core, Fortress and HC Commercial are price-blind by design. Every listed company's page shows (information only) its 10 closest peers and its own 3- and 10-year average multiples (P/E, EV/EBIT, FCF yield; P/B for financials, EV/Sales for loss-makers, EV/EBITDA for low-capex groups) with a cheap / in line / expensive reading.",
+    "Possible adds: (1) peer-relative rule, e.g. EV/EBIT <= peer median; (2) FCF-yield hurdle for Core/Fortress/HC; (3) own 10-yr multiple percentile (history now stored for listed companies and peers).",
 ]
 for j, t in enumerate(notes):
     cell = wv.cell(row=n + j, column=1, value=t)
@@ -402,6 +437,17 @@ for j, t in enumerate(notes):
     wv.merge_cells(start_row=n + j, start_column=1, end_row=n + j, end_column=6)
     cell.alignment = Alignment(wrap_text=True, vertical="top")
     wv.row_dimensions[n + j].height = 30
+
+# Unverifiable sheet
+wu = wb.create_sheet("Unverifiable")
+ucols = ["Screen", "Criterion", "What it tests", "Status", "Why it can't be verified now", "Strategy to verify"]
+header(wu, ucols, [22, 26, 44, 30, 50, 60])
+for i, row in enumerate(UNVER, 2):
+    for c, v in enumerate(row, 1):
+        cell = wu.cell(row=i, column=c, value=v)
+        cell.font = bold if c in (1, 2) else body
+        cell.alignment, cell.border = wrap, border
+wu.auto_filter.ref = f"A1:F{len(UNVER) + 1}"
 
 # Summary sheet (formulas)
 sm = wb.create_sheet("Summary")
@@ -431,7 +477,7 @@ legend = [
     ("Legend", None),
     ("Easy", "Checked automatically from SEC XBRL / price data and reliable for nearly all companies; rare exceptions are auto-flagged."),
     ("Partly", "Automatic for most, but a known group (ADRs, multi-class shares, foreign filers, untagged items) lands in 'check manually'."),
-    ("No", "Not checked by numbers: warning flags or judgment items for the AI review + you."),
+    ("No", "Not checked by numbers. Removed from the screens (Oct 2026); see the Unverifiable sheet."),
     ("n/a", "No rule (price-blind screens)."),
     ("Rationale", "Format: investor states that X means Y, because Z; example. Checked against all 146 transcripts. 'No investor source' = practical data rule."),
     ("Note", "Each row is in config.json; thresholds can be changed there. Counts like '~150' are from the 7 Oct 2026 check-manually report."),

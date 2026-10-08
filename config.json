@@ -21,13 +21,14 @@
     0.4
   ],
   "gates": {
-    "max_operating_loss_years": 1,
+    "max_operating_loss_years": 2,
     "min_median_roic": 0.15,
     "roic_floor": 0.1,
     "min_share_of_years_above_floor": 0.8,
     "min_revenue_cagr": 0.05,
     "min_fcf_conversion": 0.8,
-    "max_net_debt_to_ocf": 3.0
+    "max_net_debt_to_ocf": 3.0,
+    "min_revenue_cagr_3y": 0.0
   },
   "sensitivity": 0.2,
   "_sensitivity_note": "Shortlist column 'Robust' = still passes when every numeric gate is made this much stricter. Run_Info shows how many pass at -20% / base / +20%.",
@@ -428,7 +429,16 @@
     "summaries_per_daily_run": 30,
     "twelvedata_backup_quotes_screen_run": 60,
     "twelvedata_backup_quotes_daily": 16,
-    "peer_min_companies": 6
+    "peer_min_companies": 6,
+    "peers": 10,
+    "_history_note": "Price history: Massive requests (one trading day each) for 52-week ranges, Twelve Data credits (one company each) for month-end prices behind historical multiples. Runs fill the gaps within these budgets.",
+    "range_days_per_screen_run": 200,
+    "range_days_per_daily_run": 100,
+    "range_min_days": 240,
+    "history_per_screen_run": 450,
+    "history_per_daily_run": 200,
+    "history_refresh_days": 180,
+    "model_shards": 64
   },
   "disc_ops_min_share_of_revenue": 0.01,
   "_disc_ops_note": "Hidden Earnings: discontinued operations count when at least this share of revenue (ignores small legacy items).",

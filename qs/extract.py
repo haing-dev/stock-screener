@@ -18,7 +18,7 @@ import re
 from collections import Counter, defaultdict
 from datetime import date, timedelta
 
-SUBSET_VERSION = 5   # 5: discontinued operations (Hidden Earnings screen)
+SUBSET_VERSION = 6   # 5: discontinued operations (Hidden Earnings screen); 6: statement-model lines (Excel model)
 ANNUAL_FORMS = {"10-K", "10-K/A", "10-KT", "10-KT/A", "20-F", "20-F/A", "40-F", "40-F/A"}
 QUARTERLY_FORMS = {"10-Q", "10-Q/A"}
 
@@ -197,7 +197,65 @@ CONCEPTS = {
         (I, "IntangibleAssetsOtherThanGoodwill")]},
     "shares_outstanding_bs": {"kind": "instant", "agg": "first", "unit": "shares", "tags": [
         (G, "CommonStockSharesOutstanding"), (I, "NumberOfSharesOutstanding")]},
+    # ---- statement-model lines (annual only; used by the Excel 3-statement model, never by a rule)
+    "selling_marketing": {"kind": "duration", "agg": "first", "model": True, "tags": [
+        (G, "SellingAndMarketingExpense"), (G, "SellingExpense"), (G, "MarketingAndAdvertisingExpense"),
+        (I, "SellingExpense"), (I, "DistributionCosts")]},
+    "general_admin": {"kind": "duration", "agg": "first", "model": True, "tags": [
+        (G, "GeneralAndAdministrativeExpense"), (I, "AdministrativeExpense")]},
+    "interest_income": {"kind": "duration", "agg": "first", "model": True, "tags": [
+        (G, "InvestmentIncomeInterest"), (G, "InvestmentIncomeInterestAndDividend"),
+        (G, "InterestIncomeOther"), (I, "FinanceIncome"), (I, "InterestRevenueExpense")]},
+    "basic_shares": {"kind": "duration", "agg": "first", "unit": "shares", "model": True, "tags": [
+        (G, "WeightedAverageNumberOfSharesOutstandingBasic"),
+        (I, "WeightedAverageShares")]},
+    "cfi": {"kind": "duration", "agg": "first", "model": True, "tags": [
+        (G, "NetCashProvidedByUsedInInvestingActivities"),
+        (G, "NetCashProvidedByUsedInInvestingActivitiesContinuingOperations"),
+        (I, "CashFlowsFromUsedInInvestingActivities")]},
+    "cff": {"kind": "duration", "agg": "first", "model": True, "tags": [
+        (G, "NetCashProvidedByUsedInFinancingActivities"),
+        (G, "NetCashProvidedByUsedInFinancingActivitiesContinuingOperations"),
+        (I, "CashFlowsFromUsedInFinancingActivities")]},
+    "debt_issued": {"kind": "duration", "agg": "first", "model": True, "tags": [
+        (G, "ProceedsFromIssuanceOfLongTermDebt"), (G, "ProceedsFromIssuanceOfDebt"),
+        (G, "ProceedsFromIssuanceOfSeniorLongTermDebt"), (G, "ProceedsFromConvertibleDebt"),
+        (G, "ProceedsFromLongTermLinesOfCredit"),
+        (I, "ProceedsFromBorrowingsClassifiedAsFinancingActivities"), (I, "ProceedsFromNoncurrentBorrowings")]},
+    "debt_repaid": {"kind": "duration", "agg": "first", "model": True, "tags": [
+        (G, "RepaymentsOfLongTermDebt"), (G, "RepaymentsOfDebt"), (G, "RepaymentsOfSeniorDebt"),
+        (G, "RepaymentsOfConvertibleDebt"), (G, "RepaymentsOfLongTermLinesOfCredit"),
+        (I, "RepaymentsOfBorrowingsClassifiedAsFinancingActivities"), (I, "RepaymentsOfNoncurrentBorrowings")]},
+    "fx_effect": {"kind": "duration", "agg": "first", "model": True, "tags": [
+        (G, "EffectOfExchangeRateOnCashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents"),
+        (G, "EffectOfExchangeRateOnCashAndCashEquivalents"),
+        (I, "EffectOfExchangeRateChangesOnCashAndCashEquivalents")]},
+    "accounts_receivable": {"kind": "instant", "agg": "first", "model": True, "tags": [
+        (G, "AccountsReceivableNetCurrent"), (G, "ReceivablesNetCurrent"),
+        (G, "AccountsNotesAndLoansReceivableNetCurrent"), (G, "AccountsReceivableNet"),
+        (I, "TradeAndOtherCurrentReceivables"), (I, "CurrentTradeReceivables")]},
+    "inventory": {"kind": "instant", "agg": "first", "model": True, "tags": [
+        (G, "InventoryNet"), (G, "InventoryGross"), (I, "Inventories"), (I, "CurrentInventories")]},
+    "accounts_payable": {"kind": "instant", "agg": "first", "model": True, "tags": [
+        (G, "AccountsPayableCurrent"), (G, "AccountsPayableAndAccruedLiabilitiesCurrent"),
+        (G, "AccountsPayableTradeCurrent"),
+        (I, "TradeAndOtherCurrentPayables"), (I, "CurrentTradePayables")]},
+    "accrued_liabilities": {"kind": "instant", "agg": "first", "model": True, "tags": [
+        (G, "AccruedLiabilitiesCurrent"), (G, "EmployeeRelatedLiabilitiesCurrent")]},
+    "deferred_revenue_current": {"kind": "instant", "agg": "first", "model": True, "tags": [
+        (G, "ContractWithCustomerLiabilityCurrent"), (G, "DeferredRevenueCurrent"),
+        (I, "CurrentContractLiabilities")]},
+    "deferred_revenue_noncurrent": {"kind": "instant", "agg": "first", "model": True, "tags": [
+        (G, "ContractWithCustomerLiabilityNoncurrent"), (G, "DeferredRevenueNoncurrent"),
+        (I, "NoncurrentContractLiabilities")]},
+    "liabilities": {"kind": "instant", "agg": "first", "model": True, "tags": [
+        (G, "Liabilities"), (I, "Liabilities")]},
+    "liabilities_and_equity": {"kind": "instant", "agg": "first", "model": True, "tags": [
+        (G, "LiabilitiesAndStockholdersEquity"), (I, "EquityAndLiabilities")]},
+    "retained_earnings": {"kind": "instant", "agg": "first", "model": True, "tags": [
+        (G, "RetainedEarningsAccumulatedDeficit"), (I, "RetainedEarnings")]},
 }
+MODEL_CONCEPTS = tuple(k for k, v in CONCEPTS.items() if v.get("model"))
 
 # cover-page data (dei)
 DEI_TAGS = {"EntityCommonStockSharesOutstanding": "shares", "EntityPublicFloat": "money"}
@@ -207,7 +265,7 @@ TTM_CONCEPTS = ("revenue", "gross_profit", "cost_of_revenue", "sga", "operating_
                 "income_tax", "net_income", "ocf", "capex_ppe", "capex_software", "da", "interest_expense",
                 "interest_paid", "nonoperating_income", "reorganization_items", "diluted_shares",
                 "costs_and_expenses", "eps_diluted", "disc_ops", "disc_ops_revenue")
-BS_CONCEPTS = tuple(k for k, v in CONCEPTS.items() if v["kind"] == "instant")
+BS_CONCEPTS = tuple(k for k, v in CONCEPTS.items() if v["kind"] == "instant" and not v.get("model"))
 QUARTERLY_KEEP = set(TTM_CONCEPTS) | set(BS_CONCEPTS)
 QUARTERLY_MAX_AGE_DAYS = 3 * 366
 

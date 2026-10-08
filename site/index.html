@@ -40,13 +40,13 @@
       </div>
     </header>
 
-    <details id="rulesBox" class="rules" open>
+    <details id="rulesBox" class="rules card" open>
       <summary class="rules-top">
-        <h3 id="rulesLabel">Rules <span id="rulesOn" class="rules-on"></span></h3>
-        <span class="rules-hint">Switch a rule off to see which companies it was keeping out. The number on each rule is how many companies would join the list without it.</span>
+        <h3>Rules <span id="rulesOn" class="rules-on"></span></h3>
+        <span class="rules-hint">Switch a rule off to see what it keeps out. +n = companies that would join.</span>
       </summary>
       <button id="resetRules" class="linkish reset" type="button" hidden>Turn all rules back on</button>
-      <div id="rules" class="rule-grid"></div>
+      <div id="rules" class="tbl-wrap"></div>
     </details>
 
     <section class="list">
@@ -55,14 +55,16 @@
         <input id="search" class="search" type="search" placeholder="Find ticker or name" aria-label="Find ticker or name">
       </div>
       <p id="listNote" class="list-note"></p>
-      <div id="table" class="table" role="table"></div>
+      <div id="table" class="table"></div>
     </section>
   </main>
+
+  <main id="companyView" class="main company" hidden></main>
 
   <main id="gapsView" class="main" hidden>
     <header class="head"><div class="head-text">
       <h2>Couldn't screen</h2>
-      <p class="purpose">Listed companies the screener could not test from SEC data, with the reason. Check these by hand if one interests you — they are not failures.</p>
+      <p class="purpose">Listed companies the screener could not test from SEC data, with the reason. Not failures: check by hand if one interests you.</p>
     </div></header>
     <div id="gaps"></div>
   </main>

@@ -17,7 +17,7 @@ permissions:
 jobs:
   prices:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     env:
       SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
       TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}

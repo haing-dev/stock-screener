@@ -361,6 +361,41 @@ class TwelveData:
         self._save(self.cache_path, self.cache)
         return best[1]
 
+    # ------------------------------------------------------------ monthly history (historical multiples)
+    def _hist_path(self):
+        return os.path.join(os.path.dirname(self.cache_path), "monthly_history.json.gz")
+
+    def history_cache(self):
+        if not hasattr(self, "_hist"):
+            self._hist = self._load(self._hist_path())
+        return self._hist
+
+    def save_history(self):
+        if hasattr(self, "_hist"):
+            self._save(self._hist_path(), self._hist)
+
+    def monthly_history(self, symbol, months=132):
+        """Split-adjusted month-end closes {'YYYY-MM': close} for the last `months` months (1 credit). Stored in
+        the history cache with the fetch date; None on failure (nothing stored)."""
+        if not self.available():
+            return None
+        if self.daily_limit and self.daily_used + 1 > self.daily_limit:
+            raise DailyLimitReached("daily credit limit reached")
+        self._spend(1)
+        d = self._get("time_series", {"symbol": symbol, "interval": "1month", "outputsize": months,
+                                      "country": "United States", "adjust": "splits"})
+        vals = (d.get("values") or []) if isinstance(d, dict) else []
+        series = {}
+        for v in vals:
+            dt, cl = str(v.get("datetime") or "")[:7], _f(v.get("close"))
+            if len(dt) == 7 and cl and cl > 0:
+                series[dt] = cl
+        rec = {"fetched": self.today.isoformat(), "s": series}
+        if not series:
+            rec["error"] = str((d or {}).get("message") or "no monthly data")[:120] if isinstance(d, dict) else "no data"
+        self.history_cache()[symbol] = rec
+        return rec
+
     # ------------------------------------------------------------ FX
     def fx_rates(self, currencies, static):
         """{currency: (rate_to_usd, source)}. Live rate from Twelve Data when possible, else config table."""

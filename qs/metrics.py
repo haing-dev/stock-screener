@@ -57,6 +57,11 @@ def _cash(g, y=None):
 
 # recession windows: fiscal years ending in these ranges are compared with the year before
 RECESSIONS = {"2020": ("2020-03-31", "2021-06-30"), "2009": ("2008-09-30", "2010-03-31")}
+# market downturns for Core's 'no loss in a downturn on falling sales' rule (fiscal years ending in the window)
+DOWNTURNS = {"2008-09": ("2008-09-30", "2010-03-31"),        # financial crisis
+             "2015-16": ("2015-09-30", "2016-12-31"),        # industrial / energy recession
+             "2020": ("2020-03-31", "2021-06-30"),           # COVID
+             "2022": ("2022-06-30", "2023-06-30")}           # rate shock / bear market
 
 
 def total_debt(cd, y=None, at=None):
@@ -418,6 +423,7 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
             return _cagr(by_all[yb][k], lr[k], n)
         return None
     m["revenue_cagr_3y"] = cagr_n("revenue", 3)
+    m["revenue_cagr_5y"] = cagr_n("revenue", 5)
     m["ebitda_cagr_3y"] = cagr_n("ebitda", 3)
     m["operating_income_cagr_3y"] = cagr_n("operating_income", 3)
     prev = by_all.get(latest - 1)
@@ -517,6 +523,34 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
                     ni_chg = c if ni_chg is None else min(ni_chg, c)
         m[f"recession_{key}_ni_change"] = ni_chg
         m[f"recession_{key}_ni_loss"] = ni_loss
+
+    # ---------- downturns (Core): an operating loss in a downturn fiscal year while sales fell vs the year before.
+    # Only downturns inside the company's SEC data are tested (verifiable); a one-off charge in a year when sales
+    # still grew (Mastercard's 2008 settlement) doesn't count.
+    ni_s = cd.series.get("net_income") or {}
+    failed, tested, unjudged = [], [], []
+    for key, (lo, hi) in DOWNTURNS.items():
+        yrs = sorted(lab for lab, end in cd.label_end.items() if lo <= end[:10] <= hi)
+        judged = False
+        for lab in yrs:
+            r, p = by_all.get(lab), by_all.get(lab - 1)
+            op = r["operating_income"] if r else None
+            loss = (op < 0) if op is not None else (lab in ni_s and ni_s[lab].val < 0)
+            rev, prev = (r["revenue"] if r else None), (p["revenue"] if p else None)
+            if op is None and lab not in ni_s:
+                continue
+            if rev is None or prev is None or prev <= 0:
+                if loss:
+                    unjudged.append(f"FY{lab}")
+                continue
+            judged = True
+            if loss and rev < prev:
+                failed.append(f"FY{lab} ({key}): operating loss as sales fell {rev / prev - 1:+.0%}")
+        if judged:
+            tested.append(key)
+    m["downturn_failures"] = failed
+    m["downturns_tested"] = tested
+    m["downturn_unjudged"] = unjudged
 
     # ---------- cycle position (Cyclicals) and over-earning
     oms_all = col("operating_margin")
@@ -789,6 +823,60 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
                                  and m["recession_2009_min_op_income"] < 0) or m.get("recession_2009_ni_loss"))
     m["revenue_shrinking"] = bool(m.get("revenue_cagr_3y") is not None and m["revenue_cagr_3y"] < -0.02)
     return (m, all_rows), None
+
+
+# ---------------------------------------------------------------- statement model (Excel) and price history
+# raw tagged lines kept per fiscal year for the 3-statement model; derived lines come from _year_rows
+MODEL_RAW = ("revenue", "cost_of_revenue", "gross_profit", "selling_marketing", "general_admin", "sga", "rnd",
+             "da", "sbc", "interest_expense", "interest_income", "nonoperating_income", "pretax_income",
+             "income_tax", "net_income", "eps_diluted", "diluted_shares", "basic_shares",
+             "cash", "st_investments", "accounts_receivable", "inventory", "assets_current", "ppe_net", "goodwill",
+             "intangibles", "lt_investments", "assets", "accounts_payable", "accrued_liabilities",
+             "deferred_revenue_current", "liabilities_current", "deferred_revenue_noncurrent", "liabilities",
+             "minority_interest", "preferred_equity", "equity", "retained_earnings", "liabilities_and_equity",
+             "ocf", "capex_ppe", "capex_software", "acquisitions", "cfi", "debt_issued", "debt_repaid",
+             "buybacks", "dividends", "equity_issued", "cff", "fx_effect")
+MODEL_DERIVED = ("operating_income", "ebitda", "capex", "fcf", "total_debt", "cash_and_sti", "nopat",
+                 "invested_capital", "roic", "cash_roic", "tax_rate_used")
+
+
+def model_years(cd, rows, n=10):
+    """Per fiscal year (last n with revenue and operating results): the statement lines for the Excel model and
+    the inputs for historical multiples. 'shares_basis' = diluted shares restated to the latest year's basis with
+    the split-proof within-filing ratios, so it can be multiplied by a split-adjusted price of that year."""
+    rows = rows[-n:]
+    if not rows:
+        return None
+    latest = rows[-1]["fy"]
+    basis = {}
+    s_last = cd.get("diluted_shares", latest)
+    if s_last:
+        basis[latest] = s_last
+        for y in range(latest, rows[0]["fy"], -1):
+            if y not in basis:
+                break
+            r = cd.share_ratios.get(y)
+            if r and r.get("ratio"):
+                basis[y - 1] = basis[y] / r["ratio"]
+            else:
+                a, b = cd.get("diluted_shares", y), cd.get("diluted_shares", y - 1)
+                if a and b:
+                    basis[y - 1] = basis[y] * b / a
+    years = []
+    for r in rows:
+        y = r["fy"]
+        d = {"fy": y, "end": cd.label_end.get(y)}
+        for k in MODEL_RAW:
+            v = cd.get(k, y)
+            if v is not None:
+                d[k] = v
+        for k in MODEL_DERIVED:
+            if r.get(k) is not None:
+                d["x_" + k] = r[k]
+        if basis.get(y):
+            d["shares_basis"] = basis[y]
+        years.append(d)
+    return {"currency": cd.currency, "years": years}
 
 
 EVIDENCE_CONCEPTS = ["revenue", "gross_profit", "cost_of_revenue", "sga", "operating_income", "pretax_income",

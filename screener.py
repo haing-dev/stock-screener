@@ -79,11 +79,18 @@ def cmd_portal_screen(args):
     from datetime import date
     from qs.pipeline import run_screens
     from qs.portal import save_state
+    from qs import history
+    from qs.portal import STATE_PATH, write_gz_json
     cfg = load_config()
     client = make_client(cfg)
-    out, results, ctxs, records = run_screens(client, cfg, prices=make_portal_prices(cfg), price_all=True)
+    prices = make_portal_prices(cfg)
+    models = {}
+    out, results, ctxs, records = run_screens(client, cfg, prices=prices, price_all=True, models_out=models)
     run_info = {"workbook": os.path.basename(out)}
-    save_state(results, ctxs, records, run_info, date.today())
+    state = save_state(results, ctxs, records, run_info, date.today(), models=models)
+    print("Price history (52-week ranges, month-end prices for listed companies and peers)")
+    history.update(state, prices, cfg, daily=False)
+    write_gz_json(STATE_PATH, state)
     print("State saved for the daily price updates.")
 
 
@@ -100,8 +107,12 @@ def cmd_portal_daily(args):
             sys.exit(1)
         print("No saved screen yet - run the screen workflow first. Nothing to re-price.")
         return
+    from qs import history
     cfg = load_config()
-    reprice(state, make_portal_prices(cfg, daily=True), cfg, date.today())
+    prices = make_portal_prices(cfg, daily=True)
+    reprice(state, prices, cfg, date.today())
+    print("Price history (52-week ranges, month-end prices for listed companies and peers)")
+    history.update(state, prices, cfg, daily=True)
     write_gz_json(STATE_PATH, state)
 
 
