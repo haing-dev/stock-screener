@@ -1,4 +1,11 @@
 {
+ "1000184": {
+  "accn": "0001104659-26-020058",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-02-26",
+  "text": "SAP provides business applications covering finance, procurement, HR, supply chain and customer experience, sold mainly as cloud subscriptions. It is headquartered in Walldorf, Germany, with a global presence. Customers include organizations, governments and regulated industries."
+ },
  "1000753": {
   "accn": "0001000753-26-000011",
   "date": "2026-10-08",
@@ -12,6 +19,20 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-27",
   "text": "TG Therapeutics is a commercial-stage biotechnology company focused on acquiring, developing and commercializing treatments for B-cell diseases. The company markets BRIUMVI (ublituximab-xiiy), an FDA-approved monoclonal antibody for relapsing forms of multiple sclerosis, in the U.S. and internationally through a partnership with Neuraxpharm."
+ },
+ "1002242": {
+  "accn": "0001554855-26-000390",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-03-23",
+  "text": "Eni is an Italian joint stock company headquartered in Rome that produces and sells energy products and services in worldwide markets. Its businesses include exploring for and producing crude oil and natural gas, making oil-based fuels and chemicals, gas-fired power, and renewable energy products."
+ },
+ "1004315": {
+  "accn": "0001004315-26-000006",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-06-03",
+  "text": "National Grid operates regulated electricity and gas networks in the UK and US, covering transmission and distribution. It also sells gas and electricity to residential and commercial customers."
  },
  "1013237": {
   "accn": "0001628280-25-045769",
@@ -83,6 +104,13 @@
   "source": "10-K filed 2026-02-10",
   "text": "Silicon Labs designs and manufactures analog-intensive, mixed-signal semiconductors for the Internet of Things (IoT). Its wireless microcontrollers and integrated circuits support Bluetooth, Wi-Fi, Zigbee, and other wireless protocols. The company serves electronics manufacturers and developers globally through direct sales and distributors."
  },
+ "1038683": {
+  "accn": "0001104659-26-076131",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-06-22",
+  "text": "Ryanair Holdings is the holding company for Ryanair DAC, a low-fare scheduled passenger airline serving short-haul, point-to-point routes mainly within Europe. The group flies to approximately 235 airports across Europe. It serves fare-conscious leisure and business travelers."
+ },
  "1040470": {
   "accn": "0001654954-26-006919",
   "date": "2026-10-08",
@@ -145,6 +173,13 @@
   "model": "haiku",
   "source": "10-K filed 2025-10-27",
   "text": "WD-40 (WDFC) develops and sells maintenance products, including WD-40 Multi-Use Product and WD-40 Specialist, and homecare and cleaning products. It sells in more than 176 countries and territories through hardware stores, automotive outlets, industrial distributors, mass retailers, grocers and online retailers."
+ },
+ "1051512": {
+  "accn": "0001051512-26-000011",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-24",
+  "text": "TDS provides communications services through TDS Telecom, with 1.1 million broadband, video, voice and wireless connections at December 31, 2025. Products include broadband, video, voice and MVNO wireless service. TDS Telecom operates in 30 states, serving residential and small- to mid-sized business customers."
  },
  "1051627": {
   "accn": "0001437749-26-008612",
@@ -244,6 +279,13 @@
   "source": "10-K filed 2026-02-25",
   "text": "United Therapeutics develops therapies for serious diseases, particularly pulmonary arterial hypertension. The company markets FDA-approved products including treprostinil formulations and tadalafil in the United States and select international markets. Products are sold through specialty pharmaceutical distributors."
  },
+ "1084765": {
+  "accn": "0001084765-26-000051",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "10-K filed 2026-07-24",
+  "text": "RGP is a global professional services firm offering on-demand talent, consulting and outsourced finance, accounting and HR services. It operates in North America, Europe and Asia Pacific and serves more than 1,500 clients, including CFOs and other C-suite leaders."
+ },
  "1086600": {
   "accn": "0001104659-26-020468",
   "date": "2026-10-08",
@@ -342,6 +384,13 @@
   "source": "20-F filed 2026-02-17",
   "text": "Nova provides metrology tools for process control in semiconductor manufacturing, using optical, X-ray, SIMS and chemical analysis technologies. It is headquartered in Rehovot, Israel, with subsidiaries in the U.S., Taiwan, Korea, China, Japan, Singapore and Germany. Its customers are semiconductor manufacturers in the foundry, memory and packaging sectors."
  },
+ "1110646": {
+  "accn": "0001104659-26-043468",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-04-15",
+  "text": "NetEase develops and operates online games, including over 100 titles, and also offers music streaming, online learning services through Youdao, and Yanxuan private-label consumer products. It conducts its business in China through subsidiaries and VIEs, and some games have launched in North America, Europe and Asia."
+ },
  "1111928": {
   "accn": "0001111928-26-000040",
   "date": "2026-10-08",
@@ -355,6 +404,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-04-16",
   "text": "Build-A-Bear is a global retail brand whose stores let guests create personalized plush toys. It offers pre-stuffed plush, gifting and licensed collectible characters through corporate stores, e-commerce, and partner-operated and franchise locations, including internationally. Its customers include children, teens and adults."
+ },
+ "1114448": {
+  "accn": "0001114448-26-000004",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-02-04",
+  "text": "Novartis is an innovative medicines company that researches, develops, manufactures and sells pharmaceutical products. Its core therapeutic areas are cardiovascular, renal and metabolic, immunology, neuroscience and oncology. Headquartered in Basel, Switzerland, its products are sold in about 120 countries."
  },
  "1116132": {
   "accn": "0001116132-26-000018",
@@ -376,6 +432,20 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-18",
   "text": "Garmin designs and manufactures GPS-enabled products and services for navigation, communications, and fitness tracking. It serves five primary markets: fitness, outdoor, aviation, marine, and automotive. The company sells to consumers worldwide and commercial customers including aircraft operators and fleet owners."
+ },
+ "1123452": {
+  "accn": "0001104659-26-044448",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-04-16",
+  "text": "ASUR is a Mexican holding company that conducts its operations through subsidiaries, which operate airports in Mexico. It was incorporated in 1998 as part of Mexico's program opening its airports to private investment, and the excerpt refers to passenger traffic at its airports."
+ },
+ "1140625": {
+  "accn": "0001140625-26-000013",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-03-19",
+  "text": "Equinor ASA (EQNR) is a Norway-incorporated energy company headquartered in Stavanger, Norway. It operates in more than 20 countries, with petroleum activities that include oil and gas exploration and production under concession and production sharing regimes."
  },
  "1140859": {
   "accn": "0001140859-25-000131",
@@ -440,6 +510,13 @@
   "source": "10-K filed 2026-03-16",
   "text": "Standard BioTools (LAB) provides life science tools, including the CyTOF, Hyperion and Biomark platforms for proteomics and genomics research. It sold its SomaScan business to Illumina, which closed on January 30, 2026. Its instruments and consumables are sold for research use only to academic research institutions, translational research centers, cancer centers, clinical research laboratories, and biopharmaceutical and biotechnology companies."
  },
+ "1163165": {
+  "accn": "0001163165-26-000009",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-17",
+  "text": "ConocoPhillips is an independent exploration and production company headquartered in Houston, Texas, with operations in 14 countries. It explores for, produces, transports and markets crude oil, bitumen, natural gas, NGLs and LNG. Its natural gas is sold to local distribution companies, gas and power utilities, large industrials, and oil and gas and marketing companies."
+ },
  "1172358": {
   "accn": "0001437749-26-005376",
   "date": "2026-10-08",
@@ -488,6 +565,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-24",
   "text": "MKTX operates electronic trading platforms for fixed-income markets, connecting approximately 2,100 institutional investor and broker-dealer clients globally across 90 countries. Its Open Trading marketplace provides anonymous all-to-all trading and price discovery. MKTX also offers execution solutions, data analytics, and post-trade services."
+ },
+ "1280452": {
+  "accn": "0001437749-26-006113",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-27",
+  "text": "Monolithic Power Systems (MPWR) is a fabless global company that designs high-performance, semiconductor-based power electronics solutions, including analog and mixed-signal chips. Its products are used in storage and computing, enterprise data, automotive, industrial, communications and consumer applications."
  },
  "1282637": {
   "accn": "0001282637-26-000005",
@@ -608,6 +692,13 @@
   "source": "20-F filed 2026-04-23",
   "text": "Ituran (ITRN) provides stolen vehicle recovery (SVR) services and automatic vehicle location telematics products, plus navigation and fleet management services. It operates in Israel, Brazil, Argentina and other regions. Its customers include retail and commercial subscribers, car manufacturers and insurance companies."
  },
+ "1342874": {
+  "accn": "0001342874-26-000020",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-03-31",
+  "text": "Ternium is a steel producer in the Americas that supplies steel products to manufacturing industries and the construction sector. The excerpt names Argentina and Mexico as countries where it works with small and medium-sized customers and suppliers through its ProPymes program."
+ },
  "1345016": {
   "accn": "0001345016-26-000019",
   "date": "2026-10-08",
@@ -635,6 +726,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-26",
   "text": "EPAM is a global provider of digital engineering, cloud and AI-enabled transformation services. It offers software development, product engineering, cloud solutions, data analytics, AI services, customer experience design, marketing, and cybersecurity services. EPAM serves global enterprises and start-ups."
+ },
+ "1372920": {
+  "accn": "0001193125-26-397192",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-09-22",
+  "text": "New Oriental Education & Technology Group (EDU) runs teaching facilities it calls schools and learning centers. It conducts its business in the PRC through subsidiaries and variable interest entities (VIEs) under contractual arrangements."
  },
  "1385849": {
   "accn": "0001385849-26-000009",
@@ -713,12 +811,26 @@
   "source": "10-K filed 2026-02-19",
   "text": "Alarm.com (ALRM) provides a cloud-based IoT platform for connected properties, offering security, video, energy management, access control and related solutions. It sells mainly through service provider partners who serve residential and commercial property owners. Its solutions are used in residential, multi-family, small business and enterprise commercial markets."
  },
+ "1466258": {
+  "accn": "0001628280-26-005731",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-05",
+  "text": "Trane Technologies plc is an Ireland-incorporated company that designs, manufactures, sells and services HVAC systems, transport refrigeration and custom refrigeration solutions under the Trane and Thermo King brands. It sells products in approximately 100 countries, and its solutions serve buildings, homes and transportation."
+ },
  "1467373": {
   "accn": "0001467373-25-000217",
   "date": "2026-10-07",
   "model": "haiku",
   "source": "10-K filed 2025-10-10",
   "text": "ACN is a global professional services company. It helps enterprises build digital capabilities through strategy, consulting, technology, and operations services. The company operates across Americas, EMEA, and Asia Pacific serving major enterprises worldwide."
+ },
+ "1468091": {
+  "accn": "0001468091-26-000010",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-03-16",
+  "text": "VEON is a digital operator providing mobile and fixed telecommunications, digital and cloud services through local brands such as Kyivstar, Banglalink, Toffee and Jazz. It operates in Bangladesh, Kazakhstan, Pakistan, Ukraine and Uzbekistan, and is headquartered in Dubai. It serves consumers and businesses, including through business-to-business OTT services."
  },
  "14707": {
   "accn": "0000014707-26-000053",
@@ -783,6 +895,13 @@
   "source": "10-K filed 2026-02-26",
   "text": "Personalis (PSNL) develops and sells cancer genomic testing services, including its NeXT Personal Dx residual disease test. Its tests are used by physicians, pharmaceutical and biopharmaceutical companies, and diagnostics companies. It performs testing in a CLIA-certified laboratory in Fremont, California, and sells mainly in the United States, Europe and Asia-Pacific."
  },
+ "1530238": {
+  "accn": "0001104659-26-049917",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-04-28",
+  "text": "JOYY is a global technology company that operates social entertainment apps such as Bigo Live, Likee, Hago and imo, and B2B businesses BIGO Ads (programmatic advertising) and Shopline (smart commerce SaaS). It has users and operations in over 150 countries, and its B2B customers are advertisers and merchants."
+ },
  "1531152": {
   "accn": "0001531152-26-000007",
   "date": "2026-10-07",
@@ -803,6 +922,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-27",
   "text": "Progyny provides fertility, pregnancy and postpartum, and other women's health and family building benefits, plus the Progyny Rx pharmacy solution. It serves more than 590 employers. Its national provider network serves members in virtually every U.S. state."
+ },
+ "1552000": {
+  "accn": "0001552000-26-000009",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-26",
+  "text": "MPLX is a master limited partnership that owns and operates midstream energy infrastructure, including crude oil and refined product pipelines, terminals, and natural gas and NGL gathering and processing, and provides fuels distribution services. Its assets are positioned throughout the United States. Its largest customer is its sponsor MPC, and it also serves producers in several U.S. shale resource plays."
  },
  "1555280": {
   "accn": "0001555280-26-000011",
@@ -838,6 +964,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-19",
   "text": "Guardant Health provides precision oncology diagnostics through blood and tissue tests for cancer screening, recurrence monitoring, and treatment selection across all stages of care. The company also collaborates with biopharmaceutical companies for clinical research and drug development."
+ },
+ "1577552": {
+  "accn": "0001193125-26-231755",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-05-20",
+  "text": "Alibaba is a Cayman Islands holding company that operates through subsidiaries and variable interest entities. It runs e-commerce platforms such as Taobao, Tmall and Taobao Instant Commerce, international retail and wholesale platforms, and AI and cloud services. Its principal offices are in Hangzhou, China. It serves consumers, merchants, brands, retailers, enterprises and global buyers."
  },
  "1579241": {
   "accn": "0001579241-26-000007",
@@ -1105,6 +1238,13 @@
   "source": "10-K filed 2026-03-11",
   "text": "Pliant Therapeutics is a clinical-stage biopharmaceutical company developing integrin-based therapeutics. Its lead candidate, PLN-101095, is an oral small molecule in development for solid tumors resistant to immune checkpoint inhibitors."
  },
+ "1751008": {
+  "accn": "0001751008-26-000010",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-19",
+  "text": "AppLovin provides AI-powered advertising software, including Axon Ads Manager for user acquisition, MAX for app monetization, Adjust for measurement and attribution, and Wurl for connected TV. Its customers are advertisers, advertising networks, and mobile app and gaming publishers, and its tools target users worldwide."
+ },
  "1753539": {
   "accn": "0001753539-26-000032",
   "date": "2026-10-08",
@@ -1146,6 +1286,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-17",
   "text": "BICYCLE THERAPEUTICS (BCYC) is a clinical-stage pharmaceutical company developing Bicycle molecules, synthetic peptides, mainly for oncology. Its lead candidates include nuzefatide pevedotin and BT1702. It also collaborates with biopharmaceutical companies in other therapeutic areas."
+ },
+ "1769256": {
+  "accn": "0001213900-26-004379",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-01-14",
+  "text": "XChange TEC is an insurance agency business operating in China through variable interest entities, with substantially all of its operations and assets located in China. It works with customers, suppliers and business partners in its insurance agency business."
  },
  "1771007": {
   "accn": "0001292814-26-002013",
@@ -1315,6 +1462,13 @@
   "source": "10-K filed 2026-03-06",
   "text": "BKV is an energy company focused on natural gas production, natural gas midstream, natural gas-fired power generation and carbon capture (CCUS). It operates in Texas, including the Barnett Shale, where its BKV Energy unit sells electricity to commercial, industrial and residential customers."
  },
+ "1838413": {
+  "accn": "0001193125-26-153778",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-04-14",
+  "text": "Full Truck Alliance is a Cayman Islands holding company whose operations are conducted primarily in China, through contractual arrangements with variable interest entities and through subsidiaries. Its ADSs are listed on the NYSE under the ticker 'YMM'."
+ },
  "1840856": {
   "accn": "0001840856-26-000006",
   "date": "2026-10-08",
@@ -1469,6 +1623,13 @@
   "source": "10-K filed 2026-02-27",
   "text": "Solventum is a global healthcare company with three segments: MedSurg solutions (wound care, surgical supplies), Dental Solutions (orthodontics and restorative products), and Health Information Systems (healthcare software). It serves hospitals, clinics, and healthcare systems."
  },
+ "1973239": {
+  "accn": "0001973239-26-000097",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-05-26",
+  "text": "Arm licenses CPU IP, GPU IP, systems IP, compute subsystems and associated software and tools to semiconductor companies. Its end markets include smartphones, PCs, consumer electronics, industrial devices and data centers. Its registered office is in Cambridge, UK, with a US subsidiary in San Jose, California."
+ },
  "1973266": {
   "accn": "0001193125-26-071651",
   "date": "2026-10-07",
@@ -1594,6 +1755,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-23",
   "text": "Colgate-Palmolive manufactures and sells oral care products like toothpaste and mouthwash, personal care items including soaps and deodorants, and home care products such as dishwashing liquids and cleaners. Through Hill's Pet Nutrition, it markets specialty pet foods. The company sells to retailers, wholesalers, distributors and veterinarians in over 200 countries."
+ },
+ "217410": {
+  "accn": "0000217410-26-000007",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-03-12",
+  "text": "Unilever is a consumer goods company with brands such as Dove and Vaseline, spanning personal care and foods. Its Ice Cream business was demerged as The Magnum Ice Cream Company, in which Unilever retains a 19.85% stake. It sells through retailers and operates in markets including the US, Latin America and India."
  },
  "27419": {
   "accn": "0000027419-26-000016",
@@ -1938,6 +2106,13 @@
   "source": "10-K filed 2026-04-08",
   "text": "Virco designs, produces and distributes movable educational furniture, including tables, desks, chairs and storage, for the preschool through 12th grade market in the United States. It operates from facilities in Torrance, California and Conway, Arkansas. Its customers include schools, colleges, convention centers, hospitality venues, government facilities, places of worship, and wholesalers and retailers serving these markets."
  },
+ "75362": {
+  "accn": "0001193125-26-057025",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-18",
+  "text": "PACCAR is a multinational company that designs, manufactures and distributes light-, medium- and heavy-duty commercial trucks under the Kenworth, Peterbilt and DAF nameplates, and distributes aftermarket truck parts. Its financial services segment provides finance and leasing to customers and dealers. Its operations span the United States, Europe, Australia, Brazil, Canada and Mexico, and its trucks are sold to independent dealers."
+ },
  "763744": {
   "accn": "0000763744-26-000011",
   "date": "2026-10-08",
@@ -1986,6 +2161,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-24",
   "text": "Pentair is a water solutions company with three operating segments: Flow (pump and fluid treatment products), Water Solutions (residential and commercial water products), and Pool (pool equipment). The company serves global residential, commercial and industrial markets through wholesalers, retailers, end users and original equipment manufacturers."
+ },
+ "773840": {
+  "accn": "0000773840-26-000013",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "10-K filed 2026-02-17",
+  "text": "Honeywell is an integrated operating company that blends physical products with software for aerospace, building automation, industrial automation, process automation and process technology. It serves a broad range of industries and geographies worldwide. Its Aerospace Technologies segment sells principally to the U.S. government and prime contractors, including the U.S. Department of Defense."
  },
  "779152": {
   "accn": "0000779152-26-000067",
@@ -2113,6 +2295,13 @@
   "source": "10-K filed 2025-11-20",
   "text": "Tetra Tech is a global consulting and engineering services company specializing in water, environment and sustainable infrastructure solutions. The company operates through two segments serving U.S. government clients (federal, state and local), international development agencies and commercial clients across more than 100 countries."
  },
+ "835403": {
+  "accn": "0001628280-26-057529",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-08-18",
+  "text": "Diageo is a spirits company with a portfolio of brands, including ready-to-drink (RTD) cocktails, Smirnoff Ice and Guinness. It operates in five regions, with North America as its largest market. It sells to wholesalers and distributors, which also sell other brands."
+ },
  "836690": {
   "accn": "0001104659-25-123847",
   "date": "2026-10-08",
@@ -2147,6 +2336,13 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-13",
   "text": "Lattice Semiconductor develops low-power programmable logic devices and FPGAs for edge-to-cloud applications as a fabless provider. The company serves global markets in communications and computing, industrial and automotive, and consumer sectors, with customers building data centers, 5G infrastructure, IoT devices, and automotive systems."
+ },
+ "863064": {
+  "accn": "0001628280-26-009531",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-02-19",
+  "text": "Rio Tinto is a metals and mining company domiciled in the UK and Australia. The report focuses on iron ore, copper, aluminium and lithium, and includes the Simandou project in Guinea."
  },
  "865752": {
   "accn": "0001104659-26-020831",
@@ -2421,6 +2617,13 @@
   "source": "10-K filed 2026-02-23",
   "text": "Erie Indemnity acts as attorney-in-fact for the Erie Insurance Exchange, providing policy issuance, claims handling and investment management services. The Exchange writes property and casualty insurance including auto, homeowners, commercial multi-peril and workers compensation through independent agencies."
  },
+ "924613": {
+  "accn": "0001628280-26-015034",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-03-05",
+  "text": "Nokia provides network equipment through two segments, Network Infrastructure, which includes optical, IP and fixed networks, and Mobile Infrastructure, which covers mobile networks. Its customers include telecommunication providers, mission critical enterprise customers and AI & Cloud customers."
+ },
  "924719": {
   "accn": "0001654954-26-003505",
   "date": "2026-10-08",
@@ -2441,6 +2644,13 @@
   "model": "haiku",
   "source": "20-F filed 2026-04-30",
   "text": "Tower is a specialty foundry manufacturing processed wafers based on customers' design specifications. It operates facilities in Israel, the U.S., Japan, and Italy, serving semiconductor companies and fabless companies in markets including data centers, automotive, industrial, and medical devices."
+ },
+ "929869": {
+  "accn": "0001104659-26-017277",
+  "date": "2026-10-09",
+  "model": "haiku",
+  "source": "20-F filed 2026-02-19",
+  "text": "RELX is a global provider of information-based analytics and decision tools, now provided almost exclusively in electronic format, across four segments: Risk, Scientific, Technical & Medical, Legal and Exhibitions. It serves professional and business customers in more than 180 countries and territories, with offices in about 40 countries."
  },
  "93389": {
   "accn": "0000093389-26-000012",
