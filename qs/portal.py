@@ -377,13 +377,18 @@ def screen_payload(s, results, ctxs, cfg):
 
 
 def company_payload(c, ctx, summaries, group_id, pv=None, has_model=False):
-    m, unverified = {}, []
+    m, unverified, nm = {}, [], {}
+    adr = "ADR ratio unknown" in (ctx.get("val_issue") or "")
     for k in METRICS:
         v, ok = metric_value(ctx, k)
         if v is not None:
+            if not ok and adr:
+                continue     # off by the ADR ratio (TSMC: 5x): show nothing rather than a wrong number
             m[k] = v
             if not ok:
                 unverified.append(k)
+        elif ctx.get(k + "_nm"):
+            nm[k] = ctx[k + "_nm"]
     s = summaries.get(c) or {}
     ev = None
     if ctx.get("event_types"):
@@ -394,7 +399,7 @@ def company_payload(c, ctx, summaries, group_id, pv=None, has_model=False):
               "hi": ctx.get("hi_52w"), "lo": ctx.get("lo_52w")}
     return {"t": ctx["ticker"], "n": ctx.get("name"), "ex": ctx.get("exchange"), "sic": ctx.get("sic"),
             "ind": ctx.get("industry"), "cur": ctx.get("currency"), "px": px,
-            "m": m, "mu": unverified, "vi": ctx.get("val_issue") or "", "pg": group_id,
+            "m": m, "mu": unverified, "nm": nm, "vi": ctx.get("val_issue") or "", "pg": group_id,
             "sum": s.get("text"), "url": ctx.get("latest_annual_url"), "fy": ctx.get("latest_fy"), "ev": ev,
             "other": ctx.get("other_tickers") or "", "pv": pv, "mdl": bool(has_model)}
 

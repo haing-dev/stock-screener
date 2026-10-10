@@ -408,9 +408,10 @@ check("ABEV: IFRS finance costs (FX etc.) don't trigger 'debt partly missed'",
       not any("debt" in h for h in c["hold_reasons"]), str(c["hold_reasons"]))
 c, _, _ = screen_ctx("tol", "1531")
 r = BY_ID["core"].evaluate(c, cfg, priced=False)
-check("TOL: 2008-09 losses but no 2007-08 sales in SEC data -> downturn rule unverified (near miss with the reason)",
-      r["class"] == "CHECK" and r["no_data"] == ["G9"] and any("FY2008" in n for n in r["check_notes"]),
-      f"{r['class']} {r['check_notes']}")
+check("TOL: 2008-09 losses but no 2007-08 sales in SEC data -> downturn rule unverified (NO DATA, with the reason)",
+      r["gates"]["G9"][0] == "NO DATA" and "FY2008" in r["gates"]["G9"][3], str(r["gates"]["G9"]))
+check("TOL: all debt lines counted (credit line $2.3B, not only $0.2B secured debt) -> ROIC median below 15%",
+      c["roic_median"] < 0.15 and "G5a" in r["failed"], f"{c['roic_median']:.3f} {r['failed']}")
 c, _, _ = screen_ctx("pool", "5090")
 r = BY_ID["core"].evaluate(c, cfg, priced=False)
 check("POOL: revenue shrinking 5%/yr over 3 years -> fails only 'revenue not shrinking' (a near miss, not dropped)",
@@ -424,6 +425,44 @@ check("downturn windows tested: 2008-09, 2015-16, 2020, 2022", c["downturns_test
 r, c = core_class("ma")
 check("MA: 2008 litigation charge (sales still grew) passes the downturn rule", r["class"] == "PASS"
       and r["gates"]["G9"][0] == "PASS", f"{r['class']} {r['gates']['G9']}")
+print("\nMetric audit fixes (Oct 2026)")
+c, _, _ = screen_ctx("aapl26", "3571")
+check("AAPL: ROIC shown as computed (~152% median), not capped at 100%", 1.3 < c["roic_median"] < 1.8,
+      f"{c['roic_median']:.3f}")
+c, _, _ = screen_ctx("jnj", "2834")
+r = BY_ID["core"].evaluate(c, cfg, priced=False)
+check("JNJ: revenue growth like-for-like after the Kenvue split (5.1%/yr, not 3.0% mixing restated years) -> passes",
+      0.045 < c["revenue_cagr"] < 0.056 and "G6" not in r["failed"] and any("like-for-like" in f for f in c["flags"]),
+      f"{c['revenue_cagr']:.4f} {r['failed']}")
+check("JNJ: R&D from the total tag (~17% of sales), not the acquired-IPR&D-only tag", 0.14 < c["rnd_to_revenue"] < 0.2,
+      str(c["rnd_to_revenue"]))
+(_m, _rows), _ = compute(real("rrc"), cfg, date(2026, 10, 5))
+r16 = {x["fy"]: x for x in _rows}[2016]
+check("RRC: capex from the largest tag (oil & gas $466M, not $1-36M of office equipment) -> FCF 2016 negative",
+      r16["capex"] > 3e8 and r16["fcf"] < 0, f"{r16['capex']:.0f} {r16['fcf']:.0f}")
+c, _, _ = screen_ctx("adp", "7374")
+st = BY_ID["real_assets"].gates[3].evaluate(c, cfg, "real_assets")
+check("ADP: capex not tagged -> capex / cash flow unknown (NO DATA), never 0% (a false pass on 'little reinvestment')",
+      c["capex_to_ocf_3y"] is None and st[0] == "NO DATA", str(st))
+c, _, _ = screen_ctx("veev", "7372")
+check("VEEV: cycle-average EBITDA never below average EBIT when D&A is missing in some years; capex/D&A only over "
+      "years with both", c["normalized_ebitda"] >= c["normalized_ebit"] and c["capex_to_da_3y"] is None,
+      f"{c['normalized_ebitda']:.0f} {c['normalized_ebit']:.0f} {c['capex_to_da_3y']}")
+c, _, _ = screen_ctx("tsm26", "3674")
+check("TSM: USD convenience translations are not a second reporting currency (no permanent hold)",
+      "multiple reporting currencies" not in " ".join(c["flags"]), str(c["hold_reasons"]))
+_nm = {"roic_median": None, "roic_median_nm": "negative or near-zero invested capital in 7 of 10 years"}
+_g5 = [g for g in BY_ID["core"].gates if g.gid == "G5a"][0]
+check("ROIC with negative/near-zero invested capital (customer-funded) is 'n/m' and passes the high-returns rule",
+      _g5.evaluate(_nm, cfg, "core")[0] == "PASS")
+from qs.metrics import _median_nm  # noqa: E402
+from qs.metrics import _cash  # noqa: E402
+check("cash: short-term investments tagged only inside the combined line are counted (MSFT pre-2018: $133B, not $7.7B)",
+      _cash(lambda c, y=None: {"cash": 7.7, "cash_and_sti_combined": 133.0}.get(c)) == 133.0
+      and _cash(lambda c, y=None: {"cash": 10.0, "st_investments": 5.0, "cash_and_sti_combined": 15.0}.get(c)) == 15.0)
+check("ROIC median counts n/m years as high; none when they are half or more",
+      _median_nm([0.1, 0.2, 0.3], 1) == 0.25 and _median_nm([0.1], 1) is None and _median_nm([0.1, 0.5, 0.9], 0) == 0.5)
+
 cni_info = json.load(gzip.open(os.path.join(ROOT, "tests", "real_samples", "cni_submissions_subset.json.gz"), "rt"))
 check("CNI: 40-F filer without XBRL statements is explained, not silently missing",
       "40-F" in qp.no_data_hint(cni_info), qp.no_data_hint(cni_info))

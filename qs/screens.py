@@ -75,6 +75,10 @@ class Gate:
             if na:
                 return NA, None, thr, na if isinstance(na, str) else "rule does not apply"
         val = ctx.get(self.metric)
+        if (val is None or (isinstance(val, float) and val != val)) and ctx.get(str(self.metric) + "_nm") \
+                and self.op == ">=":
+            # e.g. ROIC with negative / near-zero invested capital (customer-funded): not a number, but high
+            return PASS, None, thr, ctx[self.metric + "_nm"]
         if val is None or (isinstance(val, float) and val != val):
             if self.fail_if is not None:
                 why = self.fail_if(ctx)

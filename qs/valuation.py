@@ -114,7 +114,9 @@ def value(m, info, quote, fx, today=None, td=None, listing_type=None):
     cash = m.get("bs_cash_and_sti")
     if cash is None:
         issues.append("no balance-sheet cash")
-    claims = (debt or 0) + (m.get("bs_minority_interest") or 0) + (m.get("bs_preferred") or 0) - (cash or 0)
+    # long-term marketable securities are cash-like too (one net-debt definition with the leverage rules)
+    claims = (debt or 0) + (m.get("bs_minority_interest") or 0) + (m.get("bs_preferred") or 0) - (cash or 0) \
+        - (m.get("bs_lt_investments") or 0)
     ev = mcap + claims * fx
     v["ev_usd"] = ev
     ebit = m.get("ttm_operating_income")

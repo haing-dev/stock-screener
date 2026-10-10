@@ -369,6 +369,8 @@ function rowHTML(x, scr, mk) {
   const reason = x.st.s === "FAIL" ? "Fails: " + x.st.fails.map((g) => g.name).join(", ") : reasonOf(x.st, x.r, scr);
   const cells = mk.map((k) => {
     const u = c.mu.includes(k);
+    const nmk = (c.nm || {})[k];
+    if (nmk) return `<td class="num" data-label="${esc(S.comp.metrics[k][0])}"><span class="u" title="${esc(nmk)}">n/m</span></td>`;
     return `<td class="num" data-label="${esc(S.comp.metrics[k][0])}"><span class="${u ? "u" : ""}" ${u ? `title="Unverified: ${esc(c.vi)}"` : ""}>${u ? "≈" : ""}${fmt(c.m[k], S.comp.metrics[k][1])}</span></td>`;
   }).join("");
   const pill = x.st.s === "CHECK" ? "chk" : x.st.s === "PASS" ? "" : "miss";
@@ -404,8 +406,9 @@ function renderCompany(ticker) {
     c.ev && c.ev.url ? `<a href="${esc(c.ev.url)}" target="_blank" rel="noopener">${esc(c.ev.types)} filing (${esc(c.ev.date)})</a>` : ""].filter(Boolean).join("");
   const M = S.comp.metrics;
   const keys = ["market_cap_usd", ...scr.metrics];
-  const facts = keys.filter((k) => c.m[k] !== undefined).map((k) =>
-    `<div class="fact"><span>${esc(M[k][0])}</span><b>${c.mu.includes(k) ? "≈" : ""}${fmt(c.m[k], M[k][1])}</b></div>`).join("");
+  const nm = c.nm || {};
+  const facts = keys.filter((k) => c.m[k] !== undefined || nm[k]).map((k) =>
+    `<div class="fact"${nm[k] ? ` title="${esc(nm[k])}"` : ""}><span>${esc(M[k][0])}</span><b>${nm[k] ? "n/m" : (c.mu.includes(k) ? "≈" : "") + fmt(c.m[k], M[k][1])}</b></div>`).join("");
   $("#companyView").hidden = false;
   $("#companyView").innerHTML = `
     <a class="back" href="#${esc(S.cur)}">← ${esc(scr.title)}</a>
@@ -672,18 +675,18 @@ function buildModel(Excel, mdl) {
     const y = Y[i];
     if (y.liabilities != null) return mil(y.liabilities);
     if (y.assets != null && y.equity != null) {   // not tagged: total assets less equity, minority and preferred
-      return F(`${col(i)}${bs._qk.ta}-${mil(y.equity)}-${mil(y.minority_interest || 0)}-${mil(y.preferred_equity || 0)}`);
+      return F(`${col(i)}${bs._qk.ta}-${mil(y.equity)}-${mil(y.minority_interest || 0)}`);
     }
     return null;
   };
   add(bs, "oncl", "Other non-current liabilities (incl. long-term debt)", (i) => (tl(i) !== null && Y[i].liabilities_current != null
     ? F(`${col(i)}${tlRow}-${col(i)}${bs._qk.tcl}-${col(i)}${bs._qk.dr_nc}`) : null), { indent: 1 });
   add(bs, "tl", "Total liabilities", tl, { bold: true, top: true });
-  add(bs, "pref", "Preferred equity", (i) => mil(g(Y[i], "preferred_equity")), { indent: 1 });
+  add(bs, "pref", "of which preferred stock (memo)", (i) => mil(g(Y[i], "preferred_equity")), { indent: 2, italic: true });
   add(bs, "mi", "Non-controlling interest", (i) => mil(g(Y[i], "minority_interest")), { indent: 1 });
   add(bs, "eq", "Shareholders' equity", (i) => mil(g(Y[i], "equity")), { indent: 1 });
   add(bs, "re", "of which retained earnings", (i) => mil(g(Y[i], "retained_earnings")), { indent: 2, italic: true });
-  add(bs, "tle", "Total liabilities & equity", (i) => F(`${col(i)}${bs._qk.tl}+${col(i)}${bs._qk.pref}+${col(i)}${bs._qk.mi}+${col(i)}${bs._qk.eq}`), { bold: true, top: true });
+  add(bs, "tle", "Total liabilities & equity", (i) => F(`${col(i)}${bs._qk.tl}+${col(i)}${bs._qk.mi}+${col(i)}${bs._qk.eq}`), { bold: true, top: true });
   add(bs, "chk", "Check (assets – liabilities & equity)", (i) => (Y[i].assets != null ? F(`ROUND(${col(i)}${bs._qk.ta}-${col(i)}${bs._qk.tle},1)`) : null), { italic: true });
   gap(bs);
   head(bs, "Memo");
@@ -785,19 +788,22 @@ function buildModel(Excel, mdl) {
   add(mt, "dpo", "Payable days (DPO)", (i) => iferr(`${BSr("ap", i)}/${ISr("cogs", i)}*365`), { fmt: DAYS, indent: 1 });
   add(mt, null, "Cash conversion cycle (days)", (i) => iferr(`N(${col(i)}${mt._qk.dso})+N(${col(i)}${mt._qk.dio})-N(${col(i)}${mt._qk.dpo})`), { fmt: DAYS, indent: 1 });
   add(mt, null, "Deferred revenue / revenue", (i) => iferr(`(${BSr("dr_c", i)}+${BSr("dr_nc", i)})/${ISr("rev", i)}`), { fmt: PCT, indent: 1 });
-  const px = mdl.px || {};
+  const px = mdl.px || {};     // {fy: [price, market cap]}: split-adjusted, USD reporters only
   if (Object.keys(px).length) {
     gap(mt);
-    head(mt, "Valuation at fiscal year end (month-end price, split-adjusted)");
-    add(mt, "price", "Share price", (i) => (px[Y[i].fy] != null ? px[Y[i].fy] : null), { fmt: EPS, indent: 1 });
-    add(mt, "mcap", "Market cap (price × today's-basis shares)", (i) => (px[Y[i].fy] != null ? F(`${col(i)}${mt._qk.price}*${ISr("sh", i)}`) : null), { indent: 1 });
-    add(mt, "ev", "Enterprise value", (i) => (px[Y[i].fy] != null ? F(`${col(i)}${mt._qk.mcap}+${BSr("netdebt", i)}+${BSr("mi", i)}`) : null), { indent: 1 });
+    head(mt, "Valuation at fiscal year end (month-end price, split-adjusted to today)");
+    add(mt, "price", "Share price (today's share basis)", (i) => (px[Y[i].fy] ? px[Y[i].fy][0] : null), { fmt: EPS, indent: 1 });
+    add(mt, "mcap", "Market cap", (i) => (px[Y[i].fy] ? px[Y[i].fy][1] / 1e6 : null), { indent: 1 });
+    add(mt, "ev", "Enterprise value", (i) => (px[Y[i].fy] ? F(`${col(i)}${mt._qk.mcap}+${BSr("netdebt", i)}+${BSr("mi", i)}`) : null), { indent: 1 });
     add(mt, null, "P/E", (i) => iferr(`IF(${ISr("ni", i)}>0,${col(i)}${mt._qk.mcap}/${ISr("ni", i)},"")`), { fmt: MULTF, indent: 1 });
     add(mt, null, "EV/EBIT", (i) => iferr(`IF(${ISr("ebit", i)}>0,${col(i)}${mt._qk.ev}/${ISr("ebit", i)},"")`), { fmt: MULTF, indent: 1 });
     add(mt, null, "EV/EBITDA", (i) => iferr(`IF(${ISr("ebitda", i)}>0,${col(i)}${mt._qk.ev}/${ISr("ebitda", i)},"")`), { fmt: MULTF, indent: 1 });
     add(mt, null, "EV/Sales", (i) => iferr(`${col(i)}${mt._qk.ev}/${ISr("rev", i)}`), { fmt: MULTF, indent: 1 });
     add(mt, null, "FCF yield", (i) => iferr(`${CFr("fcf", i)}/${col(i)}${mt._qk.mcap}`), { fmt: PCT, indent: 1 });
-    if (cur !== "USD") add(mt, null, `Note: prices are in USD, statements in ${cur} - multiples need an FX adjustment.`, null, { italic: true });
+  } else {
+    gap(mt);
+    add(mt, null, cur !== "USD" ? `Valuation history not shown: statements are in ${cur}, prices in USD.`
+      : "Valuation history not shown: no month-end price history or verified market cap yet.", null, { italic: true });
   }
   wb.views = [{ activeTab: 1 }];
   return wb;

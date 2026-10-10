@@ -334,10 +334,27 @@ def peer_valuation(c, state, td_cache, ym_cache=None):
 
 
 def fy_prices(c, state, td_cache):
-    """{fy: price at fiscal year end} for the Excel model (split-adjusted to today), when available."""
+    """{fy: [price, market cap]} at each fiscal year end for the Excel model, on the same basis as the site's own
+    history: split-adjusted, calibrated to today's verified market cap (share classes), USD reporters only.
+    Empty when that can't be done (foreign currency, ADR, no verified market cap, no price history)."""
+    from .massive import split_factor
     from .prices import td_symbol
     ctx, mdl = state["ctxs"][c], (state.get("models") or {}).get(c)
     rec = td_cache.get(td_symbol(ctx["ticker"])) or {}
-    if not mdl or not rec.get("s"):
+    if not mdl or not rec.get("s") or mdl.get("currency") != "USD":
         return {}
-    return {y["fy"]: p for y in mdl["years"] if (p := _price_at(rec["s"], y.get("end")))}
+    years = mdl["years"]
+    last = years[-1]
+    mcap_now, px_now = ctx.get("market_cap_usd"), ctx.get("price")
+    if not (mcap_now and px_now and last.get("shares_basis")):
+        return {}
+    f = split_factor(ctx.get("recent_splits") or [], after=last.get("end") or "") or 1.0
+    k = mcap_now / (px_now * last["shares_basis"] / f)
+    if not 0.65 <= k <= 1.5:
+        return {}
+    out = {}
+    for y in years:
+        px, sh = _price_at(rec["s"], y.get("end")), y.get("shares_basis")
+        if px and sh:
+            out[y["fy"]] = [px, px * sh / f * k]
+    return out

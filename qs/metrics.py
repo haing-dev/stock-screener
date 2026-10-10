@@ -36,6 +36,18 @@ def _median(xs):
     return statistics.median(xs) if xs else None
 
 
+def _median_nm(vals, n_nm):
+    """Median of yearly returns where n_nm more years were 'not meaningful' because capital was negative or tiny
+    while profits were positive (customer-funded): those count as above every computed year. None when they are
+    half or more of the years (the number would be a fiction; the caller reports 'n/m' instead)."""
+    n = len(vals) + n_nm
+    if not n or n_nm * 2 >= n:
+        return None
+    xs = sorted(vals) + [float("inf")] * n_nm
+    k = n // 2
+    return xs[k] if n % 2 else (xs[k - 1] + xs[k]) / 2
+
+
 def _pctile_of_last(xs):
     """Where the last value sits within the series (0 = lowest, 1 = highest)."""
     xs = [x for x in xs if x is not None]
@@ -50,9 +62,12 @@ def _pctile_of_last(xs):
 def _cash(g, y=None):
     """Cash + short-term investments; the combined tag if only that exists; None if nothing is tagged."""
     c, s = g("cash", y), g("st_investments", y)
+    comb = g("cash_and_sti_combined", y)
     if c is None and s is None:
-        return g("cash_and_sti_combined", y)
-    return (c or 0) + (s or 0)
+        return comb
+    parts = (c or 0) + (s or 0)
+    # short-term investments tagged only inside the combined line (Microsoft before 2018: $7.7B cash vs $133B)
+    return comb if (comb is not None and comb > 1.05 * parts) else parts
 
 
 # recession windows: fiscal years ending in these ranges are compared with the year before
@@ -103,6 +118,11 @@ def total_debt(cd, y=None, at=None):
             cur = _sum_or_none(g("lt_debt_current", y), st)
         if cur is not None:
             cands.append(cur)
+    comb = g("debt_combined", y)
+    if comb is not None and len(cands) >= 2:
+        rest = [c for c in cands if c is not comb and c != comb]
+        if rest and max(rest) > 0 and comb > 3 * max(rest):
+            cands = rest
     lsc = g("liabilities_subject_to_compromise", y)
     if lsc:
         cands = [c + lsc for c in cands] or [lsc]
@@ -118,13 +138,20 @@ def _year_rows(cd, cfg):
         cash = _cash(g, y) or 0
         cur_debt = g("debt_current", y)
         if cur_debt is None:
-            cur_debt = _sum_or_none(g("lt_debt_current", y), g("st_borrowings", y), g("commercial_paper", y)) or 0
+            # ShortTermBorrowings often already includes commercial paper: take the larger, as total_debt does
+            sb, cp = g("st_borrowings", y), g("commercial_paper", y)
+            st = max(sb, cp) if (sb is not None and cp is not None) else _sum_or_none(sb, cp)
+            cur_debt = _sum_or_none(g("lt_debt_current", y), st) or 0
         debt = total_debt(cd, y)
         lti = g("lt_investments", y) or 0
+        # operating leases (on the balance sheet from 2019) stay out of invested capital, as before 2019, so ROIC
+        # is comparable across the change (lease cost is already inside operating income)
+        lease = (g("lease_rou", y) or 0) - (g("lease_liab_current", y) or 0)
+        eq = g("equity", y)
         if assets is not None and cl is not None:
-            ic[y] = assets - cash - lti - (cl - cur_debt)
-        elif g("equity", y) is not None:
-            ic[y] = g("equity", y) + (debt or 0) - cash
+            ic[y] = assets - cash - lti - (cl - cur_debt) - lease
+        elif eq is not None and eq != 0:
+            ic[y] = eq + (debt or 0) - cash      # leases cancel out here (asset and liability both left in)
         # Greenblatt tangible capital: net working capital (ex cash, ex debt) + net fixed assets
         ca, ppe = g("assets_current", y), g("ppe_net", y)
         if ca is not None and cl is not None and ppe is not None:
@@ -173,6 +200,7 @@ def _year_rows(cd, cfg):
         i = abs(g("interest_expense", years[-1]) or 0)
         return bool(i) and f.val <= -0.5 * i
     nonop_has_interest = nonop_includes_interest() if years else False
+    cd.nonop_has_interest = nonop_has_interest
     if approx_all and any(g("operating_income", y) is not None for y in years):
         cd.flags.add("operating income not tagged in the latest year - EBIT = pretax income + interest - other "
                      "non-operating income, used for every year for consistency")
@@ -195,9 +223,12 @@ def _year_rows(cd, cfg):
     capex_ratio = (_median(known) if len(known) >= 3 and years and max(known_years) >= years[-1] - 2 else None)
     estimated = []
     rows = []
+    n_gp = sum(1 for y in years if g("gross_profit", y) is not None)
+    n_cogs = sum(1 for y in years if g("cost_of_revenue", y) is not None)
+    gp_from_cogs = n_cogs > 2 * n_gp
     for y in years:
         rev = 0.0 if no_rev else g("revenue", y)
-        gp = g("gross_profit", y)
+        gp = None if gp_from_cogs else g("gross_profit", y)
         if gp is None and g("cost_of_revenue", y) is not None and rev is not None:
             gp = rev - g("cost_of_revenue", y)
         op = None if approx_all else g("operating_income", y)
@@ -220,24 +251,27 @@ def _year_rows(cd, cfg):
         fcf = (ocf - capex) if (ocf is not None and capex is not None) else None
         pre, tx = pre_v, g("income_tax", y)
         t = cfg["default_tax_rate"]
-        if pre and tx is not None and pre > 0:
+        if pre and tx is not None and pre > 0 and tx >= 0:
             t = min(max(tx / pre, tax_lo), tax_hi)
         nopat = op * (1 - t) if op is not None else None
         ic_now, ic_prev = ic.get(y), ic.get(y - 1)
         ic_avg = _avg([ic_now, ic_prev]) if ic_now is not None else None
+        # ROIC is shown as computed (Apple ~150%, not a 100% cap). When invested capital is negative or tiny (under 2%
+        # of revenue) and the business is profitable, ROIC isn't a meaningful number: the year is marked 'n/m'
+        # (customer-funded) and counted as a high-return year by the medians, never shown as a fake percentage
         roic, neg_ic = None, False
+        capital_light = ic_avg is not None and not (ic_avg > 0.02 * (rev or 0) and ic_avg > 0)
         if nopat is not None and ic_avg is not None:
-            if ic_avg > 0.02 * (rev or 0) and ic_avg > 0:
-                roic = nopat / ic_avg
+            if not capital_light:
+                roic = max(nopat / ic_avg, -5.0)
             elif nopat > 0:
-                roic, neg_ic = 1.0, True   # customer-funded / near-zero capital: cap at 100%
-        if roic is not None:
-            roic = min(roic, 1.0)
-        cash_roic = None
-        if fcf is not None and ic_avg is not None and ic_avg > 0.02 * (rev or 0) and ic_avg > 0:
-            cash_roic = min(fcf / ic_avg, 1.0)
-        elif fcf is not None and fcf > 0 and ic_avg is not None:
-            cash_roic = 1.0
+                neg_ic = True
+        cash_roic, cash_nm = None, False
+        if fcf is not None and ic_avg is not None:
+            if not capital_light:
+                cash_roic = max(fcf / ic_avg, -5.0)
+            elif fcf > 0:
+                cash_nm = True
         roc_t = None
         if op is not None and tc.get(y) is not None:
             if tc[y] > 0 and tc[y] > 0.02 * (rev or 0):
@@ -259,6 +293,7 @@ def _year_rows(cd, cfg):
             "buybacks": g("buybacks", y), "dividends": g("dividends", y), "equity_issued": g("equity_issued", y),
             "interest_expense": g("interest_expense", y), "tax_rate_used": t,
             "nopat": nopat, "invested_capital": ic_now, "roic": roic, "cash_roic": cash_roic, "neg_ic": neg_ic,
+            "cash_roic_nm": cash_nm,
             "tangible_capital": tc.get(y), "roc_tangible": roc_t,
             "operating_income_approximated": op_approx, "pretax_estimated": pre_est,
             "capex_estimated": y in estimated,
@@ -339,12 +374,56 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
     m["operating_loss_years"] = sum(1 for r in rows if r["operating_income"] is not None and r["operating_income"] <= 0)
     m["operating_loss_years_5y"] = sum(1 for r in rows[-5:] if r["operating_income"] is not None and r["operating_income"] <= 0)
     roics = col("roic")
-    m["roic_years"] = len(roics)
-    m["roic_median"] = _median(roics)
+    n_nm = sum(1 for r in rows if r["neg_ic"])
+    m["roic_years"] = len(roics) + n_nm
+    m["roic_nm_years"] = n_nm
+    m["roic_median"] = _median_nm(roics, n_nm)
+    if m["roic_median"] is None and n_nm:
+        m["roic_median_nm"] = (f"negative or near-zero invested capital in {n_nm} of {len(roics) + n_nm} years "
+                               "(customer-funded): ROIC not meaningful, counted as high")
     floor = cfg["gates"]["roic_floor"]
-    m["roic_share_above_floor"] = (sum(1 for x in roics if x >= floor) / len(roics)) if roics else None
+    m["roic_share_above_floor"] = ((sum(1 for x in roics if x >= floor) + n_nm) / (len(roics) + n_nm)
+                                   if (roics or n_nm) else None)
+    if lr["neg_ic"]:
+        m["roic_latest_nm"] = "negative or near-zero invested capital (customer-funded): ROIC not meaningful"
+    # like-for-like revenue: each year's growth from the annual report that shows both years (restated after a
+    # spin-off or sale), chained back from the latest year. Figures from different reports would mix the business
+    # before and after a divestiture (J&J: 3.0%/yr raw vs 5.1% like-for-like over 10 years).
+    rev_ratios = cd.revenue_ratios() if hasattr(cd, "revenue_ratios") else {}
+    crev = {}
+    yrs_all = sorted(by_all)
+    if lr["revenue"] is not None:
+        crev[latest] = lr["revenue"]
+        for y in range(latest, yrs_all[0], -1):
+            if y not in crev or (y - 1) not in by_all:
+                break
+            r_ = rev_ratios.get(y)
+            a0, b0 = by_all[y]["revenue"], by_all[y - 1]["revenue"]
+            if r_ is not None and a0 and b0 and b0 > 0 and abs((a0 / r_) / b0 - 1) < 0.05:
+                r_ = None    # the comparative year barely changed (a correction, not a divestiture): use the figures
+            if r_ is None:
+                a, b = by_all[y]["revenue"], by_all[y - 1]["revenue"]
+                r_ = (a / b) if (a is not None and b and b > 0 and a >= 0) else None
+            if not r_:
+                break
+            crev[y - 1] = crev[y] / r_
+
+    def growth(y):
+        """Revenue growth of fiscal year y vs y-1, like-for-like where a report restated the prior year."""
+        a, b = by_all.get(y), by_all.get(y - 1)
+        if y in rev_ratios and not (a and b and a["revenue"] and b["revenue"] and b["revenue"] > 0
+                                    and abs((a["revenue"] / rev_ratios[y]) / b["revenue"] - 1) < 0.05):
+            return rev_ratios[y] - 1
+        if a and b and b["revenue"] and b["revenue"] > 0 and a["revenue"] is not None:
+            return a["revenue"] / b["revenue"] - 1
+        return None
     span = ys[-1] - ys[0]
-    m["revenue_cagr"] = _cagr(by[ys[0]]["revenue"], lr["revenue"], span) if span >= 5 else None
+    raw_cagr = _cagr(by[ys[0]]["revenue"], lr["revenue"], span) if span >= 5 else None
+    m["revenue_cagr"] = (_cagr(crev[ys[0]], lr["revenue"], span) if (span >= 5 and ys[0] in crev) else raw_cagr)
+    m["revenue_cagr_raw"] = raw_cagr
+    if raw_cagr is not None and m["revenue_cagr"] is not None and abs(m["revenue_cagr"] - raw_cagr) > 0.01:
+        cd.flags.add(f"revenue restated in later reports (spin-off or sale?): growth measured like-for-like "
+                     f"({m['revenue_cagr']:.1%}/yr vs {raw_cagr:.1%} from the figures as first reported)")
     pairs = [(r["fcf"], r["net_income"]) for r in rows if r["fcf"] is not None and r["net_income"] is not None]
     if len(pairs) >= 5:
         s_ni = sum(p[1] for p in pairs)
@@ -358,20 +437,17 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
     m["ocf_conversion"] = (sum(p[0] for p in ocf_ni) / s_ni2) if (len(ocf_ni) >= 5 and s_ni2 > 0) else None
     debt_latest = lr["total_debt"]
     m["debt_found"] = debt_latest is not None
-    nd = (debt_latest or 0) - lr["cash_and_sti"]
+    nd = (debt_latest or 0) - lr["cash_and_sti"] - (cd.get("lt_investments", latest) or 0)
     m["net_debt"] = nd
     ocf3 = _avg(col("ocf", last3))
     m["ocf_avg_3y"] = ocf3
     m["net_debt_to_ocf"] = (nd / ocf3) if (ocf3 and ocf3 > 0) else None
 
     # ---------- predictability
-    growth = []
-    for a, b in zip(ys, ys[1:]):
-        ra, rb = by[a]["revenue"], by[b]["revenue"]
-        if b == a + 1 and ra and rb and ra > 0:
-            growth.append(rb / ra - 1)
-    m["revenue_growth_std"] = statistics.pstdev(growth) if len(growth) >= 4 else None
-    m["revenue_decline_years"] = sum(1 for x in growth if x < 0) if growth else None
+    yoy = [growth(b) for a, b in zip(ys, ys[1:]) if b == a + 1]
+    yoy = [x for x in yoy if x is not None]
+    m["revenue_growth_std"] = statistics.pstdev(yoy) if len(yoy) >= 4 else None
+    m["revenue_decline_years"] = sum(1 for x in yoy if x < 0) if yoy else None
     oms = col("operating_margin")
     m["operating_margin_std"] = statistics.pstdev(oms) if len(oms) >= 4 else None
 
@@ -401,7 +477,7 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
                              if None not in (n_f, n_l, ic_f, ic_l) and (ic_l - ic_f) > 0 and len(ys) >= 6 else None)
     if m["incremental_roic"] is not None:
         m["incremental_roic"] = max(min(m["incremental_roic"], 2.0), -1.0)
-    m["cash_roic_median"] = _median(col("cash_roic"))
+    m["cash_roic_median"] = _median_nm(col("cash_roic"), sum(1 for r in rows if r.get("cash_roic_nm")))
     m["roc_tangible_median"] = _median(col("roc_tangible"))
     m["roc_tangible_latest"] = lr["roc_tangible"]
     # reinvestment rate: share of operating cash flow reinvested (capex + acquisitions), last 5 years
@@ -419,6 +495,8 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
 
     def cagr_n(k, n):
         yb = latest - n
+        if k == "revenue" and yb in crev and lr[k] is not None:
+            return _cagr(crev[yb], lr[k], n)
         if yb in by_all and by_all[yb][k] is not None and lr[k] is not None:
             return _cagr(by_all[yb][k], lr[k], n)
         return None
@@ -427,8 +505,7 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
     m["ebitda_cagr_3y"] = cagr_n("ebitda", 3)
     m["operating_income_cagr_3y"] = cagr_n("operating_income", 3)
     prev = by_all.get(latest - 1)
-    m["revenue_growth_latest_fy"] = (_ratio(lr["revenue"], prev["revenue"]) - 1
-                                     if prev and prev["revenue"] and prev["revenue"] > 0 and lr["revenue"] is not None else None)
+    m["revenue_growth_latest_fy"] = growth(latest)
     p3 = by_all.get(latest - 3)
     m["operating_margin_change_3y"] = (lr["operating_margin"] - p3["operating_margin"]
                                        if p3 and lr["operating_margin"] is not None and p3["operating_margin"] is not None else None)
@@ -436,9 +513,8 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
                                     if p3 and lr["ebitda_margin"] is not None and p3["ebitda_margin"] is not None else None)
     m["sga_ratio_change_3y"] = (lr["sga_ratio"] - p3["sga_ratio"]
                                 if p3 and lr["sga_ratio"] is not None and p3["sga_ratio"] is not None else None)
-    m["revenue_growth_2y"] = (_ratio(lr["revenue"], by_all[latest - 2]["revenue"]) - 1
-                              if (latest - 2) in by_all and by_all[latest - 2]["revenue"] and by_all[latest - 2]["revenue"] > 0
-                              and lr["revenue"] is not None else None)
+    m["revenue_growth_2y"] = ((lr["revenue"] / crev[latest - 2] - 1)
+                              if (latest - 2) in crev and crev[latest - 2] > 0 and lr["revenue"] is not None else None)
 
     # ---------- capital allocation
     ratios = cd.share_ratios
@@ -461,7 +537,7 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
     m["acquisitions_to_ocf"] = (s_acq / s_ocf) if s_ocf > 0 else None
     m["acquisitions_tagged"] = bool(col("acquisitions"))
     sbc3 = [(by[y]["sbc"], by[y]["revenue"]) for y in last3 if by[y]["sbc"] is not None and by[y]["revenue"]]
-    m["sbc_to_revenue"] = (sum(a for a, _ in sbc3) / sum(b for _, b in sbc3)) if (sbc3 and sum(b for _, b in sbc3) > 0) else 0.0
+    m["sbc_to_revenue"] = (sum(a for a, _ in sbc3) / sum(b for _, b in sbc3)) if (sbc3 and sum(b for _, b in sbc3) > 0) else None
     m["goodwill_to_assets"] = _ratio(lr["goodwill"] or 0, lr["assets"]) if lr["assets"] else None
     m["latest_equity_negative"] = lr["equity"] is not None and lr["equity"] < 0
     s_fcf = sum(col("fcf"))
@@ -469,7 +545,9 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
     m["shareholder_returns_to_fcf"] = (s_ret / s_fcf) if s_fcf > 0 else None
     rnd3 = [(by[y]["rnd"], by[y]["revenue"]) for y in last3 if by[y]["rnd"] is not None and by[y]["revenue"]]
     m["rnd_to_revenue"] = (sum(a for a, _ in rnd3) / sum(b for _, b in rnd3)) if (rnd3 and sum(b for _, b in rnd3) > 0) else None
-    m["fcf_margin_latest3"] = _ratio(sum(col("fcf", last3)), sum(col("revenue", last3))) if col("fcf", last3) else None
+    fy3 = [y for y in last3 if by[y]["fcf"] is not None and by[y]["revenue"]]
+    m["fcf_margin_latest3"] = (_ratio(sum(by[y]["fcf"] for y in fy3), sum(by[y]["revenue"] for y in fy3))
+                               if len(fy3) == len(last3) else None)
     m["any_negative_ic_year"] = any(r["neg_ic"] for r in rows)
     m["op_income_approx_years"] = sum(1 for r in rows if r["operating_income_approximated"])
     m["restated_years"] = cd.restated("revenue", ys, cfg["flags"]["restatement_tolerance"]) + \
@@ -499,8 +577,8 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
                 if not p:
                     continue
                 n += 1
-                if p["revenue"] and p["revenue"] > 0 and r["revenue"] is not None:
-                    c = r["revenue"] / p["revenue"] - 1
+                c = growth(r["fy"])
+                if c is not None:
                     rev_chg = c if rev_chg is None else min(rev_chg, c)
                 if p["operating_income"] is not None and r["operating_income"] is not None:
                     if p["operating_income"] > 0:
@@ -536,16 +614,16 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
             r, p = by_all.get(lab), by_all.get(lab - 1)
             op = r["operating_income"] if r else None
             loss = (op < 0) if op is not None else (lab in ni_s and ni_s[lab].val < 0)
-            rev, prev = (r["revenue"] if r else None), (p["revenue"] if p else None)
             if op is None and lab not in ni_s:
                 continue
-            if rev is None or prev is None or prev <= 0:
+            g_ = growth(lab) if (r and p) else None
+            if g_ is None:
                 if loss:
                     unjudged.append(f"FY{lab}")
                 continue
             judged = True
-            if loss and rev < prev:
-                failed.append(f"FY{lab} ({key}): operating loss as sales fell {rev / prev - 1:+.0%}")
+            if loss and g_ < 0:
+                failed.append(f"FY{lab} ({key}): operating loss as sales fell {g_:+.0%}")
         if judged:
             tested.append(key)
     m["downturn_failures"] = failed
@@ -571,11 +649,24 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
     ebits = col("operating_income")
     m["normalized_ebit"] = _avg(ebits) if len(ebits) >= 5 else None
     ebitdas = col("ebitda")
-    m["normalized_ebitda"] = _avg(ebitdas) if len(ebitdas) >= 5 else None
+    das = [abs(x) for x in col("da")]
+    if len(ebitdas) >= 5 and len(ebitdas) == len(ebits):
+        m["normalized_ebitda"] = _avg(ebitdas)
+    elif m["normalized_ebit"] is not None and len(das) >= 3:
+        # D&A missing in some years: cycle-average EBIT + average D&A (EBITDA can never fall below EBIT)
+        m["normalized_ebitda"] = m["normalized_ebit"] + _avg(das)
+    else:
+        m["normalized_ebitda"] = None
     m["positive_ebit_years"] = sum(1 for x in ebits if x > 0)
     m["capex_to_da_latest"] = lr["capex_to_da"]
-    m["capex_to_da_3y"] = _ratio(sum(col("capex", last3)), sum(abs(x) for x in col("da", last3))) if col("da", last3) else None
-    m["capex_to_ocf_3y"] = _ratio(sum(col("capex", last3)), sum(col("ocf", last3))) if sum(col("ocf", last3)) > 0 else None
+    # three-year ratios only over years where both figures exist (all three), else unknown - missing capex is not zero
+    both_da = [y for y in last3 if by[y]["capex"] is not None and by[y]["da"]]
+    m["capex_to_da_3y"] = (_ratio(sum(by[y]["capex"] for y in both_da), sum(abs(by[y]["da"]) for y in both_da))
+                           if len(both_da) == len(last3) else None)
+    both_ocf = [y for y in last3 if by[y]["capex"] is not None and by[y]["ocf"] is not None]
+    s_o = sum(by[y]["ocf"] for y in both_ocf)
+    m["capex_to_ocf_3y"] = (_ratio(sum(by[y]["capex"] for y in both_ocf), s_o)
+                            if (len(both_ocf) == len(last3) and s_o > 0) else None)
 
     # ---------- trailing twelve months and the latest balance sheet
     def ttm(c):
@@ -591,7 +682,8 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
         if t_pre is None and ttm("net_income") is not None and lr.get("pretax_estimated"):
             t_pre = ttm("net_income") + (ttm("income_tax") or 0)
         if t_pre is not None:
-            t_op = t_pre + abs(ttm("interest_expense") or 0) - (ttm("nonoperating_income") or 0)
+            interest = 0 if getattr(cd, "nonop_has_interest", False) else abs(ttm("interest_expense") or 0)
+            t_op = t_pre + interest - (ttm("nonoperating_income") or 0)
     m["ttm_operating_income"] = t_op
     t_da = ttm("da")
     m["ttm_da"] = t_da
@@ -643,7 +735,8 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
     m["bs_preferred"] = bs("preferred_equity")
     m["bs_equity"] = bs("equity")
     m["bs_assets"] = bs("assets")
-    m["bs_net_debt"] = ((m["bs_debt"] or 0) - cash_l) if (bs_date and m["bs_cash_and_sti"] is not None) else None
+    m["bs_net_debt"] = (((m["bs_debt"] or 0) - cash_l - (m["bs_lt_investments"] or 0))
+                        if (bs_date and m["bs_cash_and_sti"] is not None) else None)
     ebitda_basis = m["ttm_ebitda"] if m["ttm_ebitda"] is not None else lr["ebitda"]
     m["net_debt_to_ebitda"] = (m["bs_net_debt"] / ebitda_basis) if (ebitda_basis and ebitda_basis > 0 and
                                                                     m["bs_net_debt"] is not None) else None
@@ -688,7 +781,8 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
     if lr["operating_income_approximated"] and all(r["operating_income_approximated"] for r in rows):
         # the company never shows an operating-income line (JNJ, LLY, ADP, Nucor...): EBIT = pretax income +
         # interest expense in every year - the standard definition, consistent across the window
-        cd.flags.add("no operating-income line in the filings - EBIT = pretax income + interest expense (all years)")
+        cd.flags.add("no operating-income line in the filings - EBIT = pretax income + interest expense - other "
+                     "non-operating income (all years)")
     d1 = lr["debt_due_1y"]
     d2 = lr["debt_due_2y"]
     m["debt_due_2y_total"] = _sum_or_none(d1, d2)

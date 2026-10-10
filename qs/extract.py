@@ -18,7 +18,7 @@ import re
 from collections import Counter, defaultdict
 from datetime import date, timedelta
 
-SUBSET_VERSION = 6   # 5: discontinued operations (Hidden Earnings screen); 6: statement-model lines (Excel model)
+SUBSET_VERSION = 7   # 5: discontinued ops; 6: statement-model lines (Excel); 7: resource capex, pre-2018 securities, leases
 ANNUAL_FORMS = {"10-K", "10-K/A", "10-KT", "10-KT/A", "20-F", "20-F/A", "40-F", "40-F/A"}
 QUARTERLY_FORMS = {"10-Q", "10-Q/A"}
 
@@ -67,11 +67,14 @@ CONCEPTS = {
         (G, "NetCashProvidedByUsedInOperatingActivities"),
         (G, "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations"),
         (I, "CashFlowsFromUsedInOperatingActivities")]},
-    "capex_ppe": {"kind": "duration", "agg": "first", "tags": [
+    # largest tag wins: a narrow line (office equipment) listed first must not beat total capex (Range Resources)
+    "capex_ppe": {"kind": "duration", "agg": "max", "tags": [
         (G, "PaymentsToAcquirePropertyPlantAndEquipment"), (G, "PaymentsToAcquireProductiveAssets"),
         (G, "PaymentsToAcquireOtherPropertyPlantAndEquipment"), (G, "PaymentsForCapitalImprovements"),
         (G, "PaymentsToAcquireMachineryAndEquipment"), (G, "PaymentsForProceedsFromProductiveAssets"),
         (G, "PaymentsToAcquireOilAndGasPropertyAndEquipment"), (G, "PaymentsToExploreAndDevelopOilAndGasProperties"),
+        (G, "PaymentsToAcquireOilAndGasProperty"), (G, "PaymentsToAcquireMiningAssets"),
+        (G, "PaymentsForConstructionInProcess"), (G, "PaymentsToAcquireTimberlands"),
         (I, "PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities"),
         (I, "PurchaseOfPropertyPlantAndEquipment"),
         (I, "PurchaseOfPropertyPlantAndEquipmentIntangibleAssetsOtherThanGoodwillInvestmentPropertyAndOtherNoncurrentAssets")]},
@@ -93,10 +96,12 @@ CONCEPTS = {
     "sbc": {"kind": "duration", "agg": "first", "tags": [
         (G, "ShareBasedCompensation"), (G, "AllocatedShareBasedCompensationExpense"),
         (I, "AdjustmentsForSharebasedPayments")]},
-    "rnd": {"kind": "duration", "agg": "first", "tags": [
+    # largest wins: 'ResearchAndDevelopmentExpense' can hold only acquired in-process R&D (J&J from 2021)
+    "rnd": {"kind": "duration", "agg": "max", "tags": [
         (G, "ResearchAndDevelopmentExpense"), (G, "ResearchAndDevelopmentExpenseExcludingAcquiredInProcessCost"),
         (I, "ResearchAndDevelopmentExpense")]},
-    "da": {"kind": "duration", "agg": "first", "tags": [
+    # largest wins: 'DepreciationAndAmortization' can be a small sub-line (Intel 2015-19: $0.2B vs ~$8B)
+    "da": {"kind": "duration", "agg": "max", "tags": [
         (G, "DepreciationDepletionAndAmortization"), (G, "DepreciationAndAmortization"),
         (G, "DepreciationAmortizationAndAccretionNet"), (G, "DepreciationAmortizationAndOther"),
         (G, "Depreciation"),
@@ -147,11 +152,12 @@ CONCEPTS = {
     "cash_and_sti_combined": {"kind": "instant", "agg": "first", "tags": [
         (G, "CashCashEquivalentsAndShortTermInvestments"), (I, "CashAndCashEquivalentsAndShorttermInvestments")]},
     "st_investments": {"kind": "instant", "agg": "first", "tags": [
-        (G, "ShortTermInvestments"), (G, "MarketableSecuritiesCurrent"),
+        (G, "ShortTermInvestments"), (G, "MarketableSecuritiesCurrent"), (G, "AvailableForSaleSecuritiesCurrent"),
         (G, "AvailableForSaleSecuritiesDebtSecuritiesCurrent"), (G, "HeldToMaturitySecuritiesCurrent"),
         (I, "ShorttermDepositsNotClassifiedAsCashEquivalents"), (I, "CurrentInvestments")]},
     "lt_investments": {"kind": "instant", "agg": "first", "tags": [
         (G, "MarketableSecuritiesNoncurrent"), (G, "AvailableForSaleSecuritiesDebtSecuritiesNoncurrent"),
+        (G, "AvailableForSaleSecuritiesNoncurrent"), (G, "LongTermInvestments"),
         (G, "HeldToMaturitySecuritiesNoncurrent")]},
     "debt_combined": {"kind": "instant", "agg": "first", "tags": [
         (G, "DebtLongtermAndShorttermCombinedAmount"), (I, "Borrowings")]},
@@ -179,7 +185,9 @@ CONCEPTS = {
     "convertible_debt": {"kind": "instant", "agg": "first", "tags": [
         (G, "ConvertibleNotesPayable"), (G, "ConvertibleDebtNoncurrent"), (G, "ConvertibleLongTermNotesPayable"),
         (G, "ConvertibleDebt"), (G, "ConvertibleNotesPayableCurrent")]},
-    "other_debt": {"kind": "instant", "agg": "first", "tags": [
+    # largest wins: notes, loans and credit lines are often tagged separately (Toll Brothers: secured debt $0.2B vs
+    # $2.3B on the line-of-credit tag)
+    "other_debt": {"kind": "instant", "agg": "max", "tags": [
         (G, "LongTermNotesPayable"), (G, "NotesPayable"), (G, "LongTermLoansPayable"), (G, "SecuredDebt"),
         (G, "UnsecuredDebt"), (G, "OtherLongTermDebtNoncurrent"), (G, "LongTermLineOfCredit"), (G, "LineOfCredit"),
         (G, "SeniorLongTermNotes"), (G, "OtherLongTermDebt"), (G, "SeniorNotes"), (G, "UnsecuredLongTermDebt"),
@@ -195,6 +203,8 @@ CONCEPTS = {
     "intangibles": {"kind": "instant", "agg": "first", "tags": [
         (G, "IntangibleAssetsNetExcludingGoodwill"), (G, "FiniteLivedIntangibleAssetsNet"),
         (I, "IntangibleAssetsOtherThanGoodwill")]},
+    "lease_rou": {"kind": "instant", "agg": "first", "tags": [(G, "OperatingLeaseRightOfUseAsset")]},
+    "lease_liab_current": {"kind": "instant", "agg": "first", "tags": [(G, "OperatingLeaseLiabilityCurrent")]},
     "shares_outstanding_bs": {"kind": "instant", "agg": "first", "unit": "shares", "tags": [
         (G, "CommonStockSharesOutstanding"), (I, "NumberOfSharesOutstanding")]},
     # ---- statement-model lines (annual only; used by the Excel 3-statement model, never by a rule)
@@ -538,9 +548,20 @@ class CompanyData:
         counts = Counter({k: v for k, v in counts.items() if v})
         if not counts:
             return None
-        if len(counts) > 1:
-            self.flags.add("multiple reporting currencies")
-        return counts.most_common(1)[0][0]
+        top = counts.most_common(2)
+        if len(top) > 1 and top[1][1] >= 0.1 * top[0][1]:
+            # a convenience translation (TSMC's USD figures) gives only the current year in each report; a real
+            # change of reporting currency restates comparative years in the new currency too
+            second = top[1][0]
+            ends = defaultdict(set)
+            for c in CURRENCY_HINT_CONCEPTS:
+                for tax, tag in CONCEPTS[c]["tags"]:
+                    for e in self._units(tax, tag).get(second) or []:
+                        if e.get("form") in ANNUAL_FORMS:
+                            ends[(tag, e.get("accn"))].add(e.get("end"))
+            if any(len(v) > 1 for v in ends.values()):
+                self.flags.add("multiple reporting currencies")
+        return top[0][0]
 
     def _entries(self, tax, tag, unit_kind):
         units = self._units(tax, tag)
@@ -787,6 +808,47 @@ class CompanyData:
         return self.series.get(concept, {}).get(lab)
 
     # -- trailing twelve months & latest balance sheet
+    def revenue_ratios(self):
+        """{label: revenue(label) / revenue(label - 1)} taken from the latest annual report that shows both years
+        under the tag chosen for that year. A report restates its comparative year after a spin-off or sale, so the
+        ratio is like-for-like (J&J after Kenvue) where comparing figures from different reports is not."""
+        if getattr(self, "_rev_ratios", None) is not None:
+            return self._rev_ratios
+        out, cache = {}, {}
+        for lab, f in (self.series.get("revenue") or {}).items():
+            if f.tax == "derived" or not f.tag:
+                continue
+            key = (f.tax, f.tag)
+            if key not in cache:
+                _, ents = self._entries(f.tax, f.tag, "money")
+                by_accn, filed = defaultdict(dict), {}
+                for e in ents:
+                    if e.get("form") not in ANNUAL_FORMS or not (e.get("start") and e.get("end") and e.get("accn")):
+                        continue
+                    try:
+                        dur = (_d(e["end"]) - _d(e["start"])).days
+                    except ValueError:
+                        continue
+                    if not 340 <= dur <= 390 or e.get("val") is None:
+                        continue
+                    lb = self._label_for(e["end"])
+                    if lb is not None:
+                        by_accn[e["accn"]][lb] = float(e["val"])
+                        filed[e["accn"]] = e.get("filed") or ""
+                cache[key] = (by_accn, filed)
+            by_accn, filed = cache[key]
+            best = None
+            for accn, vals in by_accn.items():
+                a, b = vals.get(lab), vals.get(lab - 1)
+                if a is not None and b and b > 0 and a >= 0:
+                    k = (filed[accn], accn)
+                    if best is None or k > best[0]:
+                        best = (k, a / b)
+            if best and 0.2 <= best[1] <= 5.0:
+                out[lab] = best[1]
+        self._rev_ratios = out
+        return out
+
     def latest_fy(self):
         """Latest fiscal year with any anchor fact (revenue, operating income, net income or cash flow)."""
         return max(self.label_end) if self.label_end else None
