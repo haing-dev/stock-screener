@@ -1,6 +1,6 @@
 # Investor research store
 
-211 investor/CEO interview transcripts plus the fact-checked notes built from them (Doc 1: per-video notes, Doc 2: by topic).
+253 investor/CEO interview transcripts plus the fact-checked notes built from them (Doc 1: per-video notes, Doc 2: by topic).
 The Google Docs remain the readable copy; this folder is the working copy for search and fact-checking.
 
 ## Layout
@@ -23,7 +23,7 @@ Google Drive `G:\My Drive\Transcripts\` has one subfolder per collection: `YouTu
 `collections.json` > `screens` lists which collections inform each screener (e.g. hc_clinical: healthcare;
 fortress, cyclicals, trough_cash, real_assets, red_flags: general + macro). Store ids: 1-113 (first batches, now
 tagged by folder; 43 and 111-113 sit in Crypto, 50 is no longer in Drive = `archive`), 114-135 healthcare,
-136-161 macro, 162-211 general (added Oct 10, 2026).
+136-161 macro, 162-211 general (added Oct 10, 2026), 212-253 BG2 tech/AI podcasts (212-216 macro, rest general; added Oct 10, 2026; JSON insights incl. `tech_screen_ideas` kept outside the repo).
 
 ## Look things up (cheapest first)
 1. `grep -i <name> index.jsonl` → which ids.
