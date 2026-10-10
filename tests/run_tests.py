@@ -76,7 +76,8 @@ ic_avg = 0.6 * (1 + 1 / 1.1) / 2
 check("ROIC = NOPAT / avg invested capital", close(g["roic_median"], nopat / ic_avg, 1e-4),
       f"{g['roic_median']:.4f} vs {nopat / ic_avg:.4f}")
 ni = 0.35 * 0.79
-check("FCF conversion", close(g["fcf_conversion"], (1.15 * ni - 0.02) / ni, 1e-4))
+check("FCF conversion after stock pay: (FCF - SBC) / net income", close(g["fcf_conversion"], (1.15 * ni - 0.02 - 0.02) / ni, 1e-4),
+      str(g["fcf_conversion"]))
 check("share count CAGR is split-proof (-2%/yr despite 2:1 split)", close(g["share_count_cagr"], -0.02, 1e-6),
       f"{g['share_count_cagr']}")
 check("inflation test: gross margin change 2021->2023 = +2pp", close(g["gross_margin_change_2021_2023"], 0.02, 1e-9))
@@ -274,10 +275,13 @@ def core_class(name, sic="7372", today=date(2026, 10, 5)):
     return BY_ID["core"].evaluate(ctx, cfg, priced=True), ctx
 
 
-for name in ("aapl", "msft", "v", "ma", "cost", "mco"):
+for name in ("aapl", "v", "ma", "cost", "mco"):
     r, _ = core_class(name)
     check(f"real data: {name.upper()} passes Core (as in your test run)", r["class"] == "PASS",
           f"{r['class']} {r['failed']} {r['check_notes'][:1]}")
+r, _ = core_class("msft")
+check("real data: MSFT is now a near miss on cash conversion (AI capex + stock pay: FCF after SBC < 0.8x net income)",
+      r["class"] == "NEAR" and r["failed"] == ["G7"], f"{r['class']} {r['failed']}")
 r, _ = core_class("adp")
 check("real data: ADP (capex tag not in the old cache) is now CHECK, not FAIL", r["class"] == "CHECK",
       f"{r['class']} {r['check_notes'][:1]}")
@@ -682,8 +686,20 @@ check("peers: a company in a thin industry falls back to the broader 3-digit gro
 
 from qs.screens import _floor, red_flag_signals, _hidden_trigger  # noqa: E402
 check("asset floor: no debt tag doesn't block the tangible-book test",
-      _floor({"mcap_to_net_cash": 0.7, "price_to_tangible_book": 0.6, "bs_debt_found": False}, cfg,
-             "asset_floor")[0] == "PASS")
+      _floor({"mcap_to_net_cash": 0.7, "price_to_tangible_book": 0.6, "bs_debt_found": False,
+              "tangible_book_ps_change_3y": 0.05}, cfg, "asset_floor")[0] == "PASS")
+check("asset floor: below tangible book with book per share shrinking is a value trap (FAIL), unknown history = NO DATA",
+      _floor({"price_to_tangible_book": 0.6, "tangible_book_ps_change_3y": -0.2}, cfg, "asset_floor")[0] == "FAIL"
+      and _floor({"price_to_tangible_book": 0.6}, cfg, "asset_floor")[0] == "NO DATA")
+check("red flags: profits above cash, recurring restructuring, bought growth, inventory build, capex burn are signals",
+      len(red_flag_signals({"profits_above_cash_2y": True, "restructuring_years_5y": 4, "acquisitions_to_ocf_3y": 1.5,
+                            "inventory_days_high": True, "inventory_days": 120, "capex_to_da_latest": 3.0,
+                            "ttm_fcf": -5}, cfg)) == 5)
+from qs.screens import _e_profitable, _e_valuation  # noqa: E402
+_hv = {"da_share_of_ebitda": 0.7, "ttm_ebitda": 100, "latest_fy_ebitda": 90, "ttm_operating_income": -10,
+       "latest_fy_operating_income": 5, "ev_ebitda": 8.0, "ev_ebit": None, "ev_usd": 1000}
+check("emerging: capital-heavy (D&A 70% of EBITDA) is judged on operating profit and EV/EBIT, not EBITDA",
+      _e_profitable(_hv, cfg, "emerging")[0] == "FAIL" and _e_valuation(_hv, cfg, "emerging")[0] == "FAIL")
 check("asset floor: below cash with no debt tag (and above tangible book) -> check by hand",
       _floor({"mcap_to_net_cash": 0.7, "price_to_tangible_book": 1.5, "bs_debt_found": False}, cfg,
              "asset_floor")[0] == "NO DATA")

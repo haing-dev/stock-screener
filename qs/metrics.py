@@ -424,7 +424,9 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
     if raw_cagr is not None and m["revenue_cagr"] is not None and abs(m["revenue_cagr"] - raw_cagr) > 0.01:
         cd.flags.add(f"revenue restated in later reports (spin-off or sale?): growth measured like-for-like "
                      f"({m['revenue_cagr']:.1%}/yr vs {raw_cagr:.1%} from the figures as first reported)")
-    pairs = [(r["fcf"], r["net_income"]) for r in rows if r["fcf"] is not None and r["net_income"] is not None]
+    # free cash flow AFTER stock pay: operating cash flow adds stock compensation back, net income doesn't
+    pairs = [(r["fcf"] - abs(r["sbc"] or 0), r["net_income"]) for r in rows
+             if r["fcf"] is not None and r["net_income"] is not None]
     if len(pairs) >= 5:
         s_ni = sum(p[1] for p in pairs)
         m["fcf_conversion"] = (sum(p[0] for p in pairs) / s_ni) if s_ni > 0 else None
@@ -667,6 +669,43 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
     s_o = sum(by[y]["ocf"] for y in both_ocf)
     m["capex_to_ocf_3y"] = (_ratio(sum(by[y]["capex"] for y in both_ocf), s_o)
                             if (len(both_ocf) == len(last3) and s_o > 0) else None)
+
+    # ---------- deterioration inputs (Red Flags) and capital intensity (Emerging)
+    l2 = [y for y in ys[-2:]]
+    ni2 = [by[y]["net_income"] for y in l2 if by[y]["net_income"] is not None]
+    ocf2 = [by[y]["ocf"] for y in l2 if by[y]["ocf"] is not None]
+    m["profits_above_cash_2y"] = bool(len(ni2) == 2 and len(ocf2) == 2 and sum(ni2) > 0
+                                      and sum(ni2) > 1.2 * max(sum(ocf2), 0))
+    l5r = ys[-5:]
+    restr = [cd.get("restructuring", y) for y in l5r]
+    m["restructuring_years_5y"] = sum(1 for x in restr if x and x > 0) if len(l5r) == 5 else None
+    acq3 = [abs(by[y]["acquisitions"]) for y in last3 if by[y]["acquisitions"] is not None]
+    ocf3s = sum(col("ocf", last3))
+    m["acquisitions_to_ocf_3y"] = (sum(acq3) / ocf3s) if (acq3 and ocf3s > 0) else None
+    dio = {}
+    for y in ys[-6:]:
+        inv, cogs = cd.get("inventory", y), cd.get("cost_of_revenue", y)
+        if inv is not None and cogs and cogs > 0:
+            dio[y] = inv / cogs * 365
+    prior = [v for y, v in dio.items() if y < latest]
+    m["inventory_days"] = dio.get(latest)
+    m["inventory_days_high"] = bool(latest in dio and len(prior) >= 3 and dio[latest] > 1.1 * max(prior)
+                                    and dio[latest] > 30)
+    m["da_share_of_ebitda"] = (abs(lr["da"]) / lr["ebitda"]) if (lr["da"] is not None and lr["ebitda"]
+                                                                  and lr["ebitda"] > 0) else None
+    # tangible book per share over 3 years (Asset-Floor: a discount to book counts only if book is still growing)
+    def tbv(y):
+        r_ = by_all.get(y)
+        if not r_ or r_["equity"] is None:
+            return None
+        return r_["equity"] - (r_["goodwill"] or 0) - (r_["intangibles"] or 0)
+    t_now, t_3 = tbv(latest), tbv(latest - 3)
+    sh = [cd.share_ratios[y]["ratio"] for y in range(latest - 2, latest + 1) if y in cd.share_ratios]
+    if t_now and t_3 and t_now > 0 and t_3 > 0 and len(sh) == 3:
+        prod = sh[0] * sh[1] * sh[2]
+        m["tangible_book_ps_change_3y"] = (t_now / t_3) / prod - 1
+    else:
+        m["tangible_book_ps_change_3y"] = None
 
     # ---------- trailing twelve months and the latest balance sheet
     def ttm(c):

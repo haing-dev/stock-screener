@@ -203,6 +203,10 @@ CONCEPTS = {
     "intangibles": {"kind": "instant", "agg": "first", "tags": [
         (G, "IntangibleAssetsNetExcludingGoodwill"), (G, "FiniteLivedIntangibleAssetsNet"),
         (I, "IntangibleAssetsOtherThanGoodwill")]},
+    # restructuring charges (Red Flags: 'non-recurring' charges booked most years are ordinary costs)
+    "restructuring": {"kind": "duration", "agg": "max", "tags": [
+        (G, "RestructuringCharges"), (G, "RestructuringCosts"), (G, "RestructuringCostsAndAssetImpairmentCharges"),
+        (G, "RestructuringSettlementAndImpairmentProvisions")]},
     "lease_rou": {"kind": "instant", "agg": "first", "tags": [(G, "OperatingLeaseRightOfUseAsset")]},
     "lease_liab_current": {"kind": "instant", "agg": "first", "tags": [(G, "OperatingLeaseLiabilityCurrent")]},
     "shares_outstanding_bs": {"kind": "instant", "agg": "first", "unit": "shares", "tags": [

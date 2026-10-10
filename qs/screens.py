@@ -442,9 +442,19 @@ CORE = Screen(
 
 
 # ====================================================================== 2. EMERGING COMPOUNDERS
+def _capital_heavy(ctx):
+    """Depreciation is half or more of EBITDA (data centres, steel, telecom): EBITDA hides a real cost."""
+    v = ctx.get("da_share_of_ebitda")
+    return v is not None and v >= 0.5
+
+
 def _e_profitable(ctx, cfg, scope, s=0.0):
     e_ttm, e_fy = ctx.get("ttm_ebitda"), ctx.get("latest_fy_ebitda")
     op_ttm, op_fy = ctx.get("ttm_operating_income"), ctx.get("latest_fy_operating_income")
+    if _capital_heavy(ctx) and op_ttm is not None and op_fy is not None:
+        ok = op_ttm > 0 and op_fy > 0
+        return ((PASS if ok else FAIL), op_ttm, 0,
+                f"capital-heavy (D&A {ctx['da_share_of_ebitda']:.0%} of EBITDA): judged on operating profit")
     if e_ttm is not None and e_fy is not None:
         ok = e_ttm > 0 and e_fy > 0
         return (PASS if ok else FAIL), e_ttm, 0, ""
@@ -492,6 +502,13 @@ def _e_valuation(ctx, cfg, scope, s=0.0):
     if s:
         thr = _scaled("<=", thr, s)
     v = ctx.get("ev_ebitda")
+    if _capital_heavy(ctx):
+        e = ctx.get("ev_ebit")
+        if e is not None:
+            return ((PASS if e <= thr else FAIL), e, thr,
+                    f"capital-heavy (D&A {ctx['da_share_of_ebitda']:.0%} of EBITDA): tested on EV/EBIT")
+        if ctx.get("ttm_operating_income") is not None and ctx["ttm_operating_income"] <= 0 and ctx.get("ev_usd"):
+            return FAIL, None, thr, "capital-heavy and no operating profit"
     if v is not None:
         return (PASS if v <= thr else FAIL), v, thr, ""
     e = ctx.get("ev_ebit")
@@ -531,7 +548,8 @@ EMERGING_GATES = [
     g_recent("E2", "screens.emerging.max_years_since_latest_fy"),
     Gate("E3", "Already profitable", "ttm_ebitda", ">=", None,
          "Haley: 88% of 104 multibaggers were EBITDA-positive five years earlier.", fn=_e_profitable, fmt="usd",
-         near=False, desc="TTM and latest fiscal-year EBITDA > 0"),
+         near=False, desc="TTM and latest fiscal-year EBITDA > 0 (operating profit > 0 if depreciation is half of "
+                          "EBITDA or more)"),
     Gate("E4", "Fast growth", "revenue_cagr_3y", ">=", "min_revenue_cagr_3y",
          "Haley: median multibagger grew revenue ~21% a year (25th percentile ~14%).", fmt="pct",
          nodata_note="need revenue 3 years ago"),
@@ -558,7 +576,9 @@ EMERGING_GATES = [
          fn=_e_not_large),
     Gate("E12", "Valuation", "ev_ebitda", "<=", "max_ev_ebitda",
          "Haley: winners started at ~10x forward EBITDA, generally <20x; the thesis must work without multiple "
-         "expansion.", needs_price=True, fmt="mult", fn=_e_valuation),
+         "expansion.", needs_price=True, fmt="mult", fn=_e_valuation,
+         desc=lambda c, s: f"at most {c['screens']['emerging']['max_ev_ebitda']:.0f}x EV/EBITDA (EV/EBIT if depreciation "
+                           "is half of EBITDA or more)"),
     Gate("E13", "Liquidity", "adv_usd", ">=", "min_adv_usd",
          "Haley's study: average daily value traded > $200k.", needs_price=True, fmt="usd", near=False,
          nodata_note="no trading volume in the quote"),
@@ -1158,7 +1178,15 @@ def _floor(ctx, cfg, scope, s=0.0):
     if nc is not None and nc <= t_cash and ctx.get("bs_debt_found"):
         return PASS, nc, (t_cash, t_tb), f"market cap {nc:.2f}x net cash (cash + investments - all debt)"
     if tb is not None and tb <= t_tb:
-        return PASS, tb, (t_cash, t_tb), f"price {tb:.2f}x tangible book (equity - goodwill - intangibles)"
+        g = ctx.get("tangible_book_ps_change_3y")
+        if g is None:
+            return NODATA, tb, (t_cash, t_tb), (f"price {tb:.2f}x tangible book, but tangible book per share 3 years "
+                                                "ago can't be measured")
+        if g < 0:
+            return FAIL, tb, (t_cash, t_tb), (f"price {tb:.2f}x tangible book, but tangible book per share fell "
+                                              f"{g:+.0%} over 3 years (a shrinking floor)")
+        return PASS, tb, (t_cash, t_tb), (f"price {tb:.2f}x tangible book (equity - goodwill - intangibles), tangible "
+                                          f"book per share {g:+.0%} over 3 years")
     if nc is not None and nc <= t_cash:
         # below cash only if it really has no debt: no debt tag at all needs a look at the balance sheet
         return NODATA, nc, (t_cash, t_tb), (f"market cap {nc:.2f}x cash, but no debt tag found: check the balance "
@@ -1200,7 +1228,8 @@ FLOOR_GATES = [
          needs_price=True, fn=_floor, fmt="mult",
          desc=lambda c, s: (f"market cap at most {cfg_get(c, 'screens.asset_floor.max_mcap_to_net_cash'):.1f}× "
                             f"net cash, or price at most "
-                            f"{cfg_get(c, 'screens.asset_floor.max_price_to_tangible_book'):.1f}× tangible book")),
+                            f"{cfg_get(c, 'screens.asset_floor.max_price_to_tangible_book'):.1f}× tangible book "
+                            f"with tangible book per share not down over 3 years")),
     Gate("K5", "Not burning the floor", "ttm_ocf", ">=", None,
          "A floor a company is burning through isn't a floor.", fn=_not_burning, fmt="years",
          desc=lambda c, s: (f"operating cash flow positive, or at least "
@@ -1417,6 +1446,21 @@ def red_flag_signals(ctx, cfg, scope="red_flags"):
         out.append(f"share count +{dil:.0%}/yr over 3 years")
     if g3 is not None and g3 < 0:
         out.append(f"revenue shrinking {g3:+.0%}/yr over 3 years")
+    if ctx.get("profits_above_cash_2y"):
+        out.append("reported profits well above operating cash flow (last 2 years)")
+    ocf = ctx.get("ttm_ocf")
+    if ocf is not None and ocf < 0 and not (op is not None and op <= 0):
+        out.append("negative operating cash flow (last 12 months)")
+    if (ctx.get("restructuring_years_5y") or 0) >= 4:
+        out.append(f"'one-off' restructuring charges in {ctx['restructuring_years_5y']} of the last 5 years")
+    a3 = ctx.get("acquisitions_to_ocf_3y")
+    if a3 is not None and a3 > 1.0:
+        out.append(f"acquisitions {a3:.1f}x operating cash flow over 3 years (growth bought, not built)")
+    if ctx.get("inventory_days_high"):
+        out.append(f"inventory at a 5-year high ({ctx['inventory_days']:.0f} days of cost of sales)")
+    cda, fcf = ctx.get("capex_to_da_latest"), ctx.get("ttm_fcf")
+    if cda is not None and cda >= 2 and fcf is not None and fcf < 0:
+        out.append(f"capex {cda:.1f}x depreciation with negative free cash flow")
     return out
 
 
@@ -1500,12 +1544,13 @@ RATIONALE = {
     "G5a": "High returns on capital sustained for a decade are the clearest sign of a moat.",
     "G5b": "Returns must hold year after year, not in one good stretch.",
     "G6": "A predictable but slow grower makes a poor compounder; growth needs a runway.",
-    "G7": "Profits must turn into cash.",
+    "G7": "Profits must turn into cash, after the cost of stock pay.",
     "G8": "Low debt leaves room to act when conditions turn.",
     "G9": "A true compounder stays profitable through downturns; a loss as sales fall points to a cyclical grower.",
     "G10": "Sales below their level 3 years ago need a reason: a cyclical dip or a structural decline.",
     "E1": "Three years is the minimum to measure growth and margin trends.",
-    "E3": "Most big long-term winners were already profitable years earlier.",
+    "E3": "Most big long-term winners were already profitable years earlier. For capital-heavy businesses depreciation "
+          "is a real cost, so operating profit must be positive.",
     "E4": "Big winners typically grew revenue around 20% a year.",
     "E5": "Missing on revenue is how growth stocks blow up.",
     "E6": "A healthy gross margin leaves room for operating leverage.",
@@ -1514,7 +1559,8 @@ RATIONALE = {
     "E9": "A strong balance sheet protects the downside.",
     "E10": "Micro caps were the weakest group among small-cap winners.",
     "E11": "Room to grow; large caps belong in Core.",
-    "E12": "Winners started at modest multiples; the case must work without the multiple rising.",
+    "E12": "Winners started at modest multiples; the case must work without the multiple rising. Capital-heavy "
+           "businesses are valued on EBIT, since EBITDA flatters them.",
     "E13": _VOL,
     "S2": "Special situations work best in good businesses bought cheaply.",
     "S3": "Debt turns the equity into an option bet.",
@@ -1537,7 +1583,7 @@ RATIONALE = {
     "H4": "Commercial stage: profitable in at least 4 of the last 5 years.",
     "H5": "Pharma and health care are persistently high-return sectors; demand returns to match.",
     "H6": "Commercial drugs earn 80-90% gross margins; devices and tools less.",
-    "H7": "Profits must turn into cash.",
+    "H7": "Profits must turn into cash, after the cost of stock pay.",
     "H8": "Avoid levered roll-ups.",
     "H9": "Shrinking sales are how patent cliffs show up.",
     "B1": "Cash burns fast, so the cash figure must be recent.",
@@ -1557,7 +1603,7 @@ RATIONALE = {
     "O4": "Owners run the company as its largest shareholders; float-weighted indexes under-own them.",
     "O5": "A real business, not a lottery ticket.",
     "O6": "Owners compound only if the business earns well on capital.",
-    "O7": "Profits must turn into cash.",
+    "O7": "Profits must turn into cash, after the cost of stock pay.",
     "O8": "Owners who borrow heavily can lose the company in one bad year.",
     "O9": _TRADE, "O10": _VOL,
     "O11": "Owner-operated companies often trade cheaply; don't overpay anyway.",
@@ -1571,7 +1617,8 @@ RATIONALE = {
     "R10": "Even a perfect royalty can be bought too dear.",
     "K1": "Enough years to see a record.",
     "K3": "The floor is measured on the latest balance sheet, so it must be recent.",
-    "K4": "Buying below cash gets the operating business for free.",
+    "K4": "Buying below cash gets the operating business for free. A discount to tangible book counts only while book "
+          "value per share is still growing; a shrinking book is usually a value trap.",
     "K5": "A floor the company is burning through isn't a floor.",
     "K6": "A cheap business that never earns is a value trap.",
     "K7": "Debt ahead of shareholders erodes the floor.",
@@ -1595,7 +1642,9 @@ RATIONALE = {
     "X10": _TRADE, "X11": _VOL,
     "W1": "Enough years to see a trend.",
     "W3": "Overvaluation is the first half of a short; high EV/Sales names de-rate even without misses.",
-    "W4": "Overvaluation plus deterioration: fading growth, falling margins, losses, heavy dilution or shrinking sales.",
+    "W4": "Overvaluation plus deterioration: fading growth, falling margins, losses, heavy dilution, shrinking sales, "
+          "profits not backed by cash, recurring 'one-off' charges, growth bought through acquisitions, piling "
+          "inventory, or capex far above depreciation while burning cash.",
     "W5": "Big enough to matter to a portfolio.", "W6": _VOL,
 }
 PURPOSE = {

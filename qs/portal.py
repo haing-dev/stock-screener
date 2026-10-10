@@ -307,7 +307,7 @@ RULE_UNITS = {"years_with_data": " years of data", "years_total": " years of dat
               "years_since_latest_fy": " years since the last annual report",
               "operating_loss_years": " operating-loss years in 10", "operating_loss_years_5y":
               " loss year(s) in the last 5", "positive_ebit_years": " profitable years of the last 10",
-              "bs_age_days": " days old", "fcf_conversion": " (free cash flow / net income)",
+              "bs_age_days": " days old", "fcf_conversion": " (free cash flow after stock pay / net income)",
               "net_debt_to_ocf": " (net debt / operating cash flow)",
               "net_debt_to_ebitda": " (net debt / EBITDA)", "net_debt_to_norm_ebitda": " (net debt / cycle-average EBITDA)",
               "interest_coverage": " (EBIT / interest)", "cash_runway_years": " years of cash",
