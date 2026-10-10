@@ -83,3 +83,16 @@ Most new talks support the existing rules. Four changes went into the screener (
 - **More breakage signals for the avoid list:** negative operating cash flow and growth by acquisition ("a lot of frauds", Chanos), restructuring charges most years ("10 out of the last 12 years ... it's not non-recurring", Chanos on IBM), record inventory days (Baker, Feb 2000 semis), profits above cash, heavy capex with negative free cash flow.
 
 Noted, not built: a high-ROIC business that can't reinvest ("second best business", Gayner) fails Core's growth gate; specialist-fund ownership as a healthcare signal (Kolchinsky); receivables concentrated in a few customers (Eisman, Noble on Nvidia) stays a manual check.
+
+### 7. October 2026, second update: healthcare rules and a proposed tech screen
+
+From the healthcare transcripts (v2.6 of the screener):
+
+- **Fundable gap.** A normal raise is "like 10 to 20 percent of a company's market cap" (Wong), so a clinical-stage company with under two years of cash is a near miss, not a reject, when one such raise covers the next two years.
+- **Floor after the burn.** Value is judged against the net cash left "after 200 million plus of cash burn" (Caligan's MorphoSys case), as a new valuation rule.
+- **Below cash is a floor.** "If they're trading below cash, odds are they're probably not going to go to zero" (RA Capital panel, 2026).
+- **New launchers.** "The biggest opportunity is ... early stage commercial" companies (Wong), so a profitable, fast-growing launcher is no longer judged on its development-stage losses or 10-year returns.
+- **Drug margins.** Drug makers need at least 65% gross margin (Chen's 80-90% for pure drug businesses; diversified groups run in the high 60s); devices and tools stay at 50%.
+- Specialist-fund ownership (13F) is shown on company pages as information, not a rule.
+
+From the 42 BG2 and other tech podcasts (212-253): a "Tech S-curve" screen was proposed to the user (growth durability, rule of 40 after stock pay, SBC under 20% of FCF, self-funded capex, incremental ROIC, a growth-adjusted price test). Not built until the user decides.
