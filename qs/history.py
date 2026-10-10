@@ -290,6 +290,11 @@ def _verdict(k, now, own, peer_med, band=0.10):
     return "in line"
 
 
+# operating metrics shown beside the multiples on the company page (peer mean / median computed on the site)
+PEER_OPS = ("revenue_cagr_3y", "gross_margin_latest", "ttm_operating_margin", "roic_median", "fcf_conversion",
+            "net_debt_to_ebitda")
+
+
 def peer_valuation(c, state, td_cache, ym_cache=None):
     """The company page's 'valuation against peers' table (information only)."""
     from .prices import td_symbol
@@ -314,8 +319,10 @@ def peer_valuation(c, state, td_cache, ym_cache=None):
         for k in mults:
             a = avg.get(k)
             v[k] = [now.get(k), a[0] if a else None, a[1] if a else None, a[2] if a else 0]
+        op = {k: ctxs[x].get(k) for k in PEER_OPS if isinstance(ctxs[x].get(k), (int, float))
+              and math.isfinite(ctxs[x].get(k))}
         rows.append({"t": ctxs[x]["ticker"], "n": ctxs[x].get("name"), "me": x == c,
-                     "rev": ctxs[x].get("latest_revenue_usd"), "v": v, "why": "" if avg else why})
+                     "rev": ctxs[x].get("latest_revenue_usd"), "v": v, "op": op, "why": "" if avg else why})
     verdict = {}
     for k in mults:
         now = rows[0]["v"][k][0]

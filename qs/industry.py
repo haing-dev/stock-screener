@@ -108,3 +108,35 @@ def group_rows():
         for lo, hi, label in lst:
             rows.append({"screen": name, "sic_from": lo, "sic_to": hi, "label": label})
     return rows
+
+
+# Excel 3-statement model templates (site/app.js buildModel): which lines and ratios fit the business
+MODEL_TEMPLATES = [
+    ((7370, 7379), "software"),
+    ((6300, 6411), "insurer"),
+    ((8000, 8099), "hc_services"), ((5047, 5047), "hc_services"), ((5122, 5122), "hc_services"),
+    ((1520, 1531), "homebuilder"),
+    ((100, 1499), "resources"), ((2400, 2411), "resources"), ((2911, 2911), "resources"),
+    ((4610, 4619), "resources"), ((4922, 4925), "resources"), ((6792, 6792), "resources"), ((6795, 6795), "resources"),
+    ((3570, 3579), "tech_hw"), ((3600, 3699), "tech_hw"), ((3825, 3825), "tech_hw"),
+    ((4000, 4799), "transport"),
+    ((2000, 2399), "consumer"), ((2840, 2844), "consumer"), ((3140, 3149), "consumer"), ((3940, 3949), "consumer"),
+    ((5000, 5999), "consumer"), ((7000, 7299), "consumer"), ((7800, 7999), "consumer"),
+]
+HC_PRODUCTS = [(2833, 2836), (3826, 3826), (3841, 3845), (3851, 3851), (8731, 8731)]
+
+
+def model_template(sic, revenue=None, rnd=None, operating_income=None):
+    """Template id for the Excel model. Drug, device and research companies with little revenue (or spending more on
+    R&D than half their sales while losing money) get the clinical-stage layout (cash, burn, runway)."""
+    s = sic_int(sic)
+    if s is None:
+        return "industrial"
+    if in_ranges(s, HC_PRODUCTS):
+        early = revenue is None or revenue < 100e6 or (
+            rnd is not None and revenue and rnd > 0.5 * revenue and (operating_income or 0) < 0)
+        return "biotech" if early else "hc_products"
+    for (lo, hi), t in MODEL_TEMPLATES:
+        if lo <= s <= hi:
+            return t
+    return "industrial"

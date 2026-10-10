@@ -90,8 +90,18 @@ def cmd_portal_screen(args):
     state = save_state(results, ctxs, records, run_info, date.today(), models=models)
     print("Price history (52-week ranges, month-end prices for listed companies and peers)")
     history.update(state, prices, cfg, daily=False)
+    _holders(client, state, cfg)
     write_gz_json(STATE_PATH, state)
     print("State saved for the daily price updates.")
+
+
+def _holders(client, state, cfg):
+    """Top institutional holders from the SEC 13F data sets (information only; a failure never stops the run)."""
+    from qs import holders
+    try:
+        holders.update(client, state, cfg)
+    except Exception as e:  # noqa: BLE001
+        print(f"13F holders skipped: {type(e).__name__}: {e}")
 
 
 def cmd_portal_daily(args):
@@ -113,6 +123,7 @@ def cmd_portal_daily(args):
     reprice(state, prices, cfg, date.today())
     print("Price history (52-week ranges, month-end prices for listed companies and peers)")
     history.update(state, prices, cfg, daily=True)
+    _holders(make_client(cfg), state, cfg)
     write_gz_json(STATE_PATH, state)
 
 

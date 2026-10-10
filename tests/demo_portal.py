@@ -110,6 +110,20 @@ def main(out_dir):
     os.makedirs(os.path.join(qc.CACHE_DIR, "prices"), exist_ok=True)
     with gzip.open(os.path.join(qc.CACHE_DIR, "prices", "monthly_history.json.gz"), "wt") as f:
         json.dump(hist, f)
+    # invented 13F holders (names made up; one index fund to show it is left out of the column)
+    from qs import holders as qh
+    qh.OUT_PATH = os.path.join(qc.CACHE_DIR, "prices", "holders", "holders.json.gz")
+    os.makedirs(os.path.dirname(qh.OUT_PATH), exist_ok=True)
+    pool = ["Vanguard Group", "Northfield Partners", "Harbor Lane Capital", "Greystone Investors", "Kestrel Asset Management",
+            "Meridian Value Advisors", "Juniper Hill Capital", "Ostrander Biotech Partners"]
+    byc = {}
+    for c, ctx in ctxs.items():
+        sh = ctx.get("shares_used") or 1e8
+        names = pool[:1] + rnd.sample(pool[1:], 6)
+        h = [[n, 0, round(sh * w), 0.01] for n, w in zip(names, (0.09, 0.05, 0.04, 0.03, 0.025, 0.02, 0.015))]
+        byc[str(c)] = {"h": h, "n": rnd.randint(150, 1900), "sp": ["Ostrander Biotech Partners"] if "Ostrander Biotech Partners" in names else []}
+    with gzip.open(qh.OUT_PATH, "wt") as f:
+        json.dump({"period": "2026-06-30", "by_cik": byc}, f)
     summaries = {c: {"text": SUMMARY[ctxs[c]["ticker"].lower()]} for c in ctxs if ctxs[c]["ticker"].lower() in SUMMARY}
     if os.path.exists(out_dir):
         shutil.rmtree(out_dir)

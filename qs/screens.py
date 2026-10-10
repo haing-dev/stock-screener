@@ -71,7 +71,7 @@ class Gate:
         if s and thr is not None:
             thr = _scaled(self.op, thr, s)
         if self.na_if is not None:
-            na = self.na_if(ctx)
+            na = self.na_if(ctx, cfg) if self.na_if.__code__.co_argcount == 2 else self.na_if(ctx)
             if na:
                 return NA, None, thr, na if isinstance(na, str) else "rule does not apply"
         val = ctx.get(self.metric)
@@ -788,8 +788,17 @@ FORTRESS = Screen(
 
 
 # ====================================================================== 5. HEALTHCARE
+DRUG_SIC = (2833, 2836)
+
+
+def _is_drug(ctx):
+    return bool(in_ranges(ctx.get("sic"), [DRUG_SIC]))
+
+
 def _hc_gm(ctx, cfg, scope, s=0.0):
     thr = cfg_get(cfg, f"screens.{scope}.min_gross_margin_products")
+    if _is_drug(ctx):     # drug makers: 80-90% gross margins are normal; devices and tools run lower
+        thr = cfg_get(cfg, f"screens.{scope}.min_gross_margin_drugs")
     if s:
         thr = _scaled(">=", thr, s)
     if not in_ranges(ctx.get("sic"), [(a, b) for a, b in HEALTHCARE_PRODUCT]):
@@ -814,17 +823,37 @@ def _hc_growth(ctx, cfg, scope, s=0.0):
     return (PASS if v >= thr else FAIL), v, thr, ""
 
 
+def _launcher(ctx, cfg):
+    """A newly commercial biotech/medtech: operating profit now, revenue up >= 25%/yr over 3 years and a product
+    gross margin. Its loss years and 10-year returns describe the development stage, not the business today."""
+    c = cfg["screens"]["hc_commercial"]
+    g3 = ctx.get("revenue_cagr_3y")
+    op = ctx.get("ttm_operating_income")
+    gm = ctx.get("ttm_gross_margin")
+    gm = ctx.get("gross_margin_latest") if gm is None else gm
+    if g3 is None or op is None or op <= 0 or g3 < c.get("launcher_min_revenue_cagr_3y", 0.25):
+        return ""
+    if not in_ranges(ctx.get("sic"), [(a, b) for a, b in HEALTHCARE_PRODUCT]) or gm is None:
+        return ""
+    if gm < c["min_gross_margin_drugs" if _is_drug(ctx) else "min_gross_margin_products"]:
+        return ""
+    return f"new launcher: profitable now, revenue up {g3 * 100:.0f}% a year over 3 years"
+
+
 HC_COMMERCIAL_GATES = [
     Gate("H1", "History", "years_with_data", ">=", "min_years", "Enough history to judge durability.", near=False,
          fmt="int"),
     g_recent("H2", "screens.hc_commercial.max_years_since_latest_fy"),
     g_size("H3", "screens.hc_commercial.min_revenue_usd"),
     Gate("H4", "Consistent profits", "operating_loss_years_5y", "<=", "max_operating_loss_years_5y",
-         "Commercial-stage: profitable in at least 4 of the last 5 years.", near=False, fmt="int"),
+         "Commercial-stage: profitable in at least 4 of the last 5 years.", near=False, fmt="int", na_if=_launcher),
     Gate("H5", "High returns", "roic_median", ">=", "min_median_roic",
-         "Terry Smith: pharma and health care are persistently high-ROIC sectors.", fmt="pct"),
+         "Terry Smith: pharma and health care are persistently high-ROIC sectors.", fmt="pct", na_if=_launcher),
     Gate("H6", "Gross margin (products)", "gross_margin_latest", ">=", "min_gross_margin_products",
-         "Chen: commercial drugs earn 80-90% gross margins; devices/tools lower.", fn=_hc_gm, fmt="pct"),
+         "Chen: commercial drugs earn 80-90% gross margins; devices/tools lower.", fn=_hc_gm, fmt="pct",
+         desc=lambda cfg, sc: (f"gross margin at least {cfg_get(cfg, f'screens.{sc}.min_gross_margin_drugs'):.0%} for "
+                               f"drug makers, {cfg_get(cfg, f'screens.{sc}.min_gross_margin_products'):.0%} for "
+                               "devices and tools")),
     Gate("H7", "Cash conversion", "fcf_conversion", ">=", "min_fcf_conversion", "Profits must turn into cash.",
          fn=lambda c, cfg, sc, s=0.0: _g7_custom(c, cfg_get(cfg, f"screens.{sc}.min_fcf_conversion"), s), fmt="mult"),
     _gate_lev("H8", "max_net_debt_to_ebitda", "Avoid levered roll-ups."),
@@ -872,7 +901,27 @@ def _runway(ctx, cfg, scope, s=0.0):
     v = ctx.get("cash_runway_years")
     if v is None:
         return NODATA, None, thr, "no operating cash flow or cash"
-    return (PASS if v >= thr else FAIL), v, thr, "cash-flow positive" if v >= 99 else ""
+    if v >= thr:
+        return PASS, v, thr, "cash-flow positive" if v >= 99 else ""
+    gap = ctx.get("funding_gap_to_mcap")
+    gmax = cfg["screens"]["hc_clinical"].get("max_funding_gap_to_mcap", 0.2)
+    note = f"2-year funding gap = {gap * 100:.0f}% of market cap" if gap is not None else ""
+    if s < 0 and gap is not None and gap <= gmax:
+        # near miss: one normal equity raise (10-20% of market cap) would cover the next two years
+        return PASS, v, thr, note
+    return FAIL, v, thr, note
+
+
+def _floor_after_burn(ctx, cfg, scope, s=0.0):
+    thr = cfg_get(cfg, f"screens.{scope}.max_mcap_to_cash_after_burn")
+    if s:
+        thr = _scaled("<=", thr, s)
+    v = ctx.get("mcap_to_cash_after_burn")
+    if v is None:
+        if ctx.get("cash_after_burn_usd") is not None:
+            return FAIL, None, thr, "no cash left after a year of burn, net of debt"
+        return NODATA, None, thr, ctx.get("val_issue") or "market cap or cash burn unavailable"
+    return (PASS if v <= thr else FAIL), v, thr, ""
 
 
 def _debt_light(ctx, cfg, scope, s=0.0):
@@ -900,7 +949,10 @@ HC_CLINICAL_GATES = [
          "Cash burns fast: the cash figure must be recent.", fn=_fresh_bs, fmt="int", near=False),
     Gate("B2", "Cash runway", "cash_runway_years", ">=", "min_cash_runway_years",
          "Flynn/Chen: biotechs are cash-burning and financing-dependent; avoid forced raises at the bottom.",
-         fn=_runway, fmt="years"),
+         fn=_runway, fmt="years",
+         desc=lambda cfg, sc: f"at least {cfg_get(cfg, f'screens.{sc}.min_cash_runway_years'):.1f} years of cash "
+                              f"(near miss if the 2-year gap is at most "
+                              f"{cfg_get(cfg, f'screens.{sc}.max_funding_gap_to_mcap'):.0%} of market cap)"),
     Gate("B3", "Little debt", "debt_to_liquid_assets", "<=", "max_debt_to_liquid_assets",
          "Debt or converts ahead of equity erode the cash floor.", fn=_debt_light, fmt="mult"),
     Gate("B4", "Size", "market_cap_usd", ">=", "min_market_cap_usd", "Tradeable size.", needs_price=True,
@@ -911,6 +963,9 @@ HC_CLINICAL_GATES = [
          "Johnson (Caligan): buy a floor and get the binary cheaply - EV near or below cash. Greenblatt: net cash "
          "~ market cap with no burn is a 'free option'.", needs_price=True, fmt="mult",
          nodata_note=lambda c: c.get("val_issue") or "EV / cash unavailable"),
+    Gate("B7", "Floor after a year of burn", "mcap_to_cash_after_burn", "<=", "max_mcap_to_cash_after_burn",
+         "Johnson: value covered by the net cash left after this year's burn.", needs_price=True,
+         fn=_floor_after_burn, fmt="mult"),
 ]
 HC_CLINICAL = Screen(
     "hc_clinical", "Healthcare - Pre-revenue & clinical",
@@ -1513,7 +1568,7 @@ AVOID_SCREENS = {"red_flags"}
 FIRST_BATCH = [CORE, EMERGING, SPECIAL, FORTRESS, HC_COMMERCIAL, HC_CLINICAL, CYCLICALS]
 SCREENS = FIRST_BATCH + SECOND_BATCH
 BY_ID = {s.sid: s for s in SCREENS}
-VALUATION_GATES = {"E12", "C8", "O11", "R10", "T8", "X9"}           # failing only these -> PRICE
+VALUATION_GATES = {"E12", "C8", "O11", "R10", "T8", "X9", "B7"}           # failing only these -> PRICE
 # never 'failed 1 rule': tradeability (size / volume) and each screen's defining test (emerging = profitable and
 # growing fast, special = profitable and cheap, clinical = cash runway, little debt and priced near cash, fortress =
 # held up in recessions, healthcare = high returns, cyclicals = decent mid-cycle returns and not at peak margins)
@@ -1580,17 +1635,22 @@ RATIONALE = {
     "F13": "Margins that held through 2021-23 inflation show pricing power.",
     "H1": "Enough history to judge durability.",
     "H3": _SIZE,
-    "H4": "Commercial stage: profitable in at least 4 of the last 5 years.",
-    "H5": "Pharma and health care are persistently high-return sectors; demand returns to match.",
-    "H6": "Commercial drugs earn 80-90% gross margins; devices and tools less.",
+    "H4": "Commercial stage: profitable in at least 4 of the last 5 years. Not applied to a new launcher (profitable "
+          "now, revenue up 25%+ a year), whose losses were the development years.",
+    "H5": "Pharma and health care are persistently high-return sectors; demand returns to match. Not applied to a "
+          "new launcher.",
+    "H6": "Commercial drugs earn 80-90% gross margins, so drug makers need at least 65% (diversified groups with device arms run in the high 60s); devices and tools less.",
     "H7": "Profits must turn into cash, after the cost of stock pay.",
     "H8": "Avoid levered roll-ups.",
     "H9": "Shrinking sales are how patent cliffs show up.",
     "B1": "Cash burns fast, so the cash figure must be recent.",
-    "B2": "Cash-burning biotechs depend on financing; avoid forced raises at the bottom.",
     "B3": "Debt and converts ahead of equity erode the cash floor.",
     "B4": _TRADE, "B5": _VOL,
-    "B6": "Buy the floor and get the upside cheaply: EV near or below cash.",
+    "B2": "Cash-burning biotechs depend on financing; avoid forced raises at the bottom. Near miss when one normal "
+          "equity raise (up to a fifth of market value) would cover the next two years.",
+    "B6": "Below its cash, a biotech rarely goes to zero: the market charges almost nothing for the pipeline.",
+    "B7": "The floor must survive the burn: market value against the cash left after another year of spending, net "
+          "of debt.",
     "C1": "A full cycle is needed to normalize earnings.",
     "C3": _SIZE,
     "C4": "A good business in a cyclical industry still earns well on capital mid-cycle.",

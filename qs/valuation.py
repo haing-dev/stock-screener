@@ -138,6 +138,14 @@ def value(m, info, quote, fx, today=None, td=None, listing_type=None):
         v["ev_incl_lt_investments_usd"] = ev_cash
         v["ev_to_liquid_assets"] = ev_cash / (liquid * fx)
         v["mcap_to_liquid_assets"] = mcap / (liquid * fx)
+        burn = m.get("annual_cash_burn")
+        if burn is not None and mcap > 0:
+            # clinical-stage biotech: the 2-year funding gap against one normal equity raise (10-20% of market cap),
+            # and the market value against the cash left after a further year of burn, net of debt
+            v["funding_gap_to_mcap"] = max(0.0, 2 * burn - liquid) * fx / mcap
+            left = liquid - (debt or 0) - burn
+            v["cash_after_burn_usd"] = left * fx
+            v["mcap_to_cash_after_burn"] = mcap / (left * fx) if left > 0 else None
     # ---- second-batch screens
     tb, nc, f5 = m.get("tangible_book"), m.get("net_cash"), m.get("fcf_avg_5y")
     v["price_to_tangible_book"] = (mcap / (tb * fx)) if (tb and tb > 0) else None

@@ -18,7 +18,8 @@ import re
 from collections import Counter, defaultdict
 from datetime import date, timedelta
 
-SUBSET_VERSION = 7   # 5: discontinued ops; 6: statement-model lines (Excel); 7: resource capex, pre-2018 securities, leases
+SUBSET_VERSION = 8   # 5: discontinued ops; 6: statement-model lines (Excel); 7: resource capex, pre-2018 securities, leases;
+                     # 8: industry lines for the Excel model (impairments, exploration, benefits, cash reconciliation)
 ANNUAL_FORMS = {"10-K", "10-K/A", "10-KT", "10-KT/A", "20-F", "20-F/A", "40-F", "40-F/A"}
 QUARTERLY_FORMS = {"10-Q", "10-Q/A"}
 
@@ -268,6 +269,26 @@ CONCEPTS = {
         (G, "LiabilitiesAndStockholdersEquity"), (I, "EquityAndLiabilities")]},
     "retained_earnings": {"kind": "instant", "agg": "first", "model": True, "tags": [
         (G, "RetainedEarningsAccumulatedDeficit"), (I, "RetainedEarnings")]},
+    # industry lines (v2.6): shown only when a company tags them
+    "impairments": {"kind": "duration", "agg": "max", "model": True, "tags": [
+        (G, "AssetImpairmentCharges"), (G, "GoodwillImpairmentLoss"), (G, "GoodwillAndIntangibleAssetImpairment"),
+        (G, "ImpairmentOfLongLivedAssetsHeldForUse"), (G, "ImpairmentOfOilAndGasProperties"),
+        (I, "ImpairmentLossRecognisedInProfitOrLoss")]},
+    "exploration": {"kind": "duration", "agg": "first", "model": True, "tags": [
+        (G, "ExplorationExpense"), (G, "ExplorationExpenseMining"), (I, "ExplorationAndEvaluationExpense")]},
+    "benefits_expense": {"kind": "duration", "agg": "first", "model": True, "tags": [
+        (G, "PolicyholderBenefitsAndClaimsIncurredNet"), (G, "PolicyholderBenefitsAndClaimsIncurredHealthCare")]},
+    "premiums": {"kind": "duration", "agg": "first", "model": True, "tags": [
+        (G, "PremiumsEarnedNet"), (G, "HealthCareOrganizationPremiumRevenue"), (I, "InsuranceRevenue")]},
+    "cash_cf_end": {"kind": "instant", "agg": "first", "model": True, "tags": [
+        (G, "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents"),
+        (I, "CashAndCashEquivalentsIfDifferentFromStatementOfFinancialPosition")]},
+    "cash_change": {"kind": "duration", "agg": "first", "model": True, "tags": [
+        (G, "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsPeriodIncreaseDecreaseIncludingExchangeRateEffect"),
+        (G, "CashAndCashEquivalentsPeriodIncreaseDecrease"),
+        (I, "IncreaseDecreaseInCashAndCashEquivalents")]},
+    "lease_liab_noncurrent": {"kind": "instant", "agg": "first", "model": True, "tags": [
+        (G, "OperatingLeaseLiabilityNoncurrent")]},
 }
 MODEL_CONCEPTS = tuple(k for k, v in CONCEPTS.items() if v.get("model"))
 

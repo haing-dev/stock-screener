@@ -18,6 +18,7 @@ from datetime import date, datetime
 from . import __version__
 from .config import CACHE_DIR, ROOT
 from .report import _fmt_val
+from .industry import model_template
 from .screens import BY_ID, SCREENS
 
 STATE_PATH = os.path.join(CACHE_DIR, "state", "state.json.gz")
@@ -30,7 +31,8 @@ VAL_KEYS = ("price", "price_date", "price_open", "price_source", "market_cap_usd
             "ev_ebit", "ev_ebitda", "ev_sales", "pe", "earnings_yield", "fcf_yield", "ev_normalized_ebit",
             "ev_incl_lt_investments_usd", "ev_to_liquid_assets", "mcap_to_liquid_assets",
             "price_to_tangible_book", "mcap_to_net_cash", "fcf_yield_5y", "insider_share", "insider_issue", "insider_basis",
-            "drawdown_12m", "high_12m_used")
+            "drawdown_12m", "high_12m_used", "funding_gap_to_mcap", "cash_after_burn_usd",
+            "mcap_to_cash_after_burn")
 
 # metric: (label, format, which direction is better[, True = only positive values are meaningful, e.g. P/E])
 METRICS = {
@@ -323,7 +325,8 @@ RULE_UNITS = {"years_with_data": " years of data", "years_total": " years of dat
               "insider_share": " owned by insiders", "capex_to_ocf_3y": " of operating cash flow spent on capex (3y)",
               "operating_margin_median": " operating margin, 10-year median", "positive_ebit_share": " of years profitable",
               "capex_to_da_3y": " (capex / depreciation, 3y)", "fcf_yield_5y": " 5-year average FCF yield",
-              "ev_sales": " EV/Sales", "drawdown_12m": " from the 12-month high"}
+              "ev_sales": " EV/Sales", "drawdown_12m": " from the 12-month high",
+              "mcap_to_cash_after_burn": " (market cap / cash left after a year of burn, net of debt)"}
 
 
 def _thr_text(thr, fmt):
@@ -354,29 +357,101 @@ def rule_label(g, cfg, sid):
 
 GATE_CODE = {"PASS": "P", "FAIL": "F", "NO DATA": "D", "N/A": "N", "PENDING": "D"}
 
+# near-miss reasons on the site: "Miss due to <what> being <value> (needs <threshold>)" or "Miss due to insufficient
+# information on <what>". SUBJECT names the measured quantity per metric; FAIL_TEXT replaces the whole phrase for rules
+# whose value alone doesn't explain the miss.
+SUBJECT = {
+    "years_with_data": "years of data", "years_total": "years of data", "latest_revenue_usd": "revenue",
+    "operating_loss_years": "operating-loss years in 10", "roic_median": "10-year median ROIC",
+    "roic_share_above_floor": "share of years with ROIC above 10%", "revenue_cagr": "revenue growth a year",
+    "fcf_conversion": "cash conversion (FCF after stock pay / net income)",
+    "net_debt_to_ocf": "net debt / operating cash flow", "downturn_failures": "downturn record",
+    "revenue_cagr_3y": "3-year revenue growth a year", "ttm_ebitda": "trailing EBITDA",
+    "ytd_revenue_growth": "latest revenue growth", "gross_margin_latest": "gross margin",
+    "ebitda_margin_change_3y": "3-year margin change", "share_count_cagr_3y": "share-count growth a year",
+    "net_debt_to_ebitda": "net debt / EBITDA", "market_cap_usd": "market cap", "ev_ebitda": "EV/EBITDA",
+    "adv_usd": "daily trading value", "ttm_operating_income": "trailing operating income", "ev_ebit": "EV/EBIT",
+    "recession_2020_revenue_change": "the 2020 recession result", "recession_2009_revenue_change":
+    "the 2008-09 recession result", "operating_loss_years_5y": "loss years in the last 5",
+    "operating_margin_std": "operating-margin swing", "interest_coverage": "interest coverage",
+    "maturities_covered": "debt maturities", "fcf_positive_years": "years of positive free cash flow",
+    "gross_margin_change_2021_2023": "the 2021-23 margin change", "bs_age_days": "balance-sheet age (days)",
+    "cash_runway_years": "cash runway", "debt_to_liquid_assets": "debt / cash", "ev_to_liquid_assets": "EV / cash",
+    "mcap_to_cash_after_burn": "market cap / cash left after a year of burn", "positive_ebit_years":
+    "profitable years of the last 10", "net_debt_to_norm_ebitda": "net debt / cycle-average EBITDA",
+    "op_margin_percentile_10y": "margin position in its 10-year range", "ev_normalized_ebit":
+    "EV / cycle-average EBIT", "insider_share": "insider ownership", "capex_to_ocf_3y": "capex / operating cash flow",
+    "operating_margin_median": "10-year median operating margin", "mcap_to_net_cash": "price vs net cash",
+    "ttm_ocf": "operating cash flow", "positive_ebit_share": "share of profitable years", "capex_to_da_3y":
+    "capex / depreciation", "fcf_yield_5y": "5-year average FCF yield", "drawdown_12m": "the drop from the 12-month high",
+    "ttm_fcf": "trailing free cash flow", "ev_sales": "EV/Sales", "red_flag_count": "warning signs",
+}
+FAIL_TEXT = {
+    "F11": "debt due within 2 years exceeding cash plus 2 years of free cash flow",
+    "K4": "a price above both net cash and tangible book",
+    "X3": "no recent spin-off or sale and a price within 40% of its 12-month high",
+}
+UNIT = {"years": " yrs", "int": ""}
+
+
+def _nice(v, fmt):
+    """Short display value for the site's reasons."""
+    if v is None:
+        return ""
+    if isinstance(v, bool):
+        return "yes" if v else "no"
+    if isinstance(v, (tuple, list)):
+        return " / ".join(_nice(x, fmt) for x in v if x is not None)
+    if not isinstance(v, (int, float)):
+        return str(v)
+    if fmt == "pct":
+        return f"{v * 100:.0f}%" if abs(v) >= 0.1 else f"{v * 100:.1f}%"
+    if fmt == "mult":
+        return f"{v:.1f}\u00d7" if abs(v) < 100 else f"{v:.0f}\u00d7"
+    if fmt == "usd":
+        a = abs(v)
+        return (f"${v / 1e9:.1f}B" if a >= 1e9 else f"${v / 1e6:.0f}M" if a >= 1e6 else f"${v / 1e3:.0f}K")
+    if fmt == "years":
+        return "cash-flow positive" if v >= 99 else f"{v:.1f} yrs"
+    if fmt == "int":
+        return f"{v:.0f}"
+    return f"{v:.3g}" if isinstance(v, float) else str(v)
+
+
+def _need(g, cfg, sid):
+    try:
+        thr = g.threshold(cfg, sid)
+    except (KeyError, TypeError):
+        thr = None
+    if thr is None or not g.op or isinstance(thr, bool):
+        return ""
+    return f"{_op_text(g.op)} {_nice(thr, g.fmt)}{UNIT.get(g.fmt, '') if g.fmt == 'int' else ''}"
+
 
 def screen_payload(s, results, ctxs, cfg):
     gates = [{"id": g.gid, "name": g.name, "rule": rule_label(g, cfg, s.sid), "why": g.insight,
               "hard": not g.one_ok, "valuation": bool(g.valuation), "price": bool(g.needs_price),
-              "hidden": bool(getattr(g, "hidden", False))} for g in s.gates]
+              "hidden": bool(getattr(g, "hidden", False)), "what": SUBJECT.get(g.metric, g.name.lower()),
+              "need": _need(g, cfg, s.sid), "ftxt": FAIL_TEXT.get(g.gid, "")} for g in s.gates]
     rows = []
     for c, r in results.items():
         codes, vals, notes = [], [], {}
         for g in s.gates:
             st, val, thr, note = r["gates"][g.gid]
             codes.append(GATE_CODE.get(st, "D"))
-            vals.append("" if val is None else _fmt_val(val, g.fmt))
+            vals.append("" if val is None else _nice(val, g.fmt))
             if note:
                 notes[g.gid] = note
         rows.append({"c": c, "g": "".join(codes), "v": vals, "nt": notes, "h": list(r.get("holds", [])),
                      "cls": r["class"], "nr": r["failed"][0] if r["class"] == "NEAR" and r.get("failed") else None})
     from .screens import AVOID_SCREENS
-    return {"id": s.sid, "title": s.title, "purpose": s.purpose, "gates": gates,
+    from .thesis import THESIS
+    return {"id": s.sid, "title": s.title, "purpose": s.purpose, "gates": gates, "thesis": THESIS.get(s.sid),
             "metrics": SCREEN_METRICS.get(s.sid, TABLE_METRICS), "rows": rows,
             "avoid": s.sid in AVOID_SCREENS, "strict": bool(getattr(s, "strict", False))}
 
 
-def company_payload(c, ctx, summaries, group_id, pv=None, has_model=False):
+def company_payload(c, ctx, summaries, group_id, pv=None, has_model=False, holders=None):
     m, unverified, nm = {}, [], {}
     adr = "ADR ratio unknown" in (ctx.get("val_issue") or "")
     for k in METRICS:
@@ -401,7 +476,7 @@ def company_payload(c, ctx, summaries, group_id, pv=None, has_model=False):
             "ind": ctx.get("industry"), "cur": ctx.get("currency"), "px": px,
             "m": m, "mu": unverified, "nm": nm, "vi": ctx.get("val_issue") or "", "pg": group_id,
             "sum": s.get("text"), "url": ctx.get("latest_annual_url"), "fy": ctx.get("latest_fy"), "ev": ev,
-            "other": ctx.get("other_tickers") or "", "pv": pv, "mdl": bool(has_model)}
+            "other": ctx.get("other_tickers") or "", "pv": pv, "mdl": bool(has_model), "ho": holders}
 
 
 SALT_PATH = os.path.join(ROOT, "data", "portal_salt.json")
@@ -483,6 +558,10 @@ def export_site(state, results, cfg, summaries, password, out_dir=SITE_DATA, tod
     listed = hist.listed_ciks(state)
     models = state.get("models") or {}
     ym_cache = {}
+    from . import holders as hold
+    hdata = hold.load() if (cfg.get("portal") or {}).get("holders", {}).get("enabled", True) else {}
+    hcfg = (cfg.get("portal") or {}).get("holders") or {}
+    passive = hcfg.get("passive") or ()
     companies = {}
     for c in shown:
         pv = None
@@ -491,7 +570,12 @@ def export_site(state, results, cfg, summaries, password, out_dir=SITE_DATA, tod
                 pv = hist.peer_valuation(c, state, td_cache, ym_cache)
             except Exception as e:  # noqa: BLE001 - information only
                 log(f"  peer valuation failed for {ctxs[c].get('ticker')}: {type(e).__name__}: {e}")
-        companies[c] = company_payload(c, ctxs[c], summaries, assign.get(c), pv, c in models)
+        ent = (hdata.get("by_cik") or {}).get(str(c))
+        ho = None
+        if ent:
+            ho = {"top": hold.top_active(ent, ctxs[c].get("shares_used"), passive), "n": ent.get("n"),
+                  "sp": ent.get("sp") or []}
+        companies[c] = company_payload(c, ctxs[c], summaries, assign.get(c), pv, c in models, ho)
     files = {}
     shards = int((cfg.get("portal") or {}).get("model_shards", 64))
     for c in shown:
@@ -499,9 +583,11 @@ def export_site(state, results, cfg, summaries, password, out_dir=SITE_DATA, tod
         if not mdl:
             continue
         name = f"model_{int(c) % shards:02d}"
+        last = (mdl.get("years") or [{}])[-1]
+        tpl = model_template(ctxs[c].get("sic"), last.get("revenue"), last.get("rnd"), last.get("x_operating_income"))
         files.setdefault(name, {})[c] = dict(mdl, px=hist.fy_prices(c, state, td_cache), t=ctxs[c]["ticker"],
                                              n=ctxs[c].get("name"), ind=ctxs[c].get("industry"),
-                                             fye=ctxs[c].get("latest_fy_end"))
+                                             fye=ctxs[c].get("latest_fy_end"), tpl=tpl)
     counts = {}
     for s in SCREENS:
         if s.sid not in results:
@@ -531,6 +617,7 @@ def export_site(state, results, cfg, summaries, password, out_dir=SITE_DATA, tod
         "gaps": sorted(gaps, key=lambda g: str(g["t"])), "excluded": excluded.most_common(),
         "summaries": sum(1 for c in companies.values() if c.get("sum")), "companies": len(companies),
         "run_info": state.get("run_info") or {},
+        "holders_period": hdata.get("period"),
     }
     written = set()
     for name, obj in files.items():

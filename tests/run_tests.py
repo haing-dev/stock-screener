@@ -787,6 +787,82 @@ check("summaries: companies on the lists first, then the largest; done ones skip
       SU.pick(_st, {"3": {"text": "x", "accn": "x-3"}}, 5) == ["1", "2"]
       and SU.pick(_st, {"3": {"text": "x", "accn": "old"}}, 5) == ["1", "3", "2"])
 
+# ---------------------------------------------------------------- v2.6: healthcare rules, 13F holders, site reasons
+print("\nHealthcare rules, 13F holders and near-miss reasons (Oct 2026)")
+import io as _io
+import zipfile as _zf
+import qs.holders as QH  # noqa: E402
+import qs.portal as QP  # noqa: E402
+from qs.industry import model_template  # noqa: E402
+
+_hc = cfg["screens"]
+_g = {g.gid: g for g in BY_ID["hc_commercial"].gates + BY_ID["hc_clinical"].gates}
+_drug = {"sic": "2834", "ttm_gross_margin": 0.60}
+check("H6: a drug maker needs a 65% gross margin (60% fails), a device maker 50% (60% passes)",
+      _g["H6"].evaluate(_drug, cfg, "hc_commercial")[0] == "FAIL"
+      and _g["H6"].evaluate(dict(_drug, sic="3841"), cfg, "hc_commercial")[0] == "PASS")
+_launch = {"sic": "2836", "revenue_cagr_3y": 0.6, "ttm_operating_income": 5e7, "ttm_gross_margin": 0.88,
+           "operating_loss_years_5y": 4, "roic_median": -0.3}
+check("H4/H5: a new launcher (profitable now, revenue +25%/yr, drug margins) is not judged on its loss years",
+      _g["H4"].evaluate(_launch, cfg, "hc_commercial")[0] == "N/A" and _g["H5"].evaluate(_launch, cfg, "hc_commercial")[0] == "N/A"
+      and _g["H4"].evaluate(dict(_launch, revenue_cagr_3y=0.1), cfg, "hc_commercial")[0] == "FAIL")
+_bio = {"cash_runway_years": 1.5, "funding_gap_to_mcap": 0.12}
+check("B2: under 2 years of cash fails, but a gap one normal raise can cover is a near miss",
+      _g["B2"].evaluate(_bio, cfg, "hc_clinical")[0] == "FAIL"
+      and _g["B2"].evaluate(_bio, cfg, "hc_clinical", -0.2)[0] == "PASS"
+      and _g["B2"].evaluate(dict(_bio, funding_gap_to_mcap=0.5), cfg, "hc_clinical", -0.2)[0] == "FAIL")
+check("B7: market value against cash left after a year of burn",
+      _g["B7"].evaluate({"mcap_to_cash_after_burn": 0.9}, cfg, "hc_clinical")[0] == "PASS"
+      and _g["B7"].evaluate({"mcap_to_cash_after_burn": None, "cash_after_burn_usd": -1e6}, cfg, "hc_clinical")[0] == "FAIL"
+      and _g["B7"].valuation)
+
+# 13F data set: a tiny ZIP in the SEC layout
+def _tsv(rows):
+    return "\n".join("\t".join(map(str, r)) for r in rows)
+_buf = _io.BytesIO()
+with _zf.ZipFile(_buf, "w") as z:
+    z.writestr("SUBMISSION.tsv", _tsv([["ACCESSION_NUMBER", "FILING_DATE", "SUBMISSIONTYPE", "CIK", "PERIODOFREPORT"],
+        ["a1", "14-AUG-2026", "13F-HR", "11", "30-JUN-2026"], ["a2", "14-AUG-2026", "13F-HR", "12", "30-JUN-2026"],
+        ["a3", "10-AUG-2026", "13F-HR", "13", "30-JUN-2026"], ["a4", "20-AUG-2026", "13F-HR/A", "13", "30-JUN-2026"],
+        ["a5", "14-MAY-2026", "13F-HR", "14", "31-MAR-2026"]]))
+    z.writestr("COVERPAGE.tsv", _tsv([["ACCESSION_NUMBER", "FILINGMANAGER_NAME", "AMENDMENTTYPE", "REPORTTYPE"],
+        ["a1", "VANGUARD GROUP INC", "", "13F HOLDINGS REPORT"], ["a2", "NORTHFIELD PARTNERS LLC", "", "13F HOLDINGS REPORT"],
+        ["a3", "OSTRANDER BIOTECH PARTNERS LP", "", "13F HOLDINGS REPORT"],
+        ["a4", "OSTRANDER BIOTECH PARTNERS LP", "RESTATEMENT", "13F HOLDINGS REPORT"],
+        ["a5", "OLD FILER", "", "13F HOLDINGS REPORT"]]))
+    z.writestr("INFOTABLE.tsv", _tsv([["ACCESSION_NUMBER", "NAMEOFISSUER", "TITLEOFCLASS", "CUSIP", "VALUE", "SSHPRNAMT", "SSHPRNAMTTYPE", "PUTCALL"],
+        ["a1", "ACME CORP", "COM", "000111AA1", 9e8, 9e6, "SH", ""], ["a2", "ACME CORP", "COM", "000111AA1", 5e8, 5e6, "SH", ""],
+        ["a2", "ACME CORP", "CL B", "000111BB9", 1e8, 1e6, "SH", ""], ["a2", "ACME CORP", "COM", "000111AA1", 7e8, 7e6, "SH", "CALL"],
+        ["a2", "OTHER CO", "COM", "999999ZZ9", 4e8, 4e6, "SH", ""], ["a3", "ACME CORP", "COM", "000111AA1", 3e8, 3e6, "SH", ""],
+        ["a4", "ACME CORP", "COM", "000111AA1", 2e8, 2e6, "SH", ""], ["a5", "ACME CORP", "COM", "000111AA1", 8e8, 8e6, "SH", ""]]))
+with _zf.ZipFile(_io.BytesIO(_buf.getvalue())) as z:
+    _res = QH.build(z, {"77": {"ticker": "ACME", "name": "Acme Corp"}}, {}, figi=lambda cus, **k: {c: ("ACME" if c.startswith("000111") else "") for c in cus},
+                    log=lambda *a: None, specialists=["Ostrander Biotech"])
+_e = _res["by_cik"].get("77") or {}
+_names = [h[0] for h in _e.get("h", [])]
+check("13F: latest period, restatement replaces the original, options and other issuers ignored, share classes combined",
+      _res["period"] == "2026-06-30" and _e.get("n") == 3 and _names[:1] == ["Vanguard Group"]
+      and dict((h[0], h[1]) for h in _e["h"]).get("Northfield Partners") == 6e8
+      and dict((h[0], h[1]) for h in _e["h"]).get("Ostrander Biotech Partners") == 2e8, str(_e))
+_top = QH.top_active(_e, 100e6, cfg["portal"]["holders"]["passive"])
+check("13F: the site column leaves out index funds, shows % of the company and marks specialists",
+      [t[0] for t in _top] == ["Northfield Partners", "Ostrander Biotech Partners"] and abs(_top[0][1] - 0.06) < 1e-9
+      and _top[1][2] is True, str(_top))
+check("13F: manager names cleaned", QH.clean_manager("JPMORGAN CHASE & CO") == "JPMorgan Chase"
+      and QH.clean_manager("BAILLIE GIFFORD & CO") == "Baillie Gifford" and QH.clean_manager("VANGUARD GROUP INC") == "Vanguard Group",
+      QH.clean_manager("JPMORGAN CHASE & CO"))
+
+# near-miss reasons: every rule names what it measures, with a short threshold
+_pay = QP.screen_payload(BY_ID["core"], {}, {}, cfg)
+_g5 = next(g for g in _pay["gates"] if g["id"] == "G5a")
+check("site reasons: each rule carries what it measures and the threshold",
+      _g5["what"] == "10-year median ROIC" and _g5["need"] == "at least 15%" and _pay["thesis"]["ex"]["co"], str(_g5))
+check("site values: short display formats", QP._nice(0.123, "pct") == "12%" and QP._nice(2.345, "mult") == "2.3\u00d7"
+      and QP._nice(1.5e9, "usd") == "$1.5B" and QP._nice(1.42, "years") == "1.4 yrs")
+check("Excel template by industry", model_template("7372", 1e9) == "software" and model_template("2836", 3e6) == "biotech"
+      and model_template("2834", 5e10, 1e10, 1e10) == "hc_products" and model_template("6324", 3e11) == "insurer"
+      and model_template("1311", 1e9) == "resources" and model_template("3559", 1e9) == "industrial")
+
 shutil.rmtree(TMP, ignore_errors=True)
 print(f"\n{'ALL TESTS PASSED' if not failures else str(len(failures)) + ' FAILED: ' + ', '.join(failures)}")
 sys.exit(1 if failures else 0)

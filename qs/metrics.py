@@ -968,7 +968,9 @@ MODEL_RAW = ("revenue", "cost_of_revenue", "gross_profit", "selling_marketing", 
              "deferred_revenue_current", "liabilities_current", "deferred_revenue_noncurrent", "liabilities",
              "minority_interest", "preferred_equity", "equity", "retained_earnings", "liabilities_and_equity",
              "ocf", "capex_ppe", "capex_software", "acquisitions", "cfi", "debt_issued", "debt_repaid",
-             "buybacks", "dividends", "equity_issued", "cff", "fx_effect")
+             "buybacks", "dividends", "equity_issued", "cff", "fx_effect",
+             "restructuring", "impairments", "exploration", "benefits_expense", "premiums", "cash_cf_end",
+             "cash_change", "lease_rou", "lease_liab_current", "lease_liab_noncurrent")
 MODEL_DERIVED = ("operating_income", "ebitda", "capex", "fcf", "total_debt", "cash_and_sti", "nopat",
                  "invested_capital", "roic", "cash_roic", "tax_rate_used")
 
