@@ -75,8 +75,10 @@ def closest_peers(ctxs, n=10):
 
 
 # ------------------------------------------------------------------ refresh (screen run and daily run)
-def update(state, prices, cfg, daily=False, log=print, today=None):
-    """52-week ranges for every company and month-end histories for listed companies + peers, within the request
+def update(state, prices, cfg, daily=False, log=print, today=None, background=False):
+    """52-week ranges for every company and month-end histories for listed companies + peers.
+    Screen and daily runs only add what's new (the latest trading day, new month-ends); the slow, rate-limited
+    fills (52-week backfill, Twelve Data histories) run in the background job (background=True) within the
     budgets in config 'portal'. Massive and Twelve Data run side by side (separate rate limits)."""
     today = today or date.today()
     pc = cfg.get("portal") or {}
@@ -86,8 +88,12 @@ def update(state, prices, cfg, daily=False, log=print, today=None):
     if prices is None or not prices.available():
         return
     tick = sorted({x["ticker"] for x in ctxs.values() if not x.get("events_only")})
-    m_budget = int(pc.get("range_days_per_daily_run" if daily else "range_days_per_screen_run", 100))
-    t_budget = int(pc.get("history_per_daily_run" if daily else "history_per_screen_run", 200))
+    if background:
+        m_budget = int(pc.get("range_days_per_background_run", 200))
+        t_budget = int(pc.get("history_per_background_run", 300))
+    else:
+        m_budget = int(pc.get("range_days_per_daily_run" if daily else "range_days_per_screen_run", 5))
+        t_budget = 0
 
     def ranges():
         r = prices.ranges_52w(tick, budget=m_budget) if hasattr(prices, "ranges_52w") else {}
@@ -104,9 +110,23 @@ def update(state, prices, cfg, daily=False, log=print, today=None):
 
     def histories():
         td = getattr(prices, "td", None)
-        if td is None or not td.available() or t_budget <= 0:
+        if td is None or not td.available():
             return
-        fetch_histories(state, td, peers, t_budget, int(pc.get("history_refresh_days", 180)), today, log)
+        extend_histories(td, prices, today, log)
+        budget = t_budget
+        if budget <= 0:
+            return
+        if getattr(td, "daily_limit", 0) is None and hasattr(td, "check_plan"):
+            try:
+                td.check_plan()          # api_usage: free, tells today's credits used
+            except Exception:  # noqa: BLE001
+                pass
+        if getattr(td, "daily_limit", None):
+            # keep credits for quotes and exchange rates whatever the history fill wants
+            budget = min(budget, td.daily_limit - td.daily_used - int(pc.get("td_reserve_credits", 100)))
+        if budget <= 0:
+            return
+        fetch_histories(state, td, peers, budget, int(pc.get("history_refresh_days", 730)), today, log)
 
     with ThreadPoolExecutor(max_workers=2) as ex:
         futs = [ex.submit(ranges), ex.submit(histories)]
@@ -118,20 +138,63 @@ def update(state, prices, cfg, daily=False, log=print, today=None):
 
 
 def _needs(rec, ctx, refresh_days, today):
+    """A ticker's 10-year month-end history is downloaded once. New month-ends are appended from Massive's
+    month-end files and splits are applied from the split list (extend_histories), so a stored series is only
+    downloaded again when it failed, or when the safety-net age (refresh_days) passes without any appended month."""
     if not rec:
         return True
     try:
-        age = (today - date.fromisoformat(rec["fetched"][:10])).days
+        age = (today - date.fromisoformat((rec.get("asof") or rec["fetched"])[:10])).days
     except (KeyError, ValueError):
         return True
     if rec.get("error"):
         return age > 30
-    if age > refresh_days:
-        return True
-    if any(d > rec["fetched"] for d, *_ in (ctx.get("recent_splits") or [])):
-        return True           # split since the fetch: the adjusted series changed
-    end = str(ctx.get("latest_fy_end") or "")[:7]
-    return bool(end) and end not in rec.get("s", {}) and age > 30
+    return age > refresh_days
+
+
+def extend_histories(td, prices, today, log=print):
+    """Append the latest month-end closes (Massive, unadjusted, one all-stocks request per month, cached for good)
+    to every stored Twelve Data history and bring each series onto today's split basis. Returns series updated."""
+    from .massive import m_symbol, split_factor
+    m = getattr(prices, "m", None)
+    if m is None or not m.available() or not hasattr(prices, "splits"):
+        return 0
+    sp = prices.splits((today - timedelta(days=760)).isoformat())
+    if sp is None:
+        return 0
+    try:
+        days = m.month_end_days(13)
+    except Exception as e:  # noqa: BLE001 - information only
+        log(f"  month-end closes unavailable: {type(e).__name__}: {e}")
+        return 0
+    cache = td.history_cache()
+    n = 0
+    t = today.isoformat()
+    for sym, rec in cache.items():
+        s = rec.get("s")
+        if not s:
+            continue
+        msym = m_symbol(sym)
+        mine = sp.get(msym)
+        asof = (rec.get("asof") or rec.get("fetched") or t)[:10]
+        f = split_factor(mine, after=asof, until=t)
+        if f != 1.0:
+            s = {k: round(v * f, 6) for k, v in s.items()}
+        changed = f != 1.0
+        for d, bars in days:
+            b = bars.get(msym)
+            if not b or not b[1]:
+                continue
+            v = round(b[1] * split_factor(mine, after=d, until=t), 6)
+            if s.get(d[:7]) != v:
+                s[d[:7]] = v
+                changed = True
+        rec["s"], rec["asof"] = s, t
+        n += changed
+    if n:
+        td.save_history()
+    log(f"  month-end history: {n} stored series extended from Massive's month-end closes")
+    return n
 
 
 def fetch_histories(state, td, peers, budget, refresh_days, today, log=print):

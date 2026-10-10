@@ -1,4 +1,4 @@
-# Stock screener: thirteen screens on SEC filings
+# Stock screener: fourteen screens on SEC filings
 
 Thirteen screens over every NYSE and Nasdaq company, built from what the investors in your interview library
 look for. Financials come from SEC filings (10-K, 10-Q, 20-F, 40-F); share prices and FX rates from
@@ -81,15 +81,17 @@ The screener runs itself in GitHub and publishes a password-protected website (C
 
 | When | What (GitHub Actions) |
 |---|---|
-| 1st and 16th of each month | **Screen**: every NYSE + Nasdaq company from SEC filings, priced, all thirteen screens (about 1-2 hours) |
-| Every weekday evening | **Daily prices**: end-of-day open/close for every company (Massive), screens re-applied |
-| Both | 2-3 line company descriptions written by Claude from the annual report (a batch per run until all are done) |
+| 1st and 16th of each month | **Screen**: every NYSE + Nasdaq company from SEC filings, priced, all fourteen screens. Only companies that filed since the last run are re-downloaded (SEC daily index); a full refresh uses SEC's nightly bulk files |
+| Weekday mornings | **Daily prices**: end-of-day open/close for every company (Massive), screens re-applied; skipped when there is no new trading day, and the site is republished only when something changed |
+| Every day | **Background**: slow fills within API budgets - 52-week ranges, 10-year month-end prices (Twelve Data, once per company, then extended from Massive), 13F holders and buyers/sellers (quarterly), insider trades (quarterly), and 2-3 line company descriptions by Claude (written once, for listed companies and their peers) |
 
 On the site: one page per screen with a rules table (rule, criteria, rationale, on/off switch; +n = companies that
 would join without it), two lists (Pass; Near misses, each with the rule it missed or what to check by hand) and the
 same columns everywhere: price vs open, 52-week range, industry, P/E, EV/EBIT, FCF yield, ROIC (10-year median) and
 5-year revenue CAGR. Each company has its own page: what it does, valuation against its 10 closest peers and its own
-3- and 10-year average multiples (information only), and a button that builds an Excel file with its income
+3- and 10-year average multiples (information only), ownership (top 13F holders with the share of each holder's
+portfolio, biggest buyers and sellers since the previous quarter, insider open-market buys and sales over 3 quarters),
+and a button that builds an Excel file with its income
 statement, balance sheet, cash flow and a metrics page (up to 10 years, from SEC filings, built in the browser).
 Local preview with demo data: `python tests/demo_portal.py OUT_DIR`, then serve OUT_DIR.
 
@@ -122,7 +124,7 @@ portal-export`.
 
 | Step | Double-click | What happens |
 |---|---|---|
-| 1 | `1_TEST_RUN.bat` | All thirteen screens on ~50 well-known companies -> `output\test_results.xlsx` |
+| 1 | `1_TEST_RUN.bat` | All fourteen screens on ~50 well-known companies -> `output\test_results.xlsx` |
 | 2 | `2_RUN_ALL_SCREENS.bat` | Every NYSE + Nasdaq company -> `output\screen_results_<date>.xlsx` + `_evidence.csv`. The first run re-downloads SEC data (new format, 30-50 min). |
 | 3 | `3_MAKE_AI_PACK.bat` | Pick a screen; downloads the top companies' latest annual reports and builds a blind evidence pack for Claude's review |
 | 4 | `4_VERIFY_QUOTES.bat` | Checks every quote in Claude's review word-for-word against the filing |

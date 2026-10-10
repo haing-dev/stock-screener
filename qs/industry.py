@@ -93,6 +93,12 @@ EMERGING_EXTRA_EXCLUDE = [
     (1400, 1499, "Non-metal mining (materials)"),
 ]
 
+# Tech S-curve screen: two branches with different gross-margin and working-capital rules
+TECH_SOFTWARE = [(7370, 7379, "Software, internet & IT services")]
+TECH_HARDWARE = [(3570, 3579, "Computers & storage"), (3661, 3669, "Communications equipment"),
+                 (3670, 3679, "Semiconductors & electronic components"),
+                 (3825, 3825, "Electronic test & measurement"), (3827, 3827, "Optical instruments & lenses")]
+
 # Never screened: funds, blank checks, shells
 NEVER = [(6722, 6726, "Funds & trusts"), (6770, 6770, "Blank checks / SPACs"), (6798, 6798, "REITs"),
          (9995, 9999, "Non-operating / shells")]
@@ -104,13 +110,14 @@ def group_rows():
     for name, lst in (("Healthcare", HEALTHCARE), ("Healthcare - clinical stage book", CLINICAL_STAGE),
                       ("Cyclicals", CYCLICAL), ("Hard assets & royalties", REAL_ASSETS),
                       ("Emerging - extra exclusions", EMERGING_EXTRA_EXCLUDE),
+                      ("Tech S-curve - software branch", TECH_SOFTWARE), ("Tech S-curve - hardware branch", TECH_HARDWARE),
                       ("Never screened", NEVER)):
         for lo, hi, label in lst:
             rows.append({"screen": name, "sic_from": lo, "sic_to": hi, "label": label})
     return rows
 
 
-# Excel 3-statement model templates (site/app.js buildModel): which lines and ratios fit the business
+# Excel 3-statement model templates (site/model.js buildModel): which lines and ratios fit the business
 MODEL_TEMPLATES = [
     ((7370, 7379), "software"),
     ((6300, 6411), "insurer"),

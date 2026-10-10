@@ -381,15 +381,27 @@ class Massive:
         except (KeyError, ValueError):
             pass
         out = {}
+        frm = since
         try:
-            data = self._get("/v3/reference/splits", {"execution_date.gte": since, "limit": 1000})
+            if hit and hit.get("since", "9999") <= since and hit.get("fetched"):
+                # incremental: only splits executed since a few days before the last download (usually one request)
+                frm = (date.fromisoformat(hit["fetched"][:10]) - timedelta(days=5)).isoformat()
+                out = {k: [tuple(x) for x in v if x[0] >= since] for k, v in hit["splits"].items()}
+                out = {k: v for k, v in out.items() if v}
+        except (KeyError, ValueError, TypeError):
+            out, frm = {}, since
+        try:
+            data = self._get("/v3/reference/splits", {"execution_date.gte": frm, "limit": 1000})
             pages = 0
             while isinstance(data, dict):
                 for r in data.get("results") or []:
                     t, d = r.get("ticker"), r.get("execution_date")
                     fr, to = r.get("split_from"), r.get("split_to")
                     if t and d and fr and to:
-                        out.setdefault(str(t).upper(), []).append((d, float(fr), float(to)))
+                        rec = (d, float(fr), float(to))
+                        lst = out.setdefault(str(t).upper(), [])
+                        if rec not in lst:
+                            lst.append(rec)
                 nxt = data.get("next_url")
                 pages += 1
                 if not nxt or pages > 20 or self.fixtures_dir:
@@ -398,11 +410,13 @@ class Massive:
         except MassiveError as e:
             self.log(f"  Massive split list unavailable: {e}")
             return None
+        for v in out.values():
+            v.sort()
         _save(path, {"fetched": self.today.isoformat(), "since": since, "splits": out})
         return out
 
     # ------------------------------------------------------------ reference data (names, listing types)
-    def tickers(self, max_age_days=7):
+    def tickers(self, max_age_days=30):
         """{SYMBOL: (name, type)} for active US stock listings, cached a week."""
         path = os.path.join(self.dir, "reference_tickers.json.gz")
         hit = _load(path)
@@ -509,16 +523,26 @@ class PriceSource:
         ok = sum(1 for q in out.values() if q.get("ok"))
         self.log(f"{progress_label}: {ok}/{len(items)} priced from Massive end-of-day data")
         if missing and self.td is not None and self.td.available() and self.td_fallback_max:
-            todo = missing[:self.td_fallback_max]
-            self.log(f"  {len(missing)} not found there - asking Twelve Data for {len(todo)}")
-            got = self.td.quotes(todo, progress_label="  Twelve Data backup")
+            # tickers Twelve Data couldn't price either are skipped for 30 days (saves its credits)
+            path = os.path.join(self.m.dir, "unpriceable.json.gz")
+            skip = _load(path) or {}
+            cut = (self.today - timedelta(days=30)).isoformat()
+            skip = {t: d for t, d in skip.items() if d >= cut}
+            todo = [x for x in missing if x[0] not in skip][:self.td_fallback_max]
+            self.log(f"  {len(missing)} not found there - asking Twelve Data for {len(todo)}"
+                     f" ({sum(1 for x in missing if x[0] in skip)} skipped: not priceable last time)")
+            got = self.td.quotes(todo, progress_label="  Twelve Data backup") if todo else {}
             for t, _ in todo:
                 q = got.get(t)
                 if q and q.get("ok"):
                     q = dict(q, source="Twelve Data", open=q.get("open"))
                     out[t] = q
+                    skip.pop(t, None)
                 elif q:
                     out[t] = dict(out[t], reason=out[t]["reason"] + " | Twelve Data: " + str(q.get("reason")))
+                    if "limit" not in str(q.get("reason")).lower():
+                        skip[t] = self.today.isoformat()
+            _save(path, skip)
         return out
 
     def instrument_types(self, max_age_days=7):

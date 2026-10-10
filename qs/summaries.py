@@ -3,8 +3,8 @@
 For each company: download the latest 10-K / 20-F, take the opening of the Business section (plus paragraphs
 about customers and markets), and ask Claude (Claude Code CLI, signed in with the CLAUDE_CODE_OAUTH_TOKEN of a
 Claude subscription) for a short factual description. Claude gets no tools - it only reads the excerpt we give
-it - and summaries are stored in data/summaries.json so each company is done once (redone after a new annual
-report).
+it - and summaries are stored in data/summaries.json so each company is done once (redone only when the business may
+have changed - see needs_summary).
 """
 import json
 import os
@@ -48,7 +48,14 @@ def save_summaries(s, path=SUMMARY_PATH):
     os.replace(tmp, path)
 
 
+MAX_AGE_YEARS = 3
+RESHAPING = ("spin-off", "bankruptcy", "reorganization")
+
+
 def needs_summary(c, ctx, summaries, today):
+    """Written once and kept. Rewritten only when the business may have changed: a new name or industry code, a
+    spin-off or bankruptcy filed after the description, or a description older than MAX_AGE_YEARS (with a newer
+    annual report available)."""
     s = summaries.get(c)
     if not ctx.get("latest_annual_accn") or not ctx.get("latest_annual_doc"):
         return False
@@ -56,25 +63,44 @@ def needs_summary(c, ctx, summaries, today):
         if s and s.get("failed_accn") == ctx["latest_annual_accn"]:
             return False          # this report couldn't be summarized; wait for the next one
         return True
-    return s.get("accn") != ctx["latest_annual_accn"]
+    if s.get("accn") == ctx["latest_annual_accn"]:
+        return False
+    if s.get("name") and ctx.get("name") and s["name"] != ctx["name"]:
+        return True
+    if s.get("sic") and ctx.get("sic") and str(s["sic"]) != str(ctx["sic"]):
+        return True
+    ev_date = str(ctx.get("event_date") or "")
+    if ev_date and ev_date > str(s.get("date") or "") and any(k in str(ctx.get("event_types") or "") for k in RESHAPING):
+        return True
+    try:
+        age = (today - date.fromisoformat(str(s.get("date"))[:10])).days
+    except ValueError:
+        return False
+    return age > MAX_AGE_YEARS * 365
 
 
 def pick(state, summaries, limit, today=None):
-    """Companies on the screens' lists first (PASS / CHECK / near misses), then everyone else by size."""
+    """Companies on the screens' lists (PASS / CHECK / near misses) first, then their closest peers - the pages
+    people open. Companies on no list and nobody's peer get no description (saves Claude usage)."""
     today = today or date.today()
     ctxs = state["ctxs"]
     prio = {}
     for sid, cls in (state.get("classes") or {}).items():
         for c, k in cls.items():
-            p = {"PASS": 0, "CHECK": 1, "NEAR": 2, "PRICE": 2, "ONE": 3}.get(k, 9)
-            prio[c] = min(prio.get(c, 9), p)
-    cands = [c for c in ctxs if not ctxs[c].get("events_only") and needs_summary(c, ctxs[c], summaries, today)]
+            p = {"PASS": 0, "CHECK": 1, "NEAR": 2, "PRICE": 2, "ONE": 3}.get(k)
+            if p is not None:
+                prio[c] = min(prio.get(c, 9), p)
+    for c in list(prio):
+        for p_ in (state.get("peers10") or {}).get(c, []):
+            prio.setdefault(p_, 5)
+    cands = [c for c in ctxs if c in prio and not ctxs[c].get("events_only")
+             and needs_summary(c, ctxs[c], summaries, today)]
     cands.sort(key=lambda c: (prio.get(c, 9), -(ctxs[c].get("market_cap_usd") or ctxs[c].get("market_cap_usd_unverified")
                                                   or ctxs[c].get("latest_revenue_usd") or 0)))
     return cands[:limit]
 
 
-def excerpt(client, ctx, words=1100, customer_words=350):
+def excerpt(client, ctx, words=600, customer_words=200):
     html = client.get_bytes(doc_url(ctx["cik"], ctx["latest_annual_accn"], ctx["latest_annual_doc"]))
     text = html_to_text(html)
     form = ctx.get("latest_annual_form") or "10-K"
@@ -120,7 +146,11 @@ def ask_claude(batch, model="haiku", timeout=900):
     prompt = "Describe each company below.\n\n" + "\n".join(parts)
     cmd = ["claude", "-p", "--model", model, "--system-prompt", SYSTEM, "--tools", "", "--output-format", "json",
            "--no-session-persistence", "--max-turns", "3"]
-    r = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=timeout)
+    # run from an empty folder: started inside the repository, Claude Code would read the project's CLAUDE.md into
+    # every call (tokens spent for nothing)
+    import tempfile
+    with tempfile.TemporaryDirectory() as empty:
+        r = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=timeout, cwd=empty)
     if r.returncode != 0:
         raise RuntimeError(f"claude exited {r.returncode}: {(r.stderr or r.stdout)[:300]}")
     try:
@@ -186,6 +216,7 @@ def run(client, state, limit, model="haiku", batch_size=8, today=None, log=print
             ctx = ctxs[c]
             if txt:
                 summaries[c] = {"text": clean_summary(txt, ctx.get("name")), "accn": ctx["latest_annual_accn"],
+                                "name": ctx.get("name"), "sic": ctx.get("sic"),
                                 "source": f"{ctx.get('latest_annual_form') or '10-K'} filed {ctx.get('latest_annual_filed')}",
                                 "date": today.isoformat(), "model": model}
                 done += 1

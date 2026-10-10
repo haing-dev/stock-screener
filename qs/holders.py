@@ -133,7 +133,7 @@ def choose_filings(zf, min_filers=1500):
         rank = (1 if t == "13F-HR/A" else 0, fd or date.min)
         if cik not in best or rank > best[cik][0]:
             best[cik] = (rank, a, name)
-    return period, {a: name for _, a, name in best.values()}
+    return period, {a: (name, str(cik)) for cik, (_, a, name) in best.items()}
 
 
 def scan_values(zf, accns):
@@ -213,17 +213,28 @@ def is_match(name, patterns):
 
 
 def top_active(entry, shares_out, passive, n=5):
-    """Site payload: [[manager, % of the company or None, specialist?], ...] - the top n holders that aren't index
-    funds or broker platforms (config portal.holders.passive)."""
+    """Site payload: [[manager, % of the company or None, specialist?, share of the manager's 13F portfolio, value],
+    ...] - the top n holders that aren't index funds or broker platforms (config portal.holders.passive)."""
     out = []
     sp = set((entry or {}).get("sp") or [])
-    for name, value, sh, _port in (entry or {}).get("h") or []:
+    for name, value, sh, port in (entry or {}).get("h") or []:
         if is_match(name, passive):
             continue
         pct = round(sh / shares_out, 4) if shares_out and sh else None
-        out.append([name, pct if pct is None or pct < 1 else None, name in sp])
+        out.append([name, pct if pct is None or pct < 1 else None, name in sp, port, value])
         if len(out) >= n:
             break
+    return out
+
+
+def moves(entry, passive, n=5):
+    """Biggest buyers and sellers since the previous quarter, index funds and brokers left out:
+    {'buy': [[manager, value change, kind (new/add), share of its portfolio, share change]], 'sell': [...]}"""
+    out = {}
+    for side in ("buy", "sell"):
+        rows = [r for r in (entry or {}).get(side) or [] if not is_match(r[0], passive)][:n]
+        if rows:
+            out[side] = rows
     return out
 
 
@@ -283,26 +294,33 @@ def figi_map(cusips, api_key="", budget_s=900, log=print, session=None):
 
 
 def map_issuers(names, by_cusip, ctxs, cache, api_key="", budget_s=900, min_value=5e6, log=print, figi=None):
-    """{cusip: cik}. Cache = {issuer6: {"t": ticker or "", "cik": cik or None}} (persists across runs)."""
+    """{cusip: cik}. Cache = {issuer6: {"t": ticker or ""}} (persists across runs). Only issuers whose name starts
+    like one of the screened companies are sent to OpenFIGI (most 13F lines are ETFs, funds and companies we don't
+    screen), which keeps the free, rate-limited mapping short."""
     by_tick = {}
     for c, x in ctxs.items():
         for t in [x.get("ticker")] + [s.strip() for s in str(x.get("other_tickers") or "").replace(";", ",").split(",")]:
             if t:
                 by_tick.setdefault(_norm_ticker(t), c)
     by_name = defaultdict(set)
+    firsts = set()
     for c, x in ctxs.items():
         n = _norm_name(x.get("name"))
         if n:
             by_name[n].add(c)
-    # issuers worth mapping: equity lines above a small value floor, biggest first
+            firsts.add(n.split()[0])
     issuers = defaultdict(float)
     rep = {}
     for cu, v in by_cusip.items():
-        if v >= min_value:
-            i6 = cu[:6]
-            issuers[i6] += v
-            if i6 not in rep or v > by_cusip[rep[i6]]:
-                rep[i6] = cu
+        if v < min_value:
+            continue
+        nm = _norm_name(names.get(cu, ("",))[0])
+        if not nm or nm.split()[0] not in firsts:
+            continue
+        i6 = cu[:6]
+        issuers[i6] += v
+        if i6 not in rep or v > by_cusip[rep[i6]]:
+            rep[i6] = cu
     todo = [i6 for i6 in sorted(issuers, key=issuers.get, reverse=True) if i6 not in cache]
     if todo:
         log(f"  mapping {len(todo)} new issuers to tickers (OpenFIGI{' with key' if api_key else ', no key: slower'})")
@@ -320,7 +338,6 @@ def map_issuers(names, by_cusip, ctxs, cache, api_key="", budget_s=900, min_valu
         if ent and ent.get("t"):
             cik = by_tick.get(_norm_ticker(ent["t"]))
         if cik is None and (not ent or not ent.get("t")):
-            # no ticker: fall back to an exact (normalized) name match with exactly one screened company
             cands = by_name.get(_norm_name(names.get(cu, ("",))[0]))
             if cands and len(cands) == 1:
                 cik = next(iter(cands))
@@ -329,25 +346,79 @@ def map_issuers(names, by_cusip, ctxs, cache, api_key="", budget_s=900, min_valu
     return out, remaining
 
 
-def build(zf, ctxs, cache, api_key="", budget_s=900, top=15, log=print, figi=None, specialists=()):
+def _by_manager(pos_for_company, accns):
+    """{accn: [value, shares]} -> {manager_cik: [value, shares, name]} (one filing per manager per quarter)."""
+    out = {}
+    for a, (v, sh) in pos_for_company.items():
+        name, mcik = accns[a]
+        cur = out.get(mcik)
+        out[mcik] = [v + (cur[0] if cur else 0), sh + (cur[1] if cur else 0), name]
+    return out
+
+
+def build(zf, ctxs, cache, api_key="", budget_s=900, top=15, log=print, figi=None, specialists=(), prev_zf=None,
+          moves=8):
+    """Top holders per company, plus (with the previous quarter's data set) who bought and who sold or exited, and
+    each holder's position as a share of its whole 13F portfolio (conviction)."""
     period, accns = choose_filings(zf)
     if not accns:
         raise RuntimeError("no 13F holdings filings found in the ZIP")
     log(f"  13F period {period}: {len(accns)} managers")
-    by_cusip, by_mgr, names = scan_values(zf, accns)
+    by_cusip, by_acc, names = scan_values(zf, accns)
     cusip_cik, remaining = map_issuers(names, by_cusip, ctxs, cache, api_key=api_key, budget_s=budget_s, log=log,
                                        figi=figi)
     pos = positions(zf, accns, cusip_cik)
+    port = defaultdict(float)
+    for a, v in by_acc.items():
+        port[accns[a][1]] += v
+    prev_pos, p_accns, p_period = {}, {}, None
+    if prev_zf is not None:
+        p_period, p_accns = choose_filings(prev_zf)
+        if p_accns and p_period and period and p_period < period:
+            prev_pos = positions(prev_zf, p_accns, cusip_cik)
+            log(f"  previous quarter {p_period}: {len(p_accns)} managers (for buyers and sellers)")
+        else:
+            p_period = None
     by_cik = {}
-    for cik, mgrs in pos.items():
-        ranked = sorted(mgrs.items(), key=lambda kv: kv[1][0], reverse=True)
+    for cik, accs in pos.items():
+        cur = _by_manager(accs, accns)
+        ranked = sorted(cur.items(), key=lambda kv: kv[1][0], reverse=True)
         h = []
-        for a, (v, sh) in ranked[:top]:
-            port = by_mgr.get(a) or 0
-            h.append([clean_manager(accns[a]), round(v), round(sh), round(v / port, 5) if port else None])
-        sp = sorted({clean_manager(accns[a]) for a in mgrs if is_match(accns[a], specialists)})
-        by_cik[str(cik)] = {"h": h, "n": len(mgrs), "sp": sp}
-    return {"period": period.isoformat() if period else None, "by_cik": by_cik, "unmapped_issuers": remaining}
+        for mcik, (v, sh, name) in ranked[:top]:
+            pv = port.get(mcik) or 0
+            h.append([clean_manager(name), round(v), round(sh), round(v / pv, 5) if pv else None])
+        sp = sorted({clean_manager(name) for (_, _, name) in cur.values() if is_match(name, specialists)})
+        ent = {"h": h, "n": len(cur), "sp": sp}
+        if p_period:
+            prev = _by_manager(prev_pos.get(cik, {}), p_accns)
+            px = None
+            tv = sum(x[0] for x in cur.values())
+            ts = sum(x[1] for x in cur.values())
+            if ts:
+                px = tv / ts
+            chg = []
+            for mcik in set(cur) | set(prev):
+                c_ = cur.get(mcik)
+                p_ = prev.get(mcik)
+                csh, psh = (c_[1] if c_ else 0.0), (p_[1] if p_ else 0.0)
+                if csh == psh:
+                    continue
+                if not psh:
+                    val, kind = c_[0], "new"
+                elif not csh:
+                    val, kind = -p_[0], "exit"
+                else:
+                    val, kind = (csh - psh) * (px or (c_[0] / csh)), "add" if csh > psh else "cut"
+                name = (c_ or p_)[2]
+                pv = port.get(mcik) or 0
+                chg.append([clean_manager(name), round(val), kind, round(c_[0] / pv, 5) if (c_ and pv) else None,
+                            round((csh - psh) / psh, 3) if psh else None])
+            chg.sort(key=lambda x: x[1])
+            ent["buy"] = [x for x in reversed(chg) if x[1] > 0][:moves]
+            ent["sell"] = [x for x in chg if x[1] < 0][:moves]
+        by_cik[str(cik)] = ent
+    return {"period": period.isoformat() if period else None, "prev_period": p_period.isoformat() if p_period else None,
+            "by_cik": by_cik, "unmapped_issuers": remaining}
 
 
 def _fetch(client, url, timeout=300):
@@ -374,7 +445,9 @@ def _fetch(client, url, timeout=300):
 
 
 def update(client, state, cfg, log=print, today=None):
-    """Download the newest 13F data set (skipped when it was already processed) and rebuild holders.json.gz."""
+    """Once per quarter: when SEC posts a new 13F data set, rebuild holders.json.gz from it and the previous one
+    (for buyers / sellers). The ZIPs are kept until every issuer is mapped to a ticker, so an unfinished mapping
+    continues next run without downloading again; then they are deleted."""
     from .sec import cache_read, cache_write
     pc = (cfg.get("portal") or {}).get("holders") or {}
     if pc.get("enabled") is False:
@@ -389,25 +462,55 @@ def update(client, state, cfg, log=print, today=None):
     links = links or guessed_links(today)
     cache = cache_read(MAP_PATH) or {}
     api_key = os.environ.get("OPENFIGI_API_KEY", "").strip()
-    for url, _, end in links[:4]:
+    os.makedirs(HOLD_DIR, exist_ok=True)
+
+    def get_zip(url):
         name = url.rsplit("/", 1)[-1]
-        if prev.get("zip") == name and prev.get("complete"):
-            log(f"13F holders: {name} already processed")
-            return prev
+        path = os.path.join(HOLD_DIR, name)
+        if os.path.exists(path) and os.path.getsize(path) > 1e6:
+            return path
         blob = _fetch(client, url)
         if not blob:
+            return None
+        with open(path, "wb") as f:
+            f.write(blob)
+        return path
+
+    for i, (url, _, end) in enumerate(links[:4]):
+        name = url.rsplit("/", 1)[-1]
+        if prev.get("zip") == name and prev.get("complete"):
+            log(f"13F holders: {name} already processed (next data set expected after the next quarter's filings)")
+            return prev
+        cur_path = get_zip(url)
+        if not cur_path:
             continue
-        log(f"13F holders from {name} ({len(blob) / 1e6:.0f} MB)")
-        with zipfile.ZipFile(io.BytesIO(blob)) as zf:
-            res = build(zf, state["ctxs"], cache, api_key=api_key,
-                        budget_s=float(pc.get("figi_budget_seconds", 900)), log=log,
-                        specialists=pc.get("specialists") or ())
+        prev_path = None
+        for purl, _, pend in links[i + 1:i + 4]:
+            if pend < end:
+                prev_path = get_zip(purl)
+                if prev_path:
+                    break
+        log(f"13F holders from {name}" + (f" (changes against {os.path.basename(prev_path)})" if prev_path else ""))
+        with zipfile.ZipFile(cur_path) as zf:
+            pz = zipfile.ZipFile(prev_path) if prev_path else None
+            try:
+                res = build(zf, state["ctxs"], cache, api_key=api_key,
+                            budget_s=float(pc.get("figi_budget_seconds", 900)), log=log,
+                            specialists=pc.get("specialists") or (), prev_zf=pz)
+            finally:
+                if pz:
+                    pz.close()
         res["zip"] = name
         res["complete"] = res.get("unmapped_issuers", 0) == 0
         res["built"] = today.isoformat()
         cache_write(MAP_PATH, cache)
         cache_write(OUT_PATH, res)
-        log(f"  holders found for {len(res['by_cik'])} of {len(state['ctxs'])} companies")
+        if res["complete"]:
+            for f in os.listdir(HOLD_DIR):
+                if f.endswith(".zip"):
+                    os.remove(os.path.join(HOLD_DIR, f))
+        log(f"  holders found for {len(res['by_cik'])} of {len(state['ctxs'])} companies"
+            + ("" if res["complete"] else f"; {res.get('unmapped_issuers')} issuers still to map next run"))
         return res
     log("13F holders: no data set could be downloaded; keeping the previous holders")
     return prev or None

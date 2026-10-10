@@ -16,7 +16,7 @@ So missing data never silently removes a company, and doubtful data never puts o
 import pandas as pd
 
 from .industry import (CLINICAL_STAGE, CYCLICAL, EMERGING_EXTRA_EXCLUDE, HEALTHCARE,
-                       HEALTHCARE_PRODUCT, NEVER, REAL_ASSETS, in_ranges)
+                       HEALTHCARE_PRODUCT, NEVER, REAL_ASSETS, TECH_HARDWARE, TECH_SOFTWARE, in_ranges)
 
 PASS, FAIL, NODATA, NA = "PASS", "FAIL", "NO DATA", "N/A"
 HOLD_FLAG_MARKERS = ("isn't in SEC's XBRL data yet", "estimated from net income", "check free cash flow by hand",
@@ -1559,6 +1559,182 @@ RED_FLAGS = Screen(
     "(Sandler sizes shorts to survive a 100% squeeze). Will AI deflate its service levels before earnings show "
     "it (Marques)? Insider selling, accounting changes, customer losses to startups or LLMs (Bravo).")
 
+# ---------------------------------------------------------------------- 14. TECH S-CURVE LEADERS
+def tech_branch(ctx_or_info, cfg):
+    """'software' (SIC 7370-7379), 'hardware' (computers, comms equipment, semis, test & optics) or None.
+    config screens.tech.allowlist {"TICKER": "software"|"hardware"} adds companies filed under other codes."""
+    allow = (cfg.get("screens", {}).get("tech", {}) or {}).get("allowlist") or {}
+    ticks = list(ctx_or_info.get("all_tickers") or []) + [ctx_or_info.get("ticker")]
+    for t in ticks:
+        if t and t in allow and not str(t).startswith("_"):
+            return allow[t]
+    if in_ranges(ctx_or_info.get("sic"), TECH_SOFTWARE):
+        return "software"
+    if in_ranges(ctx_or_info.get("sic"), TECH_HARDWARE):
+        return "hardware"
+    return None
+
+
+def u_tech(info, m, cfg):
+    if in_ranges(info.get("sic"), NEVER):
+        return False, "fund / SPAC / REIT / shell"
+    b = tech_branch(info, cfg)
+    if not b:
+        return False, "not software, internet, semiconductors or tech hardware"
+    return True, f"{b} branch"
+
+
+def _a_not_fading(ctx, cfg, scope, s=0.0):
+    gap = _thr(cfg, scope, "max_growth_fade", s, "<=")
+    cagr = ctx.get("revenue_cagr_3y")
+    v, src = ctx.get("ytd_revenue_growth"), "year-to-date vs prior year-to-date"
+    if v is None:
+        v, src = ctx.get("revenue_growth_latest_fy"), "latest fiscal year"
+    if v is None or cagr is None:
+        return NODATA, None, None, "no recent growth figure" if v is None else "need revenue 3 years ago"
+    thr = cagr - gap
+    return (PASS if v >= thr else FAIL), v, thr, f"{src}; 3-year rate {cagr:.0%}"
+
+
+def _a_rule40(ctx, cfg, scope, s=0.0):
+    thr = _thr(cfg, scope, "min_rule_of_40", s)
+    g, f = ctx.get("revenue_cagr_3y"), ctx.get("fcf_after_sbc_margin_3y")
+    if g is None or f is None:
+        return NODATA, None, thr, ("need revenue 3 years ago" if g is None
+                                   else "free cash flow or stock pay missing in one of the last 3 years")
+    v = g + f
+    return (PASS if v >= thr else FAIL), v, thr, f"growth {g:.0%} + free cash flow after stock pay {f:.0%} of sales"
+
+
+def _a_gross_margin(ctx, cfg, scope, s=0.0):
+    if tech_branch(ctx, cfg) == "hardware":
+        v = ctx.get("gross_margin_change_3y")
+        if v is None:
+            return NODATA, None, 0, "no gross margin 3 years ago"
+        return (PASS if v > 0 else FAIL), v, 0, "hardware: gross margin must be rising (pricing power)"
+    thr = _thr(cfg, scope, "min_gross_margin_software", s)
+    v = ctx.get("ttm_gross_margin")
+    if v is None:
+        v = ctx.get("gross_margin_latest")
+    if v is None:
+        if not ctx.get("gross_profit_reported"):
+            return NA, None, thr, "no cost-of-sales line (pure service income statement) - rule skipped"
+        return NODATA, None, thr, "no gross profit / cost of revenue line"
+    return (PASS if v >= thr else FAIL), v, thr, "software"
+
+
+def _a_op_leverage(ctx, cfg, scope, s=0.0):
+    v = ctx.get("operating_margin_change_3y")
+    if v is None:
+        return NODATA, None, 0, "no operating margin 3 years ago"
+    return (PASS if v > 0 else FAIL), v, 0, ""
+
+
+def _a_self_funded(ctx, cfg, scope, s=0.0):
+    t_cx = _thr(cfg, scope, "max_capex_to_ocf_3y", s, "<=")
+    cx = ctx.get("capex_to_ocf_3y")
+    lev = _leverage_fn("max_net_debt_to_ebitda")(ctx, cfg, scope, s)
+    if cx is None:
+        if ctx.get("ocf_avg_3y") is not None and ctx["ocf_avg_3y"] <= 0:
+            return FAIL, None, t_cx, "operating cash flow not positive over 3 years"
+        return NODATA, None, t_cx, "capex or operating cash flow missing in one of the last 3 years"
+    if cx > t_cx:
+        return FAIL, cx, t_cx, f"capex {cx:.0%} of operating cash flow (funded from outside)"
+    if lev[0] == FAIL:
+        return FAIL, cx, t_cx, ("net debt " + (f"{lev[1]:.1f}x EBITDA" if lev[1] is not None else "with no EBITDA")
+                                + f" (max {lev[2]:.1f}x)")
+    if lev[0] == NODATA:
+        return NODATA, cx, t_cx, "leverage: " + (lev[3] or "no data")
+    return PASS, cx, t_cx, f"capex {cx:.0%} of operating cash flow; " + (lev[3] or f"net debt {lev[1]:.1f}x EBITDA")
+
+
+def _a_working_capital(ctx, cfg, scope, s=0.0):
+    if tech_branch(ctx, cfg) == "hardware":
+        if ctx.get("inventory_days") is None:
+            return NA, None, None, "no inventory line - rule skipped"
+        hi = ctx.get("inventory_days_high")
+        return (FAIL if hi else PASS), ctx.get("inventory_days"), None, (
+            "inventory days at a 5-year high (stock piling up)" if hi else "inventory days below their 5-year high")
+    thr = _thr(cfg, scope, "max_dso_change_days", s, "<=")
+    v = ctx.get("dso_change_3y")
+    if v is None:
+        return NODATA, None, thr, "receivables 3 years ago not available"
+    return (PASS if v <= thr else FAIL), v, thr, f"days sales outstanding {ctx.get('dso_latest') or 0:.0f}"
+
+
+def _a_valuation(ctx, cfg, scope, s=0.0):
+    per = cfg_get(cfg, f"screens.{scope}.growth_points_per_sales_multiple")
+    cap = cfg_get(cfg, f"screens.{scope}.max_ev_sales")
+    g = ctx.get("revenue_cagr_3y")
+    if g is None:
+        return NODATA, None, None, "need revenue 3 years ago"
+    thr = max(min(g * 100 / per, cap), 0.0)
+    if s:
+        thr = _scaled("<=", thr, s)
+    v = ctx.get("ev_sales")
+    if v is None:
+        return NODATA, None, thr, ctx.get("val_issue") or "EV/Sales unavailable"
+    return (PASS if v <= thr else FAIL), v, thr, f"{g:.0%} growth allows up to {thr:.1f}x sales"
+
+
+TECH_GATES = [
+    Gate("A1", "History", "years_total", ">=", "min_years", near=False, fmt="int",
+         nodata_note="no annual history"),
+    g_recent("A2", "screens.tech.max_years_since_latest_fy"),
+    g_size("A3", "screens.tech.min_revenue_usd"),
+    Gate("A4", "Fast growth", "revenue_cagr_3y", ">=", "min_revenue_cagr_3y", fmt="pct",
+         nodata_note="need revenue 3 years ago"),
+    Gate("A5", "Growth not fading", "ytd_revenue_growth", ">=", None, fn=_a_not_fading, fmt="pct", near=False,
+         desc=lambda c, s: f"latest year-to-date (else fiscal-year) growth at least the 3-year rate minus "
+                           f"{cfg_get(c, 'screens.tech.max_growth_fade') * 100:.0f} points"),
+    Gate("A6", "Rule of 40 after stock pay", "rule_of_40", ">=", "min_rule_of_40", fn=_a_rule40, fmt="pct",
+         desc=lambda c, s: f"3-year revenue growth + (free cash flow - stock pay) / sales >= "
+                           f"{cfg_get(c, 'screens.tech.min_rule_of_40'):.0%}"),
+    Gate("A7", "Gross margin", "gross_margin_latest", ">=", "min_gross_margin_software", fn=_a_gross_margin,
+         fmt="pct", desc=lambda c, s: f"software >= {cfg_get(c, 'screens.tech.min_gross_margin_software'):.0%}; "
+                                      "hardware: gross margin up over 3 years"),
+    Gate("A8", "Operating leverage", "operating_margin_change_3y", ">=", None, fn=_a_op_leverage, fmt="pct",
+         near=False, desc="operating margin up over 3 years"),
+    Gate("A9", "Stock pay vs free cash flow", "sbc_to_fcf_3y", "<=", "max_sbc_to_fcf_3y", fmt="pct",
+         fail_if=lambda c: c.get("sbc_to_fcf_3y_nm"),
+         nodata_note="free cash flow or stock pay missing in one of the last 3 years"),
+    Gate("A10", "Little dilution", "share_count_cagr_3y", "<=", "max_share_count_cagr_3y", fmt="pct",
+         nodata_note=lambda c: c.get("share_count_cagr_3y_basis") or "share-count history unavailable"),
+    Gate("A11", "Self-funded", "capex_to_ocf_3y", "<=", "max_capex_to_ocf_3y", fn=_a_self_funded, fmt="pct",
+         desc=lambda c, s: f"capex <= {cfg_get(c, 'screens.tech.max_capex_to_ocf_3y'):.0%} of operating cash flow "
+                           f"(3 years) and net debt <= {cfg_get(c, 'screens.tech.max_net_debt_to_ebitda'):.1f}x EBITDA"),
+    Gate("A12", "Return on new capital", "incremental_roic_3y", ">=", "min_incremental_roic", fmt="pct",
+         nodata_note="profit or invested capital 3 years ago not available"),
+    Gate("A13", "Working capital", "dso_change_3y", "<=", "max_dso_change_days", fn=_a_working_capital,
+         fmt="num", near=False,
+         desc=lambda c, s: f"software: receivable days up <= {cfg_get(c, 'screens.tech.max_dso_change_days'):.0f} "
+                           "over 3 years; hardware: inventory days not at a 5-year high"),
+    g_price_size("A14"),
+    g_liquidity("A15"),
+    Gate("A16", "Valuation", "ev_sales", "<=", None, needs_price=True, fmt="mult", fn=_a_valuation,
+         desc=lambda c, s: f"EV/Sales <= 3-year growth in points / "
+                           f"{cfg_get(c, 'screens.tech.growth_points_per_sales_multiple'):g} (30% growth -> 10x), "
+                           f"at most {cfg_get(c, 'screens.tech.max_ev_sales'):.0f}x"),
+]
+TECH = Screen(
+    "tech", "Tech S-Curve Leaders",
+    "Software, internet, semiconductor and tech-hardware companies growing fast with widening margins, funding "
+    "growth from their own cash and not paying staff mostly in stock, at a price their growth justifies.",
+    "S-curve and deep-tech investors (see the criteria workbook)",
+    u_tech, TECH_GATES,
+    {"growth": [("revenue_cagr_3y", True), ("ytd_revenue_growth", True)],
+     "operating_leverage": [("operating_margin_change_3y", True), ("gross_margin_change_3y", True)],
+     "cash": [("fcf_after_sbc_margin_3y", True), ("sbc_to_fcf_3y", False)],
+     "returns": [("incremental_roic_3y", True), ("roic_latest", True)],
+     "value": [("ev_sales", False), ("fcf_yield", True)]},
+    {"growth": 30, "operating_leverage": 20, "cash": 20, "returns": 15, "value": 15},
+    ["market_cap_usd", "revenue_cagr_3y", "ytd_revenue_growth", "gross_margin_latest", "operating_margin_change_3y",
+     "fcf_after_sbc_margin_3y", "sbc_to_fcf_3y", "share_count_cagr_3y", "capex_to_ocf_3y", "incremental_roic_3y",
+     "dso_change_3y", "ev_sales", "fcf_yield", "adv_usd"],
+    "Moat and switching costs; position in the market (leader or follower); stage of the S-curve (adoption "
+    "share); net revenue retention; customer concentration and vendor financing; export-control and Taiwan "
+    "exposure; AI share of sales; depreciation policy for compute; AI disruption risk to application software.")
+
 SECOND_BATCH = [OWNERS, REAL_ASSETS_SCREEN, ASSET_FLOOR, TROUGH_CASH, HIDDEN, RED_FLAGS]
 for _s in SECOND_BATCH:
     _s.strict = True
@@ -1566,9 +1742,10 @@ AVOID_SCREENS = {"red_flags"}
 
 
 FIRST_BATCH = [CORE, EMERGING, SPECIAL, FORTRESS, HC_COMMERCIAL, HC_CLINICAL, CYCLICALS]
-SCREENS = FIRST_BATCH + SECOND_BATCH
+THIRD_BATCH = [TECH]
+SCREENS = FIRST_BATCH + SECOND_BATCH + THIRD_BATCH
 BY_ID = {s.sid: s for s in SCREENS}
-VALUATION_GATES = {"E12", "C8", "O11", "R10", "T8", "X9", "B7"}           # failing only these -> PRICE
+VALUATION_GATES = {"E12", "C8", "O11", "R10", "T8", "X9", "B7", "A16"}           # failing only these -> PRICE
 # never 'failed 1 rule': tradeability (size / volume) and each screen's defining test (emerging = profitable and
 # growing fast, special = profitable and cheap, clinical = cash runway, little debt and priced near cash, fortress =
 # held up in recessions, healthcare = high returns, cyclicals = decent mid-cycle returns and not at peak margins)
@@ -1578,7 +1755,9 @@ HARD_GATES = {"E3", "E4", "E10", "E11", "E13", "S2", "S4", "S5", "S6", "B1", "B2
               # asset floor = below the floor and not burning it; trough cash = depressed margins; hidden earnings =
               # the trigger and a profitable remaining business; red flags = expensive AND deteriorating
               "O4", "O9", "O10", "R4", "R5", "R8", "R9", "K4", "K5", "K8", "K9", "T4", "T9", "T10",
-              "X3", "X4", "X10", "X11", "W3", "W4", "W5", "W6"}
+              "X3", "X4", "X10", "X11", "W3", "W4", "W5", "W6",
+              # tech S-curve = fast growth, tradeable
+              "A4", "A14", "A15"}
 _ids = [g.gid for s_ in SCREENS for g in s_.gates]
 assert len(_ids) == len(set(_ids)), "gate ids must be unique across screens"
 for _s in SCREENS:
@@ -1587,151 +1766,8 @@ for _s in SCREENS:
         _g.one_ok = _g.gid not in HARD_GATES
 
 
-# What the site shows: one plain sentence per rule and per screen, no names. (The investor attributions behind each
-# rule live in docs/criteria/Screener_Criteria.xlsx.)
-_TRADE = "Big enough to trade."
-_VOL = "Enough trading to build and exit a position."
-_SIZE = "Big enough to own; small filers have patchier data."
-RATIONALE = {
-    "G1": "A long record shows the business has stayed good; good companies tend to stay good.",
-    "G3": _SIZE,
-    "G4": "Steady profits signal a predictable business.",
-    "G5a": "High returns on capital sustained for a decade are the clearest sign of a moat.",
-    "G5b": "Returns must hold year after year, not in one good stretch.",
-    "G6": "A predictable but slow grower makes a poor compounder; growth needs a runway.",
-    "G7": "Profits must turn into cash, after the cost of stock pay.",
-    "G8": "Low debt leaves room to act when conditions turn.",
-    "G9": "A true compounder stays profitable through downturns; a loss as sales fall points to a cyclical grower.",
-    "G10": "Sales below their level 3 years ago need a reason: a cyclical dip or a structural decline.",
-    "E1": "Three years is the minimum to measure growth and margin trends.",
-    "E3": "Most big long-term winners were already profitable years earlier. For capital-heavy businesses depreciation "
-          "is a real cost, so operating profit must be positive.",
-    "E4": "Big winners typically grew revenue around 20% a year.",
-    "E5": "Missing on revenue is how growth stocks blow up.",
-    "E6": "A healthy gross margin leaves room for operating leverage.",
-    "E7": "Margins should widen as revenue grows.",
-    "E8": "Value per share is what counts; heavy dilution erodes it. Measured after any IPO or spin-off.",
-    "E9": "A strong balance sheet protects the downside.",
-    "E10": "Micro caps were the weakest group among small-cap winners.",
-    "E11": "Room to grow; large caps belong in Core.",
-    "E12": "Winners started at modest multiples; the case must work without the multiple rising. Capital-heavy "
-           "businesses are valued on EBIT, since EBITDA flatters them.",
-    "E13": _VOL,
-    "S2": "Special situations work best in good businesses bought cheaply.",
-    "S3": "Debt turns the equity into an option bet.",
-    "S4": "Value on pre-tax operating earnings; about 10x EBIT matches a bond-like yield.",
-    "S5": _TRADE, "S6": _VOL,
-    "F1": "A long record, including 2020.",
-    "F3": _SIZE,
-    "F4": "Earnings that hold up in a recession protect the stock.",
-    "F5": "The same test for 2008-09; an operating loss in a recession year fails.",
-    "F6": "Fortress businesses don't post operating losses.",
-    "F7": "Stable margins over 10 years signal a predictable business.",
-    "F8": "Set below Core so asset-heavy toll collectors such as rail and waste qualify.",
-    "F9": "Survive first: leverage that can't be refinanced breaks companies.",
-    "F10": "Debt rolls over at today's rates; coverage must hold at them.",
-    "F11": "Maturities larger than cash can cause a liquidity crisis.",
-    "F12": "Positive free cash flow almost every year.",
-    "F13": "Margins that held through 2021-23 inflation show pricing power.",
-    "H1": "Enough history to judge durability.",
-    "H3": _SIZE,
-    "H4": "Commercial stage: profitable in at least 4 of the last 5 years. Not applied to a new launcher (profitable "
-          "now, revenue up 25%+ a year), whose losses were the development years.",
-    "H5": "Pharma and health care are persistently high-return sectors; demand returns to match. Not applied to a "
-          "new launcher.",
-    "H6": "Commercial drugs earn 80-90% gross margins, so drug makers need at least 65% (diversified groups with device arms run in the high 60s); devices and tools less.",
-    "H7": "Profits must turn into cash, after the cost of stock pay.",
-    "H8": "Avoid levered roll-ups.",
-    "H9": "Shrinking sales are how patent cliffs show up.",
-    "B1": "Cash burns fast, so the cash figure must be recent.",
-    "B3": "Debt and converts ahead of equity erode the cash floor.",
-    "B4": _TRADE, "B5": _VOL,
-    "B2": "Cash-burning biotechs depend on financing; avoid forced raises at the bottom. Near miss when one normal "
-          "equity raise (up to a fifth of market value) would cover the next two years.",
-    "B6": "Below its cash, a biotech rarely goes to zero: the market charges almost nothing for the pipeline.",
-    "B7": "The floor must survive the burn: market value against the cash left after another year of spending, net "
-          "of debt.",
-    "C1": "A full cycle is needed to normalize earnings.",
-    "C3": _SIZE,
-    "C4": "A good business in a cyclical industry still earns well on capital mid-cycle.",
-    "C5": "Profitable in most years of the cycle.",
-    "C6": "No leverage a trough can break.",
-    "C7": "Buy when margins are depressed, not when the industry is expanding.",
-    "C8": "Value on cycle-average operating earnings, not peak ones.",
-    "O1": "Enough years to judge returns.",
-    "O3": _SIZE,
-    "O4": "Owners run the company as its largest shareholders; float-weighted indexes under-own them.",
-    "O5": "A real business, not a lottery ticket.",
-    "O6": "Owners compound only if the business earns well on capital.",
-    "O7": "Profits must turn into cash, after the cost of stock pay.",
-    "O8": "Owners who borrow heavily can lose the company in one bad year.",
-    "O9": _TRADE, "O10": _VOL,
-    "O11": "Owner-operated companies often trade cheaply; don't overpay anyway.",
-    "R1": "Enough years to see a cycle.",
-    "R3": _SIZE,
-    "R4": "Royalty and land owners need almost no reinvestment; producers and builders fail here.",
-    "R5": "Owning the asset rather than working it shows up as very high margins.",
-    "R6": "Profitable through commodity cycles.",
-    "R7": "No leverage a commodity slump can break.",
-    "R8": _TRADE, "R9": _VOL,
-    "R10": "Even a perfect royalty can be bought too dear.",
-    "K1": "Enough years to see a record.",
-    "K3": "The floor is measured on the latest balance sheet, so it must be recent.",
-    "K4": "Buying below cash gets the operating business for free. A discount to tangible book counts only while book "
-          "value per share is still growing; a shrinking book is usually a value trap.",
-    "K5": "A floor the company is burning through isn't a floor.",
-    "K6": "A cheap business that never earns is a value trap.",
-    "K7": "Debt ahead of shareholders erodes the floor.",
-    "K8": _TRADE, "K9": _VOL,
-    "T1": "A full cycle is needed to judge.",
-    "T3": _SIZE,
-    "T4": "Buy at the trough, not at mid-cycle.",
-    "T5": "A cash machine pays you to wait: free cash flow positive in most years, troughs included.",
-    "T6": "Capex near depreciation means maintaining, not adding capacity.",
-    "T7": "No leverage a trough can break.",
-    "T8": "Cycle-average free cash flow should repay the price within a few years.",
-    "T9": _TRADE, "T10": _VOL,
-    "X1": "Enough years to know the business.",
-    "X3": "Coverage often fixates on a feared or departing segment; what remains can look better once it's gone.",
-    "X4": "The remaining business must be profitable now.",
-    "X5": "Revenue mustn't be in steady decline.",
-    "X6": "Free cash flow positive over the last 12 months.",
-    "X7": "A good business behind the mess.",
-    "X8": "Debt turns a messy situation into an option bet.",
-    "X9": "Special situations work best bought cheaply.",
-    "X10": _TRADE, "X11": _VOL,
-    "W1": "Enough years to see a trend.",
-    "W3": "Overvaluation is the first half of a short; high EV/Sales names de-rate even without misses.",
-    "W4": "Overvaluation plus deterioration: fading growth, falling margins, losses, heavy dilution, shrinking sales, "
-          "profits not backed by cash, recurring 'one-off' charges, growth bought through acquisitions, piling "
-          "inventory, or capex far above depreciation while burning cash.",
-    "W5": "Big enough to matter to a portfolio.", "W6": _VOL,
-}
-PURPOSE = {
-    "core": "Durable, high-return, predictable businesses to hold for years. Price is not a rule; valuation is "
-            "shown for timing.",
-    "emerging": "Profitable small and mid caps growing fast, with widening margins and little dilution, at a "
-                "sensible price.",
-    "special": "Spin-offs, post-bankruptcy companies and recent IPOs that are profitable and cheap on operating "
-               "earnings.",
-    "fortress": "Recession-proof earnings, stable margins and strong balance sheets. Lower returns than Core; "
-                "resilience is the point.",
-    "hc_commercial": "Profitable pharma, medtech, tools, services and insurers with durable returns.",
-    "hc_clinical": "Pre-revenue and early-commercial biotech and medtech valued near or below cash, with 2+ years "
-                   "of runway.",
-    "cyclicals": "Good businesses in cyclical industries, bought when margins are low in their cycle and the price is "
-                 "low against cycle-average earnings.",
-    "owners": "Profitable, high-return companies where insiders own at least 20%.",
-    "real_assets": "Owners of land, minerals, royalties, water, timber and pipelines that barely reinvest and earn "
-                   "very high margins.",
-    "asset_floor": "Companies priced at or below net cash or tangible book that still generate cash.",
-    "trough_cash": "Cyclical producers at depressed margins that still generate cash, aren't adding capacity and "
-                   "trade at a high cycle-average cash yield.",
-    "hidden": "Profitable, cash-generating businesses the market is looking past: parents of a recent spin-off or "
-              "sale, and sound companies far below their 12-month high.",
-    "red_flags": "Avoid list, not a buy list: companies priced for perfection where something is already "
-                 "deteriorating.",
-}
+from .screen_text import PURPOSE, RATIONALE  # noqa: E402  (site text)
+
 for _s in SCREENS:
     _s.purpose = PURPOSE.get(_s.sid, _s.purpose)
     for _g in _s.gates:

@@ -1,0 +1,109 @@
+name: Background
+# Slow, rate-limited work kept out of the Screen and Daily jobs: 52-week range backfill, 10-year month-end price
+# histories (Twelve Data, each ticker once), 13F holders and insider trades (rebuilt when SEC posts a new quarter)
+# and company descriptions (Claude, written once). Results reach the site with the next Daily or Screen run.
+on:
+  schedule:
+    - cron: "40 10 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: portal
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  background:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    env:
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
+      MASSIVE_API_KEY: ${{ secrets.MASSIVE_API_KEY }}
+      OPENFIGI_API_KEY: ${{ secrets.OPENFIGI_API_KEY }}   # optional (free): maps 13F holdings to tickers ~60x faster
+      PORTAL_PASSWORD: ${{ secrets.PORTAL_PASSWORD }}
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the secrets are set
+        run: |
+          missing=""
+          for v in SEC_USER_AGENT MASSIVE_API_KEY PORTAL_PASSWORD; do
+            if [ -z "${!v}" ]; then missing="$missing $v"; fi
+          done
+          if [ -n "$missing" ]; then
+            echo "::error::Missing repository secrets:$missing (Settings > Secrets and variables > Actions)"; exit 1
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Restore screen state
+        id: state
+        uses: actions/cache/restore@v4
+        with:
+          path: cache/state
+          key: state-v1-${{ github.run_id }}
+          restore-keys: state-v1-
+
+      - name: Screen state from the last screen run (if the cache was evicted)
+        if: steps.state.outputs.cache-matched-key == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          id="$(gh run list --workflow screen.yml --status success --limit 1 --json databaseId -q '.[0].databaseId' || true)"
+          if [ -n "$id" ]; then gh run download "$id" -n portal-state -D cache/state || echo "no state artifact on run $id"; fi
+
+      - name: Restore price cache
+        uses: actions/cache/restore@v4
+        with:
+          path: cache/prices
+          key: prices-v1-${{ github.run_id }}
+          restore-keys: prices-v1-
+
+      - name: Price-history fills, 13F holders, insider trades
+        id: bg
+        if: hashFiles('cache/state/state.json.gz') != ''
+        run: bash scripts/run_logged.sh python screener.py portal-background
+
+      - name: Save price cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: cache/prices
+          key: prices-v1-${{ github.run_id }}
+
+      - uses: actions/setup-node@v4
+        if: steps.bg.outputs.summaries_todo != '' && steps.bg.outputs.summaries_todo != '0'
+        with:
+          node-version: "22"
+
+      - name: Company descriptions (Claude)
+        if: steps.bg.outputs.summaries_todo != '' && steps.bg.outputs.summaries_todo != '0'
+        continue-on-error: true
+        timeout-minutes: 30
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN" | tr -d '[:space:]')"
+          export ANTHROPIC_API_KEY="$(printf '%s' "$ANTHROPIC_API_KEY" | tr -d '[:space:]')"
+          [ -z "$ANTHROPIC_API_KEY" ] && unset ANTHROPIC_API_KEY
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ] && [ -z "${ANTHROPIC_API_KEY:-}" ]; then echo "No ANTHROPIC_API_KEY or CLAUDE_CODE_OAUTH_TOKEN secret - skipping descriptions"; exit 0; fi
+          npm install -g @anthropic-ai/claude-code >/dev/null 2>&1 || npm install -g @anthropic-ai/claude-code
+          python screener.py portal-summaries --max "$(python -c "import json;print(json.load(open('config.json'))['portal']['summaries_per_background_run'])")"
+          bash scripts/commit_data.sh "Descriptions $(date -u +%Y-%m-%d)"
+
+      - name: Delete superseded cache copies
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash scripts/prune_caches.sh prices-v1-

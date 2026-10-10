@@ -153,6 +153,15 @@ COMPANIES = [
     D(cik=1608, ticker="HYPE", name="Hypergrowth Cloud Inc", exchange="Nasdaq", sic="7372",
       sicd="Services-Prepackaged Software", growth=0.30, gm=0.75, om=0.10, debt_x_rev=0.0, start=2018, base=100,
       price=60.0, dei_shares=100e6, ytd_growth=0.05, buyback=-0.06),     # growth fading + 6%/yr dilution
+    # ---------------- Tech S-curve ----------------
+    D(cik=1701, ticker="SCRV", name="S-Curve Software Inc", exchange="Nasdaq", sic="7372",
+      sicd="Services-Prepackaged Software", growth=0.30, gm=0.80,
+      om_path={2019: 0.18, 2020: 0.20, 2021: 0.22, 2022: 0.24, 2023: 0.26, 2024: 0.28},
+      debt_x_rev=0.0, start=2019, base=300, buyback=0.0, price=55.0, dei_shares=100e6, ar_days=50),
+    D(cik=1702, ticker="SCRP", name="S-Curve Pricey Software Inc", exchange="Nasdaq", sic="7372",
+      sicd="Services-Prepackaged Software", growth=0.30, gm=0.80,
+      om_path={2019: 0.18, 2020: 0.20, 2021: 0.22, 2022: 0.24, 2023: 0.26, 2024: 0.28},
+      debt_x_rev=0.0, start=2019, base=300, buyback=0.0, price=150.0, dei_shares=100e6, ar_days=50),
 ]
 
 END_YEAR = 2024
@@ -230,6 +239,7 @@ def model(c):
                       ocf=ocf, capex=capex, cash=cash, debt=debt, cur_debt=cur_debt, cl=cl, assets=assets,
                       equity=equity, shares=shares, sbc=abs(r) * 0.02, acq=abs(r) * 0.03, goodwill=max(assets, 0) * 0.1,
                       buyback=abs(r) * 0.05, div=abs(r) * 0.04, da=da, interest=interest, sga=sga, ca=ca, ppe=ppe,
+                      ar=(r * c["ar_days"] / 365 if c.get("ar_days") else None),
                       due1=debt * 0.05, due2=debt * 0.05,
                       disc=(r * (c.get("disc_ops") or {})[y] if y in (c.get("disc_ops") or {}) else None))
     # quarterly: Q1 of year y = 25% of the annual figure, grown at the company's growth rate for 2025
@@ -348,6 +358,8 @@ def build(c):
             base = {"end": fy_end(c, y).isoformat(), "accn": accn, "fy": t, "fp": "FY", "form": form, "filed": filed}
             for key in inst_keys:
                 add(tagmap[key], cur, {**base, "val": round(v[key])})
+            if v.get("ar") is not None:
+                add("AccountsReceivableNetCurrent", cur, {**base, "val": round(v["ar"])})
             add(tagmap["debt_total"], cur, {**base, "val": round(v["debt"])})
             add(tagmap["cur_debt"], cur, {**base, "val": round(v["cur_debt"])})
             if not ifrs and v["debt"]:

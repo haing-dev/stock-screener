@@ -31,6 +31,31 @@ class DailyLimitReached(PriceError):
     pass
 
 
+ECB_URL = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
+
+
+def ecb_rates_to_usd(timeout=20):
+    """(date, {currency: US dollars per unit}) from the ECB's daily reference rates, or None."""
+    import re
+    import requests as _rq
+    try:
+        r = _rq.get(ECB_URL, timeout=timeout)
+        if r.status_code != 200:
+            return None
+        xml = r.text
+    except Exception:  # noqa: BLE001
+        return None
+    day = re.search(r"time=['\"](\d{4}-\d{2}-\d{2})['\"]", xml)
+    per_eur = {m.group(1): float(m.group(2)) for m in re.finditer(r"currency=['\"]([A-Z]{3})['\"]\s+rate=['\"]([0-9.]+)['\"]", xml)}
+    usd = per_eur.get("USD")
+    if not usd:
+        return None
+    out = {c: usd / v for c, v in per_eur.items() if v > 0}
+    out["EUR"] = usd
+    out.pop("USD", None)
+    return (day.group(1) if day else ""), out
+
+
 def td_symbol(sec_ticker):
     """SEC writes share classes with '-' (BRK-B); Twelve Data uses '.' (BRK.B)."""
     return str(sec_ticker).upper().replace("-", ".")
@@ -398,16 +423,22 @@ class TwelveData:
 
     # ------------------------------------------------------------ FX
     def fx_rates(self, currencies, static):
-        """{currency: (rate_to_usd, source)}. Live rate from Twelve Data when possible, else config table."""
+        """{currency: (rate_to_usd, source)}. ECB reference rates first (one free request covers ~30 currencies),
+        Twelve Data for the rest (1 credit each), else the config table."""
         out = {"USD": (1.0, "USD")}
         need = [c for c in sorted(set(currencies)) if c and c != "USD"]
         if not need:
             return out
         today = self.today.isoformat()
+        ecb = None if self.fixtures_dir else ecb_rates_to_usd()
         for c in need:
             hit = self.fx_cache.get(c)
             if hit and hit.get("date") == today:
-                out[c] = (hit["rate"], "Twelve Data " + hit["date"])
+                out[c] = (hit["rate"], hit.get("src", "Twelve Data") + " " + hit["date"])
+                continue
+            if ecb and ecb[1].get(c):
+                self.fx_cache[c] = {"rate": ecb[1][c], "date": today, "src": "ECB"}
+                out[c] = (ecb[1][c], f"ECB {ecb[0]}")
                 continue
             rate = None
             if self.available():

@@ -313,6 +313,40 @@ S["Red Flags (avoid)"] = [
     ("J",) + judg("One-off vs real deterioration, short interest/squeeze risk, AI disruption, insider selling", "Short interest and insider-trade data not connected."),
 ]
 
+S["Tech S-Curve Leaders"] = [
+    ("U", "Universe", "SIC 7370-7379 (software branch); 3570-3579, 3661-3679, 3825, 3827 (hardware branch); config allowlist", "Universe",
+     "", "Rules test economics, not the AI story.", "Easy", SIC),
+    ("A1",) + hist(4, "Need growth, margins and stock pay over several years."),
+    ("A2",) + recent(),
+    ("A3",) + rev("$200M"),
+    ("A4", "Fast growth", "3-yr revenue CAGR >= 15%", "Growth", "", "Defining rule of the screen.", "Easy", ""),
+    ("A5", "Growth not fading", "YTD (else latest FY) growth >= 3-yr CAGR - 5 pts", "Growth", "",
+     "Catches the deceleration models assume away.", "Easy", ""),
+    ("A6", "Rule of 40 after stock pay", "3-yr revenue CAGR + 3-yr (FCF - SBC) / revenue >= 40%", "Quality", "",
+     "Growth and cash generation in one test, net of stock pay.", "Partly", CAPEX),
+    ("A7", "Gross margin", "Software >= 70%; hardware: gross margin up over 3 yrs", "Quality", "",
+     "Room for software-like operating margins / pricing power.", "Easy", ""),
+    ("A8", "Operating leverage", "Operating margin up over 3 yrs", "Quality", "", "Earnings compound faster than sales.",
+     "Easy", ""),
+    ("A9", "Stock pay vs free cash flow", "SBC <= 20% of FCF (3 yrs); FCF <= 0 fails", "Capital allocation", "",
+     "Cash flow belongs to shareholders, not staff.", "Partly", CAPEX),
+    ("A10", "Little dilution", "Share count growth <= 1%/yr (3 yrs)", "Capital allocation", "", "Per-share value.",
+     "Easy", ""),
+    ("A11", "Self-funded", "Capex <= 100% of operating cash flow (3 yrs) and net debt / EBITDA <= 2.0x", "Safety", "",
+     "Build-outs paid from own cash, not debt or new shares.", "Easy", DEBT),
+    ("A12", "Return on new capital", "3-yr incremental ROIC >= 15% (capital-light growth counts as a pass)", "Returns",
+     "", "Growth that creates value.", "Partly", "Invested capital from balance-sheet tags; acquisitions distort."),
+    ("A13", "Working capital", "Software: receivable days up <= 10 over 3 yrs; hardware: inventory days not at a 5-yr high",
+     "Quality", "", "Early warning of channel stuffing or a demand air pocket.", "Easy", ""),
+    ("A14",) + mcap("$1B"),
+    ("A15",) + adv("$5M"),
+    ("A16", "Valuation", "EV / sales <= 3-yr growth in points / 3 (30% -> 10x), max 15x", "Valuation", "",
+     "Price justified by growth; failing only this = 'wait for a better price'.", "Partly", MC),
+    ("J",) + judg("Moat, S-curve stage (adoption share), depreciation policy for compute, AI disruption risk. Excluded by "
+                  "choice (Oct 2026): market position, net retention, AI share of sales, customer concentration, "
+                  "China/Taiwan exposure", "Not in XBRL financial data (dimensional or narrative)."),
+]
+
 VAL = [
     ("Core Compounders", "None (price-blind); valuation vs peers and own history shown on the company page", "-"),
     ("Emerging Compounders", "EV/EBITDA <= 20x", "Absolute multiple"),
@@ -327,6 +361,7 @@ VAL = [
     ("Trough Cyclical Cash", "5-yr avg FCF yield >= 10%", "Absolute, on cycle-average cash"),
     ("Hidden Earnings", "EV/EBIT <= 15x", "Absolute multiple"),
     ("Red Flags (avoid)", "EV/sales >= 6x (expensive = flag)", "Absolute multiple"),
+    ("Tech S-Curve Leaders", "EV/sales <= growth points / 3, max 15x", "Growth-adjusted multiple"),
 ]
 
 import json as _j, glob as _g

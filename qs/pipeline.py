@@ -62,6 +62,9 @@ def load_universe(client, cfg, tickers=None):
     return list(by_cik.values())
 
 
+FETCH_STATS = {"reused": 0, "downloaded": 0}
+
+
 def _cached_fetch(client, url, path, max_age, transform, newer_than=None):
     d = cache_read(path, max_age)
     stale = False
@@ -72,9 +75,12 @@ def _cached_fetch(client, url, path, max_age, transform, newer_than=None):
         except OSError:
             stale = False
     if d is not None and d.get("subset_version") == SUBSET_VERSION and not stale:
+        FETCH_STATS["reused"] += 1
         return d
     if d is not None and d.get("_not_found"):
+        FETCH_STATS["reused"] += 1
         return d
+    FETCH_STATS["downloaded"] += 1
     try:
         raw = client.get_json(url)
         d = transform(raw)
@@ -84,16 +90,18 @@ def _cached_fetch(client, url, path, max_age, transform, newer_than=None):
     return d
 
 
-def get_submissions(client, cik, cfg):
+def get_submissions(client, cik, cfg, newer_than=None, max_age=None):
+    """newer_than: date of the company's latest filing in SEC's daily index (refetch if the cache predates it)."""
     return _cached_fetch(client, SUBMISSIONS_URL.format(cik=cik),
                          os.path.join(CACHE_DIR, "submissions", f"{cik}.json.gz"),
-                         cfg["cache_days_submissions"], submissions_subset)
+                         max_age if max_age is not None else cfg["cache_days_submissions"], submissions_subset,
+                         newer_than)
 
 
-def get_facts(client, cik, cfg, newer_than=None):
+def get_facts(client, cik, cfg, newer_than=None, max_age=None):
     return _cached_fetch(client, FACTS_URL.format(cik=cik),
                          os.path.join(CACHE_DIR, "facts", f"{cik}.json.gz"),
-                         cfg["cache_days_facts"], facts_subset, newer_than)
+                         max_age if max_age is not None else cfg["cache_days_facts"], facts_subset, newer_than)
 
 
 def load_cached_facts(cik):
@@ -451,8 +459,24 @@ def run_screens(client, cfg, tickers=None, out_name=None, today=None, screens=No
     print(f"Universe: {len(universe)} companies ({'your tickers' if tickers else ', '.join(cfg['exchanges'])})")
     ciks = [u["cik"] for u in universe]
     workers = int(cfg.get("parallel_downloads", 4))
-    subs, sub_err = fetch_all(ciks, lambda c: get_submissions(client, c, cfg), workers,
+    # only companies that filed since the last run are downloaded again (SEC daily index); a new data format or an
+    # empty cache is filled from SEC's nightly bulk files instead of ~11,000 single requests
+    from .secsync import BULK_FACTS_URL, BULK_SUBS_URL, bulk_load, mark_bulk_done, needs_bulk, sync_index
+    full_universe = not tickers and not getattr(client, "fixtures_dir", None)
+    idx = sync_index(client, today) if full_universe else None
+    age_subs = cfg.get("cache_days_submissions_indexed", 120) if idx is not None else None
+    age_facts = cfg.get("cache_days_facts_indexed", 365) if idx is not None else None
+    sub_dir = os.path.join(CACHE_DIR, "submissions")
+    n_cached = len(os.listdir(sub_dir)) if os.path.isdir(sub_dir) else 0
+    bulk = full_universe and needs_bulk(SUBSET_VERSION, len(ciks), n_cached)
+    if bulk:
+        print("Full refresh from SEC bulk files (new data format or empty cache)")
+        bulk_load(client, BULK_SUBS_URL, ciks, sub_dir, submissions_subset)
+    FETCH_STATS.update(reused=0, downloaded=0)
+    subs, sub_err = fetch_all(ciks, lambda c: get_submissions(client, c, cfg, (idx or {}).get(str(c), {}).get("any"),
+                                                              age_subs), workers,
                               "Step 1/4 - company profiles and filing events")
+    print(f"  profiles: {FETCH_STATS['reused']} reused from the cache, {FETCH_STATS['downloaded']} downloaded")
 
     records, to_fetch = {}, []
     for u in universe:
@@ -536,9 +560,20 @@ def run_screens(client, cfg, tickers=None, out_name=None, today=None, screens=No
         except Exception as e:  # noqa: BLE001 - unusual filings should not stop the run
             rec["stage"] = f"processing error: {type(e).__name__}: {str(e)[:100]}"
 
-    _, fact_err = fetch_all(to_fetch, lambda c: get_facts(client, c, cfg,
-                                                          (subs.get(c) or {}).get("latest_periodic_filing")), workers,
+    if bulk:
+        bulk_load(client, BULK_FACTS_URL, to_fetch, os.path.join(CACHE_DIR, "facts"), facts_subset)
+
+    def _periodic(c):
+        a_ = (subs.get(c) or {}).get("latest_periodic_filing") or ""
+        b_ = ((idx or {}).get(str(c)) or {}).get("periodic") or ""
+        return max(a_, b_) or None
+    FETCH_STATS.update(reused=0, downloaded=0)
+    _, fact_err = fetch_all(to_fetch, lambda c: get_facts(client, c, cfg, _periodic(c), age_facts), workers,
                             "Step 2/4 - financial statements (XBRL, 10-K and 10-Q)", on_result=handle)
+    print(f"  financial statements: {FETCH_STATS['reused']} reused from the cache, {FETCH_STATS['downloaded']} "
+          "downloaded")
+    if bulk and not fact_err:
+        mark_bulk_done(SUBSET_VERSION)
     for c, err in fact_err.items():
         records[c]["stage"] = "download error (financials): " + err[:120]
 
@@ -681,6 +716,9 @@ def run_screens(client, cfg, tickers=None, out_name=None, today=None, screens=No
         "prices_requested": len(quotes),
         "fx": "; ".join(f"{k}={v[0]:.5g} ({v[1]})" for k, v in sorted(fx.items())),
     }
+    if os.environ.get("SCREEN_WORKBOOK", "1") == "0":
+        print("\nExcel results workbook skipped (SCREEN_WORKBOOK=0)")
+        return None, results, ctxs, records
     from .report import write_outputs
     stamp = today.isoformat()
     out_name = out_name or f"screen_results_{stamp}.xlsx"

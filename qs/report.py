@@ -17,7 +17,8 @@ from .sec import filing_index_url
 SHEET = {"core": "1 Core", "emerging": "2 Emerging", "special": "3 Special sits", "fortress": "4 Fortress",
          "hc_commercial": "5a HC commercial", "hc_clinical": "5b HC clinical", "cyclicals": "6 Cyclicals",
          "owners": "7 Owner-operators", "real_assets": "8 Hard assets", "asset_floor": "9 Asset floor",
-         "trough_cash": "10 Trough cash", "hidden": "11 Hidden earnings", "red_flags": "12 Red flags (avoid)"}
+         "trough_cash": "10 Trough cash", "hidden": "11 Hidden earnings", "red_flags": "12 Red flags (avoid)",
+         "tech": "13 Tech S-curve"}
 
 PCT = {"revenue_cagr", "roic_median", "roic_share_above_floor", "roic_trend", "incremental_roic",
        "gross_margin_median", "gross_margin_std", "gross_margin_change_2021_2023", "operating_margin_median",

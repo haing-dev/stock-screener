@@ -1,4 +1,4 @@
-"""Stock screener: thirteen SEC-filing-based screens (Core, Emerging, Special Situations, Fortress, Healthcare x2,
+"""Stock screener: fourteen SEC-filing-based screens (Core, Emerging, Special Situations, Fortress, Healthcare x2,
 Cyclicals, Owner-Operators, Hard Assets & Royalties, Asset-Floor Value, Trough Cyclical Cash, Hidden Earnings,
-Red Flags)."""
-__version__ = "2.6.0"
+Red Flags, Tech S-Curve Leaders)."""
+__version__ = "2.7.0"

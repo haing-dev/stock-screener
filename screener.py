@@ -12,11 +12,12 @@
 Web portal (run by GitHub Actions - see README 'Web portal'):
   python screener.py portal-screen          full screen, every company priced (Massive), state saved
   python screener.py portal-daily           new end-of-day prices for the saved state, screens re-applied
+  python screener.py portal-background      slow fills: 52-week ranges, 10-year prices, 13F holders, insider trades
   python screener.py portal-summaries --max 30    2-3 line company descriptions (Claude)
   python screener.py portal-export          write the encrypted data files for the site (site/data)
 
 Screens: core, emerging, special, fortress, hc_commercial, hc_clinical, cyclicals,
-         owners, real_assets, asset_floor, trough_cash, hidden, red_flags
+         owners, real_assets, asset_floor, trough_cash, hidden, red_flags, tech
 """
 import argparse
 import os
@@ -42,7 +43,7 @@ TEST_TICKERS = [
     "JPM", "T", "F", "INTC", "TSM", "ASML",
 ]
 SCREEN_IDS = ["core", "emerging", "special", "fortress", "hc_commercial", "hc_clinical", "cyclicals",
-              "owners", "real_assets", "asset_floor", "trough_cash", "hidden", "red_flags"]
+              "owners", "real_assets", "asset_floor", "trough_cash", "hidden", "red_flags", "tech"]
 
 
 def make_client(cfg):
@@ -86,22 +87,50 @@ def cmd_portal_screen(args):
     prices = make_portal_prices(cfg)
     models = {}
     out, results, ctxs, records = run_screens(client, cfg, prices=prices, price_all=True, models_out=models)
-    run_info = {"workbook": os.path.basename(out)}
+    run_info = {"workbook": os.path.basename(out) if out else None}
     state = save_state(results, ctxs, records, run_info, date.today(), models=models)
-    print("Price history (52-week ranges, month-end prices for listed companies and peers)")
+    print("Price history: newest day and month-ends (the slow fills run in the background job)")
     history.update(state, prices, cfg, daily=False)
-    _holders(client, state, cfg)
     write_gz_json(STATE_PATH, state)
     print("State saved for the daily price updates.")
 
 
-def _holders(client, state, cfg):
-    """Top institutional holders from the SEC 13F data sets (information only; a failure never stops the run)."""
-    from qs import holders
-    try:
-        holders.update(client, state, cfg)
-    except Exception as e:  # noqa: BLE001
-        print(f"13F holders skipped: {type(e).__name__}: {e}")
+def _gh_output(**kv):
+    """Step outputs for GitHub Actions (ignored elsewhere)."""
+    path = os.environ.get("GITHUB_OUTPUT")
+    if path:
+        with open(path, "a", encoding="utf-8") as f:
+            for k, v in kv.items():
+                f.write(f"{k}={v}\n")
+
+
+def cmd_portal_background(args):
+    """Slow, rate-limited work outside the publishing jobs: 52-week backfill, 10-year month-end histories (Twelve
+    Data), 13F holders (quarterly), insider trades (quarterly). Prints how many descriptions are due."""
+    from qs import history, holders, insiders
+    from qs.portal import load_state
+    from qs.summaries import load_summaries, pick
+    state = load_state()
+    if not state:
+        print("No saved screen yet - nothing to do.")
+        _gh_output(summaries_todo=0)
+        return
+    cfg = load_config()
+    client = make_client(cfg)
+    prices = make_portal_prices(cfg, daily=True)
+    print("Price history fill (52-week ranges, 10-year month-end prices)")
+    history.update(state, prices, cfg, background=True)
+    for name, fn in (("13F holders", holders.update), ("insider trades", insiders.update)):
+        try:
+            fn(client, state, cfg)
+        except Exception as e:  # noqa: BLE001 - information only
+            print(f"{name} skipped: {type(e).__name__}: {e}")
+    n = len(pick(state, load_summaries(), 10 ** 6))
+    print(f"Descriptions due: {n}")
+    _gh_output(summaries_todo=n)
+
+
+
 
 
 def cmd_portal_daily(args):
@@ -120,10 +149,17 @@ def cmd_portal_daily(args):
     from qs import history
     cfg = load_config()
     prices = make_portal_prices(cfg, daily=True)
+    # nothing new since the last run (market holiday, data not out yet): stop before spending anything else
+    last = max((c.get("price_date") or "" for c in state["ctxs"].values()), default="")
+    days = prices.days() if hasattr(prices, "days") else []
+    if days and last and days[0][0] <= last:
+        print(f"No new trading day since {last} - nothing to re-price, the site stays as it is.")
+        _gh_output(new_day="false")
+        return
+    _gh_output(new_day="true")
     reprice(state, prices, cfg, date.today())
-    print("Price history (52-week ranges, month-end prices for listed companies and peers)")
+    print("Price history: newest day and month-ends")
     history.update(state, prices, cfg, daily=True)
-    _holders(make_client(cfg), state, cfg)
     write_gz_json(STATE_PATH, state)
 
 
@@ -260,6 +296,7 @@ def main():
     q.add_argument("pack")
     sub.add_parser("portal-screen", help="web portal: full screen with every company priced")
     sub.add_parser("portal-daily", help="web portal: re-price the saved screen")
+    sub.add_parser("portal-background", help="web portal: price-history fills, 13F holders, insider trades")
     ps = sub.add_parser("portal-summaries", help="web portal: company descriptions (Claude)")
     ps.add_argument("--max", type=int, default=30)
     sub.add_parser("portal-report", help="web portal: why companies are on 'check manually' (markdown)")
@@ -283,6 +320,8 @@ def main():
         cmd_portal_screen(args)
     elif args.cmd == "portal-daily":
         cmd_portal_daily(args)
+    elif args.cmd == "portal-background":
+        cmd_portal_background(args)
     elif args.cmd == "portal-summaries":
         cmd_portal_summaries(args)
     elif args.cmd == "portal-export":

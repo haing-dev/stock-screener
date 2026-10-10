@@ -162,12 +162,33 @@ expect = {
     "trough_cash": {"TRGH": "PASS", "PEAK": "FAIL", "GOOD": "outside"},
     "hidden": {"SPUN": "PASS", "DROP": "PASS", "GOOD": "FAIL", "BANK": "outside"},
     "red_flags": {"HYPE": "PASS", "EMRG": "FAIL", "GOOD": "FAIL", "BIOX": "outside"},
+    "tech": {"SCRV": "PASS", "SCRP": "PRICE", "HYPE": "FAIL", "LOSS": "FAIL", "GOOD": "outside", "BANK": "outside"},
 }
 for sid, exp in expect.items():
     for t, want in exp.items():
         got = cls(sid, t)
         r = results[sid].get(T.get(t))
         check(f"{sid}: {t} -> {want}", got == want, f"got {got}" + (f" {r['failed']} {r['check_notes'][:2]}" if r else ""))
+_sc = ctxs[T["SCRV"]]
+check("tech: rule of 40 after stock pay = growth + (FCF - SBC)/sales over 3 years",
+      results["tech"][T["SCRV"]]["gates"]["A6"][1] > 0.4 and close(_sc["revenue_cagr_3y"], 0.30, 1e-3),
+      results["tech"][T["SCRV"]]["gates"]["A6"])
+check("tech: stock pay / FCF and receivable days measured", 0 < _sc["sbc_to_fcf_3y"] < 0.2
+      and close(_sc["dso_change_3y"], 0, 0.5) and close(_sc["dso_latest"], 50, 0.5), (_sc["sbc_to_fcf_3y"], _sc["dso_latest"]))
+check("tech: 3-year incremental return on capital computed", (_sc.get("incremental_roic_3y") or 0) > 0.15,
+      _sc.get("incremental_roic_3y"))
+check("tech: 30% grower may trade up to 10x sales", close(results["tech"][T["SCRP"]]["gates"]["A16"][2], 10.0, 1e-9),
+      results["tech"][T["SCRP"]]["gates"]["A16"])
+_hw = {"sic": "3674", "ticker": "HWCO", "gross_margin_change_3y": -0.01, "inventory_days": 120,
+       "inventory_days_high": True}
+check("tech hardware: gross margin must rise; inventory at a 5-year high fails",
+      qs_screens._a_gross_margin(_hw, cfg, "tech")[0] == "FAIL"
+      and qs_screens._a_working_capital(_hw, cfg, "tech")[0] == "FAIL"
+      and qs_screens.tech_branch({"sic": "3559", "ticker": "LRCX"}, cfg) == "hardware"
+      and qs_screens.tech_branch({"sic": "3826"}, cfg) is None)
+check("tech: FCF not positive fails the stock-pay rule",
+      BY_ID["tech"].gates[8].evaluate({"sbc_to_fcf_3y": None, "sbc_to_fcf_3y_nm": "free cash flow not positive"},
+                                      cfg, "tech")[0] == "FAIL")
 check("NCPX: missing capex is a CHECK with the reason, not a FAIL",
       "capital expenditure" in " ".join(results["core"][T["NCPX"]]["check_notes"]))
 check("emerging DILU fails on dilution only", results["emerging"][T["DILU"]]["failed"] == ["E8"])
@@ -713,7 +734,7 @@ _ow = P.screen_payload(BY_ID["owners"], results["owners"], ctxs, cfg)
 check("portal: Red Flags is marked as an avoid list; other screens aren't", _rf["avoid"] and not _ow["avoid"])
 check("portal: plain-English rule for insider ownership",
       any(g["rule"] == "at least 20% owned by insiders" for g in _ow["gates"]), [g["rule"] for g in _ow["gates"]][:4])
-check("portal: all 13 screens, unique gate ids", len(BY_ID) == 13)
+check("portal: all 14 screens, unique gate ids", len(BY_ID) == 14)
 _cp = P.screen_payload(BY_ID["core"], results["core"], ctxs, cfg)
 check("portal: 'recent report' is applied but hidden from the rules table; no investor names in rationales",
       [g["id"] for g in _cp["gates"] if g["hidden"]] == ["G2"]
@@ -783,9 +804,12 @@ _st = {"ctxs": {"1": {"cik": 1, "ticker": "A", "latest_annual_accn": "x-1", "lat
                 "3": {"cik": 3, "ticker": "C", "latest_annual_accn": "x-3", "latest_annual_doc": "c.htm",
                       "market_cap_usd": 1e9}},
        "classes": {"core": {"1": "PASS", "2": "FAIL", "3": "CHECK"}}}
-check("summaries: companies on the lists first, then the largest; done ones skipped until a new 10-K",
+_st["peers10"] = {"1": ["2"]}
+check("summaries: listed companies first, then their peers; others none; written once (not redone for a new 10-K)",
       SU.pick(_st, {"3": {"text": "x", "accn": "x-3"}}, 5) == ["1", "2"]
-      and SU.pick(_st, {"3": {"text": "x", "accn": "old"}}, 5) == ["1", "3", "2"])
+      and SU.pick(_st, {"3": {"text": "x", "accn": "old", "date": date.today().isoformat()}}, 5) == ["1", "2"]
+      and SU.pick(_st, {"3": {"text": "x", "accn": "old", "date": "2020-01-01"}}, 5) == ["1", "3", "2"]
+      and SU.pick(dict(_st, peers10={}), {}, 5) == ["1", "3"])
 
 # ---------------------------------------------------------------- v2.6: healthcare rules, 13F holders, site reasons
 print("\nHealthcare rules, 13F holders and near-miss reasons (Oct 2026)")
@@ -840,6 +864,29 @@ with _zf.ZipFile(_io.BytesIO(_buf.getvalue())) as z:
                     log=lambda *a: None, specialists=["Ostrander Biotech"])
 _e = _res["by_cik"].get("77") or {}
 _names = [h[0] for h in _e.get("h", [])]
+# previous quarter: Northfield held 2m shares (adds), Old Fund held 1m (exits), Vanguard unchanged
+_buf2 = _io.BytesIO()
+with _zf.ZipFile(_buf2, "w") as z:
+    z.writestr("SUBMISSION.tsv", _tsv([["ACCESSION_NUMBER", "FILING_DATE", "SUBMISSIONTYPE", "CIK", "PERIODOFREPORT"],
+        ["p1", "14-MAY-2026", "13F-HR", "11", "31-MAR-2026"], ["p2", "14-MAY-2026", "13F-HR", "12", "31-MAR-2026"],
+        ["p9", "14-MAY-2026", "13F-HR", "19", "31-MAR-2026"]]))
+    z.writestr("COVERPAGE.tsv", _tsv([["ACCESSION_NUMBER", "FILINGMANAGER_NAME", "AMENDMENTTYPE", "REPORTTYPE"],
+        ["p1", "VANGUARD GROUP INC", "", "13F HOLDINGS REPORT"], ["p2", "NORTHFIELD PARTNERS LLC", "", "13F HOLDINGS REPORT"],
+        ["p9", "OLD FUND LP", "", "13F HOLDINGS REPORT"]]))
+    z.writestr("INFOTABLE.tsv", _tsv([["ACCESSION_NUMBER", "NAMEOFISSUER", "TITLEOFCLASS", "CUSIP", "VALUE", "SSHPRNAMT", "SSHPRNAMTTYPE", "PUTCALL"],
+        ["p1", "ACME CORP", "COM", "000111AA1", 9e8, 9e6, "SH", ""], ["p2", "ACME CORP", "COM", "000111AA1", 2e8, 2e6, "SH", ""],
+        ["p9", "ACME CORP", "COM", "000111AA1", 1e8, 1e6, "SH", ""]]))
+with _zf.ZipFile(_io.BytesIO(_buf.getvalue())) as z, _zf.ZipFile(_io.BytesIO(_buf2.getvalue())) as z2:
+    _res2 = QH.build(z, {"77": {"ticker": "ACME", "name": "Acme Corp"}}, {},
+                     figi=lambda cus, **k: {c: ("ACME" if c.startswith("000111") else "") for c in cus},
+                     log=lambda *a: None, prev_zf=z2)
+_e2 = _res2["by_cik"]["77"]
+_buy = {b[0]: b for b in _e2.get("buy", [])}
+_sell = {b[0]: b for b in _e2.get("sell", [])}
+check("13F: buyers and sellers against the previous quarter (new, add, exit) with portfolio share",
+      _res2["prev_period"] == "2026-03-31" and _buy["Northfield Partners"][2] == "add"
+      and _buy["Ostrander Biotech Partners"][2] == "new" and _sell["Old Fund"][2] == "exit"
+      and "Vanguard Group" not in _buy and _buy["Northfield Partners"][3] is not None, str(_e2))
 check("13F: latest period, restatement replaces the original, options and other issuers ignored, share classes combined",
       _res["period"] == "2026-06-30" and _e.get("n") == 3 and _names[:1] == ["Vanguard Group"]
       and dict((h[0], h[1]) for h in _e["h"]).get("Northfield Partners") == 6e8
@@ -848,6 +895,29 @@ _top = QH.top_active(_e, 100e6, cfg["portal"]["holders"]["passive"])
 check("13F: the site column leaves out index funds, shows % of the company and marks specialists",
       [t[0] for t in _top] == ["Northfield Partners", "Ostrander Biotech Partners"] and abs(_top[0][1] - 0.06) < 1e-9
       and _top[1][2] is True, str(_top))
+# insider trades (SEC Form 345 data set): open-market buys, sales, 10b5-1 plan sales; amendments and grants ignored
+import io as _io, zipfile as _zf  # noqa: E402
+import qs.insiders as QI  # noqa: E402
+_b = _io.BytesIO()
+with _zf.ZipFile(_b, "w") as z:
+    z.writestr("SUBMISSION.tsv", "ACCESSION_NUMBER\tDOCUMENT_TYPE\tISSUERCIK\tAFF10B5ONE\n"
+               "a1\t4\t1001\t0\na2\t4\t1001\t1\na3\t4/A\t1001\t0\na4\t4\t9999\t0\na5\t4\t1001\t0\n")
+    z.writestr("REPORTINGOWNER.tsv", "ACCESSION_NUMBER\tRPTOWNERNAME\tRPTOWNER_RELATIONSHIP\tRPTOWNER_TITLE\n"
+               "a1\tSMITH JANE\tDirector\t\na2\tDOE JOHN\tOfficer\tChief Executive Officer\n"
+               "a3\tSMITH JANE\tDirector\t\na4\tX\tDirector\t\na5\tROE RICHARD\tOfficer\tCFO\n")
+    z.writestr("NONDERIV_TRANS.tsv", "ACCESSION_NUMBER\tTRANS_DATE\tTRANS_CODE\tTRANS_SHARES\tTRANS_PRICEPERSHARE\n"
+               "a1\t15-MAY-2026\tP\t1000\t50\na2\t02-JUN-2026\tS\t2000\t60\na3\t15-MAY-2026\tP\t1000\t50\n"
+               "a4\t01-JUN-2026\tP\t5\t5\na5\t03-JUN-2026\tS\t100\t60\na5\t03-JUN-2026\tA\t900\t0\n")
+_ins = QI.build([_zf.ZipFile(_io.BytesIO(_b.getvalue()))], {1001: {}})
+_i1 = _ins.get("1001") or {}
+check("insiders: open-market buys, plan sales and other sales split; amendments, grants and other issuers ignored",
+      set(_ins) == {"1001"} and _i1["buy"]["n"] == 1 and _i1["buy"]["value"] == 50000
+      and _i1["buy"]["top"][0][:2] == ["Smith Jane", "Director"] and _i1["buy"]["top"][0][3] == "2026-05-15"
+      and _i1["plan_sell"]["value"] == 120000 and _i1["plan_sell"]["top"][0][1] == "Chief Executive Officer"
+      and _i1["sell"]["n"] == 1 and _i1["sell"]["value"] == 6000, str(_ins))
+check("insiders: data-set links parsed newest first",
+      [q for _, q in QI.zip_links('<a href="/files/structureddata/data/insider-transactions-data-sets/2026q1_form345.zip">'
+                                  '<a href="/files/x/2026q2_form345.zip">')] == ["2026q2", "2026q1"])
 check("13F: manager names cleaned", QH.clean_manager("JPMORGAN CHASE & CO") == "JPMorgan Chase"
       and QH.clean_manager("BAILLIE GIFFORD & CO") == "Baillie Gifford" and QH.clean_manager("VANGUARD GROUP INC") == "Vanguard Group",
       QH.clean_manager("JPMORGAN CHASE & CO"))

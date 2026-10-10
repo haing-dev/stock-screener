@@ -223,4 +223,25 @@ THESIS = {
                        "Semiconductor Index then lost roughly four-fifths of its value by October 2002.",
                "src": [["Index levels (kabutore)", "https://www.kabutore.biz/shisu/sox.html"]]},
     },
+    "tech": {
+        "def": "Tech S-Curve Leaders are software, internet, chip and hardware companies on the steep part of a "
+               "technology adoption curve, where fast growth and widening margins make earnings compound faster than "
+               "sales.",
+        "traits": ["Revenue up at least 15% a year, and not fading in the latest year",
+                   "Growth plus free cash flow after stock pay of at least 40% of sales",
+                   "Gross and operating margins rising as the company scales",
+                   "Growth funded from its own cash, with little dilution and stock pay under a fifth of free cash flow",
+                   "A price no higher than the growth rate justifies (30% growth allows up to 10x sales)"],
+        "cause": "These traits are the result of a product that becomes the standard as a new technology spreads: "
+                 "fixed costs are spread over fast-rising volumes, and customers pay for performance rather than "
+                 "price, so each extra sale is more profitable than the last.",
+        "ex": {"co": "NVIDIA", "stat": "19×", "stat_label": "operating income growth, fiscal 2023 to 2025 (sales 4.8×)",
+               "text": "NVIDIA is a typical S-curve leader. As data centres moved to accelerated computing for AI, "
+                       "revenue rose from $27.0 billion in fiscal 2023 to $130.5 billion in fiscal 2025, while the "
+                       "operating margin widened from 16% to 62%. It funded the build-out from its own cash: capital "
+                       "spending was about 5% of operating cash flow in fiscal 2025, and stock pay about 8% of free "
+                       "cash flow.",
+               "src": [["Fiscal 2025 results (SEC)", "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/q4fy25pr.htm"],
+                       ["Fiscal 2023 results (SEC)", "https://www.sec.gov/Archives/edgar/data/1045810/000104581023000014/q4fy23pr.htm"]]},
+    },
 }

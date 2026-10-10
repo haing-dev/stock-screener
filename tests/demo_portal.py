@@ -119,11 +119,30 @@ def main(out_dir):
     byc = {}
     for c, ctx in ctxs.items():
         sh = ctx.get("shares_used") or 1e8
+        px = ctx.get("price") or 50
         names = pool[:1] + rnd.sample(pool[1:], 6)
-        h = [[n, 0, round(sh * w), 0.01] for n, w in zip(names, (0.09, 0.05, 0.04, 0.03, 0.025, 0.02, 0.015))]
-        byc[str(c)] = {"h": h, "n": rnd.randint(150, 1900), "sp": ["Ostrander Biotech Partners"] if "Ostrander Biotech Partners" in names else []}
+        h = [[n, round(sh * w * px), round(sh * w), round(rnd.uniform(0.002, 0.12), 4) if i else 0.003]
+             for i, (n, w) in enumerate(zip(names, (0.09, 0.05, 0.04, 0.03, 0.025, 0.02, 0.015)))]
+        buy = [[h[1][0], round(h[1][1] * 0.3), "add", h[1][3], 0.42], [pool[-2], round(sh * 0.01 * px), "new", 0.031, None]]
+        sell = [[h[2][0], -round(h[2][1] * 0.2), "cut", h[2][3], -0.17], ["Ashcombe Growth Fund", -round(sh * 0.008 * px), "exit", None, -1.0]]
+        byc[str(c)] = {"h": h, "n": rnd.randint(150, 1900), "buy": buy, "sell": sell,
+                       "sp": ["Ostrander Biotech Partners"] if "Ostrander Biotech Partners" in names else []}
     with gzip.open(qh.OUT_PATH, "wt") as f:
-        json.dump({"period": "2026-06-30", "by_cik": byc}, f)
+        json.dump({"period": "2026-06-30", "prev_period": "2026-03-31", "by_cik": byc}, f)
+    # invented insider trades (names made up)
+    from qs import insiders as qi
+    qi.OUT_PATH = os.path.join(qc.CACHE_DIR, "prices", "insiders", "insiders.json.gz")
+    os.makedirs(os.path.dirname(qi.OUT_PATH), exist_ok=True)
+    ins = {}
+    for c, ctx in list(ctxs.items())[::2]:
+        px = ctx.get("price") or 50
+        ins[str(c)] = {"buy": {"n": 2, "value": round(px * 12000), "people": 1,
+                               "top": [["Dana Whitfield", "Director", round(px * 12000), "2026-08-14"]]},
+                       "plan_sell": {"n": 9, "value": round(px * 85000), "people": 2,
+                                     "top": [["Ravi Castellanos", "Chief Executive Officer", round(px * 60000), "2026-09-02"],
+                                             ["Mei Okafor", "Chief Financial Officer", round(px * 25000), "2026-07-21"]]}}
+    with gzip.open(qi.OUT_PATH, "wt") as f:
+        json.dump({"latest": "2026q2", "quarters": ["2026q2", "2026q1", "2025q4"], "by_cik": ins}, f)
     summaries = {c: {"text": SUMMARY[ctxs[c]["ticker"].lower()]} for c in ctxs if ctxs[c]["ticker"].lower() in SUMMARY}
     if os.path.exists(out_dir):
         shutil.rmtree(out_dir)

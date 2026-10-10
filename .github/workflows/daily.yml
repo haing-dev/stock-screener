@@ -1,6 +1,7 @@
 name: Daily prices
-# Early each morning (US time) after a trading day: the previous close's open/close prices for every company,
-# screens re-applied, portal updated. Tuesday-Saturday 09:15 UTC = after Monday-Friday sessions.
+# Early each morning (US time) after a trading day: the previous close for every company, screens re-applied,
+# portal updated. Stops after one price check when there is no new trading day (holidays). Tuesday-Saturday
+# 09:15 UTC = after Monday-Friday sessions.
 on:
   schedule:
     - cron: "15 9 * * 2-6"
@@ -12,12 +13,12 @@ concurrency:
 
 permissions:
   contents: write
-  actions: read
+  actions: write
 
 jobs:
   prices:
-    runs-on: ubuntu-latest
-    timeout-minutes: 120
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
     env:
       SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
       TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
@@ -69,47 +70,37 @@ jobs:
           restore-keys: prices-v1-
 
       - name: Re-price
+        id: reprice
+        if: hashFiles('cache/state/state.json.gz') != ''
         run: bash scripts/run_logged.sh python screener.py portal-daily
 
+      - name: Build portal data
+        id: export
+        if: steps.reprice.outcome == 'success' && steps.reprice.outputs.new_day != 'false'
+        run: bash scripts/run_logged.sh python screener.py portal-export
+
+      - name: Publish
+        if: steps.export.outcome == 'success' && steps.export.outputs.publish != 'false'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: bash scripts/publish.sh "Prices $(date -u +%Y-%m-%d)"
+
       - name: Save price cache
-        if: always()
+        if: always() && steps.reprice.outputs.new_day != 'false'
         uses: actions/cache/save@v4
         with:
           path: cache/prices
           key: prices-v1-${{ github.run_id }}
 
       - name: Save screen state
-        if: hashFiles('cache/state/state.json.gz') != ''
+        if: always() && steps.reprice.outputs.new_day == 'true' && hashFiles('cache/state/state.json.gz') != ''
         uses: actions/cache/save@v4
         with:
           path: cache/state
           key: state-v1-${{ github.run_id }}
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-
-      - name: Company descriptions (Claude)
-        if: hashFiles('cache/state/state.json.gz') != ''
-        continue-on-error: true
-        timeout-minutes: 45
+      - name: Delete superseded cache copies
+        if: always()
         env:
-          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN" | tr -d '[:space:]')"
-          export ANTHROPIC_API_KEY="$(printf '%s' "$ANTHROPIC_API_KEY" | tr -d '[:space:]')"
-          [ -z "$ANTHROPIC_API_KEY" ] && unset ANTHROPIC_API_KEY
-          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ] && [ -z "${ANTHROPIC_API_KEY:-}" ]; then echo "No ANTHROPIC_API_KEY or CLAUDE_CODE_OAUTH_TOKEN secret - skipping descriptions"; exit 0; fi
-          npm install -g @anthropic-ai/claude-code >/dev/null 2>&1 || npm install -g @anthropic-ai/claude-code
-          python screener.py portal-summaries --max "$(python -c "import json;print(json.load(open('config.json'))['portal']['summaries_per_daily_run'])")"
-
-      - name: Build portal data
-        if: hashFiles('cache/state/state.json.gz') != ''
-        run: bash scripts/run_logged.sh python screener.py portal-export
-
-      - name: Publish
-        if: hashFiles('cache/state/state.json.gz') != ''
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: bash scripts/publish.sh "Prices $(date -u +%Y-%m-%d)"
+          GH_TOKEN: ${{ github.token }}
+        run: bash scripts/prune_caches.sh prices-v1- state-v1-

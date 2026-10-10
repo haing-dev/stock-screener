@@ -74,7 +74,7 @@ PRICE_METRICS = {"pe", "ev_ebitda", "ev_ebit", "ev_sales", "ev_normalized_ebit",
 # the same columns on every screen (company, price vs open and the 52-week range are fixed columns on the site)
 TABLE_METRICS = ["pe", "ev_ebit", "fcf_yield", "roic_median", "revenue_cagr_5y"]
 SCREEN_METRICS = {}
-SCREEN_GROUPS = {"owners": "From the new interviews", "red_flags": "Avoid list"}
+SCREEN_GROUPS = {"owners": "From the new interviews", "red_flags": "Avoid list", "tech": "Technology"}
 STATUS_KEEP = ("PASS", "CHECK", "NEAR", "PRICE", "ONE")
 
 
@@ -326,7 +326,8 @@ RULE_UNITS = {"years_with_data": " years of data", "years_total": " years of dat
               "operating_margin_median": " operating margin, 10-year median", "positive_ebit_share": " of years profitable",
               "capex_to_da_3y": " (capex / depreciation, 3y)", "fcf_yield_5y": " 5-year average FCF yield",
               "ev_sales": " EV/Sales", "drawdown_12m": " from the 12-month high",
-              "mcap_to_cash_after_burn": " (market cap / cash left after a year of burn, net of debt)"}
+              "mcap_to_cash_after_burn": " (market cap / cash left after a year of burn, net of debt)",
+              "sbc_to_fcf_3y": " stock pay / free cash flow (3y)", "incremental_roic_3y": " return on new capital (3y)"}
 
 
 def _thr_text(thr, fmt):
@@ -385,6 +386,19 @@ SUBJECT = {
     "ttm_ocf": "operating cash flow", "positive_ebit_share": "share of profitable years", "capex_to_da_3y":
     "capex / depreciation", "fcf_yield_5y": "5-year average FCF yield", "drawdown_12m": "the drop from the 12-month high",
     "ttm_fcf": "trailing free cash flow", "ev_sales": "EV/Sales", "red_flag_count": "warning signs",
+    "rule_of_40": "growth + free cash flow after stock pay", "sbc_to_fcf_3y": "stock pay / free cash flow",
+    "incremental_roic_3y": "3-year return on new capital", "dso_change_3y": "the change in receivable days",
+    "operating_margin_change_3y": "the 3-year operating-margin change",
+}
+# 'needs ...' for rules whose threshold isn't one config number
+NEED_TEXT = {
+    "A5": lambda c: f"the 3-year rate minus {c['screens']['tech']['max_growth_fade'] * 100:.0f} points",
+    "A7": lambda c: f"{c['screens']['tech']['min_gross_margin_software']:.0%} for software, rising for hardware",
+    "A8": lambda c: "a rise",
+    "A13": lambda c: (f"at most +{c['screens']['tech']['max_dso_change_days']:.0f} days for software; hardware "
+                      "inventory below its 5-year high"),
+    "A16": lambda c: (f"growth in points / {c['screens']['tech']['growth_points_per_sales_multiple']:g}, at most "
+                      f"{c['screens']['tech']['max_ev_sales']:.0f}\u00d7"),
 }
 FAIL_TEXT = {
     "F11": "debt due within 2 years exceeding cash plus 2 years of free cash flow",
@@ -419,6 +433,11 @@ def _nice(v, fmt):
 
 
 def _need(g, cfg, sid):
+    if g.gid in NEED_TEXT:
+        try:
+            return NEED_TEXT[g.gid](cfg)
+        except (KeyError, TypeError):
+            return ""
     try:
         thr = g.threshold(cfg, sid)
     except (KeyError, TypeError):
@@ -451,7 +470,7 @@ def screen_payload(s, results, ctxs, cfg):
             "avoid": s.sid in AVOID_SCREENS, "strict": bool(getattr(s, "strict", False))}
 
 
-def company_payload(c, ctx, summaries, group_id, pv=None, has_model=False, holders=None):
+def company_payload(c, ctx, summaries, group_id, pv=None, has_model=False, holders=None, insiders=None):
     m, unverified, nm = {}, [], {}
     adr = "ADR ratio unknown" in (ctx.get("val_issue") or "")
     for k in METRICS:
@@ -476,7 +495,7 @@ def company_payload(c, ctx, summaries, group_id, pv=None, has_model=False, holde
             "ind": ctx.get("industry"), "cur": ctx.get("currency"), "px": px,
             "m": m, "mu": unverified, "nm": nm, "vi": ctx.get("val_issue") or "", "pg": group_id,
             "sum": s.get("text"), "url": ctx.get("latest_annual_url"), "fy": ctx.get("latest_fy"), "ev": ev,
-            "other": ctx.get("other_tickers") or "", "pv": pv, "mdl": bool(has_model), "ho": holders}
+            "other": ctx.get("other_tickers") or "", "pv": pv, "mdl": bool(has_model), "ho": holders, "ins": insiders}
 
 
 SALT_PATH = os.path.join(ROOT, "data", "portal_salt.json")
@@ -562,6 +581,8 @@ def export_site(state, results, cfg, summaries, password, out_dir=SITE_DATA, tod
     hdata = hold.load() if (cfg.get("portal") or {}).get("holders", {}).get("enabled", True) else {}
     hcfg = (cfg.get("portal") or {}).get("holders") or {}
     passive = hcfg.get("passive") or ()
+    from . import insiders as insd
+    idata = insd.load()
     companies = {}
     for c in shown:
         pv = None
@@ -574,8 +595,9 @@ def export_site(state, results, cfg, summaries, password, out_dir=SITE_DATA, tod
         ho = None
         if ent:
             ho = {"top": hold.top_active(ent, ctxs[c].get("shares_used"), passive), "n": ent.get("n"),
-                  "sp": ent.get("sp") or []}
-        companies[c] = company_payload(c, ctxs[c], summaries, assign.get(c), pv, c in models, ho)
+                  "sp": ent.get("sp") or [], **hold.moves(ent, passive)}
+        ins = (idata.get("by_cik") or {}).get(str(c))
+        companies[c] = company_payload(c, ctxs[c], summaries, assign.get(c), pv, c in models, ho, ins)
     files = {}
     shards = int((cfg.get("portal") or {}).get("model_shards", 64))
     for c in shown:
@@ -617,8 +639,46 @@ def export_site(state, results, cfg, summaries, password, out_dir=SITE_DATA, tod
         "gaps": sorted(gaps, key=lambda g: str(g["t"])), "excluded": excluded.most_common(),
         "summaries": sum(1 for c in companies.values() if c.get("sum")), "companies": len(companies),
         "run_info": state.get("run_info") or {},
-        "holders_period": hdata.get("period"),
+        "holders_period": hdata.get("period"), "holders_prev_period": hdata.get("prev_period"),
+        "insider_quarters": idata.get("quarters") or [],
     }
+    # nothing changed since the last publish (e.g. a re-run): tell the workflow to skip publishing. The digest
+    # covers the plaintext (encryption makes every build look new); the build time is left out.
+    import hashlib
+    h = hashlib.sha256()
+    for name in sorted(files):
+        obj = files[name]
+        if name == "meta":
+            obj = {k: v for k, v in obj.items() if k != "built"}
+        h.update(name.encode())
+        h.update(json.dumps(_clean(obj), default=_jsonable, sort_keys=True, separators=(",", ":")).encode())
+    # the site's own code too, so a code-only change (new screen, new card) still publishes
+    site_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "site")
+    for root, dirs, fnames in os.walk(site_dir):
+        dirs[:] = sorted(d for d in dirs if d != "data")
+        for fn in sorted(fnames):
+            try:
+                with open(os.path.join(root, fn), "rb") as f:
+                    h.update(fn.encode())
+                    h.update(f.read())
+            except OSError:
+                pass
+    digest = h.hexdigest()
+    dig_path = os.path.join(CACHE_DIR, "state", "site_digest.txt")
+    try:
+        with open(dig_path, encoding="utf-8") as f:
+            same = f.read().strip() == digest
+    except OSError:
+        same = False
+    os.makedirs(os.path.dirname(dig_path), exist_ok=True)
+    with open(dig_path, "w", encoding="utf-8") as f:
+        f.write(digest)
+    out_env = os.environ.get("GITHUB_OUTPUT")
+    if out_env:
+        with open(out_env, "a", encoding="utf-8") as f:
+            f.write(f"publish={'false' if same else 'true'}\n")
+    if same:
+        log("Portal data unchanged since the last publish")
     written = set()
     for name, obj in files.items():
         _write_bytes(os.path.join(out_dir, name + ".bin"), sealer.seal(obj))

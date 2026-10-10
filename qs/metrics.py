@@ -691,6 +691,40 @@ def compute(cd, cfg, today=None, allow_no_revenue=False):
     m["inventory_days"] = dio.get(latest)
     m["inventory_days_high"] = bool(latest in dio and len(prior) >= 3 and dio[latest] > 1.1 * max(prior)
                                     and dio[latest] > 30)
+    # ---------- tech S-curve screen: stock pay against free cash flow, receivable days
+    sb3 = [y for y in last3 if by[y]["fcf"] is not None and by[y]["sbc"] is not None and by[y]["revenue"]]
+    if len(sb3) == len(last3) and last3:
+        f3 = sum(by[y]["fcf"] for y in sb3)
+        s3 = sum(abs(by[y]["sbc"]) for y in sb3)
+        r3 = sum(by[y]["revenue"] for y in sb3)
+        m["fcf_after_sbc_margin_3y"] = _ratio(f3 - s3, r3)
+        m["sbc_to_fcf_3y"] = (s3 / f3) if f3 > 0 else None
+        m["sbc_to_fcf_3y_nm"] = "free cash flow not positive over 3 years" if f3 <= 0 else None
+    else:
+        m["fcf_after_sbc_margin_3y"] = m["sbc_to_fcf_3y"] = m["sbc_to_fcf_3y_nm"] = None
+    dso = {}
+    for y in ys[-4:]:
+        ar, rv = cd.get("accounts_receivable", y), cd.get("revenue", y)
+        if ar is not None and rv and rv > 0:
+            dso[y] = ar / rv * 365
+    # 3-year incremental return: added operating profit after tax / added invested capital (latest vs 3 years
+    # earlier). Profit up while capital fell or barely grew = capital-light (n/m, counts as high)
+    p0 = by.get(latest - 3) if isinstance(latest, int) else None
+    b1 = by.get(latest) or {}
+    n1, n0 = b1.get("nopat"), (p0 or {}).get("nopat")
+    c1, c0 = b1.get("invested_capital"), (p0 or {}).get("invested_capital")
+    m["incremental_roic_3y"] = m["incremental_roic_3y_nm"] = None
+    if None not in (n1, n0, c1, c0):
+        dn, dc = n1 - n0, c1 - c0
+        rev1 = b1.get("revenue") or 0
+        if dc > 0.02 * abs(rev1):
+            m["incremental_roic_3y"] = max(dn / dc, -5.0)
+        elif dn > 0:
+            m["incremental_roic_3y_nm"] = "profit grew with little or no added capital (capital-light)"
+        else:
+            m["incremental_roic_3y"] = -1.0
+    m["dso_latest"] = dso.get(latest)
+    m["dso_change_3y"] = (dso[latest] - dso[latest - 3]) if (latest in dso and (latest - 3) in dso) else None
     m["da_share_of_ebitda"] = (abs(lr["da"]) / lr["ebitda"]) if (lr["da"] is not None and lr["ebitda"]
                                                                   and lr["ebitda"] > 0) else None
     # tangible book per share over 3 years (Asset-Floor: a discount to book counts only if book is still growing)

@@ -6,8 +6,8 @@
     "NYSE",
     "Nasdaq"
   ],
-  "requests_per_second": 8,
-  "parallel_downloads": 4,
+  "requests_per_second": 9,
+  "parallel_downloads": 8,
   "cache_days_universe": 7,
   "cache_days_submissions": 7,
   "cache_days_facts": 30,
@@ -417,6 +417,27 @@
       "dilution_3y": 0.05,
       "min_market_cap_usd": 500000000,
       "min_adv_usd": 1000000
+    },
+    "tech": {
+      "_note": "Tech S-Curve Leaders. Universe: SIC 7370-7379 (software branch) and 3570-3579, 3661-3679, 3825, 3827 (hardware branch), plus allowlist {TICKER: software|hardware} for companies filed under other codes. Market position, net retention, AI share of sales, customer concentration and China/Taiwan exposure stay manual.",
+      "allowlist": {"LRCX": "hardware", "AMZN": "software", "NFLX": "software"},
+      "min_years": 4,
+      "max_years_since_latest_fy": 1.6,
+      "min_revenue_usd": 200000000,
+      "min_revenue_cagr_3y": 0.15,
+      "max_growth_fade": 0.05,
+      "min_rule_of_40": 0.4,
+      "min_gross_margin_software": 0.7,
+      "max_sbc_to_fcf_3y": 0.2,
+      "max_share_count_cagr_3y": 0.01,
+      "max_capex_to_ocf_3y": 1.0,
+      "max_net_debt_to_ebitda": 2.0,
+      "min_incremental_roic": 0.15,
+      "max_dso_change_days": 10,
+      "min_market_cap_usd": 1000000000,
+      "min_adv_usd": 5000000,
+      "growth_points_per_sales_multiple": 3,
+      "max_ev_sales": 15
     }
   },
   "price_also": {
@@ -429,19 +450,15 @@
   "portal": {
     "_note": "Web portal (GitHub + Cloudflare). Prices: Massive end-of-day for every stock; Twelve Data only as backup.",
     "summary_model": "haiku",
-    "summaries_per_screen_run": 150,
-    "summaries_per_daily_run": 30,
     "twelvedata_backup_quotes_screen_run": 60,
     "twelvedata_backup_quotes_daily": 16,
     "peer_min_companies": 6,
     "peers": 10,
-    "_history_note": "Price history: Massive requests (one trading day each) for 52-week ranges, Twelve Data credits (one company each) for month-end prices behind historical multiples. Runs fill the gaps within these budgets.",
-    "range_days_per_screen_run": 200,
-    "range_days_per_daily_run": 100,
+    "_history_note": "Price history: screen and daily runs only add the newest trading day / month-end (a few Massive requests). The background job fills gaps: up to range_days_per_background_run Massive requests (52-week ranges) and history_per_background_run Twelve Data credits (10-year month-end histories, each ticker once), always leaving td_reserve_credits for quotes and exchange rates.",
+    "range_days_per_screen_run": 5,
+    "range_days_per_daily_run": 5,
     "range_min_days": 240,
-    "history_per_screen_run": 450,
-    "history_per_daily_run": 200,
-    "history_refresh_days": 180,
+    "history_refresh_days": 730,
     "model_shards": 64,
     "holders": {
       "_note": "Top holders from SEC 13F data sets (information only). 'passive' = index funds, broker platforms and market makers left out of the top-5 column; 'specialists' = dedicated healthcare funds (shown with a star; counted on clinical-stage company pages). Names are matched as whole words, case-insensitive.",
@@ -577,7 +594,11 @@
         "Opaleye",
         "Nantahala Biotech"
       ]
-    }
+    },
+    "td_reserve_credits": 100,
+    "range_days_per_background_run": 200,
+    "history_per_background_run": 300,
+    "summaries_per_background_run": 40
   },
   "disc_ops_min_share_of_revenue": 0.01,
   "_disc_ops_note": "Hidden Earnings: discontinued operations count when at least this share of revenue (ignores small legacy items).",
@@ -587,5 +608,8 @@
     "refresh_past_prices_days": 12,
     "float_td_backup_max": 40,
     "float_price_lookups_without_massive": 120
-  }
+  },
+  "cache_days_submissions_indexed": 120,
+  "cache_days_facts_indexed": 365,
+  "_cache_note": "Profiles and financial statements are re-downloaded when SEC's daily filing index shows a new filing; the *_indexed ages are only a safety net. Without the index (first run, long gap) the plain ages apply."
 }
