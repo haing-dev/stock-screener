@@ -72,3 +72,14 @@ Speakers repeatedly named things a financial screen can't capture. These belong 
 - **Hidden and dormant assets:** land carried at no value ("Property, no value assigned"), unexplored acreage and non-producing royalties. A royalty is "a call option on everything" (Stahl).
 - **Macro and policy exposure:** does demand rely on lower-income consumers squeezed by fuel and food inflation, or on tariff-exposed supply chains? Do very low tax rates or dominant positions face tax rises and antitrust (Karniol-Tambour, Jun 2022, May 2025)?
 - **Financing quality:** does revenue rely on customers the company finances or owns equity in? Vendor financing in "exotic forms" needs scrutiny (Nadella). Treat private-credit debt as equity-like risk (Karniol-Tambour, May 2025).
+
+### 6. October 2026 update: what the 98 new transcripts changed
+
+Most new talks support the existing rules. Four changes went into the screener (v2.5):
+
+- **Count stock pay as a cost.** Cash-conversion rules (Core, HC Commercial, Owner-Operators) now use free cash flow after stock pay: "It's compensation. You're diluting your shareholders" (Chanos).
+- **Don't trust EBITDA for capital-heavy growers.** When depreciation is half or more of EBITDA, Emerging tests profit and valuation on EBIT. EBITDA's accuracy is "inversely proportionate" to the D (Gayner); valuing CoreWeave on EBITDA ignores "what it's costing you to create this thing" (Del Deo).
+- **A book-value floor must be growing.** Below tangible book works "when the builder is growing book value" (Eisman on Meritage), so the Asset-Floor tangible-book route needs tangible book per share not down over 3 years.
+- **More breakage signals for the avoid list:** negative operating cash flow and growth by acquisition ("a lot of frauds", Chanos), restructuring charges most years ("10 out of the last 12 years ... it's not non-recurring", Chanos on IBM), record inventory days (Baker, Feb 2000 semis), profits above cash, heavy capex with negative free cash flow.
+
+Noted, not built: a high-ROIC business that can't reinvest ("second best business", Gayner) fails Core's growth gate; specialist-fund ownership as a healthcare signal (Kolchinsky); receivables concentrated in a few customers (Eisman, Noble on Nvidia) stays a manual check.
