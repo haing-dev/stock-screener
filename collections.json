@@ -1,0 +1,35 @@
+{
+  "_note": "Google Drive: G:\\My Drive\\Transcripts\\<subfolder>. Each subfolder is a collection. 'screens' = which collections inform each screener (first = primary). Crypto and real estate are not processed for now.",
+  "drive_root": "G:\\My Drive\\Transcripts",
+  "folders": {
+    "YouTube Transcripts": "general",
+    "Healthcare Transcripts": "healthcare",
+    "Macro Transcripts": "macro",
+    "Crypto Transcripts": "crypto",
+    "Real Estate Transcripts": "real_estate"
+  },
+  "skip": ["crypto", "real_estate"],
+  "labels": {
+    "general": "General investing (YouTube Transcripts)",
+    "healthcare": "Healthcare & biotech (Healthcare Transcripts)",
+    "macro": "Macro & thematic (Macro Transcripts)",
+    "crypto": "Crypto (not processed)",
+    "real_estate": "Real estate (not processed)",
+    "archive": "Kept in the store, no longer in Drive"
+  },
+  "screens": {
+    "core": ["general"],
+    "emerging": ["general"],
+    "special": ["general"],
+    "fortress": ["general", "macro"],
+    "hc_commercial": ["healthcare", "general"],
+    "hc_clinical": ["healthcare"],
+    "cyclicals": ["general", "macro"],
+    "owners": ["general"],
+    "real_assets": ["general", "macro"],
+    "asset_floor": ["general"],
+    "trough_cash": ["general", "macro"],
+    "hidden": ["general"],
+    "red_flags": ["general", "macro"]
+  }
+}

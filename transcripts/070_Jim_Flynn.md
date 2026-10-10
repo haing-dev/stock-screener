@@ -5,6 +5,7 @@ title: "Jim Flynn - Building a Healthcare Investment Platform Across Public, Pri
 channel: "Value Investing with Legends (Columbia Business School)"
 date: "2026-06-12"
 url: "http://valueinvestingwithlegends.libsyn.com/jim-flynn-building-a-healthcare-investment-platform-across-public-private-and-venture"
+collection: "healthcare"
 category: "Healthcare & biotech"
 source: "Speech-to-text (Whisper)"
 notes: "notes/doc1/070.md"

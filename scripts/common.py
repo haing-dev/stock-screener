@@ -4,6 +4,21 @@ import json, os, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INDEX = os.path.join(ROOT, "index.jsonl")
 LINE_TARGET = 350   # reflow transcripts to ~350-char lines so grep hits give usable context + line refs
+COLLECTIONS_FILE = os.path.join(ROOT, "collections.json")
+
+
+def collections():
+    """Drive subfolder -> collection, collections skipped by default, and which collections feed each screen."""
+    return json.load(open(COLLECTIONS_FILE, encoding="utf-8"))
+
+
+def collection_of(path):
+    """Collection from the name of the Drive subfolder a file sits in (None if the folder isn't a known one)."""
+    folders = collections()["folders"]
+    for part in reversed(os.path.normpath(path).split(os.sep)[:-1]):
+        if part in folders:
+            return folders[part]
+    return None
 
 
 def slugify(s, n=60):
@@ -49,7 +64,8 @@ def normalize_transcript(raw):
     return meta, "\n".join(body) + "\n"
 
 
-FRONT = ["id", "speakers", "title", "channel", "date", "url", "video_id", "category", "source", "notes", "doc1_heading"]
+FRONT = ["id", "speakers", "title", "channel", "date", "url", "video_id", "collection", "category", "source", "notes",
+         "doc1_heading"]
 
 
 def write_transcript(meta, body):
