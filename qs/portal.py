@@ -72,9 +72,17 @@ PRICE_METRICS = {"pe", "ev_ebitda", "ev_ebit", "ev_sales", "ev_normalized_ebit",
                  "market_cap_usd", "insider_share", "mcap_to_net_cash", "price_to_tangible_book", "fcf_yield_5y",
                  "drawdown_12m"}
 # the same columns on every screen (company, price vs open and the 52-week range are fixed columns on the site)
-TABLE_METRICS = ["pe", "ev_ebit", "fcf_yield", "roic_median", "revenue_cagr_5y"]
+TABLE_METRICS = ["pe", "ev_ebit", "ev_sales", "fcf_yield", "roic_median", "revenue_cagr_5y"]
 SCREEN_METRICS = {}
-SCREEN_GROUPS = {"owners": "From the new interviews", "red_flags": "Avoid list", "tech": "Technology"}
+# the site's menu: screens grouped by what they look for (order within a group = order shown)
+SCREEN_GROUPS = [
+    ("Compounders", ["core", "emerging", "fortress", "owners", "hc_commercial", "real_assets"]),
+    ("Contrarian & special situations", ["special", "hidden", "asset_floor", "cyclicals", "trough_cash"]),
+    ("Frontier growth", ["tech", "hc_clinical"]),
+    ("Avoid", ["red_flags"]),
+]
+GROUP_OF = {sid: g for g, ids in SCREEN_GROUPS for sid in ids}
+MENU_ORDER = [sid for _, ids in SCREEN_GROUPS for sid in ids]
 STATUS_KEEP = ("PASS", "CHECK", "NEAR", "PRICE", "ONE")
 
 
@@ -300,6 +308,36 @@ def peer_groups(ctxs, min_size=6):
     return out, assign
 
 
+# ------------------------------------------------------------------ couldn't screen: what blocks each company
+BLOCKERS = [   # (text in the stage, blocker, what would fix it)
+    ("no annual report yet", "New listing: no annual report (10-K / 20-F) filed yet",
+     "Wait for the first annual report, or screen from quarterly (10-Q) figures"),
+    ("S-4", "New registrant after a merger or reorganization: history is filed under the old company's SEC number",
+     "Map the old SEC number (CIK) to the new one"),
+    ("40-F", "Canadian (MJDS) filer: financial statements aren't in SEC's XBRL data", "Another data source"),
+    ("company-specific tag", "Revenue is filed under the company's own custom tag",
+     "Accept the custom revenue tag when it ties to gross profit + cost of sales"),
+    ("no annual revenue or operating results", "No annual revenue or operating profit in standard tags",
+     "Check the filing's own tags; quarterly route for new listings"),
+    ("no years with both revenue and operating", "Revenue and operating (or pretax) profit never tagged for the same year",
+     "Derive operating profit from revenue minus total costs"),
+    ("no recent years with both revenue and operating", "Recent years lack revenue or operating profit in standard tags",
+     "Derive operating profit from revenue minus total costs"),
+    ("no monetary XBRL data", "Only cover-page items are tagged (no financial statements in XBRL)", "Another data source"),
+    ("no XBRL financial data", "No XBRL financial data at SEC", "Another data source, or wait for the first XBRL filing"),
+    ("download error", "SEC download failed during the run (timeout / rate limit)", "Retried automatically next run"),
+    ("processing error", "Screener error on an unusual filing", "Code fix needed"),
+    ("no SEC profile", "Listed ticker with no SEC company record", "Check the ticker mapping"),
+]
+
+
+def blocker(stage):
+    for key, what, fix in BLOCKERS:
+        if key in (stage or ""):
+            return what, fix
+    return "Other", ""
+
+
 # ------------------------------------------------------------------ export
 def _op_text(op):
     return {">=": "at least", "<=": "at most", ">": "above", "<": "below"}.get(op, op or "")
@@ -451,7 +489,8 @@ def screen_payload(s, results, ctxs, cfg):
     gates = [{"id": g.gid, "name": g.name, "rule": rule_label(g, cfg, s.sid), "why": g.insight,
               "hard": not g.one_ok, "valuation": bool(g.valuation), "price": bool(g.needs_price),
               "hidden": bool(getattr(g, "hidden", False)), "what": SUBJECT.get(g.metric, g.name.lower()),
-              "need": _need(g, cfg, s.sid), "ftxt": FAIL_TEXT.get(g.gid, "")} for g in s.gates]
+              "need": _need(g, cfg, s.sid), "ftxt": FAIL_TEXT.get(g.gid, ""),
+              "def": bool(getattr(g, "defining", False))} for g in s.gates]
     rows = []
     for c, r in results.items():
         codes, vals, notes = [], [], {}
@@ -462,7 +501,8 @@ def screen_payload(s, results, ctxs, cfg):
             if note:
                 notes[g.gid] = note
         rows.append({"c": c, "g": "".join(codes), "v": vals, "nt": notes, "h": list(r.get("holds", [])),
-                     "cls": r["class"], "nr": r["failed"][0] if r["class"] == "NEAR" and r.get("failed") else None})
+                     "cls": r["class"], "nr": r["failed"][0] if r["class"] == "NEAR" and r.get("failed") else None,
+                     **({"nf": 1} if ctxs.get(c, {}).get("events_only") else {})})
     from .screens import AVOID_SCREENS
     from .thesis import THESIS
     return {"id": s.sid, "title": s.title, "purpose": s.purpose, "gates": gates, "thesis": THESIS.get(s.sid),
@@ -580,7 +620,7 @@ def export_site(state, results, cfg, summaries, password, out_dir=SITE_DATA, tod
     from . import holders as hold
     hdata = hold.load() if (cfg.get("portal") or {}).get("holders", {}).get("enabled", True) else {}
     hcfg = (cfg.get("portal") or {}).get("holders") or {}
-    passive = hcfg.get("passive") or ()
+    passive = list(hcfg.get("passive") or ()) + list(hcfg.get("exclude") or ())
     from . import insiders as insd
     idata = insd.load()
     companies = {}
@@ -626,15 +666,18 @@ def export_site(state, results, cfg, summaries, password, out_dir=SITE_DATA, tod
             continue
         if c in ctxs and not ctxs[c].get("events_only"):
             continue
-        gaps.append({"t": rec.get("ticker"), "n": rec.get("name"), "ind": rec.get("industry"), "why": st})
+        b, fix = blocker(st)
+        gaps.append({"t": rec.get("ticker"), "n": rec.get("name"), "ind": rec.get("industry"), "why": st, "b": b,
+                     "fix": fix, "cik": c, "sic": rec.get("sic") or "", "ex": rec.get("exchange") or ""})
     excluded = Counter(rec.get("stage") for rec in (state.get("records") or {}).values()
                        if (rec.get("stage") or "").startswith("not screened: ") and "check by hand" not in rec["stage"])
     files["meta"] = {
         "version": __version__, "model_shards": shards, "built": datetime.now().isoformat(timespec="minutes"),
         "screened_on": state.get("screened_on"), "priced_on": state.get("priced_on"),
         "price_day": max((c.get("price_date") or "" for c in ctxs.values()), default=None),
-        "screens": [{"id": s.sid, "title": s.title, "counts": counts.get(s.sid, {}), "group": SCREEN_GROUPS.get(s.sid)}
-                    for s in SCREENS if s.sid in counts],
+        "screens": [{"id": s.sid, "title": s.title, "counts": counts.get(s.sid, {}), "group": GROUP_OF.get(s.sid, "Other")}
+                    for s in sorted(SCREENS, key=lambda s: MENU_ORDER.index(s.sid) if s.sid in MENU_ORDER else 99)
+                    if s.sid in counts],
         "universe": len(state.get("records") or {}), "screened": len(ctxs),
         "gaps": sorted(gaps, key=lambda g: str(g["t"])), "excluded": excluded.most_common(),
         "summaries": sum(1 for c in companies.values() if c.get("sum")), "companies": len(companies),

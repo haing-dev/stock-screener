@@ -136,7 +136,14 @@ class Screen:
         if not fails and not nodata and not holds:
             cls = PASS
         elif not fails:
-            cls = "CHECK"
+            # nothing verified fails: a pass with an asterisk (the note says what couldn't be checked) - unless the
+            # screen's defining rule itself couldn't be checked, or it's the avoid list (a flag needs evidence)
+            if getattr(self, "avoid", False) or any(getattr(g, "defining", False) for g in nodata) \
+                    or ctx.get("events_only"):         # no financial statements at all yet (new spin-off)
+                cls = "CHECK"
+            else:
+                cls = PASS
+                res["star"] = True
         elif self.strict and any(not g.one_ok for g in nodata):
             cls = FAIL
         elif priced and all(g.valuation for g in fails):
@@ -1758,12 +1765,17 @@ HARD_GATES = {"E3", "E4", "E10", "E11", "E13", "S2", "S4", "S5", "S6", "B1", "B2
               "X3", "X4", "X10", "X11", "W3", "W4", "W5", "W6",
               # tech S-curve = fast growth, tradeable
               "A4", "A14", "A15"}
+# the trait a screen is named after: if it can't be checked the company can't pass (it stays a near miss). Any other
+# rule that can't be checked gives a pass with an asterisk (e.g. 2008-09 results not in SEC data, debt not tagged)
+DEFINING_GATES = {"E4", "C7", "O4", "R4", "R5", "K4", "T4", "X3", "B6", "A4"}
 _ids = [g.gid for s_ in SCREENS for g in s_.gates]
 assert len(_ids) == len(set(_ids)), "gate ids must be unique across screens"
 for _s in SCREENS:
+    _s.avoid = _s.sid in AVOID_SCREENS
     for _g in _s.gates:
         _g.valuation = _g.gid in VALUATION_GATES
         _g.one_ok = _g.gid not in HARD_GATES
+        _g.defining = _g.gid in DEFINING_GATES
 
 
 from .screen_text import PURPOSE, RATIONALE  # noqa: E402  (site text)

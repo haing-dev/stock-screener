@@ -1,4 +1,4 @@
-"""Why companies land on 'Check manually': every CHECK note grouped by reason, per screen (markdown)."""
+"""What couldn't be verified: every note on a pass with an asterisk or a CHECK, grouped by reason, per screen (markdown)."""
 import re
 from collections import Counter, defaultdict
 
@@ -26,7 +26,7 @@ def build(state, cfg, examples=6):
                                                     ("PASS", "CHECK", "NEAR", "PRICE", "ONE", "FAIL")))
         reasons = defaultdict(list)
         for c, r in rr.items():
-            if r["class"] != "CHECK":
+            if r["class"] != "CHECK" and not r.get("star"):
                 continue
             for n in r.get("check_notes") or []:
                 key = _norm(n)
@@ -35,4 +35,18 @@ def build(state, cfg, examples=6):
         for key, ts in sorted(reasons.items(), key=lambda kv: -len(kv[1]))[:25]:
             out.append(f"- **{len(ts)}** × {key}  (e.g. {', '.join(sorted(ts)[:examples])})")
         out.append("")
+    # companies that couldn't be screened at all, grouped by blocker
+    from .portal import blocker
+    gaps = defaultdict(list)
+    for c, rec in (state.get("records") or {}).items():
+        st = rec.get("stage") or ""
+        if st == "screened" or (st.startswith("not screened: ") and "check by hand" not in st):
+            continue
+        if c in ctxs and not ctxs[c].get("events_only"):
+            continue
+        gaps[blocker(st)[0]].append(rec.get("ticker") or str(c))
+    out.append(f"## Couldn't screen: {sum(len(v) for v in gaps.values())} companies")
+    for b, ts in sorted(gaps.items(), key=lambda kv: -len(kv[1])):
+        out.append(f"- **{len(ts)}** × {b}: {', '.join(sorted(ts))}")
+    out.append("")
     return "\n".join(out)

@@ -2,6 +2,14 @@
 
 Read CLAUDE.md first; this file holds the detail.
 
+## v2.8.0 (Oct 2026)
+- Menu groups (`portal.SCREEN_GROUPS`): Compounders (core, emerging, fortress, owners, hc_commercial, real_assets); Contrarian & special situations (special, hidden, asset_floor, cyclicals, trough_cash); Frontier growth (tech, hc_clinical); Avoid (red_flags).
+- Unverifiable-only misses = PASS with `star` (site asterisk, note 'insufficient information about ...'). Exceptions -> CHECK: a `DEFINING_GATES` rule unverifiable (E4 C7 O4 R4 R5 K4 T4 X3 B6 A4), no financial statements yet (`events_only`), avoid list. No cap on the number of unverifiable rules (user's choice).
+- 13F (`holders.SCHEMA` 2): top holders ranked by position / holder's own 13F stock portfolio (options excluded); eligible = portfolio >= $500M and stake >= 0.25% of shares or >= $250M ($25M if share count unknown). Excluded: config `passive` + `exclude` names, and managers with > 1,000 stocks or > $250B across > 500 stocks; fund stats frozen 12 months in `cache/prices/holders/managers.json.gz`. Schema bump forces a one-off rebuild (re-downloads the 13F zips).
+- Insiders (`insiders.SCHEMA` 2): sales the same day as an option exercise (M/X/C/O in the same filing) -> `ex_sell`; site column 'Insiders' (after Top holders, both lists) shows open-market buys and discretionary sales only (no 10b5-1, no exercise-and-sell). Data = SEC quarterly Form 345 sets (up to ~3 months behind); daily Form 4 top-up not built.
+- EV/Sales (EV / TTM revenue in USD, same basis as EV/EBIT) in `TABLE_METRICS` and company facts; peer tab always shown (info only, no vote unless the basis).
+- Couldn't screen: plain blocker + fix (`portal.BLOCKERS`), CSV export button, list grouped by blocker in the check report. Instruction texts removed from the site (13F/insider notes moved to column-header hovers).
+
 ## v2.7.0 (Oct 2026)
 - Efficiency: `qs/secsync.py` reads SEC daily `master.idx` files since the last run (`cache/sec_sync.json.gz`) -> only companies that filed are re-downloaded (facts only after a 10-K/10-Q/20-F/40-F); safety ages `cache_days_*_indexed`. Full refresh (new SUBSET_VERSION or < 50% cached) uses SEC bulk `companyfacts.zip` / `submissions.zip` (`needs_bulk`, `mark_bulk_done` in `cache/sec_meta.json.gz`). `SCREEN_WORKBOOK=0` skips the Excel workbook (screen.yml input `workbook`).
 - Workflows: screen.yml (no holders, quick history), daily.yml (exits early with `new_day=false` when Massive has no newer trading day), new background.yml (cron 40 10 * * *: `portal-background` = 52-week backfill 200 days, Twelve Data history 300 credits keeping `td_reserve_credits` 100, 13F quarterly, insiders quarterly; then Claude descriptions only if `summaries_todo` > 0, committed by `scripts/commit_data.sh`). Caches pruned to the newest per prefix (`scripts/prune_caches.sh`, needs `actions: write`). Publish skipped when the plaintext data + site code digest is unchanged (`cache/state/site_digest.txt`).

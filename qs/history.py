@@ -374,6 +374,10 @@ def peer_valuation(c, state, td_cache, ym_cache=None):
         return ym_cache[x]
 
     mults = choose_multiples(ctx, [ctxs[p] for p in peers], models)
+    info_only = set()
+    if "ev_sales" not in mults and mults != ["pe", "pb"]:
+        mults.append("ev_sales")          # always shown; doesn't vote in the overall verdict unless it's the basis
+        info_only.add("ev_sales")
     rows = []
     for x in [c] + peers:
         avg, why, _ = ym(x)
@@ -393,7 +397,7 @@ def peer_valuation(c, state, td_cache, ym_cache=None):
         pv = [r["v"][k][0] for r in rows[1:] if r["v"][k][0] is not None]
         verdict[k] = {"v": _verdict(k, now, own, statistics.median(pv) if len(pv) >= 3 else None),
                       "peer_med": statistics.median(pv) if len(pv) >= 3 else None}
-    votes = [x["v"] for x in verdict.values() if x["v"]]
+    votes = [x["v"] for k, x in verdict.items() if x["v"] and k not in info_only]
     overall = None
     if votes:
         for lab in ("cheap", "expensive"):

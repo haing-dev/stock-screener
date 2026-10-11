@@ -74,10 +74,10 @@ function niceDate(d) {
 }
 
 /* ------------------------------------------------------------------ status under the current rule switches */
-/* Same classification as the screener: PASS; CHECK (nothing fails but an input is missing or needs a look);
-   ONE = only valuation rules fail, a near miss on one rule, or one non-defining rule fails with everything else
-   verified; FAIL otherwise. With every rule on this reproduces the screener's own lists.
-   The site shows two lists: Pass (PASS) and Near misses (CHECK + ONE), each near miss with its reason. */
+/* Same classification as the screener: PASS (with an asterisk when some rules couldn't be checked but none
+   verifiably fails); CHECK (the screen's defining rule couldn't be checked, no financial statements yet, or the avoid
+   list); ONE = only valuation rules fail, a near miss on one rule, or one non-defining rule fails with everything
+   else verified; FAIL otherwise. The site shows two lists: Pass (PASS) and Near misses (CHECK + ONE). */
 function statusOf(row, scr, off) {
   const fails = [], missing = [];
   let ndBiz = 0, ndHard = 0;
@@ -87,7 +87,13 @@ function statusOf(row, scr, off) {
     if (c === "F") fails.push(g);
     else if (c === "D") { missing.push(g); if (!g.price) ndBiz++; if (g.hard) ndHard++; }
   });
-  if (!fails.length) return { s: missing.length || row.h.length ? "CHECK" : "PASS", fails, missing };
+  if (!fails.length) {
+    if (!missing.length && !row.h.length) return { s: "PASS", fails, missing };
+    // nothing verified fails: a pass with an asterisk, unless the defining rule couldn't be checked, the company has
+    // no financial statements yet, or it's the avoid list (a flag needs evidence)
+    if (scr.avoid || row.nf || missing.some((g) => g.def)) return { s: "CHECK", fails, missing };
+    return { s: "PASS", star: true, fails, missing };
+  }
   if (scr.strict && ndHard) return { s: "FAIL", fails, missing };
   if (fails.every((g) => g.valuation)) return { s: "ONE", fails, missing, kind: "price" };
   if (fails.length === 1) {
@@ -114,6 +120,12 @@ function gateReason(g, code, row, i) {
   return `Miss due to ${row.nt[g.id] || (g.what || g.name.toLowerCase()) + " failing the rule"}`;
 }
 const holdReason = (h) => `Miss due to insufficient information: ${h}`;
+/* a pass with an asterisk: what couldn't be checked */
+function starNote(st, row) {
+  const parts = st.missing.map((g) => g.what || g.name.toLowerCase()).concat(row.h);
+  return "Note: insufficient information about " + [...new Set(parts)].join("; ");
+}
+const starHTML = (st, row) => (st.star ? `<sup class="star" tabindex="0" data-tip="${esc(starNote(st, row))}">*</sup>` : "");
 /* all the reasons a company isn't a clean pass (company page) */
 function reasonOf(st, row, scr) {
   if (st.s === "PASS") return "";
@@ -223,8 +235,8 @@ async function route() {
 }
 function renderNav() {
   const nav = $("#screenNav");
-  nav.innerHTML = S.meta.screens.map((s) =>
-    (s.group ? `<div class="sep"></div><div class="nav-h">${esc(s.group)}</div>` : "") +
+  nav.innerHTML = S.meta.screens.map((s, i, all) =>
+    (s.group && (i === 0 || all[i - 1].group !== s.group) ? `${i ? '<div class="sep"></div>' : ""}<div class="nav-h">${esc(s.group)}</div>` : "") +
     `<button type="button" data-sid="${s.id}"><span>${esc(s.title)}</span><span class="n" data-count="${s.id}">${s.counts.PASS ?? 0}</span></button>`
   ).join("") + `<div class="sep"></div><button type="button" data-sid="gaps"><span>Couldn't screen</span><span class="n">${S.meta.gaps.length}</span></button>`;
   nav.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { location.hash = b.dataset.sid; }));
@@ -376,9 +388,18 @@ function bindTable(scr, off, better) {
   });
 }
 const STATUS_LABEL = { PASS: "Pass", CHECK: "Near miss", ONE: "Near miss", FAIL: "Fails" };
-function holdersNote() {
+function holdersHead() {
   const p = S.meta.holders_period;
-  return p ? ` Top holders from 13F filings for ${niceDate(p)}; index funds and broker platforms left out.` : "";
+  const tip = `Ranked by the share of each holder's own portfolio (conviction)${p ? `; 13F filings for ${niceDate(p)}` : ""}. ` +
+    "Index funds, broker platforms, the largest fund houses and quant funds are left out.";
+  return `<th class="c-ho" title="${esc(tip)}">Top holders</th>`;
+}
+function insidersHead() {
+  const q = S.meta.insider_quarters || [];
+  const tip = "Open-market buys and sales by officers, directors and 10% owners" +
+    (q.length ? `, ${qLabel(q[q.length - 1])} to ${qLabel(q[0])}` : "") +
+    ". Stock awards, option exercises, tax withholding, gifts, pre-planned (10b5-1) sales and same-day exercise-and-sell are left out.";
+  return `<th class="c-ins" title="${esc(tip)}">Insiders</th>`;
 }
 function renderTable(scr, off) {
   if (S.view === "near" && !S.q) { renderNear(scr, off); return; }
@@ -389,14 +410,13 @@ function renderTable(scr, off) {
   sortRows(rows, val, (a, b) => ORDER[a.st.s] - ORDER[b.st.s] || (b.c.m.market_cap_usd || 0) - (a.c.m.market_cap_usd || 0));
   const mk = scr.metrics;
   const head = `<thead><tr>${th("_t", "Company", "c-co")}${th("_px", "Price (vs open)", "c-px num")}${th("_rg", "52-week range", "c-rg")}${th("_ind", "Industry", "c-ind")}` +
-    mk.map((k) => th(k, M[k][0], "num")).join("") + `<th class="c-ho">Top holders</th></tr></thead>`;
+    mk.map((k) => th(k, M[k][0], "num")).join("") + holdersHead() + insidersHead() + `</tr></thead>`;
   const shown = rows.slice(0, 400);
   const body = shown.map((x) => rowHTML(x, scr, mk)).join("");
   const empty = S.q ? "No company matches that search in this screen." : scr.avoid ? "No company is flagged with these rules."
     : "No company passes with these rules. See Near misses, or switch a rule off.";
   $("#table").innerHTML = `<table class="list-tbl">${head}<tbody>${body}</tbody></table>` + (shown.length ? "" : `<div class="empty">${empty}</div>`);
-  $("#listNote").textContent = `${rows.length} of ${scr.rows.length} companies` +
-    (rows.length > shown.length ? ` (first ${shown.length}; search to find others)` : "") + ". Select a company for its page." + holdersNote();
+  $("#listNote").textContent = rows.length > shown.length ? `First ${shown.length} of ${rows.length}; search to find others.` : "";
   bindTable(scr, off, (k) => (k.startsWith("_") ? null : M[k][2]));
 }
 
@@ -419,7 +439,7 @@ function renderNear(scr, off) {
   const head = `<thead><tr>${th("_t", "Company", "c-co")}${th("_px", "Price (vs open)", "c-px num")}${th("_rg", "52-week range", "c-rg")}` +
     gates.map(({ g }) => `<th class="c-dot" title="${esc(g.name + ": " + g.rule)}"><span>${esc(g.name)}</span></th>`).join("") +
     (anyHold ? `<th class="c-dot" title="Data the screen couldn't confirm"><span>Data check</span></th>` : "") +
-    `<th class="c-ho">Top holders</th></tr></thead>`;
+    holdersHead() + insidersHead() + `</tr></thead>`;
   const shown = rows.slice(0, 400);
   const body = shown.map((x) => {
     const dots = gates.map(({ g, i }) => {
@@ -433,17 +453,17 @@ function renderNear(scr, off) {
     const hold = !anyHold ? "" : `<td class="c-dot" data-label="Data check">${x.r.h.length
       ? dot("miss", "Data check", x.r.h.map(holdReason).join("; ")) : dot("ok", "Data check: confirmed")}</td>`;
     return `<tr tabindex="0" data-t="${esc(x.c.t)}">
-      <td class="c-co"><span class="tk">${esc(x.c.t)}</span> <span class="nm" title="${esc(niceName(x.c.n))}">${esc(niceName(x.c.n))}</span><span class="tally">${x.pass} of ${x.pass + x.miss} rules met</span></td>
+      <td class="c-co"><span class="tk">${esc(x.c.t)}</span> <span class="nm" title="${esc(niceName(x.c.n))}">${esc(niceName(x.c.n))}</span></td>
       <td class="c-px num" data-label="Price (vs open)">${pxHTML(x.c.px)}</td>
       <td class="c-rg" data-label="52-week range">${rangeHTML(x.c.px)}</td>
       ${dots}${hold}
       <td class="c-ho" data-label="Top holders">${holdersCell(x.c.ho)}</td>
+      <td class="c-ins" data-label="Insiders">${insidersCell(x.c.ins)}</td>
     </tr>`;
   }).join("");
   $("#table").innerHTML = `<table class="list-tbl near-tbl">${head}<tbody>${body}</tbody></table>` +
     (shown.length ? "" : `<div class="empty">No near misses with these rules.</div>`);
-  $("#listNote").innerHTML = `${rows.length} ${scr.avoid ? "nearly flagged" : rows.length === 1 ? "near miss" : "near misses"}, most rules met first. <span class="legend"><span class="dot ok"></span> meets the rule ` +
-    `<span class="dot miss"></span> misses it (point at it for the reason) <span class="dot na"></span> doesn't apply</span>` + esc(holdersNote());
+  $("#listNote").textContent = rows.length > shown.length ? `First ${shown.length} of ${rows.length}.` : "";
   bindTable(scr, off, () => null);
 }
 
@@ -483,8 +503,21 @@ function rangeHTML(px) {
 }
 function holdersCell(ho) {
   if (!ho || !ho.top || !ho.top.length) return '<span class="muted">–</span>';
-  const full = ho.top.map(([n, p, sp]) => `${n}${p != null ? ` (${(p * 100).toFixed(1)}%)` : ""}${sp ? " – healthcare specialist" : ""}`).join("\n");
-  return `<span class="ho" title="${esc(full)}">${ho.top.map(([n, , sp]) => `<span>${esc(n)}${sp ? '<b class="spec" aria-label="healthcare specialist">★</b>' : ""}</span>`).join("")}</span>`;
+  const full = ho.top.map(([n, p, sp, port]) => `${n}: ${port != null ? (port * 100).toFixed(1) + "% of its portfolio" : "–"}` +
+    `${p != null ? `, ${(p * 100).toFixed(2)}% of the company` : ""}${sp ? " (healthcare specialist)" : ""}`).join("\n");
+  return `<span class="ho" title="${esc(full)}">${ho.top.map(([n, , sp, port]) => `<span><em>${esc(n)}</em>${sp ? '<b class="spec" aria-label="healthcare specialist">★</b>' : ""}` +
+    `${port != null ? `<i>${(port * 100).toFixed(port >= 0.1 ? 0 : 1)}%</i>` : ""}</span>`).join("")}</span>`;
+}
+/* insider open-market buys (green) and discretionary sales (red) */
+function insidersCell(ins) {
+  if (!ins || (!ins.buy && !ins.sell)) return '<span class="muted">–</span>';
+  const side = (e, cls, arrow, label) => {
+    if (!e) return "";
+    const tip = `${label}: ${e.n} trade${e.n === 1 ? "" : "s"} by ${e.people} insider${e.people === 1 ? "" : "s"}. ` +
+      e.top.map(([n, r, v, d]) => `${n}${r ? ` (${r})` : ""} ${usdShort(v)}${d ? `, ${niceDate(d)}` : ""}`).join("; ");
+    return `<span class="ins ${cls}" tabindex="0" data-tip="${esc(tip)}">${arrow} ${usdShort(e.value)}</span>`;
+  };
+  return side(ins.buy, "buy", "▲", "Bought") + side(ins.sell, "sell", "▼", "Sold");
 }
 function rowHTML(x, scr, mk) {
   const c = x.c;
@@ -497,12 +530,13 @@ function rowHTML(x, scr, mk) {
   }).join("");
   const pill = x.st.s === "FAIL" ? "fail" : "miss";
   return `<tr tabindex="0" data-t="${esc(c.t)}">
-    <td class="c-co"><span class="tk">${esc(c.t)}</span> <span class="nm" title="${esc(niceName(c.n))}">${esc(niceName(c.n))}</span>${reason ? ` <span class="badge ${pill}">${esc(reason)}</span>` : ""}</td>
+    <td class="c-co"><span class="tk">${esc(c.t)}</span>${starHTML(x.st, x.r)} <span class="nm" title="${esc(niceName(c.n))}">${esc(niceName(c.n))}</span>${reason ? ` <span class="badge ${pill}">${esc(reason)}</span>` : ""}</td>
     <td class="c-px num" data-label="Price (vs open)">${pxHTML(c.px)}</td>
     <td class="c-rg" data-label="52-week range">${rangeHTML(c.px)}</td>
     <td class="c-ind" data-label="Industry"><span title="${esc(c.ind)}">${esc(c.ind || "–")}</span></td>
     ${cells}
     <td class="c-ho" data-label="Top holders">${holdersCell(c.ho)}</td>
+    <td class="c-ins" data-label="Insiders">${insidersCell(c.ins)}</td>
   </tr>`;
 }
 
@@ -522,8 +556,8 @@ function renderCompany(ticker) {
   if (row) {
     const st = statusOf(row, scr, offFor(S.cur));
     const lab = st.s === "PASS" ? (scr.avoid ? "Flagged" : "Passes") : st.s === "FAIL" ? (scr.avoid ? "Not flagged" : "Fails") : (scr.avoid ? "Nearly flagged" : "Near miss");
-    const why = st.s === "FAIL" ? "Fails: " + st.fails.map((g) => g.name).join(", ") : reasonOf(st, row, scr);
-    status = `<p class="status s-${st.s}"><b>${esc(scr.title)}: ${lab}.</b> ${esc(why)}</p>`;
+    const why = st.s === "FAIL" ? "Fails: " + st.fails.map((g) => g.name).join(", ") : st.star ? starNote(st, row) : reasonOf(st, row, scr);
+    status = `<p class="status s-${st.s}"><b>${esc(scr.title)}: ${lab}${st.star ? "*" : ""}.</b> ${esc(why)}</p>`;
   }
   const links = [c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">Latest annual report (SEC)</a>` : "",
     c.ev && c.ev.url ? `<a href="${esc(c.ev.url)}" target="_blank" rel="noopener">${esc(c.ev.types)} filing (${esc(c.ev.date)})</a>` : ""].filter(Boolean).join("");
@@ -621,18 +655,18 @@ const KIND = { new: "New position", add: "Added", cut: "Trimmed", exit: "Sold ou
    13F quarter, and insider open-market trades over the last 3 quarters. Information only, not a rule. */
 function holdersCard(c) {
   const ho = c.ho, ins = c.ins;
-  const hasHo = ho && ho.top && ho.top.length, hasIns = ins && (ins.buy || ins.sell || ins.plan_sell);
+  const hasHo = ho && ho.top && ho.top.length, hasIns = ins && (ins.buy || ins.sell || ins.plan_sell || ins.ex_sell);
   if (!hasHo && !hasIns && !(ho && (ho.buy || ho.sell))) return "";
   const p = S.meta.holders_period, pp = S.meta.holders_prev_period;
   let html = `<section class="card own-card"><div class="pv-top"><h3>Ownership</h3>${p ? `<span class="chip">13F, ${esc(niceDate(p))}</span>` : ""}</div>`;
   if (hasHo) {
     const rows = ho.top.map(([n, pc, sp, port, val]) => `<tr><td>${esc(n)}${sp ? ' <span class="chip spec-chip">Healthcare specialist</span>' : ""}</td>
-      <td>${pctTxt(pc)}</td><td>${port != null ? pctTxt(port) : "–"}</td><td>${usdShort(val)}</td></tr>`).join("");
-    html += `<h4>Top holders</h4><div class="tbl-wrap"><table class="pv-tbl ho-tbl"><thead><tr><th>Holder</th><th>Share of the company</th>
-      <th title="Position value / the holder's whole 13F portfolio: a high share means high conviction">Share of its portfolio</th><th>Value</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+      <td>${port != null ? pctTxt(port) : "–"}</td><td>${pctTxt(pc, 2)}</td><td>${usdShort(val)}</td></tr>`).join("");
+    html += `<h4>Top holders</h4><div class="tbl-wrap"><table class="pv-tbl ho-tbl"><thead><tr><th>Holder</th><th title="Position value / the holder's whole 13F portfolio: a high share means high conviction">Share of its portfolio</th>
+      <th>Share of the company</th><th>Value</th></tr></thead><tbody>${rows}</tbody></table></div>`;
     const spec = ho.sp && ho.sp.length && !ho.top.some((x) => x[2])
       ? ` Healthcare specialists also holding: ${ho.sp.map(esc).join(", ")}.` : "";
-    html += `<p class="muted small">${ho.n} institutions report holding it. Index funds and broker platforms are left out.${spec}</p>`;
+    if (spec) html += `<p class="muted small">${spec.trim()}</p>`;
   }
   const moveTbl = (rows, title) => rows && rows.length ? `<div><h4>${title}</h4><div class="tbl-wrap"><table class="pv-tbl ho-tbl"><thead><tr><th>Holder</th><th title="Change in shares held">Change</th><th>Value</th><th title="Position value / the holder's whole 13F portfolio">Portfolio</th></tr></thead><tbody>${
     rows.map(([n, dv, k, port, dsh]) => `<tr><td>${esc(n)}</td><td>${esc(KIND[k] || k)}${dsh != null && k !== "new" && k !== "exit" ? ` (${dsh > 0 ? "+" : "−"}${Math.abs(dsh * 100).toFixed(0)}%)` : ""}</td><td>${usdShort(dv)}</td><td>${port != null ? pctTxt(port) : "–"}</td></tr>`).join("")
@@ -650,8 +684,7 @@ function holdersCard(c) {
     };
     html += `<h4>Insider trades${qs.length ? `, ${esc(qLabel(qs[qs.length - 1]))} to ${esc(qLabel(qs[0]))}` : ""}</h4>
       <div class="tbl-wrap"><table class="pv-tbl ins-tbl"><thead><tr><th>Open-market trades</th><th>Trades</th><th>People</th><th>Value</th><th class="l">Largest</th></tr></thead><tbody>
-      ${side("buy", "Buys")}${side("sell", "Sales")}${side("plan_sell", "Sales under a preset plan (10b5-1)")}</tbody></table></div>
-      <p class="muted small">Officers, directors and 10% owners (SEC Forms 4/5). Option exercises, grants and gifts are left out; sales under a preset plan say little about conviction.</p>`;
+      ${side("buy", "Buys")}${side("sell", "Sales")}${side("plan_sell", "Pre-planned sales (10b5-1)")}${ins.ex_sell ? side("ex_sell", "Sold on exercising options") : ""}</tbody></table></div>`;
   } else if (qs.length) {
     html += `<h4>Insider trades</h4><p class="muted small">No open-market insider buys or sales reported from ${esc(qLabel(qs[qs.length - 1]))} to ${esc(qLabel(qs[0]))}.</p>`;
   }
@@ -712,11 +745,26 @@ async function generateModel(cid, btn) {
 function renderGaps() {
   const g = S.meta.gaps;
   const ex = S.meta.excluded.map(([why, n]) => `<li>${esc(why.replace("not screened: ", ""))}: ${n}</li>`).join("");
-  $("#gaps").innerHTML = `<p class="list-note">${g.length} companies. ${S.meta.screened} of ${S.meta.universe} NYSE and Nasdaq companies were screened.</p>
-    <div class="tbl-wrap"><table class="gaps-tbl"><thead><tr><th>Ticker</th><th>Company</th><th>Industry</th><th>Why it wasn't screened</th></tr></thead><tbody>
-    ${g.map((x) => `<tr><td>${esc(x.t)}</td><td>${esc(x.n)}</td><td>${esc(x.ind)}</td><td>${esc(x.why)}</td></tr>`).join("")}
+  const byB = {};
+  g.forEach((x) => { byB[x.b || "Other"] = (byB[x.b || "Other"] || 0) + 1; });
+  const sum = Object.entries(byB).sort((a, b) => b[1] - a[1]).map(([b, n]) => `<li><b>${n}</b> ${esc(b)}</li>`).join("");
+  $("#gaps").innerHTML = `<p class="list-note">${g.length} of ${S.meta.universe} companies. <button type="button" id="gapsCsv" class="btn small">Export list (CSV)</button></p>
+    ${sum ? `<ul class="notes blockers">${sum}</ul>` : ""}
+    <div class="tbl-wrap"><table class="gaps-tbl"><thead><tr><th>Ticker</th><th>Company</th><th>Industry</th><th>Blocker</th><th>Fix</th></tr></thead><tbody>
+    ${g.map((x) => `<tr><td>${esc(x.t)}</td><td>${esc(x.n)}</td><td>${esc(x.ind)}</td><td title="${esc(x.why)}">${esc(x.b || x.why)}</td><td class="muted">${esc(x.fix || "")}</td></tr>`).join("")}
     </tbody></table></div>
     ${ex ? `<h4>Excluded industries</h4><ul class="notes">${ex}</ul>` : ""}`;
+  $("#gapsCsv").addEventListener("click", () => {
+    const cols = [["ticker", "t"], ["company", "n"], ["cik", "cik"], ["exchange", "ex"], ["sic", "sic"], ["industry", "ind"],
+      ["blocker", "b"], ["fix", "fix"], ["screener message", "why"]];
+    const q = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+    const csv = [cols.map((c) => q(c[0])).join(",")].concat(g.map((x) => cols.map((c) => q(x[c[1]])).join(","))).join("\r\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8" }));
+    a.download = `couldnt_screen_${S.meta.screened_on || "list"}.csv`;
+    document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  });
 }
 
 window.addEventListener("hashchange", () => { if (S.meta) route(); });

@@ -94,6 +94,12 @@ def main(out_dir):
                 res[c] = r
         results[s.sid] = res
     state_path = os.path.join(TMP, "state.json.gz")
+    # invented examples for the Couldn't screen page
+    for i, (t, st) in enumerate([("NEWCO", "no XBRL financial data - no annual report yet (recent listing)"),
+                                 ("MAPL", "no XBRL financial data - Canadian 40-F filer whose financial statements aren't in SEC XBRL; check by hand"),
+                                 ("CUST", "revenue not found in standard XBRL tags (company-specific tag) - not screened; check by hand (see Data_Gaps for candidate tags)")]):
+        recs[990000 + i] = {"cik": 990000 + i, "ticker": t, "name": f"Demo {t} Inc", "exchange": "NYSE", "sic": "7372",
+                            "industry": "Services-Prepackaged Software", "stage": st}
     state = qp.save_state(results, ctxs, recs, {"demo": True}, TODAY, path=state_path, models=models)
     state["peers10"] = history.closest_peers(ctxs, 10)
     # invented month-end price histories (deterministic random walk ending at today's price)
@@ -136,7 +142,10 @@ def main(out_dir):
     ins = {}
     for c, ctx in list(ctxs.items())[::2]:
         px = ctx.get("price") or 50
-        ins[str(c)] = {"buy": {"n": 2, "value": round(px * 12000), "people": 1,
+        ins[str(c)] = {"sell": {"n": 3, "value": round(px * 40000), "people": 2,
+                               "top": [["Lena Moretti", "President", round(px * 30000), "2026-09-12"],
+                                       ["Omar Haddad", "Director", round(px * 10000), "2026-07-30"]]},
+                       "buy": {"n": 2, "value": round(px * 12000), "people": 1,
                                "top": [["Dana Whitfield", "Director", round(px * 12000), "2026-08-14"]]},
                        "plan_sell": {"n": 9, "value": round(px * 85000), "people": 2,
                                      "top": [["Ravi Castellanos", "Chief Executive Officer", round(px * 60000), "2026-09-02"],

@@ -7,9 +7,9 @@ Read this first. User preference: be concise and direct; use only context from t
 - Online they are GitHub repository secrets: SEC_USER_AGENT, MASSIVE_API_KEY, TWELVEDATA_API_KEY, PORTAL_PASSWORD, CLAUDE_CODE_OAUTH_TOKEN (user's subscription; no ANTHROPIC_API_KEY set).
 - Never ask the user to paste keys/tokens into chat. Never drag the PC project folder into GitHub.
 
-## What it is (v2.7.0)
+## What it is (v2.8.0)
 - Python screener over SEC XBRL + submissions; prices from Massive (free plan, 5 req/min), Twelve Data = backup + 10-year history; Cloudflare-hosted encrypted portal. Details and design notes: `docs/HANDOFF.md` (read the relevant section only).
-- 14 screens in `qs/screens.py` (site text in `qs/screen_text.py`, theses in `qs/thesis.py`, thresholds in `config.json`). `site/app.js` statusOf mirrors the Python classes. VALUATION_GATES = E12,C8,O11,R10,T8,X9,B7,A16.
+- 14 screens in `qs/screens.py` (site text in `qs/screen_text.py`, theses in `qs/thesis.py`, thresholds in `config.json`). `site/app.js` statusOf mirrors the Python classes. VALUATION_GATES = E12,C8,O11,R10,T8,X9,B7,A16. Pass* = no verified miss, some rules unverifiable (asterisk + hover note); `screens.DEFINING_GATES` unverifiable, no financials yet, or Red Flags -> CHECK (near miss).
 - Daily SEC sync (`qs/secsync.py`) + bulk files; workflows screen / daily / background (see HANDOFF).
 - Local preview: `python tests/demo_portal.py OUT_DIR` (real samples, invented prices and invented 13F holders).
 - Tests: `python3 tests/run_tests.py` must print "ALL TESTS PASSED".

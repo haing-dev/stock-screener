@@ -408,7 +408,7 @@ def write_outputs(path, cfg, run_info, screens, results, ctxs, records, cyc, tod
         gaps = []
         for s in screens:
             for c, r in results[s.sid].items():
-                if r["class"] != "CHECK":
+                if r["class"] != "CHECK" and not r.get("star"):
                     continue
                 ctx = ctxs[c]
                 cands = ctx.get("data_gap_candidates") or {}

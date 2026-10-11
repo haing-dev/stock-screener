@@ -136,22 +136,27 @@ def choose_filings(zf, min_filers=1500):
     return period, {a: (name, str(cik)) for cik, (_, a, name) in best.items()}
 
 
-def scan_values(zf, accns):
-    """Pass 1: total value per CUSIP and per manager (portfolio size), plus each CUSIP's issuer name."""
+def scan_values(zf, accns, npos=None):
+    """Pass 1: total value per CUSIP and per manager (stock portfolio size, options left out), plus each CUSIP's
+    issuer name. npos (a dict) receives the number of different stocks each filing holds."""
     by_cusip, by_mgr, names = defaultdict(float), defaultdict(float), {}
+    held = defaultdict(set)
     for r in _table(zf, "INFOTABLE"):
         a = r.get("ACCESSION_NUMBER")
         if a not in accns:
             continue
         v = _num(r.get("VALUE"))
-        by_mgr[a] += v
         if (r.get("PUTCALL") or "").strip() or (r.get("SSHPRNAMTTYPE") or "").strip().upper() != "SH":
             continue
+        by_mgr[a] += v
         cu = (r.get("CUSIP") or "").strip().upper()
         if len(cu) != 9:
             continue
+        held[a].add(cu[:6])
         by_cusip[cu] += v
         names.setdefault(cu, ((r.get("NAMEOFISSUER") or "").strip(), (r.get("TITLEOFCLASS") or "").strip()))
+    if npos is not None:
+        npos.update({a: len(x) for a, x in held.items()})
     return by_cusip, by_mgr, names
 
 
@@ -217,7 +222,8 @@ def top_active(entry, shares_out, passive, n=5):
     ...] - the top n holders that aren't index funds or broker platforms (config portal.holders.passive)."""
     out = []
     sp = set((entry or {}).get("sp") or [])
-    for name, value, sh, port in (entry or {}).get("h") or []:
+    rows = sorted((entry or {}).get("h") or [], key=lambda x: -(x[3] or 0))
+    for name, value, sh, port in rows:
         if is_match(name, passive):
             continue
         pct = round(sh / shares_out, 4) if shares_out and sh else None
@@ -346,6 +352,46 @@ def map_issuers(names, by_cusip, ctxs, cache, api_key="", budget_s=900, min_valu
     return out, remaining
 
 
+# ------------------------------------------------------------------ who counts as a 'conviction' holder
+MGR_PATH = os.path.join(HOLD_DIR, "managers.json.gz")
+
+
+def manager_stats(by_acc, npos, accns, today, log=print, max_age_days=365):
+    """{manager_cik: [name, 13F stock portfolio $, number of stocks]} - measured once from a 13F data set and kept
+    for a year (fund sizes and styles change slowly)."""
+    from .sec import cache_read, cache_write
+    old = cache_read(MGR_PATH) or {}
+    try:
+        fresh = old.get("as_of") and (today - date.fromisoformat(old["as_of"])).days <= max_age_days
+    except ValueError:
+        fresh = False
+    if fresh and old.get("by_cik"):
+        return old["by_cik"]
+    st = {}
+    for a, v in by_acc.items():
+        name, mcik = accns[a]
+        cur = st.get(mcik) or [name, 0.0, 0]
+        st[mcik] = [name, cur[1] + v, max(cur[2], npos.get(a, 0))]
+    st = {k: [n, round(v), c] for k, (n, v, c) in st.items()}
+    cache_write(MGR_PATH, {"as_of": today.isoformat(), "by_cik": st})
+    log(f"  fund sizes measured for {len(st)} managers (kept until {today.replace(year=today.year + 1)})")
+    return st
+
+
+def is_excluded(name, stats, rules):
+    """Index funds and broker platforms, the largest fund houses ('own everything') and quant / multi-manager funds:
+    by name (config lists) or by the 13F itself (more than max_positions stocks, or a huge portfolio across many)."""
+    if is_match(name, rules.get("passive") or ()) or is_match(name, rules.get("exclude") or ()):
+        return True
+    if stats:
+        _, aum, n = stats
+        if n > rules.get("max_positions", 1000):
+            return True
+        if aum > rules.get("huge_aum", 250e9) and n > rules.get("huge_aum_positions", 500):
+            return True
+    return False
+
+
 def _by_manager(pos_for_company, accns):
     """{accn: [value, shares]} -> {manager_cik: [value, shares, name]} (one filing per manager per quarter)."""
     out = {}
@@ -356,15 +402,25 @@ def _by_manager(pos_for_company, accns):
     return out
 
 
-def build(zf, ctxs, cache, api_key="", budget_s=900, top=15, log=print, figi=None, specialists=(), prev_zf=None,
-          moves=8):
+def build(zf, ctxs, cache, api_key="", budget_s=900, top=10, log=print, figi=None, specialists=(), prev_zf=None,
+          moves=8, rules=None, today=None):
     """Top holders per company, plus (with the previous quarter's data set) who bought and who sold or exited, and
     each holder's position as a share of its whole 13F portfolio (conviction)."""
     period, accns = choose_filings(zf)
     if not accns:
         raise RuntimeError("no 13F holdings filings found in the ZIP")
     log(f"  13F period {period}: {len(accns)} managers")
-    by_cusip, by_acc, names = scan_values(zf, accns)
+    npos = {}
+    by_cusip, by_acc, names = scan_values(zf, accns, npos)
+    rules = rules or {}
+    stats = manager_stats(by_acc, npos, accns, today or date.today(), log=log)
+    min_aum = rules.get("min_manager_aum", 500e6)
+    excl = {}
+
+    def excluded(mcik, name):
+        if mcik not in excl:
+            excl[mcik] = is_excluded(name, stats.get(mcik), rules)
+        return excl[mcik]
     cusip_cik, remaining = map_issuers(names, by_cusip, ctxs, cache, api_key=api_key, budget_s=budget_s, log=log,
                                        figi=figi)
     pos = positions(zf, accns, cusip_cik)
@@ -382,11 +438,24 @@ def build(zf, ctxs, cache, api_key="", budget_s=900, top=15, log=print, figi=Non
     by_cik = {}
     for cik, accs in pos.items():
         cur = _by_manager(accs, accns)
-        ranked = sorted(cur.items(), key=lambda kv: kv[1][0], reverse=True)
-        h = []
-        for mcik, (v, sh, name) in ranked[:top]:
+        ctx = ctxs.get(cik) or ctxs.get(str(cik)) or ctxs.get(int(cik) if str(cik).isdigit() else cik) or {}
+        sh_out = ctx.get("shares_used")
+        # conviction: the position as a share of the holder's own portfolio, among real active holders of a
+        # meaningful stake (fund >= $500M; stake >= 0.25% of the company or >= $250M)
+        cand = []
+        for mcik, (v, sh, name) in cur.items():
             pv = port.get(mcik) or 0
-            h.append([clean_manager(name), round(v), round(sh), round(v / pv, 5) if pv else None])
+            if not pv or pv < min_aum or excluded(mcik, name):
+                continue
+            big = v >= rules.get("min_stake_usd", 250e6)
+            if sh_out:
+                big = big or sh >= rules.get("min_stake_share", 0.0025) * sh_out
+            else:
+                big = big or v >= rules.get("min_stake_usd_unknown_shares", 25e6)
+            if big:
+                cand.append((v / pv, mcik, v, sh, name))
+        cand.sort(reverse=True)
+        h = [[clean_manager(name), round(v), round(sh), round(ps, 5)] for ps, _, v, sh, name in cand[:top]]
         sp = sorted({clean_manager(name) for (_, _, name) in cur.values() if is_match(name, specialists)})
         ent = {"h": h, "n": len(cur), "sp": sp}
         if p_period:
@@ -410,6 +479,8 @@ def build(zf, ctxs, cache, api_key="", budget_s=900, top=15, log=print, figi=Non
                 else:
                     val, kind = (csh - psh) * (px or (c_[0] / csh)), "add" if csh > psh else "cut"
                 name = (c_ or p_)[2]
+                if excluded(mcik, name):
+                    continue
                 pv = port.get(mcik) or 0
                 chg.append([clean_manager(name), round(val), kind, round(c_[0] / pv, 5) if (c_ and pv) else None,
                             round((csh - psh) / psh, 3) if psh else None])
@@ -418,7 +489,7 @@ def build(zf, ctxs, cache, api_key="", budget_s=900, top=15, log=print, figi=Non
             ent["sell"] = [x for x in chg if x[1] < 0][:moves]
         by_cik[str(cik)] = ent
     return {"period": period.isoformat() if period else None, "prev_period": p_period.isoformat() if p_period else None,
-            "by_cik": by_cik, "unmapped_issuers": remaining}
+            "by_cik": by_cik, "unmapped_issuers": remaining, "v": SCHEMA}
 
 
 def _fetch(client, url, timeout=300):
@@ -442,6 +513,9 @@ def _fetch(client, url, timeout=300):
             return None
         time.sleep(10 * (attempt + 1))
     return None
+
+
+SCHEMA = 2      # bump to rebuild from the stored data set (2: conviction ranking, fund-house / quant exclusions)
 
 
 def update(client, state, cfg, log=print, today=None):
@@ -478,7 +552,7 @@ def update(client, state, cfg, log=print, today=None):
 
     for i, (url, _, end) in enumerate(links[:4]):
         name = url.rsplit("/", 1)[-1]
-        if prev.get("zip") == name and prev.get("complete"):
+        if prev.get("zip") == name and prev.get("complete") and prev.get("v") == SCHEMA:
             log(f"13F holders: {name} already processed (next data set expected after the next quarter's filings)")
             return prev
         cur_path = get_zip(url)
@@ -496,7 +570,7 @@ def update(client, state, cfg, log=print, today=None):
             try:
                 res = build(zf, state["ctxs"], cache, api_key=api_key,
                             budget_s=float(pc.get("figi_budget_seconds", 900)), log=log,
-                            specialists=pc.get("specialists") or (), prev_zf=pz)
+                            specialists=pc.get("specialists") or (), prev_zf=pz, rules=pc, today=today)
             finally:
                 if pz:
                     pz.close()

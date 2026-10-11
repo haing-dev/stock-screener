@@ -2,7 +2,8 @@
 
 One ZIP per calendar quarter (tab-separated tables). The last three quarters are combined per company: open-market
 purchases (code P) and sales (code S) by officers, directors and 10% owners, with the largest buyers and sellers.
-Sales under a pre-arranged 10b5-1 trading plan are counted separately (they say little about conviction).
+Sales under a pre-arranged 10b5-1 trading plan, and sales on the day of an option exercise, are counted separately
+(they say little about conviction).
 Rebuilt only when SEC posts a new quarter. Output: cache/prices/insiders/insiders.json.gz.
 """
 import csv
@@ -104,13 +105,20 @@ def scan(zf, wanted, acc):
         a = r.get("ACCESSION_NUMBER")
         if a in subs and a not in owners:
             owners[a] = ((r.get("RPTOWNERNAME") or "").strip(), _role(r.get("RPTOWNER_RELATIONSHIP"), r.get("RPTOWNER_TITLE")))
-    for r in _table(zf, "NONDERIV_TRANS"):
-        a = r.get("ACCESSION_NUMBER")
-        if a not in subs:
-            continue
-        code = (r.get("TRANS_CODE") or "").strip().upper()
-        if code not in ("P", "S"):
-            continue
+    # option exercises / conversions per filing and day: a sale the same day is monetising pay ('exercise and
+    # sell'), not a view on the shares
+    exer, trades = set(), []
+    for tbl in ("DERIV_TRANS", "NONDERIV_TRANS"):
+        for r in _table(zf, tbl):
+            a = r.get("ACCESSION_NUMBER")
+            if a not in subs:
+                continue
+            code = (r.get("TRANS_CODE") or "").strip().upper()
+            if code in ("M", "X", "C", "O"):
+                exer.add((a, (r.get("TRANS_DATE") or "").strip().upper()))
+            elif tbl == "NONDERIV_TRANS" and code in ("P", "S"):
+                trades.append((a, code, r))
+    for a, code, r in trades:
         sh, px = _num(r.get("TRANS_SHARES")), _num(r.get("TRANS_PRICEPERSHARE"))
         if sh <= 0 or px <= 0:
             continue
@@ -118,7 +126,8 @@ def scan(zf, wanted, acc):
         name, role = owners.get(a, ("", ""))
         d = _d(r.get("TRANS_DATE"))
         e = acc[ic]
-        side = "buy" if code == "P" else ("plan_sell" if plan else "sell")
+        same_day = (a, (r.get("TRANS_DATE") or "").strip().upper()) in exer
+        side = "buy" if code == "P" else ("plan_sell" if plan else "ex_sell" if same_day else "sell")
         e[side]["n"] += 1
         e[side]["value"] += sh * px
         p = e[side]["who"].setdefault(name, [role, 0.0, ""])
@@ -128,7 +137,7 @@ def scan(zf, wanted, acc):
 
 def build(zips, ctxs, log=print):
     wanted = {int(c) for c in ctxs}
-    acc = defaultdict(lambda: {k: {"n": 0, "value": 0.0, "who": {}} for k in ("buy", "sell", "plan_sell")})
+    acc = defaultdict(lambda: {k: {"n": 0, "value": 0.0, "who": {}} for k in ("buy", "sell", "plan_sell", "ex_sell")})
     for zf in zips:
         scan(zf, wanted, acc)
     out = {}
@@ -151,6 +160,9 @@ def _fetch(client, url, timeout=300):
     return f(client, url, timeout)
 
 
+SCHEMA = 2      # bump to rebuild (2: sales on the day of an option exercise counted apart)
+
+
 def update(client, state, cfg, log=print, today=None, quarters=3):
     """Rebuild when SEC has posted a new quarter; otherwise keep the stored result."""
     from .sec import cache_read, cache_write
@@ -165,7 +177,7 @@ def update(client, state, cfg, log=print, today=None, quarters=3):
     for url, q in links:
         if q in names:
             continue
-        if not zips and prev.get("latest") == q:
+        if not zips and prev.get("latest") == q and prev.get("v") == SCHEMA:
             log(f"Insider trades: {q} already processed")
             return prev
         blob = _fetch(client, url)
@@ -183,7 +195,7 @@ def update(client, state, cfg, log=print, today=None, quarters=3):
     finally:
         for z in zips:
             z.close()
-    res = {"latest": names[0], "quarters": names, "built": today.isoformat(), "by_cik": by_cik}
+    res = {"latest": names[0], "quarters": names, "built": today.isoformat(), "by_cik": by_cik, "v": SCHEMA}
     cache_write(OUT_PATH, res)
     log(f"Insider trades ({', '.join(names)}): open-market trades for {len(by_cik)} companies")
     return res

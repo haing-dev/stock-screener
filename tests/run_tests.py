@@ -62,7 +62,7 @@ R = {r["ticker"]: r for r in records.values()}
 
 def cls(screen, t):
     r = results[screen].get(T.get(t))
-    return r["class"] if r else "outside"
+    return (r["class"] + ("*" if r.get("star") else "")) if r else "outside"
 
 
 print("\nUniverse and data")
@@ -148,10 +148,10 @@ check("20-F issuer market cap marked unverified (ADR ratio)", "ADR" in (ctxs[T["
 print("\nScreens")
 expect = {
     "core": {"GOOD": "PASS", "RIVL": "PASS", "PHRM": "PASS", "SLOW": "ONE", "LEVR": "ONE", "LOSS": "FAIL",
-             "NEAR": "NEAR", "NCPX": "CHECK", "ALTX": "CHECK", "STEL": "outside", "BANK": "outside"},
+             "NEAR": "NEAR", "NCPX": "PASS*", "ALTX": "PASS*", "STEL": "outside", "BANK": "outside"},
     "emerging": {"EMRG": "PASS", "DILU": "ONE", "PRCY": "PRICE", "GOOD": "FAIL", "BIOX": "FAIL"},
     "special": {"SPIN": "PASS", "REOR": "PASS", "NIPO": "FAIL", "GOOD": "outside"},
-    "fortress": {"FORT": "PASS", "SHOK": "FAIL", "GOOD": "CHECK", "NCPX": "CHECK", "LEVR": "FAIL"},
+    "fortress": {"FORT": "PASS", "SHOK": "FAIL", "GOOD": "PASS*", "NCPX": "PASS*", "LEVR": "FAIL"},
     "hc_commercial": {"PHRM": "PASS", "BIOX": "FAIL", "GOOD": "outside"},
     "hc_clinical": {"BIOX": "PASS", "BURN": "FAIL", "PHRM": "outside"},
     "cyclicals": {"STEL": "PASS", "STL2": "ONE", "PEAK": "FAIL", "GOOD": "outside"},
@@ -189,7 +189,17 @@ check("tech hardware: gross margin must rise; inventory at a 5-year high fails",
 check("tech: FCF not positive fails the stock-pay rule",
       BY_ID["tech"].gates[8].evaluate({"sbc_to_fcf_3y": None, "sbc_to_fcf_3y_nm": "free cash flow not positive"},
                                       cfg, "tech")[0] == "FAIL")
-check("NCPX: missing capex is a CHECK with the reason, not a FAIL",
+_G = qs_screens.Gate
+_mk = lambda st: (lambda ctx, cfg, scope, s=0.0: (st, None, None, "x"))
+_ga, _gb = _G("ZZ1", "Trait", fn=_mk("NO DATA")), _G("ZZ2", "Other", fn=_mk("NO DATA"))
+_ga.defining, _gb.defining = True, False
+_sc = qs_screens.Screen("zz", "Z", "", "", None, [_gb], {}, {}, [], "")
+_sc2 = qs_screens.Screen("zz", "Z", "", "", None, [_ga, _gb], {}, {}, [], "")
+_sc3 = qs_screens.Screen("zz", "Z", "", "", None, [_gb], {}, {}, [], ""); _sc3.avoid = True
+check("pass with asterisk only when the defining rule is checked and it isn't the avoid list",
+      _sc.evaluate({}, cfg)["class"] == "PASS" and _sc.evaluate({}, cfg).get("star")
+      and _sc2.evaluate({}, cfg)["class"] == "CHECK" and _sc3.evaluate({}, cfg)["class"] == "CHECK")
+check("NCPX: missing capex is a pass with an asterisk and the reason, not a FAIL",
       "capital expenditure" in " ".join(results["core"][T["NCPX"]]["check_notes"]))
 check("emerging DILU fails on dilution only", results["emerging"][T["DILU"]]["failed"] == ["E8"])
 check("emerging PRCY fails on valuation only", results["emerging"][T["PRCY"]]["failed"] == ["E12"])
@@ -304,7 +314,7 @@ r, _ = core_class("msft")
 check("real data: MSFT is now a near miss on cash conversion (AI capex + stock pay: FCF after SBC < 0.8x net income)",
       r["class"] == "NEAR" and r["failed"] == ["G7"], f"{r['class']} {r['failed']}")
 r, _ = core_class("adp")
-check("real data: ADP (capex tag not in the old cache) is now CHECK, not FAIL", r["class"] == "CHECK",
+check("real data: ADP (capex tag not in the old cache) is a pass with an asterisk, not FAIL", r["class"] == "PASS" and r.get("star"),
       f"{r['class']} {r['check_notes'][:1]}")
 r, _ = core_class("odfl")
 check("real data: ODFL fails cash conversion and 'revenue not shrinking' (sales below 3 years ago)",
@@ -547,8 +557,8 @@ spec["PaymentsToAcquirePropertyPlantAndEquipment"] = ("duration", {y: v for y, v
                                                        spec["PaymentsToAcquirePropertyPlantAndEquipment"][1].items() if y <= 2011})
 c, cd, m = syn_ctx(spec)
 r = BY_ID["core"].evaluate(c, cfg, priced=False)
-check("capex tagged only 2007-11: no estimate for the 10-year window -> Core 'check manually', not PASS",
-      r["class"] == "CHECK" and "G7" in r["no_data"], f"{r['class']} {r['no_data']}")
+check("capex tagged only 2007-11: no estimate for the 10-year window -> pass with an asterisk (G7 unverified)",
+      r["class"] == "PASS" and r.get("star") and "G7" in r["no_data"], f"{r['class']} {r['no_data']}")
 spec = sy.base_company(first=2007, rev0=1e9, growth=0.06, om=0.12, ni_m=0.08)
 PT = "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
 for k in ("OperatingIncomeLoss", PT):
@@ -739,8 +749,8 @@ _cp = P.screen_payload(BY_ID["core"], results["core"], ctxs, cfg)
 check("portal: 'recent report' is applied but hidden from the rules table; no investor names in rationales",
       [g["id"] for g in _cp["gates"] if g["hidden"]] == ["G2"]
       and not any(n in g["why"] for g in _cp["gates"] for n in ("Kantesaria", "Dorsey", "Smith", "Haley", "Stahl")))
-check("portal: same table columns on every screen (P/E, EV/EBIT, FCF yield, ROIC 10y median, 5y revenue CAGR)",
-      _cp["metrics"] == ["pe", "ev_ebit", "fcf_yield", "roic_median", "revenue_cagr_5y"]
+check("portal: same table columns on every screen (P/E, EV/EBIT, EV/Sales, FCF yield, ROIC 10y median, 5y revenue CAGR)",
+      _cp["metrics"] == ["pe", "ev_ebit", "ev_sales", "fcf_yield", "roic_median", "revenue_cagr_5y"]
       and _rf["metrics"] == _cp["metrics"])
 
 # statement model: diluted shares restated to today's basis through GOOD's 2-for-1 split (2020)
@@ -859,9 +869,10 @@ with _zf.ZipFile(_buf, "w") as z:
         ["a2", "ACME CORP", "CL B", "000111BB9", 1e8, 1e6, "SH", ""], ["a2", "ACME CORP", "COM", "000111AA1", 7e8, 7e6, "SH", "CALL"],
         ["a2", "OTHER CO", "COM", "999999ZZ9", 4e8, 4e6, "SH", ""], ["a3", "ACME CORP", "COM", "000111AA1", 3e8, 3e6, "SH", ""],
         ["a4", "ACME CORP", "COM", "000111AA1", 2e8, 2e6, "SH", ""], ["a5", "ACME CORP", "COM", "000111AA1", 8e8, 8e6, "SH", ""]]))
+_rules = {"passive": ["Vanguard"], "min_manager_aum": 1e8}
 with _zf.ZipFile(_io.BytesIO(_buf.getvalue())) as z:
     _res = QH.build(z, {"77": {"ticker": "ACME", "name": "Acme Corp"}}, {}, figi=lambda cus, **k: {c: ("ACME" if c.startswith("000111") else "") for c in cus},
-                    log=lambda *a: None, specialists=["Ostrander Biotech"])
+                    log=lambda *a: None, specialists=["Ostrander Biotech"], rules=_rules)
 _e = _res["by_cik"].get("77") or {}
 _names = [h[0] for h in _e.get("h", [])]
 # previous quarter: Northfield held 2m shares (adds), Old Fund held 1m (exits), Vanguard unchanged
@@ -879,7 +890,7 @@ with _zf.ZipFile(_buf2, "w") as z:
 with _zf.ZipFile(_io.BytesIO(_buf.getvalue())) as z, _zf.ZipFile(_io.BytesIO(_buf2.getvalue())) as z2:
     _res2 = QH.build(z, {"77": {"ticker": "ACME", "name": "Acme Corp"}}, {},
                      figi=lambda cus, **k: {c: ("ACME" if c.startswith("000111") else "") for c in cus},
-                     log=lambda *a: None, prev_zf=z2)
+                     log=lambda *a: None, prev_zf=z2, rules=_rules)
 _e2 = _res2["by_cik"]["77"]
 _buy = {b[0]: b for b in _e2.get("buy", [])}
 _sell = {b[0]: b for b in _e2.get("sell", [])}
@@ -888,33 +899,45 @@ check("13F: buyers and sellers against the previous quarter (new, add, exit) wit
       and _buy["Ostrander Biotech Partners"][2] == "new" and _sell["Old Fund"][2] == "exit"
       and "Vanguard Group" not in _buy and _buy["Northfield Partners"][3] is not None, str(_e2))
 check("13F: latest period, restatement replaces the original, options and other issuers ignored, share classes combined",
-      _res["period"] == "2026-06-30" and _e.get("n") == 3 and _names[:1] == ["Vanguard Group"]
+      _res["period"] == "2026-06-30" and _e.get("n") == 3
       and dict((h[0], h[1]) for h in _e["h"]).get("Northfield Partners") == 6e8
       and dict((h[0], h[1]) for h in _e["h"]).get("Ostrander Biotech Partners") == 2e8, str(_e))
+check("13F: holders ranked by the share of their own portfolio (conviction); index funds left out; options not in the portfolio",
+      _names == ["Ostrander Biotech Partners", "Northfield Partners"]
+      and abs(dict((h[0], h[3]) for h in _e["h"])["Northfield Partners"] - 0.6) < 1e-9, str(_e))
 _top = QH.top_active(_e, 100e6, cfg["portal"]["holders"]["passive"])
-check("13F: the site column leaves out index funds, shows % of the company and marks specialists",
-      [t[0] for t in _top] == ["Northfield Partners", "Ostrander Biotech Partners"] and abs(_top[0][1] - 0.06) < 1e-9
-      and _top[1][2] is True, str(_top))
+check("13F: the site column keeps the conviction order, shows % of the company and marks specialists",
+      [t[0] for t in _top] == ["Ostrander Biotech Partners", "Northfield Partners"] and abs(_top[1][1] - 0.06) < 1e-9
+      and _top[0][2] is True, str(_top))
+check("13F: funds that own everything (by position count) or named fund houses / quants are left out",
+      QH.is_excluded("Northfield Partners", ["Northfield Partners", 1e9, 1200], {"max_positions": 1000})
+      and QH.is_excluded("Giant Funds", ["Giant Funds", 400e9, 600], {})
+      and not QH.is_excluded("Berkshire Hathaway", ["Berkshire Hathaway", 300e9, 40], {})
+      and QH.is_excluded("FMR LLC", None, cfg["portal"]["holders"])
+      and QH.is_excluded("Renaissance Technologies LLC", None, cfg["portal"]["holders"]))
 # insider trades (SEC Form 345 data set): open-market buys, sales, 10b5-1 plan sales; amendments and grants ignored
 import io as _io, zipfile as _zf  # noqa: E402
 import qs.insiders as QI  # noqa: E402
 _b = _io.BytesIO()
 with _zf.ZipFile(_b, "w") as z:
     z.writestr("SUBMISSION.tsv", "ACCESSION_NUMBER\tDOCUMENT_TYPE\tISSUERCIK\tAFF10B5ONE\n"
-               "a1\t4\t1001\t0\na2\t4\t1001\t1\na3\t4/A\t1001\t0\na4\t4\t9999\t0\na5\t4\t1001\t0\n")
+               "a1\t4\t1001\t0\na2\t4\t1001\t1\na3\t4/A\t1001\t0\na4\t4\t9999\t0\na5\t4\t1001\t0\na6\t4\t1001\t0\n")
     z.writestr("REPORTINGOWNER.tsv", "ACCESSION_NUMBER\tRPTOWNERNAME\tRPTOWNER_RELATIONSHIP\tRPTOWNER_TITLE\n"
                "a1\tSMITH JANE\tDirector\t\na2\tDOE JOHN\tOfficer\tChief Executive Officer\n"
                "a3\tSMITH JANE\tDirector\t\na4\tX\tDirector\t\na5\tROE RICHARD\tOfficer\tCFO\n")
     z.writestr("NONDERIV_TRANS.tsv", "ACCESSION_NUMBER\tTRANS_DATE\tTRANS_CODE\tTRANS_SHARES\tTRANS_PRICEPERSHARE\n"
                "a1\t15-MAY-2026\tP\t1000\t50\na2\t02-JUN-2026\tS\t2000\t60\na3\t15-MAY-2026\tP\t1000\t50\n"
-               "a4\t01-JUN-2026\tP\t5\t5\na5\t03-JUN-2026\tS\t100\t60\na5\t03-JUN-2026\tA\t900\t0\n")
+               "a4\t01-JUN-2026\tP\t5\t5\na5\t03-JUN-2026\tS\t100\t60\na5\t03-JUN-2026\tA\t900\t0\n"
+               "a6\t05-JUN-2026\tS\t300\t60\n")
+    z.writestr("DERIV_TRANS.tsv", "ACCESSION_NUMBER\tTRANS_DATE\tTRANS_CODE\n" "a6\t05-JUN-2026\tM\n")
 _ins = QI.build([_zf.ZipFile(_io.BytesIO(_b.getvalue()))], {1001: {}})
 _i1 = _ins.get("1001") or {}
 check("insiders: open-market buys, plan sales and other sales split; amendments, grants and other issuers ignored",
       set(_ins) == {"1001"} and _i1["buy"]["n"] == 1 and _i1["buy"]["value"] == 50000
       and _i1["buy"]["top"][0][:2] == ["Smith Jane", "Director"] and _i1["buy"]["top"][0][3] == "2026-05-15"
       and _i1["plan_sell"]["value"] == 120000 and _i1["plan_sell"]["top"][0][1] == "Chief Executive Officer"
-      and _i1["sell"]["n"] == 1 and _i1["sell"]["value"] == 6000, str(_ins))
+      and _i1["sell"]["n"] == 1 and _i1["sell"]["value"] == 6000
+      and _i1["ex_sell"]["value"] == 18000, str(_ins))
 check("insiders: data-set links parsed newest first",
       [q for _, q in QI.zip_links('<a href="/files/structureddata/data/insider-transactions-data-sets/2026q1_form345.zip">'
                                   '<a href="/files/x/2026q2_form345.zip">')] == ["2026q2", "2026q1"])
@@ -922,6 +945,16 @@ check("13F: manager names cleaned", QH.clean_manager("JPMORGAN CHASE & CO") == "
       and QH.clean_manager("BAILLIE GIFFORD & CO") == "Baillie Gifford" and QH.clean_manager("VANGUARD GROUP INC") == "Vanguard Group",
       QH.clean_manager("JPMORGAN CHASE & CO"))
 
+# check report: asterisk notes and the couldn't-screen list grouped by blocker
+import qs.checkreport as QCR  # noqa: E402
+_st = P.save_state(results, ctxs, records, {}, TODAY, path=os.path.join(TMP, "state_test.json.gz"))
+_rep = QCR.build(_st, cfg)
+check("check report lists couldn't-screen companies by blocker and asterisk notes",
+      "## Couldn't screen" in _rep and "Core Compounders" in _rep, _rep[-300:])
+check("couldn't screen: plain blocker and fix for each SEC message",
+      P.blocker("no XBRL financial data - no annual report yet (recent listing)")[0].startswith("New listing")
+      and P.blocker("revenue not found in standard XBRL tags (company-specific tag) - not screened")[1].startswith("Accept")
+      and P.blocker("download error (financials): timeout")[1].startswith("Retried"))
 # near-miss reasons: every rule names what it measures, with a short threshold
 _pay = QP.screen_payload(BY_ID["core"], {}, {}, cfg)
 _g5 = next(g for g in _pay["gates"] if g["id"] == "G5a")
