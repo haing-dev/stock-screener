@@ -1,6 +1,6 @@
 # Investor research store
 
-355 investor/CEO interview transcripts plus the fact-checked notes built from them (Doc 1: per-video notes, Doc 2: by topic).
+397 investor/CEO interview transcripts plus the fact-checked notes built from them (Doc 1: per-video notes, Doc 2: by topic).
 The Google Docs remain the readable copy; this folder is the working copy for search and fact-checking.
 
 ## Layout
@@ -18,12 +18,14 @@ The Google Docs remain the readable copy; this folder is the working copy for se
 
 ## Source folders (Oct 2026)
 Google Drive `G:\My Drive\Transcripts\` has one subfolder per collection: `YouTube Transcripts` (general investing),
-`Healthcare Transcripts`, `Macro Transcripts` (macro + thematic), `Crypto Transcripts` and `Real Estate Transcripts`
-(both skipped for now). Files named only by a YouTube id are older copies of titled files and are skipped.
+`Healthcare Transcripts`, `Macro Transcripts` (macro + thematic), `Crypto Transcripts` (skipped). Since Oct 12, 2026 the
+sector folders sit directly under `G:\My Drive\`: `Energy Transcripts`, `Consumer & Retail Transcripts`, `Banking Transcripts`,
+`Media & Entertainment Transcripts` (collections energy, consumer, banking, media), plus `Real Estate Transcripts` (skipped),
+`AI Transformation Transcripts` and `Automotive & Industrial Transcripts` (mapped as ai / industrial, not processed yet). Files named only by a YouTube id are older copies of titled files and are skipped.
 `collections.json` > `screens` lists which collections inform each screener (e.g. hc_clinical: healthcare;
 fortress, cyclicals, trough_cash, real_assets, red_flags: general + macro). Store ids: 1-113 (first batches, now
 tagged by folder; 43 and 111-113 sit in Crypto, 50 is no longer in Drive = `archive`), 114-135 healthcare,
-136-161 macro, 162-211 general (added Oct 10, 2026), 212-253 BG2 tech/AI podcasts (212-216 macro, rest general; added Oct 10, 2026; JSON insights incl. `tech_screen_ideas` kept outside the repo), 254-355 added Oct 12, 2026 (254-258 healthcare, 259-272 macro, 273-355 general: mostly NBIM's "In Good Company" with Nicolai Tangen, plus Rob Vinall / RV Capital, Kantesaria, Klarman, Bessent x3, Kyle Bass, Cullen Roche, Citrone; highlights cuts end with a link to the full episode; per-talk JSON insights incl. `macro_ideas` and `sector_signals` kept outside the repo).
+136-161 macro, 162-211 general (added Oct 10, 2026), 212-253 BG2 tech/AI podcasts (212-216 macro, rest general; added Oct 10, 2026; JSON insights incl. `tech_screen_ideas` kept outside the repo), 254-355 added Oct 12, 2026, then 356-397 the same day from the sector folders (356-366 energy, 367-377 consumer, 378-387 banking, 388-397 media; 37, 42, 211 and 233 re-tagged to banking / consumer / energy because they now sit in those folders) (254-258 healthcare, 259-272 macro, 273-355 general: mostly NBIM's "In Good Company" with Nicolai Tangen, plus Rob Vinall / RV Capital, Kantesaria, Klarman, Bessent x3, Kyle Bass, Cullen Roche, Citrone; highlights cuts end with a link to the full episode; per-talk JSON insights incl. `macro_ideas` and `sector_signals` kept outside the repo).
 
 ## Look things up (cheapest first)
 1. `grep -i <name> index.jsonl` → which ids.

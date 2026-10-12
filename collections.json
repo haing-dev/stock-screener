@@ -1,35 +1,95 @@
 {
-  "_note": "Google Drive: G:\\My Drive\\Transcripts\\<subfolder>. Each subfolder is a collection. 'screens' = which collections inform each screener (first = primary). Crypto and real estate are not processed for now.",
+  "_note": "Google Drive: G:\\My Drive\\Transcripts\\<subfolder>. Each subfolder is a collection. 'screens' = which collections inform each screener (first = primary). Crypto and real estate are not processed for now. Since Oct 12, 2026 the sector folders (Energy, Consumer & Retail, Banking, Media & Entertainment, plus AI Transformation and Automotive & Industrial) sit directly under G:\\My Drive, not inside Transcripts.",
   "drive_root": "G:\\My Drive\\Transcripts",
   "folders": {
     "YouTube Transcripts": "general",
     "Healthcare Transcripts": "healthcare",
     "Macro Transcripts": "macro",
     "Crypto Transcripts": "crypto",
-    "Real Estate Transcripts": "real_estate"
+    "Real Estate Transcripts": "real_estate",
+    "Energy Transcripts": "energy",
+    "Consumer & Retail Transcripts": "consumer",
+    "Banking Transcripts": "banking",
+    "Media & Entertainment Transcripts": "media",
+    "AI Transformation Transcripts": "ai",
+    "Automotive & Industrial Transcripts": "industrial"
   },
-  "skip": ["crypto", "real_estate"],
+  "skip": [
+    "crypto",
+    "real_estate"
+  ],
   "labels": {
     "general": "General investing (YouTube Transcripts)",
     "healthcare": "Healthcare & biotech (Healthcare Transcripts)",
     "macro": "Macro & thematic (Macro Transcripts)",
     "crypto": "Crypto (not processed)",
     "real_estate": "Real estate (not processed)",
-    "archive": "Kept in the store, no longer in Drive"
+    "archive": "Kept in the store, no longer in Drive",
+    "energy": "Energy, utilities & mining (Energy Transcripts)",
+    "consumer": "Consumer & retail (Consumer & Retail Transcripts)",
+    "banking": "Banks & insurers (Banking Transcripts)",
+    "media": "Media & entertainment (Media & Entertainment Transcripts)",
+    "ai": "AI transformation (not processed yet)",
+    "industrial": "Automotive & industrial (not processed yet)"
   },
   "screens": {
-    "core": ["general"],
-    "emerging": ["general"],
-    "special": ["general"],
-    "fortress": ["general", "macro"],
-    "hc_commercial": ["healthcare", "general"],
-    "hc_clinical": ["healthcare"],
-    "cyclicals": ["general", "macro"],
-    "owners": ["general"],
-    "real_assets": ["general", "macro"],
-    "asset_floor": ["general"],
-    "trough_cash": ["general", "macro"],
-    "hidden": ["general"],
-    "red_flags": ["general", "macro"]
+    "core": [
+      "general",
+      "consumer",
+      "media"
+    ],
+    "emerging": [
+      "general",
+      "consumer"
+    ],
+    "special": [
+      "general"
+    ],
+    "fortress": [
+      "general",
+      "macro",
+      "consumer",
+      "energy"
+    ],
+    "hc_commercial": [
+      "healthcare",
+      "general"
+    ],
+    "hc_clinical": [
+      "healthcare"
+    ],
+    "cyclicals": [
+      "general",
+      "macro",
+      "energy"
+    ],
+    "owners": [
+      "general"
+    ],
+    "real_assets": [
+      "general",
+      "macro",
+      "energy"
+    ],
+    "asset_floor": [
+      "general"
+    ],
+    "trough_cash": [
+      "general",
+      "macro",
+      "energy"
+    ],
+    "hidden": [
+      "general",
+      "media"
+    ],
+    "red_flags": [
+      "general",
+      "macro",
+      "consumer"
+    ],
+    "tech": [
+      "general"
+    ]
   }
 }
