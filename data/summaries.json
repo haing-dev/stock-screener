@@ -140,6 +140,15 @@
   "source": "10-K filed 2026-02-19",
   "text": "Comfort Systems USA provides mechanical and electrical contracting services through 50 operating units in 142 US cities. Its mechanical division offers HVAC, plumbing and fire protection, while its electrical division handles system installation and servicing. The company serves commercial, industrial and institutional customers in manufacturing, healthcare, education and government sectors."
  },
+ "1037038": {
+  "accn": "0001628280-26-037074",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "RALPH LAUREN CORP",
+  "sic": "2320",
+  "source": "10-K filed 2026-05-21",
+  "text": "Ralph Lauren is a global designer, marketer, and distributor of luxury lifestyle products, including apparel, handbags, footwear and accessories, fragrances, home, and hospitality. It sells through 594 retail stores, 644 concession-based shop-within-shops, digital commerce sites, and about 9,500 wholesale doors, primarily specialty stores, and through licensees. It sells to consumers worldwide, with segments in North America, Europe, and Asia."
+ },
  "1037646": {
   "accn": "0001037646-26-000011",
   "date": "2026-10-07",
@@ -305,6 +314,15 @@
   "source": "10-K filed 2026-02-27",
   "text": "Carter's designs and sells apparel and accessories for babies and young children under the Carter's, OshKosh, Little Planet, Otter Avenue and Skip Hop brands. It sells through company-operated retail stores, eCommerce, and wholesale channels, including Walmart, Target and Amazon, and operates in North America and internationally through licensees."
  },
+ "1061574": {
+  "accn": "0001193125-25-322911",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "CGI INC",
+  "sic": "8742",
+  "source": "40-F filed 2025-12-17",
+  "text": "CGI Inc. (GIB) is a Quebec-incorporated company whose annual report on Form 40-F covers the fiscal year ended September 30, 2025. The excerpt provided does not describe its services, operating locations, or customers."
+ },
  "1061736": {
   "accn": "0001628280-26-027231",
   "date": "2026-10-10",
@@ -341,6 +359,24 @@
   "sic": "3480",
   "source": "10-K filed 2026-02-25",
   "text": "Axon Enterprise (Axon) is a technology company providing integrated hardware and software for public and private sector customers. Its products include TASER energy devices, body and in-car cameras, drones, cloud-based evidence management, and records management software. Axon has headquarters in Scottsdale, Arizona, with hubs across major U.S. cities and expansion in Europe, Asia, and the Americas."
+ },
+ "1070423": {
+  "accn": "0001070423-26-000014",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "PLAINS ALL AMERICAN PIPELINE LP",
+  "sic": "4610",
+  "source": "10-K filed 2026-02-27",
+  "text": "PAA (Plains All American Pipeline) provides midstream infrastructure and logistics services for crude oil and NGL, including transportation, terminalling, storage, processing and fractionation. It operates in the United States and Canada. Its customers include producers and refiners."
+ },
+ "1071321": {
+  "accn": "0001104659-26-044740",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "TURKCELL ILETISIM HIZMETLERI A S",
+  "sic": "4813",
+  "source": "20-F filed 2026-04-17",
+  "text": "Turkcell is a telecommunications operator in Türkiye offering mobile services, including 5G, and fixed-line services such as fiber-to-the-home and fixed wireless access. Through a subsidiary, it operates in data center and cloud infrastructure, including a planned Google Cloud region in Türkiye."
  },
  "1071739": {
   "accn": "0001071739-26-000049",
@@ -486,6 +522,15 @@
   "source": "10-K filed 2026-02-25",
   "text": "Edwards Lifesciences develops and markets medical devices for structural heart disease treatment, including transcatheter and surgical valve replacement and repair systems. It operates globally, with commercialization in North America, Europe, and Asia. The company serves cardiac surgeons and interventional cardiologists."
  },
+ "110621": {
+  "accn": "0001193125-26-312142",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "RPM INTERNATIONAL INC/DE/",
+  "sic": "2851",
+  "source": "10-K filed 2026-07-22",
+  "text": "RPM is a specialty chemical company whose subsidiaries make paints, coatings, roofing systems, sealants and adhesives for the construction, industrial, specialty and consumer markets. It operates about 120 manufacturing locations in 22 countries and markets products in about 167 countries and territories. Its customers include manufacturers, contractors, distributors, end-users and public institutions."
+ },
  "1107843": {
   "accn": "0001107843-26-000008",
   "date": "2026-10-07",
@@ -535,6 +580,15 @@
   "source": "10-K filed 2026-08-13",
   "text": "Tapestry operates Coach and kate spade new york, global accessories and lifestyle brands selling handbags, ready-to-wear, jewelry, and footwear. It serves consumers through direct-to-consumer stores, e-commerce, and wholesale channels across North America, Europe, Asia, and other regions."
  },
+ "1116942": {
+  "accn": "0001193125-26-051976",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "TTM TECHNOLOGIES INC",
+  "sic": "3672",
+  "source": "10-K filed 2026-02-17",
+  "text": "TTM Technologies manufactures RF components, mission systems, RF microwave assemblies, PCBs and substrates, with 24 facilities in North America and Asia. It serves about 1,300 customers, including OEMs, EMS providers, ODMs, distributors and government agencies, in aerospace and defense, data center computing, automotive, medical, industrial and networking markets."
+ },
  "1119774": {
   "accn": "0001178913-26-000663",
   "date": "2026-10-08",
@@ -579,6 +633,15 @@
   "source": "20-F filed 2026-04-16",
   "text": "ASUR is a Mexican holding company that conducts its operations through subsidiaries, which operate airports in Mexico. It was incorporated in 1998 as part of Mexico's program opening its airports to private investment, and the excerpt refers to passenger traffic at its airports."
  },
+ "1123799": {
+  "accn": "0001193125-26-253514",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "WIPRO LTD",
+  "sic": "7371",
+  "source": "20-F filed 2026-06-02",
+  "text": "Wipro is an AI-powered technology services and consulting company that helps clients with digital transformation, including digital, cloud, engineering, and cybersecurity work. It also offers business process services. The company operates from India and from local offices in North America, Europe, the UK, Australia, Latin America, and Asia."
+ },
  "1124796": {
   "accn": "0001124796-26-000012",
   "date": "2026-10-11",
@@ -587,6 +650,15 @@
   "sic": "3674",
   "source": "10-K filed 2026-02-27",
   "text": "nLIGHT designs, manufactures, and sells high-power semiconductor lasers, fiber lasers, fiber amplifiers, and beam combination and control systems. Its products are sold into Aerospace and Defense, Industrial, and Microfabrication end markets, and are typically integrated into systems or tools built by its customers."
+ },
+ "1125376": {
+  "accn": "0001125376-26-000007",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "ENSIGN GROUP, INC",
+  "sic": "8051",
+  "source": "10-K filed 2026-02-04",
+  "text": "Ensign is a holding company whose independent subsidiaries provide skilled nursing, senior living and rehabilitative services, along with mobile diagnostics and medical transportation, in 17 states. It also acquires, leases and owns healthcare real estate. Its services are provided to patients and referral sources in local healthcare communities."
  },
  "1131399": {
   "accn": "0001131399-26-000004",
@@ -716,6 +788,15 @@
   "source": "10-K filed 2026-02-26",
   "text": "Westlake is a vertically integrated global manufacturer with two segments: Housing and Infrastructure Products (residential siding, trim, windows, PVC pipe and compounds) and Performance and Essential Materials. The company serves residential construction, commercial, industrial and other markets worldwide."
  },
+ "1269238": {
+  "accn": "0001193125-26-183379",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "Trip.com Group Ltd",
+  "sic": "7389",
+  "source": "20-F filed 2026-04-28",
+  "text": "Trip.com is a travel services company offering online and offline booking of transportation tickets, accommodation, and packaged tours. Its corporate travel business provides these services to corporate clients on a service fee basis. It operates 26 customer service centers globally and offline stores with business partners."
+ },
  "1278021": {
   "accn": "0001193125-26-067009",
   "date": "2026-10-07",
@@ -743,6 +824,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-25",
   "text": "MaxCyte provides cell engineering platform technology based on its proprietary Flow Electroporation, sold as the ExPERT family of instruments, disposables and consumables. Its customers include biopharmaceutical companies, cell therapy developers, and academic and government research institutions such as the U.S. National Institutes of Health."
+ },
+ "1287750": {
+  "accn": "0001287750-26-000006",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "ARES CAPITAL CORP",
+  "sic": "",
+  "source": "10-K filed 2026-02-04",
+  "text": "Ares Capital Corporation's excerpt contains only its consolidated financial statements and schedules of investments as of December 31, 2025. It co-invests with Varagon Capital Partners through the Senior Direct Lending Program LLC, in which it owns more than 25% of the voting securities."
  },
  "1288403": {
   "accn": "0001104659-26-028315",
@@ -914,6 +1004,15 @@
   "source": "20-F filed 2026-04-30",
   "text": "Central North Airport Group (GACN) is a Mexican holding company that operates 13 airports in Mexico under 50-year concessions, mainly in the central and northern regions. It charges fees to airlines, passengers and other users, and earns rental and commercial income from activities at its airports. Its airports are located in nine Mexican states."
  },
+ "1383312": {
+  "accn": "0001628280-26-052243",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "BROADRIDGE FINANCIAL SOLUTIONS, INC.",
+  "sic": "7389",
+  "source": "10-K filed 2026-08-04",
+  "text": "Broadridge is a financial technology company that provides proxy distribution and voting, fund communication, and corporate governance solutions. Its clients include banks, broker-dealers, asset and wealth managers, public companies, investors, and mutual funds. Its international solutions serve EMEA and APAC regions, and its fund communication business serves the UK and European markets."
+ },
  "1385849": {
   "accn": "0001385849-26-000009",
   "date": "2026-10-08",
@@ -955,6 +1054,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-26",
   "text": "Ulta is a specialty beauty retailer offering cosmetics, fragrance, skincare, wellness products, haircare, and salon services through stores and digital platforms. It operates in the U.S., U.K., Ireland, Mexico, and the Middle East, serving beauty enthusiasts."
+ },
+ "1408710": {
+  "accn": "0001408710-26-000028",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "Fabrinet",
+  "sic": "3661",
+  "source": "10-K filed 2026-08-18",
+  "text": "Fabrinet (FN) provides advanced optical packaging and precision optical, electro-mechanical and electronics manufacturing services. Its products include optical communications components and modules, industrial lasers, automotive components, medical devices and sensors. Its customers are original equipment manufacturers (OEMs) in optical communications, automotive, industrial lasers, medical and sensor industries."
  },
  "1420720": {
   "accn": "0001420720-26-000020",
@@ -1018,6 +1126,15 @@
   "model": "haiku",
   "source": "20-F filed 2026-03-16",
   "text": "VEON is a digital operator providing mobile and fixed telecommunications, digital and cloud services through local brands such as Kyivstar, Banglalink, Toffee and Jazz. It operates in Bangladesh, Kazakhstan, Pakistan, Ukraine and Uzbekistan, and is headquartered in Dubai. It serves consumers and businesses, including through business-to-business OTT services."
+ },
+ "14693": {
+  "accn": "0000014693-26-000024",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "BROWN FORMAN CORP",
+  "sic": "2080",
+  "source": "10-K filed 2026-06-12",
+  "text": "Brown-Forman manufactures, distills, imports and sells beverage alcohol products, including Jack Daniel's and Old Forester, along with other spirits and ready-to-drink cocktails. It sells products in over 170 countries. In the United States, it sells to distributors or to state governments that sell to retail customers and consumers."
  },
  "14707": {
   "accn": "0000014707-26-000053",
@@ -1156,12 +1273,30 @@
   "source": "10-K filed 2026-02-26",
   "text": "Liberty Media is primarily engaged in the motorsport and live entertainment industries through subsidiaries including Delta Topco (parent of Formula 1) and MotoGP. Its operations are primarily headquartered in the United Kingdom and Spain, with events held worldwide. Formula 1 grants race promoters rights to host and stage Formula 1 Events."
  },
+ "1564708": {
+  "accn": "0001564708-26-000175",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "NEWS CORP",
+  "sic": "2711",
+  "source": "10-K filed 2026-08-07",
+  "text": "News Corp (NWSA) is a global media and information services company offering news, data, digital real estate services, and book publishing under brands such as The Wall Street Journal, Dow Jones, HarperCollins and Realtor.com. It operates primarily in the U.S., Australia and the U.K., with content distributed worldwide. Its customers include individual consumers and enterprise customers."
+ },
  "1565025": {
   "accn": "0001292814-26-000640",
   "date": "2026-10-07",
   "model": "haiku",
   "source": "20-F filed 2026-03-03",
   "text": "Ambev manufactures and distributes beverages in Brazil and other countries. Products are packaged in aluminum cans and PET bottles and include ingredients such as malt, hops, and sugar. The company sells to clients throughout the region."
+ },
+ "1567094": {
+  "accn": "0001567094-26-000006",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "CNH Industrial N.V.",
+  "sic": "3531",
+  "source": "10-K filed 2026-02-26",
+  "text": "CNH Industrial develops, manufactures and sells agricultural and construction equipment, and its Financial Services segment offers retail and wholesale financing. Its global network includes subsidiaries in 32 countries and a commercial presence in about 166 countries. It serves end customers and dealers."
  },
  "1567900": {
   "accn": "0001437749-26-005114",
@@ -1393,6 +1528,15 @@
   "source": "10-K filed 2026-02-27",
   "text": "Yum China operates KFC, Pizza Hut, Lavazza, Huang Ji Huang, Little Sheep and Taco Bell restaurants in China. The company operates over 18,100 units across more than 2,500 cities primarily in mainland China. It serves consumers seeking quick-service and casual dining options."
  },
+ "1677250": {
+  "accn": "0001104659-26-044613",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "ZTO Express (Cayman) Inc.",
+  "sic": "4210",
+  "source": "20-F filed 2026-04-17",
+  "text": "ZTO Express (ZTO) operates express parcel delivery services in China through its consolidated affiliated entity ZTO Express, using a network of partners for pickup and delivery. Its senders include merchants on e-commerce platforms and enterprise customers."
+ },
  "1683695": {
   "accn": "0001628280-26-015647",
   "date": "2026-10-08",
@@ -1449,6 +1593,15 @@
   "source": "10-K filed 2026-03-24",
   "text": "BioAge Labs (BIOA) is a clinical-stage biopharmaceutical company developing treatments for metabolic diseases by targeting human aging biology. Its lead program, BGE-102, is an oral NLRP3 inhibitor being studied for cardiometabolic disease and diabetic macular edema. The excerpt does not state where it operates or its customers."
  },
+ "1717161": {
+  "accn": "0001292814-26-002446",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "CENTRAL PUERTO S.A.",
+  "sic": "4911",
+  "source": "20-F filed 2026-04-22",
+  "text": "Central Puerto is an Argentine electricity company with thermal, solar, and hydroelectric generation. It is developing battery energy storage projects and a solar plant in Salta, Argentina. Its contracts include power supply to large electric power consumers, and Edenor and Edesur are named as offtakers for its storage projects."
+ },
  "1727263": {
   "accn": "0001193125-26-076548",
   "date": "2026-10-07",
@@ -1500,6 +1653,15 @@
   "source": "20-F filed 2026-04-22",
   "text": "Viomi Technology is a Cayman Islands holding company that conducts its operations in China through WFOEs and VIEs, including internet information and e-commerce services. Xiaomi is its strategic partner and most important customer, and a significant portion of its revenue comes from sales to Xiaomi."
  },
+ "1744676": {
+  "accn": "0001193125-26-160257",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "Tencent Music Entertainment Group",
+  "sic": "4832",
+  "source": "20-F filed 2026-04-17",
+  "text": "Tencent Music is an online music entertainment company in China, operating QQ Music, Kugou, Kuwo, WeSing, and Lazy Audio. Its services include music streaming, live streaming, online karaoke, and audiobooks, podcasts, and other audio content. It operates in the PRC."
+ },
  "1746473": {
   "accn": "0001746473-26-000037",
   "date": "2026-10-08",
@@ -1520,6 +1682,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-17",
   "text": "BlackSky Technology is a space technology company headquartered in Herndon, Virginia, that delivers real-time satellite imagery, analytics and monitoring from its low earth orbit satellite constellation and its BlackSky Spectra software platform. It also helps customers acquire, own and operate their own satellites. Most of its sales are to domestic and international government agencies."
+ },
+ "1754301": {
+  "accn": "0001628280-26-053960",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "Fox Corp",
+  "sic": "4833",
+  "source": "10-K filed 2026-08-06",
+  "text": "Fox is a news, sports and entertainment company with cable network programming, television (including the FOX broadcast network, the Tubi streaming service, and 29 broadcast stations), and Credible, a U.S. consumer finance marketplace. It also operates the FOX Studio Lot in Los Angeles, California, providing production services and office space. Its operations are primarily in the U.S., and it serves traditional and virtual MVPDs and other digital platforms."
  },
  "1756655": {
   "accn": "0001628280-26-018174",
@@ -1593,6 +1764,15 @@
   "source": "20-F filed 2026-02-27",
   "text": "FLEX LNG (FLNG) is a Bermuda-incorporated owner and commercial operator of fifth-generation LNG carriers, operating them under long-term charters. It operates through subsidiaries in Bermuda, the United Kingdom, Norway, the Isle of Man and the Marshall Islands. Four customers accounted for more than 98.5% of its 2025 revenues."
  },
+ "1780312": {
+  "accn": "0001780312-26-000006",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "AST SpaceMobile, Inc.",
+  "sic": "4899",
+  "source": "10-K filed 2026-03-02",
+  "text": "AST SpaceMobile (ASTS) is building a space-based cellular broadband network of low Earth orbit satellites designed to connect directly to standard smartphones. It also intends to offer applications for U.S. government use. It partners with over 50 mobile network operators (MNOs), which would offer the service to their end-user customers."
+ },
  "1784570": {
   "accn": "0001628280-26-015838",
   "date": "2026-10-10",
@@ -1636,6 +1816,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-20",
   "text": "Aeva (AEVA) develops FMCW 4D LiDAR-on-chip sensing technology that measures depth, reflectivity and velocity. Its solutions are expected to be built into automobiles, industrial equipment, consumer devices and security products."
+ },
+ "1791706": {
+  "accn": "0001104659-26-041705",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "Li Auto Inc.",
+  "sic": "3711",
+  "source": "20-F filed 2026-04-10",
+  "text": "Li Auto is a Cayman Islands holding company that operates in China through its PRC subsidiaries and variable interest entities (VIEs) under contractual arrangements. The VIEs contributed less than 0.1% of total revenues in 2023, 2024 and 2025. The excerpt does not describe its products or customers."
  },
  "1792849": {
   "accn": "0001437749-26-007770",
@@ -1685,6 +1874,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-11",
   "text": "Unity is a platform for developing and monetizing games and interactive experiences across mobile, PC, console, and extended reality. Create Solutions provide development tools and engines; Grow Solutions enable user acquisition and monetization. The platform serves creators globally across gaming and non-gaming industries."
+ },
+ "1815846": {
+  "accn": "0001104659-26-048172",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "MINISO Group Holding Ltd",
+  "sic": "5331",
+  "source": "20-F filed 2026-04-24",
+  "text": "MINISO operates MINISO retail stores in China and several overseas markets, and conducts business through subsidiaries in Hong Kong, Italy, Germany, Vietnam, Canada and other locations. Its products are also sold in Mexico, the Philippines and Saudi Arabia through Retail Partners and local distributors."
  },
  "1816581": {
   "accn": "0001628280-26-013313",
@@ -1798,6 +1996,15 @@
   "source": "10-K filed 2026-03-02",
   "text": "SoundHound offers independent Voice AI technology, including its Houndify developer platform, Smart Answering and Smart Ordering products, and an AI agent platform. Its customers are product creators in automotive, TV and IoT, and customer service businesses, including restaurants."
  },
+ "1842827": {
+  "accn": "0001104659-26-050959",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "Kanzhun Ltd",
+  "sic": "7370",
+  "source": "20-F filed 2026-04-29",
+  "text": "Kanzhun is a leading online recruitment platform in China, operating the BOSS Zhipin app. It serves enterprises from small businesses to large corporations, including all 2025 Fortune China 500 companies, through business executives, HR officers and headhunters."
+ },
  "1844862": {
   "accn": "0001104659-26-019435",
   "date": "2026-10-08",
@@ -1825,6 +2032,42 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-25",
   "text": "Genesco is a retailer and wholesaler of branded footwear, apparel and accessories, operating through Journeys, Schuh, Johnston & Murphy and Genesco Brands. Its retail stores are located primarily in the US and Puerto Rico, with additional stores in Canada, the UK and the Republic of Ireland. Its wholesale customers include department, discount and specialty stores and e-commerce retailers."
+ },
+ "1852131": {
+  "accn": "0001852131-26-000017",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "Nextpower Inc.",
+  "sic": "3674",
+  "source": "10-K filed 2026-05-19",
+  "text": "Nextpower provides solar tracker systems and integrated solar energy solutions for utility-scale power plants, including structural, electrical and digital solutions. It has shipped more than 160 GW of solar tracker systems to projects on six continents. Its customers include engineering, procurement and construction firms, solar project developers and owners."
+ },
+ "1853717": {
+  "accn": "0001104659-26-044551",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "Atour Lifestyle Holdings Ltd",
+  "sic": "7011",
+  "source": "20-F filed 2026-04-17",
+  "text": "Atour Lifestyle is a lifestyle group in China that operates hospitality and retail businesses, including sleep-related products. As of December 31, 2025, it had 2,015 hotels with 224,423 rooms, and it was the largest upper midscale hotel chain in China by room number."
+ },
+ "1855612": {
+  "accn": "0001855612-26-000020",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "Grab Holdings Ltd",
+  "sic": "7389",
+  "source": "20-F filed 2026-03-06",
+  "text": "Grab is a Southeast Asian superapp operating in deliveries, mobility and digital financial services across more than 900 cities. It operates in Cambodia, Indonesia, Malaysia, Myanmar, the Philippines, Singapore, Thailand and Vietnam. It serves users, driver-partners and merchant-partners, and provides digital banking through GXS Bank and GXBank."
+ },
+ "1858985": {
+  "accn": "0001858985-26-000008",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "On Holding AG",
+  "sic": "3021",
+  "source": "20-F filed 2026-03-03",
+  "text": "On is a premium sportswear brand that designs and engineers footwear, apparel and accessories for athletic performance in Switzerland. It sells across the Americas, EMEA and Asia-Pacific through an owned retail network and other channels. Its products serve running, outdoor, training, tennis and all-day use."
  },
  "1865631": {
   "accn": "0001554855-26-000328",
@@ -2018,6 +2261,15 @@
   "model": "haiku",
   "source": "20-F filed 2026-04-01",
   "text": "TOYO is an early-stage solar company that produces solar cells and plans to produce solar PV modules. It has solar cell plants in Vietnam and Ethiopia and a Texas facility that began commercial production in October 2025. TOYO is headquartered in Japan and has supply agreements with over 50 third-party solar cell customers."
+ },
+ "1985487": {
+  "accn": "0001985487-26-000008",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "Joint Stock Co Kaspi.kz",
+  "sic": "7389",
+  "source": "20-F filed 2026-03-16",
+  "text": "Kaspi.kz is a Kazakhstan-based mobile services company that operates a super app with marketplace, payment, and fintech offerings for consumers and merchants. It also owns a controlling stake in Hepsiburada, an e-commerce platform in Türkiye. Its services are offered in Kazakhstan and Türkiye."
  },
  "200406": {
   "accn": "0000200406-26-000016",
@@ -2224,6 +2476,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-01-09",
   "text": "Hurco designs, manufactures and sells computer numeric control (CNC) machine tools, mainly vertical machining centers and turning centers, along with software options, parts and services. It has sales and service subsidiaries in countries including China, Germany, Italy and the U.S., and manufacturing in Taiwan, the U.S. and Italy. Its customers are companies in the metal cutting industry."
+ },
+ "317540": {
+  "accn": "0001628280-26-009057",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "Coca-Cola Consolidated, Inc.",
+  "sic": "2086",
+  "source": "10-K filed 2026-02-18",
+  "text": "Coca-Cola Consolidated manufactures, markets, and distributes nonalcoholic beverages in 14 states and the District of Columbia, and calls itself the largest Coca-Cola bottler in the United States. It also distributes Monster Energy and Dr Pepper products. It sells bottle and can products to retail customers and other Coca-Cola bottlers."
  },
  "31791": {
   "accn": "0000031791-26-000012",
@@ -2456,6 +2717,15 @@
   "sic": "5812",
   "source": "10-K filed 2026-08-19",
   "text": "Brinker owns, develops, operates and franchises the Chili's Grill & Bar and Maggiano's Little Italy restaurant brands. Chili's has restaurants in the United States, 28 other countries and two U.S. territories, and Maggiano's is a national brand. Maggiano's serves guests for everyday lunch and dinner, special events and celebrations."
+ },
+ "704532": {
+  "accn": "0001193125-26-066937",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "ONTO INNOVATION INC.",
+  "sic": "3829",
+  "source": "10-K filed 2026-02-24",
+  "text": "Onto Innovation designs, manufactures and supports metrology and inspection tools for the semiconductor industry, including optical metrology, macro defect inspection and process control software. Its products are primarily used by silicon wafer manufacturers, semiconductor IC fabricators and advanced packaging manufacturers."
  },
  "707549": {
   "accn": "0000707549-26-000037",
@@ -2722,6 +2992,15 @@
   "source": "10-K filed 2025-11-05",
   "text": "QCOM develops and supplies integrated circuit platforms and licenses wireless technology intellectual property for mobile, automotive, and IoT applications. It serves device manufacturers globally."
  },
+ "806968": {
+  "accn": "0001628280-26-019643",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "WPP plc",
+  "sic": "7311",
+  "source": "20-F filed 2026-03-19",
+  "text": "WPP is a marketing services group whose segments include Global Integrated Agencies, Public Relations and Specialist Agencies. It has a presence in more than 100 countries and employs approximately 98,655 people. Its executive office is in London, United Kingdom."
+ },
  "810136": {
   "accn": "0001140361-25-045801",
   "date": "2026-10-10",
@@ -2834,12 +3113,30 @@
   "source": "10-K filed 2026-02-27",
   "text": "Exponent is a science and engineering consulting firm that solves complex technical problems across more than 90 disciplines, including engineering, data sciences and health sciences. It serves clients around the world in sectors such as chemical, consumer products, energy, government, life sciences, insurance, manufacturing and technology, often engaged by corporations, law firms or insurers."
  },
+ "85535": {
+  "accn": "0000085535-26-000008",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "ROYAL GOLD INC",
+  "sic": "6795",
+  "source": "10-K filed 2026-02-19",
+  "text": "Royal Gold acquires and manages precious metal streams and royalty interests, and finances mining projects in exchange for those interests. It does not conduct mining operations on the properties. The excerpt cites properties in the United States, Canada, Chile, the Dominican Republic, Zambia, and Ecuador."
+ },
  "855658": {
   "accn": "0001437749-26-004100",
   "date": "2026-10-07",
   "model": "haiku",
   "source": "10-K filed 2026-02-13",
   "text": "Lattice Semiconductor develops low-power programmable logic devices and FPGAs for edge-to-cloud applications as a fabless provider. The company serves global markets in communications and computing, industrial and automotive, and consumer sectors, with customers building data centers, 5G infrastructure, IoT devices, and automotive systems."
+ },
+ "858446": {
+  "accn": "0000858446-26-000010",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "INTERCONTINENTAL HOTELS GROUP PLC /NEW/",
+  "sic": "7011",
+  "source": "20-F filed 2026-02-26",
+  "text": "IHG is a hotel company operating a portfolio of hotel brands, including Holiday Inn, Hotel Indigo, and Regent, and the Ruby urban lifestyle brand acquired in 2025. It has hotels in the Americas, EMEAA, and Greater China, and offers a loyalty program and mobile app. Its hotels are operated by owners and franchise partners."
  },
  "858877": {
   "accn": "0000858877-26-000132",
@@ -3039,12 +3336,48 @@
   "source": "10-K filed 2026-02-27",
   "text": "O'Reilly Automotive is a specialty retailer of automotive aftermarket parts, tools, supplies and equipment. It operates 6,447 stores in the United States and Puerto Rico, plus locations in Mexico and Canada. The company serves both do-it-yourself customers and professional service providers."
  },
+ "904851": {
+  "accn": "0001193125-26-126363",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "YPF SOCIEDAD ANONIMA",
+  "sic": "2911",
+  "source": "20-F filed 2026-03-26",
+  "text": "YPF is Argentina's leading integrated energy company, with upstream, midstream, downstream, LNG, and new energies segments. It operates mainly in Argentina, and its Trading unit sells refined products and crude oil to international and domestic customers. It markets refined petroleum and petrochemical products throughout Argentina through distributors and a retail network."
+ },
+ "906163": {
+  "accn": "0000906163-26-000018",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "NVR INC",
+  "sic": "1531",
+  "source": "10-K filed 2026-02-11",
+  "text": "NVR Inc. (NVR) is a homebuilder that constructs and sells single-family detached homes, townhomes and condominium buildings, primarily on a pre-sold basis, and also operates a mortgage banking and title services business. It operates in thirty-seven metropolitan areas in sixteen states and Washington, D.C. Its customers are homebuyers, including first-time and move-up buyers."
+ },
+ "908255": {
+  "accn": "0000908255-26-000011",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "BORGWARNER INC",
+  "sic": "3714",
+  "source": "10-K filed 2026-02-11",
+  "text": "BorgWarner makes clean and efficient technology products for combustion, hybrid and electric vehicles, including turbochargers, thermal systems and battery charging systems. It operates manufacturing facilities serving customers in Europe, the Americas and Asia. Its customers are mainly vehicle original equipment manufacturers, plus tier one suppliers and aftermarket distributors."
+ },
  "908315": {
   "accn": "0000908315-26-000007",
   "date": "2026-10-08",
   "model": "haiku",
   "source": "10-K filed 2026-02-25",
   "text": "Winmark (WINA) is a franchisor of five resale retail brands: Plato's Closet, Once Upon A Child, Play It Again Sports, Style Encore and Music Go Round. Its franchisees sell gently used and some new merchandise, with 1,378 franchised stores in the United States and Canada. The stores serve consumers who buy and sell used goods."
+ },
+ "909037": {
+  "accn": "0000909037-26-000023",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "CHEMICAL & MINING CO OF CHILE INC",
+  "sic": "1400",
+  "source": "20-F filed 2026-04-22",
+  "text": "SQM produces nitrates, iodine, potassium chloride, lithium, and specialty plant nutrients from ore and brine deposits in northern Chile, including the Salar de Atacama. It is the largest producer of potassium nitrate, and it also sells fertilizers and blends, including products it does not produce."
  },
  "9092": {
   "accn": "0001193125-26-054739",
@@ -3139,6 +3472,15 @@
   "source": "10-K filed 2026-01-28",
   "text": "LEN is one of the largest U.S. homebuilders and also originates residential mortgage loans and provides title insurance. The company operates in over 20 states, primarily selling single-family and multifamily homes to first-time, move-up, active adult and luxury homebuyers."
  },
+ "92103": {
+  "accn": "0001193125-26-121593",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "SOUTHERN CALIFORNIA EDISON Co",
+  "sic": "4911",
+  "source": "10-K filed 2026-03-24",
+  "text": "Southern California Edison Company is the depositor and sponsor of SCE Recovery Funding LLC, the issuing entity named in this Form 10-K. The excerpt is a cover page and does not describe the company's operations, locations or customers."
+ },
  "922621": {
   "accn": "0001628280-26-010666",
   "date": "2026-10-07",
@@ -3230,6 +3572,15 @@
   "source": "20-F filed 2026-02-25",
   "text": "ASML makes lithography systems, with holistic lithography as its core business, and shipped an i-line system for advanced packaging in 2025. Its main campus is in the Veldhoven area of the Netherlands, and it also has an office in Korea and a technical training academy in Phoenix."
  },
+ "939767": {
+  "accn": "0000939767-26-000021",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "EXELIXIS, INC.",
+  "sic": "2836",
+  "source": "10-K filed 2026-02-10",
+  "text": "Exelixis (EXEL) is an oncology company that markets cancer medicines, led by its flagship molecule cabozantinib sold as CABOMETYX and COMETRIQ. Its products are approved in the U.S., the European Economic Area, the U.K., Japan and 68 other countries. Its customers include physicians treating cancer patients."
+ },
  "940944": {
   "accn": "0000940944-26-000025",
   "date": "2026-10-11",
@@ -3252,6 +3603,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-27",
   "text": "Climb Global Solutions is a value-added IT distributor. Its Distribution segment (Climb Channel Solutions) sells software and technology products to corporate resellers, value added resellers, consultants and systems integrators worldwide. Its Solutions segment (Grey Matter) sells IT products and services directly to end users. The company operates distribution facilities in Millersville, Maryland and Dublin, Ireland."
+ },
+ "946581": {
+  "accn": "0001628280-26-037434",
+  "date": "2026-10-12",
+  "model": "haiku",
+  "name": "TAKE TWO INTERACTIVE SOFTWARE INC",
+  "sic": "7372",
+  "source": "10-K filed 2026-05-22",
+  "text": "Take-Two Interactive is a developer, publisher, and marketer of interactive entertainment, operating principally through Rockstar Games, 2K, and Zynga. Its products are designed for console, mobile (smartphones and tablets), and PC, and are delivered through physical retail, digital download, online platforms, and cloud streaming. It serves consumers around the globe."
  },
  "94845": {
   "accn": "0000094845-26-000008",
