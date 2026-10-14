@@ -821,6 +821,15 @@
   "source": "10-K filed 2026-02-10",
   "text": "Molina Healthcare provides managed healthcare services to approximately 5.5 million members across 21 states under Medicaid, Medicare, and state marketplace programs. It serves low-income Americans and government-sponsored health plan beneficiaries."
  },
+ "1211583": {
+  "accn": "0001104659-26-036182",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "FENNEC PHARMACEUTICALS INC.",
+  "sic": "2836",
+  "source": "10-K filed 2026-03-27",
+  "text": "Fennec Pharmaceuticals Inc., a British Columbia corporation operating through its Delaware subsidiary, is focused on the commercialization of PEDMARK®."
+ },
  "1237831": {
   "accn": "0001628280-26-011209",
   "date": "2026-10-07",
@@ -1001,6 +1010,15 @@
   "source": "10-K filed 2026-03-12",
   "text": "Zumiez (ZUMZ) is a specialty retailer of apparel, footwear, accessories and hardgoods for young men and women, operating through stores and ecommerce under the Zumiez, Blue Tomato and Fast Times names. At January 31, 2026 it operated 719 stores in the United States, Canada, Europe and Australia. It targets customers interested in action sports, streetwear and other lifestyles."
  },
+ "1326190": {
+  "accn": "0001326190-26-000018",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Altimmune, Inc.",
+  "sic": "2834",
+  "source": "10-K filed 2026-03-06",
+  "text": "Altimmune, Inc. is a late clinical-stage biopharmaceutical company developing novel therapies for serious liver diseases. Its lead candidate, pemvidutide, a balanced 1:1 glucagon/GLP-1 dual receptor agonist, is in development for MASH, alcohol use disorder and alcohol-associated liver disease."
+ },
  "1326801": {
   "accn": "0001628280-26-003942",
   "date": "2026-10-07",
@@ -1097,6 +1115,15 @@
   "sic": "7350",
   "source": "10-K filed 2026-02-17",
   "text": "Herc Holdings is an equipment rental supplier operating 602 locations in North America, offering mid-size, heavy, specialty and contractor equipment for rent. It also sells used equipment and contractor supplies and provides repair, maintenance and equipment management services. Its customers range from individuals and small local contractors to large national accounts."
+ },
+ "1370053": {
+  "accn": "0001193125-26-088290",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "ANAPTYSBIO, INC",
+  "sic": "2834",
+  "source": "10-K filed 2026-03-03",
+  "text": "AnaptysBio is a clinical-stage biotechnology company developing antibody therapeutics for autoimmune and inflammatory diseases. Its pipeline includes rosnilimab, which completed a Phase 2b trial in moderate-to-severe rheumatoid arthritis, plus ANB033 and ANB101. The company has approved plans to explore separating into two public companies."
  },
  "1372920": {
   "accn": "0001193125-26-397192",
@@ -1223,6 +1250,15 @@
   "source": "10-K filed 2026-02-17",
   "text": "Enphase Energy is a global energy technology company that designs and sells microinverters, batteries and home energy management systems for solar generation, storage and EV charging. Its products are sold through installer and distributor partners. Its systems have been deployed in over 160 countries, serving homeowners and business users."
  },
+ "1464591": {
+  "accn": "0001104659-26-037819",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "GeoPark Ltd",
+  "sic": "1311",
+  "source": "20-F filed 2026-03-31",
+  "text": "GeoPark is an independent energy company with assets in Colombia and Argentina. It produces mainly oil from the Llanos Basin in Colombia and is developing unconventional resources in the Vaca Muerta formation in Argentina's Neuquén Basin. Its principal executive office is in Bogotá, Colombia, and it also produces in Brazil and Ecuador."
+ },
  "1466258": {
   "accn": "0001628280-26-005731",
   "date": "2026-10-09",
@@ -1284,6 +1320,15 @@
   "sic": "3674",
   "source": "20-F filed 2026-04-20",
   "text": "Daqo New Energy manufactures and sells polysilicon through its Chongqing Daqo subsidiary in China, and has expanded into wafer manufacturing. It sells polysilicon to China-based photovoltaic product manufacturers, including operating entities of major silicon wafer producers and vertically integrated solar manufacturers."
+ },
+ "1479615": {
+  "accn": "0001193125-26-092591",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Silence Therapeutics plc",
+  "sic": "2834",
+  "source": "10-K filed 2026-03-05",
+  "text": "Silence Therapeutics is a biotechnology company developing siRNA molecules that silence disease-associated genes, using its mRNAi GOLD platform to target genes in the liver. Its lead candidate, divesiran, is in Phase 2 development for polycythemia vera, a rare myeloproliferative neoplasm. Its pipeline also includes zerlasiran, aimed at patients with high Lp(a)."
  },
  "1483994": {
   "accn": "0001104659-26-048058",
@@ -1368,6 +1413,15 @@
   "source": "10-K filed 2026-02-26",
   "text": "Personalis (PSNL) develops and sells cancer genomic testing services, including its NeXT Personal Dx residual disease test. Its tests are used by physicians, pharmaceutical and biopharmaceutical companies, and diagnostics companies. It performs testing in a CLIA-certified laboratory in Fremont, California, and sells mainly in the United States, Europe and Asia-Pacific."
  },
+ "1528356": {
+  "accn": "0001437749-26-014294",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Genie Energy Ltd.",
+  "sic": "4931",
+  "source": "10-K filed 2026-05-01",
+  "text": "Genie Energy Ltd. is an energy services provider whose Genie Retail Energy segment supplies electricity and natural gas to residential and small business customers through retail energy providers. Its retail operations span nineteen U.S. states and Washington, D.C., with most customers in the Eastern and Midwestern U.S. and Texas."
+ },
  "1528849": {
   "accn": "0001104659-26-037992",
   "date": "2026-10-13",
@@ -1376,6 +1430,15 @@
   "sic": "5712",
   "source": "10-K filed 2026-04-01",
   "text": "RH is a retailer and luxury lifestyle brand in home furnishings, offering furniture, lighting, textiles, bathware, décor, outdoor and garden, and baby, child and teen furnishings. It operates retail locations in the United States, Canada, and Europe."
+ },
+ "1529192": {
+  "accn": "0001104659-26-044015",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Vipshop Holdings Ltd",
+  "sic": "5961",
+  "source": "20-F filed 2026-04-16",
+  "text": "This excerpt from Vipshop's annual report does not describe its products, operations, or customers. It states that the company reports in Renminbi and translates amounts to U.S. dollars at RMB6.9931 to US$1.00, the December 31, 2025 rate."
  },
  "1530238": {
   "accn": "0001104659-26-049917",
@@ -1390,6 +1453,24 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-12",
   "text": "BJ's Wholesale Club is a membership warehouse operator offering groceries, general merchandise, gasoline, and ancillary services. Operating 263 clubs and 199 gas stations across 21 U.S. states as of fiscal 2025, primarily in the eastern United States, BJ's serves over 8 million individual and business members."
+ },
+ "1534254": {
+  "accn": "0001534254-26-000003",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "CION Investment Corp",
+  "sic": "",
+  "source": "10-K filed 2026-03-12",
+  "text": "CION Investment Corporation is an externally managed, closed-end investment company that has elected to be regulated as a business development company. It invests in portfolio companies, with a focus on U.S. middle-market companies."
+ },
+ "1544206": {
+  "accn": "0001544206-26-000013",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Carlyle Secured Lending, Inc.",
+  "sic": "",
+  "source": "10-K filed 2026-02-24",
+  "text": "Carlyle Secured Lending is an externally managed business development company that makes secured loans, mainly first and second lien senior loans, to U.S. middle market companies with EBITDA of about $25 million or more, often controlled by private equity firms. Headquartered in New York, New York, it is regulated under the Investment Company Act of 1940."
  },
  "1549346": {
   "accn": "0001549346-26-000008",
@@ -1541,6 +1622,15 @@
   "source": "10-K filed 2026-02-19",
   "text": "Paycom is a leading cloud-based HCM solution provider offering SaaS software for payroll, talent management, HR, and time and labor management. It serves approximately 39,200 business clients in the United States through its internally developed single-platform system."
  },
+ "1591588": {
+  "accn": "0001193125-26-386799",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Gold.com, Inc.",
+  "sic": "5094",
+  "source": "10-K filed 2026-09-10",
+  "text": "Gold.com is a fully integrated precious metals company offering bullion, numismatic coins and related products through wholesale, direct-to-consumer and secured lending segments. Its operations span Canada, Europe and Asia, with a focus on Hong Kong and Singapore, and it operates a Las Vegas depository. Customers include banks, coin dealers, collectors, refiners, mints and retail customers."
+ },
  "1591698": {
   "accn": "0001591698-26-000069",
   "date": "2026-10-07",
@@ -1554,6 +1644,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-17",
   "text": "Arista provides networking-as-a-service solutions and platforms for data centers and AI operations. Its switches, software and services enable Cloud and AI providers, specialty providers and enterprises to reliably access and process data globally."
+ },
+ "1598655": {
+  "accn": "0001104659-26-031782",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "GasLog Partners LP",
+  "sic": "4400",
+  "source": "20-F filed 2026-03-19",
+  "text": "GasLog Partners LP (GLOP) is a Marshall Islands limited partnership engaged in owning, operating and acquiring LNG carriers for LNG transportation, with a fleet of 11 vessels as of March 12, 2026. Its ships are provided under time charters."
  },
  "1600620": {
   "accn": "0001600620-26-000017",
@@ -1571,6 +1670,15 @@
   "source": "10-K filed 2025-12-17",
   "text": "Keysight Technologies provides design and test solutions including hardware, software and services to support product development and commercialization. It serves over 100 countries across industries including communications, aerospace, defense, automotive and semiconductor. The company generated $5.4 billion in revenue in 2025, primarily from R&D applications."
  },
+ "1604665": {
+  "accn": "0001604665-26-000010",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Westlake Chemical Partners LP",
+  "sic": "2860",
+  "source": "10-K filed 2026-03-04",
+  "text": "Westlake Chemical Partners LP owns a 22.8% limited partner interest in OpCo, which operates three ethylene production facilities that convert ethane into ethylene, plus a 200-mile ethylene pipeline. All of its assets are located and operated in the United States. OpCo sells most of its ethylene to Westlake and sells its co-products to external customers."
+ },
  "1604821": {
   "accn": "0001104659-26-020881",
   "date": "2026-10-07",
@@ -1584,6 +1692,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-16",
   "text": "Pangaea Logistics Solutions provides seaborne drybulk logistics and transportation services, plus terminal and stevedoring services. It transports grains, coal, iron ore, bauxite, cement clinker and other bulk cargoes across more than 300 ports worldwide. It serves industrial customers that ship drybulk cargo."
+ },
+ "1621434": {
+  "accn": "0001621434-26-000018",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Black Stone Minerals, L.P.",
+  "sic": "1311",
+  "source": "10-K filed 2026-02-24",
+  "text": "Black Stone Minerals, L.P. reports oil and natural gas proved reserves, with estimates as of December 31, 2025, 2024 and 2023 independently evaluated by Netherland, Sewell & Associates, Inc."
  },
  "1622536": {
   "accn": "0001622536-26-000017",
@@ -1666,6 +1783,15 @@
   "source": "10-K filed 2026-02-24",
   "text": "Arvinas is a clinical-stage biotechnology company developing therapeutics based on its PROTAC protein degradation platform. Its pipeline targets oncology and neurology indications, including Parkinson's disease and breast cancer. It has early-stage collaborations with Pfizer and Genentech/Roche. The excerpt does not describe its customers or where it operates."
  },
+ "1656081": {
+  "accn": "0001656081-25-000039",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Endava plc",
+  "sic": "7371",
+  "source": "20-F filed 2025-09-04",
+  "text": "Endava plc (DAVA) is a provider of next-generation technology services that helps clients with digital transformation, including core system transformation and production-grade AI projects. Its headquarters are in London, United Kingdom, and the excerpt does not describe its customer base beyond clients across all industries and regions."
+ },
  "1658566": {
   "accn": "0001658566-26-000035",
   "date": "2026-10-07",
@@ -1693,6 +1819,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-27",
   "text": "YETI, headquartered in Austin, Texas, designs, retails and distributes outdoor products, including coolers, drinkware, bags and apparel. It sells in the United States, Canada, Australia, New Zealand, the United Kingdom, Europe and Japan through direct-to-consumer channels and wholesale retailers such as Dick's Sporting Goods and REI."
+ },
+ "1671927": {
+  "accn": "0001671927-26-000005",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Immunocore Holdings plc",
+  "sic": "2836",
+  "source": "10-K filed 2026-02-25",
+  "text": "Immunocore is a commercial-stage biotechnology company developing immunomodulating medicines using its ImmTAX platform. Its lead product, KIMMTRAK, is approved for unresectable or metastatic uveal melanoma and has been launched in 30 countries, including the United States, Germany and France."
  },
  "1671933": {
   "accn": "0001671933-26-000014",
@@ -1724,6 +1859,15 @@
   "source": "10-K filed 2026-03-06",
   "text": "Intermex provides money remittance services, mainly from the United States to Latin America and the Caribbean. It operates through over 100,000 sending and paying agents, 118 company-operated stores and digital channels. Its customers are consumers sending money, many without a traditional full-service financial institution relationship."
  },
+ "1690511": {
+  "accn": "0001690511-26-000012",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Canada Goose Holdings Inc.",
+  "sic": "2300",
+  "source": "20-F filed 2026-05-15",
+  "text": "Canada Goose designs, manufactures, markets and distributes lifestyle outerwear, apparel, footwear and accessories. Headquartered in Toronto, it produces most of its goods in Canada and sells in Japan through its CG Japan joint venture. Its Baffin footwear is sold through distributors and retailers in Canada and the United States."
+ },
  "1697862": {
   "accn": "0001697862-26-000032",
   "date": "2026-10-10",
@@ -1737,6 +1881,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-12",
   "text": "GRAL develops Galleri, a multi-cancer early detection test from a blood draw that screens for multiple cancer types and identifies the tissue of origin. Through partnerships, GRAL serves healthcare systems, employers, digital health platforms, payors, and life insurance providers."
+ },
+ "1699136": {
+  "accn": "0001628280-26-012377",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Cactus, Inc.",
+  "sic": "3533",
+  "source": "10-K filed 2026-02-26",
+  "text": "Cactus designs, manufactures, sells and rents highly engineered pressure control and spoolable pipe technologies, used principally for onshore unconventional oil and gas wells. It operates service centers and pipe yards in the United States, Canada and Australia, plus rental and service operations in the Middle East and other select international markets."
  },
  "1701541": {
   "accn": "0001701541-26-000009",
@@ -1843,6 +1996,15 @@
   "model": "haiku",
   "source": "20-F filed 2026-04-29",
   "text": "PDD operates the Pinduoduo and Temu online platforms, where third-party merchants sell products to consumers, and earns revenue from transaction services and online marketing. Its China operations are conducted through contractual arrangements with a variable interest entity. Temu serves consumers in the United States, Japan, Germany, the United Kingdom, France, Canada and Italy."
+ },
+ "1738021": {
+  "accn": "0001171843-26-001337",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Compass Therapeutics, Inc.",
+  "sic": "2836",
+  "source": "10-K filed 2026-03-05",
+  "text": "Compass Therapeutics, Inc. (CMPX) is a clinical-stage oncology biopharmaceutical company developing proprietary antibody-based therapeutics, led by tovecimig, a bispecific antibody targeting DLL4 and VEGF-A. It is evaluating tovecimig in a Phase 2/3 trial in the United States for biliary tract cancer. The excerpt does not describe its customers."
  },
  "1742692": {
   "accn": "0001178913-26-000377",
@@ -2061,6 +2223,15 @@
   "source": "10-K filed 2026-02-26",
   "text": "MP Materials is the largest producer of rare earth materials in the Western Hemisphere, with mining and processing operations at Mountain Pass, California and magnet manufacturing at Independence Facility in Texas. The company produces rare earth oxides, metals, alloys and magnets, selling primarily to customers in Japan, South Korea and Asia, as well as to automotive companies including General Motors."
  },
+ "1802255": {
+  "accn": "0001193125-26-102172",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Guardian Pharmacy Services, Inc.",
+  "sic": "5912",
+  "source": "10-K filed 2026-03-11",
+  "text": "Guardian Pharmacy Services provides high-touch consultative pharmacy services, supported by proprietary data analytics systems and technology, to help local pharmacies serve their facilities and residents. It serves long-term care facilities (LTCFs), assisted living facilities (ALFs) and behavioral health facilities (BHFs)."
+ },
  "1802665": {
   "accn": "0001104659-26-018859",
   "date": "2026-10-08",
@@ -2104,6 +2275,24 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-10",
   "text": "Artiva is a clinical-stage biotechnology company developing off-the-shelf natural killer (NK) cell therapies for autoimmune diseases and cancers. Its lead product candidate, AlloNK, is being evaluated in three ongoing clinical trials, with refractory rheumatoid arthritis as the lead indication."
+ },
+ "1817713": {
+  "accn": "0001193125-26-076918",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Janux Therapeutics, Inc.",
+  "sic": "2834",
+  "source": "10-K filed 2026-02-26",
+  "text": "Janux is a clinical-stage biopharmaceutical company developing immunotherapies for cancer patients using its TRACTr, TRACIr and ARM platforms. Its first clinical candidate, JANX007, is in a Phase 1 trial for metastatic castration-resistant prostate cancer."
+ },
+ "1818643": {
+  "accn": "0001193125-26-110825",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Phoenix Energy One, LLC",
+  "sic": "1311",
+  "source": "10-K filed 2026-03-17",
+  "text": "Phoenix Energy One is an oil and gas company that drills operated working interests and acquires royalty and non-operated working interests to produce crude oil, natural gas and natural gas liquids. Its drilling is focused on the Williston Basin in North Dakota and Montana and the Powder River and Denver-Julesburg Basins in Wyoming. The excerpt does not name its customers."
  },
  "1819848": {
   "accn": "0001819848-26-000160",
@@ -2186,6 +2375,24 @@
   "source": "10-K filed 2026-03-05",
   "text": "TaskUs provides outsourced digital customer experience, trust and safety, and AI services, including data annotation and LLM support. Its clients, about 200 as of December 31, 2025, include global companies in AI, autonomous vehicles, social media, financial services and healthcare. It operates 31 sites in 13 countries."
  },
+ "1833214": {
+  "accn": "0001833214-26-000003",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "SAB Biotherapeutics, Inc.",
+  "sic": "2836",
+  "source": "10-K filed 2026-03-09",
+  "text": "SAB Biotherapeutics, Inc. (SABS) is a clinical-stage biopharmaceutical company developing multi-specific human immunoglobulin G therapies for immune and autoimmune disorders, led by SAB-142 for autoimmune type 1 diabetes. Its antibodies are produced using transchromosomic cattle (Tc-Bovine). The excerpt does not describe where it operates or its customers."
+ },
+ "1836470": {
+  "accn": "0001104659-26-035485",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Sportradar Group AG",
+  "sic": "7370",
+  "source": "20-F filed 2026-03-27",
+  "text": "Sportradar is a technology platform and B2B provider of data, software and content to the global sports betting industry, with principal offices in St. Gallen, Switzerland. Its products span data collection and processing, visualization, risk management and platform services. Customers include sports leagues and federations, betting operators and media companies."
+ },
  "1836754": {
   "accn": "0001493152-26-044147",
   "date": "2026-10-08",
@@ -2213,6 +2420,15 @@
   "model": "haiku",
   "source": "20-F filed 2026-04-14",
   "text": "Full Truck Alliance is a Cayman Islands holding company whose operations are conducted primarily in China, through contractual arrangements with variable interest entities and through subsidiaries. Its ADSs are listed on the NYSE under the ticker 'YMM'."
+ },
+ "1840706": {
+  "accn": "0001840706-26-000006",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "SOPHiA GENETICS SA",
+  "sic": "7374",
+  "source": "20-F filed 2026-03-03",
+  "text": "SOPHiA GENETICS is a cloud-native healthcare software company whose SOPHiA DDM platform standardizes, computes and analyzes digital health data to generate AI-driven insights. Its customers include healthcare institutions and biopharmaceutical companies for precision medicine across oncology, rare diseases and other areas. Its principal executive office is in Rolle, Switzerland."
  },
  "1840856": {
   "accn": "0001840856-26-000006",
@@ -2258,6 +2474,15 @@
   "source": "10-K filed 2026-03-25",
   "text": "Genesco is a retailer and wholesaler of branded footwear, apparel and accessories, operating through Journeys, Schuh, Johnston & Murphy and Genesco Brands. Its retail stores are located primarily in the US and Puerto Rico, with additional stores in Canada, the UK and the Republic of Ireland. Its wholesale customers include department, discount and specialty stores and e-commerce retailers."
  },
+ "1850235": {
+  "accn": "0001104659-26-053195",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "D-MARKET Electronic Services & Trading",
+  "sic": "5961",
+  "source": "20-F filed 2026-04-30",
+  "text": "D-MARKET operates the Hepsiburada e-commerce platform in Türkiye, selling products across 34 categories through a hybrid model of first-party sales and a third-party marketplace. It serves consumers and merchants and provides logistics, payment and advertising services."
+ },
  "1852131": {
   "accn": "0001852131-26-000017",
   "date": "2026-10-12",
@@ -2285,6 +2510,24 @@
   "source": "20-F filed 2026-03-06",
   "text": "Grab is a Southeast Asian superapp operating in deliveries, mobility and digital financial services across more than 900 cities. It operates in Cambodia, Indonesia, Malaysia, Myanmar, the Philippines, Singapore, Thailand and Vietnam. It serves users, driver-partners and merchant-partners, and provides digital banking through GXS Bank and GXBank."
  },
+ "1856314": {
+  "accn": "0001856314-26-000006",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Clear Secure, Inc.",
+  "sic": "7372",
+  "source": "10-K filed 2026-02-25",
+  "text": "Clear is a secure identity company offering CLEAR+, a consumer travel subscription that provides dedicated entry lanes at airport security checkpoints, and CLEAR1, a business-to-business identity verification solution. CLEAR+ lanes are located in 60 airports nationwide, and CLEAR1 focuses on healthcare, workforce and governmental organizations."
+ },
+ "1858724": {
+  "accn": "0001493152-26-018831",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "BingEx Ltd",
+  "sic": "4210",
+  "source": "20-F filed 2026-04-24",
+  "text": "BingEx Ltd (FLX) operates in China through a variable interest entity (VIE), with its PRC subsidiaries and the VIE holding its operations, and the excerpt does not describe its specific products or services or customers. The VIE received payments from customers under service agreements."
+ },
  "1858985": {
   "accn": "0001858985-26-000008",
   "date": "2026-10-12",
@@ -2308,6 +2551,15 @@
   "source": "10-K filed 2026-02-25",
   "text": "Crescent Energy develops and produces oil, natural gas and natural gas liquids. It operates upstream assets in the United States and owns a 12% interest in the Springfield Gathering System in southeast Texas's Eagle Ford Shale."
  },
+ "1866782": {
+  "accn": "0001829126-26-004041",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Codere Online Luxembourg, S.A.",
+  "sic": "7990",
+  "source": "20-F filed 2026-04-28",
+  "text": "Codere Online Luxembourg, S.A. is an international online casino gaming and online sports betting group. It operates primarily in Spain, Mexico, Colombia, Panama and Argentina, where users can play online casino games and bet on sports events."
+ },
  "1867096": {
   "accn": "0001867096-26-000016",
   "date": "2026-10-11",
@@ -2316,6 +2568,15 @@
   "sic": "2834",
   "source": "10-K filed 2026-03-02",
   "text": "Xeris is a commercial-stage biopharmaceutical company that sells Recorlev, Gvoke, and Keveyis, and is developing XP-8121, a once-weekly subcutaneous levothyroxine. It develops and commercializes therapies for people with chronic endocrine and neurological diseases in the United States."
+ },
+ "1869105": {
+  "accn": "0001193125-26-094112",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "BridgeBio Oncology Therapeutics, Inc.",
+  "sic": "2834",
+  "source": "10-K filed 2026-03-05",
+  "text": "BridgeBio Oncology Therapeutics, Inc. (BBOT) is a clinical-stage biotechnology company developing oral small molecule inhibitors for cancers driven by RAS and PI3Kα, including its KRAS G12C and pan-KRAS candidates. The excerpt does not describe where it operates or its customers."
  },
  "1873951": {
   "accn": "0001193125-26-076686",
@@ -2339,6 +2600,15 @@
   "sic": "4812",
   "source": "20-F filed 2026-03-16",
   "text": "IHS owns, operates and develops shared communications infrastructure, operating 37,590 towers as of December 31, 2025 across five African countries and two Latin American countries. Its customers are mostly leading mobile network operators (MNOs), and its towers support coverage for approximately 647 million people in emerging markets."
+ },
+ "1876431": {
+  "accn": "0001628280-26-028623",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Prenetics Global Ltd",
+  "sic": "2834",
+  "source": "20-F filed 2026-04-30",
+  "text": "Prenetics Global Ltd (PRE) is a consumer health company whose flagship brand is IM8, a supplement brand launched in December 2024 and co-founded with David Beckham. CircleDNA, a consumer genetic testing product, serves customers in more than 30 countries, and IM8 ships to more than 30 countries."
  },
  "1879016": {
   "accn": "0001879016-26-000005",
@@ -2437,6 +2707,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-27",
   "text": "Solventum is a global healthcare company with three segments: MedSurg solutions (wound care, surgical supplies), Dental Solutions (orthodontics and restorative products), and Health Information Systems (healthcare software). It serves hospitals, clinics, and healthcare systems."
+ },
+ "1966287": {
+  "accn": "0001213900-26-027268",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Greenfire Resources Ltd.",
+  "sic": "1311",
+  "source": "40-F filed 2026-03-13",
+  "text": "GFR is an Alberta-incorporated registrant with principal executive offices in Calgary, Alberta, Canada. It is classified under SEC industry code 1311 (crude petroleum and natural gas). The excerpt does not describe its products, operations or customers."
  },
  "1969373": {
   "accn": "0001969373-26-000010",
@@ -2666,6 +2945,15 @@
   "source": "20-F filed 2026-03-12",
   "text": "Unilever is a consumer goods company with brands such as Dove and Vaseline, spanning personal care and foods. Its Ice Cream business was demerged as The Magnum Ice Cream Company, in which Unilever retains a 19.85% stake. It sells through retailers and operates in markets including the US, Latin America and India."
  },
+ "2186": {
+  "accn": "0001437749-26-007826",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "BK Technologies Corp",
+  "sic": "3663",
+  "source": "10-K filed 2026-03-12",
+  "text": "BK Technologies Corp (BKTI) is a holding company whose operating subsidiary, BK Technologies, Inc., provides public safety grade communications products, including two-way land mobile radios and the BK ONE smartphone-based solutions. Its radios serve government markets such as emergency response, public safety, homeland security and military agencies, as well as industrial and commercial enterprises."
+ },
  "27419": {
   "accn": "0000027419-26-000016",
   "date": "2026-10-07",
@@ -2821,6 +3109,15 @@
   "source": "10-K filed 2026-02-24",
   "text": "Gentex designs and manufactures automatic-dimming rearview mirrors using electrochromic technology for automotive applications, along with premium audio systems, dimmable aircraft windows, fire protection devices, and medical devices. It operates globally with sales, engineering and distribution locations supporting all major automotive producing regions and serves automotive manufacturers, consumer electronics companies, and aviation customers."
  },
+ "357294": {
+  "accn": "0001753926-25-001938",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "HOVNANIAN ENTERPRISES INC",
+  "sic": "1531",
+  "source": "10-K filed 2025-12-22",
+  "text": "Hovnanian Enterprises designs, builds and sells single-family detached homes, townhomes, condominiums and active lifestyle homes, and provides mortgage and title services to its homebuyers. It offers homes in 140 communities across 13 states in the United States. It serves first-time, move-up, luxury and active lifestyle buyers and empty nesters."
+ },
  "37996": {
   "accn": "0000037996-26-000015",
   "date": "2026-10-10",
@@ -2899,6 +3196,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-12",
   "text": "Kimberly-Clark makes essential consumer and professional products from fibers, nonwovens and absorbency, including Huggies, Kleenex, Scott and Kotex brands. Its brands serve people in more than 175 countries and territories. Customers include supermarkets, mass merchandisers, drugstores and warehouse clubs, as well as distributors and professional users such as food service and lodging businesses."
+ },
+ "57131": {
+  "accn": "0000057131-26-000019",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "LA-Z-BOY INC",
+  "sic": "2510",
+  "source": "10-K filed 2026-06-16",
+  "text": "La-Z-Boy is the leading global producer of reclining chairs and a large U.S. residential furniture manufacturer and distributor, selling under the La-Z-Boy, England and Joybird brands. It sells in the United States, Canada and about 45 other countries through company-owned stores, independent retailers and websites. Customers include consumers and furniture retailers or distributors."
  },
  "57515": {
   "accn": "0000057515-26-000019",
@@ -3138,6 +3444,15 @@
   "source": "10-K filed 2026-02-25",
   "text": "McGrath RentCorp is a diversified business-to-business rental company offering relocatable modular buildings, portable storage containers and electronic test equipment. Its Enviroplex unit sells classroom modular buildings used primarily in California. Its corporate offices are in Livermore, California, and its customers generally have short-term rental needs."
  },
+ "75288": {
+  "accn": "0000075288-26-000026",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "OXFORD INDUSTRIES INC",
+  "sic": "2320",
+  "source": "10-K filed 2026-03-27",
+  "text": "Oxford Industries is a branded apparel company that designs, sources, markets and distributes lifestyle brands including Tommy Bahama, Lilly Pulitzer, Johnny Was and Southern Tide. It sells directly to consumers through 315 full-price retail stores, e-commerce and outlets, and also serves key wholesale customers."
+ },
  "75362": {
   "accn": "0001193125-26-057025",
   "date": "2026-10-09",
@@ -3265,6 +3580,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-19",
   "text": "PPG manufactures and distributes paints, coatings, and specialty products for industrial, automotive, aerospace, marine, and consumer applications. It operates in more than 50 countries, serving original equipment manufacturers, contractors, and consumers."
+ },
+ "799167": {
+  "accn": "0001437749-26-005971",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "MARTEN TRANSPORT LTD",
+  "sic": "4213",
+  "source": "10-K filed 2026-02-27",
+  "text": "Marten is a truckload carrier that transports temperature-sensitive and dry freight, specializing in food and other consumer packaged goods. It operates throughout the United States and in parts of Mexico and Canada, with revenue primarily from within the United States."
  },
  "799292": {
   "accn": "0000799292-26-000006",
@@ -3537,6 +3861,15 @@
   "source": "10-K filed 2026-03-16",
   "text": "ATN provides fixed and mobile telecommunications, broadband, and carrier communications services, including fiber transport, in rural and remote markets. It operates primarily in the western US and Alaska, and internationally in Bermuda and the Caribbean. Customers include residential, business and government customers, and carrier customers."
  },
+ "880117": {
+  "accn": "0001193125-26-356919",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "SANFILIPPO JOHN B & SON INC",
+  "sic": "2060",
+  "source": "10-K filed 2026-08-19",
+  "text": "John B. Sanfilippo & Son processes and distributes tree nuts and peanuts, and manufactures snack and nutrition bars, nut butters and other snack products, largely under private brand names. It operates in the United States, with headquarters in Elgin, Illinois. Its customers include food retailers, commercial ingredient users and contract manufacturing customers."
+ },
  "88121": {
   "accn": "0000088121-26-000012",
   "date": "2026-10-08",
@@ -3659,6 +3992,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-27",
   "text": "O'Reilly Automotive is a specialty retailer of automotive aftermarket parts, tools, supplies and equipment. It operates 6,447 stores in the United States and Puerto Rico, plus locations in Mexico and Canada. The company serves both do-it-yourself customers and professional service providers."
+ },
+ "903129": {
+  "accn": "0001193125-26-059602",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "Gentherm Inc",
+  "sic": "3714",
+  "source": "10-K filed 2026-02-19",
+  "text": "Gentherm is a global provider of thermal management and pneumatic comfort technologies, including automotive products such as Climate Control Seats and medical patient temperature management systems. It operates in locations aligned with its major customers' product strategies, and its medical systems are found in hospitals throughout the world."
  },
  "904851": {
   "accn": "0001193125-26-126363",
@@ -3871,6 +4213,24 @@
   "model": "haiku",
   "source": "20-F filed 2026-03-25",
   "text": "Rentokil (RTO) is a UK public limited company providing pest control and hygiene services, including termite and pest management through its U.S. Terminix business. As of 31 December 2025 it operated 2,081 facilities in 90 countries. Its services protect people from pest-borne disease and the reputations of customers' brands."
+ },
+ "930420": {
+  "accn": "0000930420-26-000007",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "KFORCE INC",
+  "sic": "7363",
+  "source": "10-K filed 2026-02-20",
+  "text": "Kforce is a solutions firm providing technology, finance and accounting, and other professional staffing services on temporary (Flex) and permanent (Direct Hire) bases. It serves clients across virtually all major industries, including Fortune 500 and other leading companies, and has a development center in Pune, India."
+ },
+ "932695": {
+  "accn": "0001193125-26-191559",
+  "date": "2026-10-14",
+  "model": "haiku",
+  "name": "CHINA YUCHAI INTERNATIONAL LTD",
+  "sic": "3510",
+  "source": "20-F filed 2026-04-29",
+  "text": "China Yuchai is a Bermuda holding company that owns 76.4% of Yuchai through six wholly-owned subsidiaries. Its principal operating office is in Singapore, and Yuchai's principal manufacturing facilities are in Yulin city, China."
  },
  "932787": {
   "accn": "0000932787-26-000009",
