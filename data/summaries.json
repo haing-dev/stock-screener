@@ -227,6 +227,15 @@
   "source": "10-K filed 2026-03-12",
   "text": "Sonida Senior Living (SNDA) owns, operates and invests in senior housing communities, offering independent living, assisted living and memory care, mainly to people aged 75 and older. As of December 31, 2025, it owned, managed or invested in 96 communities in 20 U.S. states."
  },
+ "1045986": {
+  "accn": "0001213900-26-055948",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "FORMULA SYSTEMS (1985) LTD",
+  "sic": "7371",
+  "source": "20-F filed 2026-05-13",
+  "text": "Formula Systems is an Israeli holding company that has primarily acquired controlling interests in companies in the IT solutions and services industry. Its subsidiaries provide services including IT infrastructure and software solutions. Clients named in the excerpt include Bezeq, HOT, Cellcom, YES, Israel Railways, and multiple government bodies."
+ },
  "1046179": {
   "accn": "0001628280-26-025362",
   "date": "2026-10-08",
@@ -247,6 +256,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-04",
   "text": "CompX International manufactures security products, including cabinet locks, and marine components, including wake enhancement systems, exhaust systems and gauges. Its products are used in postal, recreational transportation, furniture, healthcare and marine applications. Its largest customer is the United States Postal Service, which accounted for 26% of 2025 net sales. The excerpt does not state where it operates beyond its North American market and facilities in South Carolina, Illinois and Wisconsin."
+ },
+ "1050140": {
+  "accn": "0001104659-26-026450",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "DESCARTES SYSTEMS GROUP INC",
+  "sic": "7372",
+  "source": "40-F filed 2026-03-11",
+  "text": "Descartes is a Canadian company with principal executive offices in Waterloo, Ontario. The excerpt is only the form cover page, so its products and customers are not described."
  },
  "105016": {
   "accn": "0001193125-26-082486",
@@ -455,6 +473,15 @@
   "source": "10-K filed 2025-10-22",
   "text": "Winnebago manufactures towable and motorhome RVs and boats under brands including Winnebago, Grand Design, Chris-Craft and Newmar, plus lithium \"house power\" batteries. It produces in Indiana, Iowa and Florida and sells RVs and marine products through independent dealers in the U.S. and Canada, who sell to end consumers."
  },
+ "1076930": {
+  "accn": "0001193125-26-064230",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "NOVANTA INC",
+  "sic": "3690",
+  "source": "10-K filed 2026-02-23",
+  "text": "Novanta is a supplier of core technology solutions, including precision components and sub-systems, to medical, life science and advanced industrial original equipment manufacturers (OEMs). It was founded in Massachusetts in 1968 and is now a global company."
+ },
  "1080014": {
   "accn": "0001193125-26-071776",
   "date": "2026-10-08",
@@ -592,6 +619,15 @@
   "source": "10-K filed 2026-02-20",
   "text": "Qlys provides cloud-based IT, security and compliance solutions delivered through a global platform. It serves over 10,000 customers worldwide, including large organizations and small businesses, through subscription-based software-as-a-service offerings."
  },
+ "1109138": {
+  "accn": "0001178913-26-001561",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "CAMTEK LTD",
+  "sic": "3827",
+  "source": "20-F filed 2026-03-19",
+  "text": "CAMTEK is a semiconductor equipment company whose inspection and metrology systems support the production of AI-related products, including high-bandwidth memory and advanced packaging. It serves integrated device manufacturers, outsourced semiconductor assembly and test providers (OSATs), and foundries. The company sells to customers in a number of countries, including China."
+ },
  "1109345": {
   "accn": "0001178913-26-000504",
   "date": "2026-10-08",
@@ -723,6 +759,15 @@
   "source": "20-F filed 2026-03-06",
   "text": "GSK is a biopharmaceutical company focused on respiratory, immunology and inflammation, oncology and HIV medicines, following the 2022 demerger of Haleon. The excerpt describes a truly global reach and a focus on patients."
  },
+ "1137091": {
+  "accn": "0001628280-26-013207",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "POWER SOLUTIONS INTERNATIONAL, INC.",
+  "sic": "3510",
+  "source": "10-K filed 2026-03-02",
+  "text": "Power Solutions International designs, manufactures, and sells emission-certified engines and power systems that run on natural gas, propane, biofuels, gasoline, and diesel. Its products are used primarily by global original equipment manufacturers and end-user customers in power generation, material handling, agricultural, construction, and other applications. The company sells in global markets."
+ },
  "1140625": {
   "accn": "0001140625-26-000013",
   "date": "2026-10-09",
@@ -744,6 +789,15 @@
   "source": "10-K filed 2026-02-11",
   "text": "Mastercard operates a global payments network enabling electronic transactions for consumers, merchants, and financial institutions through its Mastercard, Maestro, and Cirrus brands. It provides payment products, processing, security, and analytics services supporting consumer, commercial, and digital payments."
  },
+ "1144879": {
+  "accn": "0001144879-26-000048",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Applied Digital Corp.",
+  "sic": "7374",
+  "source": "10-K filed 2026-07-29",
+  "text": "Applied Digital designs, builds, owns and operates large-scale data centers for high-performance computing and AI workloads, which it leases under long-term arrangements. Its flagship Polaris Forge 1 campus is in Ellendale, North Dakota. Its customers include investment-grade hyperscalers and other compute customers."
+ },
  "1145197": {
   "accn": "0001145197-26-000028",
   "date": "2026-10-07",
@@ -764,6 +818,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-08-05",
   "text": "Stride is a technology company that provides an online learning platform for K-12 students throughout the U.S., including full-time virtual schools, and career learning and adult training programs. Its clients are primarily public and private schools, school districts and charter boards, and it also serves employers, government agencies and consumers."
+ },
+ "1157557": {
+  "accn": "0001554855-26-000648",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "ENERGY CO OF MINAS GERAIS",
+  "sic": "4911",
+  "source": "20-F filed 2026-04-17",
+  "text": "CEMIG is a state-controlled mixed capital company headquartered in Belo Horizonte, Brazil. It generates, transmits, and distributes electricity, largely through hydroelectric power plants, and distributes natural gas through its subsidiary Gasmig. Its energy distribution business operates in the State of Minas Gerais."
  },
  "1158114": {
   "accn": "0001437749-26-005875",
@@ -830,6 +893,15 @@
   "source": "10-K filed 2026-03-27",
   "text": "Fennec Pharmaceuticals Inc., a British Columbia corporation operating through its Delaware subsidiary, is focused on the commercialization of PEDMARK®."
  },
+ "12208": {
+  "accn": "0000012208-26-000010",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "BIO-RAD LABORATORIES, INC.",
+  "sic": "3826",
+  "source": "10-K filed 2026-02-13",
+  "text": "Bio-Rad Laboratories designs, manufactures, and supports diagnostic test systems, reagents, instruments, and software for clinical laboratories in the in vitro diagnostics market. The company also has a Life Science segment. Its customers include university and research institutions, hospital and commercial laboratories, diagnostic manufacturers, and companies in the biotechnology, pharmaceutical, chemical, and food industries."
+ },
  "1237831": {
   "accn": "0001628280-26-011209",
   "date": "2026-10-07",
@@ -890,6 +962,15 @@
   "source": "10-K filed 2026-02-12",
   "text": "NewMarket is a holding company whose subsidiaries include Afton (a major lubricant and fuel additives manufacturer with operations in North America, Europe, Asia, Africa and South America), AMPAC (specialty materials for solid rocket motors) and Calca (hydrazine products). AMPAC and Calca serve aerospace and defense markets in the United States."
  },
+ "1285785": {
+  "accn": "0001285785-26-000017",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "MOSAIC CO",
+  "sic": "2870",
+  "source": "10-K filed 2026-02-27",
+  "text": "Mosaic is a producer and marketer of concentrated phosphate and potash crop nutrients and animal feed ingredients. It mines and processes phosphate and potash in Florida, Louisiana, Brazil, Peru, Saskatchewan and New Mexico, and serves customers in approximately 40 countries. Its products are sold to crop nutrient manufacturers, distributors, retailers and farmers."
+ },
  "1287098": {
   "accn": "0001104659-26-034557",
   "date": "2026-10-08",
@@ -933,6 +1014,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-27",
   "text": "Texas Roadhouse operates three casual dining concepts: Texas Roadhouse offering steaks and seafood, Bubba's 33 featuring burgers and pizza, and Jaggers fast-casual restaurants. It operates 714 company-owned and 102 franchised locations across 49 states, one U.S. territory, and ten foreign countries, serving consumers seeking affordable casual dining."
+ },
+ "1290900": {
+  "accn": "0001628280-26-016520",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Commercial Vehicle Group, Inc.",
+  "sic": "3714",
+  "source": "10-K filed 2026-03-10",
+  "text": "Commercial Vehicle Group is a global provider of systems, assemblies, and components for commercial vehicle and electric vehicle markets, organized into Global Seating, Global Electrical Systems, and Trim Systems and Components segments. It has manufacturing operations in multiple countries, and its products are primarily sold in North America, Europe, and the Asia-Pacific region. Customers include North American commercial truck manufacturers and construction and agriculture OEMs."
  },
  "1293135": {
   "accn": "0001104659-26-023553",
@@ -1009,6 +1099,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-12",
   "text": "Zumiez (ZUMZ) is a specialty retailer of apparel, footwear, accessories and hardgoods for young men and women, operating through stores and ecommerce under the Zumiez, Blue Tomato and Fast Times names. At January 31, 2026 it operated 719 stores in the United States, Canada, Europe and Australia. It targets customers interested in action sports, streetwear and other lifestyles."
+ },
+ "1319161": {
+  "accn": "0001319161-25-000034",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Warner Music Group Corp.",
+  "sic": "7900",
+  "source": "10-K filed 2025-11-20",
+  "text": "Warner Music Group is a music entertainment company operating the Recorded Music business, with labels such as Atlantic Records, Warner Records and Elektra Records, and the Warner Chappell Music publishing business. It sells music through streaming and other digital platforms, including Apple, YouTube and Tencent Music Entertainment Group."
  },
  "1326190": {
   "accn": "0001326190-26-000018",
@@ -1220,6 +1319,15 @@
   "source": "10-K filed 2026-03-12",
   "text": "Whitehawk is a clinical-stage oncology therapeutics company developing three antibody drug conjugates (ADCs) licensed from WuXi Biologics, which use a Hangzhou DAC TOP1 inhibitor linker-payload. It divested its former FYARRO business to KAKEN in March 2025."
  },
+ "1429260": {
+  "accn": "0001104659-26-037874",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Fortress Biotech, Inc.",
+  "sic": "2834",
+  "source": "10-K filed 2026-03-31",
+  "text": "Fortress Biotech is a biopharmaceutical company that acquires and advances pharmaceutical assets through partner and subsidiary companies. Its subsidiary Cyprium's ZYCUBO was FDA-approved in January 2026 for pediatric patients with Menkes disease."
+ },
  "1437424": {
   "accn": "0001493152-26-014253",
   "date": "2026-10-08",
@@ -1406,6 +1514,15 @@
   "source": "10-K filed 2026-02-06",
   "text": "Aptiv is a global industrial technology company developing advanced automotive and industrial technology solutions across three segments: software and sensors, interconnect systems, and power distribution. The company operates 139 manufacturing facilities across 50 countries. It serves the 25 largest automotive OEMs worldwide, as well as aerospace, defense, and telecom companies."
  },
+ "1527636": {
+  "accn": "0001193125-26-155932",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Autohome Inc.",
+  "sic": "7374",
+  "source": "20-F filed 2026-04-15",
+  "text": "Autohome operates online platforms autohome.com.cn, che168.com, and ttpai.cn that deliver content and tools to automobile consumers in China and provide services to automakers and dealers across the auto value chain. The company is headquartered in Beijing. Its customers include automobile consumers, automakers, and dealers."
+ },
  "1527753": {
   "accn": "0001193125-26-076615",
   "date": "2026-10-08",
@@ -1453,6 +1570,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-12",
   "text": "BJ's Wholesale Club is a membership warehouse operator offering groceries, general merchandise, gasoline, and ancillary services. Operating 263 clubs and 199 gas stations across 21 U.S. states as of fiscal 2025, primarily in the eastern United States, BJ's serves over 8 million individual and business members."
+ },
+ "1533232": {
+  "accn": "0001533232-26-000011",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Brookfield Renewable Partners L.P.",
+  "sic": "4911",
+  "source": "20-F filed 2026-02-27",
+  "text": "Brookfield Renewable owns renewable power assets, with about 47,200 MW of operating capacity, and sustainable solutions investments, including a stake in Westinghouse, a nuclear services business. It invests directly and with institutional and joint venture partners, and holds assets in the Caribbean and Latin America."
  },
  "1534254": {
   "accn": "0001534254-26-000003",
@@ -1638,6 +1764,15 @@
   "source": "10-K filed 2026-08-05",
   "text": "Paylocity provides cloud-based human capital management, finance, and IT software solutions to U.S. organizations. The unified SaaS platform automates HR processes, payroll, benefits management, and employee workflows. It serves approximately 44,400 clients averaging over 150 employees each through direct sales and a referral network."
  },
+ "1595761": {
+  "accn": "0001104659-26-047217",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "WEIBO Corp",
+  "sic": "7370",
+  "source": "20-F filed 2026-04-23",
+  "text": "Weibo operates a social media platform that allows users in China and global Chinese communities to share content publicly. It offers advertising and marketing solutions to brands, with users including individuals, celebrities, media outlets, businesses, government agencies, and charities. Its headquarters and principal operations are in Beijing, China."
+ },
  "1596532": {
   "accn": "0001596532-26-000013",
   "date": "2026-10-07",
@@ -1693,6 +1828,15 @@
   "source": "10-K filed 2026-03-16",
   "text": "Pangaea Logistics Solutions provides seaborne drybulk logistics and transportation services, plus terminal and stevedoring services. It transports grains, coal, iron ore, bauxite, cement clinker and other bulk cargoes across more than 300 ports worldwide. It serves industrial customers that ship drybulk cargo."
  },
+ "1610250": {
+  "accn": "0001104659-26-061346",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Boot Barn Holdings, Inc.",
+  "sic": "5661",
+  "source": "10-K filed 2026-05-14",
+  "text": "Boot Barn is a lifestyle retail chain selling western and work footwear, apparel, and accessories through 539 stores in 49 states and an e-commerce platform. Its customers include western and country enthusiasts as well as workers seeking durable footwear and apparel."
+ },
  "1621434": {
   "accn": "0001621434-26-000018",
   "date": "2026-10-14",
@@ -1722,6 +1866,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-19",
   "text": "Rimini Street provides third-party enterprise software support, managed services and ERP innovation solutions, including support for Oracle, SAP and VMware. It markets its services globally through subsidiaries in many countries and serves over 3,100 active clients, including companies, educational institutions and government institutions."
+ },
+ "1637715": {
+  "accn": "0001193125-26-104147",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "OnKure Therapeutics, Inc.",
+  "sic": "2834",
+  "source": "10-K filed 2026-03-12",
+  "text": "OnKure Therapeutics is a clinical-stage biopharmaceutical company developing small-molecule precision medicines. Its lead candidate, OKI-219, selectively inhibits mutated PI3Kα (H1047R) and is in a Phase 1 trial for patients with advanced breast cancer."
  },
  "1639300": {
   "accn": "0001140361-26-010409",
@@ -1843,6 +1996,15 @@
   "source": "10-K filed 2026-02-27",
   "text": "Yum China operates KFC, Pizza Hut, Lavazza, Huang Ji Huang, Little Sheep and Taco Bell restaurants in China. The company operates over 18,100 units across more than 2,500 cities primarily in mainland China. It serves consumers seeking quick-service and casual dining options."
  },
+ "1673743": {
+  "accn": "0001628280-26-013808",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Hinge Health, Inc.",
+  "sic": "7374",
+  "source": "10-K filed 2026-03-03",
+  "text": "Hinge provides AI-powered care for joint and muscle (MSK) health, using AI motion tracking, a nerve stimulation wearable, and a care team of licensed physical therapists, physicians, and health coaches. Its core clients are self-insured employers, including public-sector employers such as state and local governments and labor unions, and it also serves health plans' fully-insured and Medicare Advantage populations and federal insurance plans."
+ },
  "1677250": {
   "accn": "0001104659-26-044613",
   "date": "2026-10-12",
@@ -1926,6 +2088,15 @@
   "source": "10-K filed 2026-03-24",
   "text": "BioAge Labs (BIOA) is a clinical-stage biopharmaceutical company developing treatments for metabolic diseases by targeting human aging biology. Its lead program, BGE-102, is an oral NLRP3 inhibitor being studied for cardiometabolic disease and diabetic macular edema. The excerpt does not state where it operates or its customers."
  },
+ "1711375": {
+  "accn": "0001711375-26-000030",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Loma Negra Compania Industrial Argentina Sociedad Anonima",
+  "sic": "3241",
+  "source": "20-F filed 2026-04-28",
+  "text": "Loma Negra produces and distributes cement, masonry cement, aggregates, concrete and lime, based in Buenos Aires, Argentina, with nationwide operations. It sells primarily to wholesale distributors, concrete producers and industrial customers, and serves private and public construction."
+ },
  "1712807": {
   "accn": "0001554855-26-000826",
   "date": "2026-10-13",
@@ -1973,6 +2144,15 @@
   "sic": "",
   "source": "10-K filed 2026-02-25",
   "text": "Blackstone Secured Lending Fund (BXSL) is an externally managed business development company that seeks current income, mainly by investing at least 80% of its total assets in secured debt, primarily first lien senior secured and unitranche loans. It is regulated under the Investment Company Act of 1940 and is advised by Blackstone affiliates."
+ },
+ "1736541": {
+  "accn": "0001104659-26-041765",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "NIO Inc.",
+  "sic": "3711",
+  "source": "20-F filed 2026-04-10",
+  "text": "NIO is a smart electric vehicle company that designs, develops, manufactures, and sells smart electric vehicles under the NIO, ONVO, and FIREFLY brands. It sells lifestyle products such as clothing, home goods, electronics, and food through online stores within its apps to its users. Its principal executive offices are in Shanghai, with research and development centers in Shanghai, Anhui, Beijing, San Jose, Munich, and Oxford."
  },
  "1737287": {
   "accn": "0001628280-26-017242",
@@ -2051,6 +2231,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-17",
   "text": "BlackSky Technology is a space technology company headquartered in Herndon, Virginia, that delivers real-time satellite imagery, analytics and monitoring from its low earth orbit satellite constellation and its BlackSky Spectra software platform. It also helps customers acquire, own and operate their own satellites. Most of its sales are to domestic and international government agencies."
+ },
+ "1754068": {
+  "accn": "0001193125-26-110659",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Kalaris Therapeutics, Inc.",
+  "sic": "2836",
+  "source": "10-K filed 2026-03-17",
+  "text": "Kalaris Therapeutics is a clinical stage biopharmaceutical company developing TH103, an anti-VEGF drug for retinal diseases, currently being investigated for neovascular age-related macular degeneration (nAMD). The company is conducting a Phase 1b/2 study of TH103. Its customers are not described in the excerpt."
  },
  "1754301": {
   "accn": "0001628280-26-053960",
@@ -2460,6 +2649,15 @@
   "source": "20-F filed 2026-03-17",
   "text": "Telesat is a global satellite operator providing satellite communications services for voice, data and broadcast in the Americas, including Canada's far North, and is building the Telesat Lightspeed LEO satellite network for enterprise and government customers. It also operates Telesat Government Solutions, a U.S. government-approved subsidiary."
  },
+ "1849056": {
+  "accn": "0001628280-26-018698",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Oklo Inc.",
+  "sic": "4911",
+  "source": "10-K filed 2026-03-17",
+  "text": "Oklo develops Aurora powerhouses, fast fission reactors that produce electricity and heat and can run on fresh, recycled or down-blended nuclear fuel, and is commercializing nuclear fuel recycling technology. It has a site use permit from the U.S. Department of Energy for the Idaho National Laboratory site. Its non-binding and binding customer arrangements include Meta Platforms, Switch and Equinix."
+ },
  "1849635": {
   "accn": "0001140361-26-007174",
   "date": "2026-10-08",
@@ -2518,6 +2716,15 @@
   "sic": "7372",
   "source": "10-K filed 2026-02-25",
   "text": "Clear is a secure identity company offering CLEAR+, a consumer travel subscription that provides dedicated entry lanes at airport security checkpoints, and CLEAR1, a business-to-business identity verification solution. CLEAR+ lanes are located in 60 airports nationwide, and CLEAR1 focuses on healthcare, workforce and governmental organizations."
+ },
+ "1856437": {
+  "accn": "0001856437-26-000004",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Victoria's Secret & Co.",
+  "sic": "5621",
+  "source": "10-K filed 2026-03-20",
+  "text": "Victoria's Secret is a specialty retailer of women's intimates, apparel and beauty products under the Victoria's Secret, PINK and Adore Me brands. It operates stores and websites in the U.S., Canada and China, and has franchise, license and wholesale partners selling its products in approximately 70 countries."
  },
  "1858724": {
   "accn": "0001493152-26-018831",
@@ -2617,6 +2824,15 @@
   "source": "10-K filed 2026-02-23",
   "text": "Ivanhoe Electric (IE) is a United States minerals exploration and development company focused on copper and other critical metals. Its wholly owned assets are in the United States, where its sole material project is the Santa Cruz Copper Project in Arizona. It also operates exploration joint ventures in Saudi Arabia, Chile and the United States."
  },
+ "1884516": {
+  "accn": "0001193125-26-095973",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Drilling Tools International Corp",
+  "sic": "3533",
+  "source": "10-K filed 2026-03-06",
+  "text": "Drilling Tools International is a global oilfield services company that designs, manufactures, and rents downhole tools for onshore and offshore horizontal and directional drilling. It operates in North America, Europe, the Middle East, and Asia-Pacific, and serves major oilfield service companies and global exploration and production operators."
+ },
  "1891027": {
   "accn": "0001891027-26-000019",
   "date": "2026-10-08",
@@ -2651,6 +2867,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-26",
   "text": "D-Wave provides commercial annealing and gate-model quantum computing systems, software, and services. The company offers quantum computers with sub-second response times deployable on-premises or accessed through its Leap cloud service. D-Wave serves enterprise customers solving complex computational problems."
+ },
+ "1918414": {
+  "accn": "0001213900-26-032632",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Newbridge Acquisition Ltd",
+  "sic": "7372",
+  "source": "10-K filed 2026-03-23",
+  "text": "Newbridge Acquisition is a blank check company formed to pursue a merger or similar business combination with one or more businesses, not limited to a particular industry or region. It completed an IPO in February 2026. Its principal executive offices are in Hong Kong, China."
  },
  "1922446": {
   "accn": "0001922446-26-000020",
@@ -2745,6 +2970,15 @@
   "source": "20-F filed 2025-12-18",
   "text": "Birk designs and manufactures footwear products featuring its iconic footbed, with production and assembly in Germany and the EU. It sells globally through direct-to-consumer retail and e-commerce channels as well as wholesale partnerships to consumers worldwide."
  },
+ "1978867": {
+  "accn": "0001978867-26-000022",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Cadeler A/S",
+  "sic": "4412",
+  "source": "20-F filed 2026-03-24",
+  "text": "Cadeler is a leading offshore wind installation vessel contractor headquartered in Copenhagen, Denmark, operating 10 jack-up wind installation vessels. It transports and installs offshore wind turbine generators and their foundations, and also provides maintenance, decommissioning, and general construction services. Its customers include offshore wind farm developers, original equipment manufacturers, and offshore contractors, and it has worked on projects in the UK, US, Germany, Poland, Taiwan, France, and the Netherlands."
+ },
  "1980088": {
   "accn": "0001628280-26-017249",
   "date": "2026-10-08",
@@ -2816,6 +3050,24 @@
   "source": "20-F filed 2026-04-29",
   "text": "Chagee is a Cayman Islands holding company that conducts its business in China through Beijing Chagee and operates in Southeast Asia and the United States through subsidiaries. The excerpt does not describe its products or customers."
  },
+ "2019061": {
+  "accn": "0002019061-26-000006",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "South Bow Corp",
+  "sic": "4610",
+  "source": "40-F filed 2026-03-16",
+  "text": "South Bow is a Canadian company with principal executive offices in Calgary, Alberta. The excerpt is only the form cover page, so its business and customers are not described."
+ },
+ "2019410": {
+  "accn": "0002019410-26-000016",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Caris Life Sciences, Inc.",
+  "sic": "8071",
+  "source": "10-K filed 2026-03-03",
+  "text": "Caris is a precision medicine company that combines comprehensive molecular profiling, next-generation sequencing, and AI/machine learning, with an initial focus on oncology. Its molecular profiling products include the MI Profile, Caris Assure, and Precision Whole Genome platforms. It serves clinical, academic, and biopharma markets."
+ },
  "2023554": {
   "accn": "0001628280-26-057406",
   "date": "2026-10-11",
@@ -2832,12 +3084,30 @@
   "source": "10-K filed 2026-02-26",
   "text": "StandardAero provides aerospace engine aftermarket services, including maintenance, repair and overhaul, component repair and field service for fixed and rotary wing aircraft. It serves commercial, military and business aviation markets, with customers including engine OEMs and about 5,000 customers globally. Operations span the United States, Canada, the UK and several other countries."
  },
+ "2026514": {
+  "accn": "0001213900-26-038838",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Namib Minerals",
+  "sic": "1040",
+  "source": "20-F filed 2026-04-02",
+  "text": "Namib Minerals is a mining company with gold mineral resources and reserves. Its excerpt covers ore milling and metallurgy, and its risk disclosures reference operations in Zimbabwe and the Democratic Republic of the Congo."
+ },
  "2029118": {
   "accn": "0002029118-26-000014",
   "date": "2026-10-08",
   "model": "haiku",
   "source": "10-K filed 2026-03-10",
   "text": "Infinity is an independent energy company focused on acquiring, developing and producing oil and natural gas in the Appalachian Basin. Its operations are in the Utica Shale in eastern Ohio and in the Marcellus and Utica Shales in southwestern Pennsylvania."
+ },
+ "2030277": {
+  "accn": "0001829126-26-003281",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "LEIFRAS Co., Ltd.",
+  "sic": "8200",
+  "source": "20-F filed 2026-04-08",
+  "text": "LEIFRAS is a Tokyo-based sports and social business that organizes and operates sports schools and sports events for children. It also dispatches sports coaches to meet community needs and runs a childcare center through its subsidiary Apicos."
  },
  "2035149": {
   "accn": "0001193125-26-077219",
@@ -2878,12 +3148,30 @@
   "source": "10-K filed 2026-04-03",
   "text": "Karman designs, tests, manufactures and sells mission-critical systems for missile, defense and space programs, including payload protection, interstage and propulsion systems. It serves prime contractor customers in hypersonics and strategic missile defense, tactical missiles, integrated defense systems, and space and launch markets."
  },
+ "2041338": {
+  "accn": "0001493152-26-038758",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Dreamland Ltd",
+  "sic": "8741",
+  "source": "20-F filed 2026-08-17",
+  "text": "Dreamland operates through its subsidiary Trendic in Hong Kong, organizing experience events and providing event management and design services. Its customers are event organizers, other enterprises, and individual event attendees in the countries where the events are held. Its top customers accounted for a large share of revenue in fiscal years 2024 through 2026."
+ },
  "2044725": {
   "accn": "0001193125-26-093932",
   "date": "2026-10-08",
   "model": "haiku",
   "source": "10-K filed 2026-03-05",
   "text": "Evommune (EVMN) is a clinical-stage biotechnology company developing therapies for chronic inflammatory diseases. Its Phase 2 candidates are EVO756, an oral MRGPRX2 antagonist, and EVO301, an IL-18 binding fusion protein. Initial indications are chronic spontaneous urticaria, atopic dermatitis and ulcerative colitis."
+ },
+ "2049662": {
+  "accn": "0001104659-26-032882",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Factorial Energy Inc.",
+  "sic": "3690",
+  "source": "10-K filed 2026-03-23",
+  "text": "Factorial Energy is a blank check company incorporated in the Cayman Islands on October 29, 2024, formed to pursue a business combination with one or more businesses. It completed a $276,000,000 initial public offering in May 2025."
  },
  "2062440": {
   "accn": "0002062440-26-000006",
@@ -2910,12 +3198,30 @@
   "source": "10-K filed 2026-03-03",
   "text": "Versant operates television networks including CNBC, USA Network, Golf Channel, E!, SYFY and Oxygen, along with digital platforms GolfNow, Fandango and Rotten Tomatoes. The company generates revenue through network distribution, advertising, digital platform services and content licensing, serving audiences, advertisers and distributors primarily in the United States."
  },
+ "2074176": {
+  "accn": "0002074176-26-000010",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Viper Energy, Inc.",
+  "sic": "1311",
+  "source": "10-K filed 2026-02-25",
+  "text": "Viper holds mineral and royalty interests in oil and natural gas properties, and Diamondback's plans for developing Viper's acreage are discussed. Its reserves are estimated under SEC rules."
+ },
  "2079999": {
   "accn": "0001193125-26-120014",
   "date": "2026-10-08",
   "model": "haiku",
   "source": "10-K filed 2026-03-23",
   "text": "Cardinal is an infrastructure services contractor providing wet utility installations (water, sewer and stormwater systems), grading, site clearing, paving and related site work. It serves residential, commercial, industrial, municipal and state infrastructure markets. It describes itself as a full-service infrastructure services company in the Southeastern United States."
+ },
+ "2083526": {
+  "accn": "0001829126-26-007060",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Micware Co., Ltd.",
+  "sic": "7371",
+  "source": "20-F filed 2026-06-30",
+  "text": "Micware is a Japanese holding company that conducts its business through subsidiaries, which develop software and systems. It offers a proprietary IVI software platform, micAuto-PF, for customized in-vehicle infotainment solutions. The company established a base in Germany through its subsidiary Micware Europe GmbH."
  },
  "2099039": {
   "accn": "0001193125-26-282911",
@@ -3028,6 +3334,15 @@
   "source": "10-K filed 2026-02-12",
   "text": "Church & Dwight develops and markets consumer household and personal care products under brands including ARM & HAMMER and OXICLEAN, plus specialty products for animal and food production. The company operates in the United States and internationally across Canada, Europe, Australia, and Japan, selling through supermarkets, mass merchandisers, and drugstores."
  },
+ "314590": {
+  "accn": "0001104659-26-104048",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "SASOL LTD",
+  "sic": "1311",
+  "source": "20-F filed 2026-09-01",
+  "text": "Sasol is a global energy and chemicals company that sources, produces, and markets products including fuels, gas, coal, and chemicals. Its operations include Southern Africa and international chemicals businesses, with a Lake Charles facility in the United States. Its chemicals are sold to customers worldwide, including mining customers in sub-Saharan Africa."
+ },
  "315374": {
   "accn": "0001104659-26-002512",
   "date": "2026-10-08",
@@ -3078,6 +3393,15 @@
   "model": "haiku",
   "source": "10-K filed 2025-10-31",
   "text": "Apple designs and manufactures smartphones, personal computers, tablets, wearables, and accessories, along with digital services including the App Store, Apple Music, and Apple Pay. It operates globally across the Americas, Europe, Greater China, Japan, and Rest of Asia Pacific. Apple serves consumers, small and mid-sized businesses, education, enterprise, and government customers."
+ },
+ "34956": {
+  "accn": "0001193125-26-099393",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "TENAX THERAPEUTICS, INC.",
+  "sic": "2834",
+  "source": "10-K filed 2026-03-10",
+  "text": "Tenax Therapeutics is a Phase 3, development-stage pharmaceutical company developing oral levosimendan for pulmonary hypertension in heart failure with preserved ejection fraction (PH-HFpEF). Levosimendan is an already-approved drug in other indications."
  },
  "350698": {
   "accn": "0001628280-26-007800",
@@ -3258,6 +3582,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-04-24",
   "text": "Apogee Enterprises provides architectural building products and services, including aluminum window, curtainwall and entrance systems, installation services, architectural glass, and coated materials for applications such as wall decor and museums. Its architectural customers are mainly glazing subcontractors and general contractors, and it primarily supplies customers in North America."
+ },
+ "69488": {
+  "accn": "0001193125-26-092521",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "MYERS INDUSTRIES INC",
+  "sic": "3089",
+  "source": "10-K filed 2026-03-05",
+  "text": "Myers Industries designs and manufactures plastic, metal, and rubber products, including reusable containers, pallets, and storage products, and distributes tire service equipment and supplies. It operates manufacturing facilities and distribution centers in the U.S. and Canada, with branches in Central America. Its customers include industrial manufacturers, food processors, retailers, automotive businesses, retail and truck tire dealers, and fleets."
  },
  "69633": {
   "accn": "0001104659-26-100081",
@@ -4142,6 +4475,15 @@
   "source": "10-K filed 2026-02-26",
   "text": "SON designs and manufactures engineered and sustainable packaging across 265 locations in 37 countries. The company serves global brands in food, beverage, household, personal care, and pharmaceutical industries."
  },
+ "917851": {
+  "accn": "0001292814-26-001844",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "Vale S.A.",
+  "sic": "1000",
+  "source": "20-F filed 2026-03-27",
+  "text": "Vale is a metal mining company that produces iron ore fines, iron ore pellets, and nickel. Its operations referenced in the excerpt include mines, railways, and facilities in Brazil, including the states of Pará, Maranhão, Minas Gerais, and Espírito Santo."
+ },
  "920371": {
   "accn": "0001628280-26-012920",
   "date": "2026-10-07",
@@ -4186,6 +4528,15 @@
   "source": "10-K filed 2026-04-14",
   "text": "Smith-Midland manufactures and sells precast concrete products, including SlenderWall, Sierra Wall and Easi-Set utility vaults, and rents highway barriers. Its precast and barrier rental customers are mainly general contractors and federal, state and local transportation authorities in the Mid-Atlantic, Northeastern, Midwestern and Southeastern U.S. Its licensing subsidiary also licenses its products nationwide and internationally."
  },
+ "924822": {
+  "accn": "0001104659-26-023486",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "MILLER INDUSTRIES INC /TN/",
+  "sic": "3713",
+  "source": "10-K filed 2026-03-04",
+  "text": "Miller Industries designs and manufactures towing and recovery equipment, including car carriers and wreckers, and is headquartered in Ooltewah, Tennessee, with manufacturing in the U.S., France, the United Kingdom, and Italy. Its products are sold mainly through distributors serving all 50 states, Canada, Mexico, and other foreign markets, and through prime contractors to government entities."
+ },
  "927653": {
   "accn": "0000927653-26-000069",
   "date": "2026-10-07",
@@ -4222,6 +4573,15 @@
   "sic": "7363",
   "source": "10-K filed 2026-02-20",
   "text": "Kforce is a solutions firm providing technology, finance and accounting, and other professional staffing services on temporary (Flex) and permanent (Direct Hire) bases. It serves clients across virtually all major industries, including Fortune 500 and other leading companies, and has a development center in Pune, India."
+ },
+ "9326": {
+  "accn": "0000009326-26-000007",
+  "date": "2026-10-15",
+  "model": "haiku",
+  "name": "BALCHEM CORP",
+  "sic": "2800",
+  "source": "10-K filed 2026-02-20",
+  "text": "Balchem develops and manufactures specialty performance ingredients for nutritional, food, pharmaceutical, animal health, plant nutrition, sterilization, fumigation, and industrial markets. Its products include choline nutrients, mineral amino acid chelates, and encapsulated animal nutrition products. Customers include food and beverage manufacturers and animal health and nutrition businesses."
  },
  "932695": {
   "accn": "0001193125-26-191559",
