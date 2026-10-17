@@ -160,6 +160,15 @@
   "source": "10-K filed 2026-02-03",
   "text": "ISRG develops and markets robotic-assisted surgical systems, including da Vinci platforms, and diagnostic systems. The company provides instruments, software, and support services to hospitals and healthcare systems worldwide."
  },
+ "103595": {
+  "accn": "0000103595-26-000018",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "VILLAGE SUPER MARKET INC",
+  "sic": "5411",
+  "source": "10-K filed 2026-10-08",
+  "text": "Village Super Market operates in the grocery industry and competes with supermarket chains, warehouse clubs, pharmacies, discount and online retailers, and restaurants. It offers the ShopRite Price Plus and Fairway Insider customer loyalty programs. The excerpt does not state where the company operates."
+ },
  "1035983": {
   "accn": "0001104659-26-017530",
   "date": "2026-10-07",
@@ -249,6 +258,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-19",
   "text": "Fresh Del Monte is a vertically integrated producer, marketer and distributor of fresh and fresh-cut fruit and vegetables, and a producer of prepared foods, juices and snacks in Europe, Africa and the Middle East. It sells under the Del Monte brand in more than 80 countries. Customers include retail, club and convenience stores, wholesalers, distributors and foodservice operators."
+ },
+ "1048268": {
+  "accn": "0001048268-25-000174",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "IES Holdings, Inc.",
+  "sic": "1731",
+  "source": "10-K filed 2025-11-21",
+  "text": "IES Holdings designs and installs integrated electrical and technology systems and infrastructure products through four segments: Communications, Residential, Infrastructure Solutions, and Commercial & Industrial. It is headquartered in Sugar Land, Texas. Its end markets include data centers, residential housing, and commercial and industrial facilities."
  },
  "1049606": {
   "accn": "0001104659-26-023463",
@@ -402,6 +420,15 @@
   "source": "20-F filed 2025-12-15",
   "text": "Amdocs provides software and services to communications, entertainment and media companies in developed countries and emerging markets, serving approximately 400 such service providers. Its customers include large telecommunications companies such as AT&T, Verizon and Vodafone, as well as broadband, mobile and entertainment providers."
  },
+ "1063259": {
+  "accn": "0001104659-26-036912",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "DENISON MINES CORP.",
+  "sic": "1090",
+  "source": "40-F filed 2026-03-30",
+  "text": "Denison Mines is a Canadian company incorporated in Ontario, with principal executive offices in Toronto. The excerpt provided is only the cover page and does not describe its products, operations or customers."
+ },
  "1064728": {
   "accn": "0001064728-26-000006",
   "date": "2026-10-08",
@@ -458,6 +485,15 @@
   "sic": "4813",
   "source": "20-F filed 2026-04-17",
   "text": "Turkcell is a telecommunications operator in Türkiye offering mobile services, including 5G, and fixed-line services such as fiber-to-the-home and fixed wireless access. Through a subsidiary, it operates in data center and cloud infrastructure, including a planned Google Cloud region in Türkiye."
+ },
+ "1071438": {
+  "accn": "0001292814-26-002427",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "BRASKEM SA",
+  "sic": "2860",
+  "source": "20-F filed 2026-04-20",
+  "text": "Braskem is a Brazilian petrochemical company and, by plant capacity, the largest plastics producer in the Americas according to CMA. It offers chemicals and plastics, including polypropylene and polyethylene, from integrated operations in Brazil and Mexico, with supply operations in the United States and Europe. Customers in more than 70 countries transform its products into items such as food packaging, automotive components and paints."
  },
  "1071739": {
   "accn": "0001071739-26-000049",
@@ -1007,6 +1043,15 @@
   "source": "10-K filed 2026-02-27",
   "text": "Mosaic is a producer and marketer of concentrated phosphate and potash crop nutrients and animal feed ingredients. It mines and processes phosphate and potash in Florida, Louisiana, Brazil, Peru, Saskatchewan and New Mexico, and serves customers in approximately 40 countries. Its products are sold to crop nutrient manufacturers, distributors, retailers and farmers."
  },
+ "1286973": {
+  "accn": "0001062993-26-001679",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Americas Gold & Silver Corp",
+  "sic": "1000",
+  "source": "40-F filed 2026-03-30",
+  "text": "Americas Gold & Silver Corp. is classified as a metal mining company and has its principal executive offices in Toronto, Ontario, Canada. The excerpt is the cover page of its Form 40-F and does not describe its operations, locations or customers."
+ },
  "1287098": {
   "accn": "0001104659-26-034557",
   "date": "2026-10-08",
@@ -1050,6 +1095,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-27",
   "text": "Texas Roadhouse operates three casual dining concepts: Texas Roadhouse offering steaks and seafood, Bubba's 33 featuring burgers and pizza, and Jaggers fast-casual restaurants. It operates 714 company-owned and 102 franchised locations across 49 states, one U.S. territory, and ten foreign countries, serving consumers seeking affordable casual dining."
+ },
+ "1290109": {
+  "accn": "0001193125-26-183413",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "LG Display Co., Ltd.",
+  "sic": "3679",
+  "source": "20-F filed 2026-04-28",
+  "text": "LG Display is a display panel manufacturer specializing in TFT-LCD and OLED technologies, with panels used mainly in IT products, televisions, mobile devices and automotive displays. Its technology innovation efforts are led from its R&D center in Anyang, Korea."
  },
  "1290900": {
   "accn": "0001628280-26-016520",
@@ -1145,6 +1199,15 @@
   "source": "10-K filed 2025-11-20",
   "text": "Warner Music Group is a music entertainment company operating the Recorded Music business, with labels such as Atlantic Records, Warner Records and Elektra Records, and the Warner Chappell Music publishing business. It sells music through streaming and other digital platforms, including Apple, YouTube and Tencent Music Entertainment Group."
  },
+ "1323468": {
+  "accn": "0001104659-26-021381",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "GLOBAL PARTNERS LP",
+  "sic": "5171",
+  "source": "10-K filed 2026-02-27",
+  "text": "Global Partners is a master limited partnership that owns a terminal network and operates gasoline stations and convenience stores, mainly in the Northeast U.S. It purchases, stores, blends and transports refined petroleum products and renewable fuels. It sells home heating oil, gasoline, diesel and other fuels to retail and wholesale distributors, and commercial customers in New England and New York."
+ },
  "1326190": {
   "accn": "0001326190-26-000018",
   "date": "2026-10-14",
@@ -1192,6 +1255,15 @@
   "sic": "1090",
   "source": "10-K filed 2026-09-29",
   "text": "Uranium Energy Corp is a uranium mining and development company with ISR uranium projects in Wyoming and South Texas and a project in Saskatchewan, Canada. It operates uranium processing plants in Texas and Wyoming. Through its subsidiary, it is pursuing domestic uranium refining and conversion to strengthen the U.S. nuclear fuel supply chain."
+ },
+ "1336917": {
+  "accn": "0001336917-26-000073",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Under Armour, Inc.",
+  "sic": "2300",
+  "source": "10-K filed 2026-05-19",
+  "text": "Under Armour designs, develops, markets and distributes branded performance apparel, footwear and accessories for men, women and youth. It sells through national, regional, independent and specialty retailers and distributors worldwide, and through its direct-to-consumer channel. North America is its largest market."
  },
  "1336920": {
   "accn": "0001336920-26-000030",
@@ -1269,6 +1341,15 @@
   "source": "10-K filed 2026-02-17",
   "text": "Herc Holdings is an equipment rental supplier operating 602 locations in North America, offering mid-size, heavy, specialty and contractor equipment for rent. It also sells used equipment and contractor supplies and provides repair, maintenance and equipment management services. Its customers range from individuals and small local contractors to large national accounts."
  },
+ "1369085": {
+  "accn": "0001104659-26-110019",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "NEW PACIFIC METALS CORP",
+  "sic": "1040",
+  "source": "40-F filed 2026-09-23",
+  "text": "New Pacific Metals Corp. has its principal executive offices in Vancouver, British Columbia, Canada, and filed this annual report on Form 40-F for the fiscal year ended June 30, 2026. The excerpt does not describe its business activities, operating locations or customers."
+ },
  "1370053": {
   "accn": "0001193125-26-088290",
   "date": "2026-10-14",
@@ -1291,6 +1372,15 @@
   "model": "haiku",
   "source": "20-F filed 2026-04-30",
   "text": "Central North Airport Group (GACN) is a Mexican holding company that operates 13 airports in Mexico under 50-year concessions, mainly in the central and northern regions. It charges fees to airlines, passengers and other users, and earns rental and commercial income from activities at its airports. Its airports are located in nine Mexican states."
+ },
+ "1379785": {
+  "accn": "0001379785-26-000009",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Barings BDC, Inc.",
+  "sic": "",
+  "source": "10-K filed 2026-02-19",
+  "text": "Barings BDC, Inc. is a closed-end, non-diversified business development company regulated under the Investment Company Act of 1940 and taxed as a regulated investment company. It is headquartered in Charlotte, North Carolina, and its portfolio is managed by Barings LLC as investment adviser. The company was formerly named Triangle Capital Corporation."
  },
  "1383312": {
   "accn": "0001628280-26-052243",
@@ -1390,6 +1480,15 @@
   "sic": "",
   "source": "10-K filed 2026-02-25",
   "text": "FS KKR Capital Corp. is an externally managed business development company that focuses primarily on debt investments in private U.S. companies, including middle-market companies with EBITDA of $50 million to $150 million at the time of investment. Its investment adviser is FS/KKR Advisor, LLC."
+ },
+ "1425292": {
+  "accn": "0001425292-26-000011",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "CVR PARTNERS, LP",
+  "sic": "2870",
+  "source": "10-K filed 2026-02-18",
+  "text": "CVR Partners produces nitrogen fertilizer, principally urea ammonium nitrate (UAN) and ammonia, at facilities in Coffeyville, Kansas and East Dubuque, Illinois. It sells its products on a wholesale basis in the United States. Its products are used by farmers to improve the yield and quality of crops, primarily corn and wheat."
  },
  "1429260": {
   "accn": "0001104659-26-037874",
@@ -1519,6 +1618,15 @@
   "source": "10-K filed 2026-03-05",
   "text": "Silence Therapeutics is a biotechnology company developing siRNA molecules that silence disease-associated genes, using its mRNAi GOLD platform to target genes in the liver. Its lead candidate, divesiran, is in Phase 2 development for polycythemia vera, a rare myeloproliferative neoplasm. Its pipeline also includes zerlasiran, aimed at patients with high Lp(a)."
  },
+ "1481513": {
+  "accn": "0001104659-26-050737",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "JinkoSolar Holding Co., Ltd.",
+  "sic": "3674",
+  "source": "20-F filed 2026-04-29",
+  "text": "JinkoSolar makes solar products, including silicon wafers, solar cells and solar modules, and has expanded into energy storage. It has over 10 production facilities globally and sales teams across many countries. Its customers include utility-scale developers, EPC contractors and distributed generation customers."
+ },
  "1483994": {
   "accn": "0001104659-26-048058",
   "date": "2026-10-11",
@@ -1576,6 +1684,15 @@
   "source": "20-F filed 2026-06-12",
   "text": "TAL Education Group is a smart learning solutions provider in China, offering learning services and learning content solutions. Its branch offices are located in 45 Chinese cities, and it has entered overseas markets. It serves learners, teachers and learning institutions."
  },
+ "1508655": {
+  "accn": "0001193125-26-048664",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Sixth Street Specialty Lending, Inc.",
+  "sic": "",
+  "source": "10-K filed 2026-02-12",
+  "text": "Sixth Street Specialty Lending is a business development company that generates current income by originating senior secured loans, and to a lesser extent mezzanine and unsecured loans, mainly to U.S.-domiciled middle-market companies. Its portfolio companies are middle-market businesses with EBITDA of $10 million to $250 million."
+ },
  "1511737": {
   "accn": "0001511737-26-000056",
   "date": "2026-10-07",
@@ -1603,6 +1720,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-06",
   "text": "Aptiv is a global industrial technology company developing advanced automotive and industrial technology solutions across three segments: software and sensors, interconnect systems, and power distribution. The company operates 139 manufacturing facilities across 50 countries. It serves the 25 largest automotive OEMs worldwide, as well as aerospace, defense, and telecom companies."
+ },
+ "1526243": {
+  "accn": "0001104659-26-037403",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "PERPETUA RESOURCES CORP.",
+  "sic": "1040",
+  "source": "10-K filed 2026-03-31",
+  "text": "Perpetua Resources is a mining company focused on the Stibnite Gold Project in Idaho, USA, which contains gold, silver and antimony deposits. It is redeveloping several deposits and reprocessing historical tailings on the project. Its head office is in Boise, Idaho."
  },
  "1527636": {
   "accn": "0001193125-26-155932",
@@ -1757,12 +1883,39 @@
   "source": "10-K filed 2026-02-26",
   "text": "CNH Industrial develops, manufactures and sells agricultural and construction equipment, and its Financial Services segment offers retail and wholesale financing. Its global network includes subsidiaries in 32 countries and a commercial presence in about 166 countries. It serves end customers and dealers."
  },
+ "1567683": {
+  "accn": "0001628280-26-010952",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Clearway Energy, Inc.",
+  "sic": "4911",
+  "source": "10-K filed 2026-02-24",
+  "text": "Clearway Energy, Inc. is a publicly traded energy infrastructure investor that owns clean energy generation assets across North America. Its portfolio of about 12.9 GW gross capacity in 27 states includes wind, solar and battery energy storage systems, plus combustion-based power generation. Most of its revenue comes from long-term contracts for the output or capacity of these assets."
+ },
  "1567900": {
   "accn": "0001437749-26-005114",
   "date": "2026-10-08",
   "model": "haiku",
   "source": "10-K filed 2026-02-23",
   "text": "Blackboxstocks is a financial technology and social media platform offering real-time analytics, news and educational materials to stock and options traders. It is delivered as a subscription SaaS product through web and iOS and Android apps, with members in over 40 countries. The company is also developing products for financial professionals and institutions."
+ },
+ "1572694": {
+  "accn": "0001193125-26-077458",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Goldman Sachs BDC, Inc.",
+  "sic": "",
+  "source": "10-K filed 2026-02-26",
+  "text": "Goldman Sachs BDC, Inc. is a specialty finance company that lends to middle-market companies through first lien, unitranche and second lien loans, mezzanine and other unsecured debt, and select equity investments. It is a business development company regulated under the Investment Company Act of 1940."
+ },
+ "1573221": {
+  "accn": "0001573221-26-000010",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "TheRealReal, Inc.",
+  "sic": "5900",
+  "source": "10-K filed 2026-02-26",
+  "text": "TheRealReal operates an online marketplace for authenticated, primarily pre-owned luxury goods, including women's fashion, men's fashion, jewelry and watches. It serves consignors and buyers, and it also operates neighborhood retail stores and flagship stores in San Francisco, Los Angeles and New York."
  },
  "1575515": {
   "accn": "0001575515-26-000008",
@@ -1963,6 +2116,24 @@
   "source": "10-K filed 2026-05-14",
   "text": "Boot Barn is a lifestyle retail chain selling western and work footwear, apparel, and accessories through 539 stores in 49 states and an e-commerce platform. Its customers include western and country enthusiasts as well as workers seeking durable footwear and apparel."
  },
+ "1610601": {
+  "accn": "0001193125-26-183444",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Hello Group Inc.",
+  "sic": "7372",
+  "source": "20-F filed 2026-04-28",
+  "text": "Hello Group (MOMO) files its annual report in U.S. dollars, translating Renminbi amounts at RMB6.9931 to US$1.00 as of December 31, 2025. The excerpt does not describe its products, services, operating locations or customers."
+ },
+ "1612720": {
+  "accn": "0001612720-26-000009",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "NextDecade Corp",
+  "sic": "4923",
+  "source": "10-K filed 2026-03-02",
+  "text": "NextDecade is a Houston-based energy company developing and constructing the Rio Grande LNG Facility, a natural gas liquefaction and export project near Brownsville, Texas. The facility is under construction in phases, with Trains 1 through 5 underway. It has long-term LNG sale and purchase agreements with 14 counterparties."
+ },
  "1621434": {
   "accn": "0001621434-26-000018",
   "date": "2026-10-14",
@@ -2149,6 +2320,15 @@
   "source": "20-F filed 2026-04-17",
   "text": "ZTO Express (ZTO) operates express parcel delivery services in China through its consolidated affiliated entity ZTO Express, using a network of partners for pickup and delivery. Its senders include merchants on e-commerce platforms and enterprise customers."
  },
+ "1677576": {
+  "accn": "0001677576-26-000001",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "INNOVATIVE INDUSTRIAL PROPERTIES INC",
+  "sic": "6500",
+  "source": "10-K filed 2026-02-24",
+  "text": "Innovative Industrial Properties is an internally managed REIT that owns specialized industrial and commercial properties in the United States, 111 of them across 19 states as of December 31, 2025. Its properties are primarily leased to state-licensed operators of regulated cannabis facilities. It also holds financial investments in the life science industry."
+ },
  "1683695": {
   "accn": "0001628280-26-015647",
   "date": "2026-10-08",
@@ -2164,6 +2344,15 @@
   "sic": "2300",
   "source": "20-F filed 2026-05-15",
   "text": "Canada Goose designs, manufactures, markets and distributes lifestyle outerwear, apparel, footwear and accessories. Headquartered in Toronto, it produces most of its goods in Canada and sells in Japan through its CG Japan joint venture. Its Baffin footwear is sold through distributors and retailers in Canada and the United States."
+ },
+ "1693256": {
+  "accn": "0001104659-26-017085",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Select Water Solutions, Inc.",
+  "sic": "1389",
+  "source": "10-K filed 2026-02-18",
+  "text": "Select Water Solutions provides water-management solutions to the U.S. energy industry through water infrastructure, water services and chemical technologies. Its infrastructure includes pipelines, recycling and treatment facilities, storage and saltwater disposal wells, with its largest ongoing investments in the Permian Basin. It serves energy industry customers under long-term contracts for produced water management."
  },
  "1697862": {
   "accn": "0001697862-26-000032",
@@ -2258,6 +2447,15 @@
   "sic": "4911",
   "source": "20-F filed 2026-04-22",
   "text": "Central Puerto is an Argentine electricity company with thermal, solar, and hydroelectric generation. It is developing battery energy storage projects and a solar plant in Salta, Argentina. Its contracts include power supply to large electric power consumers, and Edenor and Edesur are named as offtakers for its storage projects."
+ },
+ "1718405": {
+  "accn": "0001718405-26-000009",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "HYCROFT MINING HOLDING CORP",
+  "sic": "1040",
+  "source": "10-K filed 2026-03-03",
+  "text": "Hycroft Mining is a U.S.-based gold and silver exploration stage company that owns the Hycroft Mine in Northern Nevada. Mining and processing operations were discontinued, and the company generated no revenues in 2025 or 2024. It does not expect revenue from gold and silver sales until mining operations restart."
  },
  "1727263": {
   "accn": "0001193125-26-076548",
@@ -2371,6 +2569,15 @@
   "source": "10-K filed 2026-03-11",
   "text": "Pliant Therapeutics is a clinical-stage biopharmaceutical company developing integrin-based therapeutics. Its lead candidate, PLN-101095, is an oral small molecule in development for solid tumors resistant to immune checkpoint inhibitors."
  },
+ "1746618": {
+  "accn": "0001193125-26-071307",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Revolve Group, Inc.",
+  "sic": "5961",
+  "source": "10-K filed 2026-02-25",
+  "text": "Revolve is an online fashion retailer focused on Millennial and Generation Z consumers, offering apparel, footwear, beauty and accessories from over 1,600 brands, including 28 owned brands. It sells through a digital platform and influencer-driven marketing. The excerpt does not state where it operates."
+ },
  "1747777": {
   "accn": "0001747777-26-000012",
   "date": "2026-10-16",
@@ -2427,6 +2634,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-16",
   "text": "Ardent Health (ARDT) is a holding company whose affiliates operate acute care hospitals, ambulatory facilities, telehealth services and physician practices. It operates in eight mid-sized urban markets across Texas, Oklahoma, New Mexico, New Jersey, Idaho and Kansas. It served approximately 1.2 million unique patients in 2025."
+ },
+ "1756708": {
+  "accn": "0001756708-26-000015",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Jumia Technologies AG",
+  "sic": "5961",
+  "source": "20-F filed 2026-02-24",
+  "text": "Jumia Technologies operates a pan-African e-commerce platform comprising a marketplace that connects sellers with customers, a logistics service for shipping and delivering packages, and payment gateways. It operates in selected African markets and has announced an exit from Algeria."
  },
  "1758009": {
   "accn": "0001213900-26-022417",
@@ -2511,12 +2727,30 @@
   "source": "10-K filed 2026-03-02",
   "text": "AST SpaceMobile (ASTS) is building a space-based cellular broadband network of low Earth orbit satellites designed to connect directly to standard smartphones. It also intends to offer applications for U.S. government use. It partners with over 50 mobile network operators (MNOs), which would offer the service to their end-user customers."
  },
+ "1782524": {
+  "accn": "0001193125-26-076632",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Morgan Stanley Direct Lending Fund",
+  "sic": "",
+  "source": "10-K filed 2026-02-26",
+  "text": "Morgan Stanley Direct Lending Fund is a non-diversified, externally managed business development company that lends to U.S. middle-market companies, primarily through directly originated senior secured term loans. Its borrowers are middle-market companies in which private equity sponsors hold a controlling equity stake, and its adviser is an indirect subsidiary of Morgan Stanley."
+ },
  "1784570": {
   "accn": "0001628280-26-015838",
   "date": "2026-10-10",
   "model": "haiku",
   "source": "10-K filed 2026-03-09",
   "text": "BETA Technologies (BETA) designs, manufactures and sells electric aircraft, electric propulsion systems, batteries, motors, flight control systems and charging equipment. It operates in North America, with its final assembly facility in South Burlington, Vermont. It serves cargo and logistics, military, medical and passenger end markets, with customers including UPS, Air New Zealand and United Therapeutics."
+ },
+ "1786108": {
+  "accn": "0001193125-26-068600",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Trinity Capital Inc.",
+  "sic": "",
+  "source": "10-K filed 2026-02-25",
+  "text": "Trinity Capital is an internally managed business development company regulated under the Investment Company Act of 1940. It provides secured loans and equipment financings to growth-stage companies. It also co-manages joint ventures that invest in loans it originates."
  },
  "1786909": {
   "accn": "0001628280-26-026991",
@@ -2604,6 +2838,15 @@
   "model": "haiku",
   "source": "20-F filed 2026-04-22",
   "text": "Yalla Group operates Yalla, a voice-centric group chat platform, and Yalla Ludo, a casual gaming app featuring online board games popular in MENA. It conducts its operations mainly through subsidiaries in the UAE and China. Its users are in the Middle East and North Africa (MENA) region."
+ },
+ "1798562": {
+  "accn": "0001104659-26-037863",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "TMC the metals Co Inc.",
+  "sic": "1000",
+  "source": "10-K filed 2026-03-31",
+  "text": "TMC the metals company is a deep seabed minerals developer focused on collecting, processing and refining polymetallic nodules in international waters of the Clarion Clipperton Zone in the Eastern Pacific Ocean. It is in the development stage and has not yet obtained a commercial recovery permit."
  },
  "1800667": {
   "accn": "0001193125-26-051382",
@@ -2791,12 +3034,30 @@
   "source": "20-F filed 2026-04-23",
   "text": "RLX Technology is a Cayman Islands holding company whose business operates both inside and outside China, conducted through subsidiaries including Shenzhen Wuxin and Beijing Yueke. The excerpt describes its corporate structure and history but does not describe its products or customers."
  },
+ "1828962": {
+  "accn": "0001828962-26-000010",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Cricut, Inc.",
+  "sic": "3559",
+  "source": "10-K filed 2026-03-04",
+  "text": "Cricut sells a creativity platform made up of connected cutting machines, accessories and materials, centered on its cloud-based app, Cricut Design Space. The company reports nearly 5.9 million Active Users as of December 31, 2025, who use its products to make DIY goods such as greeting cards, apparel and home decor. Its machines cut materials including paper, vinyl, wood and leather."
+ },
  "1829864": {
   "accn": "0001829864-26-000012",
   "date": "2026-10-08",
   "model": "haiku",
   "source": "10-K filed 2026-03-05",
   "text": "TaskUs provides outsourced digital customer experience, trust and safety, and AI services, including data annotation and LLM support. Its clients, about 200 as of December 31, 2025, include global companies in AI, autonomous vehicles, social media, financial services and healthcare. It operates 31 sites in 13 countries."
+ },
+ "1831907": {
+  "accn": "0001104659-26-108069",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "LuxExperience B.V.",
+  "sic": "5961",
+  "source": "20-F filed 2026-09-16",
+  "text": "LuxExperience Group is a multi-brand digital luxury group operating websites and apps that offer womenswear, menswear, kidswear, lifestyle products and fine jewelry from luxury brands. It serves global luxury consumers shopping worldwide, and its business began with a boutique in Munich, Germany."
  },
  "1833214": {
   "accn": "0001833214-26-000003",
@@ -2822,6 +3083,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-09-24",
   "text": "Legacy Education owns accredited career colleges in California, offering healthcare and other career programs. The colleges are High Desert Medical College, Central Coast College, Integrity College of Health and Contra Costa Medical Career College. Its target students are early- to mid-20-year-olds, mainly living within a 100-mile radius of each campus."
+ },
+ "1836981": {
+  "accn": "0001836981-26-000018",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "BigBear.ai Holdings, Inc.",
+  "sic": "7372",
+  "source": "10-K filed 2026-03-02",
+  "text": "BigBear.ai Holdings, Inc. is a provider of artificial intelligence technology, including computer vision, predictive analytics and biometrics, and its Ask Sage generative AI platform. It was founded to serve defense and national security customers, primarily the U.S. government, and also works with select commercial partners. Its stated objective is serving the U.S., its allies and those partners."
  },
  "1838359": {
   "accn": "0001104659-26-023454",
@@ -2978,6 +3248,15 @@
   "source": "10-K filed 2026-03-20",
   "text": "Victoria's Secret is a specialty retailer of women's intimates, apparel and beauty products under the Victoria's Secret, PINK and Adore Me brands. It operates stores and websites in the U.S., Canada and China, and has franchise, license and wholesale partners selling its products in approximately 70 countries."
  },
+ "1857816": {
+  "accn": "0001857816-26-000018",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "GigaCloud Technology Inc",
+  "sic": "5961",
+  "source": "10-K filed 2026-02-26",
+  "text": "GigaCloud Technology operates the GigaCloud Marketplace, a B2B ecommerce platform for large parcel merchandise, primarily furniture, home appliances and fitness equipment. The marketplace connects manufacturers, primarily in Asia, with resellers in the U.S., Europe and Japan. It also sells its own products through its marketplace and third-party ecommerce websites."
+ },
  "1858724": {
   "accn": "0001493152-26-018831",
   "date": "2026-10-14",
@@ -2996,6 +3275,15 @@
   "source": "20-F filed 2026-03-03",
   "text": "On is a premium sportswear brand that designs and engineers footwear, apparel and accessories for athletic performance in Switzerland. It sells across the Americas, EMEA and Asia-Pacific through an owned retail network and other channels. Its products serve running, outdoor, training, tennis and all-day use."
  },
+ "1861737": {
+  "accn": "0001104659-26-048025",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Hesai Group",
+  "sic": "3569",
+  "source": "20-F filed 2026-04-24",
+  "text": "Hesai Group (Hesai) develops, manufactures and sells LiDAR products and 3D perception solutions for ADAS, autonomous mobility and robotics applications. It operates offices in Shanghai, Palo Alto and Stuttgart, and in-house factories in China and Thailand. Its customers span more than 40 countries."
+ },
  "1865631": {
   "accn": "0001554855-26-000328",
   "date": "2026-10-08",
@@ -3009,6 +3297,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-25",
   "text": "Crescent Energy develops and produces oil, natural gas and natural gas liquids. It operates upstream assets in the United States and owns a 12% interest in the Springfield Gathering System in southeast Texas's Eagle Ford Shale."
+ },
+ "1866226": {
+  "accn": "0001213900-26-018858",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Evolution Metals & Technologies Corp.",
+  "sic": "3690",
+  "source": "10-K filed 2026-02-20",
+  "text": "Evolution Metals & Technologies Corp. is a holding company that recycles end-of-life materials to recover rare earth elements, battery metals and precious metals, and manufactures rare earth magnets. Its Korean subsidiaries operate commercial-scale facilities in the Republic of Korea. Its outputs serve gigafactories, defense suppliers, OEMs and refineries."
  },
  "1866782": {
   "accn": "0001829126-26-004041",
@@ -3060,6 +3357,15 @@
   "source": "10-K filed 2026-03-19",
   "text": "Satellogic is a vertically integrated Earth observation company that designs, manufactures and operates satellites, selling high-resolution imagery and analytics such as its Aleph Observer monitoring service. It serves government and commercial customers and assembles its satellites in Montevideo, Uruguay."
  },
+ "1875444": {
+  "accn": "0001875444-26-000010",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Arhaus, Inc.",
+  "sic": "5712",
+  "source": "10-K filed 2026-02-26",
+  "text": "Arhaus is a premium home furnishings brand that designs and sources furniture, outdoor, bath, lighting, textile and décor products, including domestic upholstery made at its North Carolina facility. It sells through showrooms and eCommerce across the United States, with 107 Showrooms in 31 states as of December 31, 2025. Its customers include individual clients, clients working with its interior designers, and trade customers."
+ },
  "1876183": {
   "accn": "0001104659-26-028162",
   "date": "2026-10-11",
@@ -3107,6 +3413,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-03",
   "text": "Ingm is an IT solutions provider supplying technology products and services across four global segments. It delivers solutions to vendor and reseller partners through its B2B platform, offering client endpoint solutions, advanced enterprise solutions, cloud-based offerings and logistics services."
+ },
+ "1898416": {
+  "accn": "0001898416-26-000004",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Alvotech",
+  "sic": "2836",
+  "source": "20-F filed 2026-03-31",
+  "text": "Alvotech is a vertically integrated biotechnology company that develops and manufactures biosimilar medicines, which are highly similar to approved biological reference products. Its operations are based in Reykjavik, Iceland, and it supplies biosimilars to patients worldwide through commercialization partnerships with pharmaceutical companies. Its adalimumab biosimilar is approved in the U.S., Canada, the UK and the European Economic Area."
  },
  "1898601": {
   "accn": "0001898601-26-000030",
@@ -3175,6 +3490,15 @@
   "source": "10-K filed 2026-02-04",
   "text": "GE HealthCare is a global healthcare solutions provider of medical devices, pharmaceutical diagnostics, and AI-enabled cloud and software solutions. It operates in over 160 countries through four segments: Imaging, Advanced Visualization Solutions, Patient Care Solutions, and Pharmaceutical Diagnostics. Customers include hospitals, health systems, and research institutions."
  },
+ "1953575": {
+  "accn": "0001213900-26-037056",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Collective Mining Ltd.",
+  "sic": "1040",
+  "source": "40-F filed 2026-03-31",
+  "text": "Collective Mining Ltd. is a Canadian company classified as a gold and silver ore business, with principal executive offices in Toronto, Ontario. It files this annual report on Form 40-F under Canadian disclosure requirements. The excerpt does not describe its operations, locations or customers."
+ },
  "1956955": {
   "accn": "0001683168-26-001730",
   "date": "2026-10-08",
@@ -3211,6 +3535,15 @@
   "sic": "1311",
   "source": "40-F filed 2026-03-13",
   "text": "GFR is an Alberta-incorporated registrant with principal executive offices in Calgary, Alberta, Canada. It is classified under SEC industry code 1311 (crude petroleum and natural gas). The excerpt does not describe its products, operations or customers."
+ },
+ "1969302": {
+  "accn": "0001104659-26-046406",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Pony AI Inc.",
+  "sic": "7373",
+  "source": "20-F filed 2026-04-22",
+  "text": "Pony AI is a Cayman Islands company with U.S. operations in Silicon Valley and subsidiaries in China, Luxembourg, the UAE, Saudi Arabia and Japan. The excerpt covers its corporate history and does not describe its products or customers."
  },
  "1969373": {
   "accn": "0001969373-26-000010",
@@ -3263,6 +3596,15 @@
   "source": "10-K filed 2025-12-22",
   "text": "enGene is a clinical-stage biotechnology company developing non-viral genetic medicines using its DDX gene delivery platform. Its lead product candidate, detalimogene, is in development as a monotherapy for BCG-unresponsive non-muscle invasive bladder cancer with carcinoma in situ."
  },
+ "1984060": {
+  "accn": "0001193125-26-067145",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Atlas Energy Solutions Inc.",
+  "sic": "1311",
+  "source": "10-K filed 2026-02-24",
+  "text": "Atlas Energy Solutions is a proppant producer with logistics and distributed power businesses, primarily serving the Permian Basin of West Texas and New Mexico. It operates 14 proppant production facilities there and a natural gas-powered generator fleet supporting operations across major United States resource basins, serving the oil and natural gas industry."
+ },
  "1985273": {
   "accn": "0001213900-26-037921",
   "date": "2026-10-08",
@@ -3296,6 +3638,15 @@
   "sic": "6200",
   "source": "20-F filed 2026-03-25",
   "text": "Marex Group (MRX) provides market access, clearing, agency and execution, market making, hedging and investment solutions across global commodity and financial markets, with access to more than 60 exchanges. It has over 3,400 active clients, including commodity producers, consumers and traders, banks, hedge funds and asset managers, with more than 50 offices across Europe, Asia and the Americas."
+ },
+ "1997652": {
+  "accn": "0001628280-26-063492",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "Tamboran Resources Corp",
+  "sic": "1311",
+  "source": "10-K filed 2026-09-25",
+  "text": "Tamboran Resources Corp. is the parent company of TR Ltd. following a corporate reorganization, and its common stock is represented by CDIs listed on the ASX. The excerpt is mainly a glossary of oil and gas terms, such as proved reserves, development wells and drilling space units, and does not describe its operations or customers in detail."
  },
  "200406": {
   "accn": "0000200406-26-000016",
@@ -4703,6 +5054,15 @@
   "sic": "1531",
   "source": "10-K filed 2026-02-11",
   "text": "NVR Inc. (NVR) is a homebuilder that constructs and sells single-family detached homes, townhomes and condominium buildings, primarily on a pre-sold basis, and also operates a mortgage banking and title services business. It operates in thirty-seven metropolitan areas in sixteen states and Washington, D.C. Its customers are homebuyers, including first-time and move-up buyers."
+ },
+ "907242": {
+  "accn": "0001104659-26-018717",
+  "date": "2026-10-17",
+  "model": "haiku",
+  "name": "MONARCH CASINO & RESORT INC",
+  "sic": "7011",
+  "source": "10-K filed 2026-02-24",
+  "text": "Monarch Casino & Resort owns and operates the Atlantis Casino Resort Spa in Reno, Nevada, and the Monarch Casino Resort Spa Black Hawk in Black Hawk, Colorado. Its hotel and casino offerings include gaming, food and beverage, and hotel operations. It targets leisure travelers, conventioneers and Northern Nevada residents."
  },
  "908255": {
   "accn": "0000908255-26-000011",
