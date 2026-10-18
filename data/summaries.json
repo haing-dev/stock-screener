@@ -45,6 +45,15 @@
   "source": "20-F filed 2026-03-23",
   "text": "Eni is an Italian joint stock company headquartered in Rome that produces and sells energy products and services in worldwide markets. Its businesses include exploring for and producing crude oil and natural gas, making oil-based fuels and chemicals, gas-fired power, and renewable energy products."
  },
+ "1002590": {
+  "accn": "0001193125-25-311490",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "STAR GROUP, L.P.",
+  "sic": "5990",
+  "source": "10-K filed 2025-12-09",
+  "text": "Star Group is a home heating oil and propane distributor and services provider. It serves residential and commercial customers with heating-related services."
+ },
  "1003935": {
   "accn": "0001003935-26-000010",
   "date": "2026-10-11",
@@ -813,6 +822,15 @@
   "source": "20-F filed 2026-03-06",
   "text": "GSK is a biopharmaceutical company focused on respiratory, immunology and inflammation, oncology and HIV medicines, following the 2022 demerger of Haleon. The excerpt describes a truly global reach and a focus on patients."
  },
+ "1133416": {
+  "accn": "0001140361-26-012155",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "GALECTIN THERAPEUTICS INC",
+  "sic": "2834",
+  "source": "10-K filed 2026-03-31",
+  "text": "Galectin Therapeutics (GALT) is a clinical-stage biopharmaceutical company developing galectin-3 inhibitor drug candidates for fibrotic disease and cancer. Its lead candidate, belapectin, is being studied for MASH with cirrhosis and for preventing esophageal varices."
+ },
  "1137091": {
   "accn": "0001628280-26-013207",
   "date": "2026-10-15",
@@ -1002,6 +1020,15 @@
   "source": "10-K filed 2026-02-24",
   "text": "MKTX operates electronic trading platforms for fixed-income markets, connecting approximately 2,100 institutional investor and broker-dealer clients globally across 90 countries. Its Open Trading marketplace provides anonymous all-to-all trading and price discovery. MKTX also offers execution solutions, data analytics, and post-trade services."
  },
+ "1278752": {
+  "accn": "0001193125-26-076499",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "MidCap Financial Investment Corp",
+  "sic": "",
+  "source": "10-K filed 2026-02-26",
+  "text": "MidCap Financial is a closed-end, externally managed, diversified investment company that has elected to be treated as a business development company (BDC). Its investment adviser is a wholly-owned subsidiary of Apollo Global Management. The excerpt does not state where it operates or describe its customers."
+ },
  "1279495": {
   "accn": "0001279495-26-000007",
   "date": "2026-10-13",
@@ -1051,6 +1078,15 @@
   "sic": "1000",
   "source": "40-F filed 2026-03-30",
   "text": "Americas Gold & Silver Corp. is classified as a metal mining company and has its principal executive offices in Toronto, Ontario, Canada. The excerpt is the cover page of its Form 40-F and does not describe its operations, locations or customers."
+ },
+ "1287032": {
+  "accn": "0001287032-26-000269",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "PROSPECT CAPITAL CORP",
+  "sic": "",
+  "source": "10-K filed 2026-08-20",
+  "text": "Prospect is a financial services company that primarily lends to and invests in middle market privately-held companies, mainly through senior and secured loans. It is a business development company that invests primarily in privately owned U.S. middle market companies."
  },
  "1287098": {
   "accn": "0001104659-26-034557",
@@ -1160,6 +1196,15 @@
   "source": "10-K filed 2026-02-18",
   "text": "Huntsman is a global manufacturer of organic chemicals in three segments: Polyurethanes, Performance Products and Advanced Materials. Key products include MDI, polyols, TPU, amines and maleic anhydride. It sells mainly to industrial and building product manufacturers. Polyurethane plants are in the U.S., Europe and China."
  },
+ "1313310": {
+  "accn": "0001628280-26-026985",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "GRAVITY Co., Ltd.",
+  "sic": "7374",
+  "source": "20-F filed 2026-04-24",
+  "text": "GRAVITY publishes and distributes mobile and online games based on the Ragnarok Online franchise. The games are launched in markets including Korea, Taiwan, Japan, Europe, the United States, Southeast Asia and China, and serve the company's user base."
+ },
  "1314052": {
   "accn": "0001731122-25-001596",
   "date": "2026-10-08",
@@ -1198,6 +1243,15 @@
   "sic": "7900",
   "source": "10-K filed 2025-11-20",
   "text": "Warner Music Group is a music entertainment company operating the Recorded Music business, with labels such as Atlantic Records, Warner Records and Elektra Records, and the Warner Chappell Music publishing business. It sells music through streaming and other digital platforms, including Apple, YouTube and Tencent Music Entertainment Group."
+ },
+ "1321741": {
+  "accn": "0001321741-26-000011",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "GLADSTONE INVESTMENT CORPORATION\\DE",
+  "sic": "",
+  "source": "10-K filed 2026-05-12",
+  "text": "Gladstone Investment Corporation (GAIN) is an externally managed, closed-end, non-diversified business development company (BDC) that has elected RIC tax treatment. Its common stock and several of its notes trade on the Nasdaq Global Select Market, and its adviser is an affiliate."
  },
  "1323468": {
   "accn": "0001104659-26-021381",
@@ -1246,6 +1300,15 @@
   "model": "haiku",
   "source": "20-F filed 2026-04-30",
   "text": "Silicon Motion is a semiconductor company that files a Form 20-F. Its trademarks include NANDSustain, Ferri-eMMC and Ferri-UFS. Its US contact address is in Milpitas, California."
+ },
+ "1334388": {
+  "accn": "0001193125-26-058652",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "OBSIDIAN ENERGY LTD.",
+  "sic": "1311",
+  "source": "40-F filed 2026-02-19",
+  "text": "Obsidian Energy Ltd. is filing its annual report on Form 40-F for the fiscal year ended December 31, 2025. Its principal executive offices are in Calgary, Alberta, Canada. The excerpt does not describe its products or customers."
  },
  "1334933": {
   "accn": "0001437749-26-031414",
@@ -1451,6 +1514,15 @@
   "source": "10-K filed 2026-08-18",
   "text": "Fabrinet (FN) provides advanced optical packaging and precision optical, electro-mechanical and electronics manufacturing services. Its products include optical communications components and modules, industrial lasers, automotive components, medical devices and sensors. Its customers are original equipment manufacturers (OEMs) in optical communications, automotive, industrial lasers, medical and sensor industries."
  },
+ "1418076": {
+  "accn": "0001193125-26-066979",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "SLR Investment Corp.",
+  "sic": "",
+  "source": "10-K filed 2026-02-24",
+  "text": "SLR Investment Corp. (SLRC) is an externally managed business development company (BDC) that invests primarily in senior secured loans and financing leases to privately held U.S. middle-market companies. It originates investments mainly through portfolio companies or their financial sponsors and may also invest in foreign markets, including emerging markets."
+ },
  "1420720": {
   "accn": "0001420720-26-000020",
   "date": "2026-10-08",
@@ -1481,6 +1553,15 @@
   "source": "10-K filed 2026-02-25",
   "text": "FS KKR Capital Corp. is an externally managed business development company that focuses primarily on debt investments in private U.S. companies, including middle-market companies with EBITDA of $50 million to $150 million at the time of investment. Its investment adviser is FS/KKR Advisor, LLC."
  },
+ "1422930": {
+  "accn": "0001422930-26-000010",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "PubMatic, Inc.",
+  "sic": "7370",
+  "source": "10-K filed 2026-02-26",
+  "text": "PubMatic, Inc. is an AI-powered advertising technology company whose platform connects buyers, publishers, data providers, and commerce media networks. It serves publishers, which monetize their advertising inventory, and buyers, including advertisers, agencies, agency trading desks, and demand side platforms."
+ },
  "1425292": {
   "accn": "0001425292-26-000011",
   "date": "2026-10-17",
@@ -1498,6 +1579,15 @@
   "sic": "2834",
   "source": "10-K filed 2026-03-31",
   "text": "Fortress Biotech is a biopharmaceutical company that acquires and advances pharmaceutical assets through partner and subsidiary companies. Its subsidiary Cyprium's ZYCUBO was FDA-approved in January 2026 for pediatric patients with Menkes disease."
+ },
+ "1431852": {
+  "accn": "0001104659-26-036344",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "Osisko Gold Group Inc.",
+  "sic": "1040",
+  "source": "40-F filed 2026-03-30",
+  "text": "Osisko's principal executive offices are in Montréal, Québec, according to its annual report cover page. The excerpt does not describe its operations, locations or customers."
  },
  "1437107": {
   "accn": "0001437107-26-000020",
@@ -1675,6 +1765,15 @@
   "source": "20-F filed 2026-07-27",
   "text": "MakeMyTrip is a travel technology platform offering air tickets, hotels, holiday packages, bus and car ground transport, and foreign exchange services. It operates principally in India, and its redBus business also operates in Colombia, Peru, Singapore and Malaysia. It serves Indian customers who research and book travel online."
  },
+ "1496099": {
+  "accn": "0001496099-26-000008",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "New Mountain Finance Corp",
+  "sic": "",
+  "source": "10-K filed 2026-02-24",
+  "text": "New Mountain Finance Corp (NMFC) is a closed-end, non-diversified business development company (BDC) with RIC tax treatment. At December 31, 2025, it held 113 portfolio companies, invested mostly in first lien loans, with top industry concentrations in software, business services, healthcare, and consumer services."
+ },
  "1499620": {
   "accn": "0001104659-26-073410",
   "date": "2026-10-13",
@@ -1683,6 +1782,15 @@
   "sic": "8200",
   "source": "20-F filed 2026-06-12",
   "text": "TAL Education Group is a smart learning solutions provider in China, offering learning services and learning content solutions. Its branch offices are located in 45 Chinese cities, and it has entered overseas markets. It serves learners, teachers and learning institutions."
+ },
+ "1504619": {
+  "accn": "0001193125-25-293672",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "PennantPark Floating Rate Capital Ltd.",
+  "sic": "",
+  "source": "10-K filed 2025-11-24",
+  "text": "PennantPark Floating Rate Capital (PFLT) is an externally managed business development company (BDC) that invests primarily in floating rate loans to U.S. middle-market companies, defined as those with annual revenues between $50 million and $1 billion. It makes investments to U.S. and, to a limited extent, non-U.S. corporations."
  },
  "1508655": {
   "accn": "0001193125-26-048664",
@@ -1699,6 +1807,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-08-21",
   "text": "Ubiquiti develops and sells networking equipment and software platforms for high-capacity internet access and unified network management, distributing products globally through over 100 distributors to service providers, enterprises and customers across more than 200 countries and territories."
+ },
+ "1513363": {
+  "accn": "0001193125-26-076572",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "FIDUS INVESTMENT Corp",
+  "sic": "",
+  "source": "10-K filed 2026-02-26",
+  "text": "Fidus is an externally managed business development company that provides customized debt and equity financing to lower middle-market companies, defined as U.S.-based companies with revenues between $10.0 million and $150.0 million. It invests across industries including business services, industrial products, healthcare, and aerospace and defense manufacturing. The excerpt does not state where it operates."
  },
  "1517413": {
   "accn": "0001517413-26-000053",
@@ -1804,6 +1921,15 @@
   "sic": "",
   "source": "10-K filed 2026-03-12",
   "text": "CION Investment Corporation is an externally managed, closed-end investment company that has elected to be regulated as a business development company. It invests in portfolio companies, with a focus on U.S. middle-market companies."
+ },
+ "1535778": {
+  "accn": "0001535778-26-000026",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "MSC INCOME FUND, INC.",
+  "sic": "",
+  "source": "10-K filed 2026-02-27",
+  "text": "MSC Income Fund, Inc. (MSIF) is an externally managed business development company (BDC) that provides debt capital to private companies owned by or being acquired by private equity funds, mainly through secured debt investments. The companies it lends to are generally headquartered in the U.S., and it partners with private equity fund sponsors."
  },
  "1544206": {
   "accn": "0001544206-26-000013",
@@ -2173,6 +2299,15 @@
   "source": "10-K filed 2026-03-12",
   "text": "OnKure Therapeutics is a clinical-stage biopharmaceutical company developing small-molecule precision medicines. Its lead candidate, OKI-219, selectively inhibits mutated PI3Kα (H1047R) and is in a Phase 1 trial for patients with advanced breast cancer."
  },
+ "1638290": {
+  "accn": "0001193125-26-387432",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "MasterCraft Boat Holdings, Inc.",
+  "sic": "3730",
+  "source": "10-K filed 2026-09-10",
+  "text": "MasterCraft designs, manufactures and markets recreational powerboats under five brands: MasterCraft, Crest, Balise, Chaparral and Robalo. Its boats are sold through a dealer network to consumers."
+ },
  "1639300": {
   "accn": "0001140361-26-010409",
   "date": "2026-10-07",
@@ -2186,6 +2321,15 @@
   "model": "haiku",
   "source": "20-F filed 2026-03-26",
   "text": "Ferroglobe produces silicon metal, silicon-based alloys and manganese-based alloys, and also mines quartz and low-ash metallurgical coal. It has production centers in North America, Europe, South America, Africa and Asia. Its customers are a diverse base across industries including aluminum, chemicals, automotive parts, solar, semiconductors and electric vehicle batteries."
+ },
+ "1644378": {
+  "accn": "0001644378-25-000043",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "RMR GROUP INC.",
+  "sic": "8742",
+  "source": "10-K filed 2025-11-12",
+  "text": "The RMR Group Inc. (RMR) is a holding company whose subsidiary, RMR LLC, provides management services to publicly traded REITs and private capital vehicles, with $39.0 billion of assets under management as of September 30, 2025. Managed REIT DHC owns properties in 34 U.S. states and the District of Columbia."
  },
  "1646188": {
   "accn": "0001213900-26-035981",
@@ -2234,6 +2378,15 @@
   "sic": "4412",
   "source": "20-F filed 2026-03-09",
   "text": "ZIM is a global container liner shipping company with a fleet of 128 vessels as of December 31, 2025, and it serves ports in Europe, including North Europe and the Mediterranean, and Central America. It serves freight customers, and its 10 largest represented about 12% of 2025 freight revenues."
+ },
+ "1655050": {
+  "accn": "0001193125-26-077703",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "Bain Capital Specialty Finance, Inc.",
+  "sic": "",
+  "source": "10-K filed 2026-02-27",
+  "text": "Bain Capital Specialty Finance, Inc. (BCSF) is an externally managed, closed-end, non-diversified business development company (BDC) that has elected regulated investment company (RIC) tax treatment. It is managed by an SEC-registered investment adviser, and its common stock trades on the New York Stock Exchange."
  },
  "1655759": {
   "accn": "0001628280-26-011226",
@@ -2405,6 +2558,15 @@
   "source": "10-K filed 2026-02-27",
   "text": "Alpha is a Tennessee-based miner producing mainly metallurgical coal, with some thermal coal as a byproduct, from mines in Virginia and West Virginia. It sells met coal to domestic and international steel and coke producers, and thermal coal to utilities and industrial customers."
  },
+ "1709164": {
+  "accn": "0001709164-26-000037",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "Hamilton Beach Brands Holding Co",
+  "sic": "3634",
+  "source": "10-K filed 2026-02-25",
+  "text": "Hamilton Beach designs, markets and distributes small electric housewares appliances, commercial products for restaurants, fast-food chains, bars and hotels, and connected healthcare devices and software. Consumer products are sold mainly in North America to retailers, distributors and end consumers, and health devices are leased to specialty pharmacy networks and pharmaceutical companies."
+ },
  "1709941": {
   "accn": "0001193125-26-120873",
   "date": "2026-10-08",
@@ -2457,12 +2619,39 @@
   "source": "10-K filed 2026-03-03",
   "text": "Hycroft Mining is a U.S.-based gold and silver exploration stage company that owns the Hycroft Mine in Northern Nevada. Mining and processing operations were discontinued, and the company generated no revenues in 2025 or 2024. It does not expect revenue from gold and silver sales until mining operations restart."
  },
+ "1722606": {
+  "accn": "0001062993-26-001632",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "Metalla Royalty & Streaming Ltd.",
+  "sic": "1040",
+  "source": "40-F filed 2026-03-26",
+  "text": "Metalla is a Canadian company with its principal executive offices in Vancouver, British Columbia. It holds gold and silver streams and royalty interests in mining operations. The excerpt does not describe its customers."
+ },
+ "1725255": {
+  "accn": "0001628280-26-011213",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "AdaptHealth Corp.",
+  "sic": "8082",
+  "source": "10-K filed 2026-02-24",
+  "text": "AdaptHealth is a provider of home medical equipment, medical supplies, and related services across its Sleep Health, Respiratory Health, Diabetes Health, and Wellness at Home segments. It serves patients in all 50 states through about 640 locations in 48 states and services Medicare, Medicaid, and commercial insurance payors."
+ },
  "1727263": {
   "accn": "0001193125-26-076548",
   "date": "2026-10-07",
   "model": "haiku",
   "source": "10-K filed 2026-02-26",
   "text": "FTDR is the leading U.S. provider of home warranties protecting against breakdowns of home systems and appliances. It operates five brands and serves approximately 2.1 million homeowner customers through annual service plans and new home builder warranty products."
+ },
+ "1728190": {
+  "accn": "0001104659-26-048944",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "HUYA Inc.",
+  "sic": "7370",
+  "source": "20-F filed 2026-04-27",
+  "text": "HUYA operates a game live streaming platform, launched in 2014, that users access through mobile apps, a website and PC clients. Viewers and broadcasters use the platform, and HUYA conducts its business mainly in mainland China."
  },
  "1729149": {
   "accn": "0001729149-26-000009",
@@ -2544,6 +2733,15 @@
   "source": "20-F filed 2026-04-22",
   "text": "Viomi Technology is a Cayman Islands holding company that conducts its operations in China through WFOEs and VIEs, including internet information and e-commerce services. Xiaomi is its strategic partner and most important customer, and a significant portion of its revenue comes from sales to Xiaomi."
  },
+ "1743340": {
+  "accn": "0001213900-26-053942",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "Token Cat Ltd",
+  "sic": "7389",
+  "source": "20-F filed 2026-05-08",
+  "text": "Token Cat Ltd is based in and has significant operations in China. Its risk factors refer to the auto electronics resale market, and in 2025 all revenue from its continuing operations came from five customers, four of which accounted for about 97.5% of total revenue."
+ },
  "1744676": {
   "accn": "0001193125-26-160257",
   "date": "2026-10-12",
@@ -2577,6 +2775,15 @@
   "sic": "5961",
   "source": "10-K filed 2026-02-25",
   "text": "Revolve is an online fashion retailer focused on Millennial and Generation Z consumers, offering apparel, footwear, beauty and accessories from over 1,600 brands, including 28 owned brands. It sells through a digital platform and influencer-driven marketing. The excerpt does not state where it operates."
+ },
+ "1747172": {
+  "accn": "0001213900-26-022392",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "Kayne Anderson BDC, Inc.",
+  "sic": "",
+  "source": "10-K filed 2026-03-02",
+  "text": "Kayne Anderson BDC, Inc. is an externally managed business development company that invests primarily in first lien senior secured loans, with a secondary focus on unitranche and split-lien loans. It lends to private middle market companies, which it defines as companies generating between $10 million and $150 million of annual EBITDA."
  },
  "1747777": {
   "accn": "0001747777-26-000012",
@@ -2666,6 +2873,15 @@
   "sic": "5990",
   "source": "20-F filed 2026-04-24",
   "text": "Yunji Inc. is a Cayman Islands holding company that conducts part of its business in China through a variable interest entity (VIE) and contractual arrangements with its PRC subsidiary, Yunchuang Sharing. The excerpt does not describe its products or customers."
+ },
+ "1759631": {
+  "accn": "0001628280-26-011278",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "Hyliion Holdings Corp.",
+  "sic": "3713",
+  "source": "10-K filed 2026-02-25",
+  "text": "Hyliion Holdings Corp. (Hyliion) is a Delaware corporation headquartered in Cedar Park, Texas, with research and development facilities in Cincinnati, Ohio. It designs and develops power generators, including its KARNO Power Module, and provides R&D services, initially targeting the datacenter, commercial, industrial, and defense sectors."
  },
  "1760965": {
   "accn": "0001760965-26-000014",
@@ -2839,6 +3055,15 @@
   "source": "20-F filed 2026-04-22",
   "text": "Yalla Group operates Yalla, a voice-centric group chat platform, and Yalla Ludo, a casual gaming app featuring online board games popular in MENA. It conducts its operations mainly through subsidiaries in the UAE and China. Its users are in the Middle East and North Africa (MENA) region."
  },
+ "1796073": {
+  "accn": "0001062993-26-003706",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "Vizsla Silver Corp.",
+  "sic": "1040",
+  "source": "40-F filed 2026-07-17",
+  "text": "Vizsla Silver Corp. is filing this annual report on Form 40-F. Its principal executive offices are in Vancouver, British Columbia, Canada. The excerpt does not describe its products, operations, or customers."
+ },
  "1798562": {
   "accn": "0001104659-26-037863",
   "date": "2026-10-17",
@@ -2988,6 +3213,15 @@
   "source": "10-K filed 2026-02-27",
   "text": "Enact Holdings (ACT) is a private mortgage insurer serving the U.S. housing finance market, covering a portion of the unpaid principal on low down payment mortgage loans. It operates in all 50 states and the District of Columbia, and its customers are mortgage originators, including national banks, non-bank mortgage lenders, community banks and credit unions."
  },
+ "1823652": {
+  "accn": "0001554855-26-000300",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "Eve Holding, Inc.",
+  "sic": "3721",
+  "source": "10-K filed 2026-03-16",
+  "text": "Eve Holding, Inc. (Eve) is an aerospace company developing electric vertical take-off and landing vehicles (eVTOLs), along with TechCare maintenance services and Vector, an urban air traffic management system. It has operations in Melbourne, Florida and São Paulo, Brazil, and plans to market to UAM service operators, fixed-wing and helicopter operators, lessors, air navigation service providers, and vertiport operators."
+ },
  "1823986": {
   "accn": "0001104659-26-049772",
   "date": "2026-10-13",
@@ -3067,6 +3301,15 @@
   "sic": "2836",
   "source": "10-K filed 2026-03-09",
   "text": "SAB Biotherapeutics, Inc. (SABS) is a clinical-stage biopharmaceutical company developing multi-specific human immunoglobulin G therapies for immune and autoimmune disorders, led by SAB-142 for autoimmune type 1 diabetes. Its antibodies are produced using transchromosomic cattle (Tc-Bovine). The excerpt does not describe where it operates or its customers."
+ },
+ "1835724": {
+  "accn": "0001104659-26-044557",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "Zhihu Inc.",
+  "sic": "7389",
+  "source": "20-F filed 2026-04-17",
+  "text": "Zhihu is a leading online content community in China where users find answers, make decisions, and engage with content. It earns revenue from online advertising, paid content, its paid membership program, content-commerce solutions, and vocational training, and serves both users and content creators."
  },
  "1836470": {
   "accn": "0001104659-26-035485",
@@ -3284,6 +3527,15 @@
   "source": "20-F filed 2026-04-24",
   "text": "Hesai Group (Hesai) develops, manufactures and sells LiDAR products and 3D perception solutions for ADAS, autonomous mobility and robotics applications. It operates offices in Shanghai, Palo Alto and Stuttgart, and in-house factories in China and Thailand. Its customers span more than 40 countries."
  },
+ "1861974": {
+  "accn": "0001628280-26-021865",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "ECARX Holdings Inc.",
+  "sic": "7373",
+  "source": "20-F filed 2026-03-30",
+  "text": "ECARX Holdings Inc. (ECX) is a Cayman Islands holding company whose operations in China are conducted through its PRC subsidiaries. It develops intelligent automotive products, including the Venado intelligent cockpit computing platform and autonomous driving technology. Venado has been deployed in Geely, Changan Mazda, and Dongfeng Peugeot-Citroën models."
+ },
  "1865631": {
   "accn": "0001554855-26-000328",
   "date": "2026-10-08",
@@ -3391,6 +3643,15 @@
   "source": "10-K filed 2026-02-23",
   "text": "Ivanhoe Electric (IE) is a United States minerals exploration and development company focused on copper and other critical metals. Its wholly owned assets are in the United States, where its sole material project is the Santa Cruz Copper Project in Arizona. It also operates exploration joint ventures in Saudi Arabia, Chile and the United States."
  },
+ "1884082": {
+  "accn": "0001884082-26-000006",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "Polestar Automotive Holding UK PLC",
+  "sic": "3711",
+  "source": "20-F filed 2026-04-17",
+  "text": "Polestar Automotive Holding UK PLC (PSNY) is a pure play premium electric car brand that designs performance cars. It is headquartered in Gothenburg, Sweden. Volvo Cars and Geely established Polestar in 2017, and it operates an asset-light business model."
+ },
  "1884516": {
   "accn": "0001193125-26-095973",
   "date": "2026-10-15",
@@ -3439,6 +3700,15 @@
   "source": "10-K filed 2026-03-06",
   "text": "Amprius develops, manufactures and markets silicon-anode lithium-ion batteries for mobility uses, mainly aviation such as drones and high-altitude pseudo satellites. Its batteries have been validated by customers including AeroVironment, BAE Systems, Teledyne FLIR and the U.S. Army. Its principal offices are in Fremont, California."
  },
+ "1901203": {
+  "accn": "0001213900-26-037655",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "CN Healthy Food Tech Group Corp.",
+  "sic": "2000",
+  "source": "10-K filed 2026-03-31",
+  "text": "CN Healthy Food Tech Group Corp. (UCFI) is a holding company whose China-based subsidiaries develop, manufacture, and market premium health foods, including Chinese herbal and grain-based nutritional products. Its main administrative office is in Zhuhai, Guangdong, China. Products are sold through online platforms and over 10,000 offline specialty stores and distributors."
+ },
  "1907085": {
   "accn": "0001104659-26-029490",
   "date": "2026-10-08",
@@ -3462,6 +3732,15 @@
   "source": "10-K filed 2026-03-23",
   "text": "Newbridge Acquisition is a blank check company formed to pursue a merger or similar business combination with one or more businesses, not limited to a particular industry or region. It completed an IPO in February 2026. Its principal executive offices are in Hong Kong, China."
  },
+ "1920294": {
+  "accn": "0001193125-26-132456",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "REZOLVE AI PLC",
+  "sic": "7370",
+  "source": "20-F filed 2026-03-30",
+  "text": "Rezolve AI provides an enterprise platform that unifies AI-driven discovery, conversation, checkout, fulfillment, payments and service for commerce. Its clients include retail and financial services brands such as Adidas, H&M, ASOS and Standard Chartered, and its principal executive office is in London."
+ },
  "1922446": {
   "accn": "0001922446-26-000020",
   "date": "2026-10-08",
@@ -3476,6 +3755,15 @@
   "source": "20-F filed 2026-03-30",
   "text": "Enlight Renewable Energy is a global renewable energy platform that develops, finances, builds, owns and operates utility-scale wind, solar and energy storage projects. It primarily generates revenue from selling electricity under long-term power purchase agreements. It operates in 11 countries in Europe, the U.S., Morocco and Israel, and sells electricity to corporate customers in Israel."
  },
+ "1923891": {
+  "accn": "0001493152-25-028285",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "Nano Nuclear Energy Inc.",
+  "sic": "4911",
+  "source": "10-K filed 2025-12-18",
+  "text": "Nano Nuclear is a pre-revenue nuclear energy and technology company developing advanced microreactors and related fuel supply chain, fuel transportation, technology development, and consulting businesses. It is focused on the U.S. nuclear energy sector. Its intended customers include SMR and microreactor companies, national laboratories, and the military."
+ },
  "1930313": {
   "accn": "0001193125-26-127557",
   "date": "2026-10-08",
@@ -3489,6 +3777,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-04",
   "text": "GE HealthCare is a global healthcare solutions provider of medical devices, pharmaceutical diagnostics, and AI-enabled cloud and software solutions. It operates in over 160 countries through four segments: Imaging, Advanced Visualization Solutions, Patient Care Solutions, and Pharmaceutical Diagnostics. Customers include hospitals, health systems, and research institutions."
+ },
+ "1953530": {
+  "accn": "0001193125-26-091446",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "Oculis Holding AG",
+  "sic": "2834",
+  "source": "20-F filed 2026-03-04",
+  "text": "Oculis Holding AG (OCS) is a late clinical-stage biopharmaceutical company focused on neuro-ophthalmic and ophthalmic diseases. Its pipeline includes OCS-01, an eye drop candidate for diabetic macular edema, plus candidates for dry eye disease and optic neuritis and NAION. It has operations in Switzerland, the U.S., and Iceland."
  },
  "1953575": {
   "accn": "0001213900-26-037056",
@@ -3670,6 +3967,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-10",
   "text": "TWFG is an independent distribution platform for personal and commercial insurance, providing independent agencies with carrier access, technology, training and M&A support. It is licensed in all 50 states, with much of its business concentrated in Texas, California and Louisiana, and works with over 300 insurance carriers."
+ },
+ "2011674": {
+  "accn": "0001213900-26-050282",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "YD Bio Ltd",
+  "sic": "8071",
+  "source": "20-F filed 2026-04-30",
+  "text": "YD Bio Limited (YDES) is a Cayman Islands company that holds an exclusive sublicense to methylation analysis technology for breast cancer detection. Its principal executive office is in Taipei, Taiwan, and it plans a U.S. operations center in California, with the host city not yet finalized."
  },
  "2013649": {
   "accn": "0001104659-26-050766",
@@ -3885,6 +4191,15 @@
   "source": "10-K filed 2026-02-17",
   "text": "Cohu supplies semiconductor test automation, interface solutions, inspection and metrology equipment, and software analytics to optimize semiconductor manufacturing yield. Its customers include OSATs and fabless semiconductor companies, and its installed base serves customers in 31 countries."
  },
+ "216085": {
+  "accn": "0001628280-26-012199",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "HAVERTY FURNITURE COMPANIES INC",
+  "sic": "5712",
+  "source": "10-K filed 2026-02-26",
+  "text": "Havertys is a specialty retailer of residential furniture and accessories. It operates 129 stores in 17 states in the Southern and Midwest regions of the U.S. Its core customers are typically women in middle to upper-middle income households."
+ },
  "21665": {
   "accn": "0000021665-26-000006",
   "date": "2026-10-07",
@@ -3907,6 +4222,15 @@
   "sic": "3663",
   "source": "10-K filed 2026-03-12",
   "text": "BK Technologies Corp (BKTI) is a holding company whose operating subsidiary, BK Technologies, Inc., provides public safety grade communications products, including two-way land mobile radios and the BK ONE smartphone-based solutions. Its radios serve government markets such as emergency response, public safety, homeland security and military agencies, as well as industrial and commercial enterprises."
+ },
+ "25475": {
+  "accn": "0001193125-26-085465",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "CRAWFORD & CO",
+  "sic": "6411",
+  "source": "10-K filed 2026-03-02",
+  "text": "Crawford & Company is the world's largest publicly listed independent provider of claims management and outsourcing solutions, headquartered in Atlanta, Georgia. It serves clients in more than 70 countries, including insurance carriers, brokers, and corporations. Its services span property and casualty loss adjusting, third-party administration, and medical management."
  },
  "27419": {
   "accn": "0000027419-26-000016",
@@ -4178,6 +4502,15 @@
   "source": "10-K filed 2026-02-12",
   "text": "Kimberly-Clark makes essential consumer and professional products from fibers, nonwovens and absorbency, including Huggies, Kleenex, Scott and Kotex brands. Its brands serve people in more than 175 countries and territories. Customers include supermarkets, mass merchandisers, drugstores and warehouse clubs, as well as distributors and professional users such as food service and lodging businesses."
  },
+ "56868": {
+  "accn": "0001437749-26-012531",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "PRIMEENERGY RESOURCES CORP",
+  "sic": "1311",
+  "source": "10-K filed 2026-04-16",
+  "text": "PrimeEnergy Resources Corporation (PNRG) operates in the oil and natural gas industry. Its operations are substantially affected by federal, state, and local laws and regulations."
+ },
  "57131": {
   "accn": "0000057131-26-000019",
   "date": "2026-10-14",
@@ -4362,6 +4695,15 @@
   "source": "10-K filed 2026-05-06",
   "text": "NVE develops and sells spintronic devices, including magnetic sensors and couplers used to acquire and transmit data. Its products are used in applications such as factory automation, medical devices and power conversion. It relies on distributors in more than 75 countries and on several large customers, including Abbott Laboratories."
  },
+ "729580": {
+  "accn": "0001437749-26-005354",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "BEL FUSE INC /NJ",
+  "sic": "3677",
+  "source": "10-K filed 2026-02-24",
+  "text": "Bel Fuse designs, manufactures, and markets products that power, protect, and connect electronic circuits, including power, connectivity, and magnetic solutions. Its products are primarily used in the defense, commercial aerospace, networking, telecommunications, computing, and industrial industries, among others. It operates facilities in North America, Europe, the Middle East, and Asia."
+ },
  "730263": {
   "accn": "0000730263-26-000027",
   "date": "2026-10-08",
@@ -4540,6 +4882,15 @@
   "source": "10-K filed 2026-08-28",
   "text": "Jack Henry & Associates provides financial technology solutions including core data processing systems and complementary services to community and regional banks and credit unions. It serves over 7,200 financial institutions with on-premise and cloud solutions."
  },
+ "788329": {
+  "accn": "0001140361-25-045348",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "JOHNSON OUTDOORS INC",
+  "sic": "3949",
+  "source": "10-K filed 2025-12-12",
+  "text": "Johnson Outdoors manufactures and markets branded outdoor recreation products for fishing, diving, paddling, hiking and camping, including Minn Kota, Humminbird, Jetboil, Old Town and SCUBAPRO. Fishing products are sold across the globe, mostly in North America, through outdoor specialty retailers, retail chains, distributors, boat manufacturers and directly to consumers."
+ },
  "789019": {
   "accn": "0001193125-26-323660",
   "date": "2026-10-07",
@@ -4636,6 +4987,15 @@
   "model": "haiku",
   "source": "10-K filed 2025-12-17",
   "text": "Photronics (PLAB) is a manufacturer of photomasks, high-precision quartz or glass plates containing circuit images used to fabricate integrated circuits and flat panel displays. It operates eleven manufacturing facilities in Taiwan, China, South Korea, the United States and Europe. The excerpt describes its customers as semiconductor and flat panel display makers, with sales support for non-U.S. customers, mainly in Asia."
+ },
+ "810332": {
+  "accn": "0001628280-26-019614",
+  "date": "2026-10-18",
+  "model": "haiku",
+  "name": "REPUBLIC AIRWAYS HOLDINGS INC.",
+  "sic": "4512",
+  "source": "10-K filed 2026-03-19",
+  "text": "Republic is a regional airline providing scheduled passenger service on about 1,300 daily flights to approximately 130 cities in the United States, Canada, Mexico, and the Caribbean. It operates under Capacity Purchase Agreements, flying for the Partner Airlines American Eagle, Delta Connection, and United Express. Its partner airlines are American Airlines, Delta Air Lines, and United Airlines."
  },
  "811809": {
   "accn": "0001193125-26-354647",
