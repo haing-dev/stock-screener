@@ -125,6 +125,24 @@
   "source": "10-K filed 2026-05-28",
   "text": "ePlus is a technology solutions provider covering AI, cloud, data center, security, networking and collaboration, through product, professional services and managed services segments. It serves about 4,200 customers, mainly middle-market to large enterprises and state and local government institutions. It sells mainly in the U.S., with sales also in the UK, EU, India and Singapore."
  },
+ "1023313": {
+  "accn": "0001193125-26-105114",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "FORRESTER RESEARCH, INC.",
+  "sic": "8700",
+  "source": "10-K filed 2026-03-13",
+  "text": "Forrester is a global independent research and advisory firm serving business and technology leaders in technology, customer experience, digital, marketing, sales, and product functions. Its offerings include subscription research such as Forrester Decisions, the Forrester AI tool, consulting, and events. It operates through Research, Consulting, and Events segments."
+ },
+ "1023459": {
+  "accn": "0001023459-25-000060",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Simulations Plus, Inc.",
+  "sic": "7373",
+  "source": "10-K filed 2025-12-01",
+  "text": "Simulations Plus is a biopharma-focused provider of modeling and simulation software and consulting services for drug discovery, development, clinical trial operations and commercialization. It is headquartered in Research Triangle Park, NC, with a European office in Paris, France. Its clients include major pharmaceutical, biotechnology, agrochemical, cosmetics and food companies, as well as academic and regulatory agencies worldwide."
+ },
  "1030894": {
   "accn": "0001030894-26-000011",
   "date": "2026-10-10",
@@ -168,6 +186,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-03",
   "text": "ISRG develops and markets robotic-assisted surgical systems, including da Vinci platforms, and diagnostic systems. The company provides instruments, software, and support services to hospitals and healthcare systems worldwide."
+ },
+ "1035354": {
+  "accn": "0001193125-26-108687",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Eloxx Pharmaceuticals, Inc.",
+  "sic": "2836",
+  "source": "10-K filed 2026-03-17",
+  "text": "Eloxx is a clinical-stage biopharmaceutical company developing small molecule candidates that modulate the ribosome to promote readthrough of premature stop codons caused by nonsense mutations. Its lead candidate, exaluren, is in development for rare kidney diseases such as Alport syndrome, and it collaborates with Almirall on ZKN-013 for rare skin diseases."
  },
  "103595": {
   "accn": "0000103595-26-000018",
@@ -283,6 +310,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-04",
   "text": "CompX International manufactures security products, including cabinet locks, and marine components, including wake enhancement systems, exhaust systems and gauges. Its products are used in postal, recreational transportation, furniture, healthcare and marine applications. Its largest customer is the United States Postal Service, which accounted for 26% of 2025 net sales. The excerpt does not state where it operates beyond its North American market and facilities in South Carolina, Illinois and Wisconsin."
+ },
+ "1049659": {
+  "accn": "0001292814-26-002714",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "NATIONAL STEEL CO",
+  "sic": "3310",
+  "source": "20-F filed 2026-04-30",
+  "text": "National Steel sells steel products and iron ore and has operations in Brazil. The excerpt refers to the Brazilian domestic market and U.S. markets for its steel products."
  },
  "1050140": {
   "accn": "0001104659-26-026450",
@@ -1454,6 +1490,15 @@
   "source": "10-K filed 2026-08-04",
   "text": "Broadridge is a financial technology company that provides proxy distribution and voting, fund communication, and corporate governance solutions. Its clients include banks, broker-dealers, asset and wealth managers, public companies, investors, and mutual funds. Its international solutions serve EMEA and APAC regions, and its fund communication business serves the UK and European markets."
  },
+ "1383414": {
+  "accn": "0001193125-25-293703",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "PENNANTPARK INVESTMENT CORP",
+  "sic": "",
+  "source": "10-K filed 2025-11-24",
+  "text": "PennantPark is a business development company that invests in the debt and equity of U.S. middle-market companies, defined as those with annual revenues between $50 million and $1 billion. Its investments include first lien and second lien secured debt, subordinated debt, and equity. It invests primarily in U.S. companies and, to a limited extent, in non-U.S. companies."
+ },
  "1385849": {
   "accn": "0001385849-26-000009",
   "date": "2026-10-08",
@@ -1801,6 +1846,15 @@
   "source": "10-K filed 2026-02-12",
   "text": "Sixth Street Specialty Lending is a business development company that generates current income by originating senior secured loans, and to a lesser extent mezzanine and unsecured loans, mainly to U.S.-domiciled middle-market companies. Its portfolio companies are middle-market businesses with EBITDA of $10 million to $250 million."
  },
+ "1509470": {
+  "accn": "0001493152-26-009641",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Neostellar Capital Corp.",
+  "sic": "",
+  "source": "10-K filed 2026-03-11",
+  "text": "SuRo Capital Corp. is an internally managed, non-diversified closed-end investment company that has elected to be regulated as a business development company. It invests mainly in equity securities of venture capital-backed emerging companies, across themes such as AI infrastructure, software-as-a-service and financial technology. The excerpt does not state where it operates or who its customers are."
+ },
  "1511737": {
   "accn": "0001511737-26-000056",
   "date": "2026-10-07",
@@ -1960,6 +2014,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-26",
   "text": "MPLX is a master limited partnership that owns and operates midstream energy infrastructure, including crude oil and refined product pipelines, terminals, and natural gas and NGL gathering and processing, and provides fuels distribution services. Its assets are positioned throughout the United States. Its largest customer is its sponsor MPC, and it also serves producers in several U.S. shale resource plays."
+ },
+ "1552198": {
+  "accn": "0001104659-26-024735",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "WhiteHorse Finance, Inc.",
+  "sic": "",
+  "source": "10-K filed 2026-03-06",
+  "text": "WhiteHorse Finance is an externally managed business development company that makes senior secured loans as a direct lender. It targets privately held lower middle market companies located in the United States, defined as those with enterprise values between $50 million and $350 million. As of December 31, 2025, its portfolio had a fair value of about $578.6 million across 68 companies."
  },
  "1555280": {
   "accn": "0001555280-26-000011",
@@ -2142,6 +2205,15 @@
   "source": "10-K filed 2026-08-05",
   "text": "Paylocity provides cloud-based human capital management, finance, and IT software solutions to U.S. organizations. The unified SaaS platform automates HR processes, payroll, benefits management, and employee workflows. It serves approximately 44,400 clients averaging over 150 employees each through direct sales and a referral network."
  },
+ "1592560": {
+  "accn": "0001213900-26-054539",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "VisionSys AI Inc",
+  "sic": "8200",
+  "source": "20-F filed 2026-05-11",
+  "text": "VisionSys AI is a Cayman Islands holding company, formerly known as Tarena International, with operations through subsidiaries in the United States, Hong Kong and mainland China. The excerpt does not describe its current products or customers. It reported no revenue from continuing operations in 2023 and 2024."
+ },
  "1595761": {
   "accn": "0001104659-26-047217",
   "date": "2026-10-15",
@@ -2322,6 +2394,15 @@
   "source": "20-F filed 2026-03-26",
   "text": "Ferroglobe produces silicon metal, silicon-based alloys and manganese-based alloys, and also mines quartz and low-ash metallurgical coal. It has production centers in North America, Europe, South America, Africa and Asia. Its customers are a diverse base across industries including aluminum, chemicals, automotive parts, solar, semiconductors and electric vehicle batteries."
  },
+ "1641398": {
+  "accn": "0001213900-26-035630",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "GD Culture Group Ltd",
+  "sic": "5050",
+  "source": "10-K filed 2026-03-27",
+  "text": "GD Culture Group sold its China-based VIE subsidiaries in 2023, including Highlight Media, an integrated marketing service agency. In September 2025, it acquired Pallas Capital Holding, which holds digital assets as a long-term reserve and held 7,500 Bitcoin as of December 31, 2025. The company states it no longer has a VIE structure."
+ },
  "1644378": {
   "accn": "0001644378-25-000043",
   "date": "2026-10-18",
@@ -2360,6 +2441,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-05",
   "text": "Alphabet operates Google, a technology company providing search, video (YouTube), email, cloud infrastructure and services, and AI products. Google Cloud serves enterprise customers seeking cloud computing and AI capabilities. Google also generates advertising revenue from advertisers reaching consumers through its platforms."
+ },
+ "1653384": {
+  "accn": "0001193125-26-104117",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Runway Growth Finance Corp.",
+  "sic": "",
+  "source": "10-K filed 2026-03-12",
+  "text": "Runway is an externally managed business development company that provides senior secured loans to high growth-potential companies. It focuses on technology, healthcare, business services, financial services, select consumer services and products, and other high-growth industries. Its offices are in Chicago, Menlo Park, and New York."
  },
  "1653477": {
   "accn": "0001653477-26-000014",
@@ -2404,12 +2494,30 @@
   "source": "20-F filed 2025-09-04",
   "text": "Endava plc (DAVA) is a provider of next-generation technology services that helps clients with digital transformation, including core system transformation and production-grade AI projects. Its headquarters are in London, United Kingdom, and the excerpt does not describe its customer base beyond clients across all industries and regions."
  },
+ "1657788": {
+  "accn": "0001104659-26-020477",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Kimbell Royalty Partners, LP",
+  "sic": "1311",
+  "source": "10-K filed 2026-02-26",
+  "text": "Kimbell Royalty Partners is a Delaware limited partnership formed in 2015 that owns mineral and royalty interests in oil and natural gas properties throughout the United States. It receives royalties from operators on production from those properties, net of post-production expenses and taxes."
+ },
  "1658566": {
   "accn": "0001658566-26-000035",
   "date": "2026-10-07",
   "model": "haiku",
   "source": "10-K filed 2026-02-26",
   "text": "PR is a crude petroleum and natural gas producer that sells its production to a relatively small number of customers, typical in the industry. The excerpt provides limited detail on specific operations and customer identities."
+ },
+ "1664710": {
+  "accn": "0001664710-26-000018",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Keros Therapeutics, Inc.",
+  "sic": "2834",
+  "source": "10-K filed 2026-03-04",
+  "text": "Keros is a clinical-stage biopharmaceutical company developing protein therapeutics for disorders linked to TGF-ß family signaling. Its lead candidate, rinvatercept, is being developed for neuromuscular diseases, including Duchenne muscular dystrophy and ALS. Its elritercept candidate, licensed to Takeda outside mainland China, Hong Kong, and Macau, is being developed for low blood cell counts in myelodysplastic syndromes and myelofibrosis."
  },
  "1667011": {
   "accn": "0001628280-26-007726",
@@ -2424,6 +2532,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-10",
   "text": "MEDP is a leading clinical contract research organization providing Phase I-IV clinical development services to biotechnology, pharmaceutical and medical device companies. It operates from facilities in Cincinnati, Belgium, Shanghai and Singapore, serving small, mid-sized and large pharmaceutical customers."
+ },
+ "1669779": {
+  "accn": "0001104659-26-021548",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Camping World Holdings, Inc.",
+  "sic": "5500",
+  "source": "10-K filed 2026-02-27",
+  "text": "Camping World is America's largest retailer of RVs and related products and services, operating under the Camping World and Good Sam brands. Good Sam offers services and plans such as roadside assistance, protection plans and insurance. As of December 31, 2025, it operated 196 locations, mainly in the United States, and served approximately 4.2 million Active Customers."
  },
  "1670592": {
   "accn": "0001670592-26-000013",
@@ -2601,6 +2718,15 @@
   "source": "40-F filed 2026-03-24",
   "text": "Skeena Resources Limited is a Canadian registrant with principal executive offices in Vancouver, British Columbia. The excerpt is a Form 40-F cover page and does not describe the company's products, operations or customers. It reported 121,300,287 common shares outstanding as of December 31, 2025."
  },
+ "1717115": {
+  "accn": "0001193125-26-066961",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Tempus AI, Inc.",
+  "sic": "7370",
+  "source": "10-K filed 2026-02-24",
+  "text": "Tempus AI is a healthcare technology company that provides Intelligent Diagnostics, using AI to connect laboratory test results to patients' clinical data through its Tempus Platform. Its customers include physicians, pharmaceutical and biotechnology companies, and researchers. It is one of the largest sequencers of cancer patients in the United States."
+ },
  "1717161": {
   "accn": "0001292814-26-002446",
   "date": "2026-10-12",
@@ -2716,6 +2842,15 @@
   "sic": "2836",
   "source": "10-K filed 2026-03-05",
   "text": "Compass Therapeutics, Inc. (CMPX) is a clinical-stage oncology biopharmaceutical company developing proprietary antibody-based therapeutics, led by tovecimig, a bispecific antibody targeting DLL4 and VEGF-A. It is evaluating tovecimig in a Phase 2/3 trial in the United States for biliary tract cancer. The excerpt does not describe its customers."
+ },
+ "1738699": {
+  "accn": "0001104659-26-053033",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "WISeQey Corp.",
+  "sic": "7374",
+  "source": "20-F filed 2026-04-30",
+  "text": "WISeKey is a Swiss company headquartered in Zug that provides authentication and cybersecurity technology for secure digital identification and communication. Its five verticals are SEALSQ semiconductors, WISeSat satellite communications, SEALCOIN, WISeID trust services and WISe.ART, a secure NFT platform serving the arts and luxury industry."
  },
  "1742692": {
   "accn": "0001178913-26-000377",
@@ -3073,6 +3208,15 @@
   "source": "10-K filed 2026-03-31",
   "text": "TMC the metals company is a deep seabed minerals developer focused on collecting, processing and refining polymetallic nodules in international waters of the Clarion Clipperton Zone in the Eastern Pacific Ocean. It is in the development stage and has not yet obtained a commercial recovery permit."
  },
+ "1799788": {
+  "accn": "0001493152-26-026651",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Greenwich LifeSciences, Inc.",
+  "sic": "2834",
+  "source": "10-K filed 2026-06-01",
+  "text": "Greenwich LifeSciences is a clinical-stage biopharmaceutical company developing GP2 immunotherapy, its product candidate. The excerpt describes clinical trials of GP2 in patients with HER2/neu 1-3+, node-negative breast cancer."
+ },
  "1800667": {
   "accn": "0001193125-26-051382",
   "date": "2026-10-07",
@@ -3109,6 +3253,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-26",
   "text": "Eos Energy (EOSE) designs, manufactures and sells zinc-based battery energy storage systems for utility-scale, microgrid and commercial and industrial applications. Its manufacturing facility is in Turtle Creek, Pennsylvania, and its primary geographic market is North America. Its Z3 battery customers include utilities, independent power producers, renewable developers and C&I customers."
+ },
+ "1808110": {
+  "accn": "0001213900-26-045881",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "DDC Enterprise Ltd",
+  "sic": "2000",
+  "source": "20-F filed 2026-04-21",
+  "text": "DDC is a Cayman Islands holding company that conducts its operations primarily in China. It sells ready-to-heat, ready-to-cook, ready-to-eat and plant-based meal products and provides advertising services, targeting predominantly Millennial and Generation Z customers. It also holds Bitcoin as its primary treasury reserve asset."
  },
  "1810806": {
   "accn": "0001810806-26-000011",
@@ -3357,6 +3510,15 @@
   "source": "20-F filed 2026-04-14",
   "text": "Full Truck Alliance is a Cayman Islands holding company whose operations are conducted primarily in China, through contractual arrangements with variable interest entities and through subsidiaries. Its ADSs are listed on the NYSE under the ticker 'YMM'."
  },
+ "1839285": {
+  "accn": "0001213900-26-044078",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Healthcare Triangle, Inc.",
+  "sic": "7373",
+  "source": "10-K filed 2026-04-15",
+  "text": "Healthcare Triangle is a healthcare information technology company providing cloud services, data science, and professional and managed services for the Electronic Health Record (EHR), healthcare and life sciences industry. Its customers include healthcare delivery organizations, healthcare insurance companies, pharmaceutical and life sciences companies, biotech companies, and medical device manufacturers."
+ },
  "1840706": {
   "accn": "0001840706-26-000006",
   "date": "2026-10-14",
@@ -3381,6 +3543,15 @@
   "sic": "7370",
   "source": "20-F filed 2026-04-29",
   "text": "Kanzhun is a leading online recruitment platform in China, operating the BOSS Zhipin app. It serves enterprises from small businesses to large corporations, including all 2025 Fortune China 500 companies, through business executives, HR officers and headhunters."
+ },
+ "1843162": {
+  "accn": "0001193125-26-115112",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Chicago Atlantic BDC, Inc.",
+  "sic": "",
+  "source": "10-K filed 2026-03-19",
+  "text": "Chicago Atlantic BDC is an externally managed business development company that provides loans. Its growth and technology sub-strategy focuses on industry leaders and disruptive companies with strong growth trajectories, including private equity and venture capital backed businesses and non-sponsor backed companies."
  },
  "1844862": {
   "accn": "0001104659-26-019435",
@@ -3455,6 +3626,24 @@
   "source": "10-K filed 2026-05-19",
   "text": "Nextpower provides solar tracker systems and integrated solar energy solutions for utility-scale power plants, including structural, electrical and digital solutions. It has shipped more than 160 GW of solar tracker systems to projects on six continents. Its customers include engineering, procurement and construction firms, solar project developers and owners."
  },
+ "1852440": {
+  "accn": "0001213900-26-042787",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Jianzhi Education Technology Group Co Ltd",
+  "sic": "8200",
+  "source": "20-F filed 2026-04-13",
+  "text": "Jianzhi Education Technology Group is a Cayman Islands holding company that operates education technology businesses in China through PRC subsidiaries and variable interest entities. It provides educational content and courses, such as through Sentu Academy, along with IT solution services and advertising. Its customers include individuals, educational institutions and other institutional customers across China."
+ },
+ "1853138": {
+  "accn": "0001628280-26-016910",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Kodiak AI, Inc.",
+  "sic": "7373",
+  "source": "10-K filed 2026-03-11",
+  "text": "Kodiak is an autonomous vehicle company whose Kodiak Driver combines AI software with modular hardware to run driverless trucks. Its trucks operate in the southern United States, including the Permian Basin in West Texas and Eastern New Mexico. Kodiak serves long-haul trucking, industrial trucking, and defense customers, including Atlas Energy Solutions, J.B. Hunt, Werner Enterprises, C.R. England, Martin Brower, and the U.S. military."
+ },
  "1853717": {
   "accn": "0001104659-26-044551",
   "date": "2026-10-12",
@@ -3463,6 +3652,24 @@
   "sic": "7011",
   "source": "20-F filed 2026-04-17",
   "text": "Atour Lifestyle is a lifestyle group in China that operates hospitality and retail businesses, including sleep-related products. As of December 31, 2025, it had 2,015 hotels with 224,423 rooms, and it was the largest upper midscale hotel chain in China by room number."
+ },
+ "1855474": {
+  "accn": "0001193125-26-133335",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "AirJoule Technologies Corp.",
+  "sic": "3585",
+  "source": "10-K filed 2026-03-31",
+  "text": "AirJoule Technologies makes AirJoule sorption systems that produce distilled water and dehumidified air from air and can reduce energy use in HVAC systems. Its products are especially valuable for industrial users, such as data centers and advanced manufacturing. In 2025, it deployed AirJoule Core systems for field testing in Texas, Arizona, and Dubai."
+ },
+ "1855509": {
+  "accn": "0001731122-26-000317",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Twin Vee PowerCats, Co.",
+  "sic": "3730",
+  "source": "10-K filed 2026-02-27",
+  "text": "Twin Vee PowerCats designs, manufactures, and markets recreational and commercial power boats under the Twin Vee and Bahama Boat Works brands. Its boats are manufactured in Fort Pierce, Florida, and sold through 17 independent dealers across North America, Hawaii, and Australia to end users."
  },
  "1855612": {
   "accn": "0001855612-26-000020",
@@ -3595,6 +3802,15 @@
   "source": "10-K filed 2026-03-05",
   "text": "BridgeBio Oncology Therapeutics, Inc. (BBOT) is a clinical-stage biotechnology company developing oral small molecule inhibitors for cancers driven by RAS and PI3Kα, including its KRAS G12C and pan-KRAS candidates. The excerpt does not describe where it operates or its customers."
  },
+ "1872964": {
+  "accn": "0001213900-26-057766",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Maris Tech Ltd.",
+  "sic": "3669",
+  "source": "20-F filed 2026-05-15",
+  "text": "Maris Tech develops, designs, and manufactures AI-enabled video edge computing products and assemblies, primarily for defense applications. It operates in Israel and the United States and sells to customers in other countries, including the UK, Western Europe, Czech Republic, India, Australia, and Switzerland. Its customers include defense platform, unmanned platform, and defense system manufacturers."
+ },
  "1873951": {
   "accn": "0001193125-26-076686",
   "date": "2026-10-08",
@@ -3636,6 +3852,15 @@
   "source": "20-F filed 2026-04-30",
   "text": "Prenetics Global Ltd (PRE) is a consumer health company whose flagship brand is IM8, a supplement brand launched in December 2024 and co-founded with David Beckham. CircleDNA, a consumer genetic testing product, serves customers in more than 30 countries, and IM8 ships to more than 30 countries."
  },
+ "1876581": {
+  "accn": "0001193125-26-192203",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Imperial Petroleum Inc./Marshall Islands",
+  "sic": "4412",
+  "source": "20-F filed 2026-04-29",
+  "text": "Imperial Petroleum provides international seaborne transportation services, operating tankers that carry refined petroleum products and crude oil, and drybulk carriers. As of April 15, 2026, its fleet had 21 vessels. Its principal charterers include energy companies, energy traders, commodity producers and traders, and industrial users of drybulk cargoes."
+ },
  "1879016": {
   "accn": "0001879016-26-000005",
   "date": "2026-10-08",
@@ -3667,6 +3892,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-19",
   "text": "MNTN provides a self-serve PTV software platform that lets marketers plan, target, measure and optimize connected TV (CTV) advertising campaigns toward goals such as ROAS. Its customers are brands of many sizes, with a focus on mid-sized and small businesses, many new to TV advertising. Its campaigns reach CTV households across the United States."
+ },
+ "1891856": {
+  "accn": "0001193125-26-134555",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "GEN Restaurant Group, Inc.",
+  "sic": "5812",
+  "source": "10-K filed 2026-03-31",
+  "text": "GEN Restaurant Group operates Korean barbecue restaurants specializing in a variety of flavored meats, with 57 restaurants in operation as of December 31, 2025. Its restaurants are located in California, Arizona, Hawaii, Nevada, New York, Washington, Texas, Florida, North Carolina and New Jersey, and the company is based in Cerritos, California."
  },
  "1897762": {
   "accn": "0001628280-26-013588",
@@ -3709,12 +3943,30 @@
   "source": "10-K filed 2026-03-31",
   "text": "CN Healthy Food Tech Group Corp. (UCFI) is a holding company whose China-based subsidiaries develop, manufacture, and market premium health foods, including Chinese herbal and grain-based nutritional products. Its main administrative office is in Zhuhai, Guangdong, China. Products are sold through online platforms and over 10,000 offline specialty stores and distributors."
  },
+ "1903145": {
+  "accn": "0001437749-26-012385",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Gorilla Technology Group Inc.",
+  "sic": "7372",
+  "source": "20-F filed 2026-04-15",
+  "text": "Gorilla is a global solution provider of AI-driven security, network, business intelligence and IoT products, such as intelligent video surveillance and facial recognition. It is headquartered in London and has a presence in Asia Pacific, the US, Europe, the Middle East and Latin America. Its customers include governments, smart cities, enterprises, and sectors such as healthcare and transportation."
+ },
  "1907085": {
   "accn": "0001104659-26-029490",
   "date": "2026-10-08",
   "model": "haiku",
   "source": "20-F filed 2026-03-17",
   "text": "Oddity runs an online, direct-to-consumer beauty and wellness business through brands including IL MAKIAGE, SpoiledChild and METHODIQ, a telehealth platform. It sells to consumers online in the United States, the U.K., continental Europe and Australia, and its R&D center is in Tel Aviv, Israel."
+ },
+ "1907223": {
+  "accn": "0001213900-26-038629",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Greenland Mines Ltd",
+  "sic": "2836",
+  "source": "10-K filed 2026-04-01",
+  "text": "Greenland Mines (formerly Klotho Neurosciences) develops medicines for cancer, cardiovascular and neurodegenerative diseases, including generic and biosimilar drugs and a pre-clinical Klotho gene therapy. It holds five market-approved anti-cancer drugs approved for sale in Germany. In March 2026 it acquired Greenland Mines Corp., expanding into critical and precious mineral mining."
  },
  "1907982": {
   "accn": "0001907982-26-000026",
@@ -3778,6 +4030,24 @@
   "source": "10-K filed 2026-02-04",
   "text": "GE HealthCare is a global healthcare solutions provider of medical devices, pharmaceutical diagnostics, and AI-enabled cloud and software solutions. It operates in over 160 countries through four segments: Imaging, Advanced Visualization Solutions, Patient Care Solutions, and Pharmaceutical Diagnostics. Customers include hospitals, health systems, and research institutions."
  },
+ "1935172": {
+  "accn": "0001213900-26-057986",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Xiao-I Corp",
+  "sic": "7372",
+  "source": "20-F filed 2026-05-15",
+  "text": "Xiao-I is a Cayman Islands company whose operating businesses are in China through its consolidated variable interest entity, Shanghai Xiao-I. It provides artificial intelligence products, including contact center AI solutions, AI-based platforms and software, and image-to-text conversion. Its customers are businesses in different industries."
+ },
+ "1948294": {
+  "accn": "0001493152-26-019023",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "CL Workshop Group Ltd",
+  "sic": "2400",
+  "source": "20-F filed 2026-04-27",
+  "text": "CL Workshop is a BVI holding company that conducts its operations mainly in Peru, France, Hong Kong and Macau through subsidiaries. Its subsidiaries sell wood products, and its five largest customers accounted for about 71% of turnover in 2025."
+ },
  "1953530": {
   "accn": "0001193125-26-091446",
   "date": "2026-10-18",
@@ -3832,6 +4102,15 @@
   "sic": "1311",
   "source": "40-F filed 2026-03-13",
   "text": "GFR is an Alberta-incorporated registrant with principal executive offices in Calgary, Alberta, Canada. It is classified under SEC industry code 1311 (crude petroleum and natural gas). The excerpt does not describe its products, operations or customers."
+ },
+ "1967631": {
+  "accn": "0001213900-26-048243",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Jinxin Technology Holding Co",
+  "sic": "8200",
+  "source": "20-F filed 2026-04-28",
+  "text": "Jinxin Technology is a provider of digital content and interactive communication services in China. It offers digital versions of mainstream textbooks, mainly in Chinese and English, along with self-learning content, for K-9 students in China. It collaborates with leading textbook publishers in China."
  },
  "1969302": {
   "accn": "0001104659-26-046406",
@@ -3893,6 +4172,15 @@
   "source": "10-K filed 2025-12-22",
   "text": "enGene is a clinical-stage biotechnology company developing non-viral genetic medicines using its DDX gene delivery platform. Its lead product candidate, detalimogene, is in development as a monotherapy for BCG-unresponsive non-muscle invasive bladder cancer with carcinoma in situ."
  },
+ "1982960": {
+  "accn": "0001493152-26-039058",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "KNOREX LTD.",
+  "sic": "7370",
+  "source": "20-F filed 2026-08-19",
+  "text": "KNOREX LTD. is a Cayman Islands company whose flagship platform is KNOREX XPO. Its filing defines terms related to connected TV and streaming (CTV/OTT), open internet and native platforms, and advertising metrics such as ROAS, and it refers to marketers, meaning advertising agencies and brand advertisers."
+ },
  "1984060": {
   "accn": "0001193125-26-067145",
   "date": "2026-10-17",
@@ -3917,6 +4205,24 @@
   "sic": "7389",
   "source": "20-F filed 2026-03-16",
   "text": "Kaspi.kz is a Kazakhstan-based mobile services company that operates a super app with marketplace, payment, and fintech offerings for consumers and merchants. It also owns a controlling stake in Hepsiburada, an e-commerce platform in Türkiye. Its services are offered in Kazakhstan and Türkiye."
+ },
+ "1987240": {
+  "accn": "0001104659-26-062643",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "SCHMID Group N.V.",
+  "sic": "3590",
+  "source": "20-F filed 2026-05-15",
+  "text": "SCHMID Group N.V. is a Dutch public limited liability company, incorporated as Pegasus TopCo B.V. in February 2023 and renamed SCHMID Group N.V. in April 2024. Its registered office is in Freudenstadt, Germany. The excerpt does not describe its products, markets or customers."
+ },
+ "1988776": {
+  "accn": "0001140361-26-021583",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Murano Global Investments Plc",
+  "sic": "7011",
+  "source": "20-F filed 2026-05-15",
+  "text": "Murano Global Investments (MRNO) is associated with the GIC Complex in Cancun, Quintana Roo, Mexico, which includes the GIC I Hotel, GIC Spa and a planned project of about 1,254 residential condominium units. Hotels in the complex are operated by third-party hotel managers under management agreements."
  },
  "1995520": {
   "accn": "0001104659-26-052096",
@@ -3945,6 +4251,15 @@
   "source": "10-K filed 2026-09-25",
   "text": "Tamboran Resources Corp. is the parent company of TR Ltd. following a corporate reorganization, and its common stock is represented by CDIs listed on the ASX. The excerpt is mainly a glossary of oil and gas terms, such as proved reserves, development wells and drilling space units, and does not describe its operations or customers in detail."
  },
+ "1998560": {
+  "accn": "0001213900-26-090165",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Axonex AI Group Ltd",
+  "sic": "7389",
+  "source": "20-F filed 2026-08-14",
+  "text": "Axonex AI is a BVI holding company whose subsidiaries provide interior design and fit-out services, building works, and smart facility management in Hong Kong. Axonex Intelligence serves enterprises, real estate operators, shopping centers, and government agencies in Hong Kong and across the Asia Pacific region."
+ },
  "200406": {
   "accn": "0000200406-26-000016",
   "date": "2026-10-07",
@@ -3967,6 +4282,24 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-10",
   "text": "TWFG is an independent distribution platform for personal and commercial insurance, providing independent agencies with carrier access, technology, training and M&A support. It is licensed in all 50 states, with much of its business concentrated in Texas, California and Louisiana, and works with over 300 insurance carriers."
+ },
+ "2007599": {
+  "accn": "0001493152-26-035636",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Robot Consulting Co., Ltd.",
+  "sic": "7370",
+  "source": "20-F filed 2026-07-31",
+  "text": "Robot Consulting offers Labor Robot, e-learning services, software installation services and Robot Lawyer, an AI legal consultation product, among other products. It also offers cloud-based human resource and financial management platforms. The excerpt does not state where it operates or who its customers are."
+ },
+ "2008007": {
+  "accn": "0001213900-26-023316",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "MaxsMaking Inc.",
+  "sic": "2390",
+  "source": "20-F filed 2026-03-04",
+  "text": "MaxsMaking is a holding company with no revenue of its own and conducts substantially all of its operations through PRC operating entities in China. The excerpt refers to the customized goods industry but does not describe its products or customers."
  },
  "2011674": {
   "accn": "0001213900-26-050282",
@@ -4044,6 +4377,15 @@
   "sic": "8200",
   "source": "20-F filed 2026-04-08",
   "text": "LEIFRAS is a Tokyo-based sports and social business that organizes and operates sports schools and sports events for children. It also dispatches sports coaches to meet community needs and runs a childcare center through its subsidiary Apicos."
+ },
+ "2032755": {
+  "accn": "0001213900-26-050423",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "Pinnacle Food Group Ltd",
+  "sic": "0700",
+  "source": "20-F filed 2026-04-30",
+  "text": "Pinnacle Food Group (PFAI) moved from ginseng processing and export to smart agricultural services and, from 2023, hydroponic growing systems with technical and consultation support. Its products include the PFAI Model M and Model A, with FaaS Plus service packages. Its customers include commercial clients, individual households, and community groups."
  },
  "2035149": {
   "accn": "0001193125-26-077219",
@@ -4566,6 +4908,15 @@
   "source": "10-K filed 2025-11-25",
   "text": "Analog Devices designs, manufactures and markets analog, mixed-signal and digital signal processing integrated circuits, including data converters, amplifiers, power management, RF ICs and sensors. It sells its ICs to customers worldwide across a wide range of applications."
  },
+ "65172": {
+  "accn": "0001104659-26-046864",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "MESABI TRUST",
+  "sic": "6795",
+  "source": "10-K filed 2026-04-22",
+  "text": "Mesabi Trust is a trust whose Units of Beneficial Interest are listed on the New York Stock Exchange. It has no directors, officers, or employees. Its Corporate Trustee handles oversight, financial record keeping, cash and investment management, and reporting, and also serves as registrar and transfer agent."
+ },
  "6845": {
   "accn": "0000006845-26-000023",
   "date": "2026-10-08",
@@ -5077,6 +5428,15 @@
   "sic": "1531",
   "source": "10-K filed 2026-02-13",
   "text": "Meritage designs and builds single-family attached and detached homes, mainly entry-level and first move-up homes. It operates in twelve U.S. states, including Arizona, California, Texas and Florida. Its financial services offer title, mortgage and insurance services to homebuyers."
+ },
+ "834365": {
+  "accn": "0001628280-26-012294",
+  "date": "2026-10-19",
+  "model": "haiku",
+  "name": "BIOLIFE SOLUTIONS INC",
+  "sic": "3845",
+  "source": "10-K filed 2026-02-26",
+  "text": "BioLife Solutions is a life sciences company that develops, manufactures and markets bioproduction products and services. Its biopreservation media and cell processing products help preserve biologic material during sourcing, manufacturing and distribution. Its customers are companies in the cell and gene therapy industry."
  },
  "835403": {
   "accn": "0001628280-26-057529",
