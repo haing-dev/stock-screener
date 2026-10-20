@@ -1,0 +1,26 @@
+{
+  "_note": "Style-fidelity test (PROTOCOL section 8): 13F filers whose managers are quoted in the research store, and the screens built partly from what they said. 'match' = substrings of the 13F COVERPAGE filing-manager name (upper case); the report lists the filer names actually matched so they can be checked.",
+  "managers": [
+    {"who": "Dev Kantesaria", "match": ["VALLEY FORGE CAPITAL"], "screens": ["core"]},
+    {"who": "Seth Klarman", "match": ["BAUPOST"], "screens": ["asset_floor", "special", "hidden"]},
+    {"who": "David Einhorn", "match": ["GREENLIGHT CAPITAL"], "screens": ["hidden", "special", "asset_floor"]},
+    {"who": "Murray Stahl", "match": ["HORIZON KINETICS"], "screens": ["real_assets", "owners"]},
+    {"who": "Paul Black", "match": ["WCM INVESTMENT"], "screens": ["core", "emerging"]},
+    {"who": "Stanley Druckenmiller", "match": ["DUQUESNE FAMILY OFFICE"], "screens": ["cyclicals", "tech"]},
+    {"who": "Prem Watsa", "match": ["FAIRFAX FINANCIAL"], "screens": ["asset_floor", "hidden"]},
+    {"who": "Li Lu", "match": ["HIMALAYA CAPITAL"], "screens": ["core", "hidden"]},
+    {"who": "Sir Chris Hohn", "match": ["TCI FUND MANAGEMENT"], "screens": ["core"]},
+    {"who": "Dan Sundheim", "match": ["D1 CAPITAL"], "screens": ["core", "tech"]},
+    {"who": "Chris Davis", "match": ["DAVIS SELECTED ADVISERS"], "screens": ["core"]},
+    {"who": "Jim Flynn", "match": ["DEERFIELD MANAGEMENT"], "screens": ["hc_commercial", "hc_clinical"]},
+    {"who": "Peter Kolchinsky", "match": ["RA CAPITAL MANAGEMENT"], "screens": ["hc_clinical"]},
+    {"who": "Bihua Chen", "match": ["CORMORANT"], "screens": ["hc_clinical"]},
+    {"who": "Paul Singer", "match": ["ELLIOTT INVESTMENT", "ELLIOTT MANAGEMENT"], "screens": ["special"]},
+    {"who": "Joel Greenblatt", "match": ["GOTHAM ASSET"], "screens": ["special"]},
+    {"who": "Connor Haley", "match": ["ALTA FOX"], "screens": ["emerging"]},
+    {"who": "John Armitage", "match": ["EGERTON CAPITAL"], "screens": ["core"]},
+    {"who": "Gavin Baker", "match": ["ATREIDES"], "screens": ["tech"]},
+    {"who": "Brad Gerstner", "match": ["ALTIMETER"], "screens": ["tech"]},
+    {"who": "Philippe Laffont", "match": ["COATUE"], "screens": ["tech"]}
+  ]
+}

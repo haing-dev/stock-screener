@@ -192,6 +192,19 @@ def cmd_portal_export(args):
                 allow_plain=args.allow_plain)
 
 
+def cmd_history_snapshot(args):
+    """Forward record: write this run's lists to history_out/ (scripts/append_history.sh commits them)."""
+    from qs import listlog
+    from qs.portal import evaluate_state, load_state
+    state = load_state()
+    if not state:
+        print("No saved screen yet - no lists to record.")
+        return
+    cfg = load_config()
+    path = listlog.write(listlog.snapshot(state, evaluate_state(state, cfg), cfg, args.kind))
+    print(f"Lists recorded: {path}")
+
+
 def _screens(arg):
     if not arg:
         return None
@@ -300,6 +313,12 @@ def main():
     ps = sub.add_parser("portal-summaries", help="web portal: company descriptions (Claude)")
     ps.add_argument("--max", type=int, default=30)
     sub.add_parser("portal-report", help="web portal: why companies are on 'check manually' (markdown)")
+    hs = sub.add_parser("history-snapshot", help="forward record: this run's lists for the 'history' branch")
+    hs.add_argument("--kind", default="screen", choices=["screen", "daily"])
+    vb = sub.add_parser("validate", help="validation: point-in-time backtest, statistics, audits (see validation/)")
+    vb.add_argument("step", choices=["prepare", "prices", "backtest", "stats", "audit", "fidelity", "report", "all"])
+    vb.add_argument("--start", help="first formation month YYYY-MM (default: as far back as prices allow)")
+    vb.add_argument("--end", help="last formation month YYYY-MM (default: last full month)")
     pe = sub.add_parser("portal-export", help="web portal: write site/data")
     pe.add_argument("--allow-plain", action="store_true", help="local testing only: write unencrypted data")
     args = ap.parse_args()
@@ -326,6 +345,11 @@ def main():
         cmd_portal_summaries(args)
     elif args.cmd == "portal-export":
         cmd_portal_export(args)
+    elif args.cmd == "history-snapshot":
+        cmd_history_snapshot(args)
+    elif args.cmd == "validate":
+        from qs.validate import run as validate_run
+        validate_run(args, load_config())
     elif args.cmd == "portal-report":
         from qs.checkreport import build
         from qs.portal import load_state

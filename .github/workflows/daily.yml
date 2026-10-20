@@ -85,6 +85,13 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: bash scripts/publish.sh "Prices $(date -u +%Y-%m-%d)"
 
+      - name: Record the lists (forward record, branch 'history')
+        if: steps.export.outcome == 'success'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python screener.py history-snapshot --kind daily && bash scripts/append_history.sh || echo "::warning::list snapshot not recorded"
+
       - name: Save price cache
         if: always() && steps.reprice.outputs.new_day != 'false'
         uses: actions/cache/save@v4

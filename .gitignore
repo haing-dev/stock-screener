@@ -7,3 +7,7 @@ tests/fixtures/
 node_modules/
 *.tmp
 site/data/
+
+history_out/
+validation/out/
+validation/work/

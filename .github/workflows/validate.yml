@@ -1,0 +1,121 @@
+name: Validate
+# Point-in-time backtest of the frozen screens, statistics, audits and the forward record (validation/PROTOCOL.md).
+# Monthly (after month-end prices are out) and by hand: Actions > Validate > Run workflow.
+# Results: branch 'validation' (out/report.md, out/stats.json, raw lists and returns, audit sheets).
+# Price history depends on the Massive plan: free = 2 years ('too little history' for a verdict); Developer = 10.
+on:
+  schedule:
+    - cron: "41 11 3 * *"
+  workflow_dispatch:
+    inputs:
+      step:
+        description: "Step (all, prices, prepare, backtest, stats, audit, fidelity, report)"
+        default: "all"
+      history_years:
+        description: "Years of price history the Massive plan allows (Basic 2, Starter 5, Developer 10, Advanced 20)"
+        default: "2"
+      per_minute:
+        description: "Massive requests per minute (free plan 5; paid plans: 100)"
+        default: "5"
+      start:
+        description: "First formation month YYYY-MM (optional)"
+        default: ""
+
+concurrency:
+  group: validate
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    env:
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      MASSIVE_API_KEY: ${{ secrets.MASSIVE_API_KEY }}
+      OPENFIGI_API_KEY: ${{ secrets.OPENFIGI_API_KEY }}
+      MASSIVE_HISTORY_YEARS: ${{ inputs.history_years || '2' }}
+      MASSIVE_PER_MINUTE: ${{ inputs.per_minute || '5' }}
+      HISTORY_DIR: ${{ github.workspace }}/history_branch
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the secrets are set
+        run: |
+          missing=""
+          for v in SEC_USER_AGENT MASSIVE_API_KEY; do
+            if [ -z "${!v}" ]; then missing="$missing $v"; fi
+          done
+          if [ -n "$missing" ]; then
+            echo "::error::Missing repository secrets:$missing (Settings > Secrets and variables > Actions)"; exit 1
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt opentimestamps-client
+
+      - name: Pre-registration check (rules unchanged since validation/freeze.json?)
+        run: python -m qs.freeze --check || echo "::warning::rules changed since pre-registration - results are labelled MODIFIED"
+
+      - name: Restore backtest cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            cache/bt
+            cache/prices/massive/bt
+            cache/prices/holders/issuer_map.json.gz
+          key: bt-v1-${{ github.run_id }}
+          restore-keys: bt-v1-
+
+      - name: Forward record (branch 'history', if it exists)
+        run: git clone -q --depth 1 --branch history "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" history_branch || echo "no forward record yet"
+
+      - name: Validate
+        run: |
+          start="${{ inputs.start }}"
+          if [ -n "$start" ]; then extra="--start $start"; else extra=""; fi
+          bash scripts/run_logged.sh python screener.py validate "${{ inputs.step || 'all' }}" $extra
+
+      - name: Timestamp the pre-registration (OpenTimestamps, once)
+        continue-on-error: true
+        run: |
+          mkdir -p validation/out
+          if git ls-remote --exit-code origin validation >/dev/null 2>&1 && \
+             git fetch -q origin validation && git show origin/validation:out/freeze.json.ots > validation/out/freeze.json.ots 2>/dev/null; then
+            ots upgrade validation/out/freeze.json.ots || true
+          else
+            cp validation/freeze.json validation/out/freeze.json && ots stamp validation/out/freeze.json
+          fi
+
+      - name: Publish results (branch 'validation')
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: bash scripts/publish_validation.sh
+
+      - name: Drop the SEC bulk files before caching (re-downloaded each run)
+        if: always()
+        run: rm -rf cache/bt/bulk
+
+      - name: Save backtest cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            cache/bt
+            cache/prices/massive/bt
+            cache/prices/holders/issuer_map.json.gz
+          key: bt-v1-${{ github.run_id }}
+
+      - name: Delete superseded cache copies
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash scripts/prune_caches.sh bt-v1-

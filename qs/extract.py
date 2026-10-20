@@ -406,11 +406,13 @@ def submissions_subset(sub, today=None):
     }
 
 
-def facts_subset(cf, today=None):
+def facts_subset(cf, today=None, quarterly_since=None):
     """Keep the concepts in CONCEPTS from annual reports, the TTM/balance-sheet concepts from recent 10-Qs,
-    cover-page share counts, and candidate tags for concepts that are missing (see FALLBACK_PATTERNS)."""
+    cover-page share counts, and candidate tags for concepts that are missing (see FALLBACK_PATTERNS).
+    quarterly_since ('YYYY-MM-DD'): keep 10-Q and cover-page facts from that date on instead of the last 3 years
+    (the point-in-time backtest needs them for every past formation date)."""
     today = today or date.today()
-    q_cutoff = (today - timedelta(days=QUARTERLY_MAX_AGE_DAYS)).isoformat()
+    q_cutoff = quarterly_since or (today - timedelta(days=QUARTERLY_MAX_AGE_DAYS)).isoformat()
     out = {"subset_version": SUBSET_VERSION, "cik": cf.get("cik"), "entityName": cf.get("entityName"),
            "facts": {}, "candidates": {}}
     facts = cf.get("facts") or {}

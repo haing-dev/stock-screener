@@ -966,6 +966,20 @@ check("Excel template by industry", model_template("7372", 1e9) == "software" an
       and model_template("2834", 5e10, 1e10, 1e10) == "hc_products" and model_template("6324", 3e11) == "insurer"
       and model_template("1311", 1e9) == "resources" and model_template("3559", 1e9) == "industrial")
 
+# validation (point-in-time backtest, statistics, report, forward record, pre-registration)
+print("\nValidation")
+import validation_smoke  # noqa: E402
+validation_smoke.run(check)
+import qs.freeze as QF  # noqa: E402
+check("pre-registration fingerprints match validation/freeze.json", QF.compare() == "match", QF.compare())
+import qs.listlog as QL  # noqa: E402
+_res_all = {sid: {c: r for c, r in res.items()} for sid, res in results.items()}
+_snap = QL.snapshot(_st, _res_all, cfg, "screen", today=TODAY)
+check("forward record snapshot lists PASS / starred / NEAR per screen with code and config hashes",
+      set(_snap["screens"]) == set(results) and _snap["config_sha256"] and
+      sum(len(v["pass"]) + len(v["star"]) for v in _snap["screens"].values()) ==
+      sum(1 for res in results.values() for r in res.values() if r["class"] == "PASS"))
+
 shutil.rmtree(TMP, ignore_errors=True)
 print(f"\n{'ALL TESTS PASSED' if not failures else str(len(failures)) + ' FAILED: ' + ', '.join(failures)}")
 sys.exit(1 if failures else 0)

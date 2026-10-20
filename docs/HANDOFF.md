@@ -2,6 +2,31 @@
 
 Read CLAUDE.md first; this file holds the detail.
 
+## v2.9.0 (Oct 2026): validation
+- Pre-registration: `validation/PROTOCOL.md` (data, formation, costs, benchmarks, statistics, mechanical verdicts,
+  independent checks), `validation/freeze.json` (rules + behavior fingerprints, `qs/freeze.py`), `validation/CHANGES.md`,
+  tag `prereg-2026-10-20`. `tests/run_tests.py` checks the fingerprints still match.
+- Forward record: `qs/listlog.py` + `scripts/append_history.sh`; Screen and Daily runs append
+  `lists/YYYY/<date>_<kind>.json.gz` (PASS / starred / NEAR per screen, code SHA, config hash) to branch `history`.
+- Point-in-time layer: `qs/pit.py` (facts filed before d; filing history -> profile as of d), `qs/btdata.py` (bulk
+  companyfacts / submissions incl. older pages -> cache/bt/facts, cache/bt/filings; 10-Q facts since 2009 via
+  `facts_subset(quarterly_since=)`). Pipeline steps shared with the live run: `pipeline.metrics_for`, `make_contexts`,
+  `apply_industry_cycle`.
+- Prices: `qs/btprices.py` - Massive grouped daily UNADJUSTED for each month-end (formation) and the next trading day
+  (entry/exit at the open), ticker reference incl. delisted (`resolve(symbol, day)` = earliest delisting after the day),
+  full split and dividend lists, `last_close` for exits of delisted names (budget `LAST_CLOSE_BUDGET`), `holding_return`.
+- Engine `qs/backtest.py`: company pass (metrics recomputed only when a new filing arrived), formations (live code,
+  threshold grid +-10/20/30%, leave-one-gate-out, baseline scores from `qs/btscores.py`), returns. Work files in
+  cache/bt/work (resumable). Statistics `qs/btstats.py` (Newey-West, DSR, PBO/CSCV, Reality Check + SPA, placebo,
+  AUC), `qs/btanalysis.py` (series, char-matched benchmark, baselines, IC, verdicts), report `qs/valreport.py`.
+- Checks: `qs/audit.py` (300 firm-years vs SEC Financial Statement Data Sets; review sheets incl. 50 starred passes),
+  `qs/fidelity.py` + `validation/managers.json` (13F style fidelity), `scripts/compare_reimpl.py` (independent
+  re-implementation of Fortress from the written rules: `validation/reimpl/`).
+- Orchestration: `python screener.py validate {prices,prepare,backtest,stats,audit,fidelity,report,all}`;
+  workflow `validate.yml` publishes `out/` to branch `validation` and stamps freeze.json with OpenTimestamps once.
+- Offline tests: `tests/validation_smoke.py` (real samples + synthetic prices: PIT filters, no look-ahead, splits and
+  dividends, formations, statistics, report), run from run_tests.py.
+
 ## v2.8.0 (Oct 2026)
 - Menu groups (`portal.SCREEN_GROUPS`): Compounders (core, emerging, fortress, owners, hc_commercial, real_assets); Contrarian & special situations (special, hidden, asset_floor, cyclicals, trough_cash); Frontier growth (tech, hc_clinical); Avoid (red_flags).
 - Unverifiable-only misses = PASS with `star` (site asterisk, note 'insufficient information about ...'). Exceptions -> CHECK: a `DEFINING_GATES` rule unverifiable (E4 C7 O4 R4 R5 K4 T4 X3 B6 A4), no financial statements yet (`events_only`), avoid list. No cap on the number of unverifiable rules (user's choice).

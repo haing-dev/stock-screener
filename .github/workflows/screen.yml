@@ -104,6 +104,13 @@ jobs:
             cache/sec_meta.json.gz
           key: sec-v1-${{ github.run_id }}
 
+      - name: Record the lists (forward record, branch 'history')
+        if: steps.export.outcome == 'success'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python screener.py history-snapshot --kind screen && bash scripts/append_history.sh || echo "::warning::list snapshot not recorded"
+
       - name: Save price cache
         if: always()
         uses: actions/cache/save@v4
