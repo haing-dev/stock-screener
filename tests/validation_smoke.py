@@ -55,6 +55,22 @@ def run(check):
                                                                          "2024-02-01") - (55 * 2 + 1.0) / 100 + 1)
           < 1e-12)
 
+    import io
+    import zipfile
+    from qs.btstats import merge_factors, parse_french
+
+    def _z(text):
+        bio = io.BytesIO()
+        with zipfile.ZipFile(bio, "w") as zf:
+            zf.writestr("x.CSV", text)
+        return bio.getvalue()
+    ff5 = parse_french(_z("Created by CMPT.\r\n\r\n,Mkt-RF,SMB,HML,RMW,CMA,RF\r\n202401, 1.00, 0.10, -0.20, 0.30,"
+                          " 0.00, 0.40\r\n\r\n Annual Factors \r\n,Mkt-RF,SMB,HML,RMW,CMA,RF\r\n2024, 9,9,9,9,9,9\r\n"))
+    mom = parse_french(_z("Created.\r\n\r\nMonthly Momentum\r\n,Mom   \r\n202401,   0.57\r\n\r\nAnnual\r\n,Mom\r\n2024, 9\r\n"))
+    fm_ = merge_factors(ff5, mom)
+    check("Kenneth French files parsed (monthly block only, percent -> decimal)",
+          list(fm_) == ["2024-01"] and abs(fm_["2024-01"]["Mkt-RF"] - 0.01) < 1e-12 and abs(fm_["2024-01"]["UMD"] - 0.0057) < 1e-12)
+
     # ---------------------------------------------------------------- synthetic grid
     rnd = random.Random(3)
     ciks = sorted(facts)

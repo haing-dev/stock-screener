@@ -24,32 +24,34 @@ SIC_DIVISIONS = ((1, 9, "A"), (10, 14, "B"), (15, 17, "C"), (20, 39, "D"), (40, 
 
 # ------------------------------------------------------------------ factor data (Kenneth French library)
 def parse_french(raw_zip_bytes):
-    """Monthly rows of a Kenneth French CSV zip -> {'YYYY-MM': {column: decimal}}."""
+    """Monthly rows of a Kenneth French CSV zip -> {'YYYY-MM': {column: decimal}}. The file holds a text preamble,
+    a header row starting with an empty cell (',Mkt-RF,SMB,...'), monthly rows 'YYYYMM,...', then annual blocks."""
     z = zipfile.ZipFile(io.BytesIO(raw_zip_bytes))
     text = z.read(z.namelist()[0]).decode("latin-1")
     out, header = {}, None
     for row in csv.reader(io.StringIO(text)):
         cells = [c.strip() for c in row]
-        if not cells or not cells[0]:
+        if not any(cells):
             if out:
-                break           # the monthly block ends at the first blank line after data
+                break                    # the monthly block ends at the first blank line after data
             continue
-        if cells[0] == "" or not cells[0][0].isdigit():
-            if len(cells) > 1 and not out:
+        first = cells[0]
+        if first == "" and len(cells) > 1 and any(c and not c.replace(".", "").replace("-", "").isdigit()
+                                                 for c in cells[1:]):
+            if not out:
                 header = cells
             continue
-        if len(cells[0]) != 6 or header is None:
+        if header is None or not (len(first) == 6 and first.isdigit()):
             if out:
                 break
             continue
-        ym = f"{cells[0][:4]}-{cells[0][4:]}"
         rec = {}
         for h, v in zip(header[1:], cells[1:]):
             try:
-                rec[h.strip()] = float(v) / 100.0
+                rec[h] = float(v) / 100.0
             except ValueError:
                 continue
-        out[ym] = rec
+        out[f"{first[:4]}-{first[4:]}"] = rec
     return out
 
 
