@@ -1,0 +1,16 @@
+{
+  "behavior_sha256": "59c6e9d6dcb85e90b52c4314636c0bcf3ffaa4981ebcd43d26a90ca367564163",
+  "files_sha256": {
+    "config.json": "4609a90a8b5d155512259c74eaa78f02fb6fc9367c4feb9fd2462d775947b2b3",
+    "qs/extract.py": "28f7b92c7ac8fe7823c5b670ed032dcd67eb19b520e512482caec6c179af8f1b",
+    "qs/industry.py": "4a62f4920b50f76a2a97bfaf499bb3cfc00acd02b9b59e309f5c5e24136ad736",
+    "qs/metrics.py": "4b52ee1cc8eca33909952df26dceb64b30c5d5764f35a7e243a62a4d6779dc9a",
+    "qs/pipeline.py": "984df1961c39cb425a50d4393c3d87dfc5090f46b35a932d084899e8922df6b2",
+    "qs/rules.py": "fd17bd81dd537b5b9e3ac3cc081e092eefc561faddb59024bbc35d6d3e912998",
+    "qs/screens.py": "a8d4ddda352031c86132bd05fa9a0940aa266751664c2b677d20784af6fa310b",
+    "qs/valuation.py": "6216be7bc4ad15c16b3de987b836977c4fb2eb393229e803b5ce9d8a1ff7b444"
+  },
+  "registered_on": "2026-10-20",
+  "rules_sha256": "b03eac02d40c74740682793d19c01c34ee03b2c699a551c7382077ff0f982cd0",
+  "screener_version": "2.8.0"
+}

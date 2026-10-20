@@ -374,6 +374,84 @@ def industry_cycle(ctxs, series, cfg):
     return out
 
 
+
+# ------------------------------------------------------------------ shared steps (live run and backtest)
+def metrics_for(cd, sic, events, cfg, today):
+    """compute() + the listing-date dilution fix. Returns ((m, rows, compact), "") or (None, why)."""
+    res, why = compute(cd, cfg, today, allow_no_revenue=bool(in_ranges(sic, CLINICAL_STAGE)))
+    if res is None:
+        return None, why
+    m, rows = res
+    listing = [e for k, e in (events or {}).items() if k in ("recent IPO", "spin-off / Form 10 listing")]
+    if listing and m.get("share_count_cagr_3y") is not None:
+        first = min(listing, key=lambda e: e["date"])
+        raw3 = m["share_count_cagr_3y"]
+        m["share_count_cagr_3y"], basis = post_event_dilution(cd, m, first["date"], today)
+        m["share_count_cagr_3y_basis"] = f"measured after the {first['date']} listing: {basis}"
+        if raw3 is not None and (m["share_count_cagr_3y"] is None or abs(raw3 - m["share_count_cagr_3y"]) > 0.02):
+            cd.flags.add(f"share count {raw3:+.0%}/yr including pre-listing years (preferred converting at the "
+                         f"IPO / spin) - dilution measured after the listing instead")
+    compact = [{k: r[k] for k in ("fy", "revenue", "operating_income", "capex", "da", "ebitda", "roic",
+                                  "buybacks", "dividends")}
+               for r in rows]
+    return (m, rows, compact), ""
+
+
+class _CD:  # lightweight stand-in so build_ctx can read flags/candidates
+    def __init__(self, flags, cands):
+        self.flags, self.candidates = set(flags), cands
+
+
+def make_contexts(raw, subs, uinfo, records, cfg, fx, today):
+    """raw: {cik: (m, compact rows, flags, candidates)} -> {cik: ctx}, plus event-only companies (new spin-offs and
+    reorganizations without usable financials, kept so Special Situations lists them as CHECK)."""
+    ctxs = {}
+    for c, (m, compact, flags, cands) in raw.items():
+        info = subs.get(c) or {}
+        ctx = build_ctx(uinfo[c], info, m, compact, _CD(flags, cands), cfg, fx, today)
+        ev = info.get("event_detail") or {}
+        if ev:
+            first = min(ev.values(), key=lambda e: e["date"])
+            ctx["event_types"] = ", ".join(sorted(ev))
+            ctx["event_date"] = first["date"]
+            ctx["months_since_event"] = round((today - _d(first["date"])).days / 30.44, 1)
+            ctx["event_filing_url"] = filing_index_url(c, first["accn"]) if first.get("accn") else None
+        ctx["_series"] = ({r["fy"]: (r["revenue"], r["operating_income"], r["capex"], r["da"],
+                                     abs(r.get("buybacks") or 0) + abs(r.get("dividends") or 0)) for r in compact}
+                          if ctx.get("cycle_group") else None)
+        ctxs[c] = ctx
+    for c, rec in records.items():
+        ev = rec.get("events")
+        if c in ctxs or not ev or rec["stage"].startswith("not screened"):
+            continue
+        if not set(ev) & {"spin-off / Form 10 listing", "bankruptcy / reorganization (8-K 1.03)"}:
+            continue   # an IPO with no financial statements yet: listed on the Events sheet only
+        u = uinfo[c]
+        first = min(ev.values(), key=lambda e: e["date"])
+        ctxs[c] = {"cik": c, "ticker": u["ticker"], "other_tickers": ", ".join(u["all_tickers"][1:]),
+                   "name": rec["name"], "exchange": u["exchange"], "sic": rec["sic"], "industry": rec["industry"],
+                   "all_tickers": u["all_tickers"], "flags": [f"financial data: {rec['stage']}"], "hold_reasons": [],
+                   "event_types": ", ".join(sorted(ev)), "event_date": first["date"],
+                   "months_since_event": round((today - _d(first["date"])).days / 30.44, 1),
+                   "event_filing_url": filing_index_url(c, first["accn"]) if first.get("accn") else None,
+                   "currency": "USD", "fx_rate": 1.0, "events_only": True}
+    return ctxs
+
+
+def apply_industry_cycle(ctxs, cfg):
+    """Industry margin cycle per cyclical group, written into each member's ctx. Returns the group table."""
+    series = {c: ctx.pop("_series") for c, ctx in ctxs.items() if ctx.get("_series")}
+    for ctx in ctxs.values():
+        ctx.pop("_series", None)
+    cyc = industry_cycle(ctxs, series, cfg)
+    for c, ctx in ctxs.items():
+        g = ctx.get("cycle_group")
+        if g and g in cyc:
+            for k in ("industry_margin_percentile", "industry_capex_to_da", "industry_trough_zone",
+                      "industry_margin_latest", "industry_returns_to_capex"):
+                ctx[k] = cyc[g].get(k)
+    return cyc
+
 # ------------------------------------------------------------------ past prices (Owner-Operators, Hidden Earnings)
 def enrich_price_history(ctxs, results, prices, cfg, today, log=print):
     """Inputs that need past prices or split history:
@@ -532,25 +610,12 @@ def run_screens(client, cfg, tickers=None, out_name=None, today=None, screens=No
             if cd.currency is None:
                 rec["stage"] = "no monetary XBRL data"
                 return
-            res, why = compute(cd, cfg, today,
-                               allow_no_revenue=bool(in_ranges((subs.get(c) or {}).get("sic"), CLINICAL_STAGE)))
+            res, why = metrics_for(cd, (subs.get(c) or {}).get("sic"), rec.get("events"), cfg, today)
             if res is None:
                 rec["stage"] = why
                 rec["candidates"] = cd.candidates      # shown on Data_Gaps so the company isn't lost
                 return
-            m, rows = res
-            listing = [e for k, e in (rec.get("events") or {}).items() if k in ("recent IPO", "spin-off / Form 10 listing")]
-            if listing and m.get("share_count_cagr_3y") is not None:
-                first = min(listing, key=lambda e: e["date"])
-                raw3 = m["share_count_cagr_3y"]
-                m["share_count_cagr_3y"], basis = post_event_dilution(cd, m, first["date"], today)
-                m["share_count_cagr_3y_basis"] = f"measured after the {first['date']} listing: {basis}"
-                if raw3 is not None and (m["share_count_cagr_3y"] is None or abs(raw3 - m["share_count_cagr_3y"]) > 0.02):
-                    cd.flags.add(f"share count {raw3:+.0%}/yr including pre-listing years (preferred converting at the "
-                                 f"IPO / spin) - dilution measured after the listing instead")
-            compact = [{k: r[k] for k in ("fy", "revenue", "operating_income", "capex", "da", "ebitda", "roic",
-                                          "buybacks", "dividends")}
-                       for r in rows]
+            m, rows, compact = res
             raw[c] = (m, compact, sorted(cd.flags), cd.candidates)
             if models_out is not None:
                 mdl = model_years(cd, rows)
@@ -587,52 +652,8 @@ def run_screens(client, cfg, tickers=None, out_name=None, today=None, screens=No
         fx["USD"] = (1.0, "USD")
 
     # ---- contexts
-    ctxs, series = {}, {}
-
-    class _CD:  # lightweight stand-in so build_ctx can read flags/candidates
-        def __init__(self, flags, cands):
-            self.flags, self.candidates = set(flags), cands
-
-    for c, (m, compact, flags, cands) in raw.items():
-        info = subs.get(c) or {}
-        ctx = build_ctx(uinfo[c], info, m, compact, _CD(flags, cands), cfg, fx, today)
-        ev = info.get("event_detail") or {}
-        if ev:
-            first = min(ev.values(), key=lambda e: e["date"])
-            ctx["event_types"] = ", ".join(sorted(ev))
-            ctx["event_date"] = first["date"]
-            ctx["months_since_event"] = round((today - _d(first["date"])).days / 30.44, 1)
-            ctx["event_filing_url"] = filing_index_url(c, first["accn"]) if first.get("accn") else None
-        ctxs[c] = ctx
-        if ctx.get("cycle_group"):
-            series[c] = {r["fy"]: (r["revenue"], r["operating_income"], r["capex"], r["da"],
-                                   abs(r.get("buybacks") or 0) + abs(r.get("dividends") or 0)) for r in compact}
-
-    # event companies without usable financials yet (new spin-offs / IPOs): keep them so the Special
-    # Situations screen lists them as CHECK ('no annual report yet') instead of silently dropping them
-    for c, rec in records.items():
-        ev = rec.get("events")
-        if c in ctxs or not ev or rec["stage"].startswith("not screened"):
-            continue
-        if not set(ev) & {"spin-off / Form 10 listing", "bankruptcy / reorganization (8-K 1.03)"}:
-            continue   # an IPO with no financial statements yet: listed on the Events sheet only
-        u = uinfo[c]
-        first = min(ev.values(), key=lambda e: e["date"])
-        ctxs[c] = {"cik": c, "ticker": u["ticker"], "other_tickers": ", ".join(u["all_tickers"][1:]),
-                   "name": rec["name"], "exchange": u["exchange"], "sic": rec["sic"], "industry": rec["industry"],
-                   "all_tickers": u["all_tickers"], "flags": [f"financial data: {rec['stage']}"], "hold_reasons": [],
-                   "event_types": ", ".join(sorted(ev)), "event_date": first["date"],
-                   "months_since_event": round((today - _d(first["date"])).days / 30.44, 1),
-                   "event_filing_url": filing_index_url(c, first["accn"]) if first.get("accn") else None,
-                   "currency": "USD", "fx_rate": 1.0, "events_only": True}
-
-    cyc = industry_cycle(ctxs, series, cfg)
-    for c, ctx in ctxs.items():
-        g = ctx.get("cycle_group")
-        if g and g in cyc:
-            for k in ("industry_margin_percentile", "industry_capex_to_da", "industry_trough_zone",
-                      "industry_margin_latest", "industry_returns_to_capex"):
-                ctx[k] = cyc[g].get(k)
+    ctxs = make_contexts(raw, subs, uinfo, records, cfg, fx, today)
+    cyc = apply_industry_cycle(ctxs, cfg)
 
     # ---- financial-statement rules first; collect who needs a price
     results = {s.sid: {} for s in wanted}
