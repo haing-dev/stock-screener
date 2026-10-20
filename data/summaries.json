@@ -180,6 +180,15 @@
   "source": "10-K filed 2026-05-21",
   "text": "Logitech designs and sells computer peripherals and software-enabled hardware for work, gaming, and video collaboration. Headquartered in Switzerland, it operates globally, selling through retailers, distributors, and direct channels to businesses and consumers."
  },
+ "1035002": {
+  "accn": "0001628280-26-011499",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "VALERO ENERGY CORP/TX",
+  "sic": "2911",
+  "source": "10-K filed 2026-02-25",
+  "text": "Valero is a multinational manufacturer and marketer of petroleum-based and low-carbon liquid transportation fuels and petrochemical products. It owns 15 petroleum refineries in the U.S., Canada and the U.K., plus 12 ethanol plants in the U.S. and a renewable diesel joint venture. It sells products primarily in the U.S., Canada, the U.K., Ireland and Latin America."
+ },
  "1035267": {
   "accn": "0001035267-26-000010",
   "date": "2026-10-07",
@@ -272,6 +281,15 @@
   "source": "10-K filed 2026-03-12",
   "text": "Sonida Senior Living (SNDA) owns, operates and invests in senior housing communities, offering independent living, assisted living and memory care, mainly to people aged 75 and older. As of December 31, 2025, it owned, managed or invested in 96 communities in 20 U.S. states."
  },
+ "1045810": {
+  "accn": "0001045810-26-000021",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "NVIDIA CORP",
+  "sic": "3674",
+  "source": "10-K filed 2026-02-25",
+  "text": "NVIDIA makes accelerated computing hardware, including GPUs, and the CUDA software platform for AI and other computing workloads. Its customers include cloud service providers, AI model makers, enterprises across many industries, and professional artists, architects and designers."
+ },
  "1045986": {
   "accn": "0001213900-26-055948",
   "date": "2026-10-15",
@@ -303,6 +321,15 @@
   "sic": "1731",
   "source": "10-K filed 2025-11-21",
   "text": "IES Holdings designs and installs integrated electrical and technology systems and infrastructure products through four segments: Communications, Residential, Infrastructure Solutions, and Commercial & Industrial. It is headquartered in Sugar Land, Texas. Its end markets include data centers, residential housing, and commercial and industrial facilities."
+ },
+ "1048911": {
+  "accn": "0001048911-26-000105",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "FEDEX CORP",
+  "sic": "4513",
+  "source": "10-K filed 2026-07-20",
+  "text": "FedEx provides transportation, e-commerce, and business services through an integrated global network. It serves customers and businesses worldwide."
  },
  "1049606": {
   "accn": "0001104659-26-023463",
@@ -1387,6 +1414,15 @@
   "source": "40-F filed 2026-06-30",
   "text": "Silvercorp is a British Columbia company with its principal executive office in Vancouver, filing a Form 40-F annual report for the fiscal year ended March 31, 2026. Its industry classification is gold and silver ores, but the excerpt does not describe its operations or customers."
  },
+ "1341439": {
+  "accn": "0001193125-26-277521",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "ORACLE CORP",
+  "sic": "7372",
+  "source": "10-K filed 2026-06-22",
+  "text": "Oracle provides enterprise IT products and services, including cloud applications and infrastructure, software, hardware, and professional services. Its offerings are delivered worldwide through cloud, on-premise, and hybrid deployments. Its customers include businesses of various sizes and industries, government agencies, and educational institutions."
+ },
  "1342338": {
   "accn": "0001104659-26-035507",
   "date": "2026-10-13",
@@ -1416,6 +1452,15 @@
   "model": "haiku",
   "source": "20-F filed 2026-04-17",
   "text": "Pacific Airport Group holds concessions to operate twelve airports in Mexico's Pacific and Central regions and two international airports in Jamaica. It earns revenue from fees charged to airlines and passengers, plus rental and commercial income from restaurants, retailers, parking and advertising. Its customers include airlines, airport passengers and commercial tenants."
+ },
+ "1347858": {
+  "accn": "0001104659-26-034814",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "22nd Century Group, Inc.",
+  "sic": "2111",
+  "source": "10-K filed 2026-03-26",
+  "text": "22nd Century Group makes and distributes VLN cigarettes, which contain 95% less nicotine than traditional cigarettes and are authorized by the FDA for retail purchase. It also provides contract manufacturing of cigarettes and filtered cigars for other tobacco brands. Its products are sold through retail outlets, and it serves existing contract manufacturing clients."
  },
  "1349436": {
   "accn": "0001628280-26-015318",
@@ -1559,6 +1604,15 @@
   "source": "10-K filed 2026-08-18",
   "text": "Fabrinet (FN) provides advanced optical packaging and precision optical, electro-mechanical and electronics manufacturing services. Its products include optical communications components and modules, industrial lasers, automotive components, medical devices and sensors. Its customers are original equipment manufacturers (OEMs) in optical communications, automotive, industrial lasers, medical and sensor industries."
  },
+ "1413447": {
+  "accn": "0001413447-26-000008",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "NXP Semiconductors N.V.",
+  "sic": "3674",
+  "source": "10-K filed 2026-02-19",
+  "text": "NXP Semiconductors is a global semiconductor company offering embedded processing, mixed-signal, power management, and other semiconductor solutions. Its products are used in automotive, industrial & IoT, mobile, and communication infrastructure markets, and it sells products in all major geographic regions."
+ },
  "1418076": {
   "accn": "0001193125-26-066979",
   "date": "2026-10-18",
@@ -1616,6 +1670,15 @@
   "source": "10-K filed 2026-02-18",
   "text": "CVR Partners produces nitrogen fertilizer, principally urea ammonium nitrate (UAN) and ammonia, at facilities in Coffeyville, Kansas and East Dubuque, Illinois. It sells its products on a wholesale basis in the United States. Its products are used by farmers to improve the yield and quality of crops, primarily corn and wheat."
  },
+ "14272": {
+  "accn": "0000014272-26-000004",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "BRISTOL MYERS SQUIBB CO",
+  "sic": "2834",
+  "source": "10-K filed 2026-02-11",
+  "text": "Bristol Myers Squibb discovers, develops, manufactures, markets and sells innovative medicines for serious diseases. Its focus areas include oncology, hematology, immunology, cardiovascular and neuroscience. It operates in a single segment."
+ },
  "1429260": {
   "accn": "0001104659-26-037874",
   "date": "2026-10-15",
@@ -1656,6 +1719,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-11",
   "text": "MongoDB is a developer data platform company offering a modern, document-based database designed for unstructured data, along with integrated services for search, analytics, and data processing. It serves development teams and organizations building applications across diverse industries and use cases."
+ },
+ "1450704": {
+  "accn": "0001829126-26-003530",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "Vivakor, Inc.",
+  "sic": "4953",
+  "source": "10-K filed 2026-04-15",
+  "text": "Vivakor provides crude oil transportation, terminaling and storage, and marketing and trading services across U.S. producing basins, including the DJ Basin, STACK, Permian and Eagle Ford. Its customers include producers, marketers and refiners such as Marathon Oil, ConocoPhillips, Phillips 66, BP, Civitas and Validus."
  },
  "1459200": {
   "accn": "0001459200-26-000005",
@@ -1777,6 +1849,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-26",
   "text": "Chord Energy is an independent oil and gas exploration and production company operating primarily in the Williston Basin. It produces crude oil, natural gas, and NGL from approximately 1.3 million net leasehold acres with average daily production of 276,620 net Boepd."
+ },
+ "1487952": {
+  "accn": "0001437749-26-005982",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "Vishay Precision Group, Inc.",
+  "sic": "3670",
+  "source": "10-K filed 2026-02-27",
+  "text": "Vishay Precision Group (VPG) designs and manufactures precision sensors, weighing solutions and measurement systems. It has facilities in Canada, China, France, Germany, India, Israel, Japan, Sweden, Taiwan, the United Kingdom and the United States. Its products serve end markets including test and measurement, industrial, transportation, steel, avionics, military and space, agriculture, consumer and medical."
  },
  "1488917": {
   "accn": "0001437749-26-028914",
@@ -1975,6 +2056,15 @@
   "sic": "",
   "source": "10-K filed 2026-03-12",
   "text": "CION Investment Corporation is an externally managed, closed-end investment company that has elected to be regulated as a business development company. It invests in portfolio companies, with a focus on U.S. middle-market companies."
+ },
+ "1534701": {
+  "accn": "0001534701-26-000006",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "Phillips 66",
+  "sic": "2911",
+  "source": "10-K filed 2026-02-20",
+  "text": "Phillips 66 owns or holds interests in transportation, terminaling and storage assets, including pipelines, terminals, marine vessels and railcars. Its NGL business holds interests in natural gas processing plants and pipelines located in the United States. Its Bayway Refinery in Linden, New Jersey produces transportation fuels and petrochemical feedstocks distributed to East Coast customers."
  },
  "1535778": {
   "accn": "0001535778-26-000026",
@@ -2403,6 +2493,15 @@
   "source": "10-K filed 2026-03-27",
   "text": "GD Culture Group sold its China-based VIE subsidiaries in 2023, including Highlight Media, an integrated marketing service agency. In September 2025, it acquired Pallas Capital Holding, which holds digital assets as a long-term reserve and held 7,500 Bitcoin as of December 31, 2025. The company states it no longer has a VIE structure."
  },
+ "1641489": {
+  "accn": "0001641489-26-000010",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "vTv Therapeutics Inc.",
+  "sic": "2834",
+  "source": "10-K filed 2026-03-10",
+  "text": "vTv Therapeutics is a late-stage biopharmaceutical company developing oral therapies for metabolic and inflammatory diseases. Its lead candidate, cadisegliatin, is in a Phase 3 trial as an adjunctive therapy to insulin for type 1 diabetes."
+ },
  "1644378": {
   "accn": "0001644378-25-000043",
   "date": "2026-10-18",
@@ -2526,6 +2625,15 @@
   "source": "10-K filed 2026-02-12",
   "text": "Arteris provides semiconductor system IP, including network-on-chip interconnect IP and SoC integration automation software, which help chip designers move data across chiplet and SoC designs. Its customers are semiconductor companies, system companies and OEMs, serving markets such as automotive, communications and enterprise computing."
  },
+ "1668010": {
+  "accn": "0001493152-26-016851",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "Digital Brands Group, Inc.",
+  "sic": "5600",
+  "source": "10-K filed 2026-04-15",
+  "text": "Digital Brands Group (DBG) is a curated collection of lifestyle apparel brands sold direct-to-consumer and through wholesale customers, combining physical stores and online channels. In 2025 it also began manufacturing collegiate-branded apparel for university channels under private label agreements."
+ },
  "1668397": {
   "accn": "0001668397-26-000006",
   "date": "2026-10-07",
@@ -2623,6 +2731,15 @@
   "sic": "1389",
   "source": "10-K filed 2026-02-18",
   "text": "Select Water Solutions provides water-management solutions to the U.S. energy industry through water infrastructure, water services and chemical technologies. Its infrastructure includes pipelines, recycling and treatment facilities, storage and saltwater disposal wells, with its largest ongoing investments in the Permian Basin. It serves energy industry customers under long-term contracts for produced water management."
+ },
+ "1697500": {
+  "accn": "0001628280-26-012501",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "Solaris Energy Infrastructure, Inc.",
+  "sic": "3533",
+  "source": "10-K filed 2026-02-27",
+  "text": "Solaris provides modular power generation, control and distribution equipment, and equipment for managing raw materials in oil and natural gas well completions. It is headquartered in Houston, Texas and serves U.S. markets. Its customers include data center, energy and commercial and industrial sector customers, as well as exploration and production companies and oilfield services companies."
  },
  "1697862": {
   "accn": "0001697862-26-000032",
@@ -2792,6 +2909,15 @@
   "model": "haiku",
   "source": "20-F filed 2026-04-30",
   "text": "Uxin (UXIN) operates an online and in-store used car transaction platform in China through its subsidiaries. Its operations are governed by PRC laws, and it has Hong Kong operations. The excerpt does not state who its customers are beyond referring to consumers and businesses."
+ },
+ "1730168": {
+  "accn": "0001730168-25-000121",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "Broadcom Inc.",
+  "sic": "3674",
+  "source": "10-K filed 2025-12-18",
+  "text": "Broadcom designs and supplies semiconductors, semiconductor-based solutions, and infrastructure software, including custom AI accelerators (XPUs), Ethernet switching and NICs, and optical components. Its design engineering is located primarily in the U.S., Asia, and Europe. Its customers include hyperscalers, companies with AI frontier models, OEMs, and system integrators."
  },
  "1736035": {
   "accn": "0001736035-26-000004",
@@ -3017,6 +3143,15 @@
   "sic": "3713",
   "source": "10-K filed 2026-02-25",
   "text": "Hyliion Holdings Corp. (Hyliion) is a Delaware corporation headquartered in Cedar Park, Texas, with research and development facilities in Cincinnati, Ohio. It designs and develops power generators, including its KARNO Power Module, and provides R&D services, initially targeting the datacenter, commercial, industrial, and defense sectors."
+ },
+ "1759783": {
+  "accn": "0001193125-26-226608",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "EHang Holdings Ltd",
+  "sic": "3728",
+  "source": "20-F filed 2026-05-15",
+  "text": "EHang operates in the UAV industry, according to this excerpt. Its business is mainly conducted in China, and its revenues are denominated in Renminbi."
  },
  "1760965": {
   "accn": "0001760965-26-000014",
@@ -3288,6 +3423,15 @@
   "source": "20-F filed 2026-05-12",
   "text": "Lixiang Education provides educational services through PRC subsidiaries and variable interest entities (VIEs). It operates Qingtian International School in Lishui City, Zhejiang Province, which provides high school education to students from families of overseas Chinese returnees."
  },
+ "1814215": {
+  "accn": "0001193125-26-134922",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "Nuburu, Inc.",
+  "sic": "3690",
+  "source": "10-K filed 2026-03-31",
+  "text": "Nuburu developed high-power blue laser systems for welding and 3D printing, shipped for applications such as EV batteries and medical devices. After its patents were foreclosed in 2025, it focuses on licensing intellectual property and a dual-use defense and security platform."
+ },
  "1815846": {
   "accn": "0001104659-26-048172",
   "date": "2026-10-12",
@@ -3356,6 +3500,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-26",
   "text": "NuScale Power (SMR) is developing its NuScale Power Module small modular reactor technology and related services, including licensing support, testing, training and fuel supply. Its customers are a mix of governments, utilities, state-owned enterprises and technology and industrial companies. It has been working with RoPower Nuclear in Romania and prospective customer ENTRA1."
+ },
+ "18230": {
+  "accn": "0000018230-26-000008",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "CATERPILLAR INC",
+  "sic": "3531",
+  "source": "10-K filed 2026-02-13",
+  "text": "Caterpillar manufactures construction and mining equipment, off-highway diesel and natural gas engines, industrial gas turbines, and diesel-electric locomotives, and finances customer purchases through Cat Financial. It sells through a large independent global dealer network. Its construction machinery customers are mainly in heavy and general construction, rental, quarry and aggregates, and mining."
  },
  "1823529": {
   "accn": "0001823529-26-000060",
@@ -3436,6 +3589,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-05",
   "text": "TaskUs provides outsourced digital customer experience, trust and safety, and AI services, including data annotation and LLM support. Its clients, about 200 as of December 31, 2025, include global companies in AI, autonomous vehicles, social media, financial services and healthcare. It operates 31 sites in 13 countries."
+ },
+ "1830072": {
+  "accn": "0001683168-26-007580",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "iPower Inc.",
+  "sic": "5200",
+  "source": "10-K filed 2026-10-02",
+  "text": "iPower is a technology- and data-driven infrastructure company with a foundation in supply chain services, commerce, and logistics and fulfillment. It is currently focused on AI infrastructure acquisition, financing and equipment leasing, and holds a limited digital asset treasury position. It operates a business-to-business supply chain platform and sells products to business customers."
  },
  "1831907": {
   "accn": "0001104659-26-108069",
@@ -3725,6 +3887,15 @@
   "source": "20-F filed 2026-03-03",
   "text": "On is a premium sportswear brand that designs and engineers footwear, apparel and accessories for athletic performance in Switzerland. It sells across the Americas, EMEA and Asia-Pacific through an owned retail network and other channels. Its products serve running, outdoor, training, tennis and all-day use."
  },
+ "1860805": {
+  "accn": "0001193125-26-102628",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "Algoma Steel Group Inc.",
+  "sic": "3312",
+  "source": "40-F filed 2026-03-12",
+  "text": "Algoma Steel Group is a Canadian company with principal executive offices in Sault Ste. Marie, Ontario. Its U.S. agent for service is located in Wilmington, Delaware."
+ },
  "1861737": {
   "accn": "0001104659-26-048025",
   "date": "2026-10-17",
@@ -3901,6 +4072,15 @@
   "sic": "5812",
   "source": "10-K filed 2026-03-31",
   "text": "GEN Restaurant Group operates Korean barbecue restaurants specializing in a variety of flavored meats, with 57 restaurants in operation as of December 31, 2025. Its restaurants are located in California, Arizona, Hawaii, Nevada, New York, Washington, Texas, Florida, North Carolina and New Jersey, and the company is based in Cerritos, California."
+ },
+ "1892292": {
+  "accn": "0001213900-25-075991",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "Maison Solutions Inc.",
+  "sic": "5411",
+  "source": "10-K filed 2025-08-14",
+  "text": "Maison Solutions is a specialty grocery retailer offering traditional Asian fresh produce, meat, seafood and groceries. It operates six supermarkets in Los Angeles, California and the Phoenix and Tucson, Arizona metro areas. It primarily targets Asian-American communities and families."
  },
  "1897762": {
   "accn": "0001628280-26-013588",
@@ -4128,6 +4308,15 @@
   "source": "20-F filed 2026-03-17",
   "text": "Vesta owns, develops, manages and leases industrial parks and buildings in Mexico. As of December 31, 2025, it had 231 buildings across sixteen Mexican states. Its clients use its light-manufacturing and logistics facilities."
  },
+ "1969863": {
+  "accn": "0001753926-26-000125",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "SU Group Holdings Ltd",
+  "sic": "7381",
+  "source": "20-F filed 2026-01-16",
+  "text": "SU Group is a Cayman Islands holding company whose operations are conducted through subsidiaries headquartered in Hong Kong. The excerpt describes its industry as services for professionals, referencing security guarding, screening and related vocational training services."
+ },
  "1973239": {
   "accn": "0001973239-26-000097",
   "date": "2026-10-09",
@@ -4171,6 +4360,15 @@
   "model": "haiku",
   "source": "10-K filed 2025-12-22",
   "text": "enGene is a clinical-stage biotechnology company developing non-viral genetic medicines using its DDX gene delivery platform. Its lead product candidate, detalimogene, is in development as a monotherapy for BCG-unresponsive non-muscle invasive bladder cancer with carcinoma in situ."
+ },
+ "1981662": {
+  "accn": "0001213900-26-037687",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "NewGenIvf Group Ltd",
+  "sic": "8090",
+  "source": "20-F filed 2026-03-31",
+  "text": "NewGenIvf provides in vitro fertilization services, including traditional IVF and egg donation, plus fertility referral services. It operates clinics in Thailand, Cambodia and Kyrgyzstan and serves clients in the Asia-Pacific market."
  },
  "1982960": {
   "accn": "0001493152-26-039058",
@@ -4361,6 +4559,15 @@
   "sic": "1040",
   "source": "20-F filed 2026-04-02",
   "text": "Namib Minerals is a mining company with gold mineral resources and reserves. Its excerpt covers ore milling and metallurgy, and its risk disclosures reference operations in Zimbabwe and the Democratic Republic of the Congo."
+ },
+ "2028293": {
+  "accn": "0001213900-26-044121",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "Rain Enhancement Technologies Holdco, Inc.",
+  "sic": "3590",
+  "source": "10-K filed 2026-04-15",
+  "text": "Rain Enhancement Technologies develops, manufactures and commercializes atmospheric enhancement by ionization technology intended to enhance rainfall. It serves governmental and commercial clients, including non-U.S. governments."
  },
  "2029118": {
   "accn": "0002029118-26-000014",
@@ -4625,6 +4832,24 @@
   "source": "10-K filed 2026-09-25",
   "text": "Donaldson is a global filtration company providing air, fuel, hydraulic, and industrial filtration products for mobile, industrial, and life sciences applications. It operates across six continents with manufacturing and distribution centers, serving OEMs and distributors in construction, mining, agriculture, transportation, aerospace, and data center industries."
  },
+ "2969": {
+  "accn": "0000002969-25-000055",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "Air Products & Chemicals, Inc.",
+  "sic": "2810",
+  "source": "10-K filed 2025-11-20",
+  "text": "Air Products is a industrial gases company that produces and sells gases such as oxygen, nitrogen, hydrogen, and argon, and provides related equipment. It serves customers in refining, chemicals, metals, electronics, manufacturing, medical, and food industries worldwide, and develops clean hydrogen projects."
+ },
+ "310764": {
+  "accn": "0000310764-26-000010",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "STRYKER CORP",
+  "sic": "3841",
+  "source": "10-K filed 2026-02-11",
+  "text": "Stryker sells products across Endoscopy, Medical, Vascular, Neuro Cranial and Orthopaedics. Its offerings include orthopaedic implants for total joint replacements, LIFEPAK monitor/defibrillators and endoscopy camera platforms."
+ },
  "313616": {
   "accn": "0000313616-26-000062",
   "date": "2026-10-07",
@@ -4707,6 +4932,15 @@
   "model": "haiku",
   "source": "10-K filed 2025-10-31",
   "text": "Apple designs and manufactures smartphones, personal computers, tablets, wearables, and accessories, along with digital services including the App Store, Apple Music, and Apple Pay. It operates globally across the Americas, Europe, Greater China, Japan, and Rest of Asia Pacific. Apple serves consumers, small and mid-sized businesses, education, enterprise, and government customers."
+ },
+ "32604": {
+  "accn": "0000032604-25-000087",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "EMERSON ELECTRIC CO",
+  "sic": "3600",
+  "source": "10-K filed 2025-11-10",
+  "text": "Emerson is a global technology and software company that provides automation solutions, including intelligent devices, control systems and design and optimization software. Its customers include process, hybrid and discrete manufacturers. In 2025, sales by destination were 51% Americas, 30% Asia, Middle East & Africa, and 19% Europe."
  },
  "34956": {
   "accn": "0001193125-26-099393",
@@ -4908,6 +5142,15 @@
   "source": "10-K filed 2025-11-25",
   "text": "Analog Devices designs, manufactures and markets analog, mixed-signal and digital signal processing integrated circuits, including data converters, amplifiers, power management, RF ICs and sensors. It sells its ICs to customers worldwide across a wide range of applications."
  },
+ "64040": {
+  "accn": "0000064040-26-000013",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "S&P Global Inc.",
+  "sic": "7320",
+  "source": "10-K filed 2026-02-11",
+  "text": "S&P Global is a global provider of benchmarks, data, analytics and workflow solutions through five businesses: Market Intelligence, Ratings, Energy, Mobility and Indices. It serves capital, energy and commodity, and automotive markets, including asset managers, investment banks, commercial banks, insurers, energy producers and automotive manufacturers. Ratings has offices in over 25 countries."
+ },
  "65172": {
   "accn": "0001104659-26-046864",
   "date": "2026-10-19",
@@ -4916,6 +5159,15 @@
   "sic": "6795",
   "source": "10-K filed 2026-04-22",
   "text": "Mesabi Trust is a trust whose Units of Beneficial Interest are listed on the New York Stock Exchange. It has no directors, officers, or employees. Its Corporate Trustee handles oversight, financial record keeping, cash and investment management, and reporting, and also serves as registrar and transfer agent."
+ },
+ "66740": {
+  "accn": "0000066740-26-000014",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "3M CO",
+  "sic": "3841",
+  "source": "10-K filed 2026-02-03",
+  "text": "3M is a diversified technology company with Safety and Industrial, Transportation and Electronics, and Consumer segments. It sells its products globally, directly to users and through wholesalers, retailers, distributors, and dealers in many countries."
  },
  "6845": {
   "accn": "0000006845-26-000023",
@@ -4932,6 +5184,15 @@
   "sic": "3089",
   "source": "10-K filed 2026-03-05",
   "text": "Myers Industries designs and manufactures plastic, metal, and rubber products, including reusable containers, pallets, and storage products, and distributes tire service equipment and supplies. It operates manufacturing facilities and distribution centers in the U.S. and Canada, with branches in Central America. Its customers include industrial manufacturers, food processors, retailers, automotive businesses, retail and truck tire dealers, and fleets."
+ },
+ "6951": {
+  "accn": "0001628280-25-056742",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "APPLIED MATERIALS INC /DE",
+  "sic": "3674",
+  "source": "10-K filed 2025-12-12",
+  "text": "Applied Materials provides materials engineering equipment, process control and advanced packaging systems, and related services used to fabricate semiconductors. Its Applied Global Services segment supplies services, spares, and factory automation software to customer fabrication plants globally. Its Semiconductor Systems customers serve foundry, logic, DRAM, and NAND markets."
  },
  "69633": {
   "accn": "0001104659-26-100081",
@@ -5025,6 +5286,15 @@
   "source": "10-K filed 2026-03-26",
   "text": "Williams-Sonoma is an omni-channel specialty retailer of home products under brands including Williams Sonoma, Pottery Barn and West Elm, sold through e-commerce, catalogs, stores and business-to-business. It operates in the U.S., Puerto Rico, Canada, Australia and the U.K., with franchisees in Mexico, South Korea, India and the Philippines. It serves consumers and business customers."
  },
+ "723125": {
+  "accn": "0000723125-26-000023",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "MICRON TECHNOLOGY INC",
+  "sic": "3674",
+  "source": "10-K filed 2026-10-09",
+  "text": "Micron Technology makes DRAM, NAND, and NOR semiconductor memory and storage products, including HBM and SSDs. It manufactures at wholly-owned facilities, with fabrication and back-end manufacturing in Singapore and Taiwan. Its products serve data center, client PC, mobile, automotive, and industrial markets."
+ },
  "723254": {
   "accn": "0000723254-26-000028",
   "date": "2026-10-07",
@@ -5045,6 +5315,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-05-06",
   "text": "NVE develops and sells spintronic devices, including magnetic sensors and couplers used to acquire and transmit data. Its products are used in applications such as factory automation, medical devices and power conversion. It relies on distributors in more than 75 countries and on several large customers, including Abbott Laboratories."
+ },
+ "727273": {
+  "accn": "0001437749-26-010517",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "CADIZ INC",
+  "sic": "4941",
+  "source": "10-K filed 2026-03-31",
+  "text": "Cadiz is a water solutions provider with land, water, pipeline and water filtration assets in Southern California. Its customers are public and private water systems, government agencies and commercial businesses."
  },
  "729580": {
   "accn": "0001437749-26-005354",
@@ -5089,6 +5368,15 @@
   "model": "haiku",
   "source": "10-K filed 2025-11-14",
   "text": "Atmos Energy is a natural gas-only distributor delivering natural gas through regulated sales and transportation arrangements. It serves about 3.4 million residential, commercial, public authority and industrial customers in eight states located primarily in the South. It also operates one of the largest intrastate pipelines in Texas."
+ },
+ "73309": {
+  "accn": "0001193125-26-071575",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "NUCOR CORP",
+  "sic": "3312",
+  "source": "10-K filed 2026-02-25",
+  "text": "Nucor manufactures steel and steel products, primarily using scrap steel as its raw material, and is North America's largest recycler. Its products include sheet, plate, structural, and bar steel, which it sells mainly to steel service centers, fabricators, and manufacturers in the United States, Canada, and Mexico."
  },
  "737758": {
   "accn": "0000737758-25-000115",
@@ -5151,6 +5439,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-18",
   "text": "PACCAR is a multinational company that designs, manufactures and distributes light-, medium- and heavy-duty commercial trucks under the Kenworth, Peterbilt and DAF nameplates, and distributes aftermarket truck parts. Its financial services segment provides finance and leasing to customers and dealers. Its operations span the United States, Europe, Australia, Brazil, Canada and Mexico, and its trucks are sold to independent dealers."
+ },
+ "76334": {
+  "accn": "0000076334-26-000105",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "Parker-Hannifin Corp",
+  "sic": "3490",
+  "source": "10-K filed 2026-08-21",
+  "text": "Parker-Hannifin is a global leader in motion and control technologies, designing, manufacturing and providing aftermarket support for engineered solutions. It serves aerospace & defense, in-plant & industrial equipment, transportation, off-highway, energy, and HVAC & refrigeration markets, selling to OEMs and distributors. Its divisions operate in 44 countries."
  },
  "763744": {
   "accn": "0000763744-26-000011",
@@ -5216,6 +5513,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-17",
   "text": "Honeywell is an integrated operating company that blends physical products with software for aerospace, building automation, industrial automation, process automation and process technology. It serves a broad range of industries and geographies worldwide. Its Aerospace Technologies segment sells principally to the U.S. government and prime contractors, including the U.S. Department of Defense."
+ },
+ "77476": {
+  "accn": "0000077476-26-000007",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "PEPSICO INC",
+  "sic": "2080",
+  "source": "10-K filed 2026-02-03",
+  "text": "PepsiCo is a global beverage and convenient food company with brands including Lay's, Doritos, Gatorade, Pepsi, Quaker, and SodaStream. It makes, markets, and sells beverages and convenient foods in more than 200 countries and territories. Its products are sold to independent distributors, retailers, and consumers through e-commerce platforms."
  },
  "77543": {
   "accn": "0000077543-26-000028",
@@ -5283,6 +5589,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-01-15",
   "text": "Adobe provides creative software solutions and platforms for content creation, design, and marketing powered by AI. The company serves business professionals, consumers, creative professionals and marketing professionals globally. Adobe's product portfolio spans document productivity, creative applications, and enterprise marketing solutions including its Experience Platform."
+ },
+ "797468": {
+  "accn": "0001628280-26-009059",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "OCCIDENTAL PETROLEUM CORP /DE/",
+  "sic": "1311",
+  "source": "10-K filed 2026-02-18",
+  "text": "Occidental Petroleum is an oil and gas company with oil and gas and midstream and marketing segments, and it has domestic and international operations. It agreed to sell its OxyChem business to Berkshire Hathaway, and the sale was completed on January 2, 2026."
  },
  "79879": {
   "accn": "0000079879-26-000046",
@@ -5514,6 +5829,15 @@
   "source": "10-K filed 2026-09-02",
   "text": "Cisco designs and sells networking, security, collaboration and observability technologies, including hardware, software, AI-powered digital infrastructure and related services. It manages its business across the Americas, EMEA, and APJC. Its customers include businesses of all sizes, public institutions, governments, service providers and hyperscalers."
  },
+ "860730": {
+  "accn": "0001193125-26-044769",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "HCA Healthcare, Inc.",
+  "sic": "8062",
+  "source": "10-K filed 2026-02-10",
+  "text": "HCA Healthcare operates 190 hospitals, including general acute care, behavioral and rehabilitation hospitals, plus 121 freestanding ambulatory surgery centers and 31 freestanding endoscopy centers. Its facilities are located in 19 U.S. states and England. It provides a range of health care services through its hospitals and related outpatient facilities."
+ },
  "863064": {
   "accn": "0001628280-26-009531",
   "date": "2026-10-09",
@@ -5598,6 +5922,15 @@
   "source": "10-K filed 2026-03-16",
   "text": "ATN provides fixed and mobile telecommunications, broadband, and carrier communications services, including fiber transport, in rural and remote markets. It operates primarily in the western US and Alaska, and internationally in Bermuda and the Caribbean. Customers include residential, business and government customers, and carrier customers."
  },
+ "879764": {
+  "accn": "0001104659-26-035876",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "TotalEnergies SE",
+  "sic": "1311",
+  "source": "20-F filed 2026-03-27",
+  "text": "TotalEnergies SE is a registrant with 2,206,585,543 shares outstanding as of December 31, 2025. Its forward-looking statements reference crude oil and natural gas prices, petroleum products, and reserves estimates. The excerpt does not describe its products, operating locations, or customers."
+ },
  "880117": {
   "accn": "0001193125-26-356919",
   "date": "2026-10-14",
@@ -5641,6 +5974,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-03-11",
   "text": "Alpha Pro Tech makes disposable protective apparel and infection control products, and construction weatherization products such as housewrap and roof underlayment. Its executive offices are in Aurora, Ontario, and its products are distributed principally in the United States. Its customers include construction supply and roofing distributors, pharmaceutical, medical device and semiconductor manufacturers, and medical and dental distributors."
+ },
+ "884887": {
+  "accn": "0000884887-26-000007",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "ROYAL CARIBBEAN CRUISES LTD",
+  "sic": "4400",
+  "source": "10-K filed 2026-02-11",
+  "text": "Royal Caribbean is a vacation company that owns and operates the Royal Caribbean, Celebrity Cruises, and Silversea cruise brands. It also holds a 50% joint venture interest in TUI Cruises GmbH, and its ships call on more than 1,000 destinations on all seven continents."
  },
  "885245": {
   "accn": "0000885245-26-000012",
@@ -5740,6 +6082,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-09-09",
   "text": "Intuit is a global financial technology platform serving approximately 93 million consumers, small and mid-market businesses, and accountants. The company provides tax, accounting, financial management and marketing solutions through products including TurboTax, QuickBooks, Credit Karma and Mailchimp."
+ },
+ "89800": {
+  "accn": "0000089800-26-000008",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "SHERWIN WILLIAMS CO",
+  "sic": "5200",
+  "source": "10-K filed 2026-02-19",
+  "text": "Sherwin-Williams develops, manufactures, distributes, and sells paint, coatings, and related products. It serves professional, industrial, commercial, and retail customers primarily in North and South America, with additional operations in the Caribbean, Europe, Asia, and Australia."
  },
  "898173": {
   "accn": "0000898173-26-000009",
@@ -6045,6 +6396,15 @@
   "model": "haiku",
   "source": "10-K filed 2026-02-26",
   "text": "Standard Motor Products makes and distributes premium replacement parts for the automotive aftermarket, including engine management, electrical and safety, and temperature control parts, and provides custom-engineered solutions for vehicle and equipment manufacturers. It sells mainly to retailers, warehouse distributors and original equipment manufacturers in the United States, Europe, Canada, Mexico and other foreign countries."
+ },
+ "93410": {
+  "accn": "0000093410-26-000078",
+  "date": "2026-10-20",
+  "model": "haiku",
+  "name": "CHEVRON CORP",
+  "sic": "2911",
+  "source": "10-K filed 2026-02-24",
+  "text": "Chevron Corporation provides administrative, financial, and technology support to subsidiaries in integrated energy and chemicals operations. Its upstream business explores for and produces crude oil and natural gas and produces LNG, while its downstream business refines crude oil and makes renewable fuels and petrochemicals. The excerpt does not state its operating countries or customers."
  },
  "935703": {
   "accn": "0000935703-26-000025",
