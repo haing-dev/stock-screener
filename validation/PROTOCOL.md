@@ -24,7 +24,8 @@ change to it, or to the rules it freezes, is logged in `validation/CHANGES.md` a
   - Quarterly (10-Q) facts are kept from 2009 on.
 - **Filing events** (Form 10, S-1/F-1/424B4, 8-K items) come from the full submissions history (bulk file,
   including the older pages), filtered to filings before *d*.
-- **Prices.** Massive grouped daily bars, unadjusted (as printed), for the first two trading days of each month.
+- **Prices.** Massive grouped daily bars, unadjusted (as printed), for the last trading day of each month and the
+  first trading day of the next.
   - Corporate actions come from Massive's split and dividend lists.
   - Ticker to CIK is mapped through Massive's ticker reference, including inactive tickers. A ticker that was
     reused is resolved by its delisting date.
@@ -38,13 +39,13 @@ change to it, or to the rules it freezes, is logged in `validation/CHANGES.md` a
   - 13F, insider and summary data play no part in the rules, so they are not reconstructed.
 
 ## 3. Formation, holding, costs
-- **Formation.** Day *d* is the first trading day of each month. Information is filings before *d*; price rules use
-  the close on *d* and the 12-month high from the monthly grid. Evaluation runs the live code (`metrics_for`,
-  `build_ctx`, industry cycle, `valuation.value`, `Screen.evaluate`) unchanged.
+- **Formation.** Day *d* is the last trading day of each month. Information is filings before *d*; price rules use
+  the close on *d* and, as live, the 12-month high from month-end closes. Evaluation runs the live code
+  (`metrics_for`, `build_ctx`, industry cycle, `valuation.value`, `Screen.evaluate`) unchanged.
 - **Universe.** NYSE and Nasdaq common stocks and ADRs with a price on *d* and a CIK with XBRL facts. Each
   screen's own industry universe applies on top, exactly as live.
-- **Entry and exit.** Entry is the open of the next trading day (*d*+1). The exit is the open of *d*+1 in the next
-  month.
+- **Entry and exit.** Entry is the open of the next trading day (*d*+1, the first trading day of the next month).
+  The exit is the open of the following month's first trading day.
   - Returns include dividends with an ex-date inside the holding period, and are adjusted for splits.
   - Holding horizons: 1 month (rebalanced monthly, the primary test), plus 3 and 12 months as overlapping cohorts
     (Jegadeesh-Titman).
