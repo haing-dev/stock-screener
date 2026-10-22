@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Stock Screener</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314212E'/%3E%3Cpath d='M7 22l6-7 5 4 7-9' stroke='%234CC79A' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<div id="lock" class="lock" hidden>
+  <form id="lockForm" class="lock-card" autocomplete="on">
+    <h1>Stock Screener</h1>
+    <p class="lock-sub">Enter the portal password to open the latest screen.</p>
+    <label for="pw">Password</label>
+    <input id="pw" type="password" autocomplete="current-password" required autofocus>
+    <label class="remember"><input id="remember" type="checkbox" checked> Remember on this device</label>
+    <button type="submit" id="unlockBtn">Open portal</button>
+    <p id="lockMsg" class="lock-msg" role="alert"></p>
+  </form>
+</div>
+
+<div id="app" class="app" hidden>
+  <aside class="side">
+    <div class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M7 22l6-7 5 4 7-9"/></svg>Stock Screener</div>
+    <nav id="screenNav" class="screen-nav" aria-label="Screens"></nav>
+    <div id="freshness" class="freshness"></div>
+    <button id="lockNow" class="linkish" type="button">Lock</button>
+  </aside>
+
+  <main id="main" class="main">
+    <header class="head">
+      <div class="head-text">
+        <h2 id="title"></h2>
+        <p id="purpose" class="purpose"></p>
+      </div>
+    </header>
+    <section id="thesis" class="thesis" aria-label="Investment thesis" hidden></section>
+
+    <details id="rulesBox" class="rules card">
+      <summary class="rules-top">
+        <h3>Rules <span id="rulesOn" class="rules-on"></span></h3>
+      </summary>
+      <button id="resetRules" class="linkish reset" type="button" hidden>Turn all rules back on</button>
+      <div id="rules" class="tbl-wrap"></div>
+    </details>
+
+    <section class="list">
+      <div class="list-bar">
+        <div id="viewSwitch" class="seg" role="radiogroup" aria-label="Which companies to show"></div>
+        <input id="search" class="search" type="search" placeholder="Find ticker or name" aria-label="Find ticker or name">
+      </div>
+      <p id="listNote" class="list-note"></p>
+      <div id="table" class="table"></div>
+    </section>
+  </main>
+
+  <main id="companyView" class="main company" hidden></main>
+
+  <main id="gapsView" class="main" hidden>
+    <header class="head"><div class="head-text">
+      <h2>Couldn't screen</h2>
+    </div></header>
+    <div id="gaps"></div>
+  </main>
+</div>
+<noscript>This portal needs JavaScript.</noscript>
+<script src="app.js"></script>
+</body>
+</html>
