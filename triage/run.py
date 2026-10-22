@@ -8,10 +8,11 @@ Steps (each resumable; work kept under cache/tri and cache/bt):
   returns   month-to-month returns of every panel company and the index ETFs
   owners    13F conviction holdings and Form 4 insider trades from SEC's data sets
   mark      the latest trading day's closes (one Massive request)
+  exits     replace the -30% placeholder of companies that left the exchange with their last close (100 a run)
   build     events, calls, outcomes, statistics -> cache/tri/out/site.json.gz
   site      the static site (triage_site/), data encrypted with PORTAL_PASSWORD
   monthly   everything above, in order (a full scan: after each mid-month and month-end)
-  daily     mark, build, site
+  daily     mark, exits, build, site
   auto      a full scan when a new scan date (15th or month-end) has settled, else daily
 """
 import argparse
@@ -118,6 +119,12 @@ def _name_map():
     return out
 
 
+def step_exits(cfg, log=print):
+    from . import returns as RT
+    _m, btp, grid, splits, divs = _grid_and_actions(cfg, log)
+    RT.fix_haircuts(grid, btp, splits, divs, budget=int(os.environ.get("TRIAGE_EXIT_BUDGET", "100")), log=log)
+
+
 def step_owners(cfg, log=print):
     from . import owners as OW
     months = PN.months()
@@ -163,9 +170,10 @@ def step_site(cfg, log=print):
 
 
 STEPS = {"prices": step_prices, "prepare": step_prepare, "panel": step_panel, "returns": step_returns,
+         "exits": step_exits,
          "owners": step_owners, "mark": step_mark, "build": step_build, "site": step_site}
-MONTHLY = ["prices", "prepare", "panel", "returns", "owners", "mark", "build", "site"]
-DAILY = ["mark", "build", "site"]
+MONTHLY = ["prices", "prepare", "panel", "returns", "owners", "mark", "exits", "build", "site"]
+DAILY = ["mark", "exits", "build", "site"]
 
 
 def _done_path():

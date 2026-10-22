@@ -151,6 +151,16 @@ jobs:
               for k, v in d["kinds"].items():
                   calls = {c: sum(1 for x in v["items"] if x["verdict"] == c) for c in ("overdone", "close", "justified", "tbu")}
                   print(f"- {k}: {len(v['items'])} events, {sum(1 for x in v['items'] if x.get('played'))} with a full year, {calls}")
+              for k, v in d["kinds"].items():
+                  print(f"\n### {k}")
+                  for c, t in (v.get("calls") or {}).items():
+                      print(f"- {c}: n {t['n']}, median {t['median']}%, mean {t['mean']}%, similar {t['ctrl_mean']}%, index {t['idx_mean']}%, beat similar {t['beat']}%")
+                  for c, r in ((v.get("regression") or {}).items()):
+                      if isinstance(r, dict) and r.get("alpha_y") is not None:
+                          print(f"- regression {c}: {r['n']} months, alpha {r['alpha_y']}%/yr (t {r['t']}), betas {r['betas']}")
+                  for key, e in (v.get("evidence") or {}).items():
+                      g, rr = e["cols"].get("g"), e["cols"].get("r")
+                      print(f"- cell {key}: green {g and (g['n'], g['median'])} red {rr and (rr['n'], rr['median'])} n/a {e['na']}")
           PY
           cd status_out
           git init -q -b triage-status

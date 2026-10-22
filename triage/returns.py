@@ -39,3 +39,58 @@ def build(grid, btp, splits, divs, log=print, budget=300, priority=None):
     write_json(path, idx)
     log(f"Returns: {len(idx)} index months; {spent} last-close lookups")
     return spent
+
+
+def fix_haircuts(grid, btp, splits, divs, budget=100, log=print):
+    """Companies that left the exchange during a period got -30% when their last close wasn't looked up within the
+    run's request budget. Each run looks up more of them (one Massive request each, cached) and replaces the -30% with
+    the real exit at the last close; event companies first. Returns (fixed, left)."""
+    nxt = {g["ym"]: n["e"] for g, n in zip(grid, grid[1:])}
+    e_of = {g["ym"]: g["e"] for g in grid}
+    opens = {}
+    todo = []
+    for ym in sorted(nxt):
+        r = read_json(os.path.join(P.RETURNS, f"{ym}.json.gz")) or {}
+        for c, (v, how) in r.items():
+            if how == "haircut":
+                todo.append((ym, c))
+    if not todo:
+        return 0, 0
+    pri = set()
+    try:
+        for kd in (read_json(os.path.join(P.OUT, "site.json.gz")) or {}).get("kinds", {}).values():
+            pri.update(str(x["cik"]) for x in kd["items"])
+    except Exception:  # noqa: BLE001 - order only
+        pass
+    todo.sort(key=lambda t: (t[1] not in pri, t[0]))
+    fixed, spent, changed = 0, 0, {}
+    for ym, c in todo:
+        if spent >= budget:
+            break
+        rec = ((PN.load(ym) or {}).get("companies") or {}).get(c) or {}
+        sym = rec.get("sym")
+        g = next((x for x in grid if x["ym"] == ym), None)
+        if not sym or not g:
+            continue
+        if ym not in opens:
+            opens[ym] = g.get("bars_e") or {}
+        b0 = opens[ym].get(sym)
+        if not b0 or not b0[0]:
+            continue
+        lc = btp.last_close(sym, e_of[ym], nxt[ym])
+        spent += 1
+        if not lc:
+            continue
+        r = holding_return(b0[0], lc[1], splits.get(sym) or [], divs.get(sym) or [], e_of[ym], lc[0])
+        if r is None:
+            continue
+        changed.setdefault(ym, {})[c] = [round(r, 6), "last close"]
+        fixed += 1
+    for ym, upd in changed.items():
+        path = os.path.join(P.RETURNS, f"{ym}.json.gz")
+        cur = read_json(path) or {}
+        cur.update(upd)
+        write_json(path, cur)
+    left = len(todo) - fixed
+    log(f"Exits: {fixed} replaced with the last close ({spent} lookups); {left} still at -30%")
+    return fixed, left
