@@ -1,6 +1,9 @@
 # Stock screener: handoff for new sessions
 
 Read this first. User preference: be concise and direct; use only context from the current chat + this repo.
+From 2026-10-22 Claude handles GitHub and Cloudflare (push, runs, deploys); the user only chats for adjustments.
+Control without a gh token: commit to `triage/` or `triage/settings.json` (step, history_years, per_minute) -> the
+Triage workflow runs; read results with `git fetch origin triage-status && git show origin/triage-status:status.md`.
 
 ## Hard rules (security)
 - Twelve Data key and SEC user agent (name/email) are PRIVATE. Locally they live only in `local_settings.json` (never in repo, outputs, artifacts or chat).
@@ -10,8 +13,8 @@ Read this first. User preference: be concise and direct; use only context from t
 ## What it is now: Quality Triage (triage/ v1.0.0, built 2026-10-22)
 - The 14-screen portal is ARCHIVED (`archive/portal-v2.9/`: its site and workflows; nothing deleted; `qs/` code still used).
 - `triage/` = three event-driven US-stock screens in the shape of the biotech crash/slide triage (repo haing-dev/crash-triage):
-  Hidden Earnings (month-end close 40%+ below 12-month high), Emerging Compounders and Core Compounders (earnings yield
-  enters the cheapest fifth of own last 5 years or of industry peers). Rules, weights, thresholds: `triage/rules.py`
+  Scans twice a month (15th and month-end). Hidden Earnings (close 40%+ below 12-month high), Emerging Compounders and
+  Core Compounders (earnings yield enters the cheapest fifth of own last 5 years or of industry peers). Rules, weights, thresholds: `triage/rules.py`
   (pre-registered 2026-10-22; log changes in `triage/CHANGES.md`). Backend requirements (US 10-K filer, history, recent
   report, size, volume, leverage) never enter the score. Calls: weighted cells -> Buy candidate / Watch / Avoid (+ hard
   Avoid; Watch -> Buy on a top performer owner's later 13F). Cells shared by all three: High Conviction Owners, Top
@@ -19,17 +22,18 @@ Read this first. User preference: be concise and direct; use only context from t
 - Data: point-in-time panel from the v2.9 backtest code (`qs/backtest.contexts_at`, Massive month-end grid, SEC bulk facts
   filed before each month-end); 13F and insider SEC data sets (`triage/owners.py`); returns open-to-open incl. delistings.
   Outcome: 12-month return vs 10 most similar US stocks + SPY (IWM for Emerging); FF5+UMD calendar-time regression.
-- Run: `python -m triage.run auto|monthly|daily|<step>` (workflow `.github/workflows/triage.yml`, weekdays 23:43 UTC;
-  monthly pipeline after a month-end). Site -> branch `site` (same Cloudflare Worker, password = PORTAL_PASSWORD).
+- Run: `python -m triage.run auto|monthly|daily|<step>` (workflow `.github/workflows/triage.yml`, weekdays 23:43 UTC and on
+  push to triage/; full scan once a scan date has settled 3 days, else daily mark + rebuild). Site -> branch `site` (same Cloudflare Worker, password = PORTAL_PASSWORD).
   Live calls -> branch `triage-record` (append-only ledger.csv). Old site kept on branch `site-archive-v2.9`.
-- Massive plan sets the backtest length: free = 2 years of prices (~1 year of results, own-past cheapness mostly N/A);
-  Developer = 10 years (run with history_years=10, per_minute=100).
+- Massive plan sets the backtest length: free = 2 years of prices, a rolling window back from today (~1 year of
+  results, own-past cheapness mostly N/A); Starter $29/mo 5 years, Developer $79/mo 10 years (set history_years and
+  per_minute=100 in triage/settings.json). User chose 2 years (free) for now.
 - Local preview: `python tests/triage_smoke.py --demo OUT_DIR` (real SEC samples, invented prices/13F/insiders).
 - Tests: `python3 tests/run_tests.py` must print "ALL TESTS PASSED" (includes tests/triage_smoke.py).
 - Archived but kept: v2.9 validation of the frozen 14 screens (`validation/PROTOCOL.md`, `qs/validate.py`; workflow archived).
 
 ## Deployment
-- Repo `haing-dev/stock-screener` (private). Branches: `main` (code), `site` (published triage site, force-pushed), `site-archive-v2.9` (last portal build), `triage-record` (live calls, append-only), `reports`, `research` (transcript store), `history` and `validation` (v2.9 records, no longer updated).
+- Repo `haing-dev/stock-screener` (private). Branches: `main` (code), `site` (published triage site, force-pushed), `site-archive-v2.9` (last portal build), `triage-record` (live calls, append-only), `triage-status` (last run's log tail + counts, force-pushed), `reports`, `research` (transcript store), `history` and `validation` (v2.9 records, no longer updated).
 - Cloudflare **Worker** "stock-screener" via Workers Builds on branch `site` (wrangler.jsonc written by `triage/site.py`).
 - Workflow: triage.yml only. The old screen/daily/background/report/validate workflows are in `archive/portal-v2.9/workflows/`.
 - In the cloud sandbox: blob log downloads are forbidden; `scripts/run_logged.sh` puts the last 60 log lines in check-run annotations (`gh api repos/haing-dev/stock-screener/check-runs/<id>/annotations`).
@@ -42,8 +46,9 @@ Read this first. User preference: be concise and direct; use only context from t
 `docs/criteria/Screener_Criteria.xlsx` (157 rows incl. Tech S-curve: rationale in "investor states that X means Y, because Z; example" format, verified vs all transcripts; verifiability Easy/Partly/No; Valuation + Summary sheets). Rebuild: `python3 docs/criteria/build_criteria.py` (rationale text in `docs/criteria/out_*.json`; recalc formulas after).
 
 ## Open items
-00. Triage (2026-10-22, NOT pushed): push main, then run Actions > Triage (step monthly) by hand. First run is long (SEC bulk +
-   company pass + 13F data sets); it resumes from cache if it times out. Then check the site and cache/tri/out stats.
+00. Triage pushed 2026-10-22; the push starts the first full scan (long: SEC bulk + company pass + 13F data sets; resumes
+   from cache after a timeout; the daily cron continues it). Check branch triage-status, then the site. Tag
+   prereg-2026-10-20 could not be pushed (proxy drops tag pushes).
 0. (Paused: portal archived 2026-10-22.) Validation (v2.9, built 2026-10-20, NOT yet pushed or run): push `main` + tag `prereg-2026-10-20`, then run Validate by hand.
    With the free Massive plan (2 years) every verdict is 'too little history'; 10 years needs the Developer plan
    (run with history_years=10, per_minute=100). After the first run: send `validation/out/audit_reconciliation.csv`,

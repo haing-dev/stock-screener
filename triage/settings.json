@@ -1,0 +1,6 @@
+{
+  "_note": "Read by .github/workflows/triage.yml on scheduled and push-triggered runs (a manual run's inputs take precedence). Committing a change here starts a run.",
+  "step": "auto",
+  "history_years": 2,
+  "per_minute": 5
+}

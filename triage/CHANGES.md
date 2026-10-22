@@ -8,3 +8,4 @@ suggested it.
 | Date | Change | Why |
 |---|---|---|
 | 2026-10-22 | v1.0.0: first version (Hidden Earnings, Emerging Compounders, Core Compounders) | — |
+| 2026-10-22 | Scans twice a month (last trading day on or before the 15th, and month-end) instead of month-end only. Same calendar definitions: 12-month high over the past year's scans, own past = 5 years of scans (2 years needed), 6-month cooldown, 12-month holding. Regressions compound the twice-monthly portfolios to calendar months | User asked for bi-weekly calls. Made before any real-data run |

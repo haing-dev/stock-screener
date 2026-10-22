@@ -105,15 +105,22 @@ def evidence(kind, items):
 
 
 def portfolios(items, series):
-    """{call: {ym: equal-weighted monthly return}} - calendar-time portfolios of held events."""
+    """{call: {YYYY-MM: monthly return}} - calendar-time portfolios of held events: equal-weighted each scan period
+    (rebalanced twice a month), compounded to calendar months for the monthly factor data."""
     acc = {v: defaultdict(list) for v in CALLS}
     for x in items:
         v = x.get("verdict")
         if v not in CALLS:
             continue
-        for ym, r in (series.get(x["id"]) or {}).items():
-            acc[v][ym].append(r)
-    return {v: {ym: sum(rs) / len(rs) for ym, rs in sorted(m.items())} for v, m in acc.items()}
+        for per, r in (series.get(x["id"]) or {}).items():
+            acc[v][per].append(r)
+    out = {}
+    for v, m in acc.items():
+        mon = defaultdict(lambda: 1.0)
+        for per, rs in sorted(m.items()):
+            mon[per[:7]] *= 1 + sum(rs) / len(rs)
+        out[v] = {ym: g - 1 for ym, g in sorted(mon.items())}
+    return out
 
 
 def regress(series, factors, rf=True):

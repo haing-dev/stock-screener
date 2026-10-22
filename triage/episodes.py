@@ -1,15 +1,16 @@
 """Events, cells, calls and outcomes for the three triages (rules: triage/rules.py).
 
-  detect()    walks the monthly panel once, oldest month first, and finds every event of every triage with only
-              what was known at that month-end (backend requirements, the trigger, the 10 most similar stocks).
-  outcome     total return from the entry day (open of the first trading day after the month-end) month by month for
+  detect()    walks the panel once (two scans a month: mid-month and month-end), oldest first, and finds every event
+              of every triage with only what was known on that scan day (backend requirements, the trigger, the 10
+              most similar stocks).
+  outcome     total return from the entry day (open of the first trading day after the scan) scan by scan for
               12 months (cache/tri/returns), a company that left the exchange valued at its last close (else -30%)
               and held as cash after; open events to the latest close (daily mark). Same for the similar stocks and
               the index ETF.
-  owners      13F conviction owners from the last quarter whose 45-day deadline had passed by the month-end; those
+  owners      13F conviction owners from the last quarter whose 45-day deadline had passed by the scan day; those
               that first report it for the quarter of the event (filed later, by the deadline) can upgrade a Watch.
               Top performer owners: ranked walk-forward on events whose year had ended.
-  insiders    Form 4 open-market trades filed in the 180 days up to the month-end.
+  insiders    Form 4 open-market trades filed in the 180 days up to the scan day.
   score()     cells, score, call; writes cache/tri/out/<kind>.json.gz.
 """
 import os
@@ -54,7 +55,7 @@ def leverage(rec, thr):
 
 
 def backend(kind, rec):
-    """[] when the company is covered by this triage at this month-end, else the reasons it isn't."""
+    """[] when the company is covered by this triage on this scan day, else the reasons it isn't."""
     k = R.KINDS[kind]
     b = k["backend"]
     why = []
@@ -183,12 +184,12 @@ def nearest(pool, c, rec, busy):
 
 # ------------------------------------------------------------------ detection (one pass over the panel)
 def detect(months, load=PN.load, log=print):
-    """{kind: [event, ...]} - events need the previous month's trigger state, so the first month only primes it."""
+    """{kind: [event, ...]} - events need the previous scan's trigger state, so the first scan only primes it."""
     out = {k: [] for k in KINDS}
-    hist = {k: defaultdict(lambda: deque(maxlen=R.OWN_PAST_MONTHS)) for k in KINDS if k != "hidden"}
-    state = {k: {} for k in KINDS}               # cik -> trigger held at the previous month-end (True / False)
-    last = {k: {} for k in KINDS}                # cik -> month index of its latest event
-    ebit_back = deque(maxlen=13)                 # {cik: TTM EBIT} of the last 13 month-ends (profit trend)
+    hist = {k: defaultdict(lambda: deque(maxlen=R.OWN_PAST)) for k in KINDS if k != "hidden"}
+    state = {k: {} for k in KINDS}               # cik -> trigger held at the previous scan (True / False)
+    last = {k: {} for k in KINDS}                # cik -> scan index of its latest event
+    ebit_back = deque(maxlen=R.PER_YEAR + 1)     # {cik: TTM EBIT} of the last year of scans (profit trend)
     for i, ym in enumerate(months):
         p = load(ym) or {}
         comp = p.get("companies") or {}
@@ -196,11 +197,11 @@ def detect(months, load=PN.load, log=print):
             ebit_back.append({})
             continue
         pool = similar_pool(comp)
-        year_ago = ebit_back[0] if len(ebit_back) == 13 else {}
+        year_ago = ebit_back[0] if len(ebit_back) == R.PER_YEAR + 1 else {}
         new_state = {k: {} for k in KINDS}
         for kind in KINDS:
             groups = peer_groups(comp, kind) if kind != "hidden" else None
-            busy = {c for c, j in last[kind].items() if i - j < R.COOLDOWN_MONTHS}
+            busy = {c for c, j in last[kind].items() if i - j < R.COOLDOWN}
             evs = []
             for c, rec in comp.items():
                 if kind == "hidden":
@@ -225,7 +226,7 @@ def detect(months, load=PN.load, log=print):
                 evs.append((c, rec, info))
             for c, rec, info in evs:
                 last[kind][c] = i
-            busy = {c for c, j in last[kind].items() if i - j < R.COOLDOWN_MONTHS}
+            busy = {c for c, j in last[kind].items() if i - j < R.COOLDOWN}
             for c, rec, info in evs:
                 sim = nearest(pool, c, rec, busy)
                 out[kind].append({"id": f"{c}_{ym}", "cik": c, "ym": ym, "i": i, "d": p["d"], "e": p["e"],
@@ -233,14 +234,14 @@ def detect(months, load=PN.load, log=print):
                                   "sim_sym": {k: comp[k].get("sym") for k in sim}})
         state = new_state
         ebit_back.append({c: r.get("ebit") for c, r in comp.items()})
-        if (i + 1) % 12 == 0 or i == len(months) - 1:
+        if (i + 1) % R.PER_YEAR == 0 or i == len(months) - 1:
             log(f"  events through {ym}: " + ", ".join(f"{k} {len(v)}" for k, v in out.items()))
     return out
 
 
 # ------------------------------------------------------------------ returns
 class Returns:
-    """Month-by-month returns from cache/tri/returns, plus the open month marked to the latest close."""
+    """Scan-to-scan returns from cache/tri/returns, plus the open period marked to the latest close."""
 
     def __init__(self, months, grid_e, mark=None, opens=None, splits=None, divs=None):
         self.months = months
@@ -258,7 +259,7 @@ class Returns:
             return None
         return holding_return(op, cl, self.splits.get(sym) or [], self.divs.get(sym) or [], self.e[ym], self.mark["day"])
 
-    def path(self, key, sym, i0, n=12, index=False):
+    def path(self, key, sym, i0, n=R.PER_YEAR, index=False):
         """([cumulative return after 0..k months], complete?, last day, stopped?) from the entry of month i0."""
         vals, cum, exited, stopped = [0.0], 1.0, False, None
         last_day = self.e.get(self.months[i0]) if i0 < len(self.months) else None
@@ -295,9 +296,10 @@ class Returns:
         return vals, True, last_day, stopped
 
     def series(self, key, sym, i0, ym_set):
-        """{ym: monthly return} for the holding months of an event (calendar-time portfolios)."""
+        """{entry day of the period: return to the next entry day} over an event's 12 months (calendar-time
+        portfolios group these by the calendar month the period starts in)."""
         out = {}
-        for k in range(12):
+        for k in range(R.PER_YEAR):
             i = i0 + k
             if i >= len(self.months):
                 break
@@ -306,7 +308,7 @@ class Returns:
             if rets is None:
                 break
             v = rets.get(str(key))
-            out[ym] = v[0] if v else 0.0
+            out[self.e[ym]] = v[0] if v else 0.0
             if v is None or v[1] != "ok":
                 break
         return out

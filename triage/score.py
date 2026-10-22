@@ -1,7 +1,7 @@
 """Cells, calls and outcomes for every event (rules: triage/rules.py; events: triage/episodes.py).
 
 Each cell is [colour, text, note, bucket]: colour g (meets the thesis) / n (in between, or N/A) / r (against it),
-the value shown, where it comes from (hover), and a filter bucket. Every number is as of the event's month-end.
+the value shown, where it comes from (hover), and a filter bucket. Every number is as of the event's scan day.
 """
 from bisect import bisect_left
 
@@ -45,7 +45,7 @@ def c_trend(kind, ev):
     now, then = ev["rec"].get("ebit"), ev.get("ebit_1y")
     if now is None or then is None:
         return list(NA)
-    note = f"Operating income, last 12 months: {money(now)} vs {money(then)} a year earlier (as filed by each month-end)"
+    note = f"Operating income, last 12 months: {money(now)} vs {money(then)} a year earlier (as filed by each scan)"
     if then > 0:
         g = now / then - 1
         return cell(kind, "trend", g, pct(g, 0, True), note, ("Up", "Down a little", "Down a lot"))
@@ -80,14 +80,14 @@ def thesis_cells(kind, ev):
     if info.get("p_own") is not None:
         out["own"] = cell(kind, "own", info["p_own"], f"Cheaper than {round(info['p_own'] * 100)}%",
                           f"{yname} {pct(info['y'], 1)} vs its median {pct(info.get('y_med'), 1)} over its last "
-                          f"{info['n_own']} month-ends: cheaper than {round(info['p_own'] * 100)}% of them",
+                          f"{info['n_own']} scans: cheaper than {round(info['p_own'] * 100)}% of them",
                           ("Cheapest fifth", "Cheaper than its median", "Dearer than its median"))
     else:
-        out["own"] = ["n", "N/A", f"Needs {R.OWN_PAST_MIN}+ month-ends of its own history", "N/A"]
+        out["own"] = ["n", "N/A", f"Needs {R.OWN_PAST_MIN_MONTHS} months of its own history", "N/A"]
     if info.get("p_peer") is not None:
         out["peers"] = cell(kind, "peers", info["p_peer"], f"Cheaper than {round(info['p_peer'] * 100)}%",
                             f"{yname} {pct(info['y'], 1)}: cheaper than {round(info['p_peer'] * 100)}% of {info['n_peer']} companies of $100M+ with industry "
-                            f"code {(r.get('sic') or '')[:info['peer_lvl']]} ({info['peer_lvl']}-digit) that month",
+                            f"code {(r.get('sic') or '')[:info['peer_lvl']]} ({info['peer_lvl']}-digit) that day",
                             ("Cheapest fifth", "Cheaper than median", "Dearer than median"))
     else:
         out["peers"] = ["n", "N/A", f"Fewer than {R.PEER_MIN} industry peers with a yield", "N/A"]
@@ -146,7 +146,7 @@ def c_insider(ev):
         return list(NA)
     if v["n"] == 0:
         return ["n", "None", "No open-market buys or discretionary sales in Form 4s filed in the 180 days to the "
-                "month-end", "None"]
+                "scan", "None"]
     big = v["largest"]
     note = (f"Open-market buys {money(v['buy'])}, discretionary sales {money(v['sell'])}"
             + (f", plan / option-exercise sales {money(v['plan'])} (not counted)" if v["plan"] else "")
@@ -205,7 +205,7 @@ def evaluate(kind, ev, ins_through, months_d, rets, index_sym):
     call_i, call_date, upgraded = ev["i"], ev["d"], None
     if verdict == "close" and ev.get("top_later"):
         fd = ev["top_later"][0][4]
-        j = bisect_left(months_d, fd)                 # first month-end on or after the 13F filing
+        j = bisect_left(months_d, fd)                 # first scan on or after the 13F filing
         if j < len(months_d):
             call_i, call_date = j, fd
             verdict, upgraded = "overdone", f"Watch until {fd}: a top performer owner's 13F filed then"
@@ -226,7 +226,7 @@ def evaluate(kind, ev, ins_through, months_d, rets, index_sym):
         return out, None
     vals, complete, last_day, stopped = own
     out["entry_date"] = rets.e.get(rets.months[call_i]) if call_i < len(rets.months) else None
-    out["path"] = [round(v * 100, 2) for v in vals]
+    out["path"] = monthly(vals)
     out["ret"], out["ret_to"], out["played"] = round(vals[-1] * 100, 1), last_day, complete
     if stopped:
         out["stopped"] = stopped
@@ -237,11 +237,11 @@ def evaluate(kind, ev, ins_through, months_d, rets, index_sym):
             sims.append([min(v, CAP) for v in p[0]])
     if sims:
         cp = [sum(s_[k] for s_ in sims) / len(sims) for k in range(len(vals))]
-        out["ctrl_path"] = [round(v * 100, 2) for v in cp]
+        out["ctrl_path"] = monthly(cp)
         out["ctrl_ret"] = round(cp[-1] * 100, 1)
     ip = rets.path(index_sym, index_sym, call_i, index=True)
     if ip[0] is not None and len(ip[0]) == len(vals):
-        out["idx_path"] = [round(v * 100, 2) for v in ip[0]]
+        out["idx_path"] = monthly(ip[0])
         out["idx_ret"] = round(ip[0][-1] * 100, 1)
     if complete:
         out["outcome"] = R.outcome(vals[-1])
@@ -249,6 +249,15 @@ def evaluate(kind, ev, ins_through, months_d, rets, index_sym):
     if complete and sims and verdict != "tbu":
         learn = {"y": vals[-1] - cp[-1], "abs": vals[-1], "end": last_day}
     return out, learn
+
+
+def monthly(vals):
+    """Cumulative returns per scan -> one point per month after buying (and the latest point of an open event)."""
+    step = R.PER_YEAR // 12
+    out = vals[::step]
+    if (len(vals) - 1) % step:
+        out = out + [vals[-1]]
+    return [round(v * 100, 2) for v in out]
 
 
 def write(kind, items):

@@ -131,7 +131,42 @@ def load(ym):
 def months():
     if not os.path.isdir(P.PANEL):
         return []
-    return sorted(f[:7] for f in os.listdir(P.PANEL) if f.endswith(".json.gz"))
+    return sorted(f[:-len(".json.gz")] for f in os.listdir(P.PANEL) if f.endswith(".json.gz"))
+
+
+# ------------------------------------------------------------------ the scan grid (twice a month)
+SETTLE_DAYS = 3          # a scan day counts once its prices and the next day's open are surely out
+
+
+def nominal_scans(start, until):
+    """Nominal scan dates (the 15th and the month's last day) from month `start` (y, m) to day `until`."""
+    out, (y, m) = [], start
+    while date(y, m, 1) <= until:
+        last = (date(y + (m == 12), m % 12 + 1, 1) - timedelta(days=1))
+        for n in (date(y, m, 15), last):
+            if n <= until:
+                out.append(n)
+        y, m = (y + 1, 1) if m == 12 else (y, m + 1)
+    return out
+
+
+def latest_scan(today):
+    return nominal_scans((today.year - 1, today.month), today - timedelta(days=SETTLE_DAYS))[-1]
+
+
+def scan_grid(btp, start, today):
+    """[{'ym': scan day (period id), 'd', 'bars_d', 'e', 'bars_e'}]: for each nominal date the last trading day on or
+    before it (d) and the next trading day (e, entry). Unadjusted 'all US stocks' bars, cached per day."""
+    out = []
+    for n in nominal_scans(start, today - timedelta(days=SETTLE_DAYS)):
+        d, bd = btp._first_day_with_bars(n, -1)
+        if not d or (out and d <= out[-1]["d"]):
+            continue
+        e, be = btp._first_day_with_bars(date.fromisoformat(d) + timedelta(days=1), +1)
+        if not e:
+            continue
+        out.append({"ym": d, "d": d, "bars_d": bd, "e": e, "bars_e": be})
+    return out
 
 
 # ------------------------------------------------------------------ the grid (shared with qs/validate.py's format)

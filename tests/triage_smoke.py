@@ -74,22 +74,22 @@ def world(seed=5):
     sym = {c: f"S{c}" for c in ciks}
     mcap0 = {c: math.exp(rnd.uniform(math.log(4e8), math.log(6e10))) for c in ciks}
     price = {c: mcap0[c] / _shares(facts[c]) for c in ciks}
-    crash = {c: (rnd.randint(30, 95) if rnd.random() < 0.6 else None) for c in ciks}
-    grid, d, k = [], date(2018, 1, 31), 0
-    while d <= date(2026, 9, 30):
+    from triage.panel import nominal_scans
+    scans = nominal_scans((2018, 1), date(2026, 9, 30))
+    crash = {c: (rnd.randint(60, 190) if rnd.random() < 0.6 else None) for c in ciks}
+    grid = []
+    for k, d in enumerate(scans):
         bars_d, bars_e = {}, {}
         for c in ciks:
-            shock = -0.55 if (crash[c] == k or (c == ciks[0] and k == 104)) else (0.25 if crash[c] and 3 <= k - crash[c] <= 6 else 0.0)
-            price[c] *= math.exp(rnd.gauss(0.006, 0.07) + shock)
+            shock = -0.55 if (crash[c] == k or (c == ciks[0] and k == len(scans) - 1)) else \
+                (0.18 if crash[c] and 6 <= k - crash[c] <= 12 else 0.0)
+            price[c] *= math.exp(rnd.gauss(0.003, 0.05) + shock)
             bars_d[sym[c]] = [price[c], price[c], 2e6, price[c]]
             bars_e[sym[c]] = [price[c] * 1.002, price[c], 2e6, price[c]]
-        for s, px in (("SPY", 400 * math.exp(0.007 * k)), ("IWM", 180 * math.exp(0.005 * k))):
+        for s, px in (("SPY", 400 * math.exp(0.0035 * k)), ("IWM", 180 * math.exp(0.0025 * k))):
             bars_d[s], bars_e[s] = [px, px, 1e7, px], [px, px, 1e7, px]
         e = d + timedelta(days=1)
-        grid.append({"ym": d.strftime("%Y-%m"), "d": d.isoformat(), "e": e.isoformat(), "bars_d": bars_d, "bars_e": bars_e})
-        d = (d.replace(day=28) + timedelta(days=4)).replace(day=1)
-        d = (d.replace(day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)
-        k += 1
+        grid.append({"ym": d.isoformat(), "d": d.isoformat(), "e": e.isoformat(), "bars_d": bars_d, "bars_e": bars_e})
     univ = {g["d"]: {c: {"tickers": [sym[c]], "type": "CS", "ex": "XNAS", "name": facts[c].get("entityName")}
                      for c in ciks} for g in grid}
     return facts, filings, sym, grid, univ
@@ -122,9 +122,9 @@ def owners_and_insiders(P, ciks, grid, rnd):
 
 
 def factors(grid, rnd):
-    return {g["ym"]: {"Mkt-RF": rnd.gauss(0.006, 0.04), "SMB": rnd.gauss(0, 0.02), "HML": rnd.gauss(0, 0.02),
+    return {ym: {"Mkt-RF": rnd.gauss(0.006, 0.04), "SMB": rnd.gauss(0, 0.02), "HML": rnd.gauss(0, 0.02),
                       "RMW": rnd.gauss(0, 0.015), "CMA": rnd.gauss(0, 0.015), "UMD": rnd.gauss(0, 0.03), "RF": 0.002}
-            for g in grid}
+            for ym in sorted({g["e"][:7] for g in grid})}
 
 
 def debug_played(out):
@@ -175,20 +175,20 @@ def run(check, demo_dir=None):
 
     # no look-ahead: an early month's panel is unchanged when every fact filed later is deleted
     from qs.pit import facts_as_of
-    cut_ym = months[40]
-    cut_d = grid[40]["d"]
+    cut_ym = months[80]
+    cut_d = grid[80]["d"]
     cut = {c: facts_as_of(f, cut_d) for c, f in facts.items()}
     early = PN.load(cut_ym)["companies"]
     shutil.rmtree(bt.COMP_DIR)
     keep_panel = P.PANEL
     P.PANEL = os.path.join(tmp, "panel_cut")
-    bt.run_company_pass(grid[:41], univ, cfg, lambda c: cut.get(c), lambda c: filings.get(c), log=lambda *a: None)
-    PN.build(grid[:41], univ, cfg, {}, log=lambda *a: None)
+    bt.run_company_pass(grid[:81], univ, cfg, lambda c: cut.get(c), lambda c: filings.get(c), log=lambda *a: None)
+    PN.build(grid[:81], univ, cfg, {}, log=lambda *a: None)
     again = PN.load(cut_ym)["companies"]
     check("no look-ahead: panel unchanged after deleting every fact filed later", again == early)
     P.PANEL = keep_panel
     shutil.rmtree(bt.COMP_DIR)
-    bt.run_company_pass(grid[:41], univ, cfg, lambda c: facts.get(c), lambda c: filings.get(c), log=lambda *a: None)
+    bt.run_company_pass(grid[:81], univ, cfg, lambda c: facts.get(c), lambda c: filings.get(c), log=lambda *a: None)
     bt.run_company_pass(grid, univ, cfg, lambda c: facts.get(c), lambda c: filings.get(c), log=lambda *a: None)
     import gzip as _gz
     import pickle
@@ -204,7 +204,7 @@ def run(check, demo_dir=None):
             return None
     RT.build(grid, StubBTP(), {}, {}, log=lambda *a: None)
     idx = read_json(os.path.join(P.RETURNS, "index.json.gz"))
-    check("returns: index ETF months", len(idx) == len(grid) - 1 and abs(idx[months[0]]["SPY"] - (math.exp(0.007) - 1)) < 1e-6)
+    check("returns: index ETF months", len(idx) == len(grid) - 1 and abs(idx[months[0]]["SPY"] - (math.exp(0.0035) - 1)) < 1e-6)
     owners_and_insiders(P, ciks, grid, rnd)
     last = grid[-1]
     mark = {"day": "2026-10-20", "closes": {s: b[1] * 1.03 for s, b in last["bars_d"].items()}}
@@ -234,7 +234,7 @@ def run(check, demo_dir=None):
         by_cik = {}
         for it in sorted(kd["items"], key=lambda x: x["ym"]):
             j = months.index(it["ym"])
-            if it["cik"] in by_cik and j - by_cik[it["cik"]] < R.COOLDOWN_MONTHS:
+            if it["cik"] in by_cik and j - by_cik[it["cik"]] < R.COOLDOWN:
                 bad.append((kind, it["id"], "cooldown"))
             by_cik[it["cik"]] = j
     check("events: trigger crossed, backend met, 6-month cooldown", not bad and ok > 0, str(bad[:3]))
@@ -266,7 +266,7 @@ def run(check, demo_dir=None):
         print([(k, x["id"], x["verdict"], x["why"]) for k, kd in out["kinds"].items() for x in kd["items"] if x["date"] >= "2026-08-01"])
     check("outcomes: similar stocks and index alongside", sum(1 for x in played if x.get("ctrl_ret") is not None
                                                               and x.get("idx_ret") is not None) == len(played))
-    ev0 = next(e for e in E.detect(months[:60], log=lambda *a: None)["hidden"] if e["sim"])
+    ev0 = next(e for e in E.detect(months[:120], log=lambda *a: None)["hidden"] if e["sim"])
     check("similar stocks: up to 10, never the company itself", len(ev0["sim"]) <= 10 and ev0["cik"] not in ev0["sim"])
 
     # owners: only 13Fs whose deadline had passed and that were filed by the date

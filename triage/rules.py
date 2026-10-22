@@ -6,13 +6,14 @@ Three triages share one method (the shape of the biotech crash/slide triage):
   1. Backend requirements decide which stocks are covered at all. They never move a call.
      US common stock (10-K filer, USD, NYSE / Nasdaq / NYSE American; no funds, REITs, banks or insurers),
      enough years of SEC data, a recent annual report, size, trading volume, leverage.
-  2. An event dates the opportunity, from month-end data only:
-       hidden    the month-end close is 40%+ below the highest of the previous 12 month-end closes
+  2. An event dates the opportunity. Scans run twice a month, on the last trading day on or before the 15th and on
+     the last trading day of the month, with data known that day only:
+       hidden    the close is 40%+ below the highest close of the previous 12 months' scans
        emerging  the earnings yield (EBITDA / EV; EBIT / EV when depreciation is half of EBITDA or more) enters
-       core      (EBIT / EV) the cheapest fifth of the company's own last 5 years of month-ends (24+ needed), or the
-                 cheapest fifth of its industry peers that month
-     The event is the first month the condition holds after a month it did not, at least 6 months after the
-     company's previous event of the same triage.
+       core      (EBIT / EV) the cheapest fifth of the company's own scans over the last 5 years (2 years needed), or
+                 the cheapest fifth of its industry peers that day
+     The event is the first scan the condition holds after a scan it did not, at least 6 months after the company's
+     previous event of the same triage.
   3. Cells score the event against the thesis: green +1, neutral or N/A 0, red -1, times the cell's weight.
      Score = sum / 100, from -1 to +1. Call:
        Avoid           a hard Avoid (below), or score <= AVOID_AT
@@ -21,13 +22,16 @@ Three triages share one method (the shape of the biotech crash/slide triage):
                        (filed after the event, by the 45-day deadline) reports it at 3%+ of its portfolio; its return
                        then counts from the next entry day after that filing.
        TBU             13F or insider data for that date not loaded yet
-  4. Outcome: total return from the entry (open of the first trading day after the month-end) to 12 months later,
+  4. Outcome: total return from the entry (open of the first trading day after the scan) to 12 months later,
      against the 10 most similar US stocks bought the same day and an index ETF.
 """
 
 BUY_AT, AVOID_AT = 0.30, -0.10
+PER_YEAR = 24                        # scans a year: mid-month (last trading day on or before the 15th) and month-end
 COOLDOWN_MONTHS = 6
-OWN_PAST_MONTHS, OWN_PAST_MIN = 60, 24
+OWN_PAST_MONTHS, OWN_PAST_MIN_MONTHS = 60, 24
+COOLDOWN = COOLDOWN_MONTHS * PER_YEAR // 12          # in scans
+OWN_PAST, OWN_PAST_MIN = OWN_PAST_MONTHS * PER_YEAR // 12, OWN_PAST_MIN_MONTHS * PER_YEAR // 12
 CHEAP_PCTL = 0.80                    # cheapest fifth: yield above 80% of the comparison values
 PEER_MIN = 8                         # peers needed in a group (4-digit SIC, else 3-, else 2-digit)
 PEER_MIN_MCAP = 100e6
@@ -40,7 +44,7 @@ FUND_MIN_AUM, FUND_MIN_WEIGHT, FUND_MAX_POSITIONS = 100e6, 0.03, 1000
 # top performer owners: ranked on past events of all three triages they held at 3%+ (walk-forward)
 TOP_N, TOP_MIN_COMPANIES, TOP_PRIOR_PLAYS, TOP_WEIGHT_CAP, TOP_CONC_CAP, TOP_HIT = 20, 5, 5, 0.20, 2.0, 0.10
 # insiders: open-market buys (P) minus discretionary sales (S, not under a 10b5-1 plan, not on an option-exercise day)
-# filed in the 180 days up to the month-end; material = the larger of $25k and 0.01% of market cap
+# filed in the 180 days up to the scan; material = the larger of $25k and 0.01% of market cap
 INSIDER_DAYS, INSIDER_MIN_USD, INSIDER_MIN_MCAP_SHARE = 180, 25_000, 0.0001
 
 INDEX = {"hidden": ("SPY", "S&P 500 (SPY)"), "emerging": ("IWM", "Russell 2000 (IWM)"),
@@ -51,7 +55,7 @@ KINDS = {
         "label": "Hidden Earnings",
         "thesis": "A profitable business whose share price has collapsed. If the business still earns and generates "
                   "cash, and is cheap, the fear should fade and the price recover.",
-        "event": "the month-end close is 40%+ below the highest of the previous 12 month-end closes",
+        "event": "the close is 40%+ below the highest close of the previous 12 months' scans (mid-month and month-end)",
         "universe": "broad",
         "backend": {"min_years": 5, "min_mcap": 100e6, "max_mcap": None, "min_adv": 200e3, "max_lev": 3.0,
                     "min_revenue": None},
@@ -74,7 +78,7 @@ KINDS = {
                   "issuing many shares. Such companies rarely look cheap; this triage waits until it is cheap against "
                   "its own past or its industry.",
         "event": "its EBITDA yield (EBITDA / EV; EBIT / EV when depreciation is half of EBITDA or more) enters the "
-                 "cheapest fifth of its own last 5 years of month-ends, or of its industry peers that month",
+                 "cheapest fifth of its own last 5 years of scans, or of its industry peers that day",
         "universe": "emerging",
         "backend": {"min_years": 4, "min_mcap": 150e6, "max_mcap": 10e9, "min_adv": 200e3, "max_lev": 2.5,
                     "min_revenue": None},
@@ -97,8 +101,8 @@ KINDS = {
         "thesis": "A durable business with high, persistent returns on capital that converts profit into cash. "
                   "Such businesses rarely look cheap; this triage waits until it is cheap against its own past or "
                   "its industry, and checks that profits aren't falling.",
-        "event": "its earnings yield (EBIT / EV) enters the cheapest fifth of its own last 5 years of month-ends, or "
-                 "of its industry peers that month",
+        "event": "its earnings yield (EBIT / EV) enters the cheapest fifth of its own last 5 years of scans, or of its "
+                 "industry peers that day",
         "universe": "core",
         "backend": {"min_years": 8, "min_mcap": 300e6, "max_mcap": None, "min_adv": 1e6, "max_lev": 3.0,
                     "min_revenue": 200e6},

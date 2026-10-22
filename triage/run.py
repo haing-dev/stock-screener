@@ -1,7 +1,7 @@
 """python -m triage.run <step>
 
 Steps (each resumable; work kept under cache/tri and cache/bt):
-  prices    Massive monthly grid (month-end + next trading day) for MASSIVE_HISTORY_YEARS, tickers incl. delisted,
+  prices    Massive scan grid (mid-month and month-end + next trading day) for MASSIVE_HISTORY_YEARS, tickers incl. delisted,
             splits, dividends; the US universe of each month (NYSE, Nasdaq, NYSE American)
   prepare   SEC bulk files -> point-in-time facts and filing histories of every company in the universe
   panel     point-in-time metrics per company and month (qs/backtest company pass) -> cache/tri/panel
@@ -10,9 +10,9 @@ Steps (each resumable; work kept under cache/tri and cache/bt):
   mark      the latest trading day's closes (one Massive request)
   build     events, calls, outcomes, statistics -> cache/tri/out/site.json.gz
   site      the static site (triage_site/), data encrypted with PORTAL_PASSWORD
-  monthly   everything above, in order
+  monthly   everything above, in order (a full scan: after each mid-month and month-end)
   daily     mark, build, site
-  auto      monthly when a new month-end is available, else daily
+  auto      a full scan when a new scan date (15th or month-end) has settled, else daily
 """
 import argparse
 import os
@@ -59,9 +59,8 @@ def step_prices(cfg, log=print):
     today = m.today
     years = int(os.environ.get("MASSIVE_HISTORY_YEARS", "2"))
     start = _months_back(today, years)
-    last_full = today.replace(day=1) - timedelta(days=1)
-    log(f"Price grid {start[0]}-{start[1]:02d} .. {last_full:%Y-%m} (Massive history: {years} years)")
-    grid = btp.grid(start, (last_full.year, last_full.month))
+    log(f"Scan grid (mid-month and month-end) from {start[0]}-{start[1]:02d} (Massive history: {years} years)")
+    grid = PN.scan_grid(btp, start, today)
     btp.tickers()
     since = date(start[0], start[1], 1) - timedelta(days=800)
     btp.splits(since.isoformat())
@@ -70,7 +69,7 @@ def step_prices(cfg, log=print):
     for g in grid:
         univ[g["d"]] = {str(c): u for c, u in btp.universe(g["d"], g["bars_d"], PN.EXCHANGES, left).items()}
     PN.save_grid(grid, univ)
-    log(f"  {len(grid)} months; left out (all months): " + ", ".join(f"{k} {v}" for k, v in sorted(left.items())))
+    log(f"  {len(grid)} scans; left out (all scans): " + ", ".join(f"{k} {v}" for k, v in sorted(left.items())))
     return grid
 
 
@@ -170,13 +169,13 @@ DAILY = ["mark", "build", "site"]
 
 
 def _done_path():
-    return os.path.join(P.TRI, "monthly_done.json.gz")
+    return os.path.join(P.TRI, "scan_done.json.gz")
 
 
 def needs_monthly():
-    """True until a monthly run has finished for the last complete month (an interrupted run resumes)."""
-    last_full = (date.today().replace(day=1) - timedelta(days=1)).strftime("%Y-%m")
-    return ((read_json(_done_path()) or {}).get("ym") or "") < last_full
+    """True until a full run has finished for the latest scan date (mid-month or month-end; an interrupted run
+    resumes)."""
+    return ((read_json(_done_path()) or {}).get("scan") or "") < PN.latest_scan(date.today()).isoformat()
 
 
 def main(argv=None):
@@ -193,8 +192,7 @@ def main(argv=None):
         STEPS[s](cfg)
     if steps == MONTHLY:
         from qs.backtest_support import write_json
-        write_json(_done_path(), {"ym": (date.today().replace(day=1) - timedelta(days=1)).strftime("%Y-%m"),
-                                  "at": date.today().isoformat()})
+        write_json(_done_path(), {"scan": PN.latest_scan(date.today()).isoformat(), "at": date.today().isoformat()})
 
 
 if __name__ == "__main__":

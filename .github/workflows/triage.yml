@@ -1,24 +1,28 @@
 name: Triage
 # Quality Triage (triage/): Hidden Earnings, Emerging Compounders, Core Compounders.
-# Every weekday after the US close: the open events are marked to the latest close and the site is rebuilt. After a
-# month-end (first run of a new month): the full monthly pipeline (prices, SEC bulk data, panel, returns, 13F and
-# insider data sets) finds that month's events and calls. By hand: Actions > Triage > Run workflow.
+# Every weekday after the US close: the open events are marked to the latest close and the site is rebuilt. Twice a
+# month, once a scan date (the 15th, the month's last day) has settled: the full scan (prices, SEC bulk data, panel,
+# returns, 13F and insider data sets) finds new events and calls. Also runs on a push to main that changes triage/
+# (settings in triage/settings.json). By hand: Actions > Triage > Run workflow.
 # Site: branch 'site' (Cloudflare Worker "stock-screener"). Live calls: branch 'triage-record' (append-only).
 # Backtest length follows the Massive plan: free = 2 years of prices (about 1 year of results); Developer = 10.
 on:
   schedule:
     - cron: "43 23 * * 1-5"
+  push:
+    branches: [main]
+    paths: ["triage/**", ".github/workflows/triage.yml"]
   workflow_dispatch:
     inputs:
       step:
         description: "auto (monthly after a month-end, else daily), monthly, daily, or one step: prices, prepare, panel, returns, owners, mark, build, site"
-        default: "auto"
+        default: ""
       history_years:
-        description: "Years of price history the Massive plan allows (Basic 2, Starter 5, Developer 10, Advanced 20)"
-        default: "2"
+        description: "Years of price history the Massive plan allows (Basic 2, Starter 5, Developer 10, Advanced 20); empty = triage/settings.json"
+        default: ""
       per_minute:
-        description: "Massive requests per minute (free plan 5; paid plans 100)"
-        default: "5"
+        description: "Massive requests per minute (free plan 5; paid plans 100); empty = triage/settings.json"
+        default: ""
 
 concurrency:
   group: triage
@@ -37,12 +41,20 @@ jobs:
       MASSIVE_API_KEY: ${{ secrets.MASSIVE_API_KEY }}
       OPENFIGI_API_KEY: ${{ secrets.OPENFIGI_API_KEY }}
       PORTAL_PASSWORD: ${{ secrets.PORTAL_PASSWORD }}
-      MASSIVE_HISTORY_YEARS: ${{ inputs.history_years || '2' }}
-      MASSIVE_PER_MINUTE: ${{ inputs.per_minute || '5' }}
       TRIAGE_RECORD_DIR: ${{ github.workspace }}/triage_record
       PYTHONUNBUFFERED: "1"
     steps:
       - uses: actions/checkout@v4
+
+      - name: Settings (manual inputs, else triage/settings.json)
+        run: |
+          s() { python3 -c "import json;print(json.load(open('triage/settings.json')).get('$1',''))"; }
+          echo "TRIAGE_STEP=${{ inputs.step }}" >> $GITHUB_ENV
+          [ -n "${{ inputs.step }}" ] || echo "TRIAGE_STEP=$(s step)" >> $GITHUB_ENV
+          echo "MASSIVE_HISTORY_YEARS=${{ inputs.history_years }}" >> $GITHUB_ENV
+          [ -n "${{ inputs.history_years }}" ] || echo "MASSIVE_HISTORY_YEARS=$(s history_years)" >> $GITHUB_ENV
+          echo "MASSIVE_PER_MINUTE=${{ inputs.per_minute }}" >> $GITHUB_ENV
+          [ -n "${{ inputs.per_minute }}" ] || echo "MASSIVE_PER_MINUTE=$(s per_minute)" >> $GITHUB_ENV
 
       - name: Check the secrets are set
         run: |
@@ -79,7 +91,10 @@ jobs:
         run: git clone -q --depth 1 --branch triage-record "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" triage_record || mkdir -p triage_record
 
       - name: Run
-        run: bash scripts/run_logged.sh python -m triage.run "${{ inputs.step || 'auto' }}"
+        shell: bash
+        run: |
+          set -o pipefail
+          bash scripts/run_logged.sh python -m triage.run "${TRIAGE_STEP:-auto}" 2>&1 | tee triage_run.log
 
       - name: Keep the archived portal's last build (branch 'site-archive-v2.9', once)
         run: |
@@ -113,6 +128,35 @@ jobs:
           if git diff --cached --quiet; then echo "no new calls"; exit 0; fi
           git commit -q -m "calls $(date -u +%Y-%m-%dT%H:%MZ)"
           for i in 1 2 3; do git push -q origin triage-record && break; git pull -q --rebase origin triage-record || true; sleep 5; done
+
+      - name: Run status for the maintainer (branch 'triage-status', one commit, force-pushed)
+        if: always()
+        run: |
+          mkdir -p status_out
+          {
+            echo "# Triage run ${{ github.run_id }}"
+            echo "event: ${{ github.event_name }} · step: ${TRIAGE_STEP:-auto} · history_years: ${MASSIVE_HISTORY_YEARS} · finished: $(date -u '+%Y-%m-%d %H:%M UTC')"
+            echo "job status: ${{ job.status }}"
+            echo; echo '```'
+            tail -n 200 triage_run.log 2>/dev/null | sed -E 's/(apiKey=)[^& ]+/\1.../g; s/(sk-ant-[A-Za-z0-9_-]{6})[A-Za-z0-9_-]+/\1.../g'
+            echo '```'
+          } > status_out/status.md
+          python3 - <<'PY' >> status_out/status.md || true
+          import gzip, json, os
+          p = "cache/tri/out/site.json.gz"
+          if os.path.exists(p):
+              d = json.load(gzip.open(p, "rt"))
+              print("\n## Built data")
+              print(f"scans {d.get('months')} · prices to {d.get('mark')}")
+              for k, v in d["kinds"].items():
+                  calls = {c: sum(1 for x in v["items"] if x["verdict"] == c) for c in ("overdone", "close", "justified", "tbu")}
+                  print(f"- {k}: {len(v['items'])} events, {sum(1 for x in v['items'] if x.get('played'))} with a full year, {calls}")
+          PY
+          cd status_out
+          git init -q -b triage-status
+          git -c user.name=triage-bot -c user.email=triage-bot@users.noreply.github.com add -A
+          git -c user.name=triage-bot -c user.email=triage-bot@users.noreply.github.com commit -q -m "status ${{ github.run_id }}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" triage-status || true
 
       - name: Drop the SEC bulk files before caching (re-downloaded each month)
         if: always()

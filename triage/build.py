@@ -1,7 +1,7 @@
 """Put it together: events -> owners and insiders -> outcomes -> top performer owners -> calls -> statistics.
 
 Output: cache/tri/out/<kind>.json.gz (scored events) and cache/tri/out/site.json (what the site shows).
-Live calls: <record dir>/ledger.csv gets one row each time a recent event (month-end within 45 days) gets a call or
+Live calls: <record dir>/ledger.csv gets one row each time a recent event (scan within 45 days) gets a call or
 a new call, with the time of the build; the workflow pushes it to branch 'triage-record' (append-only), so the
 record of calls made before their outcome was known can be checked later.
 """
