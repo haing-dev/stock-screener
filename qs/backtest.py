@@ -43,12 +43,18 @@ def sec_ticker(sym):
 
 
 # ====================================================================== step 1: companies
-def company_pass(cik, dates, univ_by_date, cfg, load_facts, load_filings):
-    """{'dates': {d: [vm, vi]}, 'vm': [metrics version or {'stage': why}], 'vi': [profile version]} for one CIK."""
+def company_pass(cik, dates, univ_by_date, cfg, load_facts, load_filings, prev=None):
+    """{'dates': {d: [vm, vi]}, 'vm': [metrics version or {'stage': why}], 'vi': [profile version]} for one CIK.
+    prev: an earlier result covering the dates before these (a monthly run adds only the new month-ends; facts
+    filed later never change an earlier date, so the stored versions stay valid)."""
     fs = load_facts(cik)
     fl = load_filings(cik)
-    out = {"dates": {}, "vm": [], "vi": []}
-    prev_key, prev_info = None, None
+    if prev and prev.get("dates") and "key" in prev and all(d > max(prev["dates"]) for d in dates):
+        out = {"dates": dict(prev["dates"]), "vm": list(prev["vm"]), "vi": list(prev["vi"])}
+        prev_key, prev_info = prev["key"], (prev["vi"][-1] if prev["vi"] else None)
+    else:
+        out = {"dates": {}, "vm": [], "vi": []}
+        prev_key, prev_info = None, None
     for d in dates:
         dd = _dd(d)
         tickers = [sec_ticker(t) for t in univ_by_date[d][cik]["tickers"]]
@@ -93,6 +99,7 @@ def company_pass(cik, dates, univ_by_date, cfg, load_facts, load_filings):
                                           "latest_end": m.get("latest_fy_end")})
             prev_key = key
         out["dates"][d] = [len(out["vm"]) - 1, vi]
+    out["key"] = prev_key
     return out
 
 
@@ -106,6 +113,7 @@ def run_company_pass(grid, univ_by_date, cfg, load_facts, load_filings, log=prin
     log(f"Company pass: {n} companies")
     for c, dates in sorted(by_cik.items()):
         path = os.path.join(COMP_DIR, f"{c}.pkl.gz")
+        old = None
         if os.path.exists(path) and not refresh:
             try:
                 with gzip.open(path, "rb") as f:
@@ -114,8 +122,12 @@ def run_company_pass(grid, univ_by_date, cfg, load_facts, load_filings, log=prin
                     done += 1
                     continue
             except (OSError, EOFError, pickle.UnpicklingError):
-                pass
-        res = company_pass(c, sorted(dates), univ_by_date, cfg, load_facts, load_filings)
+                old = None
+        new_dates = sorted(d for d in dates if not old or d not in old["dates"])
+        if old and old.get("dates") and new_dates and new_dates[0] > max(old["dates"]):
+            res = company_pass(c, new_dates, univ_by_date, cfg, load_facts, load_filings, prev=old)
+        else:
+            res = company_pass(c, sorted(dates), univ_by_date, cfg, load_facts, load_filings)
         with gzip.open(path + ".tmp", "wb") as f:
             pickle.dump(res, f, protocol=pickle.HIGHEST_PROTOCOL)
         os.replace(path + ".tmp", path)
@@ -177,8 +189,9 @@ def _counts(r):
     return met, ev
 
 
-def formation(g, grid_index, univ, store, cfg, splits, fx, hist_closes):
-    """Evaluate every screen at formation day g['d']. hist_closes: {d: bars} of earlier month-ends (12-month high)."""
+def contexts_at(g, univ, store, cfg, splits, fx, hist_closes):
+    """Every company's context at formation day g['d'] (point-in-time metrics + that day's prices), as the live
+    pipeline builds it: (ctxs, subs, extra). Shared by the frozen-screen formation and the triage panel."""
     d = g["d"]
     dd = _dd(d)
     bars = g["bars_d"]
@@ -255,7 +268,13 @@ def formation(g, grid_index, univ, store, cfg, splits, fx, hist_closes):
                   listing_type=quote.get("listing_type"))
         ctx.update(v)
         ctx["_sym"] = sym
+    return ctxs, subs, extra
 
+
+def formation(g, grid_index, univ, store, cfg, splits, fx, hist_closes):
+    """Evaluate every screen at formation day g['d']. hist_closes: {d: bars} of earlier month-ends (12-month high)."""
+    d = g["d"]
+    ctxs, subs, extra = contexts_at(g, univ, store, cfg, splits, fx, hist_closes)
     out = {"ym": g["ym"], "d": d, "e": g["e"], "companies": {}, "screens": {}, "grid": {}, "loo": {}, "nodata": {}}
     for c, ctx in ctxs.items():
         x = extra.get(c, {})
@@ -324,18 +343,25 @@ def run_formations(grid, univ_by_date, cfg, splits, log=print, refresh=False):
 
 
 # ====================================================================== step 3: returns
-def run_returns(grid, btp, splits, divs, log=print, last_close_budget=0, priority=None):
+def run_returns(grid, btp, splits, divs, log=print, last_close_budget=0, priority=None, ret_dir=None,
+                companies=None):
     """{ym: {cik: [return, how]}} with how = 'ok' | 'last close' | 'haircut' (no exit price found). Entry: open of g['e'];
     exit: open of the next month's g['e']. priority: CIKs (portfolio members) whose missing exits are looked up
-    first within the request budget."""
-    ensure_dirs(RET_DIR)
+    first within the request budget. companies(ym) -> {cik: {'sym': ...}} (default: the formation file);
+    ret_dir: where the monthly files go (default RET_DIR)."""
+    ret_dir = ret_dir or RET_DIR
+    ensure_dirs(ret_dir)
     spent = 0
     for i in range(len(grid) - 1):
         g, nx = grid[i], grid[i + 1]
-        path = os.path.join(RET_DIR, f"{g['ym']}.json.gz")
+        path = os.path.join(ret_dir, f"{g['ym']}.json.gz")
         if os.path.exists(path):
             continue
-        form = read_json(os.path.join(FORM_DIR, f"{g['ym']}.json.gz"))
+        if companies is not None:
+            comp = companies(g["ym"])
+            form = {"companies": comp} if comp else None
+        else:
+            form = read_json(os.path.join(FORM_DIR, f"{g['ym']}.json.gz"))
         if not form:
             continue
         e0, e1 = g["e"], nx["e"]

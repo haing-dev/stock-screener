@@ -1,0 +1,137 @@
+name: Triage
+# Quality Triage (triage/): Hidden Earnings, Emerging Compounders, Core Compounders.
+# Every weekday after the US close: the open events are marked to the latest close and the site is rebuilt. After a
+# month-end (first run of a new month): the full monthly pipeline (prices, SEC bulk data, panel, returns, 13F and
+# insider data sets) finds that month's events and calls. By hand: Actions > Triage > Run workflow.
+# Site: branch 'site' (Cloudflare Worker "stock-screener"). Live calls: branch 'triage-record' (append-only).
+# Backtest length follows the Massive plan: free = 2 years of prices (about 1 year of results); Developer = 10.
+on:
+  schedule:
+    - cron: "43 23 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      step:
+        description: "auto (monthly after a month-end, else daily), monthly, daily, or one step: prices, prepare, panel, returns, owners, mark, build, site"
+        default: "auto"
+      history_years:
+        description: "Years of price history the Massive plan allows (Basic 2, Starter 5, Developer 10, Advanced 20)"
+        default: "2"
+      per_minute:
+        description: "Massive requests per minute (free plan 5; paid plans 100)"
+        default: "5"
+
+concurrency:
+  group: triage
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  triage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    env:
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      MASSIVE_API_KEY: ${{ secrets.MASSIVE_API_KEY }}
+      OPENFIGI_API_KEY: ${{ secrets.OPENFIGI_API_KEY }}
+      PORTAL_PASSWORD: ${{ secrets.PORTAL_PASSWORD }}
+      MASSIVE_HISTORY_YEARS: ${{ inputs.history_years || '2' }}
+      MASSIVE_PER_MINUTE: ${{ inputs.per_minute || '5' }}
+      TRIAGE_RECORD_DIR: ${{ github.workspace }}/triage_record
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the secrets are set
+        run: |
+          missing=""
+          for v in SEC_USER_AGENT MASSIVE_API_KEY PORTAL_PASSWORD; do
+            if [ -z "${!v}" ]; then missing="$missing $v"; fi
+          done
+          if [ -n "$missing" ]; then
+            echo "::error::Missing repository secrets:$missing (Settings > Secrets and variables > Actions)"; exit 1
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Restore the work cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            cache/bt
+            cache/tri
+            cache/prices/massive/bt
+            cache/prices/massive/mark
+            cache/prices/holders/issuer_map.json.gz
+          key: tri-v1-${{ github.run_id }}
+          restore-keys: |
+            tri-v1-
+            bt-v1-
+
+      - name: Live-call record (branch 'triage-record', if it exists)
+        run: git clone -q --depth 1 --branch triage-record "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" triage_record || mkdir -p triage_record
+
+      - name: Run
+        run: bash scripts/run_logged.sh python -m triage.run "${{ inputs.step || 'auto' }}"
+
+      - name: Keep the archived portal's last build (branch 'site-archive-v2.9', once)
+        run: |
+          if git ls-remote --exit-code origin site-archive-v2.9 >/dev/null 2>&1; then echo "archive already kept"; exit 0; fi
+          if git ls-remote --exit-code origin site >/dev/null 2>&1; then
+            git fetch -q origin site && git push -q origin "refs/remotes/origin/site:refs/heads/site-archive-v2.9" && echo "old site kept on site-archive-v2.9"
+          fi
+
+      - name: Publish the site (branch 'site')
+        run: |
+          if [ ! -f triage_site/data/data.bin ]; then echo "no site built this run"; exit 0; fi
+          cd triage_site
+          git init -q -b site
+          git -c user.name=triage-bot -c user.email=triage-bot@users.noreply.github.com add -A
+          git -c user.name=triage-bot -c user.email=triage-bot@users.noreply.github.com commit -q -m "triage site $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" site
+          echo "Published to branch 'site'."
+
+      - name: Record new live calls (branch 'triage-record', never force-pushed)
+        if: always()
+        run: |
+          [ -f triage_record/ledger.csv ] || { echo "no ledger"; exit 0; }
+          cd triage_record
+          if [ ! -d .git ]; then
+            git init -q -b triage-record
+            git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          fi
+          git config user.name triage-bot
+          git config user.email triage-bot@users.noreply.github.com
+          git add ledger.csv
+          if git diff --cached --quiet; then echo "no new calls"; exit 0; fi
+          git commit -q -m "calls $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git push -q origin triage-record && break; git pull -q --rebase origin triage-record || true; sleep 5; done
+
+      - name: Drop the SEC bulk files before caching (re-downloaded each month)
+        if: always()
+        run: rm -rf cache/bt/bulk cache/tri/owners/_cur.zip
+
+      - name: Save the work cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            cache/bt
+            cache/tri
+            cache/prices/massive/bt
+            cache/prices/massive/mark
+            cache/prices/holders/issuer_map.json.gz
+          key: tri-v1-${{ github.run_id }}
+
+      - name: Delete superseded cache copies
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash scripts/prune_caches.sh tri-v1- bt-v1-

@@ -980,6 +980,19 @@ check("forward record snapshot lists PASS / starred / NEAR per screen with code 
       sum(len(v["pass"]) + len(v["star"]) for v in _snap["screens"].values()) ==
       sum(1 for res in results.values() for r in res.values() if r["class"] == "PASS"))
 
+# triage (triage/): three event-driven screens, weighted calls, point-in-time outcomes, site
+print("\nTriage")
+import triage.rules as TR  # noqa: E402
+check("triage: weights add up to 100 in every triage", all(sum(w for _, _, w in k["cells"]) == 100 for k in TR.KINDS.values()))
+check("triage: score and call follow the written thresholds",
+      TR.call("core", {"own": "g", "roic": "g", "persist": "g"}, [])[0] == "overdone"
+      and TR.call("core", {"own": "g", "roic": "g", "persist": "g"}, ["loss"])[0] == "justified"
+      and TR.call("core", {"roic": "r"}, [])[0] == "justified" and TR.call("core", {"own": "g"}, [])[0] == "close")
+check("triage: bands (higher and lower is better)", TR.band("hidden", "ev_ebit", 9) == "g" and
+      TR.band("hidden", "ev_ebit", 16) == "r" and TR.band("emerging", "growth", 0.10) == "n")
+import triage_smoke  # noqa: E402
+triage_smoke.run(check)
+
 shutil.rmtree(TMP, ignore_errors=True)
 print(f"\n{'ALL TESTS PASSED' if not failures else str(len(failures)) + ' FAILED: ' + ', '.join(failures)}")
 sys.exit(1 if failures else 0)

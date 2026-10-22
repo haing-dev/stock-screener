@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# ARCHIVED with the v2.9 portal (2026-10-22): only the archived workflows call this.
 # Publish after a run:
 #  1. commit data/ (company descriptions + the portal's public salt) to the main branch, retrying on conflicts
 #  2. force-push the built site (site/, with the encrypted data files) to branch 'site' as a single commit,
@@ -20,12 +21,12 @@ if ! git diff --cached --quiet; then
   if [ "$ok" != 1 ]; then echo "::error::could not push data/ to the main branch"; exit 1; fi
 fi
 
-if [ ! -f site/data/meta.bin ]; then
+if [ ! -f archive/portal-v2.9/site/data/meta.bin ]; then
   echo "No portal data was built - nothing to publish."
   exit 0
 fi
 tmp="$(mktemp -d)"
-cp -r site/. "$tmp/"
+cp -r archive/portal-v2.9/site/. "$tmp/"
 cd "$tmp"
 git init -q -b site
 git add -A

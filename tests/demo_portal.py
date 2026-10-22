@@ -155,7 +155,7 @@ def main(out_dir):
     summaries = {c: {"text": SUMMARY[ctxs[c]["ticker"].lower()]} for c in ctxs if ctxs[c]["ticker"].lower() in SUMMARY}
     if os.path.exists(out_dir):
         shutil.rmtree(out_dir)
-    shutil.copytree(os.path.join(ROOT, "site"), out_dir, ignore=shutil.ignore_patterns("data"))
+    shutil.copytree(os.path.join(ROOT, "archive", "portal-v2.9", "site"), out_dir, ignore=shutil.ignore_patterns("data"))
     qp.export_site(state, results, cfg, summaries, "", out_dir=os.path.join(out_dir, "data"), today=TODAY,
                    allow_plain=True, salt_path=os.path.join(TMP, "salt.json"))
     print("Demo portal written to", out_dir)

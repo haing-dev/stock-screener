@@ -2,6 +2,42 @@
 
 Read CLAUDE.md first; this file holds the detail.
 
+## Triage v1.0.0 (22 Oct 2026): the portal replaced by three event-driven triages
+
+Why: the 14 screens are state lists (a company passes for years). That makes them hard to backtest, and they have no
+dated buy point. The triage gives each thesis a dated event and a comparison group. The tests are: do Buy candidates
+beat Avoids and similar stocks over the next 12 months, after factors?
+
+- Events (`triage/episodes.detect`, one pass over the monthly panel, oldest first; a trigger counts only after a month
+  without it; 6-month cooldown):
+  - hidden: the month-end close is 40%+ below the highest of the previous 12 month-end closes;
+  - emerging: EBITDA yield (EBIT/EV when D&A is half of EBITDA or more) in the cheapest fifth of its own last 60
+    month-ends (24+ needed) or of its industry peers (4/3/2-digit SIC, 8+ companies of $100M+);
+  - core: the same with EBIT/EV.
+- Backend (`episodes.backend`): universe (broad / core / emerging SIC rules), years of data, latest FY at most 1.6 years
+  old, verified market cap band, ADV, net debt/EBITDA cap, revenue (core). Only US companies are in the panel: 10-K,
+  USD, Massive type CS, NYSE/Nasdaq/NYSE American.
+- Cells (`triage/score.py`) are coloured by fixed bands (`rules.BANDS`), not learned. The score is the weighted sum of
+  +1/0/-1 divided by 100. Calls: Buy >= +0.30, Avoid <= -0.10 or hard Avoid (operating loss; Emerging: EBITDA not
+  positive).
+- Owners: a 13F conviction position is 3%+ of the portfolio of a $100M+ filer that isn't an index fund, broker, fund
+  house or quant fund (the portal.holders lists). It uses the last quarter whose deadline had passed. Top performers:
+  walk-forward ranking on events of all three triages whose 12 months had ended (hit = beat similar stocks by 10+
+  points), top 20.
+- Insiders: SEC insider data sets, plus a live Form 4 read (EDGAR) for events newer than the latest data set. Net =
+  P minus discretionary S (10b5-1 plan sales and same-day exercise sales left out). Material at max($25K, 0.01% of
+  market cap).
+- Outcome: open of the first trading day after the month-end, monthly returns chained 12 months (`cache/tri/returns`;
+  delisted = last close else -30%, then cash). Open events are marked to the latest close (`triage.run mark`, one
+  Massive request a day). Similar stocks = 10 nearest on market cap, 12-month price change and EBIT/EV percentile
+  ranks, with no event of the same triage in the prior 6 months. Index = SPY (IWM for Emerging).
+- Stats (`triage/stats.py`): calls table, average path, $10k per call year, per-cell evidence (green vs red excess
+  return), and calendar-time portfolios (each call held 12 months) regressed on FF5+UMD with Newey-West t-statistics.
+- Code reuse: `qs/backtest.contexts_at` (split out of `formation`), an incremental company pass (only new month-ends),
+  and `run_returns(..., ret_dir, companies)`.
+- Site: `triage/web` (crash-triage layout: triage tabs; Screener / Backtest / Track record / Method), data encrypted
+  like the portal (Sealer, data/portal_salt.json).
+
 ## v2.9.0 (Oct 2026): validation
 - Pre-registration: `validation/PROTOCOL.md` (data, formation, costs, benchmarks, statistics, mechanical verdicts,
   independent checks), `validation/freeze.json` (rules + behavior fingerprints, `qs/freeze.py`), `validation/CHANGES.md`,

@@ -1,5 +1,5 @@
 """Web portal support: keep the screen state between runs, re-price it daily, and export the (encrypted)
-data files the static site in site/ reads.
+data files the static site in archive/portal-v2.9/site/ reads (archived 2026-10-22).
 
   state  (cache/state/state.json.gz)  - every screened company's metrics ('ctx') and which screens it belongs to,
                                         written by the 15-day screen run, re-priced by the daily job
@@ -22,7 +22,8 @@ from .industry import model_template
 from .screens import BY_ID, SCREENS
 
 STATE_PATH = os.path.join(CACHE_DIR, "state", "state.json.gz")
-SITE_DATA = os.path.join(ROOT, "site", "data")
+SITE_DIR = os.path.join(ROOT, "archive", "portal-v2.9", "site")      # archived 2026-10-22 (triage replaced it)
+SITE_DATA = os.path.join(SITE_DIR, "data")
 PBKDF2_ITER = 250000
 
 # price-dependent fields written by valuation.value() - cleared before every re-pricing
@@ -696,7 +697,7 @@ def export_site(state, results, cfg, summaries, password, out_dir=SITE_DATA, tod
         h.update(name.encode())
         h.update(json.dumps(_clean(obj), default=_jsonable, sort_keys=True, separators=(",", ":")).encode())
     # the site's own code too, so a code-only change (new screen, new card) still publishes
-    site_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "site")
+    site_dir = SITE_DIR
     for root, dirs, fnames in os.walk(site_dir):
         dirs[:] = sorted(d for d in dirs if d != "data")
         for fn in sorted(fnames):
