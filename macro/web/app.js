@@ -271,78 +271,88 @@ function quarters(){
   last.equity = X.exposure[N - 1]; last.now = true;                // the call for the current quarter: latest reading
   return Q;
 }
-function renderExposure(){
-  const Q = quarters(), now = Q[Q.length - 1];
-  $("#xHead").innerHTML = `<span class="q">${qLab(now.q)}</span><b>${now.equity}% equity</b><span>${100 - now.equity}% cash</span>`;
-  $("#xNote").textContent = `Updated as new data come in. Cash earns the 3-month US Treasury bill rate. Returns include dividends; no trading costs or taxes.`;
-  masterChart($("#xChart"), Q);
-}
-function masterChart(el, Q){
-  const w = W(el), narrow = w < 640, m = {l: 52, r: narrow ? 10 : 150, t: 30, b: 22}, h1 = narrow ? 240 : 300, gap = 30, h2 = 80;
-  const h = m.t + h1 + gap + h2 + m.b, n = Q.length;
-  const X_ = k => m.l + (w - m.l - m.r) * k / Math.max(1, n - 1);
-  const vals = Q.flatMap(x => [x.sp, x.rec]).filter(v => v != null);
-  const lo = Math.log(Math.min(...vals)), hi = Math.log(Math.max(...vals));
-  const Y1 = v => m.t + h1 * (1 - (Math.log(v) - lo) / (hi - lo));
-  const y2 = m.t + h1 + gap, Y2 = v => y2 + h2 * (100 - v) / 50;
-  // S&P falls of 15%+ (quarter-end peak to trough) and the recommendation's lead or lag over them
-  const bands = [];
-  let pk = 0;
-  for (let k = 1; k < n; k++) {
-    if (Q[k].sp >= Q[pk].sp) { pk = k; continue; }
-    if (Q[k].sp / Q[pk].sp - 1 <= -0.15) {
-      let tr = k, j = k;
-      while (j < n && Q[j].sp < Q[pk].sp) { if (Q[j].sp < Q[tr].sp) tr = j; j++; }
-      bands.push({a: pk, b: tr, kind: "fall", d: ((Q[tr].rec / Q[pk].rec) - (Q[tr].sp / Q[pk].sp)) * 100});
-      pk = Math.min(j, n - 1); k = j;
-    }
-  }
-  const qi = mo => Q.findIndex(x => x.q === qOf(mo));
-  D.derisk.backtest.episodes.filter(e => e.diff != null && e.diff <= -5).forEach(e => {
-    const a = Math.max(0, qi(e.from) - 1), b = Math.max(a + 1, qi(e.to));
-    if (bands.some(x => x.kind === "fall" && !(b <= x.a || a >= x.b))) return;
-    bands.push({a, b, kind: "miss", d: ((Q[b].rec / Q[a].rec) - (Q[b].sp / Q[a].sp)) * 100});
+function clusters(Q){
+  // each cut (months with part of the money in cash), placed on the quarter axis; d = return vs the S&P 500 over it
+  const qk = {}; Q.forEach((x, k) => { qk[x.q] = k; });
+  const mi = mo => D.months.indexOf(mo);
+  return D.derisk.backtest.episodes.filter(e => e.diff != null).map(e => {
+    const s0 = D.months[mi(e.from) + 1] || e.from, s1 = D.months[mi(e.to) + 1] || e.to;   // months actually held
+    return {a: qk[qOf(s0)] ?? Q.length - 1, b: qk[qOf(s1)] ?? Q.length - 1, d: e.diff, from: e.from, to: e.to};
   });
+}
+function renderExposure(){
+  const Q = quarters(), now = Q[Q.length - 1], C = clusters(Q);
+  Q.forEach((x, k) => { x.d = k ? ((x.rec / Q[k - 1].rec) / (x.sp / Q[k - 1].sp) - 1) * 100 : 0; });
+  const won = C.filter(c => c.d >= 1), lost = C.filter(c => c.d <= -1);
+  const sum = l => l.reduce((a, c) => a + c.d, 0);
+  $("#xHead").innerHTML = `<span class="q">${qLab(now.q)}</span><b>${now.equity}% equity</b><span>${100 - now.equity}% cash</span>`;
+  $("#xScore").innerHTML = `<div class="sc good"><b>+${Math.round(sum(won))} pts</b><span>protected in ${won.length} cuts that paid off (percentage points vs the S&P 500, added up)</span></div>
+    <div class="sc bad"><b>−${Math.abs(Math.round(sum(lost)))} pts</b><span>lost in ${lost.length} false alarms and missed rebounds (added up the same way)</span></div>
+    <div class="sc"><b>${pct(D.derisk.backtest.stats.strategy.maxdd, 0)}</b><span>worst fall with the recommendation, vs ${pct(D.derisk.backtest.stats.sp500.maxdd, 0)} for the S&P 500 (${pct(D.derisk.backtest.stats.strategy.cagr, 1)} vs ${pct(D.derisk.backtest.stats.sp500.cagr, 1)} a year)</span></div>`;
+  $("#xNote").textContent = `Each bar is one quarter: green when holding cash beat staying fully in the S&P 500, red when it cost. Updated as new data come in. Cash earns the 3-month US Treasury bill rate. Returns include dividends; no trading costs or taxes.`;
+  masterChart($("#xChart"), Q, C);
+}
+function masterChart(el, Q, C){
+  const w = W(el), narrow = w < 640, m = {l: 52, r: narrow ? 10 : 150, t: 26, b: 22};
+  const hA = narrow ? 170 : 210, hB = narrow ? 150 : 170, hC = 64, gap = 30, n = Q.length;
+  const yA = m.t, yB = yA + hA + gap, yC = yB + hB + gap, h = yC + hC + m.b;
+  const X_ = k => m.l + (w - m.l - m.r) * k / Math.max(1, n - 1), bw = Math.max(1.5, (w - m.l - m.r) / n - 0.6);
+  const vals = Q.flatMap(x => [x.sp, x.rec]);
+  const lo = Math.log(Math.min(...vals)), hi = Math.log(Math.max(...vals));
+  const YA = v => yA + hA * (1 - (Math.log(v) - lo) / (hi - lo));
+  const dmax = Math.max(10, ...Q.map(x => Math.abs(x.d))), T = niceTicks(-dmax, dmax, 4);
+  const YB = v => yB + hB * (T.hi - v) / (T.hi - T.lo);
+  const YC = v => yC + hC * (100 - v) / 50;
   let g = "";
-  // recessions
-  D.recession.forEach((r, i) => { if (r !== 1 || i < D.months.indexOf(Q[0].q.slice(0, 4) + "-01")) return;
-    const k = Q.findIndex(x => x.q === qOf(D.months[i])); if (k < 0) return;
-    g += `<rect x="${X_(k) - 1}" y="${m.t - 12}" width="${Math.max(2, X_(1) - X_(0))}" height="6" fill="var(--rec)"/>`; });
+  // recessions, as thin bars over the top panel + key
+  D.recession.forEach((r, i) => { if (r !== 1) return; const k = Q.findIndex(x => x.q === qOf(D.months[i])); if (k < 0) return;
+    g += `<rect x="${X_(k) - bw / 2}" y="${yA - 10}" width="${bw + 0.6}" height="6" fill="var(--rec)"/>`; });
   g += recKey(w - 4, 2);
-  bands.forEach(x => { g += `<rect x="${X_(x.a)}" y="${m.t}" width="${Math.max(3, X_(x.b) - X_(x.a))}" height="${h1}" fill="var(${x.kind === "fall" ? "--neu-bg" : "--bad-bg"})"/>`; });
-  [100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000].filter(t => Math.log(t) >= lo && Math.log(t) <= hi).forEach(t => {
-    g += `<line x1="${m.l}" x2="${w - m.r}" y1="${Y1(t)}" y2="${Y1(t)}" stroke="var(--grid)"/><text x="${m.l - 6}" y="${Y1(t) + 3.5}" text-anchor="end">$${t.toLocaleString("en-US")}</text>`; });
-  const path = key => Q.map((x, k) => `${k ? "L" : "M"}${X_(k).toFixed(1)} ${Y1(x[key]).toFixed(1)}`).join("");
+  // shade every cut period across all panels: green = protected, red = cost
+  C.filter(c => Math.abs(c.d) >= 1).forEach(c => {
+    g += `<rect x="${X_(c.a) - bw / 2}" y="${yA}" width="${X_(c.b) - X_(c.a) + bw}" height="${yC + hC - yA}" fill="var(${c.d > 0 ? "--good-bg" : "--bad-bg"})" opacity=".7"/>`; });
+  // panel A: growth of $100
+  [100, 1000, 10000].filter(t => Math.log(t) >= lo && Math.log(t) <= hi).forEach(t => {
+    g += `<line x1="${m.l}" x2="${w - m.r}" y1="${YA(t)}" y2="${YA(t)}" stroke="var(--grid)"/><text x="${m.l - 6}" y="${YA(t) + 3.5}" text-anchor="end">$${t.toLocaleString("en-US")}</text>`; });
+  const path = key => Q.map((x, k) => `${k ? "L" : "M"}${X_(k).toFixed(1)} ${YA(x[key]).toFixed(1)}`).join("");
   g += `<path d="${path("sp")}" fill="none" stroke="var(--ink)" stroke-width="2"/><path d="${path("rec")}" fill="none" stroke="var(--s1)" stroke-width="2.6"/>`;
-  bands.forEach((x, k) => { const cx = (X_(x.a) + X_(x.b)) / 2, yb = Math.min(Y1(Q[x.a].sp), Y1(Q[x.a].rec)) - 8 - (k % 2) * 13;
-    g += `<text class="eplab ${x.d >= 0 ? "pos" : "neg"}" x="${cx}" y="${Math.max(m.t + 10, yb)}" text-anchor="middle">${dlab(x.d)}</text>`; });
   const L = Q[n - 1];
   if (!narrow) {
-    const ys = Y1(L.sp), yr = Y1(L.rec), sep = Math.abs(ys - yr) < 14 ? 7 : 0;
-    g += `<text class="endlab" x="${w - m.r + 8}" y="${yr + 4 + (yr <= ys ? -sep : sep)}" style="fill:var(--s1)">Recommended exposure $${Math.round(L.rec).toLocaleString("en-US")}</text>`;
+    const ys = YA(L.sp), yr = YA(L.rec), sep = Math.abs(ys - yr) < 14 ? 7 : 0;
+    g += `<text class="endlab" x="${w - m.r + 8}" y="${yr + 4 + (yr <= ys ? -sep : sep)}" style="fill:var(--s1)">Recommended $${Math.round(L.rec).toLocaleString("en-US")}</text>`;
     g += `<text class="endlab" x="${w - m.r + 8}" y="${ys + 4 + (ys < yr ? -sep : sep)}">S&P 500 $${Math.round(L.sp).toLocaleString("en-US")}</text>`;
-  } else g += `<text class="lab" x="${m.l}" y="${m.t - 16}"><tspan style="fill:var(--s1)">━ Recommended</tspan>  ━ S&P 500</text>`;
-  g += `<text class="lab" x="${m.l}" y="${narrow ? m.t + 12 : m.t - 16}">${narrow ? "" : "Growth of $100 since " + Q[0].q.slice(0, 4)}</text>`;
-  // portfolio exposure, one bar per quarter
-  const bw = Math.max(1, X_(1) - X_(0));
-  Q.forEach((x, k) => { g += `<rect class="qb" x="${X_(k) - bw / 2}" y="${Y2(x.equity)}" width="${bw}" height="${y2 + h2 - Y2(x.equity)}" fill="var(--s1)" opacity="${x.now ? 0.9 : 0.35}"/>`; });
-  [100, 75, 50].forEach(t => { g += `<line x1="${m.l}" x2="${w - m.r}" y1="${Y2(t)}" y2="${Y2(t)}" stroke="var(--grid)"/><text x="${m.l - 6}" y="${Y2(t) + 3.5}" text-anchor="end">${t}%</text>`; });
-  g += `<text class="lab" x="${m.l}" y="${y2 - 8}">Portfolio exposure (equity share)</text>`;
+  }
+  g += `<text class="lab" x="${m.l}" y="${yA - 14}">Growth of $100 since ${Q[0].q.slice(0, 4)}${narrow ? "" : ""}</text>`;
+  if (narrow) g += `<text class="lab" x="${m.l + 4}" y="${yA + 12}"><tspan style="fill:var(--s1)">━ Recommended</tspan>  ━ S&P 500</text>`;
+  // panel B: gain or loss vs the S&P 500 each quarter
+  T.t.forEach(t => { g += `<line x1="${m.l}" x2="${w - m.r}" y1="${YB(t)}" y2="${YB(t)}" stroke="${t === 0 ? "var(--axis)" : "var(--grid)"}"/><text x="${m.l - 6}" y="${YB(t) + 3.5}" text-anchor="end">${t > 0 ? "+" : t < 0 ? "−" : ""}${Math.abs(t)}%</text>`; });
+  Q.forEach((x, k) => { if (Math.abs(x.d) < 0.05) return; const y0 = YB(0), y1 = YB(x.d);
+    g += `<rect x="${X_(k) - bw / 2}" y="${Math.min(y0, y1)}" width="${bw}" height="${Math.max(1, Math.abs(y1 - y0))}" fill="var(${x.d > 0 ? "--good" : "--bad"})"/>`; });
+  g += `<text class="lab" x="${m.l}" y="${yB - 10}">Protected (green) or lost (red) vs staying fully in the S&P 500</text>`;
+  const big = C.filter(c => Math.abs(c.d) >= (narrow ? 8 : 5));
+  big.forEach((c, k) => { const cx = (X_(c.a) + X_(c.b)) / 2, up = c.d > 0;
+    const y = up ? YB(T.hi) + 10 + (k % 2) * 12 : YB(T.lo) - 4 - (k % 2) * 12;
+    g += `<text class="eplab ${up ? "pos" : "neg"}" x="${cx}" y="${y}" text-anchor="middle">${dlab(c.d)}</text>`; });
+  // panel C: portfolio exposure
+  Q.forEach((x, k) => { g += `<rect x="${X_(k) - bw / 2}" y="${YC(x.equity)}" width="${bw}" height="${yC + hC - YC(x.equity)}" fill="var(--s1)" opacity="${x.now ? 0.95 : 0.4}"/>`; });
+  [100, 50].forEach(t => { g += `<line x1="${m.l}" x2="${w - m.r}" y1="${YC(t)}" y2="${YC(t)}" stroke="var(--grid)"/><text x="${m.l - 6}" y="${YC(t) + 3.5}" text-anchor="end">${t}%</text>`; });
+  g += `<text class="lab" x="${m.l}" y="${yC - 8}">Portfolio exposure (equity share)</text>`;
   let lastX = -1e9;
   Q.forEach((x, k) => { const y = +x.q.slice(0, 4); if (x.q.endsWith("Q1") && y % 5 === 0 && X_(k) - lastX > 40) { g += `<text x="${X_(k)}" y="${h - 5}" text-anchor="middle">${y}</text>`; lastX = X_(k); } });
-  g += `<line class="cx" x1="0" x2="0" y1="${m.t}" y2="${y2 + h2}" stroke="var(--ink3)" visibility="hidden"/><circle class="d1" r="4" fill="var(--ink)" visibility="hidden"/><circle class="d2" r="4.5" fill="var(--s1)" visibility="hidden"/><rect class="hit" x="${m.l - 4}" y="0" width="${w - m.l - m.r + 8}" height="${h}" fill="transparent"/>`;
-  el.innerHTML = `<svg viewBox="0 0 ${w} ${h}" height="${h}" role="img" aria-label="Recommended exposure vs the S&P 500, by quarter">${g}</svg>`;
+  g += `<line class="cx" x1="0" x2="0" y1="${yA}" y2="${yC + hC}" stroke="var(--ink3)" visibility="hidden"/><circle class="d1" r="4" fill="var(--ink)" visibility="hidden"/><circle class="d2" r="4.5" fill="var(--s1)" visibility="hidden"/><rect class="hit" x="${m.l - 4}" y="0" width="${w - m.l - m.r + 8}" height="${h}" fill="transparent"/>`;
+  el.innerHTML = `<svg viewBox="0 0 ${w} ${h}" height="${h}" role="img" aria-label="Where holding cash protected capital and where it cost, by quarter">${g}</svg>`;
   const svg = el.querySelector("svg"), cx = el.querySelector(".cx"), d1 = el.querySelector(".d1"), d2 = el.querySelector(".d2");
   el.querySelector(".hit").addEventListener("pointermove", e => {
     const r = svg.getBoundingClientRect(), px = (e.clientX - r.left) * w / r.width;
-    const k = Math.max(0, Math.min(n - 1, Math.round((px - m.l) / (w - m.l - m.r) * (n - 1)))), x = Q[k];   // snaps to quarters
-    [cx].forEach(l => { l.setAttribute("x1", X_(k)); l.setAttribute("x2", X_(k)); l.setAttribute("visibility", "visible"); });
-    d1.setAttribute("cx", X_(k)); d1.setAttribute("cy", Y1(x.sp)); d1.setAttribute("visibility", "visible");
-    d2.setAttribute("cx", X_(k)); d2.setAttribute("cy", Y1(x.rec)); d2.setAttribute("visibility", "visible");
-    const band = bands.find(b => k >= b.a && k <= b.b);
+    const k = Math.max(0, Math.min(n - 1, Math.round((px - m.l) / (w - m.l - m.r) * (n - 1)))), x = Q[k];
+    cx.setAttribute("x1", X_(k)); cx.setAttribute("x2", X_(k)); cx.setAttribute("visibility", "visible");
+    d1.setAttribute("cx", X_(k)); d1.setAttribute("cy", YA(x.sp)); d1.setAttribute("visibility", "visible");
+    d2.setAttribute("cx", X_(k)); d2.setAttribute("cy", YA(x.rec)); d2.setAttribute("visibility", "visible");
+    const c = C.filter(c => Math.abs(c.d) >= 1).find(c => k >= c.a && k <= c.b);
     showTip(e, `<div class="d">${qLab(x.q)}${x.now ? " · current call" : ""}</div><b>${x.equity}% equity · ${100 - x.equity}% cash</b>`
-      + `<div>$100 became: recommended $${Math.round(x.rec).toLocaleString("en-US")}, S&P 500 $${Math.round(x.sp).toLocaleString("en-US")}</div>`
-      + (band ? `<div>${band.kind === "fall" ? "S&P fall" : "False alarm"} ${qLab(Q[band.a].q)} to ${qLab(Q[band.b].q)}: <b>${dlab(band.d)}</b> vs the S&P 500</div>` : ""));
+      + (k && !x.now ? `<div>This quarter vs the S&P 500: <b>${dlab(x.d)}</b></div>` : "")
+      + (c && Math.abs(c.d) >= 1 ? `<div>Cut ${mlab(c.from)}${c.to !== c.from ? ` to ${mlab(c.to)}` : ""}: ${c.d > 0 ? "protected" : "cost"} <b>${dlab(c.d)}</b> vs the S&P 500</div>` : "")
+      + `<div class="d">$100 became: recommended $${Math.round(x.rec).toLocaleString("en-US")}, S&P 500 $${Math.round(x.sp).toLocaleString("en-US")}</div>`);
   });
   el.querySelector(".hit").addEventListener("pointerleave", () => { hideTip(); [cx, d1, d2].forEach(l => l.setAttribute("visibility", "hidden")); });
 }

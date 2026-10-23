@@ -1,6 +1,8 @@
 # Macro Compass changes
 
 ## 3.2.1 (2026-10-23) - page only (user request)
+- Recommendation chart reworked: scoreboard (points protected / lost / worst fall), growth of $100, quarterly bars of
+  the gain or loss vs the S&P 500 (green / red) with each cut shaded and labelled, portfolio exposure bars.
 - Tabs renamed Analysis / Recommendation. Recommendation 1: current-quarter call (latest reading, updated as data
   arrive) + one chart by quarter: growth of $100, recommended exposure vs S&P 500, S&P falls of 15%+ and costly false
   alarms marked with the difference (+x% / -x%), portfolio exposure bars; hover snaps to quarters. The rule itself
