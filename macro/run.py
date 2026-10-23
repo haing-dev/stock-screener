@@ -6,7 +6,7 @@ import time
 
 def main(step="all"):
     t0 = time.time()
-    steps = ["fetch", "build", "site", "record"] if step == "all" else [step]
+    steps = ["fetch", "build", "site", "record"] if step == "all" else step.split(",")
     for s in steps:
         print(f"== {s}", flush=True)
         if s == "fetch":
@@ -21,6 +21,9 @@ def main(step="all"):
         elif s == "record":
             from . import record
             record.run()
+        elif s == "stocks":                             # research only: sector calls via sensitive stocks
+            from . import research_stocks
+            research_stocks.run()
         else:
             raise SystemExit(f"unknown step {s}")
     print(f"done in {time.time() - t0:.0f}s")
