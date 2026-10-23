@@ -107,7 +107,6 @@ function count(g, i){ const z = groupInds(g).map(x => zoneAt(x.id, i));
   return {warn: z.filter(x => x === "warn").length, normal: z.filter(x => x === "normal").length, good: z.filter(x => x === "good").length, n: z.filter(Boolean).length}; }
 function avgWarn(g, end){ let t = 0, k = 0; for (let i = end - 5; i <= end; i++) if (i >= 0) { t += count(g, i).warn; k++; } return k ? t / k : 0; }
 const sup = n => `<sup class="fn">(${n})</sup>`;
-const supL = t => esc(t).replace(/\b(L12M|L6M|L3M)\b/g, m => m + sup(2));
 function fmtV(v, ind, sign){
   if (v == null) return "–";
   const x = v * ind.scale, s = sign && x > 0 ? "+" : x < 0 ? "−" : "", a = Math.abs(x).toFixed(ind.dp);
@@ -176,7 +175,7 @@ function renderTop(){
   const ch = (l, c) => l.map(it => `<span class="chip ${c}">${esc(it.name)}</span>`).join("");
   $("#callSum").innerHTML = `<div class="chips"><span class="lab">Overweight</span>${o.length ? ch(o, "over") : "<span class='muted'>none</span>"}</div>
     <div class="chips"><span class="lab">Underweight</span>${u.length ? ch(u, "under") : "<span class='muted'>none</span>"}</div>
-    <a class="more" href="#s4">Next ${H} months · the calls and how they would have traded</a>`;
+    <a class="more" href="#s4">Next ${H} months · details below</a>`;
   $("#stripKey").innerHTML = STATES.map(k => `<span><i style="background:var(--st-${k})"></i>${D.meta.stages[k][0]}</span>`).join("") +
     `<span><i class="str"></i>Risk-off</span><span><i class="rec"></i>US recession</span>`;
   stripChart($("#strip"));
@@ -188,9 +187,10 @@ function summary(ind){
   const seen = vals.filter(v => v != null).sort((a, b) => a - b), rng = (seen[Math.floor(.95 * (seen.length - 1))] - seen[Math.floor(.05 * (seen.length - 1))]) || 1;
   const d = ago == null ? null : (cur - ago) * ind.dir / rng;
   const cmp = d == null ? "" : Math.abs(d) < 0.05 ? " and little changed from a year ago" : d > 0 ? " and deteriorating compared with a year ago" : " and improving compared with a year ago";
-  const zp = {warn: "in the warning zone", normal: "in its normal range", good: "in the supportive zone"}[z] || "without enough history to judge";
+  const iv = D.ind_view[ind.id], th = iv && iv.warn != null ? ` (${ind.dir > 0 ? "above" : "below"} ${fmtV(iv.warn, ind, hasNeg(ind.id))})` : "";
+  const zp = {warn: `in the warning zone${th}`, normal: "in its normal range", good: "in the supportive zone"}[z] || "without enough history to judge";
   const verb = /(permits|sales|stocks)$/.test(ind.short) ? "are" : "is";
-  return `${esc(ind.what)}. At ${fmtV(cur, ind, hasNeg(ind.id))}${esc(ind.vp)}, ${esc(ind.short)} ${verb} ${zp}${sup(1)}${cmp}, indicating ${esc(ind.means[z] || "no clear signal")}.`;
+  return `${esc(ind.what)}. At ${fmtV(cur, ind, hasNeg(ind.id))}${esc(ind.vp)}, ${esc(ind.short)} ${verb} ${zp}${cmp}, indicating ${esc(ind.means[z] || "no clear signal")}.`;
 }
 function panel(el, ind, i0, opt){
   const w = W(el), h = opt.h || 170, m = {l: 50, r: opt.r || 10, t: 16, b: 20};
@@ -255,23 +255,14 @@ function indCard(ind, num){
   const hist = v && v.hist[H];
   if (hist && hist.length >= 4) {
     const f = r => `<span class="chip ${r[1] >= 0 ? "over" : "under"}" title="beat the S&P 500 in ${r[2]}% of those months">${esc(NAME()[r[0]])} ${pct(r[1], 1)}</span>`;
-    after = `<div class="after"><span class="muted">Sectors after past readings in this zone, next ${H} months vs S&P 500${sup(4)}</span>
-      <div class="chips"><span class="lab">Best</span>${hist.slice(0, 3).map(f).join("")}<span class="lab sp">Worst</span>${hist.slice(-3).reverse().map(f).join("")}</div></div>`;
+    after = `<div class="after"><div class="chips"><span class="lab">Best</span>${hist.slice(0, 3).map(f).join("")}<span class="lab sp">Worst</span>${hist.slice(-3).reverse().map(f).join("")}</div></div>`;
   }
-  return `<div class="icard z-${z}" data-id="${ind.id}"><div class="ihd"><span class="inum">${num}</span><b>${supL(ind.title)}</b><span class="tag ${z}">${ZW[z]}</span></div>
+  return `<div class="icard z-${z}" data-id="${ind.id}"><div class="ihd"><span class="inum">${num}</span><b>${esc(ind.title)}</b><span class="tag ${z}">${ZW[z]}</span></div>
     <p class="isum">${summary(ind)}</p>
-    <div class="ich"><div><div class="cap">Since ${first.slice(0, 4)}${sup(3)}${v && v.warn != null ? ` · <span class="wz">red band = warning zone, ${ind.dir > 0 ? "above" : "below"} ${fmtV(v.warn, ind, hasNeg(ind.id))}</span>` : ""}</div><div class="chart long"></div></div><div><div class="cap">Last 2 years</div><div class="chart zoom"></div></div></div>${after}</div>`;
+    <div class="ich"><div class="chart long"></div><div class="chart zoom"></div></div>${after}</div>`;
 }
 const ZORDER = {warn: 0, good: 1, normal: 2, "": 3};
-function footnotes(extra){
-  const L = [
-    "Warning zone (red band): the worst third of the indicator's own readings since its data begin; supportive zone: the best third; normal: the middle third.",
-    "L12M, L6M, L3M: last 12, 6 or 3 months. \"vs L12M\" is the change from the same month a year earlier; \"L6M return\" is the return over the last 6 months.",
-    "Grey bands: US recessions (National Bureau of Economic Research).",
-    "Average return vs the S&P 500 in all past months when this indicator was in the same zone as now; sector indexes stand in before each ETF existed.",
-  ].concat(extra || []);
-  return `<ol class="fns">${L.map(t => `<li>${t}</li>`).join("")}</ol>`;
-}
+function footnotes(extra){ return `<ol class="fns">${extra.map(t => `<li>${t}</li>`).join("")}</ol>`; }
 function renderPoint(g, sec, title){
   const inds = groupInds(g).map((x, k) => [x, `${GROUPS[g].num}.${k + 1}`]), show = inds;
   const j = g === "A" ? jumped(g) : null;
@@ -279,7 +270,7 @@ function renderPoint(g, sec, title){
     : g === "B" ? ["Inflation counts as running hot when these signals, averaged over 6 months, sit clearly toward the high end of their history."]
     : g === "C" ? ["Risk-off mode starts when these signals on average are deep in their worst third of history, and ends once they ease back."]
     : ["Shown for context only. Adding these signals to the reading made past calls worse, so they do not affect the calls."];
-  sec.innerHTML = `${title ? `<div class="step">${GROUPS[g].step}</div><h2>${esc(title)}${sup(5)}</h2>` : ""}${zoneBar(g, 1)}
+  sec.innerHTML = `${title ? `<div class="step">${GROUPS[g].step}</div><h2>${esc(title)}${sup(1)}</h2>` : ""}${zoneBar(g)}
     <div class="ilist">${show.map(([x, k]) => indCard(x, k)).join("")}</div>
     ${footnotes(extra)}`;
   sec.querySelectorAll(".icard").forEach(drawInd);
@@ -287,7 +278,6 @@ function renderPoint(g, sec, title){
 function renderPoints(){
   const S = sentences();
   renderPoint("A", $("#sA"), S.A); renderPoint("B", $("#sB"), S.B); renderPoint("C", $("#sC"), S.C);
-  renderPoint("D", $("#bgBody"), "");
 }
 
 /* ------------------------------------------------------------------ what to do */
@@ -319,8 +309,6 @@ function renderIndustries(){
   document.querySelectorAll("tr.irow2").forEach(tr => { const t = () => { const k = "i-" + tr.dataset.e; OPEN.has(k) ? OPEN.delete(k) : OPEN.add(k); renderIndustries(); };
     tr.onclick = t; tr.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); t(); } }; });
   D.industries.forEach(it => { const el = document.getElementById("rel-" + it.etf); if (el) relChart(el, it); });
-  renderTrade();
-  renderHeat();
 }
 function detailHTML(it){
   return `<h4>${esc(it.name)} (${it.etf}) vs the S&P 500, last 15 years</h4><div class="legend"><span><i style="background:var(--good-bg);height:10px"></i>Overweight call</span><span><i style="background:var(--bad-bg);height:10px"></i>Underweight call</span></div><div class="chart" id="rel-${it.etf}"></div>
@@ -337,98 +325,12 @@ function relChart(el, it){
   lineChart(el, [{name: `${it.etf} vs S&P 500`, v, c: "var(--ink2)", wd: 1.6}], D.months, {h: 190, bands, ticks: [50, 75, 100, 125, 150, 200, 300], fmt: x => x.toFixed(0),
     tipExtra: i => ` · ${stName(D.regime[i])}${acts[i] && acts[i] !== "neutral" ? ` · ${ACT[acts[i]][2]}` : ""}`, aria: `${it.name} relative to the S&P 500`});
 }
-function renderHeat(){
-  const T = D.state_table[H], now = D.regime[NOW()], high = D.stress_high[NOW()];
-  const cols = [...STATES, "stress"], lab = k => k === "stress" ? "Risk-off" : D.meta.stages[k][0];
-  $("#heatHead").textContent = "Every state, every sector";
-  $("#heatSub").textContent = `Average return vs the S&P 500 over the next ${H} months, in all past months of each state since 1960 (number of months in brackets). Green = beat the market, red = lagged. Industry indexes stand in before each ETF existed.`;
-  const cell = c => { if (!c) return `<td class="r muted">–</td>`; const a = Math.min(1, Math.abs(c[0]) / 10);
-    return `<td class="r num" style="background:color-mix(in srgb, var(${c[0] >= 0 ? "--good" : "--bad"}) ${Math.round(a * 32)}%, transparent)" title="beat the S&P 500 in ${c[1]}% of ${c[2]} months">${pct(c[0], 1)}</td>`; };
-  $("#heat").innerHTML = `<thead><tr><th>Sector</th>${cols.map(k => `<th class="r${k === now || (k === "stress" && high) ? " nowc" : ""}">${lab(k)}${k === now || (k === "stress" && high) ? "<br>(now)" : ""}<br><span class="muted">(${T[k].n})</span></th>`).join("")}</tr></thead><tbody>` +
-    D.industries.map(it => `<tr><td><b>${esc(it.name)}</b> <span class="etf muted">${it.etf}</span></td>${cols.map(k => cell(T[k].etf[it.etf])).join("")}</tr>`).join("") + "</tbody>";
-}
 
 
-/* ------------------------------------------------------------------ trade test: every past entry into today's situation */
-const k$ = v => v == null ? "–" : `$${Math.round(v / 1000)}k`;
-let TRADE = null;
-function renderTrade(){
-  const i = NOW(), s = D.regime[i], high = D.stress_high[i], E = D.horizons[H].entries || [];
-  const sit = `${stName(s)}${high ? " with markets in risk-off mode" : ", markets not in risk-off mode"}`;
-  const names = l => l.map(e => esc(NAME()[e])).join(", ") || "none";
-  const past = E.slice(0, -1), cur = E[E.length - 1], traded = past.filter(e => e.result && e.result["12"]);
-  const beat = (hh, k) => traded.filter(e => e.result[hh]).filter(e => e.result[hh][k] != null && e.result[hh][k] > e.result[hh].sp500).length;
-  const nh = hh => traded.filter(e => e.result[hh]).length;
-  $("#tradeHead").textContent = `How the calls would have traded: every past entry into ${sit}`;
-  $("#tradeSub").innerHTML = `Entry: the end of the month the economy entered this situation. $100,000 goes into that month's calls: <b>long/short</b> = equal amounts bought in each overweight and sold short in each underweight, no leverage (total exposure $100,000); <b>long only</b> = $100,000 split equally across the overweights. Compared with $100,000 in the S&P 500 on the same day; all held without changes${sup(1)}.`;
-  const curLine = cur && cur.path ? (() => { const p = cur.path, k = p.long_short.length - 1;
-    return `<div><h3>Current entry: ${mlab(cur.month)}</h3><p>Long ${names(cur.over)}. Short ${names(cur.under)}.</p>
-      <p>After ${k} month${k === 1 ? "" : "s"}: long/short <b>${k$(p.long_short[k])}</b>, long only <b>${k$(p.long_only[k])}</b>, S&P 500 <b>${k$(p.sp500[k])}</b>.</p></div>`; })()
-    : `<div><h3>Current entry: ${cur ? mlab(cur.month) : "–"}</h3><p>No calls in this situation.</p></div>`;
-  $("#tradeNow").innerHTML = curLine + (traded.length ? `<div class="tsum">${["12", "24", "36"].filter(nh).map(hh =>
-    `<div><b>After ${+hh / 12} year${hh === "12" ? "" : "s"}</b><span>Long/short beat the S&P 500 in ${beat(hh, "long_short")} of ${nh(hh)} entries; long only in ${beat(hh, "long_only")} of ${nh(hh)}</span></div>`).join("")}</div>` : "");
-  const cell = (r, k) => r ? `<td class="r num ${r[k] != null && r[k] > r.sp500 ? "pos" : r[k] != null && r[k] < r.sp500 ? "neg" : ""}">${k$(r[k])}</td>` : `<td class="r muted">–</td>`;
-  const yrs = ["12", "24", "36"];
-  $("#tradeTable").innerHTML = `<thead><tr><th rowspan="2">Entry</th><th rowspan="2">Calls made then</th>${yrs.map(hh => `<th colspan="3" class="c">After ${+hh / 12} year${hh === "12" ? "" : "s"}</th>`).join("")}</tr>
-    <tr>${yrs.map(() => `<th class="r">Long/short</th><th class="r">Long only</th><th class="r">S&P 500</th>`).join("")}</tr></thead><tbody>` +
-    E.map((e, k) => `<tr class="${e.path ? "trow" : ""}${TRADE === k ? " sel" : ""}" data-k="${k}" ${e.path ? 'tabindex="0"' : ""}><td><b>${mlab(e.month)}</b>${k === E.length - 1 ? " <span class='muted'>(now)</span>" : ""}${e.index_data ? sup(2) : ""}</td>
-      <td class="calls">${e.over.length || e.under.length ? `<span class="pos">Long</span> ${names(e.over)}<br><span class="neg">Short</span> ${names(e.under)}` : `<span class="muted">No calls: too little history at the time</span>`}</td>
-      ${yrs.map(hh => { const r = e.result && e.result[hh]; return r ? cell(r, "long_short") + cell(r, "long_only") + `<td class="r num">${k$(r.sp500)}</td>` : `<td class="r muted" colspan="3">${e.path ? "not yet" : ""}</td>`; }).join("")}</tr>`).join("") + "</tbody>";
-  const rows = [...document.querySelectorAll("#tradeTable tr.trow")];
-  rows.forEach(tr => { const t = () => { TRADE = +tr.dataset.k; renderTrade(); };
-    tr.onclick = t; tr.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); t(); } }; });
-  if (TRADE == null || !E[TRADE] || !E[TRADE].path) { const withPath = E.map((e, k) => [e, k]).filter(([e]) => e.path && e.result && e.result["12"]); TRADE = withPath.length ? withPath[withPath.length - 1][1] : null; }
-  const e = TRADE != null ? E[TRADE] : null;
-  if (!e) { $("#tradeChartBox").hidden = true; return; }
-  $("#tradeChartBox").hidden = false;
-  document.querySelectorAll("#tradeTable tr.trow").forEach(tr => tr.classList.toggle("sel", +tr.dataset.k === TRADE));
-  const i0 = D.months.indexOf(e.month), months = D.months.slice(i0, i0 + e.path.sp500.length);
-  const C = [["long_short", "Long/short", "var(--s1)"], ["long_only", "Long only", "var(--st-stagflation)"], ["sp500", "S&P 500", "var(--s3)"]];
-  $("#tradeLegend").innerHTML = `<b>$100,000 from ${mlab(e.month)}</b>` + C.map(([k, n, c]) => `<span><i style="background:${c}"></i>${n}</span>`).join("") + `<span class="muted">Tap a row to switch</span>`;
-  const ser = C.filter(([k]) => e.path[k].some(x => x != null)).map(([k, n, c]) => ({name: n, v: e.path[k], c, wd: k === "long_short" ? 2.4 : 1.6, endLabel: v => k$(v)}));
-  const nt = niceTicks(Math.min(...ser.flatMap(s => s.v.filter(x => x != null))), Math.max(...ser.flatMap(s => s.v.filter(x => x != null))), 4);
-  lineChart($("#tradeChart"), ser, months, {h: 230, base: 100000, ticks: nt.t, fmtTick: t => k$(t), fmt: v => `$${Math.round(v).toLocaleString("en-US")}`, aria: "Value of $100,000 after entry"});
-}
 
-/* ------------------------------------------------------------------ track record */
-function renderBacktest(){
-  const hz = D.horizons[H], bt = hz.backtest.etf, st = bt.stats, lg = hz.backtest.long.stats;
-  const diff = st.compass && st.equal ? st.compass.cagr - st.equal.cagr : 0;
-  $("#btHead").textContent = Math.abs(diff) < 0.5 ? "So far the calls have made little difference to returns"
-    : diff > 0 ? `The calls added ${diff.toFixed(1)}% a year vs holding all 20 sectors equally` : `The calls cost ${Math.abs(diff).toFixed(1)}% a year vs holding all 20 sectors equally`;
-  $("#btSub").textContent = `$100 invested in ${mlab(st.compass.from)} in the 20 sector ETFs, rebalanced monthly: equal amounts, or 1.5× in overweights and 0.5× in underweights using that month's ${H}-month calls and only data available at the time.`;
-  const C = {compass: ["With the calls", "var(--s1)"], equal: ["All 20 sectors, equal amounts", "var(--s2)"], market: ["S&P 500", "var(--s3)"]};
-  $("#btLegend").innerHTML = Object.entries(C).map(([k, [n, c]]) => `<span><i style="background:${c}"></i>${n}</span>`).join("");
-  lineChart($("#btChart"), Object.entries(C).filter(([k]) => bt.curves[k]).map(([k, [n, c]]) => ({name: n, v: bt.curves[k].map(x => x == null ? null : 100 * x), c,
-    wd: k === "compass" ? 2.4 : 1.6, endLabel: v => `$${Math.round(v)}`})), D.months, {log: true, ticks: [100, 200, 300, 400, 600, 800, 1000], fmtTick: t => `$${t}`, fmt: v => `$${Math.round(v)}`, aria: "Growth of $100"});
-  const Rw = [["compass", "With the calls"], ["investor", "The logic alone (no history check)"], ["equal", "Equal amounts"], ["momentum", "Last year's best sectors"], ["trend", "Sectors above their 10-month average"], ["market", "S&P 500"]];
-  $("#btStats").innerHTML = `<thead><tr><th>Since ${st.compass.from.slice(0, 4)}</th><th>Per year</th><th>Worst fall</th></tr></thead><tbody>` +
-    Rw.map(([k, n]) => st[k] ? `<tr class="${k === "compass" ? "me" : ""}"><td>${n}</td><td>${pct(st[k].cagr, 1)}</td><td>${pct(st[k].maxdd, 0)}</td></tr>` : "").join("") +
-    (lg.compass && lg.equal ? `<tr><td colspan="3" style="font-size:12px;color:var(--ink3);text-align:left;padding-top:10px">Same test on industry indexes since ${lg.compass.from.slice(0, 4)}: ${pct(lg.compass.cagr, 1)} a year with the calls vs ${pct(lg.equal.cagr, 1)} equal amounts.</td></tr>` : "") + "</tbody>";
-  const L = D.live, sc = L && L.scored && L.scored[H];
-  $("#liveBox").innerHTML = !L || !L.rows ? `<div><h3>Live record</h3><p>Each month's reading and calls are saved permanently once the month ends, starting October 2026, so they can't be changed later. First results: 6-month calls in April 2027, 12-month calls in October 2027.</p></div>`
-    : `<div><h3>Live record since ${mlab(L.first)}</h3><p>${sc && (sc.over.calls + sc.under.calls) ? `Underweights lagged the market in ${sc.under.hit ?? "–"}% of ${sc.under.calls} cases; overweights beat it in ${sc.over.hit ?? "–"}% of ${sc.over.calls}.` : "No call has reached its end date yet."} ${sc ? `${sc.pending} calls still running.` : ""}</p></div>`;
-}
-
-/* ------------------------------------------------------------------ how it works */
-function renderHow(){
-  const S = D.settings;
-  const rr = STATES.map(k => { const r = D.meta.rules[k]; const n = e => esc(NAME()[e]);
-    return `<tr><td><b>${D.meta.stages[k][0]}</b><div class="muted">${esc(D.meta.stages[k][1])}</div></td><td>${r.over.map(n).join(", ")}</td><td>${r.under.map(n).join(", ")}</td><td>${esc(r.why)}</td></tr>`; }).join("") +
-    `<tr><td><b>Risk-off</b><div class="muted">Added on top of any state.</div></td><td>${D.meta.stress_rule.over.map(e => esc(NAME()[e])).join(", ")}</td><td>${D.meta.stress_rule.under.map(e => esc(NAME()[e])).join(", ")}</td><td>${esc(D.meta.stress_rule.why)}</td></tr>`;
-  $("#how").innerHTML = `<ol>
-    <li><b>${D.meta.indicators.length} signals</b> that experienced macro investors watch, from public data (Federal Reserve, Labor Department, market prices). Economic data enter only once they were published.</li>
-    <li><b>Each signal is compared with its own history</b>: its worst third of readings is the warning zone, its best third supportive.</li>
-    <li><b>The economy:</b> growth data plus market signals, averaged over 6 months. Weak and worsening = Contraction, weak and improving = Recovery, strong and improving = Expansion, strong and worsening = Late cycle. A change needs 3 months in a row.</li>
-    <li><b>Inflation running hot</b> turns Expansion and Late cycle into Overheating, and Contraction into Stagflation. <b>Market stress</b> adds a risk-off layer.</li>
-    <li><b>Each state has a sector playbook</b> (below), taken from how experienced investors position through the cycle. A sector is only called if past months like now agree. Each month uses only data known then.</li></ol>
-    <div class="tablewrap"><table><thead><tr><th>State</th><th>Favoured</th><th>Avoided</th><th>Why</th></tr></thead><tbody>${rr}</tbody></table></div>
-    <p class="muted" style="font-size:12.5px;margin:0">Data: FRED (St. Louis Fed)${D.fred_key ? ", as first published" : ""}, Kenneth French data library, Yahoo Finance, multpl.com. Version ${D.version}. Not investment advice.</p>`;
-}
-
-function renderAll(){ renderTop(); renderPoints(); renderIndustries(); renderBacktest(); renderHow(); }
+function renderAll(){ renderTop(); renderPoints(); renderIndustries(); }
 function setH(h){ H = h; store.set("mc-h", h); document.querySelectorAll("#horizon button").forEach(b => b.setAttribute("aria-pressed", b.dataset.h === H));
-  renderTop(); renderPoints(); renderIndustries(); renderBacktest(); }
+  renderTop(); renderPoints(); renderIndustries(); }
 async function start(){
   const buf = await (await fetch("/data/data.bin", {cache: "no-cache"})).arrayBuffer();
   D = await openBlob(buf); N = D.months.length;
@@ -436,6 +338,7 @@ async function start(){
   if (!D.horizons[H]) H = "12";
   document.querySelectorAll("#horizon button").forEach(b => { b.setAttribute("aria-pressed", b.dataset.h === H); b.onclick = () => setH(b.dataset.h); });
   $("#foot").textContent = `Reading as of ${mlab(D.asof)} · updated ${D.updated} · version ${D.version}. Not investment advice.`;
+  if (matchMedia("(max-width:1100px)").matches) $("#keyBox").open = false;
   renderAll();
   let t; addEventListener("resize", () => { clearTimeout(t); t = setTimeout(renderAll, 150); });
 }

@@ -1,5 +1,11 @@
 # Macro Compass changes
 
+## 2.2.1 (2026-10-23) - page only (user request)
+- Per-chart notes replaced by one sticky chart key on the right (floating, collapsible on small screens); warning
+  level moved into each summary sentence.
+- Removed from the page: trade test, state x sector table, track record, background indicators, method. The engine
+  still computes them and the live ledger still records every month.
+
 ## 2.2.0 (2026-10-23) - page layout + trade test (user request)
 - Indicator boxes stacked full width, numbered 1.1, 1.2 ... with official names and one naming convention
   (vs L12M / L6M / L3M); each has a generated summary (what it measures, zone, change vs a year ago, what it

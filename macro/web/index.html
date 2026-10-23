@@ -34,6 +34,7 @@
   </div>
 </header>
 
+<div class="layout">
 <main>
   <section class="hero" id="s0">
     <div class="step">The reading</div>
@@ -56,47 +57,25 @@
     <h2 id="actHead"></h2>
     <p class="sub" id="actWhy"></p>
     <div class="tablewrap"><table class="ind" id="indTable"></table></div>
-    <h3 class="h3" id="tradeHead"></h3>
-    <p class="sub" id="tradeSub"></p>
-    <div class="card live" id="tradeNow"></div>
-    <div class="tablewrap"><table class="ind trade" id="tradeTable"></table></div>
-    <div class="card" id="tradeChartBox"><div class="legend" id="tradeLegend"></div><div class="chart" id="tradeChart"></div></div>
-    <ol class="fns" id="tradeFns"><li>Returns include dividends. A short position gains what the sector loses and loses what it gains, on the amount sold at entry. No trading costs, borrowing fees or interest on cash; positions are not rebalanced.</li><li>Before a sector ETF existed, its industry index stands in.</li></ol>
-    <h3 class="h3" id="heatHead"></h3>
-    <p class="sub" id="heatSub"></p>
-    <div class="tablewrap"><table class="heat" id="heat"></table></div>
-  </section>
-
-  <section id="s5">
-    <div class="step">Has it worked?</div>
-    <h2 id="btHead"></h2>
-    <p class="sub" id="btSub"></p>
-    <div class="bt-grid">
-      <div class="card">
-        <div class="legend" id="btLegend"></div>
-        <div class="chart" id="btChart"></div>
-      </div>
-      <div class="card">
-        <table class="stats" id="btStats"></table>
-      </div>
-    </div>
-    <div class="card live" id="liveBox"></div>
-  </section>
-
-  <section id="sD">
-    <details>
-      <summary><span class="step">Also watched: money, rates and valuations (not used in the calls)</span></summary>
-      <div id="bgBody"></div>
-    </details>
-  </section>
-
-  <section id="s6">
-    <details>
-      <summary><span class="step">How it works</span></summary>
-      <div class="how" id="how"></div>
-    </details>
   </section>
 </main>
+<aside class="side" id="side">
+  <details class="ckey" id="keyBox" open>
+    <summary>Chart key</summary>
+    <ul class="keyl">
+      <li><svg width="26" height="12" aria-hidden="true"><path d="M1 9 L8 4 L14 7 L25 2" fill="none" stroke="var(--ink)" stroke-width="1.6"/></svg><span>The indicator's reading, monthly</span></li>
+      <li><svg width="26" height="12" aria-hidden="true"><rect x="1" y="1" width="24" height="10" fill="var(--bad-bg)"/><line x1="1" x2="25" y1="1.5" y2="1.5" stroke="var(--bad)" stroke-dasharray="3 2"/></svg><span><b>Warning zone</b>: the worst third of the indicator's readings since its data begin (level given in each summary)</span></li>
+      <li><svg width="26" height="12" aria-hidden="true"><rect x="9" y="0" width="8" height="12" fill="var(--rec)"/></svg><span>US recession (NBER)</span></li>
+      <li><svg width="26" height="12" aria-hidden="true"><circle cx="13" cy="6" r="4.2" fill="var(--ink)"/></svg><span>Latest reading</span></li>
+      <li><svg width="26" height="12" aria-hidden="true"><line x1="5" x2="25" y1="6" y2="6" stroke="var(--ink2)" stroke-dasharray="2 3"/><circle cx="5" cy="6" r="4" fill="var(--card)" stroke="var(--ink)" stroke-width="1.6"/></svg><span>Reading a year earlier; the dotted line shows the change since</span></li>
+      <li><span class="kt">Two charts</span><span><b>Left</b>: full history · <b>Right</b>: last 2 years</span></li>
+      <li><span class="kt">Status</span><span><i class="tag warn">Warning</i> worst third of history · <i class="tag">Normal</i> middle third · <i class="tag good">Supportive</i> best third</span></li>
+      <li><span class="kt">L12M</span><span>Last 12 months (L6M, L3M: 6, 3). "vs L12M" = change from the same month a year earlier</span></li>
+      <li><span class="kt">Best / Worst</span><span>Sectors' average return vs the S&amp;P 500 over the next 6 or 12 months, after past readings in the same zone (industry indexes before each ETF existed)</span></li>
+    </ul>
+  </details>
+</aside>
+</div>
 <footer class="foot" id="foot"></footer>
 </div>
 <div id="tip" role="tooltip"></div>
