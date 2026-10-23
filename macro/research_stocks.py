@@ -100,7 +100,7 @@ def run(log=print):
     pos = {p: i for i, p in enumerate(grid)}
     for h in ("12", "6"):
         acts = pd.DataFrame(out["horizons"][h]["actions"], index=grid)
-        res = {"etf": [], "bench_etf": [], "basket": [], "sens": [], "bench_stk": [], "ls_etf": [], "ls_sens": [], "ls_basket": []}
+        res = {"etf": [], "bench_etf": [], "basket": [], "sens": [], "sens_nocall": [], "sens_flip": [], "bench_stk": [], "ls_etf": [], "ls_sens": [], "ls_basket": []}
         months = []
         for t in idx:
             i = pos[t]
@@ -136,6 +136,10 @@ def run(log=print):
             res["basket"].append(sum(w[k] * full[k] for k in ks) / ws)
             res["sens"].append(sum(w[k] * (sens[k] if a[k] in ("over", "under") else full[k]) for k in ks) / ws)
             res["bench_stk"].append(float(np.mean([full[k] for k in ks])))
+            # controls: same sensitive stocks in the called sectors but no tilt; and the calls reversed
+            res["sens_nocall"].append(float(np.mean([sens[k] if a[k] in ("over", "under") else full[k] for k in ks])))
+            wf = {k: 0.5 if a[k] == "over" else 1.5 if a[k] == "under" else 1.0 for k in ks}
+            res["sens_flip"].append(sum(wf[k] * (sens[k] if a[k] in ("over", "under") else full[k]) for k in ks) / sum(wf.values()))
             er = etf_ret.iloc[i + 1]
             ke = [k for k in er.index if not np.isnan(er[k])]
             we = {k: 1.5 if a[k] == "over" else 0.5 if a[k] == "under" else 1.0 for k in ke}
@@ -165,6 +169,9 @@ def run(log=print):
         log(line("ETF tilt (live method)", "etf", "bench_etf"))
         log(line("Stock baskets, same calls", "basket", "bench_stk"))
         log(line("Most sensitive stocks, same calls", "sens", "bench_stk"))
+        log(line("  control: same stocks, no tilt", "sens_nocall", "bench_stk"))
+        log(line("  control: same stocks, calls reversed", "sens_flip", "bench_stk"))
+        log(line("  value of the calls alone", "sens", "sens_nocall"))
         for n, k in (("ETFs", "ls_etf"), ("full baskets", "ls_basket"), ("sensitive stocks", "ls_sens")):
             v = R[k][R[k] != 0]
             log(f"  long/short spread via {n:<17} {v.mean() * 1200:+.1f}%/yr in active months (t {v.mean() / v.std() * math.sqrt(len(v)):.2f}, "
