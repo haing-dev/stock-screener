@@ -3,7 +3,8 @@ name: Macro
 # backtested point in time. Weekdays after the US close, on a push to main that changes macro/, or by hand.
 # Outputs: branch 'macro-site' (its own Cloudflare Worker "macro-compass"; separate from the stock-screener site),
 # branch 'macro-record' (append-only monthly calls), 'macro-data' (raw downloads), 'macro-status' (last run log).
-# Password: secret MACRO_PASSWORD, else PORTAL_PASSWORD.
+# Password: secret MACRO_PASSWORD, else PORTAL_PASSWORD. Deploy: wrangler from this workflow when the secrets
+# CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID are set (no Cloudflare git connection needed).
 on:
   schedule:
     - cron: "17 22 * * 1-5"
@@ -30,6 +31,8 @@ jobs:
     env:
       FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
       MACRO_PASSWORD: ${{ secrets.MACRO_PASSWORD }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       PORTAL_PASSWORD: ${{ secrets.PORTAL_PASSWORD }}
       PYTHONUNBUFFERED: "1"
       REPO_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
@@ -80,6 +83,13 @@ jobs:
           git -c user.name=macro-bot -c user.email=macro-bot@users.noreply.github.com add -A
           git -c user.name=macro-bot -c user.email=macro-bot@users.noreply.github.com commit -q -m "macro page $(date -u +%Y-%m-%dT%H:%MZ)"
           git push -q -f "$REPO_URL" macro-site && echo "Published to branch macro-site"
+
+      - name: Deploy to Cloudflare Worker "macro-compass" (needs secrets CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID)
+        run: |
+          [ -f macro_site/data/data.bin ] || { echo "no page built this run"; exit 0; }
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then echo "Cloudflare secrets not set - skipped deploy"; exit 0; fi
+          cd macro_site && rm -rf .git
+          npx --yes wrangler@4 deploy 2>&1 | tail -n 15 | tee -a ../macro_run.log
 
       - name: Record new monthly calls (branch 'macro-record', never force-pushed)
         if: always()
