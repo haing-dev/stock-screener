@@ -4,7 +4,7 @@ Every indicator is a claim made by an investor in the research store (transcript
 @AtlasShrug1 ("Galt", dated), turned into a fixed, testable rule. Investors propose, the backtest decides.
 v1.0.0 pre-registered 2026-10-23; v2.0.0 the same day (state -> investor sector rules + history check). Change log: macro/CHANGES.md. Never edit a rule in place: add a version.
 """
-VERSION = "3.1.0"
+VERSION = "3.2.0"
 
 # ------------------------------------------------------------------ fixed settings (pre-registered)
 SETTINGS = {
@@ -24,10 +24,13 @@ SETTINGS = {
     "stress_high": (65, 55),       # market stress area: high from 65, normal again at 55
     # 3.0.0: act only on extreme readings; otherwise every sector stays neutral (equal weight)
     "extreme": {"economy": (40, 60), "stress": 70, "inflation": 70},
-    # 3.1.0 (main action): de-risk when at least a third of the core indicators (economy, market health, inflation,
-    # market stress) sit in their worst fifth: hold 50% stocks, 50% T-bills; otherwise 100% stocks (S&P 500)
-    "derisk": {"pillars": ["growth", "internals", "inflation", "stress"], "worst": 80, "share": 1 / 3,
-               "stocks_when_on": 0.5, "backtest_from": ["1975-01", "2006-08"]},
+    # 3.2.0 (main action, user choice): graded de-risking on track-record-weighted warnings. Each core indicator
+    # (economy, market health, inflation, market stress) in its worst fifth is a warning, weighted by how much more
+    # often than normal a 15%+ S&P fall followed within 12 months of its past warnings (walk-forward, outcomes finished
+    # by then, shrunk toward 1 with 24 pseudo-months). Weighted warning share <= 15%: 100% stocks; >= 35%: 50%; linear
+    # in between. The rest sits in cash earning the 3-month T-bill rate.
+    "derisk": {"pillars": ["growth", "internals", "inflation", "stress"], "worst": 80, "band": (0.15, 0.35),
+               "min_stocks": 0.5, "event": (0.15, 12), "shrink": 24, "backtest_from": "1975-01"},
     "benchmark": "equal-weight average of the 20 sectors",
     "etf_backtest_start": "2006-07",  # first month most of the 20 ETFs trade
 }
@@ -384,6 +387,85 @@ STRESS = dict(
     why="When markets turn risk-off, cash and safe stocks first; leveraged, crowded and commodity names get "
         "liquidated, including metals, until the dollar squeeze ends.",
     who=[X("2026-10-16"), X("2026-10-05"), T("Eisman", 148), T("Druckenmiller", 75)])
+
+# Why each sector is favoured or avoided in each state (page text; logic, not numbers).
+WHY = {
+    "expansion": {
+        "SMH": "Strong growth lifts spending on electronics and data centres, so chip demand grows faster than the economy.",
+        "IGV": "Companies with rising profits expand their technology budgets, and software earnings compound.",
+        "VOX": "Advertising budgets grow with the economy, lifting online platforms and media.",
+        "XLI": "Rising orders and business investment feed machinery and equipment makers.",
+        "XRT": "More jobs and higher wages support store sales.",
+        "XLU": "Slow-growing utilities lose appeal when investors can find faster growth elsewhere.",
+        "XLP": "Steady staples lag when growth broadens and money moves to economy-sensitive stocks."},
+    "late": {
+        "XLE": "Demand is still strong while supply is tight, which keeps energy prices and producers' profits high.",
+        "XLV": "Health care demand does not depend on the cycle, so earnings hold up as growth slows.",
+        "XBI": "Biotech value comes from drug results rather than the economy, so money rotates there as other profits peak.",
+        "XLP": "People keep buying food and household goods as growth slows, so staples' earnings hold up.",
+        "ITB": "Housing is the first part of the economy to feel higher rates; builders' orders roll over early.",
+        "IYT": "Freight volumes fall early when demand for goods cools, from peak margins.",
+        "XRT": "Retail margins are at their peak and shoppers start trading down.",
+        "ITA": "Defense and aerospace have become crowded trades, which tend to crack when the cycle turns.",
+        "SMH": "Chips are the most crowded and most cyclical part of tech, so they fall hard when growth hopes are cut."},
+    "overheating": {
+        "XLE": "Hot inflation is often driven by energy, and producers earn more as prices rise.",
+        "XLB": "Materials producers can pass rising prices on to their buyers.",
+        "XME": "Metal prices rise with inflation and strong demand, lifting miners' profits.",
+        "GDX": "Gold holds its value when inflation runs hot, and miners' profits rise faster than the metal.",
+        "IGV": "Software is valued on profits far in the future, which are worth less when inflation pushes rates up.",
+        "XBI": "Biotech depends on future profits and outside funding, both of which cost more when rates rise.",
+        "IYR": "Real estate runs on borrowed money and is hurt by higher rates.",
+        "XLU": "Utilities behave like bonds and lose value when rates rise to fight inflation.",
+        "ITB": "Higher mortgage rates price buyers out of new homes."},
+    "contraction": {
+        "XLU": "Electricity demand barely changes in a downturn, and falling rates make utility dividends more attractive.",
+        "XLP": "Food and household goods sell in any economy, so staples' earnings hold up.",
+        "XLV": "People need health care whatever the economy does.",
+        "KIE": "Premiums keep coming in during a downturn, making insurers the safest corner of financials.",
+        "KBE": "Bad loans rise as companies and households struggle, eating into bank profits.",
+        "KRE": "Regional banks lend to local businesses and property, where losses pile up first.",
+        "ITB": "Home buying falls sharply when jobs are at risk.",
+        "XRT": "Consumers cut spending on things they don't need first.",
+        "IYT": "Fewer goods are shipped when demand shrinks.",
+        "XME": "Metal demand from construction and factories falls sharply.",
+        "XLI": "Companies cut orders for machinery and equipment."},
+    "stagflation": {
+        "GDX": "Gold holds its value when growth is weak and prices keep rising.",
+        "XLE": "Energy prices are often the cause of stagflation, so producers' earnings hold up.",
+        "XLP": "Staples sell in any economy and can raise their prices.",
+        "XLV": "Health care demand holds up whatever the economy does.",
+        "XRT": "Rising prices and a weak job market squeeze shoppers.",
+        "ITB": "High rates and weak jobs hit home buying.",
+        "KBE": "Bad loans rise while rates stay high.",
+        "IGV": "Software profits far in the future lose value when inflation keeps rates high.",
+        "SMH": "Chip demand falls with weak growth while costs keep rising.",
+        "IYR": "Property values suffer from high rates and a weak economy."},
+    "recovery": {
+        "ITB": "Housing turns up first as rates fall and buyers come back.",
+        "KBE": "Loan demand returns and bad loans peak as the economy turns up.",
+        "KRE": "Smaller banks gain most as local lending and credit quality improve.",
+        "XLB": "Producers that cut capacity in the downturn earn more as demand returns.",
+        "XME": "Commodities and miners lead out of a bear market as factory demand picks up.",
+        "XLI": "Orders for equipment recover as companies start investing again.",
+        "IYT": "Freight picks up early as businesses restock.",
+        "XRT": "Consumers start spending again as jobs stabilise.",
+        "XLU": "Safe dividend stocks lose appeal once investors start buying growth again.",
+        "XLP": "Staples lag as money moves back into economy-sensitive stocks.",
+        "SMH": "The last cycle's tech leaders rarely lead the next upswing.",
+        "IGV": "The last cycle's tech leaders rarely lead the next upswing; money rotates to cyclical sectors."},
+    "stress": {
+        "XLP": "In a sell-off, investors move to companies whose sales hold up in any market.",
+        "XLV": "Health care is a defensive refuge when markets turn risk-off.",
+        "XLU": "Utilities' steady dividends hold up when markets sell off.",
+        "KIE": "Insurers are the safe corner of financials when markets are stressed.",
+        "SMH": "Crowded, expensive chip stocks are sold first when investors cut risk.",
+        "IGV": "Expensive software stocks are sold early when investors cut risk.",
+        "XBI": "Speculative biotech loses buyers and funding when markets turn risk-off.",
+        "KRE": "Regional banks are most exposed to funding stress and loan losses in a panic.",
+        "XME": "Metals get sold when a dollar squeeze forces investors to raise cash.",
+        "IYT": "Transports fall as investors price in weaker demand."},
+}
 
 STAGES = {
     "expansion": ("Expansion", "Growth is solid and getting stronger."),

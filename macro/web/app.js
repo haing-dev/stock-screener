@@ -94,6 +94,7 @@ const IND = () => Object.fromEntries(D.meta.indicators.map(i => [i.id, i]));
 const stName = s => s && D.meta.stages[s] ? D.meta.stages[s][0] : "Not enough data";
 const NAME = () => Object.fromEntries(D.industries.map(i => [i.etf, i.name]));
 const NOW = () => N - 1;
+const recKey = (xr, y) => `<g class="reckey"><rect x="${xr - 86}" y="${y}" width="8" height="8" fill="var(--rec)"/><text x="${xr - 74}" y="${y + 8}">US recession</text></g>`;
 const zoneAt = (id, i) => { const s = D.scores[id][i]; return s == null ? "" : s >= 65 ? "warn" : s <= 35 ? "good" : "normal"; };
 const ZW = {warn: "Warning", good: "Supportive", normal: "Normal", "": "No data"};
 const GROUPS = {
@@ -143,44 +144,14 @@ function zoneBar(g, fnWarn){
     <div class="zlab"><span class="w">${c.warn} warning${fnWarn ? sup(fnWarn) : ""}</span><span class="n">${c.normal} normal</span><span class="g">${c.good} supportive</span></div>`;
 }
 function jumped(g){ const now = count(g, NOW()).warn, a6 = avgWarn(g, NOW() - 1); return now - a6 >= 2.5 ? {now, a6: Math.round(a6)} : null; }
-function stripChart(el){
-  const i0 = D.months.findIndex(m => m >= "1970-01"), ms = D.months.slice(i0), st = D.regime.slice(i0), rec = D.recession.slice(i0), sh = D.stress_high.slice(i0);
-  const w = W(el), h = 62, top = 10, bh = 26, n = ms.length, bw = w / n;
-  let g = "";
-  rec.forEach((r, i) => { if (r === 1) g += `<rect x="${(i * bw).toFixed(2)}" y="1" width="${(bw + .4).toFixed(2)}" height="6" fill="var(--rec)"/>`; });
-  let run = 0;
-  for (let i = 1; i <= n; i++) if (i === n || st[i] !== st[run]) {
-    if (st[run]) g += `<rect x="${(run * bw).toFixed(2)}" y="${top}" width="${((i - run) * bw + .4).toFixed(2)}" height="${bh}" fill="var(--st-${st[run]})"/>`;
-    run = i;
-  }
-  sh.forEach((x, i) => { if (x) g += `<rect x="${(i * bw).toFixed(2)}" y="${top + bh + 2}" width="${(bw + .4).toFixed(2)}" height="4" fill="var(--stress)"/>`; });
-  ms.forEach((m, i) => { if (m.endsWith("-01") && +m.slice(0, 4) % 10 === 0) g += `<text x="${(i * bw).toFixed(1)}" y="${h - 1}">${m.slice(0, 4)}</text>`; });
-  g += `<rect class="hit" x="0" y="0" width="${w}" height="${h}" fill="transparent"/>`;
-  el.innerHTML = `<svg viewBox="0 0 ${w} ${h}" height="${h}" role="img" aria-label="Economic state each month since 1970">${g}</svg>`;
-  el.querySelector(".hit").addEventListener("pointermove", e => {
-    const r = el.getBoundingClientRect(), i = Math.max(0, Math.min(n - 1, Math.floor((e.clientX - r.left) / r.width * n)));
-    showTip(e, `<div class="d">${mlab(ms[i])}${rec[i] === 1 ? " · recession" : ""}</div><b>${stName(st[i])}</b>${sh[i] ? "<div>Markets in risk-off mode</div>" : ""}`);
-  });
-  el.querySelector(".hit").addEventListener("pointerleave", hideTip);
-}
 function renderTop(){
-  const i = NOW(), s = D.regime[i], S = sentences(), hz = D.horizons[H];
+  const i = NOW(), s = D.regime[i], S = sentences();
   let j = i; while (j > 0 && D.regime[j - 1] === s) j--;
   $("#stageDot").style.background = `var(--st-${s})`;
   $("#stageName").textContent = stName(s);
   $("#stageWhy").textContent = `${S.A}. ${S.B}. ${S.C}. Reading since ${mlab(D.months[j])}.`;
   $("#points").innerHTML = ["A", "B", "C"].map(g => `<li><a href="#s${g}"><span class="pn">${GROUPS[g].num}</span><b>${S[g]}</b>${zoneBar(g)}
     ${jumped(g) ? `<span class="jump">Warning signals jumped this month: ${jumped(g).now}, from about ${jumped(g).a6}</span>` : ""}</a></li>`).join("");
-  const live = D.extreme[i], key = live ? "action" : "if_extreme";
-  const o = D.industries.filter(it => hz.now[it.etf]?.[key] === "over"), u = D.industries.filter(it => hz.now[it.etf]?.[key] === "under");
-  const ch = (l, c) => l.map(it => `<span class="chip ${c}">${esc(it.name)}</span>`).join("");
-  $("#callSum").innerHTML = `${live ? "" : `<div class="hold-note"><b>No sector calls this month</b>: none of the readings is extreme, so all 20 sectors are held equally. Ready if one turns extreme:</div>`}
-    <div class="chips"><span class="lab">Overweight</span>${o.length ? ch(o, "over") : "<span class='muted'>none</span>"}</div>
-    <div class="chips"><span class="lab">Underweight</span>${u.length ? ch(u, "under") : "<span class='muted'>none</span>"}</div>
-    <a class="more" href="#s4">Next ${H} months, vs the 20-sector average · details below</a>`;
-  $("#stripKey").innerHTML = STATES.map(k => `<span><i style="background:var(--st-${k})"></i>${D.meta.stages[k][0]}</span>`).join("") +
-    `<span><i class="str"></i>Risk-off</span><span><i class="rec"></i>US recession</span>`;
-  stripChart($("#strip"));
 }
 
 /* ------------------------------------------------------------------ indicator: summary sentence + two charts */
@@ -212,8 +183,10 @@ function panel(el, ind, i0, opt){
   if (wv != null) { const y = Y(wv), top = ind.dir > 0 ? m.t : y, bot = ind.dir > 0 ? y : h - m.b;
     g += `<rect x="${m.l}" y="${top}" width="${w - m.l - m.r}" height="${Math.max(0, bot - top)}" fill="var(--bad-bg)" opacity=".55"/>
       <line x1="${m.l}" x2="${w - m.r}" y1="${y}" y2="${y}" stroke="var(--bad)" stroke-dasharray="3 3" opacity=".7"/>`;
-    if (opt.zoneLabel) g += `<text class="zl" x="${m.l + 6}" y="${ind.dir > 0 ? Math.max(m.t + 11, y - 5) : Math.min(h - m.b - 4, y + 13)}">Warning zone: ${ind.dir > 0 ? "above" : "below"} ${tickLab(wv, ind, ind.dp)}</text>`; }
-  D.recession.forEach((r, i) => { if (r === 1 && i >= i0) g += `<rect x="${X(i).toFixed(1)}" y="${m.t}" width="${Math.max(1, X(i + 1) - X(i)).toFixed(2)}" height="${h - m.t - m.b}" fill="var(--rec)"/>`; });
+    if (opt.zoneLabel) g += `<text class="zl" x="${m.l + 6}" y="${ind.dir > 0 ? m.t + 11 : h - m.b - 5}">Warning zone</text>`; }
+  let anyRec = false;
+  D.recession.forEach((r, i) => { if (r === 1 && i >= i0) { anyRec = true; g += `<rect x="${X(i).toFixed(1)}" y="${m.t}" width="${Math.max(1, X(i + 1) - X(i)).toFixed(2)}" height="${h - m.t - m.b}" fill="var(--rec)"/>`; } });
+  if (anyRec) g += recKey(w - m.r, 4);
   T.t.forEach(t => { g += `<line x1="${m.l}" x2="${w - m.r}" y1="${Y(t)}" y2="${Y(t)}" stroke="${t === 0 ? "var(--axis)" : "var(--grid)"}"/><text x="${m.l - 6}" y="${Y(t) + 3.5}" text-anchor="end">${tickLab(t, ind, T.dp)}</text>`; });
   const span = (n - 1 - i0) / 12, step = span > 30 ? 10 : span > 12 ? 5 : span > 5 ? 2 : 1;
   let lastX = -1e9;
@@ -247,17 +220,17 @@ function drawInd(card){
   const ind = IND()[card.dataset.id], vals = D.values[ind.id];
   const iFirst = Math.max(D.months.findIndex(x => x >= "1970-01"), vals.findIndex(x => x != null));
   const [, ci] = lastOf(vals), agoI = ci - 12, ago = agoI >= 0 && vals[agoI] != null ? vals[agoI] * ind.scale : null;
-  panel(card.querySelector(".long"), ind, iFirst, {clip: true});
+  panel(card.querySelector(".long"), ind, iFirst, {clip: true, zoneLabel: true});
   panel(card.querySelector(".zoom"), ind, Math.max(iFirst, N - 25), {monthly: true, ago, agoI, nt: 3, r: 14});
 }
 function indCard(ind, num){
   const v = D.ind_view[ind.id], z = zoneAt(ind.id, NOW()), vals = D.values[ind.id];
   const first = D.months[Math.max(D.months.findIndex(x => x >= "1970-01"), vals.findIndex(x => x != null))];
   let after = "";
-  const hist = v && v.hist[H];
+  const hist = v && v.hist["12"];
   if (hist && hist.length >= 4) {
     const f = r => `<span class="chip ${r[1] >= 0 ? "over" : "under"}" title="beat the 20-sector average in ${r[2]}% of those months">${esc(NAME()[r[0]])} ${pct(r[1], 1)}</span>`;
-    after = `<div class="after"><div class="chips"><span class="lab">Best</span>${hist.slice(0, 3).map(f).join("")}<span class="lab sp">Worst</span>${hist.slice(-3).reverse().map(f).join("")}</div></div>`;
+    after = `<div class="after"><span class="muted">Sectors after past readings like this, over the next 12 months vs the 20-sector average</span><div class="chips"><span class="lab">Best</span>${hist.slice(0, 3).map(f).join("")}<span class="lab sp">Worst</span>${hist.slice(-3).reverse().map(f).join("")}</div></div>`;
   }
   return `<div class="icard z-${z}" id="ic-${ind.id}" data-id="${ind.id}"><div class="ihd"><span class="inum">${num}</span><b>${esc(ind.title)}</b><span class="tag ${z}">${ZW[z]}</span></div>
     <p class="isum">${summary(ind)}</p>
@@ -282,114 +255,124 @@ function renderPoints(){
   renderPoint("A", $("#sA"), S.A); renderPoint("B", $("#sB"), S.B); renderPoint("C", $("#sC"), S.C);
 }
 
-/* ------------------------------------------------------------------ main action: stock exposure (de-risking) */
-let DRS = "1975-01";
-function renderDerisk(){
-  const R = D.derisk, X = D.settings.derisk, i = NOW(), c = R.count[i], need = R.need[i], on = R.on[i], n = R.n[i];
-  const stocks = Math.round(100 * X.stocks_when_on);
-  $("#riskSum").innerHTML = `<b>${on ? `Cut stocks to ${stocks}%` : "Stay fully invested in stocks"}</b><span>${c} of ${n} indicators are in their worst fifth; the rule cuts stocks to ${stocks}% at ${need}</span>`;
-  $("#riskSum").className = "risksum" + (on ? " on" : "");
-  $("#drHead").textContent = on ? `Cut stocks to ${stocks}%, rest in Treasury bills: ${c} of ${n} indicators are in their worst fifth` : `Stay fully invested: ${c} of ${n} indicators are in their worst fifth, the rule acts at ${need}`;
-  const w = x => `${(100 * x / n).toFixed(2)}%`;
-  $("#drMeter").innerHTML = `<div class="meter"><i style="width:${w(c)}"></i><b style="left:${w(need)}"></b></div><div class="zlab"><span class="w">${c} in worst fifth now</span><span class="n">De-risk at ${need} (one third)</span></div>`;
-  const nums = {}; ["A", "B", "C"].forEach(g => groupInds(g).forEach((x, k) => { nums[x.id] = `${GROUPS[g].num}.${k + 1}`; }));
-  $("#drList").innerHTML = `<span class="lab">In their worst fifth now</span>` + R.now_list.map(id => `<a class="chip under" href="#ic-${id}">${nums[id] || ""} ${esc(IND()[id].title)}</a>`).join("");
-  const i0 = D.months.indexOf("1975-01"), bands = [];
-  let st = null;
-  for (let k = i0; k <= N; k++) { const a = k < N && R.on[k];
-    if (st != null && !a) { bands.push({i0: st, i1: k - 1, c: "var(--bad-bg)"}); st = null; }
-    if (st == null && a) st = k; }
-  $("#drLegend1").innerHTML = `<span><i style="background:var(--ink)"></i>Indicators in worst fifth</span><span><i style="background:var(--bad)"></i>De-risk level (one third)</span><span><i style="background:var(--bad-bg);height:10px"></i>Stocks cut to ${stocks}%</span>`;
-  lineChart($("#drCount"), [{name: "In worst fifth", v: R.count.map((x, k) => k < i0 ? null : x), c: "var(--ink)", wd: 1.3},
-    {name: "De-risk level", v: R.need.map((x, k) => k < i0 ? null : x), c: "var(--bad)", wd: 1.2}], D.months,
-    {h: 180, bands, ticks: [0, 5, 10, 15, 20], fmt: x => Math.round(x), aria: "Indicators in their worst fifth"});
-  document.querySelectorAll("#drStart button").forEach(b => { b.setAttribute("aria-pressed", b.dataset.s === DRS); b.onclick = () => { DRS = b.dataset.s; renderDerisk(); }; });
-  const B = R.backtest[DRS], s1 = B.stats.strategy, s2 = B.stats.sp500, y = DRS.slice(0, 4);
-  $("#drBtHead").textContent = `Backtest since ${y}: ${pct(s1.cagr, 1)} a year vs ${pct(s2.cagr, 1)} for the S&P 500; worst fall ${pct(s1.maxdd, 0)} vs ${pct(s2.maxdd, 0)}`;
-  const C = [["strategy", "With the rule", "var(--s1)"], ["sp500", "S&P 500, always invested", "var(--s3)"]];
-  $("#drLegend2").innerHTML = C.map(([k, nm, col]) => `<span><i style="background:${col}"></i>${nm}</span>`).join("");
-  lineChart($("#drGrowth"), C.map(([k, nm, col]) => ({name: nm, v: B.curves[k].map(x => x == null ? null : 100 * x), c: col, wd: k === "strategy" ? 2.2 : 1.6, endLabel: v => `$${Math.round(v).toLocaleString("en-US")}`})), D.months,
-    {log: true, h: 240, ticks: [100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000], fmtTick: t => `$${t.toLocaleString("en-US")}`, fmt: v => `$${Math.round(v).toLocaleString("en-US")}`, aria: "Growth of $100"});
-  lineChart($("#drDD"), C.map(([k, nm, col]) => ({name: nm, v: B.drawdown[k], c: col, wd: 1.4})), D.months,
-    {h: 130, ticks: [-50, -40, -30, -20, -10, 0], fmtTick: t => `${t}%`, fmt: v => `${v.toFixed(1)}%`, aria: "Fall from previous peak"});
-  const rows = [["Return per year", pct(s1.cagr, 1), pct(s2.cagr, 1)], ["Worst fall from a peak", pct(s1.maxdd, 0), pct(s2.maxdd, 0)],
-    ["Yearly swings (volatility)", `${s1.vol}%`, `${s2.vol}%`], ["Return per unit of risk (Sharpe)", B.sharpe.strategy.toFixed(2), B.sharpe.sp500.toFixed(2)],
-    ["Months with stocks cut", `${B.share_on}%`, "–"], ["Times the rule cut stocks", `${B.episodes.length}`, "–"]];
-  $("#drStats").innerHTML = `<thead><tr><th>Since ${y}</th><th>With the rule</th><th>S&P 500</th></tr></thead><tbody>` + rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("") + "</tbody>";
-  const eps = [...B.episodes].reverse();
-  $("#drEp").innerHTML = `<thead><tr><th>Stocks cut</th><th class="r">Months</th><th class="r">S&P 500 meanwhile</th><th class="r">With the rule</th><th class="r">S&P 500 worst point</th><th>Outcome</th></tr></thead><tbody>` +
-    eps.map(e => { const helped = e.strategy != null && e.sp500 != null && e.strategy > e.sp500;
-      return `<tr><td><b>${mlab(e.from)}</b>${e.months > 1 ? ` to ${mlab(e.to)}` : ""}${e.open ? " <span class='muted'>(still on)</span>" : ""}</td><td class="r num">${e.months}</td>
-      <td class="r num ${e.sp500 < 0 ? "neg" : ""}">${pct(e.sp500, 1)}</td><td class="r num">${pct(e.strategy, 1)}</td><td class="r num">${e.sp500_worst ? pct(e.sp500_worst, 1) : "–"}</td>
-      <td>${helped ? `<span class="chip over">Protected</span>` : `<span class="chip under">Missed gains</span>`}</td></tr>`; }).join("") + "</tbody>";
-  $("#drFns").innerHTML = `<li>The rule: at the end of each month, count the economy, market-health, inflation and market-stress indicators (sections 1 to 3) that are in their worst fifth of history. If at least a third are, hold ${stocks}% S&P 500 and ${100 - stocks}% Treasury bills next month; otherwise 100% S&P 500. Only data published by then is used. Returns include dividends; no trading costs or taxes. The current month is still under way.</li>`;
+/* ------------------------------------------------------------------ call 1: stock exposure (master chart) */
+function renderExposure(){
+  const X = D.derisk, B = X.backtest, S = D.settings.derisk, i = NOW(), e = X.exposure[i], sh = X.share[i];
+  const lo = Math.round(S.band[0] * 100), hi = Math.round(S.band[1] * 100), minS = Math.round(S.min_stocks * 100);
+  const ind = IND(), names = X.warnings_now.map(k => ind[k].title);
+  $("#xHead").textContent = e >= 100 ? "Hold 100% in stocks" : `Hold ${e}% in stocks and ${100 - e}% in cash`;
+  $("#xSub").textContent = `The more of the 28 indicators in sections 1 to 3 sit in their warning zone, the more moves to cash, counting most the indicators that warned best before past falls. `
+    + `Nothing moves while fewer than ${lo}% warn; at ${hi}% or more, ${100 - minS}% sits in cash. Now ${Math.round(sh)}% warn${names.length ? ` (${names.slice(0, 6).join(", ")}${names.length > 6 ? " and others" : ""})` : ""}.`;
+  const st = B.stats, sp = st.sp500, sr = st.strategy;
+  const eps = B.episodes.filter(x => x.diff != null);
+  const best = [...eps].sort((a, b) => b.diff - a.diff).slice(0, 2), worst = [...eps].sort((a, b) => a.diff - b.diff).slice(0, 2);
+  const yr = x => x.from.slice(0, 4) === x.to.slice(0, 4) ? x.from.slice(0, 4) : `${x.from.slice(0, 4)}–${x.to.slice(2, 4)}`;
+  $("#xNote").textContent = `Since ${B.from.slice(0, 4)}: ${pct(sr.cagr, 1)} a year with the rule vs ${pct(sp.cagr, 1)} for the S&P 500, worst fall ${pct(sr.maxdd, 0)} vs ${pct(sp.maxdd, 0)}. `
+    + `Biggest bullets dodged: ${best.map(yr).join(" and ")}. Costliest false alarms: ${worst.map(yr).join(" and ")}. `
+    + `Cash earns the 3-month US Treasury bill rate. Returns include dividends; no trading costs or taxes.`;
+  masterChart($("#xChart"), X, B);
+}
+function masterChart(el, X, B){
+  const w = W(el), narrow = w < 640, m = {l: 42, r: narrow ? 12 : 92, t: 40, b: 22}, h1 = narrow ? 240 : 280, gap = 22, h2 = 74, h = m.t + h1 + gap + h2 + m.b;
+  const i0 = D.months.indexOf(B.from), n = N;
+  const X_ = i => m.l + (w - m.l - m.r) * (i - i0) / Math.max(1, n - 1 - i0);
+  const ddS = B.drawdown.sp500, ddR = B.drawdown.strategy, ex = X.exposure;
+  const lo = Math.min(-50, ...ddS.slice(i0).filter(v => v != null)), T = niceTicks(lo, 0, 5);
+  const Y1 = v => m.t + h1 * (v - 0) / (T.lo - 0);
+  const y2top = m.t + h1 + gap, Y2 = v => y2top + h2 * (100 - v) / 50;
+  let g = "";
+  // recessions (thin bars above the top lane) + key
+  D.recession.forEach((r, i) => { if (r === 1 && i >= i0) g += `<rect x="${X_(i).toFixed(1)}" y="${m.t - 10}" width="${Math.max(1, X_(i + 1) - X_(i)).toFixed(2)}" height="6" fill="var(--rec)"/>`; });
+  g += recKey(w - 4, 4) + `<text class="lab" x="${m.l}" y="12">Fall from the previous peak</text>`;
+  // big cuts: green = dodged a fall, red = cost money (false alarm or missed rebound)
+  const eps = B.episodes.filter(x => x.diff != null && Math.abs(x.diff) >= (narrow ? 8 : 5));
+  eps.forEach((x, k) => {
+    const a = D.months.indexOf(x.from), b = D.months.indexOf(x.to) + 1, good = x.diff > 0;
+    g += `<rect class="ep" data-k="${k}" x="${X_(a)}" y="${m.t}" width="${Math.max(2, X_(b) - X_(a))}" height="${h1}" fill="var(${good ? "--good-bg" : "--bad-bg"})"/>`;
+  });
+  T.t.forEach(t => { g += `<line x1="${m.l}" x2="${w - m.r}" y1="${Y1(t)}" y2="${Y1(t)}" stroke="var(--grid)"/><text x="${m.l - 6}" y="${Y1(t) + 3.5}" text-anchor="end">${t}%</text>`; });
+  let area = `M${X_(i0)} ${Y1(0)}`, line = "";
+  for (let i = i0; i < n; i++) { if (ddS[i] != null) area += `L${X_(i).toFixed(1)} ${Y1(ddS[i]).toFixed(1)}`; }
+  area += `L${X_(n - 1)} ${Y1(0)}Z`;
+  let pen = false;
+  for (let i = i0; i < n; i++) { const v = ddR[i]; if (v == null) { pen = false; continue; } line += (pen ? "L" : "M") + X_(i).toFixed(1) + " " + Y1(v).toFixed(1); pen = true; }
+  g += `<path d="${area}" fill="var(--axis)" opacity=".55"/><path d="${line}" fill="none" stroke="var(--s1)" stroke-width="1.6"/>`;
+  // labels for the big cuts (two rows so they don't collide)
+  eps.forEach((x, k) => {
+    const a = D.months.indexOf(x.from), b = D.months.indexOf(x.to) + 1, cx = (X_(a) + X_(b)) / 2, good = x.diff > 0;
+    const y = Y1(T.lo) - 8 - (k % 3) * 14;
+    g += `<text class="eplab ${good ? "pos" : "neg"}" x="${cx}" y="${y}" text-anchor="middle">${narrow ? (good ? "+" : "−") : good ? "Dodged " : "Cost "}${Math.abs(Math.round(x.diff))}%</text>`;
+  });
+  // end labels
+  const [ls, lsi] = lastOf(ddS), [lr, lri] = lastOf(ddR);
+  const yS = Y1(ls), yR = Y1(lr), sep = Math.abs(yS - yR) < 13 ? 13 : 0;
+  if (!narrow) {
+    g += `<text class="lab" x="${w - m.r + 6}" y="${yS + 4 + (yS >= yR ? sep / 2 : -sep / 2)}" style="fill:var(--ink3)">S&P 500</text>`;
+    g += `<text class="lab" x="${w - m.r + 6}" y="${yR + 4 + (yR > yS ? sep / 2 : -sep / 2)}" style="fill:var(--s1)">With the rule</text>`;
+  } else g += `<text class="lab" x="${w - 4}" y="26" text-anchor="end"><tspan style="fill:var(--s1)">— with the rule</tspan>  <tspan style="fill:var(--ink3)">▮ S&P 500</tspan></text>`;
+  // lane 2: share held in stocks
+  let ea = `M${X_(i0)} ${Y2(50)}`;
+  for (let i = i0; i < n; i++) { const v = ex[i - 1] ?? 100; ea += `L${X_(i).toFixed(1)} ${Y2(v).toFixed(1)}L${X_(i + 1 > n - 1 ? n - 1 : i + 1).toFixed(1)} ${Y2(v).toFixed(1)}`; }
+  ea += `L${X_(n - 1)} ${Y2(50)}Z`;
+  g += `<path d="${ea}" fill="var(--s1)" opacity=".25"/>`;
+  [100, 50].forEach(t => { g += `<line x1="${m.l}" x2="${w - m.r}" y1="${Y2(t)}" y2="${Y2(t)}" stroke="var(--grid)"/><text x="${m.l - 6}" y="${Y2(t) + 3.5}" text-anchor="end">${t}%</text>`; });
+  g += `<text class="lab" x="${m.l + 4}" y="${y2top - 4}">Share held in stocks (the rest in cash)</text>`;
+  let lastX = -1e9;
+  for (let i = i0; i < n; i++) if (D.months[i].endsWith("-01") && +D.months[i].slice(0, 4) % 5 === 0 && X_(i) - lastX > 40) { g += `<text x="${X_(i)}" y="${h - 5}" text-anchor="middle">${D.months[i].slice(0, 4)}</text>`; lastX = X_(i); }
+  g += `<line class="cx" x1="0" x2="0" y1="${m.t}" y2="${y2top + h2}" stroke="var(--ink3)" visibility="hidden"/><rect class="hit" x="${m.l}" y="0" width="${w - m.l - m.r}" height="${h}" fill="transparent"/>`;
+  el.innerHTML = `<svg viewBox="0 0 ${w} ${h}" height="${h}" role="img" aria-label="S&P 500 falls and the rule's cuts since ${B.from.slice(0, 4)}">${g}</svg>`;
+  const hit = el.querySelector(".hit"), cx = el.querySelector(".cx");
+  const all = B.episodes;
+  hit.addEventListener("pointermove", e => {
+    const r = el.querySelector("svg").getBoundingClientRect(), px = (e.clientX - r.left) * w / r.width;
+    const i = Math.max(i0, Math.min(n - 1, Math.round(i0 + (px - m.l) / (w - m.l - m.r) * (n - 1 - i0))));
+    cx.setAttribute("x1", X_(i)); cx.setAttribute("x2", X_(i)); cx.setAttribute("visibility", "visible");
+    const mo = D.months[i], epi = all.find(x => mo >= x.from && mo <= x.to);
+    showTip(e, `<div class="d">${mlab(mo)}${D.recession[i] === 1 ? " · US recession" : ""}</div>Fall from peak: S&P 500 <b>${pct(ddS[i], 0)}</b>, with the rule <b>${pct(ddR[i], 0)}</b><br>Held in stocks: <b>${ex[i - 1] ?? 100}%</b>`
+      + (epi ? `<div style="margin-top:4px">Cut ${mlab(epi.from)}${epi.to !== epi.from ? ` to ${mlab(epi.to)}` : ""}: S&P 500 ${pct(epi.sp500, 0)}, with the rule ${pct(epi.strategy, 0)} → <b>${epi.diff > 0 ? `dodged ${Math.abs(epi.diff).toFixed(0)}%` : `cost ${Math.abs(epi.diff).toFixed(0)}%`}</b></div>` : ""));
+  });
+  hit.addEventListener("pointerleave", () => { hideTip(); cx.setAttribute("visibility", "hidden"); });
 }
 
-/* ------------------------------------------------------------------ what to do */
+/* ------------------------------------------------------------------ call 2: sectors */
 const ACT = {over: ["over", "▲", "Overweight"], under: ["under", "▼", "Underweight"], neutral: ["neutral", "●", "Neutral"]};
-const pill = a => { const [c, i, t] = ACT[a] || ACT.neutral; return `<span class="pill ${c}"><span aria-hidden="true">${i}</span>${t}</span>`; };
-const AVG = "the 20-sector average";
-function triggers(){
-  const i = NOW(), X = D.settings.extreme, g = D.econ6[i], st = D.pillars.stress[i], inf = D.infl6[i];
-  const row = (lab, on, close) => `<li class="${on ? "on" : ""}"><span>${lab}</span><b>${on ? "Yes" : close ? "Close" : "No"}</b></li>`;
-  return `<ul class="trig">${row("Economy indicators clearly weak", g >= X.economy[1], g >= X.economy[1] - 5)}${row("Economy indicators clearly strong", g <= X.economy[0], g <= X.economy[0] + 5)}
-    ${row("Market stress severe", st >= X.stress, st >= X.stress - 5)}${row("Inflation very hot", inf >= X.inflation, inf >= X.inflation - 5)}</ul>`;
+function sectorWhy(etf, n, s, high){
+  const R = D.meta.rules[s], SR = D.meta.stress_rule, WHY = D.meta.why, t = n.tilt || 0, st = stName(s);
+  const inS = R.over.includes(etf) ? 1 : R.under.includes(etf) ? -1 : 0, inX = high ? (SR.over.includes(etf) ? 1 : SR.under.includes(etf) ? -1 : 0) : 0;
+  const c = n.if_extreme || n.action;
+  if (c === "over" || c === "under") {
+    const parts = [];
+    if (inS === t) parts.push(WHY[s][etf]);
+    if (inX === t && WHY.stress[etf]) parts.push(WHY.stress[etf]);
+    return parts.join(" ");
+  }
+  if (t !== 0) return `The ${st.toLowerCase()} playbook would ${t > 0 ? "favour" : "avoid"} it, but in past ${st.toLowerCase()} periods it did not actually ${t > 0 ? "beat" : "lag"} the other sectors, so no bet.`;
+  if (inS !== 0 && inX !== 0 && inS !== inX) return `The ${st.toLowerCase()} playbook and the risk-off playbook point in opposite directions.`;
+  return high ? `Neither the ${st.toLowerCase()} playbook nor the risk-off playbook gives it a clear edge right now.` : `The ${st.toLowerCase()} playbook gives it no clear edge right now.`;
 }
 function renderIndustries(){
-  const i = NOW(), s = D.regime[i], high = D.stress_high[i], hz = D.horizons[H], live = D.extreme[i], X = D.settings.extreme;
-  const r = D.meta.rules[s], bt = hz.backtest.etf.stats, lg = hz.backtest.long.stats;
-  $("#actHead").textContent = live ? `${stName(s)}${high ? " in risk-off mode" : ""}: the calls for the next ${H} months` : `No sector calls this month: readings are not extreme`;
-  $("#actWhy").innerHTML = `${live ? "" : `<p>Calls are only made when at least one reading is extreme${sup(1)}. Until then every sector is held at equal weight. The table shows what the calls would be if a reading turns extreme.</p>`}
-    ${triggers()}
-    <p><b>The logic for ${esc(stName(s))}:</b> ${esc(r.why)}${high ? ` <b>Risk-off:</b> ${esc(D.meta.stress_rule.why)}` : ""}</p>
-    <p><b>The check:</b> a sector is only called if, in past months like now, it beat or lagged ${AVG} on average over the next ${H} months.</p>
-    ${bt.compass && bt.equal ? `<p class="trk"><b>Track record</b> (calls on extreme readings only, vs holding all 20 sectors equally): ${pct(bt.compass.cagr - bt.equal.cagr, 1)} a year since ${bt.compass.from.slice(0, 4)} with the sector ETFs${lg.compass && lg.equal ? `, ${pct(lg.compass.cagr - lg.equal.cagr, 1)} a year since ${lg.compass.from.slice(0, 4)} with industry indexes` : ""}.</p>` : ""}`;
-  $("#actFns").innerHTML = `<li>Extreme: the economy indicators, averaged over 6 months, rank worse than ${X.economy[1]}% (clearly weak) or better than ${100 - X.economy[0]}% (clearly strong) of their own history; the market-stress indicators rank worse than ${X.stress}% of history; or the inflation indicators, averaged over 6 months, rank worse than ${X.inflation}% of history.</li>`;
-  const rows = D.industries.map(it => { const n = hz.now[it.etf] || {}; const t = n.tilt || 0, c = n.if_extreme;
-    const g = c === "over" ? 0 : c === "under" ? 1 : t !== 0 ? 2 : 3; return {it, n, t, g, c}; });
-  const G = live ? ["Overweight", "Underweight", "The logic says yes, history says no: neutral", "Neutral"]
-                 : ["Overweight once a reading is extreme", "Underweight once a reading is extreme", "The logic says yes, history says no: neutral", "Neutral"];
-  let html = `<thead><tr><th>Sector</th><th>Call</th><th>The logic</th><th class="r">Past months like now (${esc(stName(s))}, ${high ? "risk-off" : "no risk-off"}):<br>avg vs ${AVG}, next ${H} months</th><th class="r">Beat the<br>average in</th></tr></thead><tbody>`;
-  [0, 1, 2, 3].forEach(gi => {
-    const sg = gi === 1 ? -1 : 1;
-    const g = rows.filter(x => x.g === gi).sort((a, b) => sg * ((b.n.mean_rel ?? -99) - (a.n.mean_rel ?? -99))); if (!g.length) return;
-    html += `<tr class="grp"><td colspan="5">${G[gi]}</td></tr>`;
-    g.forEach(x => {
-      const n = x.n, open = OPEN.has("i-" + x.it.etf);
-      const say = x.t > 0 ? `<span class="chip over">Favoured</span>` : x.t < 0 ? `<span class="chip under">Avoided</span>` : `<span class="muted">No view</span>`;
-      const call = live || x.c === "neutral" || !x.c ? pill(n.action) : `<span class="pill hold">${ACT[x.c][1]} ${ACT[x.c][2]} · on hold</span>`;
-      html += `<tr class="irow2" tabindex="0" data-e="${x.it.etf}" aria-expanded="${open}"><td><b>${esc(x.it.name)}</b> <span class="etf muted">${x.it.etf}</span></td><td>${call}</td><td>${say}</td>
-        <td class="r num"><b class="${n.mean_rel > 0 ? "pos" : n.mean_rel < 0 ? "neg" : ""}">${n.mean_rel == null ? "–" : pct(n.mean_rel, 1)}</b>${n.n ? ` <span class="muted">(${n.n} months)</span>` : ""}</td>
-        <td class="r num">${n.pos == null ? "–" : n.pos + "%"}</td></tr>`;
-      if (open) html += `<tr class="idetail"><td colspan="5">${detailHTML(x.it)}</td></tr>`;
-    });
-  });
-  $("#indTable").innerHTML = html + "</tbody>";
-  document.querySelectorAll("tr.irow2").forEach(tr => { const t = () => { const k = "i-" + tr.dataset.e; OPEN.has(k) ? OPEN.delete(k) : OPEN.add(k); renderIndustries(); };
-    tr.onclick = t; tr.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); t(); } }; });
-  D.industries.forEach(it => { const el = document.getElementById("rel-" + it.etf); if (el) relChart(el, it); });
-}
-function detailHTML(it){
-  return `<h4>${esc(it.name)} (${it.etf}) vs the 20-sector average, last 15 years</h4><div class="legend"><span><i style="background:var(--good-bg);height:10px"></i>Overweight call</span><span><i style="background:var(--bad-bg);height:10px"></i>Underweight call</span></div><div class="chart" id="rel-${it.etf}"></div>
-    <p class="muted" style="font-size:12.5px;margin:6px 0 0">Line rising = beating the market. ${it.etf_from ? `${it.etf} trades from ${mlab(it.etf_from)}; before that, its industry index.` : ""}</p>`;
-}
-function relChart(el, it){
-  const i0 = Math.max(0, N - 180), base = it.rel_level[i0] || lastOf(it.rel_level.slice(0, i0 + 1))[0];
-  const v = it.rel_level.map((x, i) => i < i0 || x == null || !base ? null : 100 * x / base);
-  const acts = D.horizons[H].actions[it.etf], bands = [];
-  let s = null;
-  for (let i = i0; i <= N; i++) { const a = i < N ? acts[i] : null;
-    if (s && (a !== s.a)) { bands.push({i0: s.i, i1: i - 1, c: s.a === "over" ? "var(--good-bg)" : "var(--bad-bg)"}); s = null; }
-    if (!s && (a === "over" || a === "under")) s = {a, i}; }
-  lineChart(el, [{name: `${it.etf} vs 20-sector average`, v, c: "var(--ink2)", wd: 1.6}], D.months, {h: 190, bands, ticks: [50, 75, 100, 125, 150, 200, 300], fmt: x => x.toFixed(0),
-    tipExtra: i => ` · ${stName(D.regime[i])}${acts[i] && acts[i] !== "neutral" ? ` · ${ACT[acts[i]][2]}` : ""}`, aria: `${it.name} relative to the 20-sector average`});
+  const i = NOW(), s = D.regime[i], high = D.stress_high[i], hz = D.horizons[H], live = D.extreme[i];
+  document.querySelectorAll("#horizon button").forEach(b => b.setAttribute("aria-pressed", b.dataset.h === H));
+  $("#actHead").textContent = live ? `${stName(s)}${high ? ", markets in risk-off mode" : ""}: what to tilt` : "On hold: no reading is extreme";
+  $("#actWhy").textContent = live ? `Calls for the next ${H} months, against holding all 20 sectors equally.`
+    : `Sector calls only apply when a reading is extreme. Until then all 20 sectors are held equally; these are the calls that would apply.`;
+  const rows = D.industries.map(it => { const n = hz.now[it.etf] || {}; const c = live ? n.action : n.if_extreme;
+    return {it, n, c, o: c === "over" ? 0 : c === "under" ? 1 : 2}; }).sort((a, b) => a.o - b.o || a.it.name.localeCompare(b.it.name));
+  $("#indTable").innerHTML = `<thead><tr><th>Sector</th><th>Call</th><th>Why now</th></tr></thead><tbody>` + rows.map(r => {
+    const [cls, ic, tx] = ACT[r.c] || ACT.neutral;
+    const pillH = `<span class="pill ${cls}${!live && r.c !== "neutral" ? " hold" : ""}"><span aria-hidden="true">${ic}</span>${tx}${!live && r.c !== "neutral" ? " · on hold" : ""}</span>`;
+    return `<tr><td><b>${esc(r.it.name)}</b> <span class="etf muted">${r.it.etf}</span></td><td>${pillH}</td><td class="why">${esc(sectorWhy(r.it.etf, r.n, s, high))}</td></tr>`; }).join("") + "</tbody>";
 }
 
-
-
-function renderAll(){ renderTop(); renderDerisk(); renderPoints(); renderIndustries(); }
-function setH(h){ H = h; store.set("mc-h", h); document.querySelectorAll("#horizon button").forEach(b => b.setAttribute("aria-pressed", b.dataset.h === H));
-  renderTop(); renderPoints(); renderIndustries(); }
+/* ------------------------------------------------------------------ pages */
+let PAGE = (location.hash === "#calls" ? "calls" : store.get("mc-p")) || "reading";
+function setPage(p){ PAGE = p; store.set("mc-p", p);
+  $("#pReading").hidden = p !== "reading"; $("#pCalls").hidden = p !== "calls";
+  document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.p === p));
+  history.replaceState(null, "", p === "calls" ? "#calls" : location.pathname);
+  renderAll(); }
+function renderAll(){ if (PAGE === "calls") { renderExposure(); renderIndustries(); } else { renderTop(); renderPoints(); } }
+function setH(h){ H = h; store.set("mc-h", h); renderIndustries(); }
 async function start(){
   const buf = await (await fetch("/data/data.bin", {cache: "no-cache"})).arrayBuffer();
   D = await openBlob(buf); N = D.months.length;
@@ -397,8 +380,8 @@ async function start(){
   if (!D.horizons[H]) H = "12";
   document.querySelectorAll("#horizon button").forEach(b => { b.setAttribute("aria-pressed", b.dataset.h === H); b.onclick = () => setH(b.dataset.h); });
   $("#foot").textContent = `Reading as of ${mlab(D.asof)} · updated ${D.updated} · version ${D.version}. Not investment advice.`;
-  if (matchMedia("(max-width:1100px)").matches) $("#keyBox").open = false;
-  renderAll();
+  document.querySelectorAll("#tabs button").forEach(b => { b.onclick = () => { setPage(b.dataset.p); scrollTo(0, 0); }; });
+  setPage(PAGE);
   let t; addEventListener("resize", () => { clearTimeout(t); t = setTimeout(renderAll, 150); });
 }
 function showLock(msg){ $("#shell").hidden = true; $("#lock").hidden = false; $("#lockMsg").textContent = msg; $("#pw").focus(); }

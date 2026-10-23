@@ -43,8 +43,9 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   No password (public, noindex). Branches: `macro-data` (raw downloads, force-pushed),
   `macro-status` (last run log: `git fetch origin macro-status && git show origin/macro-status:status.md`),
   `macro-record` (append-only monthly calls from Oct 2026). Secret FRED_API_KEY (user adds) = first-published data.
-- Main action (3.1.0): de-risk to 50% stocks when >= 1/3 of the 28 core indicators are in their worst fifth
-  (engine.derisk, backtest since 1975/2006). Sector calls are secondary: only on extreme readings, vs the 20-sector
+- Main action (3.2.0): graded de-risking, 100% -> 50% stocks as the track-record-weighted share of the 28 core
+  indicators in their worst fifth rises from 15% to 35%; cash earns T-bills (engine.derisk, backtest since 1975).
+  Page tabs: 'The reading' (sections 1-3) and 'The calls' (master chart + sector calls with registry.WHY). Sector calls are secondary: only on extreme readings, vs the 20-sector
   average (3.0.0). Sensitive-stock research (macro/research_stocks.py, step 'stocks') showed no edge.
   De-risking research (macro/research_derisk.py; weekly via step 'derisk_weekly'): see macro/CHANGES.md research note.
 - Rules: macro/registry.py (pre-registered; changes -> new VERSION + macro/CHANGES.md).

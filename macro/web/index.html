@@ -25,78 +25,42 @@
 <div id="shell" hidden>
 <header class="top">
   <div class="brand"><b>Macro Compass</b></div>
-  <div class="ctl">
-    <span class="ctl-lab" id="horizonLab">Look ahead</span>
-    <div class="seg" id="horizon" role="group" aria-labelledby="horizonLab">
-      <button type="button" id="h6" data-h="6">6 months</button>
-      <button type="button" id="h12" data-h="12">12 months</button>
-    </div>
+  <div class="seg tabs" id="tabs" role="tablist" aria-label="Pages">
+    <button type="button" role="tab" data-p="reading">The reading</button>
+    <button type="button" role="tab" data-p="calls">The calls</button>
   </div>
 </header>
 
-<div class="layout">
 <main>
+<div id="pReading">
   <section class="hero" id="s0">
     <div class="step">The reading</div>
     <div class="stage-line"><span class="sdot" id="stageDot"></span><h1 id="stageName"></h1></div>
     <p class="lead" id="stageWhy"></p>
     <ol class="points" id="points"></ol>
-    <a class="risksum" id="riskSum" href="#sR"></a>
-    <div class="callsum" id="callSum"></div>
-    <div class="strip-wrap">
-      <div class="strip-head"><span>How each month since 1970 was classified</span><span class="keys" id="stripKey"></span></div>
-      <div class="chart" id="strip"></div>
-    </div>
   </section>
-
-  <section id="sR">
-    <div class="step">What to do · Stock exposure</div>
-    <h2 id="drHead"></h2>
-    <div id="drMeter"></div>
-    <div class="chips" id="drList"></div>
-    <div class="card"><div class="cap2">Indicators in their worst fifth, each month since 1975</div><div class="legend" id="drLegend1"></div><div class="chart" id="drCount"></div></div>
-    <div class="drbt">
-      <div class="seg" id="drStart" role="group" aria-label="Backtest start"><button type="button" data-s="1975-01">Since 1975</button><button type="button" data-s="2006-08">Since 2006</button></div>
-      <h3 class="h3" id="drBtHead"></h3>
-      <div class="bt-grid">
-        <div class="card"><div class="legend" id="drLegend2"></div><div class="chart" id="drGrowth"></div><div class="cap2">Fall from previous peak</div><div class="chart" id="drDD"></div></div>
-        <div class="card"><table class="stats" id="drStats"></table></div>
-      </div>
-      <h3 class="h3">Every time the rule cut stocks to 50%</h3>
-      <div class="tablewrap"><table class="ind" id="drEp"></table></div>
-    </div>
-    <ol class="fns" id="drFns"></ol>
-  </section>
-
   <section id="sA" class="point"></section>
   <section id="sB" class="point"></section>
   <section id="sC" class="point"></section>
-
-  <section id="s4">
-    <div class="step">Sector calls (secondary)</div>
-    <h2 id="actHead"></h2>
-    <div class="sub actwhy" id="actWhy"></div>
-    <div class="tablewrap"><table class="ind" id="indTable"></table></div>
-    <ol class="fns" id="actFns"></ol>
-  </section>
-</main>
-<aside class="side" id="side">
-  <details class="ckey" id="keyBox" open>
-    <summary>Chart key</summary>
-    <ul class="keyl">
-      <li><svg width="26" height="12" aria-hidden="true"><path d="M1 9 L8 4 L14 7 L25 2" fill="none" stroke="var(--ink)" stroke-width="1.6"/></svg><span>The indicator's reading, monthly</span></li>
-      <li><svg width="26" height="12" aria-hidden="true"><rect x="1" y="1" width="24" height="10" fill="var(--bad-bg)"/><line x1="1" x2="25" y1="1.5" y2="1.5" stroke="var(--bad)" stroke-dasharray="3 2"/></svg><span><b>Warning zone</b>: the worst third of the indicator's readings since its data begin (level given in each summary)</span></li>
-      <li><svg width="26" height="12" aria-hidden="true"><rect x="9" y="0" width="8" height="12" fill="var(--rec)"/></svg><span>US recession (NBER)</span></li>
-      <li><svg width="26" height="12" aria-hidden="true"><circle cx="13" cy="6" r="4.2" fill="var(--ink)"/></svg><span>Latest reading</span></li>
-      <li><svg width="26" height="12" aria-hidden="true"><line x1="5" x2="25" y1="6" y2="6" stroke="var(--ink2)" stroke-dasharray="2 3"/><circle cx="5" cy="6" r="4" fill="var(--card)" stroke="var(--ink)" stroke-width="1.6"/></svg><span>Reading a year earlier; the dotted line shows the change since</span></li>
-      <li><span class="kt">Two charts</span><span><b>Left</b>: full history · <b>Right</b>: last 2 years</span></li>
-      <li><span class="kt">Status</span><span><i class="tag warn">Warning</i> worst third of history · <i class="tag">Normal</i> middle third · <i class="tag good">Supportive</i> best third</span></li>
-      <li><span class="kt">L12M</span><span>Last 12 months (L6M, L3M: 6, 3). "vs L12M" = change from the same month a year earlier</span></li>
-      <li><span class="kt">Best / Worst</span><span>Sectors' average return vs the 20-sector average over the next 6 or 12 months, after past readings in the same zone (industry indexes before each ETF existed)</span></li>
-    </ul>
-  </details>
-</aside>
 </div>
+
+<div id="pCalls" hidden>
+  <section id="sX">
+    <div class="step">Call 1 · How much to hold in stocks</div>
+    <h2 id="xHead"></h2>
+    <p class="sub" id="xSub"></p>
+    <div class="card"><div class="chart" id="xChart"></div></div>
+    <p class="note" id="xNote"></p>
+  </section>
+  <section id="sS">
+    <div class="step">Call 2 · Sectors</div>
+    <div class="shead"><h2 id="actHead"></h2>
+      <div class="seg" id="horizon" role="group" aria-label="Look ahead"><button type="button" data-h="6">Next 6 months</button><button type="button" data-h="12">Next 12 months</button></div></div>
+    <p class="sub" id="actWhy"></p>
+    <div class="tablewrap"><table class="ind calls" id="indTable"></table></div>
+  </section>
+</div>
+</main>
 <footer class="foot" id="foot"></footer>
 </div>
 <div id="tip" role="tooltip"></div>

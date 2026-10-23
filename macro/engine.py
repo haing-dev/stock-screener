@@ -453,56 +453,68 @@ def entry_test(act, reg, high, rets, src, mkt, holds=(12, 24, 36), capital=10000
 
 
 def derisk(sc, mkt, grid):
-    """Main action (3.1.0): de-risk when at least `share` of the core indicators score in their worst fifth.
-    Signal at the end of month t sets the stock weight for month t+1 (rest in T-bills)."""
+    """Main action (3.2.0): graded de-risking on track-record-weighted warnings (see SETTINGS['derisk']).
+    The exposure set at the end of month t applies to month t+1; the rest earns the T-bill rate."""
     X = S["derisk"]
     core = [i["id"] for i in R.INDICATORS if i["pillar"] in X["pillars"]]
-    n = sc[core].notna().sum(axis=1)
-    bad = (sc[core] >= X["worst"]).sum(axis=1)
-    on = (bad >= np.ceil(n * X["share"] - 1e-9)) & (n >= 10)
+    lv_m = level(mkt)
+    fall, hz = X["event"]
+    fut = pd.concat([lv_m.shift(-k) for k in range(1, hz + 1)], axis=1).min(axis=1, skipna=False)
+    ev = (fut / lv_m - 1 <= -fall).astype(float)
+    ev[fut.isna() | lv_m.isna()] = np.nan
+    okf = ev.notna().astype(float)
+    bad = (sc[core] >= X["worst"]).astype(float)
+    avail = sc[core].notna().astype(float)
+    hits = bad.mul(ev.fillna(0), axis=0).mul(okf, axis=0).cumsum().shift(hz)          # outcomes finished by t
+    n_w = bad.mul(okf, axis=0).cumsum().shift(hz)
+    base = (ev.fillna(0).cumsum() / okf.cumsum().replace(0, np.nan)).shift(hz)
+    k = X["shrink"]
+    w = ((hits + k * base.values[:, None]) / (n_w + k)).div(base, axis=0).fillna(1.0).clip(upper=5)
+    share = ((w * bad).sum(axis=1) / (w * avail).sum(axis=1).replace(0, np.nan)).fillna(0.0)
+    share = share.where(avail.sum(axis=1) >= 10, 0.0)
+    lo, hi = X["band"]
+    e = 1 - (1 - X["min_stocks"]) * ((share - lo) / (hi - lo)).clip(0, 1)
     _, ff = load_french()
-    rf = pd.Series({pd.Period(k, "M"): v.get("RF", np.nan) for k, v in ff.items()}, dtype=float).reindex(grid).ffill()
-    w = pd.Series(np.where(on, X["stocks_when_on"], 1.0), index=grid)
-    strat = w.shift(1) * mkt + (1 - w.shift(1)) * rf
-    which = {i: [k for k in core if sc[k].iloc[i] >= X["worst"]] for i in range(len(grid))}
-    out = {"core": core, "count": [int(x) for x in bad], "n": [int(x) for x in n], "on": [bool(x) for x in on],
-           "need": [int(np.ceil(x * X["share"] - 1e-9)) for x in n], "now_list": which[len(grid) - 1], "backtest": {}}
-    for start in X["backtest_from"]:
-        st = pd.Period(start, "M")
-        m, r = mkt[mkt.index > st], strat[strat.index > st]
-        ok = m.notna() & r.notna()
-        m, r = m[ok], r[ok]
-        lm, lr = level(m), level(r)
-        eps = []
-        k = 0
-        idx = list(grid)
-        onv = on.values
-        i = idx.index(st)
-        while i < len(idx) - 1:
-            if onv[i]:
-                j = i
-                while j + 1 < len(idx) - 1 and onv[j + 1]:
-                    j += 1
-                held = grid[(grid > grid[i]) & (grid <= grid[j + 1])]
-                mm, rr = mkt.reindex(held).dropna(), strat.reindex(held).dropna()
-                lv_ = (1 + mm).cumprod()
-                eps.append({"from": str(grid[i]), "to": str(grid[j]), "months": int(j - i + 1),
-                            "sp500": _r(lv_.iloc[-1] - 1, 1, 100) if len(mm) else None,
-                            "strategy": _r((1 + rr).prod() - 1, 1, 100) if len(rr) else None,
-                            "sp500_worst": _r((lv_ / lv_.cummax().clip(lower=1) - 1).min(), 1, 100) if len(mm) else None,
-                            "open": bool(j + 1 >= len(idx) - 1)})
-                i = j + 1
-            else:
-                i += 1
-        dd = lambda lv: (lv / lv.cummax() - 1)
-        out["backtest"][start] = {"stats": {"strategy": stats(r), "sp500": stats(m)},
-                                  "sharpe": {"strategy": _r(((r - rf.reindex(r.index)).mean()) / r.std() * math.sqrt(12), 2),
-                                             "sp500": _r(((m - rf.reindex(m.index)).mean()) / m.std() * math.sqrt(12), 2)},
-                                  "share_on": _r(on.reindex(m.index).mean(), 0, 100),
-                                  "curves": {"strategy": _ser(lr.reindex(grid), 4), "sp500": _ser(lm.reindex(grid), 4)},
-                                  "drawdown": {"strategy": _ser(dd(lr).reindex(grid) * 100, 1), "sp500": _ser(dd(lm).reindex(grid) * 100, 1)},
-                                  "episodes": eps}
-    return out
+    rf = pd.Series({pd.Period(k_, "M"): v.get("RF", np.nan) for k_, v in ff.items()}, dtype=float).reindex(grid).ffill()
+    strat = e.shift(1) * mkt + (1 - e.shift(1)) * rf
+    st = pd.Period(X["backtest_from"], "M")
+    m, r = mkt[mkt.index > st], strat[strat.index > st]
+    okm = m.notna() & r.notna()
+    m, r = m[okm], r[okm]
+    lm, lr = level(m), level(r)
+    eps = []
+    cut = (e < 1 - 1e-9).values
+    i = list(grid).index(st)
+    T = len(grid)
+    while i < T - 1:
+        if cut[i]:
+            j = i
+            while j + 1 < T - 1 and cut[j + 1]:
+                j += 1
+            held = grid[(grid > grid[i]) & (grid <= grid[j + 1])]
+            mm, rr = mkt.reindex(held).dropna(), strat.reindex(held).dropna()
+            lv_ = (1 + mm).cumprod()
+            spr, str_ = (lv_.iloc[-1] - 1) * 100 if len(mm) else None, ((1 + rr).prod() - 1) * 100 if len(rr) else None
+            eps.append({"from": str(grid[i]), "to": str(grid[j]), "months": int(j - i + 1),
+                        "min_stocks": _r(e.iloc[i:j + 1].min(), 0, 100), "sp500": _r(spr, 1), "strategy": _r(str_, 1),
+                        "diff": _r(None if spr is None or str_ is None else str_ - spr, 1),
+                        "sp500_worst": _r((lv_ / lv_.cummax().clip(lower=1) - 1).min(), 1, 100) if len(mm) else None,
+                        "open": bool(j + 1 >= T - 1)})
+            i = j + 1
+        else:
+            i += 1
+    dd = lambda lv: (lv / lv.cummax() - 1)
+    last = len(grid) - 1
+    top = sorted(((float(w[c].iloc[last]), c) for c in core if bad[c].iloc[last] > 0), reverse=True)
+    return {"core": core, "share": _ser(share * 100, 1), "exposure": _ser(e * 100, 0),
+            "warnings_now": [c for _, c in top], "weights_now": {c: _r(w[c].iloc[last], 2) for c in core},
+            "backtest": {"from": X["backtest_from"], "stats": {"strategy": stats(r), "sp500": stats(m)},
+                         "sharpe": {"strategy": _r(((r - rf.reindex(r.index)).mean()) / r.std() * math.sqrt(12), 2),
+                                    "sp500": _r(((m - rf.reindex(m.index)).mean()) / m.std() * math.sqrt(12), 2)},
+                         "avg_stocks": _r(e.shift(1).reindex(r.index).mean(), 0, 100),
+                         "drawdown": {"strategy": _ser(dd(lr).reindex(grid) * 100, 1), "sp500": _ser(dd(lm).reindex(grid) * 100, 1)},
+                         "curves": {"strategy": _ser(lr.reindex(grid), 4), "sp500": _ser(lm.reindex(grid), 4)},
+                         "episodes": eps}}
 
 
 # ------------------------------------------------------------------ sector calls: investor rules + history check
@@ -773,7 +785,7 @@ def run(log=print):
     out["state_table"] = state_table(reg, high, rels)
     nowho = lambda r: {k: v for k, v in r.items() if k != "who"}          # sources stay in registry.py (audit)
     out["meta"] = {"pillars": R.PILLARS, "stages": R.STAGES, "rules": {k: nowho(v) for k, v in R.RULES.items()},
-                   "stress_rule": nowho(R.STRESS),
+                   "stress_rule": nowho(R.STRESS), "why": R.WHY,
                    "indicators": [dict({k: i[k] for k in ("id", "pillar", "dir")}, **R.DISPLAY[i["id"]])
                                   for i in R.INDICATORS]}
     os.makedirs(OUT, exist_ok=True)
@@ -782,13 +794,14 @@ def run(log=print):
     now = out["horizons"]["12"]["now"]
     log(f"build: {len(grid)} months to {grid[-1]}; state {reg.iloc[-1]} (stage {stage.iloc[-1]}, inflation hot "
         f"{bool(hot.iloc[-1])}, stress high {bool(high.iloc[-1])}); stress {pl['stress'].iloc[-1]:.0f}; "
-        f"de-risk {'ON' if out['derisk']['on'][-1] else 'off'} ({out['derisk']['count'][-1]} of {out['derisk']['n'][-1]} in worst fifth, need {out['derisk']['need'][-1]}); "
+        f"stocks {out['derisk']['exposure'][-1]}% (warning share {out['derisk']['share'][-1]}%); "
         f"extreme now {bool(gate.iloc[-1])} ({', '.join(k for k in parts if parts[k].iloc[-1]) or 'none'}); "
         f"12m calls {sum(1 for v in now.values() if v['action']=='over')} over / "
         f"{sum(1 for v in now.values() if v['action']=='under')} under; {time.time()-t0:.0f}s")
-    for k_, b_ in out["derisk"]["backtest"].items():
-        log(f"  de-risk since {k_}: " + "; ".join(f"{n} {v['cagr']}%/yr dd {v['maxdd']}% vol {v['vol']}" for n, v in b_["stats"].items())
-            + f"; on {b_['share_on']}% of months; {len(b_['episodes'])} episodes")
+    b_ = out["derisk"]["backtest"]
+    log(f"  de-risk since {b_['from']}: " + "; ".join(f"{n} {v['cagr']}%/yr dd {v['maxdd']}% vol {v['vol']}" for n, v in b_["stats"].items())
+        + f"; Sharpe {b_['sharpe']}; avg stocks {b_['avg_stocks']}%; {len(b_['episodes'])} cuts, "
+        + f"{sum(1 for e_ in b_['episodes'] if (e_['diff'] or 0) > 0)} dodged")
     for h in ("6", "12"):
         b = out["horizons"][h]["backtest"]["etf"]["stats"]
         log(f"  {h}m ETF backtest: " + "; ".join(f"{k} {v['cagr']}%/yr dd {v['maxdd']}%" for k, v in b.items() if v))

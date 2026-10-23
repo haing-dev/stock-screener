@@ -1,5 +1,15 @@
 # Macro Compass changes
 
+## 3.2.0 (2026-10-23) - de-risking: track-record weights + graded cut (user choice, ideas 1 + 2b)
+- Rule (SETTINGS.derisk): warnings = core indicators in their worst fifth, each weighted walk-forward by how much
+  more often than normal a 15%+ S&P fall followed within 12 months (shrink 24); weighted share <= 15% -> 100% stocks,
+  >= 35% -> 50%, linear between; cash earns the 3-month T-bill rate. Variant 'graded 0.15-0.35, lift 15/12, core28'
+  from the research grid (not the best-scoring one). Since 1975: 11.4%/yr vs S&P 12.4%, worst fall -29% vs -51%,
+  Sharpe 0.62 vs 0.58, average 85% in stocks. Today: 68% stocks (28% of weighted warnings).
+- Page: two tabs. The reading (state + sections 1-3, recession key on each chart, no chart key panel). The calls:
+  one master chart (S&P and rule falls from peak, cuts marked dodged / cost, share held in stocks) and sector calls
+  as sector / call / why now (registry.WHY, logic not numbers). Ledger: stock_exposure, warning_share.
+
 ## Research note (2026-10-23, no rule change) - can de-risking warn earlier and more precisely?
 macro/research_derisk.py: 523 monthly rules (walk-forward track-record weights 'lift'/'edge' on 15%-in-12m or
 10%-in-6m falls; one switch / two steps / graded / with market trend AND, OR, two-step; fast re-entry; 28 or 43
