@@ -992,6 +992,8 @@ check("triage: bands (higher and lower is better)", TR.band("hidden", "ev_ebit",
       TR.band("hidden", "ev_ebit", 16) == "r" and TR.band("emerging", "growth", 0.10) == "n")
 import triage_smoke  # noqa: E402
 triage_smoke.run(check)
+import macro_smoke  # noqa: E402
+macro_smoke.run(check)
 
 shutil.rmtree(TMP, ignore_errors=True)
 print(f"\n{'ALL TESTS PASSED' if not failures else str(len(failures)) + ' FAILED: ' + ', '.join(failures)}")

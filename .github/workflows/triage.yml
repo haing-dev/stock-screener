@@ -106,6 +106,8 @@ jobs:
       - name: Publish the site (branch 'site')
         run: |
           if [ ! -f triage_site/data/data.bin ]; then echo "no site built this run"; exit 0; fi
+          # keep the Macro Compass page (folder macro/, published by macro.yml) in the force-pushed site
+          git fetch -q --depth 1 origin site && git archive FETCH_HEAD macro 2>/dev/null | tar -x -C triage_site && echo "kept macro/" || echo "no macro/ to keep"
           cd triage_site
           git init -q -b site
           git -c user.name=triage-bot -c user.email=triage-bot@users.noreply.github.com add -A

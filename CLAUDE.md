@@ -32,10 +32,20 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Tests: `python3 tests/run_tests.py` must print "ALL TESTS PASSED" (includes tests/triage_smoke.py).
 - Archived but kept: v2.9 validation of the frozen 14 screens (`validation/PROTOCOL.md`, `qs/validate.py`; workflow archived).
 
+## Macro Compass (macro/ v1.0.0, built 2026-10-23)
+- Stage of the US cycle (Expansion / Late cycle / Contraction / Recovery) + 20 industry ETFs at risk / in favour at
+  6 and 12 months, from 38 investor-cited indicators (research store + X posts of @AtlasShrug1). Point in time,
+  walk-forward odds, ETF backtest from 2006 vs equal weight / momentum / trend / SPY. Details: macro/README.md.
+- Workflow `.github/workflows/macro.yml` (weekdays 22:17 UTC; push to macro/). Page: `/macro/` on the triage site
+  (folder macro/ of branch `site`; triage.yml keeps it). Branches: `macro-data` (raw downloads, force-pushed),
+  `macro-status` (last run log: `git fetch origin macro-status && git show origin/macro-status:status.md`),
+  `macro-record` (append-only monthly calls from Oct 2026). Secret FRED_API_KEY (user adds) = first-published data.
+- Rules: macro/registry.py (pre-registered; changes -> new VERSION + macro/CHANGES.md).
+
 ## Deployment
 - Repo `haing-dev/stock-screener` (private). Branches: `main` (code), `site` (published triage site, force-pushed), `site-archive-v2.9` (last portal build), `triage-record` (live calls, append-only), `triage-status` (last run's log tail + counts, force-pushed), `reports`, `research` (transcript store), `history` and `validation` (v2.9 records, no longer updated).
 - Cloudflare **Worker** "stock-screener" via Workers Builds on branch `site` (wrangler.jsonc written by `triage/site.py`).
-- Workflow: triage.yml only. The old screen/daily/background/report/validate workflows are in `archive/portal-v2.9/workflows/`.
+- Workflows: triage.yml and macro.yml. The old screen/daily/background/report/validate workflows are in `archive/portal-v2.9/workflows/`.
 - In the cloud sandbox: blob log downloads are forbidden; `scripts/run_logged.sh` puts the last 60 log lines in check-run annotations (`gh api repos/haing-dev/stock-screener/check-runs/<id>/annotations`).
 
 ## Research store (`research` branch)

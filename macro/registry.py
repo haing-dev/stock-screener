@@ -16,8 +16,11 @@ SETTINGS = {
     "driver_buckets": 5,           # past months are grouped by driver score into fifths
     "tilt_ratio": 1.5,             # odds must be 1.5x their normal rate to act
     "tilt_size": 0.5,              # overweight = 1.5x the equal weight, underweight = 0.5x
-    "stage_band": 5,               # growth pressure must move 5+ points in 6 months to count as rising / easing
-    "stage_confirm": 2,            # a new stage needs 2 months in a row
+    "stage_smooth": 6,             # stage reads the 6-month average of growth pressure
+    "stage_lookback": 12,          # direction = change in that average over 12 months ...
+    "stage_band": 8,               # ... of 8+ points (else the last direction holds)
+    "stage_hysteresis": 5,         # weak growth from 55 up, solid from 45 down (else the last level holds)
+    "stage_confirm": 3,            # a new stage needs 3 months in a row
     "etf_backtest_start": "2006-07",  # first month most of the 20 ETFs trade
 }
 
@@ -44,15 +47,16 @@ FRED = {
     "WALCL": dict(lag=0), "WTREGEN": dict(lag=0), "RRPONTSYD": dict(lag=0),
     "MORTGAGE30US": dict(lag=0), "THREEFYTP10": dict(lag=0), "VIXCLS": dict(lag=0),
     "DRCCLACBS": dict(fr=True, lag=3, q=True), "NCBEILQ027S": dict(fr=True, lag=3, q=True),
-    "BOGZ1FL153064105Q": dict(fr=True, lag=3, q=True), "BOGZ1FL154090005Q": dict(fr=True, lag=3, q=True),
+    "HNOCEAQ027S": dict(fr=True, lag=3, q=True), "TFAABSHNO": dict(fr=True, lag=3, q=True),
     "USREC": dict(lag=0), "DTWEXBGS": dict(lag=0), "TWEXMMTH": dict(lag=0),
 }
 YAHOO = ["SPY", "EWY", "DX-Y.NYB"]          # plus every industry ETF below
 FRENCH_IND = "49_Industry_Portfolios_CSV.zip"
 FRENCH_FF = "F-F_Research_Data_Factors_CSV.zip"
 
-CYCLICAL = ["Autos", "Cnstr", "Banks", "Trans", "Rtail", "Steel"]
-DEFENSIVE = ["Util", "Food", "Drugs", "Hshld", "Smoke"]
+# price-based indicators use the 20 industry series (ETF once it trades, its industry index before)
+CYCLICAL = ["ITB", "KBE", "IYT", "XRT", "XME"]
+DEFENSIVE = ["XLU", "XLP", "XLV"]
 
 
 def X(date):
@@ -119,7 +123,7 @@ INDICATORS = [
          plain="Extra yield companies pay to borrow", who=[T("Druckenmiller", 76)]),
     dict(id="baa_chg", pillar="credit", name="Corporate bond spread, 6-month change", calc=("spreadchg6", "BAA", "GS10"),
          dir=1, plain="Is borrowing getting harder", who=[T("Druckenmiller", 76)]),
-    dict(id="banks", pillar="credit", name="Bank stocks vs market, 6 months", calc=("rel6", "Banks"), dir=-1,
+    dict(id="banks", pillar="credit", name="Bank stocks vs market, 6 months", calc=("rel6", "KBE"), dir=-1,
          plain="Bank stocks", who=[T("Druckenmiller", 76), X("2026-10-14")]),
     dict(id="vix", pillar="credit", name="Stock market fear gauge (VIX)", calc=("level", "VIXCLS"), dir=1,
          plain="Fear in the stock market", who=[T("Calderini", 155), T("Tropin", 151)]),
@@ -129,7 +133,7 @@ INDICATORS = [
     dict(id="mcap_gdp", pillar="froth", name="Stock market value vs the economy", calc=("ratio", "NCBEILQ027S", "GDP"),
          dir=1, plain="Stocks vs GDP", who=[X("2026-08-08")]),
     dict(id="hh_equity", pillar="froth", name="Share of household savings in stocks",
-         calc=("ratio", "BOGZ1FL153064105Q", "BOGZ1FL154090005Q"), dir=1, plain="How much households own in stocks",
+         calc=("ratio", "HNOCEAQ027S", "TFAABSHNO"), dir=1, plain="How much households own in stocks",
          who=[X("2026-08-08")]),
     dict(id="cape", pillar="froth", name="Price vs 10-year average earnings (CAPE)", calc=("cape",), dir=1,
          plain="Stock valuations", who=[X("2026-08-08"), T("Tropin", 149)]),
@@ -143,8 +147,8 @@ INDICATORS = [
     dict(id="leadership", pillar="internals", name="Narrow leadership (index vs typical industry, 12 months)",
          calc=("leadership",), dir=1, plain="Is the rise led by a few", who=[T("Druckenmiller", 79)]),
     dict(id="transports", pillar="internals", name="Transport vs industrial stocks, 6 months",
-         calc=("relpair6", "Trans", "Mach"), dir=-1, plain="Transports confirming", who=[X("2026-09-02")]),
-    dict(id="homebuilders", pillar="internals", name="Home builders vs market, 12 months", calc=("rel12", "Cnstr"),
+         calc=("relpair6", "IYT", "XLI"), dir=-1, plain="Transports confirming", who=[X("2026-09-02")]),
+    dict(id="homebuilders", pillar="internals", name="Home builders vs market, 12 months", calc=("rel12", "ITB"),
          dir=-1, plain="Home builders", who=[X("2026-06-09"), T("Druckenmiller", 76)]),
     # used only in industry cause chains
     dict(id="y2", pillar=None, name="2-year Treasury yield, 6-month change", calc=("chg6", "GS2"), dir=1,
