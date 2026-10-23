@@ -1,5 +1,14 @@
 # Macro Compass changes
 
+## Research note (2026-10-23, no rule change) - more sensitive instruments
+- Bigger bets on the same calls (1.5x/0.5x up to 4x/-2x, i.e. leveraged instruments): excess vs equal weight grows
+  to +0.5 to +1.2%/yr but the information ratio stays at 0.05-0.14 and relative drawdowns grow to -15% to -32%.
+- Most sensitive stocks (macro/research_stocks.py, run via step 'stocks'; today's large holdings, survivorship-biased,
+  compared basket vs basket): +0.4%/yr (12m) / +0.8%/yr (6m) vs equal-weight baskets, but the same stocks with no
+  tilt give +0.5 / +0.7 and with the calls reversed +0.5 / +0.5 -> the gain is from holding high-beta survivors,
+  not from the calls (value of the calls alone -0.1 / +0.1%/yr). Long/short spread of called sectors via
+  sensitive stocks: -1.0 / -0.8%/yr. Not adopted.
+
 ## 3.0.0 (2026-10-23) - act only on extreme readings; benchmark = 20-sector average (user request)
 - Calls are made only in months when a reading is extreme (SETTINGS.extreme): economy indicators' 6-month average
   score >= 60 (clearly weak) or <= 40 (clearly strong), market-stress score >= 70, or inflation 6-month average >= 70.
