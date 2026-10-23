@@ -1,5 +1,16 @@
 # Macro Compass changes
 
+## 3.1.0 (2026-10-23) - main action: de-risking (user request)
+- Rule (SETTINGS.derisk): at each month end, count the core indicators (growth, market health, inflation, market
+  stress; 28) scoring in their worst fifth (>= 80). If at least a third are, hold 50% S&P 500 / 50% T-bills next
+  month; otherwise 100% S&P 500. Chosen as proposed in the research note (not the best of the variants tested).
+- Backtest (engine.derisk), seen before publishing: since 1975 11.6%/yr vs S&P 500 12.4%, worst fall -39% vs -51%,
+  Sharpe 0.59 vs 0.58, stocks cut in 18% of months, 25 episodes (7 protected, 18 missed gains); since Aug 2006
+  11.3% vs 11.2%, worst fall -29% vs -51%, Sharpe 0.80 vs 0.67. Variants seen earlier (stress flag; >= 1/4;
+  stress or >= 1/3): 10.1-11.3%/yr since 2006, worst falls -29% to -31%.
+- Page: stock-exposure section after the reading (signal, indicators in their worst fifth, count history, backtest
+  since 1975 / 2006, every episode); sector calls now marked secondary. Ledger gains derisk_on, derisk_count.
+
 ## Research note (2026-10-23, no rule change) - more sensitive instruments
 - Bigger bets on the same calls (1.5x/0.5x up to 4x/-2x, i.e. leveraged instruments): excess vs equal weight grows
   to +0.5 to +1.2%/yr but the information ratio stays at 0.05-0.14 and relative drawdowns grow to -15% to -32%.

@@ -452,6 +452,59 @@ def entry_test(act, reg, high, rets, src, mkt, holds=(12, 24, 36), capital=10000
     return out
 
 
+def derisk(sc, mkt, grid):
+    """Main action (3.1.0): de-risk when at least `share` of the core indicators score in their worst fifth.
+    Signal at the end of month t sets the stock weight for month t+1 (rest in T-bills)."""
+    X = S["derisk"]
+    core = [i["id"] for i in R.INDICATORS if i["pillar"] in X["pillars"]]
+    n = sc[core].notna().sum(axis=1)
+    bad = (sc[core] >= X["worst"]).sum(axis=1)
+    on = (bad >= np.ceil(n * X["share"] - 1e-9)) & (n >= 10)
+    _, ff = load_french()
+    rf = pd.Series({pd.Period(k, "M"): v.get("RF", np.nan) for k, v in ff.items()}, dtype=float).reindex(grid).ffill()
+    w = pd.Series(np.where(on, X["stocks_when_on"], 1.0), index=grid)
+    strat = w.shift(1) * mkt + (1 - w.shift(1)) * rf
+    which = {i: [k for k in core if sc[k].iloc[i] >= X["worst"]] for i in range(len(grid))}
+    out = {"core": core, "count": [int(x) for x in bad], "n": [int(x) for x in n], "on": [bool(x) for x in on],
+           "need": [int(np.ceil(x * X["share"] - 1e-9)) for x in n], "now_list": which[len(grid) - 1], "backtest": {}}
+    for start in X["backtest_from"]:
+        st = pd.Period(start, "M")
+        m, r = mkt[mkt.index > st], strat[strat.index > st]
+        ok = m.notna() & r.notna()
+        m, r = m[ok], r[ok]
+        lm, lr = level(m), level(r)
+        eps = []
+        k = 0
+        idx = list(grid)
+        onv = on.values
+        i = idx.index(st)
+        while i < len(idx) - 1:
+            if onv[i]:
+                j = i
+                while j + 1 < len(idx) - 1 and onv[j + 1]:
+                    j += 1
+                held = grid[(grid > grid[i]) & (grid <= grid[j + 1])]
+                mm, rr = mkt.reindex(held).dropna(), strat.reindex(held).dropna()
+                lv_ = (1 + mm).cumprod()
+                eps.append({"from": str(grid[i]), "to": str(grid[j]), "months": int(j - i + 1),
+                            "sp500": _r(lv_.iloc[-1] - 1, 1, 100) if len(mm) else None,
+                            "strategy": _r((1 + rr).prod() - 1, 1, 100) if len(rr) else None,
+                            "sp500_worst": _r((lv_ / lv_.cummax().clip(lower=1) - 1).min(), 1, 100) if len(mm) else None,
+                            "open": bool(j + 1 >= len(idx) - 1)})
+                i = j + 1
+            else:
+                i += 1
+        dd = lambda lv: (lv / lv.cummax() - 1)
+        out["backtest"][start] = {"stats": {"strategy": stats(r), "sp500": stats(m)},
+                                  "sharpe": {"strategy": _r(((r - rf.reindex(r.index)).mean()) / r.std() * math.sqrt(12), 2),
+                                             "sp500": _r(((m - rf.reindex(m.index)).mean()) / m.std() * math.sqrt(12), 2)},
+                                  "share_on": _r(on.reindex(m.index).mean(), 0, 100),
+                                  "curves": {"strategy": _ser(lr.reindex(grid), 4), "sp500": _ser(lm.reindex(grid), 4)},
+                                  "drawdown": {"strategy": _ser(dd(lr).reindex(grid) * 100, 1), "sp500": _ser(dd(lm).reindex(grid) * 100, 1)},
+                                  "episodes": eps}
+    return out
+
+
 # ------------------------------------------------------------------ sector calls: investor rules + history check
 def investor_tilts(reg, high):
     """+1 / -1 / 0 per industry and month from RULES[state] plus the STRESS overlay."""
@@ -715,6 +768,7 @@ def run(log=print):
         out["horizons"][str(h)] = hz
     out["report"] = report_card(sc, mkt, rec)
     out["live"] = live_scores(rets, mkt, grid)
+    out["derisk"] = derisk(sc, mkt, grid)
     out["ind_view"] = indicator_view(ind, sc, rels, grid)
     out["state_table"] = state_table(reg, high, rels)
     nowho = lambda r: {k: v for k, v in r.items() if k != "who"}          # sources stay in registry.py (audit)
@@ -728,9 +782,13 @@ def run(log=print):
     now = out["horizons"]["12"]["now"]
     log(f"build: {len(grid)} months to {grid[-1]}; state {reg.iloc[-1]} (stage {stage.iloc[-1]}, inflation hot "
         f"{bool(hot.iloc[-1])}, stress high {bool(high.iloc[-1])}); stress {pl['stress'].iloc[-1]:.0f}; "
+        f"de-risk {'ON' if out['derisk']['on'][-1] else 'off'} ({out['derisk']['count'][-1]} of {out['derisk']['n'][-1]} in worst fifth, need {out['derisk']['need'][-1]}); "
         f"extreme now {bool(gate.iloc[-1])} ({', '.join(k for k in parts if parts[k].iloc[-1]) or 'none'}); "
         f"12m calls {sum(1 for v in now.values() if v['action']=='over')} over / "
         f"{sum(1 for v in now.values() if v['action']=='under')} under; {time.time()-t0:.0f}s")
+    for k_, b_ in out["derisk"]["backtest"].items():
+        log(f"  de-risk since {k_}: " + "; ".join(f"{n} {v['cagr']}%/yr dd {v['maxdd']}% vol {v['vol']}" for n, v in b_["stats"].items())
+            + f"; on {b_['share_on']}% of months; {len(b_['episodes'])} episodes")
     for h in ("6", "12"):
         b = out["horizons"][h]["backtest"]["etf"]["stats"]
         log(f"  {h}m ETF backtest: " + "; ".join(f"{k} {v['cagr']}%/yr dd {v['maxdd']}%" for k, v in b.items() if v))

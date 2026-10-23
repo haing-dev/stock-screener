@@ -142,6 +142,19 @@ table.trade{min-width:900px}
 .irow .sc{text-align:right;font-weight:600}
 .irow.na{color:var(--ink3)}
 
+/* de-risking */
+.risksum{display:flex;flex-direction:column;gap:3px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--good);border-radius:14px;padding:12px 14px}
+.risksum.on{border-left-color:var(--bad)}
+.risksum b{font-size:17px}.risksum span{font-size:13px;color:var(--ink2)}
+.meter{position:relative;height:12px;border-radius:6px;background:var(--neu-bg);max-width:620px}
+.meter i{position:absolute;left:0;top:0;bottom:0;border-radius:6px;background:var(--bad)}
+.meter b{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink)}
+.cap2{font-size:12px;color:var(--ink3);margin:2px 0 4px}
+.drbt{display:flex;flex-direction:column;gap:12px}
+#drStart{align-self:flex-start}
+#drList a.chip{text-decoration:none;font-weight:500}
+.icard{scroll-margin-top:70px}
+
 /* 3 industries */
 .actwhy{display:flex;flex-direction:column;gap:8px;max-width:80ch}
 .actwhy p{margin:0}

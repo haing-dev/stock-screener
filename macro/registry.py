@@ -4,7 +4,7 @@ Every indicator is a claim made by an investor in the research store (transcript
 @AtlasShrug1 ("Galt", dated), turned into a fixed, testable rule. Investors propose, the backtest decides.
 v1.0.0 pre-registered 2026-10-23; v2.0.0 the same day (state -> investor sector rules + history check). Change log: macro/CHANGES.md. Never edit a rule in place: add a version.
 """
-VERSION = "3.0.0"
+VERSION = "3.1.0"
 
 # ------------------------------------------------------------------ fixed settings (pre-registered)
 SETTINGS = {
@@ -24,6 +24,10 @@ SETTINGS = {
     "stress_high": (65, 55),       # market stress area: high from 65, normal again at 55
     # 3.0.0: act only on extreme readings; otherwise every sector stays neutral (equal weight)
     "extreme": {"economy": (40, 60), "stress": 70, "inflation": 70},
+    # 3.1.0 (main action): de-risk when at least a third of the core indicators (economy, market health, inflation,
+    # market stress) sit in their worst fifth: hold 50% stocks, 50% T-bills; otherwise 100% stocks (S&P 500)
+    "derisk": {"pillars": ["growth", "internals", "inflation", "stress"], "worst": 80, "share": 1 / 3,
+               "stocks_when_on": 0.5, "backtest_from": ["1975-01", "2006-08"]},
     "benchmark": "equal-weight average of the 20 sectors",
     "etf_backtest_start": "2006-07",  # first month most of the 20 ETFs trade
 }

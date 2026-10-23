@@ -41,6 +41,7 @@
     <div class="stage-line"><span class="sdot" id="stageDot"></span><h1 id="stageName"></h1></div>
     <p class="lead" id="stageWhy"></p>
     <ol class="points" id="points"></ol>
+    <a class="risksum" id="riskSum" href="#sR"></a>
     <div class="callsum" id="callSum"></div>
     <div class="strip-wrap">
       <div class="strip-head"><span>How each month since 1970 was classified</span><span class="keys" id="stripKey"></span></div>
@@ -48,12 +49,31 @@
     </div>
   </section>
 
+  <section id="sR">
+    <div class="step">What to do · Stock exposure</div>
+    <h2 id="drHead"></h2>
+    <div id="drMeter"></div>
+    <div class="chips" id="drList"></div>
+    <div class="card"><div class="cap2">Indicators in their worst fifth, each month since 1975</div><div class="legend" id="drLegend1"></div><div class="chart" id="drCount"></div></div>
+    <div class="drbt">
+      <div class="seg" id="drStart" role="group" aria-label="Backtest start"><button type="button" data-s="1975-01">Since 1975</button><button type="button" data-s="2006-08">Since 2006</button></div>
+      <h3 class="h3" id="drBtHead"></h3>
+      <div class="bt-grid">
+        <div class="card"><div class="legend" id="drLegend2"></div><div class="chart" id="drGrowth"></div><div class="cap2">Fall from previous peak</div><div class="chart" id="drDD"></div></div>
+        <div class="card"><table class="stats" id="drStats"></table></div>
+      </div>
+      <h3 class="h3">Every time the rule cut stocks to 50%</h3>
+      <div class="tablewrap"><table class="ind" id="drEp"></table></div>
+    </div>
+    <ol class="fns" id="drFns"></ol>
+  </section>
+
   <section id="sA" class="point"></section>
   <section id="sB" class="point"></section>
   <section id="sC" class="point"></section>
 
   <section id="s4">
-    <div class="step">What to do</div>
+    <div class="step">Sector calls (secondary)</div>
     <h2 id="actHead"></h2>
     <div class="sub actwhy" id="actWhy"></div>
     <div class="tablewrap"><table class="ind" id="indTable"></table></div>

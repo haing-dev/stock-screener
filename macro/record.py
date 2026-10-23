@@ -9,7 +9,7 @@ import time
 from . import registry as R
 
 LAUNCH = "2026-10"
-COLS = ["month", "recorded_at", "version", "state", "stage", "inflation_hot", "stress_high", "extreme",
+COLS = ["month", "recorded_at", "version", "state", "stage", "inflation_hot", "stress_high", "extreme", "derisk_on", "derisk_count",
         "growth", "internals", "inflation", "stress", "liquidity", "froth",
         "horizon", "etf", "investor_tilt", "action", "p_risk", "p_opp", "base_risk", "base_opp"]
 
@@ -53,6 +53,8 @@ def run(log=print):
                             "version": d["version"], "state": d["regime"][i] or "", "stage": d["stage"][i] or "",
                             "inflation_hot": int(bool(d["hot"][i])), "stress_high": int(bool(d["stress_high"][i])),
                             "extreme": int(bool((d.get("extreme") or [False] * len(months))[i])),
+                            "derisk_on": int(bool(d["derisk"]["on"][i])) if "derisk" in d else "",
+                            "derisk_count": d["derisk"]["count"][i] if "derisk" in d else "",
                             **{k: d["pillars"][k][i] for k, _, _ in R.PILLARS},
                             "horizon": h, "etf": e, "investor_tilt": it["tilt"][i], "action": a or "",
                             **dict(zip(["p_risk", "p_opp", "base_risk", "base_opp"], od))})

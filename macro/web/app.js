@@ -259,7 +259,7 @@ function indCard(ind, num){
     const f = r => `<span class="chip ${r[1] >= 0 ? "over" : "under"}" title="beat the 20-sector average in ${r[2]}% of those months">${esc(NAME()[r[0]])} ${pct(r[1], 1)}</span>`;
     after = `<div class="after"><div class="chips"><span class="lab">Best</span>${hist.slice(0, 3).map(f).join("")}<span class="lab sp">Worst</span>${hist.slice(-3).reverse().map(f).join("")}</div></div>`;
   }
-  return `<div class="icard z-${z}" data-id="${ind.id}"><div class="ihd"><span class="inum">${num}</span><b>${esc(ind.title)}</b><span class="tag ${z}">${ZW[z]}</span></div>
+  return `<div class="icard z-${z}" id="ic-${ind.id}" data-id="${ind.id}"><div class="ihd"><span class="inum">${num}</span><b>${esc(ind.title)}</b><span class="tag ${z}">${ZW[z]}</span></div>
     <p class="isum">${summary(ind)}</p>
     <div class="ich"><div class="chart long"></div><div class="chart zoom"></div></div>${after}</div>`;
 }
@@ -280,6 +280,49 @@ function renderPoint(g, sec, title){
 function renderPoints(){
   const S = sentences();
   renderPoint("A", $("#sA"), S.A); renderPoint("B", $("#sB"), S.B); renderPoint("C", $("#sC"), S.C);
+}
+
+/* ------------------------------------------------------------------ main action: stock exposure (de-risking) */
+let DRS = "1975-01";
+function renderDerisk(){
+  const R = D.derisk, X = D.settings.derisk, i = NOW(), c = R.count[i], need = R.need[i], on = R.on[i], n = R.n[i];
+  const stocks = Math.round(100 * X.stocks_when_on);
+  $("#riskSum").innerHTML = `<b>${on ? `Cut stocks to ${stocks}%` : "Stay fully invested in stocks"}</b><span>${c} of ${n} indicators are in their worst fifth; the rule cuts stocks to ${stocks}% at ${need}</span>`;
+  $("#riskSum").className = "risksum" + (on ? " on" : "");
+  $("#drHead").textContent = on ? `Cut stocks to ${stocks}%, rest in Treasury bills: ${c} of ${n} indicators are in their worst fifth` : `Stay fully invested: ${c} of ${n} indicators are in their worst fifth, the rule acts at ${need}`;
+  const w = x => `${(100 * x / n).toFixed(2)}%`;
+  $("#drMeter").innerHTML = `<div class="meter"><i style="width:${w(c)}"></i><b style="left:${w(need)}"></b></div><div class="zlab"><span class="w">${c} in worst fifth now</span><span class="n">De-risk at ${need} (one third)</span></div>`;
+  const nums = {}; ["A", "B", "C"].forEach(g => groupInds(g).forEach((x, k) => { nums[x.id] = `${GROUPS[g].num}.${k + 1}`; }));
+  $("#drList").innerHTML = `<span class="lab">In their worst fifth now</span>` + R.now_list.map(id => `<a class="chip under" href="#ic-${id}">${nums[id] || ""} ${esc(IND()[id].title)}</a>`).join("");
+  const i0 = D.months.indexOf("1975-01"), bands = [];
+  let st = null;
+  for (let k = i0; k <= N; k++) { const a = k < N && R.on[k];
+    if (st != null && !a) { bands.push({i0: st, i1: k - 1, c: "var(--bad-bg)"}); st = null; }
+    if (st == null && a) st = k; }
+  $("#drLegend1").innerHTML = `<span><i style="background:var(--ink)"></i>Indicators in worst fifth</span><span><i style="background:var(--bad)"></i>De-risk level (one third)</span><span><i style="background:var(--bad-bg);height:10px"></i>Stocks cut to ${stocks}%</span>`;
+  lineChart($("#drCount"), [{name: "In worst fifth", v: R.count.map((x, k) => k < i0 ? null : x), c: "var(--ink)", wd: 1.3},
+    {name: "De-risk level", v: R.need.map((x, k) => k < i0 ? null : x), c: "var(--bad)", wd: 1.2}], D.months,
+    {h: 180, bands, ticks: [0, 5, 10, 15, 20], fmt: x => Math.round(x), aria: "Indicators in their worst fifth"});
+  document.querySelectorAll("#drStart button").forEach(b => { b.setAttribute("aria-pressed", b.dataset.s === DRS); b.onclick = () => { DRS = b.dataset.s; renderDerisk(); }; });
+  const B = R.backtest[DRS], s1 = B.stats.strategy, s2 = B.stats.sp500, y = DRS.slice(0, 4);
+  $("#drBtHead").textContent = `Backtest since ${y}: ${pct(s1.cagr, 1)} a year vs ${pct(s2.cagr, 1)} for the S&P 500; worst fall ${pct(s1.maxdd, 0)} vs ${pct(s2.maxdd, 0)}`;
+  const C = [["strategy", "With the rule", "var(--s1)"], ["sp500", "S&P 500, always invested", "var(--s3)"]];
+  $("#drLegend2").innerHTML = C.map(([k, nm, col]) => `<span><i style="background:${col}"></i>${nm}</span>`).join("");
+  lineChart($("#drGrowth"), C.map(([k, nm, col]) => ({name: nm, v: B.curves[k].map(x => x == null ? null : 100 * x), c: col, wd: k === "strategy" ? 2.2 : 1.6, endLabel: v => `$${Math.round(v).toLocaleString("en-US")}`})), D.months,
+    {log: true, h: 240, ticks: [100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000], fmtTick: t => `$${t.toLocaleString("en-US")}`, fmt: v => `$${Math.round(v).toLocaleString("en-US")}`, aria: "Growth of $100"});
+  lineChart($("#drDD"), C.map(([k, nm, col]) => ({name: nm, v: B.drawdown[k], c: col, wd: 1.4})), D.months,
+    {h: 130, ticks: [-50, -40, -30, -20, -10, 0], fmtTick: t => `${t}%`, fmt: v => `${v.toFixed(1)}%`, aria: "Fall from previous peak"});
+  const rows = [["Return per year", pct(s1.cagr, 1), pct(s2.cagr, 1)], ["Worst fall from a peak", pct(s1.maxdd, 0), pct(s2.maxdd, 0)],
+    ["Yearly swings (volatility)", `${s1.vol}%`, `${s2.vol}%`], ["Return per unit of risk (Sharpe)", B.sharpe.strategy.toFixed(2), B.sharpe.sp500.toFixed(2)],
+    ["Months with stocks cut", `${B.share_on}%`, "–"], ["Times the rule cut stocks", `${B.episodes.length}`, "–"]];
+  $("#drStats").innerHTML = `<thead><tr><th>Since ${y}</th><th>With the rule</th><th>S&P 500</th></tr></thead><tbody>` + rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("") + "</tbody>";
+  const eps = [...B.episodes].reverse();
+  $("#drEp").innerHTML = `<thead><tr><th>Stocks cut</th><th class="r">Months</th><th class="r">S&P 500 meanwhile</th><th class="r">With the rule</th><th class="r">S&P 500 worst point</th><th>Outcome</th></tr></thead><tbody>` +
+    eps.map(e => { const helped = e.strategy != null && e.sp500 != null && e.strategy > e.sp500;
+      return `<tr><td><b>${mlab(e.from)}</b>${e.months > 1 ? ` to ${mlab(e.to)}` : ""}${e.open ? " <span class='muted'>(still on)</span>" : ""}</td><td class="r num">${e.months}</td>
+      <td class="r num ${e.sp500 < 0 ? "neg" : ""}">${pct(e.sp500, 1)}</td><td class="r num">${pct(e.strategy, 1)}</td><td class="r num">${e.sp500_worst ? pct(e.sp500_worst, 1) : "–"}</td>
+      <td>${helped ? `<span class="chip over">Protected</span>` : `<span class="chip under">Missed gains</span>`}</td></tr>`; }).join("") + "</tbody>";
+  $("#drFns").innerHTML = `<li>The rule: at the end of each month, count the economy, market-health, inflation and market-stress indicators (sections 1 to 3) that are in their worst fifth of history. If at least a third are, hold ${stocks}% S&P 500 and ${100 - stocks}% Treasury bills next month; otherwise 100% S&P 500. Only data published by then is used. Returns include dividends; no trading costs or taxes. The current month is still under way.</li>`;
 }
 
 /* ------------------------------------------------------------------ what to do */
@@ -344,7 +387,7 @@ function relChart(el, it){
 
 
 
-function renderAll(){ renderTop(); renderPoints(); renderIndustries(); }
+function renderAll(){ renderTop(); renderDerisk(); renderPoints(); renderIndustries(); }
 function setH(h){ H = h; store.set("mc-h", h); document.querySelectorAll("#horizon button").forEach(b => b.setAttribute("aria-pressed", b.dataset.h === H));
   renderTop(); renderPoints(); renderIndustries(); }
 async function start(){
