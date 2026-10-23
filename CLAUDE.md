@@ -46,6 +46,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Main action (3.1.0): de-risk to 50% stocks when >= 1/3 of the 28 core indicators are in their worst fifth
   (engine.derisk, backtest since 1975/2006). Sector calls are secondary: only on extreme readings, vs the 20-sector
   average (3.0.0). Sensitive-stock research (macro/research_stocks.py, step 'stocks') showed no edge.
+  De-risking research (macro/research_derisk.py; weekly via step 'derisk_weekly'): see macro/CHANGES.md research note.
 - Rules: macro/registry.py (pre-registered; changes -> new VERSION + macro/CHANGES.md).
 
 ## Deployment

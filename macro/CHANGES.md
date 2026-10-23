@@ -1,5 +1,20 @@
 # Macro Compass changes
 
+## Research note (2026-10-23, no rule change) - can de-risking warn earlier and more precisely?
+macro/research_derisk.py: 523 monthly rules (walk-forward track-record weights 'lift'/'edge' on 15%-in-12m or
+10%-in-6m falls; one switch / two steps / graded / with market trend AND, OR, two-step; fast re-entry; 28 or 43
+indicators), judged 1975-2000 and 2001-2026 separately, like-for-like pairs per idea; weekly checks via daily data
+(step 'derisk_weekly', Actions). Headline (1975-2026 monthly; S&P 500 12.4%/yr, worst -51%, Sharpe 0.58):
+- live rule 11.5%/yr, worst -39%, Sharpe 0.58, 4/8 falls of 15%+ cut before the S&P was 10% down, 14 false alarms;
+- trend only (S&P below 10-month average -> 50%) 11.7%, -30%, 0.61, 6/8, 24 false alarms;
+- indicators 0.25 (track-record weights) OR trend: 11.4%, -29%, 0.64, 7/8, 36 false alarms (better than live in both halves);
+- one switch 0.30 + track-record weights + fast re-entry: 12.3%, -32%, 0.64 (best overall, but picked with hindsight).
+Per idea: track-record weights small consistent gain (+0.1-0.2%/yr, Sharpe better in ~2/3 of pairs in both halves);
+two steps worse after 2000 (worst falls 4.5 pts deeper, median); graded smaller worst falls (~3-4 pts) but -0.5%/yr
+after 2000; fast re-entry helped before 2000, hurt after; 43 vs 28 indicators no difference; weekly checks (1990-2026)
+no material change (live 10.6 vs 10.5%/yr, worst -38.5 vs -39.7%) with twice the trades. Rules picked on 1975-2000
+only did not beat the live rule's 2001-2026 Sharpe (0.56-0.67 vs 0.62) but had smaller worst falls.
+
 ## 3.1.0 (2026-10-23) - main action: de-risking (user request)
 - Rule (SETTINGS.derisk): at each month end, count the core indicators (growth, market health, inflation, market
   stress; 28) scoring in their worst fifth (>= 80). If at least a third are, hold 50% S&P 500 / 50% T-bills next
