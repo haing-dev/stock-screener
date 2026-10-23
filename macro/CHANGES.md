@@ -1,5 +1,12 @@
 # Macro Compass changes
 
+## Research note (2026-10-23, no rule change) - trend confirmation (macro/research_trend.py)
+- Current 3.2 (graded + track-record): 11.3%/yr since 1975, worst -29%, protected +36 pts / lost -102 pts; 2006+ 10.0%.
+- Graded, cut only while the S&P is below its 10-month average: 12.0%, -31%, +37 / -64 pts; 2006+ 10.5%, -30%.
+- Switch at 30% of weighted warnings -> 80%, + S&P below 10-month average -> 50%: 12.1%, -31%, +36 / -64; 2006+ 10.9%.
+- Switch 30% AND S&P below its 6-month average -> 50%: 12.2%, -34%, +41 / -58; 2006+ 11.4%, -33%.
+- S&P 500: 12.4%, -51%; 2006+ 11.2%. Confirmation roughly halves the cost of false alarms; their number stays 16-20.
+
 ## 3.2.1 (2026-10-23) - page only (user request)
 - Recommendation chart reworked: scoreboard (points protected / lost / worst fall), growth of $100, quarterly bars of
   the gain or loss vs the S&P 500 (green / red) with each cut shaded and labelled, portfolio exposure bars.
