@@ -1,0 +1,116 @@
+name: Macro
+# Macro Compass (macro/): economic stage + 20 industry ETFs at risk / in favour, from investor-proposed indicators,
+# backtested point in time. Weekdays after the US close, on a push to main that changes macro/, or by hand.
+# Outputs: branch 'site' folder macro/ (same Cloudflare Worker and password as the triage site),
+# branch 'macro-record' (append-only monthly calls), 'macro-data' (raw downloads), 'macro-status' (last run log).
+on:
+  schedule:
+    - cron: "17 22 * * 1-5"
+  push:
+    branches: [main]
+    paths: ["macro/**", ".github/workflows/macro.yml"]
+  workflow_dispatch:
+    inputs:
+      step:
+        description: "all (default), fetch, build, site, record"
+        default: ""
+
+concurrency:
+  group: macro
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  macro:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      PORTAL_PASSWORD: ${{ secrets.PORTAL_PASSWORD }}
+      PYTHONUNBUFFERED: "1"
+      REPO_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Step (manual input, else macro/settings.json)
+        run: |
+          s=$(python3 -c "import json;print(json.load(open('macro/settings.json')).get('step','all'))")
+          echo "MACRO_STEP=${{ inputs.step }}" >> $GITHUB_ENV
+          [ -n "${{ inputs.step }}" ] || echo "MACRO_STEP=$s" >> $GITHUB_ENV
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Live record (branch 'macro-record', if it exists)
+        run: git clone -q --depth 1 --branch macro-record "$REPO_URL" macro_record || mkdir -p macro_record
+
+      - name: Run
+        shell: bash
+        env:
+          MACRO_RECORD_DIR: ${{ github.workspace }}/macro_record
+        run: |
+          set -o pipefail
+          python -m macro.run "${MACRO_STEP:-all}" 2>&1 | tee macro_run.log
+
+      - name: Raw downloads (branch 'macro-data', one commit, force-pushed)
+        if: always()
+        run: |
+          [ -d cache/macro/raw ] || { echo "no raw data"; exit 0; }
+          mkdir -p data_out && cp -r cache/macro/raw/. data_out/
+          [ -d cache/macro/out ] && mkdir -p data_out/out && cp cache/macro/out/*.json* data_out/out/ 2>/dev/null || true
+          cd data_out
+          git init -q -b macro-data
+          git -c user.name=macro-bot -c user.email=macro-bot@users.noreply.github.com add -A
+          git -c user.name=macro-bot -c user.email=macro-bot@users.noreply.github.com commit -q -m "macro data $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q -f "$REPO_URL" macro-data
+
+      - name: Publish the page (folder macro/ on branch 'site')
+        run: |
+          [ -f macro_site/data/data.bin ] || { echo "no page built this run"; exit 0; }
+          for i in 1 2 3; do
+            rm -rf site_br
+            git clone -q --depth 1 --branch site "$REPO_URL" site_br || { echo "no site branch yet"; exit 1; }
+            rm -rf site_br/macro && cp -r macro_site site_br/macro
+            cd site_br
+            git -c user.name=macro-bot -c user.email=macro-bot@users.noreply.github.com add -A macro
+            if git diff --cached --quiet; then echo "page unchanged"; exit 0; fi
+            git -c user.name=macro-bot -c user.email=macro-bot@users.noreply.github.com commit -q -m "macro page $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push -q origin site && { echo "Published to site/macro"; exit 0; }
+            cd ..; sleep 10
+          done
+          exit 1
+
+      - name: Record new monthly calls (branch 'macro-record', never force-pushed)
+        if: always()
+        run: |
+          [ -f macro_record/ledger.csv ] || { echo "no ledger"; exit 0; }
+          cd macro_record
+          if [ ! -d .git ]; then git init -q -b macro-record; git remote add origin "$REPO_URL"; fi
+          git config user.name macro-bot; git config user.email macro-bot@users.noreply.github.com
+          git add -A
+          if git diff --cached --quiet; then echo "no new calls"; exit 0; fi
+          git commit -q -m "calls $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git push -q origin macro-record && break; git pull -q --rebase origin macro-record || true; sleep 5; done
+
+      - name: Run status (branch 'macro-status', one commit, force-pushed)
+        if: always()
+        run: |
+          mkdir -p status_out
+          {
+            echo "# Macro run ${{ github.run_id }}"
+            echo "event: ${{ github.event_name }} · step: ${MACRO_STEP:-all} · finished: $(date -u '+%Y-%m-%d %H:%M UTC') · job: ${{ job.status }}"
+            echo; echo '```'
+            tail -n 150 macro_run.log 2>/dev/null | sed -E 's/(api_key=)[^& ]+/\1.../g'
+            echo '```'
+          } > status_out/status.md
+          cd status_out
+          git init -q -b macro-status
+          git -c user.name=macro-bot -c user.email=macro-bot@users.noreply.github.com add -A
+          git -c user.name=macro-bot -c user.email=macro-bot@users.noreply.github.com commit -q -m "status ${{ github.run_id }}"
+          git push -q -f "$REPO_URL" macro-status || true
