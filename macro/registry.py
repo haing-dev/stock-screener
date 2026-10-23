@@ -50,7 +50,7 @@ FRED = {
     "HNOCEAQ027S": dict(fr=True, lag=3, q=True), "TFAABSHNO": dict(fr=True, lag=3, q=True),
     "USREC": dict(lag=0), "DTWEXBGS": dict(lag=0), "TWEXMMTH": dict(lag=0),
 }
-YAHOO = ["SPY", "EWY", "DX-Y.NYB"]          # plus every industry ETF below
+YAHOO = ["SPY", "EWY", "DX-Y.NYB", "HYG", "IEF", "XLY", "SOXX"]   # plus every industry ETF below
 FRENCH_IND = "49_Industry_Portfolios_CSV.zip"
 FRENCH_FF = "F-F_Research_Data_Factors_CSV.zip"
 
