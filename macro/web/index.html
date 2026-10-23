@@ -26,15 +26,15 @@
 <header class="top">
   <div class="brand"><b>Macro Compass</b></div>
   <div class="seg tabs" id="tabs" role="tablist" aria-label="Pages">
-    <button type="button" role="tab" data-p="reading">The reading</button>
-    <button type="button" role="tab" data-p="calls">The calls</button>
+    <button type="button" role="tab" data-p="reading">Analysis</button>
+    <button type="button" role="tab" data-p="calls">Recommendation</button>
   </div>
 </header>
 
 <main>
 <div id="pReading">
   <section class="hero" id="s0">
-    <div class="step">The reading</div>
+    <div class="step">Analysis</div>
     <div class="stage-line"><span class="sdot" id="stageDot"></span><h1 id="stageName"></h1></div>
     <p class="lead" id="stageWhy"></p>
     <ol class="points" id="points"></ol>
@@ -46,17 +46,15 @@
 
 <div id="pCalls" hidden>
   <section id="sX">
-    <div class="step">Call 1 · How much to hold in stocks</div>
-    <h2 id="xHead"></h2>
-    <p class="sub" id="xSub"></p>
+    <h2>1. The recommended equity portfolio exposure</h2>
+    <div class="callnow" id="xHead"></div>
     <div class="card"><div class="chart" id="xChart"></div></div>
     <p class="note" id="xNote"></p>
   </section>
   <section id="sS">
-    <div class="step">Call 2 · Sectors</div>
-    <div class="shead"><h2 id="actHead"></h2>
+    <div class="shead"><h2>2. Sector calls</h2>
       <div class="seg" id="horizon" role="group" aria-label="Look ahead"><button type="button" data-h="6">Next 6 months</button><button type="button" data-h="12">Next 12 months</button></div></div>
-    <p class="sub" id="actWhy"></p>
+    <p class="sub"><b id="actHead"></b> <span id="actWhy"></span></p>
     <div class="tablewrap"><table class="ind calls" id="indTable"></table></div>
   </section>
 </div>

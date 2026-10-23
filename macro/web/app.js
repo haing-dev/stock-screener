@@ -221,7 +221,6 @@ function drawInd(card){
   const iFirst = Math.max(D.months.findIndex(x => x >= "1970-01"), vals.findIndex(x => x != null));
   const [, ci] = lastOf(vals), agoI = ci - 12, ago = agoI >= 0 && vals[agoI] != null ? vals[agoI] * ind.scale : null;
   panel(card.querySelector(".long"), ind, iFirst, {clip: true, zoneLabel: true});
-  panel(card.querySelector(".zoom"), ind, Math.max(iFirst, N - 25), {monthly: true, ago, agoI, nt: 3, r: 14});
 }
 function indCard(ind, num){
   const v = D.ind_view[ind.id], z = zoneAt(ind.id, NOW()), vals = D.values[ind.id];
@@ -234,7 +233,7 @@ function indCard(ind, num){
   }
   return `<div class="icard z-${z}" id="ic-${ind.id}" data-id="${ind.id}"><div class="ihd"><span class="inum">${num}</span><b>${esc(ind.title)}</b><span class="tag ${z}">${ZW[z]}</span></div>
     <p class="isum">${summary(ind)}</p>
-    <div class="ich"><div class="chart long"></div><div class="chart zoom"></div></div>${after}</div>`;
+    <div class="chart long"></div></div>`;
 }
 const ZORDER = {warn: 0, good: 1, normal: 2, "": 3};
 function footnotes(extra){ return `<ol class="fns">${extra.map(t => `<li>${t}</li>`).join("")}</ol>`; }
@@ -255,83 +254,97 @@ function renderPoints(){
   renderPoint("A", $("#sA"), S.A); renderPoint("B", $("#sB"), S.B); renderPoint("C", $("#sC"), S.C);
 }
 
-/* ------------------------------------------------------------------ call 1: stock exposure (master chart) */
-function renderExposure(){
-  const X = D.derisk, B = X.backtest, S = D.settings.derisk, i = NOW(), e = X.exposure[i], sh = X.share[i];
-  const lo = Math.round(S.band[0] * 100), hi = Math.round(S.band[1] * 100), minS = Math.round(S.min_stocks * 100);
-  const ind = IND(), names = X.warnings_now.map(k => ind[k].title);
-  $("#xHead").textContent = e >= 100 ? "Hold 100% in stocks" : `Hold ${e}% in stocks and ${100 - e}% in cash`;
-  $("#xSub").textContent = `The more of the 28 indicators in sections 1 to 3 sit in their warning zone, the more moves to cash, counting most the indicators that warned best before past falls. `
-    + `Nothing moves while fewer than ${lo}% warn; at ${hi}% or more, ${100 - minS}% sits in cash. Now ${Math.round(sh)}% warn${names.length ? ` (${names.slice(0, 6).join(", ")}${names.length > 6 ? " and others" : ""})` : ""}.`;
-  const st = B.stats, sp = st.sp500, sr = st.strategy;
-  const eps = B.episodes.filter(x => x.diff != null);
-  const best = [...eps].sort((a, b) => b.diff - a.diff).slice(0, 2), worst = [...eps].sort((a, b) => a.diff - b.diff).slice(0, 2);
-  const yr = x => x.from.slice(0, 4) === x.to.slice(0, 4) ? x.from.slice(0, 4) : `${x.from.slice(0, 4)}–${x.to.slice(2, 4)}`;
-  $("#xNote").textContent = `Since ${B.from.slice(0, 4)}: ${pct(sr.cagr, 1)} a year with the rule vs ${pct(sp.cagr, 1)} for the S&P 500, worst fall ${pct(sr.maxdd, 0)} vs ${pct(sp.maxdd, 0)}. `
-    + `Biggest bullets dodged: ${best.map(yr).join(" and ")}. Costliest false alarms: ${worst.map(yr).join(" and ")}. `
-    + `Cash earns the 3-month US Treasury bill rate. Returns include dividends; no trading costs or taxes.`;
-  masterChart($("#xChart"), X, B);
+/* ------------------------------------------------------------------ recommendation 1: equity exposure, by quarter */
+const qOf = mo => `${mo.slice(0, 4)}-Q${Math.ceil(+mo.slice(5, 7) / 3)}`;
+const qLab = q => `${q.slice(5)} ${q.slice(0, 4)}`;
+const dlab = d => { const r = Math.round(d); return `(${r > 0 ? "+" : r < 0 ? "−" : ""}${Math.abs(r)}%)`; };
+function quarters(){
+  const X = D.derisk, B = X.backtest, i0 = D.months.indexOf(B.from), Q = [];
+  for (let i = i0 + 1; i < N; i++) {
+    const q = qOf(D.months[i]); let cur = Q[Q.length - 1];
+    if (!cur || cur.q !== q) { cur = {q, i0: i, eq: []}; Q.push(cur); }
+    cur.i1 = i; cur.eq.push(X.exposure[i - 1] ?? 100);           // the share held during month i was set at the end of month i-1
+    cur.sp = 100 * B.curves.sp500[i]; cur.rec = 100 * B.curves.strategy[i];       // growth of $100
+  }
+  const last = Q[Q.length - 1];
+  Q.forEach(x => { x.equity = Math.round(x.eq.reduce((a, b) => a + b, 0) / x.eq.length); });
+  last.equity = X.exposure[N - 1]; last.now = true;                // the call for the current quarter: latest reading
+  return Q;
 }
-function masterChart(el, X, B){
-  const w = W(el), narrow = w < 640, m = {l: 42, r: narrow ? 12 : 92, t: 40, b: 22}, h1 = narrow ? 240 : 280, gap = 22, h2 = 74, h = m.t + h1 + gap + h2 + m.b;
-  const i0 = D.months.indexOf(B.from), n = N;
-  const X_ = i => m.l + (w - m.l - m.r) * (i - i0) / Math.max(1, n - 1 - i0);
-  const ddS = B.drawdown.sp500, ddR = B.drawdown.strategy, ex = X.exposure;
-  const lo = Math.min(-50, ...ddS.slice(i0).filter(v => v != null)), T = niceTicks(lo, 0, 5);
-  const Y1 = v => m.t + h1 * (v - 0) / (T.lo - 0);
-  const y2top = m.t + h1 + gap, Y2 = v => y2top + h2 * (100 - v) / 50;
+function renderExposure(){
+  const Q = quarters(), now = Q[Q.length - 1];
+  $("#xHead").innerHTML = `<span class="q">${qLab(now.q)}</span><b>${now.equity}% equity</b><span>${100 - now.equity}% cash</span>`;
+  $("#xNote").textContent = `Updated as new data come in. Cash earns the 3-month US Treasury bill rate. Returns include dividends; no trading costs or taxes.`;
+  masterChart($("#xChart"), Q);
+}
+function masterChart(el, Q){
+  const w = W(el), narrow = w < 640, m = {l: 52, r: narrow ? 10 : 150, t: 30, b: 22}, h1 = narrow ? 240 : 300, gap = 30, h2 = 80;
+  const h = m.t + h1 + gap + h2 + m.b, n = Q.length;
+  const X_ = k => m.l + (w - m.l - m.r) * k / Math.max(1, n - 1);
+  const vals = Q.flatMap(x => [x.sp, x.rec]).filter(v => v != null);
+  const lo = Math.log(Math.min(...vals)), hi = Math.log(Math.max(...vals));
+  const Y1 = v => m.t + h1 * (1 - (Math.log(v) - lo) / (hi - lo));
+  const y2 = m.t + h1 + gap, Y2 = v => y2 + h2 * (100 - v) / 50;
+  // S&P falls of 15%+ (quarter-end peak to trough) and the recommendation's lead or lag over them
+  const bands = [];
+  let pk = 0;
+  for (let k = 1; k < n; k++) {
+    if (Q[k].sp >= Q[pk].sp) { pk = k; continue; }
+    if (Q[k].sp / Q[pk].sp - 1 <= -0.15) {
+      let tr = k, j = k;
+      while (j < n && Q[j].sp < Q[pk].sp) { if (Q[j].sp < Q[tr].sp) tr = j; j++; }
+      bands.push({a: pk, b: tr, kind: "fall", d: ((Q[tr].rec / Q[pk].rec) - (Q[tr].sp / Q[pk].sp)) * 100});
+      pk = Math.min(j, n - 1); k = j;
+    }
+  }
+  const qi = mo => Q.findIndex(x => x.q === qOf(mo));
+  D.derisk.backtest.episodes.filter(e => e.diff != null && e.diff <= -5).forEach(e => {
+    const a = Math.max(0, qi(e.from) - 1), b = Math.max(a + 1, qi(e.to));
+    if (bands.some(x => x.kind === "fall" && !(b <= x.a || a >= x.b))) return;
+    bands.push({a, b, kind: "miss", d: ((Q[b].rec / Q[a].rec) - (Q[b].sp / Q[a].sp)) * 100});
+  });
   let g = "";
-  // recessions (thin bars above the top lane) + key
-  D.recession.forEach((r, i) => { if (r === 1 && i >= i0) g += `<rect x="${X_(i).toFixed(1)}" y="${m.t - 10}" width="${Math.max(1, X_(i + 1) - X_(i)).toFixed(2)}" height="6" fill="var(--rec)"/>`; });
-  g += recKey(w - 4, 4) + `<text class="lab" x="${m.l}" y="12">Fall from the previous peak</text>`;
-  // big cuts: green = dodged a fall, red = cost money (false alarm or missed rebound)
-  const eps = B.episodes.filter(x => x.diff != null && Math.abs(x.diff) >= (narrow ? 8 : 5));
-  eps.forEach((x, k) => {
-    const a = D.months.indexOf(x.from), b = D.months.indexOf(x.to) + 1, good = x.diff > 0;
-    g += `<rect class="ep" data-k="${k}" x="${X_(a)}" y="${m.t}" width="${Math.max(2, X_(b) - X_(a))}" height="${h1}" fill="var(${good ? "--good-bg" : "--bad-bg"})"/>`;
-  });
-  T.t.forEach(t => { g += `<line x1="${m.l}" x2="${w - m.r}" y1="${Y1(t)}" y2="${Y1(t)}" stroke="var(--grid)"/><text x="${m.l - 6}" y="${Y1(t) + 3.5}" text-anchor="end">${t}%</text>`; });
-  let area = `M${X_(i0)} ${Y1(0)}`, line = "";
-  for (let i = i0; i < n; i++) { if (ddS[i] != null) area += `L${X_(i).toFixed(1)} ${Y1(ddS[i]).toFixed(1)}`; }
-  area += `L${X_(n - 1)} ${Y1(0)}Z`;
-  let pen = false;
-  for (let i = i0; i < n; i++) { const v = ddR[i]; if (v == null) { pen = false; continue; } line += (pen ? "L" : "M") + X_(i).toFixed(1) + " " + Y1(v).toFixed(1); pen = true; }
-  g += `<path d="${area}" fill="var(--axis)" opacity=".55"/><path d="${line}" fill="none" stroke="var(--s1)" stroke-width="1.6"/>`;
-  // labels for the big cuts (two rows so they don't collide)
-  eps.forEach((x, k) => {
-    const a = D.months.indexOf(x.from), b = D.months.indexOf(x.to) + 1, cx = (X_(a) + X_(b)) / 2, good = x.diff > 0;
-    const y = Y1(T.lo) - 8 - (k % 3) * 14;
-    g += `<text class="eplab ${good ? "pos" : "neg"}" x="${cx}" y="${y}" text-anchor="middle">${narrow ? (good ? "+" : "−") : good ? "Dodged " : "Cost "}${Math.abs(Math.round(x.diff))}%</text>`;
-  });
-  // end labels
-  const [ls, lsi] = lastOf(ddS), [lr, lri] = lastOf(ddR);
-  const yS = Y1(ls), yR = Y1(lr), sep = Math.abs(yS - yR) < 13 ? 13 : 0;
+  // recessions
+  D.recession.forEach((r, i) => { if (r !== 1 || i < D.months.indexOf(Q[0].q.slice(0, 4) + "-01")) return;
+    const k = Q.findIndex(x => x.q === qOf(D.months[i])); if (k < 0) return;
+    g += `<rect x="${X_(k) - 1}" y="${m.t - 12}" width="${Math.max(2, X_(1) - X_(0))}" height="6" fill="var(--rec)"/>`; });
+  g += recKey(w - 4, 2);
+  bands.forEach(x => { g += `<rect x="${X_(x.a)}" y="${m.t}" width="${Math.max(3, X_(x.b) - X_(x.a))}" height="${h1}" fill="var(${x.kind === "fall" ? "--neu-bg" : "--bad-bg"})"/>`; });
+  [100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000].filter(t => Math.log(t) >= lo && Math.log(t) <= hi).forEach(t => {
+    g += `<line x1="${m.l}" x2="${w - m.r}" y1="${Y1(t)}" y2="${Y1(t)}" stroke="var(--grid)"/><text x="${m.l - 6}" y="${Y1(t) + 3.5}" text-anchor="end">$${t.toLocaleString("en-US")}</text>`; });
+  const path = key => Q.map((x, k) => `${k ? "L" : "M"}${X_(k).toFixed(1)} ${Y1(x[key]).toFixed(1)}`).join("");
+  g += `<path d="${path("sp")}" fill="none" stroke="var(--ink)" stroke-width="2"/><path d="${path("rec")}" fill="none" stroke="var(--s1)" stroke-width="2.6"/>`;
+  bands.forEach((x, k) => { const cx = (X_(x.a) + X_(x.b)) / 2, yb = Math.min(Y1(Q[x.a].sp), Y1(Q[x.a].rec)) - 8 - (k % 2) * 13;
+    g += `<text class="eplab ${x.d >= 0 ? "pos" : "neg"}" x="${cx}" y="${Math.max(m.t + 10, yb)}" text-anchor="middle">${dlab(x.d)}</text>`; });
+  const L = Q[n - 1];
   if (!narrow) {
-    g += `<text class="lab" x="${w - m.r + 6}" y="${yS + 4 + (yS >= yR ? sep / 2 : -sep / 2)}" style="fill:var(--ink3)">S&P 500</text>`;
-    g += `<text class="lab" x="${w - m.r + 6}" y="${yR + 4 + (yR > yS ? sep / 2 : -sep / 2)}" style="fill:var(--s1)">With the rule</text>`;
-  } else g += `<text class="lab" x="${w - 4}" y="26" text-anchor="end"><tspan style="fill:var(--s1)">— with the rule</tspan>  <tspan style="fill:var(--ink3)">▮ S&P 500</tspan></text>`;
-  // lane 2: share held in stocks
-  let ea = `M${X_(i0)} ${Y2(50)}`;
-  for (let i = i0; i < n; i++) { const v = ex[i - 1] ?? 100; ea += `L${X_(i).toFixed(1)} ${Y2(v).toFixed(1)}L${X_(i + 1 > n - 1 ? n - 1 : i + 1).toFixed(1)} ${Y2(v).toFixed(1)}`; }
-  ea += `L${X_(n - 1)} ${Y2(50)}Z`;
-  g += `<path d="${ea}" fill="var(--s1)" opacity=".25"/>`;
-  [100, 50].forEach(t => { g += `<line x1="${m.l}" x2="${w - m.r}" y1="${Y2(t)}" y2="${Y2(t)}" stroke="var(--grid)"/><text x="${m.l - 6}" y="${Y2(t) + 3.5}" text-anchor="end">${t}%</text>`; });
-  g += `<text class="lab" x="${m.l + 4}" y="${y2top - 4}">Share held in stocks (the rest in cash)</text>`;
+    const ys = Y1(L.sp), yr = Y1(L.rec), sep = Math.abs(ys - yr) < 14 ? 7 : 0;
+    g += `<text class="endlab" x="${w - m.r + 8}" y="${yr + 4 + (yr <= ys ? -sep : sep)}" style="fill:var(--s1)">Recommended exposure $${Math.round(L.rec).toLocaleString("en-US")}</text>`;
+    g += `<text class="endlab" x="${w - m.r + 8}" y="${ys + 4 + (ys < yr ? -sep : sep)}">S&P 500 $${Math.round(L.sp).toLocaleString("en-US")}</text>`;
+  } else g += `<text class="lab" x="${m.l}" y="${m.t - 16}"><tspan style="fill:var(--s1)">━ Recommended</tspan>  ━ S&P 500</text>`;
+  g += `<text class="lab" x="${m.l}" y="${narrow ? m.t + 12 : m.t - 16}">${narrow ? "" : "Growth of $100 since " + Q[0].q.slice(0, 4)}</text>`;
+  // portfolio exposure, one bar per quarter
+  const bw = Math.max(1, X_(1) - X_(0));
+  Q.forEach((x, k) => { g += `<rect class="qb" x="${X_(k) - bw / 2}" y="${Y2(x.equity)}" width="${bw}" height="${y2 + h2 - Y2(x.equity)}" fill="var(--s1)" opacity="${x.now ? 0.9 : 0.35}"/>`; });
+  [100, 75, 50].forEach(t => { g += `<line x1="${m.l}" x2="${w - m.r}" y1="${Y2(t)}" y2="${Y2(t)}" stroke="var(--grid)"/><text x="${m.l - 6}" y="${Y2(t) + 3.5}" text-anchor="end">${t}%</text>`; });
+  g += `<text class="lab" x="${m.l}" y="${y2 - 8}">Portfolio exposure (equity share)</text>`;
   let lastX = -1e9;
-  for (let i = i0; i < n; i++) if (D.months[i].endsWith("-01") && +D.months[i].slice(0, 4) % 5 === 0 && X_(i) - lastX > 40) { g += `<text x="${X_(i)}" y="${h - 5}" text-anchor="middle">${D.months[i].slice(0, 4)}</text>`; lastX = X_(i); }
-  g += `<line class="cx" x1="0" x2="0" y1="${m.t}" y2="${y2top + h2}" stroke="var(--ink3)" visibility="hidden"/><rect class="hit" x="${m.l}" y="0" width="${w - m.l - m.r}" height="${h}" fill="transparent"/>`;
-  el.innerHTML = `<svg viewBox="0 0 ${w} ${h}" height="${h}" role="img" aria-label="S&P 500 falls and the rule's cuts since ${B.from.slice(0, 4)}">${g}</svg>`;
-  const hit = el.querySelector(".hit"), cx = el.querySelector(".cx");
-  const all = B.episodes;
-  hit.addEventListener("pointermove", e => {
-    const r = el.querySelector("svg").getBoundingClientRect(), px = (e.clientX - r.left) * w / r.width;
-    const i = Math.max(i0, Math.min(n - 1, Math.round(i0 + (px - m.l) / (w - m.l - m.r) * (n - 1 - i0))));
-    cx.setAttribute("x1", X_(i)); cx.setAttribute("x2", X_(i)); cx.setAttribute("visibility", "visible");
-    const mo = D.months[i], epi = all.find(x => mo >= x.from && mo <= x.to);
-    showTip(e, `<div class="d">${mlab(mo)}${D.recession[i] === 1 ? " · US recession" : ""}</div>Fall from peak: S&P 500 <b>${pct(ddS[i], 0)}</b>, with the rule <b>${pct(ddR[i], 0)}</b><br>Held in stocks: <b>${ex[i - 1] ?? 100}%</b>`
-      + (epi ? `<div style="margin-top:4px">Cut ${mlab(epi.from)}${epi.to !== epi.from ? ` to ${mlab(epi.to)}` : ""}: S&P 500 ${pct(epi.sp500, 0)}, with the rule ${pct(epi.strategy, 0)} → <b>${epi.diff > 0 ? `dodged ${Math.abs(epi.diff).toFixed(0)}%` : `cost ${Math.abs(epi.diff).toFixed(0)}%`}</b></div>` : ""));
+  Q.forEach((x, k) => { const y = +x.q.slice(0, 4); if (x.q.endsWith("Q1") && y % 5 === 0 && X_(k) - lastX > 40) { g += `<text x="${X_(k)}" y="${h - 5}" text-anchor="middle">${y}</text>`; lastX = X_(k); } });
+  g += `<line class="cx" x1="0" x2="0" y1="${m.t}" y2="${y2 + h2}" stroke="var(--ink3)" visibility="hidden"/><circle class="d1" r="4" fill="var(--ink)" visibility="hidden"/><circle class="d2" r="4.5" fill="var(--s1)" visibility="hidden"/><rect class="hit" x="${m.l - 4}" y="0" width="${w - m.l - m.r + 8}" height="${h}" fill="transparent"/>`;
+  el.innerHTML = `<svg viewBox="0 0 ${w} ${h}" height="${h}" role="img" aria-label="Recommended exposure vs the S&P 500, by quarter">${g}</svg>`;
+  const svg = el.querySelector("svg"), cx = el.querySelector(".cx"), d1 = el.querySelector(".d1"), d2 = el.querySelector(".d2");
+  el.querySelector(".hit").addEventListener("pointermove", e => {
+    const r = svg.getBoundingClientRect(), px = (e.clientX - r.left) * w / r.width;
+    const k = Math.max(0, Math.min(n - 1, Math.round((px - m.l) / (w - m.l - m.r) * (n - 1)))), x = Q[k];   // snaps to quarters
+    [cx].forEach(l => { l.setAttribute("x1", X_(k)); l.setAttribute("x2", X_(k)); l.setAttribute("visibility", "visible"); });
+    d1.setAttribute("cx", X_(k)); d1.setAttribute("cy", Y1(x.sp)); d1.setAttribute("visibility", "visible");
+    d2.setAttribute("cx", X_(k)); d2.setAttribute("cy", Y1(x.rec)); d2.setAttribute("visibility", "visible");
+    const band = bands.find(b => k >= b.a && k <= b.b);
+    showTip(e, `<div class="d">${qLab(x.q)}${x.now ? " · current call" : ""}</div><b>${x.equity}% equity · ${100 - x.equity}% cash</b>`
+      + `<div>$100 became: recommended $${Math.round(x.rec).toLocaleString("en-US")}, S&P 500 $${Math.round(x.sp).toLocaleString("en-US")}</div>`
+      + (band ? `<div>${band.kind === "fall" ? "S&P fall" : "False alarm"} ${qLab(Q[band.a].q)} to ${qLab(Q[band.b].q)}: <b>${dlab(band.d)}</b> vs the S&P 500</div>` : ""));
   });
-  hit.addEventListener("pointerleave", () => { hideTip(); cx.setAttribute("visibility", "hidden"); });
+  el.querySelector(".hit").addEventListener("pointerleave", () => { hideTip(); [cx, d1, d2].forEach(l => l.setAttribute("visibility", "hidden")); });
 }
 
 /* ------------------------------------------------------------------ call 2: sectors */
@@ -353,7 +366,7 @@ function sectorWhy(etf, n, s, high){
 function renderIndustries(){
   const i = NOW(), s = D.regime[i], high = D.stress_high[i], hz = D.horizons[H], live = D.extreme[i];
   document.querySelectorAll("#horizon button").forEach(b => b.setAttribute("aria-pressed", b.dataset.h === H));
-  $("#actHead").textContent = live ? `${stName(s)}${high ? ", markets in risk-off mode" : ""}: what to tilt` : "On hold: no reading is extreme";
+  $("#actHead").textContent = live ? `${stName(s)}${high ? ", markets in risk-off mode" : ""}.` : "On hold: no reading is extreme.";
   $("#actWhy").textContent = live ? `Calls for the next ${H} months, against holding all 20 sectors equally.`
     : `Sector calls only apply when a reading is extreme. Until then all 20 sectors are held equally; these are the calls that would apply.`;
   const rows = D.industries.map(it => { const n = hz.now[it.etf] || {}; const c = live ? n.action : n.if_extreme;

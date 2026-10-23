@@ -1,5 +1,13 @@
 # Macro Compass changes
 
+## 3.2.1 (2026-10-23) - page only (user request)
+- Tabs renamed Analysis / Recommendation. Recommendation 1: current-quarter call (latest reading, updated as data
+  arrive) + one chart by quarter: growth of $100, recommended exposure vs S&P 500, S&P falls of 15%+ and costly false
+  alarms marked with the difference (+x% / -x%), portfolio exposure bars; hover snaps to quarters. The rule itself
+  still updates monthly. Checked: calls made 1 or 2 quarters ahead keep most of the protection on average
+  (11.2% / 11.6%/yr, worst -30% / -33% vs -29% now) but miss sudden shocks; quarter-end-only rebalancing 11.0%, -31%.
+- Analysis: last-2-years panel and sector chips removed from each indicator box.
+
 ## 3.2.0 (2026-10-23) - de-risking: track-record weights + graded cut (user choice, ideas 1 + 2b)
 - Rule (SETTINGS.derisk): warnings = core indicators in their worst fifth, each weighted walk-forward by how much
   more often than normal a 15%+ S&P fall followed within 12 months (shrink 24); weighted share <= 15% -> 100% stocks,
