@@ -56,7 +56,7 @@ def build(password, log=print, allow_plain=False, out_dir="macro_site", data=Non
         f.write("// Cloudflare Worker (static assets) - Macro Compass, published by .github/workflows/macro.yml\n")
         json.dump(WRANGLER, f, indent=2)
     with open(os.path.join(out_dir, ".assetsignore"), "w", encoding="utf-8") as f:
-        f.write("wrangler.jsonc\n.assetsignore\n.git\n")
+        f.write("wrangler.jsonc\n.assetsignore\n.git\n.wrangler\n")
     with open(os.path.join(out_dir, "_headers"), "w", encoding="utf-8") as f:
         f.write(HEADERS)
     with open(os.path.join(out_dir, "robots.txt"), "w", encoding="utf-8") as f:
