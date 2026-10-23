@@ -171,11 +171,13 @@ function renderTop(){
   $("#stageWhy").textContent = `${S.A}. ${S.B}. ${S.C}. Reading since ${mlab(D.months[j])}.`;
   $("#points").innerHTML = ["A", "B", "C"].map(g => `<li><a href="#s${g}"><span class="pn">${GROUPS[g].num}</span><b>${S[g]}</b>${zoneBar(g)}
     ${jumped(g) ? `<span class="jump">Warning signals jumped this month: ${jumped(g).now}, from about ${jumped(g).a6}</span>` : ""}</a></li>`).join("");
-  const o = D.industries.filter(it => hz.now[it.etf]?.action === "over"), u = D.industries.filter(it => hz.now[it.etf]?.action === "under");
+  const live = D.extreme[i], key = live ? "action" : "if_extreme";
+  const o = D.industries.filter(it => hz.now[it.etf]?.[key] === "over"), u = D.industries.filter(it => hz.now[it.etf]?.[key] === "under");
   const ch = (l, c) => l.map(it => `<span class="chip ${c}">${esc(it.name)}</span>`).join("");
-  $("#callSum").innerHTML = `<div class="chips"><span class="lab">Overweight</span>${o.length ? ch(o, "over") : "<span class='muted'>none</span>"}</div>
+  $("#callSum").innerHTML = `${live ? "" : `<div class="hold-note"><b>No sector calls this month</b>: none of the readings is extreme, so all 20 sectors are held equally. Ready if one turns extreme:</div>`}
+    <div class="chips"><span class="lab">Overweight</span>${o.length ? ch(o, "over") : "<span class='muted'>none</span>"}</div>
     <div class="chips"><span class="lab">Underweight</span>${u.length ? ch(u, "under") : "<span class='muted'>none</span>"}</div>
-    <a class="more" href="#s4">Next ${H} months · details below</a>`;
+    <a class="more" href="#s4">Next ${H} months, vs the 20-sector average · details below</a>`;
   $("#stripKey").innerHTML = STATES.map(k => `<span><i style="background:var(--st-${k})"></i>${D.meta.stages[k][0]}</span>`).join("") +
     `<span><i class="str"></i>Risk-off</span><span><i class="rec"></i>US recession</span>`;
   stripChart($("#strip"));
@@ -254,7 +256,7 @@ function indCard(ind, num){
   let after = "";
   const hist = v && v.hist[H];
   if (hist && hist.length >= 4) {
-    const f = r => `<span class="chip ${r[1] >= 0 ? "over" : "under"}" title="beat the S&P 500 in ${r[2]}% of those months">${esc(NAME()[r[0]])} ${pct(r[1], 1)}</span>`;
+    const f = r => `<span class="chip ${r[1] >= 0 ? "over" : "under"}" title="beat the 20-sector average in ${r[2]}% of those months">${esc(NAME()[r[0]])} ${pct(r[1], 1)}</span>`;
     after = `<div class="after"><div class="chips"><span class="lab">Best</span>${hist.slice(0, 3).map(f).join("")}<span class="lab sp">Worst</span>${hist.slice(-3).reverse().map(f).join("")}</div></div>`;
   }
   return `<div class="icard z-${z}" data-id="${ind.id}"><div class="ihd"><span class="inum">${num}</span><b>${esc(ind.title)}</b><span class="tag ${z}">${ZW[z]}</span></div>
@@ -283,15 +285,28 @@ function renderPoints(){
 /* ------------------------------------------------------------------ what to do */
 const ACT = {over: ["over", "▲", "Overweight"], under: ["under", "▼", "Underweight"], neutral: ["neutral", "●", "Neutral"]};
 const pill = a => { const [c, i, t] = ACT[a] || ACT.neutral; return `<span class="pill ${c}"><span aria-hidden="true">${i}</span>${t}</span>`; };
+const AVG = "the 20-sector average";
+function triggers(){
+  const i = NOW(), X = D.settings.extreme, g = D.econ6[i], st = D.pillars.stress[i], inf = D.infl6[i];
+  const row = (lab, on, close) => `<li class="${on ? "on" : ""}"><span>${lab}</span><b>${on ? "Yes" : close ? "Close" : "No"}</b></li>`;
+  return `<ul class="trig">${row("Economy indicators clearly weak", g >= X.economy[1], g >= X.economy[1] - 5)}${row("Economy indicators clearly strong", g <= X.economy[0], g <= X.economy[0] + 5)}
+    ${row("Market stress severe", st >= X.stress, st >= X.stress - 5)}${row("Inflation very hot", inf >= X.inflation, inf >= X.inflation - 5)}</ul>`;
+}
 function renderIndustries(){
-  const i = NOW(), s = D.regime[i], high = D.stress_high[i], hz = D.horizons[H];
-  const r = D.meta.rules[s];
-  $("#actHead").textContent = `${stName(s)}${high ? " in risk-off mode" : ""}: what this has meant for sectors`;
-  $("#actWhy").innerHTML = `<b>The logic:</b> ${esc(r.why)}${high ? ` <b>Risk-off:</b> ${esc(D.meta.stress_rule.why)}` : ""} <b>The check:</b> a sector is only overweighted or underweighted if it actually beat or lagged the S&P 500 on average over the next ${H} months in past months like now. Otherwise it stays neutral.`;
-  const rows = D.industries.map(it => { const n = hz.now[it.etf] || {}; const t = n.tilt || 0;
-    const g = n.action === "over" ? 0 : n.action === "under" ? 1 : t !== 0 ? 2 : 3; return {it, n, t, g}; });
-  const G = ["Overweight", "Underweight", "The logic says yes, history says no: neutral", "Neutral"];
-  let html = `<thead><tr><th>Sector</th><th>Call</th><th>The logic</th><th class="r">Past months like now (${esc(stName(s))}, ${high ? "risk-off" : "no risk-off"}):<br>avg vs S&P 500, next ${H} months</th><th class="r">Beat the S&P 500<br>in</th></tr></thead><tbody>`;
+  const i = NOW(), s = D.regime[i], high = D.stress_high[i], hz = D.horizons[H], live = D.extreme[i], X = D.settings.extreme;
+  const r = D.meta.rules[s], bt = hz.backtest.etf.stats, lg = hz.backtest.long.stats;
+  $("#actHead").textContent = live ? `${stName(s)}${high ? " in risk-off mode" : ""}: the calls for the next ${H} months` : `No sector calls this month: readings are not extreme`;
+  $("#actWhy").innerHTML = `${live ? "" : `<p>Calls are only made when at least one reading is extreme${sup(1)}. Until then every sector is held at equal weight. The table shows what the calls would be if a reading turns extreme.</p>`}
+    ${triggers()}
+    <p><b>The logic for ${esc(stName(s))}:</b> ${esc(r.why)}${high ? ` <b>Risk-off:</b> ${esc(D.meta.stress_rule.why)}` : ""}</p>
+    <p><b>The check:</b> a sector is only called if, in past months like now, it beat or lagged ${AVG} on average over the next ${H} months.</p>
+    ${bt.compass && bt.equal ? `<p class="trk"><b>Track record</b> (calls on extreme readings only, vs holding all 20 sectors equally): ${pct(bt.compass.cagr - bt.equal.cagr, 1)} a year since ${bt.compass.from.slice(0, 4)} with the sector ETFs${lg.compass && lg.equal ? `, ${pct(lg.compass.cagr - lg.equal.cagr, 1)} a year since ${lg.compass.from.slice(0, 4)} with industry indexes` : ""}.</p>` : ""}`;
+  $("#actFns").innerHTML = `<li>Extreme: the economy indicators, averaged over 6 months, rank worse than ${X.economy[1]}% (clearly weak) or better than ${100 - X.economy[0]}% (clearly strong) of their own history; the market-stress indicators rank worse than ${X.stress}% of history; or the inflation indicators, averaged over 6 months, rank worse than ${X.inflation}% of history.</li>`;
+  const rows = D.industries.map(it => { const n = hz.now[it.etf] || {}; const t = n.tilt || 0, c = n.if_extreme;
+    const g = c === "over" ? 0 : c === "under" ? 1 : t !== 0 ? 2 : 3; return {it, n, t, g, c}; });
+  const G = live ? ["Overweight", "Underweight", "The logic says yes, history says no: neutral", "Neutral"]
+                 : ["Overweight once a reading is extreme", "Underweight once a reading is extreme", "The logic says yes, history says no: neutral", "Neutral"];
+  let html = `<thead><tr><th>Sector</th><th>Call</th><th>The logic</th><th class="r">Past months like now (${esc(stName(s))}, ${high ? "risk-off" : "no risk-off"}):<br>avg vs ${AVG}, next ${H} months</th><th class="r">Beat the<br>average in</th></tr></thead><tbody>`;
   [0, 1, 2, 3].forEach(gi => {
     const sg = gi === 1 ? -1 : 1;
     const g = rows.filter(x => x.g === gi).sort((a, b) => sg * ((b.n.mean_rel ?? -99) - (a.n.mean_rel ?? -99))); if (!g.length) return;
@@ -299,7 +314,8 @@ function renderIndustries(){
     g.forEach(x => {
       const n = x.n, open = OPEN.has("i-" + x.it.etf);
       const say = x.t > 0 ? `<span class="chip over">Favoured</span>` : x.t < 0 ? `<span class="chip under">Avoided</span>` : `<span class="muted">No view</span>`;
-      html += `<tr class="irow2" tabindex="0" data-e="${x.it.etf}" aria-expanded="${open}"><td><b>${esc(x.it.name)}</b> <span class="etf muted">${x.it.etf}</span></td><td>${pill(n.action)}</td><td>${say}</td>
+      const call = live || x.c === "neutral" || !x.c ? pill(n.action) : `<span class="pill hold">${ACT[x.c][1]} ${ACT[x.c][2]} · on hold</span>`;
+      html += `<tr class="irow2" tabindex="0" data-e="${x.it.etf}" aria-expanded="${open}"><td><b>${esc(x.it.name)}</b> <span class="etf muted">${x.it.etf}</span></td><td>${call}</td><td>${say}</td>
         <td class="r num"><b class="${n.mean_rel > 0 ? "pos" : n.mean_rel < 0 ? "neg" : ""}">${n.mean_rel == null ? "–" : pct(n.mean_rel, 1)}</b>${n.n ? ` <span class="muted">(${n.n} months)</span>` : ""}</td>
         <td class="r num">${n.pos == null ? "–" : n.pos + "%"}</td></tr>`;
       if (open) html += `<tr class="idetail"><td colspan="5">${detailHTML(x.it)}</td></tr>`;
@@ -311,7 +327,7 @@ function renderIndustries(){
   D.industries.forEach(it => { const el = document.getElementById("rel-" + it.etf); if (el) relChart(el, it); });
 }
 function detailHTML(it){
-  return `<h4>${esc(it.name)} (${it.etf}) vs the S&P 500, last 15 years</h4><div class="legend"><span><i style="background:var(--good-bg);height:10px"></i>Overweight call</span><span><i style="background:var(--bad-bg);height:10px"></i>Underweight call</span></div><div class="chart" id="rel-${it.etf}"></div>
+  return `<h4>${esc(it.name)} (${it.etf}) vs the 20-sector average, last 15 years</h4><div class="legend"><span><i style="background:var(--good-bg);height:10px"></i>Overweight call</span><span><i style="background:var(--bad-bg);height:10px"></i>Underweight call</span></div><div class="chart" id="rel-${it.etf}"></div>
     <p class="muted" style="font-size:12.5px;margin:6px 0 0">Line rising = beating the market. ${it.etf_from ? `${it.etf} trades from ${mlab(it.etf_from)}; before that, its industry index.` : ""}</p>`;
 }
 function relChart(el, it){
@@ -322,8 +338,8 @@ function relChart(el, it){
   for (let i = i0; i <= N; i++) { const a = i < N ? acts[i] : null;
     if (s && (a !== s.a)) { bands.push({i0: s.i, i1: i - 1, c: s.a === "over" ? "var(--good-bg)" : "var(--bad-bg)"}); s = null; }
     if (!s && (a === "over" || a === "under")) s = {a, i}; }
-  lineChart(el, [{name: `${it.etf} vs S&P 500`, v, c: "var(--ink2)", wd: 1.6}], D.months, {h: 190, bands, ticks: [50, 75, 100, 125, 150, 200, 300], fmt: x => x.toFixed(0),
-    tipExtra: i => ` · ${stName(D.regime[i])}${acts[i] && acts[i] !== "neutral" ? ` · ${ACT[acts[i]][2]}` : ""}`, aria: `${it.name} relative to the S&P 500`});
+  lineChart(el, [{name: `${it.etf} vs 20-sector average`, v, c: "var(--ink2)", wd: 1.6}], D.months, {h: 190, bands, ticks: [50, 75, 100, 125, 150, 200, 300], fmt: x => x.toFixed(0),
+    tipExtra: i => ` · ${stName(D.regime[i])}${acts[i] && acts[i] !== "neutral" ? ` · ${ACT[acts[i]][2]}` : ""}`, aria: `${it.name} relative to the 20-sector average`});
 }
 
 

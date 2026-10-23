@@ -143,6 +143,15 @@ table.trade{min-width:900px}
 .irow.na{color:var(--ink3)}
 
 /* 3 industries */
+.actwhy{display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.actwhy p{margin:0}
+.trig{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px;max-width:640px;font-size:13.5px}
+.trig li{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:4px 0}
+.trig li b{color:var(--ink3)}.trig li.on b{color:var(--bad)}
+.trk{font-size:13.5px}
+.pill.hold{background:transparent;border:1px dashed var(--axis);color:var(--ink2)}
+.hold-note{font-size:13.5px;color:var(--ink2)}
+
 .ind td.r,.ind th.r{text-align:right}
 .pos{color:var(--good)}.neg{color:var(--bad)}
 .ind h4{margin:0 0 6px;font-size:13px}

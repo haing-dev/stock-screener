@@ -349,9 +349,10 @@ def regimes(stage, infl6, stress):
     return pd.Series(reg, index=stage.index), hot, high
 
 
-def forward_rel(rets, mkt, h):
-    """Industry minus market compounded return over the next h months (from the end of month t)."""
-    fwd_m = cumret(mkt, h).shift(-h)
+def forward_rel(rets, bench, h):
+    """Industry minus benchmark (3.0.0: equal-weight average of the 20 sectors) compounded return over the next
+    h months (from the end of month t)."""
+    fwd_m = cumret(bench, h).shift(-h)
     return pd.DataFrame({k: cumret(rets[k], h).shift(-h) - fwd_m for k in rets})
 
 
@@ -602,6 +603,7 @@ def report_card(sc, mkt, rec):
 
 # ------------------------------------------------------------------ live record
 def live_scores(rets, mkt, grid):
+    mkt = rets.mean(axis=1)                                   # 3.0.0: scored against the 20-sector average
     """Score the calls in the append-only ledger whose horizon has ended."""
     from .record import read
     rows = read()
@@ -662,6 +664,11 @@ def run(log=print):
     infl6 = pl["inflation"].rolling(S["stage_smooth"], min_periods=3).mean()
     reg, hot, high = regimes(stage, infl6, pl["stress"])
     tilt = investor_tilts(reg, high)
+    ew = rets.mean(axis=1)                                                    # benchmark: the 20 sectors, equal weight
+    X = S["extreme"]
+    parts = pd.DataFrame({"economy_weak": g6 >= X["economy"][1], "economy_strong": g6 <= X["economy"][0],
+                          "stress": pl["stress"] >= X["stress"], "inflation": infl6 >= X["inflation"]}).fillna(False)
+    gate = parts.any(axis=1)
     rec = F["USREC"].reindex(grid)
     out = {"version": R.VERSION, "updated": time.strftime("%Y-%m-%d", time.gmtime()), "asof": str(grid[-1]),
            "fred_key": man.get("fred_key"), "months": [str(p) for p in grid], "settings": S,
@@ -669,17 +676,20 @@ def run(log=print):
            "regime": [s_ if isinstance(s_, str) else None for s_ in reg], "hot": [bool(x) for x in hot],
            "stress_high": [bool(x) for x in high], "econ6": _ser(g6), "econ_d12": _ser(d12), "infl6": _ser(infl6),
            "recession": _ser(rec, 0), "pillars": {k: _ser(pl[k]) for k in pl}, "scores": {k: _ser(sc[k], 0) for k in sc},
-           "values": {k: _ser(ind[k], 3) for k in ind}, "horizons": {}, "industries": [], "market": _ser(level(mkt), 4)}
+           "values": {k: _ser(ind[k], 3) for k in ind}, "horizons": {}, "industries": [], "market": _ser(level(mkt), 4),
+           "extreme": [bool(x) for x in gate], "extreme_now": {k: bool(parts[k].iloc[-1]) for k in parts}}
     for it in R.INDUSTRIES:
         e = it["etf"]
         first_etf = src[e][src[e] == "etf"].index.min()
         out["industries"].append({"etf": e, "name": it["name"], "etf_from": str(first_etf) if pd.notna(first_etf) else None,
-                                  "tilt": _ser(tilt[e], 0), "rel_level": _ser(level(rets[e]) / level(mkt), 4)})
+                                  "tilt": _ser(tilt[e], 0), "rel_level": _ser(level(rets[e]) / level(ew), 4)})
     rels = {}
     for h in S["horizons"]:
         band = S["outcome_band"][h]
-        rel = forward_rel(rets, mkt, h)
-        act, ev = calls(tilt, reg, high, rel, h, band)
+        rel = forward_rel(rets, ew, h)
+        act_all, ev = calls(tilt, reg, high, rel, h, band)
+        act = act_all.copy()
+        act[(~gate.values)[:, None] & act_all.notna().values] = "neutral"          # act only on extreme readings
         hz = {"band": band, "now": {}, "actions": {e: [a if isinstance(a, str) else None for a in act[e]] for e in act},
               "backtest": {}, "recent": {}}
         rels[h] = rel
@@ -688,7 +698,8 @@ def run(log=print):
                                           for e in act}
         for e in act:
             x = ev[e][-1] or {}
-            hz["now"][e] = {"action": act[e].iloc[-1], "tilt": _r(tilt[e].iloc[-1], 0), "pool": x.get("pool"),
+            hz["now"][e] = {"action": act[e].iloc[-1], "if_extreme": act_all[e].iloc[-1], "tilt": _r(tilt[e].iloc[-1], 0),
+                            "pool": x.get("pool"),
                             "n": x.get("n"), "mean_rel": _r(x.get("mean_rel"), 1, 100), "agrees": x.get("agrees"),
                             "pos": _r(x.get("pos"), 0, 100),
                             "p_risk": _r(x.get("p_risk"), 1, 100), "p_opp": _r(x.get("p_opp"), 1, 100),
@@ -717,6 +728,7 @@ def run(log=print):
     now = out["horizons"]["12"]["now"]
     log(f"build: {len(grid)} months to {grid[-1]}; state {reg.iloc[-1]} (stage {stage.iloc[-1]}, inflation hot "
         f"{bool(hot.iloc[-1])}, stress high {bool(high.iloc[-1])}); stress {pl['stress'].iloc[-1]:.0f}; "
+        f"extreme now {bool(gate.iloc[-1])} ({', '.join(k for k in parts if parts[k].iloc[-1]) or 'none'}); "
         f"12m calls {sum(1 for v in now.values() if v['action']=='over')} over / "
         f"{sum(1 for v in now.values() if v['action']=='under')} under; {time.time()-t0:.0f}s")
     for h in ("6", "12"):

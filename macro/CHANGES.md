@@ -1,5 +1,18 @@
 # Macro Compass changes
 
+## 3.0.0 (2026-10-23) - act only on extreme readings; benchmark = 20-sector average (user request)
+- Calls are made only in months when a reading is extreme (SETTINGS.extreme): economy indicators' 6-month average
+  score >= 60 (clearly weak) or <= 40 (clearly strong), market-stress score >= 70, or inflation 6-month average >= 70.
+  Otherwise all 20 sectors stay at equal weight. Extreme in 52% of months since 1960.
+- Benchmark for the history check, odds, sector history and relative charts: equal-weight average of the 20 sectors
+  (was the S&P 500). Live ledger scored the same way; ledger gains an 'extreme' column (no rows written before).
+- Tested before choosing (in sample, documented): every month vs dial extremes vs >= 1/4 or >= 1/3 of the 28 core
+  indicators in their worst/best fifth, against both benchmarks. All within +-0.5%/yr of equal weight (IR <= 0.3);
+  dial extremes chosen as the simplest with hit rates at or above base. Result: +0.2%/yr since 2006 (ETFs) and
+  0.0%/yr since 1971 (industry indexes) vs equal weight.
+- Also tested, not built: cutting stocks to 50% (rest T-bills) when >= 1/3 of core indicators are in their worst
+  fifth: since 2006 11.3%/yr vs S&P 500 11.2%, worst fall -29% vs -51%; since 1975 11.8% vs 12.7%, -39% vs -51%.
+
 ## 2.2.1 (2026-10-23) - page only (user request)
 - Per-chart notes replaced by one sticky chart key on the right (floating, collapsible on small screens); warning
   level moved into each summary sentence.

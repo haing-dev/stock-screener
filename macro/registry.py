@@ -4,7 +4,7 @@ Every indicator is a claim made by an investor in the research store (transcript
 @AtlasShrug1 ("Galt", dated), turned into a fixed, testable rule. Investors propose, the backtest decides.
 v1.0.0 pre-registered 2026-10-23; v2.0.0 the same day (state -> investor sector rules + history check). Change log: macro/CHANGES.md. Never edit a rule in place: add a version.
 """
-VERSION = "2.2.0"
+VERSION = "3.0.0"
 
 # ------------------------------------------------------------------ fixed settings (pre-registered)
 SETTINGS = {
@@ -22,6 +22,9 @@ SETTINGS = {
     "stage_confirm": 3,            # a new stage needs 3 months in a row
     "inflation_hot": (60, 50),     # inflation area, 6-month average: hot from 60, cool again at 50
     "stress_high": (65, 55),       # market stress area: high from 65, normal again at 55
+    # 3.0.0: act only on extreme readings; otherwise every sector stays neutral (equal weight)
+    "extreme": {"economy": (40, 60), "stress": 70, "inflation": 70},
+    "benchmark": "equal-weight average of the 20 sectors",
     "etf_backtest_start": "2006-07",  # first month most of the 20 ETFs trade
 }
 
