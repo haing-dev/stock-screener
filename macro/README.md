@@ -20,7 +20,9 @@ site). No password: page and data are public (not indexed by search engines).
      the same situation (outcome finished by t, >= 24 months) had a mean return vs the market with the same sign;
      odds of lagging / beating by 10% (12 months) or 7% (6 months) shown, shrunk toward the base rate (k=20);
    - backtest: 20 ETFs equal weight vs tilted (1.5x / 0.5x) monthly from 2006-07, plus playbook-only, momentum,
-     trend and SPY baselines; the same on spliced industry series from the month most industries have calls.
+     trend and SPY baselines; the same on spliced industry series from the month most industries have calls;
+   - trade test: each past entry into today's state (+ risk-off flag), $100k in that month's calls (long/short
+     and long only) vs $100k in the S&P 500 after 1/2/3 years (`entry_test`).
 3. `site.py` -> `macro_site/` (page + sealed data + wrangler.jsonc + .assetsignore), force-pushed to `macro-site`.
 4. `record.py` -> branch `macro-record` `ledger.csv`: each finished month's calls from Oct 2026, appended once,
    never edited. The engine scores them as they come due ("Live record" on the page).

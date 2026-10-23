@@ -405,6 +405,52 @@ def state_table(reg, high, rels):
     return out
 
 
+def entry_test(act, reg, high, rets, src, mkt, holds=(12, 24, 36), capital=100000.0):
+    """Every past month the economy entered today's situation (state + risk-off flag): take the calls made that
+    month and put $100k in (a) long/short: equal dollar amounts long each overweight and short each underweight,
+    no leverage (gross exposure = $100k), (b) long only: $100k split equally across the overweights; vs $100k in
+    the S&P 500. Bought at the end of the entry month, held without rebalancing."""
+    key = [f"{r}|{bool(x)}" if isinstance(r, str) else "" for r, x in zip(reg.values, high.values)]
+    T_, now = len(key), key[-1]
+    R_ = rets.values
+    cols = list(rets.columns)
+    M = mkt.values
+    out = []
+    for t in range(T_):
+        if key[t] != now or (t > 0 and key[t - 1] == now):
+            continue
+        L = 1
+        while t + L < T_ and key[t + L] == now:
+            L += 1
+        over = [e for e in cols if act[e].iloc[t] == "over"]
+        under = [e for e in cols if act[e].iloc[t] == "under"]
+        row = {"month": str(reg.index[t]), "months_in_state": L, "over": over, "under": under,
+               "index_data": bool(any(src[e].iloc[t] != "etf" for e in over + under)) if over or under else None}
+        if over or under:
+            n_avail = min(T_ - 1 - t, max(holds))
+            ls, lo, sp = [capital], [capital], [capital]
+            gl = {e: 1.0 for e in over + under}
+            gm = 1.0
+            ok = True
+            for k in range(1, n_avail + 1):
+                for e in gl:
+                    r = R_[t + k, cols.index(e)]
+                    if np.isnan(r):
+                        ok = False
+                    gl[e] *= 1 + (0 if np.isnan(r) else r)
+                gm *= 1 + (0 if np.isnan(M[t + k]) else M[t + k])
+                amt = capital / len(gl)
+                ls.append(capital + sum(amt * (gl[e] - 1) * (1 if e in over else -1) for e in gl))
+                lo.append(sum(capital / len(over) * gl[e] for e in over) if over else None)
+                sp.append(capital * gm)
+            row.update({"path": {"long_short": [round(x) for x in ls], "long_only": [None if x is None else round(x) for x in lo],
+                                 "sp500": [round(x) for x in sp]}, "complete": ok,
+                        "result": {str(hh): {"long_short": round(ls[hh]), "long_only": None if lo[hh] is None else round(lo[hh]),
+                                             "sp500": round(sp[hh])} for hh in holds if hh < len(ls)}})
+        out.append(row)
+    return out
+
+
 # ------------------------------------------------------------------ sector calls: investor rules + history check
 def investor_tilts(reg, high):
     """+1 / -1 / 0 per industry and month from RULES[state] plus the STRESS overlay."""
@@ -654,6 +700,7 @@ def run(log=print):
             hz["backtest"][name] = {"stats": {k: stats(v) for k, v in curves.items()}, "hit": hit,
                                     "curves": {k: _ser(level(v.dropna()).reindex(grid), 4) for k, v in curves.items()},
                                     "start": start}
+        hz["entries"] = entry_test(act, reg, high, rets, src, mkt)
         out["horizons"][str(h)] = hz
     out["report"] = report_card(sc, mkt, rec)
     out["live"] = live_scores(rets, mkt, grid)
@@ -662,8 +709,7 @@ def run(log=print):
     nowho = lambda r: {k: v for k, v in r.items() if k != "who"}          # sources stay in registry.py (audit)
     out["meta"] = {"pillars": R.PILLARS, "stages": R.STAGES, "rules": {k: nowho(v) for k, v in R.RULES.items()},
                    "stress_rule": nowho(R.STRESS),
-                   "indicators": [dict({k: i[k] for k in ("id", "pillar", "name", "dir")},
-                                       **dict(zip(("unit", "scale", "dp", "why"), R.DISPLAY[i["id"]])))
+                   "indicators": [dict({k: i[k] for k in ("id", "pillar", "dir")}, **R.DISPLAY[i["id"]])
                                   for i in R.INDICATORS]}
     os.makedirs(OUT, exist_ok=True)
     with gzip.open(os.path.join(OUT, "compass.json.gz"), "wt") as f:

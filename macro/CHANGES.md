@@ -1,5 +1,14 @@
 # Macro Compass changes
 
+## 2.2.0 (2026-10-23) - page layout + trade test (user request)
+- Indicator boxes stacked full width, numbered 1.1, 1.2 ... with official names and one naming convention
+  (vs L12M / L6M / L3M); each has a generated summary (what it measures, zone, change vs a year ago, what it
+  indicates), a long-history chart and a last-2-years chart marking the reading a year ago vs now, round axis
+  levels, and footnotes instead of explanatory text. Section headers show a warning/normal/supportive bar.
+- New trade test (engine.entry_test): every past month the economy entered today's situation, $100k in that
+  month's calls (long/short equal amounts, no leverage; and long only) vs $100k in the S&P 500, after 1, 2, 3
+  years. Descriptive; no effect on the calls.
+
 ## 2.1.0 (2026-10-23) - page shows the data, not scores (user request)
 - Page rebuilt: conclusion + points A (economy), B (inflation), C (market stress), each with real-unit time series
   of its signals (warning zone = worst third of the signal's own history, recessions shaded), what each signal means
