@@ -39,7 +39,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Workflow `.github/workflows/macro.yml` (weekdays 22:17 UTC; push to macro/). Page: its OWN Cloudflare Worker
   "macro-compass" built from branch `macro-site` (force-pushed; wrangler.jsonc + .assetsignore written by macro/site.py).
   NOT on the stock-screener site (https://stock-screener.haing-penn.workers.dev/ is used for another build - don't touch).
-  Password: secret MACRO_PASSWORD, else PORTAL_PASSWORD; salt data/macro_salt.json. Branches: `macro-data` (raw downloads, force-pushed),
+  No password (public, noindex). Branches: `macro-data` (raw downloads, force-pushed),
   `macro-status` (last run log: `git fetch origin macro-status && git show origin/macro-status:status.md`),
   `macro-record` (append-only monthly calls from Oct 2026). Secret FRED_API_KEY (user adds) = first-published data.
 - Rules: macro/registry.py (pre-registered; changes -> new VERSION + macro/CHANGES.md).

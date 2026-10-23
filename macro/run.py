@@ -17,7 +17,7 @@ def main(step="all"):
             engine.run()
         elif s == "site":
             from . import site
-            site.build(os.environ.get("MACRO_PASSWORD") or os.environ.get("PORTAL_PASSWORD", ""), allow_plain=bool(os.environ.get("MACRO_PLAIN")))
+            site.build("", allow_plain=True)          # public page, no password (user, 2026-10-23)
         elif s == "record":
             from . import record
             record.run()

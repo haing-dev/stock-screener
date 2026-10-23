@@ -2,7 +2,7 @@
 
 Where the US economy is in its cycle, and which of 20 industry ETFs that puts at risk or in favour.
 Page: its own Cloudflare Worker "macro-compass", built from branch `macro-site` (separate from the stock-screener
-site). Password: secret MACRO_PASSWORD, else PORTAL_PASSWORD.
+site). No password: page and data are public (not indexed by search engines).
 
 ## Pipeline (`python -m macro.run all`, workflow `.github/workflows/macro.yml`, weekdays 22:17 UTC + push to macro/)
 1. `fetch.py` -> `cache/macro/raw/`: FRED (first-published values via ALFRED when secret FRED_API_KEY is set, else

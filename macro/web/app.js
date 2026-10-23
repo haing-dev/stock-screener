@@ -268,7 +268,6 @@ $("#lockForm").addEventListener("submit", async ev => {
   } catch(e){ $("#lockMsg").textContent = "Couldn't open the data: " + e.message; }
   finally { btn.disabled = false; btn.textContent = "Open"; }
 });
-$("#lockNow").onclick = () => { store.del("mc-key"); location.reload(); };
 (async () => {
   try { INFO = await (await fetch("/data/keyinfo.json", {cache: "no-cache"})).json(); }
   catch(e){ showLock("No data yet: the Macro workflow hasn't published the page."); return; }

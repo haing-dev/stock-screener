@@ -3,7 +3,7 @@ name: Macro
 # backtested point in time. Weekdays after the US close, on a push to main that changes macro/, or by hand.
 # Outputs: branch 'macro-site' (its own Cloudflare Worker "macro-compass"; separate from the stock-screener site),
 # branch 'macro-record' (append-only monthly calls), 'macro-data' (raw downloads), 'macro-status' (last run log).
-# Password: secret MACRO_PASSWORD, else PORTAL_PASSWORD. Deploy: wrangler from this workflow when the secrets
+# No password: the page and its data are public (not indexed). Deploy: wrangler from this workflow when the secrets
 # CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID are set (no Cloudflare git connection needed).
 on:
   schedule:
