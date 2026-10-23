@@ -37,16 +37,14 @@
 <main>
   <section class="hero" id="s1">
     <div class="step">1 · Where the economy is</div>
-    <div class="hero-grid">
-      <div>
-        <div class="stage-line"><span class="sdot" id="stageDot"></span><h1 id="stageName"></h1></div>
-        <p class="lead" id="stageWhy"></p>
-        <p class="facts" id="stageFacts"></p>
-      </div>
-      <div class="cycle" id="cycle" aria-label="The four stages of the cycle"></div>
+    <div>
+      <div class="stage-line"><span class="sdot" id="stageDot"></span><h1 id="stageName"></h1></div>
+      <p class="lead" id="stageWhy"></p>
+      <p class="facts" id="stageFacts"></p>
     </div>
+    <div class="dials" id="dials"></div>
     <div class="strip-wrap">
-      <div class="strip-head"><span>Stage each month since 1970</span><span class="key"><i class="rec"></i>US recession</span></div>
+      <div class="strip-head"><span>State each month since 1970</span><span class="keys" id="stripKey"></span></div>
       <div class="chart" id="strip"></div>
     </div>
   </section>
@@ -54,13 +52,14 @@
   <section id="s2">
     <div class="step">2 · What's behind it</div>
     <h2>Six areas, each scored 0 to 100</h2>
-    <p class="sub">The score compares today with all past readings. 50 is normal; higher means more pressure on the economy and markets. Tap an area to see its indicators.</p>
+    <p class="sub" id="pilSub"></p>
     <div class="pillars" id="pillars"></div>
   </section>
 
   <section id="s3">
-    <div class="step">3 · What to do with each industry</div>
+    <div class="step">3 · What investors do in this state</div>
     <h2 id="actHead"></h2>
+    <div class="rules" id="ruleCards"></div>
     <p class="sub" id="actSub"></p>
     <div class="tablewrap"><table class="ind" id="indTable"></table></div>
   </section>

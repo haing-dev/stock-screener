@@ -1,21 +1,21 @@
 /* Macro Compass - one reading column in five steps: stage, its drivers, industry calls, track record, method.
-   Neutral ground shared with the triage site; colour is kept for the four stages and the calls. */
+   Neutral ground shared with the triage site; colour is kept for the six states and the calls. */
 :root{
   --bg:#fcfcfb;--card:#ffffff;--ink:#0b0b0b;--ink2:#52514e;--ink3:#6e6d68;--line:#e1e0d9;--axis:#c3c2b7;--grid:#eeede8;
   --good-bg:#e3f3e3;--good:#005c00;--bad-bg:#fbe5e5;--bad:#9b1f1f;--neu-bg:#efeeea;--neu:#52514e;
   --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;
-  --st-expansion:#1baf7a;--st-late:#eb6834;--st-contraction:#a3367c;--st-recovery:#2a78d6;--rec:rgba(82,81,78,.28);
+  --st-expansion:#1baf7a;--st-late:#eb6834;--st-contraction:#a3367c;--st-recovery:#2a78d6;--st-overheating:#c8392e;--st-stagflation:#7350c0;--stress:#0b0b0b;--rec:rgba(82,81,78,.28);
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#1a1a19;--card:#20201f;--ink:#f0efec;--ink2:#c3c2b7;--ink3:#9b9a94;--line:#2c2c2a;--axis:#383835;--grid:#262625;
   --good-bg:#183418;--good:#7fd67f;--bad-bg:#3a1c1c;--bad:#f09a9a;--neu-bg:#2a2a28;--neu:#c3c2b7;
   --s1:#3987e5;--s2:#d95926;--s3:#199e70;
-  --st-expansion:#199e70;--st-late:#d95926;--st-contraction:#b8478c;--st-recovery:#3987e5;--rec:rgba(195,194,183,.25);color-scheme:dark}}
+  --st-expansion:#199e70;--st-late:#d95926;--st-contraction:#b8478c;--st-recovery:#3987e5;--st-overheating:#e0675a;--st-stagflation:#9677e0;--stress:#f0efec;--rec:rgba(195,194,183,.25);color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#1a1a19;--card:#20201f;--ink:#f0efec;--ink2:#c3c2b7;--ink3:#9b9a94;--line:#2c2c2a;--axis:#383835;--grid:#262625;
   --good-bg:#183418;--good:#7fd67f;--bad-bg:#3a1c1c;--bad:#f09a9a;--neu-bg:#2a2a28;--neu:#c3c2b7;
   --s1:#3987e5;--s2:#d95926;--s3:#199e70;
-  --st-expansion:#199e70;--st-late:#d95926;--st-contraction:#b8478c;--st-recovery:#3987e5;--rec:rgba(195,194,183,.25);color-scheme:dark}
+  --st-expansion:#199e70;--st-late:#d95926;--st-contraction:#b8478c;--st-recovery:#3987e5;--st-overheating:#e0675a;--st-stagflation:#9677e0;--stress:#f0efec;--rec:rgba(195,194,183,.25);color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
 [hidden]{display:none!important}
@@ -51,14 +51,20 @@ h2{font-size:22px;line-height:1.25;letter-spacing:-.015em;margin:0;text-wrap:bal
 .sdot{width:20px;height:20px;border-radius:50%;flex:none}
 .lead{font-size:19px;margin:10px 0 6px;color:var(--ink)}
 .facts{margin:0;color:var(--ink2);font-size:14px}
-.cycle{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;position:relative}
-.cyc{border:1px solid var(--line);border-radius:12px;padding:10px 10px 9px;background:var(--card);position:relative;min-width:0}
-.cyc b{display:flex;align-items:center;gap:7px;font-size:14px}
-.cyc b i{width:10px;height:10px;border-radius:50%;flex:none}
-.cyc span{display:block;font-size:12.5px;color:var(--ink2);margin-top:3px}
-.cyc.on{border-width:2px;padding:9px 9px 8px}
-.cyc.on::after{content:"Now";position:absolute;top:-10px;right:10px;background:var(--ink);color:var(--bg);font-size:11px;font-weight:600;padding:1px 7px;border-radius:999px}
-.cyc:not(:last-child)::before{content:"→";position:absolute;right:-11px;top:50%;transform:translateY(-50%);color:var(--ink3);font-size:12px}
+.dials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.dial{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.dial .q{font-size:12.5px;color:var(--ink2)}
+.dial .hd{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.dial .hd b{font-size:15px}
+.dial .v{font-size:20px;font-weight:650;letter-spacing:-.01em}
+.dial .v.on{color:var(--bad)}
+.dial .ft{font-size:12.5px;color:var(--ink3)}
+.dial .gauge .th{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--bad);opacity:.6}
+.keys{display:inline-flex;flex-wrap:wrap;gap:4px 12px}
+.keys span{display:inline-flex;align-items:center;gap:5px}
+.keys i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.keys i.rec{width:14px;height:4px;background:var(--rec);border-radius:1px}
+.keys i.str{width:14px;height:4px;background:var(--stress);border-radius:1px}
 .strip-wrap{display:flex;flex-direction:column;gap:6px}
 .strip-head{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink2);gap:10px;flex-wrap:wrap}
 .key{display:inline-flex;align-items:center;gap:6px}
@@ -87,6 +93,22 @@ h2{font-size:22px;line-height:1.25;letter-spacing:-.015em;margin:0;text-wrap:bal
 .irow.na{color:var(--ink3)}
 
 /* 3 industries */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px}
+.rule{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.rule h3{margin:0;font-size:14px}
+.rule p{margin:0;font-size:13.5px;color:var(--ink2)}
+.rule .cite{font-size:12px;color:var(--ink3)}
+.chips{display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:12.5px}
+.chips .lab{color:var(--ink3);min-width:52px}
+.chip{padding:2px 8px;border-radius:6px;font-weight:600;font-variant-numeric:tabular-nums}
+.chip.over{background:var(--good-bg);color:var(--good)}.chip.under{background:var(--bad-bg);color:var(--bad)}
+.hist{font-size:13px;color:var(--ink2)}
+.hist b{color:var(--ink)}
+.hist .no{color:var(--bad);font-weight:600}.hist .yes{color:var(--good);font-weight:600}
+.views{display:flex;flex-direction:column;gap:3px;font-size:12.5px}
+.views div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line);padding:3px 0}
+.views div.now{font-weight:650}
+
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
 table.ind{width:100%;border-collapse:collapse;min-width:760px}
 .ind th{font-size:12px;font-weight:500;color:var(--ink2);text-align:left;padding:10px 12px;border-bottom:1px solid var(--axis);vertical-align:bottom}
@@ -158,8 +180,7 @@ details[open] summary::after{content:"Hide"}
 @media (max-width:820px){
   h1{font-size:36px}
   .hero-grid,.bt-grid,.idet{grid-template-columns:minmax(0,1fr)}
-  .cycle{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cyc:not(:last-child)::before{display:none}
+  .dials{grid-template-columns:minmax(0,1fr)}
   .prow{grid-template-columns:minmax(0,1fr) 90px 18px;gap:10px}
   .prow .gauge{grid-column:1/-1;grid-row:2}
   .irow{grid-template-columns:minmax(0,1fr) 40px}

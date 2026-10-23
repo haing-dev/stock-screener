@@ -9,8 +9,9 @@ import time
 from . import registry as R
 
 LAUNCH = "2026-10"
-COLS = ["month", "recorded_at", "version", "stage", "growth", "inflation", "liquidity", "credit", "froth", "internals",
-        "horizon", "etf", "action", "p_risk", "p_opp", "base_risk", "base_opp"]
+COLS = ["month", "recorded_at", "version", "state", "stage", "inflation_hot", "stress_high",
+        "growth", "internals", "inflation", "stress", "liquidity", "froth",
+        "horizon", "etf", "investor_tilt", "action", "p_risk", "p_opp", "base_risk", "base_opp"]
 
 
 def ledger_path():
@@ -49,9 +50,10 @@ def run(log=print):
                 a = hz["actions"][e][i]
                 od = (hz.get("recent", {}).get(m) or {}).get(e) or [None] * 4
                 new.append({"month": m, "recorded_at": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
-                            "version": d["version"], "stage": d["stage"][i] or "",
+                            "version": d["version"], "state": d["regime"][i] or "", "stage": d["stage"][i] or "",
+                            "inflation_hot": int(bool(d["hot"][i])), "stress_high": int(bool(d["stress_high"][i])),
                             **{k: d["pillars"][k][i] for k, _, _ in R.PILLARS},
-                            "horizon": h, "etf": e, "action": a or "",
+                            "horizon": h, "etf": e, "investor_tilt": it["tilt"][i], "action": a or "",
                             **dict(zip(["p_risk", "p_opp", "base_risk", "base_opp"], od))})
     if new:
         exists = os.path.exists(path)

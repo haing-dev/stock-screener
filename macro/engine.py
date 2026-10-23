@@ -115,6 +115,21 @@ def calc_all(grid, rets, mkt):
     twex = F["TWEXMMTH"].combine_first(F["DTWEXBGS"])
     ewy, smh = monthly_px("Y_EWY", grid).pct_change(fill_method=None), monthly_px("Y_SMH", grid).pct_change(fill_method=None)
     lv = {k: level(rets[k]) for k in rets}
+    vix = monthly_px("Y_VIX", grid).combine_first(F["VIXCLS"])          # Yahoo is same-day; FRED a day late
+    ind_fr, _ = load_french()
+
+    def ret_of(code):
+        """Monthly returns of an industry series, or of an extra ETF spliced onto a French proxy."""
+        if code in rets:
+            return rets[code]
+        er = monthly_px("Y_" + code, grid).pct_change(fill_method=None)
+        proxy = {"XLY": ["Rtail", "Autos", "Clths", "Meals"]}.get(code, [])
+        pr = pd.Series({pd.Period(k, "M"): np.mean([v[c] for c in proxy if c in v]) for k, v in ind_fr.items()
+                        if proxy and any(c in v for c in proxy)}, dtype=float).reindex(grid)
+        return er.where(er.notna(), pr)
+
+    def zs(x):
+        return x / x.expanding(min_periods=60).std()
 
     def yoy(s):
         return (s / s.shift(12) - 1) * 100
@@ -159,7 +174,7 @@ def calc_all(grid, rets, mkt):
             nl = F["WALCL"] / 1000 - F["WTREGEN"] / 1000 - F["RRPONTSYD"].fillna(0)   # $bn
             v = nl - nl.shift(3)
         elif c == "level":
-            v = F[a[0]]
+            v = vix if a[0] == "VIXCLS" else F[a[0]]
         elif c == "ratio":
             v = F[a[0]] / F[a[1]].ffill(limit=3)
         elif c == "cape":
@@ -175,7 +190,32 @@ def calc_all(grid, rets, mkt):
         elif c == "rel12":
             v = (cumret(rets[a[0]], 12) - cumret(mkt, 12)) * 100
         elif c == "relpair6":
-            v = (r6(a[0]) - r6(a[1])) * 100
+            v = (cumret(ret_of(a[0]), 6) - cumret(ret_of(a[1]), 6)) * 100
+        elif c == "relpx3":
+            pa, pb = monthly_px("Y_" + a[0], grid), monthly_px("Y_" + a[1], grid)
+            v = ((pa / pa.shift(3)) - (pb / pb.shift(3))) * 100
+        elif c == "trend":
+            lm = level(mkt)
+            v = (lm / lm.rolling(10).mean() - 1) * 100
+        elif c == "breakout":
+            d = dxy.combine_first(twex * (dxy / twex).dropna().median() if dxy.notna().any() else twex)
+            v = (d / d.shift(1).rolling(12).max() - 1) * 100
+        elif c == "dd12px":
+            lsm = lv["SMH"]
+            v = (lsm / lsm.rolling(12).max() - 1) * 100
+        elif c == "reldd24":
+            rl = lv[a[0]] / level(mkt)
+            v = (rl / rl.rolling(24).max() - 1) * 100
+        elif c == "stockbond":
+            g10 = F["GS10"]
+            bond = g10.shift(1) / 1200 - 7 * (g10 - g10.shift(1)) / 100
+            v = mkt.rolling(12).corr(bond)
+        elif c == "squeeze":
+            d1 = (dxy / dxy.shift(12) - 1) * 100
+            dol = d1.combine_first((twex / twex.shift(12) - 1) * 100)
+            oil = (F["WTISPLC"] / F["WTISPLC"].shift(12) - 1) * 100
+            rate = F["GS10"] - F["GS10"].shift(12)
+            v = 0.5 * zs(dol) + 0.25 * zs(oil) + 0.25 * zs(rate)
         elif c == "breadth":
             above = pd.DataFrame({k: (lv[k] > lv[k].rolling(10).mean()).where(lv[k].rolling(10).mean().notna())
                                   for k in lv})
@@ -265,17 +305,31 @@ def stages(g):
     return pd.Series(st, index=g.index), d
 
 
-# ------------------------------------------------------------------ industry odds
-def driver_scores(sc, pl):
-    out = {}
-    for it in R.INDUSTRIES:
-        parts = []
-        for k, sign in it["drivers"]:
-            s = pl[k] if k in pl else sc[k]
-            parts.append(s if sign > 0 else 100 - s)
-        df = pd.concat(parts, axis=1)
-        out[it["etf"]] = df.mean(axis=1).where(df.notna().sum(axis=1) >= max(1, math.ceil(len(parts) / 2)))
-    return pd.DataFrame(out)
+# ------------------------------------------------------------------ state of the economy
+def flag(x, on, off):
+    """True from the month x reaches `on` until it falls back to `off` (hysteresis)."""
+    out, cur = [], False
+    for v in x.values:
+        if not np.isnan(v):
+            cur = v >= on if not cur else v > off
+        out.append(cur if not np.isnan(v) or out else False)
+    return pd.Series(out, index=x.index)
+
+
+def regimes(stage, infl6, stress):
+    hot = flag(infl6, *S["inflation_hot"])
+    high = flag(stress, *S["stress_high"])
+    reg = []
+    for st, h in zip(stage.values, hot.values):
+        if not isinstance(st, str):
+            reg.append(None)
+        elif h and st in ("expansion", "late"):
+            reg.append("overheating")
+        elif h and st == "contraction":
+            reg.append("stagflation")
+        else:
+            reg.append(st)
+    return pd.Series(reg, index=stage.index), hot, high
 
 
 def forward_rel(rets, mkt, h):
@@ -284,52 +338,67 @@ def forward_rel(rets, mkt, h):
     return pd.DataFrame({k: cumret(rets[k], h).shift(-h) - fwd_m for k in rets})
 
 
-def odds(D, rel, h, band):
-    """Walk-forward: at month t, past months whose h-month outcome had finished by t are grouped into fifths by
-    driver score (breakpoints from those past months only); odds = shrunk hit rate of today's fifth vs the base
-    rate. Returns dict etf -> DataFrame(p_risk, p_opp, base_risk, base_opp, n)."""
-    k_shrink = 20.0
-    warm = S["warmup_years"] * 12
-    res = {}
-    for etf in D.columns:
-        d, r = D[etf].values, rel[etf].values
+# ------------------------------------------------------------------ sector calls: investor rules + history check
+def investor_tilts(reg, high):
+    """+1 / -1 / 0 per industry and month from RULES[state] plus the STRESS overlay."""
+    etfs = [i["etf"] for i in R.INDUSTRIES]
+    t = pd.DataFrame(0, index=reg.index, columns=etfs)
+    for i, (r, hs) in enumerate(zip(reg.values, high.values)):
+        if not isinstance(r, str):
+            continue
+        for rule in [R.RULES[r]] + ([R.STRESS] if hs else []):
+            for e in rule["over"]:
+                t.iat[i, etfs.index(e)] += 1
+            for e in rule["under"]:
+                t.iat[i, etfs.index(e)] -= 1
+    return np.sign(t).where(pd.Series([isinstance(r, str) for r in reg.values], index=reg.index), np.nan, axis=0)
+
+
+def calls(tilt, reg, high, rel, h, band):
+    """A tilt stands only if, in past months of the same situation (same state and stress; else same state) whose
+    h-month outcome had finished, the industry's average return vs the market had the same sign. Returns the calls
+    and, for every month, the evidence used (pooled odds of lagging / beating the market by `band`)."""
+    k_shrink, mn = 20.0, S["evidence_min_months"]
+    key = np.array([f"{r}|{bool(x)}" for r, x in zip(reg.values, high.values)], dtype=object)
+    regv = np.array([r if isinstance(r, str) else "" for r in reg.values], dtype=object)
+    T_ = len(reg)
+    act = pd.DataFrame(None, index=reg.index, columns=tilt.columns, dtype=object)
+    ev = {}
+    for e in tilt.columns:
+        r = rel[e].values
+        tv = tilt[e].values
         rows = []
-        for t in range(len(d)):
-            lim = t - h            # outcomes of months <= t-h are known at t
-            if np.isnan(d[t]) or lim < 0:
-                rows.append((np.nan,) * 5)
+        for t in range(T_):
+            if not regv[t] or np.isnan(tv[t]):
+                rows.append(None)
                 continue
-            past = np.arange(0, lim + 1)
-            ok = ~np.isnan(d[past]) & ~np.isnan(r[past])
-            past = past[ok]
-            if len(past) < warm:
-                rows.append((np.nan,) * 5)
+            lim = t - h
+            past = np.arange(0, max(0, lim + 1))
+            past = past[~np.isnan(r[past])] if len(past) else past
+            if len(past) < mn:
+                rows.append({"pool": None})
+                act.iat[t, act.columns.get_loc(e)] = "neutral"
                 continue
-            dp, rp = d[past], r[past]
-            risk, opp = rp <= -band, rp >= band
-            br, bo = risk.mean(), opp.mean()
-            qs = np.quantile(dp, [0.2, 0.4, 0.6, 0.8])
-            b = np.searchsorted(qs, d[t], side="right")
-            inb = np.searchsorted(qs, dp, side="right") == b
-            n = inb.sum()
-            pr = (risk[inb].sum() + k_shrink * br) / (n + k_shrink)
-            po = (opp[inb].sum() + k_shrink * bo) / (n + k_shrink)
-            rows.append((pr, po, br, bo, n))
-        res[etf] = pd.DataFrame(rows, index=D.index, columns=["p_risk", "p_opp", "base_risk", "base_opp", "n"])
-    return res
-
-
-def actions(od):
-    ratio = S["tilt_ratio"]
-    act = {}
-    for etf, df in od.items():
-        rr, ro = df["p_risk"] / df["base_risk"], df["p_opp"] / df["base_opp"]
-        a = pd.Series("neutral", index=df.index)
-        a[(rr >= ratio) & (rr > ro)] = "under"
-        a[(ro >= ratio) & (ro > rr)] = "over"
-        a[df["p_risk"].isna()] = None
-        act[etf] = a
-    return pd.DataFrame(act)
+            same = past[key[past] == key[t]]
+            pool, label = (same, "state+stress") if len(same) >= mn else (past[regv[past] == regv[t]], "state")
+            rp = r[past]
+            br, bo = float((rp <= -band).mean()), float((rp >= band).mean())
+            if len(pool) < mn:
+                rows.append({"pool": None, "base_risk": br, "base_opp": bo})
+                act.iat[t, act.columns.get_loc(e)] = "neutral"
+                continue
+            q = r[pool]
+            n = len(q)
+            pr = ((q <= -band).sum() + k_shrink * br) / (n + k_shrink)
+            po = ((q >= band).sum() + k_shrink * bo) / (n + k_shrink)
+            m = float(q.mean())
+            agrees = None if tv[t] == 0 else bool(np.sign(m) == tv[t])
+            a = "neutral" if tv[t] == 0 or not agrees else ("over" if tv[t] > 0 else "under")
+            act.iat[t, act.columns.get_loc(e)] = a
+            rows.append({"pool": label, "n": n, "mean_rel": m, "p_risk": pr, "p_opp": po, "base_risk": br,
+                         "base_opp": bo, "agrees": agrees})
+        ev[e] = rows
+    return act, ev
 
 
 # ------------------------------------------------------------------ backtest
@@ -359,7 +428,7 @@ def stats(r, rf=None):
             "from": str(r.index[0]), "to": str(r.index[-1])}
 
 
-def backtest(rets, src, mkt, act, rel, h, band, start):
+def backtest(rets, src, mkt, act, rel, h, band, start, raw=None):
     idx = rets.index[rets.index >= pd.Period(start, "M")]
     etf_ok = (src == "etf")
     avail = etf_ok.shift(-1, fill_value=False) if start == S["etf_backtest_start"] else rets.shift(-1).notna()
@@ -377,18 +446,22 @@ def backtest(rets, src, mkt, act, rel, h, band, start):
     trend = (lvl > lvl.rolling(10).mean()).reindex(idx)
     tsig = pd.DataFrame(np.where(trend, "over", "under"), index=idx, columns=rets.columns)
     rr = R_.reindex(idx)
-    curves = {"compass": portfolio(tw, rr), "equal": portfolio(eq, rr), "momentum": portfolio(tilt_weights(msig, avail.reindex(idx)), rr),
+    rsig = pd.DataFrame(np.where(raw.reindex(idx) > 0, "over", np.where(raw.reindex(idx) < 0, "under", "neutral")),
+                        index=idx, columns=rets.columns) if raw is not None else sig
+    curves = {"compass": portfolio(tw, rr), "investor": portfolio(tilt_weights(rsig, avail.reindex(idx)), rr),
+              "equal": portfolio(eq, rr), "momentum": portfolio(tilt_weights(msig, avail.reindex(idx)), rr),
               "trend": portfolio(tilt_weights(tsig, avail.reindex(idx)), rr), "market": mkt.reindex(idx).shift(0)}
     curves["market"] = curves["market"].where(curves["equal"].notna())
     # call accuracy: share of calls followed by the event, vs all months
     relx = rel.reindex(idx)
     okm = avail.reindex(idx) & relx.notna()
     hit = {}
-    for a, ev in (("under", relx <= -band), ("over", relx >= band)):
-        m = (sig == a) & okm
-        nm = int(m.values.sum())
-        hit[a] = {"calls": nm, "hit": round(100.0 * (ev & m).values.sum() / nm, 1) if nm else None,
-                  "base": round(100.0 * (ev & okm).values.sum() / max(1, okm.values.sum()), 1)}
+    for tag, sg in (("", sig), ("investor_", rsig)):
+        for a, ev in (("under", relx <= -band), ("over", relx >= band)):
+            m = (sg == a) & okm
+            nm = int(m.values.sum())
+            hit[tag + a] = {"calls": nm, "hit": round(100.0 * (ev & m).values.sum() / nm, 1) if nm else None,
+                            "base": round(100.0 * (ev & okm).values.sum() / max(1, okm.values.sum()), 1)}
     return curves, hit
 
 
@@ -454,6 +527,10 @@ def _ser(s, nd=1):
             for v in s.values]
 
 
+def _r(v, nd=1, mul=1):
+    return None if v is None else round(float(v) * mul, nd)
+
+
 def run(log=print):
     t0 = time.time()
     man = json.load(open(os.path.join(RAW, "manifest.json"))) if os.path.exists(os.path.join(RAW, "manifest.json")) else {}
@@ -466,56 +543,60 @@ def run(log=print):
     ind, F = calc_all(grid, rets, mkt)
     sc = scores(ind)
     pl = pillars(sc)
-    g3 = pl["growth"].rolling(S["stage_smooth"], min_periods=3).mean()   # one noisy month can't swing the stage
-    stage, d6 = stages(g3)
-    D = driver_scores(sc, pl)
+    econ = pl[["growth", "internals"]].mean(axis=1, skipna=True)             # economy data + the inside of the market
+    g6 = econ.rolling(S["stage_smooth"], min_periods=3).mean()               # one noisy month can't swing the stage
+    stage, d12 = stages(g6)
+    infl6 = pl["inflation"].rolling(S["stage_smooth"], min_periods=3).mean()
+    reg, hot, high = regimes(stage, infl6, pl["stress"])
+    tilt = investor_tilts(reg, high)
     rec = F["USREC"].reindex(grid)
     out = {"version": R.VERSION, "updated": time.strftime("%Y-%m-%d", time.gmtime()), "asof": str(grid[-1]),
            "fred_key": man.get("fred_key"), "months": [str(p) for p in grid], "settings": S,
-           "stage": [s if isinstance(s, str) else None for s in stage], "growth3": _ser(g3), "growth_d6": _ser(d6), "recession": _ser(rec, 0),
-           "pillars": {k: _ser(pl[k]) for k in pl}, "scores": {k: _ser(sc[k], 0) for k in sc},
-           "values": {k: _ser(ind[k], 2) for k in ind}, "horizons": {}, "industries": [],
-           "market": _ser(level(mkt), 4)}
+           "stage": [s_ if isinstance(s_, str) else None for s_ in stage],
+           "regime": [s_ if isinstance(s_, str) else None for s_ in reg], "hot": [bool(x) for x in hot],
+           "stress_high": [bool(x) for x in high], "econ6": _ser(g6), "econ_d12": _ser(d12), "infl6": _ser(infl6),
+           "recession": _ser(rec, 0), "pillars": {k: _ser(pl[k]) for k in pl}, "scores": {k: _ser(sc[k], 0) for k in sc},
+           "values": {k: _ser(ind[k], 2) for k in ind}, "horizons": {}, "industries": [], "market": _ser(level(mkt), 4)}
     for it in R.INDUSTRIES:
         e = it["etf"]
         first_etf = src[e][src[e] == "etf"].index.min()
-        out["industries"].append({"etf": e, "name": it["name"], "drivers": it["drivers"], "who": it["who"],
-                                  "etf_from": str(first_etf) if pd.notna(first_etf) else None,
-                                  "driver": _ser(D[e]), "rel_level": _ser(level(rets[e]) / level(mkt), 4)})
+        out["industries"].append({"etf": e, "name": it["name"], "etf_from": str(first_etf) if pd.notna(first_etf) else None,
+                                  "tilt": _ser(tilt[e], 0), "rel_level": _ser(level(rets[e]) / level(mkt), 4)})
     for h in S["horizons"]:
         band = S["outcome_band"][h]
         rel = forward_rel(rets, mkt, h)
-        od = odds(D, rel, h, band)
-        act = actions(od)
-        hz = {"band": band, "now": {}, "actions": {e: [a if isinstance(a, str) else None for a in act[e]] for e in act}, "backtest": {},
-              "recent": {str(grid[i]): {e: [None if np.isnan(x) else round(float(x) * 100, 1) for x in
-                                            od[e].iloc[i][["p_risk", "p_opp", "base_risk", "base_opp"]].values]
-                                        for e in od} for i in range(max(0, len(grid) - 3), len(grid))}}
-        for e, df in od.items():
-            row = df.iloc[-1]
-            hz["now"][e] = None if np.isnan(row["p_risk"]) else {
-                "p_risk": round(row["p_risk"] * 100, 1), "p_opp": round(row["p_opp"] * 100, 1),
-                "base_risk": round(row["base_risk"] * 100, 1), "base_opp": round(row["base_opp"] * 100, 1),
-                "n": int(row["n"]), "action": act[e].iloc[-1]}
+        act, ev = calls(tilt, reg, high, rel, h, band)
+        hz = {"band": band, "now": {}, "actions": {e: [a if isinstance(a, str) else None for a in act[e]] for e in act},
+              "backtest": {}, "recent": {}}
+        for i in range(max(0, len(grid) - 3), len(grid)):
+            hz["recent"][str(grid[i])] = {e: [_r((ev[e][i] or {}).get(k), 1, 100) for k in ("p_risk", "p_opp", "base_risk", "base_opp")]
+                                          for e in act}
+        for e in act:
+            x = ev[e][-1] or {}
+            hz["now"][e] = {"action": act[e].iloc[-1], "tilt": _r(tilt[e].iloc[-1], 0), "pool": x.get("pool"),
+                            "n": x.get("n"), "mean_rel": _r(x.get("mean_rel"), 1, 100), "agrees": x.get("agrees"),
+                            "p_risk": _r(x.get("p_risk"), 1, 100), "p_opp": _r(x.get("p_opp"), 1, 100),
+                            "base_risk": _r(x.get("base_risk"), 1, 100), "base_opp": _r(x.get("base_opp"), 1, 100)}
         have = act.notna().sum(axis=1)
-        long_start = str(have[have >= len(act.columns) / 2].index.min())       # once most industries have odds
+        long_start = str(have[have >= len(act.columns) / 2].index.min())
         for name, start in (("etf", S["etf_backtest_start"]), ("long", long_start)):
-            curves, hit = backtest(rets, src, mkt, act, rel, h, band, start)
+            curves, hit = backtest(rets, src, mkt, act, rel, h, band, start, raw=tilt)
             hz["backtest"][name] = {"stats": {k: stats(v) for k, v in curves.items()}, "hit": hit,
                                     "curves": {k: _ser(level(v.dropna()).reindex(grid), 4) for k, v in curves.items()},
                                     "start": start}
         out["horizons"][str(h)] = hz
     out["report"] = report_card(sc, mkt, rec)
     out["live"] = live_scores(rets, mkt, grid)
-    out["meta"] = {"pillars": R.PILLARS, "stages": R.STAGES,
+    out["meta"] = {"pillars": R.PILLARS, "stages": R.STAGES, "rules": R.RULES, "stress_rule": R.STRESS,
                    "indicators": [{k: i[k] for k in ("id", "pillar", "name", "plain", "who", "dir")} for i in R.INDICATORS]}
     os.makedirs(OUT, exist_ok=True)
     with gzip.open(os.path.join(OUT, "compass.json.gz"), "wt") as f:
         json.dump(out, f, separators=(",", ":"))
     now = out["horizons"]["12"]["now"]
-    log(f"build: {len(grid)} months to {grid[-1]}; stage {stage.iloc[-1]}; growth {pl['growth'].iloc[-1]:.0f}; "
-        f"12m actions {sum(1 for v in now.values() if v and v['action']=='over')} over / "
-        f"{sum(1 for v in now.values() if v and v['action']=='under')} under; {time.time()-t0:.0f}s")
+    log(f"build: {len(grid)} months to {grid[-1]}; state {reg.iloc[-1]} (stage {stage.iloc[-1]}, inflation hot "
+        f"{bool(hot.iloc[-1])}, stress high {bool(high.iloc[-1])}); stress {pl['stress'].iloc[-1]:.0f}; "
+        f"12m calls {sum(1 for v in now.values() if v['action']=='over')} over / "
+        f"{sum(1 for v in now.values() if v['action']=='under')} under; {time.time()-t0:.0f}s")
     for h in ("6", "12"):
         b = out["horizons"][h]["backtest"]["etf"]["stats"]
         log(f"  {h}m ETF backtest: " + "; ".join(f"{k} {v['cagr']}%/yr dd {v['maxdd']}%" for k, v in b.items() if v))

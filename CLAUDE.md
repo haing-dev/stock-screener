@@ -32,9 +32,10 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Tests: `python3 tests/run_tests.py` must print "ALL TESTS PASSED" (includes tests/triage_smoke.py).
 - Archived but kept: v2.9 validation of the frozen 14 screens (`validation/PROTOCOL.md`, `qs/validate.py`; workflow archived).
 
-## Macro Compass (macro/ v1.0.0, built 2026-10-23)
-- Stage of the US cycle (Expansion / Late cycle / Contraction / Recovery) + 20 industry ETFs at risk / in favour at
-  6 and 12 months, from 38 investor-cited indicators (research store + X posts of @AtlasShrug1). Point in time,
+## Macro Compass (macro/ v2.0.0, 2026-10-23)
+- One flow: 43 investor-cited indicators (research store + X posts of @AtlasShrug1) -> 3 dials (economy stage,
+  inflation hot, market stress) -> state (Expansion/Late/Overheating/Contraction/Stagflation/Recovery + stress overlay)
+  -> investor playbook per state (registry.RULES/STRESS) -> history check -> calls on 20 industry ETFs at 6/12 months. Point in time,
   walk-forward odds, ETF backtest from 2006 vs equal weight / momentum / trend / SPY. Details: macro/README.md.
 - Workflow `.github/workflows/macro.yml` (weekdays 22:17 UTC; push to macro/). Page: its OWN Cloudflare Worker
   "macro-compass" built from branch `macro-site` (force-pushed; wrangler.jsonc + .assetsignore written by macro/site.py).

@@ -1,4 +1,4 @@
-"""Macro Compass checks: scores use only the past, the stage rule, no look-ahead in the odds, and a full build +
+"""Macro Compass checks: scores use only the past, the stage rule, no look-ahead in the calls, and a full build +
 page on invented data (no network)."""
 import gzip
 import json
@@ -45,20 +45,27 @@ def run(check):
     check("macro: stage rule walks the cycle", seq[-3:] == ["late", "contraction", "recovery"], str(seq))
     idx = pd.period_range("1960-01", periods=400, freq="M")
     rng = np.random.default_rng(1)
-    D = pd.DataFrame({"AAA": rng.uniform(0, 100, 400)}, index=idx)
+    reg = pd.Series(rng.choice(["expansion", "late", "contraction", "recovery"], 400), index=idx)
+    high = pd.Series(rng.random(400) < 0.2, index=idx)
+    tilt = pd.DataFrame({"AAA": rng.choice([-1.0, 0.0, 1.0], 400)}, index=idx)
     rel = pd.DataFrame({"AAA": rng.normal(0, 0.1, 400)}, index=idx)
-    a = E.odds(D, rel, 12, 0.10)["AAA"]
+    rel.iloc[-12:] = np.nan                  # the last 12 outcomes are not known yet
+    a, _ = E.calls(tilt, reg, high, rel, 12, 0.10)
     rel2 = rel.copy()
-    rel2.iloc[300:] = 5.0                    # change outcomes that are not yet known at month 299 + 12
-    b = E.odds(D, rel2, 12, 0.10)["AAA"]
-    check("macro: odds at t ignore outcomes not finished by t", a.iloc[:312].equals(b.iloc[:312]) and not a.iloc[320:].equals(b.iloc[320:]))
+    rel2.iloc[300:388] = 5.0                 # change outcomes that are not yet known at month 299 + 12
+    b, _ = E.calls(tilt, reg, high, rel2, 12, 0.10)
+    check("macro: calls at t ignore outcomes not finished by t", a["AAA"].iloc[:312].equals(b["AAA"].iloc[:312])
+          and not a["AAA"].iloc[320:].equals(b["AAA"].iloc[320:]))
+    t2 = E.investor_tilts(pd.Series(["recovery"], index=idx[:1]), pd.Series([True], index=idx[:1]))
+    check("macro: playbook + stress overlay combine (clash cancels)", t2["XLU"].iloc[0] == 0 and t2["KBE"].iloc[0] == 1
+          and t2["SMH"].iloc[0] == -1 and t2["XLV"].iloc[0] == 1, str(t2.iloc[0].to_dict()))
     tmp = tempfile.mkdtemp()
     cwd = os.getcwd()
     try:
         _fake_raw(os.path.join(tmp, "cache", "macro", "raw"))
         os.chdir(tmp)
         out = E.run(log=lambda *_: None)
-        check("macro: full build on invented data", out["stage"][-1] in R.STAGES and set(out["horizons"]) == {"6", "12"}
+        check("macro: full build on invented data", out["regime"][-1] in R.STAGES and set(out["horizons"]) == {"6", "12"}
               and len(out["industries"]) == 20 and all(len(v) == len(out["months"]) for v in out["horizons"]["12"]["backtest"]["etf"]["curves"].values()))
         import macro.site as SI
         SI.build("test-password", out_dir=os.path.join(tmp, "site"), log=lambda *_: None)
