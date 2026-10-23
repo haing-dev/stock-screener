@@ -213,3 +213,24 @@ def load_mark():
 
 def symbol(rec):
     return rec.get("sym") or m_symbol(rec.get("tk") or "")
+
+
+def ttm_ebit_asof(cik, day, sic, cfg, load_facts=None):
+    """Operating income over the 12 months to the latest report filed before `day` (as the panel would have shown
+    it then; no prices needed), or None. Used for the profit trend when the panel doesn't reach back a year."""
+    from qs.extract import CompanyData
+    from qs.pipeline import metrics_for
+    from qs.pit import facts_as_of
+    if load_facts is None:
+        from qs.btdata import load_facts
+    fs = load_facts(int(cik))
+    if not fs or not fs.get("facts"):
+        return None
+    try:
+        cd = CompanyData(facts_as_of(fs, day))
+        if cd.currency is None:
+            return None
+        res, _why = metrics_for(cd, sic, {}, cfg, date.fromisoformat(day))
+    except Exception:  # noqa: BLE001 - a company whose old filings don't compute stays N/A
+        return None
+    return res[0].get("ttm_operating_income") if res else None

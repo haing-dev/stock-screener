@@ -196,6 +196,11 @@ def run(check, demo_dir=None):
         inc = pickle.load(f)
     check("company pass: a later run adds only the new month-ends", len(inc["dates"]) == len(grid) and "key" in inc)
 
+    y1 = PN.ttm_ebit_asof(ciks[0], "2025-06-30", "3571", cfg, load_facts=lambda c: facts.get(c))
+    rec_then = next((PN.load(m)["companies"].get(str(ciks[0])) for m in months if m >= "2025-07-01"), None)
+    check("profit trend: year-ago operating income computed point in time",
+          y1 is not None and rec_then is not None and abs(y1 - rec_then["ebit"]) <= abs(y1) * 1e-9 + 1, f"{y1} vs {rec_then and rec_then['ebit']}")
+
     class StubBTP:
         def resolve(self, s, day):
             return {"cik": int(s[1:])} if s.startswith("S") and s[1:].isdigit() else None

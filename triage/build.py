@@ -56,8 +56,17 @@ def build(months=None, grid=None, mark=None, opens=None, splits=None, divs=None,
     log(f"  13F covered through {through or '-'} ({len(rows)} conviction positions); insider data sets through "
         f"{ins_through or '-'}")
     allev = []
+    from qs.config import load_config
+    cfg = load_config()
+    ebit_cache = {}
     for kind in KINDS:
         for ev in events[kind]:
+            # profit trend: TTM operating income as filed a year before the scan (point in time, no prices needed)
+            k1 = (ev["cik"], ev["d"])
+            if k1 not in ebit_cache:
+                ebit_cache[k1] = PN.ttm_ebit_asof(ev["cik"], plus(ev["d"], -365), ev["rec"].get("sic"), cfg)
+            if ebit_cache[k1] is not None:
+                ev["ebit_1y"] = ebit_cache[k1]
             c, d = str(ev["cik"]), ev["d"]
             ev["kind"] = kind
             ev["fund"] = owners.funds(c, d)
