@@ -35,37 +35,34 @@
 </header>
 
 <main>
-  <section class="hero" id="s1">
-    <div class="step">1 · Where the economy is</div>
-    <div>
-      <div class="stage-line"><span class="sdot" id="stageDot"></span><h1 id="stageName"></h1></div>
-      <p class="lead" id="stageWhy"></p>
-      <p class="facts" id="stageFacts"></p>
-    </div>
-    <div class="dials" id="dials"></div>
+  <section class="hero" id="s0">
+    <div class="step">The reading</div>
+    <div class="stage-line"><span class="sdot" id="stageDot"></span><h1 id="stageName"></h1></div>
+    <p class="lead" id="stageWhy"></p>
+    <ol class="points" id="points"></ol>
+    <div class="callsum" id="callSum"></div>
     <div class="strip-wrap">
-      <div class="strip-head"><span>State each month since 1970</span><span class="keys" id="stripKey"></span></div>
+      <div class="strip-head"><span>How each month since 1970 was classified</span><span class="keys" id="stripKey"></span></div>
       <div class="chart" id="strip"></div>
     </div>
   </section>
 
-  <section id="s2">
-    <div class="step">2 · What's behind it</div>
-    <h2>Six areas, each scored 0 to 100</h2>
-    <p class="sub" id="pilSub"></p>
-    <div class="pillars" id="pillars"></div>
-  </section>
-
-  <section id="s3">
-    <div class="step">3 · What investors do in this state</div>
-    <h2 id="actHead"></h2>
-    <div class="rules" id="ruleCards"></div>
-    <p class="sub" id="actSub"></p>
-    <div class="tablewrap"><table class="ind" id="indTable"></table></div>
-  </section>
+  <section id="sA" class="point"></section>
+  <section id="sB" class="point"></section>
+  <section id="sC" class="point"></section>
 
   <section id="s4">
-    <div class="step">4 · Has it worked?</div>
+    <div class="step">What to do</div>
+    <h2 id="actHead"></h2>
+    <p class="sub" id="actWhy"></p>
+    <div class="tablewrap"><table class="ind" id="indTable"></table></div>
+    <h3 class="h3" id="heatHead"></h3>
+    <p class="sub" id="heatSub"></p>
+    <div class="tablewrap"><table class="heat" id="heat"></table></div>
+  </section>
+
+  <section id="s5">
+    <div class="step">Has it worked?</div>
     <h2 id="btHead"></h2>
     <p class="sub" id="btSub"></p>
     <div class="bt-grid">
@@ -75,15 +72,21 @@
       </div>
       <div class="card">
         <table class="stats" id="btStats"></table>
-        <div class="hits" id="btHits"></div>
       </div>
     </div>
     <div class="card live" id="liveBox"></div>
   </section>
 
-  <section id="s5">
+  <section id="sD">
     <details>
-      <summary><span class="step">5 · How it works</span></summary>
+      <summary><span class="step">Also watched: money, rates and valuations (not used in the calls)</span></summary>
+      <div id="bgBody"></div>
+    </details>
+  </section>
+
+  <section id="s6">
+    <details>
+      <summary><span class="step">How it works</span></summary>
       <div class="how" id="how"></div>
     </details>
   </section>

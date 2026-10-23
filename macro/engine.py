@@ -41,6 +41,22 @@ def month_grid(end=None):
     return pd.period_range(S["start"], pd.Period(end, "M"), freq="M")
 
 
+def _unit_breaks(m):
+    """First-published (ALFRED) values can switch units between vintages (e.g. billions -> millions of dollars).
+    Walking back from the latest value, a jump of ~1000x between neighbours is rescaled to the latest units."""
+    v = m.values.astype(float).copy()
+    for i in range(len(v) - 2, -1, -1):
+        a, b = v[i], v[i + 1]
+        if np.isnan(a) or np.isnan(b) or a == 0 or b == 0:
+            continue
+        r = abs(b / a)
+        if 300 < r < 3000:
+            v[i] *= 1000
+        elif 1 / 3000 < r < 1 / 300:
+            v[i] /= 1000
+    return pd.Series(v, index=m.index)
+
+
 def fred_monthly(sid, grid):
     """Month-end value of a FRED series on the grid, after its release delay."""
     s = _csv(sid)
@@ -52,6 +68,7 @@ def fred_monthly(sid, grid):
     else:
         per = s.index.to_period("M")
     m = pd.Series(s.values, index=per).groupby(level=0).last()
+    m = _unit_breaks(m)
     m.index = m.index + spec.get("lag", 0)
     m = m.reindex(grid)
     # the last published value stays known until the next one (also bridges months never published, e.g. the
@@ -338,6 +355,56 @@ def forward_rel(rets, mkt, h):
     return pd.DataFrame({k: cumret(rets[k], h).shift(-h) - fwd_m for k in rets})
 
 
+# ------------------------------------------------------------------ what the page shows next to each indicator / state
+def zone_of(score):
+    """warning / normal / supportive from the point-in-time score (worst third / middle / best third of history)."""
+    return np.where(np.isnan(score), "", np.where(score >= 65, "warn", np.where(score <= 35, "good", "normal")))
+
+
+def indicator_view(ind, sc, rels, grid):
+    """Per indicator: the warning and supportive lines in its own units (thirds of its history up to now), and how
+    each industry did vs the market over the next h months after past months in the same zone as today."""
+    out = {}
+    for i in R.INDICATORS:
+        k = i["id"]
+        v, z = ind[k], zone_of(sc[k].values)
+        vv = v.dropna()
+        if len(vv) < S["score_min_years"] * 12 or not z[-1]:
+            out[k] = None
+            continue
+        lo, hi = float(vv.quantile(0.35)), float(vv.quantile(0.65))
+        warn, good = (hi, lo) if i["dir"] > 0 else (lo, hi)
+        hist = {}
+        for h, rel in rels.items():
+            same = (z == z[-1])
+            rows = []
+            for e in rel.columns:
+                q = rel[e].values[same]
+                q = q[~np.isnan(q)]
+                if len(q) >= S["evidence_min_months"]:
+                    rows.append([e, _r(q.mean(), 1, 100), round(100.0 * (q > 0).mean()), len(q)])
+            rows.sort(key=lambda r: -r[1])
+            hist[str(h)] = rows
+        out[k] = {"warn": _r(warn, 4), "good": _r(good, 4), "zone": str(z[-1]), "from": str(vv.index[0]), "hist": hist}
+    return out
+
+
+def state_table(reg, high, rels):
+    """Average return vs the market over the next h months of each industry, by state (descriptive, all history)."""
+    out = {}
+    for h, rel in rels.items():
+        t = {}
+        for name, m in [(s_, (reg == s_).values) for s_ in R.STAGES] + [("stress", high.values.astype(bool))]:
+            row = {}
+            for e in rel.columns:
+                q = rel[e].values[m]
+                q = q[~np.isnan(q)]
+                row[e] = [_r(q.mean(), 1, 100), round(100.0 * (q > 0).mean()), len(q)] if len(q) >= 12 else None
+            t[name] = {"n": int(m.sum()), "etf": row}
+        out[str(h)] = t
+    return out
+
+
 # ------------------------------------------------------------------ sector calls: investor rules + history check
 def investor_tilts(reg, high):
     """+1 / -1 / 0 per industry and month from RULES[state] plus the STRESS overlay."""
@@ -395,8 +462,8 @@ def calls(tilt, reg, high, rel, h, band):
             agrees = None if tv[t] == 0 else bool(np.sign(m) == tv[t])
             a = "neutral" if tv[t] == 0 or not agrees else ("over" if tv[t] > 0 else "under")
             act.iat[t, act.columns.get_loc(e)] = a
-            rows.append({"pool": label, "n": n, "mean_rel": m, "p_risk": pr, "p_opp": po, "base_risk": br,
-                         "base_opp": bo, "agrees": agrees})
+            rows.append({"pool": label, "n": n, "mean_rel": m, "pos": float((q > 0).mean()), "p_risk": pr, "p_opp": po,
+                         "base_risk": br, "base_opp": bo, "agrees": agrees})
         ev[e] = rows
     return act, ev
 
@@ -556,18 +623,20 @@ def run(log=print):
            "regime": [s_ if isinstance(s_, str) else None for s_ in reg], "hot": [bool(x) for x in hot],
            "stress_high": [bool(x) for x in high], "econ6": _ser(g6), "econ_d12": _ser(d12), "infl6": _ser(infl6),
            "recession": _ser(rec, 0), "pillars": {k: _ser(pl[k]) for k in pl}, "scores": {k: _ser(sc[k], 0) for k in sc},
-           "values": {k: _ser(ind[k], 2) for k in ind}, "horizons": {}, "industries": [], "market": _ser(level(mkt), 4)}
+           "values": {k: _ser(ind[k], 3) for k in ind}, "horizons": {}, "industries": [], "market": _ser(level(mkt), 4)}
     for it in R.INDUSTRIES:
         e = it["etf"]
         first_etf = src[e][src[e] == "etf"].index.min()
         out["industries"].append({"etf": e, "name": it["name"], "etf_from": str(first_etf) if pd.notna(first_etf) else None,
                                   "tilt": _ser(tilt[e], 0), "rel_level": _ser(level(rets[e]) / level(mkt), 4)})
+    rels = {}
     for h in S["horizons"]:
         band = S["outcome_band"][h]
         rel = forward_rel(rets, mkt, h)
         act, ev = calls(tilt, reg, high, rel, h, band)
         hz = {"band": band, "now": {}, "actions": {e: [a if isinstance(a, str) else None for a in act[e]] for e in act},
               "backtest": {}, "recent": {}}
+        rels[h] = rel
         for i in range(max(0, len(grid) - 3), len(grid)):
             hz["recent"][str(grid[i])] = {e: [_r((ev[e][i] or {}).get(k), 1, 100) for k in ("p_risk", "p_opp", "base_risk", "base_opp")]
                                           for e in act}
@@ -575,6 +644,7 @@ def run(log=print):
             x = ev[e][-1] or {}
             hz["now"][e] = {"action": act[e].iloc[-1], "tilt": _r(tilt[e].iloc[-1], 0), "pool": x.get("pool"),
                             "n": x.get("n"), "mean_rel": _r(x.get("mean_rel"), 1, 100), "agrees": x.get("agrees"),
+                            "pos": _r(x.get("pos"), 0, 100),
                             "p_risk": _r(x.get("p_risk"), 1, 100), "p_opp": _r(x.get("p_opp"), 1, 100),
                             "base_risk": _r(x.get("base_risk"), 1, 100), "base_opp": _r(x.get("base_opp"), 1, 100)}
         have = act.notna().sum(axis=1)
@@ -587,8 +657,14 @@ def run(log=print):
         out["horizons"][str(h)] = hz
     out["report"] = report_card(sc, mkt, rec)
     out["live"] = live_scores(rets, mkt, grid)
-    out["meta"] = {"pillars": R.PILLARS, "stages": R.STAGES, "rules": R.RULES, "stress_rule": R.STRESS,
-                   "indicators": [{k: i[k] for k in ("id", "pillar", "name", "plain", "who", "dir")} for i in R.INDICATORS]}
+    out["ind_view"] = indicator_view(ind, sc, rels, grid)
+    out["state_table"] = state_table(reg, high, rels)
+    nowho = lambda r: {k: v for k, v in r.items() if k != "who"}          # sources stay in registry.py (audit)
+    out["meta"] = {"pillars": R.PILLARS, "stages": R.STAGES, "rules": {k: nowho(v) for k, v in R.RULES.items()},
+                   "stress_rule": nowho(R.STRESS),
+                   "indicators": [dict({k: i[k] for k in ("id", "pillar", "name", "dir")},
+                                       **dict(zip(("unit", "scale", "dp", "why"), R.DISPLAY[i["id"]])))
+                                  for i in R.INDICATORS]}
     os.makedirs(OUT, exist_ok=True)
     with gzip.open(os.path.join(OUT, "compass.json.gz"), "wt") as f:
         json.dump(out, f, separators=(",", ":"))

@@ -4,7 +4,7 @@ Every indicator is a claim made by an investor in the research store (transcript
 @AtlasShrug1 ("Galt", dated), turned into a fixed, testable rule. Investors propose, the backtest decides.
 v1.0.0 pre-registered 2026-10-23; v2.0.0 the same day (state -> investor sector rules + history check). Change log: macro/CHANGES.md. Never edit a rule in place: add a version.
 """
-VERSION = "2.0.0"
+VERSION = "2.1.0"
 
 # ------------------------------------------------------------------ fixed settings (pre-registered)
 SETTINGS = {
@@ -74,7 +74,7 @@ def T(name, tid):
 # pressure (weaker growth, hotter prices, more stress, tighter money, more froth, weaker market).
 INDICATORS = [
     # growth (economy data; with market health it sets the stage)
-    dict(id="jobs_alarm", pillar="growth", name="Jobs alarm (Sahm rule)", calc=("sahm", "UNRATE"), dir=1,
+    dict(id="jobs_alarm", pillar="growth", name="Unemployment rise from its 12-month low (Sahm rule)", calc=("sahm", "UNRATE"), dir=1,
          plain="Unemployment rising off its low", who=[T("Gerstner", 215)]),
     dict(id="truck", pillar="growth", name="Truck freight vs a year ago", calc=("yoy", "TRUCKD11"), dir=-1,
          plain="Trucking volumes", who=[T("Druckenmiller", 102), T("Druckenmiller", 77)]),
@@ -167,6 +167,55 @@ INDICATORS = [
          calc=("leadership",), dir=1, plain="Is the rise led by a few", who=[T("Druckenmiller", 79)]),
 ]
 IND = {i["id"]: i for i in INDICATORS}
+
+# ------------------------------------------------------------------ how each indicator is shown on the page
+# (unit, multiplier for display, decimals, why it matters in plain words). Display only: no effect on the calls.
+DISPLAY = {
+    "jobs_alarm": ("pts", 1, 2, "When the 3-month average jobless rate climbs 0.5 points above its low of the past year, a recession has almost always already started."),
+    "truck": ("%", 1, 1, "Trucks move most goods. Freight below last year's level shows demand for goods shrinking before it shows up in GDP."),
+    "permits": ("%", 1, 1, "Builders file permits months before they build. Falling permits mean less construction, fewer jobs and less spending ahead."),
+    "autos": ("%", 1, 1, "A car is the biggest purchase people can put off. Falling car sales are an early sign households are pulling back."),
+    "curve": ("pts", 1, 2, "Long-term minus short-term interest rates. Below 0 (inverted), lending pays less and credit tightens; most recessions followed an inversion."),
+    "youth": ("pts", 1, 2, "Young workers are hired last and let go first. Their jobless rate rising faster than the overall rate is an early crack in the job market."),
+    "cards": ("pts", 1, 2, "More credit-card bills paid late means households are running out of room. Spending usually slows next."),
+    "cyc_def": ("%", 1, 1, "6-month return of economy-sensitive stocks (home builders, banks, transports, retail, miners) minus safe stocks (utilities, staples, health care). Below 0: the market is bracing for a slowdown."),
+    "staples_disc": ("%", 1, 1, "6-month return of staples minus discretionary stocks. Above 0: investors expect people to cut back on things they don't need."),
+    "breadth": ("%", 1, 0, "Share of the 20 industries above their 10-month average. Healthy rallies lift most industries; a falling share means the rally is narrowing."),
+    "breakdowns": ("%", 1, 0, "Share of the 20 industries 20% or more below their 12-month high, i.e. in their own bear market. A rising share often comes before the index falls."),
+    "transports": ("%", 1, 1, "6-month return of transport minus industrial stocks. Goods have to be shipped: transports lagging means the market doubts demand will last."),
+    "homebuilders": ("%", 1, 1, "Home builders vs the S&P 500, measured from their best point of the last 2 years. Builders react first to rates and household demand; a deep fall has been an early warning."),
+    "core_pce": ("pts", 1, 2, "Core inflation (no food or energy) over the last 3 months, annualised, minus the last 12 months. Above 0: inflation is speeding up and the Fed can't cut."),
+    "core_cpi": ("%", 1, 1, "Core consumer prices vs a year ago. The further above 2%, the longer interest rates stay high."),
+    "ppi": ("%", 1, 1, "What businesses pay for goods and inputs vs a year ago. Rises reach consumer prices or squeeze profits."),
+    "inflexp": ("pts", 1, 2, "Change in the inflation rate bond markets expect 5 years ahead. A rise means investors fear inflation is getting stuck."),
+    "oil": ("%", 1, 1, "Oil feeds into almost every price. A sharp rise lifts inflation and works like a tax on consumers."),
+    "copper": ("%", 1, 1, "Copper goes into buildings, power grids and electronics. A rising price means strong demand and rising costs."),
+    "stockbond": ("", 1, 2, "Normally bonds rise when stocks fall (below 0). When they move together (above 0), inflation is the main worry and bonds stop protecting a portfolio."),
+    "vix": ("", 1, 1, "The price of insurance against a stock-market fall. Below 15 is calm, above 30 is panic."),
+    "spx_trend": ("%", 1, 1, "S&P 500 vs its average of the last 10 months. Below 0 the main trend has turned down; most big bear markets happened below this line."),
+    "junk": ("%", 1, 1, "3-month return of junk bonds minus safe Treasuries. Junk lagging means lenders are pulling back from weaker companies; stress usually shows here before stocks."),
+    "baa": ("pts", 1, 2, "Extra interest medium-quality companies pay over the government. A wider gap means lenders want more for the risk."),
+    "baa_chg": ("pts", 1, 2, "6-month change in that gap. A fast widening means credit is getting harder to get right now."),
+    "banks": ("%", 1, 1, "6-month return of bank stocks minus the S&P 500. Banks lend to the whole economy; lagging bank stocks point to loan losses or tighter lending."),
+    "dollar_break": ("%", 1, 1, "The dollar vs its highest level of the past 12 months. At or above 0 (a breakout), dollars get scarce worldwide and risky assets get sold."),
+    "chips_break": ("%", 1, 1, "Chip stocks vs their 12-month high. They led the market; a fall of 20% or more means investors are selling crowded winners."),
+    "fedfunds": ("pts", 1, 2, "Change in the Fed's interest rate over a year. Hikes slow the economy with a delay of 1 to 2 years; cuts help."),
+    "y10_chg": ("pts", 1, 2, "Change in the 10-year Treasury yield over a year. It sets mortgage and business borrowing costs; a fast rise tightens conditions."),
+    "y10_ngdp": ("pts", 1, 2, "10-year yield minus the economy's growth rate (before inflation). Above 0, debt gets harder to carry."),
+    "m2": ("%", 1, 1, "Money supply vs a year ago. More money supports spending and asset prices; shrinking money does the opposite."),
+    "dollar": ("%", 1, 1, "The dollar vs a year ago. A stronger dollar tightens money worldwide and cuts US companies' foreign profits."),
+    "squeeze": ("", 1, 2, "Dollar, oil and the 10-year yield over the last year, each against its usual swings, combined. Above 0: all three rising together, squeezing company profits."),
+    "realyield": ("%", 1, 2, "10-year yield minus core inflation. A high real yield makes cash and bonds more attractive than stocks."),
+    "mortgage": ("pts", 1, 2, "Change in the 30-year mortgage rate over a year. Higher rates slow home buying."),
+    "termprem": ("pts", 1, 2, "Change over a year in the extra yield investors want for holding long bonds. A rise shows worry about debt and inflation."),
+    "netliq": ("$bn", 1, 0, "3-month change in Fed money available to markets (Fed balance sheet minus Treasury cash and reverse repos). Falling liquidity has weighed on stocks."),
+    "mcap_gdp": ("% of GDP", 0.1, 0, "Total US stock market value vs the size of the economy. Very high levels have been followed by low long-term returns."),
+    "hh_equity": ("%", 100, 0, "Share of household financial assets held in stocks. A high share leaves little cash to buy more."),
+    "cape": ("x", 1, 1, "Stock prices vs average earnings of the last 10 years. A high ratio has meant lower returns over the following decade."),
+    "rally": ("", 1, 2, "6-month gain of the S&P 500 vs its usual swings. Very fast rallies tend to cool off."),
+    "leadership": ("%", 1, 1, "12-month return of the S&P 500 minus the typical industry. High: gains come from a few big stocks, a fragile base."),
+}
+assert set(DISPLAY) == set(IND), set(IND) ^ set(DISPLAY)
 
 # ------------------------------------------------------------------ 20 industries
 # etf = what the calls apply to and what the backtest trades; proxy = Kenneth French industries used for history

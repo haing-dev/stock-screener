@@ -1,5 +1,15 @@
 # Macro Compass changes
 
+## 2.1.0 (2026-10-23) - page shows the data, not scores (user request)
+- Page rebuilt: conclusion + points A (economy), B (inflation), C (market stress), each with real-unit time series
+  of its signals (warning zone = worst third of the signal's own history, recessions shaded), what each signal means
+  in plain words, and which sectors did best/worst after past months in the same zone; sector calls with the logic
+  and the history check; state x sector table (average next 6/12-month return vs S&P 500); no 0-100 scores and no
+  investor names on the page (sources stay in registry.py).
+- Data fix: first-published (ALFRED) values that switch units between vintages (billions vs millions) are rescaled
+  (engine._unit_breaks); this corrected 'share of household savings in stocks' (froth, background only). Calls unchanged.
+- registry.DISPLAY: unit, decimals and plain explanation per indicator (display only).
+
 ## 2.0.0 (2026-10-23) - user request: one decision flow from transcript/Galt logic
 - Indicators: 38 -> 43. Added Galt's market-stress signals (VIX via Yahoo ^VIX same-day + FRED VIXCLS, S&P 500
   below its 10-month average, junk bonds vs Treasuries 3-month, dollar breakout, chip stocks 12-month drawdown),
