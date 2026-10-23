@@ -8,5 +8,6 @@
     not feed the industry odds or the backtest.
   - the first full build's backtest (calls ~ equal weight, Aug 2006 - Oct 2026) was seen before publishing; no
     rule was changed after it.
+- 2026-10-23: FRED_API_KEY added; builds use first-published values from here on (no rule change).
 - Known gaps: household-equity indicator needs the next download (series id fixed); FRED_API_KEY not yet set,
   so the first builds use revised data (first-published values once the key is in).
