@@ -1,7 +1,8 @@
 # Macro Compass (macro/)
 
 Where the US economy is in its cycle, and which of 20 industry ETFs that puts at risk or in favour.
-Page: `/macro/` on the same site and password as the triage (branch `site`, folder `macro/`).
+Page: its own Cloudflare Worker "macro-compass", built from branch `macro-site` (separate from the stock-screener
+site). Password: secret MACRO_PASSWORD, else PORTAL_PASSWORD.
 
 ## Pipeline (`python -m macro.run all`, workflow `.github/workflows/macro.yml`, weekdays 22:17 UTC + push to macro/)
 1. `fetch.py` -> `cache/macro/raw/`: FRED (first-published values via ALFRED when secret FRED_API_KEY is set, else
@@ -19,8 +20,7 @@ Page: `/macro/` on the same site and password as the triage (branch `site`, fold
      shrunk toward the base rate (k=20), after 15 years of history; call = odds >= 1.5x normal;
    - backtest: 20 ETFs equal weight vs tilted (1.5x / 0.5x) monthly from 2006-07, plus momentum, trend and SPY
      baselines; the same on spliced industry series from the month most industries have odds.
-3. `site.py` -> `macro_site/` (page + sealed data, PORTAL_PASSWORD), published to `site:macro/`. The triage
-   workflow keeps `macro/` when it force-pushes the site.
+3. `site.py` -> `macro_site/` (page + sealed data + wrangler.jsonc + .assetsignore), force-pushed to `macro-site`.
 4. `record.py` -> branch `macro-record` `ledger.csv`: each finished month's calls from Oct 2026, appended once,
    never edited. The engine scores them as they come due ("Live record" on the page).
 

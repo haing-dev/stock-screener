@@ -1,6 +1,6 @@
-"""Build the page: macro/web + data/data.bin (cache/macro/out/compass.json.gz, gzip + AES-256-GCM with the same
-PORTAL_PASSWORD key as the triage site; the browser decrypts) -> macro_site/, published as folder macro/ of branch
-'site' (Cloudflare Worker "stock-screener", URL /macro/)."""
+"""Build the page: macro/web + data/data.bin (cache/macro/out/compass.json.gz, gzip + AES-256-GCM with a key from
+the password; the browser decrypts) -> macro_site/, force-pushed to branch 'macro-site', which its own Cloudflare
+Worker "macro-compass" serves. Separate from the stock-screener site."""
 import base64
 import gzip
 import json
@@ -8,7 +8,23 @@ import os
 import shutil
 import time
 
-from qs.portal import SALT_PATH, Sealer
+from qs.portal import Sealer
+
+SALT_PATH = os.path.join("data", "macro_salt.json")          # own salt: its own key, separate from the triage site
+WRANGLER = {"name": "macro-compass", "compatibility_date": "2026-10-01",
+            "assets": {"directory": "./", "not_found_handling": "single-page-application"}}
+HEADERS = """/*
+  X-Robots-Tag: noindex, nofollow
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+/data/*
+  Cache-Control: no-cache
+"""
 
 WEB = os.path.join(os.path.dirname(__file__), "web")
 OUT = os.path.join("cache", "macro", "out", "compass.json.gz")
@@ -16,7 +32,7 @@ OUT = os.path.join("cache", "macro", "out", "compass.json.gz")
 
 def build(password, log=print, allow_plain=False, out_dir="macro_site", data=None):
     if not password and not allow_plain:
-        raise SystemExit("PORTAL_PASSWORD is not set - refusing to publish unencrypted data.")
+        raise SystemExit("MACRO_PASSWORD / PORTAL_PASSWORD not set - refusing to publish unencrypted data.")
     if data is None:
         if not os.path.exists(OUT):
             raise SystemExit("Nothing built yet - run 'build' first.")
@@ -34,8 +50,17 @@ def build(password, log=print, allow_plain=False, out_dir="macro_site", data=Non
     v = time.strftime("%Y%m%d%H%M", time.gmtime())          # new file names each build: browsers never keep old code
     idx = os.path.join(out_dir, "index.html")
     html = open(idx, encoding="utf-8").read()
-    html = html.replace('/macro/style.css"', f'/macro/style.css?v={v}"').replace('/macro/app.js"', f'/macro/app.js?v={v}"')
+    html = html.replace('/style.css"', f'/style.css?v={v}"').replace('/app.js"', f'/app.js?v={v}"')
     open(idx, "w", encoding="utf-8").write(html)
+    with open(os.path.join(out_dir, "wrangler.jsonc"), "w", encoding="utf-8") as f:
+        f.write("// Cloudflare Worker (static assets) - Macro Compass, published by .github/workflows/macro.yml\n")
+        json.dump(WRANGLER, f, indent=2)
+    with open(os.path.join(out_dir, ".assetsignore"), "w", encoding="utf-8") as f:
+        f.write("wrangler.jsonc\n.assetsignore\n.git\n")
+    with open(os.path.join(out_dir, "_headers"), "w", encoding="utf-8") as f:
+        f.write(HEADERS)
+    with open(os.path.join(out_dir, "robots.txt"), "w", encoding="utf-8") as f:
+        f.write("User-agent: *\nDisallow: /\n")
     log(f"site: {out_dir} ({os.path.getsize(os.path.join(out_dir, 'data', 'data.bin')) // 1024} KB data)"
         + (" UNENCRYPTED preview" if not password else ""))
     return out_dir

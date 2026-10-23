@@ -1,5 +1,5 @@
-/* Macro Compass - static front end. Reads /macro/data/data.bin (gzip'd JSON, AES-GCM, key from the site password
-   via PBKDF2-SHA256; same scheme and saved key as the triage site), built by macro/engine.py + macro/site.py. */
+/* Macro Compass - static front end. Reads /data/data.bin (gzip'd JSON, AES-GCM, key from the site password
+   via PBKDF2-SHA256; its own Cloudflare Worker "macro-compass"), built by macro/engine.py + macro/site.py. */
 "use strict";
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -248,7 +248,7 @@ function renderAll(){ renderStage(); renderPillars(); renderIndustries(); render
 function setH(h){ H = h; store.set("mc-h", h); document.querySelectorAll("#horizon button").forEach(b => b.setAttribute("aria-pressed", b.dataset.h === H));
   renderIndustries(); renderBacktest(); }
 async function start(){
-  const buf = await (await fetch("/macro/data/data.bin", {cache: "no-cache"})).arrayBuffer();
+  const buf = await (await fetch("/data/data.bin", {cache: "no-cache"})).arrayBuffer();
   D = await openBlob(buf); N = D.months.length;
   $("#lock").hidden = true; $("#shell").hidden = false;
   if (!D.horizons[H]) H = "12";
@@ -263,20 +263,20 @@ $("#lockForm").addEventListener("submit", async ev => {
   try {
     const k = await deriveKey($("#pw").value.trim());
     if (!(await tryKey(k))) { $("#lockMsg").textContent = "That password didn't open the data. Check it and try again."; return; }
-    if ($("#remember").checked) store.set("qt-key", JSON.stringify({salt: INFO.salt, k: toB64(await crypto.subtle.exportKey("raw", k))}));
+    if ($("#remember").checked) store.set("mc-key", JSON.stringify({salt: INFO.salt, k: toB64(await crypto.subtle.exportKey("raw", k))}));
     $("#pw").value = ""; await start();
   } catch(e){ $("#lockMsg").textContent = "Couldn't open the data: " + e.message; }
   finally { btn.disabled = false; btn.textContent = "Open"; }
 });
-$("#lockNow").onclick = () => { store.del("qt-key"); location.reload(); };
+$("#lockNow").onclick = () => { store.del("mc-key"); location.reload(); };
 (async () => {
-  try { INFO = await (await fetch("/macro/data/keyinfo.json", {cache: "no-cache"})).json(); }
+  try { INFO = await (await fetch("/data/keyinfo.json", {cache: "no-cache"})).json(); }
   catch(e){ showLock("No data yet: the Macro workflow hasn't published the page."); return; }
   if (INFO.plain) { await start(); return; }
-  const saved = store.get("qt-key");
+  const saved = store.get("mc-key");
   if (saved) { try { const {salt, k} = JSON.parse(saved);
       if (salt === INFO.salt) { const key = await crypto.subtle.importKey("raw", b64(k), {name: "AES-GCM"}, true, ["decrypt"]);
         if (await tryKey(key)) { await start(); return; } } } catch(e){}
-    store.del("qt-key"); }
+    store.del("mc-key"); }
   showLock("");
 })();

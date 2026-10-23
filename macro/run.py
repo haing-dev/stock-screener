@@ -17,7 +17,7 @@ def main(step="all"):
             engine.run()
         elif s == "site":
             from . import site
-            site.build(os.environ.get("PORTAL_PASSWORD", ""), allow_plain=bool(os.environ.get("MACRO_PLAIN")))
+            site.build(os.environ.get("MACRO_PASSWORD") or os.environ.get("PORTAL_PASSWORD", ""), allow_plain=bool(os.environ.get("MACRO_PLAIN")))
         elif s == "record":
             from . import record
             record.run()

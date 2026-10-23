@@ -1,8 +1,9 @@
 name: Macro
 # Macro Compass (macro/): economic stage + 20 industry ETFs at risk / in favour, from investor-proposed indicators,
 # backtested point in time. Weekdays after the US close, on a push to main that changes macro/, or by hand.
-# Outputs: branch 'site' folder macro/ (same Cloudflare Worker and password as the triage site),
+# Outputs: branch 'macro-site' (its own Cloudflare Worker "macro-compass"; separate from the stock-screener site),
 # branch 'macro-record' (append-only monthly calls), 'macro-data' (raw downloads), 'macro-status' (last run log).
+# Password: secret MACRO_PASSWORD, else PORTAL_PASSWORD.
 on:
   schedule:
     - cron: "17 22 * * 1-5"
@@ -28,6 +29,7 @@ jobs:
     timeout-minutes: 60
     env:
       FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      MACRO_PASSWORD: ${{ secrets.MACRO_PASSWORD }}
       PORTAL_PASSWORD: ${{ secrets.PORTAL_PASSWORD }}
       PYTHONUNBUFFERED: "1"
       REPO_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
@@ -70,21 +72,14 @@ jobs:
           git -c user.name=macro-bot -c user.email=macro-bot@users.noreply.github.com commit -q -m "macro data $(date -u +%Y-%m-%dT%H:%MZ)"
           git push -q -f "$REPO_URL" macro-data
 
-      - name: Publish the page (folder macro/ on branch 'site')
+      - name: Publish the page (branch 'macro-site', one commit, force-pushed)
         run: |
           [ -f macro_site/data/data.bin ] || { echo "no page built this run"; exit 0; }
-          for i in 1 2 3; do
-            rm -rf site_br
-            git clone -q --depth 1 --branch site "$REPO_URL" site_br || { echo "no site branch yet"; exit 1; }
-            rm -rf site_br/macro && cp -r macro_site site_br/macro
-            cd site_br
-            git -c user.name=macro-bot -c user.email=macro-bot@users.noreply.github.com add -A macro
-            if git diff --cached --quiet; then echo "page unchanged"; exit 0; fi
-            git -c user.name=macro-bot -c user.email=macro-bot@users.noreply.github.com commit -q -m "macro page $(date -u +%Y-%m-%dT%H:%MZ)"
-            git push -q origin site && { echo "Published to site/macro"; exit 0; }
-            cd ..; sleep 10
-          done
-          exit 1
+          cd macro_site
+          git init -q -b macro-site
+          git -c user.name=macro-bot -c user.email=macro-bot@users.noreply.github.com add -A
+          git -c user.name=macro-bot -c user.email=macro-bot@users.noreply.github.com commit -q -m "macro page $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q -f "$REPO_URL" macro-site && echo "Published to branch macro-site"
 
       - name: Record new monthly calls (branch 'macro-record', never force-pushed)
         if: always()
