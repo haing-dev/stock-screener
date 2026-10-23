@@ -21,6 +21,9 @@ def main(step="all"):
         elif s == "record":
             from . import record
             record.run()
+        elif s == "derisk_weekly":                      # research only: de-risking checked weekly vs monthly
+            from . import research_derisk
+            research_derisk.weekly()
         elif s == "stocks":                             # research only: sector calls via sensitive stocks
             from . import research_stocks
             research_stocks.run()

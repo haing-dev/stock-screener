@@ -1,1 +1,1 @@
-{"step": "all", "_note": "workflow default step: all | fetch | build | site | record"}
+{"step": "fetch,build,derisk_weekly", "_note": "workflow default step: all | fetch | build | site | record"}
