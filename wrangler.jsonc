@@ -1,0 +1,9 @@
+// Cloudflare Worker (static assets) - the triage site, published by .github/workflows/triage.yml
+{
+  "name": "stock-screener",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "single-page-application"
+  }
+}
