@@ -452,9 +452,10 @@ def entry_test(act, reg, high, rets, src, mkt, holds=(12, 24, 36), capital=10000
     return out
 
 
-def derisk(sc, mkt, grid):
-    """Main action (3.2.0): graded de-risking on track-record-weighted warnings (see SETTINGS['derisk']).
-    The exposure set at the end of month t applies to month t+1; the rest earns the T-bill rate."""
+def derisk(sc, mkt, grid, ind, F):
+    """Main action (4.0.0, see SETTINGS['derisk']): track-record-weighted warnings acted on only while the Fed is
+    tightening, plus a growth-trend cut. The exposure set at the end of month t applies to month t+1; the rest is in
+    7-10 year Treasuries while the stock-bond correlation is negative, else T-bills."""
     X = S["derisk"]
     core = [i["id"] for i in R.INDICATORS if i["pillar"] in X["pillars"]]
     lv_m = level(mkt)
@@ -473,10 +474,24 @@ def derisk(sc, mkt, grid):
     share = ((w * bad).sum(axis=1) / (w * avail).sum(axis=1).replace(0, np.nan)).fillna(0.0)
     share = share.where(avail.sum(axis=1) >= 10, 0.0)
     lo, hi = X["band"]
-    e = 1 - (1 - X["min_stocks"]) * ((share - lo) / (hi - lo)).clip(0, 1)
+    fl = X["min_stocks"]
+    fund = F["FEDFUNDS"]
+    fg = X["fed_gate"]
+    fed = ((fund - fund.rolling(fg["lookback"], min_periods=fg["lookback"] // 2).min()) >= fg["rise"]).fillna(False)
+    unemp = F["UNRATE"]
+    gtt = ((ind["spx_trend"] < 0) & (unemp > unemp.rolling(X["unemp_avg"]).mean())).fillna(False)
+    e = 1 - (1 - fl) * ((share - lo) / (hi - lo)).clip(0, 1) * fed.astype(float)
+    e = np.minimum(e, pd.Series(np.where(gtt, fl, 1.0), index=grid)).fillna(1.0)
     _, ff = load_french()
     rf = pd.Series({pd.Period(k_, "M"): v.get("RF", np.nan) for k_, v in ff.items()}, dtype=float).reindex(grid).ffill()
-    strat = e.shift(1) * mkt + (1 - e.shift(1)) * rf
+    g10 = F["GS10"]
+    bond = (g10.shift(1) / 1200 - 7 * (g10 - g10.shift(1)) / 100)                  # synthetic 10-year Treasury
+    ief = monthly_px("Y_IEF", grid).pct_change(fill_method=None)
+    bond = ief.where(ief.notna(), bond)                                            # IEF once it trades
+    use_b = (ind["stockbond"] < X["bonds_if_corr_below"]).fillna(False)
+    alt = pd.Series(np.where(use_b.shift(1, fill_value=False), bond, rf), index=grid)
+    alt = alt.where(alt.notna(), rf)
+    strat = e.shift(1) * mkt + (1 - e.shift(1)) * alt
     st = pd.Period(X["backtest_from"], "M")
     m, r = mkt[mkt.index > st], strat[strat.index > st]
     okm = m.notna() & r.notna()
@@ -507,6 +522,8 @@ def derisk(sc, mkt, grid):
     last = len(grid) - 1
     top = sorted(((float(w[c].iloc[last]), c) for c in core if bad[c].iloc[last] > 0), reverse=True)
     return {"core": core, "share": _ser(share * 100, 1), "exposure": _ser(e * 100, 0),
+            "defensive": ["bonds" if b else "bills" for b in use_b.values], "fed_gate": [bool(x) for x in fed.values],
+            "growth_cut": [bool(x) for x in gtt.values],
             "warnings_now": [c for _, c in top], "weights_now": {c: _r(w[c].iloc[last], 2) for c in core},
             "backtest": {"from": X["backtest_from"], "stats": {"strategy": stats(r), "sp500": stats(m)},
                          "sharpe": {"strategy": _r(((r - rf.reindex(r.index)).mean()) / r.std() * math.sqrt(12), 2),
@@ -780,7 +797,7 @@ def run(log=print):
         out["horizons"][str(h)] = hz
     out["report"] = report_card(sc, mkt, rec)
     out["live"] = live_scores(rets, mkt, grid)
-    out["derisk"] = derisk(sc, mkt, grid)
+    out["derisk"] = derisk(sc, mkt, grid, ind, F)
     out["ind_view"] = indicator_view(ind, sc, rels, grid)
     out["state_table"] = state_table(reg, high, rels)
     nowho = lambda r: {k: v for k, v in r.items() if k != "who"}          # sources stay in registry.py (audit)
@@ -794,7 +811,9 @@ def run(log=print):
     now = out["horizons"]["12"]["now"]
     log(f"build: {len(grid)} months to {grid[-1]}; state {reg.iloc[-1]} (stage {stage.iloc[-1]}, inflation hot "
         f"{bool(hot.iloc[-1])}, stress high {bool(high.iloc[-1])}); stress {pl['stress'].iloc[-1]:.0f}; "
-        f"stocks {out['derisk']['exposure'][-1]}% (warning share {out['derisk']['share'][-1]}%); "
+        f"stocks {out['derisk']['exposure'][-1]}% (warning share {out['derisk']['share'][-1]}%, Fed gate "
+        f"{'on' if out['derisk']['fed_gate'][-1] else 'off'}, growth-trend cut {'on' if out['derisk']['growth_cut'][-1] else 'off'}, "
+        f"rest in {out['derisk']['defensive'][-1]}); "
         f"extreme now {bool(gate.iloc[-1])} ({', '.join(k for k in parts if parts[k].iloc[-1]) or 'none'}); "
         f"12m calls {sum(1 for v in now.values() if v['action']=='over')} over / "
         f"{sum(1 for v in now.values() if v['action']=='under')} under; {time.time()-t0:.0f}s")

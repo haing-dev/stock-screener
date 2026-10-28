@@ -4,7 +4,7 @@ Every indicator is a claim made by an investor in the research store (transcript
 @AtlasShrug1 ("Galt", dated), turned into a fixed, testable rule. Investors propose, the backtest decides.
 v1.0.0 pre-registered 2026-10-23; v2.0.0 the same day (state -> investor sector rules + history check). Change log: macro/CHANGES.md. Never edit a rule in place: add a version.
 """
-VERSION = "3.2.0"
+VERSION = "4.0.0"
 
 # ------------------------------------------------------------------ fixed settings (pre-registered)
 SETTINGS = {
@@ -24,13 +24,19 @@ SETTINGS = {
     "stress_high": (65, 55),       # market stress area: high from 65, normal again at 55
     # 3.0.0: act only on extreme readings; otherwise every sector stays neutral (equal weight)
     "extreme": {"economy": (40, 60), "stress": 70, "inflation": 70},
-    # 3.2.0 (main action, user choice): graded de-risking on track-record-weighted warnings. Each core indicator
-    # (economy, market health, inflation, market stress) in its worst fifth is a warning, weighted by how much more
-    # often than normal a 15%+ S&P fall followed within 12 months of its past warnings (walk-forward, outcomes finished
-    # by then, shrunk toward 1 with 24 pseudo-months). Weighted warning share <= 15%: 100% stocks; >= 35%: 50%; linear
-    # in between. The rest sits in cash earning the 3-month T-bill rate.
+    # 4.0.0 (main action, user choice 2026-10-28, from the combination tests in docs/research/macro_combos):
+    # 1. Warnings: each core indicator (economy, market health, inflation, market stress) in its worst fifth is a
+    #    warning, weighted by how much more often than normal a 15%+ S&P fall followed within 12 months of its past
+    #    warnings (walk-forward, outcomes finished by then, shrunk toward 1 with 24 pseudo-months). They cut stocks
+    #    only while the Fed is tightening (funds rate >= 1 pt above its 24-month low): weighted share <= 15% -> 100%
+    #    stocks, >= 35% -> 0%, linear in between.
+    # 2. Growth-trend cut, whatever the Fed does: S&P 500 below its 10-month average AND unemployment above its
+    #    12-month average -> 0% stocks.
+    # 3. The non-stock share is held in 7-10 year Treasuries (IEF; synthetic 10-year before it trades) while the
+    #    12-month stock-bond correlation is negative, else in 3-month T-bills.
     "derisk": {"pillars": ["growth", "internals", "inflation", "stress"], "worst": 80, "band": (0.15, 0.35),
-               "min_stocks": 0.5, "event": (0.15, 12), "shrink": 24, "backtest_from": "1975-01"},
+               "min_stocks": 0.0, "event": (0.15, 12), "shrink": 24, "backtest_from": "1975-01",
+               "fed_gate": {"lookback": 24, "rise": 1.0}, "unemp_avg": 12, "bonds_if_corr_below": 0.0},
     "benchmark": "equal-weight average of the 20 sectors",
     "etf_backtest_start": "2006-07",  # first month most of the 20 ETFs trade
 }

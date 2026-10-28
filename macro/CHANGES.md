@@ -1,5 +1,16 @@
 # Macro Compass changes
 
+## 4.0.0 (2026-10-28) - Fed-gated de-risking + growth-trend cut + conditional Treasuries (user choice)
+- From the 5,637-rule combination test (docs/research/macro_combos/README.md). Rule (SETTINGS.derisk): the same
+  track-record-weighted warnings cut stocks only while the Fed is tightening (funds rate >= 1 pt above its 24-month
+  low); share <= 15% -> 100% stocks, >= 35% -> 0%, linear between. Separately, S&P 500 below its 10-month average AND
+  unemployment above its 12-month average -> 0% stocks. The rest in 7-10y Treasuries (IEF; synthetic 10-year before
+  2002-08) while the 12-month stock-bond correlation < 0, else T-bills.
+- Since 1975: 13.9%/yr vs S&P 12.4%, worst fall -20% vs -51%, Sharpe 0.78 vs 0.58, average 81% stocks. 1966-74
+  (untouched): 7.8%/yr vs -0.6%. Search-adjusted p 0.25: expect about half the gain live. Today: 100% stocks.
+- Sector-momentum tilt from the test not adopted: it would replace the sector calls section. Page format unchanged
+  (the non-equity share is labelled Treasuries or cash). Ledger: + defensive, fed_gate, growth_cut.
+
 ## Research note (2026-10-23, no rule change) - trend confirmation (macro/research_trend.py)
 - Current 3.2 (graded + track-record): 11.3%/yr since 1975, worst -29%, protected +36 pts / lost -102 pts; 2006+ 10.0%.
 - Graded, cut only while the S&P is below its 10-month average: 12.0%, -31%, +37 / -64 pts; 2006+ 10.5%, -30%.
