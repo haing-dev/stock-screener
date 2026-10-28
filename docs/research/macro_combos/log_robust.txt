@@ -1,0 +1,63 @@
+== the winner and its parts
+                                                                     A_cagr   A_dd  A_sh  B_cagr   B_dd  B_sh  F_cagr   F_dd  F_sh  avg_eq
+name                                                                                                                                      
+S&P 500                                                               15.91 -29.85  0.62    8.98 -50.78  0.53   12.40 -50.78  0.58  100.00
+live rule (T-bills)                                                   14.46 -20.52  0.61    8.39 -28.87  0.63   11.39 -29.20  0.62   84.88
+winner: Fed gate + growth-trend, floor 0, bonds if corr<0, momentum   17.38 -14.61  0.76   11.77 -18.51  0.89   14.55 -18.51  0.81   81.29
+  same, T-bills, no momentum                                          16.07 -15.28  0.72   10.20 -19.98  0.77   13.10 -19.98  0.74   81.29
+  same, floor 25%                                                     17.29 -15.21  0.75   11.28 -19.11  0.84   14.25 -19.11  0.78   85.97
+  same, floor 50%                                                     17.15 -20.10  0.72   10.71 -24.10  0.75   13.89 -24.10  0.73   90.64
+  Fed gate only (no growth-trend), T-bills                            16.36 -18.27  0.73    7.91 -51.91  0.49   12.06 -51.91  0.60   89.28
+  growth-trend only, floor 0, T-bills                                 15.63 -29.85  0.62   10.89 -23.93  0.76   13.24 -29.85  0.68   89.86
+  live rule + growth-trend, T-bills                                   12.74 -15.28  0.54    7.38 -19.45  0.67   10.03 -19.45  0.59   68.47
+
+== Fed gate settings (rise above the N-month low, pts) with growth-trend cut, floor 0, bonds if corr<0, momentum; cells: Sharpe 1975-2000 / 2001-2026, worst fall full
+               0.25            0.50            0.75            1.00            1.50            2.00
+12m  0.72/0.93 -18%  0.71/0.91 -18%  0.75/0.87 -19%  0.79/0.87 -19%  0.65/0.91 -30%  0.66/0.90 -30%
+18m  0.74/0.93 -18%  0.73/0.94 -18%  0.74/0.90 -19%  0.78/0.86 -19%  0.68/0.90 -30%  0.65/0.89 -30%
+24m  0.67/0.94 -18%  0.69/0.94 -18%  0.72/0.90 -19%  0.76/0.89 -19%  0.68/0.89 -30%  0.64/0.87 -30%
+36m  0.62/0.93 -18%  0.65/0.93 -18%  0.67/0.89 -19%  0.72/0.89 -19%  0.65/0.88 -30%  0.60/0.86 -30%
+  funds rate above 12 months ago                   0.75/0.98  CAGR 14.7%  worst -18%
+  funds rate above 6 months ago                    0.71/0.91  CAGR 13.9%  worst -18%
+  funds rate 12m change >= +1 pt                   0.80/0.89  CAGR 15.1%  worst -19%
+  2y yield above funds rate (market expects hikes) 0.63/0.92  CAGR 12.8%  worst -19%
+  share of months with the Fed gate on (24m, 1 pt): 36%
+
+== growth-trend settings (with the 24m/1pt Fed gate, floor 0, B2, momentum)
+  trend 10m & unemp > 12m avg (base)             0.76/0.89  CAGR 14.5%  worst -19%
+  trend 8m & unemp > 12m avg                     0.72/0.92  CAGR 14.3%  worst -19%
+  trend 12m & unemp > 12m avg                    0.75/0.93  CAGR 14.7%  worst -19%
+  trend 10m & unemp 3m avg >= 12m low + 0.3      0.72/0.84  CAGR 14.0%  worst -19%
+  trend 10m & unemp > 6m avg                     0.72/1.02  CAGR 14.9%  worst -19%
+  trend 10m & unemp > 24m avg                    0.77/0.83  CAGR 14.1%  worst -19%
+
+== placebo: the Fed gate replaced by 1000 random on/off schedules (same runs, shuffled in time)
+  real Fed gate Sharpe 0.814; random schedules median 0.733, 95th pct 0.806; share of random >= real: 0.034
+
+== by decade: CAGR % (winner / live rule / S&P 500)
+  1975-1979:  15.5 /  12.8 /  15.0
+  1980-1989:  18.8 /  15.9 /  16.9
+  1990-1999:  18.4 /  15.7 /  18.3
+  2000-2009:  11.0 /   1.9 /  -1.0
+  2010-2019:  13.3 /  11.4 /  13.4
+  2020-2026:   9.4 /  12.2 /  15.1
+
+== sell-offs: total return over the S&P 500's fall (peak to trough, month end): winner / live rule / S&P 500
+  1980-11 to 1982-07:    8.5% /   -7.3% /  -16.3%
+  1987-08 to 1987-11:  -10.2% /  -20.5% /  -29.9%
+  1990-06 to 1990-10:   -8.4% /  -10.2% /  -16.5%
+  1998-06 to 1998-08:  -14.6% /  -15.3% /  -15.3%
+  2000-08 to 2002-09:   15.0% /  -29.2% /  -44.7%
+  2007-10 to 2009-02:   12.4% /  -28.7% /  -50.8%
+  2011-04 to 2011-09:  -16.8% /  -10.4% /  -16.2%
+  2015-05 to 2016-02:   -7.3% /   -9.1% /   -6.9%
+  2018-09 to 2018-12:  -10.8% /  -11.6% /  -13.5%
+  2020-01 to 2020-03:  -17.6% /  -19.4% /  -19.4%
+  2021-12 to 2022-09:  -18.1% /  -14.5% /  -23.9%
+
+== IEF instead of the synthetic bond (2002-08..2026-10): synthetic 12.3%/yr, Sharpe 0.92; IEF 12.3%/yr, Sharpe 0.91
+
+== winner trades: 2.6 exposure changes/yr; avg stocks 81%; months at 0% stocks: 15%
+
+== reading at 2026-10: Fed funds 3.75 (24m low 3.63) -> Fed gate off; S&P above its 10-month average; unemployment 4.2 vs 12m avg 4.30; warning share 27.9%; winner exposure 100% stocks; live rule 68%
+  last 24 months of the winner's exposure: 2411:100% 2412:100% 2501:100% 2502:100% 2503:0% 2504:0% 2505:100% 2506:100% 2507:100% 2508:100% 2509:100% 2510:100% 2511:100% 2512:100% 2601:100% 2602:100% 2603:0% 2604:100% 2605:100% 2606:100% 2607:100% 2608:100% 2609:100% 2610:100%

@@ -1,0 +1,47 @@
+months with >=10 core indicators scored, first: 1970-11
+== 1966-01..1974-12
+  S&P 500                  CAGR   -0.6%  worst  -46.5%  Sharpe -0.30  avg stocks 100%
+  live rule                CAGR    1.5%  worst  -33.6%  Sharpe -0.24  avg stocks 84%
+  winner (weighted)        CAGR    8.0%  worst  -15.4%  Sharpe  0.27  avg stocks 62%
+  winner (equal-wt)        CAGR    8.0%  worst  -15.4%  Sharpe  0.28  avg stocks 62%
+  winner T-bills no tilt   CAGR    7.8%  worst  -15.5%  Sharpe  0.25  avg stocks 62%
+  winner floor 25%         CAGR    6.0%  worst  -15.4%  Sharpe  0.09  avg stocks 71%
+== 1969-01..1970-06
+  S&P 500                  CAGR  -22.0%  worst  -31.1%  Sharpe -1.75  avg stocks 100%
+  live rule                CAGR  -22.0%  worst  -31.1%  Sharpe -1.75  avg stocks 100%
+  winner (weighted)        CAGR    1.4%  worst   -6.7%  Sharpe -0.39  avg stocks 50%
+  winner (equal-wt)        CAGR    1.4%  worst   -6.7%  Sharpe -0.39  avg stocks 50%
+  winner T-bills no tilt   CAGR    0.1%  worst   -7.5%  Sharpe -0.47  avg stocks 50%
+  winner floor 25%         CAGR   -4.6%  worst   -7.8%  Sharpe -0.88  avg stocks 62%
+== 1973-01..1974-09
+  S&P 500                  CAGR  -30.1%  worst  -46.5%  Sharpe -2.62  avg stocks 100%
+  live rule                CAGR  -16.6%  worst  -27.2%  Sharpe -2.71  avg stocks 59%
+  winner (weighted)        CAGR    0.1%  worst   -6.3%  Sharpe -1.35  avg stocks 15%
+  winner (equal-wt)        CAGR    0.2%  worst   -6.4%  Sharpe -1.34  avg stocks 14%
+  winner T-bills no tilt   CAGR   -0.5%  worst   -7.2%  Sharpe -1.39  avg stocks 15%
+  winner floor 25%         CAGR   -8.1%  worst  -13.7%  Sharpe -2.40  avg stocks 36%
+
+== months with the winner at <=25% stocks: 97; S&P in them avg +0.27%/mo vs all months +1.07
+  1978-02..1978-03 (2m): S&P   +2.4%  winner   +1.0%  ->   -1.4 pts  FED
+  1980-04..1980-05 (2m): S&P  +11.6%  winner   +3.4%  ->   -8.2 pts  FED
+  1981-09..1982-08 (12m): S&P   +1.4%  winner  +23.0%  ->  +21.6 pts  FED
+  1984-03..1984-03 (1m): S&P   +1.4%  winner   +0.7%  ->   -0.6 pts  FED
+  1984-05..1984-08 (4m): S&P   +6.0%  winner   -2.1%  ->   -8.1 pts  FED
+  1987-11..1987-11 (1m): S&P   -7.4%  winner   +0.4%  ->   +7.8 pts  FED
+  1988-05..1988-05 (1m): S&P   +0.2%  winner   +0.5%  ->   +0.3 pts  FED
+  1990-02..1990-03 (2m): S&P   +4.2%  winner   +1.2%  ->   -3.0 pts  FED
+  1990-05..1990-05 (1m): S&P   +9.1%  winner   +0.7%  ->   -8.4 pts  FED
+  1990-09..1991-01 (5m): S&P   +8.2%  winner   +3.0%  ->   -5.2 pts  gtt
+  2000-03..2000-03 (1m): S&P   +9.7%  winner   +2.4%  ->   -7.3 pts  FED
+  2000-05..2002-03 (23m): S&P  -19.2%  winner  +12.3%  ->  +31.5 pts  FED
+  2002-05..2002-10 (6m): S&P  -17.3%  winner  +11.7%  ->  +29.0 pts  gtt
+  2003-01..2003-02 (2m): S&P   -3.8%  winner   +1.6%  ->   +5.4 pts  gtt
+  2006-08..2006-08 (1m): S&P   +2.2%  winner   +0.7%  ->   -1.5 pts  FED
+  2007-09..2007-10 (2m): S&P   +5.3%  winner   +1.2%  ->   -4.1 pts  FED
+  2008-01..2009-06 (18m): S&P  -34.8%  winner  +16.4%  ->  +51.2 pts  gtt
+  2019-01..2019-01 (1m): S&P   +8.0%  winner   +1.1%  ->   -6.9 pts  FED
+  2020-05..2020-05 (1m): S&P   +4.8%  winner   -0.0%  ->   -4.8 pts  gtt
+  2022-07..2023-01 (7m): S&P   +8.7%  winner   +1.7%  ->   -7.0 pts  FED
+  2023-11..2023-11 (1m): S&P   +9.1%  winner   +0.4%  ->   -8.7 pts  FED
+  2025-04..2025-05 (2m): S&P   +5.4%  winner   -0.3%  ->   -5.6 pts  gtt
+  2026-04..2026-04 (1m): S&P  +10.5%  winner   +0.3%  ->  -10.2 pts  gtt
