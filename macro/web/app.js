@@ -52,16 +52,19 @@ const W = el => Math.max(280, el.clientWidth || 600);
 
 function lineChart(el, series, months, opt = {}){
   const w = W(el), h = opt.h || 260, m = {l: 44, r: 64, t: 10, b: 24};
-  const i0 = Math.min(...series.map(s => s.v.findIndex(v => v != null)).filter(x => x >= 0));
+  const i0 = Math.max(opt.i0 || 0, Math.min(...series.map(s => s.v.findIndex(v => v != null)).filter(x => x >= 0)));
   const n = months.length, span = n - 1 - i0;
   const vals = series.flatMap(s => s.v.slice(i0).filter(v => v != null));
-  const lo = opt.log ? Math.min(...vals) : Math.min(...vals, opt.base ?? Infinity), hi = Math.max(...vals);
+  let lo = opt.log ? Math.min(...vals) : Math.min(...vals, opt.base ?? Infinity), hi = Math.max(...vals);
+  if (!opt.log && !opt.ticks) { const T0 = niceTicks(lo, hi, 4); lo = T0.lo; hi = T0.hi; }
   const tr = v => opt.log ? Math.log(v) : v;
   const Y = v => m.t + (h - m.t - m.b) * (1 - (tr(v) - tr(lo)) / (tr(hi) - tr(lo) || 1));
   const X = i => m.l + (w - m.l - m.r) * (i - i0) / (span || 1);
   let g = "";
-  const ticks = opt.ticks || [];
-  ticks.filter(t => t >= lo && t <= hi).forEach(t => { g += `<line x1="${m.l}" x2="${w - m.r}" y1="${Y(t)}" y2="${Y(t)}" stroke="var(--grid)"/><text x="${m.l - 6}" y="${Y(t) + 3.5}" text-anchor="end">${opt.fmtTick ? opt.fmtTick(t) : t}</text>`; });
+  if (opt.rec) { let any = false; D.recession.forEach((r, i) => { if (r === 1 && i >= i0) { any = true; g += `<rect x="${X(i).toFixed(1)}" y="${m.t}" width="${Math.max(1, X(i + 1) - X(i)).toFixed(2)}" height="${h - m.t - m.b}" fill="var(--rec)"/>`; } }); if (any) g += recKey(w - m.r, 0); }
+  if (opt.hband) opt.hband.forEach(b => { const y1 = Y(Math.min(hi, b.hi)), y0 = Y(Math.max(lo, b.lo)); g += `<rect x="${m.l}" y="${y1}" width="${w - m.l - m.r}" height="${Math.max(0, y0 - y1)}" fill="${b.c}" opacity="${b.o ?? 1}"/>` + (b.t && w >= 640 ? `<text class="zl" x="${m.l + 6}" y="${y0 - 5}">${b.t}</text>` : ""); });
+  const ticks = opt.ticks || (opt.log ? [] : niceTicks(lo, hi, 4).t);
+  ticks.filter(t => t >= lo && t <= hi).forEach(t => { g += `<line x1="${m.l}" x2="${w - m.r}" y1="${Y(t)}" y2="${Y(t)}" stroke="${t === 0 && opt.zero ? "var(--axis)" : "var(--grid)"}"/><text x="${m.l - 6}" y="${Y(t) + 3.5}" text-anchor="end">${opt.fmtTick ? opt.fmtTick(t) : t}</text>`; });
   if (opt.bands) opt.bands.forEach(b => { if (b.i1 >= i0) g += `<rect x="${X(Math.max(b.i0, i0))}" y="${m.t}" width="${Math.max(1.5, X(b.i1 + 1 > n - 1 ? n - 1 : b.i1 + 1) - X(Math.max(b.i0, i0)))}" height="${h - m.t - m.b}" fill="${b.c}"/>`; });
   const yrs = span / 12, step = yrs > 30 ? 10 : yrs > 14 ? 5 : yrs > 6 ? 2 : 1;
   let lastX = -1e9;
@@ -127,31 +130,92 @@ function tickLab(t, ind, dp){
   return ind.unit === "%" || ind.unit === "% of GDP" ? `${s}${a}%` : ind.unit === "$bn" ? `${s}$${a}bn` : ind.unit === "x" ? `${a}x` : `${s}${a}`;
 }
 
-/* ------------------------------------------------------------------ the reading */
-function sentences(){
-  const i = NOW(), stage = D.stage[i], hot = D.hot[i], high = D.stress_high[i], str = D.pillars.stress[i];
-  return {
-    A: {expansion: "The economy is strong and getting stronger", late: "The economy is still strong, but signs of slowing are spreading",
-        contraction: "The economy is weak and getting weaker", recovery: "The economy is weak but improving"}[stage] || "Not enough data",
-    B: hot ? "Inflation is running hot" : "Inflation is under control",
-    C: high ? "Markets are in risk-off mode" : str >= D.settings.stress_high[1] ? "Markets are nervous, but not in risk-off mode" : "Markets are calm",
-  };
+/* ------------------------------------------------------------------ the analysis: the checks behind the recommendation */
+function checks(){
+  const X = D.derisk, i = NOW(), sh = X.share[i], fed = X.fed_gate[i], gc = X.growth_cut[i], al = X.alloc;
+  const S = X.series, gap = D.values.spx_trend[i], un = S.unemp[i], ua = S.unemp_avg[i], corr = D.values.stockbond[i];
+  const band = D.settings.derisk.band.map(x => x * 100);
+  return [
+    {id: "s1", t: "Warning signals", b: sh >= band[0] ? `${Math.round(sh)}% of the weighted warning signals are on` : `Only ${Math.round(sh)}% of the weighted warning signals are on`, bar: true},
+    {id: "s2", t: "The Fed", b: fed ? "The Fed is tightening, so warnings cut stocks" : "The Fed is not tightening, so warnings do not cut stocks"},
+    {id: "s3", t: "Growth and trend", b: gc ? "The S&P 500 is below its trend and unemployment is rising: stocks are cut"
+      : `The S&P 500 is ${gap >= 0 ? "above" : "below"} its trend and unemployment is ${un > ua ? "rising" : "not rising"}`},
+    {id: "s4", t: "Bonds as a hedge", b: corr < 0 ? "Stocks and bonds move in opposite directions: a growth cut would go to Treasuries" : "Stocks and bonds move together: a cut would go to cash"},
+    {id: "s5", t: "Commodities", b: X.commod_on[i] ? `Commodities are trending up: ${al.commodities[i]}% held` : "Commodities are not trending up: none held"},
+    {id: "s6", t: "Sector leadership", b: X.fully_invested[i] ? "Fully invested: overweight the five strongest sectors, underweight the five weakest" : "Stocks are reduced: sector tilts are on hold"},
+  ];
 }
-function zoneBar(g, fnWarn){
-  const c = count(g, NOW()), w = x => `${(100 * x / Math.max(1, c.n)).toFixed(2)}%`;
-  return `<div class="zbar" role="img" aria-label="${c.warn} warning, ${c.normal} normal, ${c.good} supportive">
-    ${c.warn ? `<i class="w" style="width:${w(c.warn)}"></i>` : ""}${c.normal ? `<i class="n" style="width:${w(c.normal)}"></i>` : ""}${c.good ? `<i class="g" style="width:${w(c.good)}"></i>` : ""}</div>
-    <div class="zlab"><span class="w">${c.warn} warning${fnWarn ? sup(fnWarn) : ""}</span><span class="n">${c.normal} normal</span><span class="g">${c.good} supportive</span></div>`;
-}
-function jumped(g){ const now = count(g, NOW()).warn, a6 = avgWarn(g, NOW() - 1); return now - a6 >= 2.5 ? {now, a6: Math.round(a6)} : null; }
 function renderTop(){
-  const i = NOW(), s = D.regime[i], S = sentences();
-  let j = i; while (j > 0 && D.regime[j - 1] === s) j--;
-  $("#stageDot").style.background = `var(--st-${s})`;
-  $("#stageName").textContent = stName(s);
-  $("#stageWhy").textContent = `${S.A}. ${S.B}. ${S.C}. Reading since ${mlab(D.months[j])}.`;
-  $("#points").innerHTML = ["A", "B", "C"].map(g => `<li><a href="#s${g}"><span class="pn">${GROUPS[g].num}</span><b>${S[g]}</b>${zoneBar(g)}
-    ${jumped(g) ? `<span class="jump">Warning signals jumped this month: ${jumped(g).now}, from about ${jumped(g).a6}</span>` : ""}</a></li>`).join("");
+  const i = NOW(), al = D.derisk.alloc, eq = al.equity[i];
+  const parts = PARTS.filter(([k]) => k !== "equity" && al[k] && al[k][i] > 0).map(([k, l]) => `${al[k][i]}% ${l.toLowerCase()}`);
+  $("#stageDot").style.background = eq >= 90 ? "var(--good)" : eq >= 50 ? "var(--st-late)" : "var(--bad)";
+  $("#stageName").textContent = `${eq}% equity${parts.length ? ", " + parts.join(", ") : ""}`;
+  $("#stageWhy").textContent = `Six checks set the portfolio each month. Reading as of ${mlab(D.months[i])}.`;
+  $("#points").innerHTML = checks().map((c, k) => `<li><a href="#${c.id}"><span class="pn">${k + 1} · ${esc(c.t)}</span><b>${esc(c.b)}</b>${c.bar ? coreBar() : ""}</a></li>`).join("");
+}
+function coreBar(){
+  const ids = D.derisk.core, z = ids.map(id => zoneAt(id, NOW())), c = {warn: z.filter(x => x === "warn").length, normal: z.filter(x => x === "normal").length, good: z.filter(x => x === "good").length};
+  const n = Math.max(1, c.warn + c.normal + c.good), w = x => `${(100 * x / n).toFixed(2)}%`;
+  return `<div class="zbar">${c.warn ? `<i class="w" style="width:${w(c.warn)}"></i>` : ""}${c.normal ? `<i class="n" style="width:${w(c.normal)}"></i>` : ""}${c.good ? `<i class="g" style="width:${w(c.good)}"></i>` : ""}</div>
+    <div class="zlab"><span class="w">${c.warn} warning</span><span class="n">${c.normal} normal</span><span class="g">${c.good} supportive</span></div>`;
+}
+const runs = flags => { const out = []; let s0 = null; flags.forEach((f, i) => { if (f && s0 == null) s0 = i; if ((!f || i === flags.length - 1) && s0 != null) { out.push({i0: s0, i1: f ? i : i - 1}); s0 = null; } }); return out; };
+const from = y => Math.max(0, D.months.findIndex(m => m >= y));
+function sectionHTML(id, k, title, sentence, charts){
+  return `<div class="step">${k} · ${esc(title)}</div><h2>${esc(sentence)}</h2>` + charts.map(c => `<div class="card"><div class="ctitle">${esc(c)}</div><div class="chart" data-c="${id}"></div></div>`).join("");
+}
+function renderPoints(){
+  const X = D.derisk, S = X.series, C = checks(), i0 = from(D.derisk.backtest.from), M = D.months;
+  const band = D.settings.derisk.band.map(x => x * 100);
+  const cut = v => v == null ? null : v;
+  // 1. warning signals: weighted share + the three groups of indicator boxes
+  const s1 = $("#s1");
+  s1.innerHTML = sectionHTML("s1", 1, C[0].t, C[0].b, ["Share of the weighted warning signals that are on"]) +
+    ["A", "B", "C"].map(g => `<div class="sub" id="s${g}"></div>`).join("");
+  lineChart(s1.querySelector(".chart"), [{v: X.share.map(cut), c: "var(--ink)", name: "Warning share", wd: 1.6, endLabel: v => `${Math.round(v)}%`}], M,
+    {i0, rec: true, fmt: v => `${v.toFixed(0)}%`, fmtTick: t => `${t}%`, ticks: [0, 10, 20, 30, 40, 50, 60], base: 0,
+     hband: [{lo: band[0], hi: band[1], c: "var(--bad-bg)", o: 0.55, t: "Cut zone while the Fed tightens"}, {lo: band[1], hi: 100, c: "var(--bad-bg)", t: "Fully out while the Fed tightens"}], aria: "warning share"});
+  const S2 = {A: "The economy", B: "Inflation", C: "Market stress"};
+  ["A", "B", "C"].forEach((g, k) => {
+    const inds = groupInds(g).filter(x => D.derisk.core.includes(x.id)), sec = $(`#s${g}`);
+    sec.innerHTML = `<div class="step">1${"abc"[k]} · ${S2[g]}</div><div class="ilist">${inds.map((x, j) => indCard(x, `1${"abc"[k]}.${j + 1}`)).join("")}</div>`;
+    sec.querySelectorAll(".icard").forEach(drawInd);
+  });
+  // 2. the Fed
+  $("#s2").innerHTML = sectionHTML("s2", 2, C[1].t, C[1].b, ["Fed funds rate vs the tightening line (24-month low + 1 point)"]);
+  lineChart($("#s2 .chart"), [{v: S.fed_funds, c: "var(--ink)", name: "Fed funds rate", endLabel: v => `${v.toFixed(2)}%`},
+    {v: S.fed_trigger, c: "var(--bad)", wd: 1.2, name: "Tightening line", endLabel: v => `${v.toFixed(2)}%`}], M,
+    {i0, rec: true, fmt: v => `${v.toFixed(2)}%`, fmtTick: t => `${t}%`, base: 0, bands: runs(X.fed_gate).map(r => ({...r, c: "var(--bad-bg)"})), aria: "Fed funds"});
+  // 3. growth and trend
+  $("#s3").innerHTML = sectionHTML("s3", 3, C[2].t, C[2].b, ["S&P 500 vs its 10-month average", "Unemployment rate vs its 12-month average"]);
+  const [c3a, c3b] = $("#s3").querySelectorAll(".chart"), cuts = runs(X.growth_cut).map(r => ({...r, c: "var(--bad-bg)"}));
+  lineChart(c3a, [{v: D.values.spx_trend, c: "var(--ink)", wd: 1.4, name: "S&P 500 vs 10-month average", endLabel: v => pct(v, 1)}], M,
+    {i0, rec: true, zero: true, fmt: v => pct(v, 1), fmtTick: t => `${t}%`, bands: cuts, aria: "trend"});
+  lineChart(c3b, [{v: S.unemp, c: "var(--ink)", name: "Unemployment rate", endLabel: v => `${v.toFixed(1)}%`}, {v: S.unemp_avg, c: "var(--ink3)", wd: 1.2, name: "12-month average"}], M,
+    {i0, rec: true, fmt: v => `${v.toFixed(1)}%`, fmtTick: t => `${t}%`, bands: cuts, aria: "unemployment"});
+  // 4. bonds as a hedge
+  $("#s4").innerHTML = sectionHTML("s4", 4, C[3].t, C[3].b, ["Stock-bond correlation, last 12 months"]);
+  lineChart($("#s4 .chart"), [{v: D.values.stockbond, c: "var(--ink)", wd: 1.4, name: "Correlation", endLabel: v => v.toFixed(2)}], M,
+    {i0, rec: true, zero: true, fmt: v => v.toFixed(2), fmtTick: t => t.toFixed(1), hband: [{lo: -1, hi: 0, c: "var(--good-bg)", t: "Treasuries hedge stocks"}], aria: "stock-bond correlation"});
+  // 5. commodities
+  $("#s5").innerHTML = sectionHTML("s5", 5, C[4].t, C[4].b, ["Commodity index vs its 10-month average (index, today = 100)"]);
+  lineChart($("#s5 .chart"), [{v: S.commod, c: "var(--s2)", name: "Commodity index", endLabel: v => v.toFixed(0)}, {v: S.commod_ma, c: "var(--ink3)", wd: 1.2, name: "10-month average"}], M,
+    {i0, rec: true, log: true, ticks: [2, 5, 10, 20, 50, 100, 200], fmt: v => v.toFixed(1), bands: runs(X.commod_on).map(r => ({...r, c: "var(--good-bg)"})), aria: "commodities"});
+  // 6. sector leadership
+  $("#s6").innerHTML = sectionHTML("s6", 6, C[5].t, C[5].b, ["Sector return over the past 12 months, excluding the last month"]);
+  sectorBars($("#s6 .chart"));
+}
+function sectorBars(el){
+  const T = D.derisk.tilt, i = NOW(); if (!T) { el.innerHTML = ""; return; }
+  const rows = D.industries.map(it => ({n: it.name, e: it.etf, v: T.mom_now[it.etf], a: T.actions[it.etf][i]})).filter(r => r.v != null).sort((a, b) => b.v - a.v);
+  const w = W(el), bh = 18, gap = 6, m = {l: 150, r: 56, t: 6, b: 6}, h = m.t + m.b + rows.length * (bh + gap);
+  const lo = Math.min(0, ...rows.map(r => r.v)), hi = Math.max(0, ...rows.map(r => r.v)), X = v => m.l + (w - m.l - m.r) * (v - lo) / (hi - lo || 1);
+  let g = `<line x1="${X(0)}" x2="${X(0)}" y1="${m.t}" y2="${h - m.b}" stroke="var(--axis)"/>`;
+  rows.forEach((r, k) => { const y = m.t + k * (bh + gap), x0 = X(Math.min(0, r.v)), x1 = X(Math.max(0, r.v));
+    const col = r.a === "over" ? "var(--good)" : r.a === "under" ? "var(--bad)" : "var(--axis)";
+    g += `<text x="${m.l - 8}" y="${y + bh - 5}" text-anchor="end">${esc(r.n)}</text><rect x="${x0}" y="${y}" width="${Math.max(1, x1 - x0)}" height="${bh}" rx="3" fill="${col}"/>
+      <text class="lab" x="${w - 4}" y="${y + bh - 5}" text-anchor="end">${pct(r.v, 0)}</text>`; });
+  el.innerHTML = `<svg viewBox="0 0 ${w} ${h}" height="${h}" role="img" aria-label="Sector momentum">${g}</svg>`;
 }
 
 /* ------------------------------------------------------------------ indicator: summary sentence + two charts */
@@ -237,30 +301,14 @@ function indCard(ind, num){
 }
 const ZORDER = {warn: 0, good: 1, normal: 2, "": 3};
 function footnotes(extra){ return `<ol class="fns">${extra.map(t => `<li>${t}</li>`).join("")}</ol>`; }
-function renderPoint(g, sec, title){
-  const inds = groupInds(g).map((x, k) => [x, `${GROUPS[g].num}.${k + 1}`]), show = inds;
-  const j = g === "A" ? jumped(g) : null;
-  const extra = g === "A" ? [`The economy reading uses 6-month averages of these signals and changes only after 3 months in a row.${j ? ` This month ${j.now} signals are in the warning zone, up from about ${j.a6} on average over the previous 6 months; if that persists, the reading will turn.` : ""}`]
-    : g === "B" ? ["Inflation counts as running hot when these signals, averaged over 6 months, sit clearly toward the high end of their history."]
-    : g === "C" ? ["Risk-off mode starts when these signals on average are deep in their worst third of history, and ends once they ease back."]
-    : ["Shown for context only. Adding these signals to the reading made past calls worse, so they do not affect the calls."];
-  sec.innerHTML = `${title ? `<div class="step">${GROUPS[g].step}</div><h2>${esc(title)}${sup(1)}</h2>` : ""}${zoneBar(g)}
-    <div class="ilist">${show.map(([x, k]) => indCard(x, k)).join("")}</div>
-    ${footnotes(extra)}`;
-  sec.querySelectorAll(".icard").forEach(drawInd);
-}
-function renderPoints(){
-  const S = sentences();
-  renderPoint("A", $("#sA"), S.A); renderPoint("B", $("#sB"), S.B); renderPoint("C", $("#sC"), S.C);
-}
 
 /* ------------------------------------------------------------------ recommendation 1: portfolio, by quarter */
 const qOf = mo => `${mo.slice(0, 4)}-Q${Math.ceil(+mo.slice(5, 7) / 3)}`;
 const qLab = q => `${q.slice(5)} ${q.slice(0, 4)}`;
 const sgn = d => { const r = Math.round(d); return `${r > 0 ? "+" : r < 0 ? "−" : ""}${Math.abs(r)}%`; };
-const PARTS = [["equity", "Equity", "var(--s1)"], ["cash", "Cash", "var(--axis)"], ["bond", "Bond", "var(--s3)"]];
+const PARTS = [["equity", "Equity", "var(--s1)"], ["cash", "Cash", "var(--axis)"], ["bond", "Bond", "var(--s3)"], ["commodities", "Commodities", "var(--s2)"]];
 function allocAt(i){ const A = D.derisk.alloc, e = A ? A.equity[i] : D.derisk.exposure[i];
-  return {equity: e ?? 100, bond: A ? (A.bond[i] ?? 0) : 0, cash: A ? (A.cash[i] ?? 0) : 100 - (e ?? 100)}; }
+  return {equity: e ?? 100, bond: A ? (A.bond[i] ?? 0) : 0, cash: A ? Math.max(0, A.cash[i] ?? 0) : 100 - (e ?? 100), commodities: A && A.commodities ? (A.commodities[i] ?? 0) : 0}; }
 const mix = x => PARTS.map(([k, l]) => `${x[k]}% ${l.toLowerCase()}`).join(", ");
 function quarters(){
   const B = D.derisk.backtest, i0 = D.months.indexOf(B.from), Q = [];
@@ -278,7 +326,7 @@ function quarters(){
 }
 function renderExposure(){
   const Q = quarters(), now = Q[Q.length - 1];
-  $("#xHead").innerHTML = `<span class="q">${qLab(now.q)}</span><b>${now.equity}% equity</b><span>${now.cash}% cash · ${now.bond}% bond</span>`;
+  $("#xHead").innerHTML = `<span class="q">${qLab(now.q)}</span><b>${now.equity}% equity</b><span>${now.cash}% cash · ${now.bond}% bond · ${now.commodities}% commodities</span>`;
   masterChart($("#xChart"), Q);
 }
 function masterChart(el, Q){
@@ -331,34 +379,22 @@ function masterChart(el, Q){
   el.querySelector(".hit").addEventListener("pointerleave", () => { hideTip(); [cx, d1, d2].forEach(l => l.setAttribute("visibility", "hidden")); });
 }
 
-/* ------------------------------------------------------------------ call 2: sectors */
+/* ------------------------------------------------------------------ call 2: sectors (momentum tilt while fully invested) */
 const ACT = {over: ["over", "▲", "Overweight"], under: ["under", "▼", "Underweight"], neutral: ["neutral", "●", "Neutral"]};
-function sectorWhy(etf, n, s, high){
-  const R = D.meta.rules[s], SR = D.meta.stress_rule, WHY = D.meta.why, t = n.tilt || 0, st = stName(s);
-  const inS = R.over.includes(etf) ? 1 : R.under.includes(etf) ? -1 : 0, inX = high ? (SR.over.includes(etf) ? 1 : SR.under.includes(etf) ? -1 : 0) : 0;
-  const c = n.if_extreme || n.action;
-  if (c === "over" || c === "under") {
-    const parts = [];
-    if (inS === t) parts.push(WHY[s][etf]);
-    if (inX === t && WHY.stress[etf]) parts.push(WHY.stress[etf]);
-    return parts.join(" ");
-  }
-  if (t !== 0) return `The ${st.toLowerCase()} playbook would ${t > 0 ? "favour" : "avoid"} it, but in past ${st.toLowerCase()} periods it did not actually ${t > 0 ? "beat" : "lag"} the other sectors, so no bet.`;
-  if (inS !== 0 && inX !== 0 && inS !== inX) return `The ${st.toLowerCase()} playbook and the risk-off playbook point in opposite directions.`;
-  return high ? `Neither the ${st.toLowerCase()} playbook nor the risk-off playbook gives it a clear edge right now.` : `The ${st.toLowerCase()} playbook gives it no clear edge right now.`;
-}
+const WHYM = {over: "One of the five strongest sectors over the past year; leadership tends to persist while the market is healthy.",
+  under: "One of the five weakest sectors over the past year; laggards tend to keep lagging while the trend holds.",
+  neutral: "In the middle of the pack over the past year, so it is held at its normal weight."};
 function renderIndustries(){
-  const i = NOW(), s = D.regime[i], high = D.stress_high[i], hz = D.horizons[H], live = D.extreme[i];
-  document.querySelectorAll("#horizon button").forEach(b => b.setAttribute("aria-pressed", b.dataset.h === H));
-  $("#actHead").textContent = live ? `${stName(s)}${high ? ", markets in risk-off mode" : ""}.` : "On hold: no reading is extreme.";
-  $("#actWhy").textContent = live ? `Calls for the next ${H} months, against holding all 20 sectors equally.`
-    : `Sector calls only apply when a reading is extreme. Until then all 20 sectors are held equally; these are the calls that would apply.`;
-  const rows = D.industries.map(it => { const n = hz.now[it.etf] || {}; const c = live ? n.action : n.if_extreme;
-    return {it, n, c, o: c === "over" ? 0 : c === "under" ? 1 : 2}; }).sort((a, b) => a.o - b.o || a.it.name.localeCompare(b.it.name));
+  const T = D.derisk.tilt, i = NOW(), live = D.derisk.fully_invested[i];
+  $("#actHead").textContent = live ? "Tilts for this month." : "On hold: tilts apply only while the portfolio is fully in stocks.";
+  $("#actWhy").textContent = live ? "Against holding all 20 sectors equally." : "These are the tilts that would apply.";
+  const rows = D.industries.map(it => { const a = T ? T.actions[it.etf][i] : "neutral", c = a === "hold" ? null : a;
+    const raw = c || (T && T.mom_now[it.etf] != null ? null : "neutral");
+    return {it, c: c || "neutral", o: c === "over" ? 0 : c === "under" ? 1 : 2, v: T ? T.mom_now[it.etf] : null}; })
+    .sort((a, b) => a.o - b.o || (b.v ?? 0) - (a.v ?? 0));
   $("#indTable").innerHTML = `<thead><tr><th>Sector</th><th>Call</th><th>Why now</th></tr></thead><tbody>` + rows.map(r => {
     const [cls, ic, tx] = ACT[r.c] || ACT.neutral;
-    const pillH = `<span class="pill ${cls}${!live && r.c !== "neutral" ? " hold" : ""}"><span aria-hidden="true">${ic}</span>${tx}${!live && r.c !== "neutral" ? " · on hold" : ""}</span>`;
-    return `<tr><td><b>${esc(r.it.name)}</b> <span class="etf muted">${r.it.etf}</span></td><td>${pillH}</td><td class="why">${esc(sectorWhy(r.it.etf, r.n, s, high))}</td></tr>`; }).join("") + "</tbody>";
+    return `<tr><td><b>${esc(r.it.name)}</b> <span class="etf muted">${r.it.etf}</span></td><td><span class="pill ${cls}${!live && r.c !== "neutral" ? " hold" : ""}"><span aria-hidden="true">${ic}</span>${tx}${!live && r.c !== "neutral" ? " · on hold" : ""}</span></td><td class="why">${esc(WHYM[r.c])}</td></tr>`; }).join("") + "</tbody>";
 }
 
 /* ------------------------------------------------------------------ pages */
@@ -369,13 +405,10 @@ function setPage(p){ PAGE = p; store.set("mc-p", p);
   history.replaceState(null, "", p === "calls" ? "#calls" : location.pathname);
   renderAll(); }
 function renderAll(){ if (PAGE === "calls") { renderExposure(); renderIndustries(); } else { renderTop(); renderPoints(); } }
-function setH(h){ H = h; store.set("mc-h", h); renderIndustries(); }
 async function start(){
   const buf = await (await fetch("/data/data.bin", {cache: "no-cache"})).arrayBuffer();
   D = await openBlob(buf); N = D.months.length;
   $("#lock").hidden = true; $("#shell").hidden = false;
-  if (!D.horizons[H]) H = "12";
-  document.querySelectorAll("#horizon button").forEach(b => { b.setAttribute("aria-pressed", b.dataset.h === H); b.onclick = () => setH(b.dataset.h); });
   $("#foot").textContent = `Reading as of ${mlab(D.asof)} · updated ${D.updated} · version ${D.version}. Not investment advice.`;
   document.querySelectorAll("#tabs button").forEach(b => { b.onclick = () => { setPage(b.dataset.p); scrollTo(0, 0); }; });
   setPage(PAGE);

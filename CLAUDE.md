@@ -43,13 +43,15 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   No password (public, noindex). Branches: `macro-data` (raw downloads, force-pushed),
   `macro-status` (last run log: `git fetch origin macro-status && git show origin/macro-status:status.md`),
   `macro-record` (append-only monthly calls from Oct 2026). Secret FRED_API_KEY (user adds) = first-published data.
-- Main action (4.0.0, 2026-10-28): track-record-weighted warnings (28 core indicators, worst fifth) cut stocks 100% -> 0%
-  as their share goes 15% -> 35%, but only while the Fed is tightening (funds >= 1 pt above 24m low); plus S&P below
-  10m average AND unemployment above 12m average -> 0%. Rest (4.1.0): long Treasuries (TLT) in a growth-trend cut
-  while stock-bond corr < 0, else T-bills (engine.derisk; since 1975 14.2%/yr, worst -20%). Tests: docs/research/macro_combos/.
-  Page tabs: 'Analysis' and 'Recommendation' (portfolio mix bars + growth of $100, sector calls with registry.WHY). Sector calls are secondary: only on extreme readings, vs the 20-sector
-  average (3.0.0). Sensitive-stock research (macro/research_stocks.py, step 'stocks') showed no edge.
-  De-risking research (macro/research_derisk.py; weekly via step 'derisk_weekly'): see macro/CHANGES.md research note.
+- Main action (5.0.0, 2026-10-29, package P1): track-record-weighted warnings (28 core indicators, worst fifth) cut stocks
+  100% -> 0% as their share goes 15% -> 35%, only while the Fed is tightening (funds >= 1 pt above 24m low); S&P below
+  10m average AND unemployment above 12m average -> 0%. Rest: TLT in a growth-trend cut while stock-bond corr < 0, else
+  T-bills. Plus 10% commodities (DBC/AQR index) while the index is up 12m and above its 10m average; sector momentum tilt
+  (top/bottom 5 of 20, 1.5x/0.5x) while fully invested. Backtest with 0.2% costs: since 1975 14.5%/yr, worst -18%.
+  Page: Analysis = six checks with charts (warning share + 28 indicator boxes, Fed, growth/trend, stock-bond corr,
+  commodities, sector momentum); Recommendation = mix chart + momentum sector calls.
+  Research: docs/research/hf_macro (audit, 731 transcript hypotheses, packages P1-P4, data wishlist); research data
+  snapshot on branch macro-research-data (fetch: step research_fetch). Earlier: docs/research/macro_combos.
 - Rules: macro/registry.py (pre-registered; changes -> new VERSION + macro/CHANGES.md).
 
 ## Deployment

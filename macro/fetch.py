@@ -2,7 +2,8 @@
 
 Sources (all free): FRED (API with FRED_API_KEY: first-published values for revised series; else the public CSV),
 Yahoo Finance monthly adjusted closes (dividends included) with Stooq as fallback, Kenneth French industry and
-factor returns, multpl.com Shiller CAPE, monthly gold (datahub.io gold-prices on GitHub). Each source fails on its own; manifest.json says what worked.
+factor returns, multpl.com Shiller CAPE, monthly gold (datahub.io gold-prices on GitHub),
+AQR commodity futures index (excess returns since 1877). Each source fails on its own; manifest.json says what worked.
 """
 import csv
 import io
@@ -106,6 +107,24 @@ def cape():
     return sorted(rows)
 
 
+AQR_COMMOD_URL = ("https://www.aqr.com/-/media/AQR/Documents/Insights/Data-Sets/"
+                  "Commodities-for-the-Long-Run-Index-Level-Data-Monthly.xlsx")
+
+
+def aqr_commodities(content=None):
+    """Equal-weight commodity futures excess return (first data column), month-end dates."""
+    import pandas as pd
+    content = content if content is not None else _get(AQR_COMMOD_URL).content
+    d = pd.read_excel(io.BytesIO(content), sheet_name=0, header=None)
+    dt = pd.to_datetime(d.iloc[:, 0], errors="coerce")
+    v = pd.to_numeric(d.iloc[:, 1], errors="coerce")
+    ok = dt.notna() & v.notna()
+    rows = [(x.strftime("%Y-%m-%d"), round(float(y), 8)) for x, y in zip(dt[ok], v[ok])]
+    if len(rows) < 500:
+        raise RuntimeError(f"only {len(rows)} rows")
+    return rows
+
+
 def run(log=print):
     key = os.environ.get("FRED_API_KEY", "").strip()
     man = {"fetched": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()), "fred_key": bool(key), "series": {}}
@@ -157,6 +176,11 @@ def run(log=print):
         man["series"]["GOLD"] = {"ok": True, "rows": _write("GOLD", rows), "first": rows[0][0], "last": rows[-1][0]}
     except Exception as e:
         man["series"]["GOLD"] = {"ok": False, "error": str(e)[:200]}
+    try:                                     # commodity futures index, monthly excess return since 1877 (AQR data set)
+        rows = aqr_commodities()
+        man["series"]["AQR_COMMOD"] = {"ok": True, "rows": _write("AQR_COMMOD", rows), "first": rows[0][0], "last": rows[-1][0]}
+    except Exception as e:
+        man["series"]["AQR_COMMOD"] = {"ok": False, "error": str(e)[:200]}
     os.makedirs(RAW, exist_ok=True)
     with open(os.path.join(RAW, "manifest.json"), "w") as f:
         json.dump(man, f, indent=1)

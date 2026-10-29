@@ -1,5 +1,17 @@
 # Macro Compass changes
 
+## 5.0.0 (2026-10-29) - package P1 (user choice) + Analysis rebuilt around the six checks
+- Rule (SETTINGS.derisk): 4.1 exposure unchanged; plus 10% of the book in a commodity index (DBC; AQR commodity futures
+  index + T-bill before 2006) while it is up over 12 months and above its 10-month average (Gromen; the only one of
+  731 transcript hypotheses to pass placebo + FDR); plus sector momentum tilt (top/bottom 5 of 20 by 12-1 month
+  return, 1.5x/0.5x) while fully in stocks. Backtest now charges 0.2% per 100% traded. Since 1975: 14.5%/yr, worst
+  -18%, Sharpe 0.81 (4.1 without costs 14.3%). Research: docs/research/hf_macro (audit, 731 hypotheses, packages).
+- Page: Analysis = hero with today's mix and six checks (warning signals, the Fed, growth and trend, bonds as a hedge,
+  commodities, sector leadership), each a section with its chart; the 28 core indicator boxes sit under check 1.
+  Economy-stage hero and the macro-playbook sector calls removed. Recommendation: mix incl. commodities; sector calls
+  = momentum tilts with a logical reason (horizon toggle removed). Ledger columns reset (no rows yet).
+- Fetch: AQR commodity index (raw AQR_COMMOD).
+
 ## 4.1.0 (2026-10-29) - what to hold outside stocks + simpler recommendation chart (user request)
 - Tested for the non-stock share (docs/research/macro_combos/assets.py): T-bills, 10y (IEF), long (TLT), short (SHY)
   Treasuries, gold, defensive sectors; rules by correlation, inflation, cause of the cut, walk-forward, momentum.

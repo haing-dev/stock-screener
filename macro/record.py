@@ -9,9 +9,8 @@ import time
 from . import registry as R
 
 LAUNCH = "2026-10"
-COLS = ["month", "recorded_at", "version", "state", "stage", "inflation_hot", "stress_high", "extreme", "stock_exposure", "defensive", "fed_gate", "growth_cut", "warning_share",
-        "growth", "internals", "inflation", "stress", "liquidity", "froth",
-        "horizon", "etf", "investor_tilt", "action", "p_risk", "p_opp", "base_risk", "base_opp"]
+COLS = ["month", "recorded_at", "version", "equity", "bond", "cash", "commodities", "warning_share", "fed_gate",
+        "growth_cut", "defensive", "commod_on", "etf", "momentum_12_1", "action"]
 
 
 def ledger_path():
@@ -40,27 +39,23 @@ def run(log=print):
     rows = read(path)
     done = {r["month"] for r in rows}
     new = []
+    X = d.get("derisk", {})
+    al = X.get("alloc", {})
+    tilt = X.get("tilt") or {}
     for i, m in enumerate(months):
         if m < LAUNCH or m >= cur or m in done:      # only finished months from launch on, each once
             continue
-        for h in map(str, R.SETTINGS["horizons"]):
-            hz = d["horizons"][h]
-            for it in d["industries"]:
-                e = it["etf"]
-                a = hz["actions"][e][i]
-                od = (hz.get("recent", {}).get(m) or {}).get(e) or [None] * 4
-                new.append({"month": m, "recorded_at": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
-                            "version": d["version"], "state": d["regime"][i] or "", "stage": d["stage"][i] or "",
-                            "inflation_hot": int(bool(d["hot"][i])), "stress_high": int(bool(d["stress_high"][i])),
-                            "extreme": int(bool((d.get("extreme") or [False] * len(months))[i])),
-                            "stock_exposure": d["derisk"]["exposure"][i] if "derisk" in d else "",
-                            "defensive": (d["derisk"].get("defensive") or [""] * len(months))[i] if "derisk" in d else "",
-                            "fed_gate": int(bool((d["derisk"].get("fed_gate") or [False] * len(months))[i])) if "derisk" in d else "",
-                            "growth_cut": int(bool((d["derisk"].get("growth_cut") or [False] * len(months))[i])) if "derisk" in d else "",
-                            "warning_share": d["derisk"]["share"][i] if "derisk" in d else "",
-                            **{k: d["pillars"][k][i] for k, _, _ in R.PILLARS},
-                            "horizon": h, "etf": e, "investor_tilt": it["tilt"][i], "action": a or "",
-                            **dict(zip(["p_risk", "p_opp", "base_risk", "base_opp"], od))})
+        base = {"month": m, "recorded_at": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()), "version": d["version"],
+                **{k: (al.get(k) or [""] * len(months))[i] for k in ("equity", "bond", "cash", "commodities")},
+                "warning_share": X.get("share", [""] * len(months))[i],
+                "fed_gate": int(bool((X.get("fed_gate") or [False] * len(months))[i])),
+                "growth_cut": int(bool((X.get("growth_cut") or [False] * len(months))[i])),
+                "defensive": (X.get("defensive") or [""] * len(months))[i],
+                "commod_on": int(bool((X.get("commod_on") or [False] * len(months))[i]))}
+        for it in d["industries"]:
+            e = it["etf"]
+            new.append({**base, "etf": e, "momentum_12_1": (tilt.get("mom_now") or {}).get(e, "") if i == len(months) - 1 else "",
+                        "action": (tilt.get("actions") or {}).get(e, [""] * len(months))[i]})
     if new:
         exists = os.path.exists(path)
         with open(path, "a", newline="") as f:

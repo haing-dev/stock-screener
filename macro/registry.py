@@ -4,7 +4,7 @@ Every indicator is a claim made by an investor in the research store (transcript
 @AtlasShrug1 ("Galt", dated), turned into a fixed, testable rule. Investors propose, the backtest decides.
 v1.0.0 pre-registered 2026-10-23; v2.0.0 the same day (state -> investor sector rules + history check). Change log: macro/CHANGES.md. Never edit a rule in place: add a version.
 """
-VERSION = "4.1.0"
+VERSION = "5.0.0"
 
 # ------------------------------------------------------------------ fixed settings (pre-registered)
 SETTINGS = {
@@ -37,7 +37,13 @@ SETTINGS = {
     #    Gold, TIPS-era data, short Treasuries and defensive sectors were tested (docs/research/macro_combos).
     "derisk": {"pillars": ["growth", "internals", "inflation", "stress"], "worst": 80, "band": (0.15, 0.35),
                "min_stocks": 0.0, "event": (0.15, 12), "shrink": 24, "backtest_from": "1975-01",
-               "fed_gate": {"lookback": 24, "rise": 1.0}, "unemp_avg": 12, "bonds_if_corr_below": 0.0},
+               "fed_gate": {"lookback": 24, "rise": 1.0}, "unemp_avg": 12, "bonds_if_corr_below": 0.0,
+               # 5.0.0 (user choice 2026-10-29, package P1 in docs/research/hf_macro): 10% of the whole book in a
+               # commodity index while it is up over 12 months and above its 10-month average (Gromen); while fully
+               # in stocks, overweight (1.5x) the 5 sectors with the best 12-1 month return of the 20 and
+               # underweight (0.5x) the worst 5; backtest charges 0.2% per 100% of the book traded.
+               "commod_sleeve": {"weight": 0.10, "mom": 12, "ma": 10},
+               "sector_tilt": {"lookback": 12, "skip": 1, "n": 5}, "cost": 0.002},
     "benchmark": "equal-weight average of the 20 sectors",
     "etf_backtest_start": "2006-07",  # first month most of the 20 ETFs trade
 }

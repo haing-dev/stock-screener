@@ -452,10 +452,12 @@ def entry_test(act, reg, high, rets, src, mkt, holds=(12, 24, 36), capital=10000
     return out
 
 
-def derisk(sc, mkt, grid, ind, F):
+def derisk(sc, mkt, grid, ind, F, rets=None):
     """Main action (4.0.0, see SETTINGS['derisk']): track-record-weighted warnings acted on only while the Fed is
     tightening, plus a growth-trend cut. The exposure set at the end of month t applies to month t+1; the rest is in
-    long Treasuries during a growth-trend cut while the stock-bond correlation is negative, else T-bills (4.1.0)."""
+    long Treasuries during a growth-trend cut while the stock-bond correlation is negative, else T-bills (4.1.0).
+    5.0.0: 10% commodity sleeve while the commodity index trends up; sector momentum tilt while fully invested;
+    0.2% trading cost in the backtest."""
     X = S["derisk"]
     core = [i["id"] for i in R.INDICATORS if i["pillar"] in X["pillars"]]
     lv_m = level(mkt)
@@ -491,8 +493,44 @@ def derisk(sc, mkt, grid, ind, F):
     use_b = (gtt & (ind["stockbond"] < X["bonds_if_corr_below"])).fillna(False)
     alt = pd.Series(np.where(use_b.shift(1, fill_value=False), bond, rf), index=grid)
     alt = alt.where(alt.notna(), rf)
-    strat = e.shift(1) * mkt + (1 - e.shift(1)) * alt
-    w_bond = (1 - e) * use_b.astype(float)
+    # 5.0.0: commodity trend sleeve (10% of the book, taken pro rata) and sector momentum tilt while fully invested
+    cs = X["commod_sleeve"]
+    dbc = monthly_px("Y_DBC", grid).pct_change(fill_method=None)
+    aq = _csv("AQR_COMMOD")
+    aq = (pd.Series(aq.values, index=aq.index.to_period("M")).groupby(level=0).last().reindex(grid)
+          if aq is not None else pd.Series(np.nan, index=grid))
+    com = dbc.combine_first(aq + rf)
+    lvc = level(com)
+    com_ma = lvc.rolling(cs["ma"]).mean()
+    com_on = ((lvc / lvc.shift(cs["mom"]) - 1 > 0) & (lvc > com_ma)).fillna(False)
+    xs = cs["weight"] * com_on.astype(float)
+    full = (e > 1 - 1e-9)
+    tl = X["sector_tilt"]
+    if rets is not None:
+        mo = cumret(rets, tl["lookback"]).shift(tl["skip"])
+        rk = mo.rank(axis=1, ascending=False)
+        nav = mo.notna().sum(axis=1)
+        sig = pd.DataFrame("neutral", index=grid, columns=rets.columns)
+        sig[rk <= tl["n"]] = "over"
+        sig[rk.gt(nav - tl["n"], axis=0)] = "under"
+        av = rets.shift(-1).notna()
+        av.iloc[-1] = rets.iloc[-1].notna()
+        DW = (tilt_weights(sig, av) - tilt_weights(pd.DataFrame("neutral", index=grid, columns=rets.columns), av)).fillna(0.0)
+        DW = DW.mul(full.astype(float), axis=0)
+        tilt_r = (DW.shift(1) * rets.fillna(0)).sum(axis=1)
+    else:
+        mo, sig, DW, tilt_r = None, None, None, pd.Series(0.0, index=grid)
+    w_eq = e * (1 - xs)
+    w_bond = (1 - e) * (1 - xs) * use_b.astype(float)
+    w_com = xs
+    w_cash = 1 - w_eq - w_bond - w_com
+    b_r = pd.Series(np.where(bond.notna(), bond, rf), index=grid)
+    c_r = com.where(com.notna(), rf)
+    strat = (w_eq.shift(1) * (mkt + tilt_r) + w_bond.shift(1) * b_r + w_com.shift(1) * c_r + w_cash.shift(1) * rf)
+    turn = (w_eq.diff().abs() + w_bond.diff().abs() + w_com.diff().abs() + w_cash.diff().abs()) / 2
+    if DW is not None:
+        turn = turn + w_eq * DW.diff().abs().sum(axis=1)
+    strat = strat - X.get("cost", 0.0) * turn.shift(1).fillna(0)
     st = pd.Period(X["backtest_from"], "M")
     m, r = mkt[mkt.index > st], strat[strat.index > st]
     okm = m.notna() & r.notna()
@@ -523,7 +561,16 @@ def derisk(sc, mkt, grid, ind, F):
     last = len(grid) - 1
     top = sorted(((float(w[c].iloc[last]), c) for c in core if bad[c].iloc[last] > 0), reverse=True)
     return {"core": core, "share": _ser(share * 100, 1), "exposure": _ser(e * 100, 0),
-            "alloc": {"equity": _ser(e * 100, 0), "bond": _ser(w_bond * 100, 0), "cash": _ser((1 - e - w_bond) * 100, 0)},
+            "alloc": {"equity": _ser(w_eq * 100, 0), "bond": _ser(w_bond * 100, 0), "cash": _ser(w_cash * 100, 0),
+                      "commodities": _ser(w_com * 100, 0)},
+            "series": {"fed_funds": _ser(fund, 2), "fed_trigger": _ser(fund.rolling(fg["lookback"], min_periods=fg["lookback"] // 2).min() + fg["rise"], 2),
+                       "unemp": _ser(unemp, 1), "unemp_avg": _ser(unemp.rolling(X["unemp_avg"]).mean(), 2),
+                       "commod": _ser(lvc / lvc.dropna().iloc[-1] * 100, 2), "commod_ma": _ser(com_ma / lvc.dropna().iloc[-1] * 100, 2),
+                       "commod_12m": _ser((lvc / lvc.shift(cs["mom"]) - 1) * 100, 1)},
+            "commod_on": [bool(x) for x in com_on.values], "fully_invested": [bool(x) for x in full.values],
+            "tilt": None if sig is None else {
+                "actions": {c: [a if f else "hold" for a, f in zip(sig[c].values, full.values)] for c in sig.columns},
+                "mom_now": {c: _r(mo[c].iloc[-1], 1, 100) for c in sig.columns}},
             "defensive": ["bonds" if b else "bills" for b in use_b.values], "fed_gate": [bool(x) for x in fed.values],
             "growth_cut": [bool(x) for x in gtt.values],
             "warnings_now": [c for _, c in top], "weights_now": {c: _r(w[c].iloc[last], 2) for c in core},
@@ -799,7 +846,7 @@ def run(log=print):
         out["horizons"][str(h)] = hz
     out["report"] = report_card(sc, mkt, rec)
     out["live"] = live_scores(rets, mkt, grid)
-    out["derisk"] = derisk(sc, mkt, grid, ind, F)
+    out["derisk"] = derisk(sc, mkt, grid, ind, F, rets)
     out["ind_view"] = indicator_view(ind, sc, rels, grid)
     out["state_table"] = state_table(reg, high, rels)
     nowho = lambda r: {k: v for k, v in r.items() if k != "who"}          # sources stay in registry.py (audit)
