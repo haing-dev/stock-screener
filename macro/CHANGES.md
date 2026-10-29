@@ -1,5 +1,15 @@
 # Macro Compass changes
 
+## 4.1.0 (2026-10-29) - what to hold outside stocks + simpler recommendation chart (user request)
+- Tested for the non-stock share (docs/research/macro_combos/assets.py): T-bills, 10y (IEF), long (TLT), short (SHY)
+  Treasuries, gold, defensive sectors; rules by correlation, inflation, cause of the cut, walk-forward, momentum.
+  Adopted: growth-trend cut while stocks and bonds move opposite -> long Treasuries (TLT; synthetic 30y/10y before);
+  any other cut -> T-bills. Since 1975 14.2%/yr (4.0.0: 13.9%), worst -20%, Sharpe 0.78. Gold instead of bills when
+  inflation is hot: 1966-74 15.2% vs 7.7%, but 1975-2026 13.8% and worst -27% -> not adopted.
+- Page: section 1 = current mix (equity / cash / bond), stacked portfolio bars by quarter, growth of $100 below; hover
+  shows the mix and the quarter's performance vs the S&P 500. Scoreboard, footnote, shading and labels removed.
+  Data: derisk.alloc {equity, bond, cash}. Fetch adds GS30/GS5/GS1/TB3MS, TLT/SHY/TIP/GLD/DBC/GC=F, gold history.
+
 ## 4.0.0 (2026-10-28) - Fed-gated de-risking + growth-trend cut + conditional Treasuries (user choice)
 - From the 5,637-rule combination test (docs/research/macro_combos/README.md). Rule (SETTINGS.derisk): the same
   track-record-weighted warnings cut stocks only while the Fed is tightening (funds rate >= 1 pt above its 24-month

@@ -45,9 +45,9 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   `macro-record` (append-only monthly calls from Oct 2026). Secret FRED_API_KEY (user adds) = first-published data.
 - Main action (4.0.0, 2026-10-28): track-record-weighted warnings (28 core indicators, worst fifth) cut stocks 100% -> 0%
   as their share goes 15% -> 35%, but only while the Fed is tightening (funds >= 1 pt above 24m low); plus S&P below
-  10m average AND unemployment above 12m average -> 0%. Rest in IEF while stock-bond corr < 0, else T-bills
-  (engine.derisk; since 1975 13.9%/yr, worst -20%). Combination tests: docs/research/macro_combos/.
-  Page tabs: 'Analysis' and 'Recommendation' (exposure chart + sector calls with registry.WHY). Sector calls are secondary: only on extreme readings, vs the 20-sector
+  10m average AND unemployment above 12m average -> 0%. Rest (4.1.0): long Treasuries (TLT) in a growth-trend cut
+  while stock-bond corr < 0, else T-bills (engine.derisk; since 1975 14.2%/yr, worst -20%). Tests: docs/research/macro_combos/.
+  Page tabs: 'Analysis' and 'Recommendation' (portfolio mix bars + growth of $100, sector calls with registry.WHY). Sector calls are secondary: only on extreme readings, vs the 20-sector
   average (3.0.0). Sensitive-stock research (macro/research_stocks.py, step 'stocks') showed no edge.
   De-risking research (macro/research_derisk.py; weekly via step 'derisk_weekly'): see macro/CHANGES.md research note.
 - Rules: macro/registry.py (pre-registered; changes -> new VERSION + macro/CHANGES.md).

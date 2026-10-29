@@ -41,3 +41,10 @@ IEF instead of the synthetic bond since 2002: same result (12.3%/yr, Sharpe 0.91
 ## Reading 2026-10
 Fed gate off (funds 3.75%, 24m low 3.63%), S&P above trend, unemployment 4.2% vs 4.30% average -> 100% stocks
 (live rule 68%).
+
+## Non-stock share (assets.py, 2026-10-29)
+Same 4.0.0 stock exposure; CAGR / worst / Sharpe 1975-2000 | 2001-2026 | 1966-74: bills 16.1/-15/0.72 | 10.2/-20/0.77 |
+7.8; 10y if corr<0 16.5/-15/0.73 | 11.4/-20/0.84 | 7.7; by cause (growth cut -> long if corr<0, else bills, ADOPTED
+4.1.0) 16.9/-15/0.74 | 11.6/-20/0.83 | 7.8; gold instead of bills when hot 16.2/-18/0.70 | 11.5/-27/0.83 | 15.2;
+gold whenever bonds don't hedge 13.7/-27/0.51 | 13.0/-27/0.91 | 15.8; defensive sectors 18.6/-26/0.81 | 8.6/-36/0.56;
+walk-forward pick 15.2/-17/0.64 | 10.1/-27/0.72. Gold before 2000 = monthly average price (smoothed, autocorr 0.17).

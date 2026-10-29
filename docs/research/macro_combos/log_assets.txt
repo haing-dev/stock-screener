@@ -1,0 +1,27 @@
+gold check 2000-09+: month-end vs monthly-average returns corr 0.62, mean 11.7 vs 12.4%/yr; avg-price return autocorr 0.17 vs 0.02
+long-bond check 2002-08+: synthetic GS30 d15 vs TLT corr 0.73, 3.9 vs 4.3%/yr
+asset CAGR 1975-2026: bills 4.3%, 10y 6.3%, long 6.2%, short 5.2%, gold 5.8%, defsec 12.4%
+
+== non-stock share rules (stock exposure = live 4.0.0). Cells: CAGR / worst fall / Sharpe for 1975-2000 | 2001-2026 | 1975-2026 | 1966-1974 (untouched; long = 10y before 1977)
+S&P 500                               15.9%  -30% 0.62 |   9.0%  -51% 0.53 |  12.4%  -51% 0.58 |  -0.6%  -47% -0.30
+L0 bills                              16.1%  -15% 0.72 |  10.2%  -20% 0.77 |  13.1%  -20% 0.74 |   7.8%  -15% 0.25
+L1 10y if corr<0 (live)               16.5%  -15% 0.73 |  11.4%  -20% 0.84 |  13.9%  -20% 0.78 |   7.7%  -15% 0.24
+L2 long if corr<0                     16.3%  -16% 0.69 |  11.8%  -20% 0.83 |  14.0%  -20% 0.76 |   7.7%  -15% 0.24
+L3 L1, gold not bills when hot        16.2%  -18% 0.70 |  11.5%  -27% 0.83 |  13.8%  -27% 0.76 |  15.2%  -17% 0.63
+L4 L1, gold not bills                 13.7%  -27% 0.51 |  13.0%  -27% 0.91 |  13.4%  -27% 0.70 |  15.8%  -24% 0.59
+L5 half L1, half gold                 14.8%  -19% 0.62 |  12.4%  -23% 0.88 |  13.6%  -23% 0.74 |  12.0%  -17% 0.52
+L6 by cause                           16.9%  -15% 0.74 |  11.6%  -20% 0.83 |  14.2%  -20% 0.78 |   7.8%  -15% 0.25
+L7 by cause + gold when hot           16.5%  -19% 0.70 |  11.7%  -27% 0.81 |  14.1%  -27% 0.75 |  15.3%  -17% 0.64
+L10 defensive sectors                 18.6%  -26% 0.81 |   8.6%  -36% 0.56 |  13.5%  -36% 0.68 |  -0.0%  -50% -0.25
+L9 absolute momentum                  15.5%  -21% 0.65 |  11.6%  -22% 0.82 |  13.5%  -22% 0.73 |   8.7%  -21% 0.29
+L8 walk-forward by situation          15.2%  -17% 0.64 |  10.1%  -27% 0.72 |  12.6%  -27% 0.68 |   8.4%  -22% 0.26
+
+== sleeves while fully invested (non-stock share per L1)
+S1 10% gold always                    15.5%  -14% 0.71 |  11.2%  -18% 0.89 |  13.3%  -18% 0.79 |   7.9%  -14% 0.28
+S2 20% gold when inflation hot        16.0%  -15% 0.71 |  11.6%  -19% 0.88 |  13.8%  -19% 0.79 |   7.8%  -15% 0.25
+S3 20% gold when hot, Fed not tightening  15.5%  -15% 0.68 |  11.5%  -19% 0.87 |  13.5%  -19% 0.77 |   7.8%  -15% 0.25
+S4 20% long bonds when corr<0         16.4%  -15% 0.73 |  10.4%  -20% 0.88 |  13.4%  -20% 0.78 |   7.6%  -16% 0.24
+
+== average return per month in months with a cut, by cause (descriptive only), %
+  growth-trend cut (63 months): bills +0.36, 10y +1.27, long +1.60, short +0.77, gold +0.50, defsec +0.10, S&P -0.08
+  Fed-tightening cut only (165 months): bills +0.44, 10y +0.72, long +0.71, short +0.61, gold +0.77, defsec +0.81, S&P +0.62

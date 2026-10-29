@@ -4,7 +4,7 @@ Every indicator is a claim made by an investor in the research store (transcript
 @AtlasShrug1 ("Galt", dated), turned into a fixed, testable rule. Investors propose, the backtest decides.
 v1.0.0 pre-registered 2026-10-23; v2.0.0 the same day (state -> investor sector rules + history check). Change log: macro/CHANGES.md. Never edit a rule in place: add a version.
 """
-VERSION = "4.0.0"
+VERSION = "4.1.0"
 
 # ------------------------------------------------------------------ fixed settings (pre-registered)
 SETTINGS = {
@@ -32,8 +32,9 @@ SETTINGS = {
     #    stocks, >= 35% -> 0%, linear in between.
     # 2. Growth-trend cut, whatever the Fed does: S&P 500 below its 10-month average AND unemployment above its
     #    12-month average -> 0% stocks.
-    # 3. The non-stock share is held in 7-10 year Treasuries (IEF; synthetic 10-year before it trades) while the
-    #    12-month stock-bond correlation is negative, else in 3-month T-bills.
+    # 3. (4.1.0) The non-stock share: long Treasuries (TLT; synthetic 30-year, then 10-year, before it trades) during a
+    #    growth-trend cut while the 12-month stock-bond correlation is negative; otherwise 3-month T-bills (cash).
+    #    Gold, TIPS-era data, short Treasuries and defensive sectors were tested (docs/research/macro_combos).
     "derisk": {"pillars": ["growth", "internals", "inflation", "stress"], "worst": 80, "band": (0.15, 0.35),
                "min_stocks": 0.0, "event": (0.15, 12), "shrink": 24, "backtest_from": "1975-01",
                "fed_gate": {"lookback": 24, "rise": 1.0}, "unemp_avg": 12, "bonds_if_corr_below": 0.0},

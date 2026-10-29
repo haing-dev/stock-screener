@@ -455,7 +455,7 @@ def entry_test(act, reg, high, rets, src, mkt, holds=(12, 24, 36), capital=10000
 def derisk(sc, mkt, grid, ind, F):
     """Main action (4.0.0, see SETTINGS['derisk']): track-record-weighted warnings acted on only while the Fed is
     tightening, plus a growth-trend cut. The exposure set at the end of month t applies to month t+1; the rest is in
-    7-10 year Treasuries while the stock-bond correlation is negative, else T-bills."""
+    long Treasuries during a growth-trend cut while the stock-bond correlation is negative, else T-bills (4.1.0)."""
     X = S["derisk"]
     core = [i["id"] for i in R.INDICATORS if i["pillar"] in X["pillars"]]
     lv_m = level(mkt)
@@ -484,14 +484,15 @@ def derisk(sc, mkt, grid, ind, F):
     e = np.minimum(e, pd.Series(np.where(gtt, fl, 1.0), index=grid)).fillna(1.0)
     _, ff = load_french()
     rf = pd.Series({pd.Period(k_, "M"): v.get("RF", np.nan) for k_, v in ff.items()}, dtype=float).reindex(grid).ffill()
-    g10 = F["GS10"]
-    bond = (g10.shift(1) / 1200 - 7 * (g10 - g10.shift(1)) / 100)                  # synthetic 10-year Treasury
-    ief = monthly_px("Y_IEF", grid).pct_change(fill_method=None)
-    bond = ief.where(ief.notna(), bond)                                            # IEF once it trades
-    use_b = (ind["stockbond"] < X["bonds_if_corr_below"]).fillna(False)
+    syn = lambda y, d: y.shift(1) / 1200 - d * (y - y.shift(1)) / 100              # synthetic Treasury, duration d
+    tlt = monthly_px("Y_TLT", grid).pct_change(fill_method=None)
+    bond = tlt.combine_first(syn(F["GS30"], 15)).combine_first(syn(F["GS10"], 7))  # TLT; 30y, then 10y before it
+    # growth-trend cut while bonds hedge stocks -> long Treasuries; any other cut -> T-bills (cash)
+    use_b = (gtt & (ind["stockbond"] < X["bonds_if_corr_below"])).fillna(False)
     alt = pd.Series(np.where(use_b.shift(1, fill_value=False), bond, rf), index=grid)
     alt = alt.where(alt.notna(), rf)
     strat = e.shift(1) * mkt + (1 - e.shift(1)) * alt
+    w_bond = (1 - e) * use_b.astype(float)
     st = pd.Period(X["backtest_from"], "M")
     m, r = mkt[mkt.index > st], strat[strat.index > st]
     okm = m.notna() & r.notna()
@@ -522,6 +523,7 @@ def derisk(sc, mkt, grid, ind, F):
     last = len(grid) - 1
     top = sorted(((float(w[c].iloc[last]), c) for c in core if bad[c].iloc[last] > 0), reverse=True)
     return {"core": core, "share": _ser(share * 100, 1), "exposure": _ser(e * 100, 0),
+            "alloc": {"equity": _ser(e * 100, 0), "bond": _ser(w_bond * 100, 0), "cash": _ser((1 - e - w_bond) * 100, 0)},
             "defensive": ["bonds" if b else "bills" for b in use_b.values], "fed_gate": [bool(x) for x in fed.values],
             "growth_cut": [bool(x) for x in gtt.values],
             "warnings_now": [c for _, c in top], "weights_now": {c: _r(w[c].iloc[last], 2) for c in core},
