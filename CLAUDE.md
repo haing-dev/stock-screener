@@ -54,6 +54,16 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   snapshot on branch macro-research-data (fetch: step research_fetch). Earlier: docs/research/macro_combos.
 - Rules: macro/registry.py (pre-registered; changes -> new VERSION + macro/CHANGES.md).
 
+## WRDS (tools/wrdsq, 2026-10-29)
+- User ttdlisa (UBC) has WRDS; subscription list incl. Compustat Global/NA, CRSP (annual), CRSP Treasuries, LSEG IBES,
+  TRACE, Cboe VIX, FRB rates, Fama-French, Global Factor Data, World Indices, Penn World Tables, Dow Jones, 13F.
+  No Datastream, OptionMetrics, Markit.
+- WRDS policy: no WRDS Data into AI tools. Claude writes jobs; they run on WRDS Cloud via tools/wrdsq; only metadata
+  and results come back. Never ask for the WRDS password; it is typed only in the user's PowerShell window.
+- User does not code and Windows blocks .bat files: give ONE PowerShell paste line (tools/wrdsq/mkjob.py).
+- Global Macro Book plan: project doc claude/global_macro_book_plan_2026-10-29.md. WRDS-based signals are
+  backtested on WRDS Cloud; only statistics return.
+
 ## Deployment
 - Repo `haing-dev/stock-screener` (private). Branches: `main` (code), `site` (published triage site, force-pushed), `site-archive-v2.9` (last portal build), `triage-record` (live calls, append-only), `triage-status` (last run's log tail + counts, force-pushed), `reports`, `research` (transcript store), `history` and `validation` (v2.9 records, no longer updated).
 - Cloudflare **Worker** "stock-screener" via Workers Builds on branch `site` (wrangler.jsonc written by `triage/site.py`).

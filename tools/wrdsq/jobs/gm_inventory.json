@@ -1,0 +1,12 @@
+{"name":"gm_inventory","steps":[
+{"do":"libraries"},
+{"do":"search","title":"country indexes","terms":["windices","idx","country","msci"]},
+{"do":"search","title":"estimates","terms":["statsum","ibes"]},
+{"do":"search","title":"rates, bonds, vol","terms":["treas","tfz","vix","bondret","yld","rates"]},
+{"do":"search","title":"macro, ppp, factors","terms":["pwt","macro","djones","global_factor","factors"]},
+{"do":"describe","table":"comp.g_idx_mth","date":"datadate"},
+{"do":"describe","table":"comp.g_idx_index"},
+{"do":"describe","table":"cboe.cboe","date":"date"},
+{"do":"describe","table":"crsp.tfz_mth_ft","date":"mcaldt"},
+{"do":"describe","table":"ibes.statsum_epsint"},
+{"do":"datasets"}]}
