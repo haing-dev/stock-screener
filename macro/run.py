@@ -24,6 +24,9 @@ def main(step="all"):
         elif s == "derisk_weekly":                      # research only: de-risking checked weekly vs monthly
             from . import research_derisk
             research_derisk.weekly()
+        elif s == "more":                               # research only: wide multi-asset download
+            from . import research_data
+            research_data.run()
         elif s == "stocks":                             # research only: sector calls via sensitive stocks
             from . import research_stocks
             research_stocks.run()
