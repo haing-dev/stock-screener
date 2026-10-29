@@ -25,7 +25,8 @@ YAHOO = [
     "EMLC", "BWX", "MBB", "AGG", "BND", "BKLN", "FLOT",
     # currencies, volatility, inverse, hedges
     "UUP", "UDN", "FXE", "FXY", "FXF", "FXB", "FXA", "FXC", "CEW", "CYB", "VIXY", "VXX", "SVXY", "SH", "PSQ",
-    "TAIL", "BTAL", "DBMF", "KMLM", "CTA",
+    "TAIL", "BTAL", "DBMF", "KMLM", "CTA", "EPI", "KSA", "DXJ", "ENOR", "EWL", "EWI", "EWQ", "EWD", "EZU", "KWEB",
+    "EWP", "EWN", "EPHE", "ASEA", "EMXC", "LTPZ", "VTIP", "SGOV", "TBF", "BIZD", "PSP", "VNQ", "XHB", "XLK", "XLF",
     # long-history indexes and futures (price only)
     "^GSPC", "^IXIC", "^RUT", "^N225", "^KS11", "^BVSP", "^HSI", "^TWII", "^BSESN", "^MXX", "^GDAXI", "^FTSE",
     "^FCHI", "^STOXX50E", "^AXJO", "^GSPTSE", "000001.SS", "^VIX", "^VIX3M", "^MOVE", "^TNX", "^IRX", "^TYX",
@@ -46,6 +47,15 @@ FRED = [
     "PSOYBUSDM", "PNGASUSUSDM", "PALLFNFINDEXM", "PNRGINDEXM", "PMETAINDEXM", "PFOODINDEXM", "PRAWMINDEXM",
     "PINDUINDEXM", "PSILVERUSDM", "WTREGEN", "RRPONTSYD", "WALCL", "GFDEBTN", "FYFSGDA188S", "A091RC1Q027SBEA",
     "QUSR628BIS", "QKRR628BIS", "QBRR628BIS", "QCNR628BIS", "USEPUINDXD", "GEPUCURRENT", "SP500",
+    # round 2 (2026-10-29): series named in the transcript rules
+    "CPIENGSL", "CPIUFDSL", "CUSR0000SACL1E", "CUSR0000SASLE", "CPATAX", "A446RC1Q027SBEA", "PSAVERT", "REVOLSL",
+    "GFDEGDQ188S", "MTSDS133FMS", "TDSP", "GACDFSA066MSFRBPHI", "IRLTLT01JPM156N", "IRLTLT01DEM156N",
+    "IRLTLT01GBM156N", "JPNCPIALLMINMEI", "BRACPIALLMINMEI", "ECBDFR", "JPNASSETS", "ECBASSETSW", "TREAST",
+    "FDHBFIN", "FDHBFRBN", "MICH", "OVXCLS", "BAMLH0A1HYBB", "NROU", "OPHNFB", "IPN213111N", "DTB3", "USEPUINDXM",
+    "MCOILWTICO", "GDPDEF", "ULCNFB", "PRS85006173", "TNWBSHNO", "CMDEBT", "BCNSDODNS", "DSPIC96", "FGEXPND",
+    "FGRECPT", "FDEFX", "B235RC1Q027SBEA", "IMPGS", "MHHNGSP", "GASREGW", "UNRATE", "IRSTCB01JPM156N",
+    "IRSTCI01BRM156N", "IR3TIB01KRM156N", "RBJPBIS", "RBKRBIS", "RBBRBIS", "RBCNBIS", "RBEUBIS", "TWEXB",
+    "BOGZ1FL073164003Q", "DRCCLACBS", "DRALACBS", "CORCCACBS", "WLRRAL",
 ]
 
 URLS = {   # long-history research data sets (files saved as downloaded)
@@ -61,6 +71,29 @@ URLS = {   # long-history research data sets (files saved as downloaded)
     "french_5f.zip": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_5_Factors_2x3_CSV.zip",
     "gpr_index.xls": "https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls",
 }
+
+DAILY = ["^GSPC", "SPY", "^VIX", "TLT", "IEF", "GLD", "^VIX3M", "DX-Y.NYB", "HYG"]
+EXTRA_URLS = {
+    "cboe_put_history.csv": "https://cdn.cboe.com/api/global/us_indices/daily_prices/PUT_History.csv",
+    "cboe_ppt_history.csv": "https://cdn.cboe.com/api/global/us_indices/daily_prices/PPUT_History.csv",
+    "cboe_bxm_history.csv": "https://cdn.cboe.com/api/global/us_indices/daily_prices/BXM_History.csv",
+    "cboe_skew_history.csv": "https://cdn.cboe.com/api/global/us_indices/daily_prices/SKEW_History.csv",
+    "cboe_vix_history.csv": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
+    "aaii_sentiment.xls": "https://www.aaii.com/files/surveys/sentiment.xls",
+    "nyfed_gscpi.xlsx": "https://www.newyorkfed.org/medialibrary/research/interactives/gscpi/downloads/gscpi_data.xlsx",
+    "acm_term_premia.xls": "https://www.newyorkfed.org/medialibrary/media/research/data_indicators/ACMTermPremium.xls",
+    "trade_epu.xlsx": "https://www.policyuncertainty.com/media/Categorical_EPU_Data.xlsx",
+}
+
+
+def yahoo_daily(sym):
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}"
+    js = FT._get(url, params={"period1": 0, "period2": 9999999999, "interval": "1d", "events": "div,split",
+                              "includeAdjustedClose": "true"}).json()
+    res = js["chart"]["result"][0]
+    adj = res["indicators"].get("adjclose", [{}])[0].get("adjclose") or res["indicators"]["quote"][0]["close"]
+    return [(time.strftime("%Y-%m-%d", time.gmtime(t)), round(float(v), 6)) for t, v in zip(res["timestamp"], adj) if v is not None]
+
 
 MSCI = {   # MSCI end-of-month gross USD index levels (public chart endpoint; may refuse)
     "msci_world": "990100", "msci_em": "891800", "msci_korea": "134000", "msci_brazil": "38000",
@@ -102,6 +135,40 @@ def run(log=print):
             man["series"][name] = {"ok": True, "bytes": len(r.content)}
         except Exception as e:
             man["series"][name] = {"ok": False, "error": str(e)[:150]}
+    for name, url in EXTRA_URLS.items():
+        try:
+            r = FT._get(url)
+            _save(name, r.content)
+            man["series"][name] = {"ok": True, "bytes": len(r.content)}
+        except Exception as e:
+            man["series"][name] = {"ok": False, "error": str(e)[:150]}
+    for s_ in DAILY:
+        name = "D_" + re.sub(r"[^A-Za-z0-9]", "_", s_)
+        try:
+            rows = yahoo_daily(s_)
+            _save(name + ".csv", "date,value\n" + "\n".join(f"{d},{v}" for d, v in rows), "w")
+            man["series"][name] = {"ok": True, "first": rows[0][0], "last": rows[-1][0], "rows": len(rows)}
+        except Exception as e:
+            man["series"][name] = {"ok": False, "error": str(e)[:150]}
+        time.sleep(1.0)
+    import zipfile
+    cot = []                                  # CFTC legacy futures-only, all years (net speculative positioning)
+    for yr_ in range(1986, int(time.strftime("%Y")) + 1):
+        try:
+            url = (f"https://www.cftc.gov/files/dea/history/deacot{yr_}.zip" if yr_ >= 1995 else None)
+            if yr_ < 1995:
+                continue
+            z = zipfile.ZipFile(io.BytesIO(FT._get(url).content))
+            txt = z.read(z.namelist()[0]).decode("latin-1")
+            keep = [ln for ln in txt.splitlines()[1:] if re.search(r"S&P 500|E-MINI S&P|GOLD - COMMODITY|CRUDE OIL, LIGHT SWEET|COPPER|U\.S\. TREASURY BONDS|10-YEAR|JAPANESE YEN|EURO FX|U\.S\. DOLLAR INDEX|SILVER - COMMODITY|VIX", ln)]
+            cot.append(txt.splitlines()[0] if not cot else None)
+            cot.extend(keep)
+        except Exception as e:
+            man["series"][f"cot{yr_}"] = {"ok": False, "error": str(e)[:100]}
+    if cot:
+        _save("cftc_cot_selected.csv", "\n".join(x for x in cot if x), "w")
+        man["series"]["cftc_cot_selected.csv"] = {"ok": True, "rows": len(cot)}
+    # MSCI: try the alternative public endpoint too
     # World Bank commodity prices (pink sheet): find the current monthly file link
     try:
         page = FT._get("https://www.worldbank.org/en/research/commodity-markets").text
