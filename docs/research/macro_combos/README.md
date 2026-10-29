@@ -48,3 +48,10 @@ Same 4.0.0 stock exposure; CAGR / worst / Sharpe 1975-2000 | 2001-2026 | 1966-74
 4.1.0) 16.9/-15/0.74 | 11.6/-20/0.83 | 7.8; gold instead of bills when hot 16.2/-18/0.70 | 11.5/-27/0.83 | 15.2;
 gold whenever bonds don't hedge 13.7/-27/0.51 | 13.0/-27/0.91 | 15.8; defensive sectors 18.6/-26/0.81 | 8.6/-36/0.56;
 walk-forward pick 15.2/-17/0.64 | 10.1/-27/0.72. Gold before 2000 = monthly average price (smoothed, autocorr 0.17).
+
+## Dollar / currencies (dollar.py, dollar2.py, 2026-10-29)
+Holding (instead of bills): dollar (UUP; synthetic DXY carry before 2007), yen, franc, half long-T/half dollar: none
+beats the live 4.1 mix (14.2%/yr; alternatives 13.6-14.1%). Signal: warnings also acted on when the dollar-oil-rates
+squeeze score >= 80 (not only when the Fed tightens): 14.7%/yr, worst -19%, Sharpe 0.83 (live 0.78); 1975-2000 equal,
+2001-2026 12.6% vs 11.6%; plateau 70-85; shuffled-timing placebo 0/500 better; gain mostly 2021-10..2022-05 (+12.5 pts),
+1999-2000 cost -4.7 pts. Not adopted (pending user decision): it would cut stocks most months of mid-2026.
