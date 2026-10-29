@@ -1,0 +1,19 @@
+hypotheses: 731; errors 0; paper-factor 20; never on 21; pass screen 7
+by kind passing: {'block': 2, 'location': 2, 'sleeve': 2, 'cut': 1}
+  A023   block     dSharpe +0.032  placebo p 0.035  Bank stocks 3m rel < -20% and Fed balance sheet 3m > +5% (emergency liquidity pr
+  A032   block     dSharpe +0.051  placebo p 0.055  Sweet spot (Q4 midterm to Q2 pre-election): no cuts
+  A033   cut       dSharpe +0.056  placebo p 0.045  Weak spot Q2-Q3 of midterm year: stocks capped at 50%
+  A041   location  dSharpe +0.062  placebo p 0.125  Utilities Mar-Oct: 25% of equity in utilities
+  B004   sleeve    dSharpe +0.029  placebo p 0.000  commodity index 12m change>0 and above its 10m average: 10% commodities
+  B020   sleeve    dSharpe +0.028  placebo p 0.045  gold at a 12m high while the dollar fell over 6m: 10% gold for 6m
+  D022   location  dSharpe +0.076  placebo p 0.005  Fed cuts during an EM crisis with low unemployment -> 50% Nasdaq, 15m, exit belo
+
+eligible 690; pass screen 7; placebo p < 0.05: 5; pass FDR 10%: 1
+       id      kind                                                                                        desc                                               source  on_share    first  live_A_dsh  live_B_dsh  live_S1_dsh  live_S2_dsh  live_F_dcagr  live_F_ddd  dsh_full      p fdr_pass
+252  B004    sleeve                     commodity index 12m change>0 and above its 10m average: 10% commodities           Luke Gromen - Saudis Break the Petrodollar     0.587  1961-01       0.023       0.034        0.030        0.034         0.054      -0.130     0.029  0.000     True
+625  D022  location   Fed cuts during an EM crisis with low unemployment -> 50% Nasdaq, 15m, exit below 10m avg  Stanley Druckenmiller - In Good Company (NBIM 2024)     0.055  1995-07       0.052       0.027        0.104        0.049         0.735      -0.000     0.076  0.005    False
+22   A023     block  Bank stocks 3m rel < -20% and Fed balance sheet 3m > +5% (emergency liquidity proxy): re-e                Cullen Roche - TIP486 Macro Investing     0.016  2009-04       0.000       0.038        0.026        0.040         0.283      -0.000     0.032  0.035    False
+32   A033       cut                                       Weak spot Q2-Q3 of midterm year: stocks capped at 50%                Jeffrey Hirsch - Eisman Playbook Ep56     0.125  1962-03       0.061       0.050        0.126        0.017         0.228       0.630     0.056  0.045    False
+268  B020    sleeve                           gold at a 12m high while the dollar fell over 6m: 10% gold for 6m           Luke Gromen - Saudis Break the Petrodollar     0.418  1977-09       0.031       0.026        0.010        0.031         0.094      -0.000     0.028  0.045    False
+31   A032     block                                         Sweet spot (Q4 midterm to Q2 pre-election): no cuts                Jeffrey Hirsch - Eisman Playbook Ep56     0.185  1962-09       0.038       0.062        0.041        0.066         0.993      -0.000     0.051  0.055    False
+40   A041  location                                               Utilities Mar-Oct: 25% of equity in utilities                Jeffrey Hirsch - Eisman Playbook Ep56     0.669  1960-02       0.049       0.075        0.095        0.058         0.233       1.111     0.062  0.125    False

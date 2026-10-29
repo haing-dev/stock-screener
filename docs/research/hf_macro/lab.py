@@ -15,8 +15,9 @@ COST = 0.001            # 0.10% per 100% of the portfolio traded
 FEE = {"trend": 0.015 / 12, "trend_cm": 0.015 / 12, "commod": 0.006 / 12, "usd": 0.0, "gold": 0.0025 / 12}
 
 
-def run(W, cost=COST, name=""):
+def run(W, cost=None, name=""):
     """W: DataFrame (grid x assets) of weights (cash = 1 - sum, earns T-bills). Returns monthly net return Series."""
+    cost = COST if cost is None else cost
     W = W.reindex(grid).fillna(0.0)
     cols = list(W.columns)
     A = R.reindex(columns=[c for c in cols if c != "tbill"]).copy()

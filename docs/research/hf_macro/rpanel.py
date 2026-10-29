@@ -39,7 +39,12 @@ def csvm(path):
         return pd.Series(np.nan, index=grid)
     s = s[pd.to_numeric(s["value"], errors="coerce").notna()]
     d = pd.to_datetime(s["date"], errors="coerce")
-    m = pd.Series(s["value"].astype(float).values, index=d.dt.to_period("M")).groupby(level=0).last()
+    per = d.dt.to_period("M")
+    if os.path.basename(path).startswith("Y_"):
+        # Yahoo monthly bars are stamped at local midnight on the 1st; outside the US that is the previous day in UTC.
+        # A bar dated on/after the 20th belongs to the next month (audit H3).
+        per = per.where(d.dt.day < 20, per + 1)
+    m = pd.Series(s["value"].astype(float).values, index=per).groupby(level=0).last()
     return m.reindex(grid)
 
 
@@ -102,11 +107,26 @@ for c in ["Equity indices Market", "Fixed income Market", "Commodities Market", 
 # ---------------- rates and bonds
 F = P["F"]
 syn = lambda yy, d: yy.shift(1) / 1200 - d * (yy - yy.shift(1)) / 100
+
+
+def par_ret(y, n):
+    """Monthly return of an n-year par bond bought at last month-end yield y_{t-1} (semi-annual coupon), repriced at
+    y_t with n - 1/12 years left, plus one month of coupon accrual."""
+    c = y.shift(1) / 100
+    yy = y / 100
+    m = n - 1 / 12
+    k = 2 * m
+    pv = (c / 2) * (1 - (1 + yy / 2) ** (-k)) / (yy / 2) + (1 + yy / 2) ** (-k)
+    return pv - 1 + c / 12
+
+
+def eom(sid):
+    return fr(sid)                                   # daily FRED series: csvm keeps the last value of each month
 gs30 = E.fred_monthly("GS30", grid) if "GS30" in E.R.FRED else fr("DGS30")
 put("tbill", rf)
-put("t2y", yr("SHY"), syn(F["GS2"], 1.9))
-put("t10y", yr("IEF"), syn(F["GS10"], 7))
-put("t30y", yr("TLT"), syn(gs30, 15), syn(F["GS10"], 7))
+put("t2y", yr("SHY"), par_ret(eom("DGS2"), 2), syn(F["GS2"], 1.9))
+put("t10y", yr("IEF"), par_ret(eom("DGS10"), 10), syn(F["GS10"], 7))
+put("t30y", yr("TLT"), par_ret(eom("DGS30"), 30), par_ret(eom("DGS10"), 10))   # 10y before the 30y exists (1977)
 put("t30y_long", yr("EDV"), syn(gs30, 22))
 put("tips", yr("TIP"))
 put("ig", yr("LQD"))
@@ -122,7 +142,10 @@ def end_est(avg):
 
 g_avg = E._csv("GOLD")
 g_avg = pd.Series(g_avg.values, index=g_avg.index.to_period("M")).groupby(level=0).last().reindex(grid)
-put("gold", yr("GLD"), yr("GC=F"), end_est(g_avg).pct_change(fill_method=None))
+_g = yr("GLD").combine_first(yr("GC=F")).combine_first(end_est(g_avg).pct_change(fill_method=None))
+put("gold", _g.where(grid >= Per("1975-01")))       # US individuals could not own gold before 1975 (audit H2)
+# gold price KNOWN at month end t (for signals): month-end futures/ETF where they exist, else the month's average
+S_gold_known = y("GC=F").combine_first(g_avg)
 put("silver", yr("SLV"), yr("SI=F"))
 put("oil", yr("USO"), yr("CL=F"))
 put("copper", yr("CPER"), yr("HG=F"))
@@ -216,6 +239,7 @@ try:
 except Exception as e:
     print("pink sheet failed", e)
 
+S["gold_known"] = S_gold_known
 out = {"grid": grid, "R": R, "S": S, "rf": rf, "mkt": mkt, "P": P, "src": SRC}
 pickle.dump(out, open(os.path.join(HERE, "rpanel.pkl"), "wb"))
 cov = pd.DataFrame({"first": R.apply(lambda s: s.first_valid_index()), "last": R.apply(lambda s: s.last_valid_index()),
