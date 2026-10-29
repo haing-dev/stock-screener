@@ -1,1 +1,1 @@
-{"step": "fetch,research_fetch,build,site,record", "_note": "research_fetch round 3 (2026-10-29); set back to all after"}
+{"step": "all", "_note": "workflow default step: all | fetch | build | site | record | research_fetch (research data snapshot: branch macro-research-data)"}
