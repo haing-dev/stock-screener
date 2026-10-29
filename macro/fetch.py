@@ -116,6 +116,13 @@ def run(log=print):
         except Exception as e:
             man["series"][sid] = {"ok": False, "error": str(e)[:200]}
         time.sleep(0.6)
+    for sid in getattr(R, "EXTRA_FRED", []):
+        try:
+            rows, how = fred(sid, {}, key)
+            man["series"][sid] = {"ok": True, "rows": _write(sid, rows), "first": rows[0][0], "last": rows[-1][0], "how": how}
+        except Exception as e:
+            man["series"][sid] = {"ok": False, "error": str(e)[:200]}
+        time.sleep(0.6)
     syms = R.YAHOO + [i["etf"] for i in R.INDUSTRIES]
     for s in syms:
         name = "Y_" + s.replace("-", "_").replace(".", "_").replace("^", "").replace("=", "_")
