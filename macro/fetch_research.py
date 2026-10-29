@@ -26,7 +26,7 @@ YAHOO = [
     # currencies, volatility, inverse, hedges
     "UUP", "UDN", "FXE", "FXY", "FXF", "FXB", "FXA", "FXC", "CEW", "CYB", "VIXY", "VXX", "SVXY", "SH", "PSQ",
     "TAIL", "BTAL", "DBMF", "KMLM", "CTA", "EPI", "KSA", "DXJ", "ENOR", "EWL", "EWI", "EWQ", "EWD", "EZU", "KWEB",
-    "EWP", "EWN", "EPHE", "ASEA", "EMXC", "LTPZ", "VTIP", "SGOV", "TBF", "BIZD", "PSP", "VNQ", "XHB", "XLK", "XLF",
+    "EWP", "EWN", "EPHE", "ASEA", "EMXC", "BWX", "BNDX", "XLY", "SOXX", "XBI", "IBB", "JETS", "LIT", "REMX", "^SKEW", "ES=F", "TRY=X", "ARS=X", "ZAR=X", "LTPZ", "VTIP", "SGOV", "TBF", "BIZD", "PSP", "VNQ", "XHB", "XLK", "XLF",
     # long-history indexes and futures (price only)
     "^GSPC", "^IXIC", "^RUT", "^N225", "^KS11", "^BVSP", "^HSI", "^TWII", "^BSESN", "^MXX", "^GDAXI", "^FTSE",
     "^FCHI", "^STOXX50E", "^AXJO", "^GSPTSE", "000001.SS", "^VIX", "^VIX3M", "^MOVE", "^TNX", "^IRX", "^TYX",
@@ -56,6 +56,15 @@ FRED = [
     "FGRECPT", "FDEFX", "B235RC1Q027SBEA", "IMPGS", "MHHNGSP", "GASREGW", "UNRATE", "IRSTCB01JPM156N",
     "IRSTCI01BRM156N", "IR3TIB01KRM156N", "RBJPBIS", "RBKRBIS", "RBBRBIS", "RBCNBIS", "RBEUBIS", "TWEXB",
     "BOGZ1FL073164003Q", "DRCCLACBS", "DRALACBS", "CORCCACBS", "WLRRAL",
+    # round 3 (2026-10-29): data gaps named by the hypothesis coders
+    "DGS1", "DGS5", "DGS7", "DGS20", "MSACSR", "AHETPI", "GGGDTAJPA188N", "IIPUSNETIQ", "CLF16OV", "MMMFFAQ027S",
+    "DRBLACBS", "PURANUSDM", "PNGASEUUSDM", "CHNPIEATI01GYM", "XTIMVA01CNM667S", "DTCDFSA066MSFRBPHI",
+    "PPCDFSA066MSFRBPHI", "NOFDFSA066MSFRBPHI", "NOCDFSA066MSFRBPHI", "TEDRATE", "DCPF3M", "WMTSECL1",
+    "BOGZ1LM263064105Q", "CUSR0000SEHA", "CUSR0000SEHC", "FYOINT", "IRLTLT01ITM156N", "DBAA", "DAAA", "DROCLACBS",
+    "GDPPOT", "A054RC1Q027SBEA", "A053RC1Q027SBEA", "PNFIC1", "Y033RC1Q027SBEA", "B985RC1Q027SBEA", "WFRBST01134",
+    "IR3TIB01MXM156N", "IRSTCI01ZAM156N", "DEXSFUS", "IPG211111CN", "TRFVOLUSM227NFWA", "CES1000000001", "UNEMPLOY",
+    "CPILFESL", "PCEPILFE", "BOPGSTB", "BOPBCA", "MANEMP", "AMTMNO", "DGORDER", "NEWORDER", "ACOGNO", "BAMLH0A0HYM2EY",
+    "TOTCI", "RRSFS", "CP", "HOUST1F", "PERMIT1", "EXHOSLUSM495S", "MORTGAGE15US", "UMDMNO", "A065RC1A027NBEA",
 ]
 
 URLS = {   # long-history research data sets (files saved as downloaded)
@@ -83,6 +92,10 @@ EXTRA_URLS = {
     "nyfed_gscpi.xlsx": "https://www.newyorkfed.org/medialibrary/research/interactives/gscpi/downloads/gscpi_data.xlsx",
     "acm_term_premia.xls": "https://www.newyorkfed.org/medialibrary/media/research/data_indicators/ACMTermPremium.xls",
     "trade_epu.xlsx": "https://www.policyuncertainty.com/media/Categorical_EPU_Data.xlsx",
+    "ebp_gz.csv": "https://www.federalreserve.gov/econres/notes/feds-notes/ebp_csv.csv",
+    "french_49ind.zip": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/49_Industry_Portfolios_CSV.zip",
+    "french_beta.zip": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/Portfolios_Formed_on_BETA_csv.zip",
+    "french_6port.zip": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/6_Portfolios_2x3_CSV.zip",
 }
 
 
