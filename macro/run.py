@@ -27,6 +27,9 @@ def main(step="all"):
         elif s == "more":                               # research only: wide multi-asset download
             from . import research_data
             research_data.run()
+        elif s == "research_fetch":                     # research only: wide instrument universe
+            from . import fetch_research
+            fetch_research.run()
         elif s == "stocks":                             # research only: sector calls via sensitive stocks
             from . import research_stocks
             research_stocks.run()

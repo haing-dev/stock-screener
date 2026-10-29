@@ -1,1 +1,1 @@
-{"step": "all", "_note": "workflow default step: all | fetch | build | site | record"}
+{"step": "fetch,research_fetch,build,site,record", "_note": "workflow default step: all | fetch | build | site | record (research_fetch added 2026-10-29 for research; set back to all after)"}
