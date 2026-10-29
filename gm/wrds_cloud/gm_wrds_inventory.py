@@ -38,7 +38,7 @@ PROBES = [
 
 def main():
     t0 = time.time()
-    db = wrds.Connection()
+    db = wrds.Connection(wrds_username=os.environ.get("USER") or None)
     out = open(OUT, "w")
 
     def w(s=""):
