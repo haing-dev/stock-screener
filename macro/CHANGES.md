@@ -1,5 +1,15 @@
 # Macro Compass changes
 
+## 5.0.1 (2026-10-29) - page only: McKinsey-style redesign + story-led Analysis (user request)
+- Visual language from the user's style guide: white page, black text, Georgia Bold titles and stats, Arial body,
+  Deep Blue data, one highlight colour per section, thin rules instead of cards, action-sentence titles, chart title +
+  units line. Light theme only.
+- Analysis: action first (title + mix stats), then a five-step "Why" story linking to the evidence; eight numbered
+  sections (1 economy, 2 inflation, 3 market stress, 4 the Fed, 5 growth and trend, 6 bonds as a hedge,
+  7 commodities, 8 sector leadership), each with an action title and a so-what paragraph; sub-points numbered 1.1,
+  1.2 ... with "This chart measures X. It is currently Y, versus Z a year ago, meaning W." Warning-share chart removed.
+- Recommendation: action titles for the mix and the sector calls; status squares instead of pills.
+
 ## 5.0.0 (2026-10-29) - package P1 (user choice) + Analysis rebuilt around the six checks
 - Rule (SETTINGS.derisk): 4.1 exposure unchanged; plus 10% of the book in a commodity index (DBC; AQR commodity futures
   index + T-bill before 2006) while it is up over 12 months and above its 10-month average (Gromen; the only one of
