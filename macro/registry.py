@@ -58,7 +58,7 @@ PILLARS = [
 FRED = {
     "UNRATE": dict(fr=True, lag=1), "LNS14024887": dict(fr=True, lag=1),
     "TRUCKD11": dict(fr=True, lag=2), "PERMIT": dict(fr=True, lag=1), "TOTALSA": dict(fr=True, lag=1),
-    "GS10": dict(lag=0), "GS2": dict(lag=0), "BAA": dict(lag=0), "FEDFUNDS": dict(lag=0),
+    "GS10": dict(lag=0), "GS2": dict(lag=0), "GS30": dict(lag=0), "GS5": dict(lag=0), "GS1": dict(lag=0), "TB3MS": dict(lag=0), "BAA": dict(lag=0), "FEDFUNDS": dict(lag=0),
     "PCEPILFE": dict(fr=True, lag=2), "CPILFESL": dict(fr=True, lag=1), "PPIACO": dict(fr=True, lag=1),
     "T5YIFR": dict(lag=0), "WTISPLC": dict(lag=1), "PCOPPUSDM": dict(lag=1), "PIORECRUSDM": dict(lag=1),
     "GDP": dict(fr=True, lag=2, q=True), "M2SL": dict(fr=True, lag=1),
@@ -68,7 +68,8 @@ FRED = {
     "HNOCEAQ027S": dict(fr=True, lag=3, q=True), "TFAABSHNO": dict(fr=True, lag=3, q=True),
     "USREC": dict(lag=0), "DTWEXBGS": dict(lag=0), "TWEXMMTH": dict(lag=0),
 }
-YAHOO = ["SPY", "EWY", "DX-Y.NYB", "HYG", "IEF", "XLY", "SOXX", "^VIX"]   # plus every industry ETF below
+YAHOO = ["SPY", "EWY", "DX-Y.NYB", "HYG", "IEF", "XLY", "SOXX", "^VIX",
+         "TLT", "SHY", "TIP", "GLD", "DBC", "GC=F"]               # defensive-asset candidates (4.1 research)   # plus every industry ETF below
 FRENCH_IND = "49_Industry_Portfolios_CSV.zip"
 FRENCH_FF = "F-F_Research_Data_Factors_CSV.zip"
 

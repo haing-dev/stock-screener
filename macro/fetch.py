@@ -2,7 +2,7 @@
 
 Sources (all free): FRED (API with FRED_API_KEY: first-published values for revised series; else the public CSV),
 Yahoo Finance monthly adjusted closes (dividends included) with Stooq as fallback, Kenneth French industry and
-factor returns, multpl.com Shiller CAPE. Each source fails on its own; manifest.json says what worked.
+factor returns, multpl.com Shiller CAPE, monthly gold (datahub.io gold-prices on GitHub). Each source fails on its own; manifest.json says what worked.
 """
 import csv
 import io
@@ -118,7 +118,7 @@ def run(log=print):
         time.sleep(0.6)
     syms = R.YAHOO + [i["etf"] for i in R.INDUSTRIES]
     for s in syms:
-        name = "Y_" + s.replace("-", "_").replace(".", "_").replace("^", "")
+        name = "Y_" + s.replace("-", "_").replace(".", "_").replace("^", "").replace("=", "_")
         try:
             try:
                 rows, how = yahoo(s), "yahoo"
@@ -144,6 +144,12 @@ def run(log=print):
         man["series"]["CAPE"] = {"ok": True, "rows": _write("CAPE", rows), "first": rows[0][0], "last": rows[-1][0]}
     except Exception as e:
         man["series"]["CAPE"] = {"ok": False, "error": str(e)[:200]}
+    try:                                     # gold, monthly average London price since 1833 (datahub.io on GitHub)
+        txt = _get("https://raw.githubusercontent.com/datasets/gold-prices/main/data/monthly.csv").text
+        rows = [(r[0] + "-01", r[1]) for r in list(csv.reader(io.StringIO(txt)))[1:] if len(r) >= 2 and r[1]]
+        man["series"]["GOLD"] = {"ok": True, "rows": _write("GOLD", rows), "first": rows[0][0], "last": rows[-1][0]}
+    except Exception as e:
+        man["series"]["GOLD"] = {"ok": False, "error": str(e)[:200]}
     os.makedirs(RAW, exist_ok=True)
     with open(os.path.join(RAW, "manifest.json"), "w") as f:
         json.dump(man, f, indent=1)
