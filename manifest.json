@@ -1,0 +1,2634 @@
+{
+ "fetched": "2026-10-29 16:34 UTC",
+ "series": {
+  "Y_EWY": {
+   "ok": true,
+   "first": "2000-05-01",
+   "last": "2026-10-29",
+   "rows": 319
+  },
+  "Y_EWZ": {
+   "ok": true,
+   "first": "2000-07-01",
+   "last": "2026-10-29",
+   "rows": 317
+  },
+  "Y_EWJ": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_FXI": {
+   "ok": true,
+   "first": "2004-10-01",
+   "last": "2026-10-29",
+   "rows": 266
+  },
+  "Y_MCHI": {
+   "ok": true,
+   "first": "2011-03-01",
+   "last": "2026-10-29",
+   "rows": 189
+  },
+  "Y_INDA": {
+   "ok": true,
+   "first": "2012-02-01",
+   "last": "2026-10-29",
+   "rows": 178
+  },
+  "Y_EWT": {
+   "ok": true,
+   "first": "2000-06-01",
+   "last": "2026-10-29",
+   "rows": 318
+  },
+  "Y_EWW": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_EWG": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_EWU": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_EWC": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_EWA": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_EWH": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_EWS": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_EZA": {
+   "ok": true,
+   "first": "2003-02-01",
+   "last": "2026-10-29",
+   "rows": 286
+  },
+  "Y_TUR": {
+   "ok": true,
+   "first": "2008-03-01",
+   "last": "2026-10-29",
+   "rows": 225
+  },
+  "Y_EIDO": {
+   "ok": true,
+   "first": "2010-05-01",
+   "last": "2026-10-29",
+   "rows": 199
+  },
+  "Y_THD": {
+   "ok": true,
+   "first": "2008-04-01",
+   "last": "2026-10-29",
+   "rows": 224
+  },
+  "Y_EWM": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_ECH": {
+   "ok": true,
+   "first": "2007-11-01",
+   "last": "2026-10-29",
+   "rows": 229
+  },
+  "Y_EPU": {
+   "ok": true,
+   "first": "2009-06-01",
+   "last": "2026-10-29",
+   "rows": 210
+  },
+  "Y_ARGT": {
+   "ok": true,
+   "first": "2011-03-01",
+   "last": "2026-10-29",
+   "rows": 189
+  },
+  "Y_VNM": {
+   "ok": true,
+   "first": "2009-08-01",
+   "last": "2026-10-29",
+   "rows": 208
+  },
+  "Y_EEM": {
+   "ok": true,
+   "first": "2003-04-01",
+   "last": "2026-10-29",
+   "rows": 284
+  },
+  "Y_VWO": {
+   "ok": true,
+   "first": "2005-03-01",
+   "last": "2026-10-29",
+   "rows": 261
+  },
+  "Y_EFA": {
+   "ok": true,
+   "first": "2001-08-01",
+   "last": "2026-10-29",
+   "rows": 304
+  },
+  "Y_VGK": {
+   "ok": true,
+   "first": "2005-03-01",
+   "last": "2026-10-29",
+   "rows": 261
+  },
+  "Y_ILF": {
+   "ok": true,
+   "first": "2001-10-01",
+   "last": "2026-10-29",
+   "rows": 302
+  },
+  "Y_ACWI": {
+   "ok": true,
+   "first": "2008-03-01",
+   "last": "2026-10-29",
+   "rows": 225
+  },
+  "Y_ACWX": {
+   "ok": true,
+   "first": "2008-04-01",
+   "last": "2026-10-29",
+   "rows": 224
+  },
+  "Y_IWM": {
+   "ok": true,
+   "first": "2000-05-01",
+   "last": "2026-10-29",
+   "rows": 319
+  },
+  "Y_QQQ": {
+   "ok": true,
+   "first": "1999-03-01",
+   "last": "2026-10-29",
+   "rows": 333
+  },
+  "Y_MDY": {
+   "ok": true,
+   "first": "1995-05-01",
+   "last": "2026-10-29",
+   "rows": 379
+  },
+  "Y_RSP": {
+   "ok": true,
+   "first": "2003-05-01",
+   "last": "2026-10-29",
+   "rows": 283
+  },
+  "Y_IWD": {
+   "ok": true,
+   "first": "2000-05-01",
+   "last": "2026-10-29",
+   "rows": 319
+  },
+  "Y_IWF": {
+   "ok": true,
+   "first": "2000-05-01",
+   "last": "2026-10-29",
+   "rows": 319
+  },
+  "Y_MTUM": {
+   "ok": true,
+   "first": "2013-04-01",
+   "last": "2026-10-29",
+   "rows": 164
+  },
+  "Y_USMV": {
+   "ok": true,
+   "first": "2011-10-01",
+   "last": "2026-10-29",
+   "rows": 182
+  },
+  "Y_QUAL": {
+   "ok": true,
+   "first": "2013-07-01",
+   "last": "2026-10-29",
+   "rows": 161
+  },
+  "Y_SPHB": {
+   "ok": true,
+   "first": "2011-05-01",
+   "last": "2026-10-29",
+   "rows": 187
+  },
+  "Y_SPLV": {
+   "ok": true,
+   "first": "2011-05-01",
+   "last": "2026-10-29",
+   "rows": 187
+  },
+  "Y_DBC": {
+   "ok": true,
+   "first": "2006-02-01",
+   "last": "2026-10-29",
+   "rows": 250
+  },
+  "Y_GSG": {
+   "ok": true,
+   "first": "2006-07-01",
+   "last": "2026-10-29",
+   "rows": 245
+  },
+  "Y_PDBC": {
+   "ok": true,
+   "first": "2014-11-01",
+   "last": "2026-10-29",
+   "rows": 145
+  },
+  "Y_DBA": {
+   "ok": true,
+   "first": "2007-01-01",
+   "last": "2026-10-29",
+   "rows": 239
+  },
+  "Y_DBB": {
+   "ok": true,
+   "first": "2007-01-01",
+   "last": "2026-10-29",
+   "rows": 239
+  },
+  "Y_DBE": {
+   "ok": true,
+   "first": "2007-01-01",
+   "last": "2026-10-29",
+   "rows": 239
+  },
+  "Y_DBO": {
+   "ok": true,
+   "first": "2007-01-01",
+   "last": "2026-10-29",
+   "rows": 239
+  },
+  "Y_USO": {
+   "ok": true,
+   "first": "2006-04-01",
+   "last": "2026-10-29",
+   "rows": 248
+  },
+  "Y_BNO": {
+   "ok": true,
+   "first": "2010-06-01",
+   "last": "2026-10-29",
+   "rows": 198
+  },
+  "Y_UNG": {
+   "ok": true,
+   "first": "2007-04-01",
+   "last": "2026-10-29",
+   "rows": 236
+  },
+  "Y_SLV": {
+   "ok": true,
+   "first": "2006-04-01",
+   "last": "2026-10-29",
+   "rows": 248
+  },
+  "Y_GLD": {
+   "ok": true,
+   "first": "2004-11-01",
+   "last": "2026-10-29",
+   "rows": 265
+  },
+  "Y_IAU": {
+   "ok": true,
+   "first": "2005-01-01",
+   "last": "2026-10-29",
+   "rows": 263
+  },
+  "Y_CPER": {
+   "ok": true,
+   "first": "2011-11-01",
+   "last": "2026-10-29",
+   "rows": 181
+  },
+  "Y_PPLT": {
+   "ok": true,
+   "first": "2010-01-01",
+   "last": "2026-10-29",
+   "rows": 203
+  },
+  "Y_URA": {
+   "ok": true,
+   "first": "2010-11-01",
+   "last": "2026-10-29",
+   "rows": 193
+  },
+  "Y_XOP": {
+   "ok": true,
+   "first": "2006-06-01",
+   "last": "2026-10-29",
+   "rows": 246
+  },
+  "Y_COPX": {
+   "ok": true,
+   "first": "2010-04-01",
+   "last": "2026-10-29",
+   "rows": 200
+  },
+  "Y_GDXJ": {
+   "ok": true,
+   "first": "2009-11-01",
+   "last": "2026-10-29",
+   "rows": 205
+  },
+  "Y_SIL": {
+   "ok": true,
+   "first": "2010-04-01",
+   "last": "2026-10-29",
+   "rows": 200
+  },
+  "Y_WEAT": {
+   "ok": true,
+   "first": "2011-09-01",
+   "last": "2026-10-29",
+   "rows": 183
+  },
+  "Y_CORN": {
+   "ok": true,
+   "first": "2010-06-01",
+   "last": "2026-10-29",
+   "rows": 198
+  },
+  "Y_BIL": {
+   "ok": true,
+   "first": "2007-05-01",
+   "last": "2026-10-29",
+   "rows": 235
+  },
+  "Y_SHV": {
+   "ok": true,
+   "first": "2007-01-01",
+   "last": "2026-10-29",
+   "rows": 239
+  },
+  "Y_SHY": {
+   "ok": true,
+   "first": "2002-07-01",
+   "last": "2026-10-29",
+   "rows": 293
+  },
+  "Y_IEI": {
+   "ok": true,
+   "first": "2007-01-01",
+   "last": "2026-10-29",
+   "rows": 239
+  },
+  "Y_IEF": {
+   "ok": true,
+   "first": "2002-07-01",
+   "last": "2026-10-29",
+   "rows": 293
+  },
+  "Y_TLH": {
+   "ok": true,
+   "first": "2007-01-01",
+   "last": "2026-10-29",
+   "rows": 239
+  },
+  "Y_TLT": {
+   "ok": true,
+   "first": "2002-07-01",
+   "last": "2026-10-29",
+   "rows": 293
+  },
+  "Y_EDV": {
+   "ok": true,
+   "first": "2008-01-01",
+   "last": "2026-10-29",
+   "rows": 227
+  },
+  "Y_ZROZ": {
+   "ok": true,
+   "first": "2009-11-01",
+   "last": "2026-10-29",
+   "rows": 205
+  },
+  "Y_TIP": {
+   "ok": true,
+   "first": "2003-12-01",
+   "last": "2026-10-29",
+   "rows": 276
+  },
+  "Y_STIP": {
+   "ok": true,
+   "first": "2010-12-01",
+   "last": "2026-10-29",
+   "rows": 192
+  },
+  "Y_LQD": {
+   "ok": true,
+   "first": "2002-07-01",
+   "last": "2026-10-29",
+   "rows": 293
+  },
+  "Y_HYG": {
+   "ok": true,
+   "first": "2007-04-01",
+   "last": "2026-10-29",
+   "rows": 236
+  },
+  "Y_JNK": {
+   "ok": true,
+   "first": "2007-12-01",
+   "last": "2026-10-29",
+   "rows": 228
+  },
+  "Y_EMB": {
+   "ok": true,
+   "first": "2007-12-01",
+   "last": "2026-10-29",
+   "rows": 228
+  },
+  "Y_EMLC": {
+   "ok": true,
+   "first": "2010-07-01",
+   "last": "2026-10-29",
+   "rows": 197
+  },
+  "Y_BWX": {
+   "ok": true,
+   "first": "2007-10-01",
+   "last": "2026-10-29",
+   "rows": 230
+  },
+  "Y_MBB": {
+   "ok": true,
+   "first": "2007-03-01",
+   "last": "2026-10-29",
+   "rows": 237
+  },
+  "Y_AGG": {
+   "ok": true,
+   "first": "2003-09-01",
+   "last": "2026-10-29",
+   "rows": 279
+  },
+  "Y_BND": {
+   "ok": true,
+   "first": "2007-04-01",
+   "last": "2026-10-29",
+   "rows": 236
+  },
+  "Y_BKLN": {
+   "ok": true,
+   "first": "2011-03-01",
+   "last": "2026-10-29",
+   "rows": 189
+  },
+  "Y_FLOT": {
+   "ok": true,
+   "first": "2011-06-01",
+   "last": "2026-10-29",
+   "rows": 186
+  },
+  "Y_UUP": {
+   "ok": true,
+   "first": "2007-03-01",
+   "last": "2026-10-29",
+   "rows": 237
+  },
+  "Y_UDN": {
+   "ok": true,
+   "first": "2007-03-01",
+   "last": "2026-10-29",
+   "rows": 237
+  },
+  "Y_FXE": {
+   "ok": true,
+   "first": "2005-12-01",
+   "last": "2026-10-29",
+   "rows": 252
+  },
+  "Y_FXY": {
+   "ok": true,
+   "first": "2007-02-01",
+   "last": "2026-10-29",
+   "rows": 238
+  },
+  "Y_FXF": {
+   "ok": true,
+   "first": "2006-06-01",
+   "last": "2026-10-29",
+   "rows": 246
+  },
+  "Y_FXB": {
+   "ok": true,
+   "first": "2006-06-01",
+   "last": "2026-10-29",
+   "rows": 246
+  },
+  "Y_FXA": {
+   "ok": true,
+   "first": "2006-06-01",
+   "last": "2026-10-29",
+   "rows": 246
+  },
+  "Y_FXC": {
+   "ok": true,
+   "first": "2006-06-01",
+   "last": "2026-10-29",
+   "rows": 246
+  },
+  "Y_CEW": {
+   "ok": true,
+   "first": "2009-06-01",
+   "last": "2026-10-29",
+   "rows": 210
+  },
+  "Y_CYB": {
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  "Y_VIXY": {
+   "ok": true,
+   "first": "2011-01-01",
+   "last": "2026-10-29",
+   "rows": 191
+  },
+  "Y_VXX": {
+   "ok": true,
+   "first": "2018-01-01",
+   "last": "2026-10-29",
+   "rows": 107
+  },
+  "Y_SVXY": {
+   "ok": true,
+   "first": "2011-10-01",
+   "last": "2026-10-29",
+   "rows": 182
+  },
+  "Y_SH": {
+   "ok": true,
+   "first": "2006-06-01",
+   "last": "2026-10-29",
+   "rows": 246
+  },
+  "Y_PSQ": {
+   "ok": true,
+   "first": "2006-06-01",
+   "last": "2026-10-29",
+   "rows": 246
+  },
+  "Y_TAIL": {
+   "ok": true,
+   "first": "2017-04-01",
+   "last": "2026-10-29",
+   "rows": 116
+  },
+  "Y_BTAL": {
+   "ok": true,
+   "first": "2011-09-01",
+   "last": "2026-10-29",
+   "rows": 183
+  },
+  "Y_DBMF": {
+   "ok": true,
+   "first": "2019-05-01",
+   "last": "2026-10-29",
+   "rows": 91
+  },
+  "Y_KMLM": {
+   "ok": true,
+   "first": "2020-12-01",
+   "last": "2026-10-29",
+   "rows": 72
+  },
+  "Y_CTA": {
+   "ok": true,
+   "first": "2022-03-01",
+   "last": "2026-10-29",
+   "rows": 57
+  },
+  "Y_EPI": {
+   "ok": true,
+   "first": "2008-02-01",
+   "last": "2026-10-29",
+   "rows": 226
+  },
+  "Y_KSA": {
+   "ok": true,
+   "first": "2015-09-01",
+   "last": "2026-10-29",
+   "rows": 135
+  },
+  "Y_DXJ": {
+   "ok": true,
+   "first": "2006-06-01",
+   "last": "2026-10-29",
+   "rows": 246
+  },
+  "Y_ENOR": {
+   "ok": true,
+   "first": "2012-01-01",
+   "last": "2026-10-29",
+   "rows": 179
+  },
+  "Y_EWL": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_EWI": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_EWQ": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_EWD": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_EZU": {
+   "ok": true,
+   "first": "2000-07-01",
+   "last": "2026-10-29",
+   "rows": 317
+  },
+  "Y_KWEB": {
+   "ok": true,
+   "first": "2013-08-01",
+   "last": "2026-10-29",
+   "rows": 160
+  },
+  "Y_EWP": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_EWN": {
+   "ok": true,
+   "first": "1996-03-01",
+   "last": "2026-10-29",
+   "rows": 369
+  },
+  "Y_EPHE": {
+   "ok": true,
+   "first": "2010-09-01",
+   "last": "2026-10-29",
+   "rows": 195
+  },
+  "Y_ASEA": {
+   "ok": true,
+   "first": "2011-02-01",
+   "last": "2026-10-29",
+   "rows": 190
+  },
+  "Y_EMXC": {
+   "ok": true,
+   "first": "2017-07-01",
+   "last": "2026-10-29",
+   "rows": 113
+  },
+  "Y_BNDX": {
+   "ok": true,
+   "first": "2013-06-01",
+   "last": "2026-10-29",
+   "rows": 162
+  },
+  "Y_XLY": {
+   "ok": true,
+   "first": "1998-12-01",
+   "last": "2026-10-29",
+   "rows": 336
+  },
+  "Y_SOXX": {
+   "ok": true,
+   "first": "2001-07-01",
+   "last": "2026-10-29",
+   "rows": 305
+  },
+  "Y_XBI": {
+   "ok": true,
+   "first": "2006-02-01",
+   "last": "2026-10-29",
+   "rows": 250
+  },
+  "Y_IBB": {
+   "ok": true,
+   "first": "2001-02-01",
+   "last": "2026-10-29",
+   "rows": 310
+  },
+  "Y_JETS": {
+   "ok": true,
+   "first": "2015-04-01",
+   "last": "2026-10-29",
+   "rows": 140
+  },
+  "Y_LIT": {
+   "ok": true,
+   "first": "2010-07-01",
+   "last": "2026-10-29",
+   "rows": 197
+  },
+  "Y_REMX": {
+   "ok": true,
+   "first": "2010-10-01",
+   "last": "2026-10-29",
+   "rows": 194
+  },
+  "Y__SKEW": {
+   "ok": true,
+   "first": "1990-01-01",
+   "last": "2026-10-28",
+   "rows": 443
+  },
+  "Y_ES_F": {
+   "ok": true,
+   "first": "2000-09-01",
+   "last": "2026-10-29",
+   "rows": 269
+  },
+  "Y_TRY_X": {
+   "ok": true,
+   "first": "2005-01-01",
+   "last": "2026-10-29",
+   "rows": 263
+  },
+  "Y_ARS_X": {
+   "ok": true,
+   "first": "2001-07-31",
+   "last": "2026-10-29",
+   "rows": 291
+  },
+  "Y_ZAR_X": {
+   "ok": true,
+   "first": "2003-12-01",
+   "last": "2026-10-29",
+   "rows": 276
+  },
+  "Y_LTPZ": {
+   "ok": true,
+   "first": "2009-09-01",
+   "last": "2026-10-29",
+   "rows": 207
+  },
+  "Y_VTIP": {
+   "ok": true,
+   "first": "2012-10-01",
+   "last": "2026-10-29",
+   "rows": 170
+  },
+  "Y_SGOV": {
+   "ok": true,
+   "first": "2020-06-01",
+   "last": "2026-10-29",
+   "rows": 78
+  },
+  "Y_TBF": {
+   "ok": true,
+   "first": "2009-08-01",
+   "last": "2026-10-29",
+   "rows": 208
+  },
+  "Y_BIZD": {
+   "ok": true,
+   "first": "2013-02-01",
+   "last": "2026-10-29",
+   "rows": 166
+  },
+  "Y_PSP": {
+   "ok": true,
+   "first": "2006-10-01",
+   "last": "2026-10-29",
+   "rows": 242
+  },
+  "Y_VNQ": {
+   "ok": true,
+   "first": "2004-09-01",
+   "last": "2026-10-29",
+   "rows": 267
+  },
+  "Y_XHB": {
+   "ok": true,
+   "first": "2006-02-01",
+   "last": "2026-10-29",
+   "rows": 250
+  },
+  "Y_XLK": {
+   "ok": true,
+   "first": "1998-12-01",
+   "last": "2026-10-29",
+   "rows": 336
+  },
+  "Y_XLF": {
+   "ok": true,
+   "first": "1998-12-01",
+   "last": "2026-10-29",
+   "rows": 336
+  },
+  "Y__GSPC": {
+   "ok": true,
+   "first": "1985-01-01",
+   "last": "2026-10-29",
+   "rows": 503
+  },
+  "Y__IXIC": {
+   "ok": true,
+   "first": "1985-01-01",
+   "last": "2026-10-29",
+   "rows": 503
+  },
+  "Y__RUT": {
+   "ok": true,
+   "first": "1987-09-01",
+   "last": "2026-10-29",
+   "rows": 471
+  },
+  "Y__N225": {
+   "ok": true,
+   "first": "1984-12-31",
+   "last": "2026-10-29",
+   "rows": 503
+  },
+  "Y__KS11": {
+   "ok": true,
+   "first": "1996-11-30",
+   "last": "2026-10-29",
+   "rows": 360
+  },
+  "Y__BVSP": {
+   "ok": true,
+   "first": "1993-04-01",
+   "last": "2026-10-29",
+   "rows": 404
+  },
+  "Y__HSI": {
+   "ok": true,
+   "first": "1986-11-30",
+   "last": "2026-10-29",
+   "rows": 480
+  },
+  "Y__TWII": {
+   "ok": true,
+   "first": "1997-06-30",
+   "last": "2026-10-29",
+   "rows": 353
+  },
+  "Y__BSESN": {
+   "ok": true,
+   "first": "1997-06-30",
+   "last": "2026-10-29",
+   "rows": 353
+  },
+  "Y__MXX": {
+   "ok": true,
+   "first": "1991-11-01",
+   "last": "2026-10-29",
+   "rows": 421
+  },
+  "Y__GDAXI": {
+   "ok": true,
+   "first": "1987-11-30",
+   "last": "2026-10-29",
+   "rows": 468
+  },
+  "Y__FTSE": {
+   "ok": true,
+   "first": "1985-01-01",
+   "last": "2026-10-29",
+   "rows": 503
+  },
+  "Y__FCHI": {
+   "ok": true,
+   "first": "1990-02-28",
+   "last": "2026-10-29",
+   "rows": 441
+  },
+  "Y__STOXX50E": {
+   "ok": true,
+   "first": "2007-02-28",
+   "last": "2026-10-29",
+   "rows": 237
+  },
+  "Y__AXJO": {
+   "ok": true,
+   "first": "1992-11-30",
+   "last": "2026-10-29",
+   "rows": 408
+  },
+  "Y__GSPTSE": {
+   "ok": true,
+   "first": "1985-01-01",
+   "last": "2026-10-29",
+   "rows": 503
+  },
+  "Y_000001_SS": {
+   "ok": true,
+   "first": "1997-06-30",
+   "last": "2026-10-29",
+   "rows": 353
+  },
+  "Y__VIX": {
+   "ok": true,
+   "first": "1990-01-01",
+   "last": "2026-10-29",
+   "rows": 443
+  },
+  "Y__VIX3M": {
+   "ok": true,
+   "first": "2006-07-01",
+   "last": "2026-10-29",
+   "rows": 245
+  },
+  "Y__MOVE": {
+   "ok": true,
+   "first": "2002-11-01",
+   "last": "2026-10-29",
+   "rows": 289
+  },
+  "Y__TNX": {
+   "ok": true,
+   "first": "1985-01-01",
+   "last": "2026-10-29",
+   "rows": 503
+  },
+  "Y__IRX": {
+   "ok": true,
+   "first": "1985-01-01",
+   "last": "2026-10-29",
+   "rows": 503
+  },
+  "Y__TYX": {
+   "ok": true,
+   "first": "1985-01-01",
+   "last": "2026-10-29",
+   "rows": 503
+  },
+  "Y_CL_F": {
+   "ok": true,
+   "first": "2000-08-01",
+   "last": "2026-10-29",
+   "rows": 270
+  },
+  "Y_BZ_F": {
+   "ok": true,
+   "first": "2007-08-01",
+   "last": "2026-10-29",
+   "rows": 199
+  },
+  "Y_GC_F": {
+   "ok": true,
+   "first": "2000-08-01",
+   "last": "2026-10-29",
+   "rows": 270
+  },
+  "Y_SI_F": {
+   "ok": true,
+   "first": "2000-08-01",
+   "last": "2026-10-29",
+   "rows": 270
+  },
+  "Y_HG_F": {
+   "ok": true,
+   "first": "2000-08-01",
+   "last": "2026-10-29",
+   "rows": 270
+  },
+  "Y_NG_F": {
+   "ok": true,
+   "first": "2000-08-01",
+   "last": "2026-10-29",
+   "rows": 270
+  },
+  "Y_PL_F": {
+   "ok": true,
+   "first": "1997-10-01",
+   "last": "2026-10-29",
+   "rows": 287
+  },
+  "Y_ZC_F": {
+   "ok": true,
+   "first": "2000-07-01",
+   "last": "2026-10-29",
+   "rows": 271
+  },
+  "Y_ZW_F": {
+   "ok": true,
+   "first": "2000-07-01",
+   "last": "2026-10-29",
+   "rows": 271
+  },
+  "Y_ZS_F": {
+   "ok": true,
+   "first": "2000-09-01",
+   "last": "2026-10-29",
+   "rows": 269
+  },
+  "Y_KC_F": {
+   "ok": true,
+   "first": "2000-01-01",
+   "last": "2026-10-29",
+   "rows": 277
+  },
+  "Y_CT_F": {
+   "ok": true,
+   "first": "2000-01-01",
+   "last": "2026-10-29",
+   "rows": 323
+  },
+  "Y_DX_Y_NYB": {
+   "ok": true,
+   "first": "1985-01-01",
+   "last": "2026-10-29",
+   "rows": 503
+  },
+  "Y_EURUSD_X": {
+   "ok": true,
+   "first": "2003-12-01",
+   "last": "2026-10-29",
+   "rows": 276
+  },
+  "Y_JPY_X": {
+   "ok": true,
+   "first": "1996-09-30",
+   "last": "2026-10-29",
+   "rows": 362
+  },
+  "Y_KRW_X": {
+   "ok": true,
+   "first": "2003-12-01",
+   "last": "2026-10-29",
+   "rows": 276
+  },
+  "Y_BRL_X": {
+   "ok": true,
+   "first": "2003-12-01",
+   "last": "2026-10-29",
+   "rows": 258
+  },
+  "Y_CNY_X": {
+   "ok": true,
+   "first": "2001-06-30",
+   "last": "2026-10-29",
+   "rows": 298
+  },
+  "Y_INR_X": {
+   "ok": true,
+   "first": "2003-12-01",
+   "last": "2026-10-29",
+   "rows": 276
+  },
+  "Y_MXN_X": {
+   "ok": true,
+   "first": "2003-12-01",
+   "last": "2026-10-29",
+   "rows": 276
+  },
+  "Y_AUDUSD_X": {
+   "ok": true,
+   "first": "2006-05-31",
+   "last": "2026-10-29",
+   "rows": 246
+  },
+  "Y_BTC_USD": {
+   "ok": true,
+   "first": "2014-09-01",
+   "last": "2026-10-29",
+   "rows": 147
+  },
+  "CPIAUCSL": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-09-01",
+   "rows": 956
+  },
+  "CPIAUCNS": {
+   "ok": true,
+   "first": "1913-01-01",
+   "last": "2026-09-01",
+   "rows": 1364
+  },
+  "PCEPI": {
+   "ok": true,
+   "first": "1959-01-01",
+   "last": "2026-09-01",
+   "rows": 813
+  },
+  "PAYEMS": {
+   "ok": true,
+   "first": "1939-01-01",
+   "last": "2026-09-01",
+   "rows": 1053
+  },
+  "ICSA": {
+   "ok": true,
+   "first": "1967-01-07",
+   "last": "2026-10-24",
+   "rows": 3121
+  },
+  "INDPRO": {
+   "ok": true,
+   "first": "1919-01-01",
+   "last": "2026-09-01",
+   "rows": 1293
+  },
+  "RSAFS": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "UMCSENT": {
+   "ok": true,
+   "first": "1952-11-01",
+   "last": "2026-09-01",
+   "rows": 677
+  },
+  "NFCI": {
+   "ok": true,
+   "first": "1971-01-08",
+   "last": "2026-10-23",
+   "rows": 2912
+  },
+  "ANFCI": {
+   "ok": true,
+   "first": "1971-01-08",
+   "last": "2026-10-23",
+   "rows": 2912
+  },
+  "STLFSI4": {
+   "ok": true,
+   "first": "1993-12-31",
+   "last": "2026-10-23",
+   "rows": 1713
+  },
+  "BAMLH0A0HYM2": {
+   "ok": true,
+   "first": "2023-10-30",
+   "last": "2026-10-28",
+   "rows": 786
+  },
+  "BAMLC0A0CM": {
+   "ok": true,
+   "first": "2023-10-30",
+   "last": "2026-10-28",
+   "rows": 785
+  },
+  "BAMLEMCBPIOAS": {
+   "ok": true,
+   "first": "2023-10-30",
+   "last": "2026-10-28",
+   "rows": 786
+  },
+  "T10Y3M": {
+   "ok": true,
+   "first": "1982-01-04",
+   "last": "2026-10-28",
+   "rows": 11208
+  },
+  "T10Y2Y": {
+   "ok": true,
+   "first": "1976-06-01",
+   "last": "2026-10-28",
+   "rows": 12599
+  },
+  "DGS3MO": {
+   "ok": true,
+   "first": "1981-09-01",
+   "last": "2026-10-27",
+   "rows": 11288
+  },
+  "DGS2": {
+   "ok": true,
+   "first": "1976-06-01",
+   "last": "2026-10-27",
+   "rows": 12598
+  },
+  "DGS10": {
+   "ok": true,
+   "first": "1962-01-02",
+   "last": "2026-10-27",
+   "rows": 16190
+  },
+  "DGS30": {
+   "ok": true,
+   "first": "1977-02-15",
+   "last": "2026-10-27",
+   "rows": 12420
+  },
+  "DFII10": {
+   "ok": true,
+   "first": "2003-01-02",
+   "last": "2026-10-27",
+   "rows": 5959
+  },
+  "T10YIE": {
+   "ok": true,
+   "first": "2003-01-02",
+   "last": "2026-10-28",
+   "rows": 5960
+  },
+  "T5YIE": {
+   "ok": true,
+   "first": "2003-01-02",
+   "last": "2026-10-28",
+   "rows": 5960
+  },
+  "BOGMBASE": {
+   "ok": true,
+   "first": "1959-01-01",
+   "last": "2026-09-01",
+   "rows": 813
+  },
+  "TOTRESNS": {
+   "ok": true,
+   "first": "1959-01-01",
+   "last": "2026-09-01",
+   "rows": 813
+  },
+  "WRESBAL": {
+   "ok": true,
+   "first": "2002-12-18",
+   "last": "2026-10-21",
+   "rows": 1245
+  },
+  "M2SL": {
+   "ok": true,
+   "first": "1959-01-01",
+   "last": "2026-09-01",
+   "rows": 813
+  },
+  "M1SL": {
+   "ok": true,
+   "first": "1959-01-01",
+   "last": "2026-09-01",
+   "rows": 813
+  },
+  "TOTBKCR": {
+   "ok": true,
+   "first": "1973-01-03",
+   "last": "2026-10-14",
+   "rows": 2807
+  },
+  "BUSLOANS": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-09-01",
+   "rows": 957
+  },
+  "DRTSCILM": {
+   "ok": true,
+   "first": "1990-04-01",
+   "last": "2026-07-01",
+   "rows": 146
+  },
+  "CSUSHPINSA": {
+   "ok": true,
+   "first": "1987-01-01",
+   "last": "2026-08-01",
+   "rows": 476
+  },
+  "HOUST": {
+   "ok": true,
+   "first": "1959-01-01",
+   "last": "2026-09-01",
+   "rows": 813
+  },
+  "AWHMAN": {
+   "ok": true,
+   "first": "1939-01-01",
+   "last": "2026-09-01",
+   "rows": 1053
+  },
+  "TEMPHELPS": {
+   "ok": true,
+   "first": "1990-01-01",
+   "last": "2026-09-01",
+   "rows": 441
+  },
+  "CCSA": {
+   "ok": true,
+   "first": "1967-01-07",
+   "last": "2026-10-17",
+   "rows": 3120
+  },
+  "IC4WSA": {
+   "ok": true,
+   "first": "1967-01-28",
+   "last": "2026-10-24",
+   "rows": 3118
+  },
+  "JTSJOL": {
+   "ok": true,
+   "first": "2000-12-01",
+   "last": "2026-08-01",
+   "rows": 309
+  },
+  "GDPC1": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-07-01",
+   "rows": 319
+  },
+  "A191RL1Q225SBEA": {
+   "ok": true,
+   "first": "1947-04-01",
+   "last": "2026-07-01",
+   "rows": 318
+  },
+  "XTEXVA01KRM667S": {
+   "ok": true,
+   "first": "1957-01-01",
+   "last": "2026-08-01",
+   "rows": 836
+  },
+  "XTEXVA01CNM667S": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-08-01",
+   "rows": 416
+  },
+  "XTEXVA01DEM667S": {
+   "ok": true,
+   "first": "1957-01-01",
+   "last": "2026-07-01",
+   "rows": 835
+  },
+  "XTEXVA01JPM667S": {
+   "ok": true,
+   "first": "1957-01-01",
+   "last": "2026-08-01",
+   "rows": 836
+  },
+  "XTEXVA01TWM667S": {
+   "ok": false,
+   "error": "HTTP 400"
+  },
+  "USALOLITONOSTSAM": {
+   "ok": true,
+   "first": "1955-01-01",
+   "last": "2024-01-01",
+   "rows": 829
+  },
+  "CHNLOLITONOSTSAM": {
+   "ok": true,
+   "first": "1992-05-01",
+   "last": "2024-01-01",
+   "rows": 381
+  },
+  "OECDLOLITOAASTSAM": {
+   "ok": true,
+   "first": "1961-06-01",
+   "last": "2022-11-01",
+   "rows": 738
+  },
+  "KORLOLITONOSTSAM": {
+   "ok": true,
+   "first": "1990-01-01",
+   "last": "2024-01-01",
+   "rows": 409
+  },
+  "BRALOLITONOSTSAM": {
+   "ok": true,
+   "first": "1989-01-01",
+   "last": "2024-01-01",
+   "rows": 421
+  },
+  "CPALTT01CNM659N": {
+   "ok": true,
+   "first": "1987-01-01",
+   "last": "2025-04-01",
+   "rows": 460
+  },
+  "CPALTT01BRM659N": {
+   "ok": true,
+   "first": "1980-12-01",
+   "last": "2025-04-01",
+   "rows": 533
+  },
+  "CPALTT01KRM659N": {
+   "ok": true,
+   "first": "1960-01-01",
+   "last": "2023-11-01",
+   "rows": 767
+  },
+  "INTDSRBRM193N": {
+   "ok": true,
+   "first": "1996-10-01",
+   "last": "2026-09-01",
+   "rows": 360
+  },
+  "IRSTCI01KRM156N": {
+   "ok": true,
+   "first": "1991-01-01",
+   "last": "2026-09-01",
+   "rows": 429
+  },
+  "DEXKOUS": {
+   "ok": true,
+   "first": "1981-04-13",
+   "last": "2026-10-23",
+   "rows": 11381
+  },
+  "DEXBZUS": {
+   "ok": true,
+   "first": "1995-01-02",
+   "last": "2026-10-23",
+   "rows": 7978
+  },
+  "DEXCHUS": {
+   "ok": true,
+   "first": "1981-01-02",
+   "last": "2026-10-23",
+   "rows": 11435
+  },
+  "DEXINUS": {
+   "ok": true,
+   "first": "1973-01-02",
+   "last": "2026-10-23",
+   "rows": 13487
+  },
+  "DEXMXUS": {
+   "ok": true,
+   "first": "1993-11-08",
+   "last": "2026-10-23",
+   "rows": 8263
+  },
+  "DTWEXEMEGS": {
+   "ok": true,
+   "first": "2006-01-02",
+   "last": "2026-10-23",
+   "rows": 5217
+  },
+  "DTWEXAFEGS": {
+   "ok": true,
+   "first": "2006-01-02",
+   "last": "2026-10-23",
+   "rows": 5217
+  },
+  "RBUSBIS": {
+   "ok": true,
+   "first": "1994-01-01",
+   "last": "2026-07-01",
+   "rows": 391
+  },
+  "NBUSBIS": {
+   "ok": true,
+   "first": "1994-01-01",
+   "last": "2026-07-01",
+   "rows": 391
+  },
+  "DCOILWTICO": {
+   "ok": true,
+   "first": "1986-01-02",
+   "last": "2026-10-27",
+   "rows": 9532
+  },
+  "DCOILBRENTEU": {
+   "ok": true,
+   "first": "1987-05-20",
+   "last": "2026-10-27",
+   "rows": 9117
+  },
+  "PCOPPUSDM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PALUMUSDM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PNICKUSDM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PZINCUSDM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PWHEAMTUSDM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PMAIZMTUSDM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PSOYBUSDM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PNGASUSUSDM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PALLFNFINDEXM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PNRGINDEXM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PMETAINDEXM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PFOODINDEXM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PRAWMINDEXM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PINDUINDEXM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PSILVERUSDM": {
+   "ok": false,
+   "error": "HTTP 400"
+  },
+  "WTREGEN": {
+   "ok": true,
+   "first": "2002-12-18",
+   "last": "2026-10-21",
+   "rows": 1245
+  },
+  "RRPONTSYD": {
+   "ok": true,
+   "first": "2003-02-07",
+   "last": "2026-10-28",
+   "rows": 3356
+  },
+  "WALCL": {
+   "ok": true,
+   "first": "2002-12-18",
+   "last": "2026-10-21",
+   "rows": 1245
+  },
+  "GFDEBTN": {
+   "ok": true,
+   "first": "1966-01-01",
+   "last": "2026-04-01",
+   "rows": 242
+  },
+  "FYFSGDA188S": {
+   "ok": true,
+   "first": "1929-01-01",
+   "last": "2025-01-01",
+   "rows": 97
+  },
+  "A091RC1Q027SBEA": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-07-01",
+   "rows": 319
+  },
+  "QUSR628BIS": {
+   "ok": true,
+   "first": "1970-01-01",
+   "last": "2026-01-01",
+   "rows": 225
+  },
+  "QKRR628BIS": {
+   "ok": true,
+   "first": "1975-01-01",
+   "last": "2026-01-01",
+   "rows": 205
+  },
+  "QBRR628BIS": {
+   "ok": true,
+   "first": "2001-01-01",
+   "last": "2026-01-01",
+   "rows": 101
+  },
+  "QCNR628BIS": {
+   "ok": true,
+   "first": "2005-04-01",
+   "last": "2026-01-01",
+   "rows": 84
+  },
+  "USEPUINDXD": {
+   "ok": true,
+   "first": "1985-01-01",
+   "last": "2026-10-27",
+   "rows": 15275
+  },
+  "GEPUCURRENT": {
+   "ok": true,
+   "first": "1997-01-01",
+   "last": "2026-07-01",
+   "rows": 355
+  },
+  "SP500": {
+   "ok": true,
+   "first": "2016-10-31",
+   "last": "2026-10-28",
+   "rows": 2512
+  },
+  "CPIENGSL": {
+   "ok": true,
+   "first": "1957-01-01",
+   "last": "2026-09-01",
+   "rows": 836
+  },
+  "CPIUFDSL": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-09-01",
+   "rows": 956
+  },
+  "CUSR0000SACL1E": {
+   "ok": true,
+   "first": "1957-01-01",
+   "last": "2026-09-01",
+   "rows": 836
+  },
+  "CUSR0000SASLE": {
+   "ok": true,
+   "first": "1967-01-01",
+   "last": "2026-09-01",
+   "rows": 716
+  },
+  "CPATAX": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-04-01",
+   "rows": 318
+  },
+  "A446RC1Q027SBEA": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-04-01",
+   "rows": 318
+  },
+  "PSAVERT": {
+   "ok": true,
+   "first": "1959-01-01",
+   "last": "2026-09-01",
+   "rows": 813
+  },
+  "REVOLSL": {
+   "ok": true,
+   "first": "1968-01-01",
+   "last": "2026-08-01",
+   "rows": 704
+  },
+  "GFDEGDQ188S": {
+   "ok": true,
+   "first": "1966-01-01",
+   "last": "2026-04-01",
+   "rows": 242
+  },
+  "MTSDS133FMS": {
+   "ok": true,
+   "first": "1980-10-01",
+   "last": "2026-09-01",
+   "rows": 552
+  },
+  "TDSP": {
+   "ok": true,
+   "first": "2005-01-01",
+   "last": "2026-04-01",
+   "rows": 86
+  },
+  "GACDFSA066MSFRBPHI": {
+   "ok": true,
+   "first": "1968-05-01",
+   "last": "2026-10-01",
+   "rows": 702
+  },
+  "IRLTLT01JPM156N": {
+   "ok": true,
+   "first": "1989-01-01",
+   "last": "2026-09-01",
+   "rows": 453
+  },
+  "IRLTLT01DEM156N": {
+   "ok": true,
+   "first": "1956-05-01",
+   "last": "2026-09-01",
+   "rows": 845
+  },
+  "IRLTLT01GBM156N": {
+   "ok": true,
+   "first": "1960-01-01",
+   "last": "2026-09-01",
+   "rows": 801
+  },
+  "JPNCPIALLMINMEI": {
+   "ok": true,
+   "first": "1955-01-01",
+   "last": "2021-06-01",
+   "rows": 798
+  },
+  "BRACPIALLMINMEI": {
+   "ok": true,
+   "first": "1979-12-01",
+   "last": "2025-04-01",
+   "rows": 545
+  },
+  "ECBDFR": {
+   "ok": true,
+   "first": "1999-01-01",
+   "last": "2026-10-29",
+   "rows": 10164
+  },
+  "JPNASSETS": {
+   "ok": true,
+   "first": "1998-04-01",
+   "last": "2026-09-01",
+   "rows": 342
+  },
+  "ECBASSETSW": {
+   "ok": true,
+   "first": "1999-01-01",
+   "last": "2026-10-23",
+   "rows": 1452
+  },
+  "TREAST": {
+   "ok": true,
+   "first": "2002-12-18",
+   "last": "2026-10-21",
+   "rows": 1245
+  },
+  "FDHBFIN": {
+   "ok": true,
+   "first": "1970-01-01",
+   "last": "2026-01-01",
+   "rows": 225
+  },
+  "FDHBFRBN": {
+   "ok": true,
+   "first": "1970-01-01",
+   "last": "2026-04-01",
+   "rows": 226
+  },
+  "MICH": {
+   "ok": true,
+   "first": "1978-01-01",
+   "last": "2026-09-01",
+   "rows": 585
+  },
+  "OVXCLS": {
+   "ok": true,
+   "first": "2007-05-10",
+   "last": "2026-10-28",
+   "rows": 4901
+  },
+  "BAMLH0A1HYBB": {
+   "ok": true,
+   "first": "2023-10-30",
+   "last": "2026-10-28",
+   "rows": 786
+  },
+  "NROU": {
+   "ok": true,
+   "first": "1949-01-01",
+   "last": "2036-10-01",
+   "rows": 352
+  },
+  "OPHNFB": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-04-01",
+   "rows": 318
+  },
+  "IPN213111N": {
+   "ok": true,
+   "first": "1972-01-01",
+   "last": "2026-09-01",
+   "rows": 657
+  },
+  "DTB3": {
+   "ok": true,
+   "first": "1954-01-04",
+   "last": "2026-10-27",
+   "rows": 18196
+  },
+  "USEPUINDXM": {
+   "ok": true,
+   "first": "1985-01-01",
+   "last": "2026-09-01",
+   "rows": 501
+  },
+  "MCOILWTICO": {
+   "ok": true,
+   "first": "1986-01-01",
+   "last": "2026-09-01",
+   "rows": 489
+  },
+  "GDPDEF": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-07-01",
+   "rows": 319
+  },
+  "ULCNFB": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-04-01",
+   "rows": 318
+  },
+  "PRS85006173": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-04-01",
+   "rows": 318
+  },
+  "TNWBSHNO": {
+   "ok": true,
+   "first": "1945-10-01",
+   "last": "2026-04-01",
+   "rows": 305
+  },
+  "CMDEBT": {
+   "ok": true,
+   "first": "1945-10-01",
+   "last": "2026-04-01",
+   "rows": 305
+  },
+  "BCNSDODNS": {
+   "ok": true,
+   "first": "1945-10-01",
+   "last": "2026-04-01",
+   "rows": 305
+  },
+  "DSPIC96": {
+   "ok": true,
+   "first": "1959-01-01",
+   "last": "2026-09-01",
+   "rows": 813
+  },
+  "FGEXPND": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-07-01",
+   "rows": 319
+  },
+  "FGRECPT": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-04-01",
+   "rows": 318
+  },
+  "FDEFX": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-07-01",
+   "rows": 319
+  },
+  "B235RC1Q027SBEA": {
+   "ok": true,
+   "first": "1959-01-01",
+   "last": "2026-07-01",
+   "rows": 271
+  },
+  "IMPGS": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-07-01",
+   "rows": 319
+  },
+  "MHHNGSP": {
+   "ok": true,
+   "first": "1997-01-01",
+   "last": "2026-09-01",
+   "rows": 357
+  },
+  "GASREGW": {
+   "ok": true,
+   "first": "1990-08-20",
+   "last": "2026-10-26",
+   "rows": 1883
+  },
+  "UNRATE": {
+   "ok": true,
+   "first": "1948-01-01",
+   "last": "2026-09-01",
+   "rows": 944
+  },
+  "IRSTCB01JPM156N": {
+   "ok": true,
+   "first": "1960-01-01",
+   "last": "2023-12-01",
+   "rows": 768
+  },
+  "IRSTCI01BRM156N": {
+   "ok": true,
+   "first": "1996-10-01",
+   "last": "2026-09-01",
+   "rows": 360
+  },
+  "IR3TIB01KRM156N": {
+   "ok": true,
+   "first": "1991-01-01",
+   "last": "2026-09-01",
+   "rows": 429
+  },
+  "RBJPBIS": {
+   "ok": true,
+   "first": "1994-01-01",
+   "last": "2026-07-01",
+   "rows": 391
+  },
+  "RBKRBIS": {
+   "ok": true,
+   "first": "1994-01-01",
+   "last": "2026-07-01",
+   "rows": 391
+  },
+  "RBBRBIS": {
+   "ok": true,
+   "first": "1994-01-01",
+   "last": "2026-07-01",
+   "rows": 391
+  },
+  "RBCNBIS": {
+   "ok": true,
+   "first": "1994-01-01",
+   "last": "2026-07-01",
+   "rows": 391
+  },
+  "RBEUBIS": {
+   "ok": false,
+   "error": "HTTP 400"
+  },
+  "TWEXB": {
+   "ok": true,
+   "first": "1995-01-04",
+   "last": "2020-01-01",
+   "rows": 1305
+  },
+  "BOGZ1FL073164003Q": {
+   "ok": true,
+   "first": "1945-10-01",
+   "last": "2026-04-01",
+   "rows": 305
+  },
+  "DRCCLACBS": {
+   "ok": true,
+   "first": "1991-01-01",
+   "last": "2026-04-01",
+   "rows": 142
+  },
+  "DRALACBS": {
+   "ok": true,
+   "first": "1985-01-01",
+   "last": "2026-04-01",
+   "rows": 166
+  },
+  "CORCCACBS": {
+   "ok": true,
+   "first": "1985-01-01",
+   "last": "2026-04-01",
+   "rows": 166
+  },
+  "WLRRAL": {
+   "ok": true,
+   "first": "2002-12-18",
+   "last": "2026-10-21",
+   "rows": 1245
+  },
+  "DGS1": {
+   "ok": true,
+   "first": "1962-01-02",
+   "last": "2026-10-27",
+   "rows": 16190
+  },
+  "DGS5": {
+   "ok": true,
+   "first": "1962-01-02",
+   "last": "2026-10-27",
+   "rows": 16190
+  },
+  "DGS7": {
+   "ok": true,
+   "first": "1969-07-01",
+   "last": "2026-10-27",
+   "rows": 14320
+  },
+  "DGS20": {
+   "ok": true,
+   "first": "1962-01-02",
+   "last": "2026-10-27",
+   "rows": 14501
+  },
+  "MSACSR": {
+   "ok": true,
+   "first": "1963-01-01",
+   "last": "2026-09-01",
+   "rows": 765
+  },
+  "AHETPI": {
+   "ok": true,
+   "first": "1964-01-01",
+   "last": "2026-09-01",
+   "rows": 753
+  },
+  "GGGDTAJPA188N": {
+   "ok": true,
+   "first": "1980-01-01",
+   "last": "2023-01-01",
+   "rows": 44
+  },
+  "IIPUSNETIQ": {
+   "ok": true,
+   "first": "2006-01-01",
+   "last": "2026-04-01",
+   "rows": 82
+  },
+  "CLF16OV": {
+   "ok": true,
+   "first": "1948-01-01",
+   "last": "2026-09-01",
+   "rows": 944
+  },
+  "MMMFFAQ027S": {
+   "ok": true,
+   "first": "1945-10-01",
+   "last": "2026-04-01",
+   "rows": 305
+  },
+  "DRBLACBS": {
+   "ok": true,
+   "first": "1987-01-01",
+   "last": "2026-04-01",
+   "rows": 158
+  },
+  "PURANUSDM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "PNGASEUUSDM": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 417
+  },
+  "CHNPIEATI01GYM": {
+   "ok": true,
+   "first": "1999-01-01",
+   "last": "2022-12-01",
+   "rows": 288
+  },
+  "XTIMVA01CNM667S": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-08-01",
+   "rows": 416
+  },
+  "DTCDFSA066MSFRBPHI": {
+   "ok": true,
+   "first": "1968-05-01",
+   "last": "2026-10-01",
+   "rows": 702
+  },
+  "PPCDFSA066MSFRBPHI": {
+   "ok": true,
+   "first": "1968-05-01",
+   "last": "2026-10-01",
+   "rows": 702
+  },
+  "NOFDFSA066MSFRBPHI": {
+   "ok": true,
+   "first": "1968-05-01",
+   "last": "2026-10-01",
+   "rows": 702
+  },
+  "NOCDFSA066MSFRBPHI": {
+   "ok": true,
+   "first": "1968-05-01",
+   "last": "2026-10-01",
+   "rows": 702
+  },
+  "TEDRATE": {
+   "ok": true,
+   "first": "1986-01-02",
+   "last": "2022-01-21",
+   "rows": 8853
+  },
+  "DCPF3M": {
+   "ok": true,
+   "first": "1997-01-02",
+   "last": "2026-10-26",
+   "rows": 6758
+  },
+  "WMTSECL1": {
+   "ok": true,
+   "first": "2002-12-18",
+   "last": "2026-10-21",
+   "rows": 1245
+  },
+  "BOGZ1LM263064105Q": {
+   "ok": true,
+   "first": "1945-10-01",
+   "last": "2026-04-01",
+   "rows": 305
+  },
+  "CUSR0000SEHA": {
+   "ok": true,
+   "first": "1981-01-01",
+   "last": "2026-09-01",
+   "rows": 548
+  },
+  "CUSR0000SEHC": {
+   "ok": true,
+   "first": "1983-01-01",
+   "last": "2026-09-01",
+   "rows": 524
+  },
+  "FYOINT": {
+   "ok": true,
+   "first": "1940-06-30",
+   "last": "2026-09-30",
+   "rows": 87
+  },
+  "IRLTLT01ITM156N": {
+   "ok": true,
+   "first": "1991-03-01",
+   "last": "2026-08-01",
+   "rows": 426
+  },
+  "DBAA": {
+   "ok": true,
+   "first": "1986-01-02",
+   "last": "2026-10-28",
+   "rows": 10242
+  },
+  "DAAA": {
+   "ok": true,
+   "first": "1983-01-03",
+   "last": "2026-10-28",
+   "rows": 11001
+  },
+  "DROCLACBS": {
+   "ok": true,
+   "first": "1991-01-01",
+   "last": "2026-04-01",
+   "rows": 142
+  },
+  "GDPPOT": {
+   "ok": true,
+   "first": "1949-01-01",
+   "last": "2036-10-01",
+   "rows": 352
+  },
+  "A054RC1Q027SBEA": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-04-01",
+   "rows": 318
+  },
+  "A053RC1Q027SBEA": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-04-01",
+   "rows": 318
+  },
+  "PNFIC1": {
+   "ok": true,
+   "first": "2007-01-01",
+   "last": "2026-07-01",
+   "rows": 79
+  },
+  "Y033RC1Q027SBEA": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-07-01",
+   "rows": 319
+  },
+  "B985RC1Q027SBEA": {
+   "ok": true,
+   "first": "1959-01-01",
+   "last": "2026-07-01",
+   "rows": 271
+  },
+  "WFRBST01134": {
+   "ok": true,
+   "first": "1989-07-01",
+   "last": "2026-04-01",
+   "rows": 148
+  },
+  "IR3TIB01MXM156N": {
+   "ok": true,
+   "first": "1997-01-01",
+   "last": "2026-09-01",
+   "rows": 357
+  },
+  "IRSTCI01ZAM156N": {
+   "ok": true,
+   "first": "1957-01-01",
+   "last": "2026-09-01",
+   "rows": 837
+  },
+  "DEXSFUS": {
+   "ok": true,
+   "first": "1980-01-02",
+   "last": "2026-10-23",
+   "rows": 11738
+  },
+  "IPG211111CN": {
+   "ok": true,
+   "first": "1972-01-01",
+   "last": "2021-04-01",
+   "rows": 592
+  },
+  "TRFVOLUSM227NFWA": {
+   "ok": true,
+   "first": "1970-01-01",
+   "last": "2026-08-01",
+   "rows": 680
+  },
+  "CES1000000001": {
+   "ok": false,
+   "error": "HTTP 400"
+  },
+  "UNEMPLOY": {
+   "ok": true,
+   "first": "1948-01-01",
+   "last": "2026-09-01",
+   "rows": 944
+  },
+  "CPILFESL": {
+   "ok": true,
+   "first": "1957-01-01",
+   "last": "2026-09-01",
+   "rows": 836
+  },
+  "PCEPILFE": {
+   "ok": true,
+   "first": "1959-01-01",
+   "last": "2026-09-01",
+   "rows": 813
+  },
+  "BOPGSTB": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-08-01",
+   "rows": 416
+  },
+  "BOPBCA": {
+   "ok": true,
+   "first": "1960-01-01",
+   "last": "2014-01-01",
+   "rows": 217
+  },
+  "MANEMP": {
+   "ok": true,
+   "first": "1939-01-01",
+   "last": "2026-09-01",
+   "rows": 1053
+  },
+  "AMTMNO": {
+   "ok": true,
+   "first": "1992-02-01",
+   "last": "2026-08-01",
+   "rows": 415
+  },
+  "DGORDER": {
+   "ok": true,
+   "first": "1992-02-01",
+   "last": "2026-09-01",
+   "rows": 416
+  },
+  "NEWORDER": {
+   "ok": true,
+   "first": "1992-02-01",
+   "last": "2026-09-01",
+   "rows": 416
+  },
+  "ACOGNO": {
+   "ok": true,
+   "first": "1992-02-01",
+   "last": "2026-08-01",
+   "rows": 415
+  },
+  "BAMLH0A0HYM2EY": {
+   "ok": true,
+   "first": "2023-10-30",
+   "last": "2026-10-28",
+   "rows": 786
+  },
+  "TOTCI": {
+   "ok": true,
+   "first": "1973-01-03",
+   "last": "2026-10-14",
+   "rows": 2807
+  },
+  "RRSFS": {
+   "ok": true,
+   "first": "1992-01-01",
+   "last": "2026-09-01",
+   "rows": 416
+  },
+  "CP": {
+   "ok": true,
+   "first": "1947-01-01",
+   "last": "2026-04-01",
+   "rows": 318
+  },
+  "HOUST1F": {
+   "ok": true,
+   "first": "1959-01-01",
+   "last": "2026-09-01",
+   "rows": 813
+  },
+  "PERMIT1": {
+   "ok": true,
+   "first": "1960-01-01",
+   "last": "2026-09-01",
+   "rows": 801
+  },
+  "EXHOSLUSM495S": {
+   "ok": true,
+   "first": "2025-09-01",
+   "last": "2026-09-01",
+   "rows": 13
+  },
+  "MORTGAGE15US": {
+   "ok": true,
+   "first": "1991-08-30",
+   "last": "2026-10-29",
+   "rows": 1836
+  },
+  "UMDMNO": {
+   "ok": true,
+   "first": "1992-02-01",
+   "last": "2026-09-01",
+   "rows": 416
+  },
+  "A065RC1A027NBEA": {
+   "ok": true,
+   "first": "1929-01-01",
+   "last": "2025-01-01",
+   "rows": 97
+  },
+  "aqr_commodities_long_run.xlsx": {
+   "ok": true,
+   "bytes": 454950
+  },
+  "aqr_tsmom_factors.xlsx": {
+   "ok": true,
+   "bytes": 139830
+  },
+  "aqr_century_premia.xlsx": {
+   "ok": true,
+   "bytes": 1784414
+  },
+  "aqr_vme_factors.xlsx": {
+   "ok": true,
+   "bytes": 254982
+  },
+  "shiller_ie_data.xls": {
+   "ok": true,
+   "bytes": 1623552
+  },
+  "french_intl_countries.zip": {
+   "ok": false,
+   "error": "HTTP 404"
+  },
+  "french_em_factors.zip": {
+   "ok": true,
+   "bytes": 6989
+  },
+  "french_dev_factors.zip": {
+   "ok": true,
+   "bytes": 6813
+  },
+  "french_mom.zip": {
+   "ok": true,
+   "bytes": 5603
+  },
+  "french_5f.zip": {
+   "ok": true,
+   "bytes": 11971
+  },
+  "gpr_index.xls": {
+   "ok": true,
+   "bytes": 2716160
+  },
+  "cboe_put_history.csv": {
+   "ok": true,
+   "bytes": 113997
+  },
+  "cboe_ppt_history.csv": {
+   "ok": true,
+   "bytes": 225024
+  },
+  "cboe_bxm_history.csv": {
+   "ok": true,
+   "bytes": 139381
+  },
+  "cboe_skew_history.csv": {
+   "ok": true,
+   "bytes": 203686
+  },
+  "cboe_vix_history.csv": {
+   "ok": true,
+   "bytes": 474247
+  },
+  "aaii_sentiment.xls": {
+   "ok": true,
+   "bytes": 1318400
+  },
+  "nyfed_gscpi.xlsx": {
+   "ok": true,
+   "bytes": 105984
+  },
+  "acm_term_premia.xls": {
+   "ok": true,
+   "bytes": 10165248
+  },
+  "trade_epu.xlsx": {
+   "ok": true,
+   "bytes": 106017
+  },
+  "ebp_gz.csv": {
+   "ok": true,
+   "bytes": 44606
+  },
+  "french_49ind.zip": {
+   "ok": true,
+   "bytes": 489861
+  },
+  "french_beta.zip": {
+   "ok": true,
+   "bytes": 116326
+  },
+  "french_6port.zip": {
+   "ok": true,
+   "bytes": 149549
+  },
+  "D__GSPC": {
+   "ok": true,
+   "first": "1970-01-02",
+   "last": "2026-10-29",
+   "rows": 14329
+  },
+  "D_SPY": {
+   "ok": true,
+   "first": "1993-01-29",
+   "last": "2026-10-29",
+   "rows": 8496
+  },
+  "D__VIX": {
+   "ok": true,
+   "first": "1990-01-02",
+   "last": "2026-10-29",
+   "rows": 9277
+  },
+  "D_TLT": {
+   "ok": true,
+   "first": "2002-07-30",
+   "last": "2026-10-29",
+   "rows": 6103
+  },
+  "D_IEF": {
+   "ok": true,
+   "first": "2002-07-30",
+   "last": "2026-10-29",
+   "rows": 6103
+  },
+  "D_GLD": {
+   "ok": true,
+   "first": "2004-11-18",
+   "last": "2026-10-29",
+   "rows": 5521
+  },
+  "D__VIX3M": {
+   "ok": true,
+   "first": "2006-07-17",
+   "last": "2026-10-29",
+   "rows": 5105
+  },
+  "D_DX_Y_NYB": {
+   "ok": true,
+   "first": "1971-01-04",
+   "last": "2026-10-29",
+   "rows": 14175
+  },
+  "D_HYG": {
+   "ok": true,
+   "first": "2007-04-11",
+   "last": "2026-10-29",
+   "rows": 4921
+  },
+  "cftc_cot_selected.csv": {
+   "ok": true,
+   "rows": 26818
+  },
+  "wb_pinksheet_monthly.xlsx": {
+   "ok": true,
+   "bytes": 586099,
+   "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx"
+  },
+  "msci_world": {
+   "ok": false,
+   "error": "'indexes'"
+  },
+  "msci_em": {
+   "ok": false,
+   "error": "'indexes'"
+  },
+  "msci_korea": {
+   "ok": false,
+   "error": "'indexes'"
+  },
+  "msci_brazil": {
+   "ok": false,
+   "error": "'indexes'"
+  },
+  "msci_china": {
+   "ok": false,
+   "error": "'indexes'"
+  },
+  "msci_india": {
+   "ok": false,
+   "error": "'indexes'"
+  },
+  "msci_japan": {
+   "ok": false,
+   "error": "'indexes'"
+  },
+  "msci_taiwan": {
+   "ok": false,
+   "error": "'indexes'"
+  },
+  "msci_mexico": {
+   "ok": false,
+   "error": "'indexes'"
+  },
+  "msci_eafe": {
+   "ok": false,
+   "error": "'indexes'"
+  },
+  "msci_acwi": {
+   "ok": false,
+   "error": "'indexes'"
+  }
+ }
+}
