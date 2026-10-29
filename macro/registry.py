@@ -73,7 +73,8 @@ YAHOO = ["SPY", "EWY", "DX-Y.NYB", "HYG", "IEF", "XLY", "SOXX", "^VIX",
          "TLT", "SHY", "TIP", "GLD", "DBC", "GC=F", "UUP", "FXY", "FXF", "FXE"]               # defensive-asset candidates (research)
 # research only (not indicators): exchange rates (monthly average) and foreign 3-month rates for currency holdings
 EXTRA_FRED = ["EXJPUS", "EXSZUS", "EXUSEU", "EXUSUK", "EXCAUS", "EXSDUS", "IR3TIB01JPM156N", "IR3TIB01CHM156N",
-              "IR3TIB01DEM156N", "IR3TIB01EZM156N", "IR3TIB01GBM156N", "IR3TIB01CAM156N", "IR3TIB01SEM156N"]   # plus every industry ETF below
+              "IR3TIB01DEM156N", "IR3TIB01EZM156N", "IR3TIB01GBM156N", "IR3TIB01CAM156N", "IR3TIB01SEM156N",
+              "IRSTCI01JPM156N", "IRSTCI01CHM156N", "EXGEUS"]   # plus every industry ETF below
 FRENCH_IND = "49_Industry_Portfolios_CSV.zip"
 FRENCH_FF = "F-F_Research_Data_Factors_CSV.zip"
 
