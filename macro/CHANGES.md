@@ -1,5 +1,10 @@
 # Macro Compass changes
 
+## 5.0.2 (2026-10-29) - page only (user request)
+- Analysis: label "<Month Year> Analysis"; subtitle removed; story step 1 headline = what the three groups say (count
+  moved to its text, year-ago count removed). Recommendation: "Recommendation 1: Hold ... in Q4 2026" and
+  "Recommendation 2: Within stocks, overweight ..."; chart title/units line, the big-number line and the tilt subline removed.
+
 ## 5.0.1 (2026-10-29) - page only: McKinsey-style redesign + story-led Analysis (user request)
 - Visual language from the user's style guide: white page, black text, Georgia Bold titles and stats, Arial body,
   Deep Blue data, one highlight colour per section, thin rules instead of cards, action-sentence titles, chart title +

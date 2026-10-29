@@ -163,13 +163,14 @@ function renderTop(){
   $("#actTitle").textContent = F.e >= 100 ? `Stay invested: hold ${F.eq}% in stocks${extra}`
     : F.gc ? `Cut stocks to ${F.eq}%: the market and the job market are turning down together`
     : `Reduce stocks to ${F.eq}%: warnings are high while the Fed is tightening`;
-  $("#actSub").textContent = `Reading as of ${mlab(D.months[F.i])}. The portfolio is set once a month from the eight areas of evidence below.`;
+  const [yy, mm] = D.months[F.i].split("-");
+  $("#actStep").textContent = `${["January","February","March","April","May","June","July","August","September","October","November","December"][+mm - 1]} ${yy} Analysis`;
   $("#mixStats").innerHTML = [["key", F.eq, "in US stocks"], ["", F.com, "in commodities"], ["", F.bond, "in long Treasuries"], ["", F.cash, "in cash"]]
     .map(([k, v, l]) => `<div class="stat ${k}"><b>${v}%</b><span>${l}</span></div>`).join("");
   const lvl = F.warn / F.core >= 0.5 ? "bright" : F.warn / F.core >= 0.25 ? "mixed" : "mostly off";
   const items = [
-    {b: `Warning lights are ${lvl}: ${F.warn} of ${F.core} signals are in their danger zone`,
-     p: `${G.A.m.charAt(0).toUpperCase() + G.A.m.slice(1)}; ${G.B.m}; and ${G.C.m}. A year ago ${F.warn12} signals were warning.`, see: ["#s1", "Sections 1–3"]},
+    {b: `${G.A.m.charAt(0).toUpperCase() + G.A.m.slice(1)}; ${G.B.m}; and ${G.C.m}`,
+     p: `${F.warn} of the ${F.core} economic, inflation and market signals are in their danger zone.`, see: ["#s1", "Sections 1–3"]},
     {b: F.fed ? "And the Fed is tightening, so these warnings count" : "But warnings only count when the Fed is tightening, and it is not",
      p: F.fed ? `The Fed funds rate is ${p2(F.ff)}, above its tightening line of ${p2(F.trig)}. When the Fed squeezes the economy, warnings like these have often come before big falls, so the rule acts on them.`
        : `The Fed funds rate is ${p2(F.ff)}, below its tightening line of ${p2(F.trig)}. Without the Fed squeezing the economy, warnings like these have more often been false alarms than the start of a bear market.`, see: ["#s4", "Section 4"]},
@@ -355,8 +356,7 @@ function quarters(){
 }
 function renderExposure(){
   const Q = quarters(), now = Q[Q.length - 1];
-  $("#xTitle").textContent = `Hold ${now.equity}% in stocks${now.commodities ? `, ${now.commodities}% in commodities` : ""}${now.bond ? `, ${now.bond}% in long Treasuries` : ""}${now.cash ? `, ${now.cash}% in cash` : ""} this quarter`;
-  $("#xHead").innerHTML = `<span class="q">${qLab(now.q)}</span><b>${now.equity}% equity</b><span>${now.cash}% cash · ${now.bond}% bond · ${now.commodities}% commodities</span>`;
+  $("#xTitle").textContent = `Recommendation 1: Hold ${now.equity}% in stocks${now.commodities ? `, ${now.commodities}% in commodities` : ""}${now.bond ? `, ${now.bond}% in long Treasuries` : ""}${now.cash ? `, ${now.cash}% in cash` : ""} in ${qLab(now.q)}`;
   masterChart($("#xChart"), Q);
 }
 function masterChart(el, Q){
@@ -417,9 +417,7 @@ const WHYM = {over: "One of the five strongest sectors over the past year; leade
 function renderIndustries(){
   const T = D.derisk.tilt, i = NOW(), live = D.derisk.fully_invested[i];
   const tops = facts().top.map(lc);
-  $("#sTitle").textContent = live ? `Within stocks, overweight ${names(tops)}` : "Sector tilts are on hold while stocks are reduced";
-  $("#actHead").textContent = live ? "Tilts for this month." : "On hold: tilts apply only while the portfolio is fully in stocks.";
-  $("#actWhy").textContent = live ? "Against holding all 20 sectors equally." : "These are the tilts that would apply.";
+  $("#sTitle").textContent = live ? `Recommendation 2: Within stocks, overweight ${names(tops)}` : "Recommendation 2: Sector tilts are on hold while stocks are reduced";
   const rows = D.industries.map(it => { const a = T ? T.actions[it.etf][i] : "neutral", c = a === "hold" ? null : a;
     const raw = c || (T && T.mom_now[it.etf] != null ? null : "neutral");
     return {it, c: c || "neutral", o: c === "over" ? 0 : c === "under" ? 1 : 2, v: T ? T.mom_now[it.etf] : null}; })
