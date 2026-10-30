@@ -1,0 +1,5 @@
+{"name":"gm_tables","steps":[
+{"do":"tables","libraries":["wrdsapps_windices","comp_global_daily","ibes","tr_ibes","crsp_a_treasuries","crsp_a_indexes","frb","macrofin","macrofin_comm_trade","pwt","djones","contrib_global_factor","cboe","public","ff","trace_enhanced"]},
+{"do":"search","title":"key fields","libraries":["wrdsapps_windices","comp","comp_global_daily","ibes","crsp","frb","macrofin","pwt","contrib_global_factor","public"],"terms":["idx","statsum","country","excntry","rate","yield","ppp"]},
+{"do":"describe","table":"comp.g_idxcst_his"},
+{"do":"datasets"}]}

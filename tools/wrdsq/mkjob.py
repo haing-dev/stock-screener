@@ -13,7 +13,7 @@ p = argparse.ArgumentParser()
 p.add_argument("job")
 p.add_argument("--user", default="ttdlisa")
 p.add_argument("--out", default="wrds_result.txt")
-p.add_argument("--update", action="store_true", help="first copy Downloads\\wrdsq.py to WRDS")
+p.add_argument("--update", action="store_true", help="first copy Documents\\WRDS results\\wrdsq.py to WRDS")
 a = p.parse_args()
 spec = json.load(open(a.job))
 code = base64.urlsafe_b64encode(zlib.compress(json.dumps(spec, separators=(",", ":")).encode(), 9)).decode().rstrip("=")
@@ -22,7 +22,7 @@ H = "%s@wrds-cloud.wharton.upenn.edu" % a.user
 line = ('New-Item -ItemType Directory -Force "%s" | Out-Null; ' % D +
         'Write-Host "Connecting to WRDS: paste your password, press Enter, approve Duo" -ForegroundColor Cyan; ')
 if a.update:
-    line += 'scp -o StrictHostKeyChecking=accept-new $HOME\\Downloads\\wrdsq.py %s:~/wrdsq/wrdsq.py; ' % H
+    line += 'scp -o StrictHostKeyChecking=accept-new "%s\\wrdsq.py" %s:~/wrdsq/wrdsq.py; ' % (D, H)
 line += ('ssh -o StrictHostKeyChecking=accept-new %s "python3 -u ~/wrdsq/wrdsq.py job %s" | Out-File -Encoding utf8 "%s\\%s"; '
          'Write-Host "Done. Result saved in Documents\\WRDS results\\%s" -ForegroundColor Cyan' % (H, code, D, a.out, a.out))
 if len(line) > 7000:

@@ -13,6 +13,7 @@ Report -> stdout (and ~/wrdsq/logs/). Progress -> stderr.
 Job JSON: {"name": "short_name", "steps": [ {...}, ... ]}. Step types ("do"):
   libraries                                   accessible libraries
   search    terms:[..], libraries:[..]?       library / table / column names matching the terms (metadata)
+  tables    libraries:[..]                    table names in each library (metadata)
   describe  table:"lib.tab", date:"col"?      columns and types; with date: min, max, row count
   pull      name, sql, date:"col"?            runs SQL, saves ~/wrdsq/data/<name>.csv.gz; reports rows/cols/size only
   python    code                              runs analysis code here; helpers: sql(q), load(name), save(name, df),
@@ -40,7 +41,7 @@ import zlib
 for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS"):
     os.environ.setdefault(_v, "1")
 
-VERSION = "1.0.2"
+VERSION = "1.0.3"
 HOME = os.path.expanduser("~")
 ROOT = os.path.join(HOME, "wrdsq")
 DATA = os.path.join(ROOT, "data")
@@ -110,7 +111,7 @@ def decode(arg):
     return json.loads(zlib.decompress(base64.urlsafe_b64decode(arg + pad)).decode("utf-8"))
 
 
-LIGHT = {"libraries", "search", "describe", "datasets", "delete", "export"}
+LIGHT = {"libraries", "search", "tables", "describe", "datasets", "delete", "export"}
 
 
 def job(arg):
@@ -166,24 +167,27 @@ def s_libraries(db, st, R):
     R.w("%d libraries: %s" % (len(libs), ", ".join(libs)))
 
 
+def _has(col, words):
+    return " and ".join("position('%s' in lower(%s)) > 0" % (w, col) for w in words)
+
+
 def s_search(db, st, R):
     libs = st.get("libraries") or sorted(db.list_libraries())
     inlist = ",".join("'%s'" % re.sub(r"[^A-Za-z0-9_]", "", l) for l in libs)
     for term in st["terms"]:
-        t = re.sub(r"[^A-Za-z0-9_ ]", "", term).strip().lower()
-        if not t:
+        words = [w for w in re.sub(r"[^A-Za-z0-9_ ]", "", term).lower().split() if w]
+        if not words:
             continue
-        like = "%" + t.replace(" ", "%") + "%"
         R.w("-- '%s'" % term)
-        lm = [l for l in libs if t.replace(" ", "") in l.lower()]
+        lm = [l for l in libs if all(w in l.lower() for w in words)]
         if lm:
             R.w("   libraries: " + ", ".join(lm))
         q = ("select table_schema as s, table_name as t, string_agg(column_name, ',') as c, "
-             "bool_or(lower(table_name) like '%s') as tm from information_schema.columns "
-             "where table_schema in (%s) and (lower(table_name) like '%s' or lower(column_name) like '%s') "
-             "group by 1,2 order by 4 desc, 1, 2 limit %d" % (like, inlist, like, like, MAX_LINES))
+             "bool_or(%s) as tm from information_schema.columns where table_schema in (%s) and ((%s) or (%s)) "
+             "group by 1,2 order by 4 desc, 1, 2 limit %d" % (_has("table_name", words), inlist,
+                                                           _has("table_name", words), _has("column_name", words), MAX_LINES))
         try:
-            df = db.raw_sql(q)
+            df = _sql(db, q)
         except Exception as e:  # noqa: BLE001
             _rollback(db)
             R.w("   search failed: %s" % " ".join(str(e).split())[:200])
@@ -191,8 +195,28 @@ def s_search(db, st, R):
         if not len(df):
             R.w("   (no table or column names match)")
         for _, r in df.iterrows():
-            cols = [c for c in str(r["c"]).split(",") if t.replace(" ", "") in c.lower()]
+            cols = [c for c in str(r["c"]).split(",") if all(w in c.lower() for w in words)]
             R.w("   %s.%s%s" % (r["s"], r["t"], "" if r["tm"] else "  [columns: %s]" % ", ".join(cols[:8])))
+
+
+def s_tables(db, st, R):
+    for lib in st["libraries"]:
+        try:
+            tabs = sorted(db.list_tables(library=lib))
+            R.w("%s (%d): %s" % (lib, len(tabs), ", ".join(tabs[:300]) + (" ..." if len(tabs) > 300 else "")))
+        except Exception as e:  # noqa: BLE001
+            _rollback(db)
+            R.w("%s: cannot list (%s)" % (lib, " ".join(str(e).split())[:150]))
+
+
+def _sql(db, q):
+    """Run SQL with literal % allowed (escaped for the driver)."""
+    import pandas as pd
+    try:
+        from sqlalchemy import text
+        return pd.read_sql_query(text(q), db.connection)
+    except ImportError:
+        return db.raw_sql(q.replace("%", "%%"))
 
 
 def s_describe(db, st, R):
@@ -208,7 +232,7 @@ def s_describe(db, st, R):
     if st.get("date"):
         c = re.sub(r"[^A-Za-z0-9_]", "", st["date"])
         try:
-            r = db.raw_sql("select min(%s) a, max(%s) b, count(*) n from %s.%s" % (c, c, lib, tab))
+            r = _sql(db, "select min(%s) a, max(%s) b, count(*) n from %s.%s" % (c, c, lib, tab))
             R.w("   %s: %s .. %s, %s rows" % (c, r["a"].iloc[0], r["b"].iloc[0], r["n"].iloc[0]))
         except Exception as e:  # noqa: BLE001
             _rollback(db)
@@ -266,7 +290,7 @@ def s_python(db, st, R):
         df.to_csv(os.path.join(DATA, re.sub(r"[^A-Za-z0-9_-]", "_", name) + ".csv.gz"), index=False)
 
     def sql(q):
-        return db.raw_sql(q)
+        return _sql(db, q)
 
     if LIB not in sys.path:
         sys.path.insert(0, LIB)
@@ -315,7 +339,7 @@ def s_export(db, st, R):
         % os.environ.get("USER", "USERNAME"))
 
 
-STEPS = {"libraries": s_libraries, "search": s_search, "describe": s_describe, "pull": s_pull,
+STEPS = {"libraries": s_libraries, "search": s_search, "tables": s_tables, "describe": s_describe, "pull": s_pull,
          "python": s_python, "datasets": s_datasets, "delete": s_delete, "export": s_export}
 
 
