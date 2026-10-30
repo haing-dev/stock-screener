@@ -44,7 +44,7 @@ def _stats(x, a, b):
         m * 100, s * 100, m / s, x.mean() / x.std() * np.sqrt(len(x)), (lv / lv.cummax() - 1).min() * 100, len(x))
 
 
-CUR2ISO = {"GBP": "GBR", "DEM": "DEU", "FRF": "FRA", "JPY": "JPN", "CAD": "CAN", "AUD": "AUS", "HKD": "HKG",
+CUR2ISO = {"GBP": "GBR", "BPN": "GBR", "DEM": "DEU", "FRF": "FRA", "JPY": "JPN", "CAD": "CAN", "AUD": "AUS", "HKD": "HKG",
            "CHF": "CHE", "SEK": "SWE", "NLG": "NLD", "ITL": "ITA", "ESP": "ESP", "DKK": "DNK", "NOK": "NOR", "BEF": "BEL",
            "ATS": "AUT", "PTE": "PRT", "CNY": "CHN", "RMB": "CHN", "KRW": "KOR", "TWD": "TWN", "INR": "IND", "BRL": "BRA",
            "MXN": "MEX", "MXP": "MEX", "ZAR": "ZAF"}
@@ -74,7 +74,7 @@ def _ibes_map(sql, codes, out):
             best[c] = (y.index[0], int(x["n"].sum()))
     out("largest I/B/E/S codes (rows, code, top currency, share, top 3): " + "; ".join(
         "%s %s %.0f%% [%s]" % (c, cur, sh * 100, t3) for n, c, cur, sh, t3 in sorted(diag, reverse=True)[:30]))
-    m = {"US_FILE": "USA"}
+    m = {"US_FILE": "USA", "LB": "BRA"}   # I/B/E/S reports Brazil in USD (code LB, L = Latin America)
     for cur, iso in CUR2ISO.items():
         cands = [(n, c) for c, (cc, n) in best.items() if cc == cur]
         if cands and iso not in m.values():
@@ -132,6 +132,26 @@ def run(load, out, sql=None, dataset="jkp_ctry"):
     if rev_ok:
         strat["combo_value_rev"] = strat[["value_composite", "revisions_3m"]].mean(axis=1)
         strat["combo3_val_mom_rev"] = strat[["value_composite", "momentum_12_1", "revisions_3m"]].mean(axis=1)
+    # robustness for value composite, revisions and value+revisions: signal used one month later; costs 10 bp per
+    # 100% one-way turnover; turnover per year
+    rob = {}
+    for k in ["value_composite", "revisions_3m"] if rev_ok else ["value_composite"]:
+        sg = sig[k].reindex_like(ret_lead).where(ok)
+        for lag in (0, 1):
+            w = _rank_weights(sg.shift(lag).where(ok))
+            gross = (w * ret_lead).sum(axis=1, min_count=8)
+            to = w.fillna(0).diff().abs().sum(axis=1) / 2
+            rob["%s lag%d" % (k, lag)] = (gross, gross - 0.001 * to * 2, to)
+    if rev_ok:
+        for lag in (0, 1):
+            g = (rob["value_composite lag%d" % lag][0] + rob["revisions_3m lag%d" % lag][0]) / 2
+            n = (rob["value_composite lag%d" % lag][1] + rob["revisions_3m lag%d" % lag][1]) / 2
+            t = (rob["value_composite lag%d" % lag][2] + rob["revisions_3m lag%d" % lag][2]) / 2
+            rob["combo_value_rev lag%d" % lag] = (g, n, t)
+    out("robustness (net = after 10 bp per unit traded each side; turnover = one-way per year):")
+    for k, (g, n, t) in rob.items():
+        out("   %-26s net 1990-2025 %s | 2008-2025 %s | turnover %.1fx/yr" % (
+            k, _stats(n, "1990-01", "2025-12"), _stats(n, "2008-01", "2025-12"), t.loc["1990-01":].mean() * 12))
     out("universe (%d): %s; countries per month: %s" % (len(UNIVERSE), " ".join(UNIVERSE), ", ".join(
         "%d:%d" % (y, ok.loc[str(y)].sum(axis=1).median()) for y in (1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025))))
     out("largest single country-month return used: %.0f%%; months with |ret| > 50%%: %d" % (
@@ -146,4 +166,8 @@ def run(load, out, sql=None, dataset="jkp_ctry"):
     for k, s in sig.items():
         r = s.reindex_like(ret_lead).loc[last].where(ok.loc[last]).dropna().sort_values()
         out("%s %s  lowest 5: %s | highest 5: %s" % (k, last, ", ".join(r.index[:5]), ", ".join(r.index[-5:])))
+    if rev_ok:
+        cv = (sig["value_composite"].rank(axis=1, pct=True) + sig["revisions_3m"].rank(axis=1, pct=True)).reindex_like(ret_lead)
+        r = cv.loc[last].where(ok.loc[last]).dropna().sort_values()
+        out("value+revisions %s  lowest 5: %s | highest 5: %s" % (last, ", ".join(r.index[:5]), ", ".join(r.index[-5:])))
     out("(high B/M, E/P, D/P = cheap; high momentum = strong; high revisions = analysts raising estimates)")

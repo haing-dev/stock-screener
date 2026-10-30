@@ -1,0 +1,2 @@
+{"name":"gm_country_v5","head_ok":true,"steps":[
+{"do":"python","title":"country tests v5: GBR/BRA revisions codes, 1-month lag and cost robustness, current value+revisions ranks","code":"import gm_country\ngm_country.run(load, out, sql=sql, dataset='jkp_ctry2')"}]}
