@@ -300,7 +300,7 @@ def rate3m(cc):
         return first(F("IR3TIB01EZM156N"), F("IR3TIB01DEM156N"))
     alt = {"BR": ["IRSTCI01BRM156N"], "ZA": ["IR3TIB01ZAM156N", "IRSTCI01ZAM156N"], "KR": ["IR3TIB01KRM156N", "IRSTCI01KRM156N"],
            "JP": ["IRSTCI01JPM156N", "IRSTCB01JPM156N"], "CH": ["IRSTCI01CHM156N"],
-           "IN": ["INTGSTINM193N", "INTDSRINM193N"]}
+           "IN": ["RBI_CALLMONEY_M", "INTGSTINM193N", "INTDSRINM193N"]}
     r = first(*[F(s) for s in (["IR3TIB01%sM156N" % cc] + alt.get(cc, []))])
     last = r.last_valid_index()
     if last is not None:                      # OECD series lag or stop (GB, EZ end 2026-01): carry the last rate forward
