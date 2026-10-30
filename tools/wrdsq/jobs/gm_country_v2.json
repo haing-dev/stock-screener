@@ -1,0 +1,3 @@
+{"name":"gm_country_v2","head_ok":true,"steps":[
+{"do":"python","title":"country value / momentum / revisions on the 25-market universe (statistics only)","code":"import gm_country\ngm_country.run(load, out, sql=sql)"},
+{"do":"datasets"}]}
