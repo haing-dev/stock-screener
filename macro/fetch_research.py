@@ -75,7 +75,7 @@ FRED = [
     "DEXUSEU", "DEXJPUS", "DEXUSUK", "DEXSZUS", "DEXUSAL", "DEXUSNZ", "DEXCAUS", "DEXSDUS", "DEXNOUS", "DEXDNUS",
     "DEXHKUS", "DEXTAUS", "DEXSIUS", "DEXTHUS", "DEXMAUS",
     # round 4 (2026-10-30): Global Macro Book panel (64 markets) - OECD/BIS/FX series per country
-    "IRLTLT01USM156N", "IRLTLT01CAM156N", "IRLTLT01AUM156N", "IRLTLT01NZM156N", "IRLTLT01CHM156N", "IRLTLT01SEM156N", "IRLTLT01NOM156N", "IRLTLT01DKM156N", "IRLTLT01FRM156N", "IRLTLT01ESM156N", "IRLTLT01NLM156N", "IRLTLT01BEM156N", "IRLTLT01ATM156N", "IRLTLT01PTM156N", "IRLTLT01KRM156N", "IRLTLT01MXM156N", "IRLTLT01ZAM156N", "IRLTLT01INM156N", "IRLTLT01EZM156N", "IR3TIB01USM156N", "IR3TIB01AUM156N", "IR3TIB01NZM156N", "IR3TIB01NOM156N", "IR3TIB01DKM156N", "IR3TIB01FRM156N", "IR3TIB01ESM156N", "IR3TIB01NLM156N", "IR3TIB01BEM156N", "IR3TIB01ATM156N", "IR3TIB01PTM156N", "IR3TIB01ZAM156N", "IR3TIB01INM156N", "IR3TIB01ITM156N", "IR3TIB01CNM156N", "CPALTT01USM659N", "CPALTT01CAM659N", "CPALTT01AUM659N", "CPALTT01NZM659N", "CPALTT01CHM659N", "CPALTT01SEM659N", "CPALTT01NOM659N", "CPALTT01DKM659N", "CPALTT01GBM659N", "CPALTT01DEM659N", "CPALTT01FRM659N", "CPALTT01ITM659N", "CPALTT01ESM659N", "CPALTT01NLM659N", "CPALTT01JPM659N", "CPALTT01MXM659N", "CPALTT01ZAM659N", "CPALTT01INM659N", "CPALTT01TWM659N", "CPALTT01EZM659N", "CANLOLITONOSTSAM", "AUSLOLITONOSTSAM", "NZLLOLITONOSTSAM", "CHELOLITONOSTSAM", "SWELOLITONOSTSAM", "NORLOLITONOSTSAM", "DNKLOLITONOSTSAM", "GBRLOLITONOSTSAM", "DEULOLITONOSTSAM", "FRALOLITONOSTSAM", "ITALOLITONOSTSAM", "ESPLOLITONOSTSAM", "NLDLOLITONOSTSAM", "JPNLOLITONOSTSAM", "MEXLOLITONOSTSAM", "ZAFLOLITONOSTSAM", "INDLOLITONOSTSAM", "TURLOLITONOSTSAM", "NAEXKP01USQ657S", "NAEXKP01CAQ657S", "NAEXKP01AUQ657S", "NAEXKP01NZQ657S", "NAEXKP01CHQ657S", "NAEXKP01SEQ657S", "NAEXKP01NOQ657S", "NAEXKP01DKQ657S", "NAEXKP01GBQ657S", "NAEXKP01DEQ657S", "NAEXKP01FRQ657S", "NAEXKP01ITQ657S", "NAEXKP01ESQ657S", "NAEXKP01NLQ657S", "NAEXKP01JPQ657S", "NAEXKP01KRQ657S", "NAEXKP01MXQ657S", "NAEXKP01ZAQ657S", "NAEXKP01INQ657S", "NAEXKP01BRQ657S", "NAEXKP01CNQ657S", "NBCABIS", "NBAUBIS", "NBNZBIS", "NBCHBIS", "NBSEBIS", "NBNOBIS", "NBDKBIS", "NBGBBIS", "NBXMBIS", "NBJPBIS", "NBKRBIS", "NBMXBIS", "NBBRBIS", "NBZABIS", "NBINBIS", "NBCNBIS", "NBTWBIS", "NBHKBIS", "EXUSAL", "EXUSNZ", "EXNOUS", "EXDNUS", "EXMXUS", "EXBZUS", "EXKOUS", "EXSFUS", "EXINUS", "EXCHUS", "EXHKUS", "EXTAUS", "EXCAUS", "EXJPUS", "EXSZUS", "EXSDUS", "EXUSUK", "EXUSEU", "EXGEUS", "BAA10YM", "AAA10YM", "GS1", "GS2", "GS5", "GS10", "GS20", "GS30", "TB3MS", "FEDFUNDS",
+    "IRLTLT01USM156N", "IRLTLT01CAM156N", "IRLTLT01AUM156N", "IRLTLT01NZM156N", "IRLTLT01CHM156N", "IRLTLT01SEM156N", "IRLTLT01NOM156N", "IRLTLT01DKM156N", "IRLTLT01FRM156N", "IRLTLT01ESM156N", "IRLTLT01NLM156N", "IRLTLT01BEM156N", "IRLTLT01ATM156N", "IRLTLT01PTM156N", "IRLTLT01KRM156N", "IRLTLT01MXM156N", "IRLTLT01ZAM156N", "IRLTLT01INM156N", "IRLTLT01EZM156N", "IR3TIB01USM156N", "IR3TIB01AUM156N", "IR3TIB01NZM156N", "IR3TIB01NOM156N", "IR3TIB01DKM156N", "IR3TIB01FRM156N", "IR3TIB01ESM156N", "IR3TIB01NLM156N", "IR3TIB01BEM156N", "IR3TIB01ATM156N", "IR3TIB01PTM156N", "IR3TIB01ZAM156N", "IR3TIB01INM156N", "IR3TIB01ITM156N", "IR3TIB01CNM156N", "CPALTT01USM659N", "CPALTT01CAM659N", "CPALTT01AUM659N", "CPALTT01NZM659N", "CPALTT01CHM659N", "CPALTT01SEM659N", "CPALTT01NOM659N", "CPALTT01DKM659N", "CPALTT01GBM659N", "CPALTT01DEM659N", "CPALTT01FRM659N", "CPALTT01ITM659N", "CPALTT01ESM659N", "CPALTT01NLM659N", "CPALTT01JPM659N", "CPALTT01MXM659N", "CPALTT01ZAM659N", "CPALTT01INM659N", "CPALTT01TWM659N", "CPALTT01EZM659N", "CANLOLITONOSTSAM", "AUSLOLITONOSTSAM", "NZLLOLITONOSTSAM", "CHELOLITONOSTSAM", "SWELOLITONOSTSAM", "NORLOLITONOSTSAM", "DNKLOLITONOSTSAM", "GBRLOLITONOSTSAM", "DEULOLITONOSTSAM", "FRALOLITONOSTSAM", "ITALOLITONOSTSAM", "ESPLOLITONOSTSAM", "NLDLOLITONOSTSAM", "JPNLOLITONOSTSAM", "MEXLOLITONOSTSAM", "ZAFLOLITONOSTSAM", "INDLOLITONOSTSAM", "TURLOLITONOSTSAM", "NAEXKP01USQ657S", "NAEXKP01CAQ657S", "NAEXKP01AUQ657S", "NAEXKP01NZQ657S", "NAEXKP01CHQ657S", "NAEXKP01SEQ657S", "NAEXKP01NOQ657S", "NAEXKP01DKQ657S", "NAEXKP01GBQ657S", "NAEXKP01DEQ657S", "NAEXKP01FRQ657S", "NAEXKP01ITQ657S", "NAEXKP01ESQ657S", "NAEXKP01NLQ657S", "NAEXKP01JPQ657S", "NAEXKP01KRQ657S", "NAEXKP01MXQ657S", "NAEXKP01ZAQ657S", "NAEXKP01INQ657S", "NAEXKP01BRQ657S", "NAEXKP01CNQ657S", "NBCABIS", "NBAUBIS", "NBNZBIS", "NBCHBIS", "NBSEBIS", "NBNOBIS", "NBDKBIS", "NBGBBIS", "NBXMBIS", "NBJPBIS", "NBKRBIS", "NBMXBIS", "NBBRBIS", "NBZABIS", "NBINBIS", "NBCNBIS", "NBTWBIS", "NBHKBIS", "EXUSAL", "EXUSNZ", "EXNOUS", "EXDNUS", "EXMXUS", "EXBZUS", "EXKOUS", "EXSFUS", "EXINUS", "EXCHUS", "EXHKUS", "EXTAUS", "EXCAUS", "EXJPUS", "EXSZUS", "EXSDUS", "EXUSUK", "EXUSEU", "EXGEUS", "BAA10YM", "AAA10YM", "GS1", "GS2", "GS5", "GS10", "GS20", "GS30", "TB3MS", "FEDFUNDS", "INTGSTINM193N", "INTDSRINM193N", "DEXGEUS", "DEXFRUS", "DEXITUS",
 ]
 
 URLS = {   # long-history research data sets (files saved as downloaded)
@@ -123,6 +123,10 @@ EXTRA_URLS = {
     "cb_ca_yields.csv": "https://www.bankofcanada.ca/valet/observations/BD.CDN.2YR.DQ.YLD,BD.CDN.10YR.DQ.YLD/csv?start_date=1980-01-01",
     "cb_au_f2_hist.xls": "https://www.rba.gov.au/statistics/tables/xls-hist/f02dhist.xls",
     "cb_au_f2.csv": "https://www.rba.gov.au/statistics/tables/csv/f2-data.csv",
+    # round 7: longer histories (Bundesbank monthly end-of-month from 1972; Bank of Canada legacy benchmark series)
+    "cb_de_10y_m.csv": "https://api.statistiken.bundesbank.de/rest/download/BBSIS/M.I.ZST.ZI.EUR.S1311.B.A604.R10XX.R.A.A._Z._Z.A?format=csv&lang=en",
+    "cb_de_2y_m.csv": "https://api.statistiken.bundesbank.de/rest/download/BBSIS/M.I.ZST.ZI.EUR.S1311.B.A604.R02XX.R.A.A._Z._Z.A?format=csv&lang=en",
+    "cb_ca_yields_legacy.csv": "https://www.bankofcanada.ca/valet/observations/V122487,V122538/csv?start_date=1980-01-01",
     "cb_gb_yields.csv": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1970&Dateto=now&SeriesCodes=IUDMNPY,IUDSNPY&CSVF=TN&UsingCodes=Y&VPD=Y&VFD=N",
 }
 
@@ -149,11 +153,62 @@ def _save(name, content, mode="wb"):
         f.write(content)
 
 
+FRESH_DAYS = 7        # a series fetched OK within this many days is kept from the previous run (incremental)
+BUDGET_S = 40 * 60   # stop starting new downloads after this many seconds (workflow limit is 60 minutes)
+STOOQ_ON = False     # stooq.com refuses scripted downloads since 2026-10 (returns an HTML page)
+
+
+class _Man(dict):
+    """Manifest that carries forward fresh OK entries from the previous run and enforces the time budget."""
+
+    def __init__(self, prev, t0, prev_at):
+        super().__init__()
+        self.prev, self.t0, self.prev_at, self.skipped, self.fails, self.group = prev, t0, prev_at, 0, {}, ""
+
+    def fresh(self, name):
+        v = self.prev.get(name)
+        f = os.path.join(OUT, name if "." in name else name + ".csv")
+        if not os.path.exists(f) or os.path.getsize(f) < 200 or open(f, "rb").read(1) == b"<":
+            return False
+        if v is None and self.prev:          # file left over from a source no longer in the manifest
+            return False
+        at = (v or {}).get("at", self.prev_at)
+        ok = (v is None or v.get("ok")) and time.time() - at < FRESH_DAYS * 86400
+        if ok:
+            dict.__setitem__(self, name, dict(v or {"ok": True}, at=at))
+            self.skipped += 1
+        return ok
+
+    def over(self, name, group):
+        """True when the budget is spent or this group has failed 4 times in a row (skip the rest of it)."""
+        self.group = group
+        if time.time() - self.t0 > BUDGET_S or self.fails.get(group, 0) >= (25 if group in ("fred", "yahoo") else 4):
+            dict.__setitem__(self, name, {"ok": False, "error": "skipped (time budget or source down)"})
+            return True
+        return False
+
+    def __setitem__(self, k, v):
+        if isinstance(v, dict) and "ok" in v:
+            v = dict(v, at=time.time())
+            self.fails[self.group] = 0 if v["ok"] else self.fails.get(self.group, 0) + 1
+        super().__setitem__(k, v)
+
+
 def run(log=print):
     key = os.environ.get("FRED_API_KEY", "").strip()
-    man = {"fetched": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()), "series": {}}
+    t0 = time.time()
+    try:
+        pm = json.load(open(os.path.join(OUT, "manifest.json")))
+        prev = pm["series"]
+        prev_at = time.mktime(time.strptime(pm["fetched"], "%Y-%m-%d %H:%M UTC")) - time.timezone
+    except Exception:  # noqa: BLE001
+        prev, prev_at = {}, time.time()      # no manifest: trust valid files already on disk (from branch macro-data)
+    man = {"fetched": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()), "series": _Man(prev, t0, prev_at)}
+    S_ = man["series"]
     for s in YAHOO:
         name = "Y_" + re.sub(r"[^A-Za-z0-9]", "_", s)
+        if S_.fresh(name) or S_.over(name, "yahoo"):
+            continue
         try:
             rows = FT.yahoo(s)
             _save(name + ".csv", "date,value\n" + "\n".join(f"{d},{v}" for d, v in rows), "w")
@@ -162,6 +217,8 @@ def run(log=print):
             man["series"][name] = {"ok": False, "error": str(e)[:150]}
         time.sleep(0.8)
     for sid in FRED:
+        if S_.fresh(sid) or S_.over(sid, "fred"):
+            continue
         try:
             rows, how = FT.fred(sid, {}, key)
             _save(sid + ".csv", "date,value\n" + "\n".join(f"{d},{v}" for d, v in rows), "w")
@@ -170,6 +227,8 @@ def run(log=print):
             man["series"][sid] = {"ok": False, "error": str(e)[:150]}
         time.sleep(0.6)
     for name, url in URLS.items():
+        if S_.fresh(name) or S_.over(name, "urls"):
+            continue
         try:
             r = FT._get(url)
             _save(name, r.content)
@@ -177,6 +236,8 @@ def run(log=print):
         except Exception as e:
             man["series"][name] = {"ok": False, "error": str(e)[:150]}
     for name, url in EXTRA_URLS.items():
+        if S_.fresh(name) or S_.over(name, name.split("_")[1] if name.startswith("cb_") else "extra"):
+            continue
         try:
             r = FT._get(url)
             _save(name, r.content)
@@ -185,6 +246,8 @@ def run(log=print):
             man["series"][name] = {"ok": False, "error": str(e)[:150]}
     for s_ in DAILY:
         name = "D_" + re.sub(r"[^A-Za-z0-9]", "_", s_)
+        if S_.fresh(name) or S_.over(name, "daily"):
+            continue
         try:
             rows = yahoo_daily(s_)
             _save(name + ".csv", "date,value\n" + "\n".join(f"{d},{v}" for d, v in rows), "w")
@@ -194,7 +257,8 @@ def run(log=print):
         time.sleep(1.0)
     import zipfile
     cot = []                                  # CFTC legacy futures-only, all years (net speculative positioning)
-    for yr_ in range(1986, int(time.strftime("%Y")) + 1):
+    S_.group = "cftc"
+    for yr_ in range(1986, int(time.strftime("%Y")) + 1) if not S_.fresh("cftc_cot_selected.csv") else []:
         try:
             url = (f"https://www.cftc.gov/files/dea/history/deacot{yr_}.zip" if yr_ >= 1995 else None)
             if yr_ < 1995:
@@ -212,14 +276,20 @@ def run(log=print):
     # MSCI: try the alternative public endpoint too
     # World Bank commodity prices (pink sheet): find the current monthly file link
     try:
+        if S_.fresh("wb_pinksheet_monthly.xlsx") or S_.over("wb_pinksheet_monthly.xlsx", "wb"):
+            raise StopIteration
         page = FT._get("https://www.worldbank.org/en/research/commodity-markets").text
         links = re.findall(r'https://thedocs\.worldbank\.org/[^"\']+CMO-Historical-Data-Monthly\.xlsx', page)
         r = FT._get(links[0])
         _save("wb_pinksheet_monthly.xlsx", r.content)
         man["series"]["wb_pinksheet_monthly.xlsx"] = {"ok": True, "bytes": len(r.content), "url": links[0]}
+    except StopIteration:
+        pass
     except Exception as e:
         man["series"]["wb_pinksheet_monthly.xlsx"] = {"ok": False, "error": str(e)[:150]}
     for name, code in MSCI.items():
+        if S_.fresh(name) or S_.over(name, "msci"):
+            continue
         try:
             url = ("https://app2.msci.com/products/service/index/indexmaster/getLevelDataForGraph?currency_symbol=USD"
                    f"&index_variant=GRTR&start_date=19691231&end_date={time.strftime('%Y%m%d')}"
@@ -230,8 +300,10 @@ def run(log=print):
             man["series"][name] = {"ok": True, "first": rows[0][0], "last": rows[-1][0], "rows": len(rows)}
         except Exception as e:
             man["series"][name] = {"ok": False, "error": str(e)[:150]}
-    for sym in STOOQ:                         # stooq.com free long histories (continuous futures, indexes); monthly
+    for sym in STOOQ if STOOQ_ON else []:     # stooq.com free long histories (continuous futures, indexes); monthly
         name = "S_" + re.sub(r"[^A-Za-z0-9]", "_", sym)
+        if S_.fresh(name) or S_.over(name, "stooq"):
+            continue
         try:
             txt = FT._get("https://stooq.com/q/d/l/", params={"s": sym, "i": "m"}).text
             if not txt.startswith("Date"):
@@ -242,15 +314,16 @@ def run(log=print):
         except Exception as e:
             man["series"][name] = {"ok": False, "error": str(e)[:150]}
         time.sleep(1.5)
-    for name, url in {"jln_uncertainty.zip": "https://www.sydneyludvigson.com/s/MacroFinanceUncertainty_202508Update.zip",
-                      "french_intl_index.zip": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/International_Index_Portfolios_Formed_on_BE_ME_CSV.zip"}.items():
+    for name, url in {}.items():   # JLN uncertainty and French international index files: URLs return 404 (2026-10)
         try:
             r = FT._get(url)
             _save(name, r.content)
             man["series"][name] = {"ok": True, "bytes": len(r.content)}
         except Exception as e:
             man["series"][name] = {"ok": False, "error": str(e)[:150]}
+    man["series"] = dict(S_)
     _save("manifest.json", json.dumps(man, indent=1), "w")
     bad = [k for k, v in man["series"].items() if not v["ok"]]
-    log(f"research fetch: {len(man['series']) - len(bad)} ok, {len(bad)} failed: {bad}")
+    log(f"research fetch: {len(man['series']) - len(bad)} ok ({S_.skipped} kept from the previous run), "
+        f"{len(bad)} failed in {time.time() - t0:.0f}s: {bad}")
     return man

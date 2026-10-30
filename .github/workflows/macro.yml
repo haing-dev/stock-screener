@@ -55,6 +55,12 @@ jobs:
       - name: Live record (branch 'macro-record', if it exists)
         run: git clone -q --depth 1 --branch macro-record "$REPO_URL" macro_record || mkdir -p macro_record
 
+      - name: Previous research downloads (branch 'macro-data' research/, so research_fetch is incremental)
+        run: |
+          git clone -q --depth 1 --branch macro-data "$REPO_URL" prev_data 2>/dev/null || exit 0
+          [ -d prev_data/research ] && mkdir -p cache/macro/raw && cp -r prev_data/research cache/macro/raw/ || true
+          rm -rf prev_data
+
       - name: Run
         shell: bash
         env:

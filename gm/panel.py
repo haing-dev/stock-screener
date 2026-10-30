@@ -112,9 +112,16 @@ def cb_yield(cc, n):
     nan = pd.Series(np.nan, index=GRID)
     try:
         if cc == "DE":
-            rows = _table(_lines("cb_de_%dy.csv" % n), sep=";" if any(";" in l for l in _lines("cb_de_%dy.csv" % n)[:20]) else ",")
-            d = [(_date(r[0]), r[1]) for r in rows if len(r) >= 2 and re.match(r"\d{4}-\d{2}", r[0].strip('"'))]
-            return _month_end([a for a, _ in d], [b for _, b in d]) if d else nan
+            out = nan
+            for f in ("cb_de_%dy.csv" % n, "cb_de_%dy_m.csv" % n):
+                ls = _lines(f)
+                if f.endswith("_m.csv") and not any("end of month" in l.lower() for l in ls[:12]):
+                    continue                  # monthly file used only if it holds end-of-month values
+                rows = _table(ls, sep=";" if any(";" in l for l in ls[:20]) else ",")
+                d = [(_date(r[0]), r[1]) for r in rows if len(r) >= 2 and re.match(r"\d{4}-\d{2}", r[0].strip('"'))]
+                if d:
+                    out = out.combine_first(_month_end([a for a, _ in d], [b for _, b in d]))
+            return out
         if cc == "JP":
             out = nan
             for f in ("cb_jp_jgb_recent.csv", "cb_jp_jgb_all.csv"):
@@ -129,16 +136,23 @@ def cb_yield(cc, n):
                 out = out.combine_first(_month_end([a for a, _ in d], [b for _, b in d]))
             return out
         if cc == "CA":
-            rows = _table(_lines("cb_ca_yields.csv"))
-            i0 = next((i for i, r in enumerate(rows) if r and r[0].strip() == "date"), None)
-            if i0 is None:
-                return nan
-            sid = {2: "BD.CDN.2YR.DQ.YLD", 10: "BD.CDN.10YR.DQ.YLD"}[n]
-            c = rows[i0].index(sid)
-            d = [(_date(r[0]), r[c]) for r in rows[i0 + 1:] if len(r) > c]
-            return _month_end([a for a, _ in d], [b for _, b in d])
+            out = nan
+            for f in ("cb_ca_yields.csv", "cb_ca_yields_legacy.csv"):
+                rows = _table(_lines(f))
+                i0 = next((i for i, r in enumerate(rows) if r and r[0].strip() == "date"), None)
+                if i0 is None:
+                    continue
+                lab = {r[0]: " ".join(r[1:3]).lower() for r in rows[:i0] if len(r) >= 3}
+                want = [k for k, v in lab.items() if re.search(r"\b%d[- ]?(yr|year)" % n, v) and "real" not in v]
+                sid = {2: "BD.CDN.2YR.DQ.YLD", 10: "BD.CDN.10YR.DQ.YLD"}[n]
+                c = next((rows[i0].index(x) for x in [sid] + want if x in rows[i0]), None)
+                if c is None:
+                    continue
+                d = [(_date(r[0]), r[c]) for r in rows[i0 + 1:] if len(r) > c]
+                out = out.combine_first(_month_end([a for a, _ in d], [b for _, b in d]))
+            return out
         if cc == "AU":
-            sid = {2: "FCMYGBAG2", 3: "FCMYGBAG3", 5: "FCMYGBAG5", 10: "FCMYGBAG10"}[n]
+            sid = "FCMYGBAG%dD" % n
             out = nan
             frames = []
             p = os.path.join(RD, "cb_au_f2_hist.xls")
@@ -146,7 +160,7 @@ def cb_yield(cc, n):
                 frames.append(pd.read_excel(p, header=None).astype(str).values.tolist())
             frames.append(_table(_lines("cb_au_f2.csv")))
             for rows in frames:
-                i0 = next((i for i, r in enumerate(rows) if r and str(r[0]).strip() == "Series ID"), None)
+                i0 = next((i for i, r in enumerate(rows) if r and str(r[0]).strip() in ("Series ID", "Mnemonic")), None)
                 if i0 is None or sid not in [str(x).strip() for x in rows[i0]]:
                     continue
                 c = [str(x).strip() for x in rows[i0]].index(sid)
@@ -266,8 +280,14 @@ def rate3m(cc):
         return first(F("TB3MS"), F("IR3TIB01USM156N"))
     if cc == "EZ":
         return first(F("IR3TIB01EZM156N"), F("IR3TIB01DEM156N"))
-    alt = {"BR": ["IRSTCI01BRM156N"], "ZA": ["IR3TIB01ZAM156N", "IRSTCI01ZAM156N"], "KR": ["IR3TIB01KRM156N", "IRSTCI01KRM156N"]}
-    return first(*[F(s) for s in (["IR3TIB01%sM156N" % cc] + alt.get(cc, []))])
+    alt = {"BR": ["IRSTCI01BRM156N"], "ZA": ["IR3TIB01ZAM156N", "IRSTCI01ZAM156N"], "KR": ["IR3TIB01KRM156N", "IRSTCI01KRM156N"],
+           "JP": ["IRSTCI01JPM156N", "IRSTCB01JPM156N"], "CH": ["IRSTCI01CHM156N"],
+           "IN": ["INTGSTINM193N", "INTDSRINM193N"]}
+    r = first(*[F(s) for s in (["IR3TIB01%sM156N" % cc] + alt.get(cc, []))])
+    last = r.last_valid_index()
+    if last is not None:                      # OECD series lag or stop (GB, EZ end 2026-01): carry the last rate forward
+        r = r.ffill(limit=12).where(r.index <= last + 12)
+    return r
 
 
 STQ_FX = {"EUR": ("eurusd", True), "GBP": ("gbpusd", True), "JPY": ("usdjpy", False), "CHF": ("usdchf", False),
@@ -324,6 +344,9 @@ def build():
     # equities -----------------------------------------------------------------
     for k, (etf, idxs, cur, cc, div) in EQUITY.items():
         rl = rate3m(cc) / 1200
+        us_rate_used = rl.notna().sum() < 120
+        if us_rate_used:                      # no local short rate (India): US rate, flagged
+            rl = rl.combine_first(rate3m("US") / 1200)
         if k == "eq_us_spx":
             spy = ret(Y("SPY")) - rf_us
             R[k] = first(spy, mkt_rf)
@@ -353,7 +376,7 @@ def build():
             if tag not in ("tr",):
                 flags.append("div proxy before ETF")
         R[k] = first(*pieces)
-        note(k, parts, sorted(set(flags)) + (["local rate missing"] if rl.notna().sum() < 120 else []))
+        note(k, parts, sorted(set(flags)) + (["LOCAL RATE MISSING: US 3m rate used"] if us_rate_used else []))
 
     # bonds ----------------------------------------------------------------------
     for k, (cc, daily, n) in BONDS.items():
