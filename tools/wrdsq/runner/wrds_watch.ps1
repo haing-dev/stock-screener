@@ -1,10 +1,11 @@
 # WRDS runner (Global Macro Book / wrdsq). Runs every 10 minutes as a Windows scheduled task.
 # Claude drops job files into Documents\WRDS results\jobs; this script sends them to WRDS Cloud with the SSH key
-# kept on this PC, saves the report to Documents\WRDS results\results, and moves finished jobs to jobs\done.
+# (Windows-encrypted password kept on this PC), saves the report to Documents\WRDS results\results, and moves finished jobs to jobs\done.
 # Only metadata and statistics come back; the data stays on WRDS. Password and key never leave this PC.
 $D = Join-Path $HOME "Documents\WRDS results"
 $H = "ttdlisa@wrds-cloud.wharton.upenn.edu"
-$O = @("-o", "BatchMode=yes", "-o", "StrictHostKeyChecking=accept-new", "-o", "ConnectTimeout=30")
+$O = @("-o", "StrictHostKeyChecking=accept-new", "-o", "ConnectTimeout=30", "-o", "NumberOfPasswordPrompts=1", "-o", "PreferredAuthentications=keyboard-interactive,password")
+$env:SSH_ASKPASS = Join-Path $D "askpass.cmd"; $env:SSH_ASKPASS_REQUIRE = "force"; $env:DISPLAY = "wrds"
 $jobs = Join-Path $D "jobs"; $done = Join-Path $jobs "done"; $res = Join-Path $D "results"; $lib = Join-Path $D "lib"
 New-Item -ItemType Directory -Force $jobs, $done, $res, $lib | Out-Null
 $log = Join-Path $D "runner_log.txt"; $status = Join-Path $D "runner_status.txt"; $lock = Join-Path $D "runner.lock"
@@ -17,7 +18,7 @@ try {
     $ok = (& ssh @O $H "echo KEY_LOGIN_OK" 2>&1) -join " "
     if ($ok -notmatch "KEY_LOGIN_OK") {
         Log "login with key failed: $ok"
-        Set-Content -Path $status -Value ("LOGIN FAILED {0:yyyy-MM-dd HH:mm}: WRDS may want Duo again. Log in once in PowerShell (ssh $H), approve Duo, and the runner resumes." -f (Get-Date))
+        Set-Content -Path $status -Value ("LOGIN FAILED {0:yyyy-MM-dd HH:mm}: WRDS may want Duo again. Tell Claude; usually logging in once in PowerShell (ssh $H) and approving Duo fixes it." -f (Get-Date))
         return
     }
     & scp @O (Join-Path $D "wrdsq.py") "${H}:~/wrdsq/wrdsq.py" 2>&1 | Out-Null
