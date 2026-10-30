@@ -36,7 +36,11 @@ import time
 import traceback
 import zlib
 
-VERSION = "1.0.0"
+# WRDS Cloud allows 100 processes per user on the login node: numerical libraries must not start 64 threads
+for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS"):
+    os.environ.setdefault(_v, "1")
+
+VERSION = "1.0.1"
 HOME = os.path.expanduser("~")
 ROOT = os.path.join(HOME, "wrdsq")
 DATA = os.path.join(ROOT, "data")
