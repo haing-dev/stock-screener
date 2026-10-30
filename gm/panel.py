@@ -183,6 +183,25 @@ def cb_yield(cc, n):
     return nan
 
 
+MSCI_NAME = {"eq_de_dax": "GERMANY", "eq_gb_ftse": "UNITED KINGDOM", "eq_fr_cac": "FRANCE", "eq_jp_nikkei": "JAPAN",
+             "eq_ca_tsx": "CANADA", "eq_au_asx": "AUSTRALIA", "eq_hk_hsi": "HONG KONG", "eq_cn": "CHINA",
+             "eq_kr_kospi": "KOREA", "eq_tw": "TAIWAN", "eq_in": "INDIA", "eq_br_ibov": "BRAZIL", "eq_mx_ipc": "MEXICO",
+             "eq_za": "SOUTH AFRICA"}
+
+
+def msci_gross_local(country):
+    """MSCI country index, gross (dividends reinvested), local currency, month-end; manual download (user, 2026-10-30).
+    Not redistributed: the file stays in the local cache."""
+    p = os.path.join(RD, "msci_manual_gross_local.csv")
+    if not os.path.exists(p):
+        return pd.Series(np.nan, index=GRID)
+    m = pd.read_csv(p, index_col=0, parse_dates=True)
+    if country not in m:
+        return pd.Series(np.nan, index=GRID)
+    s = m[country].dropna()
+    return pd.Series(s.values, index=s.index.to_period("M")).groupby(level=0).last().reindex(GRID)
+
+
 def ret(p):
     return p.pct_change(fill_method=None)
 
@@ -355,6 +374,9 @@ def build():
         fxv = fx_usd_value(cur)
         fx_ch = fxv / fxv.shift(1)                       # USD value change of the currency
         parts, flags, pieces = [], [], []
+        if k in MSCI_NAME:
+            pieces.append(ret(msci_gross_local(MSCI_NAME[k])) - rl)
+            parts.append("MSCI %s gross local (2001+)" % MSCI_NAME[k])
         if etf:
             r_usd = ret(Y(etf))
             r_loc = (1 + r_usd) / fx_ch - 1               # convert USD total return to local currency
@@ -367,10 +389,11 @@ def build():
             if tag == "etf":
                 r_px = (1 + r_px) / fx_ch - 1
             d = 0.0 if tag in ("tr", "etf") else div
-            if etf and r_px.notna().sum() and pieces[0].notna().sum() > 60 and tag != "tr":
-                both = pieces[0].notna() & r_px.notna() & rl.notna()
-                if both.sum() > 60:                       # dividend yield implied by the ETF era
-                    d = float(np.clip(((pieces[0] + rl) - r_px)[both].mean() * 12, 0, 0.06))
+            tr0 = first(*pieces) if pieces else None      # total-return excess series (MSCI, then ETF)
+            if tr0 is not None and r_px.notna().sum() and tr0.notna().sum() > 60 and tag != "tr":
+                both = tr0.notna() & r_px.notna() & rl.notna()
+                if both.sum() > 60:                       # dividend yield implied by the total-return era
+                    d = float(np.clip(((tr0 + rl) - r_px)[both].mean() * 12, 0, 0.06))
             pieces.append(r_px + d / 12 - rl)
             parts.append("%s price index + %.1f%%/yr dividends" % (sym, d * 100) if tag not in ("tr",) else sym + " (total return)")
             if tag not in ("tr",):
