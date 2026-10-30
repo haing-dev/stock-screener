@@ -1,0 +1,14 @@
+Signal families alone, gross, monthly; design 1990-2010 and extra check 1975-89 (holdout not shown)
+  trend  1975..1989  ALL SR 1.16 (t 4.5) | EQ SR 0.19 (t 0.7) | FI SR 1.16 (t 4.5) | FX SR 0.88 (t 3.4) | CM SR 0.32 (t 1.2)
+  trend  1990..2010  ALL SR 1.23 (t 5.6) | EQ SR 0.57 (t 2.6) | FI SR 0.90 (t 4.1) | FX SR 0.95 (t 4.3) | CM SR 0.56 (t 2.5)
+  econ   1975..1989  ALL SR 0.34 (t 1.3) | EQ SR -0.19 (t -0.7) | FI SR 0.57 (t 2.2) | FX SR 0.04 (t 0.1) | CM SR 0.40 (t 1.6)
+  econ   1990..2010  ALL SR 0.71 (t 3.3) | EQ SR 0.54 (t 2.5) | FI SR 0.31 (t 1.4) | FX SR 0.43 (t 2.0) | CM SR 0.30 (t 1.4)
+  carry  1975..1989  ALL SR 0.83 (t 3.2) | FI SR 0.88 (t 3.4) corrAQR 0.34 | FX SR 0.23 (t 0.9) corrAQR 0.36 | CM SR 0.58 (t 1.2) corrAQR -0.09
+  carry  1990..2010  ALL SR 1.01 (t 4.6) | FI SR 0.69 (t 3.2) corrAQR 0.36 | FX SR 0.78 (t 3.6) corrAQR 0.43 | CM SR 0.36 (t 1.7) corrAQR 0.24
+  carryD 1975..1989  ALL SR 0.81 (t 3.1) | FI SR 0.85 (t 3.3) | FX SR 0.32 (t 1.3) | CM SR 0.58 (t 1.2)
+  carryD 1990..2010  ALL SR 0.98 (t 4.5) | FI SR 0.60 (t 2.8) | FX SR 0.73 (t 3.3) | CM SR 0.44 (t 2.0)
+  carryX 1975..1989  ALL SR 0.52 (t 2.0) | FI SR 0.54 (t 2.1) corrAQR 0.25 | FX SR 0.09 (t 0.3) corrAQR 0.49 | CM n/a
+  carryX 1990..2010  ALL SR 0.82 (t 3.8) | FI SR 0.64 (t 2.9) corrAQR 0.48 | FX SR 0.64 (t 2.9) corrAQR 0.27 | CM SR 0.06 (t 0.2) corrAQR 0.09
+  value  1975..1989  ALL SR 0.06 (t 0.2) | EQ SR -0.17 (t -0.5) corrAQR 0.23 | FI SR 0.58 (t 2.1) corrAQR -0.01 | FX SR -0.28 (t -1.0) corrAQR 0.17 | CM n/a
+  value  1990..2010  ALL SR -0.23 (t -1.1) | EQ SR -0.46 (t -2.1) corrAQR 0.22 | FI SR 0.05 (t 0.2) corrAQR 0.45 | FX SR 0.39 (t 1.8) corrAQR 0.29 | CM SR -0.62 (t -2.1) corrAQR 0.25
+markets with a signal 1990-2010: {'econ': np.int64(63), 'carry': np.int64(32), 'value': np.int64(41)}
