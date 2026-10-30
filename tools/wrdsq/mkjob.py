@@ -16,8 +16,10 @@ p.add_argument("--out", default="wrds_result.txt")
 a = p.parse_args()
 spec = json.load(open(a.job))
 code = base64.urlsafe_b64encode(zlib.compress(json.dumps(spec, separators=(",", ":")).encode(), 9)).decode().rstrip("=")
-line = ('ssh -o StrictHostKeyChecking=accept-new %s@wrds-cloud.wharton.upenn.edu "python3 ~/wrdsq/wrdsq.py job %s" | Set-Content -Encoding utf8 '
-        '"$HOME\\Downloads\\%s"' % (a.user, code, a.out))
+line = ('Write-Host "Connecting to WRDS: paste your password, press Enter, approve Duo" -ForegroundColor Cyan; '
+        'ssh -o StrictHostKeyChecking=accept-new %s@wrds-cloud.wharton.upenn.edu "python3 -u ~/wrdsq/wrdsq.py job %s" '
+        '| Set-Content -Encoding utf8 "$HOME\\Downloads\\%s"; '
+        'Write-Host "Done. Attach %s from Downloads." -ForegroundColor Cyan' % (a.user, code, a.out, a.out))
 if len(line) > 7000:
     raise SystemExit("Job too long for one pasted line (%d chars): shorten the code or split into two jobs." % len(line))
 print(line)
