@@ -54,6 +54,16 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   snapshot on branch macro-research-data (fetch: step research_fetch). Earlier: docs/research/macro_combos.
 - Rules: macro/registry.py (pre-registered; changes -> new VERSION + macro/CHANGES.md).
 
+## Global Macro Book (gm/ v1 gm-1.0.0, 2026-10-30; paper research only)
+- Plan + all results: project doc claude/global_macro_book_plan_2026-10-29.md (v5+). Code: gm/panel.py (65-market
+  month-end panel from free data on branch macro-data), gm/plumbing.py (vs AQR TSMOM: corr 0.83), gm/signals.py
+  (families), gm/book.py (combined book, costs), gm/run.py (monthly run), gm/imf_revisions.py (exploratory).
+- Workflow .github/workflows/gm.yml (3rd of each month + push to gm/): branch gm-status (status.md, positions.csv),
+  gm-record (append-only ledger.csv; restatements appended with '-restated').
+- Holdout 2011-2026 has NOT been looked at: never print or inspect it until rules are frozen (then run once).
+- Placeholders: Bloomberg commodity workbook docs/data_requests/Bloomberg_commodities_UBC.xlsx (user at UBC next week);
+  equity value/carry; WRDS revisions; econ on first-release data. Manual files: gm/data (RBI); MSCI kept out of git.
+
 ## WRDS (tools/wrdsq, 2026-10-29)
 - User ttdlisa (UBC) has WRDS; subscription list incl. Compustat Global/NA, CRSP (annual), CRSP Treasuries, LSEG IBES,
   TRACE, Cboe VIX, FRB rates, Fama-French, Global Factor Data, World Indices, Penn World Tables, Dow Jones, 13F.
