@@ -123,6 +123,9 @@ EXTRA_URLS = {
     "cb_ca_yields.csv": "https://www.bankofcanada.ca/valet/observations/BD.CDN.2YR.DQ.YLD,BD.CDN.10YR.DQ.YLD/csv?start_date=1980-01-01",
     "cb_au_f2_hist.xls": "https://www.rba.gov.au/statistics/tables/xls-hist/f02dhist.xls",
     "cb_au_f2.csv": "https://www.rba.gov.au/statistics/tables/csv/f2-data.csv",
+    # round 10: current OECD CLI and CPI (FRED's OECD copies stopped in 2024-25), new OECD SDMX API
+    "oecd_cli.csv": "https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI,/USA+DEU+FRA+GBR+JPN+CAN+AUS+CHN+KOR+IND+BRA+MEX+ZAF+CHE+SWE+NOR+NZL+ITA+ESP+NLD.M.LI...AA...H?startPeriod=1990-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels",
+    "oecd_cpi_yoy.csv": "https://sdmx.oecd.org/public/rest/data/OECD.SDD.TPS,DSD_PRICES@DF_PRICES_ALL,/USA+DEU+FRA+GBR+JPN+CAN+AUS+CHN+KOR+IND+BRA+MEX+ZAF+CHE+SWE+NOR+NZL+ITA+ESP+NLD.M.N.CPI.PA._T.N.GY?startPeriod=1990-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels",
     # round 9: EIA NYMEX futures, contracts 1-4 (energy curves from 1983-94); AQR Commodities for the Long Run
     "eia_cl1.xls": "https://www.eia.gov/dnav/pet/hist_xls/RCLC1d.xls",
     "eia_ng1.xls": "https://www.eia.gov/dnav/ng/hist_xls/RNGC1d.xls",

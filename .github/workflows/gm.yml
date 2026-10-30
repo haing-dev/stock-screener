@@ -1,0 +1,72 @@
+name: Global Macro Book
+# Paper research only. Monthly: rebuild the 65-market panel from the free research downloads (branch macro-data),
+# compute the signal families and the combined book, take positions at the last complete month end.
+# Outputs: branch 'gm-status' (status.md + positions.csv, force-pushed) and branch 'gm-record' (append-only ledger.csv).
+# No WRDS data is used here (WRDS signals are research-only and stay on WRDS Cloud).
+on:
+  schedule:
+    - cron: "41 23 3 * *"        # 3rd of each month, after month-end data settle
+  push:
+    branches: [main]
+    paths: ["gm/**", ".github/workflows/gm.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: gm
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  gm:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      PYTHONUNBUFFERED: "1"
+      REPO_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt xlrd
+
+      - name: Research downloads (branch macro-data)
+        run: |
+          git clone -q --depth 1 --branch macro-data "$REPO_URL" md
+          mkdir -p cache/macro/raw && cp -r md/. cache/macro/raw/ && rm -rf cache/macro/raw/.git md
+
+      - name: Previous ledger (branch gm-record, if it exists)
+        run: |
+          mkdir -p gm_out
+          git clone -q --depth 1 --branch gm-record "$REPO_URL" rec 2>/dev/null && cp rec/ledger.csv gm_out/ || true
+          rm -rf rec
+
+      - name: Run
+        run: python -m gm.run gm_out 2>&1 | tee gm_out/run.log
+
+      - name: Status (branch gm-status, force-pushed)
+        if: always()
+        run: |
+          mkdir -p st && cp gm_out/status.md gm_out/positions.csv gm_out/run.log st/ 2>/dev/null || true
+          cd st && git init -q -b gm-status
+          git -c user.name=gm-bot -c user.email=gm-bot@users.noreply.github.com add -A
+          git -c user.name=gm-bot -c user.email=gm-bot@users.noreply.github.com commit -q -m "gm status $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q -f "$REPO_URL" gm-status
+
+      - name: Record (branch gm-record, append-only, never force-pushed)
+        run: |
+          [ -f gm_out/ledger.csv ] || exit 0
+          if git clone -q --depth 1 --branch gm-record "$REPO_URL" rec 2>/dev/null; then
+            cp gm_out/ledger.csv rec/ledger.csv
+          else
+            mkdir rec && cd rec && git init -q -b gm-record && cd .. && cp gm_out/ledger.csv rec/
+          fi
+          cd rec
+          git -c user.name=gm-bot -c user.email=gm-bot@users.noreply.github.com add ledger.csv
+          git -c user.name=gm-bot -c user.email=gm-bot@users.noreply.github.com commit -q -m "gm ledger $(date -u +%Y-%m-%d)" || exit 0
+          git push -q "$REPO_URL" gm-record

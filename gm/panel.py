@@ -55,9 +55,15 @@ def S(sym):
     return _csv(os.path.join(RD, "S_" + re.sub(r"[^A-Za-z0-9]", "_", sym) + ".csv"), stooq=True)
 
 
+MANUAL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")   # small public files the user downloaded
+
+
 def F(sid):
-    p = os.path.join(RD, sid + ".csv")
-    return _csv(p if os.path.exists(p) else os.path.join(RAW, sid + ".csv"))
+    for d in (RD, RAW, MANUAL):
+        p = os.path.join(d, sid + ".csv")
+        if os.path.exists(p):
+            return _csv(p)
+    return _csv(os.path.join(RD, sid + ".csv"))
 
 
 _ERA = {"S": 1925, "H": 1988, "R": 2018, "T": 1911, "M": 1867}

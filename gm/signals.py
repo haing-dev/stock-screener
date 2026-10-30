@@ -58,12 +58,32 @@ def rate(cc):
     return P.rate3m("EZ" if cc == "DE" else cc)
 
 
+_SDMX = {}
+
+
+def oecd_sdmx(fname, iso3):
+    """Series for one country from an OECD SDMX csv download (columns REF_AREA, TIME_PERIOD, OBS_VALUE)."""
+    if fname not in _SDMX:
+        p = os.path.join(P.RD, fname)
+        try:
+            x = pd.read_csv(p)
+            x = x[[c for c in x.columns if c in ("REF_AREA", "TIME_PERIOD", "OBS_VALUE")]]
+            x["m"] = pd.PeriodIndex(x["TIME_PERIOD"].astype(str).str[:7], freq="M")
+            _SDMX[fname] = x.pivot_table(index="m", columns="REF_AREA", values="OBS_VALUE", aggfunc="last")
+        except Exception:  # noqa: BLE001
+            _SDMX[fname] = pd.DataFrame()
+    t = _SDMX[fname]
+    return t[iso3].reindex(GRID) if iso3 in t else pd.Series(np.nan, index=GRID)
+
+
 def cpi_yoy(cc):
-    return P.F("CPALTT01%sM659N" % FX_MACRO.get(cc, cc))
+    c = FX_MACRO.get(cc, cc)
+    return P.first(oecd_sdmx("oecd_cpi_yoy.csv", ISO3.get(c, c)), P.F("CPALTT01%sM659N" % c))
 
 
 def cli(cc):
-    return P.F("%sLOLITONOSTSAM" % ISO3.get(FX_MACRO.get(cc, cc), cc))
+    c = ISO3.get(FX_MACRO.get(cc, cc), cc)
+    return P.first(oecd_sdmx("oecd_cli.csv", c), P.F("%sLOLITONOSTSAM" % c))
 
 
 def neer(cc):
@@ -133,10 +153,10 @@ def econ_scores(R):
 def carry_values(R):
     out = {}
     for k, (cc, n) in BD.items():
-        out[k] = (yield_of(cc, n) - rate(cc)) / 100
+        out[k] = (yield_of(cc, n) - rate(cc).shift(1)) / 100   # month-end yield minus last published 3m rate
     r_us = rate("US")
     for k, (cur, cc) in FX_CC.items():
-        out[k] = (P.rate3m(cc) - r_us) / 100
+        out[k] = ((P.rate3m(cc) - r_us) / 100).shift(1)      # OECD monthly rates are published after month end
     for k, root in P.EIA_ROOT.items():
         out[k] = P.eia_rolled(root)[1]
     return pd.DataFrame(out).reindex(GRID)
@@ -150,12 +170,12 @@ def value_values(R):
             out[k] = -lr.shift(12).rolling(48, min_periods=48).sum()       # return t-60..t-12, reversed
     for k, (cc, n) in BD.items():
         if n >= 10:
-            infl = cpi_yoy(cc).rolling(36, min_periods=24).mean().shift(1)
+            infl = cpi_yoy(cc).ffill(limit=18).rolling(36, min_periods=24).mean().shift(1)
             out[k] = (yield_of(cc, n) - infl) / 100
-    us_p = cpi_yoy("US").shift(1)
+    us_p = cpi_yoy("US").ffill(limit=18).shift(1)
     for k, (cur, cc) in FX_CC.items():
         fxv = P.fx_usd_value(cur)
-        lp = cpi_yoy(FX_MACRO.get(cc, cc)).shift(1)
+        lp = cpi_yoy(FX_MACRO.get(cc, cc)).ffill(limit=18).shift(1)
         infl_gap = ((lp - us_p) / 100 / 12).rolling(60, min_periods=60).sum()   # ~5y cumulative inflation gap
         real_chg = np.log(fxv / fxv.shift(60)) + infl_gap                     # real appreciation over 5 years
         out[k] = -real_chg
