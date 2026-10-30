@@ -115,6 +115,15 @@ EXTRA_URLS = {
     "french_49ind.zip": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/49_Industry_Portfolios_CSV.zip",
     "french_beta.zip": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/Portfolios_Formed_on_BETA_csv.zip",
     "french_6port.zip": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/6_Portfolios_2x3_CSV.zip",
+    # round 6 (2026-10-30): month-end government bond yields from central banks (stooq now blocks scripts)
+    "cb_de_10y.csv": "https://api.statistiken.bundesbank.de/rest/download/BBSIS/D.I.ZST.ZI.EUR.S1311.B.A604.R10XX.R.A.A._Z._Z.A?format=csv&lang=en",
+    "cb_de_2y.csv": "https://api.statistiken.bundesbank.de/rest/download/BBSIS/D.I.ZST.ZI.EUR.S1311.B.A604.R02XX.R.A.A._Z._Z.A?format=csv&lang=en",
+    "cb_jp_jgb_all.csv": "https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/historical/jgbcme_all.csv",
+    "cb_jp_jgb_recent.csv": "https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/jgbcme.csv",
+    "cb_ca_yields.csv": "https://www.bankofcanada.ca/valet/observations/BD.CDN.2YR.DQ.YLD,BD.CDN.10YR.DQ.YLD/csv?start_date=1980-01-01",
+    "cb_au_f2_hist.xls": "https://www.rba.gov.au/statistics/tables/xls-hist/f02dhist.xls",
+    "cb_au_f2.csv": "https://www.rba.gov.au/statistics/tables/csv/f2-data.csv",
+    "cb_gb_yields.csv": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1970&Dateto=now&SeriesCodes=IUDMNPY,IUDSNPY&CSVF=TN&UsingCodes=Y&VPD=Y&VFD=N",
 }
 
 
