@@ -41,7 +41,7 @@ import zlib
 for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS"):
     os.environ.setdefault(_v, "1")
 
-VERSION = "1.0.4"
+VERSION = "1.0.5"
 HOME = os.path.expanduser("~")
 ROOT = os.path.join(HOME, "wrdsq")
 DATA = os.path.join(ROOT, "data")
@@ -131,7 +131,7 @@ def job(arg):
     # 1) interactive compute node (streams the report)
     if shutil.which("qrsh"):
         err("wrdsq: asking WRDS for an interactive compute node ...")
-        p = subprocess.run(["qrsh", "-now", "no", sys.executable, me, "_exec", path], stdout=sys.stdout,
+        p = subprocess.run(["qrsh", "-now", "yes", sys.executable, me, "_exec", path], stdout=sys.stdout,
                            stderr=subprocess.PIPE, universal_newlines=True)
         if os.path.exists(log):
             return
