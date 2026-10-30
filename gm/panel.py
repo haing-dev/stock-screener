@@ -519,6 +519,18 @@ def build():
         R[k] = first(*pieces)
         note(k, parts, flags)
 
+    # AQR "Commodities for the Long Run" equal-weight commodity excess return: stands in for the commodity class only
+    # before 2001, when fewer than ~6 of our single commodities have data (avoids double counting afterwards)
+    try:
+        x = pd.read_excel(os.path.join(RD, "aqr_commodities_long_run.xlsx"), header=None, skiprows=11)
+        x = x[pd.to_datetime(x[0], errors="coerce").notna()]
+        ew = pd.Series(pd.to_numeric(x[1], errors="coerce").values, index=pd.to_datetime(x[0]).dt.to_period("M"))
+        R["cm_aqr_ew"] = ew.groupby(level=0).last().reindex(GRID).where(GRID <= pd.Period("2000-12", "M"))
+        note("cm_aqr_ew", ["AQR Commodities for the Long Run, equal-weight excess return (to 2000)"],
+             ["index-level, pre-2001 only"])
+    except Exception as e:  # noqa: BLE001
+        print("AQR long-run commodities not loaded:", e)
+
     # spreads ---------------------------------------------------------------------------
     y2, y10 = F("DGS2"), F("DGS10")
     r2, r10 = par_ret(y2, 2), par_ret(y10, 10)
