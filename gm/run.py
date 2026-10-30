@@ -49,9 +49,12 @@ def main(out_dir="gm_out"):
     led_p = os.path.join(out_dir, "ledger.csv")
     led = pd.read_csv(led_p) if os.path.exists(led_p) else pd.DataFrame(columns=["as_of", "market", "position", "risk",
                                                                                   "version"])
-    if str(as_of) not in set(led["as_of"].astype(str)):
+    prev = led[led["as_of"].astype(str) == str(as_of)]
+    restate = len(prev) and prev["market"].nunique() < len(tab)       # earlier run for this month had missing data
+    if not len(prev) or restate:
+        # append-only: a restatement adds rows (version tagged '-restated'); the earlier rows stay as they were
         new = pd.DataFrame({"as_of": str(as_of), "market": tab.index, "position": tab["position"].round(5).values,
-                            "risk": tab["risk"].round(5).values, "version": VERSION})
+                            "risk": tab["risk"].round(5).values, "version": VERSION + ("-restated" if restate else "")})
         led = pd.concat([led, new], ignore_index=True)
         led.to_csv(led_p, index=False)
 
