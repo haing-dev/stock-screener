@@ -63,13 +63,17 @@ def _ibes_map(sql, codes, out):
         return {"US_FILE": "USA"}
     g["country"] = g["country"].astype(str).str.strip()
     g["curcode"] = g["curcode"].astype(str).str.strip()
-    best = {}
+    best, diag = {}, []
     for c, x in g.groupby("country"):
         pre = x[x["pre"].astype(bool)]
         y = pre if len(pre) and pre["n"].sum() > 500 else x
         y = y.groupby("curcode")["n"].sum().sort_values(ascending=False)
+        if len(y):
+            diag.append((int(x["n"].sum()), c, y.index[0], y.iloc[0] / y.sum(), " ".join(y.index[:3])))
         if len(y) and y.iloc[0] / y.sum() > 0.6:
             best[c] = (y.index[0], int(x["n"].sum()))
+    out("largest I/B/E/S codes (rows, code, top currency, share, top 3): " + "; ".join(
+        "%s %s %.0f%% [%s]" % (c, cur, sh * 100, t3) for n, c, cur, sh, t3 in sorted(diag, reverse=True)[:30]))
     m = {"US_FILE": "USA"}
     for cur, iso in CUR2ISO.items():
         cands = [(n, c) for c, (cc, n) in best.items() if cc == cur]
@@ -85,6 +89,10 @@ def run(load, out, sql=None, dataset="jkp_ctry"):
     piv = lambda c: d.pivot_table(index="eom", columns="excntry", values=c)
     ret_lead, bm, ep, dp = piv("ret_lead_vw"), piv("bm_agg"), piv("ep_agg"), piv("dp_agg")
     out("dataset %s" % dataset)
+    cov = d.groupby("excntry")["eom"].agg(["min", "max", "count"])
+    out("coverage (first, last, months with >= %d investable stocks): " % MIN_STOCKS + "; ".join(
+        "%s %s-%s %d" % (c, r["min"], r["max"], r["count"]) for c, r in cov.iterrows()))
+    out("universe countries absent: %s" % (", ".join(c for c in UNIVERSE if c not in cov.index) or "none"))
     ret = ret_lead.shift(1)
     mom = (1 + ret).rolling(11).apply(np.prod, raw=True).shift(1) - 1
     sig = {"value_bm": np.log(bm.where(bm > 0)), "value_ep": ep, "value_dp": dp, "momentum_12_1": mom}
@@ -122,6 +130,7 @@ def run(load, out, sql=None, dataset="jkp_ctry"):
     strat = pd.DataFrame(strat)
     strat["combo_value_mom"] = strat[["value_composite", "momentum_12_1"]].mean(axis=1, skipna=False)
     if rev_ok:
+        strat["combo_value_rev"] = strat[["value_composite", "revisions_3m"]].mean(axis=1)
         strat["combo3_val_mom_rev"] = strat[["value_composite", "momentum_12_1", "revisions_3m"]].mean(axis=1)
     out("universe (%d): %s; countries per month: %s" % (len(UNIVERSE), " ".join(UNIVERSE), ", ".join(
         "%d:%d" % (y, ok.loc[str(y)].sum(axis=1).median()) for y in (1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025))))

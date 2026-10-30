@@ -1,0 +1,3 @@
+{"name":"gm_country_v4","head_ok":true,"steps":[
+{"do":"python","title":"country tests v4: coverage check, I/B/E/S code diagnostics, value + revisions combo","code":"import gm_country\ngm_country.run(load, out, sql=sql, dataset='jkp_ctry2')"},
+{"do":"python","title":"investable-stock counts per country, last month (counts only)","code":"d=sql(\"select excntry, size_grp, count(*) n from contrib_global_factor.global_factor where eom='2025-12-31' and excntry in ('USA','GBR','BRA','CAN','JPN') and common=1 and primary_sec=1 and obs_main=1 and exch_main=1 group by 1,2 order by 1,2\")\nout(d.to_string(index=False))"}]}
