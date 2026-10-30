@@ -1,0 +1,9 @@
+{"name": "tri_meta2", "head_ok": true, "steps": [
+  {"do": "tables", "libraries": ["tr_insiders"]},
+  {"do": "describe", "table": "crsp.stkdelists", "date": "delistingdt"},
+  {"do": "describe", "table": "crsp.stocknames_v2"},
+  {"do": "describe", "table": "comp.funda", "date": "datadate"},
+  {"do": "describe", "table": "ff.factors_monthly", "date": "date"},
+  {"do": "describe", "table": "tfn.s34names"},
+  {"do": "python", "code": "q = sql(\"select count(*) as n, sum(case when dlydelflg='Y' then 1 else 0 end) as ndel, sum(case when dlydelflg='Y' and dlyret is not null then 1 else 0 end) as ndelret from crsp.dsf_v2 where dlycaldt between '2015-01-01' and '2015-12-31'\")\nout('dsf_v2 2015 rows, delisting-day rows, delisting rows with a return:', int(q.n[0]), int(q.ndel[0]), int(q.ndelret[0]))\nq = sql(\"select securitytype, securitysubtype, sharetype, usincflg, count(distinct permno) as n from crsp.stksecurityinfohist where secinfoenddt >= '2020-01-01' group by 1,2,3,4 order by n desc limit 15\")\nout('security type combos (count of permnos):')\nfor r in q.itertuples(): out('  ', r.securitytype, r.securitysubtype, r.sharetype, r.usincflg, int(r.n))\nq = sql(\"select ticker, count(distinct permno) as n from crsp.stksecurityinfohist where ticker in ('SPY','IWM') and secinfoenddt >= '2012-01-01' group by ticker\")\nfor r in q.itertuples(): out('ETF ticker', r.ticker, 'permnos', int(r.n))"}
+]}

@@ -1,0 +1,6 @@
+{"name": "tri_bt1", "steps": [
+  {"do": "python", "code": "import tri_wrds\ntri_wrds.pull(sql, save, out)"},
+  {"do": "python", "code": "import tri_wrds\ntri_wrds.run(load, save, out)"},
+  {"do": "datasets"},
+  {"do": "export", "names": ["tri_events"]}
+]}

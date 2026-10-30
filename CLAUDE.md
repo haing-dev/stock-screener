@@ -61,6 +61,12 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - WRDS policy: no WRDS Data into AI tools. Claude writes jobs; they run on WRDS Cloud via tools/wrdsq; only metadata
   and results come back. Never ask for the WRDS password; it is typed only in the user's PowerShell window.
 - User does not code and Windows blocks .bat files: give ONE PowerShell paste line (tools/wrdsq/mkjob.py).
+- Triage 10-year backtest on WRDS (2026-10-30): `tools/wrdsq/build_tri.py` copies triage/rules, episodes, score,
+  stats (+ qs/btstats ols_nw) unchanged into `tools/wrdsq/lib/tri_wrds.py` with the WRDS adapter
+  (`tools/wrdsq/tri_wrds_adapter.py`: CRSP dsf_v2 / Compustat / CCM / s34 13F / FF). Rebuild after any rules change;
+  local dry run `python3 tests/tri_wrds_local.py`. Job `tri_bt*`: pull + run, stats only; tri_events exported to the
+  user's `Documents\Screenerdata` (runner downloads exports; Claude never reads that folder). No insider data on WRDS
+  (tr_insiders not permitted) -> insider cell N/A. Entry = close of the day after the scan (live: open).
 - Global Macro Book plan: project doc claude/global_macro_book_plan_2026-10-29.md. WRDS-based signals are
   backtested on WRDS Cloud; only statistics return.
 
