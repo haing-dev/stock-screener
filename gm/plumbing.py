@@ -43,22 +43,23 @@ def aqr_tsmom():
 
 def main():
     D = pickle.load(open(os.path.join(P.OUT, "panel.pkl"), "rb"))
-    ours = trend_book(D["R"])
     aqr = aqr_tsmom()
     pairs = {"ALL": "TSMOM", "EQ": "TSMOM^EQ", "FI": "TSMOM^FI", "FX": "TSMOM^FX", "CM": "TSMOM^CM"}
-    print("price-trend plumbing check vs AQR TSMOM factors (monthly correlation; Sharpe of ours / AQR, gross)")
-    for a, b in (("1985-01", "2000-12"), ("2001-01", "2026-12"), ("1985-01", "2026-12")):
-        line = []
-        for o, q in pairs.items():
-            j = pd.concat([ours[o], aqr[q]], axis=1).loc[a:b].dropna()
-            if len(j) < 36:
-                line.append("%s n/a" % o)
-                continue
-            sr = lambda s: s.mean() / s.std() * np.sqrt(12)
-            line.append("%s corr %.2f SR %.2f/%.2f" % (o, j.iloc[:, 0].corr(j.iloc[:, 1]), sr(j.iloc[:, 0]), sr(j.iloc[:, 1])))
-        print("  %s..%s  " % (a[:4], b[:4]) + " | ".join(line))
-    n = {c: int(sum(1 for k in D["R"].columns if k.startswith(p if isinstance(p, str) else p) and D["R"][k].notna().sum() > 0))
-         for c, p in CLASSES.items()}
+    sr = lambda s: s.mean() / s.std() * np.sqrt(12)
+    for hz in ((12,), (1, 3, 12)):
+        ours = trend_book(D["R"], horizons=hz)
+        print("price trend %s-month signal vs AQR TSMOM (12-month signal): monthly correlation; Sharpe ours / AQR, gross"
+              % "/".join(map(str, hz)))
+        for a, b in (("1985-01", "2000-12"), ("2001-01", "2026-12"), ("1985-01", "2026-12")):
+            line = []
+            for o, q in pairs.items():
+                j = pd.concat([ours[o], aqr[q]], axis=1).loc[a:b].dropna()
+                if len(j) < 36:
+                    line.append("%s n/a" % o)
+                    continue
+                line.append("%s corr %.2f SR %.2f/%.2f" % (o, j.iloc[:, 0].corr(j.iloc[:, 1]), sr(j.iloc[:, 0]), sr(j.iloc[:, 1])))
+            print("  %s..%s  " % (a[:4], b[:4]) + " | ".join(line))
+    n = {c: int(sum(1 for k in D["R"].columns if k.startswith(p) and D["R"][k].notna().sum() > 0)) for c, p in CLASSES.items()}
     print("markets with data per class:", n)
 
 

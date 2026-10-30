@@ -115,8 +115,7 @@ def cb_yield(cc, n):
             out = nan
             for f in ("cb_de_%dy.csv" % n, "cb_de_%dy_m.csv" % n):
                 ls = _lines(f)
-                if f.endswith("_m.csv") and not any("end of month" in l.lower() for l in ls[:12]):
-                    continue                  # monthly file used only if it holds end-of-month values
+                # monthly file = end-of-month values (checked 2026-10-30: identical to the daily file's last day, 1997+)
                 rows = _table(ls, sep=";" if any(";" in l for l in ls[:20]) else ",")
                 d = [(_date(r[0]), r[1]) for r in rows if len(r) >= 2 and re.match(r"\d{4}-\d{2}", r[0].strip('"'))]
                 if d:
@@ -344,9 +343,10 @@ def build():
     # equities -----------------------------------------------------------------
     for k, (etf, idxs, cur, cc, div) in EQUITY.items():
         rl = rate3m(cc) / 1200
-        us_rate_used = rl.notna().sum() < 120
-        if us_rate_used:                      # no local short rate (India): US rate, flagged
-            rl = rl.combine_first(rate3m("US") / 1200)
+        f0 = rl.first_valid_index()
+        gap = rl.isna() & (GRID >= max(f0, pd.Period("1990-01", "M")) if f0 is not None else GRID >= pd.Period("1990-01", "M"))
+        us_rate_used = int(gap.sum()) > 12
+        rl = rl.combine_first((rate3m("US") / 1200).where(gap))   # local rate stops (India after 2023): US rate, flagged
         if k == "eq_us_spx":
             spy = ret(Y("SPY")) - rf_us
             R[k] = first(spy, mkt_rf)
@@ -376,7 +376,7 @@ def build():
             if tag not in ("tr",):
                 flags.append("div proxy before ETF")
         R[k] = first(*pieces)
-        note(k, parts, sorted(set(flags)) + (["LOCAL RATE MISSING: US 3m rate used"] if us_rate_used else []))
+        note(k, parts, sorted(set(flags)) + (["LOCAL RATE MISSING %d months: US 3m rate used" % int(gap.sum())] if us_rate_used else []))
 
     # bonds ----------------------------------------------------------------------
     for k, (cc, daily, n) in BONDS.items():
