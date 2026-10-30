@@ -55,10 +55,10 @@ jobs:
       - name: Live record (branch 'macro-record', if it exists)
         run: git clone -q --depth 1 --branch macro-record "$REPO_URL" macro_record || mkdir -p macro_record
 
-      - name: Previous research downloads (branch 'macro-data' research/, so research_fetch is incremental)
+      - name: Previous downloads (branch 'macro-data'; keeps raw and research files a partial run does not refetch)
         run: |
           git clone -q --depth 1 --branch macro-data "$REPO_URL" prev_data 2>/dev/null || exit 0
-          [ -d prev_data/research ] && mkdir -p cache/macro/raw && cp -r prev_data/research cache/macro/raw/ || true
+          rm -rf prev_data/.git && mkdir -p cache/macro/raw && cp -rn prev_data/. cache/macro/raw/ || true
           rm -rf prev_data
 
       - name: Run
