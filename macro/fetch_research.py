@@ -32,6 +32,12 @@ YAHOO = [
     "^FCHI", "^STOXX50E", "^AXJO", "^GSPTSE", "000001.SS", "^VIX", "^VIX3M", "^MOVE", "^TNX", "^IRX", "^TYX",
     "CL=F", "BZ=F", "GC=F", "SI=F", "HG=F", "NG=F", "PL=F", "ZC=F", "ZW=F", "ZS=F", "KC=F", "CT=F",
     "DX-Y.NYB", "EURUSD=X", "JPY=X", "KRW=X", "BRL=X", "CNY=X", "INR=X", "MXN=X", "AUDUSD=X", "BTC-USD",
+    # round 4 (2026-10-30): Global Macro Book panel
+    "HO=F", "RB=F", "SB=F", "LE=F", "HE=F", "CC=F", "PA=F", "ZL=F", "ZM=F", "KE=F", "ZN=F", "ZB=F", "ZF=F", "ZT=F",
+    "6E=F", "6J=F", "6B=F", "6A=F", "6C=F", "6S=F", "6N=F", "6M=F", "NQ=F", "RTY=F", "YM=F", "NKD=F",
+    "^SSMI", "^OMX", "^AEX", "^IBEX", "FTSEMIB.MI", "^NZ50", "^BFX", "^ATX", "PSI20.LS", "OSEBX.OL", "^OMXC25",
+    "^NSEI", "^JN0U.JO", "EWO", "EWK", "EDEN", "NORW", "ENZL", "EIS", "EWZS", "FLBR", "SEKUSD=X", "NOKUSD=X",
+    "NZDUSD=X", "CHF=X", "CAD=X", "GBPUSD=X", "TIP", "SCHP",
 ]
 
 FRED = [
@@ -65,6 +71,8 @@ FRED = [
     "IR3TIB01MXM156N", "IRSTCI01ZAM156N", "DEXSFUS", "IPG211111CN", "TRFVOLUSM227NFWA", "CES1000000001", "UNEMPLOY",
     "CPILFESL", "PCEPILFE", "BOPGSTB", "BOPBCA", "MANEMP", "AMTMNO", "DGORDER", "NEWORDER", "ACOGNO", "BAMLH0A0HYM2EY",
     "TOTCI", "RRSFS", "CP", "HOUST1F", "PERMIT1", "EXHOSLUSM495S", "MORTGAGE15US", "UMDMNO", "A065RC1A027NBEA",
+    # round 4 (2026-10-30): Global Macro Book panel (64 markets) - OECD/BIS/FX series per country
+    "IRLTLT01USM156N", "IRLTLT01CAM156N", "IRLTLT01AUM156N", "IRLTLT01NZM156N", "IRLTLT01CHM156N", "IRLTLT01SEM156N", "IRLTLT01NOM156N", "IRLTLT01DKM156N", "IRLTLT01FRM156N", "IRLTLT01ESM156N", "IRLTLT01NLM156N", "IRLTLT01BEM156N", "IRLTLT01ATM156N", "IRLTLT01PTM156N", "IRLTLT01KRM156N", "IRLTLT01MXM156N", "IRLTLT01ZAM156N", "IRLTLT01INM156N", "IRLTLT01EZM156N", "IR3TIB01USM156N", "IR3TIB01AUM156N", "IR3TIB01NZM156N", "IR3TIB01NOM156N", "IR3TIB01DKM156N", "IR3TIB01FRM156N", "IR3TIB01ESM156N", "IR3TIB01NLM156N", "IR3TIB01BEM156N", "IR3TIB01ATM156N", "IR3TIB01PTM156N", "IR3TIB01ZAM156N", "IR3TIB01INM156N", "IR3TIB01ITM156N", "IR3TIB01CNM156N", "CPALTT01USM659N", "CPALTT01CAM659N", "CPALTT01AUM659N", "CPALTT01NZM659N", "CPALTT01CHM659N", "CPALTT01SEM659N", "CPALTT01NOM659N", "CPALTT01DKM659N", "CPALTT01GBM659N", "CPALTT01DEM659N", "CPALTT01FRM659N", "CPALTT01ITM659N", "CPALTT01ESM659N", "CPALTT01NLM659N", "CPALTT01JPM659N", "CPALTT01MXM659N", "CPALTT01ZAM659N", "CPALTT01INM659N", "CPALTT01TWM659N", "CPALTT01EZM659N", "CANLOLITONOSTSAM", "AUSLOLITONOSTSAM", "NZLLOLITONOSTSAM", "CHELOLITONOSTSAM", "SWELOLITONOSTSAM", "NORLOLITONOSTSAM", "DNKLOLITONOSTSAM", "GBRLOLITONOSTSAM", "DEULOLITONOSTSAM", "FRALOLITONOSTSAM", "ITALOLITONOSTSAM", "ESPLOLITONOSTSAM", "NLDLOLITONOSTSAM", "JPNLOLITONOSTSAM", "MEXLOLITONOSTSAM", "ZAFLOLITONOSTSAM", "INDLOLITONOSTSAM", "TURLOLITONOSTSAM", "NAEXKP01USQ657S", "NAEXKP01CAQ657S", "NAEXKP01AUQ657S", "NAEXKP01NZQ657S", "NAEXKP01CHQ657S", "NAEXKP01SEQ657S", "NAEXKP01NOQ657S", "NAEXKP01DKQ657S", "NAEXKP01GBQ657S", "NAEXKP01DEQ657S", "NAEXKP01FRQ657S", "NAEXKP01ITQ657S", "NAEXKP01ESQ657S", "NAEXKP01NLQ657S", "NAEXKP01JPQ657S", "NAEXKP01KRQ657S", "NAEXKP01MXQ657S", "NAEXKP01ZAQ657S", "NAEXKP01INQ657S", "NAEXKP01BRQ657S", "NAEXKP01CNQ657S", "NBCABIS", "NBAUBIS", "NBNZBIS", "NBCHBIS", "NBSEBIS", "NBNOBIS", "NBDKBIS", "NBGBBIS", "NBXMBIS", "NBJPBIS", "NBKRBIS", "NBMXBIS", "NBBRBIS", "NBZABIS", "NBINBIS", "NBCNBIS", "NBTWBIS", "NBHKBIS", "EXUSAL", "EXUSNZ", "EXNOUS", "EXDNUS", "EXMXUS", "EXBZUS", "EXKOUS", "EXSFUS", "EXINUS", "EXCHUS", "EXHKUS", "EXTAUS", "EXCAUS", "EXJPUS", "EXSZUS", "EXSDUS", "EXUSUK", "EXUSEU", "EXGEUS", "BAA10YM", "AAA10YM", "GS1", "GS2", "GS5", "GS10", "GS20", "GS30", "TB3MS", "FEDFUNDS",
 ]
 
 URLS = {   # long-history research data sets (files saved as downloaded)
@@ -81,6 +89,9 @@ URLS = {   # long-history research data sets (files saved as downloaded)
     "gpr_index.xls": "https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls",
 }
 
+STOOQ = ["cl.f", "co.f", "ng.f", "ho.f", "rb.f", "gc.f", "si.f", "hg.f", "pl.f", "zc.f", "zw.f", "zs.f", "sb.f",
+         "kc.f", "ct.f", "lc.f", "lh.f", "cc.f", "^dax", "^ukx", "^cac", "^nkx", "^spx", "^kospi", "^hsi", "^twse",
+         "^bvp", "^ipc", "^snx", "^aor", "^tsx", "^smi", "^omxs", "^aex", "^ibex", "^fmib"]
 DAILY = ["^GSPC", "SPY", "^VIX", "TLT", "IEF", "GLD", "^VIX3M", "DX-Y.NYB", "HYG"]
 EXTRA_URLS = {
     "cboe_put_history.csv": "https://cdn.cboe.com/api/global/us_indices/daily_prices/PUT_History.csv",
@@ -200,6 +211,26 @@ def run(log=print):
             rows = [(x["calc_date"], x["level_eod"]) for x in js["indexes"]["INDEX_LEVELS"]]
             _save(name + ".csv", "date,value\n" + "\n".join(f"{d},{v}" for d, v in rows), "w")
             man["series"][name] = {"ok": True, "first": rows[0][0], "last": rows[-1][0], "rows": len(rows)}
+        except Exception as e:
+            man["series"][name] = {"ok": False, "error": str(e)[:150]}
+    for sym in STOOQ:                         # stooq.com free long histories (continuous futures, indexes); monthly
+        name = "S_" + re.sub(r"[^A-Za-z0-9]", "_", sym)
+        try:
+            txt = FT._get("https://stooq.com/q/d/l/", params={"s": sym, "i": "m"}).text
+            if not txt.startswith("Date"):
+                raise ValueError(txt[:80])
+            _save(name + ".csv", txt, "w")
+            lines = txt.strip().splitlines()
+            man["series"][name] = {"ok": True, "first": lines[1][:10], "last": lines[-1][:10], "rows": len(lines) - 1}
+        except Exception as e:
+            man["series"][name] = {"ok": False, "error": str(e)[:150]}
+        time.sleep(1.5)
+    for name, url in {"jln_uncertainty.zip": "https://www.sydneyludvigson.com/s/MacroFinanceUncertainty_202508Update.zip",
+                      "french_intl_index.zip": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/International_Index_Portfolios_Formed_on_BE_ME_CSV.zip"}.items():
+        try:
+            r = FT._get(url)
+            _save(name, r.content)
+            man["series"][name] = {"ok": True, "bytes": len(r.content)}
         except Exception as e:
             man["series"][name] = {"ok": False, "error": str(e)[:150]}
     _save("manifest.json", json.dumps(man, indent=1), "w")

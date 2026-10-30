@@ -1,1 +1,1 @@
-{"step": "all", "_note": "workflow default step: all | fetch | build | site | record | research_fetch (research data snapshot: branch macro-research-data)"}
+{"step": "research_fetch", "_note": "workflow default step: all | fetch | build | site | record | research_fetch (research data snapshot: branch macro-research-data)"}
