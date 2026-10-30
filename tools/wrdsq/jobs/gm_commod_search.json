@@ -1,0 +1,4 @@
+{"name": "gm_commod_search", "head_ok": true, "steps": [
+  {"do": "search", "terms": ["futures", "commodit", "contango", "settle", "crude", "gold", "bcom", "gsci", "crb"]},
+  {"do": "tables", "libraries": ["comp", "crsp", "cboe", "frb", "wrdsapps_windices", "contrib_global_factor"]}
+]}
