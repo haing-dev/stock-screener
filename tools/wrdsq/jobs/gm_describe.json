@@ -1,0 +1,16 @@
+{"name":"gm_describe","steps":[
+{"do":"describe","table":"wrdsapps_windices.mwcountryreturns"},
+{"do":"describe","table":"wrdsapps_windices.wcountryconstituents"},
+{"do":"describe","table":"ibes.igactryestdata"},
+{"do":"describe","table":"ibes.igactryactdata"},
+{"do":"describe","table":"ibes.igainfo"},
+{"do":"describe","table":"macrofin.macro_uncertainty"},
+{"do":"describe","table":"macrofin.financial_uncertainty"},
+{"do":"describe","table":"macrofin.fxdata"},
+{"do":"describe","table":"macrofin.tradedata"},
+{"do":"describe","table":"frb.rates_monthly"},
+{"do":"describe","table":"frb.fx_monthly"},
+{"do":"describe","table":"contrib_global_factor.global_factor"},
+{"do":"describe","table":"djones.djmonthly"},
+{"do":"python","title":"coverage (counts and date ranges only)","code":"Q={'windices':\"select min(date) a,max(date) b,count(distinct country) n from wrdsapps_windices.mwcountryreturns\",'g_idx by region':\"select indexgeo, count(*) n from comp.g_idx_index group by 1 order by 2 desc\",'iga countries':\"select count(*) n from ibes.igainfo\",'macro_unc':\"select min(date) a,max(date) b from macrofin.macro_uncertainty\",'gf':\"select min(date) a,max(date) b,count(distinct excntry) n from contrib_global_factor.global_factor\"}\nfor k,q in Q.items():\n    try:\n        d=sql(q); out(k, d.to_dict('records')[:40])\n    except Exception as e:\n        out(k,'FAILED',str(e)[:160])"},
+{"do":"datasets"}]}
