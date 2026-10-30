@@ -40,7 +40,7 @@ import zlib
 for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS"):
     os.environ.setdefault(_v, "1")
 
-VERSION = "1.0.1"
+VERSION = "1.0.2"
 HOME = os.path.expanduser("~")
 ROOT = os.path.join(HOME, "wrdsq")
 DATA = os.path.join(ROOT, "data")
@@ -110,6 +110,9 @@ def decode(arg):
     return json.loads(zlib.decompress(base64.urlsafe_b64decode(arg + pad)).decode("utf-8"))
 
 
+LIGHT = {"libraries", "search", "describe", "datasets", "delete", "export"}
+
+
 def job(arg):
     spec = decode(arg)
     for d in (ROOT, DATA, JOBS, LOGS, EXPORT, LIB):
@@ -117,11 +120,32 @@ def job(arg):
     name = re.sub(r"[^A-Za-z0-9_-]", "_", spec.get("name", "job"))[:40]
     path = os.path.join(JOBS, "%s_%s.json" % (time.strftime("%Y%m%d-%H%M%S"), name))
     json.dump(spec, open(path, "w"), indent=1)
-    if shutil.which("qrsh") and not spec.get("head_node"):
-        err("wrdsq: waiting for a WRDS compute node ...")
-        cmd = ["qrsh", "-now", "no", sys.executable, os.path.join(ROOT, "wrdsq.py"), "_exec", path]
-        sys.exit(subprocess.call(cmd))
-    execute(path)
+    log = os.path.join(LOGS, os.path.basename(path).replace(".json", ".txt"))
+    me = os.path.join(ROOT, "wrdsq.py")
+    light = all(st.get("do") in LIGHT for st in spec.get("steps", []))
+    if spec.get("head_node"):
+        execute(path)
+        return
+    # 1) interactive compute node (streams the report)
+    if shutil.which("qrsh"):
+        err("wrdsq: asking WRDS for an interactive compute node ...")
+        subprocess.call(["qrsh", "-now", "no", sys.executable, me, "_exec", path], stdout=sys.stdout)
+        if os.path.exists(log):
+            return
+    # 2) batch compute node (waits in the queue, then prints the report)
+    if shutil.which("qsub"):
+        err("wrdsq: interactive nodes busy -> submitting a batch job and waiting for it (can take a few minutes) ...")
+        subprocess.call(["qsub", "-sync", "y", "-b", "y", "-N", "wrdsq_" + name, "-o", log + ".out", "-e", log + ".err",
+                         sys.executable, me, "_exec", path], stdout=sys.stderr)
+        if os.path.exists(log):
+            sys.stdout.write(open(log).read())
+            return
+    # 3) metadata-only jobs are light enough for the login node
+    if light:
+        err("wrdsq: no compute node available; this job only reads metadata, running it here ...")
+        execute(path)
+        return
+    print("=== WRDSQ: no WRDS compute node was available. Nothing ran. Please paste the same line again later. ===")
 
 
 # ------------------------------------------------------------------------------------------------ steps
