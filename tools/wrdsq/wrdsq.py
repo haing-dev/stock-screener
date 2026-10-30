@@ -41,7 +41,7 @@ import zlib
 for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS"):
     os.environ.setdefault(_v, "1")
 
-VERSION = "1.0.3"
+VERSION = "1.0.4"
 HOME = os.path.expanduser("~")
 ROOT = os.path.join(HOME, "wrdsq")
 DATA = os.path.join(ROOT, "data")
@@ -127,26 +127,31 @@ def job(arg):
     if spec.get("head_node"):
         execute(path)
         return
+    msgs = []
     # 1) interactive compute node (streams the report)
     if shutil.which("qrsh"):
         err("wrdsq: asking WRDS for an interactive compute node ...")
-        subprocess.call(["qrsh", "-now", "no", sys.executable, me, "_exec", path], stdout=sys.stdout)
+        p = subprocess.run(["qrsh", "-now", "no", sys.executable, me, "_exec", path], stdout=sys.stdout,
+                           stderr=subprocess.PIPE, universal_newlines=True)
         if os.path.exists(log):
             return
+        msgs.append("qrsh: " + " ".join((p.stderr or "").split())[-250:])
     # 2) batch compute node (waits in the queue, then prints the report)
     if shutil.which("qsub"):
-        err("wrdsq: interactive nodes busy -> submitting a batch job and waiting for it (can take a few minutes) ...")
-        subprocess.call(["qsub", "-sync", "y", "-b", "y", "-N", "wrdsq_" + name, "-o", log + ".out", "-e", log + ".err",
-                         sys.executable, me, "_exec", path], stdout=sys.stderr)
+        err("wrdsq: interactive nodes busy -> submitting a batch job and waiting for it ...")
+        p = subprocess.run(["qsub", "-sync", "y", "-b", "y", "-N", "wrdsq_" + name, "-o", log + ".out", "-e", log + ".err",
+                            sys.executable, me, "_exec", path], stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                           universal_newlines=True)
         if os.path.exists(log):
             sys.stdout.write(open(log).read())
             return
-    # 3) metadata-only jobs are light enough for the login node
-    if light:
-        err("wrdsq: no compute node available; this job only reads metadata, running it here ...")
+        msgs.append("qsub: " + " ".join(((p.stdout or "") + " " + (p.stderr or "")).split())[-250:])
+    # 3) light jobs (metadata, or aggregate SQL + small analysis marked head_ok) may use the login node
+    if light or spec.get("head_ok"):
+        err("wrdsq: no compute node available; light job, running it on the login node ...")
         execute(path)
         return
-    print("=== WRDSQ: no WRDS compute node was available. Nothing ran. Please paste the same line again later. ===")
+    print("=== WRDSQ: no WRDS compute node was available. Nothing ran. The runner will retry. (%s) ===" % " | ".join(msgs))
 
 
 # ------------------------------------------------------------------------------------------------ steps
