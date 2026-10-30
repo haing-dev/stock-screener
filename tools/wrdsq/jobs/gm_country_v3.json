@@ -1,0 +1,20 @@
+{
+ "name": "gm_country_v3",
+ "head_ok": true,
+ "steps": [
+  {
+   "do": "pull",
+   "name": "jkp_ctry2",
+   "date": "eom",
+   "sql": "select excntry, eom, count(*) as n, sum(me) as me_tot, sum(case when be_me is not null then me*be_me end)/nullif(sum(case when be_me is not null then me end),0) as bm_agg, sum(case when ni_me is not null then me*ni_me end)/nullif(sum(case when ni_me is not null then me end),0) as ep_agg, sum(case when div12m_me is not null then me*div12m_me end)/nullif(sum(case when div12m_me is not null then me end),0) as dp_agg, sum(case when ret_exc_lead1m is not null then me*ret_exc_lead1m end)/nullif(sum(case when ret_exc_lead1m is not null then me end),0) as ret_lead_vw from contrib_global_factor.global_factor where common=1 and primary_sec=1 and obs_main=1 and exch_main=1 and me>0 and size_grp in ('mega','large','small') and (ret_exc_lead1m is null or ret_exc_lead1m between -0.95 and 3) and excntry in ('USA','GBR','DEU','FRA','JPN','CAN','AUS','HKG','CHE','SWE','NLD','ITA','ESP','DNK','NOR','BEL','AUT','PRT','CHN','KOR','TWN','IND','BRA','MEX','ZAF') and eom>='1980-01-01' group by excntry, eom"
+  },
+  {
+   "do": "python",
+   "title": "country tests v3 (investable stocks, value composite, TS momentum, revisions via currency map)",
+   "code": "import gm_country\ngm_country.run(load, out, sql=sql, dataset='jkp_ctry2')"
+  },
+  {
+   "do": "datasets"
+  }
+ ]
+}

@@ -9,7 +9,9 @@ v1 used all 95 JKP countries; frontier markets with extreme country-months domin
 Tests (monthly, rank-weighted, dollar-neutral, $1 long / $1 short, USD excess returns, gross):
   value_bm (aggregate B/M), value_ep (aggregate E/P), value_dp (dividend yield), momentum_12_1,
   revisions (3-month average of (up - down) / estimates), combo = mean of value_bm and momentum,
-  combo3 = mean of value_bm, momentum and revisions.
+  combo3 = mean of value composite, momentum and revisions. v3: value composite (avg rank of B/M, E/P, D/P),
+  directional time-series momentum for comparison, investable-stock filter in the pull (no micro/nano caps,
+  stock returns within -95%..+300%), I/B/E/S codes mapped by estimate currency (glcountry not subscribed).
 """
 import numpy as np
 import pandas as pd
@@ -42,39 +44,52 @@ def _stats(x, a, b):
         m * 100, s * 100, m / s, x.mean() / x.std() * np.sqrt(len(x)), (lv / lv.cummax() - 1).min() * 100, len(x))
 
 
+CUR2ISO = {"GBP": "GBR", "DEM": "DEU", "FRF": "FRA", "JPY": "JPN", "CAD": "CAN", "AUD": "AUS", "HKD": "HKG",
+           "CHF": "CHE", "SEK": "SWE", "NLG": "NLD", "ITL": "ITA", "ESP": "ESP", "DKK": "DNK", "NOK": "NOR", "BEF": "BEL",
+           "ATS": "AUT", "PTE": "PRT", "CNY": "CHN", "RMB": "CHN", "KRW": "KOR", "TWD": "TWN", "INR": "IND", "BRL": "BRA",
+           "MXN": "MEX", "MXP": "MEX", "ZAR": "ZAF"}
+
+
 def _ibes_map(sql, codes, out):
-    """Map I/B/E/S country codes to ISO3 using ibes.glcountry (reference table)."""
+    """Map I/B/E/S country codes to ISO3 by the currency their analysts' estimates are in (pre-euro currencies tell the
+    euro-area countries apart). ibes.glcountry is not in the subscription."""
+    q = ("with idc as (select ticker, max(country) as country from ibes.idsum group by ticker) "
+         "select i.country, s.curcode, (s.statpers < '1999-01-01') as pre, count(*) as n from ibes.statsum_epsint s "
+         "join idc i on s.ticker=i.ticker where s.fpi='1' and s.measure='EPS' group by 1,2,3")
     try:
-        g = sql("select * from ibes.glcountry")
+        g = sql(q)
     except Exception as e:  # noqa: BLE001
-        out("glcountry not readable: %s" % str(e)[:150])
-        return {}
-    cols = list(g.columns)
-    out("ibes.glcountry columns: %s (%d rows)" % (", ".join(cols), len(g)))
-    code_col = max(cols, key=lambda c: g[c].astype(str).str.strip().isin(codes).sum())
-    text = [c for c in cols if c != code_col and g[c].map(lambda x: isinstance(x, str)).mean() > 0.9]
-    name_col = max(text, key=lambda c: g[c].astype(str).str.len().mean()) if text else None
-    out("code column: %s, name column: %s" % (code_col, name_col))
+        out("currency map query failed: %s" % str(e)[:150])
+        return {"US_FILE": "USA"}
+    g["country"] = g["country"].astype(str).str.strip()
+    g["curcode"] = g["curcode"].astype(str).str.strip()
+    best = {}
+    for c, x in g.groupby("country"):
+        pre = x[x["pre"].astype(bool)]
+        y = pre if len(pre) and pre["n"].sum() > 500 else x
+        y = y.groupby("curcode")["n"].sum().sort_values(ascending=False)
+        if len(y) and y.iloc[0] / y.sum() > 0.6:
+            best[c] = (y.index[0], int(x["n"].sum()))
     m = {"US_FILE": "USA"}
-    if name_col is None:
-        return m
-    for _, r in g.iterrows():
-        code, name = str(r[code_col]).strip(), str(r[name_col]).strip().lower()
-        for iso, keys in NAMES.items():
-            if any(k == name or name.startswith(k) for k in keys) and code in codes and iso not in m.values():
-                m[code] = iso
+    for cur, iso in CUR2ISO.items():
+        cands = [(n, c) for c, (cc, n) in best.items() if cc == cur]
+        if cands and iso not in m.values():
+            m[max(cands)[1]] = iso
     return m
 
 
-def run(load, out, sql=None):
-    d = load("jkp_ctry")
+def run(load, out, sql=None, dataset="jkp_ctry"):
+    d = load(dataset)
     d["eom"] = pd.to_datetime(d["eom"]).dt.to_period("M")
     d = d[d["excntry"].isin(UNIVERSE) & (d["n"] >= MIN_STOCKS)]
     piv = lambda c: d.pivot_table(index="eom", columns="excntry", values=c)
     ret_lead, bm, ep, dp = piv("ret_lead_vw"), piv("bm_agg"), piv("ep_agg"), piv("dp_agg")
+    out("dataset %s" % dataset)
     ret = ret_lead.shift(1)
     mom = (1 + ret).rolling(11).apply(np.prod, raw=True).shift(1) - 1
     sig = {"value_bm": np.log(bm.where(bm > 0)), "value_ep": ep, "value_dp": dp, "momentum_12_1": mom}
+    rk = lambda x: x.rank(axis=1, pct=True)
+    sig["value_composite"] = (rk(sig["value_bm"]) + rk(ep) + rk(dp)) / 3
     # analyst revisions breadth
     rev_ok = False
     try:
@@ -84,6 +99,7 @@ def run(load, out, sql=None):
         out("I/B/E/S codes mapped: %s" % ", ".join("%s=%s" % (k, mp[k]) for k in sorted(mp, key=lambda k: mp[k])))
         missing = [c for c in UNIVERSE if c not in mp.values()]
         out("universe countries without I/B/E/S code: %s" % (", ".join(missing) or "none"))
+        v = v.copy()
         v["iso"] = v["country"].astype(str).str.strip().map(mp)
         v = v.dropna(subset=["iso"])
         v["eom"] = pd.to_datetime(v["m"]).dt.to_period("M")
@@ -98,10 +114,15 @@ def run(load, out, sql=None):
     for k, s in sig.items():
         s = s.reindex_like(ret_lead).where(ok)
         strat[k] = (_rank_weights(s.where(s.notna())) * ret_lead).sum(axis=1, min_count=8)
+    # directional (time-series) momentum: long countries up over 12-1 months, short those down; 1/N, vol-scaled
+    vol = ret.rolling(36, min_periods=24).std()
+    tsw = (np.sign(mom) / vol).where(ok)
+    tsw = tsw.div(tsw.abs().sum(axis=1), axis=0)
+    strat["ts_momentum_12_1"] = (tsw * ret_lead).sum(axis=1, min_count=8)
     strat = pd.DataFrame(strat)
-    strat["combo_value_mom"] = strat[["value_bm", "momentum_12_1"]].mean(axis=1, skipna=False)
+    strat["combo_value_mom"] = strat[["value_composite", "momentum_12_1"]].mean(axis=1, skipna=False)
     if rev_ok:
-        strat["combo3_val_mom_rev"] = strat[["value_bm", "momentum_12_1", "revisions_3m"]].mean(axis=1)
+        strat["combo3_val_mom_rev"] = strat[["value_composite", "momentum_12_1", "revisions_3m"]].mean(axis=1)
     out("universe (%d): %s; countries per month: %s" % (len(UNIVERSE), " ".join(UNIVERSE), ", ".join(
         "%d:%d" % (y, ok.loc[str(y)].sum(axis=1).median()) for y in (1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025))))
     out("largest single country-month return used: %.0f%%; months with |ret| > 50%%: %d" % (
