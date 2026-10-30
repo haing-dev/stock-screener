@@ -1,7 +1,8 @@
 # WRDS runner (Global Macro Book / wrdsq). Runs every 10 minutes as a Windows scheduled task.
 # Claude drops job files into Documents\WRDS results\jobs; this script sends them to WRDS Cloud with the SSH key
 # (Windows-encrypted password kept on this PC), saves the report to Documents\WRDS results\results, and moves finished jobs to jobs\done.
-# Only metadata and statistics come back; the data stays on WRDS. Password and key never leave this PC.
+# Only metadata and statistics come back to Claude; the data stays on WRDS, and exported files go straight to
+# Documents\Screenerdata (the user's copy, never connected to Claude). Password and key never leave this PC.
 $D = Join-Path $HOME "Documents\WRDS results"
 $H = "ttdlisa@wrds-cloud.wharton.upenn.edu"
 $O = @("-o", "StrictHostKeyChecking=accept-new", "-o", "ConnectTimeout=30", "-o", "NumberOfPasswordPrompts=1", "-o", "PreferredAuthentications=keyboard-interactive,password", "-o", "ServerAliveInterval=60", "-o", "ServerAliveCountMax=5")
@@ -46,6 +47,18 @@ try {
         }
         Move-Item -Force -Path $j.FullName -Destination (Join-Path $done $j.Name)
         Log "${n}: finished"
+    }
+    # downloads: files a job exported (~/wrdsq/export on WRDS) go to Documents\Screenerdata on this PC, then are removed
+    # from WRDS (quota). Screenerdata is the user's own copy: it is never connected to Claude (WRDS AI policy).
+    $dl = Join-Path $HOME "Documents\Screenerdata"
+    $exp = @(& ssh @O $H "ls -1 ~/wrdsq/export 2>/dev/null" 2>$null) | Where-Object { $_ -and $_.Trim() }
+    if ($exp.Count -gt 0) {
+        New-Item -ItemType Directory -Force $dl | Out-Null
+        & scp @O "${H}:~/wrdsq/export/*" $dl 2>&1 | Out-Null
+        if ($LASTEXITCODE -eq 0) {
+            & ssh @O $H "rm -f ~/wrdsq/export/*" 2>&1 | Out-Null
+            Log ("downloaded to Screenerdata: " + ($exp -join ", "))
+        } else { Log "download of exports failed, will retry next round" }
     }
     Set-Content -Path $status -Value ("idle, last run {0:yyyy-MM-dd HH:mm}" -f (Get-Date))
 }

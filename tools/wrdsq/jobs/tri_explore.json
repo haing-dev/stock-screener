@@ -1,0 +1,16 @@
+{"name": "tri_explore", "head_ok": true, "steps": [
+  {"do": "tables", "libraries": ["crsp", "tfn", "tr_13f", "comp_execucomp", "ibes", "ff"]},
+  {"do": "search", "terms": ["delist", "insider", "s34", "lnkhist", "stocknames"], "libraries": ["crsp", "tfn", "tr_13f", "tr_insiders", "comp"]},
+  {"do": "describe", "table": "crsp.msf_v2", "date": "mthcaldt"},
+  {"do": "describe", "table": "crsp.msf", "date": "date"},
+  {"do": "describe", "table": "crsp.dsf_v2", "date": "dlycaldt"},
+  {"do": "describe", "table": "crsp.stksecurityinfohist", "date": "secinfostartdt"},
+  {"do": "describe", "table": "crsp.ccmxpf_lnkhist", "date": "linkdt"},
+  {"do": "describe", "table": "comp.fundq", "date": "rdq"},
+  {"do": "describe", "table": "comp.company"},
+  {"do": "describe", "table": "ibes.statsum_epsus", "date": "statpers"},
+  {"do": "describe", "table": "tfn.s34", "date": "fdate"},
+  {"do": "describe", "table": "comp_execucomp.anncomp", "date": "year"},
+  {"do": "describe", "table": "ff.fivefactors_monthly", "date": "date"},
+  {"do": "datasets"}
+]}
