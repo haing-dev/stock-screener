@@ -202,6 +202,32 @@ def msci_gross_local(country):
     return pd.Series(s.values, index=s.index.to_period("M")).groupby(level=0).last().reindex(GRID)
 
 
+FRENCH_CTRY = {"eq_de_dax": "Germany", "eq_gb_ftse": "UK", "eq_fr_cac": "France", "eq_jp_nikkei": "Japan",
+               "eq_ca_tsx": "Canada", "eq_au_asx": "Austrlia", "eq_hk_hsi": "HongKong"}
+
+
+def french_country_usd(name):
+    """Ken French international country 'Mkt' portfolio: value-weighted USD total return (1975+), first block only."""
+    p = os.path.join(RD, "french_intl_countries_ff.zip")
+    nan = pd.Series(np.nan, index=GRID)
+    if not os.path.exists(p):
+        return nan
+    z = zipfile.ZipFile(p)
+    fn = [n for n in z.namelist() if n.lower() == name.lower() + ".dat"]
+    if not fn:
+        return nan
+    rows, started = [], False
+    for ln in z.read(fn[0]).decode("latin-1").splitlines():
+        t = ln.split()
+        if t and re.fullmatch(r"\d{6}", t[0]):
+            started = True
+            rows.append((pd.Period(t[0][:4] + "-" + t[0][4:], "M"), float(t[1])))
+        elif started and t:
+            break                                     # next block (annual or other weighting) starts
+    s = pd.Series(dict(rows))
+    return (s.where(s > -99) / 100).reindex(GRID)
+
+
 def ret(p):
     return p.pct_change(fill_method=None)
 
@@ -382,6 +408,10 @@ def build():
             r_loc = (1 + r_usd) / fx_ch - 1               # convert USD total return to local currency
             pieces.append(r_loc - rl)
             parts.append("%s ETF total return in %s" % (etf, cur))
+        if k in FRENCH_CTRY:
+            r_ff = (1 + french_country_usd(FRENCH_CTRY[k])) / fx_ch - 1
+            pieces.append(r_ff - rl)
+            parts.append("Ken French %s market portfolio (USD total return, 1975+) in %s" % (FRENCH_CTRY[k], cur))
         for ix in idxs or []:
             sym, tag = (ix.split("|") + [""])[:2]
             px = S(sym) if (sym.startswith("^") and sym.lower() == sym) or sym.endswith(".f") else Y(sym)
