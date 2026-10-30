@@ -228,6 +228,32 @@ def french_country_usd(name):
     return (s.where(s > -99) / 100).reindex(GRID)
 
 
+def eia_curve(root):
+    """EIA NYMEX daily settlement, contracts 1-4 -> month-end DataFrame (columns 1..4). root: cl, ng, ho, rb."""
+    out = {}
+    for c in range(1, 5):
+        p = os.path.join(RD, "eia_%s%d.xls" % (root, c))
+        if not os.path.exists(p):
+            continue
+        x = pd.read_excel(p, sheet_name="Data 1", header=2)
+        x.columns = ["date", "value"]
+        out[c] = _month_end(pd.to_datetime(x["date"], errors="coerce"), x["value"])
+    return pd.DataFrame(out).reindex(GRID)
+
+
+def eia_rolled(root):
+    """Monthly roll-adjusted futures excess return: buy contract 2 at month end t-1; one month later it is contract 1
+    (NYMEX energy contracts expire every month before or on the last business day). Carry = annualised (F1/F2 - 1)."""
+    cv = eia_curve(root)
+    if 1 not in cv or 2 not in cv:
+        nan = pd.Series(np.nan, index=GRID)
+        return nan, nan
+    return cv[1] / cv[2].shift(1) - 1, 12 * (cv[1] / cv[2] - 1)
+
+
+EIA_ROOT = {"cm_wti": "cl", "cm_natgas": "ng", "cm_heatoil": "ho", "cm_gasoline": "rb"}
+
+
 def ret(p):
     return p.pct_change(fill_method=None)
 
@@ -473,6 +499,9 @@ def build():
     wb = _pinksheet()
     for k, (etf, fut, stq, wbcol) in COMMOD.items():
         pieces, parts, flags = [], [], []
+        if k in EIA_ROOT:
+            pieces.append(eia_rolled(EIA_ROOT[k])[0])
+            parts.append("EIA NYMEX contract 2 -> 1 roll (1983+)")
         if etf:
             pieces.append(ret(Y(etf)) - rf_us)
             parts.append(etf + " ETF")
