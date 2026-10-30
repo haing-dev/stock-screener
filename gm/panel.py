@@ -60,6 +60,116 @@ def F(sid):
     return _csv(p if os.path.exists(p) else os.path.join(RAW, sid + ".csv"))
 
 
+_ERA = {"S": 1925, "H": 1988, "R": 2018, "T": 1911, "M": 1867}
+
+
+def _date(txt):
+    """Parse ISO, d/m/Y, 'd Mon Y', 'd-Mon-Y' and Japanese era dates (S49.9.24, H1.1.4, R7.10.1)."""
+    txt = str(txt).strip().strip('"')
+    m = re.fullmatch(r"([SHRTM])(\d{1,2})\.(\d{1,2})\.(\d{1,2})", txt)
+    if m:
+        return pd.Timestamp(_ERA[m.group(1)] + int(m.group(2)), int(m.group(3)), int(m.group(4)))
+    for fmt in ("%Y-%m-%d", "%Y-%m", "%Y/%m/%d", "%d/%m/%Y", "%d %b %Y", "%d-%b-%Y", "%d-%b-%y", "%d %B %Y"):
+        try:
+            return pd.to_datetime(txt, format=fmt)
+        except (ValueError, TypeError):
+            pass
+    return pd.NaT
+
+
+def _month_end(dates, values):
+    """Last valid daily observation of each month -> monthly series on GRID."""
+    s = pd.Series(pd.to_numeric(pd.Series(values).astype(str).str.replace(",", ".").str.strip(), errors="coerce").values,
+                  index=pd.DatetimeIndex(dates))
+    s = s[s.index.notna() & s.notna()].sort_index()
+    if s.empty:
+        return pd.Series(np.nan, index=GRID)
+    return s.groupby(s.index.to_period("M")).last().reindex(GRID)
+
+
+def _lines(name):
+    p = os.path.join(RD, name)
+    if not os.path.exists(p):
+        return []
+    raw = open(p, "rb").read()
+    for enc in ("utf-8-sig", "latin-1"):
+        try:
+            return raw.decode(enc).splitlines()
+        except UnicodeDecodeError:
+            pass
+    return []
+
+
+def _table(lines, sep=","):
+    """Rows after the first line that starts with a date-like header; returns (header, rows)."""
+    import csv
+    rows = list(csv.reader(lines, delimiter=sep))
+    return rows
+
+
+def cb_yield(cc, n):
+    """Month-end government bond yield (% p.a.) from the central bank / finance ministry files (round 6)."""
+    nan = pd.Series(np.nan, index=GRID)
+    try:
+        if cc == "DE":
+            rows = _table(_lines("cb_de_%dy.csv" % n), sep=";" if any(";" in l for l in _lines("cb_de_%dy.csv" % n)[:20]) else ",")
+            d = [(_date(r[0]), r[1]) for r in rows if len(r) >= 2 and re.match(r"\d{4}-\d{2}", r[0].strip('"'))]
+            return _month_end([a for a, _ in d], [b for _, b in d]) if d else nan
+        if cc == "JP":
+            out = nan
+            for f in ("cb_jp_jgb_recent.csv", "cb_jp_jgb_all.csv"):
+                rows = _table(_lines(f))
+                hdr = next((r for r in rows if r and r[0].strip().lower() == "date"), None)
+                if not hdr:
+                    continue
+                col = [i for i, h in enumerate(hdr) if h.strip().upper() == "%dY" % n]
+                if not col:
+                    continue
+                d = [(_date(r[0]), r[col[0]]) for r in rows if len(r) > col[0] and r[0][:1] in "SHRTM12"]
+                out = out.combine_first(_month_end([a for a, _ in d], [b for _, b in d]))
+            return out
+        if cc == "CA":
+            rows = _table(_lines("cb_ca_yields.csv"))
+            i0 = next((i for i, r in enumerate(rows) if r and r[0].strip() == "date"), None)
+            if i0 is None:
+                return nan
+            sid = {2: "BD.CDN.2YR.DQ.YLD", 10: "BD.CDN.10YR.DQ.YLD"}[n]
+            c = rows[i0].index(sid)
+            d = [(_date(r[0]), r[c]) for r in rows[i0 + 1:] if len(r) > c]
+            return _month_end([a for a, _ in d], [b for _, b in d])
+        if cc == "AU":
+            sid = {2: "FCMYGBAG2", 3: "FCMYGBAG3", 5: "FCMYGBAG5", 10: "FCMYGBAG10"}[n]
+            out = nan
+            frames = []
+            p = os.path.join(RD, "cb_au_f2_hist.xls")
+            if os.path.exists(p):
+                frames.append(pd.read_excel(p, header=None).astype(str).values.tolist())
+            frames.append(_table(_lines("cb_au_f2.csv")))
+            for rows in frames:
+                i0 = next((i for i, r in enumerate(rows) if r and str(r[0]).strip() == "Series ID"), None)
+                if i0 is None or sid not in [str(x).strip() for x in rows[i0]]:
+                    continue
+                c = [str(x).strip() for x in rows[i0]].index(sid)
+                d = [(_date(str(r[0]).split(" ")[0] if re.match(r"\d{4}-", str(r[0])) else r[0]), r[c])
+                     for r in rows[i0 + 1:] if len(r) > c]
+                out = out.combine_first(_month_end([a for a, _ in d], [b for _, b in d]))
+            return out
+        if cc == "GB":
+            rows = _table(_lines("cb_gb_yields.csv"))
+            if not rows:
+                return nan
+            hdr = [h.strip().upper() for h in rows[0]]
+            sid = {10: "IUDMNPY", 5: "IUDSNPY"}[n]
+            if sid not in hdr:
+                return nan
+            c = hdr.index(sid)
+            d = [(_date(r[0]), r[c]) for r in rows[1:] if len(r) > c]
+            return _month_end([a for a, _ in d], [b for _, b in d])
+    except Exception as e:  # noqa: BLE001
+        print("cb_yield %s %dy failed: %s" % (cc, n, e))
+    return nan
+
+
 def ret(p):
     return p.pct_change(fill_method=None)
 
@@ -125,7 +235,8 @@ BONDS = {  # id: (country code for OECD 10y, daily FRED series for month-end yie
     "bd_us_30y": ("US", "DGS30", 30), "bd_de_10y": ("DE", None, 10), "bd_gb_10y": ("GB", None, 10),
     "bd_jp_10y": ("JP", None, 10), "bd_ca_10y": ("CA", None, 10), "bd_au_10y": ("AU", None, 10),
 }
-SHORT = {"st_us_2y": "US", "st_de_2y": "DE", "st_gb_2y": "GB", "st_ca_2y": "CA", "st_au_2y": "AU"}
+SHORT = {"st_us_2y": ("US", 2), "st_de_2y": ("DE", 2), "st_gb_5y": ("GB", 5), "st_ca_2y": ("CA", 2), "st_au_2y": ("AU", 2),
+         "st_jp_2y": ("JP", 2)}   # BoE publishes 5y as its shortest par yield
 FXM = {  # id: (currency, FRED monthly, quoted USD per unit?, Yahoo month-end, 3m-rate country)
     "fx_eur": ("EUR", "EXUSEU", True, "EURUSD=X", "EZ"), "fx_jpy": ("JPY", "EXJPUS", False, "JPY=X", "JP"),
     "fx_gbp": ("GBP", "EXUSUK", True, "GBPUSD=X", "GB"), "fx_chf": ("CHF", "EXSZUS", False, "CHF=X", "CH"),
@@ -251,6 +362,10 @@ def build():
         if daily:
             pieces.append(par_ret(F(daily), n) - rl)
             parts.append("%s month-end yield, %dy par bond" % (daily, n))
+        if cc != "US":
+            cy = cb_yield(cc, n)
+            pieces.append(par_ret(cy, n) - rl)
+            parts.append("%s central bank / ministry month-end %dy yield" % (cc, n))
         if (cc, n) in STQ_Y:
             pieces.append(par_ret(S(STQ_Y[(cc, n)]), n) - rl)
             parts.append("stooq %s month-end yield" % STQ_Y[(cc, n)])
@@ -266,10 +381,10 @@ def build():
 
     # front end: 2-year government notes from month-end yields (stands in for 3-month rate futures, whose free
     # history exists only as monthly averages)
-    for k, cc in SHORT.items():
-        y2 = F("DGS2") if cc == "US" else S(STQ_Y[(cc, 2)])
-        R[k] = par_ret(y2, 2) - rate3m("EZ" if cc == "DE" else cc) / 1200
-        note(k, ["2y month-end yield, par note"], [] if y2.notna().sum() > 120 else ["MISSING month-end 2y yield"])
+    for k, (cc, n) in SHORT.items():
+        y2 = F("DGS2") if cc == "US" else first(cb_yield(cc, n), S(STQ_Y[(cc, n)]) if (cc, n) in STQ_Y else cb_yield(cc, n))
+        R[k] = par_ret(y2, n) - rate3m("EZ" if cc == "DE" else cc) / 1200
+        note(k, ["%dy month-end yield, par note" % n], [] if y2.notna().sum() > 120 else ["MISSING month-end %dy yield" % n])
 
     # FX -------------------------------------------------------------------------------
     r_us = rate3m("US") / 1200
@@ -308,9 +423,9 @@ def build():
     be = first(be, F("DGS10") - F("DFII10"))
     R["sp_us_breakeven10"] = 8 * (be - be.shift(1)) / 100
     note("sp_us_breakeven10", ["8 x change in 10y breakeven (T10YIE)"], ["no TIPS before 2003"])
-    d2, d10 = S("2dey.b"), S("10dey.b")
+    d2, d10 = first(cb_yield("DE", 2), S("2dey.b")), first(cb_yield("DE", 10), S("10dey.b"))
     R["sp_de_2s10s"] = 5 * (par_ret(d2, 2) / 1.9 - par_ret(d10, 10) / 8.0)
-    note("sp_de_2s10s", ["stooq 2dey.b / 10dey.b month-end"], [] if d2.notna().sum() > 120 else
+    note("sp_de_2s10s", ["Bundesbank 2y / 10y month-end"], [] if d2.notna().sum() > 120 else
          ["MISSING: German 2-year yield (stooq 2dey.b; alternative Bundesbank SDMX)"])
 
     R = pd.DataFrame(R).reindex(GRID)
