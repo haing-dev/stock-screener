@@ -58,7 +58,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Plan + all results: project doc claude/global_macro_book_plan_2026-10-29.md (v5+). Code: gm/panel.py (65-market
   month-end panel from free data on branch macro-data), gm/plumbing.py (vs AQR TSMOM: corr 0.83), gm/signals.py
   (families), gm/book.py (combined book, costs), gm/run.py (monthly run), gm/imf_revisions.py (exploratory).
-- Workflow .github/workflows/gm.yml (3rd of each month + push to gm/): branch gm-status (status.md, positions.csv),
+- Workflow .github/workflows/gm.yml (DISABLED 2026-10-31 at user request until further notice; re-enable: gh api -X PUT repos/haing-dev/stock-screener/actions/workflows/gm.yml/enable) (3rd of each month + push to gm/): branch gm-status (status.md, positions.csv),
   gm-record (append-only ledger.csv; restatements appended with '-restated').
 - Holdout 2011-2026 has NOT been looked at: never print or inspect it until rules are frozen (then run once).
 - Placeholders: Bloomberg commodity workbook docs/data_requests/Bloomberg_macro_UBC.xlsx (commodities + first-release/consensus economics; user at UBC next week; built by build_bloomberg.py);
