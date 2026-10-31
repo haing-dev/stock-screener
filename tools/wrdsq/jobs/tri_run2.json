@@ -1,0 +1,5 @@
+{"name": "tri_run2", "steps": [
+  {"do": "delete", "names": ["tri_px", "tri_bk", "tri_13p", "tri_13t"]},
+  {"do": "python", "code": "import tri_wrds\ntri_wrds.run(load, save, out)"},
+  {"do": "export", "names": ["tri_events"]}
+]}
