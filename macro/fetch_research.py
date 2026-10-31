@@ -123,6 +123,9 @@ EXTRA_URLS = {
     "cb_ca_yields.csv": "https://www.bankofcanada.ca/valet/observations/BD.CDN.2YR.DQ.YLD,BD.CDN.10YR.DQ.YLD/csv?start_date=1980-01-01",
     "cb_au_f2_hist.xls": "https://www.rba.gov.au/statistics/tables/xls-hist/f02dhist.xls",
     "cb_au_f2.csv": "https://www.rba.gov.au/statistics/tables/csv/f2-data.csv",
+    # round 11: OECD Original Release Data and Revisions Database (1999+), structure + small sample to learn the codes
+    "oecd_rev_structure.xml": "https://sdmx.oecd.org/public/rest/dataflow/OECD.SDD.STES/DSD_STES_REVISIONS@DF_STES_REVISIONS/4.0?references=all",
+    "oecd_rev_sample.csv": "https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES_REVISIONS@DF_STES_REVISIONS,4.0/USA+DEU.M....?startPeriod=2025-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels",
     # round 10: current OECD CLI and CPI (FRED's OECD copies stopped in 2024-25), new OECD SDMX API
     "oecd_cli.csv": "https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI,/USA+DEU+FRA+GBR+JPN+CAN+AUS+CHN+KOR+IND+BRA+MEX+ZAF+CHE+SWE+NOR+NZL+ITA+ESP+NLD.M.LI...AA...H?startPeriod=1990-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels",
     "oecd_cpi_yoy.csv": "https://sdmx.oecd.org/public/rest/data/OECD.SDD.TPS,DSD_PRICES@DF_PRICES_ALL,/USA+DEU+FRA+GBR+JPN+CAN+AUS+CHN+KOR+IND+BRA+MEX+ZAF+CHE+SWE+NOR+NZL+ITA+ESP+NLD.M.N.CPI.PA._T.N.GY?startPeriod=1990-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels",
@@ -153,6 +156,12 @@ EXTRA_URLS = {
     "cb_ca_yields_legacy.csv": "https://www.bankofcanada.ca/valet/observations/V122487,V122538/csv?start_date=1980-01-01",
     "cb_gb_yields.csv": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1970&Dateto=now&SeriesCodes=IUDMNPY,IUDSNPY&CSVF=TN&UsingCodes=Y&VPD=Y&VFD=N",
 }
+
+
+FIRST_RELEASE = ["INDPRO", "UNRATE", "PAYEMS", "CPIAUCSL", "CPILFESL", "GDPC1", "RSAFS", "HOUST"]
+DALLAS = ["us", "germany", "uk", "france", "japan", "canada", "australia", "korea", "mexico", "italy", "spain",
+          "netherlands", "sweden", "switzerland", "norway", "newzealand"]
+DALLAS_VARS = ["indProd", "unemp", "realGDP", "consPrice"]
 
 
 def yahoo_daily(sym):
@@ -268,6 +277,43 @@ def run(log=print):
             man["series"][name] = {"ok": True, "bytes": len(r.content)}
         except Exception as e:
             man["series"][name] = {"ok": False, "error": str(e)[:150]}
+    # round 11: first-release (as first published) US data from ALFRED, via the FRED key (output_type 4)
+    for sid in FIRST_RELEASE:
+        name = sid + "_FR"
+        if S_.fresh(name) or S_.over(name, "alfred"):
+            continue
+        try:
+            rows, how = FT.fred(sid, {"fr": True}, key)
+            if how != "first release":
+                raise RuntimeError("no FRED key: first release unavailable")
+            _save(name + ".csv", "date,value\n" + "\n".join(f"{d},{v}" for d, v in rows), "w")
+            man["series"][name] = {"ok": True, "first": rows[0][0], "last": rows[-1][0], "rows": len(rows)}
+        except Exception as e:
+            man["series"][name] = {"ok": False, "error": str(e)[:150]}
+        time.sleep(0.6)
+    # round 11: Dallas Fed real-time OECD data set (vintages 1962-1998): industrial production, unemployment, real
+    # GDP and CPI per country; file links are read from each country page
+    for ctry in DALLAS:
+        page_name = "dallas_%s_page" % ctry
+        if all(S_.fresh("dallas_%s_%s.xls" % (ctry, v)) for v in DALLAS_VARS):
+            continue
+        if S_.over(page_name, "dallas"):
+            continue
+        try:
+            page = FT._get("https://www.dallasfed.org/research/international/oecd/%s.aspx" % ctry).text
+            links = set(re.findall(r'(/~/media/documents/research/international/oecd/[A-Za-z]+\.xls)', page))
+            for v in DALLAS_VARS:
+                hit = [l for l in links if l.lower().endswith(v.lower() + ".xls")]
+                name = "dallas_%s_%s.xls" % (ctry, v)
+                if not hit:
+                    man["series"][name] = {"ok": False, "error": "no link on page"}
+                    continue
+                r = FT._get("https://www.dallasfed.org" + hit[0])
+                _save(name, r.content)
+                man["series"][name] = {"ok": True, "bytes": len(r.content)}
+                time.sleep(0.5)
+        except Exception as e:
+            man["series"][page_name] = {"ok": False, "error": str(e)[:150]}
     for s_ in DAILY:
         name = "D_" + re.sub(r"[^A-Za-z0-9]", "_", s_)
         if S_.fresh(name) or S_.over(name, "daily"):
