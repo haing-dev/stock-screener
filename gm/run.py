@@ -20,7 +20,7 @@ from . import book as B
 from . import panel as P
 from . import signals as G
 
-VERSION = "gm-1.1.0"
+VERSION = "gm-1.2.0"
 NAMES = {"eq_": "equity", "bd_": "bond", "st_": "2-5y note", "fx_": "currency vs USD", "cm_": "commodity"}
 
 

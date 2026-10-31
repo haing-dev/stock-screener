@@ -166,7 +166,7 @@ def main():
                       ("2008 crisis", "2008-01", "2008-12")):
         rr, sp = net.loc[a:b], spx.loc[a:b]
         print("   %-20s book %+.1f%%  S&P excess %+.1f%%" % (lab, ((1 + rr).prod() - 1) * 100, ((1 + sp).prod() - 1) * 100))
-    last = base["pos"].dropna(how="all").index[-1]
+    last = pd.Period(pd.Timestamp.today(), "M") - 1          # last complete month
     p = base["pos"].loc[last]
     vol = R.rolling(36, min_periods=12).std().loc[last] * np.sqrt(12)
     risk = (p * vol).dropna()

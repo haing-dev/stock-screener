@@ -4,6 +4,22 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## gm-1.2.0 (2026-10-31): independent look-ahead audit fixes
+Audit by a separate agent (truncation test: rebuilding with data cut at 1998-06, 2003-11, 2008-09, 2010-12 gives
+identical signals and positions up to each cut, apart from item 1). Verdict: no material look-ahead. Fixes:
+1. Pre-ETF dividend proxy estimated on design data only (overlap up to 2010-12), not the full sample.
+2. Excess returns subtract the 3m rate known at the start of the month (rate3m.shift(1)), for equities, bonds,
+   notes and FX.
+3. Monetary theme lags the OECD 3m-rate fallback by one month.
+4. The |r| >= 60% filter was outcome-based; replaced by an explicit BAD_POINTS list plus a warning. The only large
+   moves left are real (RBOB 2020-03, WTI roll 2020-05). The KRW spikes 2015-17 came from Yahoo, so FX now uses Fed
+   H.10 daily first.
+5. Yahoo files in cache/macro/raw are now read too, so the US equity uses SPY (1993+) and the US dividend yield exists.
+6. book.main reports positions at the last complete month.
+Known and documented (not fixed): hand-picked surviving universe; EM FX limited to MXN/BRL/KRW/ZAR (no TRY, RUB, THB,
+IDR, ARS), which flatters carry; families dropped after design-period results; latest-vintage CPI and BIS data.
+Design 1990-2010 net SR 1.47 (2x costs 1.36), maxDD -12%; 1975-89 net SR 0.93.
+
 ## gm-1.1.0 (2026-10-31)
 - Econ trend: growth theme (OECD CLI, latest vintage, heavily revised) left out until first-release vintages exist.
   Themes now inflation (CPI, rarely revised), trade (BIS FX), monetary (yields), risk appetite (markets, credit spread).

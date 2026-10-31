@@ -27,6 +27,8 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RD = os.path.join(REPO, "cache", "macro", "raw", "research")
 RAW = os.path.join(REPO, "cache", "macro", "raw")
 OUT = os.path.join(REPO, "cache", "gm")
+DIV_EST_END = pd.Period("2010-12", "M")   # dividend proxy estimated on design-period data only
+BAD_POINTS = []                          # (market, "YYYY-MM") pairs with known bad source data
 GRID = pd.period_range("1960-01", pd.Timestamp.today().strftime("%Y-%m"), freq="M")
 
 
@@ -48,7 +50,9 @@ def _csv(path, yahoo=False, stooq=False):
 
 
 def Y(sym):
-    return _csv(os.path.join(RD, "Y_" + re.sub(r"[^A-Za-z0-9]", "_", sym) + ".csv"), yahoo=True)
+    n = "Y_" + re.sub(r"[^A-Za-z0-9]", "_", sym) + ".csv"
+    p = os.path.join(RD, n)
+    return _csv(p if os.path.exists(p) else os.path.join(RAW, n), yahoo=True)
 
 
 def S(sym):
@@ -380,11 +384,15 @@ ALLOW_AVG = False      # monthly-average sources smooth returns and fake trends 
 
 
 def fx_usd_value(cur):
-    """USD value of one unit of the currency at month end: Yahoo, stooq, FRED H.10 daily; FRED monthly averages only
-    when ALLOW_AVG."""
+    """USD value of one unit of the currency at month end: FRED H.10 daily, then Yahoo, stooq; FRED monthly averages
+    only when ALLOW_AVG."""
     if cur == "USD":
         return pd.Series(1.0, index=GRID)
     parts = []
+    if cur in DEX:            # Fed H.10 daily (reliable) first; Yahoo had bad KRW prints 2015-17 (audit 2026-10-31)
+        sid, usd_per = DEX[cur]
+        x = F(sid)
+        parts.append(x if usd_per else 1 / x)
     for k, (c, fred, usd_per, yh, _) in FXM.items():
         if c == cur:
             sym, inv = yh.split("|")[0], yh.endswith("|usd")
@@ -395,10 +403,6 @@ def fx_usd_value(cur):
     if cur in STQ_FX:
         sym, usd_per = STQ_FX[cur]
         x = S(sym)
-        parts.append(x if usd_per else 1 / x)
-    if cur in DEX:
-        sid, usd_per = DEX[cur]
-        x = F(sid)
         parts.append(x if usd_per else 1 / x)
     if ALLOW_AVG:
         for k, (c, fred, usd_per, yh, _) in FXM.items():
@@ -419,11 +423,11 @@ def build():
 
     # equities -----------------------------------------------------------------
     for k, (etf, idxs, cur, cc, div) in EQUITY.items():
-        rl = rate3m(cc) / 1200
+        rl = rate3m(cc).shift(1) / 1200                  # rate known at the start of the month (audit 2026-10-31)
         f0 = rl.first_valid_index()
         gap = rl.isna() & (GRID >= max(f0, pd.Period("1990-01", "M")) if f0 is not None else GRID >= pd.Period("1990-01", "M"))
         us_rate_used = int(gap.sum()) > 12
-        rl = rl.combine_first((rate3m("US") / 1200).where(gap))   # local rate stops (India after 2023): US rate, flagged
+        rl = rl.combine_first((rate3m("US").shift(1) / 1200).where(gap))   # local rate stops (India after 2023): US rate, flagged
         if k == "eq_us_spx":
             spy = ret(Y("SPY")) - rf_us
             R[k] = first(spy, mkt_rf)
@@ -453,7 +457,7 @@ def build():
             d = 0.0 if tag in ("tr", "etf") else div
             tr0 = first(*pieces) if pieces else None      # total-return excess series (MSCI, then ETF)
             if tr0 is not None and r_px.notna().sum() and tr0.notna().sum() > 60 and tag != "tr":
-                both = tr0.notna() & r_px.notna() & rl.notna()
+                both = tr0.notna() & r_px.notna() & rl.notna() & (GRID <= DIV_EST_END)   # design data only
                 if both.sum() > 60:                       # dividend yield implied by the total-return era
                     d = float(np.clip(((tr0 + rl) - r_px)[both].mean() * 12, 0, 0.06))
             pieces.append(r_px + d / 12 - rl)
@@ -465,7 +469,7 @@ def build():
 
     # bonds ----------------------------------------------------------------------
     for k, (cc, daily, n) in BONDS.items():
-        rl = rate3m(cc) / 1200
+        rl = rate3m(cc).shift(1) / 1200
         pieces, parts, flags = [], [], []
         if daily:
             pieces.append(par_ret(F(daily), n) - rl)
@@ -491,14 +495,14 @@ def build():
     # history exists only as monthly averages)
     for k, (cc, n) in SHORT.items():
         y2 = F("DGS2") if cc == "US" else first(cb_yield(cc, n), S(STQ_Y[(cc, n)]) if (cc, n) in STQ_Y else cb_yield(cc, n))
-        R[k] = par_ret(y2, n) - rate3m("EZ" if cc == "DE" else cc) / 1200
+        R[k] = par_ret(y2, n) - rate3m("EZ" if cc == "DE" else cc).shift(1) / 1200
         note(k, ["%dy month-end yield, par note" % n], [] if y2.notna().sum() > 120 else ["MISSING month-end %dy yield" % n])
 
     # FX -------------------------------------------------------------------------------
-    r_us = rate3m("US") / 1200
+    r_us = rate3m("US").shift(1) / 1200
     for k, (cur, fred, usd_per, yh, cc) in FXM.items():
         v = fx_usd_value(cur)
-        R[k] = v / v.shift(1) - 1 + (rate3m(cc) / 1200 - r_us)
+        R[k] = v / v.shift(1) - 1 + (rate3m(cc).shift(1) / 1200 - r_us)
         note(k, ["Yahoo / stooq / FRED H.10 month-end", "+ rate differential"], ["avg FX"] if ALLOW_AVG else [])
 
     # commodities ----------------------------------------------------------------------
@@ -552,7 +556,12 @@ def build():
          ["MISSING: German 2-year yield (stooq 2dey.b; alternative Bundesbank SDMX)"])
 
     R = pd.DataFrame(R).reindex(GRID)
-    R = R.where(R.abs() < 0.6)                           # drop impossible monthly moves (data errors)
+    for (k, m) in BAD_POINTS:                            # known bad source points (explicit list; audit 2026-10-31)
+        if k in R:
+            R.loc[pd.Period(m, "M"), k] = np.nan
+    big = (R.abs() >= 0.6).sum().sum()
+    if big:
+        print("WARNING: %d monthly moves of 60%% or more kept in the panel; check the sources" % big)
     return R, SRC, FLAG, rf_us
 
 

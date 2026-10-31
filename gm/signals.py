@@ -105,7 +105,7 @@ def themes(cc, R):
     i = lag(zchg(cpi_yoy(cc)), 1)
     t = lag(zchg(-np.log(neer(cc))), 1)
     y2 = yield_of(cc, 2) if cc in ("US", "DE", "CA", "AU", "JP") else pd.Series(np.nan, index=GRID)
-    m = zchg(P.first(y2, rate(cc)))
+    m = zchg(P.first(y2, rate(cc).shift(1)))                # OECD 3m rate: monthly average, published after t
     eq = [k for k, c in EQ_CC.items() if c == cc and k in R]
     eqr = R[eq[0]].rolling(12, min_periods=12).sum() if eq else pd.Series(np.nan, index=GRID)
     eqz = (eqr / (R[eq[0]].rolling(120, min_periods=36).std() * np.sqrt(12))).clip(-3, 3) if eq else eqr
