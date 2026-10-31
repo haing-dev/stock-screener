@@ -1241,6 +1241,10 @@ def pull(sql, save, out, data=None, part="all", budget=9000):
                 "where s.rdate between '%s' and '%s' and s.shares > 0 and s.prc > 0 and t.val >= %g and t.npos <= %d "
                 "group by 1, 2, 3, 4 having sum(s.shares * s.prc) >= %g * max(t.val)"
                 % (lo, hi, lo, hi, R.FUND_MIN_AUM, R.FUND_MAX_POSITIONS, R.FUND_MIN_WEIGHT)))
+    if part in ("ibes", "all"):
+        step("tri_ibes", lambda: sql(
+            "select cusip, statpers, numest, numup, numdown from ibes.statsum_epsus where fpi = '1' and "
+            "measure = 'EPS' and statpers >= '%s' and numest > 0" % PRICE_START))
     out("pull %s: %s after %.0f s" % (part, ("%d tables left for the next run" % state["left"]) if state["left"]
                                        else "complete", _time.time() - t0))
 
@@ -1588,6 +1592,21 @@ def factors_of(load):
 
 
 # --------------------------------------------------------------------------------------------- run
+def three_year(rets, ev, ci):
+    """(own %, similar stocks' average %, complete?) over 36 months (72 scan periods) from the call's entry."""
+    n = 3 * R.PER_YEAR
+    own = rets.path(ev["cik"], None, ci, n=n)
+    if own[0] is None:
+        return None, None, False
+    sims = []
+    for c in ev.get("sim") or []:
+        p_ = rets.path(c, None, ci, n=n)
+        if p_[0] is not None and len(p_[0]) == len(own[0]):
+            sims.append(min(p_[0][-1], 3 * CAP))
+    ctrl = round(100 * sum(sims) / len(sims), 1) if sims else None
+    return round(100 * own[0][-1], 1), ctrl, bool(own[1])
+
+
 def run(load, save, out):
     t0 = _time.time()
     pnl = Panel(load, out)
@@ -1639,14 +1658,18 @@ def run(load, save, out):
                 ci = next((j for j, dd in enumerate(months_d) if dd >= item["call_date"]), ev["i"])
             series[item["id"]] = rets.series(ev["cik"], None, ci, None)
             items.append(item)
+            r3 = three_year(rets, ev, ci)
             flat.append({"kind": kind, "permno": ev["cik"], "scan": ev["d"], "call_date": item["call_date"],
                          "call": {"overdone": "Buy", "close": "Watch", "justified": "Avoid"}.get(item["verdict"], item["verdict"]),
                          "upgraded": bool(item["upgraded"]), "score": item["score"], "ret": item.get("ret"),
                          "ctrl_ret": item.get("ctrl_ret"), "idx_ret": item.get("idx_ret"), "played": item.get("played"),
                          "stopped": item.get("stopped"), "p_own": item.get("p_own"), "p_peer": item.get("p_peer"),
+                         "id": item["id"], "ret3": r3[0], "ctrl3": r3[1], "played3": r3[2],
                          **{"c_" + k: c[0] if c[1] != "N/A" else "" for k, c in item["factors"].items()}})
         res[kind] = (items, series, summary(kind, items, series, factors))
     save("tri_events", _pd.DataFrame(flat))
+    save("tri_series", _pd.DataFrame([(i, per, r_) for _k, (_it, ser, _s) in res.items() for i, sr in ser.items()
+                                      for per, r_ in sr.items()], columns=["id", "per", "r"]))
     report(res, out)
     out("\nrun done in %.0f s" % (_time.time() - t0))
 
@@ -1707,3 +1730,129 @@ def report(res, out):
                 c = e["cols"].get(col)
                 cells.append("%s %s/%s %s%% n%d" % (col, c["median"], c["mean"], c["beat"], c["n"]) if c else "%s -" % col)
             out("  %-24s w%-3d %s  (N/A %d)" % (e["label"], e["weight"], " | ".join(cells), e["na"]))
+
+
+# ===================================================================== research tests (docs/research/triage_wrds/PLAN.md)
+TRAIN_END, TEST_START, TEST_END = "2015-12-31", "2016-01-01", "2024-12-31"
+REV_DAYS, REV_GREEN, REV_RED = 92, 0.10, -0.10
+FLAG_AT, FLAG_MIN_N = -5.0, 100
+PTS = {"g": 1.0, "r": -1.0}
+
+
+def ibes_colours(ev, load):
+    """Estimate revisions cell (research only): net upward revisions of next-year EPS estimates over the 3 months to
+    the scan, (ups - downs) / estimates, from I/B/E/S summary files dated on or before the scan day."""
+    ib = load("tri_ibes", parse_dates=["statpers"], dtype={"cusip": str})
+    cus = load("tri_cusip", parse_dates=["namedt", "nameenddt"], dtype={"cusip": str})
+    cus["nameenddt"] = cus.nameenddt.fillna(_pd.Timestamp("2099-12-31"))
+    ib = ib.merge(cus, on="cusip")
+    ib = ib[(ib.statpers >= ib.namedt - _pd.Timedelta(days=92)) & (ib.statpers <= ib.nameenddt + _pd.Timedelta(days=92))]
+    ib = ib.drop_duplicates(["permno", "statpers"])[["permno", "statpers", "numest", "numup", "numdown"]]
+    e = ev[["eid", "permno", "scan"]].merge(ib, on="permno")
+    e = e[(e.statpers <= e.scan) & (e.statpers > e.scan - _pd.Timedelta(days=REV_DAYS))]
+    g = e.groupby("eid").agg(up=("numup", "sum"), dn=("numdown", "sum"), n=("numest", "sum"))
+    br = (g.up.fillna(0) - g.dn.fillna(0)) / g.n
+    col = _np.where(br >= REV_GREEN, "g", _np.where(br <= REV_RED, "r", "n"))
+    return _pd.Series(col, index=g.index)
+
+
+def _excess(d):
+    return (d.ret.clip(upper=CAP_PCT) - d.ctrl_ret)
+
+
+def _cluster_t(d, col):
+    m = d.groupby(d.call_date.str[:7])[col].mean()
+    return (m.mean() / (m.std(ddof=1) / _np.sqrt(len(m)))) if len(m) > 2 and m.std(ddof=1) > 0 else _np.nan
+
+
+def _row(d, lab):
+    if not len(d):
+        return "  %-26s n 0" % lab
+    x = _excess(d)
+    return "  %-26s n %5d  excess vs similar: median %+6.1f mean %+6.1f  beat %3.0f%%  down50 %3.0f%%  (t by month %+.2f)" % (
+        lab, len(d), x.median(), x.mean(), 100 * (x > 0).mean(), 100 * (d.ret <= -50).mean(),
+        _cluster_t(d.assign(x=x), "x"))
+
+
+def _ct(items_by_verdict, series, factors, out, labels):
+    items = [{"id": i, "verdict": v} for v, ids in items_by_verdict.items() for i in ids]
+    reg = regression(items, series, factors) or {}
+    for v in ("overdone", "close", "justified", "long_short"):
+        g = reg.get(v)
+        if g and g.get("alpha_y") is not None:
+            out("    %-14s n=%3d months  alpha %+5.1f%%/yr (t %5.2f)  RMW %+.2f  SMB %+.2f  UMD %+.2f" % (
+                labels.get(v, "top - bottom"), g["n"], g["alpha_y"], g["t"], g["betas"]["RMW"][0],
+                g["betas"]["SMB"][0], g["betas"]["UMD"][0]))
+
+
+def research(load, save, out):
+    ev = load("tri_events", dtype={"id": str})
+    ev = ev[ev.call.isin(["Buy", "Watch", "Avoid"])].copy()
+    ev["eid"] = _np.arange(len(ev))
+    ev["scan"] = _pd.to_datetime(ev.scan)
+    ev["c_rev"] = ev.eid.map(ibes_colours(ev, load)).fillna("")
+    ser = load("tri_series")
+    series = {}
+    for i, per, r_ in zip(ser.id, ser.per, ser.r):
+        series.setdefault(i, {})[per] = r_
+    factors = factors_of(load)
+    done = ev[(ev.played == True) & ev.ret.notna() & ev.ctrl_ret.notna()]  # noqa: E712
+    out("events with a full year: %d; with an I/B/E/S revisions colour: %.0f%%" % (len(done), 100 * (done.c_rev != "").mean()))
+    lab3 = {"overdone": "Buy", "close": "Watch", "justified": "Avoid"}
+    for kind in KIND_IDS:
+        k = R.KINDS[kind]
+        cells = [c for c, _, _ in k["cells"] if c != "insider"] + ["rev"]
+        d = done[done.kind == kind]
+        tr = d[d.call_date <= TRAIN_END]
+        te = d[(d.call_date >= TEST_START) & (d.call_date <= TEST_END)]
+        out("\n" + "=" * 100 + "\n%s: train %d events (2008-2015), test %d (2016-2024)" % (k["label"], len(tr), len(te)))
+        # 0. the pre-registered rules on the test years
+        out("\n0) pre-registered calls, test years:")
+        for c in ("Buy", "Watch", "Avoid"):
+            out(_row(te[te.call == c], c))
+        _ct({"overdone": list(te[te.call == "Buy"].id), "close": list(te[te.call == "Watch"].id),
+             "justified": list(te[te.call == "Avoid"].id)}, series, factors, out, lab3)
+        # 1. estimate revisions cell (new), all years
+        out("\n1) I/B/E/S estimate revisions cell (net up-revisions over 3 months; green >= +10%, red <= -10%), all years:")
+        for c, lab in (("g", "green (raised)"), ("n", "neutral"), ("r", "red (cut)"), ("", "no estimates")):
+            out(_row(d[d.c_rev == c], lab))
+        # 2. walk-forward learned weights
+        X = lambda df: _np.column_stack([_np.ones(len(df))] + [df["c_" + c].map(PTS).fillna(0).to_numpy() for c in cells])  # noqa: E731
+        y = _excess(tr)
+        lo, hi = y.quantile(0.01), y.quantile(0.99)
+        b = _np.linalg.lstsq(X(tr), y.clip(lo, hi).to_numpy(), rcond=None)[0]
+        out("\n2) weights fitted on 2008-2015 (points of excess return per green/red step): " +
+            ", ".join("%s %+.1f" % (c, w) for c, w in zip(cells, b[1:])))
+        tes = te.assign(sc=X(te) @ b)
+        q = tes.sc.rank(pct=True)
+        top, mid, bot = tes[q > 2 / 3], tes[(q > 1 / 3) & (q <= 2 / 3)], tes[q <= 1 / 3]
+        out("   test years, by fitted score:")
+        for g_, lab in ((top, "top third"), (mid, "middle third"), (bot, "bottom third")):
+            out(_row(g_, lab))
+        _ct({"overdone": list(top.id), "close": list(mid.id), "justified": list(bot.id)}, series, factors, out,
+            {"overdone": "top third", "close": "middle third", "justified": "bottom third"})
+        # 3. avoid filter from the training years' red flags
+        flags = []
+        for c in cells:
+            red = tr[tr["c_" + c] == "r"]
+            rest = tr[tr["c_" + c] != "r"]
+            if len(red) >= FLAG_MIN_N and _excess(red).median() - _excess(rest).median() <= FLAG_AT:
+                flags.append(c)
+        out("\n3) red flags chosen on 2008-2015 (red trails the rest by %.0f+ pts, n >= %d): %s" % (
+            -FLAG_AT, FLAG_MIN_N, ", ".join(flags) or "none"))
+        if flags:
+            flagged = te[(te[["c_" + c for c in flags]] == "r").any(axis=1)]
+            clean = te[~te.id.isin(flagged.id)]
+            out(_row(clean, "test: no red flag"))
+            out(_row(flagged, "test: any red flag"))
+            _ct({"overdone": list(clean.id), "justified": list(flagged.id)}, series, factors, out,
+                {"overdone": "no red flag", "justified": "red flag"})
+        # 4. three-year horizon (events through 2022)
+        d3 = ev[(ev.kind == kind) & (ev.played3 == True) & ev.ret3.notna() & ev.ctrl3.notna()]  # noqa: E712
+        out("\n4) three years after the call (events 2008-2022):")
+        for c in ("Buy", "Watch", "Avoid"):
+            x = d3[d3.call == c]
+            if len(x):
+                ex = x.ret3.clip(upper=1500) - x.ctrl3
+                out("  %-6s n %5d  own median %+6.1f  similar median %+6.1f  excess median %+6.1f mean %+6.1f  beat %3.0f%%"
+                    % (c, len(x), x.ret3.median(), x.ctrl3.median(), ex.median(), ex.mean(), 100 * (ex > 0).mean()))

@@ -1,0 +1,6 @@
+{"name": "tri_research1", "steps": [
+  {"do": "python", "code": "import tri_wrds\ntri_wrds.pull(sql, save, out, DATA, 'ibes')"},
+  {"do": "python", "code": "import tri_wrds\ntri_wrds.run(load, save, out)"},
+  {"do": "python", "code": "import tri_wrds\ntri_wrds.research(load, save, out)"},
+  {"do": "export", "names": ["tri_events"]}
+]}

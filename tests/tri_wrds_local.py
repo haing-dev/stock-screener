@@ -148,6 +148,11 @@ def fake_sql(q):
     if "stocknames_v2" in q:
         return pd.DataFrame({"permno": PERMS, "cusip": ["C%07d" % p for p in PERMS],
                              "namedt": pd.Timestamp("1990-01-01"), "nameenddt": pd.Timestamp("2025-12-31")})
+    if "statsum_epsus" in q:
+        ms = pd.date_range("2006-01-15", "2025-12-15", freq="MS") + pd.Timedelta(days=14)
+        rows = [{"cusip": "C%07d" % p, "statpers": m, "numest": 5, "numup": int(rng.integers(0, 4)),
+                 "numdown": int(rng.integers(0, 4))} for p in PERMS[::2] for m in ms]
+        return pd.DataFrame(rows)
     if "fivefactors_monthly" in q:
         ms = pd.date_range("2006-01-01", "2025-12-01", freq="MS")
         f = lambda: rng.normal(0.005, 0.03, len(ms))  # noqa: E731
@@ -177,8 +182,10 @@ def main():
     T.pull(fake_sql, save, out, tmp, 'comp')
     T.pull(fake_sql, save, out, tmp, 'f13')
     T.pull(fake_sql, save, out, tmp, 'all')
+    T.pull(fake_sql, save, out, tmp, 'ibes')
     t1 = time.time()
     T.run(load, save, out)
+    T.research(load, save, out)
     ev = load("tri_events")
     print("\nLOCAL: pull %.0f s, run %.0f s, %d events saved, calls %s" % (t1 - t0, time.time() - t1, len(ev),
                                                                           ev.call.value_counts().to_dict()))
