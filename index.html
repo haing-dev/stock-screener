@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Macro Compass</title>
+<meta name="description" content="How much to hold in US stocks, commodities, Treasuries and cash, and which sectors to tilt toward. Backtested.">
+<link rel="stylesheet" href="/style.css?v=202610310335">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0b'/%3E%3Ccircle cx='16' cy='16' r='9' stroke='%23f0efec' stroke-width='2.5' fill='none'/%3E%3Cpath d='M16 9l3 7-3 7-3-7z' fill='%232a78d6'/%3E%3C/svg%3E">
+</head>
+<body>
+<div id="lock" class="lock" hidden>
+  <form id="lockForm" class="lock-card" autocomplete="on">
+    <h1>Macro Compass</h1>
+    <p class="muted">Enter the password to open the latest reading.</p>
+    <label for="pw">Password</label>
+    <input id="pw" type="password" autocomplete="current-password" required>
+    <label class="remember"><input id="remember" type="checkbox" checked> Remember on this device</label>
+    <button type="submit" id="unlockBtn">Open</button>
+    <p id="lockMsg" class="lock-msg" role="alert"></p>
+  </form>
+</div>
+
+<div id="shell" hidden>
+<header class="top">
+  <div class="brand"><b>Macro Compass</b></div>
+  <div class="seg tabs" id="tabs" role="tablist" aria-label="Pages">
+    <button type="button" role="tab" data-p="reading">Analysis</button>
+    <button type="button" role="tab" data-p="calls">Recommendation</button>
+  </div>
+</header>
+
+<main>
+<div id="pReading">
+  <section class="hero" id="s0">
+    <div class="step" id="actStep">Analysis</div>
+    <h1 id="actTitle"></h1>
+    <div class="stats" id="mixStats"></div>
+    <h3>Why</h3>
+    <ol class="story" id="story"></ol>
+  </section>
+  <section id="s1" class="point"></section>
+  <section id="s2" class="point"></section>
+  <section id="s3" class="point"></section>
+  <section id="s4" class="point"></section>
+  <section id="s5" class="point"></section>
+  <section id="s6" class="point"></section>
+  <section id="s7" class="point"></section>
+  <section id="s8" class="point"></section>
+</div>
+
+<div id="pCalls" hidden>
+  <section id="sX">
+    <h2 id="xTitle"></h2>
+    <div class="chart" id="xChart"></div>
+  </section>
+  <section id="sS">
+    <h2 id="sTitle"></h2>
+    <div class="tablewrap"><table class="ind calls" id="indTable"></table></div>
+  </section>
+</div>
+</main>
+<footer class="foot" id="foot"></footer>
+</div>
+<div id="tip" role="tooltip"></div>
+<script src="/app.js?v=202610310335"></script>
+</body>
+</html>
