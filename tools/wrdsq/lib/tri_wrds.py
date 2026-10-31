@@ -1140,82 +1140,125 @@ def _arr(ds):
 
 
 # --------------------------------------------------------------------------------------------- pull (SQL)
-def pull(sql, save, out):
+YEARS = list(range(int(PRICE_START[:4]), int(END[:4]) + 1))
+F13_YEARS = list(range(int(F13_START[:4]), 2027))
+
+
+def pull(sql, save, out, data=None, part="all", budget=9000):
+    """Resumable pulls: each table (CRSP and 13F one per year) is saved as soon as it is read and skipped when it is
+    already in ~/wrdsq/data, so a job stopped by the 3-hour limit continues where it left off when it is run again.
+    part: 'crsp' | 'comp' | 'f13' | 'all'. Stops starting new tables after `budget` seconds."""
+    import os
     t0 = _time.time()
-    cal = sql("select distinct dlycaldt as d from crsp.dsf_v2 where permno = %d and dlycaldt between '%s' and '%s'"
-              % (AAPL, PRICE_START, END))
-    days = sorted(_pd.to_datetime(cal.d))
-    assert len(days) > 4000, "trading calendar too short: %d days" % len(days)
-    sc = scan_days(days)
-    save("tri_cal", _pd.DataFrame({"d": [d for d, _ in sc], "e": [e for _, e in sc]}))
-    out("calendar: %d trading days, %d scans (%s .. %s)" % (len(days), len(sc), sc[0][0].date(), sc[-1][0].date()))
-    etf = sql("select distinct permno, ticker from crsp.stksecurityinfohist where ticker in ('SPY','IWM') "
-              "and securitytype = 'FUND' and secinfoenddt >= '%s'" % PRICE_START)
-    save("tri_etf", etf)
-    out("ETFs: %s" % ", ".join("%s %d" % (t, p) for p, t in zip(etf.permno, etf.ticker)))
-    etf_ids = ",".join(str(int(p)) for p in etf.permno)
-    thr_e = _arr([e + _pd.Timedelta(days=1) for _, e in sc])
-    thr_s = _arr([d + _pd.Timedelta(days=1) for d, _ in sc])
-    px, bk = [], []
-    for y in range(int(PRICE_START[:4]), int(END[:4]) + 1):
-        ds = [d for d, _ in sc if d.year == y]
-        if ds:
-            px.append(sql(
-                "select permno, dlycaldt as d, abs(dlyprc)::float8 as prc, shrout::float8 as shrout, siccd, usincflg, ticker from crsp.dsf_v2 "
-                "where dlycaldt = any(%s) and securitytype = 'EQTY' and securitysubtype = 'COM' and sharetype = 'NS' "
-                "and primaryexch in ('N','A','Q') and dlyprc is not null and dlyprc <> 0" % _arr(ds)))
-        # period pieces: be = entry bucket (close of entry day k-1 .. close of entry day k), bs = scan bucket
-        bk.append(sql(
-            "select permno, width_bucket(dlycaldt, %s) as be, width_bucket(dlycaldt, %s) as bs, "
-            "sum(case when dlyret is null then 0 else ln(greatest(1 + dlyret, 0.0001)) end)::float8 as lr, "
-            "sum(case when coalesce(dlyretx, dlyret) is null then 0 else ln(greatest(1 + coalesce(dlyretx, dlyret), 0.0001)) end)::float8 as lrx, "
-            "sum(abs(dlyprc) * coalesce(dlyvol, 0))::float8 as dv, count(*) as nd, "
-            "max(case when dlydelflg = 'Y' then 1 else 0 end) as del "
-            "from crsp.dsf_v2 where dlycaldt between '%d-01-01' and '%d-12-31' and "
-            "((securitytype = 'EQTY' and securitysubtype = 'COM' and sharetype = 'NS') or permno in (%s)) "
-            "group by 1, 2, 3" % (thr_e, thr_s, y, y, etf_ids)))
-    px = _pd.concat(px, ignore_index=True)
-    save("tri_px", px)
-    bk = _pd.concat(bk, ignore_index=True)
-    bk = bk.groupby(["permno", "be", "bs"], as_index=False).agg(
+    state = {"left": 0}
+
+    def have(name):
+        return bool(data) and os.path.exists(os.path.join(data, name + ".csv.gz"))
+
+    def step(name, fn):
+        if have(name):
+            return None
+        if _time.time() - t0 > budget:
+            state["left"] += 1
+            return None
+        t1 = _time.time()
+        df = fn()
+        save(name, df)
+        out("  %-14s %9d rows  %5.0f s" % (name, len(df), _time.time() - t1))
+        return df
+
+    if part in ("crsp", "all"):
+        def calendar():
+            cal = sql("select distinct dlycaldt as d from crsp.dsf_v2 where permno = %d and dlycaldt between '%s' "
+                      "and '%s'" % (AAPL, PRICE_START, END))
+            days = sorted(_pd.to_datetime(cal.d))
+            assert len(days) > 4000, "trading calendar too short: %d days" % len(days)
+            sc_ = scan_days(days)
+            return _pd.DataFrame({"d": [d for d, _ in sc_], "e": [e for _, e in sc_]})
+        step("tri_cal", calendar)
+        step("tri_etf", lambda: sql(
+            "select distinct permno, ticker from crsp.stksecurityinfohist where ticker in ('SPY','IWM') "
+            "and securitytype = 'FUND' and secinfoenddt >= '%s'" % PRICE_START))
+        assert data, "pull needs the data folder (DATA in a wrdsq python step)"
+        if not (have("tri_cal") and have("tri_etf")):
+            out("pull %s: calendar not read yet; run again" % part)
+            return
+        cal = _pd.read_csv(os.path.join(data, "tri_cal.csv.gz"), parse_dates=["d", "e"])
+        etf = _pd.read_csv(os.path.join(data, "tri_etf.csv.gz"))
+        sc = list(zip(cal.d, cal.e))
+        etf_ids = ",".join(str(int(p)) for p in etf.permno)
+        thr_e = _arr([e + _pd.Timedelta(days=1) for _, e in sc])
+        thr_s = _arr([d + _pd.Timedelta(days=1) for d, _ in sc])
+        for y in YEARS:
+            ds = [d for d, _ in sc if d.year == y]
+            if ds:
+                step("tri_px_%d" % y, lambda ds=ds, y=y: sql(
+                    "select permno, dlycaldt as d, abs(dlyprc)::float8 as prc, shrout::float8 as shrout, siccd, "
+                    "usincflg, ticker from crsp.dsf_v2 where dlycaldt between '%d-01-01' and '%d-12-31' and "
+                    "dlycaldt = any(%s) and securitytype = 'EQTY' and securitysubtype = 'COM' and sharetype = 'NS' "
+                    "and primaryexch in ('N','A','Q') and dlyprc is not null and dlyprc <> 0" % (y, y, _arr(ds))))
+            # period pieces: be = entry bucket (close of entry day k-1 .. close of entry day k), bs = scan bucket
+            step("tri_bk_%d" % y, lambda y=y: sql(
+                "select permno, width_bucket(dlycaldt, %s) as be, width_bucket(dlycaldt, %s) as bs, "
+                "sum(case when dlyret is null then 0 else ln(greatest(1 + dlyret, 0.0001)) end)::float8 as lr, "
+                "sum(case when coalesce(dlyretx, dlyret) is null then 0 else ln(greatest(1 + coalesce(dlyretx, dlyret), 0.0001)) end)::float8 as lrx, "
+                "sum(abs(dlyprc) * coalesce(dlyvol, 0))::float8 as dv, count(*) as nd, "
+                "max(case when dlydelflg = 'Y' then 1 else 0 end) as del "
+                "from crsp.dsf_v2 where dlycaldt between '%d-01-01' and '%d-12-31' and "
+                "((securitytype = 'EQTY' and securitysubtype = 'COM' and sharetype = 'NS') or permno in (%s)) "
+                "group by 1, 2, 3" % (thr_e, thr_s, y, y, etf_ids)))
+    if part in ("comp", "all"):
+        step("tri_link", lambda: sql(
+            "select gvkey, lpermno as permno, linkprim, linkdt, linkenddt from crsp.ccmxpf_lnkhist "
+            "where linktype in ('LC','LU') and linkprim in ('P','C') and lpermno is not null"))
+        step("tri_co", lambda: sql("select gvkey, sic, loc, fic from comp.company"))
+        step("tri_fq", lambda: sql(
+            "select gvkey, datadate, fyearq, fqtr, rdq, saleq, cogsq, xsgaq, oiadpq, oibdpq, dpq, niq, oancfy, "
+            "capxy, cheq, ivltq, dlttq, dlcq, curcdq from comp.fundq where indfmt = 'INDL' and datafmt = 'STD' "
+            "and popsrc = 'D' and consol = 'C' and datadate >= '2003-01-01'"))
+        step("tri_fa", lambda: sql(
+            "select gvkey, datadate, fyear, sale, cogs, xsga, oiadp, oibdp, dp, ni, oancf, capx, stkco, che, ivao, "
+            "at, lct, dlc, dltt, ceq, txt, pi, csho, ajex, curcd from comp.funda where indfmt = 'INDL' and "
+            "datafmt = 'STD' and popsrc = 'D' and consol = 'C' and datadate >= '1994-01-01'"))
+        step("tri_ff", lambda: sql(
+            "select date, mktrf, smb, hml, rmw, cma, rf, umd from ff.fivefactors_monthly where date >= '%s'"
+            % PRICE_START))
+        step("tri_cusip", lambda: sql(
+            "select distinct permno, cusip, namedt, nameenddt from crsp.stocknames_v2 where cusip is not null"))
+    if part in ("f13", "all"):
+        for y in F13_YEARS:
+            lo, hi = ("%d-01-01" % y, "%d-12-31" % y) if y > int(F13_START[:4]) else (F13_START, "%d-12-31" % y)
+            step("tri_13t_%d" % y, lambda lo=lo, hi=hi: sql(
+                "select mgrno, rdate, fdate, sum(shares * prc)::float8 as val, count(distinct cusip) as npos "
+                "from tfn.s34 where rdate between '%s' and '%s' and shares > 0 and prc > 0 group by 1, 2, 3"
+                % (lo, hi)))
+            step("tri_13p_%d" % y, lambda lo=lo, hi=hi: sql(
+                "with t as (select mgrno, rdate, fdate, sum(shares * prc) as val, count(distinct cusip) as npos "
+                "from tfn.s34 where rdate between '%s' and '%s' and shares > 0 and prc > 0 group by 1, 2, 3) "
+                "select s.mgrno, s.rdate, s.fdate, s.cusip, max(s.mgrname) as mgrname, "
+                "(sum(s.shares * s.prc) / max(t.val))::float8 as w "
+                "from tfn.s34 s join t on s.mgrno = t.mgrno and s.rdate = t.rdate and s.fdate = t.fdate "
+                "where s.rdate between '%s' and '%s' and s.shares > 0 and s.prc > 0 and t.val >= %g and t.npos <= %d "
+                "group by 1, 2, 3, 4 having sum(s.shares * s.prc) >= %g * max(t.val)"
+                % (lo, hi, lo, hi, R.FUND_MIN_AUM, R.FUND_MAX_POSITIONS, R.FUND_MIN_WEIGHT)))
+    out("pull %s: %s after %.0f s" % (part, ("%d tables left for the next run" % state["left"]) if state["left"]
+                                       else "complete", _time.time() - t0))
+
+
+def load_years(load, base, years, **kw):
+    parts = []
+    for y in years:
+        try:
+            parts.append(load("%s_%d" % (base, y), **kw))
+        except FileNotFoundError:
+            continue
+    return _pd.concat(parts, ignore_index=True)
+
+
+def load_bk(load):
+    bk = load_years(load, "tri_bk", YEARS)
+    return bk.groupby(["permno", "be", "bs"], as_index=False).agg(
         lr=("lr", "sum"), lrx=("lrx", "sum"), dv=("dv", "sum"), nd=("nd", "sum"), dl=("del", "max"))
-    save("tri_bk", bk)
-    out("CRSP: %d scan-day rows (%d stocks), %d return pieces, %.0f s" % (len(px), px.permno.nunique(), len(bk),
-                                                                          _time.time() - t0))
-    link = sql("select gvkey, lpermno as permno, linkprim, linkdt, linkenddt from crsp.ccmxpf_lnkhist "
-               "where linktype in ('LC','LU') and linkprim in ('P','C') and lpermno is not null")
-    save("tri_link", link)
-    save("tri_co", sql("select gvkey, sic, loc, fic from comp.company"))
-    fq = sql("select gvkey, datadate, fyearq, fqtr, rdq, saleq, cogsq, xsgaq, oiadpq, oibdpq, dpq, niq, oancfy, "
-             "capxy, cheq, ivltq, dlttq, dlcq, curcdq from comp.fundq where indfmt = 'INDL' and datafmt = 'STD' "
-             "and popsrc = 'D' and consol = 'C' and datadate >= '2003-01-01'")
-    save("tri_fq", fq)
-    fa = sql("select gvkey, datadate, fyear, sale, cogs, xsga, oiadp, oibdp, dp, ni, oancf, capx, stkco, che, ivao, "
-             "at, lct, dlc, dltt, ceq, txt, pi, csho, ajex, curcd from comp.funda where indfmt = 'INDL' and "
-             "datafmt = 'STD' and popsrc = 'D' and consol = 'C' and datadate >= '1994-01-01'")
-    save("tri_fa", fa)
-    out("Compustat: %d links, %d quarterly rows, %d annual rows, %.0f s" % (len(link), len(fq), len(fa),
-                                                                              _time.time() - t0))
-    tot = sql("select mgrno, rdate, fdate, sum(shares * prc) as val, count(distinct cusip) as npos from tfn.s34 "
-              "where rdate >= '%s' and shares > 0 and prc > 0 group by 1, 2, 3" % F13_START)
-    save("tri_13t", tot)
-    pos = sql(
-        "with t as (select mgrno, rdate, fdate, sum(shares * prc) as val, count(distinct cusip) as npos from tfn.s34 "
-        "where rdate >= '%s' and shares > 0 and prc > 0 group by 1, 2, 3) "
-        "select s.mgrno, s.rdate, s.fdate, s.cusip, max(s.mgrname) as mgrname, (sum(s.shares * s.prc) / max(t.val))::float8 as w "
-        "from tfn.s34 s join t on s.mgrno = t.mgrno and s.rdate = t.rdate and s.fdate = t.fdate "
-        "where s.rdate >= '%s' and s.shares > 0 and s.prc > 0 and t.val >= %g and t.npos <= %d "
-        "group by 1, 2, 3, 4 having sum(s.shares * s.prc) >= %g * max(t.val)"
-        % (F13_START, F13_START, R.FUND_MIN_AUM, R.FUND_MAX_POSITIONS, R.FUND_MIN_WEIGHT))
-    save("tri_13p", pos)
-    cus = sql("select distinct permno, cusip, namedt, nameenddt from crsp.stocknames_v2 where cusip is not null")
-    save("tri_cusip", cus)
-    out("13F: %d manager-quarter vintages, %d positions of 3%%+, %d CUSIP name records, %.0f s"
-        % (len(tot), len(pos), len(cus), _time.time() - t0))
-    ff = sql("select date, mktrf, smb, hml, rmw, cma, rf, umd from ff.fivefactors_monthly where date >= '%s'"
-             % PRICE_START)
-    save("tri_ff", ff)
-    out("Fama-French: %d months; pull done in %.0f s" % (len(ff), _time.time() - t0))
 
 
 # --------------------------------------------------------------------------------------------- fundamentals
@@ -1360,14 +1403,14 @@ class Panel:
         self.e = list(cal.e)
         self.ids = [x.strftime("%Y-%m-%d") for x in self.d]
         n = len(self.d)
-        px = load("tri_px", parse_dates=["d"])
+        px = load_years(load, "tri_px", YEARS, parse_dates=["d"])
         px = px[px.d.isin(set(self.d))]
         k_of = {d: i for i, d in enumerate(self.d)}
         px["k"] = px.d.map(k_of)
         px["mc"] = px.prc * px.shrout * MC_UNIT
         perms = _np.sort(px.permno.unique())
         self.col = {p: j for j, p in enumerate(perms)}
-        bk = load("tri_bk")
+        bk = load_bk(load)
         self.etf = load("tri_etf")
         # scan buckets: bs = i covers (d[i-1], d[i]] -> price change into scan i; dollar volume over that period
         b = bk[bk.permno.isin(self.col) & (bk.bs >= 1) & (bk.bs <= n - 1)]
@@ -1505,9 +1548,9 @@ class WReturns(Returns):
 
 
 def owners_rows(load, out):
-    tot = load("tri_13t", parse_dates=["rdate", "fdate"])
+    tot = load_years(load, "tri_13t", F13_YEARS, parse_dates=["rdate", "fdate"])
     first = tot.sort_values("fdate").drop_duplicates(["mgrno", "rdate"])
-    pos = load("tri_13p", parse_dates=["rdate", "fdate"])
+    pos = load_years(load, "tri_13p", F13_YEARS, parse_dates=["rdate", "fdate"])
     pos = pos.merge(first[["mgrno", "rdate", "fdate", "val", "npos"]], on=["mgrno", "rdate", "fdate"])
     cus = load("tri_cusip", parse_dates=["namedt", "nameenddt"])
     cus["nameenddt"] = cus.nameenddt.fillna(_pd.Timestamp("2099-12-31"))
@@ -1555,7 +1598,7 @@ def run(load, save, out):
     out("panel: median %d US companies per scan (min %d, max %d), median market cap $%.0fM; detection %.0f s"
         % (int(_np.median(pnl.sizes)), min(pnl.sizes), max(pnl.sizes), _np.nanmedian(pnl.mcs) / 1e6,
            _time.time() - t0))
-    r, idx = pnl.returns(load("tri_bk"))
+    r, idx = pnl.returns(load_bk(load))
     rets = WReturns(months, e_of, r, idx)
     rows, through, first_day = owners_rows(load, out)
     owners = Owners(rows, through, first_day)

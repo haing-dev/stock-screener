@@ -1,0 +1,4 @@
+{"name": "tri_pull_crsp", "steps": [
+  {"do": "python", "code": "import tri_wrds\ntri_wrds.pull(sql, save, out, DATA, 'crsp', budget=8400)"},
+  {"do": "datasets"}
+]}

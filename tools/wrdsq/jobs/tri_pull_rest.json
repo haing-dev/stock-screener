@@ -1,0 +1,5 @@
+{"name": "tri_pull_rest", "steps": [
+  {"do": "python", "code": "import tri_wrds\ntri_wrds.pull(sql, save, out, DATA, 'comp', budget=8400)"},
+  {"do": "python", "code": "import tri_wrds\ntri_wrds.pull(sql, save, out, DATA, 'f13', budget=8400)"},
+  {"do": "datasets"}
+]}

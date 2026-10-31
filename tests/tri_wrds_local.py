@@ -63,6 +63,11 @@ def gvkey(p):
     return "%06d" % (p - 9000)
 
 
+def s34_window(df, q):
+    lo, hi = re.search(r"rdate between '([\d-]+)' and '([\d-]+)'", q).groups()
+    return df[(df.rdate >= lo) & (df.rdate <= hi)]
+
+
 def fake_sql(q):
     if "distinct dlycaldt" in q:
         return pd.DataFrame({"d": DAYS})
@@ -133,13 +138,13 @@ def fake_sql(q):
                     rows.append({"mgrno": 1000 + m, "rdate": rd, "fdate": rd, "cusip": "C%07d" % p,
                                  "mgrname": ["VANGUARD GROUP INC", "ACME CAPITAL LLC", "BLUE OWL PARTNERS"][m % 3] + str(m),
                                  "w": rng.uniform(0.03, 0.12)})
-        return pd.DataFrame(rows)
+        return s34_window(pd.DataFrame(rows), q)
     if "tfn.s34" in q:
         rows = []
         for m in range(60):
             for rd in pd.date_range("2007-06-30", "2026-03-31", freq="QE"):
                 rows.append({"mgrno": 1000 + m, "rdate": rd, "fdate": rd, "val": 5e8 * (1 + m), "npos": 40})
-        return pd.DataFrame(rows)
+        return s34_window(pd.DataFrame(rows), q)
     if "stocknames_v2" in q:
         return pd.DataFrame({"permno": PERMS, "cusip": ["C%07d" % p for p in PERMS],
                              "namedt": pd.Timestamp("1990-01-01"), "nameenddt": pd.Timestamp("2025-12-31")})
@@ -168,7 +173,10 @@ def main():
         print(s)
 
     t0 = time.time()
-    T.pull(fake_sql, save, out)
+    T.pull(fake_sql, save, out, tmp, 'crsp')
+    T.pull(fake_sql, save, out, tmp, 'comp')
+    T.pull(fake_sql, save, out, tmp, 'f13')
+    T.pull(fake_sql, save, out, tmp, 'all')
     t1 = time.time()
     T.run(load, save, out)
     ev = load("tri_events")
