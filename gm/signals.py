@@ -37,7 +37,8 @@ BD = {"bd_us_2y": ("US", 2), "bd_us_5y": ("US", 5), "bd_us_10y": ("US", 10), "bd
       "bd_de_10y": ("DE", 10), "bd_gb_10y": ("GB", 10), "bd_jp_10y": ("JP", 10), "bd_ca_10y": ("CA", 10),
       "bd_au_10y": ("AU", 10), "st_us_2y": ("US", 2), "st_de_2y": ("DE", 2), "st_gb_5y": ("GB", 5),
       "st_ca_2y": ("CA", 2), "st_au_2y": ("AU", 2), "st_jp_2y": ("JP", 2)}
-FX_CC = {k: (v[0], v[4]) for k, v in P.FXM.items()}       # fx id -> (currency, rate country)
+FX_CC = {k: (v[0], v[4]) for k, v in P.FXM.items()}
+G_EQ_RATE = {k: v[3] for k, v in P.EQUITY.items()}         # equity id -> 3m-rate country       # fx id -> (currency, rate country)
 FX_MACRO = {"EZ": "DE"}                                    # euro: German macro data
 BIS = {"EZ": "XM"}
 GLOBAL = ["US", "DE", "JP", "CN"]                          # commodity demand block (equal weight)
@@ -97,14 +98,95 @@ def zchg(x, k=12, win=120):
     return (c / sd).clip(-3, 3)
 
 
+DALLAS = {"US": "us", "DE": "germany", "GB": "uk", "FR": "france", "JP": "japan", "CA": "canada", "AU": "australia",
+          "KR": "korea", "MX": "mexico", "IT": "italy", "ES": "spain", "NL": "netherlands", "SE": "sweden",
+          "CH": "switzerland", "NO": "norway", "NZ": "newzealand"}
+_PIT = {}
+
+
+def _dallas(cc, var):
+    """Dallas Fed real-time OECD data (quarterly data, quarterly vintages 1962-1998) -> for each vintage month, the
+    latest quarter's change: IP 'dg' = yoy growth now minus yoy growth 4 quarters earlier; unemployment 'du' =
+    rate now minus 4 quarters earlier. Everything computed inside the same vintage."""
+    p = os.path.join(P.RD, "dallas_%s_%s.xls" % (DALLAS.get(cc, "?"), var))
+    if not os.path.exists(p):
+        return pd.Series(dtype=float)
+    x = pd.read_excel(p, header=None)
+    hdr = x.iloc[3, 3:]
+    body = x.iloc[4:]
+    out = {}
+    for j, vd in hdr.items():
+        if not isinstance(vd, (pd.Timestamp,)) and not hasattr(vd, "year"):
+            continue
+        v = pd.to_numeric(body[j], errors="coerce").values
+        ok = np.where(~np.isnan(v))[0]
+        if len(ok) < 9:
+            continue
+        i = ok[-1]
+        if i < 8 or np.isnan(v[i - 4]) or (var == "indProd" and np.isnan(v[i - 8])):
+            continue
+        if var == "indProd":
+            out[pd.Period(vd, "M")] = (v[i] / v[i - 4] - 1) - (v[i - 4] / v[i - 8] - 1)
+        else:
+            out[pd.Period(vd, "M")] = v[i] - v[i - 4]
+    return pd.Series(out, dtype=float).sort_index()
+
+
+def _oecd_rev(cc, measure):
+    """OECD revisions database (monthly editions 1999+): per edition, CLI 12m change, IP yoy-growth change, or
+    unemployment 12m change, all inside the same edition."""
+    if "rev" not in _PIT:
+        p = os.path.join(P.RD, "oecd_rev_pit.csv")
+        _PIT["rev"] = pd.read_csv(p) if os.path.exists(p) else pd.DataFrame()
+    d = _PIT["rev"]
+    if d.empty:
+        return pd.Series(dtype=float)
+    iso = ISO3.get(cc, cc)
+    d = d[(d["REF_AREA"] == iso) & (d["MEASURE"] == measure)]
+    if measure == "PRVM":
+        d = d[d["ACTIVITY"] == "BTE"]
+        d = d[d["UNIT_MEASURE"] == d["UNIT_MEASURE"].mode().iloc[0]] if len(d) else d
+        val = (d["x_t"] / d["x_t12"] - 1) - (d["x_t12"] / d["x_t24"] - 1)
+    elif measure == "UNEMP":
+        d = d[d["UNIT_MEASURE"] == "PT_LF"]
+        val = d["x_t"] - d["x_t12"]
+    else:
+        val = d["x_t"] - d["x_t12"]
+    ed = pd.PeriodIndex([pd.Period("%s-%s" % (str(e)[:4], str(e)[4:6]), "M") for e in d["EDITION"]], freq="M")
+    return pd.Series(val.values, index=ed).groupby(level=0).mean().sort_index()
+
+
+def growth_pit(cc):
+    """Point-in-time growth theme: average of z-scored IP-growth change, minus unemployment change, and (1999+) CLI
+    12m change, each as published at the time (Dallas Fed vintages to 1998, OECD editions from 1999). A vintage is
+    used from the month after its publication month and carried forward to the next vintage."""
+    c = FX_MACRO.get(cc, cc)
+    parts = []
+    for dal, rev, sign in (("indProd", "PRVM", 1), ("unemp", "UNEMP", -1), (None, "LI_AA", 1)):
+        a = _dallas(c, dal) if dal else pd.Series(dtype=float)
+        b = _oecd_rev(c, rev)
+        s = pd.concat([a[a.index < pd.Period("1999-01", "M")], b]) if len(a) or len(b) else pd.Series(dtype=float)
+        if s.empty:
+            continue
+        s = s[~s.index.duplicated(keep="last")].reindex(GRID).ffill(limit=6).shift(1) * sign
+        sd = s.rolling(120, min_periods=36).std()
+        parts.append((s / sd).clip(-3, 3))
+    if not parts:
+        return pd.Series(np.nan, index=GRID)
+    return pd.concat(parts, axis=1).mean(axis=1, skipna=True)
+
+
+GROWTH_PIT = False    # v1.3 candidate: point-in-time growth theme (False = no growth theme, as in v1.1/v1.2)
+
+
 def themes(cc, R):
     """Theme scores for one country (positive = rising growth / inflation / currency weakening / tightening /
     falling risk aversion), each lagged by its publication delay."""
-    g = lag(zchg(cli(cc)), 2)
+    g = growth_pit(cc) if GROWTH_PIT else lag(zchg(cli(cc)), 2)
     i = lag(zchg(cpi_yoy(cc)), 1)
     t = lag(zchg(-np.log(neer(cc))), 1)
     y2 = yield_of(cc, 2) if cc in ("US", "DE", "CA", "AU", "JP") else pd.Series(np.nan, index=GRID)
-    m = zchg(P.first(y2, rate(cc)))
+    m = zchg(P.first(y2, rate(cc).shift(1)))                # OECD 3m rate: monthly average, published after t
     eq = [k for k, c in EQ_CC.items() if c == cc and k in R]
     eqr = R[eq[0]].rolling(12, min_periods=12).sum() if eq else pd.Series(np.nan, index=GRID)
     eqz = (eqr / (R[eq[0]].rolling(120, min_periods=36).std() * np.sqrt(12))).clip(-3, 3) if eq else eqr
@@ -121,6 +203,10 @@ SIGNS = {  # AQR Economic Trend, Exhibit 1
 }
 
 
+ECON_THEMES = ("inflation", "trade", "monetary", "risk")   # v1.1: growth (OECD CLI) left out until first-release
+                                                            # vintages exist (CLI is heavily revised; v1 used it)
+
+
 def econ_scores(R):
     """Directional score per market in [-1, 1]: average over themes of sign x tanh(theme z / 2)."""
     cache, out = {}, {}
@@ -131,7 +217,7 @@ def econ_scores(R):
         return cache[cc]
 
     def combine(ths, sg):
-        parts = [np.tanh(ths[k] / 2) * s for k, s in sg.items()]
+        parts = [np.tanh(ths[k] / 2) * s for k, s in sg.items() if k in ECON_THEMES]
         return pd.concat(parts, axis=1).mean(axis=1, skipna=True).where(pd.concat(parts, axis=1).notna().sum(axis=1) >= 2)
 
     for k in R.columns:
@@ -150,6 +236,43 @@ def econ_scores(R):
     return pd.DataFrame(out).reindex(GRID)
 
 
+FRENCH_DY = {"eq_de_dax": "Germany", "eq_gb_ftse": "UK", "eq_fr_cac": "France", "eq_jp_nikkei": "Japan",
+             "eq_ca_tsx": "Canada", "eq_au_asx": "Austrlia", "eq_hk_hsi": "HongKong"}
+
+
+def _french_mkt(fname, name):
+    import re
+    import zipfile
+    p = os.path.join(P.RD, fname)
+    if not os.path.exists(p):
+        return pd.Series(np.nan, index=GRID)
+    z = zipfile.ZipFile(p)
+    fn = [n for n in z.namelist() if n.lower() == name.lower() + ".dat"]
+    rows, st = [], False
+    for ln in z.read(fn[0]).decode("latin-1").splitlines() if fn else []:
+        t = ln.split()
+        if t and re.fullmatch(r"\d{6}", t[0]):
+            st = True
+            rows.append((pd.Period(t[0][:4] + "-" + t[0][4:], "M"), float(t[1])))
+        elif st and t:
+            break
+    s = pd.Series(dict(rows), dtype=float)
+    return (s.where(s > -99) / 100).reindex(GRID)
+
+
+def equity_dy():
+    """Trailing 12-month dividend yield per equity market: Ken French country market portfolio with minus without
+    dividends (1975+, annual update; carried forward up to 12 months); US from SPY total return minus S&P 500 price
+    (1993+). Point in time: known at month end."""
+    out = {}
+    for k, n in FRENCH_DY.items():
+        d = _french_mkt("french_intl_countries_ff.zip", n) - _french_mkt("french_intl_countries_ff_xdiv.zip", n)
+        out[k] = d.rolling(12, min_periods=12).sum().ffill(limit=12)
+    us = (P.ret(P.Y("SPY")) - P.ret(P.Y("^GSPC"))).rolling(12, min_periods=12).sum()
+    out["eq_us_spx"] = us.clip(0, 0.1)
+    return pd.DataFrame(out).reindex(GRID)
+
+
 def carry_values(R):
     out = {}
     for k, (cc, n) in BD.items():
@@ -159,15 +282,23 @@ def carry_values(R):
         out[k] = ((P.rate3m(cc) - r_us) / 100).shift(1)      # OECD monthly rates are published after month end
     for k, root in P.EIA_ROOT.items():
         out[k] = P.eia_rolled(root)[1]
+    dy = equity_dy()
+    for k in dy.columns:
+        out[k] = dy[k] - rate(G_EQ_RATE.get(k, "US")).shift(1) / 100     # dividend yield minus local 3m rate
     return pd.DataFrame(out).reindex(GRID)
 
 
-def value_values(R):
+def value_values(R, eq_measure="dy"):
+    """eq_measure 'dy': equities by dividend yield (v1.1); 'rev': 5-year reversal (v1, failed)."""
     out = {}
     for k in R.columns:
-        if k.startswith(("eq_", "cm_")) and k != "cm_aqr_ew":
+        if k.startswith("cm_") and k != "cm_aqr_ew" or (k.startswith("eq_") and eq_measure == "rev"):
             lr = np.log1p(R[k])
             out[k] = -lr.shift(12).rolling(48, min_periods=48).sum()       # return t-60..t-12, reversed
+    if eq_measure == "dy":
+        dy = equity_dy()
+        for k in dy.columns:
+            out[k] = dy[k]
     for k, (cc, n) in BD.items():
         if n >= 10:
             infl = cpi_yoy(cc).ffill(limit=18).rolling(36, min_periods=24).mean().shift(1)

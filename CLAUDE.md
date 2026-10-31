@@ -61,7 +61,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Workflow .github/workflows/gm.yml (3rd of each month + push to gm/): branch gm-status (status.md, positions.csv),
   gm-record (append-only ledger.csv; restatements appended with '-restated').
 - Holdout 2011-2026 has NOT been looked at: never print or inspect it until rules are frozen (then run once).
-- Placeholders: Bloomberg commodity workbook docs/data_requests/Bloomberg_commodities_UBC.xlsx (user at UBC next week);
+- Placeholders: Bloomberg commodity workbook docs/data_requests/Bloomberg_macro_UBC.xlsx (commodities + first-release/consensus economics; user at UBC next week; built by build_bloomberg.py);
   equity value/carry; WRDS revisions; econ on first-release data. Manual files: gm/data (RBI); MSCI kept out of git.
 
 ## WRDS (tools/wrdsq, 2026-10-29)
