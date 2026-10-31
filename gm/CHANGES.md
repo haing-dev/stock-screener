@@ -43,4 +43,8 @@ Design 1990-2010 net SR 1.47 (2x costs 1.36), maxDD -12%; 1975-89 net SR 0.93.
 6. Risk scaler: credit-spread jump, cross-asset correlation jump, drawdown brake (none adopted).
 7. IMF WEO forecast revisions: cross-sectional and directional, equities and bonds (exploratory, not adopted).
 8. Family ablations of the book (diagnostic, 5 runs).
-Total: about 30 variants.
+9. Trend lookbacks (2026-10-31, after reading Solovis "Momentum vs trend following": 6/12 months explain CTA returns
+   best): 1/3/12 (kept), 3/6/12, 6/12, 12. Design 1990-2010 book net SR 1.48 / 1.35 / 1.28 / 1.27. With positions
+   applied one month late, gross SR is 1.10-1.16 for every variant: the extra Sharpe of 1/3/12 is the fast part,
+   which needs trading within days of month end. Rule unchanged; noted as an execution dependency.
+Total: about 34 variants.
