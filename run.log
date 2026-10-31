@@ -1,0 +1,16 @@
+WARNING: 2 monthly moves of 60% or more kept in the panel; check the sources
+/home/runner/work/stock-screener/stock-screener/gm/run.py:96: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  as_of, pd.Timestamp.utcnow().strftime("%Y-%m-%d %H:%M")),
+# Global Macro Book (paper) - gm-1.2.0
+
+Positions decided at the end of **2026-09**; built 2026-10-31 03:57 UTC. Paper research only, not investment advice.
+
+## Backtest record (design and extra-check periods only; holdout 2011-2026 not run yet)
+```
+1975..1989 gross      ret 10.4% vol 10.5% SR 0.99 maxDD -20% worst12m -16% corrSPX 0.21
+1975..1989 net        ret 9.8% vol 10.5% SR 0.93 maxDD -21% worst12m -16% corrSPX 0.21
+1975..1989 net 2xcost ret 9.1% vol 10.5% SR 0.87 maxDD -21% worst12m -17%
+1990..2010 gross      ret 15.4% vol 9.8% SR 1.56 maxDD -12% worst12m -10% corrSPX -0.06
+1990..2010 net        ret 14.2% vol 9.8% SR 1.45 maxDD -12% worst12m -11% corrSPX -0.06
+1990..2010 net 2xcost ret 13.0% vol 9.8% SR 1.33 maxDD -13% worst12m -11%
+positions as of 2026-09: 62 markets; ledger rows 113
