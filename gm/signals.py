@@ -98,10 +98,91 @@ def zchg(x, k=12, win=120):
     return (c / sd).clip(-3, 3)
 
 
+DALLAS = {"US": "us", "DE": "germany", "GB": "uk", "FR": "france", "JP": "japan", "CA": "canada", "AU": "australia",
+          "KR": "korea", "MX": "mexico", "IT": "italy", "ES": "spain", "NL": "netherlands", "SE": "sweden",
+          "CH": "switzerland", "NO": "norway", "NZ": "newzealand"}
+_PIT = {}
+
+
+def _dallas(cc, var):
+    """Dallas Fed real-time OECD data (quarterly data, quarterly vintages 1962-1998) -> for each vintage month, the
+    latest quarter's change: IP 'dg' = yoy growth now minus yoy growth 4 quarters earlier; unemployment 'du' =
+    rate now minus 4 quarters earlier. Everything computed inside the same vintage."""
+    p = os.path.join(P.RD, "dallas_%s_%s.xls" % (DALLAS.get(cc, "?"), var))
+    if not os.path.exists(p):
+        return pd.Series(dtype=float)
+    x = pd.read_excel(p, header=None)
+    hdr = x.iloc[3, 3:]
+    body = x.iloc[4:]
+    out = {}
+    for j, vd in hdr.items():
+        if not isinstance(vd, (pd.Timestamp,)) and not hasattr(vd, "year"):
+            continue
+        v = pd.to_numeric(body[j], errors="coerce").values
+        ok = np.where(~np.isnan(v))[0]
+        if len(ok) < 9:
+            continue
+        i = ok[-1]
+        if i < 8 or np.isnan(v[i - 4]) or (var == "indProd" and np.isnan(v[i - 8])):
+            continue
+        if var == "indProd":
+            out[pd.Period(vd, "M")] = (v[i] / v[i - 4] - 1) - (v[i - 4] / v[i - 8] - 1)
+        else:
+            out[pd.Period(vd, "M")] = v[i] - v[i - 4]
+    return pd.Series(out, dtype=float).sort_index()
+
+
+def _oecd_rev(cc, measure):
+    """OECD revisions database (monthly editions 1999+): per edition, CLI 12m change, IP yoy-growth change, or
+    unemployment 12m change, all inside the same edition."""
+    if "rev" not in _PIT:
+        p = os.path.join(P.RD, "oecd_rev_pit.csv")
+        _PIT["rev"] = pd.read_csv(p) if os.path.exists(p) else pd.DataFrame()
+    d = _PIT["rev"]
+    if d.empty:
+        return pd.Series(dtype=float)
+    iso = ISO3.get(cc, cc)
+    d = d[(d["REF_AREA"] == iso) & (d["MEASURE"] == measure)]
+    if measure == "PRVM":
+        d = d[d["ACTIVITY"] == "BTE"]
+        d = d[d["UNIT_MEASURE"] == d["UNIT_MEASURE"].mode().iloc[0]] if len(d) else d
+        val = (d["x_t"] / d["x_t12"] - 1) - (d["x_t12"] / d["x_t24"] - 1)
+    elif measure == "UNEMP":
+        d = d[d["UNIT_MEASURE"] == "PT_LF"]
+        val = d["x_t"] - d["x_t12"]
+    else:
+        val = d["x_t"] - d["x_t12"]
+    ed = pd.PeriodIndex([pd.Period("%s-%s" % (str(e)[:4], str(e)[4:6]), "M") for e in d["EDITION"]], freq="M")
+    return pd.Series(val.values, index=ed).groupby(level=0).mean().sort_index()
+
+
+def growth_pit(cc):
+    """Point-in-time growth theme: average of z-scored IP-growth change, minus unemployment change, and (1999+) CLI
+    12m change, each as published at the time (Dallas Fed vintages to 1998, OECD editions from 1999). A vintage is
+    used from the month after its publication month and carried forward to the next vintage."""
+    c = FX_MACRO.get(cc, cc)
+    parts = []
+    for dal, rev, sign in (("indProd", "PRVM", 1), ("unemp", "UNEMP", -1), (None, "LI_AA", 1)):
+        a = _dallas(c, dal) if dal else pd.Series(dtype=float)
+        b = _oecd_rev(c, rev)
+        s = pd.concat([a[a.index < pd.Period("1999-01", "M")], b]) if len(a) or len(b) else pd.Series(dtype=float)
+        if s.empty:
+            continue
+        s = s[~s.index.duplicated(keep="last")].reindex(GRID).ffill(limit=6).shift(1) * sign
+        sd = s.rolling(120, min_periods=36).std()
+        parts.append((s / sd).clip(-3, 3))
+    if not parts:
+        return pd.Series(np.nan, index=GRID)
+    return pd.concat(parts, axis=1).mean(axis=1, skipna=True)
+
+
+GROWTH_PIT = False    # v1.3 candidate: point-in-time growth theme (False = no growth theme, as in v1.1/v1.2)
+
+
 def themes(cc, R):
     """Theme scores for one country (positive = rising growth / inflation / currency weakening / tightening /
     falling risk aversion), each lagged by its publication delay."""
-    g = lag(zchg(cli(cc)), 2)
+    g = growth_pit(cc) if GROWTH_PIT else lag(zchg(cli(cc)), 2)
     i = lag(zchg(cpi_yoy(cc)), 1)
     t = lag(zchg(-np.log(neer(cc))), 1)
     y2 = yield_of(cc, 2) if cc in ("US", "DE", "CA", "AU", "JP") else pd.Series(np.nan, index=GRID)

@@ -34,6 +34,38 @@ def build_all():
     return R, SRC, FLAG, buf.getvalue()
 
 
+STRESS = {"2008 Lehman (Sep-Dec 2008)": ("2008-09", "2008-12"), "2020 Covid (Feb-Mar 2020)": ("2020-02", "2020-03"),
+          "2022 rates shock (Jan-Oct 2022)": ("2022-01", "2022-10"), "1994 bond rout (Feb-Nov 1994)": ("1994-02", "1994-11")}
+
+
+def exposure_lines(R, pos, as_of):
+    """Today's positions seen through four macro factors (equity, bonds, US dollar, commodities): betas of the
+    hypothetical P&L of today's positions over the last 36 months, the share of its risk they explain (the rest is
+    the book's own, 'residual' risk), and the P&L today's positions would have had in past stress windows."""
+    win = R.loc[as_of - 35:as_of]
+    p = pos.reindex(R.columns).fillna(0)
+    pnl = (win.fillna(0) * p).sum(axis=1)
+    fx = [c for c in R.columns if c.startswith("fx_")]
+    cm = [c for c in R.columns if c.startswith("cm_") and c != "cm_aqr_ew"]
+    X = pd.DataFrame({"equity (S&P 500)": win["eq_us_spx"], "bonds (US 10y)": win["bd_us_10y"],
+                      "US dollar": -win[fx].mean(axis=1), "commodities": win[cm].mean(axis=1)}).dropna()
+    y = pnl.reindex(X.index)
+    A = np.column_stack([np.ones(len(X)), X.values])
+    beta, *_ = np.linalg.lstsq(A, y.values, rcond=None)
+    fit = A @ beta
+    r2 = 1 - np.var(y.values - fit) / np.var(y.values) if np.var(y.values) > 0 else np.nan
+    L = ["## Exposure of today's positions (last 36 months of market moves)",
+         "Betas: " + ", ".join("%s %+.2f" % (k, b) for k, b in zip(X.columns, beta[1:])) +
+         "; explained by these factors %.0f%%, residual (the book's own risk) %.0f%%." % (r2 * 100, (1 - r2) * 100),
+         "", "Stress test: P&L of today's positions if past market moves repeated (book targets 10% annual vol):"]
+    for lab, (a, b) in STRESS.items():
+        moves = (1 + R.loc[a:b]).prod(min_count=1) - 1
+        hit = (moves.reindex(p.index) * p).sum(min_count=1)
+        cov = int((moves.reindex(p.index).notna() & (p != 0)).sum())
+        L.append("- %s: %+.1f%% (%d of %d positions had data)" % (lab, hit * 100, cov, int((p != 0).sum())))
+    return L
+
+
 def main(out_dir="gm_out"):
     os.makedirs(out_dir, exist_ok=True)
     R, SRC, FLAG, sig_txt = build_all()
@@ -77,6 +109,7 @@ def main(out_dir="gm_out"):
                (pos * vol)[[k for k in pos.index if k.startswith(pre)]].sum()) for c, pre in G.CLASSES.items()}
     L += ["", "Gross notional and net risk by class: " + ", ".join("%s %.2fx / %+.1f%%" % (c, g, r * 100)
                                                                   for c, (g, r) in cls.items()),
+          ""] + exposure_lines(R, pos, as_of) + [
           "", "## Family risk shares (fixed)", ", ".join("%s %d%%" % (f, w * 100) for f, w in B.FAMILY_W.items()),
           "", "## Placeholders (not yet in this version)"] + ["- " + p for p in B.PLACEHOLDERS]
     L += ["", "## Data flags", ""] + ["- %s: %s" % (k, "; ".join(v)) for k, v in FLAG.items() if v]
