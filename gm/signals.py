@@ -37,7 +37,8 @@ BD = {"bd_us_2y": ("US", 2), "bd_us_5y": ("US", 5), "bd_us_10y": ("US", 10), "bd
       "bd_de_10y": ("DE", 10), "bd_gb_10y": ("GB", 10), "bd_jp_10y": ("JP", 10), "bd_ca_10y": ("CA", 10),
       "bd_au_10y": ("AU", 10), "st_us_2y": ("US", 2), "st_de_2y": ("DE", 2), "st_gb_5y": ("GB", 5),
       "st_ca_2y": ("CA", 2), "st_au_2y": ("AU", 2), "st_jp_2y": ("JP", 2)}
-FX_CC = {k: (v[0], v[4]) for k, v in P.FXM.items()}       # fx id -> (currency, rate country)
+FX_CC = {k: (v[0], v[4]) for k, v in P.FXM.items()}
+G_EQ_RATE = {k: v[3] for k, v in P.EQUITY.items()}         # equity id -> 3m-rate country       # fx id -> (currency, rate country)
 FX_MACRO = {"EZ": "DE"}                                    # euro: German macro data
 BIS = {"EZ": "XM"}
 GLOBAL = ["US", "DE", "JP", "CN"]                          # commodity demand block (equal weight)
@@ -121,6 +122,10 @@ SIGNS = {  # AQR Economic Trend, Exhibit 1
 }
 
 
+ECON_THEMES = ("inflation", "trade", "monetary", "risk")   # v1.1: growth (OECD CLI) left out until first-release
+                                                            # vintages exist (CLI is heavily revised; v1 used it)
+
+
 def econ_scores(R):
     """Directional score per market in [-1, 1]: average over themes of sign x tanh(theme z / 2)."""
     cache, out = {}, {}
@@ -131,7 +136,7 @@ def econ_scores(R):
         return cache[cc]
 
     def combine(ths, sg):
-        parts = [np.tanh(ths[k] / 2) * s for k, s in sg.items()]
+        parts = [np.tanh(ths[k] / 2) * s for k, s in sg.items() if k in ECON_THEMES]
         return pd.concat(parts, axis=1).mean(axis=1, skipna=True).where(pd.concat(parts, axis=1).notna().sum(axis=1) >= 2)
 
     for k in R.columns:
@@ -150,6 +155,43 @@ def econ_scores(R):
     return pd.DataFrame(out).reindex(GRID)
 
 
+FRENCH_DY = {"eq_de_dax": "Germany", "eq_gb_ftse": "UK", "eq_fr_cac": "France", "eq_jp_nikkei": "Japan",
+             "eq_ca_tsx": "Canada", "eq_au_asx": "Austrlia", "eq_hk_hsi": "HongKong"}
+
+
+def _french_mkt(fname, name):
+    import re
+    import zipfile
+    p = os.path.join(P.RD, fname)
+    if not os.path.exists(p):
+        return pd.Series(np.nan, index=GRID)
+    z = zipfile.ZipFile(p)
+    fn = [n for n in z.namelist() if n.lower() == name.lower() + ".dat"]
+    rows, st = [], False
+    for ln in z.read(fn[0]).decode("latin-1").splitlines() if fn else []:
+        t = ln.split()
+        if t and re.fullmatch(r"\d{6}", t[0]):
+            st = True
+            rows.append((pd.Period(t[0][:4] + "-" + t[0][4:], "M"), float(t[1])))
+        elif st and t:
+            break
+    s = pd.Series(dict(rows), dtype=float)
+    return (s.where(s > -99) / 100).reindex(GRID)
+
+
+def equity_dy():
+    """Trailing 12-month dividend yield per equity market: Ken French country market portfolio with minus without
+    dividends (1975+, annual update; carried forward up to 12 months); US from SPY total return minus S&P 500 price
+    (1993+). Point in time: known at month end."""
+    out = {}
+    for k, n in FRENCH_DY.items():
+        d = _french_mkt("french_intl_countries_ff.zip", n) - _french_mkt("french_intl_countries_ff_xdiv.zip", n)
+        out[k] = d.rolling(12, min_periods=12).sum().ffill(limit=12)
+    us = (P.ret(P.Y("SPY")) - P.ret(P.Y("^GSPC"))).rolling(12, min_periods=12).sum()
+    out["eq_us_spx"] = us.clip(0, 0.1)
+    return pd.DataFrame(out).reindex(GRID)
+
+
 def carry_values(R):
     out = {}
     for k, (cc, n) in BD.items():
@@ -159,15 +201,23 @@ def carry_values(R):
         out[k] = ((P.rate3m(cc) - r_us) / 100).shift(1)      # OECD monthly rates are published after month end
     for k, root in P.EIA_ROOT.items():
         out[k] = P.eia_rolled(root)[1]
+    dy = equity_dy()
+    for k in dy.columns:
+        out[k] = dy[k] - rate(G_EQ_RATE.get(k, "US")).shift(1) / 100     # dividend yield minus local 3m rate
     return pd.DataFrame(out).reindex(GRID)
 
 
-def value_values(R):
+def value_values(R, eq_measure="dy"):
+    """eq_measure 'dy': equities by dividend yield (v1.1); 'rev': 5-year reversal (v1, failed)."""
     out = {}
     for k in R.columns:
-        if k.startswith(("eq_", "cm_")) and k != "cm_aqr_ew":
+        if k.startswith("cm_") and k != "cm_aqr_ew" or (k.startswith("eq_") and eq_measure == "rev"):
             lr = np.log1p(R[k])
             out[k] = -lr.shift(12).rolling(48, min_periods=48).sum()       # return t-60..t-12, reversed
+    if eq_measure == "dy":
+        dy = equity_dy()
+        for k in dy.columns:
+            out[k] = dy[k]
     for k, (cc, n) in BD.items():
         if n >= 10:
             infl = cpi_yoy(cc).ffill(limit=18).rolling(36, min_periods=24).mean().shift(1)

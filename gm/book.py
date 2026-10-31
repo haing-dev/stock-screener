@@ -35,8 +35,10 @@ FAMILY_W = {"trend": 0.30, "econ": 0.30, "carry": 0.20, "value": 0.15, "xsmom": 
 VOL_TARGET = 0.10
 GROSS_CAP = 5.0
 MARKET_RISK_CAP = 0.10          # one market at most 10% of the book's risk (position x vol <= 0.1 x 10%... see cap())
-PLACEHOLDERS = ["BLOOMBERG commodity curves and pre-2000 commodity returns", "EQUITY value and carry (valuations)",
-                "WRDS revisions (research only)", "Early-warning risk scaler", "Econ trend on first-release data"]
+PLACEHOLDERS = ["BLOOMBERG commodity curves and pre-2000 commodity returns",
+                "EQUITY value for emerging markets (only DM + US by dividend yield so far); equity carry (failed)",
+                "WRDS revisions (research only)", "Early-warning risk scaler (tested, not adopted)",
+                "Econ growth theme on first-release data (left out in v1.1)"]
 EM_EQ = ("eq_cn", "eq_kr_kospi", "eq_tw", "eq_in", "eq_br_ibov", "eq_mx_ipc", "eq_za")
 EM_FX = ("fx_mxn", "fx_brl", "fx_krw", "fx_zar")
 
@@ -61,8 +63,9 @@ def family_positions(R):
     lvl = (1 + R.fillna(0)).cumprod().where(R.notna().cummax())
     trend = sum(np.sign(lvl / lvl.shift(h) - 1) for h in (1, 3, 12)) / 3
     xsm = np.log1p(R).shift(1).rolling(11, min_periods=11).sum()
-    V = S["V"][[c for c in S["V"].columns if c.startswith(("fx_", "bd_"))]]     # equity/commodity value: placeholder
-    fams = {"trend": (trend, "dir"), "econ": (S["E"], "dir"), "carry": (S["C"], "half"), "value": (V, "cs"),
+    V = S["V"][[c for c in S["V"].columns if c.startswith(("fx_", "bd_", "eq_"))]]  # commodity value: failed, out
+    C = S["C"][[c for c in S["C"].columns if not c.startswith("eq_")]]       # equity carry: weak in design, out
+    fams = {"trend": (trend, "dir"), "econ": (S["E"], "dir"), "carry": (C, "half"), "value": (V, "cs"),
             "xsmom": (xsm, "cs")}
     vol = R.rolling(36, min_periods=12).std() * np.sqrt(12)
     out = {}
