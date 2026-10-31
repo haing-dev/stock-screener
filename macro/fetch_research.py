@@ -5,6 +5,8 @@ import io
 import json
 import os
 import re
+
+import pandas as pd
 import time
 
 from . import fetch as FT
@@ -314,6 +316,37 @@ def run(log=print):
                 time.sleep(0.5)
         except Exception as e:
             man["series"][page_name] = {"ok": False, "error": str(e)[:150]}
+    # round 12: OECD revisions database, every monthly edition since 1999, condensed to point-in-time values: for each
+    # edition and series, the latest period and the values 12 and 24 months before it (as published in that edition)
+    rev_name = "oecd_rev_pit.csv"
+    if not (S_.fresh(rev_name) or S_.over(rev_name, "oecdrev")):
+        S_.group = "oecdrev"
+        out_rows, errs = [], []
+        ctry = "USA+DEU+FRA+GBR+JPN+CAN+AUS+KOR+MEX+ITA+ESP+NLD+SWE+CHE+NOR+NZL+CHN+IND+BRA+ZAF"
+        for yr_ in range(1999, int(time.strftime("%Y")) + 1):
+            eds = "+".join("%d%02d" % (yr_, m) for m in range(1, 13))
+            url = ("https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES_REVISIONS@DF_STES_REVISIONS,4.0/"
+                   f"{ctry}.M.LI_AA+PRVM+UNEMP...{eds}?startPeriod={yr_ - 3}-01&dimensionAtObservation=AllDimensions"
+                   "&format=csvfile")
+            try:
+                x = pd.read_csv(io.StringIO(FT._get(url).text))
+                x = x[["REF_AREA", "MEASURE", "UNIT_MEASURE", "ACTIVITY", "EDITION", "TIME_PERIOD", "OBS_VALUE"]]
+                x["m"] = pd.PeriodIndex(x["TIME_PERIOD"].astype(str).str[:7], freq="M")
+                for key, g in x.groupby(["REF_AREA", "MEASURE", "UNIT_MEASURE", "ACTIVITY", "EDITION"]):
+                    v = g.set_index("m")["OBS_VALUE"]
+                    last = v.index.max()
+                    out_rows.append(list(key) + [str(last), v.get(last), v.get(last - 12), v.get(last - 24)])
+            except Exception as e:
+                errs.append("%d: %s" % (yr_, str(e)[:80]))
+            time.sleep(1.0)
+        if out_rows:
+            df = pd.DataFrame(out_rows, columns=["REF_AREA", "MEASURE", "UNIT_MEASURE", "ACTIVITY", "EDITION", "last",
+                                                 "x_t", "x_t12", "x_t24"])
+            df.to_csv(os.path.join(OUT, rev_name), index=False)
+            man["series"][rev_name] = {"ok": True, "rows": len(df), "editions": int(df["EDITION"].nunique()),
+                                       "errors": errs[:5]}
+        else:
+            man["series"][rev_name] = {"ok": False, "error": "; ".join(errs)[:150]}
     for s_ in DAILY:
         name = "D_" + re.sub(r"[^A-Za-z0-9]", "_", s_)
         if S_.fresh(name) or S_.over(name, "daily"):
