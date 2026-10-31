@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Quality Triage</title>
+<meta name="description" content="Hidden Earnings, Emerging Compounders and Core Compounders: dated buy points for US stocks, backtested point in time.">
+<link rel="stylesheet" href="style.css?v=202610310139">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0b'/%3E%3Cpath d='M7 22l6-7 5 4 7-9' stroke='%230ca30c' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<div id="lock" class="lock" hidden>
+  <form id="lockForm" class="lock-card" autocomplete="on">
+    <h1>Quality Triage</h1>
+    <p class="muted">Enter the password to open the latest calls.</p>
+    <label for="pw">Password</label>
+    <input id="pw" type="password" autocomplete="current-password" required>
+    <label class="remember"><input id="remember" type="checkbox" checked> Remember on this device</label>
+    <button type="submit" id="unlockBtn">Open</button>
+    <p id="lockMsg" class="lock-msg" role="alert"></p>
+  </form>
+</div>
+<div id="shell" hidden>
+<header class="top">
+  <div class="kind" role="tablist" aria-label="Triage"></div>
+  <nav><a data-nav="screener">Screener</a><a data-nav="backtest">Backtest</a><a data-nav="track">Track record</a><a data-nav="method">Method</a><a id="lockNow" class="lockbtn" title="Forget the password on this device">Lock</a></nav>
+</header>
+<main id="app"><p class="muted">Loading…</p></main>
+<footer class="foot" id="foot"></footer>
+</div>
+<div id="tip" role="tooltip"></div>
+<script src="app.js?v=202610310139"></script>
+</body>
+</html>
