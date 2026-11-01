@@ -130,7 +130,17 @@ def family_positions(R, cfg=None, daily=None):
                     cf_cache[key] = cluster_factor(R, cols)
                 p = p * cf_cache[key].fillna(1.0)
             n = p.notna().sum(axis=1)
-            pos[c] = p.div(n.where(n > 0), axis=0)
+            p = p.div(n.where(n > 0), axis=0)
+            if c == "CM":                                # alternative commodities: at most 30% of commodity risk
+                from .bloomberg import ALT_COMMOD
+                alt = [k for k in p.columns if k in ALT_COMMOD]
+                if alt:
+                    core = [k for k in p.columns if k not in alt]
+                    ra = (p[alt].abs() * vol[alt]).sum(axis=1)
+                    rc = (p[core].abs() * vol[core]).sum(axis=1)
+                    f_alt = (0.3 / 0.7 * rc / ra.where(ra > 0)).clip(upper=1).fillna(1)
+                    p[alt] = p[alt].mul(f_alt, axis=0)
+            pos[c] = p
         out[f] = pos
     return out, vol
 

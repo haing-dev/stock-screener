@@ -177,12 +177,36 @@ def growth_pit(cc):
 
 
 GROWTH_PIT = False    # v1.3 candidate: point-in-time growth theme (False = no growth theme, as in v1.1/v1.2)
+GROWTH_SOURCE = "off"  # 'off' | 'pit' (first-release IP/unemployment/CLI) | 'surprise' (Bloomberg actual vs consensus)
+SURPRISE_MAP = {  # country -> (Bloomberg ticker, sign): growth news only
+    "US": [("NAPMPMI Index", 1), ("NFP TCH Index", 1), ("USURTOT Index", -1), ("IP CHNG Index", 1), ("RSTAMOM Index", 1)],
+    "DE": [("MPMIEZMA Index", 1), ("GRIFPBUS Index", 1), ("GRIPIYOY Index", 1), ("GRUEPR Index", -1)],
+    "GB": [("MPMIGBMA Index", 1), ("UKIPIYOY Index", 1), ("UKUEILOR Index", -1)],
+    "JP": [("JNTSMFG Index", 1), ("JNIPYOY Index", 1), ("JNUE Index", -1)],
+    "CA": [("CANLXEMR Index", -1)], "AU": [("AULFUNEM Index", -1)], "CN": [("CPMINDX Index", 1), ("CHVAIOY Index", 1)],
+}
+
+
+def growth_surprise(cc):
+    """Growth theme from data surprises: 3-month average of (first release - consensus) z-scores, sign by series."""
+    from . import bloomberg as BBG
+    parts = [BBG.surprise(tk, sg) for tk, sg in SURPRISE_MAP.get(FX_MACRO.get(cc, cc), [])]
+    parts = [p for p in parts if p.notna().sum() > 24]
+    if not parts:
+        return pd.Series(np.nan, index=GRID)
+    s = pd.concat(parts, axis=1).mean(axis=1)
+    return s.rolling(3, min_periods=1).mean()
 
 
 def themes(cc, R):
     """Theme scores for one country (positive = rising growth / inflation / currency weakening / tightening /
     falling risk aversion), each lagged by its publication delay."""
-    g = growth_pit(cc) if GROWTH_PIT else lag(zchg(cli(cc)), 2)
+    if GROWTH_SOURCE == "surprise":
+        g = growth_surprise(cc)
+    elif GROWTH_SOURCE == "pit" or GROWTH_PIT:
+        g = growth_pit(cc)
+    else:
+        g = lag(zchg(cli(cc)), 2)
     i = lag(zchg(cpi_yoy(cc)), 1)
     t = lag(zchg(-np.log(neer(cc))), 1)
     y2 = yield_of(cc, 2) if cc in ("US", "DE", "CA", "AU", "JP") else pd.Series(np.nan, index=GRID)
@@ -285,6 +309,12 @@ def carry_values(R):
     dy = equity_dy()
     for k in dy.columns:
         out[k] = dy[k] - rate(G_EQ_RATE.get(k, "US")).shift(1) / 100     # dividend yield minus local 3m rate
+    from . import bloomberg as BBG
+    for k in BBG.CURVE_ROOT:                            # commodity carry from Bloomberg curves (non-energy too)
+        if k in R.columns:
+            cc = BBG.commodity_carry(k)
+            if cc.notna().sum() > 24:
+                out[k] = cc.combine_first(out[k]) if k in out else cc
     return pd.DataFrame(out).reindex(GRID)
 
 
@@ -296,9 +326,19 @@ def value_values(R, eq_measure="dy"):
             lr = np.log1p(R[k])
             out[k] = -lr.shift(12).rolling(48, min_periods=48).sum()       # return t-60..t-12, reversed
     if eq_measure == "dy":
+        from . import bloomberg as BBG
+        eqs = [k for k in R.columns if k.startswith("eq_")]
+        vc = BBG.value_composite(eqs)                   # Bloomberg: forward E/P + B/P + D/P (incl. emerging markets)
         dy = equity_dy()
         for k in dy.columns:
             out[k] = dy[k]
+        if not vc.empty and vc.notna().sum().sum() > 0:
+            dyr = dy.rank(axis=1, pct=True)
+            for k in vc.columns:
+                out[k] = vc[k].combine_first(dyr[k]) if k in dyr else vc[k]
+            for k in dy.columns:
+                if k not in vc.columns:
+                    out[k] = dyr[k]
     for k, (cc, n) in BD.items():
         if n >= 10:
             infl = cpi_yoy(cc).ffill(limit=18).rolling(36, min_periods=24).mean().shift(1)

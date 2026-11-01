@@ -507,8 +507,13 @@ def build():
 
     # commodities ----------------------------------------------------------------------
     wb = _pinksheet()
+    from . import bloomberg as BBG
     for k, (etf, fut, stq, wbcol) in COMMOD.items():
         pieces, parts, flags = [], [], []
+        bb = BBG.commodity_return(k)
+        if bb.notna().sum() > 24:                         # Bloomberg excess-return index: properly rolled, longest
+            pieces.append(bb)
+            parts.append("Bloomberg/S&P GSCI excess-return index")
         if k in EIA_ROOT:
             pieces.append(eia_rolled(EIA_ROOT[k])[0])
             parts.append("EIA NYMEX contract 2 -> 1 roll (1983+)")
@@ -555,6 +560,11 @@ def build():
     note("sp_de_2s10s", ["Bundesbank 2y / 10y month-end"], [] if d2.notna().sum() > 120 else
          ["MISSING: German 2-year yield (stooq 2dey.b; alternative Bundesbank SDMX)"])
 
+    for k in BBG.ALT_COMMOD:                             # alternative commodities exist only with Bloomberg data
+        bb = BBG.commodity_return(k)
+        if bb.notna().sum() > 36:
+            R[k] = bb
+            note(k, ["Bloomberg/S&P GSCI excess-return index"], ["alternative market (capped at 30% of commodity risk)"])
     R = pd.DataFrame(R).reindex(GRID)
     for (k, m) in BAD_POINTS:                            # known bad source points (explicit list; audit 2026-10-31)
         if k in R:
