@@ -1,0 +1,5 @@
+{"name": "gm_validate2", "steps": [
+  {"do": "python", "code": "import gm_validate\ngm_validate.run_bonds(sql, out)"},
+  {"do": "python", "code": "import gm_validate\ngm_validate.run_vol(sql, out)"},
+  {"do": "python", "code": "import gm_validate\ngm_validate.run_value(sql, out)"}
+]}

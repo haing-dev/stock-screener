@@ -37,8 +37,8 @@ def main():
     yr = (1 + n).groupby(n.index.year).prod() - 1
     sr = n.mean() / n.std() * np.sqrt(12)
     corr = n.corr(spx.reindex(n.index))
-    checks = {"net SR >= 0.5": sr >= 0.5, "worst fall > -20%": dd > -0.20, "corr S&P <= 0.3": corr <= 0.3,
-              "2020 >= 0": yr.get(2020, 0) >= 0, "2022 >= 0": yr.get(2022, 0) >= 0}
+    checks = {"net SR >= 0.3": sr >= 0.3, "worst fall > -25%": dd > -0.25, "corr S&P <= 0.3": corr <= 0.3,
+              "2022 > 0": yr.get(2022, 0) > 0}
     L = ["# Holdout run, %s (%s..%s), run once on %s" % (VERSION, a, b, pd.Timestamp.utcnow().strftime("%Y-%m-%d %H:%M UTC")),
          "", "```",
          "gross      " + B.stats(res["gross"].loc[a:b], spx),

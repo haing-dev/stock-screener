@@ -624,11 +624,18 @@ def _score(fc, real, ret_m):
     return {"n": len(j), "bias": float(np.mean(lr - lf)), "r2": float(r2), "qlike": qlike, "scaled_sd": float(scaled)}
 
 
+def msci_names(sql):
+    n = sql("select gvkeyx, conm from comp.g_idx_index where position('MSCI' in conm) > 0")
+    n["conm"] = n["conm"].astype(str).str.strip()
+    n = n[n["conm"].str.contains(r"^MSCI\s*-\s*[A-Za-z .]+ Index", regex=True)]
+    n = n[~n["conm"].str.contains("Islamic|Small|Value|Growth|Sector| ex | Ex |Free|World|Europe|Pacific|EAFE|Emerging|"
+                                  "Far East|Nordic|Kokusai|EMU|AC |Latin|Asia|North America|G7", regex=True)]
+    return n
+
+
 def run_vol(sql, out):
-    names = sql("select gvkeyx, conm from comp.g_idx_index")
-    names = names[names["conm"].str.startswith("MSCI - ") & names["conm"].str.contains(" Index")]
-    names = names[~names["conm"].str.contains("Islamic|Small|Value|Growth|Sector|ex |Ex |Free", regex=True)]
-    out("MSCI indexes found:", len(names))
+    names = msci_names(sql)
+    out("MSCI country indexes found:", len(names), "| e.g.", list(names["conm"].head(3)))
     keys = ",".join("'%s'" % g for g in names["gvkeyx"])
     d = sql("select gvkeyx, datadate, prccd from comp.g_idx_daily where gvkeyx in (%s) and datadate >= '1972-01-01' "
             "and datadate <= '2010-12-31' and prccd > 0" % keys)
@@ -696,7 +703,7 @@ def run_bonds(sql, out):
     if desc is not None:
         out("median term/duration by index:", desc.round(2).to_dict())
     for k, g in x.groupby(key):
-        s = g.set_index(g[dcol].dt.to_period("M"))[rc].astype(float)
+        s = g.set_index(g[dcol].dt.to_period("M"))[rc].astype(float) / 100.0   # CRSP returns are in percent
         s = s[~s.index.duplicated()]
         best = None
         for c in ours.columns:
@@ -711,3 +718,40 @@ def run_bonds(sql, out):
         if best:
             out("  CRSP index %s best match %-9s corr %.3f | tracking error %.2f%%/yr | mean diff %+.2f%%/yr | %d months"
                 % (k, best[0], best[1], best[2] * 100, best[3], best[4]))
+
+
+def run_value(sql, out):
+    """Country equity value from MSCI index fundamentals in Compustat Global (comp.g_idx_mth): E/P (epsx12 / price),
+    B/P (bkvlps / price) and their average rank; monthly, rank-weighted, dollar-neutral long/short of next-month
+    USD price-plus-dividend returns (prccmdivusd when present). Design periods only. Tells us whether index
+    valuations (what the Bloomberg EquityValuation sheet will give live) beat the free dividend-yield proxy."""
+    names = msci_names(sql)
+    keys = ",".join("'%s'" % g for g in names["gvkeyx"])
+    cols = [c for c in sql("select * from comp.g_idx_mth limit 1").columns]
+    out("g_idx_mth columns:", cols)
+    tr = "prccmdivusd" if "prccmdivusd" in cols else "prccm"
+    x = sql("select gvkeyx, datadate, prccm, epsx12, bkvlps, %s as tr from comp.g_idx_mth where gvkeyx in (%s) "
+            "and datadate <= '2011-01-31'" % (tr, keys))
+    x["m"] = pd.to_datetime(x["datadate"]).dt.to_period("M")
+    x = x.drop_duplicates(["gvkeyx", "m"], keep="last").set_index(["m", "gvkeyx"]).sort_index()
+    px = x["prccm"].astype(float).unstack()
+    ep = (x["epsx12"].astype(float) / x["prccm"].astype(float)).unstack().where(lambda d: d.abs() < 1)
+    bp = (x["bkvlps"].astype(float) / x["prccm"].astype(float)).unstack().where(lambda d: (d > 0) & (d < 10))
+    ret = x["tr"].astype(float).unstack().pct_change(fill_method=None).where(lambda d: d.abs() < 0.6)
+    out("countries with E/P:", int(ep.notna().any().sum()), "| with B/P:", int(bp.notna().any().sum()),
+        "| return column", tr)
+
+    def ls(sig):
+        r = sig.rank(axis=1)
+        w = r.sub(r.mean(axis=1), axis=0)
+        w = w.div(w.abs().sum(axis=1) / 2, axis=0).where(sig.notna().sum(axis=1) >= 6, axis=0)
+        return (w.shift(1) * ret).sum(axis=1, min_count=6)
+
+    comp = pd.concat([ep.rank(axis=1, pct=True), bp.rank(axis=1, pct=True)]).groupby(level=0).mean()
+    for lab, sig in (("E/P", ep), ("B/P", bp), ("E/P + B/P", comp)):
+        r = ls(sig)
+        for a, b in PERIODS:
+            z = r.loc[pd.Period(a, "M"):pd.Period(b, "M")].dropna()
+            if len(z) > 36:
+                out("  %-10s %s..%s Sharpe %.2f | t %.1f | months %d" % (lab, a[:4], b[:4],
+                    z.mean() / z.std() * np.sqrt(12), z.mean() / z.std() * np.sqrt(len(z)), len(z)))

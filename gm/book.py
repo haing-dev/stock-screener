@@ -57,17 +57,56 @@ def cost_bp(k):
     return 3.0, 4
 
 
-def family_positions(R):
-    """Unscaled position (notional per unit capital) per family, per market: score x 40% / vol, equal weight in class."""
+def trend_signal(R, cfg, vol, S=None):
+    """Price-trend score in [-1, 1] per market (see config.BASE['trend'])."""
+    t = cfg["trend"]
+    X = R
+    if t.get("spot") and S is not None:                  # strip the carry accrual: trend on price moves only
+        C = S["C"].reindex(index=R.index)
+        cols = [c for c in C.columns if c in R.columns and c.startswith(("bd_", "st_", "fx_"))]
+        X = R.copy()
+        X[cols] = R[cols] - C[cols].shift(1) / 12
+    hz = t.get("horizons", (1, 3, 12))
+    if t.get("kind", "sign") == "sign":
+        lvl = (1 + X.fillna(0)).cumprod().where(X.notna().cummax())
+        return sum(np.sign(lvl / lvl.shift(h) - 1) for h in hz) / len(hz)
+    cap = t.get("cap", 2.0)
+    lr = np.log1p(X)
+    parts = [(lr.rolling(h, min_periods=h).sum() / (vol * np.sqrt(h / 12))).clip(-cap, cap) / cap for h in hz]
+    return sum(parts) / len(parts)
+
+
+def cluster_factor(R, cols, window=60):
+    """Within-class weight factor: 1 / (sum of positive correlations with the class), mean 1 across available
+    markets, from the trailing 60 months (point in time)."""
+    X = R[cols]
+    out = pd.DataFrame(np.nan, index=R.index, columns=cols)
+    for i in range(window, len(R.index)):
+        w = X.iloc[i - window + 1:i + 1]
+        ok = [c for c in cols if w[c].notna().sum() >= 24]
+        if len(ok) < 2:
+            continue
+        cm = w[ok].corr(min_periods=24).clip(lower=0).fillna(0)
+        f = 1 / cm.sum(axis=1)
+        out.loc[R.index[i], ok] = (f / f.mean()).values
+    return out
+
+
+def family_positions(R, cfg=None, daily=None):
+    """Unscaled position (notional per unit capital) per family, per market: score x 40% / vol, weighted in class."""
+    from . import config as CF
+    from . import vol as VM
+    cfg = cfg or CF.BASE
     S = pickle.load(open(os.path.join(P.OUT, "signals.pkl"), "rb"))
-    lvl = (1 + R.fillna(0)).cumprod().where(R.notna().cummax())
-    trend = sum(np.sign(lvl / lvl.shift(h) - 1) for h in (1, 3, 12)) / 3
+    vol = VM.estimate(R, cfg, daily)
+    trend = trend_signal(R, cfg, vol, S)
     xsm = np.log1p(R).shift(1).rolling(11, min_periods=11).sum()
     V = S["V"][[c for c in S["V"].columns if c.startswith(("fx_", "bd_", "eq_"))]]  # commodity value: failed, out
     C = S["C"][[c for c in S["C"].columns if not c.startswith("eq_")]]       # equity carry: weak in design, out
     fams = {"trend": (trend, "dir"), "econ": (S["E"], "dir"), "carry": (C, "half"), "value": (V, "cs"),
             "xsmom": (xsm, "cs")}
-    vol = R.rolling(36, min_periods=12).std() * np.sqrt(12)
+    fams = {f: v for f, v in fams.items() if cfg["family_w"].get(f, 0) > 0}
+    cf_cache = {}
     out = {}
     for f, (X, kind) in fams.items():
         X = X.reindex(index=R.index)
@@ -85,48 +124,75 @@ def family_positions(R):
             else:
                 w = (G.cs_rank(X, cols).fillna(0) * 0.5 + np.sign(X[cols]) * 0.5).where(X[cols].notna())
             p = w * 0.40 / vol[cols]
+            if cfg.get("within_class", "equal") == "cluster":
+                key = (c, tuple(cols))
+                if key not in cf_cache:
+                    cf_cache[key] = cluster_factor(R, cols)
+                p = p * cf_cache[key].fillna(1.0)
             n = p.notna().sum(axis=1)
             pos[c] = p.div(n.where(n > 0), axis=0)
         out[f] = pos
-    return out
+    return out, vol
 
 
-def run(R, cost_mult=1.0):
-    fam = family_positions(R)
+def scenario_scale(pos, R, limit, windows):
+    """Scale each month's book so that today's positions lose at most `limit` in any stress window that ended
+    before that month (point in time)."""
+    moves = {k: ((1 + R.loc[a:b]).prod(min_count=1) - 1, pd.Period(b, "M")) for k, (a, b) in windows.items()}
+    f = pd.Series(1.0, index=pos.index)
+    for t in pos.index:
+        worst = 0.0
+        for k, (mv, end) in moves.items():
+            if end >= t:
+                continue
+            loss = float((pos.loc[t] * mv.reindex(pos.columns)).sum(min_count=1) or 0.0)
+            worst = min(worst, loss)
+        if worst < -limit:
+            f[t] = limit / -worst
+    return pos.mul(f, axis=0), f
+
+
+def run(R, cost_mult=1.0, cfg=None, daily=None):
+    from . import config as CF
+    cfg = cfg or CF.BASE
+    fam, vol = family_positions(R, cfg, daily)
+    fw = cfg["family_w"]
     total = pd.DataFrame(0.0, index=R.index, columns=R.columns)
     by_fam = {f: pd.DataFrame(0.0, index=R.index, columns=R.columns) for f in fam}
     blocks = {}
+    bw = cfg.get("block_vol_months", 36)
     for f, pos in fam.items():
         for c, p in pos.items():
             r = (p.shift(1) * R[p.columns]).sum(axis=1, min_count=1)
-            k = (1.0 / (r.rolling(36, min_periods=24).std() * np.sqrt(12))).shift(1).clip(upper=50)
+            k = (1.0 / (r.rolling(bw, min_periods=24).std() * np.sqrt(12))).shift(1).clip(upper=50)
             blocks[(f, c)] = r * k
-            scaled = p.mul(k, axis=0) * FAMILY_W[f]
+            scaled = p.mul(k, axis=0) * fw[f]
             total[scaled.columns] = total[scaled.columns].add(scaled.fillna(0), fill_value=0)
             by_fam[f][scaled.columns] = by_fam[f][scaled.columns].add(scaled.fillna(0), fill_value=0)
     active = pd.concat(blocks, axis=1).notna().any(axis=1)
     raw = (total.shift(1) * R.fillna(0)).sum(axis=1).where(active)
-    s = (VOL_TARGET / (raw.rolling(36, min_periods=24).std() * np.sqrt(12))).shift(1)
+    s = (cfg.get("book_vol", VOL_TARGET) / (raw.rolling(36, min_periods=24).std() * np.sqrt(12))).shift(1)
     pos = total.mul(s, axis=0)
-    # caps: one market's risk (|pos| x vol) at most MARKET_RISK_CAP of the target... expressed per market
-    vol = R.rolling(36, min_periods=12).std() * np.sqrt(12)
-    cap = (MARKET_RISK_CAP * VOL_TARGET * 3) / vol         # ~3x the average market's share; binds on outliers only
+    cap = (cfg.get("market_risk_cap", MARKET_RISK_CAP) * cfg.get("book_vol", VOL_TARGET) * 3) / vol
     pos = pos.clip(lower=-cap, upper=cap)
     g = pos.abs().sum(axis=1)
-    pos = pos.mul((GROSS_CAP / g).clip(upper=1), axis=0)
-    gross = (pos.shift(1) * R).sum(axis=1, min_count=1).where(active & s.notna())
-    # costs
+    pos = pos.mul((cfg.get("gross_cap", GROSS_CAP) / g).clip(upper=1), axis=0)
+    scen = pd.Series(1.0, index=R.index)
+    if cfg.get("scenario_limit"):
+        pos, scen = scenario_scale(pos, R, cfg["scenario_limit"], CF.STRESS_WINDOWS)
+    lag = 1 + int(cfg.get("delay_months", 0))
+    gross = (pos.shift(lag) * R).sum(axis=1, min_count=1).where(active & s.notna())
     one_way = pd.Series({k: cost_bp(k)[0] / 1e4 for k in R.columns})
     rolls = pd.Series({k: cost_bp(k)[1] for k in R.columns})
     trade = pos.diff().abs()
     tc = (trade * one_way).sum(axis=1) + (pos.abs() * one_way * 2 * rolls / 12).sum(axis=1)
     borrow = (pos[[k for k in EM_EQ if k in pos]].clip(upper=0).abs() * 0.01 / 12).sum(axis=1)
-    net = gross - cost_mult * (tc.shift(1) + borrow.shift(1))
+    net = gross - cost_mult * (tc.shift(lag) + borrow.shift(lag))
     turnover = trade.sum(axis=1)
     shrink = (pos.abs().sum(axis=1) / total.mul(s, axis=0).abs().sum(axis=1)).fillna(1)   # effect of the caps
     fam_pos = {f: v.mul(s * shrink, axis=0) for f, v in by_fam.items()}
     return {"pos": pos, "gross": gross, "net": net, "blocks": pd.DataFrame(blocks), "turnover": turnover,
-            "cost": (tc + borrow), "fam_pos": fam_pos}
+            "cost": (tc + borrow), "fam_pos": fam_pos, "vol": vol, "scenario_scale": scen, "cfg": cfg}
 
 
 def stats(r, spx=None):
