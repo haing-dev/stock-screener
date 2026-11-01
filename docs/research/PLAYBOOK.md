@@ -1,4 +1,17 @@
-# Macro research playbook (v1, 2026-11-02): definitive workflow
+# Macro research playbook (v1.1, 2026-11-02): definitive workflow
+
+## 0. Decisions (user, 2026-11-02)
+- Models and effort: judgement Fable 5.1 effort max; extraction Sonnet 5.5 effort high; blind second read Opus 5.5 high;
+  build/test Opus 5.5 high. Work happens in chat; Claude spawns subagents with these models/efforts.
+- Unattended runs: GitHub Actions with secret CLAUDE_CODE_OAUTH_TOKEN (user's subscription; same usage pool as chat).
+  Verified 2026-11-02 by workflow claude-check (branch research-status: Sonnet 5.5 and Opus 5.5 at effort high OK).
+- Universe: ONLY G:\My Drive\Transcripts\Processed Transcripts\Macro Transcripts (about 227 transcripts as .txt with
+  an existing .note.md each, 4 .docx, _catalog.md) + the Quant subfolder (15 papers). Not the 397-transcript store.
+- Vault: G:\My Drive\Transcripts\Processed Transcripts\Macro Transcripts\Obsidian Macro\Macro (written through the
+  desktop link; write access verified). Git keeps the machine-readable ledger (claims JSONL, scripts); the vault is
+  the readable, linked view built from it.
+- Repo: stays haing-dev/stock-screener (macro code in macro/ and gm/); no separate repo needed.
+- Data: free sources, WRDS (jobs on WRDS Cloud, statistics only), Bloomberg workbook v4 (UBC visit 2026-11-03).
 
 Scope: the "pod model" research program (project "macro tool"). One person who does not code + Claude sessions on a
 subscription with usage limits. Everything below is designed around that limit: cheap models for volume, the
@@ -26,8 +39,7 @@ the scarcest tier: it reads the ledger (kilobytes), not the documents (megabytes
 4. Hard rules unchanged: no holdout (2011-2026) inspection; no WRDS data into any model; keys stay in secrets.
 
 ## 3. Document universe and order
-412 documents: 397 transcripts (research branch `transcripts/`, notes in `notes/doc1/`) + 15 quant papers
-(to be copied into research branch `papers/`). Order: macro collection (57) and the "Quant & systematic" and
+See section 0 (Macro Transcripts folder + Quant papers, about 246 documents; the .note.md files seed the must-catch lists). Order: macro collection (57) and the "Quant & systematic" and
 "Macro & markets" categories + all papers first (they feed the Bloomberg pull list before the UBC trip), then energy and
 banking, then general, then healthcare, consumer, media. AI / industrial folders: only if the user says so.
 
