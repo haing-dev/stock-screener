@@ -102,7 +102,13 @@ STOOQ = ["cl.f", "co.f", "ng.f", "ho.f", "rb.f", "gc.f", "si.f", "hg.f", "pl.f",
          "10sey.b", "10noy.b", "10nzy.b", "2usy.b", "2dey.b", "2uky.b", "2jpy.b", "2cay.b", "2auy.b", "3musy.b",
          "eurusd", "gbpusd", "usdjpy", "usdchf", "audusd", "nzdusd", "usdcad", "usdsek", "usdnok", "usdmxn", "usdbrl",
          "usdkrw", "usdzar", "usdinr", "usdcny", "usdtwd", "usdhkd", "dx.f", "zb.f", "zn.f", "fgbl.f"]
-DAILY = ["^GSPC", "SPY", "^VIX", "TLT", "IEF", "GLD", "^VIX3M", "DX-Y.NYB", "HYG"]
+DAILY = ["^GSPC", "SPY", "^VIX", "TLT", "IEF", "GLD", "^VIX3M", "DX-Y.NYB", "HYG",
+         # round 13: daily prices for the Global Macro Book's volatility and trade-timing tests (index level or ETF)
+         "^IXIC", "^RUT", "^STOXX50E", "^GDAXI", "^FTSE", "^FCHI", "^N225", "^GSPTSE", "^AXJO", "^HSI", "000001.SS",
+         "^KS11", "^TWII", "^BSESN", "^BVSP", "^MXX", "QQQ", "IWM", "EZU", "EWG", "EWU", "EWQ", "EWJ", "EWC", "EWA",
+         "EWH", "MCHI", "EWY", "EWT", "INDA", "EWZ", "EWW", "EZA",
+         "CL=F", "BZ=F", "NG=F", "HO=F", "RB=F", "GC=F", "SI=F", "HG=F", "PL=F", "ZC=F", "ZW=F", "ZS=F", "SB=F",
+         "KC=F", "CT=F", "LE=F"]
 EXTRA_URLS = {
     "cboe_put_history.csv": "https://cdn.cboe.com/api/global/us_indices/daily_prices/PUT_History.csv",
     "cboe_ppt_history.csv": "https://cdn.cboe.com/api/global/us_indices/daily_prices/PPUT_History.csv",
