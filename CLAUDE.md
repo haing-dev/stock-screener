@@ -102,10 +102,8 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 `docs/criteria/Screener_Criteria.xlsx` (157 rows incl. Tech S-curve: rationale in "investor states that X means Y, because Z; example" format, verified vs all transcripts; verifiability Easy/Partly/No; Valuation + Summary sheets). Rebuild: `python3 docs/criteria/build_criteria.py` (rationale text in `docs/criteria/out_*.json`; recalc formulas after).
 
 ## Open items
-000. PAUSED 2026-10-31: WRDS triage follow-up tests (docs/research/triage_wrds/PLAN.md, pre-registered). Job tri_research1
-   was running on WRDS; its report lands in Documents\Screenerdata\runner\results\tri_research1.txt. To resume: read it,
-   judge against the PLAN pass test, write docs/research/triage_wrds/RESULTS.md and the project doc
-   claude/triage_wrds_backtest_2026-10-31.md (baseline results already there).
+000. WRDS triage follow-up tests DONE 2026-10-31 (docs/research/triage_wrds/RESULTS.md): no test passed the
+   pre-registered bar; calls/red flags only capture the profitability factor (RMW). Rules unchanged. Avoid = useful warning.
 00. Triage pushed 2026-10-22; the push starts the first full scan (long: SEC bulk + company pass + 13F data sets; resumes
    from cache after a timeout; the daily cron continues it). Check branch triage-status, then the site. Tag
    prereg-2026-10-20 could not be pushed (proxy drops tag pushes).
