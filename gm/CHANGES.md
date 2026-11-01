@@ -96,3 +96,15 @@ eras without new data identical), dSR > 0 at 2x costs, tail checks. Code gm/prot
   trend leg is not inflated; book Lo-adjusted SR 1.49 / 1.32; no single market or 2008 drives the result
   (1.35-1.48 with any top market removed; 1.44 without 2008). 1987 loss came from trend long equities (-6.4%) and
   short bonds (-2.1%).
+
+## 2026-11-02: statistical audit (gm/audit.py -> docs/research/global_macro/stats_audit_2026-11-02.md)
+- Bootstrap: gm-2.0 1975-2010 SR 1.46, 90% interval 1.17-1.79, stable for mean blocks 3-24 months; batch-0 p-values
+  stable across block lengths.
+- Selection inflation among 32 logged variants (sd 0.11): about 0.23 Sharpe (0.28-0.31 if 100-300 variants).
+  Deflated Sharpe is 1.000 at every trial count, so it is uninformative here and is no longer cited as evidence.
+- CSCV over 20 rebuildable variants: PBO 0.04 (in-sample winner 1.50 -> 1.45 out of sample).
+- Holdout power (block bootstrap, 189 months): pass-all probability 0.04 if true SR 0, 0.22 at 0.3, 0.41 at 0.5,
+  0.66 at 0.8; the -25% max-fall criterion is the binding one (61% at SR 0.5).
+- EM currencies and equities removed before 2000: 1990-2010 SR 1.63 -> 1.51; 1975-2010 1.46 -> 1.43.
+- Trial log fix: batch rows had the pooled 1975-2010 SR in the 1990-2010 column and signal-only challengers
+  shared the incumbent's hash; corrected (era columns recomputed, fingerprint includes the challenger name).

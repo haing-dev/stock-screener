@@ -66,6 +66,8 @@ def compare(name, inc, cha, D):
     rec["wm_inc"], rec["wm_cha"] = float(j.iloc[:, 0].min()), float(j.iloc[:, 1].min())
     rec["alpha_t"] = ST.nw_alpha_t(j.iloc[:, 1] - j.iloc[:, 0], j.iloc[:, 0])
     rec["skew_inc"], rec["skew_cha"] = float(j.iloc[:, 0].skew()), float(j.iloc[:, 1].skew())
+    rec["sr_9010"] = ST.sharpe(ST.cut(rc["net"], *ERAS[1]))
+    rec["sr_7589"] = ST.sharpe(ST.cut(rc["net"], *ERAS[0]))
     return rec, rc
 
 
@@ -88,12 +90,12 @@ def decide(recs):
 
 def log(recs, batch, cfgs):
     for r in recs:
-        res_cfg = cfgs[r["name"]]
+        res_cfg = CF.variant(cfgs[r["name"]], challenger=r["name"])   # fingerprint includes signal-only changes
         TR.log_row({"when": dt.datetime.utcnow().strftime("%Y-%m-%d %H:%M"), "trial": "%s %s" % (batch, r["name"]),
-                    "family": "book", "hash": CF.cfg_hash(res_cfg), "sr_9010": round(r.get("sr_cha", np.nan), 3),
-                    "t_9010": "", "maxdd_9010": round(r.get("dd_cha", np.nan), 3), "sr_7589": "", "turnover": "",
-                    "note": "protocol %s: dSR %+.3f p_holm %.3f adopt %s (window %s)" % (
-                        batch, r.get("dsr", np.nan), r["p_holm"], r["adopt"], r["window"]),
+                    "family": "book", "hash": CF.cfg_hash(res_cfg), "sr_9010": round(r.get("sr_9010", np.nan), 3),
+                    "t_9010": "", "maxdd_9010": "", "sr_7589": round(r.get("sr_7589", np.nan), 3), "turnover": "",
+                    "note": "protocol %s: pooled 1975-2010 SR %.3f dSR %+.3f p_holm %.3f adopt %s (window %s)" % (
+                        batch, r.get("sr_cha", np.nan), r.get("dsr", np.nan), r["p_holm"], r["adopt"], r["window"]),
                     "config": json.dumps(res_cfg, sort_keys=True, default=list)})
 
 
