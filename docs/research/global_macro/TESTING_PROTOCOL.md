@@ -70,10 +70,11 @@ Diagnostics run with batch 1 (no adoption decision; they audit the 1.63 design S
 - Sharpe with each of the five biggest-contributing markets removed, and without 2008;
 - five-state smile vs world equities; 1987 crash by family and asset class.
 
-Considered and not registered (six-paper review, 2026-11-01): yield-curve level and whole-curve slope mean reversion
-(lose to plain bonds in Chua-Koh-Ramaswamy 2006; slope reversion is already carry); curvature mean reversion (decayed
-after about 1990 in the same paper); Kalman forward-curve forecasts (no better than a random walk, Chua-Ramaswamy-Stine
-2008).
+Considered and not registered (six-paper review, 2026-11-01; Chua-Koh-Ramaswamy re-read in full 2026-11-02):
+yield-curve level and whole-curve slope mean reversion (lose to plain bonds in Chua-Koh-Ramaswamy 2006, Table 1);
+their winning adjacent-maturity spread and curvature trades sit at the 11-12-24-month bill/note data seam and track
+the size of the deviation (likely measurement noise), are not significant after costs for curvature, and need short-end
+instruments we do not trade; Kalman forward-curve forecasts (no better than a random walk, Chua-Ramaswamy-Stine 2008).
 
 ### Batch 2: Bloomberg and zero-curve data (final list registered when the data arrive, before testing)
 Planned: short-rate futures (contracts about 1 year forward) for US, UK, euro, Canada, Australia, Japan with trend,
