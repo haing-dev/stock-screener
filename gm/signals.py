@@ -260,6 +260,35 @@ def econ_scores(R):
     return pd.DataFrame(out).reindex(GRID)
 
 
+def econ_theme_scores(R):
+    """Per-theme directional scores (sign x tanh(theme z / 2)) per market: {theme: DataFrame}. Same mapping as
+    econ_scores, kept apart so each theme x asset class can be its own vol-scaled block (AQR Economic Trend 2023)."""
+    cache, out = {}, {t: {} for t in ECON_THEMES}
+
+    def th(cc):
+        if cc not in cache:
+            cache[cc] = themes(cc, R)
+        return cache[cc]
+
+    for k in R.columns:
+        if k.startswith("eq_") and k in EQ_CC:
+            ths, sg = th(EQ_CC[k]), SIGNS["EQ"]
+        elif k in BD:
+            ths, sg = th(BD[k][0]), SIGNS["FI"]
+        elif k in FX_CC:
+            cur, cc = FX_CC[k]
+            loc, us = th(FX_MACRO.get(cc, cc)), th("US")
+            ths, sg = {n: loc[n] - us[n] for n in loc}, SIGNS["FX"]
+        elif k.startswith("cm_"):
+            ths = {n: pd.concat([th(c)[n] for c in GLOBAL], axis=1).mean(axis=1) for n in th("US")}
+            sg = SIGNS["CM"]
+        else:
+            continue
+        for t in ECON_THEMES:
+            out[t][k] = np.tanh(ths[t] / 2) * sg[t]
+    return {t: pd.DataFrame(v).reindex(GRID) for t, v in out.items()}
+
+
 FRENCH_DY = {"eq_de_dax": "Germany", "eq_gb_ftse": "UK", "eq_fr_cac": "France", "eq_jp_nikkei": "Japan",
              "eq_ca_tsx": "Canada", "eq_au_asx": "Austrlia", "eq_hk_hsi": "HongKong"}
 

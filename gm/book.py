@@ -92,12 +92,13 @@ def cluster_factor(R, cols, window=60):
     return out
 
 
-def family_positions(R, cfg=None, daily=None):
-    """Unscaled position (notional per unit capital) per family, per market: score x 40% / vol, weighted in class."""
+def family_positions(R, cfg=None, daily=None, S=None):
+    """Unscaled position (notional per unit capital) per family, per market: score x 40% / vol, weighted in class.
+    S: optional signal override {"E", "C", "V", optional "ET": {theme: scores}} (gm/variants.py)."""
     from . import config as CF
     from . import vol as VM
     cfg = cfg or CF.BASE
-    S = pickle.load(open(os.path.join(P.OUT, "signals.pkl"), "rb"))
+    S = S if S is not None else pickle.load(open(os.path.join(P.OUT, "signals.pkl"), "rb"))
     vol = VM.estimate(R, cfg, daily)
     trend = trend_signal(R, cfg, vol, S)
     xsm = np.log1p(R).shift(1).rolling(11, min_periods=11).sum()
@@ -105,7 +106,12 @@ def family_positions(R, cfg=None, daily=None):
     C = S["C"][[c for c in S["C"].columns if not c.startswith("eq_")]]       # equity carry: weak in design, out
     fams = {"trend": (trend, "dir"), "econ": (S["E"], "dir"), "carry": (C, "half"), "value": (V, "cs"),
             "xsmom": (xsm, "cs")}
-    fams = {f: v for f, v in fams.items() if cfg["family_w"].get(f, 0) > 0}
+    if cfg.get("econ_structure", "score_avg") == "themes":        # one block per theme x asset class
+        ET = S.get("ET") or G.econ_theme_scores(R)
+        del fams["econ"]
+        for t in cfg.get("econ_themes", G.ECON_THEMES):
+            fams["econ_" + t] = (ET[t], "dir")
+    fams = {f: v for f, v in fams.items() if _fw(cfg, f) > 0}
     cf_cache = {}
     out = {}
     for f, (X, kind) in fams.items():
@@ -145,6 +151,14 @@ def family_positions(R, cfg=None, daily=None):
     return out, vol
 
 
+def _fw(cfg, f):
+    """Family risk share; econ theme blocks share the econ weight equally."""
+    fw = cfg["family_w"]
+    if f.startswith("econ_"):
+        return fw.get("econ", 0) / len(cfg.get("econ_themes", G.ECON_THEMES))
+    return fw.get(f, 0)
+
+
 def scenario_scale(pos, R, limit, windows):
     """Scale each month's book so that today's positions lose at most `limit` in any stress window that ended
     before that month (point in time)."""
@@ -162,10 +176,10 @@ def scenario_scale(pos, R, limit, windows):
     return pos.mul(f, axis=0), f
 
 
-def run(R, cost_mult=1.0, cfg=None, daily=None):
+def run(R, cost_mult=1.0, cfg=None, daily=None, S=None):
     from . import config as CF
     cfg = cfg or CF.BASE
-    fam, vol = family_positions(R, cfg, daily)
+    fam, vol = family_positions(R, cfg, daily, S)
     fw = cfg["family_w"]
     total = pd.DataFrame(0.0, index=R.index, columns=R.columns)
     by_fam = {f: pd.DataFrame(0.0, index=R.index, columns=R.columns) for f in fam}
@@ -176,7 +190,7 @@ def run(R, cost_mult=1.0, cfg=None, daily=None):
             r = (p.shift(1) * R[p.columns]).sum(axis=1, min_count=1)
             k = (1.0 / (r.rolling(bw, min_periods=24).std() * np.sqrt(12))).shift(1).clip(upper=50)
             blocks[(f, c)] = r * k
-            scaled = p.mul(k, axis=0) * fw[f]
+            scaled = p.mul(k, axis=0) * _fw(cfg, f)
             total[scaled.columns] = total[scaled.columns].add(scaled.fillna(0), fill_value=0)
             by_fam[f][scaled.columns] = by_fam[f][scaled.columns].add(scaled.fillna(0), fill_value=0)
     active = pd.concat(blocks, axis=1).notna().any(axis=1)
@@ -185,7 +199,8 @@ def run(R, cost_mult=1.0, cfg=None, daily=None):
     pos = total.mul(s, axis=0)
     cap = (cfg.get("market_risk_cap", MARKET_RISK_CAP) * cfg.get("book_vol", VOL_TARGET) * 3) / vol
     pos = pos.clip(lower=-cap, upper=cap)
-    g = pos.abs().sum(axis=1)
+    gw = pd.Series({k: cfg.get("gross_weights", {}).get(k, 1.0) for k in pos.columns})
+    g = (pos.abs() * gw).sum(axis=1)                    # e.g. 3-month rate futures counted 2-year equivalent
     pos = pos.mul((cfg.get("gross_cap", GROSS_CAP) / g).clip(upper=1), axis=0)
     scen = pd.Series(1.0, index=R.index)
     if cfg.get("scenario_limit"):

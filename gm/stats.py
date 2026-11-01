@@ -116,3 +116,84 @@ def marginal(blocks, fam):
     resid = j.iloc[:, 0].values - A @ beta
     se = np.sqrt(np.sum(resid ** 2) / (len(j) - A.shape[1]) * np.linalg.inv(A.T @ A)[0, 0])
     return float(beta[0] / se)
+
+
+# ------------------------------------------------------------------ adoption protocol (TESTING_PROTOCOL.md)
+def _stationary_idx(T, n, block, seed):
+    """n x T index matrix of a stationary (Politis-Romano) bootstrap with mean block length `block`."""
+    rng = np.random.default_rng(seed)
+    idx = np.empty((n, T), dtype=np.int64)
+    idx[:, 0] = rng.integers(T, size=n)
+    jump = rng.random((n, T)) < 1.0 / block
+    fresh = rng.integers(T, size=(n, T))
+    for t in range(1, T):
+        idx[:, t] = np.where(jump[:, t], fresh[:, t], (idx[:, t - 1] + 1) % T)
+    return idx
+
+
+def _sr_rows(X):
+    return X.mean(axis=1) / X.std(axis=1, ddof=1) * np.sqrt(12)
+
+
+def paired_sr_test(rb, rc, n=10000, block=6, seed=20261101):
+    """Sharpe difference challenger minus incumbent on common months, with a paired stationary bootstrap.
+    Returns dSR, one-sided p for H0 dSR <= 0 (centred bootstrap), and the one-sided 95% lower bound."""
+    j = pd.concat([rb, rc], axis=1).dropna()
+    if len(j) < 24:
+        return {"dsr": float("nan"), "p": 1.0, "lb95": float("nan"), "n": len(j)}
+    b, c = j.iloc[:, 0].values, j.iloc[:, 1].values
+    d = sharpe(j.iloc[:, 1]) - sharpe(j.iloc[:, 0])
+    if np.max(np.abs(b - c)) < 1e-10:
+        return {"dsr": 0.0, "p": 1.0, "lb95": 0.0, "n": len(j), "identical": True}
+    idx = _stationary_idx(len(j), n, block, seed)
+    ds = _sr_rows(c[idx]) - _sr_rows(b[idx])
+    p = float((np.sum(ds - d >= d) + 1) / (n + 1))
+    lb = float(d - np.percentile(ds - d, 95))
+    return {"dsr": float(d), "p": p, "lb95": lb, "n": len(j), "se": float(ds.std())}
+
+
+def holm(pvals):
+    """Holm step-down adjusted p-values (dict in, dict out)."""
+    items = sorted(pvals.items(), key=lambda kv: kv[1])
+    m, out, run = len(items), {}, 0.0
+    for i, (k, p) in enumerate(items):
+        run = max(run, min(1.0, (m - i) * p))
+        out[k] = run
+    return out
+
+
+def nw_alpha_t(y, x, lags=6):
+    """Newey-West t-stat of the intercept of y on x (monthly)."""
+    j = pd.concat([y, x], axis=1).dropna()
+    if len(j) < 36:
+        return float("nan")
+    Y = j.iloc[:, 0].values
+    X = np.column_stack([np.ones(len(j)), j.iloc[:, 1:].values])
+    beta = np.linalg.lstsq(X, Y, rcond=None)[0]
+    u = Y - X @ beta
+    Xu = X * u[:, None]
+    S = Xu.T @ Xu
+    for L in range(1, lags + 1):
+        w = 1 - L / (lags + 1)
+        G = Xu[L:].T @ Xu[:-L]
+        S += w * (G + G.T)
+    XtXi = np.linalg.inv(X.T @ X)
+    V = XtXi @ S @ XtXi
+    return float(beta[0] / np.sqrt(V[0, 0]))
+
+
+def lo_sharpe(r, q=12):
+    """Lo (2002) annualised Sharpe corrected for autocorrelation of monthly returns."""
+    x = r.dropna()
+    if len(x) < 36:
+        return float("nan")
+    rho = [x.autocorr(k) for k in range(1, q)]
+    eta = q / np.sqrt(q + 2 * sum((q - k) * rho[k - 1] for k in range(1, q)))
+    return float(x.mean() / x.std() * eta)
+
+
+def smile(r, mkt, n=5):
+    """Mean monthly return (annualised %) of r in n equal-count states of the market return."""
+    j = pd.concat([r, mkt], axis=1).dropna()
+    q = pd.qcut(j.iloc[:, 1], n, labels=False)
+    return {int(k) + 1: round(float(v * 1200), 1) for k, v in j.iloc[:, 0].groupby(q).mean().items()}
