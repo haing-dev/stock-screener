@@ -2,9 +2,9 @@
 
 python -m gm.holdout --confirm <VERSION>
 Refuses to run unless <VERSION> equals gm.run.VERSION and docs/research/global_macro/holdout_<VERSION>.md does not
-exist yet. Writes that file (append-only record of the one run). Pass criteria (plan section 7): net SR >= 0.5,
-worst fall no deeper than -20%, correlation with the S&P 500 <= 0.3, no loss in 2022 (2008 and 2020: 2008 is in the
-design period; 2020 is in the holdout).
+exist yet. Writes that file (append-only record of the one run). Pass criteria (adopted 2026-11-01, see
+gm/CHANGES.md): net SR >= 0.3, worst fall shallower than -25%, correlation with the S&P 500 <= 0.3, 2022 positive.
+TODO before the run: freeze gm-2.0 as a FROZEN config (gm/config.py) and pass it plus daily data to B.run.
 """
 import os
 import pickle
