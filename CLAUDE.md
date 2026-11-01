@@ -60,6 +60,8 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   (families), gm/book.py (combined book, costs), gm/run.py (monthly run), gm/imf_revisions.py (exploratory).
 - Workflow .github/workflows/gm.yml (DISABLED 2026-10-31 at user request until further notice; re-enable: gh api -X PUT repos/haing-dev/stock-screener/actions/workflows/gm.yml/enable) (3rd of each month + push to gm/): branch gm-status (status.md, positions.csv),
   gm-record (append-only ledger.csv; restatements appended with '-restated').
+- Adoption rule (2026-11-01): docs/research/global_macro/TESTING_PROTOCOL.md (paired bootstrap dSR, Holm, non-inferiority per era);
+  run `python -m gm.protocol batch0|batch1|diag`; register each new batch in that file BEFORE running it. Batch 2 = Bloomberg.
 - Holdout 2011-2026 has NOT been looked at: never print or inspect it until rules are frozen (then run once).
 - 2026-11-01 framework: gm/config.py (BASE = live gm-1.2, CANDIDATE = gm-2.0: hybrid vol + shares trend 45 / carry 25 /
   value 15 / econ 15), gm/trials.py (log every design trial in gm/trials.csv), gm/stats.py, gm/vol.py, gm/daily.py,
