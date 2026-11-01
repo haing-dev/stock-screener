@@ -1,0 +1,38 @@
+name: claude-check
+# Access check (2026-11-02): can Actions run Claude Code with the subscription token? Writes the result to branch
+# research-status (check.md). Triggered by a push that changes this file, or by hand.
+on:
+  push:
+    paths: [".github/workflows/claude-check.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - name: Claude Code smoke test
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          npm install -g @anthropic-ai/claude-code >/dev/null 2>&1
+          {
+            echo "# claude-check $(date -u +%FT%TZ)"
+            echo "token present: $([ -n "$CLAUDE_CODE_OAUTH_TOKEN" ] && echo yes || echo no)"
+            echo "claude: $(claude --version 2>&1)"
+            for m in sonnet opus; do
+              echo "## $m (effort high)"
+              timeout 120 claude -p "Reply with exactly: OK <your model id>" --model $m --effort high 2>&1 | tail -3
+            done
+          } > /tmp/check.md
+          cat /tmp/check.md
+      - name: Publish result
+        run: |
+          git config user.name "claude-check"; git config user.email "actions@users.noreply.github.com"
+          git checkout --orphan research-status
+          git rm -rfq . ; cp /tmp/check.md check.md; git add check.md
+          git commit -qm "claude-check result"; git push -qf origin research-status
