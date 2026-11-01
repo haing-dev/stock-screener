@@ -1,0 +1,6 @@
+{"name": "gm_validate1", "steps": [
+  {"do": "describe", "table": "crsp.tfz_mth_ft"},
+  {"do": "describe", "table": "comp.g_idx_daily", "date": "datadate"},
+  {"do": "python", "code": "import gm_validate\ngm_validate.run_bonds(sql, out)"},
+  {"do": "python", "code": "import gm_validate\ngm_validate.run_vol(sql, out)"}
+]}
