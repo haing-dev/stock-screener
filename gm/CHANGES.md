@@ -4,6 +4,36 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## gm-2.0 candidate (2026-11-01, NOT frozen: waits for the Bloomberg data)
+Framework rebuilt to be config-driven and statistics-driven: gm/config.py (every rule), gm/vol.py, gm/daily.py,
+gm/timing.py, gm/stats.py (decade table, bootstrap, deflated Sharpe, marginal alpha), gm/trials.py (every trial
+logged to gm/trials.csv with its config hash), gm/bloomberg.py (adapter; synthetic smoke test passes).
+Decision rule fixed before the tests: adopt a component only if it raises net Sharpe in BOTH 1990-2010 and 1975-89.
+| Trial (logged) | SR 1990-2010 | SR 1975-89 | Verdict |
+|---|---|---|---|
+| gm-1.2 base | 1.48 | 0.93 | reference |
+| continuous vol-normalised trend | 1.43 | 0.76 | rejected |
+| hybrid volatility (daily EWMA 35d + 10y, floor) | 1.58 | 1.06 | ADOPTED |
+| cluster weights within class | 1.48 | 0.94 | rejected (no gain, deeper drawdown) |
+| trend on spot moves only | 1.39 | 0.92 | rejected (carry inside trend helps) |
+| scenario limit 3% | 1.32 | 0.93 | rejected as a rule; diagnostic |
+| family shares 45/25/15/15 (trend/carry/value/econ) | 1.56 | 1.09 | ADOPTED |
+| hybrid + shares = candidate | 1.63 | 1.22 | candidate |
+| candidate with slow trend 6/12 / 12 | 1.43 / 1.40 | 1.03 / 1.10 | rejected |
+| candidate + scenario limit 5% / 3% | 1.56 / 1.41 | 1.22 / 1.20 | rejected (drawdown/vol 1.55 vs 1.68 only) |
+| risk theme credit-only (removes trend overlap) | 1.57 | 1.20 | rejected |
+Trade timing (daily, price moves only, 1990-2010): 1/3/12 trend Sharpe 0.95 at k=0, 0.85 at 1 day late, 0.64 at 5,
+0.61 at 10; slow 6/12 0.57 / 0.52 / 0.42 / 0.42. The fast blend beats the slow one at every delay. Rule: trade on the
+first trading day after month end.
+Candidate statistics 1990-2010: net SR 1.63, bootstrap 90% interval 1.26-2.02, deflated-Sharpe probability ~1.00
+with 32 logged book trials (expected best of unskilled trials 0.21); every family adds (marginal alpha t: carry 4.9,
+trend 3.3, value 3.1, econ 2.8); family correlations -0.16 to 0.26.
+WRDS (statistics only): our yield-built US bond returns vs CRSP Treasury indexes: corr 0.985 (2y), 0.989 (5y),
+0.965 (10y), 0.990 (30y); tracking error 0.6-2.1%/yr. Daily-vol study on 20 MSCI country indexes 1990-2010: daily
+EWMA R2 0.46 vs 0.07 for the 36-month estimate (QLIKE 0.29 vs 0.60); blend keeps vol-scaled returns at 1.05 x target.
+Holdout pass criteria changed BEFORE any holdout run (user decision 2026-11-01): net SR >= 0.3, worst fall > -25%,
+corr S&P <= 0.3, 2022 positive.
+
 ## gm-1.2.0 (2026-10-31): independent look-ahead audit fixes
 Audit by a separate agent (truncation test: rebuilding with data cut at 1998-06, 2003-11, 2008-09, 2010-12 gives
 identical signals and positions up to each cut, apart from item 1). Verdict: no material look-ahead. Fixes:
@@ -52,4 +82,4 @@ Design 1990-2010 net SR 1.47 (2x costs 1.36), maxDD -12%; 1975-89 net SR 0.93.
     1990-2010, growth theme alone: PIT 0.29 vs revised CLI 0.42 (commodities 0.05 vs 0.68: the revised CLI's commodity
     result was mostly hindsight). Econ with PIT growth 0.64 vs 0.59 without; 1975-89 0.24 vs 0.37. Book net SR
     1990-2010 1.47 either way; 1975-89 0.84 vs 0.93. Not adopted (GROWTH_PIT stays False).
-Total: about 37 variants.
+Total: about 37 variants before the trial log; 32 book-level trials in gm/trials.csv since (2026-11-01).

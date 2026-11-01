@@ -61,6 +61,11 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Workflow .github/workflows/gm.yml (DISABLED 2026-10-31 at user request until further notice; re-enable: gh api -X PUT repos/haing-dev/stock-screener/actions/workflows/gm.yml/enable) (3rd of each month + push to gm/): branch gm-status (status.md, positions.csv),
   gm-record (append-only ledger.csv; restatements appended with '-restated').
 - Holdout 2011-2026 has NOT been looked at: never print or inspect it until rules are frozen (then run once).
+- 2026-11-01 framework: gm/config.py (BASE = live gm-1.2, CANDIDATE = gm-2.0: hybrid vol + shares trend 45 / carry 25 /
+  value 15 / econ 15), gm/trials.py (log every design trial in gm/trials.csv), gm/stats.py, gm/vol.py, gm/daily.py,
+  gm/timing.py, gm/bloomberg.py (reads cache/macro/raw/research/bloomberg/Bloomberg_macro_UBC.xlsx; test:
+  python3 tests/gm_bloomberg_smoke.py). White paper: Claude Doc "Global Macro Book: White Paper". Holdout criteria:
+  SR >= 0.3, worst fall > -25%, corr S&P <= 0.3, 2022 positive.
 - Placeholders: Bloomberg commodity workbook docs/data_requests/Bloomberg_macro_UBC.xlsx (commodities + first-release/consensus economics; user at UBC next week; built by build_bloomberg.py);
   equity value/carry; WRDS revisions; econ on first-release data. Manual files: gm/data (RBI); MSCI kept out of git.
 
