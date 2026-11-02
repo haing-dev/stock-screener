@@ -37,7 +37,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   inflation hot, market stress) -> state (Expansion/Late/Overheating/Contraction/Stagflation/Recovery + stress overlay)
   -> investor playbook per state (registry.RULES/STRESS) -> history check -> calls on 20 industry ETFs at 6/12 months. Point in time,
   walk-forward odds, ETF backtest from 2006 vs equal weight / momentum / trend / SPY. Details: macro/README.md.
-- Workflow `.github/workflows/macro.yml` (weekdays 22:17 UTC; push to macro/). Page: its OWN Cloudflare Worker
+- Workflow `.github/workflows/macro.yml` (weekday schedule PAUSED 2026-11-02 at user request; push to macro/ or dispatch still run). Page: its OWN Cloudflare Worker
   "macro-compass" built from branch `macro-site` (force-pushed; wrangler.jsonc + .assetsignore written by macro/site.py).
   NOT on the stock-screener site (https://stock-screener.haing-penn.workers.dev/ is used for another build - don't touch).
   No password (public, noindex). Branches: `macro-data` (raw downloads, force-pushed),
