@@ -4,8 +4,9 @@ name: Global Macro Book
 # Outputs: branch 'gm-status' (status.md + positions.csv, force-pushed) and branch 'gm-record' (append-only ledger.csv).
 # No WRDS data is used here (WRDS signals are research-only and stay on WRDS Cloud).
 on:
-  schedule:
-    - cron: "41 23 3 * *"        # 3rd of each month, after month-end data settle
+  # schedule paused 2026-11-02 at user request (workflow revision); restore:
+  # schedule:
+  #   - cron: "41 23 3 * *"        # 3rd of each month, after month-end data settle
   push:
     branches: [main]
     paths: ["gm/**", ".github/workflows/gm.yml"]

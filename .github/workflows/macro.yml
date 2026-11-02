@@ -6,8 +6,9 @@ name: Macro
 # No password: the page and its data are public (not indexed). Deploy: wrangler from this workflow when the secrets
 # CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID are set (no Cloudflare git connection needed).
 on:
-  schedule:
-    - cron: "17 22 * * 1-5"
+  # schedule paused 2026-11-02 at user request (workflow revision); restore:
+  # schedule:
+  #   - cron: "17 22 * * 1-5"
   push:
     branches: [main]
     paths: ["macro/**", ".github/workflows/macro.yml"]
