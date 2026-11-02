@@ -1,0 +1,288 @@
+[
+ {
+  "sid": "MT001",
+  "words": 7080,
+  "chunks": 11,
+  "sonnet": {
+   "claims": 68,
+   "exact": 68,
+   "other_chunk": 0,
+   "near": 0,
+   "not_found": 0,
+   "coverage_complete": true,
+   "testable_yes": 27,
+   "time_bound": 26
+  },
+  "sonnet_bad": [],
+  "opus": {
+   "claims": 61,
+   "exact": 61,
+   "other_chunk": 0,
+   "near": 0,
+   "not_found": 0,
+   "coverage_complete": true,
+   "testable_yes": 28,
+   "time_bound": 22
+  },
+  "opus_bad": [],
+  "recall_sonnet_of_opus": 0.9016393442622951,
+  "recall_opus_of_sonnet": 0.8823529411764706,
+  "opus_only": [
+   [
+    "MT001-C01-2",
+    "Investors carry personality biases (his: optimism; his father's: skepticism toward official actions), so knowi"
+   ],
+   [
+    "MT001-C05-1",
+    "Sell-side analysts and investors under-forecast extreme earnings growth at very large firms during technology "
+   ],
+   [
+    "MT001-C05-6",
+    "60/40 rests on two premises: bonds earn a competitive return through their yield, and stocks and bonds are inv"
+   ],
+   [
+    "MT001-C06-3",
+    "Gold is the best resilience asset against concern about excessive US government spending."
+   ],
+   [
+    "MT001-C06-4",
+    "Resilience is hard to optimize directly, so hold assets you will be fine owning in the end and accept interim "
+   ],
+   [
+    "MT001-C07-4",
+    "A cyclical upswing in commodity prices is likely to persist for a while, lifting commodity exporters such as L"
+   ]
+  ]
+ },
+ {
+  "sid": "MT002",
+  "words": 10894,
+  "chunks": 16,
+  "sonnet": {
+   "claims": 61,
+   "exact": 61,
+   "other_chunk": 0,
+   "near": 0,
+   "not_found": 0,
+   "coverage_complete": true,
+   "testable_yes": 30,
+   "time_bound": 31
+  },
+  "sonnet_bad": [],
+  "opus": {
+   "claims": 72,
+   "exact": 72,
+   "other_chunk": 0,
+   "near": 0,
+   "not_found": 0,
+   "coverage_complete": true,
+   "testable_yes": 36,
+   "time_bound": 34
+  },
+  "opus_bad": [],
+  "recall_sonnet_of_opus": 0.7777777777777778,
+  "recall_opus_of_sonnet": 0.9344262295081968,
+  "opus_only": [
+   [
+    "MT002-C02-5",
+    "A single bad event like the August V-shape is not a reason to refit trend models, since the behaviour is known"
+   ],
+   [
+    "MT002-C03-6",
+    "Heavy index-level volatility selling on the S&P 500 in 2024 suppressed index volatility."
+   ],
+   [
+    "MT002-C03-7",
+    "Global structured product issuance doubled in two years to about USD 1 trillion a year, adding to volatility s"
+   ],
+   [
+    "MT002-C04-4",
+    "Structured-product issuance is a secular trend, so index vol supply and low correlation should persist into 20"
+   ],
+   [
+    "MT002-C05-1",
+    "For a trend follower geopolitical views do not enter the model; prices already carry the effect, so market obs"
+   ],
+   [
+    "MT002-C05-2",
+    "Trade policy figures favouring a weaker dollar conflict with a Treasury Secretary who needs a stable dollar to"
+   ],
+   [
+    "MT002-C06-2",
+    "Press concern about concentration risk in bank QIS strategies is not supported by the data he sees."
+   ],
+   [
+    "MT002-C06-5",
+    "Active ETF volumes, including managed-futures ETFs, have grown by orders of magnitude."
+   ],
+   [
+    "MT002-C07-6",
+    "Open question whether alternative (less liquid) markets trend more strongly and implementably after costs; ane"
+   ],
+   [
+    "MT002-C08-3",
+    "Studies showing illiquid markets trend more are biased because their short histories coincide with good trend "
+   ],
+   [
+    "MT002-C10-2",
+    "Market efficiency can only be tested jointly with a valuation model, which is feasible in equities but not in "
+   ],
+   [
+    "MT002-C11-3",
+    "Rob has found no serious use for AI in systematic trading."
+   ],
+   [
+    "MT002-C13-4",
+    "Trend following makes no forecasts, only follows prices, so it cannot make prediction mistakes ('prices are pr"
+   ],
+   [
+    "MT002-C14-4",
+    "2024 dispersion was mostly by time horizon: long-term trends were clear while short-term swings around rate an"
+   ],
+   [
+    "MT002-C15-2",
+    "2024 trend dispersion came mainly from speed, then universe and purity, since cross-sectional reversion did we"
+   ],
+   [
+    "MT002-C15-4",
+    "He does not see 2024 trend dispersion as meaningfully larger than usual; wide dispersion is the normal state."
+   ]
+  ]
+ },
+ {
+  "sid": "MT003",
+  "words": 10738,
+  "chunks": 16,
+  "sonnet": {
+   "claims": 56,
+   "exact": 56,
+   "other_chunk": 0,
+   "near": 0,
+   "not_found": 0,
+   "coverage_complete": true,
+   "testable_yes": 37,
+   "time_bound": 1
+  },
+  "sonnet_bad": [],
+  "opus": {
+   "claims": 51,
+   "exact": 51,
+   "other_chunk": 0,
+   "near": 0,
+   "not_found": 0,
+   "coverage_complete": true,
+   "testable_yes": 31,
+   "time_bound": 1
+  },
+  "opus_bad": [],
+  "recall_sonnet_of_opus": 0.9019607843137255,
+  "recall_opus_of_sonnet": 0.875,
+  "opus_only": [
+   [
+    "MT003-C05-4",
+    "Most investors wait for performance confirmation before allocating to managed futures, so they enter late and "
+   ],
+   [
+    "MT003-C06-3",
+    "Pure trend following's edge comes from agnostic multi-asset, multi-directional participation, capturing return"
+   ],
+   [
+    "MT003-C09-1",
+    "Overall cost and manager selection risk are the two main failure points of professional allocators, which is w"
+   ],
+   [
+    "MT003-C13-2",
+    "Diversifying across very many systematic approaches converges to the industry average, giving up any edge over"
+   ],
+   [
+    "MT003-C13-3",
+    "Some managers have overstepped capacity, but long-term trend following is less capacity-sensitive than other s"
+   ]
+  ]
+ },
+ {
+  "sid": "MT004",
+  "words": 8370,
+  "chunks": 12,
+  "sonnet": {
+   "claims": 41,
+   "exact": 41,
+   "other_chunk": 0,
+   "near": 0,
+   "not_found": 0,
+   "coverage_complete": true,
+   "testable_yes": 12,
+   "time_bound": 22
+  },
+  "sonnet_bad": [],
+  "opus": {
+   "claims": 44,
+   "exact": 44,
+   "other_chunk": 0,
+   "near": 0,
+   "not_found": 0,
+   "coverage_complete": true,
+   "testable_yes": 22,
+   "time_bound": 28
+  },
+  "opus_bad": [],
+  "recall_sonnet_of_opus": 0.8636363636363636,
+  "recall_opus_of_sonnet": 0.926829268292683,
+  "opus_only": [
+   [
+    "MT004-C01-3",
+    "The current oil price shock is not expected to create a lasting inflation impulse (no second-round effects see"
+   ],
+   [
+    "MT004-C02-1",
+    "Warsh replaces the New Keynesian demand-management framework with a supply-side view (productivity, labor-forc"
+   ],
+   [
+    "MT004-C02-4",
+    "The Fed balance sheet is about $6.5-7 trillion, down from about $9 trillion at the peak, after QE grew it from"
+   ],
+   [
+    "MT004-C05-2",
+    "Over about 30 years since early Greenspan the Fed steadily moved to more forward guidance and strategy communi"
+   ],
+   [
+    "MT004-C06-1",
+    "The Fed statement's easing/tightening bias (first forward guidance, late Greenspan) signaled whether the next "
+   ],
+   [
+    "MT004-C09-3",
+    "At current 10-year yields around 5%+, AI stock price gains may start to come under pressure."
+   ]
+  ]
+ },
+ {
+  "sid": "MT005",
+  "words": 3553,
+  "chunks": 6,
+  "sonnet": {
+   "claims": 30,
+   "exact": 30,
+   "other_chunk": 0,
+   "near": 0,
+   "not_found": 0,
+   "coverage_complete": true,
+   "testable_yes": 5,
+   "time_bound": 10
+  },
+  "sonnet_bad": [],
+  "opus": {
+   "claims": 29,
+   "exact": 29,
+   "other_chunk": 0,
+   "near": 0,
+   "not_found": 0,
+   "coverage_complete": true,
+   "testable_yes": 6,
+   "time_bound": 8
+  },
+  "opus_bad": [],
+  "recall_sonnet_of_opus": 1.0,
+  "recall_opus_of_sonnet": 0.9333333333333333,
+  "opus_only": []
+ }
+]
