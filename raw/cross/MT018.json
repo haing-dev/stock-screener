@@ -1,0 +1,31 @@
+{
+ "source_id": "MT018",
+ "added_claims": [
+  {"claim_id": "MT018-C07-X1", "chunk": "C07", "speaker": "Brad Gerstner",
+   "quote": "I'm equally hopeful that we use these same type of negotiating tactics frankly to end some of this global conflict in Ukraine in the Middle East",
+   "claim": "The same anchoring-style maximal-threat negotiation used on tariffs is expected to be applied to end the Ukraine and Middle East conflicts.",
+   "mechanism": "policy_reaction", "asset_class": "multi", "indicator": "",
+   "horizon": "months", "direction": "", "conditions": "",
+   "testable": "no - political expectation", "speaker_confidence": "low", "time_bound": "yes"},
+  {"claim_id": "MT018-C07-X2", "chunk": "C07", "speaker": "Bill Gurley",
+   "quote": "the people that have been um encouraging you know more and more AI oversight and AI regulation and trying to make it such that open- Source AI would not be legal",
+   "claim": "Anthropic and its backers lobbied for AI regulation that would restrict open-source AI, so their own open-source release muddies that push and may signal a softer stance against open-source AI.",
+   "mechanism": "policy_reaction", "asset_class": "equities", "indicator": "AI regulation / open-source AI policy",
+   "horizon": "years", "direction": "", "conditions": "",
+   "testable": "no - regulatory judgement", "speaker_confidence": "low", "time_bound": "yes"},
+  {"claim_id": "MT018-C11-X1", "chunk": "C11", "speaker": "Brad Gerstner",
+   "quote": "states like the state of Maine uh you know the state of Texas and Florida and other places that already have some local programs like this",
+   "claim": "Several states already run child investment-account programs; a national account infrastructure would let states and private donors add to it instead of each rebuilding it, channelling more savings into equities.",
+   "mechanism": "liquidity_flows", "asset_class": "equities", "indicator": "child investment account programs",
+   "horizon": "years", "direction": "", "conditions": "if national legislation passes",
+   "testable": "no - policy proposal", "speaker_confidence": "medium", "time_bound": "yes"}
+ ],
+ "corrections": [
+  {"claim_id": "MT018-C03-3", "issue": "Wrong speaker: the Argentina ETF point ('one encouraging data point ... ARGT it's up 60%') is Gurley responding to Gerstner's DOGE topic; Gerstner then says 'okay give me your topic too Bill'.",
+   "fix": "Bill Gurley: the Argentina ETF ARGT is up about 60-65% YTD after Milei's reforms, showing optimism on Argentina has reversed and supporting the doability of large spending cuts."},
+  {"claim_id": "MT018-C08-2", "issue": "Overstates the evidence: Gerstner only recounts that CNBC's David Faber mentioned Gurley's talk of pre-training scaling slowing on a day Nvidia was down; no claim that scaling worries move Nvidia was made or tested.",
+   "fix": "Anecdote: on a down day for Nvidia, CNBC commentary cited Gurley's remarks on decelerating pre-training scaling (one anecdotal link, no evidence of a causal effect)."}
+ ],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10","C11"],
+ "completeness_estimate": "0.93 - first reader captured nearly all claim-worthy points in this opinion-heavy roundtable; missing items are minor policy asides; one speaker error."
+}

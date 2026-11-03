@@ -1,0 +1,33 @@
+{
+ "source_id": "MT034",
+ "added_claims": [
+  {"claim_id": "MT034-C05-X1", "chunk": "C05", "speaker": "Christine Lagarde",
+   "quote": "We're beginning to see some some of that. Productivity numbers are are beginning to shake up. We'll see.",
+   "claim": "Early signs that AI diffusion is starting to lift European productivity numbers, though it is too soon to confirm.",
+   "mechanism": "structural_shift", "asset_class": "multi", "indicator": "euro area labour productivity growth", "horizon": "years",
+   "direction": "European productivity up", "conditions": "depends on AI diffusion at firm level", "testable": "yes - productivity series available", "speaker_confidence": "low", "time_bound": "yes"},
+  {"claim_id": "MT034-C06-X1", "chunk": "C06", "speaker": "Christine Lagarde",
+   "quote": "at the moment the concept of vested interest, accrued rights, um delay for anything that is decided. That's an impediment to the changes that are necessary.",
+   "claim": "A culture of vested interests and accrued rights in Europe delays labour-market and productivity reforms, requiring cultural change as the workforce shrinks.",
+   "mechanism": "structural_shift", "asset_class": "multi", "indicator": "", "horizon": "years",
+   "direction": "", "conditions": "", "testable": "no - qualitative", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT034-C07-X1", "chunk": "C07", "speaker": "Christine Lagarde",
+   "quote": "I had one, but I did not pay enough attention to that person.",
+   "claim": "In 2022 one ECB dissenter warned that inflation was being underestimated but was not heeded, illustrating how group consensus and forward guidance delayed the policy response.",
+   "mechanism": "research_method", "asset_class": "rates", "indicator": "", "horizon": "months",
+   "direction": "", "conditions": "when bound by prior forward guidance", "testable": "no - single anecdote", "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT034-C08-X1", "chunk": "C08", "speaker": "Christine Lagarde",
+   "quote": "Do I think that central bank money is critical in order to uh structure, organize, and hold the financial system? Yes.",
+   "claim": "Because payments are going digital and central bank money anchors the financial system, central bank money must exist in digital form, and the rails for digital assets should be a public good.",
+   "mechanism": "structural_shift", "asset_class": "fx", "indicator": "", "horizon": "years",
+   "direction": "", "conditions": "", "testable": "no - policy rationale", "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT034-C08-X2", "chunk": "C08", "speaker": "Christine Lagarde",
+   "quote": "if the [L320] financial agents and in particular the traditional banking sector can remedy that and the digital euro can be an instrument then that element of business case goes.",
+   "claim": "Stablecoins exploit a real market failure in cross-border payments; if banks and the digital euro fix cross-border payments, that part of the stablecoin business case disappears.",
+   "mechanism": "structural_shift", "asset_class": "fx", "indicator": "stablecoin supply growth", "horizon": "years",
+   "direction": "stablecoin growth down if cross-border payments are fixed", "conditions": "banks/digital euro deliver cheap cross-border payments", "testable": "partly - stablecoin supply and cross-border cost data exist", "speaker_confidence": "medium", "time_bound": "no"}
+ ],
+ "corrections": [],
+ "chunks_checked": ["C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09"],
+ "completeness_estimate": "0.86 - first reader captured nearly all macro content of a mostly non-quantitative interview; missed the early productivity signal, the ignored dissenter, the digital-money rationale and the stablecoin conditional"
+}

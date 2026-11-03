@@ -1,0 +1,35 @@
+{
+ "source_id": "MT087",
+ "added_claims": [
+  {"claim_id": "MT087-C05-X1", "chunk": "C05", "speaker": "Nick Baltas",
+   "quote": "specifically when over over April every single asset class in a way was uh incorrectly positioned you know anywhere from oil to rates to the dollar and obviously equities",
+   "claim": "In the April 2025 V-shape trend portfolios were wrongly positioned in every asset class at once (oil, rates, dollar, equities), so there was no offsetting sector to cushion losses.",
+   "mechanism": "slow_reaction", "asset_class": "multi", "indicator": "trend positions by asset class, April 2025",
+   "horizon": "weeks", "direction": "", "conditions": "sharp cross-asset V-shaped reversal",
+   "testable": "yes - attribute April 2025 trend index P&L by sector", "speaker_confidence": "high", "time_bound": "yes"},
+  {"claim_id": "MT087-C08-X1", "chunk": "C08", "speaker": "Nick Baltas",
+   "quote": "if you start reducing your exposure, then what are you assessing yourself against? The reduced exposure you just have had or the ideal you should have held",
+   "claim": "Cutting trend exposure after losses is a form of timing trend that creates path dependency and an ambiguous benchmark (the reduced book or the full-risk book you should have held), which makes the rule hard to evaluate.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "drawdown-based exposure reduction",
+   "horizon": "months", "direction": "", "conditions": "",
+   "testable": "partly - backtest drawdown-triggered de-risking versus constant risk and report both paths", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT087-C13-X1", "chunk": "C13", "speaker": "Niels Kaastrup-Larsen",
+   "quote": "who's to say that at some point we couldn't see uh maybe government uh dictating more about what kind assets pension funds should hold should they have lots of debt to uh to sell",
+   "claim": "Investment constraints are rarely set for investors' benefit, and heavily indebted governments could in future dictate pension fund holdings to place their debt (speculative financial repression).",
+   "mechanism": "fiscal_debt", "asset_class": "rates", "indicator": "",
+   "horizon": "years", "direction": "forced pension demand for government bonds", "conditions": "high government debt issuance",
+   "testable": "no - speculative policy scenario", "speaker_confidence": "low", "time_bound": "no"},
+  {"claim_id": "MT087-C15-X1", "chunk": "C15", "speaker": "Niels Kaastrup-Larsen",
+   "quote": "I do like the actually the insurance car insurance example um you know just make it mandatory people should have a 10% allocation to trend maybe",
+   "claim": "Treating trend as mandatory insurance suggests a fixed strategic allocation of around 10% that is never timed.",
+   "mechanism": "risk_management", "asset_class": "multi", "indicator": "strategic trend allocation size",
+   "horizon": "years", "direction": "hold ~10% in trend permanently", "conditions": "",
+   "testable": "yes - compare fixed 10% trend sleeve with timed allocations in a 60/40 backtest", "speaker_confidence": "low", "time_bound": "no"}
+ ],
+ "corrections": [
+  {"claim_id": "MT087-C04-1", "issue": "wrong speaker: the June 2025 performance review (scarce trends, lean hogs and live cattle, DAX at highs) is given by host Niels Kaastrup-Larsen, who then asks Nick for his view", "fix": "Niels Kaastrup-Larsen: in June 2025 trends were scarce; bright spots were unusual ones like lean hogs and live cattle, plus equities (DAX at all-time highs)."},
+  {"claim_id": "MT087-C13-2", "issue": "wrong speaker: the summary of the Junge article (rethink how success is rewarded, tolerance for short-term risk, remuneration) is Nick Baltas's; Niels then adds that constraints are rarely set for investors' benefit", "fix": "Nick Baltas: the article argues institutions should rethink how success is rewarded and remunerated and how much short-term risk a long-term investor tolerates; but swapping into alternatives will not reproduce their paper returns."}
+ ],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10","C11","C12","C13","C14","C15","C16","C17"],
+ "completeness_estimate": "0.89 - first reader covered the vol-targeting, barometer, low-beta and timing arguments well; missed a few points (all-sector mispositioning in April, path-dependency of de-risking, pension asset mandates, 10% mandatory sleeve) and misattributed two claims."
+}

@@ -1,0 +1,16 @@
+{
+ "source_id": "MT060",
+ "added_claims": [
+  {"claim_id": "MT060-C11-X1", "chunk": "C11", "speaker": "Geoffrey Garrett",
+   "quote": "if we then in a like a two decade period do away with uh internal combustion engines, that'd be pretty amazing.",
+   "claim": "Garrett sees a possible phase-out of the internal combustion engine, the defining technology of the 20th century, within about two decades, a structural shift for autos, oil demand and metals supply chains.",
+   "mechanism": "structural_shift", "asset_class": "commodities", "indicator": "EV share of new car sales",
+   "horizon": "years", "direction": "ICE and oil demand down; battery metals demand up", "conditions": "EV adoption continues at policy-driven pace",
+   "testable": "partly - long-horizon adoption forecast", "speaker_confidence": "low", "time_bound": "yes"}
+ ],
+ "corrections": [
+  {"claim_id": "MT060-C10-3", "issue": "Mixed speakers: Tangen explains Norway's subsidies, charging network, taxi-lane access and no annual fees; the point that the US is a fossil-fuel exporter with the world's cheapest petrol, making EVs harder there, is Garrett's.", "fix": "Nicolai Tangen: Norway reached about 90% EV share of new car sales through large subsidies, a nationwide charging network, taxi-lane access and no annual fees, so buying a combustion car made no economic sense. Garrett adds that cheap petrol in the US (a fossil-fuel exporter) makes the same logic harder there."}
+ ],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10","C11","C12"],
+ "completeness_estimate": "0.95 - interview is mostly leadership and business-education talk with no macro content; first reader caught nearly all the trade, EV and AI points, missing only the ICE phase-out remark; one speaker mix-up."
+}

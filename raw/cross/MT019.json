@@ -1,0 +1,31 @@
+{
+ "source_id": "MT019",
+ "added_claims": [
+  {"claim_id": "MT019-C02-X1", "chunk": "C02", "speaker": "Niels Kaastrup-Larsen",
+   "quote": "well some of us I know you you don't but some of us would need to adjust positions according",
+   "claim": "Trend followers split into those who resize positions continuously with volatility (and keep selling after a vol spike) and those who hold position size fixed after entry, so their flows and results differ in volatility shocks.",
+   "mechanism": "risk_management", "asset_class": "multi", "indicator": "dynamic vs static position sizing",
+   "horizon": "weeks", "direction": "vol-adjusters sell after vol spikes; static sizers do not", "conditions": "volatility shocks",
+   "testable": "partly - compare manager returns by sizing style around vol spikes", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT019-C04-X1", "chunk": "C04", "speaker": "Richard Brennan",
+   "quote": "the equity indexes have all pretty well recovered the the Yen and the um Nicki are still down",
+   "claim": "In August 2024 the trend-follower losses came from the Nikkei, yen and Nasdaq/equity indexes; equity indexes recovered within the month while the yen and Nikkei positions stayed down, and commodities kept trending.",
+   "mechanism": "crowding_positioning", "asset_class": "multi", "indicator": "Nikkei, JPY, Nasdaq, commodity trends Aug 2024",
+   "horizon": "weeks", "direction": "", "conditions": "",
+   "testable": "yes - market returns for the month", "speaker_confidence": "high", "time_bound": "yes"},
+  {"claim_id": "MT019-C05-X1", "chunk": "C05", "speaker": "Niels Kaastrup-Larsen",
+   "quote": "they are using other people's STA and it just shows you that sometimes these things are not uh to be relied on",
+   "claim": "Third-party indicators and data feeds can silently stop updating (as the Trend Barometer app did), so systematic users such as replicators relying on others' data face data-reliability risk.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "third-party data feeds",
+   "horizon": "unspecified", "direction": "", "conditions": "",
+   "testable": "no - operational caution", "speaker_confidence": "medium", "time_bound": "no"}
+ ],
+ "corrections": [
+  {"claim_id": "MT019-C13-1", "issue": "Wrong speaker: the cocoa example (trend followers selling 80-90% of notional Jan-May 2024 as volatility rose) is given by Niels, who introduces it as 'a really good example'; Brennan replies afterwards.",
+   "fix": "Niels Kaastrup-Larsen: in the 2024 cocoa run, trend followers who size dynamically sold roughly 80-90% of their notional between January and April/May as volatility rose."},
+  {"claim_id": "MT019-C05-3", "issue": "Incomplete/garbled numbers: the host corrects himself to SG CTA +2.1% YTD (not 3.4%), and the short-term traders index is +0.61% for both the month and the year.",
+   "fix": "August 2024: Beta 50 -1.7% (+3.4% YTD), SG CTA -2.6% (+2.1% YTD), SG Trend -3.55% (+2.3% YTD), SG Short-Term Traders +0.61% (+0.61% YTD)."}
+ ],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10","C11","C12","C13","C14","C15","C16"],
+ "completeness_estimate": "0.95 - first reader captured essentially every method and mechanism claim; only a sizing-style distinction and minor data/operational points were missing; one speaker error."
+}

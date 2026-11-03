@@ -1,0 +1,280 @@
+{
+ "source_id": "MT060",
+ "title": "Geoffrey Garrett - Podcast - In Good Company - Norges Bank Investment Management",
+ "meta": {
+  "source": "Macro Transcripts/Geoffrey Garrett - Podcast - In Good Company - Norges Bank Investment Management.docx",
+  "channel": "Norges Bank Investment Management",
+  "url": "https://www.youtube.com/watch?v=nyMPFdOwTFE",
+  "upload date": "2025-05-07",
+  "transcript source": "YouTube auto-captions",
+  "words": "7690",
+  "chunks": "12"
+ },
+ "speakers": [
+  "Geoffrey Garrett (Dean, USC Marshall School of Business)",
+  "Nicolai Tangen (CEO, Norges Bank Investment Management)"
+ ],
+ "summary": "May 2025 NBIM podcast, mostly about leadership and business education; the only macro-relevant content is Garrett view that shrinking global markets and reshoring raise prices and interest rates, Chinese EVs as a transformative force, Norway EV adoption by policy design, and AI job disruption.",
+ "approach_tags": [
+  "leadership",
+  "business education",
+  "globalization and tariffs",
+  "electric vehicles",
+  "AI and jobs"
+ ],
+ "coverage": [
+  {
+   "chunk": "C01",
+   "claims": 0,
+   "note": "nothing actionable: leadership skills and teaching"
+  },
+  {
+   "chunk": "C02",
+   "claims": 0,
+   "note": "nothing actionable: admissions, COVID leadership lessons"
+  },
+  {
+   "chunk": "C03",
+   "claims": 0,
+   "note": "nothing actionable: listening, delegation"
+  },
+  {
+   "chunk": "C04",
+   "claims": 0,
+   "note": "nothing actionable: curriculum and talent search"
+  },
+  {
+   "chunk": "C05",
+   "claims": 1,
+   "note": "AI job disruption view; ROI of degrees otherwise nothing actionable"
+  },
+  {
+   "chunk": "C06",
+   "claims": 0,
+   "note": "nothing actionable: CEO traits, delegation, time"
+  },
+  {
+   "chunk": "C07",
+   "claims": 0,
+   "note": "nothing actionable: leadership style in academia"
+  },
+  {
+   "chunk": "C08",
+   "claims": 0,
+   "note": "nothing actionable: academia-business ties, research funding"
+  },
+  {
+   "chunk": "C09",
+   "claims": 1,
+   "note": "shrinking global markets; otherwise MBA education"
+  },
+  {
+   "chunk": "C10",
+   "claims": 4,
+   "note": "reshoring costs, Kantian trade-peace, Norway EVs, Chinese EVs"
+  },
+  {
+   "chunk": "C11",
+   "claims": 3,
+   "note": "German autos and China, EV labor, green supply chain, career optionality"
+  },
+  {
+   "chunk": "C12",
+   "claims": 0,
+   "note": "nothing actionable: closing"
+  }
+ ],
+ "chunks": 12,
+ "crosscheck": "opus cross-check",
+ "completeness_estimate": "0.95 - interview is mostly leadership and business-education talk with no macro content; first reader caught nearly all the trade, EV and AI points, missing only the ICE phase-out remark; one speaker mix-up.",
+ "claims": [
+  {
+   "claim_id": "MT060-C05-1",
+   "chunk": "C05",
+   "speaker": "Geoffrey Garrett",
+   "quote": "there's a lot of job disruption and displacement in the short term but",
+   "claim": "AI may follow prior technological revolutions, with short-term job disruption and displacement followed by new job creation in the longer term.",
+   "mechanism": "structural_shift",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - historical analogy opinion",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT060-C09-1",
+   "chunk": "C09",
+   "speaker": "Geoffrey Garrett",
+   "quote": "the shrinking of global markets is going to is a big net negative",
+   "claim": "As a classic liberal economist, Garrett views the shrinking of global markets (more transactional, competing countries) as a major economic net negative.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "deglobalization bad for growth",
+   "conditions": "",
+   "testable": "partly - trade volume vs growth studies",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT060-C10-1",
+   "chunk": "C10",
+   "speaker": "Geoffrey Garrett",
+   "quote": "globalization reduced prices and reduced interest rates in America for decades",
+   "claim": "Reshoring and tariffs carry a real cost in higher prices, and since globalization lowered prices and interest rates for decades, reversing it pushes both up.",
+   "mechanism": "structural_shift",
+   "asset_class": "rates",
+   "indicator": "US consumer prices and interest rates vs trade openness",
+   "horizon": "years",
+   "direction": "higher prices and rates from reshoring",
+   "conditions": "tariffs and reshoring policy",
+   "testable": "partly - needs counterfactual estimate",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT060-C10-2",
+   "chunk": "C10",
+   "speaker": "Geoffrey Garrett",
+   "quote": "if they if they can join activities, they're less likely to go to war against each other",
+   "claim": "Following Kant, closer economic ties lower the probability of war between countries, so decoupling raises geopolitical risk.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - trade and conflict literature",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT060-C10-3",
+   "chunk": "C10",
+   "speaker": "Nicolai Tangen",
+   "quote": "I think the number now is something like 90% of new cars sold are electrical",
+   "claim": "Norway reached about 90% EV share of new car sales through large subsidies, a charging network, taxi-lane access and no annual fees, so policy design rather than cold weather determined adoption; US cheap petrol makes the same logic harder.",
+   "mechanism": "policy_reaction",
+   "asset_class": "other",
+   "indicator": "EV share of new car sales",
+   "horizon": "years",
+   "direction": "EV adoption follows incentives",
+   "conditions": "subsidies plus infrastructure; relative fuel prices",
+   "testable": "yes - country EV share vs incentives",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT060-C10-3",
+    "issue": "Mixed speakers: Tangen explains Norway's subsidies, charging network, taxi-lane access and no annual fees; the point that the US is a fossil-fuel exporter with the world's cheapest petrol, making EVs harder there, is Garrett's.",
+    "fix": "Nicolai Tangen: Norway reached about 90% EV share of new car sales through large subsidies, a nationwide charging network, taxi-lane access and no annual fees, so buying a combustion car made no economic sense. Garrett adds that cheap petrol in the US (a fossil-fuel exporter) makes the same logic harder there."
+   },
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT060-C10-4",
+   "chunk": "C10",
+   "speaker": "Geoffrey Garrett",
+   "quote": "that's a transformative force for the global economy",
+   "claim": "The rise of Chinese EV makers (BYD, Xiaomi) is a transformative force for the global economy, and Europe and the US must decide whether to protect domestic automakers with tariffs.",
+   "mechanism": "structural_shift",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "tariffs and subsidies determine outcome",
+   "testable": "no - opinion",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT060-C11-1",
+   "chunk": "C11",
+   "speaker": "Geoffrey Garrett",
+   "quote": "if they protect it against Chinese electric vehicles, the Chinese, they're not going to have access to the Chinese market",
+   "claim": "Germany faces a trade-off: protecting its auto industry against Chinese EVs risks retaliation that closes the Chinese market it needs, with VW considering plant closures.",
+   "mechanism": "policy_reaction",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "German auto exposure to China retaliation",
+   "conditions": "tariff retaliation",
+   "testable": "no - qualitative",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT060-C11-2",
+   "chunk": "C11",
+   "speaker": "Geoffrey Garrett",
+   "quote": "You just need many, many fewer workers to put together an EV than a traditional combustion engine.",
+   "claim": "EVs are simpler to assemble, so a shift to EVs cuts manufacturing and auto employment, which affects political reactions in Europe and the US.",
+   "mechanism": "structural_shift",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "lower auto manufacturing employment",
+   "conditions": "",
+   "testable": "yes - labor hours per vehicle",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT060-C11-3",
+   "chunk": "C11",
+   "speaker": "Geoffrey Garrett",
+   "quote": "the entire green energy supply chain now is dominated by China",
+   "claim": "China dominates the green energy supply chain, which is power-intensive and dirty, and metals such as Indonesian nickel are needed for long-range EVs.",
+   "mechanism": "structural_shift",
+   "asset_class": "commodities",
+   "indicator": "share of green supply chain",
+   "horizon": "years",
+   "direction": "nickel demand from long-range EVs",
+   "conditions": "",
+   "testable": "yes - supply chain data",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT060-C11-X1",
+   "chunk": "C11",
+   "speaker": "Geoffrey Garrett",
+   "quote": "if we then in a like a two decade period do away with uh internal combustion engines, that'd be pretty amazing.",
+   "claim": "Garrett sees a possible phase-out of the internal combustion engine, the defining technology of the 20th century, within about two decades, a structural shift for autos, oil demand and metals supply chains.",
+   "mechanism": "structural_shift",
+   "asset_class": "commodities",
+   "indicator": "EV share of new car sales",
+   "horizon": "years",
+   "direction": "ICE and oil demand down; battery metals demand up",
+   "conditions": "EV adoption continues at policy-driven pace",
+   "testable": "partly - long-horizon adoption forecast",
+   "speaker_confidence": "low",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  }
+ ],
+ "n_sonnet": 9,
+ "n_opus_added": 1,
+ "n_corrections": 1
+}

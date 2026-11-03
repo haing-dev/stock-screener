@@ -1,0 +1,20 @@
+{
+ "source_id": "MT015",
+ "added_claims": [
+  {"claim_id": "MT015-C03-X1", "chunk": "C03", "speaker": "Ajay Banga",
+   "quote": "should get the support of the G20 to also be a bigger bank",
+   "claim": "The G20 backs multilateral development bank reform, meaning a reformed World Bank should get shareholder support to grow its balance sheet and lending.",
+   "mechanism": "policy_reaction", "asset_class": "credit", "indicator": "MDB reform / World Bank capital and lending capacity",
+   "horizon": "years", "direction": "MDB lending and AAA bond supply up", "conditions": "if reforms are delivered",
+   "testable": "partly - track World Bank capital, lending and bond issuance after 2023", "speaker_confidence": "medium", "time_bound": "yes"},
+  {"claim_id": "MT015-C04-X1", "chunk": "C04", "speaker": "Ajay Banga",
+   "quote": "its willingness to step up for the new instruments like hybrid Capital that we are discussing",
+   "claim": "The World Bank is seeking hybrid capital from shareholders such as Norway as a new instrument to expand lending capacity without a full capital increase.",
+   "mechanism": "fiscal_debt", "asset_class": "credit", "indicator": "World Bank hybrid capital contributions",
+   "horizon": "years", "direction": "MDB lending capacity up", "conditions": "depends on shareholder take-up",
+   "testable": "partly - hybrid capital raised vs lending headroom", "speaker_confidence": "medium", "time_bound": "yes"}
+ ],
+ "corrections": [],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09"],
+ "completeness_estimate": "0.90 - leadership interview with little market content; first reader caught nearly all usable points (15 claims), missing only G20 support for a bigger World Bank and hybrid capital; no misstatements found."
+}

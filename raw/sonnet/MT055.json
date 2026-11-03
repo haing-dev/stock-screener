@@ -1,0 +1,224 @@
+{
+ "source_id": "MT055",
+ "speakers": [
+  "Jeff Yass (co-founder, Susquehanna)",
+  "Amir (host, Generating Alpha podcast)"
+ ],
+ "summary": "Jeff Yass on economic myths: US debt should be measured against wealth not GDP, consumer surplus and entrepreneurs, tax myths and school vouchers. Policy-opinion discussion, little trading content. Main points: US wealth about $230T makes debt manageable; the risk is destroying the growth engine.",
+ "approach_tags": [
+  "macro policy",
+  "fiscal debt",
+  "consumer surplus",
+  "policy"
+ ],
+ "coverage": [
+  {
+   "chunk": "C01",
+   "claims": 3,
+   "note": "US debt versus wealth rather than GDP; waste; risk is wealth destruction"
+  },
+  {
+   "chunk": "C02",
+   "claims": 2,
+   "note": "regulation and taxes kill growth; consumer surplus and entrepreneurs capture 10%"
+  },
+  {
+   "chunk": "C03",
+   "claims": 1,
+   "note": "vilifying the rich; zero-sum myth, consumer surplus examples"
+  },
+  {
+   "chunk": "C04",
+   "claims": 1,
+   "note": "taxes on billionaires myth; Buffett philanthropy"
+  },
+  {
+   "chunk": "C05",
+   "claims": 3,
+   "note": "school choice vouchers, hidden government cost, expected value of ideas"
+  },
+  {
+   "chunk": "C06",
+   "claims": 1,
+   "note": "welfare by vouchers; closing; nothing else"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "MT055-C01-1",
+   "chunk": "C01",
+   "speaker": "Jeff Yass",
+   "quote": "So our real wealth is so enormous that the debt really isn't a problem.",
+   "claim": "US debt should be judged against national wealth (about $230 trillion, roughly 7x GDP, with a stock market of $80 trillion, over 2.5x GDP, unlike Europe or China at about 1x) rather than against GDP; on that basis debt is only about 13-14% of wealth, a historic low, even though debt/GDP is near 100%.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "rates",
+   "indicator": "debt to national wealth vs debt to GDP; stock market cap / GDP",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "Debt-to-GDP was a good proxy for a long time, no longer because US wealth is so large; he says it is a historic low on wealth",
+   "testable": "yes - ratios computable from Fed financial accounts and market cap data",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT055-C01-2",
+   "chunk": "C01",
+   "speaker": "Jeff Yass",
+   "quote": "The way we go broke is if that $230 trillion wealth gets annihilated",
+   "claim": "The real risk to US solvency is a collapse in wealth (e.g. from $230 trillion to $100 trillion, where it was 10-15 years ago) caused by bad policy; as long as the growth engine of business creation continues there is no need to worry about debt.",
+   "mechanism": "structural_shift",
+   "asset_class": "equities",
+   "indicator": "US national wealth / stock market value",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "Bad policy that destroys business formation and wealth",
+   "testable": "partly - wealth collapse scenario, depends on policy",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT055-C01-3",
+   "chunk": "C01",
+   "speaker": "Jeff Yass",
+   "quote": "we're spending 7 trillion when 5 trillion could have gotten the same job done.",
+   "claim": "Federal spending is wasteful by about $2 trillion a year (spending $7 trillion where $5 trillion would do), which is a shame but not a solvency threat.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "other",
+   "indicator": "federal spending waste",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - the waste estimate is an assertion",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT055-C02-1",
+   "chunk": "C02",
+   "speaker": "Jeff Yass",
+   "quote": "we're roughly the same, you know, population as as most of Europe, and we're 50% richer.",
+   "claim": "Regulation that blocks business start-ups and very high taxes that stop capital raising would sharply cut growth; the US is 50% richer than Europe with similar population, so modest policy changes could make it much poorer.",
+   "mechanism": "structural_shift",
+   "asset_class": "other",
+   "indicator": "regulation and tax burden vs business formation",
+   "horizon": "years",
+   "direction": "lower growth and wealth",
+   "conditions": "He mentions this may be seen in 2029",
+   "testable": "partly - cross-country comparison",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT055-C02-2",
+   "chunk": "C02",
+   "speaker": "Jeff Yass",
+   "quote": "I say the typical number somewhere around 10%.",
+   "claim": "Entrepreneurs capture only about 10% of the value they create (Bezos about 2% of Amazon's value once consumer surplus of $10 trillion is counted) and the rest goes to consumers as consumer surplus.",
+   "mechanism": "structural_shift",
+   "asset_class": "other",
+   "indicator": "consumer surplus (time saved x multiple of 20)",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Estimates use time saved valued at a 20x multiple",
+   "testable": "partly - consumer surplus is hard to measure",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT055-C03-1",
+   "chunk": "C03",
+   "speaker": "Jeff Yass",
+   "quote": "to have a tax system and a culture that vilifies these people is absolutely upside down.",
+   "claim": "Because most benefit goes to consumers, taxing and vilifying entrepreneurs is counterproductive; the zero-sum 'one big pizza pie' view of wealth is a misconception.",
+   "mechanism": "structural_shift",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - policy opinion",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT055-C04-1",
+   "chunk": "C04",
+   "speaker": "Jeff Yass",
+   "quote": "building up a huge tax liability in the future as his stock goes up",
+   "claim": "Billionaires do pay tax: the company pays corporate tax on shareholders' behalf (20% of $30 billion is $6 billion for Bezos), and unrealised gains build a future tax liability, so claims that they pay zero are factually wrong.",
+   "mechanism": "structural_shift",
+   "asset_class": "equities",
+   "indicator": "corporate tax paid; unrealised gains",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - accounting fact check",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT055-C05-1",
+   "chunk": "C05",
+   "speaker": "Jeff Yass",
+   "quote": "the example I often give is $43,000 per kid in New York City.",
+   "claim": "School vouchers would give education at about half the price, since New York spends $43,000 per pupil while the best Catholic schools cost less than half; competition would improve results and reduce waste and fraud.",
+   "mechanism": "structural_shift",
+   "asset_class": "other",
+   "indicator": "per-pupil spending",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - cost and outcome comparisons exist",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT055-C05-2",
+   "chunk": "C05",
+   "speaker": "Jeff Yass",
+   "quote": "they don't send you a bill uh for school.",
+   "claim": "Government hides costs by not billing citizens directly, so waste persists; if people saw the bill, they would change their behaviour.",
+   "mechanism": "behavioral",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - behavioural argument",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT055-C05-3",
+   "chunk": "C05",
+   "speaker": "Jeff Yass",
+   "quote": "it's also idea times the probability that it's actually doable.",
+   "claim": "In choosing causes, the value is the size of the benefit times the probability it can be achieved, so a smaller idea with high chance beats a bigger one with near zero chance.",
+   "mechanism": "research_method",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - expected-value rule, probabilities subjective",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT055-C06-1",
+   "chunk": "C06",
+   "speaker": "Jeff Yass",
+   "quote": "I would say voucher, voucher, voucher.",
+   "claim": "Welfare should be delivered by vouchers (as food stamps) for schools and health care instead of government-run systems, a far more efficient welfare state.",
+   "mechanism": "structural_shift",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - policy opinion",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

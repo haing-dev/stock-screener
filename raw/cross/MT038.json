@@ -1,0 +1,102 @@
+{
+ "source_id": "MT038",
+ "added_claims": [
+  {
+   "claim_id": "MT038-C04-X1",
+   "chunk": "C04",
+   "speaker": "Niels Kaastro Larsen",
+   "quote": "here's another firm moving in the direction of momentum",
+   "claim": "Large asset managers (Fidelity, BlackRock) entering trend following and Ritholtz launching a concentrated single-stock momentum product show growing mainstream adoption of momentum strategies.",
+   "mechanism": "crowding_positioning",
+   "asset_class": "multi",
+   "indicator": "new momentum/trend product launches",
+   "horizon": "years",
+   "direction": "more capital in momentum",
+   "conditions": "",
+   "testable": "partly - AUM in momentum/trend products vs factor returns",
+   "speaker_confidence": "low",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT038-C04-X2",
+   "chunk": "C04",
+   "speaker": "Niels Kaastro Larsen",
+   "quote": "we see a lot more in the metals as far as I can tell in terms of trends not so much in energies right now",
+   "claim": "In May 2026 trend leadership shifted: metals and equities (US and Japan at new highs) and some currencies were trending, while energies were net slightly down for the month.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "sector trend strength (metals, energy, equities, FX)",
+   "horizon": "weeks",
+   "direction": "long metals and equities; energy flat/down",
+   "conditions": "",
+   "testable": "partly - sector P&L attribution",
+   "speaker_confidence": "low",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT038-C07-X1",
+   "chunk": "C07",
+   "speaker": "Yuval",
+   "quote": "if you really want to risk, um there's plenty of risk in the ETFs, plenty of risk in um in futures to actually get yourself exposed to that.",
+   "claim": "Yuval doubts the leverage-constraint explanation for BAB because investors wanting more risk can get it through leveraged ETFs or futures rather than by overpaying for high-beta stocks.",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "leverage available via ETFs/futures",
+   "testable": "partly - BAB returns before/after leveraged ETF availability",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT038-C01-X1",
+   "chunk": "C01",
+   "speaker": "Rob",
+   "quote": "Look at this. Buying things that go have been going up seems to work.",
+   "claim": "Rob found empirically, against his efficient-markets training, that buying assets that have been rising works, i.e. time-series momentum is visible in raw data before any theory.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "past returns (time-series momentum)",
+   "horizon": "months",
+   "direction": "long rising, short falling assets",
+   "conditions": "",
+   "testable": "yes - time-series momentum backtest",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ],
+ "corrections": [
+  {
+   "claim_id": "MT038-C06-5",
+   "issue": "Misattributes the idea: the diversification/quality explanation of BAB is Yuval's own interpretation ('I'm going to try and explain why I think this is making money'), not Rob's.",
+   "fix": "Yuval's explanation: the low-beta long portfolio has high idiosyncratic risk and low correlation among its stocks, so it is a better diversified, higher-Sharpe portfolio, just as trend followers prefer many uncorrelated bets."
+  },
+  {
+   "claim_id": "MT038-C16-2",
+   "issue": "Wrong speaker: the preference for passive multi-day execution in alternative markets is Yuval's (he refers to his first appearance on the podcast; it is Rob's first time on the show).",
+   "fix": "Yuval: in alternative (less liquid) markets stay passive as long as possible and execute over multiple days."
+  }
+ ],
+ "chunks_checked": [
+  "C01",
+  "C02",
+  "C03",
+  "C04",
+  "C05",
+  "C06",
+  "C07",
+  "C08",
+  "C09",
+  "C10",
+  "C11",
+  "C12",
+  "C13",
+  "C14",
+  "C15",
+  "C16",
+  "C17",
+  "C18"
+ ],
+ "completeness_estimate": "0.94 - first reader was very thorough on testing, BAB, the crisis-alpha paper and execution; missed only a few market-context remarks and one critique of the leverage explanation; two speaker attributions wrong."
+}

@@ -1,0 +1,37 @@
+{
+ "source_id": "MT097",
+ "added_claims": [
+  {"claim_id": "MT097-C02-X1", "chunk": "C02", "speaker": "Dave Drew",
+   "quote": "we have algorithms that we followed strictly and back tested everything before we would implement anything",
+   "claim": "Drew's own systematic practice was to backtest every rule before implementing it and then follow the algorithms strictly, the opposite of Seykota's discretionary chart reading.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "",
+   "horizon": "unspecified", "direction": "", "conditions": "",
+   "testable": "no - description of process", "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT097-C04-X1", "chunk": "C04", "speaker": "Dave Drew",
+   "quote": "I said, I can't possibly do that for my investors. I don't have any, you know, back testing. I don't have anything to go on.",
+   "claim": "Discretionary chart trading cannot responsibly be offered to investors because it has no backtest or statistical record to justify it, so Drew kept investor money in tested systems and confined discretionary trading to a disclosed personal account.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "",
+   "horizon": "unspecified", "direction": "", "conditions": "managing outside capital",
+   "testable": "no - governance principle", "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT097-C06-X1", "chunk": "C06", "speaker": "Dave Drew",
+   "quote": "You know how people handle draw downs. I think it makes some of the biggest difference in who is successful over the long run",
+   "claim": "How a trader behaves during drawdowns is one of the biggest determinants of long-run success, because drawdown psychology drives people to question and alter sound systems; confidence in solid long-term research is what keeps a systematic trader following the rules.",
+   "mechanism": "behavioral", "asset_class": "multi", "indicator": "",
+   "horizon": "years", "direction": "", "conditions": "during drawdowns",
+   "testable": "partly - compare outcomes of rule changes made in drawdowns vs otherwise", "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT097-C09-X1", "chunk": "C09", "speaker": "Dave Drew",
+   "quote": "you'd get end of the day downloads and there was a lot of bad data and so I would each day I would look through all the data",
+   "claim": "End-of-day futures data downloads contained a lot of bad prints, so daily data cleaning (spotting bad data and finding correct values) was a necessary task before analysis.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "end-of-day futures price data quality",
+   "horizon": "days", "direction": "", "conditions": "early 1990s data vendors",
+   "testable": "partly - data error rates can be audited", "speaker_confidence": "high", "time_bound": "no"}
+ ],
+ "corrections": [
+  {"claim_id": "MT097-C07-2", "issue": "Wrong speaker: the 1 million -> 500,000 example and the point that cutting to 250,000 would be too little risk and distorts the system's statistics are said by the host Moritz Seibert; Drew then agrees.",
+   "fix": "Moritz Seibert (Drew agreeing): after a 50% drawdown size on the reduced 500,000 base, not a further cut to 250,000, because extra de-risking leaves too little risk to recover and distorts the system's statistics."},
+  {"claim_id": "MT097-C07-1", "issue": "Partly misattributed: Drew says only that open-equity sizing 'never works really' and closed equity is more stable; the reasoning that open equity includes big open profits and leads to over-risking, while closed equity is a stable step function, is Moritz Seibert's.",
+   "fix": "Drew: size from closed-trade equity rather than open-trade equity, which is more stable; Seibert adds the reason: open equity includes volatile open profits and invites over-risking."}
+ ],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10","C11"],
+ "completeness_estimate": "0.9 - anecdote-heavy episode with few method ideas; first reader captured the sizing and psychology points, missed Drew's backtest-before-implement process, investor-suitability caveat, drawdown-behavior point and data cleaning."
+}

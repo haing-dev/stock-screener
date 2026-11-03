@@ -1,0 +1,26 @@
+{
+ "source_id": "MT010",
+ "added_claims": [
+  {"claim_id": "MT010-C02-X1", "chunk": "C02", "speaker": "Rob Carver",
+   "quote": "6 billion in in the US bond market is it's not even a drop in the ocean. It's like a drop a drop inside a drop in the ocean.",
+   "claim": "Treasury long-end buybacks of a few billion dollars are far too small to hold down US yields; at most they are a policy signal, and yields have kept rising despite them.",
+   "mechanism": "liquidity_flows", "asset_class": "rates", "indicator": "Treasury buyback size vs market size",
+   "horizon": "weeks", "direction": "buybacks do not lower long yields", "conditions": "buybacks small relative to issuance",
+   "testable": "yes - yield reaction around buyback operations", "speaker_confidence": "high", "time_bound": "yes"},
+  {"claim_id": "MT010-C07-X1", "chunk": "C07", "speaker": "Rob Carver",
+   "quote": "that's actually um partly a political question in a way because um you know um as as people managing a specific part of our portfolio, we we you know we'd get very protective about it",
+   "claim": "Whether to use different rule weights (more carry, faster or slower trend) by asset class was partly decided by organisational politics in asset-class research teams; it should instead be treated as an empirical question tested on data.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "asset-class-specific vs pooled rule weights",
+   "horizon": "unspecified", "direction": "", "conditions": "asset-class team structure (AHL example)",
+   "testable": "yes - compare pooled vs asset-class fits out of sample", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT010-C16-X1", "chunk": "C16", "speaker": "Rob Carver",
+   "quote": "they they did find that it still this thing still seems to work.",
+   "claim": "Rob reads the decade-later Alpha Architect update as showing that VIX-dependent trend speed still seems to work out of sample, while warning that the headline result hides much and should not be copied into a system without understanding it.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "VIX-dependent lookback vs static lookback",
+   "horizon": "months", "direction": "", "conditions": "out-of-sample extension of 2016-17 study",
+   "testable": "yes - replicate on own data", "speaker_confidence": "low", "time_bound": "no"}
+ ],
+ "corrections": [],
+ "chunks_checked": ["C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09", "C10", "C11", "C12", "C13", "C14", "C15", "C16", "C17", "C18", "C19"],
+ "completeness_estimate": "0.93 - first reader was thorough and accurate; missed Rob's view that Treasury buybacks are immaterial, the politics-vs-data point on asset-class fitting, and his reading of the paper's out-of-sample result"
+}

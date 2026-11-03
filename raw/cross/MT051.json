@@ -1,0 +1,43 @@
+{
+ "source_id": "MT051",
+ "added_claims": [
+  {"claim_id": "MT051-C01-X1", "chunk": "C01", "speaker": "Howard Marks",
+   "quote": "the depression was a very scarring experience and I think it scarred them and so I ended up hearing things like uh you know don't put all your eggs in one basket",
+   "claim": "Living through a deep crash (the Depression) scars a generation and makes it, and those it raises, durably more risk-averse and diversification-minded.",
+   "mechanism": "behavioral", "asset_class": "multi", "indicator": "", "horizon": "years", "direction": "",
+   "conditions": "", "testable": "partly - generational experience vs risk-taking can be studied (experience effects), but anecdotal here",
+   "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT051-C04-X1", "chunk": "C04", "speaker": "Howard Marks",
+   "quote": "there was a crisis in 01 that we did a good job in",
+   "claim": "Credit crises such as 2001 are the periods in which distressed-debt and high-yield specialists earn their best opportunities.",
+   "mechanism": "overshoot", "asset_class": "credit", "indicator": "", "horizon": "years", "direction": "long distressed debt in and after credit crises",
+   "conditions": "credit crisis / default wave", "testable": "yes - distressed-fund returns by vintage vs default cycle",
+   "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT051-C05-X1", "chunk": "C05", "speaker": "Howard Marks",
+   "quote": "now I don't think anybody buys uh without regard to price world the world has gotten a little smarter most people have the same data",
+   "claim": "Markets have become more efficient since the Nifty Fifty era: price-agnostic buying of quality is rarer and data is widely shared, so edges from simple data or quality screens have shrunk.",
+   "mechanism": "structural_shift", "asset_class": "equities", "indicator": "", "horizon": "years", "direction": "",
+   "conditions": "", "testable": "partly - decay of simple anomaly returns over time can be measured",
+   "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT051-C08-X1", "chunk": "C08", "speaker": "Howard Marks",
+   "quote": "I read the the New York Times and the Wall Street Journal. you get a very different account of most things and if",
+   "claim": "Reading sources with opposing slants (NYT and WSJ, their op-ed pages) gives a fuller picture than a single viewpoint when forming market judgements.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "", "horizon": "unspecified", "direction": "",
+   "conditions": "", "testable": "no - information-diet habit",
+   "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT051-C09-X1", "chunk": "C09", "speaker": "Howard Marks",
+   "quote": "Nobody knows what asset class is going to be uh profitable 10 years",
+   "claim": "Which asset class will be most profitable a decade ahead cannot be forecast, so long-horizon asset-class picks should not be based on such predictions.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "", "horizon": "years", "direction": "",
+   "conditions": "", "testable": "partly - skill of 10-year asset-class return forecasts can be evaluated",
+   "speaker_confidence": "high", "time_bound": "no"}
+ ],
+ "corrections": [
+  {"claim_id": "MT051-C06-1", "issue": "The point that freely available quantitative data cannot produce outperformance is relayed by Marks as his son Andrew Marks's argument (from their pandemic debates); the claim does not say so.",
+   "fix": "Marks, relaying his son Andrew's argument, says readily available quantitative data cannot create outperformance because everyone has it; an edge needs superior interpretation or qualitative / forward-looking information that is not readily available."},
+  {"claim_id": "MT051-C04-1", "issue": "Marks names hedge funds and private equity as what institutions tried; 'credit alternatives' is not stated.",
+   "fix": "After the 2000-02 S&P decline (first three-year fall since 1939) and Fed cuts to very low rates, investors fell out of love with stocks and bonds and turned to hedge funds and then private equity, giving birth to 'alternative investing' around 2004-06."}
+ ],
+ "chunks_checked": ["C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09"],
+ "completeness_estimate": "0.80 - a career/philosophy interview with few claim-worthy ideas; first reader caught all core points (price vs quality, quantified default risk, contrarian niches, same-data edge), missing only minor ones (crisis-driven distressed opportunities, market efficiency shift, forecast humility, depression-scar behaviour)."
+}

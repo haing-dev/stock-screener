@@ -1,0 +1,20 @@
+{
+ "source_id": "MT059",
+ "added_claims": [
+  {"claim_id": "MT059-C01-X1", "chunk": "C01", "speaker": "Cory Paddock",
+   "quote": "power trading uh itself um is a relatively new construct. Um really only going back to the uh very tail end of the '9s, early 2000s",
+   "claim": "Traded US power markets only date from late-1990s/early-2000s deregulation (alongside gas), so market designs are still evolving and usable price histories are short.",
+   "mechanism": "structural_shift", "asset_class": "commodities", "indicator": "US power market deregulation history",
+   "horizon": "years", "direction": "", "conditions": "",
+   "testable": "partly - limits available history", "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT059-C09-X1", "chunk": "C09", "speaker": "Cory Paddock",
+   "quote": "the market doesn't really really reward people in the long run that um that go trying those strategies.",
+   "claim": "Traders who chase maximum variance because their bonus has no downside are not rewarded by the market over the long run, so screening for that mindset matters as much as pay design.",
+   "mechanism": "risk_management", "asset_class": "multi", "indicator": "",
+   "horizon": "years", "direction": "", "conditions": "bonus with no downside",
+   "testable": "no - practitioner judgement", "speaker_confidence": "medium", "time_bound": "no"}
+ ],
+ "corrections": [],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10","C11"],
+ "completeness_estimate": "0.92 - short, mostly non-quantitative interview; first reader captured nearly all market and risk ideas, missing only the deregulation history and Cory's reply on variance-seeking traders; no errors found."
+}

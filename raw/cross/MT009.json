@@ -1,0 +1,43 @@
+{
+ "source_id": "MT009",
+ "added_claims": [
+  {"claim_id": "MT009-C02-X1", "chunk": "C02", "speaker": "Alan Dunne",
+   "quote": "it's as if everybody now has taken a much more bullish view on global growth or else sees you know the conflict in Iran um staying on much longer",
+   "claim": "Because the September 2026 yield rise was led by a global short-end repricing, it points to higher expected policy rates from stronger growth or a prolonged Iran conflict, not only to fiscal or debasement concerns that would hit the long end.",
+   "mechanism": "policy_reaction", "asset_class": "rates", "indicator": "2-year yields globally vs long-end yields",
+   "horizon": "months", "direction": "short-end yields up", "conditions": "front-end-led sell-off",
+   "testable": "partly - decompose curve moves into front-end vs term premium", "speaker_confidence": "low", "time_bound": "yes"},
+  {"claim_id": "MT009-C03-X1", "chunk": "C03", "speaker": "Nick Palus",
+   "quote": "6 months back, um analysts were projecting um rate cuts.",
+   "claim": "In January-February 2026 the analyst consensus expected central-bank easing and normalisation, yet by September yields reached multi-year (in places decade) highs, showing how unreliable consensus rate forecasts are.",
+   "mechanism": "slow_reaction", "asset_class": "rates", "indicator": "analyst rate forecasts vs realised yields",
+   "horizon": "months", "direction": "", "conditions": "", "testable": "yes - consensus forecast errors",
+   "speaker_confidence": "medium", "time_bound": "yes"},
+  {"claim_id": "MT009-C06-X1", "chunk": "C06", "speaker": "Nick Palus",
+   "quote": "a certain extent more of a cross-sectional momentum strategy because if you're picking the best, it is not clear that this is a long or a short position.",
+   "claim": "The Alpha Architect test is long-only relative (cross-sectional) momentum with monthly rebalancing, so its results do not transfer directly to directional time-series trend following, which takes long or short positions on each asset's own trend.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "cross-sectional vs time-series momentum",
+   "horizon": "months", "direction": "", "conditions": "", "testable": "yes - rerun with time-series signals",
+   "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT009-C08-X1", "chunk": "C08", "speaker": "Nick Palus",
+   "quote": "I wouldn't necessarily argue that I can I can prove statistically at least using data um that this is um that this is a pursuit worth pursuing",
+   "claim": "Using volatility to classify regimes where trend reversals are more likely, and so to time trend following, is very hard and he cannot show statistically that it is worth doing.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "volatility-based regime classification for timing trend",
+   "horizon": "unspecified", "direction": "", "conditions": "", "testable": "yes - out-of-sample trend timing tests",
+   "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT009-C14-X1", "chunk": "C14", "speaker": "Alan Dunne",
+   "quote": "maybe those ones weren't even computationally strong enough at that time to run these types of analysis",
+   "claim": "One fix for LLM look-ahead bias is to restrict backtests to model vintages available at each date, but older models may be too weak to run the analysis, so agentic allocation results must largely be taken at face value.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "point-in-time LLM model vintages",
+   "horizon": "unspecified", "direction": "", "conditions": "", "testable": "partly - only forward or vintage-model tests",
+   "speaker_confidence": "medium", "time_bound": "no"}
+ ],
+ "corrections": [
+  {"claim_id": "MT009-C04-4", "issue": "Wrong direction: Nick says the volatility-scaled signals did NOT stay flat; they strengthened, because the yield move was larger than the (contained) bond volatility it came with ('no strengthening' is a caption error for 'now strengthening').",
+   "fix": "Bond volatility stayed contained while yields rose sharply, so volatility-scaled trend signals strengthened (move larger than its volatility), and a smooth, low-vol move gives larger P&L than a choppy one."},
+  {"claim_id": "MT009-C16-1", "issue": "Wrong speaker: Nick reads this from the opening of the Ang paper; Alan only raised multiple objectives.",
+   "fix": "Nick (citing the paper): the binding constraint in asset management is the finite bandwidth of human decision makers, not data or model sophistication, which agentic AI relaxes."}
+ ],
+ "chunks_checked": ["C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09", "C10", "C11", "C12", "C13", "C14", "C15", "C16", "C17"],
+ "completeness_estimate": "0.90 - thorough first read; missed the front-end interpretation of the yield rise, the consensus-forecast miss, the cross-sectional vs time-series caveat, the trend-timing verdict and the vintage-model fix; one wrong direction (signal strength) and one wrong speaker"
+}

@@ -1,0 +1,11 @@
+{
+ "source_id": "MT050",
+ "added_claims": [],
+ "corrections": [
+  {"claim_id": "MT050-C05-3",
+   "issue": "Conditions field adds a 'post-2008' regime that the speaker did not name; he only contrasts today's growing interventions with the cleaner cycles of the 1960s and 1970s.",
+   "fix": "Business cycle analysis must adjust for distortions from growing interventions and manipulations by the authorities, so today's cycle is less clean than in the 1960s-70s (no specific start date given)."}
+ ],
+ "chunks_checked": ["C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08"],
+ "completeness_estimate": "0.97 - largely biography; the first reader captured every process, positioning and macro idea (top-down chain, political pendulum, trade regime break, weekend chart discipline, stop-losses); remaining content is career, client-sales and life advice with no method content for a macro researcher."
+}

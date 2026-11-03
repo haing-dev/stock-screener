@@ -1,0 +1,239 @@
+{
+ "source_id": "MT054",
+ "speakers": [
+  "Jim Rogers (co-founder of Quantum Fund, creator of Rogers International Commodities Index)",
+  "Amir and Owen (hosts, Generating Alpha podcast)"
+ ],
+ "summary": "Jim Rogers, Quantum Fund co-founder, on his career, travels and views. Discretionary global multi-asset long/short with commodities. Main views: China rising again, US debt and money printing are long-term problems, agriculture to recover; avoid hot tips and invest in what you know.",
+ "approach_tags": [
+  "discretionary global macro",
+  "commodities",
+  "contrarian",
+  "fiscal debt"
+ ],
+ "coverage": [
+  {
+   "chunk": "C01",
+   "claims": 0,
+   "note": "intro, childhood and discovering Wall Street; no method content"
+  },
+  {
+   "chunk": "C02",
+   "claims": 1,
+   "note": "China on the rise again, first job, study what you love"
+  },
+  {
+   "chunk": "C03",
+   "claims": 1,
+   "note": "first major investment and losing everything on shorts, early hedge funds"
+  },
+  {
+   "chunk": "C04",
+   "claims": 2,
+   "note": "Quantum fund purpose, own approach vs others, multi-asset long/short, commodities"
+  },
+  {
+   "chunk": "C05",
+   "claims": 1,
+   "note": "need to know everything incl. commodity prices; travel lessons"
+  },
+  {
+   "chunk": "C06",
+   "claims": 0,
+   "note": "travel views, advice to follow passions; nothing actionable"
+  },
+  {
+   "chunk": "C07",
+   "claims": 1,
+   "note": "focus passions; mentors; investment process today; Uzbekistan bullish"
+  },
+  {
+   "chunk": "C08",
+   "claims": 2,
+   "note": "stop-loss answer, China rise, agriculture view, central bank concerns start"
+  },
+  {
+   "chunk": "C09",
+   "claims": 3,
+   "note": "money printing and debasement, US debt, avoid hot tips"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "MT054-C02-1",
+   "chunk": "C02",
+   "speaker": "Jim Rogers",
+   "quote": "China is the only country in world history that's been on top three or four times",
+   "claim": "China is the only country that has risen to the top repeatedly after collapsing, so its current rise is a recurring cycle and investors and students should know China and Chinese.",
+   "mechanism": "cycle_persistence",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "China rising relative to US",
+   "conditions": "He admits he does not know why it recurs",
+   "testable": "no - single country history, small sample",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT054-C03-1",
+   "chunk": "C03",
+   "speaker": "Jim Rogers",
+   "quote": "my shorts went through the roof even though they later went bankrupt didn't do to me any good because I lost everything first",
+   "claim": "Being right on the thesis does not help if timing is wrong: his shorts on companies that later went bankrupt first soared in a rising market and wiped him out, so the market is harder to read than the analysis and there is more emotion than expected.",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "short positions in a rising market",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "Shorting into a market euphoria; investors committed to losing positions can be forced out before the thesis plays out",
+   "testable": "yes - short-squeeze and stop-out risk can be backtested",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT054-C04-1",
+   "chunk": "C04",
+   "speaker": "Jim Rogers",
+   "quote": "people try to get washed away in other people's strategies",
+   "claim": "Investors fail by adopting other people's strategies they do not understand instead of sticking to the approach that has worked for them; there are many ways to make money (Roy Neuberger traded ticks, Rogers studied companies), so find what suits you.",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - style advice",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT054-C04-2",
+   "chunk": "C04",
+   "speaker": "Jim Rogers",
+   "quote": "we invested in everything stocks bonds currencies commodities all over the world long and short",
+   "claim": "The Quantum approach was a global multi-asset long/short portfolio across stocks, bonds, currencies and commodities, with commodities seen as important inputs (for example copper for power plants).",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "commodity prices as inputs (copper)",
+   "horizon": "unspecified",
+   "direction": "long and short across asset classes",
+   "conditions": "",
+   "testable": "partly - multi-asset long/short construction is testable",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT054-C05-1",
+   "chunk": "C05",
+   "speaker": "Jim Rogers",
+   "quote": "if you don't know the price of copper you're going to suffer somewhere",
+   "claim": "Everything in the world (commodity prices of copper and wheat, technology) affects investments, so a successful investor must know as much as possible about global developments.",
+   "mechanism": "structural_shift",
+   "asset_class": "commodities",
+   "indicator": "copper price, wheat price",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - cross-asset linkages testable, 'know everything' is not",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT054-C07-1",
+   "chunk": "C07",
+   "speaker": "Jim Rogers",
+   "quote": "I am extremely bullish on usbekistan these days for what it's worth it doesn't mean I know what I'm doing",
+   "claim": "He is very bullish on Uzbekistan, a country he says was once among the most successful in the world, and thinks it is an investable place that most people have not heard of.",
+   "mechanism": "slow_reaction",
+   "asset_class": "equities",
+   "indicator": "Uzbekistan",
+   "horizon": "years",
+   "direction": "long Uzbekistan",
+   "conditions": "He gives a historical reason (Tamerlane) rather than data and says he may be wrong",
+   "testable": "no - view with weak stated reasoning",
+   "speaker_confidence": "low",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT054-C08-1",
+   "chunk": "C08",
+   "speaker": "Jim Rogers",
+   "quote": "my pathetic answer usually is I just take the pain until I realize oh I made a bad mistake and finally take the loss",
+   "claim": "He has no rule for cutting losses: some use stop-losses (e.g. out if it falls 12%), he holds through the pain until he sees he made a mistake.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "stop-loss at 12% as example",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "He admits he has no good answer",
+   "testable": "yes - stop-loss rules can be backtested",
+   "speaker_confidence": "low",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT054-C08-2",
+   "chunk": "C08",
+   "speaker": "Jim Rogers",
+   "quote": "whenever you find a dis disaster especially if it's something the world needs and it changes you'll probably be very successful",
+   "claim": "Agriculture has been a disaster sector for a long time and unpopular with young people (none want to be farmers), so something the world needs that is out of favour is likely to improve and reward early investors.",
+   "mechanism": "overshoot",
+   "asset_class": "commodities",
+   "indicator": "agriculture sector sentiment",
+   "horizon": "years",
+   "direction": "long agriculture",
+   "conditions": "Out-of-favour sector the world needs",
+   "testable": "partly - contrarian sector reversal testable",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT054-C09-1",
+   "chunk": "C09",
+   "speaker": "Jim Rogers",
+   "quote": "there are very few countries that have become successful by debasing the currency",
+   "claim": "Central banks printing money to solve problems is a temporary fix that rarely succeeds long term, because few countries become successful by debasing their currency.",
+   "mechanism": "policy_reaction",
+   "asset_class": "fx",
+   "indicator": "money printing, currency debasement",
+   "horizon": "years",
+   "direction": "currency weakens, hard assets up",
+   "conditions": "Long-term; temporary relief possible",
+   "testable": "partly - debasement and growth studies exist",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT054-C09-2",
+   "chunk": "C09",
+   "speaker": "Jim Rogers",
+   "quote": "the US has become the largest debtor nation in the history of the world",
+   "claim": "The US, a creditor nation until about 1987, now has staggering and skyrocketing debts; like Britain, which kept borrowing until it went bankrupt and needed an IMF bailout, the US could face a crisis.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "multi",
+   "indicator": "US external debtor position; government debt",
+   "horizon": "years",
+   "direction": "US decline",
+   "conditions": "Britain analogy after being the richest country 100 years ago",
+   "testable": "partly - analogy, one reserve-currency episode",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT054-C09-3",
+   "chunk": "C09",
+   "speaker": "Jim Rogers",
+   "quote": "the best advice I can give you is only invest in what you yourself know a lot about",
+   "claim": "Ignore hot tips and copying others' trades: without knowing why you bought you cannot decide what to do when the price moves, so invest only in what you know well.",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - behavioral advice",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

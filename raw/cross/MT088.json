@@ -1,0 +1,26 @@
+{
+ "source_id": "MT088",
+ "added_claims": [
+  {"claim_id": "MT088-C01-X1", "chunk": "C01", "speaker": "Ed Zitron (clip, interview teaser)",
+   "quote": "Open AI and Anthropic to account for 48% of all of Google Cloud's revenues next year",
+   "claim": "OpenAI and Anthropic are expected to account for about 48% of Google Cloud's revenue next year, so Google Cloud's growth rests on whether those two survive and pay.",
+   "mechanism": "new: customer_concentration", "asset_class": "equities", "indicator": "Google Cloud revenue share from OpenAI and Anthropic",
+   "horizon": "years", "direction": "Google Cloud growth at risk if OpenAI/Anthropic falter", "conditions": "",
+   "testable": "partly - check disclosed backlog/customer concentration against later cloud revenue", "speaker_confidence": "high", "time_bound": "yes"},
+  {"claim_id": "MT088-C02-X1", "chunk": "C02", "speaker": "Steve Eisman",
+   "quote": "They could be right, but right now the data does not support the end of the AI story, at least not yet.",
+   "claim": "Media demand for doom predictions pushes commentators to forecast an AI-bust recession, but Eisman holds that the current data do not yet support the end of the AI story, so he only maps weak points and catalysts rather than calling it.",
+   "mechanism": "behavioral", "asset_class": "equities", "indicator": "",
+   "horizon": "months", "direction": "", "conditions": "until data (capex, AI lab financials) turn",
+   "testable": "partly - track the data points he names (capex guidance, OpenAI revenue/costs) against later outcomes", "speaker_confidence": "medium", "time_bound": "yes"},
+  {"claim_id": "MT088-C04-X1", "chunk": "C04", "speaker": "Steve Eisman",
+   "quote": "the investment banking cycle is super strong right now, partially because of the financing needs of AI. Should those needs lessen, the investment banking cycle would weaken",
+   "claim": "Part of the current strong investment-banking cycle comes from AI financing needs, so a slowdown in AI funding would weaken deal activity and pull large and investment banks down from peak valuations.",
+   "mechanism": "liquidity_flows", "asset_class": "equities", "indicator": "investment banking fees / AI-related debt and equity issuance",
+   "horizon": "months", "direction": "investment banks down if AI financing slows", "conditions": "AI capex pullback (e.g. OpenAI failure)",
+   "testable": "yes - relate bank IB fee growth and bank stock returns to AI-related issuance volumes", "speaker_confidence": "medium", "time_bound": "yes"}
+ ],
+ "corrections": [],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06"],
+ "completeness_estimate": "0.92 - short monologue and first reader caught the whole dependency chain, numbers and sector map; missed only the Google Cloud 48% figure, his not-yet-a-call stance on the data, and the AI-financing driver of the IB cycle."
+}

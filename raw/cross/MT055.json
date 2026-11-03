@@ -1,0 +1,29 @@
+{
+ "source_id": "MT055",
+ "added_claims": [
+  {"claim_id": "MT055-C02-X1", "chunk": "C02", "speaker": "Jeff Yass",
+   "quote": "if you measure in how many hours it saved us and you give that a multiple of 20, it would come to something like $10 trillion",
+   "claim": "Consumer surplus of a company can be estimated by valuing the hours it saves consumers and capitalising that at about 20x; for Amazon this gives roughly $10 trillion, at least five times its market value.",
+   "mechanism": "research_method", "asset_class": "equities", "indicator": "hours saved x 20 capitalisation multiple", "horizon": "years", "direction": "",
+   "conditions": "", "testable": "partly - time-use data exist but the 20x multiple is an assumption",
+   "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT055-C05-X1", "chunk": "C05", "speaker": "Jeff Yass",
+   "quote": "if you say to people, uh we can find waste and fraud and the deficit's going to go from two trillion to one trillion, people like, well, good good. I don't care.",
+   "claim": "Cutting the roughly $2 trillion deficit by removing waste does not move voters unless the savings are handed back to them directly (as with school vouchers), so fiscal reform passes only when its benefits are visible and personal.",
+   "mechanism": "fiscal_debt", "asset_class": "rates", "indicator": "US federal deficit (~$2tn)", "horizon": "years", "direction": "",
+   "conditions": "", "testable": "no - political-economy judgement",
+   "speaker_confidence": "medium", "time_bound": "yes"},
+  {"claim_id": "MT055-C06-X1", "chunk": "C06", "speaker": "Jeff Yass",
+   "quote": "That's what built America. That it kept the government small, it kept us uh it kept it uh less corrupt than other governments.",
+   "claim": "Constitutional limits on government powers (9th and 10th Amendments) kept US government small and less corrupt, which he credits for American prosperity; he concedes a return to this has zero chance.",
+   "mechanism": "structural_shift", "asset_class": "multi", "indicator": "", "horizon": "years", "direction": "",
+   "conditions": "", "testable": "partly - cross-country government size vs growth can be studied, but causality is contested",
+   "speaker_confidence": "high", "time_bound": "no"}
+ ],
+ "corrections": [
+  {"claim_id": "MT055-C02-1", "issue": "Omits that Yass ties the risk to a possible policy shift around 2029 ('we've might well see this in 2029'), making it a time-bound view.",
+   "fix": "Regulation that blocks business start-ups and very high taxes that stop capital raising, which he says may well arrive around 2029, would sharply cut growth; the US is 50% richer than Europe with a similar population, so modest policy changes could make it much poorer."}
+ ],
+ "chunks_checked": ["C01", "C02", "C03", "C04", "C05", "C06"],
+ "completeness_estimate": "0.80 - short policy-opinion episode; first reader caught the main ideas (debt vs wealth, wealth-destruction risk, waste, consumer surplus, tax myths, vouchers), missing the consumer-surplus estimation method, the visible-savings point on deficit reform and the limited-government claim."
+}

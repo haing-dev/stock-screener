@@ -1,0 +1,32 @@
+{
+ "source_id": "MT053",
+ "added_claims": [
+  {"claim_id": "MT053-C01-X1", "chunk": "C01", "speaker": "Noah Yechiely",
+   "quote": "but all assets tends to go up and down together they are correlated",
+   "claim": "Long-only assets tend to rise over time as payment for providing capital, but they are mostly correlated with each other, so a long-only mix gives limited diversification and an uncorrelated return stream is what adds most to a portfolio.",
+   "mechanism": "risk_premium", "asset_class": "multi", "indicator": "cross-asset correlation", "horizon": "years", "direction": "long assets earn a premium over time",
+   "conditions": "", "testable": "yes - cross-asset correlations and long-run asset returns are measurable",
+   "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT053-C02-X1", "chunk": "C02", "speaker": "Noah Yechiely",
+   "quote": "some of the markets became more efficient some of the markets became less efficient um and the efficiency also moves from one thing to the other",
+   "claim": "Market efficiency is not uniformly rising: some markets have become more efficient, others less, and inefficiency migrates from one area to another over time, so where edges exist must be reassessed.",
+   "mechanism": "structural_shift", "asset_class": "multi", "indicator": "", "horizon": "years", "direction": "",
+   "conditions": "", "testable": "partly - decay or revival of strategy returns by market and period can be measured",
+   "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT053-C04-X1", "chunk": "C04", "speaker": "Noah Yechiely",
+   "quote": "the approach how you break down the problem into its pieces how you build a framework to solve the problem how you find the data",
+   "claim": "Investment research is the same analytical process as consulting or engineering: break a new problem into pieces, build a framework, then find data to test it.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "", "horizon": "unspecified", "direction": "",
+   "conditions": "", "testable": "no - general process advice",
+   "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT053-C06-X1", "chunk": "C06", "speaker": "Noah Yechiely",
+   "quote": "whether you know like our relationship with China where the tariffs will be higher lower how it will play out",
+   "claim": "Politics and geopolitics (e.g. US-China relations and whether tariffs go higher or lower) affect every company and market, so even bottom-up investors must understand the macro and political forces acting on their holdings.",
+   "mechanism": "policy_reaction", "asset_class": "multi", "indicator": "US-China tariff levels", "horizon": "unspecified", "direction": "",
+   "conditions": "", "testable": "partly - tariff-news sensitivity of stocks can be measured",
+   "speaker_confidence": "high", "time_bound": "no"}
+ ],
+ "corrections": [],
+ "chunks_checked": ["C01", "C02", "C03", "C04", "C05", "C06", "C07"],
+ "completeness_estimate": "0.75 - short career/hiring interview; first reader caught the main ideas (uncorrelated returns, beta drift, efficiency, crowding, top-down vs bottom-up, ask why), missing the correlated-assets premise, migrating efficiency, the research-framework process and the politics-affects-all-stocks point; C05 and C07 have no claim-worthy content."
+}

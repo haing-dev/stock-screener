@@ -1,0 +1,197 @@
+{
+ "source_id": "MT053",
+ "speakers": [
+  "Noah Yechiely (former head of equities, Bridgewater Associates)",
+  "Amir and Owen (hosts, Generating Alpha podcast)"
+ ],
+ "summary": "Noah Yechiely, ex-Bridgewater head of equities, on what a hedge fund is, market efficiency, strategy crowding and top-down versus bottom-up macro. Mostly career and hiring advice. Main points: markets are very efficient, public strategies decay, understand why a strategy works.",
+ "approach_tags": [
+  "macro hedge fund",
+  "market efficiency",
+  "strategy decay",
+  "risk management"
+ ],
+ "coverage": [
+  {
+   "chunk": "C01",
+   "claims": 1,
+   "note": "intro; career; what a hedge fund is: uncorrelated returns"
+  },
+  {
+   "chunk": "C02",
+   "claims": 3,
+   "note": "hedge fund types; drift to beta; market efficiency; niche inefficiencies"
+  },
+  {
+   "chunk": "C03",
+   "claims": 3,
+   "note": "crowding erodes strategies; data democratisation; top-down vs bottom-up macro"
+  },
+  {
+   "chunk": "C04",
+   "claims": 2,
+   "note": "Bridgewater investor traits (why not what), challenge own beliefs; consulting skills"
+  },
+  {
+   "chunk": "C05",
+   "claims": 0,
+   "note": "hiring creativity and curiosity; math and science skills; no method"
+  },
+  {
+   "chunk": "C06",
+   "claims": 0,
+   "note": "technical vs thinking skills; reading advice; understanding politics and world"
+  },
+  {
+   "chunk": "C07",
+   "claims": 0,
+   "note": "life advice, follow your interest; nothing actionable"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "MT053-C01-1",
+   "chunk": "C01",
+   "speaker": "Noah Yechiely",
+   "quote": "primary objective is um producing return that is uncorrelated",
+   "claim": "A true hedge fund aims for returns uncorrelated with the market, which helps a portfolio because the stream rises when other assets fall; many so-called hedge funds are simply long-only.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "correlation of fund returns with market",
+   "horizon": "unspecified",
+   "direction": "add uncorrelated return stream to portfolio",
+   "conditions": "Benefit appears when other assets are falling",
+   "testable": "yes - correlation of fund returns to market is measurable",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT053-C02-1",
+   "chunk": "C02",
+   "speaker": "Noah Yechiely",
+   "quote": "selling a beta or selling regular IR regular returns that you can get in the market and they just charge more",
+   "claim": "Many hedge funds drifted into holding assets long because that earns market returns over time on which they can charge fees, so they sell beta, not unique returns.",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "hedge fund beta",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "Because uncorrelated return is hard to produce",
+   "testable": "yes - regress hedge fund returns on market factors",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT053-C02-2",
+   "chunk": "C02",
+   "speaker": "Noah Yechiely",
+   "quote": "markets are very efficient it's very hard to make uh money in markets",
+   "claim": "Markets are very efficient: the whole hedge fund industry earns a few billion, a few basis points on hundreds of trillions of assets, because competing smart participants make uncorrelated returns hard.",
+   "mechanism": "risk_premium",
+   "asset_class": "multi",
+   "indicator": "hedge fund industry profit relative to market size",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - industry-level argument, efficiency claim is general",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT053-C02-3",
+   "chunk": "C02",
+   "speaker": "Noah Yechiely",
+   "quote": "particular niches in the market that are inefficient and there are there are reasons why they would be inefficient",
+   "claim": "Good hedge funds exploit niches that are inefficient for structural reasons, but the returns and capacity there are small.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Niche inefficiencies have small capacity",
+   "testable": "partly - capacity-limited niche alpha hard to test",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT053-C03-1",
+   "chunk": "C03",
+   "speaker": "Noah Yechiely",
+   "quote": "some strategies tend to work become public um many investors are following them and when you have many investors trying to chase the same U the same thing the returns are falling",
+   "claim": "Once a strategy becomes public and many investors follow it, its returns fall.",
+   "mechanism": "crowding_positioning",
+   "asset_class": "multi",
+   "indicator": "strategy returns after publication",
+   "horizon": "years",
+   "direction": "strategy returns decline with adoption",
+   "conditions": "Applies to widely known strategies",
+   "testable": "yes - compare returns before and after publication or crowding",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT053-C03-2",
+   "chunk": "C03",
+   "speaker": "Noah Yechiely",
+   "quote": "data that was not available it was only available to a particular handful of people",
+   "claim": "Data and analysis tools once available to a few are now public and cheap, so data- and technology-dependent edges in markets have become more efficient.",
+   "mechanism": "structural_shift",
+   "asset_class": "equities",
+   "indicator": "alternative/public data availability",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "Applies to data-dependent strategies",
+   "testable": "partly - alpha decay by data availability can be examined",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT053-C03-3",
+   "chunk": "C03",
+   "speaker": "Noah Yechiely",
+   "quote": "how much spending is in the market how much the economy is growing inflation and micro forces that are shifting the entire asset class together",
+   "claim": "Top-down macro investing targets aggregate forces (spending, growth, inflation) that move whole asset classes together, while bottom-up stock picking on company quality is neutralised when you hold both Boeing and Airbus.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "aggregate spending, growth, inflation",
+   "horizon": "unspecified",
+   "direction": "long or short asset classes on macro drivers",
+   "conditions": "Contrasts with micro/company-level drivers",
+   "testable": "partly - framework, depends on indicator chosen",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT053-C04-1",
+   "chunk": "C04",
+   "speaker": "Noah Yechiely",
+   "quote": "trying to figure out why things are happening rather than trying to see what worked in the past",
+   "claim": "Successful investors understand the causal drivers of markets rather than following what worked in the past.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - process principle",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT053-C04-2",
+   "chunk": "C04",
+   "speaker": "Noah Yechiely",
+   "quote": "always assume that you're wrong rather than that you're right",
+   "claim": "Investors should challenge their own beliefs and, when a strategy shows a high Sharpe ratio, ask why it works and whether it will continue as in the past.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "Sharpe ratio of a strategy",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - out-of-sample persistence checks",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

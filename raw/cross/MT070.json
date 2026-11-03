@@ -1,0 +1,20 @@
+{
+ "source_id": "MT070",
+ "added_claims": [
+  {"claim_id": "MT070-C05-X1", "chunk": "C05", "speaker": "David Harding",
+   "quote": "if the program you know miscalculated something we would um you know we would do something we we are responsible for managing the money",
+   "claim": "Governance of a fully systematic book: researchers write and run the programs, execution is done by separate teams, and humans step in only to correct program errors, not to override signals with discretionary views.",
+   "mechanism": "risk_management", "asset_class": "multi", "indicator": "",
+   "horizon": "unspecified", "direction": "", "conditions": "fully systematic trading, 24-hour global execution",
+   "testable": "no - organisational practice", "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT070-C07-X1", "chunk": "C07", "speaker": "David Harding",
+   "quote": "our own funds have moved more into line with other hedge funds having you know having more no longer notice period says because they got more investments in small companies",
+   "claim": "Fund redemption terms were lengthened (monthly notice, less liquid than before) because the strategy mix now holds more small-company equities, matching investor liquidity to the liquidity of the assets.",
+   "mechanism": "liquidity_flows", "asset_class": "equities", "indicator": "fund notice period vs asset liquidity",
+   "horizon": "months", "direction": "", "conditions": "shift from liquid futures to broader equity universes",
+   "testable": "no - business terms", "speaker_confidence": "medium", "time_bound": "no"}
+ ],
+ "corrections": [],
+ "chunks_checked": ["C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09", "C10", "C11", "C12"],
+ "completeness_estimate": "0.94 - first reader captured essentially all mechanisms, research findings and risk methods accurately; missed only the no-discretionary-intervention governance rule and the reason redemption terms were lengthened (asset liquidity)"
+}

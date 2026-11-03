@@ -1,0 +1,35 @@
+{
+ "source_id": "MT043",
+ "added_claims": [
+  {"claim_id": "MT043-C04-X1", "chunk": "C04", "speaker": "Moritz Seibert",
+   "quote": "you have Henry up really not much happening then LG because of the Ukraine war and you know Europe needing that gas competing with competing with China for it um driving up the price",
+   "claim": "Regional gas prices can decouple: US Henry Hub stayed quiet while LNG prices rose because the Ukraine war made Europe compete with China for cargoes.",
+   "mechanism": "structural_shift", "asset_class": "commodities", "indicator": "Henry Hub vs LNG prices",
+   "horizon": "months", "direction": "LNG up relative to Henry Hub", "conditions": "European supply shock with competing Asian demand",
+   "testable": "yes - Henry Hub vs TTF/JKM spread history", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT043-C07-X1", "chunk": "C07", "speaker": "Doug King",
+   "quote": "they're buying physical and they're hedging futures until they can unwind it the other way. um and they are driven into huge margin core futures short explosions that end the business of a 130year merchant",
+   "claim": "Physical merchants who buy the commodity and hedge with short futures can be destroyed by margin calls in a futures short squeeze even though their book is hedged, as happened to a 130-year-old cotton merchant.",
+   "mechanism": "liquidity_flows", "asset_class": "commodities", "indicator": "futures margin calls on hedgers' short positions",
+   "horizon": "days", "direction": "squeeze pushes futures up and forces hedgers out", "conditions": "sharp futures spikes with rising margin requirements",
+   "testable": "partly - squeeze episodes vs commercial short positioning (COT)", "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT043-C10-X1", "chunk": "C10", "speaker": "Moritz Seibert",
+   "quote": "you could also see this [L380] that they bailed somebody else out who had the other positions",
+   "claim": "When an exchange cancels trades in a squeeze (LME nickel 2022), the stated reason is protecting the clearing house, but the effect is to bail out the distressed side at the expense of those who traded.",
+   "mechanism": "new: exchange_intervention", "asset_class": "commodities", "indicator": "exchange trade cancellations / rule changes in squeezes",
+   "horizon": "days", "direction": "", "conditions": "extreme squeezes threatening clearing members",
+   "testable": "no - few episodes", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT043-C12-X1", "chunk": "C12", "speaker": "Doug King",
+   "quote": "if you fail two, three times, you'll be out the door in three months, six months, whatever",
+   "claim": "Multi-manager platforms run commodity PMs on very tight drawdown leashes (out after a few failures within months), unlike a single-team fund that can sit through noise around a long-term supply-demand theme.",
+   "mechanism": "risk_management", "asset_class": "commodities", "indicator": "",
+   "horizon": "months", "direction": "", "conditions": "",
+   "testable": "no - organisational description", "speaker_confidence": "high", "time_bound": "no"}
+ ],
+ "corrections": [
+  {"claim_id": "MT043-C07-4", "issue": "Merges two speakers: the ICE cocoa margin-hike squeeze is Seibert's point, while the cotton merchants wiped out by margin calls is King's story (added separately as MT043-C07-X1).",
+   "fix": "Seibert: when ICE raised cocoa margin requirements near the highs, shorts facing a ~20% higher holding cost covered the next day, squeezing the price higher."}
+ ],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10","C11","C12","C13"],
+ "completeness_estimate": "0.92 - first reader captured nearly all of King's methods, risk process, trades and numbers; missed a few secondary points (hedger margin-call risk, LNG decoupling, exchange bail-out, pod-shop leash) and merged two speakers in one claim."
+}

@@ -1,0 +1,32 @@
+{
+ "source_id": "MT014",
+ "added_claims": [
+  {"claim_id": "MT014-C01-X1", "chunk": "C01", "speaker": "Niels Kaastrup-Larsen",
+   "quote": "it did help a lot when he announced who he would like to be head of the treasury",
+   "claim": "The Treasury Secretary nomination helped shift markets away from the initial post-election view that the new administration means higher inflation and yields.",
+   "mechanism": "policy_reaction", "asset_class": "rates", "indicator": "US yields around Treasury Secretary nomination (Nov 2024)",
+   "horizon": "weeks", "direction": "yields lower after a market-friendly nominee", "conditions": "Nov-Dec 2024",
+   "testable": "yes - event study of yields around the nomination", "speaker_confidence": "low", "time_bound": "yes"},
+  {"claim_id": "MT014-C08-X1", "chunk": "C08", "speaker": "Graham Robertson",
+   "quote": "people tend to buy those when V's high oh I should have had that let's get it in the portfolio now and the bleed is terrible it's really costy",
+   "claim": "Investors buy tail-protection/long-vol strategies after volatility has spiked, i.e. when protection is most expensive, and then suffer heavy carry bleed.",
+   "mechanism": "behavioral", "asset_class": "equities", "indicator": "VIX level at time of long-vol allocations; option carry",
+   "horizon": "months", "direction": "long vol bought after spikes underperforms", "conditions": "after volatility spikes",
+   "testable": "yes - long-vol fund flows vs VIX level and subsequent returns", "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT014-C08-X2", "chunk": "C08", "speaker": "Niels Kaastrup-Larsen",
+   "quote": "I also think about uh Trend following that usually when we really make a lot of money is when we have concentrated portfolios right so again with higher risk higher Vol comes the reward",
+   "claim": "Like Druckenmiller's concentrated bets, trend followers make their big gains when the portfolio is concentrated in a few large positions; higher risk and volatility come with the reward.",
+   "mechanism": "risk_management", "asset_class": "multi", "indicator": "trend portfolio concentration vs return",
+   "horizon": "months", "direction": "", "conditions": "",
+   "testable": "yes - trend returns vs portfolio concentration/effective number of bets", "speaker_confidence": "medium", "time_bound": "no"}
+ ],
+ "corrections": [
+  {"claim_id": "MT014-C03-1", "issue": "Wrong speaker: Niels only asks; Graham gives the numbers ('it's 50% plus... a classically diversified portfolio across equities is going to be much more like a third').", "fix": "Graham Robertson: the MSCI World index is now over half US equities, whereas a classically diversified equity portfolio would be about a third, so index investors are concentrated."},
+  {"claim_id": "MT014-C14-2", "issue": "Wrong speaker: the Yoav Git blog example ('a former colleague of mine') is Graham Robertson (Man AHL); Niels then says the three of them worked together.", "fix": "Graham Robertson (citing Yoav Git): a simple logic using the Sharpe of the traditional portfolio and of trend shows the value-add of trend."},
+  {"claim_id": "MT014-C14-3", "issue": "Wrong speaker: same Graham turn relaying Yoav Git's numbers.", "fix": "Graham Robertson (citing Yoav Git): even a modest trend Sharpe of 0.2 implies about a 10% allocation."},
+  {"claim_id": "MT014-C07-2", "issue": "Duplicate: the SVB and August 2024 out-of-sample evidence is already in MT014-C07-1.", "fix": "Merge into MT014-C07-1."},
+  {"claim_id": "MT014-C06-4", "issue": "Largely duplicates MT014-C06-3 (same 2024 scoreboard numbers).", "fix": "Merge into MT014-C06-3: to 10 Dec 2024 SG Trend was up about 2% YTD vs S&P 500 TR +29.24%, MSCI World about +21.5% and US aggregate bonds +3.5%."}
+ ],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10","C11","C12","C13","C14","C15","C16","C17"],
+ "completeness_estimate": "0.95 - very thorough first pass (67 claims); only missed the buy-protection-after-spikes behaviour, concentration as the source of big trend gains and the Treasury-pick effect; some speaker slips and two duplicates."
+}

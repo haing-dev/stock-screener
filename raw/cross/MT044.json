@@ -1,0 +1,37 @@
+{
+ "source_id": "MT044",
+ "added_claims": [
+  {"claim_id": "MT044-C11-X1", "chunk": "C11", "speaker": "Rob Carver",
+   "quote": "there was seminal paper written by Black Litterman in the early '9s, I think, where they they basically took the kind of standard portfolio construction technology",
+   "claim": "Black-Litterman is the classic framework for blending discretionary return views into a systematic (e.g. market-cap) portfolio; Carver's simpler alternative is a weighted average of scaled forecasts.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "",
+   "horizon": "unspecified", "direction": "", "conditions": "",
+   "testable": "yes - blended portfolios can be backtested against pure systematic", "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT044-C14-X1", "chunk": "C14", "speaker": "Rob Carver",
+   "quote": "If you look at the profitable managers and the less profitable managers, because there's a lot of luck, right? See, they may it's not necessarily whether they're good or bad. I think you can it's hard to tell.",
+   "claim": "Return differences between CTAs are largely luck, so it is hard to tell skilled from unskilled managers from outcomes; post-mortems should ask whether a loss came from bad luck or a bad decision such as overweighting an illiquid market.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "manager return dispersion",
+   "horizon": "years", "direction": "", "conditions": "",
+   "testable": "partly - skill vs luck tests on manager track records need long histories", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT044-C17-X1", "chunk": "C17", "speaker": "Rob Carver",
+   "quote": "analysts generally are overoptimistic and there are institutional biases as to why that might be the case",
+   "claim": "Equity analysts' EPS forecasts carry a systematic optimism bias from institutional incentives, which shrank somewhat after post-tech-bubble reforms; this level bias is separate from their extrapolation bias.",
+   "mechanism": "behavioral", "asset_class": "equities", "indicator": "analyst EPS growth forecasts vs realised",
+   "horizon": "years", "direction": "forecasts above outcomes", "conditions": "bias smaller after the early-2000s reforms",
+   "testable": "yes - IBES forecast errors over time", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT044-C20-X1", "chunk": "C20", "speaker": "Rob Carver",
+   "quote": "I'm happy with the thesis that if you have increased risk you'll get higher returns equities are quite risky therefore if you're investing for the long term buy",
+   "claim": "The honest case for long-only equities is the long-run risk premium (higher risk, higher return), not the 'missing the best days' argument, which is marketing.",
+   "mechanism": "risk_premium", "asset_class": "equities", "indicator": "",
+   "horizon": "years", "direction": "long equities over long horizons", "conditions": "long holding period; cannot time the market",
+   "testable": "yes - long-run equity premium data", "speaker_confidence": "high", "time_bound": "no"}
+ ],
+ "corrections": [
+  {"claim_id": "MT044-C11-2", "issue": "Attributes the Sharpe implication to Niels; Niels only says the fund's volatility reached about 90% because of static sizing. The inference that 90% vol implies an expected Sharpe of 0.9 (about twice a realistic 0.5) is Carver's, from Kelly sizing.",
+   "fix": "Niels: a well-known trend manager using static position sizing saw fund volatility reach about 90% at times. Carver: under Kelly sizing that implies an expected Sharpe of 0.9 or more, about twice a realistic 0.5."},
+  {"claim_id": "MT044-C10-1", "issue": "Says differences are small between both sizing adjustments; Carver says the differences are not massive but that pyramiding (scaling position with forecast strength) has a much bigger effect than volatility adjustment.",
+   "fix": "Position sizing studies (Saratini and Quantica) find that both volatility-adjusting positions during a trade and scaling with forecast strength help over a long backtest; differences are not large, but scaling with forecast strength (pyramiding) has the bigger effect."}
+ ],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10","C11","C12","C13","C14","C15","C16","C17","C18","C19","C20","C21"],
+ "completeness_estimate": "0.94 - first reader captured essentially all of Carver's methods and numbers; missed Black-Litterman, the luck caveat on manager dispersion, analyst optimism bias and the risk-premium argument, plus two small attribution/emphasis errors."
+}

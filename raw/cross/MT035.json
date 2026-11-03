@@ -1,0 +1,36 @@
+{
+ "source_id": "MT035",
+ "added_claims": [
+  {"claim_id": "MT035-C01-X1", "chunk": "C01", "speaker": "Brad Gerstner",
+   "quote": "slide six, which is when will AI reach 75% of total US market cap, which I think is incredibly provocative. how you compared that to industrials and transport",
+   "claim": "Coatue frames AI as a sector that could eventually reach about 75% of total US market cap, by analogy with earlier dominant sectors (industrials, transport), against the view that AI is already too big to grow.",
+   "mechanism": "structural_shift", "asset_class": "equities", "indicator": "sector share of total US market cap", "horizon": "years",
+   "direction": "AI share of market cap up", "conditions": "", "testable": "partly - historical sector-share peaks are measurable", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT035-C02-X1", "chunk": "C02", "speaker": "Thomas Laffont",
+   "quote": "on average the max 7 was basically flat year-over-year and [L80] yet tremendous value accretion to the top AI companies right whether it's open AI or anthropic",
+   "claim": "In 2025 much of the AI value creation accrued to private labs (OpenAI, Anthropic) while the public Mag 7 were flat, so public investors captured little of it directly.",
+   "mechanism": "structural_shift", "asset_class": "equities", "indicator": "private AI lab valuations vs Mag 7 returns", "horizon": "months",
+   "direction": "", "conditions": "", "testable": "partly - private marks are sparse", "speaker_confidence": "medium", "time_bound": "yes"},
+  {"claim_id": "MT035-C04-X1", "chunk": "C04", "speaker": "Bill Gurley",
+   "quote": "look you're locked in you can't sell so I think this is something that you guys develop more of an instinct for in the public markets",
+   "claim": "Because venture investors are locked into illiquid positions with long windows, they update views slowly, while public-market investors can and must change their minds quickly.",
+   "mechanism": "behavioral", "asset_class": "equities", "indicator": "", "horizon": "years",
+   "direction": "", "conditions": "", "testable": "no - qualitative", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT035-C14-X1", "chunk": "C14", "speaker": "Thomas Laffont",
+   "quote": "The reason he did this is he believed that that's the shape the company needed to be in to win and out compete, right?",
+   "claim": "Headcount cuts at AI-first firms such as AppLovin are driven by competitive design (fewer layers, faster decisions) rather than cost-cutting for its own sake, which is why they coincide with faster growth.",
+   "mechanism": "structural_shift", "asset_class": "equities", "indicator": "revenue per employee", "horizon": "years",
+   "direction": "", "conditions": "", "testable": "partly - revenue per employee vs growth is measurable", "speaker_confidence": "medium", "time_bound": "no"}
+ ],
+ "corrections": [
+  {"claim_id": "MT035-C05-1", "issue": "Wrong speaker: Philippe later refers to 'what you were saying Tom about the Bitcoin', so the Bitcoin-as-dollar-alternative point is Thomas Laffont's.", "fix": "Thomas Laffont: if investors need an alternative to the dollar amid government overspending, Bitcoin could become one."},
+  {"claim_id": "MT035-C05-2", "issue": "Wrong speaker: the interest-paying stablecoin / direct Treasury bond idea is Philippe Laffont's (he adds it 'on top of what you were saying Tom').", "fix": "Philippe Laffont: interest-paying stablecoins could let the Treasury sell bonds of all maturities directly to consumers worldwide, bypassing dealers."},
+  {"claim_id": "MT035-C05-3", "issue": "Wrong speaker: Thomas hands the slide to Philippe ('I think you should introduce the work'); the Google offsetting-assets remark is Philippe's.", "fix": "Philippe Laffont: Google may lose search share to ChatGPT but has offsetting assets (YouTube, Waymo, Android, Gmail)."},
+  {"claim_id": "MT035-C14-1", "issue": "Wrong speaker: the AppLovin slide is presented by Thomas Laffont ('another one of my favorites' after his Microsoft slide).", "fix": "Thomas Laffont: AppLovin doubled revenue per employee in four years; revenue doubled while headcount fell about 35% after right-sizing and adopting AI."},
+  {"claim_id": "MT035-C14-4", "issue": "Likely wrong speaker: the headcount-cut-as-credible-AI-signal remark follows Gerstner's Jensen anecdote and is most likely Bill Gurley's.", "fix": "Bill Gurley (likely): a willingness to cut headcount is a credible signal of genuine AI use, versus lip service."},
+  {"claim_id": "MT035-C14-5", "issue": "Wrong speaker: 'the final thing I would say about this Phipe' is the host, Brad Gerstner.", "fix": "Brad Gerstner: firm-level AI efficiency aggregates into economy-wide productivity (more output for fixed labor and capital)."},
+  {"claim_id": "MT035-C12-3", "issue": "Likely wrong speaker: the 'quasi public' tier and the OpenAI-should-go-public remark come from Brad Gerstner, who says he made this case to OpenAI.", "fix": "Brad Gerstner: a quasi-public tier of companies above $5-10B stays private because private equity, continuation funds, secondaries and private credit now have the depth to fund them."}
+ ],
+ "chunks_checked": ["C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09", "C10", "C11", "C12", "C13", "C14", "C15", "C16", "C17"],
+ "completeness_estimate": "0.93 - content coverage is high; missed the 75%-of-market-cap framing, private value accrual, venture illiquidity bias and motive for AI headcount cuts; main weakness is speaker attribution among the four voices"
+}

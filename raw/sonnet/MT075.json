@@ -1,0 +1,173 @@
+{
+ "source_id": "MT075",
+ "speakers": [
+  "Ernie Chan (founder, QTS hedge fund)",
+  "Interviewer (Odds on Open, unnamed)"
+ ],
+ "summary": "Short Odds on Open clip: Ernie Chan describes his fund's crisis strategy (option-like index futures payoff in market crashes) and why strategies decay. Asked how to handle regime shifts, he argues strategies fail only if regime variables are omitted, and proposes machine learning/AI that ingests broad context (rates, news, oil, GDP) and learns which matters.",
+ "approach_tags": [
+  "crisis alpha",
+  "strategy decay",
+  "regime change",
+  "machine learning",
+  "index futures"
+ ],
+ "coverage": [
+  {
+   "chunk": "C01",
+   "claims": 7,
+   "note": "crisis strategy, strategy decay, regime change must be modeled, simple causal models vs AI context"
+  },
+  {
+   "chunk": "C02",
+   "claims": 2,
+   "note": "regime definition, look at everything, let AI weight inputs; sign-off"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "MT075-C01-1",
+   "chunk": "C01",
+   "speaker": "Ernie Chan",
+   "quote": "A lot of times strategy work well for a while and then they go away.",
+   "claim": "Strategies often work for a while and then stop, e.g. an FX strategy that almost never lost for months then suddenly lost and its edge disappeared.",
+   "mechanism": "cycle_persistence",
+   "asset_class": "fx",
+   "indicator": "",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - decay is observable out-of-sample",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT075-C01-2",
+   "chunk": "C01",
+   "speaker": "Ernie Chan",
+   "quote": "that strategy is what we call crisis strategy. It's like buying options. You will only generate return when the market has a big crash.",
+   "claim": "A crisis strategy on index futures behaves like long options: it earns only when the market crashes.",
+   "mechanism": "risk_premium",
+   "asset_class": "equities",
+   "indicator": "index futures crisis strategy",
+   "horizon": "days",
+   "direction": "long crash exposure",
+   "conditions": "pays only in big crashes",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT075-C01-3",
+   "chunk": "C01",
+   "speaker": "Ernie Chan",
+   "quote": "market always have this turbulence every two years you go look back to 2011 essentially every two years there's a crisis of one sort another",
+   "claim": "Markets show a panic roughly every two years since 2011, each followed by recovery, which the crisis strategy exploits.",
+   "mechanism": "overshoot",
+   "asset_class": "equities",
+   "indicator": "equity panics",
+   "horizon": "days",
+   "direction": "long volatility/crash exposure",
+   "conditions": "crashes recover; panics last days",
+   "testable": "partly - frequency countable",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT075-C01-4",
+   "chunk": "C01",
+   "speaker": "Ernie Chan",
+   "quote": "even though we have been running it for over 10 years is still generating offer is still generating particularly crisis hour",
+   "claim": "The crisis strategy has kept generating alpha (captioned 'offer') for over ten years, unlike decaying strategies.",
+   "mechanism": "cycle_persistence",
+   "asset_class": "equities",
+   "indicator": "crisis strategy track record",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - self-reported",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT075-C01-5",
+   "chunk": "C01",
+   "speaker": "Ernie Chan",
+   "quote": "the idea of regime change is that it would only negatively affect your strategy if your strategy didn't take into account the regime.",
+   "claim": "Regime shifts only hurt strategies that omit the regime variable (e.g. rates), so include such inputs rather than blaming the regime.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "regime variables like interest rates",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - add variable and test",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT075-C01-6",
+   "chunk": "C01",
+   "speaker": "Ernie Chan",
+   "quote": "build a strategy they make it as simple as possible that makes sense you have a clear causal model",
+   "claim": "Traditional quants build simple causal models (e.g. pair trading Google and Microsoft), which can fail when the underlying relation changes.",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "pairs trading",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "when relative fundamentals diverge",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT075-C01-7",
+   "chunk": "C01",
+   "speaker": "Ernie Chan",
+   "quote": "AI can read the news and say oh Microsoft is generating getting much more revenue from from from from from you know AI",
+   "claim": "AI can read news and add context (e.g. Microsoft monetizing AI better than Google) as a subtle modifier of a short-term model, not its main signal.",
+   "mechanism": "new: ml_context",
+   "asset_class": "equities",
+   "indicator": "news-derived context features",
+   "horizon": "days",
+   "direction": "",
+   "conditions": "even for day trading models",
+   "testable": "yes - add as feature and test",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT075-C02-1",
+   "chunk": "C02",
+   "speaker": "Ernie Chan",
+   "quote": "the short answer is you should look at everything that's the whole point of our AI is that you should be an allseeing eye to look at everything",
+   "claim": "Regime is hard to define, so feed the model all context (rates, news, GDP, presidential statements, oil) rather than choosing a few variables.",
+   "mechanism": "new: ml_context",
+   "asset_class": "multi",
+   "indicator": "broad context inputs",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - overfitting risk",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT075-C02-2",
+   "chunk": "C02",
+   "speaker": "Ernie Chan",
+   "quote": "the AI is supposed to figure out oh maybe interest rates is important or maybe presidential treats are important",
+   "claim": "The AI should learn which variables matter for a strategy instead of the researcher guessing, including oil even if its relevance is unknown ahead of time.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "feature selection by machine learning",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - depends on sample size and validation",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

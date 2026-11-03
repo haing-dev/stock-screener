@@ -1,0 +1,40 @@
+{
+ "source_id": "MT032",
+ "added_claims": [
+  {"claim_id": "MT032-C02-X1", "chunk": "C02", "speaker": "Brad Gerstner",
+   "quote": "we had this freakout moment earlier in the year with Deepseek that we all remember. [L60] Remember, Nvidia stock plummets.",
+   "claim": "A Chinese AI efficiency breakthrough (DeepSeek) triggered a sharp sell-off in AI hardware leaders such as Nvidia, showing the sector's sensitivity to signs that frontier AI can be built cheaply.",
+   "mechanism": "overshoot", "asset_class": "equities", "indicator": "", "horizon": "days",
+   "direction": "AI hardware stocks down on cheap-AI news", "conditions": "", "testable": "partly - event study on a single episode", "speaker_confidence": "medium", "time_bound": "yes"},
+  {"claim_id": "MT032-C08-X1", "chunk": "C08", "speaker": "Sunny Madra",
+   "quote": "every single search query on the planet today is now an inference transaction. Correct.",
+   "claim": "Search queries have turned into AI inference transactions, so ordinary search volume now feeds directly into compute demand.",
+   "mechanism": "structural_shift", "asset_class": "equities", "indicator": "AI tokens processed per month", "horizon": "years",
+   "direction": "compute demand up", "conditions": "", "testable": "partly - token counts are disclosed sporadically", "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT032-C10-X1", "chunk": "C10", "speaker": "Sunny Madra",
+   "quote": "models right and you have the capacity for it it's one of those things people are consuming Jven's paradox or whatever.",
+   "claim": "Jevons paradox: as AI capacity grows and intelligence gets cheaper, total token consumption rises rather than falls, so efficiency gains do not reduce compute demand.",
+   "mechanism": "structural_shift", "asset_class": "equities", "indicator": "token consumption vs price per token", "horizon": "years",
+   "direction": "compute demand up as unit cost falls", "conditions": "", "testable": "partly - token volume and price series are partial", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT032-C11-X1", "chunk": "C11", "speaker": "Bill Gurley",
+   "quote": "I do think there'll be some rationalization where these models um kind of self-pick which one they're running based on what you need.",
+   "claim": "AI pricing will rationalize from flat subscriptions toward consumption-based pricing with automatic routing to cheaper models, which improves lab economics (already happening in enterprise).",
+   "mechanism": "structural_shift", "asset_class": "equities", "indicator": "", "horizon": "years",
+   "direction": "", "conditions": "", "testable": "no - business-model forecast", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT032-C15-X1", "chunk": "C15", "speaker": "Brad Gerstner",
+   "quote": "So, we're going to have some some goods and some products that, you know, consumers are US consumers are going to end up paying the taxes and we're going to have to go back and fix some of these things.",
+   "claim": "Caveat: some tariffs will be passed through to US consumers on specific goods, and the schedule will need corrections, even if overall pass-through is small.",
+   "mechanism": "policy_reaction", "asset_class": "multi", "indicator": "goods-level import price inflation", "horizon": "months",
+   "direction": "some consumer prices up", "conditions": "goods without quick substitutes", "testable": "yes - goods-level CPI/PCE vs tariff exposure", "speaker_confidence": "medium", "time_bound": "yes"},
+  {"claim_id": "MT032-C17-X1", "chunk": "C17", "speaker": "Brad Gerstner",
+   "quote": "I said you can land the plane, no inflation, you get rate cuts and you know, and it's kind of off to the races.",
+   "claim": "Gerstner's 2025 flight path: tariffs landing near $300B with no inflation lets the Fed cut rates by year-end while growth accelerates near 3%, which is bullish for equities.",
+   "mechanism": "policy_reaction", "asset_class": "multi", "indicator": "core PCE, Fed funds path, GDPNow", "horizon": "months",
+   "direction": "long equities; rates lower", "conditions": "tariffs stay near $300B and inflation stays contained", "testable": "partly - scenario call, outcome checkable", "speaker_confidence": "high", "time_bound": "yes"}
+ ],
+ "corrections": [
+  {"claim_id": "MT032-C02-6", "issue": "Wrong speaker: Gerstner is relaying Sunny Madra's tweet; the prediction is Madra's.", "fix": "Sunny Madra (via Gerstner) suggested Chinese open-source models, by compounding on each other, may pass the best US proprietary models by Q4 2025."}
+ ],
+ "chunks_checked": ["C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09", "C10", "C11", "C12", "C13", "C14", "C15", "C16", "C17"],
+ "completeness_estimate": "0.91 - first reader covered nearly all AI and tariff claims; missed Jevons demand effect, pricing-model shift, tariff pass-through caveat, the rate-cut flight path and the DeepSeek market reaction"
+}

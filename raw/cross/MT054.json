@@ -1,0 +1,26 @@
+{
+ "source_id": "MT054",
+ "added_claims": [
+  {"claim_id": "MT054-C02-X1", "chunk": "C02", "speaker": "Jim Rogers",
+   "quote": "everybody said no come on Japan Japan Japan because Japan was the hot country in the 80s",
+   "claim": "The consensus 'hot country' of an era (Japan in the 1980s) can be the wrong long-term bet, while a country dismissed through propaganda and ignorance (China) was the one actually rising.",
+   "mechanism": "crowding_positioning", "asset_class": "equities", "indicator": "", "horizon": "years", "direction": "favour the overlooked rising country over the consensus favourite",
+   "conditions": "", "testable": "partly - long-horizon returns of consensus-favourite vs neglected countries can be compared",
+   "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT054-C04-X1", "chunk": "C04", "speaker": "Jim Rogers",
+   "quote": "I used to read the commodity page every day in the Wall Street Journal most people II found out later didn't even know there was a commodity page",
+   "claim": "Following neglected data that most investors ignore (the daily commodity prices page) gives an information edge, because commodity prices feed into many businesses and markets.",
+   "mechanism": "slow_reaction", "asset_class": "commodities", "indicator": "daily commodity prices (WSJ commodity page)", "horizon": "unspecified", "direction": "",
+   "conditions": "", "testable": "partly - lead of commodity prices over equity sectors can be tested",
+   "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT054-C08-X1", "chunk": "C08", "speaker": "Jim Rogers",
+   "quote": "what we have to do no matter what is to figure out the change and then pursue it",
+   "claim": "Investment success comes from identifying structural change early (which countries and sectors become important, e.g. Australia, Uzbekistan, agriculture) and positioning for it, so the investable universe must keep being updated.",
+   "mechanism": "structural_shift", "asset_class": "multi", "indicator": "", "horizon": "years", "direction": "",
+   "conditions": "", "testable": "no - general approach without a defined signal",
+   "speaker_confidence": "medium", "time_bound": "no"}
+ ],
+ "corrections": [],
+ "chunks_checked": ["C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09"],
+ "completeness_estimate": "0.80 - mostly biography and life advice; first reader caught all substantive views (China cycle, timing lesson, multi-asset long/short, know commodity prices, agriculture, money printing, US debt, no hot tips), missing only the Japan-consensus contrast, the neglected-data edge and the 'find the change' principle."
+}

@@ -1,0 +1,29 @@
+{
+ "source_id": "MT045",
+ "added_claims": [
+  {"claim_id": "MT045-C02-X1", "chunk": "C02", "speaker": "Niels Kaastrup-Larsen",
+   "quote": "I actually think Denmark has done better than the Euro zone because they stand outside and can still determine their own interest rates",
+   "claim": "Staying outside the euro (Denmark) has worked better than joining because the country keeps control of its own interest rates, and the krone has stayed strong.",
+   "mechanism": "policy_reaction", "asset_class": "fx", "indicator": "Danish krone; Denmark vs euro-area growth",
+   "horizon": "years", "direction": "", "conditions": "",
+   "testable": "partly - Denmark vs euro-area outcomes, though the krone is pegged to the euro", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT045-C07-X1", "chunk": "C07", "speaker": "Katy Kaminski",
+   "quote": "I don't necessarily think that the longest draw down was particularly just linked to that particular presidency. It was just a period with very low rates as well.",
+   "claim": "Kaminski disputes that the 2015-2019 trend drawdown was mainly a Trump trade-war effect; the very low rate environment of that period was also a cause.",
+   "mechanism": "policy_reaction", "asset_class": "multi", "indicator": "policy rate level during trend drawdowns",
+   "horizon": "years", "direction": "trend returns weaker when rates are pinned near zero", "conditions": "disagrees with Niels's Trump attribution",
+   "testable": "yes - trend returns conditioned on rate level", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT045-C11-X1", "chunk": "C11", "speaker": "Katy Kaminski",
+   "quote": "we wrote a great paper a couple years ago on turbulence and actually that man paper mentioned the turbulence metrics",
+   "claim": "Turbulence metrics (magnitude-of-surprise measures across assets) can be used to identify and size exogenous shocks when studying their effect on trend following.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "market turbulence index (magnitude surprise)",
+   "horizon": "days", "direction": "", "conditions": "",
+   "testable": "yes - turbulence index vs trend returns", "speaker_confidence": "medium", "time_bound": "no"}
+ ],
+ "corrections": [
+  {"claim_id": "MT045-C02-1", "issue": "Attributes the explanation to Niels; Niels only reports that China-focused CTA programs did worse in June 2025 and says he does not know why. The commodity-heavy explanation is Kaminski's explicitly labelled first guess.",
+   "fix": "Niels: China-focused CTA programs did worse than traditional CTAs in June 2025. Kaminski (a guess): Chinese futures are commodity heavy, energies were shocked by geopolitics while some supply-chain metals trended, so results there differed from other markets."}
+ ],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10","C11","C12","C13","C14","C15","C16","C17"],
+ "completeness_estimate": "0.94 - first reader covered the drawdown paper, shock types, regime method and replication debate well; missed one disagreement (low rates vs Trump for 2015-19), the turbulence metric and the Denmark/euro aside, and misattributed one explanation."
+}

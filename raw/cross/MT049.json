@@ -1,0 +1,15 @@
+{
+ "source_id": "MT049",
+ "added_claims": [
+  {"claim_id": "MT049-C06-X1", "chunk": "C06", "speaker": "Bob Prince",
+   "quote": "I'm advising this utility on how to manage their debt structure against their their business you know and we it was very successful",
+   "claim": "A company can hedge its embedded market exposures on the liability side by structuring its debt (currency, maturity, rate type) to offset what its business revenues are exposed to, as Bridgewater did for BC Hydro.",
+   "mechanism": "risk_management", "asset_class": "multi", "indicator": "",
+   "horizon": "years", "direction": "", "conditions": "business with large market-driven revenue exposure and sizeable debt",
+   "testable": "partly - hedge effectiveness can be measured case by case",
+   "speaker_confidence": "high", "time_bound": "no"}
+ ],
+ "corrections": [],
+ "chunks_checked": ["C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09", "C10", "C11", "C12", "C13", "C14"],
+ "completeness_estimate": "0.97 - mostly biography and culture; the first reader captured every method and macro idea (risk plans, coded systems, Kodak overlay, mercantilism, German stimulus) and only missed the liability-side hedging example."
+}

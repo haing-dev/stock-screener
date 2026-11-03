@@ -1,0 +1,26 @@
+{
+ "source_id": "MT069",
+ "added_claims": [
+  {"claim_id": "MT069-C03-X1", "chunk": "C03", "speaker": "Stan Druckenmiller",
+   "quote": "we would probably be long more an eclectic basket of equities for until the fall the last 3 years, our portfolio was very much AI-driven",
+   "claim": "Positioning view: after three years of an AI-driven book, he would now hold a more eclectic equity basket, with AI only in small amounts and large positions in Japan and Korea.",
+   "mechanism": "structural_shift", "asset_class": "equities", "indicator": "",
+   "horizon": "years", "direction": "long diversified equities, long Japan and Korea, less AI", "conditions": "AI leadership looking heated; strong US growth backdrop",
+   "testable": "partly - relative returns of Japan/Korea vs US AI basket afterwards", "speaker_confidence": "medium", "time_bound": "yes"},
+  {"claim_id": "MT069-C03-X2", "chunk": "C03", "speaker": "Stan Druckenmiller",
+   "quote": "it wouldn't be that unusual if the Fed were to cut into a booming economy for inflation to take off, particularly with what's going on in commodities",
+   "claim": "A Fed that cuts rates into a booming, fiscally stimulated economy risks inflation taking off, especially with commodity prices rising, which is the scenario where short bonds pay.",
+   "mechanism": "policy_reaction", "asset_class": "rates", "indicator": "Fed cuts during strong growth; commodity prices",
+   "horizon": "months", "direction": "inflation up; bond yields up", "conditions": "Fed easing while growth is strong and commodities tight",
+   "testable": "yes - inflation after easing cycles begun with above-trend growth", "speaker_confidence": "medium", "time_bound": "yes"},
+  {"claim_id": "MT069-C03-X3", "chunk": "C03", "speaker": "Stan Druckenmiller",
+   "quote": "I will admit that I put on a 3-year trade that 5 days later I'm out of and I've reversed",
+   "claim": "Although trades are conceived on 18-month to 3-year horizons, he will exit and even reverse a position within days when the evidence changes, so long horizons do not mean holding through contrary information.",
+   "mechanism": "risk_management", "asset_class": "multi", "indicator": "",
+   "horizon": "days", "direction": "", "conditions": "new information contradicting the thesis",
+   "testable": "no - discretionary practice", "speaker_confidence": "high", "time_bound": "no"}
+ ],
+ "corrections": [],
+ "chunks_checked": ["C01", "C02", "C03", "C04", "C05", "C06", "C07"],
+ "completeness_estimate": "0.90 - first reader captured nearly every idea with correct meaning; missed the current eclectic/Japan-Korea equity positioning, the Fed-cutting-into-boom inflation mechanism behind the bond short, and the quick-reversal practice"
+}
