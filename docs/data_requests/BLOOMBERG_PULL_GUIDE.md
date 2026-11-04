@@ -39,8 +39,8 @@ FRED/ALFRED series (first releases for US data), CFTC positioning (free), WRDS: 
 
 Every US-listed stock our screens can touch (4,512: NYSE/Nasdaq/NYSE American, no warrants/units/preferreds/funds/SPACs,
 market cap >= $25M; live triage calls first, then by market cap). Builder: `build_bloomberg_equities.py`; universe
-snapshot: `equity_universe.csv`. All formulas are stored OFF (`#=`): switch on one block with Ctrl+H `#=` -> `=`,
-paste values when filled, save. Full steps are on the README sheet.
+snapshot: `equity_universe.csv`. All formulas are live (v2): open on the terminal, Bloomberg -> Refresh Workbook, save.
+Full steps are on the README sheet.
 
 | Order | Sheets | Content | Data points |
 |---|---|---|---|

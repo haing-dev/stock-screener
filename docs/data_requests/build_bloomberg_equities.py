@@ -5,9 +5,7 @@ Universe: NYSE + Nasdaq + NYSE American listings (Nasdaq screener lists mirrored
 fetched 2026-11-04), minus warrants, rights, units, preferreds, notes, funds and SPACs, market cap >= $25M; the live
 triage calls (branch triage-record) come first, then by market cap. Snapshot of that list: equity_universe.csv.
 
-Every Bloomberg formula is stored switched OFF as text starting with '#=' so nothing downloads when the file opens.
-The user switches on one block of rows at a time (Ctrl+H: '#=' -> '='), which keeps within the terminal's download
-allowance and keeps Excel responsive. Field mnemonics sit in row 3 of each sheet; formulas read them from there, so a
+All Bloomberg formulas are live (v2, 2026-11-04, at the user's request): open on the terminal and Refresh Workbook. Field mnemonics sit in row 3 of each sheet; formulas read them from there, so a
 wrong mnemonic is fixed once per column. Confidence 'check' = mnemonic not certain (verify with FLDS on the terminal).
 
     python3 docs/data_requests/build_bloomberg_equities.py [--universe-json DIR] [--small N] [OUT.xlsx]
@@ -283,14 +281,14 @@ HISTS = [  # (prefix, fields, start, options, tickers (None = all), per-sheet, w
      "was each month = estimate revisions), short interest, multiples, 2005 to date."),
 ]
 BULKS = [  # (sheet, [(label, formula pattern with {t})], rows per ticker, tickers, what)
-    ("B1_Holders", [("Top 20 holders (13F, funds, insiders)", '#=BDS({t},"TOP_20_HOLDERS_PUBLIC_FILERS")')], 24, 300,
+    ("B1_Holders", [("Top 20 holders (13F, funds, insiders)", '=BDS({t},"TOP_20_HOLDERS_PUBLIC_FILERS")')], 24, 300,
      "Tier 3 - largest holders (High Conviction / Top Performer owners cross-check; insider stakes)."),
-    ("B2_Dividends", [("Dividends, specials, spin-offs since 2015", '#=BDS({t},"DVD_HIST_ALL","DVD_START_DT","20150101")')],
+    ("B2_Dividends", [("Dividends, specials, spin-offs since 2015", '=BDS({t},"DVD_HIST_ALL","DVD_START_DT","20150101")')],
      50, 300, "Tier 3 - dividend history incl. special dividends and SPIN-OFFS (Special Situations)."),
-    ("B3_Segments", [("Revenue by product segment", '#=BDS({t},"PG_REVENUE","PRODUCT_GEO_OVERRIDE","P")'),
-                     ("Revenue by region", '#=BDS({t},"PG_REVENUE","PRODUCT_GEO_OVERRIDE","G")')], 25, 300,
+    ("B3_Segments", [("Revenue by product segment", '=BDS({t},"PG_REVENUE","PRODUCT_GEO_OVERRIDE","P")'),
+                     ("Revenue by region", '=BDS({t},"PG_REVENUE","PRODUCT_GEO_OVERRIDE","G")')], 25, 300,
      "Tier 3 - segment and geographic revenue (Hidden Earnings: which segment the market fears; check)."),
-    ("B4_EarningsDates", [("Earnings announcement history", '#=BDS({t},"EARN_ANN_DT_TIME_HIST_WITH_EPS")')], 40, 300,
+    ("B4_EarningsDates", [("Earnings announcement history", '=BDS({t},"EARN_ANN_DT_TIME_HIST_WITH_EPS")')], 40, 300,
      "Tier 3 - past announcement dates with EPS (point-in-time timing; check)."),
 ]
 
@@ -380,8 +378,7 @@ def snap_sheet(wb, spec, n):
     name, what, fields = spec
     ws = wb.create_sheet(name)
     title(ws, "%s: %s" % (name, what),
-          "OFF until switched on. Select a block of rows (see README), Ctrl+H, Find '#=' Replace '=' -> Replace All. "
-          "Row 3 = field (fix a wrong one there); row 4 = what it is; grey row = override used.")
+          "Live formulas. Row 3 = field (fix a wrong one there); row 4 = what it is; grey = override used.")
     ws.cell(3, 1, "Ticker").font = Font(name=F, bold=True)
     ws.cell(3, 2, "Name").font = Font(name=F, bold=True)
     for j, (fld, ov, lab, _use, ok) in enumerate(fields, 3):
@@ -402,9 +399,9 @@ def snap_sheet(wb, spec, n):
         for j, (fld, ov, *_x) in enumerate(fields, 3):
             col = L(j)
             if ov:
-                f = '#=BDP($A%d,%s$3,"%s","%s")' % (r, col, ov[0], ov[1])
+                f = '=BDP($A%d,%s$3,"%s","%s")' % (r, col, ov[0], ov[1])
             else:
-                f = "#=BDP($A%d,%s$3)" % (r, col)
+                f = "=BDP($A%d,%s$3)" % (r, col)
             ws.cell(r, j, f)
     ws.column_dimensions["A"].width = 18
     ws.column_dimensions["B"].width = 26
@@ -424,15 +421,14 @@ def hist_sheets(wb, spec, uni):
         nm = "%s_%02d" % (prefix, s0 // per + 1)
         ws = wb.create_sheet(nm)
         title(ws, "%s: Universe rows %d-%d. %s" % (nm, idx[0] + 1, idx[-1] + 1, what),
-              "OFF until switched on: select this sheet's column C (or a range), Ctrl+H '#=' -> '=' Replace All. "
-              "Each stock = one block: dates in its first row, one row per field below (column B).")
+              "Live formulas. Each stock = one block: dates in its first row, one row per field below (column B).")
         for b, ui in enumerate(idx):
             r = 4 + b * step
             ws.cell(r, 1, "=Universe!B%d" % (5 + ui)).font = Font(name=F, bold=True, size=9)
             ws.cell(r, 2, "date").font = Font(name=F, italic=True, size=8)
             for i, fld in enumerate(fields):
                 ws.cell(r + 1 + i, 2, fld).font = Font(name=F, size=8)
-            ws.cell(r, 3, '#=BDH($A%d,$B%d:$B%d,"%s","",%s)' % (r, r + 1, r + k, start, opts))
+            ws.cell(r, 3, '=BDH($A%d,$B%d:$B%d,"%s","",%s)' % (r, r + 1, r + k, start, opts))
         ws.column_dimensions["A"].width = 18
         ws.column_dimensions["B"].width = 30
         ws.freeze_panes = "C4"
@@ -445,8 +441,7 @@ def bulk_sheet(wb, spec, uni):
     nm, forms, rows, top, what = spec
     ws = wb.create_sheet(nm)
     title(ws, "%s: first %d Universe rows. %s" % (nm, top, what),
-          "OFF until switched on (Ctrl+H '#=' -> '='). Each stock has %d rows; a list longer than that is cut "
-          "off (fine)." % rows)
+          "Live formulas. Each stock has %d rows; a list longer than that is cut off (fine)." % rows)
     for b in range(min(top, len(uni))):
         r = 4 + b * rows
         ws.cell(r, 1, "=Universe!B%d" % (5 + b)).font = Font(name=F, bold=True, size=9)
@@ -462,11 +457,11 @@ def bulk_sheet(wb, spec, uni):
 def check_sheet(wb):
     ws = wb.create_sheet("Universe_Check")
     title(ws, "Universe_Check (optional): Russell 3000 members straight from Bloomberg",
-          "Switch on (Ctrl+H '#=' -> '='). Anything here that is missing from Universe can be pasted at the bottom "
+          "Anything here that is missing from Universe can be pasted at the bottom "
           "of Universe column B (then extend the S sheets by copying the last row down).")
     for j, f in enumerate(["INDX_MEMBERS", "INDX_MEMBERS2", "INDX_MEMBERS3"]):
         ws.cell(4, 1 + 2 * j, "RAY Index %s" % f).font = Font(name=F, bold=True)
-        ws.cell(5, 1 + 2 * j, '#=BDS("RAY Index","%s")' % f)
+        ws.cell(5, 1 + 2 * j, '=BDS("RAY Index","%s")' % f)
         ws.column_dimensions[L(1 + 2 * j)].width = 18
 
 
@@ -512,33 +507,20 @@ def readme(wb, n, counts, hist, n_blocks):
         ("Bloomberg equities pull v1 (2026-11-04): every US-listed stock our screens can touch (%d stocks)" % n, "h"),
         ("Private: Bloomberg data stays on your computer (never GitHub). Check UBC's Bloomberg rules on exporting data.", ""),
         ("", ""),
-        ("WHY NOTHING HAPPENS WHEN YOU OPEN IT", "b"),
-        ("Every Bloomberg formula is switched OFF (stored as text starting with '#='). You switch on one block at a time, so", ""),
-        ("Excel stays fast and you do not burn the terminal's download allowance on things you did not mean to pull.", ""),
-        ("", ""),
         ("AT THE TERMINAL", "b"),
-        ("1. Log in to Bloomberg, open this file in Excel, check the Bloomberg tab is in the ribbon.", ""),
-        ("2. Go to a sheet in the order below. Click the Name Box (left of the formula bar), type the block range, Enter.", ""),
-        ("   S sheets: block 1 = rows 5-504, block 2 = 505-1004, ... (Universe column L lists each stock's rows).", ""),
-        ("   Column ranges: " + "; ".join("%s C:%s" % (nm, L(2 + len(f))) for nm, _w, f in SNAPS) + ".", ""),
-        ("   Example for S2_Market block 1: type C5:%s504 in the Name Box, Enter." % L(2 + len(S2[2])), ""),
-        ("3. Ctrl+H -> Find what:  #=   Replace with:  =   -> Replace All. Data starts arriving ('Requesting Data...').", ""),
-        ("4. When the block is filled: keep it selected, Ctrl+C, then Paste Special -> Values (Ctrl+Alt+V, V, Enter).", ""),
-        ("   This freezes the numbers so they are never requested again. Save (Ctrl+S). Next block.", ""),
-        ("5. H sheets: each stock is a block of rows; switch on ~100 stocks at a time: " + "; ".join(
-            "%s C4:C%d" % (p, 3 + 100 * (len(f) + 2)) for p, f, *_x in HISTS) + ".", ""),
-        ("   Next 100 = the next range of the same length (each stock takes " + ", ".join(
-            "%d rows on %s" % (len(f) + 2, p) for p, f, *_x in HISTS) + ").", ""),
-        ("   Then select the filled area, paste values, save, next 100. B sheets: column C (and K on B3), same steps.", ""),
-        ("6. '#N/A Invalid Security' in a row: fix the yellow ticker in Universe column B (SECF <GO> to look it up).", ""),
-        ("   '#N/A Invalid Field' down a whole column: FLDS <GO>, search the description in row 4, put the right field", ""),
-        ("   in the yellow row 3 of that column (red = mnemonic not certain). '#N/A N/A' = no data for that stock (fine).", ""),
-        ("   '#NAME?' = Excel did not see the Bloomberg add-in: Bloomberg tab -> Refresh Workbook, or redo step 3.", ""),
-        ("7. '#N/A Limit' / 'Daily capacity reached': the allowance is used up. Save and stop; continue next visit.", ""),
-        ("8. Save as Bloomberg_equities_UBC.xlsx (USB or OneDrive). At home put it in Documents\\Screenerdata\\bloomberg", ""),
-        ("   (NOT in Screenerdata\\data) and tell Claude; Claude will ask for access to that folder only.", ""),
+        ("1. Log in to Bloomberg, open this file in Excel (Bloomberg tab in the ribbon).", ""),
+        ("2. Bloomberg tab -> Refresh -> Refresh Workbook. Wait until no cell shows 'Requesting Data...' (can take long).", ""),
+        ("3. File -> Save As Bloomberg_equities_UBC.xlsx (USB or OneDrive). If offered, also save a copy with", ""),
+        ("   Bloomberg -> Convert to values (or Copy -> Paste Special -> Values per sheet) so it opens without the terminal.", ""),
+        ("4. At home put it in Documents\\Screenerdata\\bloomberg (NOT Screenerdata\\data) and tell Claude.", ""),
         ("", ""),
-        ("ORDER (stop wherever the allowance runs out; everything is ordered most-useful first)", "b"),
+        ("IF SOMETHING SHOWS", "b"),
+        ("'#N/A Limit' / 'Daily capacity reached' = download allowance used up: save; the rest fills on the next visit.", ""),
+        ("'#N/A Invalid Field' down a column = mnemonic wrong (red ones are uncertain): FLDS <GO>, fix row 3 of that column.", ""),
+        ("'#N/A Invalid Security' = fix the yellow ticker in Universe column B. '#N/A N/A' = no data (fine).", ""),
+        ("'#NAME?' = Bloomberg add-in not loaded when the file opened: Bloomberg tab -> Refresh Workbook again.", ""),
+        ("", ""),
+        ("WHAT IS IN IT (most useful first)", "b"),
         ("Rows: live triage calls first (priority A), then by market cap, so a partial pull still covers what matters.", ""),
     ]
     order = [
@@ -587,7 +569,7 @@ def readme(wb, n, counts, hist, n_blocks):
         ("LEGEND", "b"),
         ("Yellow cell = you may edit (Universe ticker; field mnemonic in row 3). Red mnemonic = not certain, verify with FLDS.", ""),
         ("Grey description = the formula uses an override (USD financials: EQY_FUND_CRNCY=USD; estimates: BEST_FPERIOD_OVERRIDE).", ""),
-        ("A switched-on cell looks like:  =BDP($A5,C$3)  -> returns e.g. the last price for the ticker in column A.", ""),
+        ("A cell looks like:  =BDP($A5,C$3)  -> returns the field in row 3 for the ticker in column A.", ""),
         ("History block (H sheets): row 1 of each stock = period-end dates across, then one row per field (names in column B).", ""),
         ("History is Bloomberg's current (restated) figures, not as first reported; fine for 10-year screens, noted for backtests.", ""),
         ("", ""),
