@@ -75,6 +75,10 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Bloomberg EQUITIES workbook (2026-11-04): docs/data_requests/Bloomberg_equities_UBC.xlsx (builder
   build_bloomberg_equities.py; 4,512 US-listed stocks; formulas stored OFF as '#=' text; 209 snapshot fields + annual /
   quarterly / monthly history + bulk). Pulled file goes to Documents\Screenerdata\bloomberg (ask access to that folder).
+- Bloomberg pull v5 (2026-11-04): 8 numbered workbooks, guide docs/data_requests/BLOOMBERG_PULL_GUIDE.md; files 2-7 from
+  build_bloomberg_v5.py (templates + bloomberg_v5_tickers.csv in docs/data_requests/bloomberg_v5/; same block layout as v4).
+  Copy on PC: Documents\WRDS results\mscifreedata\Bloomberg_UBC_pull_2026-11-04 (pulled files -> its pulled\ subfolder).
+  Next: one reader for all block files (extend gm/bloomberg.py), then register batch 2+ before using.
 - Placeholders: Bloomberg commodity workbook docs/data_requests/Bloomberg_macro_UBC.xlsx (commodities + first-release/consensus economics; user at UBC next week; built by build_bloomberg.py);
   equity value/carry; WRDS revisions; econ on first-release data. Manual files: gm/data (RBI); MSCI kept out of git.
 
