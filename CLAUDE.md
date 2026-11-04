@@ -72,6 +72,9 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   gm/timing.py, gm/bloomberg.py (reads cache/macro/raw/research/bloomberg/Bloomberg_macro_UBC.xlsx; test:
   python3 tests/gm_bloomberg_smoke.py). White paper: Claude Doc "Global Macro Book: White Paper". Holdout criteria:
   SR >= 0.3, worst fall > -25%, corr S&P <= 0.3, 2022 positive.
+- Bloomberg EQUITIES workbook (2026-11-04): docs/data_requests/Bloomberg_equities_UBC.xlsx (builder
+  build_bloomberg_equities.py; 4,512 US-listed stocks; formulas stored OFF as '#=' text; 209 snapshot fields + annual /
+  quarterly / monthly history + bulk). Pulled file goes to Documents\Screenerdata\bloomberg (ask access to that folder).
 - Placeholders: Bloomberg commodity workbook docs/data_requests/Bloomberg_macro_UBC.xlsx (commodities + first-release/consensus economics; user at UBC next week; built by build_bloomberg.py);
   equity value/carry; WRDS revisions; econ on first-release data. Manual files: gm/data (RBI); MSCI kept out of git.
 

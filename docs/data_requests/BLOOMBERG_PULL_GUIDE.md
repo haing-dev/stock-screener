@@ -32,3 +32,24 @@ Copy the saved file(s) into `Documents\WRDS results\mscifreedata` and tell Claud
 
 ## Not needed from Bloomberg (we already have it or get it elsewhere)
 FRED/ALFRED series (first releases for US data), CFTC positioning (free), WRDS: CRSP Treasuries (bond check done), Compustat Global, I/B/E/S (analyst revisions), Fama-French. MSCI country prices from 1997 (your free download).
+
+---
+
+# Equities workbook (v1, 2026-11-04): `Bloomberg_equities_UBC.xlsx`
+
+Every US-listed stock our screens can touch (4,512: NYSE/Nasdaq/NYSE American, no warrants/units/preferreds/funds/SPACs,
+market cap >= $25M; live triage calls first, then by market cap). Builder: `build_bloomberg_equities.py`; universe
+snapshot: `equity_universe.csv`. All formulas are stored OFF (`#=`): switch on one block with Ctrl+H `#=` -> `=`,
+paste values when filled, save. Full steps are on the README sheet.
+
+| Order | Sheets | Content | Data points |
+|---|---|---|---|
+| 1-4 | S2_Market, S3_Valuation_LTM, S1_Identity, S5_Estimates | 209 snapshot fields over all stocks (with S4, S6) | ~0.72M |
+| 5 | H1_Annual_01..10 | 31 annual fields FY2004+ (USD) | ~3.1M |
+| 6-7 | S4_LastFY, S6_Owners_Credit | last FY detail, ROIC, SBC; insider %, ratings | ~0.23M |
+| 8 | H2_Quarterly_01..02 | 15 quarterly fields 2015+ (top 1,000) | ~0.7M |
+| 9 | B1-B4 | holders, dividends + spin-offs, segments, earnings dates (top 300) | small |
+| 10 | H3_Monthly_01 | prices, total return, consensus history (top 500) | ~1.6M |
+
+60 snapshot mnemonics are marked "check" (red): verify with FLDS if a column shows `#N/A Invalid Field`.
+At home: save into `Documents\Screenerdata\bloomberg` (not `Screenerdata\data`), then tell Claude.
