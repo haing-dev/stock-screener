@@ -6,7 +6,7 @@ channel: "Steve Eisman"
 url: https://www.youtube.com/watch?v=RhLLwfwlNAU
 words: 3814
 claims: 26
-added_by_opus: 3
+added_by_crosscheck: 3
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Steve Eisman (host, The Weekly Wrap)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** macro thematic, AI capex, concentration risk, sector rotation, interest rates
 
-**Opus completeness estimate of first read:** 0.92 - short monologue and first reader caught the whole dependency chain, numbers and sector map; missed only the Google Cloud 48% figure, his not-yet-a-call stance on the data, and the AI-financing driver of the IB cycle.
+**Cross-check completeness estimate of first read:** 0.92 - short monologue and first reader caught the whole dependency chain, numbers and sector map; missed only the Google Cloud 48% figure, his not-yet-a-call stance on the data, and the AI-financing driver of the IB cycle.
 
 ## Coverage
 
@@ -52,7 +52,7 @@ tags: [source, layer0]
   > war heated back up and all prices spiked, thereby driving fears of mounting inflation
   indicator: oil price · asset: commodities · direction: oil up, inflation fears up · horizon: weeks · testable: no: event description · confidence: medium
   ^MT088-C01-4
-- **Ed Zitron (clip, interview teaser)** OpenAI and Anthropic are expected to account for about 48% of Google Cloud's revenue next year, so Google Cloud's growth rests on whether those two survive and pay.  #mech/new _(added by Opus, time-bound view)_
+- **Ed Zitron (clip, interview teaser)** OpenAI and Anthropic are expected to account for about 48% of Google Cloud's revenue next year, so Google Cloud's growth rests on whether those two survive and pay.  #mech/new _(added by opus cross-check, time-bound view)_
   > Open AI and Anthropic to account for 48% of all of Google Cloud's revenues next year
   indicator: Google Cloud revenue share from OpenAI and Anthropic · asset: equities · direction: Google Cloud growth at risk if OpenAI/Anthropic falter · horizon: years · testable: partly - check disclosed backlog/customer concentration against later cloud revenue · confidence: high
   ^MT088-C01-X1
@@ -78,7 +78,7 @@ tags: [source, layer0]
   > Oracle has a backlog of around 600 billion and we know, because the information is public, that around 50% 50% of that backlog is from Open AI alone
   indicator: Oracle RPO; CoreWeave order book · asset: equities · horizon: months · testable: yes: filings · confidence: high
   ^MT088-C02-5
-- **Steve Eisman** Media demand for doom predictions pushes commentators to forecast an AI-bust recession, but Eisman holds that the current data do not yet support the end of the AI story, so he only maps weak points and catalysts rather than calling it.  #mech/behavioral _(added by Opus, time-bound view)_
+- **Steve Eisman** Media demand for doom predictions pushes commentators to forecast an AI-bust recession, but Eisman holds that the current data do not yet support the end of the AI story, so he only maps weak points and catalysts rather than calling it.  #mech/behavioral _(added by opus cross-check, time-bound view)_
   > They could be right, but right now the data does not support the end of the AI story, at least not yet.
   asset: equities · horizon: months · conditions: until data (capex, AI lab financials) turn · testable: partly - track the data points he names (capex guidance, OpenAI revenue/costs) against later outcomes · confidence: medium
   ^MT088-C02-X1
@@ -126,7 +126,7 @@ tags: [source, layer0]
   > Nvidia's July 2026 quarter results showed revenue growth in excess of 100%, 100%
   indicator: Nvidia revenue growth · asset: equities · horizon: months · testable: yes · confidence: high
   ^MT088-C04-5
-- **Steve Eisman** Part of the current strong investment-banking cycle comes from AI financing needs, so a slowdown in AI funding would weaken deal activity and pull large and investment banks down from peak valuations.  #mech/liquidity_flows _(added by Opus, time-bound view)_
+- **Steve Eisman** Part of the current strong investment-banking cycle comes from AI financing needs, so a slowdown in AI funding would weaken deal activity and pull large and investment banks down from peak valuations.  #mech/liquidity_flows _(added by opus cross-check, time-bound view)_
   > the investment banking cycle is super strong right now, partially because of the financing needs of AI. Should those needs lessen, the investment banking cycle would weaken
   indicator: investment banking fees / AI-related debt and equity issuance · asset: equities · direction: investment banks down if AI financing slows · horizon: months · conditions: AI capex pullback (e.g. OpenAI failure) · testable: yes - relate bank IB fee growth and bank stock returns to AI-related issuance volumes · confidence: medium
   ^MT088-C04-X1

@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 12011
 claims: 76
-added_by_opus: 9
+added_by_crosscheck: 9
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Alan Dunne (co-host, macro)", "Niels Kaastro Larsen (host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, macro regime, fiscal dominance, Fed credibility, capital market assumptions, CTA dispersion
 
-**Opus completeness estimate of first read:** 0.88 - first reader captured the three fractures, decade statistics, Fed credibility and capital market assumptions well; missed some secondary Fed-communication points, the trend barometer reading, GMO/AQR detail numbers, Druckenmiller's dissent and the trend-vs-60/40 lost-decade comparison; no factual errors found.
+**Cross-check completeness estimate of first read:** 0.88 - first reader captured the three fractures, decade statistics, Fed credibility and capital market assumptions well; missed some secondary Fed-communication points, the trend barometer reading, GMO/AQR detail numbers, Druckenmiller's dissent and the trend-vs-60/40 lost-decade comparison; no factual errors found.
 
 ## Coverage
 
@@ -70,7 +70,7 @@ tags: [source, layer0]
   > the price had a initially a decent move, but some of it has obviously um uh disappeared again
   indicator: USDJPY after intervention · asset: fx · horizon: weeks · testable: yes · confidence: medium
   ^MT040-C02-4
-- **Alan Dunne** The US sold euros to buy yen without informing the ECB, a sign of unilateral US policy and weaker international policy coordination.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Alan Dunne** The US sold euros to buy yen without informing the ECB, a sign of unilateral US policy and weaker international policy coordination.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > the US didn't uh inform Europe, the ECB in advance of the euro sales, which was quite unusual
   indicator: US FX intervention, EURUSD · asset: fx · horizon: weeks · conditions: breakdown of G7 coordination · testable: no - single event · confidence: medium
   ^MT040-C02-X1
@@ -84,7 +84,7 @@ tags: [source, layer0]
   > notably seeing good gains on the commodity side in August
   indicator: commodity trend returns · asset: commodities · direction: commodity trends up · horizon: weeks · testable: yes · confidence: medium
   ^MT040-C03-2
-- **Niels Kaastro Larsen** The host's trend barometer read 43 in late August 2026, a neutral reading for trend conditions.  #mech/slow_reaction _(added by Opus, time-bound view)_
+- **Niels Kaastro Larsen** The host's trend barometer read 43 in late August 2026, a neutral reading for trend conditions.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
   > 43. Um I'm sure you can guess that that is actually the trend barometer as of yesterday. So, it's pretty neutral.
   indicator: Niels' trend barometer · asset: multi · direction: neutral trend environment · horizon: weeks · testable: partly - barometer definition not given · confidence: medium
   ^MT040-C03-X1
@@ -182,11 +182,11 @@ tags: [source, layer0]
   > my own view is is I'm shifting to the view yet maybe he is more dovish than than he's letting on and he doesn't want to raise rates.
   indicator: Fed chair stance · asset: rates · horizon: months · testable: no · confidence: low
   ^MT040-C08-3
-- **Alan Dunne** Warsh credited the market with doing the Fed's job via higher yields, but that rise itself reflected the market reading his previous press conference as hawkish, i.e. markets still trade the inferred Fed reaction function.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Alan Dunne** Warsh credited the market with doing the Fed's job via higher yields, but that rise itself reflected the market reading his previous press conference as hawkish, i.e. markets still trade the inferred Fed reaction function.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > some of that rise in yields reflected the fact that the market interpreted his last press conference as being a bit hawkish
   indicator: Treasury yields around FOMC meetings · asset: rates · horizon: weeks · conditions: reduced Fed guidance · testable: partly - yield changes after FOMC communication · confidence: medium
   ^MT040-C08-X1
-- **Alan Dunne** If the Fed chair keeps giving little guidance, FOMC minutes and the views of other members (Waller, Williams) become the more important signals of Fed policy.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Alan Dunne** If the Fed chair keeps giving little guidance, FOMC minutes and the views of other members (Waller, Williams) become the more important signals of Fed policy.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > the focus may shift you know to to other avenues such as the minutes as being the more important area to get an assessment of where the Fed is
   indicator: FOMC minutes, individual FOMC member speeches · asset: rates · horizon: months · conditions: low-guidance Fed chair · testable: partly - market reaction to minutes vs press conferences · confidence: medium
   ^MT040-C08-X2
@@ -208,7 +208,7 @@ tags: [source, layer0]
   > what's pushing up yields is uh real yields which reflects greater competition for capital because, you know, governments have greater deficits and we've got this huge capex spend related to AI.
   indicator: real yields, breakevens · asset: rates · direction: real yields up · horizon: months · testable: yes · confidence: medium
   ^MT040-C09-4
-- **Niels Kaastro Larsen** Druckenmiller (Bessent's and Warsh's former colleague) argued in a WSJ op-ed that markets should set long rates and opposed the Treasury's bond-market intervention, an influential dissent from the administration's approach.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Niels Kaastro Larsen** Druckenmiller (Bessent's and Warsh's former colleague) argued in a WSJ op-ed that markets should set long rates and opposed the Treasury's bond-market intervention, an influential dissent from the administration's approach.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > basically wants the market to decide where rate should be and he doesn't like this intervention
   indicator: Treasury bond intervention · asset: rates · horizon: months · testable: no - opinion · confidence: medium
   ^MT040-C09-X1
@@ -270,7 +270,7 @@ tags: [source, layer0]
   > some of the the best periods of performance for trend have been when we've seen these uh fractures that I'm talking about when we've seen them really start to bite in the market.
   indicator: trend by stress period · asset: multi · horizon: years · conditions: Regime stress periods · testable: yes · confidence: medium
   ^MT040-C12-4
-- **Alan Dunne** Even trend's strong decade (2020-2026) included a period in which many managers came close to their largest drawdown, so good aggregate returns came with deep interim losses.  #mech/risk_management _(added by Opus)_
+- **Alan Dunne** Even trend's strong decade (2020-2026) included a period in which many managers came close to their largest drawdown, so good aggregate returns came with deep interim losses.  #mech/risk_management _(added by opus cross-check)_
   > that very strong performance that we've seen from trend has even included a period where you
   indicator: trend manager drawdowns · asset: multi · horizon: years · testable: yes - drawdown history of SG Trend · confidence: medium
   ^MT040-C12-X1
@@ -344,11 +344,11 @@ tags: [source, layer0]
   > really pessimistic on on say trend following and you're going to say it's going to be uh you know a 0.1 sharp a at 12 all I mean that's still a you know that's still a 5% return
   indicator: trend expected return vs cash rate · asset: multi · horizon: years · conditions: Cash rates 3.5-4% · testable: yes · confidence: medium
   ^MT040-C15-5
-- **Alan Dunne** Both GMO and AQR assume real cash returns of about 1.4% (3.5-4% nominal) over the next decade, and AQR uses a baseline net Sharpe of about 0.7 for active strategies, which Alan views as high.  #mech/risk_premium _(added by Opus, time-bound view)_
+- **Alan Dunne** Both GMO and AQR assume real cash returns of about 1.4% (3.5-4% nominal) over the next decade, and AQR uses a baseline net Sharpe of about 0.7 for active strategies, which Alan views as high.  #mech/risk_premium _(added by opus cross-check, time-bound view)_
   > real cash at 1.4% 4% whereas what did AQR have for that? Uh they also had the same.
   indicator: capital market assumptions: real cash rate, active-strategy Sharpe · asset: multi · direction: cash competitive with risk assets · horizon: years · testable: partly - compare forecasts with realised · confidence: medium
   ^MT040-C15-X1
-- **Alan Dunne** GMO's forecasts are negative for US and international large caps but positive for Japanese small caps and international deep value, reflecting its valuation and margin mean-reversion assumptions.  #mech/overshoot _(added by Opus, time-bound view)_
+- **Alan Dunne** GMO's forecasts are negative for US and international large caps but positive for Japanese small caps and international deep value, reflecting its valuation and margin mean-reversion assumptions.  #mech/overshoot _(added by opus cross-check, time-bound view)_
   > international large cap or negative too um Japan small cap or positive international deep value or positive
   indicator: GMO 7-year asset class forecasts · asset: equities · direction: long Japan small cap and intl deep value vs US large cap · horizon: years · conditions: valuation mean reversion holds · testable: yes - realised returns vs forecasts · confidence: medium
   ^MT040-C15-X2
@@ -374,7 +374,7 @@ tags: [source, layer0]
   > Now we're seeing debt sustainability becoming a a new theme, you know, and then at some point does it infect the equity market?
   asset: multi · horizon: months · testable: no · confidence: low
   ^MT040-C16-5
-- **Niels Kaastro Larsen** Unlike 60/40 portfolios, which had about seven distinct 'lost' periods averaging roughly 11 years in GMO's chart, long-standing trend managers have rarely if ever had a 10-year period with no return.  #mech/risk_management _(added by Opus)_
+- **Niels Kaastro Larsen** Unlike 60/40 portfolios, which had about seven distinct 'lost' periods averaging roughly 11 years in GMO's chart, long-standing trend managers have rarely if ever had a 10-year period with no return.  #mech/risk_management _(added by opus cross-check)_
   > most most managers who have been around for a long time, they probably have never really had a 10-year period with no return in their strategy
   indicator: rolling 10-year returns of trend managers vs 60/40 · asset: multi · horizon: years · testable: yes - rolling 10-year returns · confidence: medium
   ^MT040-C16-X1

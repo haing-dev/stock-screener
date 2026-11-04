@@ -6,7 +6,7 @@ channel: "Bloomberg Live"
 url: https://www.youtube.com/watch?v=FSzs-eP5oGw
 words: 3639
 claims: 32
-added_by_opus: 6
+added_by_crosscheck: 6
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Ken Tropin (founder, Graham Capital Management)", "interviewer (Bloomberg Live host, name not given)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** discretionary macro, quant macro, central bank divergence, FX trend
 
-**Opus completeness estimate of first read:** 0.85 - first reader caught all main views and methods; missed the 2022 return data point, the Fed over-tightening counter-view, front-end pricing path, real-rate view and the sterling neutral call
+**Cross-check completeness estimate of first read:** 0.85 - first reader caught all main views and methods; missed the 2022 return data point, the Fed over-tightening counter-view, front-end pricing path, real-rate view and the sterling neutral call
 
 ## Coverage
 
@@ -56,7 +56,7 @@ tags: [source, layer0]
   > markets were less efficient then and so when markets are inefficient there's a lot more to do and there tend to be overshoots and different uh you know uh Market momentum events
   asset: multi · horizon: years · conditions: low-inflation, efficient-market regimes reduce macro opportunity · testable: no - historical narrative · confidence: medium
   ^MT066-C01-5
-- **interviewer** Data point: in the 2022 hiking year some macro managers were up 200% or more and Graham's funds roughly 20-50%, ahead of Bridgewater and Citadel, evidence that a regime of large central-bank moves pays macro strategies.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **interviewer** Data point: in the 2022 hiking year some macro managers were up 200% or more and Graham's funds roughly 20-50%, ahead of Bridgewater and Citadel, evidence that a regime of large central-bank moves pays macro strategies.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > as I understand it your funds are up between 20 and 50 roughly and on the upper end again as many of you may know uh that's better than Bridgewater and it's better than Citadel
   indicator: macro hedge fund returns 2022 (Graham, Bridgewater, Citadel) · asset: multi · direction: macro fund returns high in hiking years · horizon: years · conditions: year of many large central-bank hikes (2022) · testable: yes - macro/CTA index returns vs count of central-bank hikes by year · confidence: medium
   ^MT066-C01-X1
@@ -82,7 +82,7 @@ tags: [source, layer0]
   > I think the Market's expecting the FED to be able to start easing at the end of 2023 I'm skeptical
   indicator: Fed funds futures vs realised inflation · asset: rates · direction: fade pricing of cuts in 2023; stay short duration · horizon: years · testable: no - single dated forecast · confidence: medium
   ^MT066-C02-5
-- **interviewer** The opposing (Siegel) camp in the debate: a Fed trying to regain credibility lost by calling inflation transitory risks over-tightening too fast and causing avoidable economic damage (Tropin sides with the other camp).  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **interviewer** The opposing (Siegel) camp in the debate: a Fed trying to regain credibility lost by calling inflation transitory risks over-tightening too fast and causing avoidable economic damage (Tropin sides with the other camp).  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > does Jay Powell's fed hike too much too fast and wreck the economy in the process because it has to regain the credibility that it lost calling inflation transitory
   indicator: Fed hiking pace vs inflation expectations · asset: rates · direction: over-tightening -> weaker economy · horizon: months · conditions: central bank with damaged credibility · testable: partly - growth outcomes after fast hiking cycles · confidence: low
   ^MT066-C02-X1
@@ -108,7 +108,7 @@ tags: [source, layer0]
   > corrodis tournaments up I think in April of uh 23 so that's going to be an important uh Catalyst to watch do they loosen that band
   indicator: BoJ leadership change; MoF intervention · asset: fx · horizon: months · testable: no - single event · confidence: medium
   ^MT066-C03-5
-- **interviewer** Discretionary macro has two parts: forecasting the economic data and, at least as important, forecasting each central bank's reaction function to that data, which is where cross-country divergences come from.  #mech/policy_reaction _(added by Opus)_
+- **interviewer** Discretionary macro has two parts: forecasting the economic data and, at least as important, forecasting each central bank's reaction function to that data, which is where cross-country divergences come from.  #mech/policy_reaction _(added by opus cross-check)_
   > the other half at the very least of what you do and maybe it's more than half is trying to figure out how central banks will respond right to the data as they come out
   indicator: central-bank reaction function to data releases · asset: multi · horizon: months · testable: partly - model policy-rate surprises conditional on data surprises · confidence: medium
   ^MT066-C03-X1
@@ -134,11 +134,11 @@ tags: [source, layer0]
   > it's been a great year to trade foreign exchange you know there's been a huge move in dollar euro dollar euro was 120 now it's you know 97 or something
   indicator: EURUSD, GBPUSD, USDJPY · asset: fx · direction: long USD · horizon: months · testable: yes - FX trend returns for 2022 · confidence: high
   ^MT066-C04-5
-- **Ken Tropin** View (Oct 2022): the front end prices a policy peak near 4.75% by year-end easing to about 4.25% by mid-2023, while the 10-year sits at 3.95%, leaving the curve inverted; he sees the long end, not the front end, as mispriced.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Ken Tropin** View (Oct 2022): the front end prices a policy peak near 4.75% by year-end easing to about 4.25% by mid-2023, while the 10-year sits at 3.95%, leaving the curve inverted; he sees the long end, not the front end, as mispriced.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > the two-year is sort of pricing in 4-3 now for uh 75 at year end uh and then I think we start to see that ease back down in the middle of 23 to maybe four and a quarter
   indicator: 2-year Treasury / priced policy path vs 10-year yield · asset: rates · direction: front end peaks then eases; 10-year too low · horizon: months · conditions: inflation persisting several years · testable: yes - compare priced path with realised policy rates · confidence: medium
   ^MT066-C04-X1
-- **Ken Tropin** Real rates have risen a lot, as was necessary, and will keep rising, which supports further bond weakness.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Ken Tropin** Real rates have risen a lot, as was necessary, and will keep rising, which supports further bond weakness.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > Rachel rates have moved a lot but they needed to and I think they'll keep moving
   indicator: real interest rates · asset: rates · direction: real rates up; bonds down · horizon: months · conditions: Fed still fighting inflation · testable: yes - subsequent change in TIPS real yields · confidence: medium
   ^MT066-C04-X2
@@ -168,7 +168,7 @@ tags: [source, layer0]
   > if there was ever a year people wanted gold to perform and uh you know be an inflation hedge it's down
   indicator: gold vs inflation · asset: commodities · direction: gold did not hedge inflation; short gold · horizon: months · testable: yes - gold vs inflation shocks · confidence: medium
   ^MT066-C05-6
-- **Ken Tropin** After sterling's large fall (bottom near 1.035), he is neutral: once a trend has already made a big move he sees little remaining edge in pressing it.  #mech/overshoot _(added by Opus, time-bound view)_
+- **Ken Tropin** After sterling's large fall (bottom near 1.035), he is neutral: once a trend has already made a big move he sees little remaining edge in pressing it.  #mech/overshoot _(added by opus cross-check, time-bound view)_
   > I think it's already made a big move so I don't know how much weaker it really gets uh you know I so I would be kind of neutral at these levels personally
   indicator: GBPUSD · asset: fx · direction: neutral sterling · horizon: weeks · conditions: after a large completed move · testable: partly - returns after extreme multi-month currency moves · confidence: low
   ^MT066-C05-X1

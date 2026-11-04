@@ -5,10 +5,10 @@ date: 2025-02-26
 channel: "Top Traders Unplugged"
 url: 
 words: 11139
-claims: 51
-added_by_opus: 0
+claims: 53
+added_by_crosscheck: 2
 corrections: 0
-crosscheck: "pending"
+crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, Top Traders Unplugged)", "Graham Robertson (systematic trend-following manager, AHL)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Systematic Investor 336: Niels and Graham Robertson on early-2025 trend performance, alternative markets, trend design (crossover vs breakout), portable alpha, and long-short quality as a defensive partner. Conclusion: diversification of price drivers drives trend Sharpe; trend and quality hedge different crisis speeds.
 
 **Approach:** trend following, CTA, portable alpha, quality factor, alternative markets
+
+**Cross-check completeness estimate of first read:** 0.96 - first reader was thorough and accurate; missed only the point that trend's bond-hedge evidence rests on few episodes (1970s, 2022) and the concentration of equity trend gains in a few indices
 
 ## Coverage
 
@@ -78,6 +80,10 @@ tags: [source, layer0]
   > you've got very low inventories you've got very cold weather
   indicator: EU gas/power prices, inventories, wind output · asset: commodities · direction: long European natural gas and power · horizon: weeks · testable: partly: inventories and weather are data · confidence: medium
   ^MT111-C03-6
+- **Niels Kaastrup-Larsen** Early-2025 equity trend gains were concentrated in a few indices (DAX, Hang Seng), so equity-sector trend returns depend on a handful of markets rather than broad participation.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
+  > even within equities it's also been I think a little bit concentrated in just a few markets
+  indicator: DAX, Hang Seng trends · asset: equities · direction: long DAX, Hang Seng · horizon: months · testable: partly - attribution of 2025 trend P&L by equity index · confidence: low
+  ^MT111-C03-X1
 
 ### C04
 - **Graham Robertson** OTC and off-exchange markets can be traded at size with some human execution and ISDA arrangements, so low exchange-visible liquidity is not a barrier to adding markets.  #mech/risk_management
@@ -234,6 +240,10 @@ tags: [source, layer0]
   > 2022 showed that that wasn't the case and it's definitely rekindled interest in a dynamic strategy like trendl where you can be sure bonds you can be short equities
   indicator: stock-bond correlation · asset: rates · direction: trend allocation instead of static bonds · horizon: years · conditions: inflation-driven regimes · testable: yes: stock-bond correlation regimes · confidence: high
   ^MT111-C13-3
+- **Graham Robertson** Evidence that trend following protects against bond sell-offs is thin because inflation-driven bond crises are rare (1970s and 2022), unlike the several well-known equity crashes since 2000, so the bond-hedge record needs much longer history to assess.  #mech/research_method _(added by opus cross-check)_
+  > the problem with bonds has always been at least until recent memory you've had to go back and even further time period to see it right you know you need to go back to the 70s to see inflation really taking off
+  indicator: trend returns during bond crises (1970s, 2022) · asset: rates · horizon: years · conditions: inflation-driven bond sell-offs · testable: yes - trend returns in bond drawdown episodes using long histories back to the 1970s · confidence: medium
+  ^MT111-C13-X1
 
 ### C14
 - **Graham Robertson** Trend strategies can be run at any volatility target (5, 10, 20) by scaling a dial; investor preferences differ and asset volatility does not matter.  #mech/risk_management

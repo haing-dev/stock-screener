@@ -1,0 +1,232 @@
+---
+source_id: MT225
+title: "Why the Market Isn’t Moving, And Why That’s Dangerous - Systematic Investor - Ep.389"
+date: 2026-02-28
+channel: "Top Traders Unplugged"
+url: 
+words: 11146
+claims: 38
+added_by_crosscheck: 12
+corrections: 1
+crosscheck: "sonnet-xhigh cross-check"
+speakers: ["Alan Dunne (host, guest-hosting)", "Jim (Chicago, options/volatility specialist)"]
+tags: [source, layer0]
+---
+# Why the Market Isn’t Moving, And Why That’s Dangerous - Systematic Investor - Ep.389
+
+**Speakers:** Alan Dunne (host, guest-hosting); Jim (Chicago, options/volatility specialist)
+
+**Summary:** Top Traders Unplugged episode (Feb 2026). Guest argues index volatility is pinned by options and structured-product volatility selling (vanna/charm flows into opex), forcing single-stock dispersion and rotation, a topping process with a 2022-like market-down vol-down pain trade, plus AI-deflation vs populist inflation, debt monetisation, gold secular bull and re-leveraging collateral liquidity.
+
+**Approach:** options flow, volatility, trend following, macro narrative, dealer positioning
+
+**Cross-check completeness estimate of first read:** 0.82 - the first reader captured the options-pinning, rotation, topping, debt-monetisation, gold and liquidity-collateral arguments; it missed secondary but usable points (energy positioning squeeze, private credit as non-diversifier, UBI path, Japan precedent, known-not-priced, tariff precedent, SLR/stablecoin offsets, market reaction to political risk) and mis-attributed the voting-machine process claim to the host.
+
+## Coverage
+
+| Chunk | Claims | Note |
+|---|---|---|
+| C01 | 2 | intro; Feb 2026 CTA performance; 2022-like view |
+| C02 | 3 | index pinning from options and volatility selling; dispersion and rotation; 2017 evidence |
+| C03 | 3 | topping process, staples/energy rotation, opex growth, vol event windows |
+| C04 | 2 | vanna/charm flows into March opex, staples and software, topping reasons |
+| C05 | 1 | concentration/leverage/illiquidity, private credit, AI narrative question |
+| C06 | 1 | Citrini AI piece, political backlash and friction |
+| C07 | 2 | populism, deflation scares precede inflation, positioning |
+| C08 | 2 | policy response, UBI, debt jubilee |
+| C09 | 1 | debt monetisation timeline, gold secular call |
+| C10 | 2 | gold and vol 2026 view, vol beta cycle, hedging crowding |
+| C11 | 2 | pain trade, geopolitical Iran |
+| C12 | 2 | conflict and valuation pressure, bond vol compression |
+| C13 | 1 | midterm incentives and political discussion |
+| C14 | 0 | political commentary on elections, tariffs analogy; no market method |
+| C15 | 1 | voting vs weighing machine, reflexive process |
+| C16 | 1 | liquidity from collateral, ending |
+
+## Claims
+
+### C01
+- **Alan Dunne (host)** Feb 2026: SG CTA index +2.96% for the month and +7.8% YTD, SG Trend +3.38% and +8.25% YTD, after a strong six months for managed futures.  #mech/slow_reaction _(time-bound view)_
+  > on the month now sockgen CTA index is up 2.96% and sockgen trend index up 3.38% and year to date the sock gen CT index is up 7.8% and the trend index is up 8.25%
+  indicator: SG CTA and SG Trend indices · asset: multi · horizon: months · conditions: Feb 2026 · testable: no - data point · confidence: high
+  ^MT225-C01-1
+- **Jim (Chicago, options/volatility specialist)** 2026 is expected to feel like 2022: when volatility is well supplied, rotation under the index is high and, paired with clear trends, creates opportunity for trend followers.  #mech/cycle_persistence _(time-bound view)_
+  > I think the reality is uh this is going to feel a lot like 22.
+  indicator: dispersion / rotation · asset: multi · direction: long trend following · horizon: months · conditions: 2026 · testable: no - view · confidence: medium
+  ^MT225-C01-2
+
+### C02
+- **Jim (Chicago, options/volatility specialist)** Options, structured products and other forms of volatility selling at the index level (upside and at-the-money) compress implied/realised index volatility and pin the index until a big enough shock releases it.  #mech/liquidity_flows
+  > the indexes themselves are quite pinned
+  indicator: index options / structured product volatility supply · asset: equities · horizon: weeks · conditions: until a surprise shock or move up · testable: partly - positioning data needed · confidence: high
+  ^MT225-C02-1
+- **Jim (Chicago, options/volatility specialist)** Index pinning by dealer hedging forces single-stock volatility up and correlation down, driving massive rotation, because idiosyncratic news must be offset inside a pinned index.  #mech/liquidity_flows
+  > This pinning effect um which is v compressing at the index level and this is the part that's very counterintuitive forces things at the single list level to move away from each other.
+  indicator: single-stock volatility, implied correlation, dispersion · asset: equities · direction: long dispersion · horizon: weeks · conditions: index pinned by dealer long gamma · testable: yes - dispersion vs index vol measurable · confidence: high
+  ^MT225-C02-2
+- **Jim (Chicago, options/volatility specialist)** In 2017 realised index volatility was the lowest in 125 years (by 30%) with correlations the lowest in history (by 25%), marking a structural shift in dispersion driven by growth of options and structured products.  #mech/structural_shift
+  > the lowest realized volatility in history in 125 years of history by 30%. Paired with also the lowest correlations in history by 25%.
+  indicator: realised index volatility and average stock correlation · asset: equities · horizon: years · conditions: since 2017 · testable: yes - historical data · confidence: high
+  ^MT225-C02-3
+- **Jim (Chicago, options/volatility specialist)** Forecast made about four months earlier: through roughly April-May 2026 the S&P would show index-level volatility compression together with massive single-stock rotation, which the speaker says is what happened; used as evidence for the options-pinning framework.  #mech/liquidity_flows _(added by sonnet-xhigh cross-check, time-bound view)_
+  > we called for that about four months ago we said wait the next six months uh till about April May you
+  indicator: index volatility compression and dispersion · asset: equities · direction: index pinned, rotation under the surface · horizon: months · conditions: options and structured-product volatility selling remains supplied · testable: yes - realised index vol and dispersion over the window · confidence: medium
+  ^MT225-C02-X1
+
+### C03
+- **Jim (Chicago, options/volatility specialist)** Sideways chop with pinned index, expanding risk underneath and heavy rotation is a topping process: leaders (the generals) get shot and money flows to defensive, underowned areas (staples +30%, energy).  #mech/cycle_persistence _(time-bound view)_
+  > this is a topping process. Uh that's uh defined by sideways chop.
+  indicator: sector rotation; staples and energy vs leaders · asset: equities · direction: short or avoid leaders; rotate defensives · horizon: months · conditions: topping process, index pinned · testable: partly - sector rotation signals testable · confidence: medium
+  ^MT225-C03-1
+- **Jim (Chicago, options/volatility specialist)** Options and structured-product flows grow exponentially like a technology tipping point (network effects, demand for non-correlation and capital efficiency), so each expiry matters more, especially quarterly opex (Mar/Jun/Sep/Dec).  #mech/liquidity_flows
+  > almost every opex is the biggest in history. The growth of structured products and the growth of options flows is not uh is secular
+  indicator: opex calendar; options open interest · asset: equities · horizon: weeks · conditions: quarterly opex · testable: yes - flow around opex dates · confidence: high
+  ^MT225-C03-2
+- **Jim (Chicago, options/volatility specialist)** Volatility events historically cluster in the Feb-March and August-September windows when option selling supply lapses.  #mech/seasonality
+  > historically we've seen tons of VA events when the VA events happen like in that Feb to March window in that August to seep uh window
+  indicator: VIX events by calendar window · asset: equities · horizon: months · conditions: Feb-Mar and Aug-Sep windows · testable: yes - seasonality tests · confidence: medium
+  ^MT225-C03-3
+- **Jim (Chicago, options/volatility specialist)** Energy's rally mixed idiosyncratic Middle East news with extreme short and underowned positioning at the start of the year, so a small positive catalyst produced a large squeeze; in a pinned index, strength in underowned areas is the counterweight to weakness in the former leaders.  #mech/crowding_positioning _(added by sonnet-xhigh cross-check, time-bound view)_
+  > that's been dramatically shorted underowned early in the year.
+  indicator: sector positioning (short interest / ownership) in energy · asset: equities · direction: long underowned, heavily shorted sectors on positive news · horizon: months · conditions: index pinned, leadership under pressure · testable: partly - positioning data and subsequent sector returns testable · confidence: medium
+  ^MT225-C03-X1
+
+### C04
+- **Jim (Chicago, options/volatility specialist)** When dealers are long gamma/short stock hedges and the left tail is not activated, hedges must be bought back as time and vol decay (vanna and charm flows), giving sell-off-then-buy-back behaviour and support into March opex; after opex these flows drop off, so late March-April is more cautious with a stair-step down expected.  #mech/liquidity_flows _(time-bound view)_
+  > Those are those VA and charm flows that we talk about.
+  indicator: vanna and charm dealer flows; opex dates · asset: equities · direction: supportive into March opex, cautious after · horizon: weeks · conditions: Feb 2026, compressed vol · testable: partly - dealer positioning estimated · confidence: medium
+  ^MT225-C04-1
+- **Jim (Chicago, options/volatility specialist)** Rotation into consumer staples (+30%) signals weakness because that sector has no growth or multiple expansion to drive a capex cycle, limiting how far it can go.  #mech/behavioral _(time-bound view)_
+  > Consumer staples are up 30%. There's a reason markets when they rotate this way are are seen as weak.
+  indicator: consumer staples relative performance · asset: equities · horizon: months · testable: partly - market breadth signal · confidence: medium
+  ^MT225-C04-2
+
+### C05
+- **Jim (Chicago, options/volatility specialist)** Risk in a placid, pinned market emerges through concentration, illiquidity and leverage (like LTCM); software down 50% shows dead-cat bounces because stuck holders need to exit, with private equity and private credit a canary in the coal mine.  #mech/crowding_positioning _(time-bound view)_
+  > Again, concentration, illi liquidity, and leverage always is the reason that things go from a placid uh state to something bigger.
+  indicator: concentration, leverage, liquidity in software and private credit · asset: equities · horizon: months · testable: partly - positioning data · confidence: medium
+  ^MT225-C05-1
+- **Alan Dunne (host)** Private credit is not a diversifier simply because it is private; much of its exposure is to software, so the weakness in software and the AI disruption narrative feed through to private credit.  #mech/risk_premium _(added by sonnet-xhigh cross-check, time-bound view)_
+  > just because you put a label of private on it, it doesn't mean it's diversifying
+  indicator: private credit exposure to software · asset: credit · horizon: months · conditions: private labelling reduces mark-to-market volatility but not economic exposure · testable: partly - sector exposure and marks of private credit funds checkable · confidence: medium
+  ^MT225-C05-X1
+- **Jim (Chicago, options/volatility specialist)** Software, down about 50% and incredibly cheap, will not bounce quickly because holders are stuck and need to exit, but the speaker is very bullish on a six-to-nine-month view.  #mech/overshoot _(added by sonnet-xhigh cross-check, time-bound view)_
+  > I actually am very bullish of software come six months from now.
+  indicator: software sector price after 50% decline · asset: equities · direction: software up in 6-9 months after the overhang clears · horizon: months · conditions: stuck institutional holders exit first · testable: yes - software sector return in the following 6-9 months · confidence: medium
+  ^MT225-C05-X2
+
+### C06
+- **Jim (Chicago, options/volatility specialist)** AI disruption narrative (Citrini piece) is underpriced for political backlash, friction in corporate adoption and regulatory catch-up, and assumes no global conflict, commodity shortages or liquidity stress; technology adoption is slower than expected historically.  #mech/structural_shift _(time-bound view)_
+  > there is a political consequence to this that everyone is ignoring.
+  indicator: AI adoption · asset: equities · horizon: years · testable: no - qualitative · confidence: medium
+  ^MT225-C06-1
+
+### C07
+- **Jim (Chicago, options/volatility specialist)** The market has turned deflationary three times in six years, each time before a more inflationary push, because populism (demographics, K-shaped economy) drives a structurally higher interest-rate regime; AI is a catalyst for a political response, as Covid's brief disinflation preceded inflation.  #mech/policy_reaction _(time-bound view)_
+  > This is now the third time in six years that the world has turned deflationary again. And every single time was right before a more inflationary push.
+  indicator: long-end yields, deflation positioning · asset: rates · direction: bet on structurally higher long-end rates after deflation scares · horizon: years · testable: partly · confidence: medium
+  ^MT225-C07-1
+- **Jim (Chicago, options/volatility specialist)** Institutional equity positioning was at the zero percentile in June 2025, rose to about the 50th and back to the 40th by Feb 2026; low positioning allows markets to recover, and drawdowns generate policy responses.  #mech/crowding_positioning _(time-bound view)_
+  > institutions were at the zero percentile last June and then guess what now they're back at the you know they got up to the 50th and now make back down to the 40th
+  indicator: institutional equity positioning percentile · asset: equities · horizon: months · conditions: Feb 2026 · testable: yes - positioning percentile data · confidence: medium
+  ^MT225-C07-2
+- **Alan Dunne (host)** The AI-deflation scenario in the Citrini report ignores policy reaction (what the Fed would do and fiscal responses); the host expects the Fed to cut on disinflation (Warsh's argument that AI makes everything cheaper) and sees fiscal policy responding, so deflation scares tend to be answered by easier policy.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > when I read the Catrini report, uh, one thing that is notable is that it doesn't discuss any policy reaction at all.
+  indicator: Fed reaction to AI-driven disinflation · asset: rates · direction: easier Fed and fiscal policy after deflation scare · horizon: months · testable: no - scenario critique · confidence: medium
+  ^MT225-C07-X1
+
+### C08
+- **Jim (Chicago, options/volatility specialist)** Rising unsustainable US debt, refinancing needs and slowing issuance point to Fed-Treasury coordination and debt monetisation (a 'debt jubilee') within about 3 years, possibly triggered by an AI/crisis event, and he argues it would be dollar-strengthening rather than weakening.  #mech/fiscal_debt _(time-bound view)_
+  > the Fed and the Treasury are now on the verge of shaking hands and become becoming uh you know not independent. Uh and there is a debt jubilee coming.
+  indicator: US debt, Fed purchases · asset: rates · horizon: years · testable: no - prediction · confidence: low
+  ^MT225-C08-1
+- **Alan Dunne (host)** Economic view: productivity gains from a technology raise the neutral rate via capex, so cutting rates on disinflation would be a mistake (Greenspan new paradigm of the 1990s).  #mech/policy_reaction
+  > higher productivity means a higher neutral rate
+  indicator: neutral rate · asset: rates · horizon: years · conditions: AI productivity boom · testable: partly - debated · confidence: medium
+  ^MT225-C08-2
+- **Jim (Chicago, options/volatility specialist)** Because AI disruption hits the cohorts already under strain and populism is demographically rising, the political response is universal basic income and large transfers to the bottom of the distribution, which turns the AI deflation scare into a fiscal, inflationary impulse.  #mech/fiscal_debt _(added by sonnet-xhigh cross-check, time-bound view)_
+  > what this means is we're heading to UBI and that we're heading to people uh getting big checks at the bottom
+  asset: multi · direction: higher inflation and rates after AI deflation scare · horizon: years · conditions: populist political pressure · testable: no - political forecast · confidence: low
+  ^MT225-C08-X1
+
+### C09
+- **Jim (Chicago, options/volatility specialist)** Gold is the best-performing and most volatile asset over 15-20 years (secular call), best played with out-of-the-money upside calls that benefit from vol-up/market-up and convexity; early in such moves volatility is right-tail, later two-sided as speculation rises.  #mech/risk_premium _(time-bound view)_
+  > the best performing asset over the next 20 years and I said this again five years ago four years ago would be gold
+  indicator: gold, out-of-the-money calls · asset: commodities · direction: long gold via OTM calls · horizon: years · conditions: secular, about 5 years in · testable: partly - single asset call · confidence: high
+  ^MT225-C09-1
+- **Jim (Chicago, options/volatility specialist)** Japan is the precedent for debt monetisation: its debt was absorbed over about 30 years with support from the US Fed, leaving little external debt, and the speaker expects a similar path in the US (Fed-Treasury coordination), so it should not be a shock.  #mech/fiscal_debt _(added by sonnet-xhigh cross-check, time-bound view)_
+  > We saw this by the way in Japan. And I don't know why uh we're going to be shocked that this is going to happen here.
+  indicator: central bank debt monetisation (Japan precedent) · asset: rates · horizon: years · testable: partly - Japan's debt and BoJ balance sheet history checkable · confidence: medium
+  ^MT225-C09-X1
+
+### C10
+- **Jim (Chicago, options/volatility specialist)** 2026 expected to be a 2022-type year with market down and vol down, precious metals pulled into a beta-1 sell-off for about six months, then convex upside later in the year.  #mech/cycle_persistence _(time-bound view)_
+  > I see this year as much more of a 22 type year market down V down before a reversal later in the year.
+  indicator: equities, VIX, gold · asset: multi · direction: short equities/precious metals near-term, buy convexity later · horizon: months · conditions: 2026 · testable: no - prediction · confidence: medium
+  ^MT225-C10-1
+- **Jim (Chicago, options/volatility specialist)** Volatility beta to markets is cyclical: when people are hedged, markets do not fall fast, when unhedged they fall fast, so the volatility reaction to downside moves follows a sine curve since 2015 with reflexive gamma effects.  #mech/crowding_positioning
+  > V data to markets is cyclical.
+  indicator: vol reaction to downside moves; hedge positioning · asset: equities · horizon: years · testable: yes - rolling vol beta · confidence: medium
+  ^MT225-C10-2
+- **Jim (Chicago, options/volatility specialist)** Position structure for a secular asset with a bumpy path: keep a structural long in precious metals (never short them) and trade around it with options volatility, adding convex upside only after the expected near-term beta-1 sell-off.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > I'm always going to be long some structural amount and trading around it and particularly with V.
+  indicator: precious metals structural long plus volatility overlay · asset: commodities · direction: long gold with options overlay · horizon: years · conditions: secular bull, volatile path · testable: no - implementation style · confidence: medium
+  ^MT225-C10-X1
+
+### C11
+- **Jim (Chicago, options/volatility specialist)** After 2022 market-down vol-down hurt hedgers, vol sellers prospered in 2023-25; now everyone is hedged with puts, so the pain trade is market down, vol down, precious metals down - the highest-probability outcome by this logic.  #mech/crowding_positioning _(time-bound view)_
+  > the pain trade is what happens when the market goes down. What is the most painful thing to the most number of people?
+  indicator: consensus hedging, pain trade · asset: multi · horizon: months · conditions: Feb 2026 · testable: no - judgment · confidence: medium
+  ^MT225-C11-1
+- **Jim (Chicago, options/volatility specialist)** Markets are a voting machine in the short term and a weighing machine in the long term; macro and geopolitics (Iran) matter through flow of capital and oil, but are largely known and priced for the near term.  #mech/behavioral
+  > are a voting machine and so a lot of what we're talking about the macro matters
+  asset: multi · testable: no · confidence: medium
+  ^MT225-C11-2
+
+### C12
+- **Jim (Chicago, options/volatility specialist)** Rising global conflict (Iran, Venezuela, Taiwan as proxy wars), US external and internal upheaval and AI disruption at record valuations build pressure; the likeliest path is slow controlled demolition (market down, vol down) that triggers a policy response.  #mech/fiscal_debt _(time-bound view)_
+  > pair this global increase in global conflict which is only accelerating from here
+  asset: multi · horizon: years · conditions: record valuations · testable: no - narrative · confidence: medium
+  ^MT225-C12-1
+- **Jim (Chicago, options/volatility specialist)** Fixed income yields trapped in a range for 3.5 years signal compressed volatility under building pressure; play for a large release of bond volatility roughly 6+ months out while staying short vol in the near term.  #mech/cycle_persistence _(time-bound view)_
+  > just because two tectonic plates are pushing strong enough against each other that something doesn't move doesn't mean it's safe.
+  indicator: bond volatility · asset: rates · direction: long bond vol later; short vol near-term · horizon: months · testable: partly · confidence: medium
+  ^MT225-C12-2
+- **Jim (Chicago, options/volatility specialist)** Known risks are not priced just because they are known: COVID was known in December but only mattered to markets in late February, so Iran, global conflict, US internal upheaval and AI disruption can still hit prices as pressure builds even though they are discussed.  #mech/behavioral _(added by sonnet-xhigh cross-check, time-bound view)_
+  > we knew co was happening in December uh you know the narrative of it being important uh didn't matter till until late February
+  indicator: known-risk pricing lag · asset: equities · direction: downside once a known risk becomes the narrative · horizon: weeks · conditions: building pressure at record valuations · testable: partly - event studies of known-risk delay · confidence: medium
+  ^MT225-C12-X1
+
+### C13
+- **Jim (Chicago, options/volatility specialist)** Political outcomes can be modelled from incentives: politicians act to stay in power, so ahead of the midterms the administration is expected to accelerate control over elections, economy and markets.  #mech/behavioral _(time-bound view)_
+  > you have to understand incentives. there's a structural flows and the supply and demand but then there is for the things that we don't know that are more human
+  asset: multi · horizon: months · conditions: 2026 midterms · testable: no - political judgment · confidence: low
+  ^MT225-C13-1
+
+### C14
+- **Jim (Chicago, options/volatility specialist)** Policy by fait accompli: actions later found illegal (the tariffs) still shaped the economy and markets for a year and a half because the courts respond slowly, so the speaker treats a flood of fast, hard measures (including election controls before the midterms) as having real market effects regardless of legality.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > if you do enough things uh in enough ways and you do them fast and hard enough, it overwhelms the system and you get what you want anyway
+  indicator: policy execution risk (tariffs precedent) · asset: multi · horizon: months · conditions: court response lags policy implementation · testable: no - political judgement · confidence: medium
+  ^MT225-C14-X1
+
+### C15
+- **Alan Dunne (host)** Start with the market as the voting machine: model what flows do first, then see how that affects long-term macro outcomes; do not draw a linear line from news to markets, since markets are the largest driver of liquidity.  #mech/liquidity_flows
+  > in the short term, markets are voting machine. In the long term, they're a weighing machine.
+  indicator: market level as liquidity driver · asset: equities · horizon: months · testable: no · confidence: medium
+  **Correction (cross-check):** Wrong speaker: the host (Alan) only states the maxim ('in the short term, markets are voting machine, in the long term a weighing machine') and that these things bend market reality eventually; the instruction to start from the market as voting machine, model flows first, and not draw a linear line from news to markets, and that markets are the biggest driver of liquidity, is Jim's reply ('that eventually can happen in five years, Alan'). → Jim (replying to Alan): do not draw a linear line from news to markets; start with the market as voting machine, put in the flow ingredients to model what happens in the short term, and then see how that affects long-term macro outcomes, because markets are the biggest driver of liquidity and the eventual weighing-machine effect can take five years. Alan only states the voting machine / weighing machine contrast.
+  ^MT225-C15-1
+- **Alan Dunne (host)** Markets have not reacted adversely to institutional and election-control moves (honestly never really have), but the guest argues the effect comes eventually through the weighing machine and may take years, and only after reflexive effects have played out.  #mech/policy_reaction _(added by sonnet-xhigh cross-check)_
+  > historically you might have expected an adverse reaction to something like that but it hasn't necessarily been the case with a whole range of kind of honestly it never really has been
+  indicator: market reaction to institutional risk · asset: equities · direction: delayed or no reaction in the short run · horizon: years · conditions: short run = voting machine, long run = weighing machine · testable: partly - event studies of political shocks · confidence: medium
+  ^MT225-C15-X1
+
+### C16
+- **Jim (Chicago, options/volatility specialist)** Rising asset prices create collateral that can be re-leveraged (a 20% rise on $500tn of assets yields $100tn) which dwarfs central bank liquidity; if markets stop rising, this reflexive counterbalance disappears, and issuance limits, debt refinancing after the 2021 rate bottom and soft QE slowing draw liquidity, leading to decollateralisation risk.  #mech/liquidity_flows _(time-bound view)_
+  > $500 trillion along assets they go up uh 20% you know uh you know that's a hundred trillion dollars of new collateral that then can be leveraged for new
+  indicator: asset price level as collateral; refinancing wall; short-end issuance · asset: multi · horizon: months · conditions: when market stops making new highs · testable: partly - collateral estimate rough · confidence: medium
+  ^MT225-C16-1
+- **Jim (Chicago, options/volatility specialist)** The administration offsets structural liquidity draws (refinancing of debt after the 2021 rate bottom, limits to short-end issuance and soft QE) with measures such as changes to the supplementary leverage ratio and the stablecoin act, but these only work if markets keep rising, otherwise the system gives out under its own weight.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > the administration is trying to do things like the SLR ratios and the stable coin acts etc to try and counterweight that.
+  indicator: SLR rules, stablecoin demand for Treasuries, refinancing wall · asset: rates · horizon: months · conditions: needs rising markets to generate collateral · testable: partly - Treasury demand from banks and stablecoin issuers measurable · confidence: medium
+  ^MT225-C16-X1
+

@@ -6,7 +6,7 @@ channel: "Steve Eisman"
 url: https://www.youtube.com/watch?v=PUiD8NpknW8
 words: 8342
 claims: 46
-added_by_opus: 5
+added_by_crosscheck: 5
 corrections: 0
 crosscheck: "opus blind read (pilot)"
 speakers: ["Steve Eisman (host, The Real Eisman Playbook)", "Krishna Guha (Evercore ISI, Fed watcher)"]
@@ -52,7 +52,7 @@ tags: [source, layer0]
   > the fact that the labor market, the jobs market is in pretty good shape is telling you that maybe it's a good time to take out some insurance on the inflation side.
   indicator: Labor market strength · asset: rates · direction: Fed hikes · horizon: months · conditions: Labor market in good shape; inflation data improving · testable: partly - can test hikes when unemployment is low versus later growth · confidence: medium
   ^MT004-C01-3
-- **Krishna Guha** The current oil price shock is not expected to create a lasting inflation impulse (no second-round effects seen yet).  #mech/cycle_persistence _(added by Opus, time-bound view)_
+- **Krishna Guha** The current oil price shock is not expected to create a lasting inflation impulse (no second-round effects seen yet).  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
   > I don't see any evidence that oil is going to create some kind of lasting inflation impulse.
   indicator: oil prices vs core inflation · asset: multi · direction: core inflation not lifted persistently by oil · horizon: months · conditions: absent second-round effects in wages/expectations · testable: yes - oil shocks vs subsequent core inflation persistence · confidence: medium
   ^MT004-C01-3b
@@ -70,7 +70,7 @@ tags: [source, layer0]
   > quantitative easing did absolutely nothing to help the actual economy, but inflated asset prices
   indicator: Fed balance sheet · asset: equities · direction: asset prices up · horizon: years · testable: partly - disputed in the same conversation · confidence: high
   ^MT004-C02-3
-- **Krishna Guha** The Fed balance sheet is about $6.5-7 trillion, down from about $9 trillion at the peak, after QE grew it from roughly nothing pre-2008.  #mech/liquidity_flows _(added by Opus, time-bound view)_
+- **Krishna Guha** The Fed balance sheet is about $6.5-7 trillion, down from about $9 trillion at the peak, after QE grew it from roughly nothing pre-2008.  #mech/liquidity_flows _(added by opus cross-check, time-bound view)_
   > Down from about 9 trillion at the peak.
   indicator: Fed balance sheet size · asset: rates · direction: balance sheet shrinking · horizon: years · testable: yes - H.4.1 data · confidence: high
   ^MT004-C02-4b
@@ -124,7 +124,7 @@ tags: [source, layer0]
   > policy also works better when the markets in particular and also the public understand what the central bank's trying to do
   indicator: Fed communication; reaction function · asset: rates · horizon: years · conditions: Normal times and stress alike · testable: partly - guidance regimes compared in event studies · confidence: medium
   ^MT004-C05-1
-- **Krishna Guha** Over about 30 years since early Greenspan the Fed steadily moved to more forward guidance and strategy communication, so communication regimes differ across eras.  #mech/research_method _(added by Opus)_
+- **Krishna Guha** Over about 30 years since early Greenspan the Fed steadily moved to more forward guidance and strategy communication, so communication regimes differ across eras.  #mech/research_method _(added by opus cross-check)_
   > So the Fed over the last 30 years or so, if we go back from the early Greenspan era, has steadily moved in the direction of doing more of both, right?
   indicator: Fed communication regime by era · asset: rates · horizon: years · testable: partly - regime dating for split-sample tests · confidence: high
   ^MT004-C05-2b
@@ -138,7 +138,7 @@ tags: [source, layer0]
   > Worshes removed those guard rails and that has contributed in my view to rates markets
   indicator: Fed communication versus bond volatility · asset: rates · direction: yield volatility up; long yields up · horizon: weeks · conditions: When fundamentals are already shifting · testable: partly - rates volatility around communication changes · confidence: medium
   ^MT004-C06-2
-- **Krishna Guha** The Fed statement's easing/tightening bias (first forward guidance, late Greenspan) signaled whether the next move was more likely a hike or a cut.  #mech/policy_reaction _(added by Opus)_
+- **Krishna Guha** The Fed statement's easing/tightening bias (first forward guidance, late Greenspan) signaled whether the next move was more likely a hike or a cut.  #mech/policy_reaction _(added by opus cross-check)_
   > It was Greenspan who introduced what was called an easing bias or a tightening bias in the Fed statement.
   indicator: FOMC statement easing/tightening bias · asset: rates · direction: next policy move in bias direction · horizon: months · testable: yes - statement bias vs subsequent rate changes · confidence: high
   ^MT004-C06-1b
@@ -200,7 +200,7 @@ tags: [source, layer0]
   > whether the stock market can withstand, you know, 10-year yields in this zip code because if the stock market sells off, then you have a wealth problem
   indicator: S&P 500 versus 10-year yield; wealth effect on consumption · asset: equities · direction: stocks down then consumption down · horizon: months · conditions: Consumer already squeezed by wages and gasoline · testable: partly - wealth effect elasticities estimated · confidence: medium
   ^MT004-C09-5
-- **Krishna Guha** At current 10-year yields around 5%+, AI stock price gains may start to come under pressure.  #mech/new _(added by Opus, time-bound view)_
+- **Krishna Guha** At current 10-year yields around 5%+, AI stock price gains may start to come under pressure.  #mech/new _(added by opus cross-check, time-bound view)_
   > we might be entering into territory where the AI stock price gains start to come under pressure
   indicator: 10-year yield vs AI equities · asset: equities · direction: AI stocks down as yields rise · horizon: weeks · conditions: 10y around 5%+ · testable: yes - AI equity returns vs yield changes · confidence: low
   ^MT004-C09-3b

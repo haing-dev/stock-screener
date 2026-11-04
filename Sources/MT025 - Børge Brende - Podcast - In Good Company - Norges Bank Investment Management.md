@@ -6,7 +6,7 @@ channel: "Norges Bank Investment Management"
 url: https://www.youtube.com/watch?v=R-ul-WN1zRU
 words: 6998
 claims: 33
-added_by_opus: 7
+added_by_crosscheck: 7
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Børge Brende (president and CEO, World Economic Forum)", "Nicolai Tangen (CEO, Norges Bank Investment Management, interviewer)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** geopolitics, global growth, AI, energy transition, sovereign debt, macro outlook
 
-**Opus completeness estimate of first read:** 0.85 - interview has few systematic claims and the first reader got the macro ones; misses were supporting numbers (US share of GDP, debt since Napoleonic wars, corruption, energy access, China unicorns) and China policy pivot.
+**Cross-check completeness estimate of first read:** 0.85 - interview has few systematic claims and the first reader got the macro ones; misses were supporting numbers (US share of GDP, debt since Napoleonic wars, corruption, energy access, China unicorns) and China policy pivot.
 
 ## Coverage
 
@@ -97,7 +97,7 @@ tags: [source, layer0]
   > it's gone down from 20% of their export in 2013 to now I think is
   indicator: China export share to US · asset: multi · horizon: years · testable: yes - trade data · confidence: high
   ^MT025-C03-5
-- **Børge Brende** The US economy will stay vibrant despite policy noise because of its structural weight: about 27% of world GDP with 5% of world population, almost half of global military power, and most of the big innovative companies.  #mech/structural_shift _(added by Opus)_
+- **Børge Brende** The US economy will stay vibrant despite policy noise because of its structural weight: about 27% of world GDP with 5% of world population, almost half of global military power, and most of the big innovative companies.  #mech/structural_shift _(added by opus cross-check)_
   > the US is like 27% of the global economy with 5% of the global population they have almost 50% of the global military power
   indicator: US share of world GDP and population · asset: equities · direction: US growth stays solid · horizon: years · testable: partly - shares are measurable but the link to future growth is a judgement · confidence: medium
   ^MT025-C03-X1
@@ -107,11 +107,11 @@ tags: [source, layer0]
   > we see that the demand has peaked we also know that the property prices. There is also a shrinking of the workforce
   indicator: China demand, property, demographics · asset: multi · horizon: years · testable: yes · confidence: medium
   ^MT025-C04-1
-- **Børge Brende** Some governments are more indebted than at any time since the Napoleonic wars while the private sector still has plenty of capital to invest, so solving big challenges needs private capital working with governments.  #mech/fiscal_debt _(added by Opus)_
+- **Børge Brende** Some governments are more indebted than at any time since the Napoleonic wars while the private sector still has plenty of capital to invest, so solving big challenges needs private capital working with governments.  #mech/fiscal_debt _(added by opus cross-check)_
   > some countries are more indeped at any time since the Napoleonic war
   indicator: government debt-to-GDP (long history) · asset: multi · horizon: years · testable: partly - historical debt/GDP series exist; policy conclusion is not testable · confidence: medium
   ^MT025-C04-X2
-- **Børge Brende** China is responding to its structural challenges by changing policy toward entrepreneurs, startups and tech companies, a shift noticed by the business community.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Børge Brende** China is responding to its structural challenges by changing policy toward entrepreneurs, startups and tech companies, a shift noticed by the business community.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > they um are making uh changes now for example in um the community for entrepreneurs and also startups and tech companies
   asset: equities · direction: more supportive of China private tech · horizon: years · testable: partly - China tech equity performance and private investment after policy changes · confidence: medium
   ^MT025-C04-X3
@@ -127,7 +127,7 @@ tags: [source, layer0]
   > having the leading global companies using their purchasing power to green their supply chain saying that for example Apple says that 25% of their aluminium needs to be green
   indicator: green aluminium demand · asset: commodities · horizon: years · testable: no - anecdote · confidence: medium
   ^MT025-C07-1
-- **Børge Brende** Corruption costs trillions of dollars a year that would otherwise be invested productively; a WEF coalition of about 100 companies goes beyond national law on anti-corruption and transparency.  #mech/structural_shift _(added by Opus)_
+- **Børge Brende** Corruption costs trillions of dollars a year that would otherwise be invested productively; a WEF coalition of about 100 companies goes beyond national law on anti-corruption and transparency.  #mech/structural_shift _(added by opus cross-check)_
   > we are losing trillions of US dollars every year in corruption uh that should have been invested differently
   indicator: global cost of corruption · asset: other · horizon: years · testable: no - estimate not sourced · confidence: medium
   ^MT025-C07-X4
@@ -153,11 +153,11 @@ tags: [source, layer0]
   > if you increase productivity ity you can also increase prosperity but it also creates some fair of course fair for jobs
   indicator: AI and employment · asset: multi · horizon: years · testable: partly - historical analogy · confidence: medium
   ^MT025-C08-5
-- **Børge Brende** Climate policy must be balanced with energy access and security (a triangle): about 700 million people still lack electricity, so energy supply must grow while growth is decoupled from CO2 emissions.  #mech/structural_shift _(added by Opus)_
+- **Børge Brende** Climate policy must be balanced with energy access and security (a triangle): about 700 million people still lack electricity, so energy supply must grow while growth is decoupled from CO2 emissions.  #mech/structural_shift _(added by opus cross-check)_
   > There's still like 700 million people on our planet that don't even have access to electricity
   indicator: population without electricity · asset: commodities · direction: global energy demand up · horizon: years · testable: partly - energy demand growth is measurable · confidence: high
   ^MT025-C08-X5
-- **Børge Brende** Brende expects the largest AI-driven changes in medicine and synthetic biology, with many breakthroughs ahead.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Børge Brende** Brende expects the largest AI-driven changes in medicine and synthetic biology, with many breakthroughs ahead.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > where I expecting big big changes is in medicine the synthetic biology there's going to be so many breakthroughs
   asset: equities · horizon: years · testable: no - open-ended forecast · confidence: medium
   ^MT025-C08-X6
@@ -183,7 +183,7 @@ tags: [source, layer0]
   > there is the jury is out uh if you need the huge trillion dollars u of investments
   indicator: AI capex needs · asset: equities · horizon: years · testable: no · confidence: low
   ^MT025-C09-5
-- **Børge Brende** China has about 130 unicorns with roughly 10 added each quarter, and its growth now comes mainly from services and digital trade, showing new-technology opportunities beyond the US.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Børge Brende** China has about 130 unicorns with roughly 10 added each quarter, and its growth now comes mainly from services and digital trade, showing new-technology opportunities beyond the US.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > there is like 130 uh unicorns uh in China and it is like 10 or something adding almost um on a quarterly uh basis
   indicator: number of Chinese unicorns · asset: equities · horizon: years · testable: partly - unicorn counts are tracked by data providers · confidence: low
   ^MT025-C09-X7

@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 8575
 claims: 45
-added_by_opus: 4
+added_by_crosscheck: 4
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Doug King (founder, Merchant Commodity Fund; former Cargill head of petroleum trading)", "Moritz Seibert (host, Open Interest; caption 'Morett Sebert')"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** discretionary commodities, fundamental, volatility targeting, basis, risk control
 
-**Opus completeness estimate of first read:** 0.92 - first reader captured nearly all of King's methods, risk process, trades and numbers; missed a few secondary points (hedger margin-call risk, LNG decoupling, exchange bail-out, pod-shop leash) and merged two speakers in one claim.
+**Cross-check completeness estimate of first read:** 0.92 - first reader captured nearly all of King's methods, risk process, trades and numbers; missed a few secondary points (hedger margin-call risk, LNG decoupling, exchange bail-out, pod-shop leash) and merged two speakers in one claim.
 
 ## Coverage
 
@@ -91,7 +91,7 @@ tags: [source, layer0]
   > all these passive index you know funds petting their wares and you know it's like really that's how you lose all your money
   indicator: static roll commodity ETFs (USO, UNG) · asset: commodities · direction: Passive commodity long loses · horizon: years · conditions: static roll into contango · testable: yes - ETF history · confidence: high
   ^MT043-C04-5
-- **Moritz Seibert** Regional gas prices can decouple: US Henry Hub stayed quiet while LNG prices rose because the Ukraine war made Europe compete with China for cargoes.  #mech/structural_shift _(added by Opus)_
+- **Moritz Seibert** Regional gas prices can decouple: US Henry Hub stayed quiet while LNG prices rose because the Ukraine war made Europe compete with China for cargoes.  #mech/structural_shift _(added by opus cross-check)_
   > you have Henry up really not much happening then LG because of the Ukraine war and you know Europe needing that gas competing with competing with China for it um driving up the price
   indicator: Henry Hub vs LNG prices · asset: commodities · direction: LNG up relative to Henry Hub · horizon: months · conditions: European supply shock with competing Asian demand · testable: yes - Henry Hub vs TTF/JKM spread history · confidence: medium
   ^MT043-C04-X1
@@ -148,9 +148,9 @@ tags: [source, layer0]
 - **Moritz Seibert** Exchange margin hikes (ICE cocoa) force shorts to cover, which squeezes prices; long-standing cotton hedgers were also wiped out by margin calls.  #mech/liquidity_flows
   > if you had a short position and it's now costing you 20% more to hold on the exchange um some let it go the next day and that just squeezes the market even higher
   indicator: exchange margin requirements · asset: commodities · direction: Price up on forced covering · horizon: days · conditions: after margin increases · testable: yes - margin change dates · confidence: medium
-  **Correction (Opus):** Merges two speakers: the ICE cocoa margin-hike squeeze is Seibert's point, while the cotton merchants wiped out by margin calls is King's story (added separately as MT043-C07-X1). → Seibert: when ICE raised cocoa margin requirements near the highs, shorts facing a ~20% higher holding cost covered the next day, squeezing the price higher.
+  **Correction (cross-check):** Merges two speakers: the ICE cocoa margin-hike squeeze is Seibert's point, while the cotton merchants wiped out by margin calls is King's story (added separately as MT043-C07-X1). → Seibert: when ICE raised cocoa margin requirements near the highs, shorts facing a ~20% higher holding cost covered the next day, squeezing the price higher.
   ^MT043-C07-4
-- **Doug King** Physical merchants who buy the commodity and hedge with short futures can be destroyed by margin calls in a futures short squeeze even though their book is hedged, as happened to a 130-year-old cotton merchant.  #mech/liquidity_flows _(added by Opus)_
+- **Doug King** Physical merchants who buy the commodity and hedge with short futures can be destroyed by margin calls in a futures short squeeze even though their book is hedged, as happened to a 130-year-old cotton merchant.  #mech/liquidity_flows _(added by opus cross-check)_
   > they're buying physical and they're hedging futures until they can unwind it the other way. um and they are driven into huge margin core futures short explosions that end the business of a 130year merchant
   indicator: futures margin calls on hedgers' short positions · asset: commodities · direction: squeeze pushes futures up and forces hedgers out · horizon: days · conditions: sharp futures spikes with rising margin requirements · testable: partly - squeeze episodes vs commercial short positioning (COT) · confidence: high
   ^MT043-C07-X1
@@ -208,7 +208,7 @@ tags: [source, layer0]
   > credit exposure to a lot of countries where we were shipping product was high
   indicator: wholesale margins · asset: commodities · horizon: years · conditions: low-price years 2014-2017 · testable: no · confidence: medium
   ^MT043-C10-2
-- **Moritz Seibert** When an exchange cancels trades in a squeeze (LME nickel 2022), the stated reason is protecting the clearing house, but the effect is to bail out the distressed side at the expense of those who traded.  #mech/new _(added by Opus)_
+- **Moritz Seibert** When an exchange cancels trades in a squeeze (LME nickel 2022), the stated reason is protecting the clearing house, but the effect is to bail out the distressed side at the expense of those who traded.  #mech/new _(added by opus cross-check)_
   > you could also see this [L380] that they bailed somebody else out who had the other positions
   indicator: exchange trade cancellations / rule changes in squeezes · asset: commodities · horizon: days · conditions: extreme squeezes threatening clearing members · testable: no - few episodes · confidence: medium
   ^MT043-C10-X1
@@ -240,7 +240,7 @@ tags: [source, layer0]
   > you have to derisk and then you have to re-risk and then you have to derisk
   asset: commodities · horizon: days · conditions: macro-driven risk-off · testable: yes · confidence: high
   ^MT043-C12-1
-- **Doug King** Multi-manager platforms run commodity PMs on very tight drawdown leashes (out after a few failures within months), unlike a single-team fund that can sit through noise around a long-term supply-demand theme.  #mech/risk_management _(added by Opus)_
+- **Doug King** Multi-manager platforms run commodity PMs on very tight drawdown leashes (out after a few failures within months), unlike a single-team fund that can sit through noise around a long-term supply-demand theme.  #mech/risk_management _(added by opus cross-check)_
   > if you fail two, three times, you'll be out the door in three months, six months, whatever
   asset: commodities · horizon: months · testable: no - organisational description · confidence: high
   ^MT043-C12-X1

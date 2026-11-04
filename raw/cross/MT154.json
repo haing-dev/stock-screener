@@ -1,0 +1,100 @@
+{
+ "source_id": "MT154",
+ "added_claims": [
+  {
+   "claim_id": "MT154-C01-X1",
+   "chunk": "C01",
+   "speaker": "Steve Cohen",
+   "quote": "this is unusual for something like this to happen where you you you drop significantly and rally back as quickly",
+   "claim": "The April 2025 plunge and fast rebound is unusual, with the pandemic the only close precedent; the rapid recovery came from a policy reversal and does not remove the underlying growth slowdown, so valuation still matters.",
+   "mechanism": "overshoot",
+   "asset_class": "equities",
+   "indicator": "S&P 500 drawdown and speed of rebound",
+   "horizon": "weeks",
+   "direction": "",
+   "conditions": "policy-driven shock followed by policy retreat",
+   "testable": "yes - compare V-shaped drawdowns and subsequent growth/returns",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT154-C02-X1",
+   "chunk": "C02",
+   "speaker": "Steve Cohen",
+   "quote": "names that are data dependent that are you know impacted by these tariffs you know you got to be careful here that a lot of them have rallied back significantly",
+   "claim": "Data-dependent and tariff-exposed stocks have rallied back strongly, so they carry the most risk if economic data turn down; the rebound makes them vulnerable rather than safe.",
+   "mechanism": "crowding_positioning",
+   "asset_class": "equities",
+   "indicator": "tariff-exposed and data-dependent stocks",
+   "horizon": "months",
+   "direction": "caution or underweight in rallied tariff-exposed names",
+   "conditions": "if data turn down after the rebound",
+   "testable": "partly - basket of exposed names versus index after data surprises",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT154-C02-X2",
+   "chunk": "C02",
+   "speaker": "Steve Cohen",
+   "quote": "our PMs all had years that were a lot of them that are 50 75% their normal average",
+   "claim": "After a 2024 well above normal (caption suggests 50-75% off their usual average), PMs put pressure on themselves to repeat it, which pushes them to press in a harder market; Cohen counters with gratitude and lower expectations.",
+   "mechanism": "behavioral",
+   "asset_class": "equities",
+   "indicator": "PM return versus own normal average",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "after an unusually good year",
+   "testable": "no - behavioral observation",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT154-C03-X1",
+   "chunk": "C03",
+   "speaker": "Steve Cohen",
+   "quote": "they hit a certain number and they've made a certain amount of money and somehow making that they have some notion in their head that making that type of money is they're done",
+   "claim": "Some talented investors stop improving once they reach a money target, while those who keep adapting, evolving and learning in a market that is always changing sustain performance.",
+   "mechanism": "behavioral",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - qualitative",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT154-C04-X1",
+   "chunk": "C04",
+   "speaker": "Steve Cohen",
+   "quote": "if you can eliminate or make your life better in the places that are, you know, that are important to you and and and it just allows you the ability to manage everything else",
+   "claim": "Stress compounds across work and home; reducing stress outside work frees capacity to handle market stress and keeps decision-making steadier.",
+   "mechanism": "behavioral",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - personal experience",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ],
+ "corrections": [
+  {
+   "claim_id": "MT154-C01-6",
+   "issue": "Reversed meaning of the 10-15% figure: Cohen says 'I don't expect a significant decline... it's possible we can go back toward the lows which is 10 15%', i.e. a retest of the April lows would mean a 10-15% fall from current levels. The claim places the downside 10-15% below the April lows.",
+   "fix": "After the policy pivot Cohen does not expect a significant decline; at worst the market could retrace 10-15% back toward the April lows, which he calls not a calamity, and the pivot raises the floor and removes the dire scenario, so he sees a trading range for a while."
+  }
+ ],
+ "chunks_checked": [
+  "C01",
+  "C02",
+  "C03",
+  "C04",
+  "C05"
+ ],
+ "completeness_estimate": "0.75 - first reader (14 claims) caught the macro view and process lessons; 5 additions (pandemic analogy, rallied-back exposed names, psychology points); one numeric direction reversed (C01-6)."
+}

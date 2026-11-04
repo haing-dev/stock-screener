@@ -5,10 +5,10 @@ date: 2026-07-12
 channel: "Top Traders Unplugged"
 url: 
 words: 11675
-claims: 72
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 78
+added_by_crosscheck: 6
+corrections: 1
+crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, Top Traders Unplugged, CTA background)", "Alan Dunne (co-host, allocator/researcher)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Systematic Investor ep. 408: Niels and Alan review H1 2026 CTA performance, the new Fed chair's end of forward guidance, two pro-trend papers (Aspect, Systematica), and the CFM paper attributing the decline of short-term trend following to volatility-adjusted tick size and microstructure. Main conclusion: fast trend works only in large-tick markets; other explanations (pod shops, post-2009 regime, execution algos) are debated.
 
 **Approach:** trend following, CTA performance, market microstructure, central bank communication, total portfolio approach, quant factor investing
+
+**Cross-check completeness estimate of first read:** 0.93 - first reader was thorough (77 claims); misses are minor: early-July energy reversals, manager dispersion vs index, bond/equity YTD numbers, a volatility rationale for guidance, hidden small-tick liquidity, retail oil ETF risk.
 
 ## Coverage
 
@@ -85,6 +87,14 @@ tags: [source, layer0]
   > my trend barometer yesterday closed at 50, which is a decent strong number.
   indicator: trend barometer (Niels) · asset: multi · horizon: months · testable: yes - gauge is computable · confidence: medium
   ^MT071-C03-4
+- **Niels Kaastrup-Larsen** Early July 2026 was quiet to soft for CTAs, with renewed Middle East bombing campaigns causing direction reversals, especially in energy markets, which hurt trend positions.  #mech/new _(added by opus cross-check, time-bound view)_
+  > the last couple of days we've had some reversals now again given the renewed um bombing campaigns uh happening in the Middle East
+  indicator: energy futures trend direction · asset: commodities · direction: energy trends reverse; CTA returns soft · horizon: days · conditions: geopolitical news shocks · testable: partly - CTA returns around Middle East event dates · confidence: medium
+  ^MT071-C03-X1
+- **Alan Dunne** Retail already speculates on oil through ETFs and spread betting even without futures access, and the retail oil ETF ran into trouble when front oil futures went negative, showing structural product risk for retail commodity vehicles.  #mech/liquidity_flows _(added by opus cross-check)_
+  > you had the oil ETF can't remember exactly what it was called but you know you know and that ran into challenges obviously when when oil went the one that went negative
+  indicator: retail oil ETF (negative oil price episode) · asset: commodities · conditions: extreme contango / negative front-month prices · testable: partly - ETF tracking vs futures in April 2020 · confidence: low
+  ^MT071-C03-X2
 
 ### C04
 - **Niels Kaastrup-Larsen** In H1 2026, CTAs that included non-trend strategies did somewhat better than pure trend followers.  #mech/risk_premium _(time-bound view)_
@@ -107,6 +117,10 @@ tags: [source, layer0]
   > we know historically because uh we can see the data that actually 2022 turned out to be a really great year for CTAs.
   indicator: commodity price action 2022 analog · asset: commodities · horizon: months · conditions: narrative analog only, no prediction · testable: partly - one analog · confidence: low
   ^MT071-C04-5
+- **Alan Dunne** In June 2026 the individual CTA managers Alan monitors did worse than the CTA index (index down under 2%), with more negatives than positives, i.e. high manager dispersion around the index.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
+  > I thought they were generally a bit more negative than the index. I think the index was down less than a couple of percent
+  indicator: CTA index vs individual manager returns · asset: multi · direction: managers below index · horizon: weeks · conditions: commodity reversal month · testable: yes - manager return dispersion vs index · confidence: low
+  ^MT071-C04-X1
 
 ### C05
 - **Alan Dunne** Predicted oil-supply shock from the Strait of Hormuz disruption did not cause a price spike because China tapped reserves and flows were rerouted, so consensus pessimism was too severe.  #mech/overshoot _(time-bound view)_
@@ -139,6 +153,10 @@ tags: [source, layer0]
   > cocoa that's keeps sort of uh surging now suddenly after it was in a in a big downtrend for a while
   indicator: cocoa price · asset: commodities · direction: cocoa up · horizon: weeks · testable: yes - price · confidence: low
   ^MT071-C06-3
+- **Niels Kaastrup-Larsen** As of 7 July 2026 the US aggregate bond index was up only about 0.25% YTD while the S&P 500 total return was up about 10% and MSCI World 9.65%, so CTA indices (8.5-8.9%) roughly matched equities while bonds gave almost nothing.  #mech/risk_premium _(added by opus cross-check, time-bound view)_
+  > bond index down 56 basis points u for the month uh up only a quarter% or so um this year
+  indicator: US Aggregate bond index, S&P 500 TR, MSCI World YTD · asset: multi · direction: bonds flat, equities and CTAs up · horizon: months · testable: yes - index returns · confidence: high
+  ^MT071-C06-X1
 
 ### C07
 - **Alan Dunne** Forward guidance was introduced (Bernanke, 2004) to steer long-term rates before QE, because the Fed controlled only short rates.  #mech/policy_reaction
@@ -149,6 +167,10 @@ tags: [source, layer0]
   > 68% of the variance in the 5-year Treasury yield after a Fed me meeting um that was attributable to um to to the um to the statement
   indicator: 5-year Treasury yield response to FOMC · asset: rates · horizon: days · testable: yes - event study · confidence: high
   ^MT071-C07-2
+- **Alan Dunne** A second rationale for Fed transparency was that policy surprises create market volatility, so forward guidance was meant to reduce shock-driven volatility; after the GFC, committing to low rates for long became a core unconventional tool.  #mech/policy_reaction _(added by opus cross-check)_
+  > There's also a sense that you know you know more shocks created more volatility which was seen to be a a bad thing.
+  indicator: FOMC surprise vs market volatility · asset: rates · direction: more guidance -> less policy-shock volatility · horizon: days · conditions: pre-QE and post-GFC eras · testable: partly - yield volatility around FOMC by communication regime · confidence: medium
+  ^MT071-C07-X1
 
 ### C08
 - **Alan Dunne** Less forward guidance should mean more uncertainty and more volatility around Fed policy.  #mech/policy_reaction _(time-bound view)_
@@ -259,6 +281,10 @@ tags: [source, layer0]
   > behavioral factors like um you know the speed of adjustment for different participants in the market and underreaction initially and then overreaction later
   asset: multi · testable: partly · confidence: high
   ^MT071-C12-5
+- **Alan Dunne** In small-tick markets liquidity exists but is not displayed at the quoted bid/offer, whereas before high-frequency trading large size was visible at the touch, so a trend follower could no longer see and take big size at one price.  #mech/liquidity_flows _(added by opus cross-check)_
+  > the liquidity is there but it's not necessarily apparent right that it at at the at the kind of represented bid offer
+  indicator: displayed top-of-book depth vs tick size · asset: multi · direction: smaller tick -> thinner displayed depth · horizon: days · conditions: post-HFT market structure · testable: yes - order book depth by volatility-adjusted tick size · confidence: medium
+  ^MT071-C12-X1
 
 ### C13
 - **Alan Dunne** After 2010 high-frequency traders rose and banks stopped warehousing risk, so large orders could no longer be executed cheaply and fast trend lost momentum from execution.  #mech/liquidity_flows
@@ -290,6 +316,7 @@ tags: [source, layer0]
 - **Alan Dunne** In large-tick markets there is no CTA winter at any lookback, and fast trend did better over 1995 onward, implying the winter is concentrated in small-tick markets.  #mech/structural_shift
   > if you look at the large tick, uh there's no evidence of a CTA winter there at all for any time frame.
   indicator: trend returns in large-tick markets · asset: multi · horizon: years · testable: yes · confidence: high
+  **Correction (cross-check):** Omits that Alan also says slow trend was quite challenged from about 2008 in large-tick markets before picking up recently; the 'no CTA winter at any time frame' remark sits beside this contradicting caveat. → In large-tick markets fast trend did better over the full period since 1995; slow trend was challenged from about 2008 and recovered more recently, though Alan also says the large-tick chart shows no clear CTA winter for any time frame.
   ^MT071-C14-1
 - **Alan Dunne** Practical implication: CTAs trading fast should reduce weight or penalize small-tick contracts, as they already penalize illiquid contracts.  #mech/risk_management
   > Does it mean that CTAs have to penalize uh you know the small tick contracts and be cognizant of this effect if you're going to trade faster?

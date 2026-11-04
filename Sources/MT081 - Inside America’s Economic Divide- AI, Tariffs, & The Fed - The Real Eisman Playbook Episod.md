@@ -5,10 +5,10 @@ date: 2025-10-13
 channel: "Steve Eisman"
 url: https://www.youtube.com/watch?v=ZwoAJEzH99U
 words: 9447
-claims: 64
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 69
+added_by_crosscheck: 5
+corrections: 10
+crosscheck: "opus cross-check"
 speakers: ["Steve Eisman (host, Real Eisman Playbook)", "Steve Leeman (caption spelling; CNBC senior economics reporter)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Eisman interviews a CNBC economics reporter on a K-shaped US economy: AI capex vs weak ex-AI economy, tariffs, consumer, Fed politics and the GFC. Approach is macro narrative and pattern recognition. Main conclusions: AI boom is real but returns are unproven, tariff damage is early and masked by AI.
 
 **Approach:** macro narrative, value/skepticism, credit cycle history
+
+**Cross-check completeness estimate of first read:** 0.92 - first reader caught nearly every idea (only a data-gap caveat, stacked metal tariffs, tariff evasion, the Kaplan disagreement and Bernanke deflation tools missed) but misattributed about ten claims between the two Steves
 
 ## Coverage
 
@@ -59,10 +61,12 @@ tags: [source, layer0]
 - **Steve Eisman** Corporate AI capex is reflexive: it keeps rising while share prices reward each increase, so spending persists until the market's reward stops.  #mech/crowding_positioning _(time-bound view)_
   > as long as the market is rewarding companies for increasing their investment in AI, AI investment will continue.
   indicator: AI capex announcements vs share price reaction · asset: equities · direction: AI capex continues · conditions: Ends when investors demand returns instead of more investment · testable: partly - could test price reaction to capex guidance · confidence: medium
+  **Correction (cross-check):** wrong speaker: Leeman says this, explaining Josh Brown's momentum remark → Steve Leeman: corporate AI capex is reflexive; it continues as long as the market rewards companies for raising AI investment.
   ^MT081-C02-1
 - **Steve Eisman** After 2000 firms kept cutting jobs and not hiring while layoff announcements were rewarded with higher share prices, so market reward drives corporate labour decisions.  #mech/behavioral
   > companies would continue to fire people and not hire as long as the announcements of firings was greeted by company share prices rising.
   indicator: layoff announcement price reaction · asset: equities · direction: weak hiring · horizon: years · conditions: Needs the market to reward layoffs · testable: partly - event study of layoff announcements · confidence: medium
+  **Correction (cross-check):** wrong speaker: Leeman recalls the post-2000 layoff pattern → Steve Leeman: after 2000 firms kept firing and not hiring as long as layoff announcements lifted their share prices, so market reward drives corporate decisions.
   ^MT081-C02-2
 - **Steve Leeman** Investment excluding AI is flat to down, because of tariffs, so the strength in aggregate investment and equities is concentrated in AI.  #mech/structural_shift _(time-bound view)_
   > if you look at investment X AI not much going on you look at the other things
@@ -88,6 +92,10 @@ tags: [source, layer0]
   > CarMax missed badly. They took a loan loss provision that was significantly higher than people expected.
   indicator: CarMax loan loss provision · asset: credit · direction: consumer weakness · horizon: months · testable: yes - provision data is public · confidence: medium
   ^MT081-C02-8
+- **Steve Leeman** The tariff hit to small businesses cannot be measured: the government shutdown halted official data, and even normal releases do not capture it, so the weak leg of the economy is largely invisible in the data.  #mech/research_method _(added by opus cross-check, time-bound view)_
+  > I'm also concerned and I we don't have any data at all because of the shutdown. But we even if the shutdown weren't happening, we wouldn't have data.
+  indicator: official small business / tariff impact data (missing during shutdown) · asset: multi · horizon: months · conditions: government shutdown; small firms poorly covered by official data · testable: no - states a data gap · confidence: medium
+  ^MT081-C02-X1
 
 ### C03
 - **Steve Eisman** The thesis that the consumer is tapped out and no longer increasing spending is considered but not adopted.  #mech/cycle_persistence _(time-bound view)_
@@ -97,10 +105,12 @@ tags: [source, layer0]
 - **Steve Eisman** Car loans are the last obligation a stressed household stops paying, so rising auto delinquencies mean broad household stress.  #mech/liquidity_flows
   > when all the bills come due and you can't pay one, the first thing you pay is your car loan, right? It's to get to work.
   indicator: auto loan delinquencies · asset: credit · direction: delinquencies up signals serious stress · horizon: months · testable: yes - delinquency series exist · confidence: medium
+  **Correction (cross-check):** wrong speaker: Leeman explains why the car loan is the last bill paid → Steve Leeman: households pay the car loan first because they need the car to get to work, so rising auto delinquencies signal serious household stress.
   ^MT081-C03-2
 - **Steve Eisman** Tariffs and more repair demand from owners keeping old cars are both raising car parts costs, which worsens the burden on stretched drivers.  #mech/structural_shift _(time-bound view)_
   > the cost of parts are going up for two reasons.
   indicator: auto parts prices · asset: other · direction: parts cost up · horizon: months · testable: partly - CPI parts component · confidence: medium
+  **Correction (cross-check):** wrong speaker: Leeman makes the car-parts point → Steve Leeman: car parts costs are rising both from tariffs and from owners repairing older cars to keep them running.
   ^MT081-C03-3
 - **Steve Leeman** Cruise demand is strong with sold-out bookings, which counters the tapped-out-consumer thesis; Liesman says bookings are middle income with jobs.  #mech/cycle_persistence _(time-bound view)_
   > Carnival just said they're like sold out through 26 and the bookings for 27 are better than they've ever seen two years ahead.
@@ -135,6 +145,7 @@ tags: [source, layer0]
 - **Steve Eisman** The AI boom only pays off if profits accrue to the users of the technology, not just its suppliers; he wants the market to pay multiples on users before being convinced.  #mech/structural_shift
   > I am always interested not in the providers of the technology but the users of the technology because if the users if the profit does not acrue to the users of technology then you're going to hit a dead end.
   indicator: profit growth at AI adopters vs AI suppliers · asset: equities · horizon: years · testable: partly - compare margins of adopters · confidence: high
+  **Correction (cross-check):** wrong speaker: the users-vs-providers view comes from Leeman (who built a PC, edited over CompuServe from Florida), not Eisman → Steve Leeman: the AI boom pays off only if profits accrue to the users of the technology; he will be convinced when the market pays multiples on users, not on the investment.
   ^MT081-C04-4
 - **Steve Eisman** Nvidia's argument is that trillions in AI spend will return tens of trillions.  #mech/structural_shift
   > we're going to be spending trillions on this but because it will reap tension because of tens of trillions of returns.
@@ -173,6 +184,7 @@ tags: [source, layer0]
 - **Steve Leeman** Implemented tariff levels are below the Liberation Day worst case but far above pre-2025 levels.  #mech/policy_reaction _(time-bound view)_
   > the tariff levels that are currently being imposed in most cases are lower than the worst case scenario.
   indicator: tariff levels · asset: multi · testable: yes - tariff rates are public · confidence: medium
+  **Correction (cross-check):** wrong speaker: Eisman sets up the tariff question (levels below Liberation Day worst case but far above before) → Steve Eisman: implemented tariffs are below the Liberation Day worst case but far above pre-2025 levels, yet have had little visible economic impact so far.
   ^MT081-C05-8
 
 ### C06
@@ -213,11 +225,21 @@ tags: [source, layer0]
 - **Steve Eisman** Firms lower tariff bills by shifting cost attribution to the domestic entity through intercompany pricing, so the effective tariff rate falls over time.  #mech/structural_shift _(time-bound view)_
   > one of the great um fudge factors in all trade is intercomp pricing.
   indicator: effective tariff rate · asset: multi · direction: effective tariff falls · horizon: months · testable: yes - customs duty data · confidence: medium
+  **Correction (cross-check):** wrong speaker: Leeman continues on intercompany pricing as a tariff fudge factor → Steve Leeman: firms lower tariff bills by shifting cost attribution to the domestic entity through intercompany pricing, so the average effective tariff falls over time.
   ^MT081-C07-5
 - **Steve Eisman** Effective tariff is 10% against a stated 18%, so only half is seen; if companies hold exposure at 10% the economy is okay.  #mech/slow_reaction _(time-bound view)_
   > The last data I saw showed the effective tariff on goods being imported is 10%. They believe the actual tariff rate is 18%.
   indicator: effective vs statutory tariff rate · asset: multi · horizon: months · conditions: Holds if avoidance limits exposure · testable: yes - duties collected / imports · confidence: medium
+  **Correction (cross-check):** wrong speaker: Leeman, backing up his 'it's early' point → Steve Leeman: the effective tariff on imports is 10% against an estimated actual rate of 18%, so only half has been seen; but companies may cap exposure at 10%, in which case the economy is okay.
   ^MT081-C07-6
+- **Steve Leeman** Importers of goods containing metal pay twice, the country tariff plus the tariff on metal content, so the effective burden on such products is higher than the headline country rate.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
+  > these uh guys who import the fishing reels made in China and Japan were going to get hit two ways. One was on the import tariff and then on the content of the metal.
+  indicator: country tariff plus metal-content tariff on imported goods · asset: equities · direction: importers of metal-containing goods squeezed · horizon: months · conditions: stacked country and sectoral (metal) tariffs · testable: partly - margins of importers of metal-content goods vs others · confidence: medium
+  ^MT081-C07-X1
+- **Steve Leeman** High tariffs create evasion (mislabelling, paid intermediaries), as with computer imports into 1990s Russia, and companies are already finding ways around current US tariffs, so collected rates fall below statutory rates.  #mech/behavioral _(added by opus cross-check)_
+  > There were huge tariffs on the import of computer equipment. So, we paid a guy to do the importing from us. So, they arrived in boxes labeled children's clothes and that was exempt.
+  indicator: effective vs statutory tariff rate · asset: multi · direction: effective tariff rate drifts down · horizon: months · conditions: high tariffs with exemptions that can be exploited · testable: partly - customs revenue vs statutory rate over time · confidence: medium
+  ^MT081-C07-X2
 
 ### C08
 - **Steve Leeman** The Fed operates within a political climate: it hiked 75bp in 2022 with political permission to fight inflation, because neither party pushed back.  #mech/policy_reaction
@@ -236,6 +258,10 @@ tags: [source, layer0]
   > and no resistance right now to 25. At some point it'll be interesting to see especially if the long end provides some resistance if they go beyond another 25 or 50 from here.
   indicator: long-end yields as response to Fed cuts · asset: rates · direction: long yields rise if cuts go beyond 25 to 50bp · horizon: months · conditions: Applies if cuts go beyond another 25 to 50bp · testable: yes - term premium vs cuts · confidence: medium
   ^MT081-C08-4
+- **Steve Eisman** Former Dallas Fed president Rob Kaplan insists political pressure is never discussed at FOMC meetings; Leeman disagrees in substance, saying the pressure plays in the room without being discussed and the Fed both creates and reacts to the political milieu.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
+  > would any of the political pressure that the president is trying to impose on the Fed be discussed at a Fed meeting? And he he was like adamant about it. He said absolutely not.
+  indicator: political pressure on the Fed · asset: rates · horizon: months · conditions: disagreement: insider (Kaplan) vs reporter (Leeman) view · testable: no - not observable · confidence: high
+  ^MT081-C08-X1
 
 ### C09
 - **Steve Leeman** Bernanke made the Fed more transparent (press conferences, forecasts, dots), which Powell extended to every meeting, so policy is now guided by communication.  #mech/structural_shift
@@ -250,6 +276,10 @@ tags: [source, layer0]
   > it's a 30,000word critique of the Fed by the Treasury Secretary, which was unprecedented
   asset: rates · testable: no - single event · confidence: high
   ^MT081-C09-3
+- **Steve Leeman** Bernanke arrived having already worked out (2002 helicopter-money speech) that the Fed has many tools to fight deflation even at zero rates, which made him suited to launch QE in the financial crisis.  #mech/policy_reaction _(added by opus cross-check)_
+  > I did an interview with him in 2002 about the helicopter. The money was dropped from a helicopter that the Fed had all of these avenues and abilities to fight deflation.
+  indicator: unconventional policy tools (QE, helicopter money) · asset: rates · horizon: years · conditions: deflation risk at the zero bound · testable: no - historical judgement · confidence: high
+  ^MT081-C09-X1
 
 ### C10
 - **Steve Leeman** Inequality is driven mainly by returns to technology, not by the Fed.  #mech/structural_shift
@@ -285,6 +315,7 @@ tags: [source, layer0]
 - **Steve Eisman** Late in a credit boom lenders exhaust creditworthy borrowers and then lend to the rest (2006 mortgage standards were 'can you breathe'), which sets up the bust.  #mech/cycle_persistence
   > We got done lending lending to everybody who was creditworthy and we still had money left over.
   indicator: mortgage underwriting standards · asset: credit · horizon: years · testable: yes - underwriting standard surveys and loan performance · confidence: high
+  **Correction (cross-check):** partly misattributed: the 'done lending to everybody creditworthy' line is a Deutsche Bank derivatives head quoted by Leeman; Eisman adds the 2006 'can you breathe' underwriting line → Steve Leeman (quoting a Deutsche Bank derivatives head) with Eisman agreeing: late in the credit boom lenders had lent to every creditworthy borrower and still had money left, so standards collapsed (2006 underwriting was 'can you breathe').
   ^MT081-C11-3
 - **Steve Eisman** Subprime lenders failed in 1998 and the same people re-emerged in 2002, so recurring cycles are driven by the same operators; spotting repeat players gave an early warning.  #mech/cycle_persistence
   > the people who were running them were the same guys who were running them in '98. They just changed the names.
@@ -293,6 +324,7 @@ tags: [source, layer0]
 - **Steve Eisman** CLO and CDO issuance growth ($40 billion then $100 billion per year) was the clue that the structured credit boom was becoming systemic.  #mech/crowding_positioning
   > we're growing at $40 billion a year
   indicator: CLO and CDO issuance volume · asset: credit · horizon: years · testable: yes - issuance data · confidence: medium
+  **Correction (cross-check):** wrong speaker: the CLO/CDO chess-tournament story ($40B then $100B a year) is Leeman's → Steve Leeman: CLO and CDO issuance growing at $40B and then $100B a year was the clue that structured credit was becoming big enough to be systemic.
   ^MT081-C11-5
 - **Steve Leeman** A sponsor's decision to let a subprime originator fail rather than prop it up signalled the beginning of the failures.  #mech/liquidity_flows
   > Meil Lynch had a 20 something% stake in it. And they decided it was better to let it go down prop it up.

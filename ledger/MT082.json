@@ -78,8 +78,8 @@
   }
  ],
  "chunks": 11,
- "crosscheck": null,
- "completeness_estimate": null,
+ "crosscheck": "opus cross-check",
+ "completeness_estimate": "0.90 - Calculo's method and Ola's outlook are well covered; missed the China-tariff copper driver, ML-noise caveat, no-curve design point, index composition and broad backwardation, and misattributed the host's natural gas trade to Calculo",
  "claims": [
   {
    "claim_id": "MT082-C01-1",
@@ -331,6 +331,11 @@
    "speaker_confidence": "high",
    "time_bound": "yes",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT082-C03-7",
+    "issue": "wrong speaker and fund: the two-year short Henry Hub trade belongs to host Moritz Seibert's long-term trend fund, not Calculo (whose holding period is 2 to 5 days)",
+    "fix": "Moritz Seibert: his trend-following fund's short Henry Hub position, held more than two years, was stopped out by the late-February 2025 rally on a colder weather outlook, an example of a long-held trend ending on reversal."
+   },
    "quote_check": "exact"
   },
   {
@@ -889,6 +894,11 @@
    "speaker_confidence": "medium",
    "time_bound": "no",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT082-C10-5",
+    "issue": "wrong attribution: the natural gas short that earned contango roll yield is Seibert's fund, not Calculo; Ola raised the roll point and Seibert replied",
+    "fix": "Ola Hansen / Moritz Seibert: in contango a short natural gas position earned roll yield even through big rallies; Seibert's fund benefited from the upward-sloping curve, though it does not roll every month and watches seasonality."
+   },
    "quote_check": "exact"
   },
   {
@@ -908,9 +918,99 @@
    "time_bound": "yes",
    "reader": "sonnet",
    "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT082-C04-X1",
+   "chunk": "C04",
+   "speaker": "Ola Hansen",
+   "quote": "I think first of foremost the fact that uh that that China hasn't been slapped with terrorists just yet. Uh that's probably one thing",
+   "claim": "Copper's early-2025 rally (about 15%) is driven first by China not yet being hit with US tariffs, alongside tariff-driven dislocations in COMEX pricing.",
+   "mechanism": "policy_reaction",
+   "asset_class": "commodities",
+   "indicator": "US tariff decisions on China; copper price",
+   "horizon": "weeks",
+   "direction": "copper up while China escapes tariffs",
+   "conditions": "until tariffs on China are imposed",
+   "testable": "partly - copper moves around China tariff announcements",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT082-C08-X1",
+   "chunk": "C08",
+   "speaker": "Moritz Seibert",
+   "quote": "how do you prevent the machine to learn from the noise which is you know a prevalent factor in the markets.",
+   "claim": "Machine learning applied to market prediction risks fitting noise, and Seibert jokes that a clever machine would probably just rediscover buying breakouts, i.e. become a trend follower.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "ML model trained on price data",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "noisy market data; ML used for direction prediction",
+   "testable": "partly - compare ML entry rules with plain breakout rules out of sample",
+   "speaker_confidence": "low",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT082-C09-X1",
+   "chunk": "C09",
+   "speaker": "Philip Engel Carlson",
+   "quote": "Does this information trigger anything at Calculu or are you maybe even trading spreads uh which you know you can do in the commodity markets? is when we're not trading spreads as no.",
+   "claim": "Calculo does not use forward-curve information (contango, backwardation, seasonality) as a signal and does not trade calendar spreads; only outright futures on price patterns.",
+   "mechanism": "research_method",
+   "asset_class": "commodities",
+   "indicator": "forward curve shape (not used)",
+   "horizon": "days",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - design description",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT082-C10-X1",
+   "chunk": "C10",
+   "speaker": "Moritz Seibert",
+   "quote": "the first [L380] generation of these indices, they're equity and metals heavy. And then there's all the, you know, smart variations that um are more diversified and they distribute liquidity across the curve more.",
+   "claim": "First-generation long-only commodity indices (e.g. BCOM) are concentrated (caption says equity; likely energy) and metals heavy and exclude small markets, while newer variants diversify more and spread exposure along the curve, so index choice drives commodity beta returns.",
+   "mechanism": "structural_shift",
+   "asset_class": "commodities",
+   "indicator": "commodity index composition and curve placement",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - compare first-generation vs diversified/curve-spread indices",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT082-C10-X2",
+   "chunk": "C10",
+   "speaker": "Ola Hansen",
+   "quote": "we generally are starting to see a a positive royal coming into the markets except uh and the big exception is is obviously where you just have had your profitable short in natural gas",
+   "claim": "Roll yield has turned positive (backwardation) across most commodity markets, with US natural gas the big exception where contango kept rewarding shorts even through price spikes.",
+   "mechanism": "risk_premium",
+   "asset_class": "commodities",
+   "indicator": "futures curve slope / roll yield by commodity",
+   "horizon": "months",
+   "direction": "long backwardated markets earn roll; short contango natural gas earns roll",
+   "conditions": "backwardated curves (most markets) vs contango (natural gas)",
+   "testable": "yes - curve slope and roll returns by market",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
   }
  ],
  "n_sonnet": 46,
- "n_opus_added": 0,
- "n_corrections": 0
+ "n_opus_added": 5,
+ "n_corrections": 2
 }

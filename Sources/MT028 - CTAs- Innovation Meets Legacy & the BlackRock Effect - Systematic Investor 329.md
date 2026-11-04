@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 15998
 claims: 68
-added_by_opus: 8
+added_by_crosscheck: 8
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Andrew Beer (DBi, replication strategies)", "Tom Roble (Societe Generale Prime Services, CTA indices)", "Niels Kaastrup-Larsen (host, hedge fund manager)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, CTA replication, managed futures indices, portable alpha
 
-**Opus completeness estimate of first read:** 0.87 - speaker attribution in the unlabelled captions is right except one claim (C21-2); first reader caught all main arguments but missed a few caveats (fee data, index evolution counterpoint, replicability limits, stated vs revealed demand).
+**Cross-check completeness estimate of first read:** 0.87 - speaker attribution in the unlabelled captions is right except one claim (C21-2); first reader caught all main arguments but missed a few caveats (fee data, index evolution counterpoint, replicability limits, stated vs revealed demand).
 
 ## Coverage
 
@@ -85,7 +85,7 @@ tags: [source, layer0]
   > the average 12month return after um a great two calendar year uh performance like we've just seen is not very impressive it's pretty flat actually
   indicator: S&P 500 two-year return then next 12-month return · asset: equities · direction: forward equity return flat · horizon: years · testable: yes - conditional return study · confidence: medium
   ^MT028-C03-4
-- **Tom Roble** US allocators building 'robust' portfolios increasingly use uncorrelated alternative strategies to fill the diversification gap left by bonds, driven by worry that equity returns will slow.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Tom Roble** US allocators building 'robust' portfolios increasingly use uncorrelated alternative strategies to fill the diversification gap left by bonds, driven by worry that equity returns will slow.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > they are looking more and more to Alternative strategies to fill maybe the void left by bonds
   asset: multi · direction: flows toward diversifiers, away from bonds · horizon: years · conditions: while bonds fail to diversify equities · testable: partly - flow data into alternatives · confidence: medium
   ^MT028-C03-X1
@@ -133,7 +133,7 @@ tags: [source, layer0]
   > it's statistically Incredibly Close to the sock gen CT index with 20 managers
   indicator: Bridge Alternatives Index vs SG CTA Index · asset: multi · horizon: years · testable: yes - correlation and tracking · confidence: high
   ^MT028-C07-3
-- **Andrew Beer** Large institutional CTA allocators structurally beat the index partly by negotiating lower fees than the headline fees embedded in index returns, the same fee edge replication exploits.  #mech/new _(added by Opus)_
+- **Andrew Beer** Large institutional CTA allocators structurally beat the index partly by negotiating lower fees than the headline fees embedded in index returns, the same fee edge replication exploits.  #mech/new _(added by opus cross-check)_
   > if you're a big allocator and you can compress people on fees you'll tend to structurally outperform as well
   asset: multi · horizon: years · conditions: allocator has bargaining power · testable: partly - needs negotiated fee data · confidence: medium
   ^MT028-C07-X1
@@ -233,7 +233,7 @@ tags: [source, layer0]
   > I think where we as managers uh are consistently or constantly learning things is probably a little bit on the risk management side
   indicator: trend model changes vs risk management · asset: multi · horizon: years · testable: partly - manager level · confidence: medium
   ^MT028-C13-2
-- **Andrew Beer** Index return comparisons (e.g. the Bridge Alternatives managed-account index) may exclude implementation or platform fees and need minimums, so their returns overstate what an investor actually gets.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** Index return comparisons (e.g. the Bridge Alternatives managed-account index) may exclude implementation or platform fees and need minimums, so their returns overstate what an investor actually gets.  #mech/research_method _(added by opus cross-check)_
   > that's before somebody else's fees on that maybe it's in other words there may be implementation fees that we don't see when you're looking at those numbers
   indicator: Bridge Alternatives index · asset: multi · testable: partly - requires fee schedules · confidence: low
   ^MT028-C13-X1
@@ -247,7 +247,7 @@ tags: [source, layer0]
   > don't think ctas are developing new trend following models Trends are pretty easy to recognize
   indicator: moving-average crossover, risk allocation · asset: multi · horizon: years · testable: partly · confidence: medium
   ^MT028-C14-2
-- **Tom Roble** Tom challenges the 'unchanging index' claim: a replicator's principal-component weights shift and it tracks an index whose constituents and their models change yearly, so its implementation evolves much like a CTA's research process.  #mech/research_method _(added by Opus)_
+- **Tom Roble** Tom challenges the 'unchanging index' claim: a replicator's principal-component weights shift and it tracks an index whose constituents and their models change yearly, so its implementation evolves much like a CTA's research process.  #mech/research_method _(added by opus cross-check)_
   > you're tracking an e an evolving portfolio you're not tracking a portfolio which is a static portfolio every year we change the constituents
   indicator: SG CTA Index constituents · asset: multi · horizon: years · testable: partly - track replicator factor weights over time · confidence: medium
   ^MT028-C14-X1
@@ -256,7 +256,7 @@ tags: [source, layer0]
 - **Tom Roble** Managed futures AUM grew to about $350bn in 2009-10 and has stayed between $300bn and $400bn since, with the main increase after strong 2022 performance.  #mech/structural_shift _(time-bound view)_
   > it's been fairly stable since then I think it's bounced as you say between 300 and 350 post 2014
   indicator: Barclay Hedge managed futures AUM · asset: multi · horizon: years · testable: yes - AUM series · confidence: medium
-  **Correction (Opus):** Range misstated: Tom says AUM has bounced between $300bn and $350bn since 2014 (the $350-400bn range is Niels's Barclay Hedge recollection). → Managed futures AUM grew to about $350bn in 2009-10 and, per Tom, has stayed between about $300bn and $350bn since 2014 (Niels recalls $350-400bn from Barclay Hedge), with the main increase after strong 2022 performance.
+  **Correction (cross-check):** Range misstated: Tom says AUM has bounced between $300bn and $350bn since 2014 (the $350-400bn range is Niels's Barclay Hedge recollection). → Managed futures AUM grew to about $350bn in 2009-10 and, per Tom, has stayed between about $300bn and $350bn since 2014 (Niels recalls $350-400bn from Barclay Hedge), with the main increase after strong 2022 performance.
   ^MT028-C15-1
 - **Tom Roble** The size cutoff for the SG CTA Index rose from $800m (2010) to $1bn (2016), $1.5bn (2019) and $1.82bn now, with growth in the mid-sized group, while the SG Trend (top 10) minimum is $4.8bn.  #mech/structural_shift _(time-bound view)_
   > back in 2010 to be in the index you had to be approximately 800 million that then grew to 1 billion in 2016
@@ -266,7 +266,7 @@ tags: [source, layer0]
   > almost 90% of new start Quant what we would call a CTA is
   indicator: new CTA launches by style · asset: multi · horizon: years · testable: partly - manager launch data · confidence: medium
   ^MT028-C15-3
-- **Andrew Beer** Multi-strategy pod shops with Sharpe ratios around 2 cannot be replicated, because replication works only where returns come from a few liquid factor exposures, as with trend CTAs.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** Multi-strategy pod shops with Sharpe ratios around 2 cannot be replicated, because replication works only where returns come from a few liquid factor exposures, as with trend CTAs.  #mech/research_method _(added by opus cross-check)_
   > absolutely not those guys are agreable there's sharp ratios of 2.2 or whatever um no look the thing about replication is you have to know what you can replicate
   asset: multi · conditions: replicable only when returns load on liquid factors · testable: yes - out-of-sample factor-replication R2 by strategy type · confidence: high
   ^MT028-C15-X1
@@ -308,7 +308,7 @@ tags: [source, layer0]
   > what hurt the space I think was the whipsaws in sentiment
   indicator: sentiment reversals 2024 · asset: multi · horizon: months · conditions: unstable sentiment · testable: partly · confidence: medium
   ^MT028-C18-2
-- **Andrew Beer** Allocators under-allocate to trend following not because they miss the statistical benefits but because they believe past prices should not predict returns (efficient-market prior), so the strategy lacks a credible story for them.  #mech/behavioral _(added by Opus)_
+- **Andrew Beer** Allocators under-allocate to trend following not because they miss the statistical benefits but because they believe past prices should not predict returns (efficient-market prior), so the strategy lacks a credible story for them.  #mech/behavioral _(added by opus cross-check)_
   > it's not that people can't see the benefits it's they feel it shouldn't work because past prices are not supposed to be indicative of future performance
   asset: multi · horizon: years · testable: no - belief about allocator psychology · confidence: medium
   ^MT028-C18-X1
@@ -341,13 +341,13 @@ tags: [source, layer0]
 - **Tom Roble** About a quarter of European investors want ESG-sensitive products and many cannot hold commodities, creating demand for non-commodity CTA exposure.  #mech/structural_shift _(time-bound view)_
   > around a quarter of European investors are looking for things that are ESG sensitive
   indicator: investor survey ESG share · asset: multi · testable: no - survey · confidence: medium
-  **Correction (Opus):** Wrong speaker: Andrew Beer says this, citing an SG investor survey by Tom ('Tom in his investor survey ... came out a couple of months ago'); Tom does not state it himself. → Andrew Beer, citing Tom's SG investor survey: about a quarter of European investors want ESG-sensitive products and many cannot hold commodities, creating demand for non-commodity CTA exposure.
+  **Correction (cross-check):** Wrong speaker: Andrew Beer says this, citing an SG investor survey by Tom ('Tom in his investor survey ... came out a couple of months ago'); Tom does not state it himself. → Andrew Beer, citing Tom's SG investor survey: about a quarter of European investors want ESG-sensitive products and many cannot hold commodities, creating demand for non-commodity CTA exposure.
   ^MT028-C21-2
 - **Andrew Beer** Excluding asset classes from a traditional trend model reduces diversification and returns, which is why replication is attractive for commodity-restricted investors.  #mech/structural_shift
   > when you start kicking out asset classes in a traditional Trend fing model you really do lose something
   asset: multi · horizon: years · testable: yes - ablation of asset classes · confidence: medium
   ^MT028-C21-3
-- **Tom Roble** UCITS/ESMA rules are commonly read as banning direct commodity exposure, splitting European investors between dropping commodities from CTA products and adding them back through bank structured notes.  #mech/new _(added by Opus)_
+- **Tom Roble** UCITS/ESMA rules are commonly read as banning direct commodity exposure, splitting European investors between dropping commodities from CTA products and adding them back through bank structured notes.  #mech/new _(added by opus cross-check)_
   > the way the regory to is interpretated is there shouldn't be any exposure to Commodities
   asset: commodities · horizon: years · conditions: European UCITS investors · testable: no - regulatory description · confidence: medium
   ^MT028-C21-X1
@@ -365,7 +365,7 @@ tags: [source, layer0]
   > Germany they just you can't do with agricultural Commodities because they don't want you buing on food stuffs but they're fine with gold oil and everything else
   asset: commodities · testable: no · confidence: medium
   ^MT028-C22-3
-- **Andrew Beer** Stated investor demand (e.g. everyone wants a top CTA in an Article 9 wrapper) is unreliable; real demand shows only when a concrete investable product is offered.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** Stated investor demand (e.g. everyone wants a top CTA in an Article 9 wrapper) is unreliable; real demand shows only when a concrete investable product is offered.  #mech/research_method _(added by opus cross-check)_
   > you're not going to find out what they really think until you're standing in front of them
   asset: multi · testable: no - business judgement · confidence: medium
   ^MT028-C22-X1

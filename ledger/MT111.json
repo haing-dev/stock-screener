@@ -103,8 +103,8 @@
   }
  ],
  "chunks": 16,
- "crosscheck": null,
- "completeness_estimate": null,
+ "crosscheck": "opus cross-check",
+ "completeness_estimate": "0.96 - first reader was thorough and accurate; missed only the point that trend's bond-hedge evidence rests on few episodes (1970s, 2022) and the concentration of equity trend gains in a few indices",
  "claims": [
   {
    "claim_id": "MT111-C02-1",
@@ -1023,9 +1023,45 @@
    "time_bound": "yes",
    "reader": "sonnet",
    "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT111-C13-X1",
+   "chunk": "C13",
+   "speaker": "Graham Robertson",
+   "quote": "the problem with bonds has always been at least until recent memory you've had to go back and even further time period to see it right you know you need to go back to the 70s to see inflation really taking off",
+   "claim": "Evidence that trend following protects against bond sell-offs is thin because inflation-driven bond crises are rare (1970s and 2022), unlike the several well-known equity crashes since 2000, so the bond-hedge record needs much longer history to assess.",
+   "mechanism": "research_method",
+   "asset_class": "rates",
+   "indicator": "trend returns during bond crises (1970s, 2022)",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "inflation-driven bond sell-offs",
+   "testable": "yes - trend returns in bond drawdown episodes using long histories back to the 1970s",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT111-C03-X1",
+   "chunk": "C03",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "even within equities it's also been I think a little bit concentrated in just a few markets",
+   "claim": "Early-2025 equity trend gains were concentrated in a few indices (DAX, Hang Seng), so equity-sector trend returns depend on a handful of markets rather than broad participation.",
+   "mechanism": "slow_reaction",
+   "asset_class": "equities",
+   "indicator": "DAX, Hang Seng trends",
+   "horizon": "months",
+   "direction": "long DAX, Hang Seng",
+   "conditions": "",
+   "testable": "partly - attribution of 2025 trend P&L by equity index",
+   "speaker_confidence": "low",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
   }
  ],
  "n_sonnet": 51,
- "n_opus_added": 0,
+ "n_opus_added": 2,
  "n_corrections": 0
 }

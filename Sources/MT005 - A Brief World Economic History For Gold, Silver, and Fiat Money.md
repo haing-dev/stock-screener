@@ -6,7 +6,7 @@ channel: "Crescat Capital"
 url: https://www.youtube.com/watch?v=tImUmy4KKGc
 words: 3554
 claims: 30
-added_by_opus: 0
+added_by_crosscheck: 0
 corrections: 0
 crosscheck: "opus blind read (pilot)"
 speakers: ["Crescat Capital presenter (unnamed, likely CEO/portfolio manager)", "Quinton Hennigh (exploration geologist, mentioned as Crescat's expert, does not speak in the excerpt)"]

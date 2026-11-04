@@ -5,10 +5,10 @@ date: 2024-08-01
 channel: "Top Traders Unplugged"
 url: 
 words: 11358
-claims: 51
-added_by_opus: 0
+claims: 57
+added_by_crosscheck: 6
 corrections: 0
-crosscheck: "pending"
+crosscheck: "opus cross-check"
 speakers: ["Mark rinsky (guest, Systematic Investor co-host, rules-based investor)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Weekly trend-following chat (July 2024): Treasury bill issuance as offset to QT, trend giveback and calm-regime risk, market add/drop rules, how to read backtests and build systems, stock-bond correlation, GIC/JPM paper placing trend following as loss mitigation, caution on LLM/ML, and law of small numbers.
 
 **Approach:** trend following, CTA portfolio construction, backtesting, macro liquidity
+
+**Cross-check completeness estimate of first read:** 0.89 - main ideas all caught; missed QT/coupon net-supply detail, short-term index numbers and some market-selection nuances (add criterion, vol-removal rule, commodity boards).
 
 ## Coverage
 
@@ -75,6 +77,10 @@ tags: [source, layer0]
   > it also opens up for some great entry points because still around you know in terms of investors there are still way too few who have exposure to Trend filling
   asset: multi · direction: allocate to trend following after drawdown · horizon: years · testable: partly · confidence: medium
   ^MT079-C03-4
+- **Mark rinsky** Fed quantitative tightening adds coupon (duration) supply to the market each month, and Treasury cutting coupon issuance offsets that supply, so net duration supply (QT runoff plus coupon issuance) is what drives long rates and financial conditions.  #mech/liquidity_flows _(added by opus cross-check)_
+  > if the treasury doesn't issue coupon bonds then in some sense it's it's actually sort of offsetting the pressures that have been put in from the from the FED
+  indicator: Fed QT coupon runoff vs Treasury coupon issuance (net duration supply) · asset: rates · direction: less net coupon supply -> lower long yields, easier conditions · horizon: months · conditions: QT ongoing · testable: yes - net duration supply vs term premium · confidence: medium
+  ^MT079-C03-X1
 
 ### C04
 - **Mark rinsky** The cost of crisis alpha and low correlation is poor performance in calm, sideways markets with lower rate and inflation volatility, and investors forget the crisis benefits when rebalancing.  #mech/risk_premium
@@ -93,6 +99,10 @@ tags: [source, layer0]
   > St gen CTA index down 2.19% in July up 4.91% uh for the year
   indicator: BTOP50, SG CTA, SG Trend, SG Short-term Traders; MSCI World; S&P Global Developed Sovereign Bond · asset: multi · horizon: months · testable: yes: public index data · confidence: high
   ^MT079-C04-4
+- **Niels Kaastrup-Larsen** In July 2024 the SG Short-Term Traders index fell 1.17% and was slightly negative year to date (-0.12%), lagging the trend indices (+5-6% YTD), while the S&P 500 was up about 14% YTD.  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
+  > the short-term Traders index also a negative territory in July down 1.17% but also down for the year down uh 12 basis points
+  indicator: SG Short-Term Traders index, S&P 500 · asset: multi · direction: short-term CTAs lag trend CTAs in 2024 · horizon: months · testable: yes - public index numbers · confidence: high
+  ^MT079-C04-X1
 
 ### C05
 - **Mark rinsky** Do not drop a market from a trend portfolio just because it lost money for years: it may be a diversifier whose future is unknown.  #mech/research_method
@@ -111,6 +121,14 @@ tags: [source, layer0]
   > you want to have two-sided markets where you have hedgers and both speculators if it's pure speculative then that could be a a problem
   indicator: hedger participation · asset: multi · testable: partly: hedger share via COT data · confidence: medium
   ^MT079-C05-4
+- **Philip (listener question, read by Niels Kaastrup-Larsen)** A trend follower should add a market only if its diversification value exceeds its transaction costs and the opportunity cost of displacing other markets, so market selection is a trade-off rather than an obvious choice.  #mech/research_method _(added by opus cross-check)_
+  > does it add enough value relative to transaction cost and opportunity cost of not holding uh other assets anymore so usually not an obvious choice only tradeoffs
+  indicator: marginal portfolio value vs transaction cost · asset: multi · horizon: years · testable: yes - marginal contribution net of costs · confidence: medium
+  ^MT079-C05-X1
+- **Philip (listener question, read by Niels Kaastrup-Larsen)** Some trend followers drop a market when its volatility falls too low (e.g. a soft currency peg); the hosts later prefer volatility floors to removal.  #mech/risk_management _(added by opus cross-check)_
+  > some will argue that if V is too low then the asset is out
+  indicator: market volatility threshold · asset: multi · direction: remove or cap exposure in very low-vol markets · horizon: months · conditions: soft pegs, managed markets · testable: yes - compare removal rule vs volatility floor · confidence: low
+  ^MT079-C05-X2
 
 ### C06
 - **Mark rinsky** Markets with only professional traders (little retail) are harder to make money in.  #mech/crowding_positioning
@@ -137,6 +155,10 @@ tags: [source, layer0]
   > there's nothing wrong with having a market that doesn't really make money for you if it makes money when a lot of other things is not making money for you in your portfolio
   indicator: market-level diversification · asset: multi · horizon: years · testable: yes: marginal contribution testable · confidence: medium
   ^MT079-C06-6
+- **Mark rinsky** Because removing a market later is hard to decide well, the screening effort should go into adding markets carefully in the first place.  #mech/research_method _(added by opus cross-check)_
+  > you want to be very careful in adding markets so that then you don't have to be posed with the problem of whether you should drop it in uh later on
+  asset: multi · horizon: years · testable: no - process advice · confidence: medium
+  ^MT079-C06-X1
 
 ### C07
 - **Mark rinsky** An index excluding cocoa (Credit Suisse managed futures index) underperformed CTAs that held cocoa; few markets are dropped except for liquidity.  #mech/research_method _(time-bound view)_
@@ -151,6 +173,10 @@ tags: [source, layer0]
   > I've never seen a bad back test in terms of performance and sharp
   indicator: backtest assumptions · asset: multi · testable: partly · confidence: high
   ^MT079-C07-3
+- **Mark rinsky** Commodities whose prices government commodity boards can manage (like cocoa) look like poor trend markets, yet such markets can still produce explosive trends after a supply dislocation, so managed pricing alone is not a reason to exclude them.  #mech/policy_reaction _(added by opus cross-check)_
+  > you have you know governments that have uh commodity boards that actually can manipulate price so so there's a whole set of reasons for why you wouldn't want to trade Coco
+  indicator: government commodity boards / managed pricing · asset: commodities · horizon: years · conditions: supply shock can override managed pricing · testable: partly - trend returns in board-managed commodities · confidence: medium
+  ^MT079-C07-X1
 
 ### C08
 - **Mark rinsky** Due diligence should ask about backtest assumptions and costs to judge the manager's rigour.  #mech/research_method

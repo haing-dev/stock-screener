@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 11932
 claims: 81
-added_by_opus: 4
+added_by_crosscheck: 4
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Rob (guest; captioned 'Rob Carver', portfolio manager, Fidelity Investments quantitative research)", "Yuval (co-host, Cambridge-based; trades commodities and JGBs)", "Niels Kaastro Larsen (host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, crisis alpha, betting against beta, carry, execution, research methodology
 
-**Opus completeness estimate of first read:** 0.94 - first reader was very thorough on testing, BAB, the crisis-alpha paper and execution; missed only a few market-context remarks and one critique of the leverage explanation; two speaker attributions wrong.
+**Cross-check completeness estimate of first read:** 0.94 - first reader was very thorough on testing, BAB, the crisis-alpha paper and execution; missed only a few market-context remarks and one critique of the leverage explanation; two speaker attributions wrong.
 
 ## Coverage
 
@@ -48,7 +48,7 @@ tags: [source, layer0]
 ## Claims
 
 ### C01
-- **Rob** Rob found empirically, against his efficient-markets training, that buying assets that have been rising works, i.e. time-series momentum is visible in raw data before any theory.  #mech/slow_reaction _(added by Opus)_
+- **Rob** Rob found empirically, against his efficient-markets training, that buying assets that have been rising works, i.e. time-series momentum is visible in raw data before any theory.  #mech/slow_reaction _(added by opus cross-check)_
   > Look at this. Buying things that go have been going up seems to work.
   indicator: past returns (time-series momentum) · asset: multi · direction: long rising, short falling assets · horizon: months · testable: yes - time-series momentum backtest · confidence: medium
   ^MT038-C01-X1
@@ -114,11 +114,11 @@ tags: [source, layer0]
   > they're shorting fixed income the last few months so that would be interesting to see whether there's going to be any follow through because that has been perhaps the most difficult sector for many trend followers
   indicator: trend positioning in fixed income · asset: rates · direction: short bonds · horizon: months · testable: yes - CTA positions and sector returns · confidence: medium
   ^MT038-C04-4
-- **Niels Kaastro Larsen** Large asset managers (Fidelity, BlackRock) entering trend following and Ritholtz launching a concentrated single-stock momentum product show growing mainstream adoption of momentum strategies.  #mech/crowding_positioning _(added by Opus, time-bound view)_
+- **Niels Kaastro Larsen** Large asset managers (Fidelity, BlackRock) entering trend following and Ritholtz launching a concentrated single-stock momentum product show growing mainstream adoption of momentum strategies.  #mech/crowding_positioning _(added by opus cross-check, time-bound view)_
   > here's another firm moving in the direction of momentum
   indicator: new momentum/trend product launches · asset: multi · direction: more capital in momentum · horizon: years · testable: partly - AUM in momentum/trend products vs factor returns · confidence: low
   ^MT038-C04-X1
-- **Niels Kaastro Larsen** In May 2026 trend leadership shifted: metals and equities (US and Japan at new highs) and some currencies were trending, while energies were net slightly down for the month.  #mech/slow_reaction _(added by Opus, time-bound view)_
+- **Niels Kaastro Larsen** In May 2026 trend leadership shifted: metals and equities (US and Japan at new highs) and some currencies were trending, while energies were net slightly down for the month.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
   > we see a lot more in the metals as far as I can tell in terms of trends not so much in energies right now
   indicator: sector trend strength (metals, energy, equities, FX) · asset: multi · direction: long metals and equities; energy flat/down · horizon: weeks · testable: partly - sector P&L attribution · confidence: low
   ^MT038-C04-X2
@@ -165,7 +165,7 @@ tags: [source, layer0]
 - **Yuval** Rob's explanation: the low-beta long portfolio has high idiosyncratic risk and low correlation among its stocks, so it is a better diversified portfolio with a higher Sharpe, as trend followers prefer uncorrelated bets.  #mech/risk_premium
   > The portfolio that you are long is a much higher quality portfolio.
   indicator: portfolio diversification of low beta stocks · asset: equities · horizon: years · testable: yes - test with quality control · confidence: medium
-  **Correction (Opus):** Misattributes the idea: the diversification/quality explanation of BAB is Yuval's own interpretation ('I'm going to try and explain why I think this is making money'), not Rob's. → Yuval's explanation: the low-beta long portfolio has high idiosyncratic risk and low correlation among its stocks, so it is a better diversified, higher-Sharpe portfolio, just as trend followers prefer many uncorrelated bets.
+  **Correction (cross-check):** Misattributes the idea: the diversification/quality explanation of BAB is Yuval's own interpretation ('I'm going to try and explain why I think this is making money'), not Rob's. → Yuval's explanation: the low-beta long portfolio has high idiosyncratic risk and low correlation among its stocks, so it is a better diversified, higher-Sharpe portfolio, just as trend followers prefer many uncorrelated bets.
   ^MT038-C06-5
 - **Yuval** The low-volatility anomaly is consistent with BAB: low volatility stocks outperform high volatility stocks.  #mech/risk_premium
   > low volatility stocks tend to outperform high volatility stocks.
@@ -197,7 +197,7 @@ tags: [source, layer0]
   > you don't see that effect even even stronger.
   indicator: BAB across countries · asset: equities · horizon: years · testable: yes · confidence: medium
   ^MT038-C07-6
-- **Yuval** Yuval doubts the leverage-constraint explanation for BAB because investors wanting more risk can get it through leveraged ETFs or futures rather than by overpaying for high-beta stocks.  #mech/research_method _(added by Opus)_
+- **Yuval** Yuval doubts the leverage-constraint explanation for BAB because investors wanting more risk can get it through leveraged ETFs or futures rather than by overpaying for high-beta stocks.  #mech/research_method _(added by opus cross-check)_
   > if you really want to risk, um there's plenty of risk in the ETFs, plenty of risk in um in futures to actually get yourself exposed to that.
   asset: equities · conditions: leverage available via ETFs/futures · testable: partly - BAB returns before/after leveraged ETF availability · confidence: medium
   ^MT038-C07-X1
@@ -374,7 +374,7 @@ tags: [source, layer0]
 - **Rob** In alternative markets trade passively over multiple days.  #mech/risk_management
   > I talked about multi-day execution and saying you want to be passive as long as possible, right?
   indicator: multi-day execution · asset: multi · horizon: days · conditions: Alternative markets · testable: partly · confidence: medium
-  **Correction (Opus):** Wrong speaker: the preference for passive multi-day execution in alternative markets is Yuval's (he refers to his first appearance on the podcast; it is Rob's first time on the show). → Yuval: in alternative (less liquid) markets stay passive as long as possible and execute over multiple days.
+  **Correction (cross-check):** Wrong speaker: the preference for passive multi-day execution in alternative markets is Yuval's (he refers to his first appearance on the podcast; it is Rob's first time on the show). → Yuval: in alternative (less liquid) markets stay passive as long as possible and execute over multiple days.
   ^MT038-C16-2
 - **Yuval** OTC and commodity markets (freight) need broker execution that cannot be fully automated.  #mech/risk_management
   > A lot of the markets that we trade are OTC and they're not they don't they don't necessarily trade on the exchange and you can't really automate it.

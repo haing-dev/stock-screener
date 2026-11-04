@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 8503
 claims: 51
-added_by_opus: 9
+added_by_crosscheck: 9
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, hedge fund manager)", "Alan Dunne (Dunne/Archive Capital, systematic macro commentator)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, CTA performance, fiscal deficits and yields, drawdown statistics, portfolio diversification
 
-**Opus completeness estimate of first read:** 0.85 - first reader caught nearly all mechanisms and the paper statistics; missed the post-recovery analogue outcome, Eichengreen's view, several behavioral/allocator points and the hedge-fund convexity caveat.
+**Cross-check completeness estimate of first read:** 0.85 - first reader caught nearly all mechanisms and the paper statistics; missed the post-recovery analogue outcome, Eichengreen's view, several behavioral/allocator points and the hedge-fund convexity caveat.
 
 ## Coverage
 
@@ -51,7 +51,7 @@ tags: [source, layer0]
   > The simple conclusion of course is the less the does the quicker the rebound
   asset: equities · horizon: days · testable: partly: needs a sample of rebounds with and without stimulus · confidence: low
   ^MT096-C01-2
-- **Alan Dunne** In both historical analogues of a very fast recovery from a 20% S&P 500 drawdown (1998 and 2020), the rally continued for about a year before reversing, suggesting fast V-shaped recoveries tend to be followed by further gains rather than an immediate relapse.  #mech/cycle_persistence _(added by Opus, time-bound view)_
+- **Alan Dunne** In both historical analogues of a very fast recovery from a 20% S&P 500 drawdown (1998 and 2020), the rally continued for about a year before reversing, suggesting fast V-shaped recoveries tend to be followed by further gains rather than an immediate relapse.  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
   > in those two cases the the rally went on to continue for about a year before we saw the reversal
   indicator: days to recover a 20% S&P 500 drawdown · asset: equities · direction: equities up for about a year after a fast recovery to new highs · horizon: months · conditions: only two analogues, both with Fed easing; this time no easing · testable: yes - event study of post-recovery returns, small sample · confidence: low
   ^MT096-C01-X1
@@ -60,7 +60,7 @@ tags: [source, layer0]
 - **Alan Dunne** A proprietary trend-following router/proxy finished at 57 after a 10-day rise, in line with improving CTA industry performance in late June.  #mech/slow_reaction _(time-bound view)_
   > my trim router finished at 57 yesterday. That's a rise over the last 10 days and that probably corresponds well with what's happened in the industry
   indicator: Alan Dunne trend router (as reported) · asset: multi · horizon: weeks · testable: no: proprietary series not defined · confidence: low
-  **Correction (Opus):** Wrong speaker: the C02 market update (incl. 'my trim router finished at 57') is given by the host Niels Kaastrup-Larsen, not Alan Dunne; 'trim router' is a caption error for his trend barometer. → Niels Kaastrup-Larsen's trend barometer finished at 57 after a 10-day rise, in line with improving CTA performance in late June 2025.
+  **Correction (cross-check):** Wrong speaker: the C02 market update (incl. 'my trim router finished at 57') is given by the host Niels Kaastrup-Larsen, not Alan Dunne; 'trim router' is a caption error for his trend barometer. → Niels Kaastrup-Larsen's trend barometer finished at 57 after a 10-day rise, in line with improving CTA performance in late June 2025.
   ^MT096-C02-1
 - **Niels Kaastrup-Larsen** The June 2025 surprise attack on Iran spiked oil and caught short-oil trend followers wrong-footed; those who exited the shorts then got no benefit from the oil collapse days later, so geopolitical energy shocks whipsaw trend portfolios.  #mech/crowding_positioning _(time-bound view)_
   > surprise attack on Iran that sent oil prices surging catching I think a lot of trend followers on the wrong side
@@ -69,7 +69,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** CTA indices were negative in 2025 at July: BTOP50 about -3.2%, SG Trend about -7.8%, SG CTA -10%/short-term traders -5.15% YTD, while MSCI World was +9.5%, bonds +3.4%, S&P 500 +6.8%.  #mech/new _(time-bound view)_
   > the B top 50 index has started out July up 30 basis points uh still down 3.1 16% for the year
   indicator: BTOP50, SG Trend Index, SG Short-Term Traders Index, MSCI World, S&P 500 · asset: multi · horizon: months · testable: yes: public index data · confidence: high
-  **Correction (Opus):** Indices likely swapped: the caption reads SG CTA index (garbled 'Stockton trend sorry in CT index') down 7.8% YTD and SG Trend index down 10% YTD, not SG Trend -7.8% and SG CTA -10%; BTOP50 is -3.16%. → At early July 2025: BTOP50 -3.16% YTD, SG CTA index about -7.8%, SG Trend index about -10%, SG short-term traders -5.15%; MSCI World +9.5%, US aggregate bonds +3.44%, S&P 500 +6.76%.
+  **Correction (cross-check):** Indices likely swapped: the caption reads SG CTA index (garbled 'Stockton trend sorry in CT index') down 7.8% YTD and SG Trend index down 10% YTD, not SG Trend -7.8% and SG CTA -10%; BTOP50 is -3.16%. → At early July 2025: BTOP50 -3.16% YTD, SG CTA index about -7.8%, SG Trend index about -10%, SG short-term traders -5.15%; MSCI World +9.5%, US aggregate bonds +3.44%, S&P 500 +6.76%.
   ^MT096-C02-3
 - **Niels Kaastrup-Larsen** Short-term trend models did not benefit from the quick market reversals, and on a vol-adjusted basis performed about as badly as the longer-term SG Trend index, so faster speeds were no protection in the choppy 2025 market.  #mech/slow_reaction _(time-bound view)_
   > doesn't seem to have benefited uh shortterm models uh as much as you might think in a rangebound uh erratic market
@@ -111,7 +111,7 @@ tags: [source, layer0]
   > there is zero appetite for for for austerity
   indicator: fiscal policy reversals (UK welfare U-turn) · asset: rates · direction: higher yields over time · horizon: years · testable: no: political judgment · confidence: medium
   ^MT096-C04-4
-- **Alan Dunne** Per Barry Eichengreen, central bankers two years earlier expected governments to bring 5-6% of GDP deficits down; instead deficits grew, and he became much more pessimistic, signalling that monetary policy makers cannot count on fiscal consolidation.  #mech/fiscal_debt _(added by Opus, time-bound view)_
+- **Alan Dunne** Per Barry Eichengreen, central bankers two years earlier expected governments to bring 5-6% of GDP deficits down; instead deficits grew, and he became much more pessimistic, signalling that monetary policy makers cannot count on fiscal consolidation.  #mech/fiscal_debt _(added by opus cross-check, time-bound view)_
   > his perspective was at the time that central bankers expected governments to make more progress on um on addressing deficits
   indicator: fiscal deficit % of GDP vs official expectations · asset: rates · direction: higher long yields / term premium · horizon: years · testable: partly - deficit outcomes vs projections can be tracked; expectations are anecdotal · confidence: medium
   ^MT096-C04-X1
@@ -133,7 +133,7 @@ tags: [source, layer0]
   > they concluded it was more hedging pressure than actual sales of dollar assets
   indicator: BIS report, cross-currency basis, timing of dollar selling by time zone · asset: fx · direction: USD weakness · horizon: weeks · testable: yes: cross-currency basis and intraday flow patterns · confidence: medium
   ^MT096-C05-4
-- **Niels Kaastrup-Larsen** The volume of research papers defending trend following rises as CTA performance worsens, so a wave of such papers is itself a marker of a deep industry drawdown and weak allocator sentiment.  #mech/behavioral _(added by Opus)_
+- **Niels Kaastrup-Larsen** The volume of research papers defending trend following rises as CTA performance worsens, so a wave of such papers is itself a marker of a deep industry drawdown and weak allocator sentiment.  #mech/behavioral _(added by opus cross-check)_
   > the worse the performance gets in our industry, the the the better or the the higher the
   indicator: count of manager papers on trend-following drawdowns · asset: multi · horizon: months · testable: partly - paper counts vs SG Trend drawdown could be compiled · confidence: low
   ^MT096-C05-X1
@@ -191,7 +191,7 @@ tags: [source, layer0]
   > if you're only been in business for 5 years you've actually only got a 21% chance of having experienced this
   indicator: probability of drawdown vs track-record length · asset: multi · horizon: years · conditions: track records shorter than 20 years · testable: yes · confidence: high
   ^MT096-C08-3
-- **Alan Dunne** Statistical evidence that a drawdown is normal rarely changes skeptical allocators' minds; staying invested in trend following requires a prior conviction that the strategy works over time, which is why allocators often exit in drawdowns.  #mech/behavioral _(added by Opus)_
+- **Alan Dunne** Statistical evidence that a drawdown is normal rarely changes skeptical allocators' minds; staying invested in trend following requires a prior conviction that the strategy works over time, which is why allocators often exit in drawdowns.  #mech/behavioral _(added by opus cross-check)_
   > If you're already suspicious uh skeptical you're probably not going to change your mind on the back back of it because you're you're probably going to be seduced by the narrative.
   asset: multi · horizon: years · conditions: during prolonged strategy drawdowns · testable: partly - CTA flows vs trailing performance · confidence: medium
   ^MT096-C08-X1
@@ -213,7 +213,7 @@ tags: [source, layer0]
   > you are in business the the higher the probability is that you're going to experience something
   indicator: track-record length · asset: multi · horizon: years · testable: yes · confidence: high
   ^MT096-C09-4
-- **Alan Dunne** After the strong 2022 year trend following went mainstream with new allocators, and the sentiment shift now (doubt among those same investors) is notable: performance-chasing allocators arrive after the best year and lose faith in the following drawdown.  #mech/behavioral _(added by Opus, time-bound view)_
+- **Alan Dunne** After the strong 2022 year trend following went mainstream with new allocators, and the sentiment shift now (doubt among those same investors) is notable: performance-chasing allocators arrive after the best year and lose faith in the following drawdown.  #mech/behavioral _(added by opus cross-check, time-bound view)_
   > there was a sense that trend following went mainstream I was hearing you know people talking about allocating to trend following who had never said that before
   indicator: allocator interest in trend following after strong years · asset: multi · horizon: years · conditions: after an exceptional year such as 2022 · testable: partly - CTA AUM flows after strong and weak years · confidence: medium
   ^MT096-C09-X1
@@ -231,7 +231,7 @@ tags: [source, layer0]
   > first first responders and second responders with um you know the being a potential role in the portfolio for long volatility strategies as a first responder solution and then um trend following as a second responder
   indicator: long volatility vs trend following in equity drawdowns · asset: multi · direction: blend long vol and trend · conditions: sudden crash vs prolonged decline · testable: yes: test in a set of drawdown episodes · confidence: medium
   ^MT096-C10-3
-- **Alan Dunne** Individual CTA managers have had worse drawdowns than the index, so investors holding only one or two managers experience the strategy's bad periods more severely than index statistics suggest; manager dispersion shapes perception and the case for diversifying across managers.  #mech/risk_management _(added by Opus)_
+- **Alan Dunne** Individual CTA managers have had worse drawdowns than the index, so investors holding only one or two managers experience the strategy's bad periods more severely than index statistics suggest; manager dispersion shapes perception and the case for diversifying across managers.  #mech/risk_management _(added by opus cross-check)_
   > managers that they've probably had even more negative experiences. So, so that will that will um influence the perception of of certain investors
   indicator: dispersion of single-manager returns vs SG Trend Index · asset: multi · horizon: years · conditions: concentrated manager selection · testable: yes - compare single-manager vs index drawdown distributions · confidence: medium
   ^MT096-C10-X1
@@ -249,7 +249,7 @@ tags: [source, layer0]
   > credit instruments start behaving more like equities just when you want them to behave less like equities
   indicator: credit spreads vs equity correlation · asset: credit · conditions: stress periods · testable: yes · confidence: high
   ^MT096-C11-3
-- **Niels Kaastrup-Larsen** Niels is only lukewarm on the long-vol plus trend blend argued by Capstone and Alan, preferring a pure trend approach; a disagreement on whether adding long volatility improves a crisis-hedge portfolio.  #mech/risk_management _(added by Opus)_
+- **Niels Kaastrup-Larsen** Niels is only lukewarm on the long-vol plus trend blend argued by Capstone and Alan, preferring a pure trend approach; a disagreement on whether adding long volatility improves a crisis-hedge portfolio.  #mech/risk_management _(added by opus cross-check)_
   > maybe combining them makes sense. I don't know. Um I still like the pure trend approach of course.
   asset: multi · horizon: years · testable: yes - compare pure trend vs long-vol/trend blend through equity drawdowns · confidence: low
   ^MT096-C11-X1
@@ -263,11 +263,11 @@ tags: [source, layer0]
   > 38% responded that they're trying to find the right risk offsetting asset or strategy is their biggest challenge
   indicator: UBS Global Family Office Report 2025 · asset: multi · testable: yes: survey data · confidence: high
   ^MT096-C12-2
-- **Alan Dunne** A hedge fund allocation only diversifies if it holds divergent strategies run at meaningful volatility; a small allocation to low-vol market-neutral or long-short equity funds adds little convexity in a crisis.  #mech/risk_management _(added by Opus)_
+- **Alan Dunne** A hedge fund allocation only diversifies if it holds divergent strategies run at meaningful volatility; a small allocation to low-vol market-neutral or long-short equity funds adds little convexity in a crisis.  #mech/risk_management _(added by opus cross-check)_
   > if you have a 4% allocation of hedge funds and they're all low V market neutral funds, you're not going to get much [L440] convexity there in times of stress
   indicator: hedge fund strategy type and volatility level · asset: multi · conditions: stress periods · testable: yes - crisis-period returns by hedge fund strategy and vol · confidence: medium
   ^MT096-C12-X1
-- **Niels Kaastrup-Larsen** UBS 2025 family office survey: 53% worry about a global recession and 50% about a debt crisis over five years (not over 12 months); 64% of assets are in active strategies vs 36% passive; 29% worry about the predictability of safe-haven assets and 26% about costs and fees.  #mech/behavioral _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** UBS 2025 family office survey: 53% worry about a global recession and 50% about a debt crisis over five years (not over 12 months); 64% of assets are in active strategies vs 36% passive; 29% worry about the predictability of safe-haven assets and 26% about costs and fees.  #mech/behavioral _(added by opus cross-check, time-bound view)_
   > 53% who mention that they do worry about a global recession in the [L460] next five years um and then a debt crisis. 50% worries about a debt crisis in the next 5 years as well.
   indicator: UBS Global Family Office Report 2025 · asset: multi · horizon: years · conditions: survey January-April 2025 · testable: no - survey snapshot · confidence: high
   ^MT096-C12-X2

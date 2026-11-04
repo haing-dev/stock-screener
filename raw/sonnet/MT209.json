@@ -1,0 +1,171 @@
+{
+ "source_id": "MT209",
+ "speakers": [
+  "Guest (former Norwegian prime minister and finance minister; not named in captions)",
+  "Interviewer (Norges Bank Investment Management; not named in captions)"
+ ],
+ "summary": "NBIM interview on Norway's fiscal (spending) rule: oil revenues go to the pension fund and only the expected 3% return is spent. The rule worked better than expected as the fund grew; new risk is equity-market exposure and the key lesson is credibility of self-imposed rules.",
+ "approach_tags": [
+  "fiscal rule",
+  "sovereign wealth fund",
+  "institutional design"
+ ],
+ "coverage": [
+  {
+   "chunk": "C01",
+   "claims": 5,
+   "note": "spending rule design, purposes, results, fund size"
+  },
+  {
+   "chunk": "C02",
+   "claims": 4,
+   "note": "rule durability, equity-market risk, credibility of rules, closing compliments"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "MT209-C01-1",
+   "chunk": "C01",
+   "speaker": "Guest (former Norwegian prime minister and finance minister; not named in captions)",
+   "quote": "the only thing we're going to spend was the financial return uh which we estimate to 3% in yield terms per year",
+   "claim": "Norway's spending rule: all oil and gas revenue goes into the pension fund and only the expected financial return (about 3% a year) may be spent on the budget.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "multi",
+   "indicator": "Norwegian sovereign wealth fund, 3% expected return",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly: rule is explicit, long-run effect testable on fund data",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT209-C01-2",
+   "chunk": "C01",
+   "speaker": "Guest (former Norwegian prime minister and finance minister; not named in captions)",
+   "quote": "to separate earnings from spending and prevent overheating of the uh economy",
+   "claim": "The rule has two purposes: share oil wealth with future generations and stabilize the economy by separating earnings from spending, avoiding overheating and Dutch disease.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "multi",
+   "indicator": "oil revenue vs domestic spending",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "resource-rich economies",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT209-C01-3",
+   "chunk": "C01",
+   "speaker": "Guest (former Norwegian prime minister and finance minister; not named in captions)",
+   "quote": "almost one one quarter of the norian state expenditure or state budget is financed by the return from the oil fund",
+   "claim": "About 25% of Norway's state budget is now financed by fund returns.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "multi",
+   "indicator": "fund return share of budget",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes: budget data",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT209-C01-4",
+   "chunk": "C01",
+   "speaker": "Guest (former Norwegian prime minister and finance minister; not named in captions)",
+   "quote": "the fund has become much bigger than we expected for many reasons",
+   "claim": "The fund grew far beyond expectations through higher production, higher prices and good investment management, which made the fiscal rule more important.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "fund size",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT209-C01-5",
+   "chunk": "C01",
+   "speaker": "Guest (former Norwegian prime minister and finance minister; not named in captions)",
+   "quote": "Quite a feat to manage to get um political consensus around the spending of such vast resources",
+   "claim": "Cross-party political consensus on a self-imposed spending limit is one of the fund's main successes.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT209-C02-1",
+   "chunk": "C02",
+   "speaker": "Guest (former Norwegian prime minister and finance minister; not named in captions)",
+   "quote": "Norway has spent zero of the oil uh revenues the only thing we have spent is the fiscal return on the oil revenues",
+   "claim": "Because only returns are spent and capital is preserved, the arrangement can last forever.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT209-C02-2",
+   "chunk": "C02",
+   "speaker": "Guest (former Norwegian prime minister and finance minister; not named in captions)",
+   "quote": "we now have so much our wealth in the stock market then of course there can be big fluctuations uh that can have a impact on the Norwegian economy",
+   "claim": "Holding most of the national wealth in equities creates a new risk: market falls feed straight into the budget and economy.",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "fund equity share, budget exposure",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "equity drawdowns",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT209-C02-3",
+   "chunk": "C02",
+   "speaker": "Guest (former Norwegian prime minister and finance minister; not named in captions)",
+   "quote": "perhaps it's better to have an imperfect rule which is credible than to always try to uh run for a more perfect rule",
+   "claim": "A rule's credibility is worth more than perfection: frequent changes undermine a self-imposed restriction.",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: judgment",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT209-C02-4",
+   "chunk": "C02",
+   "speaker": "Guest (former Norwegian prime minister and finance minister; not named in captions)",
+   "quote": "they said it cannot work politician will spend if they get the money we have proven them wrong",
+   "claim": "In the 1990s experts expected politicians to spend any money received (some wanted to cut production), but Norway's rule held.",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

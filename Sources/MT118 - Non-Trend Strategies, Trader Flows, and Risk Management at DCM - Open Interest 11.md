@@ -5,10 +5,10 @@ date: 2024-12-02
 channel: "Top Traders Unplugged"
 url: 
 words: 9017
-claims: 33
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 44
+added_by_crosscheck: 11
+corrections: 4
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Jerome Callo (guest, founder DCM Systematic, ex-BlueTrend)", "Moritz Seibert (host, Open Interest series)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Open Interest ep. 11 with DCM Systematic: a 25+ model non-trend multi-strategy fund built around behavioural flow anticipation (term structure, month end, shock overshoot, CTA positioning), relative value, and slow macro/cross-asset models, with proactive scenario risk management and a never-short-VIX rule. Sceptical that machine learning transfers directly to daily financial data.
 
 **Approach:** non-trend CTA, behavioural flows, relative value, fast mean reversion, volatility, risk management, machine learning
+
+**Cross-check completeness estimate of first read:** 0.81 - first reader captured the main design ideas (flow anticipation, term structure, shock overshoot, FX three-factor residuals, never short VIX, scenario risk, ML limits); missed the allocator-role and trend-blend exchange, role-based model retention, VIX asymmetry, hedging overlay status, cross-asset lead-lag motivation, persistence counterpoint and three speaker attributions.
 
 ## Coverage
 
@@ -55,6 +57,10 @@ tags: [source, layer0]
   > we should not overlap too much with uh Trend following programs because that part of the space is well covered by large Market participants
   indicator: non-trend diversified strategy · asset: multi · testable: yes - measure correlation to SG CTA index · confidence: high
   ^MT118-C02-2
+- **Moritz Seibert** Adding a trend-following component to a 25-model non-trend book would probably still raise risk-adjusted returns, even though correlation to trend followers would rise, because trend has a positive expected return and diversifies the models.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > it would probably still improve the risk adjusted returns of the portfolio right you would have a higher correlation than as a result to Trend following
+  indicator: trend model added to a multi-strategy book · asset: multi · direction: add trend to the book · conditions: at the cost of higher correlation to CTA indices · testable: yes - backtest the blend · confidence: medium
+  ^MT118-C02-X1
 
 ### C03
 - **Jerome Callo** It may be easier to forecast the positioning of large systematic participants (carry, value, momentum, risk parity, trend) than to forecast the market, because they cannot unwind large positions quickly.  #mech/crowding_positioning
@@ -65,6 +71,14 @@ tags: [source, layer0]
   > looking at the term structure and uh typically trying to anticipate carry Traders while looking at the slope of ter structures on many instruments
   indicator: futures term-structure slope (contango/backwardation) · asset: multi · direction: trade the expected carry-trader flow · horizon: days · conditions: initially worked in FX and spread to other asset classes · testable: yes - term-structure slope signal · confidence: high
   ^MT118-C03-2
+- **Jerome Callo** The fund concedes that trend following has a positive expected return and that an optimal blend with it exists, but sees choosing that blend as the allocator's job; the fund's own role is to be non-overlapping so the allocator is not doubling up on what they already hold.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > we we think that's more the the role of of or the mission of of the allocator than our own to to do that
+  asset: multi · testable: no - product positioning · confidence: high
+  ^MT118-C03-X1
+- **Jerome Callo** The term-structure carry-trader anticipation signal, first found in FX, worked across many other asset classes with only risk-system adjustments, which gave confidence that it is a genuine principle and not a narrow data-mined result.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > we expanded that to the the other asset classes and what we saw is that the same principle perhaps with some adjustment in terms of the risk system was was working uh pretty well
+  indicator: futures term-structure slope across asset classes · asset: multi · horizon: days · testable: yes - signal performance by asset class · confidence: medium
+  ^MT118-C03-X2
 
 ### C04
 - **Jerome Callo** A behavioural flow-anticipation model must be about twice as fast as the flow it tries to anticipate, giving a 5 to 10 day holding period and very low correlation to CTA indices.  #mech/crowding_positioning
@@ -88,15 +102,21 @@ tags: [source, layer0]
 - **Jerome Callo** With 25+ models the portfolio can end up with all models pointing the same way (e.g. the August 2024 yen carry unwind), so a portfolio-level overlay should cap aggregate directional, factor (carry) or risk-on exposure.  #mech/crowding_positioning _(time-bound view)_
   > it can happen that at time they are in a consensus view on on something right
   indicator: portfolio overlay on aggregate positioning · asset: multi · direction: cap aligned exposures · horizon: days · conditions: when models are in consensus · testable: yes - aggregate exposure cap testable · confidence: high
+  **Correction (cross-check):** Overstated: Jerome says that in the August 2024 unwind different anticipation models gave different results and the overall outcome was difficult; model consensus is raised as a general risk that can occur with 25+ models, not as what happened in August. → With 25+ models there is a risk that models reach a consensus view and the portfolio becomes exposed to a narrow set of trades; after a difficult August 2024 yen carry unwind (models gave mixed results), DCM is researching a portfolio overlay that looks at all positioning and can cap aggregate direct, factor (carry) or risk-on exposure.
   ^MT118-C05-1
 - **Jerome Callo** End-of-month flow effects persist because large pools of capital rebalance on a monthly schedule, even though the inefficiency is documented.  #mech/seasonality
   > I tend to be surprised still by the end of month effects
   indicator: month-end calendar effect · asset: multi · horizon: days · testable: yes - calendar effect study · confidence: medium
+  **Correction (cross-check):** Wrong speaker: the reflection that month-end effects persist because large pools of capital run on a monthly schedule is the host's comment closing the behavioural bucket, not Jerome Callo's. → Moritz Seibert (host) says he is still surprised that month-end effects persist despite academic papers, because humans and large pools of capital like to run on a monthly schedule and keep trading at month end because that is how it has always been done.
   ^MT118-C05-2
 - **Moritz Seibert** Risk premia, factor and bank QIS strategies trade billions on rules and leave predictable footprints in prices that can be exploited.  #mech/crowding_positioning
   > all of that leaves um skit marks in the markets which which you can exploit
   indicator: footprints of QIS/risk premia flows · asset: multi · horizon: days · testable: partly - footprints hard to measure · confidence: medium
   ^MT118-C05-3
+- **Jerome Callo** A bad episode (the August 2024 yen carry unwind) is treated as a data point to improve the risk system, with changes made through balanced discussion with the team rather than as a reaction to the last loss.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > it's always very useful to have this kind of negative data points because that's essentially where you can potentially improve the the risk system
+  indicator: drawdown episodes as research input · asset: multi · conditions: avoid changing the system just to avoid the last pain · testable: no - process statement · confidence: medium
+  ^MT118-C05-X1
 
 ### C06
 - **Jerome Callo** Scaling estimated trend and carry positioning to the whole CTA industry and comparing with CFTC net speculator/hedger positions shows how big crowded positions are, and the best opportunities arise when an over-traded position must unwind.  #mech/crowding_positioning
@@ -111,6 +131,10 @@ tags: [source, layer0]
   > we have to play with the 10 15 person left of unexplained variance which is anything that is more ideosyncratic to a certain currency
   indicator: FX residual after factor neutralisation · asset: fx · direction: fade residual · horizon: days · testable: yes - residual mean reversion test · confidence: high
   ^MT118-C06-3
+- **Jerome Callo** Relative value is built either as pair spreads (Brent vs WTI, soybean oil vs soybean meal) or as larger baskets (FX, grains) with zero or controlled net exposure.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > can be a spread like an instrument versus another like Brands versus WTI or you know something like soy oil versus soy meal or it can be a larger basket with a zero net exposure
+  indicator: Brent-WTI spread; soy oil-soy meal spread; FX and grain baskets · asset: commodities · conditions: net exposure zero or controlled · testable: yes - spread and basket backtests · confidence: high
+  ^MT118-C06-X1
 
 ### C07
 - **Jerome Callo** Strictly market-neutral relative value (e.g. WTI vs Brent) forces overtrading or excessive leverage, so DCM allows slack and derives positions from term structure with a limited directional exposure.  #mech/risk_management
@@ -120,6 +144,7 @@ tags: [source, layer0]
 - **Moritz Seibert** Pairing the steeper-backwardation contract with its neighbour neutralises spot risk while collecting roll-down yield, an RV carry construction.  #mech/risk_premium
   > you what you can do is almost neutralize the the spot return risk using Brands to to offset whatever exposure you have to WTI spots
   indicator: roll yield, term-structure slope · asset: commodities · direction: long steeper backwardation, offset spot with the other · horizon: weeks · testable: yes - roll-yield spread backtest · confidence: medium
+  **Correction (cross-check):** Likely wrong speaker: the host only offers the hypothetical of WTI in steeper backwardation than Brent; the roll-down and spot-risk neutralisation argument ('your example, that's a great setup') is Jerome Callo's reply. → Jerome Callo says that with WTI in steeper backwardation than Brent, one can separate carry and spot components, offset WTI spot exposure with Brent and still collect the WTI roll-down yield, keeping an offsetting Brent position purely as a risk neutraliser.
   ^MT118-C07-2
 
 ### C08
@@ -131,6 +156,10 @@ tags: [source, layer0]
   > what could go spectacularly wrong with a certain asset class
   indicator: scenario-based loss constraint in optimiser · asset: equities · testable: yes - scenario stress in the solver · confidence: high
   ^MT118-C08-2
+- **Jerome Callo** Hedging-role models (such as long-VIX shock models) can produce no returns for years and have false alarms, yet are kept because their function is protection in shocks, so models are judged by role in the portfolio, not stand-alone return.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > we can see certain models producing no returns for years and years but we know their function we know their role we we know we want to have them
+  indicator: long-volatility shock models · asset: multi · horizon: years · conditions: when the model's role is diversification in drawdowns · testable: partly - role-based evaluation needs a conditional return test · confidence: high
+  ^MT118-C08-X1
 
 ### C09
 - **Moritz Seibert** Proactive risk management stress-tests current positioning against past scenarios such as Volmageddon, while reactive risk management adjusts positions after the fact.  #mech/risk_management
@@ -148,7 +177,12 @@ tags: [source, layer0]
 - **Moritz Seibert** Many retail and other traders sit in short-volatility trades, so volatility shocks force liquidation and leave an exploitable convex footprint.  #mech/crowding_positioning
   > there are many Traders including retail Traders all around the world Expos exposed to short volatility trades
   indicator: short-volatility crowding · asset: equities · direction: long volatility · horizon: days · testable: partly - positioning data limited · confidence: medium
+  **Correction (cross-check):** Wrong speaker: the passage about retail and other traders in short-volatility trades, the painful unrealised losses forcing them out and the added convexity follows 'we came back and made more' and is Jerome Callo's reasoning, not the host's. → Jerome Callo says the volatility spectrum may leave a larger exploitable footprint than any other market because many traders, including retail, are exposed to short-volatility trades; shocks make unrealised losses painful, force them out and add convexity.
   ^MT118-C09-4
+- **Moritz Seibert** VIX price action is asymmetric: it jumps up fast and fades gradually, so a long-volatility position can monetise the spike and a volatility-targeted book that de-risks after the gain keeps the profit.  #mech/overshoot _(added by sonnet-xhigh cross-check)_
+  > it can you know jump up very fast but there's typically I would believe a a more gradual Fade Out of of of the action
+  indicator: VIX spike and decay profile · asset: multi · direction: long volatility into shocks, reduce after the spike · horizon: days · conditions: after volatility shocks · testable: yes - VIX event study · confidence: medium
+  ^MT118-C09-X1
 
 ### C10
 - **Jerome Callo** Macro models use inflation from CPI prints and from an in-house real-time nowcast built from equity sectors, giving holding periods of a month to a couple of months in fixed income and FX.  #mech/policy_reaction
@@ -163,6 +197,14 @@ tags: [source, layer0]
   > how many independent degrees of freedom do I really have in that in that pack you see it's more than it's more like 20 we've done the exercise I think couple of weeks ago and it was 19
   indicator: effective number of independent bets (PCA) in 75 futures · asset: multi · horizon: years · testable: yes - PCA of returns · confidence: high
   ^MT118-C10-3
+- **Jerome Callo** Each of the 25 models neutralises certain factors locally (US dollar carry, yield-curve level), but there is as yet no portfolio-level systematic hedging overlay; building one with an overview of the whole portfolio is the next research step.  #mech/risk_management _(added by sonnet-xhigh cross-check, time-bound view)_
+  > up to now something very local and the next step um hopefully this here is to have the full overview of the portfolio with some hedging trades coming up there
+  indicator: factor neutralisation inside models; portfolio hedge overlay · asset: multi · testable: no - research agenda · confidence: medium
+  ^MT118-C10-X1
+- **Jerome Callo** Rather than treating the compression to about 19 independent bets as only bad for diversification, DCM uses it to build cross-asset lead-lag models that exploit linked markets, since globalised flows make markets move together.  #mech/liquidity_flows _(added by sonnet-xhigh cross-check)_
+  > more what we we call cross asset models which is uh lead lag relationships between different asset classes
+  indicator: lead-lag between asset classes · asset: multi · horizon: days · conditions: markets liquidated and traded together after 2008 · testable: yes - lead-lag regressions · confidence: medium
+  ^MT118-C10-X2
 
 ### C11
 - **Jerome Callo** A proxy for Brent built from currency pairs by robust regression (correlation about 0.5-0.6) lets a behavioural signal on Brent be traded through an FX basket, transferring signals across asset classes.  #mech/new
@@ -197,4 +239,12 @@ tags: [source, layer0]
   > it is human beings that run end of month accounting um and portfolio adjustments
   indicator: month-end flow · asset: multi · horizon: days · testable: yes - calendar effect · confidence: medium
   ^MT118-C13-2
+- **Jerome Callo** Non-stationarity is not universal: some behavioural flow patterns such as month-end rebalancing have persisted for 20-30 years, so each pattern must be judged on its own persistence rather than assuming all patterns decay.  #mech/seasonality _(added by sonnet-xhigh cross-check)_
+  > mentioned the end of months rebalancing which is was there 20 30 years ago and still is there so so you can't really make a generalization of of of everything
+  indicator: month-end rebalancing effect · asset: multi · horizon: years · conditions: patterns driven by institutional calendars persist; patterns that are publicly arbitraged can decay · testable: yes - long-sample test of month-end effect · confidence: medium
+  ^MT118-C13-X1
+- **Jerome Callo** Because market participants and structure keep changing, the fund treats research as a continuous process and expects its model set to have new components and removed ones over time.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > so that's why we you know stay very focused on research and we see it as a continuous process
+  asset: multi · horizon: years · testable: no - process statement · confidence: high
+  ^MT118-C13-X2
 

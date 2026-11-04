@@ -6,7 +6,7 @@ channel: "Bg2 Pod"
 url: https://www.youtube.com/watch?v=fTqINzeudJ4
 words: 11742
 claims: 71
-added_by_opus: 6
+added_by_crosscheck: 6
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Brad Gerstner (host, Altimeter Capital)", "Bill Gurley (co-host, investor)", "Sunny Madra (guest, COO of Groq)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** AI industry structure, tariffs and trade policy, market sentiment, venture/private valuations
 
-**Opus completeness estimate of first read:** 0.91 - first reader covered nearly all AI and tariff claims; missed Jevons demand effect, pricing-model shift, tariff pass-through caveat, the rate-cut flight path and the DeepSeek market reaction
+**Cross-check completeness estimate of first read:** 0.91 - first reader covered nearly all AI and tariff claims; missed Jevons demand effect, pricing-model shift, tariff pass-through caveat, the rate-cut flight path and the DeepSeek market reaction
 
 ## Coverage
 
@@ -76,9 +76,9 @@ tags: [source, layer0]
 - **Brad Gerstner** Prediction that Chinese open-source models may pass the best US proprietary models by Q4 2025.  #mech/cycle_persistence _(time-bound view)_
   > this might allow them to pass the best proprietary models coming out of the US um yet this year, maybe by Q4 of this year.
   asset: equities · horizon: months · testable: partly - resolvable by leaderboard · confidence: low
-  **Correction (Opus):** Wrong speaker: Gerstner is relaying Sunny Madra's tweet; the prediction is Madra's. → Sunny Madra (via Gerstner) suggested Chinese open-source models, by compounding on each other, may pass the best US proprietary models by Q4 2025.
+  **Correction (cross-check):** Wrong speaker: Gerstner is relaying Sunny Madra's tweet; the prediction is Madra's. → Sunny Madra (via Gerstner) suggested Chinese open-source models, by compounding on each other, may pass the best US proprietary models by Q4 2025.
   ^MT032-C02-6
-- **Brad Gerstner** A Chinese AI efficiency breakthrough (DeepSeek) triggered a sharp sell-off in AI hardware leaders such as Nvidia, showing the sector's sensitivity to signs that frontier AI can be built cheaply.  #mech/overshoot _(added by Opus, time-bound view)_
+- **Brad Gerstner** A Chinese AI efficiency breakthrough (DeepSeek) triggered a sharp sell-off in AI hardware leaders such as Nvidia, showing the sector's sensitivity to signs that frontier AI can be built cheaply.  #mech/overshoot _(added by opus cross-check, time-bound view)_
   > we had this freakout moment earlier in the year with Deepseek that we all remember. [L60] Remember, Nvidia stock plummets.
   asset: equities · direction: AI hardware stocks down on cheap-AI news · horizon: days · testable: partly - event study on a single episode · confidence: medium
   ^MT032-C02-X1
@@ -178,7 +178,7 @@ tags: [source, layer0]
   > In the case of Anthropic, it's, you know, uh 170 billion on rumored $5 billion in revenue.
   indicator: private AI valuations / revenue · asset: equities · horizon: months · testable: yes - round data · confidence: medium
   ^MT032-C08-5
-- **Sunny Madra** Search queries have turned into AI inference transactions, so ordinary search volume now feeds directly into compute demand.  #mech/structural_shift _(added by Opus)_
+- **Sunny Madra** Search queries have turned into AI inference transactions, so ordinary search volume now feeds directly into compute demand.  #mech/structural_shift _(added by opus cross-check)_
   > every single search query on the planet today is now an inference transaction. Correct.
   indicator: AI tokens processed per month · asset: equities · direction: compute demand up · horizon: years · testable: partly - token counts are disclosed sporadically · confidence: high
   ^MT032-C08-X1
@@ -226,7 +226,7 @@ tags: [source, layer0]
   > multiple folks are building their own models uh based off open source
   asset: equities · horizon: months · testable: partly · confidence: medium
   ^MT032-C10-5
-- **Sunny Madra** Jevons paradox: as AI capacity grows and intelligence gets cheaper, total token consumption rises rather than falls, so efficiency gains do not reduce compute demand.  #mech/structural_shift _(added by Opus)_
+- **Sunny Madra** Jevons paradox: as AI capacity grows and intelligence gets cheaper, total token consumption rises rather than falls, so efficiency gains do not reduce compute demand.  #mech/structural_shift _(added by opus cross-check)_
   > models right and you have the capacity for it it's one of those things people are consuming Jven's paradox or whatever.
   indicator: token consumption vs price per token · asset: equities · direction: compute demand up as unit cost falls · horizon: years · testable: partly - token volume and price series are partial · confidence: medium
   ^MT032-C10-X1
@@ -244,7 +244,7 @@ tags: [source, layer0]
   > how many non-G Google uh applications are running on the TPUs like how many third party customers are using
   indicator: third-party TPU customers · asset: equities · horizon: years · testable: partly - data not public · confidence: medium
   ^MT032-C11-3
-- **Bill Gurley** AI pricing will rationalize from flat subscriptions toward consumption-based pricing with automatic routing to cheaper models, which improves lab economics (already happening in enterprise).  #mech/structural_shift _(added by Opus)_
+- **Bill Gurley** AI pricing will rationalize from flat subscriptions toward consumption-based pricing with automatic routing to cheaper models, which improves lab economics (already happening in enterprise).  #mech/structural_shift _(added by opus cross-check)_
   > I do think there'll be some rationalization where these models um kind of self-pick which one they're running based on what you need.
   asset: equities · horizon: years · testable: no - business-model forecast · confidence: medium
   ^MT032-C11-X1
@@ -324,7 +324,7 @@ tags: [source, layer0]
   > we've seen you know our tariff schedule move around probably six to eight times since this all has started
   asset: multi · horizon: months · testable: no · confidence: medium
   ^MT032-C15-6
-- **Brad Gerstner** Caveat: some tariffs will be passed through to US consumers on specific goods, and the schedule will need corrections, even if overall pass-through is small.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Brad Gerstner** Caveat: some tariffs will be passed through to US consumers on specific goods, and the schedule will need corrections, even if overall pass-through is small.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > So, we're going to have some some goods and some products that, you know, consumers are US consumers are going to end up paying the taxes and we're going to have to go back and fix some of these things.
   indicator: goods-level import price inflation · asset: multi · direction: some consumer prices up · horizon: months · conditions: goods without quick substitutes · testable: yes - goods-level CPI/PCE vs tariff exposure · confidence: medium
   ^MT032-C15-X1
@@ -360,7 +360,7 @@ tags: [source, layer0]
   > I would have said the market can be up at least 15% for the year I think we've captured a lot of the return for the for the year
   asset: equities · horizon: months · testable: no · confidence: low
   ^MT032-C17-3
-- **Brad Gerstner** Gerstner's 2025 flight path: tariffs landing near $300B with no inflation lets the Fed cut rates by year-end while growth accelerates near 3%, which is bullish for equities.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Brad Gerstner** Gerstner's 2025 flight path: tariffs landing near $300B with no inflation lets the Fed cut rates by year-end while growth accelerates near 3%, which is bullish for equities.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > I said you can land the plane, no inflation, you get rate cuts and you know, and it's kind of off to the races.
   indicator: core PCE, Fed funds path, GDPNow · asset: multi · direction: long equities; rates lower · horizon: months · conditions: tariffs stay near $300B and inflation stays contained · testable: partly - scenario call, outcome checkable · confidence: high
   ^MT032-C17-X1

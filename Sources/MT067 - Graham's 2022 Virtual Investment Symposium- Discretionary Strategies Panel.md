@@ -6,7 +6,7 @@ channel: "Graham Capital Management"
 url: https://www.youtube.com/watch?v=up6xlksw1aQ
 words: 6783
 claims: 44
-added_by_opus: 6
+added_by_crosscheck: 6
 corrections: 5
 crosscheck: "opus cross-check"
 speakers: ["Pablo Calderini (president and CIO, Graham Capital)", "Katie Woodridge (chief economist)", "Peter Chapson (senior discretionary PM)", "David Keelan (senior discretionary PM)", "Chris McCann (chief risk officer)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** discretionary macro, central bank watching, risk management
 
-**Opus completeness estimate of first read:** 0.86 - first reader covered nearly all mechanisms and risk methods; missed the beta outlook, PM allocation by pairwise correlation, BoJ YCC-vs-intervention conflict, sizing-vs-noise rule and bottom-up process; several speaker attributions in C07-C09 were wrong
+**Cross-check completeness estimate of first read:** 0.86 - first reader covered nearly all mechanisms and risk methods; missed the beta outlook, PM allocation by pairwise correlation, BoJ YCC-vs-intervention conflict, sizing-vs-noise rule and bottom-up process; several speaker attributions in C07-C09 were wrong
 
 ## Coverage
 
@@ -44,7 +44,7 @@ tags: [source, layer0]
   > the policy priority was really bringing inflation that had been too low for the past decade back up to Target and that very low inflation backdrop had allowed the FED to be quick to ease and slow to tighten
   indicator: Fed reaction function; inflation level · asset: rates · horizon: years · conditions: low-inflation regime · testable: partly - reaction function can be estimated by regime · confidence: high
   ^MT067-C01-1
-- **opening speaker (Graham founder, introducing the panel)** The past decade rewarded passive stock and bond beta, but the coming years look much less constructive for traditional investments and better for macro because volatility is expected across FX, rates, equities and commodities.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **opening speaker (Graham founder, introducing the panel)** The past decade rewarded passive stock and bond beta, but the coming years look much less constructive for traditional investments and better for macro because volatility is expected across FX, rates, equities and commodities.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > as I look back over the last decade as I said earlier it was absolutely phenomenal for beta as I look ahead I'm not so sure how constructive it is for traditional Investments
   asset: multi · direction: traditional beta returns lower; macro opportunity higher · horizon: years · conditions: high-inflation, high-volatility regime · testable: partly - compare 60/40 vs macro index returns across inflation regimes · confidence: medium
   ^MT067-C01-X1
@@ -113,12 +113,12 @@ tags: [source, layer0]
 - **David Keelan** Bear markets contain vicious rallies (summer 2022 stocks +20%, 10-year notes rallying 75bp), so a trend-following short must manage sentiment-driven snapbacks.  #mech/overshoot _(time-bound view)_
   > the adage is no one makes money in a bear Market because the bear Market rallies are so vicious
   indicator: equity and bond bear-market rallies · asset: multi · horizon: weeks · conditions: oversold, dire sentiment · testable: yes - rally size in bear markets · confidence: medium
-  **Correction (Opus):** Speaker frames dire sentiment and the risk of a snapback as an opportunity to trade, not only a risk for a trend short; 'trend-following' was not said. → Bear markets contain vicious rallies (summer 2022: stocks +20%, 10-year notes rallying 75bp, stock-bond rallying together), and recognising when sentiment is so dire that the market can snap back is itself the trading opportunity.
+  **Correction (cross-check):** Speaker frames dire sentiment and the risk of a snapback as an opportunity to trade, not only a risk for a trend short; 'trend-following' was not said. → Bear markets contain vicious rallies (summer 2022: stocks +20%, 10-year notes rallying 75bp, stock-bond rallying together), and recognising when sentiment is so dire that the market can snap back is itself the trading opportunity.
   ^MT067-C04-4
 - **Peter Chapson** Most 2022 returns came from short stocks plus short bonds (anti-risk-parity) and long dollar, with extra gains in yen and the Mexican peso (reshoring flows despite carry).  #mech/cycle_persistence _(time-bound view)_
   > short risk parody which meaning short stocks and short bonds Dollar's been very strong
   asset: multi · direction: short stocks, short bonds, long USD · horizon: months · testable: yes · confidence: medium
-  **Correction (Opus):** The Mexican peso appreciated while also paying high carry (reshoring), not 'despite carry'. → Most 2022 returns came from short stocks plus short bonds (anti-risk-parity) and long dollar, with further gains in yen moves and the Mexican peso, which appreciated on top of its large carry on reshoring to North America.
+  **Correction (cross-check):** The Mexican peso appreciated while also paying high carry (reshoring), not 'despite carry'. → Most 2022 returns came from short stocks plus short bonds (anti-risk-parity) and long dollar, with further gains in yen moves and the Mexican peso, which appreciated on top of its large carry on reshoring to North America.
   ^MT067-C04-5
 
 ### C05
@@ -138,7 +138,7 @@ tags: [source, layer0]
   > it makes statistics like stress tests more valuable because really that's what we're concerned about in markets like this where Gap risk is really what you need to be concerned about
   indicator: VaR vs stress tests · asset: multi · conditions: unstable correlations · testable: partly · confidence: high
   ^MT067-C05-4
-- **Chris McCann** Capital is allocated across portfolio managers monthly using their pairwise return correlations, and PMs are hired for what they add that is different, so the book is not concentrated in one style.  #mech/risk_management _(added by Opus)_
+- **Chris McCann** Capital is allocated across portfolio managers monthly using their pairwise return correlations, and PMs are hired for what they add that is different, so the book is not concentrated in one style.  #mech/risk_management _(added by opus cross-check)_
   > when we're doing asset allocation every month we're trying to make sure that we're taking pairwise correlation into account so that we're not putting all of our assets into one style of investing
   indicator: pairwise correlation of PM returns · asset: multi · horizon: months · conditions: multi-manager allocation · testable: yes - diversification ratio of correlation-aware vs naive allocation · confidence: high
   ^MT067-C05-X1
@@ -165,7 +165,7 @@ tags: [source, layer0]
 - **Peter Chapson** Japan's inflation (30-year high at 3%), YCC testing, weak yen and intervention limits create trade opportunities, with BoJ leadership change due.  #mech/policy_reaction _(time-bound view)_
   > defies the imagination that Japan is going to be the only developed country on Earth that doesn't have inflation
   indicator: Japan CPI; BoJ YCC; USDJPY · asset: fx · direction: long inflation in Japan; USDJPY risk · horizon: months · conditions: BoJ must buy JGBs while defending yen · testable: partly · confidence: medium
-  **Correction (Opus):** Wrong speaker for most of the claim: Peter Chapson only said it defies imagination that Japan alone avoids inflation; the 30-year-high CPI, YCC testing, weak yen, intervention and BoJ leadership points are David Keelan's. → Peter Chapson: it is implausible that Japan stays the only developed country without inflation, and people stuck in old ways miss this. David Keelan: Japan's 3% CPI (30-year high), markets testing YCC, the weak yen, intervention limits and the coming BoJ leadership change make Japan a key opportunity.
+  **Correction (cross-check):** Wrong speaker for most of the claim: Peter Chapson only said it defies imagination that Japan alone avoids inflation; the 30-year-high CPI, YCC testing, weak yen, intervention and BoJ leadership points are David Keelan's. → Peter Chapson: it is implausible that Japan stays the only developed country without inflation, and people stuck in old ways miss this. David Keelan: Japan's 3% CPI (30-year high), markets testing YCC, the weak yen, intervention limits and the coming BoJ leadership change make Japan a key opportunity.
   ^MT067-C07-2
 - **David Keelan** Key variables: European winter weather, China zero-covid policy after party congress.  #mech/structural_shift _(time-bound view)_
   > the big variable in Europe is is the winner I mean if it's a cold winter
@@ -175,11 +175,11 @@ tags: [source, layer0]
   > does do real yields keep going because we're uh shrinking our balance sheet larger than we really ever have
   indicator: real yields; QT pace · asset: rates · horizon: months · conditions: yields high enough to stress markets · testable: partly · confidence: medium
   ^MT067-C07-4
-- **David Keelan** Japan's yield-curve control (buying large amounts of JGBs) conflicts with intervening to support the yen, so with inflation at a 30-year high and markets testing YCC, the policy mix looks unsustainable and is a trade opportunity.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **David Keelan** Japan's yield-curve control (buying large amounts of JGBs) conflicts with intervening to support the yen, so with inflation at a 30-year high and markets testing YCC, the policy mix looks unsustainable and is a trade opportunity.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > at what point can they really step in and intervene in the currency if they're um you know buying all the treasuries or all the jgbs
   indicator: BoJ yield-curve control, JGB purchases, USDJPY intervention · asset: fx · direction: pressure on YCC; yen volatility · horizon: months · conditions: Japanese inflation rising while YCC holds · testable: partly - yen and JGB moves around intervention and YCC changes · confidence: medium
   ^MT067-C07-X1
-- **David Keelan** View: central banks will tighten somewhat further than market pricing implies because inflation is sticky.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **David Keelan** View: central banks will tighten somewhat further than market pricing implies because inflation is sticky.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > the central banks going probably a little farther than the market
   indicator: priced policy path vs realised · asset: rates · direction: short front-end rates · horizon: months · conditions: sticky inflation · testable: yes - realised vs priced terminal rate · confidence: medium
   ^MT067-C07-X2
@@ -196,14 +196,14 @@ tags: [source, layer0]
 - **David Keelan** Size positions in volatility units so higher volatility means smaller positions; prepare for tails and gap risk.  #mech/risk_management
   > you size or positions and ball units so and and Chris said this earlier you know and higher it falls higher your emotional size is smaller
   indicator: volatility-scaled position size · asset: multi · testable: yes - vol targeting · confidence: high
-  **Correction (Opus):** Wrong speaker: the first answer (vol-unit sizing, liquidity, bottom-up, 'as Dave mentioned earlier') is Peter Chapson's. → Peter Chapson: size positions in volatility units so higher volatility means smaller positions; prepare for tails and gap risk.
+  **Correction (cross-check):** Wrong speaker: the first answer (vol-unit sizing, liquidity, bottom-up, 'as Dave mentioned earlier') is Peter Chapson's. → Peter Chapson: size positions in volatility units so higher volatility means smaller positions; prepare for tails and gap risk.
   ^MT067-C08-3
 
 ### C09
 - **David Keelan** Poor liquidity means some trades cannot be sized, so illiquid ideas are skipped; place a premium on liquid instruments.  #mech/liquidity_flows _(time-bound view)_
   > liquidity in the markets are terrible and so some trades you just might not take
   indicator: market liquidity · asset: multi · conditions: low-liquidity markets · testable: partly · confidence: high
-  **Correction (Opus):** Wrong speaker: this is Peter Chapson's answer (he refers to 'Dave' in the third person). → Peter Chapson: poor market liquidity means some trades cannot be sized large enough to matter, so they are skipped; place a premium on liquid instruments.
+  **Correction (cross-check):** Wrong speaker: this is Peter Chapson's answer (he refers to 'Dave' in the third person). → Peter Chapson: poor market liquidity means some trades cannot be sized large enough to matter, so they are skipped; place a premium on liquid instruments.
   ^MT067-C09-1
 - **Peter Chapson** A sentiment factor: everything overbought gets sold and oversold gets bought, correlating positions; PMs monitor this.  #mech/crowding_positioning
   > there is a factor that's I would call a sentiment Factor so sometimes things get correlated everything that's overbought gets sold and everything that's open
@@ -221,11 +221,11 @@ tags: [source, layer0]
   > what positions are too big and what positions are too small
   asset: multi · horizon: days · testable: no · confidence: high
   ^MT067-C09-5
-- **Peter Chapson** Portfolio construction method: generate trade ideas bottom-up, then check the combined book's overall risk orientation, using the same process in quiet (2018) and busy (2022) years.  #mech/risk_management _(added by Opus)_
+- **Peter Chapson** Portfolio construction method: generate trade ideas bottom-up, then check the combined book's overall risk orientation, using the same process in quiet (2018) and busy (2022) years.  #mech/risk_management _(added by opus cross-check)_
   > for me it's bottom up so I try to find ideas um and once so the ideas come together and I look at my overall risk and make sure it's oriented to um the way we want it
   asset: multi · testable: no - process description · confidence: medium
   ^MT067-C09-X1
-- **David Keelan** Sizing rule: a position should be big enough to matter at the portfolio level if right, but small enough that ordinary noise does not force you out; getting the theme right matters more than structure.  #mech/risk_management _(added by Opus)_
+- **David Keelan** Sizing rule: a position should be big enough to matter at the portfolio level if right, but small enough that ordinary noise does not force you out; getting the theme right matters more than structure.  #mech/risk_management _(added by opus cross-check)_
   > if you write it it works you feel it it's at the portfolio level but you don't want to be too big that if there's some noise you get shaken out
   indicator: position size vs noise / volatility · asset: multi · testable: partly - stop-out frequency vs position size in volatility units · confidence: high
   ^MT067-C09-X2

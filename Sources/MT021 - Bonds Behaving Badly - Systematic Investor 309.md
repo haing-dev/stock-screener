@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 10798
 claims: 66
-added_by_opus: 6
+added_by_crosscheck: 6
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Katy Kaminski (chief research strategist, AlphaSimplex, guest co-host)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, managed futures, crisis alpha, carry, stock-bond correlation, volatility/VIX
 
-**Opus completeness estimate of first read:** 0.90 - the first reader caught nearly every mechanism and number; misses were secondary points (inflation-volatility agreement incl. deflation, Japan crowding, investor inexperience, stress periods as tests, geopolitics).
+**Cross-check completeness estimate of first read:** 0.90 - the first reader caught nearly every mechanism and number; misses were secondary points (inflation-volatility agreement incl. deflation, Japan crowding, investor inexperience, stress periods as tests, geopolitics).
 
 ## Coverage
 
@@ -82,7 +82,7 @@ tags: [source, layer0]
   > some of the trend models uh would have picked up a while back a few weeks back maybe couple of months back that something was starting to look different
   indicator: trend signals on equities and yen · asset: fx · direction: Long equity / short yen reduced · horizon: weeks · conditions: for faster signal speeds · testable: yes - signal histories can be checked · confidence: medium
   ^MT021-C03-3
-- **Niels Kaastrup-Larsen** Beyond policy divergence, active geopolitical conflicts are a separate source of sudden shocks with large unintended market consequences, adding to a less stable regime.  #mech/new _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** Beyond policy divergence, active geopolitical conflicts are a separate source of sudden shocks with large unintended market consequences, adding to a less stable regime.  #mech/new _(added by opus cross-check, time-bound view)_
   > with all the global conflict we have right now when people start shooting and firing rockets at each other it doesn't take much for something to go wrong
   asset: multi · conditions: periods of active global conflict · testable: partly - would need a geopolitical risk index vs. shock frequency · confidence: medium
   ^MT021-C03-X1
@@ -144,7 +144,7 @@ tags: [source, layer0]
   > it doesn't tend to just disappear it tends to go in waves
   indicator: CPI · asset: rates · horizon: years · conditions: after supply, geopolitical or other shocks · testable: partly - wave pattern can be tested · confidence: medium
   ^MT021-C06-4
-- **Katy Kaminski** Most investors have no first-hand experience of investing through inflation (the 1970s), so they are surprised and frustrated when bonds stop acting as the safety trade in inflationary periods.  #mech/behavioral _(added by Opus)_
+- **Katy Kaminski** Most investors have no first-hand experience of investing through inflation (the 1970s), so they are surprised and frustrated when bonds stop acting as the safety trade in inflationary periods.  #mech/behavioral _(added by opus cross-check)_
   > most invest out there have not seen inflation or if they did you know it's what their parents told them about it because they didn't perhaps invest during the 70s
   asset: rates · horizon: years · conditions: after decades of low inflation · testable: no - investor experience is not directly measurable · confidence: medium
   ^MT021-C06-X2
@@ -170,7 +170,7 @@ tags: [source, layer0]
   > has you know 80% uh uh free cash and we put it into you know up to a Year's worth of of paper we know it's going to have a very beneficial effect
   indicator: short-duration paper in managed futures cash · asset: rates · horizon: months · testable: yes - cash yield contribution · confidence: high
   ^MT021-C07-5
-- **Katy Kaminski** Agreeing with the host, volatile inflation in either direction (including a slide into deflation or a renewed shock from geopolitics or supply chains) should itself raise fixed income volatility, separately from the inflation level.  #mech/cycle_persistence _(added by Opus)_
+- **Katy Kaminski** Agreeing with the host, volatile inflation in either direction (including a slide into deflation or a renewed shock from geopolitics or supply chains) should itself raise fixed income volatility, separately from the inflation level.  #mech/cycle_persistence _(added by opus cross-check)_
   > volatility in inflation should also have a a naturally complex and create more volatility for fixed income and make things more complicated
   indicator: inflation volatility; bond volatility · asset: rates · direction: higher inflation volatility -> higher bond volatility · horizon: months · conditions: uncertain inflation path, supply-chain or geopolitical shocks · testable: yes - regress bond volatility on rolling inflation volatility (not studied in the paper) · confidence: medium
   ^MT021-C07-X3
@@ -229,7 +229,7 @@ tags: [source, layer0]
 - **Katy Kaminski** Trend signals moved from short bonds, long equities, long commodities and long dollar to long bonds, short commodities and neutral dollar, a recession-type profile.  #mech/cycle_persistence _(time-bound view)_
   > they have long fixed income views and short commodity views and neutral and in the dollar that looks a lot more like a recessionary type signal
   indicator: trend signals across bonds, commodities, dollar, equities · asset: multi · direction: Long bonds, short commodities · horizon: months · conditions: if the correction turns into a crisis · testable: yes · confidence: medium
-  **Correction (Opus):** Omits that trend signals, although weak, were still slightly long equities; the profile is not a full recession flip. → Trend signals moved from short bonds, long equities, long commodities and long dollar to weak signals that are still slightly long equities but long bonds, short commodities and neutral the dollar, which looks more like a recession-type profile.
+  **Correction (cross-check):** Omits that trend signals, although weak, were still slightly long equities; the profile is not a full recession flip. → Trend signals moved from short bonds, long equities, long commodities and long dollar to weak signals that are still slightly long equities but long bonds, short commodities and neutral the dollar, which looks more like a recession-type profile.
   ^MT021-C11-1
 - **Katy Kaminski** First responders (short-term trading, options) profit when the VIX spikes but are hard to capture because they must be on the right side at the start.  #mech/risk_management
   > the First Responders are things that actually benefit when the Vic spikes
@@ -247,7 +247,7 @@ tags: [source, layer0]
   > a short-term strategy might do really well in the first or second day of a um of quote unquote the the yeah again correction or crisis
   indicator: short-term strategies · asset: multi · horizon: days · conditions: fast rebounds · testable: yes · confidence: medium
   ^MT021-C11-5
-- **Katy Kaminski** Catching one-day extreme moves requires a strategy that trades that way every day, bearing its costs and losses on all the ordinary days, so such moves are very hard to capitalise on in practice.  #mech/risk_management _(added by Opus)_
+- **Katy Kaminski** Catching one-day extreme moves requires a strategy that trades that way every day, bearing its costs and losses on all the ordinary days, so such moves are very hard to capitalise on in practice.  #mech/risk_management _(added by opus cross-check)_
   > if that's what you're doing every day then you got to do that the other days and I think that's hard
   asset: multi · horizon: days · conditions: one-day shocks that reverse · testable: partly - compare short-term strategy returns on shock days vs all other days · confidence: medium
   ^MT021-C11-X4
@@ -309,7 +309,7 @@ tags: [source, layer0]
   > the only truth really is price and that's what we use in our models
   indicator: price-only models, individual volatility · asset: multi · testable: yes · confidence: high
   ^MT021-C14-4
-- **Katy Kaminski** The August 5 2024 move escalated from an ordinary risk-off into a systemic event because so many investors held crowded Japan-related positions that had to be unwound at once.  #mech/crowding_positioning _(added by Opus, time-bound view)_
+- **Katy Kaminski** The August 5 2024 move escalated from an ordinary risk-off into a systemic event because so many investors held crowded Japan-related positions that had to be unwound at once.  #mech/crowding_positioning _(added by opus cross-check, time-bound view)_
   > turned into Japan and sort of a systemic effect of Japan and how many people were in positions related to Japan on Monday
   indicator: yen; Japan-related positioning · asset: multi · direction: crowded long-Japan / short-yen positions unwound · horizon: days · conditions: crowded positioning plus a catalyst · testable: partly - positioning data (CFTC yen shorts) before vs size of the move · confidence: medium
   ^MT021-C14-X5
@@ -335,7 +335,7 @@ tags: [source, layer0]
   > a big move like that is really hard to predict it's really hard to trade
   indicator: AI · asset: multi · testable: no - opinion · confidence: medium
   ^MT021-C15-5
-- **Niels Kaastrup-Larsen** Short stress episodes such as early August 2024 are useful out-of-sample tests for investors to assess how the strategies they hold or consider actually behave in a shock.  #mech/research_method _(added by Opus)_
+- **Niels Kaastrup-Larsen** Short stress episodes such as early August 2024 are useful out-of-sample tests for investors to assess how the strategies they hold or consider actually behave in a shock.  #mech/research_method _(added by opus cross-check)_
   > investors can use for for assessing some of the uh the strategies they've been looking at or invested in um to see how they deal with these uh situation
   asset: multi · horizon: days · conditions: stress episodes · testable: yes - event-study of manager returns over stress windows · confidence: medium
   ^MT021-C15-X6

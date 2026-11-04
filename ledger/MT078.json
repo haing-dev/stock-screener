@@ -74,8 +74,8 @@
   }
  ],
  "chunks": 10,
- "crosscheck": null,
- "completeness_estimate": null,
+ "crosscheck": "opus cross-check",
+ "completeness_estimate": "0.96 - first reader captured essentially every idea; only two minor points (most years are good years; patience over quick action) were missing.",
  "claims": [
   {
    "claim_id": "MT078-C01-1",
@@ -886,9 +886,45 @@
    "time_bound": "no",
    "reader": "sonnet",
    "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT078-C01-X1",
+   "chunk": "C01",
+   "speaker": "Howard Marks",
+   "quote": "I believe it's easy to make money in the market that's especially true in the good years and most years are good years",
+   "claim": "Because most market years are good years, making money is easy most of the time; results in good years say little about skill, which shows only in how little is lost in bad years.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "share of positive years; downside capture",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - frequency of positive market years; manager downside capture",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT078-C02-X1",
+   "chunk": "C02",
+   "speaker": "Howard Marks",
+   "quote": "we learn that quick action is not the answer we hopefully we we develop the wisdom to understand that uh if you want a good result you're more likely to get it if you take a little time to",
+   "claim": "Experience teaches that quick action is not the answer; good results are more likely from taking time to think than from acting on a whim.",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - process advice",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
   }
  ],
  "n_sonnet": 45,
- "n_opus_added": 0,
+ "n_opus_added": 2,
  "n_corrections": 0
 }

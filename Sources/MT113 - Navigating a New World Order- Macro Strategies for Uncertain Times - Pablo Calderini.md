@@ -5,10 +5,10 @@ date: 2025-01-07
 channel: "Graham Capital Management"
 url: https://www.youtube.com/watch?v=x3HYAHlKe-c
 words: 5661
-claims: 34
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 41
+added_by_crosscheck: 7
+corrections: 2
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Pablo Calderini (President and CIO, Graham Capital Management)", "Chief client officer (host, name garbled in captions)", "Scott (audience question)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Graham Capital client session (Jan 2023 context): post-GFC policy regime ended, hiking-cycle history, core inflation and changing stock-bond correlation justify macro as a complement to 60/40 with positive skew and negative conditional correlation. Describes quant trend and quant macro programs and tactical views.
 
 **Approach:** discretionary macro, quant macro, trend following, portfolio construction, 60/40
+
+**Cross-check completeness estimate of first read:** 0.86 - first reader captured nearly every argument of the slide-by-slide talk (hiking cycles, core inflation, stock-bond correlation, long-horizon variance, macro skew); missed a few supporting causal links and operating details (inflation drives correlation, Fed guidance blamed, concentrated multi-PM book, recency bias).
 
 ## Coverage
 
@@ -45,6 +47,10 @@ tags: [source, layer0]
   > it's a shock that needs to be matched by another shock
   indicator: real rates · asset: rates · horizon: years · testable: partly: real rate shocks versus asset returns · confidence: high
   ^MT113-C01-2
+- **Chief client officer (host)** Graham runs its discretionary multi-PM macro book concentrated, betting on its highest-conviction teams (about 15) rather than spreading across 50 to 150 teams, a portfolio-construction choice favouring conviction over breadth.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > rather than have 50 or 150 teams here we have roughly 15 today
+  indicator: number of PM teams (about 15 vs 50-150) · asset: multi · testable: partly - needs PM-level returns to compare concentrated and diversified multi-PM books · confidence: medium
+  ^MT113-C01-X1
 
 ### C02
 - **Pablo Calderini** Inflation is no longer seen as a secular low (supply disruptions, geopolitics, fiscal expenditure), so central banks will be shyer about accommodative policy, leading to higher volatility and a harder time for 60/40.  #mech/structural_shift
@@ -54,6 +60,7 @@ tags: [source, layer0]
 - **Pablo Calderini** Of the last five hiking cycles since Volcker (1994-95 +300bp, 1999-2000 +175bp, 2005-06 +425bp, 2015-18, plus 2022), each ended with a crisis or turmoil (tequila, Asia, Nasdaq, GFC, 2018) after which the Fed gave up.  #mech/cycle_persistence
   > the last five hiking Cycles uh since post Volker
   indicator: Fed funds hiking cycles · asset: rates · horizon: years · testable: yes: event study of hiking cycle ends · confidence: high
+  **Correction (cross-check):** Overstated: the 'five cycles' are four completed cycles (1994-95, 1999-2000, 2005-06, 2015-18) plus the still-running 2022-23 cycle; only the four completed cycles ended in turmoil, and the 2015-18 cycle ended with turmoil in 2018 while the cut came in March 2020 with covid. → In the four completed hiking cycles since Volcker (1994-95 +300bp, 1999-2000 +170-175bp, 2005-06 +425bp, 2015-18) the Fed stopped after turmoil (tequila and Asian crises, Nasdaq collapse, the global financial crisis, 2018 market turmoil); the current cycle is a fifth, still running.
   ^MT113-C02-2
 - **Pablo Calderini** The 2022-23 hiking cycle is a record in magnitude and speed: double the average of previous four cycles (about 220bp) in half the time, heading to about 500bp.  #mech/policy_reaction _(time-bound view)_
   > the current height is double the average of the previous four hiking Cycles
@@ -81,6 +88,10 @@ tags: [source, layer0]
   > core inflation as always a massive negative shock for us at prices while NRC or headline inflation X score uh being almost unimportant
   indicator: core inflation vs energy inflation · asset: multi · direction: bearish equities on core inflation surprises · horizon: years · testable: yes: replicate with core vs energy · confidence: medium
   ^MT113-C03-4
+- **Pablo Calderini** The 2022 hiking shock was a Fed communication failure: in past cycles good forward guidance (or good market reading) left markets resilient, whereas in 2022 the Fed hiked far beyond what it had guided, producing a larger shock to asset prices.  #mech/policy_reaction _(added by sonnet-xhigh cross-check)_
+  > I would put the culprit on the on the FED right I would say by how badly the FED building guiding markets to to the actual outcome
+  indicator: forward curve at first hike versus realised Fed path · asset: rates · horizon: months · conditions: larger gap between priced and delivered hikes means more fragility · testable: yes - compute priced-minus-delivered path for each cycle and relate to subsequent drawdowns · confidence: medium
+  ^MT113-C03-X1
 
 ### C04
 - **Pablo Calderini** Core inflation is persistent (rises stay) so it needs a larger policy response and causes a larger asset price reaction than energy inflation.  #mech/policy_reaction
@@ -103,6 +114,14 @@ tags: [source, layer0]
   > stocks for the long run
   indicator: long-horizon equity variance · asset: equities · horizon: years · testable: yes: replicate variance calc · confidence: medium
   ^MT113-C04-5
+- **Pablo Calderini** High inflation pushes the stock-bond correlation up (to positive) because inflation shocks hit both assets; a falling-inflation regime gives negative correlation, so the sign of the correlation follows the inflation regime.  #mech/cycle_persistence _(added by sonnet-xhigh cross-check)_
+  > High inflation usually drives correlation up
+  indicator: rolling stock-bond correlation versus inflation level · asset: multi · direction: stock-bond correlation rises when inflation is high · horizon: years · conditions: high-inflation regimes such as the 1960s-1990s; zero or near zero in 2022-23 · testable: yes - rolling correlation against CPI regimes · confidence: high
+  ^MT113-C04-X1
+- **Pablo Calderini** After 20 years of negative stock-bond correlation, newer market participants assume bonds always hedge stocks, an extrapolation of a regime that is not the long-run norm, which leaves 60/40 portfolios exposed when the sign flips.  #mech/behavioral _(added by sonnet-xhigh cross-check)_
+  > we have lived in this world of negative correlation for 20 years now to the point that I think that new newcomers to financial markets might
+  indicator: stock-bond correlation · asset: multi · horizon: years · testable: partly - the 20-year negative-correlation fact is testable, the belief claim is not · confidence: medium
+  ^MT113-C04-X2
 
 ### C05
 - **Pablo Calderini** Without the degree of freedom from a known mean, proper long-horizon calculations raise equity volatility from about 17% to about 22%, so mean-variance should hold fewer equities.  #mech/risk_management
@@ -139,6 +158,10 @@ tags: [source, layer0]
   > we see it as a complement to the 60 40 portfolio we don't we don't hold very long term secular views
   asset: multi · testable: no: philosophy · confidence: high
   ^MT113-C06-3
+- **Pablo Calderini** The 20-year average benefit of adding macro to 60/40 understates the benefit in stress years such as 2022, when macro can add more than the average.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > I also think these are our asses like we saw last year when things get really bad I think macro has the capacity to even improve on this right
+  indicator: 60/40 plus macro portfolio in stress years · asset: multi · direction: long macro alongside 60/40 · horizon: years · conditions: bad years for 60/40 · testable: yes - split the sample by 60/40 drawdown years · confidence: medium
+  ^MT113-C06-X1
 
 ### C07
 - **Pablo Calderini** Short equities: earnings must fall and multiples are too high; either sticky core inflation forces the Fed to hike versus priced cuts, or core falls only via unemployment spike and recession cutting earnings; views are changeable.  #mech/policy_reaction _(time-bound view)_
@@ -161,11 +184,16 @@ tags: [source, layer0]
   > we can talk in a month and have completely different views
   asset: multi · testable: no: philosophy · confidence: high
   ^MT113-C07-5
+- **Pablo Calderini** A fundamental short-equity view is held with humility: unknown market forces may keep equities supported, so risk management and a tactical hedge are used to limit the cost of being early or wrong.  #mech/risk_management _(added by sonnet-xhigh cross-check, time-bound view)_
+  > cognizant though that there's Market forces supporting equities that are beyond our understanding and that's where it comes our uh our risk management and our tactical head
+  asset: equities · direction: short equities with tactical risk control · horizon: months · conditions: fundamental view contrary to price action · testable: no - discretionary practice · confidence: medium
+  ^MT113-C07-X1
 
 ### C08
 - **Pablo Calderini** Quant macro blends price-based signals with fundamental data, giving a more dynamically evolving positioning than pure trend.  #mech/structural_shift
   > we do bring in fundamental data points into that font macro signal
   indicator: quant macro signal · asset: multi · testable: partly · confidence: medium
+  **Correction (cross-check):** Wrong speaker: this passage is the host (Graham chief client officer) summarising the systematic side, not Pablo Calderini; the transcript says pure trend is price-driven and the quant macro strategy brings in fundamental data points. → The host (chief client officer) says Graham's pure trend following is price-driven while the quant macro strategy adds fundamental data to the price signal, so its positioning can evolve more dynamically.
   ^MT113-C08-1
 - **Pablo Calderini** Trend program adds value via robust portfolio construction (mean-variance, PCA to estimate covariance matrix fast to mitigate risk) on a traditional time-series momentum signal.  #mech/risk_management
   > we have added value on top of trend
@@ -183,6 +211,10 @@ tags: [source, layer0]
   > we try to come up with ideas of equilibrium of required cover
   indicator: carry vs equilibrium carry · asset: multi · testable: yes: adjusted carry · confidence: low
   ^MT113-C08-5
+- **Pablo Calderini** Graham's trend-following program did really well in 2022, the year of the inflation shock and rate-hike regime, consistent with trend profiting from large macro dislocations.  #mech/cycle_persistence _(added by sonnet-xhigh cross-check, time-bound view)_
+  > one is a trend following program right and that did really well last year
+  indicator: Graham trend program return in 2022 · asset: multi · horizon: years · testable: partly - single-year performance claim · confidence: medium
+  ^MT113-C08-X1
 
 ### C09
 - **Pablo Calderini** Trend gains when equities tank; the quant macro program has less of that conditional benefit but a more stable return profile and higher information ratio than trend.  #mech/risk_premium

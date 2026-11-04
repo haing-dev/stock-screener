@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 10706
 claims: 62
-added_by_opus: 6
+added_by_crosscheck: 6
 corrections: 0
 crosscheck: "opus blind read (pilot)"
 speakers: ["Patrick Welton (founder and CEO, Welton Investment Corporation; trend following and managed futures manager, ex-Commodities Corporation)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)", "Alan Dunne (co-host, Dublin)"]
@@ -94,7 +94,7 @@ tags: [source, layer0]
   > double the size of their account. I was almost certain that that was the end of any industry draw down.
   indicator: client subscription and redemption flows · asset: multi · horizon: months · testable: partly - needs industry flow data · confidence: medium
   ^MT003-C05-4
-- **Pat Welton** Most investors wait for performance confirmation before allocating to managed futures, so they enter late and are systematically out of phase with the return cycle.  #mech/behavioral _(added by Opus)_
+- **Pat Welton** Most investors wait for performance confirmation before allocating to managed futures, so they enter late and are systematically out of phase with the return cycle.  #mech/behavioral _(added by opus cross-check)_
   > It's the usual tragedy of managed money to watch people watch performance, wait for there to be enough confirmation and confidence, get in a little bit too late and put themselves on a right shift of time off cycle.
   indicator: manager trailing performance; fund flows · asset: multi · direction: flows follow past performance · horizon: months · testable: yes - fund flow vs subsequent return (dollar- vs time-weighted) can be measured · confidence: high
   ^MT003-C05-4b
@@ -120,7 +120,7 @@ tags: [source, layer0]
   > it's an incredibly useful property to have in in in a in a traditional portfolio.
   indicator: trend following in a traditional portfolio · asset: multi · direction: add trend to stock-bond portfolio · testable: yes - portfolio blend backtest · confidence: medium
   ^MT003-C06-5
-- **Pat Welton** Pure trend following's edge comes from agnostic multi-asset, multi-directional participation, capturing returns as capital rotates between asset classes, sub-groups and from long to short or flat.  #mech/slow_reaction _(added by Opus)_
+- **Pat Welton** Pure trend following's edge comes from agnostic multi-asset, multi-directional participation, capturing returns as capital rotates between asset classes, sub-groups and from long to short or flat.  #mech/slow_reaction _(added by opus cross-check)_
   > You offer them the possibility as capital moves from one asset class to another, from one subasset group to another, from long to short, from long to flat
   indicator: price trend across asset classes · asset: multi · direction: long and short across assets · horizon: months · conditions: requires multi-asset, multi-directional universe · testable: yes - compare long-only/single-asset vs multi-asset long-short trend · confidence: high
   ^MT003-C06-3b
@@ -156,7 +156,7 @@ tags: [source, layer0]
   > if we do replicate the replicators we actually end up with better performance
   indicator: smoothing coefficient, turnover · asset: multi · testable: yes - compare replica vs product net of costs · confidence: medium
   ^MT003-C08-3
-- **Pat Welton** Trend following is itself a form of replication (smoothing prices that reflect others' actions), so replicating another manager's P&L via regression is a small further step and a valid method.  #mech/research_method _(added by Opus)_
+- **Pat Welton** Trend following is itself a form of replication (smoothing prices that reflect others' actions), so replicating another manager's P&L via regression is a small further step and a valid method.  #mech/research_method _(added by opus cross-check)_
   > That's really replicating the actions of others through the reflection of the information of the price signal which is then typically smoothed and brought in.
   indicator: smoothed price; manager P&L regression · asset: multi · testable: yes - regression replication of CTA index returns · confidence: high
   ^MT003-C08-1b
@@ -178,7 +178,7 @@ tags: [source, layer0]
   > have a positive positive economic carry, for instance, in equity indices, which is extremely strong, but have faced for most of the time a negative financial carry
   indicator: economic carry vs financial carry in equity indices · asset: equities · direction: long equities held through time · horizon: years · testable: yes - carry measures can be computed · confidence: medium
   ^MT003-C09-4
-- **Pat Welton** Overall cost and manager selection risk are the two main failure points of professional allocators, which is why replication products appeal.  #mech/research_method _(added by Opus)_
+- **Pat Welton** Overall cost and manager selection risk are the two main failure points of professional allocators, which is why replication products appeal.  #mech/research_method _(added by opus cross-check)_
   > are two failure points for some of the professional allocation stabs that exist in the world.
   asset: multi · testable: partly - dispersion of manager returns and fee drag measurable · confidence: medium
   ^MT003-C09-1b
@@ -270,7 +270,7 @@ tags: [source, layer0]
   > a large volume of dollars trying to go in a into a smaller market more rapidly is going to press a market
   indicator: market impact vs order size and speed · asset: multi · horizon: days · conditions: size relative to liquidity; liquidity varies by time of day · testable: yes - impact models · confidence: high
   ^MT003-C13-5
-- **Pat Welton** Some managers have overstepped capacity, but long-term trend following is less capacity-sensitive than other strategy categories.  #mech/liquidity_flows _(added by Opus)_
+- **Pat Welton** Some managers have overstepped capacity, but long-term trend following is less capacity-sensitive than other strategy categories.  #mech/liquidity_flows _(added by opus cross-check)_
   > less so I think in long-term trend following than in other categories we could talk about that are more sensitive to capacity.
   asset: multi · horizon: years · conditions: long holding periods · testable: partly - market impact by strategy holding period · confidence: high
   ^MT003-C13-3b
@@ -300,7 +300,7 @@ tags: [source, layer0]
   > this this sort of two-body problem
   indicator: economic data surprises (e.g. unemployment report) · asset: multi · horizon: days · testable: yes - market response to surprises varies by regime · confidence: medium
   ^MT003-C14-6
-- **Pat Welton** The market response to a given data surprise (e.g. unemployment) is unstable because data do not trade, people do; modelling data-to-price as a fixed two-body relation misleads early quants.  #mech/behavioral _(added by Opus)_
+- **Pat Welton** The market response to a given data surprise (e.g. unemployment) is unstable because data do not trade, people do; modelling data-to-price as a fixed two-body relation misleads early quants.  #mech/behavioral _(added by opus cross-check)_
   > they can't figure out why sometimes this amount of unemployment report change had this big of a market move and other
   indicator: unemployment report surprise · asset: multi · horizon: days · conditions: sensitivity varies by regime · testable: yes - rolling price response to data surprises · confidence: high
   ^MT003-C14-3b

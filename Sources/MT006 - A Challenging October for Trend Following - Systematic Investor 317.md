@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 10832
 claims: 50
-added_by_opus: 5
+added_by_crosscheck: 5
 corrections: 3
 crosscheck: "opus cross-check"
 speakers: ["Neils Kastrup-Larsen (host, Top Traders Unplugged)", "Rich Brennan (co-host, systematic trend-following manager)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, ensemble systems, tactical asset allocation, complex adaptive systems
 
-**Opus completeness estimate of first read:** 0.91 - first reader caught nearly all method and mechanism ideas; missed a few data points (sector signal strength, short-term index, concentrated investors) and the hindsight-bias remark
+**Cross-check completeness estimate of first read:** 0.91 - first reader caught nearly all method and mechanism ideas; missed a few data points (sector signal strength, short-term index, concentrated investors) and the hindsight-bias remark
 
 ## Coverage
 
@@ -64,7 +64,7 @@ tags: [source, layer0]
   > I think dispersion is going to be one of the major topics that come out
   indicator: CTA return dispersion · asset: multi · horizon: years · testable: yes - cross-sectional spread of manager returns · confidence: medium
   ^MT006-C02-3
-- **Neils Kastrup-Larsen** Trend-follower losses in a reversal concentrate where signals (and so positions) were strong; energy did little damage in October 2024 because its signals were weak, while meats (live cattle) were the only bright spot and currencies (GBP, AUD, NZD) corrected.  #mech/slow_reaction _(added by Opus, time-bound view)_
+- **Neils Kastrup-Larsen** Trend-follower losses in a reversal concentrate where signals (and so positions) were strong; energy did little damage in October 2024 because its signals were weak, while meats (live cattle) were the only bright spot and currencies (GBP, AUD, NZD) corrected.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
   > energies kind of mixed probably not where the damage is too much so far in in terms of trend followers simply because I don't think signals are particular strong in that sector at the moment
   indicator: trend signal strength by sector · asset: multi · direction: weak-signal sectors lose little in reversals · horizon: weeks · conditions: signal-strength-scaled position sizing · testable: yes - sector P&L vs prior signal strength · confidence: medium
   ^MT006-C02-X1
@@ -73,7 +73,7 @@ tags: [source, layer0]
 - **Neils Kastrup-Larsen** A trend barometer (share of markets with a clear trend, short-horizon) reflects but does not predict how hard conditions are for trend followers; a reading near 14-20 is about the worst.  #mech/cycle_persistence _(time-bound view)_
   > it's certainly been very good at reflecting the challenges because it's down to 20 as of yesterday which is very low
   indicator: Top Traders trend barometer (Neils's trend parameter) · asset: multi · direction: low reading = hard for trend followers · horizon: weeks · conditions: Uses a shorter horizon than traditional medium/long-term trend following · testable: yes - level of barometer vs subsequent trend-following returns · confidence: medium
-  **Correction (Opus):** The definition 'share of markets with a clear trend' is not stated in the transcript (added by the reader). → Neils's trend barometer (shorter horizon than traditional trend following) reflects, but does not predict, how hard conditions are for trend followers; at 14-20 it reads 'as bad as it gets'.
+  **Correction (cross-check):** The definition 'share of markets with a clear trend' is not stated in the transcript (added by the reader). → Neils's trend barometer (shorter horizon than traditional trend following) reflects, but does not predict, how hard conditions are for trend followers; at 14-20 it reads 'as bad as it gets'.
   ^MT006-C03-1
 - **Neils Kastrup-Larsen** In October 2024 to mid-month BTOP50 was -2.84% (+1.23% YTD), SG CTA -3.64% (-1.22% YTD) and SG Trend almost -5% (-2.6% YTD), versus MSCI World -0.33% and S&P 500 flat.  #mech/cycle_persistence _(time-bound view)_
   > Bop 50 as a Wednesday was down 2.84% in October still up 1.23%
@@ -83,7 +83,7 @@ tags: [source, layer0]
   > the these indexes uh are dealing with uh the very large funds a bit like the the cap waiting we see in the S&P 500
   indicator: SG CTA, SG Trend vs Top Traders Unplugged index · asset: multi · horizon: years · testable: yes - compare index construction and returns · confidence: medium
   ^MT006-C03-3
-- **Neils Kastrup-Larsen** In the October 2024 trend reversal the SG short-term traders index fell much less (about -1.5% month, -0.75% YTD) than the SG Trend index (about -5%), i.e. short-horizon CTAs were hurt less.  #mech/slow_reaction _(added by Opus, time-bound view)_
+- **Neils Kastrup-Larsen** In the October 2024 trend reversal the SG short-term traders index fell much less (about -1.5% month, -0.75% YTD) than the SG Trend index (about -5%), i.e. short-horizon CTAs were hurt less.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
   > the so genc short-term Traders index down one and a quish and for the month and down 75 basis points for the year
   indicator: SG Short-Term Traders index vs SG Trend index · asset: multi · direction: short-term CTAs outperform trend CTAs in a sharp reversal · horizon: weeks · conditions: sharp trend reversal · testable: yes - index returns · confidence: high
   ^MT006-C03-X1
@@ -137,7 +137,7 @@ tags: [source, layer0]
   > if you only look at three instruments like that you may obviously be prone to the fact that they may have been in a specific regime
   indicator: long-bond trend backtest · asset: rates · horizon: years · conditions: Falling-rate regime inflates bond results · testable: yes - test across regimes · confidence: high
   ^MT006-C06-4
-- **Neils Kastrup-Larsen** Despite its caveats (whipsaw, long-only, regime bias) both hosts judge the Faber-style long-only trend overlay a valid strategy, likely better than unmanaged buy-and-hold.  #mech/risk_management _(added by Opus)_
+- **Neils Kastrup-Larsen** Despite its caveats (whipsaw, long-only, regime bias) both hosts judge the Faber-style long-only trend overlay a valid strategy, likely better than unmanaged buy-and-hold.  #mech/risk_management _(added by opus cross-check)_
   > yeah yeah probably better than doing nothing and just long only and closing your eyes
   indicator: 10-month SMA overlay vs buy-and-hold · asset: multi · direction: overlay over buy-and-hold · horizon: years · conditions: benefit may take 10-20 years to show · testable: yes - overlay vs buy-and-hold backtest · confidence: medium
   ^MT006-C06-X1
@@ -191,7 +191,7 @@ tags: [source, layer0]
   > we must with each of our uncorrelated systems have trailing stops behind them at all times
   indicator: trailing stop · asset: multi · horizon: months · testable: yes · confidence: high
   ^MT006-C09-3
-- **Neils Kastrup-Larsen** Highly successful discretionary equity investors run very concentrated books (Buffett about 40% in Apple, Ackman 53% of a $10bn fund in three stocks, Nomad Investment Partners in one or two stocks), raising the question of how much concentration a trend system should allow.  #mech/risk_management _(added by Opus, time-bound view)_
+- **Neils Kastrup-Larsen** Highly successful discretionary equity investors run very concentrated books (Buffett about 40% in Apple, Ackman 53% of a $10bn fund in three stocks, Nomad Investment Partners in one or two stocks), raising the question of how much concentration a trend system should allow.  #mech/risk_management _(added by opus cross-check, time-bound view)_
   > it says the headline says he has 53% of his hedge funds of you know which is10 billion do in just three stocks
   indicator: portfolio concentration (top holdings share) · asset: equities · horizon: years · testable: partly - holdings data, but survivorship of famous examples · confidence: medium
   ^MT006-C09-X1
@@ -208,13 +208,13 @@ tags: [source, layer0]
 - **Rich Brennan** Most trend followers use few core approaches (about 5-10) with many parameter variations rather than 20 truly different systems.  #mech/research_method
   > we actually have eight core systems so the eight core systems but the variations in that are our parameter are variations as well
   asset: multi · testable: yes · confidence: medium
-  **Correction (Opus):** Wrong speaker for the 5-10 figure: Neils says there are only five or ten ways to do trend following; Rich says he runs eight core systems with parameter variations to reach his 20. → Rich builds his ensemble from eight core systems plus parameter variations; Neils notes there are only about five to ten distinct ways to trend-follow, so large ensembles are mostly parameter variants.
+  **Correction (cross-check):** Wrong speaker for the 5-10 figure: Neils says there are only five or ten ways to do trend following; Rich says he runs eight core systems with parameter variations to reach his 20. → Rich builds his ensemble from eight core systems plus parameter variations; Neils notes there are only about five to ten distinct ways to trend-follow, so large ensembles are mostly parameter variants.
   ^MT006-C10-3
 - **Rich Brennan** Trend following reacts to price moves and does not forecast them.  #mech/new
   > this nonpredictive philosophical approach which is basically reacting to Market moves it's not predicting it's reacting to them
   asset: multi · testable: no - philosophy · confidence: high
   ^MT006-C10-4
-- **Rich Brennan** Using a larger ensemble of uncorrelated systems reduces the dependence on hindsight-chosen parameters (less overfitting risk) than picking a few optimised systems.  #mech/research_method _(added by Opus)_
+- **Rich Brennan** Using a larger ensemble of uncorrelated systems reduces the dependence on hindsight-chosen parameters (less overfitting risk) than picking a few optimised systems.  #mech/research_method _(added by opus cross-check)_
   > what I'm finding in my research is that the more I diversify with my uncorrelated systems the less how do I put it hindsight bias is required
   indicator: number of ensemble systems · asset: multi · direction: more systems = less hindsight bias · testable: partly - out-of-sample decay vs ensemble size · confidence: medium
   ^MT006-C10-X1
@@ -261,7 +261,7 @@ tags: [source, layer0]
 - **Rich Brennan** Trend following is capacity-limited by the need for counterparties who trade against the trend.  #mech/crowding_positioning
   > we can't obviously all be Trend followers as the system would explode with positive feedback
   asset: multi · conditions: If too many follow trends, markets destabilise · testable: partly · confidence: medium
-  **Correction (Opus):** Misframed: Rich does not talk about capacity or counterparties; he says markets need mean-reverting/other participants to offset trend followers' positive feedback, which keeps the system stable. → If everyone were a trend follower positive feedback would make markets explode; the mix of trend followers (positive feedback) and other participants (negative feedback) at all scales is what keeps markets stable.
+  **Correction (cross-check):** Misframed: Rich does not talk about capacity or counterparties; he says markets need mean-reverting/other participants to offset trend followers' positive feedback, which keeps the system stable. → If everyone were a trend follower positive feedback would make markets explode; the mix of trend followers (positive feedback) and other participants (negative feedback) at all scales is what keeps markets stable.
   ^MT006-C14-1
 - **Rich Brennan** Outliers are natural and occur more often than normal-distribution models imply.  #mech/structural_shift
   > to be expected much more frequently than what these traditional stochastic models would have you believe

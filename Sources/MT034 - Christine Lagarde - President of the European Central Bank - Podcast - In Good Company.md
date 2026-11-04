@@ -6,7 +6,7 @@ channel: "Norges Bank Investment Management"
 url: https://www.youtube.com/watch?v=SgawP7BdFew
 words: 6205
 claims: 36
-added_by_opus: 5
+added_by_crosscheck: 5
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Christine Lagarde (guest, ECB President)", "Nicolai Tangen (host, CEO of Norges Bank Investment Management)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** central banking, geopolitics and energy, European structural reform
 
-**Opus completeness estimate of first read:** 0.86 - first reader captured nearly all macro content of a mostly non-quantitative interview; missed the early productivity signal, the ignored dissenter, the digital-money rationale and the stablecoin conditional
+**Cross-check completeness estimate of first read:** 0.86 - first reader captured nearly all macro content of a mostly non-quantitative interview; missed the early productivity signal, the ignored dissenter, the digital-money rationale and the stablecoin conditional
 
 ## Coverage
 
@@ -127,7 +127,7 @@ tags: [source, layer0]
   > Will fragmentation of the geopolitical world as we see it now, would that be conducive to the diffusion of AI and the leveraging of AI on a global basis
   asset: equities · horizon: years · testable: no · confidence: low
   ^MT034-C05-5
-- **Christine Lagarde** Early signs that AI diffusion is starting to lift European productivity numbers, though it is too soon to confirm.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Christine Lagarde** Early signs that AI diffusion is starting to lift European productivity numbers, though it is too soon to confirm.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > We're beginning to see some some of that. Productivity numbers are are beginning to shake up. We'll see.
   indicator: euro area labour productivity growth · asset: multi · direction: European productivity up · horizon: years · conditions: depends on AI diffusion at firm level · testable: yes - productivity series available · confidence: low
   ^MT034-C05-X1
@@ -145,7 +145,7 @@ tags: [source, layer0]
   > So, working forces in most of Europe is beginning to decline, which will require new forces.
   indicator: labor force · asset: multi · horizon: years · testable: yes - demographic data · confidence: high
   ^MT034-C06-3
-- **Christine Lagarde** A culture of vested interests and accrued rights in Europe delays labour-market and productivity reforms, requiring cultural change as the workforce shrinks.  #mech/structural_shift _(added by Opus)_
+- **Christine Lagarde** A culture of vested interests and accrued rights in Europe delays labour-market and productivity reforms, requiring cultural change as the workforce shrinks.  #mech/structural_shift _(added by opus cross-check)_
   > at the moment the concept of vested interest, accrued rights, um delay for anything that is decided. That's an impediment to the changes that are necessary.
   asset: multi · horizon: years · testable: no - qualitative · confidence: medium
   ^MT034-C06-X1
@@ -171,7 +171,7 @@ tags: [source, layer0]
   > I think deviation from 2% will come after my time.
   indicator: ECB inflation target · asset: rates · horizon: years · testable: no · confidence: high
   ^MT034-C07-5
-- **Christine Lagarde** In 2022 one ECB dissenter warned that inflation was being underestimated but was not heeded, illustrating how group consensus and forward guidance delayed the policy response.  #mech/research_method _(added by Opus)_
+- **Christine Lagarde** In 2022 one ECB dissenter warned that inflation was being underestimated but was not heeded, illustrating how group consensus and forward guidance delayed the policy response.  #mech/research_method _(added by opus cross-check)_
   > I had one, but I did not pay enough attention to that person.
   asset: rates · horizon: months · conditions: when bound by prior forward guidance · testable: no - single anecdote · confidence: high
   ^MT034-C07-X1
@@ -185,11 +185,11 @@ tags: [source, layer0]
   > If you look at the progression of stable coins for instance, they have significantly increased up until last October. Since last October it's flat.
   indicator: stablecoin supply · asset: fx · horizon: months · testable: yes · confidence: medium
   ^MT034-C08-2
-- **Christine Lagarde** Because payments are going digital and central bank money anchors the financial system, central bank money must exist in digital form, and the rails for digital assets should be a public good.  #mech/structural_shift _(added by Opus)_
+- **Christine Lagarde** Because payments are going digital and central bank money anchors the financial system, central bank money must exist in digital form, and the rails for digital assets should be a public good.  #mech/structural_shift _(added by opus cross-check)_
   > Do I think that central bank money is critical in order to uh structure, organize, and hold the financial system? Yes.
   asset: fx · horizon: years · testable: no - policy rationale · confidence: high
   ^MT034-C08-X1
-- **Christine Lagarde** Stablecoins exploit a real market failure in cross-border payments; if banks and the digital euro fix cross-border payments, that part of the stablecoin business case disappears.  #mech/structural_shift _(added by Opus)_
+- **Christine Lagarde** Stablecoins exploit a real market failure in cross-border payments; if banks and the digital euro fix cross-border payments, that part of the stablecoin business case disappears.  #mech/structural_shift _(added by opus cross-check)_
   > if the [L320] financial agents and in particular the traditional banking sector can remedy that and the digital euro can be an instrument then that element of business case goes.
   indicator: stablecoin supply growth · asset: fx · direction: stablecoin growth down if cross-border payments are fixed · horizon: years · conditions: banks/digital euro deliver cheap cross-border payments · testable: partly - stablecoin supply and cross-border cost data exist · confidence: medium
   ^MT034-C08-X2

@@ -6,7 +6,7 @@ channel: "Generating Alpha Podcast"
 url: https://www.youtube.com/watch?v=O5-Vdm8cIkg
 words: 5991
 claims: 20
-added_by_opus: 4
+added_by_crosscheck: 4
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Paul Krugman (Nobel economist, CUNY professor)", "Amir (host, Generating Alpha podcast)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** macro policy, fiscal debt, trade policy, credibility
 
-**Opus completeness estimate of first read:** 0.85 - policy interview with no trading method; first reader caught the main macro ideas (trade eras, stimulus/austerity, debt sustainability and credibility, AI/immigration), missing a few secondary items (Reagan VERs, unexplained higher rates, Medicare Advantage waste, three-superpower framing).
+**Cross-check completeness estimate of first read:** 0.85 - policy interview with no trading method; first reader caught the main macro ideas (trade eras, stimulus/austerity, debt sustainability and credibility, AI/immigration), missing a few secondary items (Reagan VERs, unexplained higher rates, Medicare Advantage waste, three-superpower framing).
 
 ## Coverage
 
@@ -43,7 +43,7 @@ tags: [source, layer0]
   > gradual sort of ratcheting down of tariffs to where they were very low by by uh by by 2016.
   indicator: US tariff rates; adherence to trade agreements · asset: multi · horizon: years · conditions: Regime split: pre-Trump rules-based vs Trump era · testable: partly - tariff levels measurable, regime break is a judgement · confidence: high
   ^MT052-C03-1
-- **Paul Krugman** The most protectionist pre-2016 US episode was Reagan-era voluntary export restraints forced on Japanese autos, which still stayed inside the GATT-agreement framework rather than breaking it.  #mech/policy_reaction _(added by Opus)_
+- **Paul Krugman** The most protectionist pre-2016 US episode was Reagan-era voluntary export restraints forced on Japanese autos, which still stayed inside the GATT-agreement framework rather than breaking it.  #mech/policy_reaction _(added by opus cross-check)_
   > Reagan was a little bit more protectionist than uh than the presidents before or after him. Um more uh voluntary export restraints
   indicator: US tariff / trade-restraint history (VERs on Japanese autos) · asset: multi · horizon: years · conditions: historical analogy for current tariff regime · testable: partly - historical trade-policy episodes can be compared · confidence: high
   ^MT052-C03-X1
@@ -89,11 +89,11 @@ tags: [source, layer0]
   > the mathematics the arithmetic of debt is really not that daunting?
   indicator: interest payments; fiscal deficit · asset: rates · horizon: years · conditions: Requires political willingness to raise taxes; he says this is unlikely · testable: partly - fiscal sustainability arithmetic is computable, political outcome is not · confidence: medium
   ^MT052-C06-3
-- **Paul Krugman** US interest rates have stayed persistently higher than before for reasons that are not well understood, which raises federal interest payments.  #mech/fiscal_debt _(added by Opus, time-bound view)_
+- **Paul Krugman** US interest rates have stayed persistently higher than before for reasons that are not well understood, which raises federal interest payments.  #mech/fiscal_debt _(added by opus cross-check, time-bound view)_
   > interest payments are up and there's some mystery about why interest rates are higher than than persistently higher than they were
   indicator: US Treasury yields; federal interest payments · asset: rates · direction: rates higher for longer; interest cost up · horizon: years · testable: yes - term-premium decompositions can test what explains the higher yields · confidence: medium
   ^MT052-C06-X1
-- **Paul Krugman** Medicare Advantage overpayments from insurer upcoding (estimates up to $80bn a year) are known waste left untouched while other spending is cut, a sign the US political system is not acting fiscally responsibly, which undermines its credibility.  #mech/fiscal_debt _(added by Opus, time-bound view)_
+- **Paul Krugman** Medicare Advantage overpayments from insurer upcoding (estimates up to $80bn a year) are known waste left untouched while other spending is cut, a sign the US political system is not acting fiscally responsibly, which undermines its credibility.  #mech/fiscal_debt _(added by opus cross-check, time-bound view)_
   > estimates run as high as 80 billion a year of just overpayments because of um uh insurance companies upcoding
   indicator: Medicare Advantage overpayment estimates · asset: rates · horizon: years · testable: partly - overpayment estimates exist; link to credibility is judgement · confidence: high
   ^MT052-C06-X2
@@ -110,7 +110,7 @@ tags: [source, layer0]
 - **Paul Krugman** A fall in US credibility opens opportunities for China (which looks more credible than the US despite autocratic contract risk) and gives big developing countries such as Brazil somewhat more independence.  #mech/structural_shift _(time-bound view)_
   > China of course this opens a lot of opportunities for China.
   asset: multi · direction: China gains relative to US · horizon: years · testable: no - geopolitical judgement · confidence: low
-  **Correction (Opus):** The Brazil/independence point and China's own credibility problems (autocracy, contracts as suggestions) are said in chunk C08, not C07; the claim merges them. Meaning is otherwise right. → A fall in US credibility opens opportunities for China, which has its own credibility problems as an autocracy (contracts treated as suggestions) but now looks more credible than the US; big developing countries such as Brazil may gain a little more independence.
+  **Correction (cross-check):** The Brazil/independence point and China's own credibility problems (autocracy, contracts as suggestions) are said in chunk C08, not C07; the claim merges them. Meaning is otherwise right. → A fall in US credibility opens opportunities for China, which has its own credibility problems as an autocracy (contracts treated as suggestions) but now looks more credible than the US; big developing countries such as Brazil may gain a little more independence.
   ^MT052-C07-3
 
 ### C08
@@ -126,7 +126,7 @@ tags: [source, layer0]
   > we're going to have zero or negative immigration from
   indicator: net immigration · asset: other · direction: lower growth and living standards · horizon: years · testable: partly - labour force and growth accounting · confidence: medium
   ^MT052-C08-3
-- **Paul Krugman** Only the US, China and the EU are economic superpowers; the EU remains a massive economic force despite disappointments but is less politically cohesive (though more so than a few years ago), and no other country is big enough to replace a less credible US.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Paul Krugman** Only the US, China and the EU are economic superpowers; the EU remains a massive economic force despite disappointments but is less politically cohesive (though more so than a few years ago), and no other country is big enough to replace a less credible US.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > there are three superpowers in the world economically which is US, China and the EU
   asset: multi · horizon: years · testable: no - geopolitical framing · confidence: high
   ^MT052-C08-X1

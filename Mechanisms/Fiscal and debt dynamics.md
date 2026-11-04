@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Fiscal and debt dynamics
 
-270 claims from 76 sources. Each line links to the claim inside its source note.
+437 claims from 128 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -259,9 +259,11 @@ tags: [mechanism]
 
 ## [[MT072 - Higher Yields Are Here to Stay - Systematic Investor - Ep.350]]
 - [[MT072 - Higher Yields Are Here to Stay - Systematic Investor - Ep.350#^MT072-C04-1|MT072-C04-1]] — In 1993 the bond market intimidated politicians at a deficit of about 4% of GDP and debt of 45% of GDP with 10-year yields near 6%, versus roughly 100% debt/GDP today.
+- [[MT072 - Higher Yields Are Here to Stay - Systematic Investor - Ep.350#^MT072-C04-X1|MT072-C04-X1]] — Eichengreen's Jackson Hole paper argued that today's high public debt levels will not be worked down and are here to stay, which underpins the view of persistently higher yields.
 - [[MT072 - Higher Yields Are Here to Stay - Systematic Investor - Ep.350#^MT072-C05-1|MT072-C05-1]] — The 2025 budget bill adds nearly 4 trillion over ten years to US deficits, adding to the debt supply.
 - [[MT072 - Higher Yields Are Here to Stay - Systematic Investor - Ep.350#^MT072-C05-2|MT072-C05-2]] — Bond market discipline of fiscal policy has weakened: it constrained politicians at far lower debt and deficits in 1993 than today.
 - [[MT072 - Higher Yields Are Here to Stay - Systematic Investor - Ep.350#^MT072-C05-3|MT072-C05-3]] — In the 1990s deficit reduction (Clinton tax hikes) allowed easier Fed policy and lower yields, which fueled investment; the opposite fiscal stance today does not help.
+- [[MT072 - Higher Yields Are Here to Stay - Systematic Investor - Ep.350#^MT072-C05-X1|MT072-C05-X1]] — After the 2000 surplus the US even stopped issuing long bonds for a while, but now the Treasury cannot term out its debt and leans on bill issuance because of doubts about demand at the long end of the curve.
 - [[MT072 - Higher Yields Are Here to Stay - Systematic Investor - Ep.350#^MT072-C06-1|MT072-C06-1]] — From 2017 the US ran large deficits at full employment, a procyclical turning point, followed by MMT ideas and huge Covid spending.
 - [[MT072 - Higher Yields Are Here to Stay - Systematic Investor - Ep.350#^MT072-C06-2|MT072-C06-2]] — The end of the neoliberal era made fiscal conservatism disappear, so no political or ideological appetite to cut deficits exists even as supply chains and industrial policy add cost.
 - [[MT072 - Higher Yields Are Here to Stay - Systematic Investor - Ep.350#^MT072-C06-3|MT072-C06-3]] — The 2021-22 inflation eroded real debt but disinflation reverses this, so the debt burden rises again.
@@ -328,25 +330,33 @@ tags: [mechanism]
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C12-3|MT091-C12-3]] — US debt on its current path will ultimately be resolved partly through inflation.
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C12-5|MT091-C12-5]] — The next inflation burst will lift rates far more than last time because investors forgave central banks once but will not again.
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C12-6|MT091-C12-6]] — US runs a deficit of about 7% of GDP and debt of 36 trillion could reach 65 trillion in 10 years per CBO, so adjustments (higher taxes or lower spending) will be needed.
+- [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C12-X1|MT091-C12-X1]] — Concern about debt is not the same as support for austerity: bigger transfers are fine if financed by taxes, but treating deficit spending as a free lunch is the error.
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C13-1|MT091-C13-1]] — Both the left (debt is free) and right (tax cuts pay for themselves) hold fictions that markets no longer believe, visible in higher rates.
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C13-2|MT091-C13-2]] — Debt crises hit suddenly for countries borrowing in foreign currency (Greece, EM), unlike the US.
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C13-3|MT091-C13-3]] — The US can inflate away debt, so a sudden sharp rise in coupon demanded is unlikely; the effect will show up gradually in interest rates.
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C13-4|MT091-C13-4]] — High debt in advanced countries weighs on growth by limiting stimulus and investment options.
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C13-5|MT091-C13-5]] — Europe must raise defense spending well above 2% of GDP because the US cannot project power in two or three regions at once (US defense is 3.5% of GDP vs 8% at end of Cold War).
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C13-6|MT091-C13-6]] — Large-currency issuers avoid default by using financial repression and rules, as Japan does with very high debt and low growth.
+- [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C13-X1|MT091-C13-X1]] — A US default or forced restructuring of Treasuries is not a realistic scenario because the US issues its own currency and can inflate or repress instead, so the risk is inflation or higher yields, not default.
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C14-1|MT091-C14-1]] — US interest payments rose from about 250 billion to nearly 1 trillion, which is painful though adjustable for now.
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C14-2|MT091-C14-2]] — Internal problems (unconfronted debt, central bank independence) will weaken the dollar and its footprint, as with Rome.
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C14-4|MT091-C14-4]] — After the GFC low-debt countries stimulated more and did better; Germany is using fiscal space saved for a rainy day; Italy, Japan, France growth held back by debt.
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C14-5|MT091-C14-5]] — Deficits help in downturns, but a large accumulated debt limits the ability to run them when needed.
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C15-1|MT091-C15-1]] — Debt sustainability depends on the interest rate; the debate assuming zero rates forever was wrong and rate changes now make adjustment more painful but not immediately forcing.
 - [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C15-2|MT091-C15-2]] — With positive interest rates, the next European crisis package will be harder to agree on than the negative-rate pandemic one.
+- [[MT091 - Kenneth Rogoff - Podcast - In Good Company - Norges Bank Investment Management#^MT091-C15-X1|MT091-C15-X1]] — Central bank independence has supported confidence and allowed governments to run higher debt levels than otherwise, so any loss of independence would remove that support and raise the cost of the debt stock.
 
 ## [[MT092 - Kenneth Tropin, Chairman and Founder of Graham, Featured on the Risk and Return Podcast]]
 - [[MT092 - Kenneth Tropin, Chairman and Founder of Graham, Featured on the Risk and Return Podcast#^MT092-C02-1|MT092-C02-1]] — A growing US deficit with no plan to reduce it makes this a concerning time for fixed income investors.
 
 ## [[MT093 - Lehman’s Legacy, ETF Performance & What Investors Still Get Wrong - Systematic Investor -]]
 - [[MT093 - Lehman’s Legacy, ETF Performance & What Investors Still Get Wrong - Systematic Investor -#^MT093-C05-4|MT093-C05-4]] — Bond market sell-offs on debt worries are the dog that has never barked; developed-market politicians get away with high debt (Truss was the exception).
+- [[MT093 - Lehman’s Legacy, ETF Performance & What Investors Still Get Wrong - Systematic Investor -#^MT093-C05-X1|MT093-C05-X1]] — Niels argues that, given large fiscal deficits and rising debt almost everywhere, many government bond markets should carry a higher risk premium than they currently do.
+- [[MT093 - Lehman’s Legacy, ETF Performance & What Investors Still Get Wrong - Systematic Investor -#^MT093-C05-X3|MT093-C05-X3]] — UK gilt yields recently reached 27-year highs, above the Truss-crisis peak, together with inflation that stayed high since 2022 while EU inflation mean-reverted, a case where bond markets have priced debt and inflation concerns.
 - [[MT093 - Lehman’s Legacy, ETF Performance & What Investors Still Get Wrong - Systematic Investor -#^MT093-C06-1|MT093-C06-1]] — UK yields are above Italy's even though Italian debt/GDP is worse, so UK bond weakness reflects persistent inflation rather than debt alone.
+
+## [[MT095 - Liquidity, Leverage, and the End of Safety - Systematic Investor - Ep.369]]
+- [[MT095 - Liquidity, Leverage, and the End of Safety - Systematic Investor - Ep.369#^MT095-C08-1|MT095-C08-1]] — An IMF survey of 27,000 respondents found just over half knew that higher spending raises deficits, so public ignorance of fiscal links raises credit-crisis risk.
 
 ## [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355]]
 - [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C03-4|MT096-C03-4]] — Fiscal, term-premium and supply factors all point to higher long-term bond yields, although yields had corrected about 50bp from highs in mid-2025 on Fed-cut expectations (Waller, Bowman) and a flatter curve.
@@ -362,12 +372,21 @@ tags: [mechanism]
 ## [[MT101 - Market Narratives and the Unpredictable Alpha - Systematic Investor 322]]
 - [[MT101 - Market Narratives and the Unpredictable Alpha - Systematic Investor 322#^MT101-C05-4|MT101-C05-4]] — In a fiscal-crisis bond vigilante scenario yields would rise with a falling dollar; a rising dollar with rising yields says growth is driving it instead.
 
+## [[MT102 - Market Patterns Work and Jeffrey Hirsch Explains Why - The Real Eisman Playbook Ep 56]]
+- [[MT102 - Market Patterns Work and Jeffrey Hirsch Explains Why - The Real Eisman Playbook Ep 56#^MT102-C11-X12|MT102-C11-X12]] — The post-Afghanistan/Iraq period lacked war inflation, but war-like COVID spending played that role and caused the 2020-2022 inflation, fitting the war-plus-inflation super-boom setup.
+
 ## [[MT103 - Market Predictions, Rates & Inflation, DOGE, CES, AI Compute - BG2 w- Bill Gurley & Brad G]]
 - [[MT103 - Market Predictions, Rates & Inflation, DOGE, CES, AI Compute - BG2 w- Bill Gurley & Brad G#^MT103-C13-1|MT103-C13-1]] — The market doubts Congress will cut spending to offset ~400bn of tax stimulus (no evidence in 5-10 years), keeping the 10-year elevated.
 - [[MT103 - Market Predictions, Rates & Inflation, DOGE, CES, AI Compute - BG2 w- Bill Gurley & Brad G#^MT103-C13-2|MT103-C13-2]] — If DOGE and Congress cut hundreds of billions, the 10y falls and equities run; if yields reach 5.25-5.5% it is an anchor on stocks and the economy.
 - [[MT103 - Market Predictions, Rates & Inflation, DOGE, CES, AI Compute - BG2 w- Bill Gurley & Brad G#^MT103-C13-3|MT103-C13-3]] — Federal spending at 2019 baseline grown 2.5% a year would be about 5.0 trillion vs actual 6.7 trillion in 2024, a 1.7 trillion gap suggesting room for cuts.
 - [[MT103 - Market Predictions, Rates & Inflation, DOGE, CES, AI Compute - BG2 w- Bill Gurley & Brad G#^MT103-C14-1|MT103-C14-1]] — Aging populations shrink the taxpaying share; without efficiency (AI) or reduced benefits, bond vigilantes may push rates up if fiscal path looks unstable.
+- [[MT103 - Market Predictions, Rates & Inflation, DOGE, CES, AI Compute - BG2 w- Bill Gurley & Brad G#^MT103-C14-X11|MT103-C14-X11]] — Health-care spending per person grows far faster than 2.5% a year and keeps gaining share of the budget, so deficit cuts need sector-specific reform, not just a general spending squeeze.
+- [[MT103 - Market Predictions, Rates & Inflation, DOGE, CES, AI Compute - BG2 w- Bill Gurley & Brad G#^MT103-C14-X12|MT103-C14-X12]] — Removing restrictive regulation can raise GDP growth and so improve the fiscal ratio; the real constraint is whether the political system can reform itself, not knowing what to cut.
 - [[MT103 - Market Predictions, Rates & Inflation, DOGE, CES, AI Compute - BG2 w- Bill Gurley & Brad G#^MT103-C15-1|MT103-C15-1]] — Balanced budget is attainable at 6 trillion with tax-cut growth acceleration and AI productivity; the US is in a strong position relative to Europe.
+
+## [[MT110 - Most Investors Fear Uncertainty, But Systematic Traders Don’t - Systematic Investor - Ep]]
+- [[MT110 - Most Investors Fear Uncertainty, But Systematic Traders Don’t - Systematic Investor - Ep#^MT110-C08-2|MT110-C08-2]] — A smaller Fed balance sheet means Treasury debt is financed by private or reserve buyers, changing bond-market dynamics.
+- [[MT110 - Most Investors Fear Uncertainty, But Systematic Traders Don’t - Systematic Investor - Ep#^MT110-C10-1|MT110-C10-1]] — If the Fed stops buying, someone else must, and the clearing yield is higher.
 
 ## [[MT111 - Navigating Market Chaos - Systematic Investor 336]]
 - [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C02-2|MT111-C02-2]] — Repricing US gold reserves from the official $42/oz to market would create a large balance-sheet asset to lend against (sovereign wealth fund idea), a catalyst supporting the gold trend.
@@ -391,8 +410,20 @@ tags: [mechanism]
 - [[MT126 - Politics, Markets & Power Plays - Systematic Investor 338#^MT126-C09-2|MT126-C09-2]] — Jim expects Japan and its central bank to play a major role in cancelling or restructuring part of the US external debt.
 - [[MT126 - Politics, Markets & Power Plays - Systematic Investor 338#^MT126-C09-3|MT126-C09-3]] — Only about 27% of US debt is held externally, so most restructuring would have to be internal.
 - [[MT126 - Politics, Markets & Power Plays - Systematic Investor 338#^MT126-C09-4|MT126-C09-4]] — Debt resolution would be a slow process rather than a one-off event.
+- [[MT126 - Politics, Markets & Power Plays - Systematic Investor 338#^MT126-C09-X1|MT126-C09-X1]] — Government debt held by a central bank (as with the Bank of Japan) could be cancelled with an accounting entry at no real economic cost, because it is a claim of one part of the state on another, so the issue is the political will and the currency effect, not mechanics.
 - [[MT126 - Politics, Markets & Power Plays - Systematic Investor 338#^MT126-C10-1|MT126-C10-1]] — Revaluing the book value of central-bank gold is floated as a way to ease the debt position.
 - [[MT126 - Politics, Markets & Power Plays - Systematic Investor 338#^MT126-C10-3|MT126-C10-3]] — European rearmament could be a fiscal expansion of 10 to 20% of GDP for Germany alone.
+- [[MT126 - Politics, Markets & Power Plays - Systematic Investor 338#^MT126-C10-X1|MT126-C10-X1]] — Rising interest costs on a large US debt create an incentive to reduce the debt burden by pressure on allies, calling in favours and using the central bank, so debt monetisation is the likely direction under an America First stance.
+
+## [[MT129 - Post-Election Trends - Systematic Investor 321]]
+- [[MT129 - Post-Election Trends - Systematic Investor 321#^MT129-C01-2|MT129-C01-2]] — The German coalition split over budget cuts reflects Europe's rising debt, flat growth and competitiveness challenges.
+- [[MT129 - Post-Election Trends - Systematic Investor 321#^MT129-C05-X2|MT129-C05-X2]] — Musk's cost-cutting remit could yield real productivity gains in government even if implementation is hugely complicated, which would help the deficit and supply side story.
+- [[MT129 - Post-Election Trends - Systematic Investor 321#^MT129-C08-2|MT129-C08-2]] — The 10-year yield rose 60-70bp after the Fed's 50bp cut, reflecting deficit concerns.
+- [[MT129 - Post-Election Trends - Systematic Investor 321#^MT129-C08-3|MT129-C08-3]] — Macro guests agree on upside risk to US yields because deficit trajectory is unsustainable; deficits unlikely to shrink regardless of election winner.
+- [[MT129 - Post-Election Trends - Systematic Investor 321#^MT129-C08-5|MT129-C08-5]] — One strategist sees the US 10-year yield possibly surpassing 5%.
+- [[MT129 - Post-Election Trends - Systematic Investor 321#^MT129-C08-X2|MT129-C08-X2]] — If the administration cuts spending aggressively (Musk-identified savings) the deficit outcome would be better than feared, which would remove part of the upside risk to yields; this is the main scenario against the unsustainable-deficit view.
+- [[MT129 - Post-Election Trends - Systematic Investor 321#^MT129-C09-5|MT129-C09-5]] — 1990s precedent (Clinton-Greenspan): deficit reduction enabled easier monetary policy; seen as implausible now.
+- [[MT129 - Post-Election Trends - Systematic Investor 321#^MT129-C09-6|MT129-C09-6]] — Deficits are resolved either by a fiscal crisis enforced by bond vigilantes or a political shift.
 
 ## [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363]]
 - [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C13-1|MT131-C13-1]] — Fiscal expansion means rising bond issuance, so portfolios will hold more fixed income, which is not a safe source of long-term real compounding.
@@ -406,13 +437,31 @@ tags: [mechanism]
 - [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-3|MT138-C02-3]] — US reliance on current account inflows, mostly from allies, means reduced foreign appetite for US assets cannot unwind in a day; policy of self-sufficiency pushes capital to stay at home (Germany defence example).
 - [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-3|MT138-C03-3]] — US 10-year yield rises to 5-5.25% in 2025 with no Fed cuts and then a 2026 boom from tax cuts and reshoring once tariff uncertainty fades.
 
+## [[MT139 - Rob Citrone – Emerging Markets, Hedge Funds, and Staying in the Game (Capital Allocators,]]
+- [[MT139 - Rob Citrone – Emerging Markets, Hedge Funds, and Staying in the Game (Capital Allocators,#^MT139-C03-5|MT139-C03-5]] — Because US debt is in its own currency and the dollar is the reserve currency, the US avoids EM-style currency-to-debt crises; inflation, not debt, is the issue.
+- [[MT139 - Rob Citrone – Emerging Markets, Hedge Funds, and Staying in the Game (Capital Allocators,#^MT139-C05-4|MT139-C05-4]] — In the 2008 crisis Eastern Europe's problems would cascade through Western European bank lending; a lender standstill plus IMF program was proposed.
+- [[MT139 - Rob Citrone – Emerging Markets, Hedge Funds, and Staying in the Game (Capital Allocators,#^MT139-C08-3|MT139-C08-3]] — Turkey is the best short in 2022: CDS 400 to 800, reserves negative about 50bn, deposits spent, inflation 70-80%, so a currency and credit crisis is expected.
+- [[MT139 - Rob Citrone – Emerging Markets, Hedge Funds, and Staying in the Game (Capital Allocators,#^MT139-C11-4|MT139-C11-4]] — Europe heads toward recession with 14 differing national policies, an energy shock, and possible accident in 18-24 months.
+- [[MT139 - Rob Citrone – Emerging Markets, Hedge Funds, and Staying in the Game (Capital Allocators,#^MT139-C12-1|MT139-C12-1]] — Short Italian debt ahead of next year's election and short the DAX (no energy firms, heavy industrial exposure, natural gas six times US prices).
+
 ## [[MT141 - Scott Bessent - Macro Maven (EP.415)]]
 - [[MT141 - Scott Bessent - Macro Maven (EP.415)#^MT141-C12-4|MT141-C12-4]] — Oct 2024 view: a Republican sweep means a growth shock and animal spirits, making the Fed's jumbo cut a mistake and risking hikes; divided government under Harris leaves a 7% deficit unresolved.
 - [[MT141 - Scott Bessent - Macro Maven (EP.415)#^MT141-C13-5|MT141-C13-5]] — US debt can be outgrown via deregulation, energy independence and a growth mindset; this is described as the last chance.
 
 ## [[MT142 - Scott Bessent- Inside Trump’s Treasury; War Costs; & Why Bond Market is King]]
 - [[MT142 - Scott Bessent- Inside Trump’s Treasury; War Costs; & Why Bond Market is King#^MT142-C06-4|MT142-C06-4]] — War cost (about $11bn after a couple of weeks) is not a fiscal constraint.
+- [[MT142 - Scott Bessent- Inside Trump’s Treasury; War Costs; & Why Bond Market is King#^MT142-C08-X2|MT142-C08-X2]] — Short-dated issuance in Treasury debt management is credited with keeping long yields down; asked whether he would issue more long debt if the Fed had to hike, Bessent says Treasury and the Fed collaborate and a return to QE is so far away it is not worth discussing.
+- [[MT142 - Scott Bessent- Inside Trump’s Treasury; War Costs; & Why Bond Market is King#^MT142-C09-X1|MT142-C09-X1]] — Named number: the US gold stock is carried at about $42 an ounce versus a market price above $5,000 in March 2026; Bessent treats any gold revaluation and any Fed balance-sheet reduction as independent matters.
 - [[MT142 - Scott Bessent- Inside Trump’s Treasury; War Costs; & Why Bond Market is King#^MT142-C12-2|MT142-C12-2]] — Debt-to-GDP rose everywhere after the GFC and COVID, so the US is in better relative shape.
+
+## [[MT143 - Sharing the Trend Following Pie - Systematic Investor 299]]
+- [[MT143 - Sharing the Trend Following Pie - Systematic Investor 299#^MT143-C02-2|MT143-C02-2]] — With real yields near 2% and 4.5-5.5% on 10- and 30-year bonds, heavily indebted governments risk Truss-style moments where excess stimulus triggers a bond market collapse until the government steps in.
+
+## [[MT145 - Skew, Convexity, and the Hidden Risks in Systematic Investing - Systematic Investor - Ep.3]]
+- [[MT145 - Skew, Convexity, and the Hidden Risks in Systematic Investing - Systematic Investor - Ep.3#^MT145-C02-5|MT145-C02-5]] — Looking only at 40 years of data suggests money can be printed without consequence, but longer history shows consequences, and a dollar debasement trade is emerging.
+- [[MT145 - Skew, Convexity, and the Hidden Risks in Systematic Investing - Systematic Investor - Ep.3#^MT145-C03-X2|MT145-C03-X2]] — Growth with heavy money creation and no visible CPI inflation is only possible through effective currency devaluation, a hidden tax on wealth, so the cost appears as debasement against hard assets rather than as consumer inflation.
+- [[MT145 - Skew, Convexity, and the Hidden Risks in Systematic Investing - Systematic Investor - Ep.3#^MT145-C04-1|MT145-C04-1]] — Current debt levels with continued money printing mean an inflationary cycle is certain, as one of the cycle's normal phases.
+- [[MT145 - Skew, Convexity, and the Hidden Risks in Systematic Investing - Systematic Investor - Ep.3#^MT145-C06-X2|MT145-C06-X2]] — Historical analogy: late-cycle empires hand out paper claims in exchange for real assets and keep the commodities; the US cannot expand territorially to sell paper to new populations, so debasement shows up as paper losing value against physical commodities.
 
 ## [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour]]
 - [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-4|MT147-C01-4]] — Government deficits supply income that is not paid out as wages, so larger deficits raise corporate profits and smaller deficits cut them.
@@ -421,9 +470,231 @@ tags: [mechanism]
 - [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-1|MT147-C03-1]] — Stimulus checks repaired household balance sheets very fast, which left households able to spend from savings later.
 
 ## [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller]]
+- [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller#^MT149-C02-X1|MT149-C02-X1]] — The Fed financed about 60% of the roughly $5tn of Covid fiscal spending, i.e. monetised the deficit, which added to money-supply growth and inflation and is part of the bubble he expects to unwind.
 - [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller#^MT149-C06-2|MT149-C06-2]] — Government fiscal and monetary room is smaller than in 1979-80, when markets were at 8x earnings and government balance sheets were healthy, so the policy response to the next recession is constrained.
+- [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller#^MT149-C06-X1|MT149-C06-X1]] — Authorities can always print money, but Japan shows that unlimited monetary and fiscal effort may fail to restore growth, so the US may have no reliable way out once bubble, debt and policy limits are reached.
+- [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller#^MT149-C06-X2|MT149-C06-X2]] — Twelve years earlier he flagged 2025-2035 as the danger window when ageing demographics and rising interest expense collide with large debts; the period since has been worse than he imagined, so fiscal stress is a long-horizon theme.
 - [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller#^MT149-C07-4|MT149-C07-4]] — US deficits stay large even in booms (over 5% of GDP in 2018, over $1tn post-Covid), so fiscal position is structurally weak.
 - [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller#^MT149-C08-1|MT149-C08-1]] — The debt ceiling is a minor market event next to the entitlement and interest burden that exceeds taxes in the 2040s-2050s.
 - [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller#^MT149-C08-2|MT149-C08-2]] — Rising interest and entitlement spending crowds out government and private investment.
 - [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller#^MT149-C08-3|MT149-C08-3]] — The US fiscal gap is 7.7% of GDP versus 2.4% in France, equal to a 40% tax rise or 35% spending cut.
+- [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller#^MT149-C08-X1|MT149-C08-X1]] — Entitlements must be cut either now or later, but delay raises the cost because interest expense (projected by CBO to rise from 8% to 27% of GDP) grows further, so postponing reform makes the fiscal squeeze worse.
+- [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller#^MT149-C08-X2|MT149-C08-X2]] — Official CBO long-run projections assume interest rates of about 4% even with deficits near 11% of GDP, which is inconsistent: with deficits that large rates would be higher, so projected debt-service burdens are understated.
 - [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller#^MT149-C09-1|MT149-C09-1]] — The reserve-currency privilege removes market discipline, so the US can run fiscal and monetary excess until the privilege itself is lost.
+- [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller#^MT149-C10-X1|MT149-C10-X1]] — Two paths from here: a deliberate flush-out (Volcker style), or more monetary stimulus and debt as Japan has done, ending in permanent malaise; the US has less firepower now than in the 1980s, so path two is the risk if politicians avoid pain.
+
+## [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347]]
+- [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C05-2|MT150-C05-2]] — Treasury issuance (short-dated) and Fed pressure follow political incentives under both parties, so short-termism in debt policy is structural.
+- [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C07-2|MT150-C07-2]] — Policy shifted to populist fiscal measures (no tax on tips, defense +$150bn a year) with spending cuts reversed.
+- [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C08-3|MT150-C08-3]] — Faced with unsustainable debt the US would monetize rather than default.
+- [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C16-X1|MT150-C16-X1]] — Niels flags a loss of confidence in the US ability and willingness to honour its debt as the scenario to watch, linking to Atwater's confidence work and the Treasury market dysfunction as a possible unspoken structural threat.
+
+## [[MT151 - Stan Druckenmiller - Podcast - In Good Company - Norges Bank Investment Management]]
+- [[MT151 - Stan Druckenmiller - Podcast - In Good Company - Norges Bank Investment Management#^MT151-C02-3|MT151-C02-3]] — US debt-to-GDP cannot rise forever; a reckoning will come but timing is unknowable and it is not tradable on a 3-6 month horizon.
+- [[MT151 - Stan Druckenmiller - Podcast - In Good Company - Norges Bank Investment Management#^MT151-C02-4|MT151-C02-4]] — Reserve currency status lets the US run deficits (about 7% of GDP at full employment) that would have triggered a loss of trust elsewhere ('Liz Truss moment'); it delays but does not remove the reckoning.
+- [[MT151 - Stan Druckenmiller - Podcast - In Good Company - Norges Bank Investment Management#^MT151-C02-5|MT151-C02-5]] — Debt costs have not hit the private sector because households refinanced (average mortgage under 4%) and corporations termed out debt; this rolls over in 2025-26, so stress is more likely late 2025 or early 2026.
+
+## [[MT152 - Stanley Druckenmiller on Economy, Stocks, Bonds, Trump, Fed- Full Interview]]
+- [[MT152 - Stanley Druckenmiller on Economy, Stocks, Bonds, Trump, Fed- Full Interview#^MT152-C01-5|MT152-C01-5]] — QE and Fed behavior cancelled the bond-market vigilante signal, enabling more fiscal spending (Trump, Obama no entitlement cuts) and another bubble.
+- [[MT152 - Stanley Druckenmiller on Economy, Stocks, Bonds, Trump, Fed- Full Interview#^MT152-C03-X1|MT152-C03-X1]] — Claims of a 'beautiful deleveraging' after 2008 are wrong in aggregate: private debt was replaced by rapidly growing government and corporate non-financial debt, so system-wide leverage did not fall and the bubble remains to be let out.
+
+## [[MT153 - Stanley F. Druckenmiller- Monetary Policy & Markets]]
+- [[MT153 - Stanley F. Druckenmiller- Monetary Policy & Markets#^MT153-C06-5|MT153-C06-5]] — Global debt of $247 trillion (three times GDP) limits how far rates can be raised without bankruptcies.
+- [[MT153 - Stanley F. Druckenmiller- Monetary Policy & Markets#^MT153-C07-2|MT153-C07-2]] — Debt trap: with zero hurdle rates debt explodes; not normalizing makes the problem bigger later, normalizing now is harder than four or five years ago.
+- [[MT153 - Stanley F. Druckenmiller- Monetary Policy & Markets#^MT153-C07-X1|MT153-C07-X1]] — Heavy government debt issuance creates political pressure on the central bank to keep rates low; Trump's remark showed that the debt overhang now constrains normalization (fiscal pressure on monetary policy).
+- [[MT153 - Stanley F. Druckenmiller- Monetary Policy & Markets#^MT153-C13-5|MT153-C13-5]] — After the 2008 crisis the world tripled down with more debt, as in the 1920s, and nothing was learned.
+- [[MT153 - Stanley F. Druckenmiller- Monetary Policy & Markets#^MT153-C13-6|MT153-C13-6]] — Unfunded entitlements (about $100 trillion, five times GDP) and worsening demographics will produce a battle between creditors and debtors.
+- [[MT153 - Stanley F. Druckenmiller- Monetary Policy & Markets#^MT153-C16-2|MT153-C16-2]] — US fiscal deficits near 2009 levels at full employment could double to $2 trillion in a recession, while the biggest foreign holders of US debt are the trade-war partners.
+- [[MT153 - Stanley F. Druckenmiller- Monetary Policy & Markets#^MT153-C16-X1|MT153-C16-X1]] — The Treasury refinances about $10 trillion of nominal debt a year and issued a record amount in July (about $130 billion, highest since 2008-09), so heavy supply meets a funding base that depends on the same countries it is fighting trade wars with.
+
+## [[MT155 - Systematic Investing in 2025- Trends, Predictions & Bold Debates - Systematic Investor 328]]
+- [[MT155 - Systematic Investing in 2025- Trends, Predictions & Bold Debates - Systematic Investor 328#^MT155-C15-4|MT155-C15-4]] — Inflation uncertainty, policy and deficits can make cross-asset correlations more disruptive, so a wider range of macro outcomes is likely.
+- [[MT155 - Systematic Investing in 2025- Trends, Predictions & Bold Debates - Systematic Investor 328#^MT155-C16-2|MT155-C16-2]] — Structurally the dollar is overvalued, but a weaker dollar raises the problem of funding the deficit and reserve status, so a managed decline is hard.
+- [[MT155 - Systematic Investing in 2025- Trends, Predictions & Bold Debates - Systematic Investor 328#^MT155-C17-2|MT155-C17-2]] — If the administration tackles entitlements and the structural deficit, rates could differ from expectations (lower term premium).
+
+## [[MT156 - Systematic Thinking, BlackRock Style - Top Traders Unplugged - Ep.151]]
+- [[MT156 - Systematic Thinking, BlackRock Style - Top Traders Unplugged - Ep.151#^MT156-C05-4|MT156-C05-4]] — Post-Covid inflation plus accelerated government debt creates fiscal dominance and financial-repression tail risk for fixed income.
+- [[MT156 - Systematic Thinking, BlackRock Style - Top Traders Unplugged - Ep.151#^MT156-C06-2|MT156-C06-2]] — Systematic models built on fundamentals assume free price setting; under financial repression or Fed-Treasury coordination rates are set administratively, so models must account for it (e.g. 1942-51 pegged rates).
+- [[MT156 - Systematic Thinking, BlackRock Style - Top Traders Unplugged - Ep.151#^MT156-C06-3|MT156-C06-3]] — Models should not rely only on growth and inflation indicators to explain interest rates because soft financial repression can set them.
+
+## [[MT157 - Taking CTAs Mainstream - Systematic Investor - Ep.421]]
+- [[MT157 - Taking CTAs Mainstream - Systematic Investor - Ep.421#^MT157-C17-1|MT157-C17-1]] — A bond market tantrum may be building in October 2026 and oil and commodities do not look better structurally.
+
+## [[MT159 - Tariffs, Free Trade, Export Controls, H20 & Rare Earth Ban - BG2 w- Bill Gurley & Brad Ger]]
+- [[MT159 - Tariffs, Free Trade, Export Controls, H20 & Rare Earth Ban - BG2 w- Bill Gurley & Brad Ger#^MT159-C01-2|MT159-C01-2]] — The scheduled expiry of the tax cuts at year-end is cited as one more simultaneous policy risk for markets.
+- [[MT159 - Tariffs, Free Trade, Export Controls, H20 & Rare Earth Ban - BG2 w- Bill Gurley & Brad Ger#^MT159-C14-X3|MT159-C14-X3]] — Concerns about global demand for Treasuries and a falling dollar added a funding-stress dimension to the tariff drawdown.
+
+## [[MT160 - The AI Hype within Investing... a Step Too Far- - Systematic Investor 301]]
+- [[MT160 - The AI Hype within Investing... a Step Too Far- - Systematic Investor 301#^MT160-C10-X1|MT160-C10-X1]] — Carver believes UK policy dialogue ignores that government deficit spending can be beneficial, and that a more counter-cyclical (he says pro-cyclical) fiscal stance since 2010 would have left the UK better off.
+- [[MT160 - The AI Hype within Investing... a Step Too Far- - Systematic Investor 301#^MT160-C11-X1|MT160-C11-X1]] — Liz Truss's badly communicated economic plan nearly broke the UK financial system overnight, which is why both UK parties compete to look fiscally prudent: fiscal credibility shocks hit markets hard.
+
+## [[MT161 - The AI Trade, Rising Rates, and Why the Market Is Still Standing - The Real Eisman Playboo]]
+- [[MT161 - The AI Trade, Rising Rates, and Why the Market Is Still Standing - The Real Eisman Playboo#^MT161-C03-3|MT161-C03-3]] — The one big beautiful bill allows full expensing of capital investment, an incentive for capex across all US companies, not only hyperscalers.
+- [[MT161 - The AI Trade, Rising Rates, and Why the Market Is Still Standing - The Real Eisman Playboo#^MT161-C07-6|MT161-C07-6]] — The fiscal expansion and AI capex are together a bet that productivity growth will offset inflation.
+
+## [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield]]
+- [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C06-X2|MT162-C06-X2]] — The post-2008 austerity prolonged the societal after-effects of the financial crisis, in contrast with the 2020 response, which was fiscal expansion.
+
+## [[MT163 - The Calm Before the Storm- AI Risk, and Market Fragility - Systematic Investor - Ep.357]]
+- [[MT163 - The Calm Before the Storm- AI Risk, and Market Fragility - Systematic Investor - Ep.357#^MT163-C13-1|MT163-C13-1]] — Paul Tudor Jones argues markets will eventually force debt stabilization, with lower bonds, dollar and equities; normalizing 6%+ deficits drags equity returns and calls for negative real rates (fed funds 2-2.5% against 3-3.5% inflation).
+- [[MT163 - The Calm Before the Storm- AI Risk, and Market Fragility - Systematic Investor - Ep.357#^MT163-C13-2|MT163-C13-2]] — The curve steepener was easy while inflation hedges were cheap; now that inflation hedging is hard and expensive, long-end repricing is more likely to move fast.
+- [[MT163 - The Calm Before the Storm- AI Risk, and Market Fragility - Systematic Investor - Ep.357#^MT163-C14-1|MT163-C14-1]] — The US will eventually monetize debt (like Japan, where debt is mostly domestic) as dollar primacy persists; this implies negative rates, a front-end cut leading to a massive steepener, then Twist-like operations.
+- [[MT163 - The Calm Before the Storm- AI Risk, and Market Fragility - Systematic Investor - Ep.357#^MT163-C14-X1|MT163-C14-X1]] — Fiscal austerity is not credible, so spending and debt keep rising until the Fed must monetise the debt; this underlies the steepener and inflation thesis.
+- [[MT163 - The Calm Before the Storm- AI Risk, and Market Fragility - Systematic Investor - Ep.357#^MT163-C14-X2|MT163-C14-X2]] — Debt monetisation amounts to a soft default; it would be better done at once but political unpalatability makes a gradual front-end cut then curve-control path more likely, which steepens the curve.
+- [[MT163 - The Calm Before the Storm- AI Risk, and Market Fragility - Systematic Investor - Ep.357#^MT163-C15-2|MT163-C15-2]] — Long-dated bonds (30-year JGB, Bund at 14-year highs) show stress first because the back end cannot be controlled.
+- [[MT163 - The Calm Before the Storm- AI Risk, and Market Fragility - Systematic Investor - Ep.357#^MT163-C18-1|MT163-C18-1]] — AI job losses plus populism lead to universal basic income, more fiscal spending and more protectionism, a volatile political and fiscal cycle by the next election.
+
+## [[MT165 - The Fed’s Playbook is Broken — Here’s What’s Next - Systematic Investor - Ep.360]]
+- [[MT165 - The Fed’s Playbook is Broken — Here’s What’s Next - Systematic Investor - Ep.360#^MT165-C08-X1|MT165-C08-X1]] — Warsh cites Volcker but omits that Volcker demanded deficit cuts from Congress; a hard-money Fed that stops financing deficits without fiscal action is incomplete.
+- [[MT165 - The Fed’s Playbook is Broken — Here’s What’s Next - Systematic Investor - Ep.360#^MT165-C09-X2|MT165-C09-X2]] — If a Warsh Fed stopped financing the deficit, bond yields would rise and force fiscal action in theory, but the administration has had the chance on the deficit and has not acted, so this is a potential stress point.
+- [[MT165 - The Fed’s Playbook is Broken — Here’s What’s Next - Systematic Investor - Ep.360#^MT165-C09-X3|MT165-C09-X3]] — Bessent's strategy is to grow out of the deficit with deregulation, which looks optimistic given entitlement spending and the new spending bill.
+
+## [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393]]
+- [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C05-2|MT168-C05-2]] — Weak 2-year US auction and Western fiscal stress suggest inflation is a way to erode debt, making higher yields near-inevitable though timing is unknowable.
+
+## [[MT171 - The Market Isn’t Free Anymore — It’s Being Managed - Systematic Investor - Ep.397]]
+- [[MT171 - The Market Isn’t Free Anymore — It’s Being Managed - Systematic Investor - Ep.397#^MT171-C05-1|MT171-C05-1]] — Paulson publicly raising a plan for weak Treasury demand is read as a trial balloon that the US is preparing a backstop for a Treasury buyer strike.
+- [[MT171 - The Market Isn’t Free Anymore — It’s Being Managed - Systematic Investor - Ep.397#^MT171-C14-1|MT171-C14-1]] — Over 5-10 years the highest-probability path is a buyer strike for Treasuries with long-end yields rising on military and fiscal spending and commodity surges, pushing structural inflation.
+- [[MT171 - The Market Isn’t Free Anymore — It’s Being Managed - Systematic Investor - Ep.397#^MT171-C14-2|MT171-C14-2]] — The expected policy response to a Treasury buyer strike is yield-curve control or monetization of the debt, which supports bonds and equities in the short run while worsening inflation.
+- [[MT171 - The Market Isn’t Free Anymore — It’s Being Managed - Systematic Investor - Ep.397#^MT171-C14-X2|MT171-C14-X2]] — If the path is inflationary, equities tend to react once long-end yields and inflation reach a threshold (Niels names long yields of 6-7% or a new Fed chair refusing to cut), so a big correction is not 'called off' by the backstop, only delayed until that trigger.
+- [[MT171 - The Market Isn’t Free Anymore — It’s Being Managed - Systematic Investor - Ep.397#^MT171-C17-1|MT171-C17-1]] — Redistributing AI-generated output through transfer payments would be inflationary regardless of deflationary forces in production.
+
+## [[MT176 - The Paradox of High-Volatility Alternatives - Systematic Investor 313]]
+- [[MT176 - The Paradox of High-Volatility Alternatives - Systematic Investor 313#^MT176-C02-1|MT176-C02-1]] — Draghi's report calls for about 800bn euros a year (4.5% of GDP, double the Marshall Plan) of European investment and common debt, a potentially far-reaching fiscal and industrial-policy shift if politics allow.
+- [[MT176 - The Paradox of High-Volatility Alternatives - Systematic Investor 313#^MT176-C03-X2|MT176-C03-X2]] — Pan-European spending only makes sense for cross-border energy infrastructure and common defence procurement, but national versus European agendas have always been the constraint on delivery, so Draghi's proposals may end up quite different from what is proposed.
+- [[MT176 - The Paradox of High-Volatility Alternatives - Systematic Investor 313#^MT176-C08-X1|MT176-C08-X1]] — A Trump election win would be an upside risk to rate and fiscal expectations because he would extend the tax cuts, so the market's easing path is not safe from US election risk.
+
+## [[MT181 - The Two Tribes of Trend - Systematic Investor - Ep.351]]
+- [[MT181 - The Two Tribes of Trend - Systematic Investor - Ep.351#^MT181-C04-2|MT181-C04-2]] — Rising global debt, weak bond auctions in Japan and the US and a 10-year yield that may settle above 5% mean institutions built portfolios for the old regime; when cracks appear trends can emerge with follow-through.
+
+## [[MT182 - The VUCA World Is Here - Systematic Investor - Ep.398]]
+- [[MT182 - The VUCA World Is Here - Systematic Investor - Ep.398#^MT182-C10-1|MT182-C10-1]] — Governments offset the pandemic supply shock with fiscal spending, low rates and liquidity, which generated inflation and then benefitted trend followers.
+
+## [[MT183 - The Volatility Apocalypse - Systematic Investor 303]]
+- [[MT183 - The Volatility Apocalypse - Systematic Investor 303#^MT183-C16-3|MT183-C16-3]] — Unsustainable US debt is likely to end in the Fed buying debt, which is inflationary; in the 1971 analog the dollar initially fell but gold was the primary beneficiary.
+
+## [[MT184 - The War in Ukraine, Relations With China & Wider Geopolitics (With General David Petraeus)]]
+- [[MT184 - The War in Ukraine, Relations With China & Wider Geopolitics (With General David Petraeus)#^MT184-C04-X1|MT184-C04-X1]] — Western support has scaled to over 130 heavy 155mm howitzers, about a million rounds of ammunition, and HIMARS with precision rockets (about 80 km range) plus Excalibur shells, material that came on top of Ukraine's own mobilisation.
+- [[MT184 - The War in Ukraine, Relations With China & Wider Geopolitics (With General David Petraeus)#^MT184-C08-1|MT184-C08-1]] — Russia's invasion raised European defense spending (Germany from under 1.5% to above 2% of GDP plus a 110 billion fund), and NATO unity is at a post-Cold War high with Finland and Sweden joining; the US spends three to four times as much as the other NATO allies combined.
+- [[MT184 - The War in Ukraine, Relations With China & Wider Geopolitics (With General David Petraeus)#^MT184-C08-X3|MT184-C08-X3]] — European defence autonomy is credible only if it adds real capabilities (additional battalions, cyber) rather than new headquarters, concepts or reorganisation, so spending outputs should be judged by capability.
+
+## [[MT185 - Toby Crabel on Vanishing Edges, AI Limits, and Future of Markets - Top Traders Unplugged -]]
+- [[MT185 - Toby Crabel on Vanishing Edges, AI Limits, and Future of Markets - Top Traders Unplugged -#^MT185-C13-X2|MT185-C13-X2]] — Currency debasement is illustrated by a $100 life insurance policy in the speaker's trust that has lost 95% of its value against gold, which he cites as why gold and silver (he buys physical coins) and stocks have made such tremendous moves.
+
+## [[MT187 - Treasury Markets not as “Safe” as You Think - Systematic Investor - Ep.414]]
+- [[MT187 - Treasury Markets not as “Safe” as You Think - Systematic Investor - Ep.414#^MT187-C05-3|MT187-C05-3]] — The US Treasury Secretary's role is to ensure buyers for Treasuries as weekly refunding auctions approach $800bn.
+- [[MT187 - Treasury Markets not as “Safe” as You Think - Systematic Investor - Ep.414#^MT187-C07-3|MT187-C07-3]] — Shifting issuance toward bills shortens average maturity and holds down long yields without Fed action; a buyback could be a precursor to bills replacing bonds to relieve the long end.
+
+## [[MT190 - Trend Following Is Changing Faster Than Ever - Systematic Investor - Ep.409]]
+- [[MT190 - Trend Following Is Changing Faster Than Ever - Systematic Investor - Ep.409#^MT190-C03-4|MT190-C03-4]] — AI capex goes to chips lasting 2-3 years, unlike 2001 fibre which served for 20-25 years, so if AI fails recovery value is near zero.
+
+## [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422]]
+- [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C05-5|MT191-C05-5]] — Oil-driven higher rates, heavier Treasury issuance, AI-driven corporate demand for capital and AI energy demand together form a perfect storm that could keep traditional portfolios vulnerable for a long time.
+
+## [[MT193 - Trend Following as a Return Enhancement Overlay - Systematic Investor 297]]
+- [[MT193 - Trend Following as a Return Enhancement Overlay - Systematic Investor 297#^MT193-C02-2|MT193-C02-2]] — Structurally, fiscal and monetary coordination may increase and central bank independence, which dates only to the 1990s, may decline (precedents: Nixon-Burns, WWII yield curve control).
+- [[MT193 - Trend Following as a Return Enhancement Overlay - Systematic Investor 297#^MT193-C05-2|MT193-C05-2]] — Strong fiscal support has been another reason for resilience despite higher rates.
+
+## [[MT198 - Trend Following to Super Determinism - Systematic Investor 342]]
+- [[MT198 - Trend Following to Super Determinism - Systematic Investor 342#^MT198-C07-3|MT198-C07-3]] — Trillions of liquidity injected since 2008-09 built a debt-laden, leveraged system, and Brennan expects a fragmentation of the world order (decentralisation, protectionism) that few strategies can navigate.
+
+## [[MT200 - Trend Following- How much to Allocate- - Systematic Investor 316]]
+- [[MT200 - Trend Following- How much to Allocate- - Systematic Investor 316#^MT200-C17-1|MT200-C17-1]] — High government debt levels may make a 40% bond allocation too risky; the 60/40 was a carry trade plus yield reduction at a turning point.
+
+## [[MT202 - Trump 2.0 & The Unpinning of Volatility - Systematic Investor 307]]
+- [[MT202 - Trump 2.0 & The Unpinning of Volatility - Systematic Investor 307#^MT202-C09-1|MT202-C09-1]] — Gold and Bitcoin are diversifiers against the dollar and inflation in a Fed-activism scenario.
+
+## [[MT203 - Trump's NEW Treasury Secretary on Macro Strategy ft. Scott Bessent]]
+- [[MT203 - Trump's NEW Treasury Secretary on Macro Strategy ft. Scott Bessent#^MT203-C06-3|MT203-C06-3]] — US-China decoupling is a bigger worry than a Taiwan war because the US government depends on external financing.
+- [[MT203 - Trump's NEW Treasury Secretary on Macro Strategy ft. Scott Bessent#^MT203-C08-4|MT203-C08-4]] — The release valve for unsustainable US fiscal and monetary policy will eventually be the dollar, possibly first rates; gold versus the dollar tracks this.
+- [[MT203 - Trump's NEW Treasury Secretary on Macro Strategy ft. Scott Bessent#^MT203-C09-1|MT203-C09-1]] — A 7% US deficit in peacetime expansion is unprecedented; the Treasury shortened issuance to bills, making debt service rise mechanically (about $1.1 trillion in 2024, higher than defence).
+- [[MT203 - Trump's NEW Treasury Secretary on Macro Strategy ft. Scott Bessent#^MT203-C09-2|MT203-C09-2]] — Shortening US debt maturities makes the US behave like an emerging market and exposes the budget to the policy rate; interest costs could reach $1.6 trillion if rates are not cut.
+- [[MT203 - Trump's NEW Treasury Secretary on Macro Strategy ft. Scott Bessent#^MT203-C11-2|MT203-C11-2]] — Fiscal dominance is when the government cannot raise rates because of the debt size; the US is flirting with it and relies on foreign funding.
+- [[MT203 - Trump's NEW Treasury Secretary on Macro Strategy ft. Scott Bessent#^MT203-C11-X1|MT203-C11-X1]] — The US debt is funded from overseas ('the kindness of strangers'), and Japanese investors could repatriate savings if the BoJ hikes, which makes Japanese rate normalisation a funding risk for US Treasuries.
+- [[MT203 - Trump's NEW Treasury Secretary on Macro Strategy ft. Scott Bessent#^MT203-C13-4|MT203-C13-4]] — Government spending (green New Deal) is keeping rates high and crowding young people out of housing.
+
+## [[MT205 - Unpacking the Chaos- What Today’s Market Signals Really Mean - Systematic Investor 343]]
+- [[MT205 - Unpacking the Chaos- What Today’s Market Signals Really Mean - Systematic Investor 343#^MT205-C02-4|MT205-C02-4]] — About 30% of US debt is foreign owned and about $2 trillion must be refinanced each year, so a trade war can escalate to a capital war via foreign selling of Treasuries.
+
+## [[MT206 - Upcoming Big Changes in Global Markets - Systematic Investor 315]]
+- [[MT206 - Upcoming Big Changes in Global Markets - Systematic Investor 315#^MT206-C11-2|MT206-C11-2]] — Treasury is expected to stay supportive (bill-heavy issuance) up to the election, with incentives to prioritize short-term results.
+- [[MT206 - Upcoming Big Changes in Global Markets - Systematic Investor 315#^MT206-C11-3|MT206-C11-3]] — Last year yields spiked from August to October on debt sustainability concerns before Treasury shifted issuance toward bills.
+- [[MT206 - Upcoming Big Changes in Global Markets - Systematic Investor 315#^MT206-C12-X1|MT206-C12-X1]] — Trump's fiscal approach would lean supply-side (tax cuts) but repeating his earlier tax law is harder now given youth dissatisfaction and broader populism; he would still add giveaways, so net policy is stimulative.
+
+## [[MT207 - What Makes an Alternative Investment Truly Valuable- - Systematic Investor - Ep.364]]
+- [[MT207 - What Makes an Alternative Investment Truly Valuable- - Systematic Investor - Ep.364#^MT207-C02-1|MT207-C02-1]] — UK 30-year gilt yields hit a 27-year high and US yields neared 5% while economies were soft, which Niels reads as a possible 2022-like environment that favors trend following.
+- [[MT207 - What Makes an Alternative Investment Truly Valuable- - Systematic Investor - Ep.364#^MT207-C02-2|MT207-C02-2]] — Long-end yields are rising (curve steepening) because investors demand more yield to fund weak fiscal positions, with gold sniffing this out.
+- [[MT207 - What Makes an Alternative Investment Truly Valuable- - Systematic Investor - Ep.364#^MT207-C02-X1|MT207-C02-X1]] — Long-end yields hit multi-decade highs even though the ECB had cut about 200 basis points in eight cuts since 2024, so the long end is pricing something other than policy rates (fiscal supply), in a soft economy that Niels compares to 2022.
+
+## [[MT208 - What if the Saudis Break the Petrodollar System- - Luke Gromen's Prescient Predictions fro]]
+- [[MT208 - What if the Saudis Break the Petrodollar System- - Luke Gromen's Prescient Predictions fro#^MT208-C01-2|MT208-C01-2]] — Western debt and entitlements are only sustainable with sustained, increasingly negative real rates.
+- [[MT208 - What if the Saudis Break the Petrodollar System- - Luke Gromen's Prescient Predictions fro#^MT208-C02-3|MT208-C02-3]] — The only precedent for debt this high is 1946-51, when authorities capped yields and let inflation run (real rates as low as -14%), cutting debt/GDP from 110% to 55%; Gromen says the Fed should do the same rather than tighten.
+- [[MT208 - What if the Saudis Break the Petrodollar System- - Luke Gromen's Prescient Predictions fro#^MT208-C02-4|MT208-C02-4]] — The US has a structural balance of payments problem: large current account deficits and insufficient foreign Treasury buying.
+- [[MT208 - What if the Saudis Break the Petrodollar System- - Luke Gromen's Prescient Predictions fro#^MT208-C03-1|MT208-C03-1]] — Debt/GDP fell from 135% to 122% only at the cost of 7% CPI and broken supply chains, so deleveraging via inflation is hard in a stretched system.
+- [[MT208 - What if the Saudis Break the Petrodollar System- - Luke Gromen's Prescient Predictions fro#^MT208-C03-X2|MT208-C03-X2]] — Because the dollar is a debt-backed system with a huge eurodollar layer rather than a gold-backed one, the Fed can only normalize after debt/GDP has fallen; tightening first breaks markets, which is why letting inflation run hot is needed more now than after WWII.
+- [[MT208 - What if the Saudis Break the Petrodollar System- - Luke Gromen's Prescient Predictions fro#^MT208-C04-X1|MT208-C04-X1]] — US deficits are structural (entitlements, defense, interest) and cannot be cut, so the financing need persists and has to be matched in the capital account by foreign purchases of tech stocks or Treasuries.
+- [[MT208 - What if the Saudis Break the Petrodollar System- - Luke Gromen's Prescient Predictions fro#^MT208-C08-3|MT208-C08-3]] — Like Germany in 1931 the US has external and entitlement obligations that it cannot print its way out of, plus de-industrialization and great power competition.
+- [[MT208 - What if the Saudis Break the Petrodollar System- - Luke Gromen's Prescient Predictions fro#^MT208-C09-1|MT208-C09-1]] — Bondholders must pay either in real terms (inflation plus yield caps) or nominal terms (austerity); Germany chose austerity with disastrous political results.
+- [[MT208 - What if the Saudis Break the Petrodollar System- - Luke Gromen's Prescient Predictions fro#^MT208-C15-2|MT208-C15-2]] — Changing bank and liquidity regulations to keep financing deficits is a classic balance-of-payments-problem response.
+- [[MT208 - What if the Saudis Break the Petrodollar System- - Luke Gromen's Prescient Predictions fro#^MT208-C19-1|MT208-C19-1]] — All major players need the dollar lower because a rising dollar would collapse the debt system.
+- [[MT208 - What if the Saudis Break the Petrodollar System- - Luke Gromen's Prescient Predictions fro#^MT208-C21-1|MT208-C21-1]] — Resolving the deflation-vs-debt conflict requires the Fed to fully reserve the offshore dollar system, a $70-100 trillion balance sheet.
+
+## [[MT209 - What is the fiscal rule-]]
+- [[MT209 - What is the fiscal rule-#^MT209-C01-1|MT209-C01-1]] — Norway's spending rule: all oil and gas revenue goes into the pension fund and only the expected financial return (about 3% a year) may be spent on the budget.
+- [[MT209 - What is the fiscal rule-#^MT209-C01-2|MT209-C01-2]] — The rule has two purposes: share oil wealth with future generations and stabilize the economy by separating earnings from spending, avoiding overheating and Dutch disease.
+- [[MT209 - What is the fiscal rule-#^MT209-C01-3|MT209-C01-3]] — About 25% of Norway's state budget is now financed by fund returns.
+- [[MT209 - What is the fiscal rule-#^MT209-C01-5|MT209-C01-5]] — Cross-party political consensus on a self-imposed spending limit is one of the fund's main successes.
+- [[MT209 - What is the fiscal rule-#^MT209-C01-X1|MT209-C01-X1]] — Norway set its spending rule in 2000, only a few years after the first (small) net oil revenues arrived in 1996, because fear of Dutch disease made a spending limit necessary before the money accumulated.
+- [[MT209 - What is the fiscal rule-#^MT209-C01-X2|MT209-C01-X2]] — The guest says a ceiling on the fund's share of the budget set in 2000 would have been lower than today's roughly 25%, and acknowledges concerns in the Norwegian debate about that dependence without going into detail.
+- [[MT209 - What is the fiscal rule-#^MT209-C02-1|MT209-C02-1]] — Because only returns are spent and capital is preserved, the arrangement can last forever.
+
+## [[MT211 - When Prices Stop Making Sense - Systematic Investor - Ep.378]]
+- [[MT211 - When Prices Stop Making Sense - Systematic Investor - Ep.378#^MT211-C04-3|MT211-C04-3]] — Term premium fell near zero while bonds were a reliable hedge; with high debt that hedge role is less assured, which argues for a higher premium.
+- [[MT211 - When Prices Stop Making Sense - Systematic Investor - Ep.378#^MT211-C04-X1|MT211-C04-X1]] — The term premium reflects supply and demand for safe assets: it fell to zero or below when safe assets were scarce and is positive again now that the balance (and fiscal-dominance fears) have changed.
+- [[MT211 - When Prices Stop Making Sense - Systematic Investor - Ep.378#^MT211-C05-1|MT211-C05-1]] — Large US deficits can only be resolved outside default by inflation, likely via financial repression that holds rates below inflation.
+- [[MT211 - When Prices Stop Making Sense - Systematic Investor - Ep.378#^MT211-C05-3|MT211-C05-3]] — Mark argues the US Treasury term premium should be higher given deficits and reduced relative safety.
+- [[MT211 - When Prices Stop Making Sense - Systematic Investor - Ep.378#^MT211-C05-X1|MT211-C05-X1]] — The tail risk in US debt need not be outright default; a fiscal crisis could bring debt swaps or maturity extensions, and the term premium should in theory price these miscellaneous risks.
+
+## [[MT212 - Why Cooperation Is Essential in Crisis - IMF Managing Director Kristalina Georgieva]]
+- [[MT212 - Why Cooperation Is Essential in Crisis - IMF Managing Director Kristalina Georgieva#^MT212-C03-5|MT212-C03-5]] — High debt with positive interest rates crowds out productive spending (infrastructure, AI readiness, education).
+- [[MT212 - Why Cooperation Is Essential in Crisis - IMF Managing Director Kristalina Georgieva#^MT212-C03-6|MT212-C03-6]] — With high debt there is no fiscal or monetary space for the next shock, unlike COVID, so gradual consolidation is advised.
+- [[MT212 - Why Cooperation Is Essential in Crisis - IMF Managing Director Kristalina Georgieva#^MT212-C03-7|MT212-C03-7]] — Emergency support programs are hard to withdraw, creating a ratchet in deficits.
+- [[MT212 - Why Cooperation Is Essential in Crisis - IMF Managing Director Kristalina Georgieva#^MT212-C03-8|MT212-C03-8]] — IMF and US Treasury Secretary Bessent agree the US deficit should be brought down to about 3% of GDP.
+
+## [[MT213 - Why Macro Investing Is Becoming More Systematic - Allocator - Ep.35]]
+- [[MT213 - Why Macro Investing Is Becoming More Systematic - Allocator - Ep.35#^MT213-C12-1|MT213-C12-1]] — Unresolved US debt to GDP will hit a tipping point, but its timing has no formula, so a nimble stance is needed.
+
+## [[MT214 - Why Macro Investing Matters More Than Ever - Kenneth Tropin on Markets, Volatility & Oppor]]
+- [[MT214 - Why Macro Investing Matters More Than Ever - Kenneth Tropin on Markets, Volatility & Oppor#^MT214-C02-2|MT214-C02-2]] — Record equity valuations, unstable geopolitics and record deficits make both stocks and bonds risky, so macro is attractive as an asset uncorrelated to stocks and bonds.
+- [[MT214 - Why Macro Investing Matters More Than Ever - Kenneth Tropin on Markets, Volatility & Oppor#^MT214-C07-4|MT214-C07-4]] — The key risk is investors getting spooked by bonds in a way not seen in a long time, hitting both fixed income and equities.
+
+## [[MT219 - Why Trend Following Might Outlast the AI Arms Race - Mark Rzepczynski - Systematic Investo]]
+- [[MT219 - Why Trend Following Might Outlast the AI Arms Race - Mark Rzepczynski - Systematic Investo#^MT219-C01-1|MT219-C01-1]] — French 10-year yields near 5%, a 24-year high, amid unrest show sovereign debt of a large country being tested, reminiscent of past euro-area crises, and change how investors view safe assets.
+- [[MT219 - Why Trend Following Might Outlast the AI Arms Race - Mark Rzepczynski - Systematic Investo#^MT219-C10-2|MT219-C10-2]] — Strong demand for debt in private markets crowds out public markets, while private sector credit-to-GDP is controlled but public debt-to-GDP keeps rising (BIS early-warning indicator).
+- [[MT219 - Why Trend Following Might Outlast the AI Arms Race - Mark Rzepczynski - Systematic Investo#^MT219-C11-1|MT219-C11-1]] — Governments are not running primary surpluses after recessions and interest costs are crowding out other spending (also in France and Japan), pressuring long-term yields.
+- [[MT219 - Why Trend Following Might Outlast the AI Arms Race - Mark Rzepczynski - Systematic Investo#^MT219-C12-3|MT219-C12-3]] — France is no longer clearly a European safe asset and southern European bonds may be less risky than assumed.
+
+## [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365]]
+- [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C01-2|MT220-C01-2]] — Bond yields react strongly to political and budget uncertainty, as with UK and French political chaos.
+
+## [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381]]
+- [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C17-1|MT221-C17-1]] — 2026 view: higher inflation raises Treasury yields, credit crises carry over from 2025, MAG 7 bubble bursts pulling equities down, and Europe resurges.
+
+## [[MT224 - Why the Best Portfolios Are Built to Be Wrong - Systematic Investor - Ep. 411]]
+- [[MT224 - Why the Best Portfolios Are Built to Be Wrong - Systematic Investor - Ep. 411#^MT224-C06-1|MT224-C06-1]] — The bond market is the biggest price-insensitive imbalance; holders (central banks, FX reserves, banks, pensions/insurers) sit on massive unrealised losses without cutting positions, because they do not mark to market, so the unwind of the 2020 bond bubble is incomplete.
+
+## [[MT225 - Why the Market Isn’t Moving, And Why That’s Dangerous - Systematic Investor - Ep.389]]
+- [[MT225 - Why the Market Isn’t Moving, And Why That’s Dangerous - Systematic Investor - Ep.389#^MT225-C08-1|MT225-C08-1]] — Rising unsustainable US debt, refinancing needs and slowing issuance point to Fed-Treasury coordination and debt monetisation (a 'debt jubilee') within about 3 years, possibly triggered by an AI/crisis event, and he argues it would be dollar-strengthening rather than weakening.
+- [[MT225 - Why the Market Isn’t Moving, And Why That’s Dangerous - Systematic Investor - Ep.389#^MT225-C08-X1|MT225-C08-X1]] — Because AI disruption hits the cohorts already under strain and populism is demographically rising, the political response is universal basic income and large transfers to the bottom of the distribution, which turns the AI deflation scare into a fiscal, inflationary impulse.
+- [[MT225 - Why the Market Isn’t Moving, And Why That’s Dangerous - Systematic Investor - Ep.389#^MT225-C09-X1|MT225-C09-X1]] — Japan is the precedent for debt monetisation: its debt was absorbed over about 30 years with support from the US Fed, leaving little external debt, and the speaker expects a similar path in the US (Fed-Treasury coordination), so it should not be a shock.
+- [[MT225 - Why the Market Isn’t Moving, And Why That’s Dangerous - Systematic Investor - Ep.389#^MT225-C12-1|MT225-C12-1]] — Rising global conflict (Iran, Venezuela, Taiwan as proxy wars), US external and internal upheaval and AI disruption at record valuations build pressure; the likeliest path is slow controlled demolition (market down, vol down) that triggers a policy response.
+
+## [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38]]
+- [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C04-1|MT226-C04-1]] — The 2016-2020 recovery, helped by the early-Trump fiscal expansion, showed that fiscal policy can pull economies back to potential, reinforcing fiscal activism.
+- [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C05-2|MT226-C05-2]] — Heavy demands on capital markets (AI buildout, government deficits, IG corporates, housing, consumer finance) push up interest rates.
+- [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C06-3|MT226-C06-3]] — Near term, real-resource and capital-market needs of the AI, resilience and fiscal buildouts put upward pressure on inflation and rates.
+
+## [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330]]
+- [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C03-X1|MT227-C03-X1]] — UK gilt yields have reached very high levels (a 'bond crisis') and France is also struggling, so long-end sovereign bond stress is spreading beyond the US, which supports the guest's higher-yield thesis and helps short-bond trend positions.
+- [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C08-3|MT227-C08-3]] — NATO defence spending of 5% of GDP would mean larger deficits and more government bond issuance.
+- [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C10-3|MT227-C10-3]] — Leveraged long-bond exposures across the market and heavy issuance (e.g. Europe) are too large for market capacity, so bond vigilantes can push yields higher.

@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 11076
 claims: 57
-added_by_opus: 8
+added_by_crosscheck: 8
 corrections: 3
 crosscheck: "opus cross-check"
 speakers: ["Mark (guest, quantitative macro researcher and professor)", "Alan Dunne (guest host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, regime analysis, fiscal dominance, bubbles, macro uncertainty
 
-**Opus completeness estimate of first read:** 0.85 - first reader caught Mark's main mechanisms but missed several co-host points (AI narrative shift, sector rotation, EM credibility, Warsh scenarios), the Lunar New Year gold effect and the regime-decomposition method; three speaker attributions were off
+**Cross-check completeness estimate of first read:** 0.85 - first reader caught Mark's main mechanisms but missed several co-host points (AI narrative shift, sector rotation, EM credibility, Warsh scenarios), the Lunar New Year gold effect and the regime-decomposition method; three speaker attributions were off
 
 ## Coverage
 
@@ -72,7 +72,7 @@ tags: [source, layer0]
   > So if you have some optimistic euphoria whether it be in silver or gold where are you going to get the supply is the supply is constrained so you could have these demand shocks
   indicator: gold, silver · asset: commodities · direction: prices up on demand shocks · horizon: months · conditions: Non-annual crops with constrained supply · testable: partly · confidence: medium
   ^MT008-C02-5
-- **Mark** Part of gold's pullback from its high in February 2026 reflects seasonally lower Chinese retail buying during the Lunar New Year holiday.  #mech/seasonality _(added by Opus, time-bound view)_
+- **Mark** Part of gold's pullback from its high in February 2026 reflects seasonally lower Chinese retail buying during the Lunar New Year holiday.  #mech/seasonality _(added by opus cross-check, time-bound view)_
   > some of the uh discount in and gold from the high is just related to the fact that there are fewer retail investors right now because of the Chinese lunar
   indicator: Chinese Lunar New Year calendar, retail gold demand · asset: commodities · direction: gold softer during Lunar New Year · horizon: weeks · conditions: retail-driven gold market · testable: yes - gold returns around Lunar New Year · confidence: medium
   ^MT008-C02-X1
@@ -89,9 +89,9 @@ tags: [source, layer0]
 - **Mark** Narrative is the use of storytelling when risk is not countable; the AI story shifted from all positive to winners and losers.  #mech/behavioral _(time-bound view)_
   > I think that narrative is is a is the use of storytelling when we don't have what
   asset: equities · horizon: months · testable: no · confidence: medium
-  **Correction (Opus):** Mixes speakers: the AI narrative shift (from all positive to winners and losers, software selloff) is Alan Dunne's observation; Mark only defines narrative as storytelling used when risk is not countable. → Mark: a narrative is storytelling used where risk is not countable (uncertainty), so hard-to-measure themes like AI are priced on stories.
+  **Correction (cross-check):** Mixes speakers: the AI narrative shift (from all positive to winners and losers, software selloff) is Alan Dunne's observation; Mark only defines narrative as storytelling used when risk is not countable. → Mark: a narrative is storytelling used where risk is not countable (uncertainty), so hard-to-measure themes like AI are priced on stories.
   ^MT008-C03-3
-- **Alan Dunne** The AI narrative flipped in early 2026: a year earlier more AI capex was seen as good for Nvidia and infrastructure names, now markets punish capex announcements and sell software stocks as AI losers ('SaaSpocalypse').  #mech/behavioral _(added by Opus, time-bound view)_
+- **Alan Dunne** The AI narrative flipped in early 2026: a year earlier more AI capex was seen as good for Nvidia and infrastructure names, now markets punish capex announcements and sell software stocks as AI losers ('SaaSpocalypse').  #mech/behavioral _(added by opus cross-check, time-bound view)_
   > We've had the uh the SAS pop pop apocalypse. I struggle to get that one out, the software selloff.
   indicator: market reaction to AI capex announcements, software vs semis · asset: equities · direction: software down; capex spenders punished · horizon: months · conditions: late-stage narrative shift · testable: partly - earnings-day reactions to capex guidance · confidence: medium
   ^MT008-C03-X1
@@ -113,7 +113,7 @@ tags: [source, layer0]
   > more you know uh buying across the diverse set of companies than what we saw in 2025
   indicator: market breadth · asset: equities · horizon: months · testable: yes · confidence: medium
   ^MT008-C04-4
-- **Alan Dunne** Early-2026 sector moves are internally inconsistent with a cyclical story: cyclicals (industrials, materials) and defensives (staples) both rose, pointing to a growth-to-value rotation rather than a growth call.  #mech/liquidity_flows _(added by Opus, time-bound view)_
+- **Alan Dunne** Early-2026 sector moves are internally inconsistent with a cyclical story: cyclicals (industrials, materials) and defensives (staples) both rose, pointing to a growth-to-value rotation rather than a growth call.  #mech/liquidity_flows _(added by opus cross-check, time-bound view)_
   > you've seen maybe industrials and materials which would be kind of typically seen as cyclical sectors doing well and at the same time uh consumer staples doing well which would be typically more kind of um defensive stock
   indicator: sector returns: industrials, materials, staples vs growth · asset: equities · direction: value over growth · horizon: months · testable: yes - sector and style returns · confidence: medium
   ^MT008-C04-X1
@@ -122,7 +122,7 @@ tags: [source, layer0]
 - **Mark** EM inflation is below US core inflation (about 3%), making EM more attractive and driving rotation toward EM, along with higher EM real yields.  #mech/structural_shift _(time-bound view)_
   > if you look at a you know basket of em countries and then you look at their inflation, it's actually lower than US inflation even now.
   indicator: EM inflation vs US inflation, real yields · asset: multi · direction: long EM · horizon: years · testable: yes · confidence: medium
-  **Correction (Opus):** Higher EM real yields point was raised by Alan Dunne, not Mark. → Mark: EM inflation is now below US core inflation (about 3%), making EM relatively more attractive and driving rotation toward EM; Alan adds that EM real yields are therefore higher.
+  **Correction (cross-check):** Higher EM real yields point was raised by Alan Dunne, not Mark. → Mark: EM inflation is now below US core inflation (about 3%), making EM relatively more attractive and driving rotation toward EM; Alan adds that EM real yields are therefore higher.
   ^MT008-C05-1
 - **Mark** A K-shaped US economy, where real economy and asset economy diverge, shapes asset flows worldwide.  #mech/structural_shift _(time-bound view)_
   > we have this K-shaped economy uh where we have very difference between the real economy and then the asset economy in the US
@@ -132,7 +132,7 @@ tags: [source, layer0]
   > if there's more uncertainty, you'd say like, well, I'm going to need a premium to hold a risky asset in a high uncertain country versus a less uncertain country.
   indicator: trade, geopolitical and monetary uncertainty indices · asset: multi · horizon: months · testable: yes - uncertainty indices vs flows · confidence: medium
   ^MT008-C05-3
-- **Alan Dunne** The historical EM risk premium reflected less credible, less independent central banks; as EM central banks now adhere to inflation targets while US policy credibility weakens, the relative attractiveness (and real-yield gap) shifts toward EM.  #mech/risk_premium _(added by Opus, time-bound view)_
+- **Alan Dunne** The historical EM risk premium reflected less credible, less independent central banks; as EM central banks now adhere to inflation targets while US policy credibility weakens, the relative attractiveness (and real-yield gap) shifts toward EM.  #mech/risk_premium _(added by opus cross-check, time-bound view)_
   > historically the em had a premium because policy was less credible. You know central banks were less independent etc.
   indicator: EM vs US real yields, central bank credibility · asset: rates · direction: long EM debt vs US · horizon: years · conditions: EM inflation targeting credible; US credibility falling · testable: partly - real-yield spreads vs credibility proxies · confidence: medium
   ^MT008-C05-X1
@@ -190,7 +190,7 @@ tags: [source, layer0]
   > knowing the regime that we're in could help us you know on the margin change our our our tilts and our exposures
   asset: multi · horizon: months · testable: partly · confidence: medium
   ^MT008-C08-6
-- **Mark** Regimes should be decomposed into types (price-driven/volatility regimes, monetary and fiscal policy-structural regimes, geopolitical/sentiment regimes) rather than a single label, and the edge comes from this decomposition.  #mech/research_method _(added by Opus)_
+- **Mark** Regimes should be decomposed into types (price-driven/volatility regimes, monetary and fiscal policy-structural regimes, geopolitical/sentiment regimes) rather than a single label, and the edge comes from this decomposition.  #mech/research_method _(added by opus cross-check)_
   > there's we'll call it the you know priced driven regimes, there's policy structural regimes, there are sentiment regimes. So we can decompose these different types of impacts.
   indicator: volatility regime, monetary regime, fiscal regime, sentiment/geopolitical uncertainty · asset: multi · testable: partly - depends on regime definitions · confidence: medium
   ^MT008-C08-X1
@@ -199,7 +199,7 @@ tags: [source, layer0]
 - **Mark** Fiscal dominance, when debt forces monetary policy to hold rates down and buy debt, is a risk but not yet reached; WWII shows the precedent.  #mech/fiscal_debt _(time-bound view)_
   > fiscal dominance says that debt is so high that central bank or we're going to put pressure on the central bank to use its powers to control interest rates and then buy up excess debt
   indicator: debt/GDP, central bank bond purchases · asset: rates · horizon: years · testable: partly · confidence: medium
-  **Correction (Opus):** Wrong speaker for 'not yet reached': Alan Dunne says fiscal dominance is a risk but not here yet; Mark defines monetary vs fiscal dominance and cites the WWII rate cap and the Treasury-Fed Accord. → Alan: fiscal dominance (debt so high it dictates monetary policy) is a risk but not yet reached. Mark: under fiscal dominance the central bank is pressured to cap rates and buy debt, as in WWII until the Treasury-Fed Accord.
+  **Correction (cross-check):** Wrong speaker for 'not yet reached': Alan Dunne says fiscal dominance is a risk but not here yet; Mark defines monetary vs fiscal dominance and cites the WWII rate cap and the Treasury-Fed Accord. → Alan: fiscal dominance (debt so high it dictates monetary policy) is a risk but not yet reached. Mark: under fiscal dominance the central bank is pressured to cap rates and buy debt, as in WWII until the Treasury-Fed Accord.
   ^MT008-C09-1
 - **Mark** Debt is not safe in war or war-like episodes since inflation follows, and the pandemic had the same features.  #mech/fiscal_debt
   > there's usually inflation because of perhaps pent-up demand after the war ends is that you don't want to be a debt holder
@@ -233,7 +233,7 @@ tags: [source, layer0]
   > we did like a uh $700 billion of treasuries being auctioned in one week
   indicator: Treasury auction size · asset: rates · horizon: weeks · testable: yes · confidence: high
   ^MT008-C11-3
-- **Mark** If the downward payroll revisions reflect lower labour supply (people leaving the US), weak job creation need not raise unemployment, so the weakness matters less for the economy.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Mark** If the downward payroll revisions reflect lower labour supply (people leaving the US), weak job creation need not raise unemployment, so the weakness matters less for the economy.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > you could also say that that these benchmark revisions was caused by demographics.
   indicator: payroll benchmark revisions, unemployment rate, labour force · asset: multi · horizon: months · conditions: labour supply shrinking · testable: yes - payrolls vs unemployment vs labour force · confidence: low
   ^MT008-C11-X1
@@ -247,7 +247,7 @@ tags: [source, layer0]
   > people are going to take your money out of uh uh you know going to start to buy real assets as opposed to you know uh debt assets if there's the expectation of permanent large deficits
   indicator: deficits, real assets · asset: multi · direction: long real assets · horizon: years · conditions: Expectation of permanent deficits · testable: partly · confidence: medium
   ^MT008-C12-2
-- **Alan Dunne** A Warsh mix of smaller Fed balance sheet with lower policy rates would likely push the Treasury toward more bill issuance to exploit low short rates, with SLR changes to make banks hold more Treasuries.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Alan Dunne** A Warsh mix of smaller Fed balance sheet with lower policy rates would likely push the Treasury toward more bill issuance to exploit low short rates, with SLR changes to make banks hold more Treasuries.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > his idea is is the smaller balance sheet but equally lower rates. Uh and then I guess the flip shot of all of the upshot of all of that would be uh maybe more TBL issuance
   indicator: Fed balance sheet, T-bill share of issuance, SLR · asset: rates · direction: more bills, curve steepening pressure · horizon: years · conditions: Warsh as Fed chair · testable: partly - issuance mix vs policy regime · confidence: low
   ^MT008-C12-X1
@@ -261,7 +261,7 @@ tags: [source, layer0]
   > be prepared for something that may be different than what you're reading about in the newspapers
   asset: multi · testable: no · confidence: medium
   ^MT008-C13-2
-- **Alan Dunne** Counter to the literal hawkish reading of Warsh, he argues AI is disinflationary and allows lower rates, and his past stance has shifted with the party in power, so his policy is uncertain.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Alan Dunne** Counter to the literal hawkish reading of Warsh, he argues AI is disinflationary and allows lower rates, and his past stance has shifted with the party in power, so his policy is uncertain.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > he has also said that he believes in the um the disinflationary uh effects of AI and uh he sees scope for lower interest rates.
   indicator: Fed chair communications · asset: rates · horizon: months · testable: no - single person forecast · confidence: low
   ^MT008-C13-X1

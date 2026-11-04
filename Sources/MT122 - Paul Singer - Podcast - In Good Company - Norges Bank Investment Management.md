@@ -5,10 +5,10 @@ date: 2025-02-26
 channel: "Norges Bank Investment Management"
 url: https://www.youtube.com/watch?v=zKRNT_h9n5E
 words: 5260
-claims: 42
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 52
+added_by_crosscheck: 10
+corrections: 2
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Paul Singer (founder, Elliott Management)", "Nicolai Tangen (CEO, Norges Bank Investment Management, interviewer)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Podcast with Elliott founder Paul Singer on activist investing, absolute-return risk culture and capital preservation. Covers lessons from bad trades (Japanese linkers, bankruptcy claims, Argentina holdout litigation) and a bearish view on leverage, deficits, AI valuations and crypto versus the dollar.
 
 **Approach:** activist investing, absolute return, distressed debt, event driven, risk management, capital preservation
+
+**Cross-check completeness estimate of first read:** 0.88 - first reader captured the core activism, risk-aversion, bad-trade and macro-view points; missed burnout argument, crowded-linker detail, Argentina holdout composition, sovereign-money reasoning and tactic details, and two statements slightly over-read
 
 ## Coverage
 
@@ -60,6 +62,14 @@ tags: [source, layer0]
   > the perfect situation is a u company and this exists um you may be surprised to hear it but uh it exists a company which has an open door
   asset: equities · conditions: company with entrenched legacy strategy and receptive leadership · testable: no - qualitative · confidence: medium
   ^MT122-C01-6
+- **Paul Singer** Before acting, Elliott studies the local culture of capitalism and corporate control in each country, plus how the board and management got there and why they are failing, because receptiveness to shareholder-driven change varies by market.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > we try to ascertain the uh local um uh landscape in terms of culture in terms of uh the culture of capitalism
+  indicator: local corporate governance culture · asset: equities · conditions: country-specific governance environment · testable: partly - cross-country comparison of activist outcomes · confidence: medium
+  ^MT122-C01-X1
+- **Paul Singer** Elliott's ideas come from several sources: people bring them, the Street brings them, and the team ferrets out its own, followed by an iterative question list per industry.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > sometimes uh people bring us ideas uh sometimes the street brings us ideas
+  indicator: idea sourcing · asset: equities · testable: no - process description · confidence: medium
+  ^MT122-C01-X2
 
 ### C02
 - **Paul Singer** Companies nearly always engage with Elliott because advisers tell them to hear out a large, credible deal-making investor, so few resist outright.  #mech/behavioral
@@ -90,6 +100,10 @@ tags: [source, layer0]
   > this is just a guess but it's a majority it's like 70%
   indicator: activist success rate · asset: equities · testable: yes - hit rates measurable from campaign data · confidence: low
   ^MT122-C02-7
+- **Paul Singer** Engagement tactics vary: some campaigns stay under the radar and are disclosed only to the company, others involve public position filings, depending on the rules and strategy, and usually start with a detailed discussion and a long presentation deck.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > some of the approaches are under the radar screen some of the approaches um we will file a disclose a position
+  indicator: activist disclosure strategy · asset: equities · conditions: depends on disclosure rules and strategy · testable: no - process description · confidence: medium
+  ^MT122-C02-X1
 
 ### C03
 - **Paul Singer** Fewer shareholders act as owners and fewer companies accept owner input, which makes accountability-demanding investors rare and gives them an edge.  #mech/structural_shift
@@ -116,6 +130,14 @@ tags: [source, layer0]
   > the worst trades are the trades that you U misunderstand the risk you you put it into the wrong category
   asset: multi · testable: no - qualitative · confidence: high
   ^MT122-C03-6
+- **Paul Singer** Modern activism differs from greenmail: when the activist wins, all shareholders gain, and accountability campaigns are rare because few investors still act as owners.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > when we win um the shareholders win the the days of green mail are uh longer
+  indicator: activist outcomes for all shareholders · asset: equities · testable: partly - abnormal returns of campaign targets · confidence: medium
+  ^MT122-C03-X1
+- **Nicolai Tangen** Interviewer's example: Elliott's Starbucks investment led to a CEO change and a strategy change and was profitable, while the media framed it as an attack.  #mech/new _(added by sonnet-xhigh cross-check, time-bound view)_
+  > so they changed the CEO uh change strategy and you made uh you made money
+  indicator: Starbucks activist campaign · asset: equities · direction: long Starbucks · horizon: years · testable: no - single case · confidence: medium
+  ^MT122-C03-X2
 
 ### C04
 - **Paul Singer** Buying a supposedly late-stage bankruptcy claim that was not actually late stage and whose business did not work caused a loss, showing the need to verify stage and risk category.  #mech/risk_management
@@ -134,6 +156,14 @@ tags: [source, layer0]
   > when you misunderstand the risk and lever something up that you never should have levered up that way
   asset: multi · testable: partly - leverage vs loss is testable · confidence: high
   ^MT122-C04-4
+- **Paul Singer** The Japanese linker arbitrage was shown by a dealer who already had several other investors in it, so it was a crowded trade that looked obviously cheap on the trading floor before it fell 30%, forcing others out.  #mech/crowding_positioning _(added by sonnet-xhigh cross-check, time-bound view)_
+  > the dealer had several other people um in the trade
+  indicator: Japanese inflation-linked bond arbitrage · asset: rates · horizon: years · conditions: crowded 'perfect' arbitrage with leverage · testable: no - single case · confidence: medium
+  ^MT122-C04-X1
+- **Paul Singer** Daily mark-to-market makes holding a losing convergent trade a matter of skill: pressure to unwind was heavy and many were sold out, but Singer kept the position through the 2008 do-or-die period and notes it requires a different skill set from managers.  #mech/risk_management _(added by sonnet-xhigh cross-check, time-bound view)_
+  > I I had a lot of pressure to onewind the trade but I kept the trade
+  indicator: Japanese linker position under mark-to-market · asset: rates · horizon: years · conditions: leverage, daily mark-to-market, forced selling · testable: no - discretionary judgement · confidence: medium
+  ^MT122-C04-X2
 
 ### C05
 - **Paul Singer** Concentrated conviction positions held on margin produced an 88% loss in the 1974 bear market, which shaped a no-large-loss philosophy.  #mech/risk_management
@@ -173,6 +203,7 @@ tags: [source, layer0]
 - **Paul Singer** Elliott bought Argentine performing bonds trading in the 70s to 80s because the country had resources and capacity and had defaulted only 3 or 4 times in 150 years, but the bonds collapsed after default.  #mech/risk_premium _(time-bound view)_
   > we also knew that they were coming out of World War II I think the seventh maybe the eighth largest economy in the world so you know lots of resources lots of capacity
   indicator: Argentine sovereign bonds · asset: credit · direction: long distressed sovereign bonds · horizon: years · conditions: sovereign with large economy and resources · testable: partly - sovereign default recovery data are available · confidence: medium
+  **Correction (cross-check):** Reframed: Singer did not say Argentina had defaulted only 3 or 4 times; he said Elliott knew it had a history of default (three or four times in 150 years) but judged default unlikely given its resources, as it was then the 7th or 8th largest economy, and the market view was default. → Elliott bought performing Argentine bonds trading in the 70s to 80s, aware of a history of default 3 to 4 times in 150 years, but judged default unlikely because of the country's size and resources; the country defaulted and the bonds collapsed.
   ^MT122-C06-3
 - **Paul Singer** Sovereign restructuring recoveries depend on a country's actual resources; a 30-cent offer fits poor countries with nothing, not a large economy like Argentina.  #mech/risk_premium
   > a 30 Cent recovery deal for Sovereign restructuring is a number that might be appropriate for a Guatemala or a Honduras
@@ -181,7 +212,12 @@ tags: [source, layer0]
 - **Paul Singer** Argentina's restructuring offers were accepted by about 75% of holders while holdouts were told they would get nothing; a creditor holding out and litigating can eventually recover more.  #mech/risk_premium
   > 25% of the holders held out the country said um if you don't um if you don't um uh accept this offer
   indicator: sovereign holdout litigation · asset: credit · direction: hold out and litigate · horizon: years · conditions: stubborn sovereign with litigable bonds · testable: partly - holdout outcomes can be studied · confidence: medium
+  **Correction (cross-check):** Unsupported inference: Singer only says that about 25% of holders held out, that the country told them they would get nothing if they did not accept, and that a second offer three years later on the same terms gave a few percent more; he does not say here that holding out eventually recovered more. → About 25% of Argentine holders held out; the country said it was this offer or nothing and repeated essentially the same offer about three years later (a few percent more), after which holdouts litigated for years.
   ^MT122-C06-5
+- **Paul Singer** Avoiding large losses also preserves the manager's emotional energy: burnout comes largely from being drained by adversity, so a capital-preservation culture lengthens a career and sustains judgment.  #mech/behavioral _(added by sonnet-xhigh cross-check)_
+  > you can't get bored by not losing serious money
+  indicator: drawdown and burnout · asset: other · horizon: years · testable: no - personal view · confidence: medium
+  ^MT122-C06-X1
 
 ### C07
 - **Paul Singer** The Argentine case took 15 years because the sovereign never negotiated; the time was not patience but having no alternative since the position was already deeply underwater.  #mech/risk_management
@@ -212,6 +248,14 @@ tags: [source, layer0]
   > countries around the world are uh as you know um uh not happy with the privilege that the uh US Government um uh asserts as the central bank as the reserve currency country of the world
   indicator: dollar reserve status · asset: fx · horizon: years · testable: no - qualitative · confidence: medium
   ^MT122-C07-7
+- **Paul Singer** In the Argentine restructuring about 60,000 bondholders took part at the end of the two offers, including five hedge funds of which Elliott was the largest, and Elliott's cost basis was already in the teens to 30s as bonds kept falling.  #mech/new _(added by sonnet-xhigh cross-check)_
+  > there were like 60,000 Bond holders including like five hedge funds of which Elliot was the largest
+  indicator: Argentine sovereign debt holdout composition · asset: credit · horizon: years · testable: no - historical · confidence: medium
+  ^MT122-C07-X1
+- **Paul Singer** Central bank money, though created from nothing, has sovereign backing because taxes and the army are paid in it, so government embrace of cryptocurrencies means endorsing alternatives to sovereign money and risks undermining the dollar's reserve role; Singer finds it paradoxical that the US itself supports an alternative.  #mech/structural_shift _(added by sonnet-xhigh cross-check, time-bound view)_
+  > it is Sovereign it has Sovereign support it's you pay the tax you you pay your army um in that money
+  indicator: sovereign money vs crypto, dollar reserve status · asset: fx · horizon: years · conditions: governments endorsing crypto · testable: no - conceptual · confidence: medium
+  ^MT122-C07-X2
 
 ### C08
 - **Paul Singer** Early specialization gives a narrow skill set poorly equipped for real-world events, so breadth in history, politics and philosophy is valuable for investing.  #mech/research_method

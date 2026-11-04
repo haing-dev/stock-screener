@@ -1,0 +1,29 @@
+{
+ "source_id": "MT080",
+ "added_claims": [
+  {"claim_id": "MT080-C04-X1", "chunk": "C04", "speaker": "Rick (listener question, read by Niels Kaastrup-Larsen)",
+   "quote": "I have been building and live trading offside systems fading extreme or offside positioning",
+   "claim": "A listener trades live systems that fade extreme or offside positioning, i.e. take the opposite side when positioning in a market becomes crowded, as a contrarian complement to trend.",
+   "mechanism": "crowding_positioning", "asset_class": "multi", "indicator": "positioning extremes (e.g. CFTC or co-movement crowding)",
+   "horizon": "weeks", "direction": "short crowded longs / long crowded shorts",
+   "conditions": "extreme positioning", "testable": "yes - fade-the-crowd backtest on positioning data",
+   "speaker_confidence": "low", "time_bound": "no"},
+  {"claim_id": "MT080-C07-X1", "chunk": "C07", "speaker": "Katy Kaminsky",
+   "quote": "as you go into longer Trend as well you're capturing some of the risk Premia which is good",
+   "claim": "Longer-lookback trend partly harvests buy-and-hold risk premia, which raises long-run Sharpe but weakens its role as a defence in a bad year, where shorter-term reactivity matters.",
+   "mechanism": "risk_premium", "asset_class": "multi", "indicator": "trend lookback length",
+   "horizon": "years", "direction": "slow trend: more risk premia, less crisis protection",
+   "conditions": "", "testable": "yes - decompose slow-trend returns into static long exposure vs timing",
+   "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT080-C14-X1", "chunk": "C14", "speaker": "Katy Kaminsky",
+   "quote": "that's why we cared so much about tracking era um instead of you know looking at returns because as you know you can always pick the strategy historically that has the best return",
+   "claim": "Replication methods should be judged on tracking error to the index, not on historical returns, because one can always select ex post the strategy with the best past return.",
+   "mechanism": "research_method", "asset_class": "multi", "indicator": "tracking error vs CTA index",
+   "horizon": "years", "direction": "",
+   "conditions": "", "testable": "yes - out-of-sample tracking error comparison",
+   "speaker_confidence": "high", "time_bound": "no"}
+ ],
+ "corrections": [],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10","C11","C12","C13","C14","C15","C16","C17"],
+ "completeness_estimate": "0.94 - first reader was very thorough; missed only the listener's position-fading practice, the risk-premia point on slow trend and the selection-bias reason for judging on tracking error."
+}

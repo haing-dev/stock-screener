@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 12726
 claims: 50
-added_by_opus: 6
+added_by_crosscheck: 6
 corrections: 6
 crosscheck: "opus cross-check"
 speakers: ["Graham Robertson (Man AHL, CEO of Man AHL)", "Rob Carver (independent systematic trader and author)", "Yav Git (Gresham Research, Safi fixed income CTA)", "Niels Kaastrup-Larsen (host, hedge fund manager)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, execution and trading costs, fixed income CTA, CTA allocation
 
-**Opus completeness estimate of first read:** 0.88 - content coverage is good (missed Rob's rebuttal, Graham's liquidity and allocator points, two execution claims), but speaker attribution in the unlabelled captions was wrong or mixed in 6 of 44 claims.
+**Cross-check completeness estimate of first read:** 0.88 - content coverage is good (missed Rob's rebuttal, Graham's liquidity and allocator points, two execution claims), but speaker attribution in the unlabelled captions was wrong or mixed in 6 of 44 claims.
 
 ## Coverage
 
@@ -52,7 +52,7 @@ tags: [source, layer0]
 - **Graham Robertson** Around 2011-2013 traditional liquid trend struggled in range-bound markets with the Fed put emerging, which put pressure on a firm whose earnings depended on the liquid CTA program.  #mech/policy_reaction _(time-bound view)_
   > traditional Trend was struggling you know things were range bound
   indicator: liquid trend program returns, Fed put · asset: multi · horizon: years · conditions: range-bound markets suppressed by central banks · testable: yes - trend returns by period · confidence: medium
-  **Correction (Opus):** Mixes speakers: the pressure on AHL's earnings from the liquid CTA program and the drive for Evolution diversity is Yav's point; Graham adds the range-bound markets and Fed put. → Around 2011-2013 traditional liquid trend struggled in range-bound markets as the Fed put emerged (Graham); because AHL's earnings were tied to the liquid CTA program, this pushed it to diversify the Evolution program (Yav).
+  **Correction (cross-check):** Mixes speakers: the pressure on AHL's earnings from the liquid CTA program and the drive for Evolution diversity is Yav's point; Graham adds the range-bound markets and Fed put. → Around 2011-2013 traditional liquid trend struggled in range-bound markets as the Fed put emerged (Graham); because AHL's earnings were tied to the liquid CTA program, this pushed it to diversify the Evolution program (Yav).
   ^MT029-C03-1
 
 ### C04
@@ -70,7 +70,7 @@ tags: [source, layer0]
   > why why crypto currencies actually Trend very well because there is no valuation
   indicator: crypto trend returns · asset: other · horizon: years · testable: partly - short history · confidence: medium
   ^MT029-C05-2
-- **Yav Git** Crypto has enormous right skew, so risk control and position management for trend in crypto should differ from other asset classes; a generalist implementation leaves alpha on the table.  #mech/risk_management _(added by Opus)_
+- **Yav Git** Crypto has enormous right skew, so risk control and position management for trend in crypto should differ from other asset classes; a generalist implementation leaves alpha on the table.  #mech/risk_management _(added by opus cross-check)_
   > the way you do the risk anal the risk control on it the way you manage the position um actually needs to be different because it
   asset: other · conditions: assets with strong right skew · testable: yes - compare skew-aware vs standard vol sizing on crypto trend · confidence: medium
   ^MT029-C05-X1
@@ -113,7 +113,7 @@ tags: [source, layer0]
 - **Rob Carver** Rob argues fixed income dominates CTA P&L because it is the largest and most liquid sector and enjoyed a secular decline in rates for 30-40 years that ended around 2010-2012, and recently made little.  #mech/structural_shift
   > secondly we've had a very nice you know environment overall trend in fixed income for the last 30 40 years
   indicator: secular trend in rates, CTA fixed-income P&L · asset: rates · horizon: years · testable: yes - sector P&L by era · confidence: medium
-  **Correction (Opus):** Wrong speaker: the host (Niels) says 'let me just ask one thing Rob and then I'll let you jump in' and challenges Yav from his CTA vantage point. The dating of the end of the secular rate decline (around 2010) is Yav's reply, not part of this argument. → Niels Kaastrup-Larsen: fixed income dominates CTA P&L because it is the largest, most liquid sector and enjoyed a 30-40 year favourable trend; it has made little recently, so focusing on it risks fitting to the past.
+  **Correction (cross-check):** Wrong speaker: the host (Niels) says 'let me just ask one thing Rob and then I'll let you jump in' and challenges Yav from his CTA vantage point. The dating of the end of the secular rate decline (around 2010) is Yav's reply, not part of this argument. → Niels Kaastrup-Larsen: fixed income dominates CTA P&L because it is the largest, most liquid sector and enjoyed a 30-40 year favourable trend; it has made little recently, so focusing on it risks fitting to the past.
   ^MT029-C07-4
 - **Yav Git** Even since 2010 fixed income has been the most consistent asset class for trend across periods and speeds, unlike FX.  #mech/cycle_persistence
   > fixed income has been very consistent not just in terms of um consistency over time so different periods in time also different speeds
@@ -129,7 +129,7 @@ tags: [source, layer0]
   > when you see em currencies where you see very strong carry you see actually very strong Trend as well
   indicator: carry and trend in EM vs DM FX · asset: fx · horizon: years · testable: yes - Sharpe of FX trend by carry bucket · confidence: medium
   ^MT029-C08-2
-- **Rob Carver** Rob rejects Yav's case for single-asset-class funds: specialised execution already exists inside a multi-asset CTA, and a generalised optimiser and risk model can handle differing diversification and distributions; he also calls Yav's sustained-imbalance theory of trends unproven.  #mech/research_method _(added by Opus)_
+- **Rob Carver** Rob rejects Yav's case for single-asset-class funds: specialised execution already exists inside a multi-asset CTA, and a generalised optimiser and risk model can handle differing diversification and distributions; he also calls Yav's sustained-imbalance theory of trends unproven.  #mech/research_method _(added by opus cross-check)_
   > you wouldn't have the same person executing cash equities as you would have executing cash Bonds in a CT anyway
   asset: multi · testable: partly - compare generalised vs asset-class-specific implementations · confidence: medium
   ^MT029-C08-X1
@@ -138,7 +138,7 @@ tags: [source, layer0]
 - **Rob Carver** Rob's blog found no correlation between market liquidity and trend performance, though Yav argues the wrong liquidity is measured (the imbalance matters) and liquidity mainly caps diversification and capacity.  #mech/research_method
   > looking at liquidity and seeing if it correlates with performance and it doesn't
   indicator: market liquidity vs trend performance · asset: multi · horizon: years · testable: yes - blog test · confidence: medium
-  **Correction (Opus):** Speaker: Yav Git says this, summarising Rob's blog, and adds his own objection; Rob does not speak here. → Yav Git: Rob's blog found no correlation between market liquidity and trend performance; Yav agrees but argues the wrong liquidity is measured (the imbalance matters), and liquidity mainly limits diversification and capacity.
+  **Correction (cross-check):** Speaker: Yav Git says this, summarising Rob's blog, and adds his own objection; Rob does not speak here. → Yav Git: Rob's blog found no correlation between market liquidity and trend performance; Yav agrees but argues the wrong liquidity is measured (the imbalance matters), and liquidity mainly limits diversification and capacity.
   ^MT029-C09-1
 - **Yav Git** Equity trend is weaker because value traders add negative autocorrelation.  #mech/crowding_positioning
   > the thing that really harms Equity is valuation and the fact that value Traders inject negative autocorrelation which makes it very difficult for Trend followers to harvest Trend inequity
@@ -170,7 +170,7 @@ tags: [source, layer0]
   > there are two measures of liquidity right there's volume and open interest and you can have markets with incredibly high volume
   indicator: volume vs open interest · asset: multi · testable: yes - liquidity metrics · confidence: high
   ^MT029-C10-3
-- **Graham Robertson** Market size is not liquidity: the industry players who dominate a market and its transaction costs shape how it trades and how trend performs there, so a single 'how liquid' measure is misleading.  #mech/research_method _(added by Opus)_
+- **Graham Robertson** Market size is not liquidity: the industry players who dominate a market and its transaction costs shape how it trades and how trend performs there, so a single 'how liquid' measure is misleading.  #mech/research_method _(added by opus cross-check)_
   > liquidity is a term that's often misused you can talk about the size of the market and people will call that liquidity of the market but it's not necessarily the same thing
   indicator: market size vs transaction costs vs participant mix · asset: multi · testable: partly - needs participant-composition data · confidence: medium
   ^MT029-C10-X1
@@ -197,13 +197,13 @@ tags: [source, layer0]
 - **Graham Robertson** High-vol share classes give capital efficiency, but many allocators do not value them and prefer low-vol funds, so product design is the lever.  #mech/behavioral
   > the problem is I guess not that many people necessarily understand that the High Vol is a good thing
   indicator: volatility target of share class · asset: multi · testable: no - preference · confidence: medium
-  **Correction (Opus):** Probable wrong speaker: the high-vol share class remark ('I remember back in the day and I'm sure it's still the case AHL was offering High Vol share classes') is by a former AHL person and continues into Rob's 'I like Yav saying...'; it is most likely Rob Carver, not Graham (current AHL CEO). → Rob Carver (probable): high-vol share classes give capital efficiency, but few allocators see high vol as good and many prefer low-vol funds; changing the products may be the lever.
+  **Correction (cross-check):** Probable wrong speaker: the high-vol share class remark ('I remember back in the day and I'm sure it's still the case AHL was offering High Vol share classes') is by a former AHL person and continues into Rob's 'I like Yav saying...'; it is most likely Rob Carver, not Graham (current AHL CEO). → Rob Carver (probable): high-vol share classes give capital efficiency, but few allocators see high vol as good and many prefer low-vol funds; changing the products may be the lever.
   ^MT029-C12-2
 - **Rob Carver** Speeding up a trend program would give more positive skew and tail protection but at the cost of alpha, moving away from where trend works best.  #mech/risk_management
   > something kind of more tail proty would be to speed it up and give it more positive skew um and and then that would be probably at the cost of alpha
   indicator: trend speed, skew · asset: multi · direction: faster models more skew, less alpha · horizon: months · testable: yes - skew and Sharpe by lookback · confidence: medium
   ^MT029-C12-3
-- **Graham Robertson** Large institutions keep a steady trend-following allocation through good and bad years, but wealth-segment investors and the media largely ignore it (an FT article on handling volatility did not mention trend following), which is where under-allocation lies.  #mech/behavioral _(added by Opus)_
+- **Graham Robertson** Large institutions keep a steady trend-following allocation through good and bad years, but wealth-segment investors and the media largely ignore it (an FT article on handling volatility did not mention trend following), which is where under-allocation lies.  #mech/behavioral _(added by opus cross-check)_
   > larger investors tend to have an allocation to Trend following thick and thin
   asset: multi · horizon: years · testable: no - anecdotal · confidence: medium
   ^MT029-C12-X1
@@ -224,7 +224,7 @@ tags: [source, layer0]
 - **Graham Robertson** Heavy fixed income issuance to fund government changes means trend following should be considered as protection for bond portfolios, not just equities.  #mech/fiscal_debt _(time-bound view)_
   > maybe people start need to start thinking about Trend following in the context of a fixed income portfolio not just an equity uh portfolio
   indicator: trend following as bond hedge · asset: rates · horizon: years · testable: partly - bond-trend correlation · confidence: low
-  **Correction (Opus):** Wrong speaker: Niels says this ('that's just my own view here') and moves to the next topic in the same turn. → Niels Kaastrup-Larsen: heavy government bond issuance to fund policy changes means trend following should also be considered as protection for fixed-income portfolios, not just equities.
+  **Correction (cross-check):** Wrong speaker: Niels says this ('that's just my own view here') and moves to the next topic in the same turn. → Niels Kaastrup-Larsen: heavy government bond issuance to fund policy changes means trend following should also be considered as protection for fixed-income portfolios, not just equities.
   ^MT029-C13-4
 
 ### C14
@@ -236,7 +236,7 @@ tags: [source, layer0]
   > if you lag your strategy suppose you say okay I'm going to lag my signals by a day you find that actually your Alpha doesn't Decay that much you will maybe lose one or two basis points
   indicator: alpha decay from lagging signals, spread crossing · asset: multi · direction: slower, patient execution · horizon: days · testable: yes - lag test and execution backtest · confidence: high
   ^MT029-C14-2
-- **Yav Git** Due-diligence test: asking whether a CTA pays its execution desk a performance fee reveals whether it treats execution as an alpha source or as a production line.  #mech/research_method _(added by Opus)_
+- **Yav Git** Due-diligence test: asking whether a CTA pays its execution desk a performance fee reveals whether it treats execution as an alpha source or as a production line.  #mech/research_method _(added by opus cross-check)_
   > do you pay performance fee to your execution desk
   asset: multi · testable: no - due-diligence heuristic · confidence: medium
   ^MT029-C14-X1
@@ -250,7 +250,7 @@ tags: [source, layer0]
   > and half of that's commission which for an institution is negligible right so only only two basis of points of that is Bid ask so I could only save two basis points of shot
   indicator: trading cost 4bp Sharpe · asset: multi · testable: yes - cost decomposition · confidence: high
   ^MT029-C15-2
-- **Yav Git** Yav claims patient execution saves more than the alpha lost from delay even in liquid bond futures (e.g. 5-year Bobl), not only in illiquid OTC bonds; Rob disagrees for liquid futures.  #mech/risk_management _(added by Opus)_
+- **Yav Git** Yav claims patient execution saves more than the alpha lost from delay even in liquid bond futures (e.g. 5-year Bobl), not only in illiquid OTC bonds; Rob disagrees for liquid futures.  #mech/risk_management _(added by opus cross-check)_
   > the benefits of waiting far outweighs the loss of alpha even for those markets
   indicator: execution cost vs signal-delay alpha decay · asset: rates · horizon: days · conditions: disputed for liquid futures · testable: yes - compare spread savings from passive fills vs alpha decay from delay · confidence: high
   ^MT029-C15-X1
@@ -273,7 +273,7 @@ tags: [source, layer0]
 - **Graham Robertson** Open-sourcing foundations (e.g. Arctic DB) attracts top technologists and improved code quality at AHL.  #mech/research_method
   > open source is good uh in fact the we open source a lot of the basic um Foundation of our um of what we do
   asset: multi · testable: no - organisational · confidence: medium
-  **Correction (Opus):** Speaker mostly wrong: Graham only says open source attracts the best technologists; the Arctic DB story and 'we open source a lot of the basic foundation' are Yav Git's (he was the initial sceptic at AHL). → Graham Robertson and Yav Git: open-sourcing core infrastructure (e.g. Arctic DB) attracts top technologists and improved code quality at AHL; Yav says he was first sceptical and was proved wrong.
+  **Correction (cross-check):** Speaker mostly wrong: Graham only says open source attracts the best technologists; the Arctic DB story and 'we open source a lot of the basic foundation' are Yav Git's (he was the initial sceptic at AHL). → Graham Robertson and Yav Git: open-sourcing core infrastructure (e.g. Arctic DB) attracts top technologists and improved code quality at AHL; Yav says he was first sceptical and was proved wrong.
   ^MT029-C17-1
 - **Rob Carver** Open-sourcing a trading system forces better code quality, testing and documentation.  #mech/research_method
   > the discipline of knowing that lots of other people are going to look at your code it makes you more likely to to write good quality code and and you know test and document it properly

@@ -5,10 +5,10 @@ date: 2025-06-03
 channel: "Top Traders Unplugged"
 url: 
 words: 12291
-claims: 73
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 77
+added_by_crosscheck: 4
+corrections: 2
+crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, Top Traders Unplugged, CTA background)", "Alan Dunne (co-host, allocator/researcher, Substack Beyond the Cycle)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Systematic Investor ep. 350 (30 May 2025): Alan lays out why all roads lead to higher bond yields (US deficits and debt, R-minus-G, fiscal dominance, weaker bond diversification), then Niels and Alan review a weak May for trend followers, the SG Prime allocator survey, and asset allocation (scenario analysis, forward-looking return estimates, US re-rating). Conclusion: robust portfolios need non-predictive diversifiers such as trend following, and trend allocations should not be timed on macro views.
 
 **Approach:** trend following, fiscal debt and bond yields, term premium, asset allocation, expected returns, allocator sentiment, CTA performance
+
+**Cross-check completeness estimate of first read:** 0.94 - first reader caught almost all ideas (73 claims); missed the Eichengreen debt point, bill-heavy issuance, the inflation-led yield scenario, and Alan's disagreement on discretionary macro; two speaker errors in C17.
 
 ## Coverage
 
@@ -108,6 +110,10 @@ tags: [source, layer0]
   > deficit, it was about bit more than 4% of GDP and the debt to GDP ratio was about 45% of G GDP
   indicator: US deficit, debt/GDP, 10-year yield · asset: rates · horizon: years · testable: yes - historical data · confidence: high
   ^MT072-C04-1
+- **Alan Dunne** Eichengreen's Jackson Hole paper argued that today's high public debt levels will not be worked down and are here to stay, which underpins the view of persistently higher yields.  #mech/fiscal_debt _(added by opus cross-check)_
+  > Barry Iikin Green presented a paper at Jackson Hole two years ago to you know all the good and the great in the central banking community about high debt levels and how they're going to be here to stay
+  indicator: public debt/GDP · asset: rates · direction: debt stays high -> yields higher · horizon: years · testable: partly - historical debt reduction episodes · confidence: medium
+  ^MT072-C04-X1
 
 ### C05
 - **Alan Dunne** The 2025 budget bill adds nearly 4 trillion over ten years to US deficits, adding to the debt supply.  #mech/fiscal_debt _(time-bound view)_
@@ -122,6 +128,10 @@ tags: [source, layer0]
   > the best thing he could do in terms of getting lower rates would be to cut the deficit because that would make it easier for the Fed to pursue an easier policy
   indicator: deficit and Fed policy mix · asset: rates · horizon: years · conditions: 1990s productivity boom also helped · testable: partly - one episode · confidence: medium
   ^MT072-C05-3
+- **Alan Dunne** After the 2000 surplus the US even stopped issuing long bonds for a while, but now the Treasury cannot term out its debt and leans on bill issuance because of doubts about demand at the long end of the curve.  #mech/fiscal_debt _(added by opus cross-check)_
+  > now we're into a situation where you know they can't term out the they had to issue bills because this concern about lack of demand for for the long end
+  indicator: Treasury issuance mix (bills vs coupons) · asset: rates · direction: weak long-end demand -> more bills · horizon: years · conditions: large deficits · testable: yes - bill share of issuance vs term premium · confidence: medium
+  ^MT072-C05-X1
 
 ### C06
 - **Alan Dunne** From 2017 the US ran large deficits at full employment, a procyclical turning point, followed by MMT ideas and huge Covid spending.  #mech/fiscal_debt
@@ -174,6 +184,10 @@ tags: [source, layer0]
   > I think all roads do lead to higher yields.
   indicator: US long yields · asset: rates · direction: higher long-term yields · horizon: years · testable: partly · confidence: medium
   ^MT072-C07-8
+- **Alan Dunne** In the alternative scenario where the economy does not weaken much and near-term inflation rises, a Fed forced to respond becomes the trigger that pushes yields up in the near term.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
+  > Another scenario is is the economy doesn't weak that weaken that much and and maybe we see higher inflation in the near term and the Fed might have to actually respond to that.
+  indicator: inflation vs growth path · asset: rates · direction: yields up · horizon: months · conditions: no recession and rising inflation · testable: partly - yield reaction to inflation surprises in non-recession periods · confidence: medium
+  ^MT072-C07-X1
 
 ### C08
 - **Niels Kaastrup-Larsen** Ben Hunt's narrative view: debt is acknowledged as unsustainable but no one acts, so the market can ignore it until something shifts the narrative.  #mech/behavioral
@@ -290,6 +304,10 @@ tags: [source, layer0]
   > I think that points to you know taking a more of a scenariobased approach to portfolio
   asset: multi · horizon: years · testable: partly · confidence: medium
   ^MT072-C13-4
+- **Alan Dunne** Contrary to Niels's coin-flip view, Alan argues the high-dispersion 2025 environment offers big asymmetric opportunities for discretionary macro, though results vary widely across managers as April showed.  #mech/new _(added by opus cross-check, time-bound view)_
+  > I just think it is an environment it does offer big opportunities obviously that doesn't mean every discretionary macro manager will be on the right side of it and that's what we saw in April
+  indicator: macro and CTA manager return dispersion · asset: multi · horizon: months · conditions: volatile policy-driven macro regimes · testable: partly - dispersion of macro fund returns in volatile regimes · confidence: medium
+  ^MT072-C13-X1
 
 ### C14
 - **Alan Dunne** Allocation processes should be robust to volatility and correlation assumptions because the future can differ from the past.  #mech/risk_management
@@ -357,6 +375,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** Allocating to trend following based on a macro view works for about a year before something surprises, so do not link it to the macro outlook.  #mech/risk_management
   > if you try and link you know trend following allocation to a particular macro view like that it might you might be right for a year
   asset: multi · testable: partly · confidence: medium
+  **Correction (cross-check):** Wrong speaker: the point that linking trend allocation to a macro view (e.g. 'Trump on-off is bad for trend') works for a year and then surprises is Alan's reply, not Niels's. → Alan Dunne: allocating to trend following based on a macro view may be right for a year before something surprises, so trend allocation should not be tied to the macro outlook.
   ^MT072-C17-3
 - **Niels Kaastrup-Larsen** The current trend following drawdown looks normal in the drawdown profile; blaming Trump is no excuse.  #mech/research_method _(time-bound view)_
   > removed any knowledge that you might have about politics and who's in the White House and who's not in the White House and all of that, then you would say this is not unusual
@@ -369,5 +388,6 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** Waiting until the environment looks favorable for trend following means missing years (2019-2021 were good, but consensus came in 2022), so do not time it.  #mech/behavioral
   > if you wait for it to be very obvious it's going to be you know I would say it was probably by 2022 when it was kind of mainstream
   indicator: trend following allocation timing · asset: multi · direction: stay allocated · horizon: years · testable: partly · confidence: medium
+  **Correction (cross-check):** Wrong speaker: the 2016-2022 timing example ending 'Don't try and time it' is Alan's; Niels answers 'Yeah. No, absolutely. Alan, this was great'. → Alan Dunne: waiting until the environment looks favourable for trend following means missing years (2019-2021 were good, consensus only in 2022), so do not time trend allocations.
   ^MT072-C17-6
 

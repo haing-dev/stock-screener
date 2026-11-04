@@ -5,10 +5,10 @@ date: 2023-07-27
 channel: "Money Maze Podcast"
 url: 
 words: 8026
-claims: 22
-added_by_opus: 0
+claims: 28
+added_by_crosscheck: 6
 corrections: 0
-crosscheck: "pending"
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Mike Pompeo (former US Secretary of State and CIA director)", "Jennifer Prosek (guest host, Money Maze podcast)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Interview with Mike Pompeo on geopolitics: China is the central long-run economic and security threat, Russia is managed by deterrence and strength, and reciprocity plus allied economic networks is the policy answer. Little systematic or market-method content; mainly qualitative geopolitical views.
 
 **Approach:** geopolitics, China, deterrence, Russia-Ukraine
+
+**Cross-check completeness estimate of first read:** 0.90 - the first reader captured nearly every substantive geopolitical and policy claim; the document is mostly qualitative with little market-method content. Missed items are caveats (epistemic humility, weak deterrence evidence), the China technology-acquisition mechanism, the red-lines risk principle and the post-WWII prosperity claim. No speaker errors (single guest speaker).
 
 ## Coverage
 
@@ -80,6 +82,14 @@ tags: [source, layer0]
   > you wake up one morning and the world broke and that's the most likely way this will happen as well
   asset: multi · testable: no · confidence: low
   ^MT109-C03-6
+- **Mike Pompeo** Caveat on forecasting: outsiders, including self-described experts, cannot reliably know what is happening inside Russian leadership (e.g. what the Wagner mutiny means), so confident predictions about Putin's stability should be discounted.  #mech/research_method _(added by sonnet-xhigh cross-check, time-bound view)_
+  > I always was so cautious that as Outsiders we could ever understand what's really going on inside of Russian leadership
+  indicator: Russian leadership stability · asset: other · testable: no - epistemic caution · confidence: high
+  ^MT109-C03-X1
+- **Mike Pompeo** Policy view: the US should supply Ukraine with weapons and materiel (which it is good at producing) rather than troops, since Ukrainians asked for equipment only; this keeps America safe by blocking Putin.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > we should provide them stuff because we can and we're really good at making stuff that can help a nation like them do the things they need to do
+  indicator: US military aid to Ukraine · asset: other · conditions: as long as Ukraine asks for equipment, not troops · testable: no - policy opinion · confidence: high
+  ^MT109-C03-X2
 
 ### C04
 - **Mike Pompeo** The 1994 Budapest memorandum shows allies in Europe and Asia judge US credibility by whether it keeps commitments to Ukraine.  #mech/new _(time-bound view)_
@@ -108,6 +118,14 @@ tags: [source, layer0]
   > we should begin to enforce in the Chinese mind that it's not a one-way racket
   asset: multi · horizon: years · testable: no: policy opinion · confidence: medium
   ^MT109-C05-4
+- **Mike Pompeo** Evidence caveat on deterrence: the only proof offered is that Putin took no further Ukrainian territory during 2017-2021; critics attribute that to luck, and Pompeo himself says he is agnostic whether Russia saw the Trump team as crazy or serious.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > Progressive left would tell you we were just lucky
+  indicator: deterrence track record (single episode) · asset: other · horizon: years · testable: no - one observation, causation unprovable · confidence: medium
+  ^MT109-C05-X1
+- **Mike Pompeo** China's economic strategy draws in US firms to acquire technology know-how and management expertise (it still lacks Western technological depth) and to gain leverage over US policy, so corporate exposure to China doubles as a political lever.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > by sucking in some American businesses and making friends of them places he still needs technology know-how management expertise places where he realizes he can gain leverage on American policy
+  indicator: US corporate exposure to China · asset: multi · horizon: years · conditions: while China's technology gap persists · testable: partly - firm-level China exposure and policy lobbying can be studied · confidence: medium
+  ^MT109-C05-X2
 
 ### C06
 - **Mike Pompeo** Reciprocity on climate: US power-plant closures should be matched by China, otherwise they harm the US economy without cutting emissions.  #mech/new _(time-bound view)_
@@ -122,6 +140,14 @@ tags: [source, layer0]
   > My Hope isn't that this will cause Xi Jinping to go to war it's in fact just the opposite
   asset: multi · horizon: years · testable: no · confidence: low
   ^MT109-C06-3
+- **Mike Pompeo** Risk management principle: compromise on details (project costs, technical specs) but set hard, pre-announced lines on fundamentals (human rights, sovereignty, borders); the 'never give an inch' philosophy is not refusal to compromise.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > to manage risk appropriately there are just things you have to tell folks hey this is just a line we're not going past this
+  indicator: negotiating red lines · asset: other · conditions: fundamentals vs negotiable details · testable: no - judgement · confidence: high
+  ^MT109-C06-X1
+- **Mike Pompeo** The post-WWII order built on sovereign nation-states and trade delivered record prosperity (GDP per capita at an all-time high), which Pompeo uses to argue for defending sovereignty and basic trade rules.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > the central thesis of the post-world War II order of the nation-state as the central actor on the global stage turns out made people a lot of money
+  indicator: GDP per capita · asset: multi · horizon: years · testable: partly - long-run income and trade data · confidence: medium
+  ^MT109-C06-X2
 
 ### C08
 - **Mike Pompeo** Industrial hard-tech investing now carries a geopolitical component in almost every project.  #mech/structural_shift _(time-bound view)_

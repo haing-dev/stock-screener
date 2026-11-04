@@ -6,7 +6,7 @@ channel: "Bloomberg Television"
 url: 
 words: 8225
 claims: 35
-added_by_opus: 2
+added_by_crosscheck: 2
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["David Harding (founder, Winton)", "interviewer (Bloomberg Television)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, systematic quant, equity event strategies, crowding, research method
 
-**Opus completeness estimate of first read:** 0.94 - first reader captured essentially all mechanisms, research findings and risk methods accurately; missed only the no-discretionary-intervention governance rule and the reason redemption terms were lengthened (asset liquidity)
+**Cross-check completeness estimate of first read:** 0.94 - first reader captured essentially all mechanisms, research findings and risk methods accurately; missed only the no-discretionary-intervention governance rule and the reason redemption terms were lengthened (asset liquidity)
 
 ## Coverage
 
@@ -122,7 +122,7 @@ tags: [source, layer0]
   > i've been lowering my forecast for the success of trend following year by year for years and years
   indicator: trend following forecast return · asset: multi · direction: reduce reliance on trend · horizon: years · testable: partly - forecast decay of trend returns · confidence: high
   ^MT070-C05-3
-- **David Harding** Governance of a fully systematic book: researchers write and run the programs, execution is done by separate teams, and humans step in only to correct program errors, not to override signals with discretionary views.  #mech/risk_management _(added by Opus)_
+- **David Harding** Governance of a fully systematic book: researchers write and run the programs, execution is done by separate teams, and humans step in only to correct program errors, not to override signals with discretionary views.  #mech/risk_management _(added by opus cross-check)_
   > if the program you know miscalculated something we would um you know we would do something we we are responsible for managing the money
   asset: multi · conditions: fully systematic trading, 24-hour global execution · testable: no - organisational practice · confidence: high
   ^MT070-C05-X1
@@ -146,7 +146,7 @@ tags: [source, layer0]
   > hedge fund industry gets quite a lot of uh knock-on benefit from
   indicator: equity bull market · asset: equities · horizon: years · testable: yes - hedge fund returns vs equity beta · confidence: medium
   ^MT070-C07-2
-- **David Harding** Fund redemption terms were lengthened (monthly notice, less liquid than before) because the strategy mix now holds more small-company equities, matching investor liquidity to the liquidity of the assets.  #mech/liquidity_flows _(added by Opus)_
+- **David Harding** Fund redemption terms were lengthened (monthly notice, less liquid than before) because the strategy mix now holds more small-company equities, matching investor liquidity to the liquidity of the assets.  #mech/liquidity_flows _(added by opus cross-check)_
   > our own funds have moved more into line with other hedge funds having you know having more no longer notice period says because they got more investments in small companies
   indicator: fund notice period vs asset liquidity · asset: equities · horizon: months · conditions: shift from liquid futures to broader equity universes · testable: no - business terms · confidence: medium
   ^MT070-C07-X1

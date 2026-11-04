@@ -6,7 +6,7 @@ channel: "Generating Alpha Podcast"
 url: https://www.youtube.com/watch?v=nw-jo_UM6DU
 words: 6214
 claims: 14
-added_by_opus: 3
+added_by_crosscheck: 3
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Jim Rogers (co-founder of Quantum Fund, creator of Rogers International Commodities Index)", "Amir and Owen (hosts, Generating Alpha podcast)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** discretionary global macro, commodities, contrarian, fiscal debt
 
-**Opus completeness estimate of first read:** 0.80 - mostly biography and life advice; first reader caught all substantive views (China cycle, timing lesson, multi-asset long/short, know commodity prices, agriculture, money printing, US debt, no hot tips), missing only the Japan-consensus contrast, the neglected-data edge and the 'find the change' principle.
+**Cross-check completeness estimate of first read:** 0.80 - mostly biography and life advice; first reader caught all substantive views (China cycle, timing lesson, multi-asset long/short, know commodity prices, agriculture, money printing, US debt, no hot tips), missing only the Japan-consensus contrast, the neglected-data edge and the 'find the change' principle.
 
 ## Coverage
 
@@ -43,7 +43,7 @@ tags: [source, layer0]
   > China is the only country in world history that's been on top three or four times
   asset: multi · direction: China rising relative to US · horizon: years · conditions: He admits he does not know why it recurs · testable: no - single country history, small sample · confidence: high
   ^MT054-C02-1
-- **Jim Rogers** The consensus 'hot country' of an era (Japan in the 1980s) can be the wrong long-term bet, while a country dismissed through propaganda and ignorance (China) was the one actually rising.  #mech/crowding_positioning _(added by Opus)_
+- **Jim Rogers** The consensus 'hot country' of an era (Japan in the 1980s) can be the wrong long-term bet, while a country dismissed through propaganda and ignorance (China) was the one actually rising.  #mech/crowding_positioning _(added by opus cross-check)_
   > everybody said no come on Japan Japan Japan because Japan was the hot country in the 80s
   asset: equities · direction: favour the overlooked rising country over the consensus favourite · horizon: years · testable: partly - long-horizon returns of consensus-favourite vs neglected countries can be compared · confidence: high
   ^MT054-C02-X1
@@ -63,7 +63,7 @@ tags: [source, layer0]
   > we invested in everything stocks bonds currencies commodities all over the world long and short
   indicator: commodity prices as inputs (copper) · asset: multi · direction: long and short across asset classes · testable: partly - multi-asset long/short construction is testable · confidence: high
   ^MT054-C04-2
-- **Jim Rogers** Following neglected data that most investors ignore (the daily commodity prices page) gives an information edge, because commodity prices feed into many businesses and markets.  #mech/slow_reaction _(added by Opus)_
+- **Jim Rogers** Following neglected data that most investors ignore (the daily commodity prices page) gives an information edge, because commodity prices feed into many businesses and markets.  #mech/slow_reaction _(added by opus cross-check)_
   > I used to read the commodity page every day in the Wall Street Journal most people II found out later didn't even know there was a commodity page
   indicator: daily commodity prices (WSJ commodity page) · asset: commodities · testable: partly - lead of commodity prices over equity sectors can be tested · confidence: high
   ^MT054-C04-X1
@@ -89,7 +89,7 @@ tags: [source, layer0]
   > whenever you find a dis disaster especially if it's something the world needs and it changes you'll probably be very successful
   indicator: agriculture sector sentiment · asset: commodities · direction: long agriculture · horizon: years · conditions: Out-of-favour sector the world needs · testable: partly - contrarian sector reversal testable · confidence: medium
   ^MT054-C08-2
-- **Jim Rogers** Investment success comes from identifying structural change early (which countries and sectors become important, e.g. Australia, Uzbekistan, agriculture) and positioning for it, so the investable universe must keep being updated.  #mech/structural_shift _(added by Opus)_
+- **Jim Rogers** Investment success comes from identifying structural change early (which countries and sectors become important, e.g. Australia, Uzbekistan, agriculture) and positioning for it, so the investable universe must keep being updated.  #mech/structural_shift _(added by opus cross-check)_
   > what we have to do no matter what is to figure out the change and then pursue it
   asset: multi · horizon: years · testable: no - general approach without a defined signal · confidence: medium
   ^MT054-C08-X1

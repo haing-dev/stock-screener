@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 10955
 claims: 56
-added_by_opus: 5
+added_by_crosscheck: 5
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Katy Kaminski (chief research strategist, AlphaSimplex)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, managed futures, crisis alpha, stock-bond correlation, interest rate regimes, allocation
 
-**Opus completeness estimate of first read:** 0.89 - first reader caught nearly all performance numbers, paper findings and allocation numbers; missed a few interpretive/method points (positioning delta as recession signal, falling-rate dependence of 60/40, long-history backtest limits, rate level vs inflation).
+**Cross-check completeness estimate of first read:** 0.89 - first reader caught nearly all performance numbers, paper findings and allocation numbers; missed a few interpretive/method points (positioning delta as recession signal, falling-rate dependence of 60/40, long-history backtest limits, rate level vs inflation).
 
 ## Coverage
 
@@ -138,7 +138,7 @@ tags: [source, layer0]
   > being long the dollar has worked sometimes in certain events um and if you look across energies it can also be a big contributor but it really depends on the environment
   indicator: USD and energy trend P&L in crises · asset: multi · horizon: months · conditions: depends on the crisis type · testable: partly: small sample of crises · confidence: medium
   ^MT086-C06-5
-- **Katy Kaminski** A shift (delta) in aggregate trend-follower positioning toward long bonds and short commodities is itself a market signal that recession expectations are being repriced and economic weakness is possible.  #mech/cycle_persistence _(added by Opus)_
+- **Katy Kaminski** A shift (delta) in aggregate trend-follower positioning toward long bonds and short commodities is itself a market signal that recession expectations are being repriced and economic weakness is possible.  #mech/cycle_persistence _(added by opus cross-check)_
   > more buying of bonds and sort of selling off of Commodities that's a relatively uh defensive position it sort of shows some potential for economic weakness potentially repricing of recession expectations
   indicator: change in aggregate CTA positioning (bonds long, commodities short) · asset: multi · direction: defensive pivot -> higher odds of economic weakness / equity drawdown · horizon: months · testable: yes - estimate CTA positioning from trend signals and relate defensive pivots to later growth data and equity drawdowns · confidence: medium
   ^MT086-C06-X1
@@ -160,11 +160,11 @@ tags: [source, layer0]
   > bonds are much more volatile and less predictable uh as a diversifier in an environment with higher rates Andor inflation as a Potential Threat for bonds
   indicator: 60/40 portfolio · asset: multi · direction: add long/short trend exposure · horizon: years · conditions: higher rates or inflation · testable: yes · confidence: medium
   ^MT086-C07-4
-- **Niels Kaastrup-Larsen** The protection 60/40 investors got from negative stock-bond correlation depended, largely unknowingly, on a secular falling-rate cycle, so it need not persist once that cycle ends.  #mech/structural_shift _(added by Opus)_
+- **Niels Kaastrup-Larsen** The protection 60/40 investors got from negative stock-bond correlation depended, largely unknowingly, on a secular falling-rate cycle, so it need not persist once that cycle ends.  #mech/structural_shift _(added by opus cross-check)_
   > if you have a 60/40 portfolio people will have relied on the negative correlation uh and and probably without knowing it the fact that we were in a in an interest rate cycle that just kept going down
   indicator: stock-bond correlation; rate cycle direction · asset: multi · horizon: years · conditions: holds while rates trend down; weakens when the rate cycle ends · testable: yes - stock-bond correlation and 60/40 drawdowns split by falling vs rising rate eras · confidence: medium
   ^MT086-C07-X1
-- **Katy Kaminski** Very long trend-following backtests are only credible for single-asset-class signals (e.g. bonds), because extending a full multi-asset futures portfolio back in time requires many assumptions about market infrastructure.  #mech/research_method _(added by Opus)_
+- **Katy Kaminski** Very long trend-following backtests are only credible for single-asset-class signals (e.g. bonds), because extending a full multi-asset futures portfolio back in time requires many assumptions about market infrastructure.  #mech/research_method _(added by opus cross-check)_
   > unless you stick to just Trend falling signals in one asset class because you know obviously like the infrastructure the Futures markets they you know you have to make a lot of assumptions
   asset: multi · conditions: pre-futures-era history · testable: partly - compare single-asset long-history trend results with modern multi-asset results over the overlap · confidence: high
   ^MT086-C07-X2
@@ -234,7 +234,7 @@ tags: [source, layer0]
   > a lot of the policies that uh Trump installed Visa China they have continued under the current regime and probably will continue whoever wins
   asset: multi · horizon: months · testable: no · confidence: low
   ^MT086-C12-2
-- **Katy Kaminski** A trend follower's way to anticipate the next big trend is to ask what investors are underestimating or overly hopeful about (in 2024 the soft-landing consensus), since the unpriced outcome drives the next large move.  #mech/behavioral _(added by Opus)_
+- **Katy Kaminski** A trend follower's way to anticipate the next big trend is to ask what investors are underestimating or overly hopeful about (in 2024 the soft-landing consensus), since the unpriced outcome drives the next large move.  #mech/behavioral _(added by opus cross-check)_
   > as a trender I'm always thinking about what are the things that investors are underestimating particularly what are they being overly hopeful about that may be a little unlikely
   asset: multi · horizon: months · testable: partly - compare surveyed consensus expectations with later realised moves · confidence: medium
   ^MT086-C12-X1
@@ -264,7 +264,7 @@ tags: [source, layer0]
   > the data starts in 1990 so you know that data period is definitely one where cash rates are much much lower
   asset: multi · horizon: years · testable: no: sample caveat · confidence: high
   ^MT086-C13-6
-- **Katy Kaminski** Splitting regimes by the level of cash rates (Quantica) and by inflation (Bonds Behaving Badly) are related but distinct conditioning variables, so results from one need not carry over to the other.  #mech/research_method _(added by Opus)_
+- **Katy Kaminski** Splitting regimes by the level of cash rates (Quantica) and by inflation (Bonds Behaving Badly) are related but distinct conditioning variables, so results from one need not carry over to the other.  #mech/research_method _(added by opus cross-check)_
   > they didn't focus on inflation but they focused on the level of rates which is somewhat corelated but not the same thing
   indicator: cash rate level vs inflation regime · asset: multi · horizon: years · testable: yes - run the same regime study conditioning on rate level and on inflation and compare · confidence: medium
   ^MT086-C13-X1

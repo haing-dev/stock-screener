@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 11744
 claims: 59
-added_by_opus: 5
+added_by_crosscheck: 5
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Nick Palus [caption spelling] (guest, quantitative strategies researcher, Goldman Sachs)", "Alan Dunne (guest host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, volatility scaling, AI agents, portfolio construction, backtest bias
 
-**Opus completeness estimate of first read:** 0.90 - thorough first read; missed the front-end interpretation of the yield rise, the consensus-forecast miss, the cross-sectional vs time-series caveat, the trend-timing verdict and the vintage-model fix; one wrong direction (signal strength) and one wrong speaker
+**Cross-check completeness estimate of first read:** 0.90 - thorough first read; missed the front-end interpretation of the yield rise, the consensus-forecast miss, the cross-sectional vs time-series caveat, the trend-timing verdict and the vintage-model fix; one wrong direction (signal strength) and one wrong speaker
 
 ## Coverage
 
@@ -69,7 +69,7 @@ tags: [source, layer0]
   > this kind of tendency amongst analysts to view the fundamentals and then the market reaction as as being very much linear
   indicator: positioning · asset: multi · testable: partly · confidence: medium
   ^MT009-C02-3
-- **Alan Dunne** Because the September 2026 yield rise was led by a global short-end repricing, it points to higher expected policy rates from stronger growth or a prolonged Iran conflict, not only to fiscal or debasement concerns that would hit the long end.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Alan Dunne** Because the September 2026 yield rise was led by a global short-end repricing, it points to higher expected policy rates from stronger growth or a prolonged Iran conflict, not only to fiscal or debasement concerns that would hit the long end.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > it's as if everybody now has taken a much more bullish view on global growth or else sees you know the conflict in Iran um staying on much longer
   indicator: 2-year yields globally vs long-end yields · asset: rates · direction: short-end yields up · horizon: months · conditions: front-end-led sell-off · testable: partly - decompose curve moves into front-end vs term premium · confidence: low
   ^MT009-C02-X1
@@ -95,7 +95,7 @@ tags: [source, layer0]
   > if you've got a 60 uh 40 portfolio and you've taken out some of the allocation and added it to trend following that that trend following exposure now is short bonds
   indicator: 60/40 plus trend following · asset: multi · direction: trend is short bonds when yields rise · horizon: months · conditions: Rising-yield regimes · testable: yes · confidence: high
   ^MT009-C03-5
-- **Nick Palus** In January-February 2026 the analyst consensus expected central-bank easing and normalisation, yet by September yields reached multi-year (in places decade) highs, showing how unreliable consensus rate forecasts are.  #mech/slow_reaction _(added by Opus, time-bound view)_
+- **Nick Palus** In January-February 2026 the analyst consensus expected central-bank easing and normalisation, yet by September yields reached multi-year (in places decade) highs, showing how unreliable consensus rate forecasts are.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
   > 6 months back, um analysts were projecting um rate cuts.
   indicator: analyst rate forecasts vs realised yields · asset: rates · horizon: months · testable: yes - consensus forecast errors · confidence: medium
   ^MT009-C03-X1
@@ -116,7 +116,7 @@ tags: [source, layer0]
 - **Nick Palus (caption spelling)** Bond vol stayed contained, so a vol-scaled signal did not strengthen despite the large yield move; smooth moves raise P&L.  #mech/cycle_persistence _(time-bound view)_
   > no strengthening of those of those um of those signals which attest to the point that the the move has been greater than the volatility at which it comes along
   indicator: vol-scaled trend signals · asset: rates · horizon: weeks · conditions: Low-vol trending moves · testable: yes · confidence: medium
-  **Correction (Opus):** Wrong direction: Nick says the volatility-scaled signals did NOT stay flat; they strengthened, because the yield move was larger than the (contained) bond volatility it came with ('no strengthening' is a caption error for 'now strengthening'). → Bond volatility stayed contained while yields rose sharply, so volatility-scaled trend signals strengthened (move larger than its volatility), and a smooth, low-vol move gives larger P&L than a choppy one.
+  **Correction (cross-check):** Wrong direction: Nick says the volatility-scaled signals did NOT stay flat; they strengthened, because the yield move was larger than the (contained) bond volatility it came with ('no strengthening' is a caption error for 'now strengthening'). → Bond volatility stayed contained while yields rose sharply, so volatility-scaled trend signals strengthened (move larger than its volatility), and a smooth, low-vol move gives larger P&L than a choppy one.
   ^MT009-C04-4
 
 ### C05
@@ -146,7 +146,7 @@ tags: [source, layer0]
   > what they find broadly speaking is no significant value above and beyond a 10-month static look back
   indicator: 10-month static vs VIX-dependent lookback · asset: multi · horizon: months · testable: yes - paper result · confidence: high
   ^MT009-C06-3
-- **Nick Palus** The Alpha Architect test is long-only relative (cross-sectional) momentum with monthly rebalancing, so its results do not transfer directly to directional time-series trend following, which takes long or short positions on each asset's own trend.  #mech/research_method _(added by Opus)_
+- **Nick Palus** The Alpha Architect test is long-only relative (cross-sectional) momentum with monthly rebalancing, so its results do not transfer directly to directional time-series trend following, which takes long or short positions on each asset's own trend.  #mech/research_method _(added by opus cross-check)_
   > a certain extent more of a cross-sectional momentum strategy because if you're picking the best, it is not clear that this is a long or a short position.
   indicator: cross-sectional vs time-series momentum · asset: multi · horizon: months · testable: yes - rerun with time-series signals · confidence: medium
   ^MT009-C06-X1
@@ -186,7 +186,7 @@ tags: [source, layer0]
   > can I deploy that speed dynamically and will it be fast enough to to cut to cut my exposures
   asset: multi · horizon: weeks · testable: partly · confidence: medium
   ^MT009-C08-3
-- **Nick Palus** Using volatility to classify regimes where trend reversals are more likely, and so to time trend following, is very hard and he cannot show statistically that it is worth doing.  #mech/research_method _(added by Opus)_
+- **Nick Palus** Using volatility to classify regimes where trend reversals are more likely, and so to time trend following, is very hard and he cannot show statistically that it is worth doing.  #mech/research_method _(added by opus cross-check)_
   > I wouldn't necessarily argue that I can I can prove statistically at least using data um that this is um that this is a pursuit worth pursuing
   indicator: volatility-based regime classification for timing trend · asset: multi · testable: yes - out-of-sample trend timing tests · confidence: medium
   ^MT009-C08-X1
@@ -282,7 +282,7 @@ tags: [source, layer0]
   > So if all agents follow the same model from one of the big kind of genai kind of companies, you might find yourself being exposed to some correlation in the in the model.
   asset: multi · testable: partly · confidence: medium
   ^MT009-C14-3
-- **Alan Dunne** One fix for LLM look-ahead bias is to restrict backtests to model vintages available at each date, but older models may be too weak to run the analysis, so agentic allocation results must largely be taken at face value.  #mech/research_method _(added by Opus)_
+- **Alan Dunne** One fix for LLM look-ahead bias is to restrict backtests to model vintages available at each date, but older models may be too weak to run the analysis, so agentic allocation results must largely be taken at face value.  #mech/research_method _(added by opus cross-check)_
   > maybe those ones weren't even computationally strong enough at that time to run these types of analysis
   indicator: point-in-time LLM model vintages · asset: multi · testable: partly - only forward or vintage-model tests · confidence: medium
   ^MT009-C14-X1
@@ -305,7 +305,7 @@ tags: [source, layer0]
 - **Alan Dunne** The binding constraint in asset management is human decision bandwidth, which agentic AI relaxes.  #mech/structural_shift
   > it is the finite bandwidth of human decision makers
   asset: multi · testable: no · confidence: medium
-  **Correction (Opus):** Wrong speaker: Nick reads this from the opening of the Ang paper; Alan only raised multiple objectives. → Nick (citing the paper): the binding constraint in asset management is the finite bandwidth of human decision makers, not data or model sophistication, which agentic AI relaxes.
+  **Correction (cross-check):** Wrong speaker: Nick reads this from the opening of the Ang paper; Alan only raised multiple objectives. → Nick (citing the paper): the binding constraint in asset management is the finite bandwidth of human decision makers, not data or model sophistication, which agentic AI relaxes.
   ^MT009-C16-1
 - **Nick Palus (caption spelling)** Institutions value trend following because it deploys exposure faster than investment boards decide.  #mech/slow_reaction
   > we like trend following because it can be opportunistic and deploy the exposures faster than our ability to bring together the investment board

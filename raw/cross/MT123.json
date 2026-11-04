@@ -1,0 +1,96 @@
+{
+ "source_id": "MT123",
+ "added_claims": [
+  {
+   "claim_id": "MT123-C01-X1",
+   "chunk": "C01",
+   "speaker": "Tracy Alaway",
+   "quote": "Bloomberg published a survey of Traders where basically everyone was saying that they think prices are going to go higher",
+   "claim": "In May 2024 a Bloomberg survey found traders almost unanimously expecting higher cocoa prices (above $15,000 later in the year) while prices were sliding from above 11,000 to about 8,000, a disconnect between consensus supply-shortage views and price action.",
+   "mechanism": "crowding_positioning",
+   "asset_class": "commodities",
+   "indicator": "Bloomberg trader survey vs cocoa futures price",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "consensus bullishness while price falls",
+   "testable": "partly - survey expectations vs subsequent returns",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT123-C02-X1",
+   "chunk": "C02",
+   "speaker": "Pierre Andurand",
+   "quote": "the price can go up 10 times your your tablet is only going to double in price",
+   "claim": "Pass-through is muted because milk chocolate contains under 10% cocoa: a tenfold rise in cocoa roughly doubles a bar's price, and even a heavy high-cocoa chocolate eater pays only about $10 a month more (a moderate eater $2 to $5), so higher cocoa prices do not reduce consumption.",
+   "mechanism": "structural_shift",
+   "asset_class": "commodities",
+   "indicator": "cocoa share of chocolate retail price and consumer budget",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "demand-side inelasticity at the consumer level",
+   "testable": "yes - consumption elasticity measurable",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT123-C04-X1",
+   "chunk": "C04",
+   "speaker": "Pierre Andurand",
+   "quote": "the prices of both those elements also went up even more than cocoa beans which means that actually we probably had some destocking",
+   "claim": "Cocoa butter and powder prices rose even more than beans, which Andurand reads as evidence of destocking at the processing level as well, consistent with demand being met from inventories along the chain rather than from new production.",
+   "mechanism": "overshoot",
+   "asset_class": "commodities",
+   "indicator": "cocoa butter and powder prices relative to beans",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - product price ratios are observable",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT123-C06-X1",
+   "chunk": "C06",
+   "speaker": "Pierre Andurand",
+   "quote": "we looked at cofi quickly it it looked less uh it looked interesting as well because you get big losses in production from Vietnam",
+   "claim": "Andurand screened coffee (large Vietnamese production losses) and judged it interesting but not exciting enough to trade, and had not looked at orange juice, showing he picks only supply shocks big enough to dominate the balance.",
+   "mechanism": "research_method",
+   "asset_class": "commodities",
+   "indicator": "coffee supply shock screen",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - discretionary screening",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  }
+ ],
+ "corrections": [
+  {
+   "claim_id": "MT123-C02-2",
+   "issue": "Number uncertain in the caption: the auto-caption reads \"down 177%\" which cannot be a decline; Andurand versus consensus is stated as production down about 17.7 percent (or possibly 17 percent) versus analysts at 11 percent.",
+   "fix": "Andurand's estimate of cocoa production is down roughly 17 to 18 percent (caption reads \"177%\") versus consensus near 11 percent; sell-side estimates are conservative because analysts do not want to alarm clients."
+  },
+  {
+   "claim_id": "MT123-C02-7",
+   "issue": "Imprecise figure: the calculation gives about 1.7 grams of cocoa per person per day, which at $10,000 a ton is about 1.7 US cents per day, not several cents.",
+   "fix": "Back-of-envelope: 5 million tons over 8 billion people is about 1.7 grams per person per day, costing about 1.7 cents per day even at $10,000 a ton, so higher prices barely touch consumer budgets."
+  }
+ ],
+ "chunks_checked": [
+  "C01",
+  "C02",
+  "C03",
+  "C04",
+  "C05",
+  "C06",
+  "C07",
+  "C08",
+  "C09",
+  "C10",
+  "C11",
+  "C12"
+ ],
+ "completeness_estimate": "0.93 - first reader extracted nearly all of the thesis, numbers, mechanisms and sizing points with correct speaker; missed only the trader-survey disconnect, retail pass-through arithmetic, product-price destocking evidence and the coffee screen"
+}

@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 16236
 claims: 83
-added_by_opus: 17
+added_by_crosscheck: 17
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Rob Carver (systematic trader and author)", "Niels Kaastrup-Larsen (host, hedge fund manager)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, CTA replication, position sizing and cost-aware rebalancing, diversification
 
-**Opus completeness estimate of first read:** 0.82 - first reader caught all main arguments (CTA blame, replication, buffering, correlations, factors); missed secondary reasoning steps, numbers (index YTD, correlation levels) and several caveats.
+**Cross-check completeness estimate of first read:** 0.82 - first reader caught all main arguments (CTA blame, replication, buffering, correlations, factors); missed secondary reasoning steps, numbers (index YTD, correlation levels) and several caveats.
 
 ## Coverage
 
@@ -72,7 +72,7 @@ tags: [source, layer0]
   > Well, in fact, we've sold about 90% of our cocoa into that rally because as you mentioned, when vol expands, we contract our position size
   indicator: cocoa price and volatility · asset: commodities · direction: position size falls when vol rises · horizon: months · testable: yes - inverse-vol scaling is mechanical · confidence: high
   ^MT026-C02-3
-- **Rob Carver** CTA positioning in a market can be estimated by running a simple momentum plus volatility-scaled sizing model, which is how one can check claims that CTAs hold big positions (e.g. in oil).  #mech/crowding_positioning _(added by Opus)_
+- **Rob Carver** CTA positioning in a market can be estimated by running a simple momentum plus volatility-scaled sizing model, which is how one can check claims that CTAs hold big positions (e.g. in oil).  #mech/crowding_positioning _(added by opus cross-check)_
   > if you do any kind of basic replication of position sizing and and behavior, and you you got to have understanding of how things like momentum and volatility drive our positioning.
   indicator: estimated CTA position from a simple trend + vol-targeting model · asset: multi · horizon: weeks · testable: yes - simple trend model positions can be computed from prices · confidence: high
   ^MT026-C02-X1
@@ -90,7 +90,7 @@ tags: [source, layer0]
   > if if I had somebody working for me and who came up with a backtest that was one month long, they'd be out the door
   asset: multi · horizon: years · testable: yes - sample-size and significance can be computed · confidence: high
   ^MT026-C03-3
-- **Rob Carver** One month of data can only be statistically meaningful for high-frequency strategies, because only they generate enough independent observations in a month; for slow strategies it is noise.  #mech/research_method _(added by Opus)_
+- **Rob Carver** One month of data can only be statistically meaningful for high-frequency strategies, because only they generate enough independent observations in a month; for slow strategies it is noise.  #mech/research_method _(added by opus cross-check)_
   > the only place that might make sense is in the high frequency space where you can get enough data points with a month data to get a statistically significant result.
   asset: multi · conditions: holds for slow strategies; exception for high-frequency trading · testable: partly - follows from sample-size statistics · confidence: high
   ^MT026-C03-X1
@@ -108,7 +108,7 @@ tags: [source, layer0]
   > Right now, the US debt, according to this interview, is $35 trillion. But the income from tax receipts is only 5 trillion per year.
   indicator: US federal debt $35tn, receipts $5tn, deficit $2tn · asset: rates · horizon: years · testable: partly - data are public but the inference is a projection · confidence: medium
   ^MT026-C04-3
-- **Niels Kaastrup-Larsen** In October 2024 the ECB cut to 3.25%, its first back-to-back cut in 13 years, while long bond yields were rising after the Fed's 50 bp cut, i.e. policy easing coincided with a bond selloff.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** In October 2024 the ECB cut to 3.25%, its first back-to-back cut in 13 years, while long bond yields were rising after the Fed's 50 bp cut, i.e. policy easing coincided with a bond selloff.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > ECB did it earlier this month as well. They're down to 3 and 1/4, I think, now. And it was the first back-to-back cut in 13 years
   indicator: ECB deposit rate; consecutive cuts · asset: rates · direction: policy rates down while long yields up · horizon: months · testable: partly - data point, no rule · confidence: medium
   ^MT026-C04-X1
@@ -152,15 +152,15 @@ tags: [source, layer0]
   > SocGen trend down almost 3% this month now down 71 basis points for the year.
   indicator: SG Trend Index, SG CTA Index, BTOP50, S&P 500, MSCI World · asset: multi · direction: gold and silver positive; bonds, equities, FX negative · horizon: weeks · testable: yes - index data are public · confidence: high
   ^MT026-C06-4
-- **Niels Kaastrup-Larsen** Paul Tudor Jones publicly favoured trend following after four to five weak years for the strategy, and a strong run followed soon after, an anecdote that strategy returns can rebound after long drawdowns.  #mech/behavioral _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** Paul Tudor Jones publicly favoured trend following after four to five weak years for the strategy, and a strong run followed soon after, an anecdote that strategy returns can rebound after long drawdowns.  #mech/behavioral _(added by opus cross-check, time-bound view)_
   > this is after four five years where trend following had not done so well, he wanted to put that in trend
   indicator: trend-following index trailing 4-5 year performance · asset: multi · direction: long trend following after multi-year underperformance · horizon: years · testable: partly - single anecdote; strategy-level reversal can be tested on CTA index · confidence: low
   ^MT026-C06-X1
-- **Niels Kaastrup-Larsen** Trend followers lost most in bonds in October 2024 even though their long bond positions had already shrunk, showing that a reversal still costs money while the trend signal is decaying.  #mech/slow_reaction _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** Trend followers lost most in bonds in October 2024 even though their long bond positions had already shrunk, showing that a reversal still costs money while the trend signal is decaying.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
   > that's probably where trend followers are hurting the most this month despite long exposure becoming smaller in bonds
   indicator: CTA bond exposure; SocGen Trend Index · asset: rates · direction: trend followers lose on bond selloff after long positions · horizon: weeks · conditions: trend reversal after a long bond rally · testable: partly - index attribution not public · confidence: medium
   ^MT026-C06-X2
-- **Niels Kaastrup-Larsen** In October 2024 the SocGen short-term traders index was flat for the year (BTOP50 +2.88% YTD, SG CTA +0.63% YTD) while the S&P 500 was up about 21.5%, i.e. CTAs lagged equities sharply that year.  #mech/slow_reaction _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** In October 2024 the SocGen short-term traders index was flat for the year (BTOP50 +2.88% YTD, SG CTA +0.63% YTD) while the S&P 500 was up about 21.5%, i.e. CTAs lagged equities sharply that year.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
   > The short-term traders index is down 62 basis points flat as a pancake this year.
   indicator: SG Short-Term Traders Index; BTOP50; SG CTA Index; S&P 500 YTD · asset: multi · horizon: months · testable: yes - index data · confidence: high
   ^MT026-C06-X3
@@ -188,11 +188,11 @@ tags: [source, layer0]
   > So, we can actually treat trend following, particularly short-term trend following, as a bit like buying an option without buying an option.
   indicator: trend following payoff convexity · asset: multi · direction: long convexity · horizon: months · testable: yes - payoff vs straddle returns · confidence: high
   ^MT026-C08-3
-- **Rob Carver** A dynamic-optimisation system could be rerun hourly to pick up new prices (handling stale prices in closed markets), but for a slow system trading off the prior close is good enough and Rob does not bother.  #mech/risk_management _(added by Opus)_
+- **Rob Carver** A dynamic-optimisation system could be rerun hourly to pick up new prices (handling stale prices in closed markets), but for a slow system trading off the prior close is good enough and Rob does not bother.  #mech/risk_management _(added by opus cross-check)_
   > in theory, I could actually run that system on an intraday basis and run it every every hour or so
   asset: multi · horizon: days · conditions: slow systems; markets with different trading hours give stale prices · testable: yes - compare daily vs hourly reruns in backtest · confidence: medium
   ^MT026-C08-X1
-- **Rob Carver** The main cost of expressing directional forecasts with options instead of futures is operational: options need much more implementation, infrastructure and data work.  #mech/new _(added by Opus)_
+- **Rob Carver** The main cost of expressing directional forecasts with options instead of futures is operational: options need much more implementation, infrastructure and data work.  #mech/new _(added by opus cross-check)_
   > the main con is that options are more complicated than futures. So, from a kind of implementation and infrastructure and data perspective, you know, there's a lot of work to do.
   asset: multi · testable: no - operational judgement · confidence: high
   ^MT026-C08-X2
@@ -238,7 +238,7 @@ tags: [source, layer0]
   > I actually use um roughly a 6-month window, and I do use an exponentially rolling method
   indicator: 6-month exponentially weighted correlation of instrument returns · asset: multi · horizon: months · testable: yes - window choice is testable · confidence: high
   ^MT026-C11-2
-- **Rob Carver** Bund vs US 10-year correlation is about 0.5 on average (Bund vs Schatz about 0.9) and falls when the US and German rate cycles are misaligned, rising when they move in lockstep, so cross-market bond correlations are regime dependent.  #mech/cycle_persistence _(added by Opus)_
+- **Rob Carver** Bund vs US 10-year correlation is about 0.5 on average (Bund vs Schatz about 0.9) and falls when the US and German rate cycles are misaligned, rising when they move in lockstep, so cross-market bond correlations are regime dependent.  #mech/cycle_persistence _(added by opus cross-check)_
   > there's going to be times when the US and German economies are in quite different things, and their rate cycles are going to be misaligned and the correlations will be lower.
   indicator: rolling correlation Bund vs UST 10y; Bund vs Schatz · asset: rates · direction: correlation lower when rate cycles diverge, higher in crises · horizon: months · conditions: rate-cycle alignment between US and Germany · testable: yes - rolling correlations vs policy-rate divergence · confidence: medium
   ^MT026-C11-X1
@@ -308,11 +308,11 @@ tags: [source, layer0]
   > you're also adding the chance of 200 markets being stuck in a range and you losing money of those
   indicator: number of markets · asset: multi · conditions: small position sizes in extra markets · testable: partly - compare 50-market vs 300-market programs · confidence: medium
   ^MT026-C16-3
-- **Rob Carver** Adding alternative (non-traditional) futures markets to a trend portfolio adds only a little diversification, perhaps one new latent factor, because most markets load on the same few macro trends.  #mech/slow_reaction _(added by Opus)_
+- **Rob Carver** Adding alternative (non-traditional) futures markets to a trend portfolio adds only a little diversification, perhaps one new latent factor, because most markets load on the same few macro trends.  #mech/slow_reaction _(added by opus cross-check)_
   > even that's kind of only buys you a little bit more diversification. You might be introducing that one new risk factor
   asset: multi · horizon: years · testable: yes - factor analysis of trend returns with and without alternative markets · confidence: medium
   ^MT026-C16-X1
-- **Rob Carver** Yavin's conclusion: a plain-vanilla trend CTA gains little from 300 markets; extra value comes from lower-correlation approaches, though Rob notes the author sells such a different CTA.  #mech/research_method _(added by Opus)_
+- **Rob Carver** Yavin's conclusion: a plain-vanilla trend CTA gains little from 300 markets; extra value comes from lower-correlation approaches, though Rob notes the author sells such a different CTA.  #mech/research_method _(added by opus cross-check)_
   > if you're just a plain vanilla trend following CTA, there's probably no point in having 300 markets.
   asset: multi · horizon: years · conditions: vanilla trend following · testable: yes - compare backtests by universe size · confidence: medium
   ^MT026-C16-X2
@@ -334,7 +334,7 @@ tags: [source, layer0]
   > the correlations potentially probably understate the amount of diversification that's available as you add more assets, especially in trend following
   indicator: portfolio Sharpe vs correlation-implied diversification · asset: multi · testable: yes - compare realized vs correlation-implied gains · confidence: medium
   ^MT026-C17-4
-- **Rob Carver** Low-cost beta trend products cannibalise high-fee flagship funds because much of a flagship's return is the same beta, as equity hedge funds once charged full fees on beta they would not unbundle.  #mech/new _(added by Opus)_
+- **Rob Carver** Low-cost beta trend products cannibalise high-fee flagship funds because much of a flagship's return is the same beta, as equity hedge funds once charged full fees on beta they would not unbundle.  #mech/new _(added by opus cross-check)_
   > there's a big risk this could outperform the flagship fund, and and people would be going, "Well, are we paying you guys, you know, two and 20 when there's this thing here for 50 basis points flat
   asset: multi · horizon: years · testable: partly - compare flagship vs beta product returns net of fees · confidence: medium
   ^MT026-C17-X1
@@ -348,7 +348,7 @@ tags: [source, layer0]
   > why don't I just build a really simple model that does that in, say, 30 liquid futures markets
   indicator: simple trend model on 30 liquid futures · asset: multi · testable: yes - backtest vs CTA index · confidence: high
   ^MT026-C18-2
-- **Rob Carver** If CTA returns are driven by only four or five latent macro trend factors, replication should work: estimate those factors from data and hold a small portfolio that captures them without CTA fees.  #mech/slow_reaction _(added by Opus)_
+- **Rob Carver** If CTA returns are driven by only four or five latent macro trend factors, replication should work: estimate those factors from data and hold a small portfolio that captures them without CTA fees.  #mech/slow_reaction _(added by opus cross-check)_
   > one reason why replication should work is if they really are just a small number of kind of macro trend factors out there
   asset: multi · horizon: years · conditions: holds only if few factors dominate · testable: yes - factor count from PCA of CTA returns · confidence: medium
   ^MT026-C18-X1
@@ -375,13 +375,13 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** The paper's saving estimate of 200bp management fee, 110bp performance fee and 275bp unnetted costs looks too high; it implies a ceiling Sharpe near one for replication savings over tracking error.  #mech/research_method
   > And then 275 basis points of unnetted transaction costs. And I'm kind of thinking compared to the cost we pay, compared to the cost you just mentioned, this seems high.
   indicator: CTA fee and cost assumptions · asset: multi · testable: yes - compare to realistic fees · confidence: medium
-  **Correction (Opus):** Mixes speakers: the 'Sharpe near one' ceiling is the paper's calculation as presented by Rob; Niels's own point is only that the cost inputs (200 bp management fee, 110 bp performance fee, 275 bp unnetted costs) look too high. → Niels says the paper's cost-saving inputs (200 bp management fee, 110 bp performance fee, 275 bp unnetted costs) look too high versus actual costs, so the paper's Sharpe-near-one ratio of cost savings to tracking error (as described by Rob) overstates the gain.
+  **Correction (cross-check):** Mixes speakers: the 'Sharpe near one' ceiling is the paper's calculation as presented by Rob; Niels's own point is only that the cost inputs (200 bp management fee, 110 bp performance fee, 275 bp unnetted costs) look too high. → Niels says the paper's cost-saving inputs (200 bp management fee, 110 bp performance fee, 275 bp unnetted costs) look too high versus actual costs, so the paper's Sharpe-near-one ratio of cost savings to tracking error (as described by Rob) overstates the gain.
   ^MT026-C20-1
 - **Rob Carver** Realistic replication savings are about 100 to 200 bp (paper's actual BTOP50 result implied a 0.23 ratio, about 150bp), minus the replicator's own fees.  #mech/risk_premium
   > it's probably not unreasonable to to be able to to make an extra 100, maybe 200 basis points through a combination of a little bit of transaction cost saving and a bit of a bit of fee saving
   indicator: replication fee and cost saving · asset: multi · horizon: years · testable: yes - compute net savings · confidence: medium
   ^MT026-C20-2
-- **Rob Carver** Many independent managers each pay costs on trades that would offset each other; one combined book nets those trades, which is the 'unnetted transaction cost' saving claimed for replication.  #mech/new _(added by Opus)_
+- **Rob Carver** Many independent managers each pay costs on trades that would offset each other; one combined book nets those trades, which is the 'unnetted transaction cost' saving claimed for replication.  #mech/new _(added by opus cross-check)_
   > If you had them under a single roof, you could actually get them to net off a lot of those trades
   asset: multi · testable: partly - needs manager-level trades · confidence: medium
   ^MT026-C20-X1
@@ -409,7 +409,7 @@ tags: [source, layer0]
   > for me fundamentally it's not possible to to do a good replication job with a purely backward looking measure based only on returns
   asset: multi · testable: partly - out-of-sample tracking test · confidence: high
   ^MT026-C22-3
-- **Rob Carver** Diversifying across 10 to 15 CTAs needs a large portfolio, because with a 5 to 10% CTA allocation each manager ticket is about 1% of assets and must meet minimums, so most investors cannot do it.  #mech/new _(added by Opus)_
+- **Rob Carver** Diversifying across 10 to 15 CTAs needs a large portfolio, because with a 5 to 10% CTA allocation each manager ticket is about 1% of assets and must meet minimums, so most investors cannot do it.  #mech/new _(added by opus cross-check)_
   > pick say 10 15 CTAs and dump, you know, a chunk of money into them. You'd need to be quite wealthy to do that
   asset: multi · testable: no - practical constraint · confidence: high
   ^MT026-C22-X1
@@ -423,11 +423,11 @@ tags: [source, layer0]
   > because they must believe that within managers there is something called skill
   indicator: manager skill persistence · asset: multi · horizon: years · testable: partly - manager persistence studies · confidence: medium
   ^MT026-C23-2
-- **Rob Carver** A single CTA manager, even one in the index, has dispersion to the CTA index by construction, so tracking error against the index is not unique to replicators.  #mech/research_method _(added by Opus)_
+- **Rob Carver** A single CTA manager, even one in the index, has dispersion to the CTA index by construction, so tracking error against the index is not unique to replicators.  #mech/research_method _(added by opus cross-check)_
   > they're going to have dispersion to it, you know, something like like just like the replication people can.
   indicator: manager tracking error vs SG CTA/BTOP50 index · asset: multi · horizon: years · testable: yes - manager vs index tracking error · confidence: medium
   ^MT026-C23-X1
-- **Niels Kaastrup-Larsen** Replication ETFs opened trend following to smaller investors, and CTA managers now offer versions of their own strategies as ETFs, an alternative to replication.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** Replication ETFs opened trend following to smaller investors, and CTA managers now offer versions of their own strategies as ETFs, an alternative to replication.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > some of the managers now are offering this or some version of their strategies in in ETF format
   asset: multi · horizon: years · testable: no - industry observation · confidence: medium
   ^MT026-C23-X2

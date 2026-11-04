@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 12565
 claims: 50
-added_by_opus: 3
+added_by_crosscheck: 3
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Niels Kastrup-Larsen (host, Top Traders Unplugged; caption spelling Neils Castro Razen)", "Rob Carver (co-host, systematic trader and author)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, systematic vs discretionary, forecast weight fitting, AI in quant research, volatility regimes
 
-**Opus completeness estimate of first read:** 0.93 - first reader was thorough and accurate; missed Rob's view that Treasury buybacks are immaterial, the politics-vs-data point on asset-class fitting, and his reading of the paper's out-of-sample result
+**Cross-check completeness estimate of first read:** 0.93 - first reader was thorough and accurate; missed Rob's view that Treasury buybacks are immaterial, the politics-vs-data point on asset-class fitting, and his reading of the paper's out-of-sample result
 
 ## Coverage
 
@@ -67,7 +67,7 @@ tags: [source, layer0]
   > I am short um US bonds, specifically 10 years
   indicator: US 10-year, Korean 10-year · asset: rates · direction: short bonds · horizon: months · testable: no - disclosure of position · confidence: high
   ^MT010-C02-3
-- **Rob Carver** Treasury long-end buybacks of a few billion dollars are far too small to hold down US yields; at most they are a policy signal, and yields have kept rising despite them.  #mech/liquidity_flows _(added by Opus, time-bound view)_
+- **Rob Carver** Treasury long-end buybacks of a few billion dollars are far too small to hold down US yields; at most they are a policy signal, and yields have kept rising despite them.  #mech/liquidity_flows _(added by opus cross-check, time-bound view)_
   > 6 billion in in the US bond market is it's not even a drop in the ocean. It's like a drop a drop inside a drop in the ocean.
   indicator: Treasury buyback size vs market size · asset: rates · direction: buybacks do not lower long yields · horizon: weeks · conditions: buybacks small relative to issuance · testable: yes - yield reaction around buyback operations · confidence: high
   ^MT010-C02-X1
@@ -121,7 +121,7 @@ tags: [source, layer0]
   > you probably shouldn't um fit everything individually because then you really do have a lot of noise and not much signal
   indicator: forecast weights fit level · asset: multi · horizon: years · testable: yes - Rob's blog tests · confidence: high
   ^MT010-C07-1
-- **Rob Carver** Whether to use different rule weights (more carry, faster or slower trend) by asset class was partly decided by organisational politics in asset-class research teams; it should instead be treated as an empirical question tested on data.  #mech/research_method _(added by Opus)_
+- **Rob Carver** Whether to use different rule weights (more carry, faster or slower trend) by asset class was partly decided by organisational politics in asset-class research teams; it should instead be treated as an empirical question tested on data.  #mech/research_method _(added by opus cross-check)_
   > that's actually um partly a political question in a way because um you know um as as people managing a specific part of our portfolio, we we you know we'd get very protective about it
   indicator: asset-class-specific vs pooled rule weights · asset: multi · conditions: asset-class team structure (AHL example) · testable: yes - compare pooled vs asset-class fits out of sample · confidence: medium
   ^MT010-C07-X1
@@ -259,7 +259,7 @@ tags: [source, layer0]
   > I have a prior towards simplicity which means I have a prior towards not doing this kind of thing
   asset: multi · testable: no · confidence: high
   ^MT010-C16-4
-- **Rob Carver** Rob reads the decade-later Alpha Architect update as showing that VIX-dependent trend speed still seems to work out of sample, while warning that the headline result hides much and should not be copied into a system without understanding it.  #mech/research_method _(added by Opus)_
+- **Rob Carver** Rob reads the decade-later Alpha Architect update as showing that VIX-dependent trend speed still seems to work out of sample, while warning that the headline result hides much and should not be copied into a system without understanding it.  #mech/research_method _(added by opus cross-check)_
   > they they did find that it still this thing still seems to work.
   indicator: VIX-dependent lookback vs static lookback · asset: multi · horizon: months · conditions: out-of-sample extension of 2016-17 study · testable: yes - replicate on own data · confidence: low
   ^MT010-C16-X1

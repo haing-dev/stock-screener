@@ -5,10 +5,10 @@ date: 2025-12-15
 channel: "Graham Capital Management"
 url: https://www.youtube.com/watch?v=hFYMQNHbpGc
 words: 5823
-claims: 24
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 26
+added_by_crosscheck: 2
+corrections: 1
+crosscheck: "opus cross-check"
 speakers: ["Ken Tropin (founder, Graham Capital Management)", "Bilal Hafeez (host, Macro Hive)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Macro Hive (Dec 2025) with Graham founder Ken Tropin: conservative macro-focused philosophy (75% macro risk) vs pod shops, talent and AI, and 2026 views. Main views: term premium is underpriced (US steepener), Japan/Europe/Canada hawkish, dollar range-bound, AI is real but expensive, stay small when conviction is low.
 
 **Approach:** macro, fixed income relative value, term premium, risk management, AI, central banks
+
+**Cross-check completeness estimate of first read:** 0.93 - first reader captured the views, risk rules and FX rule; missed the administration-pressure explanation of the stalled steepener and the outsider-Fed-chair uncertainty; one claim overstated economic weakness.
 
 ## Coverage
 
@@ -91,6 +93,10 @@ tags: [source, layer0]
   > People have made parallels to the dot period and and and people are using that as a template
   asset: equities · horizon: months · testable: partly: analog · confidence: low
   ^MT090-C04-5
+- **Ken Tropin** The US curve steepener stalled in late 2025 partly because of normal position churn and partly because the administration is pushing for lower rates, which leans against the term-premium repricing in the short run.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
+  > people put on trades and then take them off. You've got a lot of pressure from the administration to get rates lower.
+  indicator: US yield curve slope; political pressure on rates · asset: rates · direction: delays curve steepening · horizon: months · conditions: while the administration actively presses for lower rates · testable: partly - relate curve moves to dated administration statements on rates · confidence: medium
+  ^MT090-C04-X1
 
 ### C05
 - **Ken Tropin** AI is a real, concentrated, expensive equity bet; a correction would be normal and warrants a risk-management watch on macro spillover.  #mech/risk_premium _(time-bound view)_
@@ -109,6 +115,10 @@ tags: [source, layer0]
   > most people in private credit but not all uh are pretty good at understanding what you know risks they're taking
   indicator: private credit · asset: credit · horizon: months · testable: no · confidence: low
   ^MT090-C05-4
+- **Ken Tropin** Whether a Fed put protects equities in an AI correction is uncertain because the likely next chair (Hassett) is an outsider, so the committee's cohesion and reaction function are unknown.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
+  > he's sort of an outsider not an insider. So, it'll be interesting to see how much uh you know um of of a sort of a team mentality there is at the Fed
+  indicator: Fed chair succession; FOMC dissent · asset: equities · horizon: months · conditions: equity correction under a new outsider Fed chair · testable: partly - track FOMC dissents and policy response to drawdowns under the new chair · confidence: low
+  ^MT090-C05-X1
 
 ### C06
 - **Ken Tropin** ...a liquidity shock can force even well-run funds to suspend redemptions, so choose funds with strong risk management.  #mech/liquidity_flows
@@ -126,6 +136,7 @@ tags: [source, layer0]
 - **Ken Tropin** Japan is driving global rates higher (BoJ hawkish for the first time in decades), as are Canada and Europe, despite weak economies, a unprecedented pattern.  #mech/policy_reaction _(time-bound view)_
   > Japan is the most hawkish that I can remember
   indicator: BoJ policy; global yields · asset: rates · horizon: months · testable: yes · confidence: medium
+  **Correction (cross-check):** overstates: Tropin says the hawkishness comes even though Europe's economy is not strong, while the Asian economy may be pretty strong; he does not call all the economies weak → Japan is driving global rates higher (BoJ the most hawkish in decades), with Canada and Europe also turning hawkish even though Europe's economy is weak (Asia stronger), an unprecedented and hard-to-explain pattern.
   ^MT090-C06-4
 
 ### C07

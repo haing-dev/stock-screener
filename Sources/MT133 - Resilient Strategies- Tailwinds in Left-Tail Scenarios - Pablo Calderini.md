@@ -5,10 +5,10 @@ date: 2024-06-03
 channel: "Graham Capital Management"
 url: https://www.youtube.com/watch?v=9lb78PgOHEg
 words: 3838
-claims: 21
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 31
+added_by_crosscheck: 10
+corrections: 1
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Pablo Calderini (Graham Capital Management, macro portfolio manager)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Graham Capital talk (mid-2024): central-bank regime history, left-tail risks, stock-bond correlation drivers and the case for adding discretionary/systematic macro to a 60/40 portfolio.
 
 **Approach:** macro, diversification, stock-bond correlation, tail risk, monetary policy
+
+**Cross-check completeness estimate of first read:** 0.82 - first reader caught the headline themes, statistics and tables (central-bank regimes, vol, stock-bond correlation, drawdown record, 60/40 results); missed supporting mechanisms (post-COVID policy sequence, Middle East reading, macro style and vol reduction reasons) and misordered the Q1 2024 rally versus the Fed pivot.
 
 ## Coverage
 
@@ -45,7 +47,16 @@ tags: [source, layer0]
 - **Pablo Calderini** In Q1 2024 equities rose in a straight line from about 4200 to 5200 on the S&P with an information ratio near 4 versus a normal 0.6-0.7, after the Fed turned dovish in December and volatility hit lows.  #mech/policy_reaction _(time-bound view)_
   > They had a four information ratio in Q1, 2000 this year, right?
   indicator: S&P 500 information ratio, Fed pivot · asset: equities · direction: long equities · horizon: months · conditions: dovish global central banks, decent growth · testable: yes · confidence: medium
+  **Correction (cross-check):** Says equities rallied 'after the Fed turned dovish in December'. Pablo says the S&P bottomed around 4200 at the end of October and rose 1000 points in four months, and that the rally started before the Fed pivot (markets were reading it ahead of time). → From a late-October 2023 low near 4200 the S&P rose about 1000 points in four months, in a near straight line with an information ratio near 4 in Q1 2024 versus a normal 0.6-0.7, with volatility at lows; the rally began before the Fed's December dovish pivot, so markets anticipated it.
   ^MT133-C01-3
+- **Pablo Calderini** The COVID shock was external but triggered a massive central-bank reaction and asset inflation; after years of loose monetary and fiscal policy, goods and consumer inflation arrived in 2022, so loose policy sowed the inflation shock that ended the 'bad news is good news' regime.  #mech/policy_reaction _(added by sonnet-xhigh cross-check)_
+  > after so many years of loose monetary policy, massively loose fiscal policy, finally we had this inflation shock, which was a game changer
+  indicator: central bank easing, fiscal stimulus, inflation · asset: multi · direction: asset inflation, then consumer inflation · horizon: years · conditions: Applies to the 2020-22 sequence. · testable: partly - historical sequence, causal link is argued · confidence: medium
+  ^MT133-C01-X1
+- **Pablo Calderini** In December 2023 the Fed and nearly every developed central bank (all except the BoJ) turned dovish while growth was decent, a benign backdrop for equities, and markets had already rallied in anticipation of it.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > every developed central bank really became what's called dovish
+  indicator: central bank dovish pivot Dec 2023 · asset: equities · direction: equities up · horizon: months · conditions: Growth must be decent for easing to be bullish rather than a recession signal. · testable: yes - equity returns around the pivot · confidence: medium
+  ^MT133-C01-X2
 
 ### C02
 - **Pablo Calderini** VIX (13 low, about 16), MOVE (about 100) and JPM FX vol all sat at low levels, which contrasts with elevated geopolitical and economic risk.  #mech/crowding_positioning _(time-bound view)_
@@ -60,6 +71,10 @@ tags: [source, layer0]
   > core PCE, right? So it's not only the PCE index, but it's the one that excludes the most volatile items
   indicator: core PCE · asset: rates · horizon: months · testable: yes · confidence: high
   ^MT133-C02-3
+- **Pablo Calderini** Pablo reads the April 2024 Iran-Israel exchange as largely symbolic, giving a short-term truce, but a line was crossed (direct attacks from each country's territory) and small war games can go wrong; a single mass-casualty strike would have forced a much harder Israeli response.  #mech/risk_management _(added by sonnet-xhigh cross-check, time-bound view)_
+  > neither the Iranian attack nor the Israeli defense were true acts of war, was more like to calm down their own local populations
+  indicator: Middle East geopolitical tail risk · asset: multi · direction: tail risk of escalation · horizon: weeks · conditions: Depends on miscalculation or casualties; the truce is short-term. · testable: no - geopolitical judgement · confidence: medium
+  ^MT133-C02-X1
 
 ### C03
 - **Pablo Calderini** Core PCE monthly prints annualising to about 5% (inflation bounced in early 2024) would trigger another Fed hike; this is a main left-tail risk though not the base case.  #mech/policy_reaction _(time-bound view)_
@@ -78,6 +93,10 @@ tags: [source, layer0]
   > if you look at the chart of the 100 years stock bond correlation
   indicator: stock-bond correlation · asset: multi · horizon: years · testable: yes - rolling correlation · confidence: high
   ^MT133-C03-4
+- **Pablo Calderini** The mid-2022 inflation peak was extreme on a monthly basis: headline PCE peaked at 1.2% in a month (15% annualised) and core near 8% annualised, in a world used to 2% inflation and deflation fears.  #mech/cycle_persistence _(added by sonnet-xhigh cross-check)_
+  > a 1.2 peak headline PCE, that annualizes at 15%
+  indicator: monthly headline and core PCE · asset: multi · horizon: months · conditions: Data point on the size of the 2022 inflation shock. · testable: yes - PCE monthly data · confidence: high
+  ^MT133-C03-X1
 
 ### C04
 - **Pablo Calderini** Stock-bond correlation was strongly positive (up to 60%) from 1960 to 1995 and negative for the last 20 years.  #mech/structural_shift
@@ -100,6 +119,18 @@ tags: [source, layer0]
   > in 2022, we were extremely short interest rates globally, right? Under the conviction that rates needed to replace four, 500 basis points
   indicator: policy rate differentials · asset: multi · direction: short global rates, short equities, long USD · horizon: years · conditions: when central banks tighten · testable: partly · confidence: medium
   ^MT133-C04-5
+- **Pablo Calderini** A macro book's key inputs are growth, inflation and the Fed and other central banks; central-bank policy is the part it can anticipate well, and it performs best when central banks are actively changing policy.  #mech/policy_reaction _(added by sonnet-xhigh cross-check)_
+  > We are really, really focused on global central banks, monetary policy, something that we can anticipate well. When central banks are in action, we typically perform really, really well.
+  indicator: global central bank policy · asset: rates · direction: macro returns higher when central banks act · horizon: months · conditions: Weaker when central banks are on hold. · testable: partly - macro index returns vs policy-change episodes · confidence: medium
+  ^MT133-C04-X1
+- **Pablo Calderini** Discretionary macro sits between passive/long-only tactical allocation and pure arbitrage: it has low long-run correlation to asset classes but takes active directional exposures day to day.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > We have very low correlation to asset classes in the long run, but on any given day, we proactively seek to have exposure to markets to profit from changes
+  indicator: macro style positioning vs asset classes · asset: multi · conditions: Style description by a manager. · testable: yes - correlation of macro index to asset classes · confidence: high
+  ^MT133-C04-X2
+- **Pablo Calderini** In 2022 the macro book paired short global rates (on the view that rates needed to rise 400-500bp) with short stocks and short commodities and long the dollar, because large rate rises usually push stocks down and the Fed was the most aggressive central bank.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > rates needed to replace four, 500 basis points. When that happens, usually stocks go down.
+  indicator: global rates, equities, commodities, USD · asset: multi · direction: short rates, short stocks, long USD · horizon: months · conditions: A regime of aggressive central-bank tightening. · testable: yes - positions and returns in 2022 · confidence: medium
+  ^MT133-C04-X3
 
 ### C05
 - **Pablo Calderini** A strong US economy limits Fed cuts while the ECB cuts independently, supporting a long dollar view.  #mech/policy_reaction _(time-bound view)_
@@ -118,6 +149,14 @@ tags: [source, layer0]
   > It's not the same as buying equity puts that for sure will do well if equities go down.
   asset: multi · horizon: weeks · conditions: fast shock without time to reposition · testable: yes · confidence: high
   ^MT133-C05-4
+- **Pablo Calderini** A macro manager claims no long or short bias but skill at anticipating bad equity markets, going short in anticipation and during them, and shifting risk-on exposure by regime.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > we are good at forecasting bad markets for equities. And typically we would get short in anticipation and during those markets
+  indicator: regime-based equity exposure · asset: equities · direction: short before and during equity sell-offs · horizon: months · conditions: Self-reported; the 2020 sell-off shows it fails sometimes. · testable: yes - macro index conditional correlation to equities · confidence: low
+  ^MT133-C05-X1
+- **Pablo Calderini** In the 2022 equity drawdown (-25%) the macro index returned about 10% on average while Graham's own macro program made more than double that.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > This is the index we made more than double that.
+  indicator: Graham macro vs macro hedge fund index 2022 · asset: multi · direction: macro up when equities fall · horizon: years · conditions: Manager-specific record from a firm presentation. · testable: yes - manager track record · confidence: medium
+  ^MT133-C05-X2
 
 ### C06
 - **Pablo Calderini** Macro offers conditional correlation: low to negative correlation to equities and bonds when they perform badly, but not always low.  #mech/risk_management
@@ -128,4 +167,8 @@ tags: [source, layer0]
   > returns, the annualized returns on the portfolio go from 6.7 with no macro to 7.2 with 20% macro
   indicator: 60/40 plus macro index · asset: multi · direction: add 10-20% macro to 60/40 · horizon: years · testable: yes - public data · confidence: high
   ^MT133-C06-2
+- **Pablo Calderini** Adding macro lowers portfolio volatility for two reasons: the macro index runs at lower volatility than equities and has almost zero correlation to the portfolio, so the Sharpe ratio rises (return up while volatility falls).  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > macro trades at the lower roll than equities. Secondly, it has almost zero correlation
+  indicator: macro index volatility and correlation · asset: multi · direction: lower volatility, higher Sharpe · horizon: years · conditions: Applies to a 60/40 portfolio with 10-20% macro. · testable: yes - from index volatility and correlation · confidence: high
+  ^MT133-C06-X1
 

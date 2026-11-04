@@ -76,8 +76,8 @@
   }
  ],
  "chunks": 10,
- "crosscheck": null,
- "completeness_estimate": null,
+ "crosscheck": "opus cross-check",
+ "completeness_estimate": "0.9 - policy interview with little systematic content; first reader captured almost all regulatory and industrial-policy ideas, missed Europe's risk-averse tech stance, the regulation/competitiveness exchange and the bank-consolidation-after-failure point.",
  "claims": [
   {
    "claim_id": "MT100-C01-1",
@@ -383,6 +383,11 @@
    "speaker_confidence": "low",
    "time_bound": "no",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT100-C07-3",
+    "issue": "Speaker mix and quote mismatch: 'the biggest European bank is number 20 worldwide, no champions' is the interviewer's statement; Vestager only says digitization challenges slowed European banks' recovery from the financial crisis versus the US. The attached quote is about gas supply, not banks.",
+    "fix": "Vestager: European banks took longer than US banks to recover from the financial crisis, partly because they were challenged by digitization; the Commission has not assessed bank mergers she can recall. (The 'no champions, biggest bank about 20th' point is the interviewer's.)"
+   },
    "quote_check": "exact"
   },
   {
@@ -420,9 +425,63 @@
    "time_bound": "no",
    "reader": "sonnet",
    "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT100-C01-X1",
+   "chunk": "C01",
+   "speaker": "Margrethe Vestager",
+   "quote": "if you look at how Europe approaches uh new technology we are tend to be more risk averse than in other parts",
+   "claim": "Europe regulates new technology more risk-aversely than other regions (e.g. requiring a human in the loop when municipalities use AI for welfare decisions, after a first scandal), a structural difference that shapes how fast tech products and AI uses reach the EU market.",
+   "mechanism": "structural_shift",
+   "asset_class": "equities",
+   "indicator": "EU AI Act / DSA / DMA obligations",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "high-risk public-sector AI uses",
+   "testable": "partly - product launch lags EU vs US",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT100-C05-X1",
+   "chunk": "C05",
+   "speaker": "Margrethe Vestager",
+   "quote": "do you improve competitiveness by regulating more uh no I don't think so",
+   "claim": "Big-tech threats to stop launching products in Europe because of regulation are taken as a signal that Europe must raise competitiveness; Vestager agrees more regulation does not improve competitiveness, except where tailored rules (e.g. a biotech act) shorten time to market.",
+   "mechanism": "policy_reaction",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - policy stance",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT100-C07-X1",
+   "chunk": "C07",
+   "speaker": "Interviewer",
+   "quote": "in banking it seems like one Bank needs to go bankrupt before it can be taken over by somebody else right like we saw in Switzerland credit s bank",
+   "claim": "In European banking, consolidation seems to happen only after failure (Credit Suisse had to collapse before UBS could buy it), leaving Europe without global champion banks; its largest bank ranks about 20th worldwide.",
+   "mechanism": "structural_shift",
+   "asset_class": "equities",
+   "indicator": "European bank M&A; global bank size ranking",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "fragmented national banking regulation",
+   "testable": "partly - count of cross-border EU bank mergers vs distressed takeovers",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
   }
  ],
  "n_sonnet": 19,
- "n_opus_added": 0,
- "n_corrections": 0
+ "n_opus_added": 3,
+ "n_corrections": 1
 }

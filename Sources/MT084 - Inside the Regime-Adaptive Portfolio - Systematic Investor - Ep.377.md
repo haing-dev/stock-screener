@@ -5,10 +5,10 @@ date: 2025-12-13
 channel: "Top Traders Unplugged"
 url: 
 words: 11981
-claims: 61
-added_by_opus: 0
+claims: 63
+added_by_crosscheck: 2
 corrections: 0
-crosscheck: "pending"
+crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, Top Traders Unplugged)", "Alan Dunne (Archive Capital, co-host; transcript spelling Alan Don)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Systematic Investor Ep. 377: trend following in a policy-shock year, 2025 performance and SocGen index changes, then Alan Dunne's paper on a regime-adaptive portfolio (40% growth, 40% adaptive, 20% diversifiers by risk). Conclusions: new macro regime (stickier inflation, high debt, positive stock-bond correlation) needs adaptive strategies; labels like alternative mislead.
 
 **Approach:** trend following, regime change, risk-based asset allocation, adaptive portfolio
+
+**Cross-check completeness estimate of first read:** 0.96 - first reader captured almost all claims with correct speakers and numbers; only the small-tariff caveat on the SF Fed study and the squandered-credibility point were missing
 
 ## Coverage
 
@@ -136,6 +138,10 @@ tags: [source, layer0]
   > we're seeing the Fed cutting rates at a time when inflation has settled very much above target
   indicator: Fed funds, core inflation vs 2% · asset: rates · horizon: months · conditions: Dec 2025 · testable: yes · confidence: medium
   ^MT084-C06-2
+- **Alan Dunne** Caveat on the San Francisco Fed 40-year cross-country tariff study: historical tariff changes were much smaller than the 2025 US tariffs, so its unemployment-then-inflation pattern may understate or misstate today's effects.  #mech/research_method _(added by opus cross-check, time-bound view)_
+  > obviously the historic um changes in tariffs have been much smaller relative to
+  indicator: historical tariff changes vs 2025 tariff size · asset: multi · horizon: years · conditions: out-of-sample tariff shock far larger than history · testable: partly - check dose-response of tariff size in the panel · confidence: medium
+  ^MT084-C06-X1
 
 ### C07
 - **Alan Dunne** A San Francisco Fed 40-year cross-country study found that tariffs raise unemployment immediately and lower inflation first, then raise inflation over the next two years.  #mech/slow_reaction
@@ -248,6 +254,10 @@ tags: [source, layer0]
   > is equivalent to kind of using a 6040 as a as a benchmark but with about an 8% tracking error
   indicator: tracking error · asset: multi · horizon: years · testable: yes · confidence: high
   ^MT084-C12-4
+- **Alan Dunne** Central bank inflation-fighting credibility, hard won under Volcker and Greenspan, is being squandered by cutting with inflation above target; because inflation embedded in the 1970s was so hard to wring out, this complacency is a very big risk.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
+  > the inflation fighting credibility has been squandered somewhat. I mean it was it was hard one you know Vular Greenspan in that era but now we're at risk of of throwing it out
+  indicator: Fed cuts with inflation above target; inflation expectations · asset: rates · direction: higher inflation risk premium; long yields up · horizon: years · conditions: policy easing while inflation is above target and sticky · testable: partly - inflation expectations and term premium after cuts above target · confidence: high
+  ^MT084-C12-X1
 
 ### C13
 - **Alan Dunne** Total portfolio approaches still start from a reference portfolio embedded in old thinking, limiting flexibility.  #mech/research_method

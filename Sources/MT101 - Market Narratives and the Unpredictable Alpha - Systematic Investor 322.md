@@ -5,10 +5,10 @@ date: 2024-11-23
 channel: "Top Traders Unplugged"
 url: 
 words: 11821
-claims: 45
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 62
+added_by_crosscheck: 17
+corrections: 2
+crosscheck: "opus cross-check"
 speakers: ["Mark (guest, systematic trend-following researcher)", "Alan Dunne (host, Top Traders Unplugged)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Systematic Investor 322 (Nov 2024, post-US election): Mark discusses equity risk premium, bond term premium, risk cycle/leverage, why trend followers use prices not narratives, and research on analysts, narratives and trend-following allocation. Trend following is observational not causal; position sizing matters more than forecasting; economic trends beget price trends. Views: bond yields can keep rising, equity ERP falling means lower forward stock returns, credit spreads too tight.
 
 **Approach:** trend following, macro, valuation, risk management, narrative
+
+**Cross-check completeness estimate of first read:** 0.75 - first reader caught all main themes (ERP, term premium, risk cycle, sizing, analysts, narratives, Quantica) but missed several secondary mechanisms and caveats (rate vol vs level, term premium vs stock-bond correlation, SVB duration risk, EPU noise, event jumps vs underreaction).
 
 ## Coverage
 
@@ -53,6 +55,10 @@ tags: [source, layer0]
   > then you look at what is the uh forward behavior of stocks over one two five years it's usually lower
   indicator: equity risk premium · asset: equities · direction: lower equity returns · horizon: years · conditions: probabilistic, not always · testable: yes - regress forward returns on ERP · confidence: medium
   ^MT101-C01-2
+- **Mark** A single equity-risk-premium chart should not be trusted alone; judge valuation from an ensemble of measures, which disagree in level but here all point the same way (ERP declining).  #mech/research_method _(added by opus cross-check)_
+  > you almost have to look at an ensemble of of tables for that valuation discussion and when you look at the Ensemble you're going to get a mixed reports but generally all of them are moving in the same direction
+  indicator: ensemble of equity risk premium / valuation measures · asset: equities · horizon: years · testable: yes - build several ERP measures and test a composite vs single measures · confidence: medium
+  ^MT101-C01-X1
 
 ### C02
 - **Alan** The simple inverse-P/E equity risk premium ignores earnings growth, so growth-adjusted ERP measures differ in level though similar in direction.  #mech/research_method
@@ -71,6 +77,10 @@ tags: [source, layer0]
   > the sck Gen CTA index up 1.6% month to date bringing the year to date figure to plus 0.9%
   indicator: SG CTA Index, SG Trend Index · asset: multi · direction: long equities, short bonds, long dollar helped · horizon: weeks · conditions: gold reversed and grains choppy · testable: yes - index data · confidence: high
   ^MT101-C02-4
+- **Alan Dunne** In November 2024 currencies and financial futures trended (helping trend followers) while commodities were choppy (gold reversing sharply, grains choppy), and bonds had been choppy for trend followers earlier in 2024.  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
+  > so I would say a bit of a choppier picture on the Comm on the commodi side but certainly currencies and financials trending
+  indicator: trend-following returns by sector · asset: multi · direction: trend profits from currencies and financials, not commodities · horizon: weeks · conditions: post-US-election November 2024 · testable: yes - sector attribution of trend returns · confidence: medium
+  ^MT101-C02-X2
 
 ### C03
 - **Mark** VIX fell about 20 to 15 and began falling before the election as uncertainty resolved; SPX vol term structure moved from backwardation back to contango.  #mech/risk_premium _(time-bound view)_
@@ -89,6 +99,18 @@ tags: [source, layer0]
   > they were going to have the average inflation rate policy
   indicator: Fed framework · asset: rates · testable: no - qualitative · confidence: medium
   ^MT101-C03-4
+- **Mark** Part of the VIX decline before the election was mechanical, a result of how the VIX is constructed (its fixed forward window), not only a fall in uncertainty.  #mech/research_method _(added by opus cross-check, time-bound view)_
+  > some of that is is because of construction
+  indicator: VIX · asset: equities · horizon: weeks · conditions: around scheduled events entering or leaving the VIX window · testable: partly - compare VIX with event-adjusted implied vol term structure · confidence: low
+  ^MT101-C03-X3
+- **Alan Dunne** The debt-and-deficit narrative follows bond yields: it gains attention when yields rise and is forgotten when they fall; 10-year yields have ranged roughly 4% to 5% and sit near 4.6%, toward the top.  #mech/behavioral _(added by opus cross-check)_
+  > it feels like every time bond yields go up people start hoping with de and deficits again and then when they go down they kind of forget about it
+  indicator: US 10-year yield; deficit news coverage · asset: rates · horizon: months · testable: partly - news-attention counts vs yield changes · confidence: medium
+  ^MT101-C03-X4
+- **Alan Dunne** Powell's comments dampened expectations of further Fed cuts in December 2024 because the economy is strong.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
+  > we had some comments from po last night I think kind of uh stampen expectations or further red Cuts in in December
+  indicator: Fed communication; December cut pricing · asset: rates · direction: fewer cuts priced · horizon: weeks · conditions: strong economy · testable: yes - fed funds futures around speech · confidence: medium
+  ^MT101-C03-X5
 
 ### C04
 - **Mark** High policy uncertainty (Bloom news and policy uncertainty indices) raises term premia in long bonds and can create divergence between what the Fed wants and market pricing.  #mech/risk_premium
@@ -103,6 +125,10 @@ tags: [source, layer0]
   > when the surprise index moves higher that that tells you
   indicator: Citi/Bloomberg economic surprise index; financial conditions index; inflation surprise index · asset: rates · direction: higher yields · horizon: months · testable: yes · confidence: medium
   ^MT101-C04-3
+- **Mark** In Mark's own research the Bloom news-based policy uncertainty indices have some usefulness but are a mixed, noisy signal because they bounce around a lot.  #mech/research_method _(added by opus cross-check)_
+  > it has some usefulness is also sort of uh mixed uh because it it really does you know bounce around a lot
+  indicator: Baker-Bloom-Davis economic policy uncertainty indices · asset: multi · testable: yes - smoothing and predictive tests of EPU · confidence: medium
+  ^MT101-C04-X6
 
 ### C05
 - **Mark** As a macro trend follower, trends in economic data translate into price trends, so fundamental trends reinforce price trends.  #mech/cycle_persistence
@@ -121,6 +147,10 @@ tags: [source, layer0]
   > rates would go higher but the dollar would go lower so that people didn't want to buy the safe assets
   indicator: US yields vs dollar direction · asset: multi · direction: dollar up with yields up = growth · horizon: months · testable: partly · confidence: medium
   ^MT101-C05-4
+- **Alan Dunne** After the election, markets trade on strong high-frequency data and on broad expected policies (tax cuts, deregulation, tariffs, deportations) whose details are not yet known, which drives small-cap moves.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
+  > markets are trading on what we're seeing in the high frequency data
+  indicator: high-frequency macro data; policy expectations · asset: multi · horizon: weeks · conditions: between election and policy details · testable: partly · confidence: medium
+  ^MT101-C05-X7
 
 ### C06
 - **Mark** Term premia are turning positive across the curve, a trend that points to higher yields because deficits, QT and global financing needs demand compensation.  #mech/risk_premium _(time-bound view)_
@@ -135,16 +165,29 @@ tags: [source, layer0]
   > swap spreads have been trading lower relative to bond yields of late
   indicator: swap spreads · asset: rates · horizon: months · testable: partly · confidence: low
   ^MT101-C06-3
+- **Mark** Long yields decompose into real yield (long-term growth), expected inflation and a term premium; in the low-rate regime with negative stock-bond correlation the term premium was zero or negative, and it rises when bonds stop hedging.  #mech/risk_premium _(added by opus cross-check)_
+  > when rates were very low and then there is this negative correlation between stocks and bonds term premium was was negative or there was no term premium
+  indicator: term premium; stock-bond correlation · asset: rates · direction: term premium up when stock-bond correlation turns positive · horizon: years · conditions: low rates and negative stock-bond correlation -> negative term premium · testable: yes - ACM term premium vs rolling stock-bond correlation · confidence: high
+  ^MT101-C06-X8
 
 ### C07
 - **Mark** A shortage of Treasuries as collateral, plus FX risk for foreign buyers and higher rate volatility (MOVE above VIX), makes Treasuries riskier than before.  #mech/liquidity_flows
   > do we have a shortage of safe assets
   indicator: MOVE index · asset: rates · horizon: years · testable: partly · confidence: medium
+  **Correction (cross-check):** Merges two points and implies the safe-asset shortage makes Treasuries riskier; Mark says regulation/collateral demand makes Treasuries a (possibly scarce) safe asset, while FX risk and higher rate volatility are what make holding them riskier. → Treasuries are a safe asset partly because regulation creates collateral demand (raising the question of a safe-asset shortage), but FX risk for foreign buyers and higher rate volatility (MOVE more volatile than VIX) make holding them riskier than before.
   ^MT101-C07-1
 - **Mark** Trend following models work in cryptocurrencies.  #mech/slow_reaction
   > I've done some analysis on this i s of say that uh Trend following models do work in
   indicator: crypto trend following · asset: other · direction: long and short crypto trends · testable: yes · confidence: high
   ^MT101-C07-2
+- **Mark** Rate volatility rises with the level of rates, so a move to a higher yield band raises the risk of holding Treasuries.  #mech/risk_premium _(added by opus cross-check)_
+  > we know that generally is is that the higher the level of rates the higher the volatility of rates
+  indicator: yield level vs MOVE index / realized rate volatility · asset: rates · direction: higher yields -> higher rate vol · horizon: years · testable: yes - regress rate vol on yield level · confidence: high
+  ^MT101-C07-X9
+- **Mark** Silicon Valley Bank shows the real duration risk of Treasuries: banks that put deposit inflows into long Treasuries took large mark-to-market losses when rates rose, so more capital should be held against them.  #mech/new _(added by opus cross-check)_
+  > if you held them in the uh Your Mark to mark market account as opposed to your book value account all of a sudden you find out as said wow this is blowing a hole in my balance sheet
+  indicator: bank unrealized losses on securities · asset: rates · horizon: years · conditions: rapid rate rises after deposit-funded duration buying · testable: partly - historical analogy · confidence: high
+  ^MT101-C07-X10
 
 ### C08
 - **Mark** The risk cycle (volatility, leverage, risk appetite) is distinct from the business cycle and should be monitored separately; volatility has been low apart from August 2024.  #mech/risk_premium
@@ -155,6 +198,14 @@ tags: [source, layer0]
   > you don't get the cross margining that you would like
   indicator: crypto liquidity and costs · asset: other · conditions: beyond top few coins · testable: partly · confidence: medium
   ^MT101-C08-2
+- **Mark** Classic trend following is market-agnostic and diversified (any trending, tradable symbol, often 50+ markets), so a crypto-only trend program departs from the usual many-market principle.  #mech/research_method _(added by opus cross-check)_
+  > the traditional view of a trend follower is this is it well I really don't care what the asset is as long as it Trends
+  asset: multi · testable: yes - breadth vs Sharpe of trend portfolios · confidence: medium
+  ^MT101-C08-X11
+- **Mark** Bond volatility (MOVE) has stayed high relative to equity volatility (VIX) because of inflation and uncertainty over Fed pivots.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
+  > the move has been higher and then I think that that has a lot to do with the inflation and and uh pivoting by the FED
+  indicator: MOVE vs VIX · asset: rates · horizon: months · conditions: inflation and policy-pivot uncertainty · testable: yes · confidence: medium
+  ^MT101-C08-X12
 
 ### C09
 - **Mark** The risk cycle differs from the business cycle: persistent low volatility, especially low downside volatility, invites leverage and risk-taking that plant the seeds of a later shock.  #mech/risk_premium
@@ -187,6 +238,10 @@ tags: [source, layer0]
   > prices are Primal so prices are the most important thing to look at first
   indicator: price · asset: multi · testable: no · confidence: high
   ^MT101-C10-3
+- **Mark** After years of strong growth and leverage build-up, a shock forces balance-sheet repair that lowers future growth (China now, like Japan in the early 1990s; caption says China).  #mech/new _(added by opus cross-check)_
+  > so now that you're going to have to S you got to clean up your balance sheet and then that really has an impact in what on your future growth
+  indicator: private-sector leverage; debt paydown · asset: multi · direction: lower future growth · horizon: years · conditions: after a leverage boom followed by a shock · testable: partly - cross-country credit boom episodes · confidence: high
+  ^MT101-C10-X13
 
 ### C11
 - **Mark** Even perfect next-day headlines gave marginal returns in the Elm Capitalist experiment: knowing news does not tell you the market reaction, so a trend follower focuses on price.  #mech/behavioral
@@ -202,6 +257,7 @@ tags: [source, layer0]
 - **Mark** Trend following avoids hard causal inference in macro and relies on observed price persistence; machine-learning approaches suffer when learned relationships break down.  #mech/research_method
   > Trend following is more observational as opposed to causal in how they build the models
   indicator: price trend · asset: multi · conditions: when relationships are unstable ML fails more · testable: partly · confidence: high
+  **Correction (cross-check):** Wrong speaker for part of the claim: the point that machine-learning strategies suffer when learned relationships break down was made by the host Alan Dunne, not Mark. → Mark: trend following is observational, not causal; it avoids hard causal inference in macro and relies on observed price persistence. (Alan: machine-learning strategies learned from past relationships suffer when those relationships break down.)
   ^MT101-C12-2
 
 ### C13
@@ -233,6 +289,14 @@ tags: [source, layer0]
   > investors do underreact to uh news early on in the trend and later on over overreact
   asset: multi · horizon: months · testable: partly · confidence: medium
   ^MT101-C15-2
+- **Mark** Following Shiller, popular themes or memes can drive valuation excesses that become bubbles and then crashes.  #mech/behavioral _(added by opus cross-check)_
+  > there are themes or memes that start to occur that could cause uh excesses in valuation that lead to Bubbles and then crashes
+  indicator: narrative / meme intensity · asset: equities · horizon: years · testable: partly - narrative indices vs valuation and crash risk · confidence: medium
+  ^MT101-C15-X14
+- **Mark** News-narrative signals are costly to build (large data and processing effort), so for most managers they are at best an adjunct to price trends rather than a core signal.  #mech/research_method _(added by opus cross-check)_
+  > the barriers to entry are really high you got to spend a lot of work to be able to do this there's a lot of data you have to process it
+  indicator: aggregated news narrative · asset: multi · testable: no - cost judgement · confidence: medium
+  ^MT101-C15-X15
 
 ### C16
 - **Mark** Post-election themes (tax cuts, deregulation, deficits) combined with trending fundamentals suggest trends continue as long as price action confirms; stop out otherwise.  #mech/cycle_persistence _(time-bound view)_
@@ -247,6 +311,10 @@ tags: [source, layer0]
   > you should probably increase your allocation a trend following a high interest rate environment
   indicator: trend following vs interest rate level · asset: multi · direction: overweight trend following when rates are high · horizon: years · testable: yes · confidence: medium
   ^MT101-C16-3
+- **Mark** News underreaction is an average effect: a big event such as the election can be priced in an immediate jump, after which themes develop gradually and can still feed trends (answering Alan's doubt that the move was an underreaction).  #mech/slow_reaction _(added by opus cross-check)_
+  > results came out boom you had this big jump in price but then as you know even even in that when you look at the narrative we're starting to develop themes
+  indicator: event-day returns vs later narrative trend · asset: multi · horizon: weeks · conditions: large scheduled events produce jumps first · testable: yes - post-event drift after large jumps · confidence: medium
+  ^MT101-C16-X16
 
 ### C17
 - **Mark** In high-rate regimes CTA correlation to bonds and equities falls, making trend following a better diversifier than clipping bond coupons.  #mech/risk_premium
@@ -257,4 +325,8 @@ tags: [source, layer0]
   > certain techniques um that you can be able to bundle a set of strategies and come up with a replication strategy
   indicator: BTOP 50 replication · asset: multi · conditions: dispersion across managers · testable: yes · confidence: medium
   ^MT101-C17-2
+- **Mark** Large allocators may prefer trend replication or trend beta to get the average CTA return and avoid manager-selection risk, accepting that skill is not replicated.  #mech/risk_management _(added by opus cross-check)_
+  > if you're a large allocator you may say that well I just want to get the average because I don't want to pick the bad manager
+  indicator: SG Trend / BTOP 50 replication · asset: multi · horizon: years · conditions: high dispersion across managers · testable: partly - replicator vs manager-distribution returns · confidence: medium
+  ^MT101-C17-X17
 

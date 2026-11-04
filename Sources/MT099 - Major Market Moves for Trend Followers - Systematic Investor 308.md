@@ -5,10 +5,10 @@ date: 2024-08-16
 channel: "Top Traders Unplugged"
 url: 
 words: 11103
-claims: 40
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 46
+added_by_crosscheck: 6
+corrections: 2
+crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host)", "Nick Baltas (co-host, quant/trend-following practitioner; caption spells 'Nick Bolas')"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Aug 2024 Systematic Investor: live debrief of the early-August yen-carry unwind and volatility spike (VIX 16 to 65, Nikkei -12%) for trend followers. Trend index lost about 6% in the month, within normal bounds; discusses speed, risk allocation across asset classes, dynamic sizing, 0DTE options, value-at-risk contagion and correlation externalities. Main conclusion: reversal after a spike is an expected cost of trend following; design choices (speed, balanced vs unconstrained risk, equity caps) explain manager dispersion.
 
 **Approach:** trend following, CTA performance, carry trade unwind, volatility spike, risk allocation, signal speed, value at risk, dispersion between managers
+
+**Cross-check completeness estimate of first read:** 0.87 - first reader was thorough on design choices, speeds and the August 2024 event; missed the pre-shock low-correlation setup, look-back vs shock length, bonds as historical driver, intraday momentum, risk-manager framing and the VaR contagion nuance.
 
 ## Coverage
 
@@ -80,6 +82,10 @@ tags: [source, layer0]
   > dispersion trades lost money some volatility selling trades did lose money the skew in S&P over know um got repriced
   indicator: implied correlation, S&P skew, dispersion · asset: equities · horizon: weeks · conditions: after concentration in mega-cap AI/tech · testable: partly · confidence: medium
   ^MT099-C04-3
+- **Nick Baltas** Just before the August 2024 shock US equity correlations were at record lows because returns were concentrated in a few mega-cap AI/tech names; such a low-correlation, high-concentration setup left dispersion and short-correlation trades exposed to a sudden correlation spike.  #mech/crowding_positioning _(added by opus cross-check, time-bound view)_
+  > we're talking about the least correlated environment in the US market in equities which was the consequence of high level of concentration
+  indicator: US equity implied/realized correlation; index concentration · asset: equities · direction: correlation up sharply from record lows; dispersion trades lose · horizon: weeks · conditions: high index concentration, crowded dispersion trades · testable: yes - implied correlation index levels before shocks · confidence: medium
+  ^MT099-C04-X1
 
 ### C05
 - **Nick Baltas** Trend followers are hurt by sharp mean reversion after a spike (as in March 2023, Feb 2018 VIX spike, Aug 2024); this cost is part of the exposure and not a sign the strategy is broken.  #mech/slow_reaction _(time-bound view)_
@@ -93,6 +99,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** After the extreme one-day event of Thanksgiving 2020 trend strategies recovered quickly, showing one-day shocks need not damage trend returns.  #mech/cycle_persistence
   > the strategies came roaring back uh actually almost beginning on that day
   indicator: trend index after one-day shocks · asset: multi · horizon: weeks · testable: yes: event study · confidence: low
+  **Correction (cross-check):** Wrong year: the caption says 'Thanksgiving 20121', i.e. late November 2021 (the Omicron Black Friday sell-off), not Thanksgiving 2020. → After the extreme one-day event around Thanksgiving 2021 trend strategies recovered quickly, showing one-day shocks need not damage trend returns.
   ^MT099-C05-3
 
 ### C06
@@ -117,11 +124,16 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** Diversified portfolios were cushioned by grain downtrends and non-traditional commodity trends during July/August, which headlines focused on equities and yen missed.  #mech/risk_management _(time-bound view)_
   > the downtrends in some of the Commodities like uh grains um actually um got a
   indicator: grains and alternative commodities · asset: commodities · horizon: weeks · conditions: diversified portfolios · testable: yes · confidence: medium
+  **Correction (cross-check):** Mixes speakers: Niels makes the grain-downtrend point; the observation that non-traditional, non-benchmark commodities gained almost every day in August is Nick Baltas's. → Niels: strengthening grain downtrends cushioned diversified trend portfolios in July; Nick: alternative non-benchmark commodities added performance almost daily in August 2024, showing the value of diversification insulated from macro moves.
   ^MT099-C07-2
 - **Niels Kaastrup-Larsen** Return dispersion between managers depends on the number of markets traded: managers with few markets are hit and miss on Nikkei/yen exposure.  #mech/research_method
   > return dispersion we're going to be seeing between managers certainly also relates to uh the number of markets you trade
   indicator: number of markets traded · asset: multi · testable: yes · confidence: medium
   ^MT099-C07-3
+- **Niels Kaastrup-Larsen** A few-day shock is too short relative to medium/long trend look-back windows to flip equity or yen positions; it mainly causes deleveraging and weaker signal strength while most positions continue, so trend portfolios change little after brief crashes.  #mech/risk_management _(added by opus cross-check, time-bound view)_
+  > I don't think it's changed Direction frankly from because the move is relatively short in time only for only for Windows exactly
+  indicator: trend signal look-back length vs shock duration · asset: multi · direction: long equities reduced, not reversed · horizon: days · conditions: short sharp shock followed by rebound · testable: yes - simulate signal changes through short shocks · confidence: medium
+  ^MT099-C07-X1
 
 ### C08
 - **Nick Baltas** With dynamic vol scaling, risk allocation fell to about 10% in rates (from 25% across equities, rates, FX, commodities) because rates did not trend while equities and commodities trended.  #mech/risk_management _(time-bound view)_
@@ -132,6 +144,10 @@ tags: [source, layer0]
   > the second point and that's the one I have more comments on at least for the recent period is whether even after doing inverse volatility scaling
   indicator: asset-class risk budgeting · asset: multi · testable: yes: simulate fixed vs dynamic class budget · confidence: high
   ^MT099-C08-2
+- **Nick Baltas** Bond futures were historically the main driver of trend-following returns, but after 2022 rates stopped trending and contributed little, which changes how a trend book's returns are composed.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
+  > historically that was the Big Driver of performance and and and over the last like know a year or [L280] two um it has not been
+  indicator: trend P&L attribution by asset class · asset: rates · horizon: years · conditions: range-bound rates after 2022 · testable: yes - sector attribution of SG Trend / trend replication · confidence: medium
+  ^MT099-C08-X1
 
 ### C09
 - **Nick Baltas** A balanced asset-class risk allocation would have lost less in August (equities caused 60% of the loss) but would have captured less of the equity trend before; it is a trade-off between forced diversification and conviction in signals.  #mech/risk_management _(time-bound view)_
@@ -208,6 +224,14 @@ tags: [source, layer0]
   > I don't think there was one you know one driver
   asset: multi · horizon: weeks · testable: no · confidence: medium
   ^MT099-C14-2
+- **Nick Baltas** On the 5 August 2024 crash day the Nikkei showed strong intraday momentum, so strategies following intraday moves from the open would have profited; the net effect of short-dated option hedging depends on whether dealers are long or short gamma.  #mech/liquidity_flows _(added by opus cross-check, time-bound view)_
+  > Niki for instance there was substantial intraday momentum that took place on Monday and had you been exposed to those intraday moves
+  indicator: intraday momentum from the open · asset: equities · direction: follow intraday direction from the open · horizon: days · conditions: crash days with dealer short gamma · testable: yes - intraday momentum returns on high-vol days · confidence: medium
+  ^MT099-C14-X1
+- **Niels Kaastrup-Larsen** Trend followers should see themselves first as risk managers because they control risk taken but not returns the market offers; many managers have moved from stop losses with static sizing to VaR-based portfolio risk models, raising the worry that common VaR use synchronizes selling.  #mech/risk_management _(added by opus cross-check)_
+  > first and foremost we're Risk Managers that's the part of the of the equation we have some input on we have no say in terms of what performance we can get from the markets
+  indicator: stop-loss/static sizing vs VaR-based sizing · asset: multi · testable: partly - compare drawdown behaviour of static vs VaR-sized trend books · confidence: high
+  ^MT099-C14-X2
 
 ### C15
 - **Nick Baltas** Value at risk is only a threshold; use expected shortfall (conditional VaR) for the loss beyond it, and note that VaR is bounded by historical realizations (parametric or Monte Carlo variants).  #mech/risk_management
@@ -222,6 +246,10 @@ tags: [source, layer0]
   > the only thing that goes up in a crisis Nick that's correlations
   indicator: cross-asset correlation · asset: multi · conditions: crisis periods · testable: yes · confidence: high
   ^MT099-C15-3
+- **Nick Baltas** Contagion from risk models comes from many investors suffering losses at the same moment and unwinding together, not from the choice of VaR as such; the real question is whether the measure is right and whether people over- or under-react to it.  #mech/crowding_positioning _(added by opus cross-check)_
+  > if people follow similar rules this cannot in itself have a I guess a contagion effect except the possibility that losses happen at the same time
+  indicator: VaR / expected shortfall usage across investors · asset: multi · horizon: days · conditions: synchronized losses across similar portfolios · testable: partly - flow data around risk-limit breaches · confidence: medium
+  ^MT099-C15-X1
 
 ### C16
 - **Nick Baltas** When investors cannot lever up (funding liquidity constraint), one or two large moves can produce a vicious circle.  #mech/liquidity_flows

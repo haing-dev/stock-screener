@@ -5,10 +5,10 @@ date: 2025-09-02
 channel: "Odds on Open"
 url: https://www.youtube.com/watch?v=fIrlQDvcy_M
 words: 915
-claims: 9
-added_by_opus: 0
+claims: 10
+added_by_crosscheck: 1
 corrections: 0
-crosscheck: "pending"
+crosscheck: "opus cross-check"
 speakers: ["Ernie Chan (founder, QTS hedge fund)", "Interviewer (Odds on Open, unnamed)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Short Odds on Open clip: Ernie Chan describes his fund's crisis strategy (option-like index futures payoff in market crashes) and why strategies decay. Asked how to handle regime shifts, he argues strategies fail only if regime variables are omitted, and proposes machine learning/AI that ingests broad context (rates, news, oil, GDP) and learns which matters.
 
 **Approach:** crisis alpha, strategy decay, regime change, machine learning, index futures
+
+**Cross-check completeness estimate of first read:** 0.90 - short clip; first reader caught 9 of about 10 ideas, missing only the short duration of panics that the crisis strategy exploits.
 
 ## Coverage
 
@@ -58,6 +60,10 @@ tags: [source, layer0]
   > AI can read the news and say oh Microsoft is generating getting much more revenue from from from from from you know AI
   indicator: news-derived context features · asset: equities · horizon: days · conditions: even for day trading models · testable: yes - add as feature and test · confidence: medium
   ^MT075-C01-7
+- **Ernie Chan** Each recurring crisis triggers claims that the bull market is over, yet the panic is short-lived (one to a few days) before recovery, so the crisis strategy must capture a very brief window of panic selling.  #mech/behavioral _(added by opus cross-check)_
+  > people always panic for at least a few days sometimes only for one day
+  indicator: index futures crash episodes · asset: equities · direction: short during panic, recovery afterwards · horizon: days · conditions: market crash episodes (about every two years since 2011) · testable: yes - duration of index drawdown phases in crisis episodes · confidence: medium
+  ^MT075-C01-X1
 
 ### C02
 - **Ernie Chan** Regime is hard to define, so feed the model all context (rates, news, GDP, presidential statements, oil) rather than choosing a few variables.  #mech/new

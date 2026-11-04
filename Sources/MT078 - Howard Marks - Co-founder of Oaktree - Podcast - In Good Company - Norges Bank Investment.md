@@ -5,10 +5,10 @@ date: 2024-06-12
 channel: "Norges Bank Investment Management"
 url: https://www.youtube.com/watch?v=vZJHQrGS7PE
 words: 6466
-claims: 45
-added_by_opus: 0
+claims: 47
+added_by_crosscheck: 2
 corrections: 0
-crosscheck: "pending"
+crosscheck: "opus cross-check"
 speakers: ["Howard Marks (co-founder Oaktree Capital)", "Interviewer (NBIM host, unnamed)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Marks outlines Oaktree's philosophy: risk control first, no macro forecasting or market timing, target less efficient markets, understand cycles and act only at sentiment extremes. Market valuation was somewhat above fair value in mid-2024 but not extreme. Contrarian betting needs payoff-over-probability thinking, temperature-taking and tolerance of looking wrong.
 
 **Approach:** cycles, contrarian value, risk management, credit
+
+**Cross-check completeness estimate of first read:** 0.96 - first reader captured essentially every idea; only two minor points (most years are good years; patience over quick action) were missing.
 
 ## Coverage
 
@@ -54,6 +56,10 @@ tags: [source, layer0]
   > an economist is a portfolio manager who never marks the market
   indicator: forecaster track record · asset: multi · horizon: years · testable: yes: track records can be requested and scored · confidence: high
   ^MT078-C01-4
+- **Howard Marks** Because most market years are good years, making money is easy most of the time; results in good years say little about skill, which shows only in how little is lost in bad years.  #mech/risk_management _(added by opus cross-check)_
+  > I believe it's easy to make money in the market that's especially true in the good years and most years are good years
+  indicator: share of positive years; downside capture · asset: multi · horizon: years · testable: yes - frequency of positive market years; manager downside capture · confidence: high
+  ^MT078-C01-X1
 
 ### C02
 - **Howard Marks** Markets are made of people with feelings, so processes cannot be predicted like physical laws and randomness plays a very large role.  #mech/behavioral
@@ -72,6 +78,10 @@ tags: [source, layer0]
   > nothing moves in a straight line uh where human behavior is involved and if you were to count on it doing so you would uh get into big trouble
   asset: multi · horizon: years · testable: partly · confidence: high
   ^MT078-C02-4
+- **Howard Marks** Experience teaches that quick action is not the answer; good results are more likely from taking time to think than from acting on a whim.  #mech/behavioral _(added by opus cross-check)_
+  > we learn that quick action is not the answer we hopefully we we develop the wisdom to understand that uh if you want a good result you're more likely to get it if you take a little time to
+  asset: multi · testable: no - process advice · confidence: medium
+  ^MT078-C02-X1
 
 ### C03
 - **Howard Marks** The biggest investor mistake is assuming a market moving in one direction will continue; reversion of excess is more dependable than continuation.  #mech/overshoot

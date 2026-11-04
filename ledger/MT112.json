@@ -104,8 +104,8 @@
   }
  ],
  "chunks": 16,
- "crosscheck": null,
- "completeness_estimate": null,
+ "crosscheck": "opus cross-check",
+ "completeness_estimate": "0.94 - first reader caught almost every idea accurately; missed the sizing-dependence of low-vol trend starts, the long-convexity point and the yearbook evidence on poor real bond returns",
  "claims": [
   {
    "claim_id": "MT112-C02-1",
@@ -934,9 +934,63 @@
    "time_bound": "no",
    "reader": "sonnet",
    "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT112-C06-X1",
+   "chunk": "C06",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "if we can get the initiation of a trend in a lowvall environment then certainly for the people who don't adjust their position size it allows them to put on a big position. For those who are dynamically position sizing it's maybe less of a concern",
+   "claim": "Whether low volatility helps a trend follower depends on sizing: a trend that starts in low volatility lets volatility-scaled traders put on a large position, while fixed-size traders gain nothing from it, so the vol-performance link differs by sizing method.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "volatility at trend initiation",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "dynamic (volatility-scaled) vs fixed position sizing",
+   "testable": "yes - compare trend P&L by starting-vol bucket for vol-scaled vs fixed-size versions",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT112-C10-X1",
+   "chunk": "C10",
+   "speaker": "Mark Rzepczynski",
+   "quote": "some people called uh Donald Trump the long gamma president. Uh, and in the sensees that that you got to get long convexity because you never know what's going to happen.",
+   "claim": "When policy can swing quickly either way, the market setting rewards owning convexity (long gamma) rather than holding directional positions, because the size and sign of the next policy move cannot be predicted.",
+   "mechanism": "policy_reaction",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "weeks",
+   "direction": "long convexity / long gamma",
+   "conditions": "policy-driven, rapidly reversing markets",
+   "testable": "partly - long-straddle returns in high policy-uncertainty periods",
+   "speaker_confidence": "low",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT112-C13-X1",
+   "chunk": "C13",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "I mean if you look at the data it has not really been a very good investment yet it has such a big",
+   "claim": "Long-run inflation-adjusted return data across many countries (the annual global returns yearbook) show government bonds have been a poor investment, which contradicts the large bond allocations investors hold.",
+   "mechanism": "risk_premium",
+   "asset_class": "rates",
+   "indicator": "long-run real bond returns by country (global investment returns yearbook)",
+   "horizon": "years",
+   "direction": "bonds underweight",
+   "conditions": "",
+   "testable": "yes - long-run real bond returns from yearbook-type data",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
   }
  ],
  "n_sonnet": 46,
- "n_opus_added": 0,
+ "n_opus_added": 3,
  "n_corrections": 0
 }

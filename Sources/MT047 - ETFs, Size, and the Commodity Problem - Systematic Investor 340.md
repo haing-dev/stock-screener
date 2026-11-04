@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 12189
 claims: 72
-added_by_opus: 8
+added_by_crosscheck: 8
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, Top Traders Unplugged)", "Alan Dunne (macro/CTA analyst, Archive Capital)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, global macro, CTA capacity, long-run returns, dollar regime
 
-**Opus completeness estimate of first read:** 0.89 - first reader was thorough on the Fed, Germany, dollar, Yearbook and Quantica capacity material; missed secondary points (defence spending leakage, Alan's verdict on a Mar-a-Lago accord, short- vs long-term trend at reversals, real vs nominal growth in 2020-24, five-year look-back method, sponsor bias caveat).
+**Cross-check completeness estimate of first read:** 0.89 - first reader was thorough on the Fed, Germany, dollar, Yearbook and Quantica capacity material; missed secondary points (defence spending leakage, Alan's verdict on a Mar-a-Lago accord, short- vs long-term trend at reversals, real vs nominal growth in 2020-24, five-year look-back method, sponsor bias caveat).
 
 ## Coverage
 
@@ -96,7 +96,7 @@ tags: [source, layer0]
   > the infrastructure fund is 500 billion uh euros and German GDP is you know it's about 5 trillion might be a bit more bit less um so that's 10%
   indicator: fund size vs GDP · asset: multi · direction: German growth up · horizon: years · conditions: Depends on how much spending leaks abroad · testable: yes - simple arithmetic · confidence: medium
   ^MT047-C03-5
-- **Alan Dunne** The growth impact of German defence spending depends on how much of it leaks abroad as imports versus going to domestic producers, plus an uncertain Keynesian multiplier; a broadened definition of defence (cyber, security) widens the domestic channel.  #mech/fiscal_debt _(added by Opus, time-bound view)_
+- **Alan Dunne** The growth impact of German defence spending depends on how much of it leaks abroad as imports versus going to domestic producers, plus an uncertain Keynesian multiplier; a broadened definition of defence (cyber, security) widens the domestic channel.  #mech/fiscal_debt _(added by opus cross-check, time-bound view)_
   > it remains to be seen one how much seeps set overseas and two you know normally in in a traditional kind of Keynesian perspective there's a multiplier effect
   indicator: domestic content of defence spending; fiscal multiplier · asset: multi · direction: German growth up, less if spending leaks overseas · horizon: years · conditions: depends on import share of defence procurement · testable: partly - multipliers and import shares can be estimated but with wide error · confidence: low
   ^MT047-C03-X1
@@ -150,7 +150,7 @@ tags: [source, layer0]
   > usually these commodity super cycle which a lot of people have been expecting uh would you know take off anytime soon actually they often come with a change in the monetary system
   indicator: commodity super cycles; monetary regime change · asset: commodities · direction: commodities up · horizon: years · conditions: Requires a real monetary regime change · testable: partly - few historical cycles · confidence: low
   ^MT047-C06-4
-- **Alan Dunne** A Mar-a-Lago-style accord (partners selling dollars and terming out Treasuries) is unlikely because it does not suit Europe or China and US leverage over them is doubtful; unilateral Fed money-printing to buy foreign currency could spiral into something dangerous.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Alan Dunne** A Mar-a-Lago-style accord (partners selling dollars and terming out Treasuries) is unlikely because it does not suit Europe or China and US leverage over them is doubtful; unilateral Fed money-printing to buy foreign currency could spiral into something dangerous.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > I don't think uh the solution being proposed by Steve Moran and this piece are de sttion largely because you know I don't think they necessarily work for for Europe or for for China
   asset: fx · direction: low odds of coordinated dollar devaluation · horizon: years · conditions: Europe already moving to self-reliance on defence · testable: no - one-off policy judgement · confidence: medium
   ^MT047-C06-X1
@@ -176,7 +176,7 @@ tags: [source, layer0]
   > it's one of those transition periods that tends to be chopped be and difficult for Trend following obviously when the S&P is you know down 10% and after a prolonged upswing
   indicator: S&P drawdown regime · asset: multi · horizon: weeks · conditions: Market transition phases · testable: partly - conditional CTA returns testable · confidence: medium
   ^MT047-C07-5
-- **Niels Kaastrup-Larsen** In choppy reversal periods, short-term trend traders hold up better than longer-term trend followers (in March 2025 the short-term traders index was up while SG Trend was down about 4% YTD).  #mech/slow_reaction _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** In choppy reversal periods, short-term trend traders hold up better than longer-term trend followers (in March 2025 the short-term traders index was up while SG Trend was down about 4% YTD).  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
   > it has been kind of a six week uh or so uh challenging period for um Trend followers in particular um not so much the short-term managers
   indicator: SG Short-Term Traders index vs SG Trend index · asset: multi · direction: short-term trend outperforms long-term trend at reversals · horizon: weeks · conditions: sharp trend reversals after long trends · testable: yes - compare short- vs long-horizon trend returns around reversals · confidence: medium
   ^MT047-C07-X1
@@ -222,7 +222,7 @@ tags: [source, layer0]
   > huge uh regulatory um you know forces uh kind of encouraging people to lock in bond yields to doe risk pensions
   indicator: pension de-risking flows · asset: rates · direction: bond yields lower then forced selling · horizon: years · testable: partly · confidence: medium
   ^MT047-C10-4
-- **Alan Dunne** Regulators have a record of pushing pension funds into allocations that later misfire (2000s bond lock-in, LDI), so the current UK push into private markets deserves scepticism.  #mech/liquidity_flows _(added by Opus, time-bound view)_
+- **Alan Dunne** Regulators have a record of pushing pension funds into allocations that later misfire (2000s bond lock-in, LDI), so the current UK push into private markets deserves scepticism.  #mech/liquidity_flows _(added by opus cross-check, time-bound view)_
   > what we're seeing now in like in the UK is there's this push to encourage Pension funds to go into private market so you wonder well how's that
   indicator: regulatory-driven pension allocation flows · asset: other · horizon: years · testable: no - speculative · confidence: low
   ^MT047-C10-X1
@@ -231,7 +231,7 @@ tags: [source, layer0]
 - **Alan Dunne** In the long histogram of annual returns, 2022 bonds were down over 30% (real), a standout loss, while equity annual returns are skewed with 10-20% most frequent.  #mech/risk_management
   > really does stand out as as a as a really negative down over 30%
   indicator: annual bond and equity return distributions · asset: rates · horizon: years · conditions: Inflation shock regimes · testable: yes - historical returns · confidence: medium
-  **Correction (Opus):** Adds 'real' to the 2022 bond loss; the speaker only says down over 30% (and hedges with 'I think'). → In the long histogram of annual bond returns, 2022 stands out as a loss of over 30% (speaker unsure of the figure), while annual equity returns are skewed with 10-20% the most frequent outcome.
+  **Correction (cross-check):** Adds 'real' to the 2022 bond loss; the speaker only says down over 30% (and hedges with 'I think'). → In the long histogram of annual bond returns, 2022 stands out as a loss of over 30% (speaker unsure of the figure), while annual equity returns are skewed with 10-20% the most frequent outcome.
   ^MT047-C11-1
 - **Alan Dunne** Equity drawdowns were 56% in 1973-74, similar in the tech bubble, and 52% in the GFC (5.3 years to recover); the worst case wait for equities is 16 years in real terms.  #mech/risk_management
   > 73 74 was down 56% Tech bubble the same Global financial crisis uh Global financial crisis 52% it only took 5.3 years though to come back
@@ -257,7 +257,7 @@ tags: [source, layer0]
   > anybody who locked in yields in uh 2020 at 0.5% or whatever in the US is going to get that nominal return which will prove to be very negative
   indicator: bond yields locked in at 2020 lows · asset: rates · horizon: years · testable: yes · confidence: medium
   ^MT047-C11-7
-- **Alan Dunne** Recovery time after the trough understates the full pain of an equity drawdown, because the slide into the trough also takes years; recent quick recoveries (GFC 5.3 years) may lull investors.  #mech/risk_management _(added by Opus)_
+- **Alan Dunne** Recovery time after the trough understates the full pain of an equity drawdown, because the slide into the trough also takes years; recent quick recoveries (GFC 5.3 years) may lull investors.  #mech/risk_management _(added by opus cross-check)_
   > it only took 5.3 years though to come back so I mean maybe that's what keeps uh people well to come back and but people have to remember it took also a while to get into that draw down
   indicator: drawdown duration (peak to trough plus trough to recovery) · asset: equities · horizon: years · testable: yes - drawdown durations from return histories · confidence: medium
   ^MT047-C11-X1
@@ -275,7 +275,7 @@ tags: [source, layer0]
   > just because it was it it proved to be the right decision uh or proved to be the best outcome doesn't mean it was the right decision not to diversify away from Equity
   asset: multi · testable: no - judgement principle · confidence: high
   ^MT047-C12-3
-- **Alan Dunne** Five-year look-backs are a useful complement to century-long data because they are recent enough to remember the starting consensus, showing how fast the macro regime can change (secular stagnation in 2019 to 4.2% inflation in 2020-24).  #mech/research_method _(added by Opus)_
+- **Alan Dunne** Five-year look-backs are a useful complement to century-long data because they are recent enough to remember the starting consensus, showing how fast the macro regime can change (secular stagnation in 2019 to 4.2% inflation in 2020-24).  #mech/research_method _(added by opus cross-check)_
   > I think five years is a good period and we've just kind of halfway through the decade so it's interesting to look at that
   indicator: rolling five-year asset and macro outcomes · asset: multi · horizon: years · testable: partly - one can compare forecasts made at the start of each five-year window with outcomes · confidence: medium
   ^MT047-C12-X1
@@ -289,7 +289,7 @@ tags: [source, layer0]
   > Last 5 Years was the best for the stain Trend uh going back to 2005 performance was higher back then but the volatility of the index was much higher back then
   indicator: SG Trend index 5-year return per unit vol · asset: multi · horizon: years · testable: yes - SG Trend index · confidence: medium
   ^MT047-C13-2
-- **Alan Dunne** US real GDP growth in 2020-24 (about 2.5%) was no better than prior five-year periods, so the exceptional equity returns came from nominal growth, deficits and negative real rates rather than superior real growth.  #mech/fiscal_debt _(added by Opus, time-bound view)_
+- **Alan Dunne** US real GDP growth in 2020-24 (about 2.5%) was no better than prior five-year periods, so the exceptional equity returns came from nominal growth, deficits and negative real rates rather than superior real growth.  #mech/fiscal_debt _(added by opus cross-check, time-bound view)_
   > us real GDP averaged 2 and a half% which is the about the same as the previous five-year periods
   indicator: US real GDP growth vs nominal GDP growth · asset: equities · horizon: years · testable: yes - decompose returns into real growth, inflation and valuation · confidence: medium
   ^MT047-C13-X1
@@ -364,9 +364,9 @@ tags: [source, layer0]
 - **Alan Dunne** Programs trading hundreds of markets with billions in AUM deviate from equal-risk allocation, and many markets add more to marketing narrative than to risk or performance; Niels has never seen data showing hundreds of markets beat 70.  #mech/risk_management
   > Trend falling programs that aim to trade hundreds of markets while managing billions of dollars in assets will likely experience a risk distribution that deviates from the theoretical optimal risk equal risk allocation approach
   indicator: number of markets in trend programs · asset: multi · horizon: years · conditions: Large AUM · testable: partly - depends on provider data · confidence: medium
-  **Correction (Opus):** Wrong speaker: Niels Kaastrup-Larsen read the Quantica quote about hundreds of markets and said he had never seen data supporting it, not Alan Dunne. → Speaker: Niels Kaastrup-Larsen (quoting Quantica). Programs trading hundreds of markets with billions in AUM deviate from equal-risk allocation, and many markets add more to the marketing narrative than to risk or performance; Niels has never seen data showing hundreds of markets beat about 70.
+  **Correction (cross-check):** Wrong speaker: Niels Kaastrup-Larsen read the Quantica quote about hundreds of markets and said he had never seen data supporting it, not Alan Dunne. → Speaker: Niels Kaastrup-Larsen (quoting Quantica). Programs trading hundreds of markets with billions in AUM deviate from equal-risk allocation, and many markets add more to the marketing narrative than to risk or performance; Niels has never seen data showing hundreds of markets beat about 70.
   ^MT047-C17-3
-- **Alan Dunne** Manager research on design questions (number of markets, capacity) tends to support the author's own business model, so findings should be weighed against the sponsor's incentives.  #mech/research_method _(added by Opus)_
+- **Alan Dunne** Manager research on design questions (number of markets, capacity) tends to support the author's own business model, so findings should be weighed against the sponsor's incentives.  #mech/research_method _(added by opus cross-check)_
   > I'm sure if we read some research from some of the um providers who run hundreds of of markets they would have compelling evidence as to why that's a good thing
   asset: multi · testable: no - caveat on evidence quality · confidence: medium
   ^MT047-C17-X1

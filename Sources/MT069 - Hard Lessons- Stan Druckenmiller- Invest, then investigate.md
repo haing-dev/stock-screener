@@ -6,7 +6,7 @@ channel: "Morgan Stanley"
 url: https://www.youtube.com/watch?v=z_pk4eBDaLA
 words: 4240
 claims: 28
-added_by_opus: 3
+added_by_crosscheck: 3
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Stan Druckenmiller (macro investor, Duquesne Family Office)", "Iliana Buzali (Morgan Stanley, interviewer)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** discretionary macro, thematic equity, position sizing, trend-following overlay
 
-**Opus completeness estimate of first read:** 0.90 - first reader captured nearly every idea with correct meaning; missed the current eclectic/Japan-Korea equity positioning, the Fed-cutting-into-boom inflation mechanism behind the bond short, and the quick-reversal practice
+**Cross-check completeness estimate of first read:** 0.90 - first reader captured nearly every idea with correct meaning; missed the current eclectic/Japan-Korea equity positioning, the Fed-cutting-into-boom inflation mechanism behind the bond short, and the quick-reversal practice
 
 ## Coverage
 
@@ -101,15 +101,15 @@ tags: [source, layer0]
   > Most trades I put on, I think in terms of 18 months to 3 years
   asset: multi · direction: use volatility for entries · horizon: years · testable: no · confidence: high
   ^MT069-C03-7
-- **Stan Druckenmiller** Positioning view: after three years of an AI-driven book, he would now hold a more eclectic equity basket, with AI only in small amounts and large positions in Japan and Korea.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Stan Druckenmiller** Positioning view: after three years of an AI-driven book, he would now hold a more eclectic equity basket, with AI only in small amounts and large positions in Japan and Korea.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > we would probably be long more an eclectic basket of equities for until the fall the last 3 years, our portfolio was very much AI-driven
   asset: equities · direction: long diversified equities, long Japan and Korea, less AI · horizon: years · conditions: AI leadership looking heated; strong US growth backdrop · testable: partly - relative returns of Japan/Korea vs US AI basket afterwards · confidence: medium
   ^MT069-C03-X1
-- **Stan Druckenmiller** A Fed that cuts rates into a booming, fiscally stimulated economy risks inflation taking off, especially with commodity prices rising, which is the scenario where short bonds pay.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Stan Druckenmiller** A Fed that cuts rates into a booming, fiscally stimulated economy risks inflation taking off, especially with commodity prices rising, which is the scenario where short bonds pay.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > it wouldn't be that unusual if the Fed were to cut into a booming economy for inflation to take off, particularly with what's going on in commodities
   indicator: Fed cuts during strong growth; commodity prices · asset: rates · direction: inflation up; bond yields up · horizon: months · conditions: Fed easing while growth is strong and commodities tight · testable: yes - inflation after easing cycles begun with above-trend growth · confidence: medium
   ^MT069-C03-X2
-- **Stan Druckenmiller** Although trades are conceived on 18-month to 3-year horizons, he will exit and even reverse a position within days when the evidence changes, so long horizons do not mean holding through contrary information.  #mech/risk_management _(added by Opus)_
+- **Stan Druckenmiller** Although trades are conceived on 18-month to 3-year horizons, he will exit and even reverse a position within days when the evidence changes, so long horizons do not mean holding through contrary information.  #mech/risk_management _(added by opus cross-check)_
   > I will admit that I put on a 3-year trade that 5 days later I'm out of and I've reversed
   asset: multi · horizon: days · conditions: new information contradicting the thesis · testable: no - discretionary practice · confidence: high
   ^MT069-C03-X3

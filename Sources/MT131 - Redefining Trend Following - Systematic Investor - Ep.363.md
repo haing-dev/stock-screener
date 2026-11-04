@@ -5,10 +5,10 @@ date: 2025-09-02
 channel: "Top Traders Unplugged"
 url: 
 words: 10320
-claims: 50
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 59
+added_by_crosscheck: 9
+corrections: 1
+crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, hedge fund manager; transcribed Neils Krup Larson)", "Nick Bolters (co-host, quant researcher/QIS)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Systematic Investor episode on August 2025 CTA performance, whether CTAs got slower or just more complex, the limits of SG Trend Index as trend beta, and Convex-style long-term compounding with short-term risk mitigation.
 
 **Approach:** trend following, CTA benchmarks, carry, risk management, compounding
+
+**Cross-check completeness estimate of first read:** 0.88 - first reader caught all main arguments (speed vs structure, trend beta, compounding); missed August sector/speed details (FX, rates speed reversal), policy-announcement risk, CTA index numbers, trend signal as risk-scaling input and the expectations/benchmark-psychology points; one YTD comparison misstated
 
 ## Coverage
 
@@ -55,6 +57,14 @@ tags: [source, layer0]
   > direct attack on another Fed governor uh Lisa Cook um and trying to essentially change the the composition
   indicator: Fed board composition · asset: rates · testable: no - political judgement · confidence: low
   ^MT131-C02-3
+- **Niels Kaastrup-Larsen** July 2025 looked like a turning point for CTAs, with constructive trends forming and August continuing the better momentum environment after a weak first half.  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
+  > July felt a little bit to me like kind of a turning point for CTAs and trend followers and there you know there were signs of a few constructive trends
+  indicator: CTA monthly performance · asset: multi · direction: trend-following returns improving · horizon: months · testable: partly - persistence of CTA monthly returns after a turn is measurable · confidence: medium
+  ^MT131-C02-X1
+- **Niels Kaastrup-Larsen** Sudden US policy announcements (e.g. the end-July 2025 copper tariff news) can reverse established trends and hurt trend followers at short notice.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
+  > let's cross our fingers that the next 24 hours will go without any big announcements um from Washington to to spoil the party as we saw at the end of July, of course, with the copper announcement
+  indicator: policy/tariff announcements (copper) · asset: commodities · direction: trend-follower losses on announcement reversals · horizon: days · conditions: policy-driven markets in 2025 · testable: partly - event study of CTA returns around tariff announcements · confidence: medium
+  ^MT131-C02-X2
 
 ### C03
 - **Niels Kaastrup-Larsen** Oil traded sideways with no follow-through, so energy offered trend followers little.  #mech/cycle_persistence _(time-bound view)_
@@ -77,6 +87,14 @@ tags: [source, layer0]
   > Kerry continues to have very very strong month or months or maybe year
   indicator: beta-neutral carry · asset: multi · direction: long carry · horizon: months · conditions: when trend is weak · testable: yes - add carry sleeve to a trend backtest · confidence: medium
   ^MT131-C03-5
+- **Nick Bolters** In fixed income the speed pattern reversed in August 2025 (slower trend signals slightly worse than faster), but the sector's contribution was tiny (about -20 bp), so speed differences there did not matter.  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
+  > I think the slower has done actually slightly worse than some of the faster ones but you know the absolute numbers are actually quite small.
+  indicator: fixed-income trend contribution by signal speed · asset: rates · direction: slow worse than fast in rates; small negative contribution · horizon: weeks · conditions: rates range-bound with no trend · testable: yes - compare speed buckets on bond futures · confidence: medium
+  ^MT131-C03-X3
+- **Nick Bolters** In Nick's trend programs the August 2025 gains came mainly from equities and currencies; equities had cost a lot in the April reversal but then captured the subsequent rally.  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
+  > primary primary drivers have been equities and and and uh and currencies actually.
+  indicator: trend contribution by sector (equities, FX) · asset: multi · direction: long equities and FX trends profitable · horizon: months · conditions: after the April 2025 V-shaped reversal · testable: yes - sector attribution of trend returns · confidence: high
+  ^MT131-C03-X4
 
 ### C04
 - **Niels Kaastrup-Larsen** A trend barometer measuring trendiness over a short lookback read 34 in late August 2025, a weak trend environment consistent with poor CTA returns.  #mech/cycle_persistence _(time-bound view)_
@@ -86,11 +104,16 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** In 2025 the short-term traders index was the worst CTA sub-index (-6.29% YTD) versus trend index -7.39% and S&P +11%, so different speeds behaved very differently.  #mech/cycle_persistence _(time-bound view)_
   > short-term traders index. It's down one and a quarter% uh and it's now down 6.29%.
   indicator: SG short-term traders index vs SG trend index · asset: multi · horizon: months · testable: yes - public index data · confidence: medium
+  **Correction (cross-check):** By the quoted YTD numbers the trend index (-7.39%) was worse than the short-term traders index (-6.29%); the short-term index was 'by far the worst' only after scaling for its low volatility, and in August it fell 1.25% while the trend index rose almost 3%. → In August 2025 the SG Short-Term Traders index fell 1.25% (-6.29% YTD) while the SG Trend index rose almost 3% (-7.39% YTD); because the short-term index runs at low volatility, on a volatility-adjusted basis it was by far the worst CTA sub-index, showing that speeds behaved very differently.
   ^MT131-C04-2
 - **Nick Bolters** Apparent CTA slowing may be a change in structure (added features) rather than a change in signal speed.  #mech/structural_shift
   > CTAs have gotten slower over the past decade or so, maybe even more. Um but you question whether that's really a shift in speed or whether that's a shift in structure
   asset: multi · horizon: years · testable: partly · confidence: medium
   ^MT131-C04-3
+- **Niels Kaastrup-Larsen** Broad CTA indices were negative in 2025 through August (BTOP50 -3.29% YTD, SG CTA index -6.25% YTD) while MSCI World was +14.3% and US aggregate bonds about +5%.  #mech/new _(added by opus cross-check, time-bound view)_
+  > the beta 50 index which obviously is a very broad index uh is indeed up uh 0.92% uh as of Tuesday down 3.29% so far this year.
+  indicator: BTOP50, SG CTA index, MSCI World, US Aggregate bond index · asset: multi · direction: CTAs down while equities and bonds up · horizon: months · testable: yes - index data · confidence: high
+  ^MT131-C04-X5
 
 ### C05
 - **Nick Bolters** The usual evidence for CTAs slowing is ex-post: correlate stylised bottom-up fast-to-slow strategies with SG Trend Index on rolling 1-2 year windows and see slower ones correlate more recently.  #mech/research_method
@@ -153,6 +176,10 @@ tags: [source, layer0]
   > you could probably define four or including my extra definition, five types or categories of trend followers
   asset: multi · testable: no - taxonomy · confidence: medium
   ^MT131-C07-5
+- **Nick Bolters** A trend signal is a measure of how trendy a market is and can be used, under dynamic risk scaling, to set relative risk across assets rather than only direction.  #mech/risk_management _(added by opus cross-check)_
+  > The signal in itself is a version of how trendy a market is and if you believe in dynamic risk scaling can also be an input into your relative risk scaling between the assets
+  indicator: trend signal strength · asset: multi · direction: more risk to trendier markets · horizon: months · conditions: if dynamic risk scaling is believed to add value · testable: yes - compare signal-strength sizing with equal risk · confidence: medium
+  ^MT131-C07-X6
 
 ### C08
 - **Nick Bolters** Trend following gives defensiveness in prolonged equity or macro drawdowns plus long-term returns, with decorrelation visible over long horizons rather than locally.  #mech/risk_management
@@ -171,6 +198,10 @@ tags: [source, layer0]
   > the more you can dilute trend following programs to make them absolute return, the less defensive by nature you're going to make them
   asset: multi · testable: partly · confidence: medium
   ^MT131-C08-4
+- **Nick Bolters** Keeping trend allocations requires explicitly setting, monitoring and managing investor expectations, because allocators must justify drawdowns to their own stakeholders; accepting drawdowns is the price of keeping exposure for a repeat of 2022.  #mech/behavioral _(added by opus cross-check)_
+  > how do we set the expectations with investors. How do we monitor those expectations and how we eventually manage them?
+  asset: multi · horizon: years · conditions: defensive mandates in weak trend years · testable: no - governance advice · confidence: medium
+  ^MT131-C08-X7
 
 ### C09
 - **Nick Bolters** Trend following already carries equity beta, so add diversifiers such as beta-neutral carry or reversion rather than more beta.  #mech/risk_management
@@ -185,6 +216,10 @@ tags: [source, layer0]
   > it is the mans that either outperformed so their assets grew by outperformance or they managed to attract capital
   asset: multi · horizon: years · testable: partly · confidence: medium
   ^MT131-C09-3
+- **Nick Bolters** Investors reduce information to a few items (as PCA does), which is why single benchmarks are used both to summarise a strategy class and as targets to track or beat, even when they are imperfect.  #mech/behavioral _(added by opus cross-check)_
+  > I think the way that human beings behave and investors behave is is is in the form of dimensionality reduction.
+  asset: multi · testable: no - behavioural observation · confidence: medium
+  ^MT131-C09-X8
 
 ### C10
 - **Nick Bolters** Calling the manager index 'trend beta' assumes risk-management and design choices net to zero alpha; otherwise it is beta plus or minus alpha.  #mech/research_method
@@ -217,6 +252,10 @@ tags: [source, layer0]
   > people use the 60/40 partly by convention rather than um academic prudence
   asset: multi · testable: no · confidence: medium
   ^MT131-C11-3
+- **Niels Kaastrup-Larsen** A rules-based (non-manager) trend index could probably be replicated, giving investors an investable true trend benchmark.  #mech/research_method _(added by opus cross-check)_
+  > if we did come up with a better index for trend following even if it's not based on managers could that be replicated probably could
+  indicator: rules-based trend index · asset: multi · testable: partly - tracking error of a replication vs a signal-based index · confidence: low
+  ^MT131-C11-X9
 
 ### C12
 - **Niels Kaastrup-Larsen** Following Dave Dredge (Convex): portfolios built to look safe and near long-term average load up on correlated strategies that fall together; maximising long-term compounding requires different construction.  #mech/risk_management

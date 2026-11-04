@@ -118,8 +118,8 @@
   }
  ],
  "chunks": 19,
- "crosscheck": null,
- "completeness_estimate": null,
+ "crosscheck": "opus cross-check",
+ "completeness_estimate": "0.96 - first reader captured nearly every claim with correct speakers and numbers; only the move-size-driven manager dispersion point and the portable-alpha research gap (buffers, tail co-dependence) were missing",
  "claims": [
   {
    "claim_id": "MT083-C02-1",
@@ -1290,9 +1290,45 @@
    "time_bound": "yes",
    "reader": "sonnet",
    "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT083-C04-X1",
+   "chunk": "C04",
+   "speaker": "Katie Kaminski",
+   "quote": "in a big move, you're always going to see a little bit more dispersion, but that's it's kind of typical given sort of how large the size of the moves are.",
+   "claim": "Dispersion between trend managers rises in months with very large moves because small design choices (weights, speed, markets) get amplified; the largest managers stay in a narrow band while mid-sized ones diverge, so one month's ranking says little about skill.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "cross-sectional dispersion of CTA monthly returns vs size of market moves",
+   "horizon": "months",
+   "direction": "dispersion up when moves are large",
+   "conditions": "months with big trend moves or reversals",
+   "testable": "yes - regress manager return dispersion on absolute market move size",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT083-C18-X1",
+   "chunk": "C18",
+   "speaker": "Harry Moore",
+   "quote": "I think less literature so far on things like the cash buffer question, tail code dependent structuring.",
+   "claim": "Portable alpha research has covered what it is and how to build it, but sizing of cash buffers and structuring around tail co-dependence between the alpha and the beta remain under-researched and are the key open design questions.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "tail dependence between overlay alpha and equity beta; cash buffer size",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "portable alpha / return-stacked structures",
+   "testable": "yes - simulate buffers and tail co-drawdowns historically",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
   }
  ],
  "n_sonnet": 65,
- "n_opus_added": 0,
+ "n_opus_added": 2,
  "n_corrections": 0
 }

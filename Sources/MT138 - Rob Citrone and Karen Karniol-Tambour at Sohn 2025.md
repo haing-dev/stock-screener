@@ -5,10 +5,10 @@ date: 2025-05-20
 channel: "Sohn Conference Foundation"
 url: https://www.youtube.com/watch?v=GNDpVJAx6uA
 words: 4358
-claims: 29
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 41
+added_by_crosscheck: 12
+corrections: 2
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Karen Karniol-Tambour (macro investor, Bridgewater; inferred from content)", "Rob Citrone (Discovery Capital, EM/macro discretionary)", "moderator (unnamed)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Sohn 2025 panel (May 2025) with two global macro investors on the shift from the globalisation/US-centric paradigm to 'modern mercantilism'. Conclusions: markets have barely priced the new paradigm; diversify geographically and across asset types; favour non-US fixed income, short the dollar vs euro/yen, EM (Latin America) rates and currencies, oil and gold; US rates higher near-term with a 2026 fiscal boost.
 
 **Approach:** discretionary global macro, geopolitical regime shift, geographic diversification, emerging markets, rates and FX
+
+**Cross-check completeness estimate of first read:** 0.78 - first reader caught the main macro theses (modern mercantilism, geographic diversification, non-US bonds, dollar shorts, EM, oil/gold, America Movil); missed regional-bloc and management-first method, US-yield spillover, China valuation/stimulus scenario, sovereign credit, bond-as-recession-hedge role, and mixed up speakers on two items.
 
 ## Coverage
 
@@ -51,14 +53,18 @@ tags: [source, layer0]
   > global investors are so long corporate America in every kind of asset you can think of
   indicator: foreign allocation to US assets · asset: multi · horizon: years · testable: partly - holdings data · confidence: medium
   ^MT138-C01-4
+- **Karen Karniol-Tambour** Starting prices already assume the old paradigm continues: unlike 2010, when prices embedded low US profitability, current prices assume US companies keep beating past results, so a shift in paradigm has more room to hurt US assets.  #mech/overshoot _(added by sonnet-xhigh cross-check, time-bound view)_
+  > keep beating what you got before is even stronger
+  indicator: US profitability expectations embedded in prices · asset: equities · direction: US equities vulnerable to paradigm shift · horizon: years · testable: partly - implied profitability expectations can be compared with 2010 · confidence: medium
+  ^MT138-C01-X1
 
 ### C02
-- **Rob Citrone** US private-sector exceptionalism (technology, financial services, capital markets) persists, so money leaving the US will not be easy.  #mech/structural_shift _(quote other_chunk, time-bound view)_
-  > I still think we have a massive edge in technology.
+- **Rob Citrone** US private-sector exceptionalism (technology, financial services, capital markets) persists, so money leaving the US will not be easy.  #mech/structural_shift _(time-bound view)_
+  > still think we have a massive edge in technology.
   asset: equities · horizon: years · testable: no · confidence: medium
   ^MT138-C02-1
-- **Rob Citrone** Latin America, left for dead for 25 years, has political shifts (Argentina's Milei, elections in Peru, Colombia, Chile, Brazil) bringing better policies, with returns across equities, currencies, credit and high rates.  #mech/policy_reaction _(quote near, time-bound view)_
-  > we're seeing that big change in Latin America where management is changing
+- **Rob Citrone** Latin America, left for dead for 25 years, has political shifts (Argentina's Milei, elections in Peru, Colombia, Chile, Brazil) bringing better policies, with returns across equities, currencies, credit and high rates.  #mech/policy_reaction _(time-bound view)_
+  > we're seeing now that big change in Latin America where management is changing
   asset: multi · direction: long Latin American equities, currencies, credit and rates · horizon: months · conditions: over next 18 months of elections · testable: partly · confidence: medium
   ^MT138-C02-2
 - **Karen Karniol-Tambour** US reliance on current account inflows, mostly from allies, means reduced foreign appetite for US assets cannot unwind in a day; policy of self-sufficiency pushes capital to stay at home (Germany defence example).  #mech/fiscal_debt _(time-bound view)_
@@ -66,9 +72,26 @@ tags: [source, layer0]
   indicator: current account inflows · asset: multi · horizon: years · testable: partly · confidence: medium
   ^MT138-C02-3
 - **Karen Karniol-Tambour** After DeepSeek, Nvidia's market cap fell by roughly two Mexicos in a day, showing how under-capitalised markets like Mexico and Brazil are in world indices and the case for taking geographic diversification seriously.  #mech/risk_management _(time-bound view)_
-  > it fell by two Mexicos
+  > It fell by two Mexicos
   indicator: market cap weights · asset: equities · horizon: days · testable: yes - data point · confidence: medium
+  **Correction (cross-check):** Speaker likely Citrone, not Karniol-Tambour: the story starts with 'I have to tell you a funny story about that', interrupting Karniol-Tambour's sentence about the negligible market cap of Brazil and Mexico, and the Latin American market-cap point fits Citrone. → Citrone (probably) notes that after DeepSeek, Nvidia's market cap fell by about two Mexicos on one Monday, showing how tiny Mexico and Brazil are in market-cap terms (the case for geographic diversification, which Karniol-Tambour then endorses).
   ^MT138-C02-4
+- **Rob Citrone** Citrone assesses countries like companies, starting with management quality and policy; the political change in Latin America (Milei in Argentina, spreading across the region) is the core of his thesis there.  #mech/policy_reaction _(added by sonnet-xhigh cross-check)_
+  > we first thing we look at is management and how good is management and what are the policies
+  indicator: quality of country management and policy · asset: multi · direction: long Latin American assets where management is improving · horizon: years · testable: no - discretionary judgement · confidence: high
+  ^MT138-C02-X1
+- **Rob Citrone** Citrone expects the world to silo into three regional blocs (Americas, Europe, Asia), which creates regional dislocations and opportunities in places such as Latin America.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > siloing now where you're going to have kind of the Americas, you're going to have the Europe and then you're going to have Asia
+  asset: multi · horizon: years · testable: no - structural view · confidence: medium
+  ^MT138-C02-X2
+- **Rob Citrone** In a tricky, dislocated world a portfolio needs short positions and dynamic protection at certain points, rather than being structurally long.  #mech/risk_management _(added by sonnet-xhigh cross-check, time-bound view)_
+  > We think you have to have shorts. We like we like the fact you have to protect your portfolio at certain points here
+  asset: multi · direction: include short positions and hedges · conditions: when the environment is dislocated · testable: no - discretionary stance · confidence: high
+  ^MT138-C02-X3
+- **Karen Karniol-Tambour** Karniol-Tambour likes Brazilian and Mexican currencies as part of Latin American exposure, and sees capital staying at home as the US pushes self-sufficiency.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > I particularly like currencies in places like Brazil and Mexico
+  indicator: BRL, MXN · asset: fx · direction: long BRL and MXN · horizon: months · testable: no - view · confidence: medium
+  ^MT138-C02-X4
 
 ### C03
 - **Karen Karniol-Tambour** Market-cap-guided investors are concentrated in the US; true diversification means markets with different growth, inflation, monetary policy and elections (Latin America, Asia).  #mech/risk_management
@@ -91,6 +114,10 @@ tags: [source, layer0]
   > I like fixed income a lot more in other countries in the United States
   asset: rates · direction: long non-US government bonds · horizon: months · testable: partly · confidence: high
   ^MT138-C03-5
+- **Karen Karniol-Tambour** The May 2025 tariff de-escalation removed the tail risk of massive factory shutdowns and empty shelves, but a slowdown and some inflation still lie ahead, which most portfolios are not prepared for.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > the last 48 hours or so have taken some tail risk off the table
+  indicator: tariff policy path · asset: multi · direction: reduced severe-slowdown risk · horizon: months · testable: no - view on a specific episode · confidence: medium
+  ^MT138-C03-X1
 
 ### C04
 - **Karen Karniol-Tambour** Tariff effects are inflationary in the US (more so if supply constraints) but deflationary abroad (weaker currencies, lower energy), so the Fed cannot ease easily while other central banks can, and little non-US easing is priced.  #mech/policy_reaction _(time-bound view)_
@@ -113,6 +140,14 @@ tags: [source, layer0]
   > are places where rates can come down a lot
   asset: rates · direction: long EM and UK bonds; short US and Japan bonds · horizon: months · testable: no - view · confidence: medium
   ^MT138-C04-5
+- **Karen Karniol-Tambour** The Fed's hope is that tariff inflation is a one-off price-level shift like a VAT rise, but if tariffs come with supply disruption it looks more like Covid, with demand intact and supply short, and persistent inflation; this uncertainty stops the Fed from easing.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > an inflationary impulse from the tariffs is a one-off. It kind of goes through like a VAT tax increase and fades
+  indicator: tariff pass-through to inflation · asset: rates · direction: Fed on hold · horizon: months · conditions: depends on whether tariffs create supply problems · testable: partly - core inflation response after tariff shocks · confidence: medium
+  ^MT138-C04-X1
+- **Rob Citrone** Rising US yields push yields higher in most other countries, so Citrone is short both US and Japanese government bonds and plays falling rates only where local conditions differ (Brazil, Mexico, Argentina, Turkey).  #mech/liquidity_flows _(added by sonnet-xhigh cross-check, time-bound view)_
+  > the US is going force rates in most countries higher
+  indicator: US Treasury yield spillover to other bond markets · asset: rates · direction: short US and Japan bonds · horizon: months · conditions: except high-rate EM where rates can fall · testable: yes - cross-market yield beta · confidence: medium
+  ^MT138-C04-X2
 
 ### C05
 - **Karen Karniol-Tambour** How much risk and where is the key question; take moderate risk, mostly outside the United States.  #mech/risk_management _(time-bound view)_
@@ -131,6 +166,14 @@ tags: [source, layer0]
   > the vast majority of investors when they go into a country, they just buy the stock market
   asset: multi · testable: no · confidence: medium
   ^MT138-C05-4
+- **Karen Karniol-Tambour** Chinese equities are very cheap and could rally on stimulus, but this is only one scenario, so Bridgewater earns in China through weak-economy exposures too (bonds, currency devaluation).  #mech/overshoot _(added by sonnet-xhigh cross-check, time-bound view)_
+  > look, Chinese stocks are extremely cheap and you got to think about valuation and there's certainly a path where they stimulate and you get something out of the stocks, but it's not the only scenario
+  indicator: China equity valuation · asset: equities · direction: long Chinese stocks possible on stimulus · horizon: months · conditions: needs policy stimulus · testable: partly - valuation versus stimulus outcomes · confidence: medium
+  ^MT138-C05-X1
+- **Rob Citrone** Citrone's credit exposure is mainly sovereign: Argentina, Nigeria and Ecuador still pay a lot of yield, though they are specialised and need big returns to justify the risk.  #mech/risk_premium _(added by sonnet-xhigh cross-check, time-bound view)_
+  > Argentina. I think you still get paid a lot for that. I think uh um Nigeria you get paid a lot.
+  indicator: EM sovereign credit spreads · asset: credit · direction: long Argentine, Nigerian and Ecuadorian sovereign credit · horizon: months · conditions: specialised, high-risk markets · testable: partly - spread versus default loss · confidence: medium
+  ^MT138-C05-X2
 
 ### C06
 - **Karen Karniol-Tambour** Fixed income capabilities were hollowed out in a zero-rate world as money moved to private credit, which carries equity-like risk rather than uncorrelated alpha.  #mech/structural_shift
@@ -152,11 +195,20 @@ tags: [source, layer0]
 - **Karen Karniol-Tambour** Tactically prefer gold to oil: gold is crowded long after a big run, oil is crowded short and could spike.  #mech/crowding_positioning _(time-bound view)_
   > everybody's long and oil I think people are short
   indicator: positioning in gold and oil · asset: commodities · direction: long oil, caution gold · horizon: weeks · conditions: near-term only · testable: partly - positioning data · confidence: medium
+  **Correction (cross-check):** Internally inconsistent and probably two speakers: Karniol-Tambour says she does not tactically buy oil and likes gold better tactically; the crowding argument (gold crowded long, oil crowded short, so oil could spike while gold underperforms) points the other way and is probably Citrone's counterpoint. → Karniol-Tambour tactically prefers gold over oil as part of an ignored inflation-risk commodity complex; the crowding argument that oil could spike near term while gold lags is a counterpoint (see added claim MT138-C06-X2).
   ^MT138-C06-5
 - **Rob Citrone** America Movil as single-name favourite: Latin American footprint, 10% FCF yield, about 4x EV/EBITDA, 10% growth, 7-10% buybacks, trusted controlling holder.  #mech/risk_premium _(time-bound view)_
   > generates 10% free cash flow yield trades at four times firm by EBT do growing at 10% buying back 7 to 10% of the stock a year
   indicator: FCF yield; EV/EBITDA · asset: equities · direction: long America Movil · horizon: years · testable: yes - fundamentals · confidence: high
   ^MT138-C06-6
+- **Karen Karniol-Tambour** Institutions held fixed income as a recession hedge (central banks ease when growth falls); when rates were at zero that role seemed pointless, so money moved to private credit with equity-like risk, hollowing out bond-selection capability.  #mech/policy_reaction _(added by sonnet-xhigh cross-check)_
+  > if there's a recession at least I'll get some easing and that'll be kind of balancing out of all my risky assets
+  indicator: bonds as recession hedge via central-bank easing · asset: rates · horizon: years · conditions: fails when rates are at zero and cannot fall · testable: partly - bond returns in recessions by starting rate level · confidence: high
+  ^MT138-C06-X1
+- **Rob Citrone** Positioning argument (speaker inferred to be Citrone, countering a gold-over-oil preference): gold has had a big run and is crowded long while oil positioning is short, so near term oil could spike while gold underperforms.  #mech/crowding_positioning _(added by sonnet-xhigh cross-check, time-bound view)_
+  > everybody's long and oil I think people are short
+  indicator: gold and oil positioning · asset: commodities · direction: long oil, short-term caution on gold · horizon: weeks · testable: yes - positioning data · confidence: medium
+  ^MT138-C06-X2
 
 ### C07
 - **Karen Karniol-Tambour** Many uncorrelated opportunities exist outside the benchmark holdings, so portfolios should ask what diversifies what they hold.  #mech/risk_management

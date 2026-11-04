@@ -5,10 +5,10 @@ date: 2024-12-29
 channel: "Top Traders Unplugged"
 url: 
 words: 7763
-claims: 34
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 40
+added_by_crosscheck: 6
+corrections: 2
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Tilman (J8 Capital co-founder)", "Vishal (J8 head of trading and portfolio management)", "Moritz Seibert (host, Open Interest series)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** J8 Capital runs a decomposed multi-strategy program (trend in commodities, FX, bonds; curve arbitrage, FX carry, inventory, vol term structure) risk-weighted by inverse realised vol at 10 percent target. Redwood adds an intraday strategy with low correlation to CTA indices; costs are the key hurdle.
 
 **Approach:** trend following, carry, term structure arbitrage, multi-strategy, short-term trading
+
+**Cross-check completeness estimate of first read:** 0.89 - first reader caught the J8 decomposition philosophy, trend/carry/arbitrage rules, risk weighting, leverage and Redwood points; missed a few mechanisms (outright vs relative VIX trade, diversification-to-leverage logic, holding period/universe of Redwood, equity exclusion caveat, cost components) and mis-attributed one answer to the host.
 
 ## Coverage
 
@@ -102,6 +104,14 @@ tags: [source, layer0]
   > going long the under supplied one and short the oversupplied one because you would expect an oversupplied Mar surprises to fall in under supplied Mar prices to increase
   indicator: futures curve shape (December vs September) · asset: commodities · direction: long backwardation, short contango · horizon: months · testable: yes · confidence: medium
   ^MT108-C05-5
+- **Tilman (J8 co-founder)** The exclusion of equity indices applies only to J8's slow trend program; equity index futures can make sense when traded differently (the short-term Redwood system trades them), so the redundancy argument is horizon-specific.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > that is not to say the trading Equity indices does not make sense if you trade them differently
+  indicator: equity index futures in slow trend vs short-term strategy · asset: equities · conditions: slow multi-month trend program · testable: yes - add equities to short-term vs long-term systems and compare · confidence: medium
+  ^MT108-C05-X1
+- **Tilman (J8 co-founder)** J8 separates two carry/arbitrage styles: arbitraging time along a futures curve (commodity term structure, volatility term structure) versus arbitraging between markets (FX carry, commodity inventory/curvature selection).  #mech/risk_premium _(added by sonnet-xhigh cross-check)_
+  > here we Arbitrage time when it comes to carry trade in caros scenes and the inventory picker in commodi there we Arbitrage between asset classes
+  indicator: term-structure vs cross-market carry · asset: multi · testable: partly - classification of carry strategies · confidence: low
+  ^MT108-C05-X2
 
 ### C06
 - **Tilman (J8 co-founder)** Use futures curve shape as a real-time inventory proxy because inventory data is delayed, revised and imprecise.  #mech/research_method
@@ -128,6 +138,14 @@ tags: [source, layer0]
   > we scale the exposure of our futures to achieve a realized Target volatility of 10%
   indicator: target volatility · asset: multi · horizon: years · testable: yes · confidence: high
   ^MT108-C06-6
+- **Tilman (J8 co-founder)** J8's volatility strategy is a relative-value trade along the VIX/VSTOXX futures term structure (short front, long back) rather than outright short volatility, so it earns roll-yield differentials without depending on the equity risk premium.  #mech/risk_premium _(added by sonnet-xhigh cross-check)_
+  > that strategy is purely long short on the T structure and it does not go WR the VIX Index
+  indicator: VIX and VSTOXX futures term structure · asset: other · direction: short front, long back months · conditions: needs hedging against volatility spikes · testable: yes - roll-yield spread returns testable · confidence: medium
+  ^MT108-C06-X1
+- **Tilman (J8 co-founder)** Combining many uncorrelated sub-strategies lowers portfolio volatility, and because futures are unfunded the exposure can be levered up to restore the 10% target volatility, so diversification can be converted into return.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > you already have a super Diversified return stream um and and and the return and the volatility gets lower and lower and lower
+  indicator: portfolio volatility vs strategy count; leverage · asset: multi · conditions: unfunded instruments, adequate margin · testable: yes - diversification gain converted via leverage · confidence: medium
+  ^MT108-C06-X2
 
 ### C07
 - **Tilman (J8 co-founder)** At 10 percent target vol, margin to equity is about 6-12 percent, so 1 million cash controls roughly 30 million of notional.  #mech/liquidity_flows
@@ -159,7 +177,12 @@ tags: [source, layer0]
 - **Moritz Seibert (host)** Redwood's correlation with the short-term traders index is near zero.  #mech/risk_premium
   > found it practically nothing it's like very close to 0
   indicator: STTI correlation · asset: multi · horizon: days · testable: yes · confidence: medium
+  **Correction (cross-check):** Wrong speaker: Moritz asks what Redwood's correlation to the short-term traders index is; the answer ('we ran it and found it practically nothing, very close to 0') is Vishal's. → Vishal: Redwood's correlation with the SG Short Term Traders Index is practically zero (close to 0).
   ^MT108-C08-4
+- **Vishal (J8, head of trading)** Redwood's holding period is a few hours to a few days (3-5 days at most, mostly same day or next day), and unlike the main program it trades all asset classes including equity indices, in liquid futures only.  #mech/slow_reaction _(added by sonnet-xhigh cross-check)_
+  > very few of them are being held over like multiple days which can be like 3 to five days
+  indicator: holding period; asset-class coverage of Redwood · asset: multi · horizon: days · conditions: highly liquid futures only · testable: yes - holding-period and universe checks · confidence: high
+  ^MT108-C08-X1
 
 ### C09
 - **Vishal (J8, head of trading)** Short-term trading is not simply counter-trend; each strategy uses its own horizon context including volatility.  #mech/research_method
@@ -183,6 +206,7 @@ tags: [source, layer0]
 - **Moritz Seibert (host)** Moritz's math: at about 6 dollars per contract and 8,000 round turns per million, costs are about 10.8 percent a year, a very high hurdle for short-term strategies.  #mech/risk_management
   > when we do these 8 8,000 round turns per million per year you're down about 11% uh 10.8% to be exact in terms of uh expected execution and implementation cost
   indicator: execution cost per contract · asset: multi · horizon: years · conditions: per 6 dollar all-in contract cost · testable: yes · confidence: medium
+  **Correction (cross-check):** Faithful to the speaker but the arithmetic does not reconcile: 8,000 round turns x 2 contracts x $6 = 9.6% (and 700 per month x 12 = 8,400 gives about 10.1%); 10.8% would need about 9,000 round turns at $12. Treat 10.8% as the speaker's rough figure, about 10% a year. → Moritz: at roughly 6 dollars all-in per contract and about 8,000-9,000 round turns per million per year, execution cost is roughly 10 percent a year (he states 10.8%), a very high hurdle for the short-term strategy.
   ^MT108-C10-1
 - **Vishal (J8, head of trading)** Short-term systems can easily overtrade, so exposure and sensitivity must be controlled.  #mech/risk_management
   > you can easily do overtrading in the short-term space
@@ -192,4 +216,8 @@ tags: [source, layer0]
   > we have built our own in-house uh infrastructure for the fix uh execution
   asset: multi · testable: no · confidence: high
   ^MT108-C10-3
+- **Moritz Seibert (host)** Cost build-up for a non-HFT futures trader: about 0.75 broker commission, 0.50 exchange fee, 0.50 clearing fee, plus spread, slippage and market impact, which brings the all-in cost to roughly 5-6 dollars per contract.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > there is like an execution Commission of 75 cents and there's always exchange fees whatever like 50 cents and clearing fees 50 cents
+  indicator: per-contract execution cost components · asset: multi · conditions: firms without HFT infrastructure or exchange membership · testable: yes - cost components can be audited · confidence: medium
+  ^MT108-C10-X1
 

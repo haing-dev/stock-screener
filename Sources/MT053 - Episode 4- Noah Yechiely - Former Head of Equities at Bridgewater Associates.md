@@ -6,7 +6,7 @@ channel: "Generating Alpha Podcast"
 url: https://www.youtube.com/watch?v=JD-CkCfpHqw
 words: 4479
 claims: 13
-added_by_opus: 4
+added_by_crosscheck: 4
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Noah Yechiely (former head of equities, Bridgewater Associates)", "Amir and Owen (hosts, Generating Alpha podcast)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** macro hedge fund, market efficiency, strategy decay, risk management
 
-**Opus completeness estimate of first read:** 0.75 - short career/hiring interview; first reader caught the main ideas (uncorrelated returns, beta drift, efficiency, crowding, top-down vs bottom-up, ask why), missing the correlated-assets premise, migrating efficiency, the research-framework process and the politics-affects-all-stocks point; C05 and C07 have no claim-worthy content.
+**Cross-check completeness estimate of first read:** 0.75 - short career/hiring interview; first reader caught the main ideas (uncorrelated returns, beta drift, efficiency, crowding, top-down vs bottom-up, ask why), missing the correlated-assets premise, migrating efficiency, the research-framework process and the politics-affects-all-stocks point; C05 and C07 have no claim-worthy content.
 
 ## Coverage
 
@@ -41,7 +41,7 @@ tags: [source, layer0]
   > primary objective is um producing return that is uncorrelated
   indicator: correlation of fund returns with market · asset: multi · direction: add uncorrelated return stream to portfolio · conditions: Benefit appears when other assets are falling · testable: yes - correlation of fund returns to market is measurable · confidence: high
   ^MT053-C01-1
-- **Noah Yechiely** Long-only assets tend to rise over time as payment for providing capital, but they are mostly correlated with each other, so a long-only mix gives limited diversification and an uncorrelated return stream is what adds most to a portfolio.  #mech/risk_premium _(added by Opus)_
+- **Noah Yechiely** Long-only assets tend to rise over time as payment for providing capital, but they are mostly correlated with each other, so a long-only mix gives limited diversification and an uncorrelated return stream is what adds most to a portfolio.  #mech/risk_premium _(added by opus cross-check)_
   > but all assets tends to go up and down together they are correlated
   indicator: cross-asset correlation · asset: multi · direction: long assets earn a premium over time · horizon: years · testable: yes - cross-asset correlations and long-run asset returns are measurable · confidence: high
   ^MT053-C01-X1
@@ -59,7 +59,7 @@ tags: [source, layer0]
   > particular niches in the market that are inefficient and there are there are reasons why they would be inefficient
   asset: multi · conditions: Niche inefficiencies have small capacity · testable: partly - capacity-limited niche alpha hard to test · confidence: medium
   ^MT053-C02-3
-- **Noah Yechiely** Market efficiency is not uniformly rising: some markets have become more efficient, others less, and inefficiency migrates from one area to another over time, so where edges exist must be reassessed.  #mech/structural_shift _(added by Opus)_
+- **Noah Yechiely** Market efficiency is not uniformly rising: some markets have become more efficient, others less, and inefficiency migrates from one area to another over time, so where edges exist must be reassessed.  #mech/structural_shift _(added by opus cross-check)_
   > some of the markets became more efficient some of the markets became less efficient um and the efficiency also moves from one thing to the other
   asset: multi · horizon: years · testable: partly - decay or revival of strategy returns by market and period can be measured · confidence: medium
   ^MT053-C02-X1
@@ -87,13 +87,13 @@ tags: [source, layer0]
   > always assume that you're wrong rather than that you're right
   indicator: Sharpe ratio of a strategy · asset: multi · testable: partly - out-of-sample persistence checks · confidence: medium
   ^MT053-C04-2
-- **Noah Yechiely** Investment research is the same analytical process as consulting or engineering: break a new problem into pieces, build a framework, then find data to test it.  #mech/research_method _(added by Opus)_
+- **Noah Yechiely** Investment research is the same analytical process as consulting or engineering: break a new problem into pieces, build a framework, then find data to test it.  #mech/research_method _(added by opus cross-check)_
   > the approach how you break down the problem into its pieces how you build a framework to solve the problem how you find the data
   asset: multi · testable: no - general process advice · confidence: medium
   ^MT053-C04-X1
 
 ### C06
-- **Noah Yechiely** Politics and geopolitics (e.g. US-China relations and whether tariffs go higher or lower) affect every company and market, so even bottom-up investors must understand the macro and political forces acting on their holdings.  #mech/policy_reaction _(added by Opus)_
+- **Noah Yechiely** Politics and geopolitics (e.g. US-China relations and whether tariffs go higher or lower) affect every company and market, so even bottom-up investors must understand the macro and political forces acting on their holdings.  #mech/policy_reaction _(added by opus cross-check)_
   > whether you know like our relationship with China where the tariffs will be higher lower how it will play out
   indicator: US-China tariff levels · asset: multi · testable: partly - tariff-news sensitivity of stocks can be measured · confidence: high
   ^MT053-C06-X1

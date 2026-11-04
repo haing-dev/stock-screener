@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 11233
 claims: 55
-added_by_opus: 3
+added_by_crosscheck: 3
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, Top Traders Unplugged)", "Katy Kaminski (AlphaSimplex, trend following researcher; caption 'Katie Kaminsky')"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, drawdown recovery, regimes, replication, shocks
 
-**Opus completeness estimate of first read:** 0.94 - first reader covered the drawdown paper, shock types, regime method and replication debate well; missed one disagreement (low rates vs Trump for 2015-19), the turbulence metric and the Denmark/euro aside, and misattributed one explanation.
+**Cross-check completeness estimate of first read:** 0.94 - first reader covered the drawdown paper, shock types, regime method and replication debate well; missed one disagreement (low rates vs Trump for 2015-19), the turbulence metric and the Denmark/euro aside, and misattributed one explanation.
 
 ## Coverage
 
@@ -50,9 +50,9 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** China-focused CTA programs underperformed traditional CTAs in June 2025, probably because Chinese futures are commodity heavy and geopolitical moves hit energies hard, while metals trended.  #mech/cycle_persistence _(time-bound view)_
   > CTA programs that are focused on China markets actually had somewhat of a different experience in June, doing somewhat worse than the traditional CTA programs
   indicator: China-focused CTA programs vs traditional CTAs · asset: commodities · horizon: weeks · conditions: June 2025 · testable: yes - index comparison · confidence: medium
-  **Correction (Opus):** Attributes the explanation to Niels; Niels only reports that China-focused CTA programs did worse in June 2025 and says he does not know why. The commodity-heavy explanation is Kaminski's explicitly labelled first guess. → Niels: China-focused CTA programs did worse than traditional CTAs in June 2025. Kaminski (a guess): Chinese futures are commodity heavy, energies were shocked by geopolitics while some supply-chain metals trended, so results there differed from other markets.
+  **Correction (cross-check):** Attributes the explanation to Niels; Niels only reports that China-focused CTA programs did worse in June 2025 and says he does not know why. The commodity-heavy explanation is Kaminski's explicitly labelled first guess. → Niels: China-focused CTA programs did worse than traditional CTAs in June 2025. Kaminski (a guess): Chinese futures are commodity heavy, energies were shocked by geopolitics while some supply-chain metals trended, so results there differed from other markets.
   ^MT045-C02-1
-- **Niels Kaastrup-Larsen** Staying outside the euro (Denmark) has worked better than joining because the country keeps control of its own interest rates, and the krone has stayed strong.  #mech/policy_reaction _(added by Opus)_
+- **Niels Kaastrup-Larsen** Staying outside the euro (Denmark) has worked better than joining because the country keeps control of its own interest rates, and the krone has stayed strong.  #mech/policy_reaction _(added by opus cross-check)_
   > I actually think Denmark has done better than the Euro zone because they stand outside and can still determine their own interest rates
   indicator: Danish krone; Denmark vs euro-area growth · asset: fx · horizon: years · testable: partly - Denmark vs euro-area outcomes, though the krone is pegged to the euro · confidence: medium
   ^MT045-C02-X1
@@ -146,7 +146,7 @@ tags: [source, layer0]
   > we were doing a a study of Trump's tweets and we just didn't find that much trends that he could trump
   asset: multi · horizon: years · testable: yes · confidence: medium
   ^MT045-C07-4
-- **Katy Kaminski** Kaminski disputes that the 2015-2019 trend drawdown was mainly a Trump trade-war effect; the very low rate environment of that period was also a cause.  #mech/policy_reaction _(added by Opus)_
+- **Katy Kaminski** Kaminski disputes that the 2015-2019 trend drawdown was mainly a Trump trade-war effect; the very low rate environment of that period was also a cause.  #mech/policy_reaction _(added by opus cross-check)_
   > I don't necessarily think that the longest draw down was particularly just linked to that particular presidency. It was just a period with very low rates as well.
   indicator: policy rate level during trend drawdowns · asset: multi · direction: trend returns weaker when rates are pinned near zero · horizon: years · conditions: disagrees with Niels's Trump attribution · testable: yes - trend returns conditioned on rate level · confidence: medium
   ^MT045-C07-X1
@@ -226,7 +226,7 @@ tags: [source, layer0]
   > we all get the news at the same time but we kind of digest it at different speeds
   asset: multi · horizon: weeks · testable: no · confidence: medium
   ^MT045-C11-5
-- **Katy Kaminski** Turbulence metrics (magnitude-of-surprise measures across assets) can be used to identify and size exogenous shocks when studying their effect on trend following.  #mech/research_method _(added by Opus)_
+- **Katy Kaminski** Turbulence metrics (magnitude-of-surprise measures across assets) can be used to identify and size exogenous shocks when studying their effect on trend following.  #mech/research_method _(added by opus cross-check)_
   > we wrote a great paper a couple years ago on turbulence and actually that man paper mentioned the turbulence metrics
   indicator: market turbulence index (magnitude surprise) · asset: multi · horizon: days · testable: yes - turbulence index vs trend returns · confidence: medium
   ^MT045-C11-X1

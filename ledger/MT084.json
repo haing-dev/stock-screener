@@ -112,8 +112,8 @@
   }
  ],
  "chunks": 18,
- "crosscheck": null,
- "completeness_estimate": null,
+ "crosscheck": "opus cross-check",
+ "completeness_estimate": "0.96 - first reader captured almost all claims with correct speakers and numbers; only the small-tariff caveat on the SF Fed study and the squandered-credibility point were missing",
  "claims": [
   {
    "claim_id": "MT084-C01-1",
@@ -1212,9 +1212,45 @@
    "time_bound": "yes",
    "reader": "sonnet",
    "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT084-C06-X1",
+   "chunk": "C06",
+   "speaker": "Alan Dunne",
+   "quote": "obviously the historic um changes in tariffs have been much smaller relative to",
+   "claim": "Caveat on the San Francisco Fed 40-year cross-country tariff study: historical tariff changes were much smaller than the 2025 US tariffs, so its unemployment-then-inflation pattern may understate or misstate today's effects.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "historical tariff changes vs 2025 tariff size",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "out-of-sample tariff shock far larger than history",
+   "testable": "partly - check dose-response of tariff size in the panel",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT084-C12-X1",
+   "chunk": "C12",
+   "speaker": "Alan Dunne",
+   "quote": "the inflation fighting credibility has been squandered somewhat. I mean it was it was hard one you know Vular Greenspan in that era but now we're at risk of of throwing it out",
+   "claim": "Central bank inflation-fighting credibility, hard won under Volcker and Greenspan, is being squandered by cutting with inflation above target; because inflation embedded in the 1970s was so hard to wring out, this complacency is a very big risk.",
+   "mechanism": "policy_reaction",
+   "asset_class": "rates",
+   "indicator": "Fed cuts with inflation above target; inflation expectations",
+   "horizon": "years",
+   "direction": "higher inflation risk premium; long yields up",
+   "conditions": "policy easing while inflation is above target and sticky",
+   "testable": "partly - inflation expectations and term premium after cuts above target",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
   }
  ],
  "n_sonnet": 61,
- "n_opus_added": 0,
+ "n_opus_added": 2,
  "n_corrections": 0
 }

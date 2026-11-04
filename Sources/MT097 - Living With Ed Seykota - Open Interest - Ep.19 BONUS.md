@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 7110
 claims: 25
-added_by_opus: 4
+added_by_crosscheck: 4
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Dave Drew (systematic trader, former apprentice of Ed Seykota)", "Moritz Seibert (host, Open Interest series)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trading psychology, position sizing, drawdown management, discretionary vs systematic, trend following
 
-**Opus completeness estimate of first read:** 0.9 - anecdote-heavy episode with few method ideas; first reader captured the sizing and psychology points, missed Drew's backtest-before-implement process, investor-suitability caveat, drawdown-behavior point and data cleaning.
+**Cross-check completeness estimate of first read:** 0.9 - anecdote-heavy episode with few method ideas; first reader captured the sizing and psychology points, missed Drew's backtest-before-implement process, investor-suitability caveat, drawdown-behavior point and data cleaning.
 
 ## Coverage
 
@@ -59,7 +59,7 @@ tags: [source, layer0]
   > his um his equity swings can be gigantic
   indicator: equity swings · asset: multi · conditions: institutional mandates · testable: no · confidence: medium
   ^MT097-C02-3
-- **Dave Drew** Drew's own systematic practice was to backtest every rule before implementing it and then follow the algorithms strictly, the opposite of Seykota's discretionary chart reading.  #mech/research_method _(added by Opus)_
+- **Dave Drew** Drew's own systematic practice was to backtest every rule before implementing it and then follow the algorithms strictly, the opposite of Seykota's discretionary chart reading.  #mech/research_method _(added by opus cross-check)_
   > we have algorithms that we followed strictly and back tested everything before we would implement anything
   asset: multi · testable: no - description of process · confidence: high
   ^MT097-C02-X1
@@ -95,7 +95,7 @@ tags: [source, layer0]
   > So, I did this for about 15 months. made 300% return and absolutely went crazy because it was not my trading style
   asset: multi · horizon: months · conditions: style not matching trader psychology · testable: no: anecdote · confidence: high
   ^MT097-C04-4
-- **Dave Drew** Discretionary chart trading cannot responsibly be offered to investors because it has no backtest or statistical record to justify it, so Drew kept investor money in tested systems and confined discretionary trading to a disclosed personal account.  #mech/research_method _(added by Opus)_
+- **Dave Drew** Discretionary chart trading cannot responsibly be offered to investors because it has no backtest or statistical record to justify it, so Drew kept investor money in tested systems and confined discretionary trading to a disclosed personal account.  #mech/research_method _(added by opus cross-check)_
   > I said, I can't possibly do that for my investors. I don't have any, you know, back testing. I don't have anything to go on.
   asset: multi · conditions: managing outside capital · testable: no - governance principle · confidence: high
   ^MT097-C04-X1
@@ -131,7 +131,7 @@ tags: [source, layer0]
   > your bet size needs to change with your equity at some point
   indicator: account equity · asset: multi · direction: bet size proportional to equity · testable: yes · confidence: high
   ^MT097-C06-4
-- **Dave Drew** How a trader behaves during drawdowns is one of the biggest determinants of long-run success, because drawdown psychology drives people to question and alter sound systems; confidence in solid long-term research is what keeps a systematic trader following the rules.  #mech/behavioral _(added by Opus)_
+- **Dave Drew** How a trader behaves during drawdowns is one of the biggest determinants of long-run success, because drawdown psychology drives people to question and alter sound systems; confidence in solid long-term research is what keeps a systematic trader following the rules.  #mech/behavioral _(added by opus cross-check)_
   > You know how people handle draw downs. I think it makes some of the biggest difference in who is successful over the long run
   asset: multi · horizon: years · conditions: during drawdowns · testable: partly - compare outcomes of rule changes made in drawdowns vs otherwise · confidence: high
   ^MT097-C06-X1
@@ -140,12 +140,12 @@ tags: [source, layer0]
 - **Dave Drew** Sizing from closed-trade equity (after stops) is more stable than from open-trade equity, which includes large open profits and encourages over-risking.  #mech/risk_management
   > Open equity it never works really. People can try it but closed equity or or equity after everything got wouldn't be stopped out
   indicator: closed-trade equity vs open-trade equity · asset: multi · direction: size off closed equity · testable: yes: compare sizing bases in backtest · confidence: medium
-  **Correction (Opus):** Partly misattributed: Drew says only that open-equity sizing 'never works really' and closed equity is more stable; the reasoning that open equity includes big open profits and leads to over-risking, while closed equity is a stable step function, is Moritz Seibert's. → Drew: size from closed-trade equity rather than open-trade equity, which is more stable; Seibert adds the reason: open equity includes volatile open profits and invites over-risking.
+  **Correction (cross-check):** Partly misattributed: Drew says only that open-equity sizing 'never works really' and closed equity is more stable; the reasoning that open equity includes big open profits and leads to over-risking, while closed equity is a stable step function, is Moritz Seibert's. → Drew: size from closed-trade equity rather than open-trade equity, which is more stable; Seibert adds the reason: open equity includes volatile open profits and invites over-risking.
   ^MT097-C07-1
 - **Dave Drew** After a 50% drawdown bet size should be on the reduced equity base but not cut further, as extra de-risking gives too little risk to recover and distorts the statistics of the system.  #mech/risk_management
   > it probably shouldn't be 250,000 which would be too little risk put on to get out of the draw down
   indicator: drawdown recovery · asset: multi · testable: yes · confidence: medium
-  **Correction (Opus):** Wrong speaker: the 1 million -> 500,000 example and the point that cutting to 250,000 would be too little risk and distorts the system's statistics are said by the host Moritz Seibert; Drew then agrees. → Moritz Seibert (Drew agreeing): after a 50% drawdown size on the reduced 500,000 base, not a further cut to 250,000, because extra de-risking leaves too little risk to recover and distorts the system's statistics.
+  **Correction (cross-check):** Wrong speaker: the 1 million -> 500,000 example and the point that cutting to 250,000 would be too little risk and distorts the system's statistics are said by the host Moritz Seibert; Drew then agrees. → Moritz Seibert (Drew agreeing): after a 50% drawdown size on the reduced 500,000 base, not a further cut to 250,000, because extra de-risking leaves too little risk to recover and distorts the system's statistics.
   ^MT097-C07-2
 
 ### C09
@@ -153,7 +153,7 @@ tags: [source, layer0]
   > we limit ourselves in our success in the markets because we don't believe that we are deserving of great success
   asset: multi · testable: no · confidence: low
   ^MT097-C09-1
-- **Dave Drew** End-of-day futures data downloads contained a lot of bad prints, so daily data cleaning (spotting bad data and finding correct values) was a necessary task before analysis.  #mech/research_method _(added by Opus)_
+- **Dave Drew** End-of-day futures data downloads contained a lot of bad prints, so daily data cleaning (spotting bad data and finding correct values) was a necessary task before analysis.  #mech/research_method _(added by opus cross-check)_
   > you'd get end of the day downloads and there was a lot of bad data and so I would each day I would look through all the data
   indicator: end-of-day futures price data quality · asset: multi · horizon: days · conditions: early 1990s data vendors · testable: partly - data error rates can be audited · confidence: high
   ^MT097-C09-X1

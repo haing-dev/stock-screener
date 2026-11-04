@@ -6,7 +6,7 @@ channel: "Norges Bank Investment Management"
 url: https://www.youtube.com/watch?v=nyMPFdOwTFE
 words: 7690
 claims: 10
-added_by_opus: 1
+added_by_crosscheck: 1
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Geoffrey Garrett (Dean, USC Marshall School of Business)", "Nicolai Tangen (CEO, Norges Bank Investment Management)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** leadership, business education, globalization and tariffs, electric vehicles, AI and jobs
 
-**Opus completeness estimate of first read:** 0.95 - interview is mostly leadership and business-education talk with no macro content; first reader caught nearly all the trade, EV and AI points, missing only the ICE phase-out remark; one speaker mix-up.
+**Cross-check completeness estimate of first read:** 0.95 - interview is mostly leadership and business-education talk with no macro content; first reader caught nearly all the trade, EV and AI points, missing only the ICE phase-out remark; one speaker mix-up.
 
 ## Coverage
 
@@ -65,7 +65,7 @@ tags: [source, layer0]
 - **Nicolai Tangen** Norway reached about 90% EV share of new car sales through large subsidies, a charging network, taxi-lane access and no annual fees, so policy design rather than cold weather determined adoption; US cheap petrol makes the same logic harder.  #mech/policy_reaction _(time-bound view)_
   > I think the number now is something like 90% of new cars sold are electrical
   indicator: EV share of new car sales · asset: other · direction: EV adoption follows incentives · horizon: years · conditions: subsidies plus infrastructure; relative fuel prices · testable: yes - country EV share vs incentives · confidence: high
-  **Correction (Opus):** Mixed speakers: Tangen explains Norway's subsidies, charging network, taxi-lane access and no annual fees; the point that the US is a fossil-fuel exporter with the world's cheapest petrol, making EVs harder there, is Garrett's. → Nicolai Tangen: Norway reached about 90% EV share of new car sales through large subsidies, a nationwide charging network, taxi-lane access and no annual fees, so buying a combustion car made no economic sense. Garrett adds that cheap petrol in the US (a fossil-fuel exporter) makes the same logic harder there.
+  **Correction (cross-check):** Mixed speakers: Tangen explains Norway's subsidies, charging network, taxi-lane access and no annual fees; the point that the US is a fossil-fuel exporter with the world's cheapest petrol, making EVs harder there, is Garrett's. → Nicolai Tangen: Norway reached about 90% EV share of new car sales through large subsidies, a nationwide charging network, taxi-lane access and no annual fees, so buying a combustion car made no economic sense. Garrett adds that cheap petrol in the US (a fossil-fuel exporter) makes the same logic harder there.
   ^MT060-C10-3
 - **Geoffrey Garrett** The rise of Chinese EV makers (BYD, Xiaomi) is a transformative force for the global economy, and Europe and the US must decide whether to protect domestic automakers with tariffs.  #mech/structural_shift _(time-bound view)_
   > that's a transformative force for the global economy
@@ -85,7 +85,7 @@ tags: [source, layer0]
   > the entire green energy supply chain now is dominated by China
   indicator: share of green supply chain · asset: commodities · direction: nickel demand from long-range EVs · horizon: years · testable: yes - supply chain data · confidence: medium
   ^MT060-C11-3
-- **Geoffrey Garrett** Garrett sees a possible phase-out of the internal combustion engine, the defining technology of the 20th century, within about two decades, a structural shift for autos, oil demand and metals supply chains.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Geoffrey Garrett** Garrett sees a possible phase-out of the internal combustion engine, the defining technology of the 20th century, within about two decades, a structural shift for autos, oil demand and metals supply chains.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > if we then in a like a two decade period do away with uh internal combustion engines, that'd be pretty amazing.
   indicator: EV share of new car sales · asset: commodities · direction: ICE and oil demand down; battery metals demand up · horizon: years · conditions: EV adoption continues at policy-driven pace · testable: partly - long-horizon adoption forecast · confidence: low
   ^MT060-C11-X1

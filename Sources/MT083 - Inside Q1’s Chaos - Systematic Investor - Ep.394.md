@@ -5,10 +5,10 @@ date: 2026-04-06
 channel: "Top Traders Unplugged"
 url: 
 words: 13158
-claims: 65
-added_by_opus: 0
+claims: 67
+added_by_crosscheck: 2
 corrections: 0
-crosscheck: "pending"
+crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, Top Traders Unplugged)", "Katie Kaminski (Alpha Simplex, trend following researcher)", "Harry Moore (partner and senior client portfolio manager, Man AHL)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Systematic Investor episode on Q1 2026 trend following performance (March pivot to inflation and energy) and four papers: optimal market mix for trend, portable alpha, trend drawdowns, assessing alpha in macro strategies. Conclusions: trend diversified in March; traditional liquid markets give crisis alpha; drawdowns are normal.
 
 **Approach:** trend following, portable alpha, crisis alpha, managed futures research
+
+**Cross-check completeness estimate of first read:** 0.96 - first reader captured nearly every claim with correct speakers and numbers; only the move-size-driven manager dispersion point and the portable-alpha research gap (buffers, tail co-dependence) were missing
 
 ## Coverage
 
@@ -95,6 +97,10 @@ tags: [source, layer0]
   > if I'm looking at something that I I would call trend following, I want that to be a divergent strategy.
   asset: multi · testable: no - definition · confidence: high
   ^MT083-C04-5
+- **Katie Kaminski** Dispersion between trend managers rises in months with very large moves because small design choices (weights, speed, markets) get amplified; the largest managers stay in a narrow band while mid-sized ones diverge, so one month's ranking says little about skill.  #mech/research_method _(added by opus cross-check)_
+  > in a big move, you're always going to see a little bit more dispersion, but that's it's kind of typical given sort of how large the size of the moves are.
+  indicator: cross-sectional dispersion of CTA monthly returns vs size of market moves · asset: multi · direction: dispersion up when moves are large · horizon: months · conditions: months with big trend moves or reversals · testable: yes - regress manager return dispersion on absolute market move size · confidence: high
+  ^MT083-C04-X1
 
 ### C05
 - **Harry Moore** Carry, value and similar strategies may do well in a mid-distribution equity unwind but can show horrible left tails in a full liquidity break.  #mech/risk_management
@@ -339,4 +345,8 @@ tags: [source, layer0]
   > I'm not so sure that there is enough people who are well prepared for whatever comes because I still think that the allocation to our space is way too small
   asset: multi · testable: no · confidence: medium
   ^MT083-C18-3
+- **Harry Moore** Portable alpha research has covered what it is and how to build it, but sizing of cash buffers and structuring around tail co-dependence between the alpha and the beta remain under-researched and are the key open design questions.  #mech/research_method _(added by opus cross-check)_
+  > I think less literature so far on things like the cash buffer question, tail code dependent structuring.
+  indicator: tail dependence between overlay alpha and equity beta; cash buffer size · asset: multi · conditions: portable alpha / return-stacked structures · testable: yes - simulate buffers and tail co-drawdowns historically · confidence: medium
+  ^MT083-C18-X1
 

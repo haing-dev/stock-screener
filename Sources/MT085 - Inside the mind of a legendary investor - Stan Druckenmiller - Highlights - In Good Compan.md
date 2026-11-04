@@ -5,10 +5,10 @@ date: 2024-11-08
 channel: "Norges Bank Investment Management"
 url: https://www.youtube.com/watch?v=itG58Jwu12A
 words: 1483
-claims: 14
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 16
+added_by_crosscheck: 2
+corrections: 1
+crosscheck: "opus cross-check"
 speakers: ["Stanley Druckenmiller (investor)", "Nicolai Tangen (CEO, Norges Bank Investment Management, host)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Short highlights of Druckenmiller on bottom-up macro, loose financial conditions, US deficits, early AI positioning and his Soros-era approach (buy first analyze later, bet big on conviction, the 1992 pound trade). Conclusions: act early on strong ideas, size up on rare asymmetric trades, deficits eventually matter.
 
 **Approach:** discretionary macro, bottom-up macro, conviction sizing
+
+**Cross-check completeness estimate of first read:** 0.90 - short highlights well covered; missed the luck/drawdown aspect of the Nvidia entry and the small-downside rationale for the 100% pound sizing
 
 ## Coverage
 
@@ -55,6 +57,10 @@ tags: [source, layer0]
   > the engineers were shifting from crypto to I
   indicator: where top engineering graduates go · asset: equities · direction: long AI · horizon: years · testable: partly - hard to quantify · confidence: medium
   ^MT085-C01-6
+- **Stanley Druckenmiller** His Nvidia entry combined a strong in-house theme signal (the AI buzz among young analysts) with a stock already down sharply (about 400 to 150), but he credits the timing, a month before ChatGPT, to luck rather than foresight.  #mech/behavioral _(added by opus cross-check, time-bound view)_
+  > I bought a pretty good chunk of it and then like a month later chaty PT happened it was just total luck I had no idea
+  indicator: theme conviction plus large drawdown in the stock · asset: equities · direction: long Nvidia · horizon: months · conditions: theme signal present while price is depressed; timing partly luck · testable: partly - theme signals combined with drawdown entry · confidence: high
+  ^MT085-C01-X1
 
 ### C02
 - **Stanley Druckenmiller** Markets are fast and smart, so waiting months to analyse an idea risks missing a large part of the move; buy first, analyse later (Soros: invest then investigate).  #mech/slow_reaction
@@ -85,10 +91,15 @@ tags: [source, layer0]
   > this is a one-way bet they come along very very rarely it's ridiculous doing 100% we should put 200% of the fund in this trade
   indicator: one-way bet asymmetry · asset: fx · horizon: days · conditions: Rare setups only · testable: no · confidence: high
   ^MT085-C02-7
+- **Stanley Druckenmiller** The 1992 pound trade was sized at 100% partly because the pound was still only about half a percent away (caption unclear) from its peg level, so downside was tiny relative to the upside if the link broke; small, capped downside is what makes a one-way bet.  #mech/risk_management _(added by opus cross-check)_
+  > so I decide to take Duan and the quantum fund to 100% long the deark short the pound cuz it's still a half a%c unbelievably
+  indicator: distance of a pegged currency from its band limit · asset: fx · direction: short GBP vs DM · horizon: days · conditions: currency peg near its limit with divergent rate needs and an official signal · testable: partly - payoff asymmetry of trades against pegs near band edges · confidence: high
+  ^MT085-C02-X1
 
 ### C03
 - **Stanley Druckenmiller** After 12 years running a high-profile fund and a large loss, exhausted, he sold everything and took a sabbatical in 2000, telling investors they could withdraw without a guarantee to return.  #mech/behavioral
   > high-profile fund for 12 years so I sell everything out everything of Duane
   asset: multi · testable: no · confidence: high
+  **Correction (cross-check):** imprecise number: the loss is stated (Quantum fund down about 17%, Duquesne down 7%); also he says he can't guarantee re-admission and only one of about 200 clients withdrew → With Quantum down about 17% and Duquesne down 7% after 12 years running a high-profile fund, an exhausted Druckenmiller sold everything in 2000 and took a sabbatical, telling investors they could withdraw but might not be let back in; only one of about 200 clients pulled money.
   ^MT085-C03-1
 

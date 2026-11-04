@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 10792
 claims: 65
-added_by_opus: 3
+added_by_crosscheck: 3
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Richard Brennan (guest, systematic trend-following manager and researcher)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, backtesting and walk-forward, complex adaptive systems, trader impact, diversification
 
-**Opus completeness estimate of first read:** 0.95 - first reader captured essentially every method and mechanism claim; only a sizing-style distinction and minor data/operational points were missing; one speaker error.
+**Cross-check completeness estimate of first read:** 0.95 - first reader captured essentially every method and mechanism claim; only a sizing-style distinction and minor data/operational points were missing; one speaker error.
 
 ## Coverage
 
@@ -76,7 +76,7 @@ tags: [source, layer0]
   > it's very hard for me to imagine that any Market event would break a trend following system unless you start doing things you shouldn't do
   indicator: trend following · asset: multi · horizon: years · conditions: sensible rules, long-tested · testable: partly - robustness vs stress events · confidence: medium
   ^MT019-C02-5
-- **Niels Kaastrup-Larsen** Trend followers split into those who resize positions continuously with volatility (and keep selling after a vol spike) and those who hold position size fixed after entry, so their flows and results differ in volatility shocks.  #mech/risk_management _(added by Opus)_
+- **Niels Kaastrup-Larsen** Trend followers split into those who resize positions continuously with volatility (and keep selling after a vol spike) and those who hold position size fixed after entry, so their flows and results differ in volatility shocks.  #mech/risk_management _(added by opus cross-check)_
   > well some of us I know you you don't but some of us would need to adjust positions according
   indicator: dynamic vs static position sizing · asset: multi · direction: vol-adjusters sell after vol spikes; static sizers do not · horizon: weeks · conditions: volatility shocks · testable: partly - compare manager returns by sizing style around vol spikes · confidence: medium
   ^MT019-C02-X1
@@ -120,7 +120,7 @@ tags: [source, layer0]
   > if you analyze things on a month-by-month basis you won't see this intram month volatility and that's a bit deceptive
   indicator: monthly returns · asset: multi · horizon: weeks · testable: yes - compare daily vs monthly drawdowns · confidence: high
   ^MT019-C04-4
-- **Richard Brennan** In August 2024 the trend-follower losses came from the Nikkei, yen and Nasdaq/equity indexes; equity indexes recovered within the month while the yen and Nikkei positions stayed down, and commodities kept trending.  #mech/crowding_positioning _(added by Opus, time-bound view)_
+- **Richard Brennan** In August 2024 the trend-follower losses came from the Nikkei, yen and Nasdaq/equity indexes; equity indexes recovered within the month while the yen and Nikkei positions stayed down, and commodities kept trending.  #mech/crowding_positioning _(added by opus cross-check, time-bound view)_
   > the equity indexes have all pretty well recovered the the Yen and the um Nicki are still down
   indicator: Nikkei, JPY, Nasdaq, commodity trends Aug 2024 · asset: multi · horizon: weeks · testable: yes - market returns for the month · confidence: high
   ^MT019-C04-X1
@@ -137,13 +137,13 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** August 2024 data: Beta 50 -1.7% (+3.4% YTD), SG CTA -2.6% in August, SG Trend -3.55% (+2.3% YTD), short-term traders +0.61%, so industry recovered less than managers Brennan and Niels know.  #mech/slow_reaction _(time-bound view)_
   > beta 50 is down still 1.7% up 3.4% for the year sock gen CG index down 2.6 6% in August up 3.4% for the year
   indicator: Beta 50, SG CTA, SG Trend, SG Short Term Traders · asset: multi · horizon: months · testable: yes - published index figures · confidence: medium
-  **Correction (Opus):** Incomplete/garbled numbers: the host corrects himself to SG CTA +2.1% YTD (not 3.4%), and the short-term traders index is +0.61% for both the month and the year. → August 2024: Beta 50 -1.7% (+3.4% YTD), SG CTA -2.6% (+2.1% YTD), SG Trend -3.55% (+2.3% YTD), SG Short-Term Traders +0.61% (+0.61% YTD).
+  **Correction (cross-check):** Incomplete/garbled numbers: the host corrects himself to SG CTA +2.1% YTD (not 3.4%), and the short-term traders index is +0.61% for both the month and the year. → August 2024: Beta 50 -1.7% (+3.4% YTD), SG CTA -2.6% (+2.1% YTD), SG Trend -3.55% (+2.3% YTD), SG Short-Term Traders +0.61% (+0.61% YTD).
   ^MT019-C05-3
 - **Niels Kaastrup-Larsen** August 2024 traditional markets: MSCI World +1% (+13.84% YTD), global sovereign bonds +1% (+1.58% YTD), S&P 500 TR +1% (+17.8% YTD).  #mech/new _(time-bound view)_
   > the S&P 500 total return up about 1% in August up 17.8% so far this year
   indicator: MSCI World, S&P 500, global bonds · asset: multi · horizon: months · testable: yes - published index figures · confidence: medium
   ^MT019-C05-4
-- **Niels Kaastrup-Larsen** Third-party indicators and data feeds can silently stop updating (as the Trend Barometer app did), so systematic users such as replicators relying on others' data face data-reliability risk.  #mech/research_method _(added by Opus)_
+- **Niels Kaastrup-Larsen** Third-party indicators and data feeds can silently stop updating (as the Trend Barometer app did), so systematic users such as replicators relying on others' data face data-reliability risk.  #mech/research_method _(added by opus cross-check)_
   > they are using other people's STA and it just shows you that sometimes these things are not uh to be relied on
   indicator: third-party data feeds · asset: multi · testable: no - operational caution · confidence: medium
   ^MT019-C05-X1
@@ -282,7 +282,7 @@ tags: [source, layer0]
 - **Richard Brennan** Cocoa 2024 example: trend followers who size dynamically sold 80-90% of notional Jan-May as volatility rose.  #mech/risk_management _(time-bound view)_
   > selling 80 85 90% of their notional position simply because the volatility was picking up
   indicator: cocoa; trend follower positions · asset: commodities · direction: reduce size as vol rises · horizon: months · testable: yes - vol-scaled position · confidence: medium
-  **Correction (Opus):** Wrong speaker: the cocoa example (trend followers selling 80-90% of notional Jan-May 2024 as volatility rose) is given by Niels, who introduces it as 'a really good example'; Brennan replies afterwards. → Niels Kaastrup-Larsen: in the 2024 cocoa run, trend followers who size dynamically sold roughly 80-90% of their notional between January and April/May as volatility rose.
+  **Correction (cross-check):** Wrong speaker: the cocoa example (trend followers selling 80-90% of notional Jan-May 2024 as volatility rose) is given by Niels, who introduces it as 'a really good example'; Brennan replies afterwards. → Niels Kaastrup-Larsen: in the 2024 cocoa run, trend followers who size dynamically sold roughly 80-90% of their notional between January and April/May as volatility rose.
   ^MT019-C13-1
 - **Niels Kaastrup-Larsen** Global macro funds bought cocoa as trend followers sold in March 2024, carrying the price higher before a roughly 40% correction.  #mech/crowding_positioning _(time-bound view)_
   > so they started buying Coco in March right at the same time we were selling but initially that maybe with other people carried the price higher actually even though Trend followers were selling

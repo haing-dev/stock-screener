@@ -35,8 +35,8 @@
   }
  ],
  "chunks": 2,
- "crosscheck": null,
- "completeness_estimate": null,
+ "crosscheck": "opus cross-check",
+ "completeness_estimate": "0.90 - short clip; first reader caught 9 of about 10 ideas, missing only the short duration of panics that the crisis strategy exploits.",
  "claims": [
   {
    "claim_id": "MT075-C01-1",
@@ -199,9 +199,27 @@
    "time_bound": "no",
    "reader": "sonnet",
    "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT075-C01-X1",
+   "chunk": "C01",
+   "speaker": "Ernie Chan",
+   "quote": "people always panic for at least a few days sometimes only for one day",
+   "claim": "Each recurring crisis triggers claims that the bull market is over, yet the panic is short-lived (one to a few days) before recovery, so the crisis strategy must capture a very brief window of panic selling.",
+   "mechanism": "behavioral",
+   "asset_class": "equities",
+   "indicator": "index futures crash episodes",
+   "horizon": "days",
+   "direction": "short during panic, recovery afterwards",
+   "conditions": "market crash episodes (about every two years since 2011)",
+   "testable": "yes - duration of index drawdown phases in crisis episodes",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
   }
  ],
  "n_sonnet": 9,
- "n_opus_added": 0,
+ "n_opus_added": 1,
  "n_corrections": 0
 }

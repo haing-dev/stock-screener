@@ -6,7 +6,7 @@ channel: "Norges Bank Investment Management"
 url: https://www.youtube.com/watch?v=zRkNO9yNYoI
 words: 13790
 claims: 52
-added_by_opus: 7
+added_by_crosscheck: 7
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Greg Jensen (co-CIO, Bridgewater)", "interviewer (Norges Bank Investment Management podcast host)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** global macro, systematic macro, risk parity / diversification, AI agent investing, fiscal limits
 
-**Opus completeness estimate of first read:** 0.86 - first reader captured the macro themes, fiscal-limits and portfolio views well; missed the AI J-curve, the US growth forecast, divided-Fed and institutions points, the case for bonds at higher real yields, the systematise-then-focus-on-gaps method and the Spanish-flu analogy caveat
+**Cross-check completeness estimate of first read:** 0.86 - first reader captured the macro themes, fiscal-limits and portfolio views well; missed the AI J-curve, the US growth forecast, divided-Fed and institutions points, the case for bonds at higher real yields, the systematise-then-focus-on-gaps method and the Spanish-flu analogy caveat
 
 ## Coverage
 
@@ -143,7 +143,7 @@ tags: [source, layer0]
 - **Greg Jensen** Base case: US inflation about 3% for the next couple of years with Fed tolerant above 2.5%, versus breakeven near 2.25-2.5%.  #mech/policy_reaction _(time-bound view)_
   > we think the fed is very comfortable above two and a half and probably we're in the three range as a base right now
   indicator: breakeven inflation · asset: rates · direction: long inflation / short nominal · horizon: years · testable: partly · confidence: medium
-  **Correction (Opus):** Breakeven number misstated: he said breakeven inflation is around 2.5%, not 2.25-2.5%. → Base case: US inflation around 3% for the next couple of years, with a Fed comfortable above 2.5%, versus breakeven inflation priced around 2.5%, with risk of higher.
+  **Correction (cross-check):** Breakeven number misstated: he said breakeven inflation is around 2.5%, not 2.25-2.5%. → Base case: US inflation around 3% for the next couple of years, with a Fed comfortable above 2.5%, versus breakeven inflation priced around 2.5%, with risk of higher.
   ^MT068-C08-1
 - **Greg Jensen** Populist control of the central bank leading to lower real rates during an AI boom would be inflationary.  #mech/policy_reaction _(time-bound view)_
   > lowering real rates into a boom like this is particularly inflationary
@@ -153,11 +153,11 @@ tags: [source, layer0]
   > we're all Brazil now
   indicator: UK gilt yields; fiscal space · asset: multi · direction: short gilts and currency of constrained countries; long unconstrained (Germany) · horizon: years · testable: partly - fiscal announcements event studies · confidence: medium
   ^MT068-C08-3
-- **Greg Jensen** AI investment follows a J-curve: in the first phase it absorbs large resources with little output beyond the investment itself, and only later becomes strongly disinflationary, so the disinflation is further out than many assume.  #mech/structural_shift _(added by Opus)_
+- **Greg Jensen** AI investment follows a J-curve: in the first phase it absorbs large resources with little output beyond the investment itself, and only later becomes strongly disinflationary, so the disinflation is further out than many assume.  #mech/structural_shift _(added by opus cross-check)_
   > all these investments have a Jc curve in the first [L340] phase you don't get you spend a lot of resources you don't get a lot of output other than the investment itself
   indicator: AI capex vs productivity / output · asset: multi · direction: near-term resource pressure; later disinflation · horizon: years · conditions: early build-out phase of AI · testable: partly - capex share vs measured productivity over time · confidence: medium
   ^MT068-C08-X1
-- **Greg Jensen** Forecast: US growth next year a little above potential at about 2.5%, with roughly 1.5 points from AI investment, producing a two-track economy of a concentrated AI boom alongside a weak labour market.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Greg Jensen** Forecast: US growth next year a little above potential at about 2.5%, with roughly 1.5 points from AI investment, producing a two-track economy of a concentrated AI boom alongside a weak labour market.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > above potential two two and a like two and a half kind of percent growth and um and but a lot of that one and a half percent or so is going to be AI
   indicator: US real GDP growth, AI investment contribution · asset: equities · direction: US growth above potential, labour weak · horizon: years · conditions: AI capex continues; European fiscal push · testable: yes - compare with realised GDP and investment contributions · confidence: medium
   ^MT068-C08-X2
@@ -175,11 +175,11 @@ tags: [source, layer0]
   > Most people have moved away from diversification because it hasn't worked for 15 years.
   indicator: US share of portfolios · asset: equities · direction: global diversification · horizon: years · testable: partly · confidence: medium
   ^MT068-C09-3
-- **Greg Jensen** View: a new Fed chair aligned with the administration may be outvoted often next year, giving a divided Fed until more aligned governors are appointed, a policy-uncertainty source.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Greg Jensen** View: a new Fed chair aligned with the administration may be outvoted often next year, giving a divided Fed until more aligned governors are appointed, a policy-uncertainty source.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > for a while you're going to have this very divided Fed and where the chairman may be in the minority
   indicator: FOMC dissents / votes against the chair · asset: rates · horizon: months · conditions: politically appointed chair with board not yet aligned · testable: partly - dissent counts and rate volatility around FOMC · confidence: medium
   ^MT068-C09-X1
-- **Greg Jensen** International institutions (e.g. WTO) have lost their function and US domestic institutions are weakening fast, part of why the US is becoming a less exceptional, higher-risk-premium place to invest.  #mech/structural_shift _(added by Opus)_
+- **Greg Jensen** International institutions (e.g. WTO) have lost their function and US domestic institutions are weakening fast, part of why the US is becoming a less exceptional, higher-risk-premium place to invest.  #mech/structural_shift _(added by opus cross-check)_
   > I think we're in this death march on institutions you've already seen that the World Trade Organization what does it even do now
   asset: multi · direction: higher risk premium on US assets · horizon: years · testable: no - institutional quality is hard to measure · confidence: medium
   ^MT068-C09-X2
@@ -197,7 +197,7 @@ tags: [source, layer0]
   > All of a sudden the correlation between bonds and equities and currency will shift when you hit limits.
   indicator: bond-equity correlation; fiscal limits · asset: rates · direction: underweight bonds · horizon: years · conditions: when country is fiscally constrained · testable: yes - correlation by fiscal space · confidence: medium
   ^MT068-C10-3
-- **Greg Jensen** After many investors left bonds at zero rates, the rise in nominal and real yields means bonds again deserve a place in portfolios, though with weaker diversification than in the past 30 years.  #mech/risk_premium _(added by Opus)_
+- **Greg Jensen** After many investors left bonds at zero rates, the rise in nominal and real yields means bonds again deserve a place in portfolios, though with weaker diversification than in the past 30 years.  #mech/risk_premium _(added by opus cross-check)_
   > interest rates have risen and real interest rates have risen such that there is a place for bonds in portfolios
   indicator: real interest rates · asset: rates · direction: hold some bonds · horizon: years · conditions: starting yields well above zero; less useful where fiscal limits bind · testable: yes - bond forward returns conditional on starting real yield · confidence: medium
   ^MT068-C10-X1
@@ -237,7 +237,7 @@ tags: [source, layer0]
   > One of the reasons that AI hasn't swept through corporate America is people keep trying to replace humans with it
   asset: other · horizon: years · testable: no · confidence: medium
   ^MT068-C14-2
-- **Greg Jensen** Research method: once accumulated understanding is fully systematised, the human research team (a couple hundred people) can concentrate only on what the systematic process does not yet capture, such as new regimes like modern mercantilism.  #mech/research_method _(added by Opus)_
+- **Greg Jensen** Research method: once accumulated understanding is fully systematised, the human research team (a couple hundred people) can concentrate only on what the systematic process does not yet capture, such as new regimes like modern mercantilism.  #mech/research_method _(added by opus cross-check)_
   > because that's all systemized they could just focus on what we're missing what is happening in the world today that you're worried that process doesn't have reflected
   asset: multi · conditions: mature systematic base · testable: no - organisational design · confidence: high
   ^MT068-C14-X1
@@ -255,7 +255,7 @@ tags: [source, layer0]
   > Barely but yes.
   indicator: discretionary override of systematic signals · asset: multi · testable: yes - override P&L · confidence: medium
   ^MT068-C15-3
-- **Greg Jensen** Caveat on historical analogies: Bridgewater's systematic COVID response leaned on the Spanish flu precedent even though they knew its economic impact differed, so a known-imperfect analogue embedded in process can override better current knowledge.  #mech/research_method _(added by Opus)_
+- **Greg Jensen** Caveat on historical analogies: Bridgewater's systematic COVID response leaned on the Spanish flu precedent even though they knew its economic impact differed, so a known-imperfect analogue embedded in process can override better current knowledge.  #mech/research_method _(added by opus cross-check)_
   > we had done work on the 1917 Spanish flu, but the economic impact of the Spanish flu because it was so disperate was so different than what ended up happening and we knew it
   indicator: historical analogue (1918 flu) · asset: multi · conditions: unprecedented shocks · testable: no - single episode · confidence: high
   ^MT068-C15-X1

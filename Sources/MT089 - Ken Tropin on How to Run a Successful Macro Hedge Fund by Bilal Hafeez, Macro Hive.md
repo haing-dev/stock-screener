@@ -6,7 +6,7 @@ channel: "Graham Capital Management"
 url: https://www.youtube.com/watch?v=6_6EjXnrh3I
 words: 6816
 claims: 32
-added_by_opus: 1
+added_by_crosscheck: 1
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Ken Tropin (founder, Graham Capital Management)", "Bilal Hafeez (host, Macro Hive)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** macro, CTA, central bank activity, risk management, diversification, market views 2023
 
-**Opus completeness estimate of first read:** 0.96 - interview is light on methods and the first reader captured every substantive point (crisis history, central bank move counts, views, risk meeting, alpha diversification); only the long-run US competitiveness view was missing.
+**Cross-check completeness estimate of first read:** 0.96 - interview is light on methods and the first reader captured every substantive point (crisis history, central bank move counts, views, risk meeting, alpha diversification); only the long-run US competitiveness view was missing.
 
 ## Coverage
 
@@ -162,8 +162,8 @@ tags: [source, layer0]
   > I don't think we'll see an' 08 style crisis uh although we came pretty close two weeks ago right I mean uh you know uh the run on Banks
   asset: credit · horizon: months · testable: no · confidence: medium
   ^MT089-C08-4
-- **Ken Tropin** Despite polarised US politics, the US stays the most competitive economy over a 5-10 year view because Europe and Asia have their own problems, a relative rather than absolute judgment.  #mech/structural_shift _(added by Opus, time-bound view)_
-  > it's hard to find somebody in the middle who's in power right it's either the farle or the far right but uh you know I uh I think Europe also has issues Asia has issue so uh I think us stays very competitive
+- **Ken Tropin** Despite polarised US politics, the US stays the most competitive economy over a 5-10 year view because Europe and Asia have their own problems, a relative rather than absolute judgment.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
+  > it's either the farle or the far right but uh you know I uh I think Europe also has issues Asia has issue so uh I think us stays very competitive
   asset: multi · direction: US relative economic strength persists · horizon: years · testable: partly - compare US vs Europe/Asia growth and productivity over the following decade · confidence: medium
   ^MT089-C08-X1
 

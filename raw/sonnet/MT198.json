@@ -1,0 +1,460 @@
+{
+ "source_id": "MT198",
+ "speakers": [
+  "Richard Brennan (Dunn Capital, trend follower)",
+  "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"
+ ],
+ "summary": "Niels and Richard Brennan review the April 2025 tariff sell-off, Q1 2025 trend following and the passing of Bill Dunn. The second half is a philosophical talk linking trend following to complex adaptive systems and superdeterminism. Main idea: trend followers react to price structure rather than predict, stay humble and diversified, and follow process.",
+ "approach_tags": [
+  "trend following",
+  "philosophy",
+  "regime shift",
+  "risk management"
+ ],
+ "coverage": [
+  {
+   "chunk": "C01",
+   "claims": 1,
+   "note": "intro; travel; tariff uncertainty building"
+  },
+  {
+   "chunk": "C02",
+   "claims": 1,
+   "note": "Bill Dunn tribute, quote about investing at drawdown bottom"
+  },
+  {
+   "chunk": "C03",
+   "claims": 3,
+   "note": "monetary vs fiscal/geopolitics regime, fade the news, Elliott wave"
+  },
+  {
+   "chunk": "C04",
+   "claims": 2,
+   "note": "Elliott wave/fractal wave, leverage product risks"
+  },
+  {
+   "chunk": "C05",
+   "claims": 3,
+   "note": "concentration, passive flows, Q1 trend positioning by sector"
+  },
+  {
+   "chunk": "C06",
+   "claims": 3,
+   "note": "trend barometer, whipsaws Jan-Feb, cry-wolf sentiment"
+  },
+  {
+   "chunk": "C07",
+   "claims": 4,
+   "note": "models vs markets, regime shift, index numbers"
+  },
+  {
+   "chunk": "C08",
+   "claims": 0,
+   "note": "introduction to super determinism segment and biography; nothing actionable"
+  },
+  {
+   "chunk": "C09",
+   "claims": 0,
+   "note": "physics history Newton/Einstein/quantum; nothing actionable"
+  },
+  {
+   "chunk": "C10",
+   "claims": 1,
+   "note": "trend as emergence, embedded agents, process over prediction"
+  },
+  {
+   "chunk": "C11",
+   "claims": 1,
+   "note": "markets as open nested systems, prediction futile; covariance universe philosophy"
+  },
+  {
+   "chunk": "C12",
+   "claims": 0,
+   "note": "super determinism philosophy; nothing actionable"
+  },
+  {
+   "chunk": "C13",
+   "claims": 0,
+   "note": "physics philosophy, participatory universe; nothing actionable"
+  },
+  {
+   "chunk": "C14",
+   "claims": 1,
+   "note": "tech connectivity, humility, diversification, noise emergence"
+  },
+  {
+   "chunk": "C15",
+   "claims": 2,
+   "note": "noise, humility, embedded observer, process over Sharpe"
+  },
+  {
+   "chunk": "C16",
+   "claims": 0,
+   "note": "double-slit physics; nothing actionable"
+  },
+  {
+   "chunk": "C17",
+   "claims": 0,
+   "note": "physics philosophy, outro; nothing actionable"
+  },
+  {
+   "chunk": "C18",
+   "claims": 0,
+   "note": "next guest announcement; nothing actionable"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "MT198-C01-1",
+   "chunk": "C01",
+   "speaker": "Richard Brennan",
+   "quote": "this whole quarter up to where we are now has been one of building uncertainty",
+   "claim": "Q1 2025 was a quarter of building uncertainty culminating in equities being pummelled around the universal tariff announcement.",
+   "mechanism": "policy_reaction",
+   "asset_class": "equities",
+   "indicator": "tariff uncertainty",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "early April 2025",
+   "testable": "no - narrative",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT198-C02-1",
+   "chunk": "C02",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "the best time to invest in trend following is at the bottom of a draw down and the second best time is today",
+   "claim": "Bill Dunn's saying: the best time to invest in trend following is at the bottom of a drawdown, the second best is today (i.e. do not time entry on past performance).",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "trend following entry after drawdowns",
+   "horizon": "years",
+   "direction": "buy after drawdowns",
+   "conditions": "",
+   "testable": "yes - forward returns after drawdowns",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT198-C03-1",
+   "chunk": "C03",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "markets have to a large extent been driven and focused on directions coming in terms of monetary policy",
+   "claim": "For 20 years markets were driven by central bank guidance, but now fiscal policy (US deficit cut from 6-7% to 3%, Europe expanding deficits from 2-3% to 5-6%) and geopolitics may matter more than a 25bp difference in interest rates.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "monetary vs fiscal policy as driver",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "regime shift away from monetary-policy dominance",
+   "testable": "partly - difficult to test regime",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT198-C03-2",
+   "chunk": "C03",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "We need to fade the news, not look at it whatsoever, and just focus on price",
+   "claim": "Trend followers should ignore news and follow price; they need not retool when investors suddenly have to analyse geopolitics they never studied.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "price-based signals vs news",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT198-C03-3",
+   "chunk": "C03",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "back in 2010 after the great financial crisis that the market had moved up uh these Elliot wave guys became incredibly bearish again",
+   "claim": "Elliott wave analysts turned very bearish in 2010 just before a massive bull market, and their grand super cycle high calls can be refitted to any outcome because the method is not mathematically defined.",
+   "mechanism": "behavioral",
+   "asset_class": "equities",
+   "indicator": "Elliott wave counts",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - test Elliott wave forecasts (but subjective)",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT198-C04-1",
+   "chunk": "C04",
+   "speaker": "Richard Brennan",
+   "quote": "he recognized that these these fractals that give Elliot wave structure, he agreed with that principle",
+   "claim": "Bill Dunn used a fractal wave algorithm that took the fractal structure of Elliott wave but rejected the wave counting.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "fractal wave algorithm",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "low",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT198-C04-2",
+   "chunk": "C04",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "I expect to leverage ETF products you know how how how will this financial engineering we've seen in the last few years how does that fare",
+   "claim": "Leveraged ETFs, portable alpha products and highly leveraged financial markets may be tested in the April 2025 sell-off; margin calls and debt unwinding are a risk.",
+   "mechanism": "liquidity_flows",
+   "asset_class": "multi",
+   "indicator": "leveraged ETFs, portable alpha",
+   "horizon": "weeks",
+   "direction": "",
+   "conditions": "sustained equity declines",
+   "testable": "partly",
+   "speaker_confidence": "low",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT198-C05-1",
+   "chunk": "C05",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "70% of the uh you know, value of all equities are being US equities and a high percentage of that being within the 10 largest companies",
+   "claim": "Equity markets are highly concentrated (US about 70% of world value, a large share in the top 10 firms) and passive flows force selling regardless of price if investors redeem.",
+   "mechanism": "crowding_positioning",
+   "asset_class": "equities",
+   "indicator": "US equity concentration, passive flows",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "passive outflows",
+   "testable": "yes - concentration data",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT198-C05-2",
+   "chunk": "C05",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "trend followers would have been long equities um because we made relatively new uh or all-time highs relatively recently",
+   "claim": "Entering the April 2025 sell-off trend followers were long equities, long dollar and mixed in bonds, so long positions had to be cut, with the dollar reversal painful.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "trend follower positioning: equities, dollar, bonds",
+   "horizon": "weeks",
+   "direction": "reduce longs",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT198-C05-3",
+   "chunk": "C05",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "there was short exposure that could have been built up uh in the energy complex mainly the oil complex",
+   "claim": "Longer-term models had built short oil exposure before the sell-off, and oil fell sharply on the day of the crash, as did gold and silver trends, offering a bright spot.",
+   "mechanism": "slow_reaction",
+   "asset_class": "commodities",
+   "indicator": "oil short, gold and silver long trends",
+   "horizon": "weeks",
+   "direction": "short oil, long precious metals",
+   "conditions": "long-term models",
+   "testable": "yes",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT198-C06-1",
+   "chunk": "C06",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "My own trend barometer finished at 48 yesterday which is neutral but it has been moving up from very low levels",
+   "claim": "Niels' trend barometer was 48 on 9-10 April 2025, rising from very low levels, a sign that trend followers were adapting.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "Top Traders trend barometer",
+   "horizon": "weeks",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT198-C06-2",
+   "chunk": "C06",
+   "speaker": "Richard Brennan",
+   "quote": "it was characterized in January and February for us in terms of whips saws",
+   "claim": "January-February 2025 was whipsaw-heavy, with January difficult as the Fed turned hawkish and February seeing commodities (gold, silver, energies) trend; the tariff announce-and-retract pattern repeated whipsaws.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "whipsaws in Jan-Feb 2025",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "policy announced then retracted",
+   "testable": "yes",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT198-C06-3",
+   "chunk": "C06",
+   "speaker": "Richard Brennan",
+   "quote": "it's sort of a bit like the boy who called cried wolf, it's happening so frequently now that I think the bounces aren't necessarily going to come anymore",
+   "claim": "Repeated shock-then-retraction policy announcements may stop producing relief bounces as investor sentiment shifts and buy-the-dip expectations fade.",
+   "mechanism": "behavioral",
+   "asset_class": "equities",
+   "indicator": "buy-the-dip behaviour after policy retractions",
+   "horizon": "weeks",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - view",
+   "speaker_confidence": "low",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT198-C07-1",
+   "chunk": "C07",
+   "speaker": "Richard Brennan",
+   "quote": "the models are uncertain the markets aren't uncertain the markets are very definite",
+   "claim": "Moritz Seibert's point: it is the economic models that are uncertain, while markets are definite, so models used to explain the system for 30-40 years no longer work but trend following relies on robustness over many cycles.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "trend following robustness",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - principle",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT198-C07-2",
+   "chunk": "C07",
+   "speaker": "Richard Brennan",
+   "quote": "our ships take a fair while to turn to turn round",
+   "claim": "Trend models take time to turn so rough 3-4 month stretches with whipsaws are inevitable at regime shifts.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "trend model lag",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "regime shift",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT198-C07-3",
+   "chunk": "C07",
+   "speaker": "Richard Brennan",
+   "quote": "this massive injection of trillions this this leverage into the market this is what I'm worried about now",
+   "claim": "Trillions of liquidity injected since 2008-09 built a debt-laden, leveraged system, and Brennan expects a fragmentation of the world order (decentralisation, protectionism) that few strategies can navigate.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "multi",
+   "indicator": "debt and leverage in system",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - view",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT198-C07-4",
+   "chunk": "C07",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "Btop 50 index was actually up 16 basis points for the month of April, up 42 basis points for the uh year",
+   "claim": "As of ~9 April 2025: BTOP50 +16bp MTD, +42bp YTD; SG CTA +16bp MTD, -2.37% YTD; SG Trend +18bp MTD, -4.5% YTD; short-term traders -15bp MTD; MSCI World -2.65% MTD, -4.37% YTD; US aggregate +71bp, +3.35% YTD; S&P 500 TR -3.83% MTD, nearly -8% YTD.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "BTOP50, SG indices, MSCI World, S&P 500",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - public data",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT198-C10-1",
+   "chunk": "C10",
+   "speaker": "Richard Brennan",
+   "quote": "We're reacting to what is what is fundamentally tangible. Price is emerging.",
+   "claim": "Trend followers do not predict but react to structure emerging from noise; trends are emergent from interacting agents with feedback loops, each with limited information, unlike models assuming an external vantage with control.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "trend as emergent phenomenon",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - philosophy",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT198-C11-1",
+   "chunk": "C11",
+   "speaker": "Richard Brennan",
+   "quote": "To predict is futile. If we had the world's biggest computers, we might only be able to predict what's happening in the next two days",
+   "claim": "Markets are open, nested systems of subsystems so prediction is futile beyond a very short horizon (perhaps two days with the biggest computers).",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "predictability horizon",
+   "horizon": "days",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - belief",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT198-C14-1",
+   "chunk": "C14",
+   "speaker": "Richard Brennan",
+   "quote": "It's diversified because we realize these properties of structure emerge from noise",
+   "claim": "Trend followers diversify widely rather than specialise, because the seed of a trend emerges from what looks like noise and signals identify emergent structure; noise is just complexity we cannot resolve.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "diversification across markets",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT198-C15-1",
+   "chunk": "C15",
+   "speaker": "Richard Brennan",
+   "quote": "the trades I do impact the market in a slight subtle way",
+   "claim": "An embedded trader changes the system by trading (larger funds move prices more), so one must be humble and follow a rules-based process rather than predict or control.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "market impact of own trades",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - market impact estimates",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT198-C15-2",
+   "chunk": "C15",
+   "speaker": "Richard Brennan",
+   "quote": "I'm not smarter than the system, but I will align with that system and I'll follow the trend",
+   "claim": "Rely on the model rather than one's worries about news (e.g. Trump); keep trading with discipline because a process aligned with the system matters more than Sharpe ratios.",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "discipline in following trend model",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

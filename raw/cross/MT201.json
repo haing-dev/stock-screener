@@ -1,0 +1,90 @@
+{
+ "source_id": "MT201",
+ "added_claims": [
+  {
+   "claim_id": "MT201-C03-X1",
+   "chunk": "C03",
+   "speaker": "Michael nobow",
+   "quote": "it was the the concept that we where we found the highest robustness",
+   "claim": "SMN chose trend following (after testing technical indicators on the bank desk) because it was the concept it found most robust, with the Turtles' and local CTAs' success as extra motivation.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "trend following robustness",
+   "horizon": "unspecified",
+   "direction": "trend following over other technical approaches",
+   "conditions": "",
+   "testable": "no - biographical rationale, not independently testable",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT201-C07-X1",
+   "chunk": "C07",
+   "speaker": "Michael nobow",
+   "quote": "you can say you trade those markets but uh it doesn't have an effect on the outcome of the portfolio of performance wise",
+   "claim": "Alpha in small alternative markets is capacity-limited: a multi-billion fund can trade them but the allocation is too small to move performance, so only a mid-sized CTA like SMN can use them as a real source of return.",
+   "mechanism": "structural_shift",
+   "asset_class": "commodities",
+   "indicator": "fund size vs market liquidity",
+   "horizon": "years",
+   "direction": "alternative markets add return mainly for smaller funds",
+   "conditions": "needs assets small relative to market liquidity",
+   "testable": "partly - capacity versus return analysis needs fund-level data",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT201-C09-X1",
+   "chunk": "C09",
+   "speaker": "Michael nobow",
+   "quote": "I think there would be a lot of possibilities for higher diversification as well in in our fund",
+   "claim": "Breaking equity index futures into sectors or single names would add diversification to a trend portfolio, but SMN has not done it because it would need derivatives (counterparty risk) or a change of the fund prospectus.",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "sector and single-stock trends",
+   "horizon": "unspecified",
+   "direction": "more diversification from sector/single-name trend markets",
+   "conditions": "fund prospectus and counterparty constraints",
+   "testable": "partly - needs stock-level data, not tested in the talk",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT201-C10-X1",
+   "chunk": "C10",
+   "speaker": "Joseph valin",
+   "quote": "the ESS class volatility is really different to all the other more directional ESS classes",
+   "claim": "Volatility is a non-directional asset class, so SMN argues it needs its own signal design rather than the plain price-momentum rule used for the directional markets.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "VIX futures",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "VIX trend rule differs from rest of portfolio",
+   "testable": "partly - compare pure vs enhanced momentum on VIX",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ],
+ "corrections": [
+  {
+   "claim_id": "MT201-C09-3",
+   "issue": "The 20-25% of risk figure for synthetic markets was read out by the host (Moritz, citing a Hedge Fund Journal article), not stated by Joseph; SMN did not confirm the number.",
+   "fix": "Correlation spreads between related commodities (New York versus London cocoa, wheat types, South African maize and soybeans) are traded as synthetic markets with their own trends; the host cites an article putting synthetics at about 20-25% of SMN's risk budget."
+  }
+ ],
+ "chunks_checked": [
+  "C01",
+  "C02",
+  "C03",
+  "C04",
+  "C05",
+  "C06",
+  "C07",
+  "C08",
+  "C09",
+  "C10",
+  "C11"
+ ],
+ "completeness_estimate": "0.90 - the first reader caught nearly every method and mechanism claim; only the robustness rationale for choosing trend following, the capacity argument, the sector/single-name equity idea and the volatility-is-non-directional rationale were missed."
+}

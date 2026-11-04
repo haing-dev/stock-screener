@@ -6,7 +6,7 @@ channel: "Bg2 Pod"
 url: https://www.youtube.com/watch?v=4JA7n0wTChw
 words: 11455
 claims: 67
-added_by_opus: 4
+added_by_crosscheck: 4
 corrections: 7
 crosscheck: "opus cross-check"
 speakers: ["Philippe Laffont (guest, Coatue)", "Thomas Laffont (guest, Coatue)", "Brad Gerstner (host, Altimeter)", "Bill Gurley (co-host, investor)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** AI super cycle, crypto sizing, private vs public markets, corporate productivity
 
-**Opus completeness estimate of first read:** 0.93 - content coverage is high; missed the 75%-of-market-cap framing, private value accrual, venture illiquidity bias and motive for AI headcount cuts; main weakness is speaker attribution among the four voices
+**Cross-check completeness estimate of first read:** 0.93 - content coverage is high; missed the 75%-of-market-cap framing, private value accrual, venture illiquidity bias and motive for AI headcount cuts; main weakness is speaker attribution among the four voices
 
 ## Coverage
 
@@ -51,7 +51,7 @@ tags: [source, layer0]
   > that's how everybody thinks first of all, so it's never priced in.
   asset: equities · direction: long a durable trend · horizon: years · testable: no - sentiment claim · confidence: medium
   ^MT035-C01-1
-- **Brad Gerstner** Coatue frames AI as a sector that could eventually reach about 75% of total US market cap, by analogy with earlier dominant sectors (industrials, transport), against the view that AI is already too big to grow.  #mech/structural_shift _(added by Opus)_
+- **Brad Gerstner** Coatue frames AI as a sector that could eventually reach about 75% of total US market cap, by analogy with earlier dominant sectors (industrials, transport), against the view that AI is already too big to grow.  #mech/structural_shift _(added by opus cross-check)_
   > slide six, which is when will AI reach 75% of total US market cap, which I think is incredibly provocative. how you compared that to industrials and transport
   indicator: sector share of total US market cap · asset: equities · direction: AI share of market cap up · horizon: years · testable: partly - historical sector-share peaks are measurable · confidence: medium
   ^MT035-C01-X1
@@ -77,7 +77,7 @@ tags: [source, layer0]
   > being an AI pure play, there's very few in the public market.
   asset: equities · direction: long pure-play AI · horizon: years · testable: no · confidence: medium
   ^MT035-C02-5
-- **Thomas Laffont** In 2025 much of the AI value creation accrued to private labs (OpenAI, Anthropic) while the public Mag 7 were flat, so public investors captured little of it directly.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Thomas Laffont** In 2025 much of the AI value creation accrued to private labs (OpenAI, Anthropic) while the public Mag 7 were flat, so public investors captured little of it directly.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > on average the max 7 was basically flat year-over-year and [L80] yet tremendous value accretion to the top AI companies right whether it's open AI or anthropic
   indicator: private AI lab valuations vs Mag 7 returns · asset: equities · horizon: months · testable: partly - private marks are sparse · confidence: medium
   ^MT035-C02-X1
@@ -117,7 +117,7 @@ tags: [source, layer0]
   > The government's gone from being kind of antagonistic towards supportive. That's a big shift because regulatory risk was a big question for all this stuff.
   indicator: crypto regulation · asset: other · horizon: months · conditions: June 2025 · testable: partly · confidence: medium
   ^MT035-C04-4
-- **Bill Gurley** Because venture investors are locked into illiquid positions with long windows, they update views slowly, while public-market investors can and must change their minds quickly.  #mech/behavioral _(added by Opus)_
+- **Bill Gurley** Because venture investors are locked into illiquid positions with long windows, they update views slowly, while public-market investors can and must change their minds quickly.  #mech/behavioral _(added by opus cross-check)_
   > look you're locked in you can't sell so I think this is something that you guys develop more of an instinct for in the public markets
   asset: equities · horizon: years · testable: no - qualitative · confidence: medium
   ^MT035-C04-X1
@@ -126,17 +126,17 @@ tags: [source, layer0]
 - **Philippe Laffont** If investors need an alternative to the dollar amid government overspending, Bitcoin could become one.  #mech/fiscal_debt
   > Well, what if actually the alternative is Bitcoin, right?
   asset: other · horizon: years · testable: no · confidence: low
-  **Correction (Opus):** Wrong speaker: Philippe later refers to 'what you were saying Tom about the Bitcoin', so the Bitcoin-as-dollar-alternative point is Thomas Laffont's. → Thomas Laffont: if investors need an alternative to the dollar amid government overspending, Bitcoin could become one.
+  **Correction (cross-check):** Wrong speaker: Philippe later refers to 'what you were saying Tom about the Bitcoin', so the Bitcoin-as-dollar-alternative point is Thomas Laffont's. → Thomas Laffont: if investors need an alternative to the dollar amid government overspending, Bitcoin could become one.
   ^MT035-C05-1
 - **Brad Gerstner** Interest-paying stablecoins could let the Treasury sell bonds directly to consumers worldwide, bypassing dealers.  #mech/structural_shift _(time-bound view)_
   > when you have a stable coin with interest, how long is it before the government creates a one-year stable coin, a 5year, 10 year, a 30-year stable coin
   indicator: stablecoins; Treasury issuance · asset: rates · horizon: years · testable: no · confidence: low
-  **Correction (Opus):** Wrong speaker: the interest-paying stablecoin / direct Treasury bond idea is Philippe Laffont's (he adds it 'on top of what you were saying Tom'). → Philippe Laffont: interest-paying stablecoins could let the Treasury sell bonds of all maturities directly to consumers worldwide, bypassing dealers.
+  **Correction (cross-check):** Wrong speaker: the interest-paying stablecoin / direct Treasury bond idea is Philippe Laffont's (he adds it 'on top of what you were saying Tom'). → Philippe Laffont: interest-paying stablecoins could let the Treasury sell bonds of all maturities directly to consumers worldwide, bypassing dealers.
   ^MT035-C05-2
 - **Thomas Laffont** Google may lose search share to ChatGPT but has offsetting assets (YouTube, Waymo, Android, Gmail).  #mech/structural_shift
   > listen, maybe search is under threat, but YouTube is with all this new AI content going to explode and potentially threaten Netflix and maybe Whimo is going to also do incredibly well.
   asset: equities · horizon: years · testable: no · confidence: low
-  **Correction (Opus):** Wrong speaker: Thomas hands the slide to Philippe ('I think you should introduce the work'); the Google offsetting-assets remark is Philippe's. → Philippe Laffont: Google may lose search share to ChatGPT but has offsetting assets (YouTube, Waymo, Android, Gmail).
+  **Correction (cross-check):** Wrong speaker: Thomas hands the slide to Philippe ('I think you should introduce the work'); the Google offsetting-assets remark is Philippe's. → Philippe Laffont: Google may lose search share to ChatGPT but has offsetting assets (YouTube, Waymo, Android, Gmail).
   ^MT035-C05-3
 
 ### C06
@@ -263,7 +263,7 @@ tags: [source, layer0]
 - **Bill Gurley** A quasi-public tier of companies above $5-10B stay private because private markets, private equity continuation funds, secondaries and private credit now have the depth to fund them.  #mech/structural_shift
   > These are companies over five or 10 billion dollars in value. They would have all been public 10 or 15 years ago.
   indicator: private company count above $5-10B · asset: equities · horizon: years · testable: yes · confidence: medium
-  **Correction (Opus):** Likely wrong speaker: the 'quasi public' tier and the OpenAI-should-go-public remark come from Brad Gerstner, who says he made this case to OpenAI. → Brad Gerstner: a quasi-public tier of companies above $5-10B stays private because private equity, continuation funds, secondaries and private credit now have the depth to fund them.
+  **Correction (cross-check):** Likely wrong speaker: the 'quasi public' tier and the OpenAI-should-go-public remark come from Brad Gerstner, who says he made this case to OpenAI. → Brad Gerstner: a quasi-public tier of companies above $5-10B stays private because private equity, continuation funds, secondaries and private credit now have the depth to fund them.
   ^MT035-C12-3
 
 ### C13
@@ -288,7 +288,7 @@ tags: [source, layer0]
 - **Philippe Laffont** AppLovin doubled revenue per employee in four years, revenue doubled while headcount fell 35% as it right-sized and used AI.  #mech/structural_shift
   > doubles the size of the company as the employee count is down over 35%.
   indicator: revenue per employee · asset: equities · horizon: years · testable: yes · confidence: high
-  **Correction (Opus):** Wrong speaker: the AppLovin slide is presented by Thomas Laffont ('another one of my favorites' after his Microsoft slide). → Thomas Laffont: AppLovin doubled revenue per employee in four years; revenue doubled while headcount fell about 35% after right-sizing and adopting AI.
+  **Correction (cross-check):** Wrong speaker: the AppLovin slide is presented by Thomas Laffont ('another one of my favorites' after his Microsoft slide). → Thomas Laffont: AppLovin doubled revenue per employee in four years; revenue doubled while headcount fell about 35% after right-sizing and adopting AI.
   ^MT035-C14-1
 - **Brad Gerstner** Google has 187,000 employees against OpenAI's 2,700, showing small lean AI-native firms can take share.  #mech/structural_shift
   > Google has 187,000 employees. Open AAI 2700.
@@ -301,14 +301,14 @@ tags: [source, layer0]
 - **Brad Gerstner** A willingness to cut headcount is a credible signal of genuine AI use, versus lip service.  #mech/behavioral
   > there's a level of confidence in a company's use of AI if they're willing to actually reduce headcount.
   indicator: headcount · asset: equities · horizon: years · testable: partly · confidence: medium
-  **Correction (Opus):** Likely wrong speaker: the headcount-cut-as-credible-AI-signal remark follows Gerstner's Jensen anecdote and is most likely Bill Gurley's. → Bill Gurley (likely): a willingness to cut headcount is a credible signal of genuine AI use, versus lip service.
+  **Correction (cross-check):** Likely wrong speaker: the headcount-cut-as-credible-AI-signal remark follows Gerstner's Jensen anecdote and is most likely Bill Gurley's. → Bill Gurley (likely): a willingness to cut headcount is a credible signal of genuine AI use, versus lip service.
   ^MT035-C14-4
 - **Thomas Laffont** Firm-level AI efficiency aggregates into economy-wide productivity.  #mech/structural_shift
   > If a lot of companies are doing this and you you pile them all together, right, you're going to get more output for a fixed amount of labor and capital
   indicator: productivity · asset: multi · horizon: years · testable: partly · confidence: medium
-  **Correction (Opus):** Wrong speaker: 'the final thing I would say about this Phipe' is the host, Brad Gerstner. → Brad Gerstner: firm-level AI efficiency aggregates into economy-wide productivity (more output for fixed labor and capital).
+  **Correction (cross-check):** Wrong speaker: 'the final thing I would say about this Phipe' is the host, Brad Gerstner. → Brad Gerstner: firm-level AI efficiency aggregates into economy-wide productivity (more output for fixed labor and capital).
   ^MT035-C14-5
-- **Thomas Laffont** Headcount cuts at AI-first firms such as AppLovin are driven by competitive design (fewer layers, faster decisions) rather than cost-cutting for its own sake, which is why they coincide with faster growth.  #mech/structural_shift _(added by Opus)_
+- **Thomas Laffont** Headcount cuts at AI-first firms such as AppLovin are driven by competitive design (fewer layers, faster decisions) rather than cost-cutting for its own sake, which is why they coincide with faster growth.  #mech/structural_shift _(added by opus cross-check)_
   > The reason he did this is he believed that that's the shape the company needed to be in to win and out compete, right?
   indicator: revenue per employee · asset: equities · horizon: years · testable: partly - revenue per employee vs growth is measurable · confidence: medium
   ^MT035-C14-X1

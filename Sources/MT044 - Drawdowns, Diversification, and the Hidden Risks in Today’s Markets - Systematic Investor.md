@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 14597
 claims: 65
-added_by_opus: 4
+added_by_crosscheck: 4
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, Top Traders Unplugged)", "Rob Carver (independent systematic trader and author)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, position sizing, Kelly, risk premia, drawdown, behavioral
 
-**Opus completeness estimate of first read:** 0.94 - first reader captured essentially all of Carver's methods and numbers; missed Black-Litterman, the luck caveat on manager dispersion, analyst optimism bias and the risk-premium argument, plus two small attribution/emphasis errors.
+**Cross-check completeness estimate of first read:** 0.94 - first reader captured essentially all of Carver's methods and numbers; missed Black-Litterman, the luck caveat on manager dispersion, analyst optimism bias and the risk-premium argument, plus two small attribution/emphasis errors.
 
 ## Coverage
 
@@ -186,7 +186,7 @@ tags: [source, layer0]
 - **Rob Carver** Position sizing studies (Saratini and Quantica) find that both volatility-adjusting positions during a trade and scaling with forecast strength help in a long backtest, with small differences.  #mech/risk_management
   > if if volatility increases then I you know reduce my position size throughout the life of a trade
   indicator: volatility-adjusted sizing; forecast-scaled sizing · asset: multi · horizon: years · testable: yes · confidence: high
-  **Correction (Opus):** Says differences are small between both sizing adjustments; Carver says the differences are not massive but that pyramiding (scaling position with forecast strength) has a much bigger effect than volatility adjustment. → Position sizing studies (Saratini and Quantica) find that both volatility-adjusting positions during a trade and scaling with forecast strength help over a long backtest; differences are not large, but scaling with forecast strength (pyramiding) has the bigger effect.
+  **Correction (cross-check):** Says differences are small between both sizing adjustments; Carver says the differences are not massive but that pyramiding (scaling position with forecast strength) has a much bigger effect than volatility adjustment. → Position sizing studies (Saratini and Quantica) find that both volatility-adjusting positions during a trade and scaling with forecast strength help over a long backtest; differences are not large, but scaling with forecast strength (pyramiding) has the bigger effect.
   ^MT044-C10-1
 - **Rob Carver** Higher Sharpe gives higher CAGR with leverage unless it costs too much positive skew.  #mech/risk_management
   > as a rule of thumb if you can get a higher sharp you can get a higher CAGR assuming you've got leverage um unless you give up too much positive skew in the process of doing it
@@ -209,7 +209,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** A well-known trend manager with static sizing reached about 90% volatility, which implies a belief in a Sharpe of 0.9 or more, about twice a realistic 0.5.  #mech/risk_management _(time-bound view)_
   > the volatility of that product or that fund uh reached something like 90% at times because of the static position sizing
   indicator: fund volatility · asset: multi · horizon: years · testable: yes · confidence: high
-  **Correction (Opus):** Attributes the Sharpe implication to Niels; Niels only says the fund's volatility reached about 90% because of static sizing. The inference that 90% vol implies an expected Sharpe of 0.9 (about twice a realistic 0.5) is Carver's, from Kelly sizing. → Niels: a well-known trend manager using static position sizing saw fund volatility reach about 90% at times. Carver: under Kelly sizing that implies an expected Sharpe of 0.9 or more, about twice a realistic 0.5.
+  **Correction (cross-check):** Attributes the Sharpe implication to Niels; Niels only says the fund's volatility reached about 90% because of static sizing. The inference that 90% vol implies an expected Sharpe of 0.9 (about twice a realistic 0.5) is Carver's, from Kelly sizing. → Niels: a well-known trend manager using static position sizing saw fund volatility reach about 90% at times. Carver: under Kelly sizing that implies an expected Sharpe of 0.9 or more, about twice a realistic 0.5.
   ^MT044-C11-2
 - **Rob Carver** Nobody can forecast near-term Sharpe accurately enough to justify doubling the risk target.  #mech/risk_management
   > if you think your risk is now 90% that implies you think your current expected sharp 0.9
@@ -219,7 +219,7 @@ tags: [source, layer0]
   > essentially the way my system works is I convert everything into a forecast and a forecast is just a number and it's a scaled number
   indicator: scaled forecast · asset: multi · testable: yes · confidence: high
   ^MT044-C11-4
-- **Rob Carver** Black-Litterman is the classic framework for blending discretionary return views into a systematic (e.g. market-cap) portfolio; Carver's simpler alternative is a weighted average of scaled forecasts.  #mech/research_method _(added by Opus)_
+- **Rob Carver** Black-Litterman is the classic framework for blending discretionary return views into a systematic (e.g. market-cap) portfolio; Carver's simpler alternative is a weighted average of scaled forecasts.  #mech/research_method _(added by opus cross-check)_
   > there was seminal paper written by Black Litterman in the early '9s, I think, where they they basically took the kind of standard portfolio construction technology
   asset: multi · testable: yes - blended portfolios can be backtested against pure systematic · confidence: high
   ^MT044-C11-X1
@@ -259,7 +259,7 @@ tags: [source, layer0]
   > trading too quickly you know overconentrating individual markets
   asset: multi · testable: no · confidence: medium
   ^MT044-C14-4
-- **Rob Carver** Return differences between CTAs are largely luck, so it is hard to tell skilled from unskilled managers from outcomes; post-mortems should ask whether a loss came from bad luck or a bad decision such as overweighting an illiquid market.  #mech/research_method _(added by Opus)_
+- **Rob Carver** Return differences between CTAs are largely luck, so it is hard to tell skilled from unskilled managers from outcomes; post-mortems should ask whether a loss came from bad luck or a bad decision such as overweighting an illiquid market.  #mech/research_method _(added by opus cross-check)_
   > If you look at the profitable managers and the less profitable managers, because there's a lot of luck, right? See, they may it's not necessarily whether they're good or bad. I think you can it's hard to tell.
   indicator: manager return dispersion · asset: multi · horizon: years · testable: partly - skill vs luck tests on manager track records need long histories · confidence: medium
   ^MT044-C14-X1
@@ -289,7 +289,7 @@ tags: [source, layer0]
   > They think if times are good, they're going to continue getting good. If times are bad, they're going to continue getting bad
   indicator: analyst EPS growth expectations · asset: equities · horizon: years · testable: yes - EPS forecast data · confidence: high
   ^MT044-C17-2
-- **Rob Carver** Equity analysts' EPS forecasts carry a systematic optimism bias from institutional incentives, which shrank somewhat after post-tech-bubble reforms; this level bias is separate from their extrapolation bias.  #mech/behavioral _(added by Opus)_
+- **Rob Carver** Equity analysts' EPS forecasts carry a systematic optimism bias from institutional incentives, which shrank somewhat after post-tech-bubble reforms; this level bias is separate from their extrapolation bias.  #mech/behavioral _(added by opus cross-check)_
   > analysts generally are overoptimistic and there are institutional biases as to why that might be the case
   indicator: analyst EPS growth forecasts vs realised · asset: equities · direction: forecasts above outcomes · horizon: years · conditions: bias smaller after the early-2000s reforms · testable: yes - IBES forecast errors over time · confidence: medium
   ^MT044-C17-X1
@@ -331,7 +331,7 @@ tags: [source, layer0]
   > If trend following had had a good year and there was a positive autocorrelation between annual returns and trend following then you should if there's been a good year you should invest more
   indicator: autocorrelation of annual trend returns · asset: multi · horizon: years · testable: yes · confidence: high
   ^MT044-C20-2
-- **Rob Carver** The honest case for long-only equities is the long-run risk premium (higher risk, higher return), not the 'missing the best days' argument, which is marketing.  #mech/risk_premium _(added by Opus)_
+- **Rob Carver** The honest case for long-only equities is the long-run risk premium (higher risk, higher return), not the 'missing the best days' argument, which is marketing.  #mech/risk_premium _(added by opus cross-check)_
   > I'm happy with the thesis that if you have increased risk you'll get higher returns equities are quite risky therefore if you're investing for the long term buy
   asset: equities · direction: long equities over long horizons · horizon: years · conditions: long holding period; cannot time the market · testable: yes - long-run equity premium data · confidence: high
   ^MT044-C20-X1

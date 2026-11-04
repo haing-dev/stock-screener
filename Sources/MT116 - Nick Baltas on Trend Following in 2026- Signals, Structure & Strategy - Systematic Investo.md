@@ -5,10 +5,10 @@ date: 2026-01-17
 channel: "Top Traders Unplugged"
 url: 
 words: 10904
-claims: 40
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 46
+added_by_crosscheck: 6
+corrections: 3
+crosscheck: "opus cross-check"
 speakers: ["Nick Baltas (host/co-host, systematic strategist)", "Neils Kostrup Larsen (host, hedge fund manager)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Weekly Systematic Investor episode: Baltas and Larsen review trend following in early 2026 and 2025 dispersion across speed and universe (slow and small won the last 3-4 years but not historically). They then summarise three December 2025 papers: a consultant primer on trend, nonlinear time series momentum, and ATP's theory of trend payoff. Conclusion: do not change trend design to chase recent results.
 
 **Approach:** trend following, CTA dispersion, nonlinear time series momentum, signal sizing, crisis alpha
+
+**Cross-check completeness estimate of first read:** 0.88 - first reader caught nearly all ideas (40 claims); missed the 2022/2008 all-speeds-profit regime point, the rank-spread method caveat, the 2016 small-universe reading, the YTD numbers and the directional-premium critique; three speaker misattributions.
 
 ## Coverage
 
@@ -71,6 +73,7 @@ tags: [source, layer0]
 - **Nick Baltas** Trend conditions were strong for seven consecutive months into January 2026, driven by metals and equities.  #mech/cycle_persistence _(time-bound view)_
   > it is kind of the seventh month in a row where we're seeing very strong conditions uh for trend
   indicator: trend index performance; metals and equities · asset: multi · direction: long metals and equities · horizon: months · testable: yes - CTA index data is observable · confidence: high
+  **Correction (cross-check):** wrong speaker: the seven-months-in-a-row and metals-and-equities remark is made by host Neils Kostrup Larsen, not Nick Baltas → Neils Kostrup Larsen: trend conditions were strong for seven consecutive months into January 2026, driven by metals and equities (continuation of 2025 second half).
   ^MT116-C04-1
 - **Nick Baltas** Dispersion in 2025 trend programs came mainly from which markets were traded (universe breadth) and trend speed; faster and more diversified programs lagged.  #mech/structural_shift _(time-bound view)_
   > I think the universe and the speed are probably the two most important um pillars of dispersion at least for the last year
@@ -108,6 +111,10 @@ tags: [source, layer0]
   > you can broaden up a small universe by just having maybe more tenors in specific interest rate markets
   indicator: universe construction · asset: multi · testable: partly - judgemental construction · confidence: medium
   ^MT116-C06-4
+- **Nick Baltas** Year-to-date January 2026 trend returns were about 4-6% at 15% volatility depending on speed, driven mainly by equities and then commodities.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
+  > strong performance broadly speaking like on the on the four to five to 6% depending on the speed. Um and that's more for a 15 volt type of um of a measurement primarily driven by equities and then commod
+  indicator: Baltas trend models YTD return at 15% vol by speed · asset: multi · direction: long equities and commodities trends paid · horizon: weeks · testable: yes - compare trend index returns Jan 2026 by sector · confidence: high
+  ^MT116-C06-X1
 
 ### C07
 - **Neils Kostrup Larsen** Small trend universes were the worst performer each year from the tech bubble aftermath through 2009, so recent small-universe outperformance by replicators should not be extrapolated.  #mech/cycle_persistence
@@ -117,7 +124,16 @@ tags: [source, layer0]
 - **Nick Baltas** In 2022 the fastest trend speeds ranked best, the opposite of the last three years, showing the best speed flips with the regime of sustained trends versus reversals.  #mech/cycle_persistence _(time-bound view)_
   > in 2022 you you conclude based on your analysis that actually being very were very quick
   indicator: trend speed · asset: multi · direction: fast outperformed in 2022 · horizon: years · conditions: sustained trends in commodities, rates and dollar · testable: yes - annual speed ranking · confidence: medium
+  **Correction (cross-check):** speaker: Neils Kostrup Larsen raises 2022 fast-speed result from Baltas's data; Baltas then explains all speeds did well in 2022. 'Flips with regime' is the reader's inference → Neils Kostrup Larsen (from Baltas's data): in 2022 the fastest trend speeds ranked best, the reverse of the last three years; Baltas adds that all speeds did well in that sustained-trend year.
   ^MT116-C07-2
+- **Neils Kostrup Larsen** Reading Baltas's ranking data, small trend universes have mostly been the better performer since about 2016, alternating with very large universes, which flatters replicators that use small universes.  #mech/research_method _(added by opus cross-check)_
+  > pretty much since 2016 small universes have been um you know the better performer. It's flipped between small and and super and super large
+  indicator: annual rank of trend universe size · asset: multi · direction: small universe ranked best since 2016 · horizon: years · conditions: reversed in 2002-2009 · testable: yes - rank annual returns of trend models by universe size · confidence: medium
+  ^MT116-C07-X1
+- **Neils Kostrup Larsen** In 2008 the best single trend lookback was about 56 days, but every lookback made money that year, so the best-speed ranking matters little in strong crisis trends.  #mech/slow_reaction _(added by opus cross-check)_
+  > in 2008, I do remember from our analysis that yes, the the very best single look back period was something like 56 days
+  indicator: trend lookback period performance 2008 · asset: multi · direction: all trend speeds positive in 2008 · horizon: months · conditions: sustained crisis trends · testable: yes - backtest trend lookbacks in 2008 · confidence: medium
+  ^MT116-C07-X2
 
 ### C08
 - **Nick Baltas** Changing trend design (speed, universe) in response to recent out- or under-performance is the wrong approach; discipline and trust in the process matter more.  #mech/risk_management
@@ -132,6 +148,14 @@ tags: [source, layer0]
   > pretty much since 2022, it's been kind of the worst sector to trade
   indicator: fixed income trend sector contribution · asset: rates · horizon: years · testable: yes - sector attribution of trend · confidence: high
   ^MT116-C08-3
+- **Nick Baltas** In sustained-trend years like 2022 (commodities early, rates all year, dollar from summer to November) every trend speed profits, and entering a month earlier or later only shifts returns from about +40% to +35%.  #mech/slow_reaction _(added by opus cross-check)_
+  > given we had sustained trends in 2022. Mhm. So we had the commod in the beginning rates throughout and then a dollar in the summer until November
+  indicator: 2022 trends in commodities, rates and USD · asset: multi · direction: all speeds positive in persistent trend years · horizon: months · conditions: sustained trends without V-shaped reversals · testable: yes - compare trend speeds in 2022 · confidence: high
+  ^MT116-C08-X1
+- **Nick Baltas** Ranking trend speeds or universes by annual return is incomplete without the return spread between the top and bottom ranks, since the spread may be too small to matter.  #mech/research_method _(added by opus cross-check)_
+  > what this analysis is missing at this point in time is also an indication of what's maybe the spread between the top and the bottom ranked
+  indicator: top-minus-bottom spread of ranked design variants · asset: multi · horizon: years · testable: yes - report rank spreads alongside rankings · confidence: high
+  ^MT116-C08-X2
 
 ### C09
 - **Neils Kostrup Larsen** Over about 20 years every trend sector has been profitable but contribution rotates over time, so a full-breadth portfolio is the more intuitive design.  #mech/structural_shift
@@ -169,6 +193,7 @@ tags: [source, layer0]
 - **Nick Baltas** Trend allocations often fail because of investor behaviour, i.e. reacting to drawdowns by cutting, not because of the strategy itself.  #mech/behavioral
   > a lot of trend following allocation kind of fails mostly because of the behavior or mostly because of the kind of reaction pattern of of investors
   indicator: investor behaviour in trend allocations · asset: multi · horizon: years · testable: no - behavioural, not directly testable · confidence: medium
+  **Correction (cross-check):** wrong speaker: the point that trend allocations fail mainly because of investor behaviour is made by Neils Kostrup Larsen, summarising the Mercer paper → Neils Kostrup Larsen: trend following allocations often fail because of investors' reaction to drawdowns rather than the strategy itself.
   ^MT116-C11-1
 - **Nick Baltas** The nonlinear time series momentum paper proposes letting the data (via a neural network) determine how past returns map to positions instead of imposing a sigmoid.  #mech/research_method
   > if there are those nonlinearities instead of us forcing them by some sort of a parametric approach let's say we know we utilize something that is called a sigmoid
@@ -230,4 +255,8 @@ tags: [source, layer0]
   > the convex profile of trend followers, the smile shape
   indicator: trend payoff vs market return · asset: equities · conditions: large market moves · testable: yes - regress on market and squared market · confidence: medium
   ^MT116-C15-3
+- **Nick Baltas** Part of trend following's return is a directional component from mostly holding assets with positive risk premia; critics a few years ago said trend just harvested equity and bond premia, a doubt Baltas says is now gone.  #mech/risk_premium _(added by opus cross-check)_
+  > everyone said, "Hey, you're buying equities, you're buying bonds, you're just benefiting from carry and equities premium." No longer the case.
+  indicator: trend return decomposition: directional vs timing · asset: multi · horizon: years · conditions: directional part dominates when equity and bond premia are positive and trending · testable: yes - decompose trend returns into average-position and timing parts · confidence: medium
+  ^MT116-C15-X1
 

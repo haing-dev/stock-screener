@@ -5,10 +5,10 @@ date: 2025-03-08
 channel: "Top Traders Unplugged"
 url: 
 words: 11689
-claims: 48
-added_by_opus: 0
+claims: 51
+added_by_crosscheck: 3
 corrections: 0
-crosscheck: "pending"
+crosscheck: "opus cross-check"
 speakers: ["Katy Kaminsky (guest, Alpha Simplex, quantitative CTA)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Feb 2025 trend-following check-in and Katy's paper on index versus mechanical replication of managed futures for ETFs. Covers weak trend regime, BoJ and Trump-trade unwind, lookback window diversification (slower has higher Sharpe, shorter gives convexity), crowding via co-movement, Sharpe-based expected returns, replication pros/cons, informed regression to cut tracking error, and caution on CTA ETFs.
 
 **Approach:** trend following, CTA replication / ETFs, crowding, lookback diversification
+
+**Cross-check completeness estimate of first read:** 0.94 - first reader was very thorough; missed only the listener's position-fading practice, the risk-premia point on slow trend and the selection-bias reason for judging on tracking error.
 
 ## Coverage
 
@@ -103,6 +105,10 @@ tags: [source, layer0]
   > you can estimate um a pseudo crowding measure by measuring co-movement and co-movement is really the excess correlation relative to the
   indicator: co-movement factor · asset: multi · testable: yes: excess correlation is computable · confidence: high
   ^MT080-C04-5
+- **Rick (listener question, read by Niels Kaastrup-Larsen)** A listener trades live systems that fade extreme or offside positioning, i.e. take the opposite side when positioning in a market becomes crowded, as a contrarian complement to trend.  #mech/crowding_positioning _(added by opus cross-check)_
+  > I have been building and live trading offside systems fading extreme or offside positioning
+  indicator: positioning extremes (e.g. CFTC or co-movement crowding) · asset: multi · direction: short crowded longs / long crowded shorts · horizon: weeks · conditions: extreme positioning · testable: yes - fade-the-crowd backtest on positioning data · confidence: low
+  ^MT080-C04-X1
 
 ### C05
 - **Katy Kaminsky** Excess co-movement within a group (e.g. precious metals in a tariff theme) indicates crowded positions and higher reversal risk; it can serve as a signal, filter or risk-management tool.  #mech/crowding_positioning
@@ -149,6 +155,10 @@ tags: [source, layer0]
   > is a client looking for something that's the most compatible with equities or are they looking for something that has the highest sharp
   indicator: conditional returns of trend vs equities · asset: multi · horizon: years · testable: yes · confidence: high
   ^MT080-C07-4
+- **Katy Kaminsky** Longer-lookback trend partly harvests buy-and-hold risk premia, which raises long-run Sharpe but weakens its role as a defence in a bad year, where shorter-term reactivity matters.  #mech/risk_premium _(added by opus cross-check)_
+  > as you go into longer Trend as well you're capturing some of the risk Premia which is good
+  indicator: trend lookback length · asset: multi · direction: slow trend: more risk premia, less crisis protection · horizon: years · testable: yes - decompose slow-trend returns into static long exposure vs timing · confidence: medium
+  ^MT080-C07-X1
 
 ### C08
 - **Katy Kaminsky** CTA ETFs attract mostly individuals and RIA model portfolios in the US, and institutions use them as an easy, no-paperwork liquid allocation.  #mech/structural_shift _(time-bound view)_
@@ -243,6 +253,10 @@ tags: [source, layer0]
   > if you go in and you randomly pick an ETF you could get something very different from the industry
   indicator: single strategy vs industry · asset: multi · testable: yes · confidence: high
   ^MT080-C14-3
+- **Katy Kaminsky** Replication methods should be judged on tracking error to the index, not on historical returns, because one can always select ex post the strategy with the best past return.  #mech/research_method _(added by opus cross-check)_
+  > that's why we cared so much about tracking era um instead of you know looking at returns because as you know you can always pick the strategy historically that has the best return
+  indicator: tracking error vs CTA index · asset: multi · horizon: years · testable: yes - out-of-sample tracking error comparison · confidence: high
+  ^MT080-C14-X1
 
 ### C15
 - **Niels Kaastrup-Larsen** Some new CTA ETFs trade only a couple of sectors, unlike the diversified managed futures norm, so results may differ widely.  #mech/structural_shift

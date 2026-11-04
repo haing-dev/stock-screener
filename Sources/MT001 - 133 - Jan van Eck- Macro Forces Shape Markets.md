@@ -6,7 +6,7 @@ channel: "Insightful Investor"
 url: https://www.youtube.com/watch?v=9Luz1PUx2nI
 words: 7058
 claims: 75
-added_by_opus: 7
+added_by_crosscheck: 7
 corrections: 0
 crosscheck: "opus blind read (pilot)"
 speakers: ["Jan van Eck (CEO, Van Eck, guest)", "Alex (host, Insightful Investor podcast)"]
@@ -47,7 +47,7 @@ tags: [source, layer0]
   > Financial theory over the last hundred uh and especially the last 50 years started to try to look at the markets as a science.
   indicator: capital asset pricing theory · asset: multi · testable: no: a philosophical stance on method · confidence: high
   ^MT001-C01-2
-- **Jan van Eck** Investors carry personality biases (his: optimism; his father's: skepticism toward official actions), so knowing your own bias and questioning official policy actions is part of the method.  #mech/behavioral _(added by Opus)_
+- **Jan van Eck** Investors carry personality biases (his: optimism; his father's: skepticism toward official actions), so knowing your own bias and questioning official policy actions is part of the method.  #mech/behavioral _(added by opus cross-check)_
   > I've learned this about myself recently that I'm always biased towards a positive outcome
   asset: other · testable: no - a personal disposition, not a market signal · confidence: medium
   ^MT001-C01-2b
@@ -171,11 +171,11 @@ tags: [source, layer0]
   > So the the optin automatic optin to the markets makes makes a lot of sense.
   asset: multi · horizon: years · conditions: non-expert savers · testable: no: policy design opinion · confidence: medium
   ^MT001-C05-8
-- **Jan van Eck** Sell-side analysts and investors under-forecast extreme earnings growth at very large firms during technology shifts because they extrapolate from the past.  #mech/slow_reaction _(added by Opus)_
+- **Jan van Eck** Sell-side analysts and investors under-forecast extreme earnings growth at very large firms during technology shifts because they extrapolate from the past.  #mech/slow_reaction _(added by opus cross-check)_
   > we can't imagine that companies worth a trillion dollars can have their earnings grow 80 or 100% a year
   indicator: analyst earnings forecasts vs actual growth · asset: equities · direction: large-cap tech earnings beat forecasts in major shifts · horizon: months · conditions: major technology changes like AI · testable: yes - IBES forecast errors for mega-caps · confidence: medium
   ^MT001-C05-1b
-- **Jan van Eck** 60/40 rests on two premises: bonds earn a competitive return through their yield, and stocks and bonds are inversely correlated so bonds balance the portfolio.  #mech/risk_management _(added by Opus)_
+- **Jan van Eck** 60/40 rests on two premises: bonds earn a competitive return through their yield, and stocks and bonds are inversely correlated so bonds balance the portfolio.  #mech/risk_management _(added by opus cross-check)_
   > the premise of it is that bonds can provide a competitive return. I think they can through their yield. And I think the other idea is to balance it out.
   indicator: bond yield; stock-bond correlation · asset: multi · horizon: years · conditions: works when bond yields are competitive and stock-bond correlation is negative · testable: yes - 60/40 results by yield level and stock-bond correlation regime · confidence: medium
   ^MT001-C05-6b
@@ -217,11 +217,11 @@ tags: [source, layer0]
   > Bitcoin's like a teenager has yet to be adopted by a lot of institutional investors
   indicator: Bitcoin vs gold · asset: other · horizon: years · conditions: institutional adoption · testable: partly: correlation measurable, maturity stage is judgment · confidence: medium
   ^MT001-C06-9
-- **Jan van Eck** Gold is the best resilience asset against concern about excessive US government spending.  #mech/fiscal_debt _(added by Opus, time-bound view)_
+- **Jan van Eck** Gold is the best resilience asset against concern about excessive US government spending.  #mech/fiscal_debt _(added by opus cross-check, time-bound view)_
   > I am as concerned about US government spending as the next person to your point about resilience and I can't think about a better asset than gold
   indicator: US government spending / deficits · asset: commodities · direction: long gold · horizon: years · conditions: not in an acute liquidation, where gold also falls · testable: yes - gold returns vs fiscal deficit measures · confidence: high
   ^MT001-C06-3b
-- **Jan van Eck** Resilience is hard to optimize directly, so hold assets you will be fine owning in the end and accept interim price volatility.  #mech/risk_management _(added by Opus)_
+- **Jan van Eck** Resilience is hard to optimize directly, so hold assets you will be fine owning in the end and accept interim price volatility.  #mech/risk_management _(added by opus cross-check)_
   > I think you can optimize for owning assets that you know at the end of the day you will be okay with but in the meantime you might have price volatility
   asset: multi · horizon: years · testable: no - qualitative stance · confidence: medium
   ^MT001-C06-4b
@@ -267,7 +267,7 @@ tags: [source, layer0]
   > there's no valuation support for that stock, right?
   indicator: valuation support · asset: equities · conditions: narrative-driven stocks · testable: no: judgment on individual names · confidence: medium
   ^MT001-C07-10
-- **Jan van Eck** A cyclical upswing in commodity prices is likely to persist for a while, lifting commodity exporters such as Latin America as the world gets wealthier.  #mech/cycle_persistence _(added by Opus, time-bound view)_
+- **Jan van Eck** A cyclical upswing in commodity prices is likely to persist for a while, lifting commodity exporters such as Latin America as the world gets wealthier.  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
   > maybe Latin America with the cyclical improvement in commodity prices that you know that's probably be with here with us for a while here
   indicator: commodity prices · asset: commodities · direction: commodities and Latin American assets up · horizon: years · testable: partly - forward view; persistence of commodity cycles is testable · confidence: medium
   ^MT001-C07-4b
@@ -331,7 +331,7 @@ tags: [source, layer0]
   > fixed income markets are the first markets to become less liquid
   indicator: fixed income liquidity · asset: credit · horizon: days · conditions: stress periods · testable: yes: ETF vs bond liquidity in stress · confidence: medium
   ^MT001-C09-6
-- **Jan van Eck** Passive flows have not made markets less discriminating: index members still fall sharply (Oracle down 50% in a quarter, SpaceX down after Nasdaq inclusion) and Q2 2026 was one of the highest-dispersion quarters, though index rules and ETF construction matter.  #mech/liquidity_flows _(added by Opus, time-bound view)_
+- **Jan van Eck** Passive flows have not made markets less discriminating: index members still fall sharply (Oracle down 50% in a quarter, SpaceX down after Nasdaq inclusion) and Q2 2026 was one of the highest-dispersion quarters, though index rules and ETF construction matter.  #mech/liquidity_flows _(added by opus cross-check, time-bound view)_
   > I'm not convinced yet that the flows into passive funds make the market less insightful or interesting
   indicator: cross-sectional return dispersion · asset: equities · horizon: months · testable: yes - dispersion vs passive share over time · confidence: medium
   ^MT001-C09-3b

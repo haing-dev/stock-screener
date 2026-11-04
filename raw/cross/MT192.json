@@ -1,0 +1,164 @@
+{
+ "source_id": "MT192",
+ "added_claims": [
+  {
+   "claim_id": "MT192-C02-X1",
+   "chunk": "C02",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "these big institutions that we've been used to um where they you know had pretty significant power and people would listen to every single word that came out from these uh meetings.",
+   "claim": "Multilateral bodies such as the G7 are losing their ability to move the world, as shown by how little the June 2025 summit registered, in a world dominated by a few individuals, narratives and social media; so policy-meeting headlines carry less market-moving weight.",
+   "mechanism": "policy_reaction",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - impressionistic judgement from one summit",
+   "speaker_confidence": "low",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT192-C06-X1",
+   "chunk": "C06",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "They're looking for something with a high sharp because that's what they look for. Uh but what they really should be looking for is something that can truly derisk their portfolio",
+   "claim": "When improving an equity portfolio, investors typically screen candidates on standalone Sharpe, but they should look for the asset that de-risks the portfolio, for example one with negative correlation at the right time, even if its own return looks modest.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "standalone Sharpe vs correlation to existing portfolio",
+   "horizon": "unspecified",
+   "direction": "add a de-risking, negatively correlated asset",
+   "conditions": "",
+   "testable": "yes - compare portfolio Sharpe gains when ranking candidates by Sharpe versus by correlation-adjusted contribution",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT192-C08-X1",
+   "chunk": "C08",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "Now in terms of trend following they do prefer to use the socken trend index. However it doesn't exist in the 90s. So they are using a proxy for that period.",
+   "claim": "Quantica's 1990 to 2025 trend results rely on the SG Trend Index but use a proxy for the 1990s because the index does not exist before then, so the full-period trend Sharpe of 0.64 partly depends on a constructed series.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "SG Trend Index with pre-history proxy",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - rerun with alternative trend proxies for the 1990s",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT192-C09-X1",
+   "chunk": "C09",
+   "speaker": "Yoav Git",
+   "quote": "a lot of people are looking at very recent history.",
+   "claim": "Investors judge trend on the last year or two, a poor stretch, and so miss its structural long-term benefit and zero correlation to a 60/40 portfolio (recency bias in manager evaluation).",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "trailing 1 to 2 year trend performance",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - behavioural observation",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT192-C12-X1",
+   "chunk": "C12",
+   "speaker": "Yoav Git",
+   "quote": "completely simple completely trivial and they're not going to want to pay for us",
+   "claim": "Before the 2011-12 time-series momentum paper, trend managers kept their methods secret because a simple, explainable rule looks trivial and clients would then refuse to pay fees for it; transparency later made trend commonplace and harder to charge for.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - industry history recollected by a former Winton/AHL staff member",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT192-C15-X1",
+   "chunk": "C15",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "some managers obviously you can just spread it out and say well I use 20 different look back periods and I weight them equally",
+   "claim": "Many trend managers diversify across look-back periods by spreading risk over about 20 horizons with equal weights, even though performance differs a lot between a 20-day and a 130 or 260-day look-back; whether a tilt across horizons adds real out-of-sample value remains an open question.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "trend look-back horizons (20, 60, 130, 260 days)",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "equal weighting avoids look-back selection; tilting risks over-engineering that works only in backtests",
+   "testable": "yes - compare equal-weight and tilted look-back blends out of sample",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT192-C16-X1",
+   "chunk": "C16",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "a lot of the managers from the 70s, including Don, you know, started out using volatility breakout",
+   "claim": "Early trend managers of the 1970s used volatility breakout rules, before the price breakout of the Turtles and before moving-average and time-series momentum systems became standard, yet long-run performance records of the different styles converge.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "volatility breakout",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - historical track records exist but are not public for all managers",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ],
+ "corrections": [
+  {
+   "claim_id": "MT192-C05-3",
+   "issue": "Probable wrong speaker. The speaker who lists the defensive strategies (option buying, fast trend, trend, quality) is Yoav: in C06 Niels asks 'is there anything you have come across' and Yoav answers 'the strategies that I mentioned', and Niels says 'you mentioned that there are other things'. The allocator-justification passage is part of the same unbroken paragraph.",
+   "fix": "Yoav Git says the real-life difficulty for an allocator is justifying a low-Sharpe diversifier to the investment committee even when the maths shows it adds value, which the paper does not address."
+  },
+  {
+   "claim_id": "MT192-C05-4",
+   "issue": "Probable wrong speaker: Yoav, the same speaker who later refers to 'the strategies that I mentioned'.",
+   "fix": "Yoav Git says fast trend has higher convexity and is like buying options paid for with realised rather than implied volatility."
+  },
+  {
+   "claim_id": "MT192-C05-5",
+   "issue": "Probable wrong speaker: Yoav; Niels's own turn begins at 'Now obviously finding a strategy...' where he says trend is not really negatively correlated.",
+   "fix": "Yoav Git says trend following crosses the boundary between alpha and hedge: zero correlated to underlying markets with positive alpha."
+  },
+  {
+   "claim_id": "MT192-C05-6",
+   "issue": "Probable wrong speaker: Yoav, part of the list of defensive strategies he gives.",
+   "fix": "Yoav Git lists long-short equity tilted to high-quality stocks as another defensive strategy."
+  },
+  {
+   "claim_id": "MT192-C10-2",
+   "issue": "Overstated. The speaker says the industry has shifted to the slow side, measured by the correlation of the simple indicator run at different speeds with the SG index; he does not say the correlation with slow variants rose over the 15 years.",
+   "fix": "Yoav Git says SG's paper shows the industry has become slower, inferred by checking which speed of the simple +1/-1 indicator correlates most with the SG index."
+  }
+ ],
+ "chunks_checked": [
+  "C01",
+  "C02",
+  "C03",
+  "C04",
+  "C05",
+  "C06",
+  "C07",
+  "C08",
+  "C09",
+  "C10",
+  "C11",
+  "C12",
+  "C13",
+  "C14",
+  "C15",
+  "C16",
+  "C17"
+ ],
+ "completeness_estimate": "0.88 - the first reader caught almost every argument and number in the four papers; misses were minor (G7 remark, Quantica's proxy caveat, recency-bias point, a few history and look-back remarks) and four claims in C05 look misattributed to Niels instead of Yoav."
+}

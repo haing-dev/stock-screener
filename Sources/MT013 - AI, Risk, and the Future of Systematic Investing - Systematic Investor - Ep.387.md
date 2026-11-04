@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 14157
 claims: 86
-added_by_opus: 10
+added_by_crosscheck: 10
 corrections: 3
 crosscheck: "opus cross-check"
 speakers: ["Andrew Beer (co-host, DBi / DBMF managed-futures replication ETF)", "Tom Roble (co-host, SG CTA/Trend index research; captioned name)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged; captioned 'Neil's Krup Larson')"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, CTA, managed futures replication, liquid alternatives, QIS, risk allocation, gold, non-US equities
 
-**Opus completeness estimate of first read:** 0.87 - good coverage of the main threads; missed 2025 sector attribution (gold/non-US equities, poor bonds, short JGBs), CTA VaR mix, replication tracking variance, rebalance speed in V-reversals, track-record length, equity long-short fee math and the don't-time-trend advice; two speaker errors.
+**Cross-check completeness estimate of first read:** 0.87 - good coverage of the main threads; missed 2025 sector attribution (gold/non-US equities, poor bonds, short JGBs), CTA VaR mix, replication tracking variance, rebalance speed in V-reversals, track-record length, equity long-short fee math and the don't-time-trend advice; two speaker errors.
 
 ## Coverage
 
@@ -109,7 +109,7 @@ tags: [source, layer0]
   > We've got stubborn inflation. We've got geopolitical dislocations and tensions.
   asset: multi · horizon: years · conditions: as of early 2026 · testable: no: view · confidence: medium
   ^MT013-C05-4
-- **Andrew Beer** Allocators are heavily exposed through private equity to software companies that AI could disrupt, adding to the case against long-term leveraged long equity exposure.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Andrew Beer** Allocators are heavily exposed through private equity to software companies that AI could disrupt, adding to the case against long-term leveraged long equity exposure.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > being you know up to their gills and things like software stocks that could be disrupted
   indicator: private equity exposure to software · asset: equities · direction: PE/software valuations down if AI disrupts · horizon: years · conditions: high equity valuations and AI disruption · testable: partly - PE software exposure vs subsequent marks · confidence: medium
   ^MT013-C05-X1
@@ -135,7 +135,7 @@ tags: [source, layer0]
   > we're seeing really good trending markets in Cosby, Niki, the Swedish OMX, and IBEX 35
   indicator: trend indicator by market · asset: equities · direction: long non-US equity indices · horizon: months · conditions: early 2026 · testable: yes · confidence: medium
   ^MT013-C06-5
-- **Tom Roble** Bond markets offered poor trend opportunities for CTAs in 2025.  #mech/cycle_persistence _(added by Opus, time-bound view)_
+- **Tom Roble** Bond markets offered poor trend opportunities for CTAs in 2025.  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
   > In fact you bonds was really poor last year.
   indicator: breakout-model z-scores in bond futures (SG trend indicator) · asset: rates · horizon: years · conditions: 2025 · testable: yes - trend returns by sector in 2025 · confidence: high
   ^MT013-C06-X1
@@ -213,11 +213,11 @@ tags: [source, layer0]
   > it really was all about the April uh deleveraging thanks to liberation day
   indicator: April 2025 trend equity positions · asset: equities · horizon: weeks · testable: yes · confidence: medium
   ^MT013-C09-5
-- **Tom Roble** Despite the headlines, CTAs had less risk in precious metals than assumed; their VaR allocation was much larger in equities and FX.  #mech/risk_management _(added by Opus, time-bound view)_
+- **Tom Roble** Despite the headlines, CTAs had less risk in precious metals than assumed; their VaR allocation was much larger in equities and FX.  #mech/risk_management _(added by opus cross-check, time-bound view)_
   > I looked at a CTA report today and there was a much bigger allocation of VAR to equities and FX.
   indicator: CTA VaR allocation by sector · asset: multi · horizon: weeks · conditions: early 2026, after the precious metals selloff · testable: partly - needs CTA risk-allocation reports · confidence: medium
   ^MT013-C09-X1
-- **Andrew Beer** In 2025 trend gains came roughly half from gold and half from non-US equities, while rates and currencies produced whipsaw losses.  #mech/cycle_persistence _(added by Opus, time-bound view)_
+- **Andrew Beer** In 2025 trend gains came roughly half from gold and half from non-US equities, while rates and currencies produced whipsaw losses.  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
   > it was making money in gold and non- US equities um was about about half the performance each and then you got whipsaw and and hope you didn't lose too much money in in rates and currencies
   indicator: trend return attribution by sector (2025) · asset: multi · direction: long gold, long non-US equities · horizon: years · conditions: 2025 · testable: yes - sector attribution of CTA indices · confidence: high
   ^MT013-C09-X2
@@ -238,9 +238,9 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** Concentrated trend programs create return but are hard to sell given investment committee constraints and strategic allocations.  #mech/risk_management
   > if you really want to have punchy returns and make those 50 60 80% returns yeah then you actually have to have a fairly small set of markets
   asset: multi · horizon: years · testable: partly · confidence: medium
-  **Correction (Opus):** Likely wrong speaker: the 'London CTA manager... difficult to sell to investors' remark is Tom Roble's; Niels replies 'you don't need many investors'. → Tom Roble: concentrated trend programs create return but are hard to sell given investment committee constraints and strategic allocations.
+  **Correction (cross-check):** Likely wrong speaker: the 'London CTA manager... difficult to sell to investors' remark is Tom Roble's; Niels replies 'you don't need many investors'. → Tom Roble: concentrated trend programs create return but are hard to sell given investment committee constraints and strategic allocations.
   ^MT013-C10-4
-- **Niels Kaastrup-Larsen** Most 2025 trend profits came from metals or select equities, with short Japanese government bonds (JGBs) another profitable trend.  #mech/cycle_persistence _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** Most 2025 trend profits came from metals or select equities, with short Japanese government bonds (JGBs) another profitable trend.  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
   > a couple of them also in the say short JTBs
   indicator: JGB futures · asset: rates · direction: short JGBs · horizon: years · conditions: 2025, BOJ tightening · testable: yes - JGB trend returns 2025 · confidence: medium
   ^MT013-C10-X1
@@ -284,11 +284,11 @@ tags: [source, layer0]
   > when you're building these models, you have to make certain assumptions about implementation costs and I don't think most people factor in um uh getting taken advantage of by local traders
   indicator: implementation cost assumptions · asset: multi · testable: yes · confidence: medium
   ^MT013-C12-5
-- **Andrew Beer** A futures-based CTA replication can deviate from the hedge funds it tracks by several hundred bp a year (about -500 bp in 2023, large outperformance in 2024-2025), driven by about four sources of variation.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** A futures-based CTA replication can deviate from the hedge funds it tracks by several hundred bp a year (about -500 bp in 2023, large outperformance in 2024-2025), driven by about four sources of variation.  #mech/research_method _(added by opus cross-check)_
   > You know, in 2023, they all went against us and we underperformed by 500 basis points.
   indicator: replication tracking difference vs SG CTA index · asset: multi · horizon: years · testable: yes - annual tracking difference of replication ETFs vs index · confidence: high
   ^MT013-C12-X1
-- **Andrew Beer** Slow (weekly) de-risking helped around Liberation Day because the sell-off reversed quickly; faster de-risking sold near the low.  #mech/risk_management _(added by Opus)_
+- **Andrew Beer** Slow (weekly) de-risking helped around Liberation Day because the sell-off reversed quickly; faster de-risking sold near the low.  #mech/risk_management _(added by opus cross-check)_
   > we were slow to derisk and and balanced when Trump Trump changed his mind.
   indicator: rebalance frequency of trend portfolio · asset: equities · horizon: weeks · conditions: sharp policy-driven sell-offs that reverse quickly (V-shaped) · testable: yes - compare trend models by rebalance speed in V-shaped reversals · confidence: medium
   ^MT013-C12-X2
@@ -359,17 +359,17 @@ tags: [source, layer0]
 - **Andrew Beer** Backtested to live performance decay of risk premia products is about 75%.  #mech/research_method
   > something like 75% or something
   indicator: backtest-to-live decay · asset: multi · horizon: years · testable: yes · confidence: low
-  **Correction (Opus):** Duplicate of MT013-C16-3 (same 75% backtest-to-live decay point). → Merge into MT013-C16-3: risk premia backtests overstate Sharpe (G10 carry 1.2); live results fall about 75% short of backtests.
+  **Correction (cross-check):** Duplicate of MT013-C16-3 (same 75% backtest-to-live decay point). → Merge into MT013-C16-3: risk premia backtests overstate Sharpe (G10 carry 1.2); live results fall about 75% short of backtests.
   ^MT013-C16-4
 - **Andrew Beer** A multi-manager mutual fund of hedge fund managers cannot achieve the promised return objectives after costs and constraints.  #mech/research_method
   > a mutual fund that tries to pick six underlying hedge fund managers and hires them in managed accounts is not going to achieve the return objectives
   asset: multi · horizon: years · testable: yes · confidence: high
   ^MT013-C16-5
-- **Niels Kaastrup-Larsen** Strategies go in and out of favour, so 5-10 years of track record says little about the next 5-10 years; past underperformance does not predict future underperformance.  #mech/research_method _(added by Opus)_
+- **Niels Kaastrup-Larsen** Strategies go in and out of favour, so 5-10 years of track record says little about the next 5-10 years; past underperformance does not predict future underperformance.  #mech/research_method _(added by opus cross-check)_
   > Even if you have 5 years of underperformance doesn't mean the next 5 years, the next 10 years won't
   indicator: manager/strategy track record length · asset: multi · horizon: years · testable: yes - persistence of 5-year relative performance across managers · confidence: medium
   ^MT013-C16-X1
-- **Andrew Beer** Equity long-short funds with 0.4-0.5 equity beta need more stock-selection alpha than is realistic to overcome mutual fund costs, so they are unlikely to add value.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** Equity long-short funds with 0.4-0.5 equity beta need more stock-selection alpha than is realistic to overcome mutual fund costs, so they are unlikely to add value.  #mech/research_method _(added by opus cross-check)_
   > equity long short as a as a category if you have a beta of 0.5 or point4 to equities it it's not going to the amount of stock selection alpha and other things you need to do
   indicator: equity long-short beta vs fees · asset: equities · horizon: years · conditions: in mutual fund/liquid alt wrappers with high fees · testable: yes - alpha of liquid equity long-short funds after fees · confidence: high
   ^MT013-C16-X2
@@ -388,13 +388,13 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** Macro funds use bank QIS indices for thematic bets like curve steepeners, outsourcing execution and financing.  #mech/risk_management
   > global macro hedge funds who want to access some sort of curve steepener or some sort of thematic play for a finite period of time who will use the QIS
   indicator: QIS thematic exposure · asset: rates · horizon: months · testable: no · confidence: medium
-  **Correction (Opus):** Wrong speaker: 'SG has a very active QIS business... often we have global macro hedge funds who want to access some sort of curve steepener' is Tom Roble (SG), not the host. → Tom Roble: macro funds use bank QIS indices for thematic bets like curve steepeners, outsourcing execution and financing.
+  **Correction (cross-check):** Wrong speaker: 'SG has a very active QIS business... often we have global macro hedge funds who want to access some sort of curve steepener' is Tom Roble (SG), not the host. → Tom Roble: macro funds use bank QIS indices for thematic bets like curve steepeners, outsourcing execution and financing.
   ^MT013-C18-1
 - **Andrew Beer** Low-cost ETF model portfolios create a market for beta-like alternative indices at low fees.  #mech/structural_shift
   > lowcost ETF model portfolios that that that require things that are look and feel more betalike
   asset: multi · horizon: years · testable: no · confidence: medium
   ^MT013-C18-2
-- **Andrew Beer** Managed futures exposure should be held as a core allocation, not traded tactically; allocators who want to time something should time another asset.  #mech/behavioral _(added by Opus)_
+- **Andrew Beer** Managed futures exposure should be held as a core allocation, not traded tactically; allocators who want to time something should time another asset.  #mech/behavioral _(added by opus cross-check)_
   > very few allocators actively trade which they should I tell them if you're going to actively trade you you find something else to trade.
   asset: multi · horizon: years · testable: partly - investor flow timing vs buy-and-hold returns of trend funds · confidence: high
   ^MT013-C18-X1

@@ -1,0 +1,125 @@
+{
+ "source_id": "MT115",
+ "added_claims": [
+  {
+   "claim_id": "MT115-C04-X1",
+   "chunk": "C04",
+   "speaker": "Pierre/Peter (hedge fund oil trader, caption spelling varies)",
+   "quote": "so far we haven't had Supply disruption from Iraq despite what's going on with Isis",
+   "claim": "Supply disruptions that had propped up the 2011-14 price are fading: Libya returned unexpectedly, Iran sanctions eased, Iraq (despite ISIS) and Russia (despite Ukraine) have not lost output, and the Russia sanctions may have hit European demand rather than supply, so geopolitical headlines did not tighten supply in 2014.",
+   "mechanism": "overshoot",
+   "asset_class": "commodities",
+   "indicator": "Libyan, Iranian, Iraqi and Russian crude output; supply disruption total",
+   "horizon": "months",
+   "direction": "bearish oil as disruption premium fades",
+   "conditions": "when geopolitical events do not actually remove barrels",
+   "testable": "yes - compare disruption volumes with price changes",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT115-C05-X1",
+   "chunk": "C05",
+   "speaker": "Chris (Vitol, physical oil merchant)",
+   "quote": "if you get the right pricing incentive the market will react and store um we haven't seen a huge amount of it yet but uh it feels like it could go that way especially by q1 next year",
+   "claim": "Contango storage arbitrage responds to the pricing incentive with a lag: little oil had gone into storage yet, but it could build by the first quarter of 2015 if the curve keeps paying for storage.",
+   "mechanism": "liquidity_flows",
+   "asset_class": "commodities",
+   "indicator": "Brent contango; commercial and floating storage",
+   "horizon": "months",
+   "direction": "stock builds when contango exceeds storage cost",
+   "conditions": "storage cost and financing available (financing is not the constraint)",
+   "testable": "yes - contango versus inventory builds",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT115-C06-X1",
+   "chunk": "C06",
+   "speaker": "Dr. Fesharaki (caption: the good doctor; energy consultant)",
+   "quote": "some of the best refineries in the world which are in Korea for example they have heavily invested in upgrading but they have to export fifty percent uh at least of their products",
+   "claim": "Even high-quality Asian refiners (Korea) must export at least half their output, and with gasoline-oriented capacity, a slowdown in Chinese and Indian demand growth and new refineries about to start in Abu Dhabi and Saudi Arabia, Asian refining margins are under pressure before the new capacity even arrives.",
+   "mechanism": "structural_shift",
+   "asset_class": "commodities",
+   "indicator": "Asian refining margins; Korean product exports; China and India demand growth",
+   "horizon": "years",
+   "direction": "bearish Asian refining margins",
+   "conditions": "new capacity commissioning while demand slows",
+   "testable": "yes - refining margins versus capacity additions",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT115-C06-X2",
+   "chunk": "C06",
+   "speaker": "Panelist (speaker not clear in captions)",
+   "quote": "whatever happens whatever we say here something else will happen",
+   "claim": "Forecasts, however well reasoned, are overtaken by new events, so something will change; that is the nature of trading and a reason to run risk control rather than rely on a single supply-demand scenario.",
+   "mechanism": "risk_management",
+   "asset_class": "commodities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - general humility statement",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT115-C07-X1",
+   "chunk": "C07",
+   "speaker": "Chris (Vitol, physical oil merchant)",
+   "quote": "well naturally anything priced off the crude Market is is obviously going to be lower but uh yeah I mean that's not that's not enough at this point",
+   "claim": "Lower crude cuts the price of oil-indexed gas automatically but not enough to close the gap between Asian and US gas, so the regional gas arbitrage will have to adjust further and affects the economics of new projects.",
+   "mechanism": "structural_shift",
+   "asset_class": "commodities",
+   "indicator": "oil-indexed LNG price versus US gas; Asia gas premium",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "oil-indexed contracts lag crude moves",
+   "testable": "yes - oil-indexed formula against spot gas",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT115-C08-X1",
+   "chunk": "C08",
+   "speaker": "Dr. Fesharaki (caption: the good doctor; energy consultant)",
+   "quote": "Asians actually are very polite they have not there's not one arbitration of one court case in any LNG deal in 40 years",
+   "claim": "Asian LNG buyers honour long-term contracts (no arbitration or court case in 40 years), unlike European buyers, so dual oil-indexed and spot gas prices can persist for years and US LNG volumes already sold are safe despite lower oil.",
+   "mechanism": "structural_shift",
+   "asset_class": "commodities",
+   "indicator": "LNG contract disputes; oil-indexed vs spot gas price gap",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "buyers accept contract duality when contracts are long-term and indexed",
+   "testable": "partly - dispute history is checkable, persistence of dual prices is a forecast",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  }
+ ],
+ "corrections": [
+  {
+   "claim_id": "MT115-C03-4",
+   "issue": "The size of the supply disruption is not stated: the caption reads 'we lost a day of production' with no number, so '2 mb/d' is the first reader's guess (it is also not consistent with the Libya, Syria and Iran losses named). The speaker's point is that the disruptions and US shale growth were of similar size and cancelled out, with OPEC's spare capacity meeting about 1 mb/d of annual demand growth.",
+   "fix": "Oil held near $110 for 3.5 years because Arab Spring and sanctions-related supply disruptions (Libya, Syria, Iraq, Iran, from 2010 to early 2014) were offset by a roughly equal rise in US shale output, while OPEC met demand growth of about 1 mb/d per year from spare capacity left after the financial crisis."
+  },
+  {
+   "claim_id": "MT115-C06-3",
+   "issue": "'Benefit from cheap crude' is not in the transcript: the speaker says US refiners are doing well, being the best refineries and operators with a Gulf Coast location, and that this has a shelf life of three to seven years, with some pain later but much less severe than Europe's.",
+   "fix": "US refiners are doing very well now because they are among the best refineries and operators with a Gulf Coast location, but the advantage has a shelf life of three to seven years; some pain will come later, much less than Europe's."
+  }
+ ],
+ "chunks_checked": [
+  "C01",
+  "C02",
+  "C03",
+  "C04",
+  "C05",
+  "C06",
+  "C07",
+  "C08",
+  "C09"
+ ],
+ "completeness_estimate": "0.87 - first reader captured the curve, demand-forecast, shale, OPEC, storage, refining and LNG arguments; missed the fading-disruption detail, storage lag, Korean refinery exports, the oil-indexed gas pass-through, Asian contract-honouring and the closing humility remark; two minor over-fills (disruption size, cheap-crude reason)."
+}

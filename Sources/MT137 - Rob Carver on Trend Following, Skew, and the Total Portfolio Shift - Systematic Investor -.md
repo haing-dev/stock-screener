@@ -5,10 +5,10 @@ date: 2025-11-27
 channel: "Top Traders Unplugged"
 url: 
 words: 14490
-claims: 53
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 62
+added_by_crosscheck: 9
+corrections: 2
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Rob Carver (systematic futures trader, author of Systematic Trading, ex-AHL)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Systematic Investor weekly (Nov 2025) with Rob Carver answering listener questions on backtest robustness, rebalancing, intraday vs end-of-day execution, position sizing and skew, sentiment indicators, ATR; then CalPERS' adoption of the total portfolio approach. Carver: trend following is a risk premium, backtests must avoid multiple-testing and use rolling selection, dynamic vol targeting beats fixed sizing, trade slow. TPA is promising but vague; could benefit trend following.
 
 **Approach:** trend following, backtesting methodology, position sizing / volatility targeting, execution and costs, total portfolio approach, skew
+
+**Cross-check completeness estimate of first read:** 0.88 - first reader covered all 21 chunks including every listener question and the TPA discussion with accurate numbers; missed minor caveats (Monte Carlo/OOS limits, Lo autocorrelation point, no-stop-loss method, UK DB bond demand) and some Renaissance context.
 
 ## Coverage
 
@@ -77,6 +79,14 @@ tags: [source, layer0]
   > they obviously added it in 2023 after the exceptional year in 2022
   asset: multi · horizon: years · testable: no - anecdote · confidence: medium
   ^MT137-C03-2
+- **Niels Kaastrup-Larsen** The Renaissance International/Institutional Equity fund (equity-market-neutral style) lost 19% in 2022 and has returned only 3.7% since inception, so a -7% year in 2025 is not an outlier and the headline October loss is a journalist's selected number.  #mech/research_method _(added by sonnet-xhigh cross-check, time-bound view)_
+  > its worst year so far, I believe, in the past in 2022, they were down 19%
+  indicator: Renaissance Institutional Equity fund returns · asset: equities · horizon: years · conditions: outside-investor Renaissance products differ sharply from the closed Medallion fund · testable: yes - fund returns are public · confidence: medium
+  ^MT137-C03-X1
+- **Niels Kaastrup-Larsen** A fund with a mandate for low equity correlation should not be expected to rise just because the S&P 500 rises, so its 2025 shortfall must be judged against its mandate rather than the equity index.  #mech/research_method _(added by sonnet-xhigh cross-check, time-bound view)_
+  > at least one of these funds actually had a mandate to be not very correlated with equity
+  indicator: fund correlation to equities · asset: equities · conditions: benchmark must match fund mandate · testable: yes - correlation and beta can be measured · confidence: medium
+  ^MT137-C03-X2
 
 ### C04
 - **Niels Kaastrup-Larsen** In 2025, differences between CTAs, ETFs and replicators were driven by exposure (how much equity, fixed income) and market universe, more than model type, so conclusions about which approach is better are dangerous.  #mech/risk_management _(time-bound view)_
@@ -96,6 +106,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** Only about four Bitcoin halvings exist, too few observations for a statistically meaningful halving-cycle model.  #mech/research_method
   > that's not really enough data points for a statistically significant model
   indicator: Bitcoin halving cycle · asset: other · horizon: years · testable: yes - sample size · confidence: high
+  **Correction (cross-check):** Speaker is likely Carver, not the host: Carver says there have been 'like four, something' halvings and the sentence that this is 'not really enough data points for a statistically significant model' runs straight into 'you should know better than to even ask me that question, Neils', i.e. the quant answering the host. → Carver (as a quant) says Bitcoin has had only about four halvings, too few data points for a statistically significant halving-cycle model.
   ^MT137-C05-1
 - **Niels Kaastrup-Larsen** As of late Nov 2025 SG CTA index -2.2% YTD, SG Trend -1.18%, short-term traders -5.16%, vs MSCI World +16.86% and S&P 500 +14.2%.  #mech/slow_reaction _(time-bound view)_
   > CTA Societe Generale CTA index down 69 basis points for the month, down 2.2% for the year.
@@ -141,6 +152,10 @@ tags: [source, layer0]
   > Trading costs should be in there from the very start.
   asset: multi · testable: yes · confidence: high
   ^MT137-C07-4
+- **Rob Carver** Monte Carlo permutation and out-of-sample holdout tests weed out crazy strategies but do not fix the central flaw of selecting a tiny subset of strategies on too little data (multiple testing).  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > But you know, doing things like Monte Carlo testing, doing things like holding out out of sample, that's all good.
+  asset: multi · horizon: years · conditions: fails when the selected set is a small share of many candidates and the sample is short · testable: yes - multiple-testing corrections can be applied · confidence: high
+  ^MT137-C07-X1
 
 ### C08
 - **Rob Carver** With monthly holding, reoptimise strategy weights about annually (AHL used an annual refit); more frequent adds nothing.  #mech/research_method
@@ -185,6 +200,14 @@ tags: [source, layer0]
   > you can design your systems to react differently from entries to exits.
   asset: multi · testable: yes · confidence: medium
   ^MT137-C11-2
+- **Niels Kaastrup-Larsen** Apparent decay in trend following mainly reflects bad market environments of the last 20 years (which research teams cannot overcome) rather than a broken strategy, so recent weakness is weak evidence that the edge is gone.  #mech/cycle_persistence _(added by sonnet-xhigh cross-check)_
+  > that's why people sometimes write that oh, this strategy doesn't work as well anymore. I'm not so sure that's true.
+  indicator: trend following long-run performance · asset: multi · horizon: years · conditions: regime dependent: poor trending environments · testable: partly - needs long-sample regime analysis · confidence: medium
+  ^MT137-C11-X1
+- **Niels Kaastrup-Larsen** Trend following is unpredictable day to day but predictable in the long run, so success depends on committing to the rules and being comfortable with that, which is the discipline needed to earn the premium.  #mech/behavioral _(added by sonnet-xhigh cross-check)_
+  > feeling completely comfortable with a a strategy that um is unpredictable in some ways, uh yet it's very predictable in the long run
+  asset: multi · horizon: years · testable: no - behavioural commitment · confidence: high
+  ^MT137-C11-X2
 
 ### C12
 - **Rob Carver** Choosing between static and dynamic sizing depends on objective: positive skew improves geometric return but hurts Sharpe, negative skew the opposite.  #mech/risk_management
@@ -232,6 +255,7 @@ tags: [source, layer0]
 - **Rob Carver** Carver's skew signal buys assets with heavy negative historic skew, which is underpriced because investors dislike it; a skew signal is a sentiment proxy.  #mech/risk_premium
   > something with that's got very heavy negative skew would tend to be underpriced because people don't like it
   indicator: historic skew · asset: multi · direction: long assets with negative skew · horizon: months · testable: yes · confidence: medium
+  **Correction (cross-check):** Overstated certainty: Carver says 'you could argue' a skew signal is a sentiment indicator; he does not use sentiment data and notes his skew rule simply buys assets with heavy negative skew that people dislike. → Carver's skew signal looks at historic skew and buys assets with heavy negative skew, which tend to be underpriced because people dislike them; one could call this buying negative sentiment, but he does not use sentiment indicators.
   ^MT137-C15-1
 - **Rob Carver** Third-party sentiment indicators or models offered by sell-side are typically in-sample fitted, so be wary and build in-house.  #mech/research_method
   > essentially it's massively in-sample fitted and therefore of course it looks very good.
@@ -259,6 +283,14 @@ tags: [source, layer0]
   > only only execute those that have moved in your favor.
   indicator: previous close vs next day price · asset: multi · direction: buy after dips, sell after rallies for slow signals · horizon: days · conditions: needs test that delay beyond one day does not hurt · testable: partly - not tested · confidence: low
   ^MT137-C16-4
+- **Rob Carver** Following Andrew Lo's work on hedge fund Sharpe ratios, performance and risk should be estimated from monthly, weekly or daily data because annual returns hide autocorrelation that biases annualised Sharpe and volatility.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > annual returns hide a lot of a lot of fun auto correlation properties
+  indicator: Sharpe ratio under autocorrelation · asset: multi · testable: yes - compare annualised Sharpe from high-frequency versus annual data · confidence: high
+  ^MT137-C16-X1
+- **Rob Carver** Carver's system uses no stop losses and no ATR; it sizes by standard deviation of returns and handles risk through position sizing instead.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > I don't use stop losses when I'm trading and I don't use ATRs either
+  indicator: stop-loss; ATR versus standard deviation · asset: multi · testable: yes - stop versus no-stop backtest · confidence: high
+  ^MT137-C16-X2
 
 ### C17
 - **Niels Kaastrup-Larsen** CalPERS board adopted the total portfolio approach (from July 2026) replacing SAA, with a reference portfolio of 75% equities/25% bonds.  #mech/structural_shift _(time-bound view)_
@@ -269,12 +301,20 @@ tags: [source, layer0]
   > whether this is just going to be an easy an excuse to jam more private equity.
   asset: multi · horizon: years · testable: no · confidence: low
   ^MT137-C17-2
+- **Rob Carver** The execute-only-on-favourable-move idea delays some trades by more than one day, and it is untested whether the missed trend capture offsets the execution saving; a one-day delay is harmless, longer ones need testing.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > whether delaying by um sort of potentially more than one day because you're waiting for the price to breach a nice level whether that's that's an an issue or not
+  indicator: delayed execution of slow momentum signals · asset: multi · horizon: days · conditions: depends on how long fills are delayed relative to holding period · testable: yes - delay-sensitivity backtest · confidence: medium
+  ^MT137-C17-X1
 
 ### C18
 - **Rob Carver** SAA is top-down: set return, risk and correlation expectations, build the efficient frontier, choose the max Sharpe or minimum risk meeting hurdle, then fill sleeves (hedge funds, private credit, CTAs) as boxes.  #mech/structural_shift
   > it's a very kind of structured top-down process, basically.
   asset: multi · horizon: years · testable: no - description · confidence: high
   ^MT137-C18-1
+- **Rob Carver** UK defined-benefit pension funds, with obligations to retirees and investment risk on the manager, hold large bond allocations, which has supported long-dated UK bonds and distorts the yield curve.  #mech/liquidity_flows _(added by sonnet-xhigh cross-check)_
+  > that's been particularly good for long-dated UK bonds, actually. Um, that does weird things to the yield curve
+  indicator: UK DB pension demand for long-dated gilts · asset: rates · direction: long-dated UK bond prices supported, curve distorted · horizon: years · testable: partly - liability-driven demand and curve shape can be examined · confidence: medium
+  ^MT137-C18-X1
 
 ### C19
 - **Rob Carver** SAA box structure ignores correlations across boxes, e.g. a CTA correlated to Danish equities added to a Danish-equity-heavy portfolio.  #mech/risk_management

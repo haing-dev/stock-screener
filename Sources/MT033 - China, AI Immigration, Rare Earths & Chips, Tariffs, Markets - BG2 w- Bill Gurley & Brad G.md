@@ -6,7 +6,7 @@ channel: "Bg2 Pod"
 url: https://www.youtube.com/watch?v=4qG_f2DY_3M
 words: 11141
 claims: 55
-added_by_opus: 7
+added_by_crosscheck: 7
 corrections: 5
 crosscheck: "opus cross-check"
 speakers: ["Brad Gerstner (host, Altimeter Capital)", "Bill Gurley (co-host, investor)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** AI industry structure, China industrial policy, tariffs and fiscal policy, market sentiment
 
-**Opus completeness estimate of first read:** 0.87 - good coverage of policy and market claims; missed the subsidy stage of China's policy, Gurley's uncertainty dissent, the conditional growth call, dependency window and proxy-advisor mechanism; several speaker misattributions
+**Cross-check completeness estimate of first read:** 0.87 - good coverage of policy and market claims; missed the subsidy stage of China's policy, Gurley's uncertainty dissent, the conditional growth call, dependency window and proxy-advisor mechanism; several speaker misattributions
 
 ## Coverage
 
@@ -57,7 +57,7 @@ tags: [source, layer0]
 - **Brad Gerstner** Amazon, which fell from 150 to 26 in 2000 and traded below its issue price, is up about 440x from the 2000 high and 1,800x from the low (split adjusted), showing survivor payoff after a bust.  #mech/overshoot
   > So split-adjusted from the high in 2000, which was this 150, that's equivalent to about 47 cents split-adjusted today. So it's up about 440X from where it was in 2000.
   indicator: Amazon price, split-adjusted · asset: equities · horizon: years · conditions: survivor stock · testable: yes - price data · confidence: high
-  **Correction (Opus):** Amazon traded below its issue price after its 1997 IPO at $17, not during the 2000 bust. → Amazon fell from about $150 to $26 in 2000 (after trading below its $17 IPO price in 1997) yet is up about 440x from the 2000 high and 1,800x from the low split-adjusted.
+  **Correction (cross-check):** Amazon traded below its issue price after its 1997 IPO at $17, not during the 2000 bust. → Amazon fell from about $150 to $26 in 2000 (after trading below its $17 IPO price in 1997) yet is up about 440x from the 2000 high and 1,800x from the low split-adjusted.
   ^MT033-C01-3
 
 ### C02
@@ -87,7 +87,7 @@ tags: [source, layer0]
   > You know, I think you and I both agree that MCP is a good development in allowing more open access.
   asset: equities · horizon: years · testable: no · confidence: medium
   ^MT033-C03-4
-- **Brad Gerstner** As AI assistants need access to personal data, firms that own the underlying data systems (Google: phone OS, Gmail, office suite) gain a competitive edge if they choose to wall off access.  #mech/structural_shift _(added by Opus)_
+- **Brad Gerstner** As AI assistants need access to personal data, firms that own the underlying data systems (Google: phone OS, Gmail, office suite) gain a competitive edge if they choose to wall off access.  #mech/structural_shift _(added by opus cross-check)_
   > Google has an advantage in that they own, you know, they own their their own phone platform and they own their own Gmail platform and they own their own alternative to the office stack.
   asset: equities · horizon: years · conditions: depends on whether data owners block third-party AI access · testable: no - strategic view · confidence: medium
   ^MT033-C03-X1
@@ -106,7 +106,7 @@ tags: [source, layer0]
 - **Bill Gurley** Each supplier faces 50-100 competitors so China's supply chain is more robust, explaining EV success (500 US EV startups, a handful of survivors).  #mech/structural_shift
   > And so you end up with a much more robust supply chain, more players at each each step along the way.
   indicator: number of competitors per industry · asset: equities · horizon: years · testable: partly · confidence: medium
-  **Correction (Opus):** Misreads the EV numbers: the 500+ EV startups were in China; the US had only a handful (about four). → Each supplier faces 50-100 competitors so China's supply chain is more robust, explaining EV success: over 500 EV startups in China versus a handful of legitimate ones in the US.
+  **Correction (cross-check):** Misreads the EV numbers: the 500+ EV startups were in China; the US had only a handful (about four). → Each supplier faces 50-100 competitors so China's supply chain is more robust, explaining EV success: over 500 EV startups in China versus a handful of legitimate ones in the US.
   ^MT033-C05-1
 - **Bill Gurley** US government startup support (Solyndra) is late-stage and captured by lobbying, unlike China's early-stage provincial seeding of many companies.  #mech/policy_reaction
   > That feels more like uh regulatory capture and who can win, you know, at the highest level.
@@ -122,7 +122,7 @@ tags: [source, layer0]
   > You have golden shares and veto rights by the government. You have preferential procurement by the government.
   asset: equities · horizon: years · testable: partly · confidence: medium
   ^MT033-C06-2
-- **Bill Gurley** After Darwinian competition identifies winners, the Chinese state subsidizes them (e.g., about $2B to BYD), a second stage of the industrial policy.  #mech/structural_shift _(added by Opus)_
+- **Bill Gurley** After Darwinian competition identifies winners, the Chinese state subsidizes them (e.g., about $2B to BYD), a second stage of the industrial policy.  #mech/structural_shift _(added by opus cross-check)_
   > once winners are identified, there are situations where the government has helped [L220] subsidize. BYD was in a situation where I think they were given $2 billion.
   asset: equities · horizon: years · conditions: after winners emerge · testable: partly - subsidy disclosures exist · confidence: medium
   ^MT033-C06-X1
@@ -145,18 +145,18 @@ tags: [source, layer0]
 - **Brad Gerstner** About half of AI researchers are of Chinese origin and China's AI patent count exceeds the US, so restricting Chinese students threatens US AI leadership.  #mech/structural_shift
   > some people say 50% of AI researchers are are of Chinese origin and I believe now the patent count in AI coming out of China is larger than the US.
   indicator: AI researchers by origin; AI patents · asset: equities · horizon: years · testable: partly · confidence: low
-  **Correction (Opus):** Wrong speaker: the 50% Chinese-origin researchers and China AI patent lead remark is Bill Gurley's reply. → Bill Gurley: some say about half of AI researchers are of Chinese origin and China's AI patent count now exceeds the US, so broad visa revocations threaten US AI leadership.
+  **Correction (cross-check):** Wrong speaker: the 50% Chinese-origin researchers and China AI patent lead remark is Bill Gurley's reply. → Bill Gurley: some say about half of AI researchers are of Chinese origin and China's AI patent count now exceeds the US, so broad visa revocations threaten US AI leadership.
   ^MT033-C08-1
 - **Brad Gerstner** Graduates who cannot stay in the US found competitors abroad, so keeping them (green card with diploma) would add US companies.  #mech/structural_shift
   > They go back to India, they go back to China, they do the same basic company in those places, and they become multi-billionaires employing thousands and thousands of people
   asset: equities · horizon: years · testable: no · confidence: medium
-  **Correction (Opus):** Speaker nuance: this is President Trump's All-In pod statement quoted by Gerstner, not Gerstner's own analysis. → Trump (quoted by Gerstner): graduates who cannot stay in the US build competitors abroad, so a green card with the diploma would keep those companies in the US.
+  **Correction (cross-check):** Speaker nuance: this is President Trump's All-In pod statement quoted by Gerstner, not Gerstner's own analysis. → Trump (quoted by Gerstner): graduates who cannot stay in the US build competitors abroad, so a green card with the diploma would keep those companies in the US.
   ^MT033-C08-2
 - **Brad Gerstner** US announced revoking Chinese student visas in 'critical fields', which the hosts see as a broad reversal of the earlier pro-H-1B promise.  #mech/policy_reaction _(time-bound view)_
   > the US will begin revoking visas of Chinese students, including those with connections to the CCP
   asset: equities · horizon: months · testable: no · confidence: medium
   ^MT033-C08-3
-- **Bill Gurley** Because China caps the equity upside of its entrepreneurs, a welcoming US could attract Chinese founders to build their companies in the US.  #mech/structural_shift _(added by Opus)_
+- **Bill Gurley** Because China caps the equity upside of its entrepreneurs, a welcoming US could attract Chinese founders to build their companies in the US.  #mech/structural_shift _(added by opus cross-check)_
   > maybe the Chinese government isn't as interested in entrepreneurs being as successful economically, you know, from an equity standpoint. So, if we're that land of opportunity, they would want to build it be here.
   asset: equities · horizon: years · conditions: only if US immigration policy stays open · testable: no - policy counterfactual · confidence: medium
   ^MT033-C08-X1
@@ -165,7 +165,7 @@ tags: [source, layer0]
 - **Bill Gurley** US openness to talent drove productivity and national security leadership; capricious policy damages 'brand America' for future talent.  #mech/structural_shift
   > We've stayed ahead in all of these critical national security areas precisely because we've been so inviting to people around the world.
   asset: equities · horizon: years · testable: no · confidence: medium
-  **Correction (Opus):** Wrong speaker: the 'brand America' / capricious policy argument is Brad Gerstner's. → Brad Gerstner: US openness to talent drove productivity and national security leadership; capricious policy damages 'brand America' for future talent.
+  **Correction (cross-check):** Wrong speaker: the 'brand America' / capricious policy argument is Brad Gerstner's. → Brad Gerstner: US openness to talent drove productivity and national security leadership; capricious policy damages 'brand America' for future talent.
   ^MT033-C09-1
 - **Brad Gerstner** Roughly 40-50% of top US AI researchers are Chinese, so broad restrictions on Chinese students would be self-defeating.  #mech/structural_shift
   > I saw a study that suggested that 40 to 50% of the AI researchers in the United States, our best researchers, are Chinese.
@@ -215,7 +215,7 @@ tags: [source, layer0]
   > If we keep the chip ban in place, here's my biggest concern. I think it dramatically increases uh the chances that China is forced to move on Taiwan.
   indicator: Taiwan risk · asset: equities · horizon: years · testable: no · confidence: medium
   ^MT033-C11-5
-- **Brad Gerstner** Both the US (rare earths) and China (Nvidia chips) need years to remove their dependencies; the US needs 3-4 more years to shift supply chains, making conflict in that window especially costly.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Brad Gerstner** Both the US (rare earths) and China (Nvidia chips) need years to remove their dependencies; the US needs 3-4 more years to shift supply chains, making conflict in that window especially costly.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > particularly because the US needs another three to four years to to our supply chain away from China.
   asset: multi · horizon: years · conditions: dependency window of about 3-4 years · testable: no - forecast · confidence: medium
   ^MT033-C11-X1
@@ -251,7 +251,7 @@ tags: [source, layer0]
   > In the absence of that, you get a $4 trillion tax increase, and markets go a lot lower.
   indicator: tax legislation · asset: equities · direction: equities down if bill fails · horizon: months · testable: partly · confidence: medium
   ^MT033-C13-4
-- **Bill Gurley** Gurley disputes the rebound: China talks, court rulings on tariffs and the debt/budget bill fight leave policy uncertainty as high as at any point in 2025 even though markets bounced.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Bill Gurley** Gurley disputes the rebound: China talks, court rulings on tariffs and the debt/budget bill fight leave policy uncertainty as high as at any point in 2025 even though markets bounced.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > So, there's there seems to me to me to be as much uncertainty as as there's ever been this year.
   asset: equities · direction: caution on equities · horizon: months · testable: partly - policy uncertainty indices exist · confidence: medium
   ^MT033-C13-X1
@@ -273,7 +273,7 @@ tags: [source, layer0]
   > but I do not think he wants to slam the brakes on the global economy and put the global economy into a recession, which he knows it would.
   indicator: US-China deal · asset: multi · horizon: months · testable: no · confidence: medium
   ^MT033-C14-4
-- **Brad Gerstner** If tariffs land low and the tax bill passes, Gerstner expects accelerating US growth in H2 2025 and 2026, and with rate cuts a much higher market; he advises staying invested but wait-and-see.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Brad Gerstner** If tariffs land low and the tax bill passes, Gerstner expects accelerating US growth in H2 2025 and 2026, and with rate cuts a much higher market; he advises staying invested but wait-and-see.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > And if you believe that we're going to land the plane, then I see accelerating economic growth in the back half of the year and into next year.
   asset: equities · direction: long equities if policy lands · horizon: months · conditions: tariffs ~10-15% blended, reconciliation bill passes, inflation keeps falling · testable: partly - conditional scenario · confidence: medium
   ^MT033-C14-X1
@@ -297,7 +297,7 @@ tags: [source, layer0]
   > I think there's a number of things you could use AI that you would put into a model to to say what is the type of good governance that align shareholder interest.
   asset: equities · horizon: years · testable: no · confidence: low
   ^MT033-C16-2
-- **Bill Gurley** Thin index-fund margins push passive managers to outsource votes to proxy advisors (both over 80% foreign-owned per the senator), concentrating governance power that may not track shareholder interest.  #mech/structural_shift _(added by Opus)_
+- **Bill Gurley** Thin index-fund margins push passive managers to outsource votes to proxy advisors (both over 80% foreign-owned per the senator), concentrating governance power that may not track shareholder interest.  #mech/structural_shift _(added by opus cross-check)_
   > And And admittedly, if you're running an index fund, you're on thin margins, so maybe you don't have time.
   asset: equities · horizon: years · testable: partly - vote alignment with ISS/Glass Lewis is measurable · confidence: medium
   ^MT033-C16-X1

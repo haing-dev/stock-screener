@@ -5,10 +5,10 @@ date: 2024-05-16
 channel: "Bloomberg Podcasts"
 url: 
 words: 8192
-claims: 62
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 66
+added_by_crosscheck: 4
+corrections: 2
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Pierre Andurand (founder, Andurand Capital Management)", "Tracy Alaway (Bloomberg, host)", "Joe Weisenthal (Bloomberg, host)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Odd Lots interview with commodity hedge fund manager Pierre Andurand on his long cocoa, copper and oil theses, May 2024. Approach is fundamental supply-demand balance modelling with stocks-to-grindings ratio, high-frequency export tracking, inelastic demand and slow supply response; also discusses positioning, liquidity and why pod funds miss multi-year deficits.
 
 **Approach:** fundamental commodities, supply-demand balance, cocoa, copper, oil, inelastic demand, positioning and liquidity
+
+**Cross-check completeness estimate of first read:** 0.93 - first reader extracted nearly all of the thesis, numbers, mechanisms and sizing points with correct speaker; missed only the trader-survey disconnect, retail pass-through arithmetic, product-price destocking evidence and the coffee screen
 
 ## Coverage
 
@@ -44,6 +46,10 @@ tags: [source, layer0]
   > you can have like solid bullish fundamentals and the price
   indicator: cocoa futures · asset: commodities · horizon: months · conditions: after a parabolic rise · testable: partly - price corrections vs fundamentals are observable · confidence: low
   ^MT123-C01-1
+- **Tracy Alaway** In May 2024 a Bloomberg survey found traders almost unanimously expecting higher cocoa prices (above $15,000 later in the year) while prices were sliding from above 11,000 to about 8,000, a disconnect between consensus supply-shortage views and price action.  #mech/crowding_positioning _(added by sonnet-xhigh cross-check, time-bound view)_
+  > Bloomberg published a survey of Traders where basically everyone was saying that they think prices are going to go higher
+  indicator: Bloomberg trader survey vs cocoa futures price · asset: commodities · horizon: months · conditions: consensus bullishness while price falls · testable: partly - survey expectations vs subsequent returns · confidence: medium
+  ^MT123-C01-X1
 
 ### C02
 - **Pierre Andurand** Andurand, mainly an energy and metals trader, entered cocoa because an analyst proposed it, and then both dug deep into fundamentals to build a thesis outside his usual markets.  #mech/research_method
@@ -53,6 +59,7 @@ tags: [source, layer0]
 - **Pierre Andurand** Andurand sees cocoa production down about 17.7% versus the consensus of 11% because sell-side analysts give conservative estimates to avoid alarming clients, so consensus lags a supply shock.  #mech/slow_reaction _(time-bound view)_
   > most analysts out there have it down 11% but that's because they tend to be very conservative you know they have lot of clients and they don't want to worry the world
   indicator: cocoa production estimate · asset: commodities · direction: long cocoa · horizon: months · conditions: when own tracking of exports diverges from consensus · testable: yes - estimate revisions vs actual · confidence: high
+  **Correction (cross-check):** Number uncertain in the caption: the auto-caption reads "down 177%" which cannot be a decline; Andurand versus consensus is stated as production down about 17.7 percent (or possibly 17 percent) versus analysts at 11 percent. → Andurand's estimate of cocoa production is down roughly 17 to 18 percent (caption reads "177%") versus consensus near 11 percent; sell-side estimates are conservative because analysts do not want to alarm clients.
   ^MT123-C02-2
 - **Pierre Andurand** Tracking exports of Ivory Coast and Ghana (about 60% of world supply) showed shipments down 30% and 41% year to date, a direct high-frequency read on the supply deficit.  #mech/slow_reaction _(time-bound view)_
   > really tracking the export from the the main exporters mainly Ivory Coast and Ghana that wees together about 60% of world's production
@@ -73,7 +80,12 @@ tags: [source, layer0]
 - **Pierre Andurand** Back-of-envelope: 5 million tons of demand over 8 billion people means a few cents per person per day even at very high cocoa prices, so higher prices barely hit consumers' budgets and do not cut consumption.  #mech/structural_shift
   > people consume 1.7 grams of cocoa per day which at $110,000 a ton represents 1.7 Cent per day
   indicator: cocoa cost as share of consumer spending · asset: commodities · conditions: cocoa content in chocolate small (milk chocolate under 10%) · testable: yes - arithmetic on demand and price · confidence: high
+  **Correction (cross-check):** Imprecise figure: the calculation gives about 1.7 grams of cocoa per person per day, which at $10,000 a ton is about 1.7 US cents per day, not several cents. → Back-of-envelope: 5 million tons over 8 billion people is about 1.7 grams per person per day, costing about 1.7 cents per day even at $10,000 a ton, so higher prices barely touch consumer budgets.
   ^MT123-C02-7
+- **Pierre Andurand** Pass-through is muted because milk chocolate contains under 10% cocoa: a tenfold rise in cocoa roughly doubles a bar's price, and even a heavy high-cocoa chocolate eater pays only about $10 a month more (a moderate eater $2 to $5), so higher cocoa prices do not reduce consumption.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > the price can go up 10 times your your tablet is only going to double in price
+  indicator: cocoa share of chocolate retail price and consumer budget · asset: commodities · conditions: demand-side inelasticity at the consumer level · testable: yes - consumption elasticity measurable · confidence: high
+  ^MT123-C02-X1
 
 ### C03
 - **Pierre Andurand** Cocoa production is concentrated near a latitude band needing specific temperature, rainfall and humidity: 70% West Africa, 21% Latin America, 5% Asia and Oceania, so local shocks hit global supply.  #mech/structural_shift
@@ -138,6 +150,10 @@ tags: [source, layer0]
   > now we have the largest deficit ever on top of two previous years of deficit and it looks like next year we will have a deficit
   indicator: cocoa balance, stocks-to-grindings ratio · asset: commodities · direction: long cocoa · horizon: years · testable: yes - balance data · confidence: high
   ^MT123-C04-8
+- **Pierre Andurand** Cocoa butter and powder prices rose even more than beans, which Andurand reads as evidence of destocking at the processing level as well, consistent with demand being met from inventories along the chain rather than from new production.  #mech/overshoot _(added by sonnet-xhigh cross-check, time-bound view)_
+  > the prices of both those elements also went up even more than cocoa beans which means that actually we probably had some destocking
+  indicator: cocoa butter and powder prices relative to beans · asset: commodities · horizon: months · testable: partly - product price ratios are observable · confidence: medium
+  ^MT123-C04-X1
 
 ### C05
 - **Pierre Andurand** In 1977 a 19% stocks-to-grindings ratio drove cocoa to about $28,000 in today's dollars, the historical analogue for the current 21%.  #mech/overshoot
@@ -194,6 +210,10 @@ tags: [source, layer0]
   > in Europe only 20% of the the inventories on Exchange 20% of the European stocks are on Exchange the others are really with with the chocolate makers
   indicator: exchange stocks and port inventories · asset: commodities · testable: yes - data sources named · confidence: high
   ^MT123-C06-5
+- **Pierre Andurand** Andurand screened coffee (large Vietnamese production losses) and judged it interesting but not exciting enough to trade, and had not looked at orange juice, showing he picks only supply shocks big enough to dominate the balance.  #mech/research_method _(added by sonnet-xhigh cross-check, time-bound view)_
+  > we looked at cofi quickly it it looked less uh it looked interesting as well because you get big losses in production from Vietnam
+  indicator: coffee supply shock screen · asset: commodities · horizon: months · testable: no - discretionary screening · confidence: medium
+  ^MT123-C06-X1
 
 ### C07
 - **Pierre Andurand** Beyond random weather, climate change creates a trending structural impact on soft commodity production that offers theme opportunities beyond cocoa.  #mech/structural_shift

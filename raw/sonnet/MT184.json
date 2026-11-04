@@ -1,0 +1,466 @@
+{
+ "source_id": "MT184",
+ "speakers": [
+  "General David Petraeus (former US general and CIA director, KKR Global Institute chairman)",
+  "Simon (host, Money Maze Podcast)"
+ ],
+ "summary": "January 2023 Money Maze interview on geopolitics. Petraeus assesses Ukraine, China, Iran, cyber and NATO, and for investors argues the world has moved from benign globalization to great-power rivalry where geopolitics constrains economics, with selective decoupling, just-in-case supply chains, and no near-term replacement for the dollar.",
+ "approach_tags": [
+  "geopolitics",
+  "global macro regime",
+  "supply chains",
+  "export controls",
+  "dollar reserve status"
+ ],
+ "coverage": [
+  {
+   "chunk": "C01",
+   "claims": 1,
+   "note": "intro/bio; Ukraine strategic leadership framework (four tasks)"
+  },
+  {
+   "chunk": "C02",
+   "claims": 2,
+   "note": "Ukraine battlefield, Russian losses, sanctions effect on Russia"
+  },
+  {
+   "chunk": "C03",
+   "claims": 2,
+   "note": "how war ends, frozen conflict, pre-invasion call on Kyiv"
+  },
+  {
+   "chunk": "C04",
+   "claims": 1,
+   "note": "Russian logistics and campaign design, Western arms supplies (military detail)"
+  },
+  {
+   "chunk": "C05",
+   "claims": 1,
+   "note": "Ukrainian training, tactical nuclear weapons, Russian conscription (military detail)"
+  },
+  {
+   "chunk": "C06",
+   "claims": 1,
+   "note": "negotiated settlement, neutrality idea, NATO accession"
+  },
+  {
+   "chunk": "C07",
+   "claims": 1,
+   "note": "future of warfare: drones, hypersonics, if seen can be hit"
+  },
+  {
+   "chunk": "C08",
+   "claims": 1,
+   "note": "cyber domain, NATO spending and unity"
+  },
+  {
+   "chunk": "C09",
+   "claims": 1,
+   "note": "China deterrence, Afghanistan credibility, China demography question"
+  },
+  {
+   "chunk": "C10",
+   "claims": 1,
+   "note": "China learning organization, zero COVID, Iran"
+  },
+  {
+   "chunk": "C11",
+   "claims": 1,
+   "note": "Iran regime stability indicators"
+  },
+  {
+   "chunk": "C12",
+   "claims": 2,
+   "note": "weaponizing the dollar, cyber deterrence"
+  },
+  {
+   "chunk": "C13",
+   "claims": 1,
+   "note": "cyberspace domain, Ukraine cyber resilience, zero trust"
+  },
+  {
+   "chunk": "C14",
+   "claims": 2,
+   "note": "cyber info sharing, KKR clients, globalization to rivalry, export controls"
+  },
+  {
+   "chunk": "C15",
+   "claims": 2,
+   "note": "KKR portfolio contingency planning, just-in-case logistics"
+  },
+  {
+   "chunk": "C16",
+   "claims": 1,
+   "note": "China labor costs and robots, personal questions (Grant) with no method content"
+  },
+  {
+   "chunk": "C17",
+   "claims": 0,
+   "note": "Grant at Shiloh, strategic leadership website, Kodak and Netflix (no method content)"
+  },
+  {
+   "chunk": "C18",
+   "claims": 0,
+   "note": "US politics non-partisanship (no method content)"
+  },
+  {
+   "chunk": "C19",
+   "claims": 1,
+   "note": "plugs; closing summary: severe competition, higher fences, selective decoupling"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "MT184-C01-1",
+   "chunk": "C01",
+   "speaker": "David Petraeus",
+   "quote": "a strategic leader has to perform four tasks well has to get the big Ideas the overall strategy right has to communicate all of that effectively",
+   "claim": "A strategic leader must do four tasks: get the big ideas right, communicate them, oversee implementation, and refine the strategy repeatedly; Petraeus judges Zelensky to have done this well and Putin poorly, which explains Ukraine taking the initiative.",
+   "mechanism": "research_method",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: leadership framework applied to war",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT184-C02-1",
+   "chunk": "C02",
+   "speaker": "David Petraeus",
+   "quote": "a country one-third the size of Russia has a larger and more capable Army on the battlefield in Ukraine than does Russia",
+   "claim": "Ukraine's mobilization, training and equipment have given it a larger and more capable army in the field than Russia's, and the front has been static for months around Bakhmut with Russia taking heavy losses.",
+   "mechanism": "structural_shift",
+   "asset_class": "other",
+   "indicator": "casualties, front lines",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: military assessment",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT184-C02-2",
+   "chunk": "C02",
+   "speaker": "David Petraeus",
+   "quote": "Russia is sent from Central Casting when it comes to resisting sanctions because they have you know they're one of the top three gas oil and coal producers in the world",
+   "claim": "Russia is unusually well placed to resist sanctions as a top-three gas, oil and coal producer, yet sanctions and export controls are starting to bite: GDP fell perhaps about 5% rather than 10%, and over 1,200 Western companies left or scaled back.",
+   "mechanism": "policy_reaction",
+   "asset_class": "commodities",
+   "indicator": "Russian GDP, sanctions, export controls",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "commodity exporter under sanctions",
+   "testable": "partly: sanctions impact on GDP measurable",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT184-C03-1",
+   "chunk": "C03",
+   "speaker": "David Petraeus",
+   "quote": "I don't think either country wants to have a new Frozen conflict as the term was after the Russians seized Crimea in 2014",
+   "claim": "A frozen conflict would leave Russia under sanctions and Ukraine under bombardment, so negotiations become possible only when Putin recognizes the war is unsustainable, with rebuilding and security guarantees needed afterwards.",
+   "mechanism": "policy_reaction",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: scenario",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT184-C03-2",
+   "chunk": "C03",
+   "speaker": "David Petraeus",
+   "quote": "in an interview with the Atlantic uh magazine here in the U.S I said that Russia would not take Keith much less ever control it",
+   "claim": "The speaker's pre-invasion call that Russia would not take Kyiv rested on watching Ukrainian forces improve since 2014 through Western training, intelligence and anti-tank weapons.",
+   "mechanism": "structural_shift",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: single forecast",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT184-C04-1",
+   "chunk": "C04",
+   "speaker": "David Petraeus",
+   "quote": "they have perhaps one quarter or one-fifth of the logistics infrastructure the organizational structure that we have that enables us to be expeditionary",
+   "claim": "Russian forces have good rail logistics but only a fraction of the off-rail logistics of Western armies and have not combined arms effects, so their offensives were ineptly planned.",
+   "mechanism": "structural_shift",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: military assessment",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT184-C05-1",
+   "chunk": "C05",
+   "speaker": "David Petraeus",
+   "quote": "a tactical nuclear weapon as horrific as it may be and it's Crossing that threshold as significant as that is has a tactical effect",
+   "claim": "A tactical nuclear weapon would not reverse Russia's strategic situation because Ukraine out-mobilizes it, and Russian conscription is not going well.",
+   "mechanism": "risk_management",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: military judgement",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT184-C06-1",
+   "chunk": "C06",
+   "speaker": "David Petraeus",
+   "quote": "you don't get a vote on this anymore",
+   "claim": "The West's earlier caution to avoid provoking Putin failed; Ukraine neutrality or Crimea lease ideas floated before the invasion may be part of an eventual settlement, with a Marshall Plan and security guarantee; Finland and Sweden will join NATO.",
+   "mechanism": "policy_reaction",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: political forecast",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT184-C07-1",
+   "chunk": "C07",
+   "speaker": "David Petraeus",
+   "quote": "if it can be seen it can be hit if it can be hit it can be killed",
+   "claim": "Ukraine gives only glimpses of future war; with drones, long-range precision munitions and ubiquitous surveillance, big manned platforms (carriers, F-35s, tanks) become vulnerable, pushing militaries toward many small unmanned, algorithm-piloted systems.",
+   "mechanism": "structural_shift",
+   "asset_class": "other",
+   "indicator": "drones, precision munitions, ISR",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: qualitative forecast",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT184-C08-1",
+   "chunk": "C08",
+   "speaker": "David Petraeus",
+   "quote": "Germany which was not even at 1.5 percent of GDP being spent on defense all of a sudden Rockets to two percent and even has a 110 billion dollar equivalent for Readiness",
+   "claim": "Russia's invasion raised European defense spending (Germany from under 1.5% to above 2% of GDP plus a 110 billion fund), and NATO unity is at a post-Cold War high with Finland and Sweden joining; the US spends three to four times as much as the other NATO allies combined.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "other",
+   "indicator": "NATO defence spending % GDP",
+   "horizon": "years",
+   "direction": "more European defense spending",
+   "conditions": "",
+   "testable": "yes: defense budgets are published",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT184-C09-1",
+   "chunk": "C09",
+   "speaker": "David Petraeus",
+   "quote": "deterrence is a function of two elements it's a potential adversaries perception of your capabilities on the one hand and we have to transform those",
+   "claim": "Deterrence rests on credible capabilities and clear will to use them; doubt about US will after Afghanistan and the Syria red line weakens it, while the US response on Ukraine restored credibility. Competition with China must be managed so it does not become conflict.",
+   "mechanism": "policy_reaction",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: framework",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT184-C10-1",
+   "chunk": "C10",
+   "speaker": "David Petraeus",
+   "quote": "is China a learning organization because at least from an outside perspective one can ask was Zero covet a wise domestic policy",
+   "claim": "China reversed zero-COVID, which Petraeus reads as a sign it can learn and might also reverse wolf-warrior diplomacy, economic coercion (Australia) and border clashes; this would allow a more constructive relationship despite severe competition.",
+   "mechanism": "policy_reaction",
+   "asset_class": "multi",
+   "indicator": "China zero-COVID reversal",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: political judgement",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT184-C11-1",
+   "chunk": "C11",
+   "speaker": "David Petraeus",
+   "quote": "this kind of indicator is just not there yet it's not impossible that it could emerge",
+   "claim": "Regime change in Iran would show up as indicators like oil workers striking (as in 1979) or the security forces refusing to kill protesters (Egypt 2011); these are absent, so the regime probably is not overthrown soon, and Western support must be covert to avoid helping the regime.",
+   "mechanism": "structural_shift",
+   "asset_class": "other",
+   "indicator": "oil worker strikes, security force defection",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "large loyal security forces (Basij over 2 million)",
+   "testable": "partly: indicator list is specific",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT184-C12-1",
+   "chunk": "C12",
+   "speaker": "David Petraeus",
+   "quote": "there's no sign I don't think of true displacement of the dollar as the currency through which much of trade uh is done",
+   "claim": "Freezing Russian reserves may cause tactical diversification (euro, pound, yuan) but no true displacement of the dollar, because no alternative offers rule of law, transparency and stability; even China did not unfreeze or break export controls.",
+   "mechanism": "structural_shift",
+   "asset_class": "fx",
+   "indicator": "USD reserve and trade share",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "no alternative as stable and trusted",
+   "testable": "yes: reserve currency shares measurable",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT184-C12-2",
+   "chunk": "C12",
+   "speaker": "Simon (host)",
+   "quote": "do you believe that the major players are acting in a similar way to mutualists just show destruction in the Cold War because they have the capability to shut down enemies critical infrastructure",
+   "claim": "Cyber deterrence resembles mutual assured destruction only in theory: cyber capabilities are less predictable than nuclear weapons and untested until used.",
+   "mechanism": "risk_management",
+   "asset_class": "other",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: qualitative",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT184-C13-1",
+   "chunk": "C13",
+   "speaker": "David Petraeus",
+   "quote": "there was a huge fear that Russia would completely shut down Ukraine would completely disable their telecommunications their access to the internet",
+   "claim": "Russia's large cyberattack on Ukraine largely failed because Ukraine improved cyber resilience with Western and Microsoft help; defense in cyber is hard because attackers need to succeed once, so firms need zero-trust, compartmentalized security and real-time threat sharing.",
+   "mechanism": "risk_management",
+   "asset_class": "other",
+   "indicator": "cyber resilience, zero trust",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: qualitative",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT184-C14-1",
+   "chunk": "C14",
+   "speaker": "David Petraeus",
+   "quote": "we've gone from an era of benign globalization in which economics determined geopolitics",
+   "claim": "The world has moved from benign globalization where economics determined geopolitics to renewed great-power rivalry where geopolitics determines what is economically possible, constraining investment and trade.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "great-power rivalry era",
+   "testable": "partly: test regime split on cross-asset correlations",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT184-C14-2",
+   "chunk": "C14",
+   "speaker": "David Petraeus",
+   "quote": "it will be higher fences around fewer items rather than Many Many Items surrounded by less high fences",
+   "claim": "US export controls on advanced chips, fabrication equipment and IP will likely be more restrictions with higher fences around fewer items, affecting investment limits such as entity lists, dual-use technology and data flows.",
+   "mechanism": "policy_reaction",
+   "asset_class": "equities",
+   "indicator": "US export controls on semiconductors",
+   "horizon": "years",
+   "direction": "selective decoupling",
+   "conditions": "",
+   "testable": "no: policy forecast",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT184-C15-1",
+   "chunk": "C15",
+   "speaker": "David Petraeus",
+   "quote": "just in time Logistics no longer works in an era of pandemics in an area when entire regions of the biggest manufacturing country in the world are shut down",
+   "claim": "Firms are moving from just-in-time to just-in-case logistics (higher inventories, warehouses) and diversifying manufacturing from China to Vietnam, India and Southeast Asia, which has capacity limits.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "inventory build, supply chain diversification",
+   "horizon": "years",
+   "direction": "more inventory, relocate away from China",
+   "conditions": "",
+   "testable": "yes: inventory-to-sales and trade-diversion data",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT184-C15-2",
+   "chunk": "C15",
+   "speaker": "David Petraeus",
+   "quote": "We examined our European portfolio so what is our exposure to Russia and",
+   "claim": "Private-equity investors stress-tested portfolio exposure to Russia and Ukraine after 2014 and 2020 and put business-continuity plans in place, which paid off when the invasion came.",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "portfolio geopolitical exposure review",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: corporate practice",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT184-C16-1",
+   "chunk": "C16",
+   "speaker": "David Petraeus",
+   "quote": "you see the rise of the robots which means that you can actually bring something back to the United States",
+   "claim": "Rising Chinese labor costs and robotics lower the labor-cost gap so production can return to the US, Mexico or Canada, supporting reshoring.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "Chinese labor costs, robotics adoption",
+   "horizon": "years",
+   "direction": "reshoring",
+   "conditions": "",
+   "testable": "partly: trade shares measurable",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT184-C19-1",
+   "chunk": "C19",
+   "speaker": "David Petraeus",
+   "quote": "we are in a severe competition to use the term of our national security advisor without question but the cold war has implications that just aren't found here",
+   "claim": "The Cold War analogy fails because the US and China are each other's top-three trading partners; selective decoupling in critical technology is likely, not complete decoupling.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "US-China trade share",
+   "horizon": "years",
+   "direction": "selective not complete decoupling",
+   "conditions": "",
+   "testable": "yes: bilateral trade shares",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

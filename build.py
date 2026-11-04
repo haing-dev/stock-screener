@@ -77,6 +77,9 @@ def load(p):
         return None
 
 
+OPUS_X = set(open(os.path.join(L, "opus_cross_ids.txt")).read().split())
+
+
 def merge(sid):
     s = load(os.path.join(L, "sonnet", sid + ".json"))
     if not s:
@@ -86,8 +89,9 @@ def merge(sid):
     b = load(os.path.join(L, "opus_blind_pilot", sid + ".blind.json"))
     added, corr, est, mode = [], [], None, None
     if x:
-        mode = "opus cross-check"
-        added = [dict(c, reader="opus") for c in x.get("added_claims", [])]
+        xm = "opus" if sid in OPUS_X else "sonnet-xhigh"
+        mode = xm + " cross-check"
+        added = [dict(c, reader=xm) for c in x.get("added_claims", [])]
         corr = x.get("corrections", [])
         est = x.get("completeness_estimate")
     elif b:
@@ -135,14 +139,14 @@ def build_vault(ledgers):
         fm = ["---", "source_id: %s" % sid, 'title: "%s"' % led["title"].replace('"', "'"),
               "date: %s" % m.get("upload date", ""), 'channel: "%s"' % m.get("channel", "").replace('"', "'"),
               "url: %s" % m.get("url", ""), "words: %s" % m.get("words", ""),
-              "claims: %d" % len(led["claims"]), "added_by_opus: %d" % led["n_opus_added"],
+              "claims: %d" % len(led["claims"]), "added_by_crosscheck: %d" % led["n_opus_added"],
               "corrections: %d" % led["n_corrections"], 'crosscheck: "%s"' % (led["crosscheck"] or "pending"),
               "speakers: [%s]" % ", ".join('"%s"' % x.replace('"', "'") for x in led["speakers"]),
               "tags: [source, layer0]", "---"]
         body = ["# %s" % led["title"], "", "**Speakers:** " + "; ".join(led["speakers"]), "",
                 "**Summary:** " + esc(led["summary"]), "", "**Approach:** " + ", ".join(led["approach_tags"]), ""]
         if led["completeness_estimate"]:
-            body += ["**Opus completeness estimate of first read:** " + esc(str(led["completeness_estimate"])), ""]
+            body += ["**Cross-check completeness estimate of first read:** " + esc(str(led["completeness_estimate"])), ""]
         body += ["## Coverage", "", "| Chunk | Claims | Note |", "|---|---|---|"]
         for c in led["coverage"]:
             body.append("| %s | %s | %s |" % (c.get("chunk"), c.get("claims"), esc(c.get("note")).replace("|", "/")))
@@ -156,8 +160,8 @@ def build_vault(ledgers):
                 mk = mech_key(c.get("mechanism"))
                 bid = re.sub(r"[^A-Za-z0-9-]", "-", c["claim_id"])
                 flags = []
-                if c["reader"] == "opus":
-                    flags.append("added by Opus")
+                if c["reader"] != "sonnet":
+                    flags.append("added by %s cross-check" % c["reader"])
                 if c.get("quote_check") != "exact":
                     flags.append("quote " + c.get("quote_check", "?"))
                 if str(c.get("time_bound", "")).startswith("yes"):
@@ -175,7 +179,7 @@ def build_vault(ledgers):
                 if det:
                     body.append("  " + " · ".join(det))
                 if c.get("correction"):
-                    body.append("  **Correction (Opus):** %s → %s" % (esc(c["correction"].get("issue")),
+                    body.append("  **Correction (cross-check):** %s → %s" % (esc(c["correction"].get("issue")),
                                                                       esc(c["correction"].get("fix"))))
                 body.append("  ^%s" % bid)
                 by_mech[mk].append((fname, bid, esc(c.get("claim")), esc(c.get("speaker")), c.get("mechanism", "")))
@@ -195,9 +199,9 @@ def build_vault(ledgers):
             lines.append("- [[%s#^%s|%s]] — %s%s" % (fname, bid, bid, claim, extra))
         open(os.path.join(V, "Mechanisms", safe(MECH_TXT.get(mk, mk), 60) + ".md"), "w").write("\n".join(lines) + "\n")
     idx = ["---", "tags: [index]", "---", "# Macro Transcripts: Layer 0 ledger", "",
-           "Every claim from every transcript, with verbatim quotes (script-checked) and Opus completeness cross-check.",
+           "Every claim from every transcript, with verbatim quotes (script-checked) and a completeness cross-check (Opus 5.5 high for the first 95 sources, Sonnet 5.5 xhigh for the rest; column below).",
            "Mechanism pages: " + ", ".join("[[%s]]" % safe(MECH_TXT[k], 60) for k in MECH_TXT if k in by_mech), "",
-           "| ID | Source | Date | Claims | Added by Opus | Cross-check |", "|---|---|---|---|---|---|"]
+           "| ID | Source | Date | Claims | Added by cross-check | Cross-check |", "|---|---|---|---|---|---|"]
     for sid, fname, d, n, a, x in rows:
         idx.append("| %s | [[%s]] | %s | %d | %d | %s |" % (sid, fname, d, n, a, x))
     open(os.path.join(V, "00 Index.md"), "w").write("\n".join(idx) + "\n")

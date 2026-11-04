@@ -6,7 +6,7 @@ channel: "Bg2 Pod"
 url: https://www.youtube.com/watch?v=j8chNXhA8o8
 words: 13691
 claims: 77
-added_by_opus: 10
+added_by_crosscheck: 10
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Bill Gurley (Benchmark general partner)", "Brad Gerstner (Altimeter, hedge fund investor)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** tech investing, open source AI, tariffs, fiscal policy, fundamental
 
-**Opus completeness estimate of first read:** 0.88 - first reader caught nearly every mechanism and number; missed mostly caveats (later-mover savings, falsification test, horizon-dependent stance), one disagreement (sovereign funds in autocracies) and a few policy-risk points.
+**Cross-check completeness estimate of first read:** 0.88 - first reader caught nearly every mechanism and number; missed mostly caveats (later-mover savings, falsification test, horizon-dependent stance), one disagreement (sovereign funds in autocracies) and a few policy-risk points.
 
 ## Coverage
 
@@ -80,7 +80,7 @@ tags: [source, layer0]
   > if you look at models that are apples to apples on the API right now that that deep seeks pricing about 12th of open Ai
   indicator: API price per token · asset: equities · testable: partly - price lists observable · confidence: medium
   ^MT041-C03-3
-- **Brad Gerstner** Part of DeepSeek's cost advantage is simply being 6-8 months later on a fast cost-decline curve, and its algorithmic gains will be copied, so the efficiency edge is not a durable moat.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Brad Gerstner** Part of DeepSeek's cost advantage is simply being 6-8 months later on a fast cost-decline curve, and its algorithmic gains will be copied, so the efficiency edge is not a durable moat.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > maybe six to8 months later than what was going on at open AI so it' expect some of those savings
   indicator: training cost per capability level over time · asset: equities · horizon: months · conditions: fast-falling AI training costs; published methods · testable: partly - cost-per-capability curves can be tracked but data are sparse · confidence: medium
   ^MT041-C03-X1
@@ -89,7 +89,7 @@ tags: [source, layer0]
 - **Brad Gerstner** Below-cost inference pricing can last a long time (Lyft/Uber subsidised rides for a decade) but is not a durable advantage.  #mech/behavioral
   > they can run it well below cost or they could choose to be running at well below cost in order to to have these outcomes I don't think that's going to last
   asset: equities · horizon: years · conditions: subsidised pricing · testable: no - qualitative · confidence: medium
-  **Correction (Opus):** Merges two speakers who disagree: Gerstner says below-cost inference pricing will not last; Gurley counters that Lyft subsidised rides below cost for a decade, and Gerstner concedes it can run a very long time. → Gerstner: DeepSeek may be pricing inference below cost and that will not last; Gurley counters that below-cost subsidies can persist a decade (Lyft), and Gerstner concedes it can run a very long time.
+  **Correction (cross-check):** Merges two speakers who disagree: Gerstner says below-cost inference pricing will not last; Gurley counters that Lyft subsidised rides below cost for a decade, and Gerstner concedes it can run a very long time. → Gerstner: DeepSeek may be pricing inference below cost and that will not last; Gurley counters that below-cost subsidies can persist a decade (Lyft), and Gerstner concedes it can run a very long time.
   ^MT041-C04-1
 - **Brad Gerstner** Model quality scales log-linearly with compute, so DeepSeek needs about 10x more compute for the next step, and its gap to OpenAI in compute was at its smallest at R1.  #mech/structural_shift _(time-bound view)_
   > these are log linear scaling functions so in order to get to kind of the 03 level now they got a 10x the amount of compute
@@ -103,7 +103,7 @@ tags: [source, layer0]
   > they're current deploying they're currently taking most of that compute and deploying it against inference right just to support the demand that they have coming in the door which further constrains their ability to do training
   asset: equities · horizon: months · conditions: when compute is scarce · testable: no - qualitative · confidence: medium
   ^MT041-C04-4
-- **Brad Gerstner** The test of whether DeepSeek broke the compute-scaling paradigm is whether it reaches the next frontier (o3-level) without access to new GPUs; until then the compute-scaling thesis stands.  #mech/research_method _(added by Opus, time-bound view)_
+- **Brad Gerstner** The test of whether DeepSeek broke the compute-scaling paradigm is whether it reaches the next frontier (o3-level) without access to new GPUs; until then the compute-scaling thesis stands.  #mech/research_method _(added by opus cross-check, time-bound view)_
   > if somehow they figure out an architectural or algorithmic way to catch up with 03 and deep research and the stuff that's now you know really truly Frontier without having access to gpus
   indicator: Chinese model reaching frontier benchmarks without new GPU access · asset: equities · direction: if it happens, compute-demand thesis weakens · horizon: months · testable: partly - benchmark parity is observable, GPU access is not · confidence: medium
   ^MT041-C04-X1
@@ -129,7 +129,7 @@ tags: [source, layer0]
   > if there's a piece of technology that's a commodity that they need to be successful they're better off than if there's some proprietary piece they have to license from someone
   asset: equities · direction: Enterprise software and cloud platforms benefit from commoditised models · testable: no - qualitative · confidence: high
   ^MT041-C05-5
-- **Bill Gurley** Because DeepSeek published its methods, any breakthrough flows back to US labs (borrowing is bidirectional), so open publication erodes any one lab's lead.  #mech/structural_shift _(added by Opus)_
+- **Bill Gurley** Because DeepSeek published its methods, any breakthrough flows back to US labs (borrowing is bidirectional), so open publication erodes any one lab's lead.  #mech/structural_shift _(added by opus cross-check)_
   > because they publish the paper I'm 100% certain that people at anthropic and at open AI are studying what deep seek did
   asset: equities · horizon: months · conditions: methods published openly · testable: no - diffusion of methods is hard to measure · confidence: high
   ^MT041-C05-X1
@@ -183,11 +183,11 @@ tags: [source, layer0]
   > we've focused so much on slowing China down we haven't focused enough on speeding America up
   asset: other · horizon: years · testable: no - policy opinion · confidence: medium
   ^MT041-C08-2
-- **Bill Gurley** When incumbents' backers rush publicly to discredit a new competitor (claims DeepSeek cheated, calls for government action), that reaction itself signals the threat is real.  #mech/behavioral _(added by Opus)_
+- **Bill Gurley** When incumbents' backers rush publicly to discredit a new competitor (claims DeepSeek cheated, calls for government action), that reaction itself signals the threat is real.  #mech/behavioral _(added by opus cross-check)_
   > you wouldn't take the trouble if this thing wasn't real
   indicator: incumbent investors' public reaction to a new entrant · asset: equities · testable: no - anecdotal signal · confidence: medium
   ^MT041-C08-X1
-- **Bill Gurley** The same shock (R1) produced opposite policy demands in Washington, embrace open source versus lock down and regulate, so the policy response to a tech shock is hard to predict.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Bill Gurley** The same shock (R1) produced opposite policy demands in Washington, embrace open source versus lock down and regulate, so the policy response to a tech shock is hard to predict.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > the thing that each person intended are radically different from one another
   asset: equities · horizon: months · testable: no - qualitative · confidence: medium
   ^MT041-C08-X2
@@ -219,7 +219,7 @@ tags: [source, layer0]
   > the markets overnight Sunday the markets are falling a lot
   asset: equities · direction: Equities fall on tariff announcement and rise on delay · horizon: days · testable: yes - event study · confidence: high
   ^MT041-C10-3
-- **Bill Gurley** Pending Congressional proposals to ban use of R1 variants are a policy risk that could shut US users out of open models.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Bill Gurley** Pending Congressional proposals to ban use of R1 variants are a policy risk that could shut US users out of open models.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > there are proposals in Congress right now I just that that would kill open source that would say we couldn't use variants of R1
   indicator: Congressional bills restricting open-source AI models · asset: equities · direction: open-source AI users in the US hurt if passed · horizon: months · conditions: if proposals pass · testable: partly - bill passage is observable · confidence: medium
   ^MT041-C10-X1
@@ -241,7 +241,7 @@ tags: [source, layer0]
   > the vast majority of Revenue to the US government came from tariffs
   indicator: federal revenue by source · asset: other · horizon: years · testable: yes - historical data · confidence: high
   ^MT041-C11-4
-- **Bill Gurley** When a new tariff is announced, a public-equity investor's first step is to map which holdings source from or sell into the targeted country, since the short-term hit falls on those supply chains.  #mech/risk_management _(added by Opus)_
+- **Bill Gurley** When a new tariff is announced, a public-equity investor's first step is to map which holdings source from or sell into the targeted country, since the short-term hit falls on those supply chains.  #mech/risk_management _(added by opus cross-check)_
   > when a new tariff pops up is just immediately ask well who's impacted who sources there
   indicator: company sourcing exposure by country · asset: equities · direction: firms sourcing from the tariffed country down · horizon: days · conditions: physical-goods companies with global supply chains · testable: yes - supply-chain exposure data vs returns around tariff announcements · confidence: medium
   ^MT041-C11-X1
@@ -326,7 +326,7 @@ tags: [source, layer0]
 - **Brad Gerstner** Stacked uncertainty (AI, tariffs, constitutional fight) raises discount rates, so multiples and asset prices should fall, hitting high-valued growth and late-stage VC first.  #mech/risk_premium _(time-bound view)_
   > discount rate measures the risk associated with those future cash flows so you and I have to take the discount rate up why because we're a lot less certain about technology politics and and and and economics
   indicator: valuation multiples · asset: equities · direction: Multiples down · horizon: months · testable: partly - multiple compression observable · confidence: high
-  **Correction (Opus):** Says high-valued growth and late-stage VC are hit 'first'; the speaker says public multiples roll down to mid/late-stage VC with a lag (VC is hit later), and that point is in C19. → Stacked uncertainty (AI, tariffs, constitutional fight) raises discount rates, so multiples and asset prices should fall; the effect reaches mid/late-stage VC later, with a lag.
+  **Correction (cross-check):** Says high-valued growth and late-stage VC are hit 'first'; the speaker says public multiples roll down to mid/late-stage VC with a lag (VC is hit later), and that point is in C19. → Stacked uncertainty (AI, tariffs, constitutional fight) raises discount rates, so multiples and asset prices should fall; the effect reaches mid/late-stage VC later, with a lag.
   ^MT041-C18-1
 - **Brad Gerstner** Markets held up despite uncertainty because they expect pro-growth policy, so the risk is that expectation is already priced in.  #mech/crowding_positioning _(time-bound view)_
   > I think part of that has to do what they believe Trump is going to be a super progrowth president you're going to have lower taxes Etc
@@ -344,7 +344,7 @@ tags: [source, layer0]
   > the paper originally said 6 million was just the post training and somebody interpreted that as the whole thing
   asset: equities · horizon: days · testable: partly - event reaction · confidence: medium
   ^MT041-C18-5
-- **Brad Gerstner** A long-horizon investor may stay fully invested through policy noise on the AI super-cycle thesis, unlike a hedge-fund risk manager who cuts risk; the right response depends on horizon.  #mech/risk_management _(added by Opus)_
+- **Brad Gerstner** A long-horizon investor may stay fully invested through policy noise on the AI super-cycle thesis, unlike a hedge-fund risk manager who cuts risk; the right response depends on horizon.  #mech/risk_management _(added by opus cross-check)_
   > for the long-term investor you know perhaps they can just ignore the noise and they could say you know I'm fully invol I'm fully invested I believe in this super cycle
   asset: equities · horizon: years · conditions: long holding horizon; policy-driven volatility · testable: no - stated as a stance · confidence: low
   ^MT041-C18-X1
@@ -374,7 +374,7 @@ tags: [source, layer0]
   > we have 40 trillion in debt and we probably have another 50 trillion of unfunded liabilities so we're a debor nation and we're paying 5% on all that debt
   indicator: US federal debt; unfunded liabilities · asset: rates · horizon: years · testable: yes - published figures · confidence: medium
   ^MT041-C19-6
-- **Brad Gerstner** Policy uncertainty dominates now (early 2025) but may clear by the second half of 2025 into 2026, after which the AI-driven bull case could resume.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Brad Gerstner** Policy uncertainty dominates now (early 2025) but may clear by the second half of 2025 into 2026, after which the AI-driven bull case could resume.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > we may get to the back half of this year into next year and it may in fact be the Golden Age and Off to the Races but I think at the moment it's the Golden Age of uncertainty
   asset: equities · direction: near-term volatility, later upside · horizon: months · conditions: if tariff, export-control and constitutional uncertainty resolves · testable: partly - H2 2025 returns and volatility observable · confidence: low
   ^MT041-C19-X1
@@ -392,7 +392,7 @@ tags: [source, layer0]
   > what you do have Bill is consistency and Independence in the management of The Sovereign wealth fund independent from like some unilateral control by the by the executive branch
   asset: multi · horizon: years · conditions: needs independent management · testable: partly - fund history · confidence: medium
   ^MT041-C20-3
-- **Bill Gurley** Gurley argues sovereign wealth funds work best in autocracies (democracies raid them at each transition, cf. Malaysia's 1MDB); Gerstner disagrees, citing Norway, Korea and Canada.  #mech/fiscal_debt _(added by Opus)_
+- **Bill Gurley** Gurley argues sovereign wealth funds work best in autocracies (democracies raid them at each transition, cf. Malaysia's 1MDB); Gerstner disagrees, citing Norway, Korea and Canada.  #mech/fiscal_debt _(added by opus cross-check)_
   > probably the most successful Sovereign wealth funds in the world um are all in autocracies they're not in democracies
   asset: other · horizon: years · conditions: speakers disagree; success depends on independent management · testable: partly - sovereign fund returns by governance type · confidence: medium
   ^MT041-C20-X1

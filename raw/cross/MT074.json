@@ -1,0 +1,25 @@
+{
+ "source_id": "MT074",
+ "added_claims": [
+  {"claim_id": "MT074-C04-X1", "chunk": "C04", "speaker": "Rasvan (captioned Raswan Reming)",
+   "quote": "Most allocators actually have pretty strict rules about what they're not going to introduce beta into their portfolios again.",
+   "claim": "Portable alpha with CTAs is not for everyone: most allocators have strict rules against re-introducing beta via overlays, so demand comes mainly from mid-size allocators that lack bespoke or notional-funding capability and invest through funds.",
+   "mechanism": "structural_shift", "asset_class": "multi", "indicator": "",
+   "horizon": "years", "direction": "",
+   "conditions": "allocator size and governance rules on leverage/beta", "testable": "no - qualitative client observation",
+   "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT074-C10-X1", "chunk": "C10", "speaker": "Rasvan (captioned Raswan Reming)",
+   "quote": "23 wasn't too bad either it had pockets of of of opportunity Um and even last year commodity markets carried a big big load",
+   "claim": "After the end of the coordinated zero-rate/QE regime CTAs had good years in 2021-22, 2023 had pockets of opportunity, and in 2024 commodity markets carried a large share of CTA returns, i.e. return sources rotate across sectors by regime.",
+   "mechanism": "cycle_persistence", "asset_class": "commodities", "indicator": "CTA return attribution by sector",
+   "horizon": "years", "direction": "commodities main contributor in 2024",
+   "conditions": "post-QE regime", "testable": "yes - sector attribution of CTA index returns by year",
+   "speaker_confidence": "medium", "time_bound": "yes"}
+ ],
+ "corrections": [
+  {"claim_id": "MT074-C09-1", "issue": "Adds a conclusion not stated in C09: Rasvan says a gap against a long position gives no protection but that CTAs can react within a meaningful time frame; the cash-buffer point was made earlier (C04), not here.",
+   "fix": "CTAs are only almost antifragile: if a market gaps sharply against a long position they give no protection, but they can react within a meaningful time frame."}
+ ],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10","C11","C12","C13","C14","C15","C16"],
+ "completeness_estimate": "0.96 - first reader captured almost every idea (59 claims); only the allocator beta-rule constraint and the 2023-24 sector-rotation remark were missing; one minor over-reach in C09-1."
+}

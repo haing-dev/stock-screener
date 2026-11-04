@@ -6,7 +6,7 @@ channel: "Norges Bank Investment Management"
 url: https://www.youtube.com/watch?v=vMkli_QhMJ4
 words: 6211
 claims: 17
-added_by_opus: 2
+added_by_crosscheck: 2
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Ajay Banga (President, World Bank; former MasterCard CEO)", "Nicolai Tangen (interviewer, CEO Norges Bank Investment Management; addressed as Nikolai/Nicolai)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** development finance, sovereign debt, multilateral banks, digital ID, leadership
 
-**Opus completeness estimate of first read:** 0.90 - leadership interview with little market content; first reader caught nearly all usable points (15 claims), missing only G20 support for a bigger World Bank and hybrid capital; no misstatements found.
+**Cross-check completeness estimate of first read:** 0.90 - leadership interview with little market content; first reader caught nearly all usable points (15 claims), missing only G20 support for a bigger World Bank and hybrid capital; no misstatements found.
 
 ## Coverage
 
@@ -75,7 +75,7 @@ tags: [source, layer0]
   > there's not enough money in government or mdbs alone we need more for sure but there's not enough in these you have to get the private sector involved
   indicator: private capital mobilisation · asset: multi · horizon: years · testable: no: qualitative · confidence: high
   ^MT015-C03-3
-- **Ajay Banga** The G20 backs multilateral development bank reform, meaning a reformed World Bank should get shareholder support to grow its balance sheet and lending.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Ajay Banga** The G20 backs multilateral development bank reform, meaning a reformed World Bank should get shareholder support to grow its balance sheet and lending.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > should get the support of the G20 to also be a bigger bank
   indicator: MDB reform / World Bank capital and lending capacity · asset: credit · direction: MDB lending and AAA bond supply up · horizon: years · conditions: if reforms are delivered · testable: partly - track World Bank capital, lending and bond issuance after 2023 · confidence: medium
   ^MT015-C03-X1
@@ -89,7 +89,7 @@ tags: [source, layer0]
   > less cash in the economy leads to more transparency in an economy
   indicator: cash share of economy; digital ID coverage · asset: other · horizon: years · conditions: privacy and cyber safety needed · testable: partly · confidence: medium
   ^MT015-C04-2
-- **Ajay Banga** The World Bank is seeking hybrid capital from shareholders such as Norway as a new instrument to expand lending capacity without a full capital increase.  #mech/fiscal_debt _(added by Opus, time-bound view)_
+- **Ajay Banga** The World Bank is seeking hybrid capital from shareholders such as Norway as a new instrument to expand lending capacity without a full capital increase.  #mech/fiscal_debt _(added by opus cross-check, time-bound view)_
   > its willingness to step up for the new instruments like hybrid Capital that we are discussing
   indicator: World Bank hybrid capital contributions · asset: credit · direction: MDB lending capacity up · horizon: years · conditions: depends on shareholder take-up · testable: partly - hybrid capital raised vs lending headroom · confidence: medium
   ^MT015-C04-X1

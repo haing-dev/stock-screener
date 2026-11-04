@@ -5,10 +5,10 @@ date: 2025-05-28
 channel: "Top Traders Unplugged"
 url: 
 words: 11101
-claims: 46
-added_by_opus: 0
+claims: 49
+added_by_crosscheck: 3
 corrections: 0
-crosscheck: "pending"
+crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, Top Traders Unplugged)", "Mark Rzepczynski (caption: Mark Raspinski; systematic macro researcher and blogger)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Systematic Investor 349 (May 2025): trend following's difficult 2025 with V-shaped reversals, state-created uncertainty and no follow-through, vol and leverage lessons, and why safe assets (Treasuries) proved fickle. Conclusion: trend remains a dynamic safe-asset substitute, but crisis alpha depends on crisis type.
 
 **Approach:** trend following, CTA, volatility, crisis alpha, uncertainty indices, safe asset
+
+**Cross-check completeness estimate of first read:** 0.94 - first reader caught almost every idea accurately; missed the sizing-dependence of low-vol trend starts, the long-convexity point and the yearbook evidence on poor real bond returns
 
 ## Coverage
 
@@ -100,6 +102,10 @@ tags: [source, layer0]
   > we need a certain level of volatility in which to uh identify trends and exploit trends
   indicator: market volatility level · asset: multi · horizon: months · conditions: low vol: modest; high vol: opportunity; spikes: reversal losses · testable: yes: bucket trend returns by vol level and vol change · confidence: medium
   ^MT112-C06-3
+- **Niels Kaastrup-Larsen** Whether low volatility helps a trend follower depends on sizing: a trend that starts in low volatility lets volatility-scaled traders put on a large position, while fixed-size traders gain nothing from it, so the vol-performance link differs by sizing method.  #mech/risk_management _(added by opus cross-check)_
+  > if we can get the initiation of a trend in a lowvall environment then certainly for the people who don't adjust their position size it allows them to put on a big position. For those who are dynamically position sizing it's maybe less of a concern
+  indicator: volatility at trend initiation · asset: multi · horizon: months · conditions: dynamic (volatility-scaled) vs fixed position sizing · testable: yes - compare trend P&L by starting-vol bucket for vol-scaled vs fixed-size versions · confidence: medium
+  ^MT112-C06-X1
 
 ### C07
 - **Niels Kaastrup-Larsen** Volatility tends to rise around consolidation or reversal, so dynamic vol-based sizing reduces exposure just before give-back; long sustained trends can themselves occur in low vol.  #mech/risk_management
@@ -172,6 +178,10 @@ tags: [source, layer0]
   > they're man-made events which means is that they could be turned on and turned off fairly quickly
   asset: multi · horizon: weeks · conditions: quick policy response · testable: no: qualitative · confidence: medium
   ^MT112-C10-3
+- **Mark Rzepczynski** When policy can swing quickly either way, the market setting rewards owning convexity (long gamma) rather than holding directional positions, because the size and sign of the next policy move cannot be predicted.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
+  > some people called uh Donald Trump the long gamma president. Uh, and in the sensees that that you got to get long convexity because you never know what's going to happen.
+  asset: multi · direction: long convexity / long gamma · horizon: weeks · conditions: policy-driven, rapidly reversing markets · testable: partly - long-straddle returns in high policy-uncertainty periods · confidence: low
+  ^MT112-C10-X1
 
 ### C11
 - **Niels Kaastrup-Larsen** Political and central bank intervention (stimulus, tariff pauses, calls to buy) prevents follow-through in markets and makes trend environments difficult.  #mech/policy_reaction _(time-bound view)_
@@ -214,6 +224,10 @@ tags: [source, layer0]
   > in 1925 the UK was considered the premier economy
   asset: fx · horizon: years · testable: no: single analogy · confidence: low
   ^MT112-C13-3
+- **Niels Kaastrup-Larsen** Long-run inflation-adjusted return data across many countries (the annual global returns yearbook) show government bonds have been a poor investment, which contradicts the large bond allocations investors hold.  #mech/risk_premium _(added by opus cross-check)_
+  > I mean if you look at the data it has not really been a very good investment yet it has such a big
+  indicator: long-run real bond returns by country (global investment returns yearbook) · asset: rates · direction: bonds underweight · horizon: years · testable: yes - long-run real bond returns from yearbook-type data · confidence: medium
+  ^MT112-C13-X1
 
 ### C14
 - **Niels Kaastrup-Larsen** Rates are in the early phase of a 40-year upward cycle, and heavy fixed-income allocations (40% US, 60-80% Europe) look too high; US default risk is no longer zero.  #mech/cycle_persistence

@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 11880
 claims: 68
-added_by_opus: 8
+added_by_crosscheck: 8
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Alan Dunne (co-host, allocator and macro commentator)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, hedge fund allocation, macro politics, skewness, carry, AI
 
-**Opus completeness estimate of first read:** 0.87 - first reader caught the papers and main macro points; misses were secondary Trump-policy items (Fed independence, defence, deregulation doubt), the inflation-debt/GDP link, Fed easing offsetting the fiscal story, and paper details/caveats.
+**Cross-check completeness estimate of first read:** 0.87 - first reader caught the papers and main macro points; misses were secondary Trump-policy items (Fed independence, defence, deregulation doubt), the inflation-debt/GDP link, Fed easing offsetting the fiscal story, and paper details/caveats.
 
 ## Coverage
 
@@ -116,7 +116,7 @@ tags: [source, layer0]
   > you might want a weak dollar but can you achieve it if you're going to be cutting taxes and stimulating the economy
   indicator: USD · asset: fx · horizon: years · conditions: fiscal stimulus · testable: partly · confidence: medium
   ^MT023-C05-4
-- **Alan Dunne** The consensus that a Trump win means deregulation is uncertain, because JD Vance has backed reining in banks and supported Lina Khan's antitrust approach.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Alan Dunne** The consensus that a Trump win means deregulation is uncertain, because JD Vance has backed reining in banks and supported Lina Khan's antitrust approach.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > so it's not clear you know if if they're going to be as you maybe Pro bus as you would expect
   asset: equities · horizon: years · conditions: Trump win with Vance as VP · testable: no - political judgement · confidence: low
   ^MT023-C05-X1
@@ -134,11 +134,11 @@ tags: [source, layer0]
   > gold obviously starting to rise which could be reflecting that weak dollar story
   indicator: gold · asset: commodities · direction: Long gold · horizon: weeks · testable: partly · confidence: low
   ^MT023-C06-3
-- **Alan Dunne** Fed independence is a big uncertainty under Trump: although he cannot appoint a new chair until 2026, his commentary could undermine the Fed.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Alan Dunne** Fed independence is a big uncertainty under Trump: although he cannot appoint a new chair until 2026, his commentary could undermine the Fed.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > he doesn't appoint a new fed share till 2026 but you know he can certainly uh uh he can certainly have a lot of common around it and can undermine
   asset: rates · horizon: years · conditions: Trump presidency · testable: partly - market reaction (term premium, breakevens) to presidential Fed comments · confidence: medium
   ^MT023-C06-X2
-- **Alan Dunne** Less US support for Ukraine under Trump could push up European defence spending, part of a multi-dimensional platform (along with 'drill, drill, drill' energy policy) whose market impact is hard to read.  #mech/fiscal_debt _(added by Opus, time-bound view)_
+- **Alan Dunne** Less US support for Ukraine under Trump could push up European defence spending, part of a multi-dimensional platform (along with 'drill, drill, drill' energy policy) whose market impact is hard to read.  #mech/fiscal_debt _(added by opus cross-check, time-bound view)_
   > a risk of less support for Ukraine which then could obviously feed into European defense spending
   asset: multi · direction: European defence spending up · horizon: years · conditions: Trump presidency with reduced Ukraine support · testable: partly - European defence budgets and defence equities after the election · confidence: low
   ^MT023-C06-X3
@@ -164,11 +164,11 @@ tags: [source, layer0]
   > maybe it's the the steepener trade that a lot of people have been talking about it for a long time and that will gain traction
   indicator: 2s10s curve · asset: rates · direction: Curve steepener · horizon: months · conditions: when focus returns to deficits · testable: yes · confidence: low
   ^MT023-C07-5
-- **Alan Dunne** Higher US inflation has held the debt-to-GDP ratio somewhat in check despite rising deficits, though all forecasts show high and rising debt-to-GDP ahead.  #mech/fiscal_debt _(added by Opus)_
+- **Alan Dunne** Higher US inflation has held the debt-to-GDP ratio somewhat in check despite rising deficits, though all forecasts show high and rising debt-to-GDP ahead.  #mech/fiscal_debt _(added by opus cross-check)_
   > you've had a higher inflation in the US which has kept the debt GDP level somwhat in check
   indicator: US debt-to-GDP; deficits; inflation · asset: rates · direction: higher nominal growth lowers debt/GDP · horizon: years · conditions: inflation above rates · testable: yes - decompose debt/GDP changes into primary deficit, r and nominal growth · confidence: medium
   ^MT023-C07-X4
-- **Alan Dunne** Debt sustainability came into the market as a risk factor over the past year and then faded; expected Fed easing now dominates and offsets the negative fiscal story for bonds in the short term.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Alan Dunne** Debt sustainability came into the market as a risk factor over the past year and then faded; expected Fed easing now dominates and offsets the negative fiscal story for bonds in the short term.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > the focus has shifted to Fed easing so that takes away that um that that that negative Bond story in the short term
   asset: rates · direction: Fed easing supports bonds short term despite deficits · horizon: months · conditions: while an easing cycle is expected · testable: partly - term premium vs Fed cut expectations · confidence: medium
   ^MT023-C07-X5
@@ -300,15 +300,15 @@ tags: [source, layer0]
   > they all mapped to all of the these four categories so highlighting the the the the kind of um dispersion that you see across managers
   indicator: hedge fund strategy labels · asset: multi · horizon: years · testable: yes · confidence: medium
   ^MT023-C15-5
-- **Alan Dunne** In the GIC/JPMorgan study multi-strategy funds showed somewhat higher alpha than managed futures but also carried more equity beta.  #mech/research_method _(added by Opus)_
+- **Alan Dunne** In the GIC/JPMorgan study multi-strategy funds showed somewhat higher alpha than managed futures but also carried more equity beta.  #mech/research_method _(added by opus cross-check)_
   > the alpha was probably a bit higher in the multi strats but also you pick up more beta there as well
   indicator: hedge fund alpha and equity beta by strategy · asset: multi · horizon: years · conditions: about 900-1,000 funds over 13 years · testable: yes - factor regressions by strategy · confidence: medium
   ^MT023-C15-X6
-- **Alan Dunne** Across clusters, the majority of hedge funds fell into the more equity-like groups and only about 40% were classified as diversifying funds.  #mech/research_method _(added by Opus)_
+- **Alan Dunne** Across clusters, the majority of hedge funds fell into the more equity-like groups and only about 40% were classified as diversifying funds.  #mech/research_method _(added by opus cross-check)_
   > in aggregate you the majority of hedge funds were more correlated to to to to equities whereas about 40% they what classifi them as diversifying funds
   indicator: cluster membership of hedge funds · asset: multi · horizon: years · testable: yes - replicate clustering on hedge fund database · confidence: medium
   ^MT023-C15-X7
-- **Alan Dunne** The finding that commodity managers were even more represented than managed futures in the loss-mitigation cluster rests on only about 10 commodity funds, so it may reflect sample selection rather than a general property.  #mech/research_method _(added by Opus)_
+- **Alan Dunne** The finding that commodity managers were even more represented than managed futures in the loss-mitigation cluster rests on only about 10 commodity funds, so it may reflect sample selection rather than a general property.  #mech/research_method _(added by opus cross-check)_
   > I think it amounted to like 10 commodity managers so could have been driven by by by you know just those particular
   asset: commodities · conditions: small subsample · testable: yes - repeat with a larger commodity manager sample · confidence: low
   ^MT023-C15-X8

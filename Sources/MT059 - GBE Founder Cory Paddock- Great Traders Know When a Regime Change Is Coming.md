@@ -6,7 +6,7 @@ channel: "Odds on Open"
 url: https://www.youtube.com/watch?v=SUDKvKev1Js
 words: 7046
 claims: 23
-added_by_opus: 2
+added_by_crosscheck: 2
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Cory Paddock (founder and CEO, GBE, discretionary power/energy trading firm)", "Interviewer (host, Odds on Open)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** power trading, paradigm shifts, discretionary commodities, incentive alignment, recency bias
 
-**Opus completeness estimate of first read:** 0.92 - short, mostly non-quantitative interview; first reader captured nearly all market and risk ideas, missing only the deregulation history and Cory's reply on variance-seeking traders; no errors found.
+**Cross-check completeness estimate of first read:** 0.92 - short, mostly non-quantitative interview; first reader captured nearly all market and risk ideas, missing only the deregulation history and Cory's reply on variance-seeking traders; no errors found.
 
 ## Coverage
 
@@ -49,7 +49,7 @@ tags: [source, layer0]
   > somewhere between five and 10 trades make up for the majority of your year
   asset: commodities · horizon: years · conditions: weather-driven, unpredictable · testable: yes - trade-level P&L concentration · confidence: high
   ^MT059-C01-2
-- **Cory Paddock** Traded US power markets only date from late-1990s/early-2000s deregulation (alongside gas), so market designs are still evolving and usable price histories are short.  #mech/structural_shift _(added by Opus)_
+- **Cory Paddock** Traded US power markets only date from late-1990s/early-2000s deregulation (alongside gas), so market designs are still evolving and usable price histories are short.  #mech/structural_shift _(added by opus cross-check)_
   > power trading uh itself um is a relatively new construct. Um really only going back to the uh very tail end of the '9s, early 2000s
   indicator: US power market deregulation history · asset: commodities · horizon: years · testable: partly - limits available history · confidence: high
   ^MT059-C01-X1
@@ -139,7 +139,7 @@ tags: [source, layer0]
   > obviously assuming you can always keep your job the optimal strategy to maximize your earnings is to go for the highest volatility highest variance approaches
   asset: multi · conditions: asymmetric 15-20% bonus without loss sharing · testable: no - incentive theory · confidence: high
   ^MT059-C09-3
-- **Cory Paddock** Traders who chase maximum variance because their bonus has no downside are not rewarded by the market over the long run, so screening for that mindset matters as much as pay design.  #mech/risk_management _(added by Opus)_
+- **Cory Paddock** Traders who chase maximum variance because their bonus has no downside are not rewarded by the market over the long run, so screening for that mindset matters as much as pay design.  #mech/risk_management _(added by opus cross-check)_
   > the market doesn't really really reward people in the long run that um that go trying those strategies.
   asset: multi · horizon: years · conditions: bonus with no downside · testable: no - practitioner judgement · confidence: medium
   ^MT059-C09-X1

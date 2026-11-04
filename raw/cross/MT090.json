@@ -1,0 +1,22 @@
+{
+ "source_id": "MT090",
+ "added_claims": [
+  {"claim_id": "MT090-C04-X1", "chunk": "C04", "speaker": "Ken Tropin",
+   "quote": "people put on trades and then take them off. You've got a lot of pressure from the administration to get rates lower.",
+   "claim": "The US curve steepener stalled in late 2025 partly because of normal position churn and partly because the administration is pushing for lower rates, which leans against the term-premium repricing in the short run.",
+   "mechanism": "policy_reaction", "asset_class": "rates", "indicator": "US yield curve slope; political pressure on rates",
+   "horizon": "months", "direction": "delays curve steepening", "conditions": "while the administration actively presses for lower rates",
+   "testable": "partly - relate curve moves to dated administration statements on rates", "speaker_confidence": "medium", "time_bound": "yes"},
+  {"claim_id": "MT090-C05-X1", "chunk": "C05", "speaker": "Ken Tropin",
+   "quote": "he's sort of an outsider not an insider. So, it'll be interesting to see how much uh you know um of of a sort of a team mentality there is at the Fed",
+   "claim": "Whether a Fed put protects equities in an AI correction is uncertain because the likely next chair (Hassett) is an outsider, so the committee's cohesion and reaction function are unknown.",
+   "mechanism": "policy_reaction", "asset_class": "equities", "indicator": "Fed chair succession; FOMC dissent",
+   "horizon": "months", "direction": "", "conditions": "equity correction under a new outsider Fed chair",
+   "testable": "partly - track FOMC dissents and policy response to drawdowns under the new chair", "speaker_confidence": "low", "time_bound": "yes"}
+ ],
+ "corrections": [
+  {"claim_id": "MT090-C06-4", "issue": "overstates: Tropin says the hawkishness comes even though Europe's economy is not strong, while the Asian economy may be pretty strong; he does not call all the economies weak", "fix": "Japan is driving global rates higher (BoJ the most hawkish in decades), with Canada and Europe also turning hawkish even though Europe's economy is weak (Asia stronger), an unprecedented and hard-to-explain pattern."}
+ ],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09"],
+ "completeness_estimate": "0.93 - first reader captured the views, risk rules and FX rule; missed the administration-pressure explanation of the stalled steepener and the outsider-Fed-chair uncertainty; one claim overstated economic weakness."
+}

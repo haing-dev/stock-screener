@@ -5,10 +5,10 @@ date: 2022-10-22
 channel: "The Investor’s Podcast"
 url: https://www.youtube.com/watch?v=BnYibUdBTxE
 words: 13986
-claims: 35
-added_by_opus: 0
+claims: 43
+added_by_crosscheck: 8
 corrections: 0
-crosscheck: "pending"
+crosscheck: "opus cross-check"
 speakers: ["Cullen Roche (Pragmatic Capitalism, author and macro/behavioral investor)", "Stig Brodersen (host, The Investor's Podcast)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Interview (Oct 2022) with Cullen Roche on his book Pragmatic Capitalism: macro as the river that stock pickers swim in, investing vs reallocating savings, time-horizon (All Duration) asset allocation with bond ladders, home bias and international diversification, why bonds are better value after the 2022 sell-off, banks as money creators, yield curve control and the Fed's financial-stability role. Approach is education-oriented, low-frequency and behavioral; few testable signals.
 
 **Approach:** macro, asset allocation, time-horizon investing, bonds, diversification, monetary system, behavioral investing
+
+**Cross-check completeness estimate of first read:** 0.83 - first reader covered all main financial-planning and monetary mechanics accurately; missed Graham's alpha-decay quote, no-hard-science caveat, money-definition ambiguity, Stig's regime-change and recency points, currency-dependence of gold, CBDC and YCC-signal trade-off.
 
 ## Coverage
 
@@ -53,6 +55,10 @@ tags: [source, layer0]
   > the typical passive investor these days is really a macro investing approach
   asset: equities · horizon: years · testable: no: framing · confidence: medium
   ^MT098-C01-1
+- **Stig Brodersen (quoting Benjamin Graham)** Graham late in life judged that elaborate security analysis no longer found superior value because markets had changed (become more efficient), an early statement of alpha decay in stock picking used to motivate a top-down macro view.  #mech/structural_shift _(added by opus cross-check)_
+  > I am no longer an advocate of elaborate techniques of a security analysis to find superior value opportunities. This was a rewarding activity, say 40 years ago
+  asset: equities · horizon: years · conditions: after security analysis became widely practiced · testable: partly - decay of value-strategy returns after publication · confidence: medium
+  ^MT098-C01-X1
 
 ### C02
 - **Cullen Roche** Because companies and banks are globally interconnected, macro and government policy matter more than in Buffett's era, e.g. trouble at a European bank can force the Fed to act through payment-system links.  #mech/structural_shift
@@ -73,6 +79,10 @@ tags: [source, layer0]
   > you could have a really sound understanding of the flow effects of something like quantitative easing.
   asset: multi · testable: no · confidence: medium
   ^MT098-C03-2
+- **Cullen Roche** Because human responses to policy are emotional and unpredictable, economics and investing cannot be tested like chemistry or biology; mechanical models of flows must be treated as only half the answer and controlled-experiment confidence is unavailable.  #mech/research_method _(added by opus cross-check)_
+  > Economics is not really a hard science.
+  asset: multi · testable: no - epistemological stance · confidence: high
+  ^MT098-C03-X1
 
 ### C04
 - **Cullen Roche** Investing requires second-level thinking like chess: even against a weak opponent, misjudging their responses to policy leads to trouble.  #mech/behavioral
@@ -83,6 +93,10 @@ tags: [source, layer0]
   > in macro econ, the word investing means to spend for future production
   asset: multi · testable: no · confidence: high
   ^MT098-C04-2
+- **Cullen Roche** There is no agreed definition of money (Austrians say gold, Keynesians a monetary aggregate such as M2, and economists switch among MZM, M1, M2, M3), so money-supply arguments depend heavily on which measure is chosen.  #mech/research_method _(added by opus cross-check)_
+  > Macroeconomists actually have different [L160] definitions of money where it’s actually like it’s could be MZ or M1 or M2 or M3.
+  indicator: MZM, M1, M2, M3 · asset: multi · testable: partly - compare predictive power of alternative aggregates · confidence: high
+  ^MT098-C04-X1
 
 ### C05
 - **Cullen Roche** Real economic investment (starting firms) is high risk with about 90% failure over ten years, so retail savers should treat their portfolio as prudent reallocation of savings across cash, bonds and stocks, not a get-rich-quick bet.  #mech/risk_management
@@ -131,6 +145,10 @@ tags: [source, layer0]
   > the more active you are though, the less control you have because you’re incurring higher taxes and fees along the way
   indicator: trading costs and taxes · asset: equities · testable: yes: cost drag of turnover · confidence: medium
   ^MT098-C10-1
+- **Stig Brodersen** Structural regimes that seem fixed can reverse (US corporate tax at 52.8% in 1968-69, a global minimum corporate tax, war in Europe, supply chains disintegrating between the US, Europe and China), so US multinationals' foreign revenues are not a reliable substitute for owning international equities.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
+  > tax rate in the US was 52.8. In 1968 and in 1969.
+  indicator: corporate tax rate; supply-chain integration · asset: equities · direction: favor global over US-only equity · horizon: years · conditions: rising geopolitical conflict, deglobalization · testable: partly - correlation of S&P 500 vs foreign equities over regimes · confidence: medium
+  ^MT098-C10-X1
 
 ### C11
 - **Cullen Roche** Home bias is costly over long periods: a London investor in 1800 missed the rise of the US; Japanese investors in 1990 who held only Japanese stocks suffered while international portfolios did vastly better.  #mech/cycle_persistence
@@ -151,6 +169,10 @@ tags: [source, layer0]
   > if you bought a global index, Japan would be 45%. And today it’s less than 5%
   indicator: Japan weight in MSCI World · asset: equities · horizon: years · testable: yes · confidence: high
   ^MT098-C12-2
+- **Stig Brodersen** Allocating by the last 10-15 years of returns (US dominance) is recency bias; humility about which country leads next argues for global diversification rather than extrapolating the recent winner.  #mech/behavioral _(added by opus cross-check)_
+  > not just look at the past, say 10 or 15 years, too much money has been thrown on board from bias, recency bias.
+  indicator: trailing 10-15 year country returns · asset: equities · horizon: years · testable: yes - performance of trailing-winner country allocation vs global cap weight · confidence: medium
+  ^MT098-C12-X1
 
 ### C13
 - **Cullen Roche** In 2022 a 5-year bond down 15% will still mature at par and pay its coupon if held, so mark-to-market losses matter only for investors who must sell before maturity.  #mech/risk_premium _(time-bound view)_
@@ -195,12 +217,20 @@ tags: [source, layer0]
   > loans create deposits and deposits for all practical purposes or money
   indicator: bank loans, deposits, reserves · asset: multi · testable: partly · confidence: high
   ^MT098-C16-2
+- **Stig Brodersen** Whether a diversifier works depends on the investor's base currency: in 2022 gold fell about 10% in dollars but rose in euros because the euro fell about 16%.  #mech/risk_management _(added by opus cross-check, time-bound view)_
+  > now that you mentioned that gold is down 10% here in Europe, people are pretty excited because gold is up. And that’s of course because the euro is down 16%.
+  indicator: gold in USD vs EUR · asset: commodities · direction: gold up in weak-currency terms · horizon: months · conditions: home currency weakening · testable: yes - gold returns by currency · confidence: high
+  ^MT098-C16-X1
 
 ### C17
 - **Cullen Roche** Large deficits financed by bonds to rich savers and spent to people with higher marginal propensity to spend amount to money printing in the traditional sense, whereas central bank reserve creation does not reach the private sector.  #mech/fiscal_debt
   > when the government runs huge deficits, what they’re really doing is they’re giving a bond generally to a rich person
   indicator: fiscal deficits vs QE · asset: multi · testable: partly · confidence: medium
   ^MT098-C17-1
+- **Cullen Roche** A retail central bank digital currency with central bank lending would let government directly control credit and money creation, politicizing central banks and greatly reducing the role of private banks, which today create money competitively via loans.  #mech/structural_shift _(added by opus cross-check)_
+  > the central bank becomes much more like a Bank of America or any regular old bank where the government then is actually direct, directly controlling the credit issuance
+  indicator: CBDC design · asset: multi · horizon: years · conditions: if central banks lend to the private sector directly · testable: no - hypothetical · confidence: low
+  ^MT098-C17-X1
 
 ### C18
 - **Cullen Roche** Quantitative easing is less effective than assumed because the central bank sets the quantity of long bonds, not the price, whereas at the short end it sets the overnight price as a monopolist; yield curve control would set long yields explicitly.  #mech/policy_reaction
@@ -211,6 +241,10 @@ tags: [source, layer0]
   > the 10 year yield lower than the two year today, the marketplace is basically saying we are not as worried about inflation as the Federal Reserve is
   indicator: 10y-2y Treasury spread · asset: rates · direction: curve inversion precedes recession · horizon: years · testable: yes: well-known predictor · confidence: high
   ^MT098-C18-2
+- **Cullen Roche** Long yields float around expectations of where the Fed will take the short rate (dog on a leash); if the Fed announced a target such as 10-year at 3% it would be reached within days since no one can arbitrage the reserve monopolist, but yield curve control would sacrifice the market signal the free long end provides.  #mech/policy_reaction _(added by opus cross-check)_
+  > the Fed lets the long end float and banks will try to front run and change long term rates because they know that the monopolist isn’t actually setting that rate
+  indicator: long-term yields vs policy rate path · asset: rates · direction: long yield converges to announced target · horizon: days · conditions: explicit central bank price target · testable: yes - BoJ/RBA YCC episodes · confidence: high
+  ^MT098-C18-X1
 
 ### C19
 - **Cullen Roche** The Fed's third mandate is financial stability via payment-system clearing; before the Fed, private clearing houses broke down in panics (1907), and central banks are good at resolving them as in 2008.  #mech/policy_reaction

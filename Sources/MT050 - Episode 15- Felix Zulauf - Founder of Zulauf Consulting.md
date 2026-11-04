@@ -6,7 +6,7 @@ channel: "Generating Alpha Podcast"
 url: https://www.youtube.com/watch?v=ZAFHdNYs0KE
 words: 5097
 claims: 20
-added_by_opus: 0
+added_by_crosscheck: 0
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Felix Zulauf (founder, Zulauf Consulting)", "Interviewer (Generating Alpha Podcast host)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** discretionary global macro, top-down, technical confirmation, contrarian
 
-**Opus completeness estimate of first read:** 0.97 - largely biography; the first reader captured every process, positioning and macro idea (top-down chain, political pendulum, trade regime break, weekend chart discipline, stop-losses); remaining content is career, client-sales and life advice with no method content for a macro researcher.
+**Cross-check completeness estimate of first read:** 0.97 - largely biography; the first reader captured every process, positioning and macro idea (top-down chain, political pendulum, trade regime break, weekend chart discipline, stop-losses); remaining content is career, client-sales and life advice with no method content for a macro researcher.
 
 ## Coverage
 
@@ -67,7 +67,7 @@ tags: [source, layer0]
 - **Felix Zulauf** Business cycle analysis must adjust for distortions from authorities' interventions, so the cycle is less clean than in the 1960s-70s.  #mech/policy_reaction
   > these days you have to understand the distortions to the business cycle due to the growing interventions and manipulations by the authorities
   indicator: business cycle adjusted for policy intervention · asset: multi · horizon: years · conditions: Post-2008 interventionist regime · testable: partly · confidence: medium
-  **Correction (Opus):** Conditions field adds a 'post-2008' regime that the speaker did not name; he only contrasts today's growing interventions with the cleaner cycles of the 1960s and 1970s. → Business cycle analysis must adjust for distortions from growing interventions and manipulations by the authorities, so today's cycle is less clean than in the 1960s-70s (no specific start date given).
+  **Correction (cross-check):** Conditions field adds a 'post-2008' regime that the speaker did not name; he only contrasts today's growing interventions with the cleaner cycles of the 1960s and 1970s. → Business cycle analysis must adjust for distortions from growing interventions and manipulations by the authorities, so today's cycle is less clean than in the 1960s-70s (no specific start date given).
   ^MT050-C05-3
 - **Felix Zulauf** The process runs top-down: politics, then business cycle, then implications for rates, currencies and capital flows, and then bonds, equities, defensive vs deep cyclical sectors, currency hedging and commodities.  #mech/research_method
   > from there you deduct you deviate you deviate what it means for interest rates for currencies for capital flows and uh what it means for bonds and equities and the different sectors

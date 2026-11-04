@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 11595
 claims: 49
-added_by_opus: 4
+added_by_crosscheck: 4
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Nick Baltas (systematic investor, guest co-host)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, volatility targeting, V-shape reversals, strategic allocation, AI and alternative data, institutional constraints
 
-**Opus completeness estimate of first read:** 0.89 - first reader covered the vol-targeting, barometer, low-beta and timing arguments well; missed a few points (all-sector mispositioning in April, path-dependency of de-risking, pension asset mandates, 10% mandatory sleeve) and misattributed two claims.
+**Cross-check completeness estimate of first read:** 0.89 - first reader covered the vol-targeting, barometer, low-beta and timing arguments well; missed a few points (all-sector mispositioning in April, path-dependency of de-risking, pension asset mandates, 10% mandatory sleeve) and misattributed two claims.
 
 ## Coverage
 
@@ -72,7 +72,7 @@ tags: [source, layer0]
 - **Nick Baltas** In June 2025 trends were scarce; bright spots were unusual ones like lean hogs and live cattle, plus equities (DAX at all-time highs).  #mech/cycle_persistence _(time-bound view)_
   > trends are pretty scar still. Um there are very very few bright points uh or bright spots in the portfolio
   indicator: lean hogs; live cattle · asset: commodities · direction: long livestock · horizon: weeks · testable: no: period description · confidence: medium
-  **Correction (Opus):** wrong speaker: the June 2025 performance review (scarce trends, lean hogs and live cattle, DAX at highs) is given by host Niels Kaastrup-Larsen, who then asks Nick for his view → Niels Kaastrup-Larsen: in June 2025 trends were scarce; bright spots were unusual ones like lean hogs and live cattle, plus equities (DAX at all-time highs).
+  **Correction (cross-check):** wrong speaker: the June 2025 performance review (scarce trends, lean hogs and live cattle, DAX at highs) is given by host Niels Kaastrup-Larsen, who then asks Nick for his view → Niels Kaastrup-Larsen: in June 2025 trends were scarce; bright spots were unusual ones like lean hogs and live cattle, plus equities (DAX at all-time highs).
   ^MT087-C04-1
 - **Niels Kaastrup-Larsen** After April 2025 (Liberation Day) equity longs were cut near the low, so managers locked in losses and missed the rebound.  #mech/overshoot _(time-bound view)_
   > a lot of the long positions um um got cut you know around the low um managers locked in uh losses uh didn't have a lot of exposure
@@ -104,7 +104,7 @@ tags: [source, layer0]
   > CT index up about 1% uh in June down 7.6% for the year
   indicator: BTOP50; SG CTA; SG Trend; SG Short-Term Traders · asset: multi · horizon: months · testable: yes: index data · confidence: high
   ^MT087-C05-5
-- **Nick Baltas** In the April 2025 V-shape trend portfolios were wrongly positioned in every asset class at once (oil, rates, dollar, equities), so there was no offsetting sector to cushion losses.  #mech/slow_reaction _(added by Opus, time-bound view)_
+- **Nick Baltas** In the April 2025 V-shape trend portfolios were wrongly positioned in every asset class at once (oil, rates, dollar, equities), so there was no offsetting sector to cushion losses.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
   > specifically when over over April every single asset class in a way was uh incorrectly positioned you know anywhere from oil to rates to the dollar and obviously equities
   indicator: trend positions by asset class, April 2025 · asset: multi · horizon: weeks · conditions: sharp cross-asset V-shaped reversal · testable: yes - attribute April 2025 trend index P&L by sector · confidence: high
   ^MT087-C05-X1
@@ -158,7 +158,7 @@ tags: [source, layer0]
   > we would say well it must be because then they can maybe reduce some of the draw downs and maybe they can make you know have more risk on when there are you know lots of trends
   indicator: dynamic vol target · asset: multi · testable: partly · confidence: medium
   ^MT087-C08-4
-- **Nick Baltas** Cutting trend exposure after losses is a form of timing trend that creates path dependency and an ambiguous benchmark (the reduced book or the full-risk book you should have held), which makes the rule hard to evaluate.  #mech/research_method _(added by Opus)_
+- **Nick Baltas** Cutting trend exposure after losses is a form of timing trend that creates path dependency and an ambiguous benchmark (the reduced book or the full-risk book you should have held), which makes the rule hard to evaluate.  #mech/research_method _(added by opus cross-check)_
   > if you start reducing your exposure, then what are you assessing yourself against? The reduced exposure you just have had or the ideal you should have held
   indicator: drawdown-based exposure reduction · asset: multi · horizon: months · testable: partly - backtest drawdown-triggered de-risking versus constant risk and report both paths · confidence: medium
   ^MT087-C08-X1
@@ -219,9 +219,9 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** The article argues institutions should rethink how success is rewarded and the tolerance for short-term risk of long-term investors.  #mech/behavioral
   > Maybe we should rethink how we um how we reward success
   asset: multi · horizon: years · testable: no · confidence: low
-  **Correction (Opus):** wrong speaker: the summary of the Junge article (rethink how success is rewarded, tolerance for short-term risk, remuneration) is Nick Baltas's; Niels then adds that constraints are rarely set for investors' benefit → Nick Baltas: the article argues institutions should rethink how success is rewarded and remunerated and how much short-term risk a long-term investor tolerates; but swapping into alternatives will not reproduce their paper returns.
+  **Correction (cross-check):** wrong speaker: the summary of the Junge article (rethink how success is rewarded, tolerance for short-term risk, remuneration) is Nick Baltas's; Niels then adds that constraints are rarely set for investors' benefit → Nick Baltas: the article argues institutions should rethink how success is rewarded and remunerated and how much short-term risk a long-term investor tolerates; but swapping into alternatives will not reproduce their paper returns.
   ^MT087-C13-2
-- **Niels Kaastrup-Larsen** Investment constraints are rarely set for investors' benefit, and heavily indebted governments could in future dictate pension fund holdings to place their debt (speculative financial repression).  #mech/fiscal_debt _(added by Opus)_
+- **Niels Kaastrup-Larsen** Investment constraints are rarely set for investors' benefit, and heavily indebted governments could in future dictate pension fund holdings to place their debt (speculative financial repression).  #mech/fiscal_debt _(added by opus cross-check)_
   > who's to say that at some point we couldn't see uh maybe government uh dictating more about what kind assets pension funds should hold should they have lots of debt to uh to sell
   asset: rates · direction: forced pension demand for government bonds · horizon: years · conditions: high government debt issuance · testable: no - speculative policy scenario · confidence: low
   ^MT087-C13-X1
@@ -257,7 +257,7 @@ tags: [source, layer0]
   > have the markets changed you know have the world stopped following rules so to speak
   asset: multi · horizon: years · testable: no: opinion · confidence: low
   ^MT087-C15-3
-- **Niels Kaastrup-Larsen** Treating trend as mandatory insurance suggests a fixed strategic allocation of around 10% that is never timed.  #mech/risk_management _(added by Opus)_
+- **Niels Kaastrup-Larsen** Treating trend as mandatory insurance suggests a fixed strategic allocation of around 10% that is never timed.  #mech/risk_management _(added by opus cross-check)_
   > I do like the actually the insurance car insurance example um you know just make it mandatory people should have a 10% allocation to trend maybe
   indicator: strategic trend allocation size · asset: multi · direction: hold ~10% in trend permanently · horizon: years · testable: yes - compare fixed 10% trend sleeve with timed allocations in a 60/40 backtest · confidence: low
   ^MT087-C15-X1

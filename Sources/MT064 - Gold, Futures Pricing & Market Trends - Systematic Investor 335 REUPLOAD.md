@@ -5,10 +5,10 @@ date: 2025-03-18
 channel: "Top Traders Unplugged"
 url: 
 words: 16759
-claims: 93
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 112
+added_by_crosscheck: 19
+corrections: 5
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, Top Traders Unplugged)", "Rob Carver (systematic futures trader and author)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Rob Carver answers listener questions on leverage, markets vs systems, ETFs vs futures, signal scaling and missing data, then covers the Quantica sizing paper (volatility sizing, skew vs Sharpe) and a minutes-to-decades momentum/mean-reversion paper. Also discusses gold futures borrowing costs and macro consequences of Trump policies (higher inflation, higher risk premium).
 
 **Approach:** trend following, systematic futures, position sizing, momentum and mean reversion, risk management, research method, macro policy
+
+**Cross-check completeness estimate of first read:** 0.88 - first reader caught almost every technical idea (carry/funding in gold, sizing, skew vs Sharpe, time-scale paper, Trump macro); gaps are fee-structure remarks, a few data points, speaker attribution slips, and the listener's candle idea.
 
 ## Coverage
 
@@ -61,6 +63,10 @@ tags: [source, layer0]
   > according according to market reports what's happening is that um gold is basically um being moved from London to the US
   indicator: London vs US gold inventories · asset: commodities · horizon: weeks · testable: partly - based on market reports, unclear who is moving it · confidence: low
   ^MT064-C01-2
+- **Rob Carver** Gold's early-2025 rise can be argued to come from political instability and uncertainty, while a separate technical factor (the futures funding squeeze) is the part he finds interesting.  #mech/behavioral _(added by sonnet-xhigh cross-check, time-bound view)_
+  > Gold's gone up which you know is one of these things that happens um the and the causes of it are kind of we could argue about instability and uncertainty politically
+  indicator: gold price, political uncertainty · asset: commodities · direction: gold up · horizon: months · conditions: rising political instability · testable: partly - gold versus policy-uncertainty index · confidence: medium
+  ^MT064-C01-X1
 
 ### C02
 - **Rob Carver** Gold borrowing costs normally track the risk-free dollar rate of about 4.5-5%.  #mech/risk_premium
@@ -79,6 +85,10 @@ tags: [source, layer0]
   > they estimate clients effectively paying something like 7 and 20 or even up to 15 and 20
   indicator: hedge fund fees · asset: other · horizon: years · testable: yes - fee data · confidence: medium
   ^MT064-C02-4
+- **Niels Kaastrup-Larsen** Institutional pressure pushed hedge fund fees down from 2 and 20, but multi-strategy pass-through funds that charge expenses on top now make 2 and 20 look cheap by comparison.  #mech/structural_shift _(added by sonnet-xhigh cross-check, time-bound view)_
+  > interestingly enough of course uh now actually the 220 model can be seen as pretty cheap
+  indicator: all-in hedge fund fee load · asset: other · horizon: years · conditions: multi-manager pass-through structures · testable: partly - Bloomberg-type fee estimates · confidence: high
+  ^MT064-C02-X1
 
 ### C03
 - **Niels Kaastrup-Larsen** A multi-strategy pass-through fund earned about 15.2% before fees in 2023 but the client received only 2.8% (caption ambiguous), illustrating large fee drag.  #mech/structural_shift _(time-bound view)_
@@ -93,6 +103,14 @@ tags: [source, layer0]
   > you'd have to pay performance fees to the managers that were doing well
   indicator: fee structure · asset: other · horizon: years · testable: yes - fee structure · confidence: medium
   ^MT064-C03-3
+- **Niels Kaastrup-Larsen** Net-of-fee return is the most important figure for an investor, which is why high pass-through fees are tolerated while net results stay good.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > I have argued before um that of course the net return is the most important thing uh to some extent
+  indicator: net vs gross returns · asset: other · conditions: only holds if net returns stay high · testable: no - evaluation principle · confidence: medium
+  ^MT064-C03-X1
+- **Niels Kaastrup-Larsen** The rapid inflow into multi-strategy pods must come from large institutions, and it is surprising that pension funds and insurers accept fee levels they would have fought in other hedge fund allocations.  #mech/crowding_positioning _(added by sonnet-xhigh cross-check, time-bound view)_
+  > I am surprised that some of these um Pension funds insurance companies etc etc are accepting the level of fees
+  indicator: capital flows into multi-strategy funds · asset: other · horizon: years · testable: partly - AUM growth of pod funds vs fee data · confidence: medium
+  ^MT064-C03-X2
 
 ### C04
 - **Niels Kaastrup-Larsen** In early 2025 the currency sector was the one tricky area for trend followers, mostly in February.  #mech/slow_reaction _(time-bound view)_
@@ -107,6 +125,14 @@ tags: [source, layer0]
   > my own Trend barometer finished yesterday at 30 which is actually a week reading
   indicator: Trend barometer · asset: multi · horizon: weeks · testable: yes - barometer series · confidence: medium
   ^MT064-C04-3
+- **Niels Kaastrup-Larsen** Even in UCITS funds the stated expense ratio can omit extra costs such as research costs that only show up in the detailed documents, so headline ratios may understate what investors pay.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > when you drill down there are some other cost like research cost etc etc that that crop up
+  indicator: expense ratio vs total costs · asset: other · testable: yes - compare stated expense ratio with realised cost drag · confidence: medium
+  ^MT064-C04-X1
+- **Rob Carver** A 1% year-to-date result after seven weeks (down 1.5% in January, up 2.5% in February) is statistical noise, so short-window performance says nothing about a system.  #mech/research_method _(added by sonnet-xhigh cross-check, time-bound view)_
+  > I'm up like 1% for the year so basically noise to be honest
+  indicator: short-window strategy return · asset: multi · horizon: weeks · conditions: windows much shorter than a year · testable: yes - standard error of a Sharpe estimate over seven weeks · confidence: high
+  ^MT064-C04-X2
 
 ### C05
 - **Niels Kaastrup-Larsen** By mid-Feb 2025 trend indices were roughly flat (BTOP50 +1.68%, SG CTA +0.77%, SG Trend +0.57%), the short-term traders index was negative, MSCI World +3.79% and S&P 500 TR +3%.  #mech/slow_reaction _(time-bound view)_
@@ -117,6 +143,14 @@ tags: [source, layer0]
   > if they go down 10% and they go up 10% you actually end up down so you're not you know back where you started
   indicator: leveraged ETFs, volatility drag · asset: multi · direction: avoid leveraged ETFs · horizon: years · conditions: volatile underlying, long hold · testable: yes - arithmetic · confidence: high
   ^MT064-C05-2
+- **Niels Kaastrup-Larsen** The 20+ year Treasury index fell 32 basis points in February 2025 after hot inflation figures, which hurt long-duration trend positions, but was still slightly positive for the year.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > obviously hit a bit by these new inflation numbers but still up 15 basis points so far this year
+  indicator: S&P 20+ year Treasury bond index, US CPI surprise · asset: rates · direction: long bonds down on inflation surprise · horizon: weeks · conditions: February 2025 · testable: yes - bond index return versus CPI surprise · confidence: high
+  ^MT064-C05-X1
+- **Niels Kaastrup-Larsen** The short-term traders CTA index kept struggling in early 2025 (down in February and year to date), the second year in a row it lagged longer-horizon trend indices.  #mech/slow_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > the short-term Traders index down 18 basis points uh in fib and down uh 12 basis points in this year so far and continues to struggle
+  indicator: SG Short-Term Traders Index · asset: multi · direction: faster trend following underperforms · horizon: months · conditions: choppy markets, higher turnover costs · testable: yes - SG index series by horizon · confidence: medium
+  ^MT064-C05-X2
 
 ### C06
 - **Rob Carver** A leveraged ETF on a very volatile underlying such as Strategy (a levered bitcoin proxy) would be dragged toward zero over time.  #mech/risk_management
@@ -153,6 +187,10 @@ tags: [source, layer0]
   > adding systems is to be free as far as capital goes whereas adding markets isn't
   asset: multi · conditions: automated trading · testable: no - practical · confidence: medium
   ^MT064-C07-4
+- **Rob Carver** A second trend system is highly correlated with the first because there are only so many ways to do trend following, even at different speeds, which is why new markets diversify more than new trend variants.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > because there's only so many ways you can do Trend following even if you're doing it at different speed it's going to be fairly similar
+  indicator: correlation between trend systems · asset: multi · conditions: trend systems on the same market set · testable: yes - correlation of trend variants · confidence: high
+  ^MT064-C07-X1
 
 ### C08
 - **Rob Carver** Adding many signals with tiny marginal gains is not worth the complexity.  #mech/research_method
@@ -171,6 +209,10 @@ tags: [source, layer0]
   > a lot of ETFs have been issued but they don't all have very good liquidity frankly
   indicator: ETF liquidity · asset: multi · testable: yes - volume/spread · confidence: medium
   ^MT064-C08-4
+- **Rob Carver** To compare an ETF with futures, estimate your own annual roll cost and compare it with the ETF's total annual expense ratio, checking that the ratio includes all costs.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > you should be able to get a rough idea of how much it's going to cost you to roll and then compare that with the the um total annual expense ratio of the ETF
+  indicator: futures roll cost vs ETF total expense ratio · asset: multi · horizon: years · testable: yes - cost accounting · confidence: high
+  ^MT064-C08-X1
 
 ### C09
 - **Rob Carver** Compare ETF and futures on total return: ETF includes dividends/interest less costs; futures back-adjusted prices need the risk-free rate added because margin earns interest.  #mech/research_method
@@ -233,11 +275,20 @@ tags: [source, layer0]
   > it's rare um that you hear about a trend follower blowing up uh unless it's specifically because they were running like a 5x leverage version of their strategy
   indicator: leverage · asset: multi · horizon: years · conditions: excess leverage · testable: no - observation · confidence: medium
   ^MT064-C11-6
+- **Rob Carver** A small trader can get decent execution from a simple algorithm only a few lines long, whereas execution becomes a major research area only for funds trading hundreds of millions or billions of notional a day.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > for me I can do pretty decent job of execution with an algorithm there a few lines of code long
+  indicator: execution cost vs fund size · asset: multi · conditions: scales with traded notional · testable: partly - slippage versus size · confidence: high
+  ^MT064-C11-X1
+- **Niels Kaastrup-Larsen** Besides new data sources, firms are researching how to pre-process data before it enters the trading algorithms, which is an active frontier of improvement.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > it's actually also what to do with the data before they stick it into their uh algorithms that I think is is an area of of interest for these firms
+  indicator: data cleaning and transformation · asset: multi · testable: partly - ablation of pre-processing steps · confidence: medium
+  ^MT064-C11-X2
 
 ### C12
 - **Rob Carver** AHL says 35-40% of research budget goes to execution to avoid losing out as inflows grow, raising strategy capacity.  #mech/risk_management
   > probably of the research budget 35 40% of that goes to of course execution
   indicator: execution share of research budget · asset: multi · horizon: years · testable: no - firm claim · confidence: medium
+  **Correction (cross-check):** Wrong speaker and hedged source. Niels recalls a conversation from the SG CTA index interview series, saying 'I think maybe was AHL' said that probably 35-40% of the research budget goes to execution. Rob Carver does not say it. → Niels (recalling an interview in the SG CTA index series, possibly with AHL, said with some doubt) says that perhaps 35-40% of the research budget goes to execution to avoid losing out as inflows grow and capacity increases.
   ^MT064-C12-1
 - **Rob Carver** His discretionary bond trade caught the yield top but was closed flat because he had no predefined stop or exit criteria; he concludes he should stay systematic.  #mech/behavioral
   > I made made a good entry decision but a poor exit decision
@@ -246,11 +297,17 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** Moskowitz et al. (2012) show returns in years 2 through 5 are negatively related to subsequent returns, supporting a long-term mean reversion signal.  #mech/cycle_persistence
   > the authors show that returns returns years 2 through five are negatively related to subsequent returns
   indicator: past returns years 2-5 · asset: multi · horizon: years · testable: yes - published paper · confidence: high
+  **Correction (cross-check):** Speaker is the listener Paul, whose written question Niels reads out, not Niels; the Moskowitz et al. (2012) reading is the listener's. → Listener Paul (read by Niels): Moskowitz, Ooi and Pedersen (2012) find returns in years 2 to 5 are negatively related to subsequent returns, so an absolute long-term mean reversion signal might raise standalone Sharpe.
   ^MT064-C12-3
 - **Niels Kaastrup-Larsen** Rob's five-year relative mean reversion strategy has a negative Sharpe but improves a baseline trend-plus-carry portfolio.  #mech/research_method
   > the strategy has a negative sharp ratio but improves the performance of his Baseline Trend plus carrier strategy
   indicator: long-term mean reversion · asset: multi · horizon: years · conditions: combination with trend and carry · testable: yes · confidence: high
+  **Correction (cross-check):** Speaker is the listener Paul (question read by Niels), describing Rob's strategy in his book; not Niels's own view. → Listener Paul (read by Niels): Rob's relative five-year mean reversion strategy in Advanced Futures Trading Strategies has a negative standalone Sharpe but improves a baseline trend-plus-carry portfolio.
   ^MT064-C12-4
+- **Rob Carver** A systematic trader can attribute every trade's result exactly because all trades are in a database, whereas discretionary calls are rarely recorded, so their quality is hard to judge afterwards.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > if you ask me how a particular trade works out I can tell you with Precision because it's all in a big database
+  indicator: trade-level record keeping · asset: multi · testable: no - process point · confidence: high
+  ^MT064-C12-X1
 
 ### C13
 - **Rob Carver** Absolute long-term mean reversion (negative multi-year momentum) should work in principle and is simpler than relative mean reversion and probably diversifying.  #mech/cycle_persistence
@@ -269,6 +326,14 @@ tags: [source, layer0]
   > systematically don't change back tests all that much on a diversified basket
   indicator: EMA crossover vs Donchian breakout · asset: multi · horizon: years · conditions: diversified basket · testable: yes - back test · confidence: medium
   ^MT064-C13-4
+- **Rob Carver** Long-term mean reversion in prices has an academic literature in equities (Thaler and others) and is related to the value effect, which supports a multi-year contrarian signal.  #mech/overshoot _(added by sonnet-xhigh cross-check)_
+  > there's papers by people like Richard Thor and stuff on on moon reversion um and um you know it sort of related to the value effect and Equity
+  indicator: multi-year past return vs subsequent return · asset: equities · direction: past long-term losers outperform · horizon: years · conditions: multi-year horizon, weak statistical power · testable: yes - long-horizon return reversal tests · confidence: medium
+  ^MT064-C13-X1
+- **Listener Samuel (question read by Niels)** Listener idea: scale trend exposure up or down according to the current state of monthly, quarterly or yearly candles, instead of rolling-window breakout or EMA signals, so exposure falls at once if a strong quarter turns.  #mech/slow_reaction _(added by sonnet-xhigh cross-check)_
+  > why not look at the current state of high time frame candles to increase exposure progressively
+  indicator: monthly/quarterly/yearly candle state · asset: multi · direction: raise exposure as higher-timeframe candle confirms trend · horizon: months · testable: yes - calendar-period candle signals versus rolling signals · confidence: low
+  ^MT064-C13-X2
 
 ### C14
 - **Rob Carver** All indicators lag; lag can be reduced by shorter windows or weighting recent periods more, as in an EMA.  #mech/slow_reaction
@@ -305,6 +370,10 @@ tags: [source, layer0]
   > estimating um a volatility and you've got hourly data but obviously you've got a period when markets are closed then it's probably a reasonable thing to do to get a better estimate of volatility
   indicator: hourly volatility estimate · asset: multi · horizon: hours · testable: yes · confidence: medium
   ^MT064-C15-4
+- **Rob Carver** A chatbot's suggestion to fill missing contract data with cointegration or error-correction models is the kind of plausible but unsound advice he distrusts, so AI-suggested data repairs need expert review before use in a backtest.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > I'm not surprised that chat B GPT has suggested it because you know um I'm not a big a big fan of AI
+  asset: other · testable: no - opinion on a tool · confidence: medium
+  ^MT064-C15-X1
 
 ### C16
 - **Rob Carver** Three position-sizing methods: fixed contracts, fixed notional, and fixed risk (volatility-scaled); Quantica finds volatility adjustment has the highest Sharpe.  #mech/risk_management
@@ -328,6 +397,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** Option selling and equity market neutral strategies have high Sharpe but negative skew, unlike trend following.  #mech/risk_premium
   > be something like um a equity Market neutral strategy they they tend to have um negative skew as well
   indicator: skew · asset: multi · testable: yes · confidence: medium
+  **Correction (cross-check):** Wrong speaker. Rob Carver is speaking here, continuing his explanation of the Sharpe versus skew trade-off (the sentence runs across the C16/C17 boundary); Niels does not speak until later in C17. → Rob Carver: option selling (extreme) and equity market neutral (less extreme) strategies have good Sharpe ratios but negative skew, unlike trend following which has positive skew.
   ^MT064-C17-1
 - **Rob Carver** The Sharpe ratio worth sacrificing to buy positive skew is small, so the higher Sharpe strategy is generally better.  #mech/risk_premium
   > the amount of Shar ratio you should be giving up to sort of quote unquote buy positive skew was actually very small
@@ -345,6 +415,10 @@ tags: [source, layer0]
   > conceivable amount of improvement in skew that would justify that that lower shot ratio
   indicator: position sizing · asset: multi · horizon: years · testable: yes · confidence: medium
   ^MT064-C17-5
+- **Rob Carver** Preference for positive skew is subjective: some investors will give up Sharpe to get it, but his risk-neutral, terminal-wealth analysis shows the Sharpe worth sacrificing for skew is small.  #mech/behavioral _(added by sonnet-xhigh cross-check)_
+  > in practice people have preferences to this sort of thing so some people really like positive skew and they'll you know happily give up more of them their aot ra to get it
+  indicator: skew vs Sharpe trade-off · asset: multi · conditions: investors without special skew preference · testable: yes - utility or terminal-wealth simulation · confidence: medium
+  ^MT064-C17-X1
 
 ### C18
 - **Rob Carver** Simulating terminal wealth for different Sharpe and skew combinations shows the benefit of higher Sharpe outweighs lost upside volatility, so Sharpe can be optimised despite penalising upside volatility.  #mech/research_method
@@ -417,6 +491,10 @@ tags: [source, layer0]
   > what covid really showed us is that the the sort of network of Supply chains in the world is a very delicate and delicate thing
   indicator: supply chains · asset: commodities · horizon: months · testable: no - qualitative · confidence: medium
   ^MT064-C21-4
+- **Rob Carver** Tariffs face the most pushback from Republicans and other people the president listens to, so tariff plans are the policy most likely to be diluted or reversed.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > it's probably the one of his policies that there's the most push back from in by people who actually he's going to listen to
+  indicator: US tariff announcements and reversals · asset: multi · horizon: months · conditions: depends on how much he gets done before the midterms · testable: no - political forecast · confidence: low
+  ^MT064-C21-X1
 
 ### C22
 - **Rob Carver** Tariffs on integrated US-Canada auto supply chains would be inflationary.  #mech/policy_reaction _(time-bound view)_
@@ -448,6 +526,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** Where price and value disconnect, a price-following strategy like trend following is a good portfolio component.  #mech/slow_reaction
   > a price-based strategy that doesn't care about is it the right value or not but just follows the price
   indicator: trend following · asset: multi · horizon: years · conditions: value-price disconnect · testable: no - view · confidence: medium
+  **Correction (cross-check):** Probable wrong speaker. 'I do agree with you that actually a price-based strategy that doesn't care about is it the right value or not' answers Niels's point about trust erosion and the value-price disconnect, so it reads as Rob agreeing with Niels. → Rob Carver (probable): in a world where price and value are disconnected, a price-following strategy such as trend following is a good thing to hold in a portfolio.
   ^MT064-C23-3
 - **Rob Carver** In 2007-08 credit, mortgage and bond markets signalled trouble before equities.  #mech/slow_reaction
   > the equity markets for a long time thought everything was fine yeah um and it was in the the the bond markets and the debt in the you know the CDs markets
@@ -457,6 +536,10 @@ tags: [source, layer0]
   > the bond market could be a bit ahead of the curve and maybe even the gold market
   indicator: bond market, gold vs equities · asset: multi · horizon: months · testable: partly - lead-lag testable · confidence: low
   ^MT064-C23-5
+- **Rob Carver** Bonds and equities react to different drivers: bonds focus on inflation, which Trump policies clearly raise, while the effect of inflation on equities is ambiguous, so bonds are the more direct place for policy risk to show first.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > the bond Market's probably more concerned about inflation rather than say you know the risks of a recession
+  indicator: bond yields vs equity prices on inflationary policy · asset: rates · direction: bond yields up on inflationary policy · horizon: months · conditions: policy changes that raise inflation · testable: partly - event studies of tariff announcements on yields versus equities · confidence: medium
+  ^MT064-C23-X1
 
 ### C24
 - **Rob Carver** Trump policy effects reach jobs data with a lag and equities even later, so watch and wait.  #mech/slow_reaction _(time-bound view)_

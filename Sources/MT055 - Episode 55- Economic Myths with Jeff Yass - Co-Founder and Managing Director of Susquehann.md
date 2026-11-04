@@ -6,7 +6,7 @@ channel: "Generating Alpha Podcast"
 url: https://www.youtube.com/watch?v=LTeX0_qklsU
 words: 3726
 claims: 14
-added_by_opus: 3
+added_by_crosscheck: 3
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Jeff Yass (co-founder, Susquehanna)", "Amir (host, Generating Alpha podcast)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** macro policy, fiscal debt, consumer surplus, policy
 
-**Opus completeness estimate of first read:** 0.80 - short policy-opinion episode; first reader caught the main ideas (debt vs wealth, wealth-destruction risk, waste, consumer surplus, tax myths, vouchers), missing the consumer-surplus estimation method, the visible-savings point on deficit reform and the limited-government claim.
+**Cross-check completeness estimate of first read:** 0.80 - short policy-opinion episode; first reader caught the main ideas (debt vs wealth, wealth-destruction risk, waste, consumer surplus, tax myths, vouchers), missing the consumer-surplus estimation method, the visible-savings point on deficit reform and the limited-government claim.
 
 ## Coverage
 
@@ -53,13 +53,13 @@ tags: [source, layer0]
 - **Jeff Yass** Regulation that blocks business start-ups and very high taxes that stop capital raising would sharply cut growth; the US is 50% richer than Europe with similar population, so modest policy changes could make it much poorer.  #mech/structural_shift _(time-bound view)_
   > we're roughly the same, you know, population as as most of Europe, and we're 50% richer.
   indicator: regulation and tax burden vs business formation · asset: other · direction: lower growth and wealth · horizon: years · conditions: He mentions this may be seen in 2029 · testable: partly - cross-country comparison · confidence: medium
-  **Correction (Opus):** Omits that Yass ties the risk to a possible policy shift around 2029 ('we've might well see this in 2029'), making it a time-bound view. → Regulation that blocks business start-ups and very high taxes that stop capital raising, which he says may well arrive around 2029, would sharply cut growth; the US is 50% richer than Europe with a similar population, so modest policy changes could make it much poorer.
+  **Correction (cross-check):** Omits that Yass ties the risk to a possible policy shift around 2029 ('we've might well see this in 2029'), making it a time-bound view. → Regulation that blocks business start-ups and very high taxes that stop capital raising, which he says may well arrive around 2029, would sharply cut growth; the US is 50% richer than Europe with a similar population, so modest policy changes could make it much poorer.
   ^MT055-C02-1
 - **Jeff Yass** Entrepreneurs capture only about 10% of the value they create (Bezos about 2% of Amazon's value once consumer surplus of $10 trillion is counted) and the rest goes to consumers as consumer surplus.  #mech/structural_shift
   > I say the typical number somewhere around 10%.
   indicator: consumer surplus (time saved x multiple of 20) · asset: other · conditions: Estimates use time saved valued at a 20x multiple · testable: partly - consumer surplus is hard to measure · confidence: medium
   ^MT055-C02-2
-- **Jeff Yass** Consumer surplus of a company can be estimated by valuing the hours it saves consumers and capitalising that at about 20x; for Amazon this gives roughly $10 trillion, at least five times its market value.  #mech/research_method _(added by Opus)_
+- **Jeff Yass** Consumer surplus of a company can be estimated by valuing the hours it saves consumers and capitalising that at about 20x; for Amazon this gives roughly $10 trillion, at least five times its market value.  #mech/research_method _(added by opus cross-check)_
   > if you measure in how many hours it saved us and you give that a multiple of 20, it would come to something like $10 trillion
   indicator: hours saved x 20 capitalisation multiple · asset: equities · horizon: years · testable: partly - time-use data exist but the 20x multiple is an assumption · confidence: medium
   ^MT055-C02-X1
@@ -89,7 +89,7 @@ tags: [source, layer0]
   > it's also idea times the probability that it's actually doable.
   asset: other · testable: partly - expected-value rule, probabilities subjective · confidence: medium
   ^MT055-C05-3
-- **Jeff Yass** Cutting the roughly $2 trillion deficit by removing waste does not move voters unless the savings are handed back to them directly (as with school vouchers), so fiscal reform passes only when its benefits are visible and personal.  #mech/fiscal_debt _(added by Opus, time-bound view)_
+- **Jeff Yass** Cutting the roughly $2 trillion deficit by removing waste does not move voters unless the savings are handed back to them directly (as with school vouchers), so fiscal reform passes only when its benefits are visible and personal.  #mech/fiscal_debt _(added by opus cross-check, time-bound view)_
   > if you say to people, uh we can find waste and fraud and the deficit's going to go from two trillion to one trillion, people like, well, good good. I don't care.
   indicator: US federal deficit (~$2tn) · asset: rates · horizon: years · testable: no - political-economy judgement · confidence: medium
   ^MT055-C05-X1
@@ -99,7 +99,7 @@ tags: [source, layer0]
   > I would say voucher, voucher, voucher.
   asset: other · testable: no - policy opinion · confidence: high
   ^MT055-C06-1
-- **Jeff Yass** Constitutional limits on government powers (9th and 10th Amendments) kept US government small and less corrupt, which he credits for American prosperity; he concedes a return to this has zero chance.  #mech/structural_shift _(added by Opus)_
+- **Jeff Yass** Constitutional limits on government powers (9th and 10th Amendments) kept US government small and less corrupt, which he credits for American prosperity; he concedes a return to this has zero chance.  #mech/structural_shift _(added by opus cross-check)_
   > That's what built America. That it kept the government small, it kept us uh it kept it uh less corrupt than other governments.
   asset: multi · horizon: years · testable: partly - cross-country government size vs growth can be studied, but causality is contested · confidence: high
   ^MT055-C06-X1

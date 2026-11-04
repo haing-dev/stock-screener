@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 15166
 claims: 78
-added_by_opus: 9
+added_by_crosscheck: 9
 corrections: 4
 crosscheck: "opus cross-check"
 speakers: ["Andrew Beer (DBi, replication ETF manager)", "Tom Roble (SG Prime Services, SG CTA indices)", "Niels Kaastrup-Larsen (host, hedge fund manager)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, CTA replication, managed futures ETFs, regime and time-frame diversification, portable alpha
 
-**Opus completeness estimate of first read:** 0.87 - first reader covered nearly all arguments; missed a few reasoning steps (de-risking lag logic, index-model drift, AUM-capacity doubt), data-quality caveats and flow behaviour, and misread one number and two speakers.
+**Cross-check completeness estimate of first read:** 0.87 - first reader covered nearly all arguments; missed a few reasoning steps (de-risking lag logic, index-model drift, AUM-capacity doubt), data-quality caveats and flow behaviour, and misread one number and two speakers.
 
 ## Coverage
 
@@ -68,7 +68,7 @@ tags: [source, layer0]
   > my own trend barometer finished at 57. Now, for those who follow it, they will know that that's actually a pretty good reading
   indicator: Trend Barometer = 57 · asset: multi · direction: trend followers positive · horizon: weeks · testable: yes - barometer vs subsequent returns · confidence: medium
   ^MT027-C02-4
-- **Tom Roble** In March 2025 Tom's main macro risks were US stagflation, tariffs, a possible Ukraine ceasefire and a shift in the US role in the world forcing other economies to change how they engage with the US.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Tom Roble** In March 2025 Tom's main macro risks were US stagflation, tariffs, a possible Ukraine ceasefire and a shift in the US role in the world forcing other economies to change how they engage with the US.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > US economy stags the potential for stagflation and ultimately it's kind of what over the next 5 years is going to be the US's part in the world.
   asset: multi · horizon: years · testable: no - list of themes without a rule · confidence: low
   ^MT027-C02-X1
@@ -104,7 +104,7 @@ tags: [source, layer0]
   > they all do different things around the periphery and that can often make a big difference
   indicator: dispersion across 10 trend followers · asset: multi · testable: partly - dispersion attribution needs manager data · confidence: medium
   ^MT027-C04-3
-- **Niels Kaastrup-Larsen** Monthly return dispersion among the ~50 largest CTAs in February 2025 ran from about -9% to +3%, large in absolute terms but much smaller than dispersion among long/short equity managers.  #mech/research_method _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** Monthly return dispersion among the ~50 largest CTAs in February 2025 ran from about -9% to +3%, large in absolute terms but much smaller than dispersion among long/short equity managers.  #mech/research_method _(added by opus cross-check, time-bound view)_
   > And I think - 9ish was the lowest and then plus three uh from from from a report I just received uh a few minutes ago.
   indicator: cross-sectional monthly return range of 50 largest CTAs vs long/short equity funds · asset: multi · horizon: weeks · testable: yes - manager database cross-sectional dispersion · confidence: medium
   ^MT027-C04-X1
@@ -125,7 +125,7 @@ tags: [source, layer0]
 - **Andrew Beer** Hedge funds and CTAs crowded into a post-election consensus (long equities, strong dollar, sticky inflation, long gold) that reversed in early 2025, producing losses.  #mech/crowding_positioning _(time-bound view)_
   > hedge funds started to dial up the Trump trade and and you saw it in fundamental hedge funds you saw it in CTAs
   indicator: positioning in equities, USD, gold · asset: multi · direction: Trump trade longs unwound · horizon: months · conditions: consensus positioning reversing on policy news · testable: partly - requires positioning data · confidence: medium
-  **Correction (Opus):** Timing wrong: Andrew says hedge funds and CTAs began building the Trump trade very early in 2024, i.e. before the election, not as a post-election consensus. → From early 2024 hedge funds and CTAs increasingly crowded into the 'Trump trade' (long equities, strong dollar, sticky inflation, long gold), which reversed in early 2025 and produced losses.
+  **Correction (cross-check):** Timing wrong: Andrew says hedge funds and CTAs began building the Trump trade very early in 2024, i.e. before the election, not as a post-election consensus. → From early 2024 hedge funds and CTAs increasingly crowded into the 'Trump trade' (long equities, strong dollar, sticky inflation, long gold), which reversed in early 2025 and produced losses.
   ^MT027-C05-4
 
 ### C06
@@ -177,7 +177,7 @@ tags: [source, layer0]
   > if I take it from equities, clients are going to blame me if equities go up.
   asset: multi · testable: no - practitioner anecdote · confidence: high
   ^MT027-C08-3
-- **Andrew Beer** US managed-futures mutual fund assets were flat for years, spiked with 2022 performance and then fell back, i.e. retail flows chase recent CTA returns and leave afterwards.  #mech/behavioral _(added by Opus)_
+- **Andrew Beer** US managed-futures mutual fund assets were flat for years, spiked with 2022 performance and then fell back, i.e. retail flows chase recent CTA returns and leave afterwards.  #mech/behavioral _(added by opus cross-check)_
   > they've been constant over a long period of time. They kind of spiked during 2022 and they've come right back down.
   indicator: US managed futures mutual fund AUM · asset: multi · direction: flows follow trailing performance then reverse · horizon: years · testable: yes - fund flow data vs trailing returns · confidence: medium
   ^MT027-C08-X1
@@ -223,7 +223,7 @@ tags: [source, layer0]
   > then have more of a constant allocation across those different models
   indicator: constant allocation across time frames · asset: multi · horizon: months · testable: yes - combine lookbacks and backtest · confidence: medium
   ^MT027-C11-4
-- **Tom Roble** The SG Trend Indicator was built by picking the trend model whose returns best correlated with actual trend followers over the prior 5 years (a medium-term model); longer models matched less, but over the following decade managers drifted to longer horizons, so a fixed replicating model loses fit as the industry changes.  #mech/research_method _(added by Opus)_
+- **Tom Roble** The SG Trend Indicator was built by picking the trend model whose returns best correlated with actual trend followers over the prior 5 years (a medium-term model); longer models matched less, but over the following decade managers drifted to longer horizons, so a fixed replicating model loses fit as the industry changes.  #mech/research_method _(added by opus cross-check)_
   > we selected quite a medium-term model from the data of the last 5 years and our medium-term model seemed to have a relatively robust correlation.
   indicator: SG Trend Indicator; correlation of model returns to SG Trend Index · asset: multi · horizon: years · conditions: fit decays as manager horizons drift · testable: yes - rolling correlation of fixed-horizon trend models to the index · confidence: medium
   ^MT027-C11-X1
@@ -245,11 +245,11 @@ tags: [source, layer0]
   > And the two costs are you're paying 100 basis points more for it. You've got an indetermined amount of additional costs associated with trading hundreds or thousands of, you know, individual contracts
   indicator: fees and trading costs of broad vs simple programs · asset: multi · testable: yes - net-of-cost comparison · confidence: medium
   ^MT027-C12-4
-- **Tom Roble** Tom doubts that capacity (AUM) explains the industry's slower trend horizons, because no CTA has grown very large since Winton (above $30bn then, now below $10bn); multi-model risk allocation is the more likely cause.  #mech/structural_shift _(added by Opus)_
+- **Tom Roble** Tom doubts that capacity (AUM) explains the industry's slower trend horizons, because no CTA has grown very large since Winton (above $30bn then, now below $10bn); multi-model risk allocation is the more likely cause.  #mech/structural_shift _(added by opus cross-check)_
   > no no individual CTA has really breached the multi-billion mark since Winton had a had a large assets above 30 billion and no longer is is above is above 10 billion.
   indicator: largest CTA AUM (Winton) · asset: multi · horizon: years · testable: partly - AUM vs model horizon by manager · confidence: medium
   ^MT027-C12-X1
-- **Tom Roble** A benchmark or indicator model should be kept unchanged, because changing it forces either restating history or a structural break that prevents consistent statistical analysis.  #mech/research_method _(added by Opus)_
+- **Tom Roble** A benchmark or indicator model should be kept unchanged, because changing it forces either restating history or a structural break that prevents consistent statistical analysis.  #mech/research_method _(added by opus cross-check)_
   > do we then restate the entire past or do we have this period in time when the model changes but then you can't do a consistent statistical analysis against the data.
   indicator: SG Trend Indicator · asset: multi · testable: no - methodological principle · confidence: high
   ^MT027-C12-X2
@@ -298,13 +298,13 @@ tags: [source, layer0]
 - **Andrew Beer** In sharp shocks vol controls make managers derisk faster than a weekly replicator (e.g. 100 to 70 vs replicator 180 to 100), but the industry never flips fully, so residual lag is bounded.  #mech/risk_management
   > I've never seen a period even through some of these very very sharp inflection points where the industry goes from 100% long to 100% short
   indicator: speed of derisking, vol controls · asset: multi · horizon: days · testable: partly - needs manager position history · confidence: medium
-  **Correction (Opus):** Numbers misread: the replicator's position goes from 100 to about 80-85 (residual risk) while managers cut from 100 to about 70; '180 to 100' is a caption artefact. → In sharp shocks vol controls make managers de-risk faster than a weekly replicator (e.g. managers 100 to 70, replicator 100 to about 85 at the next rebalance), but the industry never flips from fully long to fully short, so the residual lag is bounded.
+  **Correction (cross-check):** Numbers misread: the replicator's position goes from 100 to about 80-85 (residual risk) while managers cut from 100 to about 70; '180 to 100' is a caption artefact. → In sharp shocks vol controls make managers de-risk faster than a weekly replicator (e.g. managers 100 to 70, replicator 100 to about 85 at the next rebalance), but the industry never flips from fully long to fully short, so the residual lag is bounded.
   ^MT027-C15-3
-- **Andrew Beer** Even if erratic, short-cycle policy news favours short-term models, CTAs will at most shorten their models at the margin, not move wholesale to short horizons.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Andrew Beer** Even if erratic, short-cycle policy news favours short-term models, CTAs will at most shorten their models at the margin, not move wholesale to short horizons.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > I don't think the whole industry will go to super short-term models. Um I think it'll be but they but they may do it at the margin.
   asset: multi · direction: industry trend horizons slightly shorter · horizon: years · conditions: erratic policy news cycles · testable: partly - estimate industry horizon from index replication over time · confidence: medium
   ^MT027-C15-X1
-- **Andrew Beer** Vol controls and stops de-risk only after the loss has occurred, so a weekly replicator's slower de-risking costs money only if the move keeps going after the shock; if it reverses, being slow does no harm.  #mech/risk_management _(added by Opus)_
+- **Andrew Beer** Vol controls and stops de-risk only after the loss has occurred, so a weekly replicator's slower de-risking costs money only if the move keeps going after the shock; if it reverses, being slow does no harm.  #mech/risk_management _(added by opus cross-check)_
   > But instead, what happens is it's already you're already bloodied, right?
   asset: multi · horizon: days · conditions: lag hurts only when shocks continue for days after the first move · testable: yes - compare fast vs slow de-risking after vol spikes · confidence: medium
   ^MT027-C15-X2
@@ -381,9 +381,9 @@ tags: [source, layer0]
 - **Andrew Beer** The competitive threat to hedge funds a decade ago was banks offering cheap QIS products, whose performance and fees are not visible, making comparison unfair.  #mech/structural_shift
   > the competitive threat then was was banks you know and banks offering QIS products
   indicator: QIS vs CTA AUM · asset: multi · horizon: years · testable: partly - QIS data are opaque · confidence: medium
-  **Correction (Opus):** Speaker partly wrong: Andrew raises bank QIS as the competitive threat a decade ago; the remark that QIS performance and fees are never visible, making competition unfair, is by Niels (he explains QIS 'for those who may not know'). → Andrew: the main competitive threat to CTAs a decade ago was banks offering cheap QIS trend products. Niels: QIS performance and fees are not visible, so the comparison is unfair.
+  **Correction (cross-check):** Speaker partly wrong: Andrew raises bank QIS as the competitive threat a decade ago; the remark that QIS performance and fees are never visible, making competition unfair, is by Niels (he explains QIS 'for those who may not know'). → Andrew: the main competitive threat to CTAs a decade ago was banks offering cheap QIS trend products. Niels: QIS performance and fees are not visible, so the comparison is unfair.
   ^MT027-C20-2
-- **Andrew Beer** Asset-weighted hedge fund indices and AUM data can be dominated by one firm (some about 40% Bridgewater), so industry asset and return figures need checking for concentration before use.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** Asset-weighted hedge fund indices and AUM data can be dominated by one firm (some about 40% Bridgewater), so industry asset and return figures need checking for concentration before use.  #mech/research_method _(added by opus cross-check)_
   > there are a number of hedge fund data databases that have been um distorted by um by Bridgewwater.
   indicator: asset-weighted hedge fund indices; Barclay managed futures AUM · asset: multi · testable: yes - recompute index excluding largest firm · confidence: medium
   ^MT027-C20-X1
@@ -400,7 +400,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** Geopolitical dislocations, volatility and uncertain inflation make 2025 the best environment for macro and CTA investing in a decade.  #mech/cycle_persistence _(time-bound view)_
   > we're in the best environment for macro investing we've probably seen for the last 10 years
   asset: multi · horizon: years · testable: no - opinion · confidence: medium
-  **Correction (Opus):** Probable wrong speaker: this closing view follows Andrew's final thought and is answered by Niels ('Yeah, absolutely'), so it is most likely Tom Roble's final thought, not Niels's (captions have no labels). → Tom Roble (probable): geopolitical dislocations, volatility and uncertain inflation make 2025 the best environment for macro and CTA investing in a decade.
+  **Correction (cross-check):** Probable wrong speaker: this closing view follows Andrew's final thought and is answered by Niels ('Yeah, absolutely'), so it is most likely Tom Roble's final thought, not Niels's (captions have no labels). → Tom Roble (probable): geopolitical dislocations, volatility and uncertain inflation make 2025 the best environment for macro and CTA investing in a decade.
   ^MT027-C21-3
 
 ### C22

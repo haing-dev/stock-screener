@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 10864
 claims: 76
-added_by_opus: 15
+added_by_crosscheck: 15
 corrections: 0
 crosscheck: "opus blind read (pilot)"
 speakers: ["Neils Kostner Larsen (host)", "Katy Kaminski (quant researcher, trend following)", "Nick Baltas (quant, systematic strategies)", "Andrew Beer (trend replication manager)", "Rob Carver (systematic trader)", "Mark Rzepczynski (macro and trend researcher)", "Rich Brennan (trend follower)", "Alan Dunn (macro/systematic)", "Jim Kasang (macro/geopolitics panelist)"]
@@ -78,7 +78,7 @@ tags: [source, layer0]
   > in the early part of the Year volatility selling kept on being a good rewarded
   indicator: short volatility exposure · asset: other · direction: short volatility · horizon: months · conditions: earned in early 2024 calm; faded in H2 (see August spike) · testable: yes - short-vol strategy returns · confidence: medium
   ^MT002-C02-6
-- **Nick Baltas** A single bad event like the August V-shape is not a reason to refit trend models, since the behaviour is known and refitting to one event overfits.  #mech/research_method _(added by Opus)_
+- **Nick Baltas** A single bad event like the August V-shape is not a reason to refit trend models, since the behaviour is known and refitting to one event overfits.  #mech/research_method _(added by opus cross-check)_
   > we know exactly how it operate in this environment and I don't think we should just go back and reig the models
   asset: multi · testable: no - a research discipline stance · confidence: high
   ^MT002-C02-5b
@@ -104,7 +104,7 @@ tags: [source, layer0]
   > it was an election year and there was massive liquidity pumped into the system as is often the case during election years that's very V suppressing supportive for markets obviously
   asset: equities · direction: volatility suppressed, markets supported in election years · horizon: months · conditions: election years; the speaker later says liquidity will be less reliable · testable: partly - can test election-year vol · confidence: medium
   ^MT002-C03-5
-- **Cem Karsan** Global structured product issuance doubled in two years to about USD 1 trillion a year, adding to volatility supply.  #mech/liquidity_flows _(added by Opus)_
+- **Cem Karsan** Global structured product issuance doubled in two years to about USD 1 trillion a year, adding to volatility supply.  #mech/liquidity_flows _(added by opus cross-check)_
   > structured product issuant go from approximately 500 billion globally to a trillion dollars per year of structured product issu
   indicator: global structured product issuance · asset: equities · direction: more vol supply, lower implied vol · horizon: years · testable: partly - issuance data available commercially · confidence: high
   ^MT002-C03-7b
@@ -130,7 +130,7 @@ tags: [source, layer0]
   > if the number one and number two economies uh can get over that divide that will change a lot of things globally
   asset: multi · horizon: years · testable: no - geopolitical scenario · confidence: low
   ^MT002-C04-5
-- **Cem Karsan** Structured-product issuance is a secular trend, so index vol supply and low correlation should persist into 2025, while the liquidity driver is less reliable.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Cem Karsan** Structured-product issuance is a secular trend, so index vol supply and low correlation should persist into 2025, while the liquidity driver is less reliable.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > the structur product issuance I believe is a secular Trend that is not going away
   indicator: structured product issuance; implied correlation · asset: equities · direction: low correlation persists · horizon: years · conditions: liquidity support may fade in 2025 · testable: partly - forecast to check against 2025 · confidence: medium
   ^MT002-C04-4b
@@ -144,11 +144,11 @@ tags: [source, layer0]
   > one of the best performing strategies year to date and that's outside of trend is single stock momentum
   indicator: single-stock momentum winners-minus-losers · asset: equities · direction: long past winners, short past losers · horizon: months · conditions: one implementation cited; driven by mega-cap tech and AI winners · testable: yes - factor returns · confidence: high
   ^MT002-C05-2
-- **unclear (unattributed in captions)** For a trend follower geopolitical views do not enter the model; prices already carry the effect, so market observation and trading should be kept separate.  #mech/research_method _(added by Opus)_
+- **unclear (unattributed in captions)** For a trend follower geopolitical views do not enter the model; prices already carry the effect, so market observation and trading should be kept separate.  #mech/research_method _(added by opus cross-check)_
   > how do you incorporate geopolitics in a trend following model
   asset: multi · testable: no - philosophical stance · confidence: medium
   ^MT002-C05-1b
-- **Alan Dunne** Trade policy figures favouring a weaker dollar conflict with a Treasury Secretary who needs a stable dollar to fund the deficit, so dollar direction depends on which voice dominates.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Alan Dunne** Trade policy figures favouring a weaker dollar conflict with a Treasury Secretary who needs a stable dollar to fund the deficit, so dollar direction depends on which voice dominates.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > lighthous are very much in favor of getting the deficit down in favor of a weaker [L180] dollar
   indicator: US dollar · asset: fx · horizon: months · conditions: Trump administration 2025 · testable: no - depends on personalities · confidence: low
   ^MT002-C05-2b
@@ -174,11 +174,11 @@ tags: [source, layer0]
   > it's ctas oh it's Vol scaling oh isk parity there was another FD article that followed after that
   indicator: CTA / risk-parity / call-overwriting ETF flows · asset: multi · horizon: weeks · testable: no - blame attribution is hard to test · confidence: medium
   ^MT002-C06-5
-- **Nick Baltas** Press concern about concentration risk in bank QIS strategies is not supported by the data he sees.  #mech/crowding_positioning _(added by Opus, time-bound view)_
+- **Nick Baltas** Press concern about concentration risk in bank QIS strategies is not supported by the data he sees.  #mech/crowding_positioning _(added by opus cross-check, time-bound view)_
   > there's much utilization of those strategies and maybe there is some sort of concentration risk coming along which by the way I I I definitely don't see
   indicator: QIS assets/utilisation · asset: multi · testable: partly - needs QIS AUM data · confidence: medium
   ^MT002-C06-2b
-- **Katy Kaminski** Active ETF volumes, including managed-futures ETFs, have grown by orders of magnitude.  #mech/structural_shift _(added by Opus)_
+- **Katy Kaminski** Active ETF volumes, including managed-futures ETFs, have grown by orders of magnitude.  #mech/structural_shift _(added by opus cross-check)_
   > active uh ETF you know volumes have gone up by orders of magnitude
   indicator: active ETF volumes · asset: multi · horizon: years · testable: yes - ETF volume data · confidence: medium
   ^MT002-C06-5b
@@ -204,7 +204,7 @@ tags: [source, layer0]
   > where you were in essence coming as a liquidity provider but often it wasn't about Trend following it was about mean reversion and and and and information asymmetries and you know non-economic players
   asset: commodities · direction: mean reversion in semi-liquid markets · conditions: needs trading cost capacity · testable: partly - capacity-limited and market specific · confidence: medium
   ^MT002-C07-5
-- **Andrew Beer** Open question whether alternative (less liquid) markets trend more strongly and implementably after costs; anecdotally, alternative-market managers had historic losses in 2024.  #mech/research_method _(added by Opus, time-bound view)_
+- **Andrew Beer** Open question whether alternative (less liquid) markets trend more strongly and implementably after costs; anecdotally, alternative-market managers had historic losses in 2024.  #mech/research_method _(added by opus cross-check, time-bound view)_
   > do you see strong evidence that they Trend [L280] more
   asset: multi · testable: yes - trend returns by liquidity after costs · confidence: low
   ^MT002-C07-6b
@@ -234,7 +234,7 @@ tags: [source, layer0]
   > the dominant markets um I think tend to be much more correlated um than some of the alternative assets
   asset: multi · horizon: years · testable: yes - correlation by market group · confidence: medium
   ^MT002-C08-6
-- **Rob Carver** Studies showing illiquid markets trend more are biased because their short histories coincide with good trend periods; compare markets over the same window.  #mech/research_method _(added by Opus)_
+- **Rob Carver** Studies showing illiquid markets trend more are biased because their short histories coincide with good trend periods; compare markets over the same window.  #mech/research_method _(added by opus cross-check)_
   > because the less liquid markets [L300] have of got less history and it just so happens that the less history coincides with the period when trend of falling generally was better
   asset: multi · testable: yes - common-sample comparison · confidence: high
   ^MT002-C08-3b
@@ -270,7 +270,7 @@ tags: [source, layer0]
   > how different the equity markets are today than they were 30 years ago you know back then in the early 1990s you couldn't get smart people to go into manufacturing
   asset: equities · horizon: years · testable: no - qualitative · confidence: medium
   ^MT002-C10-3
-- **Mark Rzepczynski** Market efficiency can only be tested jointly with a valuation model, which is feasible in equities but not in commodities without a valuation anchor.  #mech/research_method _(added by Opus)_
+- **Mark Rzepczynski** Market efficiency can only be tested jointly with a valuation model, which is feasible in equities but not in commodities without a valuation anchor.  #mech/research_method _(added by opus cross-check)_
   > it's always a joint hypothesis it's a hypothesis of whether the markets are efficient and the model you use to determine whether there's efficiencies
   asset: multi · testable: no - methodological principle · confidence: high
   ^MT002-C10-2b
@@ -284,7 +284,7 @@ tags: [source, layer0]
   > the inputs to supply and demand are those flows are increasingly uncorrelated uh unrelated to fundamentals
   asset: multi · horizon: years · testable: partly - flow data hard to isolate · confidence: medium
   ^MT002-C11-2
-- **Rob Carver** Rob has found no serious use for AI in systematic trading.  #mech/research_method _(added by Opus, time-bound view)_
+- **Rob Carver** Rob has found no serious use for AI in systematic trading.  #mech/research_method _(added by opus cross-check, time-bound view)_
   > personally for me the answer has been know I've not found a serious use for it
   asset: multi · testable: no - personal experience · confidence: medium
   ^MT002-C11-3b
@@ -324,7 +324,7 @@ tags: [source, layer0]
   > prices are Primal you know if you know it's just that you're not making any forecast all you're doing is following what prices tell you
   asset: multi · testable: no - philosophical · confidence: medium
   ^MT002-C13-5
-- **unclear (unattributed in captions)** Trend following makes no forecasts, only follows prices, so it cannot make prediction mistakes ('prices are primal').  #mech/research_method _(added by Opus)_
+- **unclear (unattributed in captions)** Trend following makes no forecasts, only follows prices, so it cannot make prediction mistakes ('prices are primal').  #mech/research_method _(added by opus cross-check)_
   > the beauty about Trend following is that it never makes any mistakes it's never wrong because we're not trying to predict anything
   indicator: price · asset: multi · testable: no - philosophical · confidence: medium
   ^MT002-C13-4b
@@ -346,7 +346,7 @@ tags: [source, layer0]
   > manages differ for 3 plus one reasons and I had a conversation with with other about month go on this one number one is speed Katie mentioned it I mentioned it earlier number two is Universe
   asset: multi · horizon: years · testable: yes - attribution by feature · confidence: high
   ^MT002-C14-4
-- **Katy Kaminski** 2024 dispersion was mostly by time horizon: long-term trends were clear while short-term swings around rate and political regime changes punished faster models.  #mech/cycle_persistence _(added by Opus, time-bound view)_
+- **Katy Kaminski** 2024 dispersion was mostly by time horizon: long-term trends were clear while short-term swings around rate and political regime changes punished faster models.  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
   > we were in a period where the long-term trends seemed to be more clear but shorter term undulations
   indicator: trend speed · asset: multi · horizon: months · conditions: regime transitions (rates, US politics) · testable: yes - dispersion by manager speed · confidence: medium
   ^MT002-C14-4b
@@ -364,11 +364,11 @@ tags: [source, layer0]
   > I call it uh STM style timing in markets so once you put people into you know a timing bucket you know a market bucket
   indicator: STM classification · asset: multi · testable: yes - classification study · confidence: medium
   ^MT002-C15-3
-- **Nick Baltas** 2024 trend dispersion came mainly from speed, then universe and purity, since cross-sectional reversion did well in both 2023 and 2024.  #mech/cycle_persistence _(added by Opus, time-bound view)_
+- **Nick Baltas** 2024 trend dispersion came mainly from speed, then universe and purity, since cross-sectional reversion did well in both 2023 and 2024.  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
   > the dispersion this year I think it primarily comes from the speed
   indicator: trend speed · asset: multi · horizon: months · conditions: 2024 · testable: yes - attribution · confidence: medium
   ^MT002-C15-2b
-- **Andrew Beer** He does not see 2024 trend dispersion as meaningfully larger than usual; wide dispersion is the normal state.  #mech/research_method _(added by Opus, time-bound view)_
+- **Andrew Beer** He does not see 2024 trend dispersion as meaningfully larger than usual; wide dispersion is the normal state.  #mech/research_method _(added by opus cross-check, time-bound view)_
   > I don't see it meaningfully larger than other years
   indicator: CTA return dispersion · asset: multi · horizon: years · testable: yes - dispersion vs history · confidence: medium
   ^MT002-C15-4b

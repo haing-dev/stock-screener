@@ -5,10 +5,10 @@ date: 2025-02-09
 channel: "Top Traders Unplugged"
 url: 
 words: 11478
-claims: 52
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 60
+added_by_crosscheck: 8
+corrections: 1
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Richard Brennan (trend follower, East Coast Capital Management)", "Niels Kaastrup-Larsen (host, Dunn Capital)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Brennan presents convexity (Dave Dredge) as the core of trend following: Sharpe-world risk measures are flawed; small losses, anti-martingale pyramiding, and wide diversification harvest outliers. Kaastrup adds January 2025 dispersion data and cautions on open equity.
 
 **Approach:** trend following, convexity, tail risk, position sizing, risk management
+
+**Cross-check completeness estimate of first read:** 0.88 - first reader captured nearly all of Rich's convexity argument and Niels' data and interjections; missed the Niels/Asness risk-definition pushback, Rich's reply on closed-equity AUM and long-haul philosophy, option-hedge precision, linearity assumption, infinite yield and diversification-as-safety-net, and merged two speakers in the open-equity claim.
 
 ## Coverage
 
@@ -99,6 +101,10 @@ tags: [source, layer0]
   > convexity, which is effectively positive skew, it ensures that favorable volatility accelerates gains while we mitigate loss losses through effective risk management
   indicator: return skewness · asset: multi · direction: long convexity · horizon: years · testable: yes · confidence: high
   ^MT107-C05-3
+- **Richard Brennan** Traditional portfolio construction assumes a linear input-output world and so targets the straightest equity curve with the highest Sharpe ratio, which is inconsistent with non-linear markets where payoff shape matters more than smoothness.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > most traditional portfolios assume linearity. They're looking for the straightest possible um equity curve, the most linear equity curve, the curve with the highest Sharpe ratio
+  indicator: Sharpe ratio; equity curve linearity · asset: multi · testable: partly - compare Sharpe-optimised vs skew-optimised portfolios · confidence: medium
+  ^MT107-C05-X1
 
 ### C06
 - **Richard Brennan** Convex process accelerates in favorable regimes and brakes (stops, small bets) in adverse regimes, rather than assuming constant conditions.  #mech/risk_management
@@ -163,6 +169,14 @@ tags: [source, layer0]
   > trend following offers better, more diverse opportunities in its ability to exploit opportunities
   asset: multi · horizon: years · testable: partly · confidence: medium
   ^MT107-C09-4
+- **Niels Kaastrup-Larsen** Counter-view on convexity horizon: longer-term managers can argue that supplying convexity at short horizons (daily) costs too much bleed and does not matter for long-run results, so convexity should be defined by time frame (Quantica has a paper on this).  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > there's too much bleed. It's too expensive to provide convexity on a daily basis because it doesn't matter uh in the long run
+  indicator: convexity by horizon; bleed cost · asset: multi · conditions: depends on time frame · testable: yes - compare cost of short-horizon convexity with long-run payoff · confidence: low
+  ^MT107-C09-X1
+- **Richard Brennan** Options are the most precise hedge for a traditional portfolio because they can be matched to the specific risk (correlation risk, market risk), whereas trend following is a less targeted, free-of-premium form of convexity.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > options is probably the purest way to get um protection for a traditional portfolio for adverse risk events because you can align the option exposure to what you're trying to protect
+  indicator: option hedge vs trend following · asset: multi · testable: partly - hedge effectiveness vs cost testable · confidence: medium
+  ^MT107-C09-X2
 
 ### C10
 - **Niels Kaastrup-Larsen** Trend following in a multi-asset portfolio cushions events nobody imagined, so ask what you are doing about what you are not worried about.  #mech/risk_management
@@ -213,6 +227,10 @@ tags: [source, layer0]
   > In a trend following world, hardly any. Why? Because they apply positive convexity.
   indicator: blow-up frequency · asset: multi · horizon: years · testable: partly · confidence: medium
   ^MT107-C12-4
+- **Niels Kaastrup-Larsen** Niels, citing Asness, pushes back that complete permanent loss of capital is rare in any strategy, so defining risk only that way is too narrow; he wants something in between because volatility can still feel like risk even if it is not the same.  #mech/behavioral _(added by sonnet-xhigh cross-check)_
+  > I mean, how many strategies in our careers have we really seen blow up completely?
+  indicator: risk definition (permanent loss vs volatility) · asset: multi · testable: no - definitional · confidence: medium
+  ^MT107-C12-X1
 
 ### C13
 - **Niels Kaastrup-Larsen** Long drawdowns hurt investor psychology more than deep short ones (Asness).  #mech/behavioral
@@ -240,6 +258,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** Large open profits expose new investors to 50 percent drawdowns; allocate AUM on closed equity.  #mech/risk_management _(time-bound view)_
   > with some managers the open trade equity became so large that people who bought into those funds at a certain time had open trade equity of 50, 60, 70%
   indicator: open trade equity · asset: multi · horizon: months · conditions: concentrated winning trades in 2024 · testable: yes · confidence: medium
+  **Correction (cross-check):** Two speakers merged: Niels only raises the risk (new investors holding funds with 50-70% open trade equity face large drawdowns, and the principle suits one's own money with an infinite runway). The suggestion to allocate AUM on closed equity is Rich's reply, not Niels's. → Niels: in funds whose open trade equity grew to 50-70% of NAV, new investors are exposed to a straight 50% drawdown that long-standing investors are not, so closed-equity sizing mainly suits own money; Rich replied separately that new AUM can be allocated on closed equity.
   ^MT107-C14-1
 - **Richard Brennan** Trend following should be judged on thousands of trades, not individual outcomes.  #mech/research_method
   > Look at the the last 2,000 trades. Look at the last 4,000 trades.
@@ -249,6 +268,14 @@ tags: [source, layer0]
   > trend following is really aggressively looking to amplify upside
   asset: multi · horizon: years · testable: partly · confidence: high
   ^MT107-C14-3
+- **Richard Brennan** Rich's answer to the new-investor problem: allocate new AUM using closed equity, so open (unrealised) equity stays with existing investors and is not a new investor's problem; there are different models for this.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > you could apply a process that applies it based on closed equity. Um the unrealized equity is not a problem with the new incoming investor.
+  indicator: closed equity vs open equity for AUM allocation · asset: multi · conditions: funds with large open trade equity from a few trades · testable: partly - simulate new-investor drawdown under both bases · confidence: medium
+  ^MT107-C14-X1
+- **Richard Brennan** The philosophy of trend following is long-horizon compounding with patience; using it for other purposes (as an allocation inside traditional portfolios, or managing outside AUM) adds concerns, which Rich calls the business of trend following as distinct from trend following itself.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > do not do trend following unless you're prepared to do it for the long haul
+  indicator: trend following horizon; trade sample · asset: multi · horizon: years · conditions: investors who cannot tolerate long drawdowns · testable: no - philosophy · confidence: high
+  ^MT107-C14-X2
 
 ### C15
 - **Richard Brennan** Take a small initial trade, add as it succeeds (anti-martingale) with an ensemble, for positive convexity.  #mech/risk_management
@@ -267,6 +294,10 @@ tags: [source, layer0]
   > So, these single outlier events, they can offset dozens of small losses.
   indicator: outlier trades · asset: commodities · horizon: years · testable: yes · confidence: high
   ^MT107-C15-4
+- **Richard Brennan** Rich's aim is 'infinite yield': an open-ended payoff from letting profits run so that one trend pays for all accumulated costs of small controlled losses, which are the price of staying in the game for the next unknown opportunity.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > the principle there is a return that pays for all of the costs you've had over the course of time
+  indicator: payoff asymmetry · asset: multi · horizon: years · conditions: requires patience and survival through losing streaks · testable: yes - profit factor of top trades vs cumulative losses · confidence: medium
+  ^MT107-C15-X1
 
 ### C16
 - **Richard Brennan** Small position size is the ultimate stop since stop orders can gap.  #mech/risk_management
@@ -281,4 +312,8 @@ tags: [source, layer0]
   > people think they might be diversified, but in reality they're full of short ball strategies essentially
   indicator: hidden short vol · asset: multi · horizon: years · testable: partly · confidence: medium
   ^MT107-C16-3
+- **Richard Brennan** Diversification in trend following serves three purposes: lower portfolio correlation and risk through diversity, a wider opportunity set, and capturing outliers wherever they appear.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > is diversification as safety net. It's not only about a safety net, but it's also about spreading that net wide to capture those outliers, expanding the opportunity set, and also risk reduction through diversity.
+  indicator: number of markets; portfolio correlation · asset: multi · testable: yes - market count vs trend capture and risk · confidence: high
+  ^MT107-C16-X1
 

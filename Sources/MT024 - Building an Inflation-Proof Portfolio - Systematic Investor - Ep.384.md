@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 11106
 claims: 62
-added_by_opus: 6
+added_by_crosscheck: 6
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Yoav Git (co-host, Gresham, fixed income trend manager and researcher)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, inflation regimes, commodity trend, bonds, carry, autocorrelation, Japan
 
-**Opus completeness estimate of first read:** 0.90 - first reader captured the ERAS regime results, autocorrelation and carry arguments well; misses were the host's falling-rates challenge to bond autocorrelation, the long-history caveat, fixed income whipsaw, and a few secondary points.
+**Cross-check completeness estimate of first read:** 0.90 - first reader captured the ERAS regime results, autocorrelation and carry arguments well; misses were the host's falling-rates challenge to bond autocorrelation, the long-history caveat, fixed income whipsaw, and a few secondary points.
 
 ## Coverage
 
@@ -156,7 +156,7 @@ tags: [source, layer0]
   > it is really about um supply supply constraints and supply shocks um which which induce which induce uh trends
   indicator: supply shocks, storage · asset: commodities · direction: Commodity trends · horizon: weeks · conditions: low storage · testable: yes · confidence: high
   ^MT024-C07-4
-- **Yoav Git** Inflation-regime studies should use long history (good data back to the 1920s), because the Volcker-to-Yellen era of falling inflation does not represent the full range of regimes.  #mech/research_method _(added by Opus)_
+- **Yoav Git** Inflation-regime studies should use long history (good data back to the 1920s), because the Volcker-to-Yellen era of falling inflation does not represent the full range of regimes.  #mech/research_method _(added by opus cross-check)_
   > people don't appreciate that you know um that nice era from Paul Vulkar in sort of the early ' 80s all the way to Gellen
   indicator: CPI regimes since 1920s · asset: multi · horizon: years · conditions: older data is less reliable (World War II etc.) · testable: yes - compare regime results on post-1980 vs full-history samples · confidence: high
   ^MT024-C07-X1
@@ -178,7 +178,7 @@ tags: [source, layer0]
   > he building this 100year portfolio if you couldn't change your portfolio for 100 years how would you build and he introduced this commodity trend
   indicator: commodity trend · asset: commodities · horizon: years · testable: yes · confidence: low
   ^MT024-C08-4
-- **Niels Kaastrup-Larsen** The host suggests that current commodity trends may be an early warning that inflation numbers will rise; Git declines to forecast and argues instead for a bonds-plus-commodity-trend mix that works either way.  #mech/slow_reaction _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** The host suggests that current commodity trends may be an early warning that inflation numbers will rise; Git declines to forecast and argues instead for a bonds-plus-commodity-trend mix that works either way.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
   > what we see in the commodity markets is kind of the pre-warning that inflation should inflation numbers, I should say, should be picking up
   indicator: commodity price trends vs CPI · asset: commodities · direction: commodity trends up -> CPI up later · horizon: months · testable: yes - test whether commodity trend signals lead CPI changes · confidence: low
   ^MT024-C08-X2
@@ -214,7 +214,7 @@ tags: [source, layer0]
   > most CTAs, I would argue, first of all, got long cocoa uh in early 2023
   indicator: cocoa, CTA positioning · asset: commodities · horizon: months · testable: yes - positioning data · confidence: medium
   ^MT024-C10-3
-- **Niels Kaastrup-Larsen** Pension portfolios tilted to the green transition did well while green was popular but have underperformed traditional portfolios over the last two or three years.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** Pension portfolios tilted to the green transition did well while green was popular but have underperformed traditional portfolios over the last two or three years.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > those portfolios have certainly been underperforming more traditional portfolios
   indicator: green-tilted vs traditional pension portfolios · asset: equities · direction: green tilt underperformed · horizon: years · conditions: last 2-3 years · testable: yes - compare clean-energy/ESG indices vs broad market · confidence: medium
   ^MT024-C10-X3
@@ -236,7 +236,7 @@ tags: [source, layer0]
   > very few managers who have like a more generalistic and and and trend trade trend the same
   indicator: specialised fixed income trend · asset: rates · horizon: years · testable: yes - compare · confidence: low
   ^MT024-C11-4
-- **Niels Kaastrup-Larsen** The last couple of years were hard for fixed income trend because positions swung from very long to very short and back to very long, i.e. repeated reversals.  #mech/slow_reaction _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** The last couple of years were hard for fixed income trend because positions swung from very long to very short and back to very long, i.e. repeated reversals.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
   > how they've gated from being very long to very short to being very long again
   indicator: CTA fixed income exposure · asset: rates · horizon: years · conditions: choppy rate markets · testable: yes - count sign flips of bond trend signals and relate to P&L · confidence: medium
   ^MT024-C11-X4
@@ -286,7 +286,7 @@ tags: [source, layer0]
   > in terms of day traders or zero day to expiry the option market
   indicator: market participants and autocorrelation · asset: equities · horizon: years · testable: partly · confidence: medium
   ^MT024-C14-5
-- **Yoav Git** Git and Pedel's paper derives mathematically how much each 1% of positive return autocorrelation is worth to a trend follower, linking market autocorrelation directly to expected trend P&L.  #mech/research_method _(added by Opus)_
+- **Yoav Git** Git and Pedel's paper derives mathematically how much each 1% of positive return autocorrelation is worth to a trend follower, linking market autocorrelation directly to expected trend P&L.  #mech/research_method _(added by opus cross-check)_
   > we kind of can calculate what is the worth what is 1% of a positive autocorrelation worth to you as a trend follower
   indicator: return autocorrelation · asset: multi · direction: higher autocorrelation -> higher trend return · testable: yes - estimate autocorrelation per market and regress trend Sharpe on it · confidence: high
   ^MT024-C14-X5
@@ -312,7 +312,7 @@ tags: [source, layer0]
   > I suspect there will be carry for many many years to come
   indicator: bond carry · asset: rates · horizon: years · testable: partly · confidence: low
   ^MT024-C15-5
-- **Niels Kaastrup-Larsen** The host challenges that bonds' high autocorrelation may simply reflect 40 years of falling rates; Git agrees autocorrelation varies over time and so allocates to only about 50 of 100-150 markets based on current characteristics.  #mech/research_method _(added by Opus)_
+- **Niels Kaastrup-Larsen** The host challenges that bonds' high autocorrelation may simply reflect 40 years of falling rates; Git agrees autocorrelation varies over time and so allocates to only about 50 of 100-150 markets based on current characteristics.  #mech/research_method _(added by opus cross-check)_
   > haven't we just had 40 years of falling interest rates and isn't that really the explanation
   indicator: bond return autocorrelation · asset: rates · horizon: years · conditions: secular falling-rate period may bias the estimate · testable: yes - compare bond autocorrelation in rising vs falling rate decades · confidence: medium
   ^MT024-C15-X6

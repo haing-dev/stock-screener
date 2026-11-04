@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 11517
 claims: 55
-added_by_opus: 6
+added_by_crosscheck: 6
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Mark (guest, quantitative macro researcher and professor, Boston)", "Alan Dunne (guest host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, regime change, uncertainty indices, macro risk management, multi-strategy
 
-**Opus completeness estimate of first read:** 0.88 - first reader caught the core mechanisms; missed VVIX data, the lagged-correlation forecast, the new-administration starting conditions, monetary-policy uncertainty as a term-premium source, the analogue-data caveat and the leverage-caution conclusion
+**Cross-check completeness estimate of first read:** 0.88 - first reader caught the core mechanisms; missed VVIX data, the lagged-correlation forecast, the new-administration starting conditions, monetary-policy uncertainty as a term-premium source, the analogue-data caveat and the leverage-caution conclusion
 
 ## Coverage
 
@@ -73,7 +73,7 @@ tags: [source, layer0]
   > we have policy uncertainty we have Global uncertainty but we don't have vix uncertainty
   indicator: VIX vs uncertainty indices · asset: equities · horizon: months · testable: yes · confidence: high
   ^MT007-C02-5
-- **Mark** Volatility-of-volatility (VVIX) was elevated in the second half of 2024 versus the first half even though VIX itself stayed range-bound, with only a brief spike around the December 2024 Fed meeting.  #mech/new _(added by Opus, time-bound view)_
+- **Mark** Volatility-of-volatility (VVIX) was elevated in the second half of 2024 versus the first half even though VIX itself stayed range-bound, with only a brief spike around the December 2024 Fed meeting.  #mech/new _(added by opus cross-check, time-bound view)_
   > if you look at the vix which is the volatility of the vix the last six months have been elevated versus the first six months of 2024 but we're we're still sort of saying we haven't seen a spike
   indicator: VVIX (volatility of VIX), VIX · asset: equities · direction: VVIX up while VIX flat · horizon: months · testable: yes - VVIX/VIX history · confidence: medium
   ^MT007-C02-X1
@@ -131,7 +131,7 @@ tags: [source, layer0]
   > we've gone for a long period of time in the uh we'll call it the QE period of no term premium
   indicator: US term premium · asset: rates · horizon: years · testable: yes - ACM term premium · confidence: medium
   ^MT007-C05-4
-- **Mark** A policy regime change shows up in realised cross-market correlations with a lag: not in the first week, but over roughly the next three months, so correlation estimates updated only periodically will be late.  #mech/slow_reaction _(added by Opus, time-bound view)_
+- **Mark** A policy regime change shows up in realised cross-market correlations with a lag: not in the first week, but over roughly the next three months, so correlation estimates updated only periodically will be late.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
   > you're not going to see it right away because in in the in the first week we haven't seen the spike in and vix but we should sort of see over the next three months
   indicator: rolling cross-market correlations after a regime shift · asset: multi · direction: correlations shift over ~3 months after the shock · horizon: months · conditions: policy regime change (Trump inauguration Jan 2025) · testable: yes - correlation change after uncertainty spikes · confidence: medium
   ^MT007-C05-X1
@@ -155,11 +155,11 @@ tags: [source, layer0]
   > there always is a disconnect between what is Promised versus what is actually delivered
   asset: multi · horizon: months · testable: no · confidence: medium
   ^MT007-C07-1
-- **Mark** Compared with conditions at the start of past presidential terms, January 2025 had low unemployment, mid-to-low real GDP growth, high utilisation, slightly elevated core inflation and poor debt/GDP, so the room for further improvement (and for the euphoric outlook) is limited.  #mech/cycle_persistence _(added by Opus, time-bound view)_
+- **Mark** Compared with conditions at the start of past presidential terms, January 2025 had low unemployment, mid-to-low real GDP growth, high utilisation, slightly elevated core inflation and poor debt/GDP, so the room for further improvement (and for the euphoric outlook) is limited.  #mech/cycle_persistence _(added by opus cross-check, time-bound view)_
   > we're at the low end of unemployment we're probably in the uh uh you know mid to slightly lower end of real GDP so there's more room for growth uh economic utilization is at at the high levels
   indicator: unemployment, real GDP growth, capacity utilisation, core inflation, debt/GDP at inauguration · asset: multi · direction: limited upside from starting conditions · horizon: years · testable: partly - small sample of administrations · confidence: medium
   ^MT007-C07-X1
-- **Mark** Bond term premium is being pushed up by both growth uncertainty and monetary-policy uncertainty, the latter because the September 2024 Fed cut may have been too aggressive and the Fed path is unclear.  #mech/risk_premium _(added by Opus, time-bound view)_
+- **Mark** Bond term premium is being pushed up by both growth uncertainty and monetary-policy uncertainty, the latter because the September 2024 Fed cut may have been too aggressive and the Fed path is unclear.  #mech/risk_premium _(added by opus cross-check, time-bound view)_
   > if you also have high mon AR policy uncertainty and uh I think that there's a view that maybe September was uh was uh overly aggressive
   indicator: monetary policy uncertainty index, term premium · asset: rates · direction: higher term premium · horizon: months · conditions: high growth and monetary-policy uncertainty · testable: yes - MPU index vs term premium · confidence: medium
   ^MT007-C07-X2
@@ -200,9 +200,9 @@ tags: [source, layer0]
 - **Mark** Regime breaks (end of Bretton Woods 1971, rate spikes in 1980, 1992 EMS failure, euro) were not anticipated, so be aware anything is possible.  #mech/structural_shift
   > we went off the gold standard is it who would have thought that that would have happened and then that changed the regime you know significantly
   asset: fx · horizon: years · testable: no - historical analogy · confidence: medium
-  **Correction (Opus):** Most examples (double-digit rates under Carter, Plaza Accord, 1992 EMS break, the euro) are spoken in C11; only Bretton Woods 1971 is in C10, and the rate spike is 'end of the Carter administration' rather than 1980 specifically. → Regime breaks such as the end of Bretton Woods (1971), double-digit rates at the end of the Carter administration, the Plaza Accord, the 1992 EMS break and the euro were not anticipated, so models should allow that anything is possible.
+  **Correction (cross-check):** Most examples (double-digit rates under Carter, Plaza Accord, 1992 EMS break, the euro) are spoken in C11; only Bretton Woods 1971 is in C10, and the rate spike is 'end of the Carter administration' rather than 1980 specifically. → Regime breaks such as the end of Bretton Woods (1971), double-digit rates at the end of the Carter administration, the Plaza Accord, the 1992 EMS break and the euro were not anticipated, so models should allow that anything is possible.
   ^MT007-C10-3
-- **Mark** Building hypothetical stress data from distant analogues such as the 1930s trade wars is not robust, because data are poor and institutions differed; better to accept that anything is possible.  #mech/research_method _(added by Opus)_
+- **Mark** Building hypothetical stress data from distant analogues such as the 1930s trade wars is not robust, because data are poor and institutions differed; better to accept that anything is possible.  #mech/research_method _(added by opus cross-check)_
   > well it's hard to get robust information on there and then and that's where the institutional differences uh have have an impact
   indicator: historical analogue periods (1930s protectionism) · asset: multi · testable: no - judgement on data quality · confidence: medium
   ^MT007-C10-X1
@@ -261,7 +261,7 @@ tags: [source, layer0]
 - **Mark** Banks lend increasing leverage to multi-strategy managers because positions are transparent via prime brokerage, creating a risk of a funding squeeze as in August 2024 carry unwind.  #mech/liquidity_flows _(time-bound view)_
   > they'll they'll throw as much money as they can until they until they can't
   indicator: prime broker leverage to multistrats · asset: multi · horizon: years · conditions: If bank balance sheets are stressed · testable: partly · confidence: medium
-  **Correction (Opus):** Overstates: Mark does not describe August 2024 as a bank funding squeeze; he lists the August 2024 carry unwind, the prior year's long-short problem and Mag 7 drawdowns as examples of existential risks for leveraged multistrat books. → Banks keep extending leverage to multi-strategy managers because prime-broker position transparency makes it easy, but episodes like the August 2024 carry unwind or Mag 7 drawdowns show these leveraged books face existential risks.
+  **Correction (cross-check):** Overstates: Mark does not describe August 2024 as a bank funding squeeze; he lists the August 2024 carry unwind, the prior year's long-short problem and Mag 7 drawdowns as examples of existential risks for leveraged multistrat books. → Banks keep extending leverage to multi-strategy managers because prime-broker position transparency makes it easy, but episodes like the August 2024 carry unwind or Mag 7 drawdowns show these leveraged books face existential risks.
   ^MT007-C14-2
 - **Mark** Prime broker risk models measure volatility well but depend on assumed correlations; the non-measurable uncertainty is what breaks leveraged books (carry unwind, Mag 7 losses).  #mech/risk_management
   > they also have to make assumptions about what is the correlations and and what are the linkages across this
@@ -277,7 +277,7 @@ tags: [source, layer0]
   > they've never been able to get uh be embraced by a lot of Traders or modelers in a very systematic fashion
   asset: multi · testable: no · confidence: medium
   ^MT007-C15-2
-- **Mark** When non-measurable uncertainty is high, linkages, volatility and dislocations can change unexpectedly, so it is a poor time for banks to extend more leverage to multi-strategy funds.  #mech/crowding_positioning _(added by Opus, time-bound view)_
+- **Mark** When non-measurable uncertainty is high, linkages, volatility and dislocations can change unexpectedly, so it is a poor time for banks to extend more leverage to multi-strategy funds.  #mech/crowding_positioning _(added by opus cross-check, time-bound view)_
   > would this be the best time to increase leverage lending to these Institution you might be a little bit uh you want give this a little bit
   indicator: uncertainty indices, prime-broker leverage to multistrats · asset: multi · direction: reduce leverage provision when uncertainty is high · horizon: months · conditions: high uncertainty regime · testable: partly - deleveraging events vs uncertainty level · confidence: medium
   ^MT007-C15-X1

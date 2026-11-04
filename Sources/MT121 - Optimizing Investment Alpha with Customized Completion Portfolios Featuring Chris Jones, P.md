@@ -5,10 +5,10 @@ date: 2025-02-20
 channel: "Graham Capital Management"
 url: https://www.youtube.com/watch?v=FPCCLkxBY-Y
 words: 10596
-claims: 68
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 79
+added_by_crosscheck: 11
+corrections: 1
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Chris Jones (Graham Capital, head of London office, client solutions)", "Ella (former BCI total fund management lead, institutional adviser)", "Judy Posnikoff (Martlet Asset Management, ex-PAAMCO)", "Stephanie Freeze (Barclays Prime Brokerage, moderator)", "Meg Bod (Talking Hedge Events, host)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Panel on customized managed accounts and completion portfolios for institutional allocators. Covers move from strategic asset allocation to total portfolio approach, building bespoke hedge-fund/CTA sleeves (beta caps, vol targets, hybrid strategies), ESG futures, and why equity-bond correlation risk in inflation drives demand for downside-diversifying completion funds.
 
 **Approach:** trend following, completion portfolios, managed accounts, total portfolio approach, risk mitigation, stock-bond correlation, inflation, ESG
+
+**Cross-check completeness estimate of first read:** 0.88 - first reader captured nearly every substantive point of this panel with correct speakers; missed a few industry-history, TPA adoption and ESG-standard details
 
 ## Coverage
 
@@ -82,6 +84,14 @@ tags: [source, layer0]
   > only those managers and providers who can actually be integrated into the portfolio teams internal teams that can team up and be an extension of these teams will survive it
   asset: multi · horizon: years · testable: no - forecast · confidence: low
   ^MT121-C04-6
+- **Ella** Ontario Teachers was an early driver of manager customization in absolute return: before the GFC it teamed up with managers and expected them to step up on risk management, liquidity, portfolio construction and risk-adjusted returns.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > they were already teaming up with their managers
+  indicator: absolute return manager customization at a Canadian pension plan · asset: multi · horizon: years · testable: no - historical narrative · confidence: medium
+  ^MT121-C04-X1
+- **Ella** Until about five or six years ago most institutional hedge fund assets stayed in commingled vehicles; since then investors have shifted to customization, direct investments and strategic relationships run by dedicated teams, especially at Canadian pension plans.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > a big chunk of the assets in the institutional landscape was still in commingled vehicles
+  indicator: commingled vs customized institutional hedge fund assets · asset: multi · horizon: years · testable: no - industry observation · confidence: medium
+  ^MT121-C04-X2
 
 ### C05
 - **Ella** In the alternative scenario of a decent market correction or decoupling, manager selection regains importance and customization progresses more slowly.  #mech/structural_shift _(time-bound view)_
@@ -104,6 +114,14 @@ tags: [source, layer0]
   > investors really viewed for right or wrong hedge funds as an asset class
   asset: multi · horizon: years · testable: no - industry history · confidence: medium
   ^MT121-C05-5
+- **Chris Jones** About half of Graham's business is managed accounts, which shows customised accounts have become mainstream for systematic macro managers.  #mech/structural_shift _(added by sonnet-xhigh cross-check, time-bound view)_
+  > half of our businesses is managed accounts or almost half
+  indicator: managed account share of Graham business · asset: multi · horizon: years · testable: no - firm-specific · confidence: high
+  ^MT121-C05-X1
+- **Chris Jones** In the 1990s a trade journal's managed-account reports covered only managers with more than 50 million of assets and accounts could be as small as 5 or 10 million, illustrating how much the industry has matured.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > focus on managers with assets greater than 50 million
+  indicator: managed account size history · asset: multi · horizon: years · testable: no - anecdote · confidence: medium
+  ^MT121-C05-X2
 
 ### C06
 - **Chris Jones** Because constraints, optimization and risk overlay are the last stage of a quant process, any sensible cap can be built into the optimization and yield an optimal constrained portfolio rather than a suboptimal remnant.  #mech/risk_management
@@ -174,6 +192,14 @@ tags: [source, layer0]
   > the asset classes or teams um basically uh compete for Capital so all investment opportunities are competing
   asset: multi · direction: capital allocated to best marginal contribution · testable: partly - marginal contribution ranking is testable · confidence: medium
   ^MT121-C08-6
+- **Ella** The total portfolio approach spread partly because institutions grew internal investment teams, so allocators can integrate risk, construction and performance across areas; allocators now deal with multiple specialist teams.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > started popping up in part because internal teams started to grow so there's more in-house investment capability
+  indicator: growth of in-house investment capability · asset: multi · horizon: years · testable: no - qualitative · confidence: medium
+  ^MT121-C08-X1
+- **Ella** The total portfolio approach is dynamic, an ongoing asset-allocation process, whereas strategic asset allocation is a forward-looking fixed-assumption exercise based on long-term capital market assumptions.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > its Dynamic and it's really an immediate asset allocation process as opposed to strategic asset allocation which is really into the future
+  indicator: TPA vs SAA allocation process · asset: multi · testable: no - conceptual · confidence: medium
+  ^MT121-C08-X2
 
 ### C09
 - **Ella** Under TPA a manager must have a proposition strong enough to improve risk-adjusted return of the whole portfolio, not just one asset class.  #mech/risk_management
@@ -192,6 +218,10 @@ tags: [source, layer0]
   > with completion portfolios you have to sit on the same side of the table you have to work in Partnership
   asset: multi · testable: no - process · confidence: medium
   ^MT121-C09-4
+- **Ella** Caveat: only a few plans (a handful) use the total portfolio approach today, consistent with the poll in which strategic asset allocation was used more, but it is expected to spread as the landscape grows more complex and internal teams more skilled.  #mech/structural_shift _(added by sonnet-xhigh cross-check, time-bound view)_
+  > there are only few uh plans really doing it but this is this is going to happen
+  indicator: adoption of total portfolio approach · asset: multi · horizon: years · testable: no - forecast · confidence: medium
+  ^MT121-C09-X1
 
 ### C10
 - **Chris Jones** Completion funds shift from manager selection to outcome selection: the best manager is the one whose output best fills the gap in the specific portfolio.  #mech/risk_management
@@ -231,6 +261,7 @@ tags: [source, layer0]
 - **Judy Posnikoff** A Stanford paper on divestment found that excluding stocks from portfolios has not worked as well as investors working with companies to change their practices.  #mech/research_method
   > what they found is that divestment hasn't worked as well as probably has been hoped
   indicator: divestment · asset: equities · testable: partly - academic paper, replicable · confidence: medium
+  **Correction (cross-check):** Overstated comparison: Judy only said a Stanford paper found divestment has not worked as well as had been hoped; the comparison with engagement was her framing of the typical approach, not the paper's stated finding. → A Stanford paper on divestment found that excluding stocks has not worked as well as investors had hoped (investors typically exclude rather than engage with companies).
   ^MT121-C11-4
 - **Judy Posnikoff** Environmental portfolios outperformed until about this year only because they excluded energy; when energy rallied the performance flipped, so ESG performance is mostly a sector bet.  #mech/overshoot _(time-bound view)_
   > a lot of the um environmental portfolios really outperformed but that was because they didn't include energy and that's obviously changed this year
@@ -288,6 +319,10 @@ tags: [source, layer0]
   > the period of of of positive correlation uh which went from kind of the the kind of essentially ' 70s ' 80s '90s
   indicator: equity-bond correlation 1970s-1990s · asset: multi · horizon: years · testable: yes - historical series · confidence: high
   ^MT121-C13-5
+- **Ella** The CFA Institute published the first global voluntary ESG disclosure standards on 1 November, but with so many frameworks the standards themselves need standardizing, so ESG impact remains hard to compare.  #mech/structural_shift _(added by sonnet-xhigh cross-check, time-bound view)_
+  > CFA just published the global ESG disclosure standards
+  indicator: CFA global ESG disclosure standards · asset: multi · testable: no - regulatory development · confidence: medium
+  ^MT121-C13-X1
 
 ### C14
 - **Chris Jones** Periods of positive stock-bond correlation can be identified by hawkish Fed policy and an inflation shock.  #mech/policy_reaction
@@ -322,6 +357,10 @@ tags: [source, layer0]
   > obviously linkers and uh gold if you prefer a more blunt object
   indicator: inflation linkers, gold · asset: multi · direction: long linkers/gold · conditions: inflation · testable: yes - returns vs inflation · confidence: medium
   ^MT121-C14-8
+- **Chris Jones** Investors facing correlated stocks and bonds say they are already maxed out on private markets and hold a less diversified core, so they turn to completion funds with a diversification, risk-mitigation and loss-control objective rather than a pure portfolio-efficiency objective.  #mech/risk_management _(added by sonnet-xhigh cross-check, time-bound view)_
+  > I'm probably maxed out on private markets
+  indicator: completion funds for diversification gap · asset: multi · horizon: years · conditions: stock-bond correlation positive; private markets allocation full · testable: partly - assess drawdown contribution · confidence: medium
+  ^MT121-C14-X1
 
 ### C15
 - **Ella** View that the then-current inflation is not permanent, so the bigger issue is low returns and loss of insurance from government bonds.  #mech/policy_reaction _(time-bound view)_
@@ -340,4 +379,12 @@ tags: [source, layer0]
   > how do you actually offset the equity downturn conditional um beta reducing the uh uh the capture downside capture
   indicator: conditional beta, downside capture · asset: equities · direction: reduce downside capture · testable: yes - measurable · confidence: medium
   ^MT121-C15-4
+- **Ella** Inflation-linked bonds and gold were among the instruments that formed the foundation of the risk mitigation portfolio framework and are standard inflation hedges.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > used for the foundation of the risk mitigation portfolio I described earlier
+  indicator: inflation-linked bonds and gold in risk-mitigation portfolio · asset: multi · direction: long inflation linkers and gold · conditions: inflationary regimes · testable: partly - backtest of hedge basket · confidence: medium
+  ^MT121-C15-X1
+- **Judy Posnikoff** Investors are broadening manager selection by loosening requirements such as long track records and manager personal investment in the fund, in the name of diversity of managers.  #mech/behavioral _(added by sonnet-xhigh cross-check, time-bound view)_
+  > loosening some of the restrictions that a lot of investors have say in in terms of track record you know personal investment in the fund
+  indicator: manager selection criteria · asset: other · testable: no - allocator practice · confidence: medium
+  ^MT121-C15-X2
 

@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 12363
 claims: 83
-added_by_opus: 7
+added_by_crosscheck: 7
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Alan Dunne (co-host, macro)", "Niels Kaastro Larsen (host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, macro commentary, asset allocation, bond yield decomposition, risk mitigation
 
-**Opus completeness estimate of first read:** 0.91 - first reader covered nearly every macro and allocation idea; missed a few conditions (late-90s easy Fed, rising-rate caveat, leverage result), the trend barometer reading and Niels' debt scepticism; two attribution/number errors.
+**Cross-check completeness estimate of first read:** 0.91 - first reader covered nearly every macro and allocation idea; missed a few conditions (late-90s easy Fed, rising-rate caveat, leverage result), the trend barometer reading and Niels' debt scepticism; two attribution/number errors.
 
 ## Coverage
 
@@ -168,7 +168,7 @@ tags: [source, layer0]
   > if it comes to that that you have to print a lot of dollars to pay um you know or or the FED has to keep buying treasuries um then at some point you can get a loss of confidence
   indicator: US debt, Fed Treasury purchases · asset: multi · direction: inflation up or dollar down · horizon: years · conditions: Debt monetisation · testable: no - scenario · confidence: medium
   ^MT037-C07-5
-- **Niels Kaastro Larsen** Niels rejects the view that reserve-currency status makes US debt irrelevant (comparing it to MMT claims that inflation would not return, which proved wrong) and would not dismiss further rises in bond yields.  #mech/fiscal_debt _(added by Opus, time-bound view)_
+- **Niels Kaastro Larsen** Niels rejects the view that reserve-currency status makes US debt irrelevant (comparing it to MMT claims that inflation would not return, which proved wrong) and would not dismiss further rises in bond yields.  #mech/fiscal_debt _(added by opus cross-check, time-bound view)_
   > some people would say well you don't have to really worry about debt and certainly not if you're a reserve currency that just doesn't sit so well with me
   indicator: US federal debt, Treasury yields · asset: rates · direction: upward risk to long yields · horizon: years · conditions: large deficits and refinancing needs · testable: partly - debt/deficit vs term premium regressions · confidence: medium
   ^MT037-C07-X1
@@ -198,7 +198,7 @@ tags: [source, layer0]
   > betat up 50 up 1.25% so far this year uh s gen CT index up about uh almost 1% 93 basis points
   indicator: SG CTA, SG Trend, Short-Term Traders, MSCI World · asset: multi · horizon: weeks · testable: yes - index returns · confidence: high
   ^MT037-C08-6
-- **Niels Kaastro Larsen** The host's trend barometer gave very strong readings in early January 2025, consistent with a strong start for trend followers, before bond and yen reversals hurt in mid-month.  #mech/slow_reaction _(added by Opus, time-bound view)_
+- **Niels Kaastro Larsen** The host's trend barometer gave very strong readings in early January 2025, consistent with a strong start for trend followers, before bond and yen reversals hurt in mid-month.  #mech/slow_reaction _(added by opus cross-check, time-bound view)_
   > my Trend barometer has been certainly reflecting that all year U been very strong readings for that
   indicator: Niels' trend barometer · asset: multi · direction: strong trend environment · horizon: weeks · testable: partly - barometer definition not given · confidence: medium
   ^MT037-C08-X1
@@ -224,7 +224,7 @@ tags: [source, layer0]
   > a lot of people are allocated and invested BAS based on um what how things have have have worked uh in the in in the last 20
   asset: multi · horizon: years · testable: partly · confidence: medium
   ^MT037-C09-5
-- **Alan Dunne** In Asness's hypothetical 2035 retrospective the allocator exits trend following just before it starts to perform, illustrating the behavioural cost of abandoning a strategy after poor recent returns.  #mech/behavioral _(added by Opus)_
+- **Alan Dunne** In Asness's hypothetical 2035 retrospective the allocator exits trend following just before it starts to perform, illustrating the behavioural cost of abandoning a strategy after poor recent returns.  #mech/behavioral _(added by opus cross-check)_
   > they get out a trend following just before it starts to do well
   indicator: trend following allocation flows · asset: multi · direction: selling after drawdown loses the recovery · horizon: years · conditions: after a poor run of returns · testable: yes - flows into CTA funds vs subsequent returns · confidence: low
   ^MT037-C09-X1
@@ -260,7 +260,7 @@ tags: [source, layer0]
   > I don't hear people saying there's no price too high
   indicator: sentiment and P/E · asset: equities · horizon: months · testable: partly · confidence: low
   ^MT037-C11-4
-- **Alan Dunne** Marks's counterargument to the bubble case: the Magnificent 7 have established moats and generate huge cash flows, so their high P/Es may be justified.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Alan Dunne** Marks's counterargument to the bubble case: the Magnificent 7 have established moats and generate huge cash flows, so their high P/Es may be justified.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > The Magnificent 7 are incredible companies so their pees could be justified
   indicator: Magnificent 7 P/E, free cash flow · asset: equities · direction: high valuations may persist · horizon: years · conditions: dominant cash-generative firms · testable: partly - valuation vs subsequent earnings growth · confidence: low
   ^MT037-C11-X1
@@ -282,7 +282,7 @@ tags: [source, layer0]
   > but if you're trying to following in equities it's keeping you invested
   indicator: trend following overlay · asset: equities · horizon: years · testable: yes · confidence: medium
   ^MT037-C12-4
-- **Alan Dunne** The late-1990s rally continued for three years after the 'irrational exuberance' warning partly because the Fed kept policy easy (Y2K concerns, after the 1998 Asian/Russian wobble); whether today rhymes depends on whether the productivity story is as large as then.  #mech/policy_reaction _(added by Opus)_
+- **Alan Dunne** The late-1990s rally continued for three years after the 'irrational exuberance' warning partly because the Fed kept policy easy (Y2K concerns, after the 1998 Asian/Russian wobble); whether today rhymes depends on whether the productivity story is as large as then.  #mech/policy_reaction _(added by opus cross-check)_
   > people were expecting uh you know issues with Y2K and the FED kept policy easy so you know if you exited because Greenspan was worried about irrational exuberance you missed a huge
   indicator: Fed policy stance, S&P 500 1997-1999 · asset: equities · direction: easy policy extends overvalued rallies · horizon: years · conditions: Fed easing despite high valuations · testable: partly - valuation signals conditioned on policy stance · confidence: medium
   ^MT037-C12-X1
@@ -329,7 +329,7 @@ tags: [source, layer0]
 - **Alan Dunne** Assumed Sharpe ratios: alternatives 0.3, commodities 0.24, trend (risk mitigation) 0.24, diversifying long/short 0.36; the trend assumption looks conservative.  #mech/research_method
   > for Commodities the the long sharp sharp is 024 for risk mitigation as measured by train is 024 which seems very conservative
   indicator: assumed Sharpe ratios · asset: multi · horizon: years · testable: yes · confidence: medium
-  **Correction (Opus):** The 0.3 Sharpe is for the (traditional) asset classes; the speaker corrected himself from 'alt strategies' to 'for the asset classes it's 0.3'. → Assumed Sharpe ratios: asset classes 0.3, commodities 0.24, risk mitigation (trend) 0.24, diversifying long/short 0.36; the trend assumption looks conservative.
+  **Correction (cross-check):** The 0.3 Sharpe is for the (traditional) asset classes; the speaker corrected himself from 'alt strategies' to 'for the asset classes it's 0.3'. → Assumed Sharpe ratios: asset classes 0.3, commodities 0.24, risk mitigation (trend) 0.24, diversifying long/short 0.36; the trend assumption looks conservative.
   ^MT037-C14-4
 - **Alan Dunne** Assumed long-term geometric returns: equities 6.9%, private equity 7.5%, risk mitigation 5.4%.  #mech/research_method
   > Equity 6.9 you know private Equity 7 and a half risk mitigation 5.4
@@ -360,7 +360,7 @@ tags: [source, layer0]
 - **Niels Kaastro Larsen** Underallocation can be explained by investors haircutting uncertain Sharpe ratios.  #mech/behavioral
   > they're basically penalizing that that that sharp ratio for some of these strategies because of their you know maybe uncertainty about what the true sharp is or because of complexity
   asset: multi · testable: partly · confidence: medium
-  **Correction (Opus):** Wrong speaker: the point that investors penalise uncertain Sharpe ratios (and complexity) to explain underallocation is made by Alan Dunne in his C15 monologue, not Niels. → Alan Dunne: underallocation to alternatives can be explained theoretically by investors haircutting the Sharpe ratios of these strategies for uncertainty about the true Sharpe and for complexity.
+  **Correction (cross-check):** Wrong speaker: the point that investors penalise uncertain Sharpe ratios (and complexity) to explain underallocation is made by Alan Dunne in his C15 monologue, not Niels. → Alan Dunne: underallocation to alternatives can be explained theoretically by investors haircutting the Sharpe ratios of these strategies for uncertainty about the true Sharpe and for complexity.
   ^MT037-C15-5
 - **Alan Dunne** Given uncertainty about true Sharpe ratios, blend several diversifying strategies.  #mech/risk_management
   > from a robustness perspective I can see a case for for blending a number of different strategies
@@ -370,7 +370,7 @@ tags: [source, layer0]
   > they're kind of more consistent return profiles but the but more positively correlated
   indicator: multi-strat / long-short · asset: multi · horizon: years · testable: yes · confidence: low
   ^MT037-C15-7
-- **Alan Dunne** In AQR's optimisation, allowing leverage at 60/40 volatility leads to borrowing about 50% and adding mostly fixed income (plus other blocks), showing leverage constraints push investors toward higher-risk assets instead of levered diversified portfolios.  #mech/risk_premium _(added by Opus)_
+- **Alan Dunne** In AQR's optimisation, allowing leverage at 60/40 volatility leads to borrowing about 50% and adding mostly fixed income (plus other blocks), showing leverage constraints push investors toward higher-risk assets instead of levered diversified portfolios.  #mech/risk_premium _(added by opus cross-check)_
   > if you allow leverage then you would naturally even at that same level of volatility you would borrow um about 50% and you would ramp up um actually in that instance you would ramp up more fixed income exposures
   indicator: AQR optimizer with leverage · asset: multi · direction: lever diversified portfolio, more bonds · horizon: years · conditions: leverage available · testable: yes - mean-variance optimisation · confidence: medium
   ^MT037-C15-X1
@@ -388,7 +388,7 @@ tags: [source, layer0]
   > most institutional portfolios are heavily influenced by Equity risk
   indicator: factor exposures · asset: multi · testable: yes · confidence: high
   ^MT037-C16-3
-- **Niels Kaastro Larsen** Low-risk 'drive slowly' diversification through heavy fixed income worked while interest rates were falling but is doubtful when rates rise, and its underperformance compounds year after year.  #mech/cycle_persistence _(added by Opus)_
+- **Niels Kaastro Larsen** Low-risk 'drive slowly' diversification through heavy fixed income worked while interest rates were falling but is doubtful when rates rise, and its underperformance compounds year after year.  #mech/cycle_persistence _(added by opus cross-check)_
   > where interest rates are coming down I'm not so sure about when interest rates are coming up
   indicator: interest rate trend · asset: multi · direction: bond-heavy diversification fails in rising rates · horizon: years · conditions: rising rate / inflationary regime · testable: yes - bond-heavy portfolio returns by rate regime · confidence: medium
   ^MT037-C16-X1

@@ -1,0 +1,22 @@
+{
+ "source_id": "MT078",
+ "added_claims": [
+  {"claim_id": "MT078-C01-X1", "chunk": "C01", "speaker": "Howard Marks",
+   "quote": "I believe it's easy to make money in the market that's especially true in the good years and most years are good years",
+   "claim": "Because most market years are good years, making money is easy most of the time; results in good years say little about skill, which shows only in how little is lost in bad years.",
+   "mechanism": "risk_management", "asset_class": "multi", "indicator": "share of positive years; downside capture",
+   "horizon": "years", "direction": "",
+   "conditions": "", "testable": "yes - frequency of positive market years; manager downside capture",
+   "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT078-C02-X1", "chunk": "C02", "speaker": "Howard Marks",
+   "quote": "we learn that quick action is not the answer we hopefully we we develop the wisdom to understand that uh if you want a good result you're more likely to get it if you take a little time to",
+   "claim": "Experience teaches that quick action is not the answer; good results are more likely from taking time to think than from acting on a whim.",
+   "mechanism": "behavioral", "asset_class": "multi", "indicator": "",
+   "horizon": "unspecified", "direction": "",
+   "conditions": "", "testable": "no - process advice",
+   "speaker_confidence": "medium", "time_bound": "no"}
+ ],
+ "corrections": [],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10"],
+ "completeness_estimate": "0.96 - first reader captured essentially every idea; only two minor points (most years are good years; patience over quick action) were missing."
+}

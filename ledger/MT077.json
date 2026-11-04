@@ -88,8 +88,8 @@
   }
  ],
  "chunks": 13,
- "crosscheck": null,
- "completeness_estimate": null,
+ "crosscheck": "opus cross-check",
+ "completeness_estimate": "0.90 - nearly all biases and studies captured; missed risk-adjusted evaluation, the momentum link, the South Sea rerating mechanism and the utility rationale.",
  "claims": [
   {
    "claim_id": "MT077-C02-1",
@@ -323,6 +323,11 @@
    "speaker_confidence": "high",
    "time_bound": "no",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT077-C05-1",
+    "issue": "Overstates the data: speaker said the biggest net equity mutual fund outflows in decades, not record outflows.",
+    "fix": "The biggest net equity mutual fund outflows in decades came in February-March 2009 at the market bottom, because loss aversion makes investors capitulate at the low and return only after a large rally."
+   },
    "quote_check": "exact"
   },
   {
@@ -738,9 +743,99 @@
    "time_bound": "no",
    "reader": "sonnet",
    "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT077-C03-X1",
+   "chunk": "C03",
+   "speaker": "Scott Nations",
+   "quote": "Somebody’s earned, made 20% in the stock market in a particular year, and the stock market’s only up a fraction of that, you have to ask, how much risk were they taking?",
+   "claim": "A return far above the market's should be judged by the risk taken to earn it, so performance must be evaluated risk-adjusted rather than by raw return.",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "return vs market, risk taken",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - risk-adjusted performance metrics",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT077-C03-X2",
+   "chunk": "C03",
+   "speaker": "Scott Nations",
+   "quote": "People thought that this really obscure franchise they had in doing business, trading business with South America, was going to make the company incredibly valuable, even though most of its business was incredibly mundane.",
+   "claim": "The South Sea bubble began with a steady, mundane company (about 6% dividend yield on a price near 100 pounds) being rerated on a story about a minor, obscure growth franchise, a template for bubbles built on narrative rather than the core business.",
+   "mechanism": "behavioral",
+   "asset_class": "equities",
+   "indicator": "dividend yield vs price; narrative rerating",
+   "horizon": "months",
+   "direction": "price far above income-based value, then crash",
+   "conditions": "mania",
+   "testable": "partly - historical case; yield compression as bubble marker",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT077-C04-X1",
+   "chunk": "C04",
+   "speaker": "Clay Finck",
+   "quote": "This falls in line with that idea that your winners tend to keep on winning, right?",
+   "claim": "The disposition effect's cost (sold winners outperform held losers) is consistent with momentum: winners tend to keep winning, so selling them early forgoes the continuation.",
+   "mechanism": "slow_reaction",
+   "asset_class": "equities",
+   "indicator": "past winners vs losers (momentum)",
+   "horizon": "months",
+   "direction": "past winners outperform",
+   "conditions": "",
+   "testable": "yes - cross-sectional momentum vs disposition-effect selling",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT077-C04-X2",
+   "chunk": "C04",
+   "speaker": "Scott Nations",
+   "quote": "this one makes a little bit of sense because if you think about it, every time you lose a dollar, each remaining dollar becomes a little bit more valuable.",
+   "claim": "Loss aversion is partly rational because of diminishing marginal utility (each lost dollar makes the rest more valuable, each gained dollar is worth less), but its 2-2.5x size distorts how investors think about risk.",
+   "mechanism": "behavioral",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - utility interpretation",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT077-C10-X1",
+   "chunk": "C10",
+   "speaker": "Scott Nations",
+   "quote": "When I say overreact, they sold and they never got back in. Again, that mutual fund flow data shows that people sold overwhelmingly in February and March of 2009, and didn’t get back in for years.",
+   "claim": "Even in an extreme crisis (two of five US investment banks failed in 2008, and the market fell further after Lehman), the real damage from overreaction is selling and staying out for years, missing the recovery.",
+   "mechanism": "behavioral",
+   "asset_class": "equities",
+   "indicator": "equity mutual fund flows",
+   "horizon": "years",
+   "direction": "capitulation sellers miss rebound",
+   "conditions": "crisis bottoms",
+   "testable": "yes - fund flows vs subsequent returns",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
   }
  ],
  "n_sonnet": 36,
- "n_opus_added": 0,
- "n_corrections": 0
+ "n_opus_added": 5,
+ "n_corrections": 1
 }

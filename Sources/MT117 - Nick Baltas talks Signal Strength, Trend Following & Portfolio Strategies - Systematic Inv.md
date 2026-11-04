@@ -5,10 +5,10 @@ date: 2024-05-15
 channel: "Top Traders Unplugged"
 url: 
 words: 10817
-claims: 44
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 50
+added_by_crosscheck: 6
+corrections: 2
+crosscheck: "opus cross-check"
 speakers: ["Nick Baltas (co-host, systematic strategist)", "Neils Kostrup Larsen (host, hedge fund manager)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** May 2024 Systematic Investor episode: Baltas answers listener questions on agnostic risk parity, equal risk allocation across asset classes, ideal trend allocation and volatility regimes, then summarises his FT piece on equity momentum crowding (party and hangover analogy). Conclusion: fixed risk budgets embed return bets; dynamic allocation and vol scaling manage momentum crash risk.
 
 **Approach:** trend following, risk allocation, agnostic risk parity, equity momentum crowding, volatility clustering, replication
+
+**Cross-check completeness estimate of first read:** 0.88 - 45 first-reader claims cover most ideas; missed the 2024 macro sentiment shift, replicator tracking without cocoa, the trend-plus vs trend-minus disagreement, momentum-to-index link and exogenous crash triggers; two speaker errors.
 
 ## Coverage
 
@@ -66,6 +68,10 @@ tags: [source, layer0]
   > some of the sectors that we would think would be great for Trend because they're liquid like currencies like equities have not necessarily been that great to trade from a trend following perspective
   indicator: sector level trend performance · asset: multi · horizon: years · conditions: quick corrections damage trend following · testable: yes - sector attribution of trend · confidence: medium
   ^MT117-C02-3
+- **Nick Baltas** Macro sentiment shifted substantially in the first months of 2024 from expected Fed cuts toward higher for longer, no cut or even a hike, which Baltas monitors as a driver of trend positioning.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
+  > is it here for Longer Now is it going to be no cut and maybe a [L60] hike um is it going to be as is for now I think this shift in um in micro sentiment over the first four or five months of the year has been quite substantial
+  indicator: market-implied Fed path (cuts vs hold vs hike) · asset: rates · direction: fewer cuts priced, yields up · horizon: months · testable: partly - track priced Fed path changes Jan-May 2024 vs trend P&L · confidence: medium
+  ^MT117-C02-X1
 
 ### C03
 - **Nick Baltas** A replication product can only perform if the CTA strategy it copies performs, and replicating faster programs is harder because of style drift and repositioning.  #mech/research_method
@@ -86,6 +92,10 @@ tags: [source, layer0]
   > yields reverted that was one move um the JPY rallied I guess on the uh I guess an intervention risk expectations
   indicator: trend losses in rates, JPY, energy, cocoa · asset: multi · horizon: weeks · conditions: reversals across unrelated markets · testable: partly - trend P&L by sector in May 2024 · confidence: medium
   ^MT117-C04-2
+- **Neils Kostrup Larsen** A CTA replicator kept pace with the SG CTA index in 2024 even though many CTAs made money in cocoa, a market the replicator does not trade.  #mech/research_method _(added by opus cross-check, time-bound view)_
+  > I'm impressed with Andrew's ability to keep up with the Sugen CTA index in a time where clearly a lot of CT have been making money from Coco which is a market he does not
+  indicator: replicator ETF vs SG CTA index tracking 2024 · asset: multi · horizon: months · conditions: single-market outliers not traded by the replicator · testable: yes - compare DBMF-style replicator vs SG CTA index in 2024 · confidence: medium
+  ^MT117-C04-X1
 
 ### C05
 - **Neils Kostrup Larsen** As of mid-May 2024 BTOP50 was down 2.66% for the month and up 8.18% YTD, SG CTA down 3%, and SG Trend down 3.7%, while the S&P 500 total return was up 3.58% in May.  #mech/cycle_persistence _(time-bound view)_
@@ -95,6 +105,7 @@ tags: [source, layer0]
 - **Nick Baltas** In early May 2024 only equities were positive in trend programs, so the month was a worse than average down month for trend, though the year stayed strong.  #mech/cycle_persistence _(time-bound view)_
   > the only sector that's up so far this month is is equities and the rest is down
   indicator: trend sector returns · asset: multi · horizon: weeks · testable: yes - sector P&L · confidence: high
+  **Correction (cross-check):** wrong speaker: 'the only sector that's up so far this month is equities ... nothing dramatic, it's a great year' is said by Neils Kostrup Larsen; Baltas only said the month could still turn positive → Neils Kostrup Larsen: in early May 2024 only equities were positive for trend programs, making it a worse than average down month, but nothing dramatic in a strong year.
   ^MT117-C05-2
 - **Neils Kostrup Larsen** A listener asks whether signal direction should always dominate signal strength in portfolio construction, e.g. long a strong-signal asset and slightly short a correlated weak-signal asset to cut volatility.  #mech/research_method
   > should signal Direction
@@ -120,6 +131,10 @@ tags: [source, layer0]
   > to the extent that we move away from a binary signal we're implicitly introducing some sort of crosssectional
   indicator: signal strength scaling · asset: multi · testable: partly - measure cross-sectional share of returns · confidence: medium
   ^MT117-C07-2
+- **Nick Baltas** Concentrating on the dominant macro trend component has diminishing value, so adding diversifying components that need not agree with trend direction (agnostic risk parity's spread trades, or carry and reversion signals) gives a 'trend plus' strategy.  #mech/risk_management _(added by opus cross-check)_
+  > there is a limit beyond which concentration on the big macro moves brings value from a trend following perspective and maybe we can add to it a diversifying component
+  indicator: principal components of trend portfolio; carry and reversion overlays · asset: multi · testable: yes - compare pure trend vs trend plus diversifiers out of sample · confidence: medium
+  ^MT117-C07-X1
 
 ### C08
 - **Nick Baltas** Grossing up the signal differential in a pure relative value trade has too much dependence on noise and concentration, so the middle ground or pure trend direction is preferable.  #mech/risk_management
@@ -134,6 +149,10 @@ tags: [source, layer0]
   > doing one over VA in principle between as a classes implicitly suggests that I expect all of them to deliver the same sharp ratio
   indicator: inverse volatility asset class weighting · asset: multi · testable: yes - follows from mean-variance algebra · confidence: high
   ^MT117-C08-3
+- **Neils Kostrup Larsen** Larsen disagrees with 'trend plus': adding non-trend components may cannibalize rather than enhance trend, since he expects pure trend to outperform them over the long run; Baltas also prefers keeping signal direction.  #mech/research_method _(added by opus cross-check)_
+  > anything that's not pure Trend I I you know I I wonder why do we call it Trend plus why not just call it Trend minus because in the long term Trend following hopefully will outperform
+  indicator: pure trend vs trend plus overlays · asset: multi · horizon: years · testable: yes - long-run return of pure trend vs blended trend · confidence: medium
+  ^MT117-C08-X1
 
 ### C09
 - **Nick Baltas** Allocating risk dynamically across asset classes toward where trends exist (e.g. skipping equities in 2022, moving from commodities to the dollar) is more prudent than fixed risk budgets.  #mech/slow_reaction
@@ -208,6 +227,10 @@ tags: [source, layer0]
   > the more it performs the more we want to buy the same names that have been performing and the more we're buying them the higher they go
   indicator: hedge fund exposure to momentum factor · asset: equities · horizon: months · conditions: crash risk grows with crowding · testable: yes - factor exposure data · confidence: high
   ^MT117-C13-3
+- **Nick Baltas** Because AI momentum winners make up a large share of indices, the stock momentum rally lifted equity indices and so also fed trend followers' equity index gains, linking CTA returns to equity momentum crowding.  #mech/crowding_positioning _(added by opus cross-check, time-bound view)_
+  > part of that has allowed the indices obviously to appreciate substantially because of the amount of concentration they bring to the indices and therefore the index performance has also helped follow us
+  indicator: index concentration in momentum stocks; CTA equity sector P&L · asset: equities · direction: long equity indices · horizon: months · conditions: risk if momentum crashes · testable: yes - correlate equity momentum factor with CTA equity sector returns · confidence: medium
+  ^MT117-C13-X1
 
 ### C14
 - **Nick Baltas** Timing the end of a crowded equity momentum rally is very hard, so options are limited to managing exposure.  #mech/risk_management
@@ -247,5 +270,10 @@ tags: [source, layer0]
 - **Neils Kostrup Larsen** Cocoa positions were already reduced before the reversal because the volatility spike weakened the vol-normalised signal even as price kept rising.  #mech/risk_management _(time-bound view)_
   > cocoa exposure has been dialed down before the downturn came just because the spike up was
   indicator: volatility-normalised trend signal in cocoa · asset: commodities · horizon: weeks · conditions: high-vol spikes in rising market · testable: yes - signal/vol normalisation · confidence: medium
+  **Correction (cross-check):** wrong speaker: the cocoa point (exposure dialed down before the reversal because the high-vol spike weakened the signal) is made by Nick Baltas responding to Larsen, who then agrees → Nick Baltas: cocoa exposure was already reduced before the reversal because the volatility spike weakened the vol-normalised signal even as price kept rising.
   ^MT117-C15-5
+- **Nick Baltas** A momentum unwind can also be exogenous, from an idiosyncratic shock such as the AI story fading, or from value investors buying cheap and shorting expensive stocks; this is even harder to foresee than an endogenous funding squeeze.  #mech/crowding_positioning _(added by opus cross-check)_
+  > another reason can be very exogeneous you can have basically talk about I don't know like a a neighbor calling the police which is maybe relevant to having a very idiosyncratic shock in the market
+  indicator: equity momentum factor · asset: equities · direction: momentum factor down · horizon: weeks · conditions: crowded momentum, idiosyncratic shock or value rotation · testable: partly - study momentum crash triggers historically · confidence: low
+  ^MT117-C15-X1
 

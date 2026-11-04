@@ -103,8 +103,8 @@
   }
  ],
  "chunks": 16,
- "crosscheck": null,
- "completeness_estimate": null,
+ "crosscheck": "opus cross-check",
+ "completeness_estimate": "0.88 - first reader caught nearly all ideas (40 claims); missed the 2022/2008 all-speeds-profit regime point, the rank-spread method caveat, the 2016 small-universe reading, the YTD numbers and the directional-premium critique; three speaker misattributions.",
  "claims": [
   {
    "claim_id": "MT116-C02-1",
@@ -212,6 +212,11 @@
    "speaker_confidence": "high",
    "time_bound": "yes",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT116-C04-1",
+    "issue": "wrong speaker: the seven-months-in-a-row and metals-and-equities remark is made by host Neils Kostrup Larsen, not Nick Baltas",
+    "fix": "Neils Kostrup Larsen: trend conditions were strong for seven consecutive months into January 2026, driven by metals and equities (continuation of 2025 second half)."
+   },
    "quote_check": "exact"
   },
   {
@@ -392,6 +397,11 @@
    "speaker_confidence": "medium",
    "time_bound": "yes",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT116-C07-2",
+    "issue": "speaker: Neils Kostrup Larsen raises 2022 fast-speed result from Baltas's data; Baltas then explains all speeds did well in 2022. 'Flips with regime' is the reader's inference",
+    "fix": "Neils Kostrup Larsen (from Baltas's data): in 2022 the fastest trend speeds ranked best, the reverse of the last three years; Baltas adds that all speeds did well in that sustained-trend year."
+   },
    "quote_check": "exact"
   },
   {
@@ -590,6 +600,11 @@
    "speaker_confidence": "medium",
    "time_bound": "no",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT116-C11-1",
+    "issue": "wrong speaker: the point that trend allocations fail mainly because of investor behaviour is made by Neils Kostrup Larsen, summarising the Mercer paper",
+    "fix": "Neils Kostrup Larsen: trend following allocations often fail because of investors' reaction to drawdowns rather than the strategy itself."
+   },
    "quote_check": "exact"
   },
   {
@@ -825,9 +840,117 @@
    "time_bound": "no",
    "reader": "sonnet",
    "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT116-C06-X1",
+   "chunk": "C06",
+   "speaker": "Nick Baltas",
+   "quote": "strong performance broadly speaking like on the on the four to five to 6% depending on the speed. Um and that's more for a 15 volt type of um of a measurement primarily driven by equities and then commod",
+   "claim": "Year-to-date January 2026 trend returns were about 4-6% at 15% volatility depending on speed, driven mainly by equities and then commodities.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "Baltas trend models YTD return at 15% vol by speed",
+   "horizon": "weeks",
+   "direction": "long equities and commodities trends paid",
+   "conditions": "",
+   "testable": "yes - compare trend index returns Jan 2026 by sector",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT116-C07-X1",
+   "chunk": "C07",
+   "speaker": "Neils Kostrup Larsen",
+   "quote": "pretty much since 2016 small universes have been um you know the better performer. It's flipped between small and and super and super large",
+   "claim": "Reading Baltas's ranking data, small trend universes have mostly been the better performer since about 2016, alternating with very large universes, which flatters replicators that use small universes.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "annual rank of trend universe size",
+   "horizon": "years",
+   "direction": "small universe ranked best since 2016",
+   "conditions": "reversed in 2002-2009",
+   "testable": "yes - rank annual returns of trend models by universe size",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT116-C07-X2",
+   "chunk": "C07",
+   "speaker": "Neils Kostrup Larsen",
+   "quote": "in 2008, I do remember from our analysis that yes, the the very best single look back period was something like 56 days",
+   "claim": "In 2008 the best single trend lookback was about 56 days, but every lookback made money that year, so the best-speed ranking matters little in strong crisis trends.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "trend lookback period performance 2008",
+   "horizon": "months",
+   "direction": "all trend speeds positive in 2008",
+   "conditions": "sustained crisis trends",
+   "testable": "yes - backtest trend lookbacks in 2008",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT116-C08-X1",
+   "chunk": "C08",
+   "speaker": "Nick Baltas",
+   "quote": "given we had sustained trends in 2022. Mhm. So we had the commod in the beginning rates throughout and then a dollar in the summer until November",
+   "claim": "In sustained-trend years like 2022 (commodities early, rates all year, dollar from summer to November) every trend speed profits, and entering a month earlier or later only shifts returns from about +40% to +35%.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "2022 trends in commodities, rates and USD",
+   "horizon": "months",
+   "direction": "all speeds positive in persistent trend years",
+   "conditions": "sustained trends without V-shaped reversals",
+   "testable": "yes - compare trend speeds in 2022",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT116-C08-X2",
+   "chunk": "C08",
+   "speaker": "Nick Baltas",
+   "quote": "what this analysis is missing at this point in time is also an indication of what's maybe the spread between the top and the bottom ranked",
+   "claim": "Ranking trend speeds or universes by annual return is incomplete without the return spread between the top and bottom ranks, since the spread may be too small to matter.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "top-minus-bottom spread of ranked design variants",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - report rank spreads alongside rankings",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT116-C15-X1",
+   "chunk": "C15",
+   "speaker": "Nick Baltas",
+   "quote": "everyone said, \"Hey, you're buying equities, you're buying bonds, you're just benefiting from carry and equities premium.\" No longer the case.",
+   "claim": "Part of trend following's return is a directional component from mostly holding assets with positive risk premia; critics a few years ago said trend just harvested equity and bond premia, a doubt Baltas says is now gone.",
+   "mechanism": "risk_premium",
+   "asset_class": "multi",
+   "indicator": "trend return decomposition: directional vs timing",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "directional part dominates when equity and bond premia are positive and trending",
+   "testable": "yes - decompose trend returns into average-position and timing parts",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
   }
  ],
  "n_sonnet": 40,
- "n_opus_added": 0,
- "n_corrections": 0
+ "n_opus_added": 6,
+ "n_corrections": 3
 }

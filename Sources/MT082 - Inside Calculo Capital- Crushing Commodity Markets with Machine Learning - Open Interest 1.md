@@ -5,10 +5,10 @@ date: 2025-04-27
 channel: "Top Traders Unplugged"
 url: 
 words: 7343
-claims: 46
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 51
+added_by_crosscheck: 5
+corrections: 2
+crosscheck: "opus cross-check"
 speakers: ["Philip Engel Carlson (founder, Calculo Capital)", "Ola Hansen (Saxo Bank commodity strategist, Calculo board member)", "Moritz Seibert (host, Top Traders Unplugged)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Interview with Calculo Capital, a Copenhagen short-term (2 to 5 day) systematic commodity CTA. Classical breakout trend-following entries, machine learning used only for exits via pattern matching to historical trades; plus Saxo's commodity outlook for early 2025 (precious metals, tariffs, natural gas).
 
 **Approach:** trend following, commodities, machine learning exits, short-term CTA
+
+**Cross-check completeness estimate of first read:** 0.90 - Calculo's method and Ola's outlook are well covered; missed the China-tariff copper driver, ML-noise caveat, no-curve design point, index composition and broad backwardation, and misattributed the host's natural gas trade to Calculo
 
 ## Coverage
 
@@ -98,6 +100,7 @@ tags: [source, layer0]
 - **Philip Engel Carlson** Calculo's short Henry Hub natural gas trade, held more than two years, was exited by a rally on 20 February 2025 after a cold weather outlook, an example of a trend position ending only when the trend reverses.  #mech/cycle_persistence _(time-bound view)_
   > We got kicked out of a short Henry hop position which we've had on for more than two years.
   indicator: Henry Hub natural gas · asset: commodities · direction: short natural gas · horizon: years · testable: no - single trade · confidence: high
+  **Correction (cross-check):** wrong speaker and fund: the two-year short Henry Hub trade belongs to host Moritz Seibert's long-term trend fund, not Calculo (whose holding period is 2 to 5 days) → Moritz Seibert: his trend-following fund's short Henry Hub position, held more than two years, was stopped out by the late-February 2025 rally on a colder weather outlook, an example of a long-held trend ending on reversal.
   ^MT082-C03-7
 
 ### C04
@@ -125,6 +128,10 @@ tags: [source, layer0]
   > because if you are if you have a if you're short gold in London market, you can go to the Bank of England and uh and and lease gold from uh from them.
   indicator: silver vs gold lending · asset: commodities · direction: silver squeezes · horizon: weeks · testable: partly - lease rates · confidence: medium
   ^MT082-C04-6
+- **Ola Hansen** Copper's early-2025 rally (about 15%) is driven first by China not yet being hit with US tariffs, alongside tariff-driven dislocations in COMEX pricing.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
+  > I think first of foremost the fact that uh that that China hasn't been slapped with terrorists just yet. Uh that's probably one thing
+  indicator: US tariff decisions on China; copper price · asset: commodities · direction: copper up while China escapes tariffs · horizon: weeks · conditions: until tariffs on China are imposed · testable: partly - copper moves around China tariff announcements · confidence: medium
+  ^MT082-C04-X1
 
 ### C05
 - **Ola Hansen** Silver carries higher tariff risk than gold because gold is quasi-monetary and much silver comes from Mexico.  #mech/policy_reaction _(time-bound view)_
@@ -201,6 +208,10 @@ tags: [source, layer0]
   > we actually only use it as a riskoff element which changes the picture quite a bit compared to trying to build a fully AI model that tries to predict the price targets.
   asset: commodities · horizon: days · testable: partly · confidence: high
   ^MT082-C08-3
+- **Moritz Seibert** Machine learning applied to market prediction risks fitting noise, and Seibert jokes that a clever machine would probably just rediscover buying breakouts, i.e. become a trend follower.  #mech/research_method _(added by opus cross-check)_
+  > how do you prevent the machine to learn from the noise which is you know a prevalent factor in the markets.
+  indicator: ML model trained on price data · asset: multi · conditions: noisy market data; ML used for direction prediction · testable: partly - compare ML entry rules with plain breakout rules out of sample · confidence: low
+  ^MT082-C08-X1
 
 ### C09
 - **Philip Engel Carlson** Machine learning exits are timed at the most liquid hours and are flags of possible correction, not firm predictions, so execution is done in liquid periods.  #mech/risk_management
@@ -215,6 +226,10 @@ tags: [source, layer0]
   > we had to have bad months for equities we quite often find that uh that there's actually some uh positive months coming in through the commodities.
   indicator: commodity strategy vs equity monthly returns · asset: multi · horizon: months · testable: yes - correlation in down months · confidence: low
   ^MT082-C09-3
+- **Philip Engel Carlson** Calculo does not use forward-curve information (contango, backwardation, seasonality) as a signal and does not trade calendar spreads; only outright futures on price patterns.  #mech/research_method _(added by opus cross-check)_
+  > Does this information trigger anything at Calculu or are you maybe even trading spreads uh which you know you can do in the commodity markets? is when we're not trading spreads as no.
+  indicator: forward curve shape (not used) · asset: commodities · horizon: days · testable: no - design description · confidence: high
+  ^MT082-C09-X1
 
 ### C10
 - **Moritz Seibert** Commodities have no equity-like positive drift, so they should be traded both long and short.  #mech/risk_premium
@@ -236,9 +251,18 @@ tags: [source, layer0]
 - **Moritz Seibert** In contango, a short position earns roll yield (natural gas); Calculo benefited from the upward-sloping curve but does not roll monthly and is aware of seasonality.  #mech/risk_premium
   > you have been making money being short simply on the the role of the uh the role from a from a from a low to a high contract.
   indicator: commodity futures curve slope (contango) · asset: commodities · direction: short in contango · horizon: months · conditions: Applies in contango markets · testable: yes - roll yield is measurable · confidence: medium
+  **Correction (cross-check):** wrong attribution: the natural gas short that earned contango roll yield is Seibert's fund, not Calculo; Ola raised the roll point and Seibert replied → Ola Hansen / Moritz Seibert: in contango a short natural gas position earned roll yield even through big rallies; Seibert's fund benefited from the upward-sloping curve, though it does not roll every month and watches seasonality.
   ^MT082-C10-5
 - **Philip Engel Carlson** Calculo reports equity-like returns at two-thirds of stock index volatility since 2018, non-correlated and non-cyclical.  #mech/risk_management _(time-bound view)_
   > that we over the past seven years almost since inception has actually delivered equity-like returns at 2/3 of the volatility of uh the broad stock indices.
   indicator: fund track record · asset: commodities · horizon: years · conditions: Self-reported · testable: partly - track record claim, not verified · confidence: medium
   ^MT082-C10-6
+- **Moritz Seibert** First-generation long-only commodity indices (e.g. BCOM) are concentrated (caption says equity; likely energy) and metals heavy and exclude small markets, while newer variants diversify more and spread exposure along the curve, so index choice drives commodity beta returns.  #mech/structural_shift _(added by opus cross-check)_
+  > the first [L380] generation of these indices, they're equity and metals heavy. And then there's all the, you know, smart variations that um are more diversified and they distribute liquidity across the curve more.
+  indicator: commodity index composition and curve placement · asset: commodities · horizon: years · testable: yes - compare first-generation vs diversified/curve-spread indices · confidence: medium
+  ^MT082-C10-X1
+- **Ola Hansen** Roll yield has turned positive (backwardation) across most commodity markets, with US natural gas the big exception where contango kept rewarding shorts even through price spikes.  #mech/risk_premium _(added by opus cross-check, time-bound view)_
+  > we generally are starting to see a a positive royal coming into the markets except uh and the big exception is is obviously where you just have had your profitable short in natural gas
+  indicator: futures curve slope / roll yield by commodity · asset: commodities · direction: long backwardated markets earn roll; short contango natural gas earns roll · horizon: months · conditions: backwardated curves (most markets) vs contango (natural gas) · testable: yes - curve slope and roll returns by market · confidence: medium
+  ^MT082-C10-X2
 

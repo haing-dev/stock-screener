@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 14342
 claims: 75
-added_by_opus: 17
+added_by_crosscheck: 17
 corrections: 5
 crosscheck: "opus cross-check"
 speakers: ["Andrew Beer (Dynamic Beta Investments, manager of DBMF replication ETF)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, CTA replication, QIS products, implementation costs, managed futures ETFs
 
-**Opus completeness estimate of first read:** 0.80 - first reader caught all major theses (complexity vs cost, QIS backtest decay, crowding in March) but missed QIS dispersion, wrapper-universe data, several data sources and Niels's counterpoints; 5 speaker/meaning errors.
+**Cross-check completeness estimate of first read:** 0.80 - first reader caught all major theses (complexity vs cost, QIS backtest decay, crowding in March) but missed QIS dispersion, wrapper-universe data, several data sources and Niels's counterpoints; 5 speaker/meaning errors.
 
 ## Coverage
 
@@ -60,7 +60,7 @@ tags: [source, layer0]
 - **Andrew Beer** Earlier crises (GFC, pandemic) were fixed by Fed or fiscal action, but this ideology-driven geopolitical crisis cannot be, so it is a different regime that will persist.  #mech/structural_shift _(time-bound view)_
   > All of those more or less could be fixed by the Federal Reserve coming in with a big bazooka
   asset: multi · conditions: crisis driven by ideology rather than liquidity/credit · testable: no - qualitative regime claim · confidence: medium
-  **Correction (Opus):** Wrong speaker: the 'crises could be fixed by the Fed / this one is about ideology / different regime' view is the host Niels, continuing his question from C01. → Niels Kaastrup-Larsen: earlier crises (GFC, pandemic) could be fixed by Fed or fiscal action, but this ideology-driven geopolitical crisis cannot, so it is a different regime that will persist.
+  **Correction (cross-check):** Wrong speaker: the 'crises could be fixed by the Fed / this one is about ideology / different regime' view is the host Niels, continuing his question from C01. → Niels Kaastrup-Larsen: earlier crises (GFC, pandemic) could be fixed by Fed or fiscal action, but this ideology-driven geopolitical crisis cannot, so it is a different regime that will persist.
   ^MT056-C02-1
 - **Andrew Beer** Geopolitical negotiation outcomes range from zero to ten, so markets whipsaw as they try to price each headline.  #mech/behavioral _(time-bound view)_
   > the range of outcomes is not like between you know four and six
@@ -117,17 +117,17 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** Either short-term models that exit quickly or broad diversification across many contracts (not concentrated in WTI) may explain which CTAs fared better in March.  #mech/slow_reaction _(time-bound view)_
   > short-term models may have been a saving grace in March you know you may have gotten out faster
   asset: multi · direction: short-term trend or wide diversification reduced March losses · horizon: weeks · conditions: sharp reversal after escalation/de-escalation · testable: yes - compare fast vs diversified CTA returns · confidence: low
-  **Correction (Opus):** Wrong speaker: this is Andrew Beer speaking (he continues until 'We'll see.'), not Niels. → Andrew Beer: either short-term models that exited quickly or broad diversification across many contracts (not concentrated in WTI) may explain which CTAs fared better in March.
+  **Correction (cross-check):** Wrong speaker: this is Andrew Beer speaking (he continues until 'We'll see.'), not Niels. → Andrew Beer: either short-term models that exited quickly or broad diversification across many contracts (not concentrated in WTI) may explain which CTAs fared better in March.
   ^MT056-C06-2
 - **Andrew Beer** If the conflict raises inflation so stocks and bonds fall together as in 2022, trend following would again deliver a very strong year; if the world normalizes it lags equities.  #mech/cycle_persistence
   > it plays out through through stocks and bonds at the same time which again have the same risk which is inflation
   indicator: stock-bond correlation · asset: multi · direction: long trend following when stocks and bonds fall together · horizon: years · conditions: inflationary shock hitting both stocks and bonds · testable: yes - 2022 analog and stock-bond correlation regimes · confidence: medium
   ^MT056-C06-3
-- **Andrew Beer** In the March 2026 environment the trend book held offsetting pairs (long crude with long gold, long international stocks against short S&P), so headline swings partly netted out across positions.  #mech/risk_management _(added by Opus, time-bound view)_
+- **Andrew Beer** In the March 2026 environment the trend book held offsetting pairs (long crude with long gold, long international stocks against short S&P), so headline swings partly netted out across positions.  #mech/risk_management _(added by opus cross-check, time-bound view)_
   > you're sort of hedged I guess because you know they they're kind of not going up or down if you have if you're long uh international stocks but short the S&P
   indicator: cross-position offsets in CTA book · asset: multi · direction: long crude + long gold; long non-US equities vs short S&P · horizon: weeks · conditions: geopolitical whipsaw regime · testable: partly - needs position data or replicated positions · confidence: low
   ^MT056-C06-X1
-- **Andrew Beer** Trend books positioned for ongoing geopolitical chaos are exposed to sharp reversal days on de-escalation news (e.g. a ceasefire announcement), similar to the Liberation Day reversal.  #mech/overshoot _(added by Opus, time-bound view)_
+- **Andrew Beer** Trend books positioned for ongoing geopolitical chaos are exposed to sharp reversal days on de-escalation news (e.g. a ceasefire announcement), similar to the Liberation Day reversal.  #mech/overshoot _(added by opus cross-check, time-bound view)_
   > from a positioning perspective when you see yourself kind of positioning for for like ongoing chaos.
   indicator: ceasefire / de-escalation headlines · asset: multi · direction: trend positions lose on de-escalation days · horizon: days · conditions: positions built on conflict trends (long oil, short bonds) · testable: yes - CTA index returns on de-escalation event days · confidence: medium
   ^MT056-C06-X2
@@ -144,13 +144,13 @@ tags: [source, layer0]
 - **Andrew Beer** Named March 2026 returns: Citadel fixed income about -8%, Brevan Howard -6%, Capstone -15%, Marshall Wace Eureka -5%, plus wide dispersion among UCITS CTAs, supporting the crowding explanation.  #mech/crowding_positioning _(time-bound view)_
   > Brevin Howard was down six
   indicator: Bloomberg hedge fund return rankings (Nishant Kumar) · asset: multi · horizon: weeks · testable: yes - published monthly returns · confidence: medium
-  **Correction (Opus):** 'Cton down 15%' is most likely Caxton, not Capstone; the list (partly read by Niels) also includes an absolute-return fund down 6. → Named March 2026 returns: Citadel fixed income about -8%, Brevan Howard -6%, 'Cton' (likely Caxton) -15%, an absolute-return fund -6%, Marshall Wace Eureka -5%, plus wide dispersion among UCITS CTAs.
+  **Correction (cross-check):** 'Cton down 15%' is most likely Caxton, not Capstone; the list (partly read by Niels) also includes an absolute-return fund down 6. → Named March 2026 returns: Citadel fixed income about -8%, Brevan Howard -6%, 'Cton' (likely Caxton) -15%, an absolute-return fund -6%, Marshall Wace Eureka -5%, plus wide dispersion among UCITS CTAs.
   ^MT056-C07-3
-- **Andrew Beer** Bloomberg's hedge-fund return rankings (published by Nishant Kumar) are a timely data source for checking whether CTA drawdowns are shared by the wider macro hedge-fund space.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** Bloomberg's hedge-fund return rankings (published by Nishant Kumar) are a timely data source for checking whether CTA drawdowns are shared by the wider macro hedge-fund space.  #mech/research_method _(added by opus cross-check)_
   > he covers hedge funds for Bloomberg and he publishes the basically the rankings or the returns rankings of underlying hedge funds and he puts it up on LinkedIn and his data is great and it's up to date
   indicator: Bloomberg hedge fund monthly return rankings · asset: multi · horizon: months · testable: partly - data source, not a signal · confidence: high
   ^MT056-C07-X1
-- **Andrew Beer** Trend following is best seen as latching onto the same big trades that discretionary smart-money funds reach by other routes, so CTA and macro hedge-fund returns move together in reversals.  #mech/crowding_positioning _(added by Opus)_
+- **Andrew Beer** Trend following is best seen as latching onto the same big trades that discretionary smart-money funds reach by other routes, so CTA and macro hedge-fund returns move together in reversals.  #mech/crowding_positioning _(added by opus cross-check)_
   > I often think about this this strategy as latching on to these kinds of smart money trades that that people are coming to the same conclusion but from a different perspective.
   indicator: CTA vs macro hedge fund return correlation · asset: multi · horizon: months · conditions: big consensus macro trades · testable: yes - correlation of CTA index with discretionary macro indices · confidence: medium
   ^MT056-C07-X2
@@ -164,7 +164,7 @@ tags: [source, layer0]
   > which is 40 basis points higher on an edify basis than the socken CTA index
   indicator: average CTA ETF vs SG CTA index, Morningstar data · asset: multi · direction: simple/efficient CTA products outperform complex ones · horizon: years · conditions: only five years of reliable data, 16 ETFs · testable: yes - Morningstar fund returns · confidence: medium
   ^MT056-C08-2
-- **Andrew Beer** Morningstar data: 16 managed-futures ETFs (from about 2 in 2019), 18 US mutual funds and 45 UCITS funds, with UCITS AUM below mutual-fund AUM; this population allows wrapper-by-wrapper performance comparisons, with short histories as a caveat.  #mech/research_method _(added by Opus, time-bound view)_
+- **Andrew Beer** Morningstar data: 16 managed-futures ETFs (from about 2 in 2019), 18 US mutual funds and 45 UCITS funds, with UCITS AUM below mutual-fund AUM; this population allows wrapper-by-wrapper performance comparisons, with short histories as a caveat.  #mech/research_method _(added by opus cross-check, time-bound view)_
   > There are 16 funds in that space. Uh when we got into the space in 2019, there are basically two. Um compare it. There are only 18 mutual funds.
   indicator: Morningstar managed futures fund universe by wrapper · asset: multi · horizon: years · conditions: data mostly recent · testable: yes - Morningstar category data · confidence: high
   ^MT056-C08-X1
@@ -177,7 +177,7 @@ tags: [source, layer0]
 - **Andrew Beer** Trend signals pay by catching a few big moves early, e.g. shorting Treasuries in Sept 2020 once yields rose from 0.5% to 0.7%, buying gold below 3,000 after a decade of failure, shorting crude at 105-110 and riding it down.  #mech/slow_reaction
   > you can be early contrarian and right into a handful of big trades
   indicator: 10-year Treasury yield, gold, crude oil · asset: multi · direction: short Treasuries 2020, long gold, short crude · horizon: years · conditions: large persistent trends from a modest initial signal · testable: yes - trend backtests on these markets · confidence: high
-  **Correction (Opus):** Misread: 'shorting the end at 105 or 110 riding it down to 160' refers to shorting the yen (USD/JPY from 105-110 to 160), separate from buying crude oil earlier this year; it is not shorting crude. → Trend signals pay by catching a few big moves early: shorting Treasuries in Sept 2020 once 10y yields rose from 0.5% to 0.7%, buying gold below 3,000 after a decade of failure, buying crude early this year, and shorting the yen from 105-110 down to 160 per dollar.
+  **Correction (cross-check):** Misread: 'shorting the end at 105 or 110 riding it down to 160' refers to shorting the yen (USD/JPY from 105-110 to 160), separate from buying crude oil earlier this year; it is not shorting crude. → Trend signals pay by catching a few big moves early: shorting Treasuries in Sept 2020 once 10y yields rose from 0.5% to 0.7%, buying gold below 3,000 after a decade of failure, buying crude early this year, and shorting the yen from 105-110 down to 160 per dollar.
   ^MT056-C09-2
 - **Andrew Beer** Most dollars made in CTAs come from a handful of big cross-asset trades, not from many orthogonal positions, so replication focuses on clusters and cross-asset relationships.  #mech/structural_shift
   > not you know P&L from 100 different orthogonal positions
@@ -236,7 +236,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** Comparison to constituents of a fixed starting set is biased because later managers that did better were added to the index, so index composition changes over time (survivorship/inclusion).  #mech/research_method
   > they get included in the index and so they're in the index today
   asset: multi · conditions: when comparing replication with a historical constituent list · testable: yes - point-in-time constituent list · confidence: medium
-  **Correction (Opus):** Wrong speaker: Niels only doubts the numbers; the survivorship/inclusion argument (later, better managers were added to the index) is Andrew Beer's reply. → Andrew Beer: none of the 2016 index constituents beat the replication; managers that did better were outside that group and were added to the index later, so comparisons against today's index members are biased by inclusion.
+  **Correction (cross-check):** Wrong speaker: Niels only doubts the numbers; the survivorship/inclusion argument (later, better managers were added to the index) is Andrew Beer's reply. → Andrew Beer: none of the 2016 index constituents beat the replication; managers that did better were outside that group and were added to the index later, so comparisons against today's index members are biased by inclusion.
   ^MT056-C12-1
 - **Andrew Beer** Beer could not beat the SG CTA index via own models, QIS products or manager selection, so he sought a structural efficiency advantage in capturing the same signal.  #mech/research_method
   > The way for me to beat the index over time was to capture the signal more efficiently.
@@ -246,7 +246,7 @@ tags: [source, layer0]
   > if you have a 54% chance probability you just keep doing it again and again and again
   asset: multi · horizon: weeks · conditions: no strong skew; small edge repeated often · testable: yes - rolling outperformance frequency · confidence: medium
   ^MT056-C12-3
-- **Andrew Beer** An edge over a benchmark comes either from a higher hit rate or from positive skew of wins; replication's edge is a small hit-rate advantage with symmetric outcomes, not skew.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** An edge over a benchmark comes either from a higher hit rate or from positive skew of wins; replication's edge is a small hit-rate advantage with symmetric outcomes, not skew.  #mech/research_method _(added by opus cross-check)_
   > you're either have a higher probability of winning or you're or or you know you'll have some great skew when you win. We don't have great skew in that.
   indicator: weekly hit rate and win/loss size vs benchmark · asset: multi · horizon: weeks · testable: yes - hit rate and skew of weekly relative returns · confidence: high
   ^MT056-C12-X1
@@ -268,7 +268,7 @@ tags: [source, layer0]
   > An S&P 500 three basis point S&P 500 ETF is simply a better investment than trying to pick long only managers
   asset: equities · direction: passive low-cost over active · testable: yes - fee drag studies · confidence: high
   ^MT056-C13-4
-- **Andrew Beer** Replication inputs need not be hedge-fund returns only: QIS product returns or the firm's own internal trend models (used for risk management, not invested) can also supply the signal.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** Replication inputs need not be hedge-fund returns only: QIS product returns or the firm's own internal trend models (used for risk management, not invested) can also supply the signal.  #mech/research_method _(added by opus cross-check)_
   > we could build our own series of you know basically trend we run our own trend volume following models we just don't invest in them
   indicator: QIS returns; internal trend model returns · asset: multi · conditions: if hedge funds stopped publishing data · testable: yes - compare replication fit using each input set · confidence: medium
   ^MT056-C13-X1
@@ -282,7 +282,7 @@ tags: [source, layer0]
   > it's now 31% of the mutual funded ETF business in the US
   asset: other · horizon: years · testable: yes - industry data · confidence: medium
   ^MT056-C14-2
-- **Niels Kaastrup-Larsen** A Goldman Sachs paper shows fund flows going heavily to passive and away from active managers, though Beer notes rising markets over the period and that active assets in dollars remain larger.  #mech/structural_shift _(added by Opus)_
+- **Niels Kaastrup-Larsen** A Goldman Sachs paper shows fund flows going heavily to passive and away from active managers, though Beer notes rising markets over the period and that active assets in dollars remain larger.  #mech/structural_shift _(added by opus cross-check)_
   > there was a chart in in that paper about the flows uh in terms of what has gone into active what has gone into passive
   indicator: active vs passive fund flows (Goldman Sachs paper) · asset: equities · direction: flows to passive, out of active · horizon: years · conditions: rising markets over the sample · testable: yes - fund flow data · confidence: medium
   ^MT056-C14-X1
@@ -300,7 +300,7 @@ tags: [source, layer0]
   > the space really took off in I would say 2012 2013
   asset: multi · horizon: years · testable: no - history · confidence: medium
   ^MT056-C15-3
-- **Andrew Beer** Factor-based replication works poorly for low-net strategies such as merger arbitrage, which is why a bolt-on QIS product was considered instead.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** Factor-based replication works poorly for low-net strategies such as merger arbitrage, which is why a bolt-on QIS product was considered instead.  #mech/research_method _(added by opus cross-check)_
   > Our factor models don't do a good job with something like merger R, but there's a very low net.
   indicator: factor-model replication fit for merger arbitrage · asset: equities · conditions: low net exposure strategies · testable: yes - R-squared of factor replication by strategy · confidence: high
   ^MT056-C15-X1
@@ -318,15 +318,15 @@ tags: [source, layer0]
   > usually it's just made up stuff
   asset: multi · testable: yes - in-sample vs out-of-sample · confidence: high
   ^MT056-C16-3
-- **Andrew Beer** Pension staff like QIS products partly because they get to act as portfolio managers with long backtests to present, a principal-agent issue that drives demand regardless of live results.  #mech/behavioral _(added by Opus)_
+- **Andrew Beer** Pension staff like QIS products partly because they get to act as portfolio managers with long backtests to present, a principal-agent issue that drives demand regardless of live results.  #mech/behavioral _(added by opus cross-check)_
   > It's a new principal agent issue. It's it's it's it's you're you're you're arming them with basically macro quantitative macro weapons.
   asset: multi · horizon: years · testable: no - motive statement · confidence: medium
   ^MT056-C16-X1
-- **Andrew Beer** QIS strategies come in multiple versions (different vol targets, excess vs total return), so allocators must normalise for volatility and cash return before comparing products.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** QIS strategies come in multiple versions (different vol targets, excess vs total return), so allocators must normalise for volatility and cash return before comparing products.  #mech/research_method _(added by opus cross-check)_
   > you might have four different indices of the same strategy with different vault targets. You'll have excess return versus total return.
   indicator: QIS index variants (vol target, ER vs TR) · asset: multi · testable: partly - data-handling caveat · confidence: high
   ^MT056-C16-X2
-- **Andrew Beer** Trend exposure held through bank QIS products is in the hundreds of billions, and its buyers differ (fund selectors seeking a fiduciary vs staff wanting PM-style tools), so it is a large, separate pool of trend capital.  #mech/liquidity_flows _(added by Opus)_
+- **Andrew Beer** Trend exposure held through bank QIS products is in the hundreds of billions, and its buyers differ (fund selectors seeking a fiduciary vs staff wanting PM-style tools), so it is a large, separate pool of trend capital.  #mech/liquidity_flows _(added by opus cross-check)_
   > there's hundreds of billions of dollars in in QIS products and things out there.
   indicator: QIS trend AUM · asset: multi · horizon: years · testable: partly - AUM estimates hard to verify · confidence: low
   ^MT056-C16-X3
@@ -348,15 +348,15 @@ tags: [source, layer0]
   > it's a constant series of launching new indices
   asset: multi · testable: no - industry practice · confidence: medium
   ^MT056-C17-4
-- **Andrew Beer** Annual return dispersion among QIS trend products reaches up to 40 percentage points in some years, so the choice of product dominates any notion of a common trend beta.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** Annual return dispersion among QIS trend products reaches up to 40 percentage points in some years, so the choice of product dominates any notion of a common trend beta.  #mech/research_method _(added by opus cross-check)_
   > That the dispersion among products in some years is up to 40%.
   indicator: cross-product return dispersion of ~17 QIS trend indices · asset: multi · horizon: years · testable: yes - Bloomberg QIS index data · confidence: high
   ^MT056-C17-X1
-- **Niels Kaastrup-Larsen** Niels contrasts fixed QIS indices with CTAs that keep researching and upgrading models, arguing ongoing research improves a trend product over time.  #mech/research_method _(added by Opus)_
+- **Niels Kaastrup-Larsen** Niels contrasts fixed QIS indices with CTAs that keep researching and upgrading models, arguing ongoing research improves a trend product over time.  #mech/research_method _(added by opus cross-check)_
   > like a quarter of our company is is in research and we do make upgrades. We do believe that our product today is better than what we had 10 years ago.
   asset: multi · horizon: years · testable: partly - compare live performance of evolving vs frozen models · confidence: medium
   ^MT056-C17-X2
-- **Andrew Beer** Premialab aggregates bank QIS index data and is a source for allocators trying to compare QIS products.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** Premialab aggregates bank QIS index data and is a source for allocators trying to compare QIS products.  #mech/research_method _(added by opus cross-check)_
   > there's a company called called Premier Lab which we don't use but they have a lot of I mean they basically [L700] try to aggregate all this stuff
   indicator: Premialab QIS database · asset: multi · testable: partly - data source · confidence: medium
   ^MT056-C17-X3
@@ -370,7 +370,7 @@ tags: [source, layer0]
   > 170 basis point mutual funds out there that probably have 200 basis points in trading costs
   asset: multi · testable: yes - all-in cost comparison · confidence: medium
   ^MT056-C18-2
-- **Niels Kaastrup-Larsen** Swap-based products on a manager's index report only the wrapper fee, not the underlying index fee, so reported expense ratios understate total cost.  #mech/research_method _(added by Opus)_
+- **Niels Kaastrup-Larsen** Swap-based products on a manager's index report only the wrapper fee, not the underlying index fee, so reported expense ratios understate total cost.  #mech/research_method _(added by opus cross-check)_
   > you can just do a product use a swap and then you don't have to report any fees.
   indicator: reported expense ratio vs embedded swap fee · asset: multi · conditions: swap-based wrappers · testable: partly - requires swap term data · confidence: high
   ^MT056-C18-X1
@@ -380,7 +380,7 @@ tags: [source, layer0]
   > that's a negative trading cost because I'm comparing my execution price to the settlement price at the end of the day
   asset: multi · conditions: benchmark is end-of-day settlement price · testable: yes - implementation shortfall vs arrival price · confidence: high
   ^MT056-C19-1
-- **Andrew Beer** Fee reporting can be gamed (e.g. 0% management / 40% incentive share classes reported as zero fee), so only net returns allow fair comparison.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** Fee reporting can be gamed (e.g. 0% management / 40% incentive share classes reported as zero fee), so only net returns allow fair comparison.  #mech/research_method _(added by opus cross-check)_
   > they're bragging about having zero and 40 share class 40% incentive fee share classes because they can report the zero, not the 40.
   asset: multi · testable: no - anecdote · confidence: high
   ^MT056-C19-X1

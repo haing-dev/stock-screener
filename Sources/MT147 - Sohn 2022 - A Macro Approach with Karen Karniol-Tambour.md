@@ -5,10 +5,10 @@ date: 2022-06-10
 channel: "Sohn Conference Foundation"
 url: https://www.youtube.com/watch?v=b5q1l3aJ-_s
 words: 3158
-claims: 25
-added_by_opus: 0
+claims: 33
+added_by_crosscheck: 8
 corrections: 0
-crosscheck: "pending"
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Karen Karniol-Tambour (Bridgewater co-CIO, speaker)", "Graeme (Sohn host)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Bridgewater's Karniol-Tambour argues record US corporate profits depend on spending funded by borrowing, dissaving and fiscal transfers rather than wages. That support is fading as transfers end and labor power rises. Markets price rate rises but not a profit decline, so she is bearish on equities.
 
 **Approach:** macro fundamental, top-down equities, profit cycle
+
+**Cross-check completeness estimate of first read:** 0.76 - the first reader (25 claims) caught the core profit-identity, fiscal-transfer, labour-power, inflation-squeeze and priced-in arguments; it missed the record-profit premise, the DCF 'read what is priced in' framing, the explicit mean-reversion conclusion, the inflation/lag feedback from the stimulus, and a few smaller links.
 
 ## Coverage
 
@@ -53,6 +55,14 @@ tags: [source, layer0]
   > in the decades leading up to the financial crisis basically you had very significant secular forces
   indicator: corporate profits / GDP · asset: equities · direction: profit share up · horizon: years · conditions: pre-2008 · testable: no - narrative of structural forces, no sharp signal · confidence: medium
   ^MT147-C01-5
+- **Karen Karniol-Tambour** US corporate profits relative to GDP stand at multi-decade, record highs in mid-2022, which is the starting point for the argument that they are exposed to mean reversion.  #mech/cycle_persistence _(added by sonnet-xhigh cross-check, time-bound view)_
+  > u.s corporate profits are currently at the highest level they've really ever been
+  indicator: US corporate profits as a share of GDP · asset: equities · direction: record profit share is a downside risk for equities · horizon: years · testable: yes - NIPA corporate profits / GDP series · confidence: high
+  ^MT147-C01-X1
+- **Karen Karniol-Tambour** The profit identity (profits need non-wage spending) is only a mechanical accounting condition; whether households, firms and governments actually choose to borrow or deficit-spend depends on behavioural and structural drivers, so the forecast has to model why they would.  #mech/behavioral _(added by sonnet-xhigh cross-check)_
+  > that's a mechanical answer right these are all people governments individuals businesses they have to choose to borrow for a reason
+  asset: equities · horizon: years · conditions: identity holds always; the funding sources are choices that can stop · testable: partly - sectoral financial balances are measurable, motives are not · confidence: high
+  ^MT147-C01-X2
 
 ### C02
 - **Karen Karniol-Tambour** Globalization, deregulation and union decline cut worker bargaining power, so wages lagged and workers borrowed to keep spending, raising profits.  #mech/structural_shift
@@ -79,6 +89,14 @@ tags: [source, layer0]
   > the government gave people a significant amount of money that actually more than offsets all the wages that they lost
   indicator: fiscal transfers vs lost wages · asset: equities · direction: corporate profits up · horizon: months · conditions: 2020-21 stimulus · testable: no - single episode · confidence: high
   ^MT147-C02-6
+- **Karen Karniol-Tambour** Part of the 2020-21 stimulus transfers was saved or put into stocks and crypto, so fiscal money also inflated risk-asset prices while the rest kept consumer spending (and so corporate revenue) going.  #mech/liquidity_flows _(added by sonnet-xhigh cross-check, time-bound view)_
+  > they did a lot of savings also put a lot of money into stock market and crypto
+  indicator: household savings, retail equity and crypto flows after stimulus · asset: equities · direction: fiscal transfers push up risk assets · horizon: months · conditions: large direct transfers to households · testable: yes - retail flows and savings rate around stimulus payments · confidence: medium
+  ^MT147-C02-X1
+- **Karen Karniol-Tambour** Before Covid the profit-support paradigm was at its limit: profits and inequality were at extremes, QE had been used and rates were already at zero, so monetary policy had no room left to extend the leverage-driven profit model.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > rates were already zero it was sort of a breaking point of the paradigm
+  indicator: profit share, inequality, policy rates at zero · asset: equities · horizon: years · conditions: rates at the zero bound, extreme inequality and profit share · testable: no - qualitative regime judgement · confidence: medium
+  ^MT147-C02-X2
 
 ### C03
 - **Karen Karniol-Tambour** Stimulus checks repaired household balance sheets very fast, which left households able to spend from savings later.  #mech/fiscal_debt _(time-bound view)_
@@ -105,6 +123,14 @@ tags: [source, layer0]
   > every possible political proposal to address inequality in some way says maybe you should raise corporate taxes they're the lowest they've been in decades
   indicator: corporate tax rate, antitrust · asset: equities · direction: corporate taxes up, margins down · horizon: years · testable: no - political prediction · confidence: medium
   ^MT147-C03-6
+- **Karen Karniol-Tambour** The transfer-fuelled spending boom created inflation, which forced central banks to raise rates, and that rate rise in turn closes the borrowing channel that was supporting profits, so the stimulus sows the end of its own profit support.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > this insane boom that all these checks set off and the fact that everyone could spend so much money is creating inflation
+  indicator: inflation, policy and mortgage rates after fiscal stimulus · asset: multi · direction: inflation then tightening then lower household borrowing · horizon: months · conditions: large demand stimulus into constrained supply · testable: partly - sequence is observable, causality is judgement · confidence: high
+  ^MT147-C03-X1
+- **Karen Karniol-Tambour** The damage from rising rates and falling asset prices to household borrowing and spending operates with a lag and has not yet shown up in spending data, so a spending slowdown is still ahead.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > we know what happens with the lag and we know that it's coming
+  indicator: lagged effect of rate rises on household spending and borrowing · asset: multi · direction: spending and profits slow after tightening · horizon: months · conditions: after a fast rise in mortgage rates and asset-price falls · testable: yes - lead-lag of rate changes and consumption/credit growth · confidence: medium
+  ^MT147-C03-X2
 
 ### C04
 - **Karen Karniol-Tambour** Inflation concentrated in inelastic items such as fuel and food squeezes the budgets of the bottom 40-60% of consumers, so non-commodity firms cannot raise prices.  #mech/behavioral _(time-bound view)_
@@ -123,6 +149,14 @@ tags: [source, layer0]
   > if interest rates rose one and a half percent on a 10-year bond and maybe you have a 10-year stream of earnings that's a 15 equity decline
   indicator: 10-year yield, equity duration · asset: equities · direction: equities down when yields rise · horizon: months · testable: yes - duration arithmetic · confidence: high
   ^MT147-C04-4
+- **Karen Karniol-Tambour** A stock can be decomposed into expected profits plus a discount rate made of the risk-free interest rate and the risk premium for waiting, so one can read from prices what is priced in: here the price move matches the discount-rate change, not an earnings change.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > you could think about a stock as just a series of cash flows discounted for today
+  indicator: discounted cash flow split into profits, interest rate and risk premium · asset: equities · horizon: years · conditions: public equities where prices reveal what is priced in · testable: yes - decompose index returns into rate, premium and earnings expectation changes · confidence: high
+  ^MT147-C04-X1
+- **Karen Karniol-Tambour** Because all the funding sources of non-wage spending are fading and the structural margin tailwinds have reversed, record profit levels should revert downward, which makes lower earnings the central bearish forecast for US equities.  #mech/overshoot _(added by sonnet-xhigh cross-check, time-bound view)_
+  > profits are extremely high and it seems very unlikely they can remain this high at unprecedented levels forever
+  indicator: profit share of GDP, corporate margins · asset: equities · direction: short or underweight equities as profits mean-revert · horizon: years · conditions: when the profit share is at a record and borrowing, deficits and labour weakness stop supporting it · testable: yes - forward earnings versus starting profit share · confidence: high
+  ^MT147-C04-X2
 
 ### C05
 - **Karen Karniol-Tambour** Equities have only repriced for higher rates, not for lower profits, so no earnings slowdown is priced in.  #mech/policy_reaction _(time-bound view)_

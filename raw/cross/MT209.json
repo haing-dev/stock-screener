@@ -1,0 +1,43 @@
+{
+ "source_id": "MT209",
+ "added_claims": [
+  {
+   "claim_id": "MT209-C01-X1",
+   "chunk": "C01",
+   "speaker": "Guest (former Norwegian prime minister and finance minister; not named in captions)",
+   "quote": "then it was obvious that we needed we needed some way of uh deciding how much we could spend",
+   "claim": "Norway set its spending rule in 2000, only a few years after the first (small) net oil revenues arrived in 1996, because fear of Dutch disease made a spending limit necessary before the money accumulated.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "other",
+   "indicator": "oil revenue and sovereign wealth fund spending rule",
+   "horizon": "years",
+   "direction": "spend only the expected return",
+   "conditions": "Rule agreed early, while revenues were still small and consensus was easier.",
+   "testable": "no - historical design choice",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT209-C01-X2",
+   "chunk": "C01",
+   "speaker": "Guest (former Norwegian prime minister and finance minister; not named in captions)",
+   "quote": "I think it would have been lower than the current percent",
+   "claim": "The guest says a ceiling on the fund's share of the budget set in 2000 would have been lower than today's roughly 25%, and acknowledges concerns in the Norwegian debate about that dependence without going into detail.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "other",
+   "indicator": "share of state budget financed by fund returns (about 25%)",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "The rule fixed the 3% spending rate, not the fund's relative size, so dependence grew as the fund outgrew expectations.",
+   "testable": "partly - budget share is observable",
+   "speaker_confidence": "low",
+   "time_bound": "yes"
+  }
+ ],
+ "corrections": [],
+ "chunks_checked": [
+  "C01",
+  "C02"
+ ],
+ "completeness_estimate": "0.85 - the first reader captured the rule, its purposes, the credibility lesson and the equity-risk caveat; missed only the design-timing point and the remark about a budget-share ceiling, and I found no misstatements."
+}

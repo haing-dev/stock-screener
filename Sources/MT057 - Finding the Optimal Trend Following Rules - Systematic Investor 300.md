@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 9923
 claims: 39
-added_by_opus: 7
+added_by_crosscheck: 7
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Rich Brennan (Australian systematic trend follower)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, regime switching, Markov models, position sizing, CFD costs, AI and quant research
 
-**Opus completeness estimate of first read:** 0.88 - first reader covered the paper's logic, CFD costs, ATR sizing and AI view well; missed the rule families, portability, behavioral-vs-formal rationale, Niels's holy-grail caveat and Baum-Welch reference; no factual errors found.
+**Cross-check completeness estimate of first read:** 0.88 - first reader covered the paper's logic, CFD costs, ATR sizing and AI view well; missed the rule families, portability, behavioral-vs-formal rationale, Niels's holy-grail caveat and Baum-Welch reference; no factual errors found.
 
 ## Coverage
 
@@ -85,7 +85,7 @@ tags: [source, layer0]
   > if you're holding for extended periods the cost of that um swap can become quite large
   indicator: CFD swap rate · asset: multi · direction: avoid long holds on negative-swap markets · horizon: months · conditions: extended holding periods · testable: yes - cost-adjusted backtest · confidence: high
   ^MT057-C03-5
-- **Rich Brennan** For long-holding trend systems, cash CFDs give access to more markets than dated CFDs but carry daily overnight financing, so the choice depends on monitoring that holding cost against the wider market set.  #mech/risk_management _(added by Opus)_
+- **Rich Brennan** For long-holding trend systems, cash CFDs give access to more markets than dated CFDs but carry daily overnight financing, so the choice depends on monitoring that holding cost against the wider market set.  #mech/risk_management _(added by opus cross-check)_
   > like Dennis I I trade cash cfds as well
   indicator: cash vs dated CFD overnight financing · asset: multi · horizon: months · conditions: long holding periods · testable: yes - compare net returns after financing for cash vs dated CFDs · confidence: medium
   ^MT057-C03-X1
@@ -119,11 +119,11 @@ tags: [source, layer0]
   > found that on unseen data they were very effective models that got him a sharp of about 1.2
   asset: multi · horizon: years · conditions: out-of-sample futures · testable: yes - reproducible backtest · confidence: medium
   ^MT057-C06-3
-- **Rich Brennan** The paper compares three trend-rule families - moving-average crossovers (simple, linearly weighted, exponentially weighted), MACD and momentum - where linear and exponential weights put more weight on recent prices.  #mech/research_method _(added by Opus)_
+- **Rich Brennan** The paper compares three trend-rule families - moving-average crossovers (simple, linearly weighted, exponentially weighted), MACD and momentum - where linear and exponential weights put more weight on recent prices.  #mech/research_method _(added by opus cross-check)_
   > a linear moving average does is it is it weights um the the the moving average in a in a linear way such that when you're using a look back of say 50 days
   indicator: SMA / LMA / EMA crossover, MACD, momentum · asset: multi · horizon: months · testable: yes - rule families are fully specified · confidence: high
   ^MT057-C06-X1
-- **Rich Brennan** An analytically derived optimal rule can be ported quickly to new markets without fresh brute-force optimisation, which also reduces data-mining risk relative to market-by-market backtesting.  #mech/research_method _(added by Opus)_
+- **Rich Brennan** An analytically derived optimal rule can be ported quickly to new markets without fresh brute-force optimisation, which also reduces data-mining risk relative to market-by-market backtesting.  #mech/research_method _(added by opus cross-check)_
   > once the mathematics has been defined it allows you to very quickly use it in other Market Landscapes
   asset: multi · conditions: regime-switching model assumptions hold · testable: yes - out-of-market test of derived parameters · confidence: medium
   ^MT057-C06-X2
@@ -171,7 +171,7 @@ tags: [source, layer0]
   > predictive certainty about what's the next Market regime is a very shortterm um finding
   asset: multi · horizon: weeks · conditions: ML and AI methods; beyond one week the accuracy fades · testable: yes - forecast decay test · confidence: medium
   ^MT057-C10-3
-- **Rich Brennan** Trend following was previously justified mainly by behavioral-bias narratives; the regime-switching derivation gives a formal statistical rationale linking serial correlation to optimal rule parameters.  #mech/slow_reaction _(added by Opus)_
+- **Rich Brennan** Trend following was previously justified mainly by behavioral-bias narratives; the regime-switching derivation gives a formal statistical rationale linking serial correlation to optimal rule parameters.  #mech/slow_reaction _(added by opus cross-check)_
   > we could explain it in narrative form about behavioral biases and these sort of things that create Trends but now there's a paper suggesting that we can actually get a mathematical formula
   asset: multi · horizon: months · testable: partly - theory statement · confidence: high
   ^MT057-C10-X1
@@ -189,7 +189,7 @@ tags: [source, layer0]
   > Trend following following the core principles that we always come back to uh still seems to be working very well
   asset: multi · horizon: years · testable: partly - long-run trend index · confidence: medium
   ^MT057-C11-3
-- **Niels Kaastrup-Larsen** Niels cautions that analytically 'optimal' parameters cannot be a holy grail; if everyone could derive them the edge would not hold, so the result supports but does not settle parameter choice.  #mech/research_method _(added by Opus)_
+- **Niels Kaastrup-Larsen** Niels cautions that analytically 'optimal' parameters cannot be a holy grail; if everyone could derive them the edge would not hold, so the result supports but does not settle parameter choice.  #mech/research_method _(added by opus cross-check)_
   > it almost sounds like the Holy Grail right everyone who these could then end up with the optimal uh parameters which of course we know is not going to be the case
   asset: multi · testable: no - caveat · confidence: medium
   ^MT057-C11-X1
@@ -203,7 +203,7 @@ tags: [source, layer0]
   > why is it that they could make so much money in Medallion but they couldn't make any money for their external clients
   asset: equities · testable: no - anecdotal · confidence: medium
   ^MT057-C12-2
-- **Rich Brennan** The Baum-Welch algorithm (Leonard Baum, Renaissance) is the estimation method needed to fit hidden Markov regime models, which Renaissance used from its code-breaking origins.  #mech/research_method _(added by Opus)_
+- **Rich Brennan** The Baum-Welch algorithm (Leonard Baum, Renaissance) is the estimation method needed to fit hidden Markov regime models, which Renaissance used from its code-breaking origins.  #mech/research_method _(added by opus cross-check)_
   > Lenny Bal who is responsible for what they call the Bal Welsh algorithm which is necessary for these Markoff processes
   indicator: Baum-Welch HMM estimation · asset: multi · testable: partly - method reference · confidence: medium
   ^MT057-C12-X1
@@ -221,7 +221,7 @@ tags: [source, layer0]
   > if there's one thing you shouldn't do is to do Trend following on a single sector uh or single Market it doesn't work
   asset: multi · testable: yes - diversification backtest · confidence: high
   ^MT057-C13-3
-- **Rich Brennan** Rich doubts that Markov/AI forecasting methods work at medium-to-long horizons because uncertainty compounds, so their edge is confined to the short term.  #mech/research_method _(added by Opus)_
+- **Rich Brennan** Rich doubts that Markov/AI forecasting methods work at medium-to-long horizons because uncertainty compounds, so their edge is confined to the short term.  #mech/research_method _(added by opus cross-check)_
   > when you're dealing in the medium to long-term space uh for these uh mathematical processes to work I'm a tiny bit doubtful of it because there is so much uncertainty in these markets
   indicator: regime-model forecast accuracy by horizon · asset: multi · horizon: months · conditions: horizons beyond about a week · testable: yes - forecast accuracy decay by horizon · confidence: medium
   ^MT057-C13-X1

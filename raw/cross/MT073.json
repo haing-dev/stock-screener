@@ -1,0 +1,32 @@
+{
+ "source_id": "MT073",
+ "added_claims": [
+  {"claim_id": "MT073-C08-X1", "chunk": "C08", "speaker": "Yoav Git",
+   "quote": "if I'm trading the outright there's going to be a certain cost in sharper basis stuff. So maybe three two or three basis points of sharp okay so 002 of sharp",
+   "claim": "Trading costs for slow outright trend are small, roughly 0.02-0.03 of Sharpe ratio, and slow trend is the dominant source of trend returns, which sets the cost benchmark that spread trading must beat.",
+   "mechanism": "research_method", "asset_class": "commodities", "indicator": "transaction cost in Sharpe-ratio units",
+   "horizon": "months", "direction": "",
+   "conditions": "slow outright trend vs faster spread trend", "testable": "yes - gross vs net Sharpe by speed and instrument",
+   "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT073-C11-X1", "chunk": "C11", "speaker": "Yoav Git",
+   "quote": "there's uh CLS is one of the biggest providers they do settlement FX settlements and they offer some data which is very anonymized",
+   "claim": "Few data sets show FX positioning; CLS, a major FX settlement provider, offers heavily anonymized flow data, which the regulator-level Bank of England data far exceeds in granularity.",
+   "mechanism": "research_method", "asset_class": "fx", "indicator": "CLS FX settlement flow data",
+   "horizon": "unspecified", "direction": "",
+   "conditions": "", "testable": "partly - data availability statement",
+   "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT073-C18-X1", "chunk": "C18", "speaker": "Yoav Git",
+   "quote": "there's a great paper by van Hemtt um about the best ways to hedge FX exposure",
+   "claim": "An allocator with structural foreign-currency exposure (e.g. an Australian investor holding USD assets) should hedge it with a systematic rule; a van Hemert paper studies the best ways to hedge FX exposure, a simple model for embedding systematic strategies such as trend into allocation.",
+   "mechanism": "risk_management", "asset_class": "fx", "indicator": "systematic FX hedge ratio rules",
+   "horizon": "months", "direction": "",
+   "conditions": "investors with structural FX exposure", "testable": "yes - compare hedging rules historically",
+   "speaker_confidence": "medium", "time_bound": "no"}
+ ],
+ "corrections": [
+  {"claim_id": "MT073-C15-3", "issue": "Wrong number: Vanguard cut its 10-year equity return expectation by about half a percentage point (about half of the roughly 1%/yr implied by the 10-11% June rally, from about 4.5%), not by half the rally itself.",
+   "fix": "After the 10-11% June 2025 equity rally Vanguard cut its 10-year US equity return assumption by about 0.5 percentage point (from roughly 4.5%), half the rally's per-year effect, and moved to about 30% equities / 70% bonds."}
+ ],
+ "chunks_checked": ["C01","C02","C03","C04","C05","C06","C07","C08","C09","C10","C11","C12","C13","C14","C15","C16","C17","C18"],
+ "completeness_estimate": "0.95 - first reader covered nearly every idea (72 claims); only a cost figure, the CLS data source and the van Hemert FX-hedging reference were missed; one numeric misstatement on the Vanguard cut."
+}

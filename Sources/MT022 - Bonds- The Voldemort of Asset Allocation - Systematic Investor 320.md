@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 12730
 claims: 61
-added_by_opus: 11
+added_by_crosscheck: 11
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Andrew Beer (co-founder, DBi, managed futures replication)", "Alan Dunne (host, standing in for Niels Kaastrup-Larsen)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, replication, managed futures ETFs, bonds, asset allocation, industry structure
 
-**Opus completeness estimate of first read:** 0.85 - core macro/bond and replication claims caught; misses were mostly secondary industry/structuring points (unbundled guarantees, front-running, ETF-vs-index numbers, allocator behaviour).
+**Cross-check completeness estimate of first read:** 0.85 - core macro/bond and replication claims caught; misses were mostly secondary industry/structuring points (unbundled guarantees, front-running, ETF-vs-index numbers, allocator behaviour).
 
 ## Coverage
 
@@ -117,7 +117,7 @@ tags: [source, layer0]
   > the space hasn't grown on on the hedge fund side and the mutual fund side in a decade basically
   indicator: managed futures AUM · asset: other · horizon: years · testable: yes - AUM data · confidence: high
   ^MT022-C06-2
-- **Andrew Beer** Allocators' views of managed futures depend heavily on their own past experience: one bad manager experience often leads to exiting the whole space, while others internalise the strategy or move to QIS.  #mech/behavioral _(added by Opus)_
+- **Andrew Beer** Allocators' views of managed futures depend heavily on their own past experience: one bad manager experience often leads to exiting the whole space, while others internalise the strategy or move to QIS.  #mech/behavioral _(added by opus cross-check)_
   > if you invested a manager you had a bad experience with it 3 years ago and and the decision was to get out of the space entirely your view is going to be completely different
   asset: multi · horizon: years · conditions: after a bad manager experience · testable: no - allocator decision history is not observable · confidence: medium
   ^MT022-C06-X1
@@ -145,7 +145,7 @@ tags: [source, layer0]
   > the reason they would never invest in an ETF is because they're not going to have hedge fund
   asset: other · testable: no - industry structure · confidence: medium
   ^MT022-C08-2
-- **Andrew Beer** In contrast to managers who sell a 'we changed the system and it works' story, Beer keeps his replication process unchanged for eight-plus years and treats that stability as a virtue.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** In contrast to managers who sell a 'we changed the system and it works' story, Beer keeps his replication process unchanged for eight-plus years and treats that stability as a virtue.  #mech/research_method _(added by opus cross-check)_
   > people think we are very strange for being proud of not changing what we do in eight plus years
   asset: multi · horizon: years · testable: partly - live record since an unchanged-process date can be evaluated out of sample · confidence: high
   ^MT022-C08-X2
@@ -159,11 +159,11 @@ tags: [source, layer0]
   > the self-regulatory organizations at some point decided that this wasn't really a bond this was a zeroc coupon Bond plus a hedge fund strategy
   asset: other · horizon: years · testable: no - regulatory · confidence: medium
   ^MT022-C09-2
-- **Alan Dunne** Capital-guaranteed CTA notes may also have faded because retail regulation still classes them as complex products, since the underlying strategy is seen as complex despite the guarantee.  #mech/structural_shift _(added by Opus)_
+- **Alan Dunne** Capital-guaranteed CTA notes may also have faded because retail regulation still classes them as complex products, since the underlying strategy is seen as complex despite the guarantee.  #mech/structural_shift _(added by opus cross-check)_
   > if you want to sell that to retail I'm not sure it's still regarded as it's still regarded as complex because the underlying investment is is seen as complex
   asset: multi · horizon: years · conditions: UK/European retail distribution · testable: no - regulatory classification, not a market series · confidence: low
   ^MT022-C09-X3
-- **Andrew Beer** Principal-protected products sold to wealthy clients (e.g. in Latin America) are loaded with fees and commissions whose all-in cost buyers rarely analyse, which gives them a poor reputation.  #mech/new _(added by Opus)_
+- **Andrew Beer** Principal-protected products sold to wealthy clients (e.g. in Latin America) are loaded with fees and commissions whose all-in cost buyers rarely analyse, which gives them a poor reputation.  #mech/new _(added by opus cross-check)_
   > nobody's spending a lot of time analyzing the all-in cost of these things they can charge huge commissions on it
   asset: multi · conditions: retail / high-net-worth structured products · testable: partly - all-in cost of structured notes can be computed from term sheets · confidence: medium
   ^MT022-C09-X4
@@ -185,7 +185,7 @@ tags: [source, layer0]
   > those guys have done a sharp ratio of 2 plus for 30 years
   indicator: Millennium Sharpe ratio · asset: other · horizon: years · testable: partly - track record · confidence: medium
   ^MT022-C10-4
-- **Alan Dunne** Large institutions now unbundle guaranteed structures: they take a managed futures program at e.g. 300 million notional on 100 million of margin and manage the bond/collateral portfolio themselves, getting the same result without a stapled bond.  #mech/new _(added by Opus)_
+- **Alan Dunne** Large institutions now unbundle guaranteed structures: they take a managed futures program at e.g. 300 million notional on 100 million of margin and manage the bond/collateral portfolio themselves, getting the same result without a stapled bond.  #mech/new _(added by opus cross-check)_
   > we want to do 300 million but we want to put up 100 million of you know we want to manage the bond portfolio
   asset: multi · conditions: institutions able to run their own collateral · testable: no - describes product structuring · confidence: medium
   ^MT022-C10-X5
@@ -203,11 +203,11 @@ tags: [source, layer0]
   > if you shoot enough spaghetti at the wall a couple pieces will stick
   asset: other · horizon: years · testable: partly · confidence: medium
   ^MT022-C11-3
-- **Andrew Beer** For ease, social validation and career risk, allocators choose among the five largest managers in a space and typically pick a middle one (not the best, not the worst) rather than evaluating the full universe.  #mech/behavioral _(added by Opus)_
+- **Andrew Beer** For ease, social validation and career risk, allocators choose among the five largest managers in a space and typically pick a middle one (not the best, not the worst) rather than evaluating the full universe.  #mech/behavioral _(added by opus cross-check)_
   > they'll pick one of the five probably not the best because he might be a little bit too crazy probably not the worst
   asset: multi · testable: partly - flows by manager size and performance rank · confidence: medium
   ^MT022-C11-X6
-- **Andrew Beer** The poor liquid-alts record was wrongly blamed on the liquid (mutual fund) wrapper, when the real cause was traditional managers pushing high-fee products they did not know how to run.  #mech/research_method _(added by Opus)_
+- **Andrew Beer** The poor liquid-alts record was wrongly blamed on the liquid (mutual fund) wrapper, when the real cause was traditional managers pushing high-fee products they did not know how to run.  #mech/research_method _(added by opus cross-check)_
   > it kind of fed into this narrative of ah the reason was because they're mutual funds it was a mistake to go look for liquidity
   indicator: liquid alts returns (Wilshire data) · asset: multi · horizon: years · testable: partly - compare liquid-alt returns by sponsor type and fee level · confidence: high
   ^MT022-C11-X7
@@ -221,15 +221,15 @@ tags: [source, layer0]
   > they seem to be killing it they're killing it this year like everyone goes down one day they seem to be going up
   indicator: Simplify managed futures ETF · asset: multi · horizon: months · testable: partly - single example · confidence: low
   ^MT022-C12-2
-- **Andrew Beer** Daily position transparency in an ETF is a real front-running risk only for very large managers whose share of a market can be calculated; for most CTAs the ETF wrapper is not a handicap.  #mech/crowding_positioning _(added by Opus)_
+- **Andrew Beer** Daily position transparency in an ETF is a real front-running risk only for very large managers whose share of a market can be calculated; for most CTAs the ETF wrapper is not a handicap.  #mech/crowding_positioning _(added by opus cross-check)_
   > somebody can calculate exactly how much of the heating oil Market you represent or something okay that gets a little bit scary from a front running perspective
   asset: commodities · horizon: days · conditions: large manager with sizeable share of a futures market · testable: partly - trading costs around ETF rebalance dates · confidence: medium
   ^MT022-C12-X8
-- **Andrew Beer** Since AlphaSimplex launched its managed futures ETF, the SG CTA trend index fell about 11% while the ETF fell about 4%, evidence that an ETF need not lack risk controls.  #mech/risk_management _(added by Opus, time-bound view)_
+- **Andrew Beer** Since AlphaSimplex launched its managed futures ETF, the SG CTA trend index fell about 11% while the ETF fell about 4%, evidence that an ETF need not lack risk controls.  #mech/risk_management _(added by opus cross-check, time-bound view)_
   > the the CTA s CTA trending it's down 11 they're down four right
   indicator: SG CTA Trend index vs AlphaSimplex managed futures ETF · asset: multi · horizon: months · conditions: recent drawdown period · testable: yes - compare returns since ETF launch · confidence: medium
   ^MT022-C12-X9
-- **Alan Dunne** The usual argument (put by the host) is that a fund combining trend with other strategies and more markets should, all else equal, have a higher Sharpe than a pure-trend ETF; Beer disputes that complexity adds much Sharpe.  #mech/risk_management _(added by Opus)_
+- **Alan Dunne** The usual argument (put by the host) is that a fund combining trend with other strategies and more markets should, all else equal, have a higher Sharpe than a pure-trend ETF; Beer disputes that complexity adds much Sharpe.  #mech/risk_management _(added by opus cross-check)_
   > they expect a higher sharp because you've got Trend and other strategies and trading more Market market
   asset: multi · direction: more strategies/markets -> higher Sharpe · horizon: years · testable: yes - compare Sharpe of diversified vs pure-trend CTA products · confidence: low
   ^MT022-C12-X10
@@ -257,7 +257,7 @@ tags: [source, layer0]
   > we are making one we bets that what we discern to be the broad Factor position in of the space on Monday afternoon will be sufficiently accurate
   indicator: CTA replication · asset: multi · horizon: weeks · testable: yes - replication correlation · confidence: high
   ^MT022-C14-2
-- **Andrew Beer** Replicating pre-incentive-fee returns makes the product more volatile than net-of-fee CTA indices, which Beer argues investors can accept up to a point in exchange for the higher return.  #mech/risk_management _(added by Opus)_
+- **Andrew Beer** Replicating pre-incentive-fee returns makes the product more volatile than net-of-fee CTA indices, which Beer argues investors can accept up to a point in exchange for the higher return.  #mech/risk_management _(added by opus cross-check)_
   > I think investors can stomach more volatility to a certain point
   asset: multi · horizon: years · testable: partly - compare volatility of replicators vs CTA indices · confidence: medium
   ^MT022-C14-X11

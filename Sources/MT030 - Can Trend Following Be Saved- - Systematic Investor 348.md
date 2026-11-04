@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 14224
 claims: 61
-added_by_opus: 7
+added_by_crosscheck: 7
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Andrew Beer (DBi, replication ETF manager)", "Niels Kaastrup-Larsen (host, hedge fund manager)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, CTA drawdowns, replication, allocator behaviour
 
-**Opus completeness estimate of first read:** 0.89 - first reader captured nearly all arguments and numbers with correct speakers; missed some reasoning steps (price-as-information logic, timing luck), fee history and internalisation incentives.
+**Cross-check completeness estimate of first read:** 0.89 - first reader captured nearly all arguments and numbers with correct speakers; missed some reasoning steps (price-as-information logic, timing luck), fee history and internalisation incentives.
 
 ## Coverage
 
@@ -61,11 +61,11 @@ tags: [source, layer0]
   ^MT030-C03-2
 
 ### C04
-- **Andrew Beer** Institutions bring trend following in-house (own teams or QIS swaps) not only for cost but because staff gain status by moving from allocating to external managers to running money themselves.  #mech/structural_shift _(added by Opus)_
+- **Andrew Beer** Institutions bring trend following in-house (own teams or QIS swaps) not only for cost but because staff gain status by moving from allocating to external managers to running money themselves.  #mech/structural_shift _(added by opus cross-check)_
   > They they want to move from being somebody who just you know mails money to somebody else to having responsibility for it to moving from an analyst to a PM role.
   asset: multi · direction: flows away from external CTAs toward in-house and QIS · horizon: years · conditions: large institutions · testable: no - organisational incentive · confidence: medium
   ^MT030-C04-X1
-- **Andrew Beer** Large seed investors historically demanded position transparency so they could copy and scale a manager's trades without paying fees on the copied capital, an early form of position-level replication.  #mech/new _(added by Opus)_
+- **Andrew Beer** Large seed investors historically demanded position transparency so they could copy and scale a manager's trades without paying fees on the copied capital, an early form of position-level replication.  #mech/new _(added by opus cross-check)_
   > you would have people who would give money to an equity long short manager with the expectation that they could see their positions and therefore double up or triple up on trade.
   asset: equities · horizon: years · testable: no - historical anecdote · confidence: medium
   ^MT030-C04-X2
@@ -133,7 +133,7 @@ tags: [source, layer0]
   > individual managers who um uh you know who had basically built their thesis around better risk management and risk controls
   indicator: innovation features vs drawdown · asset: multi · horizon: months · testable: yes - manager-level comparison · confidence: low
   ^MT030-C08-5
-- **Andrew Beer** In the April 2025 reversals, results depended heavily on luck in rebalance timing and positioning just before policy headlines, so dispersion between managers in such periods says little about skill.  #mech/research_method _(added by Opus, time-bound view)_
+- **Andrew Beer** In the April 2025 reversals, results depended heavily on luck in rebalance timing and positioning just before policy headlines, so dispersion between managers in such periods says little about skill.  #mech/research_method _(added by opus cross-check, time-bound view)_
   > we rebalance on Mondays and a few there were a few times we're like oh thank god we rebalance on Monday
   indicator: rebalance-day sensitivity of returns · asset: multi · horizon: weeks · conditions: headline-driven reversal markets · testable: yes - simulate the same strategy with different rebalance weekdays · confidence: medium
   ^MT030-C08-X1
@@ -170,7 +170,7 @@ tags: [source, layer0]
 - **Andrew Beer** In early 2024 CTAs picked up the post-election information shift early (long equities, dollar, gold, rate cuts priced out) before sentiment whipsaws began after April.  #mech/cycle_persistence _(time-bound view)_
   > the space was on fire in the beginning of 2024. Why? Because it picked up on the Trump trade early
   indicator: trend positioning early 2024 · asset: multi · direction: long equities, USD, gold · horizon: months · testable: partly · confidence: medium
-  **Correction (Opus):** Timing wrong: Andrew says CTAs picked up the Trump trade early in 2024, i.e. before the November election, not a post-election shift. → In early 2024 CTAs picked up the 'Trump trade' early, before the election (long equities, dollar, gold, fewer rate cuts priced), before sentiment whipsaws began after April 2024.
+  **Correction (cross-check):** Timing wrong: Andrew says CTAs picked up the Trump trade early in 2024, i.e. before the November election, not a post-election shift. → In early 2024 CTAs picked up the 'Trump trade' early, before the election (long equities, dollar, gold, fewer rate cuts priced), before sentiment whipsaws began after April 2024.
   ^MT030-C11-1
 - **Andrew Beer** Trend picks up changes in information early: short Treasuries in September 2020 when yields rose from 0.50% to 0.70%, a contrarian move signalling inflation before consensus.  #mech/slow_reaction
   > we went short treasuries in September of 2020. Think about how early that was
@@ -184,7 +184,7 @@ tags: [source, layer0]
   > the bet that you have to make on the space is that the world is actually going to change and the change in information is going to drown out the change in in in sentiment
   asset: multi · horizon: years · testable: no - premise · confidence: medium
   ^MT030-C11-4
-- **Andrew Beer** A sustained price move signals that informed participants know something, so trend following works by extracting early evidence of changing fundamentals from prices across many markets, and its alpha is contrarian, not late.  #mech/slow_reaction _(added by Opus)_
+- **Andrew Beer** A sustained price move signals that informed participants know something, so trend following works by extracting early evidence of changing fundamentals from prices across many markets, and its alpha is contrarian, not late.  #mech/slow_reaction _(added by opus cross-check)_
   > what's the first question you ask who knows something what do they know that I don't know
   indicator: price momentum across markets · asset: multi · direction: follow the price move before consensus · horizon: months · conditions: works when information changes; fails when moves are sentiment noise · testable: partly - test whether trend signals lead fundamental revisions · confidence: medium
   ^MT030-C11-X1
@@ -212,7 +212,7 @@ tags: [source, layer0]
   > I think the core driver the core beta of managed futures was discovered 50 years ago.
   indicator: commoditized trend beta, QIS · asset: multi · horizon: years · testable: partly · confidence: medium
   ^MT030-C13-1
-- **Andrew Beer** In the 1990s, retail managed-futures products (e.g. guaranteed notes) carried about 10 points of annual fees, including about 600 bp of contractual trading commissions; Niels notes the middlemen's packaging added this cost, not the managers.  #mech/new _(added by Opus)_
+- **Andrew Beer** In the 1990s, retail managed-futures products (e.g. guaranteed notes) carried about 10 points of annual fees, including about 600 bp of contractual trading commissions; Niels notes the middlemen's packaging added this cost, not the managers.  #mech/new _(added by opus cross-check)_
   > they highlighted funds that had 10 points in them including 600 basis points of uh of contractual trading commissions
   asset: multi · horizon: years · testable: partly - historical fund documents · confidence: medium
   ^MT030-C13-X1
@@ -272,11 +272,11 @@ tags: [source, layer0]
   > it just keeps coming back to this 4 and a half% and we're a little bit above that
   indicator: 10-year Treasury yield about 4.5% · asset: rates · direction: yields stay high · horizon: months · testable: no - view · confidence: low
   ^MT030-C17-2
-- **Andrew Beer** Many allocators choose trend managers on brand and legacy rather than testing whether complexity and higher fees add value over a cheap beta alternative.  #mech/behavioral _(added by Opus)_
+- **Andrew Beer** Many allocators choose trend managers on brand and legacy rather than testing whether complexity and higher fees add value over a cheap beta alternative.  #mech/behavioral _(added by opus cross-check)_
   > A lot of people are interested in, you know, my god, you know, they're they're they're legends
   asset: multi · horizon: years · testable: partly - flows vs brand age vs risk-adjusted returns · confidence: medium
   ^MT030-C17-X1
-- **Andrew Beer (probable)** A US president with a personal economic interest in a dollar alternative (crypto) adds to the risk of lost confidence in the dollar, one of the 'things breaking' that could produce large trends.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Andrew Beer (probable)** A US president with a personal economic interest in a dollar alternative (crypto) adds to the risk of lost confidence in the dollar, one of the 'things breaking' that could produce large trends.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > president of the United States who for the first time in history has an economic interest in an alternative to the dollar.
   asset: fx · direction: dollar down risk · horizon: years · testable: no - qualitative risk · confidence: low
   ^MT030-C17-X2

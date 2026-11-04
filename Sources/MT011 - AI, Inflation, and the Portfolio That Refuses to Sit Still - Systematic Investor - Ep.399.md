@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 12735
 claims: 90
-added_by_opus: 6
+added_by_crosscheck: 6
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Alan Dunn (co-host, rules-based/trend and macro investor; launching Regime Adaptive Fund)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged; transcript 'Neil Castro Blast')"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, macro, return stacking, strategic vs tactical allocation, stagflation, portfolio construction
 
-**Opus completeness estimate of first read:** 0.93 - first reader was thorough (84 claims); missed AI import leakage, military-spending inflation, the speakers' disagreement on inflation vs rate drivers, inflation surprise, vol-target dispersion and strategy-specific stress correlation.
+**Cross-check completeness estimate of first read:** 0.93 - first reader was thorough (84 claims); missed AI import leakage, military-spending inflation, the speakers' disagreement on inflation vs rate drivers, inflation surprise, vol-target dispersion and strategy-specific stress correlation.
 
 ## Coverage
 
@@ -65,7 +65,7 @@ tags: [source, layer0]
   > 33 counties account for 72% of the data centers
   indicator: data-center construction concentration · asset: other · testable: partly: needs county employment data · confidence: medium
   ^MT011-C01-4
-- **Alan Dunn** Much AI capex leaks abroad as imports (e.g. chips from Korea), so its net contribution to US GDP growth is smaller than the gross spending figures imply.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Alan Dunn** Much AI capex leaks abroad as imports (e.g. chips from Korea), so its net contribution to US GDP growth is smaller than the gross spending figures imply.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > maybe the impact is not so dramatic because a lot of that spending is going overseas in terms of imports to places like Korea etc.
   indicator: AI capex vs imports of AI hardware (Korea etc.) · asset: multi · direction: net GDP impact of AI capex lower than gross · horizon: months · testable: yes - compare AI investment in GDP accounts with matching import lines · confidence: medium
   ^MT011-C01-X1
@@ -123,7 +123,7 @@ tags: [source, layer0]
   > you had the trends in the energy
   indicator: trend followers' energy exposure · asset: multi · horizon: months · testable: yes: sector attribution · confidence: medium
   ^MT011-C04-5
-- **Alan Dunn** In a strong energy-trend period, trend managers running very high volatility targets produced far stronger returns than peers, so the volatility target scales the payoff of trend episodes.  #mech/risk_management _(added by Opus, time-bound view)_
+- **Alan Dunn** In a strong energy-trend period, trend managers running very high volatility targets produced far stronger returns than peers, so the volatility target scales the payoff of trend episodes.  #mech/risk_management _(added by opus cross-check, time-bound view)_
   > some of our colleagues in the industry you know who run at very high levels of volatility we won't name but you know producing exceptionally strong performance
   indicator: trend manager volatility target vs return dispersion · asset: commodities · direction: higher-vol trend managers outperform in strong trend episodes · horizon: months · conditions: strong trends (energy spike after Iran war) · testable: yes - cross-section of CTA returns vs realised volatility in trend episodes · confidence: medium
   ^MT011-C04-X1
@@ -156,7 +156,7 @@ tags: [source, layer0]
 - **Alan Dunn** An oil shock has asymmetric geographic effects; the US (net energy exporter) is more insulated than Europe or Asia, so shocks drive FX and relative equity moves.  #mech/structural_shift _(time-bound view)_
   > Obviously the US is probably more insulated to the shock than than Europe or or Asia.
   indicator: regional energy dependence · asset: multi · direction: US relative outperformance · horizon: months · testable: partly · confidence: medium
-  **Correction (Opus):** Adds content not said: the speaker only says the US is probably more insulated than Europe or Asia; 'net energy exporter' and 'so shocks drive FX and relative equity moves' are the reader's inference. → An oil shock has geographically uneven effects; the US is probably more insulated than Europe or Asia.
+  **Correction (cross-check):** Adds content not said: the speaker only says the US is probably more insulated than Europe or Asia; 'net energy exporter' and 'so shocks drive FX and relative equity moves' are the reader's inference. → An oil shock has geographically uneven effects; the US is probably more insulated than Europe or Asia.
   ^MT011-C05-7
 - **Alan Dunn** Energy price spikes hit lower-income households hardest because fuel is a larger budget share, weighing on consumption and building pressure for subsidies.  #mech/structural_shift
   > lower income households are disproportionately impacted because gas is going to be a a bigger percentage of their budget
@@ -210,7 +210,7 @@ tags: [source, layer0]
   > there's nothing to say that equity markets can't do well in an inflationary uh period
   asset: equities · direction: equities up until rates rise · testable: partly · confidence: medium
   ^MT011-C07-5
-- **Niels Kaastrup-Larsen** Global military spending is at a multi-decade high, and such spending is usually inflationary.  #mech/fiscal_debt _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** Global military spending is at a multi-decade high, and such spending is usually inflationary.  #mech/fiscal_debt _(added by opus cross-check, time-bound view)_
   > there's probably not been as much military spending um as we have right now for decades uh on a global scale. And that's definitely or at least usually it is um inflationary.
   indicator: global military spending · asset: multi · direction: inflation up · horizon: years · testable: partly - defence spending vs inflation history is available but confounded · confidence: medium
   ^MT011-C07-X1
@@ -262,7 +262,7 @@ tags: [source, layer0]
   > good carry when the yield curve is very steep
   indicator: yield curve slope · asset: rates · direction: long bonds · horizon: years · conditions: steep curve · testable: yes · confidence: medium
   ^MT011-C09-5
-- **Alan Dunn** Alan pushes back on the host's view that inflation stability rather than policy activity drives trend/macro returns: because rates respond to inflation, the two drivers are hard to separate empirically.  #mech/research_method _(added by Opus)_
+- **Alan Dunn** Alan pushes back on the host's view that inflation stability rather than policy activity drives trend/macro returns: because rates respond to inflation, the two drivers are hard to separate empirically.  #mech/research_method _(added by opus cross-check)_
   > in theory, you know, interest rates respond to inflation, inflation volatility or inflation trends. So um I'm not sure it's hard to different distinguish.
   indicator: inflation volatility vs rate volatility as drivers of trend returns · asset: multi · horizon: years · testable: partly - regress trend returns on both, but they are collinear · confidence: medium
   ^MT011-C09-X1
@@ -275,7 +275,7 @@ tags: [source, layer0]
 - **Alan Dunn** A big equity bull market since 2009 did not make trend followers much money because trending equity exposure is hard to capture versus buy-and-hold; optics deceive.  #mech/slow_reaction
   > that's not where trend followers have made any money really uh compared to other sectors
   indicator: trend returns by sector · asset: equities · horizon: years · testable: yes: sector attribution · confidence: medium
-  **Correction (Opus):** Wrong speaker: the point that equities rose since 2009 but trend followers made little money there is the host's (Alan later says 'You made a point about look at the returns from equities since 2009'). → Niels Kaastrup-Larsen: a big equity bull market since 2009 did not make trend followers much money because trending equity exposure is hard to capture versus buy-and-hold; optics deceive.
+  **Correction (cross-check):** Wrong speaker: the point that equities rose since 2009 but trend followers made little money there is the host's (Alan later says 'You made a point about look at the returns from equities since 2009'). → Niels Kaastrup-Larsen: a big equity bull market since 2009 did not make trend followers much money because trending equity exposure is hard to capture versus buy-and-hold; optics deceive.
   ^MT011-C10-2
 - **Niels Kaastrup-Larsen** After the Fed began cutting, longer-end yields rose, so inflation expectations can matter more than the short end for market opportunity.  #mech/policy_reaction _(time-bound view)_
   > market rates in the longer end is actually gone up
@@ -289,7 +289,7 @@ tags: [source, layer0]
   > whereas if you introduce long short strategies that in that that brings in more flexibility
   asset: multi · conditions: when constraints are removed · testable: partly · confidence: medium
   ^MT011-C10-5
-- **Alan Dunn** Unanticipated (surprise) inflation, rather than the level of inflation, may be what creates opportunity for trend and macro strategies.  #mech/slow_reaction _(added by Opus)_
+- **Alan Dunn** Unanticipated (surprise) inflation, rather than the level of inflation, may be what creates opportunity for trend and macro strategies.  #mech/slow_reaction _(added by opus cross-check)_
   > I know people draw this distinction between anticipated and and unanticipated uh inflation and that can be a relevant part of it
   indicator: inflation surprise (actual minus expected) · asset: multi · direction: trend/macro returns higher with larger inflation surprises · horizon: months · testable: yes - CTA returns vs CPI surprises or survey forecast errors · confidence: low
   ^MT011-C10-X1
@@ -341,7 +341,7 @@ tags: [source, layer0]
   > we corrected a small amount of uh the last six months returns and then we went straight back uh uh in April and made new all-time highs
   indicator: trend monthly returns · asset: multi · horizon: months · testable: yes · confidence: medium
   ^MT011-C12-4
-- **Alan Dunn** Correlations converging to one in stress is more likely for some strategies than others, so diversifiers differ in how reliably they hold up in crises.  #mech/risk_management _(added by Opus)_
+- **Alan Dunn** Correlations converging to one in stress is more likely for some strategies than others, so diversifiers differ in how reliably they hold up in crises.  #mech/risk_management _(added by opus cross-check)_
   > I know we know about the phenomenon of correlations going to one in times of stress. I think that's more likely with certain strategies
   indicator: strategy correlations in stress periods · asset: multi · conditions: market stress · testable: yes - conditional correlations of strategy returns in equity drawdowns · confidence: medium
   ^MT011-C12-X1

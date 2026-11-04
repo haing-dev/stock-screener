@@ -5,10 +5,10 @@ date: 2025-02-25
 channel: "Graham Capital Management"
 url: https://www.youtube.com/watch?v=vsf0cuWqwys
 words: 4892
-claims: 40
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 49
+added_by_crosscheck: 9
+corrections: 1
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["David Shang (moderator, Axia)", "Christian Derry (head of macro strategy, CFM)", "Pablo Calderini (CIO, Graham Capital)", "Nicholas Cormier (portfolio manager, CPP Investments)", "Jackie Rosner (investment team, PAMCO Prisma)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Panel comparing discretionary and systematic macro from manager and allocator views. Conclusions: they share markets and fundamentals but differ in data capacity vs flexibility, convexity is largely trend following mechanics, and allocators hold a few systematic managers while expecting cash plus 3-5%.
 
 **Approach:** global macro, systematic macro, discretionary macro, trend following, manager selection, machine learning
+
+**Cross-check completeness estimate of first read:** 0.85 - first reader caught nearly all substantive panel points; missed mostly firm-structure remarks, the China deflation worry, the 'more than cash+3-5' volatility view, the diversification axes and a few AI technique remarks.
 
 ## Coverage
 
@@ -34,6 +36,16 @@ tags: [source, layer0]
 | C08 | 0 | nothing actionable: closing and applause |
 
 ## Claims
+
+### C01
+- **Christian Derry** CFM runs a flat research organisation with no pods: all researchers work on one shared research base whose output propagates to every strategy, so ideas are tested once against a common predictor set rather than inside siloed books.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > the structure of the firm is very flat uh so we don't have any pods all the researchers collaborate
+  asset: multi · conditions: systematic manager with 100+ researchers · testable: no - organisational design choice · confidence: medium
+  ^MT062-C01-X1
+- **Pablo Calderini** Graham runs roughly 70-75% of its assets as quantitative macro and about 25% as discretionary PMs and treats the two as different methods applied to the same markets and the same problems, not as different businesses.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > 25% is where we have discretionary PMS so we call that the discretionary fund a different way of dealing with the same problematics same markets same issues
+  indicator: share of assets in systematic vs discretionary · asset: multi · testable: no - firm structure · confidence: medium
+  ^MT062-C01-X2
 
 ### C02
 - **Nicholas Cormier** Forecasting which hedge fund strategy will do best is too hard, so the allocator diversifies across a breadth of strategies.  #mech/risk_management
@@ -67,7 +79,12 @@ tags: [source, layer0]
 - **Jackie Rosner** Policymakers may react to equity market levels (a Trump equivalent of the Fed put), so the new mantra is do not fight Trump.  #mech/policy_reaction _(time-bound view)_
   > people say Trump is beta dependent he's going to be also looking at you know wealth creation levels of equity markets
   indicator: equity market level as policy trigger · asset: equities · horizon: months · conditions: new administration · testable: no - speculative reaction function · confidence: low
+  **Correction (cross-check):** Overstates the quote: no 'Fed put' is mentioned. The speaker says the old trader mantra was 'don't fight the Fed', that a new one is 'don't fight Trump', and that Trump is 'beta dependent' (watches equity wealth levels), in parallel with the Fed being data dependent. → Jackie Rosner says the old mantra 'don't fight the Fed' now has a sibling, 'don't fight Trump': the administration is transparent about its aims and 'beta dependent' (sensitive to equity market wealth levels), so large policy-driven market moves are expected.
   ^MT062-C02-8
+- **Jackie Rosner** Part of the early-2025 wall of worry is a fear that China exports deflation, which together with tariffs and a strong dollar adds to cross-market volatility that macro traders can use.  #mech/structural_shift _(added by sonnet-xhigh cross-check, time-bound view)_
+  > there's a fear of uh China exporting deflation
+  indicator: Chinese export prices / global goods deflation · asset: multi · direction: deflationary pressure on goods prices from China · horizon: months · conditions: weak Chinese domestic demand and strong dollar · testable: partly - China PPI and export price series exist · confidence: low
+  ^MT062-C02-X1
 
 ### C03
 - **Pablo Calderini** Both discretionary and systematic macro use fundamentals (fiscal, monetary, growth, inflation) plus factors like value, mean reversion and carry; they differ in method.  #mech/slow_reaction
@@ -90,6 +107,10 @@ tags: [source, layer0]
   > to react and if you're a very good micro PM you're going to understand that as a as a potential Alpha signal right
   asset: multi · horizon: days · conditions: event shocks outside the model · testable: no - assertion · confidence: medium
   ^MT062-C03-5
+- **Jackie Rosner** Because the equity rally cannot continue forever, the coming volatility and trading opportunity should let hedge fund investors earn more than the base case of cash plus 3 to 5 percent.  #mech/risk_premium _(added by sonnet-xhigh cross-check, time-bound view)_
+  > be going up forever so the fact that there is going to be volatility and trading opportunity I think gives investors a chance to be making more than Cash Plus three to five
+  indicator: hedge fund return over cash · asset: multi · direction: hedge fund excess return above cash plus 3-5 · horizon: years · conditions: volatile market with policy shocks · testable: partly - hedge fund index excess over T-bills in high-vol years · confidence: low
+  ^MT062-C03-X1
 
 ### C04
 - **Christian Derry** Humans have a bandwidth limit (like pilots with seven gauges), which limits discretionary macro; systematic processes remove that limit.  #mech/behavioral
@@ -116,6 +137,10 @@ tags: [source, layer0]
   > style exposures to you know more sophisticated versions of carry momentum fundamental momentum
   indicator: carry, momentum, fundamental momentum · asset: multi · horizon: months · testable: yes - styles can be tested · confidence: high
   ^MT062-C04-6
+- **Christian Derry** Data volume is growing exponentially (a quoted figure, which the speaker himself says is probably incorrect), so the edge goes to firms with the technology stack and experience to process unstructured data at scale.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > all of civilization's data up to 2006 is about 5 exabytes now we create that data every two days
+  indicator: volume of alternative data · asset: other · horizon: years · conditions: needs large technology investment; few firms qualify · testable: no - illustration, number admitted unreliable · confidence: low
+  ^MT062-C04-X1
 
 ### C05
 - **Nicholas Cormier** Discretionary macro convexity arrives from one or two big ideas a year, so timing and conviction matter.  #mech/risk_management
@@ -142,6 +167,14 @@ tags: [source, layer0]
   > strategy mix within them whether it's uh Trend and momentum or the non Trend momentum stuff uh the speed of their trading people trade at different speeds and holding periods and also the asset class mix
   asset: multi · testable: partly - dimensions are observable · confidence: high
   ^MT062-C05-6
+- **Nicholas Cormier** The allocator holds discretionary and systematic macro together to diversify along three axes at once: asset classes, styles and timing horizons.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > both these uh strategies are just trying to diversify across asset classes across Styles and across timing Horizons
+  asset: multi · testable: partly - correlation of manager returns by style and horizon · confidence: medium
+  ^MT062-C05-X1
+- **Jackie Rosner** In manager selection the allocator prefers specialists whose expertise is narrow but very deep and proven, over generalists.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > we like their expertise to be an inch wide a mile deep
+  asset: other · conditions: applies to discretionary and systematic hiring · testable: no - qualitative selection criterion · confidence: medium
+  ^MT062-C05-X2
 
 ### C06
 - **Jackie Rosner** Hold more than two but fewer than ten systematic managers: too many dilutes returns, a single one gives an idiosyncratic experience (a 30-day commodity manager vs others); concentrate in the best over time.  #mech/risk_management
@@ -206,4 +239,12 @@ tags: [source, layer0]
   > biggest macro risk fiscal trajectory unsustainable
   indicator: fiscal trajectory · asset: multi · horizon: years · testable: no - opinion · confidence: medium
   ^MT062-C07-7
+- **Christian Derry** Classical machine learning has been used in systematic investing for about 20 years, so the new element is the large language model, which is the genuinely disruptive tool because it handles unstructured text.  #mech/structural_shift _(added by sonnet-xhigh cross-check, time-bound view)_
+  > so we've been using machine learning for TW uh 20 years but the llm is sort of the disruptive technology
+  indicator: LLM-derived sentiment from unstructured text · asset: other · horizon: years · testable: no - narrative about technology · confidence: medium
+  ^MT062-C07-X1
+- **Pablo Calderini** Singular value decomposition, data compression, pattern matching and cosine similarity are old techniques; what is new is that AI now combines them into one coherent pipeline for extracting signals from large data.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > techniques like singular value composition data compression and pattern matching what have you they were there before cosign similarity but now we're using them in a cohesive way
+  indicator: SVD, cosine similarity, pattern matching · asset: other · testable: partly - method comparison possible · confidence: medium
+  ^MT062-C07-X2
 

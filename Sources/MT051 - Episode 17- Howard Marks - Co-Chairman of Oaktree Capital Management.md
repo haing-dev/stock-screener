@@ -6,7 +6,7 @@ channel: "Generating Alpha Podcast"
 url: https://www.youtube.com/watch?v=2aeALq7jNlk
 words: 6147
 claims: 20
-added_by_opus: 5
+added_by_crosscheck: 5
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Howard Marks (co-chairman, Oaktree Capital)", "Amir (host, Generating Alpha podcast)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** distressed debt, value investing, credit, risk management, contrarian
 
-**Opus completeness estimate of first read:** 0.80 - a career/philosophy interview with few claim-worthy ideas; first reader caught all core points (price vs quality, quantified default risk, contrarian niches, same-data edge), missing only minor ones (crisis-driven distressed opportunities, market efficiency shift, forecast humility, depression-scar behaviour).
+**Cross-check completeness estimate of first read:** 0.80 - a career/philosophy interview with few claim-worthy ideas; first reader caught all core points (price vs quality, quantified default risk, contrarian niches, same-data edge), missing only minor ones (crisis-driven distressed opportunities, market efficiency shift, forecast humility, depression-scar behaviour).
 
 ## Coverage
 
@@ -39,7 +39,7 @@ tags: [source, layer0]
 ## Claims
 
 ### C01
-- **Howard Marks** Living through a deep crash (the Depression) scars a generation and makes it, and those it raises, durably more risk-averse and diversification-minded.  #mech/behavioral _(added by Opus)_
+- **Howard Marks** Living through a deep crash (the Depression) scars a generation and makes it, and those it raises, durably more risk-averse and diversification-minded.  #mech/behavioral _(added by opus cross-check)_
   > the depression was a very scarring experience and I think it scarred them and so I ended up hearing things like uh you know don't put all your eggs in one basket
   asset: multi · horizon: years · testable: partly - generational experience vs risk-taking can be studied (experience effects), but anecdotal here · confidence: medium
   ^MT051-C01-X1
@@ -80,13 +80,13 @@ tags: [source, layer0]
 - **Howard Marks** After the 2000-02 equity decline (first three-year S&P fall since 1939) and Fed rate cuts to very low yields, institutions left stocks and bonds and moved into hedge funds, private equity and credit alternatives, creating the alternative-investing category from about 2004-06.  #mech/liquidity_flows
   > they fell out of love with bonds and so they needed something.
   indicator: S&P 500 three-year decline 2000-02; low interest rates · asset: multi · direction: flows into alternatives · horizon: years · conditions: Follows poor stock returns plus low bond yields · testable: partly - allocation flows are observable, causal link is narrative · confidence: medium
-  **Correction (Opus):** Marks names hedge funds and private equity as what institutions tried; 'credit alternatives' is not stated. → After the 2000-02 S&P decline (first three-year fall since 1939) and Fed cuts to very low rates, investors fell out of love with stocks and bonds and turned to hedge funds and then private equity, giving birth to 'alternative investing' around 2004-06.
+  **Correction (cross-check):** Marks names hedge funds and private equity as what institutions tried; 'credit alternatives' is not stated. → After the 2000-02 S&P decline (first three-year fall since 1939) and Fed cuts to very low rates, investors fell out of love with stocks and bonds and turned to hedge funds and then private equity, giving birth to 'alternative investing' around 2004-06.
   ^MT051-C04-1
 - **Howard Marks** Oaktree's growth came from being positioned in a niche that later became popular, which he calls demographic luck, not from forecasting that shift.  #mech/behavioral
   > We didn't pick the place in based on a projection.
   asset: other · testable: no - ex post narrative about luck · confidence: medium
   ^MT051-C04-2
-- **Howard Marks** Credit crises such as 2001 are the periods in which distressed-debt and high-yield specialists earn their best opportunities.  #mech/overshoot _(added by Opus)_
+- **Howard Marks** Credit crises such as 2001 are the periods in which distressed-debt and high-yield specialists earn their best opportunities.  #mech/overshoot _(added by opus cross-check)_
   > there was a crisis in 01 that we did a good job in
   asset: credit · direction: long distressed debt in and after credit crises · horizon: years · conditions: credit crisis / default wave · testable: yes - distressed-fund returns by vintage vs default cycle · confidence: medium
   ^MT051-C04-X1
@@ -100,7 +100,7 @@ tags: [source, layer0]
   > You don't learn anything from success.
   asset: other · testable: no - process advice · confidence: medium
   ^MT051-C05-2
-- **Howard Marks** Markets have become more efficient since the Nifty Fifty era: price-agnostic buying of quality is rarer and data is widely shared, so edges from simple data or quality screens have shrunk.  #mech/structural_shift _(added by Opus)_
+- **Howard Marks** Markets have become more efficient since the Nifty Fifty era: price-agnostic buying of quality is rarer and data is widely shared, so edges from simple data or quality screens have shrunk.  #mech/structural_shift _(added by opus cross-check)_
   > now I don't think anybody buys uh without regard to price world the world has gotten a little smarter most people have the same data
   asset: equities · horizon: years · testable: partly - decay of simple anomaly returns over time can be measured · confidence: medium
   ^MT051-C05-X1
@@ -109,7 +109,7 @@ tags: [source, layer0]
 - **Howard Marks** Readily available quantitative data cannot create outperformance because all investors have it; an edge requires better interpretation of the data or qualitative and forward-looking information not readily available.  #mech/slow_reaction
   > success comes from outperforming and everybody has the same data.
   asset: multi · conditions: Edge from understanding implications, qualitative factors (management, pipeline), or future developments · testable: partly - data-based edge question, qualitative edge not testable · confidence: high
-  **Correction (Opus):** The point that freely available quantitative data cannot produce outperformance is relayed by Marks as his son Andrew Marks's argument (from their pandemic debates); the claim does not say so. → Marks, relaying his son Andrew's argument, says readily available quantitative data cannot create outperformance because everyone has it; an edge needs superior interpretation or qualitative / forward-looking information that is not readily available.
+  **Correction (cross-check):** The point that freely available quantitative data cannot produce outperformance is relayed by Marks as his son Andrew Marks's argument (from their pandemic debates); the claim does not say so. → Marks, relaying his son Andrew's argument, says readily available quantitative data cannot create outperformance because everyone has it; an edge needs superior interpretation or qualitative / forward-looking information that is not readily available.
   ^MT051-C06-1
 
 ### C07
@@ -127,13 +127,13 @@ tags: [source, layer0]
   > the problem today isn't accessing information. It's trying to weed out uh what you should look at
   asset: other · testable: no - process advice · confidence: medium
   ^MT051-C08-2
-- **Howard Marks** Reading sources with opposing slants (NYT and WSJ, their op-ed pages) gives a fuller picture than a single viewpoint when forming market judgements.  #mech/research_method _(added by Opus)_
+- **Howard Marks** Reading sources with opposing slants (NYT and WSJ, their op-ed pages) gives a fuller picture than a single viewpoint when forming market judgements.  #mech/research_method _(added by opus cross-check)_
   > I read the the New York Times and the Wall Street Journal. you get a very different account of most things and if
   asset: multi · testable: no - information-diet habit · confidence: medium
   ^MT051-C08-X1
 
 ### C09
-- **Howard Marks** Which asset class will be most profitable a decade ahead cannot be forecast, so long-horizon asset-class picks should not be based on such predictions.  #mech/research_method _(added by Opus)_
+- **Howard Marks** Which asset class will be most profitable a decade ahead cannot be forecast, so long-horizon asset-class picks should not be based on such predictions.  #mech/research_method _(added by opus cross-check)_
   > Nobody knows what asset class is going to be uh profitable 10 years
   asset: multi · horizon: years · testable: partly - skill of 10-year asset-class return forecasts can be evaluated · confidence: high
   ^MT051-C09-X1

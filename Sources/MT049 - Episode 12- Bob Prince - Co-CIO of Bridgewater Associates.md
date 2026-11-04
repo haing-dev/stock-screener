@@ -6,7 +6,7 @@ channel: "Generating Alpha Podcast"
 url: https://www.youtube.com/watch?v=tczx0l9-Kv8
 words: 9242
 claims: 22
-added_by_opus: 1
+added_by_crosscheck: 1
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Bob Prince (Co-CIO, Bridgewater Associates)", "Interviewer (Generating Alpha Podcast host)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** systematic macro, risk management, first-principles research
 
-**Opus completeness estimate of first read:** 0.97 - mostly biography and culture; the first reader captured every method and macro idea (risk plans, coded systems, Kodak overlay, mercantilism, German stimulus) and only missed the liability-side hedging example.
+**Cross-check completeness estimate of first read:** 0.97 - mostly biography and culture; the first reader captured every method and macro idea (risk plans, coded systems, Kodak overlay, mercantilism, German stimulus) and only missed the liability-side hedging example.
 
 ## Coverage
 
@@ -80,7 +80,7 @@ tags: [source, layer0]
   > get off the planet get above it and you could take any market in the world and go long or short
   indicator: global long/short across markets · asset: multi · direction: long and short any market · testable: no - principle · confidence: high
   ^MT049-C06-4
-- **Bob Prince** A company can hedge its embedded market exposures on the liability side by structuring its debt (currency, maturity, rate type) to offset what its business revenues are exposed to, as Bridgewater did for BC Hydro.  #mech/risk_management _(added by Opus)_
+- **Bob Prince** A company can hedge its embedded market exposures on the liability side by structuring its debt (currency, maturity, rate type) to offset what its business revenues are exposed to, as Bridgewater did for BC Hydro.  #mech/risk_management _(added by opus cross-check)_
   > I'm advising this utility on how to manage their debt structure against their their business you know and we it was very successful
   asset: multi · horizon: years · conditions: business with large market-driven revenue exposure and sizeable debt · testable: partly - hedge effectiveness can be measured case by case · confidence: high
   ^MT049-C06-X1

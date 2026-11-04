@@ -1,0 +1,128 @@
+{
+ "source_id": "MT108",
+ "added_claims": [
+  {
+   "claim_id": "MT108-C05-X1",
+   "chunk": "C05",
+   "speaker": "Tilman (J8 co-founder)",
+   "quote": "that is not to say the trading Equity indices does not make sense if you trade them differently",
+   "claim": "The exclusion of equity indices applies only to J8's slow trend program; equity index futures can make sense when traded differently (the short-term Redwood system trades them), so the redundancy argument is horizon-specific.",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "equity index futures in slow trend vs short-term strategy",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "slow multi-month trend program",
+   "testable": "yes - add equities to short-term vs long-term systems and compare",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT108-C05-X2",
+   "chunk": "C05",
+   "speaker": "Tilman (J8 co-founder)",
+   "quote": "here we Arbitrage time when it comes to carry trade in caros scenes and the inventory picker in commodi there we Arbitrage between asset classes",
+   "claim": "J8 separates two carry/arbitrage styles: arbitraging time along a futures curve (commodity term structure, volatility term structure) versus arbitraging between markets (FX carry, commodity inventory/curvature selection).",
+   "mechanism": "risk_premium",
+   "asset_class": "multi",
+   "indicator": "term-structure vs cross-market carry",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - classification of carry strategies",
+   "speaker_confidence": "low",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT108-C06-X1",
+   "chunk": "C06",
+   "speaker": "Tilman (J8 co-founder)",
+   "quote": "that strategy is purely long short on the T structure and it does not go WR the VIX Index",
+   "claim": "J8's volatility strategy is a relative-value trade along the VIX/VSTOXX futures term structure (short front, long back) rather than outright short volatility, so it earns roll-yield differentials without depending on the equity risk premium.",
+   "mechanism": "risk_premium",
+   "asset_class": "other",
+   "indicator": "VIX and VSTOXX futures term structure",
+   "horizon": "unspecified",
+   "direction": "short front, long back months",
+   "conditions": "needs hedging against volatility spikes",
+   "testable": "yes - roll-yield spread returns testable",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT108-C06-X2",
+   "chunk": "C06",
+   "speaker": "Tilman (J8 co-founder)",
+   "quote": "you already have a super Diversified return stream um and and and the return and the volatility gets lower and lower and lower",
+   "claim": "Combining many uncorrelated sub-strategies lowers portfolio volatility, and because futures are unfunded the exposure can be levered up to restore the 10% target volatility, so diversification can be converted into return.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "portfolio volatility vs strategy count; leverage",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "unfunded instruments, adequate margin",
+   "testable": "yes - diversification gain converted via leverage",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT108-C08-X1",
+   "chunk": "C08",
+   "speaker": "Vishal (J8, head of trading)",
+   "quote": "very few of them are being held over like multiple days which can be like 3 to five days",
+   "claim": "Redwood's holding period is a few hours to a few days (3-5 days at most, mostly same day or next day), and unlike the main program it trades all asset classes including equity indices, in liquid futures only.",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "holding period; asset-class coverage of Redwood",
+   "horizon": "days",
+   "direction": "",
+   "conditions": "highly liquid futures only",
+   "testable": "yes - holding-period and universe checks",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT108-C10-X1",
+   "chunk": "C10",
+   "speaker": "Moritz Seibert (host)",
+   "quote": "there is like an execution Commission of 75 cents and there's always exchange fees whatever like 50 cents and clearing fees 50 cents",
+   "claim": "Cost build-up for a non-HFT futures trader: about 0.75 broker commission, 0.50 exchange fee, 0.50 clearing fee, plus spread, slippage and market impact, which brings the all-in cost to roughly 5-6 dollars per contract.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "per-contract execution cost components",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "firms without HFT infrastructure or exchange membership",
+   "testable": "yes - cost components can be audited",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ],
+ "corrections": [
+  {
+   "claim_id": "MT108-C08-4",
+   "issue": "Wrong speaker: Moritz asks what Redwood's correlation to the short-term traders index is; the answer ('we ran it and found it practically nothing, very close to 0') is Vishal's.",
+   "fix": "Vishal: Redwood's correlation with the SG Short Term Traders Index is practically zero (close to 0)."
+  },
+  {
+   "claim_id": "MT108-C10-1",
+   "issue": "Faithful to the speaker but the arithmetic does not reconcile: 8,000 round turns x 2 contracts x $6 = 9.6% (and 700 per month x 12 = 8,400 gives about 10.1%); 10.8% would need about 9,000 round turns at $12. Treat 10.8% as the speaker's rough figure, about 10% a year.",
+   "fix": "Moritz: at roughly 6 dollars all-in per contract and about 8,000-9,000 round turns per million per year, execution cost is roughly 10 percent a year (he states 10.8%), a very high hurdle for the short-term strategy."
+  }
+ ],
+ "chunks_checked": [
+  "C01",
+  "C02",
+  "C03",
+  "C04",
+  "C05",
+  "C06",
+  "C07",
+  "C08",
+  "C09",
+  "C10",
+  "C11",
+  "C12"
+ ],
+ "completeness_estimate": "0.89 - first reader caught the J8 decomposition philosophy, trend/carry/arbitrage rules, risk weighting, leverage and Redwood points; missed a few mechanisms (outright vs relative VIX trade, diversification-to-leverage logic, holding period/universe of Redwood, equity exclusion caveat, cost components) and mis-attributed one answer to the host."
+}

@@ -115,8 +115,8 @@
   }
  ],
  "chunks": 18,
- "crosscheck": null,
- "completeness_estimate": null,
+ "crosscheck": "opus cross-check",
+ "completeness_estimate": "0.94 - first reader caught almost all ideas (73 claims); missed the Eichengreen debt point, bill-heavy issuance, the inflation-led yield scenario, and Alan's disagreement on discretionary macro; two speaker errors in C17.",
  "claims": [
   {
    "claim_id": "MT072-C01-1",
@@ -1376,6 +1376,11 @@
    "speaker_confidence": "medium",
    "time_bound": "no",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT072-C17-3",
+    "issue": "Wrong speaker: the point that linking trend allocation to a macro view (e.g. 'Trump on-off is bad for trend') works for a year and then surprises is Alan's reply, not Niels's.",
+    "fix": "Alan Dunne: allocating to trend following based on a macro view may be right for a year before something surprises, so trend allocation should not be tied to the macro outlook."
+   },
    "quote_check": "exact"
   },
   {
@@ -1430,10 +1435,87 @@
    "speaker_confidence": "medium",
    "time_bound": "no",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT072-C17-6",
+    "issue": "Wrong speaker: the 2016-2022 timing example ending 'Don't try and time it' is Alan's; Niels answers 'Yeah. No, absolutely. Alan, this was great'.",
+    "fix": "Alan Dunne: waiting until the environment looks favourable for trend following means missing years (2019-2021 were good, consensus only in 2022), so do not time trend allocations."
+   },
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT072-C04-X1",
+   "chunk": "C04",
+   "speaker": "Alan Dunne",
+   "quote": "Barry Iikin Green presented a paper at Jackson Hole two years ago to you know all the good and the great in the central banking community about high debt levels and how they're going to be here to stay",
+   "claim": "Eichengreen's Jackson Hole paper argued that today's high public debt levels will not be worked down and are here to stay, which underpins the view of persistently higher yields.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "rates",
+   "indicator": "public debt/GDP",
+   "horizon": "years",
+   "direction": "debt stays high -> yields higher",
+   "conditions": "",
+   "testable": "partly - historical debt reduction episodes",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT072-C05-X1",
+   "chunk": "C05",
+   "speaker": "Alan Dunne",
+   "quote": "now we're into a situation where you know they can't term out the they had to issue bills because this concern about lack of demand for for the long end",
+   "claim": "After the 2000 surplus the US even stopped issuing long bonds for a while, but now the Treasury cannot term out its debt and leans on bill issuance because of doubts about demand at the long end of the curve.",
+   "mechanism": "fiscal_debt",
+   "asset_class": "rates",
+   "indicator": "Treasury issuance mix (bills vs coupons)",
+   "horizon": "years",
+   "direction": "weak long-end demand -> more bills",
+   "conditions": "large deficits",
+   "testable": "yes - bill share of issuance vs term premium",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT072-C07-X1",
+   "chunk": "C07",
+   "speaker": "Alan Dunne",
+   "quote": "Another scenario is is the economy doesn't weak that weaken that much and and maybe we see higher inflation in the near term and the Fed might have to actually respond to that.",
+   "claim": "In the alternative scenario where the economy does not weaken much and near-term inflation rises, a Fed forced to respond becomes the trigger that pushes yields up in the near term.",
+   "mechanism": "policy_reaction",
+   "asset_class": "rates",
+   "indicator": "inflation vs growth path",
+   "horizon": "months",
+   "direction": "yields up",
+   "conditions": "no recession and rising inflation",
+   "testable": "partly - yield reaction to inflation surprises in non-recession periods",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT072-C13-X1",
+   "chunk": "C13",
+   "speaker": "Alan Dunne",
+   "quote": "I just think it is an environment it does offer big opportunities obviously that doesn't mean every discretionary macro manager will be on the right side of it and that's what we saw in April",
+   "claim": "Contrary to Niels's coin-flip view, Alan argues the high-dispersion 2025 environment offers big asymmetric opportunities for discretionary macro, though results vary widely across managers as April showed.",
+   "mechanism": "new: manager_dispersion",
+   "asset_class": "multi",
+   "indicator": "macro and CTA manager return dispersion",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "volatile policy-driven macro regimes",
+   "testable": "partly - dispersion of macro fund returns in volatile regimes",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
    "quote_check": "exact"
   }
  ],
  "n_sonnet": 73,
- "n_opus_added": 0,
- "n_corrections": 0
+ "n_opus_added": 4,
+ "n_corrections": 2
 }

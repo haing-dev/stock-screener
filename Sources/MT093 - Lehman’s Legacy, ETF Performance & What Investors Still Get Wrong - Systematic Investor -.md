@@ -5,10 +5,10 @@ date: 2025-09-27
 channel: "Top Traders Unplugged"
 url: 
 words: 11562
-claims: 50
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 64
+added_by_crosscheck: 14
+corrections: 2
+crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Rob Carver (systematic trader, author)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Systematic Investor episode on institutional entry into managed futures, position sizing without leverage, why not to currency-convert prices, and the gap between fund and investor returns (YieldMax, Morningstar). Main conclusion: do not time in and out of strategies; use all data rather than a recent window, and hold trend following despite weak recent results.
 
 **Approach:** trend following, CTA, position sizing, investor behavior, research method
+
+**Cross-check completeness estimate of first read:** 0.85 - first reader (80 claims) captured nearly all of the methodological content (sizing, FX conversion, window length, investor returns); misses are supporting data points, a few reasoning links, and one hosts' view on bond risk premia.
 
 ## Coverage
 
@@ -48,6 +50,7 @@ tags: [source, layer0]
 - **Rob Carver** A sell-side overweight initiation on Lehman (reiterated until about 10 days before it failed) shows analyst buy ratings are poor risk signals near failures.  #mech/behavioral
   > initiates coverage of Lehman Brothers with an overweight recommendation that is iterated apparently on July 14th and August 27th
   indicator: sell-side recommendation · asset: equities · horizon: weeks · conditions: Single anecdote · testable: no: anecdote · confidence: medium
+  **Correction (cross-check):** The precise details of the Morgan Stanley note (initiated 30 June, reiterated 14 July and 27 August) are given by Niels after he looked them up, not Rob; the lesson 'analyst buy ratings are poor risk signals near failures' is the first reader's inference, as the speakers only remark on the irony and the analyst's later career. → Niels notes that a Morgan Stanley note initiating Lehman at overweight on 30 June was reiterated on 14 July and 27 August, shortly before the September failure; the hosts treat it as an ironic anecdote, with no explicit methodological conclusion.
   ^MT093-C02-1
 - **Rob Carver** Allocators often give money to managers after large losses, opposite to how CTA allocation behaves, raising the question of whether to allocate after losses.  #mech/behavioral
   > if you're a hedge fund manager and you've lost a lot of money then then actually people are desperate to give you money
@@ -61,6 +64,10 @@ tags: [source, layer0]
   > some of these large institutions the black rocks the Fidelities have entered the CTA trend following space lately
   asset: multi · direction: trend following inflows · horizon: years · testable: partly: product launches observable · confidence: medium
   ^MT093-C02-4
+- **Niels Kaastrup-Larsen** After the 25bp September cut, Waller (a contender for Fed chair) did not dissent and Powell did not signal capitulation to a run of cuts, which the administration would not have wanted to see; the Fed is not pre-committed to many cuts.  #mech/policy_reaction _(added by sonnet-xhigh cross-check, time-bound view)_
+  > it didn't sound like from what I've read that PAL was lining up um you know complete um surrender and lots of rate cuts coming uh our way
+  indicator: FOMC votes and dissents · asset: rates · direction: fewer cuts than the administration wants · horizon: months · conditions: Fed independence under pressure · testable: partly - FOMC votes and guidance are observable · confidence: medium
+  ^MT093-C02-X1
 
 ### C03
 - **Niels Kaastrup-Larsen** The Fidelity paper argues managed futures dynamically follow trends, keep low correlation to traditional assets and protect capital in crises, though not outperforming in every environment.  #mech/structural_shift
@@ -88,6 +95,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** His trend barometer was at 41, an improvement over the previous 10 days but still not strong, with positions about 50-60% of typical risk.  #mech/slow_reaction _(time-bound view)_
   > my own trend barometer finished yesterday at 41. So that's an improvement.
   indicator: Niels trend barometer · asset: multi · direction: trend signal weak · horizon: weeks · testable: partly: barometer is proprietary · confidence: medium
+  **Correction (cross-check):** The 50-60% of typical risk is Rob's own stated risk level (said in C05, 'equivalent numbers to you really'); Niels did not state a risk level in the transcript. → Niels' trend barometer was at 41, an improvement over about 10 days but still not strong; separately Rob says his own risk is about 50-60% of typical.
   ^MT093-C04-3
 - **Niels Kaastrup-Larsen** CTA gains in recent months came from equity and gold trends.  #mech/slow_reaction _(time-bound view)_
   > such as equity, such as gold um have been really pulling uh the performance forward
@@ -97,6 +105,14 @@ tags: [source, layer0]
   > So CT index up 2.85 for the month, down only 3.62% for the year.
   indicator: CTA indexes, MSCI World, S&P 500 TR · asset: multi · horizon: months · testable: yes: index data · confidence: high
   ^MT093-C04-5
+- **Niels Kaastrup-Larsen** September 2025 trend-index data beyond the CTA index: SG Trend up almost 4% in the month and down just over 4% YTD, and the short-term traders index up 2.13% in the month and down 4.37% YTD, i.e. managed futures recovering but still negative for the year.  #mech/cycle_persistence _(added by sonnet-xhigh cross-check, time-bound view)_
+  > the short-term traders index actually a good improvement 2.13% uh for the month down uh just 4.37% so far this year
+  indicator: SG Trend index; short-term traders index · asset: multi · direction: CTA performance recovering · horizon: months · conditions: Late 2025 rebound led by equities and gold trends · testable: yes - index series are public · confidence: high
+  ^MT093-C04-X1
+- **Niels Kaastrup-Larsen** Traditional assets kept delivering in 2025: the S&P US aggregate bond index was up 1.25% in September and 6.25% YTD, alongside equities, so a 60/40 benchmark outran trend indices.  #mech/cycle_persistence _(added by sonnet-xhigh cross-check, time-bound view)_
+  > the US aggregate bond index from S&P is up one and a quarter for the month, up 6 and a quarter for the year
+  indicator: S&P US aggregate bond index · asset: rates · direction: bonds up · horizon: months · testable: yes - index series are public · confidence: high
+  ^MT093-C04-X2
 
 ### C05
 - **Rob Carver** Rob runs about 50-60% of his typical risk because clear trends are lacking, with long equities, FX, bonds and short energy and Bitcoin.  #mech/risk_management _(time-bound view)_
@@ -119,6 +135,18 @@ tags: [source, layer0]
   > at least in my systematic portfolio, I'm going to lose money
   asset: multi · testable: no: reflection · confidence: low
   ^MT093-C05-5
+- **Niels Kaastrup-Larsen** Niels argues that, given large fiscal deficits and rising debt almost everywhere, many government bond markets should carry a higher risk premium than they currently do.  #mech/fiscal_debt _(added by sonnet-xhigh cross-check, time-bound view)_
+  > everybody getting into massive amount of debt, I think you could probably argue that many bond markets might uh you know probably should have a higher risk premier
+  indicator: bond term/risk premium versus debt levels · asset: rates · direction: long-end yields should be higher · horizon: years · conditions: Rising debt supply · testable: partly - term premium estimates exist but timing is not specified · confidence: medium
+  ^MT093-C05-X1
+- **Rob Carver** Rob's trend system holds a modest but persistent long bond position (BTPs, US 30-year, Canadian 10-year) with risk about half that on equities, so a bond sell-off driven by Fed-independence or inflation fears would cost his systematic book money.  #mech/risk_management _(added by sonnet-xhigh cross-check, time-bound view)_
+  > I'm long bonds, but my risk is about half what is in equities
+  indicator: bond trend signal (with carry) and risk allocation · asset: rates · direction: long BTPs, US 30-year, Canada 10-year · horizon: months · conditions: Trend and carry signals still long · testable: yes - positions follow a rules-based system · confidence: high
+  ^MT093-C05-X2
+- **unclear (Rob Carver or Niels Kaastrup-Larsen)** UK gilt yields recently reached 27-year highs, above the Truss-crisis peak, together with inflation that stayed high since 2022 while EU inflation mean-reverted, a case where bond markets have priced debt and inflation concerns.  #mech/fiscal_debt _(added by sonnet-xhigh cross-check, time-bound view)_
+  > in the UK we did hit 27year high yields uh only a couple of weeks ago higher than windless trust
+  indicator: UK gilt yields · asset: rates · direction: UK yields higher · horizon: weeks · conditions: Persistent UK inflation versus EU · testable: yes - gilt yield history is public · confidence: high
+  ^MT093-C05-X3
 
 ### C06
 - **Rob Carver** UK yields are above Italy's even though Italian debt/GDP is worse, so UK bond weakness reflects persistent inflation rather than debt alone.  #mech/fiscal_debt _(time-bound view)_
@@ -133,6 +161,10 @@ tags: [source, layer0]
   > you're going to be going down from some say 25 to 12 a.5% which is a very low risk target
   indicator: annualised volatility of instruments · asset: equities · conditions: Depends on asset volatility · testable: yes: risk target comparison · confidence: high
   ^MT093-C06-3
+- **Rob Carver** In an unlevered account forecast scaling is asymmetric: weak forecasts can shrink positions but stronger-than-average ones cannot raise them, so the fraction of the forecast-strength information that is used falls.  #mech/risk_management _(added by sonnet-xhigh cross-check)_
+  > So if my forecasts become really weak, then yes, I will cut my position, but if they get stronger than average, then I can't really do anything about it.
+  indicator: forecast-scaled position sizing · asset: multi · conditions: Cash-only portfolios with a 100% notional cap · testable: yes - compare capped versus uncapped forecasts in a backtest · confidence: high
+  ^MT093-C06-X1
 
 ### C07
 - **Rob Carver** Alternative: cap forecasts at the average (10) instead of twice average (20), so weak forecasts shrink positions and cash creeps back in.  #mech/risk_management
@@ -161,6 +193,10 @@ tags: [source, layer0]
   > I just have to convert enough for the margin.
   indicator: futures margin · asset: fx · conditions: Futures not cash instruments · testable: yes · confidence: medium
   ^MT093-C08-4
+- **Rob Carver** Converting a foreign asset's price into home currency before trend following adds the exchange-rate trend to the asset's trend (e.g. a falling pound makes a US ETF look stronger), so the signal becomes a blend of two instruments rather than a clean trend in either.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > Because it would have had a sort of systematic drift added to it, which is the depre depreciation of the currency effect on top of it.
+  indicator: home-currency price of a foreign-listed asset · asset: multi · direction: trend signal inflated when home currency depreciates · conditions: Non-home-currency instruments · testable: yes - compare signals on converted versus local price series · confidence: high
+  ^MT093-C08-X1
 
 ### C09
 - **Rob Carver** Trend following works well on cryptocurrencies by Rob's testing and by a crypto hedge fund he advises, with no guarantee for the future.  #mech/slow_reaction
@@ -181,6 +217,10 @@ tags: [source, layer0]
   > lot of pe a lot more people are putting money in just before the thing goes down that are putting money in um when it's about to go
   indicator: net fund flows · asset: multi · horizon: months · conditions: Spiky/skewed funds · testable: yes: flows data · confidence: high
   ^MT093-C10-2
+- **Rob Carver** Investor (cash/dollar-weighted) return for a fund can be estimated from its annual reports and net flows in and out, then compared with the headline percentage return; the flow-weighted aggregate is what investors actually earned.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > he looks at the the um the annual reports and the kind of cash movements um and looks at the the net flows in and out
+  indicator: fund net flows; investor return minus fund return · asset: multi · horizon: years · conditions: Needs fund-level flow and NAV data · testable: yes - Morningstar-type calculation on fund flows · confidence: high
+  ^MT093-C10-X1
 
 ### C11
 - **Rob Carver** For the YieldMax fund, 2.5bn of net inflows and investors lost a combined 35.5m (about 1.5%) against a 42% fund gain.  #mech/behavioral
@@ -199,6 +239,10 @@ tags: [source, layer0]
   > as a quant if you like you should say well this is generally true or is this just you know are the investors in this particular fund just uniquely stupid
   asset: multi · testable: yes · confidence: high
   ^MT093-C11-4
+- **Rob Carver** In the few funds where investors beat the fund's own return, the cause is probably luck rather than timing skill, given so many funds; the industry average gap is negative.  #mech/behavioral _(added by sonnet-xhigh cross-check)_
+  > There's probably no skill here. It probably just that by luck, you know, there are so many funds out there that
+  indicator: investor return gap by fund · asset: multi · horizon: years · conditions: Large cross-section of funds · testable: yes - test cross-sectional dispersion against chance · confidence: medium
+  ^MT093-C11-X1
 
 ### C12
 - **Rob Carver** Morningstar finds investor returns trail fund returns by 1.7% a year across all US funds over 10 years, substantial over a decade.  #mech/behavioral
@@ -213,6 +257,10 @@ tags: [source, layer0]
   > they're pretty poor at very poor at timing when to invest in things and when to take money out of things
   asset: multi · horizon: years · testable: yes: flow studies · confidence: high
   ^MT093-C12-3
+- **Rob Carver** The share of assets in passive or index strategies has risen persistently over a long period, so the passive-versus-active debate is largely won by passive.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > the percentage of of um assets that are passively managed or in managed by indices has just just kind of gone up um persistently over quite long period of time now
+  indicator: share of assets passively managed · asset: equities · direction: passive share up · horizon: years · testable: yes - industry asset-share data · confidence: medium
+  ^MT093-C12-X1
 
 ### C13
 - **Rob Carver** Manager skill persistence can be tested through return autocorrelation: positive means good managers stay good, negative means mean reversion.  #mech/research_method
@@ -223,6 +271,10 @@ tags: [source, layer0]
   > any strategy that will go through long periods of underperformance or negative performance inevitably at some point people are going to be asking that question
   asset: multi · horizon: years · testable: no: framing · confidence: high
   ^MT093-C13-2
+- **Rob Carver** Evidence on whether active-manager performance persists (the persistence scorecard debate) is unsettled; a critique of the scorecard analysis does not settle the question either way.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > the FT sort of said well this is a very poor analysis but actually ultimately um it doesn't really kind of settle the argument one way or the other
+  indicator: active manager performance persistence · asset: equities · horizon: years · testable: partly - persistence tests exist but results are disputed · confidence: medium
+  ^MT093-C13-X1
 
 ### C14
 - **Rob Carver** The default allocator approach for blending trend with 60/40 is to use the full history (Rob's backtest runs back to 1970) with equal weight; a backfill trend index can be built by replication using futures prices.  #mech/research_method
@@ -233,6 +285,10 @@ tags: [source, layer0]
   > you've done something that is not back testable because you have essentially created a an arbitrary point
   indicator: recent-window optimization · asset: multi · horizon: years · testable: yes: can show look-ahead bias · confidence: high
   ^MT093-C14-2
+- **Rob Carver** Plausible 'the world has changed' stories for weak CTA returns (Trump policy, more algorithmic trading, markets becoming more efficient so less alpha) are narratives that cannot be separated from bad luck without a testable method.  #mech/structural_shift _(added by sonnet-xhigh cross-check)_
+  > just over time markets get more efficient and therefore there's less alpha to be collected
+  indicator: trend following alpha over time · asset: multi · direction: trend returns lower · horizon: years · testable: partly - test for structural break in trend returns · confidence: low
+  ^MT093-C14-X1
 
 ### C15
 - **Rob Carver** Persistence and autocorrelation of strategy returns are weak, so there is no reliable conditioning variable to forecast CTA performance over the next 12 months.  #mech/research_method
@@ -247,6 +303,10 @@ tags: [source, layer0]
   > It doesn't make a lot of difference if you use 40 or even 30 years of data or even 20 years of data
   asset: multi · horizon: years · testable: yes · confidence: medium
   ^MT093-C15-3
+- **Rob Carver** An allocation optimised on a very short window (e.g. the last 10 days) is mostly noise and would also cause constant switching and trading costs, showing that out-of-sample quality degrades as the fit window shrinks.  #mech/research_method _(added by sonnet-xhigh cross-check)_
+  > Even ignoring trading costs, you know, you're just going to have mostly noise.
+  indicator: optimisation window length · asset: multi · horizon: days · conditions: Very short windows · testable: yes - compare out-of-sample results by window length · confidence: high
+  ^MT093-C15-X1
 
 ### C16
 - **Niels Kaastrup-Larsen** Trend following has survived 51 years of change because it adapts through research, though 1970s rules should not be applied unchanged.  #mech/structural_shift

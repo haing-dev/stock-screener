@@ -6,7 +6,7 @@ channel: "Money Maze Podcast"
 url: 
 words: 9867
 claims: 38
-added_by_opus: 6
+added_by_crosscheck: 6
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Ray Dalio (founder, Bridgewater Associates)", "Interviewer (host, Money Maze Podcast)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** long debt cycle, geopolitics, history analogs, diversification, systematic decision rules, bond market, country selection
 
-**Opus completeness estimate of first read:** 0.85 - first reader caught the five forces, debt mechanics, geography rules and process lessons; missed China growth data, the Taiwan trigger, the energy-transition supply squeeze and the bond-holder demand point; two claims add causes not in the text.
+**Cross-check completeness estimate of first read:** 0.85 - first reader caught the five forces, debt mechanics, geography rules and process lessons; missed China growth data, the Taiwan trigger, the energy-transition supply squeeze and the bond-holder demand point; two claims add causes not in the text.
 
 ## Coverage
 
@@ -52,7 +52,7 @@ tags: [source, layer0]
 - **Ray Dalio** In 1973 the dollar devaluation, inflation and the oil crisis combined to push stocks down, showing that devaluation effects depend on whether inflation follows.  #mech/cycle_persistence
   > they devalue the dollar and stocks go down we have this inflationary
   asset: equities · direction: stocks down · horizon: years · conditions: inflationary stagflation with oil shock · testable: yes - 1973-74 history · confidence: medium
-  **Correction (Opus):** Over-interpretation: Dalio does not say devaluation effects depend on whether inflation follows; he only notes that in 1973 the dollar devaluation came with inflation, the oil crisis and falling stocks. → In 1973 the dollar was devalued amid inflation and the oil crisis, and stocks went down (unlike the 1971 rally).
+  **Correction (cross-check):** Over-interpretation: Dalio does not say devaluation effects depend on whether inflation follows; he only notes that in 1973 the dollar devaluation came with inflation, the oil crisis and falling stocks. → In 1973 the dollar was devalued amid inflation and the oil crisis, and stocks went down (unlike the 1971 rally).
   ^MT058-C02-2
 
 ### C03
@@ -65,7 +65,7 @@ tags: [source, layer0]
 - **Ray Dalio** Dalio correctly called the 1982 EM debt default but wrongly predicted a depression; policy easing made Aug 1982 the exact equity bottom, so being right on events does not mean being right on market direction.  #mech/policy_reaction
   > August 1982 um was the exact bottom in the stock market the Dow was at 777
   asset: equities · direction: long equities after the default · horizon: months · conditions: central bank easing after default · testable: yes - 1982 episode · confidence: high
-  **Correction (Opus):** Adds a cause not in the transcript: Dalio never says policy easing made August 1982 the bottom; he only says it was the exact bottom (Dow 777) and he lost money. → Dalio correctly called the 1982 EM debt default but wrongly predicted a terrible debt crisis and depression; August 1982 (Dow 777) was the exact stock market bottom, so he lost money and learned humility about being wrong.
+  **Correction (cross-check):** Adds a cause not in the transcript: Dalio never says policy easing made August 1982 the bottom; he only says it was the exact bottom (Dow 777) and he lost money. → Dalio correctly called the 1982 EM debt default but wrongly predicted a terrible debt crisis and depression; August 1982 (Dow 777) was the exact stock market bottom, so he lost money and learned humility about being wrong.
   ^MT058-C04-1
 - **Ray Dalio** Combining good, uncorrelated bets can cut portfolio risk by up to 80% without lowering expected return.  #mech/risk_management
   > diversification properly done could reduce my Risk by up to 80% without reducing my return
@@ -117,7 +117,7 @@ tags: [source, layer0]
   > what the central bank is forced to choose between is interest rates Rising a lot
   asset: rates · direction: higher rates or money printing · horizon: years · conditions: large selling of old debt plus large deficits · testable: partly - scenario claim · confidence: medium
   ^MT058-C07-2
-- **Ray Dalio** China's rise since 1984 (per-capita income up 28 times, life expectancy up 10 years, poverty from 88% to under 1%) is the economic base of a rising power that now challenges the existing world order, which in history leads to conflict.  #mech/structural_shift _(added by Opus)_
+- **Ray Dalio** China's rise since 1984 (per-capita income up 28 times, life expectancy up 10 years, poverty from 88% to under 1%) is the economic base of a rising power that now challenges the existing world order, which in history leads to conflict.  #mech/structural_shift _(added by opus cross-check)_
   > since I started going to China in 1984 per capita income increased by 28 times um the life expectancy increased by 10 years poverty rates went from
   indicator: China per-capita income, life expectancy, poverty rate · asset: multi · direction: rising power vs incumbent conflict risk up · horizon: years · testable: partly - long-run history comparison · confidence: high
   ^MT058-C07-X1
@@ -145,11 +145,11 @@ tags: [source, layer0]
   > we're not going to cross those red lines now but we are both sides preparing for that war
   asset: multi · horizon: years · conditions: Taiwan independence signals, arms sales · testable: no - forecast · confidence: medium
   ^MT058-C09-2
-- **Ray Dalio** The one trigger both sides know would cause a war is the US backing Taiwan independence; election-period pledges to defend Taiwan and arms sales push toward that red line.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Ray Dalio** The one trigger both sides know would cause a war is the US backing Taiwan independence; election-period pledges to defend Taiwan and arms sales push toward that red line.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > if the United States says we're in favor of China of Taiwan Independence so what we are doing is there's a pushing of that limit
   indicator: US statements on Taiwan independence; arms sales · asset: multi · direction: geopolitical risk up around US election · horizon: years · conditions: US election period · testable: partly - event study on Taiwan-related announcements · confidence: medium
   ^MT058-C09-X1
-- **Ray Dalio** Outcomes of the great-power contest depend on each side's internal strength (finances, unity, productivity), so internal debt and political conflict weaken a country's external position.  #mech/fiscal_debt _(added by Opus)_
+- **Ray Dalio** Outcomes of the great-power contest depend on each side's internal strength (finances, unity, productivity), so internal debt and political conflict weaken a country's external position.  #mech/fiscal_debt _(added by opus cross-check)_
   > the most important thing that United States can do or Western powers can do is be strong okay what does that mean strong financially strong working together being united being productive
   asset: multi · horizon: years · testable: no - broad historical judgement · confidence: medium
   ^MT058-C09-X2
@@ -177,7 +177,7 @@ tags: [source, layer0]
   > that estimated amount is is between five and10 trillion dollar uh a year
   asset: multi · horizon: years · conditions: competes with other spending on infrastructure and education · testable: partly - cost estimate · confidence: low
   ^MT058-C11-1
-- **Ray Dalio** During the energy transition, underinvestment in old energy sources cuts supply before new sources replace them, making the transition costly (supply squeeze) on top of infrastructure and damage costs.  #mech/structural_shift _(added by Opus)_
+- **Ray Dalio** During the energy transition, underinvestment in old energy sources cuts supply before new sources replace them, making the transition costly (supply squeeze) on top of infrastructure and damage costs.  #mech/structural_shift _(added by opus cross-check)_
   > you don't invest in um the um old Technologies the old energy sources so you have less Supply in that period of time before it's uh replaced by the newer energy sources
   indicator: fossil-fuel capex vs supply · asset: commodities · direction: energy supply down, costs up · horizon: years · conditions: before new sources scale up · testable: yes - energy capex vs prices · confidence: medium
   ^MT058-C11-X1
@@ -215,11 +215,11 @@ tags: [source, layer0]
   > explain exactly why it is you like dollar cash right now
   asset: multi · direction: long USD cash · testable: no - details not given here · confidence: low
   ^MT058-C14-4
-- **Ray Dalio** Investors already hold a large share of portfolios in bonds and have lost money on them, so demand for new bonds is weak relative to supply, and rates face upward pressure until the consequences are felt in the economy.  #mech/fiscal_debt _(added by Opus, time-bound view)_
+- **Ray Dalio** Investors already hold a large share of portfolios in bonds and have lost money on them, so demand for new bonds is weak relative to supply, and rates face upward pressure until the consequences are felt in the economy.  #mech/fiscal_debt _(added by opus cross-check, time-bound view)_
   > they've all lost a lot of money and and it constitutes a high percentage of their portfolios
   indicator: bond share of portfolios; supply vs demand · asset: rates · direction: yields up · horizon: years · conditions: large deficits, QT, sanctions risk · testable: partly - holdings data vs term premium · confidence: medium
   ^MT058-C14-X1
-- **Interviewer (Money Maze host)** The host frames QE as having disabled the long end as a fiscal disciplinarian and sees rising yields as its return, raising the question of when Treasury yields pull liquidity from other assets.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Interviewer (Money Maze host)** The host frames QE as having disabled the long end as a fiscal disciplinarian and sees rising yields as its return, raising the question of when Treasury yields pull liquidity from other assets.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > the long end of the bond market was the policeman and then QE came along and and you know the bond market was emasculated and now we're back
   indicator: long-end Treasury yields · asset: rates · direction: yields up · horizon: years · conditions: QE ended · testable: partly - yield reaction to fiscal news pre/post QE · confidence: medium
   ^MT058-C14-X2

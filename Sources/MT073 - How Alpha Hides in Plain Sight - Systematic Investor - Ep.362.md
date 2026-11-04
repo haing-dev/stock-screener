@@ -5,10 +5,10 @@ date: 2025-08-28
 channel: "Top Traders Unplugged"
 url: 
 words: 12306
-claims: 70
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 73
+added_by_crosscheck: 3
+corrections: 1
+crosscheck: "opus cross-check"
 speakers: ["Alan Dunne (host, sitting in for Niels, allocator/researcher)", "Yoav Git (guest co-host, quant CTA researcher, Cambridge)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Systematic Investor ep. 362 (Aug 2025): Yoav Git discusses a futures-curve (spread) trend paper, COT-based evidence that trend is not at capacity, the Bank of England FX derivatives paper, and his blog on how CTAs fit with long-term capital-market-assumption allocators (Vanguard 30/70). Main conclusions: trade spreads only after dislocations create risk, speculator positioning shows no trend crowding, and long-horizon allocators are mean-reverting so systematic strategies complement them.
 
 **Approach:** trend following, futures curve and spread trading, market structure, COT positioning, FX derivatives, asset allocation, capital market assumptions
+
+**Cross-check completeness estimate of first read:** 0.95 - first reader covered nearly every idea (72 claims); only a cost figure, the CLS data source and the van Hemert FX-hedging reference were missed; one numeric misstatement on the Vanguard cut.
 
 ## Coverage
 
@@ -202,6 +204,10 @@ tags: [source, layer0]
   > the back of the curve looks cheap while the front of the curve looks dear. If you if momentum wants to buy something then maybe you should buy the back.
   indicator: curve shape for contract selection · asset: commodities · direction: buy deferred contracts · horizon: weeks · testable: yes · confidence: medium
   ^MT073-C08-5
+- **Yoav Git** Trading costs for slow outright trend are small, roughly 0.02-0.03 of Sharpe ratio, and slow trend is the dominant source of trend returns, which sets the cost benchmark that spread trading must beat.  #mech/research_method _(added by opus cross-check)_
+  > if I'm trading the outright there's going to be a certain cost in sharper basis stuff. So maybe three two or three basis points of sharp okay so 002 of sharp
+  indicator: transaction cost in Sharpe-ratio units · asset: commodities · horizon: months · conditions: slow outright trend vs faster spread trend · testable: yes - gross vs net Sharpe by speed and instrument · confidence: medium
+  ^MT073-C08-X1
 
 ### C09
 - **Yoav Git** Copper has become more speculative (CTAs, multistrats) at the front of the curve, seen in volume vs open interest and COT.  #mech/crowding_positioning
@@ -256,6 +262,10 @@ tags: [source, layer0]
   > it behooves us as corns rather than just shoving it into a machine to really understand what's going on
   asset: multi · testable: partly · confidence: high
   ^MT073-C11-3
+- **Yoav Git** Few data sets show FX positioning; CLS, a major FX settlement provider, offers heavily anonymized flow data, which the regulator-level Bank of England data far exceeds in granularity.  #mech/research_method _(added by opus cross-check)_
+  > there's uh CLS is one of the biggest providers they do settlement FX settlements and they offer some data which is very anonymized
+  indicator: CLS FX settlement flow data · asset: fx · testable: partly - data availability statement · confidence: high
+  ^MT073-C11-X1
 
 ### C12
 - **Yoav Git** FX market makers hold risk in contracts up to one week; hedge funds and asset managers trade 1-3 months (IMM dates); corporates hold 2-3 year swaps, each in their own habitat along the curve.  #mech/liquidity_flows
@@ -311,6 +321,7 @@ tags: [source, layer0]
 - **Yoav Git** Vanguard cut its 10-year equity return forecast by half the June 2025 rally (10-11%), leading to a 30% equity / 70% bond allocation.  #mech/behavioral _(time-bound view)_
   > they only cut 50% of it. So we we they cut the expect long-term expectation to to equity by half a percent based on actually very short-term change in equities.
   indicator: Vanguard 10-year equity return forecast · asset: equities · direction: less equity · horizon: years · testable: yes · confidence: high
+  **Correction (cross-check):** Wrong number: Vanguard cut its 10-year equity return expectation by about half a percentage point (about half of the roughly 1%/yr implied by the 10-11% June rally, from about 4.5%), not by half the rally itself. → After the 10-11% June 2025 equity rally Vanguard cut its 10-year US equity return assumption by about 0.5 percentage point (from roughly 4.5%), half the rally's per-year effect, and moved to about 30% equities / 70% bonds.
   ^MT073-C15-3
 
 ### C16
@@ -358,4 +369,8 @@ tags: [source, layer0]
   > some systematic strategies like FX hedging are part of the way that you embed are embedded into your process
   indicator: systematic FX hedge · asset: fx · horizon: years · testable: partly · confidence: medium
   ^MT073-C18-1
+- **Yoav Git** An allocator with structural foreign-currency exposure (e.g. an Australian investor holding USD assets) should hedge it with a systematic rule; a van Hemert paper studies the best ways to hedge FX exposure, a simple model for embedding systematic strategies such as trend into allocation.  #mech/risk_management _(added by opus cross-check)_
+  > there's a great paper by van Hemtt um about the best ways to hedge FX exposure
+  indicator: systematic FX hedge ratio rules · asset: fx · horizon: months · conditions: investors with structural FX exposure · testable: yes - compare hedging rules historically · confidence: medium
+  ^MT073-C18-X1
 

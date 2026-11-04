@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 13355
 claims: 67
-added_by_opus: 6
+added_by_crosscheck: 6
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Richard Brennan (guest, systematic trend-following manager and researcher)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, complex adaptive systems, passive investing structure, market inelasticity, agent-based modelling
 
-**Opus completeness estimate of first read:** 0.93 - first reader covered the whole argument, model results and data closely; only a few caveats, the ecology-diversity point and minor examples were missing.
+**Cross-check completeness estimate of first read:** 0.93 - first reader covered the whole argument, model results and data closely; only a few caveats, the ecology-diversity point and minor examples were missing.
 
 ## Coverage
 
@@ -140,11 +140,11 @@ tags: [source, layer0]
   > theoretically an extinction level event of passive
   indicator: passive concentration · asset: equities · horizon: years · testable: no - speculative · confidence: low
   ^MT017-C06-5
-- **Richard Brennan** Unlike passive, which dilutes balancing capital and helps trend following, volatility-suppressing structured-product issuance may hurt trend following by damping moves while concentrating risk.  #mech/crowding_positioning _(added by Opus)_
+- **Richard Brennan** Unlike passive, which dilutes balancing capital and helps trend following, volatility-suppressing structured-product issuance may hurt trend following by damping moves while concentrating risk.  #mech/crowding_positioning _(added by opus cross-check)_
   > this rise of passive is great for trend. Um so it's fantastic for us. So this rise of structured products, however, uh might not be
   indicator: structured product issuance vs passive share · asset: multi · direction: passive growth favours trend; structured product growth works against it · horizon: years · conditions: while structured products hold volatility down · testable: partly - issuance volumes vs trend returns could be compared · confidence: medium
   ^MT017-C06-X1
-- **Richard Brennan** A market with a diverse mix of strategies is structurally robust, while dominance by one strategy type creates a concentration effect that makes the whole market fragile.  #mech/crowding_positioning _(added by Opus)_
+- **Richard Brennan** A market with a diverse mix of strategies is structurally robust, while dominance by one strategy type creates a concentration effect that makes the whole market fragile.  #mech/crowding_positioning _(added by opus cross-check)_
   > the more different um ecologies you have, the broader the ecology, the more the the different forces at play create structural diversity. That creates a foundation of strength.
   indicator: strategy diversity / concentration of participant types · asset: multi · horizon: years · conditions: fragility rises as one strategy type dominates · testable: partly - needs a measure of participant diversity · confidence: medium
   ^MT017-C06-X2
@@ -153,13 +153,13 @@ tags: [source, layer0]
 - **Richard Brennan** Demography (retirees drawing down passive holdings) is the force that may eventually reverse passive growth, probably affecting the next generation.  #mech/structural_shift
   > what works against passive it's to some degree is demography
   asset: equities · horizon: years · testable: no - speculative · confidence: low
-  **Correction (Opus):** Speaker likely wrong: the demography remark ('what works against passive ... is demography', 'you and I may only experience one side') follows Brennan's extinction point but reads as the host's reply (he ends 'As long as our kids stay trend followers'); attribution is uncertain. → Niels Kaastrup-Larsen (probably): demography, retirees drawing down passive holdings, is the force that may eventually reverse passive growth, likely for the next generation.
+  **Correction (cross-check):** Speaker likely wrong: the demography remark ('what works against passive ... is demography', 'you and I may only experience one side') follows Brennan's extinction point but reads as the host's reply (he ends 'As long as our kids stay trend followers'); attribution is uncertain. → Niels Kaastrup-Larsen (probably): demography, retirees drawing down passive holdings, is the force that may eventually reverse passive growth, likely for the next generation.
   ^MT017-C07-1
 - **Niels Kaastrup-Larsen** SocGen spring 2026 investor survey: CTA trend rose two places from autumn 2025 but investor interest is led by discretionary global macro (59%), commodities (43%), equity market neutral (42%); CTA trend 29%.  #mech/behavioral _(time-bound view)_
   > the winner um is not trend, unfortunately. But, with 59% respondents, it's discretionary global macro
   indicator: SocGen investor sentiment survey · asset: multi · horizon: months · testable: yes - published survey · confidence: high
   ^MT017-C07-2
-- **Niels Kaastrup-Larsen** Investor interest in CTA trend in allocator surveys follows recent performance: it fell after the mid-2025 drawdowns and recovered two places by spring 2026.  #mech/behavioral _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** Investor interest in CTA trend in allocator surveys follows recent performance: it fell after the mid-2025 drawdowns and recovered two places by spring 2026.  #mech/behavioral _(added by opus cross-check, time-bound view)_
   > a little bit better than last year where I guess people were a little bit stung by the uh the drawdowns by mid-year
   indicator: SocGen investor sentiment survey ranking of CTA trend · asset: multi · direction: allocator interest lags performance · horizon: months · testable: yes - survey rankings vs trailing CTA index returns · confidence: medium
   ^MT017-C07-X1
@@ -205,7 +205,7 @@ tags: [source, layer0]
   > So, the equilibrium model treats markets as though they are clocks, not flocks.
   asset: multi · testable: partly - equilibrium vs feedback predictions · confidence: high
   ^MT017-C10-2
-- **Richard Brennan** Equity concentration in a few mega-cap names is an emergent product of participant feedback (alongside persistent trends, accelerating crashes and volatility clustering), not of rational allocation.  #mech/liquidity_flows _(added by Opus)_
+- **Richard Brennan** Equity concentration in a few mega-cap names is an emergent product of participant feedback (alongside persistent trends, accelerating crashes and volatility clustering), not of rational allocation.  #mech/liquidity_flows _(added by opus cross-check)_
   > concentration in a handful of names that no rational allocation framework can explain
   indicator: index concentration in top names · asset: equities · direction: concentration rises under reinforcing feedback · horizon: years · testable: partly - concentration vs passive share can be tracked · confidence: high
   ^MT017-C10-X1
@@ -251,7 +251,7 @@ tags: [source, layer0]
   > Market makers quote both sides of the book. Value investors step in when prices fall below perceived worth.
   asset: multi · testable: no - qualitative · confidence: medium
   ^MT017-C13-2
-- **Niels Kaastrup-Larsen** Example offered: equity market behaviour in April 2026 did not match what fundamentals would have suggested, consistent with prices decoupling from fundamentals.  #mech/overshoot _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** Example offered: equity market behaviour in April 2026 did not match what fundamentals would have suggested, consistent with prices decoupling from fundamentals.  #mech/overshoot _(added by opus cross-check, time-bound view)_
   > If you just look at the month of April, um you wouldn't expect markets to to behave the way they were.
   asset: equities · horizon: weeks · testable: no - anecdotal · confidence: medium
   ^MT017-C13-X1
@@ -291,7 +291,7 @@ tags: [source, layer0]
   > the statistical fingerprint fingerprint of of feedback-driven markets across 40 years and 68 markets
   indicator: 68 futures markets · asset: multi · horizon: years · testable: yes - his own backtest · confidence: medium
   ^MT017-C15-4
-- **Richard Brennan** Caveat: the roughly 5x inelastic-markets flow multiplier comes from a small set of studies and needs further verification, though the direction (a large multiplier) is held with confidence.  #mech/research_method _(added by Opus)_
+- **Richard Brennan** Caveat: the roughly 5x inelastic-markets flow multiplier comes from a small set of studies and needs further verification, though the direction (a large multiplier) is held with confidence.  #mech/research_method _(added by opus cross-check)_
   > Yeah, it's good piece of research, but uh it definitely warrants further investigation.
   indicator: flow-to-market-cap multiplier · asset: equities · testable: partly - replication of inelastic-markets estimates · confidence: medium
   ^MT017-C15-X1

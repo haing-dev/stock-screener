@@ -6,7 +6,7 @@ channel: "Bg2 Pod"
 url: https://www.youtube.com/watch?v=K2cpSUpdIOs
 words: 13857
 claims: 63
-added_by_opus: 6
+added_by_crosscheck: 6
 corrections: 9
 crosscheck: "opus cross-check"
 speakers: ["Brad Gerstner (host, Altimeter Capital)", "Bill Gurley (co-host, Benchmark venture capitalist)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** policy, tariffs, fiscal, AI, venture, geopolitics
 
-**Opus completeness estimate of first read:** 0.89 - good topic coverage (55 claims) but several missed points (China tariff structure, Nvidia China numbers, crypto regulatory stall, tokenization, fiscal rules, AI boom vs internet) and frequent speaker misattribution in this two-host auto-caption transcript.
+**Cross-check completeness estimate of first read:** 0.89 - good topic coverage (55 claims) but several missed points (China tariff structure, Nvidia China numbers, crypto regulatory stall, tokenization, fiscal rules, AI boom vs internet) and frequent speaker misattribution in this two-host auto-caption transcript.
 
 ## Coverage
 
@@ -96,7 +96,7 @@ tags: [source, layer0]
   > complex reg regulations have have limited or stifled innovation
   asset: equities · direction: Europe relative underperformance · horizon: years · testable: partly · confidence: medium
   ^MT012-C04-2
-- **Brad Gerstner** Because the US captured most of the internet boom's value by letting its firms sell globally, an open AI export policy should let it capture an even larger AI boom.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Brad Gerstner** Because the US captured most of the internet boom's value by letting its firms sell globally, an open AI export policy should let it capture an even larger AI boom.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > The United States was the greatest beneficiary from the internet boom of the last 20 years. The AI boom is going to be even bigger than the internet boom.
   asset: equities · direction: long US AI/tech leaders · horizon: years · conditions: only if the US keeps an open diffusion policy rather than walling off its AI · testable: no - long-horizon structural view · confidence: high
   ^MT012-C04-X1
@@ -142,7 +142,7 @@ tags: [source, layer0]
   > we're just back to where we started the year the markets were down 20% now they're up 20%
   indicator: S&P 500 · asset: equities · horizon: weeks · testable: yes · confidence: medium
   ^MT012-C07-3
-- **Bill Gurley** Even after the 90-day truce, a 30% tariff on Chinese imports (10% base plus 20% fentanyl tariff, versus about 15% entering 2025) remains a large cost hit for firms sourcing most of their COGS from China.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Bill Gurley** Even after the 90-day truce, a 30% tariff on Chinese imports (10% base plus 20% fentanyl tariff, versus about 15% entering 2025) remains a large cost hit for firms sourcing most of their COGS from China.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > we have a 30% import on Chinese still though. So if you're if you're importing 80% of your you know cogs from China, that's still a big deal.
   indicator: US tariff rate on Chinese imports (10% + 20% fentanyl) · asset: equities · direction: margins down for China-dependent importers · horizon: months · conditions: fentanyl part could drop if China acts on precursors; non-strategic goods may return to about 15% · testable: yes - margins of importers by China sourcing share · confidence: medium
   ^MT012-C07-X1
@@ -159,7 +159,7 @@ tags: [source, layer0]
 - **Bill Gurley** China already has frontier AI, so restrictions cannot keep it from China.  #mech/structural_shift
   > China already has Frontier AI. Huawei is already there.
   asset: equities · horizon: years · testable: no · confidence: medium
-  **Correction (Opus):** Wrong speaker: 'My opinion and I think you share this is China already has Frontier AI' is Brad Gerstner continuing his Nvidia/CUDA argument. → Brad Gerstner: China already has frontier AI (Huawei, open-source models possibly ahead), so restrictions cannot keep it from China.
+  **Correction (cross-check):** Wrong speaker: 'My opinion and I think you share this is China already has Frontier AI' is Brad Gerstner continuing his Nvidia/CUDA argument. → Brad Gerstner: China already has frontier AI (Huawei, open-source models possibly ahead), so restrictions cannot keep it from China.
   ^MT012-C08-3
 - **Brad Gerstner** Selling chips to China keeps Chinese firms in the CUDA ecosystem and US profit/tax base rather than the Huawei ecosystem.  #mech/structural_shift
   > keeping companies like Bite Dance and Tencent, etc. in the CUDA ecosystem rather than allowing all of that data
@@ -169,7 +169,7 @@ tags: [source, layer0]
   > who now believe that you know restricting our technology into China just gives them more and more incentive to implement their own technology faster
   asset: multi · horizon: years · testable: partly · confidence: medium
   ^MT012-C08-5
-- **Brad Gerstner** The H20 export ban removes a China business Nvidia expected to reach about $50 billion in 2-3 years (about $15 billion next year, $3 billion of US tax revenue, about $10 billion of profit for R&D).  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Brad Gerstner** The H20 export ban removes a China business Nvidia expected to reach about $50 billion in 2-3 years (about $15 billion next year, $3 billion of US tax revenue, about $10 billion of profit for R&D).  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > if you forecast out two or three years they were on track to be a $50 billion business I think in China
   indicator: Nvidia China revenue forecast under export ban · asset: equities · direction: Nvidia revenue and US tax receipts lower under the ban · horizon: years · conditions: while the H20 ban stays in place · testable: partly - forecast numbers, can be checked against later reported China revenue · confidence: medium
   ^MT012-C08-X1
@@ -214,24 +214,24 @@ tags: [source, layer0]
 - **Bill Gurley** Defense spending rises about $150B to roughly $1 trillion in the package.  #mech/fiscal_debt _(time-bound view)_
   > the defense department budget goes up by about $150 billion as part of this package
   indicator: US defense budget · asset: multi · horizon: years · testable: yes · confidence: high
-  **Correction (Opus):** Likely wrong speaker: after Bill's 'I would like it quite a bit', the reply 'Well, I think the defense department budget goes up by about $150 billion' starts Brad's turn (the same turn mentions Freedberg's All-In rant, which Bill then says he also listened to). → Brad Gerstner: defense spending rises about $150B to roughly $1 trillion in the package.
+  **Correction (cross-check):** Likely wrong speaker: after Bill's 'I would like it quite a bit', the reply 'Well, I think the defense department budget goes up by about $150 billion' starts Brad's turn (the same turn mentions Freedberg's All-In rant, which Bill then says he also listened to). → Brad Gerstner: defense spending rises about $150B to roughly $1 trillion in the package.
   ^MT012-C11-1
 - **Bill Gurley** Growth of 4-5% would solve the debt problem but is too aggressive to forecast.  #mech/fiscal_debt
   > I would love to believe that we're going to grow our economy at four or 5% per year instead of 2% per year because that would grow our way out of the problem.
   indicator: trend growth · asset: multi · horizon: years · testable: partly · confidence: medium
-  **Correction (Opus):** Wrong speaker: the 4-5% growth remark is in Brad's turn (balanced budget amendment, Freedberg rant). → Brad Gerstner: growth of 4-5% would grow the US out of its debt problem but is too aggressive to forecast.
+  **Correction (cross-check):** Wrong speaker: the 4-5% growth remark is in Brad's turn (balanced budget amendment, Freedberg rant). → Brad Gerstner: growth of 4-5% would grow the US out of its debt problem but is too aggressive to forecast.
   ^MT012-C11-2
 - **Brad Gerstner** Government land could be monetized, as Texas's university endowment of 2.1 million Permian acres yields about $894 million a year.  #mech/fiscal_debt
   > the university system here was don was granted as a gift years ago 2.1 million acres in the uh in the Perian Basin
   indicator: land monetization · asset: commodities · horizon: years · testable: partly · confidence: low
-  **Correction (Opus):** Wrong speaker: the Texas university Permian land example ('living here in Texas', 'I listened to that same episode') is Bill Gurley. → Bill Gurley: government land could be monetized, as Texas's university endowment of 2.1 million Permian acres yields about $894 million a year.
+  **Correction (cross-check):** Wrong speaker: the Texas university Permian land example ('living here in Texas', 'I listened to that same episode') is Bill Gurley. → Bill Gurley: government land could be monetized, as Texas's university endowment of 2.1 million Permian acres yields about $894 million a year.
   ^MT012-C11-3
 - **Bill Gurley** Asset monetization proceeds would go to debt paydown, putting a sovereign wealth fund on the back burner.  #mech/fiscal_debt _(time-bound view)_
   > rather than putting that money in a in a sovereign wealth fund, we're just going to use it to pay down the debt
   asset: rates · horizon: years · testable: no · confidence: low
-  **Correction (Opus):** Wrong speaker: the reply about the president using proceeds to pay down debt and shelving the sovereign wealth fund is Brad Gerstner's. → Brad Gerstner: asset monetization proceeds should go to debt paydown, putting a sovereign wealth fund on the back burner.
+  **Correction (cross-check):** Wrong speaker: the reply about the president using proceeds to pay down debt and shelving the sovereign wealth fund is Brad Gerstner's. → Brad Gerstner: asset monetization proceeds should go to debt paydown, putting a sovereign wealth fund on the back burner.
   ^MT012-C11-4
-- **Brad Gerstner** Because Congress finds it very hard to cut spending, US deficits will only be controlled through structural fiscal rules such as a balanced budget amendment, not discretionary cuts.  #mech/fiscal_debt _(added by Opus)_
+- **Brad Gerstner** Because Congress finds it very hard to cut spending, US deficits will only be controlled through structural fiscal rules such as a balanced budget amendment, not discretionary cuts.  #mech/fiscal_debt _(added by opus cross-check)_
   > I've long supported a balanced budget amendment. I think we have to come up with some structural changes, right, that will allow us to get this under control.
   indicator: US federal deficit · asset: rates · direction: deficits persist absent structural rules · horizon: years · testable: partly - cross-country fiscal-rule studies exist · confidence: medium
   ^MT012-C11-X1
@@ -244,7 +244,7 @@ tags: [source, layer0]
 - **Bill Gurley** Laffer-curve argument: top marginal all-in rates around 57% disincentivize work, so higher taxes may not raise revenue.  #mech/behavioral
   > At some point, taxes go up to a point where your tax revenues actually go down, right?
   indicator: top marginal tax rate · asset: other · horizon: years · testable: partly · confidence: medium
-  **Correction (Opus):** Wrong speaker: Bill asks about carried interest; the answer including the 57% all-in rate and the Laffer curve is Brad's (same turn continues into Invest America). → Brad Gerstner: Laffer-curve argument: top marginal all-in rates around 57% disincentivize work, so higher taxes may not raise revenue.
+  **Correction (cross-check):** Wrong speaker: Bill asks about carried interest; the answer including the 57% all-in rate and the Laffer curve is Brad's (same turn continues into Invest America). → Brad Gerstner: Laffer-curve argument: top marginal all-in rates around 57% disincentivize work, so higher taxes may not raise revenue.
   ^MT012-C12-2
 - **Brad Gerstner** Invest America seeds each newborn with $1,000 in an S&P 500 account that compounds to about $50,000 by 18 and $150,000 by 30 with contributions.  #mech/structural_shift _(time-bound view)_
   > such that by the age of 18, you could have about $50,000 in that account. At age 30, you could have about $150,000 in the account.
@@ -255,7 +255,7 @@ tags: [source, layer0]
 - **Bill Gurley** After the Tesla pay ruling companies considered leaving Delaware; claim of mass reincorporation.  #mech/structural_shift _(time-bound view)_
   > every company in the state of Delaware now heading for the exits
   indicator: Delaware reincorporation · asset: equities · horizon: months · testable: partly · confidence: low
-  **Correction (Opus):** Wrong speaker: Brad introduces the Delaware topic and the 'every company heading for the exits' framing before handing to Bill. → Brad Gerstner: after the Tesla pay ruling, companies are heading out of Delaware because of capricious chancery decisions.
+  **Correction (cross-check):** Wrong speaker: Brad introduces the Delaware topic and the 'every company heading for the exits' framing before handing to Bill. → Brad Gerstner: after the Tesla pay ruling, companies are heading out of Delaware because of capricious chancery decisions.
   ^MT012-C13-1
 
 ### C14
@@ -305,7 +305,7 @@ tags: [source, layer0]
   > People today pay ridiculous fees to move money around.
   indicator: cross-border payment costs · asset: other · horizon: years · testable: partly · confidence: medium
   ^MT012-C17-3
-- **Brad Gerstner** With stablecoin regulation in place, tokenization will extend from IPOs to listed stocks and possibly real assets.  #mech/structural_shift _(added by Opus, time-bound view)_
+- **Brad Gerstner** With stablecoin regulation in place, tokenization will extend from IPOs to listed stocks and possibly real assets.  #mech/structural_shift _(added by opus cross-check, time-bound view)_
   > I think you're going to see the tokenization of of stocks, maybe of real assets.
   indicator: tokenized securities issuance · asset: multi · direction: tokenized asset volume up · horizon: years · conditions: after GENIUS Act regulatory clarity · testable: partly - tokenized asset volumes can be tracked · confidence: medium
   ^MT012-C17-X1
@@ -323,7 +323,7 @@ tags: [source, layer0]
   > you're going to see the open AI uh open- source model
   asset: equities · horizon: weeks · conditions: as of May 2025 · testable: no: forecast · confidence: medium
   ^MT012-C18-3
-- **Brad Gerstner** Crypto's 2019-2020 promises stalled because of hostile, capricious US regulation; a clear framework removes that brake, and internet money transfer has barely changed in 25-30 years.  #mech/structural_shift _(added by Opus)_
+- **Brad Gerstner** Crypto's 2019-2020 promises stalled because of hostile, capricious US regulation; a clear framework removes that brake, and internet money transfer has barely changed in 25-30 years.  #mech/structural_shift _(added by opus cross-check)_
   > they stalled out because again, the compreciousness of regulators. They just wanted to attack and shut this down rather than coming up with a regulatory framework that was safe for innovation to occur in.
   asset: other · direction: crypto/stablecoin adoption up under clear regulation · horizon: years · conditions: regulatory clarity · testable: partly - adoption before and after regulatory changes · confidence: high
   ^MT012-C18-X1
@@ -332,7 +332,7 @@ tags: [source, layer0]
 - **Brad Gerstner** Proprietary labs will train on available open models, so bans on DeepSeek are whack-a-mole.  #mech/structural_shift
   > the people with proprietary models will use these to train them because they're available
   asset: equities · horizon: years · testable: no · confidence: low
-  **Correction (Opus):** Wrong speaker: 'I wouldn't be surprised if the people with proprietary models will use these to train them... whack-a-mole' is Bill Gurley responding to Brad. → Bill Gurley: proprietary labs will train on available open models, so bans on DeepSeek are whack-a-mole.
+  **Correction (cross-check):** Wrong speaker: 'I wouldn't be surprised if the people with proprietary models will use these to train them... whack-a-mole' is Bill Gurley responding to Brad. → Bill Gurley: proprietary labs will train on available open models, so bans on DeepSeek are whack-a-mole.
   ^MT012-C19-1
 - **Brad Gerstner** About half of US AI researchers are of Chinese background, so anti-China rhetoric risks hurting talent supply.  #mech/structural_shift
   > I think 50% of researchers AI researchers in the United States of America are Chinese
@@ -347,6 +347,6 @@ tags: [source, layer0]
 - **Bill Gurley** Reciprocal tariff reduction and market opening with China benefits both; engage on non-strategic trade while competing on strategic goods.  #mech/policy_reaction
   > I'd love to see tariffs come down on both sides
   asset: multi · horizon: years · testable: no · confidence: medium
-  **Correction (Opus):** Wrong speaker: reciprocity, tariffs down on both sides, and engaging on non-strategic trade while competing on strategic goods are Brad Gerstner's points; Bill only summarises them. → Brad Gerstner: reciprocal tariff reduction and market opening with China benefits both; engage on non-strategic trade while competing on strategic goods.
+  **Correction (cross-check):** Wrong speaker: reciprocity, tariffs down on both sides, and engaging on non-strategic trade while competing on strategic goods are Brad Gerstner's points; Bill only summarises them. → Brad Gerstner: reciprocal tariff reduction and market opening with China benefits both; engage on non-strategic trade while competing on strategic goods.
   ^MT012-C20-2
 

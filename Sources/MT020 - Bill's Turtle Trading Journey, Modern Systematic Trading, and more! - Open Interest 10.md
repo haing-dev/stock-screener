@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 9987
 claims: 52
-added_by_opus: 6
+added_by_crosscheck: 6
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Bill Eckhardt (guest, co-creator of the Turtle system, Eckhardt Trading Company)", "Rob Santino (guest, president and COO, Eckhardt Trading Company)", "Moritz Seibert (host, Open Interest series)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, risk control and utility theory, overfitting and robust statistics, diversification, Turtle trading history
 
-**Opus completeness estimate of first read:** 0.90 - first reader caught the core risk-control, fitting and statistics claims; missed several host elaborations (hidden mean reversion, SD vs normality, Mandelbrot evidence, long-term robustness) and Santino's replication call; one speaker error.
+**Cross-check completeness estimate of first read:** 0.90 - first reader caught the core risk-control, fitting and statistics claims; missed several host elaborations (hidden mean reversion, SD vs normality, Mandelbrot evidence, long-term robustness) and Santino's replication call; one speaker error.
 
 ## Coverage
 
@@ -113,7 +113,7 @@ tags: [source, layer0]
   > the death of trend following has been highly exaggerated
   indicator: trend following · asset: multi · direction: long trend following · horizon: years · testable: yes - long history of trend returns · confidence: high
   ^MT020-C05-5
-- **Moritz Seibert** While short-term trend systems show alpha decay, longer-term trend systems (around 200-day look-backs) still work and remain robust, with drawdowns.  #mech/slow_reaction _(added by Opus)_
+- **Moritz Seibert** While short-term trend systems show alpha decay, longer-term trend systems (around 200-day look-backs) still work and remain robust, with drawdowns.  #mech/slow_reaction _(added by opus cross-check)_
   > the longer term systems you know two and a day time frames things like that to the present day they continue to work and they go up and down and they're robust
   indicator: trend look-back length (about 200 days) · asset: multi · direction: favour long look-back trend systems · horizon: months · testable: yes - compare short vs long look-back trend returns over time · confidence: medium
   ^MT020-C05-X1
@@ -149,7 +149,7 @@ tags: [source, layer0]
   > instead of boiling all the structure down into one number you're keeping some of the structure
   indicator: moving average vs high/low channel · asset: multi · horizon: days · testable: yes - signal comparison · confidence: medium
   ^MT020-C07-3
-- **Moritz Seibert** Resizing an open trend position to rising volatility amounts to a hidden mean-reversion trade against the trend, because volatility usually rises as the trend extends.  #mech/risk_management _(added by Opus)_
+- **Moritz Seibert** Resizing an open trend position to rising volatility amounts to a hidden mean-reversion trade against the trend, because volatility usually rises as the trend extends.  #mech/risk_management _(added by opus cross-check)_
   > essentially executing a hidden Mar reversion trade against the direction of the trend that is not always true by definition but uh it is true in my experience more often than not
   indicator: post-entry volatility resizing · asset: multi · direction: do not cut trend positions as volatility rises · horizon: weeks · conditions: when volatility rises with the trend (usual but not always) · testable: yes - backtest constant vs vol-resized position sizing · confidence: medium
   ^MT020-C07-X1
@@ -199,7 +199,7 @@ tags: [source, layer0]
   > we measure the liquidity and the trade slippage for all markets that we trade whether we're considering trading
   indicator: liquidity, slippage · asset: multi · direction: avoid illiquid markets · testable: yes - cost-adjusted market selection · confidence: high
   ^MT020-C10-3
-- **Bill Eckhardt** Many traders undercut diversification by concentrating on whichever few markets are currently hot, which is anti-diversification despite its proven value.  #mech/behavioral _(added by Opus)_
+- **Bill Eckhardt** Many traders undercut diversification by concentrating on whichever few markets are currently hot, which is anti-diversification despite its proven value.  #mech/behavioral _(added by opus cross-check)_
   > I still think a lot of Traders just like to jump on the latest bandwagon you know the latest few things that are hot and avoid everything else you know they're they're anti- diversifying
   indicator: market concentration of trader portfolios · asset: multi · testable: partly - compare concentrated hot-market portfolios vs broad ones · confidence: medium
   ^MT020-C10-X1
@@ -235,15 +235,15 @@ tags: [source, layer0]
   > busted out spectacularly and it really was because they were using normal distribution Theory
   indicator: LTCM · asset: multi · horizon: years · testable: yes - historical case · confidence: medium
   ^MT020-C12-3
-- **Rob Santino** Regression-based CTA-index replication products are likely to end badly.  #mech/research_method _(added by Opus, time-bound view)_
+- **Rob Santino** Regression-based CTA-index replication products are likely to end badly.  #mech/research_method _(added by opus cross-check, time-bound view)_
   > I think on the replication question that's probably not going to have a good ending
   indicator: CTA replication ETFs · asset: multi · direction: negative outlook for replication strategies · horizon: years · testable: yes - replication ETF performance vs CTA indices over time · confidence: medium
   ^MT020-C12-X1
-- **Moritz Seibert** Evidence cited from Mandelbrot's cotton-price work: futures returns are fat-tailed on both sides and jump-prone, possibly a stable Paretian distribution without a defined variance.  #mech/research_method _(added by Opus)_
+- **Moritz Seibert** Evidence cited from Mandelbrot's cotton-price work: futures returns are fat-tailed on both sides and jump-prone, possibly a stable Paretian distribution without a defined variance.  #mech/research_method _(added by opus cross-check)_
   > it is definitely tailed in both directions it is prone to jumps
   indicator: cotton price return distribution · asset: commodities · testable: yes - tail-index estimation on futures returns · confidence: medium
   ^MT020-C12-X2
-- **Moritz Seibert** Computing volatility as a standard deviation for sizing reintroduces normal-distribution assumptions and their drawbacks; range-based measures like ATR are not standard deviations.  #mech/risk_management _(added by Opus)_
+- **Moritz Seibert** Computing volatility as a standard deviation for sizing reintroduces normal-distribution assumptions and their drawbacks; range-based measures like ATR are not standard deviations.  #mech/risk_management _(added by opus cross-check)_
   > many people would calculate volatility as a function of standard deviation under the assumption of normal distribution there you go again you're back
   indicator: standard deviation vs ATR volatility · asset: multi · direction: prefer robust volatility measures · conditions: heavy-tailed returns · testable: yes - compare sizing with SD vs ATR/robust estimators · confidence: medium
   ^MT020-C12-X3
@@ -252,7 +252,7 @@ tags: [source, layer0]
 - **Rob Santino** Replication portfolios lack predefined exits, exposing them to discontinuity and gap events; stops and exit rules keeping losses small are essential.  #mech/risk_management
   > keeping these losses small is what keeps you in business
   indicator: stop-loss exit rules · asset: multi · testable: partly · confidence: medium
-  **Correction (Opus):** Wrong speaker: the point that replication portfolios lack predefined exits and that keeping losses small keeps you in business is made by host Moritz Seibert (he opens 'and Rob maybe to your point'); Eckhardt then agrees. → Moritz Seibert: regression-based replication portfolios lack predefined exits, exposing them to discontinuity and gap events; stops and exit rules that keep losses small are essential.
+  **Correction (cross-check):** Wrong speaker: the point that replication portfolios lack predefined exits and that keeping losses small keeps you in business is made by host Moritz Seibert (he opens 'and Rob maybe to your point'); Eckhardt then agrees. → Moritz Seibert: regression-based replication portfolios lack predefined exits, exposing them to discontinuity and gap events; stops and exit rules that keep losses small are essential.
   ^MT020-C13-1
 - **Bill Eckhardt** All futures markets have heavy left tails (leptokurtosis), so trading rules must intervene to control the left tail via risk management.  #mech/risk_management
   > the left hand tail the one that represents losses is very heavy

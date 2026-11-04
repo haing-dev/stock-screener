@@ -123,8 +123,8 @@
   }
  ],
  "chunks": 20,
- "crosscheck": null,
- "completeness_estimate": null,
+ "crosscheck": "sonnet-xhigh cross-check",
+ "completeness_estimate": "0.88 - first reader captured nearly all data, mechanisms and paper findings; main weaknesses are six speaker attributions in C03-C05 and a few design details of the portable alpha paper (structure definition, drift, callable capital, path-based rebalancing choice)",
  "claims": [
   {
    "claim_id": "MT127-C02-1",
@@ -196,6 +196,11 @@
    "speaker_confidence": "medium",
    "time_bound": "no",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT127-C03-1",
+    "issue": "Wrong speaker. The remark that humans panic on intervention rumours while rules-based systems hold the uncomfortable short is Harry Moore's reply to Niels, not Niels's.",
+    "fix": "Harry Moore: in trend following the yen short is uncomfortable and carries intervention rumours; humans panic and exit, rules-based systems do not."
+   },
    "quote_check": "exact"
   },
   {
@@ -214,6 +219,11 @@
    "speaker_confidence": "high",
    "time_bound": "no",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT127-C03-2",
+    "issue": "Wrong speaker. Harry Moore makes the point about sizing so that one position cannot hurt too much (Niels then finishes with 'make something turn around').",
+    "fix": "Harry Moore: position sizing must ensure that a single position (the yen) cannot hurt the book too much when an intervention reverses it."
+   },
    "quote_check": "exact"
   },
   {
@@ -358,6 +368,11 @@
    "speaker_confidence": "medium",
    "time_bound": "yes",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT127-C04-4",
+    "issue": "Speaker is most likely Niels, not Harry: the passage continues Niels's reading of index data and says 'as you said long energies' and 'I would imagine', and then invites Harry to comment. It is an estimate, not Man Group positioning data.",
+    "fix": "Niels Kaastrup-Larsen (estimate): CTAs are probably still long equities, metals, energies and the dollar, and most likely short fixed income, with little directional change but different commitment levels."
+   },
    "quote_check": "exact"
   },
   {
@@ -376,6 +391,11 @@
    "speaker_confidence": "high",
    "time_bound": "yes",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT127-C05-1",
+    "issue": "Wrong speaker. The comparison of 20/60/130/260-day speeds is Niels's own look at a standard trend model ('you mentioned speed could have been a determinant'), and Harry then comments.",
+    "fix": "Niels Kaastrup-Larsen: in a standard trend model in 2026 the 20-day lookback was negative, 60-day less negative, 130-day slightly positive and 260-day best."
+   },
    "quote_check": "exact"
   },
   {
@@ -394,6 +414,11 @@
    "speaker_confidence": "high",
    "time_bound": "yes",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT127-C05-2",
+    "issue": "Wrong speaker. The point that slow models won because no persistent turning point let fast speeds shine is Harry Moore's reply; Niels only agrees afterwards.",
+    "fix": "Harry Moore: slower trend systems held persistent short bonds, long energy and long stocks and did better, and no turning point has lasted long enough for faster speeds to shine, echoing recent years."
+   },
    "quote_check": "exact"
   },
   {
@@ -412,6 +437,11 @@
    "speaker_confidence": "medium",
    "time_bound": "no",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT127-C05-3",
+    "issue": "Wrong speaker. 'My view is always to have some dynamism there' is Harry Moore.",
+    "fix": "Harry Moore: keep some faster, more dynamic models alongside slow ones to capture turning points."
+   },
    "quote_check": "exact"
   },
   {
@@ -1313,9 +1343,207 @@
    "time_bound": "no",
    "reader": "sonnet",
    "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT127-C02-X1",
+   "chunk": "C02",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "the BOJ started to raise rates for the first time in in ages and of course interest rates has continued to move higher despite uh and and the yen has despite actually continued to move lower",
+   "claim": "The yen kept weakening even after the Bank of Japan began raising rates following 30 years of near-zero rates, so the rate-differential story failed to hold the currency; authorities then intervened, as they had a couple of times in the last two to three years without lasting effect.",
+   "mechanism": "policy_reaction",
+   "asset_class": "fx",
+   "indicator": "USDJPY, BOJ policy rate",
+   "horizon": "years",
+   "direction": "yen weakness persisted despite BOJ hikes",
+   "conditions": "Late-stage one-way trend where fundamentals no longer restrain the move.",
+   "testable": "partly - intervention episodes and their durability can be listed from history",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT127-C03-X1",
+   "chunk": "C03",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "when the Swiss Frank um you know got deep depicted from from the euro I think it was like 20 or 30 standard deviations",
+   "claim": "The 2015 Swiss franc depeg was a 20 to 30 standard deviation move, a precedent showing that policy-driven gaps far larger than the 10 sigma yen intervention move exist and are the main tail risk for trend followers holding trending positions.",
+   "mechanism": "risk_management",
+   "asset_class": "fx",
+   "indicator": "Swiss franc 2015 de-peg, daily move in standard deviations",
+   "horizon": "days",
+   "direction": "policy-driven gap against a crowded trend position",
+   "conditions": "Positions in managed or pegged currencies are most exposed.",
+   "testable": "yes - gap sizes in sigma terms can be measured",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT127-C10-X1",
+   "chunk": "C10",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "they need to review each other's code and all of that stuff",
+   "claim": "Quant firms have told due-diligence questioners that researchers write their own code and review each other's code; AI code generation will change that answer and shift the control to review of AI-written code.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Applies to quant due diligence on process controls.",
+   "testable": "no - an operational control, not a testable signal",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT127-C11-X1",
+   "chunk": "C11",
+   "speaker": "Harry Moore",
+   "quote": "I'm going to take a portion of my equities. Let's say I own some passive S&P and I'm going to hold that via a future or a swap.",
+   "claim": "The portable alpha structure examined sells no equity exposure: part of a passive S&P holding is held synthetically through a future or swap, and the freed cash is used to buy trend (or another alpha) on top, so the investor keeps the beta and adds the alpha.",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "S&P 500 future or swap plus trend sleeve",
+   "horizon": "unspecified",
+   "direction": "long equity beta plus alpha overlay",
+   "conditions": "Needs cash for margin and buffers (see the cash-buffer findings).",
+   "testable": "yes - the structure can be backtested with S&P and SG Trend returns",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT127-C12-X1",
+   "chunk": "C12",
+   "speaker": "Harry Moore",
+   "quote": "we've used trend in the analysis, but we yeah internally we've done this analysis across many different um alpha alpha structures",
+   "claim": "The paper's results use SG Trend as the alpha, but the same analysis was run internally on other alphas (such as multi-strategy), with the claim that the cash-buffer and rebalancing conclusions do not depend on trend alone.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "SG Trend as alpha in S&P plus alpha stack",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Robustness claim by the authors; results for other alphas not shown in the podcast.",
+   "testable": "partly - could be checked against the paper",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT127-C14-X1",
+   "chunk": "C14",
+   "speaker": "Harry Moore",
+   "quote": "They might have callable capital available. They might have a credit facility.",
+   "claim": "Some investors can accept a smaller cash buffer because they hold callable capital or a credit facility and can post margin at short notice, but most clients want the manager to carry the operational complexity.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "cash buffer alternatives",
+   "horizon": "unspecified",
+   "direction": "smaller buffer with callable capital",
+   "conditions": "Only for investors with operational capacity to meet margin calls.",
+   "testable": "no - an operational choice",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT127-C14-X2",
+   "chunk": "C14",
+   "speaker": "Harry Moore",
+   "quote": "you're going to slowly get this drift. you might own too much equities or too little. If other investors come in, well, how do you get them to the nav",
+   "claim": "Pure buy and hold replicates the index best but causes the equity and alpha mix to drift, and makes it hard to bring new investors in at NAV with the intended mix, so the authors prefer a tolerance-band rebalance.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "drift of alpha and beta weights",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Applies to pooled portable alpha vehicles with inflows.",
+   "testable": "partly - drift can be simulated",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT127-C15-X1",
+   "chunk": "C15",
+   "speaker": "Harry Moore",
+   "quote": "have a look at the paths. Are there any paths that you really wouldn't like in there um and therefore that might push you towards a um a a certain rebalancing rule.",
+   "claim": "Because long-run results are the same across rebalancing rules, choose the rule by looking at the worst historical paths and picking the one that avoids outcomes the investor could not accept, rather than by average performance.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "rebalancing rule path analysis",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "When performance is similar on average, path dependence decides the choice.",
+   "testable": "yes - path-wise comparison across rules is testable",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT127-C15-X2",
+   "chunk": "C15",
+   "speaker": "Harry Moore",
+   "quote": "You should understand kind of what will happen if you you draw down 20% in a month.",
+   "claim": "Investors in portable alpha should ask providers up front what happens in a stress month (for example a 20% drawdown): how margin is met, whether beta is sold, and what the tracking error would be.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "stress scenario of 20% monthly drawdown",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "Pre-trade operational due diligence.",
+   "testable": "partly - the scenario can be simulated by the provider",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT127-C18-X1",
+   "chunk": "C18",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "they became the most known in a sense because of the books that was written about them and and the narrative",
+   "claim": "The Turtles were not the first trend followers, but their fame came from books and narrative, which led people to mistake clear rules for simplicity and to credit the 100-day breakout rather than the risk management.",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Applies to how strategies are judged from stories rather than evidence.",
+   "testable": "no - a statement about narrative bias",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT127-C19-X1",
+   "chunk": "C19",
+   "speaker": "Harry Moore",
+   "quote": "You almost certainly don't want to be introducing more beta, right? That's a risk in the same direction.",
+   "claim": "The alpha layer in portable alpha should not add beta, because extra beta in the same direction as the 100% equity holding raises volatility and the left-tail loss; the alpha must be uncorrelated, especially in the tail.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "alpha sleeve beta to equities",
+   "horizon": "unspecified",
+   "direction": "pick low-beta, tail-uncorrelated alpha",
+   "conditions": "Applies when the beta sleeve is already 100% long equities.",
+   "testable": "yes - beta and tail correlation of the alpha sleeve are measurable",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
   }
  ],
  "n_sonnet": 66,
- "n_opus_added": 0,
- "n_corrections": 0
+ "n_opus_added": 11,
+ "n_corrections": 6
 }

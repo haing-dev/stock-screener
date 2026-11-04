@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 11692
 claims: 65
-added_by_opus: 5
+added_by_crosscheck: 5
 corrections: 4
 crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, Top Traders Unplugged; caption 'Neils Krup Larson')", "Katy Kaminski (AlphaSimplex, trend following researcher; caption 'Katie Kaminsky')"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, CTA dispersion, volatility sizing, crisis alpha, commodities
 
-**Opus completeness estimate of first read:** 0.92 - first reader was very thorough on mechanisms, numbers and design-choice findings; missed a few caveats (QIS AUM, unofficial data, inflation analogue, non-vol-adjusted returns) and misread two speed/vol statements.
+**Cross-check completeness estimate of first read:** 0.92 - first reader was very thorough on mechanisms, numbers and design-choice findings; missed a few caveats (QIS AUM, unofficial data, inflation analogue, non-vol-adjusted returns) and misread two speed/vol statements.
 
 ## Coverage
 
@@ -111,7 +111,7 @@ tags: [source, layer0]
   > what if it does break the 200 month moving average whatever I mean could currency as a sector come back and really um help out
   indicator: US dollar 200-month moving average · asset: fx · direction: Currency trend profits up · horizon: years · conditions: if dollar breaks · testable: partly - conditional on break · confidence: medium
   ^MT042-C04-5
-- **Niels Kaastrup-Larsen** Trend followers that do not volatility-adjust keep full size as volatility explodes in a trending market (metals, January 2026), so they earn far more than vol-targeted CTAs in such a month, at the cost of larger risk.  #mech/risk_management _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** Trend followers that do not volatility-adjust keep full size as volatility explodes in a trending market (metals, January 2026), so they earn far more than vol-targeted CTAs in such a month, at the cost of larger risk.  #mech/risk_management _(added by opus cross-check, time-bound view)_
   > for those who don't volatility adjust their positions, they're having a incredible maybe a worldbreaking uh month of January
   indicator: volatility-adjusted vs unadjusted trend returns · asset: commodities · horizon: weeks · conditions: strong trend accompanied by rising volatility · testable: yes - compare vol-scaled and constant-notional trend backtests in vol-expansion trends · confidence: medium
   ^MT042-C04-X1
@@ -136,7 +136,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** The SocGen Trend Indicator, a replication of manager positioning, rose 19.27% month to date, and CTA indices were up about 5-6%, so positioning is a proxy for manager returns.  #mech/crowding_positioning _(time-bound view)_
   > the information they put out is very useful for people if they want to understand how managers might be positioned
   indicator: SocGen Trend Indicator; SG Trend Index · asset: multi · horizon: weeks · testable: yes · confidence: medium
-  **Correction (Opus):** Adds an inference not in the text ('positioning is a proxy for manager returns'); Niels says the SocGen Trend Indicator has not performed well historically but is useful for estimating how managers are positioned, and its 19.27% month-to-date gain may be a record. → The SocGen Trend Indicator has had weak historical performance but is useful for inferring CTA positioning; it was up 19.27% month to date (late January 2026), possibly a record, while CTA indices were up about 5-6%.
+  **Correction (cross-check):** Adds an inference not in the text ('positioning is a proxy for manager returns'); Niels says the SocGen Trend Indicator has not performed well historically but is useful for estimating how managers are positioned, and its 19.27% month-to-date gain may be a record. → The SocGen Trend Indicator has had weak historical performance but is useful for inferring CTA positioning; it was up 19.27% month to date (late January 2026), possibly a record, while CTA indices were up about 5-6%.
   ^MT042-C05-5
 
 ### C06
@@ -180,7 +180,7 @@ tags: [source, layer0]
   > in one year one the choice might look very smart and then the next year it could
   asset: multi · horizon: years · testable: yes · confidence: high
   ^MT042-C08-4
-- **Katy Kaminski** Economic-trend models run on global data from many regions plus unofficial sources, so a gap in official US releases (the shutdown) only partly blinds them.  #mech/research_method _(added by Opus)_
+- **Katy Kaminski** Economic-trend models run on global data from many regions plus unofficial sources, so a gap in official US releases (the shutdown) only partly blinds them.  #mech/research_method _(added by opus cross-check)_
   > there's also other methods and other data sources that people can use that are not necessarily the official
   indicator: official vs alternative macro data in economic trend signals · asset: multi · conditions: when official data are delayed or missing · testable: partly - can test signal degradation with missing releases · confidence: medium
   ^MT042-C08-X1
@@ -197,14 +197,14 @@ tags: [source, layer0]
 - **Katy Kaminski** The best trend speed changes by year; fast trend worked in 2022 and Covid, slow in other years, so no speed always wins.  #mech/cycle_persistence
   > the year before you saw the opposite that fast was really hard and slow again was better
   asset: multi · horizon: years · testable: yes · confidence: high
-  **Correction (Opus):** The text does not say fast trend worked in 2022; Kaminski says fast was better in Covid (C10) and that fast was hard and slow better the year before 2025. → The best trend speed changes by year: fast was hard and slow better in 2024, faster was better in Covid, so no speed always wins.
+  **Correction (cross-check):** The text does not say fast trend worked in 2022; Kaminski says fast was better in Covid (C10) and that fast was hard and slow better the year before 2025. → The best trend speed changes by year: fast was hard and slow better in 2024, faster was better in Covid, so no speed always wins.
   ^MT042-C09-3
 
 ### C10
 - **Niels Kaastrup-Larsen** Weekly rebalancing (or delayed execution) cut differences in April 2025, so speed also depends on trade frequency and signal delays.  #mech/research_method _(time-bound view)_
   > if you only adjusted position once a week and you didn't you didn't really you know you didn't panic let's you know quote unquote panic uh during liberation day
   indicator: trade frequency; signal delay · asset: multi · horizon: weeks · testable: yes · confidence: medium
-  **Correction (Opus):** Wrong meaning: Niels says the biggest differences between managers in 2025 arose in April (Liberation Day), driven by trade frequency (weekly traders who did not 'panic'), not that weekly trading cut differences. → In 2025 the largest return differences among CTAs arose in April around Liberation Day, partly from trade frequency: managers who adjusted positions only weekly did not react to the V-shaped move.
+  **Correction (cross-check):** Wrong meaning: Niels says the biggest differences between managers in 2025 arose in April (Liberation Day), driven by trade frequency (weekly traders who did not 'panic'), not that weekly trading cut differences. → In 2025 the largest return differences among CTAs arose in April around Liberation Day, partly from trade frequency: managers who adjusted positions only weekly did not react to the V-shaped move.
   ^MT042-C10-1
 - **Niels Kaastrup-Larsen** Some managers delay trading 3 days after a signal, an execution-speed lever separate from lookback length.  #mech/research_method
   > we get the signal today but we we actually wait 3 days before we change uh positions based on that signal
@@ -271,13 +271,13 @@ tags: [source, layer0]
 - **Katy Kaminski** Cutting risk fast on a shock and restoring it fast later captures more; downsizing and resizing speeds need not be equal.  #mech/risk_management
   > if you adjusted the vault back down quickly again then you would be able to capture the second half of the year better
   asset: multi · horizon: months · testable: yes - asymmetric vol-estimation test · confidence: medium
-  **Correction (Opus):** Omits Kaminski's point that faster volatility adjustment was painful at Liberation Day; the asymmetric downsize/resize speed idea is Niels's, in the same chunk. → Faster volatility adjustment hurt at Liberation Day (cutting into a V-shaped move) but, if vol estimates came back down quickly, captured more of the second half of 2025; Niels adds that the speed for cutting risk and for re-adding it need not be the same.
+  **Correction (cross-check):** Omits Kaminski's point that faster volatility adjustment was painful at Liberation Day; the asymmetric downsize/resize speed idea is Niels's, in the same chunk. → Faster volatility adjustment hurt at Liberation Day (cutting into a V-shaped move) but, if vol estimates came back down quickly, captured more of the second half of 2025; Niels adds that the speed for cutting risk and for re-adding it need not be the same.
   ^MT042-C13-2
 - **Niels Kaastrup-Larsen** 2025 looked unusual, but for pure trend it was typical: a few markets gave the profit, many were flat or negative.  #mech/cycle_persistence _(time-bound view)_
   > there were like a handful of markets that did all the work and then there are lots of markets that didn't really do so well
   asset: multi · horizon: years · testable: yes · confidence: high
   ^MT042-C13-3
-- **Niels Kaastrup-Larsen** As deglobalization makes markets behave more independently, the choice of volatility-estimation speed matters more for trend returns.  #mech/structural_shift _(added by Opus)_
+- **Niels Kaastrup-Larsen** As deglobalization makes markets behave more independently, the choice of volatility-estimation speed matters more for trend returns.  #mech/structural_shift _(added by opus cross-check)_
   > it's something that is perhaps becoming more important in an odd way as the world gets more delobalized and more independent in the way market behavior uh shows up
   indicator: volatility estimation speed; cross-market correlation · asset: multi · horizon: years · conditions: deglobalized, less correlated markets · testable: partly - can test dispersion of vol-speed variants vs cross-asset correlation · confidence: low
   ^MT042-C13-X1
@@ -327,7 +327,7 @@ tags: [source, layer0]
   > trade trade negotiations trade balance the dollar effect is going to have a huge impact on some of the macro themes over the two years
   asset: multi · horizon: years · testable: no - view · confidence: medium
   ^MT042-C16-3
-- **Niels Kaastrup-Larsen** Official managed-futures AUM understates total trend-following capital because QIS products and pension funds run trend in-house, so the industry-share chart is an incomplete crowding gauge.  #mech/crowding_positioning _(added by Opus)_
+- **Niels Kaastrup-Larsen** Official managed-futures AUM understates total trend-following capital because QIS products and pension funds run trend in-house, so the industry-share chart is an incomplete crowding gauge.  #mech/crowding_positioning _(added by opus cross-check)_
   > I know a lot of strategies like QA strategies and maybe uh individual pension funds are doing trend following uh or something similar. So it doesn't tell you all all you need to know about AUM
   indicator: managed futures share of hedge fund AUM; QIS/in-house trend assets · asset: multi · horizon: years · testable: partly - QIS and in-house assets are not well reported · confidence: medium
   ^MT042-C16-X1
@@ -337,7 +337,7 @@ tags: [source, layer0]
   > it likes disruption change and difficulty so increased geopolitical risk uh so as a preview to some of the things we found increased geopolitical risk and higher levels of geopolitical risk is generally positive
   indicator: geopolitical risk index · asset: multi · direction: Trend returns up when geopolitical risk rises · testable: yes - regress trend returns on GPR · confidence: medium
   ^MT042-C17-1
-- **Katy Kaminski** Trend following tends to do better in periods of higher inflation, the same pattern as with higher geopolitical risk, because it benefits from disruption and change.  #mech/cycle_persistence _(added by Opus)_
+- **Katy Kaminski** Trend following tends to do better in periods of higher inflation, the same pattern as with higher geopolitical risk, because it benefits from disruption and change.  #mech/cycle_persistence _(added by opus cross-check)_
   > answer is probably the same as you know higher inflation and things like this
   indicator: inflation level/change · asset: multi · direction: trend-following returns up when inflation is high · horizon: years · testable: yes - trend index returns conditioned on inflation regime · confidence: medium
   ^MT042-C17-X1

@@ -71,8 +71,8 @@
   }
  ],
  "chunks": 9,
- "crosscheck": null,
- "completeness_estimate": null,
+ "crosscheck": "sonnet-xhigh cross-check",
+ "completeness_estimate": "0.86 - first reader captured nearly every argument of the slide-by-slide talk (hiking cycles, core inflation, stock-bond correlation, long-horizon variance, macro skew); missed a few supporting causal links and operating details (inflation drives correlation, Fed guidance blamed, concentrated multi-PM book, recency bias).",
  "claims": [
   {
    "claim_id": "MT113-C01-1",
@@ -144,6 +144,11 @@
    "speaker_confidence": "high",
    "time_bound": "no",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT113-C02-2",
+    "issue": "Overstated: the 'five cycles' are four completed cycles (1994-95, 1999-2000, 2005-06, 2015-18) plus the still-running 2022-23 cycle; only the four completed cycles ended in turmoil, and the 2015-18 cycle ended with turmoil in 2018 while the cut came in March 2020 with covid.",
+    "fix": "In the four completed hiking cycles since Volcker (1994-95 +300bp, 1999-2000 +170-175bp, 2005-06 +425bp, 2015-18) the Fed stopped after turmoil (tequila and Asian crises, Nasdaq collapse, the global financial crisis, 2018 market turmoil); the current cycle is a fifth, still running."
+   },
    "quote_check": "exact"
   },
   {
@@ -594,6 +599,11 @@
    "speaker_confidence": "medium",
    "time_bound": "no",
    "reader": "sonnet",
+   "correction": {
+    "claim_id": "MT113-C08-1",
+    "issue": "Wrong speaker: this passage is the host (Graham chief client officer) summarising the systematic side, not Pablo Calderini; the transcript says pure trend is price-driven and the quant macro strategy brings in fundamental data points.",
+    "fix": "The host (chief client officer) says Graham's pure trend following is price-driven while the quant macro strategy adds fundamental data to the price signal, so its positioning can evolve more dynamically."
+   },
    "quote_check": "exact"
   },
   {
@@ -685,9 +695,135 @@
    "time_bound": "no",
    "reader": "sonnet",
    "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT113-C01-X1",
+   "chunk": "C01",
+   "speaker": "Chief client officer (host)",
+   "quote": "rather than have 50 or 150 teams here we have roughly 15 today",
+   "claim": "Graham runs its discretionary multi-PM macro book concentrated, betting on its highest-conviction teams (about 15) rather than spreading across 50 to 150 teams, a portfolio-construction choice favouring conviction over breadth.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "number of PM teams (about 15 vs 50-150)",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - needs PM-level returns to compare concentrated and diversified multi-PM books",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT113-C03-X1",
+   "chunk": "C03",
+   "speaker": "Pablo Calderini",
+   "quote": "I would put the culprit on the on the FED right I would say by how badly the FED building guiding markets to to the actual outcome",
+   "claim": "The 2022 hiking shock was a Fed communication failure: in past cycles good forward guidance (or good market reading) left markets resilient, whereas in 2022 the Fed hiked far beyond what it had guided, producing a larger shock to asset prices.",
+   "mechanism": "policy_reaction",
+   "asset_class": "rates",
+   "indicator": "forward curve at first hike versus realised Fed path",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "larger gap between priced and delivered hikes means more fragility",
+   "testable": "yes - compute priced-minus-delivered path for each cycle and relate to subsequent drawdowns",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT113-C04-X1",
+   "chunk": "C04",
+   "speaker": "Pablo Calderini",
+   "quote": "High inflation usually drives correlation up",
+   "claim": "High inflation pushes the stock-bond correlation up (to positive) because inflation shocks hit both assets; a falling-inflation regime gives negative correlation, so the sign of the correlation follows the inflation regime.",
+   "mechanism": "cycle_persistence",
+   "asset_class": "multi",
+   "indicator": "rolling stock-bond correlation versus inflation level",
+   "horizon": "years",
+   "direction": "stock-bond correlation rises when inflation is high",
+   "conditions": "high-inflation regimes such as the 1960s-1990s; zero or near zero in 2022-23",
+   "testable": "yes - rolling correlation against CPI regimes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT113-C04-X2",
+   "chunk": "C04",
+   "speaker": "Pablo Calderini",
+   "quote": "we have lived in this world of negative correlation for 20 years now to the point that I think that new newcomers to financial markets might",
+   "claim": "After 20 years of negative stock-bond correlation, newer market participants assume bonds always hedge stocks, an extrapolation of a regime that is not the long-run norm, which leaves 60/40 portfolios exposed when the sign flips.",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "stock-bond correlation",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - the 20-year negative-correlation fact is testable, the belief claim is not",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT113-C06-X1",
+   "chunk": "C06",
+   "speaker": "Pablo Calderini",
+   "quote": "I also think these are our asses like we saw last year when things get really bad I think macro has the capacity to even improve on this right",
+   "claim": "The 20-year average benefit of adding macro to 60/40 understates the benefit in stress years such as 2022, when macro can add more than the average.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "60/40 plus macro portfolio in stress years",
+   "horizon": "years",
+   "direction": "long macro alongside 60/40",
+   "conditions": "bad years for 60/40",
+   "testable": "yes - split the sample by 60/40 drawdown years",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT113-C07-X1",
+   "chunk": "C07",
+   "speaker": "Pablo Calderini",
+   "quote": "cognizant though that there's Market forces supporting equities that are beyond our understanding and that's where it comes our uh our risk management and our tactical head",
+   "claim": "A fundamental short-equity view is held with humility: unknown market forces may keep equities supported, so risk management and a tactical hedge are used to limit the cost of being early or wrong.",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "months",
+   "direction": "short equities with tactical risk control",
+   "conditions": "fundamental view contrary to price action",
+   "testable": "no - discretionary practice",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT113-C08-X1",
+   "chunk": "C08",
+   "speaker": "Pablo Calderini",
+   "quote": "one is a trend following program right and that did really well last year",
+   "claim": "Graham's trend-following program did really well in 2022, the year of the inflation shock and rate-hike regime, consistent with trend profiting from large macro dislocations.",
+   "mechanism": "cycle_persistence",
+   "asset_class": "multi",
+   "indicator": "Graham trend program return in 2022",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - single-year performance claim",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "sonnet-xhigh",
+   "quote_check": "exact"
   }
  ],
  "n_sonnet": 34,
- "n_opus_added": 0,
- "n_corrections": 0
+ "n_opus_added": 7,
+ "n_corrections": 2
 }

@@ -6,7 +6,7 @@ channel: "Bg2 Pod"
 url: https://www.youtube.com/watch?v=-7bJtS7koQM
 words: 7402
 claims: 43
-added_by_opus: 3
+added_by_crosscheck: 3
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Bill Gurley (co-host, venture investor)", "Brad Gerstner (co-host, Altimeter Capital)"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** fiscal policy, tariff and trade policy, venture/IPO structure, payments infrastructure, thematic opinion
 
-**Opus completeness estimate of first read:** 0.93 - first reader captured nearly all claim-worthy points in this opinion-heavy roundtable; missing items are minor policy asides; one speaker error.
+**Cross-check completeness estimate of first read:** 0.93 - first reader captured nearly all claim-worthy points in this opinion-heavy roundtable; missing items are minor policy asides; one speaker error.
 
 ## Coverage
 
@@ -92,7 +92,7 @@ tags: [source, layer0]
 - **Brad Gerstner** The Argentina ETF ARGT is up about 60% YTD after Milei's reforms, showing optimism reversing and supporting the doability of large spending cuts.  #mech/policy_reaction _(time-bound view)_
   > argt it's up 60% year-to date 65
   indicator: ARGT · asset: equities · horizon: months · testable: yes - ETF price · confidence: medium
-  **Correction (Opus):** Wrong speaker: the Argentina ETF point ('one encouraging data point ... ARGT it's up 60%') is Gurley responding to Gerstner's DOGE topic; Gerstner then says 'okay give me your topic too Bill'. → Bill Gurley: the Argentina ETF ARGT is up about 60-65% YTD after Milei's reforms, showing optimism on Argentina has reversed and supporting the doability of large spending cuts.
+  **Correction (cross-check):** Wrong speaker: the Argentina ETF point ('one encouraging data point ... ARGT it's up 60%') is Gurley responding to Gerstner's DOGE topic; Gerstner then says 'okay give me your topic too Bill'. → Bill Gurley: the Argentina ETF ARGT is up about 60-65% YTD after Milei's reforms, showing optimism on Argentina has reversed and supporting the doability of large spending cuts.
   ^MT018-C03-3
 - **Bill Gurley** A compounding IPO ratchet hides investor returns in the IPO clause rather than the price, letting a company show a headline valuation while guaranteeing late investors a return.  #mech/behavioral
   > it allows a company to pretend that the cover price on a term sheet is whatever they want it to be
@@ -182,11 +182,11 @@ tags: [source, layer0]
   > it has definitely become a strategic tool for everyone out there
   indicator: open-source strategy · asset: other · horizon: years · testable: no - strategy · confidence: medium
   ^MT018-C07-4
-- **Brad Gerstner** The same anchoring-style maximal-threat negotiation used on tariffs is expected to be applied to end the Ukraine and Middle East conflicts.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Brad Gerstner** The same anchoring-style maximal-threat negotiation used on tariffs is expected to be applied to end the Ukraine and Middle East conflicts.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > I'm equally hopeful that we use these same type of negotiating tactics frankly to end some of this global conflict in Ukraine in the Middle East
   asset: multi · horizon: months · testable: no - political expectation · confidence: low
   ^MT018-C07-X1
-- **Bill Gurley** Anthropic and its backers lobbied for AI regulation that would restrict open-source AI, so their own open-source release muddies that push and may signal a softer stance against open-source AI.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Bill Gurley** Anthropic and its backers lobbied for AI regulation that would restrict open-source AI, so their own open-source release muddies that push and may signal a softer stance against open-source AI.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > the people that have been um encouraging you know more and more AI oversight and AI regulation and trying to make it such that open- Source AI would not be legal
   indicator: AI regulation / open-source AI policy · asset: equities · horizon: years · testable: no - regulatory judgement · confidence: low
   ^MT018-C07-X2
@@ -199,7 +199,7 @@ tags: [source, layer0]
 - **Brad Gerstner** Discussion of the deceleration of pre-training scaling coincided with a down day for Nvidia, per CNBC commentary, indicating AI-scaling worries move Nvidia.  #mech/slow_reaction _(time-bound view)_
   > Bill is talking a lot about the deceleration and the rate of pre-scaling or uh pre-training um uh scaling
   indicator: Nvidia, pre-training scaling returns · asset: equities · direction: Nvidia down on scaling slowdown talk · horizon: days · testable: partly - event-study of narrative · confidence: low
-  **Correction (Opus):** Overstates the evidence: Gerstner only recounts that CNBC's David Faber mentioned Gurley's talk of pre-training scaling slowing on a day Nvidia was down; no claim that scaling worries move Nvidia was made or tested. → Anecdote: on a down day for Nvidia, CNBC commentary cited Gurley's remarks on decelerating pre-training scaling (one anecdotal link, no evidence of a causal effect).
+  **Correction (cross-check):** Overstates the evidence: Gerstner only recounts that CNBC's David Faber mentioned Gurley's talk of pre-training scaling slowing on a day Nvidia was down; no claim that scaling worries move Nvidia was made or tested. → Anecdote: on a down day for Nvidia, CNBC commentary cited Gurley's remarks on decelerating pre-training scaling (one anecdotal link, no evidence of a causal effect).
   ^MT018-C08-2
 - **Brad Gerstner** Buffett letter: the bulk of compounding gain occurs in the last 20 years of a lifetime, hence holding long.  #mech/cycle_persistence
   > the real action from compounding takes place in the final 20 years of a lifetime
@@ -231,7 +231,7 @@ tags: [source, layer0]
   > put into uh the reconciliation process in the spring
   indicator: Invest America legislation · asset: equities · horizon: months · testable: yes - observable legislative outcome · confidence: low
   ^MT018-C11-1
-- **Brad Gerstner** Several states already run child investment-account programs; a national account infrastructure would let states and private donors add to it instead of each rebuilding it, channelling more savings into equities.  #mech/liquidity_flows _(added by Opus, time-bound view)_
+- **Brad Gerstner** Several states already run child investment-account programs; a national account infrastructure would let states and private donors add to it instead of each rebuilding it, channelling more savings into equities.  #mech/liquidity_flows _(added by opus cross-check, time-bound view)_
   > states like the state of Maine uh you know the state of Texas and Florida and other places that already have some local programs like this
   indicator: child investment account programs · asset: equities · horizon: years · conditions: if national legislation passes · testable: no - policy proposal · confidence: medium
   ^MT018-C11-X1

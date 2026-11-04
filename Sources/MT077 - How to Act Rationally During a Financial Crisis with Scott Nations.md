@@ -5,10 +5,10 @@ date: 2023-04-15
 channel: "The Intrinsic Value Podcast"
 url: https://www.youtube.com/watch?v=eW2NkoR0wk8
 words: 8449
-claims: 36
-added_by_opus: 0
-corrections: 0
-crosscheck: "pending"
+claims: 41
+added_by_crosscheck: 5
+corrections: 1
+crosscheck: "opus cross-check"
 speakers: ["Scott Nations (guest, author of The Anxious Investor, former CME option trader)", "Clay Finck (host, Millennial Investing / Intrinsic Value podcast)"]
 tags: [source, layer0]
 ---
@@ -19,6 +19,8 @@ tags: [source, layer0]
 **Summary:** Interview on behavioural biases through the South Sea, dot-com and 2008 bubbles. Nations covers sensation-seeking, disposition effect, loss aversion, overconfidence, recency, availability and anchoring. Conclusions: stay invested, wait before trading, avoid extrapolating, harvest tax losses.
 
 **Approach:** behavioural finance, bubbles, long-term investing
+
+**Cross-check completeness estimate of first read:** 0.90 - nearly all biases and studies captured; missed risk-adjusted evaluation, the momentum link, the South Sea rerating mechanism and the utility rationale.
 
 ## Coverage
 
@@ -79,6 +81,14 @@ tags: [source, layer0]
   > and he couldn’t stay out. Just could not bring himself to sit on the sidelines, and so he got back in.
   asset: equities · horizon: months · testable: no: one anecdote · confidence: medium
   ^MT077-C03-4
+- **Scott Nations** A return far above the market's should be judged by the risk taken to earn it, so performance must be evaluated risk-adjusted rather than by raw return.  #mech/research_method _(added by opus cross-check)_
+  > Somebody’s earned, made 20% in the stock market in a particular year, and the stock market’s only up a fraction of that, you have to ask, how much risk were they taking?
+  indicator: return vs market, risk taken · asset: equities · horizon: years · testable: yes - risk-adjusted performance metrics · confidence: high
+  ^MT077-C03-X1
+- **Scott Nations** The South Sea bubble began with a steady, mundane company (about 6% dividend yield on a price near 100 pounds) being rerated on a story about a minor, obscure growth franchise, a template for bubbles built on narrative rather than the core business.  #mech/behavioral _(added by opus cross-check)_
+  > People thought that this really obscure franchise they had in doing business, trading business with South America, was going to make the company incredibly valuable, even though most of its business was incredibly mundane.
+  indicator: dividend yield vs price; narrative rerating · asset: equities · direction: price far above income-based value, then crash · horizon: months · conditions: mania · testable: partly - historical case; yield compression as bubble marker · confidence: high
+  ^MT077-C03-X2
 
 ### C04
 - **Scott Nations** Investors sell winners for the brain reward and hold losers to avoid regret, dressing it up as discipline.  #mech/behavioral
@@ -93,11 +103,20 @@ tags: [source, layer0]
   > we hate losses about two times to two and a half times more than we like the exact same gain.
   indicator: loss aversion coefficient · asset: multi · testable: yes · confidence: high
   ^MT077-C04-3
+- **Clay Finck** The disposition effect's cost (sold winners outperform held losers) is consistent with momentum: winners tend to keep winning, so selling them early forgoes the continuation.  #mech/slow_reaction _(added by opus cross-check)_
+  > This falls in line with that idea that your winners tend to keep on winning, right?
+  indicator: past winners vs losers (momentum) · asset: equities · direction: past winners outperform · horizon: months · testable: yes - cross-sectional momentum vs disposition-effect selling · confidence: medium
+  ^MT077-C04-X1
+- **Scott Nations** Loss aversion is partly rational because of diminishing marginal utility (each lost dollar makes the rest more valuable, each gained dollar is worth less), but its 2-2.5x size distorts how investors think about risk.  #mech/behavioral _(added by opus cross-check)_
+  > this one makes a little bit of sense because if you think about it, every time you lose a dollar, each remaining dollar becomes a little bit more valuable.
+  asset: equities · testable: no - utility interpretation · confidence: medium
+  ^MT077-C04-X2
 
 ### C05
 - **Scott Nations** Record equity mutual fund outflows came at the March 2009 bottom, because loss aversion makes investors capitulate at the low and return only after a rally.  #mech/behavioral
   > the biggest net mutual fund, equity mutual fund outflows in decades happened in February and March of 2009, which was the absolute bottom of the market.
   indicator: equity mutual fund net flows · asset: equities · direction: extreme outflows mark bottoms (contrarian) · horizon: months · conditions: bear markets · testable: yes: fund flows data · confidence: high
+  **Correction (cross-check):** Overstates the data: speaker said the biggest net equity mutual fund outflows in decades, not record outflows. → The biggest net equity mutual fund outflows in decades came in February-March 2009 at the market bottom, because loss aversion makes investors capitulate at the low and return only after a large rally.
   ^MT077-C05-1
 - **Scott Nations** Investors are overconfident about trading profitably, constructing portfolios and timing exits, which makes them think they are better investors than they are.  #mech/behavioral
   > We’re overconfident in our ability to get out of stocks at the right time.
@@ -181,6 +200,10 @@ tags: [source, layer0]
   > a surprising quarter that’s not very good, investors have a tendency to overreact.
   indicator: earnings surprise · asset: equities · direction: buy stocks after one-off bad earnings · horizon: months · conditions: one-off quarter, not a structural problem · testable: yes · confidence: medium
   ^MT077-C10-2
+- **Scott Nations** Even in an extreme crisis (two of five US investment banks failed in 2008, and the market fell further after Lehman), the real damage from overreaction is selling and staying out for years, missing the recovery.  #mech/behavioral _(added by opus cross-check)_
+  > When I say overreact, they sold and they never got back in. Again, that mutual fund flow data shows that people sold overwhelmingly in February and March of 2009, and didn’t get back in for years.
+  indicator: equity mutual fund flows · asset: equities · direction: capitulation sellers miss rebound · horizon: years · conditions: crisis bottoms · testable: yes - fund flows vs subsequent returns · confidence: high
+  ^MT077-C10-X1
 
 ### C11
 - **Scott Nations** Anchoring on purchase price keeps investors from sound decisions; the entry price is irrelevant except for taxes.  #mech/behavioral

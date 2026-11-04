@@ -1,0 +1,22 @@
+{
+ "source_id": "MT085",
+ "added_claims": [
+  {"claim_id": "MT085-C01-X1", "chunk": "C01", "speaker": "Stanley Druckenmiller",
+   "quote": "I bought a pretty good chunk of it and then like a month later chaty PT happened it was just total luck I had no idea",
+   "claim": "His Nvidia entry combined a strong in-house theme signal (the AI buzz among young analysts) with a stock already down sharply (about 400 to 150), but he credits the timing, a month before ChatGPT, to luck rather than foresight.",
+   "mechanism": "behavioral", "asset_class": "equities", "indicator": "theme conviction plus large drawdown in the stock",
+   "horizon": "months", "direction": "long Nvidia", "conditions": "theme signal present while price is depressed; timing partly luck",
+   "testable": "partly - theme signals combined with drawdown entry", "speaker_confidence": "high", "time_bound": "yes"},
+  {"claim_id": "MT085-C02-X1", "chunk": "C02", "speaker": "Stanley Druckenmiller",
+   "quote": "so I decide to take Duan and the quantum fund to 100% long the deark short the pound cuz it's still a half a%c unbelievably",
+   "claim": "The 1992 pound trade was sized at 100% partly because the pound was still only about half a percent away (caption unclear) from its peg level, so downside was tiny relative to the upside if the link broke; small, capped downside is what makes a one-way bet.",
+   "mechanism": "risk_management", "asset_class": "fx", "indicator": "distance of a pegged currency from its band limit",
+   "horizon": "days", "direction": "short GBP vs DM", "conditions": "currency peg near its limit with divergent rate needs and an official signal",
+   "testable": "partly - payoff asymmetry of trades against pegs near band edges", "speaker_confidence": "high", "time_bound": "no"}
+ ],
+ "corrections": [
+  {"claim_id": "MT085-C03-1", "issue": "imprecise number: the loss is stated (Quantum fund down about 17%, Duquesne down 7%); also he says he can't guarantee re-admission and only one of about 200 clients withdrew", "fix": "With Quantum down about 17% and Duquesne down 7% after 12 years running a high-profile fund, an exhausted Druckenmiller sold everything in 2000 and took a sabbatical, telling investors they could withdraw but might not be let back in; only one of about 200 clients pulled money."}
+ ],
+ "chunks_checked": ["C01","C02","C03"],
+ "completeness_estimate": "0.90 - short highlights well covered; missed the luck/drawdown aspect of the Nvidia entry and the small-downside rationale for the 100% pound sizing"
+}

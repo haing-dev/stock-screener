@@ -6,7 +6,7 @@ channel: "Top Traders Unplugged"
 url: 
 words: 11320
 claims: 70
-added_by_opus: 3
+added_by_crosscheck: 3
 corrections: 5
 crosscheck: "opus cross-check"
 speakers: ["Graham Robertson (co-host, Man AHL/Man Institute, London)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged; captioned 'Neil costr Larson')"]
@@ -20,7 +20,7 @@ tags: [source, layer0]
 
 **Approach:** trend following, crisis alpha, volatility, speed of models, diversification, alternative markets, central bank rates
 
-**Opus completeness estimate of first read:** 0.95 - very thorough first pass (67 claims); only missed the buy-protection-after-spikes behaviour, concentration as the source of big trend gains and the Treasury-pick effect; some speaker slips and two duplicates.
+**Cross-check completeness estimate of first read:** 0.95 - very thorough first pass (67 claims); only missed the buy-protection-after-spikes behaviour, concentration as the source of big trend gains and the Treasury-pick effect; some speaker slips and two duplicates.
 
 ## Coverage
 
@@ -59,7 +59,7 @@ tags: [source, layer0]
   > the the opinions uh are starting to be more open-minded uh to maybe uh that it won't necessarily mean higher inflation and higher yields
   indicator: post-election inflation/yield expectations · asset: rates · horizon: weeks · conditions: Nov-Dec 2024 · testable: no · confidence: low
   ^MT014-C01-3
-- **Niels Kaastrup-Larsen** The Treasury Secretary nomination helped shift markets away from the initial post-election view that the new administration means higher inflation and yields.  #mech/policy_reaction _(added by Opus, time-bound view)_
+- **Niels Kaastrup-Larsen** The Treasury Secretary nomination helped shift markets away from the initial post-election view that the new administration means higher inflation and yields.  #mech/policy_reaction _(added by opus cross-check, time-bound view)_
   > it did help a lot when he announced who he would like to be head of the treasury
   indicator: US yields around Treasury Secretary nomination (Nov 2024) · asset: rates · direction: yields lower after a market-friendly nominee · horizon: weeks · conditions: Nov-Dec 2024 · testable: yes - event study of yields around the nomination · confidence: low
   ^MT014-C01-X1
@@ -82,7 +82,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** The MSCI World index is now over half US equities, whereas a classically diversified equity portfolio would be about a third, so index investors are concentrated.  #mech/structural_shift _(time-bound view)_
   > even the msci world index now is like 60% us equities
   indicator: US weight in MSCI World · asset: equities · horizon: years · testable: yes · confidence: high
-  **Correction (Opus):** Wrong speaker: Niels only asks; Graham gives the numbers ('it's 50% plus... a classically diversified portfolio across equities is going to be much more like a third'). → Graham Robertson: the MSCI World index is now over half US equities, whereas a classically diversified equity portfolio would be about a third, so index investors are concentrated.
+  **Correction (cross-check):** Wrong speaker: Niels only asks; Graham gives the numbers ('it's 50% plus... a classically diversified portfolio across equities is going to be much more like a third'). → Graham Robertson: the MSCI World index is now over half US equities, whereas a classically diversified equity portfolio would be about a third, so index investors are concentrated.
   ^MT014-C03-1
 - **Niels Kaastrup-Larsen** December 2024 mirrors November with trends in North American equities and softs, plus help from precious metals and currencies.  #mech/cycle_persistence _(time-bound view)_
   > we still see good Trends in North American equities in particular and also uh soft Commodities like cocoa and coffee uh are doing really well
@@ -153,7 +153,7 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** The S&P 500 total return was up 29.24% in 2024, far ahead of trend and bonds (3.5%).  #mech/cycle_persistence _(time-bound view)_
   > the S&P 500 Total return index up 61 basis points and up a whopping 29.2 4% so far this year
   indicator: S&P 500 TR · asset: equities · horizon: months · conditions: 2024 · testable: yes · confidence: high
-  **Correction (Opus):** Largely duplicates MT014-C06-3 (same 2024 scoreboard numbers). → Merge into MT014-C06-3: to 10 Dec 2024 SG Trend was up about 2% YTD vs S&P 500 TR +29.24%, MSCI World about +21.5% and US aggregate bonds +3.5%.
+  **Correction (cross-check):** Largely duplicates MT014-C06-3 (same 2024 scoreboard numbers). → Merge into MT014-C06-3: to 10 Dec 2024 SG Trend was up about 2% YTD vs S&P 500 TR +29.24%, MSCI World about +21.5% and US aggregate bonds +3.5%.
   ^MT014-C06-4
 - **Graham Robertson** Trend works in sustained crises but not in sharp vol spikes like the three-day Yenmageddon, where outcomes depend on positioning.  #mech/risk_premium
   > Trend following works well in a crisis but that crisis has to be somewhat sustained right
@@ -172,7 +172,7 @@ tags: [source, layer0]
 - **Graham Robertson** SVB (2023) and August 2024 gave out-of-sample support for the quality long-short result.  #mech/research_method _(time-bound view)_
   > we've actually had two really nice out of sample periods recently that showed the same
   indicator: quality long-short in SVB and Aug 2024 · asset: equities · horizon: weeks · testable: yes · confidence: medium
-  **Correction (Opus):** Duplicate: the SVB and August 2024 out-of-sample evidence is already in MT014-C07-1. → Merge into MT014-C07-1.
+  **Correction (cross-check):** Duplicate: the SVB and August 2024 out-of-sample evidence is already in MT014-C07-1. → Merge into MT014-C07-1.
   ^MT014-C07-2
 - **Graham Robertson** Trend and quality both have crisis Sharpe above good-time Sharpe.  #mech/risk_premium
   > your crisis Alpha sharp tends to be higher than your sharp in the good times
@@ -212,11 +212,11 @@ tags: [source, layer0]
   > you can be sure the trend follow is going to be long equities
   indicator: trend equity exposure at highs · asset: equities · horizon: days · testable: yes · confidence: high
   ^MT014-C08-5
-- **Graham Robertson** Investors buy tail-protection/long-vol strategies after volatility has spiked, i.e. when protection is most expensive, and then suffer heavy carry bleed.  #mech/behavioral _(added by Opus)_
+- **Graham Robertson** Investors buy tail-protection/long-vol strategies after volatility has spiked, i.e. when protection is most expensive, and then suffer heavy carry bleed.  #mech/behavioral _(added by opus cross-check)_
   > people tend to buy those when V's high oh I should have had that let's get it in the portfolio now and the bleed is terrible it's really costy
   indicator: VIX level at time of long-vol allocations; option carry · asset: equities · direction: long vol bought after spikes underperforms · horizon: months · conditions: after volatility spikes · testable: yes - long-vol fund flows vs VIX level and subsequent returns · confidence: high
   ^MT014-C08-X1
-- **Niels Kaastrup-Larsen** Like Druckenmiller's concentrated bets, trend followers make their big gains when the portfolio is concentrated in a few large positions; higher risk and volatility come with the reward.  #mech/risk_management _(added by Opus)_
+- **Niels Kaastrup-Larsen** Like Druckenmiller's concentrated bets, trend followers make their big gains when the portfolio is concentrated in a few large positions; higher risk and volatility come with the reward.  #mech/risk_management _(added by opus cross-check)_
   > I also think about uh Trend following that usually when we really make a lot of money is when we have concentrated portfolios right so again with higher risk higher Vol comes the reward
   indicator: trend portfolio concentration vs return · asset: multi · horizon: months · testable: yes - trend returns vs portfolio concentration/effective number of bets · confidence: medium
   ^MT014-C08-X2
@@ -319,12 +319,12 @@ tags: [source, layer0]
 - **Niels Kaastrup-Larsen** A simple mean-variance logic using the Sharpe of the traditional portfolio and of trend shows the value-add of trend.  #mech/research_method
   > pick pick your sharp ratio of your traditional portfolio pick your sharp ratio of trend and then just just very very simply you can see what the value add of that Trend following portfolio is
   indicator: Sharpe-based allocation · asset: multi · horizon: years · testable: yes · confidence: medium
-  **Correction (Opus):** Wrong speaker: the Yoav Git blog example ('a former colleague of mine') is Graham Robertson (Man AHL); Niels then says the three of them worked together. → Graham Robertson (citing Yoav Git): a simple logic using the Sharpe of the traditional portfolio and of trend shows the value-add of trend.
+  **Correction (cross-check):** Wrong speaker: the Yoav Git blog example ('a former colleague of mine') is Graham Robertson (Man AHL); Niels then says the three of them worked together. → Graham Robertson (citing Yoav Git): a simple logic using the Sharpe of the traditional portfolio and of trend shows the value-add of trend.
   ^MT014-C14-2
 - **Niels Kaastrup-Larsen** Even a modest Sharpe of 0.2 for trend implies about a 10% allocation.  #mech/risk_management
   > you should have a 10% allocation to Trend in your portfolio
   indicator: trend allocation · asset: multi · horizon: years · testable: yes · confidence: low
-  **Correction (Opus):** Wrong speaker: same Graham turn relaying Yoav Git's numbers. → Graham Robertson (citing Yoav Git): even a modest trend Sharpe of 0.2 implies about a 10% allocation.
+  **Correction (cross-check):** Wrong speaker: same Graham turn relaying Yoav Git's numbers. → Graham Robertson (citing Yoav Git): even a modest trend Sharpe of 0.2 implies about a 10% allocation.
   ^MT014-C14-3
 - **Graham Robertson** Any market has a low Sharpe, but adding independent markets raises portfolio Sharpe by sqrt(N), subject to speed, allocation and costs.  #mech/risk_premium
   > math says that you can increase that sharp effectively by a square root of markets assuming Independence
