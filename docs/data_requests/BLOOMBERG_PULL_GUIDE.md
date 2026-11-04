@@ -1,55 +1,42 @@
-# Bloomberg pull guide (v4, for the UBC visit, 2026-11-02)
+# Bloomberg pull guide (v5, 2026-11-04)
 
-File: `Bloomberg_macro_UBC.xlsx` (v4, 494 tickers, monthly from Dec 1969 unless noted). Data stays private: never on GitHub.
+Eight workbooks, about 2,400 tickers, about 1,950 of them unique. Overlap between files is deliberate: if one series fails, a twin usually works.
+Data stays private: never on GitHub, never shared.
 
-## Before you go
-- Bring the file on a USB stick or in OneDrive; bring a second USB for the results.
-- Plan 2-3 hours. Sheets 1-5 are the must-haves (about 1 hour); the rest is a bonus.
+## Order (stop wherever time or the allowance runs out; save after each file)
+| # | File | What it feeds later | Tickers |
+|---|---|---|---|
+| 1 | `1_Bloomberg_macro_UBC.xlsx` (v4) | pre-registered batch 2: first-release economics, short-rate futures, commodity curves, yields, equity TR, bond futures | 494 |
+| 2 | `2_Bloomberg_econ_policy_monthly.xlsx` | growth/inflation pods on data as first released + consensus (surprises); central banks, balance sheets, money; financial conditions; sentiment | 185 |
+| 3 | `3_Bloomberg_rates_credit_fx_monthly.xlsx` | FX carry (forwards, NDFs), curve/swap pods, inflation swaps, credit pods, FX vol and risk reversals, funding basis, more EM yields | 534 |
+| 4 | `4_Bloomberg_equity_vol_funds_monthly.xlsx` | equity value/revisions per country (forward EPS), sectors/styles, VIX term structure, skew, implied correlation, SG CTA / short-term traders, ETF assets (flows) | 261 |
+| 5 | `5_Bloomberg_commodities_ext_monthly.xlsx` | full commodity curves 1-12, open interest and volume, sub-indexes, inventories and freight | 631 |
+| 6 | `6_Bloomberg_daily_A_futures_fx.xlsx` | DAILY from 1990: futures (all markets) + FX spot: daily risk, faster trend, crash tests | 238 |
+| 7 | `7_Bloomberg_daily_B_rates_equity_vol.xlsx` | DAILY from 1990: yields, swaps, credit, equity TR, vol, CTA indexes | 127 |
+| 8 | `8_Bloomberg_equities_UBC.xlsx` | stock screener (separate project). Live formulas: Bloomberg tab > Refresh Workbook. Another day if needed | 4,512 stocks |
+
+Files 1-5 are monthly from 1969 and are the must-haves. Files 6-7 are daily and heavy. If they hit the limit, use Ctrl+H to replace `Per=D` with `Per=W` (weekly) and refresh again.
 
 ## At the terminal
-1. Log in to Bloomberg, open the file in Excel, check the **Bloomberg** tab is in the ribbon.
-2. Work **one sheet at a time, in order** (tab names below). Click the sheet, then Bloomberg tab -> Refresh -> Selected sheet (or Refresh Workbook). Wait until no cell says "Requesting Data...".
-3. A cell shows `#N/A Invalid Security`: type the series name in the Bloomberg window (`SECF` for any security, `CT` for futures contracts, `FLDS` for field names), paste the right ticker into the yellow cell, refresh again. Labels with "?" are best guesses. Skip anything that takes more than two minutes.
-4. **Save after every sheet** (keep formulas). If the ribbon offers "Convert to values", also save a values copy (`Bloomberg_macro_UBC_values.xlsx`); that copy is the one that opens at home.
-5. `#N/A Limit` = the terminal's download allowance is used up: save and stop.
-
-## Order and why
-| # | Sheet | What | Why we need it |
-|---|---|---|---|
-| 1 | Economics | first-released value, consensus, release date, revised value (35 series) | growth theme on first-release data; surprises |
-| 2 | RatesFutures | short-rate futures strips 1-8: Eurodollar/SOFR, Euribor, short sterling/SONIA, BAX, Australian bills, Euroyen, Euroswiss; Fed funds | new pod: trend and carry on the front end; AQR's best markets; the 1987 crash test |
-| 3 | SpotRates3m | 3-month cash rates | carry of short-rate futures (implied minus spot) |
-| 4 | Curves | commodity futures 1st, 2nd, 3rd, ~12-month (35 commodities) | commodity carry without the seasonal noise of 1st/2nd |
-| 5 | Returns | GSCI/BCOM excess-return indexes | properly rolled commodity returns before 2000 |
-| 6 | Yields | government yields 2/5/7/10/30y, 10 countries | bond roll-down carry, curve signals |
-| 7 | EquityTR | local total-return index per equity market (21) | replaces our estimated dividends before 2010 (data audit) |
-| 8 | BondFutures | 1st and 2nd bond futures (16 contracts) | checks our yield-built bond returns |
-| 9 | EquityValuation | MSCI country P/E, forward P/E, P/B, dividend yield, forward EPS | equity value pod, earnings revisions |
-| 10-15 | Breakevens, Benchmarks, Surprise, Volatility, FXBasis, DailyCommodities | inflation compensation, CTA indexes, surprise indexes, implied vols/risk reversals, funding stress, daily commodities | secondary; daily sheet only if the limit allows |
+1. Bring the files on a USB stick or OneDrive, or open this chat on the terminal and download them. Bring a second USB stick for the results.
+2. Open one file at a time in Excel on the Bloomberg terminal. The formulas start by themselves.
+3. Open the **Check** sheet. A blank or `#N/A` in the NAME column means the ticker is wrong. Labels ending in "?" are best guesses (about 370 of them).
+   - Fix a ticker in the yellow cell on the data sheet. To find the right one, search the series name in the Bloomberg search bar, `SECF` (any security) or `CT` (futures).
+   - Skip anything that takes more than a minute. Gaps are fine.
+4. Wait until no cell says "Requesting Data...".
+5. Save the file under its own name. Then convert to values (Bloomberg tab > Convert/Paste values, or copy all and paste values) and save it again as `<name>_VALUES.xlsx`.
+6. If you see `#N/A Limit`, the download allowance is used up. Save, stop, and continue another day.
 
 ## At home
-Copy the saved file(s) into `Documents\WRDS results\mscifreedata` and tell Claude in chat. Claude reads it from there through the desktop link; nothing is uploaded to GitHub.
+Copy everything into `Documents\WRDS results\mscifreedata\Bloomberg_UBC_pull_2026-11-04\pulled\` (file 8 goes to `Documents\Screenerdata\bloomberg`) and say so in chat.
 
-## Not needed from Bloomberg (we already have it or get it elsewhere)
-FRED/ALFRED series (first releases for US data), CFTC positioning (free), WRDS: CRSP Treasuries (bond check done), Compustat Global, I/B/E/S (analyst revisions), Fama-French. MSCI country prices from 1997 (your free download).
+## Not needed from Bloomberg (free elsewhere)
+FRED/ALFRED (US first releases, Fed data), CFTC positioning, Ken French factors, AQR data sets, BIS (effective FX, credit), EIA, World Gold Council, economic policy uncertainty, NY Fed term premium (Bloomberg copies are included anyway as backup).
+Builder: `docs/data_requests/build_bloomberg_v5.py` (files 2-7). Ticker master: `bloomberg_v5_tickers.csv`.
 
----
-
-# Equities workbook (v1, 2026-11-04): `Bloomberg_equities_UBC.xlsx`
-
-Every US-listed stock our screens can touch (4,512: NYSE/Nasdaq/NYSE American, no warrants/units/preferreds/funds/SPACs,
-market cap >= $25M; live triage calls first, then by market cap). Builder: `build_bloomberg_equities.py`; universe
-snapshot: `equity_universe.csv`. All formulas are live (v2): open on the terminal, Bloomberg -> Refresh Workbook, save.
-Full steps are on the README sheet.
-
-| Order | Sheets | Content | Data points |
-|---|---|---|---|
-| 1-4 | S2_Market, S3_Valuation_LTM, S1_Identity, S5_Estimates | 209 snapshot fields over all stocks (with S4, S6) | ~0.72M |
-| 5 | H1_Annual_01..10 | 31 annual fields FY2004+ (USD) | ~3.1M |
-| 6-7 | S4_LastFY, S6_Owners_Credit | last FY detail, ROIC, SBC; insider %, ratings | ~0.23M |
-| 8 | H2_Quarterly_01..02 | 15 quarterly fields 2015+ (top 1,000) | ~0.7M |
-| 9 | B1-B4 | holders, dividends + spin-offs, segments, earnings dates (top 300) | small |
-| 10 | H3_Monthly_01 | prices, total return, consensus history (top 500) | ~1.6M |
-
-60 snapshot mnemonics are marked "check" (red): verify with FLDS if a column shows `#N/A Invalid Field`.
-At home: save into `Documents\Screenerdata\bloomberg` (not `Screenerdata\data`), then tell Claude.
+## File 8: equities workbook (stock screener)
+4,512 US-listed stocks (NYSE/Nasdaq/NYSE American; no warrants/units/preferreds/funds/SPACs; market cap >= $25M; live
+triage calls first, then by market cap). 209 snapshot fields, annual history FY2004+, quarterly 2015+ (top 1,000),
+monthly 2005+ (top 500), holders/dividends/segments (top 300); about 6.3M data points, so it may need more than one
+visit. Builder `build_bloomberg_equities.py`, universe `equity_universe.csv`. 60 mnemonics marked red are uncertain:
+fix with FLDS in row 3 of that column if it shows `#N/A Invalid Field`.
