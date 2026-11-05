@@ -63,7 +63,9 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Research program playbook (2026-11-02): docs/research/PLAYBOOK.md = session types, model routing (Sonnet extract /
   Opus second read + build / Fable judgement), extraction schema, verification thresholds, vault, 2-week schedule.
   Every session: read it + research-branch STATUS.md, do ONE stage, commit, name the next stage.
-- Layer 0 DONE 2026-11-04: all 227 Macro Transcripts -> 12,597 claims (quotes script-checked), cross-checked (Opus high 95+5 pilot, Sonnet xhigh 127; list opus_cross_ids.txt). Branch macro-vault (ledger/, raw/, build.py, vault notes); vault copied to G:\...\Obsidian Macro\Macro. Open: calibrate Sonnet-xhigh vs Opus cross-check on ~10 docs; Quant papers not yet through Layer 0.
+- Layer 0 DONE 2026-11-04: all 227 Macro Transcripts -> 12,597 claims (quotes script-checked), cross-checked (Opus high 95+5 pilot, Sonnet xhigh 127; list opus_cross_ids.txt). Branch macro-vault (ledger/, raw/, build.py, vault notes); vault copied to G:\...\Obsidian Macro\Macro. Open: calibrate Sonnet-xhigh vs Opus cross-check on ~10 docs; Quant papers DONE 2026-11-05: 15 papers (Quant folder) -> 1,490 claims, all quotes exact, Sonnet + Opus blind read, Opus
+  reasoning map per paper (question, thesis, premises, mechanism chain, design rationale, evidence, regimes, gaps, relations);
+  spec/tools in macro-vault branch papers/; vault Papers/ (copied to Obsidian). Fable phase NOT started (user controls batches).
 - Adoption rule (2026-11-01): docs/research/global_macro/TESTING_PROTOCOL.md (paired bootstrap dSR, Holm, non-inferiority per era);
   run `python -m gm.protocol batch0|batch1|diag`; register each new batch in that file BEFORE running it. Batch 2 = Bloomberg.
 - Holdout 2011-2026 has NOT been looked at: never print or inspect it until rules are frozen (then run once).
