@@ -1,0 +1,170 @@
+{
+ "opus_only": [
+  [
+   "QP11-C08-1b",
+   "Watching many markets instead of one gives more opportunities, because when one market is quiet another may be moving; this drove his move to a multi-market commodity broker."
+  ],
+  [
+   "QP11-C11-1b",
+   "He aimed to make money from outside the markets (trading as an outsider with a method) rather than as an establishment insider; he notes others who tried often failed."
+  ],
+  [
+   "QP11-C13-2b",
+   "Direct, hands-on empirical contact with data (rather than viewing a screen that looks like random noise) shaped his belief in trends."
+  ],
+  [
+   "QP11-C15-3b",
+   "The early Brockham system suffered severe losses in cotton, causing the family split (single-market loss risk in a rule-based system)."
+  ],
+  [
+   "QP11-C16-1b",
+   "Their testing software was far ahead of City institutions' tools, a technology edge used in marketing."
+  ],
+  [
+   "QP11-C24-3b",
+   "Efficient-market (Brownian motion) theory became the basis of bank risk management and the derivatives boom, which he says ended up destroying the economy."
+  ],
+  [
+   "QP11-C25-1b",
+   "Using derivative-pricing math to price instruments and sell at a markup is merchandising with no interest in whether the model fits reality; he contrasts it with studying the underlying reality."
+  ],
+  [
+   "QP11-C25-2b",
+   "Banks then sold overpriced derivatives for fifteen years to clients such as Orange County and Italian municipalities; he calls his 1993 talk prescient."
+  ],
+  [
+   "QP11-C26-2b",
+   "Most quants used efficient market theory to price derivatives; trend following was a narrow sideline."
+  ],
+  [
+   "QP11-C27-3b",
+   "Persistent positive returns eventually attract capital, but slowly because returns are not smooth."
+  ],
+  [
+   "QP11-C28-3b",
+   "The financial establishment (bankers, managers, professors, consultants, CFAs) holds theory A (efficiency); trend followers hold theory B, testable because you can bet on the difference."
+  ],
+  [
+   "QP11-C29-1b",
+   "CTA money came from commodity brokers (Shearson, E.F. Hutton, Merrill, Man); from the late 1990s the hedge fund world mostly did not accept CTAs as hedge funds."
+  ],
+  [
+   "QP11-C30-2b",
+   "Big macro funds (Moore/Bacon, Tudor Jones, Caxton/Kovner) also came from commodity backgrounds."
+  ],
+  [
+   "QP11-C32-2b",
+   "Investors swing between extremes: commodities went from 'terminally dull' to 'terribly exciting'."
+  ],
+  [
+   "QP11-C34-1b",
+   "Goldman took a 10% stake in Winton a week before the August 2007 quant quake, in which Goldman's Global Alpha blew up."
+  ],
+  [
+   "QP11-C35-2b",
+   "Credit cracked first (August 2007); US stocks peaked only in October-November 2007 and emerging markets went higher still, so equity weakness lagged credit."
+  ],
+  [
+   "QP11-C37-3b",
+   "After 2008 the investor base became conspicuously institutional (pension funds, endowments)."
+  ],
+  [
+   "QP11-C38-1b",
+   "Even at 1 and 20, the product is more expensive than optimal for clients once distribution fees are added."
+  ],
+  [
+   "QP11-C39-1b",
+   "There are about 1,000 liquid equity markets (e.g. Apple, GE, Exxon) to diversify into, though not all are deep."
+  ],
+  [
+   "QP11-C39-3b",
+   "Trend following is mathematics applied to professional gambling on prices; statistics sets the odds, like Buffett's 'handicapping'."
+  ],
+  [
+   "QP11-C40-2b",
+   "The research operation is about programming and computer testing; the leader need not program himself."
+  ],
+  [
+   "QP11-C41-1b",
+   "Academic finance journals (JF, J Portfolio Management, J Forecasting, J Futures Markets) cover what Winton researchers do, but are disconnected, not one coherent project."
+  ],
+  [
+   "QP11-C42-2b",
+   "Interviewer reports that Winton studied whether the market did worse when it rained in London; Harding says that is purely statistical research."
+  ],
+  [
+   "QP11-C43-4b",
+   "Maths is useful for making better inferences, but finance is not physics."
+  ],
+  [
+   "QP11-C45-2b",
+   "A cap-weighted index like the S&P 500 is itself a trading system: long 500 stocks, adding and removing them by rules."
+  ],
+  [
+   "QP11-C45-3b",
+   "Beating long-only indexes by even 1-20 bp would be worth billions, and is a highly soluble maths problem."
+  ],
+  [
+   "QP11-C46-2b",
+   "The index works because minimizing transaction costs and owning everything beats most active managers."
+  ],
+  [
+   "QP11-C47-1b",
+   "A long-only index-enhancement business earns management fees, valued at a much higher P/E than performance fees, and diversifies income."
+  ],
+  [
+   "QP11-C47-2b",
+   "Investments always get oversold, so a small real edge tends to be marketed as larger."
+  ],
+  [
+   "QP11-C48-1b",
+   "The investment process must keep changing because finance is not a physical problem."
+  ],
+  [
+   "QP11-C48-3b",
+   "The S&P 500 has not worked for the last fifteen years (about 1998-2013)."
+  ],
+  [
+   "QP11-C48-4b",
+   "The index has been widely gamed: traders buy stocks before inclusion and sell before deletion, adding to public investors' losses."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP11-C08-1",
+   "Moving from a single market (gilts) to many markets gave more chances for patterns and was the start of his multi-market approach."
+  ],
+  [
+   "QP11-C08-2",
+   "Harding reasons that something may be happening in another market when one is quiet, so a larger market set offers more opportunity."
+  ],
+  [
+   "QP11-C24-3",
+   "Harding asserts his data could have definitively disproved efficient-market theory."
+  ],
+  [
+   "QP11-C25-1",
+   "Harding criticizes banks' use of financial mathematics to price derivatives from a model and sell at a markup, since it does not test whether the model matches market reality."
+  ],
+  [
+   "QP11-C26-2",
+   "Winton (set up 1997) started as a trend-following CTA because Harding already knew how to run those systems."
+  ],
+  [
+   "QP11-C28-3",
+   "Trend-following theory (B) versus the mainstream efficient-market theory (A) differ testably through performance of trading each way."
+  ],
+  [
+   "QP11-C39-2",
+   "Investing is handicapping: work out the odds and bet accordingly (Buffett's term)."
+  ],
+  [
+   "QP11-C45-2",
+   "Harding thinks mathematical methods could beat a cap-weighted index like the S&P 500 by about 20 basis points, which would be worth billions in fees."
+  ],
+  [
+   "QP11-C48-2",
+   "Harding says the S&P 500 index approach has been exploited by traders who buy before index additions and sell before deletions, hurting index investors."
+  ]
+ ]
+}

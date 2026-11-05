@@ -1,0 +1,114 @@
+{
+ "opus_only": [
+  [
+   "QP08-C02-1b",
+   "A market-neutral cross-asset portfolio removes the dominant first principal component (the market), so it only harvests predictability in the remaining factors."
+  ],
+  [
+   "QP08-C03-4b",
+   "Footnote 1: forwards and futures are treated as equivalent in the theory section (ignores marking-to-market differences)."
+  ],
+  [
+   "QP08-C04-5b",
+   "Breeden (1986) is cited for equilibrium links between interest rates and growth, used later to define rates value."
+  ],
+  [
+   "QP08-C08-5b",
+   "The value premium has rational and behavioural explanations, as momentum does."
+  ],
+  [
+   "QP08-C09-1b",
+   "The recent euro fall after surprise ECB easing illustrates overshooting; such moves create value opportunities in slow-adjusting assets such as euro-denominated real estate, which stayed sticky."
+  ],
+  [
+   "QP08-C11-2b",
+   "Each normalised crossover passes through R(z) = z*exp(-z^2/4)/0.89, which peaks near |z| = 1.4 and fades for extreme values; the final signal is the equal-weight (1/3) average over the three speeds."
+  ],
+  [
+   "QP08-C12-2b",
+   "Footnote 4: GDP growth enters with a three-month lag to approximate publication delay."
+  ],
+  [
+   "QP08-C12-6b",
+   "Example: equity value is long the three highest-yield indices and short the three lowest, held one business day."
+  ],
+  [
+   "QP08-C14-5b",
+   "Footnote 6: commodity carry relation F/S = exp((r + s - c)(T - t)), with s storage cost and c convenience yield."
+  ],
+  [
+   "QP08-C17-2b",
+   "Unlike the CS book, the time-series book can carry net directional exposure to an asset class when signals agree."
+  ],
+  [
+   "QP08-C18-4b",
+   "Directional equity carry and value both buy after falls and sell after rallies, hence negative equity betas; FX carry stays pro-cyclical."
+  ],
+  [
+   "QP08-C18-5b",
+   "TS equity value and equity carry correlate 51%, i.e. they are largely the same trade."
+  ],
+  [
+   "QP08-C21-2b",
+   "TS V+C+M 3-year rolling Sharpe falls to about 0.1 around 1999-2000 and peaks about 2.6 in 1997 and ~2.4 in 2003."
+  ],
+  [
+   "QP08-C25-1b",
+   "CS+TS style correlations also swing (carry-momentum up to ~0.75 around 1992; value-carry down to ~-0.55)."
+  ],
+  [
+   "QP08-C26-1b",
+   "CS+TS 3-year rolling Sharpe ranges about 0.55 (around 1999-2000) to 2.6 (1997)."
+  ],
+  [
+   "QP08-C31-2b",
+   "Rates universe: 10Y swaps for EUR, GBP, JPY, USD, NZD, AUD, CHF, CAD, NOK, SEK, HUF, PLN, ZAR, PHP (Bloomberg tickers like USSWAP10), starting 1988-2001."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP08-C02-1",
+   "Practice differs: cash equity momentum is traded cross-sectionally, futures momentum directionally; the authors ask why and test both implementations."
+  ],
+  [
+   "QP08-C02-6",
+   "Headline: the three styles are largely profitable and the combination of styles performs best."
+  ],
+  [
+   "QP08-C04-1",
+   "Sign of carry = sign(r - d)."
+  ],
+  [
+   "QP08-C05-3",
+   "The yield differential can pay for peso-problem jump risk that has not materialised in the sample, so realised carry returns may overstate safety."
+  ],
+  [
+   "QP08-C05-5",
+   "Normal backwardation (Keynes): producers sell futures for insurance, creating structural excess futures supply so curves are backwardated and futures roll up to spot."
+  ],
+  [
+   "QP08-C05-6",
+   "Empirically commodity curves are often not backwardated, so the Keynesian insurance story is incomplete."
+  ],
+  [
+   "QP08-C05-12",
+   "Momentum explanations are split between risk-based (sensitivity to macro factors) and behavioural (underreaction/overreaction)."
+  ],
+  [
+   "QP08-C06-4",
+   "Alternative: prices overreact and feed on themselves via noise traders, deepening mispricing until a reversal."
+  ],
+  [
+   "QP08-C11-2",
+   "Response function R(x)=x*exp(-x^2/4)/0.89 dampens extreme signals; u_k=R(z_k); final signal is equal-weighted (1/3) sum of u_k."
+  ],
+  [
+   "QP08-C19-3",
+   "Combined TS and CS Sharpe ratios are similar (1.37 vs 1.40) though individual style performance differs a lot (CS strong in value, TS strong in momentum)."
+  ],
+  [
+   "QP08-C28-1",
+   "Reference list: Asness-Moskowitz-Pedersen (2013) value and momentum everywhere; Moskowitz-Ooi-Pedersen (2012) time series momentum; Koijen et al. (2013) Carry; Harvey-Liu-Zhu factor proliferation; Erb-Harvey (2006) commodities."
+  ]
+ ]
+}

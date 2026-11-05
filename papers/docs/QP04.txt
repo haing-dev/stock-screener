@@ -1,0 +1,276 @@
+# The Numbers Man: David Harding profile (Financial Times, Clive Cookson)
+source_id: QP04
+type: paper
+file: david_harding_winton.pdf
+chunks: one per PDF page (C01 = page 1). Page images: img/QP04-p-NN.png (exhibits, charts)
+---
+
+[C01]
+T H E
+N U M B E R S
+M A N
+
+David Harding capitalised on knowledge gleaned
+from science and mathematics to set up a $32bn
+hedge fund. Clive Cookson talks to him about
+physics, philanthropy and why he believes in
+paying tax. Portrait by Benjamin McMahon
+
+n 1994 the Philosophical
+Transactions of the Royal
+Society, a leading scientific
+journal, published an unusual
+paper. Entitled “Making money
+from mathematical models”, it
+was authored by a young
+financial trader in London. His
+name was David Harding, he was a Cambridge
+physics graduate and he used the paper to lay out
+what he saw as the “intellectual front line” of
+investment research. Harding’s idea was that
+finance could use science to identify and exploit
+inefficiencies in the markets.
+He was right. Today Harding is worth about
+£1.3bn and, in the course of putting those initial
+ideas profitably into action, has become one of
+Europe’s leading financial entrepreneurs. His pri-
+vately owned investment company Winton Capital
+(for which he reluctantly accepts the “hedge fund”
+label) manages $32bn of assets. When I take a copy
+
+I
+
+28
+
+of his Royal Society publication out of my briefcase,
+his face breaks into a slightly mischievous smile.
+“I’m terribly impressed that you have a copy of my
+one and only scientific paper,” he says.
+Harding’s tale begins with a mathematically
+minded boy, who became interested in investing
+while helping his civil servant father manage a
+modest share portfolio. Today, he is based at Winton
+Capital’s headquarters in Hammersmith – well
+west of the districts favoured by London’s financial
+community. On the approach from the Tube sta-
+tion, the long, low-rise building, originally con-
+structed in the mid-20th century, looks
+underwhelming. A queue of people stretches out-
+side the Job Centre that occupies the first section
+of the shared block.
+Once through Winton’s doors, however, the
+ground floor opens up into a spacious waiting area,
+its curvaceous reception desk illuminated with
+recessed red lights. Much of the art on display has
+a scientific theme, including a series of large ▶
+
+ft.com/magazine november 26/27 2016
+
+[C02]
+ft.com/magazine october 9/10 2010
+
+29
+
+[C03]
+'We have
+used machine
+learning
+for at least
+30 years'
+
+research in the manner of a science experiment
+– collecting and organising data, making observa-
+tions and developing hypotheses and then testing
+these hypotheses against empirical evidence.”
+Harding emphasises the breadth and volume of
+investments involved, covering bonds, currencies,
+commodities, market indices and individual equi-
+ties. The aim is to exploit a large number of weak
+predictive signals, he says: “We don’t expect to find
+any strong relationships between data and the price
+of the market. That may sound counter-intuitive
+but if there are strong relationships, someone else
+is going to be exploiting those. Weak relationships
+are where we have a competitive advantage.”
+Weather strategies are one feature of Winton
+research, including analysis of cloud cover and soil
+moisture levels to predict the prices of agricultural
+commodities. Other important indicators, for
+which maths can uncover value not fully reflected
+in market prices, include seasonal factors and
+inventory levels across supply chains.
+Harding admits to using science and mathemat-
+ics as a marketing tool to sell Winton to institu-
+tional clients – “yes, there is certainly an element
+of truth in that” – but he insists that science really
+does control the investing strategy. “In the old
+days I would keep all our research terribly secret
+for a long time but eventually what we discovered
+would leak out,” he says. “Today, we’re engaged in
+a number of big and ambitious projects, which I’m
+forced to talk about a lot more than I would like
+to, because we manage money for clients.” Those
+clients have seen a compound annual growth rate
+of 12.8 per cent, net of fees.
+Winton is not the only hedge fund that takes a
+quantitative mathematical approach to investing.
+The best known of these funds is the $65bn
+Renaissance Technologies founded in the US in
+1982 by Jim Simons, whom Harding describes as
+one of his “three heroes” of investment, together
+with George Soros and Warren Buffett.
+How much money is managed systematically
+using maths and science is impossible to estimate.
+“The industry is so secretive that it is really hard
+to tell,” says another quantitative fund manager.
+“But I would estimate that systematic or mathe-
+matical funds amount to 15 per cent of assets in
+the hedge fund industry – somewhere between
+$330bn and $450bn altogether.”
+When I ask Harding about the use of machine
+learning and artificial intelligence to guide invest-
+ment decisions, he bristles slightly. “There is a
+sudden upsurge of excitement about AI,” he says,
+“but we have used techniques that would be
+described as machine learning for at least 30 years.”
+
+◀ Raoul Dufy prints from 1937, celebrating science
+and technology.
+Harding’s career is founded on the relentless
+pursuit of mathematical and scientific methods to
+predict movements in markets. This is a never-
+ending process because predictive tools lose their
+power as markets change; new ones are always
+needed. “We have 450 people in the company, of
+whom 250 are involved in research, data collection
+or technology,” he says. That is equivalent to a
+medium-sized university physics department.
+
+A
+
+fter graduating, Harding began
+work as a financial trader. Over
+five years he began to see poten-
+tial profit in adopting a more
+mathematical approach – and, in
+1987, he co-founded AHL as a
+commodities trading firm with two other young
+physicists, Michael Adam and Martin Lueck. Their
+success, using quantitative methods, led to AHL’s
+purchase by Man Group in 1994. Harding struck out
+on his own in 1997, setting up Winton (he gave the
+company his middle name) with the aim of building
+a more substantial investment business on the back
+of empirical scientific research.
+
+An architect's impression of the Zaha Hadid-designed
+Winton maths gallery at the Science Museum
+
+In his 1994 paper, Harding wrote that the meth-
+ods with which conventional banks and brokers
+make money from trading have “all the intellectual
+purity of selling vegetables”, a phrase he uses again
+during our interview. As well as taking clients’
+fees, these methods consist essentially of selling
+complex derivatives at marked-up prices and of
+arbitrage (taking advantage of small differences in
+the price of financial instruments on different
+markets).
+Harding has a different approach. He exploits
+failures in efficient market theory – “the idea that
+markets are always rational, that they perfectly
+reflect all knowable information and always pro-
+duce in some sense the ‘right’ price”. This theory
+still has a grip on western economic thinking, he
+says, despite much evidence that it is wrong. “It
+treats economics like a physical science when, in
+fact, it is a human or social science. Humans are
+prone to unpredictable behaviour, to over-reaction
+or slumbering inaction, to mania and panic.”
+The Winton investment system is based instead
+on “the belief that scientific methods provide a
+good means of extracting meaning from noisy
+market data. We don’t make assumptions about
+how markets should work, rather we use advanced
+statistical techniques to seek patterns in huge
+datasets and base all our investment strategies on
+the analysis of empirical evidence. We conduct our
+
+'Humans
+are prone
+to over-
+reaction or
+slumbering
+inaction,
+to mania
+and panic'
+
+30
+
+Essentially, he says, quantitative investing, self-
+driving cars and speech recognition are all applica-
+tions of “information engineering”. Though this
+technology is improving fast, there is much scope
+for improvement. “Speech recognition still doesn’t
+work awfully well,” he observes. “If you speak
+clearly and simply to your iPhone it will understand
+what you say, but you can’t chat away to a mobile
+phone as you would to a friend and expect it to
+interpret sensibly what you’re saying.”
+
+arding is now channelling some
+of his own wealth back into the
+field he came from. This month
+has seen the launch of the
+Winton Centre for Risk and
+Evidence Communication in
+Cambridge and the Winton
+Bioinformatics Suite at London’s new Francis Crick
+Institute; next month Mathematics: The Winton
+Gallery, one of the last architectural designs by the
+late Zaha Hadid, will open at the Science Museum.
+Each is supported by a £5m donation from
+Harding’s charity. (His current charitable spending
+amounts to around £10m a year but that is likely
+to rise.) “I hope I’m still at an early stage of my
+philanthropic career,” he says. “I’m quite young in
+comparison with most philanthropists, who tend
+to make their money and then give it away.”
+Winton Philanthropies recently joined the
+US-based Science Philanthropy Alliance, which
+promotes best practice in charitable funding of
+science. “By American standards, we operate on a
+relatively small scale,” Harding says. “In some ways
+I find it slightly alarming that I’m quite a big fish
+over here in the UK.”
+Harding contributes far more in taxes than in
+charitable donations. Indeed, he sometimes refers
+to himself as “Britain’s biggest individual tax-
+payer”. When I ask him for evidence to support
+that label, he smilingly concedes: “Actually I’m
+probably not – but I am a very big taxpayer. Winton
+and its directors have paid £1bn in taxes over the
+past nine or 10 years.”
+Why do some wealthy people make so much
+effort to avoid taxes, including moving abroad?
+“I can really afford to pay taxes without it affecting
+my lifestyle,” he replies. “I am often pressed to say
+that other rich people should not avoid paying taxes
+but who am I to morally lecture others? A lot of rich
+people are convinced that the government is useless
+and the money they spend philanthropically is
+fantastically good,” he adds. “But I’m not convinced
+that I necessarily spend money better than the
+government through my donations.” And then he
+heads off to a lecture by German psychologist Gerd
+Gigerenzer, who runs the Harding Centre for Risk
+Literacy in Berlin – leaving that final thought
+experiment behind. 6
+
+H
+
+ZAHA HADID ARCHITECTS
+
+Clive Cookson is the FT's science editor
+
+ft.com/magazine november 26/27 2016

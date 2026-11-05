@@ -1,0 +1,297 @@
+# Making Money from Mathematical Models (David Harding, Phil. Trans. R. Soc. Lond. A 1994)
+source_id: QP14
+type: paper
+file: Making-Money-From-Mathematical-Models.pdf
+chunks: one per PDF page (C01 = page 1). TEXT IS OCR of a scan (may contain OCR errors; quote the OCR text as it stands). Page images: img/QP14-p-NN.png
+---
+
+[C01]
+PHILOSOPHICAL THE ROYAL
+TRANSACTIONS SOCIETY. AV
+
+Making Money from Mathematical Models
+
+David Harding
+
+Phil. Trans. R. Soc. Lond. A 1994 347, doi: 10.1098/rsta.1994.0060,
+published 15 June 1994
+
+[C02]
+Making money from mathematical models
+
+By Davip Harpine
+
+Adam, Harding and Lueck Ltd, Willow House, Willow Place,
+London SW1P 1JH, U.K.
+
+This paper is a discussion of the scientific significance and nature of mathematical
+models generally, and in finance theory in particular; of the relation of such models
+to a postulated ‘reality’; of the sufficiency of the empirical grounding of such models
+to the task of drawing useful inferences about such a reality; and of the danger of
+unwittingly propagating erroneous conclusions about this reality in the absence of
+such a grounding. Some suggestion as to how the current empirical grounding of
+mathematical modelling in finance can be enriched.
+
+1. Introduction
+
+There is a little remarked upon dissonance between the philosophy of mathematics
+and that of the natural sciences. Mathematics is an abstract philosophy with an
+essentially aesthetic nature. Many mathematicians and philosophers have asked
+whether it is best to describe mathematics as having been discovered or invented.
+Perhaps more pragmatic mathematicians would be inclined to follow Wittgenstein’s
+advice and pass over in silence that of which they cannot speak! The choice between
+these options is one with no profound consequences for the practice of mathematics.
+
+Natural science has no such incipient philosophical argument at its heart. The
+philosophy of natural science may not be generally well understood but it is, to my
+knowledge, relatively uncontentious.
+
+The natural scientist observes naturally occurring phenomena and attempts first
+to classify and subsequently to model them (in a theory) by a process of metaphor
+and analogy. If such a description seems at first puzzling, we must reflect on the logic
+of the fact that the theory cannot be the reality ; it can at best only be a near perfect
+simulation of that reality. At any time the reality to be modelled consists of the
+universe of recorded observations, a universe which as long as mankind continues to
+progress expands so that even a model in accordance with every known observation
+could not properly be described as ‘true’ in the sense that it is necessarily identical
+to the postulated reality. The discipline which, in my opinion, has made the
+philosophy of natural science so productive for mankind is the agreement that such
+a model must be capable of producing empirically falsifiable predictions and must
+thus be capable of being subjected to an unbiased test of its value within its own
+conceptual framework. A theory’s utility is then determined by the quality of the
+predictions it makes and the accuracy with which these accord with empirical
+observation. No natural scientist can ever really be excused, however, of believing or
+stating that such and such a theory is ‘true’ according to the most puritanical
+interpretation of that word, or ‘represents reality’ or other such sentiments. It is
+utility that is the distinguishing touchstone of the philosophy of natural science in
+its competition with other philosophies.
+
+Phil. Trans. R. Soc. Lond. A (1994) 347, 511-515 © 1994 The Royal Society
+Printed in Great Britain 51L Vol. 347. A
+
+The Royal Society is collaborating with JSTOR to digitize, preserve, and extend access to
+Philosophical Transactions: Physical Sciences and Engineering.
+
+www.jstor.org
+
+[C03]
+512 D. Harding
+
+The mathematician does not, by necessity, share this philosophical basis with the
+natural scientist, and yet the startling practical successes of natural science over the
+past 300 years have been achieved by generations of natural scientists working with
+the ‘armoury’ provided by mathematicians and still being vigorously expanded
+today. The natural scientists have ‘subverted’ mathematics for their own modest
+but determined aims: to construct models with the greatest and richest power to
+illuminate and draw inferences about the nature of postulated reality.
+
+The mathematician’s criterion of virtue is by contrast an aesthetic one and when
+working with the natural scientist this should be emphasized. We may perceive
+reality as beautiful and mathematics as beautiful but it would not be logically correct
+to infer that mathematics is reality, that the elegant solution is necessarily the best.
+
+This should be commonplace among natural scientists, but the success of the
+scientific method over the past 300 years is such that these essential philosophical
+foundations are insufficiently well remembered. A particularly grotesque mutilation
+of scientific philosophy is performed by those who claim that particular scientific
+theories are true ‘to all intents and purposes’. Newtonian mechanics explained the
+movements in the heavens to a degree sufficient for all practical purposes. However,
+quantitatively speaking the tiniest chink in the accordance of the theory’s prediction
+with reality was sufficient to open the way for the einsteinian revolution. The
+discovery of such a chink had to await the considerable technological advances in
+optics and instrumentation of the nineteenth century before it could be perceived.
+The atomic bomb is not a negligible consequence of the tiniest imperfection in a
+‘nearly true’ theory. Out of a tiny inconsistency between observed reality and an
+aesthetically complete theory arose not just enormous practical consequences, but a
+revolution in our understanding of the relation between the natural sciences and the
+reality that is perceived as their subject. In science, as in other areas of life, ladders
+must be climbed only so as to be kicked away. The father of natural science was
+Plato, whose notion of an absolute reality capable of limitless investigation through
+reason has inspired centuries of effort to elucidate this reality. Yet Heisenberg’s, as
+yet unrefuted, theory is arguably consistent with the idea that such an absolute
+reality can never be observed. The idea that models are nearly true or are true for
+all practical purposes must be rejected as forcefully as the idea that they are true. If
+they look true we must look for the explanation. For them to be true in the strictest
+sense demands the impossibility of an observation out of accordance with them; a
+position unworthy of further discussion.
+
+It is the empirical success of natural scientific philosophy more than any other
+body of ideas that has made the modern world much more than a mere continuation
+of the ancient. The industrial revolution is Great Britain would have been impossible
+without the spread of natural scientific philosophy in the 17th and 18th centuries. In
+a letter to Adam Smith commenting upon The Wealth of Nations, dated 10 September
+1759 Edmund Burke wrote, ‘A theory like yours, founded on the nature of man,
+which is always the same, will last, when those that are founded upon his opinions,
+which are always changing, will and must be forgotten.’
+
+Natural science provides an independent method of arbitration between views,
+and this more than any other factor has enabled the replacement of sterile conflict
+and assertion with constructive argument and benign progress.
+
+On the human timescale, however, we must not fail to appreciate that the
+philosophy of natural science is still new. Political, theological and economic
+organization and activity have thrived through the long ages of history under the
+
+Phil. Trans. R. Soc. Lond. A (1994)
+
+[C04]
+Making money from mathematical models 513
+
+sway of less modest philosophies and where political and theological ideologies or
+economic interest have collided with the timorous ambitions of the natural scientist,
+it is often the latter who, in the short term, has had to yield. These philosophies and
+ideologies influenced by the competitive successes of the natural sciences have sought
+the company of mathematics, perhaps in an attempt to bathe in the reflected light
+of reason. But mathematics has not prospered in such company as it has with the
+philosophy of natural science, which has provided it simultaneously with a raison
+d’étre and a continual source of fresh stimuli. Mathematics does not need natural
+science, but it thrives on its company.
+
+2. Scientific method and modelling market behaviour
+
+Now let us apply these thoughts, slightly randomly, to developments in the
+mathematical modelling of market behaviour. I have already referred to Adam
+Smith who was among the first to formalize a model of the growth of economic and
+social systems founded on the philosophy of natural science. For those who know of
+market economics only by ill-repute it may perhaps come as a surprise to learn that
+Smith’s mode of construction, as Burke’s words testify, was deeply empirical,
+founded on detailed and analytical observation of the nature of human society. From
+this construction, the establishment of freely determined market prices in both
+agricultural and manufactured goods emerges as the optimum method for
+establishing values where the aim is to foster the maximum rate of that quantity,
+economic growth, which is seen as a natural consequence of a society in which
+people are free to interact economically and when the rule of law and the defence of
+property are guaranteed. This model, its laws of supply and demand and its concept
+of the division of labour have played the role slightly akin to that Newton’s laws of
+motion played in physics in the development of the science of economics since. But
+although Newton’s ideas were taken up to extraordinary effect by those studying a
+nature that does not talk back, in economics as in other social sciences, progress has
+been held back by the sheer practical difficulty of employing the experimental
+method. It has rarely been possible to experiment in a controlled fashion with society
+as a whole, and when something resembling experimental conditions are created, the
+‘adjudicator’ of natural science is unlikely always to be respected by the larger part
+of the jury. Thus, today rather than being seen as the ‘progenitor’ of economic
+modelling, in the way that Stephenson is the ‘progenitor’ of the steam train or
+Brunel the ‘progenitor’ of civil engineering, Smith is seen as a ‘political’ figure and
+his excellent, and in my opinion, proven, contribution, scientifically undervalued.
+This is not to take sides in the modern political debate which is often concerned with
+multidimensional problems beyond the scope of Smith’s work but is merely to
+observe that Smith’s models did give rise to empirically testable, interesting and
+often counter-intuitive predictions about the world and which in the messy social
+laboratory of the past three centuries have received far more support than
+contradiction. That the experiments took a long time to perform, that they are
+always necessarily less conclusive than controlled experiments and that any analysis
+made of them will not necessarily be accepted by social scientists are reasons
+progress in the field of social and political science has been so much less impressive
+than in the physical or biological sciences. In the physical sciences the object of study
+does not have a mind of its own!
+
+I mention Adam Smith because his models were constructed long enough ago for
+
+Phil. Trans. R. Soc. Lond. A (1994)
+19-2
+
+[C05]
+514 D. Harding
+
+them to have been tested for robustness under a wide range of conditions. The
+evolution of social systems proceeds at a slower pace than that at which we are
+nowadays accustomed to living and thus it is much more realistic to judge the
+usefulness of models developed some time ago, without prior knowledge, than it is to
+assess their possible contemporary equivalents. Had Smith lived through the
+subsequent centuries there would have been many occasions on which he would have
+been able to profit handsomely by exploiting the difference between his theories’
+predictions and the common opinion and that is the ultimate judge of the utility of
+his model, of its value as a scientific theory.
+
+Thave stressed that a theory or model is scientifically valueless unless it is capable
+of making empirically falsifiable predictions. In economics and the study of markets
+there can be no more incorruptible measure of utility than profit accrued by
+arbitraging the predictions of a model against the common view (the market). The
+quest to ‘beat the market’ is thus more than a venal desire for money or an
+egotistical desire to win, it is also a means of obtaining the most ruthlessly honest
+evaluation of the scientific utility of a model or method.
+
+Speculari, the Latin root of the verb to speculate, has the literal meaning ‘to
+observe’. And a study of speculation will show that most successful speculators can
+be well described as ‘observers’. To be successful, this observation must of necessity
+be detached and unemotive and thus, where great social and moral issues are at
+stake, it is perhaps not surprising that this viewpoint should arouse some distrust
+and hostility among the general population (particularly when the speculator profits
+at a time of general discontent). Yet this detached observation is clearly in the spirit
+of the natural scientist and the act of speculating for money is in the spirit of the
+empirical scientist’s restless yearning to add to empirical knowledge and put theories
+to the test. Thus, making money from mathematical models is in one sense less about
+the corruption of intellectual endeavour than about the appropriate statistical test
+of the utility of such models for the development of scientific theory.
+
+3. The utility of the efficient market theory
+
+It is in this context that I wish to consider the scientific utility of the ‘efficient
+market theory’. The various versions of the theory begin essentially by asserting
+that it is impossible to make money by applying mathematical modelling to the
+science of speculation. What, then, is its utility as a scientific theory? On the one
+hand its predictions of market price are of the null variety — that no better estimate
+of tomorrow’s price than today’s can be discerned — and not very interesting. On the
+other hand, a concrete prediction that future returns will be drawn from a known
+distribution whose parameters can be estimated appears falsified; the empirical
+evidence points to the return process in all markets being ultimately non-parametric
+and certainly non-stationary. Its great strength is that it is consistent with one of the
+most profoundly useful insights about market behaviour: it is very difficult to make
+money consistently. Such consistency, however, it not a unique feature of this model
+over a universe of alternatives.
+
+What of the practical evidence? Because every major bank and securities house
+now has its option software and its rocket scientists surely they must be making
+money from the models thus indirectly confirming their utility. But how is this
+money made? First through arbitrage — using the model to assess the relative value
+of various forms of derivatives of the same asset or assets — a test that is relatively
+
+Phil. Trans. R. Soc. Lond. A (1994)
+
+[C06]
+Making money from mathematical models 515
+
+insensitive to the crucial distributional assumptions underlying the theory; second,
+through what we may (not necessarily derogatorily) call merchandising: banks and
+brokers selling at marked up prices derivative instruments that can only be created
+because of the existence of the theory. These profits do not ultimately refute the
+theories’ scientific utility. If this sounds contrived consider the case of portfolio
+insurance. Some made personal fortunes from selling advice based on the theory (in
+good conscience) but to compensate, after the market crash of 1987, their pension
+fund clients incurred losses greater than they otherwise would have done. Thus the
+widespread use, found for the theory, is not strong evidence of its scientific utility but
+more for its marketability. None of this is to denigrate the contribution of the theory
+towards improved practice in and greater understanding of investment but it is to
+point out sharply its limited ambition and limited utility as a scientific theory and
+to undermine the perception of confirmation its widespread usage suggests. It is no
+surprise of course that speculators should be in conflict with the theory because it
+explicitly denies the possibility of their existence.
+
+4. Conclusion
+
+Having aired my doubts I now have some positive comments on how to make
+money from mathematical models or perhaps more properly how I have observed
+money being made. I believe there are three distinct paths that can be followed.
+
+1. Bea purveyor of derivative instruments or shareholder in such an activity. This
+has all the intellectual purity of selling vegetables!
+
+2. Be a rocket scientist arbitrageur. The efficient market theory is sufficiently
+robust with respect to relative values and some very challenging mathematics has
+been required to unlock new arbitrage potential in the globalizing financial markets.
+This can be challenging and satisfying but its assumptions may be unsound.
+
+3. Speculate, which I believe to be the intellectual front line. One may study and
+observe the world so as to seek phenomena amenable to classification and to form
+ideas as to the metaphors and analogies that are components of a model that can
+make interesting and falsifiable predictions.
+
+The disincentive to a mathematician of pursuing course 3 is that observation and
+classification are not the mathematician’s job! But any mathematician motivated by
+the philosophy of science will not find a shortage of opportunity in this course.
+Efficient market theory has at least partly driven the charlatan from the investment
+stage. Perhaps this has created the opportunity for the scientist to take to that stage
+and to push further back the frontier of ignorance for the betterment of humankind.
+
+Phil. Trans. R. Soc. Lond. A (1994)

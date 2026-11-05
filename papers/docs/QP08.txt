@@ -1,0 +1,3054 @@
+# Dissecting Investment Strategies in the Cross Section and Time Series (Baz, Granger, Harvey, Le Roux, Rattray)
+source_id: QP08
+type: paper
+file: dissecting-investment-strategies-in-the-cross-section-and-time-series.pdf
+chunks: one per PDF page (C01 = page 1). Page images: img/QP08-p-NN.png (exhibits, charts)
+---
+
+[C01]
+Dissecting Investment Strategies in the Cross Section
+and Time Series
+
+Jamil Baz a , Nick Granger b , Campbell R. Harvey c , Nicolas Le Roux d and Sandy
+Rattray e
+
+Abstract
+
+We contrast the time-series and cross-sectional performance of three popular investment
+strategies: carry, momentum and value. While considerable research has examined the perfor-
+mance of these strategies in either a directional or cross-asset settings, we offer some insights
+on the market conditions that favor the application of a particular setting.
+
+a Jamil Baz is chief investment strategist at Man Group, b Nick Granger is portfolio manager
+
+of Dimension at Man AHL, c Campbell R. Harvey is professor of finance at Duke University,
+and investment strategy adviser at Man Group, d Nicolas Le Roux is senior researcher at Man
+Group and e Sandy Rattray is CEO at Man AHL.
+
+Current version: December 7, 2015
+
+Electronic copy available at: http://ssrn.com/abstract=2695101
+
+[C02]
+1
+
+Introduction
+
+2
+
+In quantitative cash equity strategies, momentum is almost always traded across assets (relative
+value) whereas in futures trading, momentum is typically applied directionally. Why? Our goal is
+to better understand the performance of three popular strategies, carry, momentum and value in
+different implementations: time-series vs. cross-sectional.
+
+Consider the following motivating example. Suppose we do a principal components decompo-
+sition of a set of cash equity returns and extract the first 10 factors. The first factor is dominant and
+will resemble the market return. In a cross-asset strategy that is market neutral, the dominant factor
+is effectively hedged out. If predictability is driven by the other nine factors, this is exactly the way
+you want to implement your investment strategy. However, if the first factor plays an important role
+in predictability, perhaps a time-series implementation is preferred. In our example, if the market
+factor is trending, then it is more likely time-series momentum will be profitable than cross-sectional
+momentum.
+
+Although there is considerable research on each of these popular strategies, there is little work
+that compares cross-asset and directional strategies for a wide variety of asset classes. For example,
+Moskowitz et al. (2012) focus on time-series momentum. Asness et al. (2013) look at cross-sectional
+performance of value and momentum. We fill this gap by providing an analysis of both the time-
+series and cross-section using a broad number of asset classes: equity, fixed income, currencies and
+commodities. We measure the relative performance of directional vs. cross-asset strategies as well
+as strategies that combine the information in each dimension.
+
+In order to understand performance differences between the implementations, it is important
+to start with first principles. We begin our analysis with the theoretical underpinnings of each of
+these popular strategies. Next we compare the time-series and cross-sectional performance across a
+wide variety of assets.
+
+We show that these strategies are largely profitable over our sample - and the best performance
+is when these strategies are combined. However, we are very aware of the critique in Harvey et al.
+(2015) with respect to factor proliferation. Indeed, we are testing three strategies that are select -
+they are popular because they have worked. Importantly, our focus is not to document the most
+profitable trading strategy; our goal is to explore the conditions where any particular strategy has the
+best shot of working. Indeed, there are many conditions that drive the difference between directional
+and cross-asset performance. Important drivers are the correlation of asset returns, the correlation
+of the information that drives markets (some of which is unobservable), as well as the correlation of
+the trading signals. These drivers will be explored in a future paper.
+
+Our paper is organized as follows. In the second section, we present the theoretical underpin-
+nings of each of the three strategies. Our data are described in the third section. The empirical
+comparison of the different strategies in directional and cross-asset implementations is presented in
+the next section. In the fifth section, we offer some thoughts on the underlying drivers of the differ-
+ential performances. Finally, we offer some caveats about the average return performance of these
+strategies.
+
+Electronic copy available at: http://ssrn.com/abstract=2695101
+
+[C03]
+3
+
+Economic Foundations of the Strategies
+
+2
+
+Before implementing any strategy, it is important to understand the theoretical basis. That is,
+why would carry, momentum and value perform on a priori grounds? The economic foundation may
+also be useful in determining why certain strategies work better in the time-series, while others are
+best applied in the cross-section and vice versa.
+
+2.1
+
+Carry
+
+We define carry as the difference between the spot and the forward price of an asset – in other
+words the profit on a long forward position if prices do not change. A simple version of the carry
+trade consists in buying the asset forward if the carry is positive or selling it forward if the carry is
+negative.
+
+Carry trades exploit the difference between the expected spot price at expiry and the for-
+ward price. 1 Why would a forward price be different from an expected spot price? It is actually
+straightforward to show why.
+
+Suppose that the forward prices were unbiased estimators of future spot prices (both forward
+and spot prices expressed as units of asset A per unit of asset B):
+
+F t,T = E t (S T )
+
+(1)
+
+where F t,T is the forward price at time t for expiry at time T and S T is the asset price at time T.
+It is then said that the forward bias, the difference between the expected spot price and the forward
+price, is zero. Then, if this is a general principle, this should apply to all relative prices, including
+units of asset B expressed per unit of asset A:
+
+And it should follow that:
+
+1
+1
+= E t ( )
+F t,T
+S T
+
+(2)
+
+1
+1
+= E t ( )
+(3)
+E t (S T )
+S T
+which cannot happen by Jensen’s inequality. This means that forward prices cannot be unbiased
+predictors of future spot prices. This should be true for all asset classes, although it is most intuitive
+for foreign exchange. In currency markets, the above means that uncovered interest rate parity
+cannot hold.
+
+Can we say something about the magnitude of the forward bias and about the carry trade using
+basic finance theory?
+
+Consider a dividend paying financial asset. By standard arbitrage, the forward price is equal
+to the spot price compounded at the risk-free rate minus the dividend yield:
+
+F t,T = S t e (r−d)(T −t)
+
+1
+
+(4)
+
+For practical purposes, readers can think of forwards and futures as equivalent in this section.
+
+[C04]
+2.1
+
+Carry
+
+4
+
+where d is the continuously compounded dividend yield and r is the continuously compounded risk-
+free rate. Note that the carry is positive (negative) if the interest rate is greater (smaller) than the
+dividend yield.
+
+To calculate the expected return on a long forward position, we need to use an asset pricing
+theory. With the standard Capital Asset Pricing Model (CAPM), then the expected spot price is:
+
+E t (S T ) = S t e (r+βπ−d)(T −t)
+
+(5)
+
+where β is the asset beta and π is the equity risk premium.
+
+If the asset beta is positive as is generally the case, the forward price is lower than the expected
+spot price:
+E t (S T )
+= e βπ(T −t) > 1
+(6)
+F t,T
+
+Then, the expected P&L on a forward trade is:
+
+E t (S T ) − F t,T = S t e (r−d)(T −t) [e βπ(T −t) − 1] > 0
+
+We can now draw two conclusions from a basic CAPM:
+
+(7)
+
+• There is a systematic forward bias. Forward prices are lower than expected spot prices for
+positive beta assets, that is most assets.
+
+• The sign of the forward bias is independent of carry: the ratio of expected spot to forward
+depends on βπ, not on r − d.
+
+To link carry and forward bias requires richer asset pricing models. Suppose, for example, that
+expected returns are determined not just by the market factor but also by the dividend factor:
+
+E t (S T ) = S t e (r+βπ+γ[d−d]−d)(T −t)
+
+(8)
+
+Here, γ is the dividend factor loading and d is the market dividend yield. It follows that:
+
+E t (S T )
+= S t e (βπ+γ[d−d])(T −t)
+F t,T
+
+(9)
+
+With the dividend factor - a proxy for the value factor as we shall see below - the forward bias is
+now correlated with carry. The higher the dividend yield, the higher the carry, the lower the forward
+compared to the expected spot price, the more profitable the carry trade.
+
+The CAPM and its derivative models apply in principle to all assets. For example, in Lustig
+and Verdelhan (2007), high-yielding currencies tend to depreciate whereas low-yielding currencies
+hold their own in low domestic consumption states. This hedging property of low-yielding currencies
+translates in lower expected returns relative to high yielders. Breeden (1986) derives equilibrium
+relationships between interest rates, growth and other parameters from optimal consumption and
+production models (more on this in the value sub-section).
+
+[C05]
+2.2
+
+Momentum
+
+5
+
+Koijen et al. (2013) study the carry strategy across asset classes and find the strategy is rela-
+tively uncorrelated with factors such as value and momentum but is partially explained by recession
+and volatility risk. Other researchers have made conjectures about the carry strategy that are of a
+more ad hoc nature and tend to reflect idiosyncrasies in specific asset classes.
+
+In currencies, the carry trade, also known as the bird-in-the-hand trade, consists in buying high-
+yielding currencies against low-yielding currencies. This trade can be profitable because high-yields
+are associated with non-diversifiable risk factors such as political turmoil or wavering property rights
+or persistently high inflation. In the extreme, the yield differential can remunerate a so-called peso
+effect, meaning that jump risk can be very real even though it has not materialized. Alternatively,
+a high yield on a currency can reflect a central bank just about to gain or regain anti-inflation
+credentials that will make its currency more desirable.
+
+In commodities, the positive difference between spot and futures prices - also known as back-
+wardation - was interpreted by Keynes as the result of producers selling futures to insure themselves
+against price falls. If this is the case, there is a structural excess supply of futures contracts relative to
+spot transactions: curves will tend to be backwardated; and futures prices will tend to roll up toward
+spot prices until they converge at expiry date. This is the so-called theory of insurance or theory
+of normal backwardation. But as observed empirically, backwardation is not the norm, particularly
+today. Indeed, hedging transactions can go both ways: hedgers can sell futures as Keynes asserted;
+alternatively, they can be naturally long futures if they are short the underlying commodity (e.g.,
+airline companies are short fuel and need to buy futures for hedging purposes). In this case, the curve
+is contangoed and speculators are paid to be short futures. In other words, speculators are incented
+by hedgers to sell contangoed futures and buy backwardated futures. In a competing explanation,
+the theory of storage links backwardation to tight inventories. A low level of inventories may result in
+a high convenience yield, hence a backwardation (Working, 1933; Kaldor, 1939 and Schwartz 1997).
+Because inventories take time to rebuild, profits from the carry trade can be persistent.
+
+In fixed income, the term structure is, more often than not, upward sloping. Conventional
+explanations range from the liquidity theory of rates - investors should be compensated for the
+higher risk of holding long bonds, hence the upward sloping yield curve - to the theory of preferred
+habitats - investors prefer short bonds to long bonds. Rates tend to roll down the curve: this
+translates into excess returns for fixed income investors.
+
+2.2
+
+Momentum
+
+Momentum refers to persistence in asset returns: winners tend to continue to do well and
+losers continue to do badly. The conventional trade (at least for academic purposes) is to buy assets
+that outperformed and sell assets that underperformed over the previous year. Asset returns appear
+to exhibit negative autocorrelation over very short periods (less than one month) and longer time
+periods (more than three years) while the sweet spot for momentum, or positively auto-correlated,
+strategies is around 6-12 months.
+
+Theories of momentum range from the risk-based to the behavioral. On the risk end of the
+spectrum, momentum performs because high-momentum assets are more sensitive to macroeconomic
+
+[C06]
+2.3
+
+Value
+
+6
+
+factors such as, for example, the growth rate of industrial production (Liu and Zhang, 2008); it
+can also perform because, to the extent realized and expected returns are highly correlated, then
+a cross-section of past winners with high realized returns has higher expected returns and ends
+up outperforming a cross-section of past losers (Conrad and Kaul, 1988). On the behavioral end,
+investors underreact to news either because they display conservatism bias and are slow updating their
+beliefs (Barberis, Shleifer and Vishny, 1998) or because they do not receive and update information at
+the same time (Hong and Stein, 1999). Alternatively, it is claimed that prices can overreact to news
+and feed upon themselves with noise traders deepening the mis-pricing. Furthermore, behavioral
+biases can generate momentum when fund flows exhibit inertia and the market under-reacts to
+expected future flows. Price returns will then show persistence until large deviation from price
+fundamentals result in a market reversal (Vayanos and Woolley, 2013). The so-called disposition
+effect can also help explain momentum returns. Investors tend to sell their winning stocks too early
+while holding on to their losers. Grinblatt and Han (2002) present a model where the disposition
+effect drives the market clearing price. Let there be a population of rational investors (fraction µ)
+and a population of disposition investors (fraction 1-µ) with the following demand curves:
+(
+D t r = 1 + β(F t − P t )
+(10)
+D t d = 1 + β(F t − P t ) + α(P t−1 − P t )
+
+D t r and D t d are the demand functions of rational and disposition investors. F t is the fundamental
+price at t and P t is the market clearing price. A positive α describes the disposition effect: the lower
+today's price relative to yesterday’s, the more disposition investors hold on to their assets, the higher
+the excess demand for that asset. A positive β indicates that rational investors demand for an asset
+decreases with the difference between its market price and its fundamental price. The asset supply
+is equal to one unit. Then aggregating both demand functions, we obtain:
+
+µD t r + (1 − µ)D t d = 1
+
+Therefore,
+
+(11)
+
+1
+(12)
+1 + µα
+At equilibrium, today’s price is positively correlated to yesterday’s price and only partially reflects
+the fundamental asset value.
+
+P t = wF t + (1 − w)P t−1 , where w ≡
+
+Some market participants have been trying to evaluate the merit of these competing expla-
+nations in the current environment (AHL/MSS Academic Advisory Board, 2014). Is momentum
+behavioral? Do today’s markets foster behavioral biases? The answer to both questions is a qualified
+yes. Because recent policy moves (negative nominal rates, open-ended quantitative easing, implicit
+policy focus on wealth effects) are unprecedented and unfamiliar, people rely more on heuristics:
+instinctive thinking may dominate investors’ more deliberative mode of thinking. This can result in
+significant trends from anchoring and other behavioral biases. Behavioral biases, combined with more
+liquid markets and more efficient information diffusion, tend to favor persistence of slow momentum.
+
+2.3
+
+Value
+
+Value can be defined as the difference between a fundamental asset price and its prevailing
+market price. This begs two questions: is there such a thing as the fundamental price of an asset?
+
+[C07]
+2.3
+
+Value
+
+7
+
+What mechanisms cause market prices to deviate from and revert to fundamental prices? We answer
+these questions by looking in turn at interest rates, stocks, currencies and commodities.
+
+A simple two-period consumption model yields the following inter-temporal equilibrium condi-
+
+
+0
+(r−ρ) U (C t+1 )
+=1
+(13)
+E t e
+U 0 (C t )
+
+tion:
+
+0
+
+t+1 )
+is the ratio of
+where r is the real interest rate, ρ is the rate of preference for the future and U U (C
+0 (C )
+t
+the marginal utility of
+consuming a real dollar at t+1 to the marginal utility of consuming it today.
+0
+−ρ U (C t+1 )
+The expression e U 0 (C t ) is commonly called a stochastic discount factor. With logarithmic utility
+functions and a log-normally distributed consumption, we can solve for the equilibrium real interest
+rate 2 :
+r = g + ρ − σ 2
+(14)
+
+where g is the instantaneous real consumption growth and σ is the volatility of consumption growth.
+In a deterministic model where people are indifferent between spending today or tomorrow:
+
+r = g
+
+(15)
+
+Another value metric for interest rates is the differential between domestic and foreign real rates.
+When capital is free to move across countries, there is evidently a tendency for real rates of return
+to converge. Higher domestic real rates will result - all else equal - in an excess demand for domestic
+fixed income assets.
+
+How about equity? A stock price can be viewed as the present value of its dividends:
+Z ∞
+D
+De g d t e −Rt dt =
+P =
+R − g d
+0
+
+(16)
+
+where D is the dividend today, g d the long term real continuous dividend growth rate (we assume
+for convenience that the dividend growth rate is equal to the consumption growth rate g) and R the
+long term real continuous equity yield. From this equation, one may infer the implied equity yield:
+
+R = g +
+
+D
+P
+
+(17)
+
+meaning that the equity yield is the sum of the dividend growth and the dividend yield. The implied
+equity risk premium is:
+D
+ERP = R − r = g − r +
+(18)
+P
+By further assuming that r = g, then the implied equity risk premium is simply the dividend yield:
+
+ERP =
+
+σ 2
+
+D
+P
+
+(19)
+
+σ 2
+
+As mentioned, U (C t ) = ln(C t ) and C t+1 = C t e (g− 2 +σε) , and noting that E t (e −σε ) = e 2 , the result follows.
+
+2
+
+C 1−γ −1
+
+For a broader class of so called constant relative risk aversion (CRRA) utility functions of form : U (C t ) = t 1−γ ,
+the real interest rate at equilibrium is r = γg + ρ − γ 2 σ 2 . Note that CRRA utility functions become logarithmic for
+γ = 1.
+
+[C08]
+2.3
+
+Value
+
+8
+
+Dividend yields can therefore be used as a measure of value for broad equity markets. High dividend
+yields may indicate that stocks are cheap against bonds 3 . Another measure of value is the price-
+to-book ratio. The price-to-book is a close cousin of Tobin's Q, another statistic used by investors
+to gauge value in stocks. Tobin's Q is defined as the ratio of the market cap to the replacement
+cost of assets. A Q that is greater than 1 means that an investor is better off replicating the assets
+of a company rather than buying it. It indicates that a company is expensive. Similarly, high
+price-to-book ratios are a presumption of expensiveness.
+
+We now turn to commodities. Commodity prices exhibit mean reversion for a number of reasons:
+first, high (low) commodity prices incentivise producers to boost (reduce) supply which in turn results
+in downward (upward) pressure on prices. Second, in competitive commodity markets, prices will be
+pulled toward production costs. This would all suggest that value investing in commodity space is
+tantamount to positioning for long mean-reversion cycles.
+
+Currencies also have their garden-variety value indicators. Among these, purchasing power
+parity (PPP) has the most intuitive appeal. Absolute PPP theory states that all products must
+sell at the same price in a frictionless world. It follows that an exchange rate e (units of domestic
+currency per foreign currency unit) is the ratio of the domestic price index p to the foreign price
+index p∗. In the same vein, absolute PPP states that the percentage change in e is approximately
+equal to the difference between domestic and foreign inflation, all measured over the same period.
+One can see how PPP is more a tautology than a theory - the only issue being how much frictions
+- such as transportation costs, tariffs, sticky prices, capital flows and economic policies - cause real
+exchange rates to deviate from PPP in practice.
+
+We still need to answer the question: what explains the value premium? Much like theories of
+momentum, theories of value can be based on rational or behavioral stories.
+
+Dornbusch's overshooting model (1976) is an example of a rational story that explains large
+deviations from PPP. The model is quasi-deterministic, assumes rational expectations, sticky prices
+in goods and services, fully flexible asset prices, a Keynesian money demand function, a PPP long-
+term equilibrium and uncovered interest rate parity (UIP). Here are two key equations of the model
+- UIP and money demand:
+(
+E[ln(e)] − ln(e) = r − r ∗
+(20)
+ln(m) − ln(p) = f (r, Y )
+
+UIP states that the expected currency appreciation is equal to the differential between domestic and
+foreign interest rates. And demand for real money balances is a decreasing function of the interest rate
+(which acts as an opportunity cost) and an increasing function of income Y . How does the exchange
+rate react to an unanticipated increase in money supply? Because prices and income are sticky,
+the only way for money demand to match the increased money supply is through an instantaneous
+decrease in the domestic interest rate. But then people rationally expect two apparently conflicting
+outcomes: first, the currency should appreciate in response to the lower domestic interest rate as UIP
+would predict; and second, as domestic prices gradually rise to reflect the money supply shock, the
+currency needs to depreciate (e increases) in the long run to reach its PPP level. The solution that will
+
+3
+
+Of course the dividend yield can be time-varying and thus not necessarily a measure of value. Also, when interest
+rates are lower than growth as is currently the case, dividend yields tend to underestimate the equity risk premium.
+But other factors, such as leverage, may indicate that the equity risk premium is less than meets the eye.
+
+[C09]
+9
+
+reconcile both expectations is an instantaneous depreciation of the exchange rate over and above that
+dictated by PPP. This explains the overshooting of exchange rates. This mechanism is reminiscent
+of the euro sudden depreciation in response to the unanticipated loosening of monetary policy in
+Europe recently. While this model is arbitrage free - the value premium is perfectly neutralized by
+the carry, it is easy to see how exchange rate overshooting can create value opportunities in asset
+markets that are slow to adjust: for example, real estate prices expressed in euros have been much
+stickier than currencies in response to the European monetary policy surprise.
+
+In equities, risk-based value stories are plenty: for example, Hansen Heaton and Li (1998)
+attribute the out-performance of value portfolios (relative to growth portfolios) to a higher long term
+exposure to consumption risk.
+
+Behavioral stories of the value premium are also plentiful: Lakonishok, Shleifer and Vishny
+(1994) argue that value strategies outperform glamour strategies because investors put excessive
+weight on past history and just equate well-run firms with good investments. Benartzi and Thaler
+(1995) explain how investors with prospect-theory type of utility end up buying large amounts of T-
+bills despite a large equity risk premium. Similarly, Maenhout (1999) shows that ambiguity aversion
+- in this case the probability distribution of stock returns is viewed as ambiguous - accounts partially
+for the large equity risk premium.
+
+We now turn to the empirical investigation of carry, momentum and value.
+
+3
+
+Data and Backtesting
+
+3.1
+
+Data Collection
+
+The data sources are Bloomberg, Global Financial Data and the Man-AHL proprietary database.
+The sample period starts in January 1990 and ends in April 2015. The data we use are detailed in
+the Appendix. We study 26 equity futures markets, 14 interest rate swap contracts, 31 currency
+pairs, and 16 commodity futures. All prices are in U.S. dollars. We used mid-market prices and do
+not therefore account for trading costs (which we discuss later).
+
+3.2
+
+Signal Construction
+
+1. Carry
+
+FX:
+
+We used the 3 month FX-forward to imply the carry, as shown below:
+
+Carry t = 4 × (
+
+Spot t
+− 1)
+F wd 3M,t
+
+(21)
+
+[C10]
+3.2
+
+Signal Construction
+
+Equity:
+
+10
+
+We used the first two futures of each index and computed a raw carry signal as follows:
+
+Raw Carry t =
+
+1
+F ut t,T 1 − F ut t,T 2
+×
+(T 2 − T 1 )
+F ut t,T 2
+
+(22)
+
+For every month m, we compute a seasonality adjustment which is the average difference
+between the raw carry and its 1Y moving average at time t for all the m-month business days
+in the sample:
+(23)
+Adj t = [Raw Carry t − 1Y M A(Raw Carry t )] n
+
+where n is the number of m-month business days in the sample until time t.
+We then corrected the raw carry signal by subtracting the seasonality adjustment:
+
+Carry t = Raw Carry t − Adj t
+
+Commodities:
+
+(24)
+
+Some commodities display significant seasonal effects (like agricultural and energies markets).
+Then, to remove this seasonal effect in the carry computation, we used the first future and the
+contract exactly expiring one year later.
+
+Carry t =
+
+Swap Rates:
+
+F ut t,T 1 +1 − F ut t,T 1
+F ut t,T 1 +1
+
+(25)
+
+Carry is meant as ”carry + roll down”. We used the following formula:
+
+S 10Y,t − F ixing t S 10Y,t − S 7Y,t
++
+Duration t
+3
+{z
+}
+|
+{z
+} |
+
+Carry t =
+
+Duration t is the modified duration, with:
+
+Duration t =
+
+2. Momentum
+
+(26)
+
+”Roll”
+
+”Carry”
+
+1 − (1 + S 10Y,t ) −10
+S 10Y,t
+
+(27)
+
+For all asset classes, we used a CTA-momentum signal, based on the cross over of exponentially
+weighted moving averages. The algorithm building that signal is the following:
+
+(a) Select 3 sets of time-scale with each set consisting of a short and a long exponentially
+weighted moving average (EWMA)
+
+(b) Here, we have chosen S k =(8,16,32) and L k =(24,48,96).
+Those numbers are not look-back days or half-life numbers. In fact, each number (let’s call
+it n) translates to a lambda decay factor (λ) of n−1
+to plug into the standard definition
+n
+of an EWMA. The half-life (HL) is then given by:
+
+HL =
+
+log(0.5)
+log(0.5)
+=
+log(λ)
+log(1 − n 1 )
+
+(28)
+
+[C11]
+3.2
+
+Signal Construction
+
+(c) For each k=1,2,3 calculate
+
+11
+
+x k = EW M A[P |S k ] − EW M A[P |L k ]
+
+(29)
+
+(d) We normalize with a moving standard deviation as a measure of the realized 3-months
+normal volatility (PW=63)
+
+y k =
+
+x k
+Run.StDev[P |P W ]
+
+(30)
+
+(e) We normalize this series with its realized standard deviation over the short window
+(SW=252)
+y k
+z k =
+(31)
+Run.StDev[y k |SW ]
+
+(f) We calculate an intermediate signal for each k=1,2,3 via a response function R
+
+(
+u k = R(z k )
+
+(32)
+
+2
+
+)
+xexp( −x
+4
+0.89
+
+R(x) =
+
+(g) The final CTA momentum signal is the weighted sum of the intermediate signals (here we
+have chosen equal weights w k = 13 )
+
+3. Value
+
+FX:
+
+3
+X
+
+S CT A =
+
+w k u k
+
+(33)
+
+k=1
+
+We used relative PPP (purchasing power parity) as value indicator:
+(
+V alue t = P P P t = log(Spot Real,t ) − log(Spot Real,t )
+CP I
+1,t
+Spot Real,CCY 1/CCY 2,t = Spot CCY 1/CCY 2,t × CP I CCY
+CCY 2,t
+
+Equities:
+
+We used dividend yield as value indicator:
+
+(34)
+
+V alue t = DivY ield t
+
+Commodities:
+
+(35)
+
+Value is defined as today’s deflated price divided by the deflated historical average price, where
+history is the expanding window of all prices available:
+
+Adj.P rice t
+P rice t
+, with Adj.P rice t =
+U S CP I t
+Adj.P rice t
+
+V alue t =
+
+(36)
+
+[C12]
+3.3
+
+Portfolio Construction
+
+Swap Rates:
+
+12
+
+We defined value, in the rate space, as the difference between the 10Y swap rate and the most
+recent nominal GDP growth rate (release quarterly): 4
+
+V alue t = S 10Y,t − GDP t
+
+(37)
+
+An alternative definition of value could have been the difference between the 10Y swap rate
+and the most recent yoy CPI inflation (consumer price index).
+
+We tested both definitions and the results were quite similar. All the results presented in the
+remainder of the paper will use the GDP definition.
+
+3.3
+
+Portfolio Construction
+
+1. Basic Construction : Cross Sectional Portfolio
+
+The portfolio construction is simple. For each combination of style and asset class, we ranked
+all the assets according to the magnitude of the signal and took long/short positions on the
+six most extreme assets (three on each side). 5 We used equal weights, meaning that the risk
+allocated to each position did not depend on the magnitude of the signals. The portfolio was
+rebalanced every trading day, except in particular cases that we discuss below.
+
+To give the example of equity value trades, at each rebalancing date, we ranked all indices by
+dividend yield, and took long positions on the three highest dividend paying indices and short
+positions on the three lowest dividend paying indices. These six positions were held for one
+business day until the next rebalancing date.
+
+Once every {“asset class”, “style”} portfolio had been built, we looked at the diversification
+benefits by regrouping them.
+
+When we regrouped asset classes together, we computed the ex-ante volatility of each of the
+portfolios and scaled their allocations for an annualized volatility of 15% per portfolio. When
+we regrouped investment styles together, we used equal weighting. The reason is that the
+volatility of returns come mostly from the choice of the asset class rather than the choice of
+the investment style.
+
+2. Basic Construction : Time Series Portfolio
+
+The time series portfolio construction uses the same carry, momentum and value indicators as
+the cross sectional portfolio. The main difference is that, within every asset class, we consider
+the universe of N assets and take positions equivalent to N 1 . These positions will be long or
+short depending on the carry, momentum and value indicators. All details of the portfolio
+construction are similar otherwise in the time series and cross sectional portfolios.
+
+4
+
+We used a three month lag for the GDP growth rate.
+We used the six most extreme assets. Afterwards, we tested for other configurations and the results were compa-
+rable
+
+5
+
+[C13]
+3. Complications
+
+13
+
+We mentioned that every portfolio was fully rebalanced every trading day. {“FX”, “carry”}
+and {“FX”, “value”} are two exceptions here because mean reversion in FX is slower than in
+equity and commodities.
+
+We decided to rebalance 1/252 of the portfolio every trading day, in other words, the positions
+taken in January 2005 were closed in January 2006, those taken in February 2005 were closed
+in February 2006...This gives one year for value and carry to take effect.
+
+4
+
+Empirical Results
+
+4.1
+
+Cross Sectional Portfolio
+
+The first step consists in running 12 strategies by crossing the value/carry/momentum styles
+with FX/equity/commodity/interest rates asset classes. Results are summarized in table Table 1
+Panel A which shows the Sharpe ratio estimates for these trading strategies. We show the Sharpe
+ratios for specific combinations of styles and asset classes. We also show average Sharpe ratios
+for each style and each asset class. Lastly, the “All Asset” numbers refer to the Sharpe of each
+investment style when implemented across all asset classes, meaning that we then benefit from the
+diversification. With one exception, all the Sharpe ratios are positive with an average of 0.40 per
+asset class. As far as styles go, Sharpe ratios across all assets vary between 0.42 to 1.27, with carry
+emerging as the most profitable standalone style. As shown in panel B, maximum drawdowns per
+style are of order 1.8 to 3.1 times the volatility. The skew is positive for value and momentum and
+negative for carry.
+
+Table 1: Cross Sectional Strategies using Individual Signals
+
+Panel A: Sharpe Ratios
+Value
+Carry
+0.42
+0.67
+0.39
+0.33
+0.07
+0.77
+0.56
+0.76
+0.36
+0.63
+0.75
+1.27
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+All Asset
+
+Mom.
+0.74
+0.01
+0.45
+-0.31
+0.22
+0.42
+
+Avg
+0.61
+0.24
+0.43
+0.34
+
+Panel B: Maximum Drawdowns divided by Volatility
+Value
+Carry
+Mom.
+Asset Class
+-3.3
+-3.1
+-2.5
+FX
+-3.2
+-3.9
+-4.1
+EQ
+-3.1
+-1.7
+-1.9
+Commo
+-1.5
+-1.9
+-9.1
+IR
+-2.8
+-2.6
+-4.4
+Avg
+-1.8
+-3.1
+-2.6
+All Asset
+
+Avg
+-3.0
+-3.7
+-2.2
+-4.2
+
+[C14]
+4.1
+
+Cross Sectional Portfolio
+
+Panel C: Monthly Returns Skew
+Value
+Carry
+0.59
+-1.03
+0.03
+0.23
+-0.27
+0.22
+0.15
+0.36
+0.13
+-0.06
+0.09
+-0.39
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+All Asset
+
+14
+
+Mom.
+-0.17
+0.25
+0.38
+-0.50
+-0.01
+0.10
+
+Avg
+-0.20
+0.17
+0.11
+0.01
+
+Looking at broad correlations, value is negatively correlated with both carry and momentum.
+As expected, value and momentum covary negatively in line with the proverbial battle between
+fundamental and technical traders (Table 2 Panel A). It is particularly interesting to investigate
+correlations among the various pairs of styles and asset classes. Here, three remarks are in order.
+First, correlations vary between roughly -50% and +50%, with most clustered between -10% and
++10%. The average correlation, as evidenced from Table 2 Panel B, is close to zero, indicating
+great scope for diversification within a broad portfolio. Second, carry and momentum tend to be
+positively correlated. This is mostly due to the high correlation between commodity carry and
+commodity momentum as both a high carry and a strong momentum are caused by low inventory
+levels (Erb and Harvey, 2006). Also of notice is the very negative correlation between value and
+carry in commodity space: a low spot price (revealing deep value) goes hand in hand with a lower
+convenience yield (or higher carry 6 ) as both are caused by a high level of inventories.
+
+Table 2: Correlation of Cross Sectional Strategies
+
+Panel A: Overall
+Value
+Carry
+1
+-9.0%
+1
+-9.2%
+15.0%
+
+Value
+Carry
+Mom.
+
+Mom.
+
+1
+
+Panel B: Correlation by Investment Style and Asset Class
+Value
+Carry
+EQ
+CO
+IR
+FX
+EQ
+CO
+IR
+FX
+
+FX
+1
+1%
+0%
+-1%
+-7%
+-1%
+-1%
+2%
+1%
+-1%
+-2%
+0%
+
+FX
+EQ
+CO
+IR
+FX
+EQ
+CO
+IR
+FX
+EQ
+CO
+IR
+
+1
+0%
+-5%
+0%
+-3%
+0%
+-1%
+-3%
+-7%
+-1%
+-6%
+
+1
+-1%
+-1%
+0%
+-48%
+0%
+-4%
+1%
+-32%
+0%
+
+1
+0%
+0%
+1%
+16%
+-1%
+-2%
+0%
+15%
+
+1
+-11%
+0%
+-12%
+4%
+2%
+-1%
+-5%
+
+Momentum
+EQ
+CO
+
+IR
+
+1
+2%
+2%
+2%
+-3%
+3%
+1%
+
+1
+-1%
+4%
+0%
+51%
+0%
+
+1
+1%
+0%
+-1%
+1%
+
+1
+5%
+4%
+7%
+
+1
+0%
+1%
+
+1
+3%
+
+1
+
+It is also interesting to see that most strategy pairs - each scaled for 15% volatility (in line with
+the S&P historical volatility) - are showing low S&P beta estimates, indicating a low correlation with
+the market, maybe with the exception of FX carry which, as most currency traders have experienced,
+displays a significant pro-cyclical behavior. Note that the carry strategy in both equity and interest
+
+F t,T
+S t
+
+= e (r+s−c)(T −t) , where s and c are the storage cost and convenience yield respectively
+
+6
+
+Carry measure is
+
+[C15]
+4.1
+
+Cross Sectional Portfolio
+
+rates is countercyclical.
+
+15
+
+Table 3: Assessing the Market Risk of Cross Sectional Strategies
+
+Panel A: Beta Coefficients and T-Statistics in Parenthesis
+Value
+Carry
+Mom.
+Asset Class
+-1%(-1.2)
+36%(30.0)
+-8%(-7.13)
+FX
+-15%(-12.3)
+-17%(-14.7)
+1%(0.5)
+EQ
+-1%(-0.6)
+-3%(-2.3)
+-3%(-2.6)
+Commo
+3%(1.9)
+-11%(-8.8)
+-5%(-3.4)
+IR
+-4%
+1%
+-4%
+Avg
+-4%(-5.9)
+2%(2.6)
+-4%(-6.1)
+All Asset
+
+Avg
+9%
+-10%
+-2%
+-4%
+
+The effect of low correlations between {”asset class”,”style”} pairs is displayed vividly in Table
+Table 4, Panel A, B and C. In panel A, the Sharpe ratios of all three styles are greatly enhanced
+when styles are aggregated across styles. The Sharpe ratio for each asset class is almost doubled as
+a result of this aggregation.
+
+Table 4: Combining the Cross Sectional Signals
+
+Panel A: Sharpe Ratios
+V+M
+C+M
+0.83
+0.97
+0.27
+0.24
+0.43
+0.71
+0.16
+0.34
+0.42
+0.57
+0.86
+1.08
+
+V+C
+0.82
+0.51
+0.83
+0.87
+0.75
+1.49
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+All Asset
+
+Avg
+0.87
+0.34
+0.66
+0.46
+
+V+C+M
+1.07
+0.42
+0.83
+0.54
+
+1.40
+
+Panel B: Maximum Drawdowns divided by Volatility
+V+C
+V+M
+C+M
+Avg
+-2.9
+-1.8
+-2.5
+-2.4
+-0.7
+-3.2
+-3.4
+-2.5
+-2.0
+-2.9
+-1.9
+-2.3
+-1.6
+-3.5
+-3.3
+-2.8
+-1.8
+-2.9
+-2.8
+-1.3
+-1.5
+-3.6
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+All Asset
+
+Panel C: Monthly Returns Skew
+V+C
+V+M
+C+M
+0.09
+0.35
+-0.32
+0.54
+0.42
+0.59
+0.16
+0.03
+0.50
+0.49
+0.22
+0.14
+0.32
+0.26
+0.23
+-0.14
+0.19
+0.14
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+All Asset
+
+V+C+M
+-2.3
+-3.9
+-2.0
+-1.8
+
+-1.7
+
+Avg
+0.04
+0.52
+0.23
+0.29
+
+V+C+M
+0.18
+0.82
+0.48
+0.67
+
+0.20
+
+As we explore Sharpe ratios and correlations, the central question is: how consistent are they
+over time? Figure 1 presents Sharpe ratio three year moving averages over time per asset class and
+investment style. Remarkably, performance is consistently positive for value. It is also uniformly
+positive for carry except for a brief episode in the middle of the 90s. The contrast, cross sectional
+momentum has suffered over the last few years.
+
+[C16]
+4.1
+
+Cross Sectional Portfolio
+
+16
+
+Figure 1. Cross Sectional: 3Y Rolling Sharpe per Asset Class (left) and per In-
+vestment Style (right)
+
+In figure 2, it can be seen that correlations across styles are highly unstable, with value showing
+at times strong negative correlation with both carry and momentum.
+
+Figure 2. Cross Sectional: 1Y Rolling Correlations
+
+Last but not least, figures 3 and 4 show the cumulative P&L, the 3Y rolling Sharpe ratio and
+its distribution when all strategy pairs are aggregated in a single portfolio. The overall Sharpe ratio
+is 1.40, with corresponding return and volatility of 6.88% and 4.92% respectively. The reader should
+be reminded however that the trading did not account for transaction costs. Figure 4 shows that the
+portfolio was never in the red on a 3yr rolling basis with a Sharpe ratio moving between 0 and 2.30
+and hovering around 1.35 recently.
+
+[C17]
+4.2
+
+Time Series Portfolio
+
+17
+
+Figure 3. Cross Sectional: Value+Carry+Momentum Compounded P&L
+
+Figure 4. Cross Sectional: 3Y Rolling Sharpe (left) and its Distribution (right)
+for Value+Carry+Momentum
+
+4.2
+
+Time Series Portfolio
+
+We now look at the time series approach: unlike the cross sectional portfolio, the time series
+portfolio is comprised of positions equivalent to N 1 in a universe of N assets, with positions being
+long (short) if the signal is positive (negative). Therefore, if the signal is uniformly positive across
+an asset class, the portfolio position will be directionally positive in all assets.
+
+As in the cross sectional portfolio, all styles exhibit overall positive Sharpe ratios in the time
+series. However, one major difference emerges: momentum more than doubles its Sharpe ratio
+from 0.42 to 0.96. The momentum drawdown to volatility ratio is lowest across styles in time
+series. As in the cross section, both value and momentum styles, unlike carry, are positively skewed.
+Overall, momentum exhibits substantially better risk return characteristics in time series than in
+cross section. One can surmise that momentum in a time series portfolio will capture more clearly
+market directionality, including reversals than in a cross sectional portfolio. Conversely, risk-adjusted
+performance is vastly worse for value in time series than in cross section. From Table 5 Panel A, it
+is readily apparent that equity is the prime culprit. Indeed, with stocks trending higher over the last
+
+[C18]
+4.2
+
+Time Series Portfolio
+
+18
+
+25 years, the value factor, which relies largely on mean reversion, was bound to underperform. In
+the same spirit, the Table 5 Panel B shows the deterioration in the drawdowns associated with value
+compared to Table 1 Panel B. It is also worth noting that both value and momentum display a high
+positive skewness (Table 5 Panel C).
+
+Table 5: Time Series Strategies using Individual Signals
+
+Panel A: Sharpe Ratios
+Value
+Carry
+0.27
+0.55
+-0.13
+0.23
+0.22
+0.64
+0.48
+0.83
+0.21
+0.56
+0.28
+1.25
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+All Asset
+
+Mom.
+0.72
+0.41
+0.45
+0.77
+0.58
+0.96
+
+Avg
+0.51
+0.17
+0.44
+0.69
+
+Panel B: Maximum Drawdowns divided by Volatility
+Value
+Carry
+Mom.
+Asset Class
+-4.7
+-4.8
+-2.1
+FX
+-6.6
+-6.4
+-2.6
+EQ
+-3.7
+-3.7
+-3.0
+Commo
+-4.5
+-5.3
+-1.9
+IR
+-4.9
+-5.0
+-2.4
+Avg
+-4.4
+-2.5
+-2.4
+All Asset
+
+Panel C: Monthly Returns Skew
+Value
+Carry
+1.36
+-1.20
+0.41
+0.18
+0.02
+0.64
+-0.22
+-0.58
+0.39
+-0.24
+0.69
+-0.42
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+All Asset
+
+Avg
+-3.9
+-5.2
+-3.5
+-3.9
+
+Mom.
+0.34
+-0.07
+0.64
+0.02
+0.23
+0.47
+
+Avg
+0.16
+0.18
+0.43
+-0.26
+
+Of note are the S&P betas and t-stats of {”asset class”,”style”} pairs in the time series (Table
+7 Panel A): betas are more, yet weakly, negative and more significant in time series than in cross
+section. Specifically, carry strategies are well diversified across asset classes. FX carry is pro-cyclical
+as expected whereas equity carry, like equity value, boils down to buying market dips and selling
+market tops and will hence show a negative beta. From Table 6 Panel B, equity value and equity
+carry correlation is 51%, confirming that both strategies are similar in nature. Trading momentum
+and carry on a given asset class also shows a good degree of correlation. This is explained by the fact
+that momentum signals are computed on what amounts to a total return series. If a market exhibits
+a persistent carry premium this will accumulate though the total return and produce a momentum
+effect. The longer the lookback of the momentum signal, the more carry will accumulate and the
+higher the correlation between the signals. As in the cross sectional case, the average correlation
+in time series is close to zero, indicating substantial scope for diversification across styles and asset
+classes.
+
+[C19]
+4.2
+
+Time Series Portfolio
+
+Table 6: Correlation of Time Series Strategies
+
+Panel A: Overall
+Value
+Carry
+1
+-3.1%
+1
+-10.2%
+23.6%
+
+Value
+Carry
+Mom.
+
+19
+
+Mom.
+
+1
+
+Panel B: Correlation by Investment Style and Asset Class
+Value
+Carry
+EQ
+CO
+IR
+FX
+EQ
+CO
+IR
+FX
+
+FX
+1
+-9%
+1%
+-1%
+-68%
+-7%
+32%
+6%
+8%
+18%
+13%
+6%
+
+FX
+EQ
+CO
+IR
+FX
+EQ
+CO
+IR
+FX
+EQ
+CO
+IR
+
+1
+9%
+-6%
+3%
+51%
+-8%
+-4%
+-17%
+-13%
+-18%
+3%
+
+1
+-2%
+5%
+-4%
+-30%
+-3%
+-11%
+-9%
+-31%
+-2%
+
+1
+5%
+-9%
+1%
+33%
+-2%
+-2%
+0%
+-1%
+
+1
+0%
+-31%
+-2%
+-2%
+-16%
+-11%
+-2%
+
+Momentum
+EQ
+CO
+
+IR
+
+1
+0%
+-9%
+6%
+19%
+3%
+2%
+
+1
+4%
+9%
+14%
+46%
+5%
+
+1
+4%
+11%
+1%
+20%
+
+1
+32%
+33%
+9%
+
+1
+24%
+16%
+
+1
+8%
+
+1
+
+Table 7: Assessing the Market Risk of Time Series Strategies
+
+Panel A: Beta Coefficients and T-Statistics in Parenthesis
+Value
+Carry
+Mom.
+Asset Class
+-29%(-25.1)
+37%(35.7)
+-13%(-10.9)
+FX
+-31%(-24.9)
+-23%(-27.7)
+-20%(-18.1)
+EQ
+2%(1.5)
+-18%(-14.4)
+-10%(-8.1)
+Commo
+7%(8.5)
+-9%(-9.6)
+-9%(-9.9)
+IR
+-13%
+-3%
+-13%
+Avg
+-13%(-25.3)
+-3%(-6.5)
+-13%(-18.5)
+All Asset
+
+Avg
+-2%
+-25%
+-9%
+-4%
+
+Combining signals, Sharpe ratios for time series are broadly in line with those for the cross sec-
+tion, with the proviso that individual style performances, as noted before, are significantly different.
+As in the cross section, the time series Sharpe is high at 1.37, while the 3Y rolling Sharpe ratio for a
+combined carry, momentum and value portfolio was always positive and varied between 0.1 and 2.7
+over the past 21 years.
+
+Table 8: Combining the Time Series Signals
+
+Panel A: Sharpe Ratios
+V+M
+C+M
+0.71
+0.91
+0.28
+0.43
+0.57
+0.63
+0.89
+1.03
+0.61
+0.75
+0.99
+1.35
+
+V+C
+1.05
+0.07
+0.73
+0.81
+0.66
+1.05
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+All Asset
+
+Avg
+0.89
+0.26
+0.65
+0.91
+
+V+C+M
+1.14
+0.31
+0.79
+1.04
+
+1.37
+
+[C20]
+4.2
+
+Time Series Portfolio
+
+20
+
+Panel B: Maximum Drawdowns divided by Volatility
+V+C
+V+M
+C+M
+Avg
+-3.3
+-2.9
+-2.3
+-2.8
+-0.8
+-3.2
+-3.4
+-2.4
+-2.6
+-2.9
+-3.8
+-3.1
+-5.9
+-2.4
+-1.9
+-3.4
+-3.2
+-2.8
+-2.8
+-2.5
+-1.9
+-1.8
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+All Asset
+
+Panel C: Monthly Returns Skew
+V+C
+V+M
+C+M
+0.48
+1.40
+0.04
+0.25
+0.16
+0.38
+0.61
+0.61
+1.47
+-0.66
+0.15
+0.02
+0.17
+0.58
+0.48
+0.18
+1.25
+0.34
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+All Asset
+
+V+C+M
+-1.7
+-5.4
+-3.0
+-3.6
+
+-1.9
+
+Avg
+0.64
+0.26
+0.90
+-0.17
+
+V+C+M
+0.58
+0.51
+1.87
+-0.05
+
+0.91
+
+Figure 5. Time Series: 3Y Rolling Sharpe per Asset Class (left) and per Invest-
+ment Style (right)
+
+Figure 6. Time Series: 1Y Rolling Correlations
+
+[C21]
+A Few Thoughts on the Performance of Cross Section relative to Time Series
+
+4.3
+
+21
+
+Figure 7. Time Series: Value+Carry+Momentum Compounded P&L
+
+Figure 8. Time Series: 3Y Rolling Sharpe (left) and its Distribution (right) for
+Value+Carry+Momentum
+
+Readers should be made aware of the fact that, in addition to the daily rebalancing with binary
+signals discussed so far, we also tested all of the above strategies using monthly rebalancing and linear
+signals. The monthly results are broadly consistent with the daily results.
+
+A Few Thoughts on the Performance of Cross Section relative to
+Time Series
+
+4.3
+
+Contrasting Table 1 Panel A and Table 5 Panel A, we have quite different results for the three
+styles: value works well in the cross section, poorly in time series; carry works about equally well in
+both cross section and time series and momentum works well in time series, but poorly in the cross
+section.
+
+At a basic level, assuming linear signals, cross sectional portfolio weights are equal to time
+series weights minus the cross sectional average. This average can be thought of as a global factor.
+Therefore, we can think of a cross sectional portfolio as a time series portfolio hedged for the global
+
+[C22]
+A Few Thoughts on the Performance of Cross Section relative to Time Series
+
+4.3
+
+22
+
+factor. Pursuing this line of reasoning, time series momentum will outperform cross sectional mo-
+mentum to the extent that the global factor is trending. Alternatively, to the extent that the value
+indicator trades reversion to the mean, time series value investing will do better than cross sectional
+value investing when the global factor returns are negatively autocorrelated.
+
+So how do we interpret the results from our data exploration? As stated above, momentum
+outperformance seems to go hand in hand with value underperformance in the time series versus the
+cross section. Although this result is difficult to interpret, we can offer three possible explanations.
+
+The first is that momentum, unlike value, takes the price movements themselves as being
+informative and, as in such, may be better placed to assimilate any truly novel information about
+the global factor which may not be captured by the valuation model. In other words, the momentum
+model may account unwittingly for the factors omitted by the valuation model. This distinction
+between value and momentum is most prominent in the more correlated asset classes of equities and
+bonds.
+
+In FX and commodities where a global factor is much less apparent the performance differences
+between the cross section and time series is much less. This makes sense, because in moving from
+time series to cross sectional portfolios we are essentially hedging out a single global factor. If this
+factor explains less, there will be less to hedge out and less difference between the portfolios (in either
+direction). This is exactly what we observe. Although this explanation may have merits, it does not
+help us understand why value performs better than momentum in the cross section.
+
+Another explanation is that major global factors have exhibited very strong trends which have
+by definition hurt reversion based value predictors. It may even be claimed that the central purpose
+of stimulative public policies recently was to boost wealth effects by supporting a sustained rally in
+stocks and bonds, that in turn favored momentum over value in both asset classes.
+
+A third explanation for time series versus cross sectional performance is the correlations of the
+signals, and how they compare to the correlations of the underlying markets. All else being equal,
+a cross sectional approach has more to gain when asset correlations are very high, as the above-
+mentioned global factor will dominate, and hedging this out will increase diversification by boosting
+exposure to a wider range of other factors. However, if signals are also highly correlated, a cross
+sectional approach will hedge out most of the (presumably informative) signals as well, potentially
+canceling out any gain from the diversification. Conversely if asset correlations are high, but signal
+correlations low, we will likely lose very little of the information in the signals by forcing them to
+be cross-sectional as their information already mostly relates to the non-global factors. This could
+potentially explain the outperformance of time series momentum against time series value in bonds
+and equities. Although both asset classes are internally highly correlated, the momentum signals
+on them are even more correlated, so moving to a cross-sectional framework will potentially hedge
+out more of the alpha from the signals than noise from the market. Correlations of value signals are
+notably smaller.
+
+[C23]
+4.4
+
+Cross Sectional Portfolio + Time Series Portfolio
+
+Table 9: Signal and Asset Average Correlations
+
+23
+
+Panel A: Signal and Asset Average Correlations
+Value
+Carry
+Mom.
+48%
+23%
+40%
+44%
+23%
+66%
+30%
+3%
+19%
+36%
+30%
+51%
+39%
+20%
+44%
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+
+Asset
+24%
+51%
+7%
+19%
+25%
+
+While all of the above explanations have appeal, the readers should note that value is tradi-
+tionally traded in the cross section while momentum is traded in time series. So it would seem that
+traders have generally come to the “correct conclusions”.
+
+Cross Sectional Portfolio + Time Series Portfolio
+
+4.4
+
+We now try our hand at combining cross sectional and time series portfolios for all styles
+and asset classes. The overall correlation between the two portfolios is 43%. This translates into
+substantial diversification benefits. Also note that each style exhibits positive correlation (39%, 49%
+and 51% for value, carry and momentum respectively) between its cross sectional and time series
+incarnation (Table 11 Panel A). The Sharpe ratio of the combined portfolios is 1.61 (figure 11), while
+the 3Y rolling Sharpe ratio (figure 12) varied from 0.5 to 2.7 since 1994. One should note, however,
+overemphasize the diversification achieved by combining cross sectional and time series portfolios:
+indeed, it can be shown in a simple set-up that the combined portfolio is just the time series portfolio
+with half of the cross sectional mean hedged out.
+
+Table 10: Combining the Cross Sectional and Time Series Signals
+
+Panel A: Sharpe Ratios
+M
+Avg
+V+C
+V+M
+0.81
+0.63
+0.92
+0.87
+0.21
+0.28
+0.43
+0.34
+0.50
+0.48
+0.92
+0.54
+0.04
+0.51
+0.98
+0.42
+0.39
+0.81
+0.54
+0.73
+1.59
+1.06
+
+V
+0.41
+0.27
+0.12
+0.60
+0.35
+0.71
+
+C
+0.68
+0.35
+0.82
+0.88
+0.68
+1.41
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+All Asset
+
+C+M
+1.05
+0.39
+0.76
+0.65
+0.71
+1.33
+
+Avg
+0.95
+0.39
+0.74
+0.68
+
+V+C+M
+1.21
+0.47
+0.92
+0.80
+
+1.61
+
+Panel B: Maximum Drawdowns divided by Volatility
+C
+M
+Avg
+V+C
+V+M
+C+M
+-3.6
+-2.5
+-3.3
+-2.8
+-1.7
+-2.7
+-5.3
+-2.5
+-4.3
+-0.7
+-3.3
+-3.8
+-1.8
+-2.2
+-2.6
+-1.6
+-2.7
+-1.9
+-2.4
+-4.4
+-3.0
+-2.5
+-2.8
+-1.7
+-3.3
+-2.9
+-1.9
+-2.6
+-2.5
+-3.0
+-2.3
+-1.7
+-1.7
+-2.4
+
+V
+-3.8
+-5.0
+-3.7
+-2.1
+-3.6
+-2.8
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+All Asset
+
+Avg
+-2.4
+-2.6
+-2.1
+-2.4
+
+V+C+M
+-2.3
+-5.0
+-2.0
+-1.7
+
+-1.7
+
+[C24]
+4.4
+
+Cross Sectional Portfolio + Time Series Portfolio
+
+24
+
+Panel C: Monthly Returns Skew
+M
+Avg
+V+C
+V+M
+0.28
+-0.04
+0.23
+0.95
+0.68
+0.33
+0.62
+0.80
+0.28
+0.08
+0.16
+0.00
+-0.25
+-0.17
+-0.13
+-0.09
+0.25
+0.22
+0.41
+0.09
+-0.19
+0.51
+
+V
+0.77
+0.00
+-0.21
+-0.08
+0.12
+0.13
+
+C
+-1.19
+0.32
+0.16
+-0.17
+-0.22
+-0.32
+
+Asset Class
+FX
+EQ
+Commo
+IR
+Avg
+All Asset
+
+C+M
+-0.23
+1.03
+0.41
+-0.21
+0.25
+-0.05
+
+Avg
+0.32
+0.82
+0.19
+-0.15
+
+V+C+M
+0.30
+1.06
+0.36
+-0.06
+
+0.19
+
+Table 11: Correlation of Cross Sectional and Time Series Strategies
+
+Panel A: Overall
+Cross Section
+Time Serie
+Value
+Carry
+Mom.
+Value
+Carry
+Mom.
+1
+-9%
+1
+-9%
+15%
+1
+39%
+-20%
+-1%
+1
+-10%
+49%
+19%
+-3%
+1
+-6%
+9%
+51%
+-10%
+24%
+1
+
+Value
+Carry
+Mom.
+Value
+Carry
+Mom.
+
+Table 12: Assessing the Market Risk of Cross Sectional Combined with Time Series
+
+Panel A: Beta Coefficients and T-Statistics in Parenthesis
+Value
+Carry
+Mom.
+Asset Class
+-10%(-9.2)
+39%(34.1)
+-10%(-9.2)
+FX
+-25%(-21.0)
+-25%(-23.0)
+-9%(-8.3)
+EQ
+0%(-0.1)
+-7%(-6.4)
+-6%(-4.9)
+Commo
+5%(4.3)
+-12%(10.1)
+-7%(-5.9)
+IR
+-8%
+-1%
+-8%
+Avg
+-7%(-13.2)
+-1%(-2.0)
+-8%(-12.4)
+All Asset
+
+Avg
+6%
+-20%
+-4%
+-5%
+
+Figure 9. CS+TS: 3Y Rolling Sharpe per Asset Class (left) and per Investment
+Style (right)
+
+[C25]
+4.4
+
+Cross Sectional Portfolio + Time Series Portfolio
+
+25
+
+Figure 10. CS+TS: 1Y Rolling Correlations
+
+Figure 11. CS+TS: Value+Carry+Momentum Compounded P&L
+
+[C26]
+26
+
+Figure 12. CS+TS: 3Y Rolling Sharpe (left) and Monthly Return Distribution
+(right) for Value+Carry+Momentum
+
+5
+
+Is it too good to be true?
+
+By combining simple signals in carry, momentum and value across less than 100 liquid futures,
+forwards and swap markets we are able to achieve a remarkably stable strategy over 25 years with
+a Sharpe ratio of close to 2, returning an approximately eight-fold increase on a hypothetical 15%
+volatility investment. This can be considered a genuine return, as the strategy has very low funding
+costs. Is this too good to be true? Why is not every investor trading these styles in combination?
+We tried our hand at six possible explanations.
+
+Selection bias is a partial answer. Why did we choose these styles and not others? Because, by
+and large, they have worked consistently over time and across asset classes. However, in defense of
+our results, not many styles make sense across such diverse asset classes; so the selection pool is not
+large.
+
+What about potential over-fitting? There was no fitting in this exercise, although some po-
+tentially creeps in from experience. Why do our value predictors look back much further than the
+momentum predictor? Because momentum has worked better at medium frequencies, whereas value
+is clearly a long-term game. How obvious would this have been 25 years ago?
+
+Survivorship and selection bias of assets is also a problem. Toxic emerging markets may be
+excluded. This study excluded Argentina but included the likes of Russia, Greece, Indonesia. This
+kind of bias will likely favor value and carry through the removal of markets where turmoil has caused
+major assets to exit.
+
+Momentum suffers from another potential bias. Back in 1990, many markets we would include
+now were much smaller. The ones that make it into our study have likely grown over this time, often
+via a strong long-term up-trend. By adding data for markets which are now big, but were once small,
+we likely give a positive bias to momentum predictors.
+
+Another, perhaps more appealing explanation for the performance is simply that few firms have
+the appetite and patience to trade something so simple. It is easy to forget the arguments in 1999
+that value had been replaced by growth, in 2008 that carry was toxic, and in 2011-13 that momentum
+was finished. These are long-term signals whose performance oscillates over time (figures 1, 5 and
+
+[C27]
+27
+
+9), with each style experiencing negative performances for at least three years. It is difficult to stick
+with underperforming strategies this long.
+
+6
+
+Conclusion
+
+There are many studies that examine carry, value and momentum strategies, either individually
+or in combination. However, some of these studies look at the directional or time-series versions of
+these strategies while others look across assets usually with long-short portfolios. Our paper explores
+the differences in the performance of any strategy depending on the implementation: directional vs.
+cross-asset.
+
+Our empirical work examines a large number of assets: equity, fixed income, foreign currency
+as well as commodities. While the average performance of the strategies is impressive - and is
+particularly striking if the strategies are combined - we argue that caution should be exercised.
+There is a reason that carry, value and momentum are popular. They have worked well in the past.
+Hence, it is no surprise that average returns for these strategies are positive. However, the focus of
+our paper is not to find the most profitable strategy. Our research provides information about the
+conditions whereby a particular strategy is best implemented in the cross-section or in the time-series.
+
+Our results are suggestive of a framework that may help identify, ex ante, the likelihood that a
+directional will outperform a cross-asset implementation of any particular strategy. The underlying
+ingredients are linked to the correlation of the asset returns as well as the correlation of the trading
+signals. Such a framework is the subject of on-going research.
+
+7
+
+References
+
+1. AHL/MSS Academic Advisory Board https://www.ahl.com/research/momentum-behavioural
+
+2. Asness, C., Moskowitz, T., and Pedersen, L.H. (2013). “Value and Momentum Everywhere.”
+The Journal of Finance, 929-985
+
+3. Barberis, N., Shleifer, A., and Viskny, R. (1998). “A model of investor sentiment.” Journal of
+Financial Economics, 307-343
+
+4. Benartzi, S., and Thaler, R.H. (1995). “Myopic Loss Aversion and the Equity Premium Puz-
+zle.” Quarter 4 Journal of Economics, 73-92
+
+5. Breeden, D.T. (1986). “Consumption, Production and Interest Rates: A Synthesis.” Journal
+of Financial Economics, 3-39
+
+6. Conrad, J. and Kaul, G. (1988). “Time-variation in expected returns.” The Journal of Business,
+409- 425
+
+7. Dornbusch, R. (1976) “Expectations and Exchange Rate Dynamics.” Journal of Political Econ-
+omy, 1161-1176
+
+[C28]
+28
+
+8. Erb, C.B., and Harvey, C.R. (2006). “The Tactical and Strategic Value of Commodity Futures.”
+Financial Analysts Journal, 47-68
+
+9. Grinblatt, M., and Han, B. (2002). “The Disposition Effect and Momentum.” NBER Working
+Paper, Working Paper No. 8734
+
+10. Hansen, L.P., Heaton J.P., and Li, N. (2008). “Consumption strikes back?: Measuring long
+run risk.” Journal of Political Economy, 298-345
+
+11. Harvey, C.R., Liu, Y., and Zhu, H. (forthcoming). “. . . and the Cross-section of Expected
+Returns.” Review of Financial Studies
+
+12. Hong, H., and Stein, J.C. (1999). ‘A unified theory of underreaction, momentum trading, and
+overreaction in asset markets.” Journal of Finance, 2143-2184
+
+13. Kaldor, N. (1939). “Speculation and Economic Stability.” Review of Economic Studies, 1-27
+
+14. Koijen, R.S.J, and Moskowitz, T., and Pedersen, L.H., and Vrugt, E.N. (2013). “Carry.” NBER
+Working Paper, Working Paper No. 19325
+
+15. Lakonishok, J., Shleifer, A., and Vishny, R. (1994). “Contrarian investment, extrapolation,
+and risk.” Journal of Finance, 1541-1578
+
+16. Liu, X., and Zhang, L. (2008). “Momentum profits, factor pricing, and macroeconomic risk.”
+Review of Financial Studies, 2417-2448
+
+17. Lustig, H., and Verdelhan, A. (2007). “The Cross-section of Foreign Currency Risk Premia
+and US Consumption Growth Risk.” American Economic Review, 89-117
+
+18. Maenhout, P. (1999). “Robust portfolio rules and asset pricing.” Working paper, Harvard
+University
+
+19. Moskowitz, T., Hua Ooi, Y., and Pedersen, L.H. (2012). “Time Series Momentum.” Journal of
+Financial Economics, 228-250
+
+20. Schwartz, E.S. (1997). “The stochastic behavior of commodity prices: Implications for valua-
+tion and hedging.” Journal of Finance, 923-973
+
+21. Vayanos, D., and Woolley, P. (2013). “An Institutional Theory of Momentum and Reversal.”
+The Review of Financial Studies, 1087-1145
+
+22. Working, H. (1933). “Price Relations between July and September Wheat Futures at Chicago
+since 1885.” Wheat Studies of the Food Research Institute, 187-240
+
+[C29]
+8
+
+Appendix
+
+8.1
+
+Data Collection
+
+1. FX
+
+29
+
+We considered 31 currencies, all expressed versus the USD, to avoid information redundancies.
+Here is the complete list:
+
+• G10: AUD, CAD, CHF, EUR, GBP, JPY, NOK, NZD, SEK, USD
+
+• EM Asia: HKD, INR, IDR, KRW, MYR, PHP, SGD, TWD, THB
+
+• EM Latam: BRL, CLP, COP, PEN, MXN
+
+• CEEMEA: CZK, HUF, ILS, PLN, RUB, TRY
+
+• Africa: ZAR
+
+FX: Signal and Total Return Time Series Start Dates
+Value TS
+Carry TS
+Momentum TS
+P&L TS
+
+Currency
+Pair
+AUDUSD
+BRLUSD
+CADUSD
+CHFUSD
+CLPUSD
+COPUSD
+CZKUSD
+EURUSD
+GBPUSD
+HKDUSD
+HUFUSD
+IDRUSD
+ILSUSD
+INRUSD
+JPYUSD
+KRWUSD
+MXNUSD
+MYRUSD
+NOKUSD
+NZDUSD
+PENUSD
+PHPUSD
+PLNUSD
+RUBUSD
+SEKUSD
+SGDUSD
+THBUSD
+TRYUSD
+TWDUSD
+ZARUSD
+USD
+
+05-Nov-74
+16-Nov-95
+05-Nov-74
+05-Nov-74
+04-Dec-12
+02-Dec-97
+10-Apr-97
+03-Nov-78
+04-Dec-78
+03-Sep-84
+18-Apr-97
+06-Sep-95
+12-Feb-85
+04-May-92
+05-Nov-74
+12-Feb-85
+02-Dec-76
+02-Dec-08
+05-Nov-74
+05-Nov-74
+02-Dec-97
+06-Sep-95
+21-Apr-97
+12-May-97
+05-Nov-74
+06-Nov-84
+02-Dec-97
+31-Dec-87
+06-Aug-87
+02-Dec-83
+04-Nov-74
+
+13-Dec-83
+03-Feb-99
+29-Dec-88
+29-Dec-88
+22-Oct-97
+03-Feb-99
+11-Dec-96
+14-Dec-98
+02-Jan-87
+29-Dec-88
+22-Jul-98
+04-Feb-04
+20-Jul-98
+11-Dec-98
+29-Dec-88
+11-Dec-98
+03-Nov-97
+20-Apr-05
+29-Dec-88
+29-Dec-88
+21-Jul-00
+09-Dec-98
+21-Jul-98
+09-Aug-01
+29-Dec-88
+29-Dec-88
+20-Sep-95
+11-Dec-96
+11-Dec-98
+29-Dec-88
+01-Jan-71
+
+27-Oct-87
+02-May-00
+02-May-90
+02-May-90
+02-May-00
+02-May-00
+02-May-00
+02-May-90
+09-May-88
+02-May-90
+02-May-00
+02-May-00
+11-Aug-82
+02-May-00
+02-May-90
+02-May-00
+02-May-00
+03-May-72
+02-May-90
+02-May-90
+02-May-00
+02-May-00
+02-May-00
+08-Nov-94
+02-May-90
+02-May-00
+02-May-00
+02-May-00
+02-May-00
+02-May-90
+02-May-72
+
+27-Jun-86
+01-Jan-99
+02-Jan-89
+02-Jan-89
+01-Jan-99
+01-Jan-99
+01-Jan-99
+02-Jan-89
+08-Jan-87
+02-Jan-89
+01-Jan-99
+01-Jan-99
+21-Jul-98
+01-Jan-99
+02-Jan-89
+01-Jan-99
+01-Jan-99
+22-Jul-05
+02-Jan-89
+02-Jan-89
+01-Jan-99
+01-Jan-99
+01-Jan-99
+02-Jan-01
+02-Jan-89
+01-Jan-99
+01-Jan-99
+01-Jan-99
+01-Jan-99
+02-Jan-89
+01-Jan-71
+
+[C30]
+8.1
+
+Data Collection
+
+2. Equity
+
+30
+
+The equity sample covers 26 indices across several geographic regions. Here is the complete
+list:
+
+• US : S&P, DowJones, Nasdaq, MidCap, Russell2000
+
+• EUROPE : Eurostoxx50, Germany-DAX, Germany-Tech, Germany-MidCap, France-CAC40,
+Spain-IBEX, Italy-FTSEMIB, Sweden-OMX, Norway-OBX, Greece-FTASE, Finland-HEX25,
+Belgium-BEL20, Austria-ATX, Netherlands-AEX
+
+• Japan : NIKKEI, TOPIX
+
+• UK : FTSE100
+
+• SWITZERLAND : SMI
+
+• EM Latam : Brazil-IBOV, Mexico-MEXBOL
+
+• EM Asia : Hong Kong-HIS, Korea-KOSPI2, Taiwan-TWSE, India-NIFTY, India-SENSEX
+
+• CEEMEA : Russia-RTSI$, South Africa-TOP40, Poland-WIG20, Hungary-BUX
+
+• AUSTRALIA : AS51
+
+Equity: Signal and Total Return Time Series Start Dates
+Indices
+Value TS
+Carry TS
+Momentum TS
+US - S&P
+30-Nov-00
+14-Apr-83
+06-Sep-83
+US - Dow
+10-Jan-20
+15-May-03
+23-Feb-99
+US - Nasdaq
+30-Sep-90
+04-Apr-97
+25-Aug-97
+US - MidCap
+05-May-93
+09-Feb-93
+30-Jun-93
+EUROPE
+31-Dec-25
+17-Jun-99
+03-Nov-99
+GERMANY
+30-Nov-00
+16-Mar-92
+30-Apr-92
+FRANCE
+30-Nov-00
+12-Dec-89
+07-May-90
+SWITZERLAND
+31-Dec-18
+15-Sep-99
+02-Apr-93
+SPAIN
+31-Dec-00
+29-Jul-93
+20-Dec-93
+HUNGARY
+01-Sep-97
+19-Nov-98
+13-Apr-99
+NORWAY
+31-Jul-69
+07-May-98
+06-Jan-97
+SOUTH AFRICA
+31-Jan-54
+17-Aug-95
+19-Oct-95
+GREECE
+31-Jan-77
+01-Sep-00
+24-Jan-01
+JAPAN-Nikkey
+31-Dec-00
+25-Oct-89
+05-Feb-90
+JAPAN-Topix
+06-May-93
+06-Aug-91
+11-Oct-91
+AUSTRALIA
+31-Dec-00
+24-Apr-01
+05-Sep-01
+HONG KONG
+31-Dec-72
+01-Apr-93
+23-Aug-93
+KOREA
+31-Jan-63
+11-Mar-97
+10-Jul-97
+TAIWAN
+31-Jan-88
+02-Aug-99
+10-Nov-99
+BRAZIL
+31-Jan-88
+03-Apr-98
+23-Dec-96
+MEXICO
+31-Jan-88
+11-May-00
+14-Sep-00
+INDIA-Nifty
+31-Jan-88
+08-Jun-01
+30-Oct-01
+UK
+31-Dec-23
+11-Apr-89
+25-Jul-89
+NETHERLAND
+31-Jul-69
+17-Jan-90
+17-May-90
+FINLAND
+31-Jan-62
+12-Sep-00
+14-May-99
+BELGIUM
+31-Dec-27
+05-Jan-95
+24-Mar-95
+
+P&L TS
+22-Apr-82
+07-Oct-97
+11-Apr-96
+14-Feb-92
+23-Jun-98
+26-Nov-90
+08-Dec-88
+29-Oct-91
+21-Jul-92
+11-Nov-97
+17-Jun-93
+16-May-94
+02-Sep-99
+05-Sep-88
+17-May-90
+03-May-00
+02-Apr-92
+04-May-96
+22-Jul-98
+21-Jul-95
+04-May-99
+13-Jun-00
+29-Feb-88
+03-Jan-89
+31-Oct-95
+02-Nov-93
+
+[C31]
+8.1
+
+Data Collection
+
+3. Commodities
+
+31
+
+We used a mix of commodity futures (16 in total). Here is the complete list:
+
+• Precious Metals: Gold, Silver, Platinum, Palladium
+
+• Industrial Metals: Copper, Nickel, Aluminum
+
+• Energy: Crude Oil, Natural Gas
+
+• Agriculture: Corn, Wheat, Soybean
+
+• Soft Commodities: Coffee, Cocoa, Sugar, Cotton
+
+Commodities: Signal and Total Return Time Series Start Dates
+Value TS
+Carry TS
+Momentum TS
+P&L TS
+04-Nov-74
+02-Jan-75
+25-May-76
+03-Jan-75
+07-Nov-90
+29-Jan-87
+20-Aug-87
+02-Apr-86
+01-Sep-97
+06-Dec-88
+23-Oct-87
+02-Apr-86
+07-Oct-92
+06-Dec-88
+30-Apr-90
+07-Dec-88
+24-May-01
+23-Jul-97
+23-Dec-98
+24-Jul-97
+04-Nov-74
+02-Jan-75
+25-May-76
+03-Jan-75
+24-May-01
+23-Jul-97
+11-Dec-98
+24-Jul-97
+29-Jan-87
+01-Oct-84
+31-Aug-84
+31-Mar-83
+02-Feb-94
+27-Jan-92
+19-Aug-91
+04-Apr-90
+04-Nov-74
+14-Feb-68
+15-Nov-60
+02-Jul-59
+04-Nov-74
+01-Jul-59
+17-Nov-60
+02-Jul-59
+04-Nov-74
+04-Dec-68
+15-Nov-60
+02-Jul-59
+17-Jun-76
+09-Jul-73
+09-Jan-74
+17-Aug-72
+04-Nov-74
+26-Jan-60
+23-Nov-60
+02-Jul-59
+04-Nov-74
+16-Jan-63
+31-May-62
+04-Jan-61
+04-Nov-74
+05-Feb-62
+22-Nov-60
+02-Jul-59
+
+Commodities
+Golds
+Platinum
+Palladium
+Copper
+Nickel
+Silver
+Aluminium
+Crude
+NatGas
+Corn
+Wheat
+Soybean
+Coffee
+Cocoa
+Sugar
+Cotton
+
+4. Rates
+
+We used swap data (14 in total). Here is the complete list:
+
+• G10: Europe, UK, Japan, US, New-Zealand, Australia, Switzerland, Canada, Norway,
+Sweden
+
+• EM: Hungary, Poland, South Africa, Philippines
+
+Rates: Signal and Total Return Time Series Start Dates
+Ticker Bloomberg
+Value TS
+Carry TS
+Momentum TS
+EUSA10 Comdty
+01-Jan-99
+04-Jan-99
+08-May-00
+BPSW10 Comdty
+16-Nov-90
+16-Nov-90
+20-Mar-92
+JYSWAP10 Comdty
+30-Jun-94
+01-Nov-88
+19-Mar-90
+USSWAP10 Comdty
+01-Nov-88
+01-Nov-88
+24-Apr-90
+NDSWAP10 Comdty
+25-Mar-96
+25-Mar-96
+12-Aug-97
+ADSWAP10 Comdty
+01-Jun-88
+03-May-89
+24-Jan-91
+SFSW10 Comdty
+16-Nov-90
+16-Nov-90
+20-Mar-92
+CDSW10 Comdty
+02-Feb-98
+09-Dec-91
+29-Aug-90
+NKSW10 Comdty
+29-Oct-93
+29-Oct-93
+03-Nov-95
+SKSW10 Comdty
+31-Mar-94
+08-Feb-91
+29-Jun-92
+HFSW10 Comdty
+27-Nov-01
+27-Nov-01
+22-Apr-03
+PZSW10 Comdty
+12-Jun-00
+12-Jun-00
+07-Feb-02
+SASW10 Comdty
+03-Oct-95
+01-Feb-99
+25-Feb-97
+PPSWN10 Comdty
+31-Mar-99
+04-Apr-01
+14-Aug-00
+
+Currency
+EUR
+GBP
+JPY
+USD
+NZD
+AUD
+CHF
+CAD
+NOK
+SEK
+HUF
+PLN
+ZAR
+PHP
+
+P&L TS
+29-Jan-99
+30-Nov-90
+30-Nov-88
+30-Nov-88
+29-Mar-96
+31-May-89
+30-Nov-90
+31-Dec-91
+29-Oct-93
+28-Feb-91
+30-Nov-01
+30-Jun-00
+26-Feb-99
+30-Apr-01

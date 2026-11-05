@@ -1,0 +1,817 @@
+{
+ "source_id": "QP03",
+ "speakers": [
+  "David Harding (Winton Capital Management)"
+ ],
+ "summary": "Question: why should the Sharpe ratio not be used as the universal measure of strategy quality. Method: conceptual critique (stationarity, parametricity, perverse incentives, examples), no data. Conclusion: use Sharpe cautiously, check stationarity, prefer semi-variance and long-term return under a risk constraint.",
+ "approach_tags": [
+  "performance measurement",
+  "Sharpe ratio",
+  "research methodology"
+ ],
+ "coverage": [
+  {
+   "chunk": "C01",
+   "claims": 9,
+   "note": "definition of Sharpe, stationarity and parametricity, non-stationary track records, tail-risk strategies, footnote 1"
+  },
+  {
+   "chunk": "C02",
+   "claims": 8,
+   "note": "serial correlation, symmetric deviation penalising upside, Sortino, small-consistent-profit example, solutions, references"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "QP03-C01-1",
+   "chunk": "C01",
+   "speaker": "David Harding",
+   "quote": "it undoubtedly has some value as a measure of strategy “quality”, but it also has several crucial limitations",
+   "claim": "The Sharpe ratio (mean excess return over standard deviation, devised 1966 for mutual funds) has some value as a quality measure but crucial limitations.",
+   "claim_type": "caveat",
+   "exact_rule": "Sharpe = average period return in excess of the risk-free rate / standard deviation of returns",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "Sharpe ratio",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - conceptual argument",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C01-2",
+   "chunk": "C01",
+   "speaker": "David Harding",
+   "quote": "its widespread and often indiscriminate adoption as a quality measure is leading to distortion of proper investment priorities, as investment firms manipulate strategies and data to maximise it.",
+   "claim": "Indiscriminate use of Sharpe as the quality measure distorts priorities because firms manipulate strategies and data to maximise it.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Incentive effect when Sharpe is the target metric",
+   "testable": "no - assertion",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C01-3",
+   "chunk": "C01",
+   "speaker": "David Harding",
+   "quote": "whilst return is a definite and meaningful quantity (an “observable”), risk is not.",
+   "claim": "Core objection: return is observable but risk is not; standard deviation can be computed on any series but does not mean the same thing across series.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "standard deviation as risk",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - conceptual",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C01-4",
+   "chunk": "C01",
+   "speaker": "David Harding",
+   "quote": "the return time series must be generated from a process that is both stationary and parametric.",
+   "claim": "Standard deviation is only a meaningful risk statistic if the return process is stationary (constant variance, skew, kurtosis) and parametric (a distribution with parameters of known meaning).",
+   "claim_type": "mechanism",
+   "exact_rule": "precondition: stationary AND parametric return process",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - stationarity testable, parametricity judgemental",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C01-5",
+   "chunk": "C01",
+   "speaker": "David Harding",
+   "quote": "A common violation of this in track records occurs when a manager’s style or leverage changes over the course of their history.",
+   "claim": "Track records are commonly non-stationary because style or leverage changes, early records on small assets (exploiting anomalies, 'swinging for the bleachers') differ from later ones, and growing AUM forces strategy change.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "Small-AUM early record vs large-AUM later record",
+   "testable": "partly - rolling stats",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C01-6",
+   "chunk": "C01",
+   "speaker": "David Harding",
+   "quote": "A simple test of rolling standard deviation through time (or even average period change) may be sufficient to uncover the manifestations of the resulting non-stationarity.",
+   "claim": "Proposed check: rolling standard deviation (or rolling average period change) through time reveals non-stationarity.",
+   "claim_type": "implementation",
+   "exact_rule": "compute rolling standard deviation and rolling mean of period changes over the track record; look for drift",
+   "data_needed": "manager or strategy return series",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Window length not specified",
+   "testable": "yes - simple computation",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "design_choice",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C01-7",
+   "chunk": "C01",
+   "speaker": "David Harding",
+   "quote": "It is probably too demanding to ask that a manager’s record show no style drift at all; markets are dynamic things and some change over time is unavoidable.",
+   "claim": "Zero style drift is too demanding; the standard is reasonable stationarity before computing statistics.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - judgement",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "qualifier",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C01-8",
+   "chunk": "C01",
+   "speaker": "David Harding",
+   "quote": "In a non-parameterisable distribution, it conveys no information about anything. Non-stationary distributions are non-parameterisable.",
+   "claim": "Non-stationary distributions are non-parameterisable, so standard deviation conveys no information; Cauchy-Paretian distributions have infinite variance and would not be assessed well by Sharpe.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - theoretical",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C01-9",
+   "chunk": "C01",
+   "speaker": "David Harding",
+   "quote": "some will produce many small profits and the occasional large loss - before the loss has appeared such strategies will have a high Sharpe ratio!",
+   "claim": "Strategies with many small gains and rare large losses (short-volatility style, merger arbitrage, LTCM) look excellent on Sharpe until the loss arrives; footnote 1 cites Goetzmann et al. 2002 on option-like strategies engineering high Sharpe without skill.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "footnote 1",
+   "mechanism": "risk_premium",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Before the tail loss appears; short-sample track records",
+   "testable": "yes - known from option-selling strategies",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C02-1",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "while the serial correlation of monthly returns common in the more illiquid hedge fund strategies (e.g. convertible arbitrage) can lead to a substantial overstatement of Sharpe ratios (Asness et al. 2001; Lo 2001).",
+   "claim": "Serial correlation in monthly returns of illiquid strategies (e.g. convertible arbitrage) substantially overstates Sharpe ratios (Asness, Krail, Liew 2001; Lo 2001).",
+   "claim_type": "citation",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "liquidity_flows",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Illiquid, smoothed-return strategies",
+   "testable": "yes - cited; computable by autocorrelation adjustment",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C02-2",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "Some trading approaches which are swift to take profit but run losses may also twist the statistics to their advantage",
+   "claim": "Strategies that take profits quickly and let losses run (negative skew) flatter Sharpe.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - skew effect",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "mechanism_step",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C02-3",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "large positive returns increase the perception of risk as though they could as easily be negative, which for a dynamic investment strategy may not be the case.",
+   "claim": "Standard deviation penalises large positive returns, so removing a strategy's best returns can raise its Sharpe ratio, which Harding calls a reductio ad absurdum, and which matters for positively skewed (trend-like) dynamic strategies.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "Sharpe denominator symmetric around mean",
+   "horizon": "unspecified",
+   "direction": "Sharpe understates positively convex strategies",
+   "conditions": "Positively skewed dynamic strategies",
+   "testable": "yes - simulation",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C02-4",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "We might suggest an improvement by considering only the negative semi-standard deviation for the denominator, a measure known as the Sortino ratio.",
+   "claim": "Replacing standard deviation by negative semi-standard deviation (Sortino) is a partial fix, still requiring stationarity and parametricity.",
+   "claim_type": "implementation",
+   "exact_rule": "Sortino-type ratio: excess return / downside (negative) semi-standard deviation",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Semi-deviation must come from a well-understood stationary distribution",
+   "testable": "yes - computable",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C02-5",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "a string of very small but consistent profits which will produce a very high Sharpe ratio with very little return.",
+   "claim": "Very small but consistent profits (e.g. AAA commercial paper slightly above risk-free) give a very high Sharpe with little return and say nothing about skill; this may not be caught by other tests even in a long sample.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Low-volatility, low-return instruments",
+   "testable": "yes - example",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C02-6",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "Who would prefer to make 0.01% over risk-free each month rather than 1% with a standard deviation of 1%?",
+   "claim": "Illustration: 0.01% per month over risk-free would have a far higher Sharpe than 1% with 1% standard deviation, yet few would prefer it, so raw return still matters.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "Hypothetical: 1% monthly return with 1% sd (monthly Sharpe 1.0) vs 0.01% per month over risk-free (no sd given); no empirical numbers",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Hypothetical, no empirical data",
+   "testable": "yes - arithmetic",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "evidence",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C02-7",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "They are all mirrored in the (faulty) decision-making processes of investors who overvalue short run consistent returns and biased return-generating processes.",
+   "claim": "Author asserts the Sharpe distortions are practical, reflected in investors overvaluing short-run consistent returns and biased return-generating processes.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - assertion, no data",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "evidence",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C02-8",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "Suggested solutions include paying more attention to stationarity and parametricity in making estimates of future return and risk from manager track records;",
+   "claim": "Recommended remedies: check stationarity and parametricity, use flexibly designed quality statistics, prefer semi-variance to variance as the risk measure, and revive long-term return subject to a risk constraint as the quality statistic.",
+   "claim_type": "implementation",
+   "exact_rule": "evaluate strategies by long-term return subject to a risk constraint; use semi-variance; test stationarity/parametricity",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "No numeric thresholds or backtests given",
+   "testable": "partly - no specific thresholds",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "conclusion",
+   "reader": "sonnet",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C01-6b",
+   "chunk": "C01",
+   "speaker": "David Harding",
+   "quote": "It is common for a manager’s early track record to differ significantly from later performance",
+   "claim": "Early track records often differ from later ones because a small manager can exploit a good anomaly or take big risks with little to lose.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "new: capacity_decay",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "discount early track record",
+   "conditions": "",
+   "testable": "yes - compare early vs late performance of managers",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C01-7b",
+   "chunk": "C01",
+   "speaker": "David Harding",
+   "quote": "An increase in assets under management can enforce constraints on such opportunities, leading almost inevitably to a change in investment strategy.",
+   "claim": "Asset growth constrains capacity and almost inevitably changes the strategy, making the return process non-stationary.",
+   "claim_type": "implementation",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "new: capacity_decay",
+   "asset_class": "multi",
+   "indicator": "AUM",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - AUM and style data",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C01-11b",
+   "chunk": "C01",
+   "speaker": "David Harding",
+   "quote": "Cauchy-Paretian distributions have infinite variance",
+   "claim": "Fat-tailed (Cauchy-Paretian) return processes have infinite variance, so the Sharpe ratio cannot assess them.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - tail index estimation",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "qualifier",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C02-1b",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "sorts of distribution, vulnerable, like LTCM, to a major cataclysm.",
+   "claim": "Merger arbitrage and similar strategies have short-option-like return distributions exposed to rare cataclysms, as LTCM showed.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "risk_premium",
+   "asset_class": "multi",
+   "indicator": "merger arbitrage returns",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - historical episodes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "evidence",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C02-7b",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "it still remains vital that the semi-standard deviation used is meaningful",
+   "claim": "The Sortino ratio still requires a stationary, well-understood distribution to be meaningful.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "Sortino ratio",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - caveat",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "qualifier",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "QP03-C02-11b",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "the danger of relying slavishly on any single measure for assessing product quality for risky investments.",
+   "claim": "No single statistic should be relied on to judge risky strategies.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - recommendation",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "conclusion",
+   "reader": "opus",
+   "quote_check": "exact"
+  }
+ ],
+ "reasoning": {
+  "question": "Is the Sharpe ratio a valid universal measure of strategy quality, and what goes wrong when investors and managers optimise to it?",
+  "thesis": {
+   "statement": "The Sharpe ratio is only meaningful for stationary, parametric return processes and even then penalises upside and rewards tiny consistent returns; its indiscriminate use leads managers to game it, so investors should use several measures, semi-variance and long-term return under a risk constraint.",
+   "claim_ids": [
+    "QP03-C01-4",
+    "QP03-C01-2",
+    "QP03-C02-3",
+    "QP03-C02-5",
+    "QP03-C02-8"
+   ]
+  },
+  "foundations": [
+   {
+    "premise": "Return is observable; risk is not directly observable.",
+    "type": "theoretical",
+    "stated": "stated",
+    "support": "argument",
+    "claim_ids": [
+     "QP03-C01-3"
+    ]
+   },
+   {
+    "premise": "Standard deviation measures risk only for stationary, parametric return processes.",
+    "type": "theoretical",
+    "stated": "stated",
+    "support": "statistical reasoning; Cauchy example",
+    "claim_ids": [
+     "QP03-C01-4",
+     "QP03-C01-8",
+     "QP03-C01-11b"
+    ]
+   },
+   {
+    "premise": "Managers respond to what investors reward.",
+    "type": "behavioural",
+    "stated": "stated",
+    "support": "practitioner experience; Goetzmann et al.",
+    "claim_ids": [
+     "QP03-C01-2",
+     "QP03-C02-7",
+     "QP03-C01-9"
+    ]
+   }
+  ],
+  "mechanism_chain": [
+   {
+    "step": 1,
+    "from": "investors rank managers by Sharpe and overvalue short-run consistency",
+    "to": "managers maximise Sharpe",
+    "why": "incentives",
+    "evidence": "assertion",
+    "claim_ids": [
+     "QP03-C01-2",
+     "QP03-C02-7"
+    ]
+   },
+   {
+    "step": 2,
+    "from": "Sharpe maximisation",
+    "to": "negative-skew, smoothed or option-like return streams",
+    "why": "short-option payoffs, illiquid marking and take-profit/run-loss rules raise measured Sharpe",
+    "evidence": "citation",
+    "claim_ids": [
+     "QP03-C01-9",
+     "QP03-C01-9",
+     "QP03-C02-1b",
+     "QP03-C02-2",
+     "QP03-C02-1"
+    ]
+   },
+   {
+    "step": 3,
+    "from": "non-stationary / non-parametric returns",
+    "to": "misleading Sharpe ratios and hidden tail risk",
+    "why": "sd no longer describes the risk",
+    "evidence": "assertion",
+    "claim_ids": [
+     "QP03-C01-4",
+     "QP03-C01-5",
+     "QP03-C01-7b",
+     "QP03-C01-8"
+    ]
+   },
+   {
+    "step": 4,
+    "from": "symmetric sd",
+    "to": "upside-volatile dynamic strategies are penalised",
+    "why": "large gains counted as risk",
+    "evidence": "example",
+    "claim_ids": [
+     "QP03-C02-3",
+     "QP03-C02-3"
+    ]
+   }
+  ],
+  "design_rationale": [
+   {
+    "choice": "Use downside semi-deviation (Sortino) instead of sd",
+    "reason_given": "does not penalise large positive returns",
+    "alternatives": "Sharpe ratio",
+    "sensitivity": "not shown; still needs stationarity",
+    "claim_ids": [
+     "QP03-C02-4",
+     "QP03-C02-7b"
+    ]
+   },
+   {
+    "choice": "Rolling sd / mean diagnostics before computing statistics",
+    "reason_given": "reveal non-stationarity from style or leverage changes",
+    "alternatives": "",
+    "sensitivity": "window not given",
+    "claim_ids": [
+     "QP03-C01-6"
+    ]
+   },
+   {
+    "choice": "Long-term return subject to a risk constraint as a quality statistic",
+    "reason_given": "Sharpe can favour tiny riskless returns over meaningful returns",
+    "alternatives": "Sharpe, Sortino",
+    "sensitivity": "not shown",
+    "claim_ids": [
+     "QP03-C02-6",
+     "QP03-C02-8"
+    ]
+   }
+  ],
+  "evidence_map": [
+   {
+    "result": "Removing the highest returns can raise Sharpe",
+    "tests": "step 4",
+    "rules_out": "Sharpe as a universal quality metric",
+    "does_not_rule_out": "",
+    "strength": "strong - mathematical",
+    "claim_ids": [
+     "QP03-C02-3"
+    ]
+   },
+   {
+    "result": "Serial correlation overstates Sharpe in illiquid strategies (Asness et al.; Lo)",
+    "tests": "step 2",
+    "rules_out": "",
+    "does_not_rule_out": "",
+    "strength": "moderate - cited, no own data",
+    "claim_ids": [
+     "QP03-C02-1"
+    ]
+   },
+   {
+    "result": "Option-like strategies engineer high Sharpe without skill (Goetzmann et al.)",
+    "tests": "step 2",
+    "rules_out": "",
+    "does_not_rule_out": "",
+    "strength": "moderate - cited",
+    "claim_ids": [
+     "QP03-C01-9"
+    ]
+   }
+  ],
+  "regimes": [
+   {
+    "condition": "Before a tail event in negative-skew strategies",
+    "effect": "Sharpe looks high; after the event it collapses",
+    "claim_ids": [
+     "QP03-C01-9",
+     "QP03-C02-1b"
+    ]
+   },
+   {
+    "condition": "Manager AUM growth",
+    "effect": "strategy changes and early record is unrepresentative",
+    "claim_ids": [
+     "QP03-C01-6b",
+     "QP03-C01-7b"
+    ]
+   }
+  ],
+  "gaps_and_conflicts": [
+   {
+    "issue": "No empirical data, no thresholds for \"reasonable stationarity\", no rolling window length",
+    "type": "unspecified",
+    "claim_ids": [
+     "QP03-C01-6",
+     "QP03-C01-7"
+    ]
+   },
+   {
+    "issue": "Recommended \"long-term return subject to some risk constraint\" is not defined",
+    "type": "unspecified",
+    "claim_ids": [
+     "QP03-C02-8"
+    ]
+   },
+   {
+    "issue": "Sortino has the same stationarity requirement, so the fix is partial by the author's own logic",
+    "type": "untested",
+    "claim_ids": [
+     "QP03-C02-7b"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "other_idea": "trend following (positively skewed)",
+    "relation": "complement",
+    "why": "(reader) trend has upside volatility that Sharpe penalises, the opposite of take-profit/run-loss strategies",
+    "claim_ids": [
+     "QP03-C02-2",
+     "QP03-C02-3"
+    ]
+   },
+   {
+    "other_idea": "carry / short-volatility strategies",
+    "relation": "contradicts",
+    "why": "negative-skew strategies show high Sharpe until the crash",
+    "claim_ids": [
+     "QP03-C01-9",
+     "QP03-C02-1b"
+    ]
+   },
+   {
+    "other_idea": "Lo (2002) autocorrelation-adjusted Sharpe",
+    "relation": "complement",
+    "why": "corrects for smoothing",
+    "claim_ids": [
+     "QP03-C02-1"
+    ]
+   }
+  ],
+  "forward_looking_inputs": "(reader) Not a signal paper. For evaluating any macro backtest it implies: check rolling volatility/mean for stationarity, return autocorrelation (smoothing), skewness and tail losses, and upside vs downside deviation; a high Sharpe from a negatively skewed or smoothed series should be discounted. This stops mattering only if returns are close to i.i.d. normal.",
+  "reader_inferences": [
+   "(reader) The critique implicitly favours positively skewed strategies such as trend following (Winton is a trend follower), which the Sharpe ratio understates.",
+   "(reader) Practical adoption rule for a macro book: report Sortino, skew, max drawdown and autocorrelation-adjusted Sharpe alongside Sharpe.",
+   "(reader) The 1%-mean/1%-sd example has a monthly Sharpe of 1, so it is the infinite-Sharpe riskless case that the Sharpe ratio would prefer."
+  ]
+ },
+ "crosscheck": "opus blind read + reasoning map (paper)",
+ "n_sonnet": 17,
+ "n_opus_added": 6
+}

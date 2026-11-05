@@ -1,0 +1,880 @@
+{
+ "source_id": "QP14",
+ "speakers": [
+  "David Harding (Adam, Harding and Lueck Ltd)"
+ ],
+ "summary": "Philosophical essay (Phil. Trans. R. Soc. A, 1994) on the scientific status of financial models. Argues by philosophy of science and examples that models must make falsifiable predictions, best tested by trading profit against the market. Concludes efficient market theory has limited utility and empirical speculation is the intellectual front line.",
+ "approach_tags": [
+  "philosophy of science",
+  "research method",
+  "efficient market critique",
+  "falsifiability",
+  "out-of-sample testing"
+ ],
+ "coverage": [
+  {
+   "chunk": "C01",
+   "claims": 0,
+   "note": "nothing actionable: journal title/citation page"
+  },
+  {
+   "chunk": "C02",
+   "claims": 4,
+   "note": "abstract; models vs reality; falsifiability; utility of predictions"
+  },
+  {
+   "chunk": "C03",
+   "claims": 4,
+   "note": "elegance is not truth; nearly-true models rejected; Newton/Einstein; Burke on Smith"
+  },
+  {
+   "chunk": "C04",
+   "claims": 4,
+   "note": "economics lacks experiments; Smith model tested; agents have minds"
+  },
+  {
+   "chunk": "C05",
+   "claims": 9,
+   "note": "out-of-sample judging; profit as test; speculators as observers; EMH null prediction, non-stationary returns; bank arbitrage"
+  },
+  {
+   "chunk": "C06",
+   "claims": 7,
+   "note": "merchandising; portfolio insurance 1987; three paths; speculation method"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "QP14-C02-1",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "the danger of unwittingly propagating erroneous conclusions about this reality in the absence of such a grounding",
+   "claim": "Financial models without sufficient empirical grounding risk spreading wrong conclusions about how markets work.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - methodological",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP14-C02-2",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "the theory cannot be the reality ; it can at best only be a near perfect simulation of that reality.",
+   "claim": "A model is never reality, only at best a near-perfect simulation built by metaphor and analogy from observations.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - philosophical",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP14-C02-3",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "such a model must be capable of producing empirically falsifiable predictions and must thus be capable of being subjected to an unbiased test of its value within its own conceptual framework.",
+   "claim": "A valid model must make empirically falsifiable predictions that can be tested without bias.",
+   "claim_type": "construction",
+   "exact_rule": "Accept a model only if it makes falsifiable predictions testable on unbiased (out-of-sample) data",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - principle for testing",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP14-C02-4",
+   "chunk": "C02",
+   "speaker": "David Harding",
+   "quote": "A theory’s utility is then determined by the quality of the predictions it makes and the accuracy with which these accord with empirical observation.",
+   "claim": "A model is judged by the usefulness and accuracy of its predictions, not by whether it is \"true\".",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - philosophical",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP14-C03-1",
+   "chunk": "C03",
+   "speaker": "David Harding",
+   "quote": "it would not be logically correct to infer that mathematics is reality, that the elegant solution is necessarily the best.",
+   "claim": "Mathematical elegance is no evidence that a model describes reality best.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - philosophical",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP14-C03-2",
+   "chunk": "C03",
+   "speaker": "David Harding",
+   "quote": "the tiniest chink in the accordance of the theory’s prediction with reality was sufficient to open the way for the einsteinian revolution.",
+   "claim": "Tiny discrepancies between a near-true theory and observations can have enormous consequences (Newton to Einstein).",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - historical analogy",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP14-C03-3",
+   "chunk": "C03",
+   "speaker": "David Harding",
+   "quote": "The idea that models are nearly true or are true for all practical purposes must be rejected as forcefully as the idea that they are true.",
+   "claim": "No model should be treated as nearly true; when a model looks true one should look for the explanation.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - philosophical",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP14-C03-4",
+   "chunk": "C03",
+   "speaker": "Edmund Burke (letter to Adam Smith, cited by author)",
+   "quote": "A theory like yours, founded on the nature of man, which is always the same, will last, when those that are founded upon his opinions, which are always changing, will and must be forgotten.",
+   "claim": "Citing Burke on Adam Smith: theories grounded in unchanging human nature endure, while those based on changing opinions do not.",
+   "claim_type": "citation",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - cited view",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP14-C04-1",
+   "chunk": "C04",
+   "speaker": "David Harding",
+   "quote": "progress has been held back by the sheer practical difficulty of employing the experimental method.",
+   "claim": "Economics progresses slowly because controlled experiments on society are rarely possible.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - methodological",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP14-C04-2",
+   "chunk": "C04",
+   "speaker": "David Harding",
+   "quote": "Smith’s models did give rise to empirically testable, interesting and often counter-intuitive predictions about the world",
+   "claim": "Adam Smith's empirically founded market model made testable predictions that three centuries of evidence have mostly supported.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - historical judgement",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP14-C04-3",
+   "chunk": "C04",
+   "speaker": "David Harding",
+   "quote": "they are always necessarily less conclusive than controlled experiments",
+   "claim": "Natural experiments in economics take long and are less conclusive than controlled experiments.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - methodological",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "qualifier"
+  },
+  {
+   "claim_id": "QP14-C04-4",
+   "chunk": "C04",
+   "speaker": "David Harding",
+   "quote": "In the physical sciences the object of study does not have a mind of its own!",
+   "claim": "Unlike physics, markets consist of thinking agents who react, which makes economic modelling harder.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - philosophical",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP14-C05-1",
+   "chunk": "C05",
+   "speaker": "David Harding",
+   "quote": "it is much more realistic to judge the usefulness of models developed some time ago, without prior knowledge, than it is to assess their possible contemporary equivalents.",
+   "claim": "Models are best judged on data that arrived after they were built (no prior knowledge), i.e. genuine out-of-sample tests over long periods.",
+   "claim_type": "construction",
+   "exact_rule": "Evaluate a model only on data after its creation date; prefer long post-creation track records",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - out-of-sample principle",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP14-C05-2",
+   "chunk": "C05",
+   "speaker": "David Harding",
+   "quote": "In economics and the study of markets there can be no more incorruptible measure of utility than profit accrued by arbitraging the predictions of a model against the common view (the market).",
+   "claim": "Trading profit from betting a model's predictions against market prices is the most honest test of a financial model.",
+   "claim_type": "mechanism",
+   "exact_rule": "Test = P&L of trading model forecast minus market-implied forecast",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - backtest/live P&L",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP14-C05-3",
+   "chunk": "C05",
+   "speaker": "David Harding",
+   "quote": "it is also a means of obtaining the most ruthlessly honest evaluation of the scientific utility of a model or method.",
+   "claim": "Trying to beat the market is a rigorous scientific test, not just a desire for money.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - philosophical",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "conclusion"
+  },
+  {
+   "claim_id": "QP14-C05-4",
+   "chunk": "C05",
+   "speaker": "David Harding",
+   "quote": "this observation must of necessity be detached and unemotive",
+   "claim": "Successful speculators are detached, unemotional observers (speculari = to observe), like empirical scientists.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - characterisation",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "mechanism_step"
+  },
+  {
+   "claim_id": "QP14-C05-5",
+   "chunk": "C05",
+   "speaker": "David Harding",
+   "quote": "its predictions of market price are of the null variety — that no better estimate of tomorrow’s price than today’s can be discerned — and not very interesting.",
+   "claim": "The efficient market theory only predicts that today's price is the best forecast of tomorrow's, a null and uninteresting prediction.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "random walk null",
+   "horizon": "days",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - predictability tests",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP14-C05-6",
+   "chunk": "C05",
+   "speaker": "David Harding",
+   "quote": "the empirical evidence points to the return process in all markets being ultimately non-parametric and certainly non-stationary.",
+   "claim": "EMH's concrete prediction that returns come from a known, estimable distribution is falsified: returns are non-parametric and non-stationary.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "return distribution stationarity",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - evidence asserted, not shown",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP14-C05-7",
+   "chunk": "C05",
+   "speaker": "David Harding",
+   "quote": "Its great strength is that it is consistent with one of the most profoundly useful insights about market behaviour: it is very difficult to make money consistently.",
+   "claim": "EMH is useful because it matches the fact that consistent profits are very hard to make.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - general insight",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "qualifier"
+  },
+  {
+   "claim_id": "QP14-C05-8",
+   "chunk": "C05",
+   "speaker": "David Harding",
+   "quote": "Such consistency, however, it not a unique feature of this model over a universe of alternatives.",
+   "claim": "Other models are equally consistent with the difficulty of making money, so this is not unique support for EMH.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - logical point",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "qualifier"
+  },
+  {
+   "claim_id": "QP14-C05-9",
+   "chunk": "C05",
+   "speaker": "David Harding",
+   "quote": "using the model to assess the relative value of various forms of derivatives of the same asset or assets",
+   "claim": "Banks profit from option models mainly via relative-value arbitrage between derivatives of the same asset, which is insensitive to the distributional assumptions.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "relative value of derivatives",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - descriptive",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step"
+  },
+  {
+   "claim_id": "QP14-C06-1",
+   "chunk": "C06",
+   "speaker": "David Harding",
+   "quote": "banks and brokers selling at marked up prices derivative instruments that can only be created because of the existence of the theory.",
+   "claim": "Banks also profit by merchandising marked-up derivatives the theory makes possible; such profits do not validate the theory.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - descriptive",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step"
+  },
+  {
+   "claim_id": "QP14-C06-2",
+   "chunk": "C06",
+   "speaker": "David Harding",
+   "quote": "after the market crash of 1987, their pension fund clients incurred losses greater than they otherwise would have done.",
+   "claim": "Portfolio insurance sold on the theory left pension fund clients with larger losses in the 1987 crash.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "Portfolio insurance users lost more in Oct 1987 crash (no numbers given)",
+   "exhibit": "",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "days",
+   "direction": "",
+   "conditions": "market crash; model assumptions (continuous prices, stable distribution) failed",
+   "testable": "partly - historical record",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP14-C06-3",
+   "chunk": "C06",
+   "speaker": "David Harding",
+   "quote": "the widespread use, found for the theory, is not strong evidence of its scientific utility but more for its marketability.",
+   "claim": "Wide adoption of a financial theory shows it is marketable, not that it is scientifically useful.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - argument",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "conclusion"
+  },
+  {
+   "claim_id": "QP14-C06-4",
+   "chunk": "C06",
+   "speaker": "David Harding",
+   "quote": "The efficient market theory is sufficiently robust with respect to relative values",
+   "claim": "Rocket-scientist arbitrage works because EMH-based models are robust for relative values, though its assumptions may be unsound.",
+   "claim_type": "implementation",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - judgement",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "qualifier"
+  },
+  {
+   "claim_id": "QP14-C06-5",
+   "chunk": "C06",
+   "speaker": "David Harding",
+   "quote": "Speculate, which I believe to be the intellectual front line.",
+   "claim": "Speculation (forecasting and trading on falsifiable models) is the most intellectually demanding way to make money from models.",
+   "claim_type": "implementation",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - opinion",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "conclusion"
+  },
+  {
+   "claim_id": "QP14-C06-6",
+   "chunk": "C06",
+   "speaker": "David Harding",
+   "quote": "seek phenomena amenable to classification and to form ideas as to the metaphors and analogies that are components of a model that can make interesting and falsifiable predictions.",
+   "claim": "The speculator's method: observe and classify market phenomena, then build models by analogy that make interesting falsifiable predictions.",
+   "claim_type": "construction",
+   "exact_rule": "Observe -> classify phenomena -> model by analogy -> generate falsifiable predictions -> test by trading",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - process, no specific signal",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP14-C06-7",
+   "chunk": "C06",
+   "speaker": "David Harding",
+   "quote": "Efficient market theory has at least partly driven the charlatan from the investment stage.",
+   "claim": "EMH has partly removed charlatans, opening the field to scientists.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - opinion",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "context"
+  }
+ ],
+ "reasoning": {
+  "question": "What is the scientific status of mathematical models in finance (especially efficient market theory), and how should their usefulness be judged?",
+  "thesis": {
+   "statement": "Financial models should be judged like natural-science models by the falsifiable predictions they make, and the most honest test is trading profit against the market; by that standard efficient market theory has limited scientific utility, and empirical speculation is the intellectual front line.",
+   "claim_ids": [
+    "QP14-C02-3",
+    "QP14-C05-2",
+    "QP14-C05-5",
+    "QP14-C05-6",
+    "QP14-C06-3",
+    "QP14-C06-5"
+   ]
+  },
+  "foundations": [
+   {
+    "premise": "Models are never reality; their value is the utility of their falsifiable predictions.",
+    "type": "theoretical",
+    "stated": "stated",
+    "support": "philosophy of science; Newton/Einstein example",
+    "claim_ids": [
+     "QP14-C02-2",
+     "QP14-C02-3",
+     "QP14-C02-4",
+     "QP14-C03-2",
+     "QP14-C03-3"
+    ]
+   },
+   {
+    "premise": "Markets are made of agents with minds, and controlled experiments are impossible.",
+    "type": "theoretical",
+    "stated": "stated",
+    "support": "argument",
+    "claim_ids": [
+     "QP14-C04-1",
+     "QP14-C04-4"
+    ]
+   },
+   {
+    "premise": "Return processes are non-parametric and non-stationary.",
+    "type": "empirical",
+    "stated": "stated",
+    "support": "asserted, no data",
+    "claim_ids": [
+     "QP14-C05-6"
+    ]
+   },
+   {
+    "premise": "Theories grounded in stable human nature endure.",
+    "type": "behavioural",
+    "stated": "stated",
+    "support": "Burke citation",
+    "claim_ids": [
+     "QP14-C03-4"
+    ]
+   }
+  ],
+  "mechanism_chain": [
+   {
+    "step": 1,
+    "from": "model makes falsifiable predictions",
+    "to": "test against the market's common view",
+    "why": "profit from arbitraging predictions vs market is incorruptible",
+    "evidence": "assertion",
+    "claim_ids": [
+     "QP14-C05-2",
+     "QP14-C05-3"
+    ]
+   },
+   {
+    "step": 2,
+    "from": "EMH predicts only a null (random walk) and parametric returns",
+    "to": "EMH has low scientific utility",
+    "why": "null prediction uninteresting; parametric prediction falsified",
+    "evidence": "assertion",
+    "claim_ids": [
+     "QP14-C05-5",
+     "QP14-C05-6",
+     "QP14-C05-8"
+    ]
+   },
+   {
+    "step": 3,
+    "from": "banks profit from EMH-based models",
+    "to": "not evidence of the theory's truth",
+    "why": "profits come from relative-value arbitrage and merchandising; portfolio insurance failed in 1987",
+    "evidence": "example",
+    "claim_ids": [
+     "QP14-C05-9",
+     "QP14-C06-1",
+     "QP14-C06-2",
+     "QP14-C06-3"
+    ]
+   },
+   {
+    "step": 4,
+    "from": "detached observation and classification of phenomena",
+    "to": "speculative models that can beat the market",
+    "why": "mirrors the natural scientist's method",
+    "evidence": "assertion",
+    "claim_ids": [
+     "QP14-C05-4",
+     "QP14-C06-5",
+     "QP14-C06-6"
+    ]
+   }
+  ],
+  "design_rationale": [
+   {
+    "choice": "Judge models on data after their creation",
+    "reason_given": "judging without prior knowledge is more realistic",
+    "alternatives": "evaluating contemporary models in-sample",
+    "sensitivity": "not shown",
+    "claim_ids": [
+     "QP14-C05-1"
+    ]
+   },
+   {
+    "choice": "Use trading profit as the test statistic",
+    "reason_given": "most incorruptible measure of utility",
+    "alternatives": "adoption/popularity of a model",
+    "sensitivity": "not shown",
+    "claim_ids": [
+     "QP14-C05-2",
+     "QP14-C06-3"
+    ]
+   }
+  ],
+  "evidence_map": [
+   {
+    "result": "Portfolio insurance worsened pension losses in 1987",
+    "tests": "that widely used models can fail",
+    "rules_out": "adoption as proof of validity",
+    "does_not_rule_out": "(reader) failure due to implementation/liquidity rather than the theory",
+    "strength": "weak - single anecdote",
+    "claim_ids": [
+     "QP14-C06-2"
+    ]
+   },
+   {
+    "result": "Returns are non-parametric and non-stationary",
+    "tests": "EMH parametric prediction",
+    "rules_out": "",
+    "does_not_rule_out": "",
+    "strength": "weak - asserted without data",
+    "claim_ids": [
+     "QP14-C05-6"
+    ]
+   }
+  ],
+  "regimes": [
+   {
+    "condition": "Market crash (1987)",
+    "effect": "models relying on stable distributions/continuous trading fail",
+    "claim_ids": [
+     "QP14-C06-2"
+    ]
+   }
+  ],
+  "gaps_and_conflicts": [
+   {
+    "issue": "No data, no specific trading model or signal is given",
+    "type": "unspecified",
+    "claim_ids": [
+     "QP14-C06-6"
+    ]
+   },
+   {
+    "issue": "Using profit as the test ignores luck/multiple testing; no statistical standard for a profit test is given",
+    "type": "untested",
+    "claim_ids": [
+     "QP14-C05-2"
+    ]
+   },
+   {
+    "issue": "Non-stationarity claim is asserted not demonstrated",
+    "type": "untested",
+    "claim_ids": [
+     "QP14-C05-6"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "other_idea": "efficient market hypothesis",
+    "relation": "contradicts",
+    "why": "denies speculators can exist; Harding argues its utility is limited",
+    "claim_ids": [
+     "QP14-C05-5",
+     "QP14-C05-7"
+    ]
+   },
+   {
+    "other_idea": "out-of-sample / holdout testing",
+    "relation": "complement",
+    "why": "judge models on data unseen at creation",
+    "claim_ids": [
+     "QP14-C05-1",
+     "QP14-C02-3"
+    ]
+   },
+   {
+    "other_idea": "Sharpe ratio critique (non-stationary returns)",
+    "relation": "complement",
+    "why": "same non-parametric, non-stationary premise",
+    "claim_ids": [
+     "QP14-C05-6"
+    ]
+   }
+  ],
+  "forward_looking_inputs": "(reader) No specific inputs. The method says any signal should be a falsifiable prediction against market-implied expectations, validated on data after the model was frozen; signals grounded in stable human behaviour should last longer than those grounded in transient opinions.",
+  "reader_inferences": [
+   "(reader) The \"judge models developed some time ago without prior knowledge\" principle is the case for a frozen-rules holdout test.",
+   "(reader) The Burke quote suggests behavioural (human-nature) anomalies such as trend are more durable than opinion-driven ones.",
+   "(reader) Profit as test needs a significance standard to separate skill from luck, which the paper does not provide."
+  ]
+ }
+}

@@ -1,0 +1,94 @@
+{
+ "opus_only": [
+  [
+   "QP01-C02-1b",
+   "Price trend-following is the core style of a managed futures industry with about $198bn of assets at end-2022, indicating the scale of capital already deployed in trend."
+  ],
+  [
+   "QP01-C02-6b",
+   "Brooks, Katz and Lustig (2018) show bond markets underreact persistently to monetary policy (FOMC) surprises (post-FOMC announcement drift), evidence of macro underreaction in rates."
+  ],
+  [
+   "QP01-C02-R2b",
+   "Most direct evidence of underreaction comes from single stocks; evidence for macro assets (index, bond, FX, commodity markets) is thinner, so the foundation is less established for the assets this strategy trades."
+  ],
+  [
+   "QP01-C03-R2b",
+   "Investors value trend-following mainly for positive returns during market drawdowns, which is why the paper judges economic trend and the blend largely by drawdown performance."
+  ],
+  [
+   "QP01-C04-3b",
+   "Inflation theme = 12-month change in CPI inflation forecasts; rising forecasts are bearish equities and fixed income, bullish currencies and commodities."
+  ],
+  [
+   "QP01-C04-R1b",
+   "The theme-to-asset-class signs are asserted a priori (e.g. rising growth is good for equities) rather than estimated from predictive regressions."
+  ],
+  [
+   "QP01-C07-2b",
+   "Economic trend Sharpe ratios are positive for all 15 equity indices, from about 0.10 (S&P 500) to about 0.47 (OMX Copenhagen)."
+  ],
+  [
+   "QP01-C07-3b",
+   "Economic trend Sharpe ratios are positive for all 9 government bond futures, from about 0.08 (Australia) to about 0.49 (Swiss)."
+  ],
+  [
+   "QP01-C07-6b",
+   "Commodity Sharpe ratios are positive but dispersed: industrial metals and energy higher, coffee, natural gas and sugar near zero."
+  ],
+  [
+   "QP01-C08-4b",
+   "In each of the five worst US 10-year Treasury drawdowns since 1970 economic trend made money, averaging about +39% versus about -14% for Treasuries."
+  ],
+  [
+   "QP01-C08-5b",
+   "Price and economic trend should be positively but imperfectly correlated, since good fundamental news is followed by positive returns on average."
+  ],
+  [
+   "QP01-C09-R1b",
+   "Only some of the worst-drawdown episodes are explained by the price-vs-fundamentals story; the authors use the Tech Bubble as the illustrating case, so the narrative evidence is partial."
+  ],
+  [
+   "QP01-C11-2b",
+   "In the sudden October 1987 crash price trend lost (about -10%) while economic trend gained (about +23%), illustrating that economic trend covers fast catalyst-driven sell-offs that price trend misses."
+  ],
+  [
+   "QP01-C13-1b",
+   "The reference list dates Hurst-Ooi-Pedersen as 2014 while footnotes 2 and 11 cite it as 2017, and several in-text citations (Campbell 1991, Katz-Lustig 2017, Bernanke-Kuttner 2005, Eichenbaum-Evans 1995, Clarida-Waldman 2008) are not listed."
+  ],
+  [
+   "QP01-C14-3b",
+   "The backtest is a proof of concept; better or additional economic trend measures could improve it."
+  ],
+  [
+   "QP01-C14-11b",
+   "Trade signal is the one-year change in the spot rate against an export-weighted basket, from DataStream."
+  ],
+  [
+   "QP01-C14-13b",
+   "A depreciating currency is bearish bonds (less need for rate cuts) and bearish commodities (dollar-priced commodities cost more for consumers with weaker currencies)."
+  ],
+  [
+   "QP01-C14-15b",
+   "The appendix says easing is bullish equities, currencies and commodities and bearish bonds, but the currency and bond signs conflict with Exhibit 1 (rising 2y yield: currency +, bonds -) and with Eichenbaum-Evans (tightening appreciates the currency)."
+  ],
+  [
+   "QP01-C14-17b",
+   "Rising risk appetite is bullish equities, commodities and currencies and bearish bonds."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP01-C03-12",
+   "A combined price plus economic trend strategy has better risk-adjusted results than either alone (note: Exhibit 6 shows blend does not beat price trend in currencies or commodities)."
+  ],
+  [
+   "QP01-C03-14",
+   "Commodities were excluded from Brooks (2017) because cross-sectional relative-value views are less intuitive; the directional design makes adding them reasonable."
+  ],
+  [
+   "QP01-C09-8",
+   "Persistent bull market in the Tech Bubble made price trend perform exceptionally well even as economic trend suffered."
+  ]
+ ]
+}

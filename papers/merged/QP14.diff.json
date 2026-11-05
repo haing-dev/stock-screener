@@ -1,0 +1,62 @@
+{
+ "opus_only": [
+  [
+   "QP14-C02-4b",
+   "A model is judged by the usefulness and accuracy of its predictions, not by whether it is \"true\"."
+  ],
+  [
+   "QP14-C03-2b",
+   "Tiny discrepancies between a near-true theory and observations can have enormous consequences (Newton to Einstein)."
+  ],
+  [
+   "QP14-C04-3b",
+   "Natural experiments in economics take long and are less conclusive than controlled experiments."
+  ],
+  [
+   "QP14-C04-4b",
+   "Unlike physics, markets consist of thinking agents who react, which makes economic modelling harder."
+  ],
+  [
+   "QP14-C05-1b",
+   "Models are best judged on data that arrived after they were built (no prior knowledge), i.e. genuine out-of-sample tests over long periods."
+  ],
+  [
+   "QP14-C05-3b",
+   "Trying to beat the market is a rigorous scientific test, not just a desire for money."
+  ],
+  [
+   "QP14-C05-8b",
+   "Other models are equally consistent with the difficulty of making money, so this is not unique support for EMH."
+  ],
+  [
+   "QP14-C06-3b",
+   "Wide adoption of a financial theory shows it is marketable, not that it is scientifically useful."
+  ],
+  [
+   "QP14-C06-4b",
+   "Rocket-scientist arbitrage works because EMH-based models are robust for relative values, though its assumptions may be unsound."
+  ],
+  [
+   "QP14-C06-6b",
+   "The speculator's method: observe and classify market phenomena, then build models by analogy that make interesting falsifiable predictions."
+  ],
+  [
+   "QP14-C06-7b",
+   "EMH has partly removed charlatans, opening the field to scientists."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP14-C03-5",
+   "Empirical testing gives an independent way to arbitrate between views, replacing sterile conflict with constructive argument."
+  ],
+  [
+   "QP14-C05-1",
+   "Ultimate test of a model's utility is profit from exploiting differences between its predictions and common opinion; older models are easier to judge because social systems evolve slowly."
+  ],
+  [
+   "QP14-C06-3",
+   "Efficient market theory denies that speculators can exist, so speculators who succeed conflict with it."
+  ]
+ ]
+}

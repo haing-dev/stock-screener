@@ -1,0 +1,58 @@
+{
+ "opus_only": [
+  [
+   "QP13-C23-1b",
+   "Unlike the dice, real investments are not independent of each other, their properties change over time, and their parameters are unknown."
+  ],
+  [
+   "QP13-C38-2b",
+   "Despite model risk, an investor still needs a valid p-value for alpha."
+  ],
+  [
+   "QP13-C44-1b",
+   "The 'Bob Fund' delivers smooth excess returns by earning 1/k each period with probability k/(k+1) and losing everything with probability 1/(k+1), so its expected excess return is zero; with k=19 it shows a bit over 2% growth until it busts."
+  ],
+  [
+   "QP13-C45-2b",
+   "Bonferroni is adequate because the true number of alternatives considered is hard to count anyway."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP13-C07-2",
+   "Therefore analysis should be done on returns rather than cumulative value."
+  ],
+  [
+   "QP13-C17-2",
+   "Green is calibrated to the annual excess returns of the US stock market, White to Treasury bill returns, and Red is invented (an extreme high-mean, high-variance asset)."
+  ],
+  [
+   "QP13-C23-1",
+   "The dice game assumes independent assets, so real investments with correlation (Red unaffected by Green) behave differently from the game."
+  ],
+  [
+   "QP13-C23-2",
+   "Stability: the dice's odds never change, whereas real return distributions drift."
+  ],
+  [
+   "QP13-C23-3",
+   "Parameters are known in the game but must be estimated in practice, which adds estimation risk."
+  ],
+  [
+   "QP13-C34-1",
+   "TEAM's residuals are a nonlinear, bow-tie function of the market (negative residual when the market is up by 3-10%, positive when down by 5%), which is not additive noise and is typical of a payoff with hidden option-like exposure."
+  ],
+  [
+   "QP13-C38-2",
+   "CAPM residuals are not independent (ARCH-type processes), yet a p-value is still wanted, which motivates a test that does not need independence."
+  ],
+  [
+   "QP13-C43-1",
+   "A p-value around 0.05 does not survive adjustment for multiplicity when many assets have been considered."
+  ],
+  [
+   "QP13-C44-1",
+   "The Bob Fund 'guarantee' is built from a bet with return 1/k with probability k/(k+1) and -1 (total loss) with probability 1/(k+1), expected return zero, so it earns steady small gains until the rare wipe-out ('busted')."
+  ]
+ ]
+}

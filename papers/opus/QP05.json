@@ -1,0 +1,929 @@
+{
+ "source_id": "QP05",
+ "speakers": [
+  "Robert E. Murray (Graham Capital Management, COO)"
+ ],
+ "summary": "Marketing presentation asking why investors should hold systematic global macro (CTAs). Uses BSTI vs CSFB/Tremont hedge fund indices 1994-2008: correlations, stress months, skew/kurtosis, autocorrelation-adjusted IR and optimised portfolios. Concludes CTAs are uncorrelated, positively skewed crisis diversifiers deserving maximum allocation.",
+ "approach_tags": [
+  "CTA / trend following",
+  "crisis alpha",
+  "diversification",
+  "skewness and kurtosis",
+  "autocorrelation adjustment",
+  "portfolio optimisation"
+ ],
+ "coverage": [
+  {
+   "chunk": "C01",
+   "claims": 1,
+   "note": "title, CFTC/past-performance disclaimer"
+  },
+  {
+   "chunk": "C02",
+   "claims": 4,
+   "note": "claimed benefits of systematic macro"
+  },
+  {
+   "chunk": "C03",
+   "claims": 3,
+   "note": "unconditional correlations vs traditional and hedge fund indices, sample period"
+  },
+  {
+   "chunk": "C04",
+   "claims": 2,
+   "note": "up/down-month correlations with S&P 500"
+  },
+  {
+   "chunk": "C05",
+   "claims": 1,
+   "note": "BSTI in S&P stress months (chart read from image)"
+  },
+  {
+   "chunk": "C06",
+   "claims": 1,
+   "note": "BSTI vs worst hedge fund style months 1998/2008"
+  },
+  {
+   "chunk": "C07",
+   "claims": 2,
+   "note": "skew and kurtosis definitions"
+  },
+  {
+   "chunk": "C08",
+   "claims": 2,
+   "note": "skew/kurtosis table and z-score histogram"
+  },
+  {
+   "chunk": "C09",
+   "claims": 3,
+   "note": "autocorrelation and annual volatility"
+  },
+  {
+   "chunk": "C10",
+   "claims": 2,
+   "note": "lag-1 autocorrelation table"
+  },
+  {
+   "chunk": "C11",
+   "claims": 1,
+   "note": "IR with and without autocorrelation"
+  },
+  {
+   "chunk": "C12",
+   "claims": 2,
+   "note": "optimised portfolio weights"
+  },
+  {
+   "chunk": "C13",
+   "claims": 1,
+   "note": "optimised portfolio ratios"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "QP05-C01-1",
+   "chunk": "C01",
+   "speaker": "Graham Capital Management",
+   "quote": "PAST PERFORMANCE IS NOT NECESSARILY INDICATIVE OF FUTUR",
+   "claim": "Marketing deck under a CFTC exemption for qualified eligible persons; not reviewed by the CFTC; past performance not indicative of future results.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - disclosure",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "qualifier"
+  },
+  {
+   "claim_id": "QP05-C02-1",
+   "chunk": "C02",
+   "speaker": "Robert E. Murray",
+   "quote": "Positive annual returns for more than 20 years",
+   "claim": "Systematic global macro (CTAs) has had positive annual returns for over 20 years.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "Positive annual returns >20 years (index and period not specified on slide)",
+   "exhibit": "",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "CTA / systematic macro index",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - index unstated",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP05-C02-2",
+   "chunk": "C02",
+   "speaker": "Robert E. Murray",
+   "quote": "Low to negative correlations to most other asset classes and hedge fund strategies",
+   "claim": "CTAs have low to negative correlation with traditional assets and most hedge fund strategies, making them diversifiers.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "BSTI correlations",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - see correlation tables",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "conclusion"
+  },
+  {
+   "claim_id": "QP05-C02-3",
+   "chunk": "C02",
+   "speaker": "Robert E. Murray",
+   "quote": "Managed accounts lead to increased transparency",
+   "claim": "CTAs can be accessed via managed accounts, giving investors more transparency.",
+   "claim_type": "implementation",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - structural statement",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "context"
+  },
+  {
+   "claim_id": "QP05-C02-4",
+   "chunk": "C02",
+   "speaker": "Robert E. Murray",
+   "quote": "Strong historical performance during crisis periods",
+   "claim": "CTAs have historically performed strongly during crises.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "months",
+   "direction": "long CTAs as crisis hedge",
+   "conditions": "equity/hedge-fund stress months",
+   "testable": "yes - see stress tables",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "conclusion"
+  },
+  {
+   "claim_id": "QP05-C03-1",
+   "chunk": "C03",
+   "speaker": "Robert E. Murray",
+   "quote": "January 1994 – December 2008",
+   "claim": "All statistics use monthly index returns from January 1994 to December 2008, with the BSTI as the CTA proxy and CSFB/Tremont indices for other hedge fund styles.",
+   "claim_type": "construction",
+   "exact_rule": "Monthly returns Jan 1994-Dec 2008; CTA proxy = Barclay Systematic Traders Index",
+   "data_needed": "Barclay Systematic Traders Index (BSTI) monthly; CSFB/Tremont hedge fund sub-indices; S&P 500; MSCI EAFE; Lehman Brothers T-Bond Index; Jan 1994-Dec 2008",
+   "reported_result": "",
+   "exhibit": "slides 3-13",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - index data",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP05-C03-2",
+   "chunk": "C03",
+   "speaker": "Robert E. Murray",
+   "quote": "Low Correlation to Other Asset Classes",
+   "claim": "BSTI was slightly negatively correlated with equities and modestly positively correlated with Treasuries.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "Barclay Systematic Traders Index (BSTI) monthly; CSFB/Tremont hedge fund sub-indices; S&P 500; MSCI EAFE; Lehman Brothers T-Bond Index; Jan 1994-Dec 2008",
+   "reported_result": "Correlations 1994-2008 monthly: BSTI vs S&P 500 -0.15, vs MSCI EAFE -0.10, vs Lehman T-Bond 0.28; S&P vs EAFE 0.79",
+   "exhibit": "slide 3",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "BSTI correlations",
+   "horizon": "months",
+   "direction": "CTA diversifies equities",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP05-C03-3",
+   "chunk": "C03",
+   "speaker": "Robert E. Murray",
+   "quote": "VS. ALTERNATIVE ASSET CLASSES",
+   "claim": "BSTI was nearly uncorrelated with every CSFB/Tremont hedge fund style except Global Macro (0.37), whereas the other styles were highly correlated with each other.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "Barclay Systematic Traders Index (BSTI) monthly; CSFB/Tremont hedge fund sub-indices; S&P 500; MSCI EAFE; Lehman Brothers T-Bond Index; Jan 1994-Dec 2008",
+   "reported_result": "BSTI correlations 1994-2008: Global Macro 0.37, Equity Mkt Neutral 0.01, Fixed Income Arb -0.03, Event Driven -0.08, L/S Equity 0.05, Convertible Arb -0.05, Dedicated Short 0.09, Emerging Mkts -0.06; among others e.g. FI Arb-Conv Arb 0.78, Event Driven-L/S 0.72, Event Driven-EM 0.70",
+   "exhibit": "slide 3",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "BSTI vs CSFB/Tremont correlations",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP05-C04-1",
+   "chunk": "C04",
+   "speaker": "Robert E. Murray",
+   "quote": "Conditional Correlations",
+   "claim": "BSTI correlation with the S&P 500 becomes more negative in S&P down months (-0.31) than up months (-0.02), while most hedge fund styles become more correlated in down months.",
+   "claim_type": "result",
+   "exact_rule": "Split months by sign of S&P 500 return; compute correlation within up and down months (definition inferred from labels)",
+   "data_needed": "Barclay Systematic Traders Index (BSTI) monthly; CSFB/Tremont hedge fund sub-indices; S&P 500; MSCI EAFE; Lehman Brothers T-Bond Index; Jan 1994-Dec 2008",
+   "reported_result": "Up/Down/All: BSTI -0.02/-0.31/-0.15; Global Macro 0.17/0.38/0.26; EMN 0.51/0.22/0.24; FI Arb 0.12/0.44/0.33; Event Driven 0.49/0.68/0.61; Conv Arb 0.28/0.41/0.37; L/S Equity 0.54/0.71/0.63; Dedicated Short -0.73/-0.74/-0.73; EM 0.35/0.70/0.52 (1994-2008)",
+   "exhibit": "slide 4",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "conditional correlation with S&P 500",
+   "horizon": "months",
+   "direction": "CTA hedge strengthens when equities fall",
+   "conditions": "S&P down months",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP05-C04-2",
+   "chunk": "C04",
+   "speaker": "Robert E. Murray",
+   "quote": "Correlation with S&P 500 Index",
+   "claim": "Hedge fund styles such as event driven, long/short equity and emerging markets lose diversification when equities fall (down-month correlations 0.68-0.71).",
+   "claim_type": "robustness",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "Down-month correlations: Event Driven 0.68, L/S Equity 0.71, EM 0.70, FI Arb 0.44 (vs up-month 0.49, 0.54, 0.35, 0.12)",
+   "exhibit": "slide 4",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "down-month correlation",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "equity down months",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP05-C05-1",
+   "chunk": "C05",
+   "speaker": "Robert E. Murray",
+   "quote": "Performance During Stress Periods for S&P 500",
+   "claim": "In the worst S&P 500 months of 1994-2008, the BSTI was positive in most cases, often strongly.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "Barclay Systematic Traders Index (BSTI) monthly; CSFB/Tremont hedge fund sub-indices; S&P 500; MSCI EAFE; Lehman Brothers T-Bond Index; Jan 1994-Dec 2008",
+   "reported_result": "Slide 5 (read from chart), 19 S&P stress months: BSTI positive in 15, negative in 4 (Aug-97 ~-4.7%, Sep-00 ~-2.4%, Feb-01 ~-0.4%, Apr-02 ~-1.0%); largest: Aug-98 S&P ~-14.5% / BSTI ~+7.5%; Oct-08 S&P ~-16.8% / BSTI ~+4.6%; Jun-02 BSTI ~+7.2%; Sep-02 S&P ~-10.9% / BSTI ~+2.9%",
+   "exhibit": "slide 5",
+   "mechanism": "slow_reaction",
+   "asset_class": "multi",
+   "indicator": "BSTI return in S&P stress months",
+   "horizon": "months",
+   "direction": "long CTA in equity crashes",
+   "conditions": "works in most but not all equity stress months; stress-month selection rule not stated",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP05-C06-1",
+   "chunk": "C06",
+   "speaker": "Robert E. Murray",
+   "quote": "Performance during Stress Periods for Hedge Fund Strategies",
+   "claim": "In the worst hedge fund months (Aug/Oct 1998, Oct/Nov 2008) systematic traders were positive or nearly flat while other styles lost heavily.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "Barclay Systematic Traders Index (BSTI) monthly; CSFB/Tremont hedge fund sub-indices; S&P 500; MSCI EAFE; Lehman Brothers T-Bond Index; Jan 1994-Dec 2008",
+   "reported_result": "Aug 1998: BSTI +7.51% vs EM -23.03%, Event Driven -11.77%, L/S Equity -11.43%; Oct 1998: BSTI -1.01% vs Global Macro -11.55%, Dedicated Short -8.69%; Oct 2008: BSTI +4.56% vs FI Arb -14.04%, Conv Arb -12.59%; Nov 2008: BSTI +2.06% vs Equity Market Neutral -40.45%",
+   "exhibit": "slide 6",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "BSTI vs worst HF style months",
+   "horizon": "months",
+   "direction": "CTAs as hedge for hedge fund portfolio",
+   "conditions": "liquidity crises (LTCM 1998, GFC 2008)",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP05-C07-1",
+   "chunk": "C07",
+   "speaker": "Robert E. Murray",
+   "quote": "negative skew distributions have thicker left tails than right",
+   "claim": "Skew measures asymmetry: negative skew means a thicker left (loss) tail, positive skew a thinner left tail.",
+   "claim_type": "construction",
+   "exact_rule": "skew = third standardized moment of monthly returns",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "skewness",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - definition",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "context"
+  },
+  {
+   "claim_id": "QP05-C07-2",
+   "chunk": "C07",
+   "speaker": "Robert E. Murray",
+   "quote": "Excess kurtosis of zero indicates the distribution has the realization of tail events occurring at about the same frequency as a normal distribution.",
+   "claim": "Kurtosis measures tail thickness; excess kurtosis above zero means more frequent tail events than a normal distribution.",
+   "claim_type": "construction",
+   "exact_rule": "excess kurtosis = fourth standardized moment - 3",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "excess kurtosis",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - definition",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "context"
+  },
+  {
+   "claim_id": "QP05-C08-1",
+   "chunk": "C08",
+   "speaker": "Robert E. Murray",
+   "quote": "Skew & Kurtosis of Hedge Fund Strategies",
+   "claim": "CTAs (BSTI) have slightly positive skew and almost normal tails, while arbitrage and market-neutral styles have strongly negative skew and fat tails.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "Barclay Systematic Traders Index (BSTI) monthly; CSFB/Tremont hedge fund sub-indices; S&P 500; MSCI EAFE; Lehman Brothers T-Bond Index; Jan 1994-Dec 2008",
+   "reported_result": "Skew / excess kurtosis 1994-2008: BSTI 0.22/0.18; Dedicated Short 0.78/1.73; Global Macro -0.03/3.04; L/S Equity 0.02/3.53; EM -0.74/4.64; Event Driven -2.70/14.79; Conv Arb -3.56/19.58; FI Arb -4.63/29.96; EMN -12.02/155.46",
+   "exhibit": "slide 8",
+   "mechanism": "risk_premium",
+   "asset_class": "multi",
+   "indicator": "skew, excess kurtosis",
+   "horizon": "months",
+   "direction": "prefer positive-skew CTAs",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP05-C08-2",
+   "chunk": "C08",
+   "speaker": "Robert E. Murray",
+   "quote": "Standard Deviation from Mean (z-score)",
+   "claim": "Counting monthly returns by z-score bucket, BSTI had no month below -4 sd and 8 months at +2 to +4 sd, while Equity Market Neutral had a -12 to -14 sd month.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "Months by z-score bucket (read from slide): BSTI -4..-2: 3, -2..0: 89, 0..2: 80, 2..4: 8; EMN -14..-12: 1, -2..0: 72, 0..2: 107; FI Arb -10..-8: 1, -6..-4: 2, -4..-2: 3; Conv Arb -8..-6: 2; Event Driven -8..-6: 1",
+   "exhibit": "slide 8",
+   "mechanism": "risk_premium",
+   "asset_class": "multi",
+   "indicator": "z-score histogram of monthly returns",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP05-C09-1",
+   "chunk": "C09",
+   "speaker": "Robert E. Murray",
+   "quote": "Positive autocorrelation of monthly returns leads to an increased volatility of annual returns.",
+   "claim": "Positive monthly autocorrelation makes annual volatility larger than sqrt(12) x monthly vol, so ignoring it understates risk.",
+   "claim_type": "mechanism",
+   "exact_rule": "Var(annual) = 12*var_m*(1 + 2*sum_k (1-k/12)*rho_k); positive rho -> higher annual vol",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "monthly return autocorrelation",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - statistical identity",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP05-C09-2",
+   "chunk": "C09",
+   "speaker": "Robert E. Murray",
+   "quote": "Negative autocorrelation of monthly returns leads to a decreased volatility of annual returns.",
+   "claim": "Negative monthly autocorrelation makes annual volatility smaller than the sqrt(12) scaling implies.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "monthly return autocorrelation",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - statistical identity",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP05-C09-3",
+   "chunk": "C09",
+   "speaker": "Robert E. Murray",
+   "quote": "Incorporating statistically significant autocorrelations of monthly returns is important to accurately measure annual volatility.",
+   "claim": "Annual volatility (and hence risk-adjusted ratios) should be computed including significant monthly autocorrelations.",
+   "claim_type": "construction",
+   "exact_rule": "Adjust annualised vol for statistically significant monthly autocorrelations (lags and significance test not stated)",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "autocorrelation-adjusted volatility",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP05-C10-1",
+   "chunk": "C10",
+   "speaker": "Robert E. Murray",
+   "quote": "The correlation between one month’s return and the previous month’s return.",
+   "claim": "One-month-lag autocorrelation is the correlation of each month's return with the prior month's return.",
+   "claim_type": "construction",
+   "exact_rule": "rho_1 = corr(r_t, r_{t-1}) on monthly returns",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "lag-1 autocorrelation",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - definition",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP05-C10-2",
+   "chunk": "C10",
+   "speaker": "Robert E. Murray",
+   "quote": "One Month Lag Autocorrelation",
+   "claim": "CTAs show no return smoothing (lag-1 autocorrelation -0.01), while illiquid styles show large positive autocorrelation.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "Barclay Systematic Traders Index (BSTI) monthly; CSFB/Tremont hedge fund sub-indices; S&P 500; MSCI EAFE; Lehman Brothers T-Bond Index; Jan 1994-Dec 2008",
+   "reported_result": "Lag-1 autocorrelation 1994-2008: BSTI -0.01; Global Macro 0.10; EMN 0.08; FI Arb 0.51; Event Driven 0.39; Conv Arb 0.57; L/S Equity 0.22; Dedicated Short 0.09; EM 0.32",
+   "exhibit": "slide 10",
+   "mechanism": "liquidity_flows",
+   "asset_class": "multi",
+   "indicator": "lag-1 autocorrelation",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP05-C11-1",
+   "chunk": "C11",
+   "speaker": "Robert E. Murray",
+   "quote": "Autocorrelation & Volatility",
+   "claim": "Adjusting volatility for autocorrelation raises the BSTI information ratio (0.72 to 0.93) and lowers it for all other hedge fund styles, most for event driven and convertible arbitrage.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "Barclay Systematic Traders Index (BSTI) monthly; CSFB/Tremont hedge fund sub-indices; S&P 500; MSCI EAFE; Lehman Brothers T-Bond Index; Jan 1994-Dec 2008",
+   "reported_result": "IR disregarding / incorporating autocorrelation / difference, 1994-2008: BSTI 0.72/0.93/+0.21; Global Macro 1.18/0.98/-0.20; EMN 0.51/0.43/-0.08; FI Arb 0.58/0.35/-0.23; Event Driven 1.57/1.02/-0.56; Conv Arb 0.80/0.43/-0.37; L/S Equity 0.95/0.74/-0.21; Dedicated Short -0.05/-0.05/-0.01; EM 0.42/0.33/-0.10",
+   "exhibit": "slide 11",
+   "mechanism": "liquidity_flows",
+   "asset_class": "multi",
+   "indicator": "autocorrelation-adjusted information ratio",
+   "horizon": "years",
+   "direction": "CTA risk-adjusted return understated by naive stats",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP05-C12-1",
+   "chunk": "C12",
+   "speaker": "Robert E. Murray",
+   "quote": "The weightings for each portfolio listed below have been optimized for different risk/return ratios.",
+   "claim": "Four hedge fund portfolios are optimized for different ratios (IR ignoring autocorrelation, IR with autocorrelation, Calmar, Sortino), apparently with 4%-20% weight bounds.",
+   "claim_type": "construction",
+   "exact_rule": "Optimise weights over BSTI + 9 CSFB/Tremont indices (incl. Multi-Strategy) to maximise (A) IR naive, (B) IR autocorrelation-adjusted, (C) Calmar, (D) Sortino; weights appear bounded 4%-20% (inferred), in-sample 1994-2008",
+   "data_needed": "Barclay Systematic Traders Index (BSTI) monthly; CSFB/Tremont hedge fund sub-indices; S&P 500; MSCI EAFE; Lehman Brothers T-Bond Index; Jan 1994-Dec 2008; CSFB/Tremont Multi-Strategy",
+   "reported_result": "",
+   "exhibit": "slide 12",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "optimised portfolio weights",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - replicable optimisation",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP05-C12-2",
+   "chunk": "C12",
+   "speaker": "Robert E. Murray",
+   "quote": "BARCLAY SYSTEMATIC TRADERS INDEX",
+   "claim": "The CTA index gets the maximum 20% weight in every optimisation except the naive-IR one (14%), and the autocorrelation-adjusted optimiser shifts weight toward CTAs and dedicated short.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "Weights A/B/C/D: BSTI 14/20/20/20%; Global Macro 4/4/20/6; EMN 4/4/4/4; Multi-Strategy 20/4/4/14; FI Arb 4/4/4/4; Event Driven 20/18/16/20; Conv Arb 4/4/4/4; L/S Equity 13/18/4/13; Dedicated Short 13/20/20/11; EM 4/4/4/4",
+   "exhibit": "slide 12",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "optimal weights",
+   "horizon": "years",
+   "direction": "allocate up to the cap to CTAs",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP05-C13-1",
+   "chunk": "C13",
+   "speaker": "Robert E. Murray",
+   "quote": "Comparison of Optimal Portfolios",
+   "claim": "Each portfolio wins on the ratio it optimised; the autocorrelation-adjusted IR portfolio (max CTA weight) has the best adjusted IR, and the naive-IR portfolio looks best only before adjusting for autocorrelation.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "A/B/C/D: IR naive 1.82/1.68/1.48/1.78; IR incl. autocorrelation 1.13/1.29/1.19/1.21; Calmar 0.48/0.59/0.69/0.54; Sortino 2.30/2.20/2.00/2.35 (in-sample 1994-2008)",
+   "exhibit": "slide 13",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "portfolio IR, Calmar, Sortino",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "in-sample optimisation",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  }
+ ],
+ "reasoning": {
+  "question": "Why should a hedge fund or traditional portfolio allocate to systematic global macro (CTAs), and do standard statistics capture their benefit?",
+  "thesis": {
+   "statement": "CTAs (BSTI) have low or negative correlation to equities and hedge fund styles, positive returns in crisis months, positive skew and no return smoothing; once autocorrelation is accounted for, their risk-adjusted return is better and other styles worse, so optimised hedge fund portfolios should hold CTAs at the maximum weight.",
+   "claim_ids": [
+    "QP05-C02-2",
+    "QP05-C04-1",
+    "QP05-C06-1",
+    "QP05-C08-1",
+    "QP05-C11-1",
+    "QP05-C12-2",
+    "QP05-C13-1"
+   ]
+  },
+  "foundations": [
+   {
+    "premise": "Smoothed (autocorrelated) monthly returns understate true volatility; correcting for it is needed for fair comparison.",
+    "type": "theoretical",
+    "stated": "stated",
+    "support": "statistical identity",
+    "claim_ids": [
+     "QP05-C09-1",
+     "QP05-C09-2",
+     "QP05-C09-3"
+    ]
+   },
+   {
+    "premise": "Investors value diversification most in down markets, so conditional (down-month) correlation and stress returns matter.",
+    "type": "assumed",
+    "stated": "implicit",
+    "support": "shown through conditional tables",
+    "claim_ids": [
+     "QP05-C04-1",
+     "QP05-C05-1"
+    ]
+   },
+   {
+    "premise": "Negative skew and fat tails are undesirable risks hidden by mean-variance statistics.",
+    "type": "theoretical",
+    "stated": "implicit",
+    "support": "definitions plus table",
+    "claim_ids": [
+     "QP05-C07-1",
+     "QP05-C07-2",
+     "QP05-C08-1"
+    ]
+   },
+   {
+    "premise": "BSTI is a fair proxy for systematic global macro.",
+    "type": "assumed",
+    "stated": "implicit",
+    "support": "none",
+    "claim_ids": [
+     "QP05-C03-1"
+    ]
+   }
+  ],
+  "mechanism_chain": [
+   {
+    "step": 1,
+    "from": "CTAs trade liquid futures marked daily",
+    "to": "no return smoothing (autocorrelation ~0)",
+    "why": "(reader) liquid pricing; authors only show the statistic",
+    "evidence": "test",
+    "claim_ids": [
+     "QP05-C10-2"
+    ]
+   },
+   {
+    "step": 2,
+    "from": "illiquid hedge fund styles",
+    "to": "smoothed returns, understated vol, overstated IR",
+    "why": "positive autocorrelation raises annual vol",
+    "evidence": "test",
+    "claim_ids": [
+     "QP05-C09-1",
+     "QP05-C10-2",
+     "QP05-C11-1"
+    ]
+   },
+   {
+    "step": 3,
+    "from": "equity / liquidity crises",
+    "to": "other styles fall together, CTAs gain or are flat",
+    "why": "(reader) trends develop in crises; authors show outcomes only",
+    "evidence": "test",
+    "claim_ids": [
+     "QP05-C04-1",
+     "QP05-C05-1",
+     "QP05-C06-1"
+    ]
+   },
+   {
+    "step": 4,
+    "from": "adjusted statistics",
+    "to": "optimiser assigns maximum weight to CTAs",
+    "why": "diversification and better adjusted IR",
+    "evidence": "test",
+    "claim_ids": [
+     "QP05-C12-1",
+     "QP05-C12-2",
+     "QP05-C13-1"
+    ]
+   }
+  ],
+  "design_rationale": [
+   {
+    "choice": "Adjust IR for statistically significant monthly autocorrelation",
+    "reason_given": "needed to measure annual volatility accurately",
+    "alternatives": "naive sqrt(12) scaling",
+    "sensitivity": "changes IR by -0.56 to +0.21; changes optimal weights",
+    "claim_ids": [
+     "QP05-C09-3",
+     "QP05-C11-1",
+     "QP05-C12-2"
+    ]
+   },
+   {
+    "choice": "Conditional up/down-month correlations",
+    "reason_given": "not given (implied: diversification matters in down markets)",
+    "alternatives": "unconditional correlation",
+    "sensitivity": "BSTI -0.15 all vs -0.31 down",
+    "claim_ids": [
+     "QP05-C04-1"
+    ]
+   },
+   {
+    "choice": "Optimise with several objectives (IR, adjusted IR, Calmar, Sortino) and weight bounds",
+    "reason_given": "different risk/return ratios",
+    "alternatives": "four objectives compared",
+    "sensitivity": "BSTI weight 14-20%; others shift",
+    "claim_ids": [
+     "QP05-C12-1",
+     "QP05-C13-1"
+    ]
+   }
+  ],
+  "evidence_map": [
+   {
+    "result": "BSTI corr -0.15 with S&P, -0.31 in down months",
+    "tests": "diversification premise",
+    "rules_out": "CTAs as hidden equity beta in 1994-2008",
+    "does_not_rule_out": "(reader) sample dominated by 2000-02 and 2008 bear markets where trend was short equities; results could differ in V-shaped crashes",
+    "strength": "moderate - 15 years, one index",
+    "claim_ids": [
+     "QP05-C03-2",
+     "QP05-C04-1"
+    ]
+   },
+   {
+    "result": "Positive BSTI in 15 of 19 S&P stress months and in worst HF months",
+    "tests": "crisis alpha",
+    "rules_out": "",
+    "does_not_rule_out": "(reader) selection of stress months not defined; small sample",
+    "strength": "moderate",
+    "claim_ids": [
+     "QP05-C05-1",
+     "QP05-C06-1"
+    ]
+   },
+   {
+    "result": "BSTI skew +0.22, kurtosis 0.18 vs arbitrage strategies strongly negative skew",
+    "tests": "tail-risk premise",
+    "rules_out": "",
+    "does_not_rule_out": "(reader) EMN -12 skew driven by one month (Nov 2008, likely index-specific event)",
+    "strength": "moderate",
+    "claim_ids": [
+     "QP05-C08-1",
+     "QP05-C08-2"
+    ]
+   },
+   {
+    "result": "Autocorrelation adjustment lifts BSTI IR 0.72 to 0.93 and cuts others",
+    "tests": "smoothing premise",
+    "rules_out": "",
+    "does_not_rule_out": "(reader) the BSTI lift with lag-1 rho -0.01 must come from other lags; lags/significance rule not given",
+    "strength": "moderate",
+    "claim_ids": [
+     "QP05-C11-1",
+     "QP05-C10-2"
+    ]
+   },
+   {
+    "result": "Optimised portfolios put 14-20% in BSTI",
+    "tests": "allocation conclusion",
+    "rules_out": "",
+    "does_not_rule_out": "(reader) entirely in-sample optimisation with bounds; no out-of-sample test",
+    "strength": "weak - in-sample",
+    "claim_ids": [
+     "QP05-C12-2",
+     "QP05-C13-1"
+    ]
+   }
+  ],
+  "regimes": [
+   {
+    "condition": "S&P 500 down months",
+    "effect": "CTA correlation turns more negative; other styles more positive",
+    "claim_ids": [
+     "QP05-C04-1",
+     "QP05-C04-2"
+    ]
+   },
+   {
+    "condition": "Liquidity crises (Aug/Oct 1998, Oct/Nov 2008)",
+    "effect": "CTAs positive or flat while arbitrage styles lose 10-40%",
+    "claim_ids": [
+     "QP05-C06-1"
+    ]
+   },
+   {
+    "condition": "Some stress months (Aug 1997, Sep 2000, Feb 2001, Apr 2002, Oct 1998)",
+    "effect": "CTAs also lost, modestly",
+    "claim_ids": [
+     "QP05-C05-1",
+     "QP05-C06-1"
+    ]
+   }
+  ],
+  "gaps_and_conflicts": [
+   {
+    "issue": "BSTI lag-1 autocorrelation is -0.01 yet its IR rises by 0.21 after adjustment; which lags and significance test were used is not stated",
+    "type": "conflict",
+    "claim_ids": [
+     "QP05-C10-2",
+     "QP05-C11-1",
+     "QP05-C09-3"
+    ]
+   },
+   {
+    "issue": "Stress-month selection rule for slide 5 not defined",
+    "type": "unspecified",
+    "claim_ids": [
+     "QP05-C05-1"
+    ]
+   },
+   {
+    "issue": "Optimiser constraints (apparent 4%-20% bounds), return/risk inputs and benchmark for IR not stated; Multi-Strategy appears only in the optimisation",
+    "type": "unspecified",
+    "claim_ids": [
+     "QP05-C12-1"
+    ]
+   },
+   {
+    "issue": "\"Positive annual returns for more than 20 years\" has no index or data shown",
+    "type": "data",
+    "claim_ids": [
+     "QP05-C02-1"
+    ]
+   },
+   {
+    "issue": "Hedge fund indices have survivorship/backfill biases; deck is marketing material from a CTA",
+    "type": "data",
+    "claim_ids": [
+     "QP05-C01-1",
+     "QP05-C03-1"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "other_idea": "hedge fund arbitrage styles (carry-like, short-volatility)",
+    "relation": "complement",
+    "why": "CTAs positively skewed and uncorrelated; arbitrage styles negatively skewed",
+    "claim_ids": [
+     "QP05-C08-1",
+     "QP05-C03-3"
+    ]
+   },
+   {
+    "other_idea": "Sharpe ratio critique (serial correlation, skew)",
+    "relation": "complement",
+    "why": "applies the autocorrelation and skew corrections to strategy comparison",
+    "claim_ids": [
+     "QP05-C09-3",
+     "QP05-C11-1"
+    ]
+   },
+   {
+    "other_idea": "discretionary global macro",
+    "relation": "complement",
+    "why": "only 0.37 correlation with BSTI",
+    "claim_ids": [
+     "QP05-C03-3"
+    ]
+   }
+  ],
+  "forward_looking_inputs": "(reader) No forecasting signal. The deck implies conditioning allocation on equity drawdowns is unnecessary because CTAs are naturally convex; for evaluating a macro book, measure down-month correlation, skew and autocorrelation-adjusted IR. The diversification would weaken in sharp V-shaped reversals or if CTA crowding raised correlation with equities.",
+  "reader_inferences": [
+   "(reader) The CTA crisis returns come from trend following (short equities / long bonds in prolonged bear markets), not stated in the deck.",
+   "(reader) Weight bounds of 4%-20% are inferred from the weight table.",
+   "(reader) The EMN Nov 2008 -40% is a single-index event that drives its -12 skew.",
+   "(reader) Up/down months are presumably defined by the sign of the S&P 500 monthly return."
+  ]
+ }
+}

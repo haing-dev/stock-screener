@@ -1,0 +1,640 @@
+---
+source_id: QP01
+title: "Economic Trend (AQR: Brooks, Feilbogen, Ooi, Akant, April 2023)"
+type: paper
+claims: 129
+opus_only: 19
+tags: [paper, layer0]
+---
+# Economic Trend (AQR: Brooks, Feilbogen, Ooi, Akant, April 2023)
+
+**Authors:** Jordan Brooks (AQR); Noah Feilbogen (AQR); Yao Hua Ooi (AQR); Adam Akant (AQR)
+
+**Summary:** Can trends in macro fundamentals (growth, inflation, trade, monetary policy, risk aversion) be traded like price trend across equities, bonds, rates, FX and commodities? Method: 12-month changes in five state variables mapped by fixed signs to 59 markets, equal-risk composites at 10% vol, 1970-2022 hypothetical backtest gross of costs. Result: Sharpe 1.1 with low correlation to stocks and bonds and gains in worst equity/bond drawdowns; a 50/50 blend with price trend gives Sharpe 1.5 vs 1.4 for price trend alone.
+
+## Argument map
+
+**Question:** Can an investor earn trend-following-like returns by positioning each equity, bond, rate, currency and commodity market on trends in macro fundamentals (growth, inflation, trade, monetary policy, risk aversion) instead of past prices, and does this diversify stocks, bonds and price trend, especially in drawdowns? It matters because trend-following is held mainly as drawdown protection and price trend alone fails in sharp reversals.
+
+**Thesis:** Because markets underreact to economic news, trading 12-month trends in five macro themes with theory-fixed signs earned a Sharpe ratio of about 1.1 (1970-2022, gross) with near-zero stock/bond correlation and gains in their worst drawdowns; capturing the same underreaction through different inputs, it is only moderately correlated with price trend (0.4), so a 50/50 blend (Sharpe 1.5) beats either alone in return and drawdown protection. ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C01-1|C01-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C01-2|C01-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C01-3|C01-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C01-4|C01-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-2|C06-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-4|C08-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-1|C09-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C12-1|C12-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C12-1|C12-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C12-4|C12-4]])
+
+### Foundations (premises)
+- Asset prices systematically underreact to new information, so news is incorporated gradually and creates trends. _[empirical, stated; support: citations: time series momentum evidence over 120+ years and single-stock underreaction studies; extended to index and bond markets by two studies]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C01-1|C01-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-2|C02-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-3|C02-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-6|C02-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-6b|C02-6b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C01-1|C01-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-R2b|C02-R2b]])
+- Underreaction has behavioural causes (biased belief updating, herding, extrapolation, disposition effect). _[behavioural, stated; support: citations to theory papers (Barberis-Shleifer-Vishny, Daniel-Hirshleifer-Subrahmanyam, Hong-Stein, Frazzini); not tested here]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-5|C02-5]])
+- For macro assets, the relevant news is mostly news about economic fundamentals, so price trends are only an indirect and sometimes misleading proxy for it. _[theoretical, stated; support: intuition]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C01-1|C01-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-10|C02-10]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-1|C03-1]])
+- Each theme has a stable, 'other things equal' sign of effect on each asset class (e.g. rising growth good for equities, rising inflation bad for bonds and good for the currency). _[theoretical, stated; support: economic channels with citations (cash flows, Balassa-Samuelson, Katz-Lustig, Clarida-Waldman, Bernanke-Kuttner, Eichenbaum-Evans, Campbell); said to be 'empirically verified' contemporaneously but no test is shown]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-4|C03-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-10|C04-10]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-7|C04-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-R1b|C04-R1b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-15|C04-15]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-6|C14-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-7|C14-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-8|C14-8]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-13b|C14-13b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-17b|C14-17b]])
+- If news has a persistent impact, the predictive sign of a news trend must equal its contemporaneous sign, so imposing that restriction limits data mining. _[theoretical, stated; support: logical argument]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-9|C04-9]])
+- Twelve-month changes in consensus forecasts (or, before 1991, realized data lagged one quarter, equivalent under a random walk) measure the news investors receive. _[assumed, stated; support: assertion; random-walk equivalence stated, not tested]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-2|C04-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-11|C04-11]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-6|C14-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-7|C14-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-6|C14-6]])
+- Large stock and bond drawdowns rarely come out of the blue; they are usually preceded by deteriorating fundamentals (growth, hawkish policy). _[empirical, stated; support: examples (GFC, 2018, 2022) and Exhibit 5]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-1|C08-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-2|C08-2]])
+- Prices can stay disconnected from fundamentals for prolonged periods (bubbles), and later re-couple. _[empirical, stated; support: example (Tech Bubble 1999-2000)]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-6|C03-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-3|C09-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-6|C09-6]])
+- Investors value trend-following mainly for positive returns in market drawdowns. _[institutional, stated; support: assertion]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-R2b|C03-R2b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C10-4|C10-4]])
+- Simple, long-history measures are less exposed to data mining, and a simple backtest understates what a richer real-time signal set could achieve. _[assumed, stated; support: intuition]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-2|C14-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-3b|C14-3b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C12-2|C12-2]])
+
+### Mechanism chain
+- 1. shift in economic fundamentals (news) → gradual price adjustment, i.e. price trends: investors underreact to news (behavioural reasons cited), so prices incorporate it slowly _[citation]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-3|C02-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C01-1|C01-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-5|C02-5]])
+- 2. underreaction → trailing trends in fundamentals predict subsequent returns, with the same sign as their contemporaneous effect: if news impact is persistent, part of it is still to come, so trading the news trend directly captures it without using price as a proxy _[assertion]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-7|C02-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-9|C04-9]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C01-1|C01-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-1|C03-1]])
+- 3. 12-month changes in five theme measures per country (consumption-weighted for commodities) → a long or short view in each equity, bond, rate, currency and commodity market: structural sign map per theme and asset class, motivated by economic channels _[citation]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-2|C03-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-7|C04-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-R1b|C04-R1b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-16|C04-16]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-4|C14-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-6|C14-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-7|C14-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-8|C14-8]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-13b|C14-13b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-15b|C14-15b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-17b|C14-17b]])
+- 4. many modestly profitable views across lowly correlated themes and asset classes → a high-Sharpe aggregate portfolio: theme and asset class composites have average pairwise correlation 0.06-0.07, so equal-risk diversification lifts the Sharpe ratio _[test]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-8|C06-8]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C07-2|C07-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C07-3|C07-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C07-4|C07-4]])
+- 5. deteriorating fundamentals before major stock or bond drawdowns → short positions already in place, so the strategy gains in those drawdowns: drawdowns tend to be precipitated by falling growth expectations or hawkish policy, which the growth and monetary themes register _[example]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-1|C08-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-2|C08-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-3|C08-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-4b|C08-4b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-7|C06-7]])
+- 6. same underreaction mechanism, different inputs (fundamentals vs prices) → positive but moderate correlation between economic and price trend: good fundamental news is followed by positive returns on average, so the two often agree, but not always _[test]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-11|C03-11]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-5b|C08-5b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-4|C08-4]])
+- 7. price trend wins in persistent moves and bubbles; economic trend wins in catalyst-driven reversals → the two draw down at different times: price trend loses at reversals almost by construction; economic trend loses when prices decouple from fundamentals _[example]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-13|C03-13]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-2|C09-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-3|C09-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-4|C09-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-6|C09-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-7|C09-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C10-3|C10-3]])
+- 8. moderate correlation plus complementary drawdown coverage → a 50/50 blend with higher Sharpe and better stress-period returns than either alone: pairing captures underreaction more fully and covers a wider range of bear markets _[test]_ ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-5|C08-5]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-1|C09-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C10-2|C10-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C11-1|C11-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C11-3|C11-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C12-4|C12-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C12-1|C12-1]])
+
+### Design rationale
+- **12-month trailing changes for every theme**: similar to Brooks (2017); avoids seasonality; lower turnover and trading costs than faster variants. Alternatives: faster variants mentioned, not shown. Sensitivity: not shown ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-1|C04-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-11|C04-11]])
+- **Theme-asset class signs fixed ex ante (asserted from theory, checked contemporaneously), never fitted for prediction**: persistent-impact premise implies equal contemporaneous and predictive signs; reduces data mining. Alternatives: estimating predictive signs (implied, not shown). Sensitivity: not shown ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-7|C04-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-9|C04-9]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-R1b|C04-R1b]])
+- **One simple signal per theme**: longest possible history and less data-mining risk; backtest is a proof of concept. Alternatives: broader real-time indicator set (mentioned as future work). Sensitivity: not shown ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C12-2|C12-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-2|C14-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-3b|C14-3b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C12-3|C12-3]])
+- **Directional (time-series) views only, dropping Brooks (2017) relative-value legs**: focus of this paper; directional views compare each asset only with its own history, which makes adding commodities warranted. Alternatives: Brooks (2017) including cross-sectional views. Sensitivity: not shown ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-9|C02-9]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-15|C03-15]])
+- **Commodities traded on consumption-weighted country signals**: signals apply to the consuming countries of each commodity. Alternatives: none mentioned. Sensitivity: not shown ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-16|C04-16]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-15|C03-15]])
+- **Data substitutions in early years (realized GDP/CPI lagged one quarter before 1991, IBOR before 1992, equity-only risk aversion before Dec 1987, Moody's Baa spread before Dec 2001 then HY OAS)**: data availability; realized-change substitute equals forecast change under a random walk. Alternatives: none. Sensitivity: not shown ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-11|C04-11]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-12|C04-12]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-13|C04-13]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-13|C04-13]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-6|C14-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-7|C14-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-6|C14-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-9|C14-9]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-10|C14-10]])
+- **Risk aversion = equal mix of 12-month equity excess return and 12-month credit spread change**: about half of equity return variation is discount-rate news (Campbell 1991); option-based measures lack coverage and history. Alternatives: option-implied risk aversion (rejected for data reasons). Sensitivity: not shown ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-5|C04-5]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-14|C04-14]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-15|C04-15]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-10|C14-10]])
+- **Equal risk at every level (positions, asset class-theme portfolios, composites), 3-year trailing covariance, 10% volatility target**: not given. Alternatives: none. Sensitivity: not shown ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C05-3|C05-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C05-4|C05-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C05-7|C05-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-3|C14-3]])
+- **Bond futures and short-rate futures treated as separate asset classes in the aggregate (25 portfolios) but combined at equal risk within fixed income**: not given. Alternatives: none. Sensitivity: not shown ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C05-2|C05-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C05-5|C05-5]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-5|C14-5]])
+- **Price trend benchmark = equal mix of 1-, 3-, 12-month excess returns with the same universe and construction**: follows Hurst, Ooi and Pedersen (2017). Alternatives: 12-month only. Sensitivity: 12-month only gives directionally similar results ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C05-6|C05-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C05-8|C05-8]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C15-1|C15-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-3|C14-3]])
+- **50/50 equal-risk blend of economic and price trend**: shared mechanism but moderate correlation and different drawdown timing. Alternatives: each standalone. Sensitivity: not shown (no other weights tested) ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-5|C08-5]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-1|C09-1]])
+- **Short-rate futures traded in the 2nd-4th contracts from expiry**: not given. Alternatives: none. Sensitivity: not shown ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-9|C06-9]])
+
+### Evidence map
+- Aggregate economic trend: 13.3%/yr over cash, 12.2% vol, Sharpe 1.1, correlation about 0 to S&P 500 and US 10-year bonds, 1970-2022, gross. Tests: step 2 (macro news trends predict returns) and foundation 1. Rules out: that the strategy is a disguised long stock or bond position. Does not rule out: (reader) exposure to other known premia (carry, value, price momentum inside the trade and risk aversion themes); hindsight in sign map and universe; realized-data revisions before 1991; costs (gross of fees and trading costs). Strength: moderate - 53 years and 59 markets, but hypothetical, gross, no t-stats or cost estimate ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-2|C06-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-6|C06-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-1|C14-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C16-1|C16-1]])
+- Positive in every decade (Sharpe 0.4 in 2010s to 1.6 in 1980s) and after Brooks (2017): 2017-2022 Sharpe 0.7, 2020-2022 Sharpe 1.2. Tests: persistence; that Brooks (2017) results were not in-sample overfit. Rules out: dependence on a single decade. Does not rule out: (reader) the out-of-sample window is six years dominated by one inflation and tightening shock made of short stock and bond positions; design was extended (commodities) after seeing earlier results. Strength: moderate - short out-of-sample, one regime ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-1|C06-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-5|C06-5]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-7|C03-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-10|C03-10]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-7|C06-7]])
+- Positive Sharpe in nearly every asset (USD AUD only slightly negative), every theme and every asset class; composites nearly uncorrelated (0.06-0.07). Tests: foundation 1 holds broadly in macro assets; step 4. Rules out: concentration in one market, theme or asset class. Does not rule out: (reader) per-asset Sharpe ratios of 0.1-0.5 are individually weak; a common factor (e.g. global rates or dollar) could drive many assets. Strength: moderate to strong - breadth across 59 markets ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-8|C06-8]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C07-1|C07-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C07-2b|C07-2b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C07-3b|C07-3b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C07-1|C07-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C07-1|C07-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C07-6b|C07-6b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C07-2|C07-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C07-3|C07-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C07-4|C07-4]])
+- Economic trend gained in each of the five worst S&P 500 drawdowns (avg about +60% vs about -39%) and five worst US 10-year Treasury drawdowns (avg about +39% vs about -14%). Tests: step 5 and foundation 7. Rules out: that the strategy loses in the classic stock or bond crises of the sample. Does not rule out: (reader) only five episodes each, chosen ex post; several overlap with inflation and tightening shocks (1973-74, 1979-81, 2022) where one macro driver explains both. Strength: weak to moderate - small n ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-3|C08-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-4b|C08-4b]])
+- Price-economic trend correlation about 0.3 per asset, 0.4 aggregate; 50/50 blend Sharpe 1.5 vs price trend 1.4 and economic trend 1.1. Tests: steps 6 and 8. Rules out: that economic trend is redundant with price trend. Does not rule out: (reader) a gain that any moderately correlated positive-Sharpe stream would give; in currencies and commodities the blend adds nothing over price trend. Strength: moderate ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-4|C08-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-1|C09-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-1|C09-1]])
+- Price trend averaged about +8% in economic trend's five worst drawdowns; economic trend about -1% in price trend's; Tech Bubble 1999-2000 and Oct 1987 as illustrations. Tests: step 7. Rules out: that the two strategies fail at the same times in the worst episodes. Does not rule out: (reader) episode selection; only some episodes match the authors' story. Strength: weak - five episodes each, narrative ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-4|C09-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-6|C09-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-7|C09-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C10-1|C10-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-4|C09-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C11-2b|C11-2b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-R1b|C09-R1b]])
+- 50/50 blend best on average in the five worst equity drawdowns (+68% vs +59% econ, +54% price) and bond drawdowns (+52% vs +47% price, +39% econ). Tests: step 8. Rules out: that blending dilutes crisis protection. Does not rule out: (reader) small n; averages driven by a few large episodes. Strength: weak to moderate - small n ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C10-2|C10-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C11-1|C11-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C11-3|C11-3]])
+- Contemporaneous signs said to be 'empirically verified'. Tests: foundation 4 (sign map). Rules out: . Does not rule out: (reader) that some signs are unstable over time or regime (e.g. stock-bond correlation sign changes). Strength: weak - asserted, no test reported ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-7|C04-7]])
+
+### Regimes
+- Prices disconnected from fundamentals for a prolonged period (bubbles, e.g. June 1999-Dec 2000) → economic trend loses (bearish bond, equity and dollar signals while markets rose) while price trend can profit; recovers when prices re-couple to news ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-6|C03-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-3|C09-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-6|C09-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-7|C09-7]])
+- Reversals or crashes preceded by an economic catalyst (e.g. Oct 1987) → price trend loses almost by construction; economic trend can profit with opposite positions ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-2|C09-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C11-2b|C11-2b]])
+- Drawdowns triggered by falling growth expectations or hawkish central banks (GFC, 2018, 2022) → economic trend profits; price trend does best in persistent drawdowns ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-2|C08-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-13|C03-13]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C10-3|C10-3]])
+- An asset class trending strongly over a short period → economic trend takes on a conditional correlation to it (2020-2022 profits from short equities and bonds) ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-7|C06-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-7|C06-7]])
+- High macro volatility (2018 sell-off, pandemic, 2021-22 inflation and tightening) → strong out-of-sample returns, exceptional in the 2022 stock-bond bear market ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-7|C03-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-10|C03-10]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-5|C06-5]])
+- 2010-2019 decade → weakest decade (4.1% at 9.9% vol, Sharpe 0.4); no explanation given ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-1|C06-1]])
+- Before 1991/1992 and before Dec 1987 → signals rely on realized data substitutes and equity-only risk aversion, so early results test a cruder version ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-11|C04-11]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-12|C04-12]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-13|C04-13]])
+
+### Gaps and conflicts
+- [conflict] Monetary policy signs: appendix says easing is bullish currencies and bearish fixed income, which conflicts with Exhibit 1 and economic logic (rising 2-year yield: currency +, bonds -). ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-15b|C14-15b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-4|C04-4]])
+- [conflict] Number of building blocks: 20 asset class-theme portfolios with fixed income combined (C05 text, footnote 9, appendix) vs 25 with bonds and short rates separate in the aggregate (footnote 10). ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C05-2|C05-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C05-5|C05-5]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-5|C14-5]])
+- [untested] Contemporaneous sign verification is claimed but no test or statistic is shown; signs could be regime-dependent. ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-7|C04-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-R1b|C04-R1b]])
+- [untested] Pre-1991 substitute assumes GDP growth and CPI inflation are random walks; equivalence never checked against post-1991 forecast data. ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-6|C14-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-6|C14-6]])
+- [data] Point-in-time handling unclear: realized data lagged one quarter but data revisions and vintages not discussed; forecast release timing not given. ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-6|C14-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-7|C14-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-11|C04-11]])
+- [unspecified] Unspecified construction details: signal-to-position mapping (sign only or magnitude, any scaling or z-scoring), how the two risk aversion inputs are standardised before combining, export weights for the trade basket, country consumption weights for commodities, rebalancing frequency. ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-4|C14-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-5|C04-5]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-3|C04-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-16|C04-16]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C05-3|C05-3]])
+- [unspecified] Results are gross of fees and trading costs; no turnover or cost estimate is given despite the low-turnover claim. ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-6|C06-6]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-11|C04-11]])
+- [unspecified] Inflation-commodity sign appears only in Exhibit 1, not in the appendix rationale. ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-7|C14-7]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-3b|C04-3b]])
+- [conflict] Part of the 'fundamental' signal is itself a price signal (equity momentum in risk aversion; trade theme in currencies is close to FX price momentum), which blurs the separation from price trend. ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-15|C04-15]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-8|C14-8]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C04-5|C04-5]])
+- [untested] Macro-asset underreaction evidence is thinner than single-stock evidence. ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-R2b|C02-R2b]])
+- [data] Backtest is not frozen (results may vary with run date; discounting factors may be applied to suspected anomalies). ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C16-2|C16-2]])
+- [data] Citation and data-list inconsistencies: Hurst-Ooi-Pedersen dated 2014 vs 2017, several cited works missing from references, aluminum and copper start dates missing. ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C13-1b|C13-1b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C15-6|C15-6]])
+- [untested] Weak 2010s decade left unexplained. ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-1|C06-1]])
+
+### Relations to other strategies
+- price trend (time series momentum): **complement**. same underreaction mechanism, different inputs; correlation 0.3-0.4; different drawdown timing; blend beats both ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C01-4|C01-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-11|C03-11]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-5b|C08-5b]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-4|C08-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-1|C09-1]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C09-4|C09-4]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C12-1|C12-1]])
+- Brooks (2017) macro momentum: **special case**. economic trend is its directional-only part, extended to commodities and to 2017-2022 ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-8|C02-8]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-9|C02-9]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C03-7|C03-7]])
+- macromomentum in international equity indices (Bhojraj-Swaminathan 2006): **complement**. prior evidence of macro underreaction in equity indices, the equity leg of this strategy ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-6|C02-6]])
+- post-FOMC announcement drift in bonds (Brooks-Katz-Lustig 2018): **special case**. documented underreaction of fixed income to monetary policy surprises, the monetary policy theme in bonds ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C02-6b|C02-6b]])
+- FX price momentum: **special case**. the trade theme in currencies (depreciation bearish the currency) is very similar to price momentum ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C14-8|C14-8]])
+- traditional risk premia (stocks, bonds): **complement**. near-zero long-run correlation and gains in their worst drawdowns ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C01-3|C01-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C06-2|C06-2]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-3|C08-3]], [[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C08-4b|C08-4b]])
+- risk mitigation / crisis-alpha allocations: **complement**. price plus economic trend outperforms in a diverse variety of drawdown environments ([[QP01 - Economic Trend (AQR Brooks, Feilbogen, Ooi, Akant, April 2023)#^QP01-C10-4|C10-4]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Observable inputs: 12-month changes in consensus real GDP and CPI forecasts, 12-month change in the export-weighted exchange rate, 12-month change in 2-year yields, and the equal mix of 12-month equity excess return and credit-spread change, per country (consumption-weighted for commodities), mapped by the Exhibit 1 signs. Through step 2 (underreaction) they are said to lead returns of equity index, bond, short-rate, currency and commodity futures over the following months (monthly rebalanced; the decay horizon of the edge is not measured). They would stop working if markets absorbed macro news faster (more capital in macro systematic strategies), if prices stay decoupled from fundamentals for long periods (bubbles), if the sign map breaks (e.g. a change in the stock-bond correlation regime or in central bank credibility changes how inflation news moves equities, bonds and currencies), or in low macro-volatility periods like the 2010s.
+
+### Reader inferences (not stated by the authors)
+- (reader) Rebalancing is monthly; the paper reports monthly returns but never states the trading frequency.
+- (reader) Positions appear to be taken by direction of the theme change; whether signal magnitude scales positions is not stated.
+- (reader) The monetary policy sign text in the appendix is likely a wording slip; Exhibit 1 and economic logic should be trusted.
+- (reader) Equity momentum in the risk aversion theme and the trade theme in currencies make part of 'economic trend' a price-based signal, which may account for some of the correlation with price trend.
+- (reader) Drawdown evidence is based on five ex-post chosen episodes per asset and overlaps with inflation shocks, so it is suggestive, not conclusive.
+- (reader) The 2017-2022 out-of-sample result is concentrated in one inflation-and-tightening regime (short stocks and bonds 2020-2022).
+- (reader) Pre-1991 realized-data signals may contain revised data that was not known at the time, adding look-ahead not discussed in the paper.
+- (reader) Sign stability across regimes (e.g. positive vs negative stock-bond correlation eras) is an untested assumption of the fixed sign map.
+- (reader) Net-of-cost performance is unknown; the low-turnover claim is not quantified.
+
+## Claims
+
+### C01 (page 1)
+- Economic trend profits because news about fundamentals has a persistent price impact, so positioning on trends in macro fundamentals earns the drift. _(mechanism, mechanism_step)_ #mech/slow_reaction
+  > tendency for new information to have a persistent impact on asset prices by positioning in each market on the basis of trends in macroeconomic fundamentals
+  exhibit: Executive Summary
+  ^QP01-C01-1
+- Authors report consistently attractive risk-adjusted returns over 50+ years, pervasive across markets and themes (measures). _(result, conclusion)_ #mech/slow_reaction
+  > returns over a 50+ year sample, and performance is pervasive across both markets and measures
+  reported_result: 50+ year sample (Jan 1970-Dec 2022); headline numbers in Exhibit 2-4 · exhibit: Executive Summary
+  ^QP01-C01-2
+- Economic trend has low average correlation to traditional risk premia and does well in drawdowns of equities and bonds. _(result, conclusion)_ #mech/risk_management
+  > It exhibits low correlation to traditional risk premia on average and tends to perform exceptionally well during drawdown periods for traditional asset classes
+  reported_result: Qualitative here; numbers in Exhibit 2 and Exhibits 5, 8, 9 · exhibit: Executive Summary
+  ^QP01-C01-3
+- Economic trend and price trend-following are close relatives (both exploit under-reaction) yet complementary; blending them improves Sharpe and drawdown protection versus price trend alone. _(result, conclusion)_ #mech/risk_management
+  > the two strategies are highly complementary. Combining the two leads to improved risk-adjusted performance and more robust drawdown protection than price
+  reported_result: Total Sharpe 1.1 econ / 1.4 price / 1.5 blend (Exhibit 6) · exhibit: Executive Summary; Exhibit 6
+  ^QP01-C01-4
+
+### C02 (page 2)
+- Price trend-following is defined as time-series momentum: long assets with recent positive returns, short assets with recent negative returns. _(construction)_ #mech/slow_reaction
+  > Trend-following is based on time series momentum
+  exact_rule: Long assets with positive trailing return, short assets with negative trailing return (time series momentum). · data_needed: Asset returns
+  ^QP01-C02-1
+- Price trend-following has earned consistent positive returns across many assets for more than 120 years. _(citation, premise)_ #mech/slow_reaction
+  > has been documented to generate consistent positive returns across a wide range of assets over more than 120 years
+  reported_result: Cites Moskowitz, Ooi and Pedersen (2012); Lemperiere et al. (2014); Hurst, Ooi and Pedersen (2017) · exhibit: footnote 2
+  ^QP01-C02-2
+- Trend profitability comes from systematic under-reaction of prices to new information, so positioning on recent trends profits as prices gradually adjust. _(mechanism, premise)_ #mech/slow_reaction
+  > Its persistent profitability stems from the tendency of asset prices to systematically underreact to new information
+  ^QP01-C02-3
+- Footnote 2 cites three papers (Moskowitz-Ooi-Pedersen 2012; Lemperiere et al. 2014; Hurst-Ooi-Pedersen 2017) as evidence that time series momentum works across assets over very long samples. _(citation)_ #mech/slow_reaction
+  > See Moskowitz, Ooi, and Pedersen (2012), Lemperiere, Deremble, Seager, Potters, and Bouchaud (2014), and Hurst, Ooi, and Pedersen (2017).
+  exhibit: footnote 2
+  ^QP01-C02-4
+- Footnote 3 lists behavioural/theory papers on under-reaction (Barberis-Shleifer-Vishny 1998; Daniel-Hirshleifer-Subrahmanyam 1998; Hong-Stein 1999; Frazzini 2006) and offers herding and extrapolation of recent moves as possible explanations. _(citation, premise)_ #mech/behavioral
+  > Possible explanations of market reactions include herding and extrapolation of recent market movements.
+  exhibit: footnote 3
+  ^QP01-C02-5
+- Footnote 4 notes under-reaction evidence is mostly in single stocks (Chan-Jegadeesh-Lakonishok 1996; Chan 2003; Frazzini 2006; Sinha 2016), with fewer macro-asset studies: Bhojraj and Swaminathan (2006) for international equity indices and Brooks, Katz and Lustig (2018) showing persistent bond-market under-reaction to monetary policy surprises. _(citation, premise)_ #mech/slow_reaction
+  > Many studies focus on underreaction in single-name equities
+  exhibit: footnote 4
+  ^QP01-C02-6
+- Because prices under-react to news, one can trade trends in fundamentals directly instead of price trends as a proxy for news. _(mechanism, mechanism_step)_ #mech/slow_reaction
+  > investing on the basis of trends in fundamentals directly, as opposed to using price trends as a proxy for new information
+  ^QP01-C02-7
+- Brooks (2017) 'macro momentum' is the precursor strategy and showed efficacy 1970-2016; the current paper extends it to 2017-2022 out of sample. _(citation, context)_ #mech/slow_reaction
+  > describes a broad approach to fundamental trend investing, called “macro momentum,” and presents evidence of its efficacy from 1970 through 2016
+  reported_result: Original evidence 1970-2016 (Brooks 2017)
+  ^QP01-C02-8
+- The economic trend strategy is the directional (outright long/short, no relative-value cross-section) version of Brooks (2017) macro momentum. _(construction, design_choice)_ #mech/slow_reaction
+  > we extend the original strategy described in Brooks (2017) and focus solely on its directional implementation
+  exact_rule: Each asset is positioned long or short on its own signal sign; no cross-sectional ranking.
+  ^QP01-C02-9
+- Price trend uses returns because they are continuous, available and need only a horizon, but returns are only an indirect proxy for fundamental news. _(mechanism, mechanism_step)_ #mech/slow_reaction
+  > Returns are a convenient indicator. They’re continuous, readily available, and require little by way of modeling beyond specifying a horizon.
+  ^QP01-C02-10
+- Price trend-following is the core style of a managed futures industry with about $198bn of assets at end-2022, indicating the scale of capital already deployed in trend. _(implementation, context, Opus only)_ #mech/crowding_positioning
+  > the managed futures industry, which had $198 billion in aggregate assets at the end of 2022.
+  reported_result: $198 billion aggregate managed futures AUM at end of 2022 (source eVestment, footnote 1) · exhibit: footnote 1
+  ^QP01-C02-1b
+- Brooks, Katz and Lustig (2018) show bond markets underreact persistently to monetary policy (FOMC) surprises (post-FOMC announcement drift), evidence of macro underreaction in rates. _(citation, premise, Opus only)_ #mech/policy_reaction
+  > Brooks, Katz, and Lustig (2018), which documents persistent underreaction of fixed income markets to monetary policy surprises.
+  exhibit: footnote 4
+  ^QP01-C02-6b
+- Most direct evidence of underreaction comes from single stocks; evidence for macro assets (index, bond, FX, commodity markets) is thinner, so the foundation is less established for the assets this strategy trades. _(caveat, qualifier, Opus only)_ #mech/slow_reaction
+  > There have been fewer studies on macro asset underreaction
+  ^QP01-C02-R2b
+
+### C03 (page 3)
+- Returns are an indirect and sometimes misleading reflection of fundamental news, which is why economic trend models news directly. _(caveat, mechanism_step)_ #mech/slow_reaction
+  > indirect reflection of fundamental news—one that can at times be misleading
+  ^QP01-C03-1
+- First requirement of real-time economic trend: identify the fundamental variables that drive each asset's price (e.g. inflation expectations for bonds). _(construction, design_choice)_ #mech/slow_reaction
+  > identifying the relevant fundamental variables that drive each asset’s price (e.g., inflation expectations impact bond prices)
+  exact_rule: Step 1: choose fundamental state variables per asset (here: growth, inflation, trade, monetary policy, risk aversion).
+  ^QP01-C03-2
+- Second requirement: measure the trend in each fundamental variable in real time for each market. _(construction)_ #mech/slow_reaction
+  > modeling trends in these fundamental variables in real-time (e.g., measuring real-time trends in inflation expectations for each market)
+  exact_rule: Step 2: compute a trailing trend (12-month change) of each state variable per market, using information available at the time. · data_needed: Real-time macro forecasts/data
+  ^QP01-C03-3
+- Third requirement: a sign mapping from each fundamental trend to each asset class (e.g. rising inflation expectations bearish stocks and bonds, bullish currency). _(construction, mechanism_step)_ #mech/slow_reaction
+  > a structural mapping from fundamental trends to asset prices (e.g., increasing inflation expectations in a country is bad news for its stock and bond markets, good news for its currency, etc.)
+  exact_rule: Step 3: fixed theme x asset-class sign matrix (Exhibit 1). · exhibit: Exhibit 1
+  ^QP01-C03-4
+- Economic trend takes no position where price moves are not backed by fundamental news, unlike price trend. _(mechanism, design_choice)_ #mech/slow_reaction
+  > Unlike price trend, economic trend will not invest where price action isn’t supported by underlying fundamental news.
+  conditions: Differs from price trend: position follows fundamentals, not prices
+  ^QP01-C03-5
+- Economic trend loses when prices decouple from fundamentals and profits again when prices respond to fundamental news. _(caveat, qualifier)_ #mech/slow_reaction
+  > The strategy will suffer when returns are disconnected from changes in fundamentals (as can happen) but will generate profits when asset prices begin to cue off fundamental news again.
+  conditions: Fails when returns are disconnected from fundamentals (e.g. Tech Bubble, see Exhibit 7)
+  ^QP01-C03-6
+- The stylized strategy reuses the Brooks (2017) macro signals but adds commodities to the universe and tests 2017-2022 out of sample. _(construction, design_choice)_ #mech/slow_reaction
+  > uses a similar set of signals to capture macroeconomic state variables as Brooks (2017) but extends the strategy to incorporate a broad set of commodity markets
+  exact_rule: Universe = equities, bonds, short rates, currencies, commodities; signals as Brooks (2017). · exhibit: C03 text
+  ^QP01-C03-7
+- The 2017-2022 out-of-sample window is described as macro-volatile: 2018 equity sell-off, pandemic, then global inflation and policy tightening. _(robustness)_ #mech/slow_reaction
+  > the equity market sell-off of 2018, the global pandemic, and the subsequent emergence of global inflation and associated monetary policy response
+  reported_result: Out-of-sample window Jan 2017-Dec 2022 · conditions: Out-of-sample relative to Brooks (2017), but signal design was set in advance only loosely (same signals)
+  ^QP01-C03-8
+- Authors summarise attractive risk-adjusted returns 1970-2022, low correlation to traditional markets, strong drawdown performance. _(result)_ #mech/risk_management
+  > adjusted returns across asset classes from 1970 to 2022, with low correlation to traditional markets and strong performance during equity and bond market drawdowns
+  reported_result: See Exhibit 2 (Sharpe 1.1 full sample) and Exhibits 5, 8, 9 · exhibit: Exhibit 2; Exhibit 5
+  ^QP01-C03-9
+- Economic trend kept performing in the out-of-sample period 2017 onward and earned exceptional returns in the 2022 stock and bond bear market. _(result, evidence)_ #mech/policy_reaction
+  > sample period from 2017 onward and delivered exceptional returns during the stock and bond bear market of 2022
+  reported_result: Jan 2017-Dec 2022: 8.4% excess return, Sharpe 0.7 (Exhibit 2); Jan 2022-Sep 2022 equity drawdown window about +49% (Exhibit 5, chart read) · exhibit: Exhibit 2; Exhibit 5
+  ^QP01-C03-10
+- Shared under-reaction mechanism makes economic and price trend positively but modestly correlated. _(mechanism, mechanism_step)_ #mech/slow_reaction
+  > Because they share a common mechanism, economic trend and price trend tend to be positively, though modestly, correlated.
+  reported_result: Correlation about 0.3 asset level, 0.4 aggregate (C08)
+  ^QP01-C03-11
+- A combined price plus economic trend strategy has better risk-adjusted results than either alone (note: Exhibit 6 shows blend does not beat price trend in currencies or commodities). _(result)_ #mech/slow_reaction
+  > strategy that combines price and economic trends thus outperforms either approach standalone
+  reported_result: Total Sharpe 1.5 blend vs 1.4 price, 1.1 econ (Exhibit 6) · exhibit: Exhibit 6
+  ^QP01-C03-12
+- Price trend wins in persistent drawdowns, economic trend in drawdowns with an identifiable economic catalyst, so the two cover different stress scenarios. _(mechanism, mechanism_step)_ #mech/risk_management
+  > Price trend tends to perform well in drawdowns that are persistent. Economic trend tends to perform well in drawdowns that have economic catalysts.
+  conditions: Persistent decline -> price trend; economic catalyst -> economic trend
+  ^QP01-C03-13
+- Commodities were excluded from Brooks (2017) because cross-sectional relative-value views are less intuitive; the directional design makes adding them reasonable. _(construction)_ #mech/slow_reaction
+  > Brooks (2017) excludes commodities in part because relative-value view construction in commodities is less intuitive
+  exhibit: footnote 5
+  ^QP01-C03-14
+- Directional views compare an asset's mapped economic change only to its own time series, so commodities can be included. _(construction, design_choice)_ #mech/slow_reaction
+  > we believe adding commodities to the universe is warranted.
+  exact_rule: Commodity signals use consumption-weighted country signals; time-series (own-history) comparison only. · exhibit: footnote 5
+  ^QP01-C03-15
+- Investors value trend-following mainly for positive returns during market drawdowns, which is why the paper judges economic trend and the blend largely by drawdown performance. _(implementation, premise, Opus only)_ #mech/risk_management
+  > The appeal of trend-following strategies largely stems from their tendency to provide positive returns during market drawdowns.
+  ^QP01-C03-R2b
+
+### C04 (page 4)
+- All five economic-trend signals are simple 12-month trailing changes. _(construction, design_choice)_ #mech/slow_reaction
+  > Our economic trend backtest uses simple 12-month trailing indicators, similar to Brooks (2017)
+  exact_rule: Signal_t = value_t minus value_(t-12 months) for each theme variable; sign mapped per Exhibit 1. · exhibit: Exhibit 1
+  ^QP01-C04-1
+- Growth signal = 12-month change in GDP growth forecast; inflation signal = 12-month change in CPI inflation forecast. _(construction, design_choice)_ #mech/slow_reaction
+  > For both growth and inflation, we use 12-month changes in GDP growth forecasts and CPI inflation forecasts.
+  exact_rule: growth_signal = GDPforecast_t - GDPforecast_(t-12m); inflation_signal = CPIforecast_t - CPIforecast_(t-12m); country-level. · data_needed: Consensus Economics GDP and CPI forecasts (from 1991); OECD GDP and CPI realised (before) · exhibit: Exhibit 1; footnote 6
+  ^QP01-C04-2
+- International trade signal = 12-month change in local currency vs export-weighted basket (depreciation = positive trade-competitiveness signal for equities). _(construction, design_choice)_ #mech/slow_reaction
+  > we use 12-month changes in the local spot FX rate against an export-weighted basket.
+  exact_rule: trade_signal = -(12m % change in local currency vs export-weighted basket) i.e. depreciation positive; mapped by Exhibit 1. · data_needed: Spot FX and export-weight basket (DataStream) · exhibit: Exhibit 1
+  ^QP01-C04-3
+- Monetary policy signal = 12-month change in 2-year bond yield (IBOR before 1992). _(construction, design_choice)_ #mech/slow_reaction
+  > We measure monetary policy trends using 12-month changes in short term bond yields.
+  exact_rule: mp_signal = y2_t - y2_(t-12m); rising yield = tightening trend. · data_needed: 2-year government yields (Bloomberg); IBOR rates before 1992 · exhibit: Exhibit 1; footnote 7
+  ^QP01-C04-4
+- Risk aversion signal = equal-weighted combination of 12-month equity return and (negative) 12-month change in credit spreads. _(construction, design_choice)_ #mech/slow_reaction
+  > And we measure risk aversion trends using an equal weighted combination of 12-month trailing equity market returns and 12-month changes in credit spreads.
+  exact_rule: risk_signal = 0.5*z(12m equity excess return) + 0.5*z(-12m change in credit spread); equity-only before Dec 1987 (standardisation of the two legs is not specified). · data_needed: Equity index returns (DataStream); Moody's Baa-10Y CMT spread to 2001; Bloomberg Global High Yield index after · exhibit: Exhibit 1; footnote 8
+  ^QP01-C04-5
+- Sign matrix: rising growth forecast is + for equities, - bonds, + currencies, + commodities; rising inflation forecast - equities, - bonds, + currencies, + commodities; export-weighted FX depreciation + equities, - bonds, - currencies, - commodities; rising 2y yield - equities, - bonds, + currencies, - commodities; strong equity return/narrowing spreads + equities, - bonds, + currencies, + commodities. _(construction)_ #mech/slow_reaction
+  > Exhibit 1: Summary of Economic Trend Signals
+  exact_rule: Position sign = (signal change direction) x matrix sign. Growth(E+,FI-,FX+,Cmd+); Inflation(E-,FI-,FX+,Cmd+); Trade(E+,FI-,FX-,Cmd-); Monetary(E-,FI-,FX+,Cmd-); RiskAversion(E+,FI-,FX+,Cmd+). Commodities use consumption-weighted signals over consuming countries. · data_needed: As per five themes · exhibit: Exhibit 1
+  ^QP01-C04-6
+- Signs are fixed in advance from theory and verified contemporaneous return/news relationships, not fit to predictive performance. _(construction, design_choice)_ #mech/research_method
+  > The signs of these relationships are based on theoretically motivated and empirically verified “other things equal” contemporaneous relationships between returns and news about each theme.
+  ^QP01-C04-7
+- If news has persistent price impact, the contemporaneous sign of news on returns equals the predictive sign, so contemporaneous relationships can fix the sign of the signals. _(mechanism)_ #mech/slow_reaction
+  > Economic trend is built on the premise that news tends to have a persistent impact on asset prices, which implies that contemporaneous and predictive relationships between returns and news must have the same sign.
+  ^QP01-C04-8
+- The same-sign restriction limits data mining: a state variable is only tradable if its news has a same-sign contemporaneous return impact. _(robustness, design_choice)_ #mech/research_method
+  > This restriction reduces the scope for data mining in a real-world setting: to trade on economic trends, you must demonstrate that news about the state variable has a contemporaneous impact on returns of the same sign.
+  exact_rule: Admit a state variable only if the contemporaneous return response to its change has the sign used for prediction.
+  ^QP01-C04-9
+- Examples of the contemporaneous mapping: strong equity performance goes with declining inflation, easier policy, better trade competitiveness and lower risk aversion; growth increases are good for equities. _(mechanism, mechanism_step)_ #mech/slow_reaction
+  > performance is associated with declining inflation, expansionary monetary policy trends, improving trade competitiveness, and declining risk aversion
+  ^QP01-C04-10
+- Before 1991 (forecasts unavailable for many countries) realised 12-month changes in GDP growth and CPI inflation replace forecast changes; 12-month changes avoid seasonality and imply lower turnover and costs than faster variants. _(construction, design_choice)_ #mech/slow_reaction
+  > Therefore, in this period we use 12-month changes in GDP growth and CPI inflation instead.
+  exact_rule: 1970-1990: growth/inflation signal = 12m change in YoY real GDP growth / YoY CPI (lagged one quarter, see C14). From 1991: 12m change in consensus forecast. · data_needed: OECD GDP and CPI · exhibit: footnote 6 · conditions: Data substitution by period
+  ^QP01-C04-11
+- Monetary-policy signal uses changes in IBOR rates through 1991 and 2-year yields afterwards. _(construction, design_choice)_ #mech/slow_reaction
+  > From 1970 through 1991 we use changes in IBOR rates instead of two-year bond yields. This is due to data availability.
+  exact_rule: 1970-1991: 12m change in IBOR rates; 1992 on: 12m change in 2-year government yield. · data_needed: IBOR / Libor series, 2y yields · exhibit: footnote 7
+  ^QP01-C04-12
+- Risk aversion is equity momentum only until Nov 1987, then equal weight of equity momentum and credit-spread change; credit proxy is Moody's Baa minus 10Y CMT before Dec 2001, then Bloomberg Global High Yield Corporate index. _(construction, design_choice)_ #mech/slow_reaction
+  > From 1970 through November 1987 risk aversion is represented entirely by 12-month equity market momentum.
+  exact_rule: Jan 1970-Nov 1987: risk = 12m equity return. Dec 1987-Nov 2001: 50% 12m equity return + 50% 12m change in (Baa yield - 10Y CMT). From Dec 2001: spread leg = Bloomberg Global High Yield Corporate index (unhedged). · data_needed: Moody's Seasoned Baa yield, 10Y CMT, Bloomberg Global High Yield Corporate index · exhibit: footnote 8 · conditions: Data substitution by period
+  ^QP01-C04-13
+- Option-implied risk-aversion measures would be more appealing but lack the coverage and history needed for a 50-year backtest. _(caveat, qualifier)_ #mech/research_method
+  > It is possible to extract more theoretically appealing measures of risk aversion using asset prices (e.g. options) but there is insufficient asset coverage and history to utilize this data here.
+  exhibit: footnote 8
+  ^QP01-C04-14
+- Campbell (1991): about half of equity return variation reflects discount-rate changes, motivating equity momentum as a risk-aversion proxy. _(citation, premise)_ #mech/risk_premium
+  > Campbell (1991) shows that approximately 50% of the variation in equity returns is driven by discount rates which motivates the inclusion of equity market momentum within the risk aversion theme.
+  exhibit: footnote 8
+  ^QP01-C04-15
+- Commodity positions use consumption-weighted country signals (weights are consuming countries of that commodity). _(construction, design_choice)_ #mech/slow_reaction
+  > in commodities we use consumption-weighted signals across all themes (i.e., the signals apply to consuming countries of that commodity).
+  exact_rule: Commodity signal_t = sum_over_consumer_countries(w_c * theme_signal_c,t), w_c = consumption share; then sign per Exhibit 1. · data_needed: Commodity consumption shares by country · exhibit: Exhibit 1 note
+  ^QP01-C04-16
+- Inflation theme = 12-month change in CPI inflation forecasts; rising forecasts are bearish equities and fixed income, bullish currencies and commodities. _(construction, design_choice, Opus only)_ #mech/slow_reaction
+  > Increasing CPI inflation forecasts
+  exact_rule: inflation signal_c = CPIforecast_c(t) - CPIforecast_c(t-12m); sign map (Exhibit 1, read from page image): equities -, fixed income -, currency +, commodities + · data_needed: consensus CPI inflation forecasts (Consensus Economics from 1991); before that realized YoY CPI lagged one quarter (OECD) · exhibit: Exhibit 1
+  ^QP01-C04-3b
+- The theme-to-asset-class signs are asserted a priori (e.g. rising growth is good for equities) rather than estimated from predictive regressions. _(construction, design_choice, Opus only)_ #mech/slow_reaction
+  > For each theme, we assert a relationship with returns in each asset class. For example, increasing growth is good news for equity markets.
+  exact_rule: sign(theme, asset class) fixed ex ante per Exhibit 1; position direction = sign x direction of the 12-month theme change
+  ^QP01-C04-R1b
+
+### C05 (page 5)
+- Universe: 15 equity index futures, 9 bond futures, 7 short-rate futures, 8 currency forwards, 20 commodity futures (59 markets). _(construction, design_choice)_ #mech/slow_reaction
+  > Our asset universe includes 15 global equity futures, 9 bond futures, 7 interest rate futures, 8 currency forwards, and 20 commodity futures.
+  exact_rule: Universe lists in C15 and Exhibit 3. · data_needed: Futures/forward return series (Bloomberg, Citi, Reuters, IFS, DataStream) · exhibit: C05; C15
+  ^QP01-C05-1
+- Build one portfolio per theme x asset class (5 x 4 = 20). _(construction, design_choice)_ #mech/slow_reaction
+  > For each of the five economic themes we create a portfolio for each of the four asset classes, leaving us with 20 asset class-theme portfolios
+  exact_rule: Within each theme-asset class portfolio: each asset gets a view from the theme signal, equal risk to each view, scaled to constant vol using 3-year trailing covariance. · exhibit: footnote 9
+  ^QP01-C05-2
+- Within an asset-class/theme portfolio each asset view gets equal risk and the portfolio is scaled to constant vol with a trailing 3-year covariance matrix; bond and rate futures are combined into fixed-income theme portfolios. _(construction, design_choice)_ #mech/risk_management
+  > These asset class-theme portfolios allocate equal risk to individual asset views (within an asset class) and are scaled to constant volatility at each point in time using a 3-year trailing covariance matrix.
+  exact_rule: Weights proportional to sign / sigma_i with portfolio vol target from trailing 36-month covariance; target level 10% (see composites). · data_needed: 3-year trailing return covariance · exhibit: footnote 9
+  ^QP01-C05-3
+- Three composites: asset class composite (all themes equal risk within one asset class), theme composite (one theme across asset classes) and aggregate composite (equal risk across all asset class-theme portfolios). _(construction, design_choice)_ #mech/slow_reaction
+  > We aggregate these asset class-theme portfolios into equal risk-weighted composite portfolios.
+  exact_rule: Aggregate = equal risk-weighted across asset class-theme portfolios; rescaled to 10% vol. · exhibit: C05
+  ^QP01-C05-4
+- In the aggregate, bonds and short rates count as separate asset classes, so the composite combines 25 (5 themes x 5 asset classes) portfolios; the 'fixed income' bars combine the two at equal risk. _(construction, design_choice)_ #mech/slow_reaction
+  > for the purposes of the aggregate portfolios, we treat bond futures and short-term interest rate futures as separate asset classes (i.e., the economic trend-following composite uses 25 asset class-theme portfolios).
+  exact_rule: Aggregate = equal risk over 5 themes x {equity, bond, short rate, FX, commodity}. · exhibit: footnote 10
+  ^QP01-C05-5
+- Price trend benchmark: equal-weighted 1m, 3m and 12m trailing excess returns as signals; same universe and construction as economic trend. _(construction, design_choice)_ #mech/slow_reaction
+  > weighted combination of 1-month, 3-month, and 12-month trailing asset returns as factors
+  exact_rule: Price signal = equal-weight combination of sign (or scaled value) of 1m, 3m and 12m trailing excess return, per Hurst-Ooi-Pedersen (2017). · data_needed: Asset excess returns · exhibit: footnote 11
+  ^QP01-C05-6
+- All composites (economic and price trend) are scaled to 10% annual volatility using a trailing 3-year covariance matrix. _(construction, design_choice)_ #mech/risk_management
+  > target 10% constant volatility at each point in time using a trailing 3-year covariance matrix.
+  exact_rule: Scale composite so predicted annual vol = 10% using covariance estimated on trailing 36 months, updated each month. · data_needed: Monthly returns of components · exhibit: C05
+  ^QP01-C05-7
+- Footnote 11: using only the 12-month price trend would give directionally similar results (the promised results are not shown in the paper); method follows Hurst, Ooi and Pedersen (2017). _(robustness, evidence)_ #mech/slow_reaction
+  > Using only 12-month trailing asset returns would give directionally similar results as shown below.
+  exhibit: footnote 11 · conditions: Claim not supported by an exhibit in this document
+  ^QP01-C05-8
+
+### C06 (page 6)
+- Full-period economic trend composite: 13.3% annual excess-of-cash return, 12.2% vol, Sharpe 1.1, correlation -0.2 to S&P 500 and 0.0 to US 10-year bonds. _(result, evidence)_ #mech/slow_reaction
+  > Exhibit 2: Hypothetical Economic Trend Shows Consistent Positive Performance Over Time
+  reported_result: Jan 1970-Dec 2022, gross of fees and costs: return 13.3%, vol 12.2%, Sharpe 1.1, corr S&P -0.2, corr UST10y 0.0 · exhibit: Exhibit 2
+  ^QP01-C06-1
+- Every decade was positive: 1970s 14.3% (vol 13.5, SR 1.1, corr S&P -0.2 / bonds -0.1); 1980s 19.7% (12.0, 1.6, 0.0/0.0); 1990s 14.2% (11.8, 1.2, 0.0/0.1); 2000s 13.8% (12.9, 1.1, -0.4/0.3). _(result, evidence)_ #mech/risk_management
+  > the strategy’s return has been positive in every decade, with consistently low correlation to both equities and government bonds.
+  reported_result: By decade excess return, vol, Sharpe, corr S&P, corr UST10y as listed; gross of costs · exhibit: Exhibit 2
+  ^QP01-C06-2
+- The 2010s were the weak decade: 4.1% excess return, 9.9% vol, Sharpe 0.4, correlations -0.1 to S&P and 0.0 to bonds. _(result)_ #mech/slow_reaction
+  > Jan. 2010 - Dec. 2019
+  reported_result: Jan 2010-Dec 2019: 4.1% return, 9.9% vol, Sharpe 0.4, corr S&P -0.1, corr UST10y 0.0 (gross) · exhibit: Exhibit 2 · conditions: Weakest decade, but still positive
+  ^QP01-C06-3
+- 2020-2022 delivered 15.2% excess return, 13.1% vol, Sharpe 1.2, with negative correlation -0.4 to S&P and -0.5 to bonds, driven by short equity and bond positions. _(result)_ #mech/policy_reaction
+  > Jan. 2020 - Dec. 2022
+  reported_result: Jan 2020-Dec 2022: 15.2% return, 13.1% vol, Sharpe 1.2, corr S&P -0.4, corr UST10y -0.5 (gross) · exhibit: Exhibit 2; footnote 12
+  ^QP01-C06-4
+- Out-of-sample since Brooks (2017): 8.4% excess return, 11.8% vol, Sharpe 0.7, correlation -0.4 to S&P and -0.3 to US 10y bonds. _(result, evidence)_ #mech/slow_reaction
+  > Jan. 2017 - Dec. 2022
+  reported_result: Jan 2017-Dec 2022: 8.4% return, 11.8% vol, Sharpe 0.7, corr S&P -0.4, corr UST10y -0.3 (gross) · exhibit: Exhibit 2 · conditions: Out-of-sample Sharpe 0.7 is lower than full-sample 1.1
+  ^QP01-C06-5
+- All exhibit results are hypothetical monthly returns gross of fees and transaction costs; no net-of-cost results are reported. _(caveat, qualifier)_ #mech/research_method
+  > Returns are monthly, gross of fees and transaction costs. Hypothetical data has inherent limitations, some of which are disclosed herein.
+  exhibit: Exhibits 2-9 source note
+  ^QP01-C06-6
+- Correlation to asset classes is conditional on trending: short equity and fixed income positions drove 2020-2022 profits, so correlation to the S&P and bonds turned negative. _(caveat, evidence)_ #mech/cycle_persistence
+  > Over short periods of time, we expect economic trend to have a conditional correlation to asset classes if they are trending.
+  reported_result: 2020-2022 correlation: S&P -0.4, UST10y -0.5 · exhibit: footnote 12 · conditions: Low correlation holds on average, not in every subperiod
+  ^QP01-C06-7
+- Nearly every individual market has a positive Sharpe from economic trend, read as evidence of pervasive under-reaction. _(result, evidence)_ #mech/slow_reaction
+  > Economic Trend generated a positive Sharpe ratio in nearly every asset in our universe, strong evidence of the pervasiveness of underreactions to changes in economic fundamentals.
+  reported_result: Per-market Sharpe ratios, Jan 1970-Dec 2022, gross (Exhibit 3, see C07) · exhibit: Exhibit 3
+  ^QP01-C06-8
+- Short-rate futures are traded in the 2nd, 3rd and 4th contracts from expiration; returns aggregated across those contracts. _(construction, design_choice)_ #mech/slow_reaction
+  > For interest rate futures we trade the second, third, and fourth contracts from expiration. We aggregate returns across these contracts in Exhibit 3.
+  exact_rule: Rate futures: hold 2nd, 3rd and 4th nearest contracts, aggregate returns. · data_needed: Short-term interest rate futures strips · exhibit: footnote 13
+  ^QP01-C06-9
+
+### C07 (page 7)
+- Per-asset Sharpe ratios (chart read, approximate): equity indices about 0.1 (S&P 500) to 0.48 (OMX Copenhagen/Spain); bond futures 0.08-0.49; short-rate futures 0.37-0.70 (best: Short Sterling/SONIA about 0.70, Eurodollar/SOFR about 0.60); currencies about -0.02 (USD/AUD) to 0.33 (USD/GBP); commodities about 0.0 (coffee, natural gas) to 0.5 (aluminum, copper). _(result, evidence)_ #mech/slow_reaction
+  > Hypothetical Economic Trend Shows Consistent Positive Sharpe Ratios Across Assets
+  reported_result: Jan 1970-Dec 2022, gross; values approximate, read from bar chart · exhibit: Exhibit 3 · conditions: One currency (USD/AUD) slightly negative; coffee and natural gas about zero
+  ^QP01-C07-1
+- By asset class Sharpe (approx.): equities 0.5, fixed income 0.84, currencies 0.43, commodities 0.44, composite 1.1; by theme: growth 0.26, inflation 0.27, monetary policy 0.64, trade 0.77, risk aversion 0.63. _(result, evidence)_ #mech/risk_management
+  > each standalone asset class and theme portfolio has delivered a positive Sharpe ratio, contributing to the overall performance of the composite.
+  reported_result: Jan 1970-Dec 2022 gross; chart-read values; average pairwise correlation 0.06 across themes, 0.07 across asset classes · exhibit: Exhibit 4 · conditions: Growth and inflation themes are weakest; trade, monetary policy and risk aversion strongest
+  ^QP01-C07-2
+- Theme composites are almost uncorrelated (average pairwise correlation 0.06) and asset-class composites likewise (0.07), so the aggregate beats any single theme or asset class. _(result, evidence)_ #mech/risk_management
+  > Average Pairwise Correlation: 0.06
+  reported_result: Average pairwise correlation 0.06 (themes), 0.07 (asset classes), Jan 1970-Dec 2022 · exhibit: Exhibit 4
+  ^QP01-C07-3
+- Diversification across themes and asset classes lifts the aggregate Sharpe (1.1) above any component (best: fixed income about 0.84, trade about 0.77). _(result, evidence)_ #mech/risk_management
+  > the aggregate composite outperforms any standalone asset class or theme.
+  reported_result: Composite Sharpe 1.1 vs best asset class (fixed income 0.84) and best theme (trade 0.77) · exhibit: Exhibit 4
+  ^QP01-C07-4
+- Economic trend Sharpe ratios are positive for all 15 equity indices, from about 0.10 (S&P 500) to about 0.47 (OMX Copenhagen). _(result, evidence, Opus only)_ #mech/slow_reaction
+  > U.S. S&P 500
+  reported_result: chart reading, 1970-2022 gross: Australia 0.26, Germany DAX 0.31, Canada 0.24, OMX Copenhagen 0.47, Spain 0.45, France 0.36, Hang Seng 0.19, Italy 0.33, Japan Topix 0.46, Netherlands 0.25, NZX 50 0.25, OMX Stockholm 0.30, Swiss SMI 0.22, UK FTSE 0.14, US S&P 500 0.10 · exhibit: Exhibit 3
+  ^QP01-C07-2b
+- Economic trend Sharpe ratios are positive for all 9 government bond futures, from about 0.08 (Australia) to about 0.49 (Swiss). _(result, evidence, Opus only)_ #mech/slow_reaction
+  > U.S. 10-Yr Treasury Note
+  reported_result: chart reading, 1970-2022 gross: Australia 10y 0.08, Germany 0.40, Canada 0.21, Denmark 0.44, Japan 0.21, Sweden 0.16, Switzerland 0.49, UK 0.26, US 10y 0.40 · exhibit: Exhibit 3
+  ^QP01-C07-3b
+- Commodity Sharpe ratios are positive but dispersed: industrial metals and energy higher, coffee, natural gas and sugar near zero. _(result, evidence, Opus only)_ #mech/slow_reaction
+  > Aluminum
+  reported_result: chart reading, 1970-2022 gross: Aluminum 0.51, Brent 0.40, Cattle 0.24, Coffee 0.01, Copper 0.51, Corn 0.23, Cotton 0.37, Crude 0.29, Gasoil 0.40, Heating oil 0.32, Hogs 0.22, Natural gas about 0.00, Nickel 0.26, Soybeans 0.17, Soymeal 0.19, Soyoil 0.40, Sugar 0.02, Unleaded 0.23, Wheat 0.34, Zinc 0.12 · exhibit: Exhibit 3 · conditions: near zero for coffee, natural gas, sugar
+  ^QP01-C07-6b
+
+### C08 (page 8)
+- Large asset drawdowns are typically preceded by fundamental changes, so economic trend positions short ahead of or during them. _(mechanism, mechanism_step)_ #mech/cycle_persistence
+  > large drawdowns usually don’t occur out of the blue, but tend to be preceded by changes in economic fundamentals.
+  ^QP01-C08-1
+- Examples: equity drawdowns follow worsening growth expectations (GFC) or more hawkish central banks (2018, 2022). _(mechanism, mechanism_step)_ #mech/policy_reaction
+  > Equity drawdowns, for example, have often been precipitated by deteriorating growth expectations (e.g., GFC), or increasingly hawkish central bank policy (e.g., 2018 and 2022, to name two recent data points).
+  conditions: Growth and monetary themes
+  ^QP01-C08-2
+- Economic trend gained in all five worst S&P 500 drawdowns and all five worst 10-year Treasury drawdowns since 1970 (chart read, approximate): equities average S&P about -38% vs economic trend about +59%; bonds average UST about -15% vs economic trend about +39%. _(result, evidence)_ #mech/risk_management
+  > As Exhibit 5 shows, economic trend has performed well in each of the five worst drawdown periods for both U.S. equities and U.S. bonds since 1970.
+  reported_result: Equity windows (S&P / econ trend, approx.): Nov07-Feb09 -50%/+88%; Sep00-Sep02 -45%/+40%; Jan73-Sep74 -45%/+98%; Sep87-Nov87 -30%/+23%; Jan22-Sep22 -24%/+49%. Bond windows (UST10y / econ trend, approx.): Aug20-Oct22 -18%/+64%; Jul80-Sep81 -17%/+54%; Jul79-Feb80 -17%/+37%; May83-May84 -10%/+18%; Mar87-Sep87 -10%/+24%. Gross. · exhibit: Exhibit 5 · conditions: Windows chosen ex post as worst drawdowns of the benchmark
+  ^QP01-C08-3
+- Price and economic trend correlate about 0.3 at asset level and 0.4 at aggregate level. _(result, evidence)_ #mech/slow_reaction
+  > a positive but moderate full-sample correlation between price and economic trend-following strategies (around 0.3 at the asset level and 0.4 for the aggregate composites)
+  reported_result: Full sample Jan 1970-Dec 2022: correlation about 0.3 asset level, 0.4 aggregate · exhibit: Exhibit 6
+  ^QP01-C08-4
+- The combined trend strategy is an equal-risk blend of price trend and economic trend and is claimed to have better risk-adjusted performance than either alone. _(construction, evidence)_ #mech/slow_reaction
+  > Combining the two approaches into a comprehensive trend strategy (equal risk-weighted across price and economic trends) results in a better
+  exact_rule: Blend = 50% risk to economic-trend composite + 50% risk to price-trend composite (50/50 blend, each at 10% vol). · data_needed: Both composites' monthly returns · reported_result: Total Sharpe 1.5 blend vs 1.4 price vs 1.1 economic (Exhibit 6) · exhibit: Exhibit 6
+  ^QP01-C08-5
+- In each of the five worst US 10-year Treasury drawdowns since 1970 economic trend made money, averaging about +39% versus about -14% for Treasuries. _(result, evidence, Opus only)_ #mech/risk_management
+  > Exhibit 5: Hypothetical Economic Trend Does Well in Drawdowns for Equities and Bonds
+  reported_result: chart reading (cumulative, gross): average UST about -14% / econ trend about +39%; Aug 2020-Oct 2022 -19%/+63%; Jul 1980-Sep 1981 -18%/+53%; Jul 1979-Feb 1980 -18%/+36%; May 1983-May 1984 -10%/+18%; Mar 1987-Sep 1987 -10%/+24% · exhibit: Exhibit 5
+  ^QP01-C08-4b
+- Price and economic trend should be positively but imperfectly correlated, since good fundamental news is followed by positive returns on average. _(mechanism, mechanism_step, Opus only)_ #mech/slow_reaction
+  > we expect price and economic trend-following to be positively, but far from perfectly, correlated.
+  ^QP01-C08-5b
+
+### C09 (page 9)
+- Sharpe ratios econ / price / 50-50 blend, 1970-2022: total 1.1/1.4/1.5; equities 0.5/0.5/0.6; fixed income 0.8/0.9/1.1; currencies 0.4/0.8/0.8; commodities 0.4/0.9/0.8. Price-econ correlation: total 0.4, equities 0.3, fixed income 0.4, currencies 0.3, commodities 0.3. _(result, evidence)_ #mech/risk_management
+  > Exhibit 6: A Diversified Approach to Trend-Following Outperforms Either Standalone Approach
+  reported_result: Jan 1970-Dec 2022, gross; Sharpe econ/price/blend as listed · exhibit: Exhibit 6 · conditions: Price trend alone has a higher Sharpe than economic trend overall (1.4 vs 1.1), in currencies (0.8 vs 0.4) and commodities (0.9 vs 0.4); blend beats both only in total, equities and fixed income, ties price trend in currencies (0.8) and is below it in commodities (0.8 vs 0.9)
+  ^QP01-C09-1
+- At reversals price trend loses by construction, whereas economic trend can gain if an economic catalyst preceded the reversal. _(mechanism, mechanism_step)_ #mech/risk_management
+  > during market reversals price trend is (almost by construction) likely to have negative returns. However, economic trend can have positive returns and negative correlated positions if the reversal is preceded by an economic catalyst.
+  conditions: Works if the reversal has an economic catalyst
+  ^QP01-C09-2
+- Prolonged price/fundamental disconnects (Tech Bubble) hurt economic trend but not necessarily price trend. _(caveat, qualifier)_ #mech/behavioral
+  > when prices become disconnected from changes in economic fundamentals for a prolonged period (e.g., the Tech Bubble), economic trend is likely to suffer, but price trend may not.
+  conditions: Fails when prices decouple from fundamentals for long periods
+  ^QP01-C09-3
+- In the five worst economic-trend drawdowns, price trend averaged positive (about +8%, chart read) while economic trend averaged about -15%; in the five worst price-trend drawdowns, economic trend was about flat (about -1%) while price trend averaged about -15%. _(result, evidence)_ #mech/risk_management
+  > price trend delivers positive returns on average in the five largest economic trend drawdowns, and economic trend has been essentially flat on average in the five largest price trend drawdowns.
+  reported_result: Chart read, Jan 1970-Dec 2022; windows in Exhibit 7 (see C10) · exhibit: Exhibit 7
+  ^QP01-C09-4
+- Economic trend lost about 18% in Jun 1999-Dec 2000 (Tech Bubble) while price trend gained about 35% (chart read). _(result)_ #mech/behavioral
+  > economic trend suffers one of its worse drawdowns between June 1999 and December 2000, during the heart of the Tech Bubble.
+  reported_result: Jun 1999-Dec 2000: economic trend about -18%, price trend about +35% (chart read) · exhibit: Exhibit 7
+  ^QP01-C09-5
+- In 1999-2000 inflation, policy and growth trends were bearish for bonds, yet bonds rallied, so economic trend was wrong-footed in fixed income. _(result, evidence)_ #mech/behavioral
+  > Inflation, monetary policy, and growth trends tended to be bearish bonds during this period, yet the market continued its ascent unabated.
+  exhibit: Exhibit 7 discussion · conditions: Bond prices disconnected from fundamental trends
+  ^QP01-C09-6
+- Economic trend lost in currencies too: the four themes were bearish the dollar while it rallied sharply in 1999-2000. _(result, evidence)_ #mech/behavioral
+  > Inflation, monetary policy, growth, and risk aversion trends were bearish the dollar which rapidly appreciated over the period.
+  exhibit: Exhibit 7 discussion · conditions: Dollar rally against fundamental trends
+  ^QP01-C09-7
+- Persistent bull market in the Tech Bubble made price trend perform exceptionally well even as economic trend suffered. _(result)_ #mech/cycle_persistence
+  > the strong sustained bull market run led price trends to perform exceptionally well.
+  exhibit: Exhibit 7 discussion
+  ^QP01-C09-8
+- Only some of the worst-drawdown episodes are explained by the price-vs-fundamentals story; the authors use the Tech Bubble as the illustrating case, so the narrative evidence is partial. _(caveat, qualifier, Opus only)_ #mech/slow_reaction
+  > Some of these periods conform to our intuition about how price and economic trend should behave in different states of the world.
+  ^QP01-C09-R1b
+
+### C10 (page 10)
+- Economic-trend worst drawdowns (econ / price, chart read): Mar16-Apr17 -18%/-1%; Jun99-Dec00 -18%/+35%; Nov76-Jan77 -13%/-3%; Mar09-Jun10 -12%/+5%; Apr71-Jul71 -12%/+6%; average -15%/+8%. Price-trend worst drawdowns (price / econ): Apr15-Jan19 -24%/+6%; Oct87 -20%/+5%; Mar04-Aug04 -11%/-5%; May86-Jun86 -10%/-3%; Oct22-Nov22 -9%/-7%; average -15%/-1%. _(result, evidence)_ #mech/risk_management
+  > Exhibit 7: Price and Economic Trend Have Diversifying Returns During Each Other’s Worst Drawdown Periods
+  reported_result: Jan 1970-Dec 2022 gross; values approximate (chart read) · exhibit: Exhibit 7 · conditions: Both lose together in Oct-Nov 2022 and Mar-Aug 2004; economic trend lost in 2016-17 when price trend was flat
+  ^QP01-C10-1
+- In equity and bond drawdowns the 50/50 blend on average beats economic trend and price trend alone (see Exhibits 8 and 9). _(result, evidence)_ #mech/risk_management
+  > On average the 50/50 blend delivers better performance during both equity and bond drawdowns than either approach standalone.
+  reported_result: Equity drawdowns average blend 68% vs 59% econ vs 54% price; bond drawdowns 52% vs 39% vs 47% (Exhibits 8, 9) · exhibit: Exhibits 8-9
+  ^QP01-C10-2
+- Blend works because price trend captures persistent bear markets and economic trend those with fundamental catalysts. _(mechanism, mechanism_step)_ #mech/risk_management
+  > The combination of price and economic trend picks up on drawdowns that are persistent (price trend) and those that have a fundamental catalyst (economic trend), capturing a wider set of bear markets than either strategy in isolation.
+  conditions: Persistent -> price trend; fundamental catalyst -> economic trend
+  ^QP01-C10-3
+- Authors position the blend as a complement to risk-mitigation (tail hedge) allocations. _(implementation, conclusion)_ #mech/risk_management
+  > The ability to outperform in a diverse variety of drawdown environments makes price and economic trends a particularly attractive complement to risk mitigation strategies.
+  ^QP01-C10-4
+
+### C11 (page 11)
+- Cumulative return in the five worst S&P 500 drawdowns (chart read): S&P about -38% average vs economic trend 59%, price trend 54%, blend 68%. Per window econ/price/blend: Nov07-Feb09 88/43/77; Sep00-Sep02 40/57/55; Jan73-Sep74 98/140/143; Sep87-Nov87 28/-10/8; Jan22-Sep22 49/43/63. _(result, evidence)_ #mech/risk_management
+  > Exhibit 8: A Diversified Trend-following Approach Does Best in Equity Drawdowns
+  reported_result: Averages 59% / 54% / 68% (labelled), S&P about -38% (chart read); window values approximate; Jan 1970-Dec 2022, gross · exhibit: Exhibit 8 · conditions: Blend is best on average but not in every window (e.g. economic trend best in 2007-09, price trend in 2000-02 and Sep-Nov 1987 least)
+  ^QP01-C11-1
+- Averages across the five equity-drawdown windows: economic trend 59%, price trend 54%, 50/50 blend 68%. _(result)_ #mech/risk_management
+  > 59% 54% 68%
+  reported_result: 59% econ, 54% price, 68% blend (average of 5 equity drawdowns, gross) · exhibit: Exhibit 8
+  ^QP01-C11-2
+- In the five worst 10-year Treasury drawdowns (average UST about -15%), economic trend averaged 39%, price trend 47%, blend 52%; windows econ/price/blend: Aug20-Oct22 63/55/80; Jul80-Sep81 53/72/68; Jul79-Feb80 36/47/51; May83-May84 18/30/29; Mar87-Sep87 24/27/30. _(result, evidence)_ #mech/risk_management
+  > Exhibit 9: A Diversified Trend-following Approach Does Best in Bond Drawdowns
+  reported_result: Averages 39% / 47% / 52% (labelled); window values approximate (chart read); gross · exhibit: Exhibit 9 · conditions: Price trend beats economic trend on average in bond drawdowns; economic trend is best only in the 2020-22 window
+  ^QP01-C11-3
+- In the sudden October 1987 crash price trend lost (about -10%) while economic trend gained (about +23%), illustrating that economic trend covers fast catalyst-driven sell-offs that price trend misses. _(robustness, evidence, Opus only)_ #mech/risk_management
+  > Sep 1987 - Nov 1987
+  reported_result: chart reading Exhibit 8: Sep-Nov 1987 S&P about -30%, econ about +23%, price about -10%, blend about +5% · exhibit: Exhibit 8 · conditions: sharp reversal after a bull market
+  ^QP01-C11-2b
+
+### C12 (page 12)
+- Economic trend exploits the same gradual-information-incorporation premise as price trend, but through direct measures of economic news. _(mechanism, conclusion)_ #mech/slow_reaction
+  > The strategy rests on the same premise as price trend—markets tend to incorporate new information gradually
+  ^QP01-C12-1
+- The backtest uses only one simple signal per theme to maximise sample length; better signals are possible but would shorten history. _(caveat, qualifier)_ #mech/research_method
+  > backtest shown in this paper uses one simple signal per economic theme (in order to cover as long a period as possible)
+  conditions: Proof-of-concept design; richer signal sets untested
+  ^QP01-C12-2
+- Real-time capture of a broad set of economic news is complex and requires significant data investment, so the shown signals are a simplified proxy. _(implementation, qualifier)_ #mech/research_method
+  > requires significant investment in data and long-term research.
+  ^QP01-C12-3
+- Authors conclude pairing economic and price trend improves average returns and stress-period returns. _(result, conclusion)_ #mech/risk_management
+  > Pairing the two approaches more fully captures the underreaction phenomenon than either approach does standalone, improving both average long-term returns and returns during market stress environments.
+  reported_result: Sharpe 1.5 blend vs 1.4 price vs 1.1 econ (Exhibit 6); drawdown averages in Exhibits 8-9 · exhibit: Exhibit 6; 8; 9
+  ^QP01-C12-4
+
+### C13 (page 13)
+- The reference list dates Hurst-Ooi-Pedersen as 2014 while footnotes 2 and 11 cite it as 2017, and several in-text citations (Campbell 1991, Katz-Lustig 2017, Bernanke-Kuttner 2005, Eichenbaum-Evans 1995, Clarida-Waldman 2008) are not listed. _(caveat, qualifier, Opus only)_ #mech/research_method
+  > Hurst, B., Ooi, Y. H., and Pedersen, L. H. (2014), “Century of Evidence on Trend-Following
+  ^QP01-C13-1b
+
+### C14 (page 14)
+- All results are hypothetical backtests, not actual investor returns. _(caveat, qualifier)_ #mech/research_method
+  > The returns presented reflect hypothetical performance an investor would have obtained had it invested in the manner shown and does not represent returns that any investor actually attained.
+  ^QP01-C14-1
+- Simple measures chosen for long history and lower data-mining risk; strategy is a proof of concept that could be enhanced with better measures. _(caveat, design_choice)_ #mech/research_method
+  > The model employs relatively simple measures as they afford long data availability and are less susceptible to concerns about data mining.
+  ^QP01-C14-2
+- Backtest: equal risk across asset class-theme portfolios, 10% forecast annual vol target, each position within a portfolio sized to equal vol contribution. _(construction, design_choice)_ #mech/risk_management
+  > The backtest combines each asset class theme portfolio at equal risk and targets 10% forecasted annual volatility.
+  exact_rule: Each position sized to target the same vol; portfolios combined at equal risk; composite scaled to 10% forecast annual vol. · exhibit: Disclosures
+  ^QP01-C14-3
+- Fully symmetric long/short directional positions: long where the mapped economic trend improves, short where it deteriorates. _(construction, design_choice)_ #mech/slow_reaction
+  > The backtest takes long positions in assets in which economic trends are improving and short positions in assets in which economic trends are deteriorating.
+  exact_rule: position_sign = sign(mapped trend signal); long and short allowed in every market.
+  ^QP01-C14-4
+- Four asset classes; fixed income = government bonds and short rates at equal risk. _(construction, design_choice)_ #mech/slow_reaction
+  > Asset Classes: Equity indices, fixed income (combining government bonds and short-term interest rates at equal risk), currencies, and commodities.
+  exact_rule: FI composite = 50% risk bonds + 50% risk short-rate futures.
+  ^QP01-C14-5
+- Growth signal: Consensus Economics forecast changes from 1991; before 1991 one-year change in realised YoY real GDP growth lagged one quarter (OECD), equivalent to a random-walk forecast. Rationale for signs: growth up is bullish equities (cash flow), commodities (demand), currencies (Balassa-Samuelson) and bearish bonds (inflation pressure and higher real rates). _(construction, premise)_ #mech/slow_reaction
+  > Prior to 1991, we use one-year changes in realized year-on-year real GDP growth, lagged one quarter
+  exact_rule: Growth_t: >=1991 12m change in Consensus real GDP growth forecast; <1991 12m change in YoY real GDP growth, lagged 1 quarter. · data_needed: Consensus Economics; OECD real GDP · exhibit: Disclosures: Growth
+  ^QP01-C14-6
+- Inflation signal: Consensus CPI forecast changes from 1991; before 1991 one-year change in realised YoY CPI lagged one quarter (OECD). Signs: rising inflation bearish equities (Katz and Lustig 2017), bullish currencies (Clarida and Waldman 2008), bearish fixed income. _(construction, mechanism_step)_ #mech/slow_reaction
+  > Prior to 1991, we use one-year changes in realized year-on-year CPI inflation, lagged one quarter
+  exact_rule: Inflation_t: >=1991 12m change in Consensus CPI forecast; <1991 12m change in YoY CPI, lagged 1 quarter. · data_needed: Consensus Economics; OECD CPI · exhibit: Disclosures: Inflation · conditions: Disclosure text omits the commodity sign, Exhibit 1 shows +
+  ^QP01-C14-7
+- International trade signal rationale: depreciation helps equity exports, is bearish for the currency itself (like price momentum), bearish for bonds (less pressure to cut rates) and bearish for commodities (more expensive in local currency of consumers). _(mechanism, mechanism_step)_ #mech/slow_reaction
+  > A depreciating currency is bullish for equities (exports become more competitive), bearish for currencies (very similar to price momentum), bearish for fixed income
+  data_needed: DataStream spot exchange rates vs export-weighted basket · exhibit: Disclosures: International Trade
+  ^QP01-C14-8
+- Monetary policy: 12m change in 2-year yields from 1992, Libor-type rates before (Bloomberg). Disclosure text says expansionary policy is bullish for currencies and bearish for bonds, while Exhibit 1 maps rising yields to + currencies and - bonds, so the written rationale is inconsistent with the exhibit on currencies; the exhibit sign matrix is the operational rule. _(caveat, design_choice)_ #mech/slow_reaction
+  > From 1992 onwards, we use two-year yields, while prior to 1992 we use Libor and its international equivalents.
+  exact_rule: Monetary_t = 12m change in 2y yield (>=1992) or Libor-equivalent (<1992); signs per Exhibit 1 (E-, FI-, FX+, Cmd-). · data_needed: Bloomberg 2y yields and Libor equivalents · exhibit: Disclosures: Monetary Policy; Exhibit 1 · conditions: Cited support: Bernanke and Kuttner (2005) equities; Eichenbaum and Evans (1995) currencies
+  ^QP01-C14-9
+- Risk aversion: equal weight of one-year equity excess return (DataStream) and one-year change in credit spreads (Moody's corporate yield vs Treasuries until 2001, then Bloomberg Global High Yield OAS); rising risk sentiment is bullish equities, commodities and currencies and bearish bonds. _(construction, design_choice)_ #mech/slow_reaction
+  > The second is one-year changes in credit spreads. Changes in credit spreads are computed using Moody’s Corporate Yields relative to U.S. treasuries until 2001 and then Bloomberg Global High Yield Corporate OAS.
+  exact_rule: Risk_t = 0.5*12m equity excess return + 0.5*(-12m change in spread); spread = Moody's Baa-Treasury to 2001, Bloomberg Global HY OAS after. · data_needed: DataStream equity returns; Moody's yields; Bloomberg Global High Yield OAS · exhibit: Disclosures: Risk Aversion · conditions: Footnote 8 calls the post-2001 series the 'Stats Index Unhedged', disclosures say OAS
+  ^QP01-C14-10
+- Price trend backtest: portfolio per asset class and horizon (1m, 3m, 12m), equal risk across horizons, 10% forecast vol, positions sized to equal vol, long appreciating assets and short depreciating assets. _(construction)_ #mech/slow_reaction
+  > The Price Trend Backtest builds asset class price trend horizon portfolios across the universe outlined below.
+  exact_rule: Long assets with positive excess return over horizon, short negative; equal risk across 1m/3m/12m horizons; 10% vol target. · exhibit: Disclosures: Price Trend
+  ^QP01-C14-11
+- The backtest is a proof of concept; better or additional economic trend measures could improve it. _(caveat, qualifier, Opus only)_ #mech/research_method
+  > The strategy is therefore intended as a proof of concept and can potentially be enhanced by employing additional and improved measures of economic trends.
+  ^QP01-C14-3b
+- Trade signal is the one-year change in the spot rate against an export-weighted basket, from DataStream. _(construction, design_choice, Opus only)_ #mech/slow_reaction
+  > International trade trends are captured using one-year changes in spot exchange rates against an export-weighted basket. Data is from DataStream.
+  exact_rule: trade signal = 12m change in export-weighted spot FX index (depreciation positive) · data_needed: DataStream spot FX, export weights
+  ^QP01-C14-11b
+- A depreciating currency is bearish bonds (less need for rate cuts) and bearish commodities (dollar-priced commodities cost more for consumers with weaker currencies). _(mechanism, mechanism_step, Opus only)_ #mech/policy_reaction
+  > a depreciating currency reduces the pressure on a central bank to reduce interest rates
+  ^QP01-C14-13b
+- The appendix says easing is bullish equities, currencies and commodities and bearish bonds, but the currency and bond signs conflict with Exhibit 1 (rising 2y yield: currency +, bonds -) and with Eichenbaum-Evans (tightening appreciates the currency). _(caveat, qualifier, Opus only)_ #mech/policy_reaction
+  > Expansionary monetary policy is bullish for equities (see Bernanke and Kuttner (2005)), bullish for currencies (see Eichenbaum and Evans (1995)), bullish for commodities, and bearish for fixed income.
+  exact_rule: use Exhibit 1 signs: rising 2y yield -> equities -, bonds -, currency +, commodities - · conditions: text/table inconsistency; Exhibit 1 is consistent with the cited literature and the persistence premise
+  ^QP01-C14-15b
+- Rising risk appetite is bullish equities, commodities and currencies and bearish bonds. _(mechanism, mechanism_step, Opus only)_ #mech/risk_premium
+  > Increasing risk sentiment — i.e., strong equity market returns — is bullish for equities, commodities, and currencies, and bearish for fixed income.
+  ^QP01-C14-17b
+
+### C15 (page 15)
+- Price trend signal = trailing excess-of-cash return over 1, 3 and 12 months. _(construction, design_choice)_ #mech/slow_reaction
+  > The price trend signal reflects the return in excess of cash for each asset over the past 1, 3, or 12-month period.
+  exact_rule: signal_h = excess return over past h months, h in {1,3,12}; sign = position; equal-weight horizons. · data_needed: Excess returns over cash for each asset · exhibit: Price Trend Horizons
+  ^QP01-C15-1
+- Equity universe (Bloomberg) staggered starts: 1970 Australia, Germany, Canada, Spain, France, Italy, Japan, Netherlands, U.K., U.S.; 1975 Switzerland; 1980 Denmark, Hong Kong, Sweden; 1988 New Zealand (15 markets). _(construction, design_choice)_ #mech/slow_reaction
+  > Equity index return data is from Bloomberg. Start dates are the earliest available date of the series:
+  exact_rule: Markets enter the portfolio at their series start date. · data_needed: Bloomberg equity index return series · exhibit: Backtest Universe
+  ^QP01-C15-2
+- Bond universe starts: 1970 Germany, Canada, U.K., U.S.; 1980 Japan; 1981 Switzerland; 1985 Denmark; 1986 Australia; 1987 Sweden (9 markets). _(construction, design_choice)_ #mech/slow_reaction
+  > Government bond return data is from Bloomberg and DataStream. Start dates are
+  exact_rule: Markets enter at start date. · data_needed: Bloomberg and DataStream government bond returns · exhibit: Backtest Universe
+  ^QP01-C15-3
+- Currency universe starts: 1971 Germany, Japan, Switzerland, U.K.; 1972 Australia, Canada; 1978 New Zealand, Sweden (8 markets). _(construction, design_choice)_ #mech/slow_reaction
+  > Currency return data is from Citi and Reuters. Start dates are
+  exact_rule: Markets enter at start date. · data_needed: Citi and Reuters currency returns · exhibit: Backtest Universe
+  ^QP01-C15-4
+- Short-rate futures starts: 1987 U.S.; 1988 U.K.; 1989 Australia, Europe (Euribor); 1991 Canada, New Zealand, Switzerland (7 markets). _(construction, design_choice)_ #mech/slow_reaction
+  > Interest rate futures return data is from IFS. Start dates are
+  exact_rule: Markets enter at start date. · data_needed: Interest rate futures returns (IFS) · exhibit: Backtest Universe
+  ^QP01-C15-5
+- Commodity futures starts: 1970 cattle, corn, cotton, hogs, soybeans, soymeal, soyoil, sugar, wheat; 1974 coffee; 1979 heat oil; 1983 crude; 1984 gas oil; 1985 unleaded; 1989 Brent; 1990 natural gas; 1991 zinc; 1993 nickel. Aluminum and copper appear in Exhibit 3 but their start dates are not listed (18 listed of 20). _(construction, design_choice)_ #mech/slow_reaction
+  > Commodity futures return data is from Bloomberg. Start dates are
+  exact_rule: Markets enter at start date. · data_needed: Bloomberg commodity futures returns · exhibit: Backtest Universe · conditions: Start dates for aluminum and copper missing from the list
+  ^QP01-C15-6
+
+### C16 (page 16)
+- Standard backtest disclaimers apply: hindsight, no financial risk, results are illustrative and not a prediction. _(caveat, qualifier)_ #mech/research_method
+  > ONE OF THE LIMITATIONS OF HYPOTHETICAL PERFORMANCE RESULTS IS THAT THEY ARE GENERALLY PREPARED WITH THE BENEFIT OF HINDSIGHT.
+  ^QP01-C16-1
+- Backtest results can change with the run date (data revisions/vintages), and discounting factors may be applied to reduce suspected anomalies. _(caveat, qualifier)_ #mech/research_method
+  > This backtest’s return, for this period, may vary depending on the date it is run.
+  conditions: Run-date and vintage dependence; transaction costs shown only 'where noted' (none noted in the exhibits)
+  ^QP01-C16-2
+- AQR states discounting factors may be applied to suspected anomalies; none are described for this strategy. _(caveat)_ #mech/research_method
+  > Discounting factors may be applied to reduce suspected anomalies.
+  ^QP01-C16-3
+

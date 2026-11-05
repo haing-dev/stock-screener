@@ -1,0 +1,2407 @@
+# Fung and Hsieh: The Risk in Hedge Fund Strategies: Theory and Evidence from Trend Followers
+source_id: QP09
+type: paper
+file: hsieh_fung_final_paper.pdf
+chunks: one per PDF page (C01 = page 1). Page images: img/QP09-p-NN.png (exhibits, charts)
+---
+
+[C01]
+The Risk in Hedge Fund Strategies:
+Theory and Evidence from
+Trend Followers
+
+William Fung
+PI Asset Management, LLC
+
+David A. Hsieh
+Duke University
+
+Hedge fund strategies typically generate option-like returns. Linear-factor models using
+benchmark asset indices have difﬁculty explaining them. Following the suggestions in
+Glosten and Jagannathan (1994), this article shows how to model hedge fund returns by
+focusing on the popular “trend-following” strategy. We use lookback straddles to model
+trend-following strategies, and show that they can explain trend-following funds’ returns
+better than standard asset indices. Though standard straddles lead to similar empirical
+results, lookback straddles are theoretically closer to the concept of trend following. Our
+model should be useful in the design of performance benchmarks for trend-following
+funds.
+
+The last decade has witnessed a growing interest in hedge funds from
+investors, academics, and regulators. Investors and academics are intrigued
+by the unconventional performance characteristics in hedge funds, and reg-
+ulators are concerned with the market impact of their reported speculative
+activities during major market events. 1 The near bankruptcy of Long-Term
+Capital Management (LTCM) in 1998 has further heightened attention on
+hedge fund risk. Because hedge funds are typically organized as private
+investment vehicles for wealthy individuals and institutional investors, 2 they
+do not disclose their activities publicly. Hence, little is known about the
+
+This article received research support from the Foundation for Managed Derivatives Research and John W.
+Henry & Company. We acknowledge the New York Mercantile Exchange, the London International Financial
+Futures Exchange, the Sydney Futures Exchange, and the Tokyo International Financial Futures Exchange
+for providing their historical data; thanks to James Cui and Guy Ingram for computational assistance. An
+earlier version beneﬁted from comments by Todd Petzel, Jules Stanowicz, Richard Roll, Don Chance, Debra
+Lucas, and the participants of the CBOT Winter Research Seminar on December 8–9, 1997, in Chicago
+and the participants of the ﬁnance workshops at University of Washington at Seattle, Virginia Polytechnic
+Institute, University of California at Los Angeles, the NBER Asset Pricing Program in Chicago (October
+30, 1998), University of Rochester, Washington University at St. Louis, and Carnegie-Mellon University.
+We are especially indebted to Joe Sweeney, Mark Rubinstein, and Ravi Jagannathan for valuable comments
+and suggestions. Address correspondence to David A. Hsieh, Fuqua School of Business, Duke University,
+Box 90120, Durham, NC 27708-0120 or e-mail: david.a.hsieh@duke.edu.
+
+1
+
+See Fung and Hsieh (2000) and Fung et al. (1999) for analyses on the market impact of hedge fund activities.
+
+2
+
+See Fung and Hsieh (1999) for an overview for hedge fund organizational structure and their economic
+rationale.
+
+The Review of Financial Studies Summer 2001 Vol. 14, No. 2, pp. 313–341
+© 2001 The Society for Financial Studies
+
+[C02]
+The Review of Financial Studies / v 14 n 2 2001
+
+risk in hedge fund strategies. This article illustrates a general methodology
+for understanding hedge fund risk by modeling a particular trading strategy
+commonly referred to as “trend following” by the investment industry.
+As documented in Fung and Hsieh (1997a), hedge fund managers typi-
+cally employ dynamic trading strategies that have option-like returns with
+apparently no systematic risk. Linear-factor models of investment styles using
+standard asset benchmarks, as in Sharpe (1992), are not designed to capture
+the nonlinear return features commonly found among hedge funds. This may
+lead investors to conclude erroneously that there are no systematic risks.
+A remedy is in Glosten and Jagannathan (1994), where they suggested
+using benchmark-style indices that have embedded option-like features. 3 This
+is done in Fung and Hsieh (1997a) for hedge funds where they extracted style
+factors from a broad sample of hedge fund returns. By construction, these
+style factors captured much of the option-like features while preserving the
+general lack of correlation with standard asset benchmarks. To fully capture
+hedge fund risk, we must model the nonlinear relationships between these
+style factors and the markets in which hedge funds trade. This is not a simple
+task. The lack of public disclosure makes it difﬁcult to link hedge fund style
+factors to asset markets.
+Our task is further complicated by the fact that hedge fund managers, who
+are no strangers to risk, generally diversify their fund’s performance across a
+variety of strategies. Consequently, the observed returns and extracted style
+factors are generated by portfolios of different strategies, each having a dif-
+ferent type of risk. The combination of the dynamic allocation of capital
+resources to a portfolio of trading strategies, each with nonlinear return char-
+acteristics, greatly limits the value of analyzing a general sample of many
+hedge funds. From a modeling perspective, it is useful to concentrate on a
+speciﬁc trading strategy that is identiﬁable with a reasonably large number
+of hedge funds, whose returns are predominantly generated by that strategy.
+In this article, we focus on a popular strategy commonly referred to as
+“trend following.” 4 Trend following is a self-described strategy for the major-
+ity of commodity trading advisors (CTAs), as shown in Billingsley and
+
+3
+
+Typically, performance evaluation and attribution models rely on regressing a manager’s historical returns on
+one or more benchmarks. The slope coefﬁcients reﬂect benchmark-related performance, whereas the constant
+term (“alpha”) measures performance “benchmark risk.” This approach dates back to Jensen’s (1968) original
+work. Unfortunately, this type of regression method is sensitive to nonlinear relationships between the man-
+ager’s returns and the benchmarks and can result in incorrect inferences. For instance, Grinblatt and Titman
+(1989) showed that a manager can generate positive Jensen’s alphas by selling call options on the underlying
+stocks of a given standard benchmark. Merton (1981) and Dybvig and Ross (1985) showed that a portfolio
+manager with market-timing ability can switch between stocks and bonds to generate returns with option-like
+features without explicitly trading options. Empirically, Lehman and Modest (1987) found that a number of
+mutual funds exhibited option-like return features. A standard way to deal with option-like return features
+is to add nonlinear functions of the benchmark return as regressors. This was done in Treynor and Mazuy
+(1966) and Henriksson and Merton (1981).
+
+4
+
+Studies modeling other trading styles have emerged. See, for example, pairs trading in Gatev et al. (1999),
+risk arbitrage in Mitchell and Pulvino (1999), and relative-value trading in Richards (1999).
+
+314
+
+[C03]
+Risk in Hedge Fund Strategies
+
+Chance (1996). 5 Also, Fung and Hsieh (1997b) showed that the returns of
+CTA funds have one dominant style factor. This implies that there is one
+dominant trading strategy in CTA funds, and that strategy is trend following.
+We therefore focus our empirical work on the return of CTA funds to develop
+a model that explains their returns. In addition, this model contributes to
+explaining the performance of other hedge funds that use trend following as
+part of their portfolio of strategies.
+Trend following is a particularly interesting trading strategy. Not only
+are returns of trend-following funds uncorrelated with the standard equity,
+bond, currency, and commodity indices, Fung and Hsieh (1997b) found these
+returns to exhibit option-like features—they tended to be large and positive
+during the best and worst performing months of the world equity markets. 6
+This is evident in Exhibit 2 of Fung and Hsieh (1997b), reproduced here
+as Figure 1. The monthly returns of the world equity market, as proxied by
+the Morgan Stanley (MS) World Equity Index, are sorted into ﬁve “states.”
+State 1 consists of the worst months, and State 5 the best months. This ﬁgure
+graphs the average monthly return of an equally weighted portfolio of the six
+largest trend-following funds, along with that of the world equity markets, in
+each state. Fung and Hsieh (1997b) noted that a similar pattern holds for an
+equally weighted portfolio of all trend-following funds.
+The return proﬁle shown in Figure 1 indicates that the relationship
+between trend followers and the equity market is nonlinear. Although returns
+of trend-following funds have a low beta against equities on average, the
+state-dependent beta estimates tend to be positive in up markets and nega-
+tive in down markets. In fact, the return pattern of trend-following funds in
+Figure 1 is similar to those of contingent claims on the underlying asset and
+must therefore have systematic risk, albeit in a nonlinear manner. The goal
+of this article is to model how trend followers achieve this unusual return
+characteristic in order to provide a framework for assessing the systematic
+risk of their strategy. Note that, in the presence of nonlinearity, betas from
+a standard linear-factor model can either overstate the systematic risk or
+understate it (as in the case of LTCM).
+If the trading rules used by trend followers are readily available, we can
+directly estimate their systematic risk. Unfortunately, but understandably,
+traders regard their trading systems to be proprietary and are reluctant to
+disclose them. We can therefore only theorize what trend followers do. Fur-
+thermore, although we use the term trend followers to describe a certain class
+
+5
+
+CTAs are individuals or trading organizations, registered with the Commodity Futures Trading Commission
+(CFTC) through membership in the National Futures Association, who trade primarily futures contracts on
+behalf of a customer.
+
+6
+
+August 1998 provides an out-of-sample observation that substantiates this view. While the S&P 500 lost
+14.5% of its value, commodity funds generally had positive returns. In a Barron’s September 9, 1998, article,
+Jaye Scholl wrote, “Of the 17 commodity trading advisors reporting to MAR, 82% generated positive results
+in August, with 46 of them posting returns of more than 10%.”
+
+315
+
+[C04]
+The Review of Financial Studies / v 14 n 2 2001
+
+Figure 1
+Average monthly returns of six large trend-following funds in ﬁve different MS world equity market
+states
+Source: Fung and Hsieh (1997a).
+
+of traders, in practice their respective approaches can differ widely. Trend
+followers can converge onto the same “trend” for different reasons and have
+very different “entry and exit” points. From a modeling perspective, we need
+a level of aggregation that captures the essence of this trading style but avoids
+some of the distracting idiosyncrasies of individual trend followers.
+We posit that the simplest trend-following strategy, which we label as
+the “primitive trend-following strategy,” has the same payout as a structured
+option known as the “lookback straddle.” The owner of a lookback call option
+has the right to buy the underlying asset at the lowest price over the life of
+the option. Similarly, a lookback put option allows the owner to sell at the
+highest price. The combination of these two options is the lookback straddle,
+which delivers the ex post maximum payout of any trend-following strategy. 7
+The concept of a lookback option was ﬁrst introduced in Goldman et al.
+(1979). Within this context, trend followers should deliver returns resembling
+those of a portfolio of bills and lookback straddles. Unlike earlier studies that
+
+7
+
+In reality, trend followers often make multiple entry and exit decisions over a sufﬁciently long investment
+horizon so long as there is sufﬁcient volatility surrounding the underlying trend. This aspect is excluded in
+our simple model. However, a comparison of our model to the market-timing model of Merton (1981) can be
+found in Section 2 of this article.
+
+316
+
+[C05]
+Risk in Hedge Fund Strategies
+
+explicitly specify “technical trading rules” to proxy a popular form of trend-
+following strategy, 8 this particular option strategy is not designed to replicate
+any speciﬁc trend-following strategy. Rather, it is designed to capture the
+general characteristics of the entire family of trend-following strategies.
+We demonstrate empirically that lookback straddle returns resemble the
+returns of trend-following funds. This provides the key link between the
+returns of trend-following funds and standard asset markets.
+The rest of the article is organized as follows. Section 1 sets out the theoret-
+ical foundation of the primitive trend-following strategies as lookback strad-
+dles. We explore the similarities and differences between trend following and
+market timing as trading strategies in the Merton (1981) framework. Given
+any asset, we show that the lookback straddle is better suited to capture the
+essence of trend-following strategies than a simple straddle. Section 2 details
+the data sample used to test our model. Section 3 reports the improvements
+on explaining trend-following funds’ returns using our model versus standard
+asset benchmarks. It conﬁrms the intuition that trend-following funds’ returns
+are similar to those of contingent claims on standard asset indices. Section 4
+discusses the question of performance benchmarks for trend followers. Here
+we note the opportunistic nature of trend followers. These traders apply capi-
+tal resources to different markets in a dynamic fashion and do so in a manner
+peculiar to their individual skill and technology. Summary and conclusions
+are in Section 5.
+
+1. The Primitive Trend-Following Strategy
+
+The convex return pattern observed in Figure 1 resembles the payout proﬁle
+of a straddle on the underlying asset. A simple strategy that yields the return
+pattern of a straddle is that of a “market timer” who can go long and short
+on the underlying asset, as in Merton (1981). Following his notation, let Z(t)
+denote the return per dollar invested in the stock market and R(t) the return
+per dollar invested in Treasury bills in period t. At the start of the period,
+if the market timer forecasts stocks to outperform bills, only stocks will be
+held. Otherwise, only bills will be held. This implicitly assumes the presence
+of short sales constraints. For a perfect market timer, Merton (1981) showed
+that the return of his portfolio is given by R(t)+Max{0, Z(t)−R(t)}, which
+is the return of a portfolio of bills and a call option on stocks.
+In the absence of short sale constraints, the market timer’s return
+is modiﬁed to reﬂect the short sale alternative. For a perfect market
+timer, Merton (1981) showed that the return of his portfolio is given by
+R(t) + Max{0, Z(t) − R(t)} + Max{0, R(t) − Z(t)}, which is the return of a
+portfolio of bills and a straddle on stocks. In a follow-up paper, Henriksson
+
+8
+
+See Alexander (1961).
+
+317
+
+[C06]
+The Review of Financial Studies / v 14 n 2 2001
+
+and Merton (1981) proposed a nonparametric test on whether a market timer
+had the ability to time the market.
+We use a similar approach to model a trend follower. It is helpful to
+begin with a qualitative comparison of market timing and trend following as
+trading strategies. Both market timers and trend followers attempt to proﬁt
+from price movements, but they do so in different ways. In Merton (1981),
+a market timer forecasts the direction of an asset, going long to capture a
+price increase, and going short to capture a price decrease. A trend follower
+attempts to capture “market trends.” Trends are commonly related to serial
+correlation in price changes, a concept featured prominently in the early tests
+of market efﬁciency. A trend is a series of asset prices that move persistently
+in one direction over a given time interval, where price changes exhibit posi-
+tive serial correlation. A trend follower attempts to identify developing price
+patterns with this property and trade in the direction of the trend if and when
+this occurs. 9
+To provide a formal deﬁnition of these two trading strategies, we intro-
+duce the concepts of Primitive Market-Timing Strategy (PMTS) and Primi-
+tive Trend-Following Strategy (PTFS) as follows. Let S, S  , S max , and S min
+represent the initial asset price, the ending price, the maximum price, and
+the minimum price achieved over a given time interval. Consistent with the
+Merton (1981) framework, we restrict our strategies to complete a single
+trade over the given time interval. The standard buy-and-hold strategy buys at
+the beginning and sells at the end of the period, generating the payout S  − S.
+The PMTS attempts to capture the price movement between S and S  . If S 
+is expected to be higher (lower) than S, a long (short) position is initiated.
+The trade is reversed at the end of the period. Thus, the optimal payout of
+the PMTS is |S  − S|. The PTFS, on the other hand, attempts to capture the
+largest price movement during the time interval. Consequently, the optimal
+payout of the PTFS is S max − S min . Note that the PMTS is deﬁned in a man-
+ner consistent with Merton (1981). The construction of the PTFS, on other
+hand, adds the possibility of trading on S max and S min . 10 Capital allocation to
+the PMTS or PTFS is determined by comparing the payout of the respective
+strategy to the return of the risk-free asset. 11
+If we are dealing with perfect market timers and perfect trend followers,
+they would capture the optimal payouts |S  − S| and S max − S min , respectively,
+without incurring any costs. In reality, these traders cannot perfectly antic-
+ipate price movements. A helpful distinction between their approaches can
+be made as follows. Generally, market timers enter into a trade in anticipa-
+tion of a price move over a given time period, whereas trend followers trade
+
+9
+
+Note that we are not advocating that markets trend. That is an empirical issue best deferred to another occasion.
+
+10
+
+Therefore, if Merton’s (1981) assumptions were strictly imposed, the payout of the PTFS must equal that of
+the PMTS.
+
+11
+
+The distribution of capital resources between the respective trading strategy and the riskless asset will also
+depend on the investor’s risk preference.
+
+318
+
+[C07]
+Risk in Hedge Fund Strategies
+
+only after they have observed certain price movements during a period. The
+terms buying breakouts and selling breakdowns are often used to describe
+trend followers. 12 These are very common characteristics of trend-following
+strategies.
+Also, in reality, market timers and trend followers do incur costs when
+they attempt to capture their respective optimal payouts. We cannot estimate
+these costs without knowledge of their strategies. Instead, we assume that the
+ex ante cost of the PMTS is the value of an at-the-money standard straddle,
+and that of the PTFS is the value of a lookback straddle. In other words,
+the PMTS is a long position in a standard straddle, and the PTFS is a long
+position in a lookback straddle.
+In the next section, we will empirically create returns of the PTFS using
+lookback straddles on 26 different markets. Before doing so, we have some
+remarks regarding the differences between the PTFS and the PMTS.
+As the PMTS and PTFS are option positions, we can illustrate their theo-
+retical difference via their deltas. For illustrative purposes, assume that Black
+and Scholes (1973) holds. The price of a standard straddle is then well
+known, and the prices of lookback options can be found in Goldman et al.
+(1979). The delta of the standard straddle is given by
+
+δ = 2N (a 1 ) − 1,
+
+where N( ) is the cumulative standard normal distribution, and
+
+
+a 1 = [ln(S/X) + r + 2 1 σ 2 T ]/(σ T 1/2 ).
+
+(1)
+
+(2)
+
+Here, S is the current price of the underlying asset with instantaneous vari-
+ance σ, r the instantaneous interest rate, and T the time to maturity of the
+option. In comparison, the delta of the lookback straddle is given by
+
+δ LB = [1 + 2 1 σ 2 /r] N (−b 3 ) + (u/σ ) exp(−rT + 2rb/σ 2 ) N (b 2 )
+
+− [1 + 2 1 σ 2 /r] N (d 3 ) − (u/σ ) exp(−rT − 2rd/σ 2 ) N (d 2 ), (3)
+
+where
+
+u = (r − 2 1 σ 2 ),
+
+d = ln(S/Q)
+
+d 1 = [ln(S/Q) + (r − 2 1 σ 2 )T ]/(σ T 1/2 ),
+
+d 2 = [− ln(S/Q) + (r − 2 1 σ 2 )T ]/(σ T 1/2 ),
+
+d 3 = [− ln(S/Q) − (r + 2 1 σ 2 )T ]/(σ T 1/2 ),
+
+12
+
+(4)
+
+(5)
+
+(6)
+
+(7)
+
+(8)
+
+Breakout means that the price of an asset moves above a recent high, and buying breakouts refers to the
+strategy of going long when a breakout happens. Breakdown means that the price moves below a recent low,
+and selling breakdowns refers to the strategy of going short when a breakdown happens.
+
+319
+
+[C08]
+The Review of Financial Studies / v 14 n 2 2001
+
+b = ln(M/S),
+
+b 1 = [ln(M/S) − (r − 2 1 σ 2 )T ]/(σ T 1/2 ),
+
+b 2 = [− ln(M/S) − (r − 2 1 σ 2 )T ]/(σ T 1/2 ), and
+
+b 3 = [ln(M/S) − (r + 2 1 σ 2 )T ]/(σ T 1/2 ).
+
+(9)
+
+(10)
+
+(11)
+
+(12)
+
+Here Q and M denote the minimum and maximum prices, respectively,
+of the asset since the inception of the lookback straddle. A derivation of
+Equation (3) is available from the authors on request. Several examples of
+the difference in the deltas are in Appendix A. The key difference lies in the
+path-dependency of the lookback option.
+Empirically, the difference between the PMTS and the PTFS is much more
+subtle. Given any investment horizon, the payout of the PMTS equals that
+of the PTFS if and only if S max and S min occur at the beginning and end of
+the period in any order. Consequently, as the investment horizon shrinks, the
+payouts of the two strategies converge. As the investment horizon lengthens,
+the payout of the two strategies will diverge, because the probability of S max
+and S min being interior points to the investment horizon increases. In the
+empirical implementation, we use three-month options, which tend to be
+the most liquid options; this observation period may be too short to deliver
+a consistently dramatic payout difference between lookback straddles and
+standard straddles.
+Furthermore, as pointed out in Goldman et al. (1979), the lookback straddle
+can be replicated by dynamically rolling standard straddles over the life of the
+option. The rollover process is much reminiscent of the buying breakouts and
+selling breakdowns characteristics of trend-following strategies. 13 However,
+as both the PMTS and PTFS make use of standard straddles on the same
+asset, albeit in a different manner, their returns are likely to be correlated.
+Given these two considerations, it may be difﬁcult to distinguish between
+the PMTS and the PTFS empirically, even though the PTFS better describes
+trend-following strategies theoretically. This issue is explored in the empiri-
+cal sections of the article. We note here that the goal of this article is to show
+that there is at least one option portfolio, involving bills and lookback strad-
+dles, that performs like trend-following funds. We do not attempt to answer
+the question of which option portfolio best describes the returns of trend-
+following funds. It is conceivable that, depending on the data sample used,
+alternative strategies to the PTFS can better replicate trend-following funds’
+returns empirically.
+
+13
+
+A more detailed description of this process can be found in Section 3.
+
+320
+
+[C09]
+Risk in Hedge Fund Strategies
+
+2. Constructing a Performance Database of PTFSs
+
+To verify if the PTFS can mimic the performance of trend followers, we
+generated the historical returns of the PTFS applied to the most active mar-
+kets in the world. For stock indices, we used the futures contracts on the
+S&P 500 (CME), Nikkei 225 (Osaka), FTSE 100 (LIFFE), DAX 30 (DTB),
+and the Australian All Ordinary Index (SFE). For bonds, we used the futures
+contracts on the U.S. 30-year Treasury bonds (CBOT), UK Gilts (LIFFE),
+German Bunds (LIFFE), the French 10-year Government Bond (MATIF),
+and the Australian 10-year Government Bond (SFE). For currencies, we
+used the futures contracts on the British pound, Deutschemark, Japanese
+yen, and Swiss franc on the CME. For three-month interest rates, we used
+the futures contracts on the 3-month Eurodollar (CME), Euro-Deutsche
+Mark (LIFFE), Euro-Yen (TIFFE), the Paris Interbank Offer Rate (PIBOR)
+(MATIF), 3-month Sterling (LIFFE), and the Australian Bankers Acceptance
+Rate (SFE). For commodities, we used the futures contracts on soybean,
+wheat, and corn futures traded on the CBOT and gold, silver, and crude oil
+traded on the NYMEX.
+Futures and option data on the DTB, MATIF, and Osaka were purchased
+from the Futures Industry Institute (FII). Futures and option data on the
+LIFFE, SFE, and TIFFE and option data on the CBOT and NYMEX were
+supplied by the respective exchanges. Option data on the CME were pur-
+chased from the FII and updated by the CME. Futures data on the CBOT,
+CME, and NYMEX came from Datastream. Appendix B provides informa-
+tion on the data.
+A number of technical complications arose in the construction of the PTFS
+returns. First, lookback options are not exchange-traded contracts, so we can-
+not directly observe their prices. Instead, we replicated the payout of a look-
+back straddle by rolling a pair of standard straddles, as described in Goldman
+et al. (1979). The replication process calls for the purchase of two at-the-
+money straddles at inception using standard puts and calls. We use one strad-
+dle to lock in the high price of the underlying asset by rolling this straddle to
+a higher strike whenever the price of the underlying asset moves above the
+current strike. At expiration, this straddle’s strike must equal the highest price
+achieved by the underlying asset since inception. We use the other straddle
+to lock in the lowest price of the underlying asset by rolling the straddle to
+a lower strike whenever the price of the underlying asset moves below the
+current strike. At expiration, this latter straddle’s strike must equal the low
+price achieved by the underlying asset since inception. Thus, the pair of stan-
+dard straddles must pay the difference between the maximum and minimum
+price achieved by the underlying asset from inception to expiration, which is
+exactly the payout of the lookback straddle. 14
+
+14
+
+An alternative replication strategy is a delta-hedging strategy using the underlying asset. However, a delta-
+hedging strategy has two problems. First, we need the implied volatility of the option to calculate its delta.
+
+321
+
+[C10]
+The Review of Financial Studies / v 14 n 2 2001
+
+Second, though the strategy of rolling standard straddles can replicate the
+payout of the lookback straddle, it may not perfectly replicate all the cash
+ﬂows of the lookback straddle. A lookback straddle has only two cash ﬂows:
+an upfront premium at inception and a payout equal to the maximum range
+of the price of the underlying asset at expiration. In replicating this, the
+straddle rolls may generate additional cash ﬂows when straddles are rolled
+from one strike price to another. We included these cash ﬂows in calculating
+the returns of the straddle-rolling strategy.
+Third, our straddle-rolling strategy ignores the fact that many exchange-
+traded options are not European-style options. Most of the options traded on
+U.S. exchanges are American-style options, which have higher prices than
+European-style options. This biases downward the returns of the PTFS. There
+is no problem with options on the LIFFE, which are futures-style options.
+Fourth, we frequently do not observe at-the-money options. Because
+exchange-traded options have discrete strikes, we use the nearest-to-the-
+money options to approximate at-the-money options. The error is likely to
+be small.
+Fifth, we have to select the horizon of the lookback straddle. The choice is
+primarily dictated by availability and liquidity of the options in our data set.
+All the ﬁnancial options in our data set have quarterly expirations. Even when
+monthly expirations are available, quarterly expirations tend to have longer
+history and larger volume. In the case of commodity options, the majority
+have expirations in March, June, September, and December. To compare
+results across markets, we used lookback straddles with three months to
+expiration as close to the end of a quarter as possible to maintain consistency.
+Finally, the straddle-rolling strategy should be implemented continuously
+if we were to match the assumptions in Goldman et al. (1979) exactly. This
+is impractical, as it requires tick-by-tick data, which are costly to purchase
+and time-consuming to process. It is also unclear to what extent it is feasible
+to simulate straddle rolls on a tick-by-tick basis, due to the asynchronous
+nature of options trading (at different strikes) and the potential distortion of
+bid-offer spreads. In practice, we rolled the straddles only at the end of each
+trading day using the settlement prices of the options and the underlying
+assets. We then aggregated the daily returns up to monthly returns to match
+the standard reporting interval for hedge funds.
+The monthly returns of the PTFS from rolling the straddles are summa-
+rized in Table 1. Based on these return series, we formed ﬁve portfolios of
+straddles, one each for stocks, bonds, three-month interest rates, currencies,
+and commodities. Their correlation matrix is given in panel G of Table 1.
+
+As lookback options are not traded, we will have to make some assumptions to obtain an implied volatility.
+Second, a delta-hedging strategy can incur substantial transaction costs, as it requires dynamically changing
+the amount of the underlying asset every time its price changes. The straddle-rolling strategy will incur many
+fewer transactions.
+
+322
+
+[C11]
+Risk in Hedge Fund Strategies
+
+Table 1
+Statistical properties of primitive trend-following strategy (PTFS) returns for 26 markets and
+5 portfolios
+
+Panel A: PTFS monthly returns for stock markets
+
+S&P
+500
+
+FTSE
+100
+
+DAX
+30
+
+Nikkei
+225
+
+0.0437 c
+0.2775
+1.0060
+−0.3433
+1.19 a
+44
+
+Mean
+SD
+Maximum
+Minimum
+Skewness
+% positive
+
+−0.0161
+0.2774
+2.2932
+−0.4003
+3.83 a
+33
+
+−0.0177
+0.1845
+0.5313
+−0.3867
+0.71 a
+41
+
+−0.0470
+0.3978
+1.7349
+−0.7667
+1.72 a
+33
+
+Panel B: PTFS monthly returns for government bond markets
+
+US
+30Y
+
+UK
+Gilt
+
+German
+Bund
+
+French
+10Y
+
+0.0321 c
+0.2333
+1.2051
+−0.3117
+2.16 a
+49
+
+Mean
+SD
+Maximum
+Minimum
+Skewness
+% positive
+
+0.0136
+0.2455
+0.9642
+−0.3503
+1.55 a
+40
+
+0.0097
+0.2351
+0.8859
+−0.3110
+1.21 a
+40
+
+0.0157
+0.2285
+0.9989
+−0.4464
+1.43 a
+49
+
+Panel C: PTFS monthly returns for three-month interest rate markets
+
+3-month
+Sterling
+
+Euro-Dollar
+
+Euro-DM
+
+Euro-Yen
+
+0.0449 c
+0.3495
+1.4412
+−0.4129
+1.59 a
+39
+
+0.0750 c
+0.4066
+2.2039
+−0.4545
+2.38 a
+45
+
+Mean
+SD
+Maximum
+Minimum
+Skewness
+% positive
+
+0.0170
+0.2703
+1.0174
+−0.5000
+1.33 a
+40
+
+−0.0375
+0.3077
+1.8883
+−0.4444
+3.20 a
+31
+
+Panel D: PTFS monthly returns for currency markets
+
+British Pound
+
+Deutsche Mark
+
+Japanese Yen
+
+Swiss Franc
+
+0.0455 c
+0.3372
+1.3560
+−0.4223
+1.67 a
+44
+
+0.0496 a
+0.2577
+1.1054
+−0.3513
+0.99 a
+48
+
+Mean
+SD
+Maximum
+Minimum
+Skewness
+% positive
+
+0.0174
+0.3070
+1.2661
+−0.4391
+1.73 a
+41
+
+0.0232
+0.2788
+1.0783
+−0.3992
+1.48 a
+38
+
+Panel E: PTFS monthly returns for commodity markets
+
+Corn
+
+Wheat
+
+Soybean
+
+Crude Oil
+
+c
+
+c
+
+b
+
+Mean
+SD
+Maximum
+Minimum
+Skewness
+% positive
+
+−0.0135
+0.2685
+1.5408
+−0.4286
+1.87 a
+37
+
+0.0435
+0.2977
+1.3286
+−0.3914
+1.74 a
+45
+
+−0.0355
+0.3001
+1.1063
+−0.5556
+1.54 a
+33
+
+0.0455
+0.3047
+2.1573
+−0.3716
+2.93 a
+44
+
+Australian
+All Ordinary
+
+−0.0304 c
+0.1627
+0.3912
+−0.2657
+0.88 a
+32
+
+Australian
+10Y
+
+0.0189
+0.2411
+0.6884
+−0.3881
+0.93 a
+39
+
+Australia
+Bankers
+Acceptance
+
+Paris
+Interbank
+Rate
+
+0.0513 c
+0.3167
+1.5699
+−0.4433
+1.70 a
+50
+
+0.0453
+0.4780
+2.4999
+−0.4950
+2.72 a
+36
+
+Gold
+
+Silver
+
+a
+
+−0.0502 b
+0.2685
+1.0952
+−0.4982
+1.52 a
+33
+
+−0.0539
+0.2927
+1.0266
+−0.5119
+1.37 a
+30
+
+Before proceeding to compare the PTFS returns to trend-following funds’
+returns, we examine the empirical difference between the standard straddle
+and the lookback straddle. We start by comparing the two types of straddles
+on two quarterly options on the Japanese yen futures contract.
+
+323
+
+[C12]
+The Review of Financial Studies / v 14 n 2 2001
+
+Table 1
+(continued)
+
+Panel F: Monthly returns for trend followers and ﬁve PTFS portfolios (1989–97)
+
+Trend-Following
+Funds
+
+Stock
+PTFS
+
+Bond
+PTFS
+
+Interest
+Rate PTFS
+
+Currency
+PTFS
+
+0.0137 a
+0.0491
+0.1837
+−0.0820
+0.79 a
+
+Mean
+SD
+Maximum
+Minimum
+Skewness
+
+−0.0193
+0.2094
+1.3240
+−0.5172
+2.62 a
+
+0.0181
+0.1573
+0.4739
+−0.2285
+1.07 a
+
+0.0195
+0.1867
+0.8158
+−0.2573
+1.46 a
+
+0.0177
+0.2305
+1.0006
+−0.3013
+1.68 a
+
+Panel G: Correlation matrix of the ﬁve PTFS portfolios
+
+Stock
+PTFS
+
+Bond
+PTFS
+
+Interest
+Rate PTFS
+
+Currency
+PTFS
+
+Stock PTFS
+Bond PTFS
+Interest rate PTFS
+Currency PTFS
+Commodity PTFS
+
+1.00
+
+0.37
+1.00
+
+0.06
+0.32
+1.00
+
+0.16
+0.21
+0.36
+1.00
+
+Commodity
+PTFS
+
+−0.0072
+0.1310
+0.6413
+−0.2497
+1.19 a
+
+Commodity
+PTFS
+
+0.37
+0.12
+0.07
+0.18
+1.00
+
+The primitive trend-following strategy (PTFS) is a long position on three-month lookback straddles. The ﬁve PTFS portfolios
+are equally weighted portfolios of the PTFSs in the ﬁve groups of markets (panels A through E). Trend-following funds’ returns
+are based on an equally weighted portfolio of 407 defunct and operating commodity funds that had signiﬁcant correlation with
+the ﬁrst principal component from a principal component analysis of 1304 defunct and operating commodity funds. The sample
+periods for each market is given in Appendix B.
+a Statistically different from zero at the 1% one-tailed test.
+b Statistically different from zero at the 5% one-tailed test.
+c Statistically different from zero at the 10% one-tailed test.
+%Positive refers to the percentage of months with positive returns.
+
+The ﬁrst comparison is graphed in Figure 2, using the March 1994
+Japanese yen contract. We initiated the straddles at the end of November
+1993, approximately three months prior to expiration. At that time, the March
+yen futures price was 0.9199. It declined to a low of 0.8878 in early January
+1994, rose to a high of 0.9780 by mid-February, and ended at 0.9459 when
+the contract expired in the middle of March. As the contract’s minimum
+and maximum prices occurred in the middle of the observation period, the
+payout of the lookback straddle (0.0902) was substantially greater than that
+of the standard straddle (0.0260).
+The second comparison is graphed in Figure 3, using the September 1990
+Japanese yen futures contract. Like the ﬁrst comparison, we initiated the
+straddles at the end of May 1990, approximately three months prior to
+expiration. At that time, the September yen futures price was 0.6591. It
+declined to a low of 0.6444 near the end of June, and then rose to a high
+of 0.7147 at the expiration of the contract. In this case, the contract’s min-
+imum and maximum prices occurred near the beginning and the end of the
+observation period, so the payout of the lookback straddle (0.0703) was
+much closer to that of the standard straddle (0.0556). These two graphs
+show that the two straddles can have different payouts over a given obser-
+
+324
+
+[C13]
+Risk in Hedge Fund Strategies
+
+Figure 2
+Standardized cumulative returns of the lookback straddle and the standard straddle on the March 1994
+Japanese yen futures contract
+
+Figure 3
+Standardized cumulative returns of the lookback straddle and the standard straddle on the September
+1990 Japanese yen futures contract
+
+325
+
+[C14]
+The Review of Financial Studies / v 14 n 2 2001
+
+vation period, depending on when the maximum and minimum prices were
+reached.
+Next, we examine the entire data sample from March 1986 to December
+1997. The daily returns of the two types of straddles on the Japanese yen
+had a correlation of 0.39, and their monthly returns had a correlation of 0.86.
+This indicates that, in our empirical application using monthly returns, the
+difference between the PMTS and the PTFS may be hard to discern. This
+is a consequence of using monthly returns of options that expire quarterly.
+We are empirically constrained to use quarterly options because data for
+longer-dated options are generally unreliable and, in most cases, unavailable.
+In addition, we are also empirically constrained to use monthly returns as
+higher frequency observations on the performance of trend-following funds
+are limited. It is an empirical regularity that the standard straddle and the
+lookback straddle are highly correlated in our data sample, even though this
+is not necessarily so at a different return interval. Consequently, we apply
+the lookback straddle in our empirical tests given its superior theoretical
+properties.
+
+3. Evaluating the Risk in Trend-Following Strategies
+
+In this section we show that the returns of trend-following funds are strongly
+correlated with the returns of the PTFSs. This is consistent with the notion
+that trend-following funds have systematic risks, contrary to the prediction
+of linear-factor models applied to standard asset benchmarks.
+
+3.1 Standard benchmarks do not explain trend-following funds’ returns
+To explore this issue, we begin with a representative series of trend-following
+funds’ returns. Theoretically, different trend-following funds may use differ-
+ent trading strategies. This may require a tailor-made benchmark for each
+fund, based on extensive interviews with the manager. Fortunately, despite the
+theoretical differences in the strategies, there is a high degree of commonality
+in the returns of trend-following funds, as shown in Fung and Hsieh (1997b).
+Applying principal components analysis on all defunct and operating CTA
+funds, Fung and Hsieh (1997b) found a single dominant trading style. This
+dominant style was interpreted to be a trend-following style, which is the
+most popular self-described CTA trading style. In this article, we update the
+results of Fung and Hsieh (1997b) using the Tass CTA database as of March
+1998. Out of 1304 defunct and operating CTA funds, 407 are strongly corre-
+lated to the ﬁrst principal component. 15 The returns of the equally weighted
+
+15
+
+Fung and Hsieh (1997b) noted that the inclusion of defunct funds helps guard against “survivorship bias” in
+their estimate of the returns of the trend-following trading style. Survivorship bias comes about when only
+surviving, or operating, funds are used to estimate the returns of a group of funds. This is likely to result in
+an upward bias, because the omitted defunct funds generally have poorer performance than surviving funds.
+
+326
+
+[C15]
+Risk in Hedge Fund Strategies
+
+portfolio of these 407 funds are used as the representative trend-following
+funds’ returns.
+We start with a key distributional feature of trend-following funds’ returns.
+Table 1 shows that the trend-following funds’ returns have strongly posi-
+tively skewed returns. The returns of the ﬁve PTFS portfolios as well as all
+the individual PTFSs are also strongly positively skewed. The difference is
+that trend-following funds’ returns have a positive and statistically signiﬁcant
+mean, whereas the PTFS portfolios and most of the individual PTFSs do not.
+With the exception of the PTFS for the Swiss franc, trend-following funds’
+returns have a higher mean and greater statistical signiﬁcance than the PTFS
+returns. We defer further analysis of this implicit alpha in trend-following
+funds’ returns until Section 4.
+
+3.2 Lookback straddle benchmarks explain trend-following funds’
+returns
+
+Next, we document the apparent lack of systematic risk in trend-following
+funds’ returns in standard linear-factor models in Table 2. The regres-
+sion of trend-following funds’ returns against the eight major asset classes
+
+Table 2
+Explaining trend-following funds’ returns: The 
+R 2 s of regressions on ten sets of risk factors
+
+Sets of Risk Factors
+
+1.
+
+Eight major asset classes in Fung and Hsieh (1997a)
+(U.S. equities, non-U.S. equities, U.S. bonds, non-U.S. bonds,
+gold, U.S. dollar index, Emerging market equities,
+one-month Eurodollar)
+
+2.
+
+Five major stock indices
+(S&P 500, FTSE 100, DAX 30, Nikkei 225, Australian
+All Ordinary)
+
+3.
+
+Five government bond markets
+(U.S. 30-year, UK Gilt, German Bund,
+French 10-year, Australian 10-year)
+
+4.
+
+Six three-month interest rate markets
+(Eurodollar, 3m Sterling, Euro-DM, Euro-Yen,
+Australian Bankers Acceptance,
+Paris Interbank Rate)
+
+5.
+
+Four currency markets
+(British pound, deutschemark, Japanese yen,
+Swiss franc)
+
+6.
+
+Six commodity markets
+(corn, wheat, soybean, crude oil, gold, silver)
+
+7.
+
+Goldman Sachs Commodity Index
+
+8.
+
+Commodity Research Bureau Index
+
+9.
+
+Mount Lucas/BARRA Trend-Following Index
+
+10.
+
+Five PTFS portfolios
+(Stock PTFS, Bond PTFS, Currency PTFS,
+three-month interest rate PTFS, Commodity PTFS)
+
+ 2 refers to adjusted R 2 of the regressions of trend-following funds’ returns on ten different sets of risk factors.
+R
+
+ 2 of Regression (%)
+R
+
+1.0
+
+−2.1
+
+7.5
+
+1.5
+
+−1.1
+
+−3.2
+
+−0.7
+
+−0.8
+
+7.5
+
+47.9
+
+327
+
+[C16]
+The Review of Financial Studies / v 14 n 2 2001
+
+(U.S. equities, non-U.S. equities, U.S. bonds, non-U.S. bonds, one-month
+Eurodollar interest rate, gold, U.S. Dollar Index, and emerging market
+ 2 of 1.0%, and none of the
+equities) in Fung and Hsieh (1997a) has an R
+variables are statistically signiﬁcant. For completeness, we examined the
+26 markets used to construct the PTFSs in Table 1. Doing this by groups,
+ 2 of −2.1%, the ﬁve bond markets 7.5%,
+the ﬁve stock markets have an R
+the six three-month interest rates 1.5%, the four currencies −1.1%, and the
+six commodities −3.2%. An investor using a linear-factor model on stan-
+dard asset benchmarks would have concluded that trend followers had no
+systematic risk.
+Other indices frequently associated with commodity traders and trend fol-
+lowers produced similarly poor results. The regression of trend-following
+ 2 of −0.7% and is
+funds’ returns on the GSCI Total Return Index has an R
+not statistically signiﬁcant. The Commodity Research Bureau (CRB) Index
+ 2 of −0.8% and is also not signiﬁcant. The Mount Lucas/BARRA
+has an R
+ 2 of 7.5%, and it is sta-
+Trend-Following Index is slightly better, with an R
+tistically signiﬁcant. These results are summarized in Table 2.
+Next, we document the PTFS’s ability to characterize the performance of
+trend followers using standard linear statistical techniques. The regression of
+the trend-following funds’ returns on the ﬁve PTFS portfolios returns has an
+ 2 of 47.9%, with currencies and commodities having the largest explanatory
+R
+power. The F -test that none of the PTFS portfolios is correlated with the
+trend-following funds’ returns is rejected at any conventional signiﬁcance
+level. This indicates that trend followers do have systematic risks. These
+risks are just not evident in a linear-factor model applied to standard asset
+benchmarks.
+Proper diagnostics are needed to guard against nonlinear relationships in
+regressions. We do so using scatter plots of the trend-following funds’ returns
+against the ﬁve PTFS portfolios in the ﬁve panels in Figure 4. The ﬁrst panel
+graphs the trend-following funds’ returns against the stock PTFS returns.
+It basically shows that there is no apparent relationship between these two
+variables either in the center of the distribution or at the extremes. The other
+panels in Figure 4 are the scatter plots of the trend-following funds’ returns
+against the PTFS portfolios in bonds, three-month interest rates, currencies,
+and commodities, respectively. They show that the currency and commodity
+PTFSs have the strongest relationship with trend followers. In particular, the
+panel for currency PTFS contains the most striking scatter plot. It shows that,
+when trend followers make large proﬁts, the currency PTFS also makes large
+proﬁts. In fact, the relationship between the currency PTFS returns and the
+trend-following funds’ returns appear reasonably linear. Plots of the residuals
+of the regression against the explanatory variables (available from the authors
+on request) do not show any remaining nonlinear relationships.
+
+328
+
+[C17]
+Risk in Hedge Fund Strategies
+
+3.3 Trend-following funds’ returns are sensitive to large moves in world
+equity markets
+Next we examine another important characteristic of trend-following funds’
+returns corresponding to extreme moves in world equity markets. We begin
+with Table 3, where we report the trend followers’ sizable positive returns
+during downturns in world equity markets. The two worst periods for world
+equities in the last 10 years, as measured by the MS World Equity index,
+are: Sep–Nov 1987 (−20.4%) and Aug–Sep 1990 (−18.9%). Trend-following
+funds recorded large positive returns of 13.0% and 10.2% during these two
+periods, respectively. Given the lookback option’s structure, it was not sur-
+prising that the PTFSs for stocks had positive returns during these two down
+periods for equities. The less obvious results were the positive returns from
+the PTFSs for most of the government bonds, currencies, and commodities.
+However, less than half of the PTFSs for three-month interest rates were
+proﬁtable during these two periods.
+To generalize these unusual return characteristics, we provide further col-
+laborating evidence on this relationship between the returns of trend followers
+and those of the world equity markets over a large sample period. It was ﬁrst
+observed in Fung and Hsieh (1997a, 1997b) that the returns of trend follow-
+ers have option-like payouts relative to world equity markets. We extend this
+observation to encompass a larger data set using the returns from the PTFSs.
+The result is reported in Table 4. Here we divided the longer time series for
+which there were data for all PTFSs (March 1985 to December 1997) into
+5 states, based on the performance of the world equity market. State 1 rep-
+resents the worst 30 months for world equities, which declined on average
+4.60%. State 2 consists of the next 30 worst months, when equities fell an
+average of 0.59% per month. State 5 has the best 30 months for equities,
+which rose 6.74% on average. State 4 are the next best 30 months, in which
+equities gained 3.36% on average. State 3 contains the remaining 34 months.
+We then report the average return and the standard deviation of the PTFSs
+for stocks, bonds, currencies, three-month interest rates, and commodities
+during these states.
+Consistent with the earlier observation, the returns of the PTFSs tended to
+be high during extreme states 1 and 5 for stocks. As expected, the PTFSs on
+stocks had high and positive average returns during the two extreme states.
+The PTFSs on bonds, three-month interest rates, and currencies also had
+high and positive average returns in states 1 and 5. However, the PTFSs on
+commodities did not exhibit this option-like behavior. 16
+It is perhaps not surprising that the PTFSs in bonds, three-month inter-
+est rates, and currencies generated high returns during extreme moves in the
+world equity markets. Theoretically, ﬁnancial assets (stocks, bonds, three-
+month interest rates, and currencies) should respond to the same set of
+
+16
+
+The low average return for the commodity PTFS in state 1 was primarily due to one outlier.
+
+329
+
+[C18]
+The Review of Financial Studies / v 14 n 2 2001
+
+Figure 4
+Scatter plots of monthly trend-following funds’ returns versus ﬁve PTFS portfolio returns
+
+330
+
+[C19]
+Risk in Hedge Fund Strategies
+
+Figure 4
+(continued)
+
+macroeconomic events. Historically, extreme moves tended to be caused by
+a common set of dramatic events (such as the Persian Gulf War in 1990 and
+the attendant shock to the oil markets), leading all ﬁnancial markets to move
+in concert.
+To conclude this subsection, we examine the possibility of using standard
+straddles as an alternative option-replication strategy. We investigated this
+for two markets: the Swiss franc futures contract because its PTFS returns
+were most highly correlated to trend-following funds’ returns, and the Sydney
+90-day Bankers Acceptance futures contract, being the least correlated.
+For the Swiss franc, lookback straddle returns had a correlation of 0.834
+with those of standard straddles. Both straddles had statistically signiﬁcant
+correlation to trend-following funds’ returns, 0.444 in the case of lookback
+
+331
+
+[C20]
+The Review of Financial Studies / v 14 n 2 2001
+
+Table 3
+Large PTFS returns during the two worst periods for world equities: Sep–Nov 1987 and Aug–Sep 1990
+
+Panel A: World equities and trend-following funds
+
+MS World
+Equities
+
+Trend-Following
+Funds
+
+Period
+
+8709–8711
+9008–9009
+
+−0.2036
+−0.1889
+
+0.1299
+0.1019
+
+Panel B: PTFS returns for stock markets
+
+Stock
+PTFS
+
+Australian All
+Ordinary
+
+Period
+
+S&P 500
+
+FTSE 100
+
+DAX 30
+
+Nikkei 225
+
+8709–8711
+9008–9009
+
+2.1060
+0.7744
+
+2.1060
+0.7744
+
+Panel C: PTFS returns for bond markets
+
+Period
+
+Bond PTFS
+
+US 30Y
+
+UK Gilt
+
+German Bund
+
+French 10Y
+
+8709–8711
+9008–9009
+
+0.2725
+0.3557
+
+0.3187
+0.3670
+
+0.0753
+−0.0513
+
+0.1257
+
+1.0377
+
+Panel D: PTFS returns for three-month interest rate markets
+
+Interest
+Rate PTFS
+
+Period
+
+Euro-Dollar
+
+3-month Sterling
+
+Euro-DM
+
+Euro-Yen
+
+8709–8711
+9008–9009
+
+0.8194
+−0.1372
+
+0.8194
+−0.0052
+
+−0.0898
+
+−0.3145
+
+Panel E: PTFS returns for currency markets
+
+Period
+
+Currency PTFS
+
+British Pound
+
+Deutsche Dark
+
+Japanese Yen
+
+8709–8711
+9008–9009
+
+0.7758
+0.1832
+
+1.3368
+0.1887
+
+0.5401
+−0.0599
+
+0.3842
+0.0882
+
+Panel F: PTFS returns for commodity markets
+
+Period
+
+Commodity PTFS
+
+Corn
+
+Wheat
+
+Soybean
+
+Crude Oil
+
+8709–8711
+9008–9009
+
+0.0220
+0.8525
+
+0.1494
+0.4336
+
+0.8344
+−0.2891
+
+−0.3871
+5.4406
+
+0.2040
+
+Australian 10Y
+
+Australia
+Bankers
+Acceptance
+
+Paris
+Interbank
+Rates
+
+0.4268
+
+Swiss Franc
+
+0.7448
+0.5165
+
+Gold
+
+Silver
+
+−0.3937
+0.9578
+
+0.1719
+
+straddles and 0.433 for standard straddles. For the Sydney 90-day Bankers
+Acceptance, lookback straddle returns had a correlation of 0.924 with those
+of standard straddles. Neither straddle, however, had statistically signiﬁcant
+correlation with trend-following funds’ returns, −.006 in the case of look-
+back straddles and 0.010 in the case of standard straddles. These results
+indicate that, for quarterly expirations, standard straddles are similar to look-
+back straddles for the purpose of replicating monthly trend-following funds’
+returns. Our choice of the lookback straddle in the empirical application rests
+on its superior theoretical properties given in Section 2.
+
+3.4 Preferred habitat of trend followers
+Next we address the question of preferred habitat or which markets trend
+followers were active in during the extreme equity market moves (i.e., states
+1 and 5 in Table 4). To answer this question, we regressed the trend-following
+funds’ returns on the PTFSs’ returns during the extreme states 1 and 5. Given
+
+332
+
+[C21]
+Risk in Hedge Fund Strategies
+
+Table 4
+Option-like behavior of PTFS returns during ﬁve different states for equities: Mar 85–Dec 97
+
+Interest
+Commodity Trend Following MS World
+State Stock PTFS Bond PTFS Currency PTFS Rate PTFS
+PTFS
+Funds
+Equities
+
+1
+
+0.1281
+0.0928
+−0.0832
+0.0284
+−0.0553
+0.0176
+−0.0816
+0.0253
+0.0941
+0.0453
+
+0.0591
+0.0375
+0.0306
+0.0323
+−0.0518
+0.0246
+−0.0307
+0.0211
+0.1017
+0.0470
+
+0.0827
+0.0484
+−0.0068
+0.0390
+−0.0058
+0.0375
+0.0170
+0.0436
+0.0821
+0.0439
+
+0.0832
+0.0454
+0.0588
+0.0407
+−0.0108
+0.0264
+−0.0146
+0.0355
+0.0560
+0.0483
+
+0.0121
+0.0321
+−0.0362
+0.0309
+−0.0188
+0.0244
+−0.0183
+0.0237
+−0.0245
+0.0267
+
+2
+
+3
+
+4
+
+5
+
+State 1 consists of the worst 30 months of the MS World Equity Index.
+State 2 consists of the next worst 30 months of the MS World Equity Index.
+State 5 consists of the best 34 months of the MS World Equity Index.
+State 4 consists of the next best 30 months of the MS World Equity Index.
+State 3 consists of the remaining 30 months of the MS World Equity Index.
+Standard errors are in italics.
+
+0.0203
+0.0114
+0.0112
+0.0130
+0.0132
+0.0098
+0.0010
+0.0076
+0.0569
+0.0149
+
+−0.0460
+0.0056
+−0.0059
+0.0014
+0.0156
+0.0009
+0.0336
+0.0012
+0.0674
+0.0039
+
+the large number of PTFSs and the small number of observations, we ran the
+regression ﬁve times using groups of PTFSs. In the stock PTFS regression,
+ 2 is 9.4%, and none of the equity indices is statistically signiﬁcant. For
+the R
+ 2 is 10.1% with U.S. bonds being the only signiﬁcant
+bond PTFSs, the R
+ 2 is 21.5%, where
+variable. For the three-month interest rate PTFSs, the R
+the signiﬁcant variables are the Eurodollar and Short Sterling contracts. For
+ 2 is 39.5% with the deutschemark and the Japanese yen
+currency PTFSs, the R
+ 2 is 30.5% where
+being the signiﬁcant variables. For commodity PTFSs, the R
+the wheat and silver futures contracts were the signiﬁcant variables. The ﬁnal
+regression is reported in panel A of Table 5. Using only the signiﬁcant PTFSs,
+ 2 is 60.7% with U.S. bonds, deutschemark, wheat, and silver being the
+the R
+signiﬁcant variables. These are the markets that, ex post, can account for
+trend followers’ performance during extreme equity market moves. Figure 5
+provides a scatter plot of the ﬁtted values of the regression against the returns
+of trend-following funds. Table 5 also provides information on the regressions
+for the overall sample, using all ﬁve PTFSs (in panel B) and three statistically
+signiﬁcant PTFSs (in panel C).
+As the regressors were selected based on previous regressions, statistical
+inference is not reliable. This, however, is the nature of ex post performance
+attribution, where data-mining techniques are applied to determine which
+markets trend followers were active in.
+
+3.5 Relationship to other empirical studies
+To complete our analysis, it is helpful to incorporate qualitative results from
+other independent studies. Billingsley and Chance (1996) found that among
+the CTAs trading only specialized markets, 41.2% trade bonds and three-
+month interest rate futures, 30.9% trade currencies, 15.5% trade commodi-
+ties, and 12.4% trade stock index futures. As Billingsley and Chance (1996)
+
+333
+
+[C22]
+The Review of Financial Studies / v 14 n 2 2001
+
+Table 5
+Estimating trend-following funds’ preferred habitat: January 1989–December 1997
+
+Regressors
+
+Coefﬁcient Estimate
+
+Panel A: Regression of trend-following funds’ returns on selected PTFSs during two extreme
+states (1 and 5) for world equities
+
+Constant
+US bond
+Euro-$
+Short sterling
+DM
+JY
+Wheat
+Silver
+
+0.0166
+0.0478
+0.0336
+0.0234
+0.0544
+0.0194
+0.0513
+0.0540
+
+R 2
+ 2
+R
+
+0.674
+0.607
+
+Panel B: Regression of trend-following funds’ returns on ﬁve PTFS portfolios using
+the full sample
+
+Constant
+PTFS on stocks
+PTFS on bonds
+PTFS on currencies
+PTFS on interest rates
+PTFS on commodities
+
+0.01155
+−0.03517
+0.05164
+0.10994
+−0.02096
+0.14999
+
+R 2
+ 2
+R
+DW
+χ 2 (5)
+
+0.5032
+0.4788
+2.31
+163.44 (p-value : 0.0000)
+
+Panel C: Regression of trend-following funds’ returns on selected PTFS portfolios using
+the full sample
+
+Constant
+PTFS on stocks
+PTFS on bonds
+PTFS on currencies
+PTFS on interest rates
+PTFS on commodities
+
+0.01229
+—
+0.02933
+0.10308
+—
+0.13913
+
+R 2
+ 2
+R
+DW
+χ 2 (3)
+
+0.4816
+0.4666
+2.28
+123.50 (p-value : 0.0000)
+
+See the note for Table 1 for the deﬁnition of PTFS.
+See the note for Table 2 for the deﬁnition of markets.
+a With correction for heteroskedasticity.
+
+Standard Errors a
+
+0.0052
+0.0204
+0.0259
+0.0123
+0.0255
+0.0180
+0.0169
+0.0128
+
+0.00312
+0.01713
+0.02495
+0.01594
+0.02413
+0.02468
+
+0.00332
+—
+0.02077
+0.01575
+—
+0.02657
+
+did not report the split between bonds and three-month interest rates, we
+assume that the group is evenly divided between the two instruments. This
+means that the currency market is the most popular market for trend follow-
+ers attracting, presumably, the lion’s share of available risk capital, whereas
+the equity market is the least popular. Although it is difﬁcult to expect
+qualitative results to line up closely with quantitative observations, both
+approaches came to a similar conclusion: Currencies appeared to be the
+instrument of choice, and stock indices attracted the least trend-following
+activities.
+
+334
+
+[C23]
+Risk in Hedge Fund Strategies
+
+Figure 5
+Scatter plots of monthly trend-following fund’s returns versus PTFS replication portfolio returns
+
+4. Benchmarking Individual Trend-Following Funds
+
+So far, we have examined the return characteristics of a portfolio of 407
+trend-following funds. There can be, however, wide individual variations not
+reﬂected in this portfolio that merit documentation. We investigate individual
+funds in this section.
+First, we focus on 163 trend-following funds with at least 24 months of
+return information through the end of 1997. As a starting point, we assessed
+the ability of standard asset benchmarks to explain returns of individual
+funds. We regressed each fund’s returns on ﬁve portfolios of stocks, bonds,
+three-month interest rates, currencies, and commodities, formed from their
+benchmark (i.e., buy-and-hold) returns rather than the PTFS returns. The dis-
+ 2 are given in the third column of Table 6. They ranged from
+tribution of R
+−9% to 58%, with an average of 11%. Eighty-six funds had no regression
+coefﬁcients signiﬁcant at the 1% level. Seventy-two funds had one signiﬁ-
+cant coefﬁcient: 2 funds had exposure to stocks, 1 to currencies, 7 to bonds,
+and 62 to commodities. Five funds had two signiﬁcant coefﬁcients.
+Next, we regressed the returns of each fund on the ﬁve PTFS portfolios.
+ 2 are given in the second column of Table 6. They
+The distribution of R
+ranged from −2% to 64%, with an average of 24%. Thirty-nine funds had
+no regression coefﬁcients signiﬁcant at the 1% level. Ninety-six funds had
+one signiﬁcant coefﬁcient: 12 had exposure to the bond PTFS, 33 to the
+
+335
+
+[C24]
+The Review of Financial Studies / v 14 n 2 2001
+
+Table 6
+Explaining the monthly returns of 163 trend-following funds using the ﬁve PTFS portfolios and ﬁve
+buy-and-hold portfolios
+
+Number of Trend-Following Funds
+
+Regressions Using
+5 PTFSs Portfolios
+
+ 2 from, to
+R
+
+−1.0, −0.9
+−0.9, −0.8
+−0.8, −0.7
+−0.7, −0.6
+−0.6, −0.5
+−0.5, −0.4
+−0.4, −0.3
+−0.3, −0.2
+−0.2, −0.1
+−0.1, 0.0
+0.0, 0.1
+0.1, 0.2
+0.2, 0.3
+0.3, 0.4
+0.4, 0.5
+0.5, 0.6
+0.6, 0.7
+0.7, 0.8
+0.8, 0.9
+0.9, 1.0
+
+0
+0
+0
+0
+0
+0
+0
+0
+0
+3
+21
+43
+44
+26
+17
+7
+2
+0
+0
+0
+
+Regressions Using 5
+Buy-and-Hold Portfolios
+
+0
+0
+0
+0
+0
+0
+0
+0
+3
+26
+53
+44
+28
+8
+1
+0
+0
+0
+0
+0
+
+ 2 s are based on regressions of 163 trend-following funds with 24 months of returns on the ﬁve PTFS portfolios and on
+The R
+ﬁve buy-and-hold portfolios based on the underlying markets of the PTFS portfolios.
+
+currency PTFS, and 51 to the commodity PTFS. Twenty-seven funds had
+two regression coefﬁcients signiﬁcant at the 1% level: 5 were exposed to
+the bond and currency PTFSs, 11 to the bond and commodity PTFSs, 10 to
+the currency and commodity PTFSs, and 1 to the currency and three-month
+interest rate PTFS. Last, one fund had exposure to the bond, three-month
+interest rate, and commodity PTFSs. It is worth noting that no fund had any
+signiﬁcant exposure to the stock PTFS.
+In terms of magnitudes, the statistically signiﬁcant exposure to the bond
+PTFS ranged from 4% to 65%, averaging 20%. The currency PTFS exposure
+ranged from 3% to 44%, averaging 16%. The commodity PTFS exposure
+ranged from 9% to 87%, averaging 26%. The three-month interest rate PTFS
+exposure ranged from 18% to 22%, averaging 20%.
+Last, we demonstrate that the PTFSs can provide reasonable results for
+identifying the preferred habitat of traders. We examined 21 trend-following
+funds whose names imply they trade only currencies. Of these, 18 had sta-
+tistically signiﬁcant exposure to the currency PTFS only; 2 had exposure to
+the currency PTFS along with either the three-month interest rate PTFS or
+the commodity PTFS; and 1 fund had no signiﬁcant exposure to any PTFSs.
+These results indicate that the PTFS returns (particularly bond, currency,
+and commodity) had much higher explanatory power than the benchmark
+asset returns even at the level of individual trend-following funds. They can
+
+336
+
+[C25]
+Risk in Hedge Fund Strategies
+
+also help in performance attribution. However, the results also indicate sub-
+stantial differences in preferred habitats across trend-following funds. In
+light of these results, it would be difﬁcult to ﬁnd a single benchmark for
+monitoring the performance of trend-following funds. In fact, Glosten and
+Jagannathan (1994) recommended extensive discussions with each fund man-
+ager to understand how he or she operates, in determining whether a fund-
+speciﬁc benchmark is necessary. Nonetheless, our model contributes to the
+design of benchmarks for trend-following funds by capturing the nonlinear
+dynamics of their strategy.
+
+5. Conclusions
+
+In this article, we created a simple trend-following strategy using a lookback
+straddle. This strategy delivers the performance of a perfect foresight trend
+follower. The cost of implementing this strategy can be established using
+observable, exchange-traded option prices. For each asset market, we label
+this the Primitive Trend-Following Strategy (PTFS) for that market. Empiri-
+cally, we show that these PTFSs capture three essential performance features
+of trend-following funds.
+First, the PTFS returns replicate key features of trend-following funds’
+returns. They both have strong positive skewness. Both tend to have positive
+returns during extreme up and down moves in the world equity markets.
+Second, trend-following funds’ returns during extreme market moves can
+be explained by a combination of PTFSs on currencies (deutschemark and
+Japanese yen), commodities (wheat and silver), three-month interest rates
+(Eurodollar and Short Sterling), and U.S. bonds, but not the PTFSs on stock
+indices. This is in agreement with qualitative results in previous studies that
+indicate that stock indices are the least popular market to CTAs. In addi-
+tion, the PTFSs are better able to explain trend-following funds’ returns than
+standard buy-and-hold benchmark returns on major asset classes, as well as
+benchmarks used by the hedge fund industry.
+Third, the superior explanatory power of the PTFSs over standard buy-and-
+hold benchmarks supports our contention that trend followers have nonlinear,
+option-like trading strategies. Speciﬁcally, trend followers tend to perform as
+if they are long “volatility” and “market event risk,” in the sense that they
+tend to deliver positive performance in extreme market environments.
+The implications of these performance features are threefold. One impli-
+cation is that trend-following funds do have systematic risk. However, this
+risk cannot be observed in the context of a linear-factor model applied to
+standard asset benchmarks. The second implication is that trend followers,
+or a portfolio of lookback straddles on currencies, bonds, and commodities,
+can reduce the volatility of a typical stock and bond portfolio during extreme
+market downturns. This view is corroborated by the out-of-sample events in
+the third quarter of 1998, when the S&P declined more than 10% and the
+
+337
+
+[C26]
+The Review of Financial Studies / v 14 n 2 2001
+
+vast majority of trend-following funds made large gains. The third impli-
+cation is that the PTFSs are key building blocks for the construction of a
+performance benchmark for trend-following funds, as well as any fund that
+uses trend-following strategies. However, the evidence indicates that there
+are substantial differences in trading strategies among trend-following funds.
+Thus, it may not be possible to ﬁnd a single benchmark that can be used
+to monitor the performance of all trend followers. As suggested in Glosten
+and Jagannathan (1994), the benchmarking of an individual fund’s perfor-
+mance may need to incorporate speciﬁc aspects of the manager’s operations.
+Nonetheless, the PTFSs are useful tools for the construction of benchmarks
+for trend-following funds.
+
+Appendix A: The Illustrated Difference between the Deltas of the Lookback
+Straddle and the Standard Straddle
+
+This appendix compares the replication strategy of the standard straddle and the lookback strad-
+dle to gain further insights into the difference between market timing and trend following. Let
+S denote the price of the underlying asset. Its instantaneous volatility, σ , is assumed to be 20%.
+The interest rate, r, is 6%. Consider a standard straddle and a lookback straddle that were pur-
+chased when the asset price was 100. At inception, both were at-the-money options, that is, their
+strike prices were 100. Both options have 60 days to expiration. Because the standard strad-
+dle’s payout is not path-dependent, its delta can be calculated without knowing the path of the
+underlying asset’s price. However, the lookback straddle’s payout is path-dependent, so its delta
+depends on the ex post range of the underlying asset’s price. Consider the following cases.
+Suppose the asset price stays at 100. Then the deltas of the standard straddle and the lookback
+straddle are zero, and both payouts are also zero. We consider their deltas in four more scenarios
+graphed in Figure 6.
+In scenario A, illustrated in panel A, the asset price rises steadily from 100 to 160 over the
+life of the straddles. The deltas of the two straddles are similar and rise with the price. Also, the
+payouts of the two straddles are identical. In scenario C, illustrated in panel C, the asset price
+falls steadily from 100 to 40 over the life of the straddles. Again, the two straddles have similar
+deltas and identical payouts. These two cases show that, in strongly trending markets, the two
+straddles are virtually identical.
+In scenario B, shown in panel B, the asset price rises to 130, fell back to 110, and rose to
+150. Here, the two straddles have different deltas but the same payouts. Throughout this entire
+period, the standard straddle has a positive delta. However, the lookback straddle’s delta is quite
+different. It is similar to the delta of the standard straddle when the asset price rises from 100
+to 130 for the ﬁrst time. When the asset price declines from 130 toward 110, the delta of
+the lookback straddle declines sharply and actually turns negative, resembling a trend follower
+selling breakdown. When the asset price subsequently rises from 110, past 130, to 150, the delta
+of the lookback straddle turns positive and rises sharply once more, resembling a trend follower
+buying breakouts.
+In scenario D, the asset price rises to 130 and falls back to 100, as shown in panel D. Here,
+the two straddles have different deltas and different payouts. The delta of the standard straddle
+stays positive over the entire period. In contrast, the delta of the lookback straddle declines
+rapidly as the asset price falls back from the high of 130. The delta in fact turns negative as the
+asset price returns to 100, resembling a trend follower selling breakdowns. Note that the payouts
+of the two straddles are also different: The standard straddle pays out 0, while the lookback
+straddle pays out 30.
+
+338
+
+[C27]
+Risk in Hedge Fund Strategies
+
+Figure 6
+Deltas of the standard straddle and lookback straddle in scenarios A, B, C, and D of the underlying asset’s price path
+
+339
+
+[C28]
+The Review of Financial Studies / v 14 n 2 2001
+
+To summarize, the standard straddle’s delta mimics a trader whose actions depend only on the
+relationship between the current price and the inception price of 100, but not any intermediate
+prices. The trader is long if the current price is above the inception price and short otherwise.
+This is what a market timer would do. The lookback straddle’s delta mimics a trader whose
+actions depend on the relationship between the current price to the maximum and minimum
+prices since inception. The trader is long (short) when the current price is near the maximum
+(minimum) price. This is what a trend follower would do.
+
+Appendix B: Data Description and Data Sources
+
+Futures and option data on the DTB, MATIF, and Osaka were purchased from the Futures
+Industry Institute (FII). Futures and option data on the LIFFE, SFE, and TIFFE, and option
+data on the CBOT and NYMEX, were supplied by the respective exchanges. Option data on the
+CME were purchased from the FII and updated by the CME. Futures data on the CBOT, CME,
+and NYMEX came from Datastream. The following table provides information on the option
+data.
+
+No. of Observations
+
+Start Date a
+
+Month
+
+Futures
+
+Options
+
+Option Contract
+
+Exchange
+
+S&P 500
+FTSE 100
+DAX 30
+Nikkei 225
+All Ordinary
+
+CME
+LIFFE
+DTB
+Osaka
+SFE
+
+83/01/28
+92/03/13
+92/01/02
+89/06/12 b
+92/01/02
+
+180
+70
+72
+96
+72
+
+79,310
+NA
+NA
+51,385
+45,785
+
+497,679
+286,558
+324,714
+94,090
+626,348
+
+30-year US bond
+10-year Gilts
+10-year Bund
+10-year French bd
+10-year Aus. bd
+
+CBOT
+LIFFE
+LIFFE
+MATIF
+SFE
+
+82/10/04
+86/03/13
+89/05/02
+90/01/02
+92/01/02
+
+183
+142
+104
+92
+72
+
+162,525
+38,700
+26,545
+34,250
+15,065
+
+332,651
+245,282
+309,124
+56,883
+110,247
+
+Euro-$
+Short Sterling
+Euro-DM
+Euro-Yen
+Aus. Bank. Acc.
+PIBOR
+
+CME
+LIFFE
+LIFFE
+TIFFE
+SFE
+MATIF
+
+85/03/21
+87/12/01
+90/03/01
+91/08/01 b
+92/01/02
+90/03/01
+
+154
+121
+94
+77
+72
+84
+
+213,665
+118,410
+91,335
+70,470
+81,970
+71,960
+
+443,693
+348,894
+214,473
+52,368
+519,398
+68,505
+
+British pound
+Deutschemark
+Japanese yen
+Swiss franc
+
+CME
+CME
+CME
+CME
+
+85/03/01
+84/01/24 c
+86/03/06 d
+85/02/25 c
+
+154
+168
+142
+149
+
+56,680
+70,800
+63,545
+61,015
+
+267,469
+359,483
+406,352
+341,497
+
+Corn
+Wheat
+Soybean
+Crude oil
+Gold
+Silver
+
+CBOT
+CBOT
+CBOT
+NYMEX
+NYMEX
+NYMEX
+
+85/02/27
+88/01/04
+84/10/31
+86/11/14
+82/10/04
+88/01/04
+
+155
+120
+158
+134
+180
+120
+
+120,970
+80,295
+153,175
+269,200
+230,560
+160,275
+
+333,622
+227,495
+368,338
+408,309
+622,578
+463,070
+
+a All samples end on December 31, 1997.
+
+b Data missing from many dates.
+
+c Portions of data missing during 1993.
+
+d Portions of data missing during 1987 and 1988.
+NA = not applicable for cash options.
+
+340
+
+Source
+
+FII & CME
+LIFFE
+FII
+FII
+SFE
+
+CBOT
+LIFFE
+LIFFE
+FII
+SFE
+
+FII & CME
+LIFFE
+LIFFE
+TIFFE
+SFE
+FII
+
+FII & CME
+FII & CME
+FII & CME
+FII & CME
+
+CBOT
+CBOT
+CBOT
+NYMEX
+NYMEX
+NYMEX
+
+[C29]
+Risk in Hedge Fund Strategies
+
+References
+Alexander, S., 1961, “Price Movements in Speculative Markets: Trends or Random Walks,” Industrial Man-
+agement Review, 2, 7–26.
+
+Billingsley, R., and D. Chance, 1996, “Beneﬁts and Limitations of Diversiﬁcation among Commodity Trading
+Advisors,” Journal of Portfolio Management, 23, 65–80.
+
+Black, F., and M. Scholes, 1973, “The Pricing of Options and Corporate Liabilities,” Journal of Political
+Economy, 81, 1–26.
+
+Dybvig, P. H., and S. A. Ross, 1985, “Differential Information and Performance Measurement Using a Security
+Market Line,” Journal of Finance, 55, 233–251.
+
+Edward, R., and J. M. Park, 1996, “Do Managed Futures Make Good Investments?” Journal of Futures
+Markets, 16, 475–517.
+
+Fung, W., and D. A. Hsieh, 1997a, “Empirical Characteristics of Dynamic Trading Strategies: The Case of
+Hedge Funds,” Review of Financial Studies, 10, 275–302.
+
+Fung, W., and D. A. Hsieh, 1997b, “Survivorship Bias and Investment Style in the Returns of CTAs,” Journal
+of Portfolio Management, 23, 30–41.
+
+Fung, W., and D. A. Hsieh, 1999, “A Primer on Hedge Funds,” Journal of Empirical Finance, 6, 309–331.
+
+Fung, W., and D. A. Hsieh, 2000, “Measuring the Market Impact of Hedge Funds,” Journal of Empirical
+Finance, 7, 1–36.
+
+Fung, W., D. A. Hsieh, and K. Tsatsaronis, 2000, “Do Hedge Funds Disrupt Emerging Markets?” Brookings-
+Wharton Papers on Financial Services, 2000, 377–421.
+
+Gatev, E., W. Goetzmann, and K. Rouwenhorst, 1999, “Pairs Trading: Performance of a Relative Value
+Arbitrage Rule,” working paper, Yale University.
+
+Goldman, M., H. Sosin, and M. Gatto, 1979, “Path Dependent Options: ‘Buy at the Low, Sell at the High,’”
+Journal of Finance, 34, 1111–1127.
+
+Glosten, L., and R. Jagannathan, 1994, “A Contingent Claim Approach to Performance Evaluation,” Journal
+of Empirical Finance, 1, 133–160.
+
+Grinblatt, M., and S. Titman, 1989, “Portfolio Performance Evaluation: Old Issues and New Insights,” Review
+of Financial Studies, 2, 393–421.
+
+Henriksson, R. D., and R. C. Merton, 1981, “On Market Timing and Investment Performance II: Statistical
+Procedures for Evaluating Forecasting Skills,” Journal of Business, 41, 867–887.
+
+Jensen, M. C., 1968, “The Performance of Mutual Funds in the Period 1945–1964,” Journal of Finance, 23,
+389–416.
+
+Lehman, B., and D. Modest, 1987, “Mutual Fund Performance Evaluation: A Comparison of Benchmarks and
+Benchmark Comparisons,” Journal of Finance, 42, 233–265.
+
+Leland, H., 1999, “Beyond Mean-Variance: Performance Measurement in a Nonsymmetrical World,” Financial
+Analyst Journal, 55, 27–36.
+
+Merton, R. C., 1981, “On Market Timing and Investment Performance I: An Equilibrium Theory of Value for
+Market Forecasts,” Journal of Business, 54, 363–407.
+
+Mitchell, M., and T. Pulvino, 1999, “Characteristics of Risk in Risk Arbitrage,” working paper, Northwestern
+University and Harvard University.
+
+Richards, A., 1999, “Idiosyncratic Risks: An Empirical Analysis, with Implications for the Risk of Relative-
+Value Trading Strategies,” working paper, International Monetary Fund.
+
+Sharpe, W., 1992, “Asset Allocation: Management Style and Performance Measurement,” Journal of Portfolio
+Management, 18, 7–19.
+
+Treynor, J., and K. Mazuy, 1966, “Can Mutual Funds Outguess the Market?” Harvard Business Review, 44,
+131–136.
+
+341

@@ -1,0 +1,134 @@
+{
+ "opus_only": [
+  [
+   "QP10-C07-3b",
+   "Table 1 note describes EIV as the AR(2) fitted values and UIV as residuals (in-sample wording), unlike eq. (4) which is a one-step-ahead forecast."
+  ],
+  [
+   "QP10-C08-5b",
+   "UIV enters contemporaneously with the month's return; the note also lists one-month lagged EIV and ret-1, but no such rows have values in Table 2."
+  ],
+  [
+   "QP10-C10-2b",
+   "The size effect may be partly explained by idiosyncratic volatility, consistent with Fu (2009); left to future work."
+  ],
+  [
+   "QP10-C11-3b",
+   "Annual liquidity measures miss monthly variation and cannot give monthly liquidity shocks."
+  ],
+  [
+   "QP10-C12-2b",
+   "Table 4 monthly TAQ spreads (1993-2003): EIV and UIV stay significant with lagged spread and spread-change controls."
+  ],
+  [
+   "QP10-C14-3b",
+   "The five UIV portfolios hold different UIVs but similar EIV spread; measured by excess return and CAPM, FF3 and FF3+MOM alphas; rebalanced monthly."
+  ],
+  [
+   "QP10-C16-3b",
+   "High-minus-low leverage UIV slope difference is significant."
+  ],
+  [
+   "QP10-C16-4b",
+   "Because idiosyncratic volatility trended up from 1962 to 1997 (Campbell et al. 2001), the leverage test is repeated in two sub-periods."
+  ],
+  [
+   "QP10-C16-6b",
+   "Johnson (2004): with a constant asset premium, higher volatility lowers equity beta and expected equity return."
+  ],
+  [
+   "QP10-C17-3b",
+   "Leverage quintiles use the previous month's leverage ranking."
+  ],
+  [
+   "QP10-C18-3b",
+   "Conclusion claims monotone return/alpha increase from low to high UIV for both portfolio types (only value-weighted reported)."
+  ],
+  [
+   "QP10-C18-4b",
+   "UIV's importance comes from the option effect (leverage-monotone slopes)."
+  ],
+  [
+   "QP10-C19-1b",
+   "Expected returns are unobservable and no model estimates them well, so realized returns (ER + UR) are used as the dependent variable."
+  ],
+  [
+   "QP10-C19-3b",
+   "Fix: add a right-hand-side variable X correlated with UR (eq. A3)."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP10-C01-1",
+   "Standard theory says idiosyncratic risk earns no premium, which is the benchmark the paper tests against."
+  ],
+  [
+   "QP10-C01-7",
+   "Aggregate-level studies of average idiosyncratic volatility versus market return also give mixed results."
+  ],
+  [
+   "QP10-C03-5",
+   "The joint EIV/UIV result survives characteristic and liquidity controls and exchange exclusions."
+  ],
+  [
+   "QP10-C03-7",
+   "Authors infer UIV's coefficient reflects unexpected returns, so EIV's coefficient, conditional on UIV, reflects expected return."
+  ],
+  [
+   "QP10-C03-9",
+   "The paper differs from Fu and Spiegel-Wang by using daily-return IV with AR(2) decomposition rather than monthly EGARCH, while reaching a similar positive sign."
+  ],
+  [
+   "QP10-C03-11",
+   "No agreed model for single-stock idiosyncratic volatility; EGARCH on monthly data used by Fu/Spiegel-Wang."
+  ],
+  [
+   "QP10-C05-1",
+   "The monotonic leverage pattern of the UIV effect holds in every subperiod examined."
+  ],
+  [
+   "QP10-C05-8",
+   "Factor data and risk-free rate come from Kenneth French's data library."
+  ],
+  [
+   "QP10-C05-10",
+   "The contemporaneous positive UIV-return link does not by itself imply lower future returns."
+  ],
+  [
+   "QP10-C06-1",
+   "IV for stock i in month m is the sum of squared daily residuals, following Ang et al. and Zhang."
+  ],
+  [
+   "QP10-C06-4",
+   "EIV for month m+1 uses AR coefficients estimated through m applied to IV at m and m-1."
+  ],
+  [
+   "QP10-C06-10",
+   "Alternative AR lag specifications give qualitatively the same main results."
+  ],
+  [
+   "QP10-C08-4",
+   "Both components are needed: using total or expected volatility alone misses the EIV premium."
+  ],
+  [
+   "QP10-C13-5",
+   "Two follow-up tests: UIV-sorted portfolios and leverage test of the option effect."
+  ],
+  [
+   "QP10-C18-2",
+   "Conclusion repeats that Ang et al.'s negative realized return result addresses a different relation."
+  ],
+  [
+   "QP10-C18-4",
+   "Leverage-monotonic UIV coefficients are taken as support that UIV matters through the option effect."
+  ],
+  [
+   "QP10-C19-2",
+   "If a variable X is correlated with unexpected return, adding it (A3) absorbs the noise and corrects bias in the EIV coefficient."
+  ],
+  [
+   "QP10-C19-3",
+   "Final claim: decomposing idiosyncratic volatility reveals both components significantly related to returns in different ways."
+  ]
+ ]
+}

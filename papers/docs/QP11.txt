@@ -1,0 +1,2369 @@
+# Interview with David Harding (SEC Historical Society, Ken Durr, 2013)
+source_id: QP11
+type: paper
+file: david_harding.pdf
+chunks: one per PDF page (C01 = page 1). Page images: img/QP11-p-NN.png (exhibits, charts)
+---
+
+[C01]
+Securities and Exchange Commission Historical Society
+Interview with David Harding
+Conducted on June 18, 2013 by Ken Durr
+
+This is an interview with David Harding for the SEC Historical Society’s virtual museum
+
+KD:
+
+and archive of the history of financial regulation, June 18, 2013 in London. I'm Kenneth
+
+Durr. Let's start with the background. Are you a London native? Where did you grow
+
+up?
+
+Until age ten, I grew up in a place called Coulsdon in south London, and then at ten I
+
+DH:
+
+moved to Goring-on-Thames in Oxfordshire because the institution that my father
+
+worked for, which was the Commonwealth War Graves Commission, moved its offices
+
+from Victoria to Maidenhead in Oxfordshire. It was a government-funded enterprise
+
+which was involved with the burial of all the war dead from all the Commonwealth
+
+nations all over the world, and my father was in charge of the gardening aspect of the
+
+Commonwealth war cemeteries.
+
+How about that; unusual career. I also read that he was involved in some investment and
+
+KD:
+
+that that was something that you knew about.
+
+Yes. He had a colleague at work who he talked to about stocks and shares. He inherited
+
+DH:
+
+a little bit of money when his mother died in the 1970s and I think he was motivated by
+
+his conversations with his colleague, and then he inherited this money to start thinking
+
+about investing in stocks and shares. And he was very impressed with this colleague,
+
+[C02]
+Interview with David Harding, June 18, 2013
+
+2
+
+because this colleague had advised him in 1974 when the U.K. stock market at its low
+
+had a market capitalization of $10 billion. Tony Benn, the most left-wing industry
+
+secretary in history, could have nationalized the whole British economy for $10 billion,
+
+which would be one medium-sized bond now, but he failed to take the opportunity. My
+
+father did take the opportunity to buy some shares during that period when really I think
+
+the market was down 80 percent in the U.K. It was the most dramatic bear market in
+
+U.K. history, bigger than the bear market in the U.K. in the 1930s. The searing
+
+experience in America is the 1930s, but the 1970s was your worst in equities in the
+
+United Kingdom, and the fact that his colleague, Jim, kept the faith at that time impressed
+
+my father very, very much.
+
+My father followed his investment advice and respected him very much, and when my
+
+father died a few years ago (my mother died this year), Jim's children were at the funeral
+
+and they gave me his investment diary—Jim Taylor, who was the person who influenced
+
+my father—and his investment diary starts in 1945. I have it here. They're not so
+
+interested so they sent it to me, because they knew this story about me being influenced,
+
+so they sent me the diary. The first purchase is in the 5th of March, 1945, so it must have
+
+been fifty stocks in G. G. Groves for fourteen and six each.
+
+That’s a little black book with a difference, isn't it? (Laughter.) So this made an
+
+KD:
+
+impression on you I take it?
+
+[C03]
+Interview with David Harding, June 18, 2013
+
+3
+
+Yes. I think he gave me a small amount of the money he inherited, and as a teenager I
+
+DH:
+
+started reading the daily share recommendation columns in the Daily Telegraph, which
+
+was the newspaper that he got in my teens, and bought shares in three or four companies:
+
+BP, Marley, Gratton, and Woodside Petroleum, which still exists this day and I wish I’d
+
+hung onto the shares. (Laughter.) Woodside Petroleum has been a very good investment
+
+in the last forty years.
+
+So as a teenager you're watching the stock market, you're even investing, but nonetheless
+
+KD:
+
+then you go to college and study physics. How did that happen?
+
+I was watching it in not an intensive way at all. Sometimes you read about Warren
+
+DH:
+
+Buffett and some of the other hedge fund managers, they're quite intensively involved. I
+
+simply bought a few shares and read the daily columns a bit, but I wasn’t following it
+
+intensively. My main interest was punk rock music, outside my school studies, so I was a
+
+very assiduous student and very competitive and very successful.
+
+KD:
+
+Where did the interest in physics come from?
+
+At the time, I used to say that I was interested in understanding the origin of the universe
+
+DH:
+
+and the ultimate constituents of matter. My family was Christian and I was brought up as
+
+a Christian, I was confirmed, and I was a serious boy and young man, and, if you're
+
+serious and clever, then it's not really surprising to have philosophical motivations. I
+
+think my motivations were dual. I was interested in understanding the origin of the
+
+[C04]
+Interview with David Harding, June 18, 2013
+
+4
+
+universe as a purely philosophical motivation. I was also interested in doing exams for
+
+which you didn’t have to revise. If you're good at them you didn’t have to revise,
+
+because I found revising to be tedious. Who wants to revise? I hate to revise. I did lots
+
+of revising because I did very well in all my exams, but I was trying to minimize.
+
+I often can't tell where the lofty or the base motivation was dominant, really, but, one way
+
+or another, between the lofty and the base motivations, I ended up studying physics. I've
+
+always been interested in the lofty aspect of trying to understand the universe, and
+
+physics is the most obvious thing to study when you're trying to understand man's place
+
+in the universe. We've been very productive in the last hundred years.
+
+Given that, did you consider academia and going on as a professor?
+
+KD:
+
+My interest in the origin of the universe was shared with my interest in punk rock music
+
+DH:
+
+and pretty girls (laughter), and it had to take its place in a portfolio of interests. I don’t
+
+remember feeling that getting into academia would be the right way to get lots of pretty
+
+girlfriends. I think probably I was mistaken because I probably would have done better
+
+in academia, but I seemed to think as a young man that going and becoming frightfully
+
+successful—all I can remember is that I felt I didn’t want to work in an ivory tower. You
+
+have these ideas you get into your head when you're twenty and they're very shallow
+
+ideas, but they are what determine your destiny obviously. That’s the shallow idea I had
+
+in my head. Now, I look rather wistfully at academia and think how nice it might have
+
+been. I think if my father had been a professor or something like that then I probably
+
+[C05]
+Interview with David Harding, June 18, 2013
+
+5
+
+might have felt that that was—just as if your father was in television you might go into
+
+television, or if your father was a politician or a businessman you might go into business.
+
+But you went into finance. Tell me a little bit about the process, your first experience.
+
+KD:
+
+I went into finance. At Cambridge, I did well and I applied for all the highest paying jobs
+
+DH:
+
+basically, particularly at the ten leading American investment banks, all which offered
+
+you a flat in New York and a general pathway to glamour and sexual success, and I was
+
+rejected by all of them, quite correctly probably. I did get one second interview by
+
+Banker's Trust. But that was a significant blow to my ego because I had never been
+
+rejected for anything before in my life at all.
+
+Why do you say quite correctly? Was it because of your background in physics rather
+
+KD:
+
+than economics or something like that?
+
+I suspect I wasn’t what they were looking for. I didn’t know that I wasn’t what they were
+
+DH:
+
+looking for. I think I might have had a very good chance five years later of being
+
+accepted as a physicist-mathematician. I think the fact that Banker's Trust gave me a
+
+second interview was just a bit early-ish. I think I was probably a bit naïve in some
+
+certain respects. Again, if I had come from a banking family or something like that, on
+
+top of the other qualities that I had, then I would have probably been a very good choice.
+
+But these jobs are competitive, so you can have nearly the right skills but not quite the
+
+right attitude.
+
+[C06]
+Interview with David Harding, June 18, 2013
+
+KD:
+
+But you made it to Wood Mackenzie then.
+
+6
+
+Yes, that was to me, I'm afraid, a very second-rate option. I had thrown in one
+
+DH:
+
+application, assuming naturally that by occasion of rigorous method and applying to
+
+every major U.S. investment bank I was bound to get at least one of them. I had thrown
+
+out about one other application to a British stock broker, which I didn’t want to work for
+
+at all, and I got that job, and returned from my hitchhiking around America with a few
+
+weeks to go and lived in a youth hostel. For the first six weeks, I went to work with
+
+Mackenzie as a graduate trainee in the gilt department, but this was a disappointment to
+
+me. I thought it was exciting, but it definitely wasn’t what I had hoped for. But it's all I
+
+got actually.
+
+When did futures come into the mix, when did you first get involved in that?
+
+KD:
+
+I joined as a trainee in the gilt department, which is bond futures, in the bond futures
+
+DH:
+
+department, and I should think certainly within a few months of me starting there it
+
+became apparent that there was going to be a startup of a new futures exchange and that
+
+there would be futures trading in gilts, because I was one of the two people in the gilt
+
+department, two graduate trainees. There was an offer for one of those graduate trainees
+
+to go and work on the floor of the new futures exchange, which I seized very keenly on
+
+the basis that there would be more opportunity in something new for a young person, for
+
+a young man that the opportunities would be greater.
+
+[C07]
+Interview with David Harding, June 18, 2013
+
+KD:
+
+Did it turn out like that?
+
+7
+
+Well, it did. In the long run it definitely did. In the short run it was quite an amazing
+
+DH:
+
+experience, the start of the futures exchange, and the colored jackets, and so on and so
+
+forth, the shouting—I tend to say “camaraderie,” but that would imply that I was part of
+
+it, and I definitely wasn’t. I was just a young geeky student hovering around the edge of
+
+all the big boys doing all their stuff.
+
+KD:
+
+A lot of machismo.
+
+Yes, a lot of machismo. They called me Spike because I still had short spiky hair from
+
+DH:
+
+my punk days. I drew lots of charts and graphs and kept neat folders with lots of charts
+
+and graphs in so I continued to be the sort of good student. And I could just about hold
+
+my own in that environment, but I wasn’t a trader. I was just a sort of messenger boy.
+
+Being a trader would have been rather glamorous. That would have been above my pay
+
+grade.
+
+But, again, I had a good strong education, and at that point I taught myself all of the
+
+mathematics of futures from textbooks during that year, as well as reading the literature
+
+of technical analysis, which is not rigorous knowledge at all. It's like a sort of taxonomy
+
+of market movements or something like that. It's not rigorous scientific, but I had the
+
+ability to learn all the bond math and so on and so forth, a lot of financial mathematics at
+
+[C08]
+Interview with David Harding, June 18, 2013
+
+8
+
+that stage. Because they didn’t give me anything else to do all day so I just sat there all
+
+day and studied. So, I did teach myself quite a lot, and by going on training courses.
+
+KD:
+
+What was the next step after that?
+
+The problem with the gilt market, from my point of view, is there was only one of it.
+
+DH:
+
+That was the problem. A quiet day is a quiet day. Nothing's happening on a quiet day.
+
+And my boss was an alcoholic and he didn’t pay attention to me at all, and I wasn’t doing
+
+any business. I was just impatient so I started looking around to see whether or not there
+
+was something else I could do and I got interviewed by a commodity broker. The appeal
+
+to me of a commodity broker is they traded in lots of different markets, so I could study
+
+the charts not of one market, but of lots of different markets.
+
+This is what I recollect. I don’t know how much of this is made up or not, but I think if
+
+something's not happening in the gilt market I felt it might be happening in the currency
+
+market or in the live pig market or something like that, so there was definitely a move
+
+from focusing on one market to focusing on a larger group of markets.
+
+I got a job in what I know, with a bit of hindsight, was a sort of dying commodity broker.
+
+This was after the seventies and commodity brokering had been easy money in the
+
+seventies. Obviously when I joined there I didn’t know it was dying, but the person who
+
+had been given the job of sort of rescuing it, his strategy was to bring in some very, very
+
+young bright people and give them their head, and I was one of the young bright people
+
+[C09]
+Interview with David Harding, June 18, 2013
+
+9
+
+he brought in and gave me my head. He gave me a small amount of money in backing to
+
+try various business ideas and currency options and stock index futures.
+
+KD:
+
+What company was this?
+
+Johnson Matthey & Wallace. At Cambridge I had run a punt business. I had run various
+
+DH:
+
+businesses actually, small businesses. I had run a business taking tourists on punts and
+
+giving them cream teas at Cambridge, for example. I had also run a nightclub at
+
+Cambridge, so I had always been very entrepreneurial.
+
+This guy had obviously spotted that, and he gave me the opportunity to be entrepreneurial
+
+at twenty-two in the City, in this brand new futures business, so we pursued various
+
+entrepreneurial plans. Another thing I had done was selling newspapers in the evening, at
+
+university, and then money dialing for dollars. So I phoned up every stockbroker in the
+
+country, which is quite funny because stockbroking is quite a stuffy profession in
+
+England and I'm a young man here saying, “My name's David Harding. I work for a
+
+company called Johnson Matthey & Wallace. I'd like to spend a few minutes of your
+
+time to discuss the benefits of stock index futures,” or something, to a sixty-nine-year-old
+
+stockbroker from Harrogate or something. I got a lot of no’s basically.
+
+After a couple of months of phoning every stockbroker in the country, I got one client
+
+who did one transaction for $30 or something. Everything I did continued to be
+
+unsuccessful in the out turn, but I threw myself into it. And then the chap who had hired
+
+[C10]
+Interview with David Harding, June 18, 2013
+
+10
+
+me hired a couple of other similar such people who also were sort of trying to run new
+
+businesses and so on. The commodity brokerage carried on dying, but it didn’t die
+
+gradually. It died instantly one day when they went bankrupt because of a giant fraud. It
+
+wasn’t even the brokerage that went bankrupt. The parent, Johnson Matthey Bank, one
+
+of the five gold fixers of London, went bankrupt as of a result of lending too much money
+
+to some kind of Nigerian tycoons or something like that. It was nationalized overnight
+
+and I arrived in Edinburgh on a business trip to an enigmatic note saying the bank has
+
+been nationalized. This was three years into Margaret Thatcher.
+
+KD:
+
+(Laughter.)
+
+One of the many business ideas I had been pursuing, these entrepreneurial things,
+
+DH:
+
+currency options, selling stocking next futures, had been the idea of a managed money
+
+unit. They had a sort of small managed money unit and they'd engaged me with that, and
+
+I'd had conversations. And I had been introduced to some other young men who worked
+
+in another managed money business in London, making money and futures called
+
+Brockham Securities, and they were my contemporaries. They were the same age as me.
+
+They were physicists. So I had met them—there were two—and there was another
+
+managed money company, so I had been sort of involved in managed money there. And,
+
+on the day the bank was nationalized, one of those companies, Sabre Fund Management,
+
+phoned up and offered me a job, headhunted me straight away more or less the same day.
+
+It was a matter of “come and see us,” you know.
+
+[C11]
+Interview with David Harding, June 18, 2013
+
+KD:
+
+That was Robin Edwards?
+
+11
+
+Yes, Robin Edwards, exactly, and that worked very well. That was immediately
+
+DH:
+
+appealing because he made money trading the markets essentially as an outsider. That’s
+
+the way I saw it. I fancied the idea in the long run of being able to make money from
+
+outside the markets. That was the plan. I'm not the only one who had that idea, because
+
+over the years I've come across people who have pursued that sort of slightly solipsistic...
+
+There was a guy called Klaus Hepper, who used to sail around the world on his yacht at
+
+some point in time, and there’s been some other crazy guys who usually the positivity got
+
+the better of them I think in the end. But I fancied being able to make money from
+
+outside the market.
+
+Didn’t want to be in the establishment I guess, wear a bowler hat and go downtown.
+
+KD:
+
+No, I didn’t. I wanted to be a radical. Now it seems not really that wild. Lots of people
+
+DH:
+
+have done things like this. With the benefit of thirty years later, most people have
+
+actually been more successful by not being part of the establishment than by being part of
+
+the establishment. I have a friend who went to Australia and he had to choose selling
+
+mainframe computers or importing radical dance records or something like that. In the
+
+end, he went for selling mainframe computers. It was bust within two years, IBM's
+
+mainframe business was. If he had start with the other thing, he'd probably have been
+
+Australia's leading impresario.
+
+[C12]
+Interview with David Harding, June 18, 2013
+
+KD:
+
+So what did you learn at Sabre?
+
+12
+
+We drew 200 charts every day, so we drew at least maybe 200 to 400 charts by hand
+
+DH:
+
+every day, and we cataloged hundreds and hundreds of pages of chart patterns according
+
+to a very highly evolved, almost craft-based approach to the study of markets which
+
+Robin Edwards, I think in turn, partly learned from. He had a teacher or intern; he was
+
+an accountant who had really developed this very rigorous, disciplined, not highly
+
+intellectual—again more taxonomical approach—to the study of markets. I found the
+
+experience of working there somewhat frustrating. Interesting in terms of empirical
+
+study of data and markets and how they work, and I certainly got a lot of ideas. For
+
+example, he would fill in a checklist before entering a trade, a thirteen-point checklist.
+
+You may or may not have seen, in the last four or five years somebody wrote a book
+
+called The Checklist Manifesto that claims 30 percent of all accidents can be avoided by
+
+checklists. He made the checklist out to seem to be—apparently it’s a big thing in
+
+hospitals now.
+
+KD:
+
+It sure is.
+
+So it's funny that Robin had the checklist. I'm still friends with him now; I see a lot of
+
+DH:
+
+him now. He is a rather obsessive sort of character, and not highly intellectual, very
+
+accountancy-based, but his checklist was very sensible. You had to tick short-term trend,
+
+medium-term trend, long-term trend, pattern, seasonal, fundamentals, cumulative volume.
+
+[C13]
+Interview with David Harding, June 18, 2013
+
+13
+
+He had some technical indicators on there, so you had to go through this checklist and
+
+decide. It was discipline for deciding how to trade or not.
+
+I watched him trading, and mostly I remember plotting the charts of markets every day
+
+and really getting a very strong feeling that they trended. They're not supposed to
+
+according to the efficient market theory, but when you sort of plot the thing going up
+
+every day, you’re saying, “I bet that goes up again tomorrow.” When you plot something
+
+by hand it's all very well claiming that there's a chart on the screen, it's random, it looks
+
+likes random noise, but when you plot it by hand every day I think that aspect of
+
+empirically interacting with the data had quite a big impact on me.
+
+I remained in contact with these other young men, these other physicists who ran this
+
+other money management company and after about a year we started talking about
+
+creating a joint venture between the two companies where we would take Robin Edwards'
+
+method, if you like, and then test that with computer systems they'd developed and turn it
+
+into a computer trading system. We would marry the two ideas and there was negotiation
+
+between the two companies. Their company was called Brockham Securities, it was
+
+owned and run by Michael Adam’s father, who had came from a Mauritian family that
+
+had been involved in selling the Mauritian sugar crop in the London markets for 100
+
+years or something like that. So they had a breaking franchise in London due to the
+
+Mauritian sugar brokering and the sugar futures.
+
+There's always commodities back there somewhere.
+
+KD:
+
+[C14]
+Interview with David Harding, June 18, 2013
+
+DH:
+
+Exactly.
+
+14
+
+You went into Brockham Securities with the other two companies?
+
+KD:
+
+Well eventually, after two years they approached me and said something as to joint-to-
+
+DH:
+
+joint venture. The older generation weren't getting anywhere; his father and the bosses at
+
+Sabre couldn’t on agree anything between themselves. So Michael Adam approached me
+
+and said, “Why don’t you join my family company? I don’t own it yet, but when my
+
+father hands it onto me, which he's going to soon, I will give you one-third of it.” He and
+
+his best friend, Marty Lueck, we will have a third, a third, a third. It was an idealistic
+
+offer; he was being idealistic. He was very young, again, and I think most of all he
+
+wanted to be free of his father, really, so I think perhaps there was some element of,
+
+maybe, by taking me on that would sort of hasten the father’s decision.
+
+Did you start in with a plan, did the three of you figure out this is what we want to do?
+
+KD:
+
+The idea was to computerize, to test and automate Robin Edwards' ideas so as to move
+
+DH:
+
+forward there. They had a trading system already, which had been sort of passed down in
+
+the family almost, a sort of family trading system, the guts of which were: “buy when the
+
+market goes through its highest high frame days, and sell when it goes through the lowest
+
+low frame days.” So it was a rule-based trading system which they operated. They
+
+obviously believed that there was some expertise I might be able to bring to bear.
+
+[C15]
+Interview with David Harding, June 18, 2013
+
+15
+
+What kind of computers were you using at this point, were they still mainframes?
+
+KD:
+
+No, it was personal computers. Mike had started in 1979 using a North Star personal
+
+DH:
+
+computer, and I think at that stage we were using Hewlett-Packard. I’m sure we were
+
+using Hewlett-Packard personal computers in the operating system, which was Pascal. I
+
+had noticed a very close similarity between where the buys and sells took place on their
+
+computerized trading system, which used this very simple family rule and Robin
+
+Edwards's highly evolved method using chart patterns. They bought and sold in the same
+
+sort of places. Signals were similar, which was remarkable because it showed you that a
+
+very complex process could be partially replicated by a very simple algorithm. I
+
+remember being very struck by that.
+
+Putting those two together, was that the core of AHL, then?
+
+KD:
+
+The program was based in Wimbledon, so I used to drive down to Wimbledon every day
+
+DH:
+
+in my sports car and then drive home in the evening, which is funny because you're
+
+driving out of London. It's a reverse commute to the middle of the countryside.
+
+KD:
+
+It's a good thing to do.
+
+Yes, I needed it for about two months. Then the father and son had a huge argument as a
+
+DH:
+
+result of severe losses incurred in the cotton market. They had a huge argument about
+
+[C16]
+Interview with David Harding, June 18, 2013
+
+16
+
+how the father wanted to pay back the losses and the son didn’t want to pay back the
+
+losses. The father was very, very gentlemanly in a sense, but the son wanted to leave the
+
+losses to the investors that invested. I think most of the investors were friends of the
+
+family almost, so the father wanted to compensate. Compensating the losses would
+
+really have made a mockery of the company's existence as a company, I think, really. So
+
+there was an enormous row and Michael Adam walked out of his family's company and I
+
+was left in the lurch.
+
+But I took advantage of the opportunity to persuade Michael Adam and Marty Lueck that
+
+we should stay together as a team and market ourselves as a team, by this time I was
+
+reasonably experienced at getting jobs so I persuaded them that we should market
+
+ourselves as a team. I already had a decent income because I was already writing two tip
+
+sheets in the City at that stage. I had enough income, I could survive without a job,
+
+actually, because I had starting this tip-sheet-writing enterprising in my various
+
+companies, at Sabre.
+
+Then we started marketing ourselves as a team. The computer software they had was
+
+terrifically impressive, much more impressive than stuff that the City institutions had. I
+
+think my hope was that in the act of marketing ourselves as a team we would get some
+
+business deal for the continuation of the business, which had been brought to such a
+
+sudden and untimely end, and that’s exactly what happened.
+
+[C17]
+Interview with David Harding, June 18, 2013
+
+17
+
+So I started marketing the team, and my contacts in the City, commodity brokers, who I
+
+was writing tip sheets for and so on, responded very positively. It was a good
+
+presentation and I was a good enough salesman. The product was good. The software
+
+they developed was good. I was showing off. I was able to do a sort of thing of showing
+
+off their software.
+
+But the real thing that got it all going very quickly was that the company's old clients—
+
+the company had been shut down—its old clients had in turn been building their
+
+businesses on the back of this business, and they wanted to keep going. So, rather than
+
+being put off by Brockham being shut down and three wet-behind-the-ears young men
+
+starting, they wanted to cooperate, to help us to continue, to keep us alive. They got
+
+themselves somewhat committed, two or three clients, so in this very short space of time,
+
+rather than trying to get clients we found that clients were trying to help us stay alive and
+
+keep going.
+
+Within no time at all, I found myself in a very good position with a lot of revenue, money
+
+being put under our management, which paid management fees. Management fees were
+
+6 percent a year, and the money started coming in rapidly. Then on top of all that, the
+
+performance was very good. In the first half of 1987, there was a very big bull market in
+
+silver and so we were up to 50 percent in six months or something. So the money was
+
+pouring in and within six months we were very, very profitable, and so we started hiring
+
+staff and getting offices. I think in 1987 or 1988, we moved offices six times because we
+
+just kept hiring more people. It was all very exciting.
+
+[C18]
+Interview with David Harding, June 18, 2013
+
+18
+
+Tell me about the division of labor between the three of you at AHL. Did you each have
+
+KD:
+
+your strong suit and you divided things up that way?
+
+Mike and Marty wrote the programs for testing trading systems and did the testing of the
+
+DH:
+
+trading systems at the very early stage, whereas I sort of told them what to test, if you
+
+like, and sold the product. For a period of the first eighteen months, I was probably
+
+indisputably the managing director of the whole thing. I remember them giving me a
+
+mobile phone as a present, and I had a huge office and they brought in a mobile phone
+
+like this. I sat behind my desk. I was indisputably in charge for a period of time.
+
+But Mike Adam came from a business family and he was interested in business. He had
+
+formidable capabilities. And it was his family business and he wasn’t interested at all in
+
+either ultimately playing second fiddle or in testing my trading ideas using his trading
+
+systems. Just one way or another, before the second year was out, there was competition
+
+between us and a degree of friction and Marty was the glue. Marty was Mike Adam's
+
+university friend, his best friend. The conceit was that Mike and me were both
+
+tempestuous geniuses and Marty was steady and acted as the glue in holding things
+
+together.
+
+But that does explain why, when Man approached us and offered to buy 51 percent after
+
+two and a half years, they're pushing on an open door because things had already become
+
+very, very argumentative by that stage. It wasn’t as though the three of us were united at
+
+[C19]
+Interview with David Harding, June 18, 2013
+
+19
+
+all, so the idea of another party owning 51 percent was not really that unattractive. In
+
+fact, business was very good to start with, but it went through some difficult bits and it
+
+easily could have been that we could have walked out of that whole very exciting
+
+experience with almost nothing after two or three years if we’d blown apart. It happens
+
+quite often, doesn’t it? We were offered real money for 51 percent, a million pounds I
+
+think or something like that. By the time the ink was dry on that, I was going to have a
+
+quarter of a million pounds, which was a quarter of a million pounds more than nothing,
+
+which is what I’d had all my life.
+
+What did Man do when they came in, what was their effect on the company?
+
+KD:
+
+Man had a partnership with a company called Mint, which they owned 50 percent of,
+
+DH:
+
+which already had a billion dollars under management and was a CTA that had been
+
+founded by three people, Larry Hite, Michael Delman, and Peter Matthews, and it was
+
+probably earning let us say 100 million pounds a year, $150 million a year. Man had that
+
+in 1989, and it was a deadlocked company, 50/50. So in buying 51 percent, they
+
+obviously took a look at AHL, and it looked a bit like Mint, a partnership with three
+
+people, in some ways preferable, younger, more techie, actually. They rectified the
+
+mistake they made with Mint, as they perceived it, by buying 51 percent. They bought
+
+51 percent, obviously with a view of eventually corporatizing, I think I even heard the
+
+words, but the idea was definitely to eventually corporatize AHL, and quite gently they
+
+set about doing that, I think.
+
+[C20]
+Interview with David Harding, June 18, 2013
+
+20
+
+One of the things they did was to focus very much on tax, and to that end they set up a
+
+company in Switzerland, or they worked with us to set up a company in Switzerland, so
+
+as to offshore the operation into Switzerland, the money-earning operation, and that
+
+meant several people were taken off to Switzerland, including Michael Adam. The
+
+research company was split away from the fund manager company, and I was left with
+
+running the research company, which is exactly what I wanted to do. I wanted to use
+
+computers to research and test trading systems thinking, in my view correctly, that if you
+
+are good at that in the end some money's going to find itself your way. And I had done
+
+enough research in that field to feel that it was a productive line of inquiry.
+
+So this must have been a pretty good deal then. You end up getting to do the research,
+
+KD:
+
+which is what you wanted to do.
+
+Yes and Mike Adam was taken off to Switzerland. Then I was in sole charge so I was
+
+DH:
+
+now master of my dominion in London and Michael Adam was running the business in
+
+Switzerland.
+
+But nonetheless, you ended up taking off a few years anyway, once Man started
+
+KD:
+
+increasing its purchase.
+
+Well, that ran on for a period of time but the schism between me and Mike Adam
+
+DH:
+
+continued within the Man Group. Sometimes we were on the same side against Man and
+
+sometimes we were against each other. The Man Group wasn’t united itself. Man's aim
+
+[C21]
+Interview with David Harding, June 18, 2013
+
+21
+
+was to corporatize AHL, so the split between me and Michael Adam was a sensible one
+
+for them to exploit to some extent, so they played a little bit on that. It was a rather
+
+tormented period of time actually, those few years, but set against the fact that the
+
+performance did quite good, and Man had a very successful money raising machine and
+
+they did succeed in raising money and the profits did start to pour in. The money was
+
+pouring in; we were very successful.
+
+So you were going along very successfully, although there's obvious schisms.
+
+KD:
+
+Well tension, yes, but the company was growing, and there were board meetings every
+
+DH:
+
+month in Switzerland so we'd all fly out and back once a month for a board meeting in
+
+Switzerland. The research company was continuing to grow.
+
+KD:
+
+By '94 Man had bought a much larger percentage.
+
+By Boxing Day 1993, the relations between me and Mike Adam had become very poor
+
+DH:
+
+indeed, unfortunately. It really had developed into two camps, my camp and Mike's
+
+camp, and there was not quite open warfare but almost open warfare. Unbeknownst to
+
+us, Man was hatching plans to go public and consequently in the middle of this warfare,
+
+as we were appealing for arbitration from our parent Man in our sort of warfare, they
+
+approached us and they said, "Well, why don’t we buy out the minority? Why don’t we
+
+buy out the half that you own, because, confidentially”—they had a problem at this
+
+stage—“confidentially, we're going to go public.”
+
+[C22]
+Interview with David Harding, June 18, 2013
+
+22
+
+From the benefit of hindsight I can see, and I have no bad feelings about this, that what
+
+they were able to do was: AHL's earnings constituted a significant part of their going
+
+public story, because our earnings had been growing rapidly, so they needed those
+
+earnings to be well behaved and stay in place. So the deal was: we'll buy you and you'll
+
+go public, and they offered us $30 million, I think, or something like that, thirty million
+
+or $40 million to buy our 49 percent. So I'm slightly ashamed at the whole thing but now,
+
+I said in 1989 they offered 250,000, and now they offered me $10 million, which, “Whoa,
+
+how does $10 million sound?” (Laughter.) Well, I was thirty. It was like, “Whoa, I'm
+
+really committed to my parent company but $10 million sounds really good.” Also, it
+
+was going to bring an end to, again, this rather tormented period. And Michael Adam and
+
+I were both promised separate things. Michael Adam would have a future career in the
+
+Man Group, and I would get to run a division of Man focusing on research, and so we
+
+accepted. We had no trouble agreeing to sell shares, so Man acquired AHL totally then.
+
+Then Mike felt he'd been let down after Man went public in October 1994 and left.
+
+I created this division of the Man Group called Man Quantitative Research, with the
+
+backing of Harvey McGrath and a few executives. But when I say I created it, in a
+
+corporate sense it only came into being in a ghostly fashion. My understanding was that
+
+it would have revenue and make profits and then report them to divisional headquarters
+
+as a division of the group, whereas their idea was a more shadowy notion of a division,
+
+more that it would sort of exist and be on someone's budget somewhere. So this battle
+
+went on for a while, with me trying to make it a real division and then trying to, I would
+
+[C23]
+Interview with David Harding, June 18, 2013
+
+23
+
+say, wriggle out of the commitment to make it a real division, but that’s not what they
+
+would say at all. They would say they tried to help me to come to terms with the fact that
+
+my company had been fully acquired. (Laughter.)
+
+KD:
+
+It's a very different perspective.
+
+But I fought that fight. I think I behaved reasonably faithfully as an executive of the Man
+
+DH:
+
+Group until such time that it became apparent to me that there was no real agreement to
+
+create a division. But actually, I left, I think they forced me to resign
+
+KD:
+
+In '96 you left.
+
+DH:
+
+Must have been August '96.
+
+Ninety-four is an interesting year because that was the year that Man essentially bought
+
+KD:
+
+AHL out. You also wrote this Royal Society paper which is a manifesto of sorts. I
+
+wonder if you can tell me what the origin of that was. It seems an unusual thing for
+
+somebody to do in your career.
+
+In the late ‘80s, through an advert in The Economist, a gentleman called Paul Wilmott
+
+DH:
+
+had applied to work as a consultant at AHL. He was a mathematician and I got him
+
+interested in finance and financial mathematics and the ability to apply his skills in
+
+financial mathematicians, and he got more and more interested and he started teaching
+
+[C24]
+Interview with David Harding, June 18, 2013
+
+24
+
+courses. Then he got this Royal Society scholarship and he organized this symposium
+
+and he asked me to speak at this symposium.
+
+To me, it was a great honor to be asked to speak at the Royal Society, so I took a month
+
+or two months off to work out what I was going to say. What I couldn’t do was present
+
+the results that we had on which our trading system was based, because I couldn't give
+
+away the really interesting stuff. So I had a very difficult challenge - which was to speak
+
+in a very exalted setting to a large group of world-famous mathematicians without giving
+
+away empirical data. Well, that’s what I thought. History might be different if I had
+
+given away the empirical data because the audience included Miller and Merton, Scholes,
+
+and so on and so forth, who were rather mocking of my speech, or at least Miller was. I
+
+could at that day have given a definitive disproof of the efficient market theory, which
+
+then went on to form the basis of the risk management that went on to form the basis of
+
+the risk control in the banking system and the basis of the boom in the global derivatives
+
+business and the CDA business, which ended up destroying the whole economy. But that
+
+was above my pay grade and I was trying to deal with what I perceived as the honor of
+
+speaking to the Royal Society. I had in the back of my mind the knowledge that we had
+
+done lots of research into markets which showed that efficient market theory was wrong,
+
+that Brownian motion was not a good estimate.
+
+I do think there was a swipe or two at the efficient market theory.
+
+KD:
+
+[C25]
+Interview with David Harding, June 18, 2013
+
+25
+
+Oh, it was a full-on attack. And the conclusion I said, “There are different things you can
+
+DH:
+
+do with financial mathematics. One has the intellectual integrity of selling vegetables,
+
+that is you can manufacture derivatives, which means manufacture core options and so
+
+on, Asian knock-outs, strike options and sell them at high prices. You can make a lot of
+
+money selling vegetables by buying some vegetables, marking the prices up and selling
+
+them, so you could buy spoiled vegetables and sell them as good.” And that’s what the
+
+banks did for the next fifteen years, is they bought spoiled vegetables and sold them to
+
+Arabs for extortionate prices, and utilities in Italy, or utilities in Orange County and
+
+municipalities in Italy and so on.
+
+KD:
+
+Risk, spoiled vegetables, one and the same I guess.
+
+My point is that you can use financial mathematics to value instruments based on this
+
+DH:
+
+theory and then sell them for a markup. You can use it for that, so you're not studying the
+
+underlying reality. You're just creating a model and then selling something for twice the
+
+value of the model, so, as I saw it, it has no intellectual integrity. You're not interested in
+
+whether the model is right, you're not interested in the way in which the model relates to
+
+the underlying reality; you're just interested in using the model to work out an
+
+approximate price of something and then sell it for twice that price. It's a merchandising
+
+operation. It was very clear to me then. That was the basis of my whole talk. It was very
+
+clear to me, and to be honest it's been immensely prescient of what happened in the next
+
+twenty years.
+
+[C26]
+Interview with David Harding, June 18, 2013
+
+26
+
+It attracted no interest at the time, and after that talk Paul Wilmott, who went on to write a
+
+magazine called Wilmott magazine, which is the world magazine for quants in finance.
+
+It's the quant finance magazine; he is the high priest of quants. He really became an arch
+
+proponent of the efficient market theory, an arch proponent. We went on with our thing,
+
+but our thing was a very, very narrow sideline. Nearly all the quants believe in efficient
+
+market theory, and use it to calculate the value of derivatives and do all this mathematics
+
+involving partial differential equations. The empiricists, which is what I'd say we were,
+
+would study the data and model how markets actually work by studying data, by bringing
+
+an empirical approach to bear, which is reminiscent of the natural sciences. Those people
+
+remained in a tiny minority, a very small and derided minority, a disrespected and derided
+
+minority.
+
+But you went on and set up Winton a few years later.
+
+KD:
+
+Yes, when I was finally kicked out of Man I set up Winton.
+
+DH:
+
+And so you're committed to this thing that’s in the minority at this point.
+
+KD:
+
+I wasn’t that committed. I was more or less a broken man at that stage, I would say. I
+
+DH:
+
+wouldn’t say I was that committed. All I would say that I was committed to was the fact
+
+that at that point it was just very easy. Because I had a very deep understanding of the
+
+ideas involved in running trend following trading systems. It was very easy for me to set
+
+[C27]
+Interview with David Harding, June 18, 2013
+
+27
+
+up. As a matter of fact, we set it all up using spreadsheets. We didn’t have any
+
+sophisticated computers, we had no computer languages.
+
+KD:
+
+At Winton?
+
+Yes. In fact, we didn’t employ any programmers at all. One of my old friends who has
+
+DH:
+
+no training of any sort wrote all the systems and everything on a single spreadsheet, and
+
+we were able to run a CTA just on a spreadsheet program in Excel with three people.
+
+That spreadsheet continued in operations the next nine or ten years. (Laughter.) I'm
+
+really letting the secrets out of the bag here. Maybe more than ten years, but yes, nine or
+
+ten years, but I was able to run that very easily and didn’t indeed have to work. I didn’t
+
+really work. I wasn’t really working. There wasn’t much to do really. We were creating
+
+a track record, or the company was creating a track record. I was a single dad at that time
+
+so a lot of what I did was looking after my son.
+
+So the futures business is going on a spreadsheet. Is there pretty consistent growth over
+
+KD:
+
+this time? I mean, you have the dot-com bubble in there and some other things happened.
+
+Taking a distant perspective, the trend following systems, which we developed in the
+
+DH:
+
+1980s, have just continued working. They didn’t work smoothly, but they continued to
+
+make money, so some level of success—providing you were not over-leveraged and you
+
+stuck to it—some level of success was eventually guaranteed, wasn’t it? Because if you
+
+keep making money, in the end the world's going to find you. It's not very quick, because
+
+[C28]
+Interview with David Harding, June 18, 2013
+
+28
+
+it's not very smooth, it's not this high short ratio thing; its virtue is in trends forming in
+
+very high capacity. That’s its great virtue, because if you put a lot of money in it, it's a
+
+very profound thing. It's much more profound than many hedge fund strategies because
+
+it's talking about the very exploitable effect in the price movements of whole asset
+
+classes. People talk about anomalies; it's not like some small anomaly. It's about the
+
+whole way the whole world works. It's a theory about the way the world works, which is
+
+different from the theory that everybody in the financial world has about how the world
+
+works.
+
+The financial world I count as an institution of investment managers, investment bankers,
+
+finance professors, and consultants. Let's say that in the system there's investment
+
+bankers, institutional investment managers, finance professors and consultants, and
+
+perhaps chuck CFAs into that. Institutionally these are the people that are in charge of
+
+the world's money and they believe in theory A, and we had theory B, which is different
+
+from theory A in a way that is testable. It's testable because you can bet against the two
+
+sides.
+
+Who were the people that were coming to you and were going with the trend following?
+
+KD:
+
+Was there some common denominator there?
+
+There was an industry mainly derived from the commodity brokering industry,
+
+DH:
+
+speculative, but you said it's always commodities. So in America it would have been
+
+Shearson, E.F. Hutton, Commodities Corp., Merrill, Thomson McKinnon, there's a list of
+
+[C29]
+Interview with David Harding, June 18, 2013
+
+29
+
+long forgotten names, but I mean the American commodity brokers, and there were
+
+British commodity brokers as well, Man Group. So that’s where the business came from
+
+for us was from commodity brokering companies.
+
+You started to get institutions coming in in the early 2000s somewhere.
+
+KD:
+
+Yes, from the late 1990s onwards. The term hedge fund was invented and then you
+
+DH:
+
+started hearing about hedge funds, and in general the hedge fund world didn’t accept that
+
+commodity traders were hedge funds. When I say in general, there were exceptions and
+
+as the hedge fund industry began to boom there began to be some spillover benefit for the
+
+commodity trading advisors, because since they shared a property with hedge funds, and
+
+they go short on markets and they use leverage… and indeed, there's very little difference
+
+between macro hedge funds and CTAs. There's very little difference except that macro
+
+hedge funds come from the securities business and CTAs come from the commodities
+
+business. The commodities business was never respectable. It was never Ivy League or
+
+public school England. The securities business is respectable. The best and the brightest
+
+from Wharton and Harvard and Oxford and Cambridge went into the securities business
+
+and not into the commodities business, which was always a much rougher place.
+
+But as the hedge funds took off, you're suggesting there was a collateral effect.
+
+KD:
+
+[C30]
+Interview with David Harding, June 18, 2013
+
+30
+
+Yes, we were carried along to some extent, not as much you think would have been
+
+DH:
+
+warranted, because in a way we were a hedge fund, we had been around for a fifteen-year
+
+track record.
+
+KD:
+
+These are mostly long/short hedge funds, right?
+
+Yes. It's a mixture, because as I say the big global macro hedge funds also basically
+
+DH:
+
+dated back to commodity brokering, but Moore, Louis Bacon and Paul Tudor Jones, and
+
+Caxton, Bruce Kovner, all come from commodity banking backgrounds so those were big
+
+hedge funds. So there was a hedge fund segment that went back to the days of
+
+commodity brokering, but at this stage, by early 2000 you were starting to see a massive
+
+amount of securities hedge funds starting. That’s when BlueCrest and Lansdowne and
+
+Brevan Howard appeared over here, and then in America a whole raft of others.
+
+Other developments in the 2000s, did business continue building on this sort of hedge
+
+KD:
+
+fund—
+
+Well the hedge funds boomed strongly in the early 2000s because of the bear market, so
+
+DH:
+
+the securities industry needed something to sell that didn’t require stocks to go up so it
+
+sold hedge funds. So the hedge fund business boomed, bringing collateral benefit to the
+
+CTAs, and then there was a bull market starting in 2003, and by that stage the hedge
+
+funds were really flying so we entered into hedge fund heaven, really, from 2003 to 2007.
+
+Now the CTAs were really being blown along by the growth of the hedge fund industry
+
+[C31]
+Interview with David Harding, June 18, 2013
+
+31
+
+so there was quite a lot of crossover. There was still a large segment of the hedge fund
+
+business that wouldn’t invest in CTAs, about half would and about half wouldn’t. For
+
+example, endowments didn’t invest in CTAs at all, and pension funds mainly didn’t, but
+
+endowments in particular didn’t. The Yale endowment model wouldn’t permit CTAs.
+
+The Chicago guys, Grosvenor, or Harris, Mesirow, never would have invested in the
+
+CTAs.
+
+It was a philosophical question whether you invest in CTAs or not. It's about whether
+
+you believe in efficient market theory. If you believe in efficient market theory, you don’t
+
+invest in CTAs. But obviously hedge funds decided to enter a bit predicated on markets
+
+not being technically efficient, and also CTAs had made money in 2001, 2002, so they
+
+always looked good when you combined them in optimizers into people's track records
+
+and so on. And they had a long history, so they were neither in nor out. They were half
+
+in. They were the ugly stepsister, that’s what I describe them as, the ugly stepsister of the
+
+hedge fund industry, the ugly rich stepsister.
+
+(Laughter.) Did you make any public relations efforts to get beyond that and to sell
+
+KD:
+
+CTAs?
+
+I did, I became very open. Of course Winton was relatively unsuccessful in the early
+
+DH:
+
+2000s. I actually went in when it was relatively unsuccessful. It became quite successful
+
+as a company, but several of our competitors, like Aspect, became much, much bigger
+
+and more successful because they had much more successful institutional sales, so I
+
+[C32]
+Interview with David Harding, June 18, 2013
+
+32
+
+decided I might as well be hung as a sheep for a sheep is a lamb. And I started showing
+
+all the results that I hadn’t shown in 1993, so I started showing “this how it works.”
+
+Excuse me, but fuck it, this is my work. If I can't make money, I'll just show you it.
+
+You'd go on road shows and show potential clients?
+
+KD:
+
+Yes. That started to be successful because I'm a good presenter. Behind you, on the wall,
+
+DH:
+
+that’s my chart, the signing system chart ratio. When I explain and show people that,
+
+that’s what I did when we started AHL, and when I explain and show people that then
+
+that has quite a lot of impact. And so I started to become better known, I think, certainly
+
+in CTA and hedge fund sales, started to develop a bit of a reputation as a good speaker
+
+and started to change a few minds and so on. Our performance was good at that time,
+
+because of course in the 2000s bloody commodities started making out like they had in
+
+the ‘70s, something you thought would never happen. I never could have dreamed of
+
+these ghastly dull commodity markets coming back to life, and they burst back to life, so
+
+much so that now everything thinks that they are, you know, people go from one extreme
+
+to the other. Now they think commodities are terribly exciting rather than terminally dull,
+
+which they were for the previous twenty years.
+
+You talked about hedge fund heaven and coming down in 2007. Tell me a little bit about
+
+KD:
+
+that experience for Winton.
+
+[C33]
+Interview with David Harding, June 18, 2013
+
+33
+
+Well Winton just took off around about that time. By 2004, 2005, 2006, the groundwork
+
+DH:
+
+had been laid. We had a long track record, money was pouring into the hedge fund
+
+industry; CTAs were becoming reluctantly accepted by at least half the hedge fund
+
+community as the ugly stepsister. Winton had a good seven or eight year track record, the
+
+track record showed compound growth of 19 percent. It was uncorrelated to other hedge
+
+funds in the stock market, you know, everything was absolutely right and the money
+
+poured in and continued to pour in. We had forty-eight months in a row of raising more
+
+than fifty million in new assets. Each month one looks and sees whether one raised
+
+money that month.
+
+For large parts of my career, we hadn’t raised any money. I would get a phone call at
+
+home if we raised $100,000 or something like that, so the norm became money pouring
+
+in, and not only the money pouring in, the performance was very good as well and we
+
+started to make huge sums of money. Before, I had been wondering whether we could
+
+afford to have a second researcher in 2001 or 2002, or could we afford a third researcher
+
+and this sort of thing, and sometime in 2005 lack of money ceased to be the restraint
+
+behind the expansion of the company. It was no longer lack of money. Suddenly, lack of
+
+money wasn’t the issue. There may be all sorts of other issues but it was absolutely
+
+nothing to do with money, so the resources were almost infinite quite suddenly in about
+
+2005.
+
+So this was all booming, all booming, all booming, and hedge funds were starting to sell
+
+stakes out, so we thought gosh, why don’t we try and see if we can sell a stake, because
+
+[C34]
+Interview with David Harding, June 18, 2013
+
+34
+
+you kept reading in the paper each day that someone would sell for some vast amount. In
+
+investment banks, we were speaking to Lehman, and Lehman said we could sell a stake,
+
+and they started marketing us and so on. Then Goldman got in and said they could do a
+
+better job, so we switched from Lehman to Goldman, and Goldman tried to sell a stake in
+
+Winton. And then, because they couldn’t actually sell a stake, they said, “Well, we'll buy
+
+it ourselves.” So they offered it to buy it themselves, so they took a 10 percent stake in
+
+Winton in August 2007, a week before the quant quake of which Goldman was at the
+
+epicenter. Goldman Global Alpha blew up and that was the worst thing to happen to
+
+Goldman since 1994. They had a real disaster which their PR machine managed to do an
+
+incredibly good job, I think to this, day of getting out of it. It was a real disaster for
+
+Goldman and for many other firms as well. But, clearly, the final purchase of 10 percent
+
+by the Petershill Fund in Winton was concluded six days before that. Six days later that
+
+would never have concluded.
+
+So we got our forty-four million quid for a 10 percent stake I think, something like that.
+
+I'm running you through the money aspect of this all the way along. I know it's a bit
+
+vulgar, but again, that was another big payday, and there was a 10 percent tax back then
+
+on capital gains. So that was one of the attractions to me, certainly, was that there was
+
+only 10 percent tax, whereas income is sort of 50 percent tax. It's much more difficult for
+
+U.K. hedge funds to shelter money from the tax man than it is in the United States hedge
+
+funds for a variety of reasons, or at least Winton has chosen not to do so. We have
+
+chosen not to use very, very complicated arrangements. But I often get grilled by
+
+American fund investors because they say, “Why haven’t you got more money in your
+
+[C35]
+Interview with David Harding, June 18, 2013
+
+35
+
+hedge funds?” and so on. A lot of the American money chaps have in their hedge funds is
+
+because they can roll their performance fees up into shares without paying tax and this
+
+sort of thing.
+
+The quant quake took place in 2007 and we now know that that was the canary in the coal
+
+mine, because in fact August 7, 2007 was the day in which Bear Stearns suspended its
+
+CDO hedge funds. The quant quake was caused, supposedly, partly by knock-on effects
+
+of credit spreads beginning to balloon. With the benefit of hindsight, it's easy to be wise,
+
+isn’t it? But in fact that week is the week that will be dated to be the start of the credit
+
+crunch. The U.S. stock market didn’t end as high until October or November that year,
+
+and emerging markets went very considerably higher. So, again, people I think probably
+
+forget the order of things in the sense that things didn’t go down before August at all
+
+maybe in some models, hitting highest some time further than that.
+
+But anyway, we made a lot of money in 2007, and then in 2008 the markets were starting
+
+to turn downwards, gradually the worries started to accumulate and build as 2008
+
+unfolded and by early in that year we had accumulated large short positions in the stock
+
+market because the market had spent the year gradually turning over. Then what
+
+happened during that year, eventually, is by the autumn, when our climactic crash came,
+
+we were massively short, which again in the benefit of history looks quite smart, doesn’t
+
+it?
+
+[C36]
+Interview with David Harding, June 18, 2013
+
+36
+
+Right, your trading programs, or whatever you call them, they had been able to track
+
+KD:
+
+these pretty well, I mean the changes in direction were very clear.
+
+Yes, just following trends really. The trends changed slowly. The trends in the market,
+
+DH:
+
+the slide in 2008, didn’t come out of the blue. It was a true bear market, a classic bear
+
+market, the kind of bear market that creates the need for the term bear market.
+
+Had you computerized by that time, were you off the spreadsheets by this point?
+
+KD:
+
+A spreadsheet is a computer. This spreadsheet was just living somewhere inside a whole
+
+DH:
+
+set of other computer programs. There's probably a spreadsheet in NASA somewhere,
+
+one that was written in 1959 that’s still living in there somewhere. It's just become part
+
+of a bigger thing.
+
+During that crash obviously, we made a lot more money and that crash, the significance
+
+of that for the CTA business, is that it meant that the 50 percent of people who didn’t
+
+invest in CTAs decided they’d been wrong. (Laughter.)
+
+Tell me about the discussions you had with people who wanted to come in. Is that what
+
+KD:
+
+they said, they said, “Oh, I've been wrong all this time?”
+
+They started coming in a year or two later. They couldn’t come in straight after. You
+
+DH:
+
+can't admit you’ve been wrong the next day, but, fortuitously for them, in a way we were
+
+[C37]
+Interview with David Harding, June 18, 2013
+
+37
+
+down in 2009. So we were up a lot in 2008, then we were down in 2009, and so from
+
+that perspective they thought, “Oh, I'll buy an opportunity,” having not even admitted to
+
+having been wrong in the past, and then you can buy in a couple of years later. In that
+
+year we made a fortune in the markets, but had a lot of assets withdrawn because the
+
+hedge funds were melting down so we went from sixteen to eleven billion I think. That
+
+was obviously a time at which the assets shrunk a lot. But since then, we then grew up
+
+from eleven to thirty or something, and then next, as I said we had forty-eight winning
+
+months in a row, forty-eight months collecting lots of money in a row up to whatever,
+
+August, September 2008, then lost a third of the money in a couple of months, but then
+
+we embarked on another sort of four-year spurt of raising even more money, and that’s
+
+when we went up to thirty billion or something like that.
+
+You’ve got a lot of new customers that came in after.
+
+KD:
+
+Much more institutional. That’s the period which was really conspicuously institutional,
+
+DH:
+
+big institutions, pension funds, endowments, investing hundreds of millions in a clip.
+
+The institutions are doing a lot more business; they’ve got bigger pocketbooks. Were
+
+KD:
+
+they able to challenge you on prices or anything like that?
+
+Not really because we were always one and twenty. One and twenty was our core
+
+DH:
+
+pricing. We did a lot of distribution bid deals with people. In most countries, we do a
+
+deal with a local distributor, like Merrill Lynch in America, so the clients in America
+
+[C38]
+Interview with David Harding, June 18, 2013
+
+38
+
+were probably paying three and twenty, but that doesn’t mean we're charging three and
+
+twenty. We're getting one and twenty and Merrill Lynch is charging two or something
+
+like that, or in Japan. We had started off at one and twenty in 1998 and we still broadly
+
+have a core pricing of one and twenty now. Core pricing was below the industry when
+
+we started in 1997 and it remains broadly unchanged fifteen years later, our core pricing.
+
+One and twenty is not very high.
+
+Did you ever consider coming up on par with the rest of the industry?
+
+KD:
+
+Not really, because a lot of our clients pay more than one and twenty, because they pay
+
+DH:
+
+other fees which are added on by other people in the distribution chain. If anything, I
+
+would say that our product is still more expensive than is optimal for clients, but the
+
+clients of the Winton Futures Fund, which is a $10 billion Cayman Islands fund, those
+
+clients pay one and twenty and nothing more.
+
+So during these years you're starting to bring in some new products as well, and I want to
+
+KD:
+
+talk about where those came from. If you're so committed to the futures and the CTA,
+
+why do you start bringing in the Evolution and the Global Equity Funds?
+
+All of the new products are predicated around moving into equities, trading equities,
+
+DH:
+
+which, like futures, are traded on exchanges, and the best way to describe it briefly is that
+
+we diversify into 100 exchange traded futures. We could do better if we could find more
+
+undiversified markets to diversify into. There are no more exchange traded futures that
+
+[C39]
+Interview with David Harding, June 18, 2013
+
+39
+
+we can diversify into, but there are 1,000 equity markets, so there's 1,000 exchange
+
+traded equity markets to diversify into.
+
+As I said, my investment career started in equities. I have managed my own money in
+
+equities for many years and follow the equity markets very closely, and it seems the
+
+obvious way ahead to develop the business is to diversify into more markets with
+
+equities, you know, if there were another thousand futures markets then we'd diversify
+
+into them, but there aren’t. Not all the equity markets are as deep, but Apple is a big and
+
+liquid market, or GE or Exxon, these are big markets which just provide some more
+
+opportunity to do things with computer trading systems.
+
+Did you have to reinvent the computer trading systems to work with these equities?
+
+KD:
+
+Yes. The common feature of the two markets is the use of mathematics to make some
+
+DH:
+
+sense of movements of prices. That’s the common feature, not that we apply the trend
+
+fund end trading systems in futures in the same way to trend following in equity markets.
+
+It's not just a question of copying into another thousand markets. The trend fund trading
+
+system is an example of the use of mathematics for professional gambling on prices. It's
+
+not surprising that you would use mathematics in gambling, because statistics is about
+
+calculating the odds. It's what Warren Buffett calls handicapping. That’s what he calls
+
+what he does, handicapping, which means setting the odds, so that’s what an investor has
+
+to do, they have to work out what the odds are.
+
+[C40]
+Interview with David Harding, June 18, 2013
+
+40
+
+Did you bring in staff at this point that had experience in the equities markets to build this
+
+KD:
+
+out?
+
+Some. We brought in some people with equities experience, but mostly we are people
+
+DH:
+
+who have experience in statistics and mathematical modeling, and then we let them learn
+
+about markets. We have a preference for people who have more advanced academic
+
+skills and then have them learning about finance than people who have advanced
+
+financial skills learning the necessary academic ones. That’s our preferred way of doing
+
+it.
+
+KD:
+
+Has it become easier to hire people like that?
+
+Yes, it's become much easier. For the first twenty years it was very difficult to attract,
+
+DH:
+
+retain, and motivate the kind of people that I needed, because I have never done any
+
+computer programming myself, none whatsoever. I was so delighted to learn that Steve
+
+Jobs didn’t, that amused me so much, because you have these people in your mind, these
+
+terrific tech guys. I don’t suppose Jim Simons has either, to be honest. You don’t have to
+
+be a computer programmer to run a highly technical operation. So yes, we need to hire
+
+very clever people who could do the programming because it's all about programming
+
+and using computers to test things. As I said to you, Mike Adam and Martin Lueck, they
+
+might have tested my ideas for about six months but they didn’t want to do it after that.
+
+[C41]
+Interview with David Harding, June 18, 2013
+
+41
+
+What are all these folks doing? Are they looking at the programs on a systematic basis
+
+KD:
+
+and constantly upgrading? How do you strategize the ongoing development?
+
+What they're doing is not incomparable at all to what is done by financial academics, or
+
+DH:
+
+behavioral economists, or even perhaps econometricians. If you look at the financial
+
+mathematics literature, I would say that in the financial mathematics literature there are
+
+five to ten leading journals, Journal of Finance, Journal of Portfolio Mathematics,
+
+Journal of Forecasting, Journal of the Futures Markets, and if you read what's in those
+
+journals then that’s what our chaps do. But those journals are written by academics and
+
+those publications are disconnected from one another, the thoughts in all their journals.
+
+There's not one coherent project. What we're doing here is part of a coherent scientific
+
+project whose object is to forecast as well as we possibly can the returns, risks,
+
+covariance matrices, and transaction costs of the 1100 markets in our portfolio, and then
+
+taking that information and working out how to create an optimal portfolio and that’s a
+
+big science project.
+
+That's huge, 1100 markets. Do you give, oh, here's twelve markets for you, and here's
+
+KD:
+
+five markets for you?
+
+No, it's methodologically broken down to a considerable extent. Forecasting covariance
+
+DH:
+
+is easy and forecasting return is hard, and forecasting transaction costs is easy. In other
+
+words, the reason I put it like that is that the volatility of the stock market is fairly
+
+predictable. It's about 12 percent. It might not be 12 percent in the next twenty days, but
+
+[C42]
+Interview with David Harding, June 18, 2013
+
+42
+
+I wouldn’t be surprised if it was, and that’s what I mean by easy. Whereas forecasting the
+
+return, who knows. Literally it could be anything. Say the S&P over the next twenty
+
+days could be anything. I'm not even going to bother with worrying about stock market
+
+crashes. It could be anything between minus fourteen and plus fourteen, any number in
+
+that range, whereas volatility broadly speaking could be between eleven and thirteen or
+
+ten and fourteen or something, so return is very, very uncertain.
+
+You’ve also got some special projects I read about. One of them is the nice book [The Pit
+
+KD:
+
+and the Pendulum] that you created, which is a special project, but one of the things I
+
+read about is trying to figure out if the market performed worse when it rained in London
+
+or didn’t. How much of that is part of the regular research project process?
+
+Something about rain, that’s entirely statistical. A broad description of what we do is we
+
+DH:
+
+look for explanatory variables, which means things that might explain what the market's
+
+going to do in the future and we research the conditional probability distribution
+
+conditioned on the explanatory variables, the thing that might tell you what's going to
+
+happen, and the conditional probability distribution is measuring whether something is
+
+likely to happen or not. Is the trend likely to continue or reverse, is it likely to go up or
+
+down in spring or summer, or before Christmas or after bank holidays? Are soy beans
+
+more likely to go up when the gap with corn is greater or less? Or if the hog-corn ratio
+
+exceeds this, does that make corn or hogs go up or down? Or is oil or natural gas at a
+
+normal spread? Are bonds and equities normally related to each other? Does the mean
+
+revert; a million, million, million perfectly sensible ideas, the correct way to study and
+
+[C43]
+Interview with David Harding, June 18, 2013
+
+43
+
+investigate which is through proper analysis of data, not just buying and putting your
+
+finger in the air and saying, “Oh, I feel such and such,” as most people do.
+
+The other thing, the book, it's very important to realize that this is not a physical science,
+
+it's social science, albeit it's a bit of a wolf in sheep's clothing, because it's a social
+
+science which uses very rigorous and detailed mathematics. The thing about physical
+
+science is reality is what it is and it doesn’t change when you investigate it, whereas there
+
+are rules and laws that you're seeking to tease out, whereas there aren’t any rules or laws
+
+in financial markets. There are no immutable eternal truths at all. That's certainly
+
+nothing original I'm saying here. You can watch any presentation by James Simons and
+
+it's the first thing he says, so it is obvious, but I suppose it needs more than one person to
+
+say it.
+
+A lot of the scientists and mathematicians who have gone into financial markets are not
+
+sophisticated enough to grasp fully this point. They sort of felt that there are physical
+
+laws. In fact, the efficient market theory is the idea of a physical law. The mainstream
+
+have fallen into precisely the trap that I'm saying there's no excuse for falling into. If
+
+you're going into business that’s the first thing you should try not to fall into, is believing
+
+that you're going into physics because you can use maths productively to improve your
+
+ability to make inferences, but it isn't physics. It's not.
+
+Talking about big picture, looking back, situate Winton and the legacy of AHL within the
+
+KD:
+
+CTA industry. You talk about Jim Simons a lot. I just want to get a sense of how
+
+[C44]
+Interview with David Harding, June 18, 2013
+
+44
+
+influential AHL and Winton have been to the entire industry going along. You’ve seen
+
+growth.
+
+The industry is completely founded upon the group of people who created the AHL
+
+DH:
+
+trading system. That’s not quite the right way of putting it. All the biggest CTA firms,
+
+you can trace the critical intellectual property in those firms back to the founding of AHL.
+
+Until very recently, that’s why they're all in Britain. Actually, it's not quite true because
+
+Transtrend is not at all included in that, nor is Lynx, for example. Lynx are the Swedes,
+
+Transtrend are Dutch, and none of the American firms are, so when I say the whole CTA
+
+industry all I'm saying is that this is a rare industry in which, at this particular moment in
+
+time, dubious privilege as it may be, the British are, if you count not necessarily even
+
+British people but the U.K.-based or founded CTAs, BlueTrend, Winton, Aspect, AHL,
+
+that’s only four of the biggest five or six. Cantab has just joined in, haven’t they, and
+
+there's another five or ten that people don’t know about, Altis, and they're all started by
+
+my ex-colleagues or friends and everyone I've ever worked with has got into CTA now.
+
+Is that one of the reasons why you're sort of expanding into equities as well, in an attempt
+
+KD:
+
+to broaden the base a little bit?
+
+Nothing's forever in financial markets. That’s why I said there are no immutable laws.
+
+DH:
+
+People like to say trend following will work forever. Well, I don’t think anything will
+
+work forever. When too much money is put into something usually it works less well. I
+
+[C45]
+Interview with David Harding, June 18, 2013
+
+45
+
+think as fast as the industry is growing you'd expect it to work less well, and one of the
+
+ways to compensate for that is to diversify further.
+
+I want to wrap up just by talking a little bit about where Winton's going. We've talked
+
+KD:
+
+about moving into equities. Where do you envision this company being ten years down
+
+the road, have you given that much thought?
+
+Not quite as a byproduct, but there's another product leading into equities. We see the
+
+DH:
+
+possibility of applying this very similar type of mathematical knowledge to try and solve
+
+the problem of running a portfolio being long of a bunch of equities. There's a very
+
+popular way of doing that at the moment, which is called the index. We often call it the
+
+market, the S&P 500 for the sake of argument, and that is a trading system based upon
+
+being long of 500 stocks and drop-buying and selling them according to various criteria.
+
+That is a trading system.
+
+We feel our experience of mathematics applied to markets can be used to do something
+
+better than that and that is a big business opportunity. To be honest, there's so much
+
+money in things like long-only in the S&P 500s, and if we were able to make one basis
+
+point more than that it would be worth millions, probably billions. If we could make let's
+
+say twenty basis points more than that then that is worth literally billions and billions and
+
+billions and billions, and that’s a highly soluble problem mathematically. The business
+
+problem of turning that into business is a separate thing, but the mathematical problem is
+
+highly soluble. I can see very, very, very clearly a way of creating an invention, which is
+
+[C46]
+Interview with David Harding, June 18, 2013
+
+46
+
+probably worth $10 billion or $20 billion in net present value. There's a somewhat
+
+separate task … which is to try and keep as much of that for me as possible.
+
+You're talking about sort of reinventing equities essentially, doing away with the indexes
+
+KD:
+
+so to speak.
+
+I don’t want to sound like I'm getting messianic. It's just a small invention. It's like
+
+DH:
+
+improving the oil you use in cars. If you could make the oil you use in cars cost 5
+
+percent less and last 10 percent longer you'd be in business, wouldn’t you? If you could
+
+make windmill blades 2 percent more efficient, you'd be in business. It's a great business.
+
+My experience tells me that’s how you make a good business and make money in the
+
+world today, is you incrementally improve something that is already well in use in the
+
+world's infrastructure. You don’t come along and say, “I could do this differently.”
+
+Here we have a perfectly good thing, the S&P 500 index, evolves in response to the fact
+
+that people have identified that if you just minimize the transaction costs and invest in
+
+everything you do better than most of the fancy pants people who think that they're so
+
+clever. You can do better than that just by minimizing transaction costs and investing in
+
+everything. But to say that’s the last word is incorrect. As I say, this efficient market
+
+theory which is used to justify that is an idea which is wrong because it's based upon the
+
+idea that this field is physics. It's not physics; it's a social science.
+
+[C47]
+Interview with David Harding, June 18, 2013
+
+47
+
+We have a business. I can see why other people can't do it. We have a skill, not nobody
+
+else has got, but we are highly skilled in a particular field which would enable us to
+
+produce something which could do a little bit better than the existing indices which have
+
+been such a big, popular thing. And so it's then a question of how you build a business
+
+out of that. That’s attractive because that kind of income stream would have high PE
+
+ratio, it's revenue rather performance fees, it's management fees rather than performance
+
+fees, it would have a very high PE ratio, much higher PE ratio than our business has at
+
+the moment. And it’s a diversified income stream so it’s a second stream, to go with the
+
+hedge fund income stream. I can see why we have a competitive advantage. It’s a
+
+modest thing to be good at.
+
+Like I said, it's just making a turbine blade just a little bit more efficient. I'm sure we can
+
+achieve that, but investments always get oversold so the tendency will be to try to make it
+
+out to be better than that. Then it's quite difficult to know how, if you could do a little bit
+
+better, twenty basis points better, how to convert that into an income stream for yourself.
+
+We've got ten years to work that out. We're three years into that already and we're not
+
+nowhere; we've got a $300 million long-only business, we've got product, we’ve got
+
+market literature, we've got the infrastructure, we've got the research going on. The
+
+research takes years and years and years and years.
+
+And what many, many people like to sell in this field is they like to sell a finished system.
+
+This is a complete fallacy. I think it's utterly foolish. If I'm going to manage someone's
+
+money for twenty years, what they want me to do is come to work for twenty years, not
+
+[C48]
+Interview with David Harding, June 18, 2013
+
+48
+
+buy something out of the back of a futures magazine. It's ridiculous. They want me and
+
+my team of people to work for them for that twenty years. The way we manage money in
+
+seventeen years’ time won't be the way we're managing it now. It's not physics. It's not a
+
+physical problem.
+
+Right. You 're talking about growing something organically here.
+
+KD:
+
+Yes, and the trading system changes through time. It will change through time. There is
+
+DH:
+
+no fixed system that will work from now to the end of eternity. The S&P 500 will not
+
+work from now till the end of eternity. It hasn’t been working for the last fifteen years.
+
+You may have noticed. I'm not saying a better system would have gone up massively the
+
+last fifteen years. I'm just saying that the losses for the public have been exacerbated by
+
+the fact that they're investing in a system that has been widely gamed. In other words,
+
+that people buy stuff before it goes in and they sell it before it comes out so the
+
+investment manager is making lots of money out of the job.
+
+So the global equity then is sort of the overnight sensation in seven years down the road.
+
+KD:
+
+DH:
+
+Yes, exactly.
+
+All right, terrific. I think that’s a good place to wrap up, unless there's anything that you
+
+KD:
+
+wanted to discuss that we haven’t covered.
+
+[C49]
+Interview with David Harding, June 18, 2013
+
+DH:
+
+No, that’s very good with me.
+
+KD:
+
+All right, great. Thanks for your time.
+
+DH:
+
+Thank you very much.
+
+[End of Interview]
+
+49

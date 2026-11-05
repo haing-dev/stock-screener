@@ -1,0 +1,2265 @@
+# Profiting from Mean-Reverting Yield Curve Trading Strategies (Chua, Koh, Ramaswamy)
+source_id: QP06
+type: paper
+file: Profiting from Mean-Reverting Yield Curve Trading Strategies.pdf
+chunks: one per PDF page (C01 = page 1). Page images: img/QP06-p-NN.png (exhibits, charts)
+---
+
+[C01]
+Singapore Management University
+
+Institutional Knowledge at Singapore Management University
+
+Research Collection School Of Economics
+
+3-2006
+
+School of Economics
+
+Profiting from Mean-Reverting Yield Curve Trading Strategies
+
+Choong Tze CHUA
+
+Singapore Management University, ctchua@smu.edu.sg
+
+Winston T. H. KOH
+
+Singapore Management University, winstonthkoh@gmail.com
+
+Krishna Ramaswamy
+
+Wharton School of Business, University of Pennsylvania
+
+Follow this and additional works at: https://ink.library.smu.edu.sg/soe_research
+
+Part of the Econometrics Commons, and the Finance Commons
+
+Citation
+
+CHUA, Choong Tze; KOH, Winston T. H.; and Ramaswamy, Krishna. Profiting from Mean-Reverting Yield
+Curve Trading Strategies. (2006). Journal of Fixed Income. 15, (4), 20-33.
+Available at: https://ink.library.smu.edu.sg/soe_research/456
+
+This Journal Article is brought to you for free and open access by the School of Economics at Institutional
+Knowledge at Singapore Management University. It has been accepted for inclusion in Research Collection School
+Of Economics by an authorized administrator of Institutional Knowledge at Singapore Management University. For
+more information, please email cherylds@smu.edu.sg.
+
+[C02]
+Singapore Management University
+
+Institutional Knowledge at Singapore Management University
+
+Research Collection Lee Kong Chian School Of
+Business
+
+8-2005
+
+Lee Kong Chian School of Business
+
+Profiting from Mean-Reverting Yield Curve
+Trading Strategies
+
+Choong Tze Chua
+
+Singapore Management University, ctchua@smu.edu.sg
+
+Winston T. H. Koh
+
+Singapore Management University, winstonthkoh@gmail.com
+
+Krishna Ramaswamy
+
+Wharton School of Business, University of Pennsylvania
+
+Follow this and additional works at: http://ink.library.smu.edu.sg/lkcsb_research
+
+Part of the Finance and Financial Management Commons, and the Portfolio and Security
+Analysis Commons
+
+Citation
+
+Chua, Choong Tze; Koh, Winston T. H.; and Ramaswamy, Krishna. Profiting from Mean-Reverting Yield Curve Trading Strategies.
+(2005). Financial Management Association European Conference, Siena, August 2005. 1-40. Research Collection Lee Kong Chian School
+Of Business.
+Available at: http://ink.library.smu.edu.sg/lkcsb_research/2489
+
+This Conference Paper is brought to you for free and open access by the Lee Kong Chian School of Business at Institutional Knowledge at Singapore
+Management University. It has been accepted for inclusion in Research Collection Lee Kong Chian School Of Business by an authorized administrator
+of Institutional Knowledge at Singapore Management University. For more information, please email libIR@smu.edu.sg.
+
+[C03]
+Profiting from Mean-Reverting Yield
+
+Curve Trading Strategies
+
+*
+
+Choong Tze Chua a , Winston T.H. Koh , b Krishna Ramaswamy c
+
+February 2004
+
+ABSTRACT
+
+A large class of fixed income trading strategies focuses on opportunities offered by the
+
+This paper studies a set of yield curve trading strategies
+
+interest rate term structure.
+
+that are based on the view that the yield curve mean-reverts to an unconditional curve.
+
+These mean-reverting trading strategies exploit deviations in the level, slope and
+
+curvature of the yield curve from historical norms. We consider cash-neutral trades
+
+with one-month holding periods. Some mean-reverting strategies were found to be
+
+highly profitable, and outperform, on a risk-adjusted basis before transaction costs,
+
+alternative strategies of an investment in the Lehman Brothers Bond index (by up to 5.9
+
+times) and an investment in the S&P index (by up to 5.1 times). Even after accounting
+
+for transaction costs, some of these strategies are still significantly more profitable than
+
+the benchmarks. Furthermore, transaction costs can be reduced substantially by
+
+changing the trading frequency or through structured derivative trades. We found
+
+evidence that market efficiency has improved, and the scope for excess returns has
+
+diminished since the late 1980s.
+
+Keywords: yield curve, fixed income trading, market efficiency, Treasury bonds
+
+*
+
+Research support from the Wharton-SMU Research Centre, Singapore Management
+University is gratefully acknowledged.
+
+a
+
+School of Business, Singapore Management University, 469 Bukit Timah Road, Singapore
+259756. Tel: +65-68220745; Email: ctchua@smu.edu.sg
+
+b
+
+School of Economics and Social Sciences, Singapore Management University, 469 Bukit
+Timah Road, Singapore 259756. Tel: +65-68220853; Email: winstonkoh@smu.edu.sg
+
+The Wharton School, University of Pennsylvania, 3259 Steinberg-Dietrich Hall, Philadelphia,
+PA 19104, USA. Tel: +215 8986206; Email: krishna@wharton.upenn.edu.
+
+c
+
+[C04]
+1.
+
+Introduction
+
+Trading in fixed income assets is a profitable business in global investment banks.
+
+Besides providing market liquidity through market-making activities, investment banks
+
+also devote significant amounts of proprietary capital to trade a wide variety of fixed
+
+income instruments, such as Treasury bills to 30-year government bonds, corporate
+
+bonds and mortgage-backed securities, etc. Besides investment banks, hedge funds and
+
+dedicated bond funds also actively pursue trading opportunities in fixed income assets.
+
+The strategies deployed range from simple arbitrage-trading, to complex trades
+
+based on technical or market views on the term structures of interest rates and credit risks.
+
+These yield curve trading strategies are essentially bets on changes in the term structure.
+
+These trading strategies can be broadly classified as directional and relative-value plays.
+
+Directional trading, as the name implies, are bets on changes in the interest rates in
+
+specific directions. Relative-value trading, by contrast, focuses on the market view that
+
+the unconditional yield curve is upward sloping, and that the current yield curve would
+
+mean-revert to an unconditional yield curve. A wide variety of trading techniques are
+
+used to construct relative-value trades based on this market view. However, there have
+
+been few efforts to examine the performance of these trading strategies or to compare
+
+them with equity investment strategies. Litterman and Scheinkman (1991), Mann and
+
+Ramanlal (1997) and Drakos (2001) are recent studies on the subject.
+
+In this paper, we analyze the performance a specific class of such relative-value
+
+trading techniques that are directly implied by the notion that mean-reversion of the yield
+
+curve occurs. We consciously avoid “data-snooping” by not searching through a large
+
+number of possible strategies to find a few that are profitable. Instead, we start from the
+
+market view that the yield curve mean-reverts and derive trading strategies that follows
+
+most naturally from such a view—if the level, spread or curvature is higher (lower) than
+
+the historical average, bet that the level, spread or curvature, respectively, will decrease
+
+2
+
+[C05]
+(increase) towards the historical average. We shall refer to this class of technical trading
+
+strategies as “mean-reverting” trading strategies. Following Litterman and Scheinkman
+
+(1991), we consider the three aspects of the yield curve – namely, the interest rate level,
+
+the slope (i.e. yield spread) and the curvature – and construct a portfolio of yield-curve
+
+trading strategies centering on each aspect. To facilitate a consistent comparison of their
+
+performance, we impose cash neutrality and consider one-month holding period for each
+
+category of strategies, and adjust the payoff for risk, as measured by the standard
+
+deviation of the payoffs. Our study abstract from credit risk --in particular, default risk –
+
+and chose as our dataset the U.S. Treasury interest rates, from the period 1964 to 2000
+
+for our study. For each aspect of the yield curve, we consider strategies that trade on the
+
+whole yield curve, as well as strategies that trade on individual portions of the yield curve.
+
+Our analysis shows that there exists a set of mean-reverting trades that appear to
+
+offer, on average, superior payoffs, even after accounting for transaction costs, over the
+
+period considered in our study. We compare these payoffs to two benchmarks. The first
+
+benchmark is a commonly deployed fixed income strategy referred to as riding the yield
+
+curve. This involves essentially buying fixed income assets and selling them before
+
+maturity to earn the term risk premium. (see Stigum and Fabozzi (1987), pp 271). The
+
+second benchmark involves a risk-adjusted strategy of investing in the S&P index, and
+
+funding the trade by shorting one-month U.S Treasury bills.
+
+In this comparison, we found that some yield curve strategies outperform the
+
+S&P strategy by about 5.1 times, and the Lehman Brothers Bond index strategy about 5.9
+
+times, based on a comparison of the risk-adjusted average gross payoffs. There is
+
+evidence that market efficiency appeared to have improved over time, and the scope for
+
+excess returns has diminished. We also found that the implied transaction costs that
+
+would have eliminated the excess returns from the set profitable mean-reverting yield
+
+curve trades is of the order of about 0.01% of the value of bonds traded – which is less
+
+3
+
+[C06]
+than the current transaction cost in the market for U.S. Treasury bills (but not Treasury
+
+bonds).
+
+While factoring in trading costs may appear to diminish the profits from some of
+
+the mean-reverting yield curve trades (although one of the strategies still return profits
+
+that were significantly higher than the benchmarks, even after accounting for transaction
+
+costs), we must add that the implied transaction cost we calculated is based on the
+
+assumption of entering and exiting each yield curve trading strategy on a monthly basis.
+
+The transaction costs can be significantly reduced by structuring derivative trades on a
+
+notional basis, mirroring the economic cashflows of the underlying yield curve trades but
+
+without actually funding and holding the bonds. These derivative trades are commonly
+
+carried out in the fixed income market. Hence, the potential remains for more mean-
+
+reverting yield curve strategies to yield significant positive returns.
+
+The rest of the paper is structured as follows. In Section 2, we briefly discuss the
+
+theory of the interest rate term structure, and describe the construction of the dataset, the
+
+various classes of mean-reverting yield curve trading strategies that we examine, as well
+
+as the two benchmarks used for comparison. Section 3 presents the results, and discusses
+
+their relative performance of the different yield curve strategies against each other. We
+
+further compare the performance of a set of profitable yield curve strategies against the
+
+two benchmarks. Section 4 concludes the paper with suggestions for further research.
+
+2.
+
+Mean-Reverting Yield Curve Strategies
+
+There is a wide variety of yield curve trading strategies. The literature on yield
+
+curve trading dates back to the late 1960s; a sample of the earlier literature includes De
+
+Leonardis (1966), Freund (1970), Darst (1975), Weberman (1976), Dyl and Joehnk
+
+(1981) and Stigum and Fabozzi (1987). More recent analysis of the subject are found in
+
+4
+
+[C07]
+Jones (1991), Mann and Ramanlal (1997), Grieves and Marchus (1992), Willner (1996)
+
+and Palaez (1997).
+
+Our focus in this paper is on yield curve trading strategies that are based on the
+
+conventional fixed income view that the yield curve mean-reverts to some historical
+
+norm. This market view is consistent with historical experience. For instance, U.S.
+
+Treasury bill rates, spreads and curvature all trade within tight, finite bounds. The interest
+
+rate term structures in other countries also exhibit similar patterns. This suggests that
+
+some form of mean-reversion mechanism is at work that prevents the yield curve from
+
+drifting to extreme levels or shapes over time.
+
+The market view of yield curve mean-reversion is also represented in theoretical
+
+models of the interest rate term structure – as discussed in Vasicek (1977), Cox, Ingersoll
+
+and Ross (1981, 1985), and Campbell and Shiller (1991), for example
+
+– which
+
+incorporate some form of mean-reversion mechanisms and are based on some form of the
+
+expectations hypothesis. 1 In essence, the pure expectations hypothesis of the term
+
+structure is the theory that the long-term interest rate is the average of the current and
+
+expected short-term rates, so that the yield spread is mean-reverting. 2 Interest rates along
+
+the yield curve adjust to equalize the expected returns on short- and long-term investment
+
+strategies. 3 Furthermore, by incorporating rational expectations, the pure expectations
+
+hypothesis implies that excess returns on long bonds over short bonds are unforecastable,
+
+with a zero mean in the case of the pure expectations hypothesis.
+
+Any arbitrage
+
+opportunity should be captured and realized by investors immediately. Therefore, by the
+
+1
+
+Shiller (1990), Campbell (1995) and Fisher (2001) provide surveys of the literature on interest
+
+rate term structure.
+
+2
+
+This was first propounded by Fisher (1986) and refined by Lutz (1940) and Meiselman (1962).
+
+3
+
+A weaker version, referred to as the expectations hypothesis, states that the difference between
+
+the expected returns on short- and long-term fixed income investment strategies is constant,
+
+although it need not be zero as required under the pure expectations hypothesis.
+
+5
+
+[C08]
+pure expectations hypothesis, yield curve trading strategies attempting to exploit
+
+anomalies or mis-pricings in the term structure would not yield consistently positive
+
+payoffs.
+
+The expectations hypothesis of the term structure, therefore, stands in contrast to
+
+the practitioner’s view that it is possible to construct mean-reverting yield curve trading
+
+strategies to generate consistent positive payoffs. Broadly speaking, mean-reverting
+
+yield curve strategies attempt to take advantage of deviations in the current yield curve
+
+relative to an unconditional yield curve. Three commonly-used trades are: (a) bullet
+
+strategy, which is constructed so that maturities of bonds are concentrated at a particular
+
+part of the yield; (b) ladder strategy, which involve investments across a range of
+
+maturities; and (c) barbell strategy, which are constructed, for example, by investing in
+
+two ends of the yield curve, and shorting the middle portion, or vice versa (see Fabozzi,
+
+1996). It is easy to see that bullet strategies are essentially bets on the level of the
+
+interest rates, while ladder strategies and barbell strategies are bets on the yield spreads
+
+and curvatures, respectively.
+
+There have not been systematic efforts to examine the performance of these
+
+trading strategies, and relate them to the predictions of the expectations hypothesis. An
+
+exception is Culbertson (1957) who computed and graphed holding period returns,
+
+between one week and three weeks, for short and various long term Treasury securities.
+
+He found that the holding period returns were very different from observed spot interest
+
+rates, and concluded that the pure expectations hypothesis, as propounded by Lutz (1940)
+
+did not hold.
+
+The predictability of the spot yield curve and the forward interest rates, as
+
+implied by the expectations hypothesis, has also not found unambiguous empirical
+
+support (see Hamburger and Platt, 1975). Shiller, Campbell and Schoenholtz (1983)
+
+showed that the term structure does not provide information on the future change in the
+
+6
+
+[C09]
+short-term rates. Moreover, as Cox, Ingersoll and Ross (1985) first showed, the different
+
+versions of the expectations hypothesis are not theoretically consistent. Mankiw and
+
+Miron (1986) also found that the predictability of the term structure disappears after the
+
+founding of the Federal Reserve. Subsequent work by Rudebusch (1995) and Balduzzi,
+
+Bertola and Foresi (1997) also found that changes in the interest rate were due to
+
+unexpected changes in the Fed targeting.
+
+2.1
+
+Data
+
+The dataset we use for our study is the Fama-Bliss dataset obtained from CRSP
+
+(Centre for Research in Securities Prices, 2000). The data set contains monthly data on
+
+zero coupon yields derived from a yield curve of U.S. government Treasury bills and
+
+bonds from 30 June 1964 to 29 December 2000. For the purpose of this study, we
+
+express all zero coupon yields in the form of continuously compounded yields. These
+
+zero-coupon yields are of maturities that are approximately 1-month, 2-month,…, 12-
+
+month, 24-month, 36-month, 48-month and 60-month.
+
+The observed maturities are
+
+approximate in the sense that some bonds may be of 0.9 month, 3.3 month or 11.8 month
+
+in maturities. Moreover, the observation interval for each yield curve is only
+
+approximately one-month apart (e.g. 28 days or 33 days). The total number of yield
+
+curve observations in our dataset is 439.
+
+For the purpose of our study, we regularize the dataset. This is carried out in two
+
+steps. First, we perform a cross-sectional linear interpolation to each zero yield curve in
+
+order to obtain the yields at monthly tenors from 1-month to 60-month. For instance, if
+
+the observed yields are 9.8 months, 11.3 months and 12.3 months, we interpolate linearly
+
+to obtain the yields for the 10-month, 11 month and 12-month tenors. Similarly, for
+
+yields of 12.3 month and 24.5 months, for example, we linearly interpolate to obtain
+
+yields for maturities of 13-month, 14 month,…, 24 months, etc. The process is repeated
+
+7
+
+[C10]
+for the rest of the yield curve. For our analysis, we shall refer to bonds with yields that
+
+are observed in the market as ‘primary’ bonds, and bonds with maturities that are not
+
+observed in the market as ‘hypothetical’ bonds. Hypothetical bonds therefore have
+
+maturities greater than 12 months, but are not divisible by 12. The distinction is made to
+
+facilitate a comparison of alternative yield curve strategies in our analysis.
+
+The second step that we took to regularize the dataset is a temporal linear
+
+interpolation procedure. The following example explains the procedure. Suppose the
+
+interpolated 13-month yield are observed at three dates, 7% (date 0), 7.5% (28 days later)
+
+and 6% (another 33 days later). Since we focus on a holding period of one month, we
+
+require the yield curves to be at exactly one-month intervals, in order to calculate the
+
+payoff at the end of each holding period. For our purpose, we define this to be 365.25
+
+days divided by 12, i.e. 30.4375 days. Hence, the temporally interpolated 13-month yield
+
+in this example are 7% (date 0), 7.3892% (30.4375 days) and 6.0057% (another 30.4375
+
+days later).
+
+Since the holding period of each trade is one-month, the relevant forward yield
+
+curve with which to compare against the unconditional yield curve is the one-month
+
+forward yield curve. The one-month forward interest rate at a maturity of X months is
+
+calculated as follows. Let r X ,0 denote the current interest rate while r X ,1 denote the one-
+
+month forward interest rate. We have
+
+x + 1
+12
+
+1
+12
+
+x
+12
+
+r x ,1
+
+r 1,0
+
+r x + 1,0
+
+⋅ e
+
+= e
+
+e
+
+(1)
+
+Finally, the unconditional yield at each maturity (for primary and hypothetical
+
+bonds) at any date is calculated as the simple average of all the yields observed for that
+
+maturity since June 1964 till the preceding month. We define the unconditional yield
+
+curve at any date as the set of unconditional yields over all the maturities. Figure 1
+
+below illustrates the unconditional yield curve for various dates.
+
+8
+
+[C11]
+---------------------------------------------------
+
+INSERT FIGURE 1 HERE
+
+--------------------------------------------------
+
+2.2
+
+Strategies
+
+We consider three classes of mean-reverting yield curve strategies, focusing on
+
+the three aspect of the yield curve: level, slope (i.e. yield spread) and curvature. For
+
+each strategy, the holding period of a trade is fixed at one month, after which a new trade
+
+is initiated. We impose the condition of cash neutrality, so that any excess cash is
+
+deposited at the 1-month tenor. Similarly, if additional funding is required, this is carried
+
+out at the 1-month tenor. As a bond of maturity X months has a duration of ( X − 1)
+
+months, the deposits and borrowings at the one-month tenor have no impact on the
+
+duration of each trade.
+
+We allow for a 102-month training period in the construction of the
+
+unconditional yield curve, so that our calculation of the average payoff of each yield-
+
+curve strategy starts from January 1973 to December 2000. A reason for the selection of
+
+the training period is the fact that the Lehman Brothers U.S. Government Intermediate
+
+Bond Index starts in January 1973.
+
+Class 1: Mean-reversion of yield levels
+
+This class of yield-curve trading strategies is based on the view that the level of
+
+the yield curve mean-reverts to the unconditional level. We consider two strategies.
+
+Strategy 1-A: Mean-reversion of average yield to the unconditional average
+
+This strategy takes the view that the average level of the yield curve mean-
+
+reverts to that of the unconditional yield curve. In this trade, we compare the average of
+
+all the one-month forward yields at a particular date against the corresponding average
+
+9
+
+[C12]
+for the unconditional yield curve. If the average interest rate level for the one-month
+
+forward yield curve is higher (lower) than the average for the unconditional yield curve,
+
+the expectation is that one-month forward yield curve would shift down (up). The
+
+implied strategy is to go long (short) all the bonds with maturities longer than one month.
+
+We consider two versions of the trade, one for maturities of only primary bonds, and
+
+another for all maturities, including all the interpolated maturities of the hypothetical
+
+bonds.
+
+The trade is constructed as follows. If k /59 dollars are invested in the 60-month
+
+bond, with a duration of 59 months over the one-month holding period, the amount of
+
+cash invested in a bond of maturity of X months, with duration of ( X − 1) months, will be
+
+k /( X − 1) dollar. The funds required to invest in all the bonds are borrowed at the month
+
+tenor. Similarly, if the trade is to go short all the bonds, then the cash is deposited in the
+
+one-month tenor. Therefore, the strategy is a duration-weighted, cash neutral trade. In
+
+this strategy, a parallel shift in the yield curve generates approximately equal contribution
+
+to the payoff at each maturity.
+
+Strategy 1-B : Mean-reversion of yield at each maturity to its unconditional level
+
+This strategy is based on the view that the yield at each maturity mean-reverts to
+
+its unconditional level. In this trade, if the one-month forward yield is higher (lower)
+
+than the corresponding level on the unconditional yield curve, the expectation is that one-
+
+month forward yield curve would fall (rise). Except for the one-month maturity, the
+
+implied strategy is to go long (short) the bond. The trade is constructed so that a parallel
+
+shift in the yield curve generates approximately equal contribution to the payoff at each
+
+maturity. If we go long or short k /59 dollars in the 60-month bond, the amount to long or
+
+short a bond of maturity of X months, with duration of ( X − 1) months will be k/ ( X − 1)
+
+dollar. Again, the one-month sector is where deposits and borrowings are made to
+
+10
+
+[C13]
+achieve cash neutrality. We consider two versions of the trade, one for maturities of only
+
+primary bonds, and another for maturities, including all the interpolated maturities of the
+
+hypothetical bonds.
+
+Class 2 : Mean-reversion of yield spreads
+
+In this strategy, the focus is on the mean reversion of the slope of the yield curve.
+
+Two versions of the trade are carried out.
+
+Strategy 2-A : Mean-reversion of yield spread for the whole yield curve
+
+The trade is constructed as follows. Consider the spread between the 59-month
+
+and 1-month maturities on the one-month forward yield curve, and compare it with that
+
+of the unconditional yield curve.
+
+If the one-month forward yield spread is larger
+
+(smaller) than the historical average, the expectation is that the slope of the yield curve
+
+would fall (rise). The implied strategy is to go long (short) the 60-month bond and go
+
+short (long) the 2-month bond.
+
+The trade is constructed as follows. Suppose k /59 dollars are invested in the 60-
+
+month bond, we need to short the 2-month bond by k dollars, to achieve duration-
+
+matching. The excess cash of 58 k /59 dollars is deposited in the one-month tenor. This
+
+strategy is a cash neutral trade and has a zero net duration. A parallel shift in the yield
+
+curve has negligible impact on the payoff.
+
+Strategy 2-B : Mean reversion of the yield spreads between 2 adjacent bonds.
+
+This trade is based on the view that the yield spread between two adjacent bonds of
+
+maturities ( X −1) months and ( Y −1) months, with Y > X , on the one-month forward yield
+
+curve would mean-revert to the corresponding spread on the unconditional yield curve.
+
+We compare the yield spread of adjacent pairs of bonds on the one-month forward yield
+
+curve against the historical average on the unconditional yield curve. If the one-month
+
+11
+
+[C14]
+forward spread is larger (smaller) than that for the unconditional curve, go long the bond,
+
+with maturity of Y months, and short the bond with maturity of X months. We duration-
+
+weight each leg of the trade so that changes in the yield spread with equal magnitude
+
+across different trades would generate approximately equal payoff contribution to the
+
+portfolio. For any bond with maturity of Z months, the cash to go long or short the bond
+
+is k /( Z − 1) dollars. We again impose cash neutrality.
+
+This trade essentially focuses on the slope of the yield curve for adjacent bonds
+
+on the one-month forward yield curve. We consider two versions of the trade, for both
+
+yield curves with only primary bonds and another set with maturities one month apart
+
+from one month to 60 months.
+
+Class 3 : Mean reversion of curvature
+
+We define curvature as follows. Take three zero coupon bonds, with maturities
+
+of X , Y and Z months and corresponding one-month forward yields of r X , r Y and r Z .
+
+The curvature of the curve yield curve, as defined by the three bonds, is the measure:
+
+r Y − r X r Z − r Y
+−
+Y − X
+Z − Y
+
+c ( X , Y , Z ) ≡
+
+(2)
+
+If the curvature is smaller (larger) relative to the corresponding measure for the
+
+unconditional yield curve over the same set of maturities, the expectation is that the
+
+curvature of the one-month forward yield curve would increase (decrease). We consider
+
+two strategies.
+
+Strategy 3-A : Mean reversion of the curvature of the yield curve
+
+This strategy focuses on the entire yield curve. Specifically, we consider the
+
+maturities of 1-month, 29-month (a hypothetical bond, and the mid-point) and the 59-
+
+month bond, on the one-month forward yield curve. If the curvature is expected to
+
+increase (decrease), the implied trade is to go long (short) the 2-month and 60-month
+
+12
+
+[C15]
+bond and short (long) the 30-month bond, on the current yield curve. We match the
+
+durations of the various portions of the trade as follows. For every k /59 dollars invested
+
+in the 60-month bond (with a duration of 59 months), the amount invested in the 2-month
+
+bond is k dollars. Next, for the 30-month bond (with a duration of 29 months), the
+
+amount to short is 2 k /29 dollars. The excess funding needs is met by borrowing k (1/59 +
+
+1 − 2k /29) dollars at the one-month tenor. The trade is cash-neutral and has zero duration,
+
+so that a parallel shift in the yield curve or a change in the slope of the yield curve
+
+without a change in curvature has negligible impacts on the payoff. The curvature
+
+trading strategy we just described is often referred to as a barbell strategy.
+
+Strategy 3-B : Mean reversion of the curvature of 3 adjacent bonds to the unconditional
+
+curvature
+
+In this trade, we compare the curvature of any three adjacent bonds, say with
+
+maturities of ( X− 1), ( Y− 1) and ( Z− 1) months on the 1-month forward yield curve, as
+
+measured by c ( X − 1, Y − 1, Z − 1) described in (2), with the corresponding curvature by
+
+the unconditional yield curve. If the curvature is smaller (larger) relative to that for the
+
+unconditional yield curve, the expectation is that the curvature of the current yield curve
+
+over the three maturities would increase (decrease). The implied trade is go long (short)
+
+the X -month and Z -month bond and short (long) the Y -month bond.
+
+Again, we match the durations of the various portions of the trade so that the
+
+trade is immune to shifts in the yield curve. The amount of cash to be invested in the X-
+
+month and Z- month bonds are, respectively, k /( X − 1) dollars and k /( Z − 1) dollars. As for
+
+the bond with Y- month maturity, the cash amount is given by 2 k /( Y − 1) dollars.
+
+The
+
+funding need or excess cash for this trade is k /( X − 1) + k /( Z − 1) – 2 k /( Y − 1) dollars. The
+
+strategy is essentially a portfolio of curvature trades, using all the primary bonds.
+
+13
+
+[C16]
+Since the hypothetical bonds are linearly interpolated from the primary bonds,
+
+the curvatures of the hypothetical bonds are zero. Hence, the trade does not work with
+
+hypothetical bonds.
+
+2.3
+
+Benchmarks
+
+In order to be able to compare the performance of the mean-reverting trades
+
+described in the preceding subsection, we construct two benchmarks. The first is a fixed
+
+income strategy benchmark while the second is an equity investment benchmark.
+
+Benchmark 1 – Investment in the Lehman Brothers U.S. Government Intermediate Bond
+
+Index 4
+
+This benchmark is constructed by assuming that we go long on the Lehman
+
+Brothers U.S. Government Intermediate Bond Index. The trade is funded by shorting 1-
+
+month Treasury bills. This is a standard benchmark in the fixed income market,
+
+essentially deriving its returns from the term premium of interest rates (see Stigum and
+
+Fabozzi, 1987). This trade, like all the other strategies that we are testing, is cash neutral.
+
+When used as a benchmark, we will match the volatility of this strategy to the other
+
+strategies, and then compare the means.
+
+4 There is a similar, though less common, benchmark that we can use. Profiting from the term
+
+premium involves buying a long-dated bond, and holding it for a period of time. Therefore, a
+
+logical benchmark is to simply buy a 60-month bond every month and holding it to maturity, all
+
+the while repeatedly funding the long positions with corresponding short positions in the 1-month
+
+Treasury Bills. A new 60-month bond is bought each month. Hence, at any one time, there is
+
+portfolio of bonds of maturities ranging from one month to 60 months. The payoff of the portfolio
+
+is calculated as the marked-to-market profits each month. As expected, this benchmark is almost
+
+identical to an investment in the Lehman Brothers U.S. Government Intermediate Bond Index.
+
+14
+
+[C17]
+Benchmark 2 – Cash-neutral Investment in S&P Index
+
+Finally, we construct an equity benchmark to compare the performance of mean-
+
+reverting trades against an alternative investment strategy in equity assets. Most studies
+
+on fixed income investment strategies do not compare the performance against the
+
+alternative strategy of investing in equity instruments. Any attempt at doing so often
+
+runs into problems of comparability, in terms of risk adjustments, holding period and
+
+credit risks etc. The equity benchmark we construct addresses these issues.
+
+We use the S&P index, starting from January 1973. Invest a dollar in the S&P
+
+index, and borrow a dollar for one-month by shorting 1-month Treasury bills. The trade
+
+is cash-neutral, with a one-month holding period. We found that the average profit is
+
+$5.75 for every $1000 invested in the S&P, funded by 1-month borrowings.
+
+3.
+
+Results and Analysis
+
+By adjusting the cash amounts, we can derive comparable volatilities (standard
+
+deviation) in payoffs for the S&P investment against a particular mean-reverting yield
+
+curve strategy. Let the standard deviation of payoffs for the cash-neutral investment in
+
+the S&P index from January 1973 to December 2000 be denoted σ E . Similarly, let σ #
+
+denote the standard deviation of payoffs, from January 1973 to December 2000, for a
+
+yield curve strategy numbered #. Hence, to yield identical volatility in payoffs, the cash
+
+amount of k dollars for a particular yield curve strategy is given by
+
+σ E
+σ #
+
+k =
+
+(3)
+
+for each dollar invested in the S&P trade. Note that the matching of volatilities across
+
+different strategies is done after all the payoffs are realized. This is to ensure that the
+
+volatilities of the 2 competing strategies will be matched exactly. This procedure does not,
+
+in any way, compromise the fact that all investment decisions are made “out-of-sample”.
+
+15
+
+[C18]
+It merely seeks to evaluate any two competing strategies on a fair and comparable basis
+
+by scaling the size of the monthly payoffs to match the standard deviations of the 2
+
+strategies.
+
+Table 1 below presents performance of the various strategies and benchmarks
+
+before accounting for trading costs. (We defer the discussion of transaction costs to
+
+Section 3.3.) From Table 1, we note that, on a comparable risk-adjusted basis, only
+
+strategies 2-B, 3-A and 3-B yield higher payoffs compared with the two benchmarks. In
+
+particular, not all mean-reverting yield curve strategies beat the simple buy-and-hold
+
+bonds strategy (Benchmark 1). In the following subsections, we analyze in detail the set
+
+of profitable mean-reverting yield-curve strategies.
+
+---------------------------------------------------
+
+INSERT TABLE 1 HERE
+
+--------------------------------------------------
+
+3.1
+
+Performance against the Benchmarks
+
+Against the two benchmarks, strategies 2-B and 3-B have performed remarkably
+
+well. On a comparable basis, Table 1 shows that the monthly payoff of strategy 2-B is
+
+about 5.1 times that of the monthly payoff of the equity benchmark (benchmark 2). This
+
+means that while investing $1000 in S&P (and funding the investment by shorting 1-
+
+month Treasury Bills) generates an average profit of $5.75 per month, strategy 2-B
+
+generates $29.51 per month, after adjusting the volatility of payoffs for strategy 2-B to
+
+exactly match the volatility of payoffs from the S&P strategy. For strategy 3-B, the
+
+corresponding ratio is about 3.3 times against the equity benchmark Hence, yield-spread
+
+mean-reverting and curvature mean-reverting strategies can outperform an equity
+
+investment strategy, on a risk-adjusted basis.
+
+16
+
+[C19]
+Moreover, Strategies 2-B and 3-B also outperformed the bond benchmark. In the
+
+case of strategy 2-B, the average monthly payoff is about 5.9 times that of Benchmark 1,
+
+while for strategy 3-B, the average monthly payoff is about 3.8 times that of Benchmark
+
+1.
+
+The next subsection will test whether these superior performance of (gross)
+
+payoffs relative to the benchmarks are statistically significant.
+
+Test of Significance of Excess Payoffs against Benchmarks
+
+3.2
+
+To test whether strategies 2-B, 3-A and 3-B significantly outperform the
+
+benchmarks, we conduct two statistical tests of significance; these are: the paired t-test
+
+and the Diebold-Mariano statistical test (D-M test).
+
+The paired t-test requires that the time-series of payoff differences be
+
+independent. Positive auto-correlations will incorrectly overstate the power of the test.
+
+Figures 2, 3 and 4 respectively plot the first 60 auto-correlation of the payoff differences
+
+between the strategies and the benchmarks. The autocorrelations are small in absolute
+
+values and are also distributed across positive and negative values. This means that the
+
+paired t-test, while not perfect, is still reasonable for our purpose.
+
+----------------------------------------------------
+
+INSERT FIGURES 2, 3 AND 4 HERE
+
+---------------------------------------------------
+
+The Diebold-Mariano statistic (see Diebold and Mariano, 1995) can be used to
+
+ascertain whether the mean of an autocorrelated series is significantly different from zero.
+
+It is less powerful that the t-test, but it requires weaker assumptions by accounting for
+
+auto-correlation. We implement the Diebold-Mariano statistic using a Barlett lag window
+
+17
+
+[C20]
+(see Newey and West, 1987) to ensure non-negativity of the spectral density. We also
+
+allow autocorrelations of up to 60 lags. The Diebold-Mariano statistic is expressed as a
+
+Z-Score. Therefore, a number higher than 1.96 will imply that the difference between the
+
+two means being tested is statistically significant.
+
+---------------------------------------------------
+
+INSERT TABLE 2 HERE
+
+--------------------------------------------------
+
+Table 2 shows that while strategy 3-A does not significantly outperform the benchmarks,
+
+strategies 2-B and 3-B do. In particular, the p-value of the t-tests for strategies 2-B and 3-
+
+B are negligible. For the D-M test, strategy 2-B managed a p-value of 0.0010 and 0.0013
+
+against benchmarks 1 and 2 respectively. Meanwhile, strategy 3-B obtained a p-value of
+
+0.0158 and 0.0258 against benchmarks 1 and 2 respectively. These p-values of these tests
+
+are so low, especially for strategy 2-B, that our results are still highly significant even
+
+after making simple bonferroni adjustments to account for the fact that we tested 6
+
+strategies in this study. 5
+
+3.3
+
+Transaction Costs
+
+Thus far, all our analyses are done in terms of the gross payoffs of the different
+
+mean-reverting yield curve strategies. An obvious question to ask is whether the set of
+
+profitable trades, specifically strategies 2-B and 3-B, would continue to outperform the
+
+indices (or even yield positive returns) when the appropriate transaction costs are taken
+
+5
+
+The simple bonferroni correction adjusts the required p-value for rejection to account for
+
+multiple tests by dividing the alpha-level by the number of tests conducted. Therefore, in the case
+
+of our study where 6 tests are conducted, the p-value required for a rejection at the 5% level is
+
+0.008333. The p-value from Strategy 2-B is still smaller than 0.00833.
+
+18
+
+[C21]
+into account. Transaction costs in bond trading are embedded in the form of the spread
+
+between the ‘bid’ and ‘ask’ yields. The 5-year average spreads are approximately 1 basis
+
+point for Treasury bills that mature in 1 year or less, 0.8 basis points for 2-year bonds and
+
+0.35 basis points for 5-year bonds 6 . A reasonable assumption would be that the
+
+transaction cost for each trade is half the quoted spread. For the purpose of this paper,
+
+we assume a spread of 1 basis point for all the bonds traded (and therefore pay a
+
+transaction cost of half basis point). Assuming a cost of half basis point, the cost
+
+expressed in dollars is a function of the maturity of the bond and the value of the bond,
+
+and can be approximated as follows:
+
+(Transaction Cost) ≈ 0.00005 * (Maturity in Years) * (Value of Bond)
+
+(4)
+
+As an illustration, buying or selling $100,000,000 worth of 6-month Treasury Bills will
+
+attract a transaction cost of 0.00005*0.5*$100,000,000 = $2500.
+
+---------------------------------------------------
+
+INSERT TABLE 3 HERE
+
+----------------------------------------------------
+
+The profitability of strategies 2-B, 3-A and 3-B after accounting for transaction
+
+costs are reported in Table 3. We assume that the benchmarks are traded without any
+
+transaction costs. Strategy 2-B is still significantly more profitable than both the
+
+benchmarks under all measures (both the t-tests and the D-M tests). Strategy 3-B is only
+
+significantly better than the benchmarks in the t-tests but not in the D-M tests, while
+
+Strategy 3-A remains marginally better than the benchmarks.
+
+It is important to note that the transaction costs we calculated are based on the
+
+assumption that the mean-reverting yield curve strategies are executed on a physical basis,
+
+6
+
+Source: Bloomberg, accessed on 5 November 2003.
+
+19
+
+[C22]
+i.e. the actual bonds are bought and sold and funds are borrowed (if required) to construct
+
+the trades on a monthly basis. The transaction costs can be diminished by reducing the
+
+frequency of the entering and exiting trades. For instance, instead of executing the trades
+
+on a monthly basis, the trades could be executed on a quarterly basis, or when the
+
+relevant deviations on forward yield curves for spreads and curvatures exceed certain
+
+thresholds.
+
+More importantly, the transaction costs can be reduced substantially if the yield
+
+curve strategies are structured as derivative trades (on a notional basis) to mirror the
+
+economic cashflows of the underlying strategies, without actually funding and holding
+
+These derivative trades are commonly carried out in the fixed income
+
+the bonds.
+
+market. 7
+
+Therefore, while factoring in transaction costs may appear to diminish the profits
+
+from some the mean-reverting yield curve trades, there are different ways to lower the
+
+transaction costs. Nevertheless, Strategy 2-B still returns a significantly better profit than
+
+all the benchmarks even after accounting for these costs.
+
+Value-Add of Mean-Reverting Strategy to Investment in the S&P Index
+
+3.4
+
+In the preceding sections, we have shown that a number of mean-reverting yield-
+
+curve strategies can be highly profitable. Another way to demonstrate the attractiveness
+
+of mean-reverting yield curve strategies is to consider the incremental value-add of
+
+including such strategies to an existing investment strategy. In this regard, Foster and
+
+Stine (2003) introduce a convenient test to ascertain whether a particular strategy can add
+
+7
+
+Of course, the pricing of the derivative trades may involve other costs as well, as investment
+
+banks take a cut from the potential profits. Fortunately, there are some standard derivatives that
+
+can be traded at extremely low cost and can substitute for a pair of long-short trade in bonds. For
+
+instance, the highly liquid Eurodollar futures gives identical payoff as shorting a bond of a certain
+
+maturity, and at the same time going long a another bond of maturity 90 days longer than the
+
+shorted bond.
+
+20
+
+[C23]
+value to a buy-and-hold investment in the S&P index. The Foster-Stine test involves
+
+regressing the excess returns of the selected strategy against the excess returns from the
+
+buy-and-hold investment in the S&P index. Based on this regression, we can obtain the
+
+t-statistic as well as the p-value of the intercept that allows us to test if adding a new
+
+strategy leads to a significant improvement in the performance of the portfolio. Again,
+
+the p-value needs to be adjusted using the bonferonni correction when multiple strategies
+
+are tested. If the regression intercept is statistically significant, then we can say that the
+
+particular strategy does in fact add value to the original strategy of buy-and-hold the S&P
+
+index. The basic premise behind this test is that a strategy that gives a positive mean
+
+return and is not too highly correlated to the S&P index can be linearly combined with
+
+the S&P index to obtain a better mean-variance return profile. In other words, a strategy
+
+that serves as a good addition to diversify holdings in the S&P index can therefore add
+
+value.
+
+In the case of the mean-reverting yield-curve strategies we examined in this
+
+paper, Strategies 2-B, 3-A and 3-B are found to have significant value-add even after
+
+accounting for transaction costs and the bonferonni correction. In particular, Strategies
+
+2-B and 3-B have t-statistics of 9.1758 and 4.9836 respectively, with negligible
+
+corresponding p-values. The results of the Foster-Stine test are reported in Table 4 below.
+
+---------------------------------------------------
+
+INSERT TABLE 4 HERE
+
+----------------------------------------------------
+
+3.5
+
+Breakdown of the Payoffs
+
+For strategies 2-B and 3-B, we further analyzed the breakdown of payoffs.
+
+Figures 5 and 6 show the contribution of the payoffs from each trade trade-segment in the
+
+portfolio for Strategies 2-B and 3-B, respectively.
+
+21
+
+[C24]
+---------------------------------------------------
+
+INSERT FIGURES 5 AND 6 HERE
+
+--------------------------------------------------
+
+The results show that almost every trade in the portfolio contributed positively to
+
+No single trade dominates the entire portfolio, although interestingly,
+
+the payoffs.
+
+trading the yield spread between 10-month and 11-month maturities as well as trading on
+
+the curvature among 10-month, 11-month and 23-month maturities, on the one-month
+
+forward yield curve, generate substantial profits. For these two yield curve strategies, we
+
+plot the monthly payoffs against the absolute deviations of the relevant parameter from
+
+the unconditional yield curve. The plots are shown in Figures 7 and 8 below.
+
+---------------------------------------------------
+
+INSERT FIGURES 7 AND 8 HERE
+
+---------------------------------------------------
+
+The figures show that, for these two trades, the monthly payoffs have a high
+
+positive correlation with the absolute deviations from the unconditional yield curve
+
+(correlation = 0.814 for strategy 2-B, and correlation = 0.763 for strategy 3-B). In other
+
+words, the payoffs from these two trades are not random payoffs: the larger the deviation
+
+from the unconditional yield curve, the larger the resulting profit from that particular
+
+trade. This result strongly supports the view that the spread and curvature of these
+
+portions of the yield-curve do in fact mean-revert.
+
+The presence of the most profitable trade segments in the 10-month to 23 month
+
+portion of the one-month forward yield curve provides some support for the “market-
+
+segmentation” view of the interest rate term structure in the fixed income market. This is
+
+22
+
+[C25]
+the market view that many participants in the fixed income market have preferred
+
+habitats that are dictated by the nature of liabilities and investments, so that a major
+
+factor influencing the shape of the yield curve is the asset-liability management
+
+constraints that are either regulatory or self-imposed. Specifically, the yield curve is
+
+viewed as comprising a “short-end” – up to the 12-month maturity – and a “long-end” –
+
+Asset-liability management constraints, when they exist,
+
+from 12-month onwards.
+
+restrict lenders and borrowers to the short-end or the long-end of the yield curve, or even
+
+certain specific maturity sectors, and, as a result, investors and borrowers do not shift
+
+from one maturity sector to another to take advantage of opportunities arising from
+
+differences between market expectations and the forward interest rates. Arbitrage trades
+
+in the fixed income market are frequently constructed in the transition between the short-
+
+end and the long-end of the yield curves.
+
+3.6
+
+Time Series Analysis
+
+To investigate the profitability of strategies 2-B and 3-B over time, we plot the
+
+10-year moving average of the payoffs of strategies 2-B and 3-B against the two
+
+benchmarks. These are shown in Figures 9 and 10 below.
+
+---------------------------------------------------
+
+INSERT FIGURES 9 AND 10 HERE
+
+---------------------------------------------------
+
+From Figures 9 and 10, it can be seen that the average monthly payoffs for both
+
+strategies 2-B and 3-B were initially significantly higher than the payoffs for the two
+
+benchmarks. However, the gaps against the two benchmarks appeared to have narrowed.
+
+In the case of strategy 3-B, the gap narrowed sharply from around 1984 onwards, and by
+
+1990, the 10-year moving average monthly return has fallen below the two benchmarks.
+
+23
+
+[C26]
+A plausible explanation of this finding is that fixed income market has improved
+
+in efficiency over the years, as market information improved and trading liquidity
+
+increased. Moreover, improvements in computing technology and telecommunications
+
+also allowed traders to rapidly seek out and take advantage of trading opportunities
+
+afforded by the yield-curve mean-reversion market view.
+
+4.
+
+Conclusion
+
+The objective of this paper is to examine the profitability of a class of yield-curve
+
+trading strategies that are based on the view that the yield curve mean-reverts to an
+
+unconditional yield curve. Our study has shown that a number of these yield-curve
+
+trading strategies can be highly profitable. In particular, trading strategies focusing on
+
+the mean-reversion of the yield spreads and curvatures significantly outperformed two
+
+commonly-used benchmarks of investing in the Lehman Brothers U.S. Government
+
+Intermediate Bond Index and investing in the S&P, on a risk-adjusted basis. Although
+
+factoring in transaction costs lower the profitability of these trades against the
+
+benchmarks, the significant result still remains for some of these strategies. Transaction
+
+costs can also be reduced substantially, for instance, through structured derivative trades
+
+that mirror the underlying cashflows or by reducing the frequency of the trades.
+
+We also investigated the profitability of these mean-reverting yield curve trades
+
+over time. A time series analysis of the performance of the various yield-curve trading
+
+strategies also show that market efficiency appeared to have improved considerably, and
+
+the scope for excess returns over the benchmarks has diminished. Nonetheless, trading
+
+opportunities still exist in yield-spread mean-reversion strategies.
+
+Moreover, these
+
+strategies are found to have significant value-add to a strategy of buy-and-hold the S&P
+
+index.
+
+24
+
+[C27]
+References
+
+Balduzzi, P., Bertola, G., and Foresi, S., 1997. A model of target changes and the term
+structure of interest rates. Journal of Monetary Economics 24, 371-399.
+
+Campbell, J., 1995. Some lessons from the yield curve.
+Perspectives 9, 129-152.
+
+Journal of Economic
+
+Campbell, J., Shiller, R.J., 1991. Yield spreads and interest rate movements: A bird’s
+eye view. Review of Economic Studies 58, 495-514.
+
+Culbertson, J.M., 1957. The term structure of interest rates. Quarterly Journal of
+Economics 71, 485-517.
+
+Cox, J.C., Ingersoll, J.E., Ross, S.A., 1981. A reexamination of traditional hypotheses
+about the term structure of interest rates. Journal of Finance 36, 769-799.
+
+Cox, J.C., Ingersoll, J.E., Ross, S.A., 1985. A theory of the term structure of interest
+rates. Econometrica 53, 385-407.
+
+Darst, D.M. , 1975. The Complete Bond Book, McGraw Hill, New York.
+
+De Leonardis, N.J., 1966. Opportunities for increasing earnings on short-term
+investments, Financial Executive, 10, 48:53.
+
+Diebold, F., Mariano, R.S., 1995. Comparing predictive accuracy” Journal of Business
+Economics and Statistics, 13, 253-263.
+
+Drakos, K., 2001. Fixed income excess returns and time to maturity. International
+Review of Financial Analysis 10, 431-442.
+
+Dyl, E.A., Joehnk, M.D., 1981. Riding the yield curve: does it work? Journal of
+Portfolio Management 7, 13-17.
+
+Fabozzi, F. J., 1996. Bond Markets, Analysis and Strategies. Upper Saddle River,
+Prentice Hall, New Jersey.
+
+Fisher, I., 1896. Appreciation and Interest. Publications of the American Economic
+Association 9, 331-442.
+
+Fisher, M., 2001. Forces that shape the yield curve: Parts 1 and 2. Working paper 2001-
+3, Federal Reserve Bank of Atlanta, USA.
+
+Foster, D.P., Stine, R.A., 2003. Ponzironi Returns: How to distinguish a “con” from a
+good investment using only statistics. Working paper 2003, The Wharton School,
+University of Pennsylvania.
+
+Freund, W.C., 1970. Investment fundamentals. The American Bankers Association, 9,
+331-442.
+
+Grieves, R., Marchus, A.J., 1992. Riding the yield curve reprise. Journal of Portfolio
+Management 18, 67-76.
+
+Hamburger, M.J., Platt, E.N., 1975. The expectations hypothesis and the efficiency of
+the Treasury bill market. Review of Economics and Statistics 57, 190-199.
+
+Jones, F.J., 1991. Yield curve strategies. Journal of Fixed Income, 43-51.
+
+Litterman, R., Scheinkman, J., 1991. Common factors affecting the bond returns, Journal
+of Fixed Income, 1, 54-61.
+
+Lutz, F.A., 1940. The Structure of Interest Rates. Quarterly Journal of Economics 40,
+36-63.
+
+25
+
+[C28]
+Mankiw, G., Miron, J., 1986. The changing behavior of the term structure of interest
+rates. Quarterly Journal of Economics 101, 211-228.
+
+Mann, S. V., Ramanlal, P., 1997. The relative performance of yield curve strategies.
+Journal of Portfolio Management 23 (4), 64-70.
+
+Meiselman, D., 1962. The Term Structure of Interest Rates. Englewood Cliffs, Prentice
+Hall.
+
+Newey, W., West, K. 1987. A simple, positive-semi definite, heteroskedasticity and
+autocorrelation consistent covariance matrix. Econometrica, 55, 703-708.
+
+Pelaez, R.F., 1997. Riding the yield curve: Term premiums and excess returns. Review
+of Financial Economics 6 91): 113-119.
+
+Rudebusch, G., Federal Reserve interest rate targeting, rational expectations, and the term
+structure. Journal of Monetary Economics 5, 133-143.
+
+Shiller, R.J., 1990. The term structure of interest rates. In Friedman, B., Hahn, F. (ed)
+The Handbook of Monetary Economics, North Holland.
+
+Shiller, R.J., Campbell, J., Schoenholtz, K., 1983. Forward rates and future policy:
+Interpreting the term structure of interest rates, Brookings Papers on Economic
+Activity 1, 173-217.
+
+Stigum, M., Fabozzi, F., 1987. The Dow Jones-Irwin Guide to Bond and Money Market
+Investments. Homewood, IL: Dow Jones-Irwin.
+
+Vasicek, O., 1977. An equilibrium characterization of the Term Structure. Journal of
+Financial Economics, 5, 177-188.
+
+Weberman, B., 1976. Playing the yield curve, Forbes, August 15, 90-101.
+
+26
+
+[C29]
+Table 1
+
+Risk-adjusted Average Gross Payoff of Mean-Reverting Yield-Curve Strategies 1
+
+Class
+
+Strategy
+
+Yield Level
+
+1-A
+
+1-B
+
+2-A
+
+Yield Spread
+
+2-B
+
+Curvature
+
+3-A
+
+3-B
+
+Investment in LB
+Government
+Intermediate Index
+
+Benchmark 1
+
+Benchmark 2 Investment in S&P Index
+
+Notes:
+
+Against
+Benchmark 2
+
+Against
+Benchmark 1
+
+Bonds2 Mean Payoff
+
+0.454
+
+0.397
+
+P
+
+0.00228
+
+0.317
+
+0.277
+
+H
+
+0.00159
+
+0.512
+
+0.447
+
+P
+
+0.00257
+
+0.267
+
+0.233
+
+H
+
+0.00134
+
+0.365
+
+0.318
+
+P
+
+0.00183
+
+5.679
+
+4.958
+
+P
+
+0.02851
+
+5.878
+
+5.132
+
+H
+
+0.02951
+
+P
+
+0.01025
+
+2.042
+
+1.783
+
+3.819
+
+3.334
+
+P
+
+0.01917
+
+0.00502
+
+1.000
+
+0.873
+
+0.00575
+
+1.145
+
+1.000
+
+The average payoffs are risk-adjusted. For each dollar invested in the S&P index
+
+1.
+
+(funded by borrowing 1-month), the amount invested in a yield-curve trade is
+
+scaled to give the same standard deviation of the payoffs from Jan 1973 to
+
+December 2000.
+
+P – the trade is structured for primary bonds only; H – the trade is structured for
+
+2.
+
+both primary and hypothetical bonds.
+
+27
+
+[C30]
+Table 2
+
+Significance Tests of Excess Payoffs of Strategies with respect to Benchmarks
+
+2-B 1
+
+Mean Payoff
+
+0.02851
+
+Statistic
+
+vs zero profits
+
+11.8154
+
+t-test
+
+vs Benchmark 1
+
+6.9762
+
+vs Benchmark 2
+
+6.8820
+
+vs zero profits
+
+5.0996
+
+D-M test
+
+vs Benchmark 1
+
+3.3009
+
+vs Benchmark 2
+
+3.2087
+
+Note:
+
+Strategy
+
+3-A
+
+3-B
+
+0.01025
+
+0.01917
+
+p-value
+
+Statistic
+
+p-value
+
+Statistic
+
+p-value
+
+4.2466
+
+0.0000
+
+0.0000
+
+7.9442
+
+0.0000
+
+1.4056
+
+0.1608
+
+0.0000
+
+4.2203
+
+0.0000
+
+1.3372
+
+0.1821
+
+0.0000
+
+4.0078
+
+0.0000
+
+2.3661
+
+0.0180
+
+0.0000
+
+3.9423
+
+0.0000
+
+0.8205
+
+0.4119
+
+0.0010
+
+2.4130
+
+0.0158
+
+0.7876
+
+0.4309
+
+0.0013
+
+2.2287
+
+0.0258
+
+1. We are reporting the significance tests for the trade structured with primary bonds
+
+only. The results of the significance tests for strategy 2-B using the trade structured
+
+for both primary and hypothetical bonds are essentially identical.
+
+28
+
+[C31]
+Table 3
+
+Significance Tests of Excess Payoffs of Strategies, net of transaction costs with
+
+respect to Benchmarks
+
+2-B 1
+
+Mean Payoff
+
+0.02267
+
+Statistic
+
+p-value
+
+9.3923
+
+0.0000
+
+vs zero profits
+
+5.2324
+
+0.0000
+
+vs Benchmark 1
+
+t-test
+
+5.1113
+
+0.0000
+
+vs Benchmark 2
+
+4.2509
+
+0.0000
+
+vs zero profits
+
+D-M
+
+2.5691
+
+0.0102
+
+vs Benchmark 1
+
+test
+
+2.4715
+
+0.0135
+
+vs Benchmark 2
+
+Notes:
+
+Strategy
+
+3-A
+
+3-B
+
+0.00701
+
+0.01234
+
+Statistic
+
+p-value
+
+Statistic
+
+p-value
+
+2.9046
+
+0.0039
+
+5.1130
+
+0.0000
+
+0.5356
+
+0.5926
+
+2.1845
+
+0.0296
+
+0.3748
+
+0.7081
+
+1.9655
+
+0.0502
+
+1.6160
+
+0.1061
+
+2.5877
+
+0.0097
+
+0.3125
+
+0.7547
+
+1.2703
+
+0.2040
+
+0.2207
+
+0.8253
+
+1.1136
+
+0.2655
+
+1. This table lists the breakeven transaction costs that will render the average profits of
+
+the strategies to exactly equal that of the benchmark.
+
+2. We are assuming that the benchmarks are traded with zero transaction cost.
+
+29
+
+[C32]
+Table 4
+
+Test of Value-Added of Mean-Reverting Strategies to a Buy-and-Hold Investment
+
+in the S&P Index
+
+2-B
+
+t-stat
+
+p-value
+
+t-stat
+
+9.1758
+
+0.0000
+
+2.8106
+
+alpha
+
+Notes:
+
+Strategy
+
+3-A
+
+3-B
+
+p-value
+
+t-stat
+
+p-value
+
+0.0052
+
+4.9836
+
+0.0000
+
+1. This table lists the usefulness of each strategy when it is added to one that buys-and-
+
+holds the S&P index (refer to Foster and Stine, 2003).
+
+2. Excess return of the strategy (Y) is regressed on the excess return of the S&P index
+
+(X). If the t-stat of the intercept is significantly positive, this will imply that the
+
+particular strategy can add value to a simple buy-and-hold S&P strategy.
+
+30
+
+[C33]
+Figure 1
+
+Unconditional Zero-Coupon Yield Curve
+
+31
+
+[C34]
+Figure 2
+
+Autocorrelations of Strategy 2-B Against Benchmarks
+
+32
+
+[C35]
+Figure 3
+
+Autocorrelations of Strategy 3-A Against Benchmarks
+
+33
+
+[C36]
+Figure 4
+
+Autocorrelations of Strategy 3-B Against Benchmarks
+
+34
+
+[C37]
+Figure 5
+
+Contribution of Different Trades to the Payoff of Strategy 2-B (Primary Bonds)
+
+0.25
+
+0.2
+
+Proportion of Total Profit
+
+0.15
+
+0.1
+
+0.05
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+-0.05
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+Trade Segm ent
+
+Trade segments of Strategy 2-B: Yield spread mean-reversion trade, on the 1-month forward curve
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+
+1-2 month spread
+2-3 month spread
+3-4 month spread
+4-5 month spread
+5-6 month spread
+6-7 month spread
+7-8 month spread
+8-9 month spread
+9-10 month spread
+10-11 month spread
+11-23 month spread
+23-35 month spread
+35-47 month spread
+47-59 month spread
+
+35
+
+[C38]
+Figure 6
+
+Contribution of Different Trades to the Payoff of Strategy 3-B (Primary Bonds)
+
+0.25
+
+0.2
+
+Proportion of Total Profit
+
+0.15
+
+0.1
+
+0.05
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+Trade Segm ent
+
+Trade segments of Strategy 3-B: Curvature mean-reversion trade, on the one-month forward curve
+
+1.
+
+1-2-3 month curvature
+
+2.
+
+2-3-4 month curvature
+
+3.
+
+3-4-5 month curvature
+
+4.
+
+4-5-6 month curvature
+
+5.
+
+5-6-7 month curvature
+
+6.
+
+6-7-8 month curvature
+
+7.
+
+7-8-9 month curvature
+
+8.
+
+8-9-10 month curvature
+
+9.
+
+9-10-11 month curvature
+
+10.
+
+10-11-23 month curvature
+
+11.
+
+11-23-35 month curvature
+
+12.
+
+23-35-47 month curvature
+
+13.
+
+35-47-59 month curvature
+
+36
+
+[C39]
+Figure 7
+
+10-11 month Yield Spread Trade of Strategy 2-B, on the one-month forward curve
+
+37
+
+[C40]
+Figure 8
+
+9-10-11 month Curvature Trade of Strategy 3-B, on the one-month forward curve
+
+38
+
+[C41]
+Figure 9
+
+10-year Moving Average of Monthly Payoffs of Strategy 2-B
+
+(for all Bonds)
+
+39
+
+[C42]
+Figure 10
+
+10-year Moving Average of Monthly Payoffs of Strategy 3-B
+
+40

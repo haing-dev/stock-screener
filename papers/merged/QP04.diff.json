@@ -1,0 +1,30 @@
+{
+ "opus_only": [
+  [
+   "QP04-C01-2b",
+   "Winton managed about $32bn in 2016, showing the approach scales to large capacity."
+  ],
+  [
+   "QP04-C03-7b",
+   "Research discoveries leak to competitors over time, so edges decay even when kept secret."
+  ],
+  [
+   "QP04-C03-13b",
+   "Harding co-founded AHL (1987, sold to Man Group 1994) and founded Winton in 1997 on empirical research."
+  ],
+  [
+   "QP04-C03-14b",
+   "Banks and brokers mainly earn from fees, marked-up derivatives and arbitrage, unlike prediction-based investing."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP04-C03-16",
+   "Harding contrasts his approach with conventional bank and broker revenue sources (fees, selling marked-up complex derivatives, arbitrage), which he says have 'all the intellectual purity of selling vegetables'."
+  ],
+  [
+   "QP04-C03-17",
+   "Harding sees quantitative investing as 'information engineering', the same family as speech recognition, with much scope for improvement."
+  ]
+ ]
+}

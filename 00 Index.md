@@ -4,6 +4,8 @@ tags: [index]
 # Macro Transcripts: Layer 0 ledger
 
 Every claim from every transcript, with verbatim quotes (script-checked) and a completeness cross-check (Opus 5.5 high for the first 95 sources, Sonnet 5.5 xhigh for the rest; column below).
+Quant papers (argument maps + claims): [[00 Papers index]]
+
 Mechanism pages: [[Slow reaction (trend)]], [[Risk premium (carry, term premium)]], [[Overshoot (value, mean reversion)]], [[Cycle persistence (economic trend, regimes)]], [[Liquidity and flows]], [[Policy reaction (central banks, governments)]], [[Crowding and positioning]], [[Seasonality]], [[Fiscal and debt dynamics]], [[Structural shifts]], [[Risk management and sizing]], [[Research and testing method]], [[Behavioural]], [[New mechanisms (unclassified)]]
 
 | ID | Source | Date | Claims | Added by cross-check | Cross-check |

@@ -1,0 +1,458 @@
+{
+ "opus_only": [
+  [
+   "QP15-C01-4b",
+   "Because the premia and their correlations appear in non-equity asset classes, theories built for U.S. stocks alone cannot fully explain them."
+  ],
+  [
+   "QP15-C01-5b",
+   "Authors disclose a commercial interest: their employer/consultancy invests in value and momentum strategies."
+  ],
+  [
+   "QP15-C03-1b",
+   "The global three-factor model prices the Fama-French U.S. stock portfolios and hedge fund indices well."
+  ],
+  [
+   "QP15-C04-8b",
+   "Value positions are contrarian, hence less crowded."
+  ],
+  [
+   "QP15-C05-4b",
+   "Whether these flow/delegation models can match the empirical magnitudes is unresolved."
+  ],
+  [
+   "QP15-C05-8b",
+   "The 90%-of-cap U.S. universe averages the largest 17% of firms, an extremely liquid, tradeable set."
+  ],
+  [
+   "QP15-C06-8b",
+   "Country index returns, prices and book values come from MSCI and Bloomberg."
+  ],
+  [
+   "QP15-C06-9b",
+   "Value and momentum are stronger in small stocks in this period (Hong-Lim-Stein, Grinblatt-Moskowitz, Fama-French 2012) but the size relation is not robust for momentum in other periods."
+  ],
+  [
+   "QP15-C06-10b",
+   "Prior work shows stronger value and momentum in less liquid emerging markets (Rouwenhorst 1998, Erb-Harvey 2006, Griffin-Ji-Martin 2003)."
+  ],
+  [
+   "QP15-C07-2b",
+   "Currency universe: 10 currencies (AUD, CAD, DEM/EUR, JPY, NZD, NOK, SEK, CHF, GBP, USD) from Datastream spot rates, Jan 1979-Jul 2011, min 7."
+  ],
+  [
+   "QP15-C07-3b",
+   "Currency returns are USD-denominated from forwards (or spot plus Libor differential), so they include carry."
+  ],
+  [
+   "QP15-C07-4b",
+   "Bond returns from Bloomberg and Morgan Markets; short rates and 10-year yields from Bloomberg."
+  ],
+  [
+   "QP15-C07-5b",
+   "Inflation forecasts come from Consensus Economics analyst surveys (used in the alternative real-yield bond value measure)."
+  ],
+  [
+   "QP15-C08-3b",
+   "Simple measures likely understate the returns available from better-designed value and momentum signals."
+  ],
+  [
+   "QP15-C08-7b",
+   "The value+momentum combination's pricing results are insensitive to whether price is lagged in the value measure."
+  ],
+  [
+   "QP15-C08-12b",
+   "Better stock value measures exist (Lakonishok-Shleifer-Vishny, Asness-Porter-Stevens, Piotroski) but BE/ME is kept for simplicity and consistency."
+  ],
+  [
+   "QP15-C09-1b",
+   "The same MOM2-12 signal is used in every asset class."
+  ],
+  [
+   "QP15-C09-9b",
+   "Behavioral and flow theories (DHS, BSV, Hong-Stein, Vayanos-Woolley) predict a link between long-term returns and book-to-market."
+  ],
+  [
+   "QP15-C09-10b",
+   "Goyal-Wahal: across 36 countries, 7-12 vs 2-6 month returns differ significantly only in the U.S."
+  ],
+  [
+   "QP15-C09-11b",
+   "MOM2-12 is kept because it is the established signal with out-of-sample success; MOM7-12 should not change conclusions."
+  ],
+  [
+   "QP15-C09-12b",
+   "Authors assert alternative momentum windows (MOM7-12) would not change conclusions, without showing results."
+  ],
+  [
+   "QP15-C10-4b",
+   "Stock tercile portfolios are value-weighted by beginning-of-month cap; non-stock portfolios are equal-weighted."
+  ],
+  [
+   "QP15-C10-5b",
+   "3 terciles x 2 signals x 8 asset classes = 48 new test portfolios."
+  ],
+  [
+   "QP15-C12-1b",
+   "Table I returns are excess of the 1-month U.S. T-bill rate, with t-stats, stdev and Sharpe ratios, annualized from monthly series."
+  ],
+  [
+   "QP15-C12-3b",
+   "Value-momentum correlations in Table I are computed on returns after removing the asset-class market (residuals)."
+  ],
+  [
+   "QP15-C12-4b",
+   "All statistics are annualized from monthly returns."
+  ],
+  [
+   "QP15-C14-4b",
+   "In non-stock asset classes portfolios are equal-weighted and the same tercile/rank-factor/combo construction is applied."
+  ],
+  [
+   "QP15-C16-1b",
+   "Panel C tests alternative bond value measures over Jan 1983-Jul 2011 (vs. Jan 1982 start given for the bond data)."
+  ],
+  [
+   "QP15-C16-2b",
+   "Bond value as the real yield (10-year yield minus 5-year inflation forecast) works much better: P3-P1 2.0% (t=3.78, SR 0.73), factor 1.9% (t=3.58, SR 0.70); correlation with momentum near zero (-0.09/-0.03)."
+  ],
+  [
+   "QP15-C16-4b",
+   "A composite of the three bond value measures is strongest: P3-P1 2.6% (t=4.88, SR 0.91), factor 2.9% (t=5.89, SR 1.10, alpha 2.6% t=5.48); correlation with momentum ~0 (0.03/0.04); combo factor SR 0.81."
+  ],
+  [
+   "QP15-C17-4b",
+   "The combination's higher Sharpe ratio raises the bar for theories explaining value or momentum alone."
+  ],
+  [
+   "QP15-C17-6b",
+   "Even in Japan a positive momentum weight improves the efficient frontier (confirmed by static portfolio optimization)."
+  ],
+  [
+   "QP15-C17-8b",
+   "Cap-weighting or equal-weighting markets gives nearly identical results; equal-vol is used for consistency with non-equity classes where market cap has no meaning."
+  ],
+  [
+   "QP15-C18-6b",
+   "Applying value and momentum jointly across asset classes sets an asset-pricing hurdle several times larger than U.S. equity data."
+  ],
+  [
+   "QP15-C19-1b",
+   "Bonds are the weakest asset class: baseline value and momentum premia are not statistically reliable."
+  ],
+  [
+   "QP15-C19-4b",
+   "Averaging several value measures diversifies measurement error and gives more reliable premia (Israel-Moskowitz 2012 for stocks)."
+  ],
+  [
+   "QP15-C20-2b",
+   "Table II diagonals are the average correlation of each market's strategy with the average of the same strategy in all other markets (leave-one-out)."
+  ],
+  [
+   "QP15-C20-3b",
+   "An F-test checks joint significance; * marks 5% significance."
+  ],
+  [
+   "QP15-C22-1b",
+   "Average stock value strategy correlates 0.68 with value in other stock markets and 0.15 with non-stock value."
+  ],
+  [
+   "QP15-C22-2b",
+   "Average stock momentum correlates 0.65 with momentum in other stock markets and 0.37 with non-stock momentum."
+  ],
+  [
+   "QP15-C22-4b",
+   "Value in one stock market correlates -0.53 with momentum in other stock markets; stock value vs non-stock momentum -0.26; non-stock value vs stock momentum -0.16; non-stock value vs non-stock momentum -0.13."
+  ],
+  [
+   "QP15-C23-2b",
+   "The first principal component loads with one sign on every value strategy and the opposite sign on every momentum strategy."
+  ],
+  [
+   "QP15-C25-3b",
+   "U.K. stocks: Sharpe 0.38/0.48/1.07, corr -0.62; Europe stocks: 0.54/0.75/1.20, corr -0.55; both show the 1999-2000 value drawdown offset by momentum, and a momentum fall around 2009."
+  ],
+  [
+   "QP15-C25-4b",
+   "Japan stocks: Sharpe value 0.77, momentum 0.13, combo 0.88, corr -0.64; momentum is roughly flat over 1972-2011 while value rises strongly, with a value drawdown around 1999-2000 coinciding with a momentum spike."
+  ],
+  [
+   "QP15-C26-3b",
+   "Fixed income (Figure 2): Sharpe value 0.07, momentum 0.17, combo 0.20, corr -0.35; bond value has a deep cumulative loss from the mid-1980s to the early-mid 1990s and ends near zero, so bond results are fragile and period-dependent."
+  ],
+  [
+   "QP15-C27-1b",
+   "Global stocks (Figure 2): Sharpe value 0.51, momentum 0.59, combo 1.28, corr -0.60; value's 1999-2000 drawdown is visible even in the global aggregate."
+  ],
+  [
+   "QP15-C28-5b",
+   "Global macro regressors are GDP-weighted averages across US, UK, Europe, Japan using ECRI data and recession dates; market is MSCI World excess return; TERM and DEF are U.S. versions only."
+  ],
+  [
+   "QP15-C28-7b",
+   "Momentum does worse in recessions, especially outside stocks (nonstock momentum recession coef -0.0081, t=-2.44; all-asset -0.0072, t=-2.26)."
+  ],
+  [
+   "QP15-C28-8b",
+   "DEF loads positively on global stock value (0.265, t=2.86) but insignificantly negatively on non-stock value."
+  ],
+  [
+   "QP15-C28-9b",
+   "Griffin-Ji-Martin (2003) show macro risk models cannot explain momentum across 40 countries."
+  ],
+  [
+   "QP15-C29-1b",
+   "Table III does not report intercepts, so how much of the premia macro variables absorb is not shown."
+  ],
+  [
+   "QP15-C29-2b",
+   "Recession dummy is defined from NBER (U.S.) or ECRI (other countries) peak/trough dates, coded 0 = peak and 1 = trough."
+  ],
+  [
+   "QP15-C29-3b",
+   "Table III global columns: global stock momentum DEF -0.375 (t=-3.87); nonstock value TERM -0.0885 (t=-3.30); all-asset value TERM -0.0551 (t=-2.23), all-asset momentum DEF -0.149 (t=-2.84); market betas small and insignificant; R2 2.3-6.4%."
+  ],
+  [
+   "QP15-C30-1b",
+   "The Fama-French DEF factor return loads negatively on momentum in every asset group."
+  ],
+  [
+   "QP15-C30-4b",
+   "All spreads are sign-flipped so that higher values mean more liquidity."
+  ],
+  [
+   "QP15-C30-5b",
+   "Liquidity regressions cover Jan 1987-Jul 2011 only (shorter than the 1972 return sample)."
+  ],
+  [
+   "QP15-C31-1b",
+   "Global liquidity measures average the four countries' measures with weights from each country's first-principal-component contribution; all regressions control for Table III macro variables."
+  ],
+  [
+   "QP15-C31-2b",
+   "U.S. funding liquidity PC: value -0.0111 (t=-2.89), momentum +0.0153 (t=3.31), Val-Mom -0.0264 (t=-3.41); TED: value -0.0052 (-1.44), momentum 0.0129 (3.07); all-liquidity PC: value -0.0154 (-2.84), momentum 0.0195 (2.96)."
+  ],
+  [
+   "QP15-C31-3b",
+   "U.S. market liquidity shocks (on/off-the-run, Pastor-Stambaugh, market PC) are insignificant for value and momentum; only Acharya-Pedersen is marginal (value 0.0010, t=2.02)."
+  ],
+  [
+   "QP15-C31-4b",
+   "With U.S. measures the 50/50 combo is not fully liquidity-neutral: it loads positively on TED (0.0061, t=2.13), swap-T-bill (0.0104, t=3.67) and Acharya-Pedersen (0.0013, t=3.05), though not on the funding PC (t=1.49) or all PC (t=1.09)."
+  ],
+  [
+   "QP15-C32-2b",
+   "Global LIBOR-term repo: value -0.0177 (t=-2.87), momentum 0.0139 (t=1.66); global swap-T-bill value -0.0076 (t=-2.15); global TED value -0.0067 (-1.69), momentum 0.0094 (2.00)."
+  ],
+  [
+   "QP15-C32-4b",
+   "Each liquidity shock enters a separate regression (with macro controls); dependent variables are global value and momentum everywhere factors, the 50/50 combo and value minus momentum."
+  ],
+  [
+   "QP15-C32-5b",
+   "Adding liquidity shocks barely changes macro coefficients."
+  ],
+  [
+   "QP15-C32-6b",
+   "Some liquidity measures need tick data or prime-broker balance sheets unavailable outside the U.S., limiting the global liquidity proxies."
+  ],
+  [
+   "QP15-C33-2b",
+   "Figure 3 caption gives Jan 1987-Jun 2010, while the text says the index is plotted Jan 1987-Jul 2011 (internal inconsistency)."
+  ],
+  [
+   "QP15-C33-4b",
+   "Market liquidity shocks show little relation to value and momentum returns."
+  ],
+  [
+   "QP15-C34-6b",
+   "Forced liquidations from cash needs, redemptions and risk management hit crowded momentum trades harder than value trades; further investigation is left for future work."
+  ],
+  [
+   "QP15-C35-2b",
+   "Liquidity risk can only partially explain the cross-section of returns because it cannot explain the combo's profitability."
+  ],
+  [
+   "QP15-C36-4b",
+   "Equation (4) is estimated separately for each of the 8 markets on its 6 tercile portfolios (48 test assets)."
+  ],
+  [
+   "QP15-C37-2b",
+   "No joint test of pricing errors is possible for equation (4) because regressors differ by market."
+  ],
+  [
+   "QP15-C37-3b",
+   "Because test assets and factors share no securities, the fit evidences genuine common global factor structure."
+  ],
+  [
+   "QP15-C37-4b",
+   "Figure 5 scatter: most test assets lie near the 45-degree line; the largest misses include low-return commodity value and bond momentum portfolios below the line."
+  ],
+  [
+   "QP15-C38-1b",
+   "Cross-market explanatory power shows the common variation is economically meaningful, capturing much of the cross-section of average returns."
+  ],
+  [
+   "QP15-C38-4b",
+   "The three-factor fit is mechanically helped by overlap between test assets and factors, unlike equation (4)."
+  ],
+  [
+   "QP15-C39-2b",
+   "Even the best (AMP) model is rejected by the GRS test (p = 0) on the 48 portfolios; remaining misfits include low-return momentum and value portfolios in bonds, currencies and commodities (read from chart)."
+  ],
+  [
+   "QP15-C40-2b",
+   "In Figure 6 each model must also price the equity premium; the AMP model's value/momentum factors are inverse in-sample-volatility weighted across the eight asset classes."
+  ],
+  [
+   "QP15-C41-2b",
+   "Global factors built mostly from other markets explain the 50 Fama-French U.S. size-value and size-momentum portfolios with R2 0.64 and 18 bp mean absolute alpha."
+  ],
+  [
+   "QP15-C42-1b",
+   "Market beta uses the Dimson correction (contemporaneous plus 1- and 2-month lagged market) to handle nonsynchronous trading."
+  ],
+  [
+   "QP15-C43-3b",
+   "TERM and DEF betas carry 21 and 23 bp/month premia, but are subsumed when liquidity betas are added; GDP and LRCG betas are not priced."
+  ],
+  [
+   "QP15-C43-4b",
+   "VAL and MOM everywhere betas capture average returns and subsume much of liquidity risk's explanatory power."
+  ],
+  [
+   "QP15-C43-6b",
+   "Using factor-mimicking portfolios makes the macro/liquidity factors traded returns so GRS time-series tests are valid."
+  ],
+  [
+   "QP15-C44-3b",
+   "Table VI caption says factor-mimicking portfolios come from cross-sectional coefficients in Table IV, but the text and Table V show they come from the Fama-MacBeth regressions in Table V (labelling inconsistency)."
+  ],
+  [
+   "QP15-C46-1b",
+   "Eig% = sum of eigenvalues of model-implied covariance / sum of eigenvalues of sample covariance (share of covariance captured)."
+  ],
+  [
+   "QP15-C46-3b",
+   "Adding the liquidity factor-mimicking portfolio cuts mean absolute alpha to 31 bp and raises fit, but GRS still rejects."
+  ],
+  [
+   "QP15-C46-5b",
+   "Measurement error in liquidity proxies may understate liquidity's explanatory power."
+  ],
+  [
+   "QP15-C46-6b",
+   "One liquidity factor cannot price both negatively correlated positive-premium strategies unless betas/premia vary strongly over time."
+  ],
+  [
+   "QP15-C46-8b",
+   "Dropping either VAL or MOM from the model worsens fit considerably, showing both factors are needed."
+  ],
+  [
+   "QP15-C47-4b",
+   "Hedge fund returns load on global value and momentum, implying these factors are a natural benchmark for hedge fund performance."
+  ],
+  [
+   "QP15-C48-2b",
+   "Some studies find equity momentum's net returns and capacity much lower than paper returns."
+  ],
+  [
+   "QP15-C48-6b",
+   "Shorting is costless-symmetric in futures but costly in stocks, a potential implementation concern."
+  ],
+  [
+   "QP15-C49-2b",
+   "Frazzini-Israel-Moskowitz find institutional shorting costs similar to buying/selling and not prohibitive."
+  ],
+  [
+   "QP15-C49-3b",
+   "The paper is framed as an out-of-sample test of U.S. stock anomalies in other asset classes, hence deliberately simple choices."
+  ],
+  [
+   "QP15-C49-5b",
+   "Alternative weighting schemes give similar results; trading costs unlikely to change much given the liquid universe."
+  ],
+  [
+   "QP15-C50-4b",
+   "Bonds remain the weakest asset class with the uniform measures; composite measures (Table I Panel C) improve them markedly."
+  ],
+  [
+   "QP15-C50-5b",
+   "Authors judge the effects applicable to real portfolios, citing the hedge-fund pricing evidence."
+  ],
+  [
+   "QP15-C51-4b",
+   "Value-momentum correlation became more negative (-0.44 to -0.63), offsetting higher within-style correlations so the combo Sharpe was stable."
+  ],
+  [
+   "QP15-C51-5b",
+   "Rising correlations may reflect growing arbitrageur participation in global value/momentum."
+  ],
+  [
+   "QP15-C52-2b",
+   "Table VII labels the second half 1992-2010 while the text says 1992-2011; Sharpe levels (combo 1.40/1.43) match Table I P3-P1 (1.42) rather than the rank factors (1.59), so the portfolio type is unstated."
+  ],
+  [
+   "QP15-C52-4b",
+   "Improving/worsening liquidity regimes are the top/bottom half of global liquidity shock observations (caption cites Table III though shocks are defined with Table IV)."
+  ],
+  [
+   "QP15-C53-1b",
+   "Correlations within value and within momentum rose significantly over time, and value-momentum correlation became more negative."
+  ],
+  [
+   "QP15-C53-3b",
+   "The correlation increase is a post-1998 regime shift rather than a gradual trend, and liquidity effects on correlations exist only after 1998."
+  ],
+  [
+   "QP15-C53-4b",
+   "Funding liquidity and limits to arbitrage may be increasingly important drivers of value/momentum after 1998, more than growing popularity per se."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP15-C01-2",
+   "A three-factor model (global market, global value, global momentum) prices the 48 test assets, Fama-French US portfolios and hedge fund indices."
+  ],
+  [
+   "QP15-C03-1",
+   "The simple three-factor model is motivated by increasingly global finance and a wish for one model for all asset classes rather than specialised models."
+  ],
+  [
+   "QP15-C11-3",
+   "Table I frames the main claim: value and momentum, alone and combined, work in every market, including new evidence for bonds (value and momentum) and value in currencies and commodities."
+  ],
+  [
+   "QP15-C12-2",
+   "Table I Panel C tests alternative bond value measures (real yield, term spread, composite)."
+  ],
+  [
+   "QP15-C19-1",
+   "Single uniform signal per style across eight markets minimises data mining; results are positive in every class but bonds are statistically insignificant."
+  ],
+  [
+   "QP15-C19-4",
+   "Table II examines cross-asset-class correlation of value and momentum returns; the strength of comovement can support or challenge theoretical explanations."
+  ],
+  [
+   "QP15-C23-4",
+   "Macro exposure test: regress value and momentum returns (US stocks, global stocks, nonstock, all assets) on macro variables (Table III)."
+  ],
+  [
+   "QP15-C31-1",
+   "Table IV Panel A (US liquidity measures, with Table III macro controls): funding liquidity shocks load negatively on value and positively on momentum. TED spread: value -0.0052 (t -1.44), momentum 0.0129 (3.07), combo 0.0061 (2.13), value-minus-momentum -0.0180 (-2.62); funding PC: value -0.0111 (-2.89), momentum 0.0153 (3.31), combo 0.0042 (1.49), Val-Mom -0.0264 (-3.41); All PC: value -0.0154 (-2.84), momentum 0.0195 (2.96), combo 0.0043 (1.09), Val-Mom -0.0349 (-3.17). Market liquidity measures are weak."
+  ],
+  [
+   "QP15-C37-2",
+   "This 'other markets' test has no security overlap between test assets and factors, avoiding the usual mechanical link in single-market asset pricing tests."
+  ],
+  [
+   "QP15-C43-3",
+   "Table VI time-series pricing tests regress the 48 portfolios (plus 25+25 US portfolios and 13 hedge fund indices) on factor-mimicking portfolios from Table V and on global/US factor sets, reporting GRS, average |alpha|, cross-sectional R2, average time-series R2 and Eig% (Moskowitz 2003)."
+  ],
+  [
+   "QP15-C46-3",
+   "Models with only value or only momentum increase pricing errors and reduce fit, underscoring that one factor cannot explain both."
+  ]
+ ]
+}

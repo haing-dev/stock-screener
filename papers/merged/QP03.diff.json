@@ -1,0 +1,29 @@
+{
+ "opus_only": [
+  [
+   "QP03-C01-6b",
+   "Early track records often differ from later ones because a small manager can exploit a good anomaly or take big risks with little to lose."
+  ],
+  [
+   "QP03-C01-7b",
+   "Asset growth constrains capacity and almost inevitably changes the strategy, making the return process non-stationary."
+  ],
+  [
+   "QP03-C01-11b",
+   "Fat-tailed (Cauchy-Paretian) return processes have infinite variance, so the Sharpe ratio cannot assess them."
+  ],
+  [
+   "QP03-C02-1b",
+   "Merger arbitrage and similar strategies have short-option-like return distributions exposed to rare cataclysms, as LTCM showed."
+  ],
+  [
+   "QP03-C02-7b",
+   "The Sortino ratio still requires a stationary, well-understood distribution to be meaningful."
+  ],
+  [
+   "QP03-C02-11b",
+   "No single statistic should be relied on to judge risky strategies."
+  ]
+ ],
+ "sonnet_only": []
+}

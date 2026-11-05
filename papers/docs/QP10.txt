@@ -1,0 +1,1628 @@
+# Expected Volatility, Unexpected Volatility, and the Cross-Section of Stock Returns (Chua, Goh, Zhang 2010)
+source_id: QP10
+type: paper
+file: Chua et al. - 2010 - Expected Volatility, Unexpected Volatility, and the Cross-Section of Stock Returns.pdf
+chunks: one per PDF page (C01 = page 1). Page images: img/QP10-p-NN.png (exhibits, charts)
+---
+
+[C01]
+The Journal of Financial Research • Vol. XXXIII, No. 2 • Pages 103–123 • Summer 2010
+
+EXPECTED VOLATILITY, UNEXPECTED VOLATILITY, AND THE
+CROSS-SECTION OF STOCK RETURNS
+
+Choong Tze Chua, Jeremy Goh, and Zhe Zhang
+
+Singapore Management University
+
+Abstract
+
+The existing literature finds conflicting results on the cross-sectional relation
+between expected returns and idiosyncratic volatility. We contend that at the
+firm level, the sample correlation between unexpected returns and expected id-
+iosyncratic volatility can cloud the true relation between the expected return
+and expected idiosyncratic volatility. We show strong evidence that unexpected
+idiosyncratic volatility is positively related to unexpected returns. Using unex-
+pected idiosyncratic volatility to control for unexpected returns, we find expected
+idiosyncratic volatility to be significantly and positively related to expected re-
+turns. This result holds after controlling for various firm characteristics, and it is
+robust across different sample periods.
+
+JEL Classification: G10, G11, G12
+
+I. Introduction
+
+Standard asset pricing theory predicts that only systematic risks should be priced.
+Merton (1987), however, argues that expected idiosyncratic volatility may explain
+expected stock returns if investors are underdiversified. The recent empirical ev-
+idence on the relation between idiosyncratic volatility and return is mixed. 1 We
+propose a new method of examining this contentious issue. First, we document that
+
+We are indebted to Gerald Gay (the editor) and the anonymous referee, whose comments and sugges-
+tions significantly improved the paper. We would also like to thank Yacine Ait-Sahalia, Gary Caton, Charles
+Cao, Kalok Chan, Fangjian Fu, Bruce Grundy, Louis Ederington, Lobos Pástor, Krishna Ramaswamy, Robert
+Stambaugh, Avanidhar Subrahmanyam, Marti Subrahmanyam, and Chu Zhang, as well as participants at
+the 2006 Singapore Management University summer camp and the 2006 China International Conference in
+Finance. Special thanks to Justin Chan for helping constructing the liquidity measures. We are grateful to the
+Office for Research of Singapore Management University for financial support. We are solely responsible
+for any remaining errors.
+1
+Lehmann (1990), Malkiel and Xu (2006), Spiegel and Wang (2005), and Fu (2009) find that id-
+iosyncratic volatility is positively related to the cross-sectional variation of expected returns. In contrast,
+Ang et al. (2006, 2009) find that portfolios with high idiosyncratic volatility subsequently have low returns.
+Moreover, at the aggregate level, Goyal and Santa-Clara (2003), Bali et al. (2005), Jiang and Lee (2006), and
+Guo and Savickas (2006) study the relation between the average idiosyncratic volatility and stock market
+return, and the results are mixed.
+
+103
+
+c 2010 The Southern Finance Association and the Southwestern Finance Association
+
+
+[C02]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+The Journal of Financial Research
+
+104
+
+unexpected idiosyncratic volatility is positively related to unexpected returns and
+that this relation is consistent with the option effect proposed by Merton (1974).
+Then, using unexpected idiosyncratic volatility to control for unexpected returns,
+we find expected idiosyncratic volatility to be significantly and positively related
+to expected returns. This result is robust after controlling for various firm charac-
+teristics, including liquidity, and is robust across sample periods.
+We contend that the conflicting results in the extant literature may be due to
+the lack of consistency in the choice of variables being used or problems inherent in
+some commonly used variables. First, some authors who study the relation between
+idiosyncratic volatility and returns employ total idiosyncratic volatility, whereas
+others use expected idiosyncratic volatility. Fu (2009) explicitly addresses this dis-
+parity and argues that because the objective is to examine whether idiosyncratic risk
+is priced in expected returns, the theoretically relevant idiosyncratic volatility mea-
+sure should be expected idiosyncratic volatility, determined ex ante. Additionally,
+French, Schwert, and Stambaugh (1987) make a compelling justification, albeit
+at the aggregate market level, that the use of total volatility may obscure the true
+relation between market returns and market volatility. They suggest decomposing
+total market volatility into expected and unexpected components. We therefore treat
+the relation between expected idiosyncratic volatility and expected returns as one
+of the central questions to be answered, as opposed to the relation between total
+idiosyncratic volatility and expected returns.
+Second, practically all authors who investigate the relation between id-
+iosyncratic volatility and expected returns use realized returns as a proxy for ex-
+pected returns. However, total realized returns are poor (and potentially biased)
+proxies for expected returns in finite sample. At the monthly horizon, the effects
+of unexpected returns often dominate those of expected returns, and the sam-
+ple correlation between expected idiosyncratic volatility and unexpected returns
+can cloud the true relation between expected returns and expected idiosyncratic
+volatility.
+Because there is no easy way to decompose total stock returns into expected
+and unexpected components, we propose an alternative approach by constructing a
+measure that is highly correlated with unexpected returns and use that as a control
+variable. Specifically, we decompose idiosyncratic volatility into expected idiosyn-
+cratic volatility (EIV ) and unexpected idiosyncratic volatility (UIV ) and use UIV
+to control for variation in unexpected returns. Our approach is similar to that of
+French, Schwert, and Stambaugh (1987), who decompose market volatility into
+expected and unexpected components and relate both to the market return. As
+discussed later, we document a strong correlation between UIV and unexpected
+returns, which allows the true relation between expected returns and idiosyncratic
+volatility to be better observed because the finite sample bias on the coefficient of
+EIV is mitigated, and the standard error is reduced. The Appendix contains a more
+detailed discussion of the related econometric mechanism.
+
+[C03]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Expected and Unexpected Volatility
+
+105
+
+In our decomposition approach, we first construct a measure of idiosyn-
+cratic volatility for each stock at each month, as the within-month sum of squared
+residuals from the daily regression of the Fama–French (1993) three-factor model.
+This is in line with Ang et al. (2006), Wei and Zhang (2006), and Zhang (2004).
+Then, using each stock’s time series of idiosyncratic volatility, we model the evolu-
+tion of the idiosyncratic volatility as an autoregressive process (AR2). 2 The monthly
+predicted idiosyncratic volatility is labeled EIV, and the residual is labeled UIV . We
+then perform cross-sectional regressions of returns on EIV alone as well as on both
+EIV and UIV . We find that EIV alone cannot explain stock returns. The point esti-
+mate is virtually zero and statistically insignificant at the 10% level. However, when
+used jointly with UIV, both EIV and UIV are positively and significantly related to
+contemporaneous stock returns. The average coefficients for EIV and UIV are 0.17
+and 0.828, respectively, both statistically significant at the 5% level. The results are
+robust after controlling for size, book-to-market, past returns, stock exchange, and
+various liquidity measures.
+These results suggest that EIV and UIV jointly matter for the cross-section
+of stock returns. Note that the UIV variable used in this study is the unexpected
+volatility at any month t that is not in investors’ information set at month t−1;
+hence, by construction it should not be related to the expected stock returns. We
+deduce that the positive and significant coefficient for UIV is driven by its relation
+with unexpected returns. Controlling for UIV, a positive and significant coefficient
+for EIV suggests that EIV is positively related to expected stock returns. Our results
+therefore show that using total returns as a proxy for expected returns clouds the
+true relation between expected returns and EIV . By separating the roles of EIV and
+UIV, our method provides a better approach to test this relation.
+The main result of our article is consistent with Merton’s (1987) model
+as well as findings from Fu (2009) and Spiegel and Wang (2005) that document
+a robust positive relation between expected returns and expected volatility. Unlike
+Fu and Spiegel and Wang, who apply the EGARCH model on monthly returns to
+estimate expected volatility, we focus on decomposing the idiosyncratic volatility
+(estimated from daily returns) into EIV and UIV . By controlling for the positive
+return effect of UIV, our approach allows us to observe the true relation between
+expected returns and volatility with more clarity. Our result is different from that
+of Ang et al. (2006, 2009), who find a negative relation between realized returns
+and lagged realized volatility. Their findings are novel and interesting, but because
+
+2
+
+There is no consensus on what constitutes the best model for idiosyncratic volatility at the individual
+stock level. Fu (2009) and Spiegel and Wang (2005) use the exponential general autoregressive conditional
+heteroskedastic (EGARCH) model. However, they have to use monthly returns instead of daily returns to
+estimate conditional volatility. Because the main focus and innovation of this article is the decomposition
+of volatility, we keep the volatility estimates consistent with most of the existing literature by using daily
+return data.
+
+[C04]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+The Journal of Financial Research
+
+106
+
+realized returns and volatility are noisy measures of their expected values, as the
+authors point out (Ang et al., 2009), their results do not necessarily involve the
+relation between the expected returns and expected volatility, and hence they are
+not directly comparable to this study.
+To further investigate our results on the relation between UIV and stock
+returns, we perform several robustness checks. Each month we construct five EIV -
+stratified, UIV -sorted portfolios and record the average monthly portfolio returns,
+the capital asset pricing model (CAPM) alpha, Fama–French three-factor alpha,
+and Fama–French three-factor plus momentum-factor alpha. For both equal- and
+value-weighted portfolios, the returns and alphas of the high-UIV portfolio are
+always significantly higher than the corresponding returns and alphas of the low-
+UIV portfolio.
+Our main argument centers on the fact that large monthly unexpected stock
+returns call into question the use of total returns as a proxy for expected returns.
+The solution is to find a proxy that we can use as a control variable that is likely
+to be highly correlated with unexpected returns and uncorrelated with expected
+returns. There are both theoretical and empirical reasons why UIV will perform
+well as a control variable for unexpected returns. Merton (1974) posits that we can
+view common stocks as call options on the assets of the firm. A positive shock
+to the idiosyncratic volatility (UIV ) of the stock implies that the volatility of the
+firm’s assets has increased and, consequently, that the call option (the common
+stock) should increase in value as well, hence, the increase in the contemporaneous
+stock price and the unexpected return (henceforth termed “the option effect”). The
+positive empirical relation between UIV and unexpected returns observed here is
+therefore consistent with the option effect of Merton. In addition, recent empirical
+studies such as French, Schwert, and Stambaugh (1987), Jiang and Lee (2006),
+and Ang et al. (2006) find that innovations in volatilities, albeit aggregated over
+all stocks, are useful in the study of stock returns. We complement the literature
+by showing that individual stock’s innovation in idiosyncratic volatility is also
+important in studying the underlying stock’s returns.
+As mentioned earlier, our choice of using UIV to control for unexpected
+returns is theoretically motivated by Merton’s (1974) idea of viewing equity as a call
+option on the firm’s assets. The option effect also implies that the observed relation
+should be stronger for firms with higher financial leverage because the equity of
+these firms are more option-like. To further substantiate the validity of Merton’s
+theory, we sort firms into five quintiles based on their leverage. Our results show
+that the relation between UIV and returns is positive for firms in all five quintiles
+and the relation gets monotonically stronger as leverage increases. 3 We further
+
+3
+
+In a different context, Duffee (1995) documents a similar relation between contemporaneous return
+and firm’s total volatility. However, he finds that this relation is negatively related to the leverage ratio.
+We contend that it is more appropriate to use unexpected volatility to test the option effect, because the
+expected volatility should have already been priced and should not affect the contemporaneous return.
+
+[C05]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Expected and Unexpected Volatility
+
+107
+
+document that this monotonic relation holds for all the subperiods we investigate.
+Thus, we find strong evidence suggesting the idiosyncratic risk and stock return
+relation is indeed driven by the option effect. 4
+
+II. Data and the Construction of Volatility Measures
+
+Data
+
+We obtain daily and monthly stock returns from the Center for Research in Security
+Prices (CRSP). The sample period is from January 1963 to December 2003. All
+common stocks (share codes 10 and 11) traded at NYSE, AMEX, and NASDAQ are
+included. In later sections we also use data on firm characteristics such as size, book-
+to-market ratio, and financial leverage. These characteristics are constructed from
+the Compustat annual file and we merge them with the return data. Specifically,
+we define the book-to-market ratio every month as the ratio between the previous
+year’s ending book value of common equity (item 60) and the current month’s
+market capitalization. Financial leverage is defined as the book value of total debt
+(item 181) divided by the sum of the book value of debt, other equity, and the
+market value of common equity (previous year-end total assets (item 6) – previous
+year-end common equity + current month market capitalization). We exclude firms
+with negative book-to-market ratio. Following the literature, we exclude financial
+firms (Standard Industrial Classification [SIC] codes 6000–6999) and utility firms
+(SIC codes 4900–4999) whenever we need leverage information. We also exclude
+firms whose leverage ratio is outside the range of [0,1]. We obtain the daily and
+monthly risk-free rate and Fama–French three-factor returns from 1963 to 2003
+from Kenneth French’s Web site. 5
+
+Volatility Definitions
+
+For each month, we first perform the Fama–French (1993) regression using daily
+returns:
+
+MKT
+SMB
+HML
+MKT i,m + β i,m
+SMB i,m + β i,m
+HML i,m + ε i,d,m ,
+r i,d,m = α i,m + β i,m
+
+4
+
+(1)
+
+It is worth noting the positive contemporaneous relation between UIV and unexpected return does not
+necessarily lead to a negative predictive relation. In Merton’s (1974) option framework, if the risk premium
+of the underlying asset (total firm value) remains constant, an increase in volatility will lead to lower equity
+beta, and consequently to lower expected future returns for the equity of the firm (see, e.g., Johnson 2004).
+However, we find that there is a positive relation between expected volatility and future expected return,
+suggesting that the constant premium assumption is not valid. Instead, our evidence suggests that an increase
+in volatility leads to higher expected returns on the value of the underlying firm as well, and this effect
+dominates the negative effect of volatility on equity beta.
+5
+The URL is http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data library.html. We thank
+Kenneth French for making the data publicly available.
+
+[C06]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+The Journal of Financial Research
+
+108
+
+where α i,m and β i,m are constant for each month m but may vary across differ-
+ent months. Similar to Ang et al. (2006) and Zhang (2004), we then define the
+idiosyncratic volatility measure for stock i in month m as: 6
+
+IV i,m =
+
+N m
+
+
+2
+ε i,d,m
+.
+
+(2)
+
+d=1
+
+For each stock i, we impose an AR(2) 7 model on the time-series evolution of
+the idiosyncratic volatility. Every month m, using data only up to that month, we
+perform the following time-series regression for each stock:
+
+IV i,m = φ 0 + φ 1 IV i,m−1 + φ 2 IV i,m−2 + ξ i,m .
+
+(3)
+
+We require that a firm has at least three years of data to estimate equation
+(3). We define the expected idiosyncratic volatility for stock i in month m+1 as
+(using coefficients estimated from date up to month m):
+
+EIV i,m+1 = φ 0 + φ 1 IV i,m + φ 2 IV i,m−1 .
+
+(4)
+
+Given EIV m+1 , we then define the unexpected idiosyncratic volatility for
+stock i in month m+1 as the difference between IV and EIV for month m+1:
+
+UIV i,m+1 = IV i,m+1 − EIV m+1 .
+
+(5)
+
+Panel A of Table 1 displays the time-series averages of the cross-sectional
+mean, standard deviation, skewness, and kurtosis for IV i,m , EIV i,m , and UIV i,m .
+The monthly mean and standard deviation of IV are 0.028 and 0.132, respectively;
+these numbers are comparable to those reported in the literature (e.g., Zhang 2004).
+IV is positively skewed and fat-tailed. The mean of EIV is close to that of IV but
+less volatile; its standard deviation is 0.049. UIV has a close-to-zero mean but is as
+volatile as the IV ; the standard deviation is 0.114. Similar to IV, both EIV and UIV
+are positively skewed and fat-tailed.
+
+6
+We also experimented with other IV measures by including one-day lagged daily Fama–French factors
+in equation (1). The results are essentially unchanged. Those results are available upon request. We thank
+the referee for suggesting these robustness tests.
+7
+We examine several AR models with various lags on the time-series evolution of idiosyncratic
+volatility. The AR(2) model eliminates most of the serial autocorrelation and is the best model based
+on the Akaike information criterion. The main results of this article are qualitatively unaffected by the
+choice of time-series model.
+
+[C07]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Expected and Unexpected Volatility
+
+109
+
+TABLE 1. Summary Statistics for Idiosyncratic Volatility (IV ), Expected Idiosyncratic Volatility
+(EIV ), and Unexpected Idiosyncratic Volatility (UIV ).
+
+Panel A. Descriptive Statistics on Three Volatility Measures
+
+IV
+
+Mean
+Standard deviation
+Skewness
+Kurtosis
+
+0.0279
+0.1317
+18.9027
+699.4496
+
+Panel B. Coefficients Percentiles in AR(2) Regression
+
+φ 0
+
+0.0017
+0.0033
+0.0074
+0.0158
+0.0304
+
+10th percentile
+25th percentile
+Median
+75th percentile
+90th percentile
+
+EIV
+
+UIV
+
+0.0244
+0.0492
+11.6982
+267.4705
+
+0.0035
+0.1231
+13.2440
+740.1347
+
+φ 1
+
+φ 2
+
+−0.0497
+0.0307
+0.1297
+0.2265
+0.3149
+
+0.0300
+0.1178
+0.2233
+0.3294
+0.4356
+
+Note: The sample is from 1963:07 to 2003:12. At each month m, for every common stock traded on
+NYSE/AMEX/NASDAQ, we regress the daily returns on Fama–French three factors and obtain the daily
+residuals ε is . We then define stock i’s idiosyncratic volatility for month m as
+
+n
+
+
+IV i,m ≡
+
+s=1
+
+ε is 2 ,
+
+s ∈ m,
+
+and fit an AR(2) on the monthly IV series for every stock via the following regression using data up to
+month m:
+
+IV i,m = φ 0 + φ 1 IV i,m−1 + φ 2 IV i,m−2 + ξ i,m .
+
+We define the fitted values as the expected IV (EIV ) and the residuals as the unexpected IV (UIV ). In
+estimating EIV, we require that a firm has at least three years of data available.
+
+Panel B of Table 1 displays the 10th, 25th, 50th, 75th, and 90th percentiles of
+the regression coefficients in equation (3). Although there are significant variations
+in the coefficients across time and stocks, the median AR(2) relation is
+
+IV i,m = 0.0074 + 0.2233IV i,m−1 + 0.1297IV i,m−2 + ξ i,m .
+
+III. Results
+
+Regressions of Returns on EIV and UIV
+
+We first explore the relation between returns and EIV (the usual analysis in previous
+studies). For each month, we perform the following cross-sectional regression:
+
+R i,m = ϕ 0 + ϕ 1 EIV i,m + η i,m .
+
+(6)
+
+[C08]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+The Journal of Financial Research
+
+110
+
+TABLE 2. Cross-Sectional Regressions of Stock Returns on EIV and UIV .
+
+Model 1
+
+Parameter
+
+C
+EIV
+UIV
+ret −1
+
+0.0143
+−0.0327
+
+Adjusted R 2
+
+0.016
+
+Model 2
+
+t-stat
+
+Parameter
+
+t-stat
+
+5.33
+−0.66
+
+0.0104
+0.2591
+0.7695
+
+4.16
+2.99
+7.52
+
+0.076
+
+Note: The sample is from 1963:07 to 2003:12. The volatility measures EIV and UIV are constructed as in
+Section II and Table 1. Each month, for all common stocks traded on NYSE/AMEX/NASDAQ, we perform
+cross-sectional regressions of monthly stock returns on the contemporaneous unexpected volatility (UIV ),
+as well as the expected volatility (EIV ), one-month lagged EIV, and one-month lagged returns, ret −1 . We
+report the time-series averages of parameter estimates and Newey–West (1987) adjusted t-statistics. We
+also report the time-series averages of the cross-sectional adjusted R 2 s.
+
+The time-series means and the Newey–West (1987) t-statistics of the pa-
+rameter estimates are reported as model 1 of Table 2. The coefficient for EIV is
+slightly negative at −0.03, yet not statistically significant as the t-statistic is only
+−0.66. The average adjusted R 2 is 0.016. This means that when used alone, EIV
+cannot explain the cross-section of stock returns.
+We then explore the relation between returns, EIV and UIV, using the fol-
+lowing cross-sectional regression for each month:
+
+R i,m = ϕ 0 + ϕ 1 EIV i,m + ϕ 2 UIV i,m + η i,m .
+
+(7)
+
+Again, we compute the time-series average and the Newey–West t-statistics.
+The results are reported as model 2 of Table 2. The average coefficient for UIV
+is 0.77. With the inclusion of UIV, the average coefficient for EIV increases from
+−0.03 to 0.26. Both coefficients for EIV and UIV are significant at the 1% level.
+The average adjusted R 2 for model 2 is 0.076, a significant increase from model
+1. These results suggest that the decomposition of idiosyncratic volatility into both
+expected and unexpected components is essential in explaining the cross-sectional
+returns.
+It is important at this point to examine the implications of model 2 in greater
+detail. Statistically significant coefficients for both EIV and UIV imply that both
+of these variables are strongly associated with returns. As mentioned earlier, UIV
+should have little relation with expected returns. This implies that the positive and
+significant coefficient for UIV must be largely driven by its relation with unexpected
+returns. Therefore, UIV serves as a control variable by controlling for the effects of
+unexpected returns. Consequently, the coefficient for EIV now reflects the positive
+effect of EIV on expected returns. The results reported in Table 2 suggest that this
+
+[C09]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Expected and Unexpected Volatility
+
+111
+
+effect is also economically significant. A 1% increase in EIV (or 10% increase in
+the expected idiosyncratic return standard deviation) leads to 0.26% increase in the
+expected stock return. As discussed in the introduction, our method provides an
+alternative approach for testing the relation between the expected returns and EIV .
+The key result here is that we need UIV to bring out the significance of the relation
+between EIV and expected returns—an issue that many previous studies may have
+overlooked.
+The significant coefficient for UIV is neither a statistical artifact nor a direct
+product of the construction of the study. A high UIV implies that the realized IV for
+the month is unexpectedly high. This does not automatically mean that the return
+for the month should be unexpectedly high as well. In contrast, an unexpectedly low
+(negative) return will also generate a high UIV statistic. Therefore, a priori, there is
+no reason to believe that high UIV s should be contemporaneously associated with
+high returns. 8
+
+Control Variables and Size Quintiles
+
+It is well documented that size and the book-to-market ratio have explanatory power
+for the cross-sectional returns (see Fama and French 1992). To check the robustness
+of our results, we use these two characteristics as additional explanatory variables.
+We also add previous one-year return (returns from previous 12 to 2 months ago)
+to control for the momentum effect (see Jegadeesh and Titman 1993). It is possible
+that market microstructure issues for small and illiquid stocks may drive the results.
+Thus, we conduct two additional robustness tests. In one test, for every month we
+sort all stocks in our sample into five size quintiles based on the previous month’s
+market capitalization and exclude the smallest quintile from the sample. In another
+test, we exclude NASDAQ stocks entirely from our sample. We then repeat the
+cross-sectional regression analysis. The results for both tests together with the full-
+sample results are reported in Table 3. For the full sample, the average coefficient
+estimates for EIV and UIV are 0.43 and 1.01, respectively, after controlling for other
+firm characteristics. Both estimates are statistically significant at the 1% level. The
+results for the two subsamples are similar. The coefficients for both EIV and UIV
+remain statistically significant after controlling for firm-specific characteristics and
+are stable across different samples. Firm size is negatively related to returns after
+controlling for the volatility effects, suggesting that the size effect may be partially
+
+8
+As a further test of the robustness of the significance of UIV, we recompute the time-series average
+(and the corresponding t-statistics) of the UIV variable in model 2 of Table 2 by excluding all months
+where the CRSP index return (NYSE/AMEX/NASDAQ) in excess of the one-month T-bill rate is above
+zero. The average coefficient is 0.2085 for EIV and 0.8924 for UIV, both significant at the 5% level. This
+indicates that the positive, contemporaneous relation between UIV and returns is not mechanically driven
+by the construction of our variables (contemporaneous high returns and UIV ) because the relation holds in
+months where the equity market as a whole went down as well.
+
+[C10]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+The Journal of Financial Research
+
+112
+
+TABLE 3. Cross-Sectional Regressions of Returns on EIV and UIV : Controlling for Firm
+Characteristics.
+
+Full Sample
+
+−0.0031
+−0.87
+0.4304
+4.69
+1.0093
+8.30
+0.0007
+2.19
+0.0091
+12.95
+−0.0603
+−13.48
+0.0101
+7.14
+0.113
+
+Const.
+
+Parameter
+t-stat
+Parameter
+t-stat
+Parameter
+t-stat
+Parameter
+t-stat
+Parameter
+t-stat
+Parameter
+t-stat
+Parameter
+t-stat
+
+EIV
+
+UIV
+
+size
+
+b-t-m
+
+ret −1
+
+ret −2−12
+
+Adj. R 2
+
+Excluding Smallest
+Size Quintile
+
+Excluding
+NASDAQ Stocks
+
+−0.0021
+−0.60
+0.3567
+3.17
+1.1143
+7.44
+0.0007
+2.12
+0.0088
+11.04
+−0.0525
+−11.96
+0.0111
+7.88
+0.097
+
+−0.0017
+−0.48
+0.3639
+3.91
+1.0510
+8.73
+0.0008
+2.25
+0.0068
+11.47
+−0.0596
+−12.39
+0.0115
+7.09
+0.109
+
+Note: The sample period is from 1963:07 to 2003:12. The expected volatility (EIV ) and the unexpected
+volatility (UIV ) are constructed as in Section II and Table 1. We define the book-to-market ratio every
+month as the ratio between the previous year-end book value of common equity (item 60) and the current
+month’s market capitalization, where the book value is from the Compustat annual file and merged with
+CRSP data. Each month, for all common stocks (share codes 10 and 11) traded on NYSE/AMEX/NASDAQ
+that have positive book and market values, we perform cross-sectional regressions of monthly stock returns
+on EIV, UIV, the one-month lagged log of market capitalization (size), the book-to-market ratio (b-t-m),
+last month’s return (ret −1 ), and the return from 12 to 2 months ago (ret −2−12 ). The first column reports the
+results for the full sample. In addition to using the full sample, we sort stocks into five quintiles based on the
+previous month’s market capitalization. We then delete the smallest quintile and repeat the cross-sectional
+regressions. In the last column we exclude NASDAQ stocks and repeat the cross-sectional regressions. For
+the full sample and each subsample, we report the time-series averages of parameter estimates and Newey–
+West (1987) adjusted t-statistics. We also report the time-series averages of the cross-sectional adjusted R 2 s.
+
+explained by the IV s. This result is consistent with Fu’s (2009) findings. We leave
+further investigation of this issue to future studies.
+
+Further Robustness Checks: The Effects of Liquidity
+
+So far, we show a positive relation between expected (unexpected) return and EIV
+(UIV ). One possibility is that our results are partially driven by the liquidity effect.
+The literature documents negative correlation between stock return and liquid-
+ity measures at both the market and individual stock levels (see, e.g., Amihud
+and Mendelson 1986; Brennan and Subrahmanyam 1996; Amihud 2002; Nguyen
+et al. 2007). It may be possible that firms with high idiosyncratic volatility are less
+liquid (e.g., high bid–ask spread may lead to spurious high volatility) and hence
+command a higher premium. The relation between cotemporaneous return and UIV
+
+[C11]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Expected and Unexpected Volatility
+
+113
+
+may also be complicated by effects of unexpected liquidity. If a negative shock on
+liquidity leads to higher future returns, we may observe a contemporaneous price
+drop, holding all else equal.
+Spiegel and Wang (2005) examine the interaction between idiosyncratic
+volatility and liquidity using various annual measures of liquidity. Similarly, we use
+three annual measures of liquidity to control for the effects of liquidity: the Amihud
+(2002) illiquidity measure (illiq), the Pastor and Stambaugh (2003) reversal measure
+(γ ), and the Gibbs sampler estimates (Gibbs). These are measures of illiquidity. If
+a liquidity premium exists, one would expect a positive correlation between these
+measures and expected stock returns. These measures are downloaded from Joel
+Hasbrouck’s Web site. 9 A detailed description of these variables is available in
+Hasbrouck (2006) and his Web site.
+Although these annual measures provide long time series for testing the
+relations among return, volatility, and liquidity, one drawback is that they do not
+capture the monthly variation in volatility and stock returns. Moreover, it is not
+possible to construct monthly liquidity shocks to examine the contemporaneous
+relation among liquidity shocks, UIV, and unexpected returns. To overcome these
+drawbacks, we construct two additional monthly liquidity measures based on the
+Trades and Quotes (TAQ) database. We obtain transaction-level data on trades and
+quotes for stocks traded on NYSE, AMEX, and NASDAQ from the TAQ database
+for January 1993 to December 2003. Following Chordia, Roll, and Subrahmanyam
+(2000), we define the following two transaction-level liquidity measures:
+
+proportional effective spread (PESPR) ≡ 2|P t − P M |/P M , and
+
+(8)
+
+proportional quoted spread (PQSPR) ≡ (P A − P B )/P M ,
+
+where P t , P A , and P B are the transaction, bid, and ask prices, respectively, and
+P M is the midpoint price. Each trading day for each stock in our sample we cal-
+culate the daily average of PESPR and PQSPR using transaction-level data. We
+then calculate the monthly average of these daily averages to get monthly mea-
+sures of PESPR and PQSPR. We denote PESPR −1 and PQSPR −1 as the one-month
+lagged liquidity measures. To capture the potential effects of contemporaneous
+liquidity shock to UIV and current-period returns, we define PESPR ≡ PESPR −
+PESPR −1 and PQSPR ≡ PQSPR − PQSPR −1 . We then repeat the Fama–
+Macbeth (1973) cross-sectional regressions, controlling for various liquidity
+measures.
+These results are reported in Table 4. The first three columns are for an-
+nual liquidity measures. The rest are for the monthly liquidity measures. From the
+
+9
+
+The URL is http://pages.stern.nyu.edu/∼jhasbrou/Research/GibbsEstimates2006/Liquidity%20
+estimates%202006.htm. We thank Joel Hasbrouck for making these measures publicly available.
+
+[C12]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+The Journal of Financial Research
+
+114
+
+0.0044
+0.84
+0.2588
+3.98
+0.5881
+6.77
+0.0002
+0.35
+0.0052
+8.91
+0.1230
+4.35
+0.0064
+5.74
+−0.0993
+−5.59
+−0.1062
+−7.62
+
+illiq = PQSPR
+
+0.0012
+0.23
+0.2143
+3.36
+0.5691
+6.58
+0.0005
+1.01
+0.0050
+8.69
+0.1251
+4.42
+0.0064
+5.82
+
+0.0031
+0.54
+0.3218
+5.24
+0.5595
+7.03
+0.0006
+0.96
+0.0043
+7.20
+−0.0342
+−6.76
+0.0051
+1.88
+−0.1098
+−5.13
+−0.1090
+−6.55
+
+illiq = PESPR
+
+TABLE 4. Cross-Sectional Regressions of Returns on EIV and UIV : Controlling for Liquidity Effects.
+
+0.0006
+0.10
+0.2840
+4.66
+0.5438
+6.91
+0.0009
+1.42
+0.0042
+7.03
+−0.0335
+−6.63
+0.0054
+1.97
+
+illiq = γ
+
+−0.0024
+−0.66
+0.3770
+4.41
+0.9747
+8.69
+0.0007
+1.86
+0.0090
+13.46
+−0.0597
+−13.43
+0.0109
+7.34
+
+illiq = illiq
+
+0.0180
+1.94
+0.3951
+4.60
+0.9721
+8.67
+−0.0017
+−1.97
+0.0093
+13.33
+−0.0592
+−13.64
+0.0121
+8.31
+
+illiq = Gibbs
+
+0.0036
+0.87
+0.4661
+4.78
+0.9336
+7.94
+−0.0001
+−0.23
+0.0092
+13.53
+−0.0620
+−14.27
+0.0123
+8.10
+
+Parameter
+t-stat
+Parameter
+t-stat
+Parameter
+t-stat
+Parameter
+t-stat
+Parameter
+t-stat
+Parameter
+t-stat
+Parameter
+t-stat
+Parameter
+t-stat
+Parameter
+t-stat
+
+ret −2−12
+
+Const.
+
+d illiq
+
+b-t-m
+
+ret −1
+
+UIV
+
+EIV
+
+size
+
+Note: The expected volatility (EIV ) and the unexpected volatility (UIV ) are constructed as in Section II and Table 1. We define the book-to-market ratio every
+month as the ratio between the previous year-end book value of common equity (item 60) and the current month’s market capitalization, where the book value is
+from the Compustat annual file and merged with CRSP data. Each month, for all common stocks (share codes 10 and 11) traded on NYSE/AMEX/NASDAQ
+that have positive book and market values, we perform cross-sectional regressions of monthly stock returns on EIV, UIV, the one-month lagged log of market
+capitalization (size), the book-to-market ratio (b-t-m), last month’s return (ret −1 ), the return from 12 to 2 months ago (ret −2−12 ), and various liquidity measures.
+The one-year lagged liquidity measures used in first three columns are the Hasbrouck (2006) Gibbs sampler estimates of the effective cost (Gibbs), Amihud
+(2002) log illiquidity ratio (illiq), and Pastor and Stambaugh (2002) reversal gamma (γ ). They are annual measures downloaded from Joel Hasbrouck’s Web site
+(http://pages.stern.nyu.edu/∼jhasbrou/Research/GibbsEstimates2006/Liquidity%20estimates%202006.htm). The sample period is from 1963:07 to 2003:12 for
+regressions using these measures. We drop estimates where fewer than 50 observations are used for estimation. PESPR and PQSPR are monthly estimates of the
+proportional effective spread and proportional quoted spread, respectively, as defined in equation (8). They are constructed using transaction-level data from the
+Trades and Quotes (TAQ) database, for the sample period from 01:1993 to 12:2003. We report the time-series averages of parameter estimates and Newey–West
+(1987) adjusted t-statistics. We also report the time-series averages of the cross-sectional adjusted R 2 s.
+
+0.134
+
+−0.0185
+−1.73
+
+0.132
+
+0.093
+
+−0.0331
+−2.78
+
+0.091
+
+0.6010
+0.69
+
+0.110
+
+−0.0017
+−2.85
+
+0.114
+
+−0.4561
+−5.48
+
+0.108
+
+Adj. R 2
+
+illiq −1
+
+[C13]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Expected and Unexpected Volatility
+
+115
+
+results, it is clear that the positive relations between EIV and UIV with stock returns
+are not driven by liquidity effects. For the first three models, even after controlling
+for the liquidity measures, the time-series average of the coefficients for both EIV
+and UIV remain close to those reported in Table 3 and are statistically significant
+at the 1% level. On the other hand, after controlling for volatility effects, we find
+no significant positive relation between these illiquidity measures and future stock
+returns. Because these are measures of illiquidity, one would expect positive coef-
+ficients for these measures. Table 4, however, shows that the coefficients for Gibbs
+and illiq measures are both negative, and statistically significant. Only γ has posi-
+tive coefficient, although not significant at the 10% level. This result is qualitatively
+consistent with Spiegel and Wang (2005). As discussed earlier, the level of the pre-
+vious year’s illiquidity may not reflect the monthly variation of the current year’s
+volatility and returns. The rest of the columns report results using monthly liquidity
+measures PESPR and PQSPR. The results are consistent with those using annual
+measures. For example, after controlling for both PESPR −1 and PESPR, the av-
+erage coefficients for both EIV and UIV are positive and statistically significant.
+The magnitudes are comparable to earlier results (EIV : 0.28, UIV : 0.55), where
+the difference could be mainly due to the different sample period used for this test
+(from January 1993 to December 2003). The average coefficient for PESPR is
+negative, which is consistent with the idea that a decrease in liquidity increases the
+liquidity premium and hence lowers the contemporaneous stock price. However,
+the coefficient for PESPR −1 remains negative, which is inconsistent with a positive
+liquidity premium. The results for PQSPR are similar. In short, the results in this
+section confirm that the effects of EIV and UIV on stock returns are not driven by
+liquidity effects.
+
+IV. Unexpected Idiosyncratic Volatility
+
+This study is among the first to examine the role of firm-level (unaggregated)
+UIV in explaining cross-sectional variation in stock returns. Because the previous
+section documents, empirically, a positive and highly significant relation between
+UIV and stock returns, the results merit closer examination. We do this through two
+investigations. First, we construct UIV -sorted portfolios and observe how returns
+and alphas vary across the different portfolios. Second, we test the option effect by
+observing how the relation between UIV and returns change as the leverage of the
+firm changes.
+
+Returns and Alphas of Portfolios Stratified by EIV and Sorted by UIV
+
+We construct equal- and value-weighted portfolios stratified by EIV and then sorted
+by UIV . In other words, every month we first sort the stocks into five quintiles based
+
+[C14]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+The Journal of Financial Research
+
+116
+
+TABLE 5. Value-Weighted Monthly Returns and Alphas on Portfolios Sorted on UIV (EIV
+Stratified).
+
+Low UIV
+
+2
+
+Excess Returns r
+t-stat
+CAPM
+alpha
+t-stat
+FF-3
+alpha
+t-stat
+FF-3 + MOM alpha
+t-stat
+
+0.0019
+0.98
+−0.0020
+−3.09
+−0.0026
+−3.85
+−0.0022
+−3.30
+
+0.0044
+2.13
+0.0001
+0.20
+0.0002
+0.30
+0.0004
+0.66
+
+3
+
+4
+
+High UIV
+
+H–L
+
+0.0054
+2.53
+0.0009
+1.79
+0.0008
+1.67
+0.0009
+1.66
+
+0.0066
+2.81
+0.0016
+3.15
+0.0011
+2.11
+0.0012
+2.27
+
+0.0076
+2.62
+0.0019
+1.55
+0.0013
+1.07
+0.0016
+1.32
+
+0.0058
+3.14
+0.0039
+2.39
+0.0039
+2.33
+0.0039
+2.28
+
+Note: The sample period is from 1963:07 to 2003:12. The expected volatility measure (EIV ) and
+unexpected volatility measure (UIV ) are constructed as in Section II and Table 1. Each month, we first
+sort common stocks (share codes 10 and 11) traded on NYSE/AMEX/NASDAQ into five quintiles based
+on their EIV rankings. Within each EIV quintile, we sort stocks into five quintiles based on their UIV
+rankings. We then aggregate all stocks with the same UIV ranking across EIV-sorted portfolios and
+construct five EIV stratified UIV sorted portfolios. Quintile 1 contains stocks with the lowest UIV s,
+and quintile 5 contains stocks with the highest UIV s. The portfolios are rebalanced every month. The
+first two rows report the average value-weighted monthly returns in excess of the one-month T-bill
+rate and t-statistics for each portfolio. The portfolio H–L is the return difference between quintile
+5 and quintile 1. For each portfolio, we then regresses monthly excess returns on the market factor
+(CAPM), the Fama–French (1993) three factors (FF-3), and the Fama–French three factors plus the
+momentum factor (FF-3 + MOM). The factor returns are downloaded from Kenneth French’s Web site
+(http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data library.html). For each model, we report
+the regression intercepts (alpha), as well as the t-statistics. Note that the portfolios are constructed after the
+realizations for UIV (and hence returns) are known. Therefore, one cannot construct a profitable trading
+strategy to exploit the results in this table.
+
+on their EIV measure. Next, within each EIV quintile, we sort the stocks into five
+quintiles based on their UIV measure. Then, we aggregate all the stocks in the same
+UIV portfolio across all the five EIV quintiles. The five resulting portfolios thus
+have different UIV s but a similar spread of EIV s. For each portfolio and each month,
+we construct four measures: returns in excess of the one-month T-bill rate, alphas
+based on the CAPM (CAPM), alphas based on the Fama–French (1993) three-
+factor model (FF-3), and alphas based on the Fama–French three-factor model plus
+a momentum factor (FF-3 + MOM).
+Table 5 reports the means and significance levels of these measures for
+five value-weighted portfolios. As we move from the low-UIV portfolio to the
+high-UIV portfolio, all measures (both excess returns and alphas) increase almost
+monotonically. Specifically, excess returns increase from 0.19% per month for
+the low-UIV quintile to 0.76% for the high-UIV quintile, a difference of 0.58%
+per month, or around 7% a year. CAPM alphas, FF-3 alphas, and FF-3 + MOM
+alphas also register significant increases across the UIV portfolios. For example,
+
+[C15]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Expected and Unexpected Volatility
+
+117
+
+for the FF-3 + MOM model, the alphas increase from approximately −0.22%
+per month for the low-UIV portfolio to approximately 0.16% per month for the
+high-UIV portfolio, about a 4.6% difference in annual returns. This difference in
+mean returns is significant at the 5% level. The results for the CAPM and the FF-3
+models are consistent with those for the FF-3 + MOM model.
+Although we document significant alpha differentials among UIV -sorted
+portfolios, the portfolio sorting is based on contemporaneous information (UIV ),
+and therefore the observed pattern does not imply a profitable investment strategy.
+Nevertheless, our results highlight the important role of UIV in explaining the
+contemporaneous cross-sectional returns, implying that UIV is indeed a suitable
+control variable.
+
+Linkage between UIV and Stock Returns: Testing the Option Effect
+
+Merton (1974) views equity as a call option on the firm’s assets; hence, an (unex-
+pected) increase in the volatility should result in a higher value for the call option.
+The more highly leveraged the firm is, the more option-like the equity will be. The
+option effect further predicts that the positive relation between UIV and returns
+should be stronger for high-leverage vis-à-vis low-leverage firms. Our results in
+both this and the previous section corroborate the prediction that higher UIV is
+associated with higher returns.
+To test the proposition that high-leverage firms experience a stronger re-
+lation between UIV and returns than low-leverage firms, we first divide the firms
+into five quintile portfolios sorted by leverage and assign five dummy variables
+(D1, . . . , D5 corresponding to each of the five leverage quintiles) to each firm. To
+equitably compare the strength of the relation between UIV and returns (in essence,
+comparing the magnitude of the coefficients of the UIV variable) across firms in
+different leverage quintiles, we standardize the UIV variable so that the variance of
+the UIV variable is equal across all quintiles. We do this by dividing the monthly
+demeaned UIV by the time-series standard deviation of the UIV for that firm. This
+results not only in equal variances across the five quintiles but also in equal uncon-
+ditional variances for the UIV variable for all firms in all months. The standardized
+UIV (UIVS) for firm i in month m is defined as follows:
+
+UIVS i,m =
+
+UIV i,m
+.
+S D(UIV i,. )
+
+(9)
+
+Similarly, we standardize the returns (RS) and EIV (EIVS) for easy com-
+parison. We then perform the following regression:
+
+[C16]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+The Journal of Financial Research
+
+118
+
+RS i,m = ϕ 0 + ϕ 1 EIVS i,m +ϕ 2 Size + ϕ 3 btm + ϕ 4 D1 ∗ UIVS i,m + ϕ 5 D2 ∗ UIVS i,m
+
++ ϕ 6 D3 ∗ UIVS i,m + ϕ 7 D4 ∗ UIVS i,m + ϕ 8 D5 ∗ UIVS i,m + η i,m .
+
+(10)
+
+We interpret the coefficient ϕ j (j = 4, . . . , 8) as the effect on returns, of a
+1 standard deviation realization in the UIV . In other words, if in month m firm i
+has a UIV that is 1 standard deviation above zero, this should, on average, add ϕ j
+to the month’s standardized returns.
+Panel A of Table 6 shows the results of this regression. The means of the
+coefficients ϕ j increase monotonically from 0.14 to 0.21 as j increases from 4 to
+8 (from the standardized low-UIV to high-UIV firms). This finding is consistent
+with the prediction of the option effect; that is, as leverage increases from low to
+high, the relation between UIV and returns get stronger. Furthermore, the difference
+between the means of ϕ 4 and ϕ 8 is statistically significant (with a Newey–West t-
+statistic of 6.92), implying that the relation for firms in the high-leverage quintile is
+significantly stronger than the relation for firms in the low-leverage quintile. This
+result, coupled with those reported in Tables 2 through 5, lends additional support
+for the option effect.
+Campbell et al. (2001) document a rising trend in individual stock volatil-
+ities from 1962 to 1997. To ensure that our results are not driven by a particular
+period (whether during a low-volatility period or a high-volatility period), we divide
+the sample into two subperiods: July 1963 to December 1984 and January 1985 to
+December 2003. We then repeat regression (9) for both subperiods. The results for
+these regressions are reported in Panels B and C of Table 6. For both subperiods,
+the effect of UIV increases monotonically as leverage increases, implying that the
+result for the full sample is robust across all subsamples as well.
+It is worth noting that the option effect of UIV on contemporaneous stock
+price does not lead to a negative relation between expected volatility and future
+expected stock returns. In the Merton (1974) framework, the expected return on
+a firm’s equity depends on both the risk premium on the underlying asset (total
+firm value) and the sensitivity of the equity value to the change in the value of
+the underlying total asset (equity beta). If the premium on the total assets of the
+firm remains constant, it can be shown that an increase in current volatility of
+the firm leads to lower equity beta and, in turn, to lower expected future return on
+firm equity (see Johnson 2004). Our empirical evidence, however, suggests that
+the assumption of a constant premium on a firm’s total assets may not be valid.
+The significant positive coefficient for EIV suggests that idiosyncratic volatility
+has a positive effect on the premium of the firm’s total assets, and this effect
+dominates the negative effect of volatility on equity beta. As a result, we empirically
+observe a positive relation between expected stock (equity) returns and expected
+volatility.
+
+[C17]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Expected and Unexpected Volatility
+
+Adj. R 2
+
+0.070
+
+0.115
+
+0.095
+
+0.0537
+3.76
+
+0.0813
+6.26
+
+0.0695
+6.92
+
+DIV
+
+0.1596
+12.56
+
+0.2498
+12.52
+
+0.2096
+15.68
+
+UIVS 5
+
+0.1439
+10.66
+
+0.2313
+11.91
+
+0.1911
+14.36
+
+UIVS 4
+
+0.1393
+9.87
+
+0.2292
+12.32
+
+0.1878
+14.11
+
+UIVS 3
+
+0.1127
+7.87
+
+0.2042
+10.31
+
+0.1611
+11.63
+
+UIVS 2
+
+0.1059
+5.58
+
+0.1685
+7.17
+
+0.1402
+8.74
+
+UIVS 1
+
+ret −2−12
+
+0.0139
+1.83
+
+0.0610
+3.65
+
+0.0463
+4.75
+
+0.0496 −0.3092
+10.71
+−12.42
+
+0.0567 −0.5933
+6.95
+−13.71
+
+0.0526 −0.4365
+11.63
+−14.51
+
+ret −1
+
+TABLE 6. Stock Returns, UIV, and Financial Leverage.
+
+btm
+
+−0.0031
+−0.80
+
+0.0009
+0.17
+
+−0.0025
+−0.79
+
+Size
+
+0.0467
+13.95
+
+0.0412
+8.92
+
+0.0475
+12.79
+
+EIVS
+
+Panel A. 1963:07–2003:12
+
+Panel C. 1984:01–2003:12
+
+Panel B. 1963:07–1984:12
+
+−0.0325
+−1.24
+
+−0.0629
+−1.36
+
+−0.0122
+−0.50
+
+Const.
+
+Parameter
+t-stat
+
+Parameter
+t-stat
+
+Parameter
+t-stat
+
+119
+
+Note: The sample is from 1963:07 to 2003:12. The expected volatility (EIV ) and the unexpected volatility (UIV ) are constructed as in Section II and Table 1.
+The information on book value of equity and total liability is from the Compustat annual industrial file. We define the book-to-market ratio every month as the
+ratio between the previous year-end book value of common equity (item 60) and the current month’s market capitalization. Financial leverage is defined as
+the book value of total debt (item 181) divided by the sum of the book value of debt, other equity and the market value of common equity (previous year-end
+total assets (item6) – previous year-end common equity + current month market capitalization).We exclude financial firms (SIC codes 4900–4999) and utility
+firms (SIC codes 6000–6999). We also exclude firms with negative book value and those with leverage ratio outside [0,1]. Each month, we sort common stocks
+(share codes 10 and 11) traded on NYSE/AMEX/NASDAQ into quintiles based on their financial leverage rankings from the previous month. For every firm,
+D1 = 1 if the firm is in the quintile with the lowest leverage ratio ranking, and 0 otherwise. Similarly, D5 = 1 if the firms is in the quintile with the highest
+leverage ratio ranking, and 0 otherwise. The values of D2 to D4 are assigned in the same fashion. We then define five variables UIVS i ≡ UIVS ∗ Di (i = 1 − 5).
+Every month, we perform cross-sectional regressions of normalized returns on EIVS, the log of previous month’s market capitalization and book-to-market
+ratio, and UIVS i s. We report the time-series averages of parameter estimates and Newey–West (1987) adjusted t-statistics. We report the time-series averages of
+the cross-sectional adjusted R 2 s. The column for DIV reports the difference between the coefficients of UIVS 5 and UIVS 1 and the result for the null hypothesis
+that both coefficients are equal. Panel A reports results for the full sample, Panel B reports results for the first half of the sample period, and Panel C reports
+results for the second half.
+
+[C18]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+The Journal of Financial Research
+
+120
+
+V. Conclusion
+
+We reexamine whether idiosyncratic volatility is related to the cross-section of stock
+returns. To better examine the relation between the expected return and expected
+volatility, we decompose volatility into expected and unexpected volatility, and use
+unexpected volatility to control for the noise caused by unexpected returns.
+We find strong evidence of a positive relation between UIV and contem-
+poraneous returns. Employing unexpected volatility as a control variable, we find
+a significant positive relation between stock returns and EIV . The interpretation
+is that both EIV and UIV are important in explaining stock returns. Specifically,
+EIV is positively related to expected stock returns and UIV is positively related
+to unexpected stock returns. Excluding UIV from the analysis leads to incorrect
+conclusions about the role of expected idiosyncratic volatilities. We include several
+robustness checks to ensure that our results are not due to characteristics such as
+size, book-to-market, past returns, liquidity, or choice of sample periods.
+Our study is related to several recent articles on the relation between id-
+iosyncratic volatility and the cross-section of stock returns. Ang et al. (2006, 2009)
+document a negative relation between monthly realized returns and one-month
+lagged realized idiosyncratic volatility. Because Ang et al. do not test the relation
+between the expected return and expected volatility (Ang et al. 2009), their finding
+is not necessarily comparable to ours. However, our results are consistent with Fu
+(2009) and Spiegel and Wang (2005) in that we, too, find a robust positive relation
+between expected return and expected volatility. Whereas Fu and Spiegel and Wang
+emphasize the importance of using of the EGARCH model on monthly stock re-
+turns in estimating the monthly volatility, we argue that the difference comes from
+the decomposition of the idiosyncratic volatility (estimated from daily returns) into
+EIV and UIV, and then using UIV to control for unexpected returns. In addition, we
+provide strong empirical evidence that UIV is positively related to the unexpected
+return, in the way predicted by Merton’s (1974) theoretical model.
+To further investigate the importance and role of UIV in explaining cross-
+sectional stock returns, we perform two additional tests. First, we construct five
+value-weighted portfolios that are EIV stratified and UIV sorted. We show that
+for both types of portfolios, the average returns, as well as the Jensen’s alphas
+(over a wide range of models), increase monotonically as we move from a low-UIV
+portfolio to a high-UIV portfolio. Second, we investigate the validity of the option
+effect. We group firms into five leverage quintiles. We then standardize UIV and
+show that the magnitude of the regression coefficients for the standardized UIV
+increases monotonically as leverage increases. This leads us to conclude that UIV
+is indeed important, and this importance stems from the consequences of the option
+effect.
+To summarize, we address an important issue on the relation between id-
+iosyncratic volatility and the cross-section of stock returns. The answer lies in
+
+[C19]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Expected and Unexpected Volatility
+
+121
+
+decomposing idiosyncratic volatility into expected and unexpected components.
+With this decomposition, we are able to show that both components are signifi-
+cantly related to returns, albeit in different ways.
+
+Appendix
+
+We focus on the relation between expected returns (ER) and expected idiosyncratic
+volatility (EIV ). Ideally, this can be discovered using the following regression:
+
+ER i,m = ξ 0 + ξ 1 EIV i,m + υ i,m
+
+(A1)
+
+for each stock i and month m.
+Unfortunately, we cannot observe, nor is there a reasonably accurate model
+to derive, ER i,m . The extant literature therefore uses realized returns (R), which
+comprise ER and unexpected returns (UR), in the following regression to obtain a
+proxy estimate for ξ 1 :
+
+R i,m = ξ o + ξ 1 EIV i,m + υ i,m
+
+ER i,m + UR i,m = ξ o + ξ 1 EIV i,m + υ i,m .
+
+(A2)
+
+However, because the noise in UR i,m dominates ER i,m (these are monthly
+returns for individual stocks), the standard error for the estimate of ξ 1 is very
+large. Furthermore, if there is any sample correlation between UR i,m and EIV i,m , ξ 1
+would be a biased estimator of ξ 1 . Specifically, if the correlation in that sample is
+negative, the estimate of ξ 1 would be biased downward. This poses two problems for
+investigators. First, the potential bias in the estimate may result in wrong conclusions
+being made. Second, the large standard error for the estimate of ξ 1 means that even
+if there is a true relation, the invariably low t-statistic may mask the statistical
+significance of that fact.
+Because of the lack of tools available to remove undesirable effects of
+UR i,m in the left-hand side of the regression, we propose that a control variable be
+inserted into the right-hand side of the regression. Suppose we can find a variable
+that is perfectly correlated with UR i,m (call this variable X i,m ). We can then have
+the following regression:
+
+ER i,m + UR i,m = ξ o + ξ 1 EIV i,m + ξ 2 X i,m + υ i,m .
+
+(A3)
+
+Because X i,m and UR i,m are perfectly correlated, the term ξ 2 X i,m will
+capture the effects of UR i,m and allow the underlying relation between ER i,m and
+
+[C20]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+The Journal of Financial Research
+
+122
+
+EIV i,m to be observed with much greater clarity. This is because the addition of
+X i,m brings about two effects. First, the effect of the sample correlation between
+UR i,m and EIV i,m is mitigated because UR i,m and X i,m now have a much stronger
+correlation. Therefore, the bias in ξ 1 is corrected. Second, by being able to account
+for the large amount of noise contained in UR i,m , the error variance of the regression
+falls precipitously. Correspondingly, the standard error of ξ 1 falls, allowing for a
+larger statistical significance to be observed.
+In the event that a perfectly correlated variable cannot be found, using X i,m ,
+a variable possessing a high correlation with UR i,m can still alleviate the problem
+to a large extent.
+As we discuss in the introduction, we motivate our choice of control variable
+for unexpected returns from Merton (1974). One can view equity as a call option on
+the firm’s assets. If the volatility of the firm’s asset value unexpectedly increases, the
+option value (equity price) will increase and, hence, so will the contemporaneous
+return. Given that the nature of the shock is unexpected, we expect a positive relation
+between UIV and contemporaneous unexpected returns. This makes UIV a natural
+candidate for controlling unexpected returns. As defined in Section II, UIV is the
+unexpected innovation in volatility from firm-level time-series estimation. It need
+not necessarily be orthogonal to EIV in the cross-section. Bear in mind that the
+overriding concern is finding a variable that is highly correlated with UR i,m . It is to
+be expected that this control variable has a nonzero sample correlation with EIV i,m
+because UR i,m itself has a nonzero sample correlation with EIV i,m . Furthermore,
+the nonzero correlation between UIV and EIV i,m moves the estimate ξ 1 closer to
+ξ 1 compared with ξ 1 .
+
+References
+
+Amihud, Y., 2002, Illiquidity and stock returns: Cross-section and time-series effects, Journal of Financial
+Markets 5, 31–56.
+Amihud, Y., and H. Mendelson, 1986, Asset pricing and the bid-ask spread, Journal of Financial Economics
+17, 223–49.
+Ang, A., R. Hodrick, Y. Xing, and X. Zhang, 2006, The cross-section of volatility and expected returns,
+Journal of Finance 61, 259–99.
+Ang, A., R. Hodrick, Y. Xing, and X. Zhang, 2009, High idiosyncratic volatility and low returns: International
+and further U.S. evidence, Journal of Financial Economics 91, 1–23.
+Bali, T., N. Cakici, X. Yan, and Z. Zhang, 2005, Does idiosyncratic risk really matter? Journal of Finance
+60, 905–29.
+Brennan, M., and A. Subrahmanyam, 1996, Market microstructure and asset pricing: On the compensation
+for illiquidity in stock returns, Journal of Financial Economics 41, 441–64.
+Campbell, J., M. Lettau, B. Malkiel, and Y. Xu, 2001, Have individual stocks become more volatile? An
+empirical exploration of idiosyncratic risk, Journal of Finance 56, 1–43.
+Chordia, T., R. Roll, and A. Subrahmanyam, 2000, Commonality in liquidity, Journal of Financial Eco-
+nomics 56, 3–28.
+
+[C21]
+14756803, 2010, 2, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6803.2010.01264.x by University Of British Columbia, Wiley Online Library on [01/11/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Expected and Unexpected Volatility
+
+123
+
+Duffee, G., 1995, Stock returns and volatility: A firm-level analysis, Journal of Financial Economics 37,
+399–420.
+Fama, E., and K. French, 1992, The cross-section of expected stock returns, Journal of Finance 47, 427–65.
+Fama, E., and K. French, 1993, Common risk factors in the returns on stocks and bonds, Journal of Financial
+Economics 33, 3–56.
+Fama, E., and J. MacBeth, 1973, Risk, return and equilibrium: empirical tests, Journal of Political Economy
+81, 607–36.
+French, K., W. Schwert, and R. Stambaugh, 1987, Expected stock returns and volatility, Journal of Financial
+Economics 19, 3–29.
+Fu, F., 2009, Idiosyncratic risk and the cross-section of expected returns, Journal of Financial Economics
+91, 24–37.
+Goyal, A., and P. Santa-Clara, 2003, Idiosyncratic risk matters! Journal of Finance 58, 975–1007.
+Guo, H., and R. Savickas, 2006, Idiosyncratic volatility, stock market volatility, and expected stock returns,
+Journal of Business and Economic Statistics 24, 43–56.
+Hasbrouck, J., 2006, Trading costs and returns for US equities: Estimating effective cost from daily data,
+Working paper, New York University.
+Jegadeesh, N., and S. Titman, 1993, Returns to buying winners and selling losers: Implications for stock
+market efficiency, Journal of Finance 48, 65–92.
+Jiang, X., and B. Lee, 2006, The dynamic relation between returns and idiosyncratic volatility, Financial
+Management 35, 43–65.
+Johnson, T., 2004, Forecast dispersion and the cross section of expected returns, Journal of Finance 59,
+1957–78.
+Lehmann, B., 1990, Residual risk revisited, Journal of Econometrics 45, 71–97.
+Malkiel, B., and Y. Xu, 2006, Idiosyncratic risk and security returns, Working paper, School of Management,
+University of Texas at Dallas.
+Merton, R., 1974, On the pricing of corporate debt: The risk structure of interest rate, Journal of Finance
+29, 449–70.
+Merton, R., 1987, Presidential address: A simple model of capital market equilibrium with incomplete
+information, Journal of Finance 42, 483–510.
+Newey, W. K., and K. D. West, 1987, A simple positive-definite heteroskedasticity and autocorrelation
+consistent covariance matrix, Econometrica 55, 703–08.
+Nguyen, D., M., Suchismita, A. Prakash, and D. Ghosh, 2007, Liquidity and asset pricing under the three-
+moment CAPM paradigm, Journal of Financial Research 30, 379–98.
+Pastor, L., and R. Stambaugh, 2003, Journal of Political Economy 111, 642–84.
+Spiegel, M., and X. Wang, 2005, Cross-sectional variation in stock returns: Liquidity and idiosyncratic risk,
+Working paper, Yale University.
+Wei, S., and C. Zhang, 2006, Why did individual stocks become more volatile? Journal of Business 79,
+259–92.
+Zhang, C., 2004, A cross-sectional study of expected returns and idiosyncratic volatilities of individual
+stocks, Working paper, Hong Kong University of Science and Technology.

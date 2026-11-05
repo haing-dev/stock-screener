@@ -1,0 +1,142 @@
+{
+ "opus_only": [
+  [
+   "QP06-C05-4b",
+   "For each curve aspect there is a whole-curve version and a version that trades individual local segments of the curve."
+  ],
+  [
+   "QP06-C05-6b",
+   "Benchmark 2 is a risk-adjusted long S&P position financed by shorting one-month T-bills."
+  ],
+  [
+   "QP06-C07-5b",
+   "Footnote 3: the weaker expectations hypothesis only requires the expected return gap between short and long strategies to be constant, not zero."
+  ],
+  [
+   "QP06-C09-4b",
+   "Observed maturities and observation dates are only approximate (e.g. 0.9 or 11.8 months; 28-33 days apart), so the data must be regularised."
+  ],
+  [
+   "QP06-C17-1b",
+   "Fixed income strategy studies rarely compare with equity investing because of risk, holding-period and credit comparability problems; the equity benchmark here is built to fix that."
+  ],
+  [
+   "QP06-C19-2b",
+   "Outperformance is tested with paired t-tests and Diebold-Mariano tests on monthly payoff differences."
+  ],
+  [
+   "QP06-C21-4b",
+   "The benchmarks are charged no transaction costs, a conservative choice for the strategy comparison."
+  ],
+  [
+   "QP06-C22-2b",
+   "Structuring the trades as notional derivative positions that mirror the cash flows would cut costs substantially."
+  ],
+  [
+   "QP06-C29-2b",
+   "Level mean-reversion (1-A, 1-B) earns only about 0.27-0.51x the bond benchmark at equal risk, and adding hypothetical maturities makes it worse."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP06-C03-4",
+   "After costs, only some strategies (2-B clearly) stay significantly better than the benchmarks."
+  ],
+  [
+   "QP06-C04-2",
+   "The paper separates directional trades (bets on rate direction) from relative-value trades, and studies only the latter."
+  ],
+  [
+   "QP06-C06-2",
+   "Breakeven cost assumes full monthly entry and exit, i.e. maximum turnover."
+  ],
+  [
+   "QP06-C06-4",
+   "Yield-curve trading literature is old (from the late 1960s) and broad; authors cite De Leonardis, Freund, Darst, Weberman, Dyl-Joehnk, Stigum-Fabozzi."
+  ],
+  [
+   "QP06-C07-2",
+   "Bounded yield curve behaviour is read as evidence of a mean-reverting mechanism; none is identified."
+  ],
+  [
+   "QP06-C09-4",
+   "Sample spans 30 June 1964 to 29 December 2000 with 439 monthly curves."
+  ],
+  [
+   "QP06-C09-5",
+   "Yields are continuously compounded, at about 1..12, 24, 36, 48 and 60 months maturity."
+  ],
+  [
+   "QP06-C10-5",
+   "Forward formula (Eq. 1): exp((x+1)/12 * r(x+1,0)) = exp(1/12 * r(1,0)) * exp(x/12 * r(x,1)), i.e. r(x,1) = [(x+1) r(x+1,0) - r(1,0)] / x."
+  ],
+  [
+   "QP06-C10-7",
+   "The unconditional curve is upward sloping and concave, rises over time as new high-rate data enter (Dec-1972 ~4.6% at 1m to 5.6% at 60m; Dec-1986 peak ~6.8% to 7.9%; Dec-2000 ~6.2% to 7.4%)."
+  ],
+  [
+   "QP06-C11-4",
+   "Start date is dictated by availability of the Lehman Intermediate Government index (Jan 1973)."
+  ],
+  [
+   "QP06-C12-3",
+   "Duration weighting equalises each maturity's contribution to a parallel shift payoff."
+  ],
+  [
+   "QP06-C13-4",
+   "2-A is immune to parallel shifts by construction."
+  ],
+  [
+   "QP06-C14-2",
+   "2-B legs are duration-weighted (cash k/(Z-1) per leg) so equal spread changes across pairs give equal payoff."
+  ],
+  [
+   "QP06-C15-5",
+   "3-B sizing: k/(X-1) and k/(Z-1) in the wings, 2k/(Y-1) in the belly; funding = k/(X-1)+k/(Z-1)-2k/(Y-1)."
+  ],
+  [
+   "QP06-C16-3",
+   "Benchmarks are volatility-matched to each strategy before comparing mean payoffs."
+  ],
+  [
+   "QP06-C17-5",
+   "Authors claim all trading decisions use only data up to the prior month (expanding unconditional average), so the test is out-of-sample."
+  ],
+  [
+   "QP06-C19-2",
+   "Paired t-test needs serially independent payoff differences; positive autocorrelation overstates significance."
+  ],
+  [
+   "QP06-C19-4",
+   "Diebold-Mariano statistic tests mean of an autocorrelated difference series; less powerful but weaker assumptions."
+  ],
+  [
+   "QP06-C21-3",
+   "Dollar cost (Eq. 4) = 0.00005 x maturity in years x bond value, i.e. 0.5 bp of yield times duration approximated by maturity."
+  ],
+  [
+   "QP06-C21-4",
+   "Worked example: $100m of 6-month bills costs $2,500."
+  ],
+  [
+   "QP06-C23-5",
+   "Payoff breakdown by trade segment is shown for 2-B and 3-B."
+  ],
+  [
+   "QP06-C24-2",
+   "The 10-11 month spread and 10-11-23 month curvature trades contribute the most profit."
+  ],
+  [
+   "QP06-C25-3",
+   "Sub-period view uses a 10-year moving average of monthly payoffs against both benchmarks."
+  ],
+  [
+   "QP06-C25-4",
+   "The edge over benchmarks narrowed over time for both 2-B and 3-B."
+  ],
+  [
+   "QP06-C26-5",
+   "Conclusion: strategies add significant value to S&P buy-and-hold."
+  ]
+ ]
+}

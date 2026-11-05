@@ -1,0 +1,1837 @@
+{
+ "source_id": "QP13",
+ "speakers": [
+  "Bob Stine (Department of Statistics, Wharton, University of Pennsylvania)"
+ ],
+ "summary": "Question: how to judge and size investments statistically. Method: dice simulation for volatility drag and Kelly sizing; CAPM regressions of Exxon, Berkshire, 'Bob', 'TEAM' (monthly 1980-2009); martingale (CERT) test of alpha via Doob's inequality plus Bonferroni. Conclusion: t-tests flag all four alphas, the robust martingale test only Berkshire, and multiplicity weakens even that.",
+ "approach_tags": [
+  "alpha testing",
+  "martingale test",
+  "multiple testing",
+  "volatility drag",
+  "Kelly sizing",
+  "CAPM",
+  "peso problem",
+  "fat tails"
+ ],
+ "coverage": [
+  {
+   "chunk": "C01",
+   "claims": 0,
+   "note": "nothing actionable: title"
+  },
+  {
+   "chunk": "C02",
+   "claims": 1,
+   "note": "$1 growth chart of four investments"
+  },
+  {
+   "chunk": "C03",
+   "claims": 1,
+   "note": "Bob Fund 2% guarantee teaser"
+  },
+  {
+   "chunk": "C04",
+   "claims": 4,
+   "note": "principles: returns, CAPM, peso problem, multiplicity"
+  },
+  {
+   "chunk": "C05",
+   "claims": 0,
+   "note": "nothing actionable: section header"
+  },
+  {
+   "chunk": "C06",
+   "claims": 1,
+   "note": "S&P 500 since 1950, ~7%/yr"
+  },
+  {
+   "chunk": "C07",
+   "claims": 1,
+   "note": "cumulative charts deceive"
+  },
+  {
+   "chunk": "C08",
+   "claims": 1,
+   "note": "monthly returns near iid, crashes"
+  },
+  {
+   "chunk": "C09",
+   "claims": 2,
+   "note": "return distribution, fat tails"
+  },
+  {
+   "chunk": "C10",
+   "claims": 1,
+   "note": "independent over time, correlated across assets"
+  },
+  {
+   "chunk": "C11",
+   "claims": 1,
+   "note": "1980-2009 mean/SD table"
+  },
+  {
+   "chunk": "C12",
+   "claims": 1,
+   "note": "how much / which assets"
+  },
+  {
+   "chunk": "C13",
+   "claims": 0,
+   "note": "nothing actionable: section header"
+  },
+  {
+   "chunk": "C14",
+   "claims": 0,
+   "note": "nothing actionable: section header"
+  },
+  {
+   "chunk": "C15",
+   "claims": 1,
+   "note": "Green/Red/White mean and SD"
+  },
+  {
+   "chunk": "C16",
+   "claims": 1,
+   "note": "dice payoffs, citation"
+  },
+  {
+   "chunk": "C17",
+   "claims": 1,
+   "note": "typical simulation"
+  },
+  {
+   "chunk": "C18",
+   "claims": 1,
+   "note": "Red expected value"
+  },
+  {
+   "chunk": "C19",
+   "claims": 2,
+   "note": "Red loses w.p. 1"
+  },
+  {
+   "chunk": "C20",
+   "claims": 1,
+   "note": "volatility drag E - Var/2"
+  },
+  {
+   "chunk": "C21",
+   "claims": 1,
+   "note": "diversification Pink"
+  },
+  {
+   "chunk": "C22",
+   "claims": 1,
+   "note": "lessons"
+  },
+  {
+   "chunk": "C23",
+   "claims": 1,
+   "note": "cautions: dependence, stability, unknown parameters"
+  },
+  {
+   "chunk": "C24",
+   "claims": 1,
+   "note": "long-run return table"
+  },
+  {
+   "chunk": "C25",
+   "claims": 3,
+   "note": "Kelly fraction, market 1.75"
+  },
+  {
+   "chunk": "C26",
+   "claims": 0,
+   "note": "nothing actionable: section header"
+  },
+  {
+   "chunk": "C27",
+   "claims": 2,
+   "note": "correlations, market first"
+  },
+  {
+   "chunk": "C28",
+   "claims": 2,
+   "note": "mutual fund persistence regression, dependence"
+  },
+  {
+   "chunk": "C29",
+   "claims": 1,
+   "note": "efficient frontier, tangent portfolio"
+  },
+  {
+   "chunk": "C30",
+   "claims": 2,
+   "note": "CAPM regression and alpha"
+  },
+  {
+   "chunk": "C31",
+   "claims": 1,
+   "note": "CAPM scatter results"
+  },
+  {
+   "chunk": "C32",
+   "claims": 1,
+   "note": "residual diagnostics"
+  },
+  {
+   "chunk": "C33",
+   "claims": 0,
+   "note": "nothing actionable: slide build repeating C32 residual plots"
+  },
+  {
+   "chunk": "C34",
+   "claims": 0,
+   "note": "nothing actionable: slide build repeating C32 residual plots"
+  },
+  {
+   "chunk": "C35",
+   "claims": 1,
+   "note": "Exxon alpha t-test"
+  },
+  {
+   "chunk": "C36",
+   "claims": 1,
+   "note": "t-test alpha table"
+  },
+  {
+   "chunk": "C37",
+   "claims": 0,
+   "note": "nothing actionable: section header"
+  },
+  {
+   "chunk": "C38",
+   "claims": 2,
+   "note": "doubts about t-test"
+  },
+  {
+   "chunk": "C39",
+   "claims": 3,
+   "note": "martingale (CERT) test construction"
+  },
+  {
+   "chunk": "C40",
+   "claims": 2,
+   "note": "Exxon CERT, beta from fine data"
+  },
+  {
+   "chunk": "C41",
+   "claims": 1,
+   "note": "CERT results"
+  },
+  {
+   "chunk": "C42",
+   "claims": 0,
+   "note": "nothing actionable: section header"
+  },
+  {
+   "chunk": "C43",
+   "claims": 2,
+   "note": "multiplicity, tightness"
+  },
+  {
+   "chunk": "C44",
+   "claims": 2,
+   "note": "Bob Fund hidden tail risk"
+  },
+  {
+   "chunk": "C45",
+   "claims": 3,
+   "note": "summary, citation"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "QP13-C02-1",
+   "chunk": "C02",
+   "speaker": "Bob Stine",
+   "quote": "Convincing going forward?",
+   "claim": "Growth of $1 from 1980 differs hugely across Exxon, Berkshire, 'Bob' and 'TEAM', but a cumulative-value chart alone does not show whether that performance will persist.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "monthly total returns 1980-2009 for Exxon, Berkshire Hathaway, 'Bob', 'TEAM'; CRSP value-weighted market (excess.vw); T-bill rate",
+   "reported_result": "Chart (log scale) $1 in 1980 to ~2009: Berkshire ~$55 (peak ~$85 in 2008), Exxon ~$15, Bob ~$6.5, TEAM ~$1.5 (read from image)",
+   "exhibit": "Slide 2 chart",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - from return data",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "role": "context"
+  },
+  {
+   "claim_id": "QP13-C03-1",
+   "chunk": "C03",
+   "speaker": "Bob Stine",
+   "quote": "Guarantees 2% excess annual returns above any benchmark you want. Guaranteed.",
+   "claim": "A fund promising a steady 2% annual excess return over any benchmark is set up as a puzzle: such smooth outperformance can be manufactured by hidden tail risk (resolved on slide 44).",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "new: hidden_tail_risk",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - see C44 construction",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP13-C04-1",
+   "chunk": "C04",
+   "speaker": "Bob Stine",
+   "quote": "Focus on returns, not cumulative value or prices",
+   "claim": "Evaluating investments should use returns rather than cumulative value, because one good year does not imply continuing success.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - principle",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP13-C04-2",
+   "chunk": "C04",
+   "speaker": "Bob Stine",
+   "quote": "Remove market performance (CAPM)",
+   "claim": "Market exposure should be removed with a CAPM regression before judging skill; leverage on the market looked like skill until the recent crash.",
+   "claim_type": "construction",
+   "exact_rule": "Judge skill by alpha from regression of excess returns on market excess returns",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "leverage made funds look good until 2008",
+   "testable": "partly - slide deck",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP13-C04-3",
+   "chunk": "C04",
+   "speaker": "Bob Stine",
+   "quote": "Watch for unseen volatility (Peso problem)",
+   "claim": "Strategies can carry risks not yet seen in the sample (peso problem): absence of a loss does not mean a loss is impossible.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "new: hidden_tail_risk",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - slide deck",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP13-C04-4",
+   "chunk": "C04",
+   "speaker": "Bob Stine",
+   "quote": "Adjust for multiplicity",
+   "claim": "Significance must be adjusted for the number of investments considered (multiple testing).",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - slide deck",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP13-C06-1",
+   "chunk": "C06",
+   "speaker": "Bob Stine",
+   "quote": "Data: Yahoo finance, Jan 1950 - Feb 2009, 710 months",
+   "claim": "A dollar in the S&P 500 from January 1950 grew at roughly 7% a year, appearing as a near straight line on a log scale.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "S&P 500 monthly levels (Yahoo Finance) Jan 1950-Feb 2009",
+   "reported_result": "~7% annual growth, Jan 1950-Feb 2009, 710 months; $1 grows to roughly $50-90 (chart, log and linear scale)",
+   "exhibit": "Slide 6 chart",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "S&P 500 cumulative value",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "context"
+  },
+  {
+   "claim_id": "QP13-C07-1",
+   "chunk": "C07",
+   "speaker": "Bob Stine",
+   "quote": "Too easy to be deceived...",
+   "claim": "Cumulative value charts deceive: a 'Special' series looks dramatically better than the market even though the difference may be a small per-period edge compounded, so one should compare returns.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "Chart 1950-2009: 'Special' peaks ~180 vs market ~90 and ends ~97 vs ~50 (read from image)",
+   "exhibit": "Slide 7 chart",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C08-1",
+   "chunk": "C08",
+   "speaker": "Bob Stine",
+   "quote": "Much simpler structure, almost iid...",
+   "claim": "Monthly S&P 500 returns have a much simpler, almost iid structure than prices, punctuated by crashes such as Oct 1987, Aug 1998 and Oct 2008.",
+   "claim_type": "result",
+   "exact_rule": "R_t = (P_t - P_{t-1}) / P_{t-1}",
+   "data_needed": "",
+   "reported_result": "Monthly returns roughly between -0.22 and +0.15, 1950-2009; marked outliers Oct 1987 'Black Monday', Aug 1998 LTCM, Oct 2008 banking crisis",
+   "exhibit": "Slide 8 chart",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "S&P 500 monthly return (P_t - P_t-1)/P_t-1",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - autocorrelation tests",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP13-C09-1",
+   "chunk": "C09",
+   "speaker": "Bob Stine",
+   "quote": "mean = 0.0064, s = 0.0415, s 2 = 0.0017",
+   "claim": "Monthly S&P 500 returns average 0.64% with SD 4.15%; their distribution has fat tails relative to the normal.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "Monthly 1950-2009: mean 0.0064, s 0.0415, s^2 0.0017; normal quantile plot shows fat left and right tails",
+   "exhibit": "Slide 9 histogram and normal quantile plot",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "S&P 500 monthly returns",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C09-2",
+   "chunk": "C09",
+   "speaker": "Bob Stine",
+   "quote": "Fat tails more apparent in daily data.",
+   "claim": "Fat tails are more pronounced in daily returns (mean 0.03%, SD 0.95%).",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "Daily: mean 0.0003, s 0.0095, s^2 0.0001",
+   "exhibit": "Slide 9",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "S&P 500 daily returns",
+   "horizon": "days",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C10-1",
+   "chunk": "C10",
+   "speaker": "Bob Stine",
+   "quote": "Sequence of “bets” that appear nearly independent, but correlation remains between assets.",
+   "claim": "Asset returns behave like a sequence of nearly independent bets over time, but they are correlated with each other; risk is the variation in returns.",
+   "claim_type": "mechanism",
+   "exact_rule": "R_t = (P_t - P_{t-1})/P_{t-1}; risk = SD of R_t",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "Slide 10 chart",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP13-C11-1",
+   "chunk": "C11",
+   "speaker": "Bob Stine",
+   "quote": "Trade off return for risk?",
+   "claim": "Over 1980-2009 the higher-mean assets also had higher monthly volatility, raising the question of how to trade return for risk.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "monthly total returns 1980-2009 for Exxon, Berkshire Hathaway, 'Bob', 'TEAM'; CRSP value-weighted market (excess.vw); T-bill rate",
+   "reported_result": "Monthly returns 1980-2009, mean/SD: Exxon 0.0089/0.0503; Berkshire 0.0137/0.0701; Bob 0.0064/0.0467; TEAM 0.0014/0.0217",
+   "exhibit": "Slide 11 table",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C12-1",
+   "chunk": "C12",
+   "speaker": "Bob Stine",
+   "quote": "Start with the whole-market index",
+   "claim": "Investing involves two questions, how much wealth to commit and which assets; the answer to 'which' starts with the whole-market index and then asks what to add.",
+   "claim_type": "implementation",
+   "exact_rule": "Core holding = whole-market index; add other assets only if they improve on it",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP13-C15-1",
+   "chunk": "C15",
+   "speaker": "Bob Stine",
+   "quote": "How do you decide: risk versus return?",
+   "claim": "Three hypothetical investments differ sharply in mean and SD (Green 7.5%/20%, Red 71%/132%, White 0%/6%), posing how to weigh risk against return.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "Annual mean/SD: Green 7.5%/20%; Red 71%/132%; White 0%/6%",
+   "exhibit": "Slide 15 table",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - simulation",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "context"
+  },
+  {
+   "claim_id": "QP13-C16-1",
+   "chunk": "C16",
+   "speaker": "Bob Stine",
+   "quote": "“Being Warren Buffett”, Amer Statistician, 2006",
+   "claim": "In the dice game each round multiplies wealth by a die outcome: Green 0.8/0.9/1.05/1.1/1.2/1.4, Red 0.06/0.2/1/3/3/3, White 0.9/1/1/1/1/1.1; the setup comes from the author's 'Being Warren Buffett' (American Statistician, 2006).",
+   "claim_type": "citation",
+   "exact_rule": "W_t = (die outcome multiplier) * W_{t-1}; Green {0.8,0.9,1.05,1.1,1.2,1.4}; Red {0.06,0.2,1,3,3,3}; White {0.9,1,1,1,1,1.1}",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "Slide 16 table",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - fully specified simulation",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP13-C17-1",
+   "chunk": "C17",
+   "speaker": "Bob Stine",
+   "quote": "Red is “exciting” but generally loses value.",
+   "claim": "In typical simulations Red swings wildly and ends near zero, Green (calibrated to US stock-market excess returns) grows steadily, and White (calibrated to T-bills) goes nowhere.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "Typical run over 20 rounds from 1000: Green ~10,000-12,000, White ~1,000, Red ~0 after peaks near 4,900 (read from image)",
+   "exhibit": "Slide 17 chart",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - simulation",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C18-1",
+   "chunk": "C18",
+   "speaker": "Bob Stine",
+   "quote": "In 20 rounds, the expected value of Red is",
+   "claim": "Red's expected value after 20 rounds is 1.71^20, about 45,700 times the start, and occasionally a run soars, yet this is driven by rare paths.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "E[Red after 20 rounds] = 1.71^20 = 45,700 x initial; occasional run reaches ~10^8 from 1000 by round 12 (chart, log scale)",
+   "exhibit": "Slide 18 chart",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - simulation",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C19-1",
+   "chunk": "C19",
+   "speaker": "Bob Stine",
+   "quote": "In the long run, Red will lose (w.p. 1)",
+   "claim": "Although Red has a huge expected value, almost every path loses most of its value and in the long run Red loses with probability one; the few lucky winners look like 'Warren Buffetts'.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "avoid assets with negative long-run growth even if mean is high",
+   "conditions": "",
+   "testable": "yes - geometric mean of Red < 1",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step"
+  },
+  {
+   "claim_id": "QP13-C19-2",
+   "chunk": "C19",
+   "speaker": "Bob Stine",
+   "quote": "How can I recognize that Red will lose without waiting for it to happen?",
+   "claim": "The practical question is how to recognise a long-run loser in advance and how to exploit it anyway.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "context"
+  },
+  {
+   "claim_id": "QP13-C20-1",
+   "chunk": "C20",
+   "speaker": "Bob Stine",
+   "quote": "If the r t are independent over time, then",
+   "claim": "With independent returns, long-run wealth grows at about E(r) - Var(r)/2 per period (volatility drag), so Green grows (0.055), while Red (-0.16) and White (-0.002) shrink.",
+   "claim_type": "mechanism",
+   "exact_rule": "W_t = W_0 prod(1+r_i) ~ W_0 (1 + E(r) - Var(r)/2)^t; long-run growth g = E(r) - Var(r)/2",
+   "data_needed": "",
+   "reported_result": "Green: 0.075 - 0.04/2 = 0.055; Red: 0.71 - 1.74/2 = -0.16; White: 0 - 0.003/2 = -0.002",
+   "exhibit": "Slide 20 table",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "returns independent over time",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step"
+  },
+  {
+   "claim_id": "QP13-C21-1",
+   "chunk": "C21",
+   "speaker": "Bob Stine",
+   "quote": "Mix investments rather than leaving everything in one.",
+   "claim": "A 50/50 mix of Red and White (Pink) halves the mean but cuts variance by four, giving positive long-run growth of 0.14 even though neither asset grows alone.",
+   "claim_type": "mechanism",
+   "exact_rule": "Pink = 0.5 Red + 0.5 White, rebalanced each round; E = 0.355, Var = 0.435, g = E - Var/2 = 0.14",
+   "data_needed": "",
+   "reported_result": "E(Pink) = 0.355; Var(Pink) = 0.435; long-run growth 0.14",
+   "exhibit": "Slide 21",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "rebalanced mix beats each component",
+   "conditions": "assets independent; weights rebalanced every period",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step"
+  },
+  {
+   "claim_id": "QP13-C22-1",
+   "chunk": "C22",
+   "speaker": "Bob Stine",
+   "quote": "Over short horizons, a poor long-term investment might appear very attractive.",
+   "claim": "Long-run return is E - Var/2, so short samples can make a poor long-run investment look attractive, and portfolios succeed by trading expected return for lower variance.",
+   "claim_type": "mechanism",
+   "exact_rule": "long-run return = E(return) - 0.5 Var(return)",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "conclusion"
+  },
+  {
+   "claim_id": "QP13-C23-1",
+   "chunk": "C23",
+   "speaker": "Bob Stine",
+   "quote": "Real investments lack some properties of the investments in the dice simulation",
+   "claim": "Unlike the dice, real investments are not independent of each other, their properties change over time, and their parameters are unknown.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "dependence, instability and estimation error weaken the dice lessons",
+   "testable": "no - qualitative",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "qualifier"
+  },
+  {
+   "claim_id": "QP13-C24-1",
+   "chunk": "C24",
+   "speaker": "Bob Stine",
+   "quote": "Long run Return",
+   "claim": "On 1980-2009 monthly data the long-run (volatility-adjusted) return ranks Berkshire first, then Exxon, Bob and TEAM.",
+   "claim_type": "result",
+   "exact_rule": "long-run return = mean - SD^2/2 (monthly)",
+   "data_needed": "monthly total returns 1980-2009 for Exxon, Berkshire Hathaway, 'Bob', 'TEAM'; CRSP value-weighted market (excess.vw); T-bill rate",
+   "reported_result": "Monthly 1980-2009 long-run return: Exxon 0.0076, Berkshire 0.0113, Bob 0.0053, TEAM 0.0012 (means 0.0089, 0.0137, 0.0064, 0.0014; SDs 0.0503, 0.0701, 0.0467, 0.0217)",
+   "exhibit": "Slide 24 table",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C25-1",
+   "chunk": "C25",
+   "speaker": "Bob Stine",
+   "quote": "If we accept the objective to maximize long- run wealth, then the proportion of our wealth p to put in an investment is",
+   "claim": "To maximise long-run wealth the fraction of wealth to put in an asset is p = (mu - rf) / sigma^2 (Kelly rule).",
+   "claim_type": "construction",
+   "exact_rule": "p = (mu - r_f) / sigma^2 (fraction of wealth; >1 means leverage; <0 means short)",
+   "data_needed": "expected excess return and variance of the asset",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP13-C25-2",
+   "chunk": "C25",
+   "speaker": "Bob Stine",
+   "quote": "μ and σ for the entire history of the market",
+   "claim": "Using the whole market history this rule says to hold about 1.75 times wealth in stocks, which the dice example suggests is more than people's risk aversion would accept.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "p = 0.075/0.040 = 1.75 times wealth (as printed; 0.075/0.040 equals 1.875)",
+   "exhibit": "Slide 25",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "US stock market excess return and variance",
+   "horizon": "unspecified",
+   "direction": "leveraged long market",
+   "conditions": "parameters assumed known and stable",
+   "testable": "yes",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C25-3",
+   "chunk": "C25",
+   "speaker": "Bob Stine",
+   "quote": "Nonetheless, we ought to invest some fraction of our wealth in any asset for which we know μ ≠ 0 (short it if μ < 0).",
+   "claim": "Any asset with a known non-zero expected excess return deserves some position, long if positive and short if negative.",
+   "claim_type": "implementation",
+   "exact_rule": "position sign = sign(mu - r_f); size per Kelly rule",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "risk_management",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "long if mu>0, short if mu<0",
+   "conditions": "mu must be known, not just estimated",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "conclusion"
+  },
+  {
+   "claim_id": "QP13-C27-1",
+   "chunk": "C27",
+   "speaker": "Bob Stine",
+   "quote": "Messy problem of portfolio analysis is to anticipate correlations going forward.",
+   "claim": "With many correlated assets, sizing each in isolation is wrong; the hard part of portfolio analysis is forecasting correlations.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "qualifier"
+  },
+  {
+   "claim_id": "QP13-C27-2",
+   "chunk": "C27",
+   "speaker": "Bob Stine",
+   "quote": "Invest first in the market as a whole",
+   "claim": "Finance theory says to hold the whole market first and then consider other assets.",
+   "claim_type": "implementation",
+   "exact_rule": "Hold market portfolio; evaluate other assets relative to it (alpha)",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP13-C28-1",
+   "chunk": "C28",
+   "speaker": "Bob Stine",
+   "quote": "Regress growth in current year on prior growth",
+   "claim": "A regression of 1,500 mutual funds' 1993 returns on their 1992 returns is 'statistically significant' (negative), but the sign changes in other years, because the 1,500 observations are dependent, not independent.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "annual returns of ~1,500 mutual funds",
+   "reported_result": "Return93 = 18.63 (SE 0.468, t 39.83) - 0.491 x Return92 (SE 0.0424, t -11.57); sign changes in other years (slide 28 table)",
+   "exhibit": "Slide 28 scatter and table",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "mutual fund annual return persistence",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "cross-sectional dependence (common market moves) inflates t-statistics",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C28-2",
+   "chunk": "C28",
+   "speaker": "Bob Stine",
+   "quote": "Explanation: 1,500 dependent observations...",
+   "claim": "Cross-sectional dependence among funds (common shocks) makes naive t-statistics wildly overstated, so apparent persistence or reversal is unreliable.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - cluster-robust or year-by-year tests",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "qualifier"
+  },
+  {
+   "claim_id": "QP13-C29-1",
+   "chunk": "C29",
+   "speaker": "Bob Stine",
+   "quote": "Plot average return on SD of return for a collection of randomly formed portfolios",
+   "claim": "Among randomly formed portfolios, mixing the tangent (market) portfolio with lending or borrowing at the risk-free rate gives better risk-return than any other portfolio.",
+   "claim_type": "mechanism",
+   "exact_rule": "Hold tangent portfolio; lend (below) or borrow (above) at r_f to reach desired risk",
+   "data_needed": "",
+   "reported_result": "Chart: r_f ~0.01; tangent portfolio at SD ~0.10, return ~0.037; random portfolios SD 0.05-0.27, returns -0.05 to +0.06 (read from image)",
+   "exhibit": "Slide 29 chart",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP13-C30-1",
+   "chunk": "C30",
+   "speaker": "Bob Stine",
+   "quote": "Excess returns on an asset are related to those on whole market by a linear equation",
+   "claim": "Excess asset returns are regressed on market excess returns, R_t - r_f = alpha + beta (M_t - r_f) + e_t; CAPM says alpha = 0 and specific returns are uncorrelated with the market.",
+   "claim_type": "construction",
+   "exact_rule": "OLS: R_t - r_f = alpha + beta (M_t - r_f) + e_t; beta = Cov(R-r_f, M-r_f)/Var(M-r_f); specific return w_t = (R_t-r_f) - beta (M_t-r_f)",
+   "data_needed": "monthly total returns 1980-2009 for Exxon, Berkshire Hathaway, 'Bob', 'TEAM'; CRSP value-weighted market (excess.vw); T-bill rate",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP13-C30-2",
+   "chunk": "C30",
+   "speaker": "Bob Stine",
+   "quote": "Intrinsic variation in asset has non-zero mean",
+   "claim": "If alpha is not zero, the asset's specific return has a non-zero mean and one should buy (or sell) some amount of it on top of the market.",
+   "claim_type": "implementation",
+   "exact_rule": "If alpha>0 add long position; if alpha<0 short; size by Kelly on specific return",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "long if alpha>0, short if alpha<0",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "conclusion"
+  },
+  {
+   "claim_id": "QP13-C31-1",
+   "chunk": "C31",
+   "speaker": "Bob Stine",
+   "quote": "All have substantial correlation with the returns on the whole market (market risk)",
+   "claim": "All four investments load substantially on the market; Exxon shows monthly alpha 0.006 (t 2.68) and Berkshire 0.01 (t 3.12) in simple CAPM regressions.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "monthly total returns 1980-2009 for Exxon, Berkshire Hathaway, 'Bob', 'TEAM'; CRSP value-weighted market (excess.vw); T-bill rate",
+   "reported_result": "CAPM scatter 1980-2009 monthly: Exxon alpha 0.006 t 2.68; Berkshire alpha 0.01 t 3.12; Bob and TEAM lie almost on the regression line (read from image)",
+   "exhibit": "Slide 31 charts",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C32-1",
+   "chunk": "C32",
+   "speaker": "Bob Stine",
+   "quote": "Residuals often deviate from the usual assumptions of simple regression.",
+   "claim": "CAPM residuals often violate regression assumptions: Bob's residuals take two distinct levels and TEAM's fan out in an X pattern against the market, indicating non-normal, non-linear behaviour.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "Residual plots vs excess.vw: Exxon/Berkshire diffuse; Bob residuals mostly ~-0.001 with a cluster at ~+0.015; TEAM residuals X-shaped, range ~-0.02 to +0.03 (read from image)",
+   "exhibit": "Slide 32 charts",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - residual diagnostics",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C35-1",
+   "chunk": "C35",
+   "speaker": "Bob Stine",
+   "quote": "Standard procedure relies on t-distribution to obtain p-value",
+   "claim": "The usual test of H0: alpha = 0 regresses out the market and uses a t-distribution; for Exxon this gives alpha 0.0062 (t 2.68, p 0.0077) and beta 0.56.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "monthly total returns 1980-2009 for Exxon, Berkshire Hathaway, 'Bob', 'TEAM'; CRSP value-weighted market (excess.vw); T-bill rate",
+   "reported_result": "Exxon monthly 1980-2009: alpha 0.0062 SE 0.0023 t 2.68 p 0.0077; beta 0.5623 SE 0.0500 t 11.25 p 0",
+   "exhibit": "Slide 35 table",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C36-1",
+   "chunk": "C36",
+   "speaker": "Bob Stine",
+   "quote": "Do you believe these results?",
+   "claim": "Standard t-tests say all four alphas are significant, including a tiny Bob alpha with t 5.5, which the author invites the audience to doubt.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "monthly total returns 1980-2009 for Exxon, Berkshire Hathaway, 'Bob', 'TEAM'; CRSP value-weighted market (excess.vw); T-bill rate",
+   "reported_result": "Alpha (monthly), t, p: Exxon 0.0062, 2.7, 0.008; Berkshire 0.0103, 3.1, 0.002; Bob 0.0016, 5.5, 0.000; Team -0.0008, -2.6, 0.009",
+   "exhibit": "Slide 36 table",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "low",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C38-1",
+   "chunk": "C38",
+   "speaker": "Bob Stine",
+   "quote": "Some investments produce returns that are far from Gaussian, with large outliers (fat tails)",
+   "claim": "The t-statistic's distribution is doubtful because some returns are far from Gaussian with fat tails, CAPM residuals are dependent, and volatility clusters (ARCH).",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - residual diagnostics",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP13-C38-2",
+   "chunk": "C38",
+   "speaker": "Bob Stine",
+   "quote": "Nonetheless want a p-value",
+   "claim": "Despite model risk, an investor still needs a valid p-value for alpha.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP13-C39-1",
+   "chunk": "C39",
+   "speaker": "Bob Stine",
+   "quote": "Assume only that E(w t |w t-1 ,w t-2 ,…) = 0 (not nec. iid)",
+   "claim": "The martingale test (CERT) assumes only that specific returns have zero conditional mean under the null, not iid or normality.",
+   "claim_type": "construction",
+   "exact_rule": "w_t = (R_t - r_f) - beta (M_t - r_f); H0: E(w_t | past) = 0",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP13-C39-2",
+   "chunk": "C39",
+   "speaker": "Bob Stine",
+   "quote": "CERT p-value from Doob’s inequality",
+   "claim": "Under the null, compound specific returns C_t = prod(1+w_i) are a non-negative martingale, so Doob's inequality gives P(max C_t >= gamma) <= 1/gamma; the p-value is 1/max C_t.",
+   "claim_type": "construction",
+   "exact_rule": "C_t = prod_{i<=t}(1+w_i); p-value = 1 / max_{t<=n} C_t (Doob: P(max C >= gamma) <= 1/gamma)",
+   "data_needed": "monthly total returns 1980-2009 for Exxon, Berkshire Hathaway, 'Bob', 'TEAM'; CRSP value-weighted market (excess.vw); T-bill rate",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - fully specified",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP13-C39-3",
+   "chunk": "C39",
+   "speaker": "Bob Stine",
+   "quote": "To reject H 0 at 0.05 level, compound returns have to exceed 20 during observed period",
+   "claim": "To reject no-alpha at the 5% level, the compounded market-neutral (specific) return must exceed 20 times its start at some point in the sample, a far tougher bar than a t-test.",
+   "claim_type": "construction",
+   "exact_rule": "Reject H0 at level a if max_t C_t >= 1/a (=20 for a=0.05)",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP13-C40-1",
+   "chunk": "C40",
+   "speaker": "Bob Stine",
+   "quote": "Since the martingale test does not depend on n, we can use finely spaced data that essentially reveal β (if you believe it’s fixed!)",
+   "claim": "Because the martingale test's bound does not depend on sample size, beta can be estimated precisely from high-frequency data, provided beta is constant.",
+   "claim_type": "construction",
+   "exact_rule": "Estimate beta b on fine (e.g. daily) data; compute residual returns (R_t - r_f) - b (M_t - r_f)",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "beta assumed fixed over the sample",
+   "testable": "yes",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP13-C40-2",
+   "chunk": "C40",
+   "speaker": "Bob Stine",
+   "quote": "“Residual” returns for Exxon,",
+   "claim": "Exxon's compounded residual (CERT) return rose from 1 in 1980 to a peak near 7.8 in 2008, well short of the 20 needed to reject at 5%.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "monthly total returns 1980-2009 for Exxon, Berkshire Hathaway, 'Bob', 'TEAM'; CRSP value-weighted market (excess.vw); T-bill rate",
+   "reported_result": "Exxon CERT returns 1980-2009: ~1 to ~2 by 1990, ~3.5 by 2000, peak ~7.8 in 2008, ~6.5 end (read from image)",
+   "exhibit": "Slide 40 chart",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C41-1",
+   "chunk": "C41",
+   "speaker": "Bob Stine",
+   "quote": "Only Berkshire Hathaway rejects the null, and then we have to consider multiplicity.",
+   "claim": "With the martingale test only Berkshire Hathaway's compounded residual return exceeds 20, so only it rejects zero alpha, and even that must survive a multiplicity adjustment; Exxon, Bob and TEAM fail.",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "monthly total returns 1980-2009 for Exxon, Berkshire Hathaway, 'Bob', 'TEAM'; CRSP value-weighted market (excess.vw); T-bill rate",
+   "reported_result": "CERT 1980-2009: Berkshire crosses 20 around 1998 and peaks ~26 in 2008; Exxon max ~7.8; Bob rises steadily to ~1.75; TEAM max ~1.35 (read from image)",
+   "exhibit": "Slide 41 charts",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C43-1",
+   "chunk": "C43",
+   "speaker": "Bob Stine",
+   "quote": "Multiply the p-value from martingale test by number of assets considered.",
+   "claim": "A martingale p-value of 1/20 does not survive multiple testing; the Bonferroni fix multiplies it by the number of assets considered, which is usually more than four.",
+   "claim_type": "construction",
+   "exact_rule": "Adjusted p = min(1, m / max C_t) where m = number of assets/strategies considered",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP13-C43-2",
+   "chunk": "C43",
+   "speaker": "Bob Stine",
+   "quote": "The test is “tight” in the sense that there are processes you would not want to consider for which it gets the right answer,",
+   "claim": "The martingale test is tight: there exist processes (like the Bob Fund) for which its bound is exact, so it cannot be made more powerful without assumptions.",
+   "claim_type": "robustness",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "qualifier"
+  },
+  {
+   "claim_id": "QP13-C44-1",
+   "chunk": "C44",
+   "speaker": "Bob Stine",
+   "quote": "How do you guarantee those 2% above benchmark returns?",
+   "claim": "The 'Bob Fund' delivers smooth excess returns by earning 1/k each period with probability k/(k+1) and losing everything with probability 1/(k+1), so its expected excess return is zero; with k=19 it shows a bit over 2% growth until it busts.",
+   "claim_type": "mechanism",
+   "exact_rule": "r_t = 1/k w.p. k/(k+1); r_t = -1 w.p. 1/(k+1); E(r_t) = 0; example k = 19",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "new: hidden_tail_risk",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "smooth positive excess returns hide a rare total loss",
+   "conditions": "looks good until the rare loss happens (peso problem)",
+   "testable": "yes - simulation",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C44-2",
+   "chunk": "C44",
+   "speaker": "Bob Stine",
+   "quote": "Martingale test protects against the “until it happens” unobserved volatility",
+   "claim": "For any k, the chance that the Bob Fund's compounded excess return ever exceeds 20 is exactly 1/20, so the martingale test keeps its stated size even against hidden-tail-risk strategies.",
+   "claim_type": "robustness",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "P(C_t of Bob Fund > 20) = 1/20 for any k",
+   "exhibit": "",
+   "mechanism": "new: hidden_tail_risk",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - simulation",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP13-C45-1",
+   "chunk": "C45",
+   "speaker": "Bob Stine",
+   "quote": "Watch for unseen volatility using robust test",
+   "claim": "The recommended workflow is: use returns, regress out the market (CAPM), test alpha with the martingale (CERT) test robust to hidden volatility, and adjust for multiplicity with Bonferroni.",
+   "claim_type": "implementation",
+   "exact_rule": "returns -> CAPM residuals -> CERT p = 1/max C_t -> Bonferroni x number of candidates",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "conclusion"
+  },
+  {
+   "claim_id": "QP13-C45-2",
+   "chunk": "C45",
+   "speaker": "Bob Stine",
+   "quote": "Bonferroni does fine, particularly since it’s hard to “count” the considered alternatives",
+   "claim": "Bonferroni is adequate because the true number of alternatives considered is hard to count anyway.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "qualifier"
+  },
+  {
+   "claim_id": "QP13-C45-3",
+   "chunk": "C45",
+   "speaker": "Bob Stine",
+   "quote": "Foster, Stine, Young (2008) “A martingale test for alpha”",
+   "claim": "The test is from Foster, Stine and Young (2008), 'A martingale test for alpha'.",
+   "claim_type": "citation",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - paper not in this deck",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "context"
+  }
+ ],
+ "reasoning": {
+  "question": "How should an investor judge whether an investment's past outperformance reflects genuine skill (alpha) that will persist, and how much to invest in it, when returns are fat-tailed, dependent, and many candidates are examined?",
+  "thesis": {
+   "statement": "Judge investments on returns, not cumulative value; size by long-run growth (E - Var/2, Kelly); remove market exposure with CAPM; and test alpha with a martingale (CERT) test that needs compounded residual returns to exceed 1/alpha (20 at 5%), adjusted by Bonferroni for the number of candidates. On this test only Berkshire's 1980-2009 alpha survives, and even it is marginal after multiplicity.",
+   "claim_ids": [
+    "QP13-C04-1",
+    "QP13-C20-1",
+    "QP13-C25-1",
+    "QP13-C30-1",
+    "QP13-C39-2",
+    "QP13-C39-3",
+    "QP13-C41-1",
+    "QP13-C45-1"
+   ]
+  },
+  "foundations": [
+   {
+    "premise": "Returns over time are nearly independent (close to iid), though correlated across assets.",
+    "type": "empirical",
+    "stated": "stated",
+    "support": "S&P 500 monthly return chart since 1950",
+    "claim_ids": [
+     "QP13-C08-1",
+     "QP13-C10-1"
+    ]
+   },
+   {
+    "premise": "Returns are fat-tailed, especially at daily frequency, and CAPM residuals are non-Gaussian and dependent (ARCH).",
+    "type": "empirical",
+    "stated": "stated",
+    "support": "normal quantile plots, residual plots",
+    "claim_ids": [
+     "QP13-C09-1",
+     "QP13-C09-2",
+     "QP13-C32-1",
+     "QP13-C38-1"
+    ]
+   },
+   {
+    "premise": "Long-run wealth compounds, so the relevant return is the geometric (E - Var/2), not the arithmetic mean.",
+    "type": "theoretical",
+    "stated": "stated",
+    "support": "approximation plus dice simulation",
+    "claim_ids": [
+     "QP13-C20-1",
+     "QP13-C19-1",
+     "QP13-C22-1"
+    ]
+   },
+   {
+    "premise": "The market portfolio is the tangent portfolio; skill is only what remains after removing market exposure.",
+    "type": "theoretical",
+    "stated": "stated",
+    "support": "CAPM / efficient frontier",
+    "claim_ids": [
+     "QP13-C29-1",
+     "QP13-C30-1",
+     "QP13-C27-2"
+    ]
+   },
+   {
+    "premise": "Strategies can hide rare large losses (peso problem) that a finite sample never shows.",
+    "type": "theoretical",
+    "stated": "stated",
+    "support": "Bob Fund construction",
+    "claim_ids": [
+     "QP13-C04-3",
+     "QP13-C44-1"
+    ]
+   },
+   {
+    "premise": "Investors search over many candidates, so the best observed alpha is inflated (multiplicity).",
+    "type": "institutional",
+    "stated": "stated",
+    "support": "assertion, mutual-fund example",
+    "claim_ids": [
+     "QP13-C04-4",
+     "QP13-C43-1",
+     "QP13-C28-2"
+    ]
+   }
+  ],
+  "mechanism_chain": [
+   {
+    "step": 1,
+    "from": "high-variance asset",
+    "to": "low or negative long-run growth despite high mean",
+    "why": "volatility drag: growth ~ E - Var/2",
+    "evidence": "example",
+    "claim_ids": [
+     "QP13-C20-1",
+     "QP13-C18-1",
+     "QP13-C19-1"
+    ]
+   },
+   {
+    "step": 2,
+    "from": "rebalanced mixing of assets",
+    "to": "higher long-run growth",
+    "why": "variance falls faster than mean (by 4 vs 2 for a 50/50 mix)",
+    "evidence": "example",
+    "claim_ids": [
+     "QP13-C21-1",
+     "QP13-C22-1"
+    ]
+   },
+   {
+    "step": 3,
+    "from": "growth objective",
+    "to": "position size p = (mu - rf)/sigma^2",
+    "why": "maximising E - Var/2 over the fraction invested",
+    "evidence": "assertion",
+    "claim_ids": [
+     "QP13-C25-1",
+     "QP13-C25-3"
+    ]
+   },
+   {
+    "step": 4,
+    "from": "asset return",
+    "to": "specific return after removing market beta",
+    "why": "market exposure is available cheaply via the index",
+    "evidence": "assertion",
+    "claim_ids": [
+     "QP13-C30-1",
+     "QP13-C30-2"
+    ]
+   },
+   {
+    "step": 5,
+    "from": "specific returns with zero conditional mean (no alpha)",
+    "to": "compounded specific return is a non-negative martingale",
+    "why": "product of (1+w) with E(w|past)=0",
+    "evidence": "assertion",
+    "claim_ids": [
+     "QP13-C39-1",
+     "QP13-C39-2"
+    ]
+   },
+   {
+    "step": 6,
+    "from": "martingale property",
+    "to": "valid p-value 1/max C_t regardless of tails or dependence",
+    "why": "Doob's maximal inequality",
+    "evidence": "test",
+    "claim_ids": [
+     "QP13-C39-2",
+     "QP13-C39-3",
+     "QP13-C44-2"
+    ]
+   },
+   {
+    "step": 7,
+    "from": "p-value per candidate",
+    "to": "family-wise valid conclusion",
+    "why": "Bonferroni multiply by number of candidates",
+    "evidence": "assertion",
+    "claim_ids": [
+     "QP13-C43-1",
+     "QP13-C45-2"
+    ]
+   }
+  ],
+  "design_rationale": [
+   {
+    "choice": "Use returns rather than cumulative value/prices",
+    "reason_given": "cumulative charts deceive; returns are close to iid",
+    "alternatives": "cumulative value charts",
+    "sensitivity": "not shown",
+    "claim_ids": [
+     "QP13-C04-1",
+     "QP13-C07-1",
+     "QP13-C08-1"
+    ]
+   },
+   {
+    "choice": "Kelly fraction p = (mu - rf)/sigma^2",
+    "reason_given": "maximises long-run wealth",
+    "alternatives": "implied: more risk-averse fractions",
+    "sensitivity": "market history gives 1.75x leverage, which the author considers too aggressive",
+    "claim_ids": [
+     "QP13-C25-1",
+     "QP13-C25-2"
+    ]
+   },
+   {
+    "choice": "CAPM regression to remove market risk",
+    "reason_given": "market can be bought directly; leverage looked like skill",
+    "alternatives": "raw returns",
+    "sensitivity": "not shown",
+    "claim_ids": [
+     "QP13-C04-2",
+     "QP13-C30-1"
+    ]
+   },
+   {
+    "choice": "Martingale (CERT) test instead of t-test",
+    "reason_given": "t-test unreliable with fat tails, dependence, ARCH; CERT assumes only zero conditional mean",
+    "alternatives": "standard t-test",
+    "sensitivity": "t-test rejects for all four; CERT only for Berkshire",
+    "claim_ids": [
+     "QP13-C38-1",
+     "QP13-C39-1",
+     "QP13-C36-1",
+     "QP13-C41-1"
+    ]
+   },
+   {
+    "choice": "Estimate beta from finely spaced data",
+    "reason_given": "CERT bound does not depend on n",
+    "alternatives": "monthly beta",
+    "sensitivity": "requires constant beta",
+    "claim_ids": [
+     "QP13-C40-1"
+    ]
+   },
+   {
+    "choice": "Bonferroni multiplicity adjustment",
+    "reason_given": "simple; number of alternatives is hard to count anyway",
+    "alternatives": "none mentioned",
+    "sensitivity": "not shown",
+    "claim_ids": [
+     "QP13-C43-1",
+     "QP13-C45-2"
+    ]
+   }
+  ],
+  "evidence_map": [
+   {
+    "result": "Dice game: Red (mean 71%) loses almost surely; 50/50 Red/White mix grows at 0.14",
+    "tests": "steps 1-2 (volatility drag, diversification)",
+    "rules_out": "judging by arithmetic mean",
+    "does_not_rule_out": "(reader) real assets are correlated and parameters unknown, as the author notes",
+    "strength": "strong - mathematical, but stylised",
+    "claim_ids": [
+     "QP13-C19-1",
+     "QP13-C20-1",
+     "QP13-C21-1",
+     "QP13-C23-1"
+    ]
+   },
+   {
+    "result": "t-tests find significant alpha for Exxon, Berkshire, Bob and (negative) TEAM; CERT rejects only for Berkshire",
+    "tests": "steps 5-6: robust test is stricter",
+    "rules_out": "that the Exxon/Bob/TEAM alphas are robust",
+    "does_not_rule_out": "(reader) Berkshire's alpha may be a factor exposure (value, quality, low-beta) or survivorship-selected; after Bonferroni over many candidates it may also fail",
+    "strength": "moderate - four assets, one period",
+    "claim_ids": [
+     "QP13-C35-1",
+     "QP13-C36-1",
+     "QP13-C41-1"
+    ]
+   },
+   {
+    "result": "Bob Fund with hidden total-loss risk exceeds 20 with probability exactly 1/20",
+    "tests": "step 6: test keeps size against peso-type strategies",
+    "rules_out": "smooth-return strategies passing at a rate above test size",
+    "does_not_rule_out": "(reader) low power for genuine small alphas over short samples",
+    "strength": "strong - analytical",
+    "claim_ids": [
+     "QP13-C44-1",
+     "QP13-C44-2",
+     "QP13-C43-2"
+    ]
+   },
+   {
+    "result": "Mutual fund 1993-on-1992 slope -0.49, t -11.6, but sign flips across years",
+    "tests": "premise that cross-sectional dependence inflates significance",
+    "rules_out": "naive pooled t-tests of persistence",
+    "does_not_rule_out": "(reader) genuine time-varying reversal from style rotation",
+    "strength": "moderate - single illustration",
+    "claim_ids": [
+     "QP13-C28-1",
+     "QP13-C28-2"
+    ]
+   }
+  ],
+  "regimes": [
+   {
+    "condition": "leverage in rising markets (until 2008)",
+    "effect": "leveraged market exposure looks like skill until a crash",
+    "claim_ids": [
+     "QP13-C04-2"
+    ]
+   },
+   {
+    "condition": "market crashes (Oct 1987, Aug 1998, Oct 2008)",
+    "effect": "outliers dominate tails; peso-type risks materialise",
+    "claim_ids": [
+     "QP13-C08-1",
+     "QP13-C04-3"
+    ]
+   },
+   {
+    "condition": "short horizons",
+    "effect": "a poor long-run investment can look very attractive",
+    "claim_ids": [
+     "QP13-C22-1",
+     "QP13-C18-1"
+    ]
+   },
+   {
+    "condition": "real-world dependence and changing parameters",
+    "effect": "dice-game sizing lessons weaken",
+    "claim_ids": [
+     "QP13-C23-1",
+     "QP13-C27-1"
+    ]
+   }
+  ],
+  "gaps_and_conflicts": [
+   {
+    "issue": "Kelly example prints p = 0.075/0.040 = 1.75; the arithmetic gives 1.875",
+    "type": "conflict",
+    "claim_ids": [
+     "QP13-C25-2"
+    ]
+   },
+   {
+    "issue": "Identity and construction of 'Bob' and 'TEAM' series are not explained on the slides",
+    "type": "unspecified",
+    "claim_ids": [
+     "QP13-C11-1",
+     "QP13-C32-1"
+    ]
+   },
+   {
+    "issue": "Market proxy (excess.vw), risk-free series and beta-estimation frequency for the CERT results are not fully stated",
+    "type": "unspecified",
+    "claim_ids": [
+     "QP13-C30-1",
+     "QP13-C40-1"
+    ]
+   },
+   {
+    "issue": "Power of the martingale test (how large/long an alpha is needed to reach 20) is not quantified",
+    "type": "untested",
+    "claim_ids": [
+     "QP13-C43-2",
+     "QP13-C39-3"
+    ]
+   },
+   {
+    "issue": "CERT assumes constant beta; time-varying beta would leak market returns into w_t",
+    "type": "untested",
+    "claim_ids": [
+     "QP13-C40-1"
+    ]
+   },
+   {
+    "issue": "'Special' series on slide 7 is not defined",
+    "type": "unspecified",
+    "claim_ids": [
+     "QP13-C07-1"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "other_idea": "volatility targeting / Kelly sizing",
+    "relation": "complement",
+    "why": "both size positions by expected return over variance",
+    "claim_ids": [
+     "QP13-C25-1",
+     "QP13-C20-1"
+    ]
+   },
+   {
+    "other_idea": "multiple-testing adjustments for backtests (Holm, deflated Sharpe)",
+    "relation": "complement",
+    "why": "Bonferroni on CERT p-values addresses the same data-mining risk",
+    "claim_ids": [
+     "QP13-C43-1",
+     "QP13-C45-2"
+    ]
+   },
+   {
+    "other_idea": "Sharpe ratio / t-stat based strategy evaluation",
+    "relation": "substitute",
+    "why": "CERT replaces the t-test where tails and dependence make t unreliable",
+    "claim_ids": [
+     "QP13-C38-1",
+     "QP13-C39-2"
+    ]
+   },
+   {
+    "other_idea": "short-volatility / carry strategies",
+    "relation": "special case",
+    "why": "(reader) the Bob Fund is a stylised short-tail-risk strategy with smooth returns and rare crashes",
+    "claim_ids": [
+     "QP13-C44-1"
+    ]
+   }
+  ],
+  "forward_looking_inputs": "(reader) No market-timing input is proposed; the forward-looking content is a filter: an alpha is credible going forward only if compounded market-neutral returns exceeded m/alpha-level (m = number of candidates) in-sample (step 6-7), and the size of any holding should follow (mu - rf)/sigma^2 shrunk for estimation error (step 3). The filter stops being reliable if beta drifts over time, if the candidate count is understated, or if the search horizon is too short to reach the threshold.",
+  "reader_inferences": [
+   "(reader) For the Global Macro Book, the CERT test is a usable non-parametric check on strategy alpha: compound the residual (beta-hedged) returns and require max cumulative value above m/0.05.",
+   "(reader) The Bob Fund maps onto short-volatility or carry strategies whose smooth returns hide crash risk; Sharpe-based tests overstate their significance.",
+   "(reader) Bob's residual plot (two levels) and steady CERT path suggest a constructed series with a fixed small excess and rare jumps, but the slides do not say so.",
+   "(reader) Berkshire's CERT success may reflect known factor exposures; with a multi-factor model it might not reject.",
+   "(reader) The Kelly 1.75 figure appears to be an arithmetic slip (1.875), not a different formula."
+  ]
+ }
+}

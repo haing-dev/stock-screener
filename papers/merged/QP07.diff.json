@@ -1,0 +1,98 @@
+{
+ "opus_only": [
+  [
+   "QP07-C08-4b",
+   "The maturity-specific curve may be the sum of several components, each reverting at its own rate (eq. 4)."
+  ],
+  [
+   "QP07-C10-2b",
+   "Habitat demand shifts spill to neighbouring maturities (close substitutes), so the maturity-specific deviation is a smooth curve averaging zero that is assumed to decay exponentially, which also meets the HJM no-arbitrage requirement."
+  ],
+  [
+   "QP07-C12-1b",
+   "M1 is humped with peak at tau = ln2/Km and a fixed shape scaled by the Ito process m(t)."
+  ],
+  [
+   "QP07-C17-3b",
+   "Forecasts are judged by RMSE of predicted futures-implied forward rates and by profits of a simple trading strategy."
+  ],
+  [
+   "QP07-C18-7b",
+   "Footnote 6: NW statistic = mean of daily RMSE differences divided by its Newey-West standard error; Diebold-Mariano would be an alternative."
+  ],
+  [
+   "QP07-C21-2b",
+   "The training sample (1981-91) had forward rates near 9% and contracts only to about 4 years, versus about 6.2% and up to 10 years in the full sample."
+  ],
+  [
+   "QP07-C30-2b",
+   "Only Km (decay rate) and sigma*^2 (measurement-error variance) are optimised by QML; C0, C1, C2 come from the unconditional-curve fit."
+  ],
+  [
+   "QP07-C30-3b",
+   "Measurement equation: z_t = f(tau;t) - U_hat(tau) = A x_t + eps_t with row A_j = [e(tau_j)'M, e(tau_j)'D]."
+  ],
+  [
+   "QP07-C31-2b",
+   "Footnote 8: state variables that would make diffusions negative are reset to the boundary value."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP07-C02-2",
+   "M reflects preferred-habitat supply/demand at specific maturities; D reflects changing expectations of future spot rates."
+  ],
+  [
+   "QP07-C06-3",
+   "Component 1: unconditional steady-state forward curve."
+  ],
+  [
+   "QP07-C07-2",
+   "The model class is arbitrage-free (HJM-verified), unlike simple curve-fitting forecasts."
+  ],
+  [
+   "QP07-C07-3",
+   "Test target: forecast 90-day forward rates at future dates using a representative member of the model class."
+  ],
+  [
+   "QP07-C08-4",
+   "Habitat effects stay local to a maturity region, they do not roll down toward spot, so they decay rather than shift."
+  ],
+  [
+   "QP07-C09-2",
+   "Date-specific deviation derives from the Expectations Hypothesis (Fisher)."
+  ],
+  [
+   "QP07-C10-2",
+   "D(inf;t)=0, and D(0;t)=spot rate minus unconditional spot rate."
+  ],
+  [
+   "QP07-C10-3",
+   "M arises from abnormal pricing at certain maturities driven by habitat and preferences of individual and institutional investors."
+  ],
+  [
+   "QP07-C10-4",
+   "Close substitutability across nearby maturities justifies modelling M as a smooth curve."
+  ],
+  [
+   "QP07-C10-5",
+   "No information on M dynamics, so exponential decay to zero is chosen as the simplest assumption (also needed for HJM no-arbitrage)."
+  ],
+  [
+   "QP07-C24-2",
+   "NW comparison vs buy-and-hold uses only days where signals differ; positive NW means CFRS better."
+  ],
+  [
+   "QP07-C30-1",
+   "QML estimation: assume Gaussian innovations, optimise Km and sigma*^2 over the quasi-log-likelihood."
+  ],
+  [
+   "QP07-C31-2",
+   "Kalman prediction and update equations (Eq 28-33): x_{t|t-1}=W x_{t-1|t-1}; P_{t|t-1}=W P W'+Q_t; update with gain P A' H^-1 v_t; H_t=A P A' + sigma*^2 I; ln L = -(nT/2) ln 2pi - 1/2 sum(ln|H_t| + v_t' H_t^-1 v_t)."
+  ],
+  [
+   "QP07-C31-3",
+   "Footnote 8: diffusion terms depend on the m states and must be non-negative, so states breaching the bound are reset to the nearest feasible value."
+  ]
+ ]
+}

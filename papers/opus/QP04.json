@@ -1,0 +1,668 @@
+{
+ "source_id": "QP04",
+ "speakers": [
+  "David Harding (Winton Capital, interviewee)",
+  "Clive Cookson (Financial Times, author)"
+ ],
+ "summary": "FT profile (Nov 2016) of David Harding: how Winton invests. Method: interview; no data. Message: exploit many weak, renewable statistical signals across broad markets, grounded in behavioural failures of efficient markets.",
+ "approach_tags": [
+  "systematic investing philosophy",
+  "weak signals and breadth",
+  "alternative data",
+  "signal decay",
+  "behavioural inefficiency"
+ ],
+ "coverage": [
+  {
+   "chunk": "C01",
+   "claims": 2,
+   "note": "Harding background, science-in-finance premise, AUM"
+  },
+  {
+   "chunk": "C02",
+   "claims": 0,
+   "note": "nothing actionable: full-page portrait photo (checked image)"
+  },
+  {
+   "chunk": "C03",
+   "claims": 18,
+   "note": "weak signals, breadth, weather/inventory/seasonal signals, decay, EMH critique, research process; philanthropy and tax paragraphs not actionable"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "QP04-C01-1",
+   "chunk": "C01",
+   "speaker": "Clive Cookson (FT journalist)",
+   "quote": "Harding’s idea was that finance could use science to identify and exploit inefficiencies in the markets.",
+   "claim": "Scientific and mathematical methods can find and exploit market inefficiencies (Harding 1994 Royal Society paper \"Making money from mathematical models\").",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - general premise",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP04-C01-2",
+   "chunk": "C01",
+   "speaker": "Clive Cookson (FT journalist)",
+   "quote": "manages $32bn of assets",
+   "claim": "Winton managed about $32bn in 2016, showing the approach scales to large capacity.",
+   "claim_type": "implementation",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "$32bn AUM (Nov 2016)",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - fact",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "context"
+  },
+  {
+   "claim_id": "QP04-C03-1",
+   "chunk": "C03",
+   "speaker": "David Harding (interviewed)",
+   "quote": "The aim is to exploit a large number of weak predictive signals",
+   "claim": "Winton combines many weak predictive signals across a broad universe rather than relying on a few strong ones.",
+   "claim_type": "construction",
+   "exact_rule": "Combine many weak signals across many instruments (breadth over signal strength); specifics not given",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "many weak signals",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - principle only",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP04-C03-2",
+   "chunk": "C03",
+   "speaker": "David Harding (interviewed)",
+   "quote": "if there are strong relationships, someone else is going to be exploiting those. Weak relationships are where we have a competitive advantage.",
+   "claim": "Strong predictive relationships get arbitraged away by competitors, so the remaining edge lies in many weak relationships.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "crowding_positioning",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "avoid obvious strong signals",
+   "conditions": "",
+   "testable": "no - competitive argument",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step"
+  },
+  {
+   "claim_id": "QP04-C03-3",
+   "chunk": "C03",
+   "speaker": "Clive Cookson (FT journalist)",
+   "quote": "covering bonds, currencies, commodities, market indices and individual equi- ties.",
+   "claim": "The universe spans bonds, currencies, commodities, equity indices and single stocks, giving breadth for weak signals.",
+   "claim_type": "construction",
+   "exact_rule": "Universe: bonds, FX, commodities, equity index futures, single equities",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - description",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP04-C03-4",
+   "chunk": "C03",
+   "speaker": "Clive Cookson (FT journalist)",
+   "quote": "analysis of cloud cover and soil moisture levels to predict the prices of agricultural commodities.",
+   "claim": "Weather data such as cloud cover and soil moisture are used to forecast agricultural commodity prices.",
+   "claim_type": "construction",
+   "exact_rule": "",
+   "data_needed": "satellite/weather data: cloud cover, soil moisture; agricultural futures prices",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "new: weather_supply",
+   "asset_class": "commodities",
+   "indicator": "cloud cover; soil moisture",
+   "horizon": "months",
+   "direction": "supply shock forecasts -> ag price direction (unspecified)",
+   "conditions": "",
+   "testable": "yes - weather data vs crop futures",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP04-C03-5",
+   "chunk": "C03",
+   "speaker": "Clive Cookson (FT journalist)",
+   "quote": "Other important indicators, for which maths can uncover value not fully reflected in market prices, include seasonal factors and inventory levels across supply chains.",
+   "claim": "Seasonal patterns and supply-chain inventory levels carry price information not fully priced in markets.",
+   "claim_type": "construction",
+   "exact_rule": "",
+   "data_needed": "inventory data across supply chains; seasonal price history",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "seasonality",
+   "asset_class": "commodities",
+   "indicator": "seasonal factors; inventory levels",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - inventory and seasonality signals testable",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP04-C03-6",
+   "chunk": "C03",
+   "speaker": "Clive Cookson (FT journalist)",
+   "quote": "Harding admits to using science and mathemat- ics as a marketing tool",
+   "claim": "Harding concedes the science framing is partly marketing, while insisting science controls the strategy.",
+   "claim_type": "caveat",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - admission",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "qualifier"
+  },
+  {
+   "claim_id": "QP04-C03-7",
+   "chunk": "C03",
+   "speaker": "David Harding (interviewed)",
+   "quote": "eventually what we discovered would leak out",
+   "claim": "Research discoveries leak to competitors over time, so edges decay even when kept secret.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "crowding_positioning",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - signal decay after publication",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step"
+  },
+  {
+   "claim_id": "QP04-C03-8",
+   "chunk": "C03",
+   "speaker": "Clive Cookson (FT journalist)",
+   "quote": "Those clients have seen a compound annual growth rate of 12.8 per cent, net of fees.",
+   "claim": "Winton clients earned 12.8% a year compounded, net of fees (period not stated, presumably since 1997).",
+   "claim_type": "result",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "CAGR 12.8% net of fees (period unstated, fund unstated)",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - unaudited figure in article",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "evidence"
+  },
+  {
+   "claim_id": "QP04-C03-9",
+   "chunk": "C03",
+   "speaker": "unnamed quantitative fund manager (quoted)",
+   "quote": "I would estimate that systematic or mathe- matical funds amount to 15 per cent of assets in the hedge fund industry",
+   "claim": "Another quant manager estimates systematic funds at about 15% of hedge fund assets, $330-450bn.",
+   "claim_type": "implementation",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "~15% of hedge fund assets; $330bn-$450bn (2016 estimate)",
+   "exhibit": "",
+   "mechanism": "crowding_positioning",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - estimate",
+   "speaker_confidence": "low",
+   "time_bound": "yes",
+   "role": "context"
+  },
+  {
+   "claim_id": "QP04-C03-10",
+   "chunk": "C03",
+   "speaker": "David Harding (interviewed)",
+   "quote": "we have used techniques that would be described as machine learning for at least 30 years.",
+   "claim": "Winton has used what is now called machine learning for decades; the AI excitement is not new to quant investing.",
+   "claim_type": "construction",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - claim",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "context"
+  },
+  {
+   "claim_id": "QP04-C03-11",
+   "chunk": "C03",
+   "speaker": "Clive Cookson (FT journalist)",
+   "quote": "This is a never- ending process because predictive tools lose their power as markets change; new ones are always needed.",
+   "claim": "Predictive signals lose power as markets change, so research must continually find new signals.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "expect signal decay",
+   "conditions": "",
+   "testable": "yes - out-of-sample decay of signals",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "mechanism_step"
+  },
+  {
+   "claim_id": "QP04-C03-12",
+   "chunk": "C03",
+   "speaker": "David Harding (interviewed)",
+   "quote": "We have 450 people in the company, of whom 250 are involved in research, data collection or technology",
+   "claim": "Most staff (250 of 450) work in research, data or technology, reflecting the resource cost of continual signal renewal.",
+   "claim_type": "implementation",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "450 staff, 250 in research/data/technology (2016)",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - fact",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "context"
+  },
+  {
+   "claim_id": "QP04-C03-13",
+   "chunk": "C03",
+   "speaker": "Clive Cookson (FT journalist)",
+   "quote": "in 1987, he co-founded AHL as a commodities trading firm with two other young physicists",
+   "claim": "Harding co-founded AHL (1987, sold to Man Group 1994) and founded Winton in 1997 on empirical research.",
+   "claim_type": "implementation",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "commodities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - history",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "role": "context"
+  },
+  {
+   "claim_id": "QP04-C03-14",
+   "chunk": "C03",
+   "speaker": "Clive Cookson (FT journalist)",
+   "quote": "these methods consist essentially of selling complex derivatives at marked-up prices and of arbitrage",
+   "claim": "Banks and brokers mainly earn from fees, marked-up derivatives and arbitrage, unlike prediction-based investing.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - characterisation",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "context"
+  },
+  {
+   "claim_id": "QP04-C03-15",
+   "chunk": "C03",
+   "speaker": "David Harding (interviewed)",
+   "quote": "It treats economics like a physical science when, in fact, it is a human or social science.",
+   "claim": "Efficient market theory is wrong because economics is a human science, not a physical one.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - philosophical",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP04-C03-16",
+   "chunk": "C03",
+   "speaker": "David Harding (interviewed)",
+   "quote": "Humans are prone to unpredictable behaviour, to over-reaction or slumbering inaction, to mania and panic.",
+   "claim": "Human over-reaction, under-reaction (slumbering inaction), mania and panic create exploitable price patterns.",
+   "claim_type": "mechanism",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "both momentum (inaction) and reversal (over-reaction) possible",
+   "conditions": "",
+   "testable": "partly - patterns testable, cause not",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "premise"
+  },
+  {
+   "claim_id": "QP04-C03-17",
+   "chunk": "C03",
+   "speaker": "David Harding (interviewed)",
+   "quote": "We don’t make assumptions about how markets should work, rather we use advanced statistical techniques to seek patterns in huge datasets",
+   "claim": "Winton is empirical: it does not assume how markets work but searches large datasets statistically for patterns.",
+   "claim_type": "construction",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - philosophy",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  },
+  {
+   "claim_id": "QP04-C03-18",
+   "chunk": "C03",
+   "speaker": "David Harding (interviewed)",
+   "quote": "making observa- tions and developing hypotheses and then testing these hypotheses against empirical evidence.",
+   "claim": "Research follows the scientific method: organise data, observe, hypothesise, then test against evidence.",
+   "claim_type": "construction",
+   "exact_rule": "",
+   "data_needed": "",
+   "reported_result": "",
+   "exhibit": "",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - process description",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "role": "design_choice"
+  }
+ ],
+ "reasoning": {
+  "question": "How does a large systematic fund (Winton) make money from markets, and what is its research philosophy?",
+  "thesis": {
+   "statement": "Markets are imperfect because humans over-react, under-react and panic; strong inefficiencies get arbitraged away, so a scientific, empirical process that combines many weak signals across many markets and keeps renewing them is the source of edge.",
+   "claim_ids": [
+    "QP04-C03-16",
+    "QP04-C03-2",
+    "QP04-C03-1",
+    "QP04-C03-11",
+    "QP04-C03-17"
+   ]
+  },
+  "foundations": [
+   {
+    "premise": "Markets are not efficient because economics is a human science with over-reaction, inaction, mania and panic.",
+    "type": "behavioural",
+    "stated": "stated",
+    "support": "assertion",
+    "claim_ids": [
+     "QP04-C03-15",
+     "QP04-C03-16"
+    ]
+   },
+   {
+    "premise": "Strong predictive relationships are competed away.",
+    "type": "theoretical",
+    "stated": "stated",
+    "support": "competitive logic",
+    "claim_ids": [
+     "QP04-C03-2",
+     "QP04-C03-7"
+    ]
+   },
+   {
+    "premise": "Signals decay as markets change.",
+    "type": "empirical",
+    "stated": "stated",
+    "support": "experience",
+    "claim_ids": [
+     "QP04-C03-11"
+    ]
+   }
+  ],
+  "mechanism_chain": [
+   {
+    "step": 1,
+    "from": "behavioural biases",
+    "to": "patterns in prices not fully reflecting information",
+    "why": "over-reaction and slumbering inaction",
+    "evidence": "assertion",
+    "claim_ids": [
+     "QP04-C03-16"
+    ]
+   },
+   {
+    "step": 2,
+    "from": "competition and leakage",
+    "to": "only weak relationships remain profitable",
+    "why": "others exploit strong ones",
+    "evidence": "assertion",
+    "claim_ids": [
+     "QP04-C03-2",
+     "QP04-C03-7"
+    ]
+   },
+   {
+    "step": 3,
+    "from": "many weak signals across broad universe",
+    "to": "reliable aggregate edge",
+    "why": "(reader) breadth: many small independent edges add up",
+    "evidence": "assertion",
+    "claim_ids": [
+     "QP04-C03-1",
+     "QP04-C03-3"
+    ]
+   },
+   {
+    "step": 4,
+    "from": "signal decay",
+    "to": "large ongoing research effort",
+    "why": "new tools always needed",
+    "evidence": "example",
+    "claim_ids": [
+     "QP04-C03-11",
+     "QP04-C03-12"
+    ]
+   }
+  ],
+  "design_rationale": [
+   {
+    "choice": "Many weak signals instead of few strong ones",
+    "reason_given": "strong signals are crowded",
+    "alternatives": "not discussed",
+    "sensitivity": "not shown",
+    "claim_ids": [
+     "QP04-C03-1",
+     "QP04-C03-2"
+    ]
+   },
+   {
+    "choice": "Alternative data: weather, inventories, seasonality for commodities",
+    "reason_given": "value not fully reflected in prices",
+    "alternatives": "",
+    "sensitivity": "not shown",
+    "claim_ids": [
+     "QP04-C03-4",
+     "QP04-C03-5"
+    ]
+   },
+   {
+    "choice": "Assumption-free statistical pattern search / scientific method",
+    "reason_given": "EMH is wrong; let data speak",
+    "alternatives": "theory-driven models",
+    "sensitivity": "not shown",
+    "claim_ids": [
+     "QP04-C03-17",
+     "QP04-C03-18"
+    ]
+   }
+  ],
+  "evidence_map": [
+   {
+    "result": "Client CAGR 12.8% net of fees",
+    "tests": "that the approach works",
+    "rules_out": "",
+    "does_not_rule_out": "(reader) returns may be mostly trend following beta; period, vol and drawdowns unstated; survivorship of a famous manager",
+    "strength": "weak - single unaudited number",
+    "claim_ids": [
+     "QP04-C03-8"
+    ]
+   }
+  ],
+  "regimes": [
+   {
+    "condition": "Markets change over time",
+    "effect": "predictive tools lose power",
+    "claim_ids": [
+     "QP04-C03-11"
+    ]
+   }
+  ],
+  "gaps_and_conflicts": [
+   {
+    "issue": "No signal definitions, horizons or weights; journalistic profile",
+    "type": "unspecified",
+    "claim_ids": [
+     "QP04-C03-1",
+     "QP04-C03-4",
+     "QP04-C03-5"
+    ]
+   },
+   {
+    "issue": "Assumption-free pattern search conflicts with need to avoid data mining; no out-of-sample discipline described",
+    "type": "untested",
+    "claim_ids": [
+     "QP04-C03-17",
+     "QP04-C03-18"
+    ]
+   },
+   {
+    "issue": "Science framing partly marketing by own admission",
+    "type": "data",
+    "claim_ids": [
+     "QP04-C03-6"
+    ]
+   }
+  ],
+  "relations": [
+   {
+    "other_idea": "price trend following",
+    "relation": "complement",
+    "why": "(reader) \"slumbering inaction\" is the behavioural basis of trend; Winton/AHL were trend followers",
+    "claim_ids": [
+     "QP04-C03-16",
+     "QP04-C03-13"
+    ]
+   },
+   {
+    "other_idea": "commodity fundamental signals (inventories, weather, seasonality)",
+    "relation": "complement",
+    "why": "named indicators",
+    "claim_ids": [
+     "QP04-C03-4",
+     "QP04-C03-5"
+    ]
+   }
+  ],
+  "forward_looking_inputs": "(reader) Weather (soil moisture, cloud cover) and supply-chain inventories lead agricultural and other commodity prices over weeks to months via supply surprises; seasonal factors lead via recurring patterns. These stop working when widely exploited (crowding) or when market structure changes.",
+  "reader_inferences": [
+   "(reader) The weak-signals-plus-breadth logic is the fundamental law of active management (IR ~ IC x sqrt(breadth)), not named in the article.",
+   "(reader) Over-reaction and slumbering inaction map to reversal and momentum respectively.",
+   "(reader) The article is a profile, so its evidential value is low; use only as design philosophy."
+  ]
+ }
+}

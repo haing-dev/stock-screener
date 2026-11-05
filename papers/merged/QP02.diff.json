@@ -1,0 +1,98 @@
+{
+ "opus_only": [
+  [
+   "QP02-C01-1b",
+   "Macroeconomic uncertainty as of mid-2023 is high relative to its own history when measured with a quantitative index."
+  ],
+  [
+   "QP02-C01-3b",
+   "Rate hikes compress bank margins, which appear as mark-to-market losses now and lower earnings later, while deposits shrink."
+  ],
+  [
+   "QP02-C02-1b",
+   "The JLN index summarises uncertainty across a large set of economic releases into one monthly number."
+  ],
+  [
+   "QP02-C02-8b",
+   "The 2010s were a decade of consistently below-average macro uncertainty, in contrast to the 2020s."
+  ],
+  [
+   "QP02-C02-11b",
+   "Beyond statistics, the current policy and market backdrop supports the view that uncertainty stays high."
+  ],
+  [
+   "QP02-C03-8b",
+   "Catalyst 1 for persistent uncertainty: lagged effects of aggressive hikes plus a new employment-inflation trade-off for central banks."
+  ],
+  [
+   "QP02-C04-6b",
+   "Example: in 1980 the Volcker Fed cut then re-hiked, showing how trade-offs produce abrupt policy reversals."
+  ],
+  [
+   "QP02-C04-7b",
+   "Example: front-end yield volatility in March 2023, when banking concerns caused sharp downward revisions to policy expectations."
+  ],
+  [
+   "QP02-C05-2b",
+   "Large swings in front-end rate pricing are a market sign of high economic uncertainty."
+  ],
+  [
+   "QP02-C05-8b",
+   "If long-run inflation expectations de-anchor, disinflation would require more unemployment because expectations drive actual inflation."
+  ],
+  [
+   "QP02-C06-1b",
+   "Rate and inflation markets may be pricing a sharp slowdown, but equities are not, so asset classes disagree with each other."
+  ],
+  [
+   "QP02-C06-3b",
+   "The author takes no view on who is right; the argument is only that disagreement implies volatility."
+  ],
+  [
+   "QP02-C06-6b",
+   "The author judges SVB/Signature unlikely to spark a systemic crisis because crises usually stem from asset-quality deterioration, not deposit mix or duration mismatch."
+  ],
+  [
+   "QP02-C06-7b",
+   "Forecasters raised real GDP growth forecasts by 40bp after end-February 2023, showing little expectation of an imminent calamity."
+  ],
+  [
+   "QP02-C07-3b",
+   "With high uncertainty, both a stagflation redux and a 1990s-style productivity boom are plausible, so a single-asset bet is riskier than usual."
+  ],
+  [
+   "QP02-C08-6b",
+   "Diversification into bonds, commodities, trend and alternatives is recommended at all times, not only when uncertainty is high."
+  ],
+  [
+   "QP02-C10-2b",
+   "The author firm manages a fund inside the SG Trend Index used as evidence, a potential conflict of interest."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP02-C01-2",
+   "Key question of the note: will elevated macro uncertainty persist or revert to the 2010s low-uncertainty regime, and what follows for traditional assets and alternatives."
+  ],
+  [
+   "QP02-C01-3",
+   "Backdrop as of May 2023: inflation well above target, funds rate highest since pre-GFC, unemployment lowest in over 50 years, banks hit by compressed margins and shrinking deposits."
+  ],
+  [
+   "QP02-C03-3",
+   "Implied decay: JLN of 1.0 forecast to 0.98 next month and about 0.8 in a year (0.98^12)."
+  ],
+  [
+   "QP02-C06-1",
+   "One way to reconcile bond/futures pricing with survey forecasts is an imminent sharp slowdown, which would hurt equities, yet equities show no evidence of pricing a slowdown (cross-asset disagreement)."
+  ],
+  [
+   "QP02-C06-5",
+   "Footnote 11 (author's opinion): the March 2023 bank failures are unlikely to trigger a widespread crisis because of the Fed/Treasury liquidity response, real GDP forecasts revised up by 40 bp since end-February (Consensus Economics), and because systemic crises usually come from asset quality, not duration mismatch."
+  ],
+  [
+   "QP02-C08-6",
+   "Figure 5 uses monthly returns, so peak-to-trough drawdown windows are measured on month-end data."
+  ]
+ ]
+}

@@ -1,0 +1,1981 @@
+# Economic Trend (AQR: Brooks, Feilbogen, Ooi, Akant, April 2023)
+source_id: QP01
+type: paper
+file: Economic Trend_.pdf
+chunks: one per PDF page (C01 = page 1). Page images: img/QP01-p-NN.png (exhibits, charts)
+---
+
+[C01]
+April 2023
+
+Economic Trend
+
+Executive Summary
+
+In this paper we present a novel approach to investing across equity, bond,
+
+currency and commodity markets. “Economic trend” capitalizes on the
+
+tendency for new information to have a persistent impact on asset prices
+
+by positioning in each market on the basis of trends in macroeconomic
+
+fundamentals. The strategy has realized consistently attractive risk-adjusted
+
+returns over a 50+ year sample, and performance is pervasive across both
+
+markets and measures. It exhibits low correlation to traditional risk premia
+
+on average and tends to perform exceptionally well during drawdown
+
+periods for traditional asset classes. While economic trend is a close relative
+
+of price trend-following—both approaches aim to capitalize on the tendency
+
+of markets to systematically under-react to news—the two strategies are
+
+highly complementary. Combining the two leads to improved risk-adjusted
+
+performance and more robust drawdown protection than price trend-
+
+following alone.
+
+Jordan Brooks
+
+Principal
+
+Noah Feilbogen
+
+Associate
+
+Yao Hua Ooi
+
+Principal
+
+We would like to thank Antti Ilmanen, Tobias Moskowitz and Erik Stamelos for
+
+Adam Akant
+
+helpful comments.
+
+[C02]
+2
+
+Economic Trend | 2Q 2023
+
+Introduction
+
+Trend-following is one of the oldest, most
+
+studied, and most broadly used alternative
+
+investment strategies. In the early nineteenth
+
+century, the classical economist David Ricardo
+
+advised investors to “cut short your losses” and
+
+“let your profits run”—an early endorsement
+
+of a price trend-following approach to
+
+investing. Two centuries later, trend-following
+
+remains the core investment style for the
+
+managed futures industry, which had $198
+
+billion in aggregate assets at the end of 2022.
+
+1
+
+Trend-following is based on time series
+
+momentum—going long assets with recent
+
+positive returns and short assets with recent
+
+negative returns—and has been documented
+
+to generate consistent positive returns across
+
+a wide range of assets over more than 120
+
+years. 2 Its persistent profitability stems from
+
+the tendency of asset prices to systematically
+
+underreact to new information. 3 Positioning
+
+based on recent price trends, therefore, tends
+
+to profit as asset prices gradually incorporate
+
+economically impactful news.
+
+The tendency of asset prices to underreact
+
+to new information suggests an alternative
+
+approach to trend-following: investing
+
+on the basis of trends in fundamentals
+
+directly, as opposed to using price trends as
+
+a proxy for new information. Brooks (2017)
+
+describes a broad approach to fundamental
+
+trend investing, called “macro momentum,”
+
+and presents evidence of its efficacy from
+
+1970 through 2016. In this paper, we
+
+extend the original strategy described
+
+in Brooks (2017) and focus solely on its
+
+directional implementation. We refer to the
+
+resulting strategy as “economic trend,” an
+
+acknowledgement of the similar underlying
+
+economic mechanism and attractive
+
+performance characteristics it shares with
+
+price trend-following.
+
+Economic trend and price trend stem from the
+
+same premise: asset prices tend to underreact
+
+to new information, which, for macro assets,
+
+typically takes the form of news about
+
+economic fundamentals. 4 In other words,
+
+when fundamentals shift, markets adjust
+
+gradually. This gradual incorporation of news
+
+creates trends in asset prices. A price trend
+
+strategy uses recent asset returns as inputs,
+
+wagering that price action will continue.
+
+Returns are a convenient indicator. They’re
+
+continuous, readily available, and require
+
+little by way of modeling beyond specifying a
+
+horizon. However, asset returns are merely an
+
+Source: eVestment.
+See Moskowitz, Ooi, and Pedersen (2012), Lemperiere, Deremble, Seager, Potters, and Bouchaud (2014), and Hurst, Ooi, and
+Pedersen (2017).
+For detail and theoretical explanations on why investors systematically underreact to news, see Barberis, Shleifer, and Vishny (1998),
+Daniel, Hirshleifer, and Subrahmanyam (1998), Hong and Stein (1999), and Frazzini (2006). Possible explanations of market reactions
+include herding and extrapolation of recent market movements.
+This tendency has been documented empirically across a variety of asset classes. Many studies focus on underreaction in single-name
+equities – see Chan-Jegadeesh-Lakonishok (1996), Chan (2003), Frazzini (2006), and Sinha (2016). There have been fewer studies on
+macro asset underreaction – but two noteworthy ones are Bhojraj and Swaminathan (2006), which extends the empirical evidence to
+international equity indices, and Brooks, Katz, and Lustig (2018), which documents persistent underreaction of fixed income markets
+to monetary policy surprises.
+
+1
+2
+
+3
+
+4
+
+[C03]
+indirect reflection of fundamental news—one
+
+that can at times be misleading.
+
+Economic trend, meanwhile, seeks to model
+
+economically impactful news directly. Doing
+
+so in real-time is ambitious. It requires
+
+identifying the relevant fundamental variables
+
+that drive each asset’s price (e.g., inflation
+
+expectations impact bond prices), modeling
+
+trends in these fundamental variables in
+
+real-time (e.g., measuring real-time trends
+
+in inflation expectations for each market),
+
+and a structural mapping from fundamental
+
+trends to asset prices (e.g., increasing inflation
+
+expectations in a country is bad news for its
+
+stock and bond markets, good news for its
+
+currency, etc.). Unlike price trend, economic
+
+trend will not invest where price action isn’t
+
+supported by underlying fundamental news.
+
+The strategy will suffer when returns are
+
+disconnected from changes in fundamentals
+
+(as can happen) but will generate profits when
+
+asset prices begin to cue off fundamental news
+
+again.
+
+Our stylized economic trend strategy
+
+uses a similar set of signals to capture
+
+macroeconomic state variables as Brooks
+
+(2017) but extends the strategy to incorporate
+
+a broad set of commodity markets and
+
+covers the 2017 to 2022 period, a rich out-
+
+of-sample period that featured significant
+
+macroeconomic volatility—the equity market
+
+sell-off of 2018, the global pandemic, and the
+
+subsequent emergence of global inflation and
+
+associated monetary policy response.
+
+5
+
+3
+
+Economic Trend | 2Q 2023
+
+Economic trend generates attractive risk-
+
+adjusted returns across asset classes from 1970
+
+to 2022, with low correlation to traditional
+
+markets and strong performance during equity
+
+and bond market drawdowns. It continued
+
+to perform exceptionally well in the out-of-
+
+sample period from 2017 onward and delivered
+
+exceptional returns during the stock and bond
+
+bear market of 2022.
+
+We discuss how economic trend may be
+
+used as an innovative complement to classic
+
+price trend. Because they share a common
+
+mechanism, economic trend and price
+
+trend tend to be positively, though modestly,
+
+correlated. A comprehensive trend-following
+
+strategy that combines price and economic
+
+trends thus outperforms either approach
+
+standalone.
+
+The appeal of trend-following strategies largely
+
+stems from their tendency to provide positive
+
+returns during market drawdowns. Here too
+
+we show tangible benefits of combining price
+
+trends with economic trends: a comprehensive
+
+trend strategy produces higher average
+
+returns and more robust performance during
+
+drawdown periods for equities and bonds than
+
+either approach standalone. The source of
+
+improvement is straightforward. Price trend
+
+tends to perform well in drawdowns that are
+
+persistent. Economic trend tends to perform
+
+well in drawdowns that have economic
+
+catalysts. Combining the two approaches to
+
+trend-following captures a wider variety of
+
+market stress scenarios.
+
+Brooks (2017) excludes commodities in part because relative-value view construction in commodities is less intuitive than it is in other
+asset classes, where changes in country-level economic variables can be more straightforwardly mapped to assets and compared
+cross-sectionally. Since the strategy in this paper uses only directional views, which compare each asset’s mapped economic changes
+only to its own timeseries, we believe adding commodities to the universe is warranted.
+
+5
+
+[C04]
+4
+
+Economic Trend | 2Q 2023
+
+Methodology
+
+Our economic trend backtest uses simple
+
+12-month trailing indicators, similar to Brooks
+
+(2017), as summarized in Exhibit 1. For
+
+both growth and inflation, we use 12-month
+
+changes in GDP growth forecasts and CPI
+
+inflation forecasts. 6 For international trade,
+
+we use 12-month changes in the local spot
+
+FX rate against an export-weighted basket.
+
+We measure monetary policy trends using
+
+12-month changes in short term bond yields.
+
+7
+
+And we measure risk aversion trends using
+
+an equal weighted combination of 12-month
+
+trailing equity market returns and 12-month
+
+changes in credit spreads. 8
+
+For each theme, we assert a relationship with
+
+returns in each asset class. For example,
+
+increasing growth is good news for equity
+
+markets. Likewise, strong equity market
+
+Exhibit 1: Summary of Economic Trend Signals
+
+Theme
+
+Signal Example
+
+Increasing GDP growth
+forecasts
+
+Growth
+
+Increasing CPI inflation
+forecasts
+
+Inflation
+
+Export-weighted FX
+depreciation
+
+International Trade
+
+Monetary Policy
+
+Increasing 2-year bond yield
+
+Strong equity market return and
+narrowing credit spreads
+
+Risk Aversion
+
+performance is associated with declining
+
+inflation, expansionary monetary policy
+
+trends, improving trade competitiveness,
+
+and declining risk aversion. The signs of
+
+these relationships are based on theoretically
+
+motivated and empirically verified “other
+
+things equal” contemporaneous relationships
+
+between returns and news about each theme.
+
+Economic trend is built on the premise that
+
+news tends to have a persistent impact on asset
+
+prices, which implies that contemporaneous
+
+and predictive relationships between returns
+
+and news must have the same sign. This
+
+restriction reduces the scope for data mining
+
+in a real-world setting: to trade on economic
+
+trends, you must demonstrate that news about
+
+the state variable has a contemporaneous
+
+impact on returns of the same sign.
+
+Direction
+
+Equities
+
+Fixed Income
+
+Currencies
+
+Commodities
+
++
+
++
+
++
+
+—
+
++
+
++
+
+—
+
+—
+
++
+
+—
+
+—
+
+—
+
++
+
+—
+
+—
+
+—
+
++
+
++
+
++
+
+—
+
+Source: AQR.
+Note: in commodities we use consumption-weighted signals across all themes (i.e., the signals apply to consuming countries of that
+commodity).
+
+From 1970 through 1990 forecast data is not available for many countries. Therefore, in this period we use 12-month changes in GDP
+growth and CPI inflation instead. Using 12-month changes bypasses any seasonality issues and implies lower turnover and trading
+costs than in faster variants.
+From 1970 through 1991 we use changes in IBOR rates instead of two-year bond yields. This is due to data availability.
+From 1970 through November 1987 risk aversion is represented entirely by 12-month equity market momentum. From December
+1987 onward, risk aversion is represented by an equal weighted combination of 12-month equity market momentum and 12-month
+changes in credit spreads. Prior to December 2001, changes in credit spreads are represented by Moody’s Seasoned Baa Corporate
+Yield Relative to the yield on 10Y constant maturity treasuries. From December 2001 onward, changes in credit spreads are
+represented by Bloomberg Global High Yield Corporate Stats Index Unhedged. It is possible to extract more theoretically appealing
+measures of risk aversion using asset prices (e.g. options) but there is insufficient asset coverage and history to utilize this data here.
+Campbell (1991) shows that approximately 50% of the variation in equity returns is driven by discount rates which motivates the
+inclusion of equity market momentum within the risk aversion theme.
+
+6
+
+7
+8
+
+[C05]
+Our asset universe includes 15 global equity
+
+futures, 9 bond futures, 7 interest rate futures,
+
+8 currency forwards, and 20 commodity
+
+futures. For each of the five economic themes
+
+we create a portfolio for each of the four asset
+
+classes, leaving us with 20 asset class-theme
+
+portfolios (e.g., growth within equities). 9
+
+We aggregate these asset class-theme
+
+portfolios into equal risk-weighted composite
+
+portfolios. We form three types of composite
+
+portfolios:
+
+1. Asset class composite portfolios—these
+
+combine all theme views at equal risk-weight
+
+within a given asset class. For example,
+
+the equity asset class composite portfolio
+
+invests in equity index futures using growth,
+
+inflation, international trade, monetary
+
+policy, and risk aversion as inputs.
+
+2. Theme composite portfolios—these trade
+
+a single theme across all asset classes. For
+
+example, the growth theme composite
+
+5
+
+Economic Trend | 2Q 2023
+
+portfolio invests in equity index futures,
+
+bond futures, interest rate futures, currency
+
+forwards, and commodity futures, using
+
+views based solely on growth.
+
+3. Aggregate economic trend composite
+
+portfolio—this is an equal risk-weighted
+
+composite across all asset class-theme
+
+portfolios. It represents the full economic
+
+trend strategy, implemented using all
+
+themes and assets. 10
+
+For each asset class we form analogous
+
+portfolios for price trend, using an equal-
+
+weighted combination of 1-month, 3-month,
+
+and 12-month trailing asset returns as
+
+factors. 11 The price trend asset class and
+
+aggregate composite portfolios use the
+
+same universe and portfolio construction
+
+as described above. All composite portfolios
+
+(both economic trend and price trend) target
+
+10% constant volatility at each point in time
+
+using a trailing 3-year covariance matrix.
+
+These asset class-theme portfolios allocate equal risk to individual asset views (within an asset class) and are scaled to constant
+volatility at each point in time using a 3-year trailing covariance matrix. Bond futures and interest rate futures are combined into fixed
+income-theme portfolios.
+10 In Exhibit 1 we visually consolidate Fixed Income across 10-year bond futures and short-term interest rate futures. However, for the
+purposes of the aggregate portfolios, we treat bond futures and short-term interest rate futures as separate asset classes (i.e., the
+economic trend-following composite uses 25 asset class-theme portfolios).
+11 Methodology is same as in Hurst, Ooi, and Pedersen (2017). Using only 12-month trailing asset returns would give directionally similar
+results as shown below.
+
+9
+
+[C06]
+6
+
+Economic Trend | 2Q 2023
+
+Performance of Economic Trend
+
+The economic trend composite has exhibited
+
+consistently high risk-adjusted returns over
+
+the past 50+ years, a period that includes
+
+a broad set of macroeconomic regimes. As
+
+shown in Exhibit 2, the strategy’s return
+
+has been positive in every decade, with
+
+consistently low correlation to both equities
+
+and government bonds. 12
+
+Exhibit 2: Hypothetical Economic Trend Shows Consistent Positive Performance Over Time
+January 1970 – December 2022
+
+Excess of Cash
+Return (Ann.)
+
+Volatility
+
+Full Period
+
+12.2%
+
+13.3%
+
+By Decade
+
+14.3%
+
+13.5%
+
+Jan. 1970 - Dec. 1979
+
+Jan. 1980 - Dec. 1989
+
+19.7%
+
+12.0%
+
+Jan. 1990 - Dec. 1999
+
+14.2%
+
+11.8%
+
+Jan. 2000 - Dec. 2009
+
+13.8%
+
+12.9%
+
+Jan. 2010 - Dec. 2019
+
+4.1%
+
+9.9%
+
+Jan. 2020 - Dec. 2022
+
+15.2%
+
+13.1%
+
+Since Brooks (2017)
+
+8.4%
+
+11.8%
+
+Jan. 2017 - Dec. 2022
+
+Correlation to
+U.S. 10-year
+Bonds
+
+Correlation to
+S&P 500
+
+Sharpe Ratio
+
+1.1
+
+-0.2
+
+0.0
+
+1.1
+
+-0.2
+
+-0.1
+
+1.6
+
+0.0
+
+0.0
+
+1.2
+
+0.0
+
+0.1
+
+1.1
+
+-0.4
+
+0.3
+
+0.4
+
+-0.1
+
+0.0
+
+1.2
+
+-0.4
+
+-0.5
+
+0.7
+
+-0.4
+
+-0.3
+
+Source: AQR, Bloomberg. Returns are monthly, gross of fees and transaction costs. Hypothetical data has inherent limitations, some of
+which are disclosed herein.
+
+The strong performance of the economic trend
+
+composite stems from consistent performance
+
+across individual assets. Exhibit 3 shows full
+
+period performance for each asset traded.
+
+13
+
+Economic Trend generated a positive Sharpe
+
+ratio in nearly every asset in our universe,
+
+strong evidence of the pervasiveness of
+
+underreactions to changes in economic
+
+fundamentals.
+
+12 Over short periods of time, we expect economic trend to have a conditional correlation to asset classes if they are trending. For
+instance, short positions in equities and fixed income drove economic trend profitability from 2020 – 2022.
+13 For interest rate futures we trade the second, third, and fourth contracts from expiration. We aggregate returns across these
+contracts in Exhibit 3.
+
+[C07]
+7
+
+Economic Trend | 2Q 2023
+
+Exhibit 3: Hypothetical Economic Trend Shows Consistent Positive Sharpe Ratios
+Across Assets
+January 1970 – December 2022
+
+0.8
+
+0.7
+
+0.6
+
+0.5
+
+Sharpe Ratio
+
+0.4
+
+0.3
+
+0.2
+
+0.1
+
+0.0
+
+-0.1
+
+Austr alia S&P /ASX 200
+Germ any DAX
+Canada S&P/T SX 60
+OMX Copenhagen
+
+U.K. 10-Yr Bond
+U.S. 10-Yr Treasury Note
+Aussie Bank Bill F ut ur e
+Canadian Bank Acceptance Future
+Euribor Future
+
+Danish 10-Yr Bond
+Japan 10-Yr Bond
+
+Sweedish 10-Yr Bond
+Swiss 10-Yr Bond
+
+U.S. S&P 500
+
+Austr alia 10-Yr Bond
+Germ any 10-Yr Bond
+Canada 10-Yr Not e
+
+S&P/NZX 50 Index
+OMX Stockholm
+Swiss Market Index
+U.K. FTSE 100
+
+Hang Seng Index
+It al y FTSE MIB
+Japan Topi x
+Netherlands AEX
+
+Spain IBEX 35
+Fr ance C AC 40
+
+New Zealand Bil l Future
+Euro Swiss / Saron Index Future
+Short Sterli ng / SON IA Index F uture
+Eurodol lar / SOFR Future
+USD AUD
+
+Soymeal
+Soyoil
+Sugar
+Unleaded
+Wheat
+Zinc
+
+Natural G as
+Nickel
+Soybeans
+
+Cott on
+Cr ude
+Gasoi l
+Heatoil
+Hogs
+
+Catt le
+Coffee
+Copper
+Corn
+
+USD EUR
+USD CAD
+USD JPY
+USD NZD
+USD SEK
+USD CHF
+USD GBP
+Aluminum
+Brentoil
+
+Source: AQR, Bloomberg. Returns are monthly, gross of fees and transaction costs. Hypothetical data has inherent limitations, some of
+which are disclosed herein.
+
+Aggregating performance one level higher,
+
+economic trend’s performance is not driven
+
+by any one asset class or theme. As shown in
+
+Exhibit 4, each standalone asset class and
+
+theme portfolio has delivered a positive Sharpe
+
+ratio, contributing to the overall performance
+
+of the composite. Importantly, both theme
+
+and asset class composite portfolios are lowly
+
+correlated with one another. As a result,
+
+the aggregate composite outperforms any
+
+standalone asset class or theme.
+
+Exhibit 4: Hypothetical Economic Trend Shows Consistent Positive Sharpe Ratios Across
+Asset Classes and Themes
+January 1970 – December 2022
+
+1.2
+
+By Theme
+
+1.0
+
+Sharpe Ratio
+
+0.8
+
+0.6
+
+0.4
+
+0.2
+
+0.0
+
+Growth
+
+Inflation
+
+Monetary
+Policy
+
+Trade
+
+Risk
+Aversion
+
+Average Pairwise Correlation: 0.06
+
+By Asset Class
+
+Equities
+
+Fixed
+Income
+
+Currencies Commodities
+
+Economic
+Trend
+
+Average Pairwise Correlation: 0.07
+
+Source: AQR, Bloomberg. Returns are monthly, gross of fees and transaction costs. Hypothetical data has inherent limitations, some of
+which are disclosed herein.
+
+[C08]
+8
+
+Economic Trend | 2Q 2023
+
+Economic trend, like price trend, tends to
+
+perform well during drawdown periods
+
+for traditional asset classes. The reason
+
+is conceptually simple: large drawdowns
+
+usually don’t occur out of the blue, but tend
+
+to be preceded by changes in economic
+
+fundamentals. Equity drawdowns, for
+
+example, have often been precipitated by
+
+deteriorating growth expectations (e.g., GFC),
+
+or increasingly hawkish central bank policy
+
+(e.g., 2018 and 2022, to name two recent data
+
+points). As Exhibit 5 shows, economic trend
+
+has performed well in each of the five worst
+
+drawdown periods for both U.S. equities and
+
+U.S. bonds since 1970.
+
+Exhibit 5: Hypothetical Economic Trend Does Well in Drawdowns for Equities and Bonds
+January 1970 – December 2022
+
+120%
+
+100%
+
+80%
+
+Cumulative Return
+
+60%
+
+40%
+
+20%
+
+0%
+
+-20%
+
+-40%
+
+-60%
+
+Average
+
+Nov 2007 -
+
+Sep 2000 -
+
+Jan 1973 -
+
+Sep 1987 -
+
+Jan 2022 -
+
+Feb 2009
+
+Sep 2002
+
+Sep 1974
+
+Nov 1987
+
+Sep 2022
+
+S&P 500
+
+Economic Trend
+
+120%
+
+100%
+
+80%
+
+60%
+
+40%
+
+20%
+
+0%
+
+-20%
+
+-40%
+
+-60%
+
+Average
+
+Aug 2020 -
+
+Jul 1980 -
+
+Jul 1979 -
+
+May 1983 -
+
+Mar 1987 -
+
+Oct 2022
+
+Sep 1981
+
+Feb 1980
+
+May 1984
+
+Sep 1987
+
+U.S. 10yr Treasuries
+
+Economic Trend
+
+Source: AQR, Bloomberg. Returns are monthly, gross of fees and transaction costs. Hypothetical data has inherent limitations, some of
+which are disclosed herein.
+
+Economic Trend and Price Trend
+
+As related but distinct ways to capitalize on the
+
+systematic tendency of asset prices to under-
+
+react to new information, we expect price and
+
+economic trend-following to be positively, but
+
+far from perfectly, correlated. If fundamentals
+
+are improving (i.e., an asset has had “good
+
+news”), we expect returns to be positive on
+
+average. Consistent with this intuition, we find
+
+a positive but moderate full-sample correlation
+
+between price and economic trend-following
+
+strategies (around 0.3 at the asset level and
+
+0.4 for the aggregate composites). Combining
+
+the two approaches into a comprehensive
+
+trend strategy (equal risk-weighted across
+
+price and economic trends) results in a better
+
+risk-adjusted performance than either strategy
+
+standalone, as shown in Exhibit 6.
+
+[C09]
+9
+
+Economic Trend | 2Q 2023
+
+Exhibit 6: A Diversified Approach to Trend-Following Outperforms Either
+Standalone Approach
+January 1970 – December 2022
+
+Total
+
+Equities
+
+1.8
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+
+1.5
+
+1.4
+
+1.1
+
+Sharpe Ratio
+
+0.8
+
+0.6
+
+0.5
+
+0.5
+
+Econ Price 50/50
+Trend Trend Blend
+
+Econ Price 50/50
+Trend Trend Blend
+
+Price - Econ Correl: 0.4
+
+Price - Econ Correl: 0.3
+
+Fixed Income
+
+Currencies
+
+Commodities
+
+1.1
+
+0.9
+
+0.9
+
+0.8
+
+0.8
+
+0.8
+
+0.4
+
+0.4
+
+Econ Price 50/50
+Trend Trend Blend
+
+Econ Price 50/50
+Trend Trend Blend
+
+Econ Price 50/50
+Trend Trend Blend
+
+Price - Econ Correl: 0.4
+
+Price - Econ Correl: 0.3
+
+Price - Econ Correl: 0.3
+
+Source: AQR, Bloomberg. Returns are monthly, gross of fees and transaction costs. Hypothetical data has inherent limitations, some of
+which are disclosed herein.
+
+While we expect a moderate long-
+
+term diversification benefit, in certain
+
+environments performance across the two
+
+strategies may not only be diversifying
+
+but divergent. For example, during
+
+market reversals price trend is (almost by
+
+construction) likely to have negative returns.
+
+However, economic trend can have positive
+
+returns and negative correlated positions if the
+
+reversal is preceded by an economic catalyst.
+
+Meanwhile, when prices become disconnected
+
+from changes in economic fundamentals for
+
+a prolonged period (e.g., the Tech Bubble),
+
+economic trend is likely to suffer, but price
+
+trend may not.
+
+Exhibit 7 shows the performance of price
+
+and economic trend in each other’s five worst
+
+drawdown periods since 1970. Price trends and
+
+economic trends have historically experienced
+
+drawdowns at different times. In fact, price
+
+trend delivers positive returns on average in
+
+the five largest economic trend drawdowns,
+
+and economic trend has been essentially
+
+flat on average in the five largest price trend
+
+drawdowns. Some of these periods conform to
+
+our intuition about how price and economic
+
+trend should behave in different states of the
+
+world. For example, economic trend suffers
+
+one of its worse drawdowns between June
+
+1999 and December 2000, during the heart
+
+of the Tech Bubble. This is a period during
+
+which prices persistently diverged from
+
+fundamentals. Inflation, monetary policy,
+
+and growth trends tended to be bearish bonds
+
+during this period, yet the market continued
+
+its ascent unabated. And economic trend
+
+losses were not limited to equities. Inflation,
+
+monetary policy, growth, and risk aversion
+
+trends were bearish the dollar which rapidly
+
+appreciated over the period. While the
+
+disconnect between fundamentals and prices
+
+led economic trend to underperform, the
+
+strong sustained bull market run led price
+
+trends to perform exceptionally well.
+
+[C10]
+10
+
+Economic Trend | 2Q 2023
+
+Exhibit 7: Price and Economic Trend Have Diversifying Returns During Each Other’s Worst
+Drawdown Periods
+January 1970 – December 2022
+Economic Trend Drawdowns
+Price Trend Drawdowns
+
+40%
+
+30%
+
+Cumulative Return
+
+20%
+
+10%
+
+0%
+
+-10%
+
+-20%
+
+-30%
+
+Average
+
+Mar 2016 -
+
+Jun 1999 - Nov 1976 - Mar 2009 -
+
+Apr 1971 -
+
+Apr 2017
+
+Dec 2000
+
+Jul 1971
+
+Jan 1977
+
+Jun 2010
+
+Economic Trend
+
+Price Trend
+
+40%
+
+30%
+
+20%
+
+10%
+
+0%
+
+-10%
+
+-20%
+
+-30%
+
+Average
+
+Apr 2015 -
+
+Oct 1987 -
+
+Mar 2004 - May 1986 -
+
+Oct 2022 -
+
+Jan 2019
+
+Oct 1987
+
+Aug 2004
+
+Nov 2022
+
+Jun 1986
+
+Price Trend
+
+Economic Trend
+
+Source: AQR, Bloomberg. Returns are monthly, gross of fees and transaction costs. Hypothetical data has inherent limitations, some of
+which are disclosed herein.
+
+Both price trend and economic trend tend to
+
+perform well during drawdown for traditional
+
+asset classes. A diversified blend of the
+
+two approaches, however, has historically
+
+provided more robust protection. In Exhibit 8
+
+and Exhibit 9 we repeat our analysis of
+
+performance during U.S. equity and bond
+
+drawdowns (from Exhibit 5); however, we
+
+now add price trend and a 50/50 blend of the
+
+two approaches. On average the 50/50 blend
+
+delivers better performance during both equity
+
+and bond drawdowns than either approach
+
+standalone. The combination of price and
+
+economic trend picks up on drawdowns that
+
+are persistent (price trend) and those that
+
+have a fundamental catalyst (economic trend),
+
+capturing a wider set of bear markets than
+
+either strategy in isolation. The ability to
+
+outperform in a diverse variety of drawdown
+
+environments makes price and economic
+
+trends a particularly attractive complement to
+
+risk mitigation strategies.
+
+[C11]
+11
+
+Economic Trend | 2Q 2023
+
+Exhibit 8: A Diversified Trend-following Approach Does Best in Equity Drawdowns
+January 1970 – December 2022
+
+150%
+
+125%
+
+100%
+
+Cumulative Return
+
+59% 54% 68%
+
+75%
+
+50%
+
+50%
+
+0%
+
+-25%
+
+-50%
+
+-75%
+
+Average
+
+Nov 2007 -
+Feb 2009
+
+Sep 2000 -
+Sep 2002
+
+S&P 500
+
+Economic Trend
+
+Jan 1973 -
+Sep 1974
+
+Sep 1987 -
+Nov 1987
+
+Jan 2022 -
+Sep 2022
+
+Price Trend
+
+50/50 Blend
+
+Source: AQR, Bloomberg. Returns are monthly, gross of fees and transaction costs. Hypothetical data has inherent limitations, some of
+which are disclosed herein.
+
+Exhibit 9: A Diversified Trend-following Approach Does Best in Bond Drawdowns
+January 1970 – December 2022
+
+100%
+
+80%
+
+Cumulative Return
+
+52%
+
+60%
+
+47%
+
+39%
+
+40%
+
+20%
+
+0%
+
+-20%
+
+Average
+
+Aug 2020 -
+Oct 2022
+
+Jul 1980 -
+Sep 1981
+
+U.S. 10yr Treasuries
+
+Economic Trend
+
+Jul 1979 -
+Feb 1980
+
+May 1983 -
+May 1984
+
+Mar 1987 -
+Sep 1987
+
+Price Trend
+
+50/50 Blend
+
+Source: AQR, Bloomberg. Returns are monthly, gross of fees and transaction costs. Hypothetical data has inherent limitations, some of
+which are disclosed herein.
+
+[C12]
+12
+
+Economic Trend | 2Q 2023
+
+Conclusion
+
+Economic trend is a new take on an old
+
+classic. As such, it’s grounded in well-
+
+established theory, yet constitutes a distinct
+
+and innovative approach. The strategy rests on
+
+the same premise as price trend—markets tend
+
+to incorporate new information gradually—but
+
+it captures the phenomenon very differently,
+
+using a broad set of real-time measures of
+
+economic news. While the economic trend
+
+backtest shown in this paper uses one simple
+
+signal per economic theme (in order to cover
+
+as long a period as possible), comprehensively
+
+capturing and processing economic news in
+
+real-time and extending the set of signals to
+
+capture a broader set of economic indicators
+
+is a complex and highly ambitious endeavor—
+
+one which requires significant investment in
+
+data and long-term research.
+
+By exploiting the same mechanism differently,
+
+economic trend is highly complementary to
+
+price trend. Pairing the two approaches more
+
+fully captures the underreaction phenomenon
+
+than either approach does standalone,
+
+improving both average long-term returns and
+
+returns during market stress environments.
+
+[C13]
+References
+
+13
+
+Economic Trend | 2Q 2023
+
+Barberis, N., Shleifer A., and Vishny, R. (1998), “A Model of Investor Sentiment.” Journal of
+
+Financial Economics, 49 (3): 307-343.
+
+Brooks, J. (2017). “A Half-Century of Macro Momentum.” AQR Capital Management White
+
+Paper.
+
+Brooks, J., Katz, M., and Lustig, H. (2018). “Post-Fomc Announcement Drift in U.S. Bond
+
+Markets.” Stanford University Graduate School of Business Research Paper, No. 18-2.
+
+Chan, W. (2003), “Stock Price Reaction to News and No-News: Drift and Reversal after
+
+Headlines.” Journal of Financial Economics, 70 (2): 223-260.
+
+Daniel, K., Hirshleifer, D. and Subrahmanyam, A. (1998), “Investor Psychology and Security
+
+Market Under- and Overreactions.” Journal of Finance, 53 (6): 1839–1885.
+
+Frazzini, A. (2006), “The Disposition Effect and Underreaction to News.” Journal of Finance, 61
+
+(4): 2017–2046.
+
+Hong, H., and Stein, J. C. (1999), “A Unified Theory of Underreaction, Momentum Trading and
+
+Overreaction in Asset Markets.” Journal of Finance, 54 (6): 2143-2184.
+
+Hurst, B., Ooi, Y. H., and Pedersen, L. H. (2014), “Century of Evidence on Trend-Following
+
+Investing.” Journal of Portfolio Management, 44 (1).
+
+Lemperiere, Deremble, Seager, Potters, and Bouchaud (2014). “Two Centuries of Trend-
+
+following.” Journal of Investment Strategies 03 (3): 41-61.
+
+Moskowitz, T., Ooi, Y. H., and Pedersen, L. H. (2012). “Time Series Momentum.” Journal of
+
+Financial Economics, 104 (2): 228-250.
+
+Sinha, N. R. 2016. “Underreaction to News in the U.S. Stock Market.” Quarterly Journal of
+
+Finance 06 (2): 1-46.
+
+Swaminathan, B. and Bhojraj, S. (2006), “Macromomentum: Returns Predictability in
+
+International Equity Indices.” Journal of Business, 79 (1): 429-451.
+
+[C14]
+14
+
+Economic Trend | 2Q 2023
+
+Disclosures
+
+Limitations of Backtested Performance. The returns presented reflect hypothetical performance an investor would have
+obtained had it invested in the manner shown and does not represent returns that any investor actually attained. The
+information presented is based upon the following hypothetical assumptions.
+
+Economic Trend Backtest Construction
+
+The Economic Trend Backtest builds asset class theme portfolios across the universe outlined below. The model employs
+relatively simple measures as they afford long data availability and are less susceptible to concerns about data mining. The
+strategy is therefore intended as a proof of concept and can potentially be enhanced by employing additional and improved
+measures of economic trends. The backtest combines each asset class theme portfolio at equal risk and targets 10%
+forecasted annual volatility. Within each asset class theme portfolio, each individual position is sized to target the same
+amount of volatility. The backtest takes long positions in assets in which economic trends are improving and short positions
+in assets in which economic trends are deteriorating.
+
+Asset Classes: Equity indices, fixed income (combining government bonds and short-term interest rates at equal risk),
+currencies, and commodities.
+
+Themes: Growth, inflation, international trade, monetary policy, and risk aversion.
+
+Growth: Growth trends are captured using one-year changes in forecasts of real GDP growth. From 1991 onward forecast
+data is from Consensus Economics. Prior to 1991, we use one-year changes in realized year-on-year real GDP growth,
+lagged one quarter (this definition is equivalent to changes in forecasts assuming that real GDP growth follows a random
+walk). The series is from the OECD. Increasing growth is assumed to be bullish for equities (cash-flow impact), commodities
+(increasing demand), and currencies (Balassa-Samuelson hypothesis), and bearish for fixed income via both inflationary
+pressures and upward pressures on real interest rates.
+
+Inflation: Inflation trends are captured using one-year changes in forecasts of CPI inflation. From 1991 onward forecast
+data is from Consensus Economics. Prior to 1991, we use one-year changes in realized year-on-year CPI inflation, lagged
+one quarter (this definition is equivalent to changes in forecasts assuming that CPI inflation follows a random walk). The
+series is from the OECD. Increasing inflation is assumed to be bearish for equities (see Katz and Lustig (2017)), bullish for
+currencies (see Clarida and Waldman (2008)), and bearish for fixed income.
+
+International Trade: International trade trends are captured using one-year changes in spot exchange rates against
+an export-weighted basket. Data is from DataStream. A depreciating currency is bullish for equities (exports become
+more competitive), bearish for currencies (very similar to price momentum), bearish for fixed income (other things equal,
+a depreciating currency reduces the pressure on a central bank to reduce interest rates), and bearish for commodities
+(depreciation of the currencies of commodity consumers means commodities, which are generally priced in USD, are
+effectively more expensive).
+
+Monetary Policy: Monetary policy trends are captured using one-year changes in the front end of the yield curve. From
+1992 onwards, we use two-year yields, while prior to 1992 we use Libor and its international equivalents. Both data series
+are from Bloomberg. Expansionary monetary policy is bullish for equities (see Bernanke and Kuttner (2005)), bullish for
+currencies (see Eichenbaum and Evans (1995)), bullish for commodities, and bearish for fixed income.
+
+Risk Aversion: Changes in risk aversion are captured using an equally weighted combination of two metrics. The first is one-
+year equity market excess returns. Data is from DataStream. The second is one-year changes in credit spreads. Changes
+in credit spreads are computed using Moody’s Corporate Yields relative to U.S. treasuries until 2001 and then Bloomberg
+Global High Yield Corporate OAS. Increasing risk sentiment — i.e., strong equity market returns — is bullish for equities,
+commodities, and currencies, and bearish for fixed income.
+
+Price Trend Backtest Construction
+
+The Price Trend Backtest builds asset class price trend horizon portfolios across the universe outlined below. The backtest
+combines each asset class price trend horizon portfolio at equal risk and targets 10% forecasted annual volatility. Within
+each asset class price trend horizon portfolio, each individual position is sized to target the same amount of volatility. The
+backtest takes long positions in assets in which prices are appreciating and short positions in assets in which prices are
+depreciating.
+
+Asset Classes: Equity indices, fixed income (combining government bonds and short-term interest rates at equal risk),
+currencies, and commodities.
+
+[C15]
+15
+
+Economic Trend | 2Q 2023
+
+Price Trend Horizons: 1-month, 3-month, 12-month. The price trend signal reflects the return in excess of cash for each
+asset over the past 1, 3, or 12-month period.
+
+Economic Trend and Price Trend Backtest Universe:
+
+Equity index return data is from Bloomberg. Start dates are the earliest available date of the series:
+
+y 1970: Australia, Germany, Canada, Spain, France, Italy, Japan, Netherlands, U.K., U.S.
+
+y 1975: Switzerland
+
+y 1980: Denmark, Hong Kong, Sweden
+
+y 1988: New Zealand
+
+Government bond return data is from Bloomberg and DataStream. Start dates are
+
+y 1970: Germany, Canada, U.K., U.S.
+
+y 1980: Japan
+
+y 1981: Switzerland
+
+y 1985: Denmark
+
+y 1986: Australia
+
+y 1987: Sweden
+
+Currency return data is from Citi and Reuters. Start dates are
+
+y 1971: Germany, Japan, Switzerland, U.K.
+
+y 1972: Australia, Canada
+
+y 1978: New Zealand, Sweden
+
+Interest rate futures return data is from IFS. Start dates are
+
+y 1987: U.S.
+
+y 1988: U.K.
+
+y 1989: Australia, Europe (Euribor)
+
+y 1991: Canada, New Zealand, Switzerland
+
+Commodity futures return data is from Bloomberg. Start dates are
+
+y 1970: Cattle, Corm Cotton, Hogs, Soybeans, Soymeal, Soyoil, Sugar, Wheat
+
+y 1974: Coffee
+
+y 1979: Heat Oil
+
+y 1983: Crude Oil
+
+y 1984: Gas Oil
+
+y 1985: Unleaded
+
+y 1989: Brent Oil
+
+y 1990: Natural Gas
+
+y 1991: Zinc
+
+y 1993: Nickel
+
+Additional Disclosures
+
+This document has been provided to you solely for information purposes and does not constitute an offer or solicitation of an
+offer or any advice or recommendation to purchase any securities or other financial instruments and may not be construed
+as such. The factual information set forth herein has been obtained or derived from sources believed by the author and
+AQR Capital Management, LLC (“AQR”) to be reliable but it is not necessarily all-inclusive and is not guaranteed as to its
+accuracy and is not to be regarded as a representation or warranty, express or implied, as to the information’s accuracy or
+completeness, nor should the attached information serve as the basis of any investment decision. This document is not to
+be reproduced or redistributed to any other person. The information set forth herein has been provided to you as secondary
+
+[C16]
+16
+
+Economic Trend | 2Q 2023
+
+information and should not be the primary source for any investment or allocation decision. Past performance is not a
+guarantee of future performance.
+
+This material is not research and should not be treated as research. This paper does not represent valuation judgments
+with respect to any financial instrument, issuer, security or sector that may be described or referenced herein and does not
+represent a formal or official view of AQR. The views expressed reflect the current views as of the date hereof and neither
+the author nor AQR undertakes to advise you of any changes in the views expressed herein.
+
+The information contained herein is only as current as of the date indicated, and may be superseded by subsequent market
+events or for other reasons. Charts and graphs provided herein are for illustrative purposes only. The information in this
+presentation has been developed internally and/or obtained from sources believed to be reliable; however, neither AQR nor
+the author guarantees the accuracy, adequacy or completeness of such information. Nothing contained herein constitutes
+investment, legal, tax or other advice nor is it to be relied on in making an investment or other decision. There can be no
+assurance that an investment strategy will be successful. Historic market trends are not reliable indicators of actual future
+market behavior or future performance of any particular investment which may differ materially, and should not be relied
+upon as such.
+
+The information in this paper may contain projections or other forward-looking statements regarding future events,
+targets, forecasts or expectations regarding the strategies described herein, and is only current as of the date indicated.
+There is no assurance that such events or targets will be achieved, and may be significantly different from that shown
+here. The information in this document, including statements concerning financial market trends, is based on current
+market conditions, which will fluctuate and may be superseded by subsequent market events or for other reasons.
+
+HYPOTHETICAL PERFORMANCE RESULTS HAVE MANY INHERENT LIMITATIONS, SOME OF WHICH, BUT NOT ALL,
+ARE DESCRIBED HEREIN. NO REPRESENTATION IS BEING MADE THAT ANY FUND OR ACCOUNT WILL OR IS LIKELY
+TO ACHIEVE PROFITS OR LOSSES SIMILAR TO THOSE SHOWN HEREIN. IN FACT, THERE ARE FREQUENTLY SHARP
+DIFFERENCES BETWEEN HYPOTHETICAL PERFORMANCE RESULTS AND THE ACTUAL RESULTS SUBSEQUENTLY
+REALIZED BY ANY PARTICULAR TRADING PROGRAM. ONE OF THE LIMITATIONS OF HYPOTHETICAL PERFORMANCE
+RESULTS IS THAT THEY ARE GENERALLY PREPARED WITH THE BENEFIT OF HINDSIGHT. IN ADDITION,
+HYPOTHETICAL TRADING DOES NOT INVOLVE FINANCIAL RISK, AND NO HYPOTHETICAL TRADING RECORD CAN
+COMPLETELY ACCOUNT FOR THE IMPACT OF FINANCIAL RISK IN ACTUAL TRADING. FOR EXAMPLE, THE ABILITY
+TO WITHSTAND LOSSES OR TO ADHERE TO A PARTICULAR TRADING PROGRAM IN SPITE OF TRADING LOSSES ARE
+MATERIAL POINTS THAT CAN ADVERSELY AFFECT ACTUAL TRADING RESULTS. THERE ARE NUMEROUS OTHER
+FACTORS RELATED TO THE MARKETS IN GENERAL OR TO THE IMPLEMENTATION OF ANY SPECIFIC TRADING
+PROGRAM WHICH CANNOT BE FULLY ACCOUNTED FOR IN THE PREPARATION OF HYPOTHETICAL PERFORMANCE
+RESULTS, ALL OF WHICH CAN ADVERSELY AFFECT ACTUAL TRADING RESULTS. The hypothetical performance
+results contained herein represent the application of the quantitative models as currently in effect on the date first written
+above and there can be no assurance that the models will remain the same in the future or that an application of the current
+models in the future will produce similar results because the relevant market and economic conditions that prevailed during
+the hypothetical performance period will not necessarily recur. Discounting factors may be applied to reduce suspected
+anomalies. This backtest’s return, for this period, may vary depending on the date it is run. Hypothetical performance
+results are presented for illustrative purposes only. In addition, our transaction cost assumptions utilized in backtests,
+where noted, are based on AQR Capital Management, LLC’s, (“AQR”)’s historical realized transaction costs and market data.
+Certain of the assumptions have been made for modeling purposes and are unlikely to be realized. No representation or
+warranty is made as to the reasonableness of the assumptions made or that all assumptions used in achieving the returns
+have been stated or fully considered. Changes in the assumptions may have a material impact on the hypothetical returns
+presented. Actual advisory fees for products offering this strategy may vary.
+
+Note to readers in Australia: AQR Capital Management, LLC, is exempt from the requirement to hold an Australian
+Financial Services License under the Corporations Act 2001, pursuant to ASIC Class Order 03/1100 as continued by
+ASIC Legislative Instrument 2016/396, ASIC Corporations (Amendment) Instrument 2021/510 and ASIC Corporations
+(Amendment) Instrument 2022/623. AQR is regulated by the Securities and Exchange Commission ("SEC") under United
+States of America laws and those laws may differ from Australian laws. Note to readers in Canada: This material is being
+provided to you by AQR Capital Management, LLC, which provides investment advisory and management services in
+reliance on exemptions from adviser registration requirements to Canadian residents who qualify as “permitted clients”
+under applicable Canadian securities laws. No securities commission or similar authority in Canada has reviewed
+this presentation or has in any way passed upon the merits of any securities referenced in this presentation and any
+representation to the contrary is an offence. Note to readers in Europe: AQR in the European Economic Area is AQR
+Capital Management (Germany) GmbH, a German limited liability company (Gesellschaft mit beschränkter Haftung;
+“GmbH”), with registered offices at Maximilianstrasse 13, 80539 Munich, authorized and regulated by the German Federal
+Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, „BaFin“), with offices at Marie-Curie-
+Str. 24-28, 60439, Frankfurt am Main und Graurheindorfer Str. 108, 53117 Bonn, to provide the services of investment
+advice (Anlageberatung) and investment broking (Anlagevermittlung) pursuant to the German Securities Institutions Act
+(Wertpapierinstitutsgesetz; “WpIG”). The Complaint Handling Procedure for clients and prospective clients of AQR in the
+European Economic Area can be found here: https://ucits.aqr.com/Legal-and-Regulatory. Note to readers in Asia: This
+
+[C17]
+17
+
+Economic Trend | 2Q 2023
+
+presentation may not be copied, reproduced, republished, posted, transmitted, disclosed, distributed or disseminated, in
+whole or in part, in any way without the prior written consent of AQR Capital Management (Asia) Limited (together with its
+affiliates, “AQR”) or as required by applicable law. This presentation and the information contained herein are for educational
+and informational purposes only and do not constitute and should not be construed as an offering of advisory services or
+as an invitation, inducement or offer to sell or solicitation of an offer to buy any securities, related financial instruments
+or financial products in any jurisdiction. Investments described herein will involve significant risk factors which will be
+set out in the offering documents for such investments and are not described in this presentation. The information in this
+presentation is general only and you should refer to the final private information memorandum for complete information.
+To the extent of any conflict between this presentation and the private information memorandum, the private information
+memorandum shall prevail. The contents of this presentation have not been reviewed by any regulatory authority in Hong
+Kong. You are advised to exercise caution and if you are in any doubt about any of the contents of this presentation, you
+should obtain independent professional advice. AQR Capital Management (Asia) Limited is licensed by the Securities and
+Futures Commission ("SFC") in the Hong Kong Special Administrative Region of the People's Republic of China ("Hong Kong")
+pursuant to the Securities and Futures Ordinance (Cap 571) (CE no: BHD676). AQR Capital Management (Asia) Limited
+Unit 2023, 20/F, One IFC, 1 Harbour View Street, Central Hong Kong, Hong Kong Licensed and regulated by the Securities
+and Futures Commission of Hong Kong (CE no: BHD676). Note to readers in China: This document does not constitute
+a public offer of any fund which AQR Capital Management, LLC (“AQR”) manages, whether by sale or subscription, in the
+People's Republic of China (the "PRC"). Any fund that this document may relate to is not being offered or sold directly or
+indirectly in the PRC to or for the benefit of, legal or natural persons of the PRC. Further, no legal or natural persons of
+the PRC may directly or indirectly purchase any shares/units of any AQR managed fund without obtaining all prior PRC’s
+governmental approvals that are required, whether statutorily or otherwise. Persons who come into possession of this
+document are required by the issuer and its representatives to observe these restrictions. Note to readers in Singapore:
+This document does not constitute an offer of any fund which AQR Capital Management, LLC (“AQR”) manages. Any fund
+that this document may relate to and any fund related prospectus that this document may relate to has not been registered
+as a prospectus with the Monetary Authority of Singapore. Accordingly, this uocument and any other document or material
+in connection with the offer or sale, or invitation for subscription or purchase, of shares may not be circulated or distributed,
+nor may the shares be offered or sold, or be made the subject of an invitation for subscription or purchase, whether directly
+or indirectly, to persons in Singapore other than (i) to an institutional investor pursuant to Section 304 of the Securities
+and Futures Act, Chapter 289 of Singapore (the “SFA”)) or (ii) otherwise pursuant to, and in accordance with the conditions
+of, any other applicable provision of the SFA. Note to readers in Korea: Neither AQR Capital Management (Asia) Limited
+or AQR Capital Management, LLC (collectively “AQR”) is making any representation with respect to the eligibility of any
+recipients of this document to acquire any interest in a related AQR fund under the laws of Korea, including but without
+limitation the Foreign Exchange Transaction Act and Regulations thereunder. Any related AQR fund has not been registered
+under the Financial Investment Services and Capital Markets Act of Korea, and any related fund may not be offered, sold or
+delivered, or offered or sold to any person for re-offering or resale, directly or indirectly, in Korea or to any resident of Korea
+except pursuant to applicable laws and regulations of Korea. Note to readers in Japan: This document does not constitute
+an offer of any fund which AQR Capital Management, LLC (“AQR”) manages. Any fund that this document may relate to has
+not been and will not be registered pursuant to Article 4, Paragraph 1 of the Financial Instruments and Exchange Law of
+Japan (Law no. 25 of 1948, as amended) and, accordingly, none of the fund shares nor any interest therein may be offered
+or sold, directly or indirectly, in Japan or to, or for the benefit, of any Japanese person or to others for re-offering or resale,
+directly or indirectly, in Japan or to any Japanese person except under circumstances which will result in compliance with all
+applicable laws, regulations and guidelines promulgated by the relevant Japanese governmental and regulatory authorities
+and in effect at the relevant time. For this purpose, a “Japanese person” means any person resident in Japan, including any
+corporation or other entity organised under the laws of Japan. Note to readers in United Kingdom: This material is being
+provided to you by AQR Capital Management (Europe) LLP, a UK limited liability partnership with its office at Charles House
+5-11, Regent St., London, SW1Y 4LR, which is authorised and regulated by the UK Financial Conduct Authority (“FCA”).
+Note to readers in Dubai: AQR Capital Management (Europe) LLP (DIFC Representative Office) is regulated by the Dubai
+Financial Services Authority of the Dubai International Financial Centre as a Representative Office (firm reference number:
+F007651). Its principal place of business is Unit 34, Level 12, The Gate Building, DIFC, Dubai.
+
+AQR Capital Management, LLC
+
+www.aqr.com
+
+P +1.203.742.3600
+
+F +1.203.742.3100
+
+Two Greenwich Plaza, Greenwich, CT 06830

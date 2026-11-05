@@ -1,0 +1,2770 @@
+# Predicting Short-term Eurodollar Futures (Chua, Ramaswamy, Stine; Rodney L. White Center 02-09)
+source_id: QP07
+type: paper
+file: 0902.pdf
+chunks: one per PDF page (C01 = page 1). Page images: img/QP07-p-NN.png (exhibits, charts)
+---
+
+[C01]
+The Rodney L. White Center for Financial Research
+
+Predicting Short-term Eurodollar Futures
+
+Choong Tze Chua
+Krishna Ramaswamy
+Robert Stine
+
+02-09
+
+[C02]
+Predicting Short-term Eurodollar Futures
+
+Choong Tze Chua, Krishna Ramaswamy and Robert Stine
+
+November 28, 2008
+
+Abstract
+
+We propose and illustrate a structural model for the forward curve produced by Eurodollar
+
+futures contracts. Our model provides a three-part functional decomposition of the forward
+
+rate: a long-term, unconditional component, a maturity-specific component, and a date-specific
+
+component. The maturity-specific component captures preferred investment habitats, and the
+
+date-specific component captures shocks to expectations of future spot rates. These functional
+
+components (modeled with exponential basis functions) of the decomposition aggregate to an
+
+arbitrage-free representation of the underlying stochastic process that drives the evolution
+
+of the Eurodollar forward curve. We demonstrate the use of this approach by fitting this
+
+model to yields over the period 12/9/1981 to 1/28/2008. The estimation is accomplished by
+
+using a Kalman filter to determine the underlying representation. The estimated yield curve
+
+provides better out-of-sample predictions than the standard random walk model in forecasts
+
+over various horizons. We further show the profitability of a trading scheme that chooses
+
+futures positions based upon the anticipated forward curve.
+
+JEL Classification number: C53, E43, E47.
+
+Keywords: Term Structure, Interest Rates, Forward Rates, Forecasting
+
+Choong Tze Chua, the corresponding author, is at Lee Kong Chian School of Business, Singapore Management Uni-
+
+versity, 50 Stamford Road, Singapore 178899. Tel: +65-68280745; Email: ctchua@smu.edu.sg. Krishna Ramaswamy
+
+and Robert Stine are at The Wharton School, The University of Pennsylvania, Philadelphia, PA 19104.
+
+[C03]
+
+
+[C04]
+Abstract
+
+We propose and illustrate a structural model for the forward curve produced by Eurodollar
+
+futures contracts. Our model provides a three-part functional decomposition of the forward
+
+rate: a long-term, unconditional component, a maturity-specific component, and a date-specific
+
+component. The maturity-specific component captures preferred investment habitats, and the
+
+date-specific component captures shocks to expectations of future spot rates. These functional
+
+components (modeled with exponential basis functions) of the decomposition aggregate to an
+
+arbitrage-free representation of the underlying stochastic process that drives the evolution
+
+of the Eurodollar forward curve. We demonstrate the use of this approach by fitting this
+
+model to yields over the period 12/9/1981 to 1/28/2008. The estimation is accomplished by
+
+using a Kalman filter to determine the underlying representation. The estimated yield curve
+
+provides better out-of-sample predictions than the standard random walk model in forecasts
+
+over various horizons. We further show the profitability of a trading scheme that chooses
+
+futures positions based upon the anticipated forward curve.
+
+[C05]
+
+
+[C06]
+Essentially, all models are wrong, but some are useful. — George E.P. Box
+
+Structural models of the dynamics of interest rates have many applications. They play an im-
+
+portant role in the design and management of fixed income portfolios and in the valuation and
+
+hedging of more complex securities. An analyst of the fixed-income market can choose from
+
+among several alternative models, such as the Vasicek or the Cox, Ingersoll and Ross (CIR)
+
+models. An important characteristic that guides the choice from among these alternatives is
+
+the ability of the model to forecast forward rates or futures prices.
+
+In a recent paper (Chua et al (2008), henceforth CFRS) the authors proposed a general
+
+class of affine, arbitrage-free models that are then fit to the current term structure of interest
+
+rates. Each member of this class of models corresponds to a representation of an underlying
+
+stochastic process which can be estimated through a parsimonious set of state variables. As a
+
+demonstration, CFRS empirically select and estimate a member of this class using a sample
+
+of observed “training” data. The resulting model gave good out-of-sample forecasts of US
+
+Treasury yields when compared to several extant models that include the random walk model.
+
+Each member of this CFRS class of arbitrage-free models represents the forward curve on
+
+any date as the sum of three curves:
+
+1. An unconditional curve that represents the steady-state forward curve;
+
+2. A maturity-specific curve that embeds the influence of supply and demand from
+
+agents who have needs for loans of specific terms; and
+
+3. A date-specific curve that embeds expectations about spot rates to prevail at
+
+fixed future dates.
+
+The maturity-specific curve describes deviations from the long-run, unconditional curve due
+
+to the behavior of investors who have preferences for specific investment horizons, or to a
+
+preferred habitat model (see for example Modigliani & Sutch (1966)). Because the curve of
+
+maturity-specific deviations from the long-term unconditional curve embeds investors’ ma-
+
+turity preferences, expectations of future spot rates play no role in this component. The
+
+date-specific curve embeds all of the information that investors have regarding the levels of
+
+future spot rates and summarizes the effects of fundamental monetary influences on expected
+
+future interest rates. The maturity-specific and date-specific curves connect to well-established
+
+financial models. The curve of maturity-specific deviations corresponds to the deviations from
+
+the steady state curve in extant equilibrium models of interest rates (such as Cox, Ingersoll
+
+1
+
+[C07]
+and Ross (1985) or Vasicek (1977)). The curve of date-specific deviations corresponds to the
+
+influences of the expectations hypothesis. In this sense, the fitted parametric model exhibited
+
+in CFRS (2008) combines both investors’ maturity-preferences and their current expectations.
+
+The model has the additional advantage of being demonstrably arbitrage-free.
+
+Our objective here is to show that a representative member chosen from this class of models
+
+is able forecast 90-day forward rates to prevail at future dates. In the actual estimation we
+
+use Eurodollar futures contracts to impute the forward rates. 1 We first select a member of
+
+the CFRS class using the Akaike information criterion over an initial set of training data;
+
+these data are also used to estimate the parameters of the chosen model. We then roll this
+
+model forward and compare the accuracy of its forecasts with the standard random walk over
+
+a subsequent hold-out sample. We also report on the profitability and risk of a strategy that
+
+trades the Eurodollar futures using forecasts produced by our model. Our results indicate
+
+that the model is useful, most notably at longer forecast horizons.
+
+In the remainder of this paper, we describe the general class of models briefly in Section
+
+1; in Section 2 we describe a one Brownian-motion (one state variable) example to illustrate
+
+the model and its dynamics; in Section 3 we describe the more complex model that we use to
+
+forecast forward rates and futures prices. We also outline the procedure used to estimate the
+
+model (this is more fully described in CFRS (2008)) with the Kalman filter. In Section 4, we
+
+report the forecasting accuracy of our model, in comparison to the random walk model. We
+
+also describe the trading strategy that can be generated with the forward rate forecasts from
+
+our model and report on its profitability. Section 5 concludes.
+
+1
+
+A Brief Description of the Model
+
+The model for the forward curve at date t is written F (τ ; t) and represents the curve of forward
+
+rates for instantaneous loans to begin at future dates t + τ, τ > 0. The first argument τ refers
+
+to the time to maturity; the second argument t refers to the calendar date for that curve.
+
+Our proposed model of the forward curve decomposes F (τ ; t) as the sum of three component
+
+curves:
+
+F (τ ; t) = U (τ ) + M (τ ; t) + D(τ ; t)
+
+(1)
+
+1 The CFRS model does not account for default and (strictly speaking) applies to forward rates implicit in Treasury yields.
+
+The Eurodollar futures market settles to the rate on dollar-denominated inter-bank loans in London and therefore is affected by
+
+a credit risk; we choose it because is a very liquid market and offers a rich source of data.
+
+2
+
+[C08]
+where
+
+1. U (τ ) is the unconditional or steady-state forward curve;
+
+2. M (τ ; t) is the maturity-specific curve for deviations from U (τ ); and
+
+3. D(τ ; t) is the date-specific curve for deviations from U (τ ).
+
+In keeping with our notation for the forward curve, M (τ ; t) refers to the maturity-specific
+
+deviation embedded in the forward curve at date t for the future date t + τ .
+
+The function U (τ ) represents the steady state or the unconditional forward curve. If we
+
+were to forecast the forward curve at a time in the very distant future, all presently available
+
+information would be of little use. Let E t represent the expectation operator given the set of
+
+all information available up to time t. This unconditional curve can be written:
+
+U (τ ) = lim E t [F (τ ; s)]
+
+s↑∞
+
+(2)
+
+The unconditional curve is time invariant and may be estimated by taking an average of all
+
+available historical curves.
+
+The concept of a maturity-specific effect originates from the Market Segmentation Hypoth-
+
+esis and the Preferred Habitat Theory (Modigliani & Sutch (1966)). That model postulates
+
+that some market participants are primarily concerned with their natural maturity habitat,
+
+with little regard for the implication of the forward rates on future spot rates. The maturity-
+
+specific deviation M (τ ; t) in relation (1) captures that effect. That deviation is localized to
+
+particular maturities of the forward curve. The actions of participants with preferred habi-
+
+tats affect only those maturities (and nearby maturities) of the forward curve rather than
+
+move progressively towards shorter maturities and eventually affect the spot rates. Therefore,
+
+M (τ ; t) captures abnormal activity that affects the forward curve at specific maturities τ . We
+
+model the maturity-specific curve as a point-wise mean-reverting process that reverts to zero
+
+at a constant rate, so that
+
+E t [M (τ ; T )] = e −K m (T −t) M (τ ; t)
+
+τ > 0,
+
+(3)
+
+where the parameter K m > 0 determines the speed of reversion to zero. The overall maturity-
+
+specific curve can be comprised of two or more maturity-specific deviations, for example,
+
+M (τ ; t) = M 1 (τ ; t) + M 2 (τ ; t) .
+
+3
+
+[C09]
+The components M 1 (τ ; t) and M 2 (τ ; t) may mean-revert to zero at different rates. Thus, for
+
+each component of the maturity-specific deviation, we require that
+
+E t [M j (τ ; T )] = e −K mj (T −t) M j (τ ; t)
+
+τ > 0, j = 1, 2 . . . .
+
+(4)
+
+The arbitrage-free formulation of the overall curve of maturity-specific deviations has the
+
+property that M (∞; t) = 0 for all t. Note that instantaneous or spot rates are zero maturity
+
+loans, and we assume M (0; t) = 0 for all t to allow the date-specific deviations to capture
+
+the dynamics of present and future spot rates. Figure 1 illustrates the forecasted behavior
+
+of maturity-specific deviations. The curve is anchored at zero at extreme maturity values,
+
+and the entire curve decays (in expectation) point-wise towards zero as time passes, satisfying
+
+relation (3).
+
+In contrast, the date-specific curve represents information that affects the expectation of
+
+the spot interest rate to prevail on a specific calendar date in the future. The concept of a
+
+date-specific deviation has its roots from the Expectations Hypothesis (Fisher (1896)). It is
+
+intuitive that forward rates – observable rates at which one can lock in borrowing and lending
+
+at future dates – contain information regarding future spot rates. Therefore a high forward
+
+rate today should naturally point towards a higher spot rate at the corresponding date in
+
+the future. However, the Expectations Hypothesis fails in some basic ways, as shown in the
+
+literature. For instance, in the theoretical realm, Cox, Ingersoll and Ross (1981) show that
+
+some versions of the Expectations Hypothesis admit arbitrage. 2 In empirical tests, forecasts
+
+of forward rates generated by the Expectations Hypothesis model are generally inferior to
+
+even the most basic benchmark, the random walk. The model proposed here attributes only
+
+a part of the current forward curve as containing information about future spot rates.
+
+The date-specific deviation curve D(τ ; t) is influenced by abnormal events or information
+
+that affects the portions of the forward curve corresponding to specific maturity dates. In other
+
+words, this curve captures the deviations of expected future spot rates from the unconditional
+
+spot rate. For instance, suppose that on t ≡ January 1 2008 it is learned that the Treasury
+
+needs new additional financing on (or around) s ≡ January 2009. This borrowing will drive
+
+up interest rates during that period. On January 1 2008, the 1-year forward rate would be
+
+elevated. As time passes, we expect the elevated portion of the forward curve to move closer
+
+2 Some recent literature seem to vindicate theoretical aspects of the Expectations Hypothesis.
+
+McCulloch (1993) and Fisher
+
+and Gilles (1998) present examples to show that some forms of the Expectations Hypothesis are consistent with no-arbitrage.
+
+Longstaff (2000) shows that all traditional forms of the Expectations Hypothesis are consistent with no-arbitrage if markets are
+
+incomplete.
+
+4
+
+[C10]
+to the origin since in expectation the higher rates around January 1 2009 would remain. Thus,
+
+the date-specific deviation has the property:
+
+E t [D(s − T ; T )] = D(s − t; t)
+
+t < T < s.
+
+(5)
+
+The date-specific deviation at zero maturity is simply the difference between the spot interest
+
+rate and the unconditional spot rate: D(0; t) = F (0; t) − U (0). At infinite maturity, the date-
+
+specific deviation must be zero because it is not plausible that one can have any information
+
+about the spot rate in the infinite future other than that contained in the unconditional spot
+
+rate. Hence, D(∞; t) = 0 for all t. Figure 2 illustrates the forecasted behavior of the date-
+
+specific curve. Starting from a given date-specific curve that is anchored at zero at the long
+
+end, the entire curve shifts (in expectation) to the left as time passes, satisfying relation (5).
+
+The Dynamic Behavior of the Forward Curve
+
+The dynamic behavior of the forward curve in relation (1) depends on the dynamic behavior of
+
+the date-specific and the maturity-specific curves, as indicated in relations (3) and (5). Each
+
+of these, within a specific model that we specify in Section 2, is affected by one or more state
+
+variables that represent the evolution of underlying economic factors.
+
+The maturity-specific deviation is caused by abnormal pricing of forward rates specific to
+
+certain maturities, driven by habitat and preferences of individual and institutional investors.
+
+Changes in demand or supply at a given maturity habitat can affect a range of surround-
+
+ing maturities — investors treat them as close substitutes — which allows us to treat the
+
+maturity-specific deviation as a smooth curve. Since these are deviations from the average,
+
+the average deviation should naturally be zero. Without additional information to guide us
+
+on how these deviations behave over time, a simple yet intuitive model for these deviations
+
+would be that they decay towards zero at some rate. In Section 2, where we develop an
+
+arbitrage-free framework for our model, we assume that the maturity-specific deviation de-
+
+cays at an exponential rate to satisfy the Heath-Jarrow-Morton requirement for the model to
+
+be arbitrage-free.
+
+Our model (in the general form under discussion so far) does not a priori preclude the
+
+possibility that there might be negative forward rates. Given an observed term structure of
+
+forward rates that is positive at all maturities, it is possible to find maturity-specific and
+
+date-specific deviations that fit the current term structure but produce forecasts of negative
+
+forward rates in the future. For example, an extremely large and positive maturity-specific
+
+5
+
+[C11]
+deviation coupled with an extremely large and negative date-specific deviation can produce
+
+such negative forward rate forecasts. However, in the explicit parametrized forms of the model
+
+described in Section 2 below we ensure that the model is arbitrage-free by checking the HJM
+
+restrictions.
+
+In the implementations of explicit forms of our general model (described in Section 2
+
+and made clear in the estimation procedure in Section 3) we employ sums of exponential
+
+basis functions for U (τ ) and similar basis functions (that are scaled by Brownian motions) to
+
+specify dynamic functional forms for M (τ ; t), and D(τ ; t). The resulting model for forward
+
+rates F (τ ; t) is exponentially affine in the state variables and has a structure that lends itself
+
+to estimation. 3
+
+Example: A One-factor Illustration of the Model
+
+2
+
+As a first step, it is useful to consider a basic dynamic model for the forward rate that is driven
+
+by a single Brownian motion — we denote this F 1 (τ ; t) with the subscript “1” indicating the
+
+number of Brownian motions. 4 In this basic setting, the random variation that affects the
+
+maturity-specific curve is perfectly correlated with the random variation that drives the date-
+
+specific curve. The explicit parametrization is chosen as a linear combination of exponential
+
+basis functions. 5 The three components of the current forward curve F 1 (τ ; t) are as follows:
+
+1. The time-invariant unconditional curve is now explicitly written as
+
+U 1 (τ ) = C 0 − C 1 e −2K m τ ,
+
+(6)
+
+where C 0 , C 1 and K m are positive constants to be estimated from the data. This form
+
+generates a smooth upward-sloping unconditional curve that starts at U 1 (0) = C 0 − C 1
+
+at the origin and asymptotes to C 0 at infinite maturity.
+
+2. The maturity-specific deviation is explicitly written as
+
+¤
+£
+M 1 (τ ; t) = m(t) e −K m τ − e −2K m τ .
+
+(7)
+
+3 See CFRS (2008) for further discussion of the connection of their model to other models.
+
+4 The instantaneous forward rate on date t for maturity on date s is really a function of {t, s − t, m(t),
+
+and d(t)} where the
+
+final two arguments are state variables that affect the maturity- and date-specific deviations. For simplicity, we will continue to
+
+write our model for the forward rate as a function of 2 variables: {τ = s − t, t}, writing F 1 (τ ; t) in place of F 1 (t, s, m(t), d(t)) and
+
+suppressing the dependence on the two state variables.
+5 The precise choice of exponential bases can affect the arbitrage-free status of the model, making it important to verify the
+
+HJM conditions for each choice.
+
+6
+
+[C12]
+By design, M 1 (0; t) = 0 ∀t. Because lim τ →∞ M (τ ; t) = 0 the deviation has a humped
+
+ln 2
+shape with a peak at maturity τ = K
+. The stochastic process m(t) is an Itô process
+m
+
+whose dynamics are induced by the Brownian motion, defined further below; m(t) serves
+
+to scale the deviation which has a fixed shape.
+
+3. The date-specific deviation is specified as
+
+£
+¤
+D 1 (τ ; t) = d(t) e −2K m τ .
+
+(8)
+
+Here d(t) is an Itô process whose dynamics are related to the Brownian motion, also
+
+defined below; it serves to scale an exponential function which is either monotonically
+
+upward- or downward-sloping. Note that the overall date-specific deviation D 1 (0; t) =
+
+d(t) at zero maturity, and it asymptotes to zero at infinite maturity (D 1 (∞; t) = 0),
+
+reflecting the fact that there can be no expectation about the spot rate in the distant
+
+future other than the long-run mean.
+
+Given this parametrization, Itô’s lemma implies that the model forward rate obeys the
+
+following SDE:
+
+∂F 1
+∂F 1
+∂F 1
+dt +
+dm(t) +
+dd(t),
+∂t
+∂m(t)
+∂d(t)
+
+dF 1 (τ ; t) =
+
+(9)
+
+indicating dependence on the driving Itô processes m(t) and d(t); all second-order terms are
+
+zero.
+
+Recall that the model requires (see relation (3)) the maturity-specific deviation to decay
+
+exponentially towards zero at rate K m . Therefore we require the SDE for the state variable
+
+m(t) to have the drift −m(t)K m , and specify its diffusion coefficient γ t later (when we impose
+
+the arbitrage-free condition):
+
+dm(t) = −m(t)K m dt + γ t dB(t),
+
+(10)
+
+where B(t) is the one Brownian motion for this parametrization.
+
+In the SDE for the Itô process d(t) we make its drift rate equal to −2d(t)K m so that we
+
+satisfy the relation (5) above. We specify the diffusion of the process d(t) to be identical to
+
+that of m(t) in order to ensure that the drift and diffusion of the forward rate conform to the
+
+HJM condition:
+
+dd(t) = −2d(t)K m dt + γ t dB(t).
+
+(11)
+
+Note that the maturity-specific curve and the date-specific curve are driven by the same
+
+Brownian motion, so that their innovations are perfectly correlated. By choosing the overall
+
+7
+
+[C13]
+forward curve as the sum of several components driven by multiple Brownian motions (as we
+
+do below) we avoid this extreme implication.
+
+Relation (9), the SDE for the forward rate in this explicit 1-Brownian motion setup can
+
+now be rewritten as:
+
+©
+©
+ª
+ª
+dF 1 (τ ; t) = −K m (2C 1 + m(t))e −2K m (τ ) dt + e −K m (τ ) γ t dB(t).
+
+(12)
+
+Appendix A.1 details the proof that this model conforms to HJM’s specifications for no-
+
+arbitrage. The pricing of bonds as well as interest rate derivatives are also quite straightfor-
+
+ward within the context of this model (see CFRS (2008) for more details).
+
+The Forecasting Version of the Model
+
+3
+
+Before we describe the version of the model we chose for building forecasts, it is useful to
+
+describe the data we use.
+
+3.1
+
+Data: Eurodollar Futures
+
+For the period 12/9/1981 to 1/28/2008, we obtain daily prices of all Eurodollar futures con-
+
+tracts listed in the Chicago Mercantile Exchange.
+
+The Eurodollar futures price on date t for maturity on date t + τ , P (τ ; t), refers to 100
+
+minus the annualized 90-day Libor rate for the period t+τ to t+τ +90. Since the CFRS (2008)
+
+model is built around instantaneous forward rates, we make the simplifying assumption that
+
+the instantaneous forward rate in the middle of the 90-day period referenced by the Eurodollar
+
+futures contract equals the annualized forward rate implied by the Eurodollar futures price as
+
+the standard annualized discount rate: f (τ + 45; t) = 100 − P (τ ; t).
+
+Summary statistics of the implied forward rates are displayed in Table 1. A typical day
+
+would see approximately 40 active contracts, with the maximum being 45. The maturities
+
+of the forward rates range from 45 days (corresponding to a Eurodollar futures contract that
+
+expires at the end of that trading day) to slightly more than 10 years. The training sample,
+
+which is an early sub-sample of the data, is more sparsely populated with an average of
+
+(approximately) 10 active contracts per trading day, with maturities stretching out to 4 years.
+
+One feature of the data that merits special attention is what appears to be a microstructure
+
+effect: there are persistent blips in the data for December contracts, perhaps caused by those
+
+8
+
+[C14]
+who use these contracts for swaps. These blips occur systematically and our model – whose
+
+form and whose dynamics are both smooth – cannot accommodate them. In order to build a
+
+useful model for prediction, we elected to incorporate these microstructure features into the
+
+forecast. We describe this adjustment used below in Section 3.3.
+
+3.2
+
+Model Selection using the AIC Criterion
+
+In this section we describe the model we chose (from alternative parameterizations) and briefly
+
+describe the procedure employed in that choice.
+
+We restricted the alternative models to have no more than 4 Brownian Motions (BMs)
+
+that serve as driving state variables. The advantage of our general model-building procedure
+
+is that we can bifurcate the influence of each BM to impact the maturity-specific deviation,
+
+or the date-specific deviation, or both. In this way we can permit the shape of the forward
+
+curve to accommodate several humps and also allow the dynamics of the forward curve to be
+
+influenced by correlated deviations driven by independent BMs.
+
+To choose from the list of alternative models, we fit each model over the period 12/09/1981
+
+to 10/28/1991, using daily data from the Eurodollar futures market (2500 days of data).
+
+Each estimation employs the Kalman filter in the manner explained in next section. The
+
+various alternative models are generated by combining different sub-models (also referred to
+
+as arbitrage-free units or AFU, in CFRS (2008)). CFRS (2008) also details the proof that
+
+combinations of these sub-models are arbitrage-free.
+
+Because the alternative parameterizations involve forms with varying numbers of parame-
+
+ters, we used the Akaike information criterion (henceforth AIC, see Akaike (1973)) to choose
+
+among the models. Table 2 shows the descriptions of the various candidate models and their
+
+respective AIC numbers. Model 5 obtains the lowest AIC among the 6 candidate models. We
+
+therefore chose Model 5 (henceforth CFRS ED model) for empirical implementation reported
+
+in the rest of this paper.
+
+The CFRS ED model, driven by 3 independent Brownian motions, is the sum of the un-
+
+conditional curve, 2 maturity-specific curves, and 4 date-specific curves fitted to 3 exponential
+ª
+©
+basis functions e −K m , e −2K m , e −4K m . We denote the error term in the fitted model as ²(τ ; t):
+
+f (τ ; t) = F 3 (τ ; t) + ²(τ ; t)
+
+so that
+
+(13)
+
+³
+´
+~
+~
+f (τ ; t) = (e kτ ) 0 ~u + M m(t)
+~
++ D d(t)
++ ²(τ ; t),
+
+(14)
+
+9
+
+[C15]
+where
+
+
+
+
+
+
+
+1
+
+0
+
+
+
+
+
+
+
+0
+
+0 0 0 0
+
+
+
+
+
+
+
+ e −K m τ 
+ 1
+
+ 0 0 0 0 
+2
+~
+
+
+
+
+
+
+(e kτ ) = 
+ , M = 
+ , D = 
+ ,
+ e −2K m τ 
+ −1 −1 
+ 1 1 0 1 
+
+
+
+
+
+
+e −4K m τ
+0 −1
+0 0 1 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+d 1 (t)
+
+C 0
+
+
+
+
+
+ 0 
+ d (t) 
+2
+
+
+
+~ = 
+ , d(t)
+m(t)
+~
+= 
+ .
+ , ~u = 
+
+
+
+
+
+−C
+d
+(t)
+m 2 (t)
+1 
+
+
+ 3
+−C 2
+d 4 (t)
+
+m 1 (t)
+
+Therefore there are 6 state variables in this system: m 1 (t), m 2 (t), d 1 (t), d 2 (t), d 3 (t) and d 4 (t).
+~ are:
+The stochastic processes for vectors m(t)
+~
+and d(t)
+
+~
+d m(t)
+~
+= V m m
+~ dt + Σ m ( m)
+~ d B(t)
+
+(15)
+
+~
+~
+d d(t)
+= V d d ~ dt + Σ d ( m)
+~ d B(t)
+
+where
+
+
+
+
+
+
+
+ , V d = 
+
+
+−K m
+
+
+−K m
+
+0
+
+V m = 
+
+0
+
+
+
+
+
+
+
+
+ 0
+0
+
+ , Σ d ( m)
+~ = 
+ 0
+0
+
+0
+
+γ 1,t
+
+0
+
+Σ m ( m)
+~ = 
+
+0
+
+γ 2,t
+
+using 3 independent Brownian motions, and
+
+(16)
+
+
+
+
+
+0
+
+0
+
+0
+
+−2K m
+
+
+
+
+
+
+
+
+0
+
+−2K m
+
+0
+
+0
+
+0
+
+0
+
+−4K m
+
+0
+
+0
+
+0
+
+0
+
+−2K m
+
+
+
+
+
+
+ dB 1,t 
+0 
+
+
+
+ , dB t =  dB 2,t  ,
+
+
+
+0 
+dB 3,t
+γ 3,t
+
+γ 1,t
+
+0
+
+0
+
+γ 2,t
+
+γ 2,t
+
+0
+
+2
+2
+= (m 1 (t) + C 1 )K m
+γ 1,t
+
+2
+K m
+4
+2
+2
+γ 3,t = (3m 2 (t) + 4C 2 )2K m
+
+2
+γ 2,t
+= (m 2 (t) + C 1 )
+
+Note that, in the model selection process, we limit the choice of models to those having
+
+at most 4 BMs and a few alternative forms within that restriction; it is possible that more
+
+extensive forms may perform better than our model in forecast accuracy.
+
+10
+
+[C16]
+3.3
+
+Generating Model Forecasts
+
+Suppose that on date T , we want to forecast future forward rates for date T 2 . We use a
+
+three-step process:
+
+1. Over the parameter space of {K m , σ ∗2 }, (which are the rate of decay of the maturity-
+
+specific deviations and the variance of the measurement errors of the Kalman filter,
+
+respectively) search for a point that maximizes the quasi-likelihood. The quasi-likelihood
+
+for any point in the space is obtained via the following procedure:
+
+(a) Use all the data across dates and maturities for the Eurodollar forward rates, which
+
+we now label as f (τ ; t), for all dates up to date T to fit the unconditional forward
+
+curve of the form: U (τ ) = C 0 − C 1 e −2K m τ − C 2 e −4K m τ
+
+(b) Subtract the fitted unconditional forward curve from the observed forward rates to
+
+obtain the cross-section of deviations. These deviations form the “observations” in
+
+the context of the Kalman filter (The operations of the Kalman filter are detailed in
+
+Appendix A.2): ~z t ≡ f (~τ ; t) − Û (~τ ) = A~x t + ~² t
+
+(c) Run the Kalman filter to estimate the state variables for the maturity-specific and
+
+date-specific curves.
+
+P T
+
+(d) Determine the quasi-likelihood from the Kalman filter: ln L = − nT
+ln 2π − 2 1
+2
+
+t=1
+
+(ln |H t | + v t 0 H t −1 v t ) where H t denotes the conditional covariance matrix of the pre-
+
+diction errors v t . See equation (33) in the Appendix.
+
+2. Beginning with estimated state variables at date T obtained in the previous step, we
+
+evolve these estimates forward according to their respective decay rates to obtain forecasts
+
+for future date T 2 :
+
+¯
+m̂ 1 (T 2 ) = E[m 1 (T 2 ) ¯ m̂ 1 (T )]= m̂ 1 (T )e − K̂ m (T 2 −T )
+¯
+m̂ 2 (T 2 ) = E[m 2 (T 2 ) ¯ m̂ 2 (T )]= m̂ 2 (T )e − K̂ m (T 2 −T )
+¯
+d ˆ 1 (T 2 ) = E[d 1 (T 2 ) ¯ d ˆ 1 (T )] = d ˆ 1 (T )e −2 K̂ m (T 2 −T )
+¯
+d ˆ 2 (T 2 ) = E[d 2 (T 2 ) ¯ d ˆ 2 (T )] = d ˆ 2 (T )e −2 K̂ m (T 2 −T )
+¯
+d ˆ 3 (T 2 ) = E[d 3 (T 2 ) ¯ d ˆ 3 (T )] = d ˆ 3 (T )e −4 K̂ m (T 2 −T )
+¯
+d ˆ 4 (T 2 ) = E[d 4 (T 2 ) ¯ d ˆ 4 (T )] = d ˆ 4 (T )e −2 K̂ m (T 2 −T )
+
+11
+
+[C17]
+3. Correct the model predictions to accommodate market microstructure effect (discussed
+
+above) present at time T . Figure 3 illustrates the type of effects captured by the ad-
+
+justment described there. To that end, on the observed day T , we back out the forward
+
+curve using the current estimates of the underlying state variables, obtaining a fitted
+
+curve. We then subtract this fitted curve from the observed forward rates, producing
+
+²(τ ; T ). Because this microstructure persists in time, our forecast for the future data is
+³
+´
+ˆ
+~kτ 0 ˆ
+ˆ
+ˆ
+~
+f (τ ; T 2 ) = (e ) ~u + M m(T
+~ 2 ) + D d(T 2 ) + ²(τ + (T 2 − T ); T ). In effect, we model the
+
+observed forward rates as a sum of the smooth curve implied by our model plus additive
+
+microstructure effects. Our assumption is that the imprecise cross-sectional fits are not
+
+measurement noise per se, which should dissipate over a longer term, but are market
+
+micro-structure distortions that can be expected to persist over the short-term.
+
+4
+
+Results
+
+In this section, we test the efficacy of our forecasts using 2 different yardsticks: (1) the accuracy
+
+of prediction of future forward rates implied by Eurodollar futures prices, as measured using
+
+RMSE; and (2) the profitability of a simple trading strategy uses the predictions of the model
+
+to generate trade signals.
+
+It should be emphasized that the model selection in section 3.2 uses only data up to
+
+10/28/1991 while forecast generation in section 3.3, uses only the data that is available up
+
+to the date that the forecast is being made. This means that the forecasts made are truly
+
+out-of-sample. We make forecasts for 5-trading-days, 20-trading-days, 65-trading-days and
+
+250-trading-days ahead, approximately corresponding to 1-calendar-week, 1-calendar-month,
+
+1-calendar-quarter and 1-calendar-year ahead, respectively. Refer to Figure 4 to get a graphical
+
+view of the model training and forecasting timeline.
+
+4.1
+
+Predictive Accuracy
+
+The forecast error are calculated as the differences between the forecasted forward rates and
+
+the actual Eurodollar futures implied forward rates that prevail at the end of the forecasting
+
+period. We compare the forecasts of the CFRS ED model against the hypothesis that the
+
+Eurodollar futures prices of each contract remains unchanged over the forecasting period, the
+
+random walk model (RW model). For each date, we measure the cross-sectional square root
+
+of the mean squared forecast errors (RMSE). We report the time-series average and standard
+
+12
+
+[C18]
+deviation of these cross-sectional RMSEs in Panel A of Table 3. We report the statistical
+
+significance of the differences between the RMSE of the CFRS ED model and the RW model
+
+in Panel B of Table 3.
+
+The CFRS ED model performs better than the random walk for all 4 forecast horizons, as
+
+evidenced by the lower forecast error RMSEs. The differences in RMSE start from 0.02 basis
+
+points (12.53 for the CFRS ED model vs 12.55 for the RW model) for 5-day-ahead forecasts,
+
+and monotonically increase to an economically significant 6.31 basis points for 250-day-ahead
+
+forecasts (98.58 for the CFRS ED model versus 104.89 for RW model). In terms of statistical
+
+significance, we calculate the Newey-West statistic (NW-stat; see Newey and West (1987)) for
+
+the differences between the RMSE of the CFRS ED model and the RW model. 6
+
+The NW-stat takes into account serial correlation and heteroscedasticity in the time series
+
+of forecast errors; this structure is very evident in our situation because of the over-lapping
+
+forecasting windows. Panel B of Table 3, shows that the CFRS ED model is consistently more
+
+accurate, but the differences are not statistically significant at the usual levels.
+
+4.2
+
+Trading Strategy Profitability
+
+We use the methodology described in section 3.3 to generate forecasts and signals to trade
+
+forward rates 5-days, 20-days, 65-days, and 250-days ahead. Each trade signal generated is
+
+based on whether the forecasted forward rate is above or below the current Eurodollar-implied
+
+forward rate. If the forecasted rate is below the current rate, we go short that forward rate
+
+(equivalently, we go long the Eurodollar futures contract), and hold that short position until
+
+the end of the forecasting period. Conversely, if the forecasted rate is above the current
+
+rate, we go long the that forward rate (by going short the Eurodollar futures contract), and
+
+hold that long position until the end of the forecasting period. Trades are placed for all
+
+Eurodollar futures contracts that will still exist at the end of the forecasting period. The
+
+profitability on each trade is then calculated as the cross-sectional average movement in (or
+
+against) the predicted direction over the length of the forecasting period, expressed in basis
+
+points. For comparison, we also measure the profitability of an alternative trading strategy
+
+that always buys-and-holds a long position in all the traded Eurodollar futures contracts,
+
+6 We first compute the difference between a given day’s cross-sectional RMSE for our model and the RW model.
+
+Then, we
+
+compute the Newey-West (NW) standard error for the time-series of these differences. The mean difference divided by this NW
+
+standard error is our reported NW statistic. Alternatively, we can compute the significance using the Diebold-Mariano (1995)
+
+method.
+
+13
+
+[C19]
+which is equivalent to riding the yield curve. We report the means and standards deviations
+
+of the profitability of the CFRS ED model trading strategy and the buy-and hold strategy in
+
+Panel A of Table 4. We report the statistical significance of the profitability of the CFRS ED
+
+model trading strategy, as well as the statistical significance of the differences in profitabilities
+
+between the two strategies in Panel B of Table 4.
+
+In terms of profitability, the trading signals generated by the CFRS ED model are signifi-
+
+cantly positive, both economically and statistically. The average profit per trade ranges from
+
+1.19 basis point for the 5-day holding period strategy to 49.04 basis points for the 250-day
+
+holding period strategy. The statistical significance of this profit, reported in row 1 of Panel
+
+B in Table 4, as measured by the NW-stat also exceeds the 5% level for all 4 holding periods.
+
+Row 3 of Panel A in Table 4 shows that the profitabilities of the buy-and-hold strategies,
+
+while always lower than the CFRS ED model, are quire similar in terms of magnitude. The
+
+buy-and-hold strategy’s profits ranges from 1.16 basis point for the 5-day holding period
+
+strategy to 48.74 basis points for the 250-day holding period strategy. The closeness between
+
+the profitability of these CFRS ED model and the buy-and-hold is reflective of the fact that
+
+the CFRS ED model will, more often than not, predict a fall in forward rates, due to the
+
+fact that unconditionally, the term structure of the forward curve is upward sloping (hence,
+
+unconditionally, the drift of forward rates is downwards). The differences in profitability will
+
+therefore come from the times when the CRFS ED model predicts a rise in the forward rates,
+
+while the buy-and-hold maintains the downward prediction. Hence, to test the statistical
+
+significance between the CFRS ED model and the buy-and-hold model, we exclude all the
+
+dates when the trade signals are identical for both strategies, and only use those dates when
+
+their forecasted directions diverge.
+
+Row 2 of Panel B of Table 4 shows that the profitability of the CFRS ED model is signifi-
+
+cantly higher than that for the buy-and-hold for all holding periods, and especially so for the
+
+65-day and 250-day holding periods, with NW-stat reaching 7.953.
+
+5
+
+Conclusion
+
+We have estimated and tested a dynamic model for the forward Eurodollar rates. The model
+
+has several desirable features, most notably that it
+
+• Captures maturity-specific preferences that arise from preferred habitats,
+
+14
+
+[C20]
+• Accommodates date-specific expectations about future spot rates,
+
+• Permits estimation and extrapolation via underlying state variables within the framework
+
+of a Kalman filter, and
+
+• Has a general structure that permits the choice of a particular model parsimonious in
+
+parameters and state variables, while still remaining arbitrage-free.
+
+The selected representative of our model class performs well in forecasts over various hori-
+
+zons, relative to the Random Walk model. The chosen model also supports the construction
+
+of a trading strategy that significantly outperforms the returns of a buy-and-hold strategy,
+
+especially over longer holding periods.
+
+We leave to future work the task of searching for the superior models from this general
+
+class as well as the extension to other types of data.
+
+15
+
+[C21]
+Table 1: Summary statistics of Eurodollar futures data for full sample (12/09/1981 to 1/28/2008) and training
+
+sample (12/09/1981 to 10/28/1991)
+
+We convert Eurodollar futures prices into estimates of instantaneous forward rates via the formula: f (τ +
+
+45; t) = 100 − P (τ ; t). We report the counts, means and standard deviations of the maturities as well as the
+
+forward rates for both the full sample and the training sample. Contract Number refers to the n-th nearest
+
+contract to maturity on any particular day.
+
+Full Sample
+
+Contract
+
+Maturity
+
+Forward Rates
+
+Number
+
+Count
+
+Mean
+
+S.D.
+
+Mean
+
+1
+
+6600
+
+76.7
+
+25.6
+
+6.091
+
+2
+
+6600
+
+140.1
+
+66.4
+
+6.218
+
+3
+
+6598
+
+203.0
+
+79.2
+
+6.349
+
+4
+
+6541
+
+269.0
+
+105.8
+
+6.410
+
+5
+
+6176
+
+332.2
+
+131.0
+
+6.216
+
+6
+
+6164
+
+402.7
+
+155.9
+
+6.350
+
+7
+
+5907
+
+476.9
+
+170.7
+
+6.223
+
+8
+
+5866
+
+566.5
+
+171.7
+
+6.332
+
+9
+
+5197
+
+637.0
+
+172.1
+
+6.056
+
+10
+
+5196
+
+728.4
+
+172.9
+
+6.184
+
+11
+
+5194
+
+819.1
+
+168.4
+
+6.300
+
+12
+
+5188
+
+910.1
+
+168.2
+
+6.400
+
+13
+
+4688
+
+981.8
+
+164.8
+
+6.158
+
+14
+
+4685
+
+1074.0
+
+166.3
+
+6.241
+
+15
+
+4635
+
+1162.0
+
+164.2
+
+6.295
+
+16
+
+4624
+
+1252.7
+
+164.1
+
+6.361
+
+17
+
+3924
+
+1307.3
+
+150.7
+
+5.983
+
+18
+
+3924
+
+1398.4
+
+150.7
+
+6.053
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+42
+
+2924
+
+3513.8
+
+80.1
+
+6.736
+
+43
+
+2251
+
+3566.6
+
+39.6
+
+6.500
+
+44
+
+1954
+
+3648.6
+
+30.9
+
+6.416
+
+45
+
+57
+
+3651.9
+
+15.0
+
+6.406
+
+Training Sample
+
+Maturity
+
+Forward Rates
+
+S.D.
+
+Count
+
+Mean
+
+S.D.
+
+Mean
+
+S.D.
+
+2.939
+
+2500
+
+91.1
+
+26.4
+
+8.933
+
+2.296
+
+3.016
+
+2500
+
+182.4
+
+26.5
+
+9.140
+
+2.379
+
+3.063
+
+2500
+
+273.8
+
+26.5
+
+9.338
+
+2.391
+
+2.998
+
+2443
+
+364.6
+
+26.5
+
+9.408
+
+2.209
+
+2.721
+
+2078
+
+455.5
+
+26.4
+
+9.138
+
+1.825
+
+2.752
+
+2067
+
+546.5
+
+26.4
+
+9.328
+
+1.814
+
+2.465
+
+1812
+
+638.2
+
+26.5
+
+9.037
+
+1.327
+
+2.383
+
+1774
+
+729.2
+
+26.4
+
+9.116
+
+1.211
+
+2.060
+
+1106
+
+821.1
+
+26.5
+
+8.959
+
+0.540
+
+1.994
+
+1105
+
+912.1
+
+26.4
+
+9.038
+
+0.524
+
+1.938
+
+1104
+
+1003.1
+
+26.4
+
+9.105
+
+0.521
+
+1.892
+
+1100
+
+1094.1
+
+26.5
+
+9.166
+
+0.513
+
+1.630
+
+600
+
+1184.6
+
+26.8
+
+8.911
+
+0.345
+
+1.596
+
+597
+
+1283.8
+
+37.9
+
+8.957
+
+0.333
+
+1.558
+
+547
+
+1367.0
+
+27.1
+
+9.024
+
+0.339
+
+1.529
+
+536
+
+1457.9
+
+26.7
+
+9.063
+
+0.322
+
+1.155
+
+0
+
+1.137
+
+0
+
+.
+
+.
+
+.
+
+.
+
+0.827
+
+0
+
+0.719
+
+0
+
+0.653
+
+0
+
+0.555
+
+0
+
+16
+
+[C22]
+Table 2: Log-likelihood and Akaike Information Criterion Values (AIC) in Model Selection using daily Eu-
+
+rodollar futures data from 12/09/1981 to 10/28/1991
+
+We use the Eurodollar Futures training data to derive the log-likelihood and AIC values for six competing
+
+models. The model with the highest log-likelihood and lowest AIC value is our model of choice (CFRS ED
+
+model). AIC is calculated via the formula: −2 ln L + 2K, where L is the likelihood, and K is the number
+
+of free parameters in the model. The models that we consider are made up of different combinations of the
+
+following 3 sub-models (where m i (t) refers to the maturity-specific state variable of the i-th sub-model, and
+
+d j,k (t) refers to the k-th date-specific state variable of the j-th sub-model):
+
+1. Sub-model 1 (SM1), 1 Brownian Motion:
+
+U (s − t) + m 1 (t)(e −K m (s−t) − e −2K m (s−t) ) + d 1,1 (t)e −2K m (s−t)
+
+2. Sub-model 2 (SM2), 2 Brownian Motions:
+
+U (s − t) + m 2 (t)(2e −K m (s−t) − 2e −2K m (s−t) ) + 2d 2,1 (t)e −2K m (s−t) + d 2,2 (t)e −K m (s−t)
+
+3. Sub-model 3 (SM3), 2 Brownian Motions:
+
+U (s − t) + m 3 (t)(2e −K m (s−t) − e −2K m (s−t) − e −4K m (s−t) ) + d 3,1 (t)e −2K m (s−t) + d 3,2 (t)e −4K m (s−t) +
+
+d 3,3 (t)e −2K m (s−t)
+
+Model
+
+Composition
+
+State Dimensions
+
+Model 1
+
+SM1
+
+2
+
+Model 2
+
+SM2
+
+3
+
+Model 3
+
+SM3
+
+4
+
+Model 4
+
+SM1 + SM2
+
+5
+
+Model 5
+
+SM1 + SM3
+
+6
+
+Model 6
+
+SM2 + SM3
+
+7
+
+Free Parameters
+
+Log-likelihood
+
+AIC
+
+3 {C 0 , C 1 , K m }
+
+-3.2300e7
+
+6.4600e7
+
+3 {C 0 , C 1 , K m }
+
+-0.4099e7
+
+0.8199e7
+
+4 {C 0 , C 1 , C 2 , K m }
+
+-0.0985e7
+
+0.1971e7
+
+3 {C 0 , C 1 , K m }
+
+-0.8926e7
+
+1.7853e7
+
+4 {C 0 , C 1 , C 2 , K m }
+
+-0.0599e7
+
+0.1198e7
+
+4 {C 0 , C 1 , C 2 , K m }
+
+-1.3412e7
+
+2.6824e7
+
+17
+
+[C23]
+Walk model (RW model). We use the first 2500 days of training data to generate the first forecast. The training window is then expanded forward one day
+
+RMSEs between any 2 models. A negative value of the NW-stat indicates that the first model (the model mentioned before “vs”) is performing better than
+
+and standard deviations of these cross-sectional RMSEs in this table. The NW-stat (quoted as a z-score) is used to test the significance of the differences in
+
+This table shows the RMSEs of forecasting error of 5-, 20-, 65- and 250-day-ahead forward rate forecasts produced by the CFRS ED model, and the Random
+
+at a time to generate successive forecasts. We first calculate the cross-sectional RMSE of forecast error in any given day. We report the time-series means
+
+(≈ 1 calendar year)
+
+250-day-ahead
+
+(≈ 1 calendar quarter)
+
+65-day-ahead
+
+Table 3: Accuracy of Out-of-Sample Forward Rate Forecasts
+
+(≈ 1 calendar month)
+
+20-day-ahead
+
+(≈ 1 calendar week)
+
+5-day-ahead
+
+the second model.
+
+(66.64)
+
+(53.93)
+
+104.89
+
+-0.658
+
+98.58
+
+3850
+
+(31.46)
+
+(28.80)
+
+-0.365
+
+48.03
+
+48.63
+
+4035
+
+Panel A: Mean RMSE; standard deviation in parenthesis (in basis points)
+
+(16.36)
+
+(16.25)
+
+-1.030
+
+25.39
+
+25.69
+
+4080
+
+-0.594
+
+(8.51)
+
+(8.47)
+
+12.53
+
+12.55
+
+4095
+
+Number of Forecasts
+
+CFRS ED vs RW
+
+Panel B: NW-stat
+
+CFRS ED
+
+RW
+
+18
+
+[C24]
+training window is then expanded forward one day at a time to generate successive forecasts. If the forecasted forward rate is lower (higher) than the current
+
+contracts that will still exist at the end of the forecasting period. The profitability on each trade is then calculated as the cross-sectional average movement
+
+corresponding forward rate, the strategy is to bet that the forward rate will fall (rise) over the forecasted period. Trades are placed for all Eurodollar futures
+
+deviations of the cross-sectional average. The NW-stat (quoted as a z-score) is used to test the significance of the differences in profitability between any
+
+This table shows the profitability of trading strategies that capitalizes on the forecasts of the CFRS ED model, as well as a buy-and-hold model. We
+
+in (or against) the predicted direction over the length of the forecasting period, expressed in basis points. We report the time-series means and standard
+
+consider trading strategies over a 5-, 20-, 65- and 250-day holding period. We use the first 2500 days of training data to generate the first forecast. The
+
+2 trading strategies, using only days when the trades of the 2 strategies are different. A positive value of the NW-stat indicates that the first strategy (the
+
+250-day holding period
+
+(≈ 1 calendar year)
+
+(≈ 1 calendar quarter)
+
+65-day holding period
+
+Table 4: Profitability of Trading Strategy
+
+20-day holding period
+
+(≈ 1 calendar month)
+
+model mentioned before “vs”) is performing better than the second strategy.
+
+5-day holding period
+
+(≈ 1 calendar week)
+
+(106.21)
+
+(105.48)
+
+2.409
+
+7.953
+
+49.04
+
+48.74
+
+3850
+
+(52.32)
+
+(51.42)
+
+2.666
+
+2.243
+
+14.18
+
+13.75
+
+4035
+
+Panel A: Mean Profitability; standard deviation in parenthesis (in basis points)
+
+(27.56)
+
+(27.25)
+
+2.896
+
+1.804
+
+4080
+
+4.46
+
+4.59
+
+(13.80)
+
+(13.70)
+
+3.061
+
+1.919
+
+4095
+
+1.19
+
+1.16
+
+CFRS ED vs Buy-and-Hold
+
+CFRS ED vs No Trade
+
+Number of Forecasts
+
+Buy-and-Hold
+
+CFRS ED
+
+Panel B: NW-stat
+
+19
+
+[C25]
+Figure 1: Illustration of Maturity-Specific Deviation Behavior
+
+Starting with any given maturity-specific deviation (for illustrative purposes, we set the original maturity-
+
+specific deviation to be M (τ ; t) = 0.05e −0.2τ − 0.1e −0.4τ + 0.05e −0.8τ ). We expect the maturity-specific
+
+deviation to decay exponentially to zero at rate K m (In this illustration, we set K m = 0.4) as time passes
+
+(from relation (3)): E t [M (τ ; T )] = e −K m (T −t) M (τ ; t).
+
+0.008
+
+0.007
+
+0.006
+
+0.005
+
+Maturity−Specific Deviations
+
+0.004
+
+0.003
+
+0.002
+
+0.001
+
+0
+
+−0.001
+
+−0.002
+
+Original Maturity−Specific Deviation
+1−Year Ahead Forecast of Maturity−Specific Deviation
+2−Year Ahead Forecast of Maturity−Specific Deviation
+
+−0.003
+
+−0.004
+
+0
+
+2
+
+4
+
+6
+
+8
+10
+12
+Maturity (Years)
+
+14
+
+16
+
+18
+
+20
+
+20
+
+[C26]
+Figure 2: Illustration of Date-specific Deviation Behavior
+
+Starting with any given date-specific deviation (for illustrative purposes, we set the original date-specific
+
+deviation to be D(τ ; t) = 0.04e −0.2τ − 0.05e −0.4τ . We expect the date-specific deviation curve to shift to the
+
+left uniformly as time passes (from relation (5)): E t [D(τ − (T − t); T )] = D(τ ; t).
+
+0.01
+
+0.008
+
+0.006
+
+0.004
+
+Date−Specific Deviations
+
+0.002
+
+0
+
+−0.002
+
+−0.004
+
+−0.006
+
+−0.008
+
+Original Date−Specific Deviation
+1−Year Ahead Forecast of Date−Specific Deviation
+2−Year Ahead Forecast of Date−Specific Deviation
+
+−0.01
+
+−0.012
+
+0
+
+2
+
+4
+
+6
+
+8
+10
+12
+Maturity (Years)
+
+14
+
+16
+
+18
+
+20
+
+21
+
+[C27]
+Figure 3: Illustration of Market Micro-structure Issues
+
+7.4
+
+7.2
+
+October 20, 1997
+
+November 3, 1997
+
+November 18, 1997
+
+Eurodollar−Implied LIBOR Forward Rates (%)
+
+7
+
+December 3, 1997
+
+6.8
+
+6.6
+
+6.4
+
+6.2
+
+6
+
+5.8
+
+5.6
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+6
+Maturity (Years)
+
+7
+
+8
+
+9
+
+10
+
+11
+
+22
+
+[C28]
+Figure 4: Timeline for Model Estimation and Forecasts
+
+23
+
+[C29]
+A
+
+Appendix
+
+A.1
+
+Checking the HJM Restriction
+
+We must now verify that the proposed dynamics in relation (12) is arbitrage-free. Denoting
+
+the diffusion of the forward rate SDE as:
+
+σ(t, s) = e −K m (s−t) γ t , τ ≡ s − t
+
+we have
+
+Z s
+
+σ(t, v)dv = −
+
+t
+
+(17)
+
+1
+1 −K m (s−t)
+e
+γ t +
+γ t .
+K m
+K m
+
+For this version of the 1-Brownian motion arbitrage-free unit, we choose the market price of
+
+risk κ t as: 7
+
+κ t =
+
+γ t
+K m
+
+(18)
+
+Notice that the market price of risk is proportional to the diffusion term of the state variable,
+
+just as in the CIR model. Then the HJM condition says
+¶
+µZ s
+1 2 −2K m (s−t)
+σ(t, v)dv − κ t = −
+σ(t, s)
+γ e
+K m t
+t
+
+By specifying γ t 2 as:
+
+(19)
+
+2
+γ t 2 = (m(t) + 2C 1 )K m
+,
+
+relation (19) becomes
+
+¶
+
+µZ s
+
+σ(t, v)dv − κ t
+
+σ(t, s)
+
+t
+
+(20)
+
+= −K m (2C 1 + m(t))e −2K m (s−t)
+
+which is exactly the drift of df 1 (s − t; t)(see relation (12)), thus satisfying the HJM condition.
+
+A.2
+
+Fitting the Kalman Filter
+
+A standard Kalman filter can be used to estimate a system of unobserved state variables in
+
+which the observed variables are linked to the unobserved state variables via a measurement
+
+equation, and the transition equation for the unobserved state variables is specified as a system
+
+of linear equations with Gaussian innovations (see Hamilton (1994) Chapter 13 for a discussion
+
+of the Kalman filter’s implementation and estimation). If the innovations in the unobserved
+
+state variables are not Gaussian (which is the case for our model), estimates from the standard
+
+7 It is not necessary that κ = γ t
+t
+K
+
+. If the market price of risk takes on another form, the model requires a different specification
+
+m
+
+for γ t or U (s − t) or both so that the system remains arbitrage-free.
+
+24
+
+[C30]
+Kalman filter are, in general, not conditionally unbiased estimators of the true state variables
+
+(Chen and Scott (2002)). However, it is still possible to proceed with the implementation of
+
+the Kalman filter by assuming that the innovations are indeed Gaussian in order to obtain a
+
+quasi-log-likelihood from the Kalman filter, and then optimize over that quasi-log-likelihood
+
+to obtain quasi-maximum likelihood (QML) estimates for parameters of the model. The
+
+parameters in the model that we need to optimize over the quasi-log-likelihood are K m , the
+
+decay rate of the maturity-specific deviation, and σ ∗2 , the variance of the measurement errors.
+~ as latent state variables we are able to fit our model directly
+By viewing m(t)
+~
+and d(t)
+
+into a Kalman filter framework. Stack a sequence of maturities into a vector ~τ = [τ 1 , . . ., τ ` ] 0 .
+~ into a vector ~x t :
+Next place m(t)
+~
+and d(t)
+
+
+m(t)
+~
+ .
+~x t = 
+(21)
+~
+d(t)
+
+At each date t, we can relate these to the observed data with the measurement equation:
+
+~z t ≡ f (~τ ; t) − Û (~τ ) = A~x t + ~² t
+
+(22)
+
+where A is the measurement matrix for the state variables, and ~² t is the vector of measurement
+
+errors. The j-th row of the matrix A is defined as
+h
+i
+A j ≡ (e ~kτ j ) 0 M, (e ~kτ j ) 0 D .
+
+(23)
+
+To allow for statistical estimation, we now simplify the model by adding the assumption that
+
+the measurement errors are homoscedastic and both cross-sectionally and serially uncorrelated:
+
+Σ ² ≡ Var(~² t ) = σ ∗2 I.
+
+(24)
+
+We estimate the noise variance σ ∗2 from the data when maximizing the quasi-likelihood.
+
+We can now derive the transition equation of the Kalman filter as the discretized version
+
+of the stochastic process for ~x t . First let
+
+
+
+
+Σ m ( m)
+~
+V m 0
+ and Σ( m)
+ .
+~ = 
+V = 
+Σ d ( m)
+~
+0 V d
+
+The transition equation is therefore
+
+~x t = W ~x t−1 + ξ t ,
+
+where W is a diagonal matrix with
+
+(25)
+
+W ii = e δV ii ,
+
+(26)
+
+25
+
+[C31]
+where δ is the step size, and we approximate Q t ≡ Var t−1 (ξ t ) by
+
+Q t ≈ δ Σ( m)
+~ Σ( m)
+~ 0 .
+
+(27)
+
+Given this specification for the Kalman filter, we set the initial estimates of the state vector
+at its unconditional mean, which is zero ( ~x ˆ 0 = 0), and set the initial covariance matrix at
+
+the unconditional variance Var(~x t ). We can then run the Kalman filter to estimate the state
+
+variables by iterating between the prediction equations and the updating equations as in
+
+DeJong and Santa-Clara (1999), Geyer and Pichler (1999) and Babbs and Nowman (1999): 8
+
+The predicting equations:
+
+x t|t−1 = W x̂ t−1|t−1
+
+(28)
+
+where x t|t−1 is the time t − 1 prediction of x t and x̂ t−1|t−1 is the time t − 1 estimate of x t−1 ,
+
+and
+
+P t|t−1 = W P̂ t−1|t−1 W 0 + Q t
+
+(29)
+
+where P t|t−1 is the time t − 1 prediction of P t and P̂ t−1|t−1 is the time t − 1 estimate of P t−1
+
+(P is the covariance matrix of the state vector x).
+
+Updating equations:
+
+x̂ t|t = x t|t−1 + P t|t−1 A 0 H t −1 v t
+
+(30)
+
+P̂ t|t = P t|t−1 − P t|t−1 A 0 H t −1 AP t|t−1
+
+where
+
+are the prediction errors, and
+
+(31)
+
+v t = z t − Ax t|t−1
+
+(32)
+
+H t = AP t|t−1 A 0 + σ ∗2 I
+
+is the conditional variance of the prediction errors.
+
+(33)
+
+P T
+
+0 −1
+t=1 (ln |H t | + v t H t v t )
+
+ln 2π − 12
+The log-likelihood function is then: ln L = − nT
+2
+
+8 The framework of the model places boundaries on the values of some of the state variables.
+
+The diffusion terms, which are
+
+functions of the maturity-specific state variables, must be constrained to be non-negative. This in turn places constraints on
+
+those state variables. In the empirical implementation, a simple and common way of enforcing this restriction is to replace the
+
+values of the state variables that do breach the constraints with ones that just satisfy it. See Chen and Scott (2002) and Geyer
+
+and Pichler (1999) for further examples of such restrictions in a Kalman filter.
+
+26
+
+[C32]
+References
+
+Akaike, H., 1973, “Information theory and an extension of the maximum likelihood principle,”
+
+Second International Symposium on Information Theory, 267–281.
+
+Babbs, S., and K. Nowman, 1999, “Kalman filtering of generalized vasicek term structure
+
+models,” Journal of Financial and Quantitative Analysis, 34, 115–130.
+
+Chen, R., and L. Scott, 2002, “Multi-factor Cox-Ingersoll-Ross models of the term structure:
+
+estimates and tests from a Kalman filter model,” Working Paper, Rutgers University.
+
+Chua, C., D. Foster, K. Ramaswamy, and R. Stine, 2008, “A Dynamic Model for the Forward
+
+Curve,” Review of Financial Studies, 21, 265–310.
+
+Cox, J., J. Ingersoll, and S. Ross, 1981, “A re-examination of traditional hypotheses about
+
+the term structure of interest rates,” Journal of Finance, 36, 769–799.
+
+Cox, J., J. Ingersoll, and S. Ross, 1985, “A theory of the term structure of interest rates,”
+
+Econometrica, 53, 385–407.
+
+DeJong, F., and P. Santa-Clara, 1999, “The dynamics of the forward interest rate curve:
+
+a formulation with state variables,” Journal of Financial and Quantitative Analysis, 31,
+
+131–157.
+
+Diebold, F., and R. Mariano, 1995, “Comparing predictive accuracy,” Journal of Business
+
+and Economic Statistics, 13, 253–263.
+
+Fisher, I., 1896, “Appreciation and interest,” Publications of the American Economic Associ-
+
+ation, 11, 21–29.
+
+Fisher, M., and C. Gilles, 1998, “Around and around: the expectations hypothesis,” Journal
+
+of Finance, 53, 365–383.
+
+Geyer, A., and S. Pichler, 1999, “A state-space approach to estimate and test multifactor
+
+Cox-Ingersoll-Ross models of the term structure,” Journal of Financial Research, 22, 107–
+
+130.
+
+Hamilton, J., 1994, Time Series Analysis. Princeton University Press, Princeton, NJ.
+
+Longstaff, F., 2000, “Arbitrage and the expectations hypothesis,” Journal of Finance, 55,
+
+989–994.
+
+27
+
+[C33]
+McCulloch, J., 1993, “A reexamination of traditional hypotheses about the term structure: a
+
+comment,” Journal of Finance, 48, 779–789.
+
+Modigliani, F., and R. Sutch, 1966, “Innovations in interest rate policy,” The American Eco-
+
+nomic Review, 56, 178–197.
+
+Newey, W., and K. West, 1987, “A simple, positive semi-definite, heteroskedascity and auto-
+
+correlation consistent covariance matrix,” Econometrica, 55, 703–708.
+
+Vasicek, O., 1977, “An equilibrium characterization of the term structure,” Journal of Finan-
+
+cial Economics, 5, 177–188.
+
+28
+
+[C34]
+The Rodney L. White Center for Financial Research
+
+The Wharton School
+University of Pennsylvania
+3254 Steinberg Hall-Dietrich Hall
+3620 Locust Walk
+Philadelphia, PA 19104-6367
+
+(215) 898-7616
+(215) 573-8084 Fax
+http://finance.wharton.upenn.edu/~rlwctr
+
+The Rodney L. White Center for Financial Research is one of the oldest financial research centers in the
+country. It was founded in 1969 through a grant from Oppenheimer & Company in honor of its late
+partner, Rodney L. White. The Center receives support from its endowment and from annual
+contributions from its Members.
+
+The Center sponsors a wide range of financial research. It publishes a working paper series and a reprint
+series. It holds an annual seminar, which for the last several years has focused on household financial
+decision making.
+
+The Members of the Center gain the opportunity to participate in innovative research to break new ground
+in the field of finance. Through their membership, they also gain access to the Wharton School’s faculty
+and enjoy other special benefits.
+
+Members of the Center
+
+2008 – 2009
+
+Directing Members
+
+Aronson + Johnson + Ortiz, LP
+Ballyshannon Partners
+The Nasdaq OMX Educational Foundation
+The New York Stock Exchange, Inc.
+Ther Terker Family
+The Vanguard Group
+
+Founding Members
+
+Ford Motor Company Fund
+Merrill Lynch, Pierce, Fenner & Smith, Inc.
+Oppenheimer & Company
+Philadelphia National Bank
+Salomon Brothers
+Weiss, Peck and Greer

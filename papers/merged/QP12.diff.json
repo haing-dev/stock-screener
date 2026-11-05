@@ -1,0 +1,42 @@
+{
+ "opus_only": [
+  [
+   "QP12-C11-1b",
+   "Heating oil and light crude implied yield curves move together over 10-day intervals, so curves of related products are linked."
+  ],
+  [
+   "QP12-C14-2b",
+   "If the date-specific state d_t follows a lognormal mean-reverting SDE, the date component has basis h(tau) = e^{-k tau} and E_s D_t(tau) = (d_s e^{-k(t-s)}) e^{-k tau}."
+  ],
+  [
+   "QP12-C18-1b",
+   "Data preparation for futures curves is the main practical burden of the project."
+  ],
+  [
+   "QP12-C26-2b",
+   "One anomaly in the data persisted for about 3 weeks, so a short median filter leaves it in."
+  ],
+  [
+   "QP12-C30-2b",
+   "Variation in contract yields near expiry is non-Gaussian, so Gaussian time-series methods are inappropriate at the front end."
+  ],
+  [
+   "QP12-C31-2b",
+   "How far apart contracts can be while staying cointegrated measures how quickly the yield curve changes shape."
+  ],
+  [
+   "QP12-C35-2b",
+   "The date-plus-maturity decomposition built for interest rates also applies to commodity futures curves."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP12-C07-1",
+   "The authors pose, without answering on the slide, the link between the cash yield and commodity-implied yields, which contain a convenience-yield component."
+  ],
+  [
+   "QP12-C20-3",
+   "Derived yields contain anomalies from market microstructure that have to be cleaned before modelling."
+  ]
+ ]
+}

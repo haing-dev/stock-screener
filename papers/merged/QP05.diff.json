@@ -1,0 +1,18 @@
+{
+ "opus_only": [
+  [
+   "QP05-C02-3b",
+   "CTAs can be accessed via managed accounts, giving investors more transparency."
+  ],
+  [
+   "QP05-C04-2b",
+   "Hedge fund styles such as event driven, long/short equity and emerging markets lose diversification when equities fall (down-month correlations 0.68-0.71)."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP05-C13-2",
+   "Slide 13 shows the choice of optimization objective matters more than the portfolio mix, and the Sharpe-type ratio is substantially lower once autocorrelation is included (A: 1.82 to 1.13); the exhibit does not report returns, volatility or drawdown levels themselves."
+  ]
+ ]
+}

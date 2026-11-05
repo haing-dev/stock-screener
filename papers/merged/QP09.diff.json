@@ -1,0 +1,178 @@
+{
+ "opus_only": [
+  [
+   "QP09-C01-3b",
+   "The lookback-straddle model is offered as a basis for trend-following fund benchmarks."
+  ],
+  [
+   "QP09-C01-4b",
+   "Hedge funds do not disclose their activities and LTCM (1998) raised concern about their hidden risk, motivating a model of strategy risk."
+  ],
+  [
+   "QP09-C02-3b",
+   "Because funds dynamically mix several nonlinear strategies, studying a general hedge fund sample is of limited value; one should model a single strategy that many funds follow."
+  ],
+  [
+   "QP09-C02-5b",
+   "Footnote 3: option-like return features are found even among mutual funds (Lehman and Modest 1987)."
+  ],
+  [
+   "QP09-C03-6b",
+   "Trading rules are proprietary, so the authors can only theorise what trend followers do rather than estimate risk directly."
+  ],
+  [
+   "QP09-C03-8b",
+   "Footnote 5: CTAs are CFTC-registered advisors (via NFA membership) who trade mainly futures for clients."
+  ],
+  [
+   "QP09-C05-2b",
+   "The convex pattern in Figure 1 resembles a straddle payout on the underlying asset."
+  ],
+  [
+   "QP09-C08-3b",
+   "Three-month options are used because they are the most liquid, although this horizon may be too short to separate lookback from standard straddles."
+  ],
+  [
+   "QP09-C08-5b",
+   "The goal is only to show that one bills-plus-lookback-straddle portfolio behaves like trend followers; other option portfolios might replicate better."
+  ],
+  [
+   "QP09-C09-2b",
+   "Data: futures and options from the Futures Industry Institute (DTB, MATIF, Osaka, CME options), the exchanges (LIFFE, SFE, TIFFE; CBOT/NYMEX options) and Datastream (CBOT, CME, NYMEX futures)."
+  ],
+  [
+   "QP09-C13-2b",
+   "Figure 3 (read from chart): with a steady rise into expiry both straddles end at similar levels (about 220-230 from 100)."
+  ],
+  [
+   "QP09-C14-3b",
+   "Trend-following fund returns correlate strongly with PTFS returns, which means they carry systematic risk that linear models on asset indices miss."
+  ],
+  [
+   "QP09-C16-3b",
+   "The five PTFS portfolios explain 47.9% of trend-following returns, mostly via currencies and commodities; the joint F-test of no relation is rejected decisively."
+  ],
+  [
+   "QP09-C17-2b",
+   "In those crash periods stock PTFSs paid off as expected, and so did most bond, currency and commodity PTFSs, but fewer than half of the short-rate PTFSs."
+  ],
+  [
+   "QP09-C17-5b",
+   "Commodity PTFSs do not show the option-like pattern versus world equities."
+  ],
+  [
+   "QP09-C17-7b",
+   "Financial assets (stocks, bonds, short rates, currencies) react to the same macro events, so extreme equity moves coincide with large moves, and trend profits, in the other financial markets."
+  ],
+  [
+   "QP09-C21-1b",
+   "Table 4: in the worst equity state stock PTFS +12.8%, bond +5.9%, currency +8.3%, short-rate +8.3%, commodity +1.2%, funds +2.0%; in the best state +9.4%, +10.2%, +8.2%, +5.6%, -2.5%, funds +5.7%; in the middle state most PTFSs lose about 1-5.5%."
+  ],
+  [
+   "QP09-C22-5b",
+   "To compare with survey data the authors assume the 41.2% bonds/short-rate share splits evenly."
+  ],
+  [
+   "QP09-C25-5b",
+   "Feature 2: extreme-period fund returns are explained by PTFSs on DEM and JPY, wheat and silver, Eurodollar and Short Sterling, and US bonds, but not stock indices; PTFSs beat buy-and-hold and industry benchmarks."
+  ]
+ ],
+ "sonnet_only": [
+  [
+   "QP09-C01-4",
+   "Disclosure: research was supported by a managed-futures foundation and by John W. Henry & Company, a large trend-following CTA, a potential conflict to bear in mind."
+  ],
+  [
+   "QP09-C02-2",
+   "Linear models can make hedge funds look as if they have no systematic risk, because the risk is nonlinear."
+  ],
+  [
+   "QP09-C02-5",
+   "Hedge funds dynamically allocate across strategies with different nonlinear risks, so pooled samples blur risk; the authors instead study one identifiable strategy (trend following, CTA funds)."
+  ],
+  [
+   "QP09-C02-6",
+   "Trend following is the self-described strategy of most CTAs (Billingsley and Chance 1996), so CTA funds are used as the sample."
+  ],
+  [
+   "QP09-C03-5",
+   "Caveat: trading rules are proprietary, so the model is a theoretical proxy, not a replication of any manager."
+  ],
+  [
+   "QP09-C05-2",
+   "The key empirical link: lookback straddle returns resemble trend-following fund returns, connecting funds to standard asset markets."
+  ],
+  [
+   "QP09-C05-3",
+   "Theory (Section 1, Appendix A): a lookback straddle captures trend following better than a standard straddle, which captures market timing."
+  ],
+  [
+   "QP09-C06-3",
+   "Both primitive strategies complete a single trade per interval, following Merton (1981)."
+  ],
+  [
+   "QP09-C09-2",
+   "Universe, commodities: soybean, wheat, corn (CBOT), gold, silver, crude oil (NYMEX)."
+  ],
+  [
+   "QP09-C09-3",
+   "Data: exchange-supplied or purchased futures and options settlement data plus Datastream futures (Appendix B)."
+  ],
+  [
+   "QP09-C14-3",
+   "Lookback straddle is used in all empirical tests, chosen on theory rather than empirical superiority."
+  ],
+  [
+   "QP09-C15-2",
+   "The authors flag a positive implicit alpha in trend-following funds relative to PTFS, deferring analysis (Section 4 does not actually quantify it)."
+  ],
+  [
+   "QP09-C15-4",
+   "Funds' mean exceeds nearly every individual PTFS mean with greater statistical significance."
+  ],
+  [
+   "QP09-C16-3",
+   "Regression of trend-following funds on the five PTFS portfolios gives adjusted R2 of 47.9%, with currency and commodity PTFS largest; the F-test rejects no relation."
+  ],
+  [
+   "QP09-C16-4",
+   "Interpretation: trend followers have systematic risk that linear models on standard benchmarks miss but PTFS capture."
+  ],
+  [
+   "QP09-C17-2",
+   "In the two equity crashes the bond, currency and commodity PTFS mostly earned positive returns, not just stocks."
+  ],
+  [
+   "QP09-C21-3",
+   "Table 4 note: state sizes differ from the text (note says state 5 has the best 34 months and state 3 the remaining 30; text says best 30 and remaining 34), an inconsistency in the table notes."
+  ],
+  [
+   "QP09-C21-4",
+   "Table 4 numbers: by state 1-5 trend-following funds earn +2.03%, +1.12%, +1.32%, +0.10%, +5.69% a month versus MS World -4.60%, -0.59%, +1.56%, +3.36%, +6.74%."
+  ],
+  [
+   "QP09-C22-3",
+   "Interpretation: currency is the most popular trend-following market and stocks the least."
+  ],
+  [
+   "QP09-C23-2",
+   "Individual-fund test sample: 163 trend-following funds with at least 24 months of returns to end-1997, regressed on five buy-and-hold portfolios and on the five PTFS portfolios."
+  ],
+  [
+   "QP09-C25-7",
+   "Out-of-sample support: in Q3 1998 the S&P declined more than 10% while the vast majority of trend-following funds made large gains."
+  ],
+  [
+   "QP09-C26-1",
+   "Q3 1998 out-of-sample: most trend-following funds made large gains during the S&P decline."
+  ],
+  [
+   "QP09-C28-2",
+   "Standard straddle delta equals a market timer who compares the current price only to the starting price."
+  ],
+  [
+   "QP09-C29-1",
+   "Reference list: Fung and Hsieh (1997a,b), Glosten and Jagannathan (1994), Goldman-Sosin-Gatto (1979), Merton (1981), Billingsley and Chance (1996); no new evidence."
+  ]
+ ]
+}

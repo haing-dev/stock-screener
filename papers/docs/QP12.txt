@@ -1,0 +1,1087 @@
+# Modeling the Yield Curve (slides: Stine, Chua, Ramaswamy)
+source_id: QP12
+type: paper
+file: penn_fin_club.pdf
+chunks: one per PDF page (C01 = page 1). Page images: img/QP12-p-NN.png (exhibits, charts)
+---
+
+[C01]
+Modeling the Yield Curve
+
+Bob Stine
+Statistics Department, Wharton
+
+Choong Tze Chua, Singapore Mgmt Univ
+Krishna Ramaswamy, Finance Department
+
+[C02]
+Plan for Talk
+
+Background
+
+What is the yield curve?
+
+What makes it interesting and important?
+
+Examples
+
+Cash
+Commodities (primarily crude oil)
+
+Data analysis is simpler with prices
+
+How to recognize arbitrage?
+
+More natural structure
+
+Commodities are different
+
+Linkages among products
+
+2
+
+[C03]
+Background
+
+[C04]
+What is the yield curve?
+
+Interest rates earned on treasury bills/bonds
+of different maturity (7 Nov 08).
+
+Curve on a given day is formed by connecting
+the rates over different maturities.
+
+Term
+
+Interest
+
+3 month
+6 month
+2 year
+5 year
+10 year
+30 year
+
+0.269%
+0.84%
+1.32%
+2.56%
+3.79%
+4.27%
+
+4
+
+[C05]
+What is the yield curve?
+
+Interest rates derived from contracts in the
+Eurodollar option market.
+
+London Interbank Offered Rate (LIBOR)
+
+Interest rate on a 3-month contract in the future
+
+Plot shows instantaneous forward rates.
+
+"
+
+2008.16
+
+5.5
+
+5.0
+
+4.5
+
+4.0
+
+3.5
+
+3.0
+
+2
+
+4
+
+Many
+more
+contracts
+
+Τ
+
+6
+
+8
+
+10
+
+5
+
+[C06]
+Yields for Commodities
+
+Interest rates implied by the prices of
+contracts for delivery of a commodity at
+some future date.
+
+Light crude oil, same date as prior slide
+
+#
+0.01
+
+2008.16
+
+2
+
+"0.01
+
+"0.02
+
+"0.03
+
+Τ
+
+4
+
+6
+
+8
+
+6
+
+[C07]
+Questions
+
+What are the dynamics of the yield curve?
+
+How fast does it change? Can you predict
+where it’s headed?
+
+How is the yield for cash related to yields
+implied by commodities that include
+convenience factors?
+
+How are yields for various products related
+to one another?
+
+What’s the connection between these
+“curves” and the underlying data?
+
+7
+
+[C08]
+Dynamics
+
+[C09]
+Plots: Cash
+
+Yields on cash over period of about 100 days
+
+Red curve is the original
+
+Gray curves are separated by 10 trading days
+
+Some changes are large, other curves
+cluster together
+
+"
+
+6.0
+
+5.5
+
+5.0
+
+4.5
+
+4.0
+
+3.5
+
+3.0
+
+2
+
+4
+
+Τ
+
+6
+
+8
+
+10
+
+9
+
+[C10]
+Plots: Light Crude
+
+Yields on crude over same 100 days
+
+Red curve is the original, gray 10 days apart
+
+Rather different appearance from cash, with
+much less smoothness
+
+#
+
+2
+
+4
+
+"0.02
+
+Surface
+plots are
+also
+entertaining
+
+"0.04
+
+"0.06
+
+"0.08
+
+"0.10
+
+Τ
+
+6
+
+8
+
+10
+
+[C11]
+Relations Among Products
+
+Dependent movements over 10-day intervals
+for heating oil and light crude.
+Strong seasonal pattern for heating oil that
+is not apparent in yield on light crude.
+
+#
+
+0.2
+
+0.1
+
+0.4
+
+0.6
+
+"0.1
+
+CL
+
+"0.2
+
+HO
+
+Τ
+
+0.8
+
+1.0
+
+1.2
+
+11
+
+[C12]
+Models
+
+Models provide parsimonious way to predict
+where the curve is heading.
+
+Rather than have to predict a “curve”, forecast
+the value of certain parameters in a regression-
+like formula for the curve
+
+Model used resembles a polynomial, but on a
+logarithmic scale more suited to description
+of rates.
+
+Modeling issues (see paper)
+
+How many polynomial terms?
+
+Does the model allow arbitrage?
+
+12
+
+[C13]
+Decomposition
+
+Decompose the yield curve y t (τ) into three
+components
+! ! ! y t (τ) = U(τ) + M t (τ) + D t (τ)
+
+Long-term unconditional expectation
+! ! ! ! ! ! E s y s (τ) = U(τ)
+
+Other terms are separable in τ and t, factoring
+as M t (τ) = m t g(τ)
+
+Maturity specific component is mean reverting
+
+m(t) follows log normal SDE with expectation
+! ! ! ! ! E s m t = m s e -k(t-s)
+s<t
+
+13
+
+[C14]
+Decomposition, cntd
+
+Date specific term is also mean reverting, but
+captures effects that move toward origin with
+time
+! ! ! ! E s D t (τ) = D s (τ+t-s)
+s<t,τ
+Each contract carries the date-specific effect
+
+If d t follows log normal SDE, then h(τ) = e -kτ
+! ! E s D t (τ) = (d s e -k(t-s) ) e -kτ = D s (τ+t-s)
+
+Example (2,2,3)
+
+2 nd order unconditional curve
+
+2 maturity-specific functions
+! ! m t,1 = c m1 (e -kτ - e -2kτ ) , m t,2 = c m2 (e -kτ - e -4kτ )
+
+3 date-specific functions
+
+14
+
+[C15]
+Component Functions
+
+Basis elements for expressing a model for
+the yield curve using component SDEs
+
+Constant k determines shapes
+
+M t (τ)
+
+0.3
+
+0.2
+
+0.1
+
+0.5
+
+1.0
+
+1.5
+
+2.0
+
+2.5
+
+3.0
+
+D t (τ)
+
+1.0
+
+0.8
+
+0.6
+
+0.4
+
+0.2
+
+0.5
+
+1.0
+
+1.5
+
+2.0
+
+2.5
+
+3.0
+
+15
+
+[C16]
+Fitted Yield Curves
+
+Extracted state coefficients for several days
+
+Estimates are smoother than those for each day
+
+Unconditional, maturity, date components
+
+‣ Observation error ought to be uncorrelated
+
+#
+0.5
+
+0.4
+
+0.3
+
+0.2
+
+0.1
+
+0.0
+
+1
+
+"0.1
+
+"0.2
+
+2006.87
+
+Τ
+
+2
+
+3
+
+4
+
+16
+
+[C17]
+Forecasting
+
+Extrapolate fit
+
+Recursively update as forecast extends beyond
+initial training period
+
+Negative values indicate our models dominate
+random walk (Newey-West statistic)
+
+65 days
+
+2.1
+
+Crude
+
+Heating
+Oil
+Natural
+Gas
+
+-5.8
+
+-1.6
+
+-5.1
+
+Soybean
+
+125 days
+
+250 days
+
+-0.09
+
+-2.2
+
+-8.7
+
+-2.2
+
+-2.2
+
+-1.4
+
+-7.4
+
+-3.1
+
+17
+
+[C18]
+Data
+
+Never underestimate the time that
+it takes to prepare the data.
+
+[C19]
+Prices
+
+Yields are not directly observed
+
+Obtain prices of futures contracts from data
+vendor CRB Trader
+
+Prices are much smoother
+
+#
+0.01
+
+2008.16
+
+Τ
+
+2
+
+4
+
+6
+
+8
+
+"0.01
+
+"0.02
+
+"0.03
+
+$
+
+91
+
+2008.16
+
+90
+
+89
+
+88
+
+Τ
+
+2
+
+4
+
+6
+
+8
+
+19
+
+[C20]
+From Price to Yield
+
+Compute the yield at the midpoint between
+two observed prices as the continuously
+compounded rate of interest
+! ! ! ! ! ! log p t (τ+d) - log p t (τ) ! !
+! ! y t (τ) = ! ! ! ! ! ! ! ! ! ! ! as d -> 0
+d
+Results
+Differencing magnifies random noise
+Observed only at discrete set of points
+Terminal date is about 15 days
+
+No observed spot rate
+
+Anomalies (aka, “market microstructure”)
+
+20
+
+[C21]
+Anomaly in Cash Yields
+
+Yield curves are about 10 days apart
+
+Ripple induced by preference for contract at
+a specific date (market microstructure)
+
+"
+
+8.5
+
+1995.28
+
+8.0
+
+7.5
+
+7.0
+
+4
+
+Libor
+
+Τ
+
+6
+
+8
+
+10
+
+21
+
+[C22]
+Anomaly: Sticky Price
+
+A contract for light crude did not trade this
+day, so price stayed same as on prior day
+
+Rest of the curve shifted
+
+#
+0.05
+
+1999.35
+
+Τ
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+"0.05
+
+"0.10
+
+$
+
+1999.35
+
+17.2
+
+17.0
+
+16.8
+
+16.6
+
+16.4
+
+16.2
+
+16.0
+
+Τ
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+22
+
+[C23]
+Patching Anomalies
+
+Adaptive procedure that will not introduce
+side effects
+
+Approach is to follow a contract over time
+rather than fixed maturity
+
+Avoid interpolation-induced transitions
+
+Contracts have a more consistent sequential
+pattern than in yields over varying maturities
+
+Contracts follow a diagonal in the data
+! ! ! y t (τ)! ! for fixed expiry date t+τ
+
+τ
+
+t
+
+23
+
+[C24]
+Fixing the Anomalies
+
+Follow a contract over time
+
+Outliers are more easily identified in the
+sequence of yields associated with contract
+rather than over the yield curve itself.
+
+#
+
+1997.94
+
+0.10
+
+0.3
+
+0.05
+
+Τ
+
+1
+
+2
+
+3
+
+4
+
+5
+
+0.2
+
+"0.05
+
+0.1
+
+Which
+are real,
+which are
+flukes?
+
+35 200
+
+!0.1
+
+!0.2
+
+35 400
+
+35 600
+
+35 800
+
+24
+
+[C25]
+Does not remove all...
+
+In order not to distort “real” prices, miss a
+few outliers.
+
+0.05
+
+32 900
+
+!0.05
+
+!0.10
+
+!0.15
+
+33 000
+
+33 100
+
+33 200
+
+25
+
+[C26]
+Nor a sustained problem...
+
+Moving medians of length 3 cannot patch a
+period with a sustained anomaly.
+
+35 600
+
+35 800
+
+!0.5
+
+0.25
+
+0.20
+
+!1.0
+
+0.15
+
+0.10
+
+!1.5
+
+0.05
+
+persists for about 3 weeks !0.05
+
+!0.10
+
+36 000
+
+36 200
+
+36 400
+
+1
+
+2
+
+3
+
+4
+
+5
+
+26
+
+[C27]
+Contracts
+
+[C28]
+Time Series Models
+
+Structural model
+
+Describes the yield curve as a function f(τ)
+
+Can evaluate f(τ) at any maturity
+
+Theoretical properties, derived quantities
+
+Time series
+
+Considerable methodology available
+
+Cannot hold maturity τ fixed unless were able to
+observe y t (τ) for all t
+
+Interpolation between points introduces artifacts
+
+Following a single contract provides most direct
+series
+
+28
+
+[C29]
+Yields of Contracts
+
+Think of data as collection of contracts y t (τ)
+identified by expiry date
+Contracts end, becoming more variable as τ
+approaches 0 where yield is more volatile.
+
+0.4
+
+0.3
+
+Rate
+
+0.2
+
+0.1
+
+0.0
+
+−0.1
+
+0
+
+100
+
+200
+
+300
+
+Day 35694
+
+400
+
+500
+
+600
+
+Rows from Expiration
+
+29
+
+[C30]
+SD of Contracts
+
+Standard deviation of contracts as τ
+approaches zero.
+
+Very strong presence of outliers as τ nears 0
+
+0.35
+
+sd
+
+0.30
+
+0.25
+
+0.20
+
+SD
+
+0.15
+
+0.10
+
+robust
+
+0.05
+
+0
+
+100
+
+SD over Contracts
+
+200
+
+300
+
+400
+
+Rows to Expiration
+Non−Gaussian variation near origin
+
+30
+
+[C31]
+Cointegration
+
+Differences in yields of adjacent contracts
+are non-stationary as time gap increases
+
+Suggests that contracts are cointegrated
+when not “too far” apart
+
+Degree of time separation also measures the rate
+of change in the yield curve, a sort of stochastic
+modulus of continuity of the yield
+
+Interpret the source of non-stationarity as due
+to movements of some underlying yield process
+
+Latent variable type of model
+
+31
+
+[C32]
+Prices of Contracts
+
+Prices again seem simpler to use
+
+Plot shows prices of 4 contracts for light
+crude, about 100 days apart
+
+31
+
+30
+
+mid
+1984
+
+29
+
+28
+
+27
+
+26
+
+30 400
+
+30 500
+
+30 600
+
+30 700
+
+30 800
+
+30 900
+
+32
+
+[C33]
+Prices of Contracts
+
+Prices again seem simpler to use
+
+Plot shows prices of 4 contracts for light
+crude, about 100 days apart
+
+120
+
+100
+
+early
+2007
+
+80
+
+60
+
+38 000
+
+38 200
+
+38 400
+
+38 600
+
+38 800
+
+39 000
+
+39 200
+
+33
+
+[C34]
+More things
+
+Multivariate structure
+
+How to use the evident contemporaneous
+movements in prices or yields for various
+products (such as the various soy commodities)
+
+Related to movements in yield for cash as well
+
+Model after subtracting out the yield for
+cash to extract a convenience yield
+
+Implications for stationarity after remove the
+yield: simpler model?
+
+34
+
+[C35]
+Summary
+
+Models for yield curve
+
+Capture dynamics of yields
+
+Date and maturity specific decomposition relevant
+for commodities as well
+
+Out-of-sample performance superior to random
+walk benchmark
+
+Data analysis suggests reasons to work with
+contracts rather than a function to maturity
+
+Outliers
+
+More amenable to statistical methods
+
+Many unresolved questions
+
+35
