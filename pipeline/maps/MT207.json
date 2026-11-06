@@ -1,0 +1,248 @@
+{
+ "source_id": "MT207",
+ "episode_thesis": "Moritz (commodity trend follower) argues that trend following works through many truly independent markets, a weak entry signal (about 70% losing trades) and ruthlessly small losses with delayed, simple execution; he rejects dynamic position sizing because it turns winners into early profit-taking and cuts the right tail. Niels presents a Dunn Capital (captioned 'Don') paper claiming trend ranks first on drawdown relative to volatility, convexity, skew and crisis protection although its Sharpe is middling, and both explain falling hedge-fund volatility by fund size and institutional career risk, with fees failing to fall alongside it.",
+ "speakers": [
+  {
+   "name": "Moritz",
+   "role": "Guest; systematic commodity trend-following fund manager (fund capped near USD 500m); co-host of Open Interest",
+   "speaker_note": "Captions render him 'Morates', 'Morris', 'Mor'. Firm name appears as 'Don Capital' in captions for both his and Niels's context; Niels says the paper came from 'the company I work with'. The Lintner 1987 remark (ledger MT207-C14-X1, tagged Moritz) is spoken inside Niels's own Don paper summary, so it is Niels's, not Moritz's. Where captions blur the two speakers in C16-C18 the ledger attribution was kept.",
+   "fingerprint": ["trend_following", "diversification_risk_parity", "position_sizing_vol_target", "costs_execution", "research_robustness_overfitting", "commodity_fundamentals", "crisis_alpha_convexity"],
+   "worldview_premises": [
+    {"premise": "A small trend edge becomes valuable only when applied to as many genuinely independent return streams as possible; independence, not a market count, is the target.", "type": "theoretical", "stated": "stated", "support": "Casino analogy (many independent blackjack tables); examples such as cocoa vs S&P, sugar vs OJ, California carbon vs 10-year.", "claim_ids": ["MT207-C05-1", "MT207-C05-2", "MT207-C10-2"]},
+    {"premise": "The entry signal is low quality (about 70% of trades lose, 30% win); profits come from a few outliers and from keeping losses small, not from entries.", "type": "experience", "stated": "stated", "support": "Own trade statistics; Tom Basso random-entry result; own research that a new 100/200-day high improves on random entry.", "claim_ids": ["MT207-C09-2", "MT207-C09-3", "MT207-C10-1", "MT207-C10-3", "MT207-C10-X1"]},
+    {"premise": "Keeping losses small protects compounding because volatility drag makes deep drawdowns hard to recover from.", "type": "theoretical", "stated": "stated", "support": "Reasoning about compounding drag; no numbers.", "claim_ids": ["MT207-C10-4"]},
+    {"premise": "Simple rules are more robust; extra filters and parameters mostly improve backtests, not future returns.", "type": "experience", "stated": "stated", "support": "Occam's razor, curve-fitting warning; no test shown.", "claim_ids": ["MT207-C08-4", "MT207-C09-1"]},
+    {"premise": "Volatility is not risk to a trend follower; it creates opportunity, and realized volatility of hedge funds has roughly halved.", "type": "empirical", "stated": "stated", "support": "Own unpublished research on database data (rolling 12-month volatility 'downhill'), shared only selectively.", "claim_ids": ["MT207-C16-2"]},
+    {"premise": "The same commodity can behave differently by venue (COMEX vs LME copper, London vs New York sugar, coffee, cocoa) because of policy shocks and delivery mechanics, so venue is a diversification dimension.", "type": "institutional", "stated": "stated", "support": "Tariff episode in copper; delivery and grade differences.", "claim_ids": ["MT207-C07-1", "MT207-C07-2"]},
+    {"premise": "Brokered, thinly screened futures markets are legitimate markets, and market selection is limited by access and operational risk rather than by weak trend properties.", "type": "experience", "stated": "stated", "support": "Own trading of CCAs and South African grains; broker execution may beat hitting screen quotes at a cost of a penny.", "claim_ids": ["MT207-C06-1", "MT207-C06-2", "MT207-C06-X1", "MT207-C05-4"]},
+    {"premise": "Allocator career risk pushed hedge funds to cut volatility, and the lower volatility makes asset-based management fees dominate, weakening alignment.", "type": "behavioural", "stated": "stated", "support": "Observation of institutional ticket behaviour over 25 years; fee observation without data.", "claim_ids": ["MT207-C17-1", "MT207-C17-2", "MT207-C18-3", "MT207-C18-X1"]},
+    {"premise": "Trend following may be commoditized because rules are public, but its return stream is not equity beta and so deserves a performance fee.", "type": "theoretical", "stated": "stated", "support": "Assertion; no beta regression offered.", "claim_ids": ["MT207-C19-1", "MT207-C19-2"]},
+    {"premise": "Long-end yields are rising (steeper curves) because investors demand more yield to fund weak fiscal positions, and gold is pricing it.", "type": "theoretical", "stated": "stated", "support": "Debt-to-GDP reasoning (Japan above 200%); no data.", "claim_ids": ["MT207-C02-2"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Independent markets to higher expected risk-adjusted return and a capacity cap",
+     "steps": [
+      {"from": "Small trend edge per market", "to": "Edge applied to many independent markets", "why": "Independent bets diversify; casino analogy of many independent tables", "claim_ids": ["MT207-C05-2", "MT207-C05-1"]},
+      {"from": "Search for independent streams", "to": "Add small markets (Chinese futures, canola, lumber, livestock, regional carbon)", "why": "They are uncorrelated to big markets; regional carbon markets are mutually uncorrelated", "claim_ids": ["MT207-C05-3", "MT207-C06-1"]},
+      {"from": "Small markets add return diversification", "to": "Fund capped near USD 500m", "why": "Small markets cannot absorb billions, so a large fund would lose a meaningful footprint", "claim_ids": ["MT207-C05-3"]}
+     ],
+     "evidence": "Illustrative examples (2025 livestock and metals contributions); no portfolio statistics given.",
+     "fails_when": "A large correlated shock (Liberation Day, tariffs) puts positions on in many markets at once, so more markets with positions means a larger single-day loss; he does not force positions in every market.",
+     "claim_ids": ["MT207-C14-1", "MT207-C03-2"]
+    },
+    {
+     "topic": "Weak entries, small losses and outlier-driven profit",
+     "steps": [
+      {"from": "Entry signal quality is poor (70% losers)", "to": "Entry details matter little for a long-term system", "why": "The longer a position is held, the less the entry timing matters", "claim_ids": ["MT207-C09-2", "MT207-C09-3"]},
+      {"from": "Entry is weak", "to": "Profit depends on initial size, stop room and give-back exit", "why": "Losses stay small while rare outliers pay", "claim_ids": ["MT207-C10-1", "MT207-C10-2"]},
+      {"from": "Small losses", "to": "Less volatility drag, easier recovery from drawdowns", "why": "Compounding arithmetic", "claim_ids": ["MT207-C10-4"]}
+     ],
+     "evidence": "Tom Basso random-entry result; own finding that buying a 100/200-day high beats random entry; nothing statistically better than a new high found.",
+     "fails_when": "Single-month swings look wild and a manager may not stay with the system (stated as a behavioural risk, not a model failure).",
+     "claim_ids": ["MT207-C10-3", "MT207-C10-X1"]
+    },
+    {
+     "topic": "Delayed next-settlement execution instead of resting stops",
+     "steps": [
+      {"from": "Signal from last settlement", "to": "Trade at next day's settlement; no stop orders", "why": "Avoid being picked off and avoid hidden orders being seen", "claim_ids": ["MT207-C08-1", "MT207-C07-3"]},
+      {"from": "No resting stops", "to": "Not stopped out by one-off flash spikes (South African rand)", "why": "Glitch moves reverse within seconds", "claim_ids": ["MT207-C08-3"]},
+      {"from": "Delayed exits", "to": "Slightly better overall returns than stops across all systems and markets", "why": "Own comparison; charts 'pretty much identical'", "claim_ids": ["MT207-C07-4", "MT207-C08-R1"]}
+     ],
+     "evidence": "Own test across systems and markets (no numbers); Niels recalls a 2014 manager finding a one-week delay helped.",
+     "fails_when": "Overnight gaps: COMEX copper long exited near 4.6 against a theoretical exit above 5.17 after a tariff announcement.",
+     "claim_ids": ["MT207-C07-3", "MT207-C08-2"]
+    },
+    {
+     "topic": "Why dynamic position sizing is rejected",
+     "steps": [
+      {"from": "Position moves in the trader's favour and vol or heat rises", "to": "Vol- or risk-based sizing trims the winner", "why": "Both forms reduce size as price moves away from the exit or volatility rises", "claim_ids": ["MT207-C11-1", "MT207-C12-2"]},
+      {"from": "Frequent trimming", "to": "Trend system behaves like mean reversion with extra commissions and bid-offer costs", "why": "On-and-off trading around the position", "claim_ids": ["MT207-C12-1"]},
+      {"from": "Trimming of outliers", "to": "Lower asymmetry and fewer right-tail years (gold, livestock this year) but smoother returns and smaller drawdowns", "why": "Trade-off, 'a question of taste'; he prefers punchy returns in stress events", "claim_ids": ["MT207-C12-1", "MT207-C12-3", "MT207-C11-2"]}
+     ],
+     "evidence": "Reasoning with 2025 examples (copper, gold); no backtest numbers.",
+     "fails_when": "Event risk: a no-resizing position can be stopped out on a one- or two-day move (Niels's counter), and give-back potential is larger.",
+     "claim_ids": ["MT207-C13-X1", "MT207-C11-3"]
+    },
+    {
+     "topic": "Why industry volatility fell and what it did to fees",
+     "steps": [
+      {"from": "Large AUM", "to": "Lower volatility target", "why": "Halving vol halves contracts, cutting impact and slippage", "claim_ids": ["MT207-C16-3"]},
+      {"from": "Institutional tickets dominate", "to": "Funds cut vol to suit allocators", "why": "Allocator career risk: do not look stupid", "claim_ids": ["MT207-C17-1"]},
+      {"from": "Lower vol but fees not cut commensurately", "to": "Asset-based management fee dominates, asset-gathering mode, weaker alignment", "why": "Management fee is worth more relative to performance fee", "claim_ids": ["MT207-C17-2", "MT207-C18-3"]}
+     ],
+     "evidence": "Hypothesis offered explicitly as unproven ('nobody will have the definitive answer'); Niels disputes the fee claim.",
+     "fails_when": "Fee pressure exists in CTAs (flat fees, ETF replicators below 1%), per Niels.",
+     "claim_ids": ["MT207-C17-3"]
+    },
+    {
+     "topic": "Liberation Day losses and slow re-entry for long-term models",
+     "steps": [
+      {"from": "April 2025 reversals", "to": "Slow long-term models stopped out of currencies, equities, bonds", "why": "Large politically driven reversals", "claim_ids": ["MT207-C03-3"]},
+      {"from": "Stopped out", "to": "Re-entry only after a long delay; some bond markets stay rangebound so no position", "why": "System rules judge them rangebound", "claim_ids": ["MT207-C03-3", "MT207-C03-4"]}
+     ],
+     "evidence": "Own 2025 P&L attribution.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT207-C03-3"]
+    }
+   ],
+   "decision_process": [
+    {"element": "universe", "practice": "Add markets for independence (Chinese futures, canola, lumber, livestock, regional carbon, venue-split commodities); trade COMEX and LME, London and New York versions separately and split risk; skip very small emerging carbon markets that are hard to access.", "why": "Maximise independent streams; operational risk limits access.", "claim_ids": ["MT207-C05-1", "MT207-C06-1", "MT207-C07-2", "MT207-C06-X1"]},
+    {"element": "portfolio", "practice": "Fund capacity capped near USD 500m (a moving target); no forced position in every market.", "why": "Keep a meaningful footprint in small markets.", "claim_ids": ["MT207-C05-3", "MT207-C14-1"]},
+    {"element": "signal", "practice": "Derivative-free entries: price vs price N days ago, new 200-day high; moving averages avoided though they also work.", "why": "Simplicity and robustness.", "claim_ids": ["MT207-C09-1", "MT207-C08-4"]},
+    {"element": "execution", "practice": "Signal on last settlement, trade at next day's settlement; no resting stops, entry or exit.", "why": "Avoid stop picking and spike glitches; slightly better returns in testing.", "claim_ids": ["MT207-C08-1", "MT207-C07-4", "MT207-C08-3"]},
+    {"element": "execution", "practice": "Use broker-based execution in brokered markets (CCAs, South African grains); EUA traded on screen with a cent or two bid-offer.", "why": "Possibly better execution than hitting screen quotes.", "claim_ids": ["MT207-C06-2", "MT207-C05-4"]},
+    {"element": "risk", "practice": "Initial position size, initial stop room and a give-back exit control losses; no dynamic resizing of vol or heat apart from initial sizing.", "why": "Initial sizing is the most important risk control; later changes are profit-taking.", "claim_ids": ["MT207-C10-1", "MT207-C11-1", "MT207-C11-3"]},
+    {"element": "research", "practice": "Search for entry improvements has found nothing statistically better than a new high.", "why": "Cutting losers from 70% to 60% would lift returns sharply.", "claim_ids": ["MT207-C10-X1", "MT207-C10-3"]},
+    {"element": "other", "practice": "No asset-based management fee; performance fee only.", "why": "Alignment and avoiding asset-gathering incentives.", "claim_ids": ["MT207-C19-2", "MT207-C18-3"]}
+   ],
+   "evidence_style": "Own track record and internal tests (delayed vs stop execution, entry research) described but not shown; first principles and analogies (casino, Occam's razor); anecdote from 2025 trades; cites Tom Basso and Dave Dredge indirectly.",
+   "current_views": [
+    {"view": "Long livestock (lean hogs, live and feeder cattle) and precious metals (platinum, silver, gold); still long cocoa; trends look bullish.", "as_of": "2025-09 (early September)", "reasoning": "Systems are in strong uptrends and have not reversed; these drove the year.", "claim_ids": ["MT207-C03-2", "MT207-C03-1"]},
+    {"view": "Underexposed to fixed income, held out by rangebound rules; net long equities but not in every market; losses YTD in currencies, equities and bonds from April.", "as_of": "2025-09 (early September)", "reasoning": "Systems were stopped out in April and still judge several bond markets rangebound.", "claim_ids": ["MT207-C03-3", "MT207-C03-4"]},
+    {"view": "Coffee: large gains in the bull run, then whipsaw, now re-entered long.", "as_of": "2025-09 (early September)", "reasoning": "Example of reversals costing profits followed by re-entry.", "claim_ids": ["MT207-C04-1"]},
+    {"view": "Long-end yields rising on fiscal concern.", "as_of": "2025-09 (early September)", "reasoning": "Curve steepening reflects weak fiscal positions.", "claim_ids": ["MT207-C02-2"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged); works with Dunn Capital ('Don Capital' in captions)",
+   "speaker_note": "Argues positions on bonds, manager blending, dynamic position sizing and fees, and presents the Don/Dunn paper. Host questions are otherwise context. The Lintner 1987 remark (ledger C14-X1) belongs to him.",
+   "fingerprint": ["trend_following", "manager_selection_allocation", "crisis_alpha_convexity", "diversification_risk_parity", "fiscal_dominance", "portfolio_construction_stacking", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {"premise": "Long-end yields are rising on fiscal supply rather than policy rates, in soft economies, which resembles 2022 and favours trend following.", "type": "theoretical", "stated": "stated", "support": "UK 30-year gilt at a 27-year high above the Truss moment, US yields near 5%, German long yields rising, even after the ECB cut about 200 bp.", "claim_ids": ["MT207-C02-1", "MT207-C02-X1"]},
+    {"premise": "Trend following should be judged on drawdown relative to volatility, correlation, convexity, skew and crisis behaviour, not on Sharpe, which is a portfolio tool and middling for trend.", "type": "empirical", "stated": "stated", "support": "Paper using SG Trend data over 25 years and 14 strategies.", "claim_ids": ["MT207-C15-1", "MT207-C15-2", "MT207-C15-3", "MT207-C15-4", "MT207-C15-X1"]},
+    {"premise": "Volatility is a poor measure of investor risk; the real risk is the loss one can experience.", "type": "theoretical", "stated": "stated", "support": "Assertion supporting the drawdown-to-volatility metric.", "claim_ids": ["MT207-C15-X1"]},
+    {"premise": "In equity crises (S&P drawdown of 20-25% or more), trend following cut portfolio drawdown more than any other alternative.", "type": "empirical", "stated": "stated", "support": "Four episodes since 2000 chosen by a fixed rule, no cherry-picking.", "claim_ids": ["MT207-C16-1", "MT207-C16-X1"]},
+    {"premise": "Alternative-fund volatility fell sharply (Barclay CTA rolling three-year vol from 20-25% to below 5%) because of institutionalization and asset gathering.", "type": "empirical", "stated": "stated", "support": "Barclay CTA index back to 1987.", "claim_ids": ["MT207-C14-2", "MT207-C14-3"]},
+    {"premise": "Trend-following returns turn sharply and narrative lags, so short windows mislead; a few liquid trends such as gold lift the whole industry.", "type": "experience", "stated": "stated", "support": "Spring 2025 negative press followed by recovery within months.", "claim_ids": ["MT207-C03-X2", "MT207-C03-X1", "MT207-C03-1"]},
+    {"premise": "Blending managers that differ in speed, time frame, markets and sizing diversifies the process even when long-term correlations are high.", "type": "experience", "stated": "stated", "support": "Observed daily divergence of CTA fund returns on bond days; differences hard to see in long-run results.", "claim_ids": ["MT207-C04-2", "MT207-C13-1", "MT207-C11-X1", "MT207-C11-X2"]},
+    {"premise": "Institutions optimize for average returns and avoid true risk mitigators, picking strategies that look safe standalone but correlate with what they diversify in crises.", "type": "behavioural", "stated": "stated", "support": "Echoes Dave Dredge; paper's comparison.", "claim_ids": ["MT207-C18-1", "MT207-C18-2"]},
+    {"premise": "Adding non-correlated managed futures to stocks and bonds raises return and lowers risk (Lintner 1987), the original diversification case.", "type": "empirical", "stated": "stated", "support": "1987 paper cited from memory; spoken by Niels, not Moritz as the ledger tags it.", "claim_ids": ["MT207-C14-X1"]},
+    {"premise": "Large managers may prefer moving averages because they scale risk in and out gradually.", "type": "theoretical", "stated": "stated", "support": "Conjecture; Moritz says multiple look-backs can do the same.", "claim_ids": ["MT207-C09-X1"]},
+    {"premise": "Delaying execution can improve returns (a 2014 manager found a one-week delay better than reacting immediately).", "type": "experience", "stated": "stated", "support": "Anecdote.", "claim_ids": ["MT207-C08-2"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Fiscal supply to long-end yields to a 2022-like trend environment",
+     "steps": [
+      {"from": "Weak fiscal positions and ample supply", "to": "Long-end yields rise even as central banks cut", "why": "Long end prices fiscal supply rather than policy rates", "claim_ids": ["MT207-C02-X1", "MT207-C02-1"]},
+      {"from": "Rising long yields in soft economies", "to": "Possible 2022-style bond downtrend", "why": "Short bonds are a classic trend winner (inference from his remark)", "claim_ids": ["MT207-C02-1"]}
+     ],
+     "evidence": "Yield levels observed that week; no model.",
+     "fails_when": "Trend models disagree on bonds, with some long and some short, so the signal is not unanimous.",
+     "claim_ids": ["MT207-C04-2", "MT207-C03-1"]
+    },
+    {
+     "topic": "Paper logic: why trend is valuable although its Sharpe is middling",
+     "steps": [
+      {"from": "Standalone Sharpe over 25 years is middling", "to": "Sharpe is a poor lens for a single line item", "why": "Sharpe is a portfolio measure", "claim_ids": ["MT207-C15-1", "MT207-C15-4"]},
+      {"from": "Drawdown relative to volatility is best of all strategies including S&P and world bonds", "to": "Volatility understates risk the investor feels", "why": "Real risk is loss", "claim_ids": ["MT207-C15-2", "MT207-C15-X1"]},
+      {"from": "Better correlation, convexity and skew", "to": "Adding 20% (50/30/20) lifts returns and, with leverage, improves drawdown, Sharpe a bit lower", "why": "Timing of returns matters", "claim_ids": ["MT207-C15-3", "MT207-C15-4"]},
+      {"from": "Equity crises (four since 2000)", "to": "Largest portfolio drawdown reduction for trend", "why": "Negative or low correlation in crises", "claim_ids": ["MT207-C16-1", "MT207-C16-X1"]}
+     ],
+     "evidence": "SG Trend index vs 14 strategies; small crisis sample (four episodes).",
+     "fails_when": "Four episodes is a very small sample; the public version uses the industry benchmark, not Dunn's own numbers.",
+     "claim_ids": ["MT207-C16-X1"]
+    },
+    {
+     "topic": "Allocator incentives to strategy selection",
+     "steps": [
+      {"from": "Institutions optimize average return and career risk", "to": "De-emphasize true risk mitigators such as trend", "why": "Avoid looking stupid", "claim_ids": ["MT207-C18-1"]},
+      {"from": "Pick strategies that look safe standalone", "to": "Highly correlated with underlying risk in crises", "why": "Hidden beta", "claim_ids": ["MT207-C18-2"]}
+     ],
+     "evidence": "Paper comparison plus Dave Dredge's view.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT207-C18-2"]
+    },
+    {
+     "topic": "Correlated shock and diversified programs (TransTrend)",
+     "steps": [
+      {"from": "Large correlated shock (April 2025 tariffs)", "to": "More markets with positions", "why": "Positions across markets are hit together", "claim_ids": ["MT207-C13-3"]},
+      {"from": "More positions hit", "to": "More diversified programs lose more on that day", "why": "Diversification fails when correlations jump", "claim_ids": ["MT207-C13-3"]}
+     ],
+     "evidence": "TransTrend article; copper example.",
+     "fails_when": "Not tested; one event.",
+     "claim_ids": ["MT207-C13-3"]
+    }
+   ],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Blend trend managers that differ in position-sizing approach, speed and markets, rather than relying on one.", "why": "Process diversification; unless one picks the very best manager.", "claim_ids": ["MT207-C13-1", "MT207-C04-2"]},
+    {"element": "research", "practice": "Evaluate alternatives on max drawdown relative to volatility, correlation, convexity, skew, portfolio contribution (20% sleeve) and rule-defined crisis windows (S&P drawdown above 20-25%).", "why": "Avoid single-metric Sharpe and cherry-picking.", "claim_ids": ["MT207-C15-X1", "MT207-C15-4", "MT207-C16-X1", "MT207-C16-1"]},
+    {"element": "other", "practice": "Expect different return paths from sizing methods: no resizing, vol-based, risk-based.", "why": "Differences are hard to see in long-run performance; market universe is a larger driver.", "claim_ids": ["MT207-C11-X1", "MT207-C11-X2"]},
+    {"element": "other", "practice": "Track index performance as context (BTOP50 about -2.7%, SG CTA about -6%, SG Trend -7.25%, SG Short-Term Traders -6.46% YTD, vs MSCI World +13.6%).", "why": "Benchmark awareness; Short-Term Traders weak relative to its volatility.", "claim_ids": ["MT207-C04-3"]}
+   ],
+   "evidence_style": "Published data and indices (SG Trend, Barclay CTA, S&P, world government bonds); rule-defined windows; cites papers (Lintner 1987, TransTrend, Don paper) and other podcast guests; anecdote (2014 manager).",
+   "current_views": [
+    {"view": "UK, German and US long yields are at multi-decade highs while labor markets are soft, so a 2022-style trend environment may lie ahead.", "as_of": "2025-09 (early September)", "reasoning": "Long end pricing fiscal supply rather than ECB cuts.", "claim_ids": ["MT207-C02-1", "MT207-C02-X1"]},
+    {"view": "Longer-term trends have re-established in equities, livestock and gold, while financial sectors (bonds, currencies, equities) were hard; trend managers' bond positioning is split.", "as_of": "2025-09 (early September)", "reasoning": "Bond range, politically driven equity corrections, currency swings.", "claim_ids": ["MT207-C03-1", "MT207-C04-2"]},
+    {"view": "Trend indices still negative YTD while equities and bonds are up; short-term trend is weak versus its volatility.", "as_of": "2025-09 (early September)", "reasoning": "Index prints at the date of recording.", "claim_ids": ["MT207-C04-3"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Dynamic position sizing (vol- or risk-based resizing)",
+   "positions": [
+    {"speaker": "Moritz", "position": "Do not resize beyond initial sizing; resizing is profit-taking that turns trend into mean reversion, costs money and cuts right-tail outliers; he prefers punchy returns in stress events.", "claim_ids": ["MT207-C11-1", "MT207-C12-1", "MT207-C12-2", "MT207-C12-3"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "The portrayal is too simple: no resizing leaves event risk, while vol-sizing trims in bursts but rebuilds later; blending approaches diversifies process.", "claim_ids": ["MT207-C13-X1", "MT207-C13-1"]}
+   ]
+  },
+  {
+   "topic": "Have fees fallen in line with lower volatility?",
+   "positions": [
+    {"speaker": "Moritz", "position": "Fees did not fall commensurately; multistrategy fees rose and AUM-based fees dominate.", "claim_ids": ["MT207-C17-2", "MT207-C18-3"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "CTA fee pressure is real (flat fees, ETF replicators below 1%), though he has not checked it against the volatility drop.", "claim_ids": ["MT207-C17-3"]}
+   ]
+  },
+  {
+   "topic": "Moving averages vs derivative-free entry indicators",
+   "positions": [
+    {"speaker": "Moritz", "position": "Prefers price-vs-price and new-high rules; both work but simpler is more robust; smoothing can be achieved with several look-backs.", "claim_ids": ["MT207-C09-1", "MT207-C09-2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Large managers may use moving averages because they scale risk gradually.", "claim_ids": ["MT207-C09-X1"]}
+   ]
+  },
+  {
+   "topic": "Does the DPS debate matter to investors?",
+   "positions": [
+    {"speaker": "Moritz", "position": "One investor said investors do not care whether managers use dynamic sizing, only the performance; family offices care about net performance.", "claim_ids": ["MT207-C13-2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Institutions that write reports on managers want process detail and so may care.", "claim_ids": ["MT207-C13-1"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Ledger tags the Lintner 1987 remark to Moritz, but it is part of Niels's own summary of the Don/Dunn paper; speaker should be Niels.", "claim_ids": ["MT207-C14-X1"]},
+  {"issue": "Index figures: the -2.68% YTD figure belongs to BTOP50, not SG CTA (about -6%); ledger correction applied.", "claim_ids": ["MT207-C04-3"]},
+  {"issue": "Delayed exits are said to give slightly better returns across all systems, but no numbers or sample are given; Moritz also says the charts are almost identical, so the edge is small.", "claim_ids": ["MT207-C07-4", "MT207-C08-R1"]},
+  {"issue": "Fee claim (fees not falling with volatility) is unsupported by data and is contested by Niels, who has not run the calculation.", "claim_ids": ["MT207-C17-2", "MT207-C17-3"]},
+  {"issue": "Crisis result rests on four S&P drawdown episodes since 2000 and a Sharpe described only as 'middling', with no numbers read out.", "claim_ids": ["MT207-C16-X1", "MT207-C15-1"]},
+  {"issue": "Moritz's claim that hedge-fund volatility fell by half comes from research he says he cannot publish.", "claim_ids": ["MT207-C16-2"]},
+  {"issue": "Tension: Moritz champions maximum independent diversification and also agrees diversified programs lose more in correlated shocks; the net effect is not quantified.", "claim_ids": ["MT207-C05-1", "MT207-C14-1", "MT207-C13-3"]},
+  {"issue": "Entry improvement claim: nothing statistically better than a new high has been found, but no test details are given.", "claim_ids": ["MT207-C10-X1"]}
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs the speakers say matter: long-end yields (UK 30y gilt, US 30y near 5%, Bund 30y) as a fiscal-supply signal and possible bond downtrend; the sign and persistence of trends in livestock, precious metals and cocoa; whether bond markets break out of ranges; tariff and policy news that gaps individual markets by venue (COMEX vs LME); realized volatility and correlation jumps in shocks. Horizon is months for trends and years for the allocation argument; the reason given is that long-term systems hold through reversals and re-enter late.",
+ "reader_inferences": [
+  "(reader) Moritz's edge case is payoff asymmetry: he accepts 70% losers and delays exits, so his result depends on keeping rare right-tail trades intact, which is why every sizing or execution tweak is judged by what it does to outliers.",
+  "(reader) His independent-streams logic and his capacity cap are one decision: more small markets raise diversification but lower capacity, so AUM is the price of the diversification argument.",
+  "(reader) Niels's metric choice (drawdown relative to volatility, a 20% portfolio sleeve, rule-based crisis windows) is designed to show trend's value where Sharpe does not; the small crisis sample means the ranking is weakly tested.",
+  "(reader) Both speakers frame falling hedge fund volatility as a behavioural outcome of allocator incentives rather than a change in market opportunity, so they imply the opportunity set for trend has not shrunk."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT207-C08-R1",
+   "chunk": "C08",
+   "speaker": "Moritz (guest, CTA/commodity trend follower)",
+   "quote": "You overlay these two charts, they're pretty much identical.",
+   "claim": "Running the same systems on resting stops versus delayed entry and exit gives almost identical equity curves, so the delayed mechanic is a small edge chosen mainly to avoid stop picking.",
+   "mechanism": "execution",
+   "asset_class": "commodities and multi-asset futures",
+   "indicator": "stop-based vs delayed-execution backtest",
+   "horizon": "multi-year",
+   "direction": "neutral",
+   "conditions": "same systems, all markets",
+   "testable": "yes: rerun the same signals with stops vs next-settlement execution",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

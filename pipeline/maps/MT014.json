@@ -1,0 +1,651 @@
+{
+ "source_id": "MT014",
+ "episode_thesis": "Graham Robertson reviews 2024 for trend following: US assets drove returns, trend was already positioned for the bond selloff before the election, and medium-speed models and bond/FX trends suffered because rate-cut expectations oscillated on roughly the same 3-4 month cycle as trend holding periods ('harmonic frequency of death'), a sensitivity he expects to be transient. Trend is neutral to very sharp volatility spikes (Yenmageddon) and protection from them has to be paid for, with a layered defence of long volatility, quality long-short equity and trend. With the largest economy more unpredictable, both speakers favour non-predictive adaptive strategies and argue investors hold too little trend; alternative markets diversify because they have different price drivers, not because they trend better.",
+ "speakers": [
+  {
+   "name": "Graham Robertson",
+   "role": "co-host from Man AHL / Man Institute (London); macro futures, trend and quality research",
+   "speaker_note": "Recorded Thursday 12 December 2024 (index data as of Tuesday 10 December; uploaded 2024-12-13). Captions garble names (Yenmageddon, Yoav Git as 'YF gate', Balter, Matthew Gates). Ledger corrections applied: the MSCI World US-share numbers, the Yoav Git mean-variance example and the 0.2 Sharpe / 10% allocation figure are Graham's, not Niels's.",
+   "fingerprint": [
+    "trend_following",
+    "crisis_alpha_convexity",
+    "portfolio_construction_stacking",
+    "policy_reaction_central_banks",
+    "regime_detection",
+    "diversification_risk_parity",
+    "research_robustness_overfitting"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend works in sustained crises but is neutral, not negative, to a sudden VIX spike like the three-day Yenmageddon: outcomes then depend on positioning (coin-toss), even though trend is structurally long risk.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Man Institute analysis of trend over short high-volatility windows; he was surprised it was not negative",
+     "claim_ids": [
+      "MT014-C06-5",
+      "MT014-C06-6"
+     ]
+    },
+    {
+     "premise": "Protection against sudden short shocks costs long-term return. In a one-week shock the best action was to do nothing; the only strategy that properly protects is long volatility, which bleeds, and responsive volatility scaling cuts positions on a Yenmageddon event and misses the rebound.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "August 2024 episode (markets came straight back); carry cost of long volatility; investors buy tail protection after spikes when it is dearest",
+     "claim_ids": [
+      "MT014-C07-4",
+      "MT014-C09-2",
+      "MT014-C08-X1"
+     ]
+    },
+    {
+     "premise": "Quality long-short equity has 'yield-put' characteristics: modest in good times and protective in sudden flight-to-quality selloffs, complementing trend on a shorter time frame without long-volatility bleed. Both trend and quality have crisis Sharpe above good-time Sharpe.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Man Institute paper 'The Best Strategies for the Worst of Times' (17 quality metrics) plus out-of-sample SVB 2023 and August 2024",
+     "claim_ids": [
+      "MT014-C07-1",
+      "MT014-C07-2",
+      "MT014-C07-3",
+      "MT014-C08-2"
+     ]
+    },
+    {
+     "premise": "Rate-cut expectations oscillated from six to two cuts, up to ten by end of September, then reversed. Cycles of about 3-4 months matched medium-term holding periods and whipsawed bond and FX trends; market sensitivity to central banks (and fixed income to FX to dollar correlation) is unusually high at the start of a new cycle but likely transient.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "desk experience, 12-month-ahead rate-cut pricing, academic studies listed in the Man paper",
+     "claim_ids": [
+      "MT014-C10-1",
+      "MT014-C10-2",
+      "MT014-C10-3",
+      "MT014-C10-4"
+     ]
+    },
+    {
+     "premise": "Performance is not linear in speed. Slow trend tends to have a higher Sharpe, faster trend better crisis alpha, and breakout models that add positions quickly can make medium speed the worst; the range of manager returns is huge despite conceptual simplicity.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "year-to-date 2024 observation and general generalisations ('very cautious with my words')",
+     "claim_ids": [
+      "MT014-C05-3",
+      "MT014-C05-4",
+      "MT014-C05-5",
+      "MT014-C06-1"
+     ]
+    },
+    {
+     "premise": "Adding independent markets raises portfolio Sharpe by about the square root of N, and alternative (mostly OTC) markets have different price drivers (less macro sensitivity), so they genuinely diversify. They have lower crisis Sharpe but slightly higher good-time Sharpe than traditional futures trend, because a crisis typically means the S&P.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "math of independent bets; Nordpool electricity depends on weather; Man analysis of traditional versus alternative trend",
+     "claim_ids": [
+      "MT014-C14-4",
+      "MT014-C15-1",
+      "MT014-C15-2",
+      "MT014-C15-3",
+      "MT014-C15-R1",
+      "MT014-C16-3"
+     ]
+    },
+    {
+     "premise": "Alternative-market trend did relatively better when the central-bank put hurt traditional trend (2009-19), but in 2022 (inflation, bonds and stocks down, commodities up) core markets did best and diversification did not help.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "historical periods recalled; no numbers",
+     "claim_ids": [
+      "MT014-C16-1",
+      "MT014-C16-2"
+     ]
+    },
+    {
+     "premise": "Pairwise market correlations surge in crises (2008), concentrating trend into a few themes that paid in 2008 but reversed in 2009 when policy action ended the single bet.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "pairwise correlation data over time (he states 'what's apparent if you look at the data')",
+     "claim_ids": [
+      "MT014-C09-3",
+      "MT014-C09-4"
+     ]
+    },
+    {
+     "premise": "Investors hold too little trend: by conventional metrics (Sharpe, drawdown) they should hold more, 'probably more than you've got'. Trend breaks the asset-allocation mold and is sized by tracking error to the benchmark; a complexity premium may explain under-allocation; even a Sharpe of 0.2 would justify about 10%.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Man paper 'Honey, I Shrunk the Trend Following'; Balter's tracking-error argument; Matthew Gates's complexity premium; Yoav Git's two-number logic",
+     "claim_ids": [
+      "MT014-C12-2",
+      "MT014-C13-1",
+      "MT014-C13-2",
+      "MT014-C14-2",
+      "MT014-C14-3"
+     ]
+    },
+    {
+     "premise": "Over 50-60 years bonds and equities have similar Sharpe ratios (the foundation of risk parity), but over the last decade the bond Sharpe is near zero and equities stand out in relative terms.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Man analysis of long-term Sharpe ratios",
+     "claim_ids": [
+      "MT014-C11-3"
+     ]
+    },
+    {
+     "premise": "Investment-bank annual S&P forecasts have poor accuracy and returns are very hard to predict, so non-predictive adaptive strategies are preferable.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "objective check of bank forecasts versus outcomes (no figures)",
+     "claim_ids": [
+      "MT014-C12-1"
+     ]
+    },
+    {
+     "premise": "Trend returns must be read across all asset classes, not from equity headlines: in April 2024 equity weakness hurt trend's equity positions but bonds, currencies and commodities offset it.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "April 2024 episode",
+     "claim_ids": [
+      "MT014-C13-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why 2024 bond and FX trends whipsawed (the 'harmonic frequency of death')",
+     "steps": [
+      {
+       "from": "Central-bank rate-cut pricing oscillates (six cuts, then two, then ten by end of September, then reversal)",
+       "to": "Bond and FX trends reverse every 3-4 months",
+       "why": "narrative flips between will they and won't they",
+       "claim_ids": [
+        "MT014-C10-1"
+       ]
+      },
+      {
+       "from": "Medium-term trend holding periods of 2-6 months (average 3-4 months)",
+       "to": "Positions built over about 3 months are caught by the next reversal",
+       "why": "the oscillation period matches the holding period",
+       "claim_ids": [
+        "MT014-C10-2",
+        "MT014-C06-1"
+       ]
+      },
+      {
+       "from": "Start of a new easing cycle, fixed income closely tied to FX and the dollar",
+       "to": "Unusually high sensitivity of trend to central-bank expectations",
+       "why": "everyone is watching the next cycle; correlations between fixed income markets are high",
+       "claim_ids": [
+        "MT014-C10-3"
+       ]
+      },
+      {
+       "from": "Regional dispersion (Europe versus US) grows",
+       "to": "The single central-bank factor weakens and the headwind fades",
+       "why": "different economic cycles break the common driver",
+       "claim_ids": [
+        "MT014-C10-4"
+       ]
+      }
+     ],
+     "evidence": "Man Institute paper on central-bank sensitivity; 2024 desk observation; headlines hid the range-bound bond and FX markets that hurt trend.",
+     "fails_when": "Multiple models and speeds run in parallel so the oscillation hits on average only; the end-of-headwind view is hopeful and not tested.",
+     "claim_ids": [
+      "MT014-C09-5",
+      "MT014-C05-3"
+     ]
+    },
+    {
+     "topic": "A three-layer defence for sudden shocks",
+     "steps": [
+      {
+       "from": "A very short, sharp volatility spike (Yenmageddon, three days)",
+       "to": "Trend neutral and volatility filters barely change positions in the first days",
+       "why": "trend needs a sustained move; scaling responds only after volatility has risen",
+       "claim_ids": [
+        "MT014-C06-5",
+        "MT014-C08-1",
+        "MT014-C09-2"
+       ]
+      },
+      {
+       "from": "Flight to quality in a sudden selloff",
+       "to": "Quality long-short equity gains (SVB 2023, August 2024)",
+       "why": "by definition quality outperforms in flight to quality",
+       "claim_ids": [
+        "MT014-C07-1",
+        "MT014-C07-2"
+       ]
+      },
+      {
+       "from": "Layering long volatility first (costly), quality second (short bursts), trend third (sustained crises)",
+       "to": "Protection across time scales, at the price of a carry hit for the long-volatility layer",
+       "why": "each layer covers a different horizon",
+       "claim_ids": [
+        "MT014-C08-3",
+        "MT014-C08-X1"
+       ]
+      }
+     ],
+     "evidence": "Man Institute analysis; 17 quality metrics; two out-of-sample episodes.",
+     "fails_when": "Crisis from an equity all-time high: trend and a stocks-plus-trend mix are both long equities and take losses; long volatility bleeds if bought after spikes.",
+     "claim_ids": [
+      "MT014-C08-5",
+      "MT014-C08-4",
+      "MT014-C07-4"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Run multiple models and multiple frequencies; keep an adaptive, non-predictive strategy in the portfolio.",
+     "why": "returns are hard to predict and the US administration is unpredictable ('known unknowns')",
+     "claim_ids": [
+      "MT014-C12-1",
+      "MT014-C10-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Combine trend with quality long-short equity for short sharp spikes; use long volatility only if prepared to pay the carry.",
+     "why": "complementary time frames and defensiveness without bleed",
+     "claim_ids": [
+      "MT014-C07-1",
+      "MT014-C08-3",
+      "MT014-C07-4"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Do capacity analysis: quantify how Sharpe degrades as assets grow, factoring in execution investment and higher costs of OTC alternative markets.",
+     "why": "larger funds hit liquidity thresholds in small markets (softs) and have to invest in execution",
+     "claim_ids": [
+      "MT014-C04-4",
+      "MT014-C05-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Size trend allocation relative to the benchmark's tracking error rather than by standard asset-allocation optimisation; a simple Sharpe-based calculation shows a roughly 10% allocation for a Sharpe of 0.2.",
+     "why": "trend breaks the asset-allocation mold; investors care how much they deviate from benchmark",
+     "claim_ids": [
+      "MT014-C13-1",
+      "MT014-C14-2",
+      "MT014-C14-3"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Add alternative markets for different price drivers (not because they trend better), subject to speed, allocation and cost.",
+     "why": "square-root-of-N benefit with lower correlation to macro",
+     "claim_ids": [
+      "MT014-C14-4",
+      "MT014-C15-1",
+      "MT014-C05-1"
+     ]
+    }
+   ],
+   "evidence_style": "Man Institute analysis and papers (short digestible research notes plus academic ones), historical episodes (2008-09, 2022, SVB, August 2024), simple mathematics, and desk experience; quotes Yoav Git and Nick Balter's framing.",
+   "current_views": [
+    {
+     "view": "Trend followers were already positioned for the global bond selloff before the US election, so the Trump trade added only modestly; US assets (dollar, equities, bonds) drove most of trend returns in late 2024.",
+     "as_of": "2024-12-12 (recording; data as of 2024-12-10)",
+     "reasoning": "markets moved before the election; idiosyncratic events (Yenmageddon, Middle East in October) cost",
+     "claim_ids": [
+      "MT014-C01-1",
+      "MT014-C01-2",
+      "MT014-C04-1"
+     ]
+    },
+    {
+     "view": "Q1 2024 was the second-best first quarter in SG Trend history (after 2022); the flat period since produced frustration and excess bearishness among clients.",
+     "as_of": "2024-12",
+     "reasoning": "index history and client conversations",
+     "claim_ids": [
+      "MT014-C03-3"
+     ]
+    },
+    {
+     "view": "MSCI World is now over half US equities, whereas a classically diversified equity portfolio would be about a third.",
+     "as_of": "2024-12",
+     "reasoning": "index composition",
+     "claim_ids": [
+      "MT014-C03-1"
+     ]
+    },
+    {
+     "view": "The central-bank sensitivity headwind is transient and its end is in sight because regional dispersion is reducing the single central-bank factor.",
+     "as_of": "2024-12",
+     "reasoning": "Europe-US dispersion in equities and bonds",
+     "claim_ids": [
+      "MT014-C10-3",
+      "MT014-C10-4"
+     ]
+    },
+    {
+     "view": "The US dominates; diversification outside the US did not pay in 2024, but long-term diversification works. Over the last decade the bond Sharpe is near zero.",
+     "as_of": "2024-12",
+     "reasoning": "performance divergence and historical Sharpe comparison",
+     "claim_ids": [
+      "MT014-C11-3",
+      "MT014-C03-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "host of Top Traders Unplugged; veteran hedge fund manager and trend follower",
+   "speaker_note": "Provides data points and opinions, often framed as 'novice' observations. His trend barometer uses shorter time frames.",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "behavioral_sentiment",
+    "positioning_crowding",
+    "policy_reaction_central_banks",
+    "geopolitics",
+    "structural_themes"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Fund size can explain dispersion: in 2024 smaller managers got more from small markets such as softs, while large funds with 300-500 markets or billions of dollars are capacity-limited. Other sources of dispersion are portfolio composition, number of markets (below 100 versus 300-500), model speed and strategy purity.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "his reading of 2024 data; no figures",
+     "claim_ids": [
+      "MT014-C04-2",
+      "MT014-C04-3"
+     ]
+    },
+    {
+     "premise": "Investors' behavioural bias to remove all painful periods destroys long-term compounding; pension funds with long horizons should not hedge single days. A 50/50 stocks and trend allocation gives almost the sum of the two returns, though both can be long equities into a crisis from an all-time high.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "simple portfolio construction and conversations with investors",
+     "claim_ids": [
+      "MT014-C09-1",
+      "MT014-C08-4",
+      "MT014-C08-5",
+      "MT014-C08-X2"
+     ]
+    },
+    {
+     "premise": "Volatility spikes now reverse as fast as they rise, so capturing them is difficult; long-volatility funds launched after COVID disappointed and many closed because of bleed.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "observation as a 'novice vol observer'; August 2024 VIX fall at record speed",
+     "claim_ids": [
+      "MT014-C07-5",
+      "MT014-C07-6"
+     ]
+    },
+    {
+     "premise": "A more unpredictable largest economy argues for a strategy that makes no predictions and follows markets; the mere perception of administration pressure on the Fed can move markets.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "argument from unpredictability; no data",
+     "claim_ids": [
+      "MT014-C11-5",
+      "MT014-C11-2"
+     ]
+    },
+    {
+     "premise": "Alternative markets do not trend better; they trend at different times than core markets, which is why a fund of funds might include structurally different managers.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "long-term data seen; no difference in trending quality",
+     "claim_ids": [
+      "MT014-C15-4"
+     ]
+    },
+    {
+     "premise": "Trend is perceived as complex because of its math and computers although its rules are simple; risk management is the harder part. CTA industry assets have been flat at about $350-400 billion for years despite education efforts.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "industry size cited from a recorded conversation with Nick Balter",
+     "claim_ids": [
+      "MT014-C14-1",
+      "MT014-C13-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Stay open-minded on trend time frames and manager style; do not fix on one narrative (for example a large allocator insisting on medium-term) because conditions change.",
+     "why": "2024 data showed medium-term trend lagging both short and long look-backs",
+     "claim_ids": [
+      "MT014-C05-6",
+      "MT014-C05-2"
+     ]
+    }
+   ],
+   "evidence_style": "Cites index numbers, anecdotes of allocators, conversations with other podcast guests (Jim Kasang, Nick Balter, Rob Carver) and simple data checks; flags when a topic is outside his speciality.",
+   "current_views": [
+    {
+     "view": "Post-election, investors became less sure the new administration would mean higher inflation and yields; the Treasury Secretary nomination helped shift markets.",
+     "as_of": "2024-12-12",
+     "reasoning": "market reaction after the first days",
+     "claim_ids": [
+      "MT014-C01-3",
+      "MT014-C01-X1"
+     ]
+    },
+    {
+     "view": "Single-stock correlation among major US stocks is at historic lows while indices make all-time highs, which may be a warning sign since correlations jump in crises; US equities strongly outperform other markets (even Europe, France, Korea).",
+     "as_of": "2024-12-12",
+     "reasoning": "correlation pattern and performance divergence; unpredictability requires adaptive strategies",
+     "claim_ids": [
+      "MT014-C02-1",
+      "MT014-C02-2"
+     ]
+    },
+    {
+     "view": "Equities tend to do well in election years and populist periods (Jim Kasang's research); the S&P 500 is having a great year.",
+     "as_of": "2024-12-12",
+     "reasoning": "referenced research on populist periods",
+     "claim_ids": [
+      "MT014-C02-3"
+     ]
+    },
+    {
+     "view": "December 2024 so far mirrors November: trends in North American equities and softs (cocoa, coffee), with help from precious metals and some currencies.",
+     "as_of": "2024-12-12",
+     "reasoning": "early-month performance observation",
+     "claim_ids": [
+      "MT014-C03-2"
+     ]
+    },
+    {
+     "view": "Year to date to 10 December 2024: SG Trend up about 2%, SG CTA +1.93%, BTOP50 +4.34%, short-term traders -0.14%, versus S&P 500 TR +29.24%, MSCI World about +21.5% and US aggregate bonds +3.5%; trend barometer 39 (shorter time frames), consistent with weak short-term performance.",
+     "as_of": "2024-12-10 close",
+     "reasoning": "index numbers read out",
+     "claim_ids": [
+      "MT014-C06-2",
+      "MT014-C06-3",
+      "MT014-C06-4"
+     ]
+    },
+    {
+     "view": "Foreign capital still flows into the US but now into equities (and real estate) rather than bonds; the post-GFC era of stable inflation and GDP removed trend opportunities.",
+     "as_of": "2024-12-12",
+     "reasoning": "personal reading of capital flows; history of central-bank stabilisation",
+     "claim_ids": [
+      "MT014-C11-4",
+      "MT014-C11-1"
+     ]
+    },
+    {
+     "view": "Japan is raising rates while Europe and the US cut, which is not business as usual.",
+     "as_of": "2024-12-12",
+     "reasoning": "observation about central-bank divergence",
+     "claim_ids": [
+      "MT014-C10-R1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Do alternative markets trend better, and is more diversification always better?",
+   "positions": [
+    {
+     "speaker": "Graham Robertson",
+     "position": "Alternative markets genuinely diversify via different price drivers and slightly higher good-time Sharpe; diversification is good ('more you do, the more trends you capture').",
+     "claim_ids": [
+      "MT014-C15-1",
+      "MT014-C15-2",
+      "MT014-C16-3"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Alternative markets do not trend better; they trend at different times than core markets, and he follows only a few alternative markets.",
+     "claim_ids": [
+      "MT014-C15-4"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Will the central-bank headwind fade, and who drives it",
+   "positions": [
+    {
+     "speaker": "Graham Robertson",
+     "position": "Sensitivity to central banks is transient; Europe-US dispersion means the end of the headwind is in sight.",
+     "claim_ids": [
+      "MT014-C10-3",
+      "MT014-C10-4"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "A new administration may pressure the Fed so that perception alone moves markets, and central banks were very influential on trend returns after the GFC.",
+     "claim_ids": [
+      "MT014-C11-1",
+      "MT014-C11-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "How to treat short sharp shocks",
+   "positions": [
+    {
+     "speaker": "Graham Robertson",
+     "position": "Protection costs long-term return; layered defence (long volatility first, quality second, trend third) if one wants protection, and responsive volatility scaling misses the rebound.",
+     "claim_ids": [
+      "MT014-C07-4",
+      "MT014-C08-3",
+      "MT014-C09-2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Investors' bias to remove painful periods destroys compounding; pension funds should not hedge single days; volatility spikes reverse too fast to capture.",
+     "claim_ids": [
+      "MT014-C09-1",
+      "MT014-C07-6"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Graham says the Yenmageddon analysis showed trend neutral to sudden VIX spikes but gives no numbers; he admits the result surprised him because trend is long risk on average.",
+   "claim_ids": [
+    "MT014-C06-5",
+    "MT014-C06-6"
+   ]
+  },
+  {
+   "issue": "Claim that quality long-short worked in SVB and Yenmageddon rests on two out-of-sample episodes and an anecdote about fund-of-funds colleagues; no returns quoted. The ledger flags the SVB/August evidence as a duplicate of C07-1.",
+   "claim_ids": [
+    "MT014-C07-1",
+    "MT014-C07-2"
+   ]
+  },
+  {
+   "issue": "Niels's size-explains-dispersion hypothesis is his own reading of data with no figures; Graham agrees only that capacity matters.",
+   "claim_ids": [
+    "MT014-C04-2",
+    "MT014-C04-4"
+   ]
+  },
+  {
+   "issue": "Statement that medium-speed trend lagged short and long look-backs comes from one quick look at year-to-date data (and later partly explained by breakout models and a wide definition of medium term, 2-6 months).",
+   "claim_ids": [
+    "MT014-C05-2",
+    "MT014-C05-3",
+    "MT014-C06-1"
+   ]
+  },
+  {
+   "issue": "Graham says alternative markets did resiliently in 2009-19 but core markets won in 2022; it is unclear whether the effect is market-driven or manager-driven. No numbers.",
+   "claim_ids": [
+    "MT014-C16-1",
+    "MT014-C16-2"
+   ]
+  },
+  {
+   "issue": "The 'end in sight' call on central-bank sensitivity is hopeful and not tested; Niels notes new administration pressure on the Fed as a counter.",
+   "claim_ids": [
+    "MT014-C10-4",
+    "MT014-C11-2"
+   ]
+  },
+  {
+   "issue": "Mean-variance logic from Yoav Git (a Sharpe of 0.2 giving about a 10% allocation) uses numbers 'out of thin air' deliberately, so it illustrates rather than estimates.",
+   "claim_ids": [
+    "MT014-C14-2",
+    "MT014-C14-3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Robertson cites central-bank pricing (rate-cut expectations), US-Europe dispersion, the sign and level of cross-asset correlations (fixed income to FX to dollar), pairwise correlation surges in crises, and positioning (trend long equities from highs) as drivers of what trend earns next; horizon is 3-4 months for rate-expectation cycles. Niels adds single-stock correlation (low as a warning), US equity concentration and election-year or populist-period equity behaviour. Both argue the largest economy's unpredictability favours adaptive, non-predictive strategies.",
+ "reader_inferences": [
+  "(reader) Robertson's 'harmonic frequency' idea links a macro driver (central-bank narrative cycles) to a model parameter (holding period). It predicts that trend underperforms whenever the dominant macro narrative flips at roughly the same frequency as positions, independent of the direction of rates.",
+  "(reader) Both speakers treat sudden volatility spikes as outside the opportunity set for trend and rely on separate layers (quality, long volatility) for protection; this implies a trend allocation does not replace short-horizon tail hedges.",
+  "(reader) Their agreement that more trend should be held rests on tracking-error and complexity arguments, not new return evidence; it is a conclusion about client behaviour and sizing as much as about trend itself."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT014-C10-R1",
+   "chunk": "C10",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "it's the Europe Europeans and and and the US who are cutting and it's Japan who are raising rates",
+   "claim": "Kaastrup-Larsen notes that central-bank policy is diverging, with Europe and the US cutting while Japan raises rates, which is not business as usual.",
+   "mechanism": "policy_reaction",
+   "asset_class": "rates/fx",
+   "indicator": "central-bank policy divergence",
+   "horizon": "months",
+   "direction": "n/a",
+   "conditions": "December 2024 easing cycle",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT014-C15-R1",
+   "chunk": "C15",
+   "speaker": "Graham Robertson",
+   "quote": "when we talk about crisis we're talking about the S&P typically",
+   "claim": "Robertson explains that traditional futures trend has higher crisis Sharpe because a crisis typically means an S&P selloff and traditional trend trades that market, whereas alternative markets (for example Nordpool power) respond little to macro crises.",
+   "mechanism": "other",
+   "asset_class": "multi",
+   "indicator": "crisis Sharpe of traditional versus alternative trend",
+   "horizon": "crisis periods",
+   "direction": "n/a",
+   "conditions": "crisis defined as S&P selloff",
+   "testable": "yes - Sharpe by regime",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  }
+ ]
+}

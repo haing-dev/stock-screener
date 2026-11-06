@@ -22,6 +22,170 @@ tags: [source, layer0]
 
 **Cross-check completeness estimate of first read:** 0.96 - first reader captured nearly every claim with correct speakers and numbers; only the move-size-driven manager dispersion point and the portable-alpha research gap (buffers, tail co-dependence) were missing
 
+## Argument map
+
+**Episode thesis:** Katie Kaminski and Harry Moore argue that trend following proved its diversification value in Q1 2026 because it follows macro theme changes (energy and inflation up in March, equities, bonds and gold down) without forecasting them, and that its drawdowns are cyclical and self-correcting rather than evidence that it is broken. Moore's Man AHL papers add that liquid traditional markets give the best crisis Sharpe, broader alternative markets the best long-run Sharpe, and that trend's low cash need and risk-managed margin make it a strong liquid alpha for portable alpha, provided cash buffers and tail co-dependence are managed. Niels frames the evidence for a short, clean record as weak and argues the industry allocation is too small for the risks ahead.
+
+### Katie Kaminski (Co-host; Alpha Simplex, trend-following researcher)
+Fingerprint: #approach/trend_following #approach/crisis_alpha_convexity #approach/macro_fundamental_topdown #approach/manager_selection_allocation #approach/geopolitics #approach/research_robustness_overfitting
+_Speaker note: Clean attribution; caption mentions 'Katie' consistently. Her new paper on assessing alpha in macro strategies (with Tansu Demirel and Jasu Sun) is the fourth discussed._
+
+**Worldview premises**
+- Trend gives exposure to macro themes without needing a forecast of which theme occurs or when; a macro manager must predict, a trend system follows. _[theoretical, stated; support: Her investor conversations over ten years; links to Moore's paper decomposing market returns into macro factors.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C09-1|C09-1]])
+- Crisis alpha requires a strategy to be unbiased, liquid and adaptable; in a crisis the liquid markets move with macro themes, so liquid traditional markets provide the offsetting returns. _[theoretical, stated; support: Original crisis-alpha paper criteria and the Moore paper's finding that traditional markets deliver the best crisis Sharpe.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C09-2|C09-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C09-3|C09-3]])
+- Trend drawdowns are cyclical and self-correcting: a shock has no trend yet, then macro realisation takes time and trends return. _[experience, stated; support: 2013 CTA winter, the second-largest drawdown since 2000, Liberation Day; she writes papers using data to counter emotion.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C14-4|C14-4]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C15-1|C15-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C15-2|C15-2]])
+- Performance differences among trend managers come from three things: speed, market set, and trend vs non-trend share; large moves amplify small design differences. _[experience, stated; support: March 2026 manager dispersion (energy as first principal component); big managers in narrow band, mid-sized diverge.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-2|C05-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-1|C04-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-X1|C04-X1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-6|C05-6]])
+- Optimal market mix depends on the investor's objective: maximum standalone Sharpe versus a defensive add-on for crisis alpha; the crisis-alpha and cash-efficient portfolios are similar. _[theoretical, stated; support: Her reading of the Moore paper.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C08-3|C08-3]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C08-4|C08-4]])
+- Alpha and beta are never fully separated, so portable alpha can suffer when equities and trend draw down together. _[institutional, stated; support: March 2026 and return-stacked ETFs as an example.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C11-2|C11-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C11-1|C11-1]])
+- Faster trend models handled March 2026 better because they could pivot, except in fixed income where pivots keep failing; FX and energy carry worked, bond carry did not. _[empirical, stated; support: March 2026 observation; fixed income a headache for over a year.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-2|C04-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-5|C05-5]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-4|C05-4]])
+- Macro manager alpha should be measured after removing equity and trend exposure, with fees and survivorship in view. _[theoretical, stated; support: Her new paper on assessing alpha in macro strategies.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C16-3|C16-3]])
+- Oil shocks weaken the consumer and create inflation shocks, so geopolitical risk transmits to managed futures through energy. _[theoretical, stated; support: Geopolitical risk literature; her paper in progress.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C18-1|C18-1]])
+
+**Chain: March 2026 pivot and trend's diversification**
+1. January-February themes (weaker dollar, strong equities, gold rally) → Trend profits from continuing trends: Continuation of last year's themes ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C03-1|C03-1]])
+2. March pivot: inflation concerns and a huge energy move → New trends offset reversals of old ones: Trend pivots as themes flip ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C03-1|C03-1]])
+3. Energy long and short rate/fixed-income positions → Profits offset equity losses: Diversification across asset classes ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C03-2|C03-2]])
+- Evidence: Q1 2026 trend index performance; equities had been down only a month.
+- Fails when: Fixed income, where pivots keep failing; a single month is a short sample.
+
+**Chain: Shock, realisation and recovery of trends**
+1. Sudden shock (Liberation Day) → Confusion, no trend yet, losses for trend: Markets know the world changed but not what it means ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C14-4|C14-4]])
+2. Macro change realised slowly (tariffs to prices) → Trends re-form over time: Realisation takes time ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C15-1|C15-1]])
+3. Waxing and waning trends → Cyclical, self-correcting drawdowns: Strategy not broken ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C15-2|C15-2]])
+- Evidence: 2013 CTA winter; 2025 drawdown followed by strong recovery.
+- Fails when: Not stated.
+
+**Chain: Why traditional markets suit crisis alpha (her reading)**
+1. Crisis: macro factors dominate variance → Liquid markets move with macro themes: Risk on/off, inflation and policy stress ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C09-3|C09-3]])
+2. Strategy liquid and adaptable → Can capture offsetting returns quickly enough: Tradeable size ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C09-2|C09-2]])
+- Evidence: Moore's decomposition results.
+- Fails when: Not stated.
+
+**Decision process**
+- [universe] Pick the market mix by objective: traditional liquid markets for crisis alpha and cash efficiency; broader alternatives for long-run Sharpe.. Why: Different objective functions give different optimal portfolios. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C08-3|C08-3]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C08-4|C08-4]])
+- [signal] Judge managers on speed, market set and trend share; compare trend like for like.. Why: These are the three differentiators of performance. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-2|C05-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-X1|C04-X1]])
+- [research] Remove equity and trend exposures from macro managers' returns to measure idiosyncratic alpha.. Why: Judge alpha above cheap exposures. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C16-3|C16-3]])
+- [portfolio] Use portable alpha only after checking that alpha and beta drawdowns can coincide.. Why: Alpha and beta never fully separate. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C11-2|C11-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C11-1|C11-1]])
+
+**Evidence style:** Data first after emotional events (writes a paper), decompositions, historical episodes (2013 CTA winter, 2022), first-principles framing of macro themes and liquidity; reads a month's dispersion as noise rather than skill.
+
+**Views at the time**
+- (2026-04-02) Q1 2026 was a win for trend: continuing themes in January-February, then new energy, inflation and short-rate trends offset equity and old-trend losses in March.. Reasoning: Diversification across asset classes in a market pivot. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C03-1|C03-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C03-2|C03-2]])
+- (2026-04-02) March dispersion among trend managers came from energy exposure (first principal component) and avoiding selling-off positions; faster models did better.. Reasoning: Large moves amplify design differences. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-1|C04-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-2|C04-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-X1|C04-X1]])
+- (2026-04-02) Fixed income remains a headache for trend; energy carry and FX carry worked in March, bond carry did not.. Reasoning: Pivots keep failing in bonds. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-5|C05-5]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-4|C05-4]])
+- (2026-04-02) Geopolitical risk and oil shocks are important for managed futures; she is writing a paper on it.. Reasoning: Oil shocks weaken the consumer and create inflation shocks. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C18-1|C18-1]])
+
+### Harry Moore (Guest; partner and senior client portfolio manager, Man AHL; co-author of the market-mix, portable-alpha and drawdown papers)
+Fingerprint: #approach/trend_following #approach/crisis_alpha_convexity #approach/portfolio_construction_stacking #approach/diversification_risk_parity #approach/costs_execution #approach/manager_selection_allocation #approach/research_robustness_overfitting
+_Speaker note: Clean attribution. Papers discussed: A Trend Following Deep Dive (optimal market mix), Portable Alpha: Solving the Magnificent Problem, and Trend Following and Drawdowns: Is This Time Different? (June 2025, with CIO Russell)._
+
+**Worldview premises**
+- Faster trend trading gives more crisis alpha; slower trading gives slightly higher Sharpe. _[empirical, stated; support: Prior Man AHL work on speed.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C06-2|C06-2]])
+- Traditional markets load more on macro factors and so earn the best Sharpe in crises; alternative markets have more idiosyncratic drivers and earn a higher long-run Sharpe. _[empirical, stated; support: Maximum-diversification portfolios over a market universe of about 900; principal component analysis of variance.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C06-5|C06-5]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C07-1|C07-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C07-2|C07-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C06-4|C06-4]])
+- Number of markets is a poor measure of diversification: 30 stock indices are highly correlated while 30 commodities are not; regional factor versions count as separate markets. _[theoretical, stated; support: About 60 equity factors from roughly 15 styles times four regions; about 900 markets overall.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C08-1|C08-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C08-2|C08-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C06-3|C06-3]])
+- A dedicated trend mandate should be mostly trend (70-80% or more), and trend should be a divergent strategy; below that other drivers (carry, value) can show horrible left tails in a full liquidity break. _[theoretical, stated; support: Experience and Kaminski's divergent/convergent framing.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-4|C04-4]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-5|C04-5]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-1|C05-1]])
+- Trend is cash-efficient ($25-30 per $100 exposure) and manages to risk, so margin needs fall in a crisis; this makes it a liquid alpha that can fund margin calls for a beta index. _[empirical, stated; support: Paper analysis; March 2026 example.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C10-3|C10-3]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C12-2|C12-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C12-3|C12-3]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C07-4|C07-4]])
+- A long drawdown does not show a broken strategy; a 0.6 Sharpe, 15% volatility strategy still had a 33% drawdown lasting years, and rules that deallocate in drawdowns underperform holding. _[empirical, stated; support: Simulation in the June 2025 paper.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C14-1|C14-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C14-2|C14-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C13-2|C13-2]])
+- Human behavioural biases explain why trend works over the long run. _[behavioural, stated; support: Well-documented biases literature.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C14-3|C14-3]])
+- Higher fee in macro managers is only very weakly related to higher net return, and manager indices suffer survivorship bias, so judge alpha above cheap trend and equity exposure. _[empirical, stated; support: Kaminski's paper and his own hedge fund portfolio experience.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C17-1|C17-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C17-2|C17-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C17-3|C17-3]])
+- Alpha evaporation in active equities shifted investors to passive; portable alpha splits the decision into owning the index and finding a separate repeatable alpha, and trend on top of beta historically outperformed with more consistency than multi-strategy alpha. _[empirical, stated; support: Portable alpha paper's historical comparison.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C10-1|C10-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C10-2|C10-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C10-4|C10-4]])
+
+**Chain: Why traditional markets win in crises and alternatives win long run**
+1. Crisis: markets move a lot → Macro factors (risk on/off, growth, inflation, policy) explain more variance: Principal component analysis shows macro share rises in sell-offs ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C07-2|C07-2]])
+2. Traditional markets load more on macro factors → Higher Sharpe during crises: They capture stressed macro themes ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C07-1|C07-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C06-5|C06-5]])
+3. Alternative markets have idiosyncratic drivers → Higher long-run Sharpe: Differentiated return drivers ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C07-1|C07-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C06-5|C06-5]])
+4. Optimising each objective → Max crisis Sharpe overweights gold, crude, dollar vs pound; max long-run Sharpe overweights hydropower, iron ore, China commodities: Maps market mix to objective ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C07-3|C07-3]])
+- Evidence: Statistical analysis over about 900 markets plus macro-factor decomposition.
+- Fails when: Not stated; March 2026 is not tested in the paper.
+
+**Chain: Portable alpha with trend: cash, margin and stress**
+1. Index replicated by swap or future → Cash is left over for the alpha: Futures need only a margin deposit ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C10-2|C10-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C10-3|C10-3]])
+2. 10% margin on S&P futures → An 8-10% fall exhausts margin, so keep large buffers (e.g. $40 per $100): Prevent being closed out of the beta ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C12-1|C12-1]])
+3. Illiquid alpha cannot meet margin calls → Beta is closed out: Alpha cannot be sold quickly ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C12-2|C12-2]])
+4. Trend manages to risk → Margin requirements fall in a crisis: Exposure shrinks as volatility rises ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C12-3|C12-3]])
+- Evidence: Paper plus a March 2026 walk-through (trend long risk into late February, margin 20-25%).
+- Fails when: Alpha and beta draw down together (COVID, GFC); sizing of buffers and tail co-dependence are under-researched.
+
+**Chain: Why not to drop a strategy in drawdown**
+1. Asset underperforms → Test whether the drawdown changed your belief that it works: Long data may still support it ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C13-2|C13-2]])
+2. Belief unchanged → Rebalance into it rather than deallocate: Deallocation rules underperform ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C13-2|C13-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C14-2|C14-2]])
+3. Simulated good strategy → 33% drawdown for years still occurs: Sampling variation of a 0.6 Sharpe strategy ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C14-1|C14-1]])
+- Evidence: Simulation; hundred-year trend evidence.
+- Fails when: The drawdown actually changes the belief that the strategy works.
+
+**Decision process**
+- [portfolio] Build trend portfolios with maximum diversification so no market dominates; choose market mix by objective (crisis Sharpe, long-run Sharpe, cash efficiency).. Why: Different objectives need different mixes. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C06-4|C06-4]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C07-3|C07-3]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C07-4|C07-4]])
+- [sizing] Hold large cash buffers for futures-replicated beta (about $40 per $100 rather than $10); do not invest all excess cash.. Why: Avoid margin exhaustion on an 8-10% equity fall. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C12-1|C12-1]])
+- [risk] Use liquid alpha such as trend for portable alpha; do due diligence on alpha-beta coincident drawdowns.. Why: Illiquid alpha cannot meet margin calls. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C12-2|C12-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C11-3|C11-3]])
+- [other] Rebalance into a strategy in drawdown if beliefs are unchanged; do not use drawdown-triggered deallocation.. Why: Deallocation rules underperform holding. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C13-2|C13-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C14-2|C14-2]])
+- [research] Decompose manager returns against equities, trend (and bonds); account for survivorship.. Why: Judge alpha above cheap exposure. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C17-2|C17-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C17-3|C17-3]])
+
+**Evidence style:** Statistical portfolio construction over a wide market universe, principal component decomposition, simulation of paths for a stated Sharpe, historical comparison of alpha choices; cautious about extrapolating one episode.
+
+**Views at the time**
+- (2026-04-02) Most trend index formulations were up roughly 3-7% year to date at end of Q1 2026, a good result against equities, bonds and 60/40.. Reasoning: Trend diversified the March sell-off. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C03-3|C03-3]])
+- (2026-04-02) If inflation returns or escalation continues, neither equities, bonds, gold (wobbling) nor private markets help; trend is a candidate defensive allocation.. Reasoning: Common drivers hit traditional assets together. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C03-4|C03-4]])
+- (2026-04-02) Going into March trend was long oil, long equities (then scaled down as momentum flipped), and fast models flipped from long to short bonds.. Reasoning: Speed and market mix explain manager differences. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-3|C05-3]])
+- (2026-04-02) If the inflation theme continues, trend will be long oil and short bonds.. Reasoning: Trend follows the inflation theme. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C18-2|C18-2]])
+
+### Niels Kaastrup-Larsen (Host (Top Traders Unplugged))
+Fingerprint: #approach/trend_following #approach/manager_selection_allocation #approach/crisis_alpha_convexity #approach/behavioral_sentiment #approach/research_robustness_overfitting
+_Speaker note: Argues positions on index comparisons, the nature of large CTAs, narrative critiques of trend, crowding and allocation size. Figures are read from his notes; he self-corrects the MSCI World number._
+
+**Worldview premises**
+- In March 2026 stocks, bonds and gold fell together: worst S&P quarter since 2022, steepest monthly gold drop since autumn 2008, 60/40 stress-tested; trend index outperformed MSCI World six or seven months in a row. _[empirical, stated; support: Index prints (S&P down about 4.3% YTD; trend indices down 0.7-1.5% in March and up 7% or more YTD; short-term traders best).]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C02-1|C02-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C02-2|C02-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-7|C05-7]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C06-1|C06-1]])
+- Large CTAs are no longer pure trend; carry and value sleeves may explain a good March, so trend should be compared like for like. _[experience, stated; support: Gut feeling from early numbers of the top 20 managers.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-3|C04-3]])
+- Change hurts convergent strategies while divergent ones like trend are designed for change; trends form because human behaviour does not change. _[theoretical, stated; support: Katie's divergent/convergent framing.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C15-3|C15-3]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C16-2|C16-2]])
+- A short clean record is weak evidence: for a 0.5 Sharpe, 10% volatility strategy the probability of a two-standard-deviation drawdown is about 21% after five years but almost 80% over 25 years. _[empirical, stated; support: Figure from the Man paper.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C15-4|C15-4]])
+- Crowding is not a credible reason for trend to fail: CTA AUM fell from almost 30% of hedge fund AUM to 5% and about 2% of futures volume. _[empirical, stated; support: Man paper; admits more trend capital exists than official AUM shows.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C16-1|C16-1]])
+- The June 2025 drawdown (near the historical maximum, about 22%) and the 'too slow for social media news' narrative were refuted by the recovery. _[empirical, stated; support: SocGen Trend Index five months of drawdown then recovery.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C13-1|C13-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C13-3|C13-3]])
+- Some trend styles (liquid markets, certain speeds) may suit portable alpha better, but this is untested. _[theoretical, stated; support: Gut feeling.]_ ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C11-4|C11-4]])
+
+**Chain: Short record, small drawdown probability**
+1. Manager claims no two-standard-deviation drawdown in five years → Looks skilled: Naive reading ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C15-4|C15-4]])
+2. Probability of such a drawdown is about 21% in five years → Rises to almost 80% over 25 years: More time, more chance ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C15-4|C15-4]])
+- Evidence: Man paper table.
+- Fails when: Assumes a 0.5 Sharpe and 10% volatility.
+
+**Chain: Crowding fear vs measured capital**
+1. CTA share of hedge fund AUM falls from nearly 30% to 5% → Share of futures volume only about 2%: Measured capital is small ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C16-1|C16-1]])
+2. Small footprint → Crowding is not a credible failure reason: Caveat: more trend followers than official AUM ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C16-1|C16-1]])
+- Evidence: Man paper.
+- Fails when: Unmeasured trend capital is larger than the official figure.
+
+**Decision process**
+- [research] Compare trend managers apples to apples: strip carry and value contributions before concluding about trend.. Why: Non-trend sleeves may explain performance. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-3|C04-3]])
+- [portfolio] Larger allocations to trend and non-correlated strategies than currently held.. Why: Current allocations are too small for the risks in 2026. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C18-3|C18-3]])
+
+**Evidence style:** Index prints and data tables from papers, narrative tests of past criticisms, and market-headline context; frames outcomes as evidence for a pre-stated position.
+
+**Views at the time**
+- (2026-04-02) Trend followed a market in which stocks, bonds and gold fell together and held up; critics saying there was no crisis alpha are wrong.. Reasoning: Index prints for March and the year to date. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C06-1|C06-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-7|C05-7]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C02-1|C02-1]])
+- (2026-04-02) The industry may see either a recovery or a much larger crisis; allocations to trend and non-correlated strategies are too small.. Reasoning: Pivotal moment given world events. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C18-3|C18-3]])
+
+### Disagreements
+- **What explains March 2026 trend manager dispersion and outperformance**: Katie Kaminski: Energy exposure (first principal component), avoiding selling-off positions and speed; small design choices are amplified in big moves. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-1|C04-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-2|C04-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-X1|C04-X1]]); Niels Kaastrup-Larsen: Large CTAs are not pure trend; carry and value sleeves may explain good results. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-3|C04-3]]); Harry Moore: Below 70-80% trend content other drivers matter, and a dedicated mandate must be judged on how the non-trend part behaves in a full liquidity break; market mix and speed also explain March. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-4|C04-4]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-1|C05-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-3|C05-3]])
+- **Portable alpha with trend: how separable are alpha and beta**: Harry Moore: Trend on top of beta historically outperformed with more consistency, with a liquid alpha and a large cash buffer to survive margin calls. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C10-4|C10-4]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C12-2|C12-2]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C12-1|C12-1]]); Katie Kaminski: Alpha and beta are never fully separated; March showed equities and trend in drawdown together, as in return-stacked ETFs. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C11-2|C11-2]])
+
+### Gaps and conflicts
+- The June 2025 drawdown level is captioned 'around 2022%' and read as about 22%; the SocGen Trend maximum drawdown figure is therefore uncertain. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C13-1|C13-1]])
+- Niels's suspicion that carry and value sleeves explain strong March results is a gut feeling without data; no manager breakdown is shown. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-3|C04-3]])
+- The statement that most trend formulations were up 3-7% YTD is a range across indices; Niels reads 7% or more for several, and the MSCI World figure was self-corrected during the recording (month -6.32% vs YTD -3.47%). ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C03-3|C03-3]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-7|C05-7]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C06-1|C06-1]])
+- The crowding argument admits more trend capital than official AUM figures; the 2% futures-volume share is therefore a lower bound. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C16-1|C16-1]])
+- The market-mix findings depend on a 900-market universe including synthetic factors; execution, capacity and cost for alternative markets are not discussed. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C06-3|C06-3]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C08-1|C08-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C06-5|C06-5]])
+- The refutation of the 'too slow for social media' narrative rests on one recovery episode. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C13-3|C13-3]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C13-1|C13-1]])
+- Portable alpha cash-buffer sizing and tail co-dependence are acknowledged as under-researched; the $40 per $100 buffer is illustrative, not derived. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C12-1|C12-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C18-X1|C18-X1]])
+- Katie says equities had been down only a month and 'you got to give it some time', yet the episode concludes trend was a clear win for Q1. ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C03-1|C03-1]], [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C03-2|C03-2]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Inputs the speakers say matter: the inflation theme and oil (trend would be long oil and short bonds if it continues); whether equities, bonds and gold keep falling together; signs of a liquidity break (dash for cash) where non-trend strategies develop left tails; persistent failure of pivots in fixed income; geopolitical shocks transmitted through oil and the consumer. Horizon is weeks to months for trend and years for the allocation argument; the reason is that trend follows macro theme changes with a lag and has cyclical, self-correcting drawdowns.
+
+### Reader inferences (not stated by the speakers)
+- (reader) The three papers form one argument: trend is liquid and macro-loaded (market mix), cash-light (portable alpha), and its drawdowns are statistically normal (June 2025 paper), so it is a candidate sleeve for any diversified portfolio.
+- (reader) Moore's finding that traditional markets are best in a crisis and Kaminski's crisis-alpha criteria (unbiased, liquid, adaptable) reinforce each other, but both rest on stressed macro factors being the dominant driver, which the 2026 episode supported only for one month.
+- (reader) Niels's observation that large CTAs include carry and value sleeves, plus Moore's 70-80% trend threshold, implies the 'trend index outperformance' is partly a multi-strategy result.
+- (reader) Both guests treat drawdown-triggered deallocation as value-destroying, but the June 2025 paper's simulation assumes a true 0.6 Sharpe; for a strategy whose Sharpe is unknown, the rebalance advice depends on that belief.
+
 ## Coverage
 
 | Chunk | Claims | Note |

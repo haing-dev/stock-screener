@@ -1,0 +1,681 @@
+{
+ "source_id": "MT073",
+ "episode_thesis": "Yoav Git argues that trend followers should treat futures-curve spreads as transient, dislocation-driven risk factors to be traded with breakout rules only once their volatility has jumped (never at constant risk, which is the LTCM trap), and that the speculator-positioning data show no sign that trend is crowded or at capacity. His blog reverses his own first premise: long-horizon capital-market-assumption allocators (Vanguard's cut to about 30% equities) are mean-reverting, trading the opposite side of trend at a ten-year horizon, so systematic strategies at a three-month horizon are independent alpha for them and can modulate tactical changes.",
+ "speakers": [
+  {
+   "name": "Yoav Git",
+   "role": "guest co-host; quant CTA researcher based in Cambridge (first-time stand-up comedian that weekend)",
+   "speaker_note": "Recorded Friday 22 August 2025 (Jackson Hole day; index data as of the day before). Ledger correction applied to the Vanguard detail: Vanguard cut its ten-year US equity return assumption by about half a percentage point after a 10-11% June rally, not by half the rally itself. Captions garble names ('Yol', 'Yo', and the spread paper's authors 'Maritz at Takahi Capital'), so author and firm names are not relied on.",
+   "fingerprint": [
+    "trend_following",
+    "relative_value_arbitrage",
+    "positioning_crowding",
+    "commodity_fundamentals",
+    "regime_detection",
+    "research_robustness_overfitting",
+    "portfolio_construction_stacking",
+    "liquidity_flows"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A commodity is not one object: contracts for different delivery months (old crop vs new crop) differ in supply, demand, financial conditions and regulation, so points on the curve can be traded separately.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Corn crop-year and copper tariff examples from the paper.",
+     "claim_ids": [
+      "MT073-C03-5",
+      "MT073-C04-1"
+     ]
+    },
+    {
+     "premise": "The front of the commodity curve is more volatile and driven by macro news and speculators (new participants crowd into the liquid front contract), while long-dated prices follow long-term supply and demand and are held by slower hedgers and producers.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Volume versus open interest and Commitments of Traders for copper.",
+     "claim_ids": [
+      "MT073-C04-2",
+      "MT073-C04-3",
+      "MT073-C09-1",
+      "MT073-C09-2"
+     ]
+    },
+    {
+     "premise": "Spreads show strong, violent breakouts and reversals, so a breakout rule fits them; a breakout signals a fundamental event.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Paper's finding; examples of tariffs, crop shocks, refinery outages.",
+     "claim_ids": [
+      "MT073-C04-4",
+      "MT073-C06-3"
+     ]
+    },
+    {
+     "premise": "Spread convergence follows the cost of carry (interest, storage, convenience yield) and is slow; dislocations arise when the two contracts are not substitutable (a supply shock to one crop year), which creates a short-lived trend.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Economic reasoning on fungibility; corn drought example.",
+     "claim_ids": [
+      "MT073-C05-5",
+      "MT073-C05-6",
+      "MT073-C06-1"
+     ]
+    },
+    {
+     "premise": "Spread volatility is residual volatility after 90-98% correlation between legs, so it is tiny and itself volatile; targeting constant risk needs huge leverage (50x) and wipes you out in a dislocation (left-skewed), as LTCM's on/off-the-run trade did.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "LTCM analogy; leg correlation arithmetic.",
+     "claim_ids": [
+      "MT073-C05-1",
+      "MT073-C06-4",
+      "MT073-C06-5"
+     ]
+    },
+    {
+     "premise": "Transient risk factors (spreads, crack spreads, currency basis) are uncorrelated to the rest of the portfolio and so add diversification when traded only while their volatility is sufficient.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument by examples; no portfolio test given.",
+     "claim_ids": [
+      "MT073-C05-3",
+      "MT073-C06-2",
+      "MT073-C07-2",
+      "MT073-C07-3"
+     ]
+    },
+    {
+     "premise": "Relative-value trades are value-based rather than trend-based, so making money from spreads is harder than from outrights; in bond principal components the top factors (about 70% of risk) trend well, middle ones still trend but smaller, and the lowest (pure RV) factors are strongly mean-reverting.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "PCA of bond markets as he describes it (own observation, no numbers shown).",
+     "claim_ids": [
+      "MT073-C07-4",
+      "MT073-C07-5",
+      "MT073-C08-1"
+     ]
+    },
+    {
+     "premise": "Spreads cost more per unit of risk because both legs trade, while slow outright trend costs only about 0.02-0.03 of Sharpe and is the dominant source of trend returns, so fast spread trend may be uneconomic.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Cost arithmetic; his own cost benchmarks.",
+     "claim_ids": [
+      "MT073-C08-4",
+      "MT073-C08-X1",
+      "MT073-C08-3"
+     ]
+    },
+    {
+     "premise": "The claim that trend is at capacity is not supported: industry AUM understates trend capital (QIS, multistrat pods), but regressing speculators' COT positions on trend signals shows loading on fast trend declined since the early 2000s while slow trend loading did not rise; speculators cut positions when volatility rises.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own COT regression (descriptive, not predictive), consistent with CTAs migrating to slow trend.",
+     "claim_ids": [
+      "MT073-C09-4",
+      "MT073-C09-5",
+      "MT073-C10-1",
+      "MT073-C10-2",
+      "MT073-C10-3"
+     ]
+    },
+    {
+     "premise": "Judge trend over long periods, not one to six months; it is painful like going down the stairs and up the elevator, and its fundamental reasons (zero correlation plus dynamic adaptation) are unchanged by a weak period; investors hold off after poor starts regardless of the manager.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Client conversations and the long historical record (not quoted).",
+     "claim_ids": [
+      "MT073-C02-5",
+      "MT073-C03-1",
+      "MT073-C03-3",
+      "MT073-C03-4"
+     ]
+    },
+    {
+     "premise": "Describe data structure first before building predictive strategies; understand data before applying machine learning, and avoid overcomplicated models.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "The Bank of England paper as an example; the 'virtue of complexity' paper as contrast.",
+     "claim_ids": [
+      "MT073-C11-2",
+      "MT073-C11-3"
+     ]
+    },
+    {
+     "premise": "FX players sit in different habitats along the curve (market makers within a week, hedge funds and asset managers 1-3 months around IMM dates, corporates 2-3 year swaps); UK corporates are structurally long sterling/short dollar and dealers hold the opposite, with US corporates the unseen mirror.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Non-anonymised regulator data of about 100 million London FX derivative transactions 2015-2020; he concedes the dealer net-position reading may be misleading and needs checking.",
+     "claim_ids": [
+      "MT073-C11-1",
+      "MT073-C12-1",
+      "MT073-C13-1",
+      "MT073-C10-4",
+      "MT073-C11-X1"
+     ]
+    },
+    {
+     "premise": "Post-GFC dealers cannot hold large risk on their books, so risk passes to corporates and others in bonds, credit and FX; FX derivatives are star-shaped with the top five dealers and five market makers dominating, more than 20 years ago, unlike the spot market with non-bank market makers.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Paper's structure and his EBS memory; implication unclear to him.",
+     "claim_ids": [
+      "MT073-C13-2",
+      "MT073-C13-3",
+      "MT073-C14-1"
+     ]
+    },
+    {
+     "premise": "Long-horizon allocators derive the equity/bond split from ten-year capital-market assumptions and a correlation matrix, and their models are mean-reverting: after equities rise they cut expected return and underweight equities, taking the opposite side of trend; an allocator estimates equity beta of managers' P&L but cannot fit CTA positioning because CTAs change exposure too often.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Conversation with an allocator; Vanguard's July 2025 revision (30% equity, 70% bonds).",
+     "claim_ids": [
+      "MT073-C14-3",
+      "MT073-C14-4",
+      "MT073-C15-1",
+      "MT073-C15-2",
+      "MT073-C15-3"
+     ]
+    },
+    {
+     "premise": "Valuation-based long-horizon models (Shiller PE, ten-year views) are useful only for very long horizons, not tactically; selling equities after the June rally would have done poorly (S&P from about 6.2k to 6.4k), and allocators dislike models that have been underweight equities for years.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "S&P move since the end of June; allocator remark.",
+     "claim_ids": [
+      "MT073-C16-1",
+      "MT073-C16-2",
+      "MT073-C16-3"
+     ]
+    },
+    {
+     "premise": "Active traders (CTAs, multistrats, macro funds) operate at a three-month horizon invisible to ten-year allocators, which is why they are uncorrelated to them; treat CTA alpha as independent of the CMA allocation, using positioning only to modulate small tactical changes.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Time-horizon and habitat reasoning; he calls it an experimental thought and does not expect consultants to adopt it.",
+     "claim_ids": [
+      "MT073-C17-2",
+      "MT073-C17-3",
+      "MT073-C16-R1",
+      "MT073-C18-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why spreads should be traded only after a dislocation and with breakouts",
+     "steps": [
+      {
+       "from": "Legs 90-98% correlated",
+       "to": "Spread volatility is residual and tiny (about 2% of leg vol)",
+       "why": "Most leg volatility is common.",
+       "claim_ids": [
+        "MT073-C06-4"
+       ]
+      },
+      {
+       "from": "Targeting constant risk on a tiny, itself volatile spread",
+       "to": "Needs huge leverage (about 50x), and a dislocation wipes you out (left skew, the LTCM trap)",
+       "why": "Volatility jumps when contracts stop being substitutable.",
+       "claim_ids": [
+        "MT073-C05-1",
+        "MT073-C06-5"
+       ]
+      },
+      {
+       "from": "Structural break (tariff, refinery outage, crop shock)",
+       "to": "Spread volatility rises to about 10% of leg vol and a real fundamental divergence creates a short-lived trend",
+       "why": "Contracts become non-fungible; transient risk factor.",
+       "claim_ids": [
+        "MT073-C07-1",
+        "MT073-C06-1",
+        "MT073-C06-2"
+       ]
+      },
+      {
+       "from": "Volatility sufficient",
+       "to": "Start trading with dynamic sizing and a breakout signal; exit when volatility fades",
+       "why": "A break signals a fundamental event; risk management is key.",
+       "claim_ids": [
+        "MT073-C05-2",
+        "MT073-C06-3",
+        "MT073-C07-3"
+       ]
+      }
+     ],
+     "evidence": "Paper's copper tariff example and his arithmetic; no backtest quoted in the discussion.",
+     "fails_when": "Fast spread trend becomes uneconomic after costs (both legs trade); the trigger depends on unpredictable events.",
+     "claim_ids": [
+      "MT073-C05-2",
+      "MT073-C08-4",
+      "MT073-C05-1"
+     ]
+    },
+    {
+     "topic": "Why the trend-capacity argument fails in the data",
+     "steps": [
+      {
+       "from": "Industry AUM said to be constant while the market grew",
+       "to": "Man's argument that trend is a small part of the market",
+       "why": "Ignores trend run inside QIS and multistrat pods.",
+       "claim_ids": [
+        "MT073-C09-4",
+        "MT073-C09-5"
+       ]
+      },
+      {
+       "from": "Regress speculators' COT positions on trend signals",
+       "to": "A high beta would signal crowded trend",
+       "why": "Descriptive test of loading.",
+       "claim_ids": [
+        "MT073-C10-1"
+       ]
+      },
+      {
+       "from": "Observed loading",
+       "to": "Fast-trend loading fell since the early 2000s, slow-trend loading did not rise, speculators cut positions when volatility rises",
+       "why": "CTAs migrated to slow trend and risk-target on volatility.",
+       "claim_ids": [
+        "MT073-C10-2",
+        "MT073-C10-3"
+       ]
+      }
+     ],
+     "evidence": "COT regression (his own, not shown in detail).",
+     "fails_when": "COT shows only reportable positions and speculator groups; he calls the test descriptive rather than predictive.",
+     "claim_ids": [
+      "MT073-C10-1",
+      "MT073-C10-3"
+     ]
+    },
+    {
+     "topic": "Why long-horizon allocators are the other side of trend",
+     "steps": [
+      {
+       "from": "Ten-year capital market assumptions and correlation matrix set the strategic split",
+       "to": "Allocation is the key decision",
+       "why": "Derived from expected equity and bond returns.",
+       "claim_ids": [
+        "MT073-C15-1"
+       ]
+      },
+      {
+       "from": "Equities rally (June 2025 +10-11%)",
+       "to": "The model lowers expected equity return (Vanguard cut about 0.5 point) and underweights equities (30/70)",
+       "why": "Mean-reverting models.",
+       "claim_ids": [
+        "MT073-C15-2",
+        "MT073-C15-3"
+       ]
+      },
+      {
+       "from": "Allocators take the opposite side to trend",
+       "to": "Trend can phase the long-term allocation tactically (delay deallocating while trend is strong)",
+       "why": "Trend is fast; the CMA is slow.",
+       "claim_ids": [
+        "MT073-C16-4",
+        "MT073-C16-5"
+       ]
+      },
+      {
+       "from": "Different time horizons (ten-year vs three-month)",
+       "to": "CTA positioning is invisible to the allocator and alpha is independent",
+       "why": "Habitat argument; allocators should stick to their numbers.",
+       "claim_ids": [
+        "MT073-C17-2",
+        "MT073-C17-3",
+        "MT073-C17-R1"
+       ]
+      }
+     ],
+     "evidence": "Vanguard July 2025 revision; a conversation with one allocator; the S&P rose after June, showing the cost of selling.",
+     "fails_when": "He admits his original premise (allocators' delta to equity assumptions is positive, adding to equities) was wrong.",
+     "claim_ids": [
+      "MT073-C15-2",
+      "MT073-C16-R1"
+     ]
+    },
+    {
+     "topic": "Choosing which contract to trade with curve information",
+     "steps": [
+      {
+       "from": "Curve spreads show the back cheap and the front dear",
+       "to": "If momentum says buy, buy the back",
+       "why": "The back is supply/demand driven; the front is macro driven.",
+       "claim_ids": [
+        "MT073-C08-5",
+        "MT073-C04-2"
+       ]
+      },
+      {
+       "from": "Fast spread trend is uneconomic",
+       "to": "Use spread information to select the contract rather than trade the spread",
+       "why": "Incremental benefit at low cost.",
+       "claim_ids": [
+        "MT073-C08-4",
+        "MT073-C08-5"
+       ]
+      }
+     ],
+     "evidence": "His suspicion of what the researchers do; no numbers.",
+     "fails_when": "The benefit is smaller than full spread trading.",
+     "claim_ids": [
+      "MT073-C08-5"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "universe",
+     "practice": "Include transient risk factors (calendar spreads, crack spreads, currency basis) only while their volatility is sufficient, and exit when it fades.",
+     "why": "Diversification without the leverage trap.",
+     "claim_ids": [
+      "MT073-C05-2",
+      "MT073-C07-3",
+      "MT073-C07-2"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Do not use constant risk allocation for spreads (unlike outright markets, about 2% per market); size dynamically after a dislocation lifts volatility.",
+     "why": "Spread volatility is itself volatile.",
+     "claim_ids": [
+      "MT073-C04-5",
+      "MT073-C05-1",
+      "MT073-C05-2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Use breakout rules on spreads; trade spread trend faster than outright trend but not too fast because of costs.",
+     "why": "Breakouts mark fundamental events; costs bite.",
+     "claim_ids": [
+      "MT073-C06-3",
+      "MT073-C08-3"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "In a PCA-based bond trend system remove the smallest factors and overweight the middle ones.",
+     "why": "Lowest factors mean-revert; middle ones still trend.",
+     "claim_ids": [
+      "MT073-C08-1",
+      "MT073-C08-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Test crowding by regressing speculators' COT positions on trend signals.",
+     "why": "A high beta would indicate crowding.",
+     "claim_ids": [
+      "MT073-C10-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Embed systematic strategies in the allocator's optimisation so the allocation adjusts automatically as assumptions change; use trend to phase out of equities.",
+     "why": "Covers a wider set of assumption outcomes.",
+     "claim_ids": [
+      "MT073-C16-4",
+      "MT073-C16-5",
+      "MT073-C18-1"
+     ]
+    }
+   ],
+   "evidence_style": "Reads a paper for its mechanism, adds his own risk-management and capacity commentary, uses Commitments of Traders regressions and cost arithmetic; anecdote from allocators; freely admits a wrong premise in his own blog.",
+   "current_views": [
+    {
+     "view": "Trend in fixed income has been difficult in 2025 because US yields oscillate indeterminately, while Japan's 10-year yield has climbed steadily from zero in 2022 to an all-time high, helping trend; at least one other market (name garbled in captions) shows yields falling significantly.",
+     "as_of": "2025-08-22",
+     "reasoning": "Yield behaviour by market; trend needs persistence.",
+     "claim_ids": [
+      "MT073-C02-1",
+      "MT073-C02-2"
+     ]
+    },
+    {
+     "view": "CTA allocators remain hesitant after about six months of poor performance; the long-run case is unchanged.",
+     "as_of": "2025-08-22",
+     "reasoning": "General malaise whatever the manager; client conversations.",
+     "claim_ids": [
+      "MT073-C02-5",
+      "MT073-C03-1"
+     ]
+    },
+    {
+     "view": "Selling equities after the June rally would have done poorly; long-horizon valuation views are not for tactical use.",
+     "as_of": "2025-08-22",
+     "reasoning": "S&P rose from about 6.2k to 6.4k since end-June.",
+     "claim_ids": [
+      "MT073-C16-2",
+      "MT073-C16-3"
+     ]
+    },
+    {
+     "view": "Copper has become more speculative at the front of the curve, with CTAs and multistrats now trading it.",
+     "as_of": "2025-08-22",
+     "reasoning": "Volume versus open interest and COT.",
+     "claim_ids": [
+      "MT073-C09-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Alan Dunne (host, sitting in for Niels Kaastrup-Larsen)",
+   "role": "host; allocator/researcher; asks clarifying questions and adds headlines",
+   "speaker_note": "Captioned 'Alan Dunn'. Mostly questions; views listed are those he states himself.",
+   "fingerprint": [
+    "trend_following",
+    "macro_fundamental_topdown",
+    "fiscal_dominance",
+    "manager_selection_allocation",
+    "portfolio_construction_stacking"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Fiscal dominance (monetary policy bending to fiscal needs at high debt) is becoming a market theme alongside rising Japanese yields, though not fully reached.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "FT story and record Japanese yields.",
+     "claim_ids": [
+      "MT073-C02-3"
+     ]
+    },
+    {
+     "premise": "Where many risk-averse hedgers exist, speculators can earn a risk premium.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Textbook reasoning; no data.",
+     "claim_ids": [
+      "MT073-C09-3"
+     ]
+    },
+    {
+     "premise": "Most managers trade spreads for mean reversion/carry, not breakout trend.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Industry knowledge.",
+     "claim_ids": [
+      "MT073-C05-4"
+     ]
+    },
+    {
+     "premise": "Mean-variance frameworks were designed for assets, not strategies that trade the same assets, so allocating to CTAs raises a conceptual problem; a CTA allocation adds or removes equity exposure with the equity trend, a favourable portfolio effect.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning about allocation frameworks.",
+     "claim_ids": [
+      "MT073-C17-1",
+      "MT073-C16-6"
+     ]
+    },
+    {
+     "premise": "Hedge fund net FX exposures fluctuate widely and dealers hold the opposite of hedgers.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Paper's net exposure chart; Yoav says the dealer reading is partly misleading.",
+     "claim_ids": [
+      "MT073-C12-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Headlines, index data and conceptual allocator framing; defers to the guest on research.",
+   "current_views": [
+    {
+     "view": "BlackRock recommended raising hedge fund allocations by 5%, reflecting a more volatile macro environment, while Vanguard recommends a bond-heavy 70/30 style allocation; CTA allocators remain hesitant.",
+     "as_of": "2025-08-22",
+     "reasoning": "FT reports; the volatile macro case for hedge funds also applies to CTAs.",
+     "claim_ids": [
+      "MT073-C02-4",
+      "MT073-C14-2"
+     ]
+    },
+    {
+     "view": "SG Trend Index down about 8.5% YTD and SG CTA nearly 7% (to the previous day); August up (Trend +1.67%, CTA about +0.5%); fixed-income trends in Japan and Europe helping, FX and equities rangy.",
+     "as_of": "2025-08-21",
+     "reasoning": "Index data.",
+     "claim_ids": [
+      "MT073-C03-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "How managers trade spreads",
+   "positions": [
+    {
+     "speaker": "Alan Dunne",
+     "position": "Most managers trade spreads for mean reversion or carry, not breakout trend.",
+     "claim_ids": [
+      "MT073-C05-4"
+     ]
+    },
+    {
+     "speaker": "Yoav Git",
+     "position": "Carry convergence is slow and traditional, but dislocations from non-substitutable contracts create short trends best traded by breakout after volatility rises.",
+     "claim_ids": [
+      "MT073-C05-5",
+      "MT073-C05-6",
+      "MT073-C05-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "How CTAs fit into a capital-market-assumption allocation",
+   "positions": [
+    {
+     "speaker": "Alan Dunne",
+     "position": "Mean-variance was built for assets, and CTAs trade those assets, which creates a conceptual problem; asks whether the CTA allocation should be higher given the extra tactical role.",
+     "claim_ids": [
+      "MT073-C17-1",
+      "MT073-C16-6"
+     ]
+    },
+    {
+     "speaker": "Yoav Git",
+     "position": "Horizon difference resolves it: treat CTA alpha as independent of the ten-year allocation and use positioning only to modulate small tactical changes.",
+     "claim_ids": [
+      "MT073-C17-2",
+      "MT073-C17-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Yoav's blog premise (long-term allocators add to equities when they have risen, i.e. their delta is positive) was wrong, and he says so; the revised claim is that they mean-revert and trade opposite to trend.",
+   "claim_ids": [
+    "MT073-C15-2",
+    "MT073-C16-R1"
+   ]
+  },
+  {
+   "issue": "The Vanguard numbers are muddled in the transcript: the ledger correction says a cut of about 0.5 point from about 4.5%, but the speaker also says 'we're left with three and a half percent'; the 30/70 allocation figure is given without the model's inputs.",
+   "claim_ids": [
+    "MT073-C15-3"
+   ]
+  },
+  {
+   "issue": "The dealer net-position reading from the BoE paper is flagged by Yoav himself as partly misleading (missing the US side) and he says it needs checking.",
+   "claim_ids": [
+    "MT073-C12-2",
+    "MT073-C13-1"
+   ]
+  },
+  {
+   "issue": "The authors and paper titles are garbled by captions; the spread paper's findings are reported second-hand with no tests quoted (no Sharpe, no backtest for spread breakout).",
+   "claim_ids": [
+    "MT073-C04-4",
+    "MT073-C07-1"
+   ]
+  },
+  {
+   "issue": "The COT crowding regression is described without results beyond the direction of loadings; speculator categories in COT do not isolate trend followers.",
+   "claim_ids": [
+    "MT073-C10-1",
+    "MT073-C10-3"
+   ]
+  },
+  {
+   "issue": "The statement that PCA factors cover about 70% of risk in the top quartile and that the lowest are mean-reverting comes from his own work without numbers; the first 25% is also described loosely as 'about 70% of risk'.",
+   "claim_ids": [
+    "MT073-C07-5",
+    "MT073-C08-1"
+   ]
+  },
+  {
+   "issue": "The explanation that trend underperformed in 2025 is not given; Yoav declines to discuss and only argues against the capacity cause.",
+   "claim_ids": [
+    "MT073-C10-3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) For the trend book the speakers watch persistence of yield moves by market (Japan, Europe versus choppy US), volatility jumps in spreads after policy or supply shocks (tariffs, refinery outages, crop shocks) as the trigger for spread trades, and COT loading of speculators on trend signals for crowding. For allocators the horizon is ten years for capital-market assumptions versus three months for active traders; Vanguard-style mean-reverting models change equity weights after rallies, which is the opposite side of trend.",
+ "reader_inferences": [
+  "(reader) Yoav's spread logic is a volatility-regime rule: the signal is not the spread's level but its volatility jumping from about 2% to about 10% of leg volatility, so the trade is sized by the new volatility and switched off when it fades.",
+  "(reader) His capacity argument depends on loading of speculators' positions rather than AUM, so a rise in slow-trend loading would be the observable that refutes his view.",
+  "(reader) Both speakers frame long-horizon allocators as natural counterparties to trend, so periods when CMA models cut equities after a rally while trend is long are the structural source of the opposite-side positioning.",
+  "(reader) His admission of a wrong premise shows how he treats own errors: keep the principle (systematic strategies belong inside the optimisation) while discarding the mechanism that was falsified."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT073-C16-R1",
+   "chunk": "C16",
+   "speaker": "Yoav Git",
+   "quote": "the premise that I had in my mind that the the delta of uh long-term allocators is positive is completely false.",
+   "claim": "Yoav concedes that his blog's premise, that long-term allocators add to equities when equities have gone up, was wrong; their models are mean-reverting, though his principle of embedding systematic strategies in the allocation still holds.",
+   "mechanism": "allocator_behaviour_correction",
+   "asset_class": "equity",
+   "indicator": "change in capital-market assumptions after rally",
+   "horizon": "ten-year CMA horizon",
+   "direction": "mean-reverting",
+   "conditions": "long-horizon CMA-based allocators such as Vanguard",
+   "testable": "partly - allocator model revisions",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT073-C17-R1",
+   "chunk": "C17",
+   "speaker": "Yoav Git",
+   "quote": "stick with those numbers have those allocations go and play golf right you know allocate for equity long-term",
+   "claim": "For long-term allocations built on capital-market assumptions, Yoav's advice is to stick with the numbers and ignore three-month noise, leaving tactical adjustment to systematic strategies on a different horizon.",
+   "mechanism": "horizon_separation",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "ten years versus three months",
+   "direction": "",
+   "conditions": "investors using CMA-based strategic allocation",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

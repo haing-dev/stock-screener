@@ -1,0 +1,219 @@
+{
+ "source_id": "MT083",
+ "episode_thesis": "Katie Kaminski and Harry Moore argue that trend following proved its diversification value in Q1 2026 because it follows macro theme changes (energy and inflation up in March, equities, bonds and gold down) without forecasting them, and that its drawdowns are cyclical and self-correcting rather than evidence that it is broken. Moore's Man AHL papers add that liquid traditional markets give the best crisis Sharpe, broader alternative markets the best long-run Sharpe, and that trend's low cash need and risk-managed margin make it a strong liquid alpha for portable alpha, provided cash buffers and tail co-dependence are managed. Niels frames the evidence for a short, clean record as weak and argues the industry allocation is too small for the risks ahead.",
+ "speakers": [
+  {
+   "name": "Katie Kaminski",
+   "role": "Co-host; Alpha Simplex, trend-following researcher",
+   "speaker_note": "Clean attribution; caption mentions 'Katie' consistently. Her new paper on assessing alpha in macro strategies (with Tansu Demirel and Jasu Sun) is the fourth discussed.",
+   "fingerprint": ["trend_following", "crisis_alpha_convexity", "macro_fundamental_topdown", "manager_selection_allocation", "geopolitics", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {"premise": "Trend gives exposure to macro themes without needing a forecast of which theme occurs or when; a macro manager must predict, a trend system follows.", "type": "theoretical", "stated": "stated", "support": "Her investor conversations over ten years; links to Moore's paper decomposing market returns into macro factors.", "claim_ids": ["MT083-C09-1"]},
+    {"premise": "Crisis alpha requires a strategy to be unbiased, liquid and adaptable; in a crisis the liquid markets move with macro themes, so liquid traditional markets provide the offsetting returns.", "type": "theoretical", "stated": "stated", "support": "Original crisis-alpha paper criteria and the Moore paper's finding that traditional markets deliver the best crisis Sharpe.", "claim_ids": ["MT083-C09-2", "MT083-C09-3"]},
+    {"premise": "Trend drawdowns are cyclical and self-correcting: a shock has no trend yet, then macro realisation takes time and trends return.", "type": "experience", "stated": "stated", "support": "2013 CTA winter, the second-largest drawdown since 2000, Liberation Day; she writes papers using data to counter emotion.", "claim_ids": ["MT083-C14-4", "MT083-C15-1", "MT083-C15-2"]},
+    {"premise": "Performance differences among trend managers come from three things: speed, market set, and trend vs non-trend share; large moves amplify small design differences.", "type": "experience", "stated": "stated", "support": "March 2026 manager dispersion (energy as first principal component); big managers in narrow band, mid-sized diverge.", "claim_ids": ["MT083-C05-2", "MT083-C04-1", "MT083-C04-X1", "MT083-C05-6"]},
+    {"premise": "Optimal market mix depends on the investor's objective: maximum standalone Sharpe versus a defensive add-on for crisis alpha; the crisis-alpha and cash-efficient portfolios are similar.", "type": "theoretical", "stated": "stated", "support": "Her reading of the Moore paper.", "claim_ids": ["MT083-C08-3", "MT083-C08-4"]},
+    {"premise": "Alpha and beta are never fully separated, so portable alpha can suffer when equities and trend draw down together.", "type": "institutional", "stated": "stated", "support": "March 2026 and return-stacked ETFs as an example.", "claim_ids": ["MT083-C11-2", "MT083-C11-1"]},
+    {"premise": "Faster trend models handled March 2026 better because they could pivot, except in fixed income where pivots keep failing; FX and energy carry worked, bond carry did not.", "type": "empirical", "stated": "stated", "support": "March 2026 observation; fixed income a headache for over a year.", "claim_ids": ["MT083-C04-2", "MT083-C05-5", "MT083-C05-4"]},
+    {"premise": "Macro manager alpha should be measured after removing equity and trend exposure, with fees and survivorship in view.", "type": "theoretical", "stated": "stated", "support": "Her new paper on assessing alpha in macro strategies.", "claim_ids": ["MT083-C16-3"]},
+    {"premise": "Oil shocks weaken the consumer and create inflation shocks, so geopolitical risk transmits to managed futures through energy.", "type": "theoretical", "stated": "stated", "support": "Geopolitical risk literature; her paper in progress.", "claim_ids": ["MT083-C18-1"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "March 2026 pivot and trend's diversification",
+     "steps": [
+      {"from": "January-February themes (weaker dollar, strong equities, gold rally)", "to": "Trend profits from continuing trends", "why": "Continuation of last year's themes", "claim_ids": ["MT083-C03-1"]},
+      {"from": "March pivot: inflation concerns and a huge energy move", "to": "New trends offset reversals of old ones", "why": "Trend pivots as themes flip", "claim_ids": ["MT083-C03-1"]},
+      {"from": "Energy long and short rate/fixed-income positions", "to": "Profits offset equity losses", "why": "Diversification across asset classes", "claim_ids": ["MT083-C03-2"]}
+     ],
+     "evidence": "Q1 2026 trend index performance; equities had been down only a month.",
+     "fails_when": "Fixed income, where pivots keep failing; a single month is a short sample.",
+     "claim_ids": ["MT083-C05-5"]
+    },
+    {
+     "topic": "Shock, realisation and recovery of trends",
+     "steps": [
+      {"from": "Sudden shock (Liberation Day)", "to": "Confusion, no trend yet, losses for trend", "why": "Markets know the world changed but not what it means", "claim_ids": ["MT083-C14-4"]},
+      {"from": "Macro change realised slowly (tariffs to prices)", "to": "Trends re-form over time", "why": "Realisation takes time", "claim_ids": ["MT083-C15-1"]},
+      {"from": "Waxing and waning trends", "to": "Cyclical, self-correcting drawdowns", "why": "Strategy not broken", "claim_ids": ["MT083-C15-2"]}
+     ],
+     "evidence": "2013 CTA winter; 2025 drawdown followed by strong recovery.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT083-C15-2"]
+    },
+    {
+     "topic": "Why traditional markets suit crisis alpha (her reading)",
+     "steps": [
+      {"from": "Crisis: macro factors dominate variance", "to": "Liquid markets move with macro themes", "why": "Risk on/off, inflation and policy stress", "claim_ids": ["MT083-C09-3"]},
+      {"from": "Strategy liquid and adaptable", "to": "Can capture offsetting returns quickly enough", "why": "Tradeable size", "claim_ids": ["MT083-C09-2"]}
+     ],
+     "evidence": "Moore's decomposition results.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT083-C09-2"]
+    }
+   ],
+   "decision_process": [
+    {"element": "universe", "practice": "Pick the market mix by objective: traditional liquid markets for crisis alpha and cash efficiency; broader alternatives for long-run Sharpe.", "why": "Different objective functions give different optimal portfolios.", "claim_ids": ["MT083-C08-3", "MT083-C08-4"]},
+    {"element": "signal", "practice": "Judge managers on speed, market set and trend share; compare trend like for like.", "why": "These are the three differentiators of performance.", "claim_ids": ["MT083-C05-2", "MT083-C04-X1"]},
+    {"element": "research", "practice": "Remove equity and trend exposures from macro managers' returns to measure idiosyncratic alpha.", "why": "Judge alpha above cheap exposures.", "claim_ids": ["MT083-C16-3"]},
+    {"element": "portfolio", "practice": "Use portable alpha only after checking that alpha and beta drawdowns can coincide.", "why": "Alpha and beta never fully separate.", "claim_ids": ["MT083-C11-2", "MT083-C11-1"]}
+   ],
+   "evidence_style": "Data first after emotional events (writes a paper), decompositions, historical episodes (2013 CTA winter, 2022), first-principles framing of macro themes and liquidity; reads a month's dispersion as noise rather than skill.",
+   "current_views": [
+    {"view": "Q1 2026 was a win for trend: continuing themes in January-February, then new energy, inflation and short-rate trends offset equity and old-trend losses in March.", "as_of": "2026-04-02", "reasoning": "Diversification across asset classes in a market pivot.", "claim_ids": ["MT083-C03-1", "MT083-C03-2"]},
+    {"view": "March dispersion among trend managers came from energy exposure (first principal component) and avoiding selling-off positions; faster models did better.", "as_of": "2026-04-02", "reasoning": "Large moves amplify design differences.", "claim_ids": ["MT083-C04-1", "MT083-C04-2", "MT083-C04-X1"]},
+    {"view": "Fixed income remains a headache for trend; energy carry and FX carry worked in March, bond carry did not.", "as_of": "2026-04-02", "reasoning": "Pivots keep failing in bonds.", "claim_ids": ["MT083-C05-5", "MT083-C05-4"]},
+    {"view": "Geopolitical risk and oil shocks are important for managed futures; she is writing a paper on it.", "as_of": "2026-04-02", "reasoning": "Oil shocks weaken the consumer and create inflation shocks.", "claim_ids": ["MT083-C18-1"]}
+   ]
+  },
+  {
+   "name": "Harry Moore",
+   "role": "Guest; partner and senior client portfolio manager, Man AHL; co-author of the market-mix, portable-alpha and drawdown papers",
+   "speaker_note": "Clean attribution. Papers discussed: A Trend Following Deep Dive (optimal market mix), Portable Alpha: Solving the Magnificent Problem, and Trend Following and Drawdowns: Is This Time Different? (June 2025, with CIO Russell).",
+   "fingerprint": ["trend_following", "crisis_alpha_convexity", "portfolio_construction_stacking", "diversification_risk_parity", "costs_execution", "manager_selection_allocation", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {"premise": "Faster trend trading gives more crisis alpha; slower trading gives slightly higher Sharpe.", "type": "empirical", "stated": "stated", "support": "Prior Man AHL work on speed.", "claim_ids": ["MT083-C06-2"]},
+    {"premise": "Traditional markets load more on macro factors and so earn the best Sharpe in crises; alternative markets have more idiosyncratic drivers and earn a higher long-run Sharpe.", "type": "empirical", "stated": "stated", "support": "Maximum-diversification portfolios over a market universe of about 900; principal component analysis of variance.", "claim_ids": ["MT083-C06-5", "MT083-C07-1", "MT083-C07-2", "MT083-C06-4"]},
+    {"premise": "Number of markets is a poor measure of diversification: 30 stock indices are highly correlated while 30 commodities are not; regional factor versions count as separate markets.", "type": "theoretical", "stated": "stated", "support": "About 60 equity factors from roughly 15 styles times four regions; about 900 markets overall.", "claim_ids": ["MT083-C08-1", "MT083-C08-2", "MT083-C06-3"]},
+    {"premise": "A dedicated trend mandate should be mostly trend (70-80% or more), and trend should be a divergent strategy; below that other drivers (carry, value) can show horrible left tails in a full liquidity break.", "type": "theoretical", "stated": "stated", "support": "Experience and Kaminski's divergent/convergent framing.", "claim_ids": ["MT083-C04-4", "MT083-C04-5", "MT083-C05-1"]},
+    {"premise": "Trend is cash-efficient ($25-30 per $100 exposure) and manages to risk, so margin needs fall in a crisis; this makes it a liquid alpha that can fund margin calls for a beta index.", "type": "empirical", "stated": "stated", "support": "Paper analysis; March 2026 example.", "claim_ids": ["MT083-C10-3", "MT083-C12-2", "MT083-C12-3", "MT083-C07-4"]},
+    {"premise": "A long drawdown does not show a broken strategy; a 0.6 Sharpe, 15% volatility strategy still had a 33% drawdown lasting years, and rules that deallocate in drawdowns underperform holding.", "type": "empirical", "stated": "stated", "support": "Simulation in the June 2025 paper.", "claim_ids": ["MT083-C14-1", "MT083-C14-2", "MT083-C13-2"]},
+    {"premise": "Human behavioural biases explain why trend works over the long run.", "type": "behavioural", "stated": "stated", "support": "Well-documented biases literature.", "claim_ids": ["MT083-C14-3"]},
+    {"premise": "Higher fee in macro managers is only very weakly related to higher net return, and manager indices suffer survivorship bias, so judge alpha above cheap trend and equity exposure.", "type": "empirical", "stated": "stated", "support": "Kaminski's paper and his own hedge fund portfolio experience.", "claim_ids": ["MT083-C17-1", "MT083-C17-2", "MT083-C17-3"]},
+    {"premise": "Alpha evaporation in active equities shifted investors to passive; portable alpha splits the decision into owning the index and finding a separate repeatable alpha, and trend on top of beta historically outperformed with more consistency than multi-strategy alpha.", "type": "empirical", "stated": "stated", "support": "Portable alpha paper's historical comparison.", "claim_ids": ["MT083-C10-1", "MT083-C10-2", "MT083-C10-4"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why traditional markets win in crises and alternatives win long run",
+     "steps": [
+      {"from": "Crisis: markets move a lot", "to": "Macro factors (risk on/off, growth, inflation, policy) explain more variance", "why": "Principal component analysis shows macro share rises in sell-offs", "claim_ids": ["MT083-C07-2"]},
+      {"from": "Traditional markets load more on macro factors", "to": "Higher Sharpe during crises", "why": "They capture stressed macro themes", "claim_ids": ["MT083-C07-1", "MT083-C06-5"]},
+      {"from": "Alternative markets have idiosyncratic drivers", "to": "Higher long-run Sharpe", "why": "Differentiated return drivers", "claim_ids": ["MT083-C07-1", "MT083-C06-5"]},
+      {"from": "Optimising each objective", "to": "Max crisis Sharpe overweights gold, crude, dollar vs pound; max long-run Sharpe overweights hydropower, iron ore, China commodities", "why": "Maps market mix to objective", "claim_ids": ["MT083-C07-3"]}
+     ],
+     "evidence": "Statistical analysis over about 900 markets plus macro-factor decomposition.",
+     "fails_when": "Not stated; March 2026 is not tested in the paper.",
+     "claim_ids": ["MT083-C06-3"]
+    },
+    {
+     "topic": "Portable alpha with trend: cash, margin and stress",
+     "steps": [
+      {"from": "Index replicated by swap or future", "to": "Cash is left over for the alpha", "why": "Futures need only a margin deposit", "claim_ids": ["MT083-C10-2", "MT083-C10-3"]},
+      {"from": "10% margin on S&P futures", "to": "An 8-10% fall exhausts margin, so keep large buffers (e.g. $40 per $100)", "why": "Prevent being closed out of the beta", "claim_ids": ["MT083-C12-1"]},
+      {"from": "Illiquid alpha cannot meet margin calls", "to": "Beta is closed out", "why": "Alpha cannot be sold quickly", "claim_ids": ["MT083-C12-2"]},
+      {"from": "Trend manages to risk", "to": "Margin requirements fall in a crisis", "why": "Exposure shrinks as volatility rises", "claim_ids": ["MT083-C12-3"]}
+     ],
+     "evidence": "Paper plus a March 2026 walk-through (trend long risk into late February, margin 20-25%).",
+     "fails_when": "Alpha and beta draw down together (COVID, GFC); sizing of buffers and tail co-dependence are under-researched.",
+     "claim_ids": ["MT083-C11-3", "MT083-C18-X1"]
+    },
+    {
+     "topic": "Why not to drop a strategy in drawdown",
+     "steps": [
+      {"from": "Asset underperforms", "to": "Test whether the drawdown changed your belief that it works", "why": "Long data may still support it", "claim_ids": ["MT083-C13-2"]},
+      {"from": "Belief unchanged", "to": "Rebalance into it rather than deallocate", "why": "Deallocation rules underperform", "claim_ids": ["MT083-C13-2", "MT083-C14-2"]},
+      {"from": "Simulated good strategy", "to": "33% drawdown for years still occurs", "why": "Sampling variation of a 0.6 Sharpe strategy", "claim_ids": ["MT083-C14-1"]}
+     ],
+     "evidence": "Simulation; hundred-year trend evidence.",
+     "fails_when": "The drawdown actually changes the belief that the strategy works.",
+     "claim_ids": ["MT083-C13-2"]
+    }
+   ],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Build trend portfolios with maximum diversification so no market dominates; choose market mix by objective (crisis Sharpe, long-run Sharpe, cash efficiency).", "why": "Different objectives need different mixes.", "claim_ids": ["MT083-C06-4", "MT083-C07-3", "MT083-C07-4"]},
+    {"element": "sizing", "practice": "Hold large cash buffers for futures-replicated beta (about $40 per $100 rather than $10); do not invest all excess cash.", "why": "Avoid margin exhaustion on an 8-10% equity fall.", "claim_ids": ["MT083-C12-1"]},
+    {"element": "risk", "practice": "Use liquid alpha such as trend for portable alpha; do due diligence on alpha-beta coincident drawdowns.", "why": "Illiquid alpha cannot meet margin calls.", "claim_ids": ["MT083-C12-2", "MT083-C11-3"]},
+    {"element": "other", "practice": "Rebalance into a strategy in drawdown if beliefs are unchanged; do not use drawdown-triggered deallocation.", "why": "Deallocation rules underperform holding.", "claim_ids": ["MT083-C13-2", "MT083-C14-2"]},
+    {"element": "research", "practice": "Decompose manager returns against equities, trend (and bonds); account for survivorship.", "why": "Judge alpha above cheap exposure.", "claim_ids": ["MT083-C17-2", "MT083-C17-3"]}
+   ],
+   "evidence_style": "Statistical portfolio construction over a wide market universe, principal component decomposition, simulation of paths for a stated Sharpe, historical comparison of alpha choices; cautious about extrapolating one episode.",
+   "current_views": [
+    {"view": "Most trend index formulations were up roughly 3-7% year to date at end of Q1 2026, a good result against equities, bonds and 60/40.", "as_of": "2026-04-02", "reasoning": "Trend diversified the March sell-off.", "claim_ids": ["MT083-C03-3"]},
+    {"view": "If inflation returns or escalation continues, neither equities, bonds, gold (wobbling) nor private markets help; trend is a candidate defensive allocation.", "as_of": "2026-04-02", "reasoning": "Common drivers hit traditional assets together.", "claim_ids": ["MT083-C03-4"]},
+    {"view": "Going into March trend was long oil, long equities (then scaled down as momentum flipped), and fast models flipped from long to short bonds.", "as_of": "2026-04-02", "reasoning": "Speed and market mix explain manager differences.", "claim_ids": ["MT083-C05-3"]},
+    {"view": "If the inflation theme continues, trend will be long oil and short bonds.", "as_of": "2026-04-02", "reasoning": "Trend follows the inflation theme.", "claim_ids": ["MT083-C18-2"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged)",
+   "speaker_note": "Argues positions on index comparisons, the nature of large CTAs, narrative critiques of trend, crowding and allocation size. Figures are read from his notes; he self-corrects the MSCI World number.",
+   "fingerprint": ["trend_following", "manager_selection_allocation", "crisis_alpha_convexity", "behavioral_sentiment", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {"premise": "In March 2026 stocks, bonds and gold fell together: worst S&P quarter since 2022, steepest monthly gold drop since autumn 2008, 60/40 stress-tested; trend index outperformed MSCI World six or seven months in a row.", "type": "empirical", "stated": "stated", "support": "Index prints (S&P down about 4.3% YTD; trend indices down 0.7-1.5% in March and up 7% or more YTD; short-term traders best).", "claim_ids": ["MT083-C02-1", "MT083-C02-2", "MT083-C05-7", "MT083-C06-1"]},
+    {"premise": "Large CTAs are no longer pure trend; carry and value sleeves may explain a good March, so trend should be compared like for like.", "type": "experience", "stated": "stated", "support": "Gut feeling from early numbers of the top 20 managers.", "claim_ids": ["MT083-C04-3"]},
+    {"premise": "Change hurts convergent strategies while divergent ones like trend are designed for change; trends form because human behaviour does not change.", "type": "theoretical", "stated": "stated", "support": "Katie's divergent/convergent framing.", "claim_ids": ["MT083-C15-3", "MT083-C16-2"]},
+    {"premise": "A short clean record is weak evidence: for a 0.5 Sharpe, 10% volatility strategy the probability of a two-standard-deviation drawdown is about 21% after five years but almost 80% over 25 years.", "type": "empirical", "stated": "stated", "support": "Figure from the Man paper.", "claim_ids": ["MT083-C15-4"]},
+    {"premise": "Crowding is not a credible reason for trend to fail: CTA AUM fell from almost 30% of hedge fund AUM to 5% and about 2% of futures volume.", "type": "empirical", "stated": "stated", "support": "Man paper; admits more trend capital exists than official AUM shows.", "claim_ids": ["MT083-C16-1"]},
+    {"premise": "The June 2025 drawdown (near the historical maximum, about 22%) and the 'too slow for social media news' narrative were refuted by the recovery.", "type": "empirical", "stated": "stated", "support": "SocGen Trend Index five months of drawdown then recovery.", "claim_ids": ["MT083-C13-1", "MT083-C13-3"]},
+    {"premise": "Some trend styles (liquid markets, certain speeds) may suit portable alpha better, but this is untested.", "type": "theoretical", "stated": "stated", "support": "Gut feeling.", "claim_ids": ["MT083-C11-4"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Short record, small drawdown probability",
+     "steps": [
+      {"from": "Manager claims no two-standard-deviation drawdown in five years", "to": "Looks skilled", "why": "Naive reading", "claim_ids": ["MT083-C15-4"]},
+      {"from": "Probability of such a drawdown is about 21% in five years", "to": "Rises to almost 80% over 25 years", "why": "More time, more chance", "claim_ids": ["MT083-C15-4"]}
+     ],
+     "evidence": "Man paper table.",
+     "fails_when": "Assumes a 0.5 Sharpe and 10% volatility.",
+     "claim_ids": ["MT083-C15-4"]
+    },
+    {
+     "topic": "Crowding fear vs measured capital",
+     "steps": [
+      {"from": "CTA share of hedge fund AUM falls from nearly 30% to 5%", "to": "Share of futures volume only about 2%", "why": "Measured capital is small", "claim_ids": ["MT083-C16-1"]},
+      {"from": "Small footprint", "to": "Crowding is not a credible failure reason", "why": "Caveat: more trend followers than official AUM", "claim_ids": ["MT083-C16-1"]}
+     ],
+     "evidence": "Man paper.",
+     "fails_when": "Unmeasured trend capital is larger than the official figure.",
+     "claim_ids": ["MT083-C16-1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Compare trend managers apples to apples: strip carry and value contributions before concluding about trend.", "why": "Non-trend sleeves may explain performance.", "claim_ids": ["MT083-C04-3"]},
+    {"element": "portfolio", "practice": "Larger allocations to trend and non-correlated strategies than currently held.", "why": "Current allocations are too small for the risks in 2026.", "claim_ids": ["MT083-C18-3"]}
+   ],
+   "evidence_style": "Index prints and data tables from papers, narrative tests of past criticisms, and market-headline context; frames outcomes as evidence for a pre-stated position.",
+   "current_views": [
+    {"view": "Trend followed a market in which stocks, bonds and gold fell together and held up; critics saying there was no crisis alpha are wrong.", "as_of": "2026-04-02", "reasoning": "Index prints for March and the year to date.", "claim_ids": ["MT083-C06-1", "MT083-C05-7", "MT083-C02-1"]},
+    {"view": "The industry may see either a recovery or a much larger crisis; allocations to trend and non-correlated strategies are too small.", "as_of": "2026-04-02", "reasoning": "Pivotal moment given world events.", "claim_ids": ["MT083-C18-3"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "What explains March 2026 trend manager dispersion and outperformance",
+   "positions": [
+    {"speaker": "Katie Kaminski", "position": "Energy exposure (first principal component), avoiding selling-off positions and speed; small design choices are amplified in big moves.", "claim_ids": ["MT083-C04-1", "MT083-C04-2", "MT083-C04-X1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Large CTAs are not pure trend; carry and value sleeves may explain good results.", "claim_ids": ["MT083-C04-3"]},
+    {"speaker": "Harry Moore", "position": "Below 70-80% trend content other drivers matter, and a dedicated mandate must be judged on how the non-trend part behaves in a full liquidity break; market mix and speed also explain March.", "claim_ids": ["MT083-C04-4", "MT083-C05-1", "MT083-C05-3"]}
+   ]
+  },
+  {
+   "topic": "Portable alpha with trend: how separable are alpha and beta",
+   "positions": [
+    {"speaker": "Harry Moore", "position": "Trend on top of beta historically outperformed with more consistency, with a liquid alpha and a large cash buffer to survive margin calls.", "claim_ids": ["MT083-C10-4", "MT083-C12-2", "MT083-C12-1"]},
+    {"speaker": "Katie Kaminski", "position": "Alpha and beta are never fully separated; March showed equities and trend in drawdown together, as in return-stacked ETFs.", "claim_ids": ["MT083-C11-2"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "The June 2025 drawdown level is captioned 'around 2022%' and read as about 22%; the SocGen Trend maximum drawdown figure is therefore uncertain.", "claim_ids": ["MT083-C13-1"]},
+  {"issue": "Niels's suspicion that carry and value sleeves explain strong March results is a gut feeling without data; no manager breakdown is shown.", "claim_ids": ["MT083-C04-3"]},
+  {"issue": "The statement that most trend formulations were up 3-7% YTD is a range across indices; Niels reads 7% or more for several, and the MSCI World figure was self-corrected during the recording (month -6.32% vs YTD -3.47%).", "claim_ids": ["MT083-C03-3", "MT083-C05-7", "MT083-C06-1"]},
+  {"issue": "The crowding argument admits more trend capital than official AUM figures; the 2% futures-volume share is therefore a lower bound.", "claim_ids": ["MT083-C16-1"]},
+  {"issue": "The market-mix findings depend on a 900-market universe including synthetic factors; execution, capacity and cost for alternative markets are not discussed.", "claim_ids": ["MT083-C06-3", "MT083-C08-1", "MT083-C06-5"]},
+  {"issue": "The refutation of the 'too slow for social media' narrative rests on one recovery episode.", "claim_ids": ["MT083-C13-3", "MT083-C13-1"]},
+  {"issue": "Portable alpha cash-buffer sizing and tail co-dependence are acknowledged as under-researched; the $40 per $100 buffer is illustrative, not derived.", "claim_ids": ["MT083-C12-1", "MT083-C18-X1"]},
+  {"issue": "Katie says equities had been down only a month and 'you got to give it some time', yet the episode concludes trend was a clear win for Q1.", "claim_ids": ["MT083-C03-1", "MT083-C03-2"]}
+ ],
+ "forward_looking_inputs": "(reader) Inputs the speakers say matter: the inflation theme and oil (trend would be long oil and short bonds if it continues); whether equities, bonds and gold keep falling together; signs of a liquidity break (dash for cash) where non-trend strategies develop left tails; persistent failure of pivots in fixed income; geopolitical shocks transmitted through oil and the consumer. Horizon is weeks to months for trend and years for the allocation argument; the reason is that trend follows macro theme changes with a lag and has cyclical, self-correcting drawdowns.",
+ "reader_inferences": [
+  "(reader) The three papers form one argument: trend is liquid and macro-loaded (market mix), cash-light (portable alpha), and its drawdowns are statistically normal (June 2025 paper), so it is a candidate sleeve for any diversified portfolio.",
+  "(reader) Moore's finding that traditional markets are best in a crisis and Kaminski's crisis-alpha criteria (unbiased, liquid, adaptable) reinforce each other, but both rest on stressed macro factors being the dominant driver, which the 2026 episode supported only for one month.",
+  "(reader) Niels's observation that large CTAs include carry and value sleeves, plus Moore's 70-80% trend threshold, implies the 'trend index outperformance' is partly a multi-strategy result.",
+  "(reader) Both guests treat drawdown-triggered deallocation as value-destroying, but the June 2025 paper's simulation assumes a true 0.6 Sharpe; for a strategy whose Sharpe is unknown, the rebalance advice depends on that belief."
+ ],
+ "added_claims": []
+}

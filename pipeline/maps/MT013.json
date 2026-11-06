@@ -1,0 +1,869 @@
+{
+ "source_id": "MT013",
+ "episode_thesis": "Andrew Beer argues that CTA alpha is being early, contrarian and right, and that 2025's flat CTA space despite gold +60% and rallying equities came from short-term models: they have roughly zero Sharpe, whipsaw on sentiment oscillation without a change in fundamental value, and are a costly risk-management tool, while long-term models captured lasting shifts (gold, non-US equities). Tom Roble (SG) adds that with few trending markets in 2025 risk allocation and risk management decided manager returns, that non-US investors are rethinking US risk, and that concentrated programs are hard to sell. Both Beer and host Niels Kaastrup-Larsen critique liquid-alternative, replication and QIS products as sold rather than bought and often opaque, with Beer calling for allocators to define the signal they want and implement it efficiently.",
+ "speakers": [
+  {
+   "name": "Andrew Beer",
+   "role": "co-founder of a managed-futures replication ETF firm (DBi / DBMF, captioned as 'ABF'/'DBI'); former allocator and commodity firm founder; co-host",
+   "speaker_note": "Recorded around Thursday 12 February 2026 (index data as of Tuesday 10 February; uploaded 2026-02-15). He cannot talk about DBMF flows for compliance reasons. Captions garble names (Roble captioned 'Roble'; Simplify as 'simplified'). His account of 'our' performance refers to his firm's replication.",
+   "fingerprint": [
+    "trend_following",
+    "replication_indexing",
+    "research_robustness_overfitting",
+    "costs_execution",
+    "manager_selection_allocation",
+    "structural_themes",
+    "portfolio_construction_stacking"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Valuable trends occur when fair value really changes and informed participants like the asset more at each higher price (10 to 11 to 12). Sentiment oscillation without a change in fundamental value (10 to 11 to 9) is noise captured by locals and high-frequency traders, and whipsaws trend followers.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "a stylised price-path model of fair value versus sentiment; experience running a fundamental commodity firm (Pinnacle) where traders waited for CTA signals to trade against them",
+     "claim_ids": [
+      "MT013-C11-2",
+      "MT013-C11-3",
+      "MT013-C11-4"
+     ]
+    },
+    {
+     "premise": "Short-term trend models have no strong Sharpe ratio and are a costly risk-management tool (higher trading costs); allocating risk to a zero-Sharpe component to reduce volatility is a poor trade, and risk management should not be conflated with that. Long-term models capture lasting shifts.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "SG trend indicator factor analysis for 2025 (long-term about +20%, short-term -12 to -15%); his own view of shorter-term models over many years",
+     "claim_ids": [
+      "MT013-C09-1",
+      "MT013-C09-2",
+      "MT013-C09-3",
+      "MT013-C09-4",
+      "MT013-C12-1",
+      "MT013-C12-2"
+     ]
+    },
+    {
+     "premise": "CTA alpha comes from being early, contrarian and right. In 2025 CTAs added equity risk after Liberation Day and held gold while human strategists feared recession; non-US equities and gold, which narratives had mistimed for 15 years, were finally captured.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "2025 outcomes; his recollection of 2020 calls (short Treasuries, long gold, short yen); gold failing in 2022 then soaring in 2024 for different reasons",
+     "claim_ids": [
+      "MT013-C07-1",
+      "MT013-C07-2",
+      "MT013-C07-3",
+      "MT013-C07-4",
+      "MT013-C11-R3"
+     ]
+    },
+    {
+     "premise": "When CTAs de-risk after a volatility spike, local traders who know the market trade against them, so CTAs pay implementation costs and liquidity dries up; backtests understate this cost, and adding many non-core markets makes de-risking drawdowns worse.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Liberation Day experience; a former Goldman metals desk head's comment about local knowledge versus systematic traders",
+     "claim_ids": [
+      "MT013-C12-3",
+      "MT013-C12-4",
+      "MT013-C12-5"
+     ]
+    },
+    {
+     "premise": "Hedging a long-term trend model out of fear of tail events (out-of-the-money puts) or paying for protection against a bad whipsaw costs too much; allocators' fear of a Friday loss turning into a worse Monday is not something one is paid to cater to.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "SVB example; reasoning about costs",
+     "claim_ids": [
+      "MT013-C13-2",
+      "MT013-C13-3"
+     ]
+    },
+    {
+     "premise": "The liquid-alternative category (hedge fund strategies in mutual funds, UCITS and ETFs) has been astonishingly bad: 2-3% over 15 years with about 200bp fees while equities rose about 14% a year. Products are designed by salespeople to meet demand, not on investment merit, and capital flows to the largest sales forces (sold, not bought).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Wilshire category data cited; failed multi-manager mutual funds (Blackstone, Neuberger Berman); product launch incentives",
+     "claim_ids": [
+      "MT013-C13-4",
+      "MT013-C13-5",
+      "MT013-C14-1",
+      "MT013-C15-1",
+      "MT013-C17-1",
+      "MT013-C16-5",
+      "MT013-C16-X2"
+     ]
+    },
+    {
+     "premise": "Backtests of risk-premia and replication products overstate Sharpe (G10 carry 1.2); live results fall about 75% short of backtests. After the 2007 quant losses the narrative shifted to harvesting permanent risk premia, which understated risk; calling trend a risk premium is misleading because different designers' trend indices differ greatly.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "his 2013-14 papers and later outcomes; Standard Life GARS (promised equity beta 0.2 with cash plus 5; reached $90 billion)",
+     "claim_ids": [
+      "MT013-C16-2",
+      "MT013-C16-3",
+      "MT013-C16-4",
+      "MT013-C20-1",
+      "MT013-C19-4",
+      "MT013-C20-2"
+     ]
+    },
+    {
+     "premise": "Allocation to managed futures should be a core allocation and not traded tactically; allocators who want to time something should time another asset. Few allocators actively trade it.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "client feedback behind his product plan (line-item constraint, model allocators)",
+     "claim_ids": [
+      "MT013-C18-X1",
+      "MT013-C17-2"
+     ]
+    },
+    {
+     "premise": "AI-driven economic disruption should help trend following because trend needs real economic change; asset management stays a people business, but AI-assisted allocations already recommend managed futures as a core element.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "an investor's 15-minute AI allocation analysis; his own PR firm AI-voice episode",
+     "claim_ids": [
+      "MT013-C02-1",
+      "MT013-C02-2",
+      "MT013-C02-3"
+     ]
+    },
+    {
+     "premise": "Private equity is essentially leveraged equity with smoothed marks, which is less attractive when valuations are high and expected 10-year returns low; allocators overcommitted expecting distributions that did not arrive.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Dan Rasmussen's research (Verdad); secondaries market growth",
+     "claim_ids": [
+      "MT013-C05-1",
+      "MT013-C05-2",
+      "MT013-C05-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why short-term models detracted in 2025 and long-term models did not",
+     "steps": [
+      {
+       "from": "Sentiment shifts (Liberation Day shock, rebound) without a change in the state of the world",
+       "to": "Short-term models are whipsawed violently",
+       "why": "price oscillates around unchanged fair value; locals and HFTs trade the oscillation",
+       "claim_ids": [
+        "MT013-C11-3",
+        "MT013-C12-1"
+       ]
+      },
+      {
+       "from": "Lasting shifts (move out of US assets, gold, non-US equities) visible in prices and in flows at the margin",
+       "to": "Long-term models get behind the trend and capture it",
+       "why": "fair value is changing and informed participants like the asset more at higher prices",
+       "claim_ids": [
+        "MT013-C11-2",
+        "MT013-C12-1",
+        "MT013-C07-3"
+       ]
+      },
+      {
+       "from": "Gold +60% and equities rallying",
+       "to": "CTA space flat in 2025 because short-term trend lost 12-15% while long-term trend gained about 20%",
+       "why": "short-term allocation carried zero Sharpe and trading costs",
+       "claim_ids": [
+        "MT013-C09-1",
+        "MT013-C09-2",
+        "MT013-C09-3"
+       ]
+      }
+     ],
+     "evidence": "SG trend indicator factor analysis (Tom Roble's report), mirrored by Nick Baltas and Katie Kaminski analysis according to Beer.",
+     "fails_when": "In the initial April 2025 shock short-term models preserved capital better than long-term models (they lost later in chop), so protection over a few days is where they help; Beer judges that too costly.",
+     "claim_ids": [
+      "MT013-C13-1",
+      "MT013-C09-4"
+     ]
+    },
+    {
+     "topic": "Why CTA de-risking after a spike is expensive",
+     "steps": [
+      {
+       "from": "Volatility spikes and CTAs cut risk",
+       "to": "Local traders in that market see the selling and trade against it",
+       "why": "liquidity dries up when CTAs sell at once",
+       "claim_ids": [
+        "MT013-C12-3"
+       ]
+      },
+      {
+       "from": "Many non-core markets in the book",
+       "to": "Larger implementation costs and deeper drawdowns during de-risking",
+       "why": "less liquid markets where outsiders get picked off",
+       "claim_ids": [
+        "MT013-C12-4",
+        "MT013-C12-5"
+       ]
+      },
+      {
+       "from": "Slower (weekly) de-risking and keeping a little risk on",
+       "to": "Better outcome around Liberation Day because the selloff reversed",
+       "why": "faster de-risking sold near the low",
+       "claim_ids": [
+        "MT013-C12-X2",
+        "MT013-C12-X1"
+       ]
+      }
+     ],
+     "evidence": "His firm's relative performance around Liberation Day versus the index (about four drivers of variation; -500bp in 2023, outperformance in 2024 and 2025).",
+     "fails_when": "Slow de-risking would hurt in a sustained crash; he says his firm was 'slow to derisk' and benefited when Trump changed his mind.",
+     "claim_ids": [
+      "MT013-C12-X1"
+     ]
+    },
+    {
+     "topic": "Why liquid-alternative products fail investors",
+     "steps": [
+      {
+       "from": "Product designed by salespeople to meet distribution demand rather than investment conviction",
+       "to": "Launches with no investment view on which product is best",
+       "why": "incentive is assets under management, not outcomes",
+       "claim_ids": [
+        "MT013-C13-5",
+        "MT013-C14-1"
+       ]
+      },
+      {
+       "from": "Large firms with large sales forces",
+       "to": "Capital goes to them regardless of product quality (AQR in mutual fund form, line-item constraints)",
+       "why": "allocators do not want to ask hard questions and take brand-based manager risk",
+       "claim_ids": [
+        "MT013-C17-1",
+        "MT013-C17-2"
+       ]
+      },
+      {
+       "from": "Aggressive return promises with low equity beta (GARS) or backtested Sharpe",
+       "to": "Realised results far below promise (about 75% decay)",
+       "why": "backtests overstate and cost layers eat return",
+       "claim_ids": [
+        "MT013-C16-2",
+        "MT013-C16-3",
+        "MT013-C16-5"
+       ]
+      }
+     ],
+     "evidence": "Wilshire data, GARS, multi-manager mutual funds, risk premia products.",
+     "fails_when": "Some products work when built from an investment need (the SEI mandate: beta 0.2, cash plus 5, expense under 100bp) and some quant multi-strategy products have done better.",
+     "claim_ids": [
+      "MT013-C15-3",
+      "MT013-C15-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Allocate to the signal wanted (long-term trend) and implement it as efficiently and cheaply as possible, not by picking managers on narrative.",
+     "why": "manager risk is very high (two 0.8-correlated long-term models can be 20 points apart in a year)",
+     "claim_ids": [
+      "MT013-C15-3",
+      "MT013-C20-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Do not use short-term models or out-of-the-money put hedges as risk management; accept the occasional bad whipsaw.",
+     "why": "zero Sharpe component, higher costs and a hedge bill that kills the business",
+     "claim_ids": [
+      "MT013-C09-4",
+      "MT013-C13-3",
+      "MT013-C12-2"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "De-risk slowly (weekly execution) so as not to sell at the low after a spike; keep non-core markets limited.",
+     "why": "implementation costs, local trader front-running and fast reversals",
+     "claim_ids": [
+      "MT013-C12-X2",
+      "MT013-C12-4",
+      "MT013-C12-5"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Due diligence on QIS and bank trend indices: ask when the index launched, how similar earlier indices performed, and the realised Sharpe over a stated period; combine several banks' flavours of trend to diversify design risk.",
+     "why": "narratives talk about engineering, not returns; many allocators suspended belief",
+     "claim_ids": [
+      "MT013-C15-2",
+      "MT013-C19-3",
+      "MT013-C20-3"
+     ]
+    }
+   ],
+   "evidence_style": "Allocator and product-builder track record, stylised models (10-11-9 versus 10-11-12), data cited from third parties (Wilshire, SG trend indicator), his own papers and anecdotes of failed products; strong opinions delivered as rants.",
+   "current_views": [
+    {
+     "view": "2025 was gold plus non-US (including emerging) equities, roughly half the trend profit each, with whipsaw losses in rates and currencies; the same themes continued into 2026.",
+     "as_of": "2026-02-12 (recording; data as of 2026-02-10)",
+     "reasoning": "factor analysis; fundamental rotation out of US assets finally showing in prices",
+     "claim_ids": [
+      "MT013-C09-X2",
+      "MT013-C07-3",
+      "MT013-C07-4"
+     ]
+    },
+    {
+     "view": "Attitude to US markets has shifted from FOMO to concern about predictability and rule of law, drawing attention to hedge funds that can make money; renewed interest in hedge funds as private equity overexposure unwinds.",
+     "as_of": "2026-02-12",
+     "reasoning": "allocator conversations; private equity distributions did not arrive; high equity valuations and software exposure to AI disruption",
+     "claim_ids": [
+      "MT013-C05-3",
+      "MT013-C05-1",
+      "MT013-C05-X1"
+     ]
+    },
+    {
+     "view": "Disruption from AI should be good for trend following, and AI asset-allocation analyses recommend managed futures as a core element.",
+     "as_of": "2026-02-12",
+     "reasoning": "trend needs real change in the economy",
+     "claim_ids": [
+      "MT013-C02-1",
+      "MT013-C02-3"
+     ]
+    },
+    {
+     "view": "Hopes 2026 is the trendiest year ever.",
+     "as_of": "2026-02-12",
+     "reasoning": "strong start to the year",
+     "claim_ids": []
+    }
+   ]
+  },
+  {
+   "name": "Tom Roble",
+   "role": "SG CTA / trend index research (Societe Generale); co-host",
+   "speaker_note": "Authored the 2025 review and the SG trend indicator used in the factor analysis. Ledger corrections applied: the concentrated-program remark (C10-4) and the QIS curve-steepener remark (C18-1) are his, not the host's.",
+   "fingerprint": [
+    "trend_following",
+    "nowcasting_data",
+    "position_sizing_vol_target",
+    "geopolitics",
+    "macro_fundamental_topdown",
+    "manager_selection_allocation",
+    "research_robustness_overfitting"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend following normally shows a speed factor in which longer-term models outperform shorter-term ones; 2025 followed that pattern, but the 'classic contradiction' is how to square this with investors who cannot look at performance over such a long-term lens.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "SG trend indicator and prior analysis by Katie Kaminski",
+     "claim_ids": [
+      "MT013-C08-2",
+      "MT013-C08-R2"
+     ]
+    },
+    {
+     "premise": "When few markets trend, risk allocation and risk management decide manager returns: in 2025 average breakout z-scores across about 200-500 parameters were poor, bonds were poor and metals (precious metals in 2025, softs and metals in 2024) drove commodity profits two years running.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "SG trend indicator with about 200-500 breakout parameters across markets; manager return range in 2026",
+     "claim_ids": [
+      "MT013-C06-3",
+      "MT013-C06-4",
+      "MT013-C06-X1",
+      "MT013-C08-3",
+      "MT013-C08-4"
+     ]
+    },
+    {
+     "premise": "CTAs managed precious-metals risk much better than an unmanaged trend portfolio: they cut risk quickly in the late-January 2026 selloff, silver risk was small relative to gold, and proprietary trend-strength and overextension models size down late in trends; actual VaR was much larger in equities and FX.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "SG trend indicator (hypothetical, little risk management) versus manager reports he saw",
+     "claim_ids": [
+      "MT013-C08-5",
+      "MT013-C08-6",
+      "MT013-C08-7",
+      "MT013-C09-X1"
+     ]
+    },
+    {
+     "premise": "After 2025 non-US investors rethink US risk. Dollar weakness cut a euro investor's S&P 500 return to about 2.5% versus 16% in USD and weakened the dollar's safe-haven status; global equity markets are too small for a wholesale reallocation, so the shift is limited to specific parts of US risk.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "calculation for a euro investor in 2025; investor and manager conversations",
+     "claim_ids": [
+      "MT013-C03-1",
+      "MT013-C03-2",
+      "MT013-C03-3",
+      "MT013-C03-4"
+     ]
+    },
+    {
+     "premise": "The environment (stubborn inflation, geopolitics, commodities returning from compressed volatility, higher rates) favours long-short tactical global macro, and QIS is used by macro funds for finite thematic bets (curve steepeners), outsourcing execution and financing.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "client conversations at a bank with an active QIS business",
+     "claim_ids": [
+      "MT013-C05-4",
+      "MT013-C18-1"
+     ]
+    },
+    {
+     "premise": "Investors whose core risk is equities want asymmetric diversification, which trend delivers better than multi-strategy funds; the hedge fund industry splits into scalable tactical-asset-allocation strategies (CTAs, with falling costs) and pure alpha that goes in and out of vogue.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "investor discussions that week",
+     "claim_ids": [
+      "MT013-C11-1",
+      "MT013-C14-3",
+      "MT013-C14-2"
+     ]
+    },
+    {
+     "premise": "Concentrated trend programs create return but are hard to sell because of investment-committee constraints and strategic allocations.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "client conversations; refers to a London CTA manager without naming",
+     "claim_ids": [
+      "MT013-C10-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why dollar weakness changed the US-asset calculus for foreign investors in 2025",
+     "steps": [
+      {
+       "from": "Dollar weakens in 2025 and loses safe-haven status",
+       "to": "A euro investor's S&P 500 gain shrinks from 16% to about 2.5%",
+       "why": "currency exposure dominates the foreign investor's return",
+       "claim_ids": [
+        "MT013-C03-2",
+        "MT013-C03-3"
+       ]
+      },
+      {
+       "from": "US risk seen as higher and no dollar hedge in stress",
+       "to": "Non-US investors rethink which US assets they hold, not wholesale selling",
+       "why": "global equity markets are too small to absorb a wholesale shift",
+       "claim_ids": [
+        "MT013-C03-1",
+        "MT013-C03-4"
+       ]
+      }
+     ],
+     "evidence": "Euro-investor calculation; discussions with investors and managers.",
+     "fails_when": "Not discussed; he says investors are not looking to sell entirely.",
+     "claim_ids": [
+      "MT013-C03-4"
+     ]
+    },
+    {
+     "topic": "Why 2025 trend performance depended on risk allocation",
+     "steps": [
+      {
+       "from": "Few broadly trending markets (poor average breakout z-scores; bonds poor)",
+       "to": "Return depended on being in the few trending markets (metals) with the right risk",
+       "why": "opportunity not broad across equities, currencies and bonds",
+       "claim_ids": [
+        "MT013-C06-3",
+        "MT013-C06-X1",
+        "MT013-C08-3"
+       ]
+      },
+      {
+       "from": "Managers cut risk fast as precious metals reversed",
+       "to": "Small losses in the late-January 2026 selloff and YTD returns of about 8-15% by early 2026",
+       "why": "monitoring of trend overextension and size down late in trends",
+       "claim_ids": [
+        "MT013-C08-5",
+        "MT013-C08-7",
+        "MT013-C08-4"
+       ]
+      }
+     ],
+     "evidence": "SG trend indicator breakout z-scores; manager return range.",
+     "fails_when": "If one is not trading the right markets (for example metals) the opportunity is missed.",
+     "claim_ids": [
+      "MT013-C06-5"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Run a trend indicator of breakout models across about 200-500 parameters from very short to super long term and across all potentially tradable markets, using average z-scores as an opportunity-set measure similar to a barometer.",
+     "why": "measures how broad the trending opportunity is and where it is",
+     "claim_ids": [
+      "MT013-C06-3",
+      "MT013-C06-5"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Size down late in trends using proprietary trend-strength and overextension models; cut risk in line with volatility.",
+     "why": "protect profits in overextended markets such as precious metals",
+     "claim_ids": [
+      "MT013-C08-7",
+      "MT013-C08-5"
+     ]
+    }
+   ],
+   "evidence_style": "Data-driven: SG trend indicator and index data, report analysis, euro-investor arithmetic and investor/manager conversations.",
+   "current_views": [
+    {
+     "view": "Early 2026 trends are best in smaller equity indices (Kospi, Nikkei, OMX, IBEX 35); market selection matters.",
+     "as_of": "2026-02-12",
+     "reasoning": "SG trend indicator",
+     "claim_ids": [
+      "MT013-C06-5"
+     ]
+    },
+    {
+     "view": "Non-US investors rethink US risk after 2025; the shift is partial (S&P 500 +16% in 2025 in USD).",
+     "as_of": "2026-02-12",
+     "reasoning": "dollar weakness, higher perceived US risk",
+     "claim_ids": [
+      "MT013-C03-1",
+      "MT013-C03-2"
+     ]
+    },
+    {
+     "view": "The environment is better for long-short tactical global macro (stubborn inflation, geopolitics, commodities returning, higher rates).",
+     "as_of": "2026-02-12",
+     "reasoning": "macro environment",
+     "claim_ids": [
+      "MT013-C05-4"
+     ]
+    },
+    {
+     "view": "Manager returns range about 8-15% year to date by mid-February 2026, with the trend index peaking at about 7%.",
+     "as_of": "2026-02-10",
+     "reasoning": "manager data",
+     "claim_ids": [
+      "MT013-C08-4"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "host of Top Traders Unplugged; veteran hedge fund manager and trend follower",
+   "speaker_note": "Speaks as a modern trend follower who adjusts position size with volatility. Ledger corrections applied to C10-4 and C18-1 (both are Tom Roble's).",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "position_sizing_vol_target",
+    "replication_indexing",
+    "behavioral_sentiment",
+    "positioning_crowding"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A modern trend follower with variable position sizing cuts risk as volatility rises, giving up some profit in strong trends but avoiding disaster when stops trigger over the weekend; managers with static positions and hundreds of markets get little from outliers because each market is a tiny risk allocation.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "gold and silver selloff of 29-30 January 2026; unnamed managers insisting on static sizing did no better in 2025",
+     "claim_ids": [
+      "MT013-C10-1",
+      "MT013-C10-2",
+      "MT013-C10-3"
+     ]
+    },
+    {
+     "premise": "In 2025 trend followers saw the usual pattern: a few big winners, several small losers and many that barely moved; profits came mostly from metals and select equities, with short JGBs another winner, and equity profits were limited because April deleveraging forced cuts.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "performance observation across trend followers",
+     "claim_ids": [
+      "MT013-C08-1",
+      "MT013-C09-5",
+      "MT013-C10-X1"
+     ]
+    },
+    {
+     "premise": "Strategies go in and out of favour, so 5-10 years of track record says little about the next 5-10 years; replication and QIS products that do things differently may not deliver the CTA outcome in all regimes (the last 10 years differ from the first 10 of the millennium), and QIS trend products publish no returns so cannot be evaluated.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "analyses by Nick Baltas and Katie Kaminski cited; absence of published returns",
+     "claim_ids": [
+      "MT013-C16-X1",
+      "MT013-C19-1",
+      "MT013-C19-2",
+      "MT013-C19-R1"
+     ]
+    },
+    {
+     "premise": "A replication ETF with large tracking error to the CTA index is better viewed as an alternative-data trend strategy than as a cost saving.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "his reading of the tracking error",
+     "claim_ids": [
+      "MT013-C16-1"
+     ]
+    },
+    {
+     "premise": "Hedge funds improved managers, structures and processes under competition and mark-to-market discipline, while private equity merely grew bigger.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Dan Rasmussen (Verdad) email",
+     "claim_ids": [
+      "MT013-C04-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "sizing",
+     "practice": "Adjust positions with volatility rather than keeping them static.",
+     "why": "reduces risk when volatility expands; avoids a bad Monday after a Friday signal",
+     "claim_ids": [
+      "MT013-C10-1",
+      "MT013-C10-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "A concentrated, few-market program with large risk allocation is how to make 50-80% returns, but it needs a different set of investors.",
+     "why": "hundreds of markets dilute outliers",
+     "claim_ids": [
+      "MT013-C10-3"
+     ]
+    }
+   ],
+   "evidence_style": "Cites index data, other guests' analysis, anecdotes of investor behaviour and discussion with managers; openly states when he is 'not an expert' (QIS).",
+   "current_views": [
+    {
+     "view": "His trend barometer at 50 (mid-February 2026) indicates a productive and consistent trend environment; SG Trend Index +6.43% YTD versus the S&P 500 about +1.5%.",
+     "as_of": "2026-02-10 close (recorded Thursday 2026-02-12)",
+     "reasoning": "index and barometer data",
+     "claim_ids": [
+      "MT013-C06-1",
+      "MT013-C06-2"
+     ]
+    },
+    {
+     "view": "Trend leadership rotated in February from metals to equities, natural gas and currencies.",
+     "as_of": "2026-02-12",
+     "reasoning": "performance attribution",
+     "claim_ids": [
+      "MT013-C07-5"
+     ]
+    },
+    {
+     "view": "Strategies that do not predict but profit from change may do well in 2026 given how much is going on in the world.",
+     "as_of": "2026-02-12",
+     "reasoning": "geopolitical and policy change",
+     "claim_ids": [
+      "MT013-C20-4"
+     ]
+    },
+    {
+     "view": "Google's issuance of a 100-year bond (last by Motorola in 1997) is rare and may say something about duration expectations.",
+     "as_of": "2026-02",
+     "reasoning": "unusual issuance",
+     "claim_ids": [
+      "MT013-C04-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Static versus variable position sizing and market count",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Variable sizing protected managers (silver and gold gap risk) and static-size managers with 300-500 markets did not do better in 2025; punchy returns need few markets and a big allocation.",
+     "claim_ids": [
+      "MT013-C10-1",
+      "MT013-C10-2",
+      "MT013-C10-3"
+     ]
+    },
+    {
+     "speaker": "Andrew Beer",
+     "position": "More non-core markets raise de-risking drawdowns through implementation costs; supports slower, weekly de-risking and limited markets.",
+     "claim_ids": [
+      "MT013-C12-4",
+      "MT013-C12-5",
+      "MT013-C12-X2"
+     ]
+    },
+    {
+     "speaker": "Tom Roble",
+     "position": "Concentrated programs create return but are hard to sell to investment committees.",
+     "claim_ids": [
+      "MT013-C10-4"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "What replication products are and whether QIS/replication delivers",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "The replication ETF's large tracking error makes it an alternative-data trend strategy rather than a cost saving; QIS trend products publish no returns; different methods may not deliver the CTA outcome in all regimes.",
+     "claim_ids": [
+      "MT013-C16-1",
+      "MT013-C19-1",
+      "MT013-C19-2"
+     ]
+    },
+    {
+     "speaker": "Andrew Beer",
+     "position": "Built the product on allocator feedback (line-item constraints, ETF at 85bp); a huge fan of QIS when one knows what one is doing; criticism is aimed at products sold not bought and at unrealistic Sharpe promises.",
+     "claim_ids": [
+      "MT013-C15-3",
+      "MT013-C17-2",
+      "MT013-C18-2",
+      "MT013-C15-2"
+     ]
+    },
+    {
+     "speaker": "Tom Roble",
+     "position": "QIS is used thematically by clients to outsource execution and financing of finite macro themes.",
+     "claim_ids": [
+      "MT013-C18-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Are short-term models worth their risk-management role?",
+   "positions": [
+    {
+     "speaker": "Andrew Beer",
+     "position": "Short-term models have zero Sharpe, cost too much and detract; they only helped in the first April 2025 shock.",
+     "claim_ids": [
+      "MT013-C09-3",
+      "MT013-C09-4",
+      "MT013-C13-1"
+     ]
+    },
+    {
+     "speaker": "Tom Roble",
+     "position": "Longer-term models normally outperform; the real issue is reconciling that with investors who cannot look at performance over long periods.",
+     "claim_ids": [
+      "MT013-C08-2",
+      "MT013-C08-R2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Beer's 2025 factor result (long-term +20%, short-term -12 to -15%) is read from memory of Roble's report and not defined (no specification of what 'short-term' and 'long-term' mean); the claim that short-term models have no strong Sharpe is stated as a view, with no numbers shown.",
+   "claim_ids": [
+    "MT013-C09-2",
+    "MT013-C09-3"
+   ]
+  },
+  {
+   "issue": "Beer notes short-term models did better in the initial April 2025 shock but later lost; the net 2025 verdict therefore mixes protection value against chop losses, which he does not quantify.",
+   "claim_ids": [
+    "MT013-C13-1",
+    "MT013-C09-1"
+   ]
+  },
+  {
+   "issue": "Beer's claim that CTA alpha is being early, contrarian and right sits uneasily with trend following being mechanical and price-based; his examples (2020 short Treasuries, long gold below $3,000) are after-the-fact.",
+   "claim_ids": [
+    "MT013-C07-1",
+    "MT013-C11-R3"
+   ]
+  },
+  {
+   "issue": "The 75% backtest-to-live decay and the 2-3% liquid-alt return come from his recollection and an unspecified Wilshire dataset; Roble notes classification of 'liquid alternatives' mixes true hedge funds with multi-asset funds.",
+   "claim_ids": [
+    "MT013-C16-3",
+    "MT013-C13-4",
+    "MT013-C14-2"
+   ]
+  },
+  {
+   "issue": "Beer says he cannot discuss his own product's flows; his replication-versus-hedge-fund tracking differences (-500bp in 2023, large outperformance 2024-25) are self-reported.",
+   "claim_ids": [
+    "MT013-C12-X1"
+   ]
+  },
+  {
+   "issue": "Niels's claim about managers with static positions doing no better in 2025 is not supported by data shown and does not name them; ledger flags speaker corrections on C10-4 and C18-1.",
+   "claim_ids": [
+    "MT013-C10-3",
+    "MT013-C10-4",
+    "MT013-C18-1"
+   ]
+  },
+  {
+   "issue": "Tom Roble says CTAs had less precious-metals risk than assumed, while Beer and Niels speak of large gold and silver exposure; the VaR report he cites is one report.",
+   "claim_ids": [
+    "MT013-C09-X1",
+    "MT013-C08-5"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Beer treats real changes in fair value (informed participants liking an asset more at each higher price) as the signal for lasting trends, i.e. long-term trend and flow shifts out of US assets, gold and non-US equities. Roble uses the breadth of breakout z-scores across 200-500 parameters, risk allocation to the few trending markets, and dollar weakness and non-US investor behaviour. Niels uses his trend barometer (50) and rotation of leadership. Horizons are months to a year for long-term trend; a few days for short-term protection.",
+ "reader_inferences": [
+  "(reader) Beer's 10-11-9 versus 10-11-12 model implies a testable distinction between sentiment noise and fundamental change: the short-term-versus-long-term performance gap should widen when price oscillates without a persistent flow, and narrow in regime shifts; he offers no way to tell the two apart in real time.",
+  "(reader) Roble's framing (opportunity set measured by average breakout z-score; manager returns then decided by risk allocation) implies that in weak-opportunity years dispersion across managers is mostly a risk management artefact, supporting Beer's point about cost-aware de-risking.",
+  "(reader) The three speakers agree liquid-alt and replication products need transparency of realised Sharpe, but differ on whether low tracking error to an index is the right test; Niels and Beer both treat tracking error as secondary to realised outcomes."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT013-C08-R2",
+   "chunk": "C08",
+   "speaker": "Tom Roble",
+   "quote": "it's the classic sort of uh contradiction about how you marry your investors who maybe can't always look at the performance with",
+   "claim": "Roble says the speed factor creates a classic contradiction between the evidence that longer-term models pay off and investors who cannot assess performance over such long horizons.",
+   "mechanism": "other",
+   "asset_class": "multi",
+   "indicator": "speed factor and investor horizon",
+   "horizon": "years",
+   "direction": "n/a",
+   "conditions": "investors with short evaluation horizons",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT013-C19-R1",
+   "chunk": "C19",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "I'm open to surprise both ways in a sense that yes, there's going to be periods where these innovative structures uh outperform",
+   "claim": "Kaastrup-Larsen says he is open to surprise both ways: innovative replication structures may outperform for a time, but eventually they may not work in all regimes.",
+   "mechanism": "other",
+   "asset_class": "multi",
+   "indicator": "innovative CTA replication structures",
+   "horizon": "years",
+   "direction": "n/a",
+   "conditions": "regime dependence",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT013-C11-R3",
+   "chunk": "C11",
+   "speaker": "Andrew Beer",
+   "quote": "I remember the moment in September of 2020 when we started shorting treasuries",
+   "claim": "Beer cites his firm's September 2020 move into short Treasuries (and later long gold below $3,000 and short yen near 105-106) as early contrarian calls that illustrate CTA alpha.",
+   "mechanism": "other",
+   "asset_class": "bonds",
+   "indicator": "early contrarian trend entry",
+   "horizon": "years",
+   "direction": "short Treasuries",
+   "conditions": "none stated",
+   "testable": "yes - position history",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  }
+ ]
+}

@@ -1,0 +1,194 @@
+{
+ "source_id": "MT192",
+ "episode_thesis": "Across four papers (Galanter on negative correlation, Quantica on equity/trend/gold/bond mixes, SG's trend indicator paper, Arthur Seep on trend-following systems) Yoav Git argues that an asset's value to a portfolio comes from its correlation and capital efficiency, not its standalone Sharpe: trend is zero-correlated to what it trades by construction, has a Sharpe broadly similar to 60/40, and therefore merits a large share of portfolio risk (near 30%) even though the last year or two were poor. He also argues that replication by correlation is meaningless because almost any CTA is 80-90% correlated with the index, so the real question is a manager's added mean return, and that speed choice matters less than risk scaling and portfolio-level diversification. The host adds the allocator's side: committees want long track records and a diversified set of risk mitigators.",
+ "speakers": [
+  {
+   "name": "Yoav Git",
+   "role": "co-host; systematic trend-following practitioner and researcher (captioned 'Yov', 'Y of Git')",
+   "speaker_note": "Recorded around 19 June 2025 (index data as of Wednesday 18 June; US holiday the day before); he was visiting his parents in Israel during the Israel-Iran conflict. Ledger corrections applied: the allocator-justification passage, the list of defensive strategies (option buying, fast trend convexity, trend at the alpha/hedge boundary, quality long-short equity) is his, not the host's; on SG's paper he said the industry has moved slower by checking which speed of the simple indicator correlates with the SG index, not that correlation with slow variants rose over time. Caption: the transcript says 'higher correlation' where lower or negative is meant.",
+   "fingerprint": ["trend_following", "diversification_risk_parity", "crisis_alpha_convexity", "research_robustness_overfitting", "portfolio_construction_stacking", "replication_indexing", "position_sizing_vol_target", "behavioral_sentiment"],
+   "worldview_premises": [
+    {"premise": "For a long-term allocation, a strategy with low or negative correlation to the existing portfolio adds risk-adjusted return even with a lower Sharpe, flat or losing, because it lowers overall portfolio volatility; high-volatility negatively correlated strategies are capital efficient, so small allocations hedge meaningfully.", "type": "theoretical", "stated": "stated", "support": "Galanter's allocation formula; two-year example where a high-vol manager with about -30% equity correlation beat a multistrat with 12% correlation and stronger returns.", "claim_ids": ["MT192-C04-2", "MT192-C04-3", "MT192-C05-1", "MT192-C05-2"]},
+    {"premise": "In real life the hard part for an allocator is justifying a low-Sharpe diversifier to the investment committee even when the maths shows it adds value; the paper does not address that.", "type": "institutional", "stated": "stated", "support": "Allocator experience (corrected to him from the ledger).", "claim_ids": ["MT192-C05-3"]},
+    {"premise": "Defensive strategies come in several forms (tail-protect option buying, fast trend with higher convexity like buying options paid for with realised rather than implied volatility, trend at the boundary between alpha and hedge, high-quality long-short equity), each with capacity limits (fast trend programs about 1-2 billion, options).", "type": "empirical", "stated": "stated", "support": "Industry knowledge; quality factor traced to Graham and Barra since the 1970s.", "claim_ids": ["MT192-C05-4", "MT192-C05-5", "MT192-C05-6", "MT192-C06-1"]},
+    {"premise": "Catastrophe bonds give return streams uncorrelated with 60/40, whereas private equity and private credit are not clearly diversifying because they stay exposed to the same economic factors as long equity.", "type": "theoretical", "stated": "stated", "support": "Reasoning from factor exposure; no data.", "claim_ids": ["MT192-C06-2", "MT192-C06-3"]},
+    {"premise": "Trend following is zero correlated to the traded assets by construction because long and short are symmetric, unlike a defensive strategy whose negative correlation may not persist; a tail-protect strategy only works if puts are bought continuously.", "type": "theoretical", "stated": "stated", "support": "Construction argument; contrast with option skipping to save money.", "claim_ids": ["MT192-C07-1", "MT192-C07-2"]},
+    {"premise": "Because trend is symmetric and zero correlated it can be overlaid on any long-only exposure (Bitcoin, gold, equities, bonds) and stays additive.", "type": "theoretical", "stated": "stated", "support": "Symmetry of long and short positions.", "claim_ids": ["MT192-C07-3"]},
+    {"premise": "Bonds were negatively correlated with equities in falling-rate, falling-inflation periods, but the correlation is not stable in inflation; 60/40 had a Sharpe of about 0.76 since 1990 and only about 0.55 since 2000, while CTAs have about 0.5 for 2000-2025, similar and uncorrelated.", "type": "empirical", "stated": "stated", "support": "Quoted Sharpe ratios by period; Quantica numbers.", "claim_ids": ["MT192-C09-3", "MT192-C09-4", "MT192-C09-5"]},
+    {"premise": "Investors judge trend on the last year or two and so miss its structural long-term benefit and zero correlation to 60/40 (recency bias in manager evaluation).", "type": "behavioural", "stated": "stated", "support": "Observation of allocators; no survey.", "claim_ids": ["MT192-C09-X1"]},
+    {"premise": "Trend following works at almost all speeds and in commodities, equities and bonds because people buy winners and sell losers; returns come from capturing return autocorrelation and drift; over the last 25 years nearly all speeds and rule types of the three schools (Turtle breakout, European moving average, time-series momentum) made money.", "type": "behavioural", "stated": "stated", "support": "Seep's scan of speeds and rule types over 25 years; early crisis-alpha demonstration in 2008.", "claim_ids": ["MT192-C13-3", "MT192-C13-4", "MT192-C13-5", "MT192-C12-3", "MT192-C12-1", "MT192-C12-2"]},
+    {"premise": "Transparency (the 2011-12 time-series momentum paper, preceded by managers keeping methods secret because a simple rule looks trivial) made trend commonplace and harder to charge for, so many investors are reluctant to pay for it despite its alpha.", "type": "institutional", "stated": "stated", "support": "Personal experience at Winton and AHL (anecdote of Anthony Daniels).", "claim_ids": ["MT192-C12-X1", "MT192-C13-2", "MT192-C13-1"]},
+    {"premise": "Almost any CTA is 80-90% correlated with the CTA index, so correlation to a benchmark is not informative for replication and ignores the mean; the relevant question for a manager is the added mean return over a highly correlated, zero-alpha index.", "type": "empirical", "stated": "stated", "support": "SG's simple trend indicator is about 80% correlated with the SG CTA index yet returned only 0.43% a year with 16% volatility (Sharpe about 0.03, the host's reading) since 2002; the SG CTA Index has a Sharpe about 0.4 out of sample after costs.", "claim_ids": ["MT192-C10-5", "MT192-C11-1", "MT192-C11-2", "MT192-C11-3", "MT192-C11-5"]},
+    {"premise": "A CTA adds value by raising Sharpe slightly in each market through execution, nonlinear filters, fast/slow switching, cost reduction and risk management.", "type": "experience", "stated": "stated", "support": "His working life; no measured decomposition.", "claim_ids": ["MT192-C11-4"]},
+    {"premise": "The CTA industry has become slower, and trend constituents decorrelate from the simple SG indicator in high-vol crises (April 2025, Covid, Taper Tantrum) but converge back quickly.", "type": "empirical", "stated": "stated", "support": "SG indicator correlations at different speeds, and Commitments of Traders positioning versus trend indicators.", "claim_ids": ["MT192-C10-1", "MT192-C10-2", "MT192-C10-3", "MT192-C10-4"]},
+    {"premise": "Volatility estimation and risk scaling was the major innovation in trend following; a 12-month TSMOM equal-weights returns and is optimal for capturing drift unless one has a strong view that autocorrelation varies through the year.", "type": "theoretical", "stated": "stated", "support": "Seep's derivation of optimal speed for white noise, AR(1) and fractional ARMA processes.", "claim_ids": ["MT192-C15-1", "MT192-C15-2", "MT192-C13-6"]},
+    {"premise": "12-month TSMOM has little positive skew (slightly negative) while its alpha is good.", "type": "empirical", "stated": "stated", "support": "Backtest in Seep's paper as he describes it.", "claim_ids": ["MT192-C16-2"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why low-Sharpe, negatively correlated assets raise a portfolio's Sharpe",
+     "steps": [
+      {"from": "Add a strategy negatively correlated with the existing portfolio, even losing or flat", "to": "Overall portfolio volatility falls", "why": "Covariance term offsets portfolio variance.", "claim_ids": ["MT192-C04-3"]},
+      {"from": "Lower volatility with similar mean", "to": "Higher risk-adjusted return", "why": "Sharpe rises as the denominator falls.", "claim_ids": ["MT192-C04-2", "MT192-C04-3"]},
+      {"from": "High volatility of the diversifier", "to": "Capital efficiency: small allocations have a meaningful hedging impact", "why": "A volatile strategy needs little capital for a given hedge.", "claim_ids": ["MT192-C05-1", "MT192-C05-2"]},
+      {"from": "Investors screen on standalone Sharpe", "to": "They miss the asset that de-risks the portfolio", "why": "The host's restatement of the paper's point.", "claim_ids": ["MT192-C06-X1"]}
+     ],
+     "evidence": "Galanter's formula and a two-year example; the host's 50/50 S&P/Dunn mix near all-time highs with return close to the sum rather than the average.",
+     "fails_when": "Negative correlation may not persist (bonds in inflation; defensive strategies may not stay at -30%); allocators need to justify low Sharpe; capacity limits.",
+     "claim_ids": ["MT192-C07-1", "MT192-C09-3", "MT192-C05-3", "MT192-C06-1"]
+    },
+    {
+     "topic": "Why trend deserves about 30% of portfolio risk",
+     "steps": [
+      {"from": "Symmetric long/short rules", "to": "Trend is zero correlated to the underlying assets by construction", "why": "Not a historical accident.", "claim_ids": ["MT192-C07-1"]},
+      {"from": "60/40 Sharpe about 0.55-0.76 vs CTA about 0.5 (2000-2025), correlation near zero", "to": "Two broadly equivalent, uncorrelated return streams", "why": "Efficient frontier is easy to find.", "claim_ids": ["MT192-C09-4", "MT192-C09-5", "MT192-C14-1"]},
+      {"from": "Even a forward Sharpe of 0.7 for 60/40 and 0.3 for CTA", "to": "Close to 30% of portfolio risk in trend", "why": "Uncorrelated assets are sized by Sharpe relative to each other.", "claim_ids": ["MT192-C09-6"]},
+      {"from": "Recent poor 1-2 years", "to": "Investors underweight trend", "why": "Recency bias; structural benefit and zero correlation overlooked.", "claim_ids": ["MT192-C09-X1"]}
+     ],
+     "evidence": "Quantica numbers (Sharpe 0.49 S&P, 0.64 with 40% CTA, 0.72 for one-third each of gold, Treasuries and CTA with 60% equity); Seep's finding of a similar conclusion.",
+     "fails_when": "Forward Sharpe of trend falls far below 0.3; the 1990s trend history is a proxy for the SG index; correlation to 60/40 turns positive.",
+     "claim_ids": ["MT192-C09-6", "MT192-C08-3", "MT192-C08-6", "MT192-C08-X1"]
+    },
+    {
+     "topic": "Why replication by correlation tells you little",
+     "steps": [
+      {"from": "A trivial +1/-1 moving-average crossover (SG trend indicator)", "to": "About 80% correlated with the SG CTA index", "why": "The industry shares the same underlying trend premium.", "claim_ids": ["MT192-C10-5"]},
+      {"from": "Picking almost any CTA", "to": "80-90% correlation to the index (unlike 99.99% for SPY vs S&P 500)", "why": "Correlation range is narrow whatever you pick.", "claim_ids": ["MT192-C11-1"]},
+      {"from": "Correlation ignores the mean", "to": "The simple indicator earned 0.43% a year at 16% vol (Sharpe about 0.03) while the index earned about 0.4 Sharpe", "why": "Added mean is what matters; the manager's edge is raising Sharpe slightly per market.", "claim_ids": ["MT192-C11-2", "MT192-C11-3", "MT192-C11-4", "MT192-C11-5"]}
+     ],
+     "evidence": "SG indicator live out of sample for 15 years; SG CTA Index Sharpe about 0.4 out of sample after costs (stated by Yoav; the Sharpe of 0.03 is the host's reading from the website).",
+     "fails_when": "Manager's added value must be net of costs; a good manager's result is higher but unnamed.",
+     "claim_ids": ["MT192-C11-3", "MT192-C11-4"]
+    },
+    {
+     "topic": "How to choose trend speed and combine signals",
+     "steps": [
+      {"from": "Trend returns come from autocorrelation and drift", "to": "A 12-month TSMOM equal-weights returns and captures drift well", "why": "Optimal unless autocorrelation varies through the year.", "claim_ids": ["MT192-C13-5", "MT192-C15-2"]},
+      {"from": "Know the underlying process (white noise, AR(1), fractional ARMA)", "to": "Optimal speed can be derived", "why": "Gives a benchmark though the true process is unknown.", "claim_ids": ["MT192-C13-6", "MT192-C14-4"]},
+      {"from": "A signal that currently hedges the rest of the trend book", "to": "Tilt risk towards it (e.g. fast momentum in oil because it switches rapidly)", "why": "Portfolio diversification, not higher standalone alpha.", "claim_ids": ["MT192-C15-3", "MT192-C15-4", "MT192-C16-1"]}
+     ],
+     "evidence": "Seep's derivations plus his own reasoning; no live test of a speed tilt offered when the host asks.",
+     "fails_when": "Autocorrelation structure unknown; tilting could be over-engineered and work only in a backtest (the host's concern).",
+     "claim_ids": ["MT192-C15-2", "MT192-C15-3", "MT192-C15-X1"]
+    },
+    {
+     "topic": "Using known processes to test a backtest for errors and overfit",
+     "steps": [
+      {"from": "Run the strategy with a negative lag (look-ahead)", "to": "Compare P&L with the theoretically expected Sharpe for a trend system that sees the future", "why": "A mismatch signals a bug.", "claim_ids": ["MT192-C14-2"]},
+      {"from": "Run it on random noise", "to": "If some variants make money, the strategy is overfitted", "why": "Noise should yield no profit.", "claim_ids": ["MT192-C14-3"]},
+      {"from": "Simulate known processes", "to": "Benchmark for the best achievable performance for a new indicator", "why": "Tests new ideas without burning real data.", "claim_ids": ["MT192-C14-4"]}
+     ],
+     "evidence": "His own backtesting practice, with Seep's paper as the source of benchmarks.",
+     "fails_when": "Real data may not follow the assumed process.",
+     "claim_ids": ["MT192-C14-2", "MT192-C14-3", "MT192-C14-4"]
+    }
+   ],
+   "decision_process": [
+    {"element": "sizing", "practice": "Put close to 30% of portfolio risk in trend alongside 60/40, based on uncorrelated forward Sharpe of 0.7 versus 0.3.", "why": "Zero correlation makes it additive even at a lower Sharpe.", "claim_ids": ["MT192-C09-6", "MT192-C14-1"]},
+    {"element": "signal", "practice": "A beginner can stop at 12-month TSMOM on volatility-adjusted returns; tilt between fast and slow only for portfolio diversification.", "why": "TSMOM is near optimal at capturing drift; tilting adds value only when autocorrelation view is strong or a signal hedges the book.", "claim_ids": ["MT192-C15-2", "MT192-C15-3", "MT192-C13-1"]},
+    {"element": "risk", "practice": "Give more risk to signals or markets that currently hedge the rest of the trend book (negative correlation); many CTAs do not.", "why": "Maximises diversification in the portfolio.", "claim_ids": ["MT192-C15-4", "MT192-C16-1"]},
+    {"element": "research", "practice": "Test strategies with negative-lag look-ahead and random-noise runs, and benchmark to simulated known processes.", "why": "Detect bugs and overfit.", "claim_ids": ["MT192-C14-2", "MT192-C14-3", "MT192-C14-4"]},
+    {"element": "portfolio", "practice": "Evaluate a CTA by added mean return over a high-correlation index, not by correlation.", "why": "Correlation ignores the mean.", "claim_ids": ["MT192-C11-5", "MT192-C11-4"]},
+    {"element": "risk", "practice": "Estimate volatility and risk-scale positions properly.", "why": "The major innovation in trend following.", "claim_ids": ["MT192-C15-1"]}
+   ],
+   "evidence_style": "Reads papers closely and restates their mechanisms; uses published Sharpe ratios by period, construction arguments, history of the industry and personal anecdote from Winton/AHL; favours benchmarks and simulation for validation.",
+   "current_views": [
+    {"view": "A program that switches between fast and slow momentum had a better May 2025 than the industry average, though it has been a difficult period for the industry, which is now explaining itself better.", "as_of": "2025-06-19", "reasoning": "Switching between fast and slow momentum; several good papers (AHL, Seep) appearing.", "claim_ids": ["MT192-C04-1", "MT192-C04-R1"]},
+    {"view": "Trend is going through a very tough period, but it is wrong to extrapolate the last year or two; its structural benefit and zero correlation to 60/40 remain.", "as_of": "2025-06-19", "reasoning": "Forward Sharpe of 0.3 for CTA still implies almost 30% of risk in trend.", "claim_ids": ["MT192-C09-6", "MT192-C09-X1"]},
+    {"view": "Bonds' diversification may not persist because the correlation has been choppy and unstable during inflation.", "as_of": "2025-06-19", "reasoning": "Bonds were negatively correlated with equities in falling-rate, falling-inflation periods.", "claim_ids": ["MT192-C09-3"]},
+    {"view": "With oil switching rapidly, overweight fast momentum in oil to diversify a slow-trend book.", "as_of": "2025-06-19", "reasoning": "Israel-Iran conflict reversing the longer oil downtrend; diversification, not alpha.", "claim_ids": ["MT192-C16-1"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen (host, Top Traders Unplugged)",
+   "role": "host; CTA industry commentator ('we at Dunn'), runs a daily trend barometer",
+   "speaker_note": "Captions spell his name as 'Neil's Krup Larson'. Four ledger corrections moved the defensive-strategy list to Yoav, but C05-7 (trend non-correlated on average, negatively correlated over rolling 1-3 year windows) and C05-8 (long record of actual data more convincing to a committee than simulations) remain his.",
+   "fingerprint": ["trend_following", "market_internals_leading", "manager_selection_allocation", "portfolio_construction_stacking", "diversification_risk_parity", "replication_indexing"],
+   "worldview_premises": [
+    {"premise": "Trend following is non-correlated to equities on average but can be negatively correlated over rolling 1-3 year windows, as at present.", "type": "empirical", "stated": "stated", "support": "His own observation, labelled 'I would imagine'.", "claim_ids": ["MT192-C05-7"]},
+    {"premise": "A defensive strategy with a long record of actual data is more convincing to an investment committee than one backed by simulations.", "type": "institutional", "stated": "stated", "support": "Allocator experience.", "claim_ids": ["MT192-C05-8"]},
+    {"premise": "Investors should screen for assets that de-risk the portfolio (negative correlation at the right time) rather than for standalone Sharpe; his 50/50 S&P 500 and Dunn trend mix is near all-time highs with return close to the sum of the parts.", "type": "experience", "stated": "stated", "support": "Dunn's internal monitoring over many years.", "claim_ids": ["MT192-C06-X1", "MT192-C06-4"]},
+    {"premise": "Diversifying across several liquid risk-mitigating strategies makes sense as regimes change and can be implemented with ETFs; private equity's apparent diversification may be only a lack of pricing.", "type": "theoretical", "stated": "stated", "support": "Quantica results; instinct.", "claim_ids": ["MT192-C09-1", "MT192-C09-2"]},
+    {"premise": "The best diversifier to equities changes by period (1990s, 2000-2015, last ten years), though over 1990-2025 bonds were best singly (Sharpe 0.69) and a 60% equity plus one-third each of gold, Treasuries and CTAs gave the best Sharpe (0.72); the bond result was boosted by falling rates through 2021.", "type": "empirical", "stated": "stated", "support": "Quantica's quarterly report, read only briefly; trend uses a proxy before the SG Trend Index existed.", "claim_ids": ["MT192-C08-1", "MT192-C08-2", "MT192-C08-3", "MT192-C08-4", "MT192-C08-5", "MT192-C08-6", "MT192-C08-X1"]},
+    {"premise": "Breakout, moving-average and TSMOM managers end up with similar long-run performance; there is no evidence one style is better; one should choose a style one trusts and can hold through bad periods.", "type": "experience", "stated": "stated", "support": "Public performance records of managers ('performance reports never lie').", "claim_ids": ["MT192-C16-3", "MT192-C16-4", "MT192-C16-X1"]},
+    {"premise": "Multilateral bodies such as the G7 are losing their ability to move the world, so policy-meeting headlines carry less market-moving weight.", "type": "institutional", "stated": "stated", "support": "How little the June 2025 summit registered; no data.", "claim_ids": ["MT192-C02-X1"]},
+    {"premise": "Many trend managers spread risk across about 20 horizons with equal weights; whether tilting across horizons adds real out-of-sample value remains open.", "type": "experience", "stated": "stated", "support": "His reading of the research he has access to (20-day versus 130 or 260-day look-back differ a lot).", "claim_ids": ["MT192-C15-X1"]}
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Industry data (indices, barometer), published studies, Dunn's own monitoring; openly says he and Yoav only skimmed the Quantica report.",
+   "current_views": [
+    {"view": "June 2025: trend returns show high daily volatility and portfolios may be unevenly allocated after April-May position changes; commodity sectors (oil after the Israel-Iran conflict) are reversing the longer downtrend and helping trend, while financial sectors hurt it.", "as_of": "2025-06-19", "reasoning": "Observation from the models he follows; sector exposure differences.", "claim_ids": ["MT192-C03-1", "MT192-C03-3"]},
+    {"view": "Short-term CTAs did well in April but fell in June, ending on par with trend followers on a vol-adjusted basis.", "as_of": "2025-06-19", "reasoning": "SG short-term traders index.", "claim_ids": ["MT192-C03-2"]},
+    {"view": "Mid-June 2025 numbers: BTOP50 about -3.4%, SG CTA -7.8%, SG Trend -10.8%, short-term traders -4.6% YTD versus MSCI World +5.9% and S&P 500 +2.3% near record highs; trend barometer 48 (neutral, firmer than recent days).", "as_of": "2025-06-18", "reasoning": "Index data as of Wednesday evening.", "claim_ids": ["MT192-C03-4"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Tilting across look-back periods",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Performance differs a lot between a 20-day and a 260-day look-back and many spread risk equally over about 20 horizons; he asks whether a tilt has real-world success or is over-engineered.", "claim_ids": ["MT192-C15-X1"]},
+    {"speaker": "Yoav Git", "position": "A 12-month TSMOM is fine for most; tilt only for portfolio diversification, not standalone alpha.", "claim_ids": ["MT192-C15-2", "MT192-C15-3"]}
+   ]
+  },
+  {
+   "topic": "How negatively correlated trend is",
+   "positions": [
+    {"speaker": "Yoav Git", "position": "Trend is zero correlated by construction; it is not a hedge whose negative correlation might disappear.", "claim_ids": ["MT192-C07-1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Trend is not really negatively correlated on average but has been negatively correlated over rolling 1-3 year windows, as at present.", "claim_ids": ["MT192-C05-7"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "The host says he and Yoav only saw the Quantica quarterly report an hour or two earlier and have not read it in detail, so all Quantica Sharpe figures are second-hand and from a skim.", "claim_ids": ["MT192-C08-3", "MT192-C08-4", "MT192-C08-6", "MT192-C07-R1"]},
+  {"issue": "Quantica's trend result for the 1990s uses a proxy because the SG Trend Index does not exist before 2000, so the full-period trend Sharpe depends on a constructed series.", "claim_ids": ["MT192-C08-X1", "MT192-C08-3"]},
+  {"issue": "The paper's quoted 'higher correlation' is probably a slip for lower or negative correlation.", "claim_ids": ["MT192-C04-2"]},
+  {"issue": "The 'almost 30% of risk in trend' figure uses a simple two-asset logic with assumed forward Sharpes of 0.7 and 0.3 and ignores costs, leverage limits and capacity.", "claim_ids": ["MT192-C09-6", "MT192-C06-1"]},
+  {"issue": "SG's simple indicator is shown with a Sharpe of about 0.03 (host) while the CTA index is about 0.4 (Yoav); the comparison mixes cost-free indicator and after-cost index and does not state that the indicator figure is gross.", "claim_ids": ["MT192-C11-2", "MT192-C11-3"]},
+  {"issue": "Statement that trend works at almost all speeds over 25 years is from Seep's paper, said to have been read in an early draft; no figures are given.", "claim_ids": ["MT192-C13-3"]},
+  {"issue": "Private equity and private credit are called not diversifying on factor-exposure reasoning; no evidence beyond that.", "claim_ids": ["MT192-C06-3", "MT192-C09-2"]},
+  {"issue": "Whether a speed tilt works out of sample is left unanswered when the host asks; the answer shifts to portfolio diversification.", "claim_ids": ["MT192-C15-X1", "MT192-C15-3"]}
+ ],
+ "forward_looking_inputs": "(reader) Yoav treats forward Sharpe assumptions for 60/40 (about 0.7) and CTA (about 0.3), and the correlation between them (near zero), as the inputs that fix trend's share of risk; the stability of the stock-bond correlation (falling versus rising inflation) as the input that decides whether bonds keep diversifying; and cross-market signal correlation inside the trend book as the input for speed tilts. The host watches the trend barometer (48, neutral), sector contributions (oil reversing, financials hurting) and short-term versus trend indices. Horizon is multi-year for allocation and weeks for the trend book.",
+ "reader_inferences": [
+  "(reader) Yoav's argument is a portfolio-variance one: size follows correlation and capital efficiency, so a strategy with Sharpe near half of 60/40's can still deserve a third of risk; this contradicts the common screening by standalone Sharpe.",
+  "(reader) His replication point implies that high correlation to a trend index is a weak test of manager quality, and the useful test is net-of-cost added Sharpe relative to a transparent trend benchmark.",
+  "(reader) The two speakers diverge in emphasis: Yoav on mathematical structure (zero correlation by construction, optimal speed), Niels on empirical track records and allocator practicalities.",
+  "(reader) Both agree that the poor 2025 YTD CTA returns are not evidence against the long-run case; both warn against extrapolating the past one or two years in either direction (bonds in 1990-2021, trend in 2024-25)."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT192-C04-R1",
+   "chunk": "C04",
+   "speaker": "Yoav Git",
+   "quote": "I think the industry has upped its game in terms of explaining what it is doing which I think is very nice.",
+   "claim": "Yoav sees the CTA industry as having improved how it explains itself, with several good papers appearing (AHL, Galanter, Seep), after a difficult period for returns.",
+   "mechanism": "industry_communication",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "2025",
+   "direction": "",
+   "conditions": "difficult performance period for the industry",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT192-C07-R1",
+   "chunk": "C07",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "we only literally uh saw saw this like an hour or two ago",
+   "claim": "The host states that he and Yoav only saw the Quantica quarterly report an hour or two before recording and had not read it in detail, so their summary of its numbers is a first read.",
+   "mechanism": "source_caveat",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Quantica quarterly report just received",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

@@ -1,0 +1,249 @@
+{
+ "source_id": "MT044",
+ "episode_thesis": "Rob Carver argues that trend following earns most of its return (about 70%) from trending asset-class indices and the rest from relative trends, that position sizing should follow Kelly logic tempered by Sharpe uncertainty (so no static, concentration-prone sizing), and that trend works best in bonds because forecasters expect rates to mean-revert while equity analysts extrapolate. He also argues that no hidden edge exists beyond marginal gains and error avoidance, and that neither market timing ('missing the best days') nor timing the trend strategy itself holds up. Niels adds the June 2025 drawdown context, shipping-data macro signals, and the case for staying invested through flat spells.",
+ "speakers": [
+  {
+   "name": "Rob Carver",
+   "role": "Guest co-host; independent systematic futures trader (ex-AHL) and author",
+   "speaker_note": "Captions render the AQR author as 'Auntie Ilmanan', 'Anthony'; and Rob as the speaker throughout the Q&A. The ledger correction on MT044-C11-2 (the 90% volatility to implied Sharpe 0.9 inference is Rob's, only the 90% volatility remark is Niels's) is applied. A conference speaker's name appears only as 'side'/'s' and is not mapped.",
+   "fingerprint": ["trend_following", "position_sizing_vol_target", "kelly_or_conviction_sizing", "behavioral_sentiment", "research_robustness_overfitting", "replication_indexing", "costs_execution", "diversification_risk_parity"],
+   "worldview_premises": [
+    {"premise": "Trend following is positively skewed at the right time frequency; in Sharpe units a good year is about +2 and a bad year about -1, so a drawdown is best read as a multiple of annual volatility.", "type": "experience", "stated": "stated", "support": "Own rule of thumb from live and backtest results (current drawdown -1.3 Sharpe units in 2025; long-run Sharpe 0.5-1).", "claim_ids": ["MT044-C04-2", "MT044-C04-3", "MT044-C03-3"]},
+    {"premise": "Trend works where consensus expects mean reversion and is wrong; mean reversion works where consensus expects trends and is wrong.", "type": "behavioural", "stated": "stated", "support": "Ilmanen (AQR) paper on how bond investors are contrarian while equity investors extrapolate.", "claim_ids": ["MT044-C16-1", "MT044-C17-1", "MT044-C17-2", "MT044-C17-X1"]},
+    {"premise": "Under Gaussian returns, known Sharpe and unlimited leverage, CAGR is maximised by setting annualised volatility equal to the Sharpe ratio (Kelly); because the Sharpe is uncertain and skew matters, practical targets sit well below it.", "type": "theoretical", "stated": "stated", "support": "Pure maths ('you can't argue with it'); his own target is under half of Kelly.", "claim_ids": ["MT044-C09-1", "MT044-C09-2", "MT044-C09-3", "MT044-C11-3"]},
+    {"premise": "Positive skew raises the optimal volatility target by less than people think, so it cannot easily be converted into higher returns.", "type": "theoretical", "stated": "stated", "support": "His blog analysis (not shown).", "claim_ids": ["MT044-C09-4"]},
+    {"premise": "A higher Sharpe gives a higher CAGR with leverage unless the Sharpe gain costs too much positive skew; fixed-stop, static sizing adds skew but loses too much Sharpe.", "type": "empirical", "stated": "stated", "support": "Own research, consistent with Saratini and Quantica studies.", "claim_ids": ["MT044-C10-2", "MT044-C10-3", "MT044-C10-1"]},
+    {"premise": "Letting winners run is partly anecdotal bias; at portfolio level it concentrates risk so a reversal causes big losses.", "type": "behavioural", "stated": "stated", "support": "Cocoa anecdote; the unnamed trend manager's 2025 loss.", "claim_ids": ["MT044-C10-4", "MT044-C11-1"]},
+    {"premise": "Only the buy-or-not decision can be discretionary; sizing, holding period, stops and portfolio optimisation should be systematic, and systematic volatility forecasts are hard to beat.", "type": "experience", "stated": "stated", "support": "Own judgment and Marshall Wace's practice of feeding forecasts into an optimiser; he doubts his own discretionary skill.", "claim_ids": ["MT044-C12-3", "MT044-C12-4", "MT044-C12-R3"]},
+    {"premise": "There is no big undiscovered secret; manager differences come from marginal gains (beta cleaning, execution, cost-aware optimisation) and avoiding errors, and outcome differences are largely luck.", "type": "experience", "stated": "stated", "support": "Years in the industry; cycling 'marginal gains' analogy.", "claim_ids": ["MT044-C14-2", "MT044-C14-3", "MT044-C14-4", "MT044-C14-X1", "MT044-C14-1"]},
+    {"premise": "Capital adequacy rules can cause crises (Basel 2 contributed to 2008), so loosening bank rules or treating crypto as bank assets is risky.", "type": "institutional", "stated": "stated", "support": "Personal theory; no data.", "claim_ids": ["MT044-C02-2"]},
+    {"premise": "Timing the market by missing days is absurd; avoiding the worst days beats missing the best days only because equity returns are negatively skewed, and random day-missing raises dispersion; the honest case for equities is the risk premium.", "type": "empirical", "stated": "stated", "support": "Asness paper and his simulations.", "claim_ids": ["MT044-C19-1", "MT044-C19-2", "MT044-C19-3", "MT044-C20-X1"]},
+    {"premise": "Timing the trend-following strategy itself would need meaningful autocorrelation of annual returns; measured on gross returns it is weak and fades at longer horizons.", "type": "empirical", "stated": "stated", "support": "His own gross-return test, plus the Winton paper.", "claim_ids": ["MT044-C20-2", "MT044-C21-1", "MT044-C21-2", "MT044-C21-3"]},
+    {"premise": "OTC liquidity can vanish suddenly, and IP leakage between CTAs is minor (staff moves bring a fresh perspective).", "type": "experience", "stated": "stated", "support": "His fixed-income experience in 2009; industry knowledge.", "claim_ids": ["MT044-C15-1", "MT044-C15-2"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Trend the asset-class index, then add relative trends",
+     "steps": [
+      {"from": "Cap-weighted indices are 'America plus noise'", "to": "Build an index weighted equally by volatility (US about 10% rather than 70%)", "why": "Gives a usable asset-class factor where market cap has no meaning (copper)", "claim_ids": ["MT044-C05-3"]},
+      {"from": "Trend signal on the index", "to": "Apply that signal to every instrument in the class", "why": "Equivalent to trading a metals or equity factor (all long or all short)", "claim_ids": ["MT044-C06-1"]},
+      {"from": "Index trend leaves a residual", "to": "Add market-neutral residual momentum versus the vol-normalised index over six months", "why": "Residual trends at about one-month holding periods but mean-reverts at very short and very long horizons", "claim_ids": ["MT044-C07-1", "MT044-C07-2"]},
+      {"from": "Index plus residual", "to": "Results almost identical to plain trend following; about 70% of profit from the index and 30% from relative trends", "why": "Decomposition of performance", "claim_ids": ["MT044-C07-3"]},
+      {"from": "Index trend explains most profit", "to": "A limited-capital investor can trade the main instrument per class (S&P, 5-10y bond, gold) for about 70% of performance", "why": "Main instrument carries the factor", "claim_ids": ["MT044-C08-1"]}
+     ],
+     "evidence": "His last book's tests; PCA exercise in crypto (70% Bitcoin) and the equity PCA matching cap weights; metals would likely show two factors (precious and industrial).",
+     "fails_when": "Factor structure is unclear outside equities and crypto; a PCA of trend returns (replication) differs from a PCA of markets.",
+     "claim_ids": ["MT044-C06-2", "MT044-C06-3", "MT044-C08-4"]
+    },
+    {
+     "topic": "Extensions from removing principal components",
+     "steps": [
+      {"from": "Remove further components beyond the first", "to": "A mean-reverting residual may remain", "why": "Less intuitive components may be tradeable", "claim_ids": ["MT044-C08-2"]},
+      {"from": "PCA across the whole futures universe", "to": "Use it as a trading strategy, not only a risk tool", "why": "Novel use he plans to write about", "claim_ids": ["MT044-C08-3"]}
+     ],
+     "evidence": "Untested idea.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT044-C08-2"]
+    },
+    {
+     "topic": "Kelly sizing to a conservative volatility target",
+     "steps": [
+      {"from": "Maximise CAGR", "to": "Run annualised volatility equal to the Sharpe ratio (50% vol at Sharpe 0.5)", "why": "Kelly under Gaussian returns, known Sharpe, infinite leverage", "claim_ids": ["MT044-C09-1"]},
+      {"from": "Sharpe is uncertain and returns are skewed", "to": "Negative skew needs a lower target, positive skew a higher one but only slightly", "why": "Skew changes the optimum less than people assume", "claim_ids": ["MT044-C09-3", "MT044-C09-4"]},
+      {"from": "Uncertain Sharpe", "to": "Target well below Kelly (his is under half; most CTAs run lower)", "why": "Nobody can forecast near-term Sharpe well enough to double the risk target", "claim_ids": ["MT044-C09-2", "MT044-C11-3"]}
+     ],
+     "evidence": "Theory plus his own estimate of a 0.5-1 Sharpe.",
+     "fails_when": "Assumptions break: non-Gaussian returns, unknown Sharpe, limited leverage.",
+     "claim_ids": ["MT044-C09-1"]
+    },
+    {
+     "topic": "Why static, let-it-ride sizing loses at portfolio level",
+     "steps": [
+      {"from": "Static sizing and fixed stops", "to": "Extra positive skew", "why": "Hanging on to winners with one entry and one stop", "claim_ids": ["MT044-C10-3"]},
+      {"from": "Winners grow without trimming", "to": "Higher dispersion and concentration", "why": "Single-market anecdotes (cocoa) hide portfolio-level concentration", "claim_ids": ["MT044-C10-4"]},
+      {"from": "Concentration", "to": "Portfolio volatility far above target at peaks, so losses are large when the position reverses", "why": "Over-risked relative to the Sharpe actually expected; one manager's volatility reached about 90%", "claim_ids": ["MT044-C11-1", "MT044-C11-2"]},
+      {"from": "90% volatility under Kelly", "to": "Implies expected Sharpe of 0.9 or more, about twice a realistic 0.5", "why": "Rob's inference", "claim_ids": ["MT044-C11-2", "MT044-C11-3"]}
+     ],
+     "evidence": "Saratini and Quantica studies agree: sharpe loss outweighs skew gain; one named-by-implication manager's 2025 loss.",
+     "fails_when": "Some investors can size the fund down; for them the risk may be appropriate.",
+     "claim_ids": ["MT044-C10-1", "MT044-C11-R4"]
+    },
+    {
+     "topic": "Consensus extrapolation explains where trend works",
+     "steps": [
+      {"from": "Forecasters assume rates return to normal (4% expected 2009-2020, down from 6% in 1999)", "to": "Rates actually persist", "why": "Forecasts always mean-revert, reality does not", "claim_ids": ["MT044-C17-1"]},
+      {"from": "Equity analysts extrapolate good and bad times", "to": "Momentum is already priced in or overpriced", "why": "Emotional extrapolation; separate level optimism bias", "claim_ids": ["MT044-C17-2", "MT044-C17-X1"]},
+      {"from": "Expectations differ by asset", "to": "Trend works better in bonds than in equity indices, which suffer V-shaped reversals", "why": "Bond mean-reversion expectations are wrong; equity momentum is priced", "claim_ids": ["MT044-C18-1"]},
+      {"from": "Other contributors", "to": "Bond carry, secular decline in rates and rising equity valuations give momentum a tailwind, stronger in bonds", "why": "Long-run trends", "claim_ids": ["MT044-C18-2", "MT044-C18-3"]}
+     ],
+     "evidence": "Ilmanen's forecast 'whisker' charts and analyst EPS data; trend performance by asset class.",
+     "fails_when": "He admits other explanations (carry, secular drift) may do the work; unclear which dominates.",
+     "claim_ids": ["MT044-C18-2"]
+    },
+    {
+     "topic": "Timing the strategy: why it fails",
+     "steps": [
+      {"from": "Wish to avoid weak years", "to": "Needs meaningful autocorrelation of annual returns", "why": "Positive would mean add after good years, negative the reverse", "claim_ids": ["MT044-C20-2"]},
+      {"from": "Performance fees", "to": "Net returns look more negatively autocorrelated", "why": "Fees are paid only when doing well", "claim_ids": ["MT044-C21-1"]},
+      {"from": "Gross returns", "to": "Weak positive annual autocorrelation that vanishes at longer horizons, too weak to exploit after costs", "why": "Strategy timing is as hard as market timing", "claim_ids": ["MT044-C21-2", "MT044-C21-3"]}
+     ],
+     "evidence": "His own test on gross momentum returns; Winton paper.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT044-C21-3"]
+    }
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Convert every signal to a forecast on a -20 to +20 scale (10 = average bullish); trend signal on a volatility-equal-weighted asset-class index applied to all instruments, plus residual (relative) momentum over six months.", "why": "A single numeric scale lets signals, including discretionary ones, be combined and tested.", "claim_ids": ["MT044-C11-4", "MT044-C06-1", "MT044-C07-1"]},
+    {"element": "sizing", "practice": "Reduce position size when volatility rises during a trade and scale position with forecast strength (continuous, not discrete pyramiding); target volatility under half of Kelly.", "why": "Backtests and the Saratini and Quantica studies favour both adjustments, with forecast scaling having the larger effect; protects against concentration.", "claim_ids": ["MT044-C10-R2", "MT044-C10-1", "MT044-C09-2"]},
+    {"element": "portfolio", "practice": "Weighted average of systematic and discretionary forecasts (e.g. 50/50 or 70/30), with the weight set by testing the discretionary forecasts as a backtest; Black-Litterman is the heavier alternative.", "why": "Simple 'semi-automatic' blending that is verifiable.", "claim_ids": ["MT044-C12-1", "MT044-C12-2", "MT044-C11-X1"]},
+    {"element": "risk", "practice": "Avoid discretionary views on volatility; keep sizing, holding period, stops and optimisation systematic.", "why": "Systematic volatility forecasts are hard to beat.", "claim_ids": ["MT044-C12-3", "MT044-C12-4"]},
+    {"element": "portfolio", "practice": "Cost-aware portfolio optimisation across many illiquid markets; avoid trading too fast and over-concentrating.", "why": "Separates profitable from less profitable managers; his own past mistakes.", "claim_ids": ["MT044-C14-3", "MT044-C14-4"]},
+    {"element": "research", "practice": "Use simulations (random day-missing) and gross-return autocorrelation tests; test discretionary forecasts like a backtest.", "why": "Extrapolates beyond one historical path and removes fee bias.", "claim_ids": ["MT044-C19-3", "MT044-C21-1", "MT044-C12-2"]},
+    {"element": "other", "practice": "Express P&L as an annualised Sharpe ratio to judge a drawdown against long-run expectations.", "why": "Intuitive multiple-of-volatility scale.", "claim_ids": ["MT044-C04-2"]}
+   ],
+   "evidence_style": "Own backtests (since 1970) and live results, simulations, and published papers (Asness, Ilmanen, Saratini, Quantica, Winton, Black-Litterman); first-principles maths for Kelly; caveats of anecdotal bias; admits uncertainty and avoids naming managers.",
+   "current_views": [
+    {"view": "Current live drawdown is his largest and on a par with the worst backtest drawdowns since 1970, about a one-in-10 to one-in-20 year event; year-to-date about -5.5% (-1.3 Sharpe units), though June was up a couple of percent.", "as_of": "2025-06 (end of June)", "reasoning": "Weak trend environment after April 2025 reversals.", "claim_ids": ["MT044-C03-3", "MT044-C04-2", "MT044-C04-R5"]},
+    {"view": "System takes low risk: longish equities, a little short bonds, energy net flat (short gas, long crude); no start-of-trend signals.", "as_of": "2025-06 (end of June)", "reasoning": "Trend signals are weak across markets.", "claim_ids": ["MT044-C03-4", "MT044-C04-1"]},
+    {"view": "Concerned about the Fed's capital-rule rollback and the idea of letting Bitcoin and stablecoins sit on bank balance sheets.", "as_of": "2025-06 (end of June)", "reasoning": "Capital rules contributed to past crises.", "claim_ids": ["MT044-C02-2"]},
+    {"view": "Bond trend following should remain stronger than equity trend following.", "as_of": "2025-06 (end of June)", "reasoning": "Consensus expects mean reversion in rates but rates persist; equity momentum is priced in.", "claim_ids": ["MT044-C17-1", "MT044-C18-1"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged); trend-following manager",
+   "speaker_note": "Argues positions on macro signals (shipping data, bank rules), trend-industry performance and staying invested. The Sharpe-0.9 implication in ledger MT044-C11-2 is Rob's, per the ledger correction.",
+   "fingerprint": ["trend_following", "manager_selection_allocation", "nowcasting_data", "policy_reaction_central_banks", "behavioral_sentiment", "crisis_alpha_convexity"],
+   "worldview_premises": [
+    {"premise": "The Fed's plan to roll back a capital rule that limits bank Treasury holdings raises bank demand for Treasuries but sets up the risk of another bank crisis.", "type": "institutional", "stated": "stated", "support": "Bloomberg story and commentary; ironic echo of 2008.", "claim_ids": ["MT044-C02-1"]},
+    {"premise": "Container and box shipping data have been a strong predictor of the US economy in recent years, and a sharp turn lower signals weakening demand.", "type": "empirical", "stated": "stated", "support": "Bank of America box survey (11% expecting falling prices in March vs 61% by June); inbound container volume up 10-11% in March-April then down 6.9% in May, read as tariff front-loading.", "claim_ids": ["MT044-C02-3", "MT044-C02-4", "MT044-C03-1"]},
+    {"premise": "A one-standard-deviation drawdown for trend is small compared with equity bear markets of about four standard deviations.", "type": "empirical", "stated": "stated", "support": "S&P falls of 50-60% in the last 25 years.", "claim_ids": ["MT044-C04-4"]},
+    {"premise": "A strategy that delivers uncorrelated returns in the long run is worth holding through flat spells, and trend followers' best returns often follow their worst.", "type": "experience", "stated": "stated", "support": "RG Niederhoffer-related paper from the previous episode; memory of past rebounds.", "claim_ids": ["MT044-C05-1", "MT044-C20-1"]},
+    {"premise": "News-driven reversals hurt even short-term CTAs in June 2025 after they led trend followers in April, despite trading at about one third of trend followers' volatility.", "type": "empirical", "stated": "stated", "support": "Index prints: short-term traders index down 3% in June.", "claim_ids": ["MT044-C05-2", "MT044-C03-2"]},
+    {"premise": "Investors can size a high-volatility manager to their own risk appetite, and diversifying across approaches is sensible.", "type": "experience", "stated": "stated", "support": "Standard allocator advice; said diplomatically about the 90%-volatility manager.", "claim_ids": ["MT044-C11-R4"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Tariff front-loading to a demand air pocket",
+     "steps": [
+      {"from": "Tariff announcements", "to": "Importers front-load, so inbound container volume jumps 10-11% in March-April", "why": "Pull-forward before a specific date", "claim_ids": ["MT044-C03-1"]},
+      {"from": "Front-loading ends", "to": "Volume falls 6.9% in May and box price expectations collapse (61% expect falls)", "why": "Demand pulled forward and weakening", "claim_ids": ["MT044-C02-4", "MT044-C03-1"]},
+      {"from": "Shipping data lead the economy", "to": "Signal of a weakening US economy", "why": "Strong recent predictive record", "claim_ids": ["MT044-C02-3"]}
+     ],
+     "evidence": "Bank of America box survey and Container Volume Observer data, via OddLots; no statistics on predictive power shown.",
+     "fails_when": "Not stated; the tariff pull-forward may distort the signal (implied).",
+     "claim_ids": ["MT044-C02-3"]
+    }
+   ],
+   "decision_process": [
+    {"element": "other", "practice": "Monitors a trend barometer (43, weak but not a disaster) and the SG and BTOP index prints for context.", "why": "Frames the trend-industry environment.", "claim_ids": ["MT044-C03-2", "MT044-C05-2"]},
+    {"element": "portfolio", "practice": "Stay invested in trend through weak spells rather than time entry.", "why": "Best returns often follow the worst, and uncorrelated long-run returns justify holding.", "claim_ids": ["MT044-C20-1", "MT044-C05-1"]}
+   ],
+   "evidence_style": "Index data, podcast and newsletter reading (OddLots, Money Stuff, Bloomberg), anecdotes from client conversations, papers by other guests.",
+   "current_views": [
+    {"view": "June 2025 was choppy for trend (one step forward, one back); oil's spike after the Iran strike and collapse days later whipsawed trend followers; trend barometer at 43.", "as_of": "2025-06 (end of June)", "reasoning": "News-driven reversals.", "claim_ids": ["MT044-C03-2", "MT044-C05-2"]},
+    {"view": "US demand is weakening (shipping and box-price data) after tariff front-loading.", "as_of": "2025-06 (end of June)", "reasoning": "Container volumes and survey expectations turned sharply lower.", "claim_ids": ["MT044-C02-4", "MT044-C03-1"]},
+    {"view": "Fed capital-rule rollback is a setup for a future bank crisis.", "as_of": "2025-06 (end of June)", "reasoning": "Looser rules echo pre-2008.", "claim_ids": ["MT044-C02-1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Is a rebound after bad trend years a usable pattern?",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Best returns often follow the worst, so stay invested and hope for a 2025 rebound.", "claim_ids": ["MT044-C20-1"]},
+    {"speaker": "Rob Carver", "position": "Gross annual autocorrelation is only weakly positive and disappears at longer horizons, so neither adding after good years nor after bad years is exploitable.", "claim_ids": ["MT044-C21-2", "MT044-C21-3"]}
+   ]
+  },
+  {
+   "topic": "Risk of static (unadjusted) sizing at a high-volatility manager",
+   "positions": [
+    {"speaker": "Rob Carver", "position": "Static sizing lets concentration push risk far above target and implies an over-optimistic Sharpe of about 0.9 or more.", "claim_ids": ["MT044-C11-1", "MT044-C11-2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Investors can size the fund to fit their appetite; the right answer depends on the investor.", "claim_ids": ["MT044-C11-R4"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Ledger fix applied: Saratini and Quantica find both vol-adjusting and forecast scaling help, with forecast scaling (pyramiding) the bigger effect; the original ledger text said differences were small.", "claim_ids": ["MT044-C10-1"]},
+  {"issue": "Ledger fix applied: Niels says only that the manager's volatility reached about 90%; the Kelly inference of an expected Sharpe of 0.9 or more (about twice 0.5) is Rob's.", "claim_ids": ["MT044-C11-2"]},
+  {"issue": "The long-run Sharpe of 0.5-1 and the 'one-in-10 to one-in-20 year' drawdown label are self-estimates with no data shown.", "claim_ids": ["MT044-C03-3", "MT044-C04-2"]},
+  {"issue": "The 70/30 split between index and relative trends comes from Rob's own book and is not independently reproduced; the equity PCA statement is a guess ('would probably').", "claim_ids": ["MT044-C07-3", "MT044-C06-2"]},
+  {"issue": "He says trend works in bonds because investors expect mean reversion, but also lists carry and secular rate declines as explanations and says he does not know which dominates; the behavioural story is not separated from the tailwind story.", "claim_ids": ["MT044-C18-1", "MT044-C18-2"]},
+  {"issue": "Box and container data are claimed to have a strong predictive record, but only a newsletter source and survey readings are given.", "claim_ids": ["MT044-C02-3", "MT044-C02-4"]},
+  {"issue": "Rob says positive skew raises the Kelly target only modestly but also says a Sharpe loss from static sizing outweighs skew; neither is quantified in the episode.", "claim_ids": ["MT044-C09-4", "MT044-C10-3"]},
+  {"issue": "Rob calls the IP-leakage risk minor while acknowledging that less systematic and higher-frequency strategies depend more on secrets.", "claim_ids": ["MT044-C15-2"]}
+ ],
+ "forward_looking_inputs": "(reader) Inputs the speakers treat as informative: strength of trend signals across asset classes (currently weak, so low risk); trend of the volatility-equal-weighted asset-class index as the main driver of trend returns; consensus forecasts for rates and equity earnings as contrarian input (forecasters assume mean reversion, so persistence favours bond trend); realised portfolio concentration and volatility relative to target; Bank of America box survey and container volumes as demand nowcasts; bank capital rules as a financial-stability risk. Horizon is months for trend and years for the Sharpe and Kelly arguments.",
+ "reader_inferences": [
+  "(reader) Rob's 70/30 finding implies most trend-following alpha is a factor-timing bet at the asset-class level, which is why replicators and a few-factor view are plausible; his stated caution is that PCA of trend returns differs from PCA of markets.",
+  "(reader) His Kelly and concentration arguments together imply that skew-seeking sizing is a bet on an unusually high Sharpe, so sizing choices are really Sharpe-confidence choices.",
+  "(reader) The consensus-extrapolation story gives a testable prediction: trend should be weaker where forecasters extrapolate (equity indices) and stronger where they assume mean reversion (rates, possibly gold), which matches the post-2000 asset-class record he cites.",
+  "(reader) Niels's reading of shipping data as a demand warning and Rob's low-risk positioning point in the same direction (no strong trend, weakening activity) but are not connected by either speaker."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT044-C10-R2",
+   "chunk": "C10",
+   "speaker": "Rob Carver",
+   "quote": "if if volatility increases then I you know reduce my position size throughout the life of a trade",
+   "claim": "Rob's own system reduces position size during a trade when volatility rises, and also scales with forecast strength, unlike some managers.",
+   "mechanism": "position sizing",
+   "asset_class": "multi-asset futures",
+   "indicator": "realised volatility during a trade; forecast strength",
+   "horizon": "life of a trade",
+   "direction": "neutral",
+   "conditions": "volatility rises after entry",
+   "testable": "yes: compare dynamic vs static sizing backtests",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT044-C12-R3",
+   "chunk": "C12",
+   "speaker": "Rob Carver",
+   "quote": "I'm the guy that sold all my equities and on April the 14th or whenever it was",
+   "claim": "Rob doubts his own discretionary skill for buy-or-not decisions, citing that he sold all his equities around April 14 (2025), which he treats as a mistake.",
+   "mechanism": "discretionary vs systematic",
+   "asset_class": "equities",
+   "indicator": "own discretionary timing",
+   "horizon": "weeks",
+   "direction": "n/a",
+   "conditions": "April 2025 tariff selloff and rebound",
+   "testable": "no: personal anecdote",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT044-C11-R4",
+   "chunk": "C11",
+   "speaker": "Niels Kaastrup-Larsen (host)",
+   "quote": "people can can size it appropriately as we would always suggest",
+   "claim": "Niels says investors in a very high-volatility trend fund can size their own allocation to suit their risk appetite, which he always suggests.",
+   "mechanism": "investor-side sizing",
+   "asset_class": "multi-asset futures",
+   "indicator": "fund volatility (about 90% at times)",
+   "horizon": "n/a",
+   "direction": "n/a",
+   "conditions": "investor can scale the allocation",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT044-C04-R5",
+   "chunk": "C04",
+   "speaker": "Rob Carver",
+   "quote": "I'm still down sort of 5 and a half%",
+   "claim": "Rob's system is still down about 5.5% for calendar 2025 at the end of June, a couple of percent better than the low.",
+   "mechanism": "performance report",
+   "asset_class": "multi-asset futures",
+   "indicator": "own YTD return",
+   "horizon": "year to date",
+   "direction": "n/a",
+   "conditions": "after April 2025 reversals and a weak 2024",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  }
+ ]
+}
