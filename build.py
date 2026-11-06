@@ -102,6 +102,8 @@ def merge(sid):
     for c in claims:
         if c["claim_id"] in cmap:
             c["correction"] = cmap[c["claim_id"]]
+    mp = load(os.path.join(L, "maps", sid + ".json")) or {}
+    added += [dict(c, reader="map") for c in mp.get("added_claims", [])]
     head, ch = chunks(sid)
     allc = claims + added
     for c in allc:
@@ -114,6 +116,52 @@ def merge(sid):
            "claims": allc, "n_sonnet": len(claims), "n_opus_added": len(added), "n_corrections": len(corr)}
     os.makedirs(os.path.join(L, "ledger"), exist_ok=True)
     json.dump(out, open(os.path.join(L, "ledger", sid + ".json"), "w"), indent=1, ensure_ascii=False)
+    return out
+
+
+def map_section(sid, fname):
+    """Render maps/<sid>.json (speaker argument maps) as markdown linked to claim blocks."""
+    p = os.path.join(L, "maps", sid + ".json")
+    m = load(p)
+    if not m:
+        return []
+    lk = lambda ids: ", ".join("[[%s#^%s|%s]]" % (fname, re.sub(r"[^A-Za-z0-9-]", "-", i), i.split("-", 1)[1]) for i in ids or [])
+    e = lambda x: re.sub(r"\s+", " ", str(x or "")).strip()
+    out = ["## Argument map", "", "**Episode thesis:** " + e(m.get("episode_thesis")), ""]
+    for sp in m.get("speakers", []):
+        out += ["### %s (%s)" % (e(sp.get("name")), e(sp.get("role"))), "Fingerprint: " + " ".join("#approach/" + t for t in sp.get("fingerprint", []))]
+        if sp.get("speaker_note"):
+            out.append("_Speaker note: %s_" % e(sp["speaker_note"]))
+        out.append("")
+        if sp.get("worldview_premises"):
+            out.append("**Worldview premises**")
+            out += ["- %s _[%s, %s; support: %s]_ (%s)" % (e(x.get("premise")), x.get("type", ""), x.get("stated", ""), e(x.get("support")), lk(x.get("claim_ids"))) for x in sp["worldview_premises"]]
+            out.append("")
+        for ch in sp.get("mechanism_chains", []):
+            out.append("**Chain: %s**" % e(ch.get("topic")))
+            out += ["%d. %s → %s: %s (%s)" % (i, e(st.get("from")), e(st.get("to")), e(st.get("why")), lk(st.get("claim_ids"))) for i, st in enumerate(ch.get("steps", []), 1)]
+            out += ["- Evidence: " + e(ch.get("evidence")), "- Fails when: " + e(ch.get("fails_when")), ""]
+        if sp.get("decision_process"):
+            out.append("**Decision process**")
+            out += ["- [%s] %s. Why: %s (%s)" % (x.get("element", ""), e(x.get("practice")), e(x.get("why")), lk(x.get("claim_ids"))) for x in sp["decision_process"]]
+            out.append("")
+        if sp.get("evidence_style"):
+            out += ["**Evidence style:** " + e(sp["evidence_style"]), ""]
+        if sp.get("current_views"):
+            out.append("**Views at the time**")
+            out += ["- (%s) %s. Reasoning: %s (%s)" % (e(x.get("as_of")), e(x.get("view")), e(x.get("reasoning")), lk(x.get("claim_ids"))) for x in sp["current_views"]]
+            out.append("")
+    if m.get("disagreements"):
+        out.append("### Disagreements")
+        for d in m["disagreements"]:
+            out.append("- **%s**: " % e(d.get("topic")) + "; ".join("%s: %s (%s)" % (e(p.get("speaker")), e(p.get("position")), lk(p.get("claim_ids"))) for p in d.get("positions", [])))
+        out.append("")
+    if m.get("gaps_and_conflicts"):
+        out += ["### Gaps and conflicts"] + ["- %s (%s)" % (e(g.get("issue")), lk(g.get("claim_ids"))) for g in m["gaps_and_conflicts"]] + [""]
+    if m.get("forward_looking_inputs"):
+        out += ["### Forward-looking inputs (reader synthesis)", e(m["forward_looking_inputs"]), ""]
+    if m.get("reader_inferences"):
+        out += ["### Reader inferences (not stated by the speakers)"] + ["- " + e(x) for x in m["reader_inferences"]] + [""]
     return out
 
 
@@ -147,6 +195,7 @@ def build_vault(ledgers):
                 "**Summary:** " + esc(led["summary"]), "", "**Approach:** " + ", ".join(led["approach_tags"]), ""]
         if led["completeness_estimate"]:
             body += ["**Cross-check completeness estimate of first read:** " + esc(str(led["completeness_estimate"])), ""]
+        body += map_section(sid, fname)
         body += ["## Coverage", "", "| Chunk | Claims | Note |", "|---|---|---|"]
         for c in led["coverage"]:
             body.append("| %s | %s | %s |" % (c.get("chunk"), c.get("claims"), esc(c.get("note")).replace("|", "/")))

@@ -1,0 +1,720 @@
+{
+ "source_id": "MT068",
+ "episode_thesis": "Greg Jensen argues the investing world is being reshaped by three things: a shift from 1980s free-market policy to modern mercantilism, an AI capex boom that is still early (the bubble is ahead, not behind), and record capital concentration in US assets. In his view mercantilism and military spending are inflationary (base case US inflation around 3%), fiscal limits are now binding in developed countries so bonds diversify less, and the right response is to survive across many scenarios through global diversification rather than pick winners. He pairs this with Bridgewater's process of compounding written, machine-readable knowledge, a separate AI investor, rare overrides of the system and radical transparency.",
+ "speakers": [
+  {
+   "name": "Greg Jensen",
+   "role": "co-CIO of Bridgewater and managing CIO of Pure Alpha, early personal investor in OpenAI and Anthropic",
+   "speaker_note": "Only guest. The NBIM podcast host is unnamed in the captions and asks questions without stating a position of his own, so he is not mapped. Captions are auto-generated, and some numbers are garbled (breakeven inflation: ledger fix says about 2.5%, the caption reads 'around 2 and a2').",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "structural_themes",
+    "geopolitics",
+    "fiscal_dominance",
+    "policy_reaction_central_banks",
+    "diversification_risk_parity",
+    "regime_detection",
+    "research_robustness_overfitting"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "The economy is moving from the 1980s regime of small government and free markets to modern mercantilism (tariffs, state control, trade as zero-sum, independence from other countries), a reaction to China's rise and the hollowing of the Western middle class; investors must adapt rather than assume the old economy.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "historical regime analogy and political observation",
+     "claim_ids": [
+      "MT068-C01-1",
+      "MT068-C01-3",
+      "MT068-C06-1"
+     ]
+    },
+    {
+     "premise": "Collapse of US goodwill abroad drives populist, mercantilist politics, first populist right and then populist left if policies fail, with less international cooperation. International institutions have lost their function and US domestic institutions are fading.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "polling on support for the US (2024 to 2025), election observations (AfD, Reform, France); source not named",
+     "claim_ids": [
+      "MT068-C07-1",
+      "MT068-C09-X2"
+     ]
+    },
+    {
+     "premise": "Capital concentration in US assets (equity and illiquid) is a risk factor. The US is shifting from an exceptional place to invest to a normal one with a higher risk premium, though this is muted at index level by the AI offset.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "US equities' worst relative performance versus the world in common currency in 15 years while headline averages look calm",
+     "claim_ids": [
+      "MT068-C01-2",
+      "MT068-C02-1",
+      "MT068-C02-2"
+     ]
+    },
+    {
+     "premise": "Index averages hide stress. Look underneath them (S&P ex-AI names, gold) to see shifts the headline averages miss.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "the examples given",
+     "claim_ids": [
+      "MT068-C02-3"
+     ]
+    },
+    {
+     "premise": "Mercantilism is inflationary: tariffs and resilient supply chains replace cheapest sourcing, reversing 30 years of productivity gains, and military spending creates demand for labour and goods with no supply into the real economy.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "reasoning with examples (India tariffs above China's, Germany's and Europe's defence build-up)",
+     "claim_ids": [
+      "MT068-C07-2",
+      "MT068-C07-3"
+     ]
+    },
+    {
+     "premise": "AI investment gives growth with low labour intensity and so a weak labour market and initially disinflationary effect. It follows a J-curve, so the strongly disinflationary phase is further out.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "US growth of about 2-2.5% would be about 1% without AI",
+     "claim_ids": [
+      "MT068-C07-4",
+      "MT068-C08-X1",
+      "MT068-C08-X2"
+     ]
+    },
+    {
+     "premise": "Populist control of the central bank that lowers real rates into an AI boom would be inflationary.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "reasoning only",
+     "claim_ids": [
+      "MT068-C08-2"
+     ]
+    },
+    {
+     "premise": "Fiscal limits depend on domestic savings, productivity and willingness to hold the currency (Japan at 300% of GDP versus Brazil at 60-80%). Developed economies such as the UK, and increasingly the US, are constrained, and beyond the limit fiscal expansion weakens the currency and equities and raises rates.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Brazil, UK and Germany comparisons; Bridgewater's own measures",
+     "claim_ids": [
+      "MT068-C08-3",
+      "MT068-C09-1"
+     ]
+    },
+    {
+     "premise": "Bonds are no longer the 30-year diversifier because fiscal limits shift correlations, and fiscal policy responds to disinflation, so bonds hedge deflation less well. They still deserve a place after the rise in real yields.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "UK example of changed diversification",
+     "claim_ids": [
+      "MT068-C10-3",
+      "MT068-C10-X1"
+     ]
+    },
+    {
+     "premise": "Fiscal supply and AI ecosystem spending (tech firms turning from net savers to spenders, private credit) create a shortage of capital, pushing real rates up against US central bank pressure to lower them.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "reasoning on capital supply and demand",
+     "claim_ids": [
+      "MT068-C11-1"
+     ]
+    },
+    {
+     "premise": "AI capex is driven by strategic, non-profit motives of firms whose businesses are threatened (and by beliefs about enormous power), so spending continues beyond normal return discipline. The current phase is a resource grab for power, chips and scientists, which is dangerous but not yet a bubble.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "observed behaviour of Musk, Altman, Google; Abu Dhabi data-center anecdote",
+     "claim_ids": [
+      "MT068-C03-1",
+      "MT068-C04-1",
+      "MT068-C04-2"
+     ]
+    },
+    {
+     "premise": "AI-generated efficiency gains will make current chips and data-center assets depreciate fast.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "reasoning from labs' goals and Google's protein-folding result",
+     "claim_ids": [
+      "MT068-C04-3"
+     ]
+    },
+    {
+     "premise": "Vendor financing is Nvidia building a controlled ecosystem against Google's full stack, using scarce chips as leverage, not bubble-style demand creation. Fewer than about a thousand frontier scientists make talent the binding constraint, and poaching slows progress.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "competitive-position argument and his network (numbers are his estimate)",
+     "claim_ids": [
+      "MT068-C05-1",
+      "MT068-C05-2"
+     ]
+    },
+    {
+     "premise": "The way to compound wealth is to avoid really bad outcomes. After 15 years of US-equity success, a US-only portfolio is a trap and diversification has been abandoned at the wrong time.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "compounding logic; Bridgewater's survival record since 1991",
+     "claim_ids": [
+      "MT068-C09-2",
+      "MT068-C09-3",
+      "MT068-C15-1"
+     ]
+    },
+    {
+     "premise": "Markets are a probabilistic game: you must be wrong often and right more, and handle incomplete information and mistakes. Machines surpassing humans in poker is an analogy for edge when machines learn faster than humans.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "his poker experience",
+     "claim_ids": [
+      "MT068-C16-1"
+     ]
+    },
+    {
+     "premise": "Knowledge compounds only if beliefs are written down, stress-tested and encoded in human- and machine-readable form with a record of changes. AI works best when processes are redesigned around it (Amazon robots) rather than copying human tasks.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Bridgewater's expert-system history and the Amazon analogy",
+     "claim_ids": [
+      "MT068-C02-4",
+      "MT068-C12-1",
+      "MT068-C14-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Mercantilism to inflation",
+     "steps": [
+      {
+       "from": "tariffs and the need for resilient, domestic supply chains",
+       "to": "higher costs instead of cheapest sourcing, reversing 30 years of productivity gains",
+       "why": "even a move from China to India faces higher tariffs",
+       "claim_ids": [
+        "MT068-C07-2"
+       ]
+      },
+      {
+       "from": "need for independent military and infrastructure (Germany, Europe, Canada)",
+       "to": "military spending surging in non-war time, creating demand for labour and goods with no supply into the real economy",
+       "why": "nothing is more inflationary than military spending",
+       "claim_ids": [
+        "MT068-C07-3"
+       ]
+      },
+      {
+       "from": "AI investment is labour-light and initially disinflationary, but follows a J-curve",
+       "to": "net inflation around 3% for the next couple of years, with risk higher",
+       "why": "the disinflation is further out",
+       "claim_ids": [
+        "MT068-C07-4",
+        "MT068-C08-X1",
+        "MT068-C08-1"
+       ]
+      },
+      {
+       "from": "populist control of the central bank lowering real rates into the boom",
+       "to": "particularly inflationary",
+       "why": "policy-rate path",
+       "claim_ids": [
+        "MT068-C08-2"
+       ]
+      }
+     ],
+     "evidence": "Reasoning, current fiscal and tariff news. Base case 3% versus breakeven near 2.5% (ledger fix).",
+     "fails_when": "AI disinflation arrives sooner than expected; he admits the effect of mercantilism on markets has so far been smaller than he expected.",
+     "claim_ids": [
+      "MT068-C08-1",
+      "MT068-C18-2"
+     ]
+    },
+    {
+     "topic": "Mercantilism to a higher US risk premium and diversification",
+     "steps": [
+      {
+       "from": "US stops pursuing international cooperation and raises tariffs, with the rest of the world not retaliating but showing home bias",
+       "to": "questioning of rule of law and a need for higher risk premium on US assets",
+       "why": "capital is concentrated in the US",
+       "claim_ids": [
+        "MT068-C06-1",
+        "MT068-C02-1"
+       ]
+      },
+      {
+       "from": "AI boom absorbs capital and offers the only technology revolution to invest in",
+       "to": "index-level effect muted; US equities nonetheless worst relative to the world in 15 years",
+       "why": "offset by AI",
+       "claim_ids": [
+        "MT068-C02-2",
+        "MT068-C02-1"
+       ]
+      }
+     ],
+     "evidence": "Relative equity performance and gold, which he reads as geopolitics.",
+     "fails_when": "He says the shift is smaller than he expected, partly because of AI.",
+     "claim_ids": [
+      "MT068-C18-2"
+     ]
+    },
+    {
+     "topic": "Fiscal limits to bonds and real rates",
+     "steps": [
+      {
+       "from": "debt high relative to domestic savings and productivity",
+       "to": "countries hit fiscal limits (UK, Brazil today, US drifting toward it)",
+       "why": "willingness to hold the currency is finite",
+       "claim_ids": [
+        "MT068-C09-1",
+        "MT068-C08-3"
+       ]
+      },
+      {
+       "from": "constrained countries expanding fiscally",
+       "to": "currency and equities fall, rates rise, so spending becomes counterproductive",
+       "why": "contrast with unconstrained Germany",
+       "claim_ids": [
+        "MT068-C08-3",
+        "MT068-C09-1"
+       ]
+      },
+      {
+       "from": "fiscal supply plus AI ecosystem demand for capital",
+       "to": "shortage of capital pushing real rates up, opposed by US central bank pressure",
+       "why": "Europe, Asia and big tech turning from savers to spenders",
+       "claim_ids": [
+        "MT068-C11-1"
+       ]
+      },
+      {
+       "from": "fiscal policy as a lever against disinflation",
+       "to": "bonds hedge deflation less well and correlations with equities and currency shift",
+       "why": "policy responds with fiscal push",
+       "claim_ids": [
+        "MT068-C10-3"
+       ]
+      }
+     ],
+     "evidence": "Cross-country comparison and Bridgewater's measures (not shown).",
+     "fails_when": "Central banks succeed in lowering real rates, in which case the inflation channel dominates instead.",
+     "claim_ids": [
+      "MT068-C11-1",
+      "MT068-C08-2"
+     ]
+    },
+    {
+     "topic": "Why AI capex persists and where the danger is",
+     "steps": [
+      {
+       "from": "firms believe AI gives control over outcomes and threatens their businesses",
+       "to": "spending driven by strategy, not profit incentives, so it persists beyond normal return discipline",
+       "why": "non-standard capex cycle",
+       "claim_ids": [
+        "MT068-C04-1",
+        "MT068-C03-1"
+       ]
+      },
+      {
+       "from": "scarce power, chips and scientists",
+       "to": "resource grab, with growth of 50-60% a year in the physical world hard to sustain",
+       "why": "compounding in the physical world is harder than in software",
+       "claim_ids": [
+        "MT068-C04-2",
+        "MT068-C05-2"
+       ]
+      },
+      {
+       "from": "AI finds more efficient chips and energy",
+       "to": "current assets depreciate faster than assumed",
+       "why": "scientific advances come from the assets themselves",
+       "claim_ids": [
+        "MT068-C04-3"
+       ]
+      },
+      {
+       "from": "Nvidia, Google and Amazon building ecosystems",
+       "to": "vendor financing and deals to lock up partners, not bubble demand creation",
+       "why": "Nvidia can sell chips anyway; it wants to keep control",
+       "claim_ids": [
+        "MT068-C05-1"
+       ]
+      }
+     ],
+     "evidence": "Observation of company behaviour and his industry network; no capex or return data given.",
+     "fails_when": "He says the AI depreciation schedule risk is real and AI could someday prove a dead end, though he sees that as far off.",
+     "claim_ids": [
+      "MT068-C04-3",
+      "MT068-C04-2"
+     ]
+    },
+    {
+     "topic": "Two-track US economy",
+     "steps": [
+      {
+       "from": "AI investment supplies a large share of growth (about 1 of 2-2.5 points this year, about 1.5 of 2.5 next year)",
+       "to": "growth concentrated in a capital-intensive sector with a weak labour market",
+       "why": "low labour intensity per unit of GDP",
+       "claim_ids": [
+        "MT068-C07-4",
+        "MT068-C08-X2"
+       ]
+      }
+     ],
+     "evidence": "Growth decomposition quoted from memory.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT068-C08-X2"
+     ]
+    },
+    {
+     "topic": "Systematic process with a disciplined override",
+     "steps": [
+      {
+       "from": "beliefs written in plain English and code on one common platform with every change recorded",
+       "to": "replicable research that AI can read and audit",
+       "why": "compounding requires human- and machine-readable knowledge",
+       "claim_ids": [
+        "MT068-C12-1",
+        "MT068-C12-2",
+        "MT068-C13-1"
+       ]
+      },
+      {
+       "from": "systematised knowledge",
+       "to": "the human research team can focus on what the process does not yet capture (new regimes such as mercantilism)",
+       "why": "frees attention for what is new",
+       "claim_ids": [
+        "MT068-C14-X1"
+       ]
+      },
+      {
+       "from": "COVID: trying to systematise a unique shock slowed the model (they leaned on the Spanish flu analogue they knew was imperfect)",
+       "to": "faster path for new research into positions, with rare overruling",
+       "why": "straitjacket on average; overruling barely helps on average",
+       "claim_ids": [
+        "MT068-C15-2",
+        "MT068-C15-3",
+        "MT068-C15-X1"
+       ]
+      }
+     ],
+     "evidence": "Own organisational history; COVID as the worst failure of his career.",
+     "fails_when": "Known-imperfect analogues embedded in the process can override better current knowledge.",
+     "claim_ids": [
+      "MT068-C15-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Write down beliefs, stress-test them, and translate them into algorithms (expert system). Research counts only when translated into compounded knowledge (plain-English reasoning plus code); otherwise no credit.",
+     "why": "knowledge must compound and be auditable",
+     "claim_ids": [
+      "MT068-C02-4",
+      "MT068-C12-2",
+      "MT068-C13-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Build portfolios to survive a wide range of possible worlds rather than pick the best asset, with much broader global diversification than most investors hold, including Europe and China.",
+     "why": "avoiding bad outcomes is how compounding works; winners and losers are unknown",
+     "claim_ids": [
+      "MT068-C09-2",
+      "MT068-C09-3",
+      "MT068-C10-1",
+      "MT068-C10-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Rely on risk control as the main driver of survival, accepting that all are flawed.",
+     "why": "Bridgewater survived 1991 when competitors did not",
+     "claim_ids": [
+      "MT068-C15-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hold some bonds again after the rise in real yields, but treat them as riskier and a weaker diversifier than before.",
+     "why": "fiscal limits and heavy supply",
+     "claim_ids": [
+      "MT068-C10-X1",
+      "MT068-C10-3",
+      "MT068-C11-1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Look beneath headline index averages (S&P ex-AI, gold) for shifts.",
+     "why": "averages hide stress",
+     "claim_ids": [
+      "MT068-C02-3",
+      "MT068-C02-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Run an AI agent investor as a separate entity designed around AI, to generate independent ideas uncorrelated with Pure Alpha, and now merge it back. Machines learn rules rather than copy human intuition.",
+     "why": "avoid copying human flaws; security and technology reasons",
+     "claim_ids": [
+      "MT068-C02-5",
+      "MT068-C14-1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Overrule the system rarely and with discipline, and speed new research into positions before it is fully systematised. Give researchers independence.",
+     "why": "overruling barely helps on average; COVID lesson",
+     "claim_ids": [
+      "MT068-C15-2",
+      "MT068-C15-3"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Radical transparency with feedback aimed up at leaders; measure whether managers draw out criticism. Hire for a balance of open-mindedness and assertiveness; shift from CIO-centralised decisions to independent investors.",
+     "why": "lets the best ideas win; failure modes are not speaking up and not listening",
+     "claim_ids": [
+      "MT068-C17-1",
+      "MT068-C18-1",
+      "MT068-C19-1",
+      "MT068-C20-1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Reflect on pain rather than run from it (Dalio's 'pain plus reflection equals progress'); Dalio's succession took 15 years.",
+     "why": "progress comes from examining mistakes",
+     "claim_ids": [
+      "MT068-C19-2"
+     ]
+    }
+   ],
+   "evidence_style": "First-principles macro reasoning with regime analogies, selected statistics from memory (relative equity performance, US goodwill polls, growth decomposition, scientist counts), personal industry network, and Bridgewater's institutional experience. He rarely quantifies forecasts, and admits one error (mercantilism's market impact).",
+   "current_views": [
+    {
+     "view": "US inflation base case around 3% for the next couple of years, with the Fed comfortable above 2.5% and breakeven inflation around 2.5%, and risk of higher.",
+     "as_of": "November 2025",
+     "reasoning": "mercantilism, military spending and fiscal push versus AI disinflation further out",
+     "claim_ids": [
+      "MT068-C08-1",
+      "MT068-C07-2",
+      "MT068-C07-3"
+     ]
+    },
+    {
+     "view": "US growth next year a little above potential (about 2.5%) with about 1.5 points from AI investment. This gives a two-track economy of an AI boom and a weak labour market.",
+     "as_of": "November 2025",
+     "reasoning": "AI capex is labour-light",
+     "claim_ids": [
+      "MT068-C08-X2",
+      "MT068-C07-4"
+     ]
+    },
+    {
+     "view": "AI is not in a bubble yet. The bubble is ahead of us, and the current resource-grab phase is more dangerous.",
+     "as_of": "November 2025",
+     "reasoning": "strategic spending, scarce power, chips and scientists",
+     "claim_ids": [
+      "MT068-C03-1",
+      "MT068-C04-2"
+     ]
+    },
+    {
+     "view": "Developed economies (UK, soon US) are fiscally constrained like Brazil, so fiscal expansion raises rates and hurts currency and equities. Bonds are risky into heavy fiscal and AI-related supply.",
+     "as_of": "November 2025",
+     "reasoning": "fiscal limits and capital shortage",
+     "claim_ids": [
+      "MT068-C08-3",
+      "MT068-C09-1",
+      "MT068-C11-1"
+     ]
+    },
+    {
+     "view": "A new Fed chair aligned with the administration may be outvoted often next year, producing a divided Fed.",
+     "as_of": "November 2025",
+     "reasoning": "governors not yet aligned",
+     "claim_ids": [
+      "MT068-C09-X1"
+     ]
+    },
+    {
+     "view": "Build a much more globally diversified portfolio. Europe is investable (fiscal shift, cheaper companies, better shareholder returns) and China matters for diversification (leadership supports the private sector to compete on AI; main risk is political access).",
+     "as_of": "November 2025",
+     "reasoning": "US-only concentration is a trap after 15 years",
+     "claim_ids": [
+      "MT068-C09-3",
+      "MT068-C10-1",
+      "MT068-C10-2"
+     ]
+    },
+    {
+     "view": "Bitcoin has some merit as non-government money and a gold substitute, but crypto use cases are mostly speculation and attract corruption, and AI is a better bet.",
+     "as_of": "November 2025",
+     "reasoning": "views formed since 2012-2014",
+     "claim_ids": [
+      "MT068-C11-2"
+     ]
+    },
+    {
+     "view": "Mercantilism's market impact has been smaller than he expected, partly explained by the AI offset. Populist right then populist left is the political path.",
+     "as_of": "November 2025",
+     "reasoning": "feedback from his own team",
+     "claim_ids": [
+      "MT068-C18-2",
+      "MT068-C07-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Whether AI vendor financing and capex signal a bubble",
+   "positions": [
+    {
+     "speaker": "Common bubble reading (as characterised by Jensen)",
+     "position": "Vendor financing and circular deals reflect normal bubble dynamics and capex is overhyped.",
+     "claim_ids": [
+      "MT068-C05-1"
+     ]
+    },
+    {
+     "speaker": "Greg Jensen",
+     "position": "Not a bubble yet: Nvidia is building a controlled ecosystem against Google, spending is strategic rather than profit-driven, and the bubble is ahead.",
+     "claim_ids": [
+      "MT068-C05-1",
+      "MT068-C04-1",
+      "MT068-C03-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "US-only equity concentration versus global diversification",
+   "positions": [
+    {
+     "speaker": "Most investors (as characterised by Jensen)",
+     "position": "Moved away from diversification because it has not worked for 15 years; US equities, the more liquid the better, have worked.",
+     "claim_ids": [
+      "MT068-C09-3"
+     ]
+    },
+    {
+     "speaker": "Greg Jensen",
+     "position": "That is mostly a trap; build a much more globally diversified portfolio because the winners and losers are unknown and US changes are radical.",
+     "claim_ids": [
+      "MT068-C09-3",
+      "MT068-C09-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Conflict of interest context: Jensen was in the first round of OpenAI investors and wrote the first check into Anthropic (personally), yet argues AI is not overhyped and the bubble is ahead.",
+   "claim_ids": [
+    "MT068-C03-R1",
+    "MT068-C03-R2",
+    "MT068-C04-2"
+   ]
+  },
+  {
+   "issue": "The bubble-ahead claim and the 'more dangerous but not a bubble' phase have no measured valuation, capex or return thresholds, so they cannot be falsified or timed.",
+   "claim_ids": [
+    "MT068-C03-1",
+    "MT068-C04-2"
+   ]
+  },
+  {
+   "issue": "Tension on AI and inflation: AI's low labour intensity is called disinflationary now (C07-4, growth about 1 pt of 2-2.5%), but the J-curve claim says the strongly disinflationary phase is further out and the first phase only absorbs resources.",
+   "claim_ids": [
+    "MT068-C07-4",
+    "MT068-C08-X1"
+   ]
+  },
+  {
+   "issue": "Breakeven inflation number is garbled in the caption ('around 2 and a2'); the ledger fix reads it as about 2.5%.",
+   "claim_ids": [
+    "MT068-C08-1"
+   ]
+  },
+  {
+   "issue": "He expected mercantilism to push money out of the US and concedes it has had less effect than expected, but keeps the theme as one of three; the AI offset is offered as the explanation without quantification.",
+   "claim_ids": [
+    "MT068-C18-2",
+    "MT068-C02-1"
+   ]
+  },
+  {
+   "issue": "AI contribution to growth is quoted for different years (about 1 point this year, about 1.5 of 2.5 next year) from memory without source.",
+   "claim_ids": [
+    "MT068-C07-4",
+    "MT068-C08-X2"
+   ]
+  },
+  {
+   "issue": "The AI agent investor is said to have produced alpha since 2024, with no figures or independent evidence.",
+   "claim_ids": [
+    "MT068-C02-5"
+   ]
+  },
+  {
+   "issue": "Statements on the collapse of US goodwill ('biggest collapse we've ever seen') and fewer than a thousand frontier scientists are unsourced.",
+   "claim_ids": [
+    "MT068-C07-1",
+    "MT068-C05-2"
+   ]
+  },
+  {
+   "issue": "Known-imperfect historical analogues can be embedded in process (Spanish flu), which is a caveat on his own use of regime analogies such as the 1980s turn versus mercantilism.",
+   "claim_ids": [
+    "MT068-C15-X1",
+    "MT068-C01-3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs he names: relative performance of US equities versus the world and of S&P ex-AI names; gold; US inflation versus breakeven (about 2.5%) and Fed tolerance; fiscal deficits, domestic savings and currency and rate reaction to fiscal announcements (UK, US); real yields and the pace of AI-related and fiscal capital demand; defence spending; AI capex and power, chip and scientist scarcity; the Fed's voting split; US goodwill and populist electoral shifts. Horizon: the next one to two years for inflation and growth; longer for the AI bubble and diversification.",
+ "reader_inferences": [
+  "(reader) The framework implies stress should show first in sub-components (US ex-AI equities, gold, UK gilts) before in headline indices, so tracking relative indicators is the observable test of his regime thesis.",
+  "(reader) His 'survive across worlds' rule and his three-theme view point to risk balancing across inflation, growth and fiscal-stress scenarios rather than a single forecast; the base case is stated but not the sizing.",
+  "(reader) The inflation call (3%) and the bond view (weak diversifier) are linked: if AI disinflation or a deflation shock arrives first, his own argument says bonds would hedge less well because fiscal policy responds."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT068-C03-R1",
+   "chunk": "C03",
+   "speaker": "Greg Jensen",
+   "quote": "i was in the first round of investors in openai because they were doing unique things",
+   "claim": "Jensen was in the first round of OpenAI's investors, personally, around 2016.",
+   "mechanism": "other",
+   "asset_class": "equities",
+   "indicator": "AI sector exposure",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "reader": "map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT068-C03-R2",
+   "chunk": "C03",
+   "speaker": "Greg Jensen",
+   "quote": "was literally the first check there",
+   "claim": "Jensen says he wrote the first check into Anthropic when some of the best scientists he knew started it.",
+   "mechanism": "other",
+   "asset_class": "equities",
+   "indicator": "AI sector exposure",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "reader": "map",
+   "quote_check": "exact"
+  }
+ ]
+}

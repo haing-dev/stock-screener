@@ -1,0 +1,207 @@
+{
+ "source_id": "MT064",
+ "episode_thesis": "Rob Carver answers listener questions with one recurring logic: use only as much leverage, complexity and cost as the expected performance justifies (volatility-scaled sizing, Sharpe over skew, simple signals, test what you trade, markets before more trend variants). He then reads a minutes-to-centuries paper as showing momentum from about an hour to a year and mean reversion outside that range. In mid-February 2025 he argues Trump's tariffs, deportations and institutional instability are inflationary and raise the equity risk premium, which should show first in bonds and gold and favours price-following CTAs, while host Niels Kaastrup-Larsen adds an erosion-of-trust and Fourth Turning view and a critique of multi-strategy pass-through fees.",
+ "speakers": [
+  {
+   "name": "Rob Carver",
+   "role": "systematic futures trader and author (ex-AHL), answering listener questions",
+   "speaker_note": "Main speaker. In C23 the turn in which he agrees that a price-based strategy is good appears to start mid-paragraph after Niels' trust-erosion point (ledger correction: probable Rob). C12-1 (35-40% of research budget on execution) is Niels' recollection, not Rob's.",
+   "fingerprint": ["trend_following", "carry", "position_sizing_vol_target", "kelly_or_conviction_sizing", "research_robustness_overfitting", "costs_execution", "diversification_risk_parity", "macro_fundamental_topdown"],
+   "worldview_premises": [
+    {"premise": "A futures price equals spot plus yield minus funding; for a yieldless asset like gold the premium over spot is essentially the borrowing cost, so carry is observable in the futures-spot gap.", "type": "theoretical", "stated": "stated", "support": "pricing identity plus the current gold example", "claim_ids": ["MT064-C01-1", "MT064-C02-1"]},
+    {"premise": "Appropriate leverage is set by the Kelly criterion, i.e. by expected performance. Risk above roughly 20-30% volatility is probably more than any plausible expected return justifies.", "type": "theoretical", "stated": "stated", "support": "rule of thumb, applied to 2x S&P (30-40% vol) vs 1.5x 60/40 (about 12-15% vol) without checking product documents", "claim_ids": ["MT064-C06-2", "MT064-C06-3"]},
+    {"premise": "Leveraged ETFs on volatile underlyings drift toward zero over long holds because of volatility drag.", "type": "theoretical", "stated": "stated", "support": "arithmetic example (down 10% then up 10% ends below the start; worse with leverage)", "claim_ids": ["MT064-C05-2", "MT064-C06-1"]},
+    {"premise": "For a trader who can lever freely, volatility has effectively no price, so Sharpe is the right comparison metric. Leverage cannot create skew, so skew is the only thing leverage cannot buy.", "type": "theoretical", "stated": "stated", "support": "first principles", "claim_ids": ["MT064-C16-4", "MT064-C17-4"]},
+    {"premise": "Terminal wealth (geometric mean / CAGR) is the key metric, and the Sharpe ratio one should give up to buy positive skew is small, so the higher-Sharpe strategy is usually better.", "type": "theoretical", "stated": "stated", "support": "his own simulation of terminal wealth over Sharpe and skew combinations (blog post)", "claim_ids": ["MT064-C17-3", "MT064-C17-2", "MT064-C18-1", "MT064-C17-X1"]},
+    {"premise": "Diversification comes from low correlation: a new market correlates about 0.4-0.5 with existing ones, a new trend system about 0.8-0.9, and a different style such as carry about 0.5 once many markets are held.", "type": "empirical", "stated": "stated", "support": "experience with his own system, rough figures", "claim_ids": ["MT064-C07-1", "MT064-C07-2", "MT064-C07-3", "MT064-C07-X1"]},
+    {"premise": "Momentum works across futures from roughly an hour up to about a year (plus, he suggests, perhaps 18 months); mean reversion dominates below an hour and beyond a year.", "type": "empirical", "stated": "stated", "support": "Safari and Schmidhuber paper (cubic polynomial fit across horizons, data back to 1692) and his own earlier book", "claim_ids": ["MT064-C19-1", "MT064-C20-1", "MT064-C20-2", "MT064-C20-3", "MT064-C20-5"]},
+    {"premise": "Mean reversion at very short horizons exists because high-frequency traders buy the bid and sell the ask around a bouncing price.", "type": "behavioural", "stated": "stated", "support": "market-structure argument", "claim_ids": ["MT064-C19-2", "MT064-C19-3"]},
+    {"premise": "Every indicator lags because it uses the past. A moving average or EMA is just a weighting function over past returns, and nonlinear tweaks add parameters and overfitting risk.", "type": "theoretical", "stated": "stated", "support": "first principles; his own test of a short-horizon mean-reversion add-on", "claim_ids": ["MT064-C14-1", "MT064-C14-2", "MT064-C14-3", "MT064-C14-4"]},
+    {"premise": "Prefer the simplest version of a strategy and do not add many signals for tiny marginal gains.", "type": "experience", "stated": "stated", "support": "Occam's razor; complexity cost", "claim_ids": ["MT064-C13-3", "MT064-C08-1"]},
+    {"premise": "Machine learning and neural nets on existing data are low-yield research (Renaissance excepted). The bigger research payoffs are new markets, execution at scale and alternative data.", "type": "experience", "stated": "stated", "support": "his AHL experience and impression of where firms invest; no data given", "claim_ids": ["MT064-C10-5", "MT064-C11-1", "MT064-C11-2", "MT064-C11-3"]},
+    {"premise": "ETF wrappers usually cost more than direct futures (fees, provider profit, slippage from size), and liquidity varies, so test with the instrument you will trade.", "type": "experience", "stated": "stated", "support": "cost decomposition argument", "claim_ids": ["MT064-C08-2", "MT064-C08-3", "MT064-C09-1", "MT064-C09-2"]},
+    {"premise": "Multi-strategy pod fees are opaque because expenses are charged to the client account outside the headline fees, and winning managers get paid even when the whole fund loses.", "type": "institutional", "stated": "stated", "support": "industry knowledge; contrast with UCITS cost transparency", "claim_ids": ["MT064-C03-2", "MT064-C03-3"]},
+    {"premise": "He is a poor discretionary trader (good entry, no exit rule), while a systematic trader can attribute every trade exactly. Short windows of performance are noise.", "type": "experience", "stated": "stated", "support": "his own bond trade and the 1% year-to-date result after seven weeks", "claim_ids": ["MT064-C12-2", "MT064-C12-X1", "MT064-C04-X2"]},
+    {"premise": "Unstable regulation, rule of law and frequently changed tariffs raise the risk premium, and a higher risk premium is bad for equities.", "type": "theoretical", "stated": "stated", "support": "economic reasoning (businesses want certainty more than lower regulation); no data", "claim_ids": ["MT064-C22-2"]},
+    {"premise": "Bond investors are more professional and conservative than (increasingly retail) equity investors, so credit and bond markets tend to flag trouble before equities.", "type": "behavioural", "stated": "stated", "support": "2007-08 anecdote; he is reluctant to say one market always leads another", "claim_ids": ["MT064-C23-4", "MT064-C23-5"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Gold futures funding squeeze, early 2025",
+     "steps": [
+      {"from": "Gold moves from London to US vaults (or its legal ownership moves)", "to": "inventory imbalance across warehouses", "why": "he is unsure whether the bars physically move", "claim_ids": ["MT064-C01-2", "MT064-C02-2"]},
+      {"from": "inventory imbalance", "to": "gold borrowing cost jumps from about 4.5-5% to 10-12% annualised", "why": "borrowing cost is what drives futures minus spot for a yieldless asset", "claim_ids": ["MT064-C02-1", "MT064-C02-2", "MT064-C01-1"]},
+      {"from": "high borrowing cost", "to": "December future about 150 points over spot, so a long position has negative carry while trend is positive", "why": "carry signal conflicts with trend signal", "claim_ids": ["MT064-C02-3"]}
+     ],
+     "evidence": "Observed futures-spot spread and his own forecasts; Financial Times reports did not explain who is moving the gold.",
+     "fails_when": "He admits the cause is unclear and expects to see what happens over the next few weeks.",
+     "claim_ids": ["MT064-C01-X1", "MT064-C02-3"]},
+    {"topic": "Volatility drag and safe leverage",
+     "steps": [
+      {"from": "leveraged ETF on a volatile underlying", "to": "equal up and down moves end below the start; drag grows with leverage", "why": "path arithmetic", "claim_ids": ["MT064-C05-2", "MT064-C06-1"]},
+      {"from": "volatility above about 20-30%", "to": "risk exceeds what expected performance (Kelly) can justify", "why": "returns unlikely to be high enough", "claim_ids": ["MT064-C06-2", "MT064-C06-3"]},
+      {"from": "return-stacked 2x S&P plus managed futures", "to": "safe only while managed-futures/equity correlation stays low", "why": "if correlation rises and stays high, volatility goes beyond the safe level", "claim_ids": ["MT064-C06-4"]}
+     ],
+     "evidence": "Rule of thumb and arithmetic. He has not read the product documents.",
+     "fails_when": "Correlation between managed futures and equities rises for a long period.",
+     "claim_ids": ["MT064-C06-4"]},
+    {"topic": "Position sizing: fixed contracts vs volatility scaling, Sharpe vs skew",
+     "steps": [
+      {"from": "fixed-contract or fixed-notional sizing", "to": "explosive moves (cocoa 2024) hit an unscaled position, creating positive outliers; losers are closed so no matching negative tail", "why": "position is not cut when volatility rises", "claim_ids": ["MT064-C16-3"]},
+      {"from": "volatility-adjusted (fixed risk) sizing", "to": "highest Sharpe ratio, less positive skew", "why": "reduces contracts when volatility or price rises", "claim_ids": ["MT064-C16-1", "MT064-C16-2"]},
+      {"from": "Sharpe versus skew trade-off", "to": "terminal-wealth simulation says higher Sharpe more than compensates for lost upside volatility, so choose volatility scaling", "why": "volatility only matters through terminal wealth; benefit of positive skew is limited", "claim_ids": ["MT064-C17-2", "MT064-C17-5", "MT064-C18-1", "MT064-C18-R3"]}
+     ],
+     "evidence": "Quantica Q4 2024 paper and his own simulation (blog post); both find the lower Sharpe of fixed sizing is not paid for by skew.",
+     "fails_when": "Investors with a strong preference for positive skew may rationally give up more Sharpe. Very high Sharpe with heavy leverage or opacity can hide negative skew (Madoff).",
+     "claim_ids": ["MT064-C17-X1", "MT064-C18-2"]},
+    {"topic": "Time-scale map of momentum and mean reversion",
+     "steps": [
+      {"from": "horizons below an hour (strongest near 5 minutes)", "to": "mean reversion", "why": "high-frequency traders buy bid, sell ask as price bounces", "claim_ids": ["MT064-C19-2", "MT064-C19-3", "MT064-C19-4"]},
+      {"from": "horizons from one hour to about one year", "to": "momentum, which supports CTAs; short end is hard because costs are hard to overcome", "why": "paper evidence across horizons", "claim_ids": ["MT064-C20-1", "MT064-C20-4", "MT064-C20-5"]},
+      {"from": "horizons beyond a year", "to": "mean reversion, so a 2-4 year horizon favours a mean-reversion strategy", "why": "paper finds reversion out to 16 years using data from 1692", "claim_ids": ["MT064-C20-2", "MT064-C20-3", "MT064-C13-1"]}
+     ],
+     "evidence": "Safari and Schmidhuber paper (figure 10), which refuted his own hand-waved suppositions about the gap between HFT and one-month horizons.",
+     "fails_when": "Costs at short horizons; long-horizon signals are hard to show significant and may show negative Sharpe in backtests.",
+     "claim_ids": ["MT064-C19-5", "MT064-C13-2", "MT064-C19-R2"]},
+    {"topic": "Trump policies to inflation, risk premium and asset pricing",
+     "steps": [
+      {"from": "tariffs (including retaliation and integrated US-Canada auto supply chains)", "to": "higher US and global inflation", "why": "mainstream view, almost no economist thinks tariffs are good", "claim_ids": ["MT064-C21-2", "MT064-C22-1"]},
+      {"from": "mass deportations", "to": "less labour supply, higher wages, and fragile supply chains may cause shortages", "why": "supply and demand; Covid showed supply chains are delicate", "claim_ids": ["MT064-C21-3", "MT064-C21-4"]},
+      {"from": "unstable regulation, changing tariffs, stopped government payments", "to": "higher risk premium, unemployment, supply and demand shocks, uncertainty", "why": "businesses value certainty and rule of law", "claim_ids": ["MT064-C22-2", "MT064-C22-3"]},
+      {"from": "inflation plus higher risk premium", "to": "bonds and equities both hurt, which favours CTAs", "why": "net view (stated half-jokingly)", "claim_ids": ["MT064-C22-4"]}
+     ],
+     "evidence": "Reasoning from standard macroeconomics. He says it is conditional on Trump succeeding in doing what he says.",
+     "fails_when": "Tariffs face the most pushback from Republicans and may be diluted; midterms usually cost the president a majority, leaving about two years; effects reach jobs data and equities only with a lag.",
+     "claim_ids": ["MT064-C21-1", "MT064-C21-X1", "MT064-C24-1", "MT064-C21-R4"]},
+    {"topic": "Why bonds and gold may price policy risk before equities",
+     "steps": [
+      {"from": "bond market dominated by professional, conservative investors; equities more retail and optimistic", "to": "bonds react earlier to bad news", "why": "2007-08 credit, mortgage and bond markets flagged trouble before equities", "claim_ids": ["MT064-C23-4", "MT064-C23-5"]},
+      {"from": "Trump policies clearly inflationary", "to": "bonds react directly, while the effect of inflation on equities is ambiguous", "why": "bond focus is inflation, equity focus is mixed", "claim_ids": ["MT064-C23-X1"]}
+     ],
+     "evidence": "One historical episode and a behavioural argument; he declines to say one market always leads another.",
+     "fails_when": "Not stated beyond that reluctance.",
+     "claim_ids": ["MT064-C23-4", "MT064-C23-5", "MT064-C23-X1"]}
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Turn any predictor (a 'feature') into a forecast by scaling it, like a z-score. Regressing volatility-normalised returns on the signal gives the same scaling. He does not remove the intercept (systematic long or short bias).", "why": "the coefficient says how big the forecast is; he prefers to keep bias", "claim_ids": ["MT064-C09-3", "MT064-C10-1", "MT064-C10-2"]},
+    {"element": "signal", "practice": "The forecasting target is risk-adjusted returns.", "why": "positions are sized by risk", "claim_ids": ["MT064-C10-3"]},
+    {"element": "sizing", "practice": "Fixed-risk (volatility-scaled) position sizing, preferring Sharpe and terminal wealth over skew.", "why": "highest Sharpe; skew gain does not pay for lower Sharpe", "claim_ids": ["MT064-C16-1", "MT064-C16-2", "MT064-C17-5"]},
+    {"element": "risk", "practice": "Keep total risk below about 20-30% volatility. Check how correlation could change the volatility of stacked products. Be wary of high-Sharpe strategies needing leverage or opacity.", "why": "Kelly: expected performance rarely justifies more", "claim_ids": ["MT064-C06-3", "MT064-C06-4", "MT064-C18-2"]},
+    {"element": "universe", "practice": "Add markets before additional trend variants. Once many markets are held, add a different style (carry). Adding systems needs no extra capital if automated.", "why": "correlation 0.4-0.5 for new markets vs 0.8-0.9 for a new trend system vs about 0.5 for carry", "claim_ids": ["MT064-C07-1", "MT064-C07-2", "MT064-C07-3", "MT064-C07-4", "MT064-C10-5"]},
+    {"element": "signal", "practice": "Consider an absolute long-term mean-reversion (negative multi-year momentum) signal in addition to relative mean reversion. He has not tested it recently and notes long signals rarely reach significance.", "why": "simpler than relative, probably diversifying, supported by the time-scale paper and equity literature", "claim_ids": ["MT064-C13-1", "MT064-C13-2", "MT064-C13-3", "MT064-C13-X1"]},
+    {"element": "research", "practice": "Reject nonlinear responses to recent observations and tiny-gain extra signals (a one-week mean-reversion add-on gave insignificant gains).", "why": "added parameters, overfit risk, complexity not worth it", "claim_ids": ["MT064-C14-3", "MT064-C14-4", "MT064-C08-1"]},
+    {"element": "research", "practice": "Backtest with the instrument you trade (test what you trade, trade what you test). Compare total returns, adding the risk-free rate to back-adjusted futures prices.", "why": "ETF includes interest and costs, futures margin earns interest not shown in prices", "claim_ids": ["MT064-C08-2", "MT064-C09-1"]},
+    {"element": "execution", "practice": "Small traders use a simple few-line execution algorithm. Large funds trading hundreds of millions to billions need execution research. Compare own annual roll cost with the ETF's full expense ratio.", "why": "execution matters more as assets grow", "claim_ids": ["MT064-C11-1", "MT064-C11-X1", "MT064-C08-X1", "MT064-C09-2"]},
+    {"element": "research", "practice": "Handle missing data by going flat until enough prices exist to form forecasts and volatility. Never interpolate prices in a backtest, except overnight hours for volatility estimation using a Brownian bridge.", "why": "interpolation is wrong 99.9% of the time", "claim_ids": ["MT064-C15-1", "MT064-C15-2", "MT064-C15-3", "MT064-C15-4", "MT064-C15-X1"]},
+    {"element": "other", "practice": "Stay systematic. Discretionary trades without predefined stops or exit criteria are avoided.", "why": "his bond trade caught the yield top but was closed flat", "claim_ids": ["MT064-C12-2", "MT064-C12-X1"]}
+   ],
+   "evidence_style": "Mixed. First-principles arithmetic (volatility drag, Kelly, pricing identity), his own simulations and backtests reported in blog posts, and readings of two papers (Quantica, Safari and Schmidhuber). He explicitly welcomes hard evidence over his own guesses and distrusts AI-suggested fixes, but his policy analysis is reasoned argument without data.",
+   "current_views": [
+    {"view": "Long gold (also silver and bitcoin) from trend, but negative carry because the gold future is far above spot; mixed signals, waiting to see how the squeeze resolves.", "as_of": "mid-February 2025", "reasoning": "gold borrowing cost spiked to 10-12% on warehouse imbalance", "claim_ids": ["MT064-C02-2", "MT064-C02-3"]},
+    {"view": "Trump policies (tariffs, deportations, regulatory and fiscal chaos) are inflationary and raise the equity risk premium, so bonds and equities are both at risk and CTAs benefit. Effects arrive with a lag, so watch and wait.", "as_of": "mid-February 2025", "reasoning": "tariff and labour-supply inflation, risk premium from uncertainty", "claim_ids": ["MT064-C22-4", "MT064-C21-2", "MT064-C21-3", "MT064-C24-1"]},
+    {"view": "Bonds and gold may be ahead of equities in pricing the risk.", "as_of": "mid-February 2025", "reasoning": "bond investors more professional and conservative; policy clearly inflationary", "claim_ids": ["MT064-C23-5", "MT064-C23-X1"]},
+    {"view": "A price-following strategy such as trend following is a good portfolio holding when price and value are disconnected.", "as_of": "mid-February 2025", "reasoning": "agrees with Niels that trust erosion disconnects price from value (speaker probable)", "claim_ids": ["MT064-C23-3"]},
+    {"view": "Two-times S&P ETFs and stacked 2x S&P plus managed futures are too risky or need close scrutiny, while 1.5x 60/40 (about 12-15% volatility) is reasonably safe on leverage grounds alone.", "as_of": "mid-February 2025", "reasoning": "Kelly rule of thumb of 20-30% volatility", "claim_ids": ["MT064-C06-3", "MT064-C06-4"]},
+    {"view": "His own year-to-date result of about +1% after seven weeks is noise and says nothing about the system.", "as_of": "mid-February 2025", "reasoning": "down 1.5% in January, up 2.5% in February", "claim_ids": ["MT064-C04-X2"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "host, Top Traders Unplugged, veteran hedge fund manager",
+   "speaker_note": "Mostly host questions and recaps; he states views on fees, trust erosion, risk management and the Fourth Turning. Listener questions he reads (Paul, Samuel, David and others) are not his views. The 35-40% execution budget claim is his hedged recollection of an interview, 'maybe AHL'.",
+   "fingerprint": ["trend_following", "manager_selection_allocation", "debt_cycle_long_term", "structural_themes", "costs_execution", "market_internals_leading"],
+   "worldview_premises": [
+    {"premise": "Net-of-fee return is what matters to investors, so high fees are tolerated while net results stay good, but pass-through multi-strategy expenses make 2 and 20 look cheap.", "type": "institutional", "stated": "stated", "support": "Bloomberg article figures (effective 7 and 20 up to 15 and 20; a fund with 15.2% gross left clients 2.8%, caption ambiguous)", "claim_ids": ["MT064-C03-X1", "MT064-C02-4", "MT064-C03-1", "MT064-C02-X1"]},
+    {"premise": "Large institutions must be supplying the pod inflows, and it is surprising that pensions and insurers accept fees they resisted elsewhere; even UCITS expense ratios can omit costs such as research.", "type": "institutional", "stated": "stated", "support": "his career experience of investor pushback", "claim_ids": ["MT064-C03-X2", "MT064-C04-X1"]},
+    {"premise": "Trend followers rarely blow up unless they run highly leveraged versions, and the most room to evolve is in risk management and risk forecasting.", "type": "experience", "stated": "stated", "support": "industry observation; CTA index interview series", "claim_ids": ["MT064-C11-6", "MT064-C11-5"]},
+    {"premise": "Few new ways of doing trend following exist, but combining more than one approach (for example moving-average crossover plus something else) may give better results.", "type": "experience", "stated": "stated", "support": "none beyond impression", "claim_ids": ["MT064-C11-4"]},
+    {"premise": "Sharpe is not a great objective for trend following because it penalises upside volatility (a view he says he and many others have held).", "type": "theoretical", "stated": "stated", "support": "none given; Carver's simulation answers it", "claim_ids": ["MT064-C17-R1"]},
+    {"premise": "Decades of eroding trust in institutions cause a disconnect between value and price.", "type": "behavioural", "stated": "stated", "support": "anecdote (Oval Office image) and his previous conversations", "claim_ids": ["MT064-C23-2"]},
+    {"premise": "Cycles between public and private trust recur, and the Fourth Turning generational cycle suggests turbulence before the period ends.", "type": "theoretical", "stated": "stated", "support": "book by Neil Howe, previous conversation; he says it is not a market forecast", "claim_ids": ["MT064-C24-2", "MT064-C24-3"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Pass-through multi-strategy fees",
+     "steps": [
+      {"from": "pods charge expenses to the client account on top of management and performance fees", "to": "effective fees of 7 and 20 up to 15 and 20", "why": "Bloomberg estimate", "claim_ids": ["MT064-C02-4", "MT064-C02-X1"]},
+      {"from": "high effective fees", "to": "a large share of gross return is lost (a 15.2% gross gain left the client 2.8%, caption ambiguous)", "why": "example fund in 2023", "claim_ids": ["MT064-C03-1"]},
+      {"from": "strong net returns and large institutional demand", "to": "fees are accepted despite earlier pushback", "why": "net return matters most", "claim_ids": ["MT064-C03-X1", "MT064-C03-X2"]}
+     ],
+     "evidence": "A single Bloomberg article and one example fund.",
+     "fails_when": "Net returns stop being strong (implied).",
+     "claim_ids": ["MT064-C03-X1"]},
+    {"topic": "Trust erosion, price-value disconnect and the Fourth Turning",
+     "steps": [
+      {"from": "erosion of trust in institutions over decades", "to": "price and value disconnect", "why": "stated as his view", "claim_ids": ["MT064-C23-2"]},
+      {"from": "disconnect between price and value", "to": "price-following strategies such as trend following are a good portfolio component", "why": "they do not depend on getting value right", "claim_ids": ["MT064-C23-3"]},
+      {"from": "turn in the public-private cycle", "to": "government bonds may prove unsafe and equities a safe harbour; the Fourth Turning implies a more turbulent period", "why": "cycle idea, not a forecast", "claim_ids": ["MT064-C24-2", "MT064-C24-3"]}
+     ],
+     "evidence": "Conceptual and anecdotal.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT064-C23-2", "MT064-C24-2"]},
+    {"topic": "Different asset classes price policy risk differently",
+     "steps": [
+      {"from": "Trump policy risk", "to": "fixed income and gold price it while equities show little angst", "why": "observed price levels", "claim_ids": ["MT064-C23-1"]}
+     ],
+     "evidence": "Observed index behaviour (price level as a measure of angst).",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT064-C23-1"]}
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Judge managers on net-of-fee returns and read the detailed documents for hidden costs behind headline expense ratios.", "why": "headline fees can omit research and pass-through costs", "claim_ids": ["MT064-C03-X1", "MT064-C04-X1", "MT064-C02-4"]},
+    {"element": "signal", "practice": "Track a trend barometer (reading 30 = weak trend strength), separate from index returns.", "why": "different measure and time frame from CTA indices", "claim_ids": ["MT064-C04-3"]},
+    {"element": "portfolio", "practice": "Hold a price-based strategy such as trend following as a portfolio component when price and value are disconnected.", "why": "does not rely on value being right", "claim_ids": ["MT064-C23-2", "MT064-C23-3"]},
+    {"element": "research", "practice": "Combine more than one trend approach and focus evolution on risk management and execution (he recalls 35-40% of one CTA's research budget going to execution).", "why": "more inflows mean bigger size and capacity limits", "claim_ids": ["MT064-C11-4", "MT064-C11-5", "MT064-C12-1", "MT064-C11-X2"]}
+   ],
+   "evidence_style": "Industry observation, index data and manager interviews, plus anecdote and cycle theory (Fourth Turning). He cites Bloomberg numbers and CTA index readings but does not test his views.",
+   "current_views": [
+    {"view": "Early 2025 trend following was flat to mixed. Currencies were the tricky sector in February, while equities, coffee, gold and some metals contributed. Indices roughly flat (BTOP50 +1.68%, SG CTA +0.77%, SG Trend +0.57%).", "as_of": "mid-February 2025", "reasoning": "index data and market moves", "claim_ids": ["MT064-C04-1", "MT064-C04-2", "MT064-C05-1"]},
+    {"view": "Short-term traders index kept struggling, second year lagging longer-horizon trend indices; 20+ year Treasury index hurt by hot inflation data in February.", "as_of": "mid-February 2025", "reasoning": "index data", "claim_ids": ["MT064-C05-X2", "MT064-C05-X1"]},
+    {"view": "Fixed income and gold are pricing Trump-policy risk while equities show little angst.", "as_of": "mid-February 2025", "reasoning": "price levels", "claim_ids": ["MT064-C23-1"]},
+    {"view": "Government bonds may turn out unsafe and equities a safe harbour in a public-private cycle turn. Conditions will become more turbulent and surprising before the period ends. He says this is not a market forecast.", "as_of": "mid-February 2025", "reasoning": "cycle theory (Fourth Turning)", "claim_ids": ["MT064-C24-2", "MT064-C24-3"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {"topic": "Whether Sharpe is the right objective for trend following",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "He and many others had said Sharpe is not great to optimise for trend following because it penalises upside volatility.", "claim_ids": ["MT064-C17-R1"]},
+    {"speaker": "Rob Carver", "position": "Terminal-wealth simulation shows the benefit of higher Sharpe outweighs lost upside volatility, so Sharpe can be optimised (valid when skew is similar, and checked with skew).", "claim_ids": ["MT064-C18-1", "MT064-C17-2", "MT064-C17-4"]}
+   ]},
+  {"topic": "Which assets are at risk or safe in the policy and cycle turn",
+   "positions": [
+    {"speaker": "Rob Carver", "position": "Inflation hurts bonds and uncertainty and a higher risk premium hurt equities, so both are at risk and CTAs benefit.", "claim_ids": ["MT064-C22-4"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Government bonds may prove unsafe and equities a safe harbour in a public-private cycle turn (explicitly not a forecast).", "claim_ids": ["MT064-C24-2"]}
+   ]},
+  {"topic": "How to improve a trend-following book",
+   "positions": [
+    {"speaker": "Rob Carver", "position": "Add markets first, then a different style such as carry. New trend variants correlate 0.8-0.9 with the existing system, and tiny-gain signals are not worth the complexity.", "claim_ids": ["MT064-C07-1", "MT064-C07-2", "MT064-C07-X1", "MT064-C08-1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Combining more than one trend approach (not just moving-average crossover) may give better results; risk management has the most room to evolve.", "claim_ids": ["MT064-C11-4", "MT064-C11-5"]}
+   ]},
+  {"topic": "Why institutions accept multi-strategy pod fees",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Net returns have been good and the money is large institutional, which surprises him given earlier fee pushback.", "claim_ids": ["MT064-C03-X1", "MT064-C03-X2"]},
+    {"speaker": "Rob Carver", "position": "Institutions look only at headline fees and net performance and miss costs charged to the client account out the back door; transparency has gone backwards.", "claim_ids": ["MT064-C03-2", "MT064-C03-3"]}
+   ]}
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Fee example is garbled in the caption: a 15.2% gain is said to be 'after fees' yet the client received 2.8%, so before/after is ambiguous.", "claim_ids": ["MT064-C03-1"]},
+  {"issue": "The cause of the gold London-to-US movement is unknown to Rob (physical move or legal ownership; FT does not say). The explanation is partial.", "claim_ids": ["MT064-C01-2", "MT064-C02-2"]},
+  {"issue": "Rob says Sharpe is valid only when strategies have the same skew, yet recommends maximising Sharpe across strategies with different skew. He resolves it by simulation and cites no numbers in the episode.", "claim_ids": ["MT064-C17-4", "MT064-C17-2", "MT064-C18-1"]},
+  {"issue": "The Kelly rule of thumb of 20-30% volatility is given without an assumed Sharpe. The 12-15% volatility of 1.5x 60/40 is from memory, and he has not read the product documents.", "claim_ids": ["MT064-C06-3"]},
+  {"issue": "The claim that ML and neural nets add little is asserted without evidence, with one exception named (Renaissance).", "claim_ids": ["MT064-C11-3"]},
+  {"issue": "Extending the momentum window to about 18 months is Rob's own extrapolation from a paper that shows one year strong and two years flat, not a result of the paper.", "claim_ids": ["MT064-C20-5"]},
+  {"issue": "The policy view is explicitly conditional on Trump succeeding in his plans. It is framed with a joke conclusion (buy CTAs) and is qualified by Republican pushback on tariffs, midterms, and lagged effects.", "claim_ids": ["MT064-C22-4", "MT064-C21-X1", "MT064-C21-R4"]},
+  {"issue": "Speaker corrections applied: C12-1 is Niels' hedged recollection (maybe AHL), C12-3 and C12-4 are listener Paul's, C17-1 is Rob, C23-3 is probably Rob.", "claim_ids": ["MT064-C12-1", "MT064-C12-3", "MT064-C12-4", "MT064-C17-1", "MT064-C23-3"]}
+ ],
+ "forward_looking_inputs": "(reader) Gold futures minus spot (borrowing cost versus about 4.5-5% risk-free) as the carry input; managed-futures/equity correlation for stacked-leverage safety; US inflation prints and bond yields, which Rob expects to react first, followed by jobs data and equities with a lag; tariff announcements and Republican pushback; the midterm window of about two years. Horizons: weeks to months for the policy view, one hour to one year for momentum, beyond a year for mean reversion.",
+ "reader_inferences": [
+  "(reader) Rob's theory implies a trend follower should hold the same volatility target across assets and let skew be an outcome, not a goal.",
+  "(reader) Both speakers treat bonds and gold as earlier warning markets, which suggests a testable lead-lag signal between bonds/gold and equities, though neither gives a rule.",
+  "(reader) Rob's Sharpe-over-skew argument rests on terminal wealth being the only objective; investors with drawdown or career constraints may reasonably differ."
+ ],
+ "added_claims": [
+  {"claim_id": "MT064-C17-R1", "chunk": "C17", "speaker": "Niels Kaastrup-Larsen", "quote": "many people including cluding myself would have said well hang on Sharp is not really great to optimize for when it comes to Trend falling because it penalizes upside volatility", "claim": "Niels says he and many others have held that Sharpe is a poor objective for trend following because it penalises upside volatility.", "mechanism": "other", "asset_class": "multi-asset", "indicator": "Sharpe ratio vs skew", "horizon": "unspecified", "direction": "", "conditions": "", "testable": "partly - terminal-wealth simulation", "speaker_confidence": "medium", "time_bound": "no", "reader": "map", "quote_check": "exact"},
+  {"claim_id": "MT064-C19-R2", "chunk": "C19", "speaker": "Rob Carver", "quote": "i'm much happier to see hard evidence", "claim": "Rob accepts that the paper refutes the hand-waved suppositions in his previous book about horizons between high-frequency trading and one week to one month, and prefers hard evidence to his own guesses.", "mechanism": "other", "asset_class": "multi-asset", "indicator": "momentum vs mean reversion by horizon", "horizon": "minutes to a month", "direction": "", "conditions": "", "testable": "yes - horizon analysis in the paper", "speaker_confidence": "high", "time_bound": "no", "reader": "map", "quote_check": "exact"},
+  {"claim_id": "MT064-C18-R3", "chunk": "C18", "speaker": "Rob Carver", "quote": "volatility only matters in as much as it will reduce how much money you have at the end of time", "claim": "In his terminal-wealth framework volatility matters only through how much money is left at the end, so upside volatility has no separate value and Sharpe maximisation is justified.", "mechanism": "other", "asset_class": "multi-asset", "indicator": "terminal wealth, Sharpe, skew", "horizon": "investment horizon", "direction": "", "conditions": "risk-neutral terminal wealth objective", "testable": "partly - simulation", "speaker_confidence": "high", "time_bound": "no", "reader": "map", "quote_check": "exact"},
+  {"claim_id": "MT064-C21-R4", "chunk": "C21", "speaker": "Rob Carver", "quote": "i'm going to assume that that he is successful in his endeavors", "claim": "Rob's analysis of Trump's economic consequences assumes Trump succeeds in doing what he has said and appears to be trying to do.", "mechanism": "policy_reaction", "asset_class": "multi-asset", "indicator": "Trump policy implementation", "horizon": "four years", "direction": "", "conditions": "policies are implemented as stated", "testable": "no", "speaker_confidence": "high", "time_bound": "yes", "reader": "map", "quote_check": "exact"}
+ ]
+}
