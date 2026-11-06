@@ -1,0 +1,499 @@
+{
+ "source_id": "MT140",
+ "episode_thesis": "Rob Carver argues that slow, diversified systematic futures trading (trend, carry, skew, slow mean reversion, relative value) earns risk premia rather than exploiting inefficiencies, so the main edge is discipline: skepticism about backtests, pushing all model choice into explicit rather than implicit fitting, using several performance metrics instead of Sharpe alone, and trading slowly enough that alpha decay is irrelevant and costs stay low. He also contrasts the collaborative, review-heavy research culture of Man AHL with pod-shop incentives.",
+ "speakers": [
+  {
+   "name": "Robert Carver",
+   "role": "Independent systematic futures trader, author, ex-Man AHL head of fixed income",
+   "speaker_note": "Single guest; clean attribution. Host Ethan (Odds on Open) only asks questions and offers the LTCM example and the consolidation premise, which Carver corrects (C12-X1), so the host is not mapped as a speaker with views.",
+   "fingerprint": [
+    "trend_following",
+    "carry",
+    "value_mean_reversion",
+    "research_robustness_overfitting",
+    "position_sizing_vol_target",
+    "diversification_risk_parity",
+    "costs_execution",
+    "short_term_systematic"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "His systematic returns are compensation for bearing risk (risk premia), not exploitation of market inefficiencies, because the methods are public and long-established.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument from the public availability and age of the strategies he trades; no data given.",
+     "claim_ids": [
+      "MT140-C09-1"
+     ]
+    },
+    {
+     "premise": "Overconfidence is the root of nearly all quant errors: trusting the backtest too much, assuming data are clean, or missing forward bias in prices. Skepticism is therefore the most valuable trait.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own career and observation of others' errors.",
+     "claim_ids": [
+      "MT140-C04-1"
+     ]
+    },
+    {
+     "premise": "There is no ideal performance metric. Sharpe assumes symmetric, roughly normal returns and misleads for negatively skewed 'LTCM-type' strategies (option selling, CDS premium); it is still a fine quick metric for leveraged futures traders, but geometric return matters for those who cannot lever.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "LTCM example (Sharpe above 3 from memory, unchecked) plus a hand-waving argument that Sharpe maximisation equals geometric return maximisation only under normality and free leverage.",
+     "claim_ids": [
+      "MT140-C05-1",
+      "MT140-C05-2",
+      "MT140-C05-4"
+     ]
+    },
+    {
+     "premise": "LTCM failed less from a flawed ratio than from too-short data that omitted the outliers (peso problem), which hid how much leverage was too much.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical case; any metric including the outliers would have shown the leverage was excessive.",
+     "claim_ids": [
+      "MT140-C05-3"
+     ]
+    },
+    {
+     "premise": "Alpha decay speed depends on trading speed: high-frequency alpha has a half-life of months and is visible in real time, while slow systems decay over decades and the decay cannot be told apart from noise.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Statistical-power argument; basic trend following has decayed gradually over 50-60 years but not provably to zero.",
+     "claim_ids": [
+      "MT140-C07-3",
+      "MT140-C07-4",
+      "MT140-C08-1"
+     ]
+    },
+    {
+     "premise": "Short-horizon mean reversion exists but does not survive trading costs, while longer-horizon mean reversion does show up in asset prices.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own testing; no numbers.",
+     "claim_ids": [
+      "MT140-C08-9",
+      "MT140-C08-8"
+     ]
+    },
+    {
+     "premise": "Markets pay a risk premium for holding assets that have recently fallen sharply (negative-skew assets), so being long them is rewarded.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Asserted as general market behaviour, no data in the talk.",
+     "claim_ids": [
+      "MT140-C08-13"
+     ]
+    },
+    {
+     "premise": "Crude portfolio construction works as well as sophisticated optimisation, so complexity there is not worth it.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own practice.",
+     "claim_ids": [
+      "MT140-C10-3"
+     ]
+    },
+    {
+     "premise": "Beliefs about what background makes a good quant partly reflect path dependence in who successful firms hired. Required skills differ along the frequency spectrum.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Thought experiment (all-Yale-historians firm).",
+     "claim_ids": [
+      "MT140-C03-1",
+      "MT140-C03-2"
+     ]
+    },
+    {
+     "premise": "A firm's culture follows its founders, and incentive structures (pod pay-outs versus collaborative salary) select different kinds of people; people motivated mainly by money are not those you want to hire.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Own experience at AHL and knowledge of pod shops.",
+     "claim_ids": [
+      "MT140-C02-X1",
+      "MT140-C12-1",
+      "MT140-C13-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "How implicit fitting and an unrealistic backtest lead to blow-ups",
+     "steps": [
+      {
+       "from": "Run a proper explicit parameter fit with in-sample/out-of-sample or rolling windows",
+       "to": "Result is still disappointing",
+       "why": "Explicit fitting only guards against the part of fitting that is coded",
+       "claim_ids": [
+        "MT140-C06-1"
+       ]
+      },
+      {
+       "from": "Researcher swaps models, removes markets or adds layers after seeing the backtest",
+       "to": "Implicit fitting: choices made with knowledge of future performance",
+       "why": "A live trader has no access to future performance, so the improvement is not real",
+       "claim_ids": [
+        "MT140-C06-2"
+       ]
+      },
+      {
+       "from": "Implicit fitting inflates backtest performance",
+       "to": "Overstated Sharpe and unrealistic expectations",
+       "why": "Weights shift to the winner with hindsight",
+       "claim_ids": [
+        "MT140-C07-1"
+       ]
+      },
+      {
+       "from": "Unrealistic performance expectations",
+       "to": "Excess leverage or too-fast trading with high costs",
+       "why": "Past returns look high at low risk, so leverage looks safe and costs affordable",
+       "claim_ids": [
+        "MT140-C07-2"
+       ]
+      },
+      {
+       "from": "Data history too short to include outliers (peso problem)",
+       "to": "Leverage set too high; collapse as at LTCM",
+       "why": "Metrics computed without the outliers do not show the tail",
+       "claim_ids": [
+        "MT140-C05-3"
+       ]
+      }
+     ],
+     "evidence": "LTCM case; his own career errors. No quantified study.",
+     "fails_when": "Not stated for the chain itself; he notes that even the bootstrap approach would not have helped LTCM if the bad outliers were absent from the data.",
+     "claim_ids": [
+      "MT140-C04-1",
+      "MT140-C05-5"
+     ]
+    },
+    {
+     "topic": "Why slow trading removes the need to monitor alpha decay",
+     "steps": [
+      {
+       "from": "Fast strategies have high performance",
+       "to": "Decay is statistically visible within weeks",
+       "why": "High signal-to-noise lets statistics detect the change",
+       "claim_ids": [
+        "MT140-C07-3"
+       ]
+      },
+      {
+       "from": "Slow strategies have modest Sharpe and decay over decades",
+       "to": "Decay cannot be separated from noise",
+       "why": "Statistical power too low",
+       "claim_ids": [
+        "MT140-C07-4",
+        "MT140-C08-1"
+       ]
+      },
+      {
+       "from": "Trading slowly with many rules",
+       "to": "Less need for constant new signals and less exposure to decay of any one rule",
+       "why": "Diversification across trading rules; costs stay low",
+       "claim_ids": [
+        "MT140-C08-2",
+        "MT140-C10-1"
+       ]
+      }
+     ],
+     "evidence": "50-60 years of trend following showing only gradual decay.",
+     "fails_when": "He concedes trend following may already have stopped working for 10 years without anyone being able to tell.",
+     "claim_ids": [
+      "MT140-C08-1"
+     ]
+    },
+    {
+     "topic": "Institutional incentives drive signal proliferation",
+     "steps": [
+      {
+       "from": "Researchers at an institution must justify their salary",
+       "to": "They keep generating new ideas even when the slow system does not need them",
+       "why": "Incentive to show output",
+       "claim_ids": [
+        "MT140-C10-X1"
+       ]
+      },
+      {
+       "from": "More ideas and low strike rate (about 1 in 5 ideas implemented)",
+       "to": "Higher risk of implementing overfitted signals",
+       "why": "Better to fail than to overfit",
+       "claim_ids": [
+        "MT140-C10-1"
+       ]
+      },
+      {
+       "from": "Formal review: library, seminars, risk and CIO veto",
+       "to": "Fewer flawed strategies reach production, although some still did",
+       "why": "Cross-functional input catches practical and legal flaws",
+       "claim_ids": [
+        "MT140-C11-1",
+        "MT140-C11-2",
+        "MT140-C11-X1"
+       ]
+      }
+     ],
+     "evidence": "Own experience at AHL.",
+     "fails_when": "Mistakes still happened: strategies were implemented that should not have been.",
+     "claim_ids": [
+      "MT140-C11-2"
+     ]
+    },
+    {
+     "topic": "Pod-shop pay versus collaborative culture and talent",
+     "steps": [
+      {
+       "from": "Pods pay a larger share of revenue with eat-what-you-kill rules",
+       "to": "They attract money-motivated people",
+       "why": "Higher take-home for profitable teams",
+       "claim_ids": [
+        "MT140-C12-1"
+       ]
+      },
+      {
+       "from": "Beyond a certain pay level extra money stops mattering to most people",
+       "to": "Culture-motivated people stay at collaborative firms, and these are the better hires",
+       "why": "Secondary role of money",
+       "claim_ids": [
+        "MT140-C13-X1"
+       ]
+      },
+      {
+       "from": "Pod teams compete and withhold information",
+       "to": "Little shared research",
+       "why": "Silos by design",
+       "claim_ids": [
+        "MT140-C11-X1"
+       ]
+      }
+     ],
+     "evidence": "Anecdote, and a parallel with AI researchers offered nine-figure packages.",
+     "fails_when": "Not stated; he says both approaches have strengths.",
+     "claim_ids": [
+      "MT140-C12-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Run a suite of trading rules: acceleration (trend on trend), asset-class trend, breakout, carry (futures curve slope), momentum (EWMA crossover), very slow mean reversion, normalised momentum, relative carry, relative momentum within asset classes, and a skew rule.",
+     "why": "Diversifying across rules reduces exposure to pure trend decay.",
+     "claim_ids": [
+      "MT140-C08-2",
+      "MT140-C08-3",
+      "MT140-C08-4",
+      "MT140-C08-5",
+      "MT140-C08-6",
+      "MT140-C08-7",
+      "MT140-C08-8",
+      "MT140-C08-10",
+      "MT140-C08-11",
+      "MT140-C08-12",
+      "MT140-C08-13"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Leave out short-horizon mean reversion because it does not survive costs.",
+     "why": "Net-of-cost results.",
+     "claim_ids": [
+      "MT140-C08-9"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Add about one new rule a year or less; roughly 20% of researched ideas are implemented.",
+     "why": "Slow decay means no need for more; low strike rate; failing is better than overfitting.",
+     "claim_ids": [
+      "MT140-C10-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Put all model and parameter choices into one explicit procedure where weights change only as evidence accrues; use rolling or expanding windows and weight parameter sets instead of picking one.",
+     "why": "Avoids implicit fitting and produces a realistic backtest.",
+     "claim_ids": [
+      "MT140-C06-1",
+      "MT140-C06-2",
+      "MT140-C07-1",
+      "MT140-C07-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Evaluate by Sharpe for quick checks, geometric return for unlevered investors, and a bootstrapped distribution of geometric return judged at a conservative percentile, not the median.",
+     "why": "No metric is ideal; the distribution reflects uncertainty and tails.",
+     "claim_ids": [
+      "MT140-C05-1",
+      "MT140-C05-4",
+      "MT140-C05-5"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Spend little time on new signals; research mostly abstract or academic topics. The main innovation of the last decade was trading over 200 futures with a small account.",
+     "why": "Slow system with high alpha needs few changes.",
+     "claim_ids": [
+      "MT140-C10-1",
+      "MT140-C10-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Use crude portfolio construction rather than sophisticated optimisation.",
+     "why": "It works as well.",
+     "claim_ids": [
+      "MT140-C10-3"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Do not look at P&L (he turned off the daily P&L email); if looking, view percentages not money.",
+     "why": "Avoids emotional reaction; experience of past losses (2008, COVID, April 2025 tariffs) also helps.",
+     "claim_ids": [
+      "MT140-C01-1",
+      "MT140-C02-1",
+      "MT140-C02-2"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Do not monitor alpha decay for slow strategies; trade slowly enough to ignore it.",
+     "why": "Decay is undetectable against noise.",
+     "claim_ids": [
+      "MT140-C07-4",
+      "MT140-C08-1",
+      "MT140-C08-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "AHL process: shared research library, seminars with traders and middle office, then a formal proposal with veto by head of risk and CIO; a rejection means the proposer did not do the homework.",
+     "why": "Avoid redoing work and catch obvious flaws, including legal ones.",
+     "claim_ids": [
+      "MT140-C11-1",
+      "MT140-C11-2"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Hire for programming, data skill, market understanding and skepticism; the mix depends on trading frequency.",
+     "why": "Low frequency macro needs broader knowledge than high frequency.",
+     "claim_ids": [
+      "MT140-C03-1",
+      "MT140-C03-2",
+      "MT140-C04-1",
+      "MT140-C02-X1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Career view: prefer getting an industry job to trading your own money, since trading own money almost never leads to being hired by a hedge fund.",
+     "why": "Bootstrapping capital is much harder; the path essentially does not exist.",
+     "claim_ids": [
+      "MT140-C09-R1"
+     ]
+    }
+   ],
+   "evidence_style": "Experience and first principles: personal track record and anecdotes from AHL, LTCM as a case study, hand-waving theoretical arguments (Sharpe vs geometric return), and bootstrapping for performance uncertainty. Few numbers; the LTCM Sharpe figure is explicitly from memory.",
+   "current_views": [
+    {
+     "view": "Basic trend following has probably decayed gradually over 50-60 years, but it is too soon to switch it off, and it may already have stopped working without anyone being able to tell.",
+     "as_of": "2025-07-24",
+     "reasoning": "Low Sharpe makes decay statistically undetectable.",
+     "claim_ids": [
+      "MT140-C07-4",
+      "MT140-C08-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Whether pod-shop consolidation applies to Man AHL",
+   "positions": [
+    {
+     "speaker": "Ethan (host, premise)",
+     "position": "Capital and talent may consolidate in Citadel, Millennium and similar large multi-managers, grouping Man with them.",
+     "claim_ids": []
+    },
+    {
+     "speaker": "Robert Carver",
+     "position": "Man is a listed company owning non-pod funds with about 100-120 front-office staff in AHL; the pod pay structure attracts different people.",
+     "claim_ids": [
+      "MT140-C12-X1",
+      "MT140-C12-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "The $1bn loss figure is the whole-fund loss a newcomer commented on; Carver's own fixed income pool lost about 10-11%. The two are not equivalent, and the ledger correction should be applied.",
+   "claim_ids": [
+    "MT140-C01-1"
+   ]
+  },
+  {
+   "issue": "LTCM Sharpe above 3 is from memory and unchecked by the speaker himself.",
+   "claim_ids": [
+    "MT140-C05-1"
+   ]
+  },
+  {
+   "issue": "He says 'forever is longer than my lifetime' about alpha decay yet concedes trend following may already have stopped working; unfalsifiable by his own account.",
+   "claim_ids": [
+    "MT140-C07-4",
+    "MT140-C08-1"
+   ]
+  },
+  {
+   "issue": "The claim that the market pays a premium for assets with recent sharp falls is asserted without evidence, and it sits alongside a trend rule that would be short those assets.",
+   "claim_ids": [
+    "MT140-C08-13",
+    "MT140-C08-7"
+   ]
+  },
+  {
+   "issue": "Very slow mean reversion is the opposite of the faster relative momentum rule; the horizon at which each applies is not specified.",
+   "claim_ids": [
+    "MT140-C08-8",
+    "MT140-C08-12"
+   ]
+  },
+  {
+   "issue": "He says he finds no inefficiency but also says the alpha of low-frequency strategies is 'quite high'; the size of the premium is not quantified.",
+   "claim_ids": [
+    "MT140-C09-1",
+    "MT140-C10-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Carver gives no market forecast. The inputs his rules read are price trends and acceleration, futures curve slope (carry), multi-year relative performance within asset classes, and recent extreme falls (skew), all over slow horizons of months to years. Slow horizons are chosen so that costs and decay do not dominate.",
+ "reader_inferences": [
+  "(reader) Carver's view that returns are risk premia implies that crowding or a lower premium, not arbitrage, is the failure mode of his rules, but he does not discuss crowding.",
+  "(reader) His insistence on a single explicit fitting procedure suggests published backtests of systematic funds should be discounted when the research process is not described as walk-forward."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT140-C09-R1",
+   "chunk": "C09",
+   "speaker": "Robert Carver",
+   "quote": "you're likely to be more successful if you can get a job in the industry to be honest",
+   "claim": "Carver thinks a job in the industry is more likely to succeed than bootstrapping your own capital, and trading your own money almost never leads to a hedge-fund hire.",
+   "mechanism": "career path",
+   "asset_class": "n/a",
+   "indicator": "",
+   "horizon": "career",
+   "direction": "n/a",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

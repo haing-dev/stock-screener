@@ -1,0 +1,174 @@
+{
+ "source_id": "MT116",
+ "episode_thesis": "Nick Baltas (systematic strategist) argues that trend following works because information is digested slowly, and that recent dispersion between trend programs (slow and small-universe programs winning for 3-4 years, faster and broader ones lagging) came from V-shaped reversals and a handful of trending markets, not from a better design; so one should not change trend design in response to recent out- or under-performance. He then reviews three December 2025 papers (a consultant primer on trend, nonlinear time-series momentum with sigmoid/tail-flattening position sizing, and ATP's theory that a trend follower earns crisis alpha even with iid returns).",
+ "speakers": [
+  {
+   "name": "Nick Baltas",
+   "role": "Systematic strategist / QIS and trend-following product developer (London); regular Systematic Investor co-host",
+   "speaker_note": "Captions render the names variously (Bolters, Kostrup Larsen). Three ledger claims carry corrections moving the speaker to the host (C04-1, C07-2, C11-1); those are applied below. Turns in C07-C08 interleave; the 2008 56-day-lookback remark and the sector-concentration analysis (fixed income) are the host's.",
+   "fingerprint": ["trend_following", "research_robustness_overfitting", "position_sizing_vol_target", "portfolio_construction_stacking", "regime_detection", "crisis_alpha_convexity", "behavioral_sentiment", "short_term_systematic"],
+   "worldview_premises": [
+    {"premise": "Trend and momentum exist because information is digested slowly, so a continued price move in one direction is the signal.", "type": "behavioural", "stated": "stated", "support": "Stated as the conceptual definition; no data offered.", "claim_ids": ["MT116-C02-1"]},
+    {"premise": "News and narrative data produced before prices fully move may provide a momentum signal ahead of price-based trend signals, and non-price information could improve signal-to-noise measurement.", "type": "theoretical", "stated": "stated", "support": "Thinking out loud; he calls it an experiment with a narrative-data vendor and says he does not have an answer.", "claim_ids": ["MT116-C02-2", "MT116-C03-2"]},
+    {"premise": "Reactions to a macro theme are conditional (equities react to inflation only beyond a threshold), so narrative intensity does not guarantee price response and exposure should be measured conditionally.", "type": "empirical", "stated": "stated", "support": "Example of inflation and equities; no test cited.", "claim_ids": ["MT116-C03-1"]},
+    {"premise": "Dispersion between trend programs in 2025 came mainly from universe breadth and speed, even though programs of different speeds stayed highly correlated because the same few markets (equities, precious metals) won and the same markets (rates) lost.", "type": "empirical", "stated": "stated", "support": "Scaled-correlation analysis for outlier moves; 25-year ranking exercise; hunch that 2025 was a very high dispersion year.", "claim_ids": ["MT116-C04-2", "MT116-C04-3"]},
+    {"premise": "If volatilities and correlations are stable, lookback speed creates more performance dispersion than sizing method (dynamic vs static, correlation use).", "type": "empirical", "stated": "stated", "support": "Explicitly an untested hunch ('I haven't tested it').", "claim_ids": ["MT116-C06-1", "MT116-C06-R1"]},
+    {"premise": "Recent dispersion came from V-shaped reversals (mean reversion beyond trend dynamics), not from longer-duration trends being better.", "type": "empirical", "stated": "stated", "support": "Interpretation of the speed/universe ranking grid; examples SVB, dollar-yen and Liberation Day.", "claim_ids": ["MT116-C08-2", "MT116-C06-2"]},
+    {"premise": "Over the last three years slow trend speeds (about 12 months, second best 9 months) ranked best in the 25-year annual ranking, and over about four years a small DBMF-like universe outperformed a broad 80-100 market universe; neither has happened before in that history.", "type": "empirical", "stated": "stated", "support": "Own ranking exercise on 25 years of data with an independent anchor universe.", "claim_ids": ["MT116-C06-2", "MT116-C06-3"]},
+    {"premise": "In sustained-trend years (2022: commodities early, rates all year, dollar from summer to November; 2008) every trend speed makes money, so the ranking of speeds matters little there.", "type": "empirical", "stated": "stated", "support": "Entry a month earlier or later shifts return from about +40% to +35%; 2008 best lookback about 56 days with every lookback positive (host).", "claim_ids": ["MT116-C08-X1", "MT116-C07-X2", "MT116-C07-2"]},
+    {"premise": "Ranking speeds or universes by annual return is incomplete without the return spread between top and bottom ranks, since the spread may be too small to matter.", "type": "theoretical", "stated": "stated", "support": "Self-critique of the grid; plans to add spread.", "claim_ids": ["MT116-C08-X2"]},
+    {"premise": "Trend following keeps a classical payoff shape: gains from a handful of markets and many small losses (host), and a convex smile versus the market.", "type": "empirical", "stated": "stated", "support": "2025 return distribution; ATP paper charts.", "claim_ids": ["MT116-C05-1", "MT116-C15-3"]},
+    {"premise": "Trend following can profit even when returns are independent if volatility is serially dependent, and conditional on a deep drawdown beyond a threshold a trend follower earns a positive expected payoff, which explains crisis alpha without serial correlation.", "type": "theoretical", "stated": "stated", "support": "ATP paper and earlier conditional-volatility literature, presented as a reviewer.", "claim_ids": ["MT116-C14-2", "MT116-C15-1", "MT116-C14-3"]},
+    {"premise": "Trend following profit has two parts: a directional component (average position aligned with positive risk premia) and a timing component (turning in line with the price process); the old doubt that trend only harvests equity and bond premia is gone.", "type": "theoretical", "stated": "stated", "support": "ATP paper; memory of earlier criticism.", "claim_ids": ["MT116-C15-2", "MT116-C15-X1"]},
+    {"premise": "Past returns continue to predict future returns near zero but revert in the extremes, so the return-to-position map is nonlinear (sigmoid) rather than binary or linear.", "type": "empirical", "stated": "stated", "support": "Nonlinear time-series momentum paper (neural network finds tail flattening and reversion) and his own industry work.", "claim_ids": ["MT116-C13-1", "MT116-C13-3", "MT116-C12-2"]},
+    {"premise": "Investors feel losses more than gains (concave utility), so allocations to trend are lost to behaviour during drawdowns; non-trend components help keep investors allocated.", "type": "behavioural", "stated": "stated", "support": "Economic argument; the consultant paper emphasises behaviour (host recalls from memory).", "claim_ids": ["MT116-C10-3", "MT116-C11-1"]},
+    {"premise": "Trend exposure is now accessible through CTAs, mutual funds, UCITS, ETFs and QIS, signalling mainstream demand.", "type": "institutional", "stated": "stated", "support": "Observation in the consultant paper.", "claim_ids": ["MT116-C10-4"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Why trend works: slow digestion of information", "steps": [
+      {"from": "News and narrative information is produced and disseminated", "to": "prices adjust slowly as it is digested", "why": "Slow digestion of information creates a persistent price path.", "claim_ids": ["MT116-C02-1"]},
+      {"from": "Persistent price path", "to": "trend signal (follow the established move)", "why": "Continued digestion implies continued move.", "claim_ids": ["MT116-C02-1"]},
+      {"from": "Capturing narrative data before price formation", "to": "possible momentum signal before the trend shows in prices", "why": "Information precedes price response.", "claim_ids": ["MT116-C02-2"]}],
+     "evidence": "None; experiment with a narrative-data vendor.", "fails_when": "Narrative intensity does not always move prices (Japan rate hikes while the yen stayed weak, raised by the host); effect only above a threshold.", "claim_ids": ["MT116-C02-1", "MT116-C02-2", "MT116-C03-1", "MT116-C02-3"]},
+    {"topic": "Source of 2025 dispersion across trend programs", "steps": [
+      {"from": "Few markets trended strongly (equities, precious metals) while rates failed", "to": "programs of all speeds were highly correlated in outlier moves", "why": "Same winners and losers drove all speeds.", "claim_ids": ["MT116-C04-3"]},
+      {"from": "Different universes and speeds capture or miss those few winners", "to": "wide dispersion of outcomes", "why": "Faster or more diversified programs diluted the few winners with noise.", "claim_ids": ["MT116-C04-2"]},
+      {"from": "V-shaped reversals (April 2025, SVB, dollar-yen)", "to": "slow programs and small universes outperform", "why": "Reversion beyond trend dynamics punishes fast signals.", "claim_ids": ["MT116-C08-2", "MT116-C06-2", "MT116-C06-3"]}],
+     "evidence": "25-year annual ranking of speeds and universes versus a DBMF-like anchor; host's sector contribution check.", "fails_when": "In sustained-trend years (2022, 2008) all speeds profit and ranking flips; small universes ranked worst each year from the tech bubble aftermath to 2009 (host).", "claim_ids": ["MT116-C04-2", "MT116-C04-3", "MT116-C06-2", "MT116-C06-3", "MT116-C07-1", "MT116-C08-X1", "MT116-C07-2"]},
+    {"topic": "Why not to change design after out/underperformance", "steps": [
+      {"from": "Recent ranking favours slow speed and small universe", "to": "temptation to change design", "why": "Recency.", "claim_ids": ["MT116-C06-2"]},
+      {"from": "Cause is V-shape reversion not longer trends", "to": "no case for switching speed or universe", "why": "The pattern is regime-specific; changing in 2022 to a fast design would have been the wrong decision at the wrong time.", "claim_ids": ["MT116-C08-1", "MT116-C08-2"]},
+      {"from": "Past sector leader (rates for 20 years) fails after 2022", "to": "concentrating on the past winner is risky; full-breadth portfolios are more intuitive", "why": "Sector contribution rotates though all sectors were profitable over 20 years.", "claim_ids": ["MT116-C08-3", "MT116-C09-1"]}],
+     "evidence": "Ranking grid; host's sector contribution analysis; replicator out-performance caution.", "fails_when": "Not stated; Baltas concedes his reactive, diversified mindset cost performance recently but 'would not claim it was wrong'.", "claim_ids": ["MT116-C08-1", "MT116-C08-3", "MT116-C09-1", "MT116-C07-X1", "MT116-C07-R1"]},
+    {"topic": "Binary to linear to sigmoid position sizing", "steps": [
+      {"from": "Binary signal (long if up, short if down)", "to": "wins only by an early start but flips full positions around zero and accrues large costs", "why": "No scaling by signal strength.", "claim_ids": ["MT116-C12-3"]},
+      {"from": "Scale position linearly with signal magnitude", "to": "small bets for weak signals, better net of costs", "why": "Signal near zero has low confidence.", "claim_ids": ["MT116-C12-1"]},
+      {"from": "Extreme signals (e.g. three Sharpe units of past return)", "to": "cap or flatten exposure (sigmoid)", "why": "Estimation noise and reversion make extreme signals less reliable.", "claim_ids": ["MT116-C12-2", "MT116-C13-1"]},
+      {"from": "Let a neural network learn the transfer function per asset class", "to": "same tail flattening and some reversion at extremes", "why": "Data confirm the parametric design.", "claim_ids": ["MT116-C11-2", "MT116-C13-3", "MT116-C14-1"]}],
+     "evidence": "Nonlinear time-series momentum paper (December 2025) and empirical analysis he knows from industry.", "fails_when": "Whether the neural net's extra complexity beats a parametric sigmoid is open; sign flips at extremes mix in a reversion engine better run separately.", "claim_ids": ["MT116-C12-1", "MT116-C12-2", "MT116-C12-3", "MT116-C13-1", "MT116-C13-2", "MT116-C13-3", "MT116-C14-1", "MT116-C11-2"]},
+    {"topic": "Crisis alpha with iid returns (ATP paper)", "steps": [
+      {"from": "Log returns follow a stochastic process with a trend signal that sums past returns", "to": "derive expected payoff conditional on cumulative past return over a horizon", "why": "Mathematical model.", "claim_ids": ["MT116-C14-3"]},
+      {"from": "Even with iid returns, observed deep drawdown beyond a threshold", "to": "trend follower expects positive payoff", "why": "Conditional on a draw-down, the signal and the timing component align.", "claim_ids": ["MT116-C15-1", "MT116-C15-2"]},
+      {"from": "Payoff versus market", "to": "convex smile shape", "why": "Gains in large moves either way.", "claim_ids": ["MT116-C15-3"]}],
+     "evidence": "Theoretical paper; Baltas says he went quickly and it is math-heavy.", "fails_when": "Not discussed.", "claim_ids": ["MT116-C14-3", "MT116-C15-1", "MT116-C15-2", "MT116-C15-3", "MT116-C14-2"]},
+    {"topic": "Non-trend signals keep investors allocated to trend", "steps": [
+      {"from": "Mean reversion, micro indicators and carry trades do well in 2025 and diversify trend", "to": "programs including them behaved differently from pure trend", "why": "Diversifying signals.", "claim_ids": ["MT116-C10-2"]},
+      {"from": "Investors feel losses more than gains", "to": "drawdowns in trend lead to cutting allocation", "why": "Concave utility.", "claim_ids": ["MT116-C10-3", "MT116-C11-1"]},
+      {"from": "Non-trend components smooth the drawdowns", "to": "allocation to trend can be maintained", "why": "Makes the investment process more complete.", "claim_ids": ["MT116-C10-3"]}],
+     "evidence": "2025 outcome and investor behaviour reasoning.", "fails_when": "Not stated.", "claim_ids": ["MT116-C10-2", "MT116-C10-3", "MT116-C11-1"]}
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Rank annual performance of trend speeds (about 2-month to 12-month half-life) and universes (concentrated DBMF-like to 80-100 markets, plus medium) over 25 years and add the spread between top and bottom ranks.", "why": "Understand the impact of design choices; ranking alone is incomplete.", "claim_ids": ["MT116-C06-2", "MT116-C06-3", "MT116-C08-X2"]},
+    {"element": "universe", "practice": "Build medium-sized universes thoughtfully (a few major ex-US equity indices, more tenors in rates) rather than many currencies and few equities; keep full breadth rather than concentrating.", "why": "Sector contribution rotates; diversification is the intuitive design.", "claim_ids": ["MT116-C06-4", "MT116-C09-1"]},
+    {"element": "portfolio", "practice": "Dynamic allocation across sectors, tilting toward sectors with positive sector-return trend.", "why": "Take the opportunity set that delivers, conditional on intertemporal trend signals.", "claim_ids": ["MT116-C09-2"]},
+    {"element": "signal", "practice": "Scale exposure linearly with signal strength and cap at extremes (sigmoid); keep the sign of the signal so the strategy remains trend; run reversion as a separate engine.", "why": "Lower costs, handling estimation noise at extremes, cleaner attribution.", "claim_ids": ["MT116-C12-1", "MT116-C12-2", "MT116-C12-3", "MT116-C13-2"]},
+    {"element": "signal", "practice": "Add diversifying non-trend signals (mean reversion, micro indicators, carry) to help maintain allocations to trend.", "why": "Behavioural: investors abandon trend in drawdowns.", "claim_ids": ["MT116-C10-2", "MT116-C10-3"]},
+    {"element": "research", "practice": "Explore narrative data and conditional exposure measures to estimate signal-to-noise beyond return divided by volatility.", "why": "Prices and volatilities may be exhausted; V-shapes need a signal-to-noise gauge.", "claim_ids": ["MT116-C03-2", "MT116-C02-2", "MT116-C03-1"]},
+    {"element": "risk", "practice": "Do not alter speed or universe in reaction to out- or under-performance; keep discipline and trust the process; be reactive and diversified by design.", "why": "Changes are made at the wrong time; the cause of recent dispersion is V-shape reversion.", "claim_ids": ["MT116-C08-1", "MT116-C08-2", "MT116-C07-R1"]},
+    {"element": "other", "practice": "Program design levers to compare: universe, speed, non-trend signals, stop-loss and profit-taking, static vs dynamic risk allocation, volatility-targeting leverage.", "why": "These are the differences that matter between programs (consultant paper list).", "claim_ids": ["MT116-C10-1"]},
+    {"element": "risk", "practice": "Frame defensive strategies along a range from reactive high-bias costly tail hedges to carry-generating strategies, with trend as the intermediate component (RMS first and second responders).", "why": "Know when to expect positive performance in crises.", "claim_ids": ["MT116-C09-3"]}
+   ],
+   "evidence_style": "Data-driven design diagnostics (25-year ranking grids, scaled-correlation analysis) combined with academic papers read for theory; acknowledges untested hunches and flags limits (spread missing from the ranking); prefers process discipline to recency.",
+   "current_views": [
+    {"view": "January 2026 trend returns were about 4-6% (at 15% volatility, depending on speed), driven mainly by equities and then commodities, continuing the second half of 2025.", "as_of": "2026-01-15", "reasoning": "Year-to-date numbers he pulled during the show.", "claim_ids": ["MT116-C06-X1"]},
+    {"view": "2025 was possibly one of the largest dispersion years: gains from equities and precious metals, losses in rates; slow speeds and small universes won, but this is a V-shape effect not evidence for longer trends.", "as_of": "2026-01-15", "reasoning": "Ranking grid and scaled correlations.", "claim_ids": ["MT116-C04-2", "MT116-C04-3", "MT116-C06-2", "MT116-C06-3", "MT116-C08-2"]},
+    {"view": "Do not read recent small-universe and slow-speed outperformance as a lasting lesson; stay reactive and diversified.", "as_of": "2026-01-15", "reasoning": "Regime dependence and avoidance of timing design changes.", "claim_ids": ["MT116-C08-1", "MT116-C07-R1"]},
+    {"view": "Mean reversion, micro indicators and carry trades did well in 2025 and diversified trend.", "as_of": "2025", "reasoning": "Observed results; diversifying signals.", "claim_ids": ["MT116-C10-2"]},
+    {"view": "The nonlinear time-series momentum paper is not completely new; its contribution is letting a neural network find the shape; incremental complexity versus a sigmoid is an open question.", "as_of": "2026-01-15", "reasoning": "Findings agree with the parametric theory.", "claim_ids": ["MT116-C11-2", "MT116-C14-1", "MT116-C13-3"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host, Top Traders Unplugged; hedge fund manager (trend follower)",
+   "speaker_note": "Ledger spells the name Neils Kostrup Larsen. Three claims corrected to him: C04-1 (seven strong months), C07-2 (2022 fastest speed ranked best, from Baltas's data), C11-1 (trend allocations fail due to investor behaviour).",
+   "fingerprint": ["trend_following", "manager_selection_allocation", "replication_indexing", "behavioral_sentiment", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {"premise": "Pure trend following carries no prediction or story and so is protected when narratives fail to show up in prices; he is 'doubling down' on this discipline.", "type": "experience", "stated": "stated", "support": "Japan rate hikes while the yen did nothing; 2025 price action.", "claim_ids": ["MT116-C02-3"]},
+    {"premise": "Trend conditions were strong for seven consecutive months into January 2026, driven by metals and equities.", "type": "empirical", "stated": "stated", "support": "Industry returns.", "claim_ids": ["MT116-C04-1"]},
+    {"premise": "A year where gains come from a handful of markets with many small losses is classic trend following, so 2025 was typical in structure.", "type": "experience", "stated": "stated", "support": "Observation of manager returns.", "claim_ids": ["MT116-C05-1"]},
+    {"premise": "Small-universe trend portfolios were the worst performer each year for about seven years from the tech bubble aftermath to 2009, so recent outperformance by replicators using small universes should not be extrapolated.", "type": "empirical", "stated": "stated", "support": "Reading Baltas's ranking grid; says it has flipped between small and super-large (18 markets) since 2016.", "claim_ids": ["MT116-C07-1", "MT116-C07-X1"]},
+    {"premise": "After 2022 many concluded to trade mostly fixed income because it had been the best sector for 20 years, but it has been the worst sector since 2022; yet every sector has been profitable over about 20 years and contribution rotates, so full breadth is more intuitive.", "type": "empirical", "stated": "stated", "support": "His own sector contribution analysis from data he has access to.", "claim_ids": ["MT116-C08-3", "MT116-C09-1"]},
+    {"premise": "Trend allocations often fail because of investors' reaction to drawdowns rather than the strategy itself.", "type": "behavioural", "stated": "stated", "support": "Recalled from the consultant paper from memory.", "claim_ids": ["MT116-C11-1"]},
+    {"premise": "In 2008 the best single lookback was about 56 days but every lookback made money, so the best-speed ranking matters little in strong crisis trends; in 2022 the fastest speeds ranked best.", "type": "empirical", "stated": "stated", "support": "His firm's own past analysis and Baltas's grid.", "claim_ids": ["MT116-C07-X2", "MT116-C07-2"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Replicator outperformance versus long history", "steps": [
+      {"from": "Replicators use small universes", "to": "outperformed the CTA index over the last three to five years", "why": "Small universe ranked best since about 2016.", "claim_ids": ["MT116-C07-X1"]},
+      {"from": "Over 25 years small universes were worst each year from the tech bubble to 2009", "to": "recent outperformance is not generalisable", "why": "Regime dependence.", "claim_ids": ["MT116-C07-1"]}],
+     "evidence": "Baltas's independent ranking data.", "fails_when": "Not stated.", "claim_ids": ["MT116-C07-1", "MT116-C07-X1"]}
+   ],
+   "decision_process": [
+    {"element": "universe", "practice": "Prefer a fully diversified breadth of markets rather than concentrating on recent winners such as fixed income.", "why": "Sector leadership rotates.", "claim_ids": ["MT116-C09-1", "MT116-C08-3"]},
+    {"element": "research", "practice": "Track weekly trend indices (Beta 50 style, SG CTA, SG Trend, short-term traders) as an industry gauge.", "why": "Context for the discussion.", "claim_ids": ["MT116-C05-2", "MT116-C04-1"]}
+   ],
+   "evidence_style": "Industry index data, historical comparisons across 25 years, and recollection of papers; challenges conclusions drawn from short windows.",
+   "current_views": [
+    {"view": "SG CTA index up about 4.4%, SG Trend 4.67% and short-term traders 1.75% in early January 2026; equities up and fixed income only slightly up.", "as_of": "2026-01-15", "reasoning": "Index data as of Wednesday evening.", "claim_ids": ["MT116-C05-2"]},
+    {"view": "Trend conditions strong for seven months, led by metals and equities, similar to early 2025 but not necessarily a repeat.", "as_of": "2026-01-15", "reasoning": "Continuation of second-half 2025 drivers.", "claim_ids": ["MT116-C04-1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {"topic": "What to take from the recent small-universe outperformance of replicators and slow trend", "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Be cautious about extrapolating: small universes were worst each year for about seven years after the tech bubble; recent outperformance by replicators is true but regime-specific.", "claim_ids": ["MT116-C07-1", "MT116-C07-X1"]},
+    {"speaker": "Nick Baltas", "position": "Agrees the ranking pattern is unprecedented, does not claim his reactive, diversified design was wrong, and says the lesson is about V-shapes, not that a specific universe or speed is better.", "claim_ids": ["MT116-C06-3", "MT116-C08-1", "MT116-C08-2"]}]},
+  {"topic": "Static breadth vs dynamic sector tilting", "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "A fully diversified portfolio across the whole breadth of markets is the more intuitive design.", "claim_ids": ["MT116-C09-1"]},
+    {"speaker": "Nick Baltas", "position": "Favours dynamic allocation: tilt toward sectors that seem to be delivering, conditional on sector trend signals.", "claim_ids": ["MT116-C09-2"]}]},
+  {"topic": "Narrative information as a signal versus pure price following", "positions": [
+    {"speaker": "Nick Baltas", "position": "Narrative and thematic data might provide momentum ahead of prices and non-price information for signal-to-noise; he is experimenting.", "claim_ids": ["MT116-C02-2", "MT116-C03-2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Doubling down on trend following with no story and no prediction, since narratives (Japan hike and yen) can fail to appear in prices.", "claim_ids": ["MT116-C02-3"]}]}
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "The claim that speed matters more than sizing for dispersion is an untested hunch.", "claim_ids": ["MT116-C06-1", "MT116-C06-R1"]},
+  {"issue": "The ranking grid lacks the spread between top and bottom ranks, so a ranked outperformance may be economically negligible; Baltas says he will add it.", "claim_ids": ["MT116-C08-X2", "MT116-C06-2", "MT116-C06-3"]},
+  {"issue": "Baltas first explains dispersion by universe and speed, then says the cause was V-shapes rather than trend duration; the two framings are not reconciled quantitatively.", "claim_ids": ["MT116-C04-2", "MT116-C08-2"]},
+  {"issue": "The narrative-data idea has no evidence or definition; Baltas says 'I don't have an answer'.", "claim_ids": ["MT116-C02-2", "MT116-C03-2", "MT116-C03-1"]},
+  {"issue": "Host recalled from memory that the consultant paper blames investor behaviour for failed trend allocations; Baltas does not confirm it from the paper.", "claim_ids": ["MT116-C11-1", "MT116-C10-3"]},
+  {"issue": "Host reads Baltas's grid as showing fastest speeds best in 2022 while Baltas says all speeds did well in 2022; the ranking spread is not shown.", "claim_ids": ["MT116-C07-2", "MT116-C08-X1"]},
+  {"issue": "Whether the neural-network transfer function adds value over a parametric sigmoid is left open.", "claim_ids": ["MT116-C14-1", "MT116-C13-3"]},
+  {"issue": "The catalog of design differences (universe, speed, non-trend signals, stops, risk allocation, volatility targeting) is listed without evidence on their relative importance.", "claim_ids": ["MT116-C10-1"]},
+  {"issue": "The ATP finding is relayed quickly by a non-author who calls the paper math heavy; conditions and thresholds are not specified.", "claim_ids": ["MT116-C15-1", "MT116-C14-3"]}
+ ],
+ "forward_looking_inputs": "(reader) Baltas names no price-forecasting inputs; his observables are descriptive: the speed/universe performance ranking and its spread, scaled correlation among trend programs in outlier moves, V-shape reversals (mean reversion beyond trend), which few markets trend (equities, precious metals) and which fail (rates), and narrative or thematic data as a possible leading signal. The ATP result implies drawdown depth beyond a threshold as an input to expected trend payoff; the nonlinear-momentum result implies past-return magnitude (extremes) as an input to position size. Horizons are annual for rankings and unspecified for narrative signals.",
+ "reader_inferences": [
+  "(reader) The central message is a process argument: slow and small winning in 2023-2025 is attributed to V-shape reversals, so Baltas treats the pattern as regime-specific and refuses to chase it; the host's 2000-2009 counterexample is the evidence he accepts.",
+  "(reader) The nonlinear time-series momentum and ATP papers jointly imply that sizing should be concave in signal magnitude while conditional payoff convexity arises from timing; Baltas does not state this link himself.",
+  "(reader) Baltas is self-consciously a reactive, diversified, product-oriented practitioner and some of his advice (add non-trend signals so clients stay allocated) is shaped by client retention.",
+  "(reader) Several statements are corrected to the host in the ledger (seven strong months, 2022 fastest speeds, investor behaviour); the host contributes data and challenge, Baltas contributes the QIS analysis and paper reviews."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT116-C07-R1",
+   "chunk": "C07",
+   "speaker": "Nick Baltas",
+   "quote": "my mindset has always been try to be reactive, try to be diversified",
+   "claim": "Baltas describes his design philosophy as reactive and diversified, and says that although recent results did not favour it, he would not call it a wrong decision.",
+   "mechanism": "process discipline over recent performance",
+   "asset_class": "multi",
+   "indicator": "none",
+   "horizon": "unspecified",
+   "direction": "n/a",
+   "conditions": "regime where slow, concentrated programs won",
+   "testable": "no - design philosophy",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT116-C06-R1",
+   "chunk": "C06",
+   "speaker": "Nick Baltas",
+   "quote": "I haven't tested it but that's my hunt as it stands",
+   "claim": "Baltas flags that his statement that speed creates more dispersion than sizing is an untested hunch.",
+   "mechanism": "research caveat",
+   "asset_class": "multi",
+   "indicator": "dispersion of trend programs by design choice",
+   "horizon": "unspecified",
+   "direction": "n/a",
+   "conditions": "stable volatilities and correlations",
+   "testable": "yes - decompose dispersion across speed and sizing choices",
+   "speaker_confidence": "low",
+   "time_bound": "no"
+  }
+ ]
+}

@@ -1,0 +1,731 @@
+{
+ "source_id": "MT167",
+ "episode_thesis": "Nick Baltas and Niels Kaastrup-Larsen discuss how March 2026's oil and gas backwardation shock cut commodity curve carry while trend, volatility-scaled and with faster speeds winning, was roughly flat; Middle East shocks raise stagflation risk. Nick argues the objective should determine the trend universe (core for crisis alpha, broad for Sharpe), that dealer gamma and zero-DTE flows mainly affect short-term trend, that AI helps research only with human supervision, and that fundamental certainty (Fed put) hurts trend while uncertainty helps it.",
+ "speakers": [
+  {
+   "name": "Nick Baltas",
+   "role": "Co-host; QIS and systematic strategies practitioner (Man Group)",
+   "speaker_note": "Captions do not label speakers. Per ledger corrections: Nick hedges on the Vilkov et al. zero-DTE paper; the link of dealer long gamma to weak short-term trend is Niels's suggestion. The +3.55% YTD belongs to the short-term traders index and the MSCI YTD figure is garbled. The speaker of the closing Fed-put remark is taken to be Nick as in the ledger; the captions are unclear.",
+   "fingerprint": [
+    "trend_following",
+    "carry",
+    "crisis_alpha_convexity",
+    "dealer_hedging_flows",
+    "volatility_options",
+    "position_sizing_vol_target",
+    "portfolio_construction_stacking",
+    "research_robustness_overfitting"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Commodity curve carry (long back, short front) earns a risk premium shared between consumers and producers; backwardation shocks hurt it but mean-revert quickly unless the supply shock is permanent.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "History of the strategy; Q1 2026 gas and oil backwardation shocks.",
+     "claim_ids": [
+      "MT167-C02-X1",
+      "MT167-C02-1",
+      "MT167-C02-2",
+      "MT167-C03-X2"
+     ]
+    },
+    {
+     "premise": "The QIS (quantitative investment strategies) space is large, about USD 600-700 billion and multi-asset, spanning retail and institutional products.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Bloomberg article and an earlier discussion with a guest.",
+     "claim_ids": [
+      "MT167-C02-3"
+     ]
+    },
+    {
+     "premise": "Gas and oil are different risks: near-zero correlation, oil is a homogeneous complex with bidirectional tails, gas is the most volatile with a right-skewed winter-weather tail; index weights by production and liquidity ignore volatility.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Statistical correlations and portfolio-design experience.",
+     "claim_ids": [
+      "MT167-C03-2",
+      "MT167-C03-X3",
+      "MT167-C03-3"
+     ]
+    },
+    {
+     "premise": "Volatility-scaled trend captures big commodity moves but cuts risk automatically as volatility spikes; multi-strategy diversification (trend, skew, value) in commodities pays off.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "March and year-to-date results of the oil rally.",
+     "claim_ids": [
+      "MT167-C04-1",
+      "MT167-C04-2",
+      "MT167-C06-X4"
+     ]
+    },
+    {
+     "premise": "Speed leadership flips: slower speeds navigated V-shaped reversals in earlier years, but in March 2026 faster speeds outperformed.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own performance dispersion across speeds.",
+     "claim_ids": [
+      "MT167-C06-1"
+     ]
+    },
+    {
+     "premise": "How commodities are bucketed (one class vs energy, metals and ags as three) is an under-discussed philosophical divergence that drives risk budget, because intra-commodity correlation is lower than intra-equity.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Typical QIS trend books hold 10-40 commodities; roughly a quarter of risk.",
+     "claim_ids": [
+      "MT167-C06-2",
+      "MT167-C07-1"
+     ]
+    },
+    {
+     "premise": "Dealer gamma shapes intraday price behaviour: short-gamma flows exacerbate trends, long-gamma flows force mean reversion; dealers appear net long gamma in zero-DTE markets.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Mechanical hedging argument and a study he cites with hedging (Vilkov et al.).",
+     "claim_ids": [
+      "MT167-C08-2",
+      "MT167-C09-1",
+      "MT167-C08-1"
+     ]
+    },
+    {
+     "premise": "Trend and crisis alpha have a duality of objectives (long-term positive return plus downside reactivity); commodity curve carry and rate volatility share this property.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Cliff Asness's duality framing; commodity curve is short the front of curves.",
+     "claim_ids": [
+      "MT167-C11-2",
+      "MT167-C11-X9"
+     ]
+    },
+    {
+     "premise": "In a crisis, correlations go to extremes and principal components drive returns, so a core liquid universe maximises crisis alpha; a broader universe maximises long-term Sharpe via more independent bets but is less defensive.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Man Group 'optimal market mix' paper.",
+     "claim_ids": [
+      "MT167-C11-3",
+      "MT167-C12-1",
+      "MT167-C12-2",
+      "MT167-C12-3"
+     ]
+    },
+    {
+     "premise": "Equity factors are not 60 independent bets: five or six factors explain the equity cross-section, so 60 factors diversify far less than 60 commodities.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Cross-sectional correlation among value descriptors.",
+     "claim_ids": [
+      "MT167-C13-1"
+     ]
+    },
+    {
+     "premise": "AI agents can replicate research steps but need human framing, supervision and protection from multiple testing and overfitting; broad chatbots can be wrong.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Man Group agentic AI paper; his own test question about the start of 2026.",
+     "claim_ids": [
+      "MT167-C14-1",
+      "MT167-C14-2",
+      "MT167-C14-X10",
+      "MT167-C14-R1",
+      "MT167-C15-R2"
+     ]
+    },
+    {
+     "premise": "Quant equity winter 2018-20 had a macro-regime cause (rates hurting value and momentum) and a crowding cause (forced unwinds); macro factors explain over 50% of factor variation in stress vs about 20% normally.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Man Group quant-equity paper statistics and four-regime model.",
+     "claim_ids": [
+      "MT167-C16-1",
+      "MT167-C16-X12",
+      "MT167-C16-X13",
+      "MT167-C15-X11"
+     ]
+    },
+    {
+     "premise": "New data lowered alpha-model correlations from 70-80% to 40-50% and dynamic factor allocation adds regime resilience.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Man paper quotes.",
+     "claim_ids": [
+      "MT167-C16-2"
+     ]
+    },
+    {
+     "premise": "Under fundamental certainty (a Fed put) prices revert to prior valuation; under uncertainty price trends carry information about fundamentals and continue.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Own long-standing framework from earlier discussions.",
+     "claim_ids": [
+      "MT167-C17-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Commodity curve carry shock and recovery",
+     "steps": [
+      {
+       "from": "Cold weather and Middle East supply concerns",
+       "to": "Back-to-back backwardation in gas and oil",
+       "why": "Supply shocks raise front prices relative to the back.",
+       "claim_ids": [
+        "MT167-C02-1"
+       ]
+      },
+      {
+       "from": "Backwardation",
+       "to": "Curve-carry strategy (long back, short front) loses years of return",
+       "why": "The trade is structurally short the front.",
+       "claim_ids": [
+        "MT167-C02-1",
+        "MT167-C03-X2"
+       ]
+      },
+      {
+       "from": "Normalisation of curves",
+       "to": "Mark-to-market recovery",
+       "why": "Backwardation mean-reverts quickly unless the shock is permanent.",
+       "claim_ids": [
+        "MT167-C02-2",
+        "MT167-C02-X1"
+       ]
+      }
+     ],
+     "evidence": "Q1 2026 Bloomberg coverage and client discussions.",
+     "fails_when": "The oil supply shock is permanent, so the curve does not normalise.",
+     "claim_ids": [
+      "MT167-C02-2",
+      "MT167-C05-1"
+     ]
+    },
+    {
+     "topic": "Option flows and trend following",
+     "steps": [
+      {
+       "from": "Investors sell options for carry",
+       "to": "Dealers are long gamma",
+       "why": "Dealer hedging is the mirror of customer positions.",
+       "claim_ids": [
+        "MT167-C08-2"
+       ]
+      },
+      {
+       "from": "Long gamma",
+       "to": "Dealers buy dips and sell rallies, forcing intraday mean reversion",
+       "why": "Gamma hedging is counter-trend; negative gamma (leveraged ETFs) is the opposite.",
+       "claim_ids": [
+        "MT167-C08-2",
+        "MT167-C09-1"
+       ]
+      },
+      {
+       "from": "Mean reversion",
+       "to": "Possible drag on short-term trend; little effect on medium and long-term trend",
+       "why": "Long-term signals near zero already mean small exposure.",
+       "claim_ids": [
+        "MT167-C09-X6",
+        "MT167-C09-1"
+       ]
+      }
+     ],
+     "evidence": "Zero-DTE share of S&P option volume (about 60%) and a Vilkov et al. study, cited with hedging.",
+     "fails_when": "Not proven; pinning around expiries unclear for medium-term followers.",
+     "claim_ids": [
+      "MT167-C08-1",
+      "MT167-C09-X7"
+     ]
+    },
+    {
+     "topic": "Objective determines market universe",
+     "steps": [
+      {
+       "from": "Objective: maximum crisis alpha",
+       "to": "Core, liquid, mainstream universe",
+       "why": "In a crisis principal components drive returns, so trade the macro movers.",
+       "claim_ids": [
+        "MT167-C11-3",
+        "MT167-C12-1"
+       ]
+      },
+      {
+       "from": "Objective: maximum long-term Sharpe",
+       "to": "Broad universe with idiosyncratic markets",
+       "why": "More independent bets give diversification.",
+       "claim_ids": [
+        "MT167-C12-1"
+       ]
+      },
+      {
+       "from": "Cash-efficient portfolio (low margin per unit of risk)",
+       "to": "Same core liquid universe as max-crisis-alpha",
+       "why": "Margin is lower in liquid markets.",
+       "claim_ids": [
+        "MT167-C12-3"
+       ]
+      }
+     ],
+     "evidence": "Man Group optimal-market-mix paper.",
+     "fails_when": "Equity-factor universe counted as 60 markets overstates diversification.",
+     "claim_ids": [
+      "MT167-C13-1",
+      "MT167-C12-1"
+     ]
+    },
+    {
+     "topic": "Fed put certainty versus uncertainty",
+     "steps": [
+      {
+       "from": "Fundamental certainty (Fed put)",
+       "to": "Prices revert to prior valuation",
+       "why": "Price trend carries no new information.",
+       "claim_ids": [
+        "MT167-C17-1"
+       ]
+      },
+      {
+       "from": "Fundamental uncertainty",
+       "to": "Price trends continue",
+       "why": "Trend is information about where fundamentals sit.",
+       "claim_ids": [
+        "MT167-C17-1"
+       ]
+      }
+     ],
+     "evidence": "Earlier work and the weak 2010s trend returns in a low-inflation, stable-GDP macro environment.",
+     "fails_when": "Environment stays certain.",
+     "claim_ids": [
+      "MT167-C17-X14"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "risk",
+     "practice": "Volatility-scale positions so risk falls automatically when oil volatility spikes.",
+     "why": "Spiking volatility means the trend exists but should carry less risk.",
+     "claim_ids": [
+      "MT167-C04-1",
+      "MT167-C03-3"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Cluster commodities (energy, metals, ags; gas separately from oil) rather than one class and assign risk budget accordingly; typical books hold 10-40 commodities and a quarter of risk.",
+     "why": "Intra-commodity correlation is low.",
+     "claim_ids": [
+      "MT167-C07-1",
+      "MT167-C06-2",
+      "MT167-C03-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Diversify commodity systematics across trend, skew and value.",
+     "why": "Skew and value benefited from the petroleum rally.",
+     "claim_ids": [
+      "MT167-C04-2"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Choose universe and speed to match the objective: core for defensiveness, broad for long-term Sharpe.",
+     "why": "Crisis alpha comes from the universe, not only from speed.",
+     "claim_ids": [
+      "MT167-C11-1",
+      "MT167-C12-1",
+      "MT167-C12-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Use zero-DTE options as cheap intraday protection for long-term trend positions without cutting exposure.",
+     "why": "A direct risk-management use case.",
+     "claim_ids": [
+      "MT167-C09-2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Possibly use option-implied skew as a sentiment filter or multiplier on trend signals; smoothing may absorb whipsaw already.",
+     "why": "Hypothesis, not tested.",
+     "claim_ids": [
+      "MT167-C10-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Run supervised, task-specific AI agents inside the deterministic systematic pipeline; keep human judgment on question framing and multiple-testing control.",
+     "why": "Models give different outcomes and can be wrong.",
+     "claim_ids": [
+      "MT167-C14-X10",
+      "MT167-C14-1",
+      "MT167-C14-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Use dynamic rather than static factor allocation and diversified data in quant equity.",
+     "why": "Regime resilience.",
+     "claim_ids": [
+      "MT167-C16-2"
+     ]
+    }
+   ],
+   "evidence_style": "Practitioner experience plus papers (Man Group, Vilkov et al.) and index statistics; cautious hedging on facts he is unsure of.",
+   "current_views": [
+    {
+     "view": "Oil shocks feed inflation nowcasts and memories of 2022; stagflation risk is higher than two months ago; the key question is whether the oil shock is permanent.",
+     "as_of": "Mar 2026 (episode uploaded 2026-03-22; March update, recorded mid-month)",
+     "reasoning": "Mechanical effect on inflation nowcasts; historic events take time to die out.",
+     "claim_ids": [
+      "MT167-C05-1"
+     ]
+    },
+    {
+     "view": "March 2026 is a statistical non-event for trend: flat P&L with oil complex and short rates positive and equities hurt; faster speeds outperform slower.",
+     "as_of": "Mar 2026 (episode uploaded 2026-03-22; March update, recorded mid-month)",
+     "reasoning": "Own book results.",
+     "claim_ids": [
+      "MT167-C06-X4",
+      "MT167-C06-1"
+     ]
+    },
+    {
+     "view": "Commodity curve carry should recover mark-to-market if curves normalise.",
+     "as_of": "Mar 2026 (episode uploaded 2026-03-22; March update, recorded mid-month)",
+     "reasoning": "Backwardation mean-reverts.",
+     "claim_ids": [
+      "MT167-C02-2"
+     ]
+    },
+    {
+     "view": "The environment is currently one of fundamental certainty, which brought reversions that challenged trend (garbled in captions).",
+     "as_of": "Mar 2026 (episode uploaded 2026-03-22; March update, recorded mid-month)",
+     "reasoning": "Fed put logic.",
+     "claim_ids": [
+      "MT167-C17-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host; veteran hedge fund manager (Top Traders Unplugged)",
+   "speaker_note": "Host who also states views; the host also says 'like we do at Dunn', suggesting an affiliation with a trend manager (as read from captions).",
+   "fingerprint": [
+    "trend_following",
+    "macro_fundamental_topdown",
+    "positioning_crowding",
+    "research_robustness_overfitting",
+    "short_term_systematic",
+    "costs_execution"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend following is tested and traded on futures; 3-24 month trends are not informed by single-day option volume, so there is little reason to use options data in classical trend models.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Trend-following maxim of testing what you trade.",
+     "claim_ids": [
+      "MT167-C10-1"
+     ]
+    },
+    {
+     "premise": "Gas and oil are priced by different factors (gas depends heavily on transport cost), so they react to different shocks.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "A recent conversation with a guest.",
+     "claim_ids": [
+      "MT167-C03-1"
+     ]
+    },
+    {
+     "premise": "Trend returns since 2023 have been driven by commodity trends, so commodity share in a universe had a big effect.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Cocoa, coffee, live cattle, precious metals, oil sequence.",
+     "claim_ids": [
+      "MT167-C07-X5"
+     ]
+    },
+    {
+     "premise": "Weak recent short-term trend results may come from convergent mean-reverting flows (zero-DTE complex, multi-manager pod shops); he does not know.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Simple observation.",
+     "claim_ids": [
+      "MT167-C09-1",
+      "MT167-C09-X8"
+     ]
+    },
+    {
+     "premise": "Stagflation risk is rising: Powell separates today from the 1970s by unemployment, but rates have moved higher and the cuts the White House wants may not come; Gulf tourism after-effects may hurt more than oil prices.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "FOMC comments; interest rate moves.",
+     "claim_ids": [
+      "MT167-C04-4",
+      "MT167-C05-2"
+     ]
+    },
+    {
+     "premise": "Building trend systems rewards simplification, whereas AI tends to expand, so the DNA of AI may not suit cleaning signals.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Hunch without being an AI expert.",
+     "claim_ids": [
+      "MT167-C15-1"
+     ]
+    },
+    {
+     "premise": "Trend returns in the 2010s were weak because inflation was low and stable and GDP barely moved.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Macro environment.",
+     "claim_ids": [
+      "MT167-C17-X14"
+     ]
+    },
+    {
+     "premise": "Headlines overreact: a small correction after eight positive months generates CTA-drawdown stories.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Bloomberg headline with a wrong number.",
+     "claim_ids": [
+      "MT167-C01-1"
+     ]
+    },
+    {
+     "premise": "Pod-shop traders increasingly leave to run their own firms, and fewer investors plan to raise allocations.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Bloomberg/Goldman data.",
+     "claim_ids": [
+      "MT167-C04-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Market correction after a long positive run",
+     "steps": [
+      {
+       "from": "Equity, bond and precious metals selloff in March",
+       "to": "Cash raising",
+       "why": "Precious metals may be sold as an easy source of cash.",
+       "claim_ids": [
+        "MT167-C05-3"
+       ]
+      },
+      {
+       "from": "Eight positive months",
+       "to": "Normal correction",
+       "why": "Not an aggressive down market.",
+       "claim_ids": [
+        "MT167-C05-3",
+        "MT167-C01-1"
+       ]
+      }
+     ],
+     "evidence": "Observed industry returns.",
+     "fails_when": "Month remained long; extent unknown.",
+     "claim_ids": [
+      "MT167-C05-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Test what you trade and trade what you test: use futures data, do not add option data.",
+     "why": "Models are built on futures data and positions are adjusted daily.",
+     "claim_ids": [
+      "MT167-C10-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Keep systems simple; be wary of AI that expands rather than strips back.",
+     "why": "Skill goes into cleaning signals.",
+     "claim_ids": [
+      "MT167-C15-1"
+     ]
+    }
+   ],
+   "evidence_style": "Reads headlines and data, uses anecdotes, admits not being a quant; hedges often.",
+   "current_views": [
+    {
+     "view": "Stagflation concern is back as rates rise; cuts wanted by the White House may not arrive.",
+     "as_of": "Mar 2026 (episode uploaded 2026-03-22; March update, recorded mid-month)",
+     "reasoning": "Powell comments and moving rates.",
+     "claim_ids": [
+      "MT167-C04-4"
+     ]
+    },
+    {
+     "view": "March corrections in equities, bonds and precious metals are normal after eight consecutive positive months; trend barometer around 45 and index returns slightly negative for the month.",
+     "as_of": "Mar 2026 (episode uploaded 2026-03-22; March update, recorded mid-month)",
+     "reasoning": "Index data read aloud.",
+     "claim_ids": [
+      "MT167-C05-3",
+      "MT167-C07-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Whether option market data belongs in trend following",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Option volume is single-day information irrelevant to 3-24 month trends; trade the futures you test.",
+     "claim_ids": [
+      "MT167-C10-1"
+     ]
+    },
+    {
+     "speaker": "Nick Baltas",
+     "position": "Dealer gamma matters mainly to short-term managers; options are best used as cheap intraday protection, and implied skew might be a sentiment filter.",
+     "claim_ids": [
+      "MT167-C09-X6",
+      "MT167-C09-2",
+      "MT167-C10-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Cause of weak short-term trend results",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Convergent mean-reverting flows from zero-DTE participants and possibly pod shops; unsure.",
+     "claim_ids": [
+      "MT167-C09-1",
+      "MT167-C09-X8"
+     ]
+    },
+    {
+     "speaker": "Nick Baltas",
+     "position": "Dealer long gamma is certainly a force but is not proven as the cause.",
+     "claim_ids": [
+      "MT167-C09-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "AI in the research process",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "AI's tendency to expand may conflict with the simplification trend building needs.",
+     "claim_ids": [
+      "MT167-C15-1"
+     ]
+    },
+    {
+     "speaker": "Nick Baltas",
+     "position": "AI quality has risen sharply and task-specific agents can run a deterministic pipeline under human supervision.",
+     "claim_ids": [
+      "MT167-C14-X10",
+      "MT167-C15-R2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Index return figures are garbled in the captions (series labels, MSCI YTD figure); only the corrected values are reliable.",
+   "claim_ids": [
+    "MT167-C07-2"
+   ]
+  },
+  {
+   "issue": "The dealer-long-gamma link to weak short-term trend is Niels's suggestion; Nick calls it plausible but unproven and hedges on the paper.",
+   "claim_ids": [
+    "MT167-C09-1",
+    "MT167-C09-X8"
+   ]
+  },
+  {
+   "issue": "Typical commodity share of trend books (10-40 markets, a quarter of risk) is a guess about the industry.",
+   "claim_ids": [
+    "MT167-C06-2"
+   ]
+  },
+  {
+   "issue": "Claim that only trend, commodity curve carry and rate volatility combine positive return and crisis alpha is asserted without evidence.",
+   "claim_ids": [
+    "MT167-C11-2",
+    "MT167-C11-X9"
+   ]
+  },
+  {
+   "issue": "The final certainty/uncertainty remark is partly garbled, so the present-day reading of the environment is unclear; Nick also did not read the equity-factor claim in the paper in full.",
+   "claim_ids": [
+    "MT167-C17-1",
+    "MT167-C13-1"
+   ]
+  },
+  {
+   "issue": "The 0DTE hedge idea and option skew filter are hypotheses with no test given.",
+   "claim_ids": [
+    "MT167-C09-2",
+    "MT167-C10-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Oil curve backwardation and whether the supply shock is permanent, gas weather, inflation nowcasts fed by oil, central bank reaction (rates higher, cuts unlikely), Fed-put certainty vs uncertainty, zero-DTE dealer gamma for short-horizon trend. Horizon is months.",
+ "reader_inferences": [
+  "(reader) Nick treats universe choice, not only speed, as the lever for defensiveness, so allocators should map objective to universe before picking a manager.",
+  "(reader) Both speakers regard the March move as a normal correction rather than a regime break.",
+  "(reader) The 'certainty vs uncertainty' framework implies trend returns depend on whether policy removes uncertainty."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT167-C14-R1",
+   "chunk": "C14",
+   "speaker": "Nick Baltas",
+   "quote": "how the culture of a research team is more important than the research team itself.",
+   "claim": "Research culture, including discipline against multiple testing and overfitting, matters more than the research team's raw capability; the same holds if the team is an AI agent.",
+   "mechanism": "research",
+   "asset_class": "systematic strategies",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "apply human judgment to AI research",
+   "conditions": "AI agents used in strategy research",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT167-C15-R2",
+   "chunk": "C15",
+   "speaker": "Nick Baltas",
+   "quote": "for the same task uh I I I used to get rubbish. I'm getting high quality outcome now.",
+   "claim": "Nick reports that AI output quality on the same research task improved from poor to high quality within months.",
+   "mechanism": "research",
+   "asset_class": "systematic strategies",
+   "indicator": "",
+   "horizon": "months",
+   "direction": "AI capability improving quickly",
+   "conditions": "personal usage",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "map",
+   "quote_check": "exact"
+  }
+ ]
+}

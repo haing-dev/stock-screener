@@ -1,0 +1,202 @@
+{
+ "source_id": "MT135",
+ "episode_thesis": "Cory Hoffstein and Adam Butler (Return Stacked) argue that portable alpha, packaged as capital-efficient ETFs ('return stacking'), lets investors keep core stock and bond beta while adding diversifying return streams such as trend, carry and merger arbitrage. Their trend product replicates the SG Trend Index beta cheaply by blending a bottom-up fitted trend model (70%) with a top-down regression on recent index returns (30%), because the two have comparable fit but weakly correlated tracking errors; generic trend beta is becoming a commodity that performance-fee managers must beat with differentiated, fat-tail, or faster strategies.",
+ "speakers": [
+  {
+   "name": "Cory Hoffstein",
+   "role": "Co-founder, Return Stacked Portfolio Solutions (joint venture) and Newfound Research; product designer of the ETF suite",
+   "speaker_note": "Captions give no names, so attribution rests on dialogue cues. Several passages were corrected in the ledger to Cory (C07-3 data window, C09-2 fat-tail attenuation, C13-2 and C13-3 high-vol overlay and client tolerance); those corrections are applied here. Where a passage runs on without a visible change of speaker, attribution is uncertain.",
+   "fingerprint": ["replication_indexing", "portfolio_construction_stacking", "trend_following", "diversification_risk_parity", "costs_execution", "manager_selection_allocation", "structural_themes", "behavioral_sentiment"],
+   "worldview_premises": [
+    {"premise": "Portable alpha (return stacking) lets investors keep core stock and bond beta and free capital through futures and swaps for other alpha sources; it has been an institutional tool for about 40 years and a ticker packages it for people who will not run a derivatives book.", "type": "institutional", "stated": "stated", "support": "History from PIMCO in the 1980s; his own career building alternatives.", "claim_ids": ["MT135-C02-1", "MT135-C02-X1"]},
+    {"premise": "Selling alternatives by asking investors to sell some core stocks and bonds repeatedly disappointed in the 2010s (non-stop US 60/40 outperformance); a capital-efficient stack removes that behavioural obstacle.", "type": "behavioural", "stated": "stated", "support": "Own experience in the 2010s.", "claim_ids": ["MT135-C02-2"]},
+    {"premise": "Dispersion among trend managers comes from implementation choices (markets, speeds, risk weights, constraints); fitting parameters to the index removes arbitrary dispersion and delivers 'trend beta'.", "type": "theoretical", "stated": "stated", "support": "Design rationale for the replication.", "claim_ids": ["MT135-C07-X1", "MT135-C09-X1"]},
+    {"premise": "The SG Trend Index is made of the largest managers, whose less liquid markets matter little to P&L, so a limited-market replication tracks them well; around 80% of their risk sits in the same ~20 markets and fat-tail weights average toward zero across managers.", "type": "empirical", "stated": "stated", "support": "Reasoning from managers' scale; coffee in 2023-24 as an idiosyncratic bet that averaged out.", "claim_ids": ["MT135-C08-2", "MT135-C09-2", "MT135-C09-1"]},
+    {"premise": "Fitting trend weights needs 15-20 years of data because markets can contribute no P&L for a decade, making it impossible to tell untraded markets from untrending ones; annual reruns will not change weights meaningfully.", "type": "empirical", "stated": "stated", "support": "Training on 2000-10 versus 2010-20 gives different market weights.", "claim_ids": ["MT135-C07-3"]},
+    {"premise": "A top-down regression is flexible and captures manager innovation and unobserved markets but is backward-looking, blind to positions in markets with no recent P&L, and untethered mechanically from trend following.", "type": "theoretical", "stated": "stated", "support": "Example of the 2023 regional bank crisis when managers flipped bond positions within 2-3 days; Swiss franc approximated by gold and euro.", "claim_ids": ["MT135-C10-1", "MT135-C10-2", "MT135-C10-X1"]},
+    {"premise": "A bottom-up model and a top-down regression track the trend index about equally well but have weakly correlated tracking errors, so blending 30% top-down and 70% bottom-up lowers aggregate tracking error; the blend is still a trend following strategy.", "type": "empirical", "stated": "stated", "support": "Tracking error and correlation results quoted (tracking-error correlation about 0.2-0.3 in the captions).", "claim_ids": ["MT135-C10-3", "MT135-C11-X1"]},
+    {"premise": "Top-down regression struggles with fast multi-day mean-reversion models in the broader CTA index, so replicating the CTA index bottom-up is harder than replicating the trend index; Andrew Beer's fund uses only top-down.", "type": "empirical", "stated": "stated", "support": "Statistical power argument (20-40 contracts, 20-40 days).", "claim_ids": ["MT135-C11-2", "MT135-C11-X2"]},
+    {"premise": "Generic trend beta can be bought in QIS for 10-15 bp, so performance-fee managers must differentiate (spreads, breakouts, speed, fat-tail markets); generic trend managers will be squeezed out by cheaper implementations.", "type": "institutional", "stated": "stated", "support": "Conversations with institutions buying trend beta from banks.", "claim_ids": ["MT135-C12-4", "MT135-C12-X1"]},
+    {"premise": "A longer tail of markets raises Sharpe but diverts risk from markets tied to big macro factors, reducing the crisis offset (citing Quantica).", "type": "empirical", "stated": "stated", "support": "Quantica research cited from memory.", "claim_ids": ["MT135-C12-3"]},
+    {"premise": "A high-volatility trend strategy is a capital-efficient version of a low-vol one, but most clients cannot tolerate more than about 10% vol (citing Cliff Asness), so products moved to 10-12% vol.", "type": "behavioural", "stated": "stated", "support": "Observation of institutional products; 50-vol example.", "claim_ids": ["MT135-C13-2", "MT135-C13-3"]},
+    {"premise": "Stack only low-correlation components (equity plus trend); regulation (SEC Rule 18f-4: 20-day 99% VaR capped at 20% or 2x the benchmark) limits how far stacking can be pushed.", "type": "institutional", "stated": "stated", "support": "Regulatory rule description.", "claim_ids": ["MT135-C14-1", "MT135-C14-2"]},
+    {"premise": "Merger arbitrage earns a spread consisting of time value of money plus a deal-break risk premium (about 200-250 bp over SOFR in 20 years) with low correlation to equity, bond and credit premia (about 0.5 to credit).", "type": "empirical", "stated": "stated", "support": "Generic strategy history; no source cited.", "claim_ids": ["MT135-C15-1", "MT135-C15-2"]},
+    {"premise": "An ETF cannot be closed, so the strategy must run identically at small and large size; at extreme scale performance would degrade and self-correct.", "type": "institutional", "stated": "stated", "support": "Structural fact of ETFs; wants track record continuity.", "claim_ids": ["MT135-C05-3"]},
+    {"premise": "Diversifying strategies (trend, carry, merger) and diversifying assets (gold, Bitcoin) are different overlay buckets for stock-bond portfolios; gold and Bitcoin are a store-of-value diversifier.", "type": "theoretical", "stated": "stated", "support": "Product roadmap logic.", "claim_ids": ["MT135-C16-2", "MT135-C17-1"]},
+    {"premise": "Futures-based ETF trend products use a subset of the most liquid US and European markets versus the full set in mutual fund and hedge fund versions.", "type": "institutional", "stated": "stated", "support": "Observation of competitor products.", "claim_ids": ["MT135-C03-2"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Portable alpha raises adoption of alternatives", "steps": [
+      {"from": "Advisers told to sell core stocks and bonds to fund alternatives", "to": "constant disappointment against US 60/40 and abandonment", "why": "Behavioural: investors abandon the alternative when core outperforms.", "claim_ids": ["MT135-C02-2"]},
+      {"from": "Futures and swaps free capital (capital efficiency)", "to": "keep core beta and add alternative alpha on top", "why": "Same dollar earns beta plus overlay.", "claim_ids": ["MT135-C02-1"]},
+      {"from": "Tickerised ETF wrapper", "to": "accessible to wealth managers and individuals", "why": "No derivatives book to manage.", "claim_ids": ["MT135-C02-X1"]}],
+     "evidence": "Conceptual; history of portable alpha since the 1980s.", "fails_when": "Stacked components correlated with each other in a drawdown (equity and trend falling together in April 2025); constrained by SEC VaR rule.", "claim_ids": ["MT135-C02-1", "MT135-C02-2", "MT135-C02-X1", "MT135-C14-1", "MT135-C14-2"]},
+    {"topic": "Why 30% top-down and 70% bottom-up", "steps": [
+      {"from": "Top-down regression follows manager innovation and unobserved markets", "to": "flexible and adaptive tracking", "why": "Does not need to know how managers build weights.", "claim_ids": ["MT135-C10-1"]},
+      {"from": "Top-down looks back 20-40 days and cannot see markets with no recent P&L", "to": "lags regime shifts (2023 bank crisis) and has blind spots", "why": "Regression needs variance.", "claim_ids": ["MT135-C10-2"]},
+      {"from": "Bottom-up fits time-series momentum lookbacks to the index", "to": "mechanistic trend process with about 0.8 daily correlation", "why": "Parameters fitted over 15-20 years.", "claim_ids": ["MT135-C07-3", "MT135-C09-3"]},
+      {"from": "Weakly correlated tracking errors of the two", "to": "blend reduces tracking error and adds process diversification", "why": "Pros and cons are almost opposite.", "claim_ids": ["MT135-C10-3", "MT135-C10-X1", "MT135-C11-X1"]}],
+     "evidence": "Tracking error and correlation tests reported; statistically indistinguishable fit.", "fails_when": "If all managers shift speed or markets at once, a fixed bottom-up fit does not adapt (host point); fast mean-reversion in a broad CTA index defeats the top-down regression.", "claim_ids": ["MT135-C10-3", "MT135-C10-1", "MT135-C10-2", "MT135-C09-3", "MT135-C11-X1", "MT135-C11-X2"]},
+    {"topic": "Limited universe still tracks the trend beta", "steps": [
+      {"from": "The index holds large managers who trade in proportion to liquidity", "to": "less liquid markets contribute little to aggregate P&L", "why": "Scale limits fat-tail impact.", "claim_ids": ["MT135-C08-2"]},
+      {"from": "80% of risk in the same ~20 markets; fat-tail weights differ across managers", "to": "fat-tail weights average toward zero", "why": "Not all managers trade the same signals.", "claim_ids": ["MT135-C09-2"]},
+      {"from": "Common markets cover 70-80% of global futures liquidity", "to": "26-27 markets replicate the full universe closely", "why": "All players trade in proportion to liquidity.", "claim_ids": ["MT135-C05-2"]}],
+     "evidence": "Replication results; coffee 2023-24 as an example of offsetting dispersion.", "fails_when": "Idiosyncratic bets create temporary dispersion (coffee).", "claim_ids": ["MT135-C08-2", "MT135-C09-1", "MT135-C09-2", "MT135-C05-2"]},
+    {"topic": "Commoditisation of trend beta", "steps": [
+      {"from": "Replication ETFs and QIS deliver trend beta at low cost (10-15 bp)", "to": "performance-fee managers must beat the cheap benchmark over the long run", "why": "Beta is the beta.", "claim_ids": ["MT135-C12-4", "MT135-C12-2"]},
+      {"from": "Generic trend charges performance fees", "to": "squeezed out; room remains for spreads, breakouts, speed, fat tail", "why": "Differentiation required.", "claim_ids": ["MT135-C12-X1"]},
+      {"from": "Longer tail of markets", "to": "higher Sharpe but weaker crisis offset", "why": "Risk budget moves away from macro-factor markets.", "claim_ids": ["MT135-C12-3"]}],
+     "evidence": "Quantica paper; institutional conversations.", "fails_when": "Not stated.", "claim_ids": ["MT135-C12-3", "MT135-C12-4", "MT135-C12-X1"]},
+    {"topic": "Merger arbitrage as a stacked return stream", "steps": [
+      {"from": "Deal announced at a buyout price", "to": "target trades below the price", "why": "Time value of money plus deal-break credit-like risk.", "claim_ids": ["MT135-C15-1"]},
+      {"from": "Capture the spread", "to": "about 200-250 bp over SOFR historically with low correlation to other risk premia", "why": "Risk premium for bearing deal failure.", "claim_ids": ["MT135-C15-1", "MT135-C15-2"]},
+      {"from": "Machine-learning screen on spread, acquirer and industry", "to": "index of deals clearing a return hurdle", "why": "Estimate close probability and expected return.", "claim_ids": ["MT135-C16-1"]},
+      {"from": "Share-component deals need a hedge", "to": "short or swap on the acquirer; swaps avoid borrow and recall risk", "why": "ETF constraint on locating shares.", "claim_ids": ["MT135-C16-1", "MT135-C16-X1"]}],
+     "evidence": "Generic strategy history and the licensed Alpha Beta index.", "fails_when": "Deal breaks; short-leg recall.", "claim_ids": ["MT135-C15-1", "MT135-C15-2", "MT135-C16-1", "MT135-C16-X1"]}
+   ],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Offer building blocks that stack an overlay on a core exposure (equity plus trend, bond plus trend, bond plus merger, equity plus multi-asset carry, equity plus gold and Bitcoin) so wealth managers build portfolios.", "why": "Keep beta, add diversifiers without giving up core.", "claim_ids": ["MT135-C02-1", "MT135-C16-2", "MT135-C17-1"]},
+    {"element": "signal", "practice": "Replicate the SG Trend Index with a 70% bottom-up fitted trend model and 30% top-down robust regression, rebalanced daily.", "why": "Blend lowers tracking error and adds process diversification.", "claim_ids": ["MT135-C10-3", "MT135-C11-X1", "MT135-C09-3"]},
+    {"element": "universe", "practice": "Run 26-27 liquid futures markets spanning equity, bond, commodity and currency; keep the same universe at all sizes; use back-month contracts to expand capacity beyond CFTC front-month limits.", "why": "Replicates the full universe closely; ETF cannot close.", "claim_ids": ["MT135-C05-2", "MT135-C05-3", "MT135-C05-1"]},
+    {"element": "research", "practice": "Fit trend weights using 15-20 years of data and cross-validation; rerun annually without expecting material weight changes; check for systematic drift in trend length.", "why": "Shorter windows give unstable market weights.", "claim_ids": ["MT135-C07-3", "MT135-C08-1"]},
+    {"element": "execution", "practice": "Trade the ETF as a one-way buy and hold; use institutional desks for NAV-based or risk quotes for size; accept 20-30 bp spreads for small trades.", "why": "Market makers widen quotes when they cannot see the basket.", "claim_ids": ["MT135-C04-1", "MT135-C04-X1"]},
+    {"element": "risk", "practice": "Stack only low-correlation components; respect SEC Rule 18f-4 VaR limits; rebalance nightly; keep collateral for the trend overlay at 25-30% of NAV with a cash buffer.", "why": "Ruin risk negligible and margin does not force sales in a drawdown.", "claim_ids": ["MT135-C14-1", "MT135-C14-2", "MT135-C14-3", "MT135-C14-X1"]},
+    {"element": "sizing", "practice": "Target trend volatility of about 10-13.5% (stack on S&P with a 13.5% vol trend system) because clients cannot tolerate more.", "why": "Line-item risk too large above about 10% vol.", "claim_ids": ["MT135-C13-3", "MT135-C14-3", "MT135-C13-2"]},
+    {"element": "universe", "practice": "Use the mutual fund version for a wider and more diverse set of futures markets than the ETF; ETF wrapper for tax advantage and intraday access.", "why": "ETF market-maker hedging limits illiquid markets.", "claim_ids": ["MT135-C03-1", "MT135-C03-X2", "MT135-C09-X1"]},
+    {"element": "other", "practice": "Merger arbitrage via a licensed machine-learning index of US-listed deals that clear a hurdle rate, hedged short or via swaps for stock components.", "why": "Systematic deal selection; avoids borrow risk.", "claim_ids": ["MT135-C16-1", "MT135-C16-X1"]}
+   ],
+   "evidence_style": "Backtest-style replication statistics (correlation about 0.8, tracking error, cross-validation), design rationale and regulatory/operational detail; cites others' research (Quantica, Asness) from memory; reasoning about industry structure and fees.",
+   "current_views": [
+    {"view": "Replication ETFs form a fair, cheap benchmark; generic trend with performance fees will be squeezed; differentiation lies in the fat tail, spreads and breakouts.", "as_of": "2025-04-15", "reasoning": "Trend beta available for 10-15 bp in QIS.", "claim_ids": ["MT135-C12-4", "MT135-C12-X1"]},
+    {"view": "Gold and Bitcoin overlay on US equity is a store-of-value diversifier for a stock-bond portfolio; gold in particular a long-term diversifier.", "as_of": "2025-04-15", "reasoning": "Thematic store-of-value narrative; diversifying assets bucket.", "claim_ids": ["MT135-C17-1", "MT135-C16-2"]},
+    {"view": "Merger arbitrage is a diversifying return stream worth stacking on bonds.", "as_of": "2025-04-15", "reasoning": "Low correlation to equity, bond and credit premia.", "claim_ids": ["MT135-C15-2", "MT135-C16-1"]},
+    {"view": "April 2025: a drawdown in the CTA space after equities fell; may be early innings with recovery in 30-50 days (host view); the stacks showed no dislocation.", "as_of": "2025-04-15", "reasoning": "Nightly rebalancing and collateral buffers (Adam).", "claim_ids": ["MT135-C14-3", "MT135-C13-X1"]}
+   ]
+  },
+  {
+   "name": "Adam Butler",
+   "role": "Co-founder, Return Stacked Portfolio Solutions; Resolve Asset Management Global (futures-based alternatives, risk parity and active strategies)",
+   "speaker_note": "Captions give no speaker labels; attribution follows dialogue cues and ledger corrections (C07-3, C09-2, C13-2, C13-3 moved to Cory). Adam leads the bid-ask, bottom-up regression, validation and margin-management answers.",
+   "fingerprint": ["replication_indexing", "trend_following", "research_robustness_overfitting", "costs_execution", "portfolio_construction_stacking", "position_sizing_vol_target", "diversification_risk_parity"],
+   "worldview_premises": [
+    {"premise": "Mutual fund wrappers can trade a wider futures set than ETFs because ETF market makers need liquid hedges for creations and redemptions; the choice is a trade-off between tax efficiency, intraday liquidity and platform access versus market breadth.", "type": "institutional", "stated": "stated", "support": "Operational experience running both.", "claim_ids": ["MT135-C03-1", "MT135-C03-X2"]},
+    {"premise": "Spreads of small ETF trades in a less liquid futures basket average 20-30 bp and widen in stress, and are persistent because market makers cannot see the basket; large trades through institutional desks can be done near NAV, and a long holding period smooths the cost.", "type": "experience", "stated": "stated", "support": "Own fund trading experience.", "claim_ids": ["MT135-C04-1", "MT135-C04-X1"]},
+    {"premise": "Any fund faces a capacity trade-off: more diverse bets raise expected performance but liquidity limits what can trade at size; CFTC front-month limits can be bypassed using back-month contracts for 10x or more capacity.", "type": "institutional", "stated": "stated", "support": "Practical knowledge of futures limits.", "claim_ids": ["MT135-C05-X1", "MT135-C05-1"]},
+    {"premise": "A 26-27 market universe covering equities, bonds, commodities and currencies (70-80% of global futures liquidity) replicates the full CTA universe closely because all players trade in proportion to liquidity; he admits being surprised.", "type": "empirical", "stated": "stated", "support": "Replication research.", "claim_ids": ["MT135-C05-2"]},
+    {"premise": "A grid of time-series momentum lookbacks (5-300 days per market) can span continuous moving-average-crossover rules, so regressing on it can mimic them; breakout systems with trailing stops and entry-only vol scaling have far more degrees of freedom and are not spanned.", "type": "theoretical", "stated": "stated", "support": "Design reasoning.", "claim_ids": ["MT135-C06-1", "MT135-C06-X1"]},
+    {"premise": "The bottom-up replication gets about 0.8 daily correlation to the SG Trend Index (an average of 10 funds with different styles).", "type": "empirical", "stated": "stated", "support": "Own regression fit since 2000.", "claim_ids": ["MT135-C07-1"]},
+    {"premise": "Fitted market weights change by decade (S&P trendless in 2000-10, trendy 2010-20) but sector weights and trend speeds are stable under cross-validation, and there is no evidence that trend length rose systematically over 2000-2020 (considered 'largely mythical').", "type": "empirical", "stated": "stated", "support": "Cross-validation tests across training windows.", "claim_ids": ["MT135-C08-1"]},
+    {"premise": "Top-down is kept as an expression of epistemological humility: managers constantly innovate and it captures idiosyncratic methods the continuous bottom-up misses, even though the bottom-up has the better average fit.", "type": "theoretical", "stated": "stated", "support": "Comparison of fit on the trend index.", "claim_ids": ["MT135-C11-1"]},
+    {"premise": "Carry, skewness, seasonality and relative-value features improve the fit to the broader CTA index far more than to the trend index, where the gain is marginal.", "type": "empirical", "stated": "stated", "support": "Own bottom-up experiments.", "claim_ids": ["MT135-C12-1"]},
+    {"premise": "Nightly rebalancing keeps the beta/trend ratio fixed after losses; trend collateral needs only 25-30% of NAV with a 40-50% cash buffer, so risk of ruin is negligible, as seen in the April 2025 drawdown.", "type": "experience", "stated": "stated", "support": "Audit of performance, margin use and balance in April 2025.", "claim_ids": ["MT135-C14-3", "MT135-C14-X1"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Bottom-up fitted trend model", "steps": [
+      {"from": "Build time-series trend strategies per market (5 to 300 day lookbacks)", "to": "span continuous moving-average and momentum rules", "why": "Weights on long and short averages replicate crossovers.", "claim_ids": ["MT135-C06-1", "MT135-C06-X1"]},
+      {"from": "Regress all strategies on the SG Trend Index since 2000", "to": "risk weights by market and speed that best fit", "why": "Objective is to look like the index.", "claim_ids": ["MT135-C06-1"]},
+      {"from": "Result", "to": "about 0.8 daily correlation; intermediate speeds; roughly equal 25% sector risk weights", "why": "The average trend follower is sector balanced (Cory's description).", "claim_ids": ["MT135-C07-1", "MT135-C07-2"]},
+      {"from": "Check across training windows", "to": "sector weights and speeds stable", "why": "Market weights vary with decade because trendiness varies.", "claim_ids": ["MT135-C08-1"]}],
+     "evidence": "Regression results and cross-validation.", "fails_when": "Breakout systems with trailing stops are not spanned; managers shifting style would not be tracked by a fixed fit.", "claim_ids": ["MT135-C06-1", "MT135-C06-X1", "MT135-C07-1", "MT135-C08-1", "MT135-C07-X2"]},
+    {"topic": "Why ETF spreads persist and capacity is limited", "steps": [
+      {"from": "Market makers cannot see the active futures basket", "to": "wide, thin quotes", "why": "Hedging illiquid markets across time zones is hard.", "claim_ids": ["MT135-C04-X1"]},
+      {"from": "Small trades without a risk quote", "to": "20-30 bp average spread, wider in stress", "why": "Cost of crossing the spread.", "claim_ids": ["MT135-C04-1"]},
+      {"from": "Hold for the long term", "to": "cost smooths out", "why": "One-way entry.", "claim_ids": ["MT135-C04-1"]}],
+     "evidence": "Own trading experience.", "fails_when": "Chaotic markets or economic news widen spreads further.", "claim_ids": ["MT135-C04-1", "MT135-C04-X1", "MT135-C03-1"]},
+    {"topic": "Stack margin management in a drawdown", "steps": [
+      {"from": "Portfolio loses value (100 to 97)", "to": "both beta and trend exposure scaled down nightly", "why": "Keeps the 1:1 ratio.", "claim_ids": ["MT135-C14-3"]},
+      {"from": "Cash-funded ETF beta plus S&P futures top-up", "to": "collateral always sufficient for the trend overlay", "why": "25-30% collateral need versus 40-50% cash.", "claim_ids": ["MT135-C14-3", "MT135-C14-X1"]}],
+     "evidence": "April 2025 audit showed no dislocation.", "fails_when": "Not stated.", "claim_ids": ["MT135-C14-3", "MT135-C14-X1"]}
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Regress per-market lookback strategies on the SG Trend Index and test stability across training windows and cross-validation; check for drift in trend length.", "why": "Ensure the replication generalizes.", "claim_ids": ["MT135-C06-1", "MT135-C08-1"]},
+    {"element": "universe", "practice": "26-27 liquid markets across four sectors; use back-month contracts to widen capacity.", "why": "Replicates the full universe and scales.", "claim_ids": ["MT135-C05-2", "MT135-C05-1"]},
+    {"element": "execution", "practice": "Seek NAV-based or risk quotes through institutional desks for size; one-way entry.", "why": "Tight fills for substantial size.", "claim_ids": ["MT135-C04-1"]},
+    {"element": "portfolio", "practice": "Keep the top-down leg alongside the bottom-up leg to capture innovation and idiosyncratic methods; add features (carry, skew, seasonality) only if the target is the broader CTA index.", "why": "Epistemological humility; marginal gain against the trend index.", "claim_ids": ["MT135-C11-1", "MT135-C12-1"]},
+    {"element": "risk", "practice": "Rebalance strategies nightly; fund equity beta with cash where efficient and top up with futures while holding enough collateral.", "why": "Avoid margin-driven forced sales.", "claim_ids": ["MT135-C14-3", "MT135-C14-X1"]}
+   ],
+   "evidence_style": "Quantitative replication statistics (daily correlation about 0.8; cross-validation across 3/4 to 80% of data), operational track record of running the funds, and mechanical reasoning about market structure.",
+   "current_views": [
+    {"view": "April 2025 drawdown handled without dislocation in margin or the balance of beta and overlay.", "as_of": "2025-04-15", "reasoning": "Audit of margin consumption and balance.", "claim_ids": ["MT135-C14-3"]},
+    {"view": "Replication of the trend index with a limited universe works and the sector weights generalise; the trend length did not drift over 2000-2020.", "as_of": "2025-04-15", "reasoning": "Cross-validation results.", "claim_ids": ["MT135-C05-2", "MT135-C08-1"]}
+   ]
+  },
+  {
+   "name": "Moritz (co-hosts; two people named Moritz)",
+   "role": "Open Interest hosts (Moritz Seibert and his Takahi Capital partner Moritz Heiden as guest co-host)",
+   "speaker_note": "The ledger lists two Moritz speakers; captions do not separate them. They are merged here. They ask questions and add views on benchmark competition, volatility levels and the April 2025 drawdown.",
+   "fingerprint": ["trend_following", "replication_indexing", "manager_selection_allocation", "position_sizing_vol_target", "costs_execution"],
+   "worldview_premises": [
+    {"premise": "Replication ETFs form a cheap benchmark that performance-fee hedge funds must beat over the long run; market forces squeezing generic trend managers are 'fair and square'.", "type": "institutional", "stated": "stated", "support": "Assertion.", "claim_ids": ["MT135-C12-2"]},
+    {"premise": "Trend funds now run 8-12% volatility, so returns lack the punch of 1980s-90s CTAs, trading off stress payoff; investors can no longer tolerate 20-25% volatility whereas 25 years ago equities at 20% volatility were fine.", "type": "experience", "stated": "stated", "support": "Observation of the industry.", "claim_ids": ["MT135-C13-1", "MT135-C13-R1"]},
+    {"premise": "A levered risk-parity bond and equity allocation and some QIS products already work as portable alpha, so investors may hold the concept unknowingly.", "type": "theoretical", "stated": "stated", "support": "Product analysis.", "claim_ids": ["MT135-C03-X1"]},
+    {"premise": "A fixed bottom-up fit cannot adapt if managers change style, unlike a top-down regression; recalibration frequency is a design question.", "type": "theoretical", "stated": "stated", "support": "Challenge to the guests.", "claim_ids": ["MT135-C07-X2"]},
+    {"premise": "As of 15 April 2025 the CTA space had a drawdown (equities and trend both falling); he hopes it is early innings and that trend recovers within 30-50 days.", "type": "experience", "stated": "stated", "support": "Recent P&L.", "claim_ids": ["MT135-C13-X1"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Industry fee compression", "steps": [
+      {"from": "Cheap replication ETFs deliver trend beta", "to": "hedge funds charging performance fees must beat the ETFs", "why": "Beta available without performance fees.", "claim_ids": ["MT135-C12-2"]}],
+     "evidence": "None.", "fails_when": "Luck component over short horizons.", "claim_ids": ["MT135-C12-2"]}
+   ],
+   "decision_process": [
+    {"element": "other", "practice": "Prefers trading fat-tail or alternative markets, spreads and punchier higher-volatility returns for differentiation.", "why": "Provide stress payoff that low-vol products lack.", "claim_ids": ["MT135-C13-1"]}
+   ],
+   "evidence_style": "Industry observation and challenge questions.",
+   "current_views": [
+    {"view": "CTA space in a drawdown on 15 April 2025, hoping for recovery within 30-50 days.", "as_of": "2025-04-15", "reasoning": "Equities and trend both fell.", "claim_ids": ["MT135-C13-X1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {"topic": "Relative quality of top-down versus bottom-up replication", "positions": [
+    {"speaker": "Cory Hoffstein", "position": "Both replicate the trend index about equally well (statistically indistinguishable) and the top-down works though it is mechanically untethered from trend; blend them for lower tracking error.", "claim_ids": ["MT135-C10-3", "MT135-C10-X1"]},
+    {"speaker": "Adam Butler", "position": "The bottom-up has the better average fit track record, but the top-down sometimes overwhelms it by catching idiosyncratic manager methods, which is why it is kept.", "claim_ids": ["MT135-C11-1"]}]},
+  {"topic": "Whether a replication is 'divorced from trend following'", "positions": [
+    {"speaker": "Critics (as characterised by Cory)", "position": "Replication is totally divorced from trend following.", "claim_ids": ["MT135-C11-X1"]},
+    {"speaker": "Cory Hoffstein", "position": "The 70% bottom-up leg applies true trend signals fitted to the index and the 30% top-down leg adds process diversification.", "claim_ids": ["MT135-C11-X1", "MT135-C10-X1"]}]},
+  {"topic": "Value of a long tail of markets", "positions": [
+    {"speaker": "Cory Hoffstein", "position": "The ETF delivers trend beta with a handful of common markets; a longer tail raises Sharpe but weakens crisis offset; fat-tail trading is for managers adding alpha.", "claim_ids": ["MT135-C09-X1", "MT135-C12-3", "MT135-C09-2"]},
+    {"speaker": "Moritz (co-hosts)", "position": "They like trading fat-tail and alternative markets, spreads and punchier returns; the question is how much stress payoff you want.", "claim_ids": ["MT135-C13-1", "MT135-C13-R1"]}]},
+  {"topic": "Recalibration of a fixed bottom-up fit", "positions": [
+    {"speaker": "Moritz (co-hosts)", "position": "A fixed fit has no response function if managers change speed or markets.", "claim_ids": ["MT135-C07-X2"]},
+    {"speaker": "Cory Hoffstein", "position": "It is non-trivial; 15-20 years are needed and annual reruns will not change weights meaningfully.", "claim_ids": ["MT135-C07-3"]},
+    {"speaker": "Adam Butler", "position": "Sector weights and speeds were stable in cross-validation and no systematic lengthening of trend speeds was found.", "claim_ids": ["MT135-C08-1"]}]}
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Speaker attribution is uncertain for several passages (ledger corrections move C07-3, C09-2, C13-2, C13-3 to Cory).", "claim_ids": ["MT135-C07-3", "MT135-C09-2", "MT135-C13-2", "MT135-C13-3"]},
+  {"issue": "The 0.8 daily correlation is in-sample against an average of 10 funds; the quoted tracking-error correlation (about 2.3 in the captions, likely 0.2-0.3) is garbled and no out-of-sample figure is given.", "claim_ids": ["MT135-C07-1", "MT135-C10-3"]},
+  {"issue": "Fitting needs 15-20 years but the weights are said to be stable under cross-validation; training on 2000-10 versus 2010-20 gave different market weights, so stability applies only at sector and speed level.", "claim_ids": ["MT135-C07-3", "MT135-C08-1"]},
+  {"issue": "Claim that 26-27 markets replicate the full universe 'closely' is not quantified.", "claim_ids": ["MT135-C05-2"]},
+  {"issue": "Spread estimates of 20-30 bp are given as typical without data and assume small trades.", "claim_ids": ["MT135-C04-1"]},
+  {"issue": "Merger arbitrage return (200-250 bp over SOFR) and correlation of 0.5 to credit are stated without sources.", "claim_ids": ["MT135-C15-1", "MT135-C15-2"]},
+  {"issue": "Whether adding carry, skew, seasonality features to the bottom-up model is justified is left open: marginal against the trend index but material against the CTA index.", "claim_ids": ["MT135-C12-1"]},
+  {"issue": "The statement that ETF performance would 'self-correct' at $20bn or more is unsupported by capacity analysis.", "claim_ids": ["MT135-C05-3", "MT135-C05-X1"]},
+  {"issue": "Top-down regression blind spots (no P&L in markets over the lookback) are acknowledged, with only a vague 'things you can do to manage around that'.", "claim_ids": ["MT135-C10-2", "MT135-C11-X2"]},
+  {"issue": "Claim that stacking ruin risk is negligible rests on one April 2025 episode.", "claim_ids": ["MT135-C14-3", "MT135-C14-X1"]},
+  {"issue": "Gold and Bitcoin are treated as diversifying assets with a store-of-value narrative but no evidence is given.", "claim_ids": ["MT135-C17-1", "MT135-C16-2"]}
+ ],
+ "forward_looking_inputs": "(reader) The speakers are product builders rather than forecasters. Observable inputs they use: the daily SG Trend Index and the CTA index returns (regressed on a recent 20-40 day window), fitted risk weights by sector (about 25% each), trend speeds (intermediate), merger-arbitrage spread and deal-close probability features, and bid-ask spreads and NAV premia for ETF execution. They offer no price forecasts; the April 2025 hope for a trend recovery in 30-50 days is a host remark.",
+ "reader_inferences": [
+  "(reader) The central argument is that trend 'beta' is largely determined by a small set of common markets and speeds, so it is replicable and will be priced like beta; alpha is claimed only in the fat tail and differentiated design.",
+  "(reader) The 30/70 blend is a process-diversification decision: neither method is shown to dominate, and the blend reduces tracking error by combining weakly correlated errors.",
+  "(reader) The guests have a commercial interest in the replication and stacking products, so claims about the adequacy of limited universes and negligible ruin risk are framed by that interest.",
+  "(reader) Several mechanics (SEC 18f-4 VaR cap, CFTC front-month limits, ETF creation/redemption) bound the design, so practical constraints rather than signal quality drive many choices."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT135-C13-R1",
+   "chunk": "C13",
+   "speaker": "Moritz (co-hosts)",
+   "quote": "the pain of 20% volatility or 25% volatility and the potential draw down that that could come with is something that most investors can no longer tolerate",
+   "claim": "A co-host says most investors can no longer tolerate 20-25% volatility and its drawdowns, whereas 25 years ago equity markets at 20% volatility were fine, so institutional allocators dialled volatility down at a cost.",
+   "mechanism": "allocator risk tolerance",
+   "asset_class": "multi",
+   "indicator": "portfolio volatility level accepted by allocators",
+   "horizon": "years",
+   "direction": "n/a",
+   "conditions": "institutional allocator behaviour",
+   "testable": "no - observation about preferences",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

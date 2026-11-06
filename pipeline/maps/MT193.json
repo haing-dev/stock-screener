@@ -1,0 +1,306 @@
+{
+ "source_id": "MT193",
+ "episode_thesis": "Dunne argues trend following should be framed as a return-enhancing overlay and not only as crisis protection: stacked on the S&P 500 since 2000 it helps in both the worst and best equity quarters (a smile), because it keeps investors in an equity bull market with a mechanical exit rule. His macro view is that consumer excess savings are exhausted while credit spreads and the VIX price almost no recession risk, and that central banks, having lost confidence in their forecasts, are hypersensitive to monthly data. Multi-manager platforms earn their Sharpe from leveraging many low-correlation strategies, which makes tail correlation and crowding the key risk.",
+ "speakers": [
+  {
+   "name": "Alan Dunne",
+   "role": "co-host; macro and allocator perspective, Dublin (caption spelling 'Alan Don')",
+   "speaker_note": "Captions give no speaker labels. Dunne's turns are identified by the 'I interviewed Gary Gerstle' and 'my own background as allocator' references; the host's turns by 'my trend barometer', 'top traders unplugged' and the CTA index reading. The ledger correction splits C15 between them: the 7-10% pass-through estimate is Dunne's, the 'no advantage to the investor' remark is Kaastrup-Larsen's.",
+   "fingerprint": ["macro_fundamental_topdown", "policy_reaction_central_banks", "trend_following", "portfolio_construction_stacking", "manager_selection_allocation", "regime_detection", "positioning_crowding"],
+   "worldview_premises": [
+    {
+     "premise": "The US economy resisted higher rates for four reasons: borrowers refinanced at low rates, long and variable monetary lags (past hikes may still bite), strong fiscal support, and pandemic excess savings that consumers drew down.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "a San Francisco Fed study on excess savings; the savings rate near 3% against about 6% pre-pandemic",
+     "claim_ids": ["MT193-C04-3", "MT193-C05-1", "MT193-C05-2", "MT193-C05-3"]
+    },
+    {
+     "premise": "Excess savings are now exhausted and being drawn down at about $80bn a month, which may be a tipping point for consumption, with stress already visible in low-income delinquencies; but markets price almost no recession risk (BBB spreads near 2007 lows, low VIX).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "SF Fed estimate; credit card and auto delinquencies; spreads and VIX levels",
+     "claim_ids": ["MT193-C05-3", "MT193-C05-4", "MT193-C05-5", "MT193-C05-R1"]
+    },
+    {
+     "premise": "Central banks abandoned two-year-ahead inflation forecasts (fan charts) after their models failed in 2021-22 and now respond to each monthly print, even to the second decimal of noisy sample-based estimates, so policy is hypersensitive and rudderless; the Fed's December 2023 pre-announcement of 2024 cuts was an error that fuels the flip-flop accusation.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Bernanke's Bank of England review and Waller's speech (recalled); central-bank practice before and after 2020",
+     "claim_ids": ["MT193-C06-2", "MT193-C06-X1", "MT193-C07-1", "MT193-C07-X1", "MT193-C05-X1"]
+    },
+    {
+     "premise": "Central bank independence is historically recent (1990s) and may weaken as fiscal and monetary policy coordinate more; interference would be dollar negative and push yields higher.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "history: Nixon and Burns, WWII yield-curve control, the UK in the 1990s",
+     "claim_ids": ["MT193-C02-2", "MT193-C02-1", "MT193-C01-2"]
+    },
+    {
+     "premise": "The neoliberal order (free trade, globalisation) is in decline, producing rising nationalism and traction on the far left and far right.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Gary Gerstle's book (an interview he recorded); European election polls",
+     "claim_ids": ["MT193-C04-1"]
+    },
+    {
+     "premise": "Trend following has a known favourable environment (big market moves) and works in both crisis and pro-risk regimes because it is systematic, agnostic between long and short, and diversified; the crisis side dominates marketing because the benefit is larger on the downside.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "quarterly decile test of S&P 500 plus 30% SG Trend excess returns since 2000",
+     "claim_ids": ["MT193-C12-1", "MT193-C10-4", "MT193-C13-2", "MT193-C07-3"]
+    },
+    {
+     "premise": "Quant macro is a heterogeneous universe (pairwise correlation 0.16 and falling versus 0.58 for trend followers) that partly overlaps with trend; it is harder to time and relies on relationships that can break.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "a SocGen paper on 83 programs (24 in the PCA); PC1 explains 24% of variance versus 57% for trend",
+     "claim_ids": ["MT193-C08-1", "MT193-C08-2", "MT193-C09-1", "MT193-C09-2", "MT193-C09-3", "MT193-C10-1", "MT193-C08-X2"]
+    },
+    {
+     "premise": "Allocators chase recent performance, so family office allocations to commodities and managed futures are low after a cycle; fixed income allocations rose because yields rose.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "UBS 2024 survey of 320 single family offices and a Long Angle member survey",
+     "claim_ids": ["MT193-C10-2", "MT193-C10-3", "MT193-C10-X1", "MT193-C11-1", "MT193-C11-X1", "MT193-C11-2"]
+    },
+    {
+     "premise": "Multi-manager platforms' edge comes from structure: many strategies of modest Sharpe (about 0.7) with near-zero correlation, then leverage; the older fund of funds lacked leverage and so needed high Sharpe at 3-4% volatility.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Brian Hurst's paper and presentation (mathematics of the construction); the standard explanations (talent, fast manager cuts) are secondary in the paper",
+     "claim_ids": ["MT193-C15-2", "MT193-C15-3", "MT193-C15-X2", "MT193-C16-1", "MT193-C16-2"]
+    },
+    {
+     "premise": "Multi-manager risk is in the tail: average correlation understates it; crowded pods degross together, move markets and can start a crisis (August 2007, March 2020 basis trades), and the Fed may not always backstop.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "historical precedents; platforms' active offset of common exposures",
+     "claim_ids": ["MT193-C16-3", "MT193-C16-4", "MT193-C16-5", "MT193-C16-6", "MT193-C16-7", "MT193-C16-8"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Consumer excess savings run out while risk is priced low",
+     "steps": [
+      {"from": "pandemic stimulus built excess savings", "to": "consumers drew them down while rates rose", "why": "savings rate fell to about 3% from 6%", "claim_ids": ["MT193-C05-3"]},
+      {"from": "excess savings exhausted (about $80bn a month drawdown)", "to": "possible tipping point for consumption", "why": "low-income households already show rising delinquencies", "claim_ids": ["MT193-C05-3", "MT193-C05-4"]},
+      {"from": "markets price low risk (tight BBB spreads, low VIX)", "to": "asymmetric downside if consumption weakens", "why": "no recession risk in prices", "claim_ids": ["MT193-C05-5", "MT193-C05-R1"]}
+     ],
+     "evidence": "SF Fed excess savings study, delinquency data, spread and VIX levels.",
+     "fails_when": "He notes conflicting factors: solid labour market, wealth effects, middle and upper income households still fine.",
+     "claim_ids": ["MT193-C05-3", "MT193-C05-4", "MT193-C05-5"]
+    },
+    {
+     "topic": "Why central banks became hypersensitive to monthly data",
+     "steps": [
+      {"from": "models failed to forecast the 2021-22 inflation surge", "to": "loss of credibility and confidence in forecasts", "why": "two-year-ahead forecast approach was abandoned", "claim_ids": ["MT193-C06-2", "MT193-C06-X1"]},
+      {"from": "no confidence to stick to a forecast-based path", "to": "month-by-month data dependence", "why": "they cannot afford to be wrong again", "claim_ids": ["MT193-C06-2"]},
+      {"from": "reacting to small differences in sampled, seasonally adjusted prints", "to": "policy path uncertainty ('rudderless')", "why": "scenario analysis (Bernanke) says little: higher inflation means higher rates", "claim_ids": ["MT193-C07-1", "MT193-C07-X1"]}
+     ],
+     "evidence": "Waller's reaction function and speech; Bernanke's review (recalled).",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT193-C06-1", "MT193-C06-2", "MT193-C07-1"]
+    },
+    {
+     "topic": "Trend overlay on equities gives a smile",
+     "steps": [
+      {"from": "add a notionally funded 30% SG Trend excess-return overlay to the S&P 500 (equal volatility)", "to": "compare quarterly return deciles since 2000", "why": "test design", "claim_ids": ["MT193-C12-3"]},
+      {"from": "worst S&P quarters", "to": "overlay helps most", "why": "bonds rally, currencies and commodities trend in crises", "claim_ids": ["MT193-C12-4", "MT193-C13-2"]},
+      {"from": "best S&P quarters", "to": "overlay also helps", "why": "a hot economy produces commodity and other trends", "claim_ids": ["MT193-C13-1", "MT193-C12-4"]},
+      {"from": "middle quarters", "to": "slight underperformance", "why": "few trends", "claim_ids": ["MT193-C12-4"]}
+     ],
+     "evidence": "His own quarterly decile test (S&P versus S&P plus SG Trend overlay) since 2000; Niels adds that equal-weight Dunn and S&P since the 1980s almost sum rather than average because of compounding.",
+     "fails_when": "Middle quarters, slight underperformance; trend overlay depends on trends existing (trend barometer).",
+     "claim_ids": ["MT193-C12-3", "MT193-C12-4", "MT193-C13-1", "MT193-C13-3"]
+    },
+    {
+     "topic": "Multi-manager return construction and its fragility",
+     "steps": [
+      {"from": "about 20 strategies with Sharpe near 0.7 and correlation of 0 to 0.1", "to": "very high portfolio Sharpe", "why": "diversification of uncorrelated sleeves", "claim_ids": ["MT193-C16-1"]},
+      {"from": "apply leverage", "to": "attractive returns", "why": "old fund of funds had no leverage and needed high Sharpe at 3-4% volatility", "claim_ids": ["MT193-C15-3"]},
+      {"from": "correlations rise", "to": "platform volatility rises and capital must be pulled to hit target volatility", "why": "volatility targeting", "claim_ids": ["MT193-C16-3"]},
+      {"from": "many pods in the same strategies", "to": "simultaneous degrossing moves markets and can start a crisis", "why": "tail correlation (August 2007, March 2020 basis trades)", "claim_ids": ["MT193-C16-4", "MT193-C16-5", "MT193-C16-6", "MT193-C16-7"]}
+     ],
+     "evidence": "Hurst's paper (maths of the construction); precedents.",
+     "fails_when": "Correlations rise, in the tails; lenders and the Fed do not backstop.",
+     "claim_ids": ["MT193-C16-1", "MT193-C16-3", "MT193-C16-4", "MT193-C16-5"]
+    }
+   ],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Stack trend on top of passive equities as a mechanical overlay (30% of SG Trend excess return, notionally funded, matching volatility).", "why": "keeps equity exposure with a rule to cut it when trends turn, modulating exposure to bonds, currencies and commodities too", "claim_ids": ["MT193-C12-2", "MT193-C12-3", "MT193-C12-X1"]},
+    {"element": "research", "practice": "Test by calendar-quarter return deciles since 2000 and compare the overlay against the S&P alone.", "why": "show benefit in both tails", "claim_ids": ["MT193-C12-3", "MT193-C12-4"]},
+    {"element": "portfolio", "practice": "When blending trend with quant macro, check hidden trend exposure through correlations and PCA and watch concentration risk.", "why": "some quant macro programs hold trend sleeves or the same positions by chance", "claim_ids": ["MT193-C09-4", "MT193-C09-3"]},
+    {"element": "risk", "practice": "For multi-manager platforms, look at tail correlation and crowding, not average correlation.", "why": "degrossing spirals", "claim_ids": ["MT193-C16-4", "MT193-C16-5"]},
+    {"element": "other", "practice": "Present trend to investors as an additive, return-enhancing feature that keeps them in equities, not as costly protection.", "why": "inherent-cost perception of protection; overlays already familiar to pensions", "claim_ids": ["MT193-C13-5", "MT193-C13-4"]}
+   ],
+   "evidence_style": "Allocator and macro commentator: cites studies and surveys (SF Fed, SocGen paper, UBS survey, Hurst paper), runs a simple historical decile test himself, uses historical precedent (Burns, 2007, 2020); often says he is relying on memory or has seen no study.",
+   "current_views": [
+    {"view": "The AI boom is intact after Nvidia's results and guidance; it is the main market theme.", "as_of": "2024-05-23", "reasoning": "stellar revenue and favourable forward guidance", "claim_ids": ["MT193-C01-1"]},
+    {"view": "Consumers are the focus: excess savings are exhausted, low-income stress is rising, yet markets price almost no recession risk.", "as_of": "2024-05-23", "reasoning": "BBB spreads near 2007 lows, low VIX, SF Fed estimate", "claim_ids": ["MT193-C05-3", "MT193-C05-5", "MT193-C05-4"]},
+    {"view": "US Q1 GDP weakness was inventories and trade; underlying domestic demand was solid.", "as_of": "2024-05-23", "reasoning": "composition of Q1 growth", "claim_ids": ["MT193-C04-2"]},
+    {"view": "Waller: a hike is very unlikely, the next move is probably a cut, which needs several months of good inflation or labour market weakening; the Fed is somewhat more hawkish in tone overall.", "as_of": "2024-05-23", "reasoning": "Waller's speech and the minutes", "claim_ids": ["MT193-C06-1"]},
+    {"view": "2024 has been a very good start for trend in a pro-risk environment; equity valuations are highish and risks are rising, so a mechanical overlay is a good way to stay long.", "as_of": "2024-05-23", "reasoning": "trend up in equities, strong trends in other markets", "claim_ids": ["MT193-C07-3", "MT193-C12-R1", "MT193-C12-2"]},
+    {"view": "A Trump return could bring a push to blunt Fed independence, which would be dollar negative with higher bond yields.", "as_of": "2024-05-23", "reasoning": "report of advisers' plans; precedent of Nixon and Burns", "claim_ids": ["MT193-C01-2", "MT193-C02-1"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "host, Top Traders Unplugged; CTA background",
+   "speaker_note": "Host. He states views on central bank guidance, pass-through fees, the overlay narrative and the compounding of trend plus equities. His attribution of the Virginia retirement system quote to a colleague is from memory. The ledger's correction gives him the 'no advantage to investors' remark in C15.",
+   "fingerprint": ["trend_following", "behavioral_sentiment", "portfolio_construction_stacking", "policy_reaction_central_banks", "manager_selection_allocation", "costs_execution"],
+   "worldview_premises": [
+    {
+     "premise": "Month-by-month data-dependent central banking replaces forward guidance and so creates ambiguity about the rate path, defeating the stabilising purpose of guidance.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "career observation, no data",
+     "claim_ids": ["MT193-C06-X2"]
+    },
+    {
+     "premise": "Combining equal-weight trend (Dunn) and the S&P 500 yields almost the sum of the two returns rather than the average, because of compounding and diversification.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "his own firm's returns since the 1980s",
+     "claim_ids": ["MT193-C13-3"]
+    },
+    {
+     "premise": "Trend allows investors to hold equities because it hedges when equity trends turn; pension funds already use overlays, so framing trend as an overlay may be easier to adopt than crisis alpha.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "a Virginia Retirement System colleague's remark in the 1990s; pension practice",
+     "claim_ids": ["MT193-C14-1", "MT193-C13-4"]
+    },
+    {
+     "premise": "Multi-manager pass-through of pod sign-on bonuses and costs is a disadvantage to investors compared with the single-manager structure where the manager pays; the industry has made it sound like an advantage, and only higher leverage might offset it.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "reasoning; no study seen",
+     "claim_ids": ["MT193-C15-X1", "MT193-C15-1"]
+    },
+    {
+     "premise": "Pro-risk 2024 has rewarded medium-term trend over short-term CTAs (short-term traders +4% YTD versus 11-13% for trend indices).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "index numbers read out",
+     "claim_ids": ["MT193-C08-X1", "MT193-C07-4"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why May 2024 was soft for trend",
+     "steps": [
+      {"from": "reversals in cocoa (down 20%), natural gas (up 40% against a long downtrend), grains and interest rates", "to": "trend losses in May", "why": "positions held against reversals", "claim_ids": ["MT193-C07-2"]},
+      {"from": "metals (silver) and AI-driven equities", "to": "partial offsets", "why": "trends in those markets continued", "claim_ids": ["MT193-C07-2"]}
+     ],
+     "evidence": "May returns of trend indices, read out.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT193-C07-2"]
+    }
+   ],
+   "decision_process": [
+    {"element": "other", "practice": "Tracks his trend barometer (66 in late May 2024) as a gauge of the trend environment.", "why": "a high reading suggests a strong environment, perhaps with recovery to come", "claim_ids": ["MT193-C07-4"]}
+   ],
+   "evidence_style": "Anecdote and index numbers from his own firm; asks questions to test guests' claims.",
+   "current_views": [
+    {"view": "Late May 2024: BTOP50 +10.44%, SG CTA +11.18%, SG Trend +13.25% YTD (all down in May), versus MSCI World +9.35% and S&P 500 +11.89%; the short-term traders index +4.06%.", "as_of": "2024-05-23", "reasoning": "index data read out", "claim_ids": ["MT193-C07-4", "MT193-C08-X1"]},
+    {"view": "European elections could shift to the right in several large countries; asks whether investors should treat it as a risk.", "as_of": "2024-05-23", "reasoning": "polls in Germany, France and possibly Spain; the European Parliament's composition", "claim_ids": ["MT193-C03-X1"]},
+    {"view": "May 2024 hurt trend because of reversals in cocoa, natural gas, grains and rates, offset by metals and equities.", "as_of": "2024-05-23", "reasoning": "sector attribution", "claim_ids": ["MT193-C07-2"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Is multi-manager pass-through a cost or an advantage?",
+   "positions": [
+    {"speaker": "Alan Dunne", "position": "Reports the platform argument (pass-through attracts better talent) and estimates costs may reach 7-10% of fees but has not seen a study; concedes it looks like a stumbling block that platforms overcame through performance.", "claim_ids": ["MT193-C14-2", "MT193-C15-1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Sees no advantage to the investor: costs the manager would pay come out of investors' pockets, offset only if leverage or alpha is higher.", "claim_ids": ["MT193-C15-X1"]}
+   ]
+  },
+  {
+   "topic": "Why multi-manager platforms outperform",
+   "positions": [
+    {"speaker": "Alan Dunne", "position": "Standard answers (talent, quick manager cuts) exist, but Hurst's paper attributes it to the structure: many uncorrelated strategies plus leverage.", "claim_ids": ["MT193-C15-X2", "MT193-C15-3"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Frames the outperformance as a narrative success (Aura) and doubts that the cost structure helps the investor.", "claim_ids": ["MT193-C15-X1"]}
+   ]
+  },
+  {
+   "topic": "Central bank data dependence",
+   "positions": [
+    {"speaker": "Alan Dunne", "position": "Understandable and rational: models failed, so banks cannot afford to be wrong; but makes them hypersensitive and rudderless.", "claim_ids": ["MT193-C06-2", "MT193-C07-1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "It defeats the purpose of guidance and creates uncertainty and ambiguity.", "claim_ids": ["MT193-C06-X2"]}
+   ]
+  },
+  {
+   "topic": "Is a harder allocation problem trend or quant macro?",
+   "positions": [
+    {"speaker": "Alan Dunne", "position": "Neither is easier: with trend the favourable environment is clear but managers differ; with quant macro there are unique factors but the environment where it works is harder to know.", "claim_ids": ["MT193-C10-4", "MT193-C10-1"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "The overlay test is a simple decile comparison since 2000 with a notional 30% funding on the SG Trend excess-return index; no costs, funding spread, significance test or sensitivity is given, and the middle-decile underperformance is dismissed in a sentence.", "claim_ids": ["MT193-C12-3", "MT193-C12-4"]},
+  {"issue": "Dunne says benefits are larger on the downside than the upside, but gives no numbers; the claim that trend helps in strong equity quarters because a hot economy creates commodity trends is an argument, not tested.", "claim_ids": ["MT193-C13-1", "MT193-C13-2"]},
+  {"issue": "The 7-10% 'of fees' figure for multi-manager pass-through is stated without a study and with unclear units (percent of what).", "claim_ids": ["MT193-C15-1"]},
+  {"issue": "Two numbers from the SocGen paper (24 of 83 programs in the PCA) imply the PCA sample is much smaller than the correlation sample; the paper's time window for the correlation of 0.16 is not given.", "claim_ids": ["MT193-C08-1", "MT193-C08-2", "MT193-C09-1"]},
+  {"issue": "The remark that 'it is hard to tell if the risk of recession is priced' rests on credit spreads and the VIX only; no recession probability model or other input is cited.", "claim_ids": ["MT193-C05-5", "MT193-C05-R1"]},
+  {"issue": "Family office commodity allocation of zero is explained as cyclical from memory ('ten or fifteen years ago'), without data.", "claim_ids": ["MT193-C10-3", "MT193-C10-X1"]}
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs the speakers say lead future prices: monthly inflation prints and labour market data for Fed moves (Waller's reaction function: several months of good inflation or significant labour weakness for a cut); the excess-savings drawdown and delinquencies for consumption; credit spreads and VIX as risk-pricing gauges; the trend barometer and size of market moves for trend returns; the Trump campaign and Fed independence for the dollar and yields; correlations among platform strategies for multi-manager risk. Horizons: months for macro data, quarters for the overlay test, 18 months to 2026 for the Fed appointments question.",
+ "reader_inferences": [
+  "Dunne's two macro threads (excess-savings exhaustion and pro-risk pricing) imply equity downside risk, yet his trend overlay argument assumes staying long equities with a mechanical exit; the two fit if the exit rule is what handles that risk.",
+  "The overlay benefit is larger on the downside than the upside, so most of the return enhancement is still crisis-related; the pro-risk gain is the smaller part.",
+  "The multi-manager fragility argument is a crowding/tail-correlation story, similar to the argument CTA allocators use against crowded trend, but no data on pod overlap is given.",
+  "Both speakers treat narrative as part of CTA allocation; the proposed framing change is aimed at allocators' behaviour, not at the return stream itself."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT193-C05-R1",
+   "chunk": "C05",
+   "speaker": "Alan Dunne",
+   "quote": "the risk of recession seems to been totally removed from market",
+   "claim": "Dunne reports Waller saying that the risk of recession seems to have been totally removed from the market.",
+   "mechanism": "overshoot",
+   "asset_class": "multi",
+   "indicator": "recession risk priced in markets",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - credit spreads and VIX levels",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT193-C12-R1",
+   "chunk": "C12",
+   "speaker": "Alan Dunne",
+   "quote": "valuations are highish you know fairly high in some instances",
+   "claim": "Dunne notes equity valuations are high in some instances after a long run, with risks (economic cracks) but no way to know when to leave the bull market.",
+   "mechanism": "overshoot",
+   "asset_class": "equities",
+   "indicator": "equity valuations",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - valuation metrics",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT193-C03-R1",
+   "chunk": "C03",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "the original reason probably could have been correct that there are some concerns",
+   "claim": "Kaastrup-Larsen speculates the original reason for Altman's 2023 ouster may have been concerns about a leap in AI capability, now echoed by resignations at OpenAI; he flags this as pure speculation.",
+   "mechanism": "other",
+   "asset_class": "equities",
+   "indicator": "OpenAI resignations",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - speculation",
+   "speaker_confidence": "low",
+   "time_bound": "yes"
+  }
+ ]
+}

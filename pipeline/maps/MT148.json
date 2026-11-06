@@ -1,0 +1,805 @@
+{
+ "source_id": "MT148",
+ "episode_thesis": "Druckenmiller argues that policy far out of step with circumstances produced inflation and an asset bubble that is now bursting, and that history (no soft landing once inflation exceeds 4.5-5%) makes a hard landing and recession in 2023 probable. His method is to forecast the economy from leading and lagging industry stocks, to size concentrated bets by conviction and streaks, and to wait for fat pitches, which in mid-2022 means standing aside from bonds, expecting to re-short equities on a rally, holding energy longs and expecting a short dollar.",
+ "speakers": [
+  {
+   "name": "Stanley Druckenmiller",
+   "role": "Founder of Duquesne Family Office; veteran macro investor (45th year as chief investment officer)",
+   "speaker_note": "Interview: John Collison (Stripe co-founder) asks the questions and states no investment views of his own beyond framing, so only Druckenmiller is mapped. Captions are auto-generated; the 'mistakenly gold' remark is unclear.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "market_internals_leading",
+    "policy_reaction_central_banks",
+    "debt_cycle_long_term",
+    "kelly_or_conviction_sizing",
+    "behavioral_sentiment",
+    "valuation_contrarian",
+    "regime_detection"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "When monetary and fiscal policy are historically out of step with circumstances amid a mania across all assets, investors disregard looming inflation and an inflation and asset-bubble burst follow.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His 2021 call; inflation reached 8%.",
+     "claim_ids": [
+      "MT148-C01-X1",
+      "MT148-C01-1",
+      "MT148-C01-2"
+     ]
+    },
+    {
+     "premise": "Large-scale QE ($30tn) and negative-yielding debt ($18tn) created a misallocation of resources that cannot be unwound in six months, so the bear market has a long way to run.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Scale of QE; bankruptcies suppressed.",
+     "claim_ids": [
+      "MT148-C02-X1",
+      "MT148-C02-4"
+     ]
+    },
+    {
+     "premise": "History says soft landings are rare and none occurred once inflation exceeded 4.5-5%; inflation above 5% has never been tamed without a recession or Fed funds above CPI.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Two 'undefeated records' of history; the 1994-95 soft landing.",
+     "claim_ids": [
+      "MT148-C02-1",
+      "MT148-C02-2",
+      "MT148-C02-3"
+     ]
+    },
+    {
+     "premise": "The Fed is far behind the curve: projected policy rate near 2% against 8% CPI, and it recognised inflation slowly.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "QE until March 2022; no verbal pivot until November.",
+     "claim_ids": [
+      "MT148-C02-X2",
+      "MT148-C01-1"
+     ]
+    },
+    {
+     "premise": "Excess household savings of $1.5-2tn delay the recession, which he nonetheless assumes for 2023.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Estimates 'depending on who you listen to'.",
+     "claim_ids": [
+      "MT148-C02-5",
+      "MT148-C02-3"
+     ]
+    },
+    {
+     "premise": "Stocks lead the economy by 6-12 months, and the relative pattern of leading and lagging industries is a cleaner forecasting signal than index or bond levels, which central banks have contaminated.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "20-30 years of beating Fed forecasts (self-reported, not audited).",
+     "claim_ids": [
+      "MT148-C03-1",
+      "MT148-C03-2",
+      "MT148-C03-3",
+      "MT148-C03-X1",
+      "MT148-C03-X2"
+     ]
+    },
+    {
+     "premise": "A leading-industry signal is credible only when several leaders (trucking, homebuilders, retail) weaken together, with 6-12 month lead times.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Homebuilders -50%, trucking -40% despite record earnings; retail weak versus GDP.",
+     "claim_ids": [
+      "MT148-C04-1",
+      "MT148-C04-2",
+      "MT148-C04-3",
+      "MT148-C04-X1"
+     ]
+    },
+    {
+     "premise": "Old rules (price action versus news; bonds rallying against strong data) have weakened with efficiency, hedge funds and central-bank manipulation; investing is an art that changes each cycle.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Career since the mid-1970s.",
+     "claim_ids": [
+      "MT148-C04-4",
+      "MT148-C04-X2",
+      "MT148-C05-X3"
+     ]
+    },
+    {
+     "premise": "The traditional bear-market playbook (long Treasuries) may fail with 8% inflation, weak growth and 3% yields; there is no historical analog.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Never faced this cocktail; negative rates in Europe with 8% inflation.",
+     "claim_ids": [
+      "MT148-C05-1",
+      "MT148-C15-1"
+     ]
+    },
+    {
+     "premise": "Aggressive shorting in a bear market gets hurt in sharp rallies and shorting a bubble early is costly.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "March 1999 internet short lost three to four times the investment in four weeks.",
+     "claim_ids": [
+      "MT148-C05-3",
+      "MT148-C10-1"
+     ]
+    },
+    {
+     "premise": "Crypto swings spill into other markets via wealth effects and crypto correlates strongly with Nasdaq; Bitcoin is a risk-on inflation asset, gold the bear-phase asset; blockchain will become a real force in 5-10 years.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "85% observation, plus a rationalised owner-base story.",
+     "claim_ids": [
+      "MT148-C06-3",
+      "MT148-C06-4",
+      "MT148-C07-1",
+      "MT148-C07-X1",
+      "MT148-C06-X1",
+      "MT148-C06-X2"
+     ]
+    },
+    {
+     "premise": "Energy supply will be short for 5-10 years because ESG constrains investment; the main risk is demand destruction from a worldwide recession.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "ESG transition; Ukraine extended the trade.",
+     "claim_ids": [
+      "MT148-C06-2",
+      "MT148-C14-3",
+      "MT148-C14-X3"
+     ]
+    },
+    {
+     "premise": "Sizing is 70-80% of returns, and streaks exist, so size up when hot and down when cold; concentration with daily monitoring beats diversification because stale positions cause trouble.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "What he learned from George Soros; baseball analogy.",
+     "claim_ids": [
+      "MT148-C08-1",
+      "MT148-C08-2",
+      "MT148-C08-3",
+      "MT148-C09-1",
+      "MT148-C09-X1"
+     ]
+    },
+    {
+     "premise": "Information spreads fast: 60-70% of a move happens within 2-3 weeks, so entering before the idea is public gives an asymmetric payoff; buy on intuition when it fits a standing macro view and do the research afterwards.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "40 years of test cases.",
+     "claim_ids": [
+      "MT148-C09-2",
+      "MT148-C09-3",
+      "MT148-C09-X2"
+     ]
+    },
+    {
+     "premise": "Prices move on changes in expectations 18-24 months out; margins mean-revert in about three years (loss-makers cut capacity, over-earners revert).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "First mentor Spiros Drelles; chemicals experience.",
+     "claim_ids": [
+      "MT148-C13-2",
+      "MT148-C13-3",
+      "MT148-C14-1"
+     ]
+    },
+    {
+     "premise": "Covid produced obvious over-earners (retail, trucking, shipping) that gave short opportunities; retail inflows chased immediate beneficiaries and many new retail investors are bull-market geniuses.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Stocks quadrupled; about 80% of the group is already down.",
+     "claim_ids": [
+      "MT148-C13-4",
+      "MT148-C07-2",
+      "MT148-C14-X1",
+      "MT148-C14-X2"
+     ]
+    },
+    {
+     "premise": "A total break from screens restored clarity after big losses and enabled sizing in the 2000 Treasury trade; fear of missing out overrode conviction in March 2000.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "March 2000 loss of $2-3bn and 40% gain in Q4 after a sabbatical.",
+     "claim_ids": [
+      "MT148-C11-3",
+      "MT148-C11-X1",
+      "MT148-C11-R1",
+      "MT148-C11-2"
+     ]
+    },
+    {
+     "premise": "Rising oil, rates and dollar together are bad for forward earnings, and market rallies that contradict small-business anecdotes are more likely wrong.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Ed Hyman regression: earnings -35% versus consensus +18%.",
+     "claim_ids": [
+      "MT148-C11-1",
+      "MT148-C11-X2"
+     ]
+    },
+    {
+     "premise": "An asset bubble is followed by deflation or long sideways markets (1966-82, Japan-like outcomes); he put 70% inflation and 30% deflation as end-state a year and a half earlier.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Interwar and Japan 1989 history.",
+     "claim_ids": [
+      "MT148-C16-1",
+      "MT148-C16-X1",
+      "MT148-C15-X1"
+     ]
+    },
+    {
+     "premise": "Macro investors are structurally pessimistic because they earn most in bear markets, but the math favours long positions; the bearish bias must be managed.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Own bias since 1976; Robert Wilson remark.",
+     "claim_ids": [
+      "MT148-C16-2",
+      "MT148-C16-R3",
+      "MT148-C17-1"
+     ]
+    },
+    {
+     "premise": "The 2005 housing chain: parabolic chart, home-equity extraction spent, securitised loans returning to bank balance sheets led to shorting housing early, wrong for six months in 2006 but conviction grew with research.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Analyst from Lehman Brothers on subprime.",
+     "claim_ids": [
+      "MT148-C15-2",
+      "MT148-C15-X2"
+     ]
+    },
+    {
+     "premise": "Central-bank easing with no domestic crisis (1999) supports a speculative rally, so shorting the bubble early is wrong until the liquidity stops; he went long with young specialists who knew the new companies.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Greenspan's easing after the Asian crisis; 1999 gains of 42% net.",
+     "claim_ids": [
+      "MT148-C10-2"
+     ]
+    },
+    {
+     "premise": "His biggest equity profits came from growth stocks he expected to be much better off in 3-5 years, alongside countercyclical trades.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own career record.",
+     "claim_ids": [
+      "MT148-C14-2"
+     ]
+    },
+    {
+     "premise": "Macro-driven markets (chaos) will persist for the next 4-5 years.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Compares with the 1980s and 1990s.",
+     "claim_ids": [
+      "MT148-C13-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "From out-of-step policy to recession",
+     "steps": [
+      {
+       "from": "Extreme QE, zero rates and fiscal stimulus amid a mania",
+       "to": "Inflation (above 5-8%) and asset bubble",
+       "why": "Investors disregarded inflation; Fed recognised it late.",
+       "claim_ids": [
+        "MT148-C01-X1",
+        "MT148-C01-1",
+        "MT148-C02-X1"
+       ]
+      },
+      {
+       "from": "Inflation above 5%",
+       "to": "Tightening cycle needed that the Fed cannot fully deliver without breaking the bubble",
+       "why": "History: only Fed funds above CPI tamed it, and no recession-free case.",
+       "claim_ids": [
+        "MT148-C02-2",
+        "MT148-C02-3",
+        "MT148-C02-X2"
+       ]
+      },
+      {
+       "from": "Tightening against suppressed bankruptcies",
+       "to": "Material destruction and a hard landing",
+       "why": "Disruption would normally have caused many bankruptcies, buried by QE.",
+       "claim_ids": [
+        "MT148-C02-4",
+        "MT148-C02-1"
+       ]
+      },
+      {
+       "from": "Excess savings spent down",
+       "to": "Recession delayed to 2023",
+       "why": "Excess household savings cushion demand.",
+       "claim_ids": [
+        "MT148-C02-5"
+       ]
+      }
+     ],
+     "evidence": "Two historical regularities on inflation above 5%; stock signals in homebuilders, trucking and retail.",
+     "fails_when": "Soft landing or Fed funds above CPI (he thinks the latter unlikely).",
+     "claim_ids": [
+      "MT148-C02-1",
+      "MT148-C02-2",
+      "MT148-C02-3"
+     ]
+    },
+    {
+     "topic": "Leading-industry stock signal",
+     "steps": [
+      {
+       "from": "Industries that lead (housing, weakly retail) and lag (capital goods)",
+       "to": "Pattern of which industries turn first",
+       "why": "Bottom-up company analysis instead of macro data.",
+       "claim_ids": [
+        "MT148-C03-2",
+        "MT148-C03-X1"
+       ]
+      },
+      {
+       "from": "Several leaders weaken together",
+       "to": "Economic trouble 6-12 months ahead",
+       "why": "Stocks lead fundamentals by 6-12 months.",
+       "claim_ids": [
+        "MT148-C03-1",
+        "MT148-C04-1",
+        "MT148-C04-X1"
+       ]
+      },
+      {
+       "from": "Lead time",
+       "to": "Do not call recession immediately",
+       "why": "Signals take 6-12 months to show up.",
+       "claim_ids": [
+        "MT148-C04-3"
+       ]
+      }
+     ],
+     "evidence": "Self-reported record of beating Fed forecasts over 20-30 years.",
+     "fails_when": "Bond and index signals are distorted by central banks; retail is distorted by Covid shifts.",
+     "claim_ids": [
+      "MT148-C03-3",
+      "MT148-C04-2",
+      "MT148-C03-X2"
+     ]
+    },
+    {
+     "topic": "Invest then investigate",
+     "steps": [
+      {
+       "from": "Idea fits standing macro view (for example copper bullish 3-5 years)",
+       "to": "Large position taken on intuition",
+       "why": "Information spreads fast; 60-70% of the move can happen in 2-3 weeks.",
+       "claim_ids": [
+        "MT148-C09-3",
+        "MT148-C09-2"
+       ]
+      },
+      {
+       "from": "Idea not yet public",
+       "to": "Asymmetric payoff",
+       "why": "If wrong the price has not moved; if right others find the story within weeks.",
+       "claim_ids": [
+        "MT148-C09-X2"
+       ]
+      },
+      {
+       "from": "Research over next weeks",
+       "to": "Add if thesis pans out, exit if not",
+       "why": "Deep dives are no longer possible before acting.",
+       "claim_ids": [
+        "MT148-C09-2",
+        "MT148-C09-3"
+       ]
+      }
+     ],
+     "evidence": "40 years of test cases.",
+     "fails_when": "Analysts dine together and discover ideas quickly; a crowded idea loses the edge.",
+     "claim_ids": [
+      "MT148-C09-X2"
+     ]
+    },
+    {
+     "topic": "Break, clarity and the 2000 Treasury trade",
+     "steps": [
+      {
+       "from": "Losses and exhaustion",
+       "to": "Complete break from screens",
+       "why": "Clearing his head.",
+       "claim_ids": [
+        "MT148-C11-3"
+       ]
+      },
+      {
+       "from": "Rising stock prices alongside rising oil, rates and dollar",
+       "to": "Skeptical of the rally",
+       "why": "Ed Hyman regression implied -35% earnings; small-business clients reported poor business.",
+       "claim_ids": [
+        "MT148-C11-1",
+        "MT148-C11-X2"
+       ]
+      },
+      {
+       "from": "Tightening directive reversing into recession",
+       "to": "Huge long Treasury position",
+       "why": "350% 10-year equivalent; gained 40% in Q4.",
+       "claim_ids": [
+        "MT148-C11-2"
+       ]
+      }
+     ],
+     "evidence": "His own account of 1999-2000.",
+     "fails_when": "Fear of missing out overrode conviction in March 2000.",
+     "claim_ids": [
+      "MT148-C11-X1"
+     ]
+    },
+    {
+     "topic": "Bitcoin versus gold",
+     "steps": [
+      {
+       "from": "Inflationary bull market",
+       "to": "Own Bitcoin",
+       "why": "Younger growth investors hold Bitcoin as an inflation hedge (rationalisation).",
+       "claim_ids": [
+        "MT148-C06-4",
+        "MT148-C07-1",
+        "MT148-C07-X1"
+       ]
+      },
+      {
+       "from": "Stagflation-type bear market",
+       "to": "Own gold",
+       "why": "Older investors who expect the world to fall apart hold gold.",
+       "claim_ids": [
+        "MT148-C06-4",
+        "MT148-C07-X1"
+       ]
+      }
+     ],
+     "evidence": "85% observation.",
+     "fails_when": "The pattern may not hold in a year.",
+     "claim_ids": [
+      "MT148-C07-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Forecast the economy from the pattern of leading and lagging industry stocks, requiring several leaders to confirm.",
+     "why": "Stocks lead fundamentals by 6-12 months; avoids contaminated bond signal.",
+     "claim_ids": [
+      "MT148-C03-2",
+      "MT148-C04-X1",
+      "MT148-C03-X1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Read price action versus news and bond divergence as warnings, but discount them since they have weakened.",
+     "why": "Efficiency, hedge funds and central banks.",
+     "claim_ids": [
+      "MT148-C04-4",
+      "MT148-C04-X2"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Concentrate: 15-20% of assets per position, sometimes 200-300% in macro positions; monitor daily.",
+     "why": "Stale positions are the main source of trouble.",
+     "claim_ids": [
+      "MT148-C08-1"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Size is 70-80% of returns; turn the dial up when hot and tone down when cold rather than chasing losses; size up hot analysts and fade very cold technicians.",
+     "why": "Streaks exist.",
+     "claim_ids": [
+      "MT148-C08-2",
+      "MT148-C08-3",
+      "MT148-C09-1",
+      "MT148-C09-X1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Buy on intuition when an idea fits a macro view, then research over 2-3 weeks and exit if wrong.",
+     "why": "Speed of information diffusion.",
+     "claim_ids": [
+      "MT148-C09-2",
+      "MT148-C09-3",
+      "MT148-C09-X2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Use a multi-asset mandate to sit out any asset class without a clear edge (fixed income now) and wait for a fat pitch.",
+     "why": "Short rallies in a bear market can rip your head off; being short fixed income is less attractive with front-end weakness.",
+     "claim_ids": [
+      "MT148-C05-X2",
+      "MT148-C05-3",
+      "MT148-C05-X1",
+      "MT148-C12-R2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Do not trade a lot when down; take a total break after big losses.",
+     "why": "A clean break restored clarity.",
+     "claim_ids": [
+      "MT148-C11-R1",
+      "MT148-C11-3"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Plan to short again if the market rallies 15-20%, since six-month bear markets after asset bubbles do not exist.",
+     "why": "History of post-bubble bear markets.",
+     "claim_ids": [
+      "MT148-C12-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Monitor wage settlements and energy demand destruction as key data; envision the world 18-24 months ahead and value off it.",
+     "why": "Prices move on changes in expectations.",
+     "claim_ids": [
+      "MT148-C12-2",
+      "MT148-C13-2",
+      "MT148-C14-X3"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Hold crowded trades if valuation against 1-2 year earnings is still cheap; do not rely on old 13F data.",
+     "why": "Does not care about 'pain trade'.",
+     "claim_ids": [
+      "MT148-C14-3",
+      "MT148-C14-R4"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Use crypto-Nasdaq correlation as a risk indicator.",
+     "why": "High-frequency signals show strong correlation.",
+     "claim_ids": [
+      "MT148-C06-3"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Manage the bearish bias since the math favours long positions.",
+     "why": "Great short sellers make most money on the long side.",
+     "claim_ids": [
+      "MT148-C16-2",
+      "MT148-C16-R3"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Treat instruments and rules as cycle-specific and re-derive them rather than following past models mechanically.",
+     "why": "Investing is an art form.",
+     "claim_ids": [
+      "MT148-C05-X3"
+     ]
+    }
+   ],
+   "evidence_style": "Historical regularities (inflation above 5%, post-bubble bear markets), personal track record and anecdotes, a self-reported record of beating Fed forecasts, and bottom-up industry observation; open about being wrong and about lack of analogs.",
+   "current_views": [
+    {
+     "view": "A hard landing is probable; a soft landing is a long shot; he assumes a recession in 2023.",
+     "as_of": "Jun 2022 (Sohn Conference; uploaded 2022-06-10)",
+     "reasoning": "History and Fed behind the curve.",
+     "claim_ids": [
+      "MT148-C02-1",
+      "MT148-C02-3",
+      "MT148-C02-X2"
+     ]
+    },
+    {
+     "view": "The bear market has a long way to run, though tactical traders may have seen the first leg end; he is waiting for a fat pitch and plans to re-short on a 15-20% rally.",
+     "as_of": "Jun 2022 (Sohn Conference; uploaded 2022-06-10)",
+     "reasoning": "Misallocation from QE; no six-month post-bubble bear markets.",
+     "claim_ids": [
+      "MT148-C02-X1",
+      "MT148-C05-3",
+      "MT148-C12-1"
+     ]
+    },
+    {
+     "view": "Short fixed income less attractive; not comfortable owning bonds either; short equities and long commodities positions in the past 6-8 months.",
+     "as_of": "Jun 2022 (Sohn Conference; uploaded 2022-06-10)",
+     "reasoning": "Front-end weakness.",
+     "claim_ids": [
+      "MT148-C05-2",
+      "MT148-C05-X1"
+     ]
+    },
+    {
+     "view": "Expects to be short the dollar within 6 months as the $14tn of inflows reverse.",
+     "as_of": "Jun 2022 (Sohn Conference; uploaded 2022-06-10)",
+     "reasoning": "Fed first to tighten.",
+     "claim_ids": [
+      "MT148-C06-1"
+     ]
+    },
+    {
+     "view": "Long energy for 5-10 years of short supply, with demand destruction the main risk.",
+     "as_of": "Jun 2022 (Sohn Conference; uploaded 2022-06-10)",
+     "reasoning": "ESG limits investment.",
+     "claim_ids": [
+      "MT148-C06-2",
+      "MT148-C14-3",
+      "MT148-C14-X3"
+     ]
+    },
+    {
+     "view": "Over-earner shorts have run their course (80% down), big tech too cheap to short but he is too bearish to buy.",
+     "as_of": "Jun 2022 (Sohn Conference; uploaded 2022-06-10)",
+     "reasoning": "Margins mean-revert and world trade may slow in two years.",
+     "claim_ids": [
+      "MT148-C14-X2",
+      "MT148-C14-X1",
+      "MT148-C13-4"
+     ]
+    },
+    {
+     "view": "Macro-driven markets for the next 4-5 years; end state unknown between inflation and deflation, possibly a sideways market like 1966-82.",
+     "as_of": "Jun 2022 (Sohn Conference; uploaded 2022-06-10)",
+     "reasoning": "No analog; central-bank bubble.",
+     "claim_ids": [
+      "MT148-C13-1",
+      "MT148-C16-1",
+      "MT148-C15-1"
+     ]
+    },
+    {
+     "view": "Never bet against America in the long term.",
+     "as_of": "Jun 2022 (Sohn Conference; uploaded 2022-06-10)",
+     "reasoning": "Counterpoint he adds, citing Buffett and Langone.",
+     "claim_ids": [
+      "MT148-C17-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Self-reported record of beating Fed economic forecasts over 20-30 years is unaudited and no data is shown.",
+   "claim_ids": [
+    "MT148-C03-X2"
+   ]
+  },
+  {
+   "issue": "The gold position is unclear in the captions ('mistakenly gold'); whether it was long is uncertain.",
+   "claim_ids": [
+    "MT148-C05-2"
+   ]
+  },
+  {
+   "issue": "Internal tension: he says a hard landing is likely yet assumes Fed funds will not exceed CPI and excess savings delay it, so the timing of a 2023 recession is a guess; he also admits a 70/30 inflation/deflation split earlier.",
+   "claim_ids": [
+    "MT148-C02-3",
+    "MT148-C02-2",
+    "MT148-C02-5",
+    "MT148-C16-X1"
+   ]
+  },
+  {
+   "issue": "Bitcoin/gold rule is admitted to be 85% observation with a made-up reason, and he notes it may not hold in a year.",
+   "claim_ids": [
+    "MT148-C07-1",
+    "MT148-C07-X1"
+   ]
+  },
+  {
+   "issue": "He argues 'invest then investigate' works, but admits he lost billions buying tech in March 2000 against his view; the rule is not tested against failures.",
+   "claim_ids": [
+    "MT148-C09-2",
+    "MT148-C11-X1"
+   ]
+  },
+  {
+   "issue": "The 15-20% rally trigger and the claim that no six-month bear market follows an asset bubble are asserted without a cited sample.",
+   "claim_ids": [
+    "MT148-C12-1"
+   ]
+  },
+  {
+   "issue": "Dollar and ESG-driven energy shortage views are stated with specific horizons (6 months, 5-10 years) but without supporting data.",
+   "claim_ids": [
+    "MT148-C06-1",
+    "MT148-C06-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs he names: leading industries (homebuilders, trucking, retail) versus lagging; Fed funds relative to CPI; wage settlements embedding inflation; oil, rates and dollar moving together; dollar inflows reversing; energy demand destruction from a worldwide recession; crypto-Nasdaq correlation; a 15-20% rally in stocks. Horizons are 6-12 months for stock signals, 6 months for the dollar, 2023 for recession, 5-10 years for energy.",
+ "reader_inferences": [
+  "(reader) His framework uses stock-market structure rather than macro statistics because central banks contaminated bond and index signals.",
+  "(reader) Conviction sizing and the 'fat pitch' rule imply his low-conviction period is a position-sizing choice, not a market view of neutrality.",
+  "(reader) His three historical anchors (inflation above 5%, post-bubble bear markets, soft-landing rarity) are all base-rate arguments, so he is exposed if this cycle differs, which he acknowledges."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT148-C11-R1",
+   "chunk": "C11",
+   "speaker": "Stanley Druckenmiller",
+   "quote": "one of my trading rules is you don't trade a lot when you're down",
+   "claim": "Rule: do not trade a lot when down; he made an exception in 2000 only after a clean break had freshened his mind.",
+   "mechanism": "risk",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "months",
+   "direction": "reduce trading when cold",
+   "conditions": "after losses",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT148-C12-R2",
+   "chunk": "C12",
+   "speaker": "Stanley Druckenmiller",
+   "quote": "I'm in the marathon, and I'm not running full out on the on on mile 16.",
+   "claim": "Pacing: in mid-2022 he is deliberately resting and waiting, expecting to sprint later when conviction returns.",
+   "mechanism": "risk",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "months",
+   "direction": "wait for a fat pitch",
+   "conditions": "low conviction period",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT148-C14-R4",
+   "chunk": "C14",
+   "speaker": "Stanley Druckenmiller",
+   "quote": "I don't just sell something because people talk about pain trade.",
+   "claim": "He does not exit a crowded position merely because it is widely known; he judges valuation against earnings one to two years out.",
+   "mechanism": "positioning",
+   "asset_class": "energy equities",
+   "indicator": "",
+   "horizon": "1-2 years",
+   "direction": "stay long energy",
+   "conditions": "crowded but cheap vs forward earnings",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT148-C16-R3",
+   "chunk": "C16",
+   "speaker": "Stanley Druckenmiller",
+   "quote": "any great short seller will tell you they made 90% of their money on the long side.",
+   "claim": "Even great short sellers make most of their money on the long side, so the math favours long positions despite a macro investor's bearish bias.",
+   "mechanism": "risk",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "long bias in the long run",
+   "conditions": "bearish bias managed",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map",
+   "quote_check": "exact"
+  }
+ ]
+}

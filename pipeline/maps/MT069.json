@@ -1,0 +1,474 @@
+{
+ "source_id": "MT069",
+ "episode_thesis": "Druckenmiller says returns come from anticipating change and how investors will perceive it, with conviction-driven sizing mattering more than hit rate, and that emotion rather than knowledge is his main error source. He is bearish the dollar, long copper and risk assets (more diversified than AI) with short bonds as a hedge against inflationary growth, and says old edges (technicals, price vs news) have decayed.",
+ "speakers": [
+  {
+   "name": "Stan Druckenmiller",
+   "role": "Macro investor; Duquesne Family Office (ex-Duquesne Capital)",
+   "speaker_note": "Auto-captions; Q&A with a Morgan Stanley derivatives executive (Iliana Buzali, caption 'Eliana'); the interviewer's line about a December 2022 call is context, Druckenmiller says he does not remember it.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "kelly_or_conviction_sizing",
+    "structural_themes",
+    "behavioral_sentiment",
+    "valuation_contrarian",
+    "market_internals_leading",
+    "policy_reaction_central_banks",
+    "portfolio_construction_stacking"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Returns come from anticipating what will change and how investors will perceive it, not from today's facts; mismatched investor bases leave mid-transition companies mispriced.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Teva: 6x earnings to ~12x, stock 16 to 32 in 6-7 months.",
+     "claim_ids": [
+      "MT069-C01-1",
+      "MT069-C01-2"
+     ]
+    },
+    {
+     "premise": "Sizing and pay-off asymmetry matter more than being right: how much you make when right and lose when wrong.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Lesson from Soros.",
+     "claim_ids": [
+      "MT069-C02-4"
+     ]
+    },
+    {
+     "premise": "His edge is execution, trigger-pulling, not intelligence; he filters data and the enthusiasm of trusted specialists.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Self-description; biotech and Nvidia cases.",
+     "claim_ids": [
+      "MT069-C02-3",
+      "MT069-C02-2",
+      "MT069-C02-R1"
+     ]
+    },
+    {
+     "premise": "When there is massive change, investors under-react and trends last longer than expected.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Nvidia 2-3 years; an AI expert sold early; 'years of experience'.",
+     "claim_ids": [
+      "MT069-C05-1"
+     ]
+    },
+    {
+     "premise": "Contrarianism is overrated: the crowd is right most of the time; crowding matters for entry, not for the thesis when the trend is with him.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Soros: crowd right 80% of the time.",
+     "claim_ids": [
+      "MT069-C04-1"
+     ]
+    },
+    {
+     "premise": "Edges decay when widely learned: technical analysis is about 20% as effective as before, and the price-vs-news and bad-earnings-but-up heuristics stopped paying.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Personal experience over 20-30 years; no data.",
+     "claim_ids": [
+      "MT069-C05-3",
+      "MT069-C05-4",
+      "MT069-C06-1"
+     ]
+    },
+    {
+     "premise": "Talent flow (where bright young people go) flags big themes.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Stanford students from crypto to AI; Palantir 2008-09.",
+     "claim_ids": [
+      "MT069-C04-2"
+     ]
+    },
+    {
+     "premise": "Emotion, not knowledge, is the main error source; courage to take big positions mattered more than tools.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Sold Nvidia at 800 (went to 1400); bought the 2000 top; fewer big bets now.",
+     "claim_ids": [
+      "MT069-C05-2",
+      "MT069-C06-2",
+      "MT069-C06-3",
+      "MT069-C06-R1"
+     ]
+    },
+    {
+     "premise": "Macro is rich in opportunity again after a dead decade because of massive disruption.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "None beyond assertion.",
+     "claim_ids": [
+      "MT069-C03-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Short bonds as a hedge/matrix against long risk assets",
+     "steps": [
+      {
+       "from": "Long equities, copper, other risk assets",
+       "to": "Exposure to growth and inflation",
+       "why": "US strong with fiscal stimulus and Fed unlikely to hike.",
+       "claim_ids": [
+        "MT069-C02-5",
+        "MT069-C03-6"
+       ]
+      },
+      {
+       "from": "Disinflationary growth",
+       "to": "Short bonds roughly break even, allowing risk assets to be held",
+       "why": "Rates do not rise much.",
+       "claim_ids": [
+        "MT069-C03-6"
+       ]
+      },
+      {
+       "from": "Fed cuts into a booming economy with rising commodities",
+       "to": "Inflation takes off, bonds profit on short",
+       "why": "Strong growth creates inflation.",
+       "claim_ids": [
+        "MT069-C03-X2",
+        "MT069-C03-6"
+       ]
+      }
+     ],
+     "evidence": "Reasoning only.",
+     "fails_when": "Not stated; implicit: a growth shock that lowers yields while equities fall.",
+     "claim_ids": [
+      "MT069-C03-6",
+      "MT069-C03-X2"
+     ]
+    },
+    {
+     "topic": "Dollar decline",
+     "steps": [
+      {
+       "from": "Dollar at top of purchasing-power range and foreigners overloaded in dollars",
+       "to": "Foreigners stop net buying US assets (trade balance)",
+       "why": "Positioning and flows.",
+       "claim_ids": [
+        "MT069-C03-3"
+       ]
+      },
+      {
+       "from": "No net foreign buying",
+       "to": "Dollar falls on its own",
+       "why": "No sell-America event needed.",
+       "claim_ids": [
+        "MT069-C03-3"
+       ]
+      }
+     ],
+     "evidence": "Valuation and positioning, no numbers.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT069-C03-3"
+     ]
+    },
+    {
+     "topic": "Copper",
+     "steps": [
+      {
+       "from": "No meaningful new supply for years",
+       "to": "Tight market",
+       "why": "Supply constraint.",
+       "claim_ids": [
+        "MT069-C03-4"
+       ]
+      },
+      {
+       "from": "AI data-centre demand",
+       "to": "Added demand on tight supply",
+       "why": "Add-on demand.",
+       "claim_ids": [
+        "MT069-C03-4"
+       ]
+      }
+     ],
+     "evidence": "Consensus trade, owns front-end exposure not miners.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT069-C03-4"
+     ]
+    },
+    {
+     "topic": "Biotech rotation",
+     "steps": [
+      {
+       "from": "AI feels heated like 1999-2000",
+       "to": "Leadership may rotate away from AI",
+       "why": "Phobia around AI.",
+       "claim_ids": [
+        "MT069-C01-3",
+        "MT069-C02-1"
+       ]
+      },
+      {
+       "from": "AI use cases in drug discovery/diagnostics",
+       "to": "Biotech (down 4 years) benefits",
+       "why": "Best AI use case; momentum turning on charts.",
+       "claim_ids": [
+        "MT069-C02-1"
+       ]
+      }
+     ],
+     "evidence": "Mixed theme and technical momentum; trust in specialist team.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT069-C02-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Look ahead at what may change and how investors will perceive it; weigh specialists' enthusiasm; watch talent flow; consider technical momentum.",
+     "why": "Today's facts are priced.",
+     "claim_ids": [
+      "MT069-C01-2",
+      "MT069-C02-2",
+      "MT069-C04-2",
+      "MT069-C02-1"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Start with a small position that can matter, add as evidence arrives (Nvidia doubled twice); size up when conviction is high.",
+     "why": "Pay-off asymmetry matters more than hit rate.",
+     "claim_ids": [
+      "MT069-C04-3",
+      "MT069-C02-4"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hold risk assets with short bonds as a hedge; gold held as a geopolitical hedge.",
+     "why": "Cover both inflationary and disinflationary growth.",
+     "claim_ids": [
+      "MT069-C03-6",
+      "MT069-C03-5"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Use volatility from new market participants for entries; exit and reverse within days if evidence changes.",
+     "why": "Thesis horizon is long but not binding.",
+     "claim_ids": [
+      "MT069-C03-7",
+      "MT069-C03-X3"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Rotate away from areas that look like a bubble (AI) to others (Teva, biotech); hold an eclectic equity basket.",
+     "why": "Avoid 1999-2000 type crowding.",
+     "claim_ids": [
+      "MT069-C01-3",
+      "MT069-C03-X1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Stop torturing over drawdowns beyond ~48 hours; do not sell winners against plan out of emotion.",
+     "why": "Emotion drove his worst errors.",
+     "claim_ids": [
+      "MT069-C06-R1",
+      "MT069-C05-2",
+      "MT069-C06-3"
+     ]
+    }
+   ],
+   "evidence_style": "Personal track record and anecdote, pattern recognition from decades of experience; trust in specialist teams; no backtests or data shown.",
+   "current_views": [
+    {
+     "view": "US economy strong, fiscal stimulus, Fed will not hike and probably cuts.",
+     "as_of": "recording date not stated (upload 2026-02-27; mentions the big beautiful bill; ledger dates the view 2025)",
+     "reasoning": "Stimulus.",
+     "claim_ids": [
+      "MT069-C02-5"
+     ]
+    },
+    {
+     "view": "Equity valuations at the top of the historical range; no cushion.",
+     "as_of": "same",
+     "reasoning": "Valuation.",
+     "claim_ids": [
+      "MT069-C03-1"
+     ]
+    },
+    {
+     "view": "Prefer an eclectic equity basket with AI in small amounts and large Japan and Korea positions.",
+     "as_of": "same",
+     "reasoning": "AI no longer drives the book.",
+     "claim_ids": [
+      "MT069-C03-X1"
+     ]
+    },
+    {
+     "view": "Bearish US dollar.",
+     "as_of": "same",
+     "reasoning": "Valuation plus foreign over-holding.",
+     "claim_ids": [
+      "MT069-C03-3"
+     ]
+    },
+    {
+     "view": "Long copper (consensus), front-end exposure.",
+     "as_of": "same",
+     "reasoning": "Tight supply for years, AI demand.",
+     "claim_ids": [
+      "MT069-C03-4"
+     ]
+    },
+    {
+     "view": "Gold as geopolitical hedge; short bonds paired with long risk assets.",
+     "as_of": "same",
+     "reasoning": "Hedge matrix.",
+     "claim_ids": [
+      "MT069-C03-5",
+      "MT069-C03-6",
+      "MT069-C03-X2"
+     ]
+    },
+    {
+     "view": "Long biotech and Teva (recent examples).",
+     "as_of": "Teva: 6-7 months before recording",
+     "reasoning": "Rotation from AI and transition.",
+     "claim_ids": [
+      "MT069-C01-1",
+      "MT069-C02-1"
+     ]
+    },
+    {
+     "view": "Macro opportunity set rich for the next 3-4 years.",
+     "as_of": "same",
+     "reasoning": "Massive disruption.",
+     "claim_ids": [
+      "MT069-C03-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Says he holds themes for 18 months to 3 years but reverses within days; the holding horizon is a thesis horizon, not a rule.",
+   "claim_ids": [
+    "MT069-C03-7",
+    "MT069-C03-X3"
+   ]
+  },
+  {
+   "issue": "Contrarianism is rejected, yet extreme conviction against consensus 'gives even more conviction' and the dollar/AI rotation calls lean against crowds.",
+   "claim_ids": [
+    "MT069-C04-1",
+    "MT069-C01-3",
+    "MT069-C03-3"
+   ]
+  },
+  {
+   "issue": "Says he does not rely on technicals' former edge but cites technical momentum in biotech.",
+   "claim_ids": [
+    "MT069-C05-3",
+    "MT069-C02-1"
+   ]
+  },
+  {
+   "issue": "Decay of edges is asserted without data; 'about 20% as effective' is a personal estimate.",
+   "claim_ids": [
+    "MT069-C05-3",
+    "MT069-C06-1"
+   ]
+  },
+  {
+   "issue": "Short bonds 'break even' in disinflationary growth is asserted, not shown.",
+   "claim_ids": [
+    "MT069-C03-6"
+   ]
+  },
+  {
+   "issue": "Provisional views: he says he changes his mind every 3 weeks.",
+   "claim_ids": [
+    "MT069-C03-R1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs implied: Fed path versus growth and commodity prices (inflation break-out favours short bonds); net foreign purchases of US assets and trade balance (dollar); copper supply additions and data-centre demand; investor-base mismatch and re-rating (single stocks); where talent and analyst enthusiasm flow. Horizons 18 months to 3 years, 3-4 years for macro.",
+ "reader_inferences": [
+  "(reader) His bond short is a hedge for the long-risk book, not a stand-alone view; it pays in the inflationary-growth branch.",
+  "(reader) The Nvidia sale shows execution can fail against stated plan even after correct theme identification."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT069-C03-R1",
+   "chunk": "C03",
+   "speaker": "Stan Druckenmiller",
+   "quote": "I tend to change my mind every 3 weeks",
+   "claim": "Druckenmiller says he changes his mind about market views every few weeks, so stated positions are provisional.",
+   "mechanism": "process_flexibility",
+   "asset_class": "multi",
+   "indicator": "own conviction",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT069-C06-R1",
+   "chunk": "C06",
+   "speaker": "Stan Druckenmiller",
+   "quote": "you've been doing this long enough and the record is there long enough that it's no longer like random accident",
+   "claim": "Druckenmiller says that after a long record, drawdowns and emotional mistakes should be treated as moments in time and not tortured over for more than about 48 hours.",
+   "mechanism": "drawdown_psychology",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "days",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT069-C06-R2",
+   "chunk": "C06",
+   "speaker": "Stan Druckenmiller",
+   "quote": "There's no silver bullet",
+   "claim": "Druckenmiller says no signal has risen in importance to replace the faded ones; he relies on pattern recognition from 40 years of scars and successes.",
+   "mechanism": "pattern_recognition",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT069-C02-R1",
+   "chunk": "C02",
+   "speaker": "Stan Druckenmiller",
+   "quote": "it's a necessary condition that you have sort of this innate skill set or gift, but it's almost a necessary condition on top of it that you have a mentor",
+   "claim": "Druckenmiller argues investing skill needs an innate gift plus a mentor, and that his mentors taught process and sizing rather than market mechanics.",
+   "mechanism": "skill_acquisition",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

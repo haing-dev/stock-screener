@@ -1,0 +1,261 @@
+{
+ "source_id": "MT101",
+ "episode_thesis": "Mark, a systematic macro trend follower, argues that trend following is observational rather than causal because markets are a 'wicked' learning environment in which even perfect news does not tell you the price reaction, so price comes first and sizing matters more than forecasting. In the post-election bond sell-off he reads trends in economic data (surprise indices, nowcasts, loose financial conditions, a rising dollar) as reinforcing price trends, while warning from the equity risk premium, tight credit spreads and long stretches of low volatility that leverage is building under the surface. Alan Dunne supplies macro cross-checks and doubts where narrative or bond-vigilante stories fit.",
+ "speakers": [
+  {
+   "name": "Mark (surname not stated in the transcript)",
+   "role": "Guest; systematic macro and trend-following researcher who blogs about research papers",
+   "speaker_note": "Only 'Mark' is spoken. The ledger labels him 'Mark (guest, systematic trend-following researcher)'. Alan sits in for the regular host Niels. Ledger correction applied: the machine-learning point about relationships breaking down is Alan's, not Mark's, and Mark's Treasury-risk point is about FX and rate volatility, not the safe-asset shortage.",
+   "fingerprint": ["trend_following", "macro_fundamental_topdown", "nowcasting_data", "debt_cycle_long_term", "behavioral_sentiment", "research_robustness_overfitting", "policy_reaction_central_banks", "replication_indexing"],
+   "worldview_premises": [
+    {"premise": "A falling equity risk premium (S&P earnings yield minus the 10-year yield, now negative) is on average followed by lower stock returns over 1, 2 and 5 years; the relation is probabilistic, and a valuation view should rest on an ensemble of measures that disagree on level but agree on direction.", "type": "empirical", "stated": "stated", "support": "Chart sent to Alan; he cites an ensemble of tables but shows none.", "claim_ids": ["MT101-C01-1", "MT101-C01-2", "MT101-C01-X1"]},
+    {"premise": "Trends in economic data translate into price trends: surprise indices, nowcasts, financial conditions and the dollar are trend indicators, and a trend gains credibility when fundamentals agree and loses it when they conflict.", "type": "theoretical", "stated": "stated", "support": "Current bond example (GDPNow near 3%, Citi and Bloomberg surprise indices rising, loose financial conditions).", "claim_ids": ["MT101-C04-3", "MT101-C05-1", "MT101-C05-2", "MT101-C05-3"]},
+    {"premise": "Long yields have a term-premium component that was zero or negative while rates were low and stocks and bonds were negatively correlated; it is now moving positive across the curve because of deficits, quantitative tightening, financing needs in the EU and China's balance sheet recession.", "type": "theoretical", "stated": "stated", "support": "Decomposition into real yield, expected inflation and term premium; trends in term premium measures (no figures).", "claim_ids": ["MT101-C06-X8", "MT101-C06-1", "MT101-C06-2", "MT101-C04-1"]},
+    {"premise": "Treasuries remain a safe asset partly through regulation and collateral demand, but FX risk for foreign buyers and higher rate volatility (MOVE above VIX) make them riskier than before; the SVB episode shows the duration risk.", "type": "empirical", "stated": "stated", "support": "Silicon Valley Bank example; MOVE versus VIX.", "claim_ids": ["MT101-C07-1", "MT101-C07-X9", "MT101-C07-X10", "MT101-C08-X12"]},
+    {"premise": "The risk cycle is separate from the business cycle: persistent low volatility, especially low downside volatility, invites leverage and risk-taking that plants the seeds of a harsher shock; the harm of a spike depends on the leverage of hedge funds, CTAs and others.", "type": "theoretical", "stated": "stated", "support": "Minsky-style reasoning and research he mentions; credit spreads and consumer delinquencies as evidence.", "claim_ids": ["MT101-C08-1", "MT101-C09-1", "MT101-C09-2", "MT101-C10-2"]},
+    {"premise": "Information uncertainty can be resolved but reaction uncertainty cannot: even with perfect next-day headlines people did marginally well or went bankrupt, so the link between news and price is loose.", "type": "empirical", "stated": "stated", "support": "The Elm Capitalist 'crystal ball' experiment; he and Alan both took the test.", "claim_ids": ["MT101-C11-1", "MT101-C11-R1", "MT101-C10-3"]},
+    {"premise": "Markets are a wicked learning environment (inconsistent cause and effect), so experience can mislead; trend following avoids hard causal inference and relies on observed persistence of prices.", "type": "theoretical", "stated": "stated", "support": "Robin Hogarth's 'kind and wicked' environments and 'The Myth of Experience'.", "claim_ids": ["MT101-C12-1", "MT101-C12-2"]},
+    {"premise": "Position sizing and risk management matter as much as forecasting: an average forecaster can survive with good sizing and a very good forecaster can go bankrupt without it; 55/45 accuracy is good.", "type": "empirical", "stated": "stated", "support": "Bankruptcies in the Elm Capitalist experiment.", "claim_ids": ["MT101-C13-2"]},
+    {"premise": "Most sell-side analysts value stocks with trailing P/E multiples adjusted up or down, not discounted forward earnings, because forecasting is so poor; this slow, backward-looking updating produces post-earnings drift and stock trends.", "type": "empirical", "stated": "stated", "support": "FINRA-required model disclosures in a paper on expected EPS versus trailing PE, posted on his blog; analysts' behaviour also cited as anchoring on past earnings.", "claim_ids": ["MT101-C02-3", "MT101-C13-3", "MT101-C14-1", "MT101-C14-R1"]},
+    {"premise": "Trends in news narrative (aggregated by LLMs) lead trends in stock prices because of underreaction and slow information diffusion; themes and memes can also inflate bubbles (Shiller); but building such signals is costly, so for most managers they are an adjunct to price trends.", "type": "empirical", "stated": "stated", "support": "State Street's narrative product and related research.", "claim_ids": ["MT101-C15-1", "MT101-C15-X14", "MT101-C15-X15", "MT101-C16-X16"]},
+    {"premise": "Lower taxes and lighter regulation favour small caps because fixed regulatory costs weigh more on small firms; the Russell 2000 outperformed after the election.", "type": "empirical", "stated": "stated", "support": "Past macro research (not named).", "claim_ids": ["MT101-C03-2"]},
+    {"premise": "Trend following is dynamic beta (positive, negative or zero) rather than crisis alpha or 'unpredictable alpha'; in high-rate regimes it can be a better diversifier because correlation to bonds and equities falls; trend replication gets the average CTA but cannot replicate skill because of dispersion.", "type": "empirical", "stated": "stated", "support": "Quantica research and Corey Hoffstein's replication work, relayed.", "claim_ids": ["MT101-C16-2", "MT101-C16-3", "MT101-C17-1", "MT101-C17-2", "MT101-C17-X17"]},
+    {"premise": "Classic trend following is market-agnostic and diversified across many markets; it works in crypto, but crypto-only programs face thin liquidity, capacity limits, operational issues and allocator caution.", "type": "experience", "stated": "stated", "support": "His own analysis of crypto trends and observation of allocator behaviour.", "claim_ids": ["MT101-C07-2", "MT101-C08-2", "MT101-C08-X11"]},
+    {"premise": "Policy uncertainty raises term premia and can create a gap between what the Fed wants and what markets do; the Fed's average inflation targeting has been dropped.", "type": "theoretical", "stated": "stated", "support": "Bloom's news-based policy uncertainty indices, which he finds useful but noisy.", "claim_ids": ["MT101-C03-4", "MT101-C04-X6", "MT101-C03-3"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why the bond sell-off is read as fundamentally supported",
+     "steps": [
+      {"from": "Fed cut 25bp but long yields keep rising", "to": "The classic easing-lowers-yields relation fails; the long end trend continues", "why": "Market is not buying what the Fed is selling.", "claim_ids": ["MT101-C03-3"]},
+      {"from": "Economic surprise indices rising, financial conditions loose, GDPNow near 3%", "to": "Fundamental trends reinforce the bond yield uptrend", "why": "Economic trends beget price trends.", "claim_ids": ["MT101-C04-3", "MT101-C05-1", "MT101-C05-3"]},
+      {"from": "Dollar rising together with yields", "to": "The move is growth-driven, not a fiscal crisis", "why": "A fiscal-crisis vigilante scenario would push yields up and the dollar down.", "claim_ids": ["MT101-C05-4"]},
+      {"from": "Term premium turning positive across the curve", "to": "Further room for higher long yields", "why": "Compensation for deficits, QT, EU and Chinese financing issues.", "claim_ids": ["MT101-C06-1", "MT101-C06-2"]}
+     ],
+     "evidence": "Current readings of surprise indices, GDPNow, financial conditions indices and dollar; no quantification of lead times.",
+     "fails_when": "Growth slows, financial conditions tighten, the surprise index turns negative, or the dollar falls while yields rise.",
+     "claim_ids": ["MT101-C03-3", "MT101-C04-3", "MT101-C05-1", "MT101-C05-2", "MT101-C05-3", "MT101-C05-4"]
+    },
+    {
+     "topic": "The risk cycle and leverage buildup",
+     "steps": [
+      {"from": "Persistent low volatility (VIX 15, low downside vol)", "to": "More leverage and risk-taking", "why": "Stability invites borrowing against assets as collateral.", "claim_ids": ["MT101-C09-1", "MT101-C10-2"]},
+      {"from": "Leverage embedded across the economy", "to": "Greater sensitivity to a later shock", "why": "A shock lowers collateral value; the harm depends on prior calm and players' leverage.", "claim_ids": ["MT101-C09-2", "MT101-C10-2"]},
+      {"from": "Credit spreads extremely tight while delinquencies and small-cap earnings weaken", "to": "Equilibrium spreads should be higher", "why": "Stress among average consumers and firms is not priced.", "claim_ids": ["MT101-C09-3"]},
+      {"from": "Balance sheet repair after a leverage boom", "to": "Lower future growth (China, like Japan in the early 1990s)", "why": "Firms use cash flow to repay debt.", "claim_ids": ["MT101-C10-X13", "MT101-C06-2"]}
+     ],
+     "evidence": "Spread levels, delinquency data, the China analogy; US consumers' fixed-rate mortgages are the offset.",
+     "fails_when": "Fixed low-rate mortgages protect US consumers; floating-rate countries are more exposed.",
+     "claim_ids": ["MT101-C09-1", "MT101-C09-2", "MT101-C09-3", "MT101-C10-1", "MT101-C10-2"]
+    },
+    {
+     "topic": "Why information does not equal profit: reaction uncertainty and wicked environments",
+     "steps": [
+      {"from": "Perfect information on tomorrow's headlines", "to": "Marginal returns or bankruptcies in the experiment", "why": "You cannot resolve reaction or behavioural uncertainty.", "claim_ids": ["MT101-C11-1", "MT101-C11-R1", "MT101-C13-2"]},
+      {"from": "Wicked environment with inconsistent cause and effect", "to": "Experience misleads and causal macro relations flip (bad news is good news, then not)", "why": "Relationships shift over time.", "claim_ids": ["MT101-C12-1", "MT101-C13-1"]},
+      {"from": "Hard causal inference", "to": "Trend following uses observed price persistence instead", "why": "Prices are primal; the causal structure is contained and well defined.", "claim_ids": ["MT101-C12-2", "MT101-C10-3"]},
+      {"from": "Forecasts are mostly wrong", "to": "Sizing to stay in the game matters as much as the forecast", "why": "55/45 is good; bad sizing kills even good forecasters.", "claim_ids": ["MT101-C13-2"]}
+     ],
+     "evidence": "The Elm Capitalist experiment and Hogarth's framework; both speakers took the test.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT101-C11-1", "MT101-C12-1", "MT101-C12-2", "MT101-C13-2"]
+    },
+    {
+     "topic": "Analysts look backward, so prices drift",
+     "steps": [
+      {"from": "Analysts judge their forecasts of future earnings to be poor", "to": "They use trailing P/E with adjustments", "why": "Forecasting is so difficult.", "claim_ids": ["MT101-C14-R1", "MT101-C13-3"]},
+      {"from": "Valuations are tweaked slowly as new earnings arrive", "to": "Post-earnings drift and stock trends", "why": "Slow updating of fundamentals-based values.", "claim_ids": ["MT101-C14-1"]},
+      {"from": "Smart people behave this way", "to": "Looking at price is not a bad approach", "why": "Mark's reply to critics of trend following.", "claim_ids": ["MT101-C02-3", "MT101-C14-1"]}
+     ],
+     "evidence": "Paper on expected EPS versus trailing PE; FINRA disclosures; the paper is described as path-breaking but not widely noticed.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT101-C02-3", "MT101-C13-3", "MT101-C14-1"]
+    },
+    {
+     "topic": "News narratives lead price trends",
+     "steps": [
+      {"from": "Aggregated narrative sentiment by sector, industry or stock (LLMs on news)", "to": "Stocks underreact to the trend in news", "why": "Slow diffusion of information.", "claim_ids": ["MT101-C15-1"]},
+      {"from": "Trends in news", "to": "Trends in prices", "why": "Another way of saying slow information diffusion creates capturable trends.", "claim_ids": ["MT101-C15-1"]},
+      {"from": "Post-election themes (tax cuts, deregulation, deficits) developing in news and fundamentals", "to": "Trends should continue as long as price action confirms", "why": "Narrative and fundamental information agree with price trends.", "claim_ids": ["MT101-C16-1", "MT101-C16-X16"]}
+     ],
+     "evidence": "State Street product and academic research, relayed; barriers to entry are high (data and processing).",
+     "fails_when": "Price action turns; the trend gets stopped out.",
+     "claim_ids": ["MT101-C15-1", "MT101-C15-X15", "MT101-C16-1", "MT101-C16-X16"]
+    },
+    {
+     "topic": "Why trend following deserves more weight in high-rate regimes",
+     "steps": [
+      {"from": "Higher interest rates", "to": "More dispersion and volatility, with correlation of CTAs to bonds and equities slightly lower", "why": "Per Quantica research.", "claim_ids": ["MT101-C16-3", "MT101-C17-1"]},
+      {"from": "Lower correlation to bonds and equities", "to": "Trend following is a better diversifier than clipping bond coupons", "why": "Risk-free yield is not the only benefit.", "claim_ids": ["MT101-C17-1"]}
+     ],
+     "evidence": "Quantica quarterly research, relayed; Mark calls it counterintuitive.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT101-C16-3", "MT101-C17-1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Look at price first ('prices are Primal'), treating other information as supplementary; combine price trends with trends in fundamentals and narrative as confirmation.", "why": "Reaction to information is unpredictable; consistent signals from several sources give more confidence.", "claim_ids": ["MT101-C10-3", "MT101-C05-1", "MT101-C16-1"]},
+    {"element": "risk", "practice": "Reduce trust in a trend when fundamentals conflict (slowing growth, tighter financial conditions, negative surprise index); stay with it while price action confirms and stop out or reverse if price changes.", "why": "Fundamental confirmation extends trend life.", "claim_ids": ["MT101-C05-2", "MT101-C16-1"]},
+    {"element": "research", "practice": "Use nowcasts (GDPNow), economic surprise indices, financial conditions and the dollar as trend-confirming indicators.", "why": "They show whether data support the price trend.", "claim_ids": ["MT101-C04-3", "MT101-C05-3", "MT101-C05-4"]},
+    {"element": "sizing", "practice": "Treat position sizing and risk management as the central skill, not forecast accuracy.", "why": "Forecasts are rarely right; sizing keeps you in the game.", "claim_ids": ["MT101-C13-2"]},
+    {"element": "universe", "practice": "Trade many markets, any symbol that trends; avoid a crypto-only program; trend works in crypto but liquidity and operations limit it.", "why": "Diversification across markets is the usual principle.", "claim_ids": ["MT101-C08-X11", "MT101-C07-2", "MT101-C08-2"]},
+    {"element": "risk", "practice": "Monitor how volatility propagates through the economy and the leverage of hedge funds and CTAs, separate from the business cycle.", "why": "Low volatility invites leverage that worsens a later shock.", "claim_ids": ["MT101-C08-1", "MT101-C09-2"]},
+    {"element": "research", "practice": "Read policy uncertainty indices (Bloom) as a mixed, noisy signal for term premium; judge valuation with an ensemble, not one chart.", "why": "Single indicators bounce around.", "claim_ids": ["MT101-C04-X6", "MT101-C01-X1"]},
+    {"element": "portfolio", "practice": "Consider more allocation to trend following in high-rate regimes, and trend replication/beta if a large allocator only wants the average.", "why": "Diversification benefit and manager-selection risk.", "claim_ids": ["MT101-C16-3", "MT101-C17-2", "MT101-C17-X17"]}
+   ],
+   "evidence_style": "Relays and interprets recent research papers (Elm Capitalist, Hogarth, State Street, Quantica, Hoffstein, a trailing-PE paper) and links them to trend following, with current macro readings as illustration. Few numbers; relies on named sources rather than his own tests.",
+   "current_views": [
+    {"view": "The equity risk premium has turned negative on the earnings-yield-minus-10-year measure (an ensemble of measures also points down), implying lower longer-term stock returns despite post-election euphoria.", "as_of": "2024-11-15 (recording mid-month after the 5 Nov election; upload 2024-11-23)", "reasoning": "Declining ERP precedes lower 1 to 5 year returns on average.", "claim_ids": ["MT101-C01-1", "MT101-C01-2", "MT101-C01-X1"]},
+    {"view": "The bond yield uptrend can continue: surprise indices, GDPNow near 3%, loose financial conditions and a stronger dollar all reinforce it, and term premia are rising across the curve; it is not a good environment to hold bonds.", "as_of": "2024-11-15 (recording mid-month after the 5 Nov election; upload 2024-11-23)", "reasoning": "Economic trends beget price trends; deficits, QT and global financing needs demand compensation.", "claim_ids": ["MT101-C05-1", "MT101-C05-3", "MT101-C06-1", "MT101-C04-3"]},
+    {"view": "Credit spreads are extremely tight relative to consumer and small-company stress, so equilibrium spreads should be higher; leverage is building in a low-volatility environment.", "as_of": "2024-11-15 (recording mid-month after the 5 Nov election; upload 2024-11-23)", "reasoning": "Rising card and auto delinquencies, poor small-cap earnings, persistent low volatility.", "claim_ids": ["MT101-C09-3", "MT101-C09-1", "MT101-C10-2"]},
+    {"view": "Post-election trends (tax cuts, deregulation, deficits) should continue while price action stays consistent; the VIX fell from about 20 to 15 (partly mechanical from how the VIX is built) and the term structure returned to contango.", "as_of": "2024-11-15 (recording mid-month after the 5 Nov election; upload 2024-11-23)", "reasoning": "Narrative, fundamental and price information are moving consistently.", "claim_ids": ["MT101-C16-1", "MT101-C03-1", "MT101-C03-X3", "MT101-C03-2"]},
+    {"view": "Allocators are taking a wait-and-see approach to crypto-only trend programs; trend models do work in crypto.", "as_of": "2024-11-15 (recording mid-month after the 5 Nov election; upload 2024-11-23)", "reasoning": "Liquidity, operational and prime-broker limits.", "claim_ids": ["MT101-C07-2", "MT101-C08-2"]}
+   ]
+  },
+  {
+   "name": "Alan Dunne",
+   "role": "Host sitting in for Niels Kaastrup-Larsen on Top Traders Unplugged; Dublin-based macro and systematic investor",
+   "speaker_note": "Named by the host introduction ('it's Alan Dunne sitting in again'). Claims labelled 'Alan' and 'Alan Dunne' in the ledger are the same person. The ML-versus-trend remark, flagged by the ledger correction, is his.",
+   "fingerprint": ["policy_reaction_central_banks", "behavioral_sentiment", "trend_following", "valuation_contrarian", "macro_fundamental_topdown"],
+   "worldview_premises": [
+    {"premise": "A single equity risk premium measure (inverse P/E) ignores earnings growth; growth-adjusted measures stay positive but show a gap between expected and valuation-implied returns not seen since around 2000.", "type": "empirical", "stated": "stated", "support": "A past podcast guest's valuation work, relayed.", "claim_ids": ["MT101-C02-1", "MT101-C02-2"]},
+    {"premise": "The bond market can constrain the Fed as well as fiscal policy: rising TIPS breakevens influence the Fed, so bond-market vigilantes matter when inflation expectations rise.", "type": "theoretical", "stated": "stated", "support": "Reasoning; he is wary of the 'vigilante' label.", "claim_ids": ["MT101-C04-2"]},
+    {"premise": "The debt and deficit narrative follows yields: attention rises when yields rise and is forgotten when they fall; 10-year yields sit near the top of a 4 to 5% range.", "type": "behavioural", "stated": "stated", "support": "Observation across recent years.", "claim_ids": ["MT101-C03-X4"]},
+    {"premise": "Swap-spread weakness reflects expectations that Treasuries will get lighter bank capital treatment, supporting demand for bonds.", "type": "institutional", "stated": "stated", "support": "An Odd Lots piece he read; he asks whether Mark has seen it.", "claim_ids": ["MT101-C06-3"]},
+    {"premise": "Markets are currently trading on strong high-frequency data and on broad expected policies (tax cuts, deregulation, tariffs, deportations) whose details are unknown; Powell's remarks lowered expectations for further cuts.", "type": "experience", "stated": "stated", "support": "Current news.", "claim_ids": ["MT101-C05-X7", "MT101-C03-X5"]},
+    {"premise": "Causal macro relationships flip over time (bad news is good news, then good news is good news), and machine-learning strategies that learn from past relationships struggle when those relationships break down, unlike price-based trend following.", "type": "empirical", "stated": "stated", "support": "Media headlines example and reasoning about ML.", "claim_ids": ["MT101-C13-1", "MT101-C12-R1"]},
+    {"premise": "Anchoring leads investors to underreact to news early in a trend and overreact later, which is one basis for trend-following profits; he doubts that the latest post-election move is an underreaction.", "type": "behavioural", "stated": "stated", "support": "Standard behavioural finance argument.", "claim_ids": ["MT101-C15-2"]},
+    {"premise": "Credit spread spikes in 2020 and 2022 may have blunted leverage buildup compared with the uninterrupted tight-spread 1995-2000 period.", "type": "empirical", "stated": "stated", "support": "Comparison with the late 1990s; posed as a question.", "claim_ids": ["MT101-C09-4"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Anchoring and under- then overreaction as a source of trend profit",
+     "steps": [
+      {"from": "Investors anchor on prior views", "to": "They underreact to news early in a trend", "why": "Anchoring.", "claim_ids": ["MT101-C15-2"]},
+      {"from": "Trend persists", "to": "They overreact later", "why": "Late joiners.", "claim_ids": ["MT101-C15-2"]}
+     ],
+     "evidence": "General behavioural literature, not cited.",
+     "fails_when": "He asks whether the post-election theme-driven move fits an underreaction story, finding it hard to say.",
+     "claim_ids": ["MT101-C15-2"]
+    },
+    {
+     "topic": "Bond market constrains the Fed through inflation expectations",
+     "steps": [
+      {"from": "TIPS breakevens rise sufficiently", "to": "Fed becomes more sensitive to inflation expectations", "why": "The Fed watches expectations.", "claim_ids": ["MT101-C04-2"]},
+      {"from": "Yield rise includes real rates and higher expectations", "to": "Bond-market moves are influential again", "why": "Bond vigilantes affect more than fiscal policy.", "claim_ids": ["MT101-C04-2", "MT101-C03-X4"]}
+     ],
+     "evidence": "Reasoning.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT101-C04-2"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Took the crystal-ball test himself and noted that sizing dominated his results (big early gains, then size too small).", "why": "Illustrates that information does not guarantee profit.", "claim_ids": ["MT101-C11-1", "MT101-C13-2"]},
+    {"element": "research", "practice": "Track trend-following index performance (SG CTA, SG Trend) and sector contributions month to date.", "why": "Equity and bond trends and a dollar spike helped; commodities were choppy.", "claim_ids": ["MT101-C02-4", "MT101-C02-X2"]}
+   ],
+   "evidence_style": "Cross-checks the guest's points with data points, news stories and personal experience of the research test; asks questions and offers counter-examples.",
+   "current_views": [
+    {"view": "Trend followers did better in mid-November 2024: equity and bond trends continued, managers are probably short bonds and benefited from the dollar jump, while commodities were choppy.", "as_of": "2024-11-15 (recording mid-month after the 5 Nov election; upload 2024-11-23)", "reasoning": "SG CTA index +1.6% month to date (+0.9% YTD), SG Trend +2.7% (+0.55% YTD).", "claim_ids": ["MT101-C02-4", "MT101-C02-X2"]},
+    {"view": "Powell's comments lower expectations for December cuts because the economy is strong; the broad policy parameters are known but the details are not.", "as_of": "2024-11-15 (recording mid-month after the 5 Nov election; upload 2024-11-23)", "reasoning": "Strong data; unknown details of tariffs, tax cuts and deregulation.", "claim_ids": ["MT101-C03-X5", "MT101-C05-X7"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Is the post-election price move an example of narrative underreaction?",
+   "positions": [
+    {"speaker": "Mark", "position": "Underreaction is an average effect; a big event can be priced in an immediate jump, after which themes develop gradually and can still feed trends.", "claim_ids": ["MT101-C16-X16", "MT101-C15-1"]},
+    {"speaker": "Alan Dunne", "position": "Anchoring explains underreaction early in a trend, but with new policy themes emerging he finds it hard to say the recent move was an underreaction.", "claim_ids": ["MT101-C15-2", "MT101-C05-X7"]}
+   ]
+  },
+  {
+   "topic": "Is leverage still building in the system?",
+   "positions": [
+    {"speaker": "Mark", "position": "Low volatility keeps building leverage that seeps into all parts of the economy, with tight credit spreads out of line with stress.", "claim_ids": ["MT101-C09-1", "MT101-C09-3", "MT101-C10-2"]},
+    {"speaker": "Alan Dunne", "position": "Short-lived spikes in credit spreads in 2020 and 2022 may have blunted the buildup compared with the late 1990s.", "claim_ids": ["MT101-C09-4"]}
+   ]
+  },
+  {
+   "topic": "How to read rising yields: fiscal vigilantes or growth?",
+   "positions": [
+    {"speaker": "Mark", "position": "A rising dollar with rising yields signals growth, not a fiscal crisis; term premium is rising for structural reasons.", "claim_ids": ["MT101-C05-4", "MT101-C06-1"]},
+    {"speaker": "Alan Dunne", "position": "Yields include real rates and rising inflation expectations; if breakevens rise enough the bond market can influence the Fed, and attention to deficits comes and goes with yields.", "claim_ids": ["MT101-C04-2", "MT101-C03-X4"]}
+   ]
+  },
+  {
+   "topic": "Level of the equity risk premium",
+   "positions": [
+    {"speaker": "Mark", "position": "Earnings yield minus 10-year yield is negative, and an ensemble of measures all point down.", "claim_ids": ["MT101-C01-1", "MT101-C01-X1"]},
+    {"speaker": "Alan Dunne", "position": "A growth-adjusted ERP is still positive, though near its lowest since around 2000; the direction is the same.", "claim_ids": ["MT101-C02-1", "MT101-C02-2"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Mark says trend following avoids causal inference and is purely observational, yet he also argues that trends in economic data beget price trends and uses fundamentals to raise or lower confidence; the line between observational and causal use of macro data is not drawn.", "claim_ids": ["MT101-C12-2", "MT101-C05-1", "MT101-C05-2"]},
+  {"issue": "The ERP argument uses one chart (earnings yield minus 10-year yield, negative) and an unnamed ensemble; no ensemble data or historical hit rates are given, and Alan notes a growth-adjusted ERP stays positive.", "claim_ids": ["MT101-C01-1", "MT101-C01-2", "MT101-C01-X1", "MT101-C02-1"]},
+  {"issue": "The crystal-ball experiment is an anecdote of about 20 trades each and the claim that many participants went bankrupt is not quantified; both hosts say it was marginal or not a clear win.", "claim_ids": ["MT101-C11-1", "MT101-C13-2"]},
+  {"issue": "Claim that analysts use trailing P/E and that this explains post-earnings drift is an inference from FINRA-disclosed model types; the causal link to drift is not shown.", "claim_ids": ["MT101-C13-3", "MT101-C14-1"]},
+  {"issue": "Narrative-trend research is relayed from State Street with no numbers; Mark himself says barriers are high and it is an adjunct, and the explanation of the post-election jump as consistent with underreaction is an after-the-fact fit.", "claim_ids": ["MT101-C15-1", "MT101-C15-X15", "MT101-C16-X16"]},
+  {"issue": "Quantica's high-rate finding is described as counterintuitive and the stated mechanics are muddled on air (dispersion, slightly lower returns, higher volatility, lower correlation); the size of the benefit is not given.", "claim_ids": ["MT101-C16-3", "MT101-C17-1"]},
+  {"issue": "Term premium trend is stated 'across the board' without naming which estimate (ACM, Kim-Wright) or levels.", "claim_ids": ["MT101-C06-1", "MT101-C06-X8"]},
+  {"issue": "Ledger correction: the safe-asset-shortage point and the riskiness of Treasuries are separate arguments; the shortage idea is posed as a question while FX and rate volatility are the risk factors.", "claim_ids": ["MT101-C07-1", "MT101-C07-X9"]},
+  {"issue": "Allocator caution on crypto-only programs is asserted from Mark's impression, not survey data.", "claim_ids": ["MT101-C08-2"]}
+ ],
+ "forward_looking_inputs": "(reader) Mark's named leading inputs for the bond trend are: the Citi and Bloomberg economic surprise indices, the Atlanta Fed GDPNow nowcast (near 3%), financial conditions indices (loose), the dollar direction relative to yields, term premium estimates, TIPS breakevens, and policy uncertainty indices. For risk he watches the VIX and MOVE, credit spreads, consumer delinquencies, small-cap earnings and leverage of hedge funds and CTAs. For stocks he cites the equity risk premium (1 to 5 year horizon). For trend persistence he watches whether price action keeps confirming narrative and fundamental themes (tax cuts, deregulation, deficits).",
+ "reader_inferences": [
+  "(reader) Mark's usage of fundamentals is as a trend-duration filter: fundamentals that agree with price lengthen the expected trend; conflict shortens it. This is a testable, asymmetric rule (confidence adjustment, not an entry signal).",
+  "(reader) His risk-cycle thesis predicts that low-volatility periods are followed by larger drawdowns for leveraged players, which he applies to CTAs themselves; it is a warning about crowding, not about direction.",
+  "(reader) Several of his arguments (analysts anchor on trailing PE, news trends lead prices, investors anchor) share one mechanism, slow diffusion of information, and he presents trend following as the strategy that harvests it without needing the causal story.",
+  "(reader) The two speakers diverge mainly on interpretation (growth versus vigilante, underreaction versus fast pricing) while agreeing on data, which suggests the key observable that would settle the yield debate is the dollar direction alongside yields."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT101-C11-R1",
+   "chunk": "C11",
+   "speaker": "Mark",
+   "quote": "you can resolve information uncertainty I give you the headlines but you can't resolve or uh reaction or behavioral uncertainty",
+   "claim": "Mark distinguishes information uncertainty, which perfect headlines can remove, from reaction or behavioural uncertainty, which remains, so knowing the news does not tell you how markets will react.",
+   "mechanism": "reaction uncertainty",
+   "asset_class": "multi",
+   "indicator": "news headlines",
+   "horizon": "days",
+   "direction": "",
+   "conditions": "perfect-information experiment",
+   "testable": "yes - the experiment itself",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT101-C12-R1",
+   "chunk": "C12",
+   "speaker": "Alan Dunne",
+   "quote": "AI strategies learn based on the environment",
+   "claim": "Alan observes that machine-learning strategies learn from the environment, so they do well where relationships are consistent and are more challenged when learned relationships break down, whereas trend following does not rely on such learning.",
+   "mechanism": "regime fragility of learned relationships",
+   "asset_class": "multi",
+   "indicator": "stability of cause-effect relationships",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "periods when relationships break down",
+   "testable": "yes - out-of-regime performance of ML versus trend",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT101-C14-R1",
+   "chunk": "C14",
+   "speaker": "Mark",
+   "quote": "their ability to make forecasts about those future earnings I think that they realize is so poor",
+   "claim": "Mark argues that analysts realise their ability to forecast future earnings is so poor that they fall back on trailing P/E with adjustments instead of discounting forward earnings.",
+   "mechanism": "analyst forecast difficulty",
+   "asset_class": "US equities",
+   "indicator": "trailing P/E multiples",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "sell-side valuation practice",
+   "testable": "yes - from FINRA model disclosures",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

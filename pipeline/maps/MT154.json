@@ -1,0 +1,91 @@
+{
+ "source_id": "MT154",
+ "episode_thesis": "Cohen argues that tariffs will slow US growth to about 1.5% (recession odds about 45%, lowered by the China retreat) while the Fed stays cautious on tariff inflation, so with multiples high the index has little upside and should trade sideways in a range with a higher floor after the policy pivot. His operating advice is to rely on facts first and pattern recognition second, keep the bar higher in a new regime after an easy 2024, lower expectations, and return to a consistent process during slumps; most of the conversation is personal reflection with no market content.",
+ "speakers": [
+  {
+   "name": "Steve Cohen",
+   "role": "Founder of Point72 (hedge fund), owner of the New York Mets; stepped away from the screens a year before; guest",
+   "speaker_note": "Interviewer Jawad Mian's questions are context only (he states no views). Auto-captions: Cohen's '10 15%' figure was misread by the first pass and corrected (retest of April lows would be 10-15% down from current levels). Recorded at Sohn 2025; upload 2025-05-20, so 'now' means roughly May 2025.",
+   "fingerprint": ["macro_fundamental_topdown", "bottom_up_fundamental", "valuation_contrarian", "policy_reaction_central_banks", "regime_detection", "behavioral_sentiment", "positioning_crowding", "manager_selection_allocation"],
+   "worldview_premises": [
+    {"premise": "Equity returns depend on growth and on the multiple paid for it; slowing growth with already high multiples leaves little upside for the index.", "type": "theoretical", "stated": "stated", "support": "Repeated assertion ('I'll say it again'); no data shown.", "claim_ids": ["MT154-C01-4", "MT154-C02-1"]},
+    {"premise": "Tariffs are a growth shock that is close to unavoidable and the Fed will not offset it quickly because tariff inflation keeps it worried.", "type": "institutional", "stated": "stated", "support": "Adding up the 10% baseline, sectoral tariffs and China to a 14-17% effective rate; Fed reaction function assumed.", "claim_ids": ["MT154-C01-1", "MT154-C01-2", "MT154-C01-3", "MT154-C01-R1"]},
+    {"premise": "Markets are not required to rise every year; sideways periods are normal in history.", "type": "empirical", "stated": "stated", "support": "'When you look back in history'; no specifics.", "claim_ids": ["MT154-C02-2"]},
+    {"premise": "A year that was exceptionally easy (2024: multiples rose, everything worked) is followed by a different regime in which what worked before does not work.", "type": "experience", "stated": "stated", "support": "Observation of his PMs' behaviour and results.", "claim_ids": ["MT154-C01-7", "MT154-C03-1", "MT154-C02-X2"]},
+    {"premise": "The market's reaction to bad data reveals whether prices already discount slower growth.", "type": "behavioural", "stated": "stated", "support": "Reasoning only: if markets hold up on weak data, 'wow, what's going on'.", "claim_ids": ["MT154-C01-5"]},
+    {"premise": "Policy-driven shocks can reverse quickly; a policy retreat raises the floor under equities without removing the growth slowdown.", "type": "experience", "stated": "stated", "support": "The April 2025 drop and rebound; only the pandemic is a comparable precedent.", "claim_ids": ["MT154-C01-X1", "MT154-C01-6"]},
+    {"premise": "Experience gives pattern recognition: episodes rhyme without being identical.", "type": "experience", "stated": "stated", "support": "47-48 years of trading.", "claim_ids": ["MT154-C02-3"]},
+    {"premise": "Good processes still produce bad stretches (baseball slumps), so results over short spans do not prove a process wrong.", "type": "behavioural", "stated": "stated", "support": "Analogy to his baseball players going 0 for 20 while hitting the ball hard.", "claim_ids": ["MT154-C02-4"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Tariffs to slower growth to a range-bound equity index",
+     "steps": [
+      {"from": "10% baseline plus sectoral tariffs plus China arrangements", "to": "Effective tariff rate of about 14-17% (down from 16-20% expected)", "why": "Sum of announced tariffs; China capitulation lowered it", "claim_ids": ["MT154-C01-2"]},
+      {"from": "Higher effective tariffs", "to": "Significant slowing of growth, about 1.5% or lower next year; 45% recession odds", "why": "Tariffs are a drag on activity", "claim_ids": ["MT154-C01-1", "MT154-C01-R1"]},
+      {"from": "Slower growth plus tariff-driven inflation", "to": "Fed does not cut right away", "why": "It stays worried about tariff inflation", "claim_ids": ["MT154-C01-3"]},
+      {"from": "Slowing growth with multiples on the higher side", "to": "Little upside for the index; sideways market", "why": "No earnings growth to carry the multiple", "claim_ids": ["MT154-C01-4", "MT154-C02-1", "MT154-C01-R2"]},
+      {"from": "Policy pivot (tariff retreat)", "to": "Floor raised; worst case a retrace of 10-15% toward the April lows, not a calamity", "why": "Removes the dire scenario", "claim_ids": ["MT154-C01-6"]}
+     ],
+     "evidence": "Judgement and house probabilities; no model or historical sample shown.",
+     "fails_when": "If markets hold up when the data turns down ('wow, what's going on'), the pricing assumption is wrong; he is not convinced it will happen.",
+     "claim_ids": ["MT154-C01-1", "MT154-C01-3", "MT154-C02-1", "MT154-C01-5"]
+    },
+    {
+     "topic": "Rebounded tariff-exposed stocks as the fragile spot",
+     "steps": [
+      {"from": "Fast rebound after the policy reversal", "to": "Data-dependent and tariff-exposed names have rallied back significantly", "why": "Policy retreat removed the worst outcomes for them", "claim_ids": ["MT154-C01-X1", "MT154-C02-X1"]},
+      {"from": "Data turns down while those names are back up", "to": "They carry the most risk, so be careful and keep the bar higher", "why": "Growth slowdown is intact and not priced out", "claim_ids": ["MT154-C02-X1", "MT154-C01-7"]}
+     ],
+     "evidence": "Observation of price action; no numbers.",
+     "fails_when": "Not stated beyond the data not turning down.",
+     "claim_ids": ["MT154-C02-X1"]
+    },
+    {
+     "topic": "PM psychology after an easy year",
+     "steps": [
+      {"from": "2024 returns well above normal for many PMs", "to": "Self-imposed pressure to repeat in 2025", "why": "Raised expectations after a great run", "claim_ids": ["MT154-C02-X2"]},
+      {"from": "Pressure in a harder regime", "to": "Cohen asks for gratitude, pragmatism and lower expectations", "why": "'I don't create the world, I got to live in the world'", "claim_ids": ["MT154-C03-1"]}
+     ],
+     "evidence": "Management anecdote.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT154-C03-1", "MT154-C02-X2"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "In noisy markets trust analysis of facts (or perceived facts) first, then pattern recognition from past episodes.", "why": "Episodes rhyme but are not identical.", "claim_ids": ["MT154-C02-3"]},
+    {"element": "risk", "practice": "Raise the bar for positions in a harder regime; be careful with data-dependent and tariff-affected names that have rallied.", "why": "Not everything works when multiples are high and growth slows.", "claim_ids": ["MT154-C01-7", "MT154-C02-X1"]},
+    {"element": "portfolio", "practice": "On the index side be somewhat more conservative given a sideways market; sectors differ.", "why": "Slowing growth plus high multiples gives little upside.", "claim_ids": ["MT154-C02-1"]},
+    {"element": "signal", "practice": "Watch how the market reacts when the data turns down to judge whether prices are right.", "why": "Reaction to bad news shows what is discounted.", "claim_ids": ["MT154-C01-5"]},
+    {"element": "other", "practice": "During losing stretches return to the process and check you are following it; do not judge it on short runs.", "why": "Nothing is 100%; slumps are normal.", "claim_ids": ["MT154-C02-4", "MT154-C05-2"]},
+    {"element": "other", "practice": "Lower return expectations after an extraordinary year and keep learning rather than stopping at a money target; reduce outside stress.", "why": "Harder environment; adaptation sustains performance; stress compounds.", "claim_ids": ["MT154-C03-1", "MT154-C03-X1", "MT154-C04-X1"]}
+   ],
+   "evidence_style": "Experience and judgement: 47-48 years of trading, analogies (baseball slumps, pandemic as the closest rebound), house probabilities (45% recession) given without a stated model; no backtests or data.",
+   "current_views": [
+    {"view": "Not in a recession yet; about 45% chance of recession (somewhat lessened by the recent China retreat), with significant growth slowing in any case.", "as_of": "2025-05 (Sohn 2025; upload 2025-05-20)", "reasoning": "Tariffs add up to a 14-17% effective rate.", "claim_ids": ["MT154-C01-1", "MT154-C01-2"]},
+    {"view": "Growth of about 1.5% or lower next year (2026) and the Fed will not act right away because of tariff inflation.", "as_of": "2025-05", "reasoning": "Tariff drag and Fed worry about inflation.", "claim_ids": ["MT154-C01-R1", "MT154-C01-3"]},
+    {"view": "Equity market in a trading range for a while with a higher floor; worst case about a 10-15% retrace toward the April lows; little index upside with elevated multiples.", "as_of": "2025-05", "reasoning": "Policy pivot raises the floor; multiples already high with slowing growth.", "claim_ids": ["MT154-C01-6", "MT154-C01-R2", "MT154-C02-1"]},
+    {"view": "Be careful with rallied data-dependent and tariff-affected names; wait to see how the market reacts when data turns down.", "as_of": "2025-05", "reasoning": "Slowdown not priced out.", "claim_ids": ["MT154-C02-X1", "MT154-C01-5"]},
+    {"view": "The market feels toppy.", "as_of": "2025-05", "reasoning": "One-line quick-hit answer with no reasoning.", "claim_ids": ["MT154-C05-1"]}
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {"issue": "He says a decline is not expected yet the market 'feels toppy'; the sideways call and the 10-15% retest possibility are not reconciled with a toppy label.", "claim_ids": ["MT154-C05-1", "MT154-C01-6", "MT154-C01-R2"]},
+  {"issue": "Recession probability of 45% is given without a method; it was formed before the China retreat and he says odds have 'lessened' without a new number.", "claim_ids": ["MT154-C01-1"]},
+  {"issue": "He wants to see how the market reacts to bad data to learn whether it is priced correctly, but gives no threshold for what reaction would change his view.", "claim_ids": ["MT154-C01-5"]},
+  {"issue": "He says analysis first, pattern recognition second, but names no specific analyses, indicators or past episodes beyond the pandemic rebound analogy.", "claim_ids": ["MT154-C02-3", "MT154-C01-X1"]},
+  {"issue": "Size of the 2024 outperformance is caption-garbled ('50 75% their normal average': above or below normal).", "claim_ids": ["MT154-C02-X2"]}
+ ],
+ "forward_looking_inputs": "(reader) Effective US tariff rate (14-17%), incoming growth data (when it turns down), Fed reaction to tariff inflation, index multiples relative to slowing growth, and the market's reaction to weak data; horizon months to the rest of 2025 and into 2026.",
+ "reader_inferences": [
+  "(reader) Cohen's valuation logic treats the multiple as the swing factor: with earnings growth slowing, index upside needs multiple expansion, which he does not expect.",
+  "(reader) Roughly four fifths of the interview is life and mentoring content; the market framework rests on only a few minutes of statements.",
+  "(reader) 'Raises the floor' implies he reads the policy pivot as a put-like reduction in tail risk rather than a change in the growth path."
+ ],
+ "added_claims": [
+  {"claim_id": "MT154-C01-R1", "chunk": "C01", "speaker": "Steve Cohen", "quote": "next year we think growth is going to be in the one and a half percent maybe lower range", "claim": "Point72 expects US growth next year of about 1.5% or lower, which he calls okay but not phenomenal.", "mechanism": "policy_reaction", "asset_class": "equities", "indicator": "US real GDP growth", "horizon": "year", "direction": "slower growth", "conditions": "tariffs", "testable": "yes - GDP outturn", "speaker_confidence": "medium", "time_bound": "yes", "reader": "opus"},
+  {"claim_id": "MT154-C01-R2", "chunk": "C01", "speaker": "Steve Cohen", "quote": "I just view it as we're sort of in a trading range for a while", "claim": "Cohen sees equities in a trading range for a while rather than a large decline or a new leg up.", "mechanism": "cycle_persistence", "asset_class": "equities", "indicator": "S&P 500 level", "horizon": "months", "direction": "range-bound", "conditions": "after the policy pivot", "testable": "yes - index range", "speaker_confidence": "medium", "time_bound": "yes", "reader": "opus"}
+ ]
+}

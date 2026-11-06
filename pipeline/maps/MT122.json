@@ -1,0 +1,609 @@
+{
+ "source_id": "MT122",
+ "episode_thesis": "Paul Singer explains Elliott as an absolute-return, deal-making fund whose activist edge comes from fewer owners holding companies to account, and whose whole culture rests on never losing large amounts of money: misunderstood risk plus leverage is what kills, losses impair judgment, and preserved capital lets you exploit rare dislocations. He ends with a bearish read of late-cycle markets (complacency, leverage, 6% US deficits, AI valuations) and a warning that government embrace of crypto undermines sovereign money and the dollar.",
+ "speakers": [
+  {
+   "name": "Paul Singer",
+   "role": "Founder, Elliott Management (activist, event-driven, distressed, absolute return)",
+   "speaker_note": "Captions are unpunctuated YouTube auto-captions. Nicolai Tangen (NBIM CEO) is the interviewer; his questions and the Starbucks example (MT122-C03-X2) are context, he states no market view, so he is not mapped. Corrections applied: MT122-C06-3 means Singer knew Argentina's default history (3-4 defaults in 150 years) but judged default unlikely because of its size; MT122-C06-5 only says ~25% held out, were told 'nothing', a second similar offer came about three years later, and holdouts litigated, so recovering more by holding out is the reader's inference, not stated here. 'Close to 100%' value-added and '70%' acted-on figures are Singer's own guesses.",
+   "fingerprint": [
+    "relative_value_arbitrage",
+    "bottom_up_fundamental",
+    "crisis_alpha_convexity",
+    "position_sizing_vol_target",
+    "positioning_crowding",
+    "policy_reaction_central_banks",
+    "fiscal_dominance",
+    "valuation_contrarian"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Index investing and the decline of active ownership means fewer shareholders act as owners and fewer companies accept owner input; accountability-demanding investors are therefore rare and have an edge.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Observation of company behaviour over his career; no data offered.",
+     "claim_ids": [
+      "MT122-C01-2",
+      "MT122-C03-1",
+      "MT122-C03-X1"
+     ]
+    },
+    {
+     "premise": "As passive investing grows, Wall Street research coverage thins, so primary research (former employees, customers, analysts) becomes a source of informational edge.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Anecdote from Elliott's research practice.",
+     "claim_ids": [
+      "MT122-C01-3",
+      "MT122-C01-4"
+     ]
+    },
+    {
+     "premise": "Companies almost always engage with a large, credible dealmaker because advisers tell them to, and a minority only escalate to proxy fights or litigation; credible scale (about 72bn in one fund) is what makes engagement possible.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Elliott's own experience with targets.",
+     "claim_ids": [
+      "MT122-C02-1",
+      "MT122-C02-2",
+      "MT122-C02-4"
+     ]
+    },
+    {
+     "premise": "Losses come mainly from missed risks, mis-categorised trades or hedges with more tracking error than expected, not from bad luck; the worst trades are those where the essential risk is misunderstood.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own worst trades (late-stage bankruptcy claim, Japanese linker arbitrage).",
+     "claim_ids": [
+      "MT122-C03-3",
+      "MT122-C03-6",
+      "MT122-C04-1",
+      "MT122-C04-4",
+      "MT122-C03-4",
+      "MT122-C03-5"
+     ]
+    },
+    {
+     "premise": "Meaningful losses impair judgment and emotional energy, so protecting capital protects decision quality and career longevity.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Own 88% loss in the 1974 bear market and observation of other people's behaviour after losses.",
+     "claim_ids": [
+      "MT122-C05-1",
+      "MT122-C05-3",
+      "MT122-C06-X1"
+     ]
+    },
+    {
+     "premise": "Markets cannot be predicted, so risk aversion has to be constant and capital kept intact for rare dislocations (late 2008) rather than switched on and off; capital works like a ratchet.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "2008 experience; first principles.",
+     "claim_ids": [
+      "MT122-C06-1",
+      "MT122-C05-4",
+      "MT122-C05-5"
+     ]
+    },
+    {
+     "premise": "Clients such as universities, hospitals and charities need a return stream that performs in seriously adverse markets, so Elliott is run as an absolute-return fund with no benchmark, not as an activist-only vehicle.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Description of Elliott's client base and mandate.",
+     "claim_ids": [
+      "MT122-C03-2",
+      "MT122-C05-6",
+      "MT122-C03-R1"
+     ]
+    },
+    {
+     "premise": "Models and legal probability estimates can be badly wrong in event-driven situations, so experienced judgment beyond the spreadsheet matters.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Example of lawyers giving a 95% win chance on an antitrust suit that was then lost.",
+     "claim_ids": [
+      "MT122-C06-2"
+     ]
+    },
+    {
+     "premise": "Long stretches without a bear market breed a belief that markets and governments will always be bailed out, and so rising leverage and risk-taking; zero/negative rates and large peacetime deficits fed this.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Observation of the post-2008 and pandemic era; no data beyond the 6% of GDP deficit figure.",
+     "claim_ids": [
+      "MT122-C07-2",
+      "MT122-C07-3",
+      "MT122-C07-4",
+      "MT122-C07-R2"
+     ]
+    },
+    {
+     "premise": "Sovereign money has sovereign backing (taxes and armies are paid in it), so government endorsement of crypto means promoting alternatives to sovereign money and hence to the dollar's reserve role.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "First-principles argument about what backs money.",
+     "claim_ids": [
+      "MT122-C07-6",
+      "MT122-C07-7",
+      "MT122-C07-X2"
+     ]
+    },
+    {
+     "premise": "Broad education (history, politics, philosophy) equips investors for events a narrow business skill set misses.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Personal career.",
+     "claim_ids": [
+      "MT122-C08-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why activism works (owner vacuum to value)",
+     "steps": [
+      {
+       "from": "Index investing rises and fewer owners scrutinise companies",
+       "to": "Boards and management face little accountability and less research coverage",
+       "why": "Passive holders do not read company mail or call management; Wall Street coverage shrinks.",
+       "claim_ids": [
+        "MT122-C01-2",
+        "MT122-C01-3",
+        "MT122-C03-1"
+       ]
+      },
+      {
+       "from": "Elliott builds an industry-specific question list and does primary research on the target's board, management and local corporate culture",
+       "to": "It identifies companies failing on strategy where change is possible (ideally with an 'open door')",
+       "why": "Successful companies cannot be improved; an open door means part of leadership already agrees.",
+       "claim_ids": [
+        "MT122-C01-4",
+        "MT122-C01-5",
+        "MT122-C01-6",
+        "MT122-C01-X1",
+        "MT122-C01-X2"
+       ]
+      },
+      {
+       "from": "A large, credible dealmaker approaches the company with a detailed thesis",
+       "to": "The company engages rather than stiff-arms, usually reaching a negotiated outcome",
+       "why": "Advisers tell management to hear out a well-capitalised investor; fighting is costly for everyone.",
+       "claim_ids": [
+        "MT122-C02-1",
+        "MT122-C02-2",
+        "MT122-C02-3",
+        "MT122-C02-4",
+        "MT122-C02-X1"
+       ]
+      },
+      {
+       "from": "Company adopts a meaningful share of the requests",
+       "to": "Market recognises added enterprise value within days and the stock reflects it over time",
+       "why": "The change improves strategy and competitiveness, so a fast reaction is not short-termism.",
+       "claim_ids": [
+        "MT122-C02-5",
+        "MT122-C02-6",
+        "MT122-C02-7"
+       ]
+      }
+     ],
+     "evidence": "Anecdote and Singer's own guess: value added in 'close to 100%' of cases, acted on in about 70%. Starbucks mentioned by the interviewer only as an example.",
+     "fails_when": "The thesis is wrong on details, the company stiff-arms with a proxy fight or litigation, or the target has no willing faction; getting all requests is 'not the dominant outcome'.",
+     "claim_ids": [
+      "MT122-C01-1",
+      "MT122-C02-3",
+      "MT122-C03-X2"
+     ]
+    },
+    {
+     "topic": "How a 'perfect' convergent trade becomes a loss (Japanese linker arbitrage)",
+     "steps": [
+      {
+       "from": "Linkers priced about -2% inflation a year for 7 years against JGBs while CPI had hovered near zero for decades",
+       "to": "The trade looks like a risk-free arbitrage that the whole trading room wants in",
+       "why": "Dealer showed it to several other holders; it looked obviously cheap.",
+       "claim_ids": [
+        "MT122-C04-2",
+        "MT122-C04-X1"
+       ]
+      },
+      {
+       "from": "Position is levered because the risk is thought to be understood",
+       "to": "Implied inflation falls to -4.5% a year and the linker loses about 30% in price",
+       "why": "The essential characteristic (mark-to-market deflation pricing, not convergence at maturity) was misunderstood.",
+       "claim_ids": [
+        "MT122-C04-3",
+        "MT122-C04-4"
+       ]
+      },
+      {
+       "from": "Daily mark-to-market losses and pressure to unwind",
+       "to": "Many holders are sold out; those who hold to maturity avoid the permanent loss",
+       "why": "Holding through a do-or-die period needs a different skill set and enough capital and mandate.",
+       "claim_ids": [
+        "MT122-C04-X2"
+       ]
+      }
+     ],
+     "evidence": "His own trade, 2006-2008, lost about 30% of principal before recovery was possible.",
+     "fails_when": "Risk is put in the wrong category and the position is levered.",
+     "claim_ids": [
+      "MT122-C03-6",
+      "MT122-C04-4"
+     ]
+    },
+    {
+     "topic": "Capital preservation to opportunity capture",
+     "steps": [
+      {
+       "from": "Large losses (own 88% drawdown in 1974)",
+       "to": "Impaired judgment and drained emotional energy",
+       "why": "People under heavy losses lose their judgment and burn out.",
+       "claim_ids": [
+        "MT122-C05-1",
+        "MT122-C05-3",
+        "MT122-C06-X1"
+       ]
+      },
+      {
+       "from": "No large losses; constant risk aversion; no benchmark",
+       "to": "Capital and mandate intact when rare dislocations arrive (last weeks of 2008)",
+       "why": "Everything got cheap and then collapsed; only those with excess capital and permission could buy.",
+       "claim_ids": [
+        "MT122-C05-4",
+        "MT122-C06-1",
+        "MT122-C05-6"
+       ]
+      },
+      {
+       "from": "Gains kept, losses avoided",
+       "to": "Ratchet-like compounding",
+       "why": "Each gain is retained and added to.",
+       "claim_ids": [
+        "MT122-C05-5"
+       ]
+      }
+     ],
+     "evidence": "Personal history and 2008 anecdote.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT122-C03-2"
+     ]
+    },
+    {
+     "topic": "Sovereign debt: restructuring outcome depends on resources, and holdout litigation is slow",
+     "steps": [
+      {
+       "from": "Argentina had a history of default but large resources and capacity",
+       "to": "Elliott judged default unlikely and bought performing bonds in the 70s to 80s",
+       "why": "Size and resources suggest capacity to pay.",
+       "claim_ids": [
+        "MT122-C06-3"
+       ]
+      },
+      {
+       "from": "Argentina defaulted and made a ~30-cent offer, saying holdouts get nothing",
+       "to": "About 25% held out and the bonds kept falling; Elliott's basis fell to the teens to 30s",
+       "why": "A 30-cent deal fits poor countries, not a large economy.",
+       "claim_ids": [
+        "MT122-C06-4",
+        "MT122-C06-5",
+        "MT122-C07-X1"
+       ]
+      },
+      {
+       "from": "The sovereign never negotiated",
+       "to": "Litigation lasted about 15 years",
+       "why": "Stubbornness and entitlement; Elliott had no alternative since the position was deeply underwater.",
+       "claim_ids": [
+        "MT122-C07-1"
+       ]
+      }
+     ],
+     "evidence": "Own Argentina case; final recovery is not stated in this transcript.",
+     "fails_when": "The sovereign refuses to negotiate; the first purchase was a wrong call on default.",
+     "claim_ids": [
+      "MT122-C06-3",
+      "MT122-C07-1"
+     ]
+    },
+    {
+     "topic": "Late-cycle fragility: complacency to leverage to fragility",
+     "steps": [
+      {
+       "from": "Long period since the last major market event, plus zero and negative interest rates",
+       "to": "Belief that markets and governments will always be bailed out",
+       "why": "No recent bear market like 1974, 1987 or 2008.",
+       "claim_ids": [
+        "MT122-C07-2",
+        "MT122-C07-3",
+        "MT122-C07-R2"
+       ]
+      },
+      {
+       "from": "That belief",
+       "to": "Building leverage and risk-taking among investors and governments",
+       "why": "Cheap money and a perceived backstop.",
+       "claim_ids": [
+        "MT122-C07-2",
+        "MT122-C07-3"
+       ]
+      },
+      {
+       "from": "US deficits above 6% of GDP outside a recession",
+       "to": "Fiscal risk",
+       "why": "Deep-recession-type spending with no recession.",
+       "claim_ids": [
+        "MT122-C07-4"
+       ]
+      }
+     ],
+     "evidence": "Observation and one deficit number; no quantitative model.",
+     "fails_when": "Not stated; timing is not claimed (he says markets cannot be predicted).",
+     "claim_ids": [
+      "MT122-C07-2"
+     ]
+    },
+    {
+     "topic": "Crypto, sovereign money and the dollar",
+     "steps": [
+      {
+       "from": "Governments embrace cryptocurrencies",
+       "to": "They endorse alternatives to sovereign money",
+       "why": "Central bank money is backed by tax and army; crypto is not.",
+       "claim_ids": [
+        "MT122-C07-X2",
+        "MT122-C07-6"
+       ]
+      },
+      {
+       "from": "Alternatives to sovereign money",
+       "to": "Risk to the dollar's reserve-currency role",
+       "why": "Other countries resent the US privilege and want alternatives; the US itself backing one 'makes my head spin'.",
+       "claim_ids": [
+        "MT122-C07-7",
+        "MT122-C07-6"
+       ]
+      }
+     ],
+     "evidence": "Reasoned argument, no data.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT122-C07-6"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Idea sources are inbound ideas, the Street and self-generated; build an iterative industry-specific question list; talk to former employees, customers and analysts; study the country's corporate-control culture, the board and management and why they are failing.",
+     "why": "Thinner Street coverage makes primary research an edge; avoids successful firms that cannot be improved.",
+     "claim_ids": [
+      "MT122-C01-3",
+      "MT122-C01-4",
+      "MT122-C01-5",
+      "MT122-C01-X1",
+      "MT122-C01-X2"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Target companies failing on strategy, with an open door (founder or family loyalty, part of leadership agrees); avoid highly successful companies.",
+     "why": "Smoother path to getting change done.",
+     "claim_ids": [
+      "MT122-C01-5",
+      "MT122-C01-6"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Approach as a dealmaker with a thesis and a detailed deck; sometimes under the radar and disclosed only to the company, sometimes with a public filing depending on the rules; escalate to proxy fights only when stiff-armed.",
+     "why": "Goal is value, not publicity; fights and litigation help nobody.",
+     "claim_ids": [
+      "MT122-C02-3",
+      "MT122-C02-4",
+      "MT122-C02-X1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Success defined as getting a meaningful percentage of requests and the stock reflecting it over time; Singer guesses about 70% of cases lead to actual changes.",
+     "why": "Reputation depends on the stock actually being worth more.",
+     "claim_ids": [
+      "MT122-C02-5",
+      "MT122-C02-7"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Never lose large amounts of money; no benchmark; constant risk aversion rather than switching it on and off.",
+     "why": "Markets cannot be predicted; losses impair judgment; ratchet compounding.",
+     "claim_ids": [
+      "MT122-C05-6",
+      "MT122-C06-1",
+      "MT122-C05-5",
+      "MT122-C05-3"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Categorise each trade's essential risk correctly before levering it; use bespoke hedges per trade while accepting they are imperfect.",
+     "why": "Worst losses come from misunderstood risk and tracking error.",
+     "claim_ids": [
+      "MT122-C03-3",
+      "MT122-C03-5",
+      "MT122-C03-6",
+      "MT122-C04-4"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Do not lever a position whose essential characteristic is not understood; keep excess capital for rare opportunities.",
+     "why": "Mark-to-market levered losses force sell-outs; excess capital allows 2008-type purchases.",
+     "claim_ids": [
+      "MT122-C04-3",
+      "MT122-C04-4",
+      "MT122-C05-4"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Hold through a drawdown on a convergent trade when the thesis is intact, despite pressure to unwind.",
+     "why": "Maturity convergence recovers the principal; others were sold out.",
+     "claim_ids": [
+      "MT122-C04-X2",
+      "MT122-C04-3"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Add judgment beyond models and legal probability estimates.",
+     "why": "Event-driven outcomes can differ widely from advisers' stated odds.",
+     "claim_ids": [
+      "MT122-C06-2"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Early edge was convertible hedging (long convertible, short the stock): chosen because it was under-serviced, offered a steady high rate of return and lacked good valuation models, so edge came from street relationships and fast pricing.",
+     "why": "Under-served niche with no standard valuation models; low tracking error in 1977-87.",
+     "claim_ids": [
+      "MT122-C05-2",
+      "MT122-C03-4"
+     ]
+    }
+   ],
+   "evidence_style": "Personal track record and war stories (1974 loss, Japanese linkers, Argentina, 2008), first-principles arguments about what backs money and what drives owner behaviour, and self-estimated hit rates ('close to 100%', 'about 70%'). No backtests or quantified data beyond the 6% deficit figure.",
+   "current_views": [
+    {
+     "view": "Stock markets are about as risky as he has ever seen: complacency about bailouts, building leverage, and risk-taking by investors and governments.",
+     "as_of": "2025-02-26",
+     "reasoning": "Long gap since the last major market event; zero/negative rates; no belief in a coming bear market.",
+     "claim_ids": [
+      "MT122-C07-2",
+      "MT122-C07-3",
+      "MT122-C07-R2"
+     ]
+    },
+    {
+     "view": "US fiscal position is a risk: deficits above 6% of GDP in a non-recession year, on top of pandemic spending.",
+     "as_of": "2025-02-26",
+     "reasoning": "Deep-recession-type spending when there was no recession.",
+     "claim_ids": [
+      "MT122-C07-4"
+     ]
+    },
+    {
+     "view": "AI valuations exceed the practical value so far delivered to users, though uses will grow.",
+     "as_of": "2025-02-26",
+     "reasoning": "Value delivered lags what is priced; no figures given.",
+     "claim_ids": [
+      "MT122-C07-5"
+     ]
+    },
+    {
+     "view": "Government support for crypto undermines sovereign money and potentially the dollar's reserve-currency status.",
+     "as_of": "2025-02-26",
+     "reasoning": "Crypto is an alternative to sovereign-backed money; other countries want alternatives to the dollar.",
+     "claim_ids": [
+      "MT122-C07-6",
+      "MT122-C07-7",
+      "MT122-C07-X2"
+     ]
+    },
+    {
+     "view": "Active, owner-like investing is scarce, so activism remains attractive.",
+     "as_of": "2025-02-26",
+     "reasoning": "Passive growth leaves fewer owners and less research coverage.",
+     "claim_ids": [
+      "MT122-C03-1",
+      "MT122-C01-2",
+      "MT122-C01-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Success rates ('close to 100%' value added, 'majority, like 70%' acted on) are Singer's own guesses with no data; success is defined by himself.",
+   "claim_ids": [
+    "MT122-C02-7",
+    "MT122-C02-5"
+   ]
+  },
+  {
+   "issue": "Tension: he says markets cannot be predicted, yet calls current markets about as risky as he has seen and AI valuations exaggerated; no timing or trigger is given.",
+   "claim_ids": [
+    "MT122-C06-1",
+    "MT122-C07-2",
+    "MT122-C07-5"
+   ]
+  },
+  {
+   "issue": "Argentina: the ledger version overstated; he does not say whether holding out eventually paid, and describes a 15-year litigation with a basis in the teens to 30s, so the outcome of the position is not given in this transcript.",
+   "claim_ids": [
+    "MT122-C06-5",
+    "MT122-C07-1",
+    "MT122-C07-X1"
+   ]
+  },
+  {
+   "issue": "Crypto argument is internally unquantified: no evidence offered that crypto support raises money supply ('going hog wild') or threatens dollar reserve share.",
+   "claim_ids": [
+    "MT122-C07-6",
+    "MT122-C07-X2"
+   ]
+  },
+  {
+   "issue": "Tension between 'never lose money' with leveraged convergent trades and holding the linker through a 30% mark-to-market loss; he survived because he held, which is survivorship in a single anecdote.",
+   "claim_ids": [
+    "MT122-C04-3",
+    "MT122-C04-X2",
+    "MT122-C05-6"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Singer names no precise predictive indicator. The observable inputs he implies are: time since the last major market event / bear market; level of leverage in investors and governments; US deficit as a share of GDP (about 6% in a non-recession year); AI valuations versus delivered user value; government stance toward crypto and reserve-currency alternatives. He gives no horizon and says markets cannot be predicted, so these inform risk posture rather than timed calls.",
+ "reader_inferences": [
+  "(reader) Elliott's edge in activism is structural and capacity-based (scale, legal capability, credibility) rather than a signal that could be tested from price data; testable proxies would be 13D filing event studies.",
+  "(reader) The Japanese linker story is a case of crowded, apparently riskless convergence trades failing under leverage and mark-to-market, which links his risk culture to avoiding crowded arbitrage.",
+  "(reader) His capital-preservation stance implies convex payoff preference in crises (cash available at dislocations) without the interviewee naming options or tail hedges.",
+  "(reader) Singer's late-cycle fragility view is a risk-posture input (constant risk aversion), not a tactical short call."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT122-C03-R1",
+   "chunk": "C03",
+   "speaker": "Paul Singer",
+   "quote": "in the infrequent so seriously adverse uh uh Financial Market environments these people have very few investment Outlets that actually perform on that",
+   "claim": "Elliott's clients (universities, hospitals, charities) have few investments that perform in seriously adverse markets, which is why Elliott runs as an absolute-return fund that makes money whatever the market does.",
+   "mechanism": "absolute return mandate serves clients who need non-correlated performance in bad markets",
+   "asset_class": "multi-asset hedge fund",
+   "indicator": "",
+   "horizon": "n/a",
+   "direction": "n/a",
+   "conditions": "seriously adverse financial market environments",
+   "testable": "partly - fund return in drawdown periods versus equities",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT122-C07-R2",
+   "chunk": "C07",
+   "speaker": "Paul Singer",
+   "quote": "led people into thinking that they'll always be bailed out that there'll never be another uh bare Market",
+   "claim": "A long period without a major market event leads people to believe they will always be bailed out and that there will be no further bear market, which builds leverage and risk-taking.",
+   "mechanism": "complacency after long calm periods raises leverage and fragility",
+   "asset_class": "equities and broad markets",
+   "indicator": "time since last major bear market (1974, 1987, 2008)",
+   "horizon": "unspecified",
+   "direction": "bearish risk posture",
+   "conditions": "long calm period, backstop beliefs",
+   "testable": "partly - leverage versus subsequent drawdowns",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  }
+ ]
+}

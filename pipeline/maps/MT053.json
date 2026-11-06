@@ -1,0 +1,327 @@
+{
+ "source_id": "MT053",
+ "episode_thesis": "Yechiely says markets are very efficient and public strategies decay, so real hedge-fund value is an uncorrelated return stream built on understanding why a strategy works, not on chasing what worked. He contrasts top-down macro (aggregate forces) with bottom-up stock picking and stresses creative analytical problem-solving, in an episode mostly about career advice.",
+ "speakers": [
+  {
+   "name": "Noah Yechiely",
+   "role": "Former head of equities and head of the fund at Bridgewater (joined 2004 as systems engineer)",
+   "speaker_note": "Captions have no punctuation; 'micro' in the top-down passage means 'macro' (reader reading, flagged). Hosts Amir and Owen ask questions only. Much of the episode is career and hiring advice; those parts are not mapped beyond the decision rows.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "research_robustness_overfitting",
+    "diversification_risk_parity",
+    "portfolio_construction_stacking",
+    "regime_detection",
+    "geopolitics",
+    "manager_selection_allocation"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A true hedge fund targets returns uncorrelated with markets, which adds most to a portfolio because it rises when other assets fall; many 'hedge funds' are long-only beta sellers.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning about correlated assets.",
+     "claim_ids": [
+      "MT053-C01-1",
+      "MT053-C01-X1",
+      "MT053-C02-1"
+     ]
+    },
+    {
+     "premise": "Markets are very efficient: the whole hedge fund industry earns a few billion, a few basis points on hundreds of trillions of assets.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Order-of-magnitude comparison; poker-table analogy.",
+     "claim_ids": [
+      "MT053-C02-2",
+      "MT053-C02-R1"
+     ]
+    },
+    {
+     "premise": "Good hedge funds exploit structurally inefficient niches, but returns and capacity there are small.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Experience.",
+     "claim_ids": [
+      "MT053-C02-3"
+     ]
+    },
+    {
+     "premise": "Efficiency is not uniform: some markets became more efficient, some less, and inefficiency migrates.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "2004 to 2024 experience.",
+     "claim_ids": [
+      "MT053-C02-X1"
+     ]
+    },
+    {
+     "premise": "Once strategies become public and many follow them, returns fall; data and tools once held by few are now public and cheap, so data- and technology-based edges eroded.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "General observation (80s/90s vs now); no data.",
+     "claim_ids": [
+      "MT053-C03-1",
+      "MT053-C03-2"
+     ]
+    },
+    {
+     "premise": "Top-down macro targets aggregate forces (spending, growth, inflation) that move whole asset classes together; stock picking on company quality is neutralised in a Boeing plus Airbus portfolio.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Boeing/Airbus illustration.",
+     "claim_ids": [
+      "MT053-C03-3"
+     ]
+    },
+    {
+     "premise": "Successful investors understand causal drivers rather than copy what worked, and challenge their own beliefs, asking why a high-Sharpe strategy works and whether it will continue.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observed at Bridgewater.",
+     "claim_ids": [
+      "MT053-C04-1",
+      "MT053-C04-2"
+     ]
+    },
+    {
+     "premise": "Politics and geopolitics affect every company, so bottom-up investors also need the macro picture.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "US-China tariffs example.",
+     "claim_ids": [
+      "MT053-C06-X1"
+     ]
+    },
+    {
+     "premise": "Investment research is the same analytical process as consulting or engineering: decompose, build a framework, find data to test.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own career path.",
+     "claim_ids": [
+      "MT053-C04-X1",
+      "MT053-C05-R1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why public strategies decay",
+     "steps": [
+      {
+       "from": "Strategy works and becomes public",
+       "to": "Many investors follow it",
+       "why": "Visible success.",
+       "claim_ids": [
+        "MT053-C03-1"
+       ]
+      },
+      {
+       "from": "Many chase the same thing",
+       "to": "Returns fall",
+       "why": "Crowding.",
+       "claim_ids": [
+        "MT053-C03-1"
+       ]
+      },
+      {
+       "from": "Cheap public data and analytics",
+       "to": "Data-dependent edges become efficient",
+       "why": "Level playing field.",
+       "claim_ids": [
+        "MT053-C03-2"
+       ]
+      }
+     ],
+     "evidence": "Experience; no data.",
+     "fails_when": "Where inefficiency migrates elsewhere (efficiency not uniform).",
+     "claim_ids": [
+      "MT053-C03-1",
+      "MT053-C03-2",
+      "MT053-C02-X1"
+     ]
+    },
+    {
+     "topic": "Micro vs macro neutralisation",
+     "steps": [
+      {
+       "from": "Hold Boeing and Airbus together",
+       "to": "Company-specific moves offset",
+       "why": "Share shifts between them.",
+       "claim_ids": [
+        "MT053-C03-3"
+       ]
+      },
+      {
+       "from": "Remaining move",
+       "to": "Driven by aggregate spending on aircraft, then travel, growth and inflation",
+       "why": "Whole asset class moves together.",
+       "claim_ids": [
+        "MT053-C03-3"
+       ]
+      }
+     ],
+     "evidence": "Illustration only.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT053-C03-3"
+     ]
+    },
+    {
+     "topic": "Why most hedge funds are not hedged",
+     "steps": [
+      {
+       "from": "Uncorrelated returns require out-thinking the smartest participants repeatedly",
+       "to": "Funds drift into holding assets long",
+       "why": "Easier, earns market returns and fees.",
+       "claim_ids": [
+        "MT053-C02-R1",
+        "MT053-C02-1"
+       ]
+      },
+      {
+       "from": "Selling beta at hedge-fund fees",
+       "to": "Little unique return added",
+       "why": "Long-only assets are correlated.",
+       "claim_ids": [
+        "MT053-C01-X1"
+       ]
+      }
+     ],
+     "evidence": "Industry observation.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT053-C02-1",
+      "MT053-C01-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Add an uncorrelated return stream to a long-only portfolio.",
+     "why": "Rises when other assets fall.",
+     "claim_ids": [
+      "MT053-C01-1",
+      "MT053-C01-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "When a strategy shows a high Sharpe ratio, ask why it works and whether it will continue; assume you may be wrong.",
+     "why": "Avoid copying what worked.",
+     "claim_ids": [
+      "MT053-C04-2",
+      "MT053-C04-1"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Focus on aggregate macro drivers across asset classes rather than company quality; still understand political forces.",
+     "why": "Neutralises micro noise.",
+     "claim_ids": [
+      "MT053-C03-3",
+      "MT053-C06-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Decompose a new problem, build a framework, then find data to test it.",
+     "why": "Same as consulting and engineering.",
+     "claim_ids": [
+      "MT053-C04-X1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Hire for curiosity and creative problem-solving rather than experience.",
+     "why": "Skills can be taught; creativity cannot.",
+     "claim_ids": [
+      "MT053-C05-R1"
+     ]
+    }
+   ],
+   "evidence_style": "Experience at Bridgewater, analogy (poker table, Boeing/Airbus) and order-of-magnitude reasoning; no data or backtests.",
+   "current_views": [
+    {
+     "view": "US-China relations and tariff direction affect every company and market.",
+     "as_of": "2024-12-27 (upload date)",
+     "reasoning": "Politics touches all holdings; no direction predicted.",
+     "claim_ids": [
+      "MT053-C06-X1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "'Industry earns a few billion, a few basis points' is an order-of-magnitude statement that mixes industry profits with asset totals and is not an efficiency test.",
+   "claim_ids": [
+    "MT053-C02-2"
+   ]
+  },
+  {
+   "issue": "Says markets are very efficient yet that good funds find niches and that efficiency migrates; no criteria for where edges are.",
+   "claim_ids": [
+    "MT053-C02-2",
+    "MT053-C02-3",
+    "MT053-C02-X1"
+   ]
+  },
+  {
+   "issue": "Says data-dependent edges became efficient, but not which strategies or by how much.",
+   "claim_ids": [
+    "MT053-C03-2"
+   ]
+  },
+  {
+   "issue": "Defines true hedge funds as uncorrelated, but long-only assets are said to rise as payment for capital, with no statement of how top-down macro avoids that beta.",
+   "claim_ids": [
+    "MT053-C01-1",
+    "MT053-C01-X1",
+    "MT053-C03-3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Aggregate spending, growth and inflation as drivers of asset classes; US-China tariff direction as a cross-asset political input. No horizon or levels given.",
+ "reader_inferences": [
+  "(reader) 'Micro' in the captions' top-down passage is read as 'macro'; the Boeing/Airbus example is a hedge of idiosyncratic risk leaving the sector factor.",
+  "(reader) The 'ask why a high Sharpe works' rule is a robustness check against overfitting and crowding."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT053-C02-R1",
+   "chunk": "C02",
+   "speaker": "Noah Yechiely",
+   "quote": "you have to be the smartest person on the poker table and do it thousands and thousands of times again and again against the smartest people in the market",
+   "claim": "Yechiely explains why uncorrelated returns are hard: you must out-think the smartest participants repeatedly, which is why funds drifted to holding assets long.",
+   "mechanism": "competition_efficiency",
+   "asset_class": "multi",
+   "indicator": "skill vs competition",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT053-C05-R1",
+   "chunk": "C05",
+   "speaker": "Noah Yechiely",
+   "quote": "you can teach people that are are brilliant smart pretty quickly but you can't teach them how to be creative",
+   "claim": "Yechiely says Bridgewater hires for curiosity and problem-solving talent rather than experience, because skills can be taught but creativity cannot.",
+   "mechanism": "hiring",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

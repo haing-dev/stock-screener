@@ -1,0 +1,425 @@
+{
+ "source_id": "MT049",
+ "episode_thesis": "Prince's career interview: Bridgewater's method is a coded, first-principles system integrating economy and markets, with hidden market exposures identified and hedged and long history used to test ideas. He sees modern mercantilism and geopolitical disruption as a lasting regime threatening the macro balance achieved after five years of instability.",
+ "speakers": [
+  {
+   "name": "Bob Prince",
+   "role": "Co-CIO, Bridgewater Associates; joined 1986",
+   "speaker_note": "Auto-captions misspell Bridgewater and Ray Dalio ('Rey', 'Ry'). The interviewer asks questions and is not mapped. Interview is mostly career story; method content is thin and mostly principle-level.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "research_robustness_overfitting",
+    "diversification_risk_parity",
+    "portfolio_construction_stacking",
+    "geopolitics",
+    "structural_themes",
+    "debt_cycle_long_term",
+    "manager_selection_allocation"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Economies and markets are one integrated system; the edge is merging an economist's understanding of how the economy works with a trader's understanding of flows, risk and reward.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Bridgewater's design as he saw it as a client.",
+     "claim_ids": [
+      "MT049-C05-1",
+      "MT049-C05-R1"
+     ]
+    },
+    {
+     "premise": "Companies and people carry hidden market bets (a jeweler is long gold; Tulsa is long oil; Caterpillar is short a strong dollar), so profits blend operating skill and market exposure.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Personal observation: Illinois layoffs when the dollar was strong, Tulsa 3% vs Boston 18% unemployment, then oil bust.",
+     "claim_ids": [
+      "MT049-C06-1",
+      "MT049-C06-2",
+      "MT049-C06-3"
+     ]
+    },
+    {
+     "premise": "Derive answers from first principles ('basic physics of how the world works'), independent of others; convention settles in, and if you are right the world comes to you.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Bridgewater's growth came from repeated cases of this.",
+     "claim_ids": [
+      "MT049-C08-1",
+      "MT049-C08-2"
+     ]
+    },
+    {
+     "premise": "A diversified portfolio can fall together in a deflationary depression; long-duration bonds give leveraged hedge exposure.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Kodak's CIO question tested on data back to the 1860s.",
+     "claim_ids": [
+      "MT049-C07-1",
+      "MT049-C07-3"
+     ]
+    },
+    {
+     "premise": "Markets are zero-sum and returns are the objective standard of right or wrong; a firm lacking internal meritocracy will not compete.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "None offered.",
+     "claim_ids": [
+      "MT049-C08-4"
+     ]
+    },
+    {
+     "premise": "Risk lies in what you do not know; humility and people with different capabilities show blind spots.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Bridgewater culture.",
+     "claim_ids": [
+      "MT049-C08-3"
+     ]
+    },
+    {
+     "premise": "Economics textbooks rest on false assumptions and no book explains how the world works; one must ask own questions and find own answers.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Assertion.",
+     "claim_ids": [
+      "MT049-C13-2"
+     ]
+    },
+    {
+     "premise": "Small differences in compounding rate become huge over long horizons, so play the long game.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "10% vs 5% over 40 years gives roughly six times.",
+     "claim_ids": [
+      "MT049-C13-1"
+     ]
+    },
+    {
+     "premise": "Globalisation produced imbalances that bred leaders favouring government involvement; modern mercantilism is a lasting philosophical change.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "China, Biden, Trump examples.",
+     "claim_ids": [
+      "MT049-C11-2",
+      "MT049-C11-R2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Bank balance sheet as portfolios",
+     "steps": [
+      {
+       "from": "Assets and liabilities treated as portfolios with different speeds (repricing/duration)",
+       "to": "Net interest margin managed as a portfolio problem",
+       "why": "Matches mismatches in speed.",
+       "claim_ids": [
+        "MT049-C04-1"
+       ]
+      }
+     ],
+     "evidence": "His own bank treasury results (awards, profits) per his account; no figures.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT049-C04-1"
+     ]
+    },
+    {
+     "topic": "Hidden market bets and risk-management plans",
+     "steps": [
+      {
+       "from": "Operating business embeds exposure to commodity, currency or rate",
+       "to": "Profit mixes operating margin with market bet",
+       "why": "Companies accept the bet knowingly or not.",
+       "claim_ids": [
+        "MT049-C06-1"
+       ]
+      },
+      {
+       "from": "Separate the bet from operations",
+       "to": "Hedge it, e.g. through debt structure (currency, maturity, rate type)",
+       "why": "Offsets what revenues are exposed to (BC Hydro).",
+       "claim_ids": [
+        "MT049-C06-X1"
+       ]
+      },
+      {
+       "from": "Global long/short mandate",
+       "to": "Not a sitting duck to a single price",
+       "why": "Can exploit any market.",
+       "claim_ids": [
+        "MT049-C06-4"
+       ]
+      }
+     ],
+     "evidence": "Examples; BC Hydro case.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT049-C06-1",
+      "MT049-C06-X1",
+      "MT049-C06-4"
+     ]
+    },
+    {
+     "topic": "Deflation hedge via long-duration bonds",
+     "steps": [
+      {
+       "from": "Deflationary depression",
+       "to": "Diversified portfolio falls together",
+       "why": "Correlations rise.",
+       "claim_ids": [
+        "MT049-C07-1"
+       ]
+      },
+      {
+       "from": "Small allocation to 25-year bonds",
+       "to": "Price action of five times the capital",
+       "why": "Duration leverage.",
+       "claim_ids": [
+        "MT049-C07-1"
+       ]
+      },
+      {
+       "from": "Futures overlay with flexible duration (40 to 0) and currency +/-100%",
+       "to": "Liability hedge plus alpha",
+       "why": "Combines hedge and active management.",
+       "claim_ids": [
+        "MT049-C07-2"
+       ]
+      }
+     ],
+     "evidence": "Bond yield and curve data back to the 1860s.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT049-C07-1",
+      "MT049-C07-2",
+      "MT049-C07-3"
+     ]
+    },
+    {
+     "topic": "Modern mercantilism and Europe",
+     "steps": [
+      {
+       "from": "Globalisation imbalances",
+       "to": "Leaders who increase government involvement",
+       "why": "Reaction.",
+       "claim_ids": [
+        "MT049-C11-2"
+       ]
+      },
+      {
+       "from": "Mercantilist competition",
+       "to": "Europe disadvantaged for lack of central government",
+       "why": "Cannot compete as a unit.",
+       "claim_ids": [
+        "MT049-C12-1"
+       ]
+      },
+      {
+       "from": "German defence initiative",
+       "to": "Unintended fiscal stimulus for Europe",
+       "why": "Spending ramp.",
+       "claim_ids": [
+        "MT049-C12-1"
+       ]
+      }
+     ],
+     "evidence": "Assertion and current events.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT049-C11-2",
+      "MT049-C12-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Code the view into rules and trade it, so outcomes are judged honestly rather than adjusting the story.",
+     "why": "Accountability.",
+     "claim_ids": [
+      "MT049-C05-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Group work: no single decision maker; research and plans are team efforts.",
+     "why": "Systematic fundamental process.",
+     "claim_ids": [
+      "MT049-C12-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Check a forecaster's past published reports for accuracy before buying; assemble long history (1860s data) to test claims.",
+     "why": "Verification.",
+     "claim_ids": [
+      "MT049-C04-2",
+      "MT049-C07-3"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Global long/short in any market; first alpha-overlay mandate with 25-year target duration, 2-2.5x leverage, futures-based.",
+     "why": "Not a sitting duck; combine hedge and alpha.",
+     "claim_ids": [
+      "MT049-C06-4",
+      "MT049-C07-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Risk-management plans: identify and hedge latent market exposures.",
+     "why": "Separate skill from market bets.",
+     "claim_ids": [
+      "MT049-C06-1",
+      "MT049-C06-X1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Hiring ranks values, ability, then skills.",
+     "why": "Values unchangeable; skills trainable.",
+     "claim_ids": [
+      "MT049-C09-R1"
+     ]
+    }
+   ],
+   "evidence_style": "First principles, long historical data series, track-record checks of forecasters, and personal anecdote; no performance data or backtests shown.",
+   "current_views": [
+    {
+     "view": "Clash of stability and instability: policy makers restored balance across countries after five years of imbalances, but geopolitical chaos (tariffs, boycotts) threatens it.",
+     "as_of": "c. March 2025 (upload 2025-03-20)",
+     "reasoning": "Imbalances from COVID, overheating and tight money were corrected; tariffs and boycotts threaten them.",
+     "claim_ids": [
+      "MT049-C11-1",
+      "MT049-C11-R1"
+     ]
+    },
+    {
+     "view": "Modern mercantilism (inward focus, competition, more government) will be with us for a while.",
+     "as_of": "c. March 2025",
+     "reasoning": "A philosophical change, led by China, then Biden and Trump.",
+     "claim_ids": [
+      "MT049-C11-2",
+      "MT049-C11-R2"
+     ]
+    },
+    {
+     "view": "Europe is left behind in mercantilism but German defence spending is unintended fiscal stimulus.",
+     "as_of": "c. March 2025",
+     "reasoning": "No central government; spending added.",
+     "claim_ids": [
+      "MT049-C12-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Method statements are principle-level; no mechanism, signal or performance detail on the systems he describes.",
+   "claim_ids": [
+    "MT049-C05-1",
+    "MT049-C05-2"
+   ]
+  },
+  {
+   "issue": "He values being radically different from consensus yet says all of Bridgewater's decisions are group efforts avoiding single decision-makers; no conflict stated but tension.",
+   "claim_ids": [
+    "MT049-C08-2",
+    "MT049-C12-2"
+   ]
+  },
+  {
+   "issue": "The Kodak study is called the 'gold standard' but its first Monday attempt 'really sucks'; results and conclusions of the study are not given.",
+   "claim_ids": [
+    "MT049-C07-3"
+   ]
+  },
+  {
+   "issue": "Economics textbooks said to rely on false assumptions without naming any.",
+   "claim_ids": [
+    "MT049-C13-2"
+   ]
+  },
+  {
+   "issue": "The compounding example (10% vs 5%) is applied to learning rates, which is a metaphor not a measurable quantity.",
+   "claim_ids": [
+    "MT049-C13-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Whether geopolitical disruptions (tariffs, boycotts) overturn the restored cross-country balance; European fiscal expansion (German defence); strong dollar effects on exporters; commodity price swings on commodity-dependent regions. No explicit horizon beyond 'for a while'.",
+ "reader_inferences": [
+  "(reader) Prince's hedge-the-latent-exposure idea implies measuring a firm's return as operating margin plus embedded factor bets.",
+  "(reader) The 1991 mandate shows the origin of treating duration and currency as tradeable alpha dimensions."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT049-C05-R1",
+   "chunk": "C05",
+   "speaker": "Bob Prince",
+   "quote": "Rey had built the first couple of, uh, he built an interest rate system, a stock system, and a gold system",
+   "claim": "Prince says Dalio had built coded interest-rate, stock and gold systems whose daily readout (the 'wire', now daily observations) was part of the research service before Bridgewater managed money.",
+   "mechanism": "systemised_fundamentals",
+   "asset_class": "rates, equities, gold",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT049-C09-R1",
+   "chunk": "C09",
+   "speaker": "Bob Prince",
+   "quote": "values is the most important thing. A abilities is second and skills is third",
+   "claim": "Prince ranks hiring criteria as values, then ability, then skills, because values are unchangeable and skills can be trained.",
+   "mechanism": "organisation",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT049-C11-R1",
+   "chunk": "C11",
+   "speaker": "Bob Prince",
+   "quote": "policy makers have managed to finally kind of bring things into a reasonable balance",
+   "claim": "Prince says policy makers had brought economies into reasonable balance across many countries after five years of instability.",
+   "mechanism": "policy_balance",
+   "asset_class": "macro",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT049-C11-R2",
+   "chunk": "C11",
+   "speaker": "Bob Prince",
+   "quote": "mercantalism is like much more of an inward focus to your own economy",
+   "claim": "Prince defines modern mercantilism as an inward economic focus, competition instead of cooperation, and more government participation.",
+   "mechanism": "modern_mercantilism",
+   "asset_class": "macro",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

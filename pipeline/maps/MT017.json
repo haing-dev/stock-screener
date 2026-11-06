@@ -1,0 +1,383 @@
+{
+ "source_id": "MT017",
+ "episode_thesis": "Richard Brennan (Systematic Investor Ep. 402, recorded about 27 May 2026) argues that markets are complex adaptive systems whose trends, crashes and volatility clustering emerge from reinforcing and balancing feedback among agents rather than from news or fair value. Passive investing (about 60% of US equity fund assets, more with benchmark-huggers) is price-insensitive: it dilutes the balancing agents and thins the price-sensitive float, making directional moves, overshoots and cascades more likely and raising the price impact per dollar of flow (multiplier about 5, range 3-7). His agent-based model (about 20-25% chartists triggers a phase transition) reproduces the Hurst/kurtosis fingerprint of 68 futures markets over 40 years, which he takes to mean trend following harvests a structural, hardening feature, not a temporary inefficiency. Kaastrup-Larsen probes with structured products and pod shops and reports May 2026 CTA data and a SocGen survey.",
+ "speakers": [
+  {
+   "name": "Richard Brennan",
+   "role": "Guest co-host; systematic trend-following manager and researcher (based 'down under'), author of the 'factors of finance' research series",
+   "speaker_note": "Nearly all substantive content is his monologue. The research (agent-based model, 68 futures markets, 40 years) is his own and is reported verbally without figures shown; the inelastic-markets multiplier is attributed to Gabaix-Koijen-type studies (caption spelling 'Gabay', 'Koijen'). Statements about 'we/our' fund refer to his own firm.",
+   "fingerprint": ["trend_following", "liquidity_flows", "positioning_crowding", "dealer_hedging_flows", "position_sizing_vol_target", "regime_detection", "structural_themes", "behavioral_sentiment"],
+   "worldview_premises": [
+    {
+     "premise": "Markets are complex adaptive systems: many participants with partial information, each adapting to the others and changing the environment; prices, trends and cascades emerge from interactions, not from any one decision. A market is not a reflection of fundamental value or the economy.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Two years of his own work on complex adaptive systems; the starling murmuration analogy.",
+     "claim_ids": ["MT017-C02-2", "MT017-C10-1"]
+    },
+    {
+     "premise": "The agent ecology (who is at the table: value, passive, momentum, vol-targeting, dealers) determines market behaviour; the key question about a market is which agents populate it and how they interact, not fair value, the macro backdrop or central bank action. Fundamentals, the economy and the banking system are loosely coupled autonomous systems, not antecedents of the market.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Asserted from his framework; he says the 'binding correlation' between systems is not always true on evidence.",
+     "claim_ids": ["MT017-C02-3", "MT017-C03-1"]
+    },
+    {
+     "premise": "What matters about an agent is whether and in which direction it conditions behaviour on price: momentum algos, vol-targeting funds and stop losses amplify moves; value investors, counter-trend traders, market makers and rebalancing pensions absorb them; passive allocates by index rule regardless of price.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Classification of agent types; no data.",
+     "claim_ids": ["MT017-C03-2", "MT017-C03-3"]
+    },
+    {
+     "premise": "Passive investing is rational for individuals, but the aggregate effect of price-insensitive capital changes market structure; the argument is structural, not about whether to own index funds. Passive holds about 60% of US equity fund assets, with price-insensitive ownership higher once benchmark-hugging institutions are included, and the same logic extends across ETFs in fixed income, commodities, currency and multi-asset products.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Commonly cited 60% figure; he uses US equity data because it is cleanest.",
+     "claim_ids": ["MT017-C01-1", "MT017-C02-1", "MT017-C04-1"]
+    },
+    {
+     "premise": "The most important structural change of the past two decades is the shift from price-sensitive to price-insensitive ownership, more than HFT, algorithmic trading or mega-cap dominance, which are downstream effects.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Asserted; mega-cap concentration is described as an emergent product of participant feedback.",
+     "claim_ids": ["MT017-C05-4", "MT017-C10-X1"]
+    },
+    {
+     "premise": "Classical equilibrium finance treats markets like physical systems (clocks) and deviations as noise, but participants observe and imitate each other, so this is a category error; the model persists because it yields spreadsheets and portfolio methods, whereas the feedback view requires a research programme.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument by analogy; no survey of the finance literature.",
+     "claim_ids": ["MT017-C10-2", "MT017-C11-1"]
+    },
+    {
+     "premise": "News is a trigger, not the main driver: most price movement cannot be linked to news, and the size and duration of a move depends on internal feedback ('the match starts the fire; the dryness of the wood determines its extent').",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Microstructure research (Bouchaud, Gabaix, Cohen) finding that most price movement is unattributable to news and large moves occur without proportional catalysts.",
+     "claim_ids": ["MT017-C11-2", "MT017-C11-3"]
+    },
+    {
+     "premise": "Reflexivity: price-sensitive participants' reactions reshape the market they observe, a recursive loop in which the output of the system becomes its next input; passive participants are not part of that loop. The cascade matters more than the spark, and trends outlast any catalyst.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Soros reflexivity; the sequence breakout, momentum buying, volatility change, vol targeting, rebalancing.",
+     "claim_ids": ["MT017-C12-1", "MT017-C12-2", "MT017-C12-3", "MT017-C12-R1"]
+    },
+    {
+     "premise": "Markets overshoot fundamental value because fundamentals are a separate system and nothing in the market forces convergence; the largest moves occur when the architecture is sensitised, without proportional catalysts.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Follows from the autonomy of fundamentals premise; no test cited beyond the microstructure literature.",
+     "claim_ids": ["MT017-C12-4"]
+    },
+    {
+     "premise": "Reinforcing-dominated regimes trend and balancing-dominated regimes range; when influence shifts rapidly between them, phase transitions occur and volatility surges.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Verbal model; the agent-based simulation is the demonstration.",
+     "claim_ids": ["MT017-C14-1", "MT017-C13-1", "MT017-C13-2", "MT017-C04-3"]
+    },
+    {
+     "premise": "In calm low-volatility regimes strategies concentrate and lever up (including via structured products) and lose diversity, so a diverse mix is structurally robust and dominance by one strategy type makes the market fragile.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Car/calm-market illustration; no data.",
+     "claim_ids": ["MT017-C06-2", "MT017-C06-X2"]
+    },
+    {
+     "premise": "Trend following harvests a structural feature of markets (the feedback engine) that has never weakened since 1985, rather than a temporary inefficiency; there is no era of available data in which markets behave as the equilibrium model says.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own 68-market, 40-year fingerprint study (rolling 5-year Hurst 0.62-0.82) and the simulation.",
+     "claim_ids": ["MT017-C18-1", "MT017-C17-4", "MT017-C18-R2"]
+    },
+    {
+     "premise": "Correlation is a between-instrument diagnostic and variance a within-instrument control; a trend follower needs both, but the engine already runs on variance (ATR sizing).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own program design.",
+     "claim_ids": ["MT017-C09-1", "MT017-C09-2"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Passive growth dilutes balancing feedback, so trends and cascades run further",
+     "steps": [
+      {"from": "Rising share of passive vehicles and benchmark-hugging capital allocating by index rule", "to": "Price-sensitive agents shrink as a share of the whole (not in absolute dollars)", "why": "Passive displaces them; it does not participate in price discovery.", "claim_ids": ["MT017-C03-3", "MT017-C04-2"]},
+      {"from": "Convergent (value, mean-reversion, counter-trend, market maker) share falls while divergent traders plus passive and forced index flows remain or grow", "to": "Less capital pushes back on price in motion", "why": "Passive amplifies the existing distribution, so it sits on the reinforcing side.", "claim_ids": ["MT017-C04-4", "MT017-C05-1", "MT017-C14-2"]},
+      {"from": "Weaker balancing feedback", "to": "More extended directional moves, overshoot and cascades", "why": "Not because reinforcing forces are stronger, but because balancing forces are weaker.", "claim_ids": ["MT017-C05-2", "MT017-C14-3"]},
+      {"from": "Directional moves and cascades", "to": "More favourable environment for trend following (and S&P rising while fundamentals weaken)", "why": "Resistance is structurally smaller.", "claim_ids": ["MT017-C14-3", "MT017-C18-2"]}
+     ],
+     "evidence": "Qualitative structural argument built on the 60% figure; supported indirectly by the simulation threshold and by inelasticity studies; no test of the passive-to-trend link itself.",
+     "fails_when": "Demography (retirees drawing down passive holdings) may eventually reverse passive growth (attributed to the host, probably); concentration into passive could end in an 'extinction-level' unwind as complex systems alternate growth and extinction.",
+     "claim_ids": ["MT017-C06-5", "MT017-C07-1"]
+    },
+    {
+     "topic": "Market inelasticity: thin price-sensitive float magnifies flow",
+     "steps": [
+      {"from": "Most shares held by price-insensitive holders", "to": "The pool absorbing active buying or selling is a smaller fraction of float", "why": "Active flow must find a counterparty among the price-sensitive fraction.", "claim_ids": ["MT017-C05-3", "MT017-C14-4"]},
+      {"from": "Thin counterparty pool", "to": "Price must move further per dollar of flow: $1 net buying lifts market cap about $5, $1 selling destroys about $5 (range 3-7)", "why": "Inelastic markets; much larger than classical finance assumed.", "claim_ids": ["MT017-C15-1", "MT017-C15-2"]},
+      {"from": "Large multiplier", "to": "Feedback-driven trends are larger than the flows that started them; the same dollar moves price more than 20 years ago", "why": "Fewer price-sensitive participants means less capacity to absorb flow.", "claim_ids": ["MT017-C15-3", "MT017-C18-2"]}
+     ],
+     "evidence": "Gabaix-Koijen-type inelastic-markets studies (as relayed); Brennan stands behind the direction but concedes the number needs further verification.",
+     "fails_when": "He concedes the 5x multiplier comes from a small set of studies and the exact value depends on methodology.",
+     "claim_ids": ["MT017-C15-X1"]
+    },
+    {
+     "topic": "Endogenous engine: price changes behaviour, behaviour changes price",
+     "steps": [
+      {"from": "Small breakout or order imbalance", "to": "Momentum systems buy what is rising", "why": "Reinforcing feedback; local rule following.", "claim_ids": ["MT017-C12-1", "MT017-C13-1"]},
+      {"from": "Momentum buying changes realised volatility", "to": "Volatility targeting and rebalancing adjust positions across portfolios", "why": "Vol-conditioned rules respond to the price path, not to news.", "claim_ids": ["MT017-C12-1"]},
+      {"from": "Position shifts force further price adjustment", "to": "Cascade whose magnitude exceeds the original trigger", "why": "The original spark becomes irrelevant; the loop outlasts it.", "claim_ids": ["MT017-C12-1", "MT017-C12-3"]},
+      {"from": "Balancing feedback (market makers, value investors, risk managers)", "to": "Temporary zones of calm; without it reinforcing loops would grow to collapse", "why": "Absorbs moves.", "claim_ids": ["MT017-C13-2"]}
+     ],
+     "evidence": "Microstructure literature on news not explaining price moves; his own simulation.",
+     "fails_when": "Not stated explicitly; when balancing dominates the market ranges rather than trends.",
+     "claim_ids": ["MT017-C14-1"]
+    },
+    {
+     "topic": "Calm regime to concentration and leverage to fragile breakout",
+     "steps": [
+      {"from": "Low-volatility regime", "to": "Strategies adapt to the calm, concentrate and lever up (including through structured products)", "why": "Small volatility forces leverage to earn a return.", "claim_ids": ["MT017-C06-2"]},
+      {"from": "Loss of strategy diversity and built-up leverage", "to": "Fragility; a small deviation triggers non-linear amplification and a large breakout", "why": "Risk accumulates unseen in the calm.", "claim_ids": ["MT017-C06-3", "MT017-C06-X2"]},
+      {"from": "Pod shops / multi-strategy funds traded against trend followers and held markets in range", "to": "When markets break out they are on the wrong side and amplify the move", "why": "Host's observation; no evidence offered.", "claim_ids": ["MT017-C06-4"]}
+     ],
+     "evidence": "Illustration and host's observation; no data.",
+     "fails_when": "Structured-product issuance may damp moves while concentrating risk, which Brennan thinks may hurt trend following even as passive helps it.",
+     "claim_ids": ["MT017-C06-X1"]
+    },
+    {
+     "topic": "Agent-based model reproduces the statistical fingerprint of real futures markets",
+     "steps": [
+      {"from": "Model with chartists (divergent, reinforcing) and fundamentalists (convergent, balancing) and one knob for chartist share", "to": "With zero chartists the market behaves like classical finance (Hurst about 0.54, excess kurtosis -0.2, no five-sigma events, no vol clustering)", "why": "No reinforcing feedback.", "claim_ids": ["MT017-C16-1", "MT017-C16-2", "MT017-C16-4"]},
+      {"from": "Raise chartists to about 20-25%", "to": "Phase transition: kurtosis erupts, Hurst above 0.85, fat tails and vol clustering appear at once", "why": "Behaviour changes suddenly, like water to steam.", "claim_ids": ["MT017-C16-3"]},
+      {"from": "Above the threshold", "to": "Simulated market matches the fingerprint of 68 real futures markets in eight asset classes over 41 years, with no news or fundamentals", "why": "Feedback alone is sufficient (central, not minor, mechanism).", "claim_ids": ["MT017-C17-1", "MT017-C17-2"]},
+      {"from": "Almost every active participant responds to price", "to": "Reinforcing share is far above 20-25% in practice, even with passive at about 60%", "why": "Stops, margin calls, vol targeting, options hedging, performance chasing.", "claim_ids": ["MT017-C17-3"]},
+      {"from": "Rolling 5-year windows over 40 years", "to": "Hurst never fell to 0.5 (range 0.62-0.82); the fingerprint survived Black Monday, electronic trading, GFC, HFT, COVID", "why": "Structural feature has never weakened.", "claim_ids": ["MT017-C17-4", "MT017-C18-1"]}
+     ],
+     "evidence": "His own two-phase factors-of-finance research with a colleague; no figures shown.",
+     "fails_when": "Not stated; see gaps (sufficiency is not necessity, no independent validation, and the threshold was crossed long ago so passive growth should not be visible in the fingerprint).",
+     "claim_ids": ["MT017-C15-4"]
+    },
+    {
+     "topic": "One permanently coupled global feedback engine",
+     "steps": [
+      {"from": "Systematic capital applies correlated models across asset classes", "to": "A buy signal in one market often appears in another", "why": "Portfolio diversification of the same models across many markets.", "claim_ids": ["MT017-C18-4"]},
+      {"from": "Markets share feedback sign more than independence implies", "to": "Average 0.60 versus 0.55 expected, as high as 0.82, in every year since 1987", "why": "One engine with different surface manifestations.", "claim_ids": ["MT017-C18-3"]},
+      {"from": "Macro backdrop", "to": "Crises tilt the coupled system toward positive feedback and trends; QE-suppressed regimes tilt toward negative feedback and oscillation", "why": "The coupling persists but its sign shifts.", "claim_ids": ["MT017-C18-5"]}
+     ],
+     "evidence": "His cross-sectional rolling feedback-state test across the 68 markets.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT017-C18-3"]
+    }
+   ],
+   "decision_process": [
+    {"element": "sizing", "practice": "Size every position by average true range (ATR) so position size shrinks automatically when an instrument's variance rises; no discretion.", "why": "Variance is the control for sizing, cutting and backing off.", "claim_ids": ["MT017-C09-1"]},
+    {"element": "risk", "practice": "Add portfolio-level volatility targeting (when applied properly) and position-level drawdown management; use correlation as the diagnostic of how shocks travel across instruments.", "why": "Correlation tells the weather, variance tells you whether to put on another coat.", "claim_ids": ["MT017-C09-1", "MT017-C09-2"]},
+    {"element": "signal", "practice": "Absolute (time-series) momentum trend following across many markets; no judgement about fair value or news.", "why": "Harvests the structural feedback engine rather than a mispricing.", "claim_ids": ["MT017-C18-1", "MT017-C14-1"]},
+    {"element": "universe", "practice": "Trade across many markets and asset classes because the feedback architecture is simultaneously present in all, coupled across markets.", "why": "Trend following aligns with a global feedback architecture, not local opportunities.", "claim_ids": ["MT017-C18-3", "MT017-C18-4", "MT017-C17-1"]},
+    {"element": "research", "practice": "Test mechanisms with a minimal agent-based model and the Hurst/kurtosis fingerprint, then compare to real 68-market statistics in rolling 5-year windows.", "why": "Shows sufficiency of feedback without news or fundamentals.", "claim_ids": ["MT017-C15-4", "MT017-C16-1", "MT017-C16-4", "MT017-C17-4"]},
+    {"element": "research", "practice": "Treat the inelastic-market multiplier as a direction with a range (3-7) not a point estimate, pending verification.", "why": "Small set of studies, methodology dependent.", "claim_ids": ["MT017-C15-2", "MT017-C15-X1"]},
+    {"element": "other", "practice": "Uses the host's short-timeframe Trend Barometer as a directional leading indicator for his own lagging trend fund.", "why": "It picks up trend conditions faster than his funds.", "claim_ids": ["MT017-C08-4"]}
+   ],
+   "evidence_style": "First principles and framework building (complex adaptive systems, analogy to starlings, clocks versus flocks), own simulation and a 68-market fingerprint study reported verbally, citations of microstructure/inelasticity authors, and some qualification when challenged (multiplier). Strong conviction in the structural claims ('markets can't stop trending').",
+   "current_views": [
+    {"view": "Passive growth is hardening the feedback architecture for trend following: thinner float, higher multiplier, same fingerprint with more violence per unit of flow, and the evidence points to trend opportunity increasing.", "as_of": "2026-05-27", "reasoning": "Passive dilutes balancing agents and leaves reinforcing ones intact.", "claim_ids": ["MT017-C18-2", "MT017-C17-R1", "MT017-C05-2"]},
+    {"view": "The S&P 500 is rising while the world around it is falling down, reflecting passive injection reinforcing feedback and a widening gap from fundamental value.", "as_of": "2026-05-27", "reasoning": "Reinforcing loops run further before meeting resistance.", "claim_ids": ["MT017-C14-3"]},
+    {"view": "Volatility-suppressing structured-product issuance may hurt trend following even though passive helps it; calm regimes build fragility.", "as_of": "2026-05-27", "reasoning": "Damps moves while concentrating risk and leverage.", "claim_ids": ["MT017-C06-X1", "MT017-C06-2", "MT017-C06-3"]},
+    {"view": "Concentration into passive could ultimately end in an extinction-level unwind.", "as_of": "2026-05-27", "reasoning": "Complex adaptive systems alternate growth and extinction.", "claim_ids": ["MT017-C06-5"]},
+    {"view": "The Trend Barometer's drop to 39% at the end of May shows trend weakness, and his own trend funds follow it with a lag.", "as_of": "2026-05-27", "reasoning": "Barometer is faster and shorter-term than his funds.", "claim_ids": ["MT017-C08-4", "MT017-C08-2"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; veteran CTA manager (37 years in the industry); creator of the TTU Trend Barometer",
+   "speaker_note": "The demography remark (MT017-C07-1) is attributed to Kaastrup-Larsen per the ledger correction; the caption shows the passage in one block so the attribution is uncertain. Most of his turns are questions; views mapped only where stated.",
+   "fingerprint": ["trend_following", "behavioral_sentiment", "manager_selection_allocation", "positioning_crowding", "structural_themes"],
+   "worldview_premises": [
+    {
+     "premise": "Structured-product issuance that suppresses volatility may act as a convergent force that partly offsets passive's effect on market structure (posed as a question).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Jim Kazan's (guest on an earlier episode) discussion of structured-product issuance.",
+     "claim_ids": ["MT017-C06-1"]
+    },
+    {
+     "premise": "Pod shops and multi-strategy funds probably traded against trend followers and held markets in range for some years; when markets break out they are caught on the wrong side and amplify the move.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Explicitly an observation with no evidence.",
+     "claim_ids": ["MT017-C06-4"]
+    },
+    {
+     "premise": "Demography (retirees drawing down passive holdings) is the force that may eventually reverse passive growth, likely felt by the next generation.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "None given; attribution uncertain.",
+     "claim_ids": ["MT017-C07-1"]
+    },
+    {
+     "premise": "Investor interest in CTA trend follows recent performance: it fell after the mid-2025 drawdowns and recovered two places by spring 2026, while discretionary global macro (59%), commodities (43%) and equity market neutral (42%) lead the SocGen survey and multi-strategy systematic interest fell to its lowest rank in five surveys.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "SocGen spring 2026 investor sentiment survey.",
+     "claim_ids": ["MT017-C07-2", "MT017-C07-X1", "MT017-C08-1"]
+    },
+    {
+     "premise": "The TTU Trend Barometer (unchanged since 2007) is not a good trading tool but at month end describes whether the month was a good or bad trend environment because of its look-back.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Almost 20 years of use; originated in 2007 when trend followers did poorly and could not explain it.",
+     "claim_ids": ["MT017-C08-5", "MT017-C08-2"]
+    },
+    {
+     "premise": "Equity behaviour in April 2026 did not match what fundamentals would have suggested, consistent with prices decoupling from fundamentals.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Example only; no data.",
+     "claim_ids": ["MT017-C13-X1"]
+    },
+    {
+     "premise": "Markets move up and down, so a strategy agnostic to direction that chases direction is common sense.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own career start as a government bond trader 37 years ago.",
+     "claim_ids": ["MT017-C18-R3"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Multi-strategy / pod-shop dominance and trend followers",
+     "steps": [
+      {"from": "Multi-strategy and pod shops growing rapidly", "to": "They trade against trend followers and keep markets in range", "why": "Convergent positioning.", "claim_ids": ["MT017-C06-4"]},
+      {"from": "Market breaks out", "to": "They are caught on the wrong side and their stops or de-risking amplify the move", "why": "Amplification from being on the wrong side.", "claim_ids": ["MT017-C06-4"]}
+     ],
+     "evidence": "None; explicitly 'no evidence, just an observation'.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT017-C06-4"]
+    }
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Maintains the TTU Trend Barometer; uses it at month end to describe the trend environment rather than to trade.", "why": "Look-back makes it a good descriptor of the month's environment, a poor trading tool.", "claim_ids": ["MT017-C08-5", "MT017-C08-2"]},
+    {"element": "other", "practice": "Tracks the SocGen allocator survey and monthly CTA index levels as sentiment and performance context.", "why": "Investor interest follows recent performance.", "claim_ids": ["MT017-C07-2", "MT017-C07-X1", "MT017-C08-3"]}
+   ],
+   "evidence_style": "Questions, industry anecdote and published index/survey data; flags when something is an observation without evidence.",
+   "current_views": [
+    {"view": "May 2026: SG CTA +0.72% (+11% YTD), SG Trend +1.07% (+11.31% YTD), short-term traders +0.25% (+5.5% YTD), against S&P 500 +4.43% (+10.38% YTD) and MSCI World +3.8% (about +10% YTD); US aggregate bonds flat; trend barometer down to 39% after a late-month correction (oil down over 5% in a week).", "as_of": "2026-05-27", "reasoning": "Index and barometer data.", "claim_ids": ["MT017-C08-3", "MT017-C08-2"]},
+    {"view": "Investor interest in CTA trend has recovered two places to 29% in the spring 2026 survey, still behind discretionary macro, commodities and equity market neutral.", "as_of": "2026-05", "reasoning": "SocGen survey.", "claim_ids": ["MT017-C07-2", "MT017-C07-X1"]},
+    {"view": "Equity markets in April 2026 did not behave as fundamentals suggested.", "as_of": "2026-05", "reasoning": "Decoupling of price and fundamentals.", "claim_ids": ["MT017-C13-X1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Do structured products offset passive's structural effect?",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Wonders whether volatility-suppressing structured-product issuance has partly filled the convergent role and softened the blow of passive.", "claim_ids": ["MT017-C06-1"]},
+    {"speaker": "Richard Brennan", "position": "They are not an offset: they may hurt trend following by damping moves and concentrating leveraged risk, building fragility that ends in a non-linear breakout (unlike passive, which helps).", "claim_ids": ["MT017-C06-X1", "MT017-C06-2", "MT017-C06-3"]}
+   ]
+  },
+  {
+   "topic": "Usefulness of the Trend Barometer",
+   "positions": [
+    {"speaker": "Richard Brennan", "position": "A good directional leading indicator for his lagging trend fund.", "claim_ids": ["MT017-C08-4"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Not a good trading tool; mainly describes the month's trend environment at month end.", "claim_ids": ["MT017-C08-5"]}
+   ]
+  },
+  {
+   "topic": "Confidence in the inelastic-markets multiplier",
+   "positions": [
+    {"speaker": "Richard Brennan", "position": "Stands behind a large multiplier (about 5, range 3-7) but concedes it comes from a small set of studies and needs verification.", "claim_ids": ["MT017-C15-1", "MT017-C15-2", "MT017-C15-X1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Finds five striking and asks whether it can be proved (question, not a counter-estimate).", "claim_ids": ["MT017-C15-X1"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "The model shows feedback is sufficient to generate the fingerprint, but Brennan moves to 'central mechanism' without showing necessity or ruling out other generators of fat tails and vol clustering (e.g., leverage and liquidity effects); results are reported verbally with no figures or independent replication.", "claim_ids": ["MT017-C17-2", "MT017-C17-1", "MT017-C16-3"]},
+  {"issue": "Internal tension: the fingerprint (Hurst 0.62-0.82) 'never weakened' over 40 years and the reinforcing share is already far above the 20-25% threshold, yet the claim is that passive makes the architecture 'hardening'; no result shows persistence or tails rising with passive's share over the last 20 years.", "claim_ids": ["MT017-C17-3", "MT017-C17-4", "MT017-C18-2"]},
+  {"issue": "The 60% passive figure is share of US equity fund assets, not share of float or ownership; the price-insensitive share of ownership is asserted to be 'meaningfully higher' without a number, and the extension to fixed income, commodities and currencies is asserted without data.", "claim_ids": ["MT017-C01-1", "MT017-C02-1"]},
+  {"issue": "The inelasticity multiplier of about 5 is presented as demonstrated, but the speaker concedes it comes from a small set of studies and methodology; direction held with confidence, number not.", "claim_ids": ["MT017-C15-1", "MT017-C15-X1"]},
+  {"issue": "Passive is classified as a reinforcing agent ('buys more of what is already large') in one place and as a participant outside the price-feedback loop in another; both statements are made without reconciliation.", "claim_ids": ["MT017-C05-1", "MT017-C12-2"]},
+  {"issue": "Pod-shop and structured-product effects on trend are offered as observation with no evidence.", "claim_ids": ["MT017-C06-4", "MT017-C06-X1"]},
+  {"issue": "Demography is offered as the reversal force for passive, attributed uncertainly to the host, with no data.", "claim_ids": ["MT017-C07-1"]},
+  {"issue": "Claim that most price movement is not attributable to news relies on cited microstructure authors; the interpretation that this implies an internal endogenous engine is Brennan's own extension.", "claim_ids": ["MT017-C11-3", "MT017-C12-1"]}
+ ],
+ "forward_looking_inputs": "(reader) Brennan's leading inputs are structural rather than short-term: the share of price-insensitive ownership (passive and benchmark-hugging capital), the balance between reinforcing and balancing agents, the price-sensitive float (inelasticity multiplier), calm-regime leverage and structured-product issuance (fragility build-up), and the cross-market fraction sharing the majority feedback sign. Horizon is multi-year to decades for the passive thesis; the breakout risk after calm regimes is of unspecified timing. Short-term inputs mentioned are the Trend Barometer (leading his lagging funds) and the SocGen survey (sentiment, lagging performance).",
+ "reader_inferences": [
+  "(reader) The map of Brennan's causal story is: passive share up, balancing share down, thin float, larger trends and cascades, trend-following edge persists or rises; each link rests on a different level of evidence (a statistic, a structural argument, a simulation, a cited paper).",
+  "(reader) The simulation is used to argue sufficiency, but the practical claim (trend following is structural and hardening) needs the further claim that passive increases the reinforcing share relative to balancing share in the real world.",
+  "(reader) Brennan's call is conditional on regime: crises tilt toward positive feedback (trends) and QE-suppressed regimes toward negative feedback (oscillation), so trend followers face weaker conditions in suppressed-volatility regimes despite the structural story.",
+  "(reader) The extinction-level unwind and structured-product fragility are the two stated ways the thesis could fail or become violent, with demography as the slow reversal."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT017-C12-R1",
+   "chunk": "C12",
+   "speaker": "Richard Brennan",
+   "quote": "The CAS framework is not adding new information. It's giving us a language to say effectively what we already knew",
+   "claim": "Brennan says the complex-adaptive-systems framework adds no new information; it gives practitioners a language for what they already knew from experience (that price is moving because price is moving and cascades are internal).",
+   "mechanism": "epistemic status of the framework",
+   "asset_class": "multi-asset",
+   "indicator": "none",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - framing",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "map"
+  },
+  {
+   "claim_id": "MT017-C17-R1",
+   "chunk": "C17",
+   "speaker": "Richard Brennan",
+   "quote": "And the evidence points to it's going to increase and get better",
+   "claim": "In reply to the host's summary that markets cannot stop trending, Brennan (attribution uncertain, likely him) says the evidence points to the trending behaviour increasing and improving going forward.",
+   "mechanism": "structural feedback trend",
+   "asset_class": "multi-asset",
+   "indicator": "market trendiness / feedback fingerprint",
+   "horizon": "unspecified",
+   "direction": "up",
+   "conditions": "passive dilution of balancing agents continues",
+   "testable": "partly - would require a rising Hurst or tail statistic over time, which the shown evidence does not display",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map"
+  },
+  {
+   "claim_id": "MT017-C18-R2",
+   "chunk": "C18",
+   "speaker": "Richard Brennan",
+   "quote": "There is no era of available market data in which markets behave like the equilibrium model said they should.",
+   "claim": "In the 1985-onward data across all 68 markets and eight asset classes there is no period in which markets behave as the equilibrium model predicts; that world does not exist in the historical record.",
+   "mechanism": "feedback fingerprint is permanent",
+   "asset_class": "futures",
+   "indicator": "Hurst exponent and kurtosis in rolling windows",
+   "horizon": "1985-2026",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - rolling-window Hurst and kurtosis by market",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "reader": "map"
+  },
+  {
+   "claim_id": "MT017-C18-R3",
+   "chunk": "C18",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "I thought that was the most common sense to actually embrace a strategy that would be agnostic",
+   "claim": "Starting as a government bond trader 37 years ago, he saw that markets move up and down and concluded that a strategy agnostic to direction that chases direction is common sense.",
+   "mechanism": "trend following rationale",
+   "asset_class": "multi-asset",
+   "indicator": "none",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - anecdote",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "map"
+  }
+ ]
+}

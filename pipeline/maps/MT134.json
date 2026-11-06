@@ -1,0 +1,472 @@
+{
+ "source_id": "MT134",
+ "episode_thesis": "Ten systematic-investor panelists, recorded 17 Dec 2025, argue that 2025 return dispersion among trend managers (market set, speed and vol-sizing around the April Liberation Day shock) is large and not predictable ex ante, that designs are never obvious and must be judged against each manager's stated objective, and that allocators struggle with the randomness and the long data needed to separate skill from luck. A second thread (Jim Kasang) holds that the post-2022 flow into non-correlated assets (gold, crypto, structured products, hedge funds) is early and driven by a supply-demand gap in non-correlation, with panelists adding that perceived non-correlation may not survive a shock and that allocators' common responses can create correlation.",
+ "speakers": [
+  {
+   "name": "Katie Kaminski",
+   "role": "Trend manager and researcher (replication and full-asset CTA strategies); first topic setter",
+   "speaker_note": "Name transcribed as 'Katie Kaminsky' in the captions. Her annual-review findings are attributed to her by the ledger; the 'gold, oil and corn' remark just after her topic is from an unidentified panelist, not her.",
+   "fingerprint": ["trend_following", "regime_detection", "position_sizing_vol_target", "replication_indexing", "research_robustness_overfitting", "manager_selection_allocation", "behavioral_sentiment"],
+   "worldview_premises": [
+    {"premise": "Each year differs for price-based trend, so subtle choices in universe, speed and vol sizing produce very different results in extreme years.", "type": "empirical", "stated": "stated", "support": "Her firm's annual review of 2025 vs 2022", "claim_ids": ["MT134-C01-1", "MT134-C02-4"]},
+    {"premise": "Dispersion worsens behavioural effects: switching between top and bottom managers produces much worse investor outcomes than holding the space.", "type": "behavioural", "stated": "stated", "support": "Buy-top/sell-bottom return series she refers to; not shown", "claim_ids": ["MT134-C11-2", "MT134-C09-X1"]},
+    {"premise": "Design decisions should follow the program objective (CTA-like one-stop product, risk mitigation, convexity); none are obvious, only well thought through.", "type": "experience", "stated": "stated", "support": "Experience with replication product clients and institutional risk-mitigation clients", "claim_ids": ["MT134-C14-2", "MT134-C14-R1"]},
+    {"premise": "Managed-futures assets sit mostly with institutions; ETFs and other wrappers reach a new investor universe that will need education about dispersion.", "type": "institutional", "stated": "stated", "support": "Her firm's paper on the managed futures space", "claim_ids": ["MT134-C09-X2", "MT134-C09-X1"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why Liberation Day punished mid-speed and stable-vol systems",
+     "steps": [
+      {"from": "Three consecutive days of extreme moves by turbulence metrics (not one shock, calm, reversal)", "to": "A hard signal for price-trend and vol-sizing models", "why": "Trend signals and vol estimates see a shock that persists then reverses", "claim_ids": ["MT134-C02-X1"]},
+      {"from": "Faster vol estimation that forgets the shock sooner", "to": "Better navigation of the shock than stable vol sizing", "why": "Position sizes recover faster; in 2022 faster was also better", "claim_ids": ["MT134-C02-3"]},
+      {"from": "Very slow or very fast trend windows", "to": "Weathered the storm; about 8-month windows did worst", "why": "Either react quickly or sit through; the middle overreacted", "claim_ids": ["MT134-C02-2", "MT134-C03-2"]}
+     ],
+     "evidence": "Her firm's 2025 annual review across market selection, speed and vol sizing; 10 largest markets beat a diversified book because of gold.",
+     "fails_when": "Not stated; year-specific (2022 saw the opposite of stable-vol being better).",
+     "claim_ids": ["MT134-C02-1", "MT134-C02-2", "MT134-C02-3", "MT134-C02-X1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Annual review of dispersion drivers: market selection, trend speeds and volatility sizing.", "why": "To see which choices drove 2025 relative performance.", "claim_ids": ["MT134-C02-1", "MT134-C02-2", "MT134-C02-3"]},
+    {"element": "other", "practice": "Match program design to the client objective and educate investors on dispersion rather than imply an obvious design.", "why": "Dispersion is a challenge for adoption; investors need to know the objective.", "claim_ids": ["MT134-C14-2", "MT134-C09-X1"]}
+   ],
+   "evidence_style": "Empirical annual reviews of her own strategies and turbulence metrics; compares years (2022 vs 2025).",
+   "current_views": [
+    {"view": "2025 saw sizable return dispersion between managers, triggered by the April Liberation Day shock.", "as_of": "2025-12-17", "reasoning": "Differences in market set, speed and vol sizing.", "claim_ids": ["MT134-C01-1", "MT134-C02-4"]},
+    {"view": "A 10-largest-markets universe beat a broadly diversified one in 2025, driven by gold.", "as_of": "2025-12-17", "reasoning": "Market-set choice created big dispersion.", "claim_ids": ["MT134-C02-1"]},
+    {"view": "Mid-range (6-8 month) trend speeds did worst in 2025; shorter models less badly.", "as_of": "2025-12-17", "reasoning": "Overreaction to the three-day shock.", "claim_ids": ["MT134-C02-2", "MT134-C03-2"]}
+   ]
+  },
+  {
+   "name": "Jim Kasang",
+   "role": "Allocator at Kai Wealth (name as transcribed); macro/flows thesis on non-correlated assets",
+   "speaker_note": "Name uncertain in captions ('Jim Kasang', 'Kai wealth'); statements are consistent with one macro/allocator voice.",
+   "fingerprint": ["liquidity_flows", "structural_themes", "debt_cycle_long_term", "policy_reaction_central_banks", "diversification_risk_parity", "manager_selection_allocation", "positioning_crowding"],
+   "worldview_premises": [
+    {"premise": "Flows into precious metals, crypto, structured products and hedge funds are one phenomenon driven by a supply-demand imbalance between investors needing non-correlation and the amount of non-correlation available.", "type": "theoretical", "stated": "stated", "support": "Asset-size comparisons over three years", "claim_ids": ["MT134-C04-5", "MT134-C08-X1", "MT134-C05-1", "MT134-C05-2"]},
+    {"premise": "Demand is driven by higher rates, the 2022 stock-bond correlation break, record valuations, rising debt and loss of US hegemony; and 60/40 only became standard in the mid-1980s (correlation was positive for 80 years before 1982).", "type": "empirical", "stated": "stated", "support": "Historical stock-bond correlation and rate regime", "claim_ids": ["MT134-C05-3", "MT134-C08-2"]},
+    {"premise": "Non-correlated strategies offer capital efficiency, which attracts flows as rates rise.", "type": "theoretical", "stated": "stated", "support": "Options-based strategies and similar require less capital", "claim_ids": ["MT134-C08-2"]},
+    {"premise": "Scalable strategies are simple and imperfect, and large inflows into them have reflexive effects on underlying assets.", "type": "theoretical", "stated": "stated", "support": "Example of summer structured-product vol compression", "claim_ids": ["MT134-C07-2", "MT134-C07-3", "MT134-C07-X1"]},
+    {"premise": "Diversification is free; with no strong edge in selecting managers, spread allocations.", "type": "experience", "stated": "stated", "support": "His own allocation practice", "claim_ids": ["MT134-C11-1", "MT134-C11-R1"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Structured-product issuance -> vol compression -> dispersion -> long/short equity pain",
+     "steps": [
+      {"from": "Thin summer liquidity plus large structured-product issuance", "to": "Index-level volatility compression", "why": "Natural vol-supply flows overwhelm other liquidity", "claim_ids": ["MT134-C07-3"]},
+      {"from": "Index vol compression", "to": "Dispersion among index constituents", "why": "Idiosyncratic vol is left unconstrained so single stocks move apart", "claim_ids": ["MT134-C07-3"]},
+      {"from": "Dispersion where positioning is biggest", "to": "Structural pain in crowded long-short equity", "why": "Hedge fund assets, especially long-short equity, are also much larger", "claim_ids": ["MT134-C07-3", "MT134-C07-X1"]}
+     ],
+     "evidence": "Second year in a row of summer vol compression with higher vol supply; described qualitatively.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT134-C07-3", "MT134-C07-X1"]
+    },
+    {
+     "topic": "Why non-correlation demand rises",
+     "steps": [
+      {"from": "Stock-bond correlation break in 2022, rate pressure, record valuations, debt, loss of US hegemony", "to": "Doubt that bonds offset equity risk", "why": "Risks seen as undeniable", "claim_ids": ["MT134-C05-3"]},
+      {"from": "Only about 20T in uncorrelated assets vs 400-500T of long assets", "to": "Early, nascent flow; larger if long assets underperform or rates rise", "why": "Small share of assets so far", "claim_ids": ["MT134-C05-2", "MT134-C05-1"]},
+      {"from": "Demand outstrips capacity", "to": "Need for infrastructure and liquidity to be built", "why": "Hard to find capacity", "claim_ids": ["MT134-C05-X1"]}
+     ],
+     "evidence": "Cited asset-size figures (hedge funds 2T to 4.5T, crypto 1.5T to 4.5T, precious metals 3T to 9T, structured products 0.5T to 2T). Approximate recollection.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT134-C05-1", "MT134-C05-2", "MT134-C05-X1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Spread allocation across managers when there is no strong confidence in selection; lean to specific managers only where an evaluative edge exists.", "why": "Diversification is the one free lunch.", "claim_ids": ["MT134-C11-1", "MT134-C11-R1"]}
+   ],
+   "evidence_style": "Macro flows data and historical regime comparisons; thesis-driven narrative with approximate asset-size numbers from memory.",
+   "current_views": [
+    {"view": "Precious metals, crypto, structured products and hedge funds have all grown massively together over three years (hedge funds 2T to 4.5T, crypto 1.5T to 4.5T, precious metals 3T to 9T, structured products 0.5T to 2T).", "as_of": "2025-12-17", "reasoning": "Demand for non-correlation.", "claim_ids": ["MT134-C04-5", "MT134-C05-1"]},
+    {"view": "The flow into non-correlated assets is still early and likely to rise if long assets underperform or rates rise; this could be a very interesting decade for trend and non-correlated strategies.", "as_of": "2025-12-17", "reasoning": "Only 20T non-correlated vs 400-500T long; rate and valuation pressures.", "claim_ids": ["MT134-C05-2", "MT134-C05-3"]},
+    {"view": "If inflows into structured products and hedge funds keep growing, their positioning could become the primary driver of underlying asset behaviour, a structural risk to correlations and liquidity.", "as_of": "2025-12-17", "reasoning": "Reflexive effects of flows.", "claim_ids": ["MT134-C07-2", "MT134-C07-X1"]}
+   ]
+  },
+  {
+   "name": "Rob Carver",
+   "role": "Systematic trader and author; statistics voice on the panel",
+   "speaker_note": "Statements are clear from first-person technical framing.",
+   "fingerprint": ["research_robustness_overfitting", "crisis_alpha_convexity", "diversification_risk_parity", "manager_selection_allocation", "position_sizing_vol_target"],
+   "worldview_premises": [
+    {"premise": "Recent non-correlation of assets such as crypto and gold is empirical, not guaranteed; only designed tail strategies are non-correlated by construction.", "type": "theoretical", "stated": "stated", "support": "Terminology distinction: designed vs happened to be non-correlated", "claim_ids": ["MT134-C05-4"]},
+    {"premise": "How much data is needed to judge a manager depends on the hypothesis tested (positive return vs beating a benchmark by a stated margin), the size of outperformance and the correlation to the benchmark.", "type": "theoretical", "stated": "stated", "support": "Statistical reasoning", "claim_ids": ["MT134-C17-2", "MT134-C17-X2"]},
+    {"premise": "The 5% significance level is too strict for allocation decisions; about 75% confidence is acceptable and permits shorter evaluation periods.", "type": "theoretical", "stated": "stated", "support": "Judgement that allocators accept lower confidence", "claim_ids": ["MT134-C17-3"]},
+    {"premise": "More dispersion makes managers harder to tell apart statistically because differences look random.", "type": "theoretical", "stated": "stated", "support": "Statistical reasoning", "claim_ids": ["MT134-C17-X3"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Correlation to benchmark shortens the time needed to detect outperformance",
+     "steps": [
+      {"from": "High correlation between manager and benchmark", "to": "Much less data needed to see a return difference", "why": "Common noise cancels", "claim_ids": ["MT134-C17-2"]},
+      {"from": "Obscure, uncorrelated CTA", "to": "Years or decades to distinguish from others", "why": "Differences look random", "claim_ids": ["MT134-C17-2", "MT134-C17-X3"]}
+     ],
+     "evidence": "General statistical reasoning; no figures other than 'years if not decades' at a 5% critical value.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT134-C17-2", "MT134-C17-X3"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Specify the hypothesis (positive return vs beat benchmark by X) before asking how much data is needed.", "why": "Required data differs by test.", "claim_ids": ["MT134-C17-X2", "MT134-C17-2"]},
+    {"element": "risk", "practice": "Use roughly 75% confidence instead of 5% significance for allocation decisions.", "why": "5% is too strict for practical decisions.", "claim_ids": ["MT134-C17-3"]}
+   ],
+   "evidence_style": "Statistical first principles; explicit about hypotheses and sample size.",
+   "current_views": [
+    {"view": "Currently non-correlated assets (crypto, gold) may not stay non-correlated in a market shock.", "as_of": "2025-12-17", "reasoning": "They happened to be non-correlated, not by design.", "claim_ids": ["MT134-C05-4"]}
+   ]
+  },
+  {
+   "name": "Mark Resiminski",
+   "role": "Academic / consultant on manager classification (name as transcribed)",
+   "speaker_note": "Surname as given in captions; speaker identification from ledger.",
+   "fingerprint": ["manager_selection_allocation", "replication_indexing", "relative_value_arbitrage", "portfolio_construction_stacking", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {"premise": "CTAs should be classified along three dimensions (style, timing/speed, markets), and an investor should hold managers spread across them.", "type": "theoretical", "stated": "stated", "support": "His classification scheme; no performance test cited", "claim_ids": ["MT134-C04-3"]},
+    {"premise": "Dispersion is unhealthy because it blurs what a CTA is and burdens managers to explain; other hedge fund strategies show less dispersion so factors can describe and replicate them.", "type": "institutional", "stated": "stated", "support": "Comparison across hedge fund strategies; CTAs mix trend with embedded strategies", "claim_ids": ["MT134-C14-3", "MT134-C15-1"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Dispersion -> harder manager choice",
+     "steps": [
+      {"from": "Wide dispersion in trend/CTA performance", "to": "Harder to define a CTA and for investors to know who fills a bucket", "why": "Trend mixed with other embedded strategies", "claim_ids": ["MT134-C14-3", "MT134-C15-1"]}
+     ],
+     "evidence": "Assertion; no data.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT134-C14-3", "MT134-C15-1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Build a portfolio of managers spread across style, timing and markets rather than one type.", "why": "No single manager provides everything.", "claim_ids": ["MT134-C04-3"]}
+   ],
+   "evidence_style": "Classification framework and conceptual argument.",
+   "current_views": [
+    {"view": "Return dispersion is unhealthy for the CTA industry.", "as_of": "2025-12-17", "reasoning": "Blurs the definition of a CTA and puts the burden on managers to explain.", "claim_ids": ["MT134-C14-3", "MT134-C15-1"]}
+   ]
+  },
+  {
+   "name": "Rich Brennan",
+   "role": "Australian CTA manager (outlier hunter)",
+   "speaker_note": "Clear from first person ('I find design decisions are never obvious', 'outlier hunters').",
+   "fingerprint": ["trend_following", "crisis_alpha_convexity", "research_robustness_overfitting", "manager_selection_allocation", "behavioral_sentiment"],
+   "worldview_premises": [
+    {"premise": "Design decisions are never obvious; claims they were come from hindsight, and relying on a precedent regime is overfitting.", "type": "theoretical", "stated": "stated", "support": "Winton's decade of reducing trend followed by resumption as an example of behavioural drift", "claim_ids": ["MT134-C13-2", "MT134-C13-X1"]},
+    {"premise": "Dispersion across trend followers is healthy but managers must explain their objectives, since investors judge all by the same metrics.", "type": "institutional", "stated": "stated", "support": "His own experience with different trend objectives", "claim_ids": ["MT134-C13-3", "MT134-C14-1"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Objective -> metric -> explanation of underperformance",
+     "steps": [
+      {"from": "Different trend objectives (smoothness, outlier hunting, crisis alpha)", "to": "Different relevant metrics", "why": "Same metrics penalise an outlier hunter in a no-outlier period", "claim_ids": ["MT134-C14-1"]},
+      {"from": "No outliers in the period", "to": "Poor performance explained by objective, not failure", "why": "The strategy is built to harvest outliers when they emerge", "claim_ids": ["MT134-C14-1"]}
+     ],
+     "evidence": "Reasoning from his own style.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT134-C14-1", "MT134-C13-3"]
+    }
+   ],
+   "decision_process": [
+    {"element": "other", "practice": "Categorise the strategy by objective, state the expected performance and explain periods of underperformance against that objective.", "why": "Reduces mismatched investor expectations.", "claim_ids": ["MT134-C13-3", "MT134-C14-1"]}
+   ],
+   "evidence_style": "Experience and examples (Winton); distrusts hindsight claims.",
+   "current_views": [
+    {"view": "Dispersion in trend following is healthy; trend followers are a broad church and must explain their objectives.", "as_of": "2025-12-17", "reasoning": "Different designs (outlier hunters, benchmark chasers, crisis alpha).", "claim_ids": ["MT134-C13-3", "MT134-C14-1"]}
+   ]
+  },
+  {
+   "name": "Alan Dunn",
+   "role": "Allocator (Dublin); manager evaluation and fees",
+   "speaker_note": "Attribution from ledger; speaks on correlation types, fees and evaluation length.",
+   "fingerprint": ["manager_selection_allocation", "crisis_alpha_convexity", "liquidity_flows", "behavioral_sentiment", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {"premise": "Uncorrelated in a bull market (liquidity-driven, e.g. crypto, gold) is different from uncorrelated in a bear market (convexity in stress, e.g. trend); credit is the classic false diversifier.", "type": "theoretical", "stated": "stated", "support": "2022 and the financial crisis", "claim_ids": ["MT134-C07-1"]},
+    {"premise": "Fees for scarce strategies have risen in the past one to two years on supply and demand.", "type": "empirical", "stated": "stated", "support": "Discretionary macro and multistrats", "claim_ids": ["MT134-C09-1", "MT134-C08-X2"]},
+    {"premise": "Statistical confidence in a manager's true Sharpe takes 10+ years, yet investors judge on 1-3 years and recency, distorted by narratives and career risk.", "type": "behavioural", "stated": "stated", "support": "Conversations with investors and quants", "claim_ids": ["MT134-C17-1", "MT134-C17-X1"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why allocators judge managers on short data",
+     "steps": [
+      {"from": "Manager doing well", "to": "Supportive narrative and assumption it will continue", "why": "Recency bias", "claim_ids": ["MT134-C17-1", "MT134-C17-X1"]},
+      {"from": "Underperforming manager", "to": "Career risk in defending", "why": "Hard to defend a laggard", "claim_ids": ["MT134-C17-X1"]}
+     ],
+     "evidence": "Observation of investors.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT134-C17-1", "MT134-C17-X1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Ask over what period correlation is measured and whether the asset or strategy has the mechanics to produce convexity in stress.", "why": "Distinguish bull-market from bear-market non-correlation.", "claim_ids": ["MT134-C07-1"]}
+   ],
+   "evidence_style": "Allocator experience and statistics on data needed.",
+   "current_views": [
+    {"view": "Fees for scarce discretionary macro and multistrat managers have already risen in the last one to two years.", "as_of": "2025-12-17", "reasoning": "Supply and demand, unlike the 2010s.", "claim_ids": ["MT134-C09-1", "MT134-C08-X2"]}
+   ]
+  },
+  {
+   "name": "Nick Balters",
+   "role": "QIS / systematic strategy researcher (name as transcribed)",
+   "speaker_note": "Name uncertain ('Nick Balters', also Balter in other episodes); statements consistent.",
+   "fingerprint": ["trend_following", "regime_detection", "research_robustness_overfitting", "dealer_hedging_flows", "positioning_crowding", "portfolio_construction_stacking"],
+   "worldview_premises": [
+    {"premise": "In V-shaped markets, fast signals capture both legs, slow signals only absorb the first leg and then recover, while intermediate speeds are caught both ways.", "type": "empirical", "stated": "stated", "support": "Charts of V-shapes (Aug 2024, SVB, Liberation Day)", "claim_ids": ["MT134-C03-3"]},
+    {"premise": "2023-25 are the only three consecutive years in 25 where the slowest trend speed was best, with a small universe first or second best; in 2022 the fastest was best.", "type": "empirical", "stated": "stated", "support": "Own year-by-year study ranking half-lives of 2 to 12 months across three universe sizes", "claim_ids": ["MT134-C03-4", "MT134-C03-X1", "MT134-C03-X2", "MT134-C04-1"]},
+    {"premise": "Allocators holding historically uncorrelated strategies with the same goal will all cut risk on a VIX shock, creating correlation in reality that a backtest misses.", "type": "behavioural", "stated": "stated", "support": "Allocator externalities argument", "claim_ids": ["MT134-C08-1"]},
+    {"premise": "Change or retire a systematic strategy only when its underlying premium has changed, not on statistics; costs are a separate issue. The bar to drop a strategy is high (selling vol will not stop paying).", "type": "theoretical", "stated": "stated", "support": "Commodity pre-roll premium example around 2018-19", "claim_ids": ["MT134-C18-3", "MT134-C19-1", "MT134-C19-2"]},
+    {"premise": "Large structured-product demand can shift where the volatility premium is best harvested (dispersion may be better), but investors are not becoming risk-loving.", "type": "theoretical", "stated": "stated", "support": "Linked to Jim's flows thesis", "claim_ids": ["MT134-C19-X1"]},
+    {"premise": "Some dispersion is good, but large dispersion across CTAs (plus 15 to minus 15) triggers aggressive selection and committee concerns that can slow industry growth.", "type": "institutional", "stated": "stated", "support": "Conversations with investors; he raised the question", "claim_ids": ["MT134-C09-2", "MT134-C16-2"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Speed and V-shaped moves",
+     "steps": [
+      {"from": "Fast signal in a V", "to": "Capture of both legs", "why": "Reacts quickly in and out", "claim_ids": ["MT134-C03-3"]},
+      {"from": "Slow signal in a V", "to": "Absorbs the first leg then recovers fully", "why": "Does not react to the quick move", "claim_ids": ["MT134-C03-3"]},
+      {"from": "Intermediate speed", "to": "Caught both ways, worst outcome", "why": "Like soldiers marching in step on a bridge (resonance)", "claim_ids": ["MT134-C03-3", "MT134-C04-1"]}
+     ],
+     "evidence": "Charts of recent V-shapes and a 25-year year-by-year ranking (speed by universe); presented verbally.",
+     "fails_when": "Not stated; the regime flips (2021-22 favoured faster).",
+     "claim_ids": ["MT134-C03-3", "MT134-C03-4", "MT134-C04-1"]
+    },
+    {
+     "topic": "Premium change vs crowding for retiring a strategy",
+     "steps": [
+      {"from": "Commodity pre-roll flows hit by investors rolling at the back of the curve", "to": "Premium flattened around 2018-19 (not crowding)", "why": "Crowding makes a strategy underperform; premium disappearance flattens it", "claim_ids": ["MT134-C19-1"]},
+      {"from": "Premium genuinely gone", "to": "Case to redesign or drop the strategy", "why": "Underlying economic reason changed", "claim_ids": ["MT134-C18-3", "MT134-C19-2"]}
+     ],
+     "evidence": "One example (commodity congestion premium).",
+     "fails_when": "Selling vol-type premia persist while investors keep buying insurance.",
+     "claim_ids": ["MT134-C19-1", "MT134-C19-2"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Rank trend speeds (2 to 12 month half-lives) across a small concentrated, a few mid-size and an 80-plus-market universe for each of 25 years.", "why": "Show how speed and universe interact by year.", "claim_ids": ["MT134-C03-X1", "MT134-C03-4"]},
+    {"element": "other", "practice": "Change a systematic strategy only if the fundamental premise has changed, not because of a statistical drawdown.", "why": "Statistical frameworks lag; costs are separate.", "claim_ids": ["MT134-C18-3", "MT134-C19-2"]},
+    {"element": "other", "practice": "Align culture to avoid overfitting, address blind spots, acknowledge trade-offs and match design to client needs.", "why": "Reduces the arbitrariness of design.", "claim_ids": ["MT134-C16-2"]}
+   ],
+   "evidence_style": "Year-by-year backtested rankings and structural reasoning about the source of a premium.",
+   "current_views": [
+    {"view": "Year on year, slower signals did better in 2023-25 versus faster in 2021-22, while locally the middle speeds were worst.", "as_of": "2025-12-17", "reasoning": "His 25-year study; V-shapes punish mid-speed.", "claim_ids": ["MT134-C04-1", "MT134-C03-4"]},
+    {"view": "A small universe was first or second best in 2023-25 and still better in 2022 when the fastest speed won.", "as_of": "2025-12-17", "reasoning": "Study across universe sizes.", "claim_ids": ["MT134-C03-X2", "MT134-C03-4"]}
+   ]
+  },
+  {
+   "name": "Andrew Beer",
+   "role": "Manager of replication / futures-based ETFs; wealth-platform and allocator education voice",
+   "speaker_note": "Ledger corrected one earlier claim away from him: the 'gold, oil and corn' remark is not his. His statements on concentration in two currency contracts and replication robustness are clearly his.",
+   "fingerprint": ["replication_indexing", "trend_following", "behavioral_sentiment", "manager_selection_allocation", "research_robustness_overfitting", "costs_execution"],
+   "worldview_premises": [
+    {"premise": "After 2022 (bond drawdown 4x the prior 20 years) every asset-allocation model must incorporate positive stock-bond correlation, and gradual allocator education drives demand for futures-based ETFs.", "type": "empirical", "stated": "stated", "support": "Experience at wealth platforms (Fidelity, BlackRock)", "claim_ids": ["MT134-C06-2", "MT134-C06-X1"]},
+    {"premise": "Investor preferences are heterogeneous, and CTA outcomes look random so luck is mistaken for skill; star-manager belief exists in other categories but not in trend.", "type": "behavioural", "stated": "stated", "support": "His observation of allocators", "claim_ids": ["MT134-C10-1", "MT134-C10-X3", "MT134-C10-X1", "MT134-C10-X2"]},
+    {"premise": "Replication design choices (lookback, factors) matter little; robustness to switching them is what gives comfort; very few design decisions are obvious.", "type": "experience", "stated": "stated", "support": "His replication models", "claim_ids": ["MT134-C11-3", "MT134-C11-R2"]},
+    {"premise": "CTA managers present design choices with exaggerated confidence, which invites questions about why the change was not made earlier.", "type": "behavioural", "stated": "stated", "support": "Round-table observation", "claim_ids": ["MT134-C12-1"]},
+    {"premise": "Allocators struggle with trend randomness because CTAs lack the rebound narrative equity long-short managers can give; technical explanations leave them flat.", "type": "behavioural", "stated": "stated", "support": "Comparison with equity long-short narratives", "claim_ids": ["MT134-C16-1", "MT134-C16-X1"]},
+    {"premise": "Buffered and defined-outcome ETFs are early-stage growth in a 13 trillion dollar ETF market.", "type": "empirical", "stated": "stated", "support": "Goldman paying about 2 billion dollars for Innovator", "claim_ids": ["MT134-C06-X2"]},
+    {"premise": "Fee structures differ by allocator: some prefer flat low fees (ETF, QIS), others want performance fees for alignment and skin in the game.", "type": "institutional", "stated": "stated", "support": "Allocator conversations", "claim_ids": ["MT134-C19-3", "MT134-C19-X2"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Slowness and concentration in 2025",
+     "steps": [
+      {"from": "Slow rebalancing in his replication ETF", "to": "Helped around Liberation Day", "why": "Shorter-term models and vol controls reacted to every Trump headline", "claim_ids": ["MT134-C03-1"]},
+      {"from": "Concentration in two currency contracts", "to": "Hurt when the euro spiked, helped when yen collapsed", "why": "Concentration amplifies single-market moves", "claim_ids": ["MT134-C03-1"]}
+     ],
+     "evidence": "His strategies' performance vs the industry in 2025.",
+     "fails_when": "Concentration reverses sign depending on the market.",
+     "claim_ids": ["MT134-C03-1"]
+    },
+    {
+     "topic": "Education -> demand for futures-based ETFs",
+     "steps": [
+      {"from": "Post-2022 correlation shock", "to": "Allocators create an alternatives bucket", "why": "Bond drawdown 4x prior 20 years", "claim_ids": ["MT134-C06-2", "MT134-C06-X1"]},
+      {"from": "Allocators learning futures products", "to": "Demand for futures-based ETFs, limited by knowledge not desire", "why": "They must work out what to put in the bucket", "claim_ids": ["MT134-C06-X1"]}
+     ],
+     "evidence": "Wealth-platform meetings (earlier ones did not know what futures were).",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT134-C06-2", "MT134-C06-X1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Test replication choices (lookback, factors) for robustness rather than seeking the single best set.", "why": "Few design choices are obvious.", "claim_ids": ["MT134-C11-3", "MT134-C11-R2"]},
+    {"element": "universe", "practice": "Two currency contracts in the replication strategy, a concentration accepted for simplicity.", "why": "Concentrated contracts produce idiosyncratic wins and losses.", "claim_ids": ["MT134-C03-1"]},
+    {"element": "other", "practice": "Serve model-portfolio allocators who see the benefit of a 3-5% managed-futures sleeve but will not spend a year learning to evaluate dispersion.", "why": "Underserved client base.", "claim_ids": ["MT134-C10-X1", "MT134-C10-X2"]}
+   ],
+   "evidence_style": "Practitioner observation of allocators and his own product performance; narrative about human decision-making.",
+   "current_views": [
+    {"view": "Slow rebalancing helped around Liberation Day; concentration in two currency contracts hurt on euro and helped on yen.", "as_of": "2025-12-17", "reasoning": "Own strategy vs industry.", "claim_ids": ["MT134-C03-1"]},
+    {"view": "No one four years ago would have predicted that very slow models on major markets would win for three years; design winners are unforecastable.", "as_of": "2025-12-17", "reasoning": "Regime shift between 2021-22 and 2023-25.", "claim_ids": ["MT134-C16-X1"]},
+    {"view": "The alternatives bucket exists after 2022 and demand for futures-based ETFs is limited by knowledge.", "as_of": "2025-12-17", "reasoning": "Education at wealth platforms.", "claim_ids": ["MT134-C06-2", "MT134-C06-X1"]}
+   ]
+  },
+  {
+   "name": "Yov Git",
+   "role": "CTA manager in alternative markets (commodity/inflation factor exposure)",
+   "speaker_note": "Name as transcribed ('Yov Git'); first-person statements about 'my universe' and alternative markets.",
+   "fingerprint": ["trend_following", "commodity_fundamentals", "diversification_risk_parity", "manager_selection_allocation", "crisis_alpha_convexity", "regime_detection"],
+   "worldview_premises": [
+    {"premise": "Different investor types drive each non-correlated theme (retail into crypto, central banks into gold, allocators into hedge funds); the total-portfolio approach seeks assets uncorrelated to long-only beta.", "type": "institutional", "stated": "stated", "support": "Observation of flows by investor type", "claim_ids": ["MT134-C06-1"]},
+    {"premise": "Design is clear when tied to the investor objective: liquid high-beta markets for macro factors, alternative markets for inflation/commodity factors, high-frequency for convexity; investors who only want equity trend need not hold alternative-market CTAs.", "type": "experience", "stated": "stated", "support": "His discussions with investors", "claim_ids": ["MT134-C12-2", "MT134-C13-1"]},
+    {"premise": "Dispersion means diversification: different alpha sources (fast or slow, alternative markets, liquid futures) can be combined into a more holdable portfolio; a homogeneous index-like CTA universe is a problem.", "type": "theoretical", "stated": "stated", "support": "Investor committee experience", "claim_ids": ["MT134-C15-2", "MT134-C15-3", "MT134-C15-X1", "MT134-C15-X2"]},
+    {"premise": "Statistics lag regime change, so manager selection should rest on sound design, operational due diligence, execution, data and crisis response, not statistical significance.", "type": "experience", "stated": "stated", "support": "Alternative markets: 10 years to be loved, 1-2 weak years to be called crowded; Winton's drift", "claim_ids": ["MT134-C18-1", "MT134-C18-2", "MT134-C18-X1"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Objective-led CTA mix easier to hold",
+     "steps": [
+      {"from": "Sharpe-about-1 CTA with losing years", "to": "Investment committee asks why it lost", "why": "Single strategy hard to hold", "claim_ids": ["MT134-C15-X1"]},
+      {"from": "Blend of CTA types with distinct stated risk factors", "to": "Clear expectation of when each component should perform", "why": "Investors can wait through each component's off-periods", "claim_ids": ["MT134-C15-2", "MT134-C15-X2"]}
+     ],
+     "evidence": "Investor conversations.",
+     "fails_when": "If programs are homogeneous and index-like.",
+     "claim_ids": ["MT134-C15-2", "MT134-C15-X1", "MT134-C15-X2", "MT134-C15-3"]
+    }
+   ],
+   "decision_process": [
+    {"element": "other", "practice": "Ask the investor what they hold CTAs for and tell them if alternative markets do not serve it.", "why": "Alternative-market exposure is wasted if they want equity trend.", "claim_ids": ["MT134-C12-2", "MT134-C13-1"]},
+    {"element": "other", "practice": "After a drawdown, answer how execution, data and risk management improve while staying true to trend following.", "why": "Investors accept improvements, not drift away from the core.", "claim_ids": ["MT134-C18-X1", "MT134-C18-2"]}
+   ],
+   "evidence_style": "Investor-conversation experience and structural arguments; distrusts short-sample statistics.",
+   "current_views": [
+    {"view": "Clients asked in H1 2025 whether to speed up given Trump uncertainty; the slower models performed best.", "as_of": "2025-12-17", "reasoning": "Client perception vs results.", "claim_ids": ["MT134-C04-2"]},
+    {"view": "Retail drives crypto, central banks drive gold, allocators drive hedge funds; the total-portfolio approach values uncorrelated strategies.", "as_of": "2025-12-17", "reasoning": "Different players solve different problems.", "claim_ids": ["MT134-C06-1"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host; hedge fund manager",
+   "speaker_note": "Host states a few views (dynamic parameters, performance-chasing, fee compression question).",
+   "fingerprint": ["trend_following", "manager_selection_allocation", "regime_detection", "behavioral_sentiment", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {"premise": "What worked before 2022 differs from the last three years, supporting dynamic parameter selection instead of static parameters.", "type": "empirical", "stated": "stated", "support": "Quantica paper on speed shared by Nick", "claim_ids": ["MT134-C04-4"]},
+    {"premise": "Performance chasing hurts underlying investors: managers who became popular saw assets implode.", "type": "experience", "stated": "stated", "support": "Cases over the last decade or two (unnamed)", "claim_ids": ["MT134-C11-X1"]}
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Host summarising papers and panel comments; cites an external paper.",
+   "current_views": [
+    {"view": "A logical conclusion from the Quantica paper is to use dynamic parameter selection.", "as_of": "2025-12-17", "reasoning": "Regime differences before and after 2022.", "claim_ids": ["MT134-C04-4"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Is return dispersion across CTAs healthy?",
+   "positions": [
+    {"speaker": "Rich Brennan", "position": "Healthy, since trend following is a broad church, but managers must explain their objectives.", "claim_ids": ["MT134-C13-3", "MT134-C14-1"]},
+    {"speaker": "Mark Resiminski", "position": "Unhealthy: it blurs what a CTA is and burdens managers and investors.", "claim_ids": ["MT134-C14-3", "MT134-C15-1"]},
+    {"speaker": "Yov Git", "position": "Dispersion is diversification; the real problem is a homogeneous index-like universe.", "claim_ids": ["MT134-C15-2", "MT134-C15-3"]},
+    {"speaker": "Katie Kaminski", "position": "Both a challenge and a positive; needs investor education and worsens behavioural return-chasing.", "claim_ids": ["MT134-C09-X1", "MT134-C11-2"]},
+    {"speaker": "Nick Balters", "position": "Some dispersion is good, but large dispersion triggers aggressive selection and committee concerns that can hinder growth.", "claim_ids": ["MT134-C09-2", "MT134-C16-2"]}
+   ]
+  },
+  {
+   "topic": "Are design decisions ever obvious?",
+   "positions": [
+    {"speaker": "Yov Git", "position": "Obviousness comes from the investor objective (what exposure they want), not from the mathematics.", "claim_ids": ["MT134-C12-2", "MT134-C13-1"]},
+    {"speaker": "Rich Brennan", "position": "Never obvious; claims of obviousness come from hindsight, and relying on a precedent regime is overfitting.", "claim_ids": ["MT134-C13-2", "MT134-C13-X1"]},
+    {"speaker": "Katie Kaminski", "position": "Never obvious, only consistent with an objective; conviction in presentations makes them sound obvious.", "claim_ids": ["MT134-C14-2", "MT134-C14-R1"]},
+    {"speaker": "Andrew Beer", "position": "Very few are obvious; exaggerated confidence from managers invites challenge.", "claim_ids": ["MT134-C11-R2", "MT134-C12-1"]}
+   ]
+  },
+  {
+   "topic": "Did shorter-term models handle Liberation Day better than the mid-range?",
+   "positions": [
+    {"speaker": "Andrew Beer", "position": "Slowness helped; shorter-term models and vol controls reacted to every Trump headline.", "claim_ids": ["MT134-C03-1"]},
+    {"speaker": "Katie Kaminski", "position": "Shorter-term models were not as bad; the 6-8 month mid-range overreacted most.", "claim_ids": ["MT134-C03-2", "MT134-C02-2"]},
+    {"speaker": "Nick Balters", "position": "Locally the middle speeds were worst because of V-shapes; year on year slower was better in 2023-25.", "claim_ids": ["MT134-C03-3", "MT134-C04-1"]}
+   ]
+  },
+  {
+   "topic": "How should managers be judged: statistics vs design and premium?",
+   "positions": [
+    {"speaker": "Alan Dunn", "position": "True Sharpe needs 10+ years of data, yet investors use 1-3 years.", "claim_ids": ["MT134-C17-1", "MT134-C17-X1"]},
+    {"speaker": "Rob Carver", "position": "It depends on hypothesis, size of outperformance and correlation; 5% significance is too strict and 75% confidence is acceptable.", "claim_ids": ["MT134-C17-2", "MT134-C17-3", "MT134-C17-X2"]},
+    {"speaker": "Yov Git", "position": "Statistics lag regime change; judge design, operations and crisis response.", "claim_ids": ["MT134-C18-1", "MT134-C18-2"]},
+    {"speaker": "Nick Balters", "position": "Change or retire a strategy only when the underlying premium changes, not on statistics.", "claim_ids": ["MT134-C18-3", "MT134-C19-1"]}
+   ]
+  },
+  {
+   "topic": "How reliable is the new non-correlation?",
+   "positions": [
+    {"speaker": "Jim Kasang", "position": "Flows into non-correlated assets are a durable, early-stage supply-demand story.", "claim_ids": ["MT134-C05-2", "MT134-C08-X1"]},
+    {"speaker": "Rob Carver", "position": "Recent non-correlation of crypto and gold may not hold in a shock; only designed tail strategies are non-correlated by construction.", "claim_ids": ["MT134-C05-4"]},
+    {"speaker": "Alan Dunn", "position": "Distinguish bull-market from bear-market non-correlation; liquidity-driven assets may not provide convexity.", "claim_ids": ["MT134-C07-1"]},
+    {"speaker": "Nick Balters", "position": "Allocators with the same objective cut risk together on a VIX shock, creating correlation not seen in backtests.", "claim_ids": ["MT134-C08-1"]}
+   ]
+  },
+  {
+   "topic": "Fee structure",
+   "positions": [
+    {"speaker": "Alan Dunn", "position": "Fees for scarce managers have risen on supply and demand.", "claim_ids": ["MT134-C09-1", "MT134-C08-X2"]},
+    {"speaker": "Andrew Beer", "position": "Allocators split between low flat fees and performance fees with skin in the game.", "claim_ids": ["MT134-C19-3", "MT134-C19-X2"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "The 'gold, oil and corn trended best in 2025 idiosyncratically, not over a 25-year history' remark comes from an unidentified panelist (the ledger corrected the earlier attribution to Andrew Beer).", "claim_ids": ["MT134-C02-5"]},
+  {"issue": "Katie's 2025 result that a 10-largest-markets universe beat a diversified one is driven by gold and is year-specific; she gives no multi-year comparison, while Nick's 25-year study says a small universe was first or second best in 2023-25 but not that it wins generally.", "claim_ids": ["MT134-C02-1", "MT134-C03-4", "MT134-C02-5"]},
+  {"issue": "Jim's asset-size numbers (hedge funds 2T to 4.5T, crypto 1.5T to 4.5T, precious metals 3T to 9T, structured products 0.5T to 2T, 400-500T long assets, 20T uncorrelated) are recalled from memory and mix definitions (structured products include ETFs, mutual funds and buffers); 'precious metals' is market value of mined stock.", "claim_ids": ["MT134-C05-1", "MT134-C05-2", "MT134-C04-5"]},
+  {"issue": "Jim's thesis predicts growth in 'non-correlated' assets but gold and crypto are bull-market-liquidity assets by Alan's definition, so the demand story and the diversification story may not coincide.", "claim_ids": ["MT134-C05-2", "MT134-C07-1", "MT134-C05-4"]},
+  {"issue": "Andrew says replication choices matter little, yet Katie's and Nick's findings show large effects of speed and universe by year; robustness across choices and year-specific dispersion are not reconciled.", "claim_ids": ["MT134-C11-3", "MT134-C02-4", "MT134-C03-4"]},
+  {"issue": "Nick's summary says some dispersion is good and too much is a problem but no threshold is defined; nobody quantifies acceptable dispersion.", "claim_ids": ["MT134-C16-2", "MT134-C09-2"]},
+  {"issue": "Rob's 75% confidence rule is stated as common sense without a decision-theoretic justification.", "claim_ids": ["MT134-C17-3"]},
+  {"issue": "Winton is used as the example by Rich (behavioural drift from trend) and Yov (drift from core competency), but neither gives dates or performance numbers.", "claim_ids": ["MT134-C13-2", "MT134-C18-2"]},
+  {"issue": "Nick's year-by-year study is described by speakers verbally; the ledger notes the ranking method but no returns or statistical significance are given, and it covers best-speed ex post only.", "claim_ids": ["MT134-C03-X1", "MT134-C03-4"]}
+ ],
+ "forward_looking_inputs": "(reader) Inputs the panel treats as leading: (1) interest rates and the stock-bond correlation regime (higher rates and positive correlation drive demand for non-correlated strategies); (2) underperformance of long assets or record valuations as a trigger for flows; (3) structured-product and hedge fund flows as drivers of volatility compression and dispersion; (4) whether the slow-trend regime of 2023-25 persists or flips (2021-22 favoured fast); (5) allocator behaviour (common risk cuts on a VIX shock). Horizon: years for flows; one year at a time for trend speed. No explicit price forecasts.",
+ "reader_inferences": [
+  "(reader) The panel is more homogeneous in method than in conclusion: nearly all argue from objectives and design, but they split on whether dispersion should be managed (explained) or reduced (classified).",
+  "(reader) A cross-chain implication: Nick's finding that mid-range speeds are worst locally while slow wins year on year suggests that a blend of mid-range speeds is the weakest place to be in a V-shaped year, though the panel does not discuss whether a blend across several speeds would avoid this.",
+  "(reader) Jim's flows thesis and Nick's externality point both imply that backtested correlations of crowded alternatives understate stress correlation.",
+  "(reader) The statistical-evidence discussion implies that the data needed to separate CTAs is decades, so allocator decisions are mostly based on design, process and narrative rather than performance."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT134-C11-R1",
+   "chunk": "C11",
+   "speaker": "Jim Kasang",
+   "quote": "diversification is the one thing that if you can you know that that is free",
+   "claim": "Diversification is a free lunch, so spread allocations across managers when there is no strong view on which is better.",
+   "mechanism": "diversification_free_lunch",
+   "asset_class": "multi",
+   "indicator": "number of managers",
+   "horizon": "n/a",
+   "direction": "n/a",
+   "conditions": "no strong selection edge",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT134-C11-R2",
+   "chunk": "C11",
+   "speaker": "Andrew Beer",
+   "quote": "there are very very very few circumstances where you can say it's obvious",
+   "claim": "Design decisions in replication and trend models are rarely obvious; only a few circumstances give an obvious choice.",
+   "mechanism": "design_not_obvious",
+   "asset_class": "multi",
+   "indicator": "model design choices",
+   "horizon": "n/a",
+   "direction": "n/a",
+   "conditions": "replication and trend model design",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT134-C14-R1",
+   "chunk": "C14",
+   "speaker": "Katie Kaminski",
+   "quote": "from my perspective, none of those things are ever obvious",
+   "claim": "Katie holds that no design decision in trend programs is ever obvious; spicy conviction from managers only makes them sound obvious.",
+   "mechanism": "design_not_obvious",
+   "asset_class": "multi",
+   "indicator": "program design decisions",
+   "horizon": "n/a",
+   "direction": "n/a",
+   "conditions": "n/a",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

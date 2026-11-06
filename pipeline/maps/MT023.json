@@ -1,0 +1,772 @@
+{
+ "source_id": "MT023",
+ "episode_thesis": "Alan Dunne argues that AI is hyped relative to proven benefit, that the 2024 election matters mainly through high deficits, tariffs, the dollar, immigration and Fed independence, and that sovereign-debt repricing needs a public event to focus market psychology. Using the Rho skew paper and a GIC/JPMorgan study, he argues hedge fund allocations should be built in total-portfolio context around loss mitigation, and that trend speed and carry choices trade smoothness against crisis response; Niels adds behavioural and allocator-business observations.",
+ "speakers": [
+  {
+   "name": "Alan Dunne",
+   "role": "Co-host; allocator and macro commentator (long allocator-side experience)",
+   "speaker_note": "Captions are auto-generated and garbled (names such as 'Lighthizer', 'Acemoglu', 'Covello' are spelled variously). Ledger attributes the Rho skew paper and GIC/JPMorgan paper summaries to Alan; the 'chairman' interview point in C03 is a guest's remark relayed by Alan.",
+   "fingerprint": [
+    "manager_selection_allocation",
+    "portfolio_construction_stacking",
+    "macro_fundamental_topdown",
+    "fiscal_dominance",
+    "trend_following",
+    "crisis_alpha_convexity",
+    "geopolitics",
+    "valuation_contrarian"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "AI is overhyped relative to proven economic benefit: it needs about a trillion dollars of capex, cannot yet point to a complex task it will solve, and productivity estimates range from 0.5% in total over a decade to 0.5% a year.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Goldman Sachs piece 'Gen AI: too much spend, too little benefit?' with Acemoglu and Covello.",
+     "claim_ids": [
+      "MT023-C01-2",
+      "MT023-C02-1",
+      "MT023-C02-2"
+     ]
+    },
+    {
+     "premise": "AI spending can persist 12-18 months so investing in AI infrastructure still makes sense, but a recession would put the spend in question and hit the whole boom; firms with spend but no revenue are marked down.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Jim Covello's view relayed by Alan; Salesforce example.",
+     "claim_ids": [
+      "MT023-C02-3",
+      "MT023-C02-4"
+     ]
+    },
+    {
+     "premise": "Crowded rallies can reverse on good news elsewhere that triggers sector rotation, not on disappointment in the crowded theme itself.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Observed July 2024 rotation from tech into industrials, financials and materials.",
+     "claim_ids": [
+      "MT023-C03-1",
+      "MT023-C01-1"
+     ]
+    },
+    {
+     "premise": "Election policy platforms matter via deficits, tariffs, the dollar, immigration and the Fed; deficits stay high either way and the Trump trade is priced in parts but not in aggregate.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Betfair odds shift from 50-50 to about 67% and a two-day bond selloff that reversed.",
+     "claim_ids": [
+      "MT023-C04-3",
+      "MT023-C04-4",
+      "MT023-C05-1",
+      "MT023-C05-2",
+      "MT023-C06-R1",
+      "MT023-C06-R2"
+     ]
+    },
+    {
+     "premise": "A bilateral trade-balance aim implies currency alignment, but a weak-dollar goal conflicts with tax cuts and stimulus, and a Plaza-like deal might require Japan to sell Treasuries, hurting US bonds.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Lighthizer's philosophy, Bloomberg commentary, Yellen's reluctance.",
+     "claim_ids": [
+      "MT023-C05-3",
+      "MT023-C05-4",
+      "MT023-C06-2",
+      "MT023-C06-3"
+     ]
+    },
+    {
+     "premise": "Reversing immigration reduces labour supply, raises wages and is stagflationary; Fed independence and Ukraine/defence policy are further uncertainties.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Adam Posen's view on the podcast.",
+     "claim_ids": [
+      "MT023-C06-1",
+      "MT023-C06-X2",
+      "MT023-C06-X3",
+      "MT023-C05-X1"
+     ]
+    },
+    {
+     "premise": "Debt sustainability is a sentiment issue: rising yields make debt less sustainable (reflexive), a catalyst is needed to focus the market, and a fiscal crisis would probably be politically driven.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Posen; observation that inflation expectations and term premia show no change; debt sustainability came into focus for the past year and faded.",
+     "claim_ids": [
+      "MT023-C07-2",
+      "MT023-C07-3",
+      "MT023-C07-4",
+      "MT023-C07-X4",
+      "MT023-C07-X5"
+     ]
+    },
+    {
+     "premise": "A new trend manager must be different from the many 60-100 market trend managers (speed, sectors, concentration, cost); small managers have a sweet spot in AUM.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Allocator-side observation of launches.",
+     "claim_ids": [
+      "MT023-C09-1",
+      "MT023-C09-2",
+      "MT023-C10-R3"
+     ]
+    },
+    {
+     "premise": "There is pricing power in consistent returns, as seen in multi-strats; CTA fees are accepted while performance is consistent but become the issue in a drawdown.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "CFM fee rise and multi-strat flows; supply and demand.",
+     "claim_ids": [
+      "MT023-C11-1",
+      "MT023-C11-2"
+     ]
+    },
+    {
+     "premise": "Commodity carry reflects supply-demand imbalances and is divergent and positively reactive in stress, unlike negatively skewed currency carry; adding carry does not necessarily destroy risk mitigation.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Rho 'skew spectrum' paper replying to Asness.",
+     "claim_ids": [
+      "MT023-C12-1",
+      "MT023-C12-2",
+      "MT023-C12-3"
+     ]
+    },
+    {
+     "premise": "Convexity can be built through straddles or delta-replicating them, which is fast trend; fast trend is positively skewed, slow trend negatively skewed daily and positive quarterly; speed trades smoothness against reactivity.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Rho paper comparison of fast, medium and slow trend.",
+     "claim_ids": [
+      "MT023-C12-4",
+      "MT023-C12-5",
+      "MT023-C13-1",
+      "MT023-C13-2",
+      "MT023-C13-3",
+      "MT023-C13-4"
+     ]
+    },
+    {
+     "premise": "Managed futures were the least equity-correlated and preserved capital in equity declines; multi-strat and relative-value funds are less diversifying than assumed; strategy labels do not tell the role.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "GIC/JPMorgan study of about 1,000 hedge funds over 13 years.",
+     "claim_ids": [
+      "MT023-C15-1",
+      "MT023-C15-2",
+      "MT023-C15-3",
+      "MT023-C15-4",
+      "MT023-C15-5",
+      "MT023-C15-X6",
+      "MT023-C15-X7",
+      "MT023-C15-X8",
+      "MT023-C14-3"
+     ]
+    },
+    {
+     "premise": "A hedge fund allocation should be built in the context of the total portfolio: standalone it is 59% loss mitigation, but in a 60/40 re-optimisation it is 100% loss mitigation with more equity leverage; get equity beta from equities.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "GIC/JPMorgan optimisation results.",
+     "claim_ids": [
+      "MT023-C16-1",
+      "MT023-C16-2",
+      "MT023-C17-3"
+     ]
+    },
+    {
+     "premise": "Manager selection requires understanding the strategy; past patterns reflect the market; 15-20 managers is optimal; firing in drawdown forgoes the free ride to the high-water mark; emerging managers add capacity and nimbleness.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Paper plus allocator experience.",
+     "claim_ids": [
+      "MT023-C16-3",
+      "MT023-C16-4",
+      "MT023-C16-5",
+      "MT023-C16-6"
+     ]
+    },
+    {
+     "premise": "Pure loss-mitigation strategies are hard to hold when equity beta does well, and trend is not only loss mitigation but also has a risk-on market-timing element.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Things the paper did not discuss.",
+     "claim_ids": [
+      "MT023-C17-1",
+      "MT023-C17-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Fiscal path to a bond repricing",
+     "steps": [
+      {
+       "from": "Unchanged high deficits whoever wins",
+       "to": "Debt-to-GDP rising",
+       "why": "Tax cut extension and spending; higher inflation has only held the ratio somewhat in check.",
+       "claim_ids": [
+        "MT023-C05-1",
+        "MT023-C07-X4"
+       ]
+      },
+      {
+       "from": "Rising yields",
+       "to": "Debt less sustainable",
+       "why": "Reflexive and reinforcing.",
+       "claim_ids": [
+        "MT023-C07-3"
+       ]
+      },
+      {
+       "from": "Public event (debate, downgrade, budget announcement, debt ceiling dispute)",
+       "to": "Market focus on deficits and a curve steepener",
+       "why": "Nothing priced until an event focuses psychology.",
+       "claim_ids": [
+        "MT023-C07-2",
+        "MT023-C07-4",
+        "MT023-C07-5"
+       ]
+      }
+     ],
+     "evidence": "No change in inflation expectations or term premia despite Trump talk; the brief bond selloff after the debate reversed.",
+     "fails_when": "Expected Fed easing dominates and offsets the fiscal story in the short run.",
+     "claim_ids": [
+      "MT023-C07-X5",
+      "MT023-C04-4"
+     ]
+    },
+    {
+     "topic": "AI boom fragility",
+     "steps": [
+      {
+       "from": "Large AI capex without proven revenue",
+       "to": "Spending continues 12-18 months",
+       "why": "Companies keep chasing the dream.",
+       "claim_ids": [
+        "MT023-C02-3",
+        "MT023-C02-1"
+       ]
+      },
+      {
+       "from": "Recession",
+       "to": "Spend questioned and scaled back",
+       "why": "The boom depends on continued capex.",
+       "claim_ids": [
+        "MT023-C02-3"
+       ]
+      },
+      {
+       "from": "Good news in other sectors",
+       "to": "Rotation out of crowded AI leaders",
+       "why": "Market dynamics rather than AI earnings.",
+       "claim_ids": [
+        "MT023-C03-1",
+        "MT023-C01-1"
+       ]
+      }
+     ],
+     "evidence": "Goldman piece interviews; July 2024 rotation.",
+     "fails_when": "AI revenue arrives faster than the skeptics expect.",
+     "claim_ids": [
+      "MT023-C02-2",
+      "MT023-C02-3"
+     ]
+    },
+    {
+     "topic": "Trend design levers and skew",
+     "steps": [
+      {
+       "from": "Fast trend or straddle replication",
+       "to": "Positive skew and reactivity in equity sell-offs",
+       "why": "Convexity from increasing exposure as markets move.",
+       "claim_ids": [
+        "MT023-C12-4",
+        "MT023-C13-1"
+       ]
+      },
+      {
+       "from": "Slower trend",
+       "to": "Smoother returns but lower reactivity",
+       "why": "Negative skew in daily returns, positive in quarters.",
+       "claim_ids": [
+        "MT023-C13-1",
+        "MT023-C13-2"
+       ]
+      },
+      {
+       "from": "Adding commodity carry to trend and equities",
+       "to": "Better skew and return than trend alone",
+       "why": "Commodity carry is divergent.",
+       "claim_ids": [
+        "MT023-C13-3",
+        "MT023-C12-2"
+       ]
+      }
+     ],
+     "evidence": "Rho Asset Management paper.",
+     "fails_when": "Allocators who think in quarters may not care about daily negative skew.",
+     "claim_ids": [
+      "MT023-C13-4"
+     ]
+    },
+    {
+     "topic": "Total-portfolio hedge fund allocation",
+     "steps": [
+      {
+       "from": "Standalone hedge fund portfolio",
+       "to": "Mix of loss mitigation, diversifier and complement",
+       "why": "Optimiser balances diversification.",
+       "claim_ids": [
+        "MT023-C16-1"
+       ]
+      },
+      {
+       "from": "Embedding in 60/40",
+       "to": "100% loss mitigation and more equity leverage",
+       "why": "Better correlation benefit with equities.",
+       "claim_ids": [
+        "MT023-C16-1",
+        "MT023-C16-2"
+       ]
+      }
+     ],
+     "evidence": "GIC and JPMorgan Asset Management clustering and optimisation.",
+     "fails_when": "Behavioural difficulty of holding loss-mitigation funds when equity beta does well.",
+     "claim_ids": [
+      "MT023-C17-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Build the hedge fund allocation inside the total portfolio, favouring loss-mitigation strategies and taking equity beta from equities.",
+     "why": "Integrated optimisation gives 100% loss mitigation inside 60/40.",
+     "claim_ids": [
+      "MT023-C16-1",
+      "MT023-C16-2",
+      "MT023-C17-3"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Classify funds by role (correlation to equities, drawdown resilience, alpha) rather than by strategy label.",
+     "why": "Every label has funds in every cluster.",
+     "claim_ids": [
+      "MT023-C15-4",
+      "MT023-C15-5"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Understand the strategy before selecting a manager since past patterns reflect the market.",
+     "why": "CTAs were long bonds for years but can turn short or chop.",
+     "claim_ids": [
+      "MT023-C16-3"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hold 15-20 hedge fund managers, with more only for tactical reasons, and include emerging managers for capacity.",
+     "why": "Diversification benefits decline after 15-20.",
+     "claim_ids": [
+      "MT023-C16-4",
+      "MT023-C16-6"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Do not terminate a manager in drawdown unless the replacement is better by more than the forgone incentive-fee free ride.",
+     "why": "Termination gives up the return to the high-water mark.",
+     "claim_ids": [
+      "MT023-C16-5"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Sometimes sweeten loss-mitigation allocations with more consistent strategies despite the numbers.",
+     "why": "Pure loss mitigation is hard to hold when equity beta does well.",
+     "claim_ids": [
+      "MT023-C17-1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Trend speed and non-trend additions (commodity carry) are levers for smoothness versus reactivity.",
+     "why": "Choose by investor horizon and utility.",
+     "claim_ids": [
+      "MT023-C13-2",
+      "MT023-C13-3",
+      "MT023-C13-4"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Stay invested in AI infrastructure while spending continues, watching recession risk.",
+     "why": "Covello's view.",
+     "claim_ids": [
+      "MT023-C02-3"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Watch the dollar, immigration and the Fed, and consider a curve steepener once deficits enter market psychology.",
+     "why": "Policy risks not yet priced.",
+     "claim_ids": [
+      "MT023-C06-R2",
+      "MT023-C07-5"
+     ]
+    }
+   ],
+   "evidence_style": "Reports and weighs outside research (Goldman, Posen, Rho, GIC/JPMorgan, Quantica) and prediction-market odds; cites statistics from papers; allocator experience.",
+   "current_views": [
+    {
+     "view": "The Trump trade is priced in parts but not in aggregate; the bond leg reversed after two days.",
+     "as_of": "Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)",
+     "reasoning": "Betfair odds moved to about 67% for Trump.",
+     "claim_ids": [
+      "MT023-C04-3",
+      "MT023-C04-4"
+     ]
+    },
+    {
+     "view": "Tariffs, dollar policy, immigration and Fed independence are the big uncertainties; high deficits are almost certain.",
+     "as_of": "Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)",
+     "reasoning": "Platform analysis.",
+     "claim_ids": [
+      "MT023-C06-R1",
+      "MT023-C05-2",
+      "MT023-C06-1",
+      "MT023-C06-X2"
+     ]
+    },
+    {
+     "view": "Gold's rise might reflect the weak-dollar story, though other currencies have moved little.",
+     "as_of": "Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)",
+     "reasoning": "Observation of gold, euro and yen.",
+     "claim_ids": [
+      "MT023-C06-3"
+     ]
+    },
+    {
+     "view": "Choppy two-to-three-month period for trend: copper reversed, while grains downtrend, gold highs and equities helped.",
+     "as_of": "Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)",
+     "reasoning": "Market observation.",
+     "claim_ids": [
+      "MT023-C08-3"
+     ]
+    },
+    {
+     "view": "Expected Fed easing currently offsets the fiscal story for bonds in the short term.",
+     "as_of": "Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)",
+     "reasoning": "Debt sustainability came into focus and then faded.",
+     "claim_ids": [
+      "MT023-C07-X5"
+     ]
+    },
+    {
+     "view": "AI spending can continue 12-18 months; a recession would be the trigger for scaling back.",
+     "as_of": "Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)",
+     "reasoning": "Covello.",
+     "claim_ids": [
+      "MT023-C02-3"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host; veteran hedge fund manager (Top Traders Unplugged)",
+   "speaker_note": "Host who states views on behaviour, debt pricing, allocators and fees.",
+   "fingerprint": [
+    "trend_following",
+    "behavioral_sentiment",
+    "fiscal_dominance",
+    "manager_selection_allocation",
+    "costs_execution",
+    "positioning_crowding"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Investors' biggest regret is not making money when everyone else does; fear of missing out and failing conventionally drive behaviour.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Ben Hunt's remarks.",
+     "claim_ids": [
+      "MT023-C04-1"
+     ]
+    },
+    {
+     "premise": "Prediction is impossible (Howard Marks), which is the premise of trend following, yet investors prefer managers who claim to know where prices go.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Marks' memo.",
+     "claim_ids": [
+      "MT023-C04-2"
+     ]
+    },
+    {
+     "premise": "Unsustainable sovereign debt only gets priced when a public event makes everyone know that everyone knows, so safe-asset status can change abruptly.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Emperor's new clothes analogy.",
+     "claim_ids": [
+      "MT023-C07-1"
+     ]
+    },
+    {
+     "premise": "Family offices want higher-octane strategies; 8-10% vol is an institutional product; small managers pitch higher volatility and some go back to classic, more volatile trend following.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Personal observation of launches.",
+     "claim_ids": [
+      "MT023-C10-1",
+      "MT023-C10-2"
+     ]
+    },
+    {
+     "premise": "Fees can go up for differentiated consistency (CFM's 20% to 30% performance fee) against the race to zero set by replicators and ETFs.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Bloomberg article.",
+     "claim_ids": [
+      "MT023-C10-3"
+     ]
+    },
+    {
+     "premise": "Trend followers' sharpest drawdown weeks tend to occur in strong-trend, high-volatility periods when trend makes most money; long-horizon investors should judge on 5-20 year returns, not 5-day protection.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Man AHL research after the SVB event (relayed from Graham Robertson).",
+     "claim_ids": [
+      "MT023-C14-1",
+      "MT023-C14-2"
+     ]
+    },
+    {
+     "premise": "Replicators trading few markets avoided the choppiness and beat the indices they replicate in recent months.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observed performance.",
+     "claim_ids": [
+      "MT023-C08-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Behavioural reasons investors misuse trend",
+     "steps": [
+      {
+       "from": "Relative performance matters most",
+       "to": "FOMO and conventional failure",
+       "why": "Investors compare themselves with peers.",
+       "claim_ids": [
+        "MT023-C04-1"
+       ]
+      },
+      {
+       "from": "Preference for confident forecasters",
+       "to": "Little appetite for a trend premise of no prediction",
+       "why": "Investors prefer managers claiming foresight.",
+       "claim_ids": [
+        "MT023-C04-2"
+       ]
+      }
+     ],
+     "evidence": "Hunt and Marks references.",
+     "fails_when": "None stated.",
+     "claim_ids": [
+      "MT023-C04-1",
+      "MT023-C04-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Judge trend following over long horizons and know that sharp drawdown weeks come with strong-trend periods.",
+     "why": "Short-term protection is not what it is for.",
+     "claim_ids": [
+      "MT023-C14-1",
+      "MT023-C14-2"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Small new managers differentiate with higher volatility and markets large funds cannot trade.",
+     "why": "Target family offices and high net worth investors.",
+     "claim_ids": [
+      "MT023-C10-1",
+      "MT023-C10-2"
+     ]
+    }
+   ],
+   "evidence_style": "Relays what guests and papers say; anecdote and observation; does not claim own analysis.",
+   "current_views": [
+    {
+     "view": "July 2024 trend performance is positive but below-neutral barometer (rising from late-June lows); BTOP50 about +1.5% for the month and +8.68% YTD; SG Trend +10.6% YTD versus S&P +17.8%.",
+     "as_of": "Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)",
+     "reasoning": "Index levels read aloud.",
+     "claim_ids": [
+      "MT023-C08-1"
+     ]
+    },
+    {
+     "view": "Grains downtrend, gold highs, equity strength and coffee helped trend; the yen reversal hurt.",
+     "as_of": "Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)",
+     "reasoning": "Market observation.",
+     "claim_ids": [
+      "MT023-C08-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Whether carry dilutes risk mitigation for diversified trend",
+   "positions": [
+    {
+     "speaker": "Alan Dunne",
+     "position": "Per Rho, commodity carry is divergent and did well in stress, and slowing trend dampens risk mitigation just as carry might, so it is not trend versus non-trend alone.",
+     "claim_ids": [
+      "MT023-C12-2",
+      "MT023-C13-2",
+      "MT023-C13-3"
+     ]
+    },
+    {
+     "speaker": "Cliff Asness (as reported by Alan Dunne)",
+     "position": "Asness argued that diversified trend followers adding carry for smoother returns lose risk mitigation.",
+     "claim_ids": [
+      "MT023-C12-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Relevance of daily skew and short-horizon protection",
+   "positions": [
+    {
+     "speaker": "Alan Dunne",
+     "position": "Long-horizon allocators think in quarters, so daily negative skew may not matter; it depends on the investor.",
+     "claim_ids": [
+      "MT023-C13-4"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Investors should worry about 5-20 year returns not 5-day protection; sharp drawdowns come in strong-trend periods.",
+     "claim_ids": [
+      "MT023-C14-1",
+      "MT023-C14-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "The AI productivity range (0.5% total over a decade versus at least 0.5% a year) is quoted from the Goldman piece with no source for the higher estimate.",
+   "claim_ids": [
+    "MT023-C02-2"
+   ]
+  },
+  {
+   "issue": "Trend index figures read aloud are inconsistent in the captions (SG CTA about +8% YTD, MSCI World up 20%); only the ledger values are used.",
+   "claim_ids": [
+    "MT023-C08-1"
+   ]
+  },
+  {
+   "issue": "The sample size of the GIC/JPMorgan study is quoted as 'just under 1,000' and later '900 funds'; commodity manager result rests on about 10 funds.",
+   "claim_ids": [
+    "MT023-C15-1",
+    "MT023-C15-X8"
+   ]
+  },
+  {
+   "issue": "The paper's standalone result omits the behavioural difficulty of holding loss mitigation, so the 100% loss-mitigation outcome assumes investors will hold it.",
+   "claim_ids": [
+    "MT023-C16-1",
+    "MT023-C17-1"
+   ]
+  },
+  {
+   "issue": "No evidence is given that the Trump trade or fiscal story will move rates; Alan says an event is needed and expected Fed easing offsets it.",
+   "claim_ids": [
+    "MT023-C07-2",
+    "MT023-C07-X5"
+   ]
+  },
+  {
+   "issue": "Why gold is rising is speculative (weak dollar story while other currencies barely moved).",
+   "claim_ids": [
+    "MT023-C06-3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs named: prediction-market odds, tariff and dollar policy statements, immigration, Fed independence, inflation expectations and term premia (for fiscal repricing), AI capex and revenue plus recession (AI boom), yen and dollar moves, trend barometer. Horizons are months for the policy story and 12-18 months for AI spending.",
+ "reader_inferences": [
+  "(reader) The fiscal view depends on a catalyst, so it is a conditional rather than dated forecast.",
+  "(reader) Alan's allocator framework treats strategy labels as unreliable, so decisions rest on measured role, not name.",
+  "(reader) Both hosts accept that trend is not purely loss mitigation, which complicates its use as portfolio insurance."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT023-C06-R1",
+   "chunk": "C06",
+   "speaker": "Alan Dunne",
+   "quote": "what's almost certain is high high deficits",
+   "claim": "Alan's bottom line on a Trump win: high deficits are almost certain, tariffs and freer trade policy likely, while immigration, the dollar and the Fed are the big uncertainties.",
+   "mechanism": "macro",
+   "asset_class": "US rates, dollar",
+   "indicator": "fiscal deficit",
+   "horizon": "years",
+   "direction": "high deficits",
+   "conditions": "either election outcome",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT023-C06-R2",
+   "chunk": "C06",
+   "speaker": "Alan Dunne",
+   "quote": "I don't think we're really seeing that reflected in the markets just yet but they will be the ones to monitor",
+   "claim": "Alan believes the Trump policy risks (immigration, dollar, Fed independence) are not yet reflected in markets but should be monitored.",
+   "mechanism": "macro",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "months",
+   "direction": "watch dollar, immigration, Fed",
+   "conditions": "policy uncertainty not yet priced",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT023-C10-R3",
+   "chunk": "C10",
+   "speaker": "Alan Dunne",
+   "quote": "Quant macro and and AI type strategy there's been more of those",
+   "claim": "Beyond new trend funds, recent launches have been more in quant macro and AI-type strategies, plus more adaptive types of trend following.",
+   "mechanism": "other",
+   "asset_class": "",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "new launches differ from classic trend",
+   "conditions": "manager launches",
+   "testable": "no",
+   "speaker_confidence": "low",
+   "time_bound": "no",
+   "reader": "map",
+   "quote_check": "exact"
+  }
+ ]
+}

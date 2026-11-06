@@ -1,0 +1,306 @@
+{
+ "source_id": "MT141",
+ "episode_thesis": "Bessent argues that global macro returns come from a few large, asymmetric bets built on imagining a state of the world that has not happened (UK housing and the pound in 1992, subprime, Abenomics and the yen) and from detecting when authorities will have to reverse an unsustainable policy, with micro information from companies as the best macro input. He sizes by the year's P&L cushion (a chip stack that resets on 1 January) and stays liquid, never concentrated, illiquid and leveraged at once. His late-October 2024 views are election-dependent: a Republican sweep means a growth shock; long gold (largest position), constructive on Japan, sceptical of China and Europe.",
+ "speakers": [
+  {
+   "name": "Scott Bessent",
+   "role": "CEO and CIO of Key Square Group; former Soros Fund Management CIO and long-time Druckenmiller lieutenant; global macro investor",
+   "speaker_note": "Host Ted Seides asks questions (context only, no views mapped). Captions are auto-generated without punctuation; names are sometimes garbled (Duane for Duquesne, Hamada for the Yale economist). Correction applied to MT141-C08-3: the forced seller was Corzine's MF Global in autumn 2011 shortly after Bessent returned to Soros. Interview recorded before the 5 November 2024 US election (upload 2024-11-04).",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "kelly_or_conviction_sizing",
+    "policy_reaction_central_banks",
+    "bottom_up_fundamental",
+    "crisis_alpha_convexity",
+    "geopolitics",
+    "position_sizing_vol_target",
+    "positioning_crowding"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "The biggest macro payoffs come from imagining a state of the world that has not happened before and finding an instrument with asymmetric payoff that captures it; experts anchored on history cannot see it.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Subprime: a leading mortgage manager recommended mortgages mid-crisis and his fund fell 100%; the 'science fiction' childhood framing.",
+     "claim_ids": ["MT141-C02-1", "MT141-C02-2"]
+    },
+    {
+     "premise": "Good research looks for major secular change and tests whether the numbers match the story (the Jim Rogers method: 'dig, dig, dig').",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His apprenticeship with Jim Rogers and Jim Chanos.",
+     "claim_ids": ["MT141-C02-3"]
+    },
+    {
+     "premise": "Micro drives the macro: company read-throughs (trucking, Home Depot, bank CEOs on credit cards) are a better macro input than trying to forecast aggregates such as the PCE deflator, which he cannot beat.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Style inherited from Druckenmiller and Soros, who started as stock pickers; trusted in-house specialists (Fraga on Brazil) speed up decisions.",
+     "claim_ids": ["MT141-C05-1", "MT141-C05-2", "MT141-C05-X3"]
+    },
+    {
+     "premise": "Bad or unsustainable policy creates good opportunities: policy overreactions bring an opposite misguided reaction, and the best investments detect when authorities will reverse a policy that drives at a wall.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "S&L regulator overreaction 1990, ERM 1992, Abenomics; 'policy is personnel and personnel is policy'.",
+     "claim_ids": ["MT141-C04-1", "MT141-C12-7", "MT141-C13-1", "MT141-C13-2"]
+    },
+    {
+     "premise": "Leverage-driven asset appreciation cycles end in busts, and financials are the best shorts once the financial engineering unwinds.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Drexel/junk bonds and Savings and Loans, 1989-90.",
+     "claim_ids": ["MT141-C04-X2", "MT141-C04-2"]
+    },
+    {
+     "premise": "Single-stock short opportunity depends on dispersion; basket trading and index concentration have compressed it.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Contrast between 1988-90 and today (no data).",
+     "claim_ids": ["MT141-C04-X1"]
+    },
+    {
+     "premise": "Choose the instrument that best expresses the view (futures, options, currency, equities); asymmetry and cheap options beat the obvious proxy.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Oil stocks lagged crude; yen options at vol 4-6; yen over JGB shorts (the widowmaker).",
+     "claim_ids": ["MT141-C05-3", "MT141-C07-4", "MT141-C03-1", "MT141-C07-3"]
+    },
+    {
+     "premise": "Macro return streams are home runs with a low batting average (Babe Ruth, not Ted Williams), so investors grow impatient and redeem, and capital arrives after performance and when opportunities have run out.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own two launches and the short fund growing from $37M to $500M.",
+     "claim_ids": ["MT141-C11-6", "MT141-C04-3", "MT141-C07-X1"]
+    },
+    {
+     "premise": "In liquid markets luck is dealt (cards and backgammon, not chess), so success comes from managing what arrives, and one must prepare so as to be ready when a large event comes.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Analogy (Israel, Taiwan drills); no data.",
+     "claim_ids": ["MT141-C09-1", "MT141-C14-1"]
+    },
+    {
+     "premise": "A policy regime change does not need to work to create a large price move; the market reaction is itself the trade.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Soros asked whether Abenomics would work; Bessent had no idea but called it 'the market of the lifetime'.",
+     "claim_ids": ["MT141-C10-7"]
+    },
+    {
+     "premise": "Large capital is an advantage if it is unconstrained and decisions are fast; large liquid capital earns by absorbing forced sellers; but size brings administrative drag.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Soros 2011-2015 (MF Global Italian bond trade); internal team of 320.",
+     "claim_ids": ["MT141-C08-1", "MT141-C08-3", "MT141-C08-X1"]
+    },
+    {
+     "premise": "Organisations should concentrate on a small core team and leverage outside specialists (hub-and-spoke, consultants), giving PMs more rope in steps and letting results show who can handle it; ideas are vetted by open challenge.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Soros, Druckenmiller and Key Square practice.",
+     "claim_ids": ["MT141-C07-2", "MT141-C08-2", "MT141-C09-2", "MT141-C06-X1", "MT141-C05-X1", "MT141-C07-X2"]
+    },
+    {
+     "premise": "Allocators do best trimming after strong years and adding in slumps, and episodic SPVs fit lumpy ideas; the business model should match the Babe Ruth payoff shape.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Common Fund study (cited, not shown); own investor base.",
+     "claim_ids": ["MT141-C12-1", "MT141-C12-2", "MT141-C11-X1"]
+    },
+    {
+     "premise": "Investors tend to get more negative with age, which has to be resisted, and he never trades for short-term money.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Personal reflection.",
+     "claim_ids": ["MT141-C08-4", "MT141-C14-R1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "ERM pound short 1992 (asymmetric bet on an unsustainable peg)",
+     "steps": [
+      {"from": "UK mortgages float on the base rate", "to": "Raising rates to defend the pound bankrupts voters, so the defence is politically unsustainable", "why": "Higher base rate passes through to mortgages within days", "claim_ids": ["MT141-C06-1"]},
+      {"from": "UK housing and economy weaken over summer 1992 after the pound's brief rally on Major's surprise win", "to": "British and German rate needs diverge inside a common rate regime", "why": "ERM link to the Deutsche mark", "claim_ids": ["MT141-C06-X2", "MT141-C06-1"]},
+      {"from": "Authorities must buy unlimited pounds to stay in the band", "to": "Asymmetry: the band limits the loss to about 2.5% while a break pays a lot in a day", "why": "Position pushed against the wall", "claim_ids": ["MT141-C06-2"]},
+      {"from": "Large asymmetric bets can be added to winners", "to": "Soros-style sizing of 300% positions in the 1980s currency realignments", "why": "Trends were stronger", "claim_ids": ["MT141-C07-1"]}
+    ],
+    "evidence": "1992 outcome; Soros 1980s journal year over 140% (Alchemy of Finance).",
+    "fails_when": "Not stated; he says assume authorities 'hit the brakes' before the wall, though occasionally they hit it.",
+    "claim_ids": ["MT141-C12-7"]
+   },
+   {
+    "topic": "Abenomics yen trade (2012-13): from a policy change to an options-based position",
+    "steps": [
+      {"from": "Yen the most expensive PPP currency after years of disinflation", "to": "Setup for a large yen fall if disinflation breaks", "why": "Mean reversion to historical valuation is the reference point", "claim_ids": ["MT141-C09-3", "MT141-C10-3"]},
+      {"from": "Abe can reconstitute the Bank of Japan board and appoint a reflationary governor", "to": "The policy change is feasible", "why": "Verified mechanism of board turnover, plus primary research with a policy architect (Hamada)", "claim_ids": ["MT141-C10-1", "MT141-C10-X1"]},
+      {"from": "Calm markets with positions built up over time (low vol)", "to": "A regime change can cascade (exporters, positioning)", "why": "Lack of volatility leads to volatility", "claim_ids": ["MT141-C10-4", "MT141-C10-3"]},
+      {"from": "Yen vol low (4-6), a vol fund sells options to the 'crazy' buyer", "to": "Cheap asymmetric options as the vehicle", "why": "Options priced for the recent calm", "claim_ids": ["MT141-C10-5"]},
+      {"from": "Reflation view", "to": "Yen as cleanest expression, equities as derivative, no JGB short", "why": "JGB yields could fall before rising; scar tissue from the widowmaker trade", "claim_ids": ["MT141-C10-2"]},
+      {"from": "Move develops", "to": "Targets stepped up (78-82 range, then 95, 105, 115) and positions built in thirds", "why": "Do not fix the target in advance; add as the market pays", "claim_ids": ["MT141-C10-6", "MT141-C10-8"]}
+    ],
+    "evidence": "Outcome of the trade (stated as a success) and the reasoning above.",
+    "fails_when": "Policy fails to move prices; but he says it need not work, it only needs to move prices.",
+    "claim_ids": ["MT141-C10-7"]
+   },
+   {
+    "topic": "Detecting policy reversal as the source of entry points",
+    "steps": [
+      {"from": "Policymakers care about judgement by voters and history", "to": "They respond to external pressure", "why": "Policy is personnel and personnel is policy", "claim_ids": ["MT141-C13-1"]},
+      {"from": "Policy goes far out of equilibrium", "to": "The market offers a very good entry point, and the expected 'brake' acts as a risk control", "why": "Extremes force a response", "claim_ids": ["MT141-C13-2"]},
+      {"from": "Observing policymakers over a long time", "to": "He can anticipate when they will slam on the brakes", "why": "Ongoing dialogue and observation", "claim_ids": ["MT141-C12-7", "MT141-C13-1"]},
+      {"from": "Past overreaction by a regulator (1990 supervisory tightening)", "to": "Opposite misguided reaction and mispriced assets", "why": "Bad policy creates opportunities", "claim_ids": ["MT141-C04-1"]}
+    ],
+    "evidence": "Examples: pound 1992, S&L, Abenomics; no systematic test.",
+    "fails_when": "Sometimes the car hits the wall.",
+    "claim_ids": ["MT141-C12-7"]
+   },
+   {
+    "topic": "1988-90 leverage cycle and the short book",
+    "steps": [
+      {"from": "Drexel/junk financing and S&L real-estate lending boom", "to": "Bust in financials once the financial engineering unwound", "why": "Leverage-driven asset appreciation ends in a bust", "claim_ids": ["MT141-C04-X2"]},
+      {"from": "High dispersion with no basket trading", "to": "Many single stocks could go to zero, so the short book added alpha beyond beta and industry group", "why": "Shorts +50% in 1990 when the S&P fell high teens to 20%", "claim_ids": ["MT141-C04-X1", "MT141-C04-2"]},
+      {"from": "Performance attracts assets ($37M to $500M)", "to": "Capital arrives as the opportunity runs out ('I can't find anything to short')", "why": "AUM chases performance", "claim_ids": ["MT141-C04-3"]}
+    ],
+    "evidence": "Own experience at Chanos & Co.",
+    "fails_when": "Not stated.",
+    "claim_ids": ["MT141-C04-1"]
+   },
+   {
+    "topic": "Sizing by P&L cushion and liquidity rules",
+    "steps": [
+      {"from": "Year's P&L is good", "to": "Add to winners and risk more", "why": "Risk capacity follows the chip stack, unlike fundamental investing where conviction alone sets size", "claim_ids": ["MT141-C11-1", "MT141-C11-2"]},
+      {"from": "January 1", "to": "Reset the risk budget as a discipline", "why": "Fresh start for the year", "claim_ids": ["MT141-C11-3"]},
+      {"from": "December profits on trending currencies", "to": "Taking them down usually proved right", "why": "There is always a counter-trend", "claim_ids": ["MT141-C11-3"]},
+      {"from": "Risk defined as probability times severity", "to": "Never hold concentrated, illiquid and leveraged at once; be able to exit part of the book in 24-72 hours", "why": "Tail gaps such as a Russia-style day (equities down 95% in a day) cannot be hedged away by volatility estimates", "claim_ids": ["MT141-C11-4", "MT141-C11-5"]}
+    ],
+    "evidence": "Experience; Taleb's definition of risk; poker and backgammon analogy.",
+    "fails_when": "Not stated.",
+    "claim_ids": ["MT141-C05-4", "MT141-C05-5", "MT141-C05-6"]
+   },
+   {
+    "topic": "Late-2024 macro outlook (election path dependence, Fed, China, gold, Japan, Europe)",
+    "steps": [
+      {"from": "Republican trifecta in November", "to": "Growth shock and animal spirits; the Fed's jumbo cut a mistake; risk of hikes and lost Fed credibility", "why": "Deregulation and growth mindset", "claim_ids": ["MT141-C12-4", "MT141-C13-5"]},
+      {"from": "Harris victory with divided government", "to": "A 7% deficit that keeps rising with no resolution", "why": "Republicans likely hold the Senate", "claim_ids": ["MT141-C12-4"]},
+      {"from": "Xi is a Leninist and will not allow market clearing", "to": "No sustainable Chinese economy beyond tactical stabilisation", "why": "Political preference over clearing", "claim_ids": ["MT141-C12-5"]},
+      {"from": "Central banks accumulate reserves (Poland to 20%)", "to": "Long-term gold bull market, his biggest position", "why": "Reserve accumulation", "claim_ids": ["MT141-C12-6"]},
+      {"from": "Abe's policies and stability", "to": "Japan could be a secular bull market, now at risk from prime-minister turnover", "why": "Abe's regime change", "claim_ids": ["MT141-C13-3"]},
+      {"from": "Populist backlash plus German policy mistakes", "to": "Europe is a question mark; Le Pen likely president in 18 to 24 months", "why": "The left alternative is worse", "claim_ids": ["MT141-C13-4", "MT141-C13-X1"]}
+    ],
+    "evidence": "Political and economic judgement; no data given beyond the Polish gold target and the deficit figure.",
+    "fails_when": "Knowing future headlines does not give the trade (war in Israel with lower oil, 7% deficit with higher rates and a tech bubble).",
+    "claim_ids": ["MT141-C12-3", "MT141-C13-6"]
+   }
+  ],
+  "decision_process": [
+    {"element": "research", "practice": "Start with company-level information and let the equities tell him about the macro; then pick the best instrument across the full opportunity set.", "why": "Cannot beat the crowd on aggregates; companies reveal activity and credit early.", "claim_ids": ["MT141-C05-1", "MT141-C05-2", "MT141-C05-3"]},
+    {"element": "research", "practice": "For a macro trade, lay out the fundamentals (current account, valuation versus history), give reference points for potential, then check technicals (positioning, exporter flows, cascades) and verify the policy mechanism with primary sources.", "why": "Builds conviction the same way as for a stock trade.", "claim_ids": ["MT141-C10-3", "MT141-C10-1", "MT141-C10-X1", "MT141-C10-4"]},
+    {"element": "universe", "practice": "Limit the book to a few large positions on big themes with a small team and about 30 regional consultants; keep out the noise.", "why": "Concentration and speed; avoid local offices.", "claim_ids": ["MT141-C09-2", "MT141-C09-R1"]},
+    {"element": "signal", "practice": "Look for imagined unprecedented states and for forced policy reversals; vet ideas by outside challenge.", "why": "That is where asymmetry is.", "claim_ids": ["MT141-C02-1", "MT141-C12-7", "MT141-C05-X1"]},
+    {"element": "sizing", "practice": "Trade in thirds, keep adding if the year's P&L is good, size by what the market offers (such as vol-implied asymmetry), and reset the chip stack on 1 January; take down winning currency trades in December.", "why": "P&L earns the right to risk; there is always a counter-trend.", "claim_ids": ["MT141-C10-8", "MT141-C11-1", "MT141-C11-2", "MT141-C11-3"]},
+    {"element": "sizing", "practice": "Build conviction as confidence rises, avoid analysis paralysis and sit in cash waiting for a fat pitch; check correlation to the book first.", "why": "Concentration needs patience; apparently unique ideas can be 98% R-squared with the S&P.", "claim_ids": ["MT141-C05-4", "MT141-C05-5", "MT141-C05-6", "MT141-C05-X2"]},
+    {"element": "risk", "practice": "Define risk as probability times severity; never be concentrated, illiquid and leveraged together; be able to exit part of the portfolio in 24-72 hours.", "why": "Tail losses such as a Russia-style day (equities down 95% in a day); the host raised the point that hedges can fail when liquidity dries up.", "claim_ids": ["MT141-C11-4", "MT141-C11-5"]},
+    {"element": "risk", "practice": "Use options when vol is low and the thesis is a regime break; prefer the cleanest expression over the widowmaker trade.", "why": "Asymmetry.", "claim_ids": ["MT141-C10-5", "MT141-C10-2", "MT141-C07-4"]},
+    {"element": "execution", "practice": "Move fast when a forced seller appears (answer in three days, take the whole $3.5bn Italian bond trade with repo).", "why": "Large unconstrained capital is an edge.", "claim_ids": ["MT141-C08-1", "MT141-C08-3"]},
+    {"element": "other", "practice": "Run the business to fit the payoff shape: a core fund of long-term investors judged on a three-year average, episodic SPVs for big ideas, and encourage allocators to add after slumps.", "why": "Patient capital absorbs lumpy returns.", "claim_ids": ["MT141-C11-X1", "MT141-C12-2", "MT141-C12-1", "MT141-C11-6"]},
+    {"element": "other", "practice": "Do what the fund is good at, not what investors ask; he regrets promising long/short equities in 2000.", "why": "Restricting the instrument set lost asymmetry.", "claim_ids": ["MT141-C07-R1", "MT141-C07-3", "MT141-C07-X1"]}
+  ],
+  "evidence_style": "Anecdote and track record from Soros, Druckenmiller and Key Square episodes (pound 1992, Italian bonds 2011, yen 2012-13), analogies (poker, backgammon, baseball) and borrowed frameworks (Taleb, Annie Duke); no statistics except the Common Fund study cited by name.",
+  "current_views": [
+    {"view": "A Republican trifecta would bring a growth shock and animal spirits, making the Fed's jumbo cut a mistake and creating a risk of hikes; a Harris win with divided government leaves a 7% budget deficit unresolved.", "as_of": "late October 2024 (before the 5 November US election; upload 2024-11-04)", "reasoning": "Deregulation and growth mindset against divided government.", "claim_ids": ["MT141-C12-4", "MT141-C13-5"]},
+    {"view": "Long gold, his biggest position; long-term bull market.", "as_of": "late October 2024", "reasoning": "Central-bank reserve accumulation (Poland aiming for 20%).", "claim_ids": ["MT141-C12-6"]},
+    {"view": "China is stabilising tactically but not sustainably.", "as_of": "late October 2024", "reasoning": "Xi is a Leninist who will not allow a clearing function.", "claim_ids": ["MT141-C12-5"]},
+    {"view": "Japan could be a secular bull market, one of the few in the world, though prime-minister turnover is a risk.", "as_of": "late October 2024", "reasoning": "Abe's policy legacy and stability.", "claim_ids": ["MT141-C13-3"]},
+    {"view": "Europe is a policy question mark and Le Pen will be president of France within 18 to 24 months.", "as_of": "late October 2024", "reasoning": "Populist backlash plus German industrial-policy errors.", "claim_ids": ["MT141-C13-4", "MT141-C13-X1"]},
+    {"view": "The US can grow out of its debt via deregulation, energy independence and a growth mindset; this is the last chance, and a Bretton Woods-type realignment of global policy and trade is coming.", "as_of": "late October 2024", "reasoning": "Political judgement; he says he is working for a Trump win.", "claim_ids": ["MT141-C13-5", "MT141-C13-6"]},
+    {"view": "Mapping headlines to prices is not obvious: a war in Israel could go with lower oil, a 7% deficit with higher rates and a tech bubble.", "as_of": "late October 2024", "reasoning": "Examples from the past year.", "claim_ids": ["MT141-C12-3"]},
+    {"view": "Be ready for anything and prepared to get lucky.", "as_of": "late October 2024", "reasoning": "Luck-driven liquid markets.", "claim_ids": ["MT141-C14-1", "MT141-C09-1"]}
+  ]
+ }
+ ],
+ "disagreements": [
+  {
+   "topic": "What sets position size: conviction or the year's P&L cushion",
+   "positions": [
+    {"speaker": "Scott Bessent", "position": "Size by what the market offers and by the P&L chip stack, adding if the year's P&L is good and resetting on 1 January.", "claim_ids": ["MT141-C11-1", "MT141-C11-2", "MT141-C11-3", "MT141-C10-8"]},
+    {"speaker": "Fundamental investors as characterised by Bessent (not a speaker)", "position": "The size of the year's P&L does not determine position size; conviction does.", "claim_ids": []}
+   ]
+  },
+  {
+   "topic": "How to define risk",
+   "positions": [
+    {"speaker": "Scott Bessent", "position": "Risk is probability times severity (Taleb), not volatility; ask what the chance of a total-loss day is.", "claim_ids": ["MT141-C11-4"]},
+    {"speaker": "Volatility-based risk management (implicit, not a speaker)", "position": "Risk is measured by volatility and correlation; Bessent's counter is the liquidity rule that no position should be concentrated, illiquid and leveraged at once.", "claim_ids": ["MT141-C11-5"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "He says politics should not enter the fund ('no zots in the market') yet says he is working for a Trump win and is 'pulling for' a Republican trifecta while giving election-dependent market views; the separation is stated, not demonstrated.", "claim_ids": ["MT141-C12-4", "MT141-C13-5"]},
+  {"issue": "He says he cannot beat the crowd on macro aggregates, yet gives confident macro calls (growth shock, China, Europe, Le Pen) without showing the micro read-throughs behind them.", "claim_ids": ["MT141-C05-1", "MT141-C12-4", "MT141-C13-X1"]},
+  {"issue": "The Common Fund study on trimming after strong years and adding in slumps is cited without detail.", "claim_ids": ["MT141-C12-1"]},
+  {"issue": "The yen trade is described only with ranges (78-82 to 95, 105, 115) and not with the actual entry, size or return; evidence is anecdotal and framed after the outcome.", "claim_ids": ["MT141-C10-6", "MT141-C10-5"]},
+  {"issue": "The first-read claim on MF Global lacked the speaker's context (it happened shortly after he returned to Soros in autumn 2011); corrected.", "claim_ids": ["MT141-C08-3"]},
+  {"issue": "The claim that macro tends to be Babe Ruth shaped (home runs, low batting average) sits uneasily with his emphasis on risk control and asymmetric bets with capped downside; no hit rate is given.", "claim_ids": ["MT141-C11-6", "MT141-C06-2"]},
+  {"issue": "Druckenmiller's 'never a down year' is offered as a benchmark with no source and no definition (net or gross, time period).", "claim_ids": ["MT141-C14-X2"]},
+  {"issue": "Byron Wayne anecdote: ledger paraphrase says he 'forecast the market would rally' while opposed to Trump; the transcript says he predicted the market going straight up, with the speaker not giving the outcome.", "claim_ids": ["MT141-C14-X1"]},
+  {"issue": "Taking profits in December 'almost every time' was right is a recollection, not a measured result.", "claim_ids": ["MT141-C11-3"]}
+ ],
+ "forward_looking_inputs": "(reader) Inputs he says lead prices: the outcome of the US election (path dependence for growth, the Fed and the deficit), central-bank gold purchases, Bank of Japan and Japanese leadership changes, Chinese policy (Xi's political preference over market clearing), the French political trajectory, and the position build-up and volatility level in a market (low vol precedes regime breaks). For individual trades: company commentary (trucking, retailers, bank CEOs) as an early read on activity and credit; options pricing for asymmetry. Horizons: next couple of months for the election path, 18 to 24 months for France, years for gold and Japan.",
+ "reader_inferences": [
+  "(reader) His framework is a sequence: imagine the state of the world, verify the policy mechanism, find the instrument with the best payoff, size with the year's P&L, and keep liquidity; the policy-reversal step is the core signal.",
+  "(reader) The 'chip stack' rule makes position size a function of year-to-date P&L, which acts like a drawdown-based risk scaling; it resets annually.",
+  "(reader) The two 'cannot' statements (cannot forecast aggregates, knowing the headlines does not give the trade) imply that edge is in mapping policy and positioning to instruments, not in forecasting data.",
+  "(reader) His trades often have capped downside (ERM band, long options), so a Babe Ruth payoff reflects structured asymmetry, not unlimited risk-taking."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT141-C07-R1",
+   "chunk": "C07",
+   "speaker": "Scott Bessent",
+   "quote": "never do what the investors tell you to do do what you're good at",
+   "claim": "A manager should do what he is good at and not what investors ask for; Bessent calls his 2000 decision to launch as long/short equities, to suit investor demand, a mistake that changed his philosophy.",
+   "mechanism": "mandate fit",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT141-C09-R1",
+   "chunk": "C09",
+   "speaker": "Scott Bessent",
+   "quote": "pick out the big themes try to keep the noise out",
+   "claim": "Key Square's aim was a couple of big positions managed well, picking out big themes and keeping the noise out.",
+   "mechanism": "concentration and focus",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "small tight-knit team",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT141-C14-R1",
+   "chunk": "C14",
+   "speaker": "Scott Bessent",
+   "quote": "I've never done anything for short-term money I always try to think over the longterm",
+   "claim": "Bessent says he has never done anything for short-term money and always thinks long term, because the bigger pot of gold lies further out.",
+   "mechanism": "time horizon",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "long term",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

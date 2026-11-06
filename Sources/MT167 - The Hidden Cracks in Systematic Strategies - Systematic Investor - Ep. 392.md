@@ -5,8 +5,8 @@ date: 2026-03-22
 channel: "Top Traders Unplugged"
 url: 
 words: 11836
-claims: 51
-added_by_crosscheck: 14
+claims: 53
+added_by_crosscheck: 16
 corrections: 2
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, hedge fund manager)", "Nick Baltas (co-host, QIS / systematic strategies practitioner)"]
@@ -21,6 +21,127 @@ tags: [source, layer0]
 **Approach:** trend following, QIS, commodity curve carry, market universe, options gamma, AI research workflow, quant equity factors, stagflation
 
 **Cross-check completeness estimate of first read:** 0.80 - the first reader caught the headline themes (curve carry, QIS, gas vs oil, speed, 0DTE, Man papers, certainty vs uncertainty); missed some causal reasoning (curve-carry risk premium and origin, recession defensiveness, factor macro-sensitivity stats, regime model, 2010s trend winter cause, pinning) and mangled the index-numbers claim.
+
+## Argument map
+
+**Episode thesis:** Nick Baltas and Niels Kaastrup-Larsen discuss how March 2026's oil and gas backwardation shock cut commodity curve carry while trend, volatility-scaled and with faster speeds winning, was roughly flat; Middle East shocks raise stagflation risk. Nick argues the objective should determine the trend universe (core for crisis alpha, broad for Sharpe), that dealer gamma and zero-DTE flows mainly affect short-term trend, that AI helps research only with human supervision, and that fundamental certainty (Fed put) hurts trend while uncertainty helps it.
+
+### Nick Baltas (Co-host; QIS and systematic strategies practitioner (Man Group))
+Fingerprint: #approach/trend_following #approach/carry #approach/crisis_alpha_convexity #approach/dealer_hedging_flows #approach/volatility_options #approach/position_sizing_vol_target #approach/portfolio_construction_stacking #approach/research_robustness_overfitting
+_Speaker note: Captions do not label speakers. Per ledger corrections: Nick hedges on the Vilkov et al. zero-DTE paper; the link of dealer long gamma to weak short-term trend is Niels's suggestion. The +3.55% YTD belongs to the short-term traders index and the MSCI YTD figure is garbled. The speaker of the closing Fed-put remark is taken to be Nick as in the ledger; the captions are unclear._
+
+**Worldview premises**
+- Commodity curve carry (long back, short front) earns a risk premium shared between consumers and producers; backwardation shocks hurt it but mean-revert quickly unless the supply shock is permanent. _[theoretical, stated; support: History of the strategy; Q1 2026 gas and oil backwardation shocks.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C02-X1|C02-X1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C02-1|C02-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C02-2|C02-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C03-X2|C03-X2]])
+- The QIS (quantitative investment strategies) space is large, about USD 600-700 billion and multi-asset, spanning retail and institutional products. _[empirical, stated; support: Bloomberg article and an earlier discussion with a guest.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C02-3|C02-3]])
+- Gas and oil are different risks: near-zero correlation, oil is a homogeneous complex with bidirectional tails, gas is the most volatile with a right-skewed winter-weather tail; index weights by production and liquidity ignore volatility. _[empirical, stated; support: Statistical correlations and portfolio-design experience.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C03-2|C03-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C03-X3|C03-X3]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C03-3|C03-3]])
+- Volatility-scaled trend captures big commodity moves but cuts risk automatically as volatility spikes; multi-strategy diversification (trend, skew, value) in commodities pays off. _[experience, stated; support: March and year-to-date results of the oil rally.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C04-1|C04-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C04-2|C04-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C06-X4|C06-X4]])
+- Speed leadership flips: slower speeds navigated V-shaped reversals in earlier years, but in March 2026 faster speeds outperformed. _[empirical, stated; support: Own performance dispersion across speeds.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C06-1|C06-1]])
+- How commodities are bucketed (one class vs energy, metals and ags as three) is an under-discussed philosophical divergence that drives risk budget, because intra-commodity correlation is lower than intra-equity. _[theoretical, stated; support: Typical QIS trend books hold 10-40 commodities; roughly a quarter of risk.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C06-2|C06-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C07-1|C07-1]])
+- Dealer gamma shapes intraday price behaviour: short-gamma flows exacerbate trends, long-gamma flows force mean reversion; dealers appear net long gamma in zero-DTE markets. _[theoretical, stated; support: Mechanical hedging argument and a study he cites with hedging (Vilkov et al.).]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C08-2|C08-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-1|C09-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C08-1|C08-1]])
+- Trend and crisis alpha have a duality of objectives (long-term positive return plus downside reactivity); commodity curve carry and rate volatility share this property. _[theoretical, stated; support: Cliff Asness's duality framing; commodity curve is short the front of curves.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C11-2|C11-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C11-X9|C11-X9]])
+- In a crisis, correlations go to extremes and principal components drive returns, so a core liquid universe maximises crisis alpha; a broader universe maximises long-term Sharpe via more independent bets but is less defensive. _[theoretical, stated; support: Man Group 'optimal market mix' paper.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C11-3|C11-3]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C12-1|C12-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C12-2|C12-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C12-3|C12-3]])
+- Equity factors are not 60 independent bets: five or six factors explain the equity cross-section, so 60 factors diversify far less than 60 commodities. _[empirical, stated; support: Cross-sectional correlation among value descriptors.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C13-1|C13-1]])
+- AI agents can replicate research steps but need human framing, supervision and protection from multiple testing and overfitting; broad chatbots can be wrong. _[experience, stated; support: Man Group agentic AI paper; his own test question about the start of 2026.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C14-1|C14-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C14-2|C14-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C14-X10|C14-X10]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C14-R1|C14-R1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C15-R2|C15-R2]])
+- Quant equity winter 2018-20 had a macro-regime cause (rates hurting value and momentum) and a crowding cause (forced unwinds); macro factors explain over 50% of factor variation in stress vs about 20% normally. _[empirical, stated; support: Man Group quant-equity paper statistics and four-regime model.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C16-1|C16-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C16-X12|C16-X12]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C16-X13|C16-X13]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C15-X11|C15-X11]])
+- New data lowered alpha-model correlations from 70-80% to 40-50% and dynamic factor allocation adds regime resilience. _[empirical, stated; support: Man paper quotes.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C16-2|C16-2]])
+- Under fundamental certainty (a Fed put) prices revert to prior valuation; under uncertainty price trends carry information about fundamentals and continue. _[theoretical, stated; support: Own long-standing framework from earlier discussions.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C17-1|C17-1]])
+
+**Chain: Commodity curve carry shock and recovery**
+1. Cold weather and Middle East supply concerns → Back-to-back backwardation in gas and oil: Supply shocks raise front prices relative to the back. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C02-1|C02-1]])
+2. Backwardation → Curve-carry strategy (long back, short front) loses years of return: The trade is structurally short the front. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C02-1|C02-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C03-X2|C03-X2]])
+3. Normalisation of curves → Mark-to-market recovery: Backwardation mean-reverts quickly unless the shock is permanent. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C02-2|C02-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C02-X1|C02-X1]])
+- Evidence: Q1 2026 Bloomberg coverage and client discussions.
+- Fails when: The oil supply shock is permanent, so the curve does not normalise.
+
+**Chain: Option flows and trend following**
+1. Investors sell options for carry → Dealers are long gamma: Dealer hedging is the mirror of customer positions. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C08-2|C08-2]])
+2. Long gamma → Dealers buy dips and sell rallies, forcing intraday mean reversion: Gamma hedging is counter-trend; negative gamma (leveraged ETFs) is the opposite. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C08-2|C08-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-1|C09-1]])
+3. Mean reversion → Possible drag on short-term trend; little effect on medium and long-term trend: Long-term signals near zero already mean small exposure. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-X6|C09-X6]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-1|C09-1]])
+- Evidence: Zero-DTE share of S&P option volume (about 60%) and a Vilkov et al. study, cited with hedging.
+- Fails when: Not proven; pinning around expiries unclear for medium-term followers.
+
+**Chain: Objective determines market universe**
+1. Objective: maximum crisis alpha → Core, liquid, mainstream universe: In a crisis principal components drive returns, so trade the macro movers. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C11-3|C11-3]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C12-1|C12-1]])
+2. Objective: maximum long-term Sharpe → Broad universe with idiosyncratic markets: More independent bets give diversification. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C12-1|C12-1]])
+3. Cash-efficient portfolio (low margin per unit of risk) → Same core liquid universe as max-crisis-alpha: Margin is lower in liquid markets. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C12-3|C12-3]])
+- Evidence: Man Group optimal-market-mix paper.
+- Fails when: Equity-factor universe counted as 60 markets overstates diversification.
+
+**Chain: Fed put certainty versus uncertainty**
+1. Fundamental certainty (Fed put) → Prices revert to prior valuation: Price trend carries no new information. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C17-1|C17-1]])
+2. Fundamental uncertainty → Price trends continue: Trend is information about where fundamentals sit. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C17-1|C17-1]])
+- Evidence: Earlier work and the weak 2010s trend returns in a low-inflation, stable-GDP macro environment.
+- Fails when: Environment stays certain.
+
+**Decision process**
+- [risk] Volatility-scale positions so risk falls automatically when oil volatility spikes.. Why: Spiking volatility means the trend exists but should carry less risk. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C04-1|C04-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C03-3|C03-3]])
+- [universe] Cluster commodities (energy, metals, ags; gas separately from oil) rather than one class and assign risk budget accordingly; typical books hold 10-40 commodities and a quarter of risk.. Why: Intra-commodity correlation is low. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C07-1|C07-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C06-2|C06-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C03-2|C03-2]])
+- [portfolio] Diversify commodity systematics across trend, skew and value.. Why: Skew and value benefited from the petroleum rally. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C04-2|C04-2]])
+- [universe] Choose universe and speed to match the objective: core for defensiveness, broad for long-term Sharpe.. Why: Crisis alpha comes from the universe, not only from speed. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C11-1|C11-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C12-1|C12-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C12-2|C12-2]])
+- [risk] Use zero-DTE options as cheap intraday protection for long-term trend positions without cutting exposure.. Why: A direct risk-management use case. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-2|C09-2]])
+- [signal] Possibly use option-implied skew as a sentiment filter or multiplier on trend signals; smoothing may absorb whipsaw already.. Why: Hypothesis, not tested. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C10-2|C10-2]])
+- [research] Run supervised, task-specific AI agents inside the deterministic systematic pipeline; keep human judgment on question framing and multiple-testing control.. Why: Models give different outcomes and can be wrong. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C14-X10|C14-X10]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C14-1|C14-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C14-2|C14-2]])
+- [portfolio] Use dynamic rather than static factor allocation and diversified data in quant equity.. Why: Regime resilience. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C16-2|C16-2]])
+
+**Evidence style:** Practitioner experience plus papers (Man Group, Vilkov et al.) and index statistics; cautious hedging on facts he is unsure of.
+
+**Views at the time**
+- (Mar 2026 (episode uploaded 2026-03-22; March update, recorded mid-month)) Oil shocks feed inflation nowcasts and memories of 2022; stagflation risk is higher than two months ago; the key question is whether the oil shock is permanent.. Reasoning: Mechanical effect on inflation nowcasts; historic events take time to die out. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C05-1|C05-1]])
+- (Mar 2026 (episode uploaded 2026-03-22; March update, recorded mid-month)) March 2026 is a statistical non-event for trend: flat P&L with oil complex and short rates positive and equities hurt; faster speeds outperform slower.. Reasoning: Own book results. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C06-X4|C06-X4]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C06-1|C06-1]])
+- (Mar 2026 (episode uploaded 2026-03-22; March update, recorded mid-month)) Commodity curve carry should recover mark-to-market if curves normalise.. Reasoning: Backwardation mean-reverts. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C02-2|C02-2]])
+- (Mar 2026 (episode uploaded 2026-03-22; March update, recorded mid-month)) The environment is currently one of fundamental certainty, which brought reversions that challenged trend (garbled in captions).. Reasoning: Fed put logic. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C17-1|C17-1]])
+
+### Niels Kaastrup-Larsen (Host; veteran hedge fund manager (Top Traders Unplugged))
+Fingerprint: #approach/trend_following #approach/macro_fundamental_topdown #approach/positioning_crowding #approach/research_robustness_overfitting #approach/short_term_systematic #approach/costs_execution
+_Speaker note: Host who also states views; the host also says 'like we do at Dunn', suggesting an affiliation with a trend manager (as read from captions)._
+
+**Worldview premises**
+- Trend following is tested and traded on futures; 3-24 month trends are not informed by single-day option volume, so there is little reason to use options data in classical trend models. _[experience, stated; support: Trend-following maxim of testing what you trade.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C10-1|C10-1]])
+- Gas and oil are priced by different factors (gas depends heavily on transport cost), so they react to different shocks. _[empirical, stated; support: A recent conversation with a guest.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C03-1|C03-1]])
+- Trend returns since 2023 have been driven by commodity trends, so commodity share in a universe had a big effect. _[empirical, stated; support: Cocoa, coffee, live cattle, precious metals, oil sequence.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C07-X5|C07-X5]])
+- Weak recent short-term trend results may come from convergent mean-reverting flows (zero-DTE complex, multi-manager pod shops); he does not know. _[theoretical, stated; support: Simple observation.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-1|C09-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-X8|C09-X8]])
+- Stagflation risk is rising: Powell separates today from the 1970s by unemployment, but rates have moved higher and the cuts the White House wants may not come; Gulf tourism after-effects may hurt more than oil prices. _[theoretical, stated; support: FOMC comments; interest rate moves.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C04-4|C04-4]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C05-2|C05-2]])
+- Building trend systems rewards simplification, whereas AI tends to expand, so the DNA of AI may not suit cleaning signals. _[experience, stated; support: Hunch without being an AI expert.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C15-1|C15-1]])
+- Trend returns in the 2010s were weak because inflation was low and stable and GDP barely moved. _[empirical, stated; support: Macro environment.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C17-X14|C17-X14]])
+- Headlines overreact: a small correction after eight positive months generates CTA-drawdown stories. _[experience, stated; support: Bloomberg headline with a wrong number.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C01-1|C01-1]])
+- Pod-shop traders increasingly leave to run their own firms, and fewer investors plan to raise allocations. _[empirical, stated; support: Bloomberg/Goldman data.]_ ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C04-3|C04-3]])
+
+**Chain: Market correction after a long positive run**
+1. Equity, bond and precious metals selloff in March → Cash raising: Precious metals may be sold as an easy source of cash. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C05-3|C05-3]])
+2. Eight positive months → Normal correction: Not an aggressive down market. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C05-3|C05-3]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C01-1|C01-1]])
+- Evidence: Observed industry returns.
+- Fails when: Month remained long; extent unknown.
+
+**Decision process**
+- [signal] Test what you trade and trade what you test: use futures data, do not add option data.. Why: Models are built on futures data and positions are adjusted daily. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C10-1|C10-1]])
+- [research] Keep systems simple; be wary of AI that expands rather than strips back.. Why: Skill goes into cleaning signals. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C15-1|C15-1]])
+
+**Evidence style:** Reads headlines and data, uses anecdotes, admits not being a quant; hedges often.
+
+**Views at the time**
+- (Mar 2026 (episode uploaded 2026-03-22; March update, recorded mid-month)) Stagflation concern is back as rates rise; cuts wanted by the White House may not arrive.. Reasoning: Powell comments and moving rates. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C04-4|C04-4]])
+- (Mar 2026 (episode uploaded 2026-03-22; March update, recorded mid-month)) March corrections in equities, bonds and precious metals are normal after eight consecutive positive months; trend barometer around 45 and index returns slightly negative for the month.. Reasoning: Index data read aloud. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C05-3|C05-3]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C07-2|C07-2]])
+
+### Disagreements
+- **Whether option market data belongs in trend following**: Niels Kaastrup-Larsen: Option volume is single-day information irrelevant to 3-24 month trends; trade the futures you test. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C10-1|C10-1]]); Nick Baltas: Dealer gamma matters mainly to short-term managers; options are best used as cheap intraday protection, and implied skew might be a sentiment filter. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-X6|C09-X6]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-2|C09-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C10-2|C10-2]])
+- **Cause of weak short-term trend results**: Niels Kaastrup-Larsen: Convergent mean-reverting flows from zero-DTE participants and possibly pod shops; unsure. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-1|C09-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-X8|C09-X8]]); Nick Baltas: Dealer long gamma is certainly a force but is not proven as the cause. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-1|C09-1]])
+- **AI in the research process**: Niels Kaastrup-Larsen: AI's tendency to expand may conflict with the simplification trend building needs. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C15-1|C15-1]]); Nick Baltas: AI quality has risen sharply and task-specific agents can run a deterministic pipeline under human supervision. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C14-X10|C14-X10]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C15-R2|C15-R2]])
+
+### Gaps and conflicts
+- Index return figures are garbled in the captions (series labels, MSCI YTD figure); only the corrected values are reliable. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C07-2|C07-2]])
+- The dealer-long-gamma link to weak short-term trend is Niels's suggestion; Nick calls it plausible but unproven and hedges on the paper. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-1|C09-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-X8|C09-X8]])
+- Typical commodity share of trend books (10-40 markets, a quarter of risk) is a guess about the industry. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C06-2|C06-2]])
+- Claim that only trend, commodity curve carry and rate volatility combine positive return and crisis alpha is asserted without evidence. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C11-2|C11-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C11-X9|C11-X9]])
+- The final certainty/uncertainty remark is partly garbled, so the present-day reading of the environment is unclear; Nick also did not read the equity-factor claim in the paper in full. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C17-1|C17-1]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C13-1|C13-1]])
+- The 0DTE hedge idea and option skew filter are hypotheses with no test given. ([[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C09-2|C09-2]], [[MT167 - The Hidden Cracks in Systematic Strategies - Systematic Investor - Ep. 392#^MT167-C10-2|C10-2]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Oil curve backwardation and whether the supply shock is permanent, gas weather, inflation nowcasts fed by oil, central bank reaction (rates higher, cuts unlikely), Fed-put certainty vs uncertainty, zero-DTE dealer gamma for short-horizon trend. Horizon is months.
+
+### Reader inferences (not stated by the speakers)
+- (reader) Nick treats universe choice, not only speed, as the lever for defensiveness, so allocators should map objective to universe before picking a manager.
+- (reader) Both speakers regard the March move as a normal correction rather than a regime break.
+- (reader) The 'certainty vs uncertainty' framework implies trend returns depend on whether policy removes uncertainty.
 
 ## Coverage
 
@@ -247,6 +368,10 @@ tags: [source, layer0]
   > So very narrow in terms of scope but very deep in terms of uh in terms of analysis.
   asset: multi · conditions: needs human supervision and multiple-testing safeguards · testable: no - qualitative · confidence: medium
   ^MT167-C14-X10
+- **Nick Baltas** Research culture, including discipline against multiple testing and overfitting, matters more than the research team's raw capability; the same holds if the team is an AI agent.  #mech/new _(added by map cross-check)_
+  > how the culture of a research team is more important than the research team itself.
+  asset: systematic strategies · direction: apply human judgment to AI research · horizon: years · conditions: AI agents used in strategy research · testable: no · confidence: medium
+  ^MT167-C14-R1
 
 ### C15
 - **Niels Kaastrup-Larsen** Building trend systems rewards simplification; AI tends to expand, which may be incompatible with cleaning signals.  #mech/research_method
@@ -257,6 +382,10 @@ tags: [source, layer0]
   > post COVID significant resurrection. So the multi strategy quant equity, the long short space has had very strong performance.
   indicator: multi-strategy quant equity long/short performance · asset: equities · horizon: years · conditions: post-2020 regime · testable: yes - factor and quant-equity index returns · confidence: medium
   ^MT167-C15-X11
+- **Nick Baltas** Nick reports that AI output quality on the same research task improved from poor to high quality within months.  #mech/new _(added by map cross-check, time-bound view)_
+  > for the same task uh I I I used to get rubbish. I'm getting high quality outcome now.
+  asset: systematic strategies · direction: AI capability improving quickly · horizon: months · conditions: personal usage · testable: no · confidence: medium
+  ^MT167-C15-R2
 
 ### C16
 - **Nick Baltas** Quant winter 2018-20 had two causes: macro regime (rates) hurting value and momentum, and factor crowding causing forced unwinds and fire sales.  #mech/crowding_positioning

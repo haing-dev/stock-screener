@@ -1,0 +1,259 @@
+{
+ "source_id": "MT042",
+ "episode_thesis": "Katy Kaminski and Niels Kaastrup-Larsen argue that trend following is strongest when many sectors trend at once (metals, a weak dollar, equities in January 2026) and that diversification across markets, speeds and volatility estimators matters more than ever, because the returns of CTAs diverge mainly through design choices (speed, market set, vol sizing) whose best setting flips from year to year. Both treat trend following as a cyclical, boom-bust and disruption-loving strategy that benefits from regime change (deglobalization, geopolitics, a possible commodity supercycle) and is not crowded.",
+ "speakers": [
+  {
+   "name": "Katy Kaminski",
+   "role": "Trend-following researcher (AlphaSimplex, Boston); guest co-host of the Systematic Investor series",
+   "speaker_note": "Captions spell her 'Katie Kaminsky'. Co-author Ying Shan Xiao ('Yan') is mentioned only by name. Turns attributed from context; where the host's and her statements are intermixed in the same chunk (C13) the ledger correction is applied: the asymmetric resize point is Niels's, and faster vol adjustment hurting at Liberation Day is hers.",
+   "fingerprint": ["trend_following", "position_sizing_vol_target", "research_robustness_overfitting", "crisis_alpha_convexity", "regime_detection", "replication_indexing", "diversification_risk_parity", "macro_fundamental_topdown"],
+   "worldview_premises": [
+    {"premise": "Return dispersion among trend followers comes mainly from how much risk is allocated to the few big trends, which depends on the market set; gold alone is not the same as a wide metals set.", "type": "empirical", "stated": "stated", "support": "Her own research on dispersion in 2025 and 2026, gold versus silver and other metals.", "claim_ids": ["MT042-C03-1", "MT042-C03-2", "MT042-C03-3"]},
+    {"premise": "Trend following does best, and is least exposed to reversal, when profits come from many sectors at once; this shows on equity-down days when dollar and metals trends offset.", "type": "experience", "stated": "stated", "support": "January 2026 observations.", "claim_ids": ["MT042-C05-1", "MT042-C05-2", "MT042-C05-3"]},
+    {"premise": "Trend following needs boom-bust cycles, change and disruption; steady markets and sudden shocks are bad for it. At strategy level it is cyclical and mean-reverting, with great years followed by tougher spells.", "type": "empirical", "stated": "stated", "support": "Decades of experience; 2022 followed by weaker years as the example.", "claim_ids": ["MT042-C07-1", "MT042-C14-4"]},
+    {"premise": "Regime shifts in 2025 (Liberation Day, deglobalization, policy divergence, geopolitical conflict) created macro change that is now maturing into strong trends.", "type": "theoretical", "stated": "stated", "support": "Narrative linking 2025 shocks to 2026 trends; not tested.", "claim_ids": ["MT042-C06-2", "MT042-C14-5"]},
+    {"premise": "Price trend and economic trend are 40 to 50% correlated and complement each other: macro helps when prices are driven by headline or sentiment, price trend is faster and better when fundamentals are clear.", "type": "empirical", "stated": "stated", "support": "Her own comparison of strategy types; 2025 versus 2026.", "claim_ids": ["MT042-C07-2", "MT042-C07-3", "MT042-C08-1"]},
+    {"premise": "CTA design choices (speed, market count, risk allocation, vol sizing) are idiosyncratic and have no right answer; managers' returns correlate yet the best choice flips from year to year.", "type": "empirical", "stated": "stated", "support": "Annual dispersion paper.", "claim_ids": ["MT042-C08-3", "MT042-C08-4"]},
+    {"premise": "A concentrated asset set can be right for years or wrong for a decade, so replication has to be diversified, though both approaches add different return streams.", "type": "empirical", "stated": "stated", "support": "10 most liquid assets versus a wide basket: strong in 2021, 2024, 2025, but a 10-year period of underperformance.", "claim_ids": ["MT042-C11-4", "MT042-C12-1"]},
+    {"premise": "The industry has become slower and more diversified over time (more carry and other premia), so the historical index return is not what an allocator gets today, though fast reactivity still matters in crises.", "type": "empirical", "stated": "stated", "support": "Her 'CTA style analysis' paper over the SG Trend Index history.", "claim_ids": ["MT042-C11-1", "MT042-C11-2"]},
+    {"premise": "Volatility estimation is calibration, not alpha, and CTAs treat each asset as a unit of risk; the speed of vol adjustment changes the return path depending on what the market does.", "type": "theoretical", "stated": "stated", "support": "Examples: 2022 bond vol doubling; 2025 H1 versus H2.", "claim_ids": ["MT042-C12-2", "MT042-C12-3"]},
+    {"premise": "Crisis alpha means gains in dislocations, not in every bad equity month; trend can capture a crisis only if the crisis markets trend (no directional bias, liquidity, adaptability).", "type": "theoretical", "stated": "stated", "support": "Her original crisis alpha argument; Covid versus 2022 contrast.", "claim_ids": ["MT042-C14-1", "MT042-C14-2", "MT042-C14-3"]},
+    {"premise": "Crowding concerns about CTAs are overstated: they trade very liquid markets and AUM is small relative to them.", "type": "empirical", "stated": "stated", "support": "Cited a paper by Mikita; no figures from her side.", "claim_ids": ["MT042-C15-2"]},
+    {"premise": "Trend likes disruption and change: higher geopolitical risk and higher inflation tend to be positive for trend following.", "type": "empirical", "stated": "stated", "support": "Preview of her own unpublished research and a UC Irvine paper on geopolitical risk.", "claim_ids": ["MT042-C17-1", "MT042-C17-X1", "MT042-C16-2"]},
+    {"premise": "Media profiles of trend following appear at performance extremes and so work as a sentiment marker; official data such as CPI and PCE act as focal points for price trends.", "type": "behavioural", "stated": "stated", "support": "Experience.", "claim_ids": ["MT042-C06-1", "MT042-C08-2"]},
+    {"premise": "When prices of gold and metals surge it shows investors looking for value and going back to basics.", "type": "behavioural", "stated": "stated", "support": "Brief reaction to the gold discussion.", "claim_ids": ["MT042-C02-R1"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why return dispersion exists: market set and risk allocation to big trends",
+     "steps": [
+      {"from": "Profit comes from a few big trends", "to": "How much risk each manager allocates to those trends sets relative performance", "why": "Positive returns come from big trends and being exposed to them.", "claim_ids": ["MT042-C03-1"]},
+      {"from": "Different market sets (gold only versus metals broadly)", "to": "Very different return profiles", "why": "Silver outperformed gold; in 2025 only a narrow set trended, in 2026 trends are broad.", "claim_ids": ["MT042-C03-2", "MT042-C03-3"]},
+      {"from": "A concentrated set of the 10 most liquid assets", "to": "Strong in 2021, 2024 and 2025 but underperformed a wide basket for 10 years", "why": "The set may or may not contain the assets that trend.", "claim_ids": ["MT042-C11-4", "MT042-C12-1"]}
+     ],
+     "evidence": "Her dispersion studies and the 10-asset experiment shared with Nick Bolters.",
+     "fails_when": "A narrow set looks smart only while its few assets are the ones trending.",
+     "claim_ids": ["MT042-C03-1", "MT042-C03-2", "MT042-C11-4", "MT042-C12-1"]
+    },
+    {
+     "topic": "Speed of trend and the shape of the shock",
+     "steps": [
+      {"from": "A V-shaped shock (Liberation Day)", "to": "Short-window models exit and re-enter while medium windows get whipsawed", "why": "Short windows recover quickly; long windows ignore the shock and slower, replication-like strategies looked better.", "claim_ids": ["MT042-C09-2", "MT042-C09-R1"]},
+      {"from": "2025 lookback results", "to": "Short and 12-month windows best, 4-9 month worst", "why": "The medium horizon is the most common CTA setting and the worst place in a V-shaped year.", "claim_ids": ["MT042-C09-1"]},
+      {"from": "Other years differ", "to": "No speed always wins", "why": "Fast was hard and slow better in 2024; faster was better in Covid and 2020.", "claim_ids": ["MT042-C09-3", "MT042-C10-5"]},
+      {"from": "Speed is more than the lookback", "to": "Trade frequency, smoothing and signal delay matter", "why": "Weekly traders did not panic around Liberation Day in April; some delay trades by three days; ML models may have time-varying speed.", "claim_ids": ["MT042-C10-1", "MT042-C10-2", "MT042-C10-3"]}
+     ],
+     "evidence": "Her 2025 dispersion study; Niels's own 25-year best-lookback analysis, which agrees in broad terms with Bolters's data.",
+     "fails_when": "A year with an unusual path flips the ranking, so the best speed cannot be known in advance.",
+     "claim_ids": ["MT042-C09-1", "MT042-C09-2", "MT042-C09-3", "MT042-C10-3", "MT042-C10-5"]
+    },
+    {
+     "topic": "Volatility-estimation speed and the path of returns",
+     "steps": [
+      {"from": "Bond volatility doubled in 2022 (about 4 to 8)", "to": "Slow vol estimators kept larger bond-trend positions", "why": "They cut risk later and so captured more of the trend.", "claim_ids": ["MT042-C12-4"]},
+      {"from": "Faster vol estimators", "to": "Cut positions sooner", "why": "Good in a shock, bad when the trend continues, as at Liberation Day.", "claim_ids": ["MT042-C13-2", "MT042-C12-4"]},
+      {"from": "2025", "to": "Slow was better in H1 and fast in H2", "why": "If vol came down fast after the shock, fast re-sizing captured more of H2.", "claim_ids": ["MT042-C12-5", "MT042-C13-2"]}
+     ],
+     "evidence": "Examples from 2022 and 2025; no systematic test shown.",
+     "fails_when": "Path dependent; the right speed cannot be chosen ex ante.",
+     "claim_ids": ["MT042-C12-4", "MT042-C12-5", "MT042-C13-2"]
+    },
+    {
+     "topic": "Volatility targeting makes CTAs sellers into a rally",
+     "steps": [
+      {"from": "Asset volatility rises (silver, gold in January 2026)", "to": "A vol-targeted CTA reduces positions", "why": "Positions are sized as risk, so profit taking is built in.", "claim_ids": ["MT042-C04-2"]},
+      {"from": "Positions spread across several metals", "to": "Exposure is distributed across themes instead of one metal", "why": "A diversified program holds silver, gold, platinum, copper and others at the same risk.", "claim_ids": ["MT042-C04-2", "MT042-C03-3"]}
+     ],
+     "evidence": "Description of how CTAs work; no position data.",
+     "fails_when": "Non-vol-adjusted traders keep full size and earn much more in a trending month.",
+     "claim_ids": ["MT042-C04-2"]
+    },
+    {
+     "topic": "Why crisis alpha is selective and cyclical",
+     "steps": [
+      {"from": "Trend has no directional bias, is liquid and adaptable", "to": "It can profit in dislocations (short bonds in 2022)", "why": "Opportunities differ by crisis: Covid was long bonds and short energy, 2022 long energy and short bonds.", "claim_ids": ["MT042-C14-2", "MT042-C14-3"]},
+      {"from": "Crisis moves outside traded markets", "to": "Trend cannot capture them", "why": "Trend only profits where trends occur.", "claim_ids": ["MT042-C14-3"]},
+      {"from": "Great year like 2022", "to": "Tougher years follow, then strong periods return", "why": "Trend is cyclical on a different cycle from equities and mean reverting at the strategy level.", "claim_ids": ["MT042-C14-4"]}
+     ],
+     "evidence": "Her crisis alpha paper; 2022 and Covid contrast.",
+     "fails_when": "A liquidity crisis that is not in the traded markets, or an environment without trends.",
+     "claim_ids": ["MT042-C14-1", "MT042-C14-2", "MT042-C14-3", "MT042-C14-4"]
+    },
+    {
+     "topic": "From the 2025 regime shock to 2026 trends",
+     "steps": [
+      {"from": "Liberation Day and policy changes in 2025", "to": "Large changes in fundamental relationships (deglobalization, policy divergence, conflict)", "why": "People were unsure what the changes meant at the time.", "claim_ids": ["MT042-C06-2", "MT042-C14-5"]},
+      {"from": "Fundamentals become clear", "to": "Price trend beats macro trend in 2026", "why": "Macro was better in 2025 because prices were driven by headlines; in 2026 fundamentals are clearer.", "claim_ids": ["MT042-C07-2", "MT042-C08-1"]},
+      {"from": "Strong US growth ('all systems go until it's not')", "to": "Boom followed by a bust that trend can also trade", "why": "Boom-bust is good for trend, shocks and steady states are not.", "claim_ids": ["MT042-C07-1"]}
+     ],
+     "evidence": "January 2026 trend pattern and the 2025 contrast.",
+     "fails_when": "Steady-as-you-go markets or abrupt shocks.",
+     "claim_ids": ["MT042-C06-2", "MT042-C07-1", "MT042-C07-2", "MT042-C14-5"]
+    }
+   ],
+   "decision_process": [
+    {"element": "universe", "practice": "Keep a diversified market set including secondary metals (silver, platinum, copper) and currencies, not just the most liquid ten; replication must be diversified enough to capture general CTA moves.", "why": "Gold alone does not represent all metals trends; a concentrated set can be wrong for a decade.", "claim_ids": ["MT042-C03-3", "MT042-C12-1"]},
+    {"element": "sizing", "practice": "Allocate risk, not notional: size every asset by volatility and signal strength.", "why": "Volatility estimation is calibration, not alpha.", "claim_ids": ["MT042-C12-2", "MT042-C12-3"]},
+    {"element": "risk", "practice": "Track asset volatilities over time (silver as an example) and let positions shrink as volatility expands.", "why": "Keeps risk even and builds in profit taking.", "claim_ids": ["MT042-C04-2", "MT042-C12-3"]},
+    {"element": "signal", "practice": "Treat speed as a benchmark of market frequency, not a fixed choice; consider smoothing, trading frequency and nonlinear or ML models with time-varying speed.", "why": "Speed is more complex than a lookback window.", "claim_ids": ["MT042-C10-3", "MT042-C09-3"]},
+    {"element": "research", "practice": "Document each year's dispersion by speed, market set and vol adjustment, and look at how the same choices did in earlier shock years such as 2022.", "why": "Each choice looks smart one year and not the next.", "claim_ids": ["MT042-C08-3", "MT042-C08-4"]},
+    {"element": "portfolio", "practice": "Combine price trend with economic trend since they are 40 to 50% correlated but differ in timing.", "why": "Natural complements through regimes.", "claim_ids": ["MT042-C07-3", "MT042-C08-1"]},
+    {"element": "research", "practice": "Use global (not only US) economic data and alternative sources for economic trend, and watch CPI and PCE as focal points.", "why": "Missing US data in the shutdown only partly blinds the models.", "claim_ids": ["MT042-C08-X1", "MT042-C08-2"]},
+    {"element": "other", "practice": "Hold a strategy that is adaptable, liquid and unbiased as a crisis diversifier, and judge it on dislocations rather than every equity-down month.", "why": "Protects against misuse of the term crisis alpha.", "claim_ids": ["MT042-C14-1", "MT042-C14-2"]}
+   ],
+   "evidence_style": "Empirical research on CTA index data and dispersion in specific years (2022, 2024, 2025), plus practitioner experience; she compares her results with those of peers (Bolters, SocGen). Evidence is mostly single-year examples and a handful of published papers.",
+   "current_views": [
+    {"view": "January 2026 is a multi-sector trend environment (equities up, short dollar, precious and base metals up, energies still hard) that is good for momentum trades and diversified trend.", "as_of": "2026-01-29", "reasoning": "Profits spread across sectors with offsets on equity-down days.", "claim_ids": ["MT042-C05-1", "MT042-C05-2", "MT042-C05-3"]},
+    {"view": "2026 looks like a boom-bust environment in which trend can profit on the way up and on the way down; macro strategies lag as fundamentals are clearer.", "as_of": "2026-01-29", "reasoning": "Aftermath of 2025 shifts becoming trends while US growth is still strong.", "claim_ids": ["MT042-C06-2", "MT042-C07-1", "MT042-C07-2"]},
+    {"view": "Deglobalization, policy divergence, potential geopolitical conflict and trade negotiations will keep creating macro themes that favour trend over the next two years.", "as_of": "2026-01-29", "reasoning": "Trend likes disruption; higher geopolitical risk and inflation are generally positive.", "claim_ids": ["MT042-C14-5", "MT042-C16-3", "MT042-C17-1", "MT042-C17-X1"]},
+    {"view": "Crowding in CTAs is not a major concern.", "as_of": "2026-01-29", "reasoning": "Liquid markets and small AUM.", "claim_ids": ["MT042-C15-2"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged and veteran hedge fund manager; also states his own market and industry views",
+   "speaker_note": "Captions spell him 'Neils Krup Larson'. He hosts but argues positions on gold, the dollar, commodity cycles, crowding and speed, so he is mapped. The SocGen Trend Indicator claim is read with the ledger correction (weak history but useful for positioning).",
+   "fingerprint": ["trend_following", "positioning_crowding", "liquidity_flows", "structural_themes", "commodity_fundamentals", "behavioral_sentiment", "replication_indexing", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {"premise": "Commodity super cycles start with a change in the monetary system; earlier false starts failed because no such change occurred, but this time may be different.", "type": "experience", "stated": "stated", "support": "Adam Rosenwag (caption spelling; commodity expert and past guest), relayed.", "claim_ids": ["MT042-C02-5"]},
+    {"premise": "Commodity prices tend to rise when the dollar is weak, and a break of the dollar below its 200-month moving average would signal a structurally weak dollar world.", "type": "empirical", "stated": "stated", "support": "Chart by Stain Jacobson (caption spelling; former Saxo Bank strategist), relayed; 'not always but often'.", "claim_ids": ["MT042-C02-3", "MT042-C02-4"]},
+    {"premise": "Structural flows (Tether's gold holdings, central banks as net gold buyers each year since 2011 after net selling in 2000-2009) help explain extreme gold moves.", "type": "empirical", "stated": "stated", "support": "A Tether article and a blog post by 'Margariminsk' (caption spelling).", "claim_ids": ["MT042-C02-1", "MT042-C02-2"]},
+    {"premise": "Replicators trade fewer markets with little commodity exposure, so in a commodity supercycle they could lose diversification a full CTA offers.", "type": "theoretical", "stated": "stated", "support": "Reasoning from market sets; he says it is not a prediction.", "claim_ids": ["MT042-C02-6"]},
+    {"premise": "Trend followers are not the cause of commodity spikes: they bought gold long ago and are now cutting positions as volatility rises; non-vol-adjusted traders are the ones with outsized January gains.", "type": "experience", "stated": "stated", "support": "Knowledge of industry positioning.", "claim_ids": ["MT042-C04-1", "MT042-C04-X1"]},
+    {"premise": "Negative press on trend following arrives near lows (WSJ and Man Group 'all hands on deck' in 2025), making bad coverage a contrarian buy signal; strong performance near highs draws allocator interest.", "type": "behavioural", "stated": "stated", "support": "One example; he calls it usually a good sign.", "claim_ids": ["MT042-C04-4", "MT042-C04-3"]},
+    {"premise": "Speed is more than lookback: trade frequency (weekly bars), signal delays and execution rules determine how a manager reacts; the best lookback was 200+ days in about 70% of the last 25 years but runs of years differ.", "type": "empirical", "stated": "stated", "support": "His own best-lookback analysis, eyeballed; Nick Bolters's data is similar.", "claim_ids": ["MT042-C10-1", "MT042-C10-2", "MT042-C10-4"]},
+    {"premise": "Data preprocessing before signals is an important, undisclosed part of CTA edge.", "type": "experience", "stated": "stated", "support": "Industry experience; he does not give details.", "claim_ids": ["MT042-C11-3"]},
+    {"premise": "Short vol windows let a CTA cut risk fast in events like Covid, SVB and Liberation Day, and the choice of vol-estimation speed matters more in a deglobalizing world with more independent market behaviour.", "type": "theoretical", "stated": "stated", "support": "Reasoning; examples.", "claim_ids": ["MT042-C13-1", "MT042-C13-X1", "MT042-C13-2"]},
+    {"premise": "Official managed-futures AUM fell from about 20% of hedge fund assets around 2012 to under 10% (about 8% in Q2 2025), so the industry is not crowded, though QIS products and pensions running trend in-house make official AUM an incomplete gauge.", "type": "empirical", "stated": "stated", "support": "Chart from the Mikita paper.", "claim_ids": ["MT042-C16-1", "MT042-C16-X1"]},
+    {"premise": "For pure trend followers 2025 was not unusual: a handful of markets did the work while many did not.", "type": "experience", "stated": "stated", "support": "His own view of the year; ties it to regime change.", "claim_ids": ["MT042-C13-3"]},
+    {"premise": "A big one-day loss can precede the best period: Thanksgiving 2021 was followed by 2022, and Liberation Day may play the same role.", "type": "experience", "stated": "stated", "support": "Two episodes; he says he hopes.", "claim_ids": ["MT042-C15-1"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Dollar, monetary-system change and commodity super cycle",
+     "steps": [
+      {"from": "A break of the dollar below its 200-month moving average", "to": "A structurally weak dollar", "why": "A relationship change implies implications across assets.", "claim_ids": ["MT042-C02-3"]},
+      {"from": "Weak dollar", "to": "Higher commodity prices in nominal terms", "why": "Commodities tend to do better when the dollar is weak, not always.", "claim_ids": ["MT042-C02-4"]},
+      {"from": "Change in the monetary system (central bank gold buying, Tether gold holdings, US pushing for new currency systems)", "to": "A commodity super cycle can start", "why": "Earlier false starts lacked such a change.", "claim_ids": ["MT042-C02-1", "MT042-C02-2", "MT042-C02-5"]},
+      {"from": "Commodity-heavy action", "to": "Replicators with few commodities could miss it; the dollar and currencies may also help CTAs", "why": "Fewer markets mean less of the cycle captured; currencies lift CTA returns when big sectors work together.", "claim_ids": ["MT042-C02-6", "MT042-C04-5"]}
+     ],
+     "evidence": "Metals up 68% (silver), 35% (platinum) and 27% (gold) year to date in January 2026, plus the structural flows data.",
+     "fails_when": "Not stated beyond 'this time may be different'.",
+     "claim_ids": ["MT042-C02-3", "MT042-C02-4", "MT042-C02-5", "MT042-C02-6", "MT042-C02-7"]
+    },
+    {
+     "topic": "Why CTAs are not blamed for metal spikes",
+     "steps": [
+      {"from": "Metals trends began long ago", "to": "CTAs were already long", "why": "Trend followers got long gold a long time ago.", "claim_ids": ["MT042-C04-1"]},
+      {"from": "Volatility expands", "to": "CTAs cut positions into the rally", "why": "Vol targeting reduces size.", "claim_ids": ["MT042-C04-1"]},
+      {"from": "Traders that do not vol-adjust", "to": "Capture far more of a vol explosion", "why": "They keep full size as vol rises.", "claim_ids": ["MT042-C04-X1"]}
+     ],
+     "evidence": "Industry knowledge; no position data.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT042-C04-1", "MT042-C04-X1"]
+    },
+    {
+     "topic": "Media coverage as a sentiment indicator for trend following",
+     "steps": [
+      {"from": "Poor performance and media pieces on trend following (WSJ summer 2025)", "to": "Negative coverage near the low", "why": "Press follows performance.", "claim_ids": ["MT042-C04-4"]},
+      {"from": "Performance recovers; many CTAs near new highs", "to": "More allocator interest", "why": "Flows follow returns.", "claim_ids": ["MT042-C04-3"]}
+     ],
+     "evidence": "One article; the Bloomberg article that Kaminski also notes.",
+     "fails_when": "Not tested.",
+     "claim_ids": ["MT042-C04-3", "MT042-C04-4"]
+    },
+    {
+     "topic": "Is the CTA industry crowded?",
+     "steps": [
+      {"from": "Financial crisis crisis-alpha enthusiasm raised the share of managed futures in hedge fund assets to about 20% by 2012", "to": "Today it is under 10% (about 8%)", "why": "Official AUM has not grown.", "claim_ids": ["MT042-C16-1"]},
+      {"from": "QIS products and pension funds trading trend in-house", "to": "Official AUM understates trend capital", "why": "Not captured in the industry chart.", "claim_ids": ["MT042-C16-X1"]}
+     ],
+     "evidence": "Chart in the Mikita paper (Q2 2025 data).",
+     "fails_when": "Hidden trend capital in QIS and pensions is large.",
+     "claim_ids": ["MT042-C16-1", "MT042-C16-X1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Evaluate the best lookback for each calendar year over 0 to 300 days across 25 years and compare with others' data.", "why": "Shows that long lookbacks win most years while some runs differ.", "claim_ids": ["MT042-C10-4"]},
+    {"element": "execution", "practice": "Consider trade frequency and signal delay (weekly bars, waiting three days) as separate speed levers; recognise the April 2025 differences came from trade frequency.", "why": "Weekly adjusters did not react to the V-shaped move.", "claim_ids": ["MT042-C10-1", "MT042-C10-2"]},
+    {"element": "risk", "practice": "Use short vol windows to reduce risk fast, but consider a different, slower speed for re-adding risk.", "why": "Fast cut protects in SVB or Covid; asymmetric resizing may capture the rebound.", "claim_ids": ["MT042-C13-1", "MT042-C13-2"]},
+    {"element": "research", "practice": "Track trend barometer and SocGen Trend Indicator as positioning gauges.", "why": "The SocGen indicator had weak performance historically but shows how managers may be positioned (ledger correction applied); barometer at 59 signals strong trend environment.", "claim_ids": ["MT042-C05-4", "MT042-C05-5"]}
+   ],
+   "evidence_style": "Industry anecdote and relayed expert views (Rosenwag, Jacobson and a gold blogger, names as captioned), live index numbers for the month, and his own simple best-lookback analysis; little formal testing.",
+   "current_views": [
+    {"view": "Strong commodity trends (silver +68%, platinum +35%, gold +27% year to date) may signal the start of a commodity super cycle driven by a monetary-system shift and structural gold buying.", "as_of": "2026-01-29", "reasoning": "Central bank buying, Tether, dollar weakness; earlier false starts lacked a monetary change.", "claim_ids": ["MT042-C02-1", "MT042-C02-2", "MT042-C02-5", "MT042-C02-7"]},
+    {"view": "The dollar's test of its 200-month moving average could mark a structurally weak dollar and bring currencies back as a contributing CTA sector.", "as_of": "2026-01-29", "reasoning": "Relayed chart by Stain Jacobson (caption spelling); weak dollar lifts commodities.", "claim_ids": ["MT042-C02-3", "MT042-C02-4", "MT042-C04-5"]},
+    {"view": "Trend following is off to a great start in 2026; many CTAs are near new highs and the trend indices are up 5 to 6% month to date.", "as_of": "2026-01-29", "reasoning": "Trend barometer 59; BTOP50, SG CTA, SG Trend indices up, SocGen Trend Indicator 19.27% month to date.", "claim_ids": ["MT042-C04-3", "MT042-C05-4", "MT042-C05-5"]},
+    {"view": "2025 was a year of regime change but pure trend followers found it typical; Liberation Day may be remembered like Thanksgiving 2021.", "as_of": "2026-01-29", "reasoning": "A few markets did the work; a big one-day loss preceded the best recent period.", "claim_ids": ["MT042-C13-3", "MT042-C15-1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Is industry capital in trend following small enough to rule out crowding?",
+   "positions": [
+    {"speaker": "Katy Kaminski", "position": "Crowding is a concern in principle, but AUM is small relative to very liquid markets, so overstated.", "claim_ids": ["MT042-C15-2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Official managed-futures AUM has fallen to about 8% of hedge fund assets, but QIS products and pensions run trend in-house, so the chart is an incomplete gauge.", "claim_ids": ["MT042-C16-1", "MT042-C16-X1"]}
+   ]
+  },
+  {
+   "topic": "Does the best trend speed follow a stable pattern?",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "In about 70% of the last 25 years the best lookback was 200 days or more, with some multi-year runs different (56 days best in 2008).", "claim_ids": ["MT042-C10-4"]},
+    {"speaker": "Katy Kaminski", "position": "The best speed changes with the year's path (short and 12 months best in 2025, faster in Covid, slow better in 2024); no speed always wins, and the industry has slowed over time. The two readings are close; the emphasis differs.", "claim_ids": ["MT042-C09-1", "MT042-C09-3", "MT042-C10-5", "MT042-C11-1"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "The Tether-as-gold-holder claim comes from a single article and is not verified; the link to the extreme gold and silver moves is speculation.", "claim_ids": ["MT042-C02-1"]},
+  {"issue": "The commodity supercycle thesis relies on one relayed expert and on January 2026 prices; the host himself says earlier false starts happened and 'this time is different' is not demonstrated.", "claim_ids": ["MT042-C02-5", "MT042-C02-7"]},
+  {"issue": "The dollar's 200-month moving average break is described as flirting, not a break, and the claimed implications are asserted, not shown.", "claim_ids": ["MT042-C02-3", "MT042-C02-4"]},
+  {"issue": "Speed results for 2025 rest on one year; the lookback ranges are stated inconsistently on air (7 to 9 months or 4 to 9 months), and the 2024 and 2020 comparisons are given without numbers.", "claim_ids": ["MT042-C09-1", "MT042-C09-3", "MT042-C10-5"]},
+  {"issue": "Vol-estimation findings are path-dependent examples (2022 and 2025) with no way to know ex ante which speed is better; the advice that both speeds help or hurt is not a rule.", "claim_ids": ["MT042-C12-4", "MT042-C12-5", "MT042-C13-2"]},
+  {"issue": "Negative press as a contrarian buy signal rests on one WSJ article and one Man Group episode.", "claim_ids": ["MT042-C04-4", "MT042-C06-1"]},
+  {"issue": "Kaminski says price and economic trend are 40 to 50% correlated yet 'complement' each other and also that trend managers are highly correlated but diverge by design choice; correlation level and the amount of diversification are not quantified.", "claim_ids": ["MT042-C07-3", "MT042-C08-4"]},
+  {"issue": "Higher inflation and geopolitical risk are said to be positive for trend following based on unpublished research and a stock-return paper; no numbers given.", "claim_ids": ["MT042-C17-1", "MT042-C17-X1", "MT042-C16-2"]},
+  {"issue": "The 10-asset basket result (10 years of underperformance) is described without dates or magnitudes.", "claim_ids": ["MT042-C12-1", "MT042-C11-4"]}
+ ],
+ "forward_looking_inputs": "(reader) The inputs the speakers treat as leading trend returns are: the breadth of trends across sectors (metals, currencies, equities, rates), asset volatility levels (positions shrink as vol rises), the dollar relative to its 200-month moving average, central-bank gold buying and stablecoin gold flows, US growth momentum (boom-bust), the clarity of fundamentals (price trend beats macro when clear), geopolitical risk and trade-negotiation news, and inflation. Horizons: weeks to months for trend (monthly index prints), two years for the macro themes (trade, dollar, deglobalization).",
+ "reader_inferences": [
+  "(reader) The two speakers treat design choices as year-specific bets: neither gives a way to choose speed or vol-estimation speed in advance, so diversification across speeds and market sets acts as the hedge against choosing wrong.",
+  "(reader) The supercycle thesis and the replicator point are linked: if the next regime is commodity-led, narrow-market replicators are the ones exposed; Kaminski's 10-asset result suggests the exposure is symmetric and can be wrong for a decade as well as right.",
+  "(reader) Kaminski's trend 'mean-reverting at strategy level' claim and the relayed view that a big loss day precedes a good period together imply a contrarian allocation signal after bad CTA years, which neither speaker tests.",
+  "(reader) Both define crisis alpha narrowly (dislocations, not every equity drawdown), so a test of the claim needs a dislocation definition (they give examples, not thresholds)."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT042-C02-R1",
+   "chunk": "C02",
+   "speaker": "Katy Kaminski",
+   "quote": "people are looking for value and they're going back to basics",
+   "claim": "Kaminski reads the surge in gold and silver as people looking for value and going back to basics.",
+   "mechanism": "flight to hard assets",
+   "asset_class": "gold and silver",
+   "indicator": "metals prices",
+   "horizon": "unspecified",
+   "direction": "gold up",
+   "conditions": "January 2026 metals rally",
+   "testable": "no - interpretive",
+   "speaker_confidence": "low",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT042-C09-R1",
+   "chunk": "C09",
+   "speaker": "Katy Kaminski",
+   "quote": "long-term which is more consistent with like replication and sort of slower moving strategies that looked a lot better last year",
+   "claim": "In 2025 long-lookback strategies, which are closer to replicators and slower programs, looked better than the medium-horizon sweet spot of many CTAs.",
+   "mechanism": "speed and shock response",
+   "asset_class": "multi",
+   "indicator": "lookback window",
+   "horizon": "year",
+   "direction": "",
+   "conditions": "V-shaped shock year (2025)",
+   "testable": "yes - rolling performance by lookback",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  }
+ ]
+}

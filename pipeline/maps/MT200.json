@@ -1,0 +1,324 @@
+{
+ "source_id": "MT200",
+ "episode_thesis": "Baltas and Kaastrup-Larsen argue that the August 2024 V-shaped reversal is not a reason to change trend models: no speed is best across episodes (medium speeds did worst in the V, long lookbacks do best in long, meaningful equity crises), and short-term trend following is probably unprofitable in the long run. Recent risk-based allocation papers say to scale exposure by realised volatility (and correlation, if not too noisy) because risk is forecastable and returns are not. On how much to allocate to trend, Baltas argues that mean-variance and downside-risk optimisation give absurdly high numbers (about 70% and 52%), so size by scenario analysis against tracking error to the policy benchmark, ideally by moving trend into the strategic benchmark (5-20%).",
+ "speakers": [
+  {
+   "name": "Nick Baltas",
+   "role": "systematic macro quant researcher and trend follower; co-author of a 2019 paper on how much to allocate to trend following (caption 'Nick Balter')",
+   "speaker_note": "Captions have no labels. Attribution uses first-person facts: client conversations after August, co-authorship of the 2019 sizing paper, a paper he wrote 'seven or eight years back' on return prediction. Kaastrup-Larsen's turns include his barometer and his own firm's research. The ledger correction to C17-1 splits it: the debt-level remark is the host's, the 60/40-as-a-carry-trade remark is Baltas agreeing.",
+   "fingerprint": ["trend_following", "position_sizing_vol_target", "diversification_risk_parity", "portfolio_construction_stacking", "research_robustness_overfitting", "regime_detection", "carry", "manager_selection_allocation"],
+   "worldview_premises": [
+    {
+     "premise": "Risk is forecastable but returns are not at short horizons: volatility clusters and today's volatility predicts tomorrow's volatility, but is unrelated to tomorrow's return; elevated risk after a fall implies positive returns only over 1-5 year horizons.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "a Man Group paper ('Risky Business') on 100 years of US stock data, which he summarises",
+     "claim_ids": ["MT200-C09-2", "MT200-C10-2"]
+    },
+    {
+     "premise": "A 60/40 portfolio holds about 90% equity risk and 10% bond risk and in down markets risk rises without compensation, and the stock-bond correlation turned positive in 2022, so exposure should be scaled by realised volatility, and correlation incorporated if not too noisy.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "the same paper and a risk-parity allocation paper; the 2022 experience",
+     "claim_ids": ["MT200-C09-3", "MT200-C11-1", "MT200-C11-2", "MT200-C12-1"]
+    },
+    {
+     "premise": "Over long horizons static and dynamic exposure converge because volatility mean reverts, but scaling by volatility matters locally, around turning points, which is where money is managed.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "reasoning on volatility clustering and mean reversion; a 7-8 year old paper on constrained return forecasts",
+     "claim_ids": ["MT200-C10-2", "MT200-C10-3"]
+    },
+    {
+     "premise": "Return prediction models constrained to positive forecasts look better over the long run only because equity returns are positive by design; they may not keep an investor solvent when returns are negative.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "his earlier paper on equity return prediction (with a friend)",
+     "claim_ids": ["MT200-C10-3"]
+    },
+    {
+     "premise": "Trend following pays in sustained equity or bond stress years, not in short-lived V shapes: the worst S&P years since 2000 were 2002, 2008 and 2022, the best CTA years were 2008, 2022 and (depending on index) 2002, with 2014 fourth; short moves of days or weeks are not trend's domain and need options.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "calendar-year ranking from memory; the host's guesses are confirmed",
+     "claim_ids": ["MT200-C08-2", "MT200-C07-3", "MT200-C08-1", "MT200-C07-X1"]
+    },
+    {
+     "premise": "Speed is a trade-off with no sweet spot: slower means less reactivity and missed turns; faster means more false positives and higher costs, so speed needs strong cost control.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "type I and type II error framing; his firm's speed analysis",
+     "claim_ids": ["MT200-C06-2", "MT200-C05-1"]
+    },
+    {
+     "premise": "Conventional optimisation cannot size trend following: any expected return input is either zero (no ex ante basis, it should not work in theory) or the historical Sharpe, which makes mean-variance recommend about 70% in trend; minimising downside risk gives about 52% (1999-2019 data). Both are too high for institutions.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "his November 2019 sizing paper; a similar recent paper by a large CTA reached the same conclusion",
+     "claim_ids": ["MT200-C14-2", "MT200-C15-1", "MT200-C15-X1"]
+    },
+    {
+     "premise": "Institutions are judged against a benchmark (policy portfolio), so the size of an alternative is limited by tracking error and career risk, not by return maximisation; larger sizes improve tail, Sharpe and downside, and the horizon (1 versus 10 years) changes the value.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "the 2019 paper's scenario analysis of 2%, 5%, 10% and 15% sleeves",
+     "claim_ids": ["MT200-C15-2", "MT200-C16-1", "MT200-C16-R1"]
+    },
+    {
+     "premise": "Efficient-market premises make people uncomfortable with trend following (past returns should not predict future returns), yet the fact that they do cannot be ignored.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "attributed to Andrew Beer's recent remark",
+     "claim_ids": ["MT200-C15-X2"]
+    },
+    {
+     "premise": "Inflation regimes call for short bonds, short equities, long commodities, which means paying the equity risk premium, term premium and negative roll yield; trend following lets an investor be dynamic around these costs.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "his earlier discussions about 2022; the Longtail Alpha paper",
+     "claim_ids": ["MT200-C13-3", "MT200-C13-1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "August 2024: why trend lost on the equity reversal",
+     "steps": [
+      {"from": "year-to-date equity rally and carry trades", "to": "trend portfolios piled into equities (the only market trading much)", "why": "dynamic risk scaling and conviction overweighted the asset class", "claim_ids": ["MT200-C04-1"]},
+      {"from": "short fixed-income trade reversed in Q2; positive equity-bond correlation", "to": "equity risk cut in May-June, then re-added before the August reversal as rates exposure was cut", "why": "a risk-budget rule can add to the position about to reverse", "claim_ids": ["MT200-C04-2", "MT200-C04-X1"]},
+      {"from": "V-shaped reversal and yen/China/Indonesia carry unwind", "to": "losses in equities and currencies (FX the worst attribution in a trend program in 25 years)", "why": "trends were fading before the shock and then reversed", "claim_ids": ["MT200-C04-1", "MT200-C04-3", "MT200-C06-X2"]}
+     ],
+     "evidence": "Return attribution by asset class from his firm; the host's observations on risk scaling.",
+     "fails_when": "He says this is data mining, not a lesson: other V shapes would favour other choices.",
+     "claim_ids": ["MT200-C04-1", "MT200-C04-3", "MT200-C04-X1", "MT200-C05-1"]
+    },
+    {
+     "topic": "V-shape and speed: the middle gets caught",
+     "steps": [
+      {"from": "fast signal (about 1-2 month)", "to": "goes short on the fall and long on the recovery", "why": "participates in both legs", "claim_ids": ["MT200-C05-1"]},
+      {"from": "slow signal (12 month)", "to": "barely reacts, stays long through the rebound", "why": "little change in exposure by the trough", "claim_ids": ["MT200-C05-1"]},
+      {"from": "medium signal (3-6 month)", "to": "flips short near the trough and misses the rebound", "why": "resonance-like timing mismatch", "claim_ids": ["MT200-C05-1"]}
+     ],
+     "evidence": "His firm's analysis of speeds for August 2024; he did not expect the result.",
+     "fails_when": "Different episodes favour different speeds (Covid, a 3-4 week downturn, favoured faster than longest, and longer models still got short in time); a false positive, not a reason to change the model.",
+     "claim_ids": ["MT200-C05-1", "MT200-C05-2", "MT200-C07-X1"]
+    },
+    {
+     "topic": "Carry-optimised trend inside a risk-parity stock-bond portfolio",
+     "steps": [
+      {"from": "risk parity stocks and bonds, both long", "to": "both fall when the stock-bond correlation turns positive (2022)", "why": "no diversifier in a positive-correlation selloff", "claim_ids": ["MT200-C12-2"]},
+      {"from": "adding trend following", "to": "helps, especially 2022; replacing bonds with trend gives a similar or worse portfolio over the long run", "why": "historically long bonds earned enough that shorting them cost carry", "claim_ids": ["MT200-C12-2"]},
+      {"from": "carry filter: no shorts in positively carrying assets (upward-sloping bond curves) and no longs in negative-carry markets", "to": "avoids carry drag before 2022 while still benefiting in 2022; keeps commodities from lowering Sharpe", "why": "does not pay negative roll or term carry", "claim_ids": ["MT200-C13-1"]}
+     ],
+     "evidence": "Longtail Alpha paper; sample 1998-2023.",
+     "fails_when": "He notes the host's objection: the sample coincides with the carry regime, so the enhancement may be overfit.",
+     "claim_ids": ["MT200-C12-2", "MT200-C13-1", "MT200-C13-2"]
+    },
+    {
+     "topic": "Sizing trend by tracking error to the benchmark",
+     "steps": [
+      {"from": "mean-variance with historical Sharpe, or minimum downside risk", "to": "about 70% or 52% in trend, unrealistic", "why": "trend's historical Sharpe exceeds a stock-bond portfolio's", "claim_ids": ["MT200-C15-1"]},
+      {"from": "institutions are judged against a policy portfolio", "to": "the active-risk (tracking error) cost of a sleeve is the binding constraint", "why": "career and business risk", "claim_ids": ["MT200-C15-2", "MT200-C16-1"]},
+      {"from": "scenario analysis of 2%, 5%, 10%, 15% sleeves against tracking error", "to": "choose a size that balances tail benefit and tracking error; not too small to matter", "why": "bigger sleeves improve tail, Sharpe and downside", "claim_ids": ["MT200-C16-1", "MT200-C16-R1"]},
+      {"from": "put trend inside the strategic benchmark (5-20%)", "to": "the benchmark absorbs the tracking error and allows bigger sizes", "why": "tracking error is measured against the new benchmark", "claim_ids": ["MT200-C16-2"]}
+     ],
+     "evidence": "2019 paper (data 1999-2019); a similar recent paper by a large CTA.",
+     "fails_when": "A 1-year versus 10-year horizon changes the value.",
+     "claim_ids": ["MT200-C15-1", "MT200-C15-2", "MT200-C16-1", "MT200-C16-2"]
+    }
+   ],
+   "decision_process": [
+    {"element": "sizing", "practice": "Scale exposure inversely to realised volatility (static to vol-targeted risk allocation with a top-level leverage adjustment), and incorporate correlations if not too noisy.", "why": "you scale down before negative return realisations and up before positive ones; reduces vol of vol", "claim_ids": ["MT200-C09-3", "MT200-C10-2", "MT200-C11-1", "MT200-C11-2"]},
+    {"element": "research", "practice": "Do not change a trend model because of one episode; label such findings as data mining or false positives.", "why": "other episodes would give the opposite answer (Covid versus August 2024)", "claim_ids": ["MT200-C05-1", "MT200-C07-1"]},
+    {"element": "signal", "practice": "Run a cloud of lookbacks with dynamic selection and filter trends that pay negative carry (carry-optimised trend).", "why": "improvements over fixed lookbacks (host's firm) and over pre-2022 carry drag (paper)", "claim_ids": ["MT200-C06-1", "MT200-C13-1"]},
+    {"element": "portfolio", "practice": "Add trend following to the stock-bond portfolio rather than replacing bonds with it.", "why": "replacement gives a similar or worse long-run portfolio", "claim_ids": ["MT200-C12-2"]},
+    {"element": "portfolio", "practice": "Size trend by scenario analysis of sleeves (2-15%) against tracking error to the policy portfolio; ideally include 5-20% trend in the strategic allocation.", "why": "optimiser outputs are unusable; benchmark absorbs tracking error", "claim_ids": ["MT200-C16-1", "MT200-C16-2"]},
+    {"element": "risk", "practice": "For short-lived dips (days to weeks) use options protection rather than relying on trend.", "why": "trend is not designed for these but options are more expensive", "claim_ids": ["MT200-C07-3"]}
+   ],
+   "evidence_style": "Quant researcher: own backtests and attribution (speed, FX), published papers (his 2019 sizing paper, Man, Longtail Alpha), and careful labelling of what is data mining versus a robust result; uses physical analogies (resonance on a bridge).",
+   "current_views": [
+    {"view": "After August 2024 clients moved from carry-seeking to defensive; interest in trend following rose and no client unwound a trend allocation.", "as_of": "2024-10-04", "reasoning": "asset owners understand that sustained drawdowns, not V shapes, are where trend pays", "claim_ids": ["MT200-C01-1", "MT200-C08-1"]},
+    {"view": "China's September stimulus lifted Chinese equities and spilled into commodities such as iron ore; September was strong for commodities but not for systematic commodity strategies.", "as_of": "2024-10-04", "reasoning": "weather, energy and China drivers differed across commodities", "claim_ids": ["MT200-C02-2", "MT200-C03-1"]},
+    {"view": "FX attribution in a trend program in 2024 is the worst of any calendar year in at least 25 years.", "as_of": "2024-10-04", "reasoning": "yen, China and Indonesia currency carry unwind in August", "claim_ids": ["MT200-C04-3"]},
+    {"view": "Asset owner interest in trend following and in challenging 60/40 has risen since 2022 as bond risk was realised; 60/40 worked as a carry trade plus falling yields, and it is open which of those can persist.", "as_of": "2024-10-04", "reasoning": "questions asked more than five years ago are now live", "claim_ids": ["MT200-C17-2", "MT200-C17-1", "MT200-C17-R1"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "host, Top Traders Unplugged; long-term trend follower background",
+   "speaker_note": "Host, who also argues positions on speed, sizing, carry-optimised trend and debt. The recording date is Friday 4 October 2024 (ledger correction): his trend barometer of 36 is for Thursday 3 October and the index numbers are as of Wednesday night 2 October. His memory of Roy Niedhoefer's 2014 paper is approximate.",
+   "fingerprint": ["trend_following", "regime_detection", "research_robustness_overfitting", "short_term_systematic", "policy_reaction_central_banks", "debt_cycle_long_term", "behavioral_sentiment"],
+   "worldview_premises": [
+    {
+     "premise": "Short-term trend following is probably not profitable even if short-term trading can be: in a 20-year simulation with fixed lookbacks from 20 to 260 days, 20 days was by far the worst, 60-130 days improved a lot, 260 days improved by a big factor, and dynamic parameter selection improved further.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "his firm's simulation, with the usual simulation disclaimers; treatment of costs not stated",
+     "claim_ids": ["MT200-C06-1"]
+    },
+    {
+     "premise": "In the very fast August 2024 reversal, models cut exposure mainly through volatility scaling (volatility expansion), not through signal changes; the result depended on how yen and Nikkei positions had been handled during the summer.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "his firm's models",
+     "claim_ids": ["MT200-C06-X1", "MT200-C06-X2"]
+    },
+    {
+     "premise": "Longer lookbacks give more performance in meaningful, long equity crises; short dips are too quick for trend, which is the price of long-term compound growth, and overthinking models to remove bad periods ends badly. Speed performance depends on the episode (Covid's 3-4 week downturn was long enough for longer-term models).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "his research on lookbacks and crises; the Covid example",
+     "claim_ids": ["MT200-C07-2", "MT200-C05-2"]
+    },
+    {
+     "premise": "CTAs are first and foremost risk managers: returns cannot be forecast but risks can (Man Group paper). Reducing exposure in a vol spike implicitly plays a trend; early trend followers used static sizing but technology allows dynamic sizing.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "the Man paper and trend-following history",
+     "claim_ids": ["MT200-C09-1", "MT200-C09-4"]
+    },
+    {
+     "premise": "Dynamic sizing is used by most bigger managers but long-run returns of static and dynamic managers are hard to tell apart, as is 500 versus 50 markets; the host does not buy that 500 markets are better than 50.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "observation of managers; no data",
+     "claim_ids": ["MT200-C10-1"]
+    },
+    {
+     "premise": "Carry-optimised trend is based on 1998-2023, the carry regime, so the enhancement may be overfit; purity (no clever filters, no forecasting) is more robust in an unknowable future even if it costs something. Roy Niedhoefer's 2014 prediction that rising rates would hurt trend followers failed, showing nobody knows.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "sample-period argument; the 2014 paper and its aftermath",
+     "claim_ids": ["MT200-C13-2", "MT200-C14-R1", "MT200-C14-1"]
+    },
+    {
+     "premise": "High government debt levels are part of why 40% in bonds may be too risky now.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "debt level data he saw in a newsletter; no government default so far",
+     "claim_ids": ["MT200-C17-1"]
+    },
+    {
+     "premise": "Large wage settlements (dock workers 62% over six years, Boeing rejecting 30%) signal a shift in labour bargaining power that could spark inflation, with EU 45% EV tariffs and higher energy prices adding price pressure.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "news items in the week of recording",
+     "claim_ids": ["MT200-C02-1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why longer lookbacks do better in real crises",
+     "steps": [
+      {"from": "a meaningful, long equity crisis", "to": "longer lookbacks are short equities and long bonds in time", "why": "the downturn lasts long enough for slow signals", "claim_ids": ["MT200-C07-2"]},
+      {"from": "short-lived dips", "to": "too quick for trend following", "why": "signals react after the dip ends", "claim_ids": ["MT200-C07-2"]},
+      {"from": "removing bad periods by overthinking the model", "to": "worse long-run outcome", "why": "price of compound growth", "claim_ids": ["MT200-C07-2"]}
+     ],
+     "evidence": "Simulations of lookbacks across crises (not shown in detail).",
+     "fails_when": "Fast crises (Covid-type 3-4 weeks may favour faster speeds); different episodes give different winners.",
+     "claim_ids": ["MT200-C07-2", "MT200-C05-2", "MT200-C06-1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Uses a cloud of lookbacks with dynamic selection rather than a fixed lookback; avoids very short (20-day) trend.", "why": "20-day was by far the worst in the 20-year simulation; dynamic selection improved results", "claim_ids": ["MT200-C06-1"]},
+    {"element": "sizing", "practice": "Dynamic position sizing, with correlation-based risk management that cut equity exposure over the summer when rates positions were reversing.", "why": "risk management by volatility and correlation", "claim_ids": ["MT200-C04-2", "MT200-C06-X1"]},
+    {"element": "other", "practice": "Tracks his trend barometer (36 on 3 October 2024, weak) as an environment gauge.", "why": "weak readings were reflected in October performance", "claim_ids": ["MT200-C03-2"]}
+   ],
+   "evidence_style": "Practitioner: his firm's simulations, observation of managers, history of the industry and published papers; stresses purity and caution about overfitting.",
+   "current_views": [
+    {"view": "Early October 2024: BTOP50 -78bp (+3.34% YTD), SG CTA -92bp (+1.56%), SG Trend about -1%, short-term traders -63bp (-10bp YTD); MSCI World about -1.25% (+16%), S&P 500 about -1% (+19.5%).", "as_of": "2024-10-04", "reasoning": "index data as of Wednesday night; barometer 36", "claim_ids": ["MT200-C03-2"]},
+    {"view": "Labour bargaining power is shifting, which with tariffs and energy prices could spark inflation.", "as_of": "2024-10-04", "reasoning": "wage settlements, EU tariffs on Chinese EVs, Middle East energy move", "claim_ids": ["MT200-C02-1"]},
+    {"view": "August 2024 was a non-event for allocators, but 2022 opened discussions, and more asset owners are now serious about trend strategies.", "as_of": "2024-10-04", "reasoning": "events like 2022 convert research into action", "claim_ids": ["MT200-C08-X1"]},
+    {"view": "40% in bonds may be too risky given government debt levels.", "as_of": "2024-10-04", "reasoning": "bond sell-off showed risk; debt accumulation", "claim_ids": ["MT200-C17-1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Is carry-optimised trend an improvement?",
+   "positions": [
+    {"speaker": "Nick Baltas", "position": "Describes the paper's carry filter as sensible: it avoids carry drag and commodity Sharpe loss while keeping the 2022 benefit; he adds that it is a nice paper but not groundbreaking.", "claim_ids": ["MT200-C13-1", "MT200-C12-2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "The 1998-2023 sample coincides with the carry regime, so it may be overfit; purity is more robust in an unknowable future.", "claim_ids": ["MT200-C13-2", "MT200-C14-R1"]}
+   ]
+  },
+  {
+   "topic": "Static versus dynamic position sizing",
+   "positions": [
+    {"speaker": "Nick Baltas", "position": "Dynamic scaling matters locally at turning points; long-run results converge because volatility mean reverts; static sizing would have helped in August 2024 but that is data mining.", "claim_ids": ["MT200-C10-2", "MT200-C07-1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Most big managers use dynamic sizing but the long-run returns of static and dynamic managers are hard to tell apart.", "claim_ids": ["MT200-C10-1", "MT200-C09-4"]}
+   ]
+  },
+  {
+   "topic": "Which speed is best and what does August 2024 teach",
+   "positions": [
+    {"speaker": "Nick Baltas", "position": "Medium speeds (3-6 months) did worst in the V shape, faster or slower did better, but no change to the model is warranted.", "claim_ids": ["MT200-C05-1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Agrees no speed is best; someone convinced that a medium speed is the best would see it as the worst here; longer lookbacks are better in long crises, short-term trend following is not profitable long run.", "claim_ids": ["MT200-C05-2", "MT200-C06-1", "MT200-C07-2"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "The speed result for August 2024 is a single episode; Baltas himself calls it a typical false positive and data mining, so the 'medium speed does worst' finding has no out-of-sample support.", "claim_ids": ["MT200-C05-1", "MT200-C07-1"]},
+  {"issue": "The 20-year lookback simulation's treatment of costs is not stated (ledger correction), so the conclusion that 20-day trend is by far the worst cannot be separated from cost effects; Baltas separately says cost impact grows with speed.", "claim_ids": ["MT200-C06-1", "MT200-C06-2"]},
+  {"issue": "The calendar-year ranking of best CTA years depends on index variant: Baltas says 2002 is one of the top three depending on the index and 2014 fourth; this is recalled from memory.", "claim_ids": ["MT200-C08-2"]},
+  {"issue": "The ledger records the sizing figures (70% mean-variance, 52% downside) from a 2019 paper using 1999-2019 data; the figures change with sample and Sharpe input, and Baltas says the exact Sharpe 'does not matter'.", "claim_ids": ["MT200-C15-1", "MT200-C15-X1"]},
+  {"issue": "The risk-budget explanation of August (equity risk re-added just before the reversal) is the host's and Baltas's reading of attribution, not shown with data, and conflicts in emphasis with the view that exposures simply followed trends.", "claim_ids": ["MT200-C04-X1", "MT200-C04-1", "MT200-C04-2"]},
+  {"issue": "Baltas's convexity point (August did not test the smile) is a claim that the month ended positive and the downturn was too short; no scatter plot is shown.", "claim_ids": ["MT200-C07-X1"]},
+  {"issue": "The host's claim that trading 500 markets is not better than 50 and that static and dynamic managers look alike is offered without evidence.", "claim_ids": ["MT200-C10-1"]}
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs the speakers treat as leading outcomes: realised volatility (forecasts next volatility, not return) for exposure; the stock-bond correlation (positive correlation in 2022 raised overshoot risk); term structure carry of bonds and commodities for carry-optimised trend; tracking error to the policy benchmark for sizing; asset owner enquiries after bond losses; wage settlements, tariffs and energy prices as inflation drivers; government debt levels for bond risk. Horizons: 1-5 years for return after elevated risk, one versus ten years for sizing.",
+ "reader_inferences": [
+  "Baltas's own sizing argument depends on the benchmark: the same trend sleeve is 'small' or 'large' depending on whether it sits inside the strategic allocation, so the answer to 'how much' is a governance choice as much as an optimisation result.",
+  "The speed result (medium worst in a V shape) and the host's lookback simulation (longer lookbacks better over 20 years) are consistent only if the V shape is rare; a model combining speeds would hedge both.",
+  "If risk is forecastable and returns are not, the volatility-scaling advice and the carry filter both aim to avoid cost without forecasting returns; neither speaker tests whether this holds out of the 1998-2023 sample.",
+  "Both speakers treat allocator behaviour (no unwinding after August, rising interest since 2022) as a function of drawdown type: V shapes do not trigger redemptions, but sustained losses do."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT200-C14-R1",
+   "chunk": "C14",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "I like the purity of trend following not being too clever not trying to forecast not trying to overfit and yes you pay a price for it",
+   "claim": "Kaastrup-Larsen prefers a pure trend following approach without clever filters, forecasts or overfitting, accepting that it has a price, because it is more robust to an unknowable future.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "trend model purity",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - compare pure and filtered models out of sample",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT200-C16-R1",
+   "chunk": "C16",
+   "speaker": "Nick Baltas",
+   "quote": "sizing it should not be too small because the impact would be tiny",
+   "claim": "Baltas says a trend allocation should not be too small because the impact would be tiny, but the larger it becomes the more conscious institutions must be about tracking error to their benchmark.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "trend allocation size versus tracking error",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "institution judged against a benchmark",
+   "testable": "yes - scenario analysis of sleeve sizes",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT200-C17-R1",
+   "chunk": "C17",
+   "speaker": "Nick Baltas",
+   "quote": "the fact that this report became again relevant for a good amount of our clients is precisely the consequence of those questions now being asked much more than in the past",
+   "claim": "Baltas says his 2019 sizing paper became relevant again for many clients because asset owners are asking more questions about 60/40 and trend than five years ago.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "asset owner interest in trend sizing",
+   "horizon": "years",
+   "direction": "rising interest in trend allocations",
+   "conditions": "",
+   "testable": "partly - client enquiry and flow data",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  }
+ ]
+}

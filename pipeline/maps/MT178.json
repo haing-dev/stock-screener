@@ -1,0 +1,428 @@
+{
+ "source_id": "MT178",
+ "episode_thesis": "Trend following is a second-responder to prolonged dislocations whose payoff comes from changing macro regimes, not from equity crashes: geopolitical-risk spikes tend to precede inflation, hit stocks and bonds, and lift commodities, so diversified trend (with commodity sleeves) earns positive returns in the biggest geopolitical-risk months, via commodities and bonds more than equities. Portfolio construction should favour many managers, equal risk and volatility targeting over forecast-dependent optimisation, and short-term trend adds value only if it is tested out-of-sample and backed by costly execution infrastructure.",
+ "speakers": [
+  {
+   "name": "Marat Molyboga",
+   "role": "chief risk officer and director of research, Efficient Capital Management (about $3.5bn allocated to CTAs); guest",
+   "speaker_note": "Captions have no speaker labels. Attribution follows turn structure and first-person statements (Efficient, Makita collaboration, his own papers); the early-2026 market narrative in C05 is split between Kaminski (first turn) and Molyboga (second turn). Kaastrup-Larsen's comment on commodities in equity crises (C15) is a vague recollection he says he may attribute to the wrong person.",
+   "fingerprint": ["trend_following", "manager_selection_allocation", "diversification_risk_parity", "position_sizing_vol_target", "research_robustness_overfitting", "behavioral_sentiment", "short_term_systematic", "crisis_alpha_convexity"],
+   "worldview_premises": [
+    {
+     "premise": "Investors are human and are prone to performance chasing and hindsight bias, so an allocator's edge comes from a process that records decisions, tests a thesis per manager, and admits where it has no forecasting skill (for example, picking next year's best trend manager).",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Efficient's 25-year manager-selection experience; measured effectiveness of recorded decisions",
+     "claim_ids": ["MT178-C01-1", "MT178-C08-1"]
+    },
+    {
+     "premise": "CTA performance has low persistence, so ranking managers on recent returns and buying the top one or two is a poor strategy; the cross-section of managers is also extremely dispersed.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "a published study of SG index constituents (colleagues Handy and Mexi); 2022 dispersion of about 80 points between best and worst manager",
+     "claim_ids": ["MT178-C08-1", "MT178-C08-2"]
+    },
+    {
+     "premise": "Allocator flows follow recent performance: investors pile into CTAs after crises, wait a year or two to decide, get disappointed with ordinary returns in normal times and deallocate just before the next crisis.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "observation of client behaviour over many years; current renewed interest after a strong run",
+     "claim_ids": ["MT178-C08-1", "MT178-C05-X1"]
+    },
+    {
+     "premise": "Institutional portfolios are driven mainly by a growth factor. Tail-risk and long-volatility strategies respond first to sudden 10-15% drops, trend responds second to dislocations lasting quarters to years, and diversifiers add uncorrelated return. Judging trend on short sharp sell-offs is a category error.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "the Makita risk mitigation framework, which he adopts",
+     "claim_ids": ["MT178-C07-1", "MT178-C07-X1", "MT178-C07-2"]
+    },
+    {
+     "premise": "Forecast-dependent optimisation (mean-variance) fails out of sample because the future cannot be predicted; diversification is the only free lunch, so equal risk allocation with cluster tweaks is the better basis for portfolios.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "personal experience trying to make mean-variance work; unstable weights and poor out-of-sample results (no data shown)",
+     "claim_ids": ["MT178-C10-2", "MT178-C10-R1"]
+    },
+    {
+     "premise": "Backtests are cheap, and reputation at stake is the discipline that limits overfitting: a bank offering hundreds or thousands of strategies bears no cost for failures, an asset manager signing off one strategy does.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "four years developing short-term strategies and learning about in-sample versus out-of-sample failure",
+     "claim_ids": ["MT178-C10-1", "MT178-C09-R1"]
+    },
+    {
+     "premise": "Inflation regimes break the 60/40 assumptions drawn from 30-40 years of data. In high-inflation history stocks and bonds were mixed, while commodities and trend following stood out.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "his own earlier study around 2022 of high-inflation episodes",
+     "claim_ids": ["MT178-C16-1", "MT178-C15-2"]
+    },
+    {
+     "premise": "Managers that differ most from long-term trend (short-term, diversifying) are harder to find and die more often, even though portfolios benefit when they are included.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Efficient's own mortality studies",
+     "claim_ids": ["MT178-C19-1", "MT178-C19-X1", "MT178-C19-R1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why geopolitical stress is profitable for trend",
+     "steps": [
+      {"from": "geopolitical risk rises", "to": "inflation higher (supply shocks, spending, money growth)", "why": "accepts Kaminski's literature on geopolitical risk preceding inflation", "claim_ids": ["MT178-C13-2"]},
+      {"from": "high inflation", "to": "commodity prices trend up and bonds trend down", "why": "price level rises, bond yields rise", "claim_ids": ["MT178-C15-2"]},
+      {"from": "persistent commodity and bond trends", "to": "positive trend returns", "why": "trend can capture the persistent moves; equity exposure is not needed", "claim_ids": ["MT178-C15-2", "MT178-C16-1"]}
+     ],
+     "evidence": "His own earlier inflation-regime study (2022 caution about 60/40) plus Kaminski's sorted-month results; no new tests of his own in the episode.",
+     "fails_when": "Shocks that are quick and reverse (trend is slow to capture short events); he suggests quarterly or annual horizons would show stronger results than monthly.",
+     "claim_ids": ["MT178-C13-2", "MT178-C16-2", "MT178-C16-X1"]
+    },
+    {
+     "topic": "Short-term trend as an add-on to long-term trend",
+     "steps": [
+      {"from": "markets reverse sharply early in a transition (for example Feb 2020)", "to": "long-term trend loses", "why": "slow signals still hold the old trend", "claim_ids": ["MT178-C17-1"]},
+      {"from": "short-term trend reacts fast", "to": "offsets those early-transition losses", "why": "faster speed re-positions sooner", "claim_ids": ["MT178-C17-1"]},
+      {"from": "blend of speeds", "to": "higher long-run performance with crisis alpha preserved", "why": "the loss offset is the source of the gain", "claim_ids": ["MT178-C17-1"]},
+      {"from": "transaction costs and market impact", "to": "edge disappears unless execution is invested in", "why": "short-term trading turns over a lot", "claim_ids": ["MT178-C17-2"]}
+     ],
+     "evidence": "Their Journal of Portfolio Management paper and a Pensions & Investments piece (cited from memory in the talk); he stresses he does not want to overstate the findings.",
+     "fails_when": "Costs are not controlled (no co-location, no specialised algorithms); and, conceded to the host, short-term managers have struggled over the last five years and their signals decay.",
+     "claim_ids": ["MT178-C17-1", "MT178-C17-2", "MT178-C19-X1"]
+    },
+    {
+     "topic": "Why a multi-manager equal-risk, vol-targeted managed account beats picking one CTA",
+     "steps": [
+      {"from": "wide dispersion of manager returns", "to": "single-manager investors risk a large idiosyncratic loss and then disappointment in the asset class", "why": "2022: one manager lost 30% while the group gained 20%", "claim_ids": ["MT178-C08-2"]},
+      {"from": "equal risk across managers plus volatility targeting at portfolio level", "to": "diversification across managers and across time", "why": "diversifies bets across time like position-level vol sizing", "claim_ids": ["MT178-C10-3", "MT178-C08-2"]},
+      {"from": "managed accounts", "to": "high-Sharpe portfolio scaled to desired volatility", "why": "funds of hedge funds cannot scale returns up", "claim_ids": ["MT178-C08-3"]}
+     ],
+     "evidence": "Efficient's research (not shown); one dispersion example for 2022.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT178-C08-2", "MT178-C08-3", "MT178-C10-3", "MT178-C17-X1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "A tested investment thesis for every manager, recorded decisions with measured effectiveness, and data on where the allocator has an edge.", "why": "to offset performance chasing and hindsight bias", "claim_ids": ["MT178-C01-1"]},
+    {"element": "universe", "practice": "Classify CTAs into long-term trend, short-term and diversifying groups, because they perform differently by environment.", "why": "groups diverge, for example short-term managers lagged badly in 2025 but all three groups did well in 2026", "claim_ids": ["MT178-C05-4", "MT178-C06-1"]},
+    {"element": "portfolio", "practice": "Hold six to ten trend managers rather than one or two, with equal risk allocation, diversified across managers and time frames, via managed accounts.", "why": "consistent crisis alpha; avoids idiosyncratic manager loss and allows scaling to target volatility", "claim_ids": ["MT178-C17-X1", "MT178-C08-2", "MT178-C08-3"]},
+    {"element": "sizing", "practice": "Equal risk allocation with top-down tweaks for clusters of strategies, then volatility targeting at portfolio level; no mean-variance optimisation.", "why": "MVO depends on forecasts of returns and covariances and gives unstable weights", "claim_ids": ["MT178-C10-2", "MT178-C10-3"]},
+    {"element": "portfolio", "practice": "Combine first responders (tail risk/long vol), second responders (trend) and diversifiers according to the Makita framework, and hold trend for prolonged dislocations only.", "why": "match each tool to the type of drawdown", "claim_ids": ["MT178-C07-1", "MT178-C07-X1"]},
+    {"element": "portfolio", "practice": "Do not rank managers on the last three years of returns; include some short-term and diversifying managers despite higher mortality.", "why": "low persistence of CTA returns; portfolio-level benefit from the less correlated groups", "claim_ids": ["MT178-C08-1", "MT178-C19-1"]},
+    {"element": "execution", "practice": "Add short-term trend only with serious execution investment (co-location, specialised algorithms) and with a test of sensitivity to costs.", "why": "the edge is very sensitive to costs and market impact", "claim_ids": ["MT178-C17-2"]}
+   ],
+   "evidence_style": "Mixes allocator experience and published or in-house studies cited from memory (persistence study, high-inflation study, short-term trend paper). He is cautious about backtests and says reputation at stake is the check on overfitting. He volunteers limits of his own findings.",
+   "current_views": [
+    {"view": "CTAs are re-attracting allocators after the June 2025 industry drawdown and the strong run since July 2025; all three CTA groups are performing well in 2026.", "as_of": "2026-06-02", "reasoning": "recent performance drives allocator interest; groups benefit mainly from equities and commodities", "claim_ids": ["MT178-C05-4", "MT178-C05-X1", "MT178-C06-1"]},
+    {"view": "Fixed income is the hardest trend sector now because the Fed has moved from expected cuts to possible hikes.", "as_of": "2026-06-02", "reasoning": "reversal of the Fed path causes whipsaw in bond trends", "claim_ids": ["MT178-C06-1"]},
+    {"view": "Allocators worried about crises, inflation or geopolitical risk should hold diversified trend with meaningful commodity trend exposure.", "as_of": "2026-06-02", "reasoning": "commodity trend is the sleeve that helps most in geopolitical environments", "claim_ids": ["MT178-C16-X1", "MT178-C16-1"]},
+    {"view": "Do not over-rely on 60/40 history from the last 30-40 years.", "as_of": "2026-06-02", "reasoning": "negative stock-bond correlation and strong returns in that sample do not hold in high-inflation regimes", "claim_ids": ["MT178-C16-1"]}
+   ]
+  },
+  {
+   "name": "Katie Kaminski",
+   "role": "CTA researcher and co-host (Alpha Simplex, Boston); author of the geopolitical-risk and managed-futures paper",
+   "speaker_note": "Captions give no labels. Her turns are identified by the paper she discusses (with co-authors Ying Sean and Alex) and first-person references to her firm; the 2026 YTD narrative in C05 is the first turn.",
+   "fingerprint": ["trend_following", "crisis_alpha_convexity", "macro_fundamental_topdown", "regime_detection", "research_robustness_overfitting", "geopolitics", "portfolio_construction_stacking"],
+   "worldview_premises": [
+    {
+     "premise": "Trend is a strategy for changing macro environments. Unusual correlation structures (energy with equities, bonds with equities) and hedged positions are good for trend because prices are moving and relationships are shifting.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "2026 observations: long AI equities and short bonds partly offset, long energy and metals; usual correlation signs reversed",
+     "claim_ids": ["MT178-C05-3", "MT178-C15-R1", "MT178-C05-1"]
+    },
+    {
+     "premise": "Geopolitical risk raises perceived disaster risk and risk aversion and lowers consumer confidence; historically increases in it are followed by two to three years of higher inflation, lower growth, supply disruptions, military spending, money growth and less trade.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Caldara-Iacoviello GPR index (press mentions) and a January 2026 study with long history cited from the literature",
+     "claim_ids": ["MT178-C12-1", "MT178-C13-1"]
+    },
+    {
+     "premise": "Fixed income is the hardest sector to trend because many dimensions move at once (higher for longer, oil inflation, AI growth).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "2026 stops and starts in bond trends",
+     "claim_ids": ["MT178-C05-2"]
+    },
+    {
+     "premise": "Estimation error is so large that complex portfolio choice fails; use only what can be estimated (volatility reasonably, correlations a little) and use it with caution.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "the 1/N paper; her academic background",
+     "claim_ids": ["MT178-C11-1", "MT178-C09-1"]
+    },
+    {
+     "premise": "History rhymes rather than repeats, so a data study of past episodes is a roadmap for the next three to five years.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "literature and her own paper; stated preference for data studies over qualitative statements",
+     "claim_ids": ["MT178-C13-X1", "MT178-C13-R1"]
+    },
+    {
+     "premise": "Reactivity helps in some crises, such as fast ones like COVID, so a toolkit of different speeds is valuable on average; 'short-term' trend is broadly defined and costs rise with speed.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "a reactivity study with co-author Alex (not shown)",
+     "claim_ids": ["MT178-C20-1", "MT178-C20-R1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Geopolitical shock to trend returns",
+     "steps": [
+      {"from": "geopolitical-risk spike", "to": "supply and demand shocks, especially in commodities", "why": "commodities are the place where shocks are shared; this time an energy shock", "claim_ids": ["MT178-C15-1"]},
+      {"from": "inflation shock expectation", "to": "bonds fall (vulnerable to inflation), dollar and energy rise", "why": "pattern in the biggest GPR-rise months since 2000 is consistent with an inflation shock", "claim_ids": ["MT178-C14-1", "MT178-C15-1"]},
+      {"from": "equities", "to": "direction depends on whether growth is hit", "why": "no growth hit in this episode, so equity trend was unclear; equities were not a main contributor in extreme months", "claim_ids": ["MT178-C15-1", "MT178-C14-X1"]},
+      {"from": "multi-asset positioning that adapts", "to": "managed futures positive in large GPR increases and decreases (smile) while hedge funds struggled", "why": "gains come from commodities and fixed income, not equity timing", "claim_ids": ["MT178-C14-2", "MT178-C14-X1"]}
+     ],
+     "evidence": "Months sorted by largest GPR increases and decreases over about 25 years (the SG Trend sample since 2000); asset class and strategy returns compared.",
+     "fails_when": "Monthly data cannot show slow-building events (the tech bubble) so the result only describes shocks that move prices within a month; she says the dollar and energy patterns could differ over longer samples.",
+     "claim_ids": ["MT178-C14-1", "MT178-C14-2", "MT178-C15-X2", "MT178-C13-3"]
+    },
+    {
+     "topic": "2026 trend profit rotation",
+     "steps": [
+      {"from": "Q1 risk-on", "to": "equity and FX trends profitable", "why": "pre-conflict trends", "claim_ids": ["MT178-C05-1"]},
+      {"from": "Iran conflict shock", "to": "trends morph into energy and inflation-uncertainty trends, equity trends de-escalate", "why": "oil shock", "claim_ids": ["MT178-C05-1"]},
+      {"from": "world looks through the conflict", "to": "equity risk-on trend returns in April", "why": "growth not hit", "claim_ids": ["MT178-C05-1"]},
+      {"from": "oil inflation uncertainty vs AI growth", "to": "bond trends stop and start (higher for longer?)", "why": "Fed outlook uncertainty", "claim_ids": ["MT178-C05-2", "MT178-C05-3"]}
+     ],
+     "evidence": "Her observation of trend sector returns through the year.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT178-C05-1", "MT178-C05-2"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Take public data (GPR index by country, threat versus realised event), sort months by the largest increases and decreases because GPR is non-stationary, then look at asset and strategy returns.", "why": "GPR is low then jumps; sorting avoids relying on a smooth series", "claim_ids": ["MT178-C13-3", "MT178-C12-1", "MT178-C14-2"]},
+    {"element": "research", "practice": "Aim for approximately right, well-thought-through decisions rather than precise complex formulas.", "why": "complex formulas are precisely wrong; estimation error dominates", "claim_ids": ["MT178-C09-1", "MT178-C11-1"]},
+    {"element": "portfolio", "practice": "Keep a toolkit of trend speeds and diversify across commodity and bond sleeves.", "why": "different crises reward different reactivity", "claim_ids": ["MT178-C20-1", "MT178-C15-1"]}
+   ],
+   "evidence_style": "Academic: public data series, sorted-event studies, literature summaries and the 1/N paper; sees a data study as better than a qualitative statement; names the limits of monthly frequency and of the sample (since 2000).",
+   "current_views": [
+    {"view": "Currently long AI equities, short bonds and long energy and base metals partly hedge each other, with correlation structure unlike the typical one; trend likes this environment.", "as_of": "2026-06-02", "reasoning": "changing correlations create trends and offsetting exposures", "claim_ids": ["MT178-C05-3"]},
+    {"view": "Fixed income is the most difficult sector now: higher-for-longer versus oil inflation versus AI growth.", "as_of": "2026-06-02", "reasoning": "too many dimensions to trend", "claim_ids": ["MT178-C05-2"]},
+    {"view": "Geopolitical tensions will be followed by inflation and a different asset behaviour over the next three to five years, so allocate to trend on that roadmap.", "as_of": "2026-06-02", "reasoning": "history rhymes; the GPR literature shows inflation after spikes", "claim_ids": ["MT178-C13-X1", "MT178-C13-1"]},
+    {"view": "Equity trading around the current conflict is hard; there was no clear equity trend.", "as_of": "2026-06-02", "reasoning": "equities were not a main contributor in extreme geopolitical months", "claim_ids": ["MT178-C14-X1"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "host, Top Traders Unplugged; long-term trend follower background",
+   "speaker_note": "Host. Mapped because he argues a position on short-term trend and states several macro headlines and a regime view. His recollection about commodities in equity crises is labelled uncertain by himself.",
+   "fingerprint": ["trend_following", "short_term_systematic", "regime_detection", "liquidity_flows", "structural_themes", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {
+     "premise": "Short lookback trend models lose money over time, so short-term trend following is not profitable in a pure sense; short-term managers' strong 2020 may have come from trading volatility expansion and exiting early, not following.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "his firm's internal research (no numbers) and observation of 2020",
+     "claim_ids": ["MT178-C18-X1", "MT178-C18-X2"]
+    },
+    {
+     "premise": "Short-term and long-vol strategies, which gained after COVID, have lagged slow trend in 2022 and the last five years, possibly because recent crises are V-shaped and too short for fast models while slow trend does not blink.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "observation, conversations with managers (Toby Crabel, Quest Partners); no data",
+     "claim_ids": ["MT178-C18-1"]
+    },
+    {
+     "premise": "Short-term signals decay: markets that open higher used to close higher about 64% of the time, now 56-58%, which matters a lot for short-term breakout.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "recounted from a Crabel interview (the host warns it may be misquoted)",
+     "claim_ids": ["MT178-C19-2"]
+    },
+    {
+     "premise": "Backtest-based criticism of QIS applies equally to replication, multi-manager portfolios and individual CTAs; the differentiator is out-of-sample evidence and accountability.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "reasoning on the guest's interview",
+     "claim_ids": ["MT178-C09-X1"]
+    },
+    {
+     "premise": "Geopolitical risk used to be sporadic; in the last five years it has become persistent, so its effect on trend following must be studied.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "career observation",
+     "claim_ids": ["MT178-C11-X1"]
+    },
+    {
+     "premise": "Equity buybacks have been a support for equity markets and index concentration (10 stocks, 40% of the S&P 500) is a structural risk; wind and solar passing gas is a structural energy shift.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "news headlines read out; the host says they are just headlines",
+     "claim_ids": ["MT178-C04-1", "MT178-C04-2", "MT178-C04-X1"]
+    },
+    {
+     "premise": "In true equity crises, the most consistent trend contributor is commodities.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "vague recollection, possibly from Alex Greyserman's research; speaker says he may be attributing it wrongly",
+     "claim_ids": ["MT178-C15-X1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why short-term trend has underperformed since 2020",
+     "steps": [
+      {"from": "post-COVID success of short-term and long-vol strategies", "to": "heavy inflows", "why": "chasing performance", "claim_ids": ["MT178-C18-1"]},
+      {"from": "recent crises are fast and V-shaped (Liberation Day) and 2022 was slow", "to": "short-term models cannot capture them or whipsaw", "why": "the crisis is over before the signal is useful, while slow trend keeps its position", "claim_ids": ["MT178-C18-1"]},
+      {"from": "signal decay in short-term breakout", "to": "lower hit rates", "why": "continuation frequency fell from 64% to 56-58%", "claim_ids": ["MT178-C19-2"]}
+     ],
+     "evidence": "Observation and manager conversations; no systematic data.",
+     "fails_when": "Not stated; he says he is not disputing the guest's findings.",
+     "claim_ids": ["MT178-C18-1", "MT178-C19-2", "MT178-C18-X2"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Test basic trend models over different lookbacks and keep long-term trend as core.", "why": "short lookbacks lose money in his internal research", "claim_ids": ["MT178-C18-X1"]},
+    {"element": "other", "practice": "Track a trend barometer (fell to the early 30s in late May, 50 on 1 June) as a gauge of the trend environment.", "why": "environment indicator", "claim_ids": ["MT178-C06-2"]}
+   ],
+   "evidence_style": "Practitioner observation, internal research cited without data, and conversations with other managers; flags own bias (career in long-term trend).",
+   "current_views": [
+    {"view": "May 2026 was quiet but positive for CTA indices (BTOP50 +31bp, about +10.25% YTD), led by equities, with energy and bonds losing.", "as_of": "2026-06-02", "reasoning": "index data read out", "claim_ids": ["MT178-C04-3"]},
+    {"view": "Early June: trend barometer recovered to 50 and CTA indices were each up about 1.25% in June versus MSCI World and S&P 500 down 34bp (both still up around 10-11% YTD).", "as_of": "2026-06-02", "reasoning": "index data read out, corrected for the caption's error on equities", "claim_ids": ["MT178-C06-2"]},
+    {"view": "Google's switch from buybacks to issuing about $80bn of stock for AI capex is a negative for the equity-support story.", "as_of": "2026-06-02", "reasoning": "buybacks have been a support for equities", "claim_ids": ["MT178-C04-1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Does short-term trend add value?",
+   "positions": [
+    {"speaker": "Marat Molyboga", "position": "Short-term trend raises long-run performance and keeps crisis alpha by offsetting early-transition losses, provided execution is heavily invested in; but good short-term managers are hard to find.", "claim_ids": ["MT178-C17-1", "MT178-C17-2", "MT178-C19-1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Short lookback trend loses money in his research, short-term managers' gains may not be trend following, and they have lagged since 2020; fast crises may also defeat them.", "claim_ids": ["MT178-C18-X1", "MT178-C18-X2", "MT178-C18-1"]},
+    {"speaker": "Katie Kaminski", "position": "Little disagreement: the definition of short-term trend is so broad that the answer depends on it; reactivity helps in fast crises but costs rise with speed.", "claim_ids": ["MT178-C20-1", "MT178-C20-R1"]}
+   ]
+  },
+  {
+   "topic": "Time horizon of the geopolitical-risk result",
+   "positions": [
+    {"speaker": "Katie Kaminski", "position": "Study uses monthly returns since 2000; long-horizon testing needs time-series momentum data back to 1900 and she says monthly data cannot show slow-building events.", "claim_ids": ["MT178-C16-2", "MT178-C15-X2"]},
+    {"speaker": "Marat Molyboga", "position": "Quarterly or annual horizons might show stronger gains because trend is slow to capture quick events.", "claim_ids": ["MT178-C16-2"]}
+   ]
+  },
+  {
+   "topic": "What makes trend work in geopolitical stress",
+   "positions": [
+    {"speaker": "Katie Kaminski", "position": "Adaptability to changing macro regimes; gains come from commodities and bonds via the inflation channel, not from equities.", "claim_ids": ["MT178-C15-1", "MT178-C14-X1"]},
+    {"speaker": "Marat Molyboga", "position": "The inflation link: GPR leads to inflation, which gives commodity up-trends and bond down-trends.", "claim_ids": ["MT178-C15-2", "MT178-C13-2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Asks whether adaptability, diversification or the commodity content is dominant; recalls commodities as the most consistent contributor in equity crises.", "claim_ids": ["MT178-C15-X1"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Guest and co-host agree on the inflation channel, but it is not tested as a mediator: the GPR-to-inflation study (long history) and the sorted-month trend result are separate and the link between them is argued, not shown.", "claim_ids": ["MT178-C13-1", "MT178-C13-2", "MT178-C14-2"]},
+  {"issue": "The geopolitical sample starts in 2000 (the SG Trend index), so only about 25 years and a few extreme months support the dollar, energy and equity direction results; Kaminski herself says the dollar and energy patterns might differ over longer periods.", "claim_ids": ["MT178-C14-1", "MT178-C16-2"]},
+  {"issue": "Molyboga's anti-overfitting argument rests on reputation risk, not evidence; the host notes the same backtest critique applies to multi-manager portfolios, and no out-of-sample record of Efficient's approach is given.", "claim_ids": ["MT178-C10-1", "MT178-C09-X1"]},
+  {"issue": "The short-term trend finding is presented from a published paper, but it is sensitive to costs and the guest concedes short-term managers use pattern recognition and decaying signals, so manager results are not a clean test of short-term trend.", "claim_ids": ["MT178-C17-2", "MT178-C19-X1"]},
+  {"issue": "Caption error: the transcript's early-June summary said CTA indices were up while equities were flat, but the text gives MSCI World and S&P 500 down 34bp; applied via the ledger correction.", "claim_ids": ["MT178-C06-2"]},
+  {"issue": "The host's claim that short lookback trend models lose money comes from internal research with no numbers or cost assumptions.", "claim_ids": ["MT178-C18-X1"]}
+ ],
+ "forward_looking_inputs": "(reader) Inputs the speakers treat as leading prices: the geopolitical risk index and its jumps (inflation 2-3 years later, commodities and bonds now); oil and energy prices passing through to inflation; the Fed path (cuts versus hikes) for bond trends; stock-bond and energy-equity correlations; the trend barometer for the CTA environment; allocator flows after strong CTA performance as a late-cycle sign; buyback net issuance and index concentration for equities. Horizons are one month for the GPR result, quarters to years for trend as a second responder, and three to five years for Kaminski's regime view.",
+ "reader_inferences": [
+  "Molyboga and Kaminski both rely on the inflation channel but the evidence is sorted-month returns, not a mediation test, so the explanation is plausible rather than demonstrated.",
+  "Molyboga's call that trend only helps in prolonged dislocations is consistent with the geopolitical result only if the sample months are the start of persistent moves; that is not shown.",
+  "The three-way split of CTAs into long-term, short-term and diversifying and the finding that short-term lagged in 2025 but did well in 2026 suggests short-term results are regime dependent, in line with Kaastrup-Larsen's V-shaped crisis argument.",
+  "Allocator flows chasing recent CTA performance (Molyboga) and the recent strong run imply future inflows rather than a signal about returns; not a trading input for the CTAs themselves."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT178-C09-R1",
+   "chunk": "C09",
+   "speaker": "Marat Molyboga",
+   "quote": "it's very easy to come up with a back test that performs well but as you know it's really unlikely",
+   "claim": "It is easy to produce a backtest that performs well, but it is unlikely to perform well going forward; developing out-of-sample strategies is very difficult.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "backtest versus live performance",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - compare backtest and live performance",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT178-C10-R1",
+   "chunk": "C10",
+   "speaker": "Marat Molyboga",
+   "quote": "I believe it it truly is the only free line free freelance in finance",
+   "claim": "Molyboga believes diversification is the only free lunch in finance and the best principle to use.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "diversification",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - principle",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT178-C13-R1",
+   "chunk": "C13",
+   "speaker": "Katie Kaminski",
+   "quote": "I like a data study, not just a qualitative statement",
+   "claim": "Kaminski prefers data-based studies to qualitative statements and treats the geopolitical-risk literature as analytically driven evidence of history rhyming.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "n/a",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - methodological point",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT178-C15-R1",
+   "chunk": "C15",
+   "speaker": "Katie Kaminski",
+   "quote": "trend as a strategy is well positioned to deal with change in the macro environment. Geopolitical risk is just an indication that the macro environment is changing.",
+   "claim": "Trend is well positioned for changes in the macro environment; geopolitical risk is an indicator that the macro environment is changing, so it is one kind of stress among others.",
+   "mechanism": "cycle_persistence",
+   "asset_class": "multi",
+   "indicator": "geopolitical risk as regime-change signal",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "macro regime changing",
+   "testable": "partly - regime change measures versus trend returns",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT178-C19-R1",
+   "chunk": "C19",
+   "speaker": "Marat Molyboga",
+   "quote": "I had to wrestle with the question well if you look at the performance of our short-term managers they've done so much better",
+   "claim": "Molyboga acknowledges the SG short-term index performance was not great while Efficient's own short-term managers did much better, and he had to ask whether that was luck.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "short-term CTA index versus selected managers",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - needs manager-level analysis",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT178-C20-R1",
+   "chunk": "C20",
+   "speaker": "Katie Kaminski",
+   "quote": "I don't think anybody disagrees. I think there's a lot of dependency on what you define of trend falling for short term",
+   "claim": "Kaminski says the apparent disagreement on short-term trend mostly disappears because the term is defined so differently and costs rise as speed increases.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "definition of short-term trend",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - definitional",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

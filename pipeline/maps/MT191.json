@@ -1,0 +1,808 @@
+{
+ "source_id": "MT191",
+ "episode_thesis": "Katie Kaminski argues that geopolitical risk, especially on the supply side, foreshadows inflation, which erodes bonds as a hedge and makes 60/40 vulnerable; trend, as an unbiased and opportunistic second responder, is the most robust protection across inflation regimes, with commodities as the first responder when used actively. Both speakers argue that the main cost to trend investors is behavioural: returns come from a few big months and investors lose a large share by timing, so roles, expectations, rebalancing and packaging are needed to hold it.",
+ "speakers": [
+  {
+   "name": "Katie Kaminski",
+   "role": "Guest co-host; trend-following researcher and practitioner (co-author of a trend-following book; ETF participant)",
+   "speaker_note": "Captions do not label speakers. Attributions follow the ledger corrections: the '38 of 40 years' remark and the Singapore JGB trader story are Niels's; the liquidity-as-hindrance explanation is Katie's answer to Niels's question; the dollar-weighted figure was quoted uncertainly ('about 1.7% or ... four something percent').",
+   "fingerprint": [
+    "trend_following",
+    "crisis_alpha_convexity",
+    "macro_fundamental_topdown",
+    "behavioral_sentiment",
+    "portfolio_construction_stacking",
+    "regime_detection",
+    "research_robustness_overfitting",
+    "manager_selection_allocation"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend following is theme-driven: it latches onto the biggest prevailing market themes, so a good trend year does not imply the year resembles earlier good years.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Compares 2022 (energy only similar) with 2026; theme rotation in March.",
+     "claim_ids": [
+      "MT191-C02-2",
+      "MT191-C02-4",
+      "MT191-C03-2"
+     ]
+    },
+    {
+     "premise": "Chaotic geopolitical and inflationary conditions are favourable for managed futures because the strategy is unbiased and reacts after the shock.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own years of experience; 'we like chaos'.",
+     "claim_ids": [
+      "MT191-C01-1",
+      "MT191-C09-1"
+     ]
+    },
+    {
+     "premise": "Geopolitical risk is measurable (news-based indices), is priced as a risk premium, has firm-level effects and leads inflation.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Academic literature: Iacoviello-type index, a January paper with over 100 years of data in 44 countries.",
+     "claim_ids": [
+      "MT191-C04-1",
+      "MT191-C04-2",
+      "MT191-C04-X1",
+      "MT191-C05-1",
+      "MT191-C05-2",
+      "MT191-C05-3",
+      "MT191-C05-4"
+     ]
+    },
+    {
+     "premise": "Inflation is the natural predator of bonds: when inflation is the key risk, bonds co-move with stocks, their volatility rises and they lose safe-haven status.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Her paper 'Bonds Behaving Badly'; 2022 and the last five years; 800 years of data (with Alex Greyserman).",
+     "claim_ids": [
+      "MT191-C06-2",
+      "MT191-C06-3",
+      "MT191-C06-4",
+      "MT191-C06-5"
+     ]
+    },
+    {
+     "premise": "60/40 is well diversified only in a low-inflation, low-geopolitical-risk world; adding geopolitical risk and deglobalisation makes it vulnerable.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Anchoring of her generation of investors to 60/40.",
+     "claim_ids": [
+      "MT191-C06-1"
+     ]
+    },
+    {
+     "premise": "Bonds remain a good holding when yields are high enough to compensate; the answer to bond weakness is price, not abandoning bonds.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Answer to a conference question 'should we have no bonds?'.",
+     "claim_ids": [
+      "MT191-C07-3"
+     ]
+    },
+    {
+     "premise": "Familiar assets feel safer than they are, so investors are more exposed in an adverse scenario than they think.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Investors with '2022 PTSD' from bonds.",
+     "claim_ids": [
+      "MT191-C07-X1",
+      "MT191-C03-1"
+     ]
+    },
+    {
+     "premise": "Trend has no standing directional bias: it was accused of long-bond bias in the bond bull market and flips to long bonds whenever bonds trend up.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "History of the strategy; frequency argument.",
+     "claim_ids": [
+      "MT191-C08-3",
+      "MT191-C08-4",
+      "MT191-C08-X1"
+     ]
+    },
+    {
+     "premise": "Different inflation regimes need different protection: commodities work when inflation spikes, equities and private equity are vulnerable, and trend is the most robust across rising and falling inflation.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "AQR risk-mitigation study across rising, stable and falling inflation; sensitivity exhibit.",
+     "claim_ids": [
+      "MT191-C09-2",
+      "MT191-C09-3",
+      "MT191-C09-4",
+      "MT191-C09-5",
+      "MT191-C09-6",
+      "MT191-C11-2"
+     ]
+    },
+    {
+     "premise": "Commodities have the wanted inflation correlation but no positive carry and high volatility, so passive exposure is poor and needs active management; indices are energy-heavy.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "AQR paper discussion; commodity returns concentrated in a few big up or down years.",
+     "claim_ids": [
+      "MT191-C12-1",
+      "MT191-C12-2",
+      "MT191-C12-3",
+      "MT191-C12-5"
+     ]
+    },
+    {
+     "premise": "Trend returns are concentrated in a few shock months, and investors lose a large part of them by timing entry and exit.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Quantica 'Paid for Presence': 5.6% average falls to about -0.5% without the 20 largest months; dollar-weighted returns well below index.",
+     "claim_ids": [
+      "MT191-C13-1",
+      "MT191-C13-2",
+      "MT191-C13-R1",
+      "MT191-C13-R2",
+      "MT191-C13-R3"
+     ]
+    },
+    {
+     "premise": "Timing and return chasing hurt in any liquid, complex strategy; patience is asymmetric across asset classes, and the ability to trade a liquid fund pulls attention to the short term.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Contrast with private equity and real estate, which hide marks; day-trading research.",
+     "claim_ids": [
+      "MT191-C13-3",
+      "MT191-C14-1",
+      "MT191-C14-X1",
+      "MT191-C14-X2",
+      "MT191-C15-3"
+     ]
+    },
+    {
+     "premise": "Institutions detach short-term emotion through formal process and change allocations mainly after governance shocks.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Observation of institutional investors.",
+     "claim_ids": [
+      "MT191-C15-2",
+      "MT191-C15-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Geopolitical risk to inflation to bond and 60/40 vulnerability",
+     "steps": [
+      {
+       "from": "Supply-side geopolitical risk (for example the US-Iran conflict)",
+       "to": "Structural inflation risk premium",
+       "why": "Literature shows geopolitical risk foreshadows inflation; premium is being repriced now.",
+       "claim_ids": [
+        "MT191-C05-3",
+        "MT191-C05-4",
+        "MT191-C04-2"
+       ]
+      },
+      {
+       "from": "Higher and more uncertain inflation",
+       "to": "Bonds stop diversifying equities",
+       "why": "Positive stock-bond correlation and higher bond volatility; bonds fail as safe haven when inflation is high and stocks fall.",
+       "claim_ids": [
+        "MT191-C06-2",
+        "MT191-C06-3",
+        "MT191-C06-4"
+       ]
+      },
+      {
+       "from": "Bonds failing as hedge",
+       "to": "60/40 becomes vulnerable",
+       "why": "The portfolio's diversification relied on a low-inflation regime.",
+       "claim_ids": [
+        "MT191-C06-1",
+        "MT191-C10-3"
+       ]
+      }
+     ],
+     "evidence": "Bonds Behaving Badly, 800-year bond data, 2022 experience, geopolitical-risk-leads-inflation paper.",
+     "fails_when": "Inflation stays low or yields become high enough to compensate (then bonds are attractive again); she also notes a risk-off move can restore the hedge.",
+     "claim_ids": [
+      "MT191-C05-4",
+      "MT191-C06-4",
+      "MT191-C07-3"
+     ]
+    },
+    {
+     "topic": "Responder framework against inflation shocks",
+     "steps": [
+      {
+       "from": "Inflation or geopolitical shock",
+       "to": "Commodities react first (first responder)",
+       "why": "Commodities correlate with inflation spikes.",
+       "claim_ids": [
+        "MT191-C09-4",
+        "MT191-C11-2"
+       ]
+      },
+      {
+       "from": "First reaction",
+       "to": "Trend reacts over weeks to months (second responder)",
+       "why": "Trend reallocates once the new price trend is established.",
+       "claim_ids": [
+        "MT191-C09-2",
+        "MT191-C11-2"
+       ]
+      },
+      {
+       "from": "Defined roles",
+       "to": "Investors hold each piece through bad stretches",
+       "why": "Knowing a holding's role reduces after-the-fact reactions.",
+       "claim_ids": [
+        "MT191-C10-2"
+       ]
+      }
+     ],
+     "evidence": "AQR risk-mitigation paper: sensitivities of 60/40, Treasuries, equities, commodities, gold, price trend and economic trend to headline, core, food and energy inflation.",
+     "fails_when": "Commodities fail outside inflation spikes; trend fails when a sudden risk-off reverses its equity-long, bond-short positioning.",
+     "claim_ids": [
+      "MT191-C09-2",
+      "MT191-C09-5",
+      "MT191-C03-1"
+     ]
+    },
+    {
+     "topic": "Why trend investors earn less than trend",
+     "steps": [
+      {
+       "from": "Trend returns are punchy",
+       "to": "A few months drive the return",
+       "why": "Without the 20 largest months the average is slightly negative.",
+       "claim_ids": [
+        "MT191-C13-1",
+        "MT191-C13-R2"
+       ]
+      },
+      {
+       "from": "Investors think they can predict the run-up",
+       "to": "They sell after underperformance and buy after strong runs",
+       "why": "Return chasing and short-term focus in a liquid vehicle.",
+       "claim_ids": [
+        "MT191-C13-R1",
+        "MT191-C13-R3",
+        "MT191-C14-1"
+       ]
+      },
+      {
+       "from": "Timing",
+       "to": "Dollar-weighted return far below index return",
+       "why": "Missing the large months.",
+       "claim_ids": [
+        "MT191-C13-2"
+       ]
+      },
+      {
+       "from": "Remedy",
+       "to": "Rebalancing, roles, benchmarks, model portfolios, packaged products",
+       "why": "Slow decisions and set expectations; institutions that rebalance may match or beat the index.",
+       "claim_ids": [
+        "MT191-C13-4",
+        "MT191-C16-1",
+        "MT191-C15-1",
+        "MT191-C16-2"
+       ]
+      }
+     ],
+     "evidence": "Quantica 'Paid for Presence': index vs dollar-weighted returns; public vs private funds.",
+     "fails_when": "Investors cannot be coached (anonymous daily-liquid ETF holders) or governance changes force a re-evaluation.",
+     "claim_ids": [
+      "MT191-C13-3",
+      "MT191-C15-2"
+     ]
+    },
+    {
+     "topic": "Why trend can be short bonds when discretionary managers cannot",
+     "steps": [
+      {
+       "from": "Rules-based process",
+       "to": "No view on direction",
+       "why": "Follows data, so short or long is symmetric.",
+       "claim_ids": [
+        "MT191-C08-X1",
+        "MT191-C08-4"
+       ]
+      },
+      {
+       "from": "No standing view",
+       "to": "Short bonds only while the trend lasts",
+       "why": "Drops the position when it ends, unlike a person whose job is to be short.",
+       "claim_ids": [
+        "MT191-C08-X1"
+       ]
+      }
+     ],
+     "evidence": "Bond bull market years when trend shorts did not pay; flips long when bonds rally.",
+     "fails_when": "In long secular bond bull markets short positions did not pay.",
+     "claim_ids": [
+      "MT191-C08-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Hold trend as a rules-based, direction-agnostic response to prevailing themes; do not make the call with gut feeling.",
+     "why": "Data over discretion; frequency of reaction matters.",
+     "claim_ids": [
+      "MT191-C08-X1",
+      "MT191-C02-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Measure a risk before managing it: turn to the academic literature and quantitative indicators (geopolitical risk index, long-history bond data).",
+     "why": "If a quant cannot measure and analyse it, it cannot be managed.",
+     "claim_ids": [
+      "MT191-C04-X1",
+      "MT191-C04-1",
+      "MT191-C06-5"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Assign each holding a role (first responder, second responder, diversifier) against inflation and geopolitical threats, not only equity drawdowns.",
+     "why": "Roles raise the chance of holding through bad periods and avoid reacting after the fact.",
+     "claim_ids": [
+      "MT191-C09-2",
+      "MT191-C10-2",
+      "MT191-C10-3"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Get commodity exposure through active commodity risk or trend, not passively or via energy-heavy indices.",
+     "why": "Passive commodity allocation has poor long-run risk-adjusted return and no carry.",
+     "claim_ids": [
+      "MT191-C12-1",
+      "MT191-C12-3",
+      "MT191-C12-5"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Buy bonds when yield compensates for risk, rather than holding none.",
+     "why": "Bonds are good if the yield is high enough.",
+     "claim_ids": [
+      "MT191-C07-3"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Institutions: set target portfolios, a clear role, expectations and long-term benchmarks, and rebalance (take profit into equities, add after drawdowns).",
+     "why": "Knowing 20 months generated most of the performance helps holding.",
+     "claim_ids": [
+      "MT191-C16-1",
+      "MT191-C13-4",
+      "MT191-C16-3"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Where investors need equity-like return and diversification but cannot hold trend separately, combine equities and trend in one portable-alpha product.",
+     "why": "Packaging reduces timing behaviour; the trend piece limits losses when equities fall.",
+     "claim_ids": [
+      "MT191-C16-2",
+      "MT191-C17-1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Slow down decision frequency and push the conversation to model-portfolio providers and consultants; supply them with information.",
+     "why": "More frequent decisions produce more adverse emotional decisions.",
+     "claim_ids": [
+      "MT191-C15-1",
+      "MT191-C15-3"
+     ]
+    }
+   ],
+   "evidence_style": "Leans on academic papers and external studies (geopolitical risk literature, her own bond research over 800 years, AQR, Quantica) plus practitioner experience and conference anecdotes; first-principles framework (responders) for explanation.",
+   "current_views": [
+    {
+     "view": "2026 was an ideal year for managed futures; trend is diversified because the AI equity uptrend and the inflation/geopolitics fixed-income and energy themes offset each other in timing.",
+     "as_of": "Oct 2026 (episode uploaded 2026-10-20; recorded on a Thursday that week)",
+     "reasoning": "Cross-asset themes work at different times of the year.",
+     "claim_ids": [
+      "MT191-C01-1",
+      "MT191-C02-3"
+     ]
+    },
+    {
+     "view": "A sudden risk-off move is probably the most dangerous scenario for trend now; she senses trends starting to pivot (as in March) toward a new fall narrative around the elections, AI concern or risk-off.",
+     "as_of": "Oct 2026 (episode uploaded 2026-10-20; recorded on a Thursday that week)",
+     "reasoning": "Trend pivots when themes change; she reads this from experience.",
+     "claim_ids": [
+      "MT191-C03-1",
+      "MT191-C03-2"
+     ]
+    },
+    {
+     "view": "Inflation risk premium from geopolitical risk is being repriced now, which should make bond investors nervous.",
+     "as_of": "Oct 2026 (episode uploaded 2026-10-20; recorded on a Thursday that week)",
+     "reasoning": "Literature shows geopolitical risk leads inflation.",
+     "claim_ids": [
+      "MT191-C05-4"
+     ]
+    },
+    {
+     "view": "Commodities returned to being useful in 2026 for trend, but investors should not hold them passively.",
+     "as_of": "Oct 2026 (episode uploaded 2026-10-20; recorded on a Thursday that week)",
+     "reasoning": "Episodic big years (2014, 2022, 2026).",
+     "claim_ids": [
+      "MT191-C12-2",
+      "MT191-C12-1"
+     ]
+    },
+    {
+     "view": "The next generation of investors will be less anchored to bonds and 60/40.",
+     "as_of": "Oct 2026 (episode uploaded 2026-10-20; recorded on a Thursday that week)",
+     "reasoning": "Younger people already behave differently on rates and housing (she agrees with Niels).",
+     "claim_ids": [
+      "MT191-C06-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; long-time trend-following industry participant",
+   "speaker_note": "Host who also states views. Per ledger corrections he, not Katie, says one bad year traumatises investors despite 38 good years of 40, and tells the Singapore JGB trader story.",
+   "fingerprint": [
+    "trend_following",
+    "behavioral_sentiment",
+    "manager_selection_allocation",
+    "portfolio_construction_stacking",
+    "macro_fundamental_topdown",
+    "costs_execution"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Investors and committees are anchored to past regimes and find it very hard to change; one bad year (2022) traumatises them despite decades of 60/40 working.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Observations of investors and committees.",
+     "claim_ids": [
+      "MT191-C03-3",
+      "MT191-C05-6"
+     ]
+    },
+    {
+     "premise": "Investors apply inconsistent standards: equities or bonds can go 5 to 12 years without a new high, yet a trend fund 1 to 2 years under its high-water mark is a catastrophe; bond optimism persists after a decade of poor returns.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Equities after 2000; a Danish pension fund that adopted leveraged risk parity near the low in rates; a European investor saying 'bonds look good again'.",
+     "claim_ids": [
+      "MT191-C07-1",
+      "MT191-C07-2"
+     ]
+    },
+    {
+     "premise": "Discretionary investors have the right narrative but under-express it (little short bond exposure in 2022; a JGB trader finds shorting highs after 25 years of buying dips hard), whereas a rules-based approach is agnostic on direction.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Anecdotes from macro funds and a Singapore client.",
+     "claim_ids": [
+      "MT191-C07-4",
+      "MT191-C08-1",
+      "MT191-C08-2"
+     ]
+    },
+    {
+     "premise": "Oil-driven higher rates, heavy Treasury issuance, AI capital demand and AI energy demand are a perfect storm that could leave traditional portfolios vulnerable for a long time.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoned from current events.",
+     "claim_ids": [
+      "MT191-C05-5"
+     ]
+    },
+    {
+     "premise": "Protection is wanted only after the event; like insurance it must be bought beforehand, even though trend does not cost money over time.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Insurance analogy.",
+     "claim_ids": [
+      "MT191-C10-1",
+      "MT191-C10-X1"
+     ]
+    },
+    {
+     "premise": "Liquid, anonymous, daily-dealing trend products make timing worse because managers cannot coach investors through drawdowns.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Own experience of ETF and mutual-fund investors being anonymous.",
+     "claim_ids": [
+      "MT191-C14-2"
+     ]
+    },
+    {
+     "premise": "Commodity scarcity narratives fuel late commodity adds, and commodity ETFs can perform poorly because of roll yield and construction.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Ukraine-era aluminium story that did not materialise.",
+     "claim_ids": [
+      "MT191-C11-X2",
+      "MT191-C12-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why traditional portfolios stay stuck",
+     "steps": [
+      {
+       "from": "Decades of 60/40 working",
+       "to": "Anchoring to the past regime",
+       "why": "Committees find it hard to change.",
+       "claim_ids": [
+        "MT191-C05-6",
+        "MT191-C03-3"
+       ]
+      },
+      {
+       "from": "Anchoring",
+       "to": "Slow adaptation despite new inflation and geopolitical drivers",
+       "why": "Perfect storm of oil, issuance and AI demand.",
+       "claim_ids": [
+        "MT191-C05-5",
+        "MT191-C06-X1"
+       ]
+      }
+     ],
+     "evidence": "Observation of committees and a Danish pension fund's losses.",
+     "fails_when": "Younger investors without legacy bias may adapt faster.",
+     "claim_ids": [
+      "MT191-C05-5",
+      "MT191-C06-X1"
+     ]
+    },
+    {
+     "topic": "Why liquid trend products invite poor timing",
+     "steps": [
+      {
+       "from": "Daily liquidity and anonymity",
+       "to": "Manager cannot coach investors",
+       "why": "Investors can trade intraday.",
+       "claim_ids": [
+        "MT191-C14-2"
+       ]
+      },
+      {
+       "from": "Drawdown",
+       "to": "Investor sells",
+       "why": "Protection is wanted after the event.",
+       "claim_ids": [
+        "MT191-C10-1"
+       ]
+      }
+     ],
+     "evidence": "Industry experience.",
+     "fails_when": "Model portfolio providers take over the coaching role (Katie's answer).",
+     "claim_ids": [
+      "MT191-C14-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Rules-based exposure with no directional view lets a portfolio be short bonds as easily as long.",
+     "why": "Avoids discretionary bias towards what worked.",
+     "claim_ids": [
+      "MT191-C08-2",
+      "MT191-C07-4"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Build structural protection against inflation ahead of time rather than forecasting inflation.",
+     "why": "The AQR lesson, as Niels reads it.",
+     "claim_ids": [
+      "MT191-C10-X1",
+      "MT191-C11-1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Explain trend using new language, for example annualised alpha versus the S&P 500.",
+     "why": "Old narratives about insurance have not worked.",
+     "claim_ids": [
+      "MT191-C10-X2",
+      "MT191-C10-1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Take care with commodity ETFs and ask an expert before implementing.",
+     "why": "Roll-yield costs and construction.",
+     "claim_ids": [
+      "MT191-C12-4"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Consider portable alpha with bonds plus trend, not only equities plus trend.",
+     "why": "Packaging that helps holding.",
+     "claim_ids": [
+      "MT191-C17-2"
+     ]
+    }
+   ],
+   "evidence_style": "Industry anecdote and market data recited at the start; defers to Katie on research papers.",
+   "current_views": [
+    {
+     "view": "Q4 2026 trend performance was driven by energy plus yen and euro, while bonds rallied against what he believed was widespread short-bond positioning among trend peers.",
+     "as_of": "Oct 2026 (episode uploaded 2026-10-20; recorded on a Thursday that week)",
+     "reasoning": "Looking at bond prices on the day.",
+     "claim_ids": [
+      "MT191-C02-1"
+     ]
+    },
+    {
+     "view": "Trend indices are up about 15.7 to 16.5 percent year to date; the trend barometer stands at 50; the equity rally is narrow and US-led; world government bonds are down about 3 percent.",
+     "as_of": "Oct 2026 (episode uploaded 2026-10-20; recorded on a Thursday that week)",
+     "reasoning": "Index levels read from data.",
+     "claim_ids": [
+      "MT191-C03-4",
+      "MT191-C03-X1",
+      "MT191-C03-5",
+      "MT191-C03-X2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Why investors time trend",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Liquidity and anonymity of daily-dealing products worsen timing; an illiquid product cannot be timed.",
+     "claim_ids": [
+      "MT191-C14-2"
+     ]
+    },
+    {
+     "speaker": "Katie Kaminski",
+     "position": "Not specific to trend or liquidity alone: any complex liquid strategy suffers it because patience is asymmetric across asset classes and trading ability focuses attention on the short term.",
+     "claim_ids": [
+      "MT191-C14-1",
+      "MT191-C14-X1",
+      "MT191-C14-X2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "How to make investors hold protection",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Insurance-style narratives have not worked as well as hoped; new language (for example annualised alpha) may be needed.",
+     "claim_ids": [
+      "MT191-C10-1",
+      "MT191-C10-X2"
+     ]
+    },
+    {
+     "speaker": "Katie Kaminski",
+     "position": "Define each holding's role (first responder, second responder, diversifier) and use new framing such as second responders instead of crisis alpha.",
+     "claim_ids": [
+      "MT191-C10-2",
+      "MT191-C11-X1",
+      "MT191-C11-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Dollar-weighted investor return figure was quoted uncertainly ('1.7%' or 'four something percent'), so the size of the timing penalty is not established.",
+   "claim_ids": [
+    "MT191-C13-2"
+   ]
+  },
+  {
+   "issue": "The claim that geopolitical risk leads inflation rests on one January paper; no horizon or effect size given.",
+   "claim_ids": [
+    "MT191-C05-3",
+    "MT191-C05-4"
+   ]
+  },
+  {
+   "issue": "Niels believes most trend peers are short bonds, but this is unsupported by data in the episode.",
+   "claim_ids": [
+    "MT191-C02-1"
+   ]
+  },
+  {
+   "issue": "Katie's reason why a risk-off move is dangerous (long equities, short bonds positioning) is not stated; it is a reader inference. Also the list of good commodity years (2014, 2022, 2026) is garbled in conversation about long and short sides.",
+   "claim_ids": [
+    "MT191-C03-1",
+    "MT191-C12-2"
+   ]
+  },
+  {
+   "issue": "Claim that 2026 is a hedged year (AI equities and inflation bonds offsetting) is qualitative; no attribution numbers given. The 'chaos is good for trend' view is not tied to a measurable proxy.",
+   "claim_ids": [
+    "MT191-C02-3",
+    "MT191-C01-1"
+   ]
+  },
+  {
+   "issue": "The trend barometer reading of 50 is read as 'strong' without definition of the scale.",
+   "claim_ids": [
+    "MT191-C03-X1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Geopolitical risk index levels (including the Bloomberg-listed measure), headline vs core/food/energy inflation, stock-bond correlation and bond volatility, bond yields relative to inflation compensation, fall catalysts named by Katie (US elections, AI concern, risk-off), trend barometer. Horizons are months to a year; Katie sees inflation risk premium repricing as ongoing.",
+ "reader_inferences": [
+  "(reader) The responder framework implies positioning should be judged by the type of inflation threat, so a commodity sleeve and trend sleeve are not substitutes.",
+  "(reader) Katie and Niels both frame trend as a hold-and-wait strategy, so their forecasts are regime descriptions rather than price targets.",
+  "(reader) The episode contains no explicit sizing rule, only roles and rebalancing between trend and equities."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT191-C13-R1",
+   "chunk": "C13",
+   "speaker": "Katie Kaminski",
+   "quote": "people think that they can predict when the big run-up is going to come.",
+   "claim": "Investors believe they can predict when trend's big run-up will arrive, which is why they time their entry and exit.",
+   "mechanism": "behavioral",
+   "asset_class": "managed futures",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "avoid timing trend",
+   "conditions": "trend returns come from a few episodic months",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT191-C13-R2",
+   "chunk": "C13",
+   "speaker": "Katie Kaminski",
+   "quote": "it's really about just holding it and waiting for the punches, right?",
+   "claim": "Because trend returns are punchy and episodic, the working approach is to hold the allocation and wait for the big months.",
+   "mechanism": "behavioral",
+   "asset_class": "managed futures",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "hold trend through drawdowns",
+   "conditions": "a few large months dominate trend returns",
+   "testable": "yes: dollar-weighted vs time-weighted return",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT191-C13-R3",
+   "chunk": "C13",
+   "speaker": "Katie Kaminski",
+   "quote": "let's say you invest right at the end of 2022 when the strategy is up 20 or 30% then there's negative returns and then you get out before you have a big run-up again",
+   "claim": "Worked example of the timing penalty: an investor who buys after a strong year, sells after the following negative returns and misses the next run-up earns far less than the index.",
+   "mechanism": "behavioral",
+   "asset_class": "managed futures",
+   "indicator": "dollar-weighted return gap",
+   "horizon": "years",
+   "direction": "investor return below index",
+   "conditions": "return chasing in a punchy strategy",
+   "testable": "yes",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map",
+   "quote_check": "exact"
+  }
+ ]
+}

@@ -1,0 +1,373 @@
+{
+ "source_id": "MT091",
+ "episode_thesis": "Rogoff argues that the 2025 US policy regime (random tariffs, fracturing globalization, pressure on institutions) resembles the Nixon-era 1970s, and that the real damage is institutional: the loss of predictability, rule of law and, eventually, Fed independence. His central forecast is a political-economy call, not a data call: central banks will not stand firm in the next big shock, US debt (7% deficit) will be resolved partly through inflation and higher rates, financial repression and price controls will return, and the dollar's global footprint, which peaked around 2015, will slowly shrink. He also sees China in a Japan-style deflationary crisis with manufactured growth figures and AI as both a possible disinflationary force and a source of fast, chaotic change.",
+ "speakers": [
+  {
+   "name": "Kenneth Rogoff",
+   "role": "Harvard economist, former IMF chief economist, chess grandmaster, co-author of 'This Time Is Different' with Carmen Reinhart; author of a new book on the dollar",
+   "speaker_note": "Auto-captions garble names and words: 'terrorists' means tariffs, 'Ben Larson' is the chess player Bent Larsen, 'Nicolola Tangan' is Nicolai Tangen, 'Euro and Carmen's book' is Ken and Carmen's book. Correction applied to MT091-C03-3: Draghi's report argued Europe has lagged in tech; the military-funds-tech link is Rogoff's own addition. Recorded in April 2025 (upload 2025-04-23), a few months into Trump's second term.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "debt_cycle_long_term",
+    "fiscal_dominance",
+    "policy_reaction_central_banks",
+    "geopolitics",
+    "regime_detection",
+    "structural_themes",
+    "behavioral_sentiment"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Institutions (rule of law, honouring debts, predictable policy, central bank independence) are the foundation of US exceptionalism and the premium on US assets; undermining them is the main long-run risk.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Historical analogy (Nixon era, 1970s) and the book 'This Time Is Different'.",
+     "claim_ids": ["MT091-C01-1", "MT091-C01-2", "MT091-C01-X1", "MT091-C02-4"]
+    },
+    {
+     "premise": "Tariffs are a tax paid by US consumers dollar for dollar, with a short-term price-level hit and a larger long-run cost in lower innovation and growth; protectionism is politically popular and bipartisan, so it is likely to persist.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Studies of the 2018 tariffs; anecdote of his librarian mother; Bernie Sanders in 2016.",
+     "claim_ids": ["MT091-C02-2", "MT091-C03-1", "MT091-C03-2", "MT091-C02-X1", "MT091-C02-X2", "MT091-C01-3"]
+    },
+    {
+     "premise": "The net effect of tariffs depends on the accompanying policy mix; 10-20% tariffs with deregulation would be bad but not crippling; randomness is the worst feature.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning; no model.",
+     "claim_ids": ["MT091-C02-3", "MT091-C02-1", "MT091-C04-2"]
+    },
+    {
+     "premise": "Consumer sentiment is split by party identity, which makes survey-based sentiment and inflation expectations biased; a confidence-driven recession is possible because the optimistic group does not offset the spending cut of the pessimistic one.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Observed divergence in consumer sentiment between Democrats and Republicans; same pattern under Biden.",
+     "claim_ids": ["MT091-C03-5", "MT091-C03-6", "MT091-C04-1", "MT091-C04-X1"]
+    },
+    {
+     "premise": "The dollar's global footprint peaked around 2015 and declines slowly because currency transitions take a century; challengers have so far fallen short, and part of dollar dominance has been luck.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Measures such as reserves, transactions and invoicing (not shown here); historical transitions (Spanish peso).",
+     "claim_ids": ["MT091-C05-1", "MT091-C05-2", "MT091-C05-3", "MT091-C05-R1", "MT091-C05-R2"]
+    },
+    {
+     "premise": "US financial reach (clearing, messaging, sanctions) pushes rivals, above all China, to build alternative rails and expand the renminbi's footprint.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Russia sanctions precedent and the possible move on Taiwan.",
+     "claim_ids": ["MT091-C05-4", "MT091-C06-1", "MT091-C06-X1"]
+    },
+    {
+     "premise": "China's official growth is overstated (deflation is inconsistent with 5% growth) and China is in a Japan-style crisis driven by property collapse, panicked consumers and over-centralised power; private-sector crushing harms long-run growth.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Deflation, housing, consumer behaviour; academics jailed for questioning figures.",
+     "claim_ids": ["MT091-C06-2", "MT091-C06-4", "MT091-C07-1", "MT091-C07-2", "MT091-C07-4"]
+    },
+    {
+     "premise": "Inflation was in remission, not dead; the low-inflation era combined central bank skill with tailwinds (globalization, China's rise, hands-off politics) that have faded; academic models hard-wired a no-inflation assumption.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "His own papers; the survey of academic economists; recency bias in secular stagnation arguments.",
+     "claim_ids": ["MT091-C07-6", "MT091-C08-1", "MT091-C08-2", "MT091-C12-4"]
+    },
+    {
+     "premise": "Inflation is a political economy problem: without real central bank independence a country periodically runs into inflation trouble, and central bank independence is a 40-year-old experiment that is politically reversible.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "History (banks inside treasuries); the first paper on central bank independence 40 years ago.",
+     "claim_ids": ["MT091-C08-3", "MT091-C09-7", "MT091-C09-8", "MT091-C09-4", "MT091-C15-X1"]
+    },
+    {
+     "premise": "The 2021-22 inflation was a central bank mistake, not just supply chains, because prices did not fall when supply chains normalised; the Fed should stick to inflation and not lead on climate or inequality.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Price levels did not come back; a survey of the American Economic Association.",
+     "claim_ids": ["MT091-C12-1", "MT091-C12-2", "MT091-C11-3", "MT091-C11-1"]
+    },
+    {
+     "premise": "Forward guidance and dot plots are overdone because markets do not believe them and they tie the central bank's hands later.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation of Fed, Bank of England and Norges Bank practice.",
+     "claim_ids": ["MT091-C11-2"]
+    },
+    {
+     "premise": "Government debt ends either in higher interest rates or in inflation, depending on central bank behaviour; debt sustainability depends on the interest rate, which is no longer zero; advanced-country debt weighs on growth by reducing options; deficits are fine in downturns but large debt limits them.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reinhart-Rogoff work; post-GFC comparison of low-debt countries.",
+     "claim_ids": ["MT091-C09-2", "MT091-C15-1", "MT091-C13-4", "MT091-C14-4", "MT091-C14-5", "MT091-C12-X1"]
+    },
+    {
+     "premise": "Historical averages from financial crises are good priors, and conventional views on crises are often too optimistic.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "The post-2008 path matched the Reinhart-Rogoff averages 'uncannily'.",
+     "claim_ids": ["MT091-C14-3", "MT091-C16-4"]
+    },
+    {
+     "premise": "The US cannot default on its own-currency debt; the risk is inflation, higher yields and financial repression, whereas foreign-currency borrowers face sudden crises.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Greece and EM examples; Japan as a high-debt, repressed, low-growth model.",
+     "claim_ids": ["MT091-C13-2", "MT091-C13-3", "MT091-C13-6", "MT091-C13-X1", "MT091-C13-X2"]
+    },
+    {
+     "premise": "Technology booms (steam, railroads, airplanes) produce hard-to-value excitement and sudden valuation collapses; AI could be disinflationary like globalization but will also cause displacement and rapid change.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical analogy; no valuation analysis.",
+     "claim_ids": ["MT091-C16-2", "MT091-C15-3", "MT091-C15-4"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Randomness in tariff policy to institutional damage",
+     "steps": [
+      {"from": "Daily-changing tariffs on random countries", "to": "Uncertainty that countries 'hide' from rather than negotiate with", "why": "The president appears to spin a wheel each morning", "claim_ids": ["MT091-C02-4", "MT091-C02-1"]},
+      {"from": "Broad 20% tariffs", "to": "A large tax hike, lower trade and disrupted supply chains", "why": "Consumers pay dollar for dollar", "claim_ids": ["MT091-C02-2", "MT091-C03-2"]},
+      {"from": "Random policy plus pressure on norms", "to": "Signals that central bank independence and rule of law may follow", "why": "The pattern suggests a willingness to use unorthodox tools", "claim_ids": ["MT091-C02-4", "MT091-C01-2"]},
+      {"from": "Drawdown in markets", "to": "No reliable presidential put", "why": "The president believes tariffs are 'beautiful' and has delivered threats before", "claim_ids": ["MT091-C04-3"]}
+    ],
+    "evidence": "2018 tariff studies; 1970s Nixon analogy; the president's first-term record.",
+    "fails_when": "He admits tomorrow the tariffs could be pulled off; the 'bluster' view of early 2025 was wrong so far.",
+    "claim_ids": ["MT091-C01-X1", "MT091-C03-1"]
+   },
+   {
+    "topic": "Confidence recession from partisan sentiment",
+    "steps": [
+      {"from": "Half of consumers (non-Trump voters) think it is the end of the world and expect inflation to soar", "to": "Spending cuts by that group", "why": "Sentiment indicators 'off the charts' for Democrats", "claim_ids": ["MT091-C03-6"]},
+      {"from": "Republicans are upbeat", "to": "Do not spend enough to offset", "why": "Not symmetric in spending behaviour", "claim_ids": ["MT091-C04-1"]},
+      {"from": "Consumption is about 70% of the economy", "to": "Consumer sentiment matters more than business sentiment", "why": "Share of consumption", "claim_ids": ["MT091-C10-6"]},
+      {"from": "Spending shortfall", "to": "Recession odds up sharply, with a confidence shock rather than oil or financial crisis", "why": "Mechanism is sentiment", "claim_ids": ["MT091-C03-5"]}
+    ],
+    "evidence": "Survey patterns (also under Biden, with reversed signs).",
+    "fails_when": "Not stated; sentiment can diverge from spending.",
+    "claim_ids": ["MT091-C04-X1"]
+   },
+   {
+    "topic": "Why the dollar's footprint shrinks slowly",
+    "steps": [
+      {"from": "Peak dollar footprint around 2015 (reserves, transactions, invoicing)", "to": "Slow decline", "why": "Reserve-currency transitions take about a century", "claim_ids": ["MT091-C05-1", "MT091-C05-3", "MT091-C05-R1"]},
+      {"from": "Challengers (euro, yen, renminbi) fall short", "to": "The dollar keeps first place", "why": "Partly luck, which Americans forget", "claim_ids": ["MT091-C05-2", "MT091-C05-R2"]},
+      {"from": "US sanction power and clearing visibility", "to": "China builds renminbi pricing, lending and its own clearing rails", "why": "Russia sanctions, Taiwan contingency", "claim_ids": ["MT091-C06-1", "MT091-C05-4", "MT091-C06-X1"]},
+      {"from": "Unconfronted debt, concerns about central bank independence", "to": "A weaker dollar and smaller footprint (like Rome)", "why": "Internal problems erode confidence", "claim_ids": ["MT091-C14-2"]}
+    ],
+    "evidence": "Measures that 'tell the same story' (not given here); historical analogies.",
+    "fails_when": "Sudden collapse is not expected; no one can take over right now.",
+    "claim_ids": ["MT091-C16-4"]
+   },
+   {
+    "topic": "China's Japan-style stagnation",
+    "steps": [
+      {"from": "Property collapse and over-building", "to": "Panicked consumers who distrust the government and do not spend", "why": "Loss of confidence", "claim_ids": ["MT091-C07-4", "MT091-C06-4"]},
+      {"from": "Weak demand", "to": "Deflation and falling interest rates", "why": "Low consumption", "claim_ids": ["MT091-C06-4", "MT091-C06-2"]},
+      {"from": "Crushing the private sector and over-centralised power", "to": "Weaker long-term growth", "why": "State does everything; Jack Ma example", "claim_ids": ["MT091-C07-2", "MT091-C07-1"]},
+      {"from": "Excess savings exported through trade surpluses", "to": "Trade friction because the rest of the world will not accept it", "why": "Not accepted", "claim_ids": ["MT091-C06-5"]},
+      {"from": "Chinese slowdown", "to": "Hits energy and commodity exporters (Norway, US, Brazil, Argentina); investment shifts to Japan, Korea, ASEAN, India", "why": "Lower demand and China plus one", "claim_ids": ["MT091-C06-3", "MT091-C07-3"]}
+    ],
+    "evidence": "Comparison with Sweden (fast recovery) and Japan (two decades); no data given.",
+    "fails_when": "A growth rebound to 8% would help exporters (a counterfactual, not a forecast).",
+    "claim_ids": ["MT091-C07-5"]
+   },
+   {
+    "topic": "Political economy of the next inflation burst",
+    "steps": [
+      {"from": "Tailwinds (globalization, China, hands-off politics) fade", "to": "Central banks lose their luck", "why": "Low inflation was skill plus tailwinds", "claim_ids": ["MT091-C08-2"]},
+      {"from": "A shock (pandemic, cyber war, climate event)", "to": "Growth falls and governments spend to hold up consumption", "why": "Fiscal support", "claim_ids": ["MT091-C09-1", "MT091-C09-5", "MT091-C09-6"]},
+      {"from": "Debt keeps rising (7% of GDP deficit, both parties want more)", "to": "Upward pressure on interest rates; raising rates is hard when they are already high", "why": "Debt ends in higher rates or inflation", "claim_ids": ["MT091-C08-6", "MT091-C09-2", "MT091-C12-6"]},
+      {"from": "Political pressure for lower rates (doves appointed, attacks on independence from left and right)", "to": "Central banks prioritise avoiding recession over fighting inflation", "why": "Stronger politics than in 2008-09", "claim_ids": ["MT091-C08-5", "MT091-C09-3", "MT091-C09-4"]},
+      {"from": "Inflation burst", "to": "Debt eroded partly by inflation but with much higher interest rates this time", "why": "Investors forgave once and will not again", "claim_ids": ["MT091-C08-4", "MT091-C12-3", "MT091-C12-5"]}
+    ],
+    "evidence": "1970s analogy and his reading of political incentives; explicitly a political-economy call, not a data forecast.",
+    "fails_when": "A 2008-style shock would not produce it; he cannot time the trigger.",
+    "claim_ids": ["MT091-C08-7", "MT091-C08-X1"]
+   },
+   {
+    "topic": "Sequence of the administration's response to inflation",
+    "steps": [
+      {"from": "DOGE cuts achieve little; then big tax cuts and stimulus, with a recession as political cover", "to": "Inflation pressures emerge that the president dislikes", "why": "Stimulus on top of tariffs", "claim_ids": ["MT091-C10-1"]},
+      {"from": "Inflation the president dislikes", "to": "Nixon-style price controls and other controls, and wider financial repression", "why": "Willingness to use tools that 'globalist economists' think are bad", "claim_ids": ["MT091-C10-2", "MT091-C10-3", "MT091-C10-X1"]},
+      {"from": "Controls and repression work only for a while", "to": "Inflation eventually spins out of control", "why": "Distortions build", "claim_ids": ["MT091-C10-4"]},
+      {"from": "The Fed, left alone, would hike even with strong jobs", "to": "A showdown with politicians, later a fight over independence", "why": "High rates have losers (young buyers of houses and cars)", "claim_ids": ["MT091-C10-5", "MT091-C10-X2", "MT091-C10-X1"]}
+    ],
+    "evidence": "Nixon 1971-73 analogy; he admits this 'may sound really out there'.",
+    "fails_when": "He does not know what side of the bed the president wakes up on; no point forecast such as 5% inflation in 2026.",
+    "claim_ids": ["MT091-C08-X1"]
+   },
+   {
+    "topic": "How a debt problem shows up in the US versus elsewhere",
+    "steps": [
+      {"from": "Foreign-currency borrowers (Greece, EM)", "to": "Sudden crisis", "why": "Cannot print the currency", "claim_ids": ["MT091-C13-2"]},
+      {"from": "US as issuer of a large currency", "to": "Inflation card and financial repression instead of default; gradual rise in yields", "why": "Banks forced to hold Treasuries; Japan as the model", "claim_ids": ["MT091-C13-3", "MT091-C13-6", "MT091-C13-X1", "MT091-C13-X2"]},
+      {"from": "Real yields swing from -1 to +2 and interest payments rise from 250 billion to nearly 1 trillion", "to": "Adjustment becomes painful but not forced immediately", "why": "Rate regime changed", "claim_ids": ["MT091-C13-7", "MT091-C14-1", "MT091-C15-1"]},
+      {"from": "Left says debt is free, right says tax cuts pay for themselves", "to": "Fiction that markets no longer believe", "why": "Visible in higher rates", "claim_ids": ["MT091-C13-1", "MT091-C12-X1"]}
+    ],
+    "evidence": "Reinhart-Rogoff history; CBO projection (debt from 36 to 65 trillion in 10 years).",
+    "fails_when": "A sudden jump in yields is not expected for the US.",
+    "claim_ids": ["MT091-C12-6", "MT091-C15-2"]
+   },
+   {
+    "topic": "Europe forced to rearm and become independent",
+    "steps": [
+      {"from": "US cannot project power in two or three regions at once (defence 3.5% of GDP versus 8% at the Cold War's end)", "to": "Europe must spend well above 2% of GDP on defence", "why": "Decades of underinvestment", "claim_ids": ["MT091-C13-5"]},
+      {"from": "Military spending funds early tech", "to": "Defence and tech independence are linked (Draghi report)", "why": "Military funding of start-ups", "claim_ids": ["MT091-C03-3"]},
+      {"from": "US trade pressure", "to": "Europe forced to be more assertive and independent, long overdue", "why": "Stability of European institutions as a counterweight", "claim_ids": ["MT091-C03-4", "MT091-C03-X1"]}
+    ],
+    "evidence": "Foreign-policy experts he talked to (not named).",
+    "fails_when": "Not stated.",
+    "claim_ids": ["MT091-C15-2"]
+   }
+  ],
+  "decision_process": [
+    {"element": "research", "practice": "Use long historical samples and historical crisis averages as priors, and treat recent experience (secular stagnation, zero rates forever) as recency bias.", "why": "The post-2008 path matched the Reinhart-Rogoff averages; low-rate arguments failed.", "claim_ids": ["MT091-C14-3", "MT091-C12-4", "MT091-C16-4"]},
+    {"element": "research", "practice": "Make regime-level political-economy calls (what institutions will do when a shock hits) and say that the trigger and date cannot be forecast, like a financial crisis.", "why": "Shocks cannot be timed; the response after a shock can be described.", "claim_ids": ["MT091-C08-X1", "MT091-C08-7", "MT091-C08-4"]},
+    {"element": "signal", "practice": "Watch consumer sentiment by political identity, central bank independence and political pressure, the real-yield level and interest payments on debt, and Chinese deflation versus the official growth figure.", "why": "These drive the confidence, inflation and debt channels he discusses.", "claim_ids": ["MT091-C03-6", "MT091-C09-4", "MT091-C13-7", "MT091-C14-1", "MT091-C06-2"]},
+    {"element": "other", "practice": "Do not rely on a presidential put; do not treat tariff announcements as bluster.", "why": "The president has conviction and delivered in his first term.", "claim_ids": ["MT091-C04-3", "MT091-C02-X1"]},
+    {"element": "other", "practice": "Weight business forecasts a little more than consumer ones within the Fed's information set, but consumer sentiment matters more for the economy.", "why": "Consumption is 70% of the economy.", "claim_ids": ["MT091-C10-6"]},
+    {"element": "other", "practice": "Central banks should avoid dot plots and heavy forward guidance, and should raise rates early rather than look through a big shock as temporary.", "why": "Guidance ties hands; the 2021-22 episode was a mistake.", "claim_ids": ["MT091-C11-2", "MT091-C12-2", "MT091-C12-1"]}
+  ],
+  "evidence_style": "Historical analogy and long samples (Nixon era, 1970s, Reinhart-Rogoff crisis data), first-principles political economy and personal authority (his own earlier papers and debates), with few numbers beyond debt, deficit, real-yield and interest-payment figures; he states that his inflation view is a political-economy call.",
+  "current_views": [
+    {"view": "The US faces a Nixon-like period; the US will still have tariffs of at least 10-20% on Europe a year from now, with European retaliation; the chief problem is randomness and what it signals about institutions.", "as_of": "April 2025 (upload 2025-04-23)", "reasoning": "The president believes in tariffs; unpredictability signals further shocks.", "claim_ids": ["MT091-C01-1", "MT091-C02-1", "MT091-C02-4"]},
+    {"view": "US recession odds have gone up sharply, via a loss of consumer confidence.", "as_of": "April 2025", "reasoning": "Partisan split in sentiment and spending.", "claim_ids": ["MT091-C03-5", "MT091-C04-1"]},
+    {"view": "No Trump put: markets should not count on a quick reversal.", "as_of": "April 2025", "reasoning": "The president has conviction.", "claim_ids": ["MT091-C04-3"]},
+    {"view": "The dollar will stay first but its footprint will keep declining; a sudden loss of status is unlikely.", "as_of": "April 2025", "reasoning": "Transitions take a century; challengers fall short; internal problems weaken the dollar.", "claim_ids": ["MT091-C05-1", "MT091-C05-3", "MT091-C14-2"]},
+    {"view": "China is in a Japan-style crisis for a few more years; official 5% growth is not credible and true growth is perhaps 2-3%.", "as_of": "April 2025", "reasoning": "Deflation, property collapse, centralised power.", "claim_ids": ["MT091-C06-2", "MT091-C07-1", "MT091-C07-4"]},
+    {"view": "India is a positive story with faster growth than China but with governance limits.", "as_of": "April 2025", "reasoning": "Infrastructure; monopolies; tariffs.", "claim_ids": ["MT091-C07-5"]},
+    {"view": "Another inflation burst similar to post-pandemic will come within about five to seven years, possibly sooner; inflation will be a problem for decades; nothing near-term.", "as_of": "April 2025", "reasoning": "Central banks cornered by political pressure; debt.", "claim_ids": ["MT091-C08-4", "MT091-C16-1", "MT091-C08-5"]},
+    {"view": "Expect Nixon-style price controls, financial repression and later a fight over Fed independence.", "as_of": "April 2025", "reasoning": "Inflation pressures from stimulus will annoy the president.", "claim_ids": ["MT091-C10-1", "MT091-C10-2", "MT091-C10-3", "MT091-C10-X1"]},
+    {"view": "US debt on its current path will be resolved partly by inflation; interest rates will rise more next time; no default.", "as_of": "April 2025", "reasoning": "7% deficit; CBO projection; own-currency issuer.", "claim_ids": ["MT091-C12-3", "MT091-C12-5", "MT091-C12-6", "MT091-C13-X1"]},
+    {"view": "Europe will have to put a lot more into defence than leaders are saying.", "as_of": "April 2025", "reasoning": "US capacity limits.", "claim_ids": ["MT091-C13-5"]},
+    {"view": "AI is positive but fast; do not assume it kills inflation; a financial crisis is more likely to come from crypto than AI valuations.", "as_of": "April 2025", "reasoning": "Political pressure on central banks; regulation of the regulated sector.", "claim_ids": ["MT091-C15-3", "MT091-C15-4", "MT091-C16-1", "MT091-C16-3", "MT091-C16-2"]},
+    {"view": "European debt crises will be harder to resolve with positive interest rates than the negative-rate pandemic package; Germany used saved fiscal space.", "as_of": "April 2025", "reasoning": "No free lunch in a positive-rate world.", "claim_ids": ["MT091-C15-2", "MT091-C14-4"]},
+    {"view": "GDP is a poor measure of the economy, and AI makes the labour market more uncertain.", "as_of": "April 2025", "reasoning": "It misses many things.", "claim_ids": ["MT091-C15-6"]}
+  ]
+ },
+ {
+  "name": "Nicolai Tangen",
+  "role": "CEO of Norges Bank Investment Management; interviewer",
+  "speaker_note": "Questions are context, not views; mapped only for the two points where he states a fact or raises a view (NBIM AI efficiency gain; Khosla's free-labour thesis).",
+  "fingerprint": [
+    "structural_themes",
+    "macro_fundamental_topdown",
+    "geopolitics"
+  ],
+  "worldview_premises": [
+    {
+     "premise": "AI is already producing large efficiency gains in firms (his own firm: about 15% last year, about 20% expected this year, from AI-assisted coding).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "NBIM internal experience, no data shown.",
+     "claim_ids": ["MT091-C15-5"]
+    },
+    {
+     "premise": "Some technologists (Vinod Khosla) argue that AI and robots will make computing and labour effectively free; the host raises this as a possible extreme deflationary force.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Relayed from a third party, not endorsed.",
+     "claim_ids": ["MT091-C15-X2"]
+    }
+  ],
+  "mechanism_chains": [],
+  "decision_process": [],
+  "evidence_style": "Anecdote from his own firm and views relayed from third parties.",
+  "current_views": [
+    {"view": "AI is raising efficiency inside NBIM (15% in the last year, 20% expected), which prompts the question whether its deflationary effect is underestimated.", "as_of": "April 2025 (upload 2025-04-23)", "reasoning": "Firm-level productivity gain.", "claim_ids": ["MT091-C15-5", "MT091-C15-X2"]}
+  ]
+ }
+ ],
+ "disagreements": [
+  {
+   "topic": "Will AI make inflation a non-issue?",
+   "positions": [
+    {"speaker": "Kenneth Rogoff", "position": "AI may be disinflationary like globalization, but the risk is fast, chaotic change, and political pressure on central banks means inflation will still be a problem for decades.", "claim_ids": ["MT091-C15-3", "MT091-C15-4", "MT091-C16-1"]},
+    {"speaker": "Nicolai Tangen", "position": "Raises the extreme deflation case (Khosla: computing and labour free) and reports 15-20% efficiency gains in his firm.", "claim_ids": ["MT091-C15-X2", "MT091-C15-5"]}
+   ]
+  },
+  {
+   "topic": "Are interest rates structurally low (secular stagnation) or was the low-rate era temporary?",
+   "positions": [
+    {"speaker": "Kenneth Rogoff", "position": "Recency bias: the low-rate era was going to end; he debated this with Summers, Krugman, Thiel and Kasparov ten years ago, and real yields moved by 3 points.", "claim_ids": ["MT091-C12-4", "MT091-C13-7", "MT091-C16-4"]},
+    {"speaker": "Larry Summers and others (named by Rogoff, not speakers)", "position": "Secular stagnation: low rates forever as growth is weak and people get older.", "claim_ids": []}
+   ]
+  },
+  {
+   "topic": "Is the market's expected Trump put real?",
+   "positions": [
+    {"speaker": "Kenneth Rogoff", "position": "There is no put; the president believes in tariffs and will not retreat after drawdowns.", "claim_ids": ["MT091-C04-3"]},
+    {"speaker": "Market consensus early in the term (as described by Rogoff, not a speaker)", "position": "The president would pull back when markets fell.", "claim_ids": []}
+   ]
+  },
+  {
+   "topic": "Is the debt problem about austerity or about financing?",
+   "positions": [
+    {"speaker": "Kenneth Rogoff", "position": "Concern about debt is not austerity; if you want bigger transfers, raise taxes; both the left (debt is free) and the right (tax cuts pay for themselves) tell fictions.", "claim_ids": ["MT091-C12-X1", "MT091-C13-1"]},
+    {"speaker": "The left and the right as described by Rogoff (not speakers)", "position": "Worry about debt means being for austerity (left) or cuts pay for themselves (right).", "claim_ids": []}
+   ]
+  },
+  {
+   "topic": "Academic consensus on inflation and the Fed's role",
+   "positions": [
+    {"speaker": "Kenneth Rogoff", "position": "Academic macro was mesmerised into a no-inflation assumption and many economists are naive in pushing the Fed toward climate and inequality.", "claim_ids": ["MT091-C08-1", "MT091-C11-1", "MT091-C07-6"]},
+    {"speaker": "Academic mainstream as described by Rogoff (not speakers)", "position": "Inflation is not a concern, and the Fed should deal with the environment and social justice.", "claim_ids": []}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Timing is vague and partly inconsistent: the book says an inflation burst in 5-7 years (perhaps sooner after the election), he sees 'nothing near-term', yet he also predicts price controls within the first term and 'wilder stuff' soon; he says he cannot forecast the date of a shock.", "claim_ids": ["MT091-C08-4", "MT091-C08-7", "MT091-C10-2", "MT091-C08-X1"]},
+  {"issue": "Debt 'does not mechanically turn into inflation' but 'will be resolved partly by inflation'; the difference rests on assumed central bank behaviour, which is itself the political call.", "claim_ids": ["MT091-C09-2", "MT091-C12-3"]},
+  {"issue": "He says the US faces no sudden coupon jump and also that markets no longer believe fiscal fictions, as visible in higher rates; the size of a market reaction to debt is left open.", "claim_ids": ["MT091-C13-3", "MT091-C13-1"]},
+  {"issue": "Tariffs are said to cause a short-term price-level effect and not a lasting inflation shock, while the president's policy mix (tax cuts, stimulus, tariffs) is later cited as an inflation source; the link is stated but not quantified.", "claim_ids": ["MT091-C03-1", "MT091-C10-1"]},
+  {"issue": "The dollar peaked around 2015 on 'many measures' that are not shown; the decline is described as slow, yet also as a 'peak' that coincides with Nixon-era parallels.", "claim_ids": ["MT091-C05-1", "MT091-C16-4"]},
+  {"issue": "China's true growth of '2-3%' is his estimate with no data; the claim about academics jailed for questioning the figures is unsourced.", "claim_ids": ["MT091-C06-2"]},
+  {"issue": "Debt and growth evidence is described as hard to parse ('I wouldn't want to overstate the weight'), yet Italy, Japan, France and Germany are used as illustrations.", "claim_ids": ["MT091-C14-4", "MT091-C13-4"]},
+  {"issue": "Draghi report attribution corrected: the first-read claim attributed the link between military spending and tech to the report; it is Rogoff's addition.", "claim_ids": ["MT091-C03-3"]},
+  {"issue": "The anecdote about his mother and the staffer who said 80% of Americans love tariffs is not evidence about popularity.", "claim_ids": ["MT091-C02-X1"]},
+  {"issue": "The 15% and 20% efficiency figures are the host's firm-level anecdote, with no method given.", "claim_ids": ["MT091-C15-5"]}
+ ],
+ "forward_looking_inputs": "(reader) Inputs Rogoff says lead outcomes: the path of tariffs and their predictability; consumer sentiment split by party (spending); political pressure on the Fed and on central bank independence; the sequence of tax cuts and stimulus after DOGE; the real-yield level and US interest payments; the deficit and CBO debt path; Chinese deflation and property; shares of dollar reserves, transactions and invoicing, and Chinese clearing rails; European defence budgets. Horizons: months for tariffs and the recession risk, five to seven years for the inflation burst (possibly sooner), decades for inflation and the dollar's footprint. He gives no triggers or thresholds and explicitly says shock timing cannot be forecast.",
+ "reader_inferences": [
+  "(reader) The core of the framework is a political-economy chain: shock, fiscal response, political pressure on central banks, tolerance of inflation, higher inflation and higher interest rates; each link is a behavioural assumption about institutions rather than a measured relationship.",
+  "(reader) His debt view separates own-currency issuers (inflation, repression, gradual yield rise) from foreign-currency borrowers (sudden stops), so the signal to watch for the US is real yields and term premium, not default risk.",
+  "(reader) 'Institutional damage first, inflation later' implies a sequence that could be monitored: tariff unpredictability, then price controls and financial repression, then a fight over the Fed.",
+  "(reader) The 'no Trump put' view conflicts with the early 2025 consensus he describes and is testable against how the administration reacted to market drawdowns."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT091-C05-R1",
+   "chunk": "C05",
+   "speaker": "Kenneth Rogoff",
+   "quote": "I would describe the dollar as late middleaged at the moment",
+   "claim": "Rogoff describes the dollar as late middle-aged: no challenger is ready to take over now, but its dominance slowly erodes.",
+   "mechanism": "slow reserve currency transition",
+   "asset_class": "FX",
+   "indicator": "dollar share of reserves, transactions and invoicing",
+   "horizon": "decades",
+   "direction": "gradual decline of footprint",
+   "conditions": "no rival ready",
+   "testable": "yes - currency share data",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT091-C05-R2",
+   "chunk": "C05",
+   "speaker": "Kenneth Rogoff",
+   "quote": "I think Americans forget the lucky part",
+   "claim": "Rogoff argues that part of the dollar's dominance has been luck (rivals stumbled), which Americans forget, so its position is less secure than assumed.",
+   "mechanism": "luck versus quality in currency dominance",
+   "asset_class": "FX",
+   "indicator": "",
+   "horizon": "decades",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

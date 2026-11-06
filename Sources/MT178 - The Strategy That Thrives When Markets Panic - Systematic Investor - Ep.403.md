@@ -5,8 +5,8 @@ date: 2026-06-08
 channel: "Top Traders Unplugged"
 url: 
 words: 14122
-claims: 50
-added_by_crosscheck: 14
+claims: 56
+added_by_crosscheck: 20
 corrections: 1
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Marat Molyboga (CRO and director of research, Efficient Capital Management)", "Katie Kaminski (co-host, Alpha Simplex)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -21,6 +21,157 @@ tags: [source, layer0]
 **Approach:** trend following, CTA, geopolitical risk, manager selection, short-term trend, portfolio construction
 
 **Cross-check completeness estimate of first read:** 0.78 - first reader caught the main points (GPR-inflation-trend link, access, MVO, short-term trend); it missed some qualifiers, a few supporting data points and the host's skepticism details.
+
+## Argument map
+
+**Episode thesis:** Trend following is a second-responder to prolonged dislocations whose payoff comes from changing macro regimes, not from equity crashes: geopolitical-risk spikes tend to precede inflation, hit stocks and bonds, and lift commodities, so diversified trend (with commodity sleeves) earns positive returns in the biggest geopolitical-risk months, via commodities and bonds more than equities. Portfolio construction should favour many managers, equal risk and volatility targeting over forecast-dependent optimisation, and short-term trend adds value only if it is tested out-of-sample and backed by costly execution infrastructure.
+
+### Marat Molyboga (chief risk officer and director of research, Efficient Capital Management (about $3.5bn allocated to CTAs); guest)
+Fingerprint: #approach/trend_following #approach/manager_selection_allocation #approach/diversification_risk_parity #approach/position_sizing_vol_target #approach/research_robustness_overfitting #approach/behavioral_sentiment #approach/short_term_systematic #approach/crisis_alpha_convexity
+_Speaker note: Captions have no speaker labels. Attribution follows turn structure and first-person statements (Efficient, Makita collaboration, his own papers); the early-2026 market narrative in C05 is split between Kaminski (first turn) and Molyboga (second turn). Kaastrup-Larsen's comment on commodities in equity crises (C15) is a vague recollection he says he may attribute to the wrong person._
+
+**Worldview premises**
+- Investors are human and are prone to performance chasing and hindsight bias, so an allocator's edge comes from a process that records decisions, tests a thesis per manager, and admits where it has no forecasting skill (for example, picking next year's best trend manager). _[behavioural, stated; support: Efficient's 25-year manager-selection experience; measured effectiveness of recorded decisions]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C01-1|C01-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C08-1|C08-1]])
+- CTA performance has low persistence, so ranking managers on recent returns and buying the top one or two is a poor strategy; the cross-section of managers is also extremely dispersed. _[empirical, stated; support: a published study of SG index constituents (colleagues Handy and Mexi); 2022 dispersion of about 80 points between best and worst manager]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C08-1|C08-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C08-2|C08-2]])
+- Allocator flows follow recent performance: investors pile into CTAs after crises, wait a year or two to decide, get disappointed with ordinary returns in normal times and deallocate just before the next crisis. _[behavioural, stated; support: observation of client behaviour over many years; current renewed interest after a strong run]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C08-1|C08-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-X1|C05-X1]])
+- Institutional portfolios are driven mainly by a growth factor. Tail-risk and long-volatility strategies respond first to sudden 10-15% drops, trend responds second to dislocations lasting quarters to years, and diversifiers add uncorrelated return. Judging trend on short sharp sell-offs is a category error. _[theoretical, stated; support: the Makita risk mitigation framework, which he adopts]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C07-1|C07-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C07-X1|C07-X1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C07-2|C07-2]])
+- Forecast-dependent optimisation (mean-variance) fails out of sample because the future cannot be predicted; diversification is the only free lunch, so equal risk allocation with cluster tweaks is the better basis for portfolios. _[experience, stated; support: personal experience trying to make mean-variance work; unstable weights and poor out-of-sample results (no data shown)]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C10-2|C10-2]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C10-R1|C10-R1]])
+- Backtests are cheap, and reputation at stake is the discipline that limits overfitting: a bank offering hundreds or thousands of strategies bears no cost for failures, an asset manager signing off one strategy does. _[experience, stated; support: four years developing short-term strategies and learning about in-sample versus out-of-sample failure]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C10-1|C10-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C09-R1|C09-R1]])
+- Inflation regimes break the 60/40 assumptions drawn from 30-40 years of data. In high-inflation history stocks and bonds were mixed, while commodities and trend following stood out. _[empirical, stated; support: his own earlier study around 2022 of high-inflation episodes]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C16-1|C16-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-2|C15-2]])
+- Managers that differ most from long-term trend (short-term, diversifying) are harder to find and die more often, even though portfolios benefit when they are included. _[empirical, stated; support: Efficient's own mortality studies]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C19-1|C19-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C19-X1|C19-X1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C19-R1|C19-R1]])
+
+**Chain: Why geopolitical stress is profitable for trend**
+1. geopolitical risk rises → inflation higher (supply shocks, spending, money growth): accepts Kaminski's literature on geopolitical risk preceding inflation ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-2|C13-2]])
+2. high inflation → commodity prices trend up and bonds trend down: price level rises, bond yields rise ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-2|C15-2]])
+3. persistent commodity and bond trends → positive trend returns: trend can capture the persistent moves; equity exposure is not needed ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-2|C15-2]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C16-1|C16-1]])
+- Evidence: His own earlier inflation-regime study (2022 caution about 60/40) plus Kaminski's sorted-month results; no new tests of his own in the episode.
+- Fails when: Shocks that are quick and reverse (trend is slow to capture short events); he suggests quarterly or annual horizons would show stronger results than monthly.
+
+**Chain: Short-term trend as an add-on to long-term trend**
+1. markets reverse sharply early in a transition (for example Feb 2020) → long-term trend loses: slow signals still hold the old trend ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C17-1|C17-1]])
+2. short-term trend reacts fast → offsets those early-transition losses: faster speed re-positions sooner ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C17-1|C17-1]])
+3. blend of speeds → higher long-run performance with crisis alpha preserved: the loss offset is the source of the gain ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C17-1|C17-1]])
+4. transaction costs and market impact → edge disappears unless execution is invested in: short-term trading turns over a lot ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C17-2|C17-2]])
+- Evidence: Their Journal of Portfolio Management paper and a Pensions & Investments piece (cited from memory in the talk); he stresses he does not want to overstate the findings.
+- Fails when: Costs are not controlled (no co-location, no specialised algorithms); and, conceded to the host, short-term managers have struggled over the last five years and their signals decay.
+
+**Chain: Why a multi-manager equal-risk, vol-targeted managed account beats picking one CTA**
+1. wide dispersion of manager returns → single-manager investors risk a large idiosyncratic loss and then disappointment in the asset class: 2022: one manager lost 30% while the group gained 20% ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C08-2|C08-2]])
+2. equal risk across managers plus volatility targeting at portfolio level → diversification across managers and across time: diversifies bets across time like position-level vol sizing ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C10-3|C10-3]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C08-2|C08-2]])
+3. managed accounts → high-Sharpe portfolio scaled to desired volatility: funds of hedge funds cannot scale returns up ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C08-3|C08-3]])
+- Evidence: Efficient's research (not shown); one dispersion example for 2022.
+- Fails when: Not stated.
+
+**Decision process**
+- [research] A tested investment thesis for every manager, recorded decisions with measured effectiveness, and data on where the allocator has an edge.. Why: to offset performance chasing and hindsight bias ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C01-1|C01-1]])
+- [universe] Classify CTAs into long-term trend, short-term and diversifying groups, because they perform differently by environment.. Why: groups diverge, for example short-term managers lagged badly in 2025 but all three groups did well in 2026 ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-4|C05-4]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C06-1|C06-1]])
+- [portfolio] Hold six to ten trend managers rather than one or two, with equal risk allocation, diversified across managers and time frames, via managed accounts.. Why: consistent crisis alpha; avoids idiosyncratic manager loss and allows scaling to target volatility ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C17-X1|C17-X1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C08-2|C08-2]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C08-3|C08-3]])
+- [sizing] Equal risk allocation with top-down tweaks for clusters of strategies, then volatility targeting at portfolio level; no mean-variance optimisation.. Why: MVO depends on forecasts of returns and covariances and gives unstable weights ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C10-2|C10-2]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C10-3|C10-3]])
+- [portfolio] Combine first responders (tail risk/long vol), second responders (trend) and diversifiers according to the Makita framework, and hold trend for prolonged dislocations only.. Why: match each tool to the type of drawdown ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C07-1|C07-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C07-X1|C07-X1]])
+- [portfolio] Do not rank managers on the last three years of returns; include some short-term and diversifying managers despite higher mortality.. Why: low persistence of CTA returns; portfolio-level benefit from the less correlated groups ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C08-1|C08-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C19-1|C19-1]])
+- [execution] Add short-term trend only with serious execution investment (co-location, specialised algorithms) and with a test of sensitivity to costs.. Why: the edge is very sensitive to costs and market impact ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C17-2|C17-2]])
+
+**Evidence style:** Mixes allocator experience and published or in-house studies cited from memory (persistence study, high-inflation study, short-term trend paper). He is cautious about backtests and says reputation at stake is the check on overfitting. He volunteers limits of his own findings.
+
+**Views at the time**
+- (2026-06-02) CTAs are re-attracting allocators after the June 2025 industry drawdown and the strong run since July 2025; all three CTA groups are performing well in 2026.. Reasoning: recent performance drives allocator interest; groups benefit mainly from equities and commodities ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-4|C05-4]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-X1|C05-X1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C06-1|C06-1]])
+- (2026-06-02) Fixed income is the hardest trend sector now because the Fed has moved from expected cuts to possible hikes.. Reasoning: reversal of the Fed path causes whipsaw in bond trends ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C06-1|C06-1]])
+- (2026-06-02) Allocators worried about crises, inflation or geopolitical risk should hold diversified trend with meaningful commodity trend exposure.. Reasoning: commodity trend is the sleeve that helps most in geopolitical environments ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C16-X1|C16-X1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C16-1|C16-1]])
+- (2026-06-02) Do not over-rely on 60/40 history from the last 30-40 years.. Reasoning: negative stock-bond correlation and strong returns in that sample do not hold in high-inflation regimes ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C16-1|C16-1]])
+
+### Katie Kaminski (CTA researcher and co-host (Alpha Simplex, Boston); author of the geopolitical-risk and managed-futures paper)
+Fingerprint: #approach/trend_following #approach/crisis_alpha_convexity #approach/macro_fundamental_topdown #approach/regime_detection #approach/research_robustness_overfitting #approach/geopolitics #approach/portfolio_construction_stacking
+_Speaker note: Captions give no labels. Her turns are identified by the paper she discusses (with co-authors Ying Sean and Alex) and first-person references to her firm; the 2026 YTD narrative in C05 is the first turn._
+
+**Worldview premises**
+- Trend is a strategy for changing macro environments. Unusual correlation structures (energy with equities, bonds with equities) and hedged positions are good for trend because prices are moving and relationships are shifting. _[theoretical, stated; support: 2026 observations: long AI equities and short bonds partly offset, long energy and metals; usual correlation signs reversed]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-3|C05-3]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-R1|C15-R1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-1|C05-1]])
+- Geopolitical risk raises perceived disaster risk and risk aversion and lowers consumer confidence; historically increases in it are followed by two to three years of higher inflation, lower growth, supply disruptions, military spending, money growth and less trade. _[empirical, stated; support: Caldara-Iacoviello GPR index (press mentions) and a January 2026 study with long history cited from the literature]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C12-1|C12-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-1|C13-1]])
+- Fixed income is the hardest sector to trend because many dimensions move at once (higher for longer, oil inflation, AI growth). _[experience, stated; support: 2026 stops and starts in bond trends]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-2|C05-2]])
+- Estimation error is so large that complex portfolio choice fails; use only what can be estimated (volatility reasonably, correlations a little) and use it with caution. _[theoretical, stated; support: the 1/N paper; her academic background]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C11-1|C11-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C09-1|C09-1]])
+- History rhymes rather than repeats, so a data study of past episodes is a roadmap for the next three to five years. _[experience, stated; support: literature and her own paper; stated preference for data studies over qualitative statements]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-X1|C13-X1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-R1|C13-R1]])
+- Reactivity helps in some crises, such as fast ones like COVID, so a toolkit of different speeds is valuable on average; 'short-term' trend is broadly defined and costs rise with speed. _[empirical, stated; support: a reactivity study with co-author Alex (not shown)]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C20-1|C20-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C20-R1|C20-R1]])
+
+**Chain: Geopolitical shock to trend returns**
+1. geopolitical-risk spike → supply and demand shocks, especially in commodities: commodities are the place where shocks are shared; this time an energy shock ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-1|C15-1]])
+2. inflation shock expectation → bonds fall (vulnerable to inflation), dollar and energy rise: pattern in the biggest GPR-rise months since 2000 is consistent with an inflation shock ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C14-1|C14-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-1|C15-1]])
+3. equities → direction depends on whether growth is hit: no growth hit in this episode, so equity trend was unclear; equities were not a main contributor in extreme months ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-1|C15-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C14-X1|C14-X1]])
+4. multi-asset positioning that adapts → managed futures positive in large GPR increases and decreases (smile) while hedge funds struggled: gains come from commodities and fixed income, not equity timing ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C14-2|C14-2]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C14-X1|C14-X1]])
+- Evidence: Months sorted by largest GPR increases and decreases over about 25 years (the SG Trend sample since 2000); asset class and strategy returns compared.
+- Fails when: Monthly data cannot show slow-building events (the tech bubble) so the result only describes shocks that move prices within a month; she says the dollar and energy patterns could differ over longer samples.
+
+**Chain: 2026 trend profit rotation**
+1. Q1 risk-on → equity and FX trends profitable: pre-conflict trends ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-1|C05-1]])
+2. Iran conflict shock → trends morph into energy and inflation-uncertainty trends, equity trends de-escalate: oil shock ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-1|C05-1]])
+3. world looks through the conflict → equity risk-on trend returns in April: growth not hit ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-1|C05-1]])
+4. oil inflation uncertainty vs AI growth → bond trends stop and start (higher for longer?): Fed outlook uncertainty ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-2|C05-2]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-3|C05-3]])
+- Evidence: Her observation of trend sector returns through the year.
+- Fails when: Not stated.
+
+**Decision process**
+- [research] Take public data (GPR index by country, threat versus realised event), sort months by the largest increases and decreases because GPR is non-stationary, then look at asset and strategy returns.. Why: GPR is low then jumps; sorting avoids relying on a smooth series ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-3|C13-3]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C12-1|C12-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C14-2|C14-2]])
+- [research] Aim for approximately right, well-thought-through decisions rather than precise complex formulas.. Why: complex formulas are precisely wrong; estimation error dominates ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C09-1|C09-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C11-1|C11-1]])
+- [portfolio] Keep a toolkit of trend speeds and diversify across commodity and bond sleeves.. Why: different crises reward different reactivity ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C20-1|C20-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-1|C15-1]])
+
+**Evidence style:** Academic: public data series, sorted-event studies, literature summaries and the 1/N paper; sees a data study as better than a qualitative statement; names the limits of monthly frequency and of the sample (since 2000).
+
+**Views at the time**
+- (2026-06-02) Currently long AI equities, short bonds and long energy and base metals partly hedge each other, with correlation structure unlike the typical one; trend likes this environment.. Reasoning: changing correlations create trends and offsetting exposures ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-3|C05-3]])
+- (2026-06-02) Fixed income is the most difficult sector now: higher-for-longer versus oil inflation versus AI growth.. Reasoning: too many dimensions to trend ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C05-2|C05-2]])
+- (2026-06-02) Geopolitical tensions will be followed by inflation and a different asset behaviour over the next three to five years, so allocate to trend on that roadmap.. Reasoning: history rhymes; the GPR literature shows inflation after spikes ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-X1|C13-X1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-1|C13-1]])
+- (2026-06-02) Equity trading around the current conflict is hard; there was no clear equity trend.. Reasoning: equities were not a main contributor in extreme geopolitical months ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C14-X1|C14-X1]])
+
+### Niels Kaastrup-Larsen (host, Top Traders Unplugged; long-term trend follower background)
+Fingerprint: #approach/trend_following #approach/short_term_systematic #approach/regime_detection #approach/liquidity_flows #approach/structural_themes #approach/research_robustness_overfitting
+_Speaker note: Host. Mapped because he argues a position on short-term trend and states several macro headlines and a regime view. His recollection about commodities in equity crises is labelled uncertain by himself._
+
+**Worldview premises**
+- Short lookback trend models lose money over time, so short-term trend following is not profitable in a pure sense; short-term managers' strong 2020 may have come from trading volatility expansion and exiting early, not following. _[experience, stated; support: his firm's internal research (no numbers) and observation of 2020]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C18-X1|C18-X1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C18-X2|C18-X2]])
+- Short-term and long-vol strategies, which gained after COVID, have lagged slow trend in 2022 and the last five years, possibly because recent crises are V-shaped and too short for fast models while slow trend does not blink. _[empirical, stated; support: observation, conversations with managers (Toby Crabel, Quest Partners); no data]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C18-1|C18-1]])
+- Short-term signals decay: markets that open higher used to close higher about 64% of the time, now 56-58%, which matters a lot for short-term breakout. _[empirical, stated; support: recounted from a Crabel interview (the host warns it may be misquoted)]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C19-2|C19-2]])
+- Backtest-based criticism of QIS applies equally to replication, multi-manager portfolios and individual CTAs; the differentiator is out-of-sample evidence and accountability. _[theoretical, stated; support: reasoning on the guest's interview]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C09-X1|C09-X1]])
+- Geopolitical risk used to be sporadic; in the last five years it has become persistent, so its effect on trend following must be studied. _[experience, stated; support: career observation]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C11-X1|C11-X1]])
+- Equity buybacks have been a support for equity markets and index concentration (10 stocks, 40% of the S&P 500) is a structural risk; wind and solar passing gas is a structural energy shift. _[institutional, stated; support: news headlines read out; the host says they are just headlines]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C04-1|C04-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C04-2|C04-2]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C04-X1|C04-X1]])
+- In true equity crises, the most consistent trend contributor is commodities. _[experience, stated; support: vague recollection, possibly from Alex Greyserman's research; speaker says he may be attributing it wrongly]_ ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-X1|C15-X1]])
+
+**Chain: Why short-term trend has underperformed since 2020**
+1. post-COVID success of short-term and long-vol strategies → heavy inflows: chasing performance ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C18-1|C18-1]])
+2. recent crises are fast and V-shaped (Liberation Day) and 2022 was slow → short-term models cannot capture them or whipsaw: the crisis is over before the signal is useful, while slow trend keeps its position ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C18-1|C18-1]])
+3. signal decay in short-term breakout → lower hit rates: continuation frequency fell from 64% to 56-58% ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C19-2|C19-2]])
+- Evidence: Observation and manager conversations; no systematic data.
+- Fails when: Not stated; he says he is not disputing the guest's findings.
+
+**Decision process**
+- [research] Test basic trend models over different lookbacks and keep long-term trend as core.. Why: short lookbacks lose money in his internal research ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C18-X1|C18-X1]])
+- [other] Track a trend barometer (fell to the early 30s in late May, 50 on 1 June) as a gauge of the trend environment.. Why: environment indicator ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C06-2|C06-2]])
+
+**Evidence style:** Practitioner observation, internal research cited without data, and conversations with other managers; flags own bias (career in long-term trend).
+
+**Views at the time**
+- (2026-06-02) May 2026 was quiet but positive for CTA indices (BTOP50 +31bp, about +10.25% YTD), led by equities, with energy and bonds losing.. Reasoning: index data read out ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C04-3|C04-3]])
+- (2026-06-02) Early June: trend barometer recovered to 50 and CTA indices were each up about 1.25% in June versus MSCI World and S&P 500 down 34bp (both still up around 10-11% YTD).. Reasoning: index data read out, corrected for the caption's error on equities ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C06-2|C06-2]])
+- (2026-06-02) Google's switch from buybacks to issuing about $80bn of stock for AI capex is a negative for the equity-support story.. Reasoning: buybacks have been a support for equities ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C04-1|C04-1]])
+
+### Disagreements
+- **Does short-term trend add value?**: Marat Molyboga: Short-term trend raises long-run performance and keeps crisis alpha by offsetting early-transition losses, provided execution is heavily invested in; but good short-term managers are hard to find. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C17-1|C17-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C17-2|C17-2]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C19-1|C19-1]]); Niels Kaastrup-Larsen: Short lookback trend loses money in his research, short-term managers' gains may not be trend following, and they have lagged since 2020; fast crises may also defeat them. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C18-X1|C18-X1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C18-X2|C18-X2]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C18-1|C18-1]]); Katie Kaminski: Little disagreement: the definition of short-term trend is so broad that the answer depends on it; reactivity helps in fast crises but costs rise with speed. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C20-1|C20-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C20-R1|C20-R1]])
+- **Time horizon of the geopolitical-risk result**: Katie Kaminski: Study uses monthly returns since 2000; long-horizon testing needs time-series momentum data back to 1900 and she says monthly data cannot show slow-building events. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C16-2|C16-2]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-X2|C15-X2]]); Marat Molyboga: Quarterly or annual horizons might show stronger gains because trend is slow to capture quick events. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C16-2|C16-2]])
+- **What makes trend work in geopolitical stress**: Katie Kaminski: Adaptability to changing macro regimes; gains come from commodities and bonds via the inflation channel, not from equities. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-1|C15-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C14-X1|C14-X1]]); Marat Molyboga: The inflation link: GPR leads to inflation, which gives commodity up-trends and bond down-trends. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-2|C15-2]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-2|C13-2]]); Niels Kaastrup-Larsen: Asks whether adaptability, diversification or the commodity content is dominant; recalls commodities as the most consistent contributor in equity crises. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-X1|C15-X1]])
+
+### Gaps and conflicts
+- Guest and co-host agree on the inflation channel, but it is not tested as a mediator: the GPR-to-inflation study (long history) and the sorted-month trend result are separate and the link between them is argued, not shown. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-1|C13-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-2|C13-2]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C14-2|C14-2]])
+- The geopolitical sample starts in 2000 (the SG Trend index), so only about 25 years and a few extreme months support the dollar, energy and equity direction results; Kaminski herself says the dollar and energy patterns might differ over longer periods. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C14-1|C14-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C16-2|C16-2]])
+- Molyboga's anti-overfitting argument rests on reputation risk, not evidence; the host notes the same backtest critique applies to multi-manager portfolios, and no out-of-sample record of Efficient's approach is given. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C10-1|C10-1]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C09-X1|C09-X1]])
+- The short-term trend finding is presented from a published paper, but it is sensitive to costs and the guest concedes short-term managers use pattern recognition and decaying signals, so manager results are not a clean test of short-term trend. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C17-2|C17-2]], [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C19-X1|C19-X1]])
+- Caption error: the transcript's early-June summary said CTA indices were up while equities were flat, but the text gives MSCI World and S&P 500 down 34bp; applied via the ledger correction. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C06-2|C06-2]])
+- The host's claim that short lookback trend models lose money comes from internal research with no numbers or cost assumptions. ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C18-X1|C18-X1]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Inputs the speakers treat as leading prices: the geopolitical risk index and its jumps (inflation 2-3 years later, commodities and bonds now); oil and energy prices passing through to inflation; the Fed path (cuts versus hikes) for bond trends; stock-bond and energy-equity correlations; the trend barometer for the CTA environment; allocator flows after strong CTA performance as a late-cycle sign; buyback net issuance and index concentration for equities. Horizons are one month for the GPR result, quarters to years for trend as a second responder, and three to five years for Kaminski's regime view.
+
+### Reader inferences (not stated by the speakers)
+- Molyboga and Kaminski both rely on the inflation channel but the evidence is sorted-month returns, not a mediation test, so the explanation is plausible rather than demonstrated.
+- Molyboga's call that trend only helps in prolonged dislocations is consistent with the geopolitical result only if the sample months are the start of persistent moves; that is not shown.
+- The three-way split of CTAs into long-term, short-term and diversifying and the finding that short-term lagged in 2025 but did well in 2026 suggests short-term results are regime dependent, in line with Kaastrup-Larsen's V-shaped crisis argument.
+- Allocator flows chasing recent CTA performance (Molyboga) and the recent strong run imply future inflows rather than a signal about returns; not a trading input for the CTAs themselves.
 
 ## Coverage
 
@@ -144,6 +295,10 @@ tags: [source, layer0]
   > you could even say that about multi-manager firms saying oh we take all these managers we do a back test and they look good together
   indicator: backtest overfitting · asset: multi · testable: no - methodological point · confidence: medium
   ^MT178-C09-X1
+- **Marat Molyboga** It is easy to produce a backtest that performs well, but it is unlikely to perform well going forward; developing out-of-sample strategies is very difficult.  #mech/research_method _(added by map cross-check)_
+  > it's very easy to come up with a back test that performs well but as you know it's really unlikely
+  indicator: backtest versus live performance · asset: multi · horizon: n/a · testable: yes - compare backtest and live performance · confidence: high
+  ^MT178-C09-R1
 
 ### C10
 - **Marat Molyboga** Bank QIS strategies are more prone to overfitting than managed products because the issuer does not stake reputation on one strategy and offers many backtested ones.  #mech/research_method
@@ -158,6 +313,10 @@ tags: [source, layer0]
   > you can also diversify it across the dimension of time
   indicator: portfolio-level volatility targeting · asset: multi · testable: yes - vol-targeted vs untargeted · confidence: medium
   ^MT178-C10-3
+- **Marat Molyboga** Molyboga believes diversification is the only free lunch in finance and the best principle to use.  #mech/risk_management _(added by map cross-check)_
+  > I believe it it truly is the only free line free freelance in finance
+  indicator: diversification · asset: multi · horizon: n/a · testable: no - principle · confidence: high
+  ^MT178-C10-R1
 
 ### C11
 - **Katie Kaminski** The 1/N paper shows estimation error makes complex portfolio choice fail; focus on what can be estimated (correlations a little, volatility reasonably) and use with caution.  #mech/research_method
@@ -192,6 +351,10 @@ tags: [source, layer0]
   > this paper was a great road map of how to think about investing over the next three to five years
   indicator: geopolitical risk index · asset: multi · horizon: years · conditions: elevated geopolitical tensions · testable: partly - depends on the historical analogue · confidence: medium
   ^MT178-C13-X1
+- **Katie Kaminski** Kaminski prefers data-based studies to qualitative statements and treats the geopolitical-risk literature as analytically driven evidence of history rhyming.  #mech/research_method _(added by map cross-check)_
+  > I like a data study, not just a qualitative statement
+  indicator: n/a · asset: multi · horizon: n/a · testable: no - methodological point · confidence: high
+  ^MT178-C13-R1
 
 ### C14
 - **Katie Kaminski** In months of the largest geopolitical risk increases over the last 25 years equities and bonds fell, energy spiked and the US dollar rose, consistent with an inflation shock.  #mech/risk_premium
@@ -224,6 +387,10 @@ tags: [source, layer0]
   > Since this is a monthly frequency, you know, you're not going to see trend being able to capture that tech bubble
   indicator: monthly frequency trend returns · asset: multi · horizon: months · conditions: monthly data, slow-building crises · testable: yes - re-run at quarterly or annual frequency · confidence: high
   ^MT178-C15-X2
+- **Katie Kaminski** Trend is well positioned for changes in the macro environment; geopolitical risk is an indicator that the macro environment is changing, so it is one kind of stress among others.  #mech/cycle_persistence _(added by map cross-check)_
+  > trend as a strategy is well positioned to deal with change in the macro environment. Geopolitical risk is just an indication that the macro environment is changing.
+  indicator: geopolitical risk as regime-change signal · asset: multi · horizon: months · conditions: macro regime changing · testable: partly - regime change measures versus trend returns · confidence: medium
+  ^MT178-C15-R1
 
 ### C16
 - **Marat Molyboga** In high-inflation historical periods stocks and bonds were mixed and negatively correlated 60/40 assumptions failed; long commodities and trend following stood out, so don't over-rely on 30-40 years of 60/40 history.  #mech/cycle_persistence
@@ -280,10 +447,18 @@ tags: [source, layer0]
   > a lot of managers use some for example pattern recognition techniques to generate returns right so it's not just purely short-term trend
   indicator: short-term CTA strategies · asset: multi · horizon: weeks · testable: no - manager-specific · confidence: medium
   ^MT178-C19-X1
+- **Marat Molyboga** Molyboga acknowledges the SG short-term index performance was not great while Efficient's own short-term managers did much better, and he had to ask whether that was luck.  #mech/research_method _(added by map cross-check)_
+  > I had to wrestle with the question well if you look at the performance of our short-term managers they've done so much better
+  indicator: short-term CTA index versus selected managers · asset: multi · horizon: years · testable: partly - needs manager-level analysis · confidence: medium
+  ^MT178-C19-R1
 
 ### C20
 - **Katie Kaminski** Faster, more reactive trend helps in fast crises like COVID, and a toolkit with varying speeds is valuable; the term short-term trend is defined broadly and costs rise with speed.  #mech/slow_reaction
   > reactivity helps in certain types of crisises so something like a covid but on average it's good to have that toolkit
   indicator: trend speed mix · asset: multi · direction: fast trend gains in fast crises · horizon: weeks · conditions: faster speeds face higher costs · testable: yes - speed-blend backtest · confidence: medium
   ^MT178-C20-1
+- **Katie Kaminski** Kaminski says the apparent disagreement on short-term trend mostly disappears because the term is defined so differently and costs rise as speed increases.  #mech/research_method _(added by map cross-check)_
+  > I don't think anybody disagrees. I think there's a lot of dependency on what you define of trend falling for short term
+  indicator: definition of short-term trend · asset: multi · horizon: n/a · testable: no - definitional · confidence: medium
+  ^MT178-C20-R1
 

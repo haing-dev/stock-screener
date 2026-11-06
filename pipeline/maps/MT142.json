@@ -1,0 +1,607 @@
+{
+ "source_id": "MT142",
+ "episode_thesis": "Scott Bessent, speaking as US Treasury Secretary during the March 2026 Iran conflict, explains his macro-investing method (bet against elite and consensus framing at turning points, require a mispriced vision plus a timed catalyst, shelve trades whose timing is wrong, keep risk within what you can hold) and carries the same lens into policy: functioning, liquid markets and the Treasury market matter most; an oil shock hurts through duration not level; announced supply releases are priced in early; extraordinary central-bank measures should be brief; and tariffs are being rebuilt under other statutes. His US-relative-strength case rests on energy, technology (AI compute) and military power.",
+ "speakers": [
+  {
+   "name": "Scott Bessent",
+   "role": "US Treasury Secretary; former Soros Fund Management CIO and Key Square Group founder (global macro)",
+   "speaker_note": "Master Investor Podcast (Wilfried Frost), upload 2026-03-13, recorded roughly two weeks after the Iran conflict began on February 28, 2026; the interview was interrupted for a Situation Room meeting. As a sitting official his statements on the war, oil, tariffs and Treasuries are official positions, not independent forecasts. Host Wilfried Frost's remarks are context and are cited only where the host quotes a number or Bessent's earlier line (MT142-C04-2, C03-X2, C08-X2, C09-X1, C11-1). Corrections applied: MT142-C03-3 (the current-account shift after Fukushima did not move the yen, which stayed at 78-83), MT142-C04-2 (the Abenomics line is Bessent's own, quoted by the host; Bessent rejects the host's premise that he now ignores the market), MT142-C09-2 (gold revaluation and balance-sheet reduction are independent).",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "valuation_contrarian",
+    "behavioral_sentiment",
+    "policy_reaction_central_banks",
+    "geopolitics",
+    "commodity_fundamentals",
+    "regime_detection",
+    "structural_themes"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "The crowd and elite consensus are right most of the time (and that is the momentum), but the large returns come from turning points where a different outcome than consensus can be imagined; ask how the framing could be wrong.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His career: ERM exit, US national housing decline, Japan escaping deflation (Abe), Berlin Wall as an analogy.",
+     "claim_ids": [
+      "MT142-C01-3",
+      "MT142-C02-1",
+      "MT142-C01-R1"
+     ]
+    },
+    {
+     "premise": "A macro trade needs three things: a vision of a different state of the world, a view on timing (when, why, how) and implementation, and it must be mispriced.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Bruce Kovner's line about imagining a different state of the world; the yen trade.",
+     "claim_ids": [
+      "MT142-C03-1"
+     ]
+    },
+    {
+     "premise": "Endowment bias (wanting to implement the work already done) is a major psychological trap; strength lies in doing immense work and then shelving the idea until the catalyst arrives.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Yen trade: shelved after Fukushima because nothing moved, executed only when Abe's return and BoJ board vacancies appeared.",
+     "claim_ids": [
+      "MT142-C03-2",
+      "MT142-C03-3"
+     ]
+    },
+    {
+     "premise": "Policy regime changes can move prices a great deal whether or not the policy ultimately works, and local networks give early reads on political catalysts; Abenomics was first a market success and then a structural success.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Yen trade; 'I have no idea but it will be the market ride of a lifetime' (quoted by the host); contact in Japan told him of Abe's return.",
+     "claim_ids": [
+      "MT142-C04-1",
+      "MT142-C04-2",
+      "MT142-C04-3",
+      "MT142-C04-X1",
+      "MT142-C03-X2"
+     ]
+    },
+    {
+     "premise": "Panic arises from loss of price discovery (closed markets, gating), not from price moves themselves; so the policy priority is that markets continuously function, and the Treasury market is the most important.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "35-40 years of market experience; Treasury's operational and settlement oversight.",
+     "claim_ids": [
+      "MT142-C01-1",
+      "MT142-C02-2"
+     ]
+    },
+    {
+     "premise": "Market prices carry information even for a policymaker; the job moved from listening at the door of policymakers to asking what can, should and will be done and how the economy and markets will react.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own transition from investor to Treasury Secretary.",
+     "claim_ids": [
+      "MT142-C04-4",
+      "MT142-C04-2"
+     ]
+    },
+    {
+     "premise": "Markets price announced actions before they happen ('the market lives in the future'), so an anticipated supply release may do nothing once announced.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "The oil spike reversed in the biggest single-day reversal in history on a press report of a 300-400 million barrel IEA release.",
+     "claim_ids": [
+      "MT142-C06-1",
+      "MT142-C06-R2"
+     ]
+    },
+    {
+     "premise": "What hurts the economy from an oil spike is the duration, not the level; US record liquids production insulates domestic household bills.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "2008 (peak around 147) as a comparison; natural gas prices little affected.",
+     "claim_ids": [
+      "MT142-C05-1"
+     ]
+    },
+    {
+     "premise": "The Fed's reaction to an energy shock depends on whether it lifts inflation expectations and on how long it slows growth (potential energy that can bounce back versus a permanent slowdown).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning only.",
+     "claim_ids": [
+      "MT142-C07-4"
+     ]
+    },
+    {
+     "premise": "Extraordinary central-bank measures should only occur in extraordinary times and then stop: the BoE stabilised gilts in 2020 and stepped away, whereas the Fed's continued QE helped cause the 2022-23 inflation.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Comparison of BoE and Fed QE; no data.",
+     "claim_ids": [
+      "MT142-C09-1",
+      "MT142-C08-X1"
+     ]
+    },
+    {
+     "premise": "Relative US strength is greater than a decade ago because of energy dominance, technology lead (AI compute share) and a stronger military; debt-to-GDP has risen everywhere since the GFC and COVID, so the US is relatively better off.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Compute share of 70-80% versus 40-50% earlier; EU growth of 0.3% versus expected 3% for the US post-conflict.",
+     "claim_ids": [
+      "MT142-C11-2",
+      "MT142-C12-1",
+      "MT142-C12-2"
+     ]
+    },
+    {
+     "premise": "Shadow banking (private credit) problems are an issue for exposed investors and for linkages to regulated banks and insurers; wobbles do not indicate systemic stress.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Treasury monitoring of linkages.",
+     "claim_ids": [
+      "MT142-C09-3"
+     ]
+    },
+    {
+     "premise": "Policy shocks are best cushioned by pre-announcing the fallback plan, so that a court ruling or reversal arrives without surprise.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Tariff rebuild plan communicated since the Supreme Court hearing.",
+     "claim_ids": [
+      "MT142-C11-X1",
+      "MT142-C10-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Yen short 2011-13 as a catalyst-timed trade",
+     "steps": [
+      {
+       "from": "Long familiarity with Japan (1990 Nikkei peak, hotel price gauge) suggests chronic deflation and a yen too strong",
+       "to": "A vision of a weaker-yen state of the world",
+       "why": "Street-level anecdote and decades of observation.",
+       "claim_ids": [
+        "MT142-C03-X1",
+        "MT142-C03-1"
+       ]
+      },
+      {
+       "from": "Post-Fukushima nuclear shutdown raises fuel imports and pushes the ~3% of GDP current account surplus toward deficit",
+       "to": "A possible catalyst, but the yen stays at 78-83",
+       "why": "Idea shelved because timing was wrong (endowment bias avoided).",
+       "claim_ids": [
+        "MT142-C03-3",
+        "MT142-C03-2"
+       ]
+      },
+      {
+       "from": "Abe returns on a reflationary platform and three Bank of Japan board seats open",
+       "to": "The BoJ board and governor can be reconstituted away from deflationists",
+       "why": "A trusted Japanese contact flagged it early; a catalyst for monetary regime change.",
+       "claim_ids": [
+        "MT142-C04-1",
+        "MT142-C04-X1"
+       ]
+      },
+      {
+       "from": "Regime change",
+       "to": "A long-lasting yen decline (from below 80 to about 150 over about a decade) and structural reforms",
+       "why": "Abenomics became structural: shareholder rights, return on capital, womenomics, labour mobility.",
+       "claim_ids": [
+        "MT142-C03-X2",
+        "MT142-C04-3"
+       ]
+      }
+     ],
+     "evidence": "His own trade as recalled; no sizing or return numbers given in the interview.",
+     "fails_when": "Timing is early (the yen did not move after Fukushima); endowment bias leads to forcing the trade.",
+     "claim_ids": [
+      "MT142-C03-2",
+      "MT142-C04-1"
+     ]
+    },
+    {
+     "topic": "Oil shock transmission and policy offsets (March 2026)",
+     "steps": [
+      {
+       "from": "Conflict and Hormuz disruption send WTI from under 60 to a 114-115 peak",
+       "to": "Economic damage depends on how long prices stay high, not on the level",
+       "why": "The 2008 spike reached 147 without the same lasting damage; US output insulates household energy bills.",
+       "claim_ids": [
+        "MT142-C05-1"
+       ]
+      },
+      {
+       "from": "An IEA / US strategic reserve release of 400 million barrels (largest ever) reported in advance",
+       "to": "Oil reversed before the formal decision, so little effect afterwards",
+       "why": "Market lives in the future; the release was priced in.",
+       "claim_ids": [
+        "MT142-C06-1",
+        "MT142-C06-R2"
+       ]
+      },
+      {
+       "from": "Navy escorts or an international coalition, air control, un-mined straits, and a $20bn DFC insurance backstop for tankers",
+       "to": "Hormuz flows are expected to recover as soon as militarily possible",
+       "why": "Lloyd's force majeure removes private insurance; government cover replaces it.",
+       "claim_ids": [
+        "MT142-C06-2",
+        "MT142-C06-3",
+        "MT142-C11-X2"
+       ]
+      },
+      {
+       "from": "Conflict resolved in US favour",
+       "to": "Possibly a substantially lower oil regime than before the war (below 60 at the start of the year)",
+       "why": "Removal of the Iranian threat; US energy output.",
+       "claim_ids": [
+        "MT142-C08-1",
+        "MT142-C05-X1"
+       ]
+      }
+     ],
+     "evidence": "Price levels cited by the host; assertions about military progress and insurance are the official's statements, not independently verified.",
+     "fails_when": "Duration is long (conflict extended), or the straits turn out to be mined or the coalition fails.",
+     "claim_ids": [
+      "MT142-C05-1",
+      "MT142-C06-1"
+     ]
+    },
+    {
+     "topic": "Oil shock to Fed reaction",
+     "steps": [
+      {
+       "from": "Energy shock raises inflation expectations",
+       "to": "Fed hesitates to ease",
+       "why": "Concern about second-round effects.",
+       "claim_ids": [
+        "MT142-C07-4"
+       ]
+      },
+      {
+       "from": "Shock slows the economy",
+       "to": "Whether the slowdown is permanent or just 'potential energy' that rebounds",
+       "why": "Duration of the shock determines the outcome.",
+       "claim_ids": [
+        "MT142-C07-4",
+        "MT142-C05-1"
+       ]
+      }
+     ],
+     "evidence": "Reasoning only, no data.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT142-C07-4"
+     ]
+    },
+    {
+     "topic": "Tariff rebuild after the IEEPA ruling",
+     "steps": [
+      {
+       "from": "Supreme Court denies tariffs under the emergency (IEEPA) power",
+       "to": "Tariffs reconstructed under Section 301 (frequently litigated, over 4,000 challenges) and a 150-day Section 122 tariff, now 10% globally",
+       "why": "Different legal authority; allies and trade-deal partners stay with their deals.",
+       "claim_ids": [
+        "MT142-C10-1"
+       ]
+      },
+      {
+       "from": "Pre-announced fallback plan",
+       "to": "No surprise to markets or allies",
+       "why": "Communications strategy since the Supreme Court hearing.",
+       "claim_ids": [
+        "MT142-C11-X1"
+       ]
+      }
+     ],
+     "evidence": "Official statements.",
+     "fails_when": "Not stated; the Section 122 rate was still 10% at recording.",
+     "claim_ids": [
+      "MT142-C10-1"
+     ]
+    },
+    {
+     "topic": "US strength thesis",
+     "steps": [
+      {
+       "from": "Energy exporter status, technology lead and a rebuilt military",
+       "to": "A strong relative position versus China and allies",
+       "why": "The three things China envies: military, technology, economy.",
+       "claim_ids": [
+        "MT142-C11-2",
+        "MT142-C12-1"
+       ]
+      },
+      {
+       "from": "AI boom lifts US share of global compute to 70-80% and growth returns to 3% after the conflict",
+       "to": "Better relative fiscal and economic outcomes even with higher debt",
+       "why": "Debt-to-GDP is higher everywhere post-GFC and COVID.",
+       "claim_ids": [
+        "MT142-C12-1",
+        "MT142-C12-2"
+       ]
+      }
+     ],
+     "evidence": "Stated numbers without sources (compute share, 3% growth forecast).",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT142-C12-1",
+      "MT142-C11-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Look for turning points where consensus or elite opinion is wrong; ask how the framing could be wrong; require a vision, a timed catalyst and mispricing.",
+     "why": "Big money is made when things turn; the crowd is right most of the time.",
+     "claim_ids": [
+      "MT142-C01-3",
+      "MT142-C02-1",
+      "MT142-C03-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Do a large amount of work, then put the idea back on the shelf if timing is wrong; combine quantitative work and a qualitative narrative: build scenarios, then test whether they can be proved.",
+     "why": "Avoid endowment bias; investing combines a narrative and proof.",
+     "claim_ids": [
+      "MT142-C03-2",
+      "MT142-C12-3"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Use local networks and on-the-ground anecdotes (a Japanese policy contact; a Tokyo hotel room rate in 1990 versus 2011) to read political catalysts and the state of an economy.",
+     "why": "Early information on catalysts before they are priced.",
+     "claim_ids": [
+      "MT142-C04-X1",
+      "MT142-C03-X1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Know your own risk tolerance and avoid getting out over your skis, so you never have to sell at the bottom or chase at the top.",
+     "why": "Forced selling and chasing are the main errors.",
+     "claim_ids": [
+      "MT142-C01-2"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Time entries on a dated catalyst (Abe plus BoJ board changes), not on the thesis alone.",
+     "why": "The Fukushima current-account shift was not enough to move the yen.",
+     "claim_ids": [
+      "MT142-C04-1",
+      "MT142-C03-3"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "As policymaker: ask what guidance one would want to hear as a policy-watching investor; give transparency and operational resilience in the Treasury market; monitor shadow banking linkages.",
+     "why": "Prevents loss of price discovery and spillovers.",
+     "claim_ids": [
+      "MT142-C04-4",
+      "MT142-C02-2",
+      "MT142-C09-3",
+      "MT142-C01-1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Pre-announce fallback plans and coordinate with allies and the Fed rather than surprise markets.",
+     "why": "Reduces policy-shock volatility.",
+     "claim_ids": [
+      "MT142-C11-X1",
+      "MT142-C08-X2"
+     ]
+    }
+   ],
+   "evidence_style": "Personal career anecdotes (ERM, housing, Japan, Fukushima/Abe), maxims from mentors (Kovner's 'imagine a different state of the world', Druckenmiller, Buffett's rules cited by the host), historical comparisons (2008 oil, BoE vs Fed QE) and official-position assertions. Few numbers carry citations, and the war-related claims come from a government source.",
+   "current_views": [
+    {
+     "view": "Oil: the shock's damage depends on duration; once the conflict is resolved in US favour oil may settle at a substantially lower regime than before; WTI around 94-95 at recording after a 114-115 peak.",
+     "as_of": "2026-03",
+     "reasoning": "US energy output, SPR release priced in, naval escorts and coalition planning.",
+     "claim_ids": [
+      "MT142-C05-1",
+      "MT142-C08-1",
+      "MT142-C06-1",
+      "MT142-C06-2",
+      "MT142-C05-X1"
+     ]
+    },
+    {
+     "view": "The Hormuz disruption should ease as soon as the US Navy (possibly with a coalition) can escort ships; insurance backstop of $20bn; the straits are not mined.",
+     "as_of": "2026-03",
+     "reasoning": "Operation proceeding ahead of plan; allies offering minesweepers.",
+     "claim_ids": [
+      "MT142-C06-2",
+      "MT142-C06-3",
+      "MT142-C11-X2",
+      "MT142-C05-X1"
+     ]
+    },
+    {
+     "view": "War cost (about $11bn after two weeks) is not a fiscal constraint, and demand for Treasuries is firm (best year since 2022, only G7 10-year with lower yields last year).",
+     "as_of": "2026-03",
+     "reasoning": "Cushions in the budget; foreign demand data.",
+     "claim_ids": [
+      "MT142-C06-4",
+      "MT142-C07-1"
+     ]
+    },
+    {
+     "view": "Fed: the energy component could lift inflation expectations, but the duration will decide whether the slowdown is permanent; a return to QE is so far away it is not worth talking about.",
+     "as_of": "2026-03",
+     "reasoning": "Fed balance of inflation expectations against slower growth.",
+     "claim_ids": [
+      "MT142-C07-4",
+      "MT142-C08-X2"
+     ]
+    },
+    {
+     "view": "Gold revaluation and Fed balance-sheet reduction are independent; shrinking the balance sheet needs advance signalling and review of post-GFC regulation that raised reserve demand.",
+     "as_of": "2026-03",
+     "reasoning": "Reserve regime change takes time.",
+     "claim_ids": [
+      "MT142-C09-2",
+      "MT142-C09-X1"
+     ]
+    },
+    {
+     "view": "Private credit wobbles are not a systemic problem; Treasury monitors linkages to banks and insurers.",
+     "as_of": "2026-03",
+     "reasoning": "Shadow banking sits outside regulated banking.",
+     "claim_ids": [
+      "MT142-C09-3"
+     ]
+    },
+    {
+     "view": "Tariffs: rebuilt via Section 301 and a 10% Section 122 tariff for up to 150 days; allies keep their trade deals.",
+     "as_of": "2026-03",
+     "reasoning": "Supreme Court ruling on IEEPA; legal authority switch.",
+     "claim_ids": [
+      "MT142-C10-1",
+      "MT142-C11-X1"
+     ]
+    },
+    {
+     "view": "US is relatively stronger than a decade or two ago (energy, technology, military), and growth should return to about 3% after the conflict versus 0.3% for the EU.",
+     "as_of": "2026-03",
+     "reasoning": "AI compute share and energy exporter status.",
+     "claim_ids": [
+      "MT142-C11-2",
+      "MT142-C12-1",
+      "MT142-C12-2"
+     ]
+    },
+    {
+     "view": "Latin America is moving from far left to centre-right and market-friendly governments, a generational opportunity for US alliances.",
+     "as_of": "2026-03",
+     "reasoning": "Political shift in Bolivia, Chile, Argentina.",
+     "claim_ids": [
+      "MT142-C07-3"
+     ]
+    },
+    {
+     "view": "Sanctions on Russian oil have limited effect because the barrels would reach China anyway; a 30-day waiver for India covers barrels on the water.",
+     "as_of": "2026-03",
+     "reasoning": "Cargoes already at sea; alternative buyers.",
+     "claim_ids": [
+      "MT142-C07-2"
+     ]
+    },
+    {
+     "view": "Outcomes in Iran are path-dependent: once operations are in motion they take a life of their own, and regime change is possible.",
+     "as_of": "2026-03",
+     "reasoning": "Stated goals do not pin down scenarios.",
+     "claim_ids": [
+      "MT142-C12-X1"
+     ]
+    },
+    {
+     "view": "Treasury Secretary is a better role than Fed chair for now because the extraordinary moment calls for ensuring dollar dominance, running the sanctions regime and managing debt with Congress.",
+     "as_of": "2026-03",
+     "reasoning": "National security and debt-management priorities sit at Treasury.",
+     "claim_ids": [
+      "MT142-C09-X2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Bessent is a sitting official: claims about military progress, the war's low fiscal cost, 'priced in' oil and 3% US growth are official positions without independent evidence, and may be shaped by incentives not to move markets.",
+   "claim_ids": [
+    "MT142-C06-4",
+    "MT142-C06-1",
+    "MT142-C05-X1",
+    "MT142-C12-1"
+   ]
+  },
+  {
+   "issue": "Tension: he says the market is the key guide and investors should respect it, yet an announced reserve release is described as having already been priced in, which cannot be verified from the timing he gives (one-day reversal on a press report).",
+   "claim_ids": [
+    "MT142-C06-1",
+    "MT142-C06-R2",
+    "MT142-C04-4"
+   ]
+  },
+  {
+   "issue": "The investing advice (consensus is usually right; bet against it at turns) and the Treasury role (sustain consensus confidence and orderly markets) point in different directions; he does not reconcile them.",
+   "claim_ids": [
+    "MT142-C01-3",
+    "MT142-C01-1",
+    "MT142-C02-2"
+   ]
+  },
+  {
+   "issue": "Oil view says duration matters more than level, but gives no duration threshold at which damage or Fed policy changes.",
+   "claim_ids": [
+    "MT142-C05-1",
+    "MT142-C07-4"
+   ]
+  },
+  {
+   "issue": "Quantities such as 'US compute share 70-80%' and 'growth back to 3%' are given without source or horizon.",
+   "claim_ids": [
+    "MT142-C12-1"
+   ]
+  },
+  {
+   "issue": "Host framing: Buffett's rules and the 'chip stack' idea are put by the host; Bessent answers that the US chip stack is bigger, but does not apply the sizing logic to his own earlier trades.",
+   "claim_ids": [
+    "MT142-C11-1",
+    "MT142-C11-2"
+   ]
+  },
+  {
+   "issue": "Host premise (policymaker must ignore prices) was rejected by Bessent, so the ledger's earlier 'now judges what delivers' reading is not his view; no later tests of market-information use are given.",
+   "claim_ids": [
+    "MT142-C04-2",
+    "MT142-C04-4"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs Bessent points to: duration of the Hormuz disruption and the oil price path (WTI around 94-95 versus under 60 at the start of the year), naval escort and coalition progress, insurance backstop uptake, the Fed's reading of inflation expectations versus growth slowdown, Treasury market functioning and foreign demand for Treasuries, private credit linkages to banks and insurers, Section 122 tariff rate over its 150 days, and AI compute build-out. Horizons are days to weeks for the Hormuz and oil path, months for the Fed and tariffs, and years for US relative strength and the oil regime.",
+ "reader_inferences": [
+  "(reader) His investing framework is event-catalyst macro: thesis plus mispricing plus a dated policy catalyst; this suggests the testable object is the return after a regime-changing policy appointment, not a continuous signal.",
+  "(reader) The 'priced in before announcement' claim implies that announced supply releases have little effect on spot oil, which can be tested around press leaks versus official announcements.",
+  "(reader) Treating duration, not level, as the damage driver implies conditional rules (e.g. oil elevated for more than N weeks) for growth and Fed reaction, though he gives no number.",
+  "(reader) Official claims about military timelines and fiscal affordability should be weighted as policy signalling, not as independent forecasts."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT142-C01-R1",
+   "chunk": "C01",
+   "speaker": "Scott Bessent",
+   "quote": "the crowd is right 85 or 90% of the time and that's the momentum",
+   "claim": "The crowd is right about 85-90% of the time and that is the momentum; the money comes at turns away from consensus.",
+   "mechanism": "consensus follows momentum most of the time but fails at turning points",
+   "asset_class": "multi-asset macro",
+   "indicator": "consensus / crowd positioning",
+   "horizon": "turning points",
+   "direction": "contrarian at turns",
+   "conditions": "when a different outcome from consensus can be imagined",
+   "testable": "partly - hit rate of consensus versus turning-point payoffs",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT142-C06-R2",
+   "chunk": "C06",
+   "speaker": "Scott Bessent",
+   "quote": "The market lives in the future.",
+   "claim": "Markets price expected policy actions in advance, so a supply release that was expected had already moved the oil price before the official decision.",
+   "mechanism": "anticipation: expected supply releases are priced before announcement",
+   "asset_class": "oil",
+   "indicator": "press reports of the IEA release",
+   "horizon": "days",
+   "direction": "oil lower on release news",
+   "conditions": "release expected and credible",
+   "testable": "yes - price reaction around leaks versus announcements",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  }
+ ]
+}

@@ -5,8 +5,8 @@ date: 2026-10-04
 channel: "Top Traders Unplugged"
 url: 
 words: 10706
-claims: 62
-added_by_crosscheck: 6
+claims: 68
+added_by_crosscheck: 12
 corrections: 0
 crosscheck: "opus blind read (pilot)"
 speakers: ["Patrick Welton (founder and CEO, Welton Investment Corporation; trend following and managed futures manager, ex-Commodities Corporation)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)", "Alan Dunne (co-host, Dublin)"]
@@ -19,6 +19,157 @@ tags: [source, layer0]
 **Summary:** Podcast with Pat Welton, a 40-year trend follower and systematic macro manager. He argues trend returns decompose into economic carry, financial carry, information diffusion and reflexivity, and that volatility targeting, the four S's (setup, signal, sizing, symmetry) and client-goal alignment are the keys. He sees little capacity or multistrategy threat, flags zero rates and narrow G7 spreads as the real risk, and says investors' performance-chasing (return gap) is their biggest cost.
 
 **Approach:** trend following, managed futures, systematic macro, volatility targeting, carry, capacity and execution, short-term flows, relative value, regime
+
+## Argument map
+
+**Episode thesis:** Patrick Welton argues that trend following is a non-predictive, agnostic edge whose returns can be decomposed into economic carry, financial carry, information diffusion and reflexivity, so it is explainable and robust to who else is trading. The practical edge lies in discipline: the four S's (setup, signal, sizing, symmetry), volatility targeting that fits the client's goals, honest capacity measurement through execution costs, and refusing to drift from the edge in response to marketing feedback. He sees multistrategy funds and size as minor threats compared with zero rates and narrow G7 spreads, which switch off the carry components.
+
+### Patrick (Pat) Welton (Founder and CEO of Welton Investment Corporation; trend following, systematic macro and short-term flow models; ex-Commodities Corporation trader; physician)
+Fingerprint: #approach/trend_following #approach/carry #approach/position_sizing_vol_target #approach/liquidity_flows #approach/short_term_systematic #approach/relative_value_arbitrage #approach/costs_execution #approach/behavioral_sentiment
+_Speaker note: Main guest. A few ledger claims spell his name 'Pat Welton' (same person). The host Niels Kaastrup-Larsen and co-host Alan Dunne are separate; the captions have no speaker labels, so turns are attributed from context (Alan leaves in C14)._
+
+**Worldview premises**
+- Markets are not just math: every trade has a counterparty who also believes they have an edge, and at size the market, not the trader, decides when you can exit, so market structure and liquidity matter. _[experience, stated; support: Lesson from a Paul Tudor Jones meeting around 1990; reused throughout the conversation as a recurring theme.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C03-1|C03-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C03-2|C03-2]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C03-R1|C03-R1]])
+- Trends, non-trending periods and high- and low-liquidity periods are all behavioural, because markets are the sum of participant behaviours. _[behavioural, stated; support: Assertion; offered as a narrative for investors.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C09-1|C09-1]])
+- Trend following is non-predictive: it is defined as holding positions through time while buying strength and selling weakness, long or short, and its edge comes from agnosticism across asset classes and directions. _[theoretical, stated; support: Definition plus the 2014 example where consensus rate forecasts were wrong and trend followers made 20 to 30%.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C09-3|C09-3]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-3|C06-3]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-3b|C06-3b]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C10-2|C10-2]])
+- Trend following earns convexity and positive skew at quarterly to semiannual horizons as capital moves between asset classes, sub-groups and from long to short or flat. _[theoretical, stated; support: Described as the mechanism; no figures given.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-4|C06-4]])
+- Most trend following return accumulates from economic and financial carry and information diffusion over months to years, not from short-term microstructure, so multistrategy and arbitrage activity do not drive it. _[empirical, stated; support: Asserted from Welton's own return decompositions; none shown.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C11-6|C11-6]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C12-2|C12-2]])
+- Rising volatility usually comes with rising correlation, so net portfolio exposure grows into reversals; unmanaged this makes losses arrive three to four times faster than gains. _[empirical, stated; support: Allocators' complaint at a conference around the early 2000s, checked by Welton against track records of other managers.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-1|C05-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-2|C05-2]])
+- Data surprises do not move prices; people reacting to them do, so which data matters changes over time and fixed data-to-price relations mislead early quants. _[behavioural, stated; support: Anecdote: M1 to M3 money supply on the front page of the Wall Street Journal when he began; the unstable response to unemployment surprises.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C15-1|C15-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-6|C14-6]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-3b|C14-3b]])
+- Managed-money investors systematically chase performance: they add after confirmation and cut near the end of the good run, so the return gap from switching is usually their biggest cost. _[behavioural, stated; support: Experience with client allocation calls; the return-gap research is referenced, not cited.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-4|C05-4]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-4b|C05-4b]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C15-3|C15-3]])
+- Manager and client form a reflexive loop: managers change what they do in response to what clients say they want, and clients then change what they want. This erodes the original edge. _[behavioural, stated; support: Observation across trend followers, hedge funds and private equity groups.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-1|C06-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-R1|C06-R1]])
+- Outside money changes the objective: client goals, not the manager's own, set the risk definition, and these goals differ between allocators and investors and between prop and managed money. _[institutional, stated; support: Experience moving from prop trading to managing outside capital.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C04-1|C04-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C04-3|C04-3]])
+- Investors are under-allocated to alternatives, not over-allocated, and cost and manager selection risk are the two main failure points of professional allocators. _[empirical, stated; support: Assertion based on about $100 trillion of allocatable capital; no source.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C11-5|C11-5]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C09-1b|C09-1b]])
+- Trend following capacity is mainly a per-market liquidity question; long-horizon trend is less capacity-sensitive than other strategy types, and size alone does not remove returns if methods are diversified. _[theoretical, stated; support: A thought experiment (owning 200 of 250 billion of industry capacity) and practical execution-cost monitoring.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C13-1|C13-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C13-3b|C13-3b]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-1|C14-1]])
+- Zero-rate regimes and narrow cross-market G7 spreads are the real threat to trend following because they shrink the carry components. _[empirical, stated; support: Follows from the carry decomposition; no data shown.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C12-1|C12-1]])
+
+**Chain: Why trend following earns money: four-source decomposition**
+1. Long positions held through time in trending markets → Economic and financial carry accrue to the position: Ownership through time accrues profit, for example strong equity-index economic carry despite mostly negative financial carry. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C09-2|C09-2]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C09-4|C09-4]])
+2. Bond futures trends → Returns accumulate mainly as term-structure (roll) premia: Fixed income has little economic carry but strong financial carry. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C10-1|C10-1]])
+3. Slow diffusion of information plus feedback loops (buying begets buying) → Persistent price trends: Reflexivity in the Soros or academic sense; strength differs by sector and time frame. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C09-2|C09-2]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C09-R1|C09-R1]])
+4. Showing investors the attribution → They see why trend has zero correlation to equities and positive convexity: The attribution can be derived independently of the trader's opinion. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C10-3|C10-3]])
+- Evidence: Welton's own decompositions of trend returns (not shown on the call) and the 2014 anecdote.
+- Fails when: Carry is removed by zero rates or narrow G7 spreads; the decomposition does not work for very short holds, where carry does not matter.
+
+**Chain: Volatility, correlation and the case for volatility targeting**
+1. Rising volatility together with rising correlation → Net portfolio exposure rises just before reversals: Positions had been sized without scaling for correlated risk. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-2|C05-2]])
+2. Reversal hits larger net exposure → Losses come three to four times faster than gains: Not poor timing, only the exposure structure. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-1|C05-1]])
+3. Volatility targeting the portfolio or segments → Exposure falls as volatility rises, muting fast losses and fitting professional allocators: Allocators want constant, targeted volatility, whereas direct investors may want size to follow forward return. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-3|C05-3]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C04-2|C04-2]])
+- Evidence: Review of other managers' track records and allocators' complaints; Welton's own early program let volatility float between about 10% and 20%.
+- Fails when: Not stated; the fixed-volatility stance conflicts with managers wanting exposure to follow forward opportunity, which he treats as a client choice.
+
+**Chain: Marketing feedback leads to style drift and a weaker edge**
+1. Managers hear client or marketing feedback → They change what they do to raise assets: Reflexivity between manager and client. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-R1|C06-R1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-1|C06-1]])
+2. Strategy drifts from its market edge → Results get worse: The edge from agnostic multi-asset, multidirectional participation is lost. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-1|C06-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-3|C06-3]])
+3. Needing to add methods to absorb more assets → Style-drift pushback from clients: Changes need years of client acceptance, which cannot keep up with fast asset raising. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C13-3|C13-3]])
+- Evidence: Observation across the industry, no figures.
+- Fails when: If clients have a trusting long dialogue about methods.
+
+**Chain: Capacity: how a trend follower knows it has run out**
+1. Large dollar volume relative to market size and speed → Slippage rises: There is always a participant on the other side; slow, small trading in a large market does not move prices. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C13-5|C13-5]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C03-1|C03-1]])
+2. Objectively measured execution costs trend upward → A capacity problem is likely: It usually appears first in a few markets, then spreads. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C13-4|C13-4]])
+3. A cost rise in one market → Needs diagnosis as temporary or permanent: Liquidity can return within months, or there may simply be too much money (copper versus tin). ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-2|C14-2]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-1|C14-1]])
+4. Strategy with long holds and low delay sensitivity → More capacity and margin of error: A strategy that loses 20% of P&L from a 15-minute delay has more microstructure exposure. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-3|C14-3]])
+- Evidence: Thought experiment; practical execution-cost tracking; no capacity estimate given.
+- Fails when: A firm becomes the whole industry (the average) or grows faster than clients allow it to diversify methods.
+
+**Chain: Short horizons need different drivers than trend**
+1. Holding period under about 10 days → Carry drops out of the return: Time in the position is what accrues carry (swimming 20 hours versus 3 seconds in a river). ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C10-4|C10-4]])
+2. Short hold of 3 to 5 days → Buy-strength entry and sell-weakness exit leave little profit between them: Little of the move remains; academic short-term trend holds average about a month. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C10-6|C10-6]])
+3. Accelerating, periodic and rebalancing flows → Better signals for holds under 10 days: Market-mechanical flows dominate at those horizons. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C10-5|C10-5]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C11-2|C11-2]])
+4. Rapid rise in hedging flow data → Sell equities in the dedicated risk-off sleeve: When others pay to neutralise risk, the manager's edge rises. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C11-4|C11-4]])
+- Evidence: Welton's own experience with short-term models; no results given.
+- Fails when: Large, high point-value contracts are the main exception where very short trend rules have worked.
+
+**Chain: Why zero rates, not multistrategy funds, threaten trend following**
+1. Zero rates and tightly bunched G7 spreads → Economic and financial carry shrinks to near nothing: Carry is a major part of trend returns. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C12-1|C12-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C11-6|C11-6]])
+2. Short-term arbitrage and market-making → Occurs in concave parts of markets that trend followers do not see or supply liquidity to: Different horizons and instruments. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C12-2|C12-2]])
+- Evidence: Reasoning from the decomposition; no data shown.
+- Fails when: If most return were short-horizon microstructure (he says it is not).
+
+**Chain: Data, attention and regimes**
+1. A data release or surprise → Nothing moves until people see it and act: Data changes do not buy or sell anything themselves. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C15-1|C15-1]])
+2. Attention to a data series changes (money supply once on the front page, now ignored) → The same surprise moves markets in some periods and not in others: Regimes are also about which information the trading community treats as important. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C15-1|C15-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-6|C14-6]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-3b|C14-3b]])
+3. Rates up or down and inflation up or down → The setup for how to trade differs: A high-inflation, rising-rate, supply-constrained world differs from a demand-constrained, low-rate, low-inflation one; this is an imperfect shift, not a prediction. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-5|C14-5]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C15-2|C15-2]])
+- Evidence: Anecdote and experience.
+- Fails when: Regime modelling treated as precise prediction fools early quants.
+
+**Chain: Why investors lose from timing managers**
+1. Investors wait for performance confirmation → They allocate late: They want enough evidence and confidence first. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-4b|C05-4b]])
+2. Large additions or withdrawals → Tend to mark the end of the drawdown or the end of the good run: Flows follow past performance. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-4|C05-4]])
+3. Switching on performance → A negative return gap, usually the biggest cost: Steady-handedness compounds best. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C15-3|C15-3]])
+- Evidence: Anecdotal client calls.
+- Fails when: Not stated.
+
+**Chain: Replication as a legitimate method but a weaker story**
+1. Trend followers use smoothed price as a reflection of others' actions → Using a manager's P&L as a signal is a short further step: Same logic of replicating through a signal. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C08-1|C08-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C08-1b|C08-1b]])
+2. A reduced market set → Replicates the trend industry's returns: Popular trend ETFs would not have changed much had they kept their market sets. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C08-2|C08-2]])
+3. Replicating the replicators → Better performance than the products: Better smoothing coefficient, less churn, and lower fees and cash management if fully funded. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C08-3|C08-3]])
+- Evidence: Internal research; no numbers provided.
+- Fails when: As more active products are packaged, replication becomes a cost-extraction or narrative niche.
+
+**Chain: Why pensions and other tail-sensitive allocators need trend**
+1. A two-sigma move on pension assets can create a liability that dwarfs corporate earnings → The allocator needs better tail coverage: Adverse multi-quarter moves matter to them. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C12-3|C12-3]])
+2. Trend following's convexity and skew → Covers tails if sized properly: The result depends on volatility level and whether it is portable alpha or fully funded. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C12-3|C12-3]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-4|C06-4]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-5|C06-5]])
+- Evidence: Anecdote of pension Monte Carlo work; no data.
+- Fails when: Poor sizing or opportunity cost of the capital.
+
+**Decision process**
+- [research] Define every system by the four S's: setup (what raises the probability), signal (entry and exit), sizing (including forward opportunity and risk) and symmetry (an asymmetric payoff, direct or synthetic).. Why: Understanding each answer helps the trader stay with the system. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C07-1|C07-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C07-3|C07-3]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-2|C06-2]])
+- [sizing] Size by forward opportunity as well as current risk; volatility floated between about 10%, 15% and 20% in the early program, later targeted for allocators.. Why: Allocators want constant volatility; direct investors may want more exposure at better forward return. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C07-2|C07-2]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C04-4|C04-4]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C04-2|C04-2]])
+- [risk] Volatility target the whole portfolio or segments to prevent exposure growth when volatility and correlation rise.. Why: Mutes the three to four times faster loss pattern. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-3|C05-3]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-2|C05-2]])
+- [signal] Use price smoothing for trend (long or short, multi-asset, buying strength and selling weakness); do not use pure trend rules for 3 to 5 day holds.. Why: Little profit remains between entry and exit at short holds. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C09-3|C09-3]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C10-6|C10-6]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-3|C06-3]])
+- [portfolio] Run price-based trend, systematic macro (cross-asset, fundamental, government and alternative data only), short-term flow models and relative value in separate sleeves, with a dedicated risk-off equity sleeve.. Why: Full signal separation gives diversification. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C11-1|C11-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C11-2|C11-2]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C11-4|C11-4]])
+- [portfolio] Build neutralised relative value baskets (dollar-neutral currency, DV01-neutral rates, commodity-neutral) so they add diversification without stacking on main portfolio risks.. Why: Avoid duplicating thematic exposure to US rates, equities and energy. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C11-3|C11-3]])
+- [execution] Monitor execution costs objectively; a persistent upward trend in one market signals a capacity issue; size each market to its depth.. Why: Capacity shows first in a few markets and slippage depends on size versus market and speed. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C13-4|C13-4]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C13-5|C13-5]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-1|C14-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-2|C14-2]])
+- [research] Prefer strategies that are insensitive to a one-day execution delay; treat time-sensitive ones as having less margin of error.. Why: Lower microstructure and capacity risk. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-3|C14-3]])
+- [research] Keep researching with humility (objectivity), both designing for robustness and watching regime and microstructure changes.. Why: Objectivity is the key to trading and its emotional counterpart is humility. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-4|C14-4]])
+- [research] Replicate the replicators with a reduced market set; explain trend with plain return attribution to investors.. Why: To answer own questions and persuade sophisticated investors. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C08-2|C08-2]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C08-3|C08-3]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C10-3|C10-3]])
+- [other] Stick to the system through rough and calm periods; do not let marketing feedback change the edge.. Why: A system that others publish is not followed because they lack confidence; drift weakens results. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C07-4|C07-4]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-1|C06-1]])
+- [risk] Limit position size to what market liquidity allows, since at size exit timing is set by the market.. Why: Tudor Jones lesson. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C03-1|C03-1]])
+- [other] Commodities Corporation scaled each trader's capital in steps when return targets were hit (performance-gated allocation).. Why: Described as the early multistrategy pod model with built-in mentoring. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C02-1|C02-1]])
+- [other] When taking outside money, make the client's goals the priority, even though prop traders think in dollars (RAROC) rather than percent.. Why: A moral obligation shaping risk definitions. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C04-1|C04-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C04-3|C04-3]])
+
+**Evidence style:** Experience and first principles from 40 years of trading, with anecdotes from famous traders (Tudor Jones, John Henry), thought experiments (rolling up the industry), and own return decompositions and replication work that are described but never quantified on air. Little data is offered.
+
+**Views at the time**
+- (2026-10 (upload date 2026-10-04; recording date not stated)) The setup in 2013 resembles the present: everyone is writing about how much bond yields will rise, which is the kind of consensus that trend following ignores.. Reasoning: In 2014 yields fell all year even though almost everyone expected them to rise, and trend followers made 20 to 30%. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C10-R1|C10-R1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C10-2|C10-2]])
+- (2026-10 (upload date 2026-10-04; recording date not stated)) Investors are under-allocated to alternatives, which is bullish for multistrategy and managed futures demand.. Reasoning: About $100 trillion of allocatable capital; asserted, no source. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C11-5|C11-5]])
+- (2026-10 (upload date 2026-10-04; recording date not stated)) Multistrategy funds and size have not made trend following harder; the biggest risks are zero-rate regimes and narrow G7 spreads.. Reasoning: Most trend return comes from carry and information diffusion over months to years. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C11-6|C11-6]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C12-1|C12-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C12-2|C12-2]])
+- (2026-10 (upload date 2026-10-04; recording date not stated)) One should trade differently in a high-inflation, rising-rate, supply-constrained world than in a demand-constrained, low-rate, low-inflation one.. Reasoning: Regimes are the setup and also define which data the market cares about; the shift is imperfect, not a precise prediction. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C15-2|C15-2]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-5|C14-5]])
+
+### Niels Kaastrup-Larsen (Host of Top Traders Unplugged; trend following specialist)
+Fingerprint: #approach/trend_following #approach/manager_selection_allocation #approach/replication_indexing
+_Speaker note: Mostly asks questions. Hosts say 'I', 'Alan and I'. Only the one stated view ledgered in C06 plus one added quote is treated as his own position._
+
+**Worldview premises**
+- Pure trend following has a return shape few investors like, but it is very useful alongside a traditional stock-bond portfolio. _[experience, stated; support: Asserted from industry experience.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-5|C06-5]])
+- Managers should do trend following the way they believe is right; the data will then support investors allocating to it, rather than reshaping the product to what customers ask for. _[experience, stated; support: Assertion from industry experience.]_ ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-R1|C05-R1]])
+
+**Evidence style:** Industry experience and questions to the guest; no data offered.
+
+### Disagreements
+- **Is broad passive diversification enough, or is tail-focused trend following needed?**: Bill Sharpe (as relayed by Welton): Own broad assets in the right proportion for 20 years; everything else is noise. Welton says this would be 'why bother', not an attack on trend. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C12-R1|C12-R1]]); Patrick Welton: Real allocators (pensions, endowments, family offices) face multi-quarter adverse moves and need tail coverage, which trend following provides if used correctly. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C12-3|C12-3]])
+- **How far should a manager adapt the product to what clients want?**: Niels Kaastrup-Larsen: Part of the value of trend comes from doing it the way managers think is right; the data then supports allocations. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-R1|C05-R1]]); Patrick Welton: Managers must solve for the client's goals (listening, not the stated wants), for example fixed-volatility targets for allocators, but never change the underlying edge in response to marketing feedback. The two largely agree, differing on how much client-driven design (volatility targeting) is appropriate. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C04-1|C04-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C04-2|C04-2]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C06-1|C06-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-3|C05-3]])
+
+### Gaps and conflicts
+- The decomposition of trend returns into economic carry, financial carry, information diffusion and reflexivity is the core argument, but no attribution numbers, definitions of the carry types, or sector breakdown are given; 'majority and in some cases vast majority' for rates is unquantified. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C09-2|C09-2]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C10-1|C10-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C09-4|C09-4]])
+- The three to four times faster loss claim rests on a conversation and an informal check of track records; no data or method. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C05-1|C05-1]])
+- The thought experiment (owning 200 of 250 billion with the same results) conflicts with the capacity discussion (execution costs rise, tin versus copper, 'you would then be the industry', style-drift limits); it only holds if methods are diversified, which he concedes erases the edge. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C13-1|C13-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C13-2|C13-2]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C13-4|C13-4]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-1|C14-1]])
+- The claim that multistrategy trading has no effect on trend is asserted without evidence, and the host's question on microstructure impact is partly answered by switching to the allocation story; the host notes journalism is hard to substantiate. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C11-6|C11-6]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C11-5|C11-5]])
+- Replicating the replicators giving better performance is reported without backtest details, period or costs; the explanation (better smoothing, less churn) is partly in-sample. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C08-3|C08-3]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C08-2|C08-2]])
+- The 2014 anecdote is a single selected year; the statement that trend followers made 20 to 30% is not tied to an index or period. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C10-2|C10-2]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C10-R1|C10-R1]])
+- He says trend is hurt by zero rates, but also that most return comes from information diffusion and reflexivity; how much is lost when carry vanishes is not given. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C12-1|C12-1]], [[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C09-2|C09-2]])
+- The 20% P&L loss for a 15-minute delay is a hypothetical, not a measured value. ([[MT003 - 40 Years of Trading Lessons with Patrick Welton - Top Traders Unplugged - Ep.153#^MT003-C14-3|C14-3]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Welton does not give forecast signals for prices. The observable inputs he names are: carry (economic carry in equity indices, term-structure premia in bonds, spreads across G7 markets), the level of policy rates (zero rates reduce trend returns), market-by-market execution costs as a capacity gauge, rising volatility and correlation as a driver of net exposure, accelerating, periodic and rebalancing flows and hedging-demand flows for horizons under 10 days, and the macro regime (rates up or down, inflation up or down, supply- or demand-constrained). Horizons: months to years for trend; under 10 days for flow models.
+
+### Reader inferences (not stated by the speakers)
+- (reader) Welton's argument is that knowing why a strategy works (carry, diffusion, reflexivity) is what lets a manager and client stay with it through bad periods; the explanation is part of the risk management.
+- (reader) His criterion for any change to the system is whether the market edge is preserved, not whether clients like it; this is a hidden rule behind the volatility-targeting and capacity answers.
+- (reader) The carry decomposition implies a testable prediction: trend returns by market should fall when the relevant carry (policy-rate level, curve spreads) is near zero.
+- (reader) Two of his sleeves (macro with only fundamental data, short-term flow) are explicitly defined by their zero overlap with price trend, which implies he evaluates new sleeves by correlation to existing risk rather than standalone Sharpe.
 
 ## Coverage
 
@@ -58,6 +209,10 @@ tags: [source, layer0]
   > markets weren't math. That there's somebody on the other side of every single trade who at that moment believes they also have an edge.
   asset: multi · testable: no - philosophical framing · confidence: high
   ^MT003-C03-2
+- **Patrick Welton** Welton's lesson from the Tudor Jones visit was that trading is only one component of building a professional trading firm, which led him to build a small firm separating trading from his medical missions.  #mech/new _(added by map cross-check)_
+  > trading was only one one component of building a professional trading firm
+  indicator: none · asset: multi · conditions: growth of an investment firm · testable: no - descriptive · confidence: high
+  ^MT003-C03-R1
 
 ### C04
 - **Patrick Welton** Once a manager takes outside capital, the client's goals (not the manager's own) must drive risk and program design, which changes how risk is managed.  #mech/risk_management
@@ -98,6 +253,10 @@ tags: [source, layer0]
   > It's the usual tragedy of managed money to watch people watch performance, wait for there to be enough confirmation and confidence, get in a little bit too late and put themselves on a right shift of time off cycle.
   indicator: manager trailing performance; fund flows · asset: multi · direction: flows follow past performance · horizon: months · testable: yes - fund flow vs subsequent return (dollar- vs time-weighted) can be measured · confidence: high
   ^MT003-C05-4b
+- **Niels Kaastrup-Larsen** Niels argues that trend following's value partly comes from managers doing it the way they believe is right, and that the data then supports investors allocating to it, rather than only offering products clients want.  #mech/new _(added by map cross-check)_
+  > part of that value actually comes from us doing it the way we we think is the right way to do it
+  indicator: none · asset: multi · conditions: product design versus client demand · testable: no - opinion · confidence: medium
+  ^MT003-C05-R1
 
 ### C06
 - **Patrick Welton** Changing a strategy in response to marketing feedback erodes the original edge and makes results worse over time.  #mech/behavioral
@@ -124,6 +283,10 @@ tags: [source, layer0]
   > You offer them the possibility as capital moves from one asset class to another, from one subasset group to another, from long to short, from long to flat
   indicator: price trend across asset classes · asset: multi · direction: long and short across assets · horizon: months · conditions: requires multi-asset, multi-directional universe · testable: yes - compare long-only/single-asset vs multi-asset long-short trend · confidence: high
   ^MT003-C06-3b
+- **Patrick Welton** Managed money has its own reflexive loop: managers conform to what they think clients need, and clients then change their wants based on what managers appear to offer, which pulls managers away from their market edge.  #mech/new _(added by map cross-check)_
+  > there's still a reflexivity in the managed money business of of managers conforming to what they think clients need and then clients changing what they want based on what they think they heard managers evolving to
+  indicator: none · asset: multi · horizon: years · conditions: asset-raising pressure · testable: no - descriptive · confidence: high
+  ^MT003-C06-R1
 
 ### C07
 - **Patrick Welton** A systematic approach should define four things: setup (the condition that raises probability), signal (entry and exit), sizing and symmetry (asymmetric payoff), and understanding each helps the trader stay with it.  #mech/research_method
@@ -182,6 +345,10 @@ tags: [source, layer0]
   > are two failure points for some of the professional allocation stabs that exist in the world.
   asset: multi · testable: partly - dispersion of manager returns and fee drag measurable · confidence: medium
   ^MT003-C09-1b
+- **Patrick Welton** Welton's boat metaphor: a price can move from several independent sources at once (current, tide, wind, engine), which may point the same or opposite directions, just as trend returns have several sources.  #mech/new _(added by map cross-check)_
+  > if you had a boat on the ocean there isn't one source boat will move because it's in a current boat will also move because it's in a tide
+  indicator: none · asset: multi · conditions: explaining trend returns to non-specialists · testable: no - metaphor · confidence: medium
+  ^MT003-C09-R1
 
 ### C10
 - **Patrick Welton** In fixed income, trend returns come mostly from accumulated term structure (roll) premia, with little economic carry but strong financial carry.  #mech/risk_premium
@@ -208,6 +375,10 @@ tags: [source, layer0]
   > There's just a very narrow window when by the time you buy strength and sell weakness what's left in the middle is your potential profit.
   indicator: trend signal holding period · asset: multi · horizon: days · conditions: very short holding periods · testable: yes - trend returns vs holding period · confidence: medium
   ^MT003-C10-6
+- **Patrick Welton** Welton says 2013, when everyone predicted rising rates and rising bond prices, is a little like the present, and in 2014 rates fell all year, so consensus forecasts were wrong.  #mech/new _(added by map cross-check, time-bound view)_
+  > in 2013 is um not unlike a little bit today and in that everyone everyone was writing how much bonds will go up
+  indicator: consensus interest-rate forecasts · asset: bonds · direction: rates fell in 2014 · horizon: year · conditions: crowded consensus on rates · testable: yes - compare consensus forecasts with outcomes · confidence: low
+  ^MT003-C10-R1
 
 ### C11
 - **Patrick Welton** Welton's systematic macro book uses only cross-asset, fundamental, government report and alternative data signals, fully separate from price-based trend, giving diversification.  #mech/new
@@ -248,6 +419,10 @@ tags: [source, layer0]
   > trend following becomes this invaluable tool if they use it right.
   indicator: trend following as tail hedge · asset: multi · direction: allocate to trend for tail coverage · horizon: years · conditions: depends on allocation size, opportunity cost, vol · testable: yes - portfolio stress tests · confidence: medium
   ^MT003-C12-3
+- **Patrick Welton** Welton relays Bill Sharpe's likely view: for a 20-year investor, own all broad assets in the right proportion; everything else is noise. He calls it 'why bother' rather than a criticism of trend following.  #mech/new _(added by map cross-check)_
+  > Own everything in the right proportion with the right growth because everything else at some point is noise.
+  indicator: none · asset: multi · horizon: 20 years · conditions: long-horizon investor without tail liabilities · testable: no - opinion · confidence: medium
+  ^MT003-C12-R1
 
 ### C13
 - **Patrick Welton** A trend follower owning 200 of the 250 billion in industry capacity with the same approach would see the same performance, since size alone does not remove returns if methods are diversified.  #mech/research_method

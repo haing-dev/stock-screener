@@ -1,0 +1,166 @@
+{
+ "source_id": "MT004",
+ "episode_thesis": "Krishna Guha argues that the 10-year Treasury yield has jumped to about 5.25% because of four fundamentals (AI hyperscaler debt issuance on top of a 6% of GDP deficit, a higher neutral rate from the AI investment boom, an oil and diesel shock after the US-Iran ceasefire broke down, and uncertainty about how far the Fed will hike), amplified by the new Fed chair Kevin Walsh's removal of forward-guidance guard rails and by a failed Treasury buyback attempt to cap yields. At 5%+ the non-AI economy is already crowded out (housing first) while the AI half is less rate sensitive, so the key risk is whether equities and the wealth-funded consumer can withstand yields near 5.25%. Eisman, the host, adds that daily markets simply follow oil and the 10-year and thinks QE only inflated asset prices.",
+ "speakers": [
+  {
+   "name": "Krishna Guha",
+   "role": "Evercore ISI vice chairman and Fed watcher (guest)",
+   "speaker_note": "Guest. Views attributed to Kevin Walsh and Scott Bessent are Guha's characterisation of them (second hand), flagged as such. Recording date taken from the upload date 2026-10-05; the recording is described as recent.",
+   "fingerprint": ["policy_reaction_central_banks", "macro_fundamental_topdown", "fiscal_dominance", "liquidity_flows", "structural_themes", "regime_detection"],
+   "worldview_premises": [
+    {"premise": "After more than five years of above-target inflation a central bank can no longer look through supply shocks, because rising inflation expectations feed wages and prices and become self-locking; a healthy labour market gives room to hike pre-emptively as insurance.", "type": "theoretical", "stated": "stated", "support": "Explains Walsh's reasoning, which Guha partly endorses ('very defensible'); no data.", "claim_ids": ["MT004-C01-1", "MT004-C01-3"]},
+    {"premise": "QE does stimulate demand: it lowers government yields and, because corporate borrowing is government yield plus spread, cuts the cost of capital; it also lifts asset values and wealth effects on consumption.", "type": "theoretical", "stated": "stated", "support": "Transmission mechanism explained; no empirical estimate offered.", "claim_ids": ["MT004-C02-2", "MT004-C03-1"]},
+    {"premise": "A Fed chair who sees the economy as driven by supply (productivity, labour incentives) rather than demand will use different models and run policy differently from the new-Keynesian consensus of the past 20 years.", "type": "institutional", "stated": "stated", "support": "Characterisation of Walsh's supply-side tradition.", "claim_ids": ["MT004-C02-1"]},
+    {"premise": "Central-bank communication about its reaction function makes policy more effective and lets firms plan; strong forward guidance (commit to a set number of hikes) is risky and should be an emergency tool only.", "type": "institutional", "stated": "stated", "support": "30-year drift of Fed communication from early Greenspan, intellectual leadership of Bernanke; Greenspan's tightening/easing bias as first guidance.", "claim_ids": ["MT004-C05-1", "MT004-C05-2b", "MT004-C06-1b", "MT004-C06-1"]},
+    {"premise": "Markets overshoot and overreact; without Fed guidance bond markets guess the Fed's criteria, so repricings run further.", "type": "behavioural", "stated": "stated", "support": "Argument from market inefficiency in guessing a single decision-maker; no data.", "claim_ids": ["MT004-C06-2", "MT004-C06-R1"]},
+    {"premise": "The AI boom shifts the US from excess saving to excess investment demand, which raises the neutral rate for several years and, with a 6% deficit, crowds out other borrowers.", "type": "theoretical", "stated": "stated", "support": "Reasoning about savings and investment balance; r-star not estimated.", "claim_ids": ["MT004-C04-1", "MT004-C04-2"]},
+    {"premise": "Energy shocks are larger than headline crude suggests because refined products (diesel, jet fuel) rose much more; diesel roughly doubled, like oil at about 200 dollars.", "type": "empirical", "stated": "stated", "support": "Price comparison from the conversation; unspecified source.", "claim_ids": ["MT004-C04-3", "MT004-C04-4"]},
+    {"premise": "The economy in aggregate is less rate-sensitive than before the AI boom, because AI investment and wealth effects are insensitive to borrowing costs; the non-AI economy remains rate-sensitive, with housing first.", "type": "empirical", "stated": "stated", "support": "Evidence so far of AI resilience; mortgage rates near 7% and housing 'bombed out'.", "claim_ids": ["MT004-C08-4", "MT004-C09-1", "MT004-C09-2"]},
+    {"premise": "Large-scale Treasury buybacks cannot cap yields in a market of about 40 trillion dollars; interventions in a government's own debt market signal weakness and can raise yields.", "type": "empirical", "stated": "stated", "support": "Size mismatch; analogy with struggling emerging markets.", "claim_ids": ["MT004-C07-3", "MT004-C08-3", "MT004-C07-2"]},
+    {"premise": "The crisis toolkit built under Bernanke (backstops, QE, forward guidance) worked twice and prevented a 2008-scale crisis in 2020; the post-pandemic inflation lag was forgivable and the fast catch-up produced a soft landing.", "type": "experience", "stated": "stated", "support": "Historical grading of Fed chairs.", "claim_ids": ["MT004-C10-2", "MT004-C11-1", "MT004-C11-2", "MT004-C11-3"]},
+    {"premise": "Keeping rates low for longer after the financial crisis allowed a fuller labour-market recovery, because structural issues held back the economy.", "type": "empirical", "stated": "stated", "support": "Praise of Yellen's judgement; outcome-based.", "claim_ids": ["MT004-C10-3"]},
+    {"premise": "Greenspan's belief that markets self-equilibrate fostered weak financial-stability regulation that was paid for in the crisis, even though his macro management was excellent.", "type": "experience", "stated": "stated", "support": "Historical judgement.", "claim_ids": ["MT004-C10-1"]},
+    {"premise": "A tariff trade war produces an initial wave of inflation through import prices; successive shocks (tariffs, the Middle East war and oil, AI demand) stopped inflation from making the final move back to 2%.", "type": "empirical", "stated": "stated", "support": "Sequence of events since 2025.", "claim_ids": ["MT004-C11-4", "MT004-C12-1"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why the 10-year yield rose from about 4.5% to about 5.25%",
+     "steps": [
+      {"from": "AI hyperscalers issue large amounts of debt on top of a government deficit near 6% of GDP", "to": "More borrowers compete for a given pool of savings, bidding up yields (private sector crowding out government)", "why": "Supply of paper exceeds savings", "claim_ids": ["MT004-C04-1"]},
+      {"from": "Multi-year AI investment boom", "to": "Higher neutral rate (r-star) for several years", "why": "Investment demand now exceeds savings", "claim_ids": ["MT004-C04-2"]},
+      {"from": "US-Iran ceasefire breaks down; diesel roughly doubles", "to": "Higher inflation and bond yields", "why": "Energy shock larger than crude implies", "claim_ids": ["MT004-C04-3", "MT004-C04-4"]},
+      {"from": "Fed hikes with no stated roadmap", "to": "Uncertainty about how far it will go, adding upward pressure on yields", "why": "Without guidance bond markets guess and overshoot", "claim_ids": ["MT004-C04-5", "MT004-C06-2", "MT004-C06-R1"]}
+     ],
+     "evidence": "10-year yield moved from about 4.5% in July to about 5.25% at recording (host); Guha lists the four drivers and says Walsh's guidance policy amplified but did not cause the move.",
+     "fails_when": "Not stated for this chain; the oil impulse may fade (Guha does not see a lasting inflation impulse from oil).",
+     "claim_ids": ["MT004-C03-5", "MT004-C01-3b"]
+    },
+    {
+     "topic": "Higher long yields pass first to housing and non-AI business, then to equities and the wealth-funded consumer",
+     "steps": [
+      {"from": "10-year yield above 5%, mortgage rates near 7%", "to": "Housing is crushed and non-AI businesses face crowding out", "why": "Borrowing cost too high for ordinary firms", "claim_ids": ["MT004-C09-1", "MT004-C09-2"]},
+      {"from": "AI investment returns so large that 6-9% borrowing costs matter little", "to": "AI investment is not impaired until the 10-year reaches a 6% handle", "why": "Expected return far above cost of funds", "claim_ids": ["MT004-C09-3", "MT004-C08-4"]},
+      {"from": "10-year at 5%+", "to": "AI stock price gains may come under pressure earlier than AI investment", "why": "Valuations are more rate-sensitive than the spending", "claim_ids": ["MT004-C09-3b", "MT004-C09-3"]},
+      {"from": "Stock sell-off", "to": "Negative wealth effect on the top-income consumer and weaker domestic demand", "why": "Consumption is funded by stock wealth and spent at home, while AI capex leaks abroad via imported chips", "claim_ids": ["MT004-C09-4", "MT004-C09-5"]}
+     ],
+     "evidence": "Mortgage-rate and housing activity observations; reasoning about import content of AI capex.",
+     "fails_when": "Guha cannot pinpoint the yield at which growth slows because the AI economy is less rate-sensitive; no precise threshold is given beyond the 6% handle for AI investment.",
+     "claim_ids": ["MT004-C08-4"]
+    },
+    {
+     "topic": "Treasury buybacks as a yield-capping tool",
+     "steps": [
+      {"from": "Treasury buys long bonds with proceeds from bill issuance", "to": "An operation twist intended to lower long yields", "why": "Duration removed from the market", "claim_ids": ["MT004-C07-1"]},
+      {"from": "Buying back old illiquid high-yield bonds", "to": "Efficient for the Treasury but little effect on market yields", "why": "Small and concentrated in off-the-run bonds", "claim_ids": ["MT004-C07-2"]},
+      {"from": "A few billion dollars against a roughly 40 trillion dollar market", "to": "Failure as a cap on yields", "why": "Size mismatch", "claim_ids": ["MT004-C07-3"]},
+      {"from": "Intervening in the home debt market", "to": "May raise yields on net via a credibility cost", "why": "Resembles the behaviour of struggling emerging markets", "claim_ids": ["MT004-C08-3"]},
+      {"from": "Buyback uncertainty and a shift of issuance toward bills", "to": "Two-sided risk for leveraged shorts and less expected long-bond supply", "why": "Hedge funds cannot hold a one-way short; signalling affects long yields today", "claim_ids": ["MT004-C07-4", "MT004-C08-2"]}
+     ],
+     "evidence": "Yields rose after the announcement (10-year around 5.25%).",
+     "fails_when": "Guha gives Bessent credit for backing off instead of escalating.",
+     "claim_ids": ["MT004-C08-2"]
+    },
+    {
+     "topic": "Balance-sheet shrinkage and bank liquidity rules",
+     "steps": [
+      {"from": "Walsh wants a smaller Fed balance sheet (about 6.5-7tn dollars, down from about 9tn)", "to": "Cannot dump bonds abruptly", "why": "Abrupt sales would push long-term yields sharply higher", "claim_ids": ["MT004-C02-4b", "MT004-C03-3"]},
+      {"from": "Waiting for stable markets and lower yields", "to": "Gradual restart of balance-sheet reduction", "why": "Avoid scaring the market", "claim_ids": ["MT004-C03-4"]},
+      {"from": "Reform of liquidity rules such as the LCR", "to": "Banks hold fewer reserves and more Treasuries (probably bills)", "why": "Adds demand for government debt and helps shrink the Fed's balance sheet", "claim_ids": ["MT004-C08-1"]}
+     ],
+     "evidence": "Walsh's task force on the balance sheet; regulatory work by the administration and the Fed.",
+     "fails_when": "Banks may prefer bills to long bonds, so long yields might not benefit.",
+     "claim_ids": ["MT004-C08-1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Read Fed policy through the chair's economic framework (supply-side versus new-Keynesian), the reaction function, balance-sheet and forward-guidance stance, and Treasury actions; track a list of drivers (AI issuance, neutral rate, oil, Fed uncertainty).", "why": "These explain the yield move and what the Fed will do next.", "claim_ids": ["MT004-C02-1", "MT004-C03-2", "MT004-C04-1", "MT004-C04-2", "MT004-C04-5"]},
+    {"element": "signal", "practice": "Judge disinflation from tariff pass-through rolling out of year-over-year data and the absence of second-round effects from oil.", "why": "Supports an inflation view that is relatively constructive.", "claim_ids": ["MT004-C01-2", "MT004-C01-3b"]},
+    {"element": "signal", "practice": "Watch whether equities can tolerate 10-year yields near 5.25%; the stock market is the transmission channel to the consumer.", "why": "Consumer spending is held up by wealth gains at the top.", "claim_ids": ["MT004-C09-5", "MT004-C09-4"]},
+    {"element": "risk", "practice": "Treat strong forward guidance as an emergency tool and prefer policy rules that are explained but not committed.", "why": "A central bank should not communicate more confidence than it has.", "claim_ids": ["MT004-C06-1", "MT004-C05-1"]},
+    {"element": "other", "practice": "Rate policymakers against the crisis they faced and the tools they used (Greenspan split verdict, Bernanke very high, Yellen close, Powell strong on 2020 and the catch-up, last mile blamed on Trump's trade and Middle East shocks).", "why": "Frames how the current Fed's tools and risks are read.", "claim_ids": ["MT004-C10-1", "MT004-C10-2", "MT004-C10-3", "MT004-C11-1", "MT004-C11-2", "MT004-C11-3", "MT004-C12-1"]}
+   ],
+   "evidence_style": "Institutional knowledge and reasoning from mechanisms (transmission channels, size mismatches), supported by price and rate observations given in conversation; historical grading of Fed chairs. No backtests or quantified thresholds; he declines to give a precise yield at which growth breaks.",
+   "current_views": [
+    {"view": "Inflation should keep falling gradually: tariff inflation is dropping out and oil is not creating a lasting impulse; a hike is cheap insurance given a healthy labour market.", "as_of": "2026-10-05", "reasoning": "Cooler summer data, tariff price level effect rolling out, labour market in good shape.", "claim_ids": ["MT004-C01-2", "MT004-C01-3", "MT004-C01-3b"]},
+    {"view": "Long yields are driven by AI issuance, a higher neutral rate, oil and war, and Fed uncertainty; Walsh's lack of guidance amplified the move.", "as_of": "2026-10-05", "reasoning": "Four fundamental drivers plus missing guard rails.", "claim_ids": ["MT004-C04-1", "MT004-C04-2", "MT004-C04-3", "MT004-C04-5", "MT004-C06-2"]},
+    {"view": "Normal Fed funds rate over the next several years should be higher than before the AI boom.", "as_of": "2026-10-05", "reasoning": "Investment demand exceeds savings.", "claim_ids": ["MT004-C04-2"]},
+    {"view": "Walsh will wait for stable bond markets and lower yields before restarting gradual balance-sheet reduction.", "as_of": "2026-10-05", "reasoning": "An abrupt reduction would raise long yields sharply.", "claim_ids": ["MT004-C03-3", "MT004-C03-4"]},
+    {"view": "Bessent's buyback did not damp yields and probably hurt confidence on net.", "as_of": "2026-10-05", "reasoning": "Size mismatch, credibility cost.", "claim_ids": ["MT004-C07-3", "MT004-C08-3"]},
+    {"view": "Yields with a five handle already strain the non-AI economy (housing first); AI investment is impaired only around a six handle, but AI stock gains may come under pressure sooner; the consumer is exposed to a stock sell-off.", "as_of": "2026-10-05", "reasoning": "Two-speed rate sensitivity and wealth effects.", "claim_ids": ["MT004-C09-1", "MT004-C09-2", "MT004-C09-3", "MT004-C09-3b", "MT004-C09-5"]}
+   ]
+  },
+  {
+   "name": "Steve Eisman",
+   "role": "Host (The Real Eisman Playbook); investor",
+   "speaker_note": "Host who states several views of his own, mainly in questions and the wrap-up.",
+   "fingerprint": ["macro_fundamental_topdown", "policy_reaction_central_banks", "market_internals_leading", "valuation_contrarian"],
+   "worldview_premises": [
+    {"premise": "QE inflated asset prices without helping the real economy.", "type": "theoretical", "stated": "stated", "support": "Personal opinion, offered as debatable.", "claim_ids": ["MT004-C02-3"]},
+    {"premise": "Daily equity market moves are driven by oil prices and the 10-year yield.", "type": "empirical", "stated": "stated", "support": "Observation of daily market behaviour.", "claim_ids": ["MT004-C12-2"]},
+    {"premise": "At some long-term rate the economy slows, and the market is 'getting closer to the Rubicon'.", "type": "theoretical", "stated": "stated", "support": "Asserted without a level; he does not know where the rate is.", "claim_ids": ["MT004-C12-R1"]},
+    {"premise": "A Treasury buyback of 6 billion dollars is too small against the market, like a BB gun, and Bessent lost credibility.", "type": "empirical", "stated": "stated", "support": "Size comparison; closing remark that it has clearly failed.", "claim_ids": ["MT004-C07-R1", "MT004-C12-R2"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Possible bazooka for Treasury demand via bank liquidity rules",
+     "steps": [
+      {"from": "Loosen the LCR so big banks need to hold less liquidity", "to": "Banks buy more Treasuries", "why": "Treasury lacks its own bazooka; bank balance sheets could supply demand", "claim_ids": ["MT004-C08-R1"]}
+     ],
+     "evidence": "Host's own theory, presented as untested ('hasn't happened yet').",
+     "fails_when": "Guha notes banks may prefer bills to long bonds.",
+     "claim_ids": ["MT004-C08-1"]
+    }
+   ],
+   "decision_process": [],
+   "evidence_style": "Market observation and personal opinion; defers to guest on Fed mechanics.",
+   "current_views": [
+    {"view": "Yields have marched higher, the Bessent buyback failed, and Bessent has lost credibility; the economy slows at some unknown long-term rate that may be near.", "as_of": "2026-10-05", "reasoning": "10-year rose from about 4.5% to well over 5% and markets move with oil and the 10-year.", "claim_ids": ["MT004-C03-5", "MT004-C12-R2", "MT004-C12-R1", "MT004-C12-2"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Did QE help the real economy?",
+   "positions": [
+    {"speaker": "Steve Eisman", "position": "QE lifted asset prices but did nothing for the real economy.", "claim_ids": ["MT004-C02-3"]},
+    {"speaker": "Krishna Guha", "position": "QE contributed to demand through lower yields, lower corporate cost of capital and wealth effects.", "claim_ids": ["MT004-C02-2", "MT004-C03-1"]},
+    {"speaker": "Kevin Walsh (as relayed by Guha)", "position": "QE was massively overdone and continued beyond the point where benefits exceeded costs; acceptable only in emergencies. His view of a big balance sheet is part of a smaller-government philosophy.", "claim_ids": ["MT004-C03-2", "MT004-C03-R1"]}
+   ]
+  },
+  {
+   "topic": "Forward guidance and the Fed's communication",
+   "positions": [
+    {"speaker": "Krishna Guha", "position": "Strong forward guidance should be an emergency tool, but general explanation of the reaction function should stay because it guards against overshooting.", "claim_ids": ["MT004-C06-1", "MT004-C05-1", "MT004-C06-2"]},
+    {"speaker": "Kevin Walsh (as relayed by Guha)", "position": "Dislikes forward guidance and removes broader strategy guidance too, returning to early-Greenspan opacity.", "claim_ids": ["MT004-C06-2"]}
+   ]
+  },
+  {
+   "topic": "Whether Bessent's buyback could have been a meaningful yield tool",
+   "positions": [
+    {"speaker": "Steve Eisman", "position": "Six billion dollars against a huge market is a BB gun; a real tool would need something like looser bank liquidity rules.", "claim_ids": ["MT004-C07-R1", "MT004-C08-R1"]},
+    {"speaker": "Krishna Guha", "position": "Narrowly sensible but small; some two-sided-risk effect; the bank-rule route is being worked on but may favour bills.", "claim_ids": ["MT004-C07-2", "MT004-C07-3", "MT004-C07-4", "MT004-C08-1"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Guha says the yield drivers are fundamental (AI, issuance, war, oil) while also saying the lack of guidance amplified the move; the relative contribution is not quantified.", "claim_ids": ["MT004-C06-2", "MT004-C04-1", "MT004-C04-3"]},
+  {"issue": "No threshold yield is given at which growth slows; Guha offers the 6% handle for AI investment and a five handle for strain on non-AI, but calls the question 'super tough'.", "claim_ids": ["MT004-C09-3", "MT004-C08-4"]},
+  {"issue": "Guha expects falling inflation and sees no lasting oil impulse, yet lists oil and diesel as a driver of higher yields and inflation pressure.", "claim_ids": ["MT004-C01-2", "MT004-C01-3b", "MT004-C04-3", "MT004-C04-4"]},
+  {"issue": "The debate on QE is framed as opinions; neither side cites estimates.", "claim_ids": ["MT004-C02-2", "MT004-C02-3"]},
+  {"issue": "The statement that the yield rise is not caused by Walsh conflicts somewhat with the claim that removing guard rails let rates run rampant.", "claim_ids": ["MT004-C06-2"]}
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs named by the speakers: the 10-year Treasury yield (5.25% now, a 6% handle as an AI-investment stress level), mortgage rates (about 7%) and housing activity, oil and diesel/jet fuel prices, the tariff effect rolling out of year-over-year inflation data, the labour market, AI hyperscaler debt issuance and the government deficit (6% of GDP), Treasury issuance mix (bills versus bonds), bank liquidity-rule reform, the stock market's reaction to yields and the Fed's next steps on forward guidance and balance-sheet reduction. Horizons: weeks for yield repricing, several years for the neutral rate.",
+ "reader_inferences": [
+  "(reader) The chain implies a two-speed economy in which a sustained yield rise first hurts housing and non-AI firms, with equities and the wealth-funded consumer as the second, larger channel; a break in AI-related equities would transmit to growth quickly.",
+  "(reader) Guha's argument that opacity amplifies repricing suggests yield volatility should be higher after Fed meetings if the chair gives little guidance.",
+  "(reader) If the neutral rate has risen, Guha's inflation optimism and his call for a higher normal funds rate are compatible only if policy stays restrictive for longer."
+ ],
+ "added_claims": [
+  {"claim_id": "MT004-C03-R1", "chunk": "C03", "speaker": "Krishna Guha", "quote": "big Fed big Fed balance sheets part of kind of big government", "claim": "Guha says Walsh sees a large Fed balance sheet as part of big government that interferes with private markets and free price determination.", "mechanism": "central bank philosophy", "asset_class": "rates", "indicator": "Fed balance sheet", "horizon": "years", "direction": "n/a", "conditions": "Walsh is Fed chair", "testable": "no", "speaker_confidence": "medium", "time_bound": "yes"},
+  {"claim_id": "MT004-C06-R1", "chunk": "C06", "speaker": "Krishna Guha", "quote": "markets do overshoot and markets overreact and markets are also trying to figure out some difficult questions", "claim": "Guha argues markets overshoot and overreact, so Fed information on its reaction function helps them; having to guess how the Fed weighs a decision is inefficient.", "mechanism": "market efficiency and central bank communication", "asset_class": "rates", "indicator": "Fed guidance", "horizon": "weeks", "direction": "n/a", "conditions": "absence of guidance", "testable": "partly", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT004-C07-R1", "chunk": "C07", "speaker": "Steve Eisman", "quote": "if you show up with $6 billion, it's like a beep gun", "claim": "Eisman says a 6 billion dollar buyback is like a BB gun against a huge Treasury market and wonders why Bessent would do it.", "mechanism": "size of intervention", "asset_class": "US Treasuries", "indicator": "Treasury buyback size", "horizon": "weeks", "direction": "n/a", "conditions": "market of tens of trillions", "testable": "yes", "speaker_confidence": "medium", "time_bound": "yes"},
+  {"claim_id": "MT004-C08-R1", "chunk": "C08", "speaker": "Steve Eisman", "quote": "If you really loosened up what's called the LCR ratio", "claim": "Eisman's alternative theory is that loosening the liquidity coverage ratio would let big banks buy Treasuries, giving a bigger tool than the Treasury's buybacks.", "mechanism": "bank regulation and Treasury demand", "asset_class": "US Treasuries and banks", "indicator": "LCR", "horizon": "months", "direction": "lower yields", "conditions": "regulatory change; banks choose Treasuries", "testable": "yes", "speaker_confidence": "low", "time_bound": "no"},
+  {"claim_id": "MT004-C12-R1", "chunk": "C12", "speaker": "Steve Eisman", "quote": "we're certainly getting closer to the Rubicon", "claim": "Eisman says at some level of long-term rates the economy slows, nobody knows the level, but the 10-year rise from 4.5% to over 5% means they are getting close.", "mechanism": "rate sensitivity", "asset_class": "US economy and Treasuries", "indicator": "10-year yield", "horizon": "months", "direction": "slowdown", "conditions": "yields keep rising", "testable": "yes", "speaker_confidence": "low", "time_bound": "yes"},
+  {"claim_id": "MT004-C12-R2", "chunk": "C12", "speaker": "Steve Eisman", "quote": "Scott Besson has lost a lot of credibility in the markets", "claim": "Eisman concludes Bessent's buyback clearly failed because long rates rose and he lost credibility.", "mechanism": "policy credibility", "asset_class": "US Treasuries", "indicator": "10-year yield after buyback", "horizon": "weeks", "direction": "higher yields", "conditions": "", "testable": "partly", "speaker_confidence": "medium", "time_bound": "yes"}
+ ]
+}

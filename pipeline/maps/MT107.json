@@ -1,0 +1,160 @@
+{
+ "source_id": "MT107",
+ "episode_thesis": "Richard Brennan, drawing on Dave Dredge's 'Sharpe world' critique, argues that markets are non-linear (long muted regimes interrupted by explosive moves), so risk is the unforeseen, not historical volatility, and portfolios should be built for convexity: small, linear losses on one side of a barbell and amplified gains on the other, with brakes (stops, small bet sizes) that let a strategy accelerate in favorable regimes. Trend following is presented as convexity for opportunity capture as well as protection (anti-martingale scaling into outliers, wide diversification to find them, 'infinite yield' from one trend paying for many small losses), contrasted with concave mean-reversion and negative-skew strategies (LTCM) and with options-based tail protection. The host Niels adds the horizon-dependence of convexity, a counter on defining risk as permanent loss, the open-equity problem for new investors, and the view that a more divergent world with uncoordinated central banks favors trend.",
+ "speakers": [
+  {
+   "name": "Richard Brennan",
+   "role": "Guest; trend follower, East Coast Capital Management (Australia); self-described 'outlier hunter'",
+   "speaker_note": "Referred to as Rich by the host; the ledger gives 'Richard Brennan'. Most of the episode is a prepared monologue inspired by Dave Dredge (tail-protection manager, quoted along with Taleb), whose ideas Rich adopts; claims quoting Dredge or Taleb are Rich's reported adoption of them. Caption quirks: 'sharp' for Sharpe, 'bit sizes' for bet sizes, 'night tram' for anti-martingale joke.",
+   "fingerprint": ["trend_following", "crisis_alpha_convexity", "position_sizing_vol_target", "kelly_or_conviction_sizing", "diversification_risk_parity", "regime_detection", "research_robustness_overfitting", "volatility_options"],
+   "worldview_premises": [
+    {"premise": "Markets are non-linear: long muted regimes alternate with explosive moves and large drawdowns, so an average-volatility description of risk is poor and risk must be managed by adapting to the current regime.", "type": "empirical", "stated": "stated", "support": "S&P 500 examples (5-year runs of 25%+, 50% GFC drawdown, 1987, 2002)", "claim_ids": ["MT107-C04-1", "MT107-C04-2", "MT107-C05-X1"]},
+    {"premise": "Convexity is positive skew: amplify gains when volatility is favorable and cap losses with risk management; concave strategies (mean reversion, negative skew, pattern recognition) earn many small wins and then take sudden large losses when an unpredicted regime arrives.", "type": "theoretical", "stated": "stated", "support": "payoff-shape reasoning; LTCM example", "claim_ids": ["MT107-C05-1", "MT107-C05-2", "MT107-C05-3", "MT107-C08-1"]},
+    {"premise": "Volatility is not all bad: adverse volatility should be limited but beneficial volatility exploited; smoothing funds only limit the adverse side and forgo upside, so the car with brakes beats the car optimised for average speed.", "type": "theoretical", "stated": "stated", "support": "Formula 1 analogy (Dredge)", "claim_ids": ["MT107-C06-2", "MT107-C06-3", "MT107-C06-1"]},
+    {"premise": "The most material market events arise from uncertainty absent from the historical sample, so using history to set expected returns blindsides investors; models trained on history collapse in unprecedented environments and a surviving backtest does not guarantee future survival.", "type": "theoretical", "stated": "stated", "support": "list of crises (1987, 2002, 2008, Asian crisis, LTCM, COVID)", "claim_ids": ["MT107-C07-1", "MT107-C08-3", "MT107-C10-2"]},
+    {"premise": "Smooth linear equity curves are temporary products of a predictable environment and later become concave; managers who lever up predictable returns blow up at regime shift.", "type": "experience", "stated": "stated", "support": "LTCM and mean-reversion examples", "claim_ids": ["MT107-C07-3", "MT107-C08-1"]},
+    {"premise": "Traditional finance rests on five flawed assumptions: historical risk, normality, persistent correlations, estimable returns, and all volatility being bad; risk is a possibility distribution, not a probability distribution (Taleb).", "type": "theoretical", "stated": "stated", "support": "Dredge/Taleb quotations; list of crises", "claim_ids": ["MT107-C11-1", "MT107-C11-2", "MT107-C10-2"]},
+    {"premise": "Long calm periods raise fragility (avalanche, flood, forest-fire analogies), so low volatility is not safe, and VaR misses contagion because markets are connected complex adaptive systems.", "type": "theoretical", "stated": "stated", "support": "natural analogies, not data", "claim_ids": ["MT107-C11-3", "MT107-C11-4", "MT107-C11-5"]},
+    {"premise": "The 60/40 portfolio rested on a stock-bond correlation that was zero or negative and turned positive, leaving it with no brakes.", "type": "empirical", "stated": "stated", "support": "recent experience of positive correlation", "claim_ids": ["MT107-C08-2"]},
+    {"premise": "Risk is permanent loss of capital, not volatility; few trend followers ever blow up whereas mean-reversion strategies do, and no validated 20-30 year records exist for other styles.", "type": "experience", "stated": "stated", "support": "industry observation of blow-ups; absence of long records", "claim_ids": ["MT107-C12-3", "MT107-C12-4"]},
+    {"premise": "Positive skew optimises long-term compounded wealth, and concave strategies with rare crippling losses create compounding drag.", "type": "theoretical", "stated": "stated", "support": "compounding arithmetic argument", "claim_ids": ["MT107-C12-1", "MT107-C12-2"]},
+    {"premise": "Options are the most precise hedge for a traditional portfolio because they can be matched to a specific risk (market, correlation), whereas trend following offers less targeted, premium-free convexity, exposed to sudden short-term shocks and whipsaws.", "type": "theoretical", "stated": "stated", "support": "comparison of costs and design", "claim_ids": ["MT107-C09-X2", "MT107-C09-2", "MT107-C09-3", "MT107-C08-4"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why linear/concave strategies fail and convex ones compound",
+     "steps": [
+      {"from": "predictable environment (mean reversion working, pattern recognition fitted, stock-bond correlation negative)", "to": "smooth linear equity curve of small wins", "why": "the strategy is optimised for a regime that persists temporarily", "claim_ids": ["MT107-C07-3", "MT107-C08-1", "MT107-C05-2"]},
+      {"from": "apparent safety invites leverage", "to": "regime shift produces a catastrophic loss", "why": "high leverage or reliance on a correlation breaks when conditions change", "claim_ids": ["MT107-C08-1", "MT107-C08-2"]},
+      {"from": "rare crippling loss", "to": "compounding drag and lower long-run wealth", "why": "large losses require disproportionate gains to recover", "claim_ids": ["MT107-C12-2", "MT107-C12-1"]},
+      {"from": "convex process: small linear losses, uncapped gains", "to": "higher compounded wealth", "why": "positive skew shifts the distribution to the right", "claim_ids": ["MT107-C12-1", "MT107-C07-2", "MT107-C06-3"]}
+     ],
+     "evidence": "LTCM, 60/40, F1 analogy; no data presented",
+     "fails_when": "short-term shocks hit medium-to-long-term trend models before positions change (whipsaws); reported decline in trend-follower skew is raised by the host.",
+     "claim_ids": ["MT107-C05-2", "MT107-C07-3", "MT107-C08-1", "MT107-C08-2", "MT107-C12-1", "MT107-C12-2", "MT107-C09-1"]
+    },
+    {
+     "topic": "Why Sharpe, standard deviation and VaR mislead",
+     "steps": [
+      {"from": "risk estimated from historical distributions", "to": "low volatility in the sample reads as low risk", "why": "VaR assumes calm periods reduce extreme-event risk", "claim_ids": ["MT107-C11-1", "MT107-C11-3"]},
+      {"from": "low volatility encourages leverage and complacency", "to": "fragility rises", "why": "stability breeds instability (avalanche, flood, forest fire)", "claim_ids": ["MT107-C11-3"]},
+      {"from": "markets are connected adaptive systems", "to": "contagion makes losses larger than the trigger implies", "why": "VaR measures the tremor, not the catastrophe it can cause", "claim_ids": ["MT107-C11-4", "MT107-C11-5"]},
+      {"from": "unforeseen events (1987, 2002, 2008, COVID) keep recurring", "to": "volatility-based measures are flawed as risk definitions", "why": "crises came from events outside the sample", "claim_ids": ["MT107-C10-2", "MT107-C12-3"]}
+     ],
+     "evidence": "Crisis list; Dredge and Taleb as authorities",
+     "fails_when": "host counters that correlation-aware VaR, used properly, is a decent measure and better than Sharpe; also that 'permanent loss of all capital' is rare in any strategy so the definition is too narrow.",
+     "claim_ids": ["MT107-C10-2", "MT107-C11-1", "MT107-C11-3", "MT107-C11-4", "MT107-C11-5", "MT107-C13-3", "MT107-C12-X1"]
+    },
+    {
+     "topic": "How trend following embeds convexity: barbell, small bets, anti-martingale, diversification",
+     "steps": [
+      {"from": "risk only a small fraction of closed-trade core capital per trade", "to": "losses are small and linear", "why": "small bet size is the ultimate stop, since stop orders can gap", "claim_ids": ["MT107-C13-5", "MT107-C13-4", "MT107-C16-1"]},
+      {"from": "open profits let run; add to winners with an ensemble (anti-martingale)", "to": "positive convexity: one outlier pays for dozens of small losses", "why": "trends are material outliers whose location cannot be forecast", "claim_ids": ["MT107-C15-1", "MT107-C15-4", "MT107-C14-3", "MT107-C15-X1"]},
+      {"from": "wide diversification across many markets", "to": "outliers are captured wherever they appear, with lower correlation and a larger opportunity set", "why": "cannot know in advance which market will have the next outlier", "claim_ids": ["MT107-C15-3", "MT107-C09-4", "MT107-C16-X1"]},
+      {"from": "survival by small bets", "to": "capital remains in play for compounding and for the next unknown opportunity", "why": "compounding needs time and skin in the game", "claim_ids": ["MT107-C16-2", "MT107-C15-X1"]}
+     ],
+     "evidence": "Trend-following logic; judging on thousands of trades rather than individual results",
+     "fails_when": "trendless periods (stagnation and drawdowns), whipsaws, short-term shocks; martingale doubling is the concave opposite and fails catastrophically.",
+     "claim_ids": ["MT107-C13-4", "MT107-C13-5", "MT107-C14-2", "MT107-C15-1", "MT107-C15-2", "MT107-C15-3", "MT107-C15-4", "MT107-C16-1", "MT107-C16-2", "MT107-C05-1"]
+    },
+    {
+     "topic": "Trend following versus options-based tail protection",
+     "steps": [
+      {"from": "options give immediate protection and can be matched to the specific risk", "to": "they are the purest hedge for a traditional portfolio", "why": "design precision", "claim_ids": ["MT107-C09-X2", "MT107-C08-4"]},
+      {"from": "options cost premium and expire worthless; coverage limited to few markets", "to": "ongoing cost of insurance", "why": "paying for protection continuously", "claim_ids": ["MT107-C09-2", "MT107-C09-4"]},
+      {"from": "trend following has no explicit premium and covers many markets", "to": "convexity at no explicit cost plus opportunity capture, but exposed to short-term shocks", "why": "long/short models, wide coverage, medium-to-long horizon", "claim_ids": ["MT107-C09-2", "MT107-C09-3", "MT107-C04-3"]}
+     ],
+     "evidence": "Cost and coverage comparison; trend followers are 'not a pure insurance programme'",
+     "fails_when": "short-term sell-offs where trend models cannot respond quickly enough.",
+     "claim_ids": ["MT107-C09-2", "MT107-C09-3", "MT107-C09-4", "MT107-C09-X2", "MT107-C04-3", "MT107-C08-4"]
+    }
+   ],
+   "decision_process": [
+    {"element": "sizing", "practice": "Risk each trade as a very small fraction of closed-trade core capital; let unrealised equity run, so the percentage of portfolio at risk is measured against core capital, not against open equity.", "why": "Protects core capital while allowing a trade to explode in value.", "claim_ids": ["MT107-C13-5", "MT107-C13-4"]},
+    {"element": "sizing", "practice": "Take a small initial position when signals suggest a possible material outlier and add as it succeeds, applying an ensemble of models (anti-martingale); never double after losses (martingale).", "why": "Anti-martingale is convex; martingale gives small gains but catastrophic risk.", "claim_ids": ["MT107-C15-1", "MT107-C15-2"]},
+    {"element": "risk", "practice": "Cut losses short with stops and small bet size as the ultimate stop; build brakes into the process rather than forecasting risk.", "why": "Stop orders can gap in fast markets, whereas small size always bounds the loss.", "claim_ids": ["MT107-C16-1", "MT107-C06-1", "MT107-C11-5", "MT107-C13-4"]},
+    {"element": "risk", "practice": "Adapt risk to the current regime (accelerate in favorable regimes, brake in adverse ones) rather than assuming average volatility.", "why": "Convex process responds dynamically to non-linear markets.", "claim_ids": ["MT107-C04-2", "MT107-C06-1"]},
+    {"element": "universe", "practice": "Trade a very wide range of markets, including unusual commodities, to find outliers wherever they appear.", "why": "The location of the next outlier cannot be forecast.", "claim_ids": ["MT107-C15-3", "MT107-C09-4", "MT107-C16-X1"]},
+    {"element": "signal", "practice": "Ride winners until trends exhaust; one outlier (cocoa, an equity rally) pays for dozens of small losses; aim at 'infinite yield'.", "why": "Open-ended payoff pays for the accumulated costs of small controlled losses.", "claim_ids": ["MT107-C15-4", "MT107-C14-3", "MT107-C15-X1"]},
+    {"element": "research", "practice": "Judge trend following on thousands of trades (the last 2,000 or 4,000), not on individual outcomes.", "why": "Patience and long-horizon compounding.", "claim_ids": ["MT107-C14-2", "MT107-C14-X2"]},
+    {"element": "portfolio", "practice": "For new capital, allocate AUM based on closed equity so that unrealised equity stays with existing investors; this is a business-of-trend-following adjustment rather than the philosophy itself.", "why": "A new investor entering when open equity is large would face a drawdown that long-standing investors do not.", "claim_ids": ["MT107-C14-X1", "MT107-C14-X2"]}
+   ],
+   "evidence_style": "First principles, analogies (F1 car, avalanche, flood, forest fire, surfer, pilot, chef, casino martingale) and authority (Dredge, Taleb); little data; cites the existence of long trend-following records and the absence of comparable validated 20-30 year records for other styles as evidence of survival.",
+   "current_views": [
+    {"view": "January 2025: his firm had a good month driven by commodities like coffee while the SG Trend Index fell, showing dispersion that comes from differing commodity exposure and model design.", "as_of": "2025-02-01 (recorded February 1, 2025)", "reasoning": "Different trend followers hold different exposures and models.", "claim_ids": ["MT107-C03-2"]},
+    {"view": "Markets are non-linear and risk comes from the unforeseen; convexity matters most now.", "as_of": "2025-02-01", "reasoning": "Long muted regimes followed by explosive moves; 60/40 correlation shift.", "claim_ids": ["MT107-C04-1", "MT107-C08-2"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host, Top Traders Unplugged; veteran hedge fund manager (Dunn Capital)",
+   "speaker_note": "Host; the ledger labels him 'host, Dunn Capital'. He states several own views and counter-points, so he is mapped. Claim C14-1 carries a correction: he only raised the new-investor open-equity risk; the closed-equity suggestion is Rich's reply (C14-X1).",
+   "fingerprint": ["trend_following", "manager_selection_allocation", "behavioral_sentiment", "policy_reaction_central_banks", "crisis_alpha_convexity", "diversification_risk_parity"],
+   "worldview_premises": [
+    {"premise": "Divergent central bank policy (BOJ hiking, ECB cutting, Fed on hold) creates market divergence and manager dispersion that could suit trend models; a more divergent, less coordinated world favors trend.", "type": "theoretical", "stated": "stated", "support": "January 2025 observations; geopolitical anecdotes", "claim_ids": ["MT107-C02-2", "MT107-C16-3"]},
+    {"premise": "Short-term models react to noise (the Nvidia drop of about $600bn reversed within days) that longer-term models ignore.", "type": "experience", "stated": "stated", "support": "one-week example", "claim_ids": ["MT107-C02-1"]},
+    {"premise": "Convexity depends on horizon: short-term managers and tail funds claim more of it, trend followers' skew has reportedly declined, and longer-term managers can argue that providing convexity daily costs too much bleed and does not matter for long-run results.", "type": "theoretical", "stated": "stated", "support": "recollection of a Quantica paper", "claim_ids": ["MT107-C09-1", "MT107-C09-X1"]},
+    {"premise": "A multi-asset portfolio with trend following cushions events nobody imagined; the question is what you are doing about what you are not worried about, and investors who think they are diversified often hold hidden short-volatility exposure.", "type": "experience", "stated": "stated", "support": "none beyond reasoning", "claim_ids": ["MT107-C10-1", "MT107-C16-3"]},
+    {"premise": "Risk defined only as permanent loss of capital is too narrow, because complete loss is rare in any strategy and volatility can still feel like risk; long drawdowns hurt investor psychology more than deep short ones (Asness).", "type": "behavioural", "stated": "stated", "support": "Asness podcast heard in Miami", "claim_ids": ["MT107-C12-X1", "MT107-C13-1"]},
+    {"premise": "The range and probability of extreme events is judged higher now; correlation-aware VaR, used properly, remains a decent risk measure and better than Sharpe.", "type": "experience", "stated": "stated", "support": "Alistair Williams podcast; personal experience with VaR", "claim_ids": ["MT107-C13-2", "MT107-C13-3"]},
+    {"premise": "In funds whose open trade equity grew to 50-70% of NAV, new investors face a straight 50% drawdown that long-standing investors do not, so sizing on closed equity mainly suits one's own money with an infinite runway.", "type": "institutional", "stated": "stated", "support": "last year's observation of some managers", "claim_ids": ["MT107-C14-1"]}
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {"element": "research", "practice": "Track a trend barometer (41 at end of January 2025, neutral) and monthly CTA indices (SG Trend, SG CTA, BTOP50, short-term traders, Bridge flat-fee trend).", "why": "To gauge how trend following is performing; dispersion between indices is notable.", "claim_ids": ["MT107-C03-3", "MT107-C03-4", "MT107-C03-1"]}
+   ],
+   "evidence_style": "Anecdote, conferences and podcasts heard (Asness, Williams), index data, and his own experience.",
+   "current_views": [
+    {"view": "January 2025 was a mixed month for trend: winners in equities after the election, German DAX, coffee, gold and live cattle; zinc was a drag; SG Trend -52bp, SG CTA +20bp, BTOP50 about +70bp, Bridge flat-fee -78bp; MSCI World +3.47%.", "as_of": "2025-02-01 (data as of Thursday January 30)", "reasoning": "Observed index and market data.", "claim_ids": ["MT107-C03-1", "MT107-C03-3", "MT107-C03-4"]},
+    {"view": "A divergent world (central banks acting independently, trade tensions) may favor trend strategies more now.", "as_of": "2025-02-01", "reasoning": "Divergence creates dispersion and trends.", "claim_ids": ["MT107-C02-2", "MT107-C16-3"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Definition of risk",
+   "positions": [
+    {"speaker": "Richard Brennan", "position": "Risk is permanent loss of capital, not volatility; trend followers rarely blow up.", "claim_ids": ["MT107-C12-3", "MT107-C12-4"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Complete permanent loss is rare in any strategy, so he wants a definition between the two; volatility can still feel like risk.", "claim_ids": ["MT107-C12-X1"]}
+   ]
+  },
+  {
+   "topic": "Usefulness of VaR and similar measures",
+   "positions": [
+    {"speaker": "Richard Brennan", "position": "Sharpe, standard deviation and VaR fail because crises come from unforeseen events; VaR misses contagion.", "claim_ids": ["MT107-C10-2", "MT107-C11-4"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Correlation-aware VaR, used properly, is still a decent measure, better than Sharpe.", "claim_ids": ["MT107-C13-3"]}
+   ]
+  },
+  {
+   "topic": "Sizing on closed versus open equity",
+   "positions": [
+    {"speaker": "Richard Brennan", "position": "Risk a fraction of closed-trade core capital and let unrealised equity run; for outside money allocate new AUM using closed equity.", "claim_ids": ["MT107-C13-5", "MT107-C14-X1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "The principle suits one's own money; new investors in funds with large open equity face a straight 50% drawdown that others do not.", "claim_ids": ["MT107-C14-1"]}
+   ]
+  },
+  {
+   "topic": "How much convexity trend following offers",
+   "positions": [
+    {"speaker": "Richard Brennan", "position": "Trend following embeds convexity at no explicit premium but is exposed to short-term shocks; options are the precise hedge.", "claim_ids": ["MT107-C09-2", "MT107-C09-3", "MT107-C09-X2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Convexity depends on the horizon; short-term managers and tail funds claim more, trend skew has reportedly declined, and longer-term managers can argue daily convexity costs too much bleed.", "claim_ids": ["MT107-C09-1", "MT107-C09-X1"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Rich claims trend following has convexity at no cost, but also says it is exposed to short-term shocks and whipsaws and is not a pure insurance program; the host notes trend skew has reportedly declined. No payoff data are shown.", "claim_ids": ["MT107-C09-2", "MT107-C09-3", "MT107-C09-1"]},
+  {"issue": "The claim that few trend followers blow up and no validated 20-30 year records exist for other styles is asserted without evidence or survivorship discussion.", "claim_ids": ["MT107-C12-4"]},
+  {"issue": "Natural analogies (avalanche, flood, forest fire) support the fragility argument but do not show that low volatility raises tail risk in markets.", "claim_ids": ["MT107-C11-3", "MT107-C11-4"]},
+  {"issue": "'Smooth linear curves later become concave' is shown with LTCM and mean reversion as examples; a counter-case of a smooth strategy that did not fail is not considered.", "claim_ids": ["MT107-C07-3", "MT107-C08-1"]},
+  {"issue": "Rich's definition of the barbell (small linear losses, amplified gains) and the 'unrealised equity could be 5% of the value of the portfolio' remark are not quantified; the open-equity sizing rule is contested by the host.", "claim_ids": ["MT107-C07-2", "MT107-C13-5", "MT107-C14-1"]},
+  {"issue": "Rich's own wording says convexity cannot be had from historical statistics yet asserts that trend following has convex payoff; the evidence for the latter is the structure of the rules, not a measured skew.", "claim_ids": ["MT107-C05-1", "MT107-C14-3", "MT107-C09-1"]},
+  {"issue": "(reader) The 60/40 critique (no brakes after correlation turned positive) is asserted from the recent correlation shift only; the earlier decades in which bonds did hedge are not discussed.", "claim_ids": ["MT107-C08-2"]}
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs the speakers say matter: (1) divergence between central banks (BOJ hiking, ECB cutting, Fed on hold) as a source of dispersion and trends; (2) the stock-bond correlation (positive now) as a break in the basis of 60/40; (3) regime of volatility (long muted periods followed by explosive moves) rather than average volatility; (4) trend persistence, since trend following pays when material trends exist and earns nothing in stagnation; (5) the open-equity share of NAV in trend funds as a risk for new investors. Horizon is the multi-year compounding horizon. Neither speaker forecasts a market direction.",
+ "reader_inferences": [
+  "(reader) Rich's argument is a payoff-shape argument: rather than forecasting, he picks strategy classes (convex) whose payoff survives regime shifts, which is why he dismisses prediction-based risk measures.",
+  "(reader) The host's horizon argument and Rich's no-premium claim point to the same unresolved question: how much of trend following's convexity exists at the horizon an investor cares about, given its lag in sudden shocks.",
+  "(reader) Both speakers treat dispersion across trend managers as informative about model and market-exposure differences, linking it to the divergent macro environment rather than to randomness.",
+  "(reader) The closed-equity discussion implies that risk measured on core capital understates the risk borne by a new investor, which is an allocator-side, not a model-side, problem."
+ ],
+ "added_claims": []
+}

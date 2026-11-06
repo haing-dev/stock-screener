@@ -1,0 +1,349 @@
+{
+ "source_id": "MT224",
+ "episode_thesis": "Dredge (options/convexity) and Brennan (trend following) both treat markets as reflexive, non-ergodic complex adaptive systems whose big moves are endogenous: calm lets leverage and price-insensitive positioning build until a small trigger releases a fat tail, so Gaussian statistics, Sharpe, Kelly and VaR hide the real risk. Their shared prescription is to engineer convexity (truncate the left tail, leave the right open), cap leverage, size equal-risk, widen the book, enter small, and judge portfolios by architecture and geometric wealth path rather than by average return statistics.",
+ "speakers": [
+  {
+   "name": "Dave Dredge",
+   "role": "CIO of Convex Strategies (Singapore); long-dated options / convexity overlay provider",
+   "speaker_note": "Captions name speakers inconsistently but the content (options, 'dredgisms', rational accounting man) is clearly Dredge. C28-2 'risk is everything not in your backtest' is Dredge's maxim quoted by the host and confirmed by Dredge (ledger correction applied).",
+   "fingerprint": ["volatility_options", "crisis_alpha_convexity", "positioning_crowding", "policy_reaction_central_banks", "debt_cycle_long_term", "portfolio_construction_stacking", "valuation_contrarian", "liquidity_flows"],
+   "worldview_premises": [
+    {"premise": "The future path is unknowable (infinite paths around a strange attractor); the job is to understand current initial conditions and make the portfolio resilient (brakes), not to forecast.", "type": "theoretical", "stated": "stated", "support": "Lorenz/chaos metaphor and race-car analogy; no data.", "claim_ids": ["MT224-C03-2"]},
+    {"premise": "Positioning, above all price-insensitive flow, is what moves markets; participants split into 'rational accounting man' (banks, pensions, insurers, central banks, FX reserve managers, passive; rule/regulation-driven, no skin in the game) and boundedly rational agents with skin in the game, and the former dominate.", "type": "institutional", "stated": "stated", "support": "Years of practitioner experience; cites Mike Green and Harry Krishnan on passive flows.", "claim_ids": ["MT224-C05-2"]},
+    {"premise": "The bond market is the biggest price-insensitive imbalance: holders carry huge unrealised losses they do not mark or cut, so the unwind of the 2020 bond bubble is incomplete and its first shock in 2022 was only the start.", "type": "empirical", "stated": "stated", "support": "Asserts unrealised losses at central banks, reserve managers, banks, pensions/insurers; no figures given.", "claim_ids": ["MT224-C06-1", "MT224-C06-X1"]},
+    {"premise": "Leverage is the risk, not volatility. When regulators and models measure risk as volatility, low volatility licenses leverage, imbalances build reflexively and unwind violently as loss-absorbing capital is depleted, giving left-skewed returns and fat tails.", "type": "institutional", "stated": "stated", "support": "Experience with regulation and structured products (super-senior tranche example); no data.", "claim_ids": ["MT224-C06-2", "MT224-C08-2"]},
+    {"premise": "Policy makers deliberately suppress volatility so that rule-bound holders lever up in the assets policy wants to grow (government bonds, housing); suppressed volatility plus attracted leverage is where fat left tails come from.", "type": "institutional", "stated": "stated", "support": "Assertion based on his view of regulatory and accounting incentives.", "claim_ids": ["MT224-C14-X1"]},
+    {"premise": "Most investors manage the risk they measure but not the risk they assume, which is mostly correlation and volatility assumed constant in MPT/EMH frameworks; implicit leverage from volatility selling creates mispriced tails.", "type": "experience", "stated": "stated", "support": "Practitioner experience; no data.", "claim_ids": ["MT224-C08-3"]},
+    {"premise": "Investing is non-ergodic: the ensemble average does not equal the time average, sequencing matters and ruin ends the game.", "type": "theoretical", "stated": "stated", "support": "Cites Ole Peters and Taleb (casino and trousers stories); mathematical argument, no market data.", "claim_ids": ["MT224-C10-1"]},
+    {"premise": "Self-organised criticality: risk grows the longer there is no fire. Diversification protects against a strike on one tree but not against fire spreading through connectivity (leverage, correlation), as at a percolation threshold; one snowflake can trigger the avalanche.", "type": "theoretical", "stated": "stated", "support": "Physics analogy from Per Bak, How Nature Works; no market test shown.", "claim_ids": ["MT224-C11-3"]},
+    {"premise": "The S&P 500's 10 worst and 10 best months out of 480 contribute almost all long-term returns, so the average is meaningless and what happens in the tails matters.", "type": "empirical", "stated": "stated", "support": "Presentation chart shared across years; figures stated verbally only.", "claim_ids": ["MT224-C16-1"]},
+    {"premise": "Traditional diversification assumes stable correlation and ignores connectivity. Diversifying across things that can each lose everything is bad; diversifying across positions with unbounded upside (St. Petersburg paradox) is good.", "type": "theoretical", "stated": "stated", "support": "His own earlier paper and the St. Petersburg argument.", "claim_ids": ["MT224-C19-1"]},
+    {"premise": "When positively convex, more risk is less risk: added convexity reduces total risk and allows taking more positive-drift risk. Leverage on concave positions (low correlation in good markets, rising in bad) produces volatility drag and disasters.", "type": "theoretical", "stated": "stated", "support": "Bankers Trust / Asian crisis experience; no numbers.", "claim_ids": ["MT224-C22-1", "MT224-C26-1"]},
+    {"premise": "Risk is everything you did not think of, i.e. not in your backtest, and it cannot be managed by magic models; only accountability, skin in the game and tacit knowledge manage it.", "type": "experience", "stated": "stated", "support": "Experience on risk councils; argues that embedding VaR in BIS capital rules removed accountability and invited the GFC.", "claim_ids": ["MT224-C28-1", "MT224-C28-2"]},
+    {"premise": "Strategies that are leveraged on the surface (daily-rebalanced 2x ETFs) are destroyed by volatility drag and approach zero over long horizons.", "type": "empirical", "stated": "stated", "support": "SK Hynix 2x ETF example: -47% in three months while the stock was +1%.", "claim_ids": ["MT224-C02-1"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Price-insensitive leverage build-up and reflexive unwind",
+     "steps": [
+      {"from": "policy / regulation measures risk as volatility; authorities suppress volatility", "to": "rule-bound, price-insensitive holders lever up in favoured assets", "why": "low measured risk licenses more leverage and they optimise accounting returns", "claim_ids": ["MT224-C06-2", "MT224-C14-X1"]},
+      {"from": "leverage rises", "to": "loss-absorbing capital falls and tail risk becomes left-skewed and fat", "why": "less capital stands behind each potential loss", "claim_ids": ["MT224-C06-2", "MT224-C14-1"]},
+      {"from": "an assumed-stable correlation misbehaves (or a divergent trader moves)", "to": "stop losses and forced risk cuts", "why": "investors hold more risk than their capital allows", "claim_ids": ["MT224-C08-2"]},
+      {"from": "one investor's risk cut", "to": "changes correlation and risk appetite for the next, triggering divergent traders and a cascade", "why": "reflexive feedback", "claim_ids": ["MT224-C08-2", "MT224-C08-3"]},
+      {"from": "holders who do not mark to market", "to": "unrealised losses sit unrecognised, delaying and prolonging the unwind", "why": "no price-sensitive selling", "claim_ids": ["MT224-C06-1", "MT224-C06-X1"]}
+     ],
+     "evidence": "Narrative and institutional reasoning; 2022 bond sell-off and 2020 'mother of all bond bubbles' cited as illustration, no quantified test.",
+     "fails_when": "Price-insensitive holders never have to realise losses, so the unwind can be delayed for long periods; timing is not predicted.",
+     "claim_ids": ["MT224-C06-2", "MT224-C08-2", "MT224-C14-X1"]
+    },
+    {
+     "topic": "Self-organised criticality: calm is where risk and cheap protection coincide",
+     "steps": [
+      {"from": "long period without a fire/shock", "to": "risk (brush, imbalance, connectivity) accumulates", "why": "no clearing of leverage; reflexive build-up", "claim_ids": ["MT224-C11-3"]},
+      {"from": "accumulated connectivity", "to": "diversification fails because fire spreads tree to tree", "why": "correlation/leverage connect positions", "claim_ids": ["MT224-C11-3", "MT224-C12-1"]},
+      {"from": "backward-looking measures such as VaR", "to": "they register calm as low risk, so options protection is cheapest where risk is highest", "why": "VaR measures the frequency of past fires; price-insensitive supply", "claim_ids": ["MT224-C12-1"]},
+      {"from": "no exogenous shock needed", "to": "a tiny trigger releases the avalanche", "why": "state of the system, not news, determines size", "claim_ids": ["MT224-C11-3"]}
+     ],
+     "evidence": "Physics analogy (Per Bak); debt/GDP rising from 30% to 130% without a blow-up offered as evidence that fragility is building.",
+     "fails_when": "Not stated; he concedes only that it does not say an avalanche is certain, only more likely. No timing rule.",
+     "claim_ids": ["MT224-C11-3", "MT224-C12-1"]
+    },
+    {
+     "topic": "Non-ergodicity and why resilience comes before optimisation",
+     "steps": [
+      {"from": "investing is a single path through time", "to": "ensemble average differs from time average (geometric below arithmetic); sequencing matters", "why": "a 50% fall needs a 100% gain; ruin ends the game", "claim_ids": ["MT224-C10-1"]},
+      {"from": "ruin is absorbing", "to": "first build brakes (convex protection), then explore how to go faster", "why": "cannot optimise to an unknown future path; learn by doing", "claim_ids": ["MT224-C03-2", "MT224-C24-2"]},
+      {"from": "fiduciaries paid on calendar-year arithmetic returns", "to": "incentives ignore geometric growth of wealth", "why": "expected return is, in his words, a nonsensical number", "claim_ids": ["MT224-C24-2"]}
+     ],
+     "evidence": "Ole Peters / Taleb arguments and casino stories.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT224-C10-1", "MT224-C24-2"]
+    },
+    {
+     "topic": "Why long-dated options are mispriced and how he captures it",
+     "steps": [
+      {"from": "volatility supply dominated by non-price-sensitive structured-product sellers (without skin in the game, measuring regulatory probability)", "to": "long-dated optionality is priced off a flawed distribution", "why": "sellers repackage option premium as yield and do not capitalise the tails", "claim_ids": ["MT224-C21-3", "MT224-C22-1"]},
+      {"from": "buy a multi-year strip at a fixed price", "to": "triple mispricing captured: underlying distribution, supply, product nonlinearity", "why": "the buyer plays repeatedly with unbounded upside (St. Petersburg framing)", "claim_ids": ["MT224-C21-3", "MT224-C19-1"]},
+      {"from": "one tail event", "to": "the seller realises it mispriced and may want to unwind the commitment", "why": "casino/roulette 101-to-1 analogy", "claim_ids": ["MT224-C21-3"]}
+     ],
+     "evidence": "Analogy and structural reasoning; no pricing data in the episode.",
+     "fails_when": "Needs efficient volatility markets and products; cannot access markets such as cocoa without a volatility supplier.",
+     "claim_ids": ["MT224-C21-3", "MT224-C23-1"]
+    },
+    {
+     "topic": "Positive convexity lets investors take more upside risk (return stacking)",
+     "steps": [
+      {"from": "free capital from poor diversifiers into explicit negative-correlation hedges", "to": "clients keep positive-drift assets and the combination is long gamma", "why": "hedge sensitivity and attachment are actively managed as assets grow", "claim_ids": ["MT224-C21-2"]},
+      {"from": "hedge with non-recourse leverage (options on convex hedges)", "to": "total risk falls as the hedge grows, enabling portable alpha / return stacking", "why": "give the downside to someone else while keeping the upside", "claim_ids": ["MT224-C26-1", "MT224-C22-1"]},
+      {"from": "contrast: recourse leverage on concave positions", "to": "volatility drag and ruined compounding", "why": "correlation rises exactly when markets fall", "claim_ids": ["MT224-C26-1"]}
+     ],
+     "evidence": "Reasoning and own business model; the 'more hedge, less risk' claim is shown by examples he says he plays with.",
+     "fails_when": "Applies only when the added leverage sits on convex, explicitly negatively correlated positions.",
+     "claim_ids": ["MT224-C26-1", "MT224-C21-2"]
+    }
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Do not forecast the path. Look for where price-insensitive positioning and leverage have built imbalance after long calm ('where the most dry brush is'), and buy protection there.", "why": "Protection is cheapest where past-frequency measures show no risk but fragility is highest.", "claim_ids": ["MT224-C12-1", "MT224-C05-2", "MT224-C06-1"]},
+    {"element": "universe", "practice": "Own thin-tailed assets with high natural volatility (compensated by upside) and construct hedges from fat-left-tail instruments with suppressed volatility and attracted leverage (bank/repo leverage, volatility selling).", "why": "Suppressed volatility plus leverage produces the surprises.", "claim_ids": ["MT224-C14-1", "MT224-C14-X1"]},
+    {"element": "portfolio", "practice": "Free clients' capital from poor diversifiers into explicit negatively correlated hedges, and keep the clients' own positive-drift assets; Convex Strategies runs only the negatively correlated convexity sleeve.", "why": "The combination gives long gamma on the combined portfolio; clients keep asset-price drift.", "claim_ids": ["MT224-C21-2", "MT224-C26-1"]},
+    {"element": "execution", "practice": "Buy long-dated option strips (multi-year) at a fixed price, keeping attachment and sensitivity maintained as client assets grow.", "why": "Locks in the mispricing from price-insensitive volatility supply and gives repeated plays at unbounded upside.", "claim_ids": ["MT224-C21-3", "MT224-C21-2"]},
+    {"element": "risk", "practice": "Judge risk by tail behaviour and connectivity rather than average, VaR or volatility; be convex on both sides where it matters (capping the upside, e.g. covered calls or 60/40, does not remove tail exposure).", "why": "Almost all long-run return comes from a handful of extreme months; the football analogy shows resilience then efficiency then individual tail events.", "claim_ids": ["MT224-C16-1", "MT224-C16-2", "MT224-C17-1"]},
+    {"element": "portfolio", "practice": "Combine long volatility with trend following: they cover different parts of the distribution with different attachment points; trend has wider market breadth, options need efficient vol markets.", "why": "Every way of adding convexity is additive; they are complementary.", "claim_ids": ["MT224-C23-1"]},
+    {"element": "portfolio", "practice": "Do not hold a directional view on the hedge: happy with opposing views because convexity can be bought on either side; price is the driver.", "why": "Positive convexity reduces risk and captures more tails whichever way.", "claim_ids": ["MT224-C22-1"]},
+    {"element": "research", "practice": "Learn by doing: build brakes first, then explore speed; do not optimise to a backward-looking expectation. Shift fiduciary incentives from calendar-year arithmetic returns to geometric wealth growth.", "why": "The future path is unknowable; resilience to divergence from expectation matters more.", "claim_ids": ["MT224-C24-2", "MT224-C03-2"]},
+    {"element": "risk", "practice": "Manage risk through accountability and tacit knowledge, not formula-based regulatory capital; keep people accountable for the capital they risk.", "why": "VaR in BIS capital rules removed accountability and, in his view, invited the GFC.", "claim_ids": ["MT224-C28-1"]}
+   ],
+   "evidence_style": "Analogy and first principles from physics and ergodicity (Per Bak, Peters, Taleb, Lorenz), reinforced by institutional-structure reasoning and long practitioner experience; stylised facts (S&P tail months, SK Hynix ETF) rather than backtests. The World Cup 'convex goalkeeper theorem' is an analogy model, not market evidence.",
+   "current_views": [
+    {"view": "Long-dated yields are at multi-decade highs in Japan, the US and the UK; the Fed held with three dissents and the bond market was disappointed.", "as_of": "2026-07-30", "reasoning": "Presented as context for the unresolved bond-market imbalance.", "claim_ids": ["MT224-C02-2"]},
+    {"view": "The unwinding of the bond-market imbalance (the 2020 bond bubble) is not finished; rational-accounting-man holders still sit on large unrealised losses and have not cut positions or freed capital.", "as_of": "2026-07-30", "reasoning": "Price-insensitive holders do not mark to market, so the reversal is delayed but will come with a fat tail.", "claim_ids": ["MT224-C06-1", "MT224-C06-X1"]},
+    {"view": "Leveraged single-stock ETFs in Korean chip makers show a boom-bust driven by volatility drag; over long horizons they head toward zero.", "as_of": "2026-07-30", "reasoning": "SK Hynix 2x ETF -47% over three months while the stock is +1%.", "claim_ids": ["MT224-C02-1"]},
+    {"view": "Demand for explicit loss mitigation / negatively correlating diversifiers has never been higher (business is very busy).", "as_of": "2026-07-30", "reasoning": "Busy markets across asset classes and a lot going on in the world; no quantification.", "claim_ids": ["MT224-C01-R1"]},
+    {"view": "Rising debt/GDP without a blow-up is more reason to worry, not less.", "as_of": "2026-07-30", "reasoning": "Fragility builds through the calm period; protection is cheapest now.", "claim_ids": ["MT224-C12-1"]}
+   ]
+  },
+  {
+   "name": "Rich Brennan",
+   "role": "Trend-following quant researcher / CTA practitioner (regular co-host of the Systematic Investor series)",
+   "speaker_note": "Identified by content (agent-based model, fractals, trend following, cocoa position). Captions do not label speakers. Claims about his models (25% threshold, 40-year reshuffle, 125 years of Dow/S&P) are his own unpublished research as described; no figures were shown.",
+   "fingerprint": ["trend_following", "crisis_alpha_convexity", "position_sizing_vol_target", "diversification_risk_parity", "research_robustness_overfitting", "regime_detection", "positioning_crowding", "market_internals_leading"],
+   "worldview_premises": [
+    {"premise": "Markets are reflexive, non-stationary, computationally irreducible processes in which agents react to a system that reacts to them; outcomes cannot be forecast with linear statistics. Observed return statistics are only the residue of a deeper constraint-contingent process.", "type": "theoretical", "stated": "stated", "support": "Physics analogies (relativity, Mandelbrot, Feynman's electrons with feelings); no empirical test in the episode.", "claim_ids": ["MT224-C04-1", "MT224-C04-X1"]},
+    {"premise": "There is little evidence that anyone has significantly beaten the market despite Nobel laureates and clever quants, because Gaussian mathematics is applied to a reflexive domain.", "type": "theoretical", "stated": "stated", "support": "Assertion plus the Margin Call movie anecdote; no studies cited.", "claim_ids": ["MT224-C05-1"]},
+    {"premise": "Price moves because of transactions; fundamentals, macro and flows are downstream. Markets are an ecosystem of participant types (fundamental/convergent, trend/divergent, random) whose directed forces create feedback and fractal price structure.", "type": "theoretical", "stated": "stated", "support": "Influenced by Bouchaud's microstructure work; supported by his own agent-based model.", "claim_ids": ["MT224-C07-1"]},
+    {"premise": "Fat tails, volatility clustering and memory arise from market structure, not news: random-only agents give Gaussian returns, and about 25% divergent (amplifying) participants, including passive investors following a buy-the-biggest rule, switches on the real-market signatures through a sharp phase transition.", "type": "empirical", "stated": "stated", "support": "His agent-based simulation; results described verbally, model not shown.", "claim_ids": ["MT224-C07-2", "MT224-C07-3", "MT224-C08-1", "MT224-C09-X1"]},
+    {"premise": "About 90% of big market moves are endogenous, not caused by news; the state of the market (activity up, liquidity thin, book fragile) does the work and the trigger is incidental. Settling takes longer than orthodoxy assumes (inelastic, memory-bearing markets).", "type": "empirical", "stated": "stated", "support": "Cites Bouchaud's study of news versus price moves; Gabaix and others on inelasticity.", "claim_ids": ["MT224-C09-1"]},
+    {"premise": "Volatility clusters (calm begets calm), so calm can persist while risk accumulates in the structure; the calm-to-volatile transition catches everyone.", "type": "empirical", "stated": "stated", "support": "Volatility-clustering literature and his own models.", "claim_ids": ["MT224-C09-2"]},
+    {"premise": "Calm markets are open systems far from equilibrium, not safe: quiet is energy building like a stretched rubber band, hidden from traditional risk metrics; quiet regimes are the deepest coupled negative-feedback states and most risk events emerge from calm regimes via a volatility shock.", "type": "empirical", "stated": "stated", "support": "His own modelling; no data shown.", "claim_ids": ["MT224-C12-2", "MT224-C13-1"]},
+    {"premise": "Wealth is a multiplicative, path-dependent process: arithmetic returns, Sharpe, Sortino, VaR and standard deviation ignore order, and volatility drag widens the gap between geometric and arithmetic outcomes. External cash flows (taxes, subscriptions, redemptions) also change the path.", "type": "theoretical", "stated": "stated", "support": "His reshuffling test of 40 years of returns.", "claim_ids": ["MT224-C10-X1", "MT224-C11-1", "MT224-C11-2"]},
+    {"premise": "Sharpe fails in two ways: it penalises convex strategies (October 2008 was 3.4% of 40-year trend wealth yet moved Sharpe only slightly) and it discards how a portfolio is built, so equal Sharpe hides very different failure modes.", "type": "empirical", "stated": "stated", "support": "His 40-year trend model; single-cable versus thousand-strand analogy.", "claim_ids": ["MT224-C18-1", "MT224-C18-2"]},
+    {"premise": "Optimal bets (Kelly) assume perfect information and put you on a knife edge; estimates are noisy (noise often exceeds the signal) and with fat tails the required sample size explodes, so under-betting leaves room for error. LTCM went to ruin by exceeding the peak assumptions.", "type": "theoretical", "stated": "stated", "support": "Own comparison of Kelly versus equal-risk fractional sizing in trend following plus the LTCM example.", "claim_ids": ["MT224-C15-1", "MT224-C15-2"]},
+    {"premise": "Markets are permanently coupled because agents are diversified across products; in calm regimes the coupling oscillates and cancels (apparent diversification), in crisis it turns into trend and everything correlates. A book that looks diversified can hide one dependency (borrow short, lend long across a dozen markets is one rate bet).", "type": "empirical", "stated": "stated", "support": "His own unpublished research.", "claim_ids": ["MT224-C19-2", "MT224-C19-X1"]},
+    {"premise": "Because market structure is fractal, more diversification (a bigger sample) gives an initial drop and then rising kurtosis, and exposes the book to larger structures; drawdowns and gains ahead are larger than those seen. Major moves hold the information; the rest is noise.", "type": "empirical", "stated": "stated", "support": "Own studies including 125 years of Dow and S&P data; not shown.", "claim_ids": ["MT224-C20-1", "MT224-C21-1"]},
+    {"premise": "Trend following and long options both truncate the left tail and leave the right tail open (stop-loss longs are synthetic calls), but trend followers pay an implicit premium through whipsaws, foregone growth and gap risk; markets themselves have little skew.", "type": "theoretical", "stated": "stated", "support": "Option-replication reasoning.", "claim_ids": ["MT224-C22-2", "MT224-C22-R1"]},
+    {"premise": "A 50/50 mix of the S&P 500 and trend following (or long vol) yields almost the sum of the returns, not the average, because the correlation turns negative in crises.", "type": "empirical", "stated": "stated", "support": "A chart he uses (not shown); the host cites the same.", "claim_ids": ["MT224-C24-1"]},
+    {"premise": "Long-vol overlays on traditional portfolios are a band-aid on a poor return stream; ideally rebuild the portfolio from first principles.", "type": "experience", "stated": "stated", "support": "Opinion; he says he is 100% trend and never faces this issue.", "claim_ids": ["MT224-C26-2"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Agent-based model: divergent participation creates fat tails and clustering",
+     "steps": [
+      {"from": "only random traders", "to": "Gaussian returns with no fat tails, memory or volatility clustering", "why": "consistent with EMH premise", "claim_ids": ["MT224-C07-2"]},
+      {"from": "add convergent traders", "to": "still Gaussian", "why": "fading moves keeps price oscillating around equilibrium", "claim_ids": ["MT224-C08-1"]},
+      {"from": "divergent (amplifying) share reaches about 25%", "to": "fat tails, volatility clusters and memory appear abruptly (phase transition)", "why": "amplifying positions create the tails; passive buy-the-biggest counts as divergent", "claim_ids": ["MT224-C07-3", "MT224-C08-1"]},
+      {"from": "no news input at all", "to": "same signatures appear", "why": "market structure, not information arrival, generates them", "claim_ids": ["MT224-C09-X1", "MT224-C09-1"]}
+     ],
+     "evidence": "His own simulation; threshold and parameters not shown on air.",
+     "fails_when": "Not stated; the 25% threshold is model-specific and no real-market measurement of divergent share is given.",
+     "claim_ids": ["MT224-C07-2", "MT224-C07-3", "MT224-C08-1", "MT224-C09-X1"]
+    },
+    {
+     "topic": "Calm builds leverage, then a small shock explodes",
+     "steps": [
+      {"from": "calm regime (volatility clusters, calm begets calm)", "to": "volatility-targeted models mechanically raise position size", "why": "model reads low volatility as safe", "claim_ids": ["MT224-C09-2", "MT224-C13-2"]},
+      {"from": "quiet market and weak trends", "to": "participants behaviourally lever up to earn a living", "why": "incentives", "claim_ids": ["MT224-C13-2"]},
+      {"from": "high leverage built in a coupled, cancelling-oscillation state", "to": "a small perturbation produces an explosion", "why": "stored energy in the structure; liquidity has thinned", "claim_ids": ["MT224-C12-2", "MT224-C13-1", "MT224-C09-1"]},
+      {"from": "high Sharpe estimates", "to": "authorise more leverage while estimates are noisy and tails fat", "why": "makes the knife edge worse", "claim_ids": ["MT224-C13-3"]},
+      {"from": "capital destruction", "to": "arises mainly from quiet markets with oversized positions", "why": "leverage destroys compounding", "claim_ids": ["MT224-C24-3"]}
+     ],
+     "evidence": "His modelling; JGB 2018 example (figures garbled in the transcript; see gaps).",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT224-C13-1", "MT224-C13-2", "MT224-C24-3"]
+    },
+    {
+     "topic": "Path dependence and geometric wealth",
+     "steps": [
+      {"from": "reshuffle the same 40 years of returns", "to": "Sharpe, Sortino, VaR and standard deviation do not change", "why": "they ignore order", "claim_ids": ["MT224-C11-1"]},
+      {"from": "wealth is multiplicative on an accumulated balance", "to": "terminal outcomes range from a 30% to an 84% decline", "why": "order of returns and external cash flows change the compounding path", "claim_ids": ["MT224-C11-1", "MT224-C10-X1", "MT224-C11-2"]},
+      {"from": "higher volatility", "to": "geometric path diverges from arithmetic path in a compounding way", "why": "volatility drag", "claim_ids": ["MT224-C11-2"]}
+     ],
+     "evidence": "His own reshuffling exercise on 40 years of (trend) returns.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT224-C11-1", "MT224-C11-2"]
+    },
+    {
+     "topic": "Diversification: permanent coupling, hidden architecture and fractal right tails",
+     "steps": [
+      {"from": "agents are diversified across products", "to": "markets are permanently coupled", "why": "common holders transmit forces across assets", "claim_ids": ["MT224-C19-2"]},
+      {"from": "calm regime", "to": "coupling oscillates and cancels, giving apparent diversification", "why": "oscillations cancel", "claim_ids": ["MT224-C19-2", "MT224-C13-1"]},
+      {"from": "crisis", "to": "coupling turns to trend and everything correlates", "why": "same coupling, different phase", "claim_ids": ["MT224-C19-2"]},
+      {"from": "wider book / bigger sample", "to": "kurtosis dips then rises, exposing more right-tail events such as cocoa", "why": "fractal structure: larger samples reach larger structures", "claim_ids": ["MT224-C20-1", "MT224-C21-1"]},
+      {"from": "common anchor (single dependency)", "to": "apparent diversification hides one failure mode", "why": "e.g. borrow short, lend long across a dozen markets", "claim_ids": ["MT224-C19-X1", "MT224-C18-2"]}
+     ],
+     "evidence": "Own unpublished research; 125 years of Dow/S&P; cocoa as example of an idiosyncratic winner.",
+     "fails_when": "He says diversification is not a cure for correlation and will not significantly reduce volatility.",
+     "claim_ids": ["MT224-C19-2", "MT224-C20-1", "MT224-C19-X1"]
+    },
+    {
+     "topic": "Why Kelly loses to equal-risk sizing",
+     "steps": [
+      {"from": "Kelly optimum is a peak requiring perfect information", "to": "any overshoot lands in ruin quickly because of volatility drag", "why": "no room for error", "claim_ids": ["MT224-C15-1"]},
+      {"from": "fat tails and non-stationarity", "to": "sample needed for a reliable estimate explodes, so the bet is an estimate not reality", "why": "noise often exceeds the signal", "claim_ids": ["MT224-C15-1", "MT224-C15-2"]},
+      {"from": "ranking markets by apparent edge and tilting size", "to": "rebuilds a single cable and misses explosions like cocoa", "why": "differences between edges are smaller than measurement noise", "claim_ids": ["MT224-C25-1"]}
+     ],
+     "evidence": "His own comparison of Kelly-style sizing with fractional equal-risk sizing under regime change and estimation noise; LTCM as a case.",
+     "fails_when": "Kelly works only if assumptions hold; LTCM did well while they held.",
+     "claim_ids": ["MT224-C15-1", "MT224-C15-2", "MT224-C25-1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "sizing", "practice": "Cap leverage in absolute terms.", "why": "Breaks the automatic link between a quiet market and a large position; most capital destruction comes from too much leverage in quiet markets.", "claim_ids": ["MT224-C24-3", "MT224-C13-2"]},
+    {"element": "sizing", "practice": "Size every market to the same risk (equal risk, fractional sizing) rather than tilting to whichever edge looks strongest.", "why": "Edge differences are smaller than estimation noise and tilting recreates a single cable and misses cocoa-like explosions.", "claim_ids": ["MT224-C25-1", "MT224-C15-2"]},
+    {"element": "portfolio", "practice": "Grow return by widening the book (adding unrelated systems and markets), not by scaling existing bets.", "why": "Reduces reliance on any one estimate and gives more exposure to fractal right tails.", "claim_ids": ["MT224-C25-2", "MT224-C20-1"]},
+    {"element": "execution", "practice": "Always enter small and let open profit build the position.", "why": "Lets the market, not leverage, do the heavy lifting; keeps each bet small relative to estimation error.", "claim_ids": ["MT224-C25-2", "MT224-C25-X1"]},
+    {"element": "universe", "practice": "Stay maximally diversified across markets, including ones most traders ignore (cocoa), while still choosing markets, horizons and rules.", "why": "Idiosyncratic exposure to the explosive winner; he declines only the later step of ranking markets by apparent strength.", "claim_ids": ["MT224-C20-1", "MT224-C25-1"]},
+    {"element": "risk", "practice": "Judge a portfolio by its architecture and dependencies (does it have one failure mode or many) rather than by Sharpe or correlation statistics.", "why": "Sharpe discards construction; a thousand strands tied to one anchor still fails once.", "claim_ids": ["MT224-C18-2", "MT224-C19-X1", "MT224-C19-2"]},
+    {"element": "research", "practice": "Evaluate on path-dependent geometric wealth (reshuffle returns, include cash flows) rather than additive statistics.", "why": "Sharpe, VaR and standard deviation are invariant to order but terminal wealth is not.", "claim_ids": ["MT224-C11-1", "MT224-C10-X1", "MT224-C18-1"]},
+    {"element": "risk", "practice": "Use stops and small bets to truncate the left tail while leaving the right tail open, accepting whipsaws as the implicit premium.", "why": "Replicates the option shape without an explicit premium; gap risk remains.", "claim_ids": ["MT224-C22-2", "MT224-C22-R1"]},
+    {"element": "portfolio", "practice": "Consider combining trend following with explicit long-option protection.", "why": "He sees a benefit of getting both worlds; they differ in discontinuity/gap risk.", "claim_ids": ["MT224-C23-R1", "MT224-C22-2"]},
+    {"element": "portfolio", "practice": "Pair equities with trend or long vol for a near-additive result.", "why": "Correlation is negative in crises.", "claim_ids": ["MT224-C24-1"]}
+   ],
+   "evidence_style": "Own simulations and research (agent-based model, 40-year reshuffles, 125-year Dow/S&P fractal analysis, Kelly versus equal-risk comparison) described verbally without charts, buttressed by physics analogies and cited academics (Mandelbrot, Bouchaud, Gabaix). Results are asserted rather than shown; several are explicitly unpublished.",
+   "current_views": [
+    {"view": "Trend followers have had a volatile, challenging couple of months, with a significant decline in cocoa this month after it was the big winner.", "as_of": "2026-07-30", "reasoning": "Offered as a one-line status update; no data.", "claim_ids": ["MT224-C02-R1"]},
+    {"view": "The 'cocoa' type of explosive idiosyncratic winner is the kind of tail that justifies maximal diversification and equal-risk sizing.", "as_of": "2026-07-30", "reasoning": "Example used repeatedly for why trend followers need breadth.", "claim_ids": ["MT224-C20-1", "MT224-C25-1"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged)",
+   "speaker_note": "Mostly asks questions; the host's questions are context, not views. He states a few views of his own (trend edge is risk management, trend allows owning equities) and reports market data.",
+   "fingerprint": ["trend_following", "manager_selection_allocation", "position_sizing_vol_target"],
+   "worldview_premises": [
+    {"premise": "Both guests treat markets as complex adaptive systems, so Gaussian statistics are the wrong mathematics and risk is not volatility.", "type": "theoretical", "stated": "stated", "support": "His framing of the episode from past conversations.", "claim_ids": ["MT224-C03-1"]},
+    {"premise": "The real edge of trend following since the 1970s is risk management and position sizing, not the breakout signal.", "type": "experience", "stated": "stated", "support": "His own view from decades in the industry; offered as 'I would argue', not evidence.", "claim_ids": ["MT224-C14-2"]},
+    {"premise": "Trend following (and by extension long volatility) is the enabler that lets investors hold equities, yet most investors have not adopted either.", "type": "experience", "stated": "stated", "support": "Recalls a colleague's slogan from the early 1990s.", "claim_ids": ["MT224-C26-X1"]}
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {"element": "sizing", "practice": "Treat risk management and position sizing, not signal discovery, as the source of the trend-following edge.", "why": "Stated as his reading of what trend followers brought in the 1970s.", "claim_ids": ["MT224-C14-2"]}
+   ],
+   "evidence_style": "Host synthesis and industry experience; reports index data, with no tests of his own.",
+   "current_views": [
+    {"view": "Trend barometer neutral at 45; SG CTA +8.5% YTD and SG Trend +8.3% YTD against +3.34% for short-term traders, so slower trend is ahead of short-term trend.", "as_of": "2026-07-30", "reasoning": "Month-end data recap with 1.5 days left in July.", "claim_ids": ["MT224-C01-1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Long-volatility overlays on traditional portfolios: a good solution or a band-aid?",
+   "positions": [
+    {"speaker": "Dave Dredge", "position": "Adding non-recourse, convex, negatively correlated protection is risk-reducing and frees capital for more upside participation (return stacking / portable alpha); combine with trend.", "claim_ids": ["MT224-C26-1", "MT224-C21-2", "MT224-C23-1"]},
+    {"speaker": "Rich Brennan", "position": "It is a band-aid on a bad return stream; ideally rebuild the portfolio from first principles. He accepts it if it improves convexity and sees benefit in combining both approaches.", "claim_ids": ["MT224-C26-2", "MT224-C23-R1"]}
+   ]
+  },
+  {
+   "topic": "What moves prices: positioning of price-insensitive investors versus transactions and divergent feedback",
+   "positions": [
+    {"speaker": "Dave Dredge", "position": "Positioning is the only thing that matters; the key driver is the growth and dominance of price-insensitive rule-bound flows plus leverage and lost loss-absorbing capital.", "claim_ids": ["MT224-C05-2", "MT224-C06-2"]},
+    {"speaker": "Rich Brennan", "position": "The transaction itself moves price; fundamentals, macro and flows are downstream, and divergent feedback (about 25% of participants) alone produces the stylised facts. The two see this as compatible.", "claim_ids": ["MT224-C07-1", "MT224-C07-3", "MT224-C09-1"]}
+   ]
+  },
+  {
+   "topic": "Diversification: what it does and when it helps",
+   "positions": [
+    {"speaker": "Dave Dredge", "position": "Beneficial only across positions with bounded loss and unbounded upside; dangerous across assets that can each wipe you out; traditional diversification fails when connectivity rises and correlation shifts.", "claim_ids": ["MT224-C19-1", "MT224-C11-3", "MT224-C08-2"]},
+    {"speaker": "Rich Brennan", "position": "Markets are permanently coupled; diversification mainly adds exposure to right-tail events (fractal structure) and does not thin tails; it must be judged by architecture and dependencies, not correlation.", "claim_ids": ["MT224-C19-2", "MT224-C20-1", "MT224-C19-X1"]}
+   ]
+  },
+  {
+   "topic": "Implementation of asymmetry: explicit options versus trend with stops",
+   "positions": [
+    {"speaker": "Dave Dredge", "position": "Buy long-dated options for a guaranteed payoff; limited by efficient volatility markets (could not take part in cocoa) but exploits mispriced volatility supply.", "claim_ids": ["MT224-C21-3", "MT224-C23-1"]},
+    {"speaker": "Rich Brennan", "position": "Stops give a synthetic option at an implicit cost of whipsaws and foregone growth, with gap risk; broader market breadth.", "claim_ids": ["MT224-C22-2", "MT224-C22-R1"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Brennan's JGB example is internally inconsistent as transcribed (about 9% volatility, 16.4x leverage, a 6% move costing 9% of capital); the ledger fix treats the volatility as probably well under 1%. The leverage example cannot be relied on numerically.", "claim_ids": ["MT224-C13-2"]},
+  {"issue": "Sharpe 'went from 914 to 931' is clearly a garbled transcription (probably 0.914 to 0.931); the 3.4% October 2008 contribution is asserted from an unpublished 40-year model, and which trend universe or costs it uses is not stated.", "claim_ids": ["MT224-C18-1"]},
+  {"issue": "The agent-based model (25% divergent threshold, phase transition) is asserted without parameters, code or an empirical estimate of the actual divergent share in real markets; counting passive investing as divergent is a modelling choice, not evidence.", "claim_ids": ["MT224-C07-3", "MT224-C08-1", "MT224-C09-X1"]},
+  {"issue": "Brennan's claims about kurtosis rising with diversification, 125 years of Dow/S&P data, and the Kelly versus equal-risk comparison are unpublished and unquantified; the 'drawdowns ahead are always larger' statement is partly tautological for any growing sample.", "claim_ids": ["MT224-C20-1", "MT224-C21-1", "MT224-C15-2"]},
+  {"issue": "The reshuffle result (decline of 30% to 84%) does not say what the strategy was, and an 84% decline from reordering 40 years of returns looks implausible for the same returns unless leverage was high; the claim as stated is unverifiable.", "claim_ids": ["MT224-C11-1"]},
+  {"issue": "Brennan says there is little evidence anyone has beaten the market, yet the episode builds on trend followers (himself) and convex managers adding value; the tension is not addressed and the first claim has no cited evidence.", "claim_ids": ["MT224-C05-1", "MT224-C24-1"]},
+  {"issue": "Dredge's 'calm for longer means more risk, so protection is cheapest' has no stated timing or falsification: a long calm period is read as more reason to worry, which cannot be falsified by calm continuing. The 30% to 130% debt/GDP survival is used as an argument for fragility.", "claim_ids": ["MT224-C12-1", "MT224-C11-3"]},
+  {"issue": "Dredge claims bond-market holders sit on large unrealised losses and have not cut positions; no magnitudes or sources are given, and the claim that the unwind is incomplete is a view, not a measurement.", "claim_ids": ["MT224-C06-1", "MT224-C06-X1"]},
+  {"issue": "The 'triple mispricing' of long-dated options (distribution, supply, product nonlinearity) is asserted without prices or performance; Dredge also says he has no views, while holding a strong structural view on bonds and leverage.", "claim_ids": ["MT224-C21-3", "MT224-C22-1", "MT224-C06-1"]},
+  {"issue": "The football 'convex goalkeeper theorem' is an analogy built on World Cup data; it is not evidence about financial portfolios and the paper was not reviewed on air.", "claim_ids": ["MT224-C16-2", "MT224-C17-1"]},
+  {"issue": "Brennan says calm periods are the deepest negative-feedback coupling, yet also says markets are permanently coupled and diversification works in calm; not reconciled with the claim that calm hides energy building.", "claim_ids": ["MT224-C13-1", "MT224-C19-2"]},
+  {"issue": "The host attributes 'risk is everything not in your backtest' to Dredge; in the ledger it was first attributed to the host and corrected.", "claim_ids": ["MT224-C28-2"]},
+  {"issue": "Dredge's description of the 50/50 S&P plus long vol chart and Brennan's equivalent trend chart ('almost the sum') are not shown; correlation negative in crises is asserted.", "claim_ids": ["MT224-C24-1"]}
+ ],
+ "forward_looking_inputs": "(reader) The speakers give no point forecasts. Inputs they treat as leading for tail risk: length of calm (low realised volatility and VaR) with rising debt/GDP; growth of price-insensitive, rule-driven holders and their unrealised bond losses; leverage permitted by volatility-based risk rules (volatility-targeted sizing, high Sharpe estimates); correlation stability assumptions; and volatility supply from structured-product sellers (option cheapness). Horizon is multi-year for Dredge's option strips and unspecified (event-driven) for Brennan's calm-to-shock transitions. Unrealised-loss holders and low-volatility regimes are cited as why long-dated yields and bond markets could see a further fat-tailed unwind, but no date or level is given.",
+ "reader_inferences": [
+  "(reader) The two guests rest on one mechanism with two languages: calm lowers measured risk, measured risk licenses leverage, leverage removes loss-absorbing capital, and a small shock then forces correlated risk cuts that amplify the move.",
+  "(reader) Neither speaker offers a tradable timing signal for 'the calm is about to end'; both substitute structural insurance (convexity) paid for continuously, so the strategy is robust to timing but pays a carry cost in calm periods.",
+  "(reader) Brennan's diversification claim (more markets adds right tail) and Dredge's (diversify only unbounded-upside positions) both point to payoff asymmetry as the criterion for breadth; they differ on whether correlation statistics are useful at all.",
+  "(reader) The prescriptions (cap leverage, equal-risk sizing, widen book, enter small) are consistent with standard trend-following practice, so the novelty lies in the justification (non-ergodicity, fractals), which is largely untested in the episode."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT224-C01-R1",
+   "chunk": "C01",
+   "speaker": "Dave Dredge",
+   "quote": "effective explicit negatively correlating explicit true diversifying has never been higher",
+   "claim": "Dredge says demand for explicit loss mitigation and truly diversifying, negatively correlated assets has never been higher as markets are active across asset classes (July 2026).",
+   "mechanism": "demand_for_hedges",
+   "asset_class": "multi",
+   "indicator": "client demand for loss mitigation",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "July 2026, busy active markets",
+   "testable": "no - business anecdote",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "reader": "opus-map"
+  },
+  {
+   "claim_id": "MT224-C02-R1",
+   "chunk": "C02",
+   "speaker": "Rich Brennan",
+   "quote": "it's been a challenging couple of months for us",
+   "claim": "Brennan reports a volatile, challenging couple of months for his trend following, including a significant decline in cocoa (captioned 'Cosby') in July 2026.",
+   "mechanism": "trend_reversal",
+   "asset_class": "commodities",
+   "indicator": "cocoa trend position",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "July 2026",
+   "testable": "no - anecdote",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus-map"
+  },
+  {
+   "claim_id": "MT224-C22-R1",
+   "chunk": "C22",
+   "speaker": "Rich Brennan",
+   "quote": "the markets themselves have very little skew in them",
+   "claim": "Brennan says market returns themselves have little skew; the positive skew of trend following and long options is created by truncating the left tail (stops, small bets, option premium) while leaving the right tail open.",
+   "mechanism": "convexity_by_construction",
+   "asset_class": "multi",
+   "indicator": "return skew",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - measure skew of underlying versus strategy returns",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus-map"
+  },
+  {
+   "claim_id": "MT224-C23-R1",
+   "chunk": "C23",
+   "speaker": "Rich Brennan",
+   "quote": "what I see is a benefit of perhaps combining both approaches together",
+   "claim": "Brennan sees benefit in combining trend following with Dredge's explicit options approach to get both worlds, because they have similar convex goals but differ in discontinuity risk and how the guarantee is obtained.",
+   "mechanism": "combining_convexity",
+   "asset_class": "multi",
+   "indicator": "trend plus long volatility combination",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - combine return streams",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus-map"
+  }
+ ]
+}

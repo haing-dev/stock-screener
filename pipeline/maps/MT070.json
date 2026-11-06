@@ -1,0 +1,607 @@
+{
+ "source_id": "MT070",
+ "episode_thesis": "David Harding (Winton) argues that every successful strategy attracts capital until its edge decays, so trend following in futures, once a Sharpe-near-1 machine for 30 years, has become crowded beta and a firm must keep innovating: Winton is moving weight into a 7,000-stock global equity book (event, organizational-metric and customised technical strategies) built on cloud computing and long research cycles. He holds that markets are an evolving ecosystem rather than efficient atoms in a box, that government macro data are too heavily revised to trade on, that trend following is not a dependable crash hedge, and that leverage was cut because crowding plus fat tails creates catastrophe risk.",
+ "speakers": [
+  {
+   "name": "David Harding",
+   "role": "Founder and head of Winton (systematic CTA / quant manager)",
+   "speaker_note": "Interview is Bloomberg Television, 2019-03-18, with an unnamed interviewer who addresses him as 'David'; interviewer questions are context only and no interviewer view is mapped. Captions are unpunctuated auto-captions; one phrase ('i'm 100 comment') is a caption garble and is not used as a quote. Figures such as 5 billion redeemed appear in the interviewer's question, not as Harding's claim.",
+   "fingerprint": [
+    "trend_following",
+    "short_term_systematic",
+    "research_robustness_overfitting",
+    "positioning_crowding",
+    "position_sizing_vol_target",
+    "diversification_risk_parity",
+    "regime_detection",
+    "costs_execution"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Any business or strategy that succeeds without a monopoly attracts too much capital, which drives returns down and forces innovation; crowding degrades return-to-risk.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "General economic reasoning; own experience as trend following became crowded.",
+     "claim_ids": [
+      "MT070-C01-1",
+      "MT070-C01-2",
+      "MT070-C06-1",
+      "MT070-C03-2"
+     ]
+    },
+    {
+     "premise": "Markets are an evolving ecosystem (jungle), not atoms in a box: edges are never perfect, they decay and new ones emerge, so mathematics stays useful but must be renewed.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Metaphor and contrast with efficient market theory; no data.",
+     "claim_ids": [
+      "MT070-C02-2",
+      "MT070-C03-2",
+      "MT070-C05-3"
+     ]
+    },
+    {
+     "premise": "Simple trend rules have lost their old edge as they became accessible 'beta': fast futures versions crowded first, slower ones now.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Winton's own history of getting slower; the 1980s moving-average crossover anecdote.",
+     "claim_ids": [
+      "MT070-C02-1",
+      "MT070-C02-3",
+      "MT070-C06-1"
+     ]
+    },
+    {
+     "premise": "Part of the apparent decline in hedge fund returns is mechanical: near-zero cash rates (6% in the 80s-90s) and halved leverage, so adjusted track records look similar to the past.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Arithmetic: double the track record and add 6%.",
+     "claim_ids": [
+      "MT070-C02-4",
+      "MT070-C01-1"
+     ]
+    },
+    {
+     "premise": "Crowdedness together with fat tails creates the risk of overnight catastrophic moves (LTCM, 2008), so leverage should be conservative, especially for unsophisticated clients.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "LTCM and 2008 episodes; own use of about 2x gross versus ~10x rumoured at Goldman Global Alpha.",
+     "claim_ids": [
+      "MT070-C02-5",
+      "MT070-C03-1"
+     ]
+    },
+    {
+     "premise": "Government macro statistics are revised so often and so heavily that long time series of them are unreliable inputs for systematic macro; PMI forecasting could not be proven in available data.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "US 2009 double dip erased nine years later; Japan growth estimates 0.4 vs 2.5; a two-year multi-million-pound PMI study was inconclusive.",
+     "claim_ids": [
+      "MT070-C04-2",
+      "MT070-C04-3",
+      "MT070-C04-R1"
+     ]
+    },
+    {
+     "premise": "Futures trend-following rules do not carry over unchanged to equities; stocks need event, governance/organizational and customised technical strategies, though some momentum know-how transfers.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Winton's own attempt ('a graveyard of companies that have tried').",
+     "claim_ids": [
+      "MT070-C04-4",
+      "MT070-C05-1"
+     ]
+    },
+    {
+     "premise": "Trend following is a statistical, unpredictable system that cannot be timed; it is not a reliable crash hedge because it is long after rallies, and would aggravate a 1987-style fall.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "2008 and 2001-02 helped; 1987-style crashes and Feb 2018 (managed futures long and lost) did not.",
+     "claim_ids": [
+      "MT070-C09-2",
+      "MT070-C06-2",
+      "MT070-C08-4"
+     ]
+    },
+    {
+     "premise": "Volatility is not trending higher; percent volatility peaked in 1933-34 and nominal point charts mislead, while low-volatility periods can precede crises.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical charts in log terms; 2006-07 low vol before the crisis.",
+     "claim_ids": [
+      "MT070-C09-1",
+      "MT070-C08-4"
+     ]
+    },
+    {
+     "premise": "Volatility is a voluntary commercial choice set by leverage (a 'volume knob'), independent of which strategies are used.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Description of Winton's portfolio construction.",
+     "claim_ids": [
+      "MT070-C08-3"
+     ]
+    },
+    {
+     "premise": "The hedge fund industry has been sustained by beta from the long equity bull market; active managers without real edge face growing pressure as performance gets measured and as many discretionary strategies prove automatable.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Industry observation; trend following as an example of automated discretion.",
+     "claim_ids": [
+      "MT070-C07-2",
+      "MT070-C09-3",
+      "MT070-C10-1"
+     ]
+    },
+    {
+     "premise": "Quant progress is slow and secretive because there is no IP protection and no publication; cumulative team research (Renaissance) rather than a single data item is what creates edge.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Own experience and reasoning about Renaissance.",
+     "claim_ids": [
+      "MT070-C12-1",
+      "MT070-C08-2",
+      "MT070-C01-3"
+     ]
+    },
+    {
+     "premise": "AI is one part reality and nine parts hype; algorithm responsibility must remain with named humans, and computing (cloud) helps research scale more than 'intelligence' does.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own view; deep learning progress noted but not general intelligence.",
+     "claim_ids": [
+      "MT070-C05-2",
+      "MT070-C10-1",
+      "MT070-C11-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Edge decay in trend following",
+     "steps": [
+      {
+       "from": "Trend following earns a Sharpe near 1 for about 30 years",
+       "to": "Capital and competitors pile into the strategy",
+       "why": "Success attracts money; the strategy is easy to replicate and seen as beta.",
+       "claim_ids": [
+        "MT070-C06-1",
+        "MT070-C02-1"
+       ]
+      },
+      {
+       "from": "Crowding in fast then slower futures trend systems",
+       "to": "Lower returns and weaker return-to-risk",
+       "why": "Too much money chasing the same trends; the 2/20-day crossover paid in the 1980s but no longer.",
+       "claim_ids": [
+        "MT070-C02-1",
+        "MT070-C02-3",
+        "MT070-C01-1"
+       ]
+      },
+      {
+       "from": "Declining edge",
+       "to": "Winton lowers its forecast for trend following year by year and diversifies into equity and other strategies without abandoning it",
+       "why": "Innovation or decay; but trend following is still expected to make money.",
+       "claim_ids": [
+        "MT070-C05-3",
+        "MT070-C04-4",
+        "MT070-C06-2"
+       ]
+      }
+     ],
+     "evidence": "Own 30-year record, the 1980s crossover anecdote, and client communication; no quantified decay estimate is given.",
+     "fails_when": "Not stated for decay; he says trend following can still work, it just cannot be relied on.",
+     "claim_ids": [
+      "MT070-C05-3",
+      "MT070-C06-1"
+     ]
+    },
+    {
+     "topic": "Crowding, fat tails and leverage",
+     "steps": [
+      {
+       "from": "Crowded strategies with many holders",
+       "to": "Risk of an overnight systemic move",
+       "why": "Fat tails; LTCM and 2008 show crowded positions unwinding together.",
+       "claim_ids": [
+        "MT070-C02-5"
+       ]
+      },
+      {
+       "from": "That catastrophe risk",
+       "to": "Winton cuts leverage (about 2x gross in long/short portfolios versus ~10x rumoured at others)",
+       "why": "No responsible professional wants to be implicated in a systemic crisis; more so with unsophisticated clients.",
+       "claim_ids": [
+        "MT070-C02-5",
+        "MT070-C03-1",
+        "MT070-C02-4"
+       ]
+      },
+      {
+       "from": "Lower leverage and near-zero cash rates",
+       "to": "Lower headline returns that look similar to the past once adjusted",
+       "why": "Double the leverage and add 6% cash and the record resembles the past.",
+       "claim_ids": [
+        "MT070-C02-4"
+       ]
+      }
+     ],
+     "evidence": "LTCM and 2008 episodes; arithmetic of adjusting for leverage and cash.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT070-C02-5",
+      "MT070-C02-4"
+     ]
+    },
+    {
+     "topic": "Why trend following is not a crash hedge",
+     "steps": [
+      {
+       "from": "Trend systems are long equity indices after rallies",
+       "to": "A sudden fall hits CTAs long",
+       "why": "Signals follow past trends; in Feb 2018 managed futures were long after three months of highs.",
+       "claim_ids": [
+        "MT070-C09-2"
+       ]
+      },
+      {
+       "from": "Slow-developing declines (2001-02, 2008)",
+       "to": "Trend following gains and can act as a hedge",
+       "why": "Trends establish themselves before the bulk of the loss.",
+       "claim_ids": [
+        "MT070-C09-2"
+       ]
+      },
+      {
+       "from": "Volatility spikes after calm (2007, 2016 vol derivatives, 2018)",
+       "to": "Returns hurt and no way to solve for it",
+       "why": "Stock markets go up and down a lot; short-lived shocks cannot be anticipated.",
+       "claim_ids": [
+        "MT070-C08-4",
+        "MT070-C09-1"
+       ]
+      }
+     ],
+     "evidence": "Episodes: 1987-style, 2001-02, 2008, Feb 2018.",
+     "fails_when": "A 1987 or Feb 2018 style fast crash; 'one swallow does not make a summer'.",
+     "claim_ids": [
+      "MT070-C09-2"
+     ]
+    },
+    {
+     "topic": "Why government macro data are a poor systematic input",
+     "steps": [
+      {
+       "from": "Statistics are revised often and over long periods",
+       "to": "The meaning of historical series changes and real-time prints differ from final data",
+       "why": "US 2009 double dip erased nine years later; two Japanese growth estimates, 0.4 vs 2.5.",
+       "claim_ids": [
+        "MT070-C04-2"
+       ]
+      },
+      {
+       "from": "Unreliable series",
+       "to": "Long-term tests of fundamental data (e.g. PMI) produce nothing provable after years of work",
+       "why": "Too little data; sunk cost should not force a result.",
+       "claim_ids": [
+        "MT070-C04-3",
+        "MT070-C04-R1"
+       ]
+      },
+      {
+       "from": "No proven macro-data signals",
+       "to": "Global macro that relies on government data is hard to systematise",
+       "why": "Estimates differ and cannot be trusted.",
+       "claim_ids": [
+        "MT070-C04-2",
+        "MT070-C04-R1"
+       ]
+      }
+     ],
+     "evidence": "Two years and several million pounds spent on a PMI study that was inconclusive.",
+     "fails_when": "Not stated; he does not rule out signals in other data (e.g. weather in ag futures).",
+     "claim_ids": [
+      "MT070-C04-2",
+      "MT070-C04-3"
+     ]
+    },
+    {
+     "topic": "Moving into global equities (and other markets) via compute and data",
+     "steps": [
+      {
+       "from": "Cloud computing",
+       "to": "Much larger portfolios (7,000 stocks, up from 1,000-1,500) and high-frequency data used to measure correlation changes and new factors",
+       "why": "Rent huge computation for short experiments instead of owning machines.",
+       "claim_ids": [
+        "MT070-C01-3",
+        "MT070-C11-1"
+       ]
+      },
+      {
+       "from": "Futures trend following crowded",
+       "to": "A third to a half of weight in equity strategies (event, organizational metrics, customised technical)",
+       "why": "Equity-specific strategies are needed; momentum know-how transfers partly.",
+       "claim_ids": [
+        "MT070-C01-3",
+        "MT070-C04-4",
+        "MT070-C05-1"
+       ]
+      },
+      {
+       "from": "Capacity limits in markets like agricultural futures",
+       "to": "Only very long-term strategies there; research on weather and 1,200-year grain series is exploratory",
+       "why": "Large capital cannot trade in and out without moving the market.",
+       "claim_ids": [
+        "MT070-C03-3",
+        "MT070-C04-1"
+       ]
+      }
+     ],
+     "evidence": "Own operations; no performance data given for the equity book.",
+     "fails_when": "Not stated; interviewer raises doubts that a trend firm can carry across to equities.",
+     "claim_ids": [
+      "MT070-C01-3",
+      "MT070-C04-4"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Futures trend following kept but de-emphasised; equity strategies are event strategies, organizational/governance metric strategies, and technical strategies customised to the 7,000-stock universe.",
+     "why": "Edge in simple futures trend decayed; futures rules do not carry over to equities.",
+     "claim_ids": [
+      "MT070-C04-4",
+      "MT070-C05-1",
+      "MT070-C02-1"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Global portfolio of about 7,000 stocks (from 1,000-1,500 five years earlier), plus futures including a long-horizon agricultural futures project.",
+     "why": "Cloud computing makes bigger universes tractable; ag futures offer a niche if long-term strategies fit within capacity.",
+     "claim_ids": [
+      "MT070-C01-3",
+      "MT070-C03-3",
+      "MT070-C04-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Hire and train many scientists, build huge databases, run patient cumulative research shared internally but not published; use short-term high-frequency data for monitoring correlations and new factors though trading is long term.",
+     "why": "Edge comes from cumulative science (the Renaissance analogy); no IP protection so secrecy.",
+     "claim_ids": [
+      "MT070-C01-3",
+      "MT070-C08-2",
+      "MT070-C12-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Stop a research project when evidence cannot be established; do not let sunk cost force a result (the PMI study cost about two years and several million pounds).",
+     "why": "Avoid forcing signals from unproven data.",
+     "claim_ids": [
+      "MT070-C04-3",
+      "MT070-C04-R1"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Set portfolio volatility with a single leverage 'volume knob' (10, 20 or 30 vol) as a commercial decision independent of strategy.",
+     "why": "Volatility target is a client/commercial choice, not a property of the signal.",
+     "claim_ids": [
+      "MT070-C08-3"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Conservative leverage: about 2x gross in long/short portfolios, far below the ~10x rumoured at competitors, and more so for less sophisticated clients.",
+     "why": "Crowding plus fat tails creates catastrophe risk.",
+     "claim_ids": [
+      "MT070-C03-1",
+      "MT070-C02-5"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Diversify away from sole reliance on trend following into other statistical strategies, knowing none can be timed; judge over years, not months.",
+     "why": "All such strategies are unpredictable but have objective grounds for long-term profit; diversification helps.",
+     "claim_ids": [
+      "MT070-C06-2",
+      "MT070-C05-3"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Fully systematic book: researchers write and run the programs, separate teams handle 24-hour execution, and humans intervene only to correct program errors; named humans remain responsible.",
+     "why": "Responsibility must stay with people, not 'the computer'.",
+     "claim_ids": [
+      "MT070-C05-X1",
+      "MT070-C05-2"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Match liquidity terms to assets: fund redemption terms moved to monthly notice and annual performance-fee crystallisation as small-company equity holdings grew; fees cut to 0.9% and 16%.",
+     "why": "Returns did not justify fees; liquidity should match the assets.",
+     "claim_ids": [
+      "MT070-C07-1",
+      "MT070-C07-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Spin off data cleaning as Hivemind and rent cloud compute for large one-off experiments.",
+     "why": "Clean data are the unglamorous prerequisite of research; renting 50,000 computers for a minute avoids owning machines.",
+     "claim_ids": [
+      "MT070-C10-2",
+      "MT070-C11-1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Stay exclusively focused on managing client money (no proprietary book), presented as an alignment advantage for institutions, and aspire to be seen alongside the large US systematic quant firms.",
+     "why": "Institutions value alignment; doubts exist whether a firm from a trend-following tradition can carry across into equities.",
+     "claim_ids": [
+      "MT070-C08-1"
+     ]
+    }
+   ],
+   "evidence_style": "Long track record and personal history (nearly 40 years, a Sharpe near 1 for 30 years), historical episodes (LTCM, 2008, 1987, Feb 2018), data-revision anecdotes, and analogies (jungle vs atoms, science as cumulative research, Renaissance). He cites few quantitative tests, and says his PMI study was inconclusive rather than negative.",
+   "current_views": [
+    {
+     "view": "Trend following in futures has become crowded and should be expected to earn less; Winton lowers its forecast but still expects it to make money, and diversifies rather than abandoning it.",
+     "as_of": "2019-03-18",
+     "reasoning": "Too much money and competition; the strategy is seen as accessible beta.",
+     "claim_ids": [
+      "MT070-C05-3",
+      "MT070-C06-1",
+      "MT070-C02-1"
+     ]
+    },
+    {
+     "view": "Systematic quant has a bigger future in 20 years because markets will not become efficient, and the word 'quant' will eventually be dropped as all investing uses computers.",
+     "as_of": "2019-03-18",
+     "reasoning": "Inefficiencies persist; competition is fierce but not monopolistic.",
+     "claim_ids": [
+      "MT070-C03-2",
+      "MT070-C12-1"
+     ]
+    },
+    {
+     "view": "Managed futures trend following is not a dependable hedge against equity crashes.",
+     "as_of": "2019-03-18",
+     "reasoning": "Long positions after rallies (Feb 2018); 1987-style fall would not be hedged.",
+     "claim_ids": [
+      "MT070-C09-2"
+     ]
+    },
+    {
+     "view": "Market volatility is not structurally rising; the idea that it is comes from using nominal point charts rather than percent charts.",
+     "as_of": "2019-03-18",
+     "reasoning": "1933-34 percent volatility was the highest ever.",
+     "claim_ids": [
+      "MT070-C09-1"
+     ]
+    },
+    {
+     "view": "Hedge fund industry returns have been sustained by the equity bull market's spillover, and returns are thin; many discretionary managers without real edge face a bad future.",
+     "as_of": "2019-03-18",
+     "reasoning": "Biggest bull market in history in dollar terms to last year; more data and performance evaluation; automation of simple discretionary rules.",
+     "claim_ids": [
+      "MT070-C07-2",
+      "MT070-C09-3"
+     ]
+    },
+    {
+     "view": "Government macro data are not trustworthy enough for systematic global macro.",
+     "as_of": "2019-03-18",
+     "reasoning": "Heavy revisions; PMI study inconclusive.",
+     "claim_ids": [
+      "MT070-C04-2",
+      "MT070-C04-3",
+      "MT070-C04-R1"
+     ]
+    },
+    {
+     "view": "AI is mostly hype for now; discoveries will come but their significance cannot be ordered.",
+     "as_of": "2019-03-18",
+     "reasoning": "Deep learning progress is narrow; discoveries are science, not on demand.",
+     "claim_ids": [
+      "MT070-C05-2",
+      "MT070-C12-R2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "He says trend following has decayed and is crowded, yet still expects it to make money and says the new strategies have 'the same properties'; no quantified decay or expected Sharpe is given for either.",
+   "claim_ids": [
+    "MT070-C05-3",
+    "MT070-C06-2",
+    "MT070-C06-1"
+   ]
+  },
+  {
+   "issue": "No evidence is offered that the new equity strategies outperform; he says the shift has not yet been shown to deliver better returns and that nobody should judge a month or year.",
+   "claim_ids": [
+    "MT070-C06-2",
+    "MT070-C04-4"
+   ]
+  },
+  {
+   "issue": "He argues the Sharpe-near-1 claim and then that trend following has nothing to do with intelligence (a simple algorithm made ~15% for 20 years); the 15% figure is unqualified and may be gross of the fees and leverage effects he mentions.",
+   "claim_ids": [
+    "MT070-C10-1",
+    "MT070-C06-1",
+    "MT070-C02-4"
+   ]
+  },
+  {
+   "issue": "Tension: he says volatility spikes (2016, 2018) hurt returns and cannot be solved for, but also that the volume knob makes volatility a commercial choice independent of strategy.",
+   "claim_ids": [
+    "MT070-C08-3",
+    "MT070-C08-4"
+   ]
+  },
+  {
+   "issue": "Claim that percent volatility peaked in 1933-34 is recalled from memory and not sourced in the interview.",
+   "claim_ids": [
+    "MT070-C09-1"
+   ]
+  },
+  {
+   "issue": "Reasoning that crowding is the driver of lower returns competes with his own adjustment argument (cash rates and leverage); both are offered without separating the effects.",
+   "claim_ids": [
+    "MT070-C01-1",
+    "MT070-C02-4",
+    "MT070-C02-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Harding names no short-horizon predictive indicator. The inputs he treats as leading future returns are: how crowded a strategy is (money in it, whether it is viewed as beta), interest rate level (cash component of returns), leverage and fat-tail risk from crowding, and whether time series are clean enough to prove an effect (government data often are not). Horizons are years to decades; he stresses that no month or year judges a manager.",
+ "reader_inferences": [
+  "(reader) Harding's crowding thesis predicts that returns of an openly published, easily replicated rule (simple trend) trend toward cash-like or beta-like outcomes over time, which is testable by rolling Sharpe of managed-futures indices against assets under management.",
+  "(reader) His claim that trend following is not a crash hedge implies it should be treated as a convex-in-slow-trends, not in fast-gap, instrument; the testable form is conditional returns on speed of equity drawdowns.",
+  "(reader) The case for equity event and organizational-metric strategies versus futures trend is a diversification and capacity argument, not backed by reported returns in this interview.",
+  "(reader) His distrust of revised macro data matches the point-in-time / first-release data problem in macro research."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT070-C04-R1",
+   "chunk": "C04",
+   "speaker": "David Harding",
+   "quote": "the long-term time series of those estimates haven't really produced any successful trading systems for us",
+   "claim": "Long-term time series of government fundamental data estimates have not produced any successful trading systems at Winton.",
+   "mechanism": "revised official data are unreliable inputs for systematic macro",
+   "asset_class": "macro / multi-asset",
+   "indicator": "government macro statistics (GDP, PMI-type)",
+   "horizon": "long-term",
+   "direction": "n/a",
+   "conditions": "Winton's own tests",
+   "testable": "yes - point-in-time versus revised data tests",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT070-C12-R2",
+   "chunk": "C12",
+   "speaker": "David Harding",
+   "quote": "we definitely will discover things the question is whether they'll be significant or important",
+   "claim": "Winton will make new discoveries, but whether they are significant cannot be ordered; world-changing findings are hoped for, not something that can be made to order.",
+   "mechanism": "research output is stochastic: cumulative science yields discoveries of uncertain importance",
+   "asset_class": "n/a",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "n/a",
+   "conditions": "ongoing research programme",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

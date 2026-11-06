@@ -5,8 +5,8 @@ date: 2024-07-24
 channel: "Top Traders Unplugged"
 url: 
 words: 11880
-claims: 68
-added_by_crosscheck: 8
+claims: 71
+added_by_crosscheck: 11
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Alan Dunne (co-host, allocator and macro commentator)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -21,6 +21,128 @@ tags: [source, layer0]
 **Approach:** trend following, hedge fund allocation, macro politics, skewness, carry, AI
 
 **Cross-check completeness estimate of first read:** 0.87 - first reader caught the papers and main macro points; misses were secondary Trump-policy items (Fed independence, defence, deregulation doubt), the inflation-debt/GDP link, Fed easing offsetting the fiscal story, and paper details/caveats.
+
+## Argument map
+
+**Episode thesis:** Alan Dunne argues that AI is hyped relative to proven benefit, that the 2024 election matters mainly through high deficits, tariffs, the dollar, immigration and Fed independence, and that sovereign-debt repricing needs a public event to focus market psychology. Using the Rho skew paper and a GIC/JPMorgan study, he argues hedge fund allocations should be built in total-portfolio context around loss mitigation, and that trend speed and carry choices trade smoothness against crisis response; Niels adds behavioural and allocator-business observations.
+
+### Alan Dunne (Co-host; allocator and macro commentator (long allocator-side experience))
+Fingerprint: #approach/manager_selection_allocation #approach/portfolio_construction_stacking #approach/macro_fundamental_topdown #approach/fiscal_dominance #approach/trend_following #approach/crisis_alpha_convexity #approach/geopolitics #approach/valuation_contrarian
+_Speaker note: Captions are auto-generated and garbled (names such as 'Lighthizer', 'Acemoglu', 'Covello' are spelled variously). Ledger attributes the Rho skew paper and GIC/JPMorgan paper summaries to Alan; the 'chairman' interview point in C03 is a guest's remark relayed by Alan._
+
+**Worldview premises**
+- AI is overhyped relative to proven economic benefit: it needs about a trillion dollars of capex, cannot yet point to a complex task it will solve, and productivity estimates range from 0.5% in total over a decade to 0.5% a year. _[empirical, stated; support: Goldman Sachs piece 'Gen AI: too much spend, too little benefit?' with Acemoglu and Covello.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C01-2|C01-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C02-1|C02-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C02-2|C02-2]])
+- AI spending can persist 12-18 months so investing in AI infrastructure still makes sense, but a recession would put the spend in question and hit the whole boom; firms with spend but no revenue are marked down. _[theoretical, stated; support: Jim Covello's view relayed by Alan; Salesforce example.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C02-3|C02-3]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C02-4|C02-4]])
+- Crowded rallies can reverse on good news elsewhere that triggers sector rotation, not on disappointment in the crowded theme itself. _[theoretical, stated; support: Observed July 2024 rotation from tech into industrials, financials and materials.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C03-1|C03-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C01-1|C01-1]])
+- Election policy platforms matter via deficits, tariffs, the dollar, immigration and the Fed; deficits stay high either way and the Trump trade is priced in parts but not in aggregate. _[empirical, stated; support: Betfair odds shift from 50-50 to about 67% and a two-day bond selloff that reversed.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C04-3|C04-3]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C04-4|C04-4]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C05-1|C05-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C05-2|C05-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C06-R1|C06-R1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C06-R2|C06-R2]])
+- A bilateral trade-balance aim implies currency alignment, but a weak-dollar goal conflicts with tax cuts and stimulus, and a Plaza-like deal might require Japan to sell Treasuries, hurting US bonds. _[theoretical, stated; support: Lighthizer's philosophy, Bloomberg commentary, Yellen's reluctance.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C05-3|C05-3]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C05-4|C05-4]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C06-2|C06-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C06-3|C06-3]])
+- Reversing immigration reduces labour supply, raises wages and is stagflationary; Fed independence and Ukraine/defence policy are further uncertainties. _[theoretical, stated; support: Adam Posen's view on the podcast.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C06-1|C06-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C06-X2|C06-X2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C06-X3|C06-X3]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C05-X1|C05-X1]])
+- Debt sustainability is a sentiment issue: rising yields make debt less sustainable (reflexive), a catalyst is needed to focus the market, and a fiscal crisis would probably be politically driven. _[theoretical, stated; support: Posen; observation that inflation expectations and term premia show no change; debt sustainability came into focus for the past year and faded.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-2|C07-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-3|C07-3]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-4|C07-4]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-X4|C07-X4]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-X5|C07-X5]])
+- A new trend manager must be different from the many 60-100 market trend managers (speed, sectors, concentration, cost); small managers have a sweet spot in AUM. _[experience, stated; support: Allocator-side observation of launches.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C09-1|C09-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C09-2|C09-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C10-R3|C10-R3]])
+- There is pricing power in consistent returns, as seen in multi-strats; CTA fees are accepted while performance is consistent but become the issue in a drawdown. _[experience, stated; support: CFM fee rise and multi-strat flows; supply and demand.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C11-1|C11-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C11-2|C11-2]])
+- Commodity carry reflects supply-demand imbalances and is divergent and positively reactive in stress, unlike negatively skewed currency carry; adding carry does not necessarily destroy risk mitigation. _[empirical, stated; support: Rho 'skew spectrum' paper replying to Asness.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C12-1|C12-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C12-2|C12-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C12-3|C12-3]])
+- Convexity can be built through straddles or delta-replicating them, which is fast trend; fast trend is positively skewed, slow trend negatively skewed daily and positive quarterly; speed trades smoothness against reactivity. _[empirical, stated; support: Rho paper comparison of fast, medium and slow trend.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C12-4|C12-4]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C12-5|C12-5]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-1|C13-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-2|C13-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-3|C13-3]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-4|C13-4]])
+- Managed futures were the least equity-correlated and preserved capital in equity declines; multi-strat and relative-value funds are less diversifying than assumed; strategy labels do not tell the role. _[empirical, stated; support: GIC/JPMorgan study of about 1,000 hedge funds over 13 years.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C15-1|C15-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C15-2|C15-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C15-3|C15-3]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C15-4|C15-4]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C15-5|C15-5]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C15-X6|C15-X6]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C15-X7|C15-X7]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C15-X8|C15-X8]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C14-3|C14-3]])
+- A hedge fund allocation should be built in the context of the total portfolio: standalone it is 59% loss mitigation, but in a 60/40 re-optimisation it is 100% loss mitigation with more equity leverage; get equity beta from equities. _[empirical, stated; support: GIC/JPMorgan optimisation results.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-1|C16-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-2|C16-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C17-3|C17-3]])
+- Manager selection requires understanding the strategy; past patterns reflect the market; 15-20 managers is optimal; firing in drawdown forgoes the free ride to the high-water mark; emerging managers add capacity and nimbleness. _[experience, stated; support: Paper plus allocator experience.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-3|C16-3]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-4|C16-4]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-5|C16-5]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-6|C16-6]])
+- Pure loss-mitigation strategies are hard to hold when equity beta does well, and trend is not only loss mitigation but also has a risk-on market-timing element. _[behavioural, stated; support: Things the paper did not discuss.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C17-1|C17-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C17-2|C17-2]])
+
+**Chain: Fiscal path to a bond repricing**
+1. Unchanged high deficits whoever wins → Debt-to-GDP rising: Tax cut extension and spending; higher inflation has only held the ratio somewhat in check. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C05-1|C05-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-X4|C07-X4]])
+2. Rising yields → Debt less sustainable: Reflexive and reinforcing. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-3|C07-3]])
+3. Public event (debate, downgrade, budget announcement, debt ceiling dispute) → Market focus on deficits and a curve steepener: Nothing priced until an event focuses psychology. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-2|C07-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-4|C07-4]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-5|C07-5]])
+- Evidence: No change in inflation expectations or term premia despite Trump talk; the brief bond selloff after the debate reversed.
+- Fails when: Expected Fed easing dominates and offsets the fiscal story in the short run.
+
+**Chain: AI boom fragility**
+1. Large AI capex without proven revenue → Spending continues 12-18 months: Companies keep chasing the dream. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C02-3|C02-3]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C02-1|C02-1]])
+2. Recession → Spend questioned and scaled back: The boom depends on continued capex. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C02-3|C02-3]])
+3. Good news in other sectors → Rotation out of crowded AI leaders: Market dynamics rather than AI earnings. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C03-1|C03-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C01-1|C01-1]])
+- Evidence: Goldman piece interviews; July 2024 rotation.
+- Fails when: AI revenue arrives faster than the skeptics expect.
+
+**Chain: Trend design levers and skew**
+1. Fast trend or straddle replication → Positive skew and reactivity in equity sell-offs: Convexity from increasing exposure as markets move. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C12-4|C12-4]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-1|C13-1]])
+2. Slower trend → Smoother returns but lower reactivity: Negative skew in daily returns, positive in quarters. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-1|C13-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-2|C13-2]])
+3. Adding commodity carry to trend and equities → Better skew and return than trend alone: Commodity carry is divergent. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-3|C13-3]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C12-2|C12-2]])
+- Evidence: Rho Asset Management paper.
+- Fails when: Allocators who think in quarters may not care about daily negative skew.
+
+**Chain: Total-portfolio hedge fund allocation**
+1. Standalone hedge fund portfolio → Mix of loss mitigation, diversifier and complement: Optimiser balances diversification. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-1|C16-1]])
+2. Embedding in 60/40 → 100% loss mitigation and more equity leverage: Better correlation benefit with equities. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-1|C16-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-2|C16-2]])
+- Evidence: GIC and JPMorgan Asset Management clustering and optimisation.
+- Fails when: Behavioural difficulty of holding loss-mitigation funds when equity beta does well.
+
+**Decision process**
+- [portfolio] Build the hedge fund allocation inside the total portfolio, favouring loss-mitigation strategies and taking equity beta from equities.. Why: Integrated optimisation gives 100% loss mitigation inside 60/40. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-1|C16-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-2|C16-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C17-3|C17-3]])
+- [universe] Classify funds by role (correlation to equities, drawdown resilience, alpha) rather than by strategy label.. Why: Every label has funds in every cluster. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C15-4|C15-4]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C15-5|C15-5]])
+- [research] Understand the strategy before selecting a manager since past patterns reflect the market.. Why: CTAs were long bonds for years but can turn short or chop. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-3|C16-3]])
+- [portfolio] Hold 15-20 hedge fund managers, with more only for tactical reasons, and include emerging managers for capacity.. Why: Diversification benefits decline after 15-20. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-4|C16-4]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-6|C16-6]])
+- [risk] Do not terminate a manager in drawdown unless the replacement is better by more than the forgone incentive-fee free ride.. Why: Termination gives up the return to the high-water mark. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-5|C16-5]])
+- [portfolio] Sometimes sweeten loss-mitigation allocations with more consistent strategies despite the numbers.. Why: Pure loss mitigation is hard to hold when equity beta does well. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C17-1|C17-1]])
+- [signal] Trend speed and non-trend additions (commodity carry) are levers for smoothness versus reactivity.. Why: Choose by investor horizon and utility. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-2|C13-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-3|C13-3]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-4|C13-4]])
+- [portfolio] Stay invested in AI infrastructure while spending continues, watching recession risk.. Why: Covello's view. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C02-3|C02-3]])
+- [other] Watch the dollar, immigration and the Fed, and consider a curve steepener once deficits enter market psychology.. Why: Policy risks not yet priced. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C06-R2|C06-R2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-5|C07-5]])
+
+**Evidence style:** Reports and weighs outside research (Goldman, Posen, Rho, GIC/JPMorgan, Quantica) and prediction-market odds; cites statistics from papers; allocator experience.
+
+**Views at the time**
+- (Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)) The Trump trade is priced in parts but not in aggregate; the bond leg reversed after two days.. Reasoning: Betfair odds moved to about 67% for Trump. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C04-3|C04-3]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C04-4|C04-4]])
+- (Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)) Tariffs, dollar policy, immigration and Fed independence are the big uncertainties; high deficits are almost certain.. Reasoning: Platform analysis. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C06-R1|C06-R1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C05-2|C05-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C06-1|C06-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C06-X2|C06-X2]])
+- (Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)) Gold's rise might reflect the weak-dollar story, though other currencies have moved little.. Reasoning: Observation of gold, euro and yen. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C06-3|C06-3]])
+- (Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)) Choppy two-to-three-month period for trend: copper reversed, while grains downtrend, gold highs and equities helped.. Reasoning: Market observation. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C08-3|C08-3]])
+- (Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)) Expected Fed easing currently offsets the fiscal story for bonds in the short term.. Reasoning: Debt sustainability came into focus and then faded. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-X5|C07-X5]])
+- (Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)) AI spending can continue 12-18 months; a recession would be the trigger for scaling back.. Reasoning: Covello. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C02-3|C02-3]])
+
+### Niels Kaastrup-Larsen (Host; veteran hedge fund manager (Top Traders Unplugged))
+Fingerprint: #approach/trend_following #approach/behavioral_sentiment #approach/fiscal_dominance #approach/manager_selection_allocation #approach/costs_execution #approach/positioning_crowding
+_Speaker note: Host who states views on behaviour, debt pricing, allocators and fees._
+
+**Worldview premises**
+- Investors' biggest regret is not making money when everyone else does; fear of missing out and failing conventionally drive behaviour. _[behavioural, stated; support: Ben Hunt's remarks.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C04-1|C04-1]])
+- Prediction is impossible (Howard Marks), which is the premise of trend following, yet investors prefer managers who claim to know where prices go. _[behavioural, stated; support: Marks' memo.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C04-2|C04-2]])
+- Unsustainable sovereign debt only gets priced when a public event makes everyone know that everyone knows, so safe-asset status can change abruptly. _[theoretical, stated; support: Emperor's new clothes analogy.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-1|C07-1]])
+- Family offices want higher-octane strategies; 8-10% vol is an institutional product; small managers pitch higher volatility and some go back to classic, more volatile trend following. _[experience, stated; support: Personal observation of launches.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C10-1|C10-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C10-2|C10-2]])
+- Fees can go up for differentiated consistency (CFM's 20% to 30% performance fee) against the race to zero set by replicators and ETFs. _[experience, stated; support: Bloomberg article.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C10-3|C10-3]])
+- Trend followers' sharpest drawdown weeks tend to occur in strong-trend, high-volatility periods when trend makes most money; long-horizon investors should judge on 5-20 year returns, not 5-day protection. _[empirical, stated; support: Man AHL research after the SVB event (relayed from Graham Robertson).]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C14-1|C14-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C14-2|C14-2]])
+- Replicators trading few markets avoided the choppiness and beat the indices they replicate in recent months. _[empirical, stated; support: Observed performance.]_ ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C08-4|C08-4]])
+
+**Chain: Behavioural reasons investors misuse trend**
+1. Relative performance matters most → FOMO and conventional failure: Investors compare themselves with peers. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C04-1|C04-1]])
+2. Preference for confident forecasters → Little appetite for a trend premise of no prediction: Investors prefer managers claiming foresight. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C04-2|C04-2]])
+- Evidence: Hunt and Marks references.
+- Fails when: None stated.
+
+**Decision process**
+- [research] Judge trend following over long horizons and know that sharp drawdown weeks come with strong-trend periods.. Why: Short-term protection is not what it is for. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C14-1|C14-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C14-2|C14-2]])
+- [other] Small new managers differentiate with higher volatility and markets large funds cannot trade.. Why: Target family offices and high net worth investors. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C10-1|C10-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C10-2|C10-2]])
+
+**Evidence style:** Relays what guests and papers say; anecdote and observation; does not claim own analysis.
+
+**Views at the time**
+- (Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)) July 2024 trend performance is positive but below-neutral barometer (rising from late-June lows); BTOP50 about +1.5% for the month and +8.68% YTD; SG Trend +10.6% YTD versus S&P +17.8%.. Reasoning: Index levels read aloud. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C08-1|C08-1]])
+- (Jul 2024 (episode uploaded 2024-07-24; recorded mid-July 2024)) Grains downtrend, gold highs, equity strength and coffee helped trend; the yen reversal hurt.. Reasoning: Market observation. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C08-2|C08-2]])
+
+### Disagreements
+- **Whether carry dilutes risk mitigation for diversified trend**: Alan Dunne: Per Rho, commodity carry is divergent and did well in stress, and slowing trend dampens risk mitigation just as carry might, so it is not trend versus non-trend alone. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C12-2|C12-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-2|C13-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-3|C13-3]]); Cliff Asness (as reported by Alan Dunne): Asness argued that diversified trend followers adding carry for smoother returns lose risk mitigation. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C12-1|C12-1]])
+- **Relevance of daily skew and short-horizon protection**: Alan Dunne: Long-horizon allocators think in quarters, so daily negative skew may not matter; it depends on the investor. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C13-4|C13-4]]); Niels Kaastrup-Larsen: Investors should worry about 5-20 year returns not 5-day protection; sharp drawdowns come in strong-trend periods. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C14-1|C14-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C14-2|C14-2]])
+
+### Gaps and conflicts
+- The AI productivity range (0.5% total over a decade versus at least 0.5% a year) is quoted from the Goldman piece with no source for the higher estimate. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C02-2|C02-2]])
+- Trend index figures read aloud are inconsistent in the captions (SG CTA about +8% YTD, MSCI World up 20%); only the ledger values are used. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C08-1|C08-1]])
+- The sample size of the GIC/JPMorgan study is quoted as 'just under 1,000' and later '900 funds'; commodity manager result rests on about 10 funds. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C15-1|C15-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C15-X8|C15-X8]])
+- The paper's standalone result omits the behavioural difficulty of holding loss mitigation, so the 100% loss-mitigation outcome assumes investors will hold it. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C16-1|C16-1]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C17-1|C17-1]])
+- No evidence is given that the Trump trade or fiscal story will move rates; Alan says an event is needed and expected Fed easing offsets it. ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-2|C07-2]], [[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C07-X5|C07-X5]])
+- Why gold is rising is speculative (weak dollar story while other currencies barely moved). ([[MT023 - Building A Hedge Fund Allocation - Systematic Investor 305#^MT023-C06-3|C06-3]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Observable inputs named: prediction-market odds, tariff and dollar policy statements, immigration, Fed independence, inflation expectations and term premia (for fiscal repricing), AI capex and revenue plus recession (AI boom), yen and dollar moves, trend barometer. Horizons are months for the policy story and 12-18 months for AI spending.
+
+### Reader inferences (not stated by the speakers)
+- (reader) The fiscal view depends on a catalyst, so it is a conditional rather than dated forecast.
+- (reader) Alan's allocator framework treats strategy labels as unreliable, so decisions rest on measured role, not name.
+- (reader) Both hosts accept that trend is not purely loss mitigation, which complicates its use as portfolio insurance.
 
 ## Coverage
 
@@ -142,6 +264,14 @@ tags: [source, layer0]
   > a risk of less support for Ukraine which then could obviously feed into European defense spending
   asset: multi · direction: European defence spending up · horizon: years · conditions: Trump presidency with reduced Ukraine support · testable: partly - European defence budgets and defence equities after the election · confidence: low
   ^MT023-C06-X3
+- **Alan Dunne** Alan's bottom line on a Trump win: high deficits are almost certain, tariffs and freer trade policy likely, while immigration, the dollar and the Fed are the big uncertainties.  #mech/new _(added by map cross-check, time-bound view)_
+  > what's almost certain is high high deficits
+  indicator: fiscal deficit · asset: US rates, dollar · direction: high deficits · horizon: years · conditions: either election outcome · testable: partly · confidence: medium
+  ^MT023-C06-R1
+- **Alan Dunne** Alan believes the Trump policy risks (immigration, dollar, Fed independence) are not yet reflected in markets but should be monitored.  #mech/new _(added by map cross-check, time-bound view)_
+  > I don't think we're really seeing that reflected in the markets just yet but they will be the ones to monitor
+  asset: multi · direction: watch dollar, immigration, Fed · horizon: months · conditions: policy uncertainty not yet priced · testable: partly · confidence: medium
+  ^MT023-C06-R2
 
 ### C07
 - **Niels Kaastrup-Larsen** Unsustainable debt only gets priced when a public event makes everyone know that everyone knows (emperor's new clothes), so the safe-asset status of sovereign debt could change abruptly.  #mech/fiscal_debt
@@ -214,6 +344,10 @@ tags: [source, layer0]
   > they have simply increased their performance fee from 20% to 30%
   indicator: CTA fees · asset: other · horizon: years · testable: yes - fee data · confidence: high
   ^MT023-C10-3
+- **Alan Dunne** Beyond new trend funds, recent launches have been more in quant macro and AI-type strategies, plus more adaptive types of trend following.  #mech/new _(added by map cross-check)_
+  > Quant macro and and AI type strategy there's been more of those
+  direction: new launches differ from classic trend · horizon: years · conditions: manager launches · testable: no · confidence: low
+  ^MT023-C10-R3
 
 ### C11
 - **Alan Dunne** There is pricing power in consistent returns, shown by the rise of multi-strats and CFM's multi-strat flagship (6-8 vol, 8-10% target return).  #mech/behavioral

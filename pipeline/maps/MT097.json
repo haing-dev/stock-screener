@@ -1,0 +1,459 @@
+{
+ "source_id": "MT097",
+ "episode_thesis": "Drew, Seykota's first apprentice, argues Seykota was a price-only discretionary trader, not the systematic trader Market Wizards implied, and that the transferable lessons are psychological and about sizing: fit style to temperament, bet bigger than feels comfortable but not to ruin, scale size with equity without extra drawdown cuts, and do not tinker in drawdowns.",
+ "speakers": [
+  {
+   "name": "Dave Drew",
+   "role": "Systematic trader and fund manager; Seykota's first living apprentice (c. 1990-91)",
+   "speaker_note": "Caption speaker labels are mixed; the closed-vs-open equity reasoning and the 1m->500k->250k example were said by the host Seibert (ledger corrections applied), Drew agreeing. Drew's own investor-fund practice (backtest everything, follow algorithms) is from ledger claims C02-X1/C04-X1.",
+   "fingerprint": [
+    "position_sizing_vol_target",
+    "kelly_or_conviction_sizing",
+    "behavioral_sentiment",
+    "research_robustness_overfitting",
+    "short_term_systematic",
+    "trend_following",
+    "costs_execution"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Seykota is a technical discretionary trader on price only, not a systematic one; the Market Wizards picture of a computerised systematic trader is wrong. His software only displayed charts.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Six months living and travelling with him.",
+     "claim_ids": [
+      "MT097-C02-1",
+      "MT097-C02-2",
+      "MT097-C03-3"
+     ]
+    },
+    {
+     "premise": "Seykota's skill is intuitive and cannot be programmed or taught directly; it is passed on by observation (Jade master story).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Anecdotes: hand-drawn Bund bar that came true; apprenticeship by hanging out.",
+     "claim_ids": [
+      "MT097-C03-1",
+      "MT097-C02-R1"
+     ]
+    },
+    {
+     "premise": "Markets bring out hidden psychological problems, so unresolved psychology causes self-sabotage; self-limiting beliefs (not feeling worthy) hold traders back.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Seykota's teaching and group sessions; cookie story.",
+     "claim_ids": [
+      "MT097-C03-2",
+      "MT097-C09-1",
+      "MT097-C10-R1"
+     ]
+    },
+    {
+     "premise": "A trading style must fit the trader's psychology; a person who cannot follow a computerised system will tinker with it even if it is excellent, and vice versa.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Own 15-month discretionary experiment ended with a psychiatrist.",
+     "claim_ids": [
+      "MT097-C04-1",
+      "MT097-C04-4"
+     ]
+    },
+    {
+     "premise": "Trading with meaningful size is needed to learn about oneself because token amounts create no emotional stakes.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Seykota's teaching, relayed.",
+     "claim_ids": [
+      "MT097-C04-3"
+     ]
+    },
+    {
+     "premise": "There is an optimal bet size for a system with a known edge, larger than most people will use; too large and ruin risk soars, too small and returns are low. Because edge is unstable over time, optimal size is only a rule of thumb.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Article on heat distribution co-written with Seykota; Seykota's own extreme drawdowns.",
+     "claim_ids": [
+      "MT097-C01-1",
+      "MT097-C05-1",
+      "MT097-C05-2",
+      "MT097-C05-3",
+      "MT097-C05-R1"
+     ]
+    },
+    {
+     "premise": "No institution would back Seykota because his equity swings are huge; his aim was maximum profit, not controlled risk.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Observation.",
+     "claim_ids": [
+      "MT097-C02-3"
+     ]
+    },
+    {
+     "premise": "Drawdown behaviour is one of the biggest determinants of long-run success; confidence in solid research is what keeps a systematic trader on the rules.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own experience losing money for investors while following his system.",
+     "claim_ids": [
+      "MT097-C06-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why tinkering in a drawdown and drawdown-reduction rules damage results",
+     "steps": [
+      {
+       "from": "Drawdown hurts psychologically",
+       "to": "Trader doubts system and alters it",
+       "why": "Pain makes people read 'something is wrong'.",
+       "claim_ids": [
+        "MT097-C06-2",
+        "MT097-C06-X1"
+       ]
+      },
+      {
+       "from": "Risk is cut after losses (drawdown reduction rule)",
+       "to": "Too little risk to recover; system may stay underwater indefinitely",
+       "why": "Recovery needs normal bet size; cutting also distorts the system's statistics.",
+       "claim_ids": [
+        "MT097-C06-3",
+        "MT097-C07-2"
+       ]
+      },
+      {
+       "from": "Bet size scaled to current equity both up and down",
+       "to": "Constant fractional risk, lower ruin risk than scaling up only",
+       "why": "Scaling only upward leaves ruin risk higher after gains.",
+       "claim_ids": [
+        "MT097-C06-4",
+        "MT097-C07-R1"
+       ]
+      }
+     ],
+     "evidence": "Experience and reasoning; no data offered.",
+     "fails_when": "Not stated, except 'unless you are sure something is actually broken'.",
+     "claim_ids": [
+      "MT097-C06-2",
+      "MT097-C06-3",
+      "MT097-C06-4"
+     ]
+    },
+    {
+     "topic": "Style-psychology mismatch",
+     "steps": [
+      {
+       "from": "Style does not fit psychology",
+       "to": "Trader tinkers with or abandons the method",
+       "why": "Cannot stick to rules that clash with temperament.",
+       "claim_ids": [
+        "MT097-C04-1"
+       ]
+      },
+      {
+       "from": "Drew pretends to be Seykota with discretion",
+       "to": "300% return in 15 months but breakdown and psychiatrist",
+       "why": "It 'was not my trading style'.",
+       "claim_ids": [
+        "MT097-C04-4"
+       ]
+      }
+     ],
+     "evidence": "Single personal case (300% vs systems' 20%); not repeatable evidence.",
+     "fails_when": "When trader temperament cannot support the style.",
+     "claim_ids": [
+      "MT097-C04-1",
+      "MT097-C04-4"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Own funds: backtest every rule before implementing, then follow the algorithms strictly.",
+     "why": "Investors need a statistical record; discretionary has none.",
+     "claim_ids": [
+      "MT097-C02-X1",
+      "MT097-C04-X1"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Bet size proportional to current equity (2x at 2 million), rising and falling; no extra drawdown cut.",
+     "why": "Avoid ruin and avoid staying underwater.",
+     "claim_ids": [
+      "MT097-C06-3",
+      "MT097-C06-4",
+      "MT097-C07-R1"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Size off closed-trade equity (after stops), not open-trade equity; open-equity sizing 'never works really'.",
+     "why": "Closed equity is more stable (reasoning added by host).",
+     "claim_ids": [
+      "MT097-C07-1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Do not change a system during a drawdown unless sure something is broken; let the statistics play out.",
+     "why": "Drawdown psychology distorts assessment.",
+     "claim_ids": [
+      "MT097-C06-2",
+      "MT097-C06-X1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Discretionary trading kept to a disclosed personal account, never offered to investors.",
+     "why": "No backtest to justify it.",
+     "claim_ids": [
+      "MT097-C04-X1",
+      "MT097-C04-4"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Daily end-of-day data cleaning of bad prints before analysis.",
+     "why": "Raw downloads had many bad data points.",
+     "claim_ids": [
+      "MT097-C09-X1"
+     ]
+    }
+   ],
+   "evidence_style": "Personal anecdote and apprenticeship stories; own track-record comparison; reasoning about sizing; no backtests shown in this episode.",
+   "current_views": []
+  },
+  {
+   "name": "Ed Seykota (relayed by Drew)",
+   "role": "Discretionary technical trader; subject of Drew's account",
+   "speaker_note": "Never speaks; every statement is Drew's second-hand report. Not a speaker in the transcript but his views are the topic, so mapped separately and flagged.",
+   "fingerprint": [
+    "trend_following",
+    "kelly_or_conviction_sizing",
+    "behavioral_sentiment",
+    "short_term_systematic",
+    "position_sizing_vol_target"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Price-only technical discretionary trading, ignoring news, earns more than systematic trading.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own record, per Drew.",
+     "claim_ids": [
+      "MT097-C04-2"
+     ]
+    },
+    {
+     "premise": "Maximum return requires betting big and tolerating very high heat; most people cannot, and overshooting wipes you out.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "His own drawdowns (up to ~50% in a day).",
+     "claim_ids": [
+      "MT097-C01-1",
+      "MT097-C05-R1",
+      "MT097-C05-3"
+     ]
+    },
+    {
+     "premise": "Unresolved psychology and unworthiness limit success.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "None offered.",
+     "claim_ids": [
+      "MT097-C03-2",
+      "MT097-C09-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "About ten minutes on end-of-day charts, pick approximate entry and stop for next day; sacrosanct rules: cut losses short, let profits ride, diversify.",
+     "why": "Spends little time on markets.",
+     "claim_ids": [
+      "MT097-C02-2",
+      "MT097-C03-3"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "No memory of recent losses; act correctly each day.",
+     "why": "Discipline.",
+     "claim_ids": [
+      "MT097-C06-1"
+     ]
+    }
+   ],
+   "evidence_style": "His own results, per Drew.",
+   "current_views": []
+  },
+  {
+   "name": "Moritz Seibert",
+   "role": "Host, Open Interest series",
+   "speaker_note": "Host who states views on sizing (ledger corrections C07-1, C07-2).",
+   "fingerprint": [
+    "position_sizing_vol_target",
+    "research_robustness_overfitting",
+    "kelly_or_conviction_sizing"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Open-trade equity includes volatile open profits and invites over-risking; closed-trade equity is a stable step function and a better sizing base.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning.",
+     "claim_ids": [
+      "MT097-C07-1"
+     ]
+    },
+    {
+     "premise": "After a 50% drawdown, size on the reduced base but do not cut further; extra de-risking leaves too little risk to recover and distorts the system's statistics.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Worked example 1m to 500k, not 250k.",
+     "claim_ids": [
+      "MT097-C07-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "sizing",
+     "practice": "Size on current (closed-trade) equity after a drawdown, no additional reduction.",
+     "why": "Preserve the ability to recover and system statistics.",
+     "claim_ids": [
+      "MT097-C07-1",
+      "MT097-C07-2"
+     ]
+    }
+   ],
+   "evidence_style": "First-principles reasoning.",
+   "current_views": []
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Discretionary vs systematic trading",
+   "positions": [
+    {
+     "speaker": "Ed Seykota (via Drew)",
+     "position": "Technical discretionary trading on price earns more than systematic.",
+     "claim_ids": [
+      "MT097-C04-2"
+     ]
+    },
+    {
+     "speaker": "Dave Drew",
+     "position": "Systematic and backtested is the only responsible approach for investors; discretionary did not fit his psychology.",
+     "claim_ids": [
+      "MT097-C04-X1",
+      "MT097-C04-4"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Drew's 300% vs 20% comparison is a single 15-month personal account vs investor systems, different risk levels; Drew nonetheless prefers systems.",
+   "claim_ids": [
+    "MT097-C04-4"
+   ]
+  },
+  {
+   "issue": "Optimal bet size is conceded to be unstable because edge varies, yet the advice is to size above what most would use; no number or method given.",
+   "claim_ids": [
+    "MT097-C05-1",
+    "MT097-C05-3"
+   ]
+  },
+  {
+   "issue": "Seykota 'lost no more than 50% in a day' is an unverifiable second-hand anecdote.",
+   "claim_ids": [
+    "MT097-C05-R1"
+   ]
+  },
+  {
+   "issue": "Sizing off closed equity: the reason given is the host's, not Drew's.",
+   "claim_ids": [
+    "MT097-C07-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) None: no market view or forward indicator; the episode is about process, psychology and sizing.",
+ "reader_inferences": [
+  "(reader) Equity-proportional sizing with no extra drawdown reduction is a constant-fraction (Kelly-like) rule; its tolerance of deep heat depends on the fraction chosen, which was not specified.",
+  "(reader) The 300% discretionary result would not be evidence of edge given one account, 15 months and unknown leverage."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT097-C05-R1",
+   "chunk": "C05",
+   "speaker": "Dave Drew",
+   "quote": "I don't think I've lost more than 50% in a day",
+   "claim": "Drew relays Seykota's answer on his biggest drawdown: he does not think he lost more than 50% in a day, i.e. extreme heat is part of his return.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "daily equity loss",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: anecdote, unverifiable",
+   "speaker_confidence": "low",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT097-C02-R1",
+   "chunk": "C02",
+   "speaker": "Dave Drew",
+   "quote": "he draws a bar, you know, with a a high, low, and a close. Okay, the next day, Boon did exactly what he drew.",
+   "claim": "Drew offers an anecdote that Seykota drew next-day Bund bar by hand and the market did exactly that, as evidence of an intuitive skill that cannot be programmed.",
+   "mechanism": "discretionary_skill",
+   "asset_class": "bonds",
+   "indicator": "",
+   "horizon": "days",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: anecdote",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT097-C10-R1",
+   "chunk": "C10",
+   "speaker": "Dave Drew",
+   "quote": "two things you know don't limit yourself and always keep your word",
+   "claim": "Drew draws two lessons from the cookie episode: do not limit yourself, and keep your word (Seykota as a commodity trader sticks to what he said).",
+   "mechanism": "psychology",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT097-C07-R1",
+   "chunk": "C07",
+   "speaker": "Dave Drew",
+   "quote": "Your bet size should be proportional to your equity depending on how much heat you want to take in that particular system",
+   "claim": "Drew agrees that bet size should be proportional to equity, scaled by the heat the system's owner will take, with an automatic adjustment rule built in.",
+   "mechanism": "position_sizing",
+   "asset_class": "multi",
+   "indicator": "equity",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes: backtest of sizing rule",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}
