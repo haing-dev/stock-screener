@@ -5,6 +5,8 @@ sources: 4
 ---
 # Graham Robertson
 
+
+
 Graham Robertson (Man AHL; partner and head of client portfolio management, later described as CEO of Man AHL) sees trend following as a long-run, equity-like return stream with near-zero correlation to equities that pays most when equities do badly, and whose performance is determined mainly by diversifying across as many genuinely different price drivers as possible (Sharpe grows roughly with the square root of independent markets). Alternative OTC and non-macro markets lift long-run Sharpe through independent drivers but give no crisis insurance, while liquid macro futures carry the crisis alpha, so he wants both. He argues that trend cannot be timed because it is its own timing mechanism, that capping equity inside trend costs long-run return, that bonds failed as an equity hedge in 2022 making trend a candidate partial bond substitute, and that investors hold too little trend. For sudden shocks he prefers a layered defence (long volatility, then long-short quality, then trend) and is cautious about AI/ML. His evidence is AHL's 13-year attribution, Man Institute notes, simple maths and recent episodes, not formal backtests in these conversations.
 
 **Sources (4, 2024-07 - 2025-04-03):** [[MT014 - Adapt or Perish- Why Systematic Investors Must Evolve in 2024 - Systematic Investor 325|MT014]], [[MT029 - CTAs- The Good, The Bad, & The Misunderstood - Top Traders Unplugged 148|MT029]], [[MT111 - Navigating Market Chaos - Systematic Investor 336|MT111]], [[MT158 - Taking the Trend Following Temperature - Systematic Investor 304|MT158]]

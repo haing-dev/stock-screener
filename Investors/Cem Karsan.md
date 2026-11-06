@@ -1,9 +1,11 @@
 ---
 tags: [investor]
-name: "Cem Karsan (captions: Jim Kasang, Jim Carson, Jim, Cham, Jem; several attributions inferred)"
+name: "Cem Karsan"
 sources: 16
 ---
-# Cem Karsan (captions: Jim Kasang, Jim Carson, Jim, Cham, Jem; several attributions inferred)
+# Cem Karsan
+
+_Name in sources: Cem Karsan (captions: Jim Kasang, Jim Carson, Jim, Cham, Jem; several attributions inferred)_
 
 Cem Karsan is an options and volatility strategist (captions: Jim Kasang/Carson, Cham, Jem; some attributions inferred) who believes prices over days to about two years are set by who is positioned and what flows must happen (dealer gamma/vanna/charm, option expiries, structured-product vol selling, year-end rebalancing, hedge-fund degrossing), not by news or fundamentals; valuation is only a distance-from-the-ground risk gauge. He tries to forecast the distribution and the path (compression then expansion, pinned then unpinned) rather than direction, ties forecasts to a calendar of events and expiries, and expresses them mostly with options: long-dated right-tail calls instead of stock, long-dated gold calls funded by oil puts, long FX/bond vol, calendar spreads, curve steepeners, and hedges in narrow windows. Underneath sits a structural macro thesis, repeated in all 16 appearances: an inequality-driven populist, fiscal, protectionist regime like 1964-82 (the analogy), in which rates and inflation rise, equity multiples and margins compress (flat nominal, down in real terms), 60/40 stops diversifying, gold/FX/bond volatility is the best vol, the Fed is political and in a box, debt ends in monetisation, and election years are pumped then retrace. Over 2024-2026 his calls swing between short-term bullish flow windows (year-end into about 13-15 January, summer compression) and bearish structural calls (stair-step decline in early 2025, equities down 30-40% in 12-18 months from March 2025, a 10-15% grind to September opex 2025), then a bullish 1998-99-style liquidity bubble (Oct 2025), then by July 2026 a state-directed-capitalism thesis (Treasury backstop plus a money-printed sovereign fund buying trillions of equities after the November 2026 midterms) in which one should not bet against the market or the administration short to medium term. He supports views with first-principles market structure, historical analogy (1998-2000, 2007, 2017-18, 1968-82, Nixon), on-air arithmetic and his own earlier calls; no backtests are shown and several statistics are quoted from memory.
 

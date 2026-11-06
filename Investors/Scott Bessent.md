@@ -5,6 +5,8 @@ sources: 3
 ---
 # Scott Bessent
 
+
+
 Soros/Druckenmiller-school global macro investor who says the big money is made at turning points, in a few large asymmetric bets built on imagining a state of the world consensus says 'has never happened' (sterling 1992, US house prices, Abenomics yen). A trade needs a vision of a different state, a timed catalyst (usually authorities forced to reverse an unsustainable policy) and a mispricing, ideally cheap options with small negative carry. He reads the macro from company-level (micro) information, proves the theory empirically, then checks Wall Street positioning and option skew and shelves the idea if the crowd already agrees. He sizes by what the market offers and by the year's P&L cushion (add when the year is good, reset 1 January), builds in thirds, and never lets a book be concentrated, illiquid and leveraged at once. In 2024 he saw the US as the unstable system (7% peacetime deficit, short maturities, fiscal dominance) with gold as the release valve; in March 2026, as Treasury Secretary, the same lens is applied to policy (keep price discovery working, oil damage depends on duration, announced actions are priced early) and the US is described as relatively strong. Evidence is career anecdote and mentor maxims, never backtests.
 
 **Sources (3, spring 2024 (MT203, dated by content; uploaded 2024-11-12) - late Oct 2024 (MT141) - 2026-03 (MT142, as US Treasury Secretary)):** [[MT141 - Scott Bessent - Macro Maven (EP.415)|MT141]], [[MT142 - Scott Bessent- Inside Trump’s Treasury; War Costs; & Why Bond Market is King|MT142]], [[MT203 - Trump's NEW Treasury Secretary on Macro Strategy ft. Scott Bessent|MT203]]

@@ -36,9 +36,11 @@ def main():
            "| Investor | Sources | Period | Fingerprint |", "|---|---|---|---|"]
     for p in sorted(glob.glob(os.path.join(L, "investors", "*.json"))):
         d = json.load(open(p))
-        nm = d.get("name", os.path.basename(p))
+        full = d.get("name", os.path.basename(p))
+        nm = re.sub(r"\s*\(.*?\)", "", full)
+        nm = re.sub(r'[\\/:*?"<>|#^\[\]]', "", nm).strip()
         fp = " ".join("#approach/%s" % (t["tag"] if isinstance(t, dict) else t) for t in d.get("fingerprint", []))
-        o = ["---", "tags: [investor]", 'name: "%s"' % nm, "sources: %d" % len(d.get("sources", [])), "---", "# " + nm, "",
+        o = ["---", "tags: [investor]", 'name: "%s"' % nm, "sources: %d" % len(d.get("sources", [])), "---", "# " + nm, "", "_Name in sources: %s_" % full if full != nm else "", "",
              e(d.get("one_paragraph")), "", "**Sources (%d, %s):** %s" % (len(d.get("sources", [])), e(d.get("period")), sl(d.get("sources"))),
              "", "**Fingerprint:** " + fp, ""]
         sec = [("Core beliefs", "core_beliefs", lambda x: "%s _(stated %s×; %s)_" % (e(x.get("belief")), x.get("times_stated", "?"), e(x.get("stable")))),
