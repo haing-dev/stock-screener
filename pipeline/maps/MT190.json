@@ -1,0 +1,327 @@
+{
+ "source_id": "MT190",
+ "episode_thesis": "Yoav Git argues that short-term equity index trend is being eroded by a market-structure mechanism (retail 0DTE option selling gives market makers concentrated positive gamma, whose delta hedging is an anti-trend flow that suppresses index volatility, makes one-day autocorrelation negative and lifts single-stock dispersion), but that this costs slower, macro-driven trend followers little, and that new instruments (single-stock futures, compute-power forward curves, thematic and narrative baskets) matter mainly as new diversifying risk factors whose added risk should be measured before trying to predict returns. He also explains, for a listener question, why the front commodity contract is the usual signal series (liquidity, most of the risk) but different maturities carry different risk factors. Host Kaastrup-Larsen supplies July 2026 performance data and cautions about retail leverage and blow-up risk.",
+ "speakers": [
+  {
+   "name": "Yoav Git",
+   "role": "Co-host of the Systematic Investor series; systematic CTA practitioner who runs a commodity fund trading the full futures curve",
+   "speaker_note": "Auto-captions render the name as 'Y of Git' / 'Y'; the ledger identifies him as Yoav Git. His firm is not named in the transcript; he says companies he worked at have built equity trend programs on single stocks and themes. Recording about 15 July 2026 (index data as of Tuesday 14 July).",
+   "fingerprint": ["trend_following", "short_term_systematic", "dealer_hedging_flows", "volatility_options", "market_internals_leading", "commodity_fundamentals", "research_robustness_overfitting", "portfolio_construction_stacking"],
+   "worldview_premises": [
+    {
+     "premise": "Practical issues such as tax treatment (dividends and price changes on single-stock futures; the unclear status of Kalshi compute contracts) can block adoption of attractive instruments.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "He spent a week working out the tax implications himself.",
+     "claim_ids": ["MT190-C01-1"]
+    },
+    {
+     "premise": "Single-stock futures make shorting easy without borrow, giving CTAs new diversifying risk factors; compute-power forward curves are a commodity-like risk factor with no historical precedent that a systematic manager can use if tax and operational treatment become clear.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Diversity-of-risk-factor philosophy; no data.",
+     "claim_ids": ["MT190-C02-1", "MT190-C01-X1"]
+    },
+    {
+     "premise": "AI capex is mostly spent on chips that last 2-3 years, unlike 2001 fibre that served 20-25 years, so if AI fails the recovery value is near zero.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Comparison to the dot-com fibre build-out; asserted.",
+     "claim_ids": ["MT190-C03-4"]
+    },
+    {
+     "premise": "CTAs and vol-driven macro are defensive with upside bias in a blow-up, but not instantly protected, unlike short volatility, which is dangerous.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Reaction to a blow-up-risk ranking; no analysis.",
+     "claim_ids": ["MT190-C03-2"]
+    },
+    {
+     "premise": "Commodity contract months are different assets linked only by storage and inventories; risk factors differ by maturity. Front contracts are populated by speculators (CTAs, market makers, retail) so prices reflect short-term flows and inventories, whereas deferred contracts are populated by physical hedgers so prices reflect long-term supply, demand and cost of production. In agriculture the front is driven by demand (crop size already known) and deferred contracts by new-crop supply risks (weather, disease).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Market participant composition; his firm's commodity fund trades the full curve.",
+     "claim_ids": ["MT190-C05-2", "MT190-C06-1", "MT190-C06-X1", "MT190-C05-R1"]
+    },
+    {
+     "premise": "Trading the front contract captures most of the risk with the lowest cost and highest liquidity, and most of the industry uses front-contract history for signals; as expiry approaches a contract's volatility converges to the front's. The front explains 90-99% of risk in financial futures but less in commodities.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Industry practice and his own analysis (no figures shown).",
+     "claim_ids": ["MT190-C06-2", "MT190-C06-3", "MT190-C07-1"]
+    },
+    {
+     "premise": "There is no single right answer for rolled-front series: where adjacent contracts differ materially in volatility (natural gas summer versus winter) compute volatility for the specific contract or adjust at the roll; for carry and roll yield in commodities, contract-specific seasonality matters because seasonal contracts are unconnected.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Practice at his firm.",
+     "claim_ids": ["MT190-C07-X1", "MT190-C07-2"]
+    },
+    {
+     "premise": "Retail inflows since COVID, API-based systematic retail, 0DTE options, rising dispersion and more mean-reverting indices are linked: retail selling of at-the-money 0DTE straddles to harvest the variance risk premium gives market makers concentrated long gamma, whose delta hedging sells rallies and buys dips every day, suppressing index volatility, making intraday and one-day equity autocorrelation negative and making dip-buying work.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "CFM blog Seven Degrees of Market Structure; weekly expiries since 2012; implied dispersion at a global all-time high; he adds his mechanism explanation of the gamma flow.",
+     "claim_ids": ["MT190-C08-1", "MT190-C08-2", "MT190-C08-3", "MT190-C08-4", "MT190-C09-1", "MT190-C09-2"]
+    },
+    {
+     "premise": "Suppressed index volatility makes single-stock futures a better source of diversified risk for trend followers; demand for single-stock futures is mostly retail wanting to short AI valuations and would not reduce dispersion, since the cause is the index options explosion; short-dated expiries are spreading to bond futures and oil, so similar anti-trend effects could emerge there.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning from the mechanism; CME contracts cover only about 50 very liquid names.",
+     "claim_ids": ["MT190-C10-1", "MT190-C10-2", "MT190-C10-X1", "MT190-C10-X2"]
+    },
+    {
+     "premise": "Volatility-adjusted tick size (tick divided by volatility) has shrunk in equities because the S&P rose from about 1000 (1995) to about 7000, unlike bond futures near 100; the CFM blog gives a retail-0DTE mechanism that complements the CFM order-book sparsity explanation of why short-term equity trend declined. The result is mainly cross-asset and more nuanced within asset classes.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "CFM paper (appendix F within-asset-class variation) and own arithmetic.",
+     "claim_ids": ["MT190-C11-1", "MT190-C11-2", "MT190-C11-X1"]
+    },
+    {
+     "premise": "The loss of equity short-term trend is small for slower trend followers: a fall of one point in one-day autocorrelation costs a one-day signal about 0.16 Sharpe, a 5/20 crossover about 0.03 per market (about 0.06 across equities); the observed 3-point fall over 20 years therefore costs fast traders about 0.2 Sharpe and little for 2-month trend followers, whose alpha comes from long-term trends and macro events.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Back-of-envelope arithmetic (autocorrelation times square root of about 256 days); 'bp of Sharpe' means hundredths of a Sharpe ratio (ledger correction applied).",
+     "claim_ids": ["MT190-C12-1", "MT190-C12-2", "MT190-C12-X1", "MT190-C11-R1"]
+    },
+    {
+     "premise": "Single-stock variance shares: index explains a shrinking share (35% to 25-30%); industry plus Barra factors take it to about 50%; transient news-driven themes add about 5%; about 45% is idiosyncratic. Thematic ETFs and bank QIS baskets are mostly exposed to industry, country or standard factors, so pure theme exposure has to be built.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Thematic Investing as Missing Factors (presented at the Imperial quant conference).",
+     "claim_ids": ["MT190-C13-1", "MT190-C14-1"]
+    },
+    {
+     "premise": "Before predicting, decide how much additional risk single-stock futures, further contracts or themes add; the question of where the risk is comes before return forecasting.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Common framework across the commodity-curve, single-stock and thematic discussions.",
+     "claim_ids": ["MT190-C14-2"]
+    },
+    {
+     "premise": "Narrative momentum: slow-evolving themes are underreacted over about 6 months, so trend-following news (stock beta to narrative) earns money distinct from price momentum; the underreaction has a rational explanation under incomplete information (people infer value from price moves and from what others discuss), while fast obvious themes such as war are priced instantly.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Satka et al., 13.3m articles over 2012-2023.",
+     "claim_ids": ["MT190-C15-1", "MT190-C15-X1"]
+    },
+    {
+     "premise": "The narrative-momentum edge is likely to disappear quickly because AI and machine learning now process news instantly; stock-to-narrative betas are noisy because only about 5% of volatility is narrative-driven, so baskets carry large estimation error and bank QIS theme baskets rely on a human overlay.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "His mathematical objection and observation of markets and a bank product; no test.",
+     "claim_ids": ["MT190-C15-2", "MT190-C16-1", "MT190-C16-X1"]
+    },
+    {
+     "premise": "Equity index futures cover only about 30% of harvestable equity risk; medium and long-term equity trend remains fine. A diversified equity trend program layers index, industry (avoid double counting, for example semiconductors versus S&P), Barra-style factors and narrative; construction and normalisation are hard, and narrative is hardest since it covers about 5% of variance and its identity keeps changing, but the result can be nearly uncorrelated to index trend.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Companies he has worked at have built such programs; no results shown.",
+     "claim_ids": ["MT190-C16-3", "MT190-C17-1", "MT190-C17-X1", "MT190-C17-R1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "How retail 0DTE option selling suppresses index volatility and trend",
+     "steps": [
+      {"from": "Retail sells at-the-money near-expiry (0DTE) options (straddles) to harvest the variance risk premium", "to": "Market makers hold concentrated positive gamma at the money", "why": "Near expiry gamma concentrates at the strike, unlike far-dated options where it is spread out.", "claim_ids": ["MT190-C08-2", "MT190-C09-1"]},
+      {"from": "Market makers hold positive gamma and hedge delta in futures", "to": "They short rallies and buy dips every day (anti-trend flow)", "why": "Delta changes quickly near the strike, so hedging pushes price back toward the strike.", "claim_ids": ["MT190-C09-1"]},
+      {"from": "Daily anti-trend hedging flow", "to": "Lower realised and implied index volatility and negative intraday and one-day autocorrelation; dip-buying works; single stocks less affected", "why": "A new 0DTE option arrives every day to repeat the effect.", "claim_ids": ["MT190-C09-2", "MT190-C08-4"]},
+      {"from": "Index volatility suppressed relative to single stocks", "to": "Implied dispersion at an all-time high and more diversified risk in single-stock futures", "why": "More risk is available in single stocks than in the index.", "claim_ids": ["MT190-C08-3", "MT190-C10-1"]},
+      {"from": "Negative one-day autocorrelation", "to": "Short-term equity trend loses Sharpe, slower trend barely affected", "why": "Weight on the one-day effect falls with signal speed.", "claim_ids": ["MT190-C12-1", "MT190-C12-2", "MT190-C12-X1"]}
+     ],
+     "evidence": "CFM blog (Seven Degrees of Market Structure), dispersion index and S&P correlation dashboard, one-day autocorrelation fall of about 3 points over 20 years, back-of-envelope Sharpe arithmetic; Crabel's open-to-close follow-through fell from about 58% to 53-54%.",
+     "fails_when": "He notes single stocks are less affected and that the within-asset-class tick-size picture is more nuanced; options gamma may spread to bond futures and oil (extension, not evidence).",
+     "claim_ids": ["MT190-C08-2", "MT190-C09-1", "MT190-C09-2", "MT190-C10-1", "MT190-C12-1", "MT190-C12-3"]
+    },
+    {
+     "topic": "Why front-month commodity series are the standard signal and when to deviate",
+     "steps": [
+      {"from": "Front contract is the most liquid with the lowest cost", "to": "It captures most of the risk, so most CTAs generate signals from its rolled history", "why": "As expiry nears, a deferred contract takes on the front's volatility and drivers.", "claim_ids": ["MT190-C06-2", "MT190-C06-3"]},
+      {"from": "Deferred contracts are held by physical hedgers", "to": "Different risk factors (long-term supply, demand, cost of production, new-crop weather)", "why": "Different participants and different information.", "claim_ids": ["MT190-C06-1", "MT190-C06-X1"]},
+      {"from": "Adjacent contracts differ materially in volatility (natural gas summer vs winter)", "to": "Compute vol per contract or adjust size at the roll", "why": "Keep risk constant across the roll; no single correct answer.", "claim_ids": ["MT190-C07-X1"]}
+     ],
+     "evidence": "Industry practice and his firm's commodity fund that trades the full curve; explained risk of the front: 90-99% in financials, less in commodities.",
+     "fails_when": "Commodities where the front explains less risk, natural gas seasonality, and carry or roll-yield strategies where contract specificity matters.",
+     "claim_ids": ["MT190-C06-2", "MT190-C07-1", "MT190-C07-2"]
+    },
+    {
+     "topic": "Narrative momentum and its decay",
+     "steps": [
+      {"from": "Incomplete information: people infer value from price moves and what others discuss", "to": "Slow-evolving themes are underreacted over about 6 months", "why": "Information diffuses gradually; fast obvious themes are priced instantly.", "claim_ids": ["MT190-C15-X1", "MT190-C15-1"]},
+      {"from": "Underreaction exists", "to": "Trend-following stock-to-narrative beta earns money distinct from price momentum", "why": "It is a news signal, not just price.", "claim_ids": ["MT190-C15-1"]},
+      {"from": "AI processes news instantly", "to": "Underreaction likely vanishes", "why": "A solved problem for analysts and systematic funds.", "claim_ids": ["MT190-C16-1"]}
+     ],
+     "evidence": "Satka et al. data covering 2012-2023; his objections are theoretical.",
+     "fails_when": "After rapid AI news processing; estimation error in betas when narrative is about 5% of variance.",
+     "claim_ids": ["MT190-C15-1", "MT190-C15-2", "MT190-C16-1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "universe", "practice": "Look for new diversifying risk factors (single-stock futures, compute power curves, industry, Barra factors, themes) and measure the additional risk each adds before trying to forecast returns.", "why": "Risk diversification is the prior question.", "claim_ids": ["MT190-C14-2", "MT190-C01-X1", "MT190-C17-1"]},
+    {"element": "signal", "practice": "Use front-contract history for trend signals in most commodities; use contract-specific vol or adjust at the roll where adjacent months differ materially.", "why": "Liquidity, cost and most of the risk are in the front.", "claim_ids": ["MT190-C06-2", "MT190-C07-X1"]},
+    {"element": "execution", "practice": "Trade the front contract for liquidity and low cost; trade deferred contracts only to capture different risk factors.", "why": "Lowest cost; most volume.", "claim_ids": ["MT190-C06-2", "MT190-C07-1"]},
+    {"element": "research", "practice": "Do back-of-the-envelope magnitude checks of how much a structural change costs the strategy before acting on a paper.", "why": "A one-point autocorrelation fall costs little for a 5/20 trend.", "claim_ids": ["MT190-C11-R1", "MT190-C12-1"]},
+    {"element": "portfolio", "practice": "Layer equity trend (index, industry, factors, narrative) while avoiding double counting such as semiconductors vs S&P; normalise to a truly diversified book.", "why": "Index futures cover only about 30% of harvestable equity risk.", "claim_ids": ["MT190-C16-3", "MT190-C17-1"]},
+    {"element": "risk", "practice": "Prefer slower trend signals (two-month horizon) to avoid intraday microstructure effects.", "why": "Alpha from secular trends and macro events.", "claim_ids": ["MT190-C12-2"]}
+   ],
+   "evidence_style": "Mechanism-first reasoning plus back-of-envelope arithmetic, relying on published CFM and academic papers (Satka, Lee) and on practitioner experience at his firm. He flags his own mathematical objections (estimation error) and his own AI-based objection, none tested here. Some statements (his firm built single-stock trend programs) are unverifiable asides.",
+   "current_views": [
+    {"view": "July 2026 has been counter-trend in fixed income and FX (Japanese bond and repatriation risk), with commodity dispersion by trading speed around the oil reversal.", "as_of": "2026-07-15", "reasoning": "Slow traders may have been long oil and benefited, fast traders short and caught out.", "claim_ids": ["MT190-C04-2"]},
+    {"view": "Index volatility is suppressed by retail 0DTE selling while single-stock dispersion is at an all-time high, so single-stock futures offer more diversified risk.", "as_of": "2026-07-15", "reasoning": "Implied dispersion index and market-maker gamma mechanism.", "claim_ids": ["MT190-C08-3", "MT190-C10-1", "MT190-C09-2"]},
+    {"view": "AI capex is concentrated in short-lived chips, so a failure of AI would leave near-zero recovery value; the market is highly valued and retail wants to short AI valuations.", "as_of": "2026-07-15", "reasoning": "Chips last 2-3 years vs fibre 20-25 years.", "claim_ids": ["MT190-C03-4", "MT190-C10-2"]},
+    {"view": "The narrative-momentum edge is likely to vanish quickly because machine learning now processes news instantly.", "as_of": "2026-07-15", "reasoning": "The sample 2012-2023 predates AI news processing.", "claim_ids": ["MT190-C16-1"]},
+    {"view": "Medium and long-term equity trend is intact; short-term equity trend is under pressure.", "as_of": "2026-07-15", "reasoning": "Sharpe arithmetic for different signal speeds.", "claim_ids": ["MT190-C16-3", "MT190-C12-2", "MT190-C12-X1"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; veteran hedge fund manager",
+   "speaker_note": "Host who gives index data and several cautionary views (retail access to shorting, blow-up risk of long-only equity, AI-personalised news).",
+   "fingerprint": ["trend_following", "manager_selection_allocation", "behavioral_sentiment", "crisis_alpha_convexity", "short_term_systematic"],
+   "worldview_premises": [
+    {
+     "premise": "Giving retail easy access to shorting via futures is dangerous because short losses are unlimited (takeover risk), and single stocks can gap sharply (IBM fell about 25% in a day, from 332 to 213 in six weeks).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "IBM example; general caution.",
+     "claim_ids": ["MT190-C02-2", "MT190-C03-3"]
+    },
+    {
+     "premise": "Adoption of single-stock futures among CTAs is mixed: a minority strongly favour single names over indices, most still stick to index futures.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Conversations with colleagues.",
+     "claim_ids": ["MT190-C01-X2"]
+    },
+    {
+     "premise": "A Sins Capital blow-up ranking placed managed futures 15th of 17 (low risk), vol-targeted diversified macro second lowest and short-vol/short-gamma worst; but long-only equity is not low blow-up risk (a long-only Nasdaq position fell about 85% in 2000-2002).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Social-media ranking; historical drawdown.",
+     "claim_ids": ["MT190-C03-1", "MT190-C03-X1"]
+    },
+    {
+     "premise": "Short-term managers face a headwind from falling open-to-close follow-through (Toby Crabel: about 58% down to about 53-54%).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Recalled from a previous interview, with numbers approximate.",
+     "claim_ids": ["MT190-C12-3"]
+    },
+    {
+     "premise": "Agentic AI personalises news, so narrative truth becomes individual and may bias trading.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "A recalled interview with an Nvidia executive; speculative.",
+     "claim_ids": ["MT190-C16-2"]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Industry statistics and recalled interviews; asks clarifying questions rather than presenting tests.",
+   "current_views": [
+    {"view": "As of 14 July 2026: BTOP50 +8.5% YTD (about flat in July), SG CTA about +9% (-0.38% in July), SG Trend +8.76% (-0.33%), SG Short-Term Traders +4% (-1.12% in July), MSCI World +11.15%, S&P 500 +11.32%, US Agg +0.41%.", "as_of": "2026-07-14", "reasoning": "Data to Tuesday evening.", "claim_ids": ["MT190-C05-1"]},
+    {"view": "July 2026 carried geopolitical noise (ceasefire loss, oil reversal) and managers split by speed on who was caught short energies.", "as_of": "2026-07-15", "reasoning": "Speed mattered more than usual.", "claim_ids": ["MT190-C04-1"]},
+    {"view": "His trend barometer at 45 is neutral.", "as_of": "2026-07-14", "reasoning": "Consistent with flat performance.", "claim_ids": ["MT190-C04-3"]},
+    {"view": "Retail access to futures for shorting stocks is risky because of unlimited short losses; single-stock gap risk is large.", "as_of": "2026-07-15", "reasoning": "IBM -25% in a day.", "claim_ids": ["MT190-C02-2", "MT190-C03-3"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Is more instrument choice for retail a good idea?",
+   "positions": [
+    {"speaker": "Yoav Git", "position": "Single-stock futures make shorting easy without borrow and give new diversifying risk factors; attractive for CTAs and others.", "claim_ids": ["MT190-C02-1", "MT190-C01-X1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Easy shorting for retail is dangerous because losses are unlimited and single stocks gap; wary of giving people more leverage instruments.", "claim_ids": ["MT190-C02-2", "MT190-C03-3"]}
+   ]
+  },
+  {
+   "topic": "Blow-up risk ranking of strategies",
+   "positions": [
+    {"speaker": "Yoav Git", "position": "CTAs and vol-driven macro are defensive with upside bias; short volatility is dangerous.", "claim_ids": ["MT190-C03-2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Agrees with the CTA placement but questions the low-risk label for long-only equity (Nasdaq -85% in 2000-2002).", "claim_ids": ["MT190-C03-1", "MT190-C03-X1"]}
+   ]
+  },
+  {
+   "topic": "Does the loss of short-term equity trend matter?",
+   "positions": [
+    {"speaker": "Yoav Git", "position": "Costs fast traders about 0.2 Sharpe but little for 2-month trend followers, whose alpha is macro-driven.", "claim_ids": ["MT190-C12-1", "MT190-C12-2", "MT190-C12-X1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Crabel's fall in open-to-close follow-through is a significant headwind for short-term managers.", "claim_ids": ["MT190-C12-3"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Git says trading only the front contract captures about 80% of the risk, then says the front explains 90-99% of risk in financial futures and less in commodities; the two figures are not reconciled.", "claim_ids": ["MT190-C06-2", "MT190-C07-1"]},
+  {"issue": "Sharpe-cost arithmetic mixes units (basis points of Sharpe meaning hundredths of a Sharpe); ledger correction applied. The one-fifth weight on the one-day effect for a 5/20 crossover is an approximation without derivation.", "claim_ids": ["MT190-C12-1"]},
+  {"issue": "Claim that the 0DTE gamma mechanism caused negative one-day autocorrelation and the fall in short-term trend is the speaker's mechanism reading; no causal test is shown, and the CFM tick-size account is an alternative explanation (he calls them complementary).", "claim_ids": ["MT190-C09-2", "MT190-C11-2", "MT190-C11-X1"]},
+  {"issue": "He expects the narrative-momentum edge to vanish because of AI but offers no evidence; the paper's sample ends in 2023.", "claim_ids": ["MT190-C16-1", "MT190-C15-1"]},
+  {"issue": "AI capex claim (chips last 2-3 years, near-zero recovery) is asserted without data on actual depreciation or reuse.", "claim_ids": ["MT190-C03-4"]},
+  {"issue": "The statement that equity index futures cover about 30% of harvestable equity risk is not tied to a source; it appears to follow from the variance decomposition (index 25-35%) but is stated for the harvestable-risk context.", "claim_ids": ["MT190-C16-3", "MT190-C13-1"]},
+  {"issue": "Equity trend diversification layers are described as practised by companies he worked at, with no performance evidence and no named firm.", "claim_ids": ["MT190-C17-1", "MT190-C17-R1"]},
+  {"issue": "Kaastrup-Larsen's 'Sins Capital' ranking is a social-media graphic of unknown method; both agree on CTA placement without examining it.", "claim_ids": ["MT190-C03-1"]}
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs the speakers suggest lead returns or trend profitability: index 0DTE volumes and market-maker gamma (suppressed index vol and dip-buying), implied dispersion/correlation indices (single-stock risk), one-day autocorrelation of equity returns (cost to fast trend), open-to-close follow-through, spreading of short-dated option expiries into bonds and oil, AI capex and chip-lifetime economics, and the trend barometer (45, neutral). Horizon: months for trend conditions, years for structural change; mechanisms implied are dealer hedging flows and retail option selling.",
+ "reader_inferences": [
+  "(reader) If the 0DTE-gamma mechanism holds, a testable prediction is that index realised vol and autocorrelation move with 0DTE volume and that single-stock autocorrelation is less negative; he reports the former only qualitatively.",
+  "(reader) Git's separation of speed (2-month trend insulated, one-day not) predicts that the equity-sector performance gap between fast and slow CTAs widens in high-0DTE periods.",
+  "(reader) His commodity-curve answer implies signals from the specific traded contract versus the rolled front series differ mainly in seasonal markets (natural gas, agricultural), a testable difference in signal correlation.",
+  "(reader) The risk-first view (measure added risk before prediction) is a portfolio-construction principle, not a return forecast."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT190-C05-R1",
+   "chunk": "C05",
+   "speaker": "Yoav Git",
+   "quote": "we have a commodity fund that actually does trade the full the full set of sort of the full curve",
+   "claim": "Git's firm runs a commodity fund that trades the full futures curve, not just the front contract, so his answer on contract choice draws on live practice.",
+   "mechanism": "speaker_context",
+   "asset_class": "commodities",
+   "indicator": "full futures curve",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT190-C11-R1",
+   "chunk": "C11",
+   "speaker": "Yoav Git",
+   "quote": "to have a little bit of uh back of the envelope understanding of how much does that impact the trend",
+   "claim": "Git's method when reading a paper is to do a back-of-the-envelope calculation of how much a documented market change (such as lower one-day autocorrelation) would impact a trend strategy.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT190-C17-R1",
+   "chunk": "C17",
+   "speaker": "Yoav Git",
+   "quote": "some of the companies that I've worked in the past have been doing that",
+   "claim": "Git says equity trend programs that layer industry, factor and theme exposures beyond index futures are already run by companies he has worked at, so the description reflects practice rather than a new proposal; no results are given.",
+   "mechanism": "speaker_context",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  }
+ ]
+}

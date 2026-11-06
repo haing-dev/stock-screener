@@ -1,0 +1,401 @@
+{
+ "source_id": "MT185",
+ "episode_thesis": "Toby Crabel (short-term systematic futures, recorded 23 March 2026) argues that edges do not vanish because they are published but because market structure and participants change: the opening range breakout he wrote up in 1989 decayed mainly because 24-hour trading removed the open as a reference point, and today large algorithmic traders use the liquidity at obvious highs and lows, so reversals are more common than follow-through. His response is continuous adaptation (about 10% of the portfolio changed each year, shorter holds, balanced generalised mean-reversion and momentum strategies, heavy execution investment, volume-price research) rather than trusting any single optimised model.",
+ "speakers": [
+  {
+   "name": "Toby Crabel",
+   "role": "Founder of Crabel Capital Management (short-term systematic futures, since the late 1980s); author of the opening range breakout book (1989); former Niederhoffer associate",
+   "speaker_note": "Auto-captions garble some dates (an earlier worst period for opening range breakout is given as '60 to 1962' in the captions, so treat the year as uncertain) and speaker turns for the two hosts are not always marked. Recorded on 23 March 2026, in the afternoon in Europe, during a sharp gold and silver reversal; his remarks about 'today' refer to that date.",
+   "fingerprint": ["short_term_systematic", "trend_following", "value_mean_reversion", "market_internals_leading", "research_robustness_overfitting", "costs_execution", "regime_detection", "liquidity_flows"],
+   "worldview_premises": [
+    {
+     "premise": "Markets are non-linear and only probabilistic, so anything can happen, and AI cannot give a reliable five-minute forecast; the mood among systematic and discretionary traders is humility.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Experience of the 23 March 2026 gold and silver move and general principle.",
+     "claim_ids": ["MT185-C10-2"]
+    },
+    {
+     "premise": "Opening range breakout was a foundational short-term momentum edge: Chicago bond floor traders faded an 8-tick move off the open but followed beyond it; it measures intraday momentum, a large factor, and he kept the opposite view (mean reversion) learned from Niederhoffer.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own history from the 1980s and 1990s; book published 1989.",
+     "claim_ids": ["MT185-C02-1", "MT185-C02-2"]
+    },
+    {
+     "premise": "Very short-term trading is viable only when transaction costs are near zero; he moved from trend following to shorter-term trading because his partner's account paid no commissions, and the firm's time frame harks back to zero-commission days.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own story; the exchange-floor mentality of day traders.",
+     "claim_ids": ["MT185-C02-X1", "MT185-C14-2"]
+    },
+    {
+     "premise": "An edge can persist after publication and be lost only when structure or participants change: the decade after his 1989 book was among the best ever for opening range breakout, and decay came from 24-hour trading, which he first saw with US Treasury night sessions in the 1980s; an early S&P pit pattern that quadrupled an account in two months vanished when institutions entered.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own history of the strategy and of the S&P pit pattern; no data series shown.",
+     "claim_ids": ["MT185-C03-X1", "MT185-C03-2", "MT185-C14-1"]
+    },
+    {
+     "premise": "Markets that still trade a defined primary session (palm oil, Brazilian markets) show much better opening range breakout results, supporting the explanation that 24-hour trading destroyed the open as a reference point.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Comparison across markets from his own observation; no figures.",
+     "claim_ids": ["MT185-C04-X1"]
+    },
+    {
+     "premise": "Trend days are less frequent than before because liquidity is positioned against momentum, pushing strategies toward mean reversion; there are many more intraday reversals (for example a new overnight low followed by a large rally) and fewer follow-through days than in a long time.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "50 years of observation, the day's price action, and a statistic that follow-through after a higher low fell from about 62% to 58%.",
+     "claim_ids": ["MT185-C03-1", "MT185-C04-1", "MT185-C06-2"]
+    },
+    {
+     "premise": "Large algorithmic market makers and big traders use activity beyond prior-day highs and lows to enter and exit; volatile liquidity events are an opportunity for them, and breaks of obvious levels are often traps built on fearful traders liquidating.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "23 March 2026 gold and silver reversal on 5-10 times normal volume, with large contracts trading ten minutes before Iran-talk headlines (he notes there is no confirmation).",
+     "claim_ids": ["MT185-C05-2", "MT185-C05-3", "MT185-C06-1"]
+    },
+    {
+     "premise": "Large volume outside prior ranges signals opportunity for big players, and volume matters more now than he can recall; the Wyckoff 1930s study of the New York Times index in a volatile bear market resembles today.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Wyckoff historical study; recollection ('I may be wrong').",
+     "claim_ids": ["MT185-C06-3", "MT185-C10-1"]
+    },
+    {
+     "premise": "The relationship between volume and price is under-researched; many stick to price alone, and volume is hard to use consistently because its scale has changed enormously (15 million NYSE shares a day was huge in the 1970s).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own research experience; databases so deep that each answered question raises about 50 more.",
+     "claim_ids": ["MT185-C12-1", "MT185-C12-X1", "MT185-C12-X2"]
+    },
+    {
+     "premise": "Wyckoff's effort versus result remains valid: effort is volume and result is the price range; high volume with a narrow range at a dead stop shows a large trader absorbing flow, so after a rally it is a poor place to buy and at a low someone is standing in front of the move.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "A 100-year-old concept applied to current price action, with no test shown.",
+     "claim_ids": ["MT185-C12-2"]
+    },
+    {
+     "premise": "Charts show what is going on and the human mind still extracts information from them better than a computer, so the firm quantifies visual observations to detect market changes and still has to tell the computer what to do; technical analysis lacks a philosophical justification, which is the subject of his next book (a cognitive element).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Own practice and preference; no evidence offered.",
+     "claim_ids": ["MT185-C07-1", "MT185-C13-1"]
+    },
+    {
+     "premise": "Old portfolios do not work as well as current ones, so markets evolve; the firm changes 10% or more of its portfolio every year, and without such changes the portfolio of 5-10 years ago would have put it out of business.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Firm's backtests of old portfolios; no figures.",
+     "claim_ids": ["MT185-C05-1", "MT185-C07-1"]
+    },
+    {
+     "premise": "Uncertainty has grown, especially in the last few years, so outlier moves catch portfolios more easily and do more damage, although the basic concepts remain valid and there is room for new ones.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation, no quantification.",
+     "claim_ids": ["MT185-C05-X1"]
+    },
+    {
+     "premise": "Basic momentum strategies have deteriorated by 4-5 points of hit rate (still above 50%) because options traders and pod groups compress volatility; markets are also jumpy and news-prone, so the firm's average hold shortened from about 36 hours to less.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Firm's research group findings (led by its CEO, Mike Blumaden in the captions); no tables.",
+     "claim_ids": ["MT185-C08-2", "MT185-C09-1"]
+    },
+    {
+     "premise": "Over-optimisation is self-deception: generalised strategies hold up (some 1990s strategies still run) and optimised strategies look better on paper only; he looks for strategies that could last 50 years.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "A year in the late 1990s when four of the top five strategies were generalised ones.",
+     "claim_ids": ["MT185-C09-2", "MT185-C09-3"]
+    },
+    {
+     "premise": "Execution is a main source of edge: execution quality has improved by multiples in 20-25 years and slippage is at the best level in the firm's history; S&P futures book depth fell from about 500 contracts to about 20 at the touch while volume rose, so orders must be split and the method is more cagey.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Firm's slippage reports.",
+     "claim_ids": ["MT185-C09-5", "MT185-C08-1"]
+    },
+    {
+     "premise": "High-frequency firms are the liquidity backbone, like the old floor traders; they spend millions for a few microseconds of speed, whereas the firm prefers cheaper execution edge (with some frustrating nuances).",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Memory of floor traders; ledger correction says he does not claim short-term managers' alpha is untouched.",
+     "claim_ids": ["MT185-C07-2"]
+    },
+    {
+     "premise": "Short-term strategies are hard to replicate because of nuance and heavy execution investment (they are a higher-cost product), while trend following is easier to replicate, and the firm's trend product has done slightly better than replication.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Firm's own comparison of trend products; no figures.",
+     "claim_ids": ["MT185-C11-2"]
+    },
+    {
+     "premise": "Capacity is judged by net dollars per contract against execution cost, and matters far more for very short-term trading than for 5-10 day holds.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Firm's practice.",
+     "claim_ids": ["MT185-C11-1"]
+    },
+    {
+     "premise": "AI and genetic algorithms accelerate quantification, so short-term trading becomes more competitive as everyone uses every tool; AI coding tools (Codex and others) let staff build and program verbally, which he expects to be the next major change cutting development and operating cost.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Firm-wide mandate by the CEO including the back office.",
+     "claim_ids": ["MT185-C11-3", "MT185-C10-X1"]
+    },
+    {
+     "premise": "The current environment resembles the 1970s (debasement, gold and silver, profitable trend following, large abrupt moves) but is bigger and global; markets are as tough as in 40-50 years for systematic traders although he expects them to improve, and he suspects a further unidentified factor.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Historical analogy; personal gold and silver coin holdings and a life insurance policy that has lost 95% against gold.",
+     "claim_ids": ["MT185-C13-2", "MT185-C09-4", "MT185-C09-X1", "MT185-C13-X2"]
+    },
+    {
+     "premise": "Momentum makes money even though he does not like it personally, but it is hard to trade on a discretionary basis because the market moves slowly during the process, so it suits systematic rules.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own experience.",
+     "claim_ids": ["MT185-C06-X2"]
+    },
+    {
+     "premise": "Opening range breakout took 8-10 more years to decay after he added mean reversion to offset it; changes are glacial, and replacement reference points (previous close and overnight movement, previous-day highs and lows, 24-hour session range) still work, less strongly than the old opening range.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own portfolio experience after working with Niederhoffer.",
+     "claim_ids": ["MT185-C03-3", "MT185-C03-4"]
+    },
+    {
+     "premise": "Model retirement and allocation depend on recognising individual strategy deterioration and the environment that is changing it.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Firm's research group practice.",
+     "claim_ids": ["MT185-C08-R1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why opening range breakout decayed",
+     "steps": [
+      {"from": "Floor traders in the 1980s fade an 8-tick move off the open and follow beyond it", "to": "The open is a vital reference point", "why": "Primary-session trading made the open the key information point.", "claim_ids": ["MT185-C02-1"]},
+      {"from": "Night sessions begin (US Treasury, 1980s)", "to": "Follow-through from prior close to open dissipates", "why": "Volume spreads across sessions; the momentum off the open loses vitality.", "claim_ids": ["MT185-C03-2"]},
+      {"from": "24-hour sessions", "to": "The open cannot be determined", "why": "So much volume trades around the clock that the open is obscured; in stock indices there is a lot of crossover around the open.", "claim_ids": ["MT185-C03-2", "MT185-C04-X1"]},
+      {"from": "Open no longer works", "to": "Use previous close, overnight movement, previous-day highs and lows, 24-hour range", "why": "They still work, less strongly.", "claim_ids": ["MT185-C03-4"]},
+      {"from": "Markets that keep a primary session", "to": "Better results", "why": "Palm oil and Brazilian markets act like the old 1980s markets.", "claim_ids": ["MT185-C04-X1"]}
+     ],
+     "evidence": "Own 35-year history of the strategy, comparison across markets, and the observation that publication in 1989 did not kill it.",
+     "fails_when": "Not stated; he notes publishing did not kill the edge and that decay took 8-10 more years after he added mean reversion.",
+     "claim_ids": ["MT185-C02-1", "MT185-C03-2", "MT185-C03-3", "MT185-C03-4", "MT185-C04-X1", "MT185-C03-X1"]
+    },
+    {
+     "topic": "Big traders use liquidity at obvious levels, so reversals dominate",
+     "steps": [
+      {"from": "Large algorithmic market makers and big traders need liquidity", "to": "They trade through prior-day highs and lows", "why": "Where stops and fearful traders sit gives them size to enter or exit.", "claim_ids": ["MT185-C05-2", "MT185-C06-1"]},
+      {"from": "Break of an obvious level", "to": "Often a trap and a reversal", "why": "The fodder is the fearful trader liquidating longs.", "claim_ids": ["MT185-C06-1"]},
+      {"from": "Follow-through after a higher low falls from about 62% to 58%", "to": "Market behaviour changes materially", "why": "He compares a few percentage points to a climate change.", "claim_ids": ["MT185-C06-2"]},
+      {"from": "23 March 2026 gold and silver reversal on 5-10 times normal volume", "to": "Large buyers took the lows; contracts traded before headlines", "why": "He reads it as big players buying fear-driven liquidation.", "claim_ids": ["MT185-C05-3"]},
+      {"from": "Volume outside the prior range", "to": "Signal of opportunity for big players", "why": "Extraordinary volume, especially at the start of a regional session, is worth watching.", "claim_ids": ["MT185-C06-3", "MT185-C10-1"]}
+     ],
+     "evidence": "Day's price action and volume, a follow-through statistic, and Wyckoff's 1930s study; the pre-announcement trades are suspicion without confirmation.",
+     "fails_when": "If gold and silver hold after the reversal he sees a pullback in a bull market and sharply higher prices over three to six months.",
+     "claim_ids": ["MT185-C05-2", "MT185-C05-3", "MT185-C06-1", "MT185-C06-2", "MT185-C06-3", "MT185-C10-1", "MT185-C06-X1"]
+    },
+    {
+     "topic": "Compression of momentum and the adaptation response",
+     "steps": [
+      {"from": "Options traders and large pod groups compress volatility", "to": "Basic momentum hit rate falls by 4-5 points", "why": "They quash the moves momentum strategies need; still above 50%.", "claim_ids": ["MT185-C08-2"]},
+      {"from": "Hit rate deteriorates", "to": "Shift allocation, front-load adjustments, monitor sections by market", "why": "The firm asks what in the environment changed the trading pattern.", "claim_ids": ["MT185-C08-2", "MT185-C08-R1"]},
+      {"from": "News-prone, jumpy markets", "to": "Average hold shortens from about 36 hours", "why": "Reflects observations of faster moves.", "claim_ids": ["MT185-C09-1"]},
+      {"from": "Edges change continuously", "to": "10% or more of the portfolio changes each year", "why": "Old portfolios would have put the firm out of business.", "claim_ids": ["MT185-C05-1", "MT185-C07-1"]}
+     ],
+     "evidence": "Firm research group findings and old-portfolio tests; no numbers beyond those quoted.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT185-C08-2", "MT185-C09-1", "MT185-C05-1", "MT185-C07-1", "MT185-C08-R1"]
+    },
+    {
+     "topic": "Robustness over optimisation",
+     "steps": [
+      {"from": "Optimised strategies look better on paper", "to": "Self-deception if over-optimised", "why": "Fit to noise; in the late 1990s four of the top five performers were the generalised ones.", "claim_ids": ["MT185-C09-3", "MT185-C09-2"]},
+      {"from": "Six mean-reversion and six momentum general strategies, balanced and uncorrelated", "to": "Strategies that last", "why": "Totally uncorrelated families that do not execute at the same time; some from the 1990s still run.", "claim_ids": ["MT185-C09-2", "MT185-C09-3"]}
+     ],
+     "evidence": "One year's ranking in the late 1990s and the survival of older strategies.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT185-C09-2", "MT185-C09-3"]
+    },
+    {
+     "topic": "An edge disappears when participants change",
+     "steps": [
+      {"from": "Early S&P pit pattern (straight runs of 5-10 five-minute bars)", "to": "Quadrupled an account in two months", "why": "Easy to capture before institutions arrived.", "claim_ids": ["MT185-C14-1"]},
+      {"from": "Institutions enter the S&P", "to": "Market compresses and the pattern ends", "why": "More variability.", "claim_ids": ["MT185-C14-1"]}
+     ],
+     "evidence": "One personal example from the early S&P futures.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT185-C14-1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Change 10% or more of the portfolio every year and test old portfolios against current ones.", "why": "Markets evolve; old portfolios do worse.", "claim_ids": ["MT185-C05-1"]},
+    {"element": "portfolio", "practice": "Run a balanced mix of six primary mean-reversion and six primary momentum strategies, each uncorrelated with the others.", "why": "Uncorrelated families; robustness over optimisation.", "claim_ids": ["MT185-C09-2", "MT185-C09-3"]},
+    {"element": "signal", "practice": "Use reference points other than the open: previous close and overnight movement, previous-day highs and lows, and 24-hour range; watch extraordinary volume at any point of the day.", "why": "They still carry information, less than the old opening range.", "claim_ids": ["MT185-C03-4", "MT185-C10-1"]},
+    {"element": "research", "practice": "Observe charts, then quantify what is seen to detect changes; research volume-to-price (effort versus result).", "why": "Humans read charts better than computers; volume is under-researched.", "claim_ids": ["MT185-C07-1", "MT185-C12-1", "MT185-C12-2"]},
+    {"element": "risk", "practice": "Allocate across strategies by recognising individual deterioration and the environment causing it; front-load adjustments; monitor each section and each market.", "why": "Catches change early.", "claim_ids": ["MT185-C08-R1", "MT185-C08-2"]},
+    {"element": "execution", "practice": "Invest heavily in execution (split orders, patience, speed, a slippage report); capacity judged by net dollars per contract against execution cost.", "why": "Book depth has fallen and execution is a main source of edge.", "claim_ids": ["MT185-C08-1", "MT185-C09-5", "MT185-C11-1"]},
+    {"element": "signal", "practice": "Shorten holding periods as markets jump on news (average hold from about 36 hours to less).", "why": "Reflects observed price behaviour.", "claim_ids": ["MT185-C09-1"]},
+    {"element": "research", "practice": "Use AI coding tools firm-wide, including the back office, to cut development cost, without relying on AI for forecasting.", "why": "Markets are probabilistic; AI accelerates quantification for all competitors.", "claim_ids": ["MT185-C10-X1", "MT185-C10-2", "MT185-C11-3"]}
+   ],
+   "evidence_style": "Experience over decades (floor, pit and Chicago practice, his own strategies), historical analogy (Wyckoff, the 1970s), a few statistics quoted from memory (62% to 58% follow-through, 4-5 points hit rate, 36-hour hold) and the day's price action. He is candid about uncertainty ('I may be wrong', 'who the hell knows') and offers no tables.",
+   "current_views": [
+    {"view": "Gold and silver reversal on 23 March 2026: big players used fear-driven liquidation to buy; if the lows hold, this is a pullback in a bull market and the next three to six months could be sharply higher.", "as_of": "2026-03-23", "reasoning": "5-10 times normal volume at the lows, contracts trading ten minutes before the Iran headlines, precedent for pullbacks in bull markets; he cannot hold a position that long himself.", "claim_ids": ["MT185-C05-3", "MT185-C06-X1"]},
+    {"view": "Daily percentage moves in gold and silver on 23 March 2026 look larger than ever.", "as_of": "2026-03-23", "reasoning": "His recollection; he says it can be verified from price history.", "claim_ids": ["MT185-C05-X2"]},
+    {"view": "The environment is like the 1970s (debasement, gold and silver, large abrupt moves) but bigger and global; the firm's trend products did very well in March 2026 while the short-term program was less spectacular because moves are so abrupt, though they generally go with the trend.", "as_of": "2026-03-23", "reasoning": "Currency debasement (a $100 life insurance policy lost 95% against gold) drives large moves.", "claim_ids": ["MT185-C13-2", "MT185-C13-X1", "MT185-C13-X2"]},
+    {"view": "If the gains hold on the day, stocks are probably headed to new all-time highs.", "as_of": "2026-03-23", "reasoning": "Stocks have risen for a long time; offered as a casual remark.", "claim_ids": ["MT185-C13-R1"]},
+    {"view": "Systematic conditions are the toughest in 40-50 years but should improve; a further unidentified factor beyond the 1970s analogy is causing challenges.", "as_of": "2026-03-23", "reasoning": "Hit rates have fallen and markets are jumpy; he has not isolated the extra factor.", "claim_ids": ["MT185-C09-4", "MT185-C09-X1"]},
+    {"view": "Trend days are less frequent and intraday reversals more common than in many years.", "as_of": "2026-03-23", "reasoning": "Liquidity positioned against momentum; the day's new overnight low followed by a rally is the example.", "claim_ids": ["MT185-C03-1", "MT185-C04-1"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged); CTA manager",
+   "speaker_note": "Host; the captions do not mark which of the two hosts asks each question. The ledger credits C04-2 to Niels; the 200-day moving average remark (C13-2 correction) is a host's inference, attributed here to Niels with uncertainty (it could be Alan Dunne).",
+   "fingerprint": ["trend_following", "liquidity_flows", "market_internals_leading", "short_term_systematic"],
+   "worldview_premises": [
+    {
+     "premise": "Liquidity has migrated from the open to the close (stock index closing volume is high), making the close a more significant reference point than the open.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Second-hand knowledge from colleagues who trade the market ('I believe'); Crabel agrees in part.",
+     "claim_ids": ["MT185-C04-2"]
+    },
+    {
+     "premise": "Investors argue that high-frequency firms take alpha that short-term managers used to own, which is a common explanation of managed futures drawdowns.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Feedback from investors, reported rather than endorsed.",
+     "claim_ids": ["MT185-C07-R1"]
+    },
+    {
+     "premise": "The 200-day moving average has probably become much more important in the current environment (host inference, not said by Crabel).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Inference from Crabel's remark that the short-term moves are generally with the trend; marked 'I guess'.",
+     "claim_ids": ["MT185-C13-2"]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Questions and relays of feedback from investors and colleagues; no data of his own in this episode.",
+   "current_views": [
+    {"view": "Closing volume now makes the close a more significant reference point than the open.", "as_of": "2026-03-23", "reasoning": "Stock index closing volume is high.", "claim_ids": ["MT185-C04-2"]}
+   ]
+  },
+  {
+   "name": "Alan Dunne",
+   "role": "Co-host (Top Traders Unplugged series on CTAs)",
+   "speaker_note": "Co-host who asks most analytical questions; his only claim in the ledger is a list of candidate causes of edge decay, framed as a question.",
+   "fingerprint": ["trend_following", "market_internals_leading", "positioning_crowding"],
+   "worldview_premises": [
+    {
+     "premise": "Over three to four decades the market landscape has changed through new products, more retail participation, prop shops, zero-DTE options and structured products, any of which could explain edge decay.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "A list offered as candidates; Crabel does not isolate one cause.",
+     "claim_ids": ["MT185-C07-X1"]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Asks Crabel to separate causes; offers no data of his own.",
+   "current_views": []
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "What caused the decay of short-term edges?",
+   "positions": [
+    {"speaker": "Alan Dunne", "position": "Many candidate causes: new products, retail, prop shops, zero-DTE options, structured products.", "claim_ids": ["MT185-C07-X1"]},
+    {"speaker": "Toby Crabel", "position": "No single cause isolated; he detects change on charts then quantifies it. For opening range breakout the clear driver is 24-hour trading removing the open, and today large traders using liquidity at obvious levels; publication did not kill it.", "claim_ids": ["MT185-C03-2", "MT185-C03-X1", "MT185-C07-1", "MT185-C05-2"]}
+   ]
+  },
+  {
+   "topic": "Do high-frequency firms take alpha from short-term managers?",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Investors argue the growth of high frequency takes alpha that short-term traders previously owned.", "claim_ids": ["MT185-C07-R1"]},
+    {"speaker": "Toby Crabel", "position": "They are the liquidity backbone like the old floor traders and will make money; he does not begrudge them, though some nuances are frustrating, and he prefers cheaper execution edge.", "claim_ids": ["MT185-C07-2", "MT185-C08-1"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "The statistic that follow-through after a higher low fell from about 62% to 58% is quoted from memory with no definition of the sample, horizon or period.", "claim_ids": ["MT185-C06-2"]},
+  {"issue": "The statement that opening range breakout was as bad in the last two or three years as in an earlier worst period depends on a garbled year in the captions; 'worst in decades' is not what he said.", "claim_ids": ["MT185-C03-2"]},
+  {"issue": "The hit-rate deterioration of 4-5 points has no baseline and no horizon; the 36-hour average hold is from memory.", "claim_ids": ["MT185-C08-2", "MT185-C09-1"]},
+  {"issue": "The 23 March 2026 claims (5-10 times normal volume, contracts traded before the Iran headlines, daily moves larger than ever) are an in-the-moment reading with no confirmation; he says himself that the pre-announcement trades are unconfirmed and the size of moves can be verified.", "claim_ids": ["MT185-C05-3", "MT185-C05-X2", "MT185-C06-1"]},
+  {"issue": "He says conditions are the toughest for systematic traders in 40-50 years and that old portfolios fail, yet reports that trend products did very well in March 2026 and that execution slippage is at a record best; the sources of the difficulty are not reconciled.", "claim_ids": ["MT185-C09-4", "MT185-C13-X1", "MT185-C09-5"]},
+  {"issue": "Wyckoff effort versus result: the correction notes the decline case means someone is standing in front of the move (do not chase the decline), not simply 'do not buy'; the claim is untested here.", "claim_ids": ["MT185-C12-2"]},
+  {"issue": "The 200-day moving average remark is the host's inference, not Crabel's; the ledger had attributed it to Crabel.", "claim_ids": ["MT185-C13-2"]},
+  {"issue": "He argues a known edge persists after publication, while describing the S&P pit pattern as vanishing within two months of institutions entering; the difference is attributed to structure and participants, not to publicity, but no test separates them.", "claim_ids": ["MT185-C03-X1", "MT185-C14-1"]}
+ ],
+ "forward_looking_inputs": "(reader) Crabel's inputs are reference-point behaviour (previous close, overnight movement, prior-day highs and lows, 24-hour range), extraordinary volume (especially at the start of a regional session or outside prior ranges), volume-price effort versus result, and the ratio of follow-through to reversals; horizons are minutes to a few days (average hold under 36 hours). Macro context: currency debasement and a 1970s-like regime favour large abrupt moves and trend following; gold and silver holding after 23 March 2026 would imply higher prices over three to six months.",
+ "reader_inferences": [
+  "(reader) Crabel's explanation of decay is about reference points and who supplies liquidity, not about crowding: an edge survives publication if the structure that created it survives, which implies that edge half-lives should be estimated from market structure changes (sessions, participants) rather than from the age of the strategy.",
+  "(reader) The fall of follow-through from 62% to 58% and of momentum hit rates by 4-5 points suggest the edge in short-term systematic trading is a few percentage points of hit rate, which makes execution cost and slippage first-order, consistent with his heavy execution investment.",
+  "(reader) His balanced mean-reversion and momentum portfolio and 10% annual turnover form an insurance against regime shifts in market microstructure; the cost is unknown from the conversation.",
+  "(reader) His bullish gold and silver call is explicitly conditional on the lows holding and is not backed by the firm's systematic process, so it is better read as a discretionary view than as a signal of the firm."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT185-C08-R1",
+   "chunk": "C08",
+   "speaker": "Toby Crabel",
+   "quote": "it's recognizing um individual strategy deterioration and it's also looking at the environments that exist",
+   "claim": "Allocation and model retirement at Crabel depend on recognising deterioration in individual strategies and on looking at the environments that exist, with a research group tracking incremental changes in market structure.",
+   "mechanism": "regime_change",
+   "asset_class": "multi",
+   "indicator": "strategy deterioration and environment",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "Firm's allocation process",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map"
+  },
+  {
+   "claim_id": "MT185-C13-R1",
+   "chunk": "C13",
+   "speaker": "Toby Crabel",
+   "quote": "if we can hold the gains today, we're probably going to get a rally to new all-time highs",
+   "claim": "On 23 March 2026, Crabel said that if the gains of the day hold, stocks are probably going to rally to new all-time highs.",
+   "mechanism": "momentum",
+   "asset_class": "equity",
+   "indicator": "stock index after the 23 March 2026 reversal",
+   "horizon": "weeks",
+   "direction": "up",
+   "conditions": "If the day's gains hold",
+   "testable": "yes",
+   "speaker_confidence": "low",
+   "time_bound": "yes",
+   "reader": "map"
+  },
+  {
+   "claim_id": "MT185-C07-R1",
+   "chunk": "C07",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "there was a common view that we've had this growth of high frequency and those guys are making a lot of money",
+   "claim": "Investors commonly argued, when managed futures were in drawdown over the last decade, that high-frequency firms were taking out alpha previously owned by short-term traders.",
+   "mechanism": "crowding",
+   "asset_class": "multi",
+   "indicator": "high-frequency participation",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "Managed futures drawdown in the last decade",
+   "testable": "yes",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map"
+  }
+ ]
+}

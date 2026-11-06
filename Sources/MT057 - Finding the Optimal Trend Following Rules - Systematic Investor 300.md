@@ -5,8 +5,8 @@ date: 2024-06-18
 channel: "Top Traders Unplugged"
 url: 
 words: 9923
-claims: 39
-added_by_crosscheck: 7
+claims: 40
+added_by_crosscheck: 8
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Rich Brennan (Australian systematic trend follower)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -21,6 +21,99 @@ tags: [source, layer0]
 **Approach:** trend following, regime switching, Markov models, position sizing, CFD costs, AI and quant research
 
 **Cross-check completeness estimate of first read:** 0.88 - first reader covered the paper's logic, CFD costs, ATR sizing and AI view well; missed the rule families, portability, behavioral-vs-formal rationale, Niels's holy-grail caveat and Baum-Welch reference; no factual errors found.
+
+## Argument map
+
+**Episode thesis:** Rich Brennan summarises a 2023 paper (Zakamulin/Giner, reviewed by Tom Stark) that derives optimal trend rules analytically from Markov, semi-Markov and autoregressive models of persistence; the derived rules are simple, medium-to-long-term, loosely parameterised and match what practitioners find by brute-force backtesting, which he reads as mathematical support for trend following, not a new edge. He argues AI will crowd the short-term prediction space (mean reversion, HFT) but not medium-to-long-term trend following, and Niels Kaastrup-Larsen adds that trend following has survived every technology wave, works only when diversified, and that 'optimal parameters' cannot be a holy grail. The first half covers a June 2024 choppy period (trend managers gave back about half of Q1), CFD swap costs and ATR sizing.
+
+### Rich Brennan (Australian systematic trend follower (trades CFDs, ATR-based sizing))
+Fingerprint: #approach/trend_following #approach/regime_detection #approach/research_robustness_overfitting #approach/costs_execution #approach/position_sizing_vol_target #approach/short_term_systematic
+_Speaker note: Captions have no speaker labels; the monologue on the paper is clearly Brennan's. He has read Tom Stark's review and the abstract, not necessarily the full paper (he says he relied on Stark's video)._
+
+**Worldview premises**
+- Trend following succeeds through serial correlation (autocorrelation) in prices whose strength waxes and wanes; the longer a trend persists the greater the chance it ends. _[theoretical, stated; support: Paper's equivalence between autoregression and Markov/semi-Markov models.]_ ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C08-2|C08-2]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C09-2|C09-2]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C10-X1|C10-X1]])
+- Practitioners' ad hoc, heavily optimised backtests converge on the same simple, medium-to-long-term rules with loose parameters that analytic derivation finds, which is evidence that the rules are not data-mined. _[empirical, stated; support: Paper's conclusion; Stark's out-of-sample application to futures (Sharpe ~1.2 over 20-30 years).]_ ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C06-1|C06-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C06-2|C06-2]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C06-3|C06-3]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C10-1|C10-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C06-X2|C06-X2]])
+- Under realistic semi-Markov dynamics MACD is the best rule (EMA under plain Markov), but analytic optimality is a support for the approach, not a savior for the process. _[theoretical, stated; support: Paper's results as relayed.]_ ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C09-3|C09-3]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C10-1|C10-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-X1|C11-X1]])
+- Regime forecasts from such models are only reliable very short term (days to a week, analogous to 14-day weather forecasts) and decay quickly because uncertainty compounds. _[theoretical, stated; support: Weather analogy and observation of ML methods; he is 'a tiny bit doubtful' about medium-long horizons.]_ ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C10-3|C10-3]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-X1|C13-X1]])
+- Costs are first-order for a CFD trader: spreads, slippage and swap (financing) costs can eliminate otherwise good markets or models; positive swap adds carry to trend. _[experience, stated; support: His own trading of cash CFDs.]_ ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C03-3|C03-3]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C03-4|C03-4]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C03-5|C03-5]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C04-1|C04-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C03-X1|C03-X1]])
+- AI will quickly take over short-term prediction, whereas CTAs hold an advantage in medium-to-long-term trends; mean reversion and HFT are more at risk. _[theoretical, stated; support: Renaissance's capacity-driven results: short-horizon models win but cannot scale, the scalable trend equity fund was marginal.]_ ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-1|C11-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-1|C13-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-2|C13-2]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C12-1|C12-1]])
+- A choppy, whipsaw market ('pogo stick') produces mixed success across assets and is a hard period for trend models. _[experience, stated; support: Own models in June 2024.]_ ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C01-1|C01-1]])
+
+**Chain: From regime model to optimal trend rule**
+1. Prices show serial correlation across many lags → Autoregressive description of persistence: Prior prices at different lags influence current price. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C09-2|C09-2]])
+2. Autoregression is mathematically equivalent to a Markov (probability landscape) model → Moving-average, EMA, MACD and momentum rules can be optimised analytically: Same problem seen from two angles; each rule has parameters tied to market-state observables (volatility, direction). ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C09-2|C09-2]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C09-R1|C09-R1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C06-X1|C06-X1]])
+3. Plain Markov model → EMA best: Strict Markov jumps between states with fixed transition probabilities. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C09-3|C09-3]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C08-2|C08-2]])
+4. Semi-Markov (transition probabilities depend on trend duration) → MACD best, with practitioner-like parameters: More realistic: trends wax and wane, ending becomes likelier with age. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C09-1|C09-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C10-1|C10-1]])
+- Evidence: The 2023 paper's derivation as relayed from Stark's review; Stark's out-of-sample test on futures (Sharpe ~1.2, 20-30 years).
+- Fails when: Brennan notes the formulas are not a holy grail and forecast skill is confined to the short term; the paper is equity-derived and was ported to futures only by Stark.
+
+**Chain: Hidden Markov: using trend models as thermometers**
+1. Trend model returns correlate with the market state → Returns reveal the hidden market state: Each model (long-only, short-only, mean reverting) behaves like a thermometer of the environment. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C08-1|C08-1]])
+2. State inferred → State-dependent weights per model and a short-term forecast of the next state: Transition matrix plus state probabilities. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C08-1|C08-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C07-1|C07-1]])
+3. Short-term regime forecast → Dynamic adjustment reduces late entry and early exit: Trend models normally enter late and exit early; a preview of the next regime could pre-empt this. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C10-2|C10-2]])
+- Evidence: Conceptual explanation; fitting needs the Baum-Welch algorithm (Renaissance origin); no performance numbers for this step.
+- Fails when: Forecast decays quickly beyond days to a week.
+
+**Chain: Why AI threatens short-term but not medium-long trend following**
+1. AI and ML improve short-term (1 day to 1 week) prediction → Short-term space becomes intensely competitive: Medallion-type models operate at these horizons using many data sources. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-1|C11-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C12-1|C12-1]])
+2. Short-term alpha has market-impact limits → Scalable external money must use medium-to-long-term models, which did only marginally well: Capacity forced Renaissance's external equity fund into trend models. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-1|C13-1]])
+3. Uncertainty compounds over longer horizons → AI edge confined to short term: Brennan doubts forecasting skill at medium-to-long horizons. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-X1|C13-X1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-2|C13-2]])
+- Evidence: Anecdote from the Zuckerman book on Renaissance; analogy to weather prediction.
+- Fails when: Not stated; he is 'quietly confident' not certain.
+
+**Decision process**
+- [research] Backtest first for suitability to trending markets, then re-import actual broker costs (spread, slippage, swap) and discard markets/models that become untradeable.. Why: Costs can destroy marginal markets. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C04-1|C04-1]])
+- [sizing] Risk a fixed dollar amount per trade (e.g., $500): stop at a multiple of 25-day ATR, contracts = risk / stop distance, so contract counts change as price and ATR change; large early counts are expected.. Why: Constant risk per trade is the consistency test, not constant position size. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C04-2|C04-2]])
+- [execution] Monitor CFD swap costs on a dashboard; trend with positive swap earns carry on top, trend in assets with negative swap is expensive to hold; compare cash vs dated CFDs (cash gives more markets but daily financing).. Why: Holding costs materially reduce long-hold performance. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C03-4|C03-4]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C03-5|C03-5]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C03-X1|C03-X1]])
+- [research] Use an LLM to explain academic quant papers step by step to lay readers; treat analytic rules as quick to port to new markets and as lower data-mining risk.. Why: Lowers cost of quant research. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C05-1|C05-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C06-X2|C06-X2]])
+- [universe] Stay in medium-to-long-term trends and avoid the short-term space to avoid competing with AI.. Why: AI will make the short-term space more competitive. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-1|C11-1]])
+
+**Evidence style:** Mostly relays a paper and a YouTube review; supports claims by agreement with his own backtests and by anecdote (Renaissance). Uses his own backtest experience for sizing and costs.
+
+**Views at the time**
+- (2024-06-14) Trend models are in a choppy, whipsaw period.. Reasoning: Mixed success across assets. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C01-1|C01-1]])
+- (2024-06) AI will not displace medium-to-long-term trend followers soon but will quickly dominate short-term prediction; he is unsure about mean reverters and HFT.. Reasoning: Short-term prediction is where AI advances; uncertainty grows with horizon. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-1|C11-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-2|C13-2]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-X1|C13-X1]])
+
+### Niels Kaastrup-Larsen (Host, Top Traders Unplugged; veteran hedge fund manager/allocator)
+Fingerprint: #approach/trend_following #approach/manager_selection_allocation #approach/diversification_risk_parity #approach/policy_reaction_central_banks #approach/regime_detection #approach/research_robustness_overfitting
+_Speaker note: Host statements of view are mapped; he says he has not read the paper. 'We' for his firm's dynamic parameter selection is his claim._
+
+**Worldview premises**
+- Trend following works only when diversified across many markets and sectors; single-market trend following does not work. _[empirical, stated; support: 'All the data shows' (no citation).]_ ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-3|C13-3]])
+- Technology waves have repeatedly been predicted to end trend following, yet the core rules have worked for 50 years; AI is a helpful tool, not a revolution. _[experience, stated; support: Firm and industry history.]_ ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-3|C11-3]])
+- Analytically derived 'optimal' parameters cannot be a holy grail; if everyone had them the edge would not persist. _[theoretical, stated; support: Reasoning about crowding; his firm already uses dynamic parameter selection.]_ ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-X1|C11-X1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-2|C11-2]])
+- Rebalancing back into trend after drawdowns and while equities are at highs can be a good diversifying entry, since allocators sold trend after its 2022 win. _[behavioural, stated; support: Observed allocator behaviour; no data.]_ ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C02-3|C02-3]])
+- Inflation is sticky ('higher for longer'), and the Fed's next move might even be a hike. _[experience, stated; support: Dot-plot shift from several cuts to one.]_ ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C02-1|C02-1]])
+
+**Decision process**
+- [signal] Tracks a trend barometer (27 = weak) and CTA index returns as a read on trend environment.. Why: Weak barometer matches weak CTA returns. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C03-1|C03-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C03-2|C03-2]])
+- [research] Uses dynamic parameter selection; speculates the same methods could extend to optimal position sizing.. Why: Adapting parameters/sizing to regime. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-2|C11-2]])
+
+**Evidence style:** Industry data points (indices, barometer), long experience, and scepticism about unverified claims (e.g., Renaissance external fund).
+
+**Views at the time**
+- (2024-06-14) Trend managers gave back about half of Q1 gains, broad-based across metals, fixed income and currencies; may be a good entry for allocators.. Reasoning: Drawdown with equities at highs gives a diversification case. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C02-2|C02-2]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C02-3|C02-3]])
+- (2024-06-14) Weak trend environment: barometer 27; SG CTA -2.16% in June and +7.15% YTD vs S&P 500 +14.65% YTD.. Reasoning: Reported index data. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C03-1|C03-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C03-2|C03-2]])
+- (2024-06-14) Fed path unclear: cuts reduced from several to maybe one; inflation higher for longer; a hike is not ruled out.. Reasoning: Dot plot shift. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C02-1|C02-1]])
+
+### Disagreements
+- **Whether Renaissance's external-fund results show medium-to-long-term quant methods work**: Rich Brennan: External equity fund used medium-to-long-term trend models because capacity forced it; performance was marginal and he doubts such math works at long horizons. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-1|C13-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-X1|C13-X1]]); Niels Kaastrup-Larsen: Skeptical of the Medallion story: why could the same technology not beat benchmarks for external clients; cannot confirm they used trend following, and single-market trend following does not work anyway. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C12-2|C12-2]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-3|C13-3]])
+- **Are analytically optimal parameters a basis for adoption?**: Rich Brennan: Gives 'mathematical rigor' and quick transfer to new markets, but not a savior. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C10-X1|C10-X1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C06-X2|C06-X2]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-X1|C11-X1]]); Niels Kaastrup-Larsen: Cannot be a holy grail; if everyone could derive them the edge would not hold; already uses dynamic parameter selection. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-X1|C11-X1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-2|C11-2]])
+
+### Gaps and conflicts
+- Brennan relays the paper from Stark's review and admits he does not fully convey the maths; the Sharpe 1.2 is Stark's test, with no costs or detail on rules and sample. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C06-3|C06-3]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C06-2|C06-2]])
+- Claim that practitioner and analytic optima agree is asserted, not shown with parameter values. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C06-2|C06-2]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C10-1|C10-1]])
+- Brennan says regime forecast helps reduce late entry but also says forecast power is limited to days; the practical benefit for medium/long-term rules is not quantified. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C10-2|C10-2]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C10-3|C10-3]])
+- Niels questions the Medallion external fund story while Brennan states the fund 'underperformed' trend followers; neither cites data. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-1|C13-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C12-2|C12-2]])
+- AI-resilience of trend following is argued by analogy and capacity, with no evidence beyond the horizon argument. ([[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-1|C11-1]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C13-2|C13-2]], [[MT057 - Finding the Optimal Trend Following Rules - Systematic Investor 300#^MT057-C11-3|C11-3]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Inputs named: the trend barometer and CTA index returns (trend-environment strength), Fed dot plot and inflation persistence, swap/financing rates by instrument, and (for the paper) trend duration and market-state probabilities. Horizon: regime forecasts days to a week; trend rules medium-to-long term.
+
+### Reader inferences (not stated by the speakers)
+- (reader) The paper's value for allocators is as a robustness argument: analytic derivation and brute-force backtests agree, which reduces overfitting concern, but it does not add a signal.
+- (reader) Semi-Markov duration dependence (trends more likely to end the longer they last) could be tested as a state variable in the book.
+- (reader) The CFD swap discussion implies trend performance depends on the carry direction of each trade, linking carry and trend components.
 
 ## Coverage
 
@@ -157,6 +250,10 @@ tags: [source, layer0]
   > the EMA was the best model to use in trending environments
   indicator: EMA · asset: multi · conditions: simple Markov two-state regime model · testable: yes - paper result · confidence: medium
   ^MT057-C09-3
+- **Rich Brennan** Brennan explains that a market state in the paper is defined by multiple observables such as volatility level and price direction, and these observables are tied to the parameters of the trend models.  #mech/new _(added by map cross-check)_
+  > the state of a market will be defined by many different observables the state of a market might be defined by the level of volatility in the market the price direction of that market up or down
+  indicator: volatility level, price direction · asset: multi · direction: n/a · conditions: Within the paper's regime-switching framework · testable: yes: state variables are measurable · confidence: medium
+  ^MT057-C09-R1
 
 ### C10
 - **Rich Brennan** Under the more realistic semi-Markov model MACD was the best rule, with optimal parameters matching what practitioners find.  #mech/research_method

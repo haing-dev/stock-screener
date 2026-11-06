@@ -5,8 +5,8 @@ date: 2024-09-27
 channel: "Top Traders Unplugged"
 url: 
 words: 11878
-claims: 57
-added_by_crosscheck: 11
+claims: 59
+added_by_crosscheck: 13
 corrections: 1
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Mark Rzepczynski (host/guest, systematic researcher; caption 'Mark rinsky')", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -21,6 +21,149 @@ tags: [source, layer0]
 **Approach:** trend following, carry, macro, manager selection
 
 **Cross-check completeness estimate of first read:** 0.80 - the first reader caught the main frameworks (post-event behaviour, KUU, connectedness, adaptive markets, replicators); missed secondary ideas on Jackson Hole and central bank narratives, passive vs active under KUU, discretionary vs systematic investor bar, spillover decomposition and the 20% correction point.
+
+## Argument map
+
+**Episode thesis:** Mark and Niels argue that systematic investors should not forecast events such as the Fed's surprising 50bp cut but act on post-event price behaviour, and handle the unknown and unknowable with true diversification (about 100 markets, long/short), following models rather than overriding them. They add that algo aversion, poor manager explanations, bear-market amnesia and replicator/index risk shape how trend following is bought and sold, and that connectedness across markets may be exploitable.
+
+### Mark Rzepczynski (Systematic/quant researcher and macro-minded guest co-host (caption 'Mark rinsky'))
+Fingerprint: #approach/trend_following #approach/policy_reaction_central_banks #approach/behavioral_sentiment #approach/regime_detection #approach/research_robustness_overfitting #approach/replication_indexing #approach/manager_selection_allocation #approach/diversification_risk_parity
+_Speaker note: Caption spells the name 'Mark rinsky'; identified from the ledger header. Turns alternate with Niels and are clear from question/answer structure; one passage (C03 carry-ties-to-society) was misattributed in the ledger and is corrected to Niels._
+
+**Worldview premises**
+- Replication, already done for hedge fund and managed futures strategies, is now being tried for private equity, raising many quant and replication problems. _[experience, stated; support: Colleague's (Randy Cohen) research project.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C01-1|C01-1]])
+- Trend and carry are uncorrelated and can be blended: carry earns in risk-on, trend in risk-off; the size of carry is highly uncertain and the word covers different things (short-term active carry vs long-term mega carry). _[empirical, stated; support: Industry practice (CTAs blend trend with carry); size estimates from hundreds of billions to trillions.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C03-2|C03-2]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C03-3|C03-3]])
+- Systematic managers should not forecast central-bank decisions; what matters is post-event behaviour, i.e. how prices and portfolios adjust after the action. _[theoretical, stated; support: Practitioner stance; notes the sample of past 50bp-cut episodes is too small to study.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C04-4|C04-4]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C05-1|C05-1]])
+- Separate three layers of any market event: what I think they should have done, how the market perceives it, and what prices then tell me; only the third drives the trade (continuation, reversal or mean reversion). _[behavioural, stated; support: Personal discipline; no data.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C05-2|C05-2]])
+- Uncertainty comes in three kinds (KUU): known (countable), unknown (cannot be handicapped, avoid) and unknowable (diversify and follow prices). _[theoretical, stated; support: Framework attributed to a Wharton group; applied by examples (US election = unknown but resolving; million-job revision = unknowable).]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C07-1|C07-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C07-2|C07-2]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C07-3|C07-3]])
+- Long-only is not enough diversification when stock-bond correlation is positive; long/short across as many asset classes as possible handles unknown and unknowable best. _[empirical, stated; support: Argued from current correlation regime; no numbers.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C08-1|C08-1]])
+- Investors suffer algo aversion: they react more slowly to the same information when it comes from an AI/algorithm than from a human, and forgive human managers' excuses but not models. _[behavioural, stated; support: Cites a recent FT-reported study, his own blog from ten years earlier (weather-forecast tests) and meeting experience.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C08-2|C08-2]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C09-2|C09-2]])
+- Following the model beats overriding it in a one-off situation, especially in trend following. _[experience, stated; support: Experience; override mechanism exists but should rarely be used.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C10-1|C10-1]])
+- Managers explain themselves poorly and investors ask poor questions; the right answer states why and when a model should win or lose, not 'when there are trends' (a tautology). _[experience, stated; support: Observation from manager meetings.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C10-3|C10-3]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C10-X1|C10-X1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C11-X2|C11-X2]])
+- Attribution (why money was made, under which conditions) is more informative than contribution (how much per market). _[theoretical, stated; support: None beyond argument.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C12-1|C12-1]])
+- Markets form a network: connectedness (clusters, common traders, similar events) drives dynamic correlations and contagion, so diversification should also be designed around network structure. _[theoretical, stated; support: Own current research with Vienna collaborators; no results shown.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C12-2|C12-2]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C14-1|C14-1]])
+- Market efficiency is dynamic (adaptive markets hypothesis): it varies by liquidity, valuation difficulty, hedger/speculator mix, participants and cycle, so trends can exist. _[theoretical, stated; support: Andy Lo's AMH; contrasts with Asness's 'social media makes markets less efficient'.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C14-2|C14-2]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C14-3|C14-3]])
+- Central bankers lack skin in the game, unlike traders who lose clients when wrong, so their actions can be rash and their memory of bear markets is short. _[experience, stated; support: Taleb-style argument; anecdote of Wall Street careers with no bear market.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C06-1|C06-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C15-1|C15-1]])
+- Modest equity bear markets are over-feared by policymakers: a 20% fall would only give back about 18 months of returns. _[empirical, stated; support: Rough valuation arithmetic, no figures shown.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C15-X1|C15-X1]])
+- Most managers underperform their benchmarks, so a median-replication product is not a benchmark and suits only low-cost investors with no manager skill; a diversified selection of CTAs can beat the SG index. _[empirical, stated; support: General industry observation; SG index built from largest managers by AUM, rebalanced yearly.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C16-1|C16-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C17-2|C17-2]])
+
+**Chain: Fed 50bp cut to portfolio decisions**
+1. Fed cut of unexpected size and maximum pre-event uncertainty → Market adjustment across dollar, bonds, equities, oil: Investors adjust portfolios after the event and effects spread to secondary markets ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C04-1|C04-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C05-1|C05-1]])
+2. Post-event price reaction (dollar no new low, long bonds fell) → Information about market perception, not policy intent: Opposite of the usual response suggests long-end investors did not want bonds ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C04-2|C04-2]])
+3. Market price reaction → Trade: continuation, reversal or mean reversion: Third layer of the three-way separation ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C05-2|C05-2]])
+- Evidence: Single episode (Sept 2024); past 50bp cuts have too few observations.
+- Fails when: Small sample; reaction unclear, cuts that signal real stress may behave differently.
+
+**Chain: Connectedness to spillover trading**
+1. Clusters, common traders and similar events (connectedness) → Dynamic correlations: Network design of markets ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C12-2|C12-2]])
+2. Dynamic correlations → Contagion and delayed spillovers: A Fed move reaches equities and bonds first, then dollar, then oil and commodities after a short delay ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C13-1|C13-1]])
+3. Spillover direction (variance decomposition of shocks) → Cross-trend portfolio construction and risk: Causality direction would show where risk and opportunity arise ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C13-X1|C13-X1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C14-1|C14-1]])
+- Evidence: Older variance-decomposition literature; not tested by him on air.
+- Fails when: Reaction patterns reliable mostly within a sector (Niels's objection).
+
+**Chain: Why trend followers can exist: adaptive efficiency**
+1. Efficiency varying with liquidity, valuation difficulty, hedger/speculator mix, participants, cycle → Periods and markets of lower efficiency: Evolutionary view of markets ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C14-2|C14-2]])
+2. Lower-efficiency periods → Trends: Trend followers 'really believe' in AMH ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C14-2|C14-2]])
+- Evidence: Lo's AMH; Niels recalls Lo saying markets are efficient but not all the time.
+- Fails when: Not specified.
+
+**Chain: Bear-market memory to policy reaction**
+1. Cohort never lived through a large bear market → Collective belief that policy will always support markets: Poor market memory ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C15-1|C15-1]])
+2. That belief → Policy over-reacts to modest declines (e.g. call for a 75bp cut after the August carry unwind): A 20% bear market would only take back about a year and a half of returns ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C15-X1|C15-X1]])
+3. Long-history backtests → Systematic managers already have a sell/short plan for equity falls: Models do not depend on lived experience ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C15-2|C15-2]])
+- Evidence: Anecdotal (New Yorker cartoon) plus valuation arithmetic.
+- Fails when: Passive flows could amplify a sustained fall (Niels).
+
+**Decision process**
+- [research] Study past events by what happened after them, not by forecasting the event; accept small samples are a limit.. Why: Systematic managers use post-event behaviour. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C04-4|C04-4]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C05-1|C05-1]])
+- [signal] Act on the market's price reaction, not on own opinion of what the central bank should have done.. Why: Third layer of the three-way separation. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C05-2|C05-2]])
+- [portfolio] Diversify across dollar, oil, equities, fixed income and long/short to exploit secondary effects without forecasting them.. Why: Handles the unknown and unknowable. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C05-1|C05-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C07-1|C07-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C08-1|C08-1]])
+- [risk] Increase positions only on the knowable (trend, information edge); stay diversified for the unknown and unknowable.. Why: KUU framework. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C07-1|C07-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C07-3|C07-3]])
+- [execution] Follow the model; keep an override mechanism but expect that overriding in a one-off event usually does worse.. Why: Discipline and keeping backtests meaningful. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C10-1|C10-1]])
+- [research] Explain models via attribution and via exogenous, non-price conditions that are necessary or sufficient for trend returns.. Why: Avoids the 'works when there are trends' tautology. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C10-3|C10-3]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C10-X1|C10-X1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C12-1|C12-1]])
+- [portfolio] Add cross-correlations and cross-trends from network and variance-decomposition analysis to portfolio construction.. Why: Use connectedness offensively. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C13-1|C13-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C13-X1|C13-X1]])
+- [portfolio] Hold a diversified portfolio of selected CTAs rather than the SG index.. Why: Index is largest-by-AUM, reconstituted yearly, popularity-driven. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C16-1|C16-1]])
+
+**Evidence style:** Reasons from a few cases and first principles (frameworks such as KUU, AMH, network theory, behavioural studies); few numbers of his own, relies on cited academic work and market anecdotes.
+
+**Views at the time**
+- (2024-09-27) Macro trends (growth path, rate direction) will drive trend-following performance through the rest of 2024 and early 2025.. Reasoning: Slow growth/no growth question and the direction of interest rates. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C02-3|C02-3]])
+- (2024-09-27) The Fed's 50bp cut was odd: maximum uncertainty the day before, bonds sold off, dollar made no new low, nowcast growth about 3%, inflation above target.. Reasoning: Contradicts forward guidance and strong data; labour weakness exists but no recession precipice. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C04-1|C04-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C04-2|C04-2]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C04-3|C04-3]])
+- (2024-09-27) Volatility will rise around the US election date as uncertainty resolves.. Reasoning: Outcome unknown but resolvable. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C07-2|C07-2]])
+- (2024-09-27) A sustained equity fall may come for which many participants have no experience.. Reasoning: Collective memory gap and policy dependence. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C15-1|C15-1]])
+
+### Niels Kaastrup-Larsen (Host, Top Traders Unplugged; CTA industry insider)
+Fingerprint: #approach/trend_following #approach/carry #approach/policy_reaction_central_banks #approach/behavioral_sentiment #approach/replication_indexing #approach/manager_selection_allocation #approach/research_robustness_overfitting #approach/diversification_risk_parity
+_Speaker note: Host of the series; main speaker alongside Mark. The C03 passage on carry feeding through society and on the Fed fostering carry is his._
+
+**Worldview premises**
+- Financial engineering can create the perception of liquidity for inherently illiquid assets, which is a risk. _[theoretical, stated; support: General caution, not specific to the project.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C01-2|C01-2]])
+- Trend followers react to events only through price data; the new move enters the sample at once but takes time to change the signal. _[institutional, stated; support: How rules-based systems are built.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C05-X1|C05-X1]])
+- Prices are the real voting machine; systems do not need to speculate about what the Fed will do. _[theoretical, stated; support: Industry practice.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C05-R1|C05-R1]])
+- Carry runs through society and finance, and most investors prefer nothing to happen while earning a little each day, which makes selling trend following hard. _[behavioural, stated; support: Observation from selling trend following.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C03-4|C03-4]])
+- Decades of central-bank policy and forward guidance fostered the carry regime. _[empirical, stated; support: Narrative.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C03-5|C03-5]])
+- Central bank narratives are self-serving: they ignore the effect of their own extreme policies on inflation, credit tightening with the return of stability and blame exogenous shocks. _[experience, stated; support: Quotes David Dredge's report on Jackson Hole and Bailey (Covid/Ukraine mentioned about 50 times).]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C06-X1|C06-X1]])
+- Systematic funds are blamed for losses while discretionary losses are excused as unforeseeable. _[behavioural, stated; support: Own feeling, 'no way of proving this'.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C09-1|C09-1]])
+- True diversification (about 100 markets, not 100 stocks) helps against the unknown and unknowable for active and passive alike. _[theoretical, stated; support: Argued in reply to KUU.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C07-4|C07-4]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C07-X1|C07-X1]])
+- Rules-based approaches avoid anchoring and follow unprecedented moves (10-year yields below 2%, negative rates), while discretionary managers can anticipate (e.g. regime breaks) if good; combining both might be best. _[behavioural, stated; support: Historical example.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C11-1|C11-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C11-X1|C11-X1]])
+- Detailed parameter questions (20 vs 30 day volatility) do not help investors understand future performance; manager claims on speed and market count need evidence. _[experience, stated; support: Due-diligence experience.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C11-2|C11-2]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C12-X1|C12-X1]])
+- Reaction patterns across markets are reliable only within a sector; trend following's strength is not needing to know how things play out. _[experience, stated; support: Judgement; unsure even for gold or oil.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C13-2|C13-2]])
+- Markets are efficient but not all the time, so big moves called trends are expected. _[theoretical, stated; support: Reports Andrew Lo's answer in an interview.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C14-R1|C14-R1]])
+- Trend turning points show volatility spikes that make trend followers cut risk; passive flows could amplify a sustained fall. _[empirical, stated; support: Experience, no data.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C15-3|C15-3]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C15-4|C15-4]])
+- A CTA replicator or investable index is a giant backtest with its own manager risk, not risk-free like a stock index; investors should look for managers that strive to beat the index. _[institutional, stated; support: Cites Transtrend and Michael Green's 'Why bother being better'.]_ ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C16-2|C16-2]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C16-X1|C16-X1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C17-1|C17-1]])
+
+**Chain: Policy pivot and carry unwind**
+1. Decades of forward guidance and central-bank policy → Carry regime: Reduced uncertainty rewarded carry ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C03-5|C03-5]])
+2. Yen reversal and carry unwind in August 2024 → Losses for trend followers: Reversal against carry-linked positions ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C03-1|C03-1]])
+- Evidence: Single month; stated without numbers.
+- Fails when: Not specified.
+
+**Chain: Cut size to market read**
+1. Equities at all-time highs with low volatility → 50bp cut looks rash: Markets showed no problem ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C06-2|C06-2]])
+2. August Jackson Hole signals (Powell pivot to employment) → Cut was foreshadowed in direction: Size was the surprise ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C05-X2|C05-X2]])
+- Evidence: David Dredge's report and own market observation.
+- Fails when: Not specified.
+
+**Chain: Why rules beat anchoring**
+1. Past ranges (yields cannot go below 2%) → Human anchoring: Expectations tied to history ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C11-1|C11-1]])
+2. Rules without expectations → Follow the move as long as it lasts: Capture records and extremes ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C11-1|C11-1]])
+- Evidence: Example: Treasury 10-year below 2%, negative European rates.
+- Fails when: Discretionary anticipation can add value (regime breaks).
+
+**Decision process**
+- [execution] Let the models run even if monitoring continues; overriding destroys the usefulness of the backtest.. Why: March 2020 overrides questionable. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C10-2|C10-2]])
+- [portfolio] Hold roughly 100 markets for real diversification.. Why: Helps with unknown and unknowable. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C07-4|C07-4]])
+- [research] Support claims on trend speed and market count with evidence, not assertion.. Why: Investors' untested beliefs. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C12-X1|C12-X1]])
+- [risk] Cut risk when volatility rises around trend turning points.. Why: Typical systematic risk response. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C15-3|C15-3]])
+- [research] Do not over-engineer spillover models outside sectors.. Why: Few sectors with high-confidence reaction patterns. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C13-2|C13-2]])
+- [portfolio] Treat CTA index replicators as products with manager risk and seek managers who differ from the index.. Why: Replicators are small firms, models can break. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C16-2|C16-2]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C16-X1|C16-X1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C17-1|C17-1]])
+
+**Evidence style:** Track-record and industry observation; quotes other commentators (Dredge, Lo, Green, Transtrend) rather than testing ideas himself.
+
+**Views at the time**
+- (2024-09-26) Trend-follower gains in late Sept 2024 came from fixed income and precious metals; sugar and grain counter-trend rallies hurt, coffee helped; trend barometer 45.. Reasoning: Position/price notes; BTOP50 +1.18% Sept, SG CTA +1%, SG Trend +1.42%. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C02-1|C02-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C02-2|C02-2]])
+- (2024-09-27) The Fed's 50bp cut with equities at highs is nearly unprecedented.. Reasoning: Low volatility and uncertainty did not call for a large cut. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C06-2|C06-2]])
+- (2024-09-27) Policy pivot was telegraphed by Jackson Hole.. Reasoning: Powell's speech pointed to the employment mandate. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C05-X2|C05-X2]])
+
+### Disagreements
+- **Do central-bank reaction patterns and cross-market spillovers support systematic trading?**: Mark Rzepczynski: Spillovers and connectedness can be exploited via cross-correlations and cross-trends. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C13-1|C13-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C13-X1|C13-X1]]); Niels Kaastrup-Larsen: Reaction patterns are reliable only within a sector; trend following's strength is not needing to know how things play out. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C13-2|C13-2]])
+- **What KUU implies for passive vs active**: Mark Rzepczynski: The more is unknown or unknowable, the more sensible passive indexing becomes. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C07-X1|C07-X1]]); Niels Kaastrup-Larsen: The real lesson is true diversification (about 100 markets), which works for both active and passive. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C07-4|C07-4]])
+- **Systematic vs discretionary**: Niels Kaastrup-Larsen: Discretionary managers can anticipate regime breaks and a combination might be better; humans are excused more lightly than models. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C11-X1|C11-X1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C09-1|C09-1]]); Mark Rzepczynski: Investors forgive human excuses and distrust models; following the model usually beats overriding. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C09-2|C09-2]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C10-1|C10-1]])
+
+### Gaps and conflicts
+- Mark's pivot claim that the 50bp cut signals a major policy reversal is asserted without data; small sample of past 50bp cuts. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C04-1|C04-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C04-4|C04-4]])
+- Network/spillover ideas are described but no results or tests are given; Niels doubts confidence outside sectors. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C12-2|C12-2]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C13-1|C13-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C13-2|C13-2]])
+- Algo-aversion evidence is cited second-hand (FT article, old blog) with no figures. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C08-2|C08-2]])
+- Index and replicator claims (SG index beatable, most managers underperform) have no supporting numbers. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C16-1|C16-1]], [[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C17-2|C17-2]])
+- Ledger C03-4 was attributed to Mark but the passage is Niels replying; mapped to Niels. ([[MT197 - Trend Following over the next few years - Systematic Investor 314#^MT197-C03-4|C03-4]])
+
+### Forward-looking inputs (reader synthesis)
+Observable inputs: macro growth path and rate direction (growth nowcasts, Atlanta Fed GDPNow), post-event price reactions of dollar, long bonds, equities, oil, volatility spikes at turning points, stock-bond correlation, and passive flows; horizon: rest of 2024 to H1 2025 for trend performance, longer for diversification.
+
+### Reader inferences (not stated by the speakers)
+- Both speakers' stance is a 'follow prices, don't forecast' epistemology; their disagreements are about how much structure (network spillovers) can be added without becoming a forecast.
+- The Fed-cut discussion works as a case study: Mark reads the muted/inverted price reaction as the signal, which a trend follower would only trade as the new data shift the signal.
+- Mark's three-layer separation and KUU together imply sizing up only where a measurable edge exists.
 
 ## Coverage
 
@@ -129,6 +272,10 @@ tags: [source, layer0]
   > we know whatever happened this week was probably in the cards uh even when Jackson Hall um was being held in in August
   indicator: Fed communication (Jackson Hole), fed funds · asset: rates · horizon: months · conditions: Fed in an easing pivot · testable: partly - compare Jackson Hole signals with subsequent policy moves · confidence: medium
   ^MT197-C05-X2
+- **Niels Kaastrup-Larsen** Trend systems do not forecast the Fed; they react to how markets (the real voting machine) interpret the news.  #mech/new _(added by map cross-check)_
+  > we're just going to react to whatever the markets which are again the voting the real voting machine how the market interprets that
+  indicator: post-event price reaction · asset: multi · horizon: days · testable: partly - post-event response studies · confidence: medium
+  ^MT197-C05-R1
 
 ### C06
 - **Mark Rzepczynski** Central bankers lack skin in the game, unlike traders who lose clients and assets when they underperform.  #mech/behavioral
@@ -263,6 +410,10 @@ tags: [source, layer0]
   > social media is driving uh markets to be less efficient and that there's more gamesmanship
   asset: equities · testable: no · confidence: low
   ^MT197-C14-3
+- **Niels Kaastrup-Larsen** Niels reports that Andrew Lo told him markets are efficient but not all the time, so periods of big moves (trends) are to be expected.  #mech/new _(added by map cross-check)_
+  > he basically just said yeah I mean markets are efficient but not all the time so there will be these periods of time where you see these big moves that we call Trends
+  indicator: efficiency regime · asset: multi · testable: no - conceptual · confidence: medium
+  ^MT197-C14-R1
 
 ### C15
 - **Mark Rzepczynski** Many market participants (including central bankers) have never experienced a large bear market, so their collective memory is poor and they expect policy to always support markets.  #mech/behavioral

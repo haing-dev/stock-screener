@@ -1,0 +1,912 @@
+{
+ "source_id": "MT030",
+ "episode_thesis": "Andrew Beer argues that Trump-era policy noise has produced sentiment head fakes that punished short-term models, vol controls and alternative-market additions, that the core medium to long-term trend beta is cheap and works against slow-by-design investors, and that managers' added complexity must be proven against cheap replication. Niels adds that drawdowns precede new highs, questions whether medium-term is a haven, and judges managers by relative performance.",
+ "speakers": [
+  {
+   "name": "Andrew Beer",
+   "role": "Founder/manager of DBi (Dynamic Beta investments), runs a managed-futures replication ETF (DBMF); former allocator ('alligator'-style questions); Systematic Investor guest",
+   "speaker_note": "Guest; named in the host intro. Ledger correction applied to C11-1 (early 2024, before the election). In C17 the remark about a president with an economic interest in an alternative to the dollar (ledger C17-X2, labelled Andrew) reads in the transcript as Niels speaking just before Andrew resumes; mapped to Niels. 'Alligator' in the captions is 'allocator'.",
+   "fingerprint": [
+    "trend_following",
+    "replication_indexing",
+    "costs_execution",
+    "manager_selection_allocation",
+    "behavioral_sentiment",
+    "research_robustness_overfitting",
+    "policy_reaction_central_banks",
+    "structural_themes"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trump-era policy is noisy: announcements are picked without analysis (Liberation Day tariffs), negotiation is the goal, consistency and 'first do no harm' do not bind, so signals reverse and macro views built on them are hard to trade.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Personal anecdote about New York real estate negotiating culture; Bloomberg quote about allocator difficulty distinguishing signal.",
+     "claim_ids": [
+      "MT030-C05-4",
+      "MT030-C06-1"
+     ]
+    },
+    {
+     "premise": "Short-term trend models take headline-driven moves at face value, get head-faked two or three times en route to a trend and so have roughly zero Sharpe over time; medium to long-term models wait for confirmation.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning and narrative observation; he says he has 'no concrete evidence'.",
+     "claim_ids": [
+      "MT030-C07-1",
+      "MT030-C07-3"
+     ]
+    },
+    {
+     "premise": "Since 2022 there were five vicious reversals (inflation not falling, SVB, Powell pivot, growth fear plus yen unwind, Liberation Day), producing repeated drawdowns.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Event list.",
+     "claim_ids": [
+      "MT030-C07-2"
+     ]
+    },
+    {
+     "premise": "Medium to long-term trend models are the core that worked for 50 years and may outperform innovations added to protect against whipsaws.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Track record of 50 years; economic rationale (information) offered.",
+     "claim_ids": [
+      "MT030-C07-4",
+      "MT030-C13-1"
+     ]
+    },
+    {
+     "premise": "Managers who pitched better risk control and innovation (short models, vol controls, position management, alternative markets) suffered worse drawdowns than the space (SG CTA -15% y/y to April 2025, matching the worst since 2000).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observed drawdown numbers; admits not knowing exactly why.",
+     "claim_ids": [
+      "MT030-C08-4",
+      "MT030-C08-5"
+     ]
+    },
+    {
+     "premise": "Price moves reflect two competing components, changing information and changing sentiment; managed futures win when they detect true changes in information early, so alpha is contrarian.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning; examples: early 2024 Trump trade, short Treasuries in September 2020.",
+     "claim_ids": [
+      "MT030-C10-3",
+      "MT030-C11-1",
+      "MT030-C11-2",
+      "MT030-C11-X1"
+     ]
+    },
+    {
+     "premise": "Since April 2024 information changed little but sentiment head fakes produced a 15% drawdown through a series of 2-5% drops; trend works if real information eventually outweighs sentiment noise.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Compared with his own 2022-2023 drawdown.",
+     "claim_ids": [
+      "MT030-C11-3",
+      "MT030-C11-4"
+     ]
+    },
+    {
+     "premise": "Managed futures has no intrinsic-value anchor and cuts losers, so 'cheaper means rebound' arguments from value investing do not apply; communication must rest on the information story.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Contrast with Buffett/Graham.",
+     "claim_ids": [
+      "MT030-C10-2"
+     ]
+    },
+    {
+     "premise": "Trend alpha is earned against slow-by-design investors (60/40 holders, pensions) whose structural constraints prevent change even when they believe inflation or dollar risk is back; that edge can be captured with a few liquid instruments such as the 10-year Treasury.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument from investor constraints; replication tracking.",
+     "claim_ids": [
+      "MT030-C18-1",
+      "MT030-C18-2"
+     ]
+    },
+    {
+     "premise": "Alternative markets mostly provide diversification and do not trend more; managers adding complexity (more markets, vol controls, short-term models) should prove it by backtesting against the model of 3 and 6 years ago.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Researchers he respects found no evidence of more trend.",
+     "claim_ids": [
+      "MT030-C14-2",
+      "MT030-C14-3"
+     ]
+    },
+    {
+     "premise": "Model overhauls can go either way (AQR rebuilt models and is doing very well, yet underperformed the other 19 SG CTA constituents by 20% in 2014-2020).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "One firm example.",
+     "claim_ids": [
+      "MT030-C14-4"
+     ]
+    },
+    {
+     "premise": "The core trend beta was commoditised in the early 2010s (bank QIS products, GSA's 50bp product), pushing managers to differentiate through features; fees must be justified against cheap alternatives, with 300-400bp of added value per extra 100bp of fees.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Industry history, cost figures (8bp vs about 200bp trading costs).",
+     "claim_ids": [
+      "MT030-C13-1",
+      "MT030-C15-2",
+      "MT030-C16-2",
+      "MT030-C16-3",
+      "MT030-C13-X1"
+     ]
+    },
+    {
+     "premise": "Flow-chasing is recurrent: a fund with lucky positioning in March 2020 reached $5bn and then lagged; narrative follows luck; dispersion in April 2025 reflects rebalance timing luck.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Unnamed fund anecdote and personal experience of Monday rebalances.",
+     "claim_ids": [
+      "MT030-C14-1",
+      "MT030-C08-X1"
+     ]
+    },
+    {
+     "premise": "Institutions internalise trend following not only for cost but for career/status reasons; large seeders historically demanded position transparency (an early replication).",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Industry anecdotes.",
+     "claim_ids": [
+      "MT030-C04-X1",
+      "MT030-C04-X2"
+     ]
+    },
+    {
+     "premise": "Bonds have failed since 2020; allocators cannot admit the mistake of holding 40% in bonds, so trend will enter wealth portfolios, with musical chairs after poor performance.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Late 2010s precedent.",
+     "claim_ids": [
+      "MT030-C19-3",
+      "MT030-C19-4",
+      "MT030-C17-X1"
+     ]
+    },
+    {
+     "premise": "Managed futures should be about a 3% allocation and must be sold to wealth managers with a narrative fitting their constructs.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own view repeated 'a couple of years ago'.",
+     "claim_ids": [
+      "MT030-C20-3",
+      "MT030-C20-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Whipsaw to short-term model failure",
+     "steps": [
+      {
+       "from": "Policy noise / headline-driven moves",
+       "to": "Short-term models enter trends early",
+       "why": "They take news at face value",
+       "claim_ids": [
+        "MT030-C07-1"
+       ]
+      },
+      {
+       "from": "Entry on noise",
+       "to": "Head fakes two or three times",
+       "why": "Zero Sharpe over time",
+       "claim_ids": [
+        "MT030-C07-3"
+       ]
+      },
+      {
+       "from": "Repeated head fakes in a succession of 2-5% drops",
+       "to": "Drawdown without time to recover",
+       "why": "Like his 2022-2023 drawdown",
+       "claim_ids": [
+        "MT030-C11-3",
+        "MT030-C07-2"
+       ]
+      }
+     ],
+     "evidence": "SG CTA -15% y/y to April 2025; managers with short models and vol controls worse than space.",
+     "fails_when": "Short-term models still help in single sharp events such as SVB.",
+     "claim_ids": [
+      "MT030-C07-1",
+      "MT030-C07-3",
+      "MT030-C08-4",
+      "MT030-C08-5",
+      "MT030-C11-3"
+     ]
+    },
+    {
+     "topic": "Information vs sentiment",
+     "steps": [
+      {
+       "from": "Price move",
+       "to": "Informed participants know something",
+       "why": "Fundamental analyst's 'who knows what I don't?' question",
+       "claim_ids": [
+        "MT030-C11-X1"
+       ]
+      },
+      {
+       "from": "Early detection across many markets",
+       "to": "Capture of change in information",
+       "why": "September 2020 short Treasuries when yields rose 0.50 to 0.70; early 2024 Trump trade",
+       "claim_ids": [
+        "MT030-C11-1",
+        "MT030-C11-2"
+       ]
+      },
+      {
+       "from": "Sentiment head fakes",
+       "to": "Whipsaw losses",
+       "why": "Information unchanged since April 2024",
+       "claim_ids": [
+        "MT030-C11-3"
+       ]
+      },
+      {
+       "from": "Eventual large change in information",
+       "to": "Trend payoff outweighs noise",
+       "why": "Policy risk spirals; inflation up and confidence in dollar lost",
+       "claim_ids": [
+        "MT030-C11-4",
+        "MT030-C12-1"
+       ]
+      }
+     ],
+     "evidence": "Examples above.",
+     "fails_when": "If nothing breaks and noise persists.",
+     "claim_ids": [
+      "MT030-C10-3",
+      "MT030-C11-1",
+      "MT030-C11-2",
+      "MT030-C11-3",
+      "MT030-C11-4",
+      "MT030-C12-1"
+     ]
+    },
+    {
+     "topic": "Structural edge: slow investors",
+     "steps": [
+      {
+       "from": "60/40 and pension investors slow by design and justified by assumptions",
+       "to": "Can't change when the world changes",
+       "why": "E.g. inflation never returning",
+       "claim_ids": [
+        "MT030-C18-1"
+       ]
+      },
+      {
+       "from": "Their inability to change",
+       "to": "Managed futures earn against them",
+       "why": "Alpha not zero-sum between managers",
+       "claim_ids": [
+        "MT030-C18-1"
+       ]
+      },
+      {
+       "from": "This edge lives in the main liquid markets",
+       "to": "Replication with few instruments suffices",
+       "why": "Niche markets (palm oil) add little",
+       "claim_ids": [
+        "MT030-C18-2"
+       ]
+      }
+     ],
+     "evidence": "Replication results since 2016 (met promised numbers).",
+     "fails_when": "Replicator slow at SVB and second Powell pivot in 2023.",
+     "claim_ids": [
+      "MT030-C16-1",
+      "MT030-C18-1",
+      "MT030-C18-2"
+     ]
+    },
+    {
+     "topic": "Complexity vs cost",
+     "steps": [
+      {
+       "from": "More markets, vol controls, short-term models",
+       "to": "Higher fees and trading costs",
+       "why": "About 200bp vs 8bp trading costs",
+       "claim_ids": [
+        "MT030-C16-3"
+       ]
+      },
+      {
+       "from": "Each extra 100bp of fees",
+       "to": "Need 300-400bp of added value",
+       "why": "Added complexity also raises trading costs",
+       "claim_ids": [
+        "MT030-C16-2"
+       ]
+      },
+      {
+       "from": "Cheap replicators and bank products as benchmarks",
+       "to": "Managers must justify fees vs alternatives",
+       "why": "Investable comparator",
+       "claim_ids": [
+        "MT030-C15-2",
+        "MT030-C17-X1"
+       ]
+      }
+     ],
+     "evidence": "Cost figures quoted from memory for competitors.",
+     "fails_when": "Replicators also over-promised (Niels: 300-400bp claim became 50bp).",
+     "claim_ids": [
+      "MT030-C15-2",
+      "MT030-C15-3",
+      "MT030-C16-2",
+      "MT030-C16-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Ask managers to backtest announced enhancements against the model of 3 and 6 years ago.",
+     "why": "Complexity can be tested; avoid brand-based selection.",
+     "claim_ids": [
+      "MT030-C14-3",
+      "MT030-C17-X1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Core of medium to long-term trend models; short-term models as risk where policy is noisy.",
+     "why": "Worked for 50 years.",
+     "claim_ids": [
+      "MT030-C07-4"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Trade only about 10 super-liquid contracts in replication (10-year Treasury etc.).",
+     "why": "Edge is against slow investors; costs about 8bp.",
+     "claim_ids": [
+      "MT030-C16-3",
+      "MT030-C18-2"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Weekly rebalancing in the replicator (Mondays); outcomes depend on timing luck.",
+     "why": "Cheap, systematic.",
+     "claim_ids": [
+      "MT030-C08-X1",
+      "MT030-C16-1"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Managed futures at about 3% of a portfolio.",
+     "why": "Visible in a 2022-type event, hidden in 2025.",
+     "claim_ids": [
+      "MT030-C20-3"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Judge managers against cheap benchmarks and fee premium: 300-400bp added value per 100bp of fees.",
+     "why": "Beta is commoditised.",
+     "claim_ids": [
+      "MT030-C16-2",
+      "MT030-C15-2"
+     ]
+    }
+   ],
+   "evidence_style": "First principles and market-structure narrative, supported by recent drawdown numbers, fee/cost arithmetic and anecdotes; openly says he has no concrete evidence for the short-term-model explanation and could be wrong.",
+   "current_views": [
+    {
+     "view": "The last 12 months are among the worst for trend following; SG CTA down 15% y/y to April 2025.",
+     "as_of": "2025-05-22",
+     "reasoning": "Whipsaws from sentiment.",
+     "claim_ids": [
+      "MT030-C08-4",
+      "MT030-C11-3"
+     ]
+    },
+    {
+     "view": "Short-term models may be a large negative in this policy regime; medium to long-term core may do better.",
+     "as_of": "2025-05-22",
+     "reasoning": "Head fakes; 2016-2020 'long winter'.",
+     "claim_ids": [
+      "MT030-C07-3",
+      "MT030-C07-4"
+     ]
+    },
+    {
+     "view": "Big things will break (inflation up, dollar confidence lost) as policy risk-taking spirals, creating the money-making opportunity.",
+     "as_of": "2025-05-22",
+     "reasoning": "Information change should outweigh sentiment.",
+     "claim_ids": [
+      "MT030-C12-1",
+      "MT030-C11-4"
+     ]
+    },
+    {
+     "view": "Expect musical chairs: managers fired, some leave the space, money flows to recent winners; stacked products delayed; allocation about 3%.",
+     "as_of": "2025-05-22",
+     "reasoning": "Late-2010s precedent; April 2025 weakness (a UCITS fund $200m weekly outflow).",
+     "claim_ids": [
+      "MT030-C19-4",
+      "MT030-C20-1",
+      "MT030-C20-2",
+      "MT030-C20-3"
+     ]
+    },
+    {
+     "view": "Bonds have failed since 2020, which will drive trend into wealth portfolios.",
+     "as_of": "2025-05-22",
+     "reasoning": "Inflation not transitory; high stock-bond correlation.",
+     "claim_ids": [
+      "MT030-C19-3"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host, Top Traders Unplugged; hedge fund manager and CTA industry insider",
+   "speaker_note": "Host; offers data (barometer, index returns, lookback tests, drawdown ratios) and takes positions in several places (judging managers on relative performance, trend coming back).",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "regime_detection",
+    "policy_reaction_central_banks",
+    "research_robustness_overfitting",
+    "crisis_alpha_convexity",
+    "behavioral_sentiment"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Tariff-driven reshoring is unrealistic near term (Apple's supply chain in China), making trade-war policy hard to trade on fundamentals.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Cites the Patrick McGee book; $275bn pledged 2016-2021.",
+     "claim_ids": [
+      "MT030-C03-1"
+     ]
+    },
+    {
+     "premise": "Institutions internalise trend following (a sovereign wealth fund redeemed from external trend followers around 2007 after hosting staff; also via QIS swaps).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Personal experience as former CEO.",
+     "claim_ids": [
+      "MT030-C03-2"
+     ]
+    },
+    {
+     "premise": "May 2025 was a hostile environment: barometer 25; SG Trend down about 3% (down 12% YTD), SG CTA down 8.69% YTD, BTOP50 down 5.25%; very few tradable trends; losses mainly from fixed income and precious metals.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Index numbers.",
+     "claim_ids": [
+      "MT030-C05-1",
+      "MT030-C05-2",
+      "MT030-C05-3"
+     ]
+    },
+    {
+     "premise": "In his YTD 2025 test varying only lookback, 20-day beat 60-day, which beat 260-day; 130-day was worst, so medium-term was not a safe haven; many CTAs prefer medium term for capacity reasons.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Internal test.",
+     "claim_ids": [
+      "MT030-C08-1",
+      "MT030-C08-2"
+     ]
+    },
+    {
+     "premise": "Whipsaw protection may come from improved risk management rather than model speed.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Own team's approach.",
+     "claim_ids": [
+      "MT030-C08-3"
+     ]
+    },
+    {
+     "premise": "A cycle alternates between strong central banks/weak politicians and the reverse; 2025 resembles strong politicians and weak central banks.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reading from a cycle author followed 15 years ago.",
+     "claim_ids": [
+      "MT030-C09-1"
+     ]
+    },
+    {
+     "premise": "Even 20-40 year managers hit their worst drawdowns in 2025, consistent with longevity eventually producing a worst period; trend will make new highs again.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation and conversation with Nick Bolters.",
+     "claim_ids": [
+      "MT030-C09-2",
+      "MT030-C09-3"
+     ]
+    },
+    {
+     "premise": "Trend following is declared dead after drawdowns, usually the best time to buy or add; drawdowns precede strong periods (2012-2013 worst then best years).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "History.",
+     "claim_ids": [
+      "MT030-C10-1",
+      "MT030-C17-1",
+      "MT030-C19-2"
+     ]
+    },
+    {
+     "premise": "Bonds had about five reversals in 12 months; equities, dollar and energies also reversed, tricking managers into flipping exposure.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Market observation.",
+     "claim_ids": [
+      "MT030-C12-2"
+     ]
+    },
+    {
+     "premise": "Max drawdown relative to annualised volatility over 12 years is worst for bonds and not better for equities than for many CTAs, so current CTA drawdowns are not extreme in relative terms.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own chart.",
+     "claim_ids": [
+      "MT030-C12-3"
+     ]
+    },
+    {
+     "premise": "The alternative-markets-trend-better narrative worked for a couple of years then failed for three to four years as momentum vanished when people crowded in.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Recent history.",
+     "claim_ids": [
+      "MT030-C12-4"
+     ]
+    },
+    {
+     "premise": "Managers should be judged on relative performance, not asked to justify individual model changes; replicators also over-promise (300-400bp became about 50bp).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Allocator-judging stance.",
+     "claim_ids": [
+      "MT030-C15-1",
+      "MT030-C15-3"
+     ]
+    },
+    {
+     "premise": "The 10-year yield keeps returning to about 4.5% and rates could be where markets break.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Market observation; timing unknown.",
+     "claim_ids": [
+      "MT030-C17-2"
+     ]
+    },
+    {
+     "premise": "Managers with few markets, large risk in smaller markets and static sizing had top 5-year returns but outsized losses now; return-stacked products behave exactly as designed when CTA alpha is negative and equity beta recovers.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observations.",
+     "claim_ids": [
+      "MT030-C18-3",
+      "MT030-C19-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Drawdown to recovery",
+     "steps": [
+      {
+       "from": "Longevity and many fronts of adverse markets",
+       "to": "Worst drawdown for veteran managers",
+       "why": "Chance of a worst period rises with time",
+       "claim_ids": [
+        "MT030-C09-2"
+       ]
+      },
+      {
+       "from": "Models adjust and markets begin trending",
+       "to": "New highs",
+       "why": "Past recoveries (2012-2013 then best years)",
+       "claim_ids": [
+        "MT030-C09-3",
+        "MT030-C17-1"
+       ]
+      },
+      {
+       "from": "Investor emotion",
+       "to": "Redemptions at the low",
+       "why": "Declared dead, best time to buy",
+       "claim_ids": [
+        "MT030-C10-1",
+        "MT030-C19-2"
+       ]
+      }
+     ],
+     "evidence": "2012-2013 worst drawdown followed by five flat years then best years.",
+     "fails_when": "Behavioural redemptions; unknown timing.",
+     "claim_ids": [
+      "MT030-C09-2",
+      "MT030-C09-3",
+      "MT030-C10-1",
+      "MT030-C17-1",
+      "MT030-C19-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Vary only the lookback to test speed; do not assume medium term is safe.",
+     "why": "Test showed 20-day best, 130-day worst.",
+     "claim_ids": [
+      "MT030-C08-1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Seek whipsaw protection via risk management rather than faster models.",
+     "why": "Own experience.",
+     "claim_ids": [
+      "MT030-C08-3"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Judge managers by relative performance, not by asking for old-vs-new model comparisons.",
+     "why": "Hypothetical comparisons impractical.",
+     "claim_ids": [
+      "MT030-C15-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Use drawdown/volatility ratios to compare managers, indices, bonds and equities.",
+     "why": "Puts drawdowns in context.",
+     "claim_ids": [
+      "MT030-C12-3"
+     ]
+    }
+   ],
+   "evidence_style": "Data and anecdote: index numbers, internal tests, a drawdown/vol chart, historical recoveries; diplomatic about the guest's challenges.",
+   "current_views": [
+    {
+     "view": "Trend barometer 25: exceptionally weak; the year has few tradable trends.",
+     "as_of": "2025-05-22",
+     "reasoning": "Index numbers.",
+     "claim_ids": [
+      "MT030-C05-1",
+      "MT030-C05-3"
+     ]
+    },
+    {
+     "view": "Trend following will make new highs; investor reactions are the main concern.",
+     "as_of": "2025-05-22",
+     "reasoning": "History.",
+     "claim_ids": [
+      "MT030-C09-3",
+      "MT030-C10-1"
+     ]
+    },
+    {
+     "view": "It is 'strong politicians and weak central banks': Trump rather than Powell moves markets.",
+     "as_of": "2025-05-22",
+     "reasoning": "Cycle idea.",
+     "claim_ids": [
+      "MT030-C09-1"
+     ]
+    },
+    {
+     "view": "The 10-year yield keeps returning to 4.5% and rates could be where markets break.",
+     "as_of": "2025-05-22",
+     "reasoning": "Observation; timing unknown.",
+     "claim_ids": [
+      "MT030-C17-2"
+     ]
+    },
+    {
+     "view": "A US president with a personal economic interest in a dollar alternative adds to dollar-confidence risk.",
+     "as_of": "2025-05-22",
+     "reasoning": "Aside near end of C17.",
+     "claim_ids": [
+      "MT030-C17-X2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Which trend speed is protective?",
+   "positions": [
+    {
+     "speaker": "Andrew Beer",
+     "position": "Short-term models are gullible and zero Sharpe; go back to medium to long-term models that worked for 50 years.",
+     "claim_ids": [
+      "MT030-C07-1",
+      "MT030-C07-3",
+      "MT030-C07-4"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "In his YTD 2025 lookback test 20-day beat 60-day and 130-day was worst, so medium-term was not the safe haven; improve risk management instead of speeding up.",
+     "claim_ids": [
+      "MT030-C08-1",
+      "MT030-C08-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "How to judge managers' model changes",
+   "positions": [
+    {
+     "speaker": "Andrew Beer",
+     "position": "Ask them to backtest enhancements against the model of 3 and 6 years ago; fees must be justified against cheap alternatives.",
+     "claim_ids": [
+      "MT030-C14-3",
+      "MT030-C15-2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Judge on relative performance; hypothetical old-vs-new comparisons are impractical and take investors into the engine room.",
+     "claim_ids": [
+      "MT030-C15-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Are replicators and managers held to the same standard?",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Replicators also over-promise (300-400bp claimed, 50bp delivered).",
+     "claim_ids": [
+      "MT030-C15-3"
+     ]
+    },
+    {
+     "speaker": "Andrew Beer",
+     "position": "His replicator met its promised numbers since 2016; window choice matters, 2023 slowness acknowledged.",
+     "claim_ids": [
+      "MT030-C16-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "How worrying is the drawdown",
+   "positions": [
+    {
+     "speaker": "Andrew Beer",
+     "position": "Among the worst on record (SG CTA -15% y/y matching worst since 2000); the features sold as protection failed.",
+     "claim_ids": [
+      "MT030-C08-4",
+      "MT030-C08-5"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Not extreme relative to volatility compared with bonds and equities; longevity implies a worst period.",
+     "claim_ids": [
+      "MT030-C12-3",
+      "MT030-C09-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Why alternative markets",
+   "positions": [
+    {
+     "speaker": "Andrew Beer",
+     "position": "They do not trend more; they provide diversification and add little to the edge against slow investors.",
+     "claim_ids": [
+      "MT030-C14-2",
+      "MT030-C18-2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "The narrative worked for a couple of years then failed as momentum vanished through crowding; small-market concentration is now being paid for.",
+     "claim_ids": [
+      "MT030-C12-4",
+      "MT030-C18-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Andrew explicitly says he has no concrete evidence that short-term models caused the drawdowns and may be wrong.",
+   "claim_ids": [
+    "MT030-C07-3",
+    "MT030-C08-5"
+   ]
+  },
+  {
+   "issue": "Nobody has a clear explanation of the worst-ever style drawdowns; Andrew's reading is a narrative inference.",
+   "claim_ids": [
+    "MT030-C08-4",
+    "MT030-C08-5"
+   ]
+  },
+  {
+   "issue": "The claim that alternative markets do not trend more is attributed to unnamed smart researchers; Niels reports the opposite finding that momentum disappeared via crowding.",
+   "claim_ids": [
+    "MT030-C14-2",
+    "MT030-C12-4"
+   ]
+  },
+  {
+   "issue": "Fee/trading cost comparison (8bp vs 200bp) cites an unnamed competitor.",
+   "claim_ids": [
+    "MT030-C16-3"
+   ]
+  },
+  {
+   "issue": "Ledger attributes C17-X2 to Andrew but the transcript flow suggests Niels spoke it; mapped to Niels.",
+   "claim_ids": [
+    "MT030-C17-X2"
+   ]
+  },
+  {
+   "issue": "Internal tension: Andrew says short-term models are zero Sharpe yet earlier accepts they help in two weeks around SVB.",
+   "claim_ids": [
+    "MT030-C07-3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "Observable inputs: changes in true information (inflation, dollar confidence, 10-year yield near 4.5%, policy actions) versus sentiment shocks; the number of reversals in bonds, equities, dollar and energy; trend barometer; drawdown/vol ratios; flows to winners vs losers. Horizon: a 'next nearly four years' policy regime; recovery expected after the drawdown.",
+ "reader_inferences": [
+  "Beer's central test is whether a signal reflects changing information or changing sentiment, which he cannot observe directly and infers from outcomes.",
+  "The debate over short-term vs medium-term is unresolved in data presented (Niels's test contradicts Andrew's expectation).",
+  "Allocation advice (3%) is a business-positioning judgement rather than a derived optimum."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT030-C10-R1",
+   "chunk": "C10",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "just the the sheer calmness and that he was talking about these I think it was like three occasions where Bergkshire Hathaway had been down more than 50%",
+   "claim": "Niels cites Buffett's calm about three occasions when Berkshire was down more than 50% as the mindset trend followers should adopt about drawdowns.",
+   "mechanism": "investor_behaviour",
+   "asset_class": "multi",
+   "indicator": "drawdown mindset",
+   "horizon": "",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - anecdotal",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus-map"
+  },
+  {
+   "claim_id": "MT030-C09-R1",
+   "chunk": "C09",
+   "speaker": "Andrew Beer",
+   "quote": "is there something you can do to configure your strategy to deal with the next nearly four years",
+   "claim": "Andrew asks whether a strategy can be configured for a possibly lasting policy regime of four, eight or twelve years.",
+   "mechanism": "regime",
+   "asset_class": "multi",
+   "indicator": "policy regime duration",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - open question",
+   "speaker_confidence": "low",
+   "time_bound": "yes",
+   "reader": "opus-map"
+  }
+ ]
+}

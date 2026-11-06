@@ -1,0 +1,153 @@
+{
+ "source_id": "MT223",
+ "episode_thesis": "Yoav Git reads three papers through a trend follower's lens. The inelastic markets hypothesis ($1 of inflow lifts US equity valuation about $5) is useful because elasticity and adjustment speed set how big and how long trends are, but its 5x multiplier is probably nearer 1 because trend-following flows are a reverse-causality channel. The Man AHL inflation paper shows trend (commodity and fixed income) works in inflationary periods and suits inflation-linked mandates better than TIPS or real estate, and the backtest-overfitting paper shows alternative-beta (QIS) products lose about 60% of their backtest Sharpe live, so portfolio construction, risk management and execution matter more than the signal.",
+ "speakers": [
+  {
+   "name": "Yoav Git",
+   "role": "CTA manager (London; trades illiquid/niche markets with about 25% correlation to the liquid trend universe; formerly at Man)",
+   "speaker_note": "Name is a caption spelling (Yove/Yo). Alan Dunne guest-hosts (Niels is away). Two-speaker conversation; attribution is clear from content. Ledger corrections applied: C05-1 (a price-impact multiplier, not an elasticity) and C06-2 (the transcript is garbled: 0.2% or 2%).",
+   "fingerprint": ["trend_following", "research_robustness_overfitting", "commodity_fundamentals", "liquidity_flows", "portfolio_construction_stacking", "costs_execution", "market_internals_leading", "replication_indexing"],
+   "worldview_premises": [
+    {"premise": "Trend size depends on the elasticity of supply and demand: inelastic markets (electricity, commodities) need a large price move to clear a shock, and delayed adjustment (cows take a year to grow) makes the trend persist.", "type": "theoretical", "stated": "stated", "support": "Supply-demand explanation with butter, cows and electricity examples", "claim_ids": ["MT223-C03-1"]},
+    {"premise": "Elasticities are hard to estimate because shocks hit both curves; an instrument that moves only one side is needed, and the Gabaix-Koijen granular instrumental variable uses shifts in each holder's share of demand as idiosyncratic shocks.", "type": "theoretical", "stated": "stated", "support": "Explains the method and has corresponded with the authors", "claim_ids": ["MT223-C03-2", "MT223-C04-1"]},
+    {"premise": "In the inelastic markets hypothesis $1 of inflow into US equities raises aggregate valuation by about $5, so flows drive valuations (a possible bubble) and the efficient market view fails.", "type": "empirical", "stated": "stated", "support": "Reports the paper's result (Gabaix and Koijen), not his own estimate", "claim_ids": ["MT223-C02-2"]},
+    {"premise": "Fixed income reacts far less to flows than equities: $1 trillion of Fed buying in the GFC did not lift bond prices by 50%, because Treasury supply expands to meet demand while equity supply (about $500bn of issuance a year) is tied to the real economy.", "type": "empirical", "stated": "stated", "support": "QE natural experiments and US Treasury growth from $10tn to $25tn (ledger-corrected: price-impact multiplier of 0.25-0.75 versus 5)", "claim_ids": ["MT223-C05-1", "MT223-C07-2"]},
+    {"premise": "The paper's contemporaneous regression confuses causality: rising equity prices attract trend-following flows (CTAs, closet trend followers, funds, retail), so the true flow-impact multiple is probably just above 1.", "type": "theoretical", "stated": "stated", "support": "Back-of-envelope: about $300bn of CTAs gives quarterly trend flows of roughly 0.2% or 2% of market value (garbled) against the 6% flow figure; no estimate of his own", "claim_ids": ["MT223-C06-1", "MT223-C06-2", "MT223-C10-1"]},
+    {"premise": "The paper's data are slow and short (quarterly flow of funds, Morningstar fund flows and 13F, roughly 2000-2021), so only one quarter's horizon is shown and the multiplier cannot be tracked over time.", "type": "empirical", "stated": "stated", "support": "Reading the paper's data description", "claim_ids": ["MT223-C07-1", "MT223-C09-X1"]},
+    {"premise": "Markets differ in how fast they adjust: equities find a new equilibrium quickly (ETF shares outstanding show strong weekly negative autocorrelation), whereas commodity prices become negatively autocorrelated only about a year out because supply takes a year to respond; more elastic markets have lower volatility (bonds versus equities).", "type": "empirical", "stated": "stated", "support": "ETF shares-outstanding autocorrelation; physical supply constraints", "claim_ids": ["MT223-C08-1", "MT223-C08-X1", "MT223-C08-X2"]},
+    {"premise": "Each market has a trend lookback that falls in the mean-reversion zone of its adjustment process, which depends on its physical nature, especially in commodities; markets are already traded at different speeds because costly-to-trade markets use slower signals.", "type": "theoretical", "stated": "stated", "support": "Reasoning; no test shown", "claim_ids": ["MT223-C08-2", "MT223-C09-1"]},
+    {"premise": "A 5x valuation multiplier in an inflationary asset process would spill over to bonds through rebalancing and show up as a positive bond-equity correlation, which has appeared in the last two years as a warning sign.", "type": "theoretical", "stated": "stated", "support": "Rebalancing logic; observation of correlation", "claim_ids": ["MT223-C09-2", "MT223-C10-X1"]},
+    {"premise": "Rising inflation from a low level is good for equities and from above-median inflation is bad; bonds always lose when inflation rises because yields rise; commodity trend and fixed-income trend both do well in inflationary periods in the Man paper's backtest to 1925.", "type": "empirical", "stated": "stated", "support": "Man AHL paper by Otto Van Hemert (May 2021), which predicted 2022 behaviour", "claim_ids": ["MT223-C10-2", "MT223-C11-1", "MT223-C11-2"]},
+    {"premise": "Trend returns depend on the share of markets trending: it breaks even at about a 40% hit ratio, the last couple of years had about 30% and 2021-22 about 60%, so the strategy bleeds like an option purchase and then pays when many markets trend.", "type": "empirical", "stated": "stated", "support": "Own experience as a manager; no table shown", "claim_ids": ["MT223-C12-1", "MT223-C12-X2"]},
+    {"premise": "Long-only commodities have negative carry (storage and financing) and large losses in other periods, so trend gives inflation protection with lower downside; inflation changes slowly, matching the speed of trend, while equity crises can happen in two days and only give a second-response hedge.", "type": "theoretical", "stated": "stated", "support": "Cost-of-carry argument; no data in the call", "claim_ids": ["MT223-C13-1", "MT223-C13-2"]},
+    {"premise": "TIPS and long-dated bonds combine inflation and duration exposure which offset, and housing suffers from higher mortgage rates, so real assets do not reliably hedge inflation in an inflationary episode.", "type": "theoretical", "stated": "stated", "support": "Duration reasoning; 2022 experience (Alan adds REITs)", "claim_ids": ["MT223-C13-3"]},
+    {"premise": "Investors with inflation-plus mandates rarely use CTAs, yet active strategies such as CTAs with commodity exposure benefit from inflation volatility, unlike TIPS or real estate.", "type": "experience", "stated": "stated", "support": "Conversations with sovereign wealth funds and pensions", "claim_ids": ["MT223-C12-2"]},
+    {"premise": "Alternative-beta (QIS) products lose about 60% of their backtest Sharpe once live (a backtest Sharpe of 1 gives about 0.4), even for carry and trend; a 50% haircut on backtests is appropriate before allocating.", "type": "empirical", "stated": "stated", "support": "Study of about 200 products by Barclays researchers (2017), found only after asking for it; own practice of 50% haircuts", "claim_ids": ["MT223-C15-1"]},
+    {"premise": "In trend following the signal is a commodity worth about 0.2 Sharpe per market; value comes from portfolio construction, risk management and execution.", "type": "experience", "stated": "stated", "support": "Own judgment; the spiky return profile of a QIS trend index as evidence", "claim_ids": ["MT223-C15-2", "MT223-C16-1"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Elasticity and delay determine the size and length of a trend",
+     "steps": [
+      {"from": "Demand or supply shock", "to": "Price must move to a new equilibrium", "why": "Prices clear the market", "claim_ids": ["MT223-C03-1"]},
+      {"from": "Inelastic demand or slow supply response", "to": "Larger price move and longer adjustment", "why": "Electricity demand barely responds; cows take a year to grow", "claim_ids": ["MT223-C03-1", "MT223-C08-X2"]},
+      {"from": "Slow adjustment (commodities)", "to": "Prolonged trend; harvest it at a slow speed; fast adjustment (equities) allows intraday trend", "why": "Negative autocorrelation appears at a year for commodities and a week for equity ETFs", "claim_ids": ["MT223-C08-1", "MT223-C08-X2", "MT223-C08-2"]}
+     ],
+     "evidence": "ETF shares-outstanding autocorrelation; commodity supply cycles; qualitative examples.",
+     "fails_when": "A lookback falls inside the market's mean-reversion zone, or supply is elastic (bonds).",
+     "claim_ids": ["MT223-C03-1", "MT223-C08-1", "MT223-C08-2", "MT223-C08-X2"]},
+    {"topic": "Why the 5x flow multiplier is likely overstated",
+     "steps": [
+      {"from": "Equity prices rise", "to": "Trend followers, closet trend followers and retail add money", "why": "Trend-following behaviour is widespread", "claim_ids": ["MT223-C06-1"]},
+      {"from": "Flows follow price within the quarter", "to": "The contemporaneous regression attributes price moves to flows", "why": "Slow quarterly data cannot separate cause from effect", "claim_ids": ["MT223-C07-1", "MT223-C06-1"]},
+      {"from": "CTA flows alone (about $300bn)", "to": "A sizeable share of the 6% flow figure", "why": "Back-of-envelope calculation", "claim_ids": ["MT223-C06-2"]},
+      {"from": "Reverse causality", "to": "True multiplier nearer one", "why": "Part of the 5x is price driving flows", "claim_ids": ["MT223-C10-1"]}
+     ],
+     "evidence": "Rough calculation of CTA flows and points on the data frequency; no formal re-estimation.",
+     "fails_when": "If the instrumental variable truly isolates flows from trend behaviour.",
+     "claim_ids": ["MT223-C06-1", "MT223-C06-2", "MT223-C07-1", "MT223-C10-1"]},
+    {"topic": "Inelastic equity market and spillover to bonds",
+     "steps": [
+      {"from": "Flows into equities with a high multiplier", "to": "Equity valuations rise far more than flows", "why": "Equity supply is price-insensitive; money market and fixed income are elastic", "claim_ids": ["MT223-C05-1", "MT223-C02-2"]},
+      {"from": "Higher equity weights", "to": "Rebalancing sells some equity into bonds and other assets", "why": "Mandates restore weights", "claim_ids": ["MT223-C10-X1", "MT223-C09-2"]},
+      {"from": "Spillover", "to": "Positive bond-equity correlation", "why": "Both assets inflated together", "claim_ids": ["MT223-C09-2"]}
+     ],
+     "evidence": "Positive stock-bond correlation over the last two years; no formal test.",
+     "fails_when": "Positive correlation is explained by the inflation regime instead.",
+     "claim_ids": ["MT223-C09-2", "MT223-C10-X1"]},
+    {"topic": "Why trend suits inflationary regimes",
+     "steps": [
+      {"from": "Rising inflation", "to": "Commodity trend and fixed-income trend (short bonds) profit", "why": "Inflation links to commodities; yields rise so bonds lose", "claim_ids": ["MT223-C11-1", "MT223-C11-2"]},
+      {"from": "Inflation evolves slowly", "to": "Trend speed matches the factor's speed", "why": "Unlike equity crashes that occur in two days", "claim_ids": ["MT223-C13-2"]},
+      {"from": "Long-only commodities carry negative carry", "to": "Trend gives protection with a smaller downside", "why": "Can go long or flat", "claim_ids": ["MT223-C13-1"]}
+     ],
+     "evidence": "Man AHL backtest to 1925 and out-of-sample behaviour in 2021-22 (trend about 25% annualised in high-inflation periods in the backtest, matched or exceeded by 2021-22).",
+     "fails_when": "Inflation is not trending or commodity trends are absent (hit ratio too low).",
+     "claim_ids": ["MT223-C11-2", "MT223-C13-1", "MT223-C13-2", "MT223-C12-1", "MT223-C12-X1"]},
+    {"topic": "Why QIS products underperform backtests and where CTA value lies",
+     "steps": [
+      {"from": "Signals for trend and carry are well known", "to": "Signal worth about 0.2 Sharpe per market", "why": "Signal is a commodity", "claim_ids": ["MT223-C15-2"]},
+      {"from": "Pre-launch backtests", "to": "About a 60% Sharpe haircut live", "why": "Overfitting in the backtest and weaker implementation", "claim_ids": ["MT223-C15-1"]},
+      {"from": "QIS execution incentives (netting flows) and spiky returns", "to": "Weaker risk management and different alignment than a fund", "why": "QIS banks earn from flow netting", "claim_ids": ["MT223-C16-1"]}
+     ],
+     "evidence": "Study of about 200 alternative-beta products; one trend index with spiky returns.",
+     "fails_when": "Product has low fees and strong risk control; QIS has real advantages (customisation, capital-efficient margin).",
+     "claim_ids": ["MT223-C15-1", "MT223-C15-2", "MT223-C16-1", "MT223-C14-1"]}
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Match trend speed to each market's adjustment dynamics (slower for commodities with year-long supply response, faster for equities), noting that liquidity already imposes slower speeds on costly markets.", "why": "A lookback in the mean-reversion zone of a market loses money", "claim_ids": ["MT223-C08-X2", "MT223-C08-2", "MT223-C09-1"]},
+    {"element": "research", "practice": "Prefer evidence that works out of sample and apply a 50% haircut to backtests before allocating to a new strategy.", "why": "QIS data show about a 60% Sharpe haircut", "claim_ids": ["MT223-C15-1", "MT223-C10-R3"]},
+    {"element": "portfolio", "practice": "Spend effort on portfolio construction, risk management and execution rather than a better signal.", "why": "Signals are widely known and worth about 0.2 Sharpe per market", "claim_ids": ["MT223-C15-2", "MT223-C16-1"]},
+    {"element": "risk", "practice": "Use commodity-heavy trend (not long-only commodities or TIPS) for inflation protection; hold through low hit-ratio periods because breakeven is about 40% of markets trending.", "why": "Bleeds slowly, then pays when many markets trend", "claim_ids": ["MT223-C12-2", "MT223-C13-1", "MT223-C12-1", "MT223-C12-X2"]},
+    {"element": "universe", "practice": "Trade illiquid, niche markets with only about 25% correlation to the liquid trend universe, so peers' QIS products are not direct competitors.", "why": "Differentiation from liquid trend offerings", "claim_ids": ["MT223-C14-R1"]}
+   ],
+   "evidence_style": "Reads academic papers and critiques their identification; back-of-envelope calculations, market micro-structure examples and his own manager experience; prefers out-of-sample evidence and admits he is a pessimist about performance.",
+   "current_views": [
+    {"view": "Fixed-income trend is very difficult: prices go up and down in a choppy range and the UK kept rates at 4%.", "as_of": "2025-11-06", "reasoning": "Market conditions in early November 2025.", "claim_ids": ["MT223-C02-X1"]},
+    {"view": "A positive bond-equity correlation seen over the last two years is a warning sign that equities may be in an inflationary asset process.", "as_of": "2025-11-06", "reasoning": "Rebalancing spillover from equities to bonds.", "claim_ids": ["MT223-C09-2", "MT223-C10-X1"]},
+    {"view": "There is a bit of a bubble in the equity market, but the 5x multiplier is probably nearer one; if flows reverse the downturn could be a roller coaster.", "as_of": "2025-11-06", "reasoning": "Reverse causality critique; amplification if multiplier is real.", "claim_ids": ["MT223-C10-1", "MT223-C09-X1"]},
+    {"view": "If interest rates stay put and inflation picks up from a low level, equities are not too bad and commodity and fixed-income trend should do well.", "as_of": "2025-11-06", "reasoning": "Man paper's regime results.", "claim_ids": ["MT223-C11-1", "MT223-C11-2"]},
+    {"view": "Trend followers should trust and improve the process through low hit-ratio periods (about 30% in the last couple of years).", "as_of": "2025-11-06", "reasoning": "Option-like payoff; 2021-22 showed 60% winners.", "claim_ids": ["MT223-C12-1", "MT223-C12-X2"]}
+   ]
+  },
+  {
+   "name": "Alan Dunne",
+   "role": "Guest host (co-host of Top Traders Unplugged), allocator and researcher",
+   "speaker_note": "Guest-hosts while Niels is away; he reports performance numbers, raises objections to the paper and states a few views.",
+   "fingerprint": ["trend_following", "liquidity_flows", "manager_selection_allocation", "policy_reaction_central_banks", "behavioral_sentiment"],
+   "worldview_premises": [
+    {"premise": "If the inelastic-markets result holds, cash in money market funds is bullish for equities, because moving it into stocks would lift valuations by a multiple of the inflow.", "type": "theoretical", "stated": "stated", "support": "Logical extension of the paper's result", "claim_ids": ["MT223-C05-X1"]},
+    {"premise": "Every buyer has a seller, but prices move because of the intensity of buying and selling pressure; 'more buyers than sellers' is a wrong explanation of a price move.", "type": "theoretical", "stated": "stated", "support": "Desk experience in FX", "claim_ids": ["MT223-C06-X1"]},
+    {"premise": "Equities behave like Giffen goods because of the wealth effect and psychology: demand rises when prices rise, a positive-feedback channel already known in the literature.", "type": "behavioural", "stated": "stated", "support": "Economic concept applied loosely", "claim_ids": ["MT223-C06-X2"]},
+    {"premise": "QE works partly through a portfolio-transmission channel from safe bonds into riskier bonds and then risky assets; a large equity multiplier would caution central banks about QE.", "type": "theoretical", "stated": "stated", "support": "Standard QE rationale", "claim_ids": ["MT223-C07-R2"]},
+    {"premise": "The Man backtest showed trend following earning about 25% annualised in higher-inflation periods, which looked fanciful after a five-year tough spell for trend, but 2021-22 matched or exceeded it.", "type": "empirical", "stated": "stated", "support": "Reading of the Man AHL paper and 2021-22 outcomes", "claim_ids": ["MT223-C12-X1"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Market clearing versus a flow multiplier",
+     "steps": [
+      {"from": "Every buyer meets a seller", "to": "Flows do not directly change aggregate holdings", "why": "Transaction accounting", "claim_ids": ["MT223-C05-X1"]},
+      {"from": "Buyers bid up while sellers hold back offers", "to": "Prices move on the intensity of pressure", "why": "Order books clear at a new price", "claim_ids": ["MT223-C06-X1"]}
+     ],
+     "evidence": "Desk experience; reconciliation with the inelastic-markets result.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT223-C05-X1", "MT223-C06-X1"]}
+   ],
+   "decision_process": [],
+   "evidence_style": "Market observation, questions to the guest and reading of the papers; no tests presented.",
+   "current_views": [
+    {"view": "SG CTA index is down 1.9% and SG Trend down 1.44% year to date after a recovery in recent months, with a small negative start to November.", "as_of": "2025-11-06", "reasoning": "Index levels as reported.", "claim_ids": ["MT223-C02-1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {"topic": "Is a 5x equity valuation response to flows plausible given market clearing", "positions": [
+   {"speaker": "Alan Dunne", "position": "Cash on the sidelines would be bullish if the result held, but the market always clears and he does not follow the paper's counter; reconciles it via the intensity of buying and selling pressure.", "claim_ids": ["MT223-C05-X1", "MT223-C06-X1"]},
+   {"speaker": "Yoav Git", "position": "The mismatch in elasticity between money markets/bonds and equities lets $1 move equity valuation more; but the true multiplier is probably nearer one because trend flows reverse the causality.", "claim_ids": ["MT223-C05-1", "MT223-C06-1", "MT223-C10-1"]}]},
+  {"topic": "Whether investors treat CTAs as inflation protection", "positions": [
+   {"speaker": "Alan Dunne", "position": "The industry understands the inflation protection of managed futures, but investors rarely feature it; real-asset books are separate.", "claim_ids": ["MT223-C12-X1"]},
+   {"speaker": "Yoav Git", "position": "Inflation-plus mandates should use active strategies, not only TIPS or real estate, but they rarely do.", "claim_ids": ["MT223-C12-2", "MT223-C13-3"]}]}
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Corrected claim: the 0.25-0.75 figure for fixed income is a price-impact multiplier (versus 5 for equities), not an economist's elasticity; the speaker uses 'elasticity' loosely for both.", "claim_ids": ["MT223-C05-1", "MT223-C07-2"]},
+  {"issue": "Garbled number: CTA-driven quarterly flows are given as 'about 0.2% 2%' of market value; calling it 'not far from the 6%' fits 2% better than 0.2%, so the size of the reverse-causality effect is uncertain.", "claim_ids": ["MT223-C06-2", "MT223-C06-1"]},
+  {"issue": "The claim that the multiplier is 'a little above one' is asserted from a back-of-envelope; there is no re-estimation, and the paper's authors use an instrument designed to isolate flows.", "claim_ids": ["MT223-C10-1", "MT223-C04-1"]},
+  {"issue": "Positive stock-bond correlation is offered as a warning of an equity inflationary process, but an inflation regime also raises the correlation; no test separates the two explanations.", "claim_ids": ["MT223-C09-2", "MT223-C10-X1"]},
+  {"issue": "Hit-ratio figures (40% breakeven, 30% recent, 60% in 2021-22) are unsourced.", "claim_ids": ["MT223-C12-1"]},
+  {"issue": "Man AHL's 25% annualised in high inflation comes from a backtest back to 1925 (earlier data may be less tradable); the out-of-sample match is 2021-22 only, one episode.", "claim_ids": ["MT223-C12-X1", "MT223-C10-2", "MT223-C11-2"]},
+  {"issue": "The 60% Sharpe haircut comes from a 2017 study with data to about 2015, reached through a personal favour; it is not recent and may not describe present QIS trend products.", "claim_ids": ["MT223-C15-1"]},
+  {"issue": "Commercial interest: Yoav runs a CTA and argues that CTAs add value over QIS products and that signals are a commodity; he admits QIS offers low fees, customisation and capital efficiency.", "claim_ids": ["MT223-C16-1", "MT223-C14-1", "MT223-C15-2"]},
+  {"issue": "The statement that bonds 'always' lose when inflation rises holds as a directional claim but the speaker also says equities depend on the starting inflation level; no thresholds are quantified beyond 'above median'.", "claim_ids": ["MT223-C11-1"]},
+  {"issue": "Alan's description of equities as Giffen goods is a loose use of the term (a Giffen good is a specific case of upward-sloping demand) and is presented as known in the literature, not as a result of the paper.", "claim_ids": ["MT223-C06-X2"]}
+ ],
+ "forward_looking_inputs": "(reader) Inputs said to matter: any pick-up in inflation (delayed US data after the shutdown), the rate path (peak reached, easing), the sign of the stock-bond correlation (positive as a warning), the share of markets trending (hit ratio above 40%), flows into equities and trend-following flows, and fixed-income range-bound behaviour. Horizons are quarterly for the flow multiplier, a year for commodity adjustment and the next inflation episode for trend.",
+ "reader_inferences": [
+  "(reader) The framework suggests a testable rule: trend lookback should scale with the physical adjustment time of each market (about a year for commodities, a week for equity ETFs), which can be tested by market.",
+  "(reader) The reverse-causality critique implies the inelastic-markets multiplier includes a trend component; it could be tested by controlling for lagged returns.",
+  "(reader) The 60% haircut implies a backtest-to-live shrinkage factor of about 0.4 that could be used as a prior when judging any new strategy, including candidate screens in this project.",
+  "(reader) The hit-ratio statistic is a useful regime variable for trend: breakeven near 40% of markets trending, 30% recently, 60% in 2021-22."
+ ],
+ "added_claims": [
+  {"claim_id": "MT223-C14-R1", "chunk": "C14", "speaker": "Yoav Git", "quote": "our correlation to the liquid universe is around 25%", "claim": "His firm trades the illiquid end of the market and has only about 25% correlation to the liquid trend universe, so it does not compete directly with liquid trend products.", "mechanism": "portfolio_construction", "asset_class": "managed futures", "indicator": "correlation", "horizon": "", "direction": "", "conditions": "", "testable": "yes: track record correlation", "speaker_confidence": "medium", "time_bound": "no", "reader": "map"},
+  {"claim_id": "MT223-C07-R2", "chunk": "C07", "speaker": "Alan Dunne", "quote": "transmission effect from safe bonds into riskier bonds and then ultimately into risky assets like equity", "claim": "One rationale for QE is a portfolio-transmission effect from safe bonds into riskier bonds and then risky assets; a large equity multiplier would caution central bankers about QE.", "mechanism": "policy", "asset_class": "multi", "indicator": "", "horizon": "", "direction": "", "conditions": "", "testable": "no: policy rationale", "speaker_confidence": "medium", "time_bound": "no", "reader": "map"},
+  {"claim_id": "MT223-C10-R3", "chunk": "C10", "speaker": "Yoav Git", "quote": "I always like to look at things that actually work very nicely out of sambble", "claim": "He prefers to look at research ideas that hold out of sample, such as the Man inflation paper that predicted the 2022 spike behaviour.", "mechanism": "research", "asset_class": "multi", "indicator": "", "horizon": "", "direction": "", "conditions": "", "testable": "no: research habit", "speaker_confidence": "medium", "time_bound": "no", "reader": "map"}
+ ]
+}

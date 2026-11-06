@@ -1,0 +1,682 @@
+{
+ "episode_thesis": "Richard Brennan splits trend following into 'idiosyncratic' (market-by-market time-series momentum) and 'correlation-conscious' (cross-sectional, vol-targeted, portfolio-correlation-managed) tribes. The latter won 2008-2020 because coordinated central banks and globalisation made markets causally correlated; after 2020 fragmentation favoured the former, and April 2025 tariff whipsaws hit all. He argues drawdowns are inherent, trends persist because markets are complex adaptive systems, and that retail traders can now run a robust trend programme with micro/nano futures from about $200k if they get data (Panama back-adjustment, roll logic, survivorship, granularity, proxies) right and treat LLMs as pattern-matchers that overfit and cannot reason causally.",
+ "speakers": [
+  {
+   "name": "Richard Brennan",
+   "role": "Systematic trend follower (Stockcross, Australia); educator of retail trend followers",
+   "speaker_note": "Per ledger correction, the opening drawdown remarks (AQR needing a good reason, April cruel, SG Trend Index at worst monthly drawdown) are Brennan's, not Niels's. The fee answer in C08-1 (percentage fees scaled to lot size) is Brennan's.",
+   "fingerprint": [
+    "trend_following",
+    "regime_detection",
+    "diversification_risk_parity",
+    "position_sizing_vol_target",
+    "research_robustness_overfitting",
+    "costs_execution",
+    "portfolio_construction_stacking",
+    "structural_themes"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Deep drawdowns are inherent to trend-following models, even for the longest-established managers; the process is to wait for the next high-water mark.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own drawdown experience in April-May 2025; SG Trend Index touching its worst monthly drawdown on record.",
+     "claim_ids": [
+      "MT181-C02-1",
+      "MT181-C02-X1"
+     ]
+    },
+    {
+     "premise": "Trends are an inherent property of complex adaptive systems, so they will persist although the participants in trend following will change.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Belief in complex adaptive systems; no data offered ('is trend dead is not in my vernacular').",
+     "claim_ids": [
+      "MT181-C08-2"
+     ]
+    },
+    {
+     "premise": "Trend followers split into two styles: idiosyncratic (each market independent, time-series momentum) and correlation-conscious (groupings, asset classes, cross-sectional view, vol targeting).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own observation of the industry; the split dates from the early 2000s.",
+     "claim_ids": [
+      "MT181-C02-3",
+      "MT181-C02-4"
+     ]
+    },
+    {
+     "premise": "Large managers cut target vol from ~25% to 10-12% to attract institutional assets, trading off the classic style's two-way volatility for smoothness.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Industry history recalled; no figures cited beyond the vol levels.",
+     "claim_ids": [
+      "MT181-C03-1"
+     ]
+    },
+    {
+     "premise": "Which tribe wins depends on the correlation regime: globalisation and coordinated central banks (2008-2020) made markets causally correlated, rewarding cross-sectional grouping; deglobalisation, fragmentation and lost coordination after 2020 favour idiosyncratic trends (cocoa, soybeans, gold).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Narrative of post-GFC and post-2020 performance of large vs idiosyncratic managers.",
+     "claim_ids": [
+      "MT181-C03-2",
+      "MT181-C03-3"
+     ]
+    },
+    {
+     "premise": "Market correlations are fickle and change quickly with politics, so diversification should come from structurally uncorrelated trend systems (an ensemble) and not merely from adding correlated markets.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument from correlation instability; his long-held preference ('others would argue').",
+     "claim_ids": [
+      "MT181-C05-3"
+     ]
+    },
+    {
+     "premise": "Backtests are for stress testing and finding where models break, not estimating future returns; robustness across regimes beats curve fitting.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "First principles; trend followers cannot know where the next trend will arise.",
+     "claim_ids": [
+      "MT181-C11-1"
+     ]
+    },
+    {
+     "premise": "Limited capital is an advantage: the constraint forces a lean process; skin in the game enforces discipline.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Observation of $10k retail traders who over-diversify and trade carelessly.",
+     "claim_ids": [
+      "MT181-C12-X1",
+      "MT181-C12-2"
+     ]
+    },
+    {
+     "premise": "Large language models predict plausible text and popular patterns, not causal relationships, so strategies they propose look polished but are overfit and fragile.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Own LLM tests (crude oil system) and a Substack anecdote of an LLM falsely claiming to have read articles.",
+     "claim_ids": [
+      "MT181-C14-1",
+      "MT181-C14-2",
+      "MT181-C14-X1",
+      "MT181-C14-X2",
+      "MT181-C14-R1"
+     ]
+    },
+    {
+     "premise": "Retail traders are democratised: mini, micro and nano futures and institutional-grade platforms replace the $1-2M once needed for trend-following diversification.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Product and platform observation (QuantConnect, StrategyQuant X linking to Interactive Brokers).",
+     "claim_ids": [
+      "MT181-C07-1",
+      "MT181-C07-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why correlation-conscious trend won 2008-2020 and lost after",
+     "steps": [
+      {
+       "from": "Trend managers wanting institutional AUM in the early 2000s",
+       "to": "vol cut from ~25% to 10-12% via correlation reduction and vol targeting",
+       "why": "Smoother returns are more acceptable to institutions.",
+       "claim_ids": [
+        "MT181-C03-1"
+       ]
+      },
+      {
+       "from": "Globalisation and coordinated central bank policy post-GFC",
+       "to": "markets become causally linked",
+       "why": "Cross-sectional grouping can exploit linked moves.",
+       "claim_ids": [
+        "MT181-C03-2"
+       ]
+      },
+      {
+       "from": "Deglobalisation, fragmentation, lost central bank coordination after 2020",
+       "to": "assets less correlated; idiosyncratic trends (cocoa, soybeans, gold) emerge",
+       "why": "Single-market trends dominate when cross-market links weaken.",
+       "claim_ids": [
+        "MT181-C03-3"
+       ]
+      },
+      {
+       "from": "Large AUM managers with complex correlation-reducing models",
+       "to": "underperformance 2020-24 and worst drawdowns now",
+       "why": "Their design assumed the earlier regime.",
+       "claim_ids": [
+        "MT181-C03-3",
+        "MT181-C05-2"
+       ]
+      }
+     ],
+     "evidence": "Narrative recall of the industry; no performance statistics shown.",
+     "fails_when": "Not stated; Brennan notes not every manager sits at an extreme of the spectrum.",
+     "claim_ids": [
+      "MT181-C02-3",
+      "MT181-C02-4",
+      "MT181-C03-1",
+      "MT181-C03-2",
+      "MT181-C03-3"
+     ]
+    },
+    {
+     "topic": "April 2025 whipsaw and expected resolution",
+     "steps": [
+      {
+       "from": "Widespread tariff announcements",
+       "to": "simultaneous shocks in equities, commodities (canola), currencies (yen, China)",
+       "why": "The policy reached across all sectors trend followers trade.",
+       "claim_ids": [
+        "MT181-C04-1"
+       ]
+      },
+      {
+       "from": "Whipsaws across all sectors",
+       "to": "deep drawdown for all trend followers",
+       "why": "No consistent direction to follow.",
+       "claim_ids": [
+        "MT181-C04-1",
+        "MT181-C02-1"
+       ]
+      },
+      {
+       "from": "Uncertainty must resolve",
+       "to": "a direction emerges and trends return",
+       "why": "Regime unlikely to be sustained.",
+       "claim_ids": [
+        "MT181-C04-1"
+       ]
+      }
+     ],
+     "evidence": "Own experience of April; a hope ('crossing my fingers').",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT181-C04-1"
+     ]
+    },
+    {
+     "topic": "Bad futures data contaminates backtests",
+     "steps": [
+      {
+       "from": "Contracts expire and roll",
+       "to": "raw series have artificial gaps",
+       "why": "Gaps at each roll are illusions that create false signals.",
+       "claim_ids": [
+        "MT181-C08-3"
+       ]
+      },
+      {
+       "from": "Back-adjusting with the Panama method (subtract each roll gap from all earlier history)",
+       "to": "history is re-adjusted at every new roll; early prices can go negative in backwardation; contango raises history",
+       "why": "Preserves the live front price but shifts earlier levels.",
+       "claim_ids": [
+        "MT181-C09-1",
+        "MT181-C09-X1",
+        "MT181-C09-X2"
+       ]
+      },
+      {
+       "from": "Shifted historical price levels",
+       "to": "rules using absolute price thresholds, long-lookback percent returns, mean reversion to long averages or fixed dollar stops mislead",
+       "why": "Indicators must be agnostic to adjustment bias.",
+       "claim_ids": [
+        "MT181-C10-1"
+       ]
+      },
+      {
+       "from": "Mismatch of roll logic, survivorship, or data granularity between backtest and live",
+       "to": "backtest and live results diverge",
+       "why": "Delisted contracts and intraday inference are missing from the test.",
+       "claim_ids": [
+        "MT181-C10-2",
+        "MT181-C10-3",
+        "MT181-C10-4",
+        "MT181-C09-2"
+       ]
+      }
+     ],
+     "evidence": "Practical experience (20+ years of CSI data); no quantified impact.",
+     "fails_when": "Engines that reject negative prices require another adjustment method.",
+     "claim_ids": [
+      "MT181-C08-3",
+      "MT181-C09-1",
+      "MT181-C10-1",
+      "MT181-C10-2",
+      "MT181-C10-3",
+      "MT181-C10-4"
+     ]
+    },
+    {
+     "topic": "Why LLM-generated strategies fail",
+     "steps": [
+      {
+       "from": "LLM trained on popularity of models in forums",
+       "to": "returns generic indicator stacks (SMA cross + RSI + ATR) with no market-specific logic",
+       "why": "Pattern recognition, not causal reasoning.",
+       "claim_ids": [
+        "MT181-C14-1",
+        "MT181-C14-2",
+        "MT181-C14-R1"
+       ]
+      },
+      {
+       "from": "Auto-generating hundreds of strategies and backtesting them",
+       "to": "mass data mining producing false positives that die live",
+       "why": "No regime validation or structural filters.",
+       "claim_ids": [
+        "MT181-C15-1"
+       ]
+      },
+      {
+       "from": "Feeding historical charts and asking what entry would have worked",
+       "to": "hindsight bias",
+       "why": "The rules are trained on known outcomes.",
+       "claim_ids": [
+        "MT181-C15-2"
+       ]
+      },
+      {
+       "from": "Embedding the researcher's causal logic in the prompt",
+       "to": "a more structurally sound answer",
+       "why": "The prompt steers pattern recognition.",
+       "claim_ids": [
+        "MT181-C15-X1",
+        "MT181-C15-3"
+       ]
+      }
+     ],
+     "evidence": "Own tests and anecdotes; no systematic study.",
+     "fails_when": "Use LLMs for debugging and code porting where they excel.",
+     "claim_ids": [
+      "MT181-C14-1",
+      "MT181-C15-1",
+      "MT181-C15-2",
+      "MT181-C15-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Use a system ensemble: about 10 structurally uncorrelated trend systems across 60-70 markets (500-600 return streams).",
+     "why": "Correlations among markets change on a dime with politics; structure guards against that.",
+     "claim_ids": [
+      "MT181-C05-3"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "At $200k run about 10 uncorrelated markets with 5 ensemble systems; widen to ~30 markets at $400k and ~60 at $1M, adding standard contracts.",
+     "why": "Small capital cannot size equal risk per bet across 100 markets; hidden correlation and ruin.",
+     "claim_ids": [
+      "MT181-C12-2",
+      "MT181-C12-3",
+      "MT181-C13-1",
+      "MT181-C13-X1"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "ATR-based normalisation with equal risk per bet.",
+     "why": "Equalises risk across markets of different volatility.",
+     "claim_ids": [
+      "MT181-C13-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Build the continuous back-adjusted series yourself (Panama method) with a single consistent roll trigger (open interest, volume or calendar) and re-adjust at each new roll.",
+     "why": "Ensures backtest matches live trading and understands the bias.",
+     "claim_ids": [
+      "MT181-C08-3",
+      "MT181-C09-1",
+      "MT181-C09-2",
+      "MT181-C09-3"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Avoid absolute price thresholds, long-lookback percent returns, mean reversion to long averages and fixed dollar stops; use adjustment-agnostic indicators.",
+     "why": "Back-adjustment shifts price levels.",
+     "claim_ids": [
+      "MT181-C10-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Keep backtest roll logic identical to live; use data including delisted contracts; act only on available OHLC points.",
+     "why": "Avoid backtest/live divergence and survivorship bias.",
+     "claim_ids": [
+      "MT181-C10-2",
+      "MT181-C10-3",
+      "MT181-C10-4"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Extend short micro/nano histories with a proxy (standard contract on the same exchange with similar price structure, scaled for tick size and value), backtesting on 20-40 years; fallback is overlap or normalisation splicing.",
+     "why": "Three years of data overfits one regime.",
+     "claim_ids": [
+      "MT181-C11-2",
+      "MT181-C12-1",
+      "MT181-C11-1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Use platforms that integrate robustness testing and live broker execution; check per-contract fees on small contracts.",
+     "why": "Narrows the backtest-to-live gap; fixed fees hurt nanos.",
+     "claim_ids": [
+      "MT181-C07-X1",
+      "MT181-C08-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Use LLMs for debugging syntax and porting code, but validate every output with causal logic and human review.",
+     "why": "LLMs cannot judge conceptual soundness (e.g. convexity of exit logic).",
+     "claim_ids": [
+      "MT181-C15-3",
+      "MT181-C15-X1",
+      "MT181-C14-X2"
+     ]
+    }
+   ],
+   "evidence_style": "Practitioner experience and first-principles argument (robustness, causal logic); hypotheticals for capital growth; anecdotes and own LLM experiments; little quantitative performance evidence offered.",
+   "current_views": [
+    {
+     "view": "Trend followers are deep in drawdown; April 2025 was cruel and May gave little respite; the SG Trend Index touched or slightly exceeded its worst monthly drawdown.",
+     "as_of": "2025-06-11",
+     "reasoning": "Tariff whipsaws across all sectors.",
+     "claim_ids": [
+      "MT181-C02-1",
+      "MT181-C02-X1",
+      "MT181-C04-1"
+     ]
+    },
+    {
+     "view": "The April-regime of whipsaws should not last long because a direction must emerge from the uncertainty.",
+     "as_of": "2025-06-11",
+     "reasoning": "Uncertainty is not sustainable; hope more than data.",
+     "claim_ids": [
+      "MT181-C04-1"
+     ]
+    },
+    {
+     "view": "Idiosyncratic single-market trends are in favour in the post-2020 fragmented, deglobalising world.",
+     "as_of": "2025-06-11",
+     "reasoning": "Lost central bank coordination and geopolitical fragmentation.",
+     "claim_ids": [
+      "MT181-C03-3"
+     ]
+    },
+    {
+     "view": "Retail trend following is viable from about $200k with micro/nano futures.",
+     "as_of": "2025-06-11",
+     "reasoning": "Enough diversification and skin in the game.",
+     "claim_ids": [
+      "MT181-C12-2",
+      "MT181-C13-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host, Top Traders Unplugged; 35 years in trend following",
+   "speaker_note": "Host who states views on trend drawdowns, diversification and AI; also reads index data. Ledger attributes C02-1 wrongly to him (correction: Brennan); C08-1 is mixed (Niels asks the fee question).",
+   "fingerprint": [
+    "trend_following",
+    "regime_detection",
+    "debt_cycle_long_term",
+    "diversification_risk_parity",
+    "costs_execution",
+    "manager_selection_allocation"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend following is still relevant because policy breaks will eventually produce trends a long/short manager can capture; the 'markets have changed, trend is dead' argument recurs in every drawdown.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "35 years of experience; reasoning about reckless policy.",
+     "claim_ids": [
+      "MT181-C06-2"
+     ]
+    },
+    {
+     "premise": "Rising global debt, weak bond auctions in Japan and the US and a US 10-year that may settle above 5% mean institutions built portfolios for the old regime; cracks can produce trends with follow-through.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Observed cracks in auctions; no data.",
+     "claim_ids": [
+      "MT181-C04-2"
+     ]
+    },
+    {
+     "premise": "A 12-14 month drawdown is not unusual and 2-3 months of strong follow-through in a few sectors can recover it.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Repeated drawdowns over his career.",
+     "claim_ids": [
+      "MT181-C04-3"
+     ]
+    },
+    {
+     "premise": "Reversals in currencies, bonds and equities together is the worst case for trend in financial sectors; very large managers must tilt to financials and lose commodity diversification.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning on capacity; his own speculation ('maybe this is the reason').",
+     "claim_ids": [
+      "MT181-C05-1",
+      "MT181-C05-2"
+     ]
+    },
+    {
+     "premise": "Trading 70-80 less correlated markets may beat hundreds that eventually become highly correlated; combining structurally different trend types is an underappreciated diversification.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Prior podcast discussions; agrees with Brennan.",
+     "claim_ids": [
+      "MT181-C05-4",
+      "MT181-C05-X1"
+     ]
+    },
+    {
+     "premise": "Repeated reversals force much more dynamic risk budgeting across CTAs than the usual gradual change.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His inference from market moves ('I imagine').",
+     "claim_ids": [
+      "MT181-C06-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Track a trend barometer (36 in early June 2025: weak) and CTA index returns as a read on the environment.",
+     "why": "Reading the pulse of the industry.",
+     "claim_ids": [
+      "MT181-C05-5",
+      "MT181-C05-6"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Prefer to know why one is long or short; sceptical of machine-learning patterns whose reasons are unclear because poor performance is hard to explain to investors.",
+     "why": "Explainability and investor trust.",
+     "claim_ids": [
+      "MT181-C02-2"
+     ]
+    }
+   ],
+   "evidence_style": "Industry data, news articles (FT on AQR), anecdotes from guests, and long experience.",
+   "current_views": [
+    {
+     "view": "Early June 2025: BTOP50 -4% YTD, SG CTA -8%, SG Trend -11%, short-term traders -3%, versus MSCI World +6.3% and S&P 500 TR +2%.",
+     "as_of": "2025-06-11",
+     "reasoning": "Reported data.",
+     "claim_ids": [
+      "MT181-C05-6",
+      "MT181-C05-5"
+     ]
+    },
+    {
+     "view": "The 12-14 month drawdown is deep but not unprecedented and could recover quickly with follow-through.",
+     "as_of": "2025-06-11",
+     "reasoning": "Past drawdowns.",
+     "claim_ids": [
+      "MT181-C04-3",
+      "MT181-C05-1"
+     ]
+    },
+    {
+     "view": "Debt build-up and bond-auction cracks will produce trends; trend is arguably more relevant than ever.",
+     "as_of": "2025-06-11",
+     "reasoning": "Illogical policy, fiscal strain.",
+     "claim_ids": [
+      "MT181-C04-2",
+      "MT181-C06-2"
+     ]
+    },
+    {
+     "view": "AQR's adoption of machine learning improves returns so far but makes underperformance hard to explain.",
+     "as_of": "2025-06-11",
+     "reasoning": "FT article.",
+     "claim_ids": [
+      "MT181-C02-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "How to get diversification: more markets or more systems",
+   "positions": [
+    {
+     "speaker": "Richard Brennan",
+     "position": "Add structurally uncorrelated trend systems (ensemble) across 60-70 markets rather than relying on market count.",
+     "claim_ids": [
+      "MT181-C05-3"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Agrees system diversity is underappreciated; frames a smaller set of 70-80 less correlated markets as better than hundreds.",
+     "claim_ids": [
+      "MT181-C05-4",
+      "MT181-C05-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Why big established managers have their worst drawdowns",
+   "positions": [
+    {
+     "speaker": "Richard Brennan",
+     "position": "Their correlation-conscious, vol-targeted design was built for the globalised, coordinated 2008-2020 regime.",
+     "claim_ids": [
+      "MT181-C03-3"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Their size forces a tilt to financial futures, losing commodity diversification, in a year when financials reversed repeatedly.",
+     "claim_ids": [
+      "MT181-C05-1",
+      "MT181-C05-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "The two-tribe explanation is a narrative without performance data separating the tribes, and Brennan concedes many managers lie between the extremes.",
+   "claim_ids": [
+    "MT181-C02-3",
+    "MT181-C02-4",
+    "MT181-C03-2",
+    "MT181-C03-3"
+   ]
+  },
+  {
+   "issue": "Hope that the April regime will end soon is unsupported ('crossing my fingers'); the trend-persistence premise rests on a theoretical belief in complex adaptive systems.",
+   "claim_ids": [
+    "MT181-C04-1",
+    "MT181-C08-2"
+   ]
+  },
+  {
+   "issue": "Niels's explanation that size forced big managers into financials is speculative ('maybe') and conflicts in emphasis with Brennan's regime-correlation explanation.",
+   "claim_ids": [
+    "MT181-C05-2",
+    "MT181-C03-3"
+   ]
+  },
+  {
+   "issue": "Capital path ($200k to $400k to $1M) is hypothetical and explicitly flagged as unknowable by the host.",
+   "claim_ids": [
+    "MT181-C13-X1",
+    "MT181-C13-1"
+   ]
+  },
+  {
+   "issue": "Retail-feasibility claim of $200k as the sweet spot is an opinion based on available micro products, with no cost or performance analysis; fee impact on nanos is only partly addressed.",
+   "claim_ids": [
+    "MT181-C12-2",
+    "MT181-C08-1",
+    "MT181-C07-1"
+   ]
+  },
+  {
+   "issue": "LLM critique relies on a single prompt experiment and a Substack anecdote; Niels's AQR example (ML helps returns) is not reconciled.",
+   "claim_ids": [
+    "MT181-C14-2",
+    "MT181-C14-X1",
+    "MT181-C02-2"
+   ]
+  },
+  {
+   "issue": "Trend barometer and index returns are recitation with no forecast content.",
+   "claim_ids": [
+    "MT181-C05-5",
+    "MT181-C05-6",
+    "MT181-C06-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Brennan: resolution of tariff uncertainty into a directional regime; fragmentation versus coordination among central banks (correlation regime); persistence of idiosyncratic commodity trends. Niels: global debt levels, weak government bond auctions and 10-year yields settling above 5%, breakouts following policy cracks. Horizons: months for drawdown recovery, years for regime.",
+ "reader_inferences": [
+  "(reader) Brennan's regime story implies an observable input: the cross-market correlation level, with high correlation favouring cross-sectional/vol-targeted trend and low correlation favouring single-market trend.",
+  "(reader) The data and LLM sections share one principle: any process that fits to known outcomes (adjusted history, short sample, LLM hindsight) overfits; robustness comes from structural logic.",
+  "(reader) The two speakers do not truly conflict; they offer complementary explanations of the 2024-25 drawdown (regime of correlation vs capacity-driven sector tilt)."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT181-C14-R1",
+   "chunk": "C14",
+   "speaker": "Richard Brennan",
+   "quote": "because they're pattern recognition there's been lots of mention of these models in the communities",
+   "claim": "An LLM that surfaces a trading model has shown only that it is widely discussed in online communities, which it treats as evidence that it works, not that it is causally effective.",
+   "mechanism": "behavioral",
+   "asset_class": "multi-asset",
+   "indicator": "popularity of a model in online forums",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "LLM used to generate strategies without causal guardrails",
+   "testable": "partly - compare LLM-suggested strategies out of sample",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ],
+ "source_id": "MT181"
+}

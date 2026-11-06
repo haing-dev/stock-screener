@@ -1,0 +1,637 @@
+{
+ "source_id": "MT006",
+ "episode_thesis": "October 2024 was a tough month for trend followers (bonds reversed after a fresh long, hidden cross-market correlations, large dispersion across managers), and the episode turns to a listener question on a Faber-style long-only 10-month moving-average overlay on SPY/TLT/EEM, judged valid but slow, whipsaw-prone and regime-dependent. Brennan then lays out his outlier-hunting philosophy: wide diversification as a watch list, staggered activation of up to 20 uncorrelated systems with trailing stops, justified by complex-adaptive-systems reasoning (signals, boundaries, emergence, positive feedback) that explains fat tails and unpredictability.",
+ "speakers": [
+  {
+   "name": "Rich Brennan",
+   "role": "Co-host; systematic trend-following manager (Australia; 'cyclones down here')",
+   "speaker_note": "Caption spells 'Rich Bron'/'Rich Brennan'. Ledger corrections: the 5-10 systems figure is the host's; C14-1 (capacity/counterparties) is misframed and replaced by the stability argument. Caption errors: 'donkey' = Donchian, 'Kelner' = Keltner, 'Ballinger' = Bollinger, 'erotic' = ergodic.",
+   "fingerprint": [
+    "trend_following",
+    "position_sizing_vol_target",
+    "diversification_risk_parity",
+    "research_robustness_overfitting",
+    "regime_detection",
+    "portfolio_construction_stacking",
+    "structural_themes"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend following earns its profit from rare, massive outlier moves in the tails; the bulk of the return distribution is noise, random or mean-reverting oscillation.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "All liquid markets show fat-tailed (leptokurtic) daily returns, with mean reversion in the bulk and trending behaviour in the tails; he says he plots daily moves of markets he trades.",
+     "claim_ids": [
+      "MT006-C07-2",
+      "MT006-C08-1",
+      "MT006-C14-2"
+     ]
+    },
+    {
+     "premise": "Markets are complex adaptive systems with fractal, scale-invariant structure that grow from small seeds into large trends; no part is independent.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Books: Geoffrey West 'Scale', John Holland on signals, boundaries and emergence; analogies to ants, circulatory systems, coastlines.",
+     "claim_ids": [
+      "MT006-C11-1",
+      "MT006-C11-2"
+     ]
+    },
+    {
+     "premise": "Agents interpret the same signal differently and reactions keep evolving, and boundaries (risk rules, regulation, stops, leverage caps) limit their degrees of freedom, so price paths are constrained and path-dependent, not random.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Holland framework; building-and-corridors analogy; stochastic (ergodic) models lack path dependence.",
+     "claim_ids": [
+      "MT006-C12-1",
+      "MT006-C12-2",
+      "MT006-C12-3",
+      "MT006-C13-1"
+     ]
+    },
+    {
+     "premise": "Enduring trends arise from positive feedback loops with serial dependence; mean-reversion traders supply negative feedback that interferes with trends, and the balance stabilises markets.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoned from complex-systems theory; no empirical test given.",
+     "claim_ids": [
+      "MT006-C13-2",
+      "MT006-C13-3",
+      "MT006-C14-R1",
+      "MT006-C08-4"
+     ]
+    },
+    {
+     "premise": "Outliers are a natural part of market structure and occur more often than normal-distribution models imply, not anomalies.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Rainforest canopy analogy.",
+     "claim_ids": [
+      "MT006-C14-2"
+     ]
+    },
+    {
+     "premise": "Nonlinear deterministic dynamics and computational irreducibility make future prices unpredictable for an embedded observer, which supports reacting to price moves rather than predicting.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Chaos theory, strange attractors, Stephen Wolfram's cellular automata.",
+     "claim_ids": [
+      "MT006-C15-1",
+      "MT006-C15-2",
+      "MT006-C10-4"
+     ]
+    },
+    {
+     "premise": "Diversification across markets can fail in a reversal because hidden correlations make many trends reverse together; yet during outlier moves correlations between markets break down.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His October 2024 experience; theory that outliers destroy correlations.",
+     "claim_ids": [
+      "MT006-C02-2",
+      "MT006-C09-2",
+      "MT006-C02-R1"
+     ]
+    },
+    {
+     "premise": "Benchmark CTA indices weighted to the largest funds misrepresent the group; dispersion in 2024 is large.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Compares SG indices with the Top Traders Unplugged equal-ish index, which was less gloomy.",
+     "claim_ids": [
+      "MT006-C02-3",
+      "MT006-C03-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Staggered ensemble builds nonlinear payoff from outliers",
+     "steps": [
+      {
+       "from": "small bets across a wide watch list",
+       "to": "capital mostly inactive in noise",
+       "why": "Uncorrelated entry systems (Donchian, Keltner, Bollinger breakouts) activate at different times.",
+       "claim_ids": [
+        "MT006-C07-3",
+        "MT006-C07-4"
+       ]
+      },
+      {
+       "from": "a trend persists",
+       "to": "more systems activate, concentrating capital",
+       "why": "Each system captures the nonlinear move, so 20 systems multiply the payoff.",
+       "claim_ids": [
+        "MT006-C08-2",
+        "MT006-C08-3"
+       ]
+      },
+      {
+       "from": "trailing stops on every system",
+       "to": "open profit not given back",
+       "why": "Many tight stops aggregate to a looser overall exit than two systems with wide stops ('loose pants').",
+       "claim_ids": [
+        "MT006-C09-3",
+        "MT006-C10-1"
+       ]
+      }
+     ],
+     "evidence": "His own research: as the number of uncorrelated systems rises, drawdown keeps improving and CAGR/MAR rises with diminishing but nonzero increments; capped at about 20 by margin.",
+     "fails_when": "Margin limits (expensive-margin markets such as palladium) cap the ensemble at about 20; if trends dissipate early, only the few activated systems lose.",
+     "claim_ids": [
+      "MT006-C09-1",
+      "MT006-C10-2",
+      "MT006-C10-X1",
+      "MT006-C10-R6"
+     ]
+    },
+    {
+     "topic": "Why trends exist and markets stay stable",
+     "steps": [
+      {
+       "from": "signals interpreted differently by agents within boundaries",
+       "to": "varied actions that nest across scales",
+       "why": "Chemical to electrical signal analogy from the body.",
+       "claim_ids": [
+        "MT006-C12-1",
+        "MT006-C12-2"
+       ]
+      },
+      {
+       "from": "signals reinforce each other",
+       "to": "positive feedback, path dependence, serial correlation",
+       "why": "Trend followers exploit this amplification.",
+       "claim_ids": [
+        "MT006-C13-2",
+        "MT006-C08-4"
+       ]
+      },
+      {
+       "from": "mean reverters trade against the trend",
+       "to": "negative feedback destabilises trends and keeps system stable",
+       "why": "If everyone followed trends, positive feedback would explode.",
+       "claim_ids": [
+        "MT006-C13-3",
+        "MT006-C14-R1"
+       ]
+      }
+     ],
+     "evidence": "Analogy and theory; no data.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT006-C14-1"
+     ]
+    },
+    {
+     "topic": "Why a long-only trend overlay (Faber-style) works and where it fails",
+     "steps": [
+      {
+       "from": "price above its 10-month SMA",
+       "to": "stay long; else cash or short bonds",
+       "why": "Simple rule applied separately to uncorrelated asset classes (SPY, TLT, EEM).",
+       "claim_ids": [
+        "MT006-C05-1",
+        "MT006-C05-5",
+        "MT006-C04-2"
+       ]
+      },
+      {
+       "from": "exits in prolonged downtrends",
+       "to": "limits large drawdowns",
+       "why": "Slow risk mitigation, not an immediate hedge; options are for short-term tail protection.",
+       "claim_ids": [
+        "MT006-C05-2",
+        "MT006-C05-4"
+       ]
+      },
+      {
+       "from": "sharp quick recoveries",
+       "to": "lag in re-entry",
+       "why": "The cost is sacrificed upside; sideways markets give whipsaw.",
+       "claim_ids": [
+        "MT006-C05-3",
+        "MT006-C06-1"
+       ]
+      }
+     ],
+     "evidence": "Faber's paper 'A Quantitative Approach to Tactical Asset Allocation' as described; no numbers given.",
+     "fails_when": "Whipsaw in sideways markets; long-only gives up short-side profits and cross-asset correlation benefits.",
+     "claim_ids": [
+      "MT006-C06-2",
+      "MT006-C06-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "universe",
+     "practice": "Diversify widely across markets as a watch list because outlier locations are unknown, not to reduce risk; then concentrate risk where outliers emerge.",
+     "why": "Buffett's 'diversification is protection against ignorance' applies to stock pickers; an outlier hunter diversifies to find the events that matter.",
+     "claim_ids": [
+      "MT006-C07-1",
+      "MT006-C08-3"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Start with small bets and add capital progressively as a trend endures, via staggered activation of multiple uncorrelated entry systems (about 10, moving to 20).",
+     "why": "Avoid committing all capital to a trend that may not become an outlier.",
+     "claim_ids": [
+      "MT006-C07-3",
+      "MT006-C07-4",
+      "MT006-C10-R6"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Every system in the ensemble carries a trailing stop at all times.",
+     "why": "Cannot afford to leave profit on the table as an outlier turns.",
+     "claim_ids": [
+      "MT006-C09-3",
+      "MT006-C10-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Keep adding uncorrelated systems until margin binds (palladium etc. capped at about 20 systems).",
+     "why": "Drawdown keeps improving and MAR/CAGR keeps nudging up with no sharp stopping point.",
+     "claim_ids": [
+      "MT006-C09-1",
+      "MT006-C10-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Prefer a large ensemble over a few optimised systems, to reduce reliance on hindsight-chosen parameters.",
+     "why": "Less overfitting risk.",
+     "claim_ids": [
+      "MT006-C10-X1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Treat a long-only moving-average overlay as risk mitigation, not a hedge; options for short-term protection; long-short trend following adds portfolio correlation benefit.",
+     "why": "Overlay exits slowly; shorts add benefits.",
+     "claim_ids": [
+      "MT006-C05-4",
+      "MT006-C06-2"
+     ]
+    }
+   ],
+   "evidence_style": "Mostly first-principles and analogy from complex-systems science (Holland, West, Wolfram, chaos theory) and his own in-house research on ensemble size; very little external data or test results quoted.",
+   "current_views": [
+    {
+     "view": "October 2024 is a very difficult month for his systems: energy trends reversed, coffee hurt, everything reversed at once despite diversification; dispersion will be a major theme of 2024.",
+     "as_of": "2024-10-16",
+     "reasoning": "Hidden correlations across a large matrix of markets.",
+     "claim_ids": [
+      "MT006-C02-R1",
+      "MT006-C02-2",
+      "MT006-C02-3"
+     ]
+    },
+    {
+     "view": "Ensemble forecasting (weather, hurricanes) beats old single-method forecasts, analogous to ensembles of trend systems.",
+     "as_of": "2024-10-16",
+     "reasoning": "Analogy raised at the opening.",
+     "claim_ids": [
+      "MT006-C01-1"
+     ]
+    },
+    {
+     "view": "A Faber-style long-only trend overlay on SPY/TLT/EEM is a valid risk-mitigation strategy with caveats.",
+     "as_of": "2024-10-16",
+     "reasoning": "Simple, sidesteps big drawdowns; whipsaw and lag.",
+     "claim_ids": [
+      "MT006-C05-2",
+      "MT006-C06-1",
+      "MT006-C06-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged); hedge fund manager",
+   "speaker_note": "Caption spells 'Neils Kastrup-Larsen'. Ledger corrections give him the 'five to ten ways' remark and the barometer wording.",
+   "fingerprint": [
+    "trend_following",
+    "diversification_risk_parity",
+    "research_robustness_overfitting",
+    "regime_detection",
+    "manager_selection_allocation",
+    "positioning_crowding"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend followers lose in a reversal where their signals and positions were strong; October 2024 fixed income hurt because models had just flipped long after years short, and the market delivered a meaningful correction.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "October 2024 sector review: bonds worst; energy light damage (weak signals); meats the bright spot; GBP, AUD, NZD corrected.",
+     "claim_ids": [
+      "MT006-C02-1",
+      "MT006-C02-X1"
+     ]
+    },
+    {
+     "premise": "The benefit of protective rules such as a trend overlay can take 10-20 years to show, so a good starting date and discipline matter.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "General observation.",
+     "claim_ids": [
+      "MT006-C06-3"
+     ]
+    },
+    {
+     "premise": "A backtest on three instruments is prone to regime bias; bonds had falling rates for about 37 of the past 40 years, so a bond trend result may not repeat; broader diversification is preferred.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Interest-rate history.",
+     "claim_ids": [
+      "MT006-C06-4"
+     ]
+    },
+    {
+     "premise": "There are only about five to ten genuinely different ways to trend-follow; large ensembles are mostly parameter variants.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "'I always say to people'.",
+     "claim_ids": [
+      "MT006-C10-3",
+      "MT006-C10-R5"
+     ]
+    },
+    {
+     "premise": "Concentration in the best discretionary investors (Buffett about 40% in Apple, Ackman 53% of a $10bn fund in three stocks, Nomad one or two stocks) raises the question of how much concentration a trend system should allow.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Headlines (Motley Fool) and Nomad Investment Partners documentation.",
+     "claim_ids": [
+      "MT006-C09-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why October 2024 was hard",
+     "steps": [
+      {
+       "from": "trend followers settle into long bonds after years short",
+       "to": "market delivers a correction",
+       "why": "Often happens just after a new trend emerges.",
+       "claim_ids": [
+        "MT006-C02-1"
+       ]
+      },
+      {
+       "from": "simultaneous corrections in bonds, currencies, parts of energy and metals",
+       "to": "diversification fails",
+       "why": "Everything ganged up on trend followers.",
+       "claim_ids": [
+        "MT006-C02-X1"
+       ]
+      },
+      {
+       "from": "short-horizon systems",
+       "to": "hurt less (short-term traders about -1.5% vs SG Trend about -5%)",
+       "why": "Faster models exit sooner.",
+       "claim_ids": [
+        "MT006-C03-X1"
+       ]
+      }
+     ],
+     "evidence": "Index prints mid-October 2024: BTOP50 -2.84%, SG CTA -3.64%, SG Trend almost -5%, MSCI World -0.33%.",
+     "fails_when": "Not stated; he says it is too early to call a reversal of the bigger trend.",
+     "claim_ids": [
+      "MT006-C03-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Use his trend barometer (shorter horizon than traditional trend following) as a descriptor of how hard conditions are for trend followers, not as a predictor.",
+     "why": "At 14 to 20 it labels 'as bad as it gets' but does not forecast turns.",
+     "claim_ids": [
+      "MT006-C03-1",
+      "MT006-C03-R1"
+     ]
+    }
+   ],
+   "evidence_style": "Reports index prints and sector P&L; probes guests with challenge questions (concentration, ensemble size); uses historical regime caution.",
+   "current_views": [
+    {
+     "view": "Fixed income was the worst sector in October 2024; it may be too early to say it is a reversal of the bigger trend.",
+     "as_of": "2024-10-16",
+     "reasoning": "Meaningful correction after trend flip.",
+     "claim_ids": [
+      "MT006-C02-1"
+     ]
+    },
+    {
+     "view": "Mid-October 2024: BTOP50 -2.84% (+1.23% YTD), SG CTA -3.64% (-1.22% YTD), SG Trend almost -5% (-2.6% YTD); MSCI World -0.33%, S&P 500 flat.",
+     "as_of": "2024-10-16",
+     "reasoning": "Index review.",
+     "claim_ids": [
+      "MT006-C03-2"
+     ]
+    },
+    {
+     "view": "A trend-replication product shows large tracking error versus the CTA benchmark in 2024, to the upside.",
+     "as_of": "2024-10-16",
+     "reasoning": "Replicator observation.",
+     "claim_ids": [
+      "MT006-C04-1"
+     ]
+    },
+    {
+     "view": "Long-only trend overlay is a valid strategy, likely better than unmanaged buy-and-hold.",
+     "as_of": "2024-10-16",
+     "reasoning": "With caveats on whipsaw and regime bias.",
+     "claim_ids": [
+      "MT006-C06-X1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "How many genuinely different trend systems exist?",
+   "positions": [
+    {
+     "speaker": "Rich Brennan",
+     "position": "Runs eight core systems with parameter variations to reach 20; more uncorrelated systems keep improving drawdown and MAR.",
+     "claim_ids": [
+      "MT006-C10-R6",
+      "MT006-C10-2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "There are only about five to ten ways to do trend following, so big ensembles are mostly parameter variants.",
+     "claim_ids": [
+      "MT006-C10-R5",
+      "MT006-C10-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Concentration versus diversification",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Asks how much risk a trend system should concentrate, citing very concentrated successful discretionary investors.",
+     "claim_ids": [
+      "MT006-C09-X1"
+     ]
+    },
+    {
+     "speaker": "Rich Brennan",
+     "position": "Diversify widely for the purpose of focusing capital on outliers when they emerge; limited by margin to about 20 systems, with uncorrelated systems riding the outlier.",
+     "claim_ids": [
+      "MT006-C07-1",
+      "MT006-C09-1",
+      "MT006-C09-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Brennan's claim that outliers destroy correlations and more uncorrelated systems improve results is based on unpublished in-house research with no numbers.",
+   "claim_ids": [
+    "MT006-C09-2",
+    "MT006-C10-2"
+   ]
+  },
+  {
+   "issue": "The complex-systems argument (Wolfram, strange attractors, computational irreducibility) is analogy and metaphysics, not tested, and the link to trend profits is asserted; some caption errors (ergodic, Donchian) obscure terms.",
+   "claim_ids": [
+    "MT006-C13-1",
+    "MT006-C15-1",
+    "MT006-C15-2"
+   ]
+  },
+  {
+   "issue": "The ledger C14-1 'capacity-limited' framing is wrong; the passage argues stability from feedback balance, not capacity.",
+   "claim_ids": [
+    "MT006-C14-1",
+    "MT006-C14-R1"
+   ]
+  },
+  {
+   "issue": "Ensemble of 20 'tight stops give looser aggregate exit' is a design claim without comparison data; ensemble size also depends on whether systems truly differ (host's challenge).",
+   "claim_ids": [
+    "MT006-C10-1",
+    "MT006-C10-3"
+   ]
+  },
+  {
+   "issue": "The 10-month SMA overlay discussion gives no performance numbers; benefits 'may take 10-20 years' is asserted by the host.",
+   "claim_ids": [
+    "MT006-C05-2",
+    "MT006-C06-3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Little forward-looking content: the speakers say trend followers react rather than predict. Observables mentioned as context: the trend barometer level (14-20 'as bad as it gets'), sector signal strength (energy weak), dispersion among managers, bond correction after a trend flip. Horizon: the overlay's benefit over 10-20 years.",
+ "reader_inferences": [
+  "(reader) Brennan's claim that outlier trends destroy correlations suggests his ensemble gains are concentrated in tail events and may underperform in range-bound regimes (whipsaw as in October).",
+  "(reader) The ensemble-size result (drawdown improves, MAR rises with diminishing increments) is consistent with generic diversification of entry rules and does not by itself show independence of systems, which the host questions.",
+  "(reader) The long-only overlay is judged valid by both speakers despite the 3-instrument regime-bias caveat; evidence is conceptual, not empirical."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT006-C02-R1",
+   "chunk": "C02",
+   "speaker": "Rich Brennan",
+   "quote": "Energy's actually hit us",
+   "claim": "In October 2024 Brennan's own systems lost in energies (crude, Brent reversed) and in the coffee trade, so energy hurt him although it did little damage to the average trend follower.",
+   "mechanism": "trend reversal",
+   "asset_class": "commodities",
+   "indicator": "own P&L",
+   "horizon": "weeks",
+   "direction": "",
+   "conditions": "October 2024",
+   "testable": "no - own results",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "b07-map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT006-C03-R1",
+   "chunk": "C03",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "when it gets to down to a certain level we just put the little caption as bad as it gets",
+   "claim": "His trend barometer carries a built-in 'as bad as it gets' label at very low readings (14 to 20 in October 2024).",
+   "mechanism": "barometer",
+   "asset_class": "trend following",
+   "indicator": "trend barometer",
+   "horizon": "weeks",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "b07-map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT006-C10-R5",
+   "chunk": "C10",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "I always say to people oh there's only like five or 10 ways you can do train following",
+   "claim": "Niels holds that there are only about five to ten genuinely distinct ways to trend-follow, so large ensembles are mostly parameter variations.",
+   "mechanism": "ensemble breadth",
+   "asset_class": "trend following",
+   "indicator": "number of distinct systems",
+   "horizon": "",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - judgemental",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "b07-map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT006-C10-R6",
+   "chunk": "C10",
+   "speaker": "Rich Brennan",
+   "quote": "we actually have eight core systems so the eight core systems but the variations in that are our parameter are variations as well",
+   "claim": "Brennan's ensemble of about 20 is built from eight core systems with parameter variations.",
+   "mechanism": "ensemble construction",
+   "asset_class": "trend following",
+   "indicator": "number of core systems",
+   "horizon": "",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - own design",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "b07-map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT006-C14-R1",
+   "chunk": "C14",
+   "speaker": "Rich Brennan",
+   "quote": "we can't obviously all be Trend followers as the system would explode with positive feedback",
+   "claim": "If everyone followed trends, positive feedback would make markets explode; other participants with negative feedback are needed for stability.",
+   "mechanism": "feedback balance",
+   "asset_class": "all markets",
+   "indicator": "trend follower share",
+   "horizon": "",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - theory",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "b07-map",
+   "quote_check": "exact"
+  }
+ ]
+}

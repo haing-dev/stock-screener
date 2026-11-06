@@ -5,8 +5,8 @@ date: 2025-01-07
 channel: "Graham Capital Management"
 url: https://www.youtube.com/watch?v=x3HYAHlKe-c
 words: 5661
-claims: 41
-added_by_crosscheck: 7
+claims: 43
+added_by_crosscheck: 9
 corrections: 2
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Pablo Calderini (President and CIO, Graham Capital Management)", "Chief client officer (host, name garbled in captions)", "Scott (audience question)"]
@@ -21,6 +21,124 @@ tags: [source, layer0]
 **Approach:** discretionary macro, quant macro, trend following, portfolio construction, 60/40
 
 **Cross-check completeness estimate of first read:** 0.86 - first reader captured nearly every argument of the slide-by-slide talk (hiking cycles, core inflation, stock-bond correlation, long-horizon variance, macro skew); missed a few supporting causal links and operating details (inflation drives correlation, Fed guidance blamed, concentrated multi-PM book, recency bias).
+
+## Argument map
+
+**Episode thesis:** Graham's CIO argues that the ten-year post-GFC regime of accommodative central banks is over, and that the 2022-23 hiking cycle (record in speed and magnitude, and badly priced by markets) plus persistent core inflation makes stock-bond correlation near zero or positive, so 60/40 is more fragile. Macro strategies, with zero average but negative conditional correlation to equities and positive skew, are offered as a tactical complement to 60/40, and Graham's quant trend and quant macro programs and a bearish tactical stance (short equities, long euro, yen and gold) are described.
+
+### Pablo Calderini (President and CIO of Graham Capital Management; oversees alpha development)
+Fingerprint: #approach/macro_fundamental_topdown #approach/policy_reaction_central_banks #approach/diversification_risk_parity #approach/trend_following #approach/carry #approach/value_mean_reversion #approach/portfolio_construction_stacking #approach/research_robustness_overfitting
+_Speaker note: Auto-captions without punctuation; the session is a client presentation (Graham marketing), recorded in the spring of 2023 (hiking cycle 'a year ago' from March 2022, March 2023 Treasury move, US banking issues) although the video was uploaded on 2025-01-07. The 'January 2023 context' in the ledger summary is not supported; as_of dates below use 2023-03. Two ledger claims were corrected: C02-2 (four completed cycles plus the current one) and C08-1 (host speaking)._
+
+**Worldview premises**
+- For ten years after the GFC every shock was met by very accommodative central banks (zero lower bound, sticky-low inflation); that special regime ended with the 2022 inflation shock. _[experience, stated; support: Recollection of the taper tantrum and other episodes where the Fed backed off]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C01-1|C01-1]])
+- An inflation shock must be met by a shock to real rates, so asset markets and central banks play a different game from the post-GFC decade. _[theoretical, stated; support: Macro reasoning]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C01-2|C01-2]])
+- Inflation is no longer seen as a secular low (supply disruptions, geopolitics, fiscal spending), so central banks will be shyer about accommodation even if inflation falls, bringing higher volatility and a harder time for 60/40. _[theoretical, stated; support: Argument from recent shocks]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C02-1|C02-1]])
+- In the four completed hiking cycles since Volcker the Fed stopped after turmoil; the 2022-23 cycle is the fifth and a record in speed and size (about double the average ~220bp in half the time, heading to about 500bp). _[empirical, stated; support: Own table of cycles (1994-95 +300bp, 1999-2000 +170-175bp, 2005-06 +425bp, 2015-18)]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C02-2|C02-2]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C02-3|C02-3]])
+- Markets are fragile to a hiking cycle to the degree that the forward curve at the first hike under-priced what the Fed then delivered. _[theoretical, stated; support: Own exercise comparing forward curves on day one of each cycle with the delivered path]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C02-4|C02-4]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C03-1|C03-1]])
+- The beta of asset returns to inflation is non-linear (helps in deflation, hurts in high inflation), which is why regressions look inconclusive; separating inflation by driver shows core inflation is a large negative shock while energy inflation is nearly unimportant because it is volatile and mean-reverting. _[empirical, stated; support: Cites a Wharton study by two professors]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C03-3|C03-3]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C03-4|C03-4]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-1|C04-1]])
+- Bonds are held to hedge: with an equity risk premium of 400-500bp, a lower-return bond only makes sense with low or negative correlation to stocks. _[theoretical, stated; support: Portfolio logic]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-2|C04-2]])
+- The long-run stock-bond correlation is about zero, an average of high positive (1960s-2000s, high inflation) and high negative periods; high inflation pushes it up and falling inflation pushes it negative. _[empirical, stated; support: Cites a study on correlations; historical episodes]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-3|C04-3]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-X1|C04-X1]])
+- Newer market participants extrapolate 20 years of negative correlation (-0.5), which made 60/40 a bonanza and is not the long-run norm. _[behavioural, stated; support: Observation of newcomers]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-4|C04-4]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-X2|C04-X2]])
+- The 'stocks for the long run' case relies on mean reversion, but forward-looking variance must also estimate an unknown mean; with the lost degree of freedom, long-horizon equity volatility is about 22% rather than 17%, so mean-variance should hold fewer equities. _[theoretical, stated; support: Cites a Chicago study; variance 3% vs 5% arithmetic]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-5|C04-5]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C05-1|C05-1]])
+- Macro funds have zero average correlation to equities but negative conditional correlation (gain in large equity drawdowns) and positive skew, which matter more than Sharpe and standard deviation for portfolio construction. _[empirical, stated; support: HFRI macro index charts and return distribution (almost 4 sigma upside, no -3 sigma)]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C05-3|C05-3]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C05-4|C05-4]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C05-5|C05-5]])
+- Macro is a complement to 60/40: no long-term secular views (already in 60/40), tactical, dynamic and quick to cut positions when the thesis fails. _[experience, stated; support: Firm philosophy]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C06-3|C06-3]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-5|C07-5]])
+- Fundamentals affect markets non-linearly and in a regime-dependent way, so linear signals are inadequate. _[theoretical, stated; support: Reasons given earlier for inflation non-linearity]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-4|C08-4]])
+
+**Chain: From the end of the post-GFC regime to a harder time for 60/40**
+1. Inflation shock of 2022 → Required rise in real rates and end of reliable central bank accommodation: A shock must be met by another shock to bring inflation down ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C01-1|C01-1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C01-2|C01-2]])
+2. Inflation seen as non-secular-low → Central banks more cautious about easing even after inflation falls: Supply, geopolitics and fiscal spending keep inflation less sticky-low ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C02-1|C02-1]])
+3. Less accommodation → Higher volatility and weaker 60/40 results: Bonds no longer hedge as in the previous 20 years ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C02-1|C02-1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-4|C04-4]])
+- Evidence: Comparison with the post-GFC decade and prior hiking cycles.
+- Fails when: Inflation falls fast without a growth shock and the Fed returns to easing (not discussed).
+
+**Chain: Fragility of markets in the 2022 hiking cycle**
+1. Fed hiked about 300bp more than the forward curve priced at the first hike → Unprecedented shock to markets: In earlier cycles forward pricing was within a small gap for 18 months ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C03-1|C03-1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C03-2|C03-2]])
+2. Poor guidance or misreading by the Fed → Larger asset price shock: Markets were unprepared; he blames the Fed's communication ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C03-X1|C03-X1]])
+- Evidence: Chart of forward curve versus delivered path for each cycle (2022 peaks at 3%).
+- Fails when: Later shocks unrelated to Fed guidance dominate beyond 18 months.
+
+**Chain: Core versus energy inflation and the policy response**
+1. Core inflation rises → It persists: Services-heavy and sticky ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-1|C04-1]])
+2. Persistence → Bigger policy response and bigger reaction by asset prices: Energy inflation mean-reverts and is largely ignored ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C03-4|C03-4]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-1|C04-1]])
+- Evidence: Wharton study on drivers of inflation.
+- Fails when: Not stated.
+
+**Chain: Inflation regime sets the stock-bond correlation, and so the fate of 60/40**
+1. High inflation (1960s to 2000s) → Positive stock-bond correlation: Inflation shocks hit both assets ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-3|C04-3]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-X1|C04-X1]])
+2. Falling inflation (last 20 years) → Negative correlation of about -0.5: Bonds rally when growth shocks hit stocks ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-X1|C04-X1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-4|C04-4]])
+3. Expected correlation near zero → Bonds with low returns are weaker diversifiers: Low expected return with no hedge benefit ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-4|C04-4]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C05-2|C05-2]])
+- Evidence: Historical correlations and study on stock-bond correlation.
+- Fails when: Inflation returns to a secular low.
+
+**Chain: Why add macro to 60/40**
+1. Macro index has zero average correlation to equities → Negative correlation when equities fall sharply: Zero average hides high positive and high negative conditional correlation ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C05-3|C05-3]])
+2. Positive skew → Surprises are on the upside: Almost 4 sigma upside and no -3 sigma downside ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C05-4|C05-4]])
+3. Adding 20% macro to 60/40 → Information ratio up from 0.66 to 0.75; worst drawdown from -36% to -29%: Return falls slightly but volatility falls more ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C06-1|C06-1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C06-X1|C06-X1]])
+- Evidence: 20-year backtest of 60/40 plus 20% HFRI macro index (not Graham's own track record).
+- Fails when: Macro returns do not show negative conditional correlation in the next drawdown; the March 2023 20-sigma Treasury move hurt dynamic funds.
+
+**Chain: Short equities thesis**
+1. Earnings must fall and multiples are too high → Equities in 'the wrong quadrant': Risk premium and earnings both unfavourable ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-1|C07-1]])
+2. Scenario 1: core inflation stays sticky → Fed hikes more against priced cuts, equities fall: Wedge between market pricing and Fed delivery ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-1|C07-1]])
+3. Scenario 2: core inflation falls → Only via unemployment spike and recession cutting earnings: Core is mostly services ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-1|C07-1]])
+- Evidence: Scenario reasoning; the view is kept changeable and hedged because 'market forces' beyond understanding may support equities.
+- Fails when: Technology earnings prove resilient or the Fed cuts; the view can flip to long equities within a month.
+
+**Decision process**
+- [portfolio] Use macro as a complement to 60/40 with no secular view; adapt views frequently and cut positions as soon as the thesis does not work.. Why: Investors already hold secular exposure in 60/40 ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C06-3|C06-3]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-5|C07-5]])
+- [risk] Risk management and a tactical hedge limit the cost of being wrong on the short equity view; risk systems are made more robust after the 20-sigma Treasury move of March 2023.. Why: Unknown market forces can support equities; shocks happen faster and more violently ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-X1|C07-X1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C06-2|C06-2]])
+- [signal] Trend program: traditional time-series momentum signal with robust portfolio construction (mean-variance and PCA to estimate the covariance matrix quickly).. Why: Value added comes from portfolio construction on a standard signal ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-2|C08-2]])
+- [signal] Quant macro program: four sub-strategies (trend, value/long-run reversion, carry, macro fundamentals) combined with mean-variance.. Why: More stable return profile than trend; Sharpe above one ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-3|C08-3]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C09-1|C09-1]])
+- [research] Macro signal uses about 900,000 time series (GDP, inflation, earnings, inventories), NLP sentiment, data compression and non-linear regression.. Why: Fundamentals act non-linearly and by regime ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-4|C08-4]])
+- [signal] Carry is not naive: the program estimates an equilibrium required carry and avoids simply buying high-carry assets.. Why: High carry is not always compensated ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-5|C08-5]])
+- [universe] Quantitative portion of the absolute-return side is about 15% (trend plus quant macro programs).. Why: Reported share; see gaps for conflict with the host's statement ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-R1|C08-R1]])
+
+**Evidence style:** Historical comparison of hiking cycles, academic studies (Wharton, Chicago, correlation study), index-based backtests of a 60/40 plus macro mix, and firm track record claims; arguments are presented in a client-marketing setting.
+
+**Views at the time**
+- (2023-03) Short equities: earnings must fall and multiples are too high; either sticky core inflation forces the Fed to hike against priced cuts, or core falls only through an unemployment spike and recession.. Reasoning: Two likely scenarios both bad for equities; a hard landing would be terrible too. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-1|C07-1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-X1|C07-X1]])
+- (2023-03) Long euro: US banking issues keep the Fed from hiking massively while the ECB is hawkish.. Reasoning: Relative policy path. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-2|C07-2]])
+- (2023-03) Long yen: extremely undervalued, with a BoJ yield-curve-control change eventually coming.. Reasoning: Valuation and policy shift. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-3|C07-3]])
+- (2023-03) Long gold (highest conviction): real rates are elevated and will come down, breakevens are too low, and the US debt ceiling negotiation is usually gold-bullish.. Reasoning: Real rates, breakevens and debt ceiling history. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-4|C07-4]])
+- (2023-03) Stock-bond correlation will stay near zero rather than return to -0.5.. Reasoning: Inflation is no longer a secular low. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-4|C04-4]])
+- (2023-03) Graham's trend program did very well in 2022, consistent with large macro dislocations; the March 2023 Treasury move barely affected Graham.. Reasoning: Trend profits from dislocations; risk systems being hardened. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-X1|C08-X1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C06-2|C06-2]])
+
+### Chief client officer (host, name garbled in captions) (Chief client officer at Graham Capital; session host)
+Fingerprint: #approach/manager_selection_allocation #approach/trend_following #approach/portfolio_construction_stacking
+_Speaker note: Name garbled in captions. Host states a few facts about Graham's structure and summarises the systematic side; these are firm descriptions rather than market views. Audience member Scott asks a question about the quant side but states no view and is not mapped._
+
+**Worldview premises**
+- Graham runs a concentrated multi-PM macro book, betting on its highest-conviction teams (about 15) rather than 50 to 150 teams. _[institutional, stated; support: Firm description]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C01-X1|C01-X1]])
+- Pure trend following is price-driven, while the quant macro strategy adds fundamental data to the price signal and so can evolve positioning more dynamically. _[institutional, stated; support: Firm description (ledger correction: this was the host, not Calderini)]_ ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-1|C08-1]])
+
+**Decision process**
+- [portfolio] Multi-PM macro book is concentrated in about 15 highest-conviction teams.. Why: Conviction over breadth ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C01-X1|C01-X1]])
+
+**Evidence style:** Firm description in a client session; no evidence offered.
+
+### Gaps and conflicts
+- Corrected claim: the 'five hiking cycles' are four completed cycles (1994-95, 1999-2000, 2005-06, 2015-18) plus the still-running 2022-23 cycle; only the completed ones ended in turmoil and a Fed pause. The claim that 'each ended with crisis after which the Fed gave up' cannot apply to the current cycle. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C02-2|C02-2]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C02-3|C02-3]])
+- Corrected claim: the description of trend as price-driven and quant macro as adding fundamentals was spoken by the host, not by Calderini. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-1|C08-1]])
+- The 20-year benefit of adding macro to 60/40 uses an industry index (HFRI macro) as the macro proxy, not Graham's own results, and the information ratio 0.66 to 0.75 and drawdown -36% to -29% are in-sample over a period when stock-bond correlation was negative; the claim of a larger benefit in stress years is not backed by figures. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C06-1|C06-1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C06-X1|C06-X1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C05-3|C05-3]])
+- The equity volatility adjustment (17% to 22%) comes from variance 3% to 5% with a study cited but not named; the result is asserted rather than shown, and the study's conclusion about stocks for the long run is contested. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C05-1|C05-1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-5|C04-5]])
+- Wharton and Chicago studies are cited without author names or dates. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C03-4|C03-4]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C04-5|C04-5]])
+- Calderini calls March 2023 a 20-sigma Treasury event that hurt dynamic funds but says Graham was barely affected; no data supports Graham's resilience. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C06-2|C06-2]])
+- Share of Graham's business that is quantitative differs: the host says about two-thirds on the Quant side, while Calderini says about 15% of the absolute-return business is quantitative; the denominators differ and are not reconciled. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-R1|C08-R1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C01-X1|C01-X1]])
+- Quant macro 'running eight years' and 'trading since 2014' do not match in a 2023 recording (about nine years). ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-3|C08-3]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C09-R2|C09-R2]])
+- The short-equity thesis has both scenarios (sticky inflation, recession) plus a hard landing bearish for equities; the view is unfalsifiable except by Fed delivery against the priced cuts, and Calderini concedes forces beyond his understanding may support equities. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-1|C07-1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-X1|C07-X1]])
+- The gold case says breakevens can rise with unchanged rates so real rates fall; this requires inflation expectations to rise without a Fed response, which sits awkwardly with the main thesis of a hawkish Fed. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C07-4|C07-4]])
+- Calderini blames the Fed's communication for the 2022 shock yet also says 'either the Fed guided well or markets read it well'; the cause of the earlier match is not resolved. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C03-X1|C03-X1]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C03-1|C03-1]])
+- The positive skew and negative conditional correlation of the macro index are described with a chart, but the fund-level sample, survivorship and fee effects are not discussed. ([[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C05-4|C05-4]], [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C05-3|C05-3]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Inputs said to lead prices: gap between forward-curve pricing and what the Fed delivers (cuts priced vs hikes), core inflation (services) and the unemployment rate as the route to lower core inflation, the sign of stock-bond correlation set by the inflation regime, real rates and breakevens (for gold), US banking stress and ECB/BoJ policy (for euro and yen), and the US debt ceiling. Horizon is weeks to a few months for tactical positions; the regime shift is multi-year.
+
+### Reader inferences (not stated by the speakers)
+- (reader) The core claim is regime-based: 60/40 worked because inflation was a low secular risk and correlation was negative; the testable implication is that macro's value to 60/40 should rise when stock-bond correlation is positive.
+- (reader) The 'fragility = unpriced Fed path' measure is a simple, replicable indicator (forward curve on day one versus delivered path) with only five observations.
+- (reader) The talk is an allocation pitch: macro's benefit (negative conditional correlation, positive skew) is presented with index data, and Graham's own record is referenced only qualitatively.
+- (reader) Tactical views (short equities, long euro, yen, gold) are explicitly changeable within a month, so they should not be treated as durable forecasts.
 
 ## Coverage
 
@@ -215,10 +333,18 @@ tags: [source, layer0]
   > one is a trend following program right and that did really well last year
   indicator: Graham trend program return in 2022 · asset: multi · horizon: years · testable: partly - single-year performance claim · confidence: medium
   ^MT113-C08-X1
+- **Pablo Calderini** About 15% of the absolute-return business (trend and quant macro programs) is quantitative.  #mech/structural_shift _(added by map cross-check, time-bound view)_
+  > on the absolute returned one there's about 15 percent that is quantitative
+  asset: multi · testable: no: firm description · confidence: medium
+  ^MT113-C08-R1
 
 ### C09
 - **Pablo Calderini** Trend gains when equities tank; the quant macro program has less of that conditional benefit but a more stable return profile and higher information ratio than trend.  #mech/risk_premium
   > Trend following has a very nice negative conditional correlation to equities when equities tank
   indicator: trend vs quant macro conditional correlation · asset: multi · horizon: years · testable: yes: conditional correlation · confidence: medium
   ^MT113-C09-1
+- **Pablo Calderini** The quant macro program has traded since 2014 with a Sharpe above one, a more stable profile and higher information ratio than trend, but less negative conditional correlation to equities.  #mech/new _(added by map cross-check, time-bound view)_
+  > it has been trading since 2014
+  asset: multi · horizon: years · testable: yes: track record · confidence: medium
+  ^MT113-C09-R2
 

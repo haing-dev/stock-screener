@@ -5,8 +5,8 @@ date: 2024-12-02
 channel: "Top Traders Unplugged"
 url: 
 words: 9017
-claims: 44
-added_by_crosscheck: 11
+claims: 46
+added_by_crosscheck: 13
 corrections: 4
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Jerome Callo (guest, founder DCM Systematic, ex-BlueTrend)", "Moritz Seibert (host, Open Interest series)"]
@@ -21,6 +21,134 @@ tags: [source, layer0]
 **Approach:** non-trend CTA, behavioural flows, relative value, fast mean reversion, volatility, risk management, machine learning
 
 **Cross-check completeness estimate of first read:** 0.81 - first reader captured the main design ideas (flow anticipation, term structure, shock overshoot, FX three-factor residuals, never short VIX, scenario risk, ML limits); missed the allocator-role and trend-blend exchange, role-based model retention, VIX asymmetry, hedging overlay status, cross-asset lead-lag motivation, persistence counterpoint and three speaker attributions.
+
+## Argument map
+
+**Episode thesis:** Jerome Callo argues that a futures program can be orthogonal to trend followers by anticipating the flows of other systematic players (carry, risk parity, vol-control) from term structure, positioning and calendar effects, adding relative-value and slower macro models, and protecting with long-vol and proactive scenario risk limits. He doubts that machine learning adds much on daily financial data because of weak signal-to-noise and non-stationarity.
+
+### Jerome Callo (Founder of DCM Systematic (Geneva), non-trend multi-strategy futures program; ex-BlueTrend quant (2008-2013); PhD in machine learning)
+Fingerprint: #approach/relative_value_arbitrage #approach/positioning_crowding #approach/liquidity_flows #approach/short_term_systematic #approach/volatility_options #approach/crisis_alpha_convexity #approach/research_robustness_overfitting #approach/diversification_risk_parity
+_Speaker note: Guest; named in the host intro (caption spells 'cherom Kalo'/'Jerome'). Ledger corrections applied: C07-2 (roll-down argument) and C09-4 (retail short-vol footprint) are his, not the host's; C05-1 is restated per its correction (consensus-risk of 25+ models, August 2024 results mixed)._
+
+**Worldview premises**
+- Models simplify a complex reality driven by supply, demand and constraints, so momentum as a single driver is not enough; relative value and behavioural models can add return. _[theoretical, stated; support: Lesson from BlueTrend and from discretionary traders.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C02-1|C02-1]])
+- Trend following has a positive expected return and an optimal blend with it exists, but choosing that blend is the allocator's job; DCM's role is to be non-overlapping. _[institutional, stated; support: Business-positioning argument.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C02-2|C02-2]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C03-X1|C03-X1]])
+- It is easier to forecast the positioning of large systematic participants (carry, value, momentum, risk parity, trend) than the market, because they cannot unwind large positions quickly. _[theoretical, stated; support: Reasoning from capacity and unwind time (days); experience from BlueTrend; track record almost nine years.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C03-1|C03-1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C04-1|C04-1]])
+- Term-structure slope reveals carry-trader positioning because markets do not flip between contango and backwardation overnight. _[empirical, stated; support: Found in FX, then worked across asset classes with risk-system adjustments.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C03-2|C03-2]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C03-X2|C03-X2]])
+- After a two-sigma shock, markets tend to overshoot and normalise within about a week rather than continue. _[empirical, stated; support: Own research on commodity and equity shocks.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C04-2|C04-2]])
+- Crowded trend and carry positions can be sized by scaling estimated positioning to the whole CTA industry and comparing with CFTC net positions; the best opportunities come when over-traded positions must unwind. _[empirical, stated; support: Own positioning estimates plus CFTC data; no numbers given.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C06-1|C06-1]])
+- G10 FX returns versus USD are about 80-90% explained by three stable factors; the 10-15% idiosyncratic residual mean-reverts in roughly 10-20 days. _[empirical, stated; support: Over 30 years of daily data; PCA gives the same factors.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C06-2|C06-2]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C06-3|C06-3]])
+- Strict market neutrality in relative value forces overtrading or leverage, so slack and some directional exposure are better. _[experience, stated; support: Design experience (WTI vs Brent).]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C07-1|C07-1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C06-X1|C06-X1]])
+- Hedging-role models can earn nothing for years and give false alarms but are kept for their function in shocks; models are judged by portfolio role. _[theoretical, stated; support: Role-based design logic.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C08-X1|C08-X1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C08-1|C08-1]])
+- Volatility is the market with the largest exploitable footprint because many traders including retail are short vol; shocks force them out and add convexity. _[behavioural, stated; support: Reasoning from positioning; Volmageddon outcome.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C09-4|C09-4]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C09-2|C09-2]])
+- Seventy-five futures have only about 19 independent degrees of freedom, a compression that has grown since 2008 as markets linked and liquidated together. _[empirical, stated; support: Own exercise 'a couple of weeks ago'.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C10-3|C10-3]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C10-X2|C10-X2]])
+- Machine learning on daily data recovers noisy versions of known signals; finance lacks data volume, has weak signal-to-noise and is not stationary because participants adapt, though some flow patterns such as month-end persist for 20-30 years. _[experience, stated; support: Repeated attempts in research; comparisons with LLMs, recommender systems and protein folding.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C12-1|C12-1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C12-2|C12-2]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C12-3|C12-3]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C13-X1|C13-X1]])
+- Because participants and structure keep changing, research is continuous and the model set will gain and lose components. _[experience, stated; support: Track record and market changes.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C13-X2|C13-X2]])
+
+**Chain: Anticipating carry-trader flows from term structure**
+1. Large systematic players cannot change positions quickly → Persistent, extrapolable positioning: Unwinds take days ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C03-1|C03-1]])
+2. Term-structure slope (contango/backwardation state) → Estimate of carry traders' position and its evolution: State changes take weeks; filter gauges state over 5-10 days ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C03-2|C03-2]])
+3. Estimated crowded position → Trade ahead of or with its unwind: Model must be about twice as fast as the flow, giving 5-10 day holding and low CTA correlation ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C04-1|C04-1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C06-1|C06-1]])
+- Evidence: Worked first in FX, then across asset classes; almost nine-year track record.
+- Fails when: Consensus across 25+ models; August 2024 yen carry unwind gave mixed results.
+
+**Chain: Shock impulse and forced de-risking**
+1. Two-sigma shock in a market → Overshoot: Markets overshoot rather than continue ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C04-2|C04-2]])
+2. Price fall plus volatility rise → Risk-parity and vol-control funds must cut exposure: Mechanical vol-targeting (host's description of the flow) ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C04-3|C04-3]])
+3. Overshoot and forced selling → Normalisation within about a week: Fade the shock; implementation market-neutral across equity indices ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C04-2|C04-2]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C04-4|C04-4]])
+- Evidence: Behaviour studied after shocks; no statistics quoted.
+- Fails when: Directional break-outs; hence market-neutral implementation and parallel long-vol model.
+
+**Chain: FX residual mean reversion**
+1. Three stable factors explain 80-90% of G10 FX variance → Residual is idiosyncratic: Neutralise known factors ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C06-2|C06-2]])
+2. Residual series → Mean reversion in about 10-20 days: Short-lived idiosyncratic moves ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C06-3|C06-3]])
+- Evidence: 30 years of data; PCA confirms.
+- Fails when: If the factor structure breaks (stationarity claim).
+
+**Chain: Long-vol protection with no net short VIX**
+1. Rising hedging demand / shorter-dated vol priced up → Long VIX position: Fast model flags risk of shock ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C08-1|C08-1]])
+2. VIX spike and fade asymmetry → Profit then volatility-driven de-risking: Acts like automatic profit-taking (March 2020) ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C09-3|C09-3]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C09-X1|C09-X1]])
+3. Retail and others short vol → Forced exit and added convexity: Painful unrealised losses ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C09-4|C09-4]])
+- Evidence: 6 Feb 2018: about +3 to +4%; March 2020 profits secured.
+- Fails when: Long-vol models bleed or give false alarms for years.
+
+**Chain: Cross-asset transfer of signals**
+1. Compression to about 19 independent bets → Aligned flows and more correlation: Globalised, jointly liquidated markets ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C10-3|C10-3]])
+2. Robust-regression proxy of Brent from FX pairs (corr 0.5-0.6) → Brent behavioural signal tradable through FX basket: Lead-lag across assets ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C11-1|C11-1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C10-X2|C10-X2]])
+- Evidence: Correlation 0.5-0.6 for Brent proxy.
+- Fails when: Not always works simply.
+
+**Chain: Why ML adds little on daily data**
+1. Few observations vs model parameters → Overfit noise: Data far smaller than LLM scale ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C12-2|C12-2]])
+2. Weak signal-to-noise and non-stationarity → Models recover noisier known signals: Participants arbitrage patterns away ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C12-1|C12-1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C12-3|C12-3]])
+- Evidence: Repeated in-house attempts.
+- Fails when: Higher-frequency data is more promising.
+
+**Decision process**
+- [research] List what could go wrong (carry reversal, taper tantrum, oil shock after OPEC) and add each to the risk system.. Why: No scenario should put the fund out of business. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C01-1|C01-1]])
+- [universe] Deliberately avoid trend signals; 25+ non-trend models across behavioural, relative value and macro buckets.. Why: Orthogonal to CTA index and to trend allocations. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C02-2|C02-2]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C03-X1|C03-X1]])
+- [signal] Behavioural flow models: holding period 5-10 days, twice as fast as the flow anticipated.. Why: Low correlation to CTA indices. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C04-1|C04-1]])
+- [signal] Shock impulse models fade two-sigma shocks, implemented market-neutral across equity indices.. Why: Limit directional risk. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C04-2|C04-2]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C04-4|C04-4]])
+- [portfolio] Research a portfolio-level overlay capping aggregate directional, factor (carry) or risk-on exposure.. Why: Models can reach consensus. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C05-1|C05-1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C10-X1|C10-X1]])
+- [risk] Treat a bad episode (August 2024) as a data point; change the risk system after balanced team discussion, not as reaction to last loss.. Why: Avoids reactive tinkering. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C05-X1|C05-X1]])
+- [signal] Relative value via pair spreads or baskets with zero or controlled net exposure; allow slack and derive positions from term structure.. Why: Strict neutrality causes overtrading or leverage. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C06-X1|C06-X1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C07-1|C07-1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C07-2|C07-2]])
+- [risk] Never net short VIX; use beta-adjusted VIX curve spreads plus a fast long-VIX model.. Why: Program should diversify drawdowns. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C08-1|C08-1]])
+- [risk] Proactive stress: inject stylised scenarios (Volmageddon) into the optimiser as a loss constraint (about minus 2%).. Why: Do not only scale after realised volatility. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C08-2|C08-2]])
+- [sizing] Volatility-based risk management cuts exposure after big gains.. Why: Works like automatic profit-taking. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C09-3|C09-3]])
+- [signal] Macro: inflation from CPI and in-house equity-sector nowcast; holding period of one to a few months.. Why: Fixed income and FX. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C10-1|C10-1]])
+- [risk] Neutralise a regression-based risk-off factor in FX models.. Why: FX carry loses in equity risk-off shocks. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C10-2|C10-2]])
+- [execution] 98% automated: pre-trade previews, manual send, no modification, a human monitoring.. Why: Discipline. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C11-2|C11-2]])
+- [research] Treat research as continuous; judge each behavioural pattern on its own persistence.. Why: Non-stationary markets. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C13-X1|C13-X1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C13-X2|C13-X2]])
+
+**Evidence style:** Mechanism-first reasoning plus track record: states a market structure rationale (who must trade and when), then cites stylised facts and own experiments; scenario analysis for risk; sceptical of black-box ML.
+
+**Views at the time**
+- (2024-12-02) The August 2024 yen carry unwind was difficult for DCM's anticipation models; portfolio overlay under research.. Reasoning: Models were not aligned in results; consensus risk with 25+ models. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C05-1|C05-1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C05-X1|C05-X1]])
+- (2024-12-02) Systematic hedging overlay across the portfolio is the next research step.. Reasoning: Only local factor neutralisation exists today. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C10-X1|C10-X1]])
+- (2024-12-02) Higher-frequency ML attempts are more promising than daily-data ML.. Reasoning: More data points. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C12-1|C12-1]])
+
+### Moritz Seibert (Host, Open Interest series (Top Traders Unplugged); former CTA practitioner)
+Fingerprint: #approach/trend_following #approach/liquidity_flows #approach/dealer_hedging_flows #approach/volatility_options #approach/commodity_fundamentals #approach/behavioral_sentiment
+_Speaker note: Host; argues positions in several places (trend blend, vol-control flow, month-end, commodity index roll). Ledger C05-2 is corrected to him._
+
+**Worldview premises**
+- Adding a trend component to a 25-model non-trend book would probably still raise risk-adjusted returns despite higher correlation to trend followers. _[theoretical, stated; support: Diversification argument; no data.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C02-X1|C02-X1]])
+- Risk-parity and vol-control funds must cut exposure as prices fall and volatility rises, creating exploitable selling flow for a few days. _[theoretical, stated; support: Mechanical vol-targeting reasoning.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C04-3|C04-3]])
+- Risk premia, factor and bank QIS strategies trade billions on rules and leave predictable footprints. _[institutional, stated; support: General industry knowledge.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C05-3|C05-3]])
+- Month-end effects persist because humans and large pools of capital run monthly schedules and accounting, unlike anomalies that decay once published. _[behavioural, stated; support: Observation despite academic papers.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C05-2|C05-2]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C13-2|C13-2]])
+- The GSCI and DJ-UBS roll window (business days 5-9) once paid a liquidity premium that has largely decayed as investors spread rolls across the curve. _[empirical, stated; support: Historical knowledge of the indices.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C13-1|C13-1]])
+- Proactive risk management stress-tests current positions against past scenarios while reactive risk management adjusts after the fact; VIX is asymmetric (jumps fast, fades slowly). _[theoretical, stated; support: Framing of Jerome's documents.]_ ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C09-1|C09-1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C09-X1|C09-X1]])
+
+**Chain: Month-end and index-roll footprints**
+1. Calendar-based processes of humans and big capital pools → Predictable month-end flows: Persist despite publication ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C05-2|C05-2]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C13-2|C13-2]])
+2. Index roll window concentrated → Liquidity premium for providers: Decayed after investors moved to spread-roll implementations ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C13-1|C13-1]])
+- Evidence: Historical index behaviour; no numbers.
+- Fails when: Decays once participants adapt.
+
+**Decision process**
+- [research] Probe whether a trend sleeve would still improve the blend.. Why: Diversification of a 25-model book. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C02-X1|C02-X1]])
+- [risk] Contrast proactive stress tests with reactive adjustments.. Why: Frames how DCM controls risk. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C09-1|C09-1]])
+
+**Evidence style:** Reasons from market structure and industry knowledge; mostly frames and tests the guest's claims.
+
+### Disagreements
+- **Should a non-trend book add trend following?**: Moritz Seibert: Adding trend would probably still raise risk-adjusted returns even with higher correlation. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C02-X1|C02-X1]]); Jerome Callo: Trend has positive expected return and an optimal blend exists, but that is the allocator's job; DCM stays non-overlapping. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C03-X1|C03-X1]])
+- **Do market patterns decay?**: Moritz Seibert: Month-end effects are sticky because of human accounting cycles, unlike other anomalies that decay once published (index roll). ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C13-2|C13-2]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C13-1|C13-1]]); Jerome Callo: Non-stationarity is not universal; judge each pattern on its own persistence, though participants generally adapt. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C13-X1|C13-X1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C12-3|C12-3]])
+
+### Gaps and conflicts
+- Mean-reversion and shock-fade claims (about a week, 10-20 days) have no statistics or sample sizes. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C04-2|C04-2]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C06-3|C06-3]])
+- Crowding estimates scaled to the CTA industry are described but no results are given. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C06-1|C06-1]])
+- The loss constraint 'minus 2%' and Volmageddon +3-4% figure come from the guest, unverified. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C08-2|C08-2]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C09-2|C09-2]])
+- Ledger C05-1 overstated; the guest said models gave mixed results in August 2024 and consensus risk is a general concern. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C05-1|C05-1]])
+- Tension: behavioural signals are said to need no trend, yet shock-fade and long-vol models are partially directional; Jerome concedes some directional exposure is accepted. ([[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C07-1|C07-1]], [[MT118 - Non-Trend Strategies, Trader Flows, and Risk Management at DCM - Open Interest 11#^MT118-C04-4|C04-4]])
+
+### Forward-looking inputs (reader synthesis)
+Observable inputs: futures term-structure slope and its change over 5-10 days, estimated CTA/CFTC positioning concentration, two-sigma shocks, VIX term structure and hedging demand, month-end calendar, FX three-factor residuals, inflation prints/nowcast. Horizons: 5-20 days for behavioural and mean-reversion models; one to a few months for macro.
+
+### Reader inferences (not stated by the speakers)
+- The case for non-trend alpha rests on a structural argument (known participants must trade predictably) rather than statistical power; it is vulnerable when participants adapt.
+- Consensus risk across many models makes the portfolio overlay the main unresolved design gap.
+- Compression to 19 independent bets and cross-asset proxies link diversification limits with signal transfer.
 
 ## Coverage
 
@@ -160,6 +288,14 @@ tags: [source, layer0]
   > we can see certain models producing no returns for years and years but we know their function we know their role we we know we want to have them
   indicator: long-volatility shock models · asset: multi · horizon: years · conditions: when the model's role is diversification in drawdowns · testable: partly - role-based evaluation needs a conditional return test · confidence: high
   ^MT118-C08-X1
+- **Jerome Callo** The goal for volatility is to be long VIX whenever a shock risk exists without bleeding money otherwise.  #mech/new _(added by map cross-check)_
+  > the only Grail there is to um be long whenever uh you have a risk of shock and not bleeding out money the rest of the time really
+  indicator: VIX curve and hedging demand · asset: volatility · direction: long vol in shock risk · horizon: days · testable: partly - hit rate and cost of long-vol model · confidence: medium
+  ^MT118-C08-R1
+- **Jerome Callo** DCM aims to be actively good in equity drawdowns, beyond the CTA industry's tendency to work in them.  #mech/new _(added by map cross-check)_
+  > our ctas have tended to work well when the SNP 500 was in a draw down we want to be a bit more proactive than than that and be specifically good during these times
+  indicator: S&P 500 drawdown performance · asset: multi · direction: positive in drawdowns · conditions: S&P drawdowns · testable: yes - conditional returns · confidence: medium
+  ^MT118-C08-R2
 
 ### C09
 - **Moritz Seibert** Proactive risk management stress-tests current positioning against past scenarios such as Volmageddon, while reactive risk management adjusts positions after the fact.  #mech/risk_management

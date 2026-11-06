@@ -5,8 +5,8 @@ date: 2024-09-02
 channel: "Top Traders Unplugged"
 url: 
 words: 11785
-claims: 56
-added_by_crosscheck: 9
+claims: 59
+added_by_crosscheck: 12
 corrections: 1
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, Top Traders Unplugged)", "Andrew Beer (managing member, DBi / replication ETF manager)"]
@@ -21,6 +21,111 @@ tags: [source, layer0]
 **Approach:** CTA replication, trend following, fees, benchmark indices, allocation
 
 **Cross-check completeness estimate of first read:** 0.89 - first reader covered the August 2024 review, replication method, fee/correlation numbers, allocator-psychology and index-launch themes closely; missed the BoJ reaction function, the industry-wide pattern point, the 300bp-not-constant caveat, the 5% allocation claim, and Andrew's distinction between a one-week replication bet and a real trend model.
+
+## Argument map
+
+**Episode thesis:** Beer argues that a 10-factor weekly replication of the SG CTA Index, unchanged since 2016, delivers about 90% correlation and about 300bp of annual excess through fee and expense disintermediation, and that the SG CTA Investable Hedge Fund Index now built on this methodology lets allocators hold the trend space without manager-selection risk. He attributes allocator resistance to a belief that trend following 'should not work', and explains the August 2024 whipsaw as three reversing narratives that hurt both fast and slow models differently.
+
+### Andrew Beer (Managing member, DBi (replication manager, DBMF); founded a commodity hedge fund 25 years ago)
+Fingerprint: #approach/replication_indexing #approach/trend_following #approach/costs_execution #approach/manager_selection_allocation #approach/research_robustness_overfitting #approach/behavioral_sentiment #approach/diversification_risk_parity
+_Speaker note: Caption 'Andrew B'. Clear in a two-person conversation._
+
+**Worldview premises**
+- In big whipsaws one cannot tell in real time whether the move is rational repricing or technical liquidation feedback; fundamental traders move views with price because they assume someone knows something. _[experience, stated; support: Commodity hedge fund experience; August 2024 three-reversals narrative.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C03-2|C03-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C03-3|C03-3]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C03-X1|C03-X1]])
+- Over a one-week window most CTA exposures reduce to a handful of large liquid instruments (10-year Treasury has gravitational pull), so a 10-factor model captures about 90% of what the index does. _[empirical, stated; support: 8 years of live model: about 90% correlation to SG CTA Index.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C05-3|C05-3]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C06-4|C06-4]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C08-X1|C08-X1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C05-4|C05-4]])
+- Complexity and hundreds of markets are not demonstrated to improve results; the claim has little data behind it, though adding instruments does add diversification. _[experience, stated; support: Own results versus complex funds; absence of data.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C06-1|C06-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C07-4|C07-4]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C07-X1|C07-X1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C10-R1|C10-R1]])
+- Replication's edge of about 300bp a year is mostly fee and expense disintermediation plus about 10bp trading costs; it is an average, not an expectation for every year. _[empirical, stated; support: Since July 2016, unchanged model.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C06-2|C06-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C06-3|C06-3]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C07-X2|C07-X2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C05-1|C05-1]])
+- Replication is a one-week bet that is self-correcting, and its misses (Jan-Feb 2023, cocoa-type idiosyncratic moves) are expected and not structural failures. _[empirical, stated; support: Rolling correlation never near 20%; 2023 the only underperforming year.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C04-4|C04-4]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C05-4|C05-4]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C06-5|C06-5]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C08-1|C08-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C05-X1|C05-X1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C05-2|C05-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C07-1|C07-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C16-1|C16-1]])
+- Allocators resist trend following because they are trained to believe in skill and information edge, partly motivated by economic stakes, and focus on headcount instead of the model. _[behavioural, stated; support: Talks to allocators; CFA Society presentation.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C04-3|C04-3]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C12-1|C12-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C12-2|C12-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C12-3|C12-3]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C12-4|C12-4]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C12-X1|C12-X1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C12-R1|C12-R1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C11-1|C11-1]])
+- Managed futures hit the hedge-fund trifecta over 10 years yet are only 6% of hedge fund allocations; at least 5% in every portfolio is a no-brainer. _[empirical, stated; support: 24 years of SG CTA Index data; charts.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C11-2|C11-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C11-X1|C11-X1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C08-3|C08-3]])
+- Index products are valued because allocators never face manager selection risk; hedge fund indices are net of fees and not investable, which is the gap replication fills. _[institutional, stated; support: Allocator practice; capital market assumptions.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C14-1|C14-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C14-2|C14-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C08-2|C08-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C13-1|C13-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C13-2|C13-2]])
+- Naive replication fails (a late-2000s bank replicating only Sharpe>2.5 funds ended up in mortgage-backed securities funds) and bottom-up replication does not beat simple top-down. _[experience, stated; support: Industry history since 2006-07.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C10-2|C10-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C10-3|C10-3]])
+
+**Chain: Why trend followers struggle in a V-shaped whipsaw**
+1. Three narratives reverse within two weeks (Trump odds, no Fed cut, BoJ noise) in July-August 2024 → sharp three-day repricing: BoJ constrained by a stock market supported by a weak yen ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C03-3|C03-3]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C03-X1|C03-X1]])
+2. Short-term models whipsawed → miss mild recovery: They overreact or get out ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C04-1|C04-1]])
+3. Long-term and replication models slower to de-risk → bigger losses if August is an inflection (as in November 2023): Longer windows mix old regime data ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C04-2|C04-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C07-2|C07-2]])
+- Evidence: August 2024 and 2023 episodes.
+- Fails when: If whipsaw proves a real inflection.
+
+**Chain: Replication fee tailwind and volatility optics**
+1. Replicator charges no incentive fee → looks more volatile than net-of-fee index: Incentive fees smooth returns ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C05-1|C05-1]])
+2. Managers with performance fees that crystallise quarterly (new highs early 2024) → fees paid but not refunded in Q2: Replicator outperforms in such years ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C09-1|C09-1]])
+3. Index may include interest unevenly (some managers exclude) → apples vs different apples comparison: Composite return conventions ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C09-2|C09-2]])
+- Evidence: Replication vs SG CTA Index results since 2016.
+- Fails when: Fee structures change or interest is included equally.
+
+**Chain: Allocator psychology and the case for an investable index**
+1. Hedge fund selection is information-efficient and subject to selection bias → allocator anxiety: Funds are seen only after success ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C11-1|C11-1]])
+2. Trend has no special information; trades in plain sight, exits when the market 'slaps you' → allocators who expect skill dismiss evidence: They want a story ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C12-1|C12-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C12-2|C12-2]])
+3. Investable index with fee disintermediation → easier larger allocations: No manager selection risk and better than full-fee average ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C14-2|C14-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C16-2|C16-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C15-1|C15-1]])
+- Evidence: Anecdotes, allocator conversations, SG launch of an investable index.
+- Fails when: Allocators demand idiosyncratic skill.
+
+**Decision process**
+- [signal] Weekly regression onto 10 liquid factors: 2y/10y/30y Treasuries, three equity indices, euro, yen, gold, oil, estimated from recent CTA index returns and implemented each Monday.. Why: One-week bet; self-correcting. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C05-3|C05-3]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C05-4|C05-4]])
+- [research] Models unchanged since July 2016; a very high bar for any change.. Why: Avoid dial-turning and overfitting. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C06-2|C06-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C15-2|C15-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C15-R1|C15-R1]])
+- [execution] Estimated trading cost about 10bp a year; no incentive fee.. Why: Simple models keep costs low. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C06-3|C06-3]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C05-1|C05-1]])
+- [risk] Accept streaks of misses and low correlation periods; do not adjust.. Why: Coin-flip analogy. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C08-1|C08-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C06-5|C06-5]])
+- [other] Partner with larger firms and sell via regulated wrappers (UCITS, ETFs) to meet due-diligence headcount concerns.. Why: Allocators ask about headcount. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C13-X1|C13-X1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C12-4|C12-4]])
+
+**Evidence style:** Track record, first-hand industry experience, backtest scepticism, anecdote.
+
+**Views at the time**
+- (2024-08-29) August 2024 was a rational-plus-technical whipsaw, not catastrophic.. Reasoning: Three reversing narratives. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C03-2|C03-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C03-3|C03-3]])
+- (2024-08-29) Replication has outperformed the SG CTA Index in 2024 so far; since the third-quarter 2022 peak it is in drawdown but ahead of the hedge fund index.. Reasoning: Fee tailwind and idiosyncratic whipsaws in markets it does not hold. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C05-X1|C05-X1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C09-1|C09-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C07-X1|C07-X1]])
+- (2024-08-29) SG CTA Investable Hedge Fund Index, built on his replication methodology, backtested to 2002 and available on Bloomberg.. Reasoning: Contributed methodology; eight years of live unchanged model support the backtest. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C15-1|C15-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C15-2|C15-2]])
+- (2024-08-29) Managed futures industry about $300bn; mutual fund version $20bn; return-stacked ETFs near $1bn of a $10 trillion market.. Reasoning: Size comparison. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C16-3|C16-3]])
+
+### Niels Kaastrup-Larsen (Host (Top Traders Unplugged), hedge fund manager; speaks hypothetically 'as a CTA' in C07)
+Fingerprint: #approach/trend_following #approach/manager_selection_allocation #approach/positioning_crowding #approach/costs_execution #approach/regime_detection #approach/replication_indexing
+_Speaker note: Caption 'Neil costr Larson'. In C07 he role-plays a CTA, so those statements are not necessarily his own firm's views (ledger correction)._
+
+**Worldview premises**
+- Trading hundreds of markets is not shown to be better than about 60 in the data. _[experience, stated; support: Says he has said it for years; does not claim 10-15 is equal.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C07-3|C07-3]])
+- Performance-fee crystallisation timing lets a replicator outperform in a year when managers hit new highs early and then lost in Q2. _[institutional, stated; support: Fee mechanics.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C09-1|C09-1]])
+- Composite-return conventions (interest excluded by some managers) may make index vs replication comparisons uneven. _[experience, stated; support: His own firm's composite practice since 2007.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C09-2|C09-2]])
+- Replicator risk (model out of sync, bug) exists alongside manager risk. _[theoretical, stated; support: Systematic experience.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C10-1|C10-1]])
+- Regulated daily-liquidity wrappers invite lighter, shorter due diligence. _[institutional, stated; support: Practice with UCITS and ETFs.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C13-X1|C13-X1]])
+- If trend assets keep growing, crowding could make it harder. _[theoretical, stated; support: Industry grew from under $10bn to about $400bn.]_ ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C17-1|C17-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C17-X1|C17-X1]])
+
+**Chain: August 2024 CTA losses by sector**
+1. V-shaped equities, JGBs, non-US fixed income, energies hard → down month: Not fully recovered Japanese equities ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C02-1|C02-1]])
+2. Softs, grains, gold decent → partial offset: Small sector weights ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C02-1|C02-1]])
+- Evidence: SG Trend 10.5% drawdown from March high, half the worst.
+- Fails when: Prolonged drawdown.
+
+**Decision process**
+- [research] Use a trend barometer to gauge trendiness (59 at end-August).. Why: Cross-check with index returns. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C03-1|C03-1]])
+
+**Evidence style:** Index statistics and fee mechanics; probes with questions.
+
+**Views at the time**
+- (2024-08-29) August 2024 a down month for CTAs but not catastrophic; SG Trend Index in a 10.5% drawdown from March high, about half its worst.. Reasoning: Index levels. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C02-1|C02-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C02-2|C02-2]])
+- (2024-08-28) Late-August 2024 data: BTOP50 -1.68% (+3.43% YTD), SG CTA -2.58% (+2%), SG Trend -3.63% (+2.22%), STI +0.19%, MSCI World +14.6%, S&P 500 +18.3% YTD.. Reasoning: Reported index returns. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C03-1|C03-1]])
+
+### Disagreements
+- **Do many markets improve diversification enough to justify complexity?**: Andrew Beer: Instruments add diversification, but 10 are enough for a one-week replication bet and complexity lacks data. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C06-1|C06-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C07-4|C07-4]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C08-X1|C08-X1]]); Niels Kaastrup-Larsen (role-playing a CTA): No evidence hundreds beat 60; unsure whether 10-15 equal. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C07-3|C07-3]])
+
+### Gaps and conflicts
+- The 300bp edge and 90% correlation are self-reported by the manager and relate to a product he manages; later years show smaller outperformance. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C06-3|C06-3]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C07-X2|C07-X2]])
+- Claim that 2016-22 vs 2023+ differences would break replication was not borne out; no independent test is given. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C05-2|C05-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C07-1|C07-1]])
+- Statements on allocator motivation ('economic skin in the game') are speculative. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C12-X1|C12-X1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C12-3|C12-3]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C12-4|C12-4]])
+- Host's role-play as CTA blurs whose view is stated. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C07-3|C07-3]])
+- Industry assets figures conflict ($300bn vs $400bn) between speakers. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C16-3|C16-3]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C17-1|C17-1]])
+- The 52-55% hit rate figure is approximate and not sourced. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C07-4|C07-4]])
+- The back-tested SG investable index (to 2002) is subject to Beer's own warning about dial-turning; the defence rests on eight years of live use. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C15-1|C15-1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C15-2|C15-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C15-R1|C15-R1]])
+- Allocation recommendation (5% vs 25-40%) depends on SG CTA Index history, which is not investable. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C08-3|C08-3]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C11-X1|C11-X1]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C11-2|C11-2]])
+- Whether the SG CTA Index reports excess or total returns is left open: Beer says he would be surprised if it were excess-only (speaker attribution of that remark is uncertain in the caption). ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C09-2|C09-2]], [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C09-3|C09-3]])
+- Late 2000s replication failure story is anecdotal. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C10-2|C10-2]])
+- Claims about the new competitors (KFA/Alpha Simplex) are provisional. ([[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C10-3|C10-3]])
+
+### Forward-looking inputs (reader synthesis)
+Weekly trend exposures in 10 liquid factors (Treasuries, equity indices, euro, yen, gold, oil), fee crystallisation timing, index composition; horizon one week for replication, years for allocation.
+
+### Reader inferences (not stated by the speakers)
+- Beer's argument is largely about vehicle design and allocator behaviour, not market direction.
+- The replication premium is fee-based and would shrink if CTA fees fall or interest conventions equalise.
 
 ## Coverage
 
@@ -208,6 +313,10 @@ tags: [source, layer0]
   > the bottomup models you know which are supposed to add a meaningful amount of value
   indicator: bottom-up vs top-down replication · asset: multi · horizon: years · testable: yes: compare approaches · confidence: low
   ^MT114-C10-3
+- **Andrew Beer** Beer's design ethos for replication: complexity does not help, so the model stays simple and unchanged.  #mech/new _(added by map cross-check)_
+  > we just don't think complexity helps in this
+  asset: futures · direction: Prefer simple replication to complex models · horizon: years · testable: partly - compare simple and complex replicators out of sample · confidence: high
+  ^MT114-C10-R1
 
 ### C11
 - **Andrew Beer** Hedge fund selection is information-efficient and subject to selection bias: allocators see funds only after success.  #mech/behavioral
@@ -244,6 +353,10 @@ tags: [source, layer0]
   > they hope it doesn't work because they somehow have economic skin in the game
   asset: multi · testable: no - motive inference · confidence: medium
   ^MT114-C12-X1
+- **Andrew Beer** Beer diagnoses allocator resistance to trend following and replication as a belief that it should not work, not doubt about the data.  #mech/new _(added by map cross-check)_
+  > it's not that they believe it hasn't worked it's that they believe it shouldn't work
+  asset: multi · direction: Allocators dismiss the record · horizon: years · conditions: trained to believe in skill and information edge · testable: no · confidence: high
+  ^MT114-C12-R1
 
 ### C13
 - **Andrew Beer** The SG CTA Index is the equal-weighted net-fee return of the 20 largest open CTAs since January 2000, reconstituted each January, with daily data and little selection bias.  #mech/research_method
@@ -278,6 +391,10 @@ tags: [source, layer0]
   > people sit in the room and they turn dials
   indicator: backtest overfitting · asset: multi · horizon: years · testable: yes: out-of-sample check · confidence: high
   ^MT114-C15-2
+- **Andrew Beer** Beer warns that index backtests tend toward unrealistic returns because quants turn dials until the product looks good.  #mech/new _(added by map cross-check)_
+  > it's a natural human thing to build models that have fantastically unrealistic returns
+  asset: multi · direction: Discount long index backtests · horizon: years · conditions: index product built by banks or quants · testable: partly · confidence: high
+  ^MT114-C15-R1
 
 ### C16
 - **Andrew Beer** Replicator idiosyncratic risk versus the SG CTA Index is much less than single-manager risk, though not zero.  #mech/risk_management

@@ -1,0 +1,343 @@
+{
+ "source_id": "MT086",
+ "episode_thesis": "Katy Kaminski argues that trend following needs persistent, extreme, consistent macro themes; 2024 was hard because monetary-policy expectations ebbed and flowed in rates and FX during a regime transition, and manager dispersion came from signal speed, asset-class risk allocation and non-trend signals such as carry. Her research says long/short trend in bonds helped in every equity crisis, that inflation (and, per Quantica, higher cash rates) makes stock-bond correlation positive so 60/40 diversifies less, and that investors should hold roughly 15-20% in trend as a reactive core allocation, preferably added during trend drawdowns. Kaastrup-Larsen adds index data, the Quantica allocation numbers (55/35/10 vs 55/25/20), the 15% rule of thumb and doubts that stock-bond correlation will revert to its persistent negative level.",
+ "speakers": [
+  {
+   "name": "Katy Kaminski",
+   "role": "Chief research strategist at AlphaSimplex; trend-following researcher and author (co-author with Alex Greyserman of the book on trend following; papers on defensive rotation, Bonds Behaving Badly, factor analysis of SG Trend)",
+   "speaker_note": "Auto-captions garble names (Katy Kaminski appears as Ka Kaminsky/Katie; Quantica as Quanica; Greyserman as Alex graer man). The guest is identified by the ledger. Recording was around 23 Oct 2024, with index figures as of Tuesday 22 Oct.",
+   "fingerprint": ["trend_following", "crisis_alpha_convexity", "diversification_risk_parity", "macro_fundamental_topdown", "regime_detection", "policy_reaction_central_banks", "behavioral_sentiment", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {
+     "premise": "Trend following depends on whether markets have a persistent, extreme, consistent macro theme; in 2024 several markets were driven by volatility and uncertainty without one, which hurt trend. Rates and FX whipsaw when monetary-policy expectations ebb and flow.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "2024 P&L by sector: positive in equities, mixed in commodities, weak in currencies and fixed income; contrast with the clear direction of 2022.",
+     "claim_ids": ["MT086-C03-6", "MT086-C04-1", "MT086-C04-2"]
+    },
+    {
+     "premise": "Markets in transition grasp for direction; sentiment swung between fear and optimism within weeks and investors hoping for a return to low rates magnify the swings, so trends do not stabilise. Trend followers are behaviour-focused, so sentiment cannot be ignored.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Observed sentiment swings in September-October 2024; philosophical argument, no data.",
+     "claim_ids": ["MT086-C04-5", "MT086-C05-1", "MT086-C05-R1"]
+    },
+    {
+     "premise": "The post-2008 low-rate regime was historically abnormal; inflation matters more now, and the baseline of rates may stay higher with more inflation volatility (not necessarily 4% inflation).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Economics 101 argument; no data.",
+     "claim_ids": ["MT086-C05-2"]
+    },
+    {
+     "premise": "Inflation drives positive stock-bond correlation because it devalues fixed long-term cash flows and erodes bonds' safe-haven property; when inflation fell to 2-2.5% in 2024 the classic risk-off pattern (stocks down, bonds up) returned.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Cash-flow argument; comparison of 2022-23 (both fell) versus 2024; her paper Bonds Behaving Badly on long histories back to the 1970s.",
+     "claim_ids": ["MT086-C08-3", "MT086-C09-1", "MT086-C07-2"]
+    },
+    {
+     "premise": "A dynamic long/short trend exposure to bonds yields strongly negative correlation to stocks even when static bonds correlate positively, so it repairs the 60/40 diversification loss in a higher rate/inflation world; static bonds are less reliable there.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Bonds Behaving Badly analysis over long single-asset-class histories (bond trend signals only).",
+     "claim_ids": ["MT086-C07-3", "MT086-C07-4", "MT086-C06-4", "MT086-C07-X2"]
+    },
+    {
+     "premise": "Crisis alpha comes from the ability to move with whichever trend prevails, not from a fixed hedge direction: fixed income was a positive trend contributor in every equity crisis studied (the bond market reacts early, trend can be long or short), while energy was short in COVID and long in 2022; currencies are environment dependent.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Her paper Trend Following in a Defensive Rotation: conditioning on equity drawdowns and ignoring equity positions.",
+     "claim_ids": ["MT086-C06-3", "MT086-C06-5", "MT086-C07-1", "MT086-C08-1", "MT086-C06-R1", "MT086-C06-R2"]
+    },
+    {
+     "premise": "Trend positioning is itself a market signal: a shift of aggregate trend positioning toward long bonds and short commodities signals repricing of recession expectations, and the summer 2024 pivot resembled early 2020.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation of trend-follower positioning; analogy to pre-COVID.",
+     "claim_ids": ["MT086-C06-1", "MT086-C06-2", "MT086-C06-X1", "MT086-C04-3"]
+    },
+    {
+     "premise": "Manager dispersion has three sources: signal speed (slower, medium to long-term signals did better in 2024 because they did not chase undulations), risk allocation by asset class (more in equities and commodities beat bonds and FX) and non-trend signals such as FX carry or relative value (August 2024 yen carry unwind).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Qualitative comparison of ETF-type medium-to-long trend with faster crisis-alpha managers; she says she has not studied it explicitly.",
+     "claim_ids": ["MT086-C09-3", "MT086-C09-4", "MT086-C10-1"]
+    },
+    {
+     "premise": "SG Trend-type index constituents have slowed and absorbed non-trend premia (value, carry, cross-sectional momentum), especially post-2008, so an index is a living, changing set of managers; higher rates make pure momentum more desirable and may reverse the drift.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Her 2018 factor decomposition of SG Trend by time horizon and risk premia; not updated.",
+     "claim_ids": ["MT086-C10-2", "MT086-C10-3"]
+    },
+    {
+     "premise": "Trend does better in divergent environments (large one-directional macro moves like 2022) than in convergent, consolidating ones, and timing which trend comes next is a fool's game, so managed futures should be held as a reactive strategy.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Experience and the 2022 contrast; big regime changes are only recognised after the fact.",
+     "claim_ids": ["MT086-C11-1", "MT086-C11-2"]
+    },
+    {
+     "premise": "Trend is a medium to long horizon strategy that needs less trader stress management than high-frequency trading, but risk taking has a physiological component (cortisol correlated with VIX).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Neuro-finance studies and her PhD adviser's work, mentioned in passing.",
+     "claim_ids": ["MT086-C02-2", "MT086-C03-1"]
+    },
+    {
+     "premise": "Evidence on trend by stock-bond correlation or by high/low rates is limited because the post-1990 sample has few high-correlation or high-rate periods; cash-rate regimes and inflation regimes are related but distinct conditioning variables.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Her own data-limitation discussion; she has not run the correlation-conditional trend study.",
+     "claim_ids": ["MT086-C08-2", "MT086-C13-6", "MT086-C13-X1"]
+    },
+    {
+     "premise": "Investor demand for managed futures and liquid alternatives rose because 2022 showed 60/40 diversification can vanish; allocate to trend after drawdowns, not after strong gains, since consolidation often precedes new trends (trend-following squared is worse).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Conversations with RIAs, flows, and the book and papers with Alex Greyserman.",
+     "claim_ids": ["MT086-C14-3", "MT086-C15-2", "MT086-C15-R1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Inflation, cash rates and the stock-bond correlation",
+     "steps": [
+      {"from": "Inflation expectations are non-negligible", "to": "Bond fixed cash flows are devalued and bond volatility rises", "why": "Bonds are claims on fixed long-term cash flows, so inflation erodes their safe-haven property.", "claim_ids": ["MT086-C08-3", "MT086-C07-2"]},
+      {"from": "Bonds lose safe-haven property and volatility rises", "to": "Stock-bond correlation turns positive and 60/40 diversifies less", "why": "Stocks and bonds fall together on rate and inflation shocks (2022-23).", "claim_ids": ["MT086-C07-4", "MT086-C13-2", "MT086-C09-1"]},
+      {"from": "Static bonds diversify less", "to": "A dynamic long/short trend exposure to bonds provides negative correlation and return", "why": "Trend can be short bonds when they fall and long when they rally.", "claim_ids": ["MT086-C07-3", "MT086-C06-4", "MT086-C13-3"]},
+      {"from": "Higher cash rates", "to": "Adding trend to 60/40 helps more (Quantica mixes 55/35/10 in low cash-rate regimes vs 55/25/20 in high)", "why": "Bonds lose diversification while trend keeps return and negative correlation to bonds.", "claim_ids": ["MT086-C13-5", "MT086-C14-1"]}
+     ],
+     "evidence": "Bonds Behaving Badly (long history to the 1970s, bond signals only); Quantica Q3 2024 paper (data from 1990, high vs low cash-rate regimes); 2022-24 observations.",
+     "fails_when": "The Quantica sample starts in 1990 with mostly low cash rates, so long high-rate or high-inflation periods are thinly represented; the analysis is not about trend as a whole; Kaastrup-Larsen doubts a return to persistent negative correlation.",
+     "claim_ids": ["MT086-C07-2", "MT086-C07-3", "MT086-C13-2", "MT086-C13-5", "MT086-C13-6", "MT086-C14-1"]
+    },
+    {
+     "topic": "2024 trend difficulty in rates and FX",
+     "steps": [
+      {"from": "Start of 2024: cuts expected but did not come", "to": "Rates and FX trend signals reverse", "why": "Markets focused on monetary-policy expectations that kept changing.", "claim_ids": ["MT086-C04-2"]},
+      {"from": "Summer: focus shifts from inflation to slowdown", "to": "Trend rotates defensively (commodities down, bonds up)", "why": "Economic concern and demand-destruction fears.", "claim_ids": ["MT086-C04-3", "MT086-C06-1"]},
+      {"from": "October: markets had priced aggressive Fed cuts and repriced", "to": "Reversals in rates, FX (GBP, AUD, NZD) and fixed income", "why": "People were too far ahead on Fed policy.", "claim_ids": ["MT086-C04-4", "MT086-C03-5"]},
+      {"from": "Hope for return to low rates amplifies sentiment swings", "to": "Noise in trend signals during the regime transition", "why": "Trends do not stabilise while the regime is unsettled.", "claim_ids": ["MT086-C05-1", "MT086-C04-5"]}
+     ],
+     "evidence": "Sector P&L, October 2024 trend index returns (BTOP50 -1.5%, SG CTA about -2.1%, SG Trend -3.25%) and observed positioning changes.",
+     "fails_when": "A clear persistent macro direction (as in 2022) would remove the whipsaw.",
+     "claim_ids": ["MT086-C04-2", "MT086-C04-4", "MT086-C03-2", "MT086-C03-5", "MT086-C05-1"]
+    },
+    {
+     "topic": "Why trend does well in a crisis regardless of direction",
+     "steps": [
+      {"from": "Equity drawdown or crisis", "to": "Bond trend contribution was positive in every crisis studied", "why": "The bond market reacts early and trend can be long or short bonds.", "claim_ids": ["MT086-C06-3"]},
+      {"from": "Different crises have different dominant drivers", "to": "Energy trend was short in COVID and long in 2022; currencies mixed", "why": "Crisis alpha comes from moving with whichever trend prevails.", "claim_ids": ["MT086-C07-1", "MT086-C06-5", "MT086-C08-1"]}
+     ],
+     "evidence": "Conditional analysis of non-equity positioning in equity drawdowns; sample limited to modern futures history.",
+     "fails_when": "Positioning is already defensive when the drawdown starts (open question raised by the 2024 positioning resemblance to early 2020).",
+     "claim_ids": ["MT086-C06-3", "MT086-C06-2", "MT086-C07-1", "MT086-C06-5"]
+    },
+    {
+     "topic": "Sources of manager dispersion in 2024",
+     "steps": [
+      {"from": "Many undulations in 2024", "to": "Slower, medium to long-term signals outperformed faster crisis-alpha signals", "why": "Slow signals did not chase every swing.", "claim_ids": ["MT086-C09-3"]},
+      {"from": "Equities and commodities had key themes while bonds and FX were hard", "to": "Managers with more risk in equities and commodities beat those with more in bonds and FX", "why": "Risk placement matters as for any strategy.", "claim_ids": ["MT086-C09-4"]},
+      {"from": "Non-trend signals (FX carry, relative value) in the August yen unwind", "to": "Large relative gaps even from small carry allocations", "why": "Carry had worked most of the year then reversed violently.", "claim_ids": ["MT086-C10-1"]}
+     ],
+     "evidence": "Qualitative comparison of ETFs and complex managers; not studied explicitly.",
+     "fails_when": "In a year with clear fast moves the ranking would reverse (inferred from her speed argument).",
+     "claim_ids": ["MT086-C09-3", "MT086-C09-4", "MT086-C10-1", "MT086-C03-4"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Condition on equity drawdowns, ignoring equity positions, and examine long or short trend positioning in other asset classes in each crisis period.", "why": "To see what a defensive pivot implies if equities then draw down.", "claim_ids": ["MT086-C06-R2", "MT086-C06-3"]},
+    {"element": "research", "practice": "Use longer histories (back to the 1970s) only for single-asset-class trend signals such as bonds, because extending a full multi-asset futures portfolio requires many assumptions.", "why": "Market infrastructure assumptions undermine long multi-asset backtests.", "claim_ids": ["MT086-C07-X2", "MT086-C08-2"]},
+    {"element": "research", "practice": "Explain manager dispersion first by signal speed and asset-class risk allocation, then by non-trend signals.", "why": "Simple explanations first.", "claim_ids": ["MT086-C09-3", "MT086-C09-4", "MT086-C10-1"]},
+    {"element": "signal", "practice": "Read trend signals across asset classes for breadth; balanced signals with no standout mean consolidation before the next big trend.", "why": "Trend signals indicate where the market is going without forecasting.", "claim_ids": ["MT086-C15-3"]},
+    {"element": "portfolio", "practice": "Hold managed futures as a reactive core, sized by regime research (Quantica mixes) or about 15-20%; add in drawdowns, not after gains.", "why": "Timing the next trend is a fool's game; consolidation precedes new trends.", "claim_ids": ["MT086-C11-1", "MT086-C15-2", "MT086-C14-1"]},
+    {"element": "other", "practice": "To anticipate the next big trend, ask what investors are underestimating or overly hopeful about (soft landing in 2024), since the unpriced outcome drives the next large move.", "why": "Positioning follows realised trend, but the narrative shows where surprise lies.", "claim_ids": ["MT086-C12-X1", "MT086-C12-1"]}
+   ],
+   "evidence_style": "Academic-style empirical research (her papers: defensive rotation, Bonds Behaving Badly, 2018 SG Trend factor analysis) and a reading of Quantica's regime study. She flags sample limits (post-1990, few positive-correlation periods) and says when she has not run a test. Also uses positioning observations and conversations with investors.",
+   "current_views": [
+    {"view": "Soft-landing consensus is the main risk; renewed inflation (CPI uptick, commodities rebounding, China stimulus, port closures) with rates paused and higher for longer could drive next year's trends.", "as_of": "2024-10-23", "reasoning": "A trend follower asks what investors are underestimating; unpriced inflation risk.", "claim_ids": ["MT086-C12-1", "MT086-C12-X1"]},
+    {"view": "Inflation matters more now and the post-2008 low-rate regime is unlikely to return; the baseline of rates may be higher.", "as_of": "2024-10-23", "reasoning": "Low-rate regime was historically abnormal.", "claim_ids": ["MT086-C05-2"]},
+    {"view": "Trend signals are balanced across asset classes with no standout, an inflection point before the next big trend (possibly after the US election or Fed meetings).", "as_of": "2024-10-23", "reasoning": "Consolidation precedes new trends.", "claim_ids": ["MT086-C15-3"]},
+    {"view": "The summer 2024 defensive trend positioning resembles early 2020 (long bonds, short energy and commodities), raising the question of what it implies for a later equity drawdown.", "as_of": "2024-10-23", "reasoning": "Positioning is a signal of repricing recession expectations.", "claim_ids": ["MT086-C06-2", "MT086-C06-X1"]},
+    {"view": "With inflation near 2-2.5% the stock-bond correlation had returned to the classic risk-off pattern in 2024.", "as_of": "2024-10-23", "reasoning": "Without inflation, bonds are a pure safe haven.", "claim_ids": ["MT086-C09-1"]},
+    {"view": "Trend followers are positioned to adapt to whatever regime comes; the next macro regime is unknown.", "as_of": "2024-10-23", "reasoning": "Divergent environments favour trend.", "claim_ids": ["MT086-C11-2", "MT086-C11-1"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; veteran hedge fund manager",
+   "speaker_note": "Host who supplies index numbers, the Quantica numbers and several views (stock-bond correlation, 15% allocation, China policy).",
+   "fingerprint": ["trend_following", "diversification_risk_parity", "manager_selection_allocation", "policy_reaction_central_banks", "debt_cycle_long_term", "replication_indexing"],
+   "worldview_premises": [
+    {
+     "premise": "60/40 investors' protection from negative stock-bond correlation depended, largely unknowingly, on a secular falling-rate cycle, so it need not persist once that cycle ends; he doubts the persistent negative correlation of the early 2000s will return.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Secular falling-rate argument; no data.",
+     "claim_ids": ["MT086-C07-X1", "MT086-C09-2"]
+    },
+    {
+     "premise": "At high cash rates trend portfolios still earn the cash yield (collateral) plus trend returns and diversification, so the objection 'I can buy bonds at 5%' misses the benefit.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Investor conversations.",
+     "claim_ids": ["MT086-C13-1"]
+    },
+    {
+     "premise": "If investors cannot judge the rate regime, hold about 15% in trend as a core allocation; 2-3% allocations are too small to help in a crisis.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Quantica 55/35/10 versus 55/25/20 mixes as anchor; industry insiders would pick more.",
+     "claim_ids": ["MT086-C14-1", "MT086-C14-2"]
+    },
+    {
+     "premise": "Risk had come out of trend portfolios in late 2024 because of changed correlations, so the entry point is lower risk even in a drawdown; CTA replicators showed large tracking error to their benchmark indices in 2024.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation of the CTA space; no data.",
+     "claim_ids": ["MT086-C15-1", "MT086-C03-4"]
+    },
+    {
+     "premise": "The Fed plan is a 12-18 month cutting cycle to about 3-3.5%, still far above the previous low, and China trade policy continues whoever wins the US election.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "A Chicago Fed president podcast and policy continuity argument.",
+     "claim_ids": ["MT086-C05-3", "MT086-C12-2"]
+    },
+    {
+     "premise": "High-turnover systematic commodity shops (the Danish energy trader making 30,000 trades a day) profited from the 2022 energy price explosion.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Television programme anecdote.",
+     "claim_ids": ["MT086-C02-1"]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Default 15% core allocation to trend if the rate regime cannot be judged.", "why": "15% is where the allocation starts to be meaningful in a crisis.", "claim_ids": ["MT086-C14-2"]}
+   ],
+   "evidence_style": "Index return statistics and a report of the Quantica allocation numbers; asks the guest for evidence rather than presenting his own tests.",
+   "current_views": [
+    {"view": "Trend indices lagged equities in Oct 2024 (BTOP50 -1.5% month/+2.6% YTD; SG CTA about -2.1%/flat; SG Trend -3.25%/about -1%; short-term traders -0.67%); MSCI World +0.33%/+17.86%; S&P 500 +1.39%/+22.5%; global sovereign bonds -0.47%.", "as_of": "2024-10-22", "reasoning": "Reports data through Tuesday night.", "claim_ids": ["MT086-C03-2", "MT086-C03-3"]},
+    {"view": "October 2024 trend losses came from currency reversals (GBP, AUD, NZD) and fixed-income corrections, with bright spots in grains, gold and US equities.", "as_of": "2024-10-22", "reasoning": "Sector breakdown.", "claim_ids": ["MT086-C03-5"]},
+    {"view": "Stock-bond correlation will probably not revert to the persistent negative correlation of the early 2000s.", "as_of": "2024-10-23", "reasoning": "Falling-rate cycle that supported it has ended.", "claim_ids": ["MT086-C09-2", "MT086-C07-X1"]},
+    {"view": "Fed to cut over 12-18 months to about 3-3.5%.", "as_of": "2024-10-23", "reasoning": "Second-hand from a Chicago Fed president's podcast.", "claim_ids": ["MT086-C05-3"]},
+    {"view": "China trade policy will persist whoever wins the US election, limiting election impact.", "as_of": "2024-10-23", "reasoning": "Trump-era policy continued under Biden.", "claim_ids": ["MT086-C12-2"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Will stock-bond correlation revert to negative?",
+   "positions": [
+    {"speaker": "Katy Kaminski", "position": "With inflation around 2-2.5% in 2024 the classic risk-off pattern returned; correlation depends on inflation.", "claim_ids": ["MT086-C09-1", "MT086-C08-3"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Does not expect a return to the persistent negative correlation of the first decades of the century.", "claim_ids": ["MT086-C09-2", "MT086-C07-X1"]}
+   ]
+  },
+  {
+   "topic": "Which conditioning variable matters: inflation or cash-rate level?",
+   "positions": [
+    {"speaker": "Katy Kaminski", "position": "Her work conditions on inflation (Bonds Behaving Badly) while Quantica conditions on cash rates; related but distinct, so results do not transfer automatically.", "claim_ids": ["MT086-C13-X1", "MT086-C13-2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Treats the Quantica high-cash-rate result as supporting the idea that bonds at 5% do not replace trend.", "claim_ids": ["MT086-C13-1", "MT086-C14-1"]}
+   ]
+  },
+  {
+   "topic": "How large a trend allocation is sensible",
+   "positions": [
+    {"speaker": "Katy Kaminski", "position": "Size depends on regime and investors ask about size; supports Quantica's practical allocation discussion.", "claim_ids": ["MT086-C14-3", "MT086-C13-5"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "If unsure, hold about 15%; 2-3% allocations are too small to help; industry insiders would say more.", "claim_ids": ["MT086-C14-2"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Kaminski has not run the study of trend performance conditional on positive stock-bond correlation, so claims that trend would still help in that state rest on bond-signal analysis and Quantica's cash-rate split.", "claim_ids": ["MT086-C08-2", "MT086-C13-6"]},
+  {"issue": "The defensive-rotation paper conditions on equity drawdowns but the 2024 pivot had not (yet) been followed by one; the finding that bonds helped in every crisis comes from a limited sample of crises.", "claim_ids": ["MT086-C06-2", "MT086-C06-3"]},
+  {"issue": "Dispersion explanations (speed, asset allocation, carry) are qualitative; she says she has not studied the speed effect explicitly and the factor analysis is from 2018.", "claim_ids": ["MT086-C09-3", "MT086-C10-2"]},
+  {"issue": "Quantica's optimal mixes use simple assumptions and a 1990 sample; trend volatility is higher in high cash-rate regimes, which the mixes may understate in practice.", "claim_ids": ["MT086-C13-4", "MT086-C14-1"]},
+  {"issue": "Tension between 'trend is reactive, do not time it' and 'allocate when trend is in drawdown, read signal breadth for an inflection point'.", "claim_ids": ["MT086-C11-1", "MT086-C15-2", "MT086-C15-3"]},
+  {"issue": "The 15% rule of thumb is the host's personal conclusion, not a finding of the Quantica paper.", "claim_ids": ["MT086-C14-2"]}
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs these speakers say lead future trend returns: inflation prints (CPI uptick), commodity prices rebounding, China stimulus and supply disruptions for the next trend; Fed repricing and cash-rate level for the stock-bond correlation and for sizing the trend allocation; breadth of trend signals across asset classes (balanced means an inflection point); aggregate trend positioning (long bonds, short commodities means repricing of recession risk); stock-bond correlation sign. Horizon: next 12 months (2025) for the inflation and rates-pause view, years for the allocation. Reasoning: trend gains in divergent regimes after a consolidation, and unpriced outcomes (inflation vs soft landing) set the direction.",
+ "reader_inferences": [
+  "(reader) Kaminski's results imply that trend's diversification value for 60/40 is state-dependent on inflation/cash-rate regime; a testable corollary is higher trend allocations would have improved 60/40 Sharpe more in 1970s and 2022 than in 1990-2019.",
+  "(reader) Her claim that slower signals did better in 2024 implies the opposite ranking in a year with fast one-way crises, which would match crisis-alpha claims for faster signals.",
+  "(reader) Her 'what are investors overly hopeful about' heuristic is a narrative proxy for positioning crowding; it is not a quantitative signal.",
+  "(reader) Positioning pivot as signal (long bonds, short commodities) is a cross-sectional read of trend-follower aggregate book and could be tested with CFTC or CTA index data."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT086-C05-R1",
+   "chunk": "C05",
+   "speaker": "Katy Kaminski",
+   "quote": "especially Trend followers are very behavioral focused",
+   "claim": "Behavioural bias cannot be ignored when interpreting markets, especially for trend followers, who are very behaviour-focused: hope for a return to low rates magnifies sentiment swings during the regime transition.",
+   "mechanism": "behavioural_bias",
+   "asset_class": "multi",
+   "indicator": "sentiment swings; rate expectations",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "regime transition from low to higher rates",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT086-C06-R1",
+   "chunk": "C06",
+   "speaker": "Katy Kaminski",
+   "quote": "the bond market is smarter than the equity market",
+   "claim": "Trader commentary that the bond market is smarter than the equity market and that nervous investors go to bonds is consistent with her finding that bond trend contributed positively in every equity crisis period.",
+   "mechanism": "lead_lag",
+   "asset_class": "fixed income",
+   "indicator": "bond trend vs equity drawdown",
+   "horizon": "crisis periods",
+   "direction": "long or short bonds via trend",
+   "conditions": "equity crisis or drawdown",
+   "testable": "yes - bond trend contribution in equity drawdowns",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT086-C06-R2",
+   "chunk": "C06",
+   "speaker": "Katy Kaminski",
+   "quote": "ignoring equities altogether except for equities being the conditional variable",
+   "claim": "Method of her defensive-rotation paper: examine trend long/short positioning in non-equity asset classes during equity crisis periods and drawdowns, using equities only as the conditioning variable and not as a position.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "equity drawdown as conditioning variable",
+   "horizon": "crisis periods",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT086-C15-R1",
+   "chunk": "C15",
+   "speaker": "Katy Kaminski",
+   "quote": "you don't need it until you do",
+   "claim": "Investors who understand trend know it is a strategy you do not need until you do, which is why they should consider adding it when it is in drawdown rather than when it is up a lot.",
+   "mechanism": "allocation_timing",
+   "asset_class": "multi",
+   "indicator": "trend drawdown",
+   "horizon": "years",
+   "direction": "add to trend after drawdowns",
+   "conditions": "",
+   "testable": "yes - flows vs subsequent returns",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  }
+ ]
+}

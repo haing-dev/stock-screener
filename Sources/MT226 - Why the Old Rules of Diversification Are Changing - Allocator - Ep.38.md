@@ -5,8 +5,8 @@ date: 2026-08-20
 channel: "Top Traders Unplugged"
 url: 
 words: 10916
-claims: 52
-added_by_crosscheck: 6
+claims: 54
+added_by_crosscheck: 8
 corrections: 0
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Mike Pile (deputy head of BlackRock portfolio management group, ex-global CIO strategist, ex-US deputy national security adviser for international economics)", "Alan Dunn (host, Top Traders Unplugged)"]
@@ -21,6 +21,111 @@ tags: [source, layer0]
 **Approach:** regime shift, stock-bond correlation, multistrategy hedge funds, portable alpha, factor neutralisation, total portfolio approach, AI theme
 
 **Cross-check completeness estimate of first read:** 0.88 - the first reader caught nearly every guest idea (regime shift, stock-bond correlation, bonds as income, market-neutral diversifiers, multistrategy, quant crisis, portable alpha, TPA, AI breadth); it missed the QE risk-taking channel, the host's framing claims (capex vs buybacks, pod-shop Sharpe, equities vs bonds/commodities), the two-energy-shocks data point and the proprietary-data point.
+
+## Argument map
+
+**Episode thesis:** Pile argues that the 2010s demand-starved regime (pinned rates, QE, negative stock-bond correlation, compressed dispersion) has given way to a supply-driven scarcity regime driven by energy shocks, fiscal activism and the AI buildout, so bonds now provide income not duration diversification. The 60/40 should become a growth/AI core, income across public and private credit, and market-neutral systematic diversifiers, with systematic multi-strategy hedge funds at the core of the hedge fund book; AI bottleneck profits will dissipate but valuations are modest.
+
+### Mike Pile (Deputy head of BlackRock portfolio management group; ex-global CIO strategist; ex-US deputy national security adviser for international economics)
+Fingerprint: #approach/macro_fundamental_topdown #approach/regime_detection #approach/policy_reaction_central_banks #approach/fiscal_dominance #approach/structural_themes #approach/diversification_risk_parity #approach/portfolio_construction_stacking #approach/manager_selection_allocation
+_Speaker note: Speaks for himself and uses 'we' for BlackRock's house view; corporate framing may soften risks. Caption spelling of surname._
+
+**Worldview premises**
+- Regimes differ by whether supply or demand dominates; 2010s were demand-starved, today is supply-driven scarcity (energy shocks, supply chains, AI buildout). _[theoretical, stated; support: Contrast between 2014-2020 and 2024 experience]_ ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C02-1|C02-1]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C04-3|C04-3]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C05-X1|C05-X1]])
+- Stock-bond correlation depends on whether growth or inflation is the dominant risk; negative when growth dominates. _[empirical, stated; support: 2010s experience]_ ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C02-2|C02-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C03-1|C03-1]])
+- Policy pinned rates and QE pushed investors out the risk curve and suppressed both economic and market volatility. _[institutional, stated; support: Policy actions of the 2010s]_ ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C02-3|C02-3]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C02-X1|C02-X1]])
+- Suppressed volatility compressed dispersion, shrinking the alpha opportunity set; the 2010s were poor for hedge funds because cheap diversification (long bonds) was abundant. _[empirical, stated; support: Hedge fund performance in the 2010s]_ ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C03-2|C03-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C12-2|C12-2]])
+- Zero rates rewarded long duration everywhere: long bonds, risk parity, long-dated cash flow tech growth. _[empirical, stated; support: 2010s outperformers]_ ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C03-3|C03-3]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C03-R1|C03-R1]])
+- Policymakers fight the last crisis: the GFC fiscal response was seen as too small, so large fiscal activism followed; the 2016-20 recovery reinforced this. _[institutional, stated; support: First-hand government experience]_ ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C03-4|C03-4]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C04-1|C04-1]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C04-2|C04-2]])
+- In the short run factors of production are fixed; in the long run they move to where the opportunity is, so bottleneck profits dissipate. _[theoretical, stated; support: Economics principle]_ ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C07-4|C07-4]])
+- Breadth is key to active results (fundamental law of active management): breadth times forecast quality. _[theoretical, stated; support: Textbook law]_ ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C10-1|C10-1]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C15-2|C15-2]])
+- Pre-2007 quant strategies harvested factor exposures that drew down in stress; neutralising beta and known factors isolates alpha and is more resilient. _[experience, stated; support: BlackRock's quant-crisis experience; moderate stresses since]_ ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C11-1|C11-1]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C11-2|C11-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C12-1|C12-1]])
+
+**Chain: Demand-starved 2010s to portfolio construction**
+1. lack of aggregate demand → pinned rates and QE: central banks push investors up the risk curve ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C02-3|C02-3]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C02-X1|C02-X1]])
+2. pinned rates and QE → suppressed economic and market volatility: policy concerns purely on growth ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C02-3|C02-3]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C03-1|C03-1]])
+3. growth risk dominates → negative stock-bond correlation: bonds hedge stocks ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C02-2|C02-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C03-1|C03-1]])
+4. suppressed vol → compressed dispersion, weak alpha for active/hedge funds: opportunity set shrinks ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C03-2|C03-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C12-2|C12-2]])
+- Evidence: Experience at BlackRock 2014-2021 vs 2024
+- Fails when: Does not claim a data test
+
+**Chain: Supply-driven scarcity to higher rates, then maybe abundance**
+1. war, energy shocks, supply chains, AI buildout → real-resource bottlenecks: chips, energy and inputs scarce ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C04-3|C04-3]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C05-1|C05-1]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C05-X1|C05-X1]])
+2. AI capex, deficits, IG, housing, consumer finance → heavy capital-market demand pushes up rates: competition for capital ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C05-2|C05-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C06-3|C06-3]])
+3. AI productivity handoff → scarcity to abundance, disinflation: 1990s analogy; direction of r-star unclear ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C05-3|C05-3]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C06-4|C06-4]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C07-1|C07-1]])
+- Evidence: Fragmentary evidence: incremental investment gives incremental earnings
+- Fails when: If productivity gains don't outweigh the resource demands
+
+**Chain: AI bottleneck earnings: dissipate, but multiples re-rate**
+1. chokepoint firms earn extraordinary profits → profits dissipate over quarters to years: new entrants, expansion ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C07-3|C07-3]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C07-4|C07-4]])
+2. market doubts durability → low multiples on peak earnings (memory firms under 10x forward): scepticism ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C07-2|C07-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C07-5|C07-5]])
+3. sustainable earnings become visible → multiples re-rate higher: demand for AI still above supply ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C07-5|C07-5]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C08-1|C08-1]])
+- Evidence: Forward valuations, 2026 leadership of suppliers over hyperscalers
+- Fails when: Demand outstripping supply stops
+
+**Chain: Why multi-strategy beats combining separate funds**
+1. many alpha streams in one portfolio → higher breadth: fundamental law of active management ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C10-1|C10-1]])
+2. one manager controls all streams → dynamic reallocation: end investors combining funds cannot ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C10-2|C10-2]])
+- Evidence: Theoretical
+- Fails when: Severe stress (answered with satellite directional macro/long-short)
+
+**Decision process**
+- [portfolio] Growth equity (US equities, tech/AI) as the core, overweight US equities, sized appropriately.. Why: Growth exposure is the core return source ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C08-2|C08-2]])
+- [portfolio] Shift fixed income from duration to income: corporate and EM credit and private markets.. Why: Bonds no longer a duration diversifier ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C08-3|C08-3]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C08-4|C08-4]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C09-1|C09-1]])
+- [portfolio] Add market-neutral low-net strategies (hedge funds, liquid alts) as diversifiers.. Why: Diversification is scarce; zero beta less growth-sensitive; not as clean as the 10y was ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C08-5|C08-5]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C09-2|C09-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C09-3|C09-3]])
+- [portfolio] Replace 60/40 with growth core, income across public/private, and diversifiers.. Why: Alternative to 60/40 ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C14-1|C14-1]])
+- [portfolio] Total portfolio approach: build around risk drivers or themes (growth/AI, duration, income) not asset-class buckets.. Why: Underlying drivers ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C14-2|C14-2]])
+- [portfolio] Systematic multi-strategy at the core of a hedge fund programme, with directional macro and long-short equity satellites.. Why: Breadth, dynamic optimisation, change of risk shape ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C10-2|C10-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C10-3|C10-3]])
+- [signal] Neutralise beta and well-known factors such as momentum to isolate pure alpha.. Why: Resilience in stress ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C11-2|C11-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C12-1|C12-1]])
+- [portfolio] Portable alpha: beta via index vehicle plus market-neutral long-short overlay; long-only active struggles in concentrated markets.. Why: Shorts let managers use dispersion ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C13-1|C13-1]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C13-2|C13-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C13-R1|C13-R1]])
+- [research] Use AI to widen analyst coverage and idea velocity, and improve the information mosaic with proprietary data.. Why: Breadth drives results ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C15-1|C15-1]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C15-2|C15-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C15-X1|C15-X1]])
+- [research] Watch real-time data to judge the AI productivity handoff instead of relying on forecasts.. Why: Forecasts highly uncertain ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C06-1|C06-1]])
+
+**Evidence style:** Regime narrative from first-hand policy and investing experience; economic principles; firm house view; limited numerical data (memory firms below 10x).
+
+**Views at the time**
+- (2026-08) Overweight US equities; keep growth/AI as core.. Reasoning: Demand for AI above supply, earnings trajectory healthy though below peak ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C08-1|C08-1]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C08-2|C08-2]])
+- (2026-08) Medium-term disinflation from technology is likely; direction of r-star unknowable.. Reasoning: 1990s analogy ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C07-1|C07-1]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C06-4|C06-4]])
+- (2026-08) Near term, upward pressure on inflation and rates.. Reasoning: Resource and capital-market demand ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C06-3|C06-3]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C05-2|C05-2]])
+- (2026-08) AI-theme forward valuations are not stretched; 2026 leadership is with chokepoint suppliers, not hyperscalers.. Reasoning: Memory firms under 10x forward earnings ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C07-2|C07-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C07-3|C07-3]])
+- (2026-08) Hedge funds regain allocator interest: diversification scarce, dispersion larger.. Reasoning: Dispersion plus scarce diversification ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C12-3|C12-3]])
+- (2026-08) AI productivity evidence is fragmentary: too early to say the handoff has occurred.. Reasoning: Incremental investment leading to incremental earnings ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C06-2|C06-2]])
+
+### Alan Dunn (Host of Allocator series (Top Traders Unplugged))
+Fingerprint: #approach/portfolio_construction_stacking #approach/manager_selection_allocation #approach/regime_detection #approach/structural_themes
+_Speaker note: Host framings, many put as questions; treated as context unless stated as view._
+
+**Worldview premises**
+- Allocators hesitated over hedge funds that lagged equities; track records look better combined with equity beta, driving extension and portable alpha. _[experience, stated; support: Observation of allocator behaviour]_ ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C12-4|C12-4]])
+- Hyperscaler earnings that funded buybacks now fund capex: ample capital turned to capital constraints. _[empirical, stated; support: Framing question]_ ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C04-X1|C04-X1]])
+
+**Decision process**
+- [other] Pod-shop multi-strategies sell consistent low-vol returns with high Sharpe; the open question is stress performance.. Why: Host question on whether they need pairing ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C10-X1|C10-X1]])
+
+**Evidence style:** Questions to the guest; no analysis of own.
+
+**Views at the time**
+- (2026-08) A recent AI momentum reversal produced margin calls at a hedge fund, echoing 2007 quant leverage stress.. Reasoning: Observation of last couple of weeks ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C11-3|C11-3]])
+- (2026-08) Bond yields and commodities adjusted to the supply regime while equities kept rising; possible lag.. Reasoning: Question posed ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C08-X1|C08-X1]])
+
+### Disagreements
+- **Whether equities have adjusted to the new regime**: Alan Dunn: Bonds and commodities have repriced to the supply regime while equities carried on, so equities may not have adjusted. ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C08-X1|C08-X1]]); Mike Pile: Equities (growth/AI) remain the portfolio core; overweight US equities; valuations of AI-theme firms are not stretched. ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C08-2|C08-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C07-2|C07-2]])
+- **Do pod-shop multi-strategies need pairing in stress**: Alan Dunn: Pod shops sell consistent low-vol returns; question whether they deliver in severe stress. ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C10-X1|C10-X1]]); Mike Pile: Systematic multi-strategy at the core; complement with directional macro and long-short satellites depending on goals. ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C10-3|C10-3]])
+- **Are hedge fund stress events like 2007**: Alan Dunn: Recent margin call at a hedge fund after an AI momentum reversal echoes 2007 leverage stress. ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C11-3|C11-3]]); Mike Pile: Nothing of the 2006-07 magnitude since; factor-neutral construction is more resilient. ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C12-1|C12-1]])
+
+### Gaps and conflicts
+- Claims that factor-neutral systematic portfolios are 'more resilient' are asserted with no performance numbers. ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C11-2|C11-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C12-1|C12-1]])
+- The BlackRock house view sets growth equity as core and overweight US equities while also saying AI bottleneck profits dissipate; sizing is only 'appropriate'. ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C08-2|C08-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C07-4|C07-4]])
+- Direction of the real neutral rate is stated as unknowable, yet the near-term view is upward rates. ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C06-4|C06-4]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C06-3|C06-3]])
+- The claim that market-neutral strategies are best remaining diversifier is acknowledged as less straightforward than the 10-year Treasury but not quantified. ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C09-3|C09-3]])
+- Hedge-fund resilience argument is by a BlackRock officer about BlackRock's own products. ([[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C10-2|C10-2]], [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38#^MT226-C15-1|C15-1]])
+
+### Forward-looking inputs (reader synthesis)
+Observable inputs: AI productivity data appearing in real time (earnings, productivity), duration of energy/supply shocks, fiscal deficits and capital-market demand, rate path and real neutral rate, equity dispersion and concentration. Horizon: quarters to years for bottleneck profits; medium-term for disinflation.
+
+### Reader inferences (not stated by the speakers)
+- Stock-bond correlation sign is a function of the dominant risk (growth vs inflation), implying a testable regime variable.
+- Sets dispersion and diversification scarcity as the two reasons for hedge fund demand.
 
 ## Coverage
 
@@ -80,6 +185,10 @@ tags: [source, layer0]
   > policy makers similarly run the risk of always you know fighting the last crisis
   asset: multi · direction: more fiscal stimulus · horizon: years · conditions: after prolonged under-stimulated recovery · testable: no: narrative about policy reaction function · confidence: medium
   ^MT226-C03-4
+- **Mike Pile** Pile: in the 2010s a balanced 60/40 portfolio offered both attractive returns and attractive diversification, because long duration paid on both the bond and equity side.  #mech/new _(added by map cross-check)_
+  > relatively balanced portfolios call it a traditional uh 60/40 offered really attractive return
+  indicator: 60/40 in 2010s · asset: multi · horizon: 2010s · conditions: zero rates, negative stock-bond correlation · testable: yes - historical returns · confidence: high
+  ^MT226-C03-R1
 
 ### C04
 - **Mike Pile** The 2016-2020 recovery, helped by the early-Trump fiscal expansion, showed that fiscal policy can pull economies back to potential, reinforcing fiscal activism.  #mech/fiscal_debt
@@ -256,6 +365,10 @@ tags: [source, layer0]
   > you're getting your beta exposure and then you're porting on top of that a long short um you know market neutral strategy
   asset: equities · direction: index beta plus market-neutral overlay · testable: yes: backtestable overlay · confidence: high
   ^MT226-C13-2
+- **Mike Pile** Pile: portable alpha is customised per client, by choosing the beta vehicle and the long-short alpha overlay and combining them.  #mech/new _(added by map cross-check)_
+  > selection of underlying beta vehicle selection of overlying alpha vehicle
+  indicator: beta plus alpha overlay · asset: hedge_funds · testable: no · confidence: medium
+  ^MT226-C13-R1
 
 ### C14
 - **Mike Pile** Replace 60/40 with growth equity core, income-focused diversified fixed income across public and private markets, and diversifiers such as market-neutral hedge funds and liquid alts.  #mech/risk_management

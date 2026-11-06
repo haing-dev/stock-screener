@@ -1,0 +1,734 @@
+{
+ "source_id": "MT168",
+ "episode_thesis": "Git argues the March 2026 Iran-war shock was a risk-off event (stocks and bonds sold off together, oil spiked at the front of the curve only) and that CTAs should hedge a common first factor (duration) instead of scaling every position when spreads widen. A flow-based excess-volatility paper (value, noise and trend traders) is reviewed and critiqued, and CTA market-universe breadth is framed by correlation and capacity.",
+ "speakers": [
+  {
+   "name": "Yoav Git",
+   "role": "Systematic fixed-income researcher/trader and co-host of the Systematic Investor series; works with Tom Babbage on commodities",
+   "speaker_note": "Caption labels the name Yuval/Yoav; ledger uses Yoav Git. Fixed income is his area; commodity view is relayed from colleague Tom Babbage.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "portfolio_construction_stacking",
+    "costs_execution",
+    "position_sizing_vol_target",
+    "trend_following",
+    "liquidity_flows",
+    "market_internals_leading"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Inflation regimes make the stock-bond correlation positive, so bonds fail as an equity hedge.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "March 2026 selloffs in both; earlier talks",
+     "claim_ids": [
+      "MT168-C04-2"
+     ]
+    },
+    {
+     "premise": "Western fiscal stress makes inflation a way to erode debt, so higher yields are near-inevitable but untimeable.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Weak 2-year auction; personal view",
+     "claim_ids": [
+      "MT168-C05-2"
+     ]
+    },
+    {
+     "premise": "Back-of-curve oil reflects fundamental supply and demand and is insulated from news-cycle shocks ('weather vs climate').",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Colleague's framing; Brent 3y barely moved",
+     "claim_ids": [
+      "MT168-C07-1",
+      "MT168-C03-2"
+     ]
+    },
+    {
+     "premise": "Most volatility is noise; the EMH holds either because price is right (Shiller) or because there is no true price.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Review of the excess-volatility paper",
+     "claim_ids": [
+      "MT168-C12-1",
+      "MT168-C12-X5"
+     ]
+    },
+    {
+     "premise": "Markets are populated by three flows: value traders revert to target, noise traders inject volatility, trend followers trade returns.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Flow model in the paper",
+     "claim_ids": [
+      "MT168-C12-2"
+     ]
+    },
+    {
+     "premise": "Genuine jumps in fundamental value (payrolls, weekend war) move prices without trading.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Examples: payroll liquidity shrinks then gaps, weekend Iran attack",
+     "claim_ids": [
+      "MT168-C14-1"
+     ]
+    },
+    {
+     "premise": "Value traders also face risk limits, so an unbounded (cubic) response is unrealistic.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Risk-management reasoning",
+     "claim_ids": [
+      "MT168-C15-1"
+     ]
+    },
+    {
+     "premise": "Capacity limits risk per market so footprint remains unwindable; more AUM pushes risk into the biggest markets.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Industry practice",
+     "claim_ids": [
+      "MT168-C15-2"
+     ]
+    },
+    {
+     "premise": "CTA return is diversification times average market Sharpe; the value of many markets depends on their correlation.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Blog post with Tom Babbage",
+     "claim_ids": [
+      "MT168-C16-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Oil shock to fixed income",
+     "steps": [
+      {
+       "from": "front-end supply constraint",
+       "to": "oil spike at front of curve; back barely moves",
+       "why": "long run over-producing (105 vs 102 mb/d)",
+       "claim_ids": [
+        "MT168-C03-2"
+       ]
+      },
+      {
+       "from": "oil is ~6% direct inflation weight plus food and manufacturing",
+       "to": "oil curve informs inflation curve",
+       "why": "secondary effects",
+       "claim_ids": [
+        "MT168-C07-2"
+       ]
+      },
+      {
+       "from": "bond sell-offs at long ends in US, UK, EM",
+       "to": "risk-off event not only inflation expectations",
+       "why": "TY 114 to 110 is more than a year's move in weeks; gold sold off too",
+       "claim_ids": [
+        "MT168-C03-3",
+        "MT168-C03-R1"
+       ]
+      }
+     ],
+     "evidence": "Curve shape data and single episode",
+     "fails_when": "Narrative changes with each tweet",
+     "claim_ids": [
+      "MT168-C03-2",
+      "MT168-C03-3",
+      "MT168-C07-2"
+     ]
+    },
+    {
+     "topic": "CTA crisis de-risking: scale everything vs hedge the first factor",
+     "steps": [
+      {
+       "from": "shock lifts volatility and spreads (EM about 10bp)",
+       "to": "CTAs scale every position down per market",
+       "why": "rules-based volatility scaling",
+       "claim_ids": [
+        "MT168-C08-1"
+       ]
+      },
+      {
+       "from": "correlations spike so assets become substitutes",
+       "to": "selling Treasury futures hedges the common first factor as well as shrinking the whole book",
+       "why": "first factor dominates volatility",
+       "claim_ids": [
+        "MT168-C08-2",
+        "MT168-C09-3"
+       ]
+      },
+      {
+       "from": "closing a long-short alternative book",
+       "to": "cost of about 5% illustrative",
+       "why": "wide spreads, thin liquidity",
+       "claim_ids": [
+        "MT168-C09-2",
+        "MT168-C09-1"
+       ]
+      },
+      {
+       "from": "constrained optimisation of factor vs specific risk",
+       "to": "probably not worth it for a liquid-market CTA",
+       "why": "can simply scale down",
+       "claim_ids": [
+        "MT168-C10-X4"
+       ]
+      }
+     ],
+     "evidence": "Own March 2026 trading experience; contrasts with discretionary risk practice (Brevan)",
+     "fails_when": "Liquidity crisis where illiquid positions cannot be exited (host's objection)",
+     "claim_ids": [
+      "MT168-C08-1",
+      "MT168-C08-2",
+      "MT168-C09-2",
+      "MT168-C09-3",
+      "MT168-C10-X4",
+      "MT168-C10-1"
+     ]
+    },
+    {
+     "topic": "Crisis flow sequence",
+     "steps": [
+      {
+       "from": "weekend news gaps price",
+       "to": "CTA flows when markets open as volatility gaps",
+       "why": "models cut risk",
+       "claim_ids": [
+        "MT168-C10-2"
+       ]
+      },
+      {
+       "from": "falling bonds",
+       "to": "value traders closed out (long squeeze)",
+       "why": "cannot hold losing positions",
+       "claim_ids": [
+        "MT168-C11-1"
+       ]
+      },
+      {
+       "from": "stabilisation",
+       "to": "real money buys",
+       "why": "value buyers",
+       "claim_ids": [
+        "MT168-C11-1"
+       ]
+      },
+      {
+       "from": "escalation (South Pars)",
+       "to": "renewed selling; gilt and Treasury squeezes",
+       "why": "repeat of the sequence",
+       "claim_ids": [
+        "MT168-C11-1"
+       ]
+      }
+     ],
+     "evidence": "Observed March 2026 episode",
+     "fails_when": "Single episode, no flow data shown",
+     "claim_ids": [
+      "MT168-C10-2",
+      "MT168-C11-1"
+     ]
+    },
+    {
+     "topic": "Pendulum of trend and value",
+     "steps": [
+      {
+       "from": "through the centre of value",
+       "to": "trend followers dominate",
+       "why": "impulse swings fast",
+       "claim_ids": [
+        "MT168-C13-2"
+       ]
+      },
+      {
+       "from": "far from value",
+       "to": "value traders dominate and push back",
+       "why": "trend runs out of steam",
+       "claim_ids": [
+        "MT168-C13-2"
+       ]
+      },
+      {
+       "from": "two balance points",
+       "to": "markets spend time over- or under-priced",
+       "why": "paper's result",
+       "claim_ids": [
+        "MT168-C13-2",
+        "MT168-C13-1"
+       ]
+      }
+     ],
+     "evidence": "Paper calibrated with EM algorithm on monthly data",
+     "fails_when": "Genuine value jumps, risk limits on value traders",
+     "claim_ids": [
+      "MT168-C13-1",
+      "MT168-C13-2",
+      "MT168-C14-1",
+      "MT168-C15-1"
+     ]
+    },
+    {
+     "topic": "Capacity and market-universe breadth",
+     "steps": [
+      {
+       "from": "high correlation among chosen markets",
+       "to": "few big markets lose little diversification",
+       "why": "plateau reached quickly",
+       "claim_ids": [
+        "MT168-C16-1"
+       ]
+      },
+      {
+       "from": "low-correlation hand-picked markets",
+       "to": "capacity pushes risk to big markets",
+       "why": "effective breadth shrinks",
+       "claim_ids": [
+        "MT168-C16-1"
+       ]
+      },
+      {
+       "from": "index replication",
+       "to": "high correlation is the aim",
+       "why": "replicating a CTA at 80% correlation is accepted",
+       "claim_ids": [
+        "MT168-C16-2"
+       ]
+      }
+     ],
+     "evidence": "Blog post with Tom Babbage",
+     "fails_when": "Replicators' tracking error (host)",
+     "claim_ids": [
+      "MT168-C16-1",
+      "MT168-C16-2",
+      "MT168-C16-X6"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "risk",
+     "practice": "Scale each market down in stress by volatility (standard CTA); alternative: hedge the common first factor while limiting specific risk per market.",
+     "why": "Reduce cost in crises",
+     "claim_ids": [
+      "MT168-C08-1",
+      "MT168-C08-2",
+      "MT168-C09-3"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Time of day of execution matters in a $20-25 oil daily range, making tracking of one's own model hard.",
+     "why": "Intraday volatility staggering",
+     "claim_ids": [
+      "MT168-C04-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Scenario analysis back to 1998 for surprise volatility: March 2026 ranked at the top.",
+     "why": "Stress test of model risk",
+     "claim_ids": [
+      "MT168-C04-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Estimate noise, value and trend populations with the EM algorithm (unlabelled mixtures).",
+     "why": "Calibration tool in the paper",
+     "claim_ids": [
+      "MT168-C02-X1",
+      "MT168-C13-1"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Choose market universe by correlation and capacity: correlated big markets for index-like CTA; low-correlation markets need capacity thinking.",
+     "why": "Return = diversification x average Sharpe",
+     "claim_ids": [
+      "MT168-C16-1",
+      "MT168-C15-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Limit risk per market so the footprint can be unwound in a crisis.",
+     "why": "Avoid trading against oneself",
+     "claim_ids": [
+      "MT168-C15-2"
+     ]
+    }
+   ],
+   "evidence_style": "First-hand trading experience of March 2026, literature review of a flow-model paper, and simple economic reasoning; scenario analysis on history.",
+   "current_views": [
+    {
+     "view": "March 2026 was a risk-off event, not just inflation: bonds sold off as much as equities and gold fell.",
+     "as_of": "2026-03-25",
+     "reasoning": "Long-end sell-off, EM back of curve",
+     "claim_ids": [
+      "MT168-C03-3",
+      "MT168-C04-2",
+      "MT168-C03-R1"
+     ]
+    },
+    {
+     "view": "Higher yields are near-inevitable (fiscal stress, 2-year auction weakness) but timing unknowable.",
+     "as_of": "2026-03-25",
+     "reasoning": "Debt erosion via inflation",
+     "claim_ids": [
+      "MT168-C05-2"
+     ]
+    },
+    {
+     "view": "Fixed-income trend trading has been difficult since 2023: moves reverse violently within the month.",
+     "as_of": "2026-03-25",
+     "reasoning": "2022 clean short vs choppy since",
+     "claim_ids": [
+      "MT168-C05-3"
+     ]
+    },
+    {
+     "view": "Oil: front-end spike due to supply constraints; the long end structurally oversupplied.",
+     "as_of": "2026-03-25",
+     "reasoning": "105 vs 102 mb/d",
+     "claim_ids": [
+      "MT168-C03-2"
+     ]
+    },
+    {
+     "view": "The flow-model paper's calibration (noise first order, value second, trend negligible) matches the view that CTA footprints are small.",
+     "as_of": "2026-03-25",
+     "reasoning": "No autocorrelation created",
+     "claim_ids": [
+      "MT168-C13-1"
+     ]
+    },
+    {
+     "view": "Critique of the paper: ignores genuine jumps, cubic value response, monthly data, no predictive use.",
+     "as_of": "2026-03-25",
+     "reasoning": "Examples: payroll, weekend",
+     "claim_ids": [
+      "MT168-C14-1",
+      "MT168-C15-1",
+      "MT168-C14-R1",
+      "MT168-C15-R1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host and CTA industry commentator (former hedge fund manager)",
+   "speaker_note": "Host states his own opinions in the news round, trend-barometer data, and in objections to the guest.",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "regime_detection",
+    "positioning_crowding",
+    "replication_indexing",
+    "behavioral_sentiment"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Narratives are unpredictable (Danish election, gold in the Iran war), which supports a rules-based approach.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Anecdote",
+     "claim_ids": [
+      "MT168-C02-1",
+      "MT168-C03-1"
+     ]
+    },
+    {
+     "premise": "Short-window dispersion between CTAs is largely initial-positioning luck, not model quality.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation",
+     "claim_ids": [
+      "MT168-C03-X2"
+     ]
+    },
+    {
+     "premise": "CTAs only lose less than bonds in surprises; they cannot claim protection.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "March 2026 numbers",
+     "claim_ids": [
+      "MT168-C05-1",
+      "MT168-C06-3"
+     ]
+    },
+    {
+     "premise": "Core-market CTAs can cut duration cheaply in stress; alternative-market CTAs face higher costs, hidden in monthly performance.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Market-universe paper discussion",
+     "claim_ids": [
+      "MT168-C09-1"
+     ]
+    },
+    {
+     "premise": "Keeping illiquid positions hedged with futures is dangerous in a liquidity crisis (correlations go to one, exits close).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning",
+     "claim_ids": [
+      "MT168-C10-1"
+     ]
+    },
+    {
+     "premise": "In practice replicators have modest correlation to the CTA index and substantial tracking error.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Numbers cited from prior studies (not shown)",
+     "claim_ids": [
+      "MT168-C16-X6"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Fragility signals in March 2026",
+     "steps": [
+      {
+       "from": "private credit funds gate on redemptions",
+       "to": "fragility adds to market stress",
+       "why": "redemptions exceed liquidity",
+       "claim_ids": [
+        "MT168-C06-1"
+       ]
+      },
+      {
+       "from": "energy shock",
+       "to": "may be rationing rather than price",
+       "why": "Europe and Egypt vulnerable",
+       "claim_ids": [
+        "MT168-C06-2"
+       ]
+      }
+     ],
+     "evidence": "News and anecdotes",
+     "fails_when": "Not tested",
+     "claim_ids": [
+      "MT168-C06-1",
+      "MT168-C06-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Track the trend barometer (52 over 44 markets) and CTA indices for breadth and relative results.",
+     "why": "Breadth gauge",
+     "claim_ids": [
+      "MT168-C06-3"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Event-driven reversals around announcements are hard for rules to anticipate; apparent front-running is noted but deferred.",
+     "why": "Manipulation topic deferred",
+     "claim_ids": [
+      "MT168-C04-X3"
+     ]
+    }
+   ],
+   "evidence_style": "Narrative and index data; objections framed from the CTA industry.",
+   "current_views": [
+    {
+     "view": "Industry lost little in March 2026; BTOP50 -2.25%, SG CTA -2%, SG Trend -2.6%; MSCI World -6%, bonds -2%, S&P -4.6% in March.",
+     "as_of": "2026-03-25",
+     "reasoning": "Index data as of Monday evening",
+     "claim_ids": [
+      "MT168-C06-3"
+     ]
+    },
+    {
+     "view": "Gold sold off both at war start and at de-escalation, which supports a rules-based approach.",
+     "as_of": "2026-03-25",
+     "reasoning": "Observation",
+     "claim_ids": [
+      "MT168-C03-1"
+     ]
+    },
+    {
+     "view": "Not a pure 2022 repeat claim; CTAs cannot claim protection.",
+     "as_of": "2026-03-25",
+     "reasoning": "Institutional question",
+     "claim_ids": [
+      "MT168-C05-1"
+     ]
+    },
+    {
+     "view": "Energy shocks can be about availability, not just price.",
+     "as_of": "2026-03-25",
+     "reasoning": "European rationing",
+     "claim_ids": [
+      "MT168-C06-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Cost of crisis de-risking and the right universe",
+   "positions": [
+    {
+     "speaker": "Yoav Git",
+     "position": "Scaling every position is expensive in alternative markets (closing a long-short book could cost on the order of 5%); a factor hedge via Treasury futures is better.",
+     "claim_ids": [
+      "MT168-C08-1",
+      "MT168-C09-2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "For core-market CTAs this is cheap; the problem is specific to alternative markets and is hidden in monthly returns.",
+     "claim_ids": [
+      "MT168-C09-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Hedging with liquid futures while holding illiquid positions",
+   "positions": [
+    {
+     "speaker": "Yoav Git",
+     "position": "Hedge first-factor risk with liquid duration while managing specific risk.",
+     "claim_ids": [
+      "MT168-C09-3",
+      "MT168-C08-2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "In a liquidity crisis correlations go to one and illiquid exits close, so this risk is large.",
+     "claim_ids": [
+      "MT168-C10-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "How CTA replication performs",
+   "positions": [
+    {
+     "speaker": "Yoav Git",
+     "position": "Replicating a CTA index at 80% correlation is accepted while S&P demands 99%.",
+     "claim_ids": [
+      "MT168-C16-2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "In practice replicators' correlation is modest and tracking error substantial.",
+     "claim_ids": [
+      "MT168-C16-X6"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "The 5% cost of closing a long-short alternative book is illustrative ('let's say'), not measured.",
+   "claim_ids": [
+    "MT168-C09-2"
+   ]
+  },
+  {
+   "issue": "Git 'does not have the model' for the factor-hedge idea; no test shown.",
+   "claim_ids": [
+    "MT168-C08-1",
+    "MT168-C10-X4"
+   ]
+  },
+  {
+   "issue": "Flow sequence in March (CTA, value close-out, real money, squeeze) is narrated without flow data.",
+   "claim_ids": [
+    "MT168-C10-2",
+    "MT168-C11-1"
+   ]
+  },
+  {
+   "issue": "Paper's calibration result (trend negligible) sits oddly with Git's remark that CTAs feature prominently in such models; the reader must reconcile prominence in the model structure with negligible estimated contribution.",
+   "claim_ids": [
+    "MT168-C11-2",
+    "MT168-C13-1"
+   ]
+  },
+  {
+   "issue": "Back-of-curve oil is insulated 'weather vs climate' is attributed to a colleague and not evidenced.",
+   "claim_ids": [
+    "MT168-C07-1"
+   ]
+  },
+  {
+   "issue": "Unverified: private credit gating, apparent pre-announcement trading in oil.",
+   "claim_ids": [
+    "MT168-C06-1",
+    "MT168-C04-X3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "Observable inputs: spreads and liquidity costs in EM rates, front vs back of oil curve, stock-bond correlation, auction demand, CTA flows after volatility gaps, value-trader stop-outs. Horizon: weeks for flows, years for fiscal-driven yield rise.",
+ "reader_inferences": [
+  "The flow model attributes first-order volatility to noise and negligible footprint to trend followers, which means trend following cannot be justified as a major source of price formation by this paper; the paper uses monthly data so cannot settle daily dynamics.",
+  "Git's proposal is a risk-management rule change (factor-based de-risking) rather than a forecast."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT168-C03-R1",
+   "chunk": "C03",
+   "speaker": "Yoav Git",
+   "quote": "behaving in a way that you wouldn't expect gold to behave in an inflation based",
+   "claim": "Git: gold and long-term bonds behaved in ways inconsistent with a pure inflation-expectations story in March 2026, which indicates a risk-off event in addition to inflation narrative.",
+   "mechanism": "narrative_vs_risk_off",
+   "asset_class": "commodities",
+   "indicator": "gold behaviour in oil shock",
+   "horizon": "weeks",
+   "direction": "",
+   "conditions": "March 2026 Iran war",
+   "testable": "partly - single episode",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "sonnet-map"
+  },
+  {
+   "claim_id": "MT168-C14-R1",
+   "chunk": "C14",
+   "speaker": "Yoav Git",
+   "quote": "I don't like going all out to disprove something.",
+   "claim": "Git: the flow paper sets out to disprove the efficient market hypothesis; in reality markets are a mixture of price-driven flows, flows and genuine changes in fundamental value.",
+   "mechanism": "model_critique",
+   "asset_class": "multi",
+   "indicator": "flow model vs EMH",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "excess-volatility paper",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-map"
+  },
+  {
+   "claim_id": "MT168-C15-R1",
+   "chunk": "C15",
+   "speaker": "Yoav Git",
+   "quote": "these models are not useful for providing any prediction",
+   "claim": "Git: such flow models, as they stand, offer neither prediction nor a way to improve a trading model.",
+   "mechanism": "model_critique",
+   "asset_class": "multi",
+   "indicator": "flow models",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "monthly data, long horizon",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-map"
+  }
+ ]
+}

@@ -1,0 +1,646 @@
+{
+ "source_id": "MT096",
+ "episode_thesis": "Dunne and Kaastrup-Larsen argue the 2025 trend-following drawdown is statistically normal (Man paper) and not caused by crowding or decay, and that a long-vol plus trend blend may help but pure trend remains preferable to the host. In macro, Dunne argues fiscal deficits have decoupled from the cycle and keep long-term yields under upward pressure, while family-office portfolios look diversified but act like equity beta.",
+ "speakers": [
+  {
+   "name": "Alan Dunne",
+   "role": "Systematic macro commentator (Archive Capital), regular guest co-host",
+   "speaker_note": "Caption 'Alan Don'. Ledger correction: the C02 trend-barometer update ('trim router finished at 57') is the host's, not Alan's. Host's 'at Don 50-year record' (C08) is the host speaking.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "fiscal_dominance",
+    "debt_cycle_long_term",
+    "trend_following",
+    "research_robustness_overfitting",
+    "behavioral_sentiment",
+    "diversification_risk_parity",
+    "regime_detection"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Fiscal deficits have structurally decoupled from the business cycle (7-8% of GDP at near full employment) and political appetite for austerity is nil, so supply and term-premium pressure point to higher long-term yields.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Deficit-vs-unemployment chart; Eichengreen's pessimism; UK welfare U-turn; his own piece 'all roads lead to higher yields'.",
+     "claim_ids": [
+      "MT096-C03-4",
+      "MT096-C04-2",
+      "MT096-C04-3",
+      "MT096-C04-4",
+      "MT096-C04-X1",
+      "MT096-C03-R1"
+     ]
+    },
+    {
+     "premise": "Dip-buying sentiment is strong: the 2025 S&P rebound from a 21% drawdown in 57 days came without Fed easing, unlike 1998 and 2020.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical analogues (1998 in 61 days, Covid).",
+     "claim_ids": [
+      "MT096-C01-1",
+      "MT096-C01-X1"
+     ]
+    },
+    {
+     "premise": "A trend drawdown of the current size is statistically normal for a 0.5 Sharpe strategy; narratives about choppy markets are easy to attach and often just randomness.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Man and Capstone paper statistics: ~80% chance of a 20% drawdown over 25 years; SG Trend Index fell >15% over 12m only twice in 25 years; past choppy periods (2011-12, 2016-19) ended.",
+     "claim_ids": [
+      "MT096-C06-2",
+      "MT096-C07-2",
+      "MT096-C07-5",
+      "MT096-C07-6",
+      "MT096-C07-R1",
+      "MT096-C06-3",
+      "MT096-C07-1"
+     ]
+    },
+    {
+     "premise": "Trend performance cannot be forecast from a macro scenario; trends emerge when they emerge.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "2022 looked set for higher macro volatility, but 2023-25 had range-bound bonds and four recession scares.",
+     "claim_ids": [
+      "MT096-C08-1"
+     ]
+    },
+    {
+     "premise": "Drawdown-based timing of managers loses return, and statistics rarely persuade sceptics: staying invested requires prior conviction.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Man paper analysis; experience with allocators.",
+     "claim_ids": [
+      "MT096-C07-4",
+      "MT096-C08-X1",
+      "MT096-C09-X1"
+     ]
+    },
+    {
+     "premise": "Family-office portfolios look diversified but are mostly equity/growth beta, with little commodity or convexity exposure.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "UBS 2025 family office asset-allocation chart (about 4% hedge funds, under 1% commodities).",
+     "claim_ids": [
+      "MT096-C11-2",
+      "MT096-C11-3",
+      "MT096-C12-1",
+      "MT096-C12-X1",
+      "MT096-C11-R1"
+     ]
+    },
+    {
+     "premise": "Fast trend following decayed since the 70s-80s and pairs trading since the 2000s, while trend following and equity-factor long-short had tough but recoverable drawdowns.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Man paper.",
+     "claim_ids": [
+      "MT096-C06-1"
+     ]
+    },
+    {
+     "premise": "Individual managers have had worse drawdowns than the index, shaping investor perception.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation.",
+     "claim_ids": [
+      "MT096-C10-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Fiscal deficits to long-end yields",
+     "steps": [
+      {
+       "from": "Deficits no longer track unemployment; politicians will not cut",
+       "to": "structural supply of bonds keeps rising",
+       "why": "Fiscal addiction from decade of zero rates and COVID spending",
+       "claim_ids": [
+        "MT096-C04-2",
+        "MT096-C04-4",
+        "MT096-C04-X1"
+       ]
+      },
+      {
+       "from": "Weaker growth temporarily lowers yields",
+       "to": "deficit widens further",
+       "why": "Recession cuts revenue and raises welfare",
+       "claim_ids": [
+        "MT096-C04-3"
+       ]
+      },
+      {
+       "from": "Supply plus term premium pressures resume in recovery",
+       "to": "higher long-term yields",
+       "why": "Pressure returns after the downturn",
+       "claim_ids": [
+        "MT096-C03-4",
+        "MT096-C04-3"
+       ]
+      },
+      {
+       "from": "Dovish Fed chair appointed by Trump",
+       "to": "long end sells off via inflation/term premium",
+       "why": "One influential voice tilts the FOMC toward cuts",
+       "claim_ids": [
+        "MT096-C05-1"
+       ]
+      }
+     ],
+     "evidence": "Deficit/unemployment chart; Eichengreen conversation; FT report of $11bn long-bond outflows.",
+     "fails_when": "Calm bond market so far; possible offset from the supplementary leverage ratio change; steepener trade already crowded.",
+     "claim_ids": [
+      "MT096-C03-4",
+      "MT096-C04-1",
+      "MT096-C04-2",
+      "MT096-C04-3",
+      "MT096-C04-4",
+      "MT096-C05-1",
+      "MT096-C05-2"
+     ]
+    },
+    {
+     "topic": "Why the 2025 trend drawdown is not 'different this time'",
+     "steps": [
+      {
+       "from": "Lack of sustained trends in aggregate (choppy bonds, dollar, equities reversals)",
+       "to": "2025 drawdown",
+       "why": "After the 2022 one-off rate adjustment from near zero rates",
+       "claim_ids": [
+        "MT096-C10-1",
+        "MT096-C10-2"
+       ]
+      },
+      {
+       "from": "Statistical expectation for a 0.5 Sharpe strategy",
+       "to": "a 20% drawdown is likely over 25 years",
+       "why": "Normal distribution of returns",
+       "claim_ids": [
+        "MT096-C07-2",
+        "MT096-C07-5"
+       ]
+      },
+      {
+       "from": "Past drawdowns of the index",
+       "to": "followed by rebounds (+10% typical, January 2019 to May 2024 very strong)",
+       "why": "Mean-reverting performance of the index",
+       "claim_ids": [
+        "MT096-C06-2",
+        "MT096-C07-1"
+       ]
+      }
+     ],
+     "evidence": "Man paper (Russell, Man AHL) statistics; own reading.",
+     "fails_when": "If trend followers have actually decayed like pairs trading.",
+     "claim_ids": [
+      "MT096-C06-1",
+      "MT096-C06-2",
+      "MT096-C07-1",
+      "MT096-C07-2",
+      "MT096-C07-5",
+      "MT096-C10-1",
+      "MT096-C10-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "risk",
+     "practice": "Do not cut trend exposure in drawdowns and wait to re-enter.",
+     "why": "Historically loses a large part of returns.",
+     "claim_ids": [
+      "MT096-C07-4"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hold hedge funds that are divergent strategies at meaningful volatility.",
+     "why": "Low-vol market-neutral adds little crisis convexity.",
+     "claim_ids": [
+      "MT096-C12-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Test the crowding story with CTA volume as share of futures volume and CTA share of hedge fund AUM.",
+     "why": "Falling shares argue against crowding (caveat: QIS and in-house trend sit outside the CTA data).",
+     "claim_ids": [
+      "MT096-C07-3",
+      "MT096-C09-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Diversify across managers rather than hold one or two.",
+     "why": "Individual managers had worse drawdowns than the index.",
+     "claim_ids": [
+      "MT096-C10-X1"
+     ]
+    }
+   ],
+   "evidence_style": "Papers, historical statistics and charts; emphasises statistics over narratives.",
+   "current_views": [
+    {
+     "view": "Structural trend is still for higher long-term bond yields despite a 50bp correction from highs.",
+     "as_of": "2025-07-04",
+     "reasoning": "Fiscal, term premium, supply; dovish Fed chair risk; long-bond outflows.",
+     "claim_ids": [
+      "MT096-C03-4",
+      "MT096-C05-1",
+      "MT096-C05-2",
+      "MT096-C04-2"
+     ]
+    },
+    {
+     "view": "Dollar weakness in 2025 reflected hedging of US assets rather than outright selling; the 'end of US exceptionalism' trade may be only beginning, if at all.",
+     "as_of": "2025-07-04",
+     "reasoning": "BIS report: selling in Asian hours and widening cross-currency basis.",
+     "claim_ids": [
+      "MT096-C05-4"
+     ]
+    },
+    {
+     "view": "Dollar downtrend (euro above 1.17) was dominant for trend managers in June 2025; vol-targeting cut realised vol after April.",
+     "as_of": "2025-07-04",
+     "reasoning": "Industry returns in June.",
+     "claim_ids": [
+      "MT096-C03-2",
+      "MT096-C03-3"
+     ]
+    },
+    {
+     "view": "S&P recovered 21% drawdown in 57 days; in 1998 and 2020 the rally continued for about a year.",
+     "as_of": "2025-07-04",
+     "reasoning": "Buy-the-dip sentiment.",
+     "claim_ids": [
+      "MT096-C01-1",
+      "MT096-C01-X1"
+     ]
+    },
+    {
+     "view": "2025 trend drawdown comes from lack of sustained trends and is within statistical expectation; 2022 should not be extrapolated.",
+     "as_of": "2025-07-04",
+     "reasoning": "Man paper and own reading.",
+     "claim_ids": [
+      "MT096-C10-1",
+      "MT096-C10-2",
+      "MT096-C07-2"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged), hedge fund manager",
+   "speaker_note": "Caption 'Neil's Krup Larson'. Per ledger correction he gives the C02 market update. States a preference for pure trend over trend plus long volatility.",
+   "fingerprint": [
+    "trend_following",
+    "crisis_alpha_convexity",
+    "positioning_crowding",
+    "manager_selection_allocation",
+    "regime_detection",
+    "research_robustness_overfitting"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend profits are positively skewed: rolling 12m returns above +15% occurred about 59 times vs 2 below -15% in 25 years.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own glance at the SG Trend Index chart (admits 'never do math live').",
+     "claim_ids": [
+      "MT096-C08-2"
+     ]
+    },
+    {
+     "premise": "Short track records understate drawdown risk; long ones are more informative (79% vs 21% chance of a two-sigma drawdown over 25 vs 5 years).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Man paper table.",
+     "claim_ids": [
+      "MT096-C08-3",
+      "MT096-C09-4"
+     ]
+    },
+    {
+     "premise": "Crowding is not a good explanation: CTA share of hedge-fund AUM fell from about 27% to 6% while futures volume rose; losses come from reversals in bonds, currencies and equities at once.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "AUM and volume comparison.",
+     "claim_ids": [
+      "MT096-C09-2",
+      "MT096-C09-3"
+     ]
+    },
+    {
+     "premise": "Drawdown size depends on whether interest is included in index returns (75% of managers include it).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own check.",
+     "claim_ids": [
+      "MT096-C09-1"
+     ]
+    },
+    {
+     "premise": "Long vol gives first-response protection in sudden crashes and trend second-response in prolonged declines; he is lukewarm and prefers pure trend.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Capstone paper; 2022 long-vol failure.",
+     "claim_ids": [
+      "MT096-C10-3",
+      "MT096-C11-1",
+      "MT096-C11-X1"
+     ]
+    },
+    {
+     "premise": "Papers defending trend multiply as performance worsens; a wave of them marks a deep drawdown and weak allocator sentiment.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation.",
+     "claim_ids": [
+      "MT096-C05-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Geopolitical energy shock whipsaws trend",
+     "steps": [
+      {
+       "from": "Surprise attack on Iran mid-June 2025",
+       "to": "oil spikes against short positions",
+       "why": "Trend followers short oil",
+       "claim_ids": [
+        "MT096-C02-2"
+       ]
+      },
+      {
+       "from": "Exit from shorts",
+       "to": "no gain when oil collapses days later",
+       "why": "Missed the reversal",
+       "claim_ids": [
+        "MT096-C02-2"
+       ]
+      }
+     ],
+     "evidence": "June 2025 events.",
+     "fails_when": "Managers who held through.",
+     "claim_ids": [
+      "MT096-C02-2"
+     ]
+    },
+    {
+     "topic": "Why short-term models did not help in 2025",
+     "steps": [
+      {
+       "from": "Fast V-shaped market recoveries",
+       "to": "expected benefit to short-term models",
+       "why": "Short horizons should catch reversals",
+       "claim_ids": [
+        "MT096-C02-4"
+       ]
+      },
+      {
+       "from": "Erratic, range-bound market",
+       "to": "short-term index as bad as SG Trend vol-adjusted",
+       "why": "No sustained trend for any speed",
+       "claim_ids": [
+        "MT096-C02-4"
+       ]
+      }
+     ],
+     "evidence": "Index returns.",
+     "fails_when": "Corrected indices (SG CTA -7.8%, SG Trend -10% YTD).",
+     "claim_ids": [
+      "MT096-C02-3",
+      "MT096-C02-4"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "other",
+     "practice": "Track own trend barometer.",
+     "why": "Barometer 57 after a 10-day rise matched improving CTA industry performance.",
+     "claim_ids": [
+      "MT096-C02-1"
+     ]
+    }
+   ],
+   "evidence_style": "Index data and chart reading; deferential to papers he agrees with.",
+   "current_views": [
+    {
+     "view": "CTA indices negative in H1 2025 (BTOP50 -3.16%, SG CTA about -7.8%, SG Trend about -10%, short-term traders -5.15% YTD) vs MSCI World +9.5%.",
+     "as_of": "2025-07-04",
+     "reasoning": "Early-July index numbers (corrected for swapped indices).",
+     "claim_ids": [
+      "MT096-C02-3"
+     ]
+    },
+    {
+     "view": "Platinum +27% in June broke out; coffee -12%; cocoa fell.",
+     "as_of": "2025-07-04",
+     "reasoning": "Commodity swings.",
+     "claim_ids": [
+      "MT096-C03-1"
+     ]
+    },
+    {
+     "view": "Heavy Treasury bill issuance expected in autumn will pressure rates up and may support the dollar after its worst calendar-year start in 50 years.",
+     "as_of": "2025-07-04",
+     "reasoning": "Low issuance so far plus new bill.",
+     "claim_ids": [
+      "MT096-C05-3"
+     ]
+    },
+    {
+     "view": "Family offices seek risk-offsetting assets (38% biggest challenge); 20% raising hedge funds, 21% gold; biggest risks trade war (12m), geopolitics (5y), recession 53%, debt crisis 50% over five years.",
+     "as_of": "2025-07-04",
+     "reasoning": "UBS 2025 family office survey (317 offices, $2.7bn average).",
+     "claim_ids": [
+      "MT096-C12-2",
+      "MT096-C12-X2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Add long volatility to trend?",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Lukewarm; prefers pure trend.",
+     "claim_ids": [
+      "MT096-C11-X1",
+      "MT096-C11-1"
+     ]
+    },
+    {
+     "speaker": "Alan Dunne (relaying Capstone)",
+     "position": "Blend of long vol (first responder) and trend (second) is more robust and not new.",
+     "claim_ids": [
+      "MT096-C10-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Size and cause of the 2025 trend disappointment",
+   "positions": [
+    {
+     "speaker": "Alan Dunne",
+     "position": "Lack of sustained trends after a one-off 2022; random, statistically normal.",
+     "claim_ids": [
+      "MT096-C10-1",
+      "MT096-C10-2",
+      "MT096-C07-6"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Reversals in three main sectors at once; not crowding.",
+     "claim_ids": [
+      "MT096-C09-3",
+      "MT096-C09-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Speaker of the C02 update initially assigned to Dunne; ledger correction attributes to host; 'trim router' is a caption error for trend barometer.",
+   "claim_ids": [
+    "MT096-C02-1"
+   ]
+  },
+  {
+   "issue": "Index figures were swapped in the caption; corrected values (SG CTA -7.8%, SG Trend -10%).",
+   "claim_ids": [
+    "MT096-C02-3"
+   ]
+  },
+  {
+   "issue": "The interest-in-index exchange (C09) is hard to attribute in the caption: the ledger gives the 75%-include-interest and ex-interest 27-28% drawdown figures to the host, but the surrounding turn could be either speaker; the two disagree about whether the index includes interest.",
+   "claim_ids": [
+    "MT096-C09-1"
+   ]
+  },
+  {
+   "issue": "Host computes '59 times' above +15% live and caveats he should not do math live.",
+   "claim_ids": [
+    "MT096-C08-2"
+   ]
+  },
+  {
+   "issue": "Statistics on 'nearly 80%' and 79% drawdown probabilities relayed from papers without assumptions beyond Sharpe and vol.",
+   "claim_ids": [
+    "MT096-C07-2",
+    "MT096-C08-3"
+   ]
+  },
+  {
+   "issue": "Man/Capstone papers' conclusions agree with the speakers' priors; both acknowledge sceptics will not be persuaded.",
+   "claim_ids": [
+    "MT096-C08-X1",
+    "MT096-C05-X1"
+   ]
+  },
+  {
+   "issue": "Dunne's earlier prediction of higher yields is not confirmed by the correction; he acknowledges yields fell about 50bp.",
+   "claim_ids": [
+    "MT096-C03-4",
+    "MT096-C03-R1"
+   ]
+  },
+  {
+   "issue": "Crowding rebuttal caveat: QIS and in-house trend following are not in CTA volume numbers.",
+   "claim_ids": [
+    "MT096-C07-3"
+   ]
+  },
+  {
+   "issue": "Host's long-vol blend scepticism rests on 2020-22 experience, not tested.",
+   "claim_ids": [
+    "MT096-C11-1",
+    "MT096-C11-X1"
+   ]
+  },
+  {
+   "issue": "Dollar/BIS claim and FT outflow figure are second-hand.",
+   "claim_ids": [
+    "MT096-C05-2",
+    "MT096-C05-4"
+   ]
+  },
+  {
+   "issue": "Statement that fast V recoveries without Fed support are a 'twist to common knowledge' is a one-sample comparison.",
+   "claim_ids": [
+    "MT096-C01-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "Fiscal deficit and bond supply (bill issuance in autumn), term premium, Fed chair appointment, long-bond outflows, dollar hedging flows; for trend performance, sustained trends in bonds, currencies and equities; horizon from months to years.",
+ "reader_inferences": [
+  "The statistical normality argument is about base rates and does not predict when trends return.",
+  "Both speakers prefer statistics over narrative for trend drawdowns yet use narrative for macro views."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT096-C03-R1",
+   "chunk": "C03",
+   "speaker": "Alan Dunne",
+   "quote": "all roads lead to higher yields",
+   "claim": "Dunne's own published thesis (a piece written a month or two earlier) is that fiscal deficits, term premium and supply all point to higher long-term bond yields.",
+   "mechanism": "fiscal_supply_term_premium",
+   "asset_class": "bonds",
+   "indicator": "long-end yields",
+   "horizon": "years",
+   "direction": "long-term yields up",
+   "conditions": "structural fiscal deficits persist",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "map-added",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT096-C07-R1",
+   "chunk": "C07",
+   "speaker": "Alan Dunne",
+   "quote": "people like stories better than stat statistics",
+   "claim": "Dunne says investors respond to narratives (choppy markets, tariff on/off) more than to statistical evidence, which is why statistics rarely settle the trend-following drawdown debate.",
+   "mechanism": "behavioural_narrative_bias",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "map-added",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT096-C11-R1",
+   "chunk": "C11",
+   "speaker": "Alan Dunne",
+   "quote": "looks diversified, acts like beta",
+   "claim": "Dunne's Substack argument: family-office portfolios across many labelled categories are mostly one equity/growth beta that fails together under stress.",
+   "mechanism": "diversification_illusion",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "stress periods",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "map-added",
+   "quote_check": "exact"
+  }
+ ]
+}

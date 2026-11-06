@@ -1,0 +1,741 @@
+{
+ "source_id": "MT118",
+ "episode_thesis": "Jerome Callo argues that a futures program can be orthogonal to trend followers by anticipating the flows of other systematic players (carry, risk parity, vol-control) from term structure, positioning and calendar effects, adding relative-value and slower macro models, and protecting with long-vol and proactive scenario risk limits. He doubts that machine learning adds much on daily financial data because of weak signal-to-noise and non-stationarity.",
+ "speakers": [
+  {
+   "name": "Jerome Callo",
+   "role": "Founder of DCM Systematic (Geneva), non-trend multi-strategy futures program; ex-BlueTrend quant (2008-2013); PhD in machine learning",
+   "speaker_note": "Guest; named in the host intro (caption spells 'cherom Kalo'/'Jerome'). Ledger corrections applied: C07-2 (roll-down argument) and C09-4 (retail short-vol footprint) are his, not the host's; C05-1 is restated per its correction (consensus-risk of 25+ models, August 2024 results mixed).",
+   "fingerprint": [
+    "relative_value_arbitrage",
+    "positioning_crowding",
+    "liquidity_flows",
+    "short_term_systematic",
+    "volatility_options",
+    "crisis_alpha_convexity",
+    "research_robustness_overfitting",
+    "diversification_risk_parity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Models simplify a complex reality driven by supply, demand and constraints, so momentum as a single driver is not enough; relative value and behavioural models can add return.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Lesson from BlueTrend and from discretionary traders.",
+     "claim_ids": [
+      "MT118-C02-1"
+     ]
+    },
+    {
+     "premise": "Trend following has a positive expected return and an optimal blend with it exists, but choosing that blend is the allocator's job; DCM's role is to be non-overlapping.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Business-positioning argument.",
+     "claim_ids": [
+      "MT118-C02-2",
+      "MT118-C03-X1"
+     ]
+    },
+    {
+     "premise": "It is easier to forecast the positioning of large systematic participants (carry, value, momentum, risk parity, trend) than the market, because they cannot unwind large positions quickly.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning from capacity and unwind time (days); experience from BlueTrend; track record almost nine years.",
+     "claim_ids": [
+      "MT118-C03-1",
+      "MT118-C04-1"
+     ]
+    },
+    {
+     "premise": "Term-structure slope reveals carry-trader positioning because markets do not flip between contango and backwardation overnight.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Found in FX, then worked across asset classes with risk-system adjustments.",
+     "claim_ids": [
+      "MT118-C03-2",
+      "MT118-C03-X2"
+     ]
+    },
+    {
+     "premise": "After a two-sigma shock, markets tend to overshoot and normalise within about a week rather than continue.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own research on commodity and equity shocks.",
+     "claim_ids": [
+      "MT118-C04-2"
+     ]
+    },
+    {
+     "premise": "Crowded trend and carry positions can be sized by scaling estimated positioning to the whole CTA industry and comparing with CFTC net positions; the best opportunities come when over-traded positions must unwind.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own positioning estimates plus CFTC data; no numbers given.",
+     "claim_ids": [
+      "MT118-C06-1"
+     ]
+    },
+    {
+     "premise": "G10 FX returns versus USD are about 80-90% explained by three stable factors; the 10-15% idiosyncratic residual mean-reverts in roughly 10-20 days.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Over 30 years of daily data; PCA gives the same factors.",
+     "claim_ids": [
+      "MT118-C06-2",
+      "MT118-C06-3"
+     ]
+    },
+    {
+     "premise": "Strict market neutrality in relative value forces overtrading or leverage, so slack and some directional exposure are better.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Design experience (WTI vs Brent).",
+     "claim_ids": [
+      "MT118-C07-1",
+      "MT118-C06-X1"
+     ]
+    },
+    {
+     "premise": "Hedging-role models can earn nothing for years and give false alarms but are kept for their function in shocks; models are judged by portfolio role.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Role-based design logic.",
+     "claim_ids": [
+      "MT118-C08-X1",
+      "MT118-C08-1"
+     ]
+    },
+    {
+     "premise": "Volatility is the market with the largest exploitable footprint because many traders including retail are short vol; shocks force them out and add convexity.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Reasoning from positioning; Volmageddon outcome.",
+     "claim_ids": [
+      "MT118-C09-4",
+      "MT118-C09-2"
+     ]
+    },
+    {
+     "premise": "Seventy-five futures have only about 19 independent degrees of freedom, a compression that has grown since 2008 as markets linked and liquidated together.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own exercise 'a couple of weeks ago'.",
+     "claim_ids": [
+      "MT118-C10-3",
+      "MT118-C10-X2"
+     ]
+    },
+    {
+     "premise": "Machine learning on daily data recovers noisy versions of known signals; finance lacks data volume, has weak signal-to-noise and is not stationary because participants adapt, though some flow patterns such as month-end persist for 20-30 years.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Repeated attempts in research; comparisons with LLMs, recommender systems and protein folding.",
+     "claim_ids": [
+      "MT118-C12-1",
+      "MT118-C12-2",
+      "MT118-C12-3",
+      "MT118-C13-X1"
+     ]
+    },
+    {
+     "premise": "Because participants and structure keep changing, research is continuous and the model set will gain and lose components.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Track record and market changes.",
+     "claim_ids": [
+      "MT118-C13-X2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Anticipating carry-trader flows from term structure",
+     "steps": [
+      {
+       "from": "Large systematic players cannot change positions quickly",
+       "to": "Persistent, extrapolable positioning",
+       "why": "Unwinds take days",
+       "claim_ids": [
+        "MT118-C03-1"
+       ]
+      },
+      {
+       "from": "Term-structure slope (contango/backwardation state)",
+       "to": "Estimate of carry traders' position and its evolution",
+       "why": "State changes take weeks; filter gauges state over 5-10 days",
+       "claim_ids": [
+        "MT118-C03-2"
+       ]
+      },
+      {
+       "from": "Estimated crowded position",
+       "to": "Trade ahead of or with its unwind",
+       "why": "Model must be about twice as fast as the flow, giving 5-10 day holding and low CTA correlation",
+       "claim_ids": [
+        "MT118-C04-1",
+        "MT118-C06-1"
+       ]
+      }
+     ],
+     "evidence": "Worked first in FX, then across asset classes; almost nine-year track record.",
+     "fails_when": "Consensus across 25+ models; August 2024 yen carry unwind gave mixed results.",
+     "claim_ids": [
+      "MT118-C03-1",
+      "MT118-C03-2",
+      "MT118-C03-X2",
+      "MT118-C04-1",
+      "MT118-C06-1"
+     ]
+    },
+    {
+     "topic": "Shock impulse and forced de-risking",
+     "steps": [
+      {
+       "from": "Two-sigma shock in a market",
+       "to": "Overshoot",
+       "why": "Markets overshoot rather than continue",
+       "claim_ids": [
+        "MT118-C04-2"
+       ]
+      },
+      {
+       "from": "Price fall plus volatility rise",
+       "to": "Risk-parity and vol-control funds must cut exposure",
+       "why": "Mechanical vol-targeting (host's description of the flow)",
+       "claim_ids": [
+        "MT118-C04-3"
+       ]
+      },
+      {
+       "from": "Overshoot and forced selling",
+       "to": "Normalisation within about a week",
+       "why": "Fade the shock; implementation market-neutral across equity indices",
+       "claim_ids": [
+        "MT118-C04-2",
+        "MT118-C04-4"
+       ]
+      }
+     ],
+     "evidence": "Behaviour studied after shocks; no statistics quoted.",
+     "fails_when": "Directional break-outs; hence market-neutral implementation and parallel long-vol model.",
+     "claim_ids": [
+      "MT118-C04-2",
+      "MT118-C04-3",
+      "MT118-C04-4"
+     ]
+    },
+    {
+     "topic": "FX residual mean reversion",
+     "steps": [
+      {
+       "from": "Three stable factors explain 80-90% of G10 FX variance",
+       "to": "Residual is idiosyncratic",
+       "why": "Neutralise known factors",
+       "claim_ids": [
+        "MT118-C06-2"
+       ]
+      },
+      {
+       "from": "Residual series",
+       "to": "Mean reversion in about 10-20 days",
+       "why": "Short-lived idiosyncratic moves",
+       "claim_ids": [
+        "MT118-C06-3"
+       ]
+      }
+     ],
+     "evidence": "30 years of data; PCA confirms.",
+     "fails_when": "If the factor structure breaks (stationarity claim).",
+     "claim_ids": [
+      "MT118-C06-2",
+      "MT118-C06-3"
+     ]
+    },
+    {
+     "topic": "Long-vol protection with no net short VIX",
+     "steps": [
+      {
+       "from": "Rising hedging demand / shorter-dated vol priced up",
+       "to": "Long VIX position",
+       "why": "Fast model flags risk of shock",
+       "claim_ids": [
+        "MT118-C08-1"
+       ]
+      },
+      {
+       "from": "VIX spike and fade asymmetry",
+       "to": "Profit then volatility-driven de-risking",
+       "why": "Acts like automatic profit-taking (March 2020)",
+       "claim_ids": [
+        "MT118-C09-3",
+        "MT118-C09-X1"
+       ]
+      },
+      {
+       "from": "Retail and others short vol",
+       "to": "Forced exit and added convexity",
+       "why": "Painful unrealised losses",
+       "claim_ids": [
+        "MT118-C09-4"
+       ]
+      }
+     ],
+     "evidence": "6 Feb 2018: about +3 to +4%; March 2020 profits secured.",
+     "fails_when": "Long-vol models bleed or give false alarms for years.",
+     "claim_ids": [
+      "MT118-C08-1",
+      "MT118-C08-X1",
+      "MT118-C09-2",
+      "MT118-C09-3",
+      "MT118-C09-4"
+     ]
+    },
+    {
+     "topic": "Cross-asset transfer of signals",
+     "steps": [
+      {
+       "from": "Compression to about 19 independent bets",
+       "to": "Aligned flows and more correlation",
+       "why": "Globalised, jointly liquidated markets",
+       "claim_ids": [
+        "MT118-C10-3"
+       ]
+      },
+      {
+       "from": "Robust-regression proxy of Brent from FX pairs (corr 0.5-0.6)",
+       "to": "Brent behavioural signal tradable through FX basket",
+       "why": "Lead-lag across assets",
+       "claim_ids": [
+        "MT118-C11-1",
+        "MT118-C10-X2"
+       ]
+      }
+     ],
+     "evidence": "Correlation 0.5-0.6 for Brent proxy.",
+     "fails_when": "Not always works simply.",
+     "claim_ids": [
+      "MT118-C10-3",
+      "MT118-C10-X2",
+      "MT118-C11-1"
+     ]
+    },
+    {
+     "topic": "Why ML adds little on daily data",
+     "steps": [
+      {
+       "from": "Few observations vs model parameters",
+       "to": "Overfit noise",
+       "why": "Data far smaller than LLM scale",
+       "claim_ids": [
+        "MT118-C12-2"
+       ]
+      },
+      {
+       "from": "Weak signal-to-noise and non-stationarity",
+       "to": "Models recover noisier known signals",
+       "why": "Participants arbitrage patterns away",
+       "claim_ids": [
+        "MT118-C12-1",
+        "MT118-C12-3"
+       ]
+      }
+     ],
+     "evidence": "Repeated in-house attempts.",
+     "fails_when": "Higher-frequency data is more promising.",
+     "claim_ids": [
+      "MT118-C12-1",
+      "MT118-C12-2",
+      "MT118-C12-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "List what could go wrong (carry reversal, taper tantrum, oil shock after OPEC) and add each to the risk system.",
+     "why": "No scenario should put the fund out of business.",
+     "claim_ids": [
+      "MT118-C01-1"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Deliberately avoid trend signals; 25+ non-trend models across behavioural, relative value and macro buckets.",
+     "why": "Orthogonal to CTA index and to trend allocations.",
+     "claim_ids": [
+      "MT118-C02-2",
+      "MT118-C03-X1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Behavioural flow models: holding period 5-10 days, twice as fast as the flow anticipated.",
+     "why": "Low correlation to CTA indices.",
+     "claim_ids": [
+      "MT118-C04-1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Shock impulse models fade two-sigma shocks, implemented market-neutral across equity indices.",
+     "why": "Limit directional risk.",
+     "claim_ids": [
+      "MT118-C04-2",
+      "MT118-C04-4"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Research a portfolio-level overlay capping aggregate directional, factor (carry) or risk-on exposure.",
+     "why": "Models can reach consensus.",
+     "claim_ids": [
+      "MT118-C05-1",
+      "MT118-C10-X1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Treat a bad episode (August 2024) as a data point; change the risk system after balanced team discussion, not as reaction to last loss.",
+     "why": "Avoids reactive tinkering.",
+     "claim_ids": [
+      "MT118-C05-X1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Relative value via pair spreads or baskets with zero or controlled net exposure; allow slack and derive positions from term structure.",
+     "why": "Strict neutrality causes overtrading or leverage.",
+     "claim_ids": [
+      "MT118-C06-X1",
+      "MT118-C07-1",
+      "MT118-C07-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Never net short VIX; use beta-adjusted VIX curve spreads plus a fast long-VIX model.",
+     "why": "Program should diversify drawdowns.",
+     "claim_ids": [
+      "MT118-C08-1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Proactive stress: inject stylised scenarios (Volmageddon) into the optimiser as a loss constraint (about minus 2%).",
+     "why": "Do not only scale after realised volatility.",
+     "claim_ids": [
+      "MT118-C08-2"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Volatility-based risk management cuts exposure after big gains.",
+     "why": "Works like automatic profit-taking.",
+     "claim_ids": [
+      "MT118-C09-3"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Macro: inflation from CPI and in-house equity-sector nowcast; holding period of one to a few months.",
+     "why": "Fixed income and FX.",
+     "claim_ids": [
+      "MT118-C10-1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Neutralise a regression-based risk-off factor in FX models.",
+     "why": "FX carry loses in equity risk-off shocks.",
+     "claim_ids": [
+      "MT118-C10-2"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "98% automated: pre-trade previews, manual send, no modification, a human monitoring.",
+     "why": "Discipline.",
+     "claim_ids": [
+      "MT118-C11-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Treat research as continuous; judge each behavioural pattern on its own persistence.",
+     "why": "Non-stationary markets.",
+     "claim_ids": [
+      "MT118-C13-X1",
+      "MT118-C13-X2"
+     ]
+    }
+   ],
+   "evidence_style": "Mechanism-first reasoning plus track record: states a market structure rationale (who must trade and when), then cites stylised facts and own experiments; scenario analysis for risk; sceptical of black-box ML.",
+   "current_views": [
+    {
+     "view": "The August 2024 yen carry unwind was difficult for DCM's anticipation models; portfolio overlay under research.",
+     "as_of": "2024-12-02",
+     "reasoning": "Models were not aligned in results; consensus risk with 25+ models.",
+     "claim_ids": [
+      "MT118-C05-1",
+      "MT118-C05-X1"
+     ]
+    },
+    {
+     "view": "Systematic hedging overlay across the portfolio is the next research step.",
+     "as_of": "2024-12-02",
+     "reasoning": "Only local factor neutralisation exists today.",
+     "claim_ids": [
+      "MT118-C10-X1"
+     ]
+    },
+    {
+     "view": "Higher-frequency ML attempts are more promising than daily-data ML.",
+     "as_of": "2024-12-02",
+     "reasoning": "More data points.",
+     "claim_ids": [
+      "MT118-C12-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Moritz Seibert",
+   "role": "Host, Open Interest series (Top Traders Unplugged); former CTA practitioner",
+   "speaker_note": "Host; argues positions in several places (trend blend, vol-control flow, month-end, commodity index roll). Ledger C05-2 is corrected to him.",
+   "fingerprint": [
+    "trend_following",
+    "liquidity_flows",
+    "dealer_hedging_flows",
+    "volatility_options",
+    "commodity_fundamentals",
+    "behavioral_sentiment"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Adding a trend component to a 25-model non-trend book would probably still raise risk-adjusted returns despite higher correlation to trend followers.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Diversification argument; no data.",
+     "claim_ids": [
+      "MT118-C02-X1"
+     ]
+    },
+    {
+     "premise": "Risk-parity and vol-control funds must cut exposure as prices fall and volatility rises, creating exploitable selling flow for a few days.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Mechanical vol-targeting reasoning.",
+     "claim_ids": [
+      "MT118-C04-3"
+     ]
+    },
+    {
+     "premise": "Risk premia, factor and bank QIS strategies trade billions on rules and leave predictable footprints.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "General industry knowledge.",
+     "claim_ids": [
+      "MT118-C05-3"
+     ]
+    },
+    {
+     "premise": "Month-end effects persist because humans and large pools of capital run monthly schedules and accounting, unlike anomalies that decay once published.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Observation despite academic papers.",
+     "claim_ids": [
+      "MT118-C05-2",
+      "MT118-C13-2"
+     ]
+    },
+    {
+     "premise": "The GSCI and DJ-UBS roll window (business days 5-9) once paid a liquidity premium that has largely decayed as investors spread rolls across the curve.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical knowledge of the indices.",
+     "claim_ids": [
+      "MT118-C13-1"
+     ]
+    },
+    {
+     "premise": "Proactive risk management stress-tests current positions against past scenarios while reactive risk management adjusts after the fact; VIX is asymmetric (jumps fast, fades slowly).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Framing of Jerome's documents.",
+     "claim_ids": [
+      "MT118-C09-1",
+      "MT118-C09-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Month-end and index-roll footprints",
+     "steps": [
+      {
+       "from": "Calendar-based processes of humans and big capital pools",
+       "to": "Predictable month-end flows",
+       "why": "Persist despite publication",
+       "claim_ids": [
+        "MT118-C05-2",
+        "MT118-C13-2"
+       ]
+      },
+      {
+       "from": "Index roll window concentrated",
+       "to": "Liquidity premium for providers",
+       "why": "Decayed after investors moved to spread-roll implementations",
+       "claim_ids": [
+        "MT118-C13-1"
+       ]
+      }
+     ],
+     "evidence": "Historical index behaviour; no numbers.",
+     "fails_when": "Decays once participants adapt.",
+     "claim_ids": [
+      "MT118-C13-1",
+      "MT118-C13-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Probe whether a trend sleeve would still improve the blend.",
+     "why": "Diversification of a 25-model book.",
+     "claim_ids": [
+      "MT118-C02-X1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Contrast proactive stress tests with reactive adjustments.",
+     "why": "Frames how DCM controls risk.",
+     "claim_ids": [
+      "MT118-C09-1"
+     ]
+    }
+   ],
+   "evidence_style": "Reasons from market structure and industry knowledge; mostly frames and tests the guest's claims.",
+   "current_views": []
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Should a non-trend book add trend following?",
+   "positions": [
+    {
+     "speaker": "Moritz Seibert",
+     "position": "Adding trend would probably still raise risk-adjusted returns even with higher correlation.",
+     "claim_ids": [
+      "MT118-C02-X1"
+     ]
+    },
+    {
+     "speaker": "Jerome Callo",
+     "position": "Trend has positive expected return and an optimal blend exists, but that is the allocator's job; DCM stays non-overlapping.",
+     "claim_ids": [
+      "MT118-C03-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Do market patterns decay?",
+   "positions": [
+    {
+     "speaker": "Moritz Seibert",
+     "position": "Month-end effects are sticky because of human accounting cycles, unlike other anomalies that decay once published (index roll).",
+     "claim_ids": [
+      "MT118-C13-2",
+      "MT118-C13-1"
+     ]
+    },
+    {
+     "speaker": "Jerome Callo",
+     "position": "Non-stationarity is not universal; judge each pattern on its own persistence, though participants generally adapt.",
+     "claim_ids": [
+      "MT118-C13-X1",
+      "MT118-C12-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Mean-reversion and shock-fade claims (about a week, 10-20 days) have no statistics or sample sizes.",
+   "claim_ids": [
+    "MT118-C04-2",
+    "MT118-C06-3"
+   ]
+  },
+  {
+   "issue": "Crowding estimates scaled to the CTA industry are described but no results are given.",
+   "claim_ids": [
+    "MT118-C06-1"
+   ]
+  },
+  {
+   "issue": "The loss constraint 'minus 2%' and Volmageddon +3-4% figure come from the guest, unverified.",
+   "claim_ids": [
+    "MT118-C08-2",
+    "MT118-C09-2"
+   ]
+  },
+  {
+   "issue": "Ledger C05-1 overstated; the guest said models gave mixed results in August 2024 and consensus risk is a general concern.",
+   "claim_ids": [
+    "MT118-C05-1"
+   ]
+  },
+  {
+   "issue": "Tension: behavioural signals are said to need no trend, yet shock-fade and long-vol models are partially directional; Jerome concedes some directional exposure is accepted.",
+   "claim_ids": [
+    "MT118-C07-1",
+    "MT118-C04-4"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "Observable inputs: futures term-structure slope and its change over 5-10 days, estimated CTA/CFTC positioning concentration, two-sigma shocks, VIX term structure and hedging demand, month-end calendar, FX three-factor residuals, inflation prints/nowcast. Horizons: 5-20 days for behavioural and mean-reversion models; one to a few months for macro.",
+ "reader_inferences": [
+  "The case for non-trend alpha rests on a structural argument (known participants must trade predictably) rather than statistical power; it is vulnerable when participants adapt.",
+  "Consensus risk across many models makes the portfolio overlay the main unresolved design gap.",
+  "Compression to 19 independent bets and cross-asset proxies link diversification limits with signal transfer."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT118-C08-R1",
+   "chunk": "C08",
+   "speaker": "Jerome Callo",
+   "quote": "the only Grail there is to um be long whenever uh you have a risk of shock and not bleeding out money the rest of the time really",
+   "claim": "The goal for volatility is to be long VIX whenever a shock risk exists without bleeding money otherwise.",
+   "mechanism": "volatility_hedge",
+   "asset_class": "volatility",
+   "indicator": "VIX curve and hedging demand",
+   "horizon": "days",
+   "direction": "long vol in shock risk",
+   "conditions": "",
+   "testable": "partly - hit rate and cost of long-vol model",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus-map"
+  },
+  {
+   "claim_id": "MT118-C08-R2",
+   "chunk": "C08",
+   "speaker": "Jerome Callo",
+   "quote": "our ctas have tended to work well when the SNP 500 was in a draw down we want to be a bit more proactive than than that and be specifically good during these times",
+   "claim": "DCM aims to be actively good in equity drawdowns, beyond the CTA industry's tendency to work in them.",
+   "mechanism": "crisis_alpha",
+   "asset_class": "multi",
+   "indicator": "S&P 500 drawdown performance",
+   "horizon": "",
+   "direction": "positive in drawdowns",
+   "conditions": "S&P drawdowns",
+   "testable": "yes - conditional returns",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus-map"
+  }
+ ]
+}

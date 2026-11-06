@@ -1,0 +1,181 @@
+{
+ "source_id": "MT111",
+ "episode_thesis": "Robertson (Man AHL) argues that a trend follower's long-run Sharpe comes from diversifying price drivers (Sharpe grows with the square root of independent markets), so alternative markets add return through diversification rather than by trending better, whereas liquid macro futures supply the crisis alpha an equity or bond portfolio needs. He adds that trend works as the alpha leg in portable alpha and as a defensive partner to equities and bonds, with long-short quality covering the faster flight-to-quality moves trend misses. Kaastrup-Larsen adds that a world where price is disconnected from fundamental value favours price-only strategies like trend.",
+ "speakers": [
+  {
+   "name": "Graham Robertson",
+   "role": "Systematic trend-following manager at Man AHL",
+   "speaker_note": "Caption spells 'Graeme/gram'. Graham speaks for AHL; he states he does not know competitors' signal mix. The taxi driver, portable alpha, DeepSeek and quality topics are his own agenda items. Attribution of remarks between the two voices follows the question/answer structure of the recording.",
+   "fingerprint": ["trend_following", "diversification_risk_parity", "crisis_alpha_convexity", "portfolio_construction_stacking", "commodity_fundamentals", "position_sizing_vol_target", "costs_execution", "structural_themes"],
+   "worldview_premises": [
+    {"premise": "Trend-following performance is driven mostly by diversification across markets: with uncorrelated markets, Sharpe scales with the square root of the number of markets.", "type": "theoretical", "stated": "stated", "support": "Arithmetic example: 0.1 Sharpe per market becomes 1.0 with 100 independent markets.", "claim_ids": ["MT111-C06-1", "MT111-C04-2"]},
+    {"premise": "Alternative markets show a higher long-run Sharpe because they diversify better, not because they trend better; liquid futures have lower long-run Sharpe but stronger crisis alpha because they respond to central bank and macro events.", "type": "empirical", "stated": "stated", "support": "Properties observed at AHL and in 2008 and 2022.", "claim_ids": ["MT111-C06-2", "MT111-C06-3"]},
+    {"premise": "Design choices (lookback, market set, measurement) produce huge dispersion between trend managers who all follow trends; managers can be up and down over the same period.", "type": "empirical", "stated": "stated", "support": "Observation of early 2025 and of the industry.", "claim_ids": ["MT111-C05-1", "MT111-C05-2"]},
+    {"premise": "Diversification pays off in long-run simulation but over short periods anything can happen, which is a communication problem with investors.", "type": "experience", "stated": "stated", "support": "Experience explaining the strategy to clients; smaller diversifiers had not helped for a couple of years.", "claim_ids": ["MT111-C05-3", "MT111-C05-2"]},
+    {"premise": "Market prices can decouple from economic news (European equities rallied despite tariff headlines), which suits price-based trend rules.", "type": "empirical", "stated": "stated", "support": "Early 2025 market behaviour.", "claim_ids": ["MT111-C03-5"]},
+    {"premise": "Assets with no anchor for fundamental value (crypto) tend to form bubbles, which trend followers like.", "type": "theoretical", "stated": "stated", "support": "No data; stated as a trader's view, explicitly not a fundamental opinion.", "claim_ids": ["MT111-C08-1"]},
+    {"premise": "Trend following's crisis-alpha record is strong for equity falls (MSCI World lost about half twice since 2000, about 30% in Covid) but thin for bond sell-offs, which are rare (1970s, 2022).", "type": "empirical", "stated": "stated", "support": "Historical record; long history of Dunn and AHL.", "claim_ids": ["MT111-C13-2", "MT111-C13-X1", "MT111-C13-3"]},
+    {"premise": "Long-short quality pays in flights to quality when trend struggles, and responds faster than trend, which needs weeks to months of sell-off; tech concentration in quality has not been a problem so far.", "type": "empirical", "stated": "stated", "support": "SVB 2023, yen carry unwind Q3 2024, DeepSeek day, and 2000-03 simulations.", "claim_ids": ["MT111-C15-1", "MT111-C15-2", "MT111-C15-3"]},
+    {"premise": "A concentration of index returns in a few well-known stocks (taxi driver problem) leaves diversified investors underperforming, creating demand for solutions like portable alpha.", "type": "experience", "stated": "stated", "support": "Client conversations while travelling.", "claim_ids": ["MT111-C11-2", "MT111-C12-1"]},
+    {"premise": "Volatility is a dial: trend strategies can run at any volatility target because sizing is volatility-based.", "type": "theoretical", "stated": "stated", "support": "Design of vol-based sizing.", "claim_ids": ["MT111-C14-1", "MT111-C14-2"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Why alternative markets raise long-run Sharpe",
+     "steps": [
+      {"from": "More independent price drivers (Nord Pool hydro power driven by rainfall; Swiss swaps)", "to": "Trends uncorrelated with macro markets", "why": "Idiosyncratic drivers, not central bank events.", "claim_ids": ["MT111-C04-2", "MT111-C04-3"]},
+      {"from": "Uncorrelated P&L streams", "to": "Sharpe rises with the square root of the number of markets", "why": "Diversification maths.", "claim_ids": ["MT111-C06-1"]},
+      {"from": "Alternative markets are not necessarily smaller, only harder to access (OTC, ISDA, some human execution)", "to": "Tradable at size under the same liquidity rules", "why": "Same position-sizing logic as futures; smaller markets get smaller size.", "claim_ids": ["MT111-C04-1", "MT111-C07-1"]}
+     ],
+     "evidence": "Maths of uncorrelated markets, AHL's simulations and experience; independent surveys of credit derivative and swap market size show growth.",
+     "fails_when": "In short periods diversification may not pay; costs in exotic markets and crowding (which would show as rising transaction costs) could erode the benefit.",
+     "claim_ids": ["MT111-C06-1", "MT111-C06-2", "MT111-C05-3", "MT111-C07-2"]},
+    {"topic": "Early 2025 European energy trend",
+     "steps": [
+      {"from": "Low inventories, very cold weather and little wind output from German renewables", "to": "Gas and power prices up", "why": "Supply shock after a range-bound 2024.", "claim_ids": ["MT111-C03-6"]}
+     ],
+     "evidence": "Direct observation travelling in the Nordics and Holland.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT111-C03-6"]},
+    {"topic": "Cross-market knock-on effects",
+     "steps": [
+      {"from": "Gold repricing", "to": "Changes in Treasury issuance", "why": "Revalued gold reserves could reduce needed issuance.", "claim_ids": ["MT111-C03-4", "MT111-C02-2"]},
+      {"from": "Treasury issuance change", "to": "Bond trends", "why": "Trading many markets globally lets a trend follower capture one market's effect on another.", "claim_ids": ["MT111-C03-4"]}
+     ],
+     "evidence": "Illustrative, speculative.",
+     "fails_when": "Not stated; the gold repricing is a possibility, not a fact.",
+     "claim_ids": ["MT111-C03-4"]},
+    {"topic": "Portable alpha and the beta-drawdown problem",
+     "steps": [
+      {"from": "Index dominated by a few mega-caps", "to": "Stock pickers and diversified investors underperform", "why": "Largest components perform best.", "claim_ids": ["MT111-C11-2"]},
+      {"from": "Hold equity beta at index weight and port the alpha to quant, multi-strategy or trend", "to": "Diversified alpha sources", "why": "Takes alpha out of pure equities.", "claim_ids": ["MT111-C12-1"]},
+      {"from": "Trend as the alpha leg", "to": "Gains when equity beta draws down", "why": "Crisis alpha; avoids joint drawdowns and margin problems.", "claim_ids": ["MT111-C12-2", "MT111-C12-3"]}
+     ],
+     "evidence": "Client demand and AHL bespoke solutions; no performance figures given.",
+     "fails_when": "If the alpha leg draws down at the same time as beta, margin management is difficult.",
+     "claim_ids": ["MT111-C12-3", "MT111-C12-2"]},
+    {"topic": "Lines of defence: trend versus long-short quality",
+     "steps": [
+      {"from": "Flight-to-quality shock (SVB, yen carry unwind, DeepSeek day)", "to": "Trend lags because it needs sustained sell-offs over weeks to months", "why": "Signal speed.", "claim_ids": ["MT111-C15-1", "MT111-C15-2"]},
+      {"from": "Same shock", "to": "Long-short quality responds immediately", "why": "Behaves like a long-volatility strategy.", "claim_ids": ["MT111-C15-2"]},
+      {"from": "Quality stocks concentrated in technology", "to": "Risk that a tech sell-off hurts quality too", "why": "Tested on DeepSeek day and in 2000-03 simulations, where it did not.", "claim_ids": ["MT111-C15-3", "MT111-C14-4"]}
+     ],
+     "evidence": "Recent episodes and simulation.",
+     "fails_when": "Not stated; a tech-led sell-off could in principle hurt quality.",
+     "claim_ids": ["MT111-C15-1", "MT111-C15-2", "MT111-C15-3"]},
+    {"topic": "Trend as a defence against bond risk",
+     "steps": [
+      {"from": "2022: bonds failed to hedge equities", "to": "Renewed interest in a dynamic strategy that can short bonds", "why": "Bonds and equities fell together.", "claim_ids": ["MT111-C13-3"]},
+      {"from": "Possible higher bond issuance (defence spending, gold repricing)", "to": "Interest in trend as a fixed-income replacement", "why": "Host's framing; Robertson agrees alternatives with defensive capability could fill the hole but notes the thin record.", "claim_ids": ["MT111-C13-1", "MT111-C13-X1"]}
+     ],
+     "evidence": "2022 experience; bond crises are rare, so the evidence is limited.",
+     "fails_when": "Evidence for bond crisis protection needs a much longer history.",
+     "claim_ids": ["MT111-C13-3", "MT111-C13-X1"]}
+   ],
+   "decision_process": [
+    {"element": "universe", "practice": "Trade from tens to hundreds of markets, including alternative markets (OTC, swaps, European power, credit derivatives).", "why": "More distinct price drivers improve trend diversification.", "claim_ids": ["MT111-C05-1", "MT111-C04-1", "MT111-C04-2"]},
+    {"element": "sizing", "practice": "Size alternative markets by the same liquidity rules as futures; volatility-based sizing handles high-volatility assets (Bitcoin around 100 vol) by smaller positions.", "why": "Liquidity-aware, consistent risk.", "claim_ids": ["MT111-C07-1", "MT111-C14-2"]},
+    {"element": "sizing", "practice": "Offer any volatility target (5, 10, 20) by turning a dial; investors' preferences differ.", "why": "Asset volatility does not matter to the process.", "claim_ids": ["MT111-C14-1"]},
+    {"element": "signal", "practice": "Use several trend measures: moving-average crossovers (smooth, low impact), breakout channels, back returns, with design choices such as fixed versus recent-weighted windows.", "why": "Smooth crossovers change positions incrementally with low market impact and transaction cost.", "claim_ids": ["MT111-C09-1", "MT111-C09-3", "MT111-C10-1", "MT111-C10-2"]},
+    {"element": "risk", "practice": "Monitor crowding in alternative markets through internal measurement of market size, transaction costs and independent surveys; manage crypto by diversifying across many futures and coins.", "why": "Would show as rising costs; investor appetite limits crypto allocation.", "claim_ids": ["MT111-C07-2", "MT111-C07-3", "MT111-C08-2"]},
+    {"element": "portfolio", "practice": "To hedge a risk-asset portfolio, trade the same instruments held in it (equity indices, Treasuries), not unrelated markets.", "why": "Liquid futures carry stronger crisis alpha.", "claim_ids": ["MT111-C06-4", "MT111-C06-3"]},
+    {"element": "portfolio", "practice": "Pair trend with long-short quality as a faster defensive layer; offer portable alpha with trend as the alpha leg, bespoke for larger clients.", "why": "Complementary speeds of protection.", "claim_ids": ["MT111-C15-1", "MT111-C12-1", "MT111-C12-2"]}
+   ],
+   "evidence_style": "Mathematical arguments (diversification and square-root rule), AHL's simulations and track record, recent episodes (2008, 2022, DeepSeek, SVB, yen carry) and client conversations; honest about limited bond-crisis history.",
+   "current_views": [
+    {"view": "Gold repricing would affect Treasury issuance and bond trends; trading many markets lets a manager capture such knock-on effects.", "as_of": "2025-02", "reasoning": "Cross-market links.", "claim_ids": ["MT111-C03-4"]},
+    {"view": "European equities rose despite tariff news, showing prices decoupled from economic news.", "as_of": "2025-02", "reasoning": "Early-2025 market behaviour.", "claim_ids": ["MT111-C03-5"]},
+    {"view": "European gas and power trended up because of low inventories, cold weather and little wind.", "as_of": "2025-02", "reasoning": "Supply shock after range-bound 2024.", "claim_ids": ["MT111-C03-6"]},
+    {"view": "After the US election the largest liquid markets trended well for slower signals, while smaller diversifiers had not helped in the previous couple of years.", "as_of": "2025-02", "reasoning": "AHL experience.", "claim_ids": ["MT111-C05-2"]},
+    {"view": "The DeepSeek shock on 27 Jan 2025 triggered a tech sell-off and Sputnik-moment narrative but Mag 7 bounced back, and the quality factor did not sell off.", "as_of": "2025-01-27", "reasoning": "Price action afterwards.", "claim_ids": ["MT111-C14-4", "MT111-C15-3"]},
+    {"view": "Interest in portable alpha and in trend as a defensive allocation is rising, starting from the Magnificent 7 problem and from 2022's failure of bonds as a hedge.", "as_of": "2025-02", "reasoning": "Client demand.", "claim_ids": ["MT111-C12-1", "MT111-C13-3"]},
+    {"view": "Mr Market is the portfolio manager: look at what price is doing rather than at value, which is relevant now.", "as_of": "2025-02", "reasoning": "Quoting Andrew Beer.", "claim_ids": ["MT111-C16-R1"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; veteran hedge fund (trend following) manager",
+   "speaker_note": "Most claims are market observations and questions; he argues one thesis himself (price versus value). He avoids naming other managers' study sources.",
+   "fingerprint": ["trend_following", "geopolitics", "structural_themes", "behavioral_sentiment", "valuation_contrarian", "policy_reaction_central_banks", "fiscal_dominance", "commodity_fundamentals"],
+   "worldview_premises": [
+    {"premise": "Alternative markets do not trend better; they trend at different times, which is the diversification benefit (as concluded by another manager's study).", "type": "empirical", "stated": "stated", "support": "Own look at the data and an unnamed manager's presentation.", "claim_ids": ["MT111-C05-4"]},
+    {"premise": "Index trends can diverge from local macro: the DAX trended up despite a weak German economy because constituents are multinationals earning abroad.", "type": "empirical", "stated": "stated", "support": "Index composition.", "claim_ids": ["MT111-C03-3", "MT111-C03-X1"]},
+    {"premise": "Price has become disconnected from traditional value (Bitcoin worth zero or millions), so strategies focused only on price, such as trend, may have more opportunity and investors are more open to them.", "type": "theoretical", "stated": "stated", "support": "Observation of crazy price moves; no data.", "claim_ids": ["MT111-C15-4", "MT111-C16-1"]},
+    {"premise": "Higher defence spending implies more government bond issuance, so the bigger portfolio risk may be in bonds, prompting interest in trend as a fixed-income replacement.", "type": "theoretical", "stated": "stated", "support": "Reasoning from European investors' 60-80% bond allocations.", "claim_ids": ["MT111-C13-1"]},
+    {"premise": "Crypto carries exit-liquidity risk (ether fell over 20% in a day on a weekend when futures could not trade) that must be priced in position sizing.", "type": "empirical", "stated": "stated", "support": "The weekend ether drop.", "claim_ids": ["MT111-C07-4"]},
+    {"premise": "Trend systems have a long history: Dunn used volatility breakout from the early 1970s, never moving averages, later adding continuous time-series momentum; Bollinger bands and ATR are volatility breakouts used by Dunn and Campbell since the early 1970s.", "type": "experience", "stated": "stated", "support": "Own career and archive reading (Donchian four-week rule 1960, Turtles 1984).", "claim_ids": ["MT111-C10-3", "MT111-C11-1", "MT111-C09-2"]},
+    {"premise": "Interest in portable alpha is cyclical and returns when equities do very well and clients feel they underperform.", "type": "experience", "stated": "stated", "support": "Worked on it in the 1990s.", "claim_ids": ["MT111-C12-4"]},
+    {"premise": "Trend funds delevered after the GFC because investors wanted low-vol products; with higher rates and vol some investors may now want more return.", "type": "experience", "stated": "stated", "support": "Industry observation.", "claim_ids": ["MT111-C14-3"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "JGB widow-maker trade turning profitable",
+     "steps": [
+      {"from": "BoJ policy regime shift", "to": "JGB 10y yield rose from -0.25% to 1.44% since September 2024", "why": "Policy normalisation.", "claim_ids": ["MT111-C03-2"]},
+      {"from": "Rising yields", "to": "Short JGB trend positions paid", "why": "The BoJ no longer punished shorts.", "claim_ids": ["MT111-C03-2"]}
+     ],
+     "evidence": "Yield move quoted.",
+     "fails_when": "Previously, BoJ intervention made shorts pay.",
+     "claim_ids": ["MT111-C03-2"]},
+    {"topic": "Gold reserve repricing as a catalyst",
+     "steps": [
+      {"from": "US gold reserves marked from $42/oz official price to market", "to": "Large balance-sheet asset that could be lent against (sovereign wealth fund idea)", "why": "Valuation gain on about 8,000 tons.", "claim_ids": ["MT111-C02-2"]},
+      {"from": "Repricing chatter", "to": "Supports the gold trend", "why": "Catalyst for trend followers.", "claim_ids": ["MT111-C02-2"]}
+     ],
+     "evidence": "Speculative; reported suggestions.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT111-C02-2"]},
+    {"topic": "Price versus value",
+     "steps": [
+      {"from": "Value is subjective (Bitcoin zero or millions)", "to": "Price is the only thing known", "why": "It is on the screen.", "claim_ids": ["MT111-C15-4"]},
+      {"from": "Price-only strategies", "to": "More opportunity and more investor openness", "why": "Disconnect between price and value.", "claim_ids": ["MT111-C16-1"]}
+     ],
+     "evidence": "Travel conversations; no inflow data (he says there are not massive inflow changes).",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT111-C16-1"]}
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Uses his own Trend Barometer (30, weak, short timeframes) which follows the Short-Term Traders Index.", "why": "Tracks short-term trend strength.", "claim_ids": ["MT111-C08-3"]},
+    {"element": "risk", "practice": "Price crypto exit-liquidity risk into position sizing.", "why": "Ether dropped 20% in a day when futures could not trade.", "claim_ids": ["MT111-C07-4"]},
+    {"element": "research", "practice": "Look at which sectors drive CTA returns (equities offset by currencies, bonds in between) and how many markets drove equity trend gains (DAX, Hang Seng).", "why": "Sector-level dispersion drives CTA returns.", "claim_ids": ["MT111-C02-1", "MT111-C03-X1"]}
+   ],
+   "evidence_style": "Market observation, industry index data, historical archive research, and questions to the guest.",
+   "current_views": [
+    {"view": "Early 2025 trend following was mixed: equity trends offset by currency losses, bonds in between.", "as_of": "2025-02", "reasoning": "Sector-level dispersion.", "claim_ids": ["MT111-C02-1"]},
+    {"view": "Coffee is the new cocoa: a crop estimated 4-5% lower pushed prices up.", "as_of": "2025-02", "reasoning": "Supply.", "claim_ids": ["MT111-C03-1"]},
+    {"view": "JGB shorts have begun to pay as yields rose from -0.25% to 1.44%.", "as_of": "2025-02", "reasoning": "Policy regime shift.", "claim_ids": ["MT111-C03-2"]},
+    {"view": "Equity trend gains concentrated in a few indices (DAX, Hang Seng).", "as_of": "2025-02", "reasoning": "Narrow participation.", "claim_ids": ["MT111-C03-3", "MT111-C03-X1"]},
+    {"view": "Performance to 25 Feb 2025: BTOP50 +1.78% YTD, SG CTA +0.73%, SG Trend +0.56%, STI -0.25%, versus MSCI World +5.37%, S&P 500 +4.64%.", "as_of": "2025-02-25", "reasoning": "Descriptive.", "claim_ids": ["MT111-C08-4"]},
+    {"view": "Trend followers may see more openness among investors because price is disconnected from value.", "as_of": "2025-02", "reasoning": "Travel conversations.", "claim_ids": ["MT111-C16-1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {"topic": "Do alternative markets trend better?",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "They do not trend better; they trend at different times, which is the diversification benefit.", "claim_ids": ["MT111-C05-4"]},
+    {"speaker": "Graham Robertson", "position": "Agrees in effect (higher long-run Sharpe from better diversification, not stronger trending), but frames it as a Sharpe-scaling maths argument and keeps liquid futures for crisis alpha.", "claim_ids": ["MT111-C06-2", "MT111-C06-3"]}
+   ]},
+  {"topic": "Is crowding in alternative markets a concern?",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Asks whether too many managers now crowd these markets and costs have risen.", "claim_ids": ["MT111-C07-2"]},
+    {"speaker": "Graham Robertson", "position": "Sees no evidence: transaction costs and market-size surveys show growing markets; credit derivative liquidity does not dry up in stress.", "claim_ids": ["MT111-C07-2", "MT111-C07-3"]}
+   ]}
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Robertson says the square-root diversification arithmetic implies higher Sharpe for alternative markets, but also says short-period results are unpredictable; no out-of-sample numbers are given.", "claim_ids": ["MT111-C06-1", "MT111-C05-3"]},
+  {"issue": "Evidence that trend protects against bond sell-offs is thin (only the 1970s and 2022), yet the discussion proposes trend as a fixed-income replacement.", "claim_ids": ["MT111-C13-X1", "MT111-C13-1"]},
+  {"issue": "The claim that alternative markets do not trend better is attributed to unnamed other managers' presentation.", "claim_ids": ["MT111-C05-4"]},
+  {"issue": "The 20/120-day crossover is described as best fit to the index, but Kaastrup-Larsen notes manager dispersion is huge, so one tool cannot represent them.", "claim_ids": ["MT111-C09-2", "MT111-C05-1"]},
+  {"issue": "Robertson says low exchange-visible liquidity is no barrier, yet the host reports ether fell 20% on a weekend when futures could not trade; liquidity of crypto is handled by sizing, not resolved.", "claim_ids": ["MT111-C04-1", "MT111-C07-4"]},
+  {"issue": "Gold repricing to market from $42/oz is speculative and used as a catalyst without confirmation that it will occur.", "claim_ids": ["MT111-C02-2"]},
+  {"issue": "The Dunn volatility-breakout dating by the host contradicts earlier literature dates; he says 'I don't necessarily agree with the timing'.", "claim_ids": ["MT111-C10-3", "MT111-C11-1"]}
+ ],
+ "forward_looking_inputs": "(reader) Observables named: gold repricing and its effect on Treasury issuance, bond issuance from defence spending, BoJ policy and JGB yields, European gas and power inventories, coffee crop estimates, whether Mag 7 and tech sell-offs spread to the quality factor, and rate/vol regime for investor demand. Horizons range from months (trend in coffee, power) to years (diversification payoff).",
+ "reader_inferences": [
+  "(reader) Robertson's two-layer view is that alternative markets maximise long-run Sharpe while liquid futures maximise crisis alpha, so the mix depends on whether the investor wants steady return or insurance.",
+  "(reader) Quality and trend are paired by speed of response: quality for days-to-weeks flights to quality, trend for sustained sell-offs.",
+  "(reader) The host's price-versus-value argument is a rationale for trend rather than an empirical result; it would be weakened if value reasserts."
+ ],
+ "added_claims": [
+  {"claim_id": "MT111-C16-R1", "chunk": "C16", "speaker": "Graham Robertson", "quote": "Mr Market is your portfolio manager", "claim": "Robertson, quoting Andrew Beer, frames trend following as letting the market act as portfolio manager: watch what price is doing, not what value is, a different way of looking at things that is relevant now.", "mechanism": "price_over_value", "asset_class": "multi", "indicator": "price trends", "horizon": "unspecified", "direction": "", "conditions": "when price and value are disconnected", "testable": "no", "speaker_confidence": "medium", "time_bound": "no"}
+ ]
+}

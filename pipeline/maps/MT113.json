@@ -1,0 +1,141 @@
+{
+ "source_id": "MT113",
+ "episode_thesis": "Graham's CIO argues that the ten-year post-GFC regime of accommodative central banks is over, and that the 2022-23 hiking cycle (record in speed and magnitude, and badly priced by markets) plus persistent core inflation makes stock-bond correlation near zero or positive, so 60/40 is more fragile. Macro strategies, with zero average but negative conditional correlation to equities and positive skew, are offered as a tactical complement to 60/40, and Graham's quant trend and quant macro programs and a bearish tactical stance (short equities, long euro, yen and gold) are described.",
+ "speakers": [
+  {
+   "name": "Pablo Calderini",
+   "role": "President and CIO of Graham Capital Management; oversees alpha development",
+   "speaker_note": "Auto-captions without punctuation; the session is a client presentation (Graham marketing), recorded in the spring of 2023 (hiking cycle 'a year ago' from March 2022, March 2023 Treasury move, US banking issues) although the video was uploaded on 2025-01-07. The 'January 2023 context' in the ledger summary is not supported; as_of dates below use 2023-03. Two ledger claims were corrected: C02-2 (four completed cycles plus the current one) and C08-1 (host speaking).",
+   "fingerprint": ["macro_fundamental_topdown", "policy_reaction_central_banks", "diversification_risk_parity", "trend_following", "carry", "value_mean_reversion", "portfolio_construction_stacking", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {"premise": "For ten years after the GFC every shock was met by very accommodative central banks (zero lower bound, sticky-low inflation); that special regime ended with the 2022 inflation shock.", "type": "experience", "stated": "stated", "support": "Recollection of the taper tantrum and other episodes where the Fed backed off", "claim_ids": ["MT113-C01-1"]},
+    {"premise": "An inflation shock must be met by a shock to real rates, so asset markets and central banks play a different game from the post-GFC decade.", "type": "theoretical", "stated": "stated", "support": "Macro reasoning", "claim_ids": ["MT113-C01-2"]},
+    {"premise": "Inflation is no longer seen as a secular low (supply disruptions, geopolitics, fiscal spending), so central banks will be shyer about accommodation even if inflation falls, bringing higher volatility and a harder time for 60/40.", "type": "theoretical", "stated": "stated", "support": "Argument from recent shocks", "claim_ids": ["MT113-C02-1"]},
+    {"premise": "In the four completed hiking cycles since Volcker the Fed stopped after turmoil; the 2022-23 cycle is the fifth and a record in speed and size (about double the average ~220bp in half the time, heading to about 500bp).", "type": "empirical", "stated": "stated", "support": "Own table of cycles (1994-95 +300bp, 1999-2000 +170-175bp, 2005-06 +425bp, 2015-18)", "claim_ids": ["MT113-C02-2", "MT113-C02-3"]},
+    {"premise": "Markets are fragile to a hiking cycle to the degree that the forward curve at the first hike under-priced what the Fed then delivered.", "type": "theoretical", "stated": "stated", "support": "Own exercise comparing forward curves on day one of each cycle with the delivered path", "claim_ids": ["MT113-C02-4", "MT113-C03-1"]},
+    {"premise": "The beta of asset returns to inflation is non-linear (helps in deflation, hurts in high inflation), which is why regressions look inconclusive; separating inflation by driver shows core inflation is a large negative shock while energy inflation is nearly unimportant because it is volatile and mean-reverting.", "type": "empirical", "stated": "stated", "support": "Cites a Wharton study by two professors", "claim_ids": ["MT113-C03-3", "MT113-C03-4", "MT113-C04-1"]},
+    {"premise": "Bonds are held to hedge: with an equity risk premium of 400-500bp, a lower-return bond only makes sense with low or negative correlation to stocks.", "type": "theoretical", "stated": "stated", "support": "Portfolio logic", "claim_ids": ["MT113-C04-2"]},
+    {"premise": "The long-run stock-bond correlation is about zero, an average of high positive (1960s-2000s, high inflation) and high negative periods; high inflation pushes it up and falling inflation pushes it negative.", "type": "empirical", "stated": "stated", "support": "Cites a study on correlations; historical episodes", "claim_ids": ["MT113-C04-3", "MT113-C04-X1"]},
+    {"premise": "Newer market participants extrapolate 20 years of negative correlation (-0.5), which made 60/40 a bonanza and is not the long-run norm.", "type": "behavioural", "stated": "stated", "support": "Observation of newcomers", "claim_ids": ["MT113-C04-4", "MT113-C04-X2"]},
+    {"premise": "The 'stocks for the long run' case relies on mean reversion, but forward-looking variance must also estimate an unknown mean; with the lost degree of freedom, long-horizon equity volatility is about 22% rather than 17%, so mean-variance should hold fewer equities.", "type": "theoretical", "stated": "stated", "support": "Cites a Chicago study; variance 3% vs 5% arithmetic", "claim_ids": ["MT113-C04-5", "MT113-C05-1"]},
+    {"premise": "Macro funds have zero average correlation to equities but negative conditional correlation (gain in large equity drawdowns) and positive skew, which matter more than Sharpe and standard deviation for portfolio construction.", "type": "empirical", "stated": "stated", "support": "HFRI macro index charts and return distribution (almost 4 sigma upside, no -3 sigma)", "claim_ids": ["MT113-C05-3", "MT113-C05-4", "MT113-C05-5"]},
+    {"premise": "Macro is a complement to 60/40: no long-term secular views (already in 60/40), tactical, dynamic and quick to cut positions when the thesis fails.", "type": "experience", "stated": "stated", "support": "Firm philosophy", "claim_ids": ["MT113-C06-3", "MT113-C07-5"]},
+    {"premise": "Fundamentals affect markets non-linearly and in a regime-dependent way, so linear signals are inadequate.", "type": "theoretical", "stated": "stated", "support": "Reasons given earlier for inflation non-linearity", "claim_ids": ["MT113-C08-4"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "From the end of the post-GFC regime to a harder time for 60/40",
+     "steps": [
+      {"from": "Inflation shock of 2022", "to": "Required rise in real rates and end of reliable central bank accommodation", "why": "A shock must be met by another shock to bring inflation down", "claim_ids": ["MT113-C01-1", "MT113-C01-2"]},
+      {"from": "Inflation seen as non-secular-low", "to": "Central banks more cautious about easing even after inflation falls", "why": "Supply, geopolitics and fiscal spending keep inflation less sticky-low", "claim_ids": ["MT113-C02-1"]},
+      {"from": "Less accommodation", "to": "Higher volatility and weaker 60/40 results", "why": "Bonds no longer hedge as in the previous 20 years", "claim_ids": ["MT113-C02-1", "MT113-C04-4"]}
+     ],
+     "evidence": "Comparison with the post-GFC decade and prior hiking cycles.",
+     "fails_when": "Inflation falls fast without a growth shock and the Fed returns to easing (not discussed).",
+     "claim_ids": ["MT113-C01-1", "MT113-C01-2", "MT113-C02-1"]},
+    {"topic": "Fragility of markets in the 2022 hiking cycle",
+     "steps": [
+      {"from": "Fed hiked about 300bp more than the forward curve priced at the first hike", "to": "Unprecedented shock to markets", "why": "In earlier cycles forward pricing was within a small gap for 18 months", "claim_ids": ["MT113-C03-1", "MT113-C03-2"]},
+      {"from": "Poor guidance or misreading by the Fed", "to": "Larger asset price shock", "why": "Markets were unprepared; he blames the Fed's communication", "claim_ids": ["MT113-C03-X1"]}
+     ],
+     "evidence": "Chart of forward curve versus delivered path for each cycle (2022 peaks at 3%).",
+     "fails_when": "Later shocks unrelated to Fed guidance dominate beyond 18 months.",
+     "claim_ids": ["MT113-C03-1", "MT113-C03-2", "MT113-C03-X1", "MT113-C02-4"]},
+    {"topic": "Core versus energy inflation and the policy response",
+     "steps": [
+      {"from": "Core inflation rises", "to": "It persists", "why": "Services-heavy and sticky", "claim_ids": ["MT113-C04-1"]},
+      {"from": "Persistence", "to": "Bigger policy response and bigger reaction by asset prices", "why": "Energy inflation mean-reverts and is largely ignored", "claim_ids": ["MT113-C03-4", "MT113-C04-1"]}
+     ],
+     "evidence": "Wharton study on drivers of inflation.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT113-C03-4", "MT113-C04-1"]},
+    {"topic": "Inflation regime sets the stock-bond correlation, and so the fate of 60/40",
+     "steps": [
+      {"from": "High inflation (1960s to 2000s)", "to": "Positive stock-bond correlation", "why": "Inflation shocks hit both assets", "claim_ids": ["MT113-C04-3", "MT113-C04-X1"]},
+      {"from": "Falling inflation (last 20 years)", "to": "Negative correlation of about -0.5", "why": "Bonds rally when growth shocks hit stocks", "claim_ids": ["MT113-C04-X1", "MT113-C04-4"]},
+      {"from": "Expected correlation near zero", "to": "Bonds with low returns are weaker diversifiers", "why": "Low expected return with no hedge benefit", "claim_ids": ["MT113-C04-4", "MT113-C05-2"]}
+     ],
+     "evidence": "Historical correlations and study on stock-bond correlation.",
+     "fails_when": "Inflation returns to a secular low.",
+     "claim_ids": ["MT113-C04-3", "MT113-C04-X1", "MT113-C04-4", "MT113-C05-2"]},
+    {"topic": "Why add macro to 60/40",
+     "steps": [
+      {"from": "Macro index has zero average correlation to equities", "to": "Negative correlation when equities fall sharply", "why": "Zero average hides high positive and high negative conditional correlation", "claim_ids": ["MT113-C05-3"]},
+      {"from": "Positive skew", "to": "Surprises are on the upside", "why": "Almost 4 sigma upside and no -3 sigma downside", "claim_ids": ["MT113-C05-4"]},
+      {"from": "Adding 20% macro to 60/40", "to": "Information ratio up from 0.66 to 0.75; worst drawdown from -36% to -29%", "why": "Return falls slightly but volatility falls more", "claim_ids": ["MT113-C06-1", "MT113-C06-X1"]}
+     ],
+     "evidence": "20-year backtest of 60/40 plus 20% HFRI macro index (not Graham's own track record).",
+     "fails_when": "Macro returns do not show negative conditional correlation in the next drawdown; the March 2023 20-sigma Treasury move hurt dynamic funds.",
+     "claim_ids": ["MT113-C05-3", "MT113-C05-4", "MT113-C06-1", "MT113-C06-X1", "MT113-C06-2"]},
+    {"topic": "Short equities thesis",
+     "steps": [
+      {"from": "Earnings must fall and multiples are too high", "to": "Equities in 'the wrong quadrant'", "why": "Risk premium and earnings both unfavourable", "claim_ids": ["MT113-C07-1"]},
+      {"from": "Scenario 1: core inflation stays sticky", "to": "Fed hikes more against priced cuts, equities fall", "why": "Wedge between market pricing and Fed delivery", "claim_ids": ["MT113-C07-1"]},
+      {"from": "Scenario 2: core inflation falls", "to": "Only via unemployment spike and recession cutting earnings", "why": "Core is mostly services", "claim_ids": ["MT113-C07-1"]}
+     ],
+     "evidence": "Scenario reasoning; the view is kept changeable and hedged because 'market forces' beyond understanding may support equities.",
+     "fails_when": "Technology earnings prove resilient or the Fed cuts; the view can flip to long equities within a month.",
+     "claim_ids": ["MT113-C07-1", "MT113-C07-X1", "MT113-C07-5"]}
+   ],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Use macro as a complement to 60/40 with no secular view; adapt views frequently and cut positions as soon as the thesis does not work.", "why": "Investors already hold secular exposure in 60/40", "claim_ids": ["MT113-C06-3", "MT113-C07-5"]},
+    {"element": "risk", "practice": "Risk management and a tactical hedge limit the cost of being wrong on the short equity view; risk systems are made more robust after the 20-sigma Treasury move of March 2023.", "why": "Unknown market forces can support equities; shocks happen faster and more violently", "claim_ids": ["MT113-C07-X1", "MT113-C06-2"]},
+    {"element": "signal", "practice": "Trend program: traditional time-series momentum signal with robust portfolio construction (mean-variance and PCA to estimate the covariance matrix quickly).", "why": "Value added comes from portfolio construction on a standard signal", "claim_ids": ["MT113-C08-2"]},
+    {"element": "signal", "practice": "Quant macro program: four sub-strategies (trend, value/long-run reversion, carry, macro fundamentals) combined with mean-variance.", "why": "More stable return profile than trend; Sharpe above one", "claim_ids": ["MT113-C08-3", "MT113-C09-1"]},
+    {"element": "research", "practice": "Macro signal uses about 900,000 time series (GDP, inflation, earnings, inventories), NLP sentiment, data compression and non-linear regression.", "why": "Fundamentals act non-linearly and by regime", "claim_ids": ["MT113-C08-4"]},
+    {"element": "signal", "practice": "Carry is not naive: the program estimates an equilibrium required carry and avoids simply buying high-carry assets.", "why": "High carry is not always compensated", "claim_ids": ["MT113-C08-5"]},
+    {"element": "universe", "practice": "Quantitative portion of the absolute-return side is about 15% (trend plus quant macro programs).", "why": "Reported share; see gaps for conflict with the host's statement", "claim_ids": ["MT113-C08-R1"]}
+   ],
+   "evidence_style": "Historical comparison of hiking cycles, academic studies (Wharton, Chicago, correlation study), index-based backtests of a 60/40 plus macro mix, and firm track record claims; arguments are presented in a client-marketing setting.",
+   "current_views": [
+    {"view": "Short equities: earnings must fall and multiples are too high; either sticky core inflation forces the Fed to hike against priced cuts, or core falls only through an unemployment spike and recession.", "as_of": "2023-03", "reasoning": "Two likely scenarios both bad for equities; a hard landing would be terrible too.", "claim_ids": ["MT113-C07-1", "MT113-C07-X1"]},
+    {"view": "Long euro: US banking issues keep the Fed from hiking massively while the ECB is hawkish.", "as_of": "2023-03", "reasoning": "Relative policy path.", "claim_ids": ["MT113-C07-2"]},
+    {"view": "Long yen: extremely undervalued, with a BoJ yield-curve-control change eventually coming.", "as_of": "2023-03", "reasoning": "Valuation and policy shift.", "claim_ids": ["MT113-C07-3"]},
+    {"view": "Long gold (highest conviction): real rates are elevated and will come down, breakevens are too low, and the US debt ceiling negotiation is usually gold-bullish.", "as_of": "2023-03", "reasoning": "Real rates, breakevens and debt ceiling history.", "claim_ids": ["MT113-C07-4"]},
+    {"view": "Stock-bond correlation will stay near zero rather than return to -0.5.", "as_of": "2023-03", "reasoning": "Inflation is no longer a secular low.", "claim_ids": ["MT113-C04-4"]},
+    {"view": "Graham's trend program did very well in 2022, consistent with large macro dislocations; the March 2023 Treasury move barely affected Graham.", "as_of": "2023-03", "reasoning": "Trend profits from dislocations; risk systems being hardened.", "claim_ids": ["MT113-C08-X1", "MT113-C06-2"]}
+   ]
+  },
+  {
+   "name": "Chief client officer (host, name garbled in captions)",
+   "role": "Chief client officer at Graham Capital; session host",
+   "speaker_note": "Name garbled in captions. Host states a few facts about Graham's structure and summarises the systematic side; these are firm descriptions rather than market views. Audience member Scott asks a question about the quant side but states no view and is not mapped.",
+   "fingerprint": ["manager_selection_allocation", "trend_following", "portfolio_construction_stacking"],
+   "worldview_premises": [
+    {"premise": "Graham runs a concentrated multi-PM macro book, betting on its highest-conviction teams (about 15) rather than 50 to 150 teams.", "type": "institutional", "stated": "stated", "support": "Firm description", "claim_ids": ["MT113-C01-X1"]},
+    {"premise": "Pure trend following is price-driven, while the quant macro strategy adds fundamental data to the price signal and so can evolve positioning more dynamically.", "type": "institutional", "stated": "stated", "support": "Firm description (ledger correction: this was the host, not Calderini)", "claim_ids": ["MT113-C08-1"]}
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Multi-PM macro book is concentrated in about 15 highest-conviction teams.", "why": "Conviction over breadth", "claim_ids": ["MT113-C01-X1"]}
+   ],
+   "evidence_style": "Firm description in a client session; no evidence offered.",
+   "current_views": []
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {"issue": "Corrected claim: the 'five hiking cycles' are four completed cycles (1994-95, 1999-2000, 2005-06, 2015-18) plus the still-running 2022-23 cycle; only the completed ones ended in turmoil and a Fed pause. The claim that 'each ended with crisis after which the Fed gave up' cannot apply to the current cycle.", "claim_ids": ["MT113-C02-2", "MT113-C02-3"]},
+  {"issue": "Corrected claim: the description of trend as price-driven and quant macro as adding fundamentals was spoken by the host, not by Calderini.", "claim_ids": ["MT113-C08-1"]},
+  {"issue": "The 20-year benefit of adding macro to 60/40 uses an industry index (HFRI macro) as the macro proxy, not Graham's own results, and the information ratio 0.66 to 0.75 and drawdown -36% to -29% are in-sample over a period when stock-bond correlation was negative; the claim of a larger benefit in stress years is not backed by figures.", "claim_ids": ["MT113-C06-1", "MT113-C06-X1", "MT113-C05-3"]},
+  {"issue": "The equity volatility adjustment (17% to 22%) comes from variance 3% to 5% with a study cited but not named; the result is asserted rather than shown, and the study's conclusion about stocks for the long run is contested.", "claim_ids": ["MT113-C05-1", "MT113-C04-5"]},
+  {"issue": "Wharton and Chicago studies are cited without author names or dates.", "claim_ids": ["MT113-C03-4", "MT113-C04-5"]},
+  {"issue": "Calderini calls March 2023 a 20-sigma Treasury event that hurt dynamic funds but says Graham was barely affected; no data supports Graham's resilience.", "claim_ids": ["MT113-C06-2"]},
+  {"issue": "Share of Graham's business that is quantitative differs: the host says about two-thirds on the Quant side, while Calderini says about 15% of the absolute-return business is quantitative; the denominators differ and are not reconciled.", "claim_ids": ["MT113-C08-R1", "MT113-C01-X1"]},
+  {"issue": "Quant macro 'running eight years' and 'trading since 2014' do not match in a 2023 recording (about nine years).", "claim_ids": ["MT113-C08-3", "MT113-C09-R2"]},
+  {"issue": "The short-equity thesis has both scenarios (sticky inflation, recession) plus a hard landing bearish for equities; the view is unfalsifiable except by Fed delivery against the priced cuts, and Calderini concedes forces beyond his understanding may support equities.", "claim_ids": ["MT113-C07-1", "MT113-C07-X1"]},
+  {"issue": "The gold case says breakevens can rise with unchanged rates so real rates fall; this requires inflation expectations to rise without a Fed response, which sits awkwardly with the main thesis of a hawkish Fed.", "claim_ids": ["MT113-C07-4"]},
+  {"issue": "Calderini blames the Fed's communication for the 2022 shock yet also says 'either the Fed guided well or markets read it well'; the cause of the earlier match is not resolved.", "claim_ids": ["MT113-C03-X1", "MT113-C03-1"]},
+  {"issue": "The positive skew and negative conditional correlation of the macro index are described with a chart, but the fund-level sample, survivorship and fee effects are not discussed.", "claim_ids": ["MT113-C05-4", "MT113-C05-3"]}
+ ],
+ "forward_looking_inputs": "(reader) Inputs said to lead prices: gap between forward-curve pricing and what the Fed delivers (cuts priced vs hikes), core inflation (services) and the unemployment rate as the route to lower core inflation, the sign of stock-bond correlation set by the inflation regime, real rates and breakevens (for gold), US banking stress and ECB/BoJ policy (for euro and yen), and the US debt ceiling. Horizon is weeks to a few months for tactical positions; the regime shift is multi-year.",
+ "reader_inferences": [
+  "(reader) The core claim is regime-based: 60/40 worked because inflation was a low secular risk and correlation was negative; the testable implication is that macro's value to 60/40 should rise when stock-bond correlation is positive.",
+  "(reader) The 'fragility = unpriced Fed path' measure is a simple, replicable indicator (forward curve on day one versus delivered path) with only five observations.",
+  "(reader) The talk is an allocation pitch: macro's benefit (negative conditional correlation, positive skew) is presented with index data, and Graham's own record is referenced only qualitatively.",
+  "(reader) Tactical views (short equities, long euro, yen, gold) are explicitly changeable within a month, so they should not be treated as durable forecasts."
+ ],
+ "added_claims": [
+  {"claim_id": "MT113-C08-R1", "chunk": "C08", "speaker": "Pablo Calderini", "quote": "on the absolute returned one there's about 15 percent that is quantitative", "claim": "About 15% of the absolute-return business (trend and quant macro programs) is quantitative.", "mechanism": "structural_shift", "asset_class": "multi", "indicator": "", "horizon": "", "direction": "", "conditions": "", "testable": "no: firm description", "speaker_confidence": "medium", "time_bound": "yes", "reader": "map"},
+  {"claim_id": "MT113-C09-R2", "chunk": "C09", "speaker": "Pablo Calderini", "quote": "it has been trading since 2014", "claim": "The quant macro program has traded since 2014 with a Sharpe above one, a more stable profile and higher information ratio than trend, but less negative conditional correlation to equities.", "mechanism": "portfolio_construction", "asset_class": "multi", "indicator": "", "horizon": "years", "direction": "", "conditions": "", "testable": "yes: track record", "speaker_confidence": "medium", "time_bound": "yes", "reader": "map"}
+ ]
+}

@@ -1,0 +1,621 @@
+{
+ "source_id": "MT043",
+ "episode_thesis": "Doug King argues that commodities are cyclical because innovation and substitution (shale, GMO) end each scarcity story, so a bottom-up fundamental approach that checks the physical cash market before trading futures is the way to catch rare distortions, using curve trades when imbalances are temporary. He controls risk with a roughly 21% volatility target cut in staged fashion after losses, and warns that the last leg of spikes is margin-call stress rather than fundamentals.",
+ "speakers": [
+  {
+   "name": "Doug King",
+   "role": "Founder of Merchant Commodity Fund (since 2004); former Cargill global head of petroleum trading; owner of Coventry City FC",
+   "speaker_note": "Captions spell him 'Duck King' and host 'Morett Sebert'; clear two-speaker interview. Fund returns (60% in 2014) are self-reported.",
+   "fingerprint": [
+    "commodity_fundamentals",
+    "bottom_up_fundamental",
+    "position_sizing_vol_target",
+    "relative_value_arbitrage",
+    "valuation_contrarian",
+    "liquidity_flows",
+    "structural_themes"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Commodities are cyclical, not secularly rising, because innovation and substitution end each scarcity story (shale, GMO seeds).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Oil at $55 in 2025 vs $50 in 2005; shale added about 9 million b/d in 15 years; $150-200 forecasts of 2007-08 failed; grains resilient to weather.",
+     "claim_ids": [
+      "MT043-C04-1",
+      "MT043-C04-2",
+      "MT043-C04-3",
+      "MT043-C03-4"
+     ]
+    },
+    {
+     "premise": "Buy-and-hold passive commodity exposure loses money.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "USO and UNG static-roll ETFs lost everything, USO especially when WTI went negative.",
+     "claim_ids": [
+      "MT043-C04-5"
+     ]
+    },
+    {
+     "premise": "Physical-market information (basis, cash market) is the key input; futures prices can diverge from cash and give conviction signals.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Career at Cargill; copper 2024 example; takes information only from physical participants.",
+     "claim_ids": [
+      "MT043-C03-1",
+      "MT043-C11-1",
+      "MT043-C11-2",
+      "MT043-C11-5"
+     ]
+    },
+    {
+     "premise": "Precious metals are not driven by physical supply and demand and are excluded from the universe.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Definition of the fund's scope.",
+     "claim_ids": [
+      "MT043-C03-2"
+     ]
+    },
+    {
+     "premise": "Edge is filtering relevant from irrelevant information; too granular tracking (ships, tank tops) misses the bigger picture.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own practice for 20 years.",
+     "claim_ids": [
+      "MT043-C11-3",
+      "MT043-C05-1"
+     ]
+    },
+    {
+     "premise": "Trading houses use physical information to trade leveraged derivatives, which pays in distortions such as 2021-22.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Glencore, Vitol, Trafigura examples.",
+     "claim_ids": [
+      "MT043-C05-2"
+     ]
+    },
+    {
+     "premise": "Rare distortions deliver the bulk of returns, so one must be positioned in advance; entering after the move is late.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Advice given to investors; no data.",
+     "claim_ids": [
+      "MT043-C06-1",
+      "MT043-C02-2"
+     ]
+    },
+    {
+     "premise": "The last stage of a spike (cocoa, coffee, WTI negative, cotton) is margin-call stress, not fundamentals; exchange margin and limit rules shape moves.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Cocoa, coffee, cotton merchant, 2007-09 limit-down episodes.",
+     "claim_ids": [
+      "MT043-C07-3",
+      "MT043-C07-X1",
+      "MT043-C08-1",
+      "MT043-C07-4"
+     ]
+    },
+    {
+     "premise": "Exchanges may intervene in extreme squeezes (LME nickel cancelled trades), so there is exchange-intervention risk.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own LME nickel experience.",
+     "claim_ids": [
+      "MT043-C09-6",
+      "MT043-C10-X1"
+     ]
+    },
+    {
+     "premise": "Losing money is very poor because cutting the volatility target after a loss slows recovery; the hardest job is to make money the right way.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Risk process experience.",
+     "claim_ids": [
+      "MT043-C07-1",
+      "MT043-C12-1"
+     ]
+    },
+    {
+     "premise": "Independent positioning against the crowd, e.g. bearish at peak oil sentiment, is right.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "2014 oil short.",
+     "claim_ids": [
+      "MT043-C09-5"
+     ]
+    },
+    {
+     "premise": "A merchant's fundamental view had an edge in 2004 when Asia was booming and few vehicles offered commodity exposure.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Founding context of the fund.",
+     "claim_ids": [
+      "MT043-C02-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "2014 oil bear thesis",
+     "steps": [
+      {
+       "from": "Shale growth eats OPEC's share and global GDP growth disappoints (1-2% vs 3-4%)",
+       "to": "Surplus builds at $115-120, curve moves from inverse to contango",
+       "why": "Modelled GDP-to-oil demand",
+       "claim_ids": [
+        "MT043-C09-1"
+       ]
+      },
+      {
+       "from": "Iraq/ISIS shock",
+       "to": "Cut position, re-enter in July-August once thesis intact",
+       "why": "Thesis still valid",
+       "claim_ids": [
+        "MT043-C09-2",
+        "MT043-C09-3"
+       ]
+      },
+      {
+       "from": "OPEC price war",
+       "to": "Oil fell about 120 to 40 in five months, about 60% for the fund",
+       "why": "Accelerated the thesis",
+       "claim_ids": [
+        "MT043-C09-4"
+       ]
+      }
+     ],
+     "evidence": "Fund return 60% in 2014; self-reported.",
+     "fails_when": "Not stated; the OPEC price war is called 'somewhat fortuitous'.",
+     "claim_ids": [
+      "MT043-C09-1",
+      "MT043-C09-4"
+     ]
+    },
+    {
+     "topic": "Curve trade at full carry",
+     "steps": [
+      {
+       "from": "Full carry with storage filling",
+       "to": "Low downside, leveraged curve position",
+       "why": "Storage constraint caps downside",
+       "claim_ids": [
+        "MT043-C08-4"
+       ]
+      },
+      {
+       "from": "OPEC cuts or demand increase",
+       "to": "Curve flips from carry to inverse, trade pays",
+       "why": "Scarcity needs product released",
+       "claim_ids": [
+        "MT043-C08-4",
+        "MT043-C08-3"
+       ]
+      },
+      {
+       "from": "Temporary scarcity or surplus",
+       "to": "Trade the curve, not flat price; outright only when price is too high or low for balance",
+       "why": "Choose the structure that solves the imbalance",
+       "claim_ids": [
+        "MT043-C08-2",
+        "MT043-C08-3"
+       ]
+      }
+     ],
+     "evidence": "Covid storage example; his best trades.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT043-C08-4",
+      "MT043-C08-2"
+     ]
+    },
+    {
+     "topic": "Volatility targeting limits participation in spikes",
+     "steps": [
+      {
+       "from": "Volatility target of about 21% (half after drawdown)",
+       "to": "Positions cut when volatility spikes",
+       "why": "Cannot hold full size on big moves",
+       "claim_ids": [
+        "MT043-C06-5",
+        "MT043-C07-2"
+       ]
+      },
+      {
+       "from": "Drawdown of risk budget",
+       "to": "Staged cuts then sidelined",
+       "why": "Risk process",
+       "claim_ids": [
+        "MT043-C06-4",
+        "MT043-C07-1"
+       ]
+      },
+      {
+       "from": "Cutting target after loss",
+       "to": "Slower recovery",
+       "why": "Must grind rather than shoot it back",
+       "claim_ids": [
+        "MT043-C07-1"
+       ]
+      }
+     ],
+     "evidence": "Experience on WTI negative, cocoa, coffee.",
+     "fails_when": "Fails if big winners are lost by forced size cuts (he accepts this).",
+     "claim_ids": [
+      "MT043-C07-2",
+      "MT043-C07-1"
+     ]
+    },
+    {
+     "topic": "Futures rally without cash confirmation",
+     "steps": [
+      {
+       "from": "Copper up to $11,000 in 2024 on futures demand",
+       "to": "Cash basis fell",
+       "why": "Futures excitement without physical demand",
+       "claim_ids": [
+        "MT043-C11-5"
+       ]
+      },
+      {
+       "from": "No physical follow-through",
+       "to": "Price fell to $9,000 six months later",
+       "why": "Fund stayed out",
+       "claim_ids": [
+        "MT043-C11-5"
+       ]
+      }
+     ],
+     "evidence": "Single copper episode.",
+     "fails_when": "He says he might have traded it if basis matched.",
+     "claim_ids": [
+      "MT043-C11-5"
+     ]
+    },
+    {
+     "topic": "Margin stress squeezes shorts and hedgers",
+     "steps": [
+      {
+       "from": "Exchange raises margins near the highs (cocoa)",
+       "to": "Shorts with 20% higher holding cost cover the next day",
+       "why": "Margin cost",
+       "claim_ids": [
+        "MT043-C07-4"
+       ]
+      },
+      {
+       "from": "Physical merchants hedged short futures",
+       "to": "Margin calls drive them out even though their book is hedged",
+       "why": "Liquidity not solvency",
+       "claim_ids": [
+        "MT043-C07-X1"
+       ]
+      },
+      {
+       "from": "Squeeze overshoots fundamentals",
+       "to": "Final stage is financial stress, not real demand",
+       "why": "Hence the 'real or not real' test",
+       "claim_ids": [
+        "MT043-C07-3"
+       ]
+      }
+     ],
+     "evidence": "Cocoa (ICE margin), 130-year cotton merchant.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT043-C07-3",
+      "MT043-C07-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "universe",
+     "practice": "Oil, gas, industrial metals and softs; no precious metals.",
+     "why": "Fundamental supply-demand drivers.",
+     "claim_ids": [
+      "MT043-C03-2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Bottom-up supply-demand work with cash-versus-futures divergence for conviction; optimisation and timing tools only for execution.",
+     "why": "Never removed from physical reality.",
+     "claim_ids": [
+      "MT043-C02-1",
+      "MT043-C03-1",
+      "MT043-C11-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Takes information from the physical industry, not derivative sellers; weighs others' views against physical facts; took physical delivery (rubber, raw sugar) to test scarcity.",
+     "why": "Traders talk their book.",
+     "claim_ids": [
+      "MT043-C11-2",
+      "MT043-C11-4",
+      "MT043-C05-3"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Demand stress tests and deep theoretical work rather than tracking ships or tank tops.",
+     "why": "Too granular misses the main point.",
+     "claim_ids": [
+      "MT043-C05-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "5-20 strategies in 2-4 themes with limits per theme; concentrated but not all-in.",
+     "why": "Risk limits agreed with investors.",
+     "claim_ids": [
+      "MT043-C06-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Sectors can sit idle for years when no supply-demand story gives a risk-reward (grains 2017-19).",
+     "why": "Do not waste risk on no story.",
+     "claim_ids": [
+      "MT043-C03-3",
+      "MT043-C06-3"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Volatility target about 21% annualised; no more than half of that when out of step after drawdown; positions cut in stages as risk budget is drawn down.",
+     "why": "Protects capital; losses are costly.",
+     "claim_ids": [
+      "MT043-C06-4",
+      "MT043-C06-5",
+      "MT043-C07-1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Outright trades only when price is too high or too low; otherwise curve spreads; stage out in spikes.",
+     "why": "Choose the trade structure that solves the problem.",
+     "claim_ids": [
+      "MT043-C08-2",
+      "MT043-C08-3",
+      "MT043-C07-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Sell into spikes where final move is margin stress; accept de-risking and re-risking repeatedly on global risk-off days (Liberation Day).",
+     "why": "Noise around a theme does not mean the theme is wrong.",
+     "claim_ids": [
+      "MT043-C07-3",
+      "MT043-C12-1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Be positioned for rare distortions and grind a decent return in quiet years.",
+     "why": "Entering after the move is late.",
+     "claim_ids": [
+      "MT043-C06-1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Physical trading arm disbanded in 2014-17 for poor margins and high counterparty credit risk.",
+     "why": "Futures are more attractive.",
+     "claim_ids": [
+      "MT043-C10-1",
+      "MT043-C10-2"
+     ]
+    }
+   ],
+   "evidence_style": "First-hand trading stories and a 20-year track record; analogy to career experience; few quantified tests.",
+   "current_views": [
+    {
+     "view": "Pivoting to electrification metals (copper, aluminium, lithium) because supply and demand are harder to adjust; other commodities look well supplied.",
+     "as_of": "2025-12-24",
+     "reasoning": "Data centres, EVs, China trucks; electrification pace is the swing factor.",
+     "claim_ids": [
+      "MT043-C04-4"
+     ]
+    },
+    {
+     "view": "Oil near $55 is similar to 2005 levels because of shale innovation; commodities generally are disappointing as long-run stores of value.",
+     "as_of": "2025-12-24",
+     "reasoning": "Innovation and substitution.",
+     "claim_ids": [
+      "MT043-C04-2",
+      "MT043-C04-1",
+      "MT043-C04-3"
+     ]
+    },
+    {
+     "view": "Fund not on copper's 2024 rally because cash basis did not follow; remained patient.",
+     "as_of": "2025-12-24",
+     "reasoning": "Futures excitement without physical confirmation.",
+     "claim_ids": [
+      "MT043-C11-5"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Moritz Seibert",
+   "role": "Host of Open Interest series; systematic trader and podcast host",
+   "speaker_note": "Host; his remarks are context and examples, with a few market observations. Caption 'Morett Sebert'.",
+   "fingerprint": [
+    "commodity_fundamentals",
+    "liquidity_flows",
+    "behavioral_sentiment"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Exchange margin hikes force shorts to cover and squeeze prices higher.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Recalls ICE raising cocoa margin near the highs.",
+     "claim_ids": [
+      "MT043-C07-4"
+     ]
+    },
+    {
+     "premise": "When an exchange cancels trades in a squeeze (LME nickel), the stated reason is protecting the clearing house but the effect is to bail out the distressed side.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "LME nickel 2022.",
+     "claim_ids": [
+      "MT043-C10-X1"
+     ]
+    },
+    {
+     "premise": "Fellow traders talk their book, so views must be weighed against physical facts.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Own experience as trader.",
+     "claim_ids": [
+      "MT043-C11-4"
+     ]
+    },
+    {
+     "premise": "Regional gas prices can decouple: Henry Hub stayed quiet while LNG rose when Europe competed with China after Ukraine.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation.",
+     "claim_ids": [
+      "MT043-C04-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Examples and questions; no data offered.",
+   "current_views": []
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Is physical information a durable edge?",
+   "positions": [
+    {
+     "speaker": "Doug King",
+     "position": "Useful for conviction and filtering, but the physical trading arm was hard to run and disbanded.",
+     "claim_ids": [
+      "MT043-C10-1",
+      "MT043-C10-2",
+      "MT043-C11-1"
+     ]
+    },
+    {
+     "speaker": "Moritz Seibert (as questioner)",
+     "position": "Suggested a physical business gives an information flow and could be a great advantage.",
+     "claim_ids": [
+      "MT043-C11-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Risk leash: single-team fund vs multi-manager platform",
+   "positions": [
+    {
+     "speaker": "Doug King",
+     "position": "A single-team fund can sit through noise around a long-term supply-demand theme, while multi-manager platforms put commodity PMs on tight drawdown leashes (out after a few failures within months).",
+     "claim_ids": [
+      "MT043-C12-X1",
+      "MT043-C12-1"
+     ]
+    },
+    {
+     "speaker": "Doug King (own fund)",
+     "position": "Still must cut and rebuild positions repeatedly on global risk-off days and has stringent risk processes.",
+     "claim_ids": [
+      "MT043-C12-1",
+      "MT043-C06-4"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Correction applied: the ICE cocoa margin squeeze belongs to Seibert; the cotton merchants wiped out by margin calls is King's story (C07-X1).",
+   "claim_ids": [
+    "MT043-C07-4",
+    "MT043-C07-X1"
+   ]
+  },
+  {
+   "issue": "The fund's volatility target and size discipline are said to prevent holding full size on big winners, yet the fund claims to want to be positioned for rocket-ship moves; the tension is acknowledged only indirectly.",
+   "claim_ids": [
+    "MT043-C07-2",
+    "MT043-C06-1"
+   ]
+  },
+  {
+   "issue": "Fund performance claims (60% in 2014) and 'top performing hedge fund of the year' are self-reported.",
+   "claim_ids": [
+    "MT043-C09-4"
+   ]
+  },
+  {
+   "issue": "No quantified rule for what counts as a 'full carry' or 'supply-demand story' worth risk; judgment-based.",
+   "claim_ids": [
+    "MT043-C03-3",
+    "MT043-C08-4"
+   ]
+  },
+  {
+   "issue": "Claim that precious metals are not physical supply-demand driven is not supported; the host jokes about silver.",
+   "claim_ids": [
+    "MT043-C03-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs King says lead prices: cash-futures basis and physical follow-through (weeks to months), storage levels and curve shape (carry vs inverse), OPEC supply decisions and shale growth against global GDP growth (months), electrification demand for copper, aluminium and lithium (years), exchange margin and limit rules at extremes (days). Reason: commodities are cyclical, ended by innovation; real tightness shows in cash.",
+ "reader_inferences": [
+  "(reader) King is a discretionary fundamental trader whose edge is judged by cash-market confirmation, which could be tested as a basis-confirmation filter on futures trends.",
+  "(reader) His volatility targeting explicitly caps participation in the fattest tails, so his return stream differs from trend followers.",
+  "(reader) The strategy is built around waiting for distortions; years of idleness are by design."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT043-C09-R1",
+   "chunk": "C09",
+   "speaker": "Doug King",
+   "quote": "I think it was up 100% on that morning. So I did liquidate pretty much everything",
+   "claim": "In the LME nickel squeeze the fund sold nearly everything after the price had doubled in a morning, then the exchange cancelled trades it did not honour.",
+   "mechanism": "risk_management",
+   "asset_class": "commodities",
+   "indicator": "LME nickel",
+   "horizon": "days",
+   "direction": "exit into spike, exchange intervention",
+   "conditions": "extreme squeeze",
+   "testable": "partly - date is not given in the transcript",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "reader": "map-reader",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT043-C03-R1",
+   "chunk": "C03",
+   "speaker": "Doug King",
+   "quote": "around 80% have never ever seen a commodity",
+   "claim": "King claims most commodity-conference participants have never seen the physical commodity, which is why cash and futures divergences give him an edge.",
+   "mechanism": "research_method",
+   "asset_class": "commodities",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "edge from physical knowledge",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map-reader",
+   "quote_check": "exact"
+  }
+ ]
+}

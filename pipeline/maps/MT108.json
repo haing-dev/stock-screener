@@ -1,0 +1,888 @@
+{
+ "source_id": "MT108",
+ "episode_thesis": "J8 Capital's Tilman argues that a systematic futures programme should be built by decomposing return drivers into simple single-purpose sub-strategies (commodity, currency and bond trend; curve arbitrage; FX carry; inventory; volatility term structure), weighted by inverse realised volatility and scaled to a 10% target volatility, because diversification across models adds a free diversification gain and keeps the source of returns transparent. Vishal adds the Redwood intraday strategy (breakouts in volatility terms, 12 liquid futures including equity indices) as a return driver with near-zero correlation to CTA indices, while host Moritz Seibert presses on the roughly 10% a year execution-cost hurdle that such short-term trading must overcome.",
+ "speakers": [
+  {
+   "name": "Tilman",
+   "role": "Co-founder of J8 Capital Management (London systematic hedge fund; Global Absolute Return strategy live since January 2015); civil engineer by training with a PhD in project-finance risk; formerly structured derivatives (Parkplace, UBS, AIG Financial Products, Dow Jones-AIG Commodity Index)",
+   "speaker_note": "Auto-captions garble names ('Tilman saxs', 'Morits seber'); the surname is not given reliably. Referred to as Tilman (J8 co-founder). Two of the ledger's speaker labels for Moritz's questions were fixed per its corrections.",
+   "fingerprint": [
+    "trend_following",
+    "carry",
+    "relative_value_arbitrage",
+    "commodity_fundamentals",
+    "diversification_risk_parity",
+    "position_sizing_vol_target",
+    "portfolio_construction_stacking",
+    "volatility_options"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Translating economic fundamentals in commodities into rules-based strategies removes the emotional and behavioural biases of discretionary traders.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His experience building the Dow Jones-AIG commodity index and rules-based strategies.",
+     "claim_ids": [
+      "MT108-C02-1"
+     ]
+    },
+    {
+     "premise": "Besides diversification across asset classes, one can diversify across return drivers and models, and weighting signals by risk gives an additional diversification boost ('no free lunch other than diversification').",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Appeal to Fama and French's no-free-lunch view (caption garbled); no data.",
+     "claim_ids": [
+      "MT108-C03-1",
+      "MT108-C03-R1"
+     ]
+    },
+    {
+     "premise": "Decomposing returns into one sub-strategy per return driver, then combining them in a risk-based portfolio, is better than one big model with filters because it keeps transparency on where returns come from and lets each driver be refined separately.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Design argument; contrast with how 'many CTAs' build trend models with filters.",
+     "claim_ids": [
+      "MT108-C03-2",
+      "MT108-C03-3"
+     ]
+    },
+    {
+     "premise": "Each sub-strategy should have a single degree of freedom and simple parameters: the product is complex but its parts are simple.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Design choice.",
+     "claim_ids": [
+      "MT108-C03-4"
+     ]
+    },
+    {
+     "premise": "Equity indices have survival bias (losers drop out), which truncates the signal that a trend follower wants to carry through the whole economic cycle of an underlying; equities also depend on rates, FX and commodity inputs already traded, so adding equity trend duplicates exposure.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning from index construction; adding equity index futures did not improve J8's long-term trend programme in tests.",
+     "claim_ids": [
+      "MT108-C04-3",
+      "MT108-C04-4",
+      "MT108-C05-2"
+     ]
+    },
+    {
+     "premise": "Commodities have clear supply and demand fundamentals, while shares are mainly speculative instruments once issued.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Economic argument.",
+     "claim_ids": [
+      "MT108-C05-1"
+     ]
+    },
+    {
+     "premise": "The equity exclusion applies to the slow trend programme only; equity index futures make sense when traded differently (as in Redwood), so the redundancy argument is horizon-specific.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "He defers to Vishal's short-term system.",
+     "claim_ids": [
+      "MT108-C05-X1"
+     ]
+    },
+    {
+     "premise": "A short-term momentum strategy hedges the long-term trend programme's drawdowns during reversals.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Design intent; his recently added cross-asset short-term momentum.",
+     "claim_ids": [
+      "MT108-C04-2"
+     ]
+    },
+    {
+     "premise": "Two styles of carry/arbitrage: arbitraging time along a futures curve (commodity and volatility term structure) versus arbitraging between markets (FX carry, commodity inventory/curvature selection).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Conceptual taxonomy.",
+     "claim_ids": [
+      "MT108-C05-X2",
+      "MT108-C05-3"
+     ]
+    },
+    {
+     "premise": "Futures curve shape is a real-time proxy for inventory because inventory data is delayed, revised and imprecise; curvature indicates under- or oversupply, so go long undersupplied and short oversupplied commodities.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning from curve shape; no test shown.",
+     "claim_ids": [
+      "MT108-C05-5",
+      "MT108-C06-1"
+     ]
+    },
+    {
+     "premise": "Rolling front-month VIX futures loses about 50-60% a year in roll costs; shorting it arbitrages the roll out, but the short has catastrophic tail risk in spikes (for example a 300% jump) and must be hedged and managed. J8 trades a relative-value trade on the VIX/VSTOXX futures term structure rather than outright short volatility.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Long-run behaviour of rolling front-month VIX futures; the figure is from his recollection.",
+     "claim_ids": [
+      "MT108-C06-2",
+      "MT108-C06-3",
+      "MT108-C06-X1"
+     ]
+    },
+    {
+     "premise": "Realised volatility is stable over time while correlations and recent performance are unstable, so allocate by inverse realised volatility (equal risk) and use no correlation or performance tilts; this gave the most stable overall return.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "J8's own testing; no figures shown.",
+     "claim_ids": [
+      "MT108-C06-4",
+      "MT108-C06-5"
+     ]
+    },
+    {
+     "premise": "Combining many uncorrelated sub-strategies lowers portfolio volatility, and because futures are unfunded, exposure can be levered up to restore the 10% target volatility, converting diversification into return; realised volatility was 10.26% over 10 years, and margin is about 6-12% of equity.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own realised volatility over ten years; 1 million cash controls about 30 million of notional.",
+     "claim_ids": [
+      "MT108-C06-6",
+      "MT108-C06-X2",
+      "MT108-C07-1"
+     ]
+    },
+    {
+     "premise": "A simple index built from survey answers (about 120 replies over three years from brokers, CTAs, consultants and investors) explained about 80% of CTA index returns: a diversified, risk-weighted 12-month momentum portfolio. J8 sees itself as half traditional CTA and half alternative risk premia, so no single benchmark fits.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own surveys at J8's founding; the index and the 80% figure are not shown.",
+     "claim_ids": [
+      "MT108-C07-2",
+      "MT108-C07-3"
+     ]
+    },
+    {
+     "premise": "The trend signal method is the same across commodities, currencies and bonds, with market-specific parameters.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "J8 design.",
+     "claim_ids": [
+      "MT108-C04-1"
+     ]
+    },
+    {
+     "premise": "FX carry (long high-yield, short low-yield currencies against USD) is reversed after a sell-off signalled by short-term realised volatility.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "J8 rule.",
+     "claim_ids": [
+      "MT108-C05-4"
+     ]
+    },
+    {
+     "premise": "J8's objective is to give investors access to systematic investing in a broad, diversified and holistic way; it would add outside traders only if they offer something it has not considered.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Business description.",
+     "claim_ids": [
+      "MT108-C11-R2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Decomposition and risk-weighting to a stable return",
+     "steps": [
+      {
+       "from": "Split strategies by return driver (one sub-strategy each, one degree of freedom)",
+       "to": "Transparent and separately refinable sources of return",
+       "why": "No big model with filters to obscure where returns come from.",
+       "claim_ids": [
+        "MT108-C03-2",
+        "MT108-C03-3",
+        "MT108-C03-4"
+       ]
+      },
+      {
+       "from": "Weight sub-strategies by inverse realised volatility",
+       "to": "Equal-risk portfolio with the most stable overall return",
+       "why": "Realised volatility is stable while correlations and recent performance are not.",
+       "claim_ids": [
+        "MT108-C06-4",
+        "MT108-C06-5"
+       ]
+      },
+      {
+       "from": "Diversified, lower-volatility combination of unfunded futures",
+       "to": "Lever to the 10% target volatility, turning diversification into return",
+       "why": "Unfunded futures let exposure be scaled; margin is only 6-12% of equity.",
+       "claim_ids": [
+        "MT108-C06-6",
+        "MT108-C06-X2",
+        "MT108-C07-1"
+       ]
+      }
+     ],
+     "evidence": "Ten-year realised volatility of 10.26% against the 10% target; no return, Sharpe or drawdown figures disclosed.",
+     "fails_when": "Not stated; the stability of realised volatility is the key assumption.",
+     "claim_ids": [
+      "MT108-C06-4",
+      "MT108-C06-5",
+      "MT108-C06-6",
+      "MT108-C06-X2"
+     ]
+    },
+    {
+     "topic": "Why equities are excluded from slow trend following",
+     "steps": [
+      {
+       "from": "Equity indices drop their losers (survival bias)",
+       "to": "Signals are truncated, so trend following cannot ride a full cycle as in oil or gold",
+       "why": "Constituent selection removes the down-leg.",
+       "claim_ids": [
+        "MT108-C04-3"
+       ]
+      },
+      {
+       "from": "Equities rely on interest rates, FX and commodity inputs",
+       "to": "Equity trend signals are triggered by moves in markets already traded (redundancy)",
+       "why": "Same underlying drivers.",
+       "claim_ids": [
+        "MT108-C04-4"
+       ]
+      },
+      {
+       "from": "Tests of adding equity index futures",
+       "to": "No improvement to the long-term trend programme",
+       "why": "Empirical finding.",
+       "claim_ids": [
+        "MT108-C05-2"
+       ]
+      }
+     ],
+     "evidence": "In-house testing, no results shown.",
+     "fails_when": "Equity index futures can add value if traded differently (Redwood), so the exclusion is horizon-specific.",
+     "claim_ids": [
+      "MT108-C04-3",
+      "MT108-C04-4",
+      "MT108-C05-2",
+      "MT108-C05-X1"
+     ]
+    },
+    {
+     "topic": "Curve shape as a carry and inventory signal",
+     "steps": [
+      {
+       "from": "Price of a far contract versus a near one on the same commodity",
+       "to": "Curve slope or curvature indicates under- or oversupply",
+       "why": "Official inventory data are delayed, revised and imprecise.",
+       "claim_ids": [
+        "MT108-C06-1",
+        "MT108-C05-5"
+       ]
+      },
+      {
+       "from": "Long undersupplied and short oversupplied commodities",
+       "to": "Profits when oversupplied prices fall and undersupplied rise",
+       "why": "Supply imbalance corrects through price.",
+       "claim_ids": [
+        "MT108-C05-5"
+       ]
+      },
+      {
+       "from": "Long the longer end and short the shorter end of the curve",
+       "to": "Harvests roll yield; the short end is closed when the curve turns unsustainable",
+       "why": "Natural built-in risk management.",
+       "claim_ids": [
+        "MT108-C05-3"
+       ]
+      }
+     ],
+     "evidence": "Reasoning only; no returns shown for these sleeves.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT108-C05-3",
+      "MT108-C05-5",
+      "MT108-C06-1"
+     ]
+    },
+    {
+     "topic": "Volatility term-structure arbitrage",
+     "steps": [
+      {
+       "from": "Rolling front-month VIX futures",
+       "to": "About 50-60% annual roll losses",
+       "why": "Contango and roll costs.",
+       "claim_ids": [
+        "MT108-C06-2"
+       ]
+      },
+      {
+       "from": "Short front month, long back (VIX/VSTOXX)",
+       "to": "Earns roll-yield differentials without depending on the equity risk premium",
+       "why": "Relative-value rather than outright short volatility.",
+       "claim_ids": [
+        "MT108-C06-X1",
+        "MT108-C05-3"
+       ]
+      },
+      {
+       "from": "Volatility spike (for example 300%)",
+       "to": "Catastrophic loss on the short leg",
+       "why": "Short volatility carry has tail risk; must be hedged and managed.",
+       "claim_ids": [
+        "MT108-C06-3"
+       ]
+      }
+     ],
+     "evidence": "Behaviour of rolling VIX futures (his figure); no details of the hedge.",
+     "fails_when": "A volatility spike that hits the short leg harder than the long leg.",
+     "claim_ids": [
+      "MT108-C06-2",
+      "MT108-C06-3",
+      "MT108-C06-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Same trend method across commodities, currencies and bonds, with market-specific parameters; add a cross-asset short-term momentum sleeve to hedge reversals.",
+     "why": "Consistent logic with individual parameterisation; short-term sleeve hedges long-term drawdowns in reversals.",
+     "claim_ids": [
+      "MT108-C04-1",
+      "MT108-C04-2"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Exclude equity indices from the long-term trend programme (survival bias, redundancy); include them only in the short-term Redwood strategy.",
+     "why": "Truncated signals and duplicated exposure.",
+     "claim_ids": [
+      "MT108-C04-3",
+      "MT108-C04-4",
+      "MT108-C05-2",
+      "MT108-C05-X1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Run separate sleeves: commodity term-structure arbitrage; inventory selection from curve shape; FX carry reversed on a sell-off signalled by short-term realised volatility; VIX/VSTOXX term-structure relative value.",
+     "why": "One return driver per sub-strategy.",
+     "claim_ids": [
+      "MT108-C05-3",
+      "MT108-C05-4",
+      "MT108-C05-5",
+      "MT108-C06-X1",
+      "MT108-C06-1"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Allocate across strategies by inverse realised volatility (equal risk); no correlation or performance tilts.",
+     "why": "Realised volatility is stable, correlations and recent performance are not.",
+     "claim_ids": [
+      "MT108-C06-4",
+      "MT108-C06-5"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Scale overall exposure to a 10% target volatility using unfunded futures (margin about 6-12% of equity, so 1 million cash controls about 30 million notional).",
+     "why": "Diversification lowers volatility and leverage restores the target.",
+     "claim_ids": [
+      "MT108-C06-6",
+      "MT108-C06-X2",
+      "MT108-C07-1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Hedge and manage the tail risk of short volatility carry.",
+     "why": "Spikes could be catastrophic.",
+     "claim_ids": [
+      "MT108-C06-3"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Benchmark as half CTA, half alternative risk premia, since no single index fits.",
+     "why": "CTA universe ~ diversified risk-weighted 12-month momentum; J8 adds carry and arbitrage.",
+     "claim_ids": [
+      "MT108-C07-2",
+      "MT108-C07-3"
+     ]
+    }
+   ],
+   "evidence_style": "Design reasoning and in-house testing; ten-year realised volatility of 10.26% is the only performance statistic. No returns, Sharpe, drawdowns, or test results are shown, and the survey-based benchmark index is described without detail.",
+   "current_views": [
+    {
+     "view": "J8 is growing both the investment management and a hosting (incubator) business, aims to launch a fund vehicle for global professional investors, and is raising seed capital; it would allocate to an outside trader only if the idea is something new.",
+     "as_of": "2024-12 (upload 2024-12-29; Open Interest 12)",
+     "reasoning": "Business plan: the managed accounts run about 350 (units unclear), with own research the core.",
+     "claim_ids": [
+      "MT108-C11-R2"
+     ]
+    },
+    {
+     "view": "J8's combined programme is a cross between traditional CTA and alternative risk premia, so benchmarking against a multi-strategy hedge fund or a CTA index alone does not fit.",
+     "as_of": "2024-12",
+     "reasoning": "Half CTA-like momentum, half carry and arbitrage; heavy commodity focus.",
+     "claim_ids": [
+      "MT108-C07-3",
+      "MT108-C07-2"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Vishal",
+   "role": "Head of trading and portfolio management at J8 Capital (joined December 2020); previously built quantitative short-term trading models at ION Asset Architecture and ARB Trading Group; IIT engineering degree",
+   "speaker_note": "Auto-captions; first name only is given. His answer on Redwood's correlation to the short-term traders index was attributed to the host in the ledger and is corrected here. His numbers on costs are explicitly rough.",
+   "fingerprint": [
+    "short_term_systematic",
+    "trend_following",
+    "costs_execution",
+    "market_internals_leading",
+    "diversification_risk_parity",
+    "position_sizing_vol_target"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Redwood trades intraday breakouts measured in volatility terms within a context of trend, volatility and positioning; holding periods run from a few hours to a few days (3-5 days at most, mostly same day or next day), sampled every 3-5 minutes.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Description of own system; no performance shown.",
+     "claim_ids": [
+      "MT108-C08-1",
+      "MT108-C08-X1",
+      "MT108-C08-R3"
+     ]
+    },
+    {
+     "premise": "Short-term trading requires highly liquid futures for cheap entry and exit, so Redwood trades 12 big futures across all asset classes including equity indices.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Design constraint.",
+     "claim_ids": [
+      "MT108-C08-2",
+      "MT108-C08-X1",
+      "MT108-C09-2"
+     ]
+    },
+    {
+     "premise": "The short-term strategy has low or negative correlation to CTA indices and improved risk-adjusted return when added to the main programme in simulations; its correlation with the SG Short Term Traders Index is practically zero.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Simulation results ('we did a lot of simulations'); no numbers beyond 'very close to 0'. (Corrected from the host to Vishal.)",
+     "claim_ids": [
+      "MT108-C08-3",
+      "MT108-C08-4",
+      "MT108-C08-R4"
+     ]
+    },
+    {
+     "premise": "Short-term trading is not simply counter-trend: each strategy uses its own horizon context including volatility, and a longer-term mean-reversion view may coincide with a prevailing short-term trend.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Design philosophy.",
+     "claim_ids": [
+      "MT108-C09-1"
+     ]
+    },
+    {
+     "premise": "Short-term systems get a higher Sharpe at similar or slightly better returns, but the challenge is avoiding whipsaws from noise and overtrading, so exposure and sensitivity must be controlled.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own results; no figures.",
+     "claim_ids": [
+      "MT108-C09-3",
+      "MT108-C10-2"
+     ]
+    },
+    {
+     "premise": "Intraday trading needs 24-hour automated infrastructure (FIX execution, alerts, monitoring desks in India and the UK, hybrid Python/Julia/Java), an operational overhead.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Own set-up.",
+     "claim_ids": [
+      "MT108-C10-3"
+     ]
+    },
+    {
+     "premise": "Performance is not highly sensitive to small changes in costs, though he has no exact numbers on hand.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Multiple brokers; recollection only.",
+     "claim_ids": [
+      "MT108-C09-4"
+     ]
+    },
+    {
+     "premise": "Roughly 700 round trips per million per month (about 8,000 per year) across 12 futures.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own figure; the 'per million' basis is not defined.",
+     "claim_ids": [
+      "MT108-C09-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why an intraday strategy diversifies a CTA programme",
+     "steps": [
+      {
+       "from": "Intraday breakouts defined in volatility terms and context of trend, volatility and positioning",
+       "to": "Return stream that differs in horizon and approach from slow trend following",
+       "why": "Different time frame and trade logic.",
+       "claim_ids": [
+        "MT108-C08-1",
+        "MT108-C09-1"
+       ]
+      },
+      {
+       "from": "Low or negative correlation to CTA indices",
+       "to": "Improved risk-adjusted return in the combined programme",
+       "why": "Additional uncorrelated return driver.",
+       "claim_ids": [
+        "MT108-C08-3",
+        "MT108-C08-4"
+       ]
+      },
+      {
+       "from": "Quick reaction to changes",
+       "to": "Hedge during reversals where long-term trend suffers (Tilman's point)",
+       "why": "Short-term system exits and reverses early.",
+       "claim_ids": [
+        "MT108-C04-2",
+        "MT108-C09-3"
+       ]
+      }
+     ],
+     "evidence": "Simulations by J8; correlation to the SG Short Term Traders Index about zero.",
+     "fails_when": "Costs and overtrading overwhelm the edge; whipsaws in noisy markets.",
+     "claim_ids": [
+      "MT108-C08-3",
+      "MT108-C08-4",
+      "MT108-C09-3",
+      "MT108-C10-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "universe",
+     "practice": "Trade 12 highly liquid futures across commodities, currencies, bonds and equity indices.",
+     "why": "Cheap entry and exit are needed for short-term trading.",
+     "claim_ids": [
+      "MT108-C08-2",
+      "MT108-C08-X1",
+      "MT108-C09-2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Sample every 3-5 minutes; trade breakouts measured in volatility and in the context of trend, volatility and positioning; long and short.",
+     "why": "React quickly to big moves; context decides whether a move is trend or reversion.",
+     "claim_ids": [
+      "MT108-C08-1",
+      "MT108-C08-R3",
+      "MT108-C09-1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "In-house FIX execution infrastructure with alerts and 24-hour monitoring desks in India and the UK; multiple brokers.",
+     "why": "Intraday trading has no off hours; glitches must be caught.",
+     "claim_ids": [
+      "MT108-C10-3",
+      "MT108-C09-4"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Control exposure and system sensitivity to avoid overtrading and whipsaws.",
+     "why": "Overtrading magnifies transaction costs in the short-term space.",
+     "claim_ids": [
+      "MT108-C09-3",
+      "MT108-C10-2"
+     ]
+    }
+   ],
+   "evidence_style": "Simulations and practitioner experience; he gives correlation to the short-term index (~0), Sharpe 'higher' and returns 'par or slightly better' without numbers, and says he lacks cost figures to hand.",
+   "current_views": [
+    {
+     "view": "The short-term Redwood strategy adds a different return driver that blends well with the slow long-term programme.",
+     "as_of": "2024-12",
+     "reasoning": "Low or negative correlation to CTA indices; higher Sharpe in simulations.",
+     "claim_ids": [
+      "MT108-C08-3",
+      "MT108-C08-4",
+      "MT108-C09-3"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Moritz Seibert",
+   "role": "Host of the Open Interest series (Top Traders Unplugged); systematic trading practitioner",
+   "speaker_note": "Caption 'Moret/Morits seber'. He asks questions but also supplies a cost calculation; two of his turns were mis-assigned in the ledger (the Redwood correlation answer is Vishal's, not his).",
+   "fingerprint": [
+    "costs_execution",
+    "short_term_systematic",
+    "trend_following",
+    "research_robustness_overfitting"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "For a non-HFT futures trader, the all-in cost per contract (commission about 0.75, exchange fee 0.50, clearing fee 0.50, plus spread, slippage and market impact) is roughly 5-6 dollars.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Back-of-envelope sum; Vishal accepts $6 as fair if it includes bid/offer.",
+     "claim_ids": [
+      "MT108-C10-X1"
+     ]
+    },
+    {
+     "premise": "At roughly 6 dollars per contract and about 8,000 round turns per million per year, execution cost is around 10% a year (he states 10.8%), a very high hurdle that a short-term strategy must beat with a very accurate system.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His arithmetic, which does not fully reconcile (8,000 x 2 x $6 would be about 9.6%).",
+     "claim_ids": [
+      "MT108-C10-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Cost hurdle for high-turnover systems",
+     "steps": [
+      {
+       "from": "About 8,000 round turns per million per year at around $6 a contract",
+       "to": "Roughly 10% annual execution drag",
+       "why": "Costs scale linearly with turnover.",
+       "claim_ids": [
+        "MT108-C10-1",
+        "MT108-C10-X1"
+       ]
+      },
+      {
+       "from": "A cost drag of about 10% a year",
+       "to": "Risk-adjusted returns before cost must be very high for the strategy to net a profit",
+       "why": "The system has to recover the drag and then some.",
+       "claim_ids": [
+        "MT108-C10-1"
+       ]
+      }
+     ],
+     "evidence": "Back-of-envelope with unit costs; Vishal does not give his own number.",
+     "fails_when": "Per-contract costs or turnover are lower than assumed (Vishal says costs are not substantial but has no figures).",
+     "claim_ids": [
+      "MT108-C10-1",
+      "MT108-C10-X1"
+     ]
+    }
+   ],
+   "decision_process": [],
+   "evidence_style": "Back-of-envelope arithmetic and probing questions; not a source of strategy claims.",
+   "current_views": [
+    {
+     "view": "The transaction-cost hurdle for a high-turnover intraday futures strategy is roughly 10% a year, so the strategy must be extremely accurate.",
+     "as_of": "2024-12",
+     "reasoning": "About 8,000 round turns per million and $6 per contract.",
+     "claim_ids": [
+      "MT108-C10-1",
+      "MT108-C10-X1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Equity indices in a trend programme",
+   "positions": [
+    {
+     "speaker": "Tilman",
+     "position": "Excluded from the slow trend programme because of survival bias and redundancy with rates, FX and commodities; adding them did not improve results.",
+     "claim_ids": [
+      "MT108-C04-3",
+      "MT108-C04-4",
+      "MT108-C05-2"
+     ]
+    },
+    {
+     "speaker": "Vishal",
+     "position": "Redwood trades equity indices (among all asset classes) because it works on intraday breakouts in liquid futures; Tilman concedes this is sensible when traded differently.",
+     "claim_ids": [
+      "MT108-C08-X1",
+      "MT108-C05-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "How binding is the cost hurdle for short-term trading?",
+   "positions": [
+    {
+     "speaker": "Moritz Seibert",
+     "position": "About 10% a year in execution cost (at about 8,000 round turns per million and $6 a contract); an extremely good system is needed to recover it.",
+     "claim_ids": [
+      "MT108-C10-1",
+      "MT108-C10-X1"
+     ]
+    },
+    {
+     "speaker": "Vishal",
+     "position": "Agrees with the point and the need to avoid overtrading, but says performance is not highly sensitive to small cost changes and he lacks exact numbers; says he controls exposure to avoid overtrading.",
+     "claim_ids": [
+      "MT108-C09-4",
+      "MT108-C10-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Which benchmark fits J8?",
+   "positions": [
+    {
+     "speaker": "Moritz Seibert",
+     "position": "Asks whether J8, with eight strategies across styles and holding periods, should be benchmarked against multi-strategy hedge funds rather than CTAs.",
+     "claim_ids": [
+      "MT108-C07-3"
+     ]
+    },
+    {
+     "speaker": "Tilman",
+     "position": "Neither fits: the CTA universe is essentially a diversified risk-weighted 12-month momentum portfolio (his survey index explained about 80% of CTA index returns); J8 is about 50% traditional CTA and 50% alternative risk premia ('CTA plus'), heavily commodity-focused.",
+     "claim_ids": [
+      "MT108-C07-2",
+      "MT108-C07-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "No returns, Sharpe ratios, drawdowns or correlations are disclosed for the programme or for Redwood; the only numbers are the 10.26% realised volatility over ten years and the near-zero correlation to the short-term traders index. Redwood's evidence is simulation.",
+   "claim_ids": [
+    "MT108-C06-6",
+    "MT108-C08-3",
+    "MT108-C08-4",
+    "MT108-C08-R4"
+   ]
+  },
+  {
+   "issue": "The cost arithmetic does not reconcile: 8,000 round turns x 2 contracts x $6 is about 9.6%, not 10.8%; and 700 round trips per month times 12 is 8,400. Treat 10.8% as a rough figure of about 10% a year; 'per million' is not defined (capital or notional).",
+   "claim_ids": [
+    "MT108-C10-1",
+    "MT108-C09-2",
+    "MT108-C10-X1"
+   ]
+  },
+  {
+   "issue": "Vishal says costs matter little yet gives no numbers, while the host's calculation suggests a very large drag; the two views are not reconciled.",
+   "claim_ids": [
+    "MT108-C09-4",
+    "MT108-C10-1"
+   ]
+  },
+  {
+   "issue": "The 80% explanatory power of the survey-based 'CTA index' is asserted without the index definition or sample period.",
+   "claim_ids": [
+    "MT108-C07-2"
+   ]
+  },
+  {
+   "issue": "The 50-60% a year loss from rolling VIX futures and the survival-bias argument for equities are stated as facts without data; the survival-bias argument also applies to commodity index constituents of the benchmark indices only weakly.",
+   "claim_ids": [
+    "MT108-C06-2",
+    "MT108-C04-3"
+   ]
+  },
+  {
+   "issue": "Tilman says adding equity index futures 'did not improve' the long-term programme while giving three a priori reasons for excluding them; the test results are not shown.",
+   "claim_ids": [
+    "MT108-C05-2",
+    "MT108-C04-3",
+    "MT108-C04-4"
+   ]
+  },
+  {
+   "issue": "Ledger attribution fixes applied: the near-zero correlation answer (C08-4) is Vishal's; the cost arithmetic (C10-1) is the host's and is only approximate.",
+   "claim_ids": [
+    "MT108-C08-4",
+    "MT108-C10-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) The speakers give almost no forward-looking market inputs. Inputs their rules use: futures curve shape (slope and curvature) as an inventory and carry signal; short-term realised volatility as the trigger to reverse FX carry; realised volatility of each sub-strategy for weights and the 10% target; intraday volatility-scaled breakouts in a trend, volatility and positioning context. Horizon ranges from hours to days (Redwood) to 12-month momentum (slow programme).",
+ "reader_inferences": [
+  "(reader) The 'decomposition' design implies that each sleeve should be separately testable; a replication or adoption study could check whether the equal-risk combination beats each sleeve and a single filtered model, which J8 does not show.",
+  "(reader) The claim that realised volatility is stable while correlations are not is the key assumption behind inverse-volatility weights and the 10% target; it is testable on sleeve returns, especially around volatility spikes.",
+  "(reader) The cost-hurdle exchange implies that net-of-cost Sharpe of an intraday strategy depends on turnover per unit of capital, so capital-based and notional-based 'per million' definitions give different drags.",
+  "(reader) Tilman's reasons for excluding equities (survival bias, redundancy, speculative nature) rest on structure rather than evidence; a test of equity trend after controlling for rates, FX and commodity trends could check the redundancy claim."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT108-C03-R1",
+   "chunk": "C03",
+   "speaker": "Tilman",
+   "quote": "there's no no free lunch in capital markets other than diversification",
+   "claim": "Tilman invokes 'no free lunch other than diversification' (attributed in the caption to Fama and French) as the basis for diversifying across models and return drivers.",
+   "mechanism": "diversification",
+   "asset_class": "multi",
+   "indicator": "n/a",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "Portfolio construction across return drivers",
+   "testable": "partly: diversification benefit of risk-weighted sleeves",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT108-C11-R2",
+   "chunk": "C11",
+   "speaker": "Tilman",
+   "quote": "provide the investor with uh with access to the asset class systematic in a broader Diversified and all-encompassing inclusive holistic way",
+   "claim": "J8's objective with the Global Absolute Return strategy is broad, diversified, holistic access to systematic investing; it only adds outside traders if they offer something it has not considered.",
+   "mechanism": "business_strategy",
+   "asset_class": "multi",
+   "indicator": "n/a",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "J8 business plan (managed accounts, hosting, planned fund vehicle)",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT108-C08-R3",
+   "chunk": "C08",
+   "speaker": "Vishal",
+   "quote": "we are sampling the market every 3 minutes to 5 minutes",
+   "claim": "Redwood samples the market every 3 to 5 minutes (different systems at 3 or 5) and computes outputs each time; a trade is not necessarily taken.",
+   "mechanism": "signal_frequency",
+   "asset_class": "futures",
+   "indicator": "intraday price, volatility, trend and positioning context",
+   "horizon": "minutes to days",
+   "direction": "",
+   "conditions": "Liquid futures only",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT108-C08-R4",
+   "chunk": "C08",
+   "speaker": "Vishal",
+   "quote": "lot of simulations and what we realized was that this kind of alpha that we are getting",
+   "claim": "The evidence for Redwood's low correlation and enhanced risk-adjusted return when added to the main programme comes from simulations, not a live record.",
+   "mechanism": "evidence_base",
+   "asset_class": "futures",
+   "indicator": "n/a",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "Before and after adding the short-term strategy",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

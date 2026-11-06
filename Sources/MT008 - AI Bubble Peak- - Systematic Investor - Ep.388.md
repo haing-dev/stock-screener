@@ -5,8 +5,8 @@ date: 2026-02-23
 channel: "Top Traders Unplugged"
 url: 
 words: 11076
-claims: 57
-added_by_crosscheck: 8
+claims: 60
+added_by_crosscheck: 11
 corrections: 3
 crosscheck: "opus cross-check"
 speakers: ["Mark (guest, quantitative macro researcher and professor)", "Alan Dunne (guest host, Top Traders Unplugged)"]
@@ -21,6 +21,147 @@ tags: [source, layer0]
 **Approach:** trend following, regime analysis, fiscal dominance, bubbles, macro uncertainty
 
 **Cross-check completeness estimate of first read:** 0.85 - first reader caught Mark's main mechanisms but missed several co-host points (AI narrative shift, sector rotation, EM credibility, Warsh scenarios), the Lunar New Year gold effect and the regime-decomposition method; three speaker attributions were off
+
+## Argument map
+
+**Episode thesis:** Mark argues that asset relationships are conditional on the regime (volatility, monetary/fiscal, sentiment), so a trend follower with macro awareness gets an edge from decomposing regimes, detecting change points and modelling causal networks rather than mining factors. In early 2026 he sees metals and softs as possibly past a bubble peak (hard-to-value assets plus narrative plus excess money), a rotation away from US assets as uncertainty makes them relatively less safe, and a fiscal-versus-monetary tussle whose outcome depends on the new Fed chair. Alan Dunne supplies market evidence and counter-readings (AI narrative flip, EM credibility, Warsh's political flexibility) and both back trend following over years, not months.
+
+### Mark (Guest: quantitative macro researcher and professor, global macro and trend-following believer (surname not given in the captions))
+Fingerprint: #approach/regime_detection #approach/macro_fundamental_topdown #approach/trend_following #approach/behavioral_sentiment #approach/research_robustness_overfitting #approach/fiscal_dominance #approach/policy_reaction_central_banks #approach/market_internals_leading
+_Speaker note: Captions have no speaker labels; turns were assigned from content (Mark is the guest who spoke at length, mentions Fidelity, John Henry, trend following and his firm; Alan Dunne is the sitting-in host who reads index numbers, is in Dublin and heading to Miami). Ledger corrections applied: the AI narrative flip (C03-X1) and 'EM real yields are higher' are Alan's; 'fiscal dominance not yet' is Alan's, Mark defines it and cites WWII._
+
+**Worldview premises**
+- Bubbles need fuel (excess money) plus a narrative, and narratives form around assets that are hard to value. _[behavioural, stated; support: Cites the 'retail habitat' research: retail investors gravitate to hard-to-value stocks.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-3|C02-3]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-4|C02-4]])
+- Commodity bubbles differ from equity bubbles because mining supply is constrained, so demand shocks translate into price spikes. _[theoretical, stated; support: Supply constraint argument for gold and silver.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-5|C02-5]])
+- Risk is countable (volatility, VIX) while uncertainty is not, so new technology like AI is priced on narrative and embedded growth can be too high or too low. _[theoretical, stated; support: Risk versus uncertainty distinction; no data.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C03-3|C03-3]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C04-1|C04-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C04-2|C04-2]])
+- Safety is a relative concept: US Treasuries stay safe in absolute terms but less than before, so investors diversify their flows. _[theoretical, stated; support: Reasoning from higher US trade, geopolitical and monetary uncertainty.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C06-1|C06-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C05-3|C05-3]])
+- Asset-price relationships are conditional on the environment; there is no single beta, and awareness of regimes is an edge in portfolio formation. _[empirical, stated; support: Paper on stock beta by crisis/recession regime and personal anecdote at John Henry.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C06-3|C06-3]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C07-1|C07-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C07-2|C07-2]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C06-R1|C06-R1]])
+- Regimes come in distinct types (volatility, monetary/fiscal-structural, geopolitical/sentiment) and the edge comes from decomposing them rather than using one label. _[experience, stated; support: Assertion; no evidence presented.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-X1|C08-X1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-1|C08-1]])
+- The VIX is non-linearly related to returns: above about 25 and rising is bad, near 40 marks a peak and a re-entry point. _[empirical, stated; support: Skewed distribution of the VIX; no figures.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-2|C08-2]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-3|C08-3]])
+- Stock-bond correlation depends on inflation, so third factors reveal the regime. _[empirical, stated; support: Cited as known; 2022 mentioned by host.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-4|C08-4]])
+- The post-pandemic inflation burst came from excess fiscal policy never reversed, and the Treasury prefers lower rates and tolerates higher inflation to cut the real debt. _[theoretical, stated; support: War analogy from a paper; Cochrane's fiscal theory of the price level.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C09-2|C09-2]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C10-1|C10-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C10-3|C10-3]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C12-2|C12-2]])
+- Factors mined from past data often vanish out of sample (factor zoo); causal factors and domain knowledge matter more than model complexity, and ML struggles on non-stationary adaptive markets. _[empirical, stated; support: Research on features vs complexity; Lo's adaptive markets hypothesis; dog-picture analogy.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C15-1|C15-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C15-2|C15-2]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C15-3|C15-3]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C14-3|C14-3]])
+- Trend following and momentum work especially in uncertain regimes and non-stationary data, but alternate strong and weak periods and crowding makes improvement hard. _[experience, stated; support: History of strong and weak periods; self-declared belief.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C16-2|C16-2]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C16-3|C16-3]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C06-R2|C06-R2]])
+
+**Chain: How a bubble forms and ends in metals and softs**
+1. Excess money plus hard-to-value asset → optimistic narrative: Hard-to-value assets allow stories, which retail investors favour. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-3|C02-3]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-4|C02-4]])
+2. Constrained mining supply → demand shocks become price spikes in gold and silver: No new supply responds to euphoria. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-5|C02-5]])
+3. Blow-off top → correction or slow grind lower: Pattern repeated across bubbles; trend followers can profit both ways if they exit near the top. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-2|C02-2]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-1|C02-1]])
+- Evidence: Recent cocoa fall from 12 to 4, coffee, gold and silver spike and reversal; retail habitat research.
+- Fails when: Fuel and narrative persist; he says it is hard to know whether this is a pause or initial deflation.
+
+**Chain: Central-bank gold buying as a sanction hedge**
+1. Fear of US sanctions (China, Poland, former Soviet states) → central banks buy gold instead of dollars: Gold is a quasi safe asset outside the dollar. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C03-2|C03-2]])
+2. Part of gold's pullback → fewer retail buyers during Lunar New Year: Seasonal Chinese retail absence. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-X1|C02-X1]])
+- Evidence: Reserve-buying pattern from World Gold Council data cited by host.
+- Fails when: Not stated.
+
+**Chain: Why money rotates out of the US (2026)**
+1. US core inflation about 3% above EM inflation → EM relatively more attractive: Inflation differential. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C05-1|C05-1]])
+2. High US trade, geopolitical and monetary uncertainty → foreign and US investors demand a premium and treat US assets as less safe: Cash flows in less uncertain countries are easier to discount. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C05-3|C05-3]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C06-1|C06-1]])
+3. K-shaped US economy → asset flows worldwide change (US pensions abroad, foreign buyers hedge currency on Treasuries, software down, real assets up): Divergence between real and asset economy. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C05-2|C05-2]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C04-3|C04-3]])
+- Evidence: Uncertainty indices he follows; flow observations; breadth broadening in early 2026.
+- Fails when: He admits EM structural change is outside his expertise.
+
+**Chain: Regime-dependent portfolio construction**
+1. Inflation rises → stock-bond correlation rises: Inflation-dependent correlation. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-4|C08-4]])
+2. Correlation turns positive with lower rates → hold more alternatives and hedge fund strategies: Bonds no longer hedge equities. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-5|C08-5]])
+3. Correlation strongly negative with high rates → alternatives less needed: Bonds already diversify. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-5|C08-5]])
+4. Knowledge of correlation regime → tilt trend-based exposures to avoid overweighting one sector: Correlation affects risk concentration. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-6|C08-6]])
+- Evidence: Description; hidden Markov model identification of volatility regimes.
+- Fails when: Regimes are only identified with delay.
+
+**Chain: Fiscal versus monetary dominance and asset markets**
+1. Large permanent deficits and unreversed pandemic spending → tussle between Treasury (wants lower rates and tolerates inflation) and the Fed: Inflation lowers real debt value. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C10-1|C10-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C10-3|C10-3]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C09-1|C09-1]])
+2. Warsh shrinks the balance sheet → liquidity falls and asset markets deleverage, against Treasury interest: Treasury sold about $700bn in one week and relies on firm demand. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C11-2|C11-2]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C11-3|C11-3]])
+3. Expected permanent deficits (Cochrane) → money moves into real assets (gold) and inflation; financial assets bid up if savings are abundant: Fiscal theory of the price level. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C12-2|C12-2]])
+4. Outcome of the Fed chair choice → regime change: smaller balance sheet, fiscal dominance, or continued deficits: Appointed officials may behave unexpectedly. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C13-1|C13-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C13-2|C13-2]])
+- Evidence: WWII rate cap and Treasury-Fed Accord history; Cochrane's research; benchmark revisions to payrolls.
+- Fails when: Weak payrolls may reflect labour supply leaving the US, in which case the economy need not be run hotter.
+
+**Chain: Why detection and causality beat factor mining**
+1. Many factors found in past data → they disappear out of sample (spurious or overfit): Factor zoo. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C15-1|C15-1]])
+2. ML needs stationary data → it struggles in adaptive, regime-changing markets: Agents' behaviour changes (Lo). ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C15-3|C15-3]])
+3. Change-point detection, hidden Markov models and causal network monitoring → earlier sensitivity to regime shifts, though never at the exact turn: Detection only after the break; macro awareness raises sensitivity. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C14-1|C14-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C14-2|C14-2]])
+- Evidence: Research cited; no results from his own firm shown.
+- Fails when: Causal discovery is unsolved; the search for a perfect model is ongoing.
+
+**Decision process**
+- [signal] Trade trends in uncertain regimes, exiting near bubble tops to profit on both sides.. Why: Trend following works especially when data are non-stationary. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-2|C02-2]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C16-2|C16-2]])
+- [risk] Treat VIX above about 25 and rising as negative for many assets and VIX near 40 as a peak and re-entry signal.. Why: Non-linear VIX relationship. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-2|C08-2]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-3|C08-3]])
+- [portfolio] Condition holdings of alternatives on stock-bond correlation and rate level.. Why: Diversification value of bonds changes. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-5|C08-5]])
+- [portfolio] Use regime knowledge to adjust trend tilts at the margin and avoid overexposure to one sector.. Why: Correlation relationships change risk exposures. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-6|C08-6]])
+- [research] Detect regimes with hidden Markov models and breaks with change-point detection; model markets as a causal network and track how its connections change.. Why: Get ahead of regime shifts, though never exactly at the break. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-1|C08-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C14-1|C14-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C14-2|C14-2]])
+- [research] Seek causal factors and check models against data; prefer features and domain knowledge over model complexity.. Why: Factor zoo and non-stationarity. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C15-1|C15-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C15-2|C15-2]])
+- [research] Learn AI and machine learning but benchmark against simple models and do not over-optimise.. Why: Markets are non-stationary and adaptive. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C16-1|C16-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C15-3|C15-3]])
+
+**Evidence style:** Academic literature (retail habitat, beta by regime, factor zoo, features vs complexity, Cochrane, Lo), history (WWII Treasury-Fed Accord), personal anecdote, and conceptual definitions; few numbers of his own and no backtests presented.
+
+**Views at the time**
+- (2026-02) Metals and softs may have hit a peak bubble after January 2026; gold and silver reversed and cocoa fell from 12 to 4, coffee similarly.. Reasoning: Blow-off top then correction or slow grind; part of gold's dip is Lunar New Year retail absence. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-1|C02-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-X1|C02-X1]])
+- (2026-02) Rotation is the main 2026 theme: out of the US into Europe and global equities, EM favoured, software down and real assets up, broader breadth than 2025.. Reasoning: Lower relative US safety, EM inflation below US, K-shaped US economy. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C04-3|C04-3]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C04-4|C04-4]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C05-1|C05-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C05-2|C05-2]])
+- (2026-02) Fed chair outcome (Warsh) could shift the monetary regime; uncertainty is high, so prepare for a Warsh different from press expectations.. Reasoning: Appointees often behave differently; smaller balance sheet vs Treasury's wish for easy policy. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C13-1|C13-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C13-2|C13-2]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C11-2|C11-2]])
+- (2026-02) Confident in trend following and momentum over five years, not over five months.. Reasoning: Strong and weak periods alternate throughout history. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C16-3|C16-3]])
+- (2026-02) Weak employment benchmark revisions (about one million fewer jobs) give the administration a reason to run the economy hotter, unless the weakness is labour supply.. Reasoning: Distrust of data; demographics alternative. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C11-1|C11-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C11-X1|C11-X1]])
+
+### Alan Dunne (Guest host (sitting in for Niels Kaastrup-Larsen), trend-following and macro commentator based in Dublin)
+Fingerprint: #approach/macro_fundamental_topdown #approach/policy_reaction_central_banks #approach/fiscal_dominance #approach/trend_following #approach/behavioral_sentiment #approach/liquidity_flows
+_Speaker note: Mapped because he states views on gold, EM, bonds, dollar, fiscal dominance and Warsh. His fiscal dominance, EM real yield and AI-narrative comments are corrected from Mark in the ledger._
+
+**Worldview premises**
+- Gold's 2025 surge was driven by retail ETF flows more than central-bank buying, consistent with retail momentum. _[empirical, stated; support: World Gold Council data on central-bank buying lower in 2025 than 2024.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C03-1|C03-1]])
+- Bonds are a less reliable but not a failed equity diversifier; in a crisis with aggressive Fed cuts they still diversify. _[theoretical, stated; support: Scenario reasoning.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C06-2|C06-2]])
+- Relationships have shifted: the dollar-rate differential link weakened after Liberation Day (credibility discount) and gold has risen independent of real yields and the dollar. _[empirical, stated; support: Market observation; no statistics.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C07-3|C07-3]])
+- EM carried a premium historically because of less credible central banks; as they adhere to inflation targets and US credibility weakens, EM real yields are higher and relative attractiveness shifts. _[institutional, stated; support: Credibility argument.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C05-X1|C05-X1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C05-1|C05-1]])
+- Lower rates because of debt concerns would run the economy hot and fuel asset bubbles. _[theoretical, stated; support: 1990s analogy about asset prices ignored by inflation targeting.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C12-1|C12-1]])
+- Financial repression in the 1940s pinned long rates while allowing inflation, giving bondholders negative real returns until the Fed regained independence. _[empirical, stated; support: Historical precedent.]_ ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C10-2|C10-2]])
+
+**Chain: Warsh policy mix and Treasury financing**
+1. Warsh pairs a smaller Fed balance sheet with lower policy rates → Treasury issues more bills to exploit low short rates: Short rates cheap. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C12-X1|C12-X1]])
+2. SLR changes → banks hold more Treasuries: Makes Treasuries more attractive to banks. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C12-X1|C12-X1]])
+3. Lower rates despite debt concerns → hot economy and asset bubbles: Asset prices missing in the current debate. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C12-1|C12-1]])
+- Evidence: Reasoning from policy proposals; no data.
+- Fails when: Not stated.
+
+**Chain: Why the AI trade changed in 2026**
+1. A year earlier more AI capex was seen as good for Nvidia and infrastructure → now capex announcements are punished and software sold as an AI loser (SaaSpocalypse): Narrative shifted to winners and losers. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C03-X1|C03-X1]])
+2. Cyclicals and defensives both rose → growth-to-value rotation, not a coherent growth call: Sector moves are internally inconsistent with a cyclical story. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C04-X1|C04-X1]])
+- Evidence: Market observation.
+- Fails when: Not tested.
+
+**Decision process**
+- [other] Reads CTA index performance each week as a trend-following health check (SG CTA, SG Trend, mix of gold, softs, energy and bonds).. Why: Context for the discussion. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C01-1|C01-1]])
+- [portfolio] Thinks of bond diversification as degrees of reliability, not a yes/no.. Why: Crisis scenarios with Fed cuts remain possible. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C06-2|C06-2]])
+
+**Evidence style:** Market data and recent events, historical precedent and analyst-style reading of news; asks questions to test the guest's views.
+
+**Views at the time**
+- (2026-02) February 2026 CTA indices up about 1.1% month to date and 5.9% YTD, driven by gold, soft commodity shorts, rising energy and US bonds, with currencies choppy.. Reasoning: Index data read out. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C01-1|C01-1]])
+- (2026-02) Fiscal dominance is a risk but not yet reached.. Reasoning: Debt and deficits not yet dictating monetary policy, though pressure exists. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C09-1|C09-1]])
+- (2026-02) Warsh may be less hawkish than he looks: he sees AI as disinflationary and room for lower rates, and his stance has shifted with the party in power.. Reasoning: Past interviews; charts of dovish/hawkish flips. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C13-X1|C13-X1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C13-R1|C13-R1]])
+- (2026-02) The AI narrative has turned from uniformly positive to winners and losers, with the market punishing capex.. Reasoning: SaaSpocalypse and earnings reactions. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C03-X1|C03-X1]])
+
+### Disagreements
+- **How hawkish a Warsh Fed will be**: Mark: If he follows his own statements he will shrink the balance sheet, draining liquidity and deleveraging markets, against the Treasury's wish. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C11-2|C11-2]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C13-1|C13-1]]); Alan Dunne: He sees AI as disinflationary with room for lower rates and has shifted with the party in power; the likely mix is a smaller balance sheet with lower policy rates. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C13-X1|C13-X1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C12-X1|C12-X1]])
+- **Are we in fiscal dominance?**: Alan Dunne: A risk but not yet reached. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C09-1|C09-1]]); Mark: Frames the Fed-Treasury tussle as a fiscal versus monetary dominance question; the Fed chair could produce a fiscal-dominance regime, or the status quo of large deficits continues. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C13-1|C13-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C10-1|C10-1]])
+- **Bond diversification**: Mark: Safety is relative; Treasuries are less safe, so flows diversify. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C06-1|C06-1]]); Alan Dunne: Bonds are less reliable but still diversify in crises with aggressive Fed cuts; not a yes/no. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C06-2|C06-2]])
+
+### Gaps and conflicts
+- Mark says regime awareness is the edge but gives no evidence of out-of-sample benefit; hidden Markov models and change-point detection identify regimes only after the break. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C06-3|C06-3]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C14-1|C14-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-X1|C08-X1]])
+- VIX 25 and 40 thresholds are quoted without data, and the claim that 40 is always a peak is stated as certainty. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-2|C08-2]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-3|C08-3]])
+- Mark criticises the factor zoo and ML overfitting while also advocating regime decomposition and network models, which have a large specification space and no stated validation. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C15-1|C15-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C08-X1|C08-X1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C14-2|C14-2]])
+- The bubble call is hedged: Mark says 'I'd like to say' a peak was hit and later that it is hard to say whether this is a pause or the start of deflation. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-1|C02-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C02-3|C02-3]])
+- Two readings of the payroll revisions are offered (weaker economy needing a hotter run vs lower labour supply) with no resolution. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C11-1|C11-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C11-X1|C11-X1]])
+- Retail-driven gold is proposed (Alan) while central banks of sanction-fearing countries are also cited (Mark); the relative weights are not quantified. ([[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C03-1|C03-1]], [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C03-2|C03-2]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Inputs named that lead future prices: the VIX level and direction, stock-bond correlation and inflation, trade/geopolitical/monetary uncertainty indices, the Fed chair's balance-sheet and rate path, Treasury auction absorption (about $700bn in a week), EM versus US inflation and real yields, ETF versus central-bank gold flows, and break points in cross-market network connections. Horizons are months for bubble deflation and years (five) for trend following.
+
+### Reader inferences (not stated by the speakers)
+- (reader) Mark's regime decomposition (price, policy-structural, sentiment) can be read as three observable layers: VIX and trend state, fiscal/monetary stance, and uncertainty indices.
+- (reader) His bubble recipe (excess money plus narrative plus hard-to-value plus constrained supply) gives a checklist that could be coded for commodity peak risk, but both peak calls are about the recent past and not testable from the talk.
+- (reader) Alan's contribution is mostly market-evidence checks (retail ETF flows, sector inconsistency) that qualify rather than refute Mark's thesis.
+- (reader) The Warsh disagreement shows the unresolved forward input: whether balance-sheet reduction or lower policy rates dominates, which maps to opposite signs for liquidity-sensitive assets.
 
 ## Coverage
 
@@ -150,6 +291,14 @@ tags: [source, layer0]
   > by being aware of we'll call it the you know regime changes or how all of our analysis is conditional then you might be able to get an edge
   asset: multi · testable: partly · confidence: medium
   ^MT008-C06-3
+- **Mark** Mark rejects Peter Lynch's quip that spending 14 minutes on macro is 12 minutes too long and argues macro awareness matters because it affects all asset types.  #mech/new _(added by map cross-check)_
+  > I don't believe this quote
+  indicator: macro awareness · asset: multi · testable: no - opinion · confidence: high
+  ^MT008-C06-R1
+- **Mark** Mark describes himself as a trend follower and a global macro person, because regime changes alter relationships through time and awareness of them gives an edge.  #mech/new _(added by map cross-check)_
+  > obviously I'm trend follower, a strong believer in trend follower, but also global macro guy
+  indicator: none · asset: multi · testable: no - self-description · confidence: high
+  ^MT008-C06-R2
 
 ### C07
 - **Mark** Asset price relationships are conditional on environment, e.g. stock beta is not a single number.  #mech/structural_shift
@@ -265,6 +414,10 @@ tags: [source, layer0]
   > he has also said that he believes in the um the disinflationary uh effects of AI and uh he sees scope for lower interest rates.
   indicator: Fed chair communications · asset: rates · horizon: months · testable: no - single person forecast · confidence: low
   ^MT008-C13-X1
+- **Alan Dunne** Alan recalls Warsh calling the Fed's slowness to raise rates in 2021-22 the biggest macro forecasting mistake in 40 years and blaming the Fed for financing deficit expansion, consistent with Cochrane's view.  #mech/policy_reaction _(added by map cross-check, time-bound view)_
+  > the biggest macro forecasting mistake in 40 years
+  indicator: Fed policy stance · asset: rates · conditions: Warsh interview last summer · testable: no - recollection · confidence: medium
+  ^MT008-C13-R1
 
 ### C14
 - **Mark** Change-point detection and hidden Markov models detect breaks, though only after the break; macro awareness improves sensitivity.  #mech/research_method

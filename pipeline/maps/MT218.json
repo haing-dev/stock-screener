@@ -1,0 +1,815 @@
+{
+ "source_id": "MT218",
+ "episode_thesis": "Rob Carver argues that systematic portfolios should be judged and sized mainly on Sharpe and robust process, not on drawdown, path risk or recent sector performance: drawdowns carry no information beyond Sharpe and history length, sector leadership in trend following rotates by decade because of single-factor macro stories, and a continuous trend-strength signal already tilts toward whichever asset class is trending. Both speakers hold that true diversification (more commodities, fewer correlated financial markets) is the durable edge, that AI-generated strategy ideas are acceptable only if tested through a process that assumes the idea was conceived with hindsight, and that perpetual futures are a structural change that may hurt hedgers and price discovery.",
+ "speakers": [
+  {
+   "name": "Rob Carver",
+   "role": "Systematic trader, author, runs his own trend plus carry futures portfolio (ex-AHL head of fixed income)",
+   "speaker_note": "Captions carry no speaker labels. Turns were assigned from content: the speaker who mentions his books, his own 9% risk position, 40% non-trend allocation and AHL fixed income is Carver; the one who reads index numbers, the listener question and says 'at Dunn' is the host. The C03 'I did not watch the game' turn and the C13 remark about Yarra also fit the stated split.",
+   "fingerprint": [
+    "trend_following",
+    "carry",
+    "research_robustness_overfitting",
+    "position_sizing_vol_target",
+    "diversification_risk_parity",
+    "portfolio_construction_stacking",
+    "costs_execution",
+    "nowcasting_data"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Sharpe ratio is the right primary lens for adding, sizing or dropping a strategy; drawdown depth and duration add nothing beyond Sharpe and sample length.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Statistical argument: ignoring autocorrelation drawdown grows with history and shrinks with Sharpe.",
+     "claim_ids": [
+      "MT218-C05-1",
+      "MT218-C05-2"
+     ]
+    },
+    {
+     "premise": "Per-strategy path-risk and loss-clustering analysis overcomplicates and invites overfitting; it is more sensible at whole-portfolio level.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Preference for simplicity; no data.",
+     "claim_ids": [
+      "MT218-C05-3",
+      "MT218-C05-R1"
+     ]
+    },
+    {
+     "premise": "Almost no CTA is a pure trend follower; the trend vs convergent (carry-like) mix is a design choice, constrained for others by client pools and allocator boxes.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Observation of industry practice and his own 40% allocation.",
+     "claim_ids": [
+      "MT218-C05-X1"
+     ]
+    },
+    {
+     "premise": "Skew is a useful label for sorting strategies into trend-like and carry-like buckets, but skew estimates are too statistically unreliable to enter a formal utility function.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Examples: EM FX carry negative skew, developed bond carry mildly positive; robustness argument.",
+     "claim_ids": [
+      "MT218-C05-4",
+      "MT218-C06-1"
+     ]
+    },
+    {
+     "premise": "Hundreds of published factors reduce to a handful of independent drivers, so true diversification is less than the count of factors suggests.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Cites the Alpha Architect piece classifying the factor zoo.",
+     "claim_ids": [
+      "MT218-C06-2",
+      "MT218-C06-X1"
+     ]
+    },
+    {
+     "premise": "Trend following in equities is on average net long, so part of its return is the equity risk premium rather than trend skill.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Cites the Beyond Passive Investing post; equities tend to go up.",
+     "claim_ids": [
+      "MT218-C07-1"
+     ]
+    },
+    {
+     "premise": "Return autocorrelation of trend strategies is too weak to time entry or exit after drawdowns.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own research and a Winton study; no figures quoted.",
+     "claim_ids": [
+      "MT218-C12-2"
+     ]
+    },
+    {
+     "premise": "More data is always better; deliberately removing official statistics harms economies and systematic models alike.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Economist view; no data.",
+     "claim_ids": [
+      "MT218-C02-3",
+      "MT218-C03-1",
+      "MT218-C03-R1"
+     ]
+    },
+    {
+     "premise": "Backtest and fitting quality depends more on process than maths, and every idea is formed using future information, whether from AI, data mining or a junior researcher.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Years of research and an upcoming book on backtesting.",
+     "claim_ids": [
+      "MT218-C16-2",
+      "MT218-C17-1",
+      "MT218-C18-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why drawdown adds no information beyond Sharpe",
+     "steps": [
+      {
+       "from": "Longer history",
+       "to": "deeper maximum drawdown",
+       "why": "Excluding autocorrelation, drawdown scales with the length of the track record.",
+       "claim_ids": [
+        "MT218-C05-2"
+       ]
+      },
+      {
+       "from": "Higher Sharpe ratio",
+       "to": "smaller drawdown",
+       "why": "Better strategies draw down less for the same length.",
+       "claim_ids": [
+        "MT218-C05-2"
+       ]
+      },
+      {
+       "from": "Drawdown is a function of Sharpe and history",
+       "to": "using it as a separate criterion duplicates Sharpe and adds overfitting risk",
+       "why": "Per-component path risk is noisy and overcomplicates the allocation.",
+       "claim_ids": [
+        "MT218-C05-1",
+        "MT218-C05-3"
+       ]
+      }
+     ],
+     "evidence": "Statistical reasoning only.",
+     "fails_when": "He concedes autocorrelation breaks the proportionality and that path risk may matter at whole-portfolio level.",
+     "claim_ids": [
+      "MT218-C05-1",
+      "MT218-C05-2",
+      "MT218-C05-3"
+     ]
+    },
+    {
+     "topic": "Sector dominance in trend following is one factor, not diversification",
+     "steps": [
+      {
+       "from": "Trend P&L by sector rotates by decade (2000-09 broad, 2010-19 fixed income, 2020-26 commodities)",
+       "to": "one asset class dominates in each period",
+       "why": "Quantica attribution.",
+       "claim_ids": [
+        "MT218-C13-1"
+       ]
+      },
+      {
+       "from": "One asset class dominates",
+       "to": "a single macro story drives all its markets (predictable rate cuts then hikes)",
+       "why": "Markets in that class move together, so returns are not from diversification.",
+       "claim_ids": [
+        "MT218-C14-1"
+       ]
+      },
+      {
+       "from": "Single-factor story",
+       "to": "shifting weights toward the hot sector lowers diversification",
+       "why": "Concentrates risk in one driver.",
+       "claim_ids": [
+        "MT218-C14-1"
+       ]
+      },
+      {
+       "from": "Continuous trend-strength scaling",
+       "to": "already overweights the trending asset class",
+       "why": "Signals are larger where trends are stronger, so extra chasing is redundant.",
+       "claim_ids": [
+        "MT218-C14-2"
+       ]
+      }
+     ],
+     "evidence": "Quantica paper (null result: tactical sector chasing does not add value).",
+     "fails_when": "Not stated; applies to a continuous-signal system, a binary trader may differ.",
+     "claim_ids": [
+      "MT218-C13-1",
+      "MT218-C13-R1",
+      "MT218-C13-X1",
+      "MT218-C14-1",
+      "MT218-C14-2",
+      "MT218-C14-3"
+     ]
+    },
+    {
+     "topic": "Trend sleeve inside a 60/40 portfolio",
+     "steps": [
+      {
+       "from": "Trend portfolio is on average net long equities and bonds",
+       "to": "part of its return is the equity risk premium",
+       "why": "Markets tend to rise.",
+       "claim_ids": [
+        "MT218-C07-1"
+       ]
+      },
+      {
+       "from": "Sleeve is a small part of a portfolio already holding equity and bond premia",
+       "to": "double-counting of premia",
+       "why": "Premia already earned in the 60/40.",
+       "claim_ids": [
+        "MT218-C07-2"
+       ]
+      },
+      {
+       "from": "Make sleeve more neutral (long only when trends are strong)",
+       "to": "better overall portfolio for a limited allocation",
+       "why": "Lower average beta in the sleeve.",
+       "claim_ids": [
+        "MT218-C07-2",
+        "MT218-C08-X1"
+       ]
+      }
+     ],
+     "evidence": "Theoretical argument; secondhand from a Substack post he calls complex.",
+     "fails_when": "Not needed if the investor can simply enlarge the CTA bucket or hold only a small sleeve (host's point).",
+     "claim_ids": [
+      "MT218-C07-1",
+      "MT218-C07-2",
+      "MT218-C08-X1",
+      "MT218-C08-3"
+     ]
+    },
+    {
+     "topic": "Perpetual futures as daily-settled futures",
+     "steps": [
+      {
+       "from": "Variation margin already settles futures cash flows daily",
+       "to": "a perpetual future is effectively a daily future with identical cash flows",
+       "why": "Compress expiry to one day; a new daily bet opens automatically.",
+       "claim_ids": [
+        "MT218-C09-1",
+        "MT218-C10-1"
+       ]
+      },
+      {
+       "from": "Settlement each day",
+       "to": "futures price tracks spot, interest, dividend and storage terms negligible, no rolls",
+       "why": "No-arbitrage at each settlement.",
+       "claim_ids": [
+        "MT218-C10-1"
+       ]
+      },
+      {
+       "from": "Hedgers need dated contracts and liquidity splits across venues",
+       "to": "wider spreads, price discovery and concentration in market-maker houses",
+       "why": "Dated hedging demand may move to OTC swaps.",
+       "claim_ids": [
+        "MT218-C11-2",
+        "MT218-C12-1"
+       ]
+      }
+     ],
+     "evidence": "Mechanical explanation and analogy to UK daily spread bets; the downside is opinion.",
+     "fails_when": "He does not say; he admits uncertainty about where hedgers will go.",
+     "claim_ids": [
+      "MT218-C09-1",
+      "MT218-C10-1",
+      "MT218-C11-1",
+      "MT218-C11-2",
+      "MT218-C12-1"
+     ]
+    },
+    {
+     "topic": "AI-assisted idea generation and overfitting",
+     "steps": [
+      {
+       "from": "AI or data mining generates a strategy idea",
+       "to": "the idea is contaminated by future information",
+       "why": "It is conceived using data from the whole sample.",
+       "claim_ids": [
+        "MT218-C17-1"
+       ]
+      },
+      {
+       "from": "Contaminated idea",
+       "to": "must pass a robust backtest process away from the AI",
+       "why": "Process matters more than maths; do not trust the AI's self-evaluation.",
+       "claim_ids": [
+        "MT218-C16-2",
+        "MT218-C18-X1",
+        "MT218-C16-X1"
+       ]
+      },
+      {
+       "from": "Process output",
+       "to": "a probability the idea works, mapped into a portfolio weight",
+       "why": "Not a yes/no: 10-15% for an outstanding idea, about 0.01% for a weak one.",
+       "claim_ids": [
+        "MT218-C17-2"
+       ]
+      }
+     ],
+     "evidence": "Experience; cites the Wisdom Trading blog.",
+     "fails_when": "If the AI is a public model with unknown training data, or the process is flawed, all bets are off.",
+     "claim_ids": [
+      "MT218-C16-2",
+      "MT218-C17-1",
+      "MT218-C17-2",
+      "MT218-C18-1",
+      "MT218-C18-X1",
+      "MT218-C16-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Continuous trend-strength signals rather than binary; weight scales with trend strength.",
+     "why": "Automatically leans toward trending asset classes without extra sector-timing.",
+     "claim_ids": [
+      "MT218-C14-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "About 40% of the portfolio in convergent, non-trend (carry-like) strategies, higher than CTAs who hold 20-30%.",
+     "why": "No client pool or allocator box constraining the mix.",
+     "claim_ids": [
+      "MT218-C05-X1"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Weight a strategy by the probability it works: 10-15% for an outstanding idea, about 0.01% for a weak one, so nothing is ever entirely excluded.",
+     "why": "No idea has zero chance of working.",
+     "claim_ids": [
+      "MT218-C17-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Drop a strategy only on very strong statistical evidence of a structural break; evaluate on Sharpe, not drawdown.",
+     "why": "Avoid overfitting and noise.",
+     "claim_ids": [
+      "MT218-C05-1",
+      "MT218-C05-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Use skew to classify strategies into buckets and cap the negative-skew bucket (illustrated at 30%), not in a formal utility with Sharpe.",
+     "why": "Skew estimates are unreliable.",
+     "claim_ids": [
+      "MT218-C05-4",
+      "MT218-C06-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Use AI only for ideas and snippets under 10 lines; test every idea in a process designed for hindsight contamination; ask about research steps, checks and out-of-sample design in due diligence.",
+     "why": "Checking AI code or backtests costs more than writing it.",
+     "claim_ids": [
+      "MT218-C16-2",
+      "MT218-C16-X1",
+      "MT218-C17-1",
+      "MT218-C18-1",
+      "MT218-C18-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "When a pattern appears, ask why it happens first, then whether it is exploitable; test the null.",
+     "why": "Many patterns do not add return and null results are valuable.",
+     "claim_ids": [
+      "MT218-C13-X1",
+      "MT218-C14-3"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Rolls futures at expiry (IMM dates); perpetuals would remove roll code.",
+     "why": "Operational convenience, though he views perpetuals as a net negative for markets.",
+     "claim_ids": [
+      "MT218-C09-1",
+      "MT218-C12-1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Investing into a fund below its high-water mark gets the first returns without performance fees, unless a separate share class has its own high-water mark (host's correction).",
+     "why": "Fee mechanics, separate from any return-timing signal.",
+     "claim_ids": [
+      "MT218-C12-3"
+     ]
+    }
+   ],
+   "evidence_style": "Statistical first principles and economist reasoning, backed by his own research and secondhand published papers (Quantica, Man, Alpha Architect, Wisdom Trading); little data of his own quoted. Treats null results as informative and warns about low counts of episodes (10-20 drawdowns in 50 years).",
+   "current_views": [
+    {
+     "view": "His own trend portfolio runs a low 9% annualised risk, biggest position a long equity position (pro peace deal), flat energies, so he was not positioned for the oil move.",
+     "as_of": "2026-06 (mid-June)",
+     "reasoning": "Trend signals are weak; world is waiting.",
+     "claim_ids": [
+      "MT218-C03-3"
+     ]
+    },
+    {
+     "view": "Peace deal in the Middle East has been priced in for weeks, so risk is buy the rumour, sell the fact, while oil supply shortages could keep normalisation slow.",
+     "as_of": "2026-06 (mid-June)",
+     "reasoning": "Markets had priced the optimistic scenario already.",
+     "claim_ids": [
+      "MT218-C04-1"
+     ]
+    },
+    {
+     "view": "US statistical data quality is degrading, worrying for economic indicators used as forecasting inputs.",
+     "as_of": "2026-06 (mid-June)",
+     "reasoning": "Cuts, secrecy and delayed releases after the shutdown.",
+     "claim_ids": [
+      "MT218-C02-3",
+      "MT218-C03-1"
+     ]
+    },
+    {
+     "view": "Perpetual futures are probably not a great development for futures markets generally.",
+     "as_of": "2026-06 (mid-June)",
+     "reasoning": "Hedgers need dated contracts; liquidity may split across swaps and market-maker platforms.",
+     "claim_ids": [
+      "MT218-C12-1",
+      "MT218-C11-2"
+     ]
+    },
+    {
+     "view": "Index providers relaxing rules to admit SpaceX is not an entirely responsible move.",
+     "as_of": "2026-06 (mid-June)",
+     "reasoning": "Previous profitability and free-float rules (Tesla example) are being torn up.",
+     "claim_ids": [
+      "MT218-C01-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host, Top Traders Unplugged; allocator and manager-selection background",
+   "speaker_note": "Host also states positions on index design and trend sleeve sizing; attribution from content (CTA index numbers, 'at Dunn', manager due diligence). Corrections applied: C11-2 split between host (CME lawsuit) and Rob (hedging); C15-1 is the host's conjecture, not a paper result.",
+   "fingerprint": [
+    "trend_following",
+    "diversification_risk_parity",
+    "crisis_alpha_convexity",
+    "manager_selection_allocation",
+    "regime_detection",
+    "portfolio_construction_stacking"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Do not distort a trend program to fit the rest of the portfolio; adjust the other holdings instead, since sector tweaks change the interaction among all markets.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Gut feel, admits he has not read the paper.",
+     "claim_ids": [
+      "MT218-C08-1"
+     ]
+    },
+    {
+     "premise": "Trend following adds access to markets investors cannot easily trade themselves and is unbiased on long or short, e.g. fully short equities in a prolonged crisis.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Skimmed paper conclusion.",
+     "claim_ids": [
+      "MT218-C08-2"
+     ]
+    },
+    {
+     "premise": "The 2010-19 fixed-income-led decade (zero rates, suppressed inflation) was the odd one out; earlier decades and the 2020s are more diverse and commodity-heavy.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own recollection of the CTA-winter debate; he explicitly wished the paper covered the 1990s and 1980s.",
+     "claim_ids": [
+      "MT218-C15-1"
+     ]
+    },
+    {
+     "premise": "Commodities are the most consistent trend sector in crises, so the best portfolio holds many truly uncorrelated markets rather than a financial-heavy book.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Unnamed reputable study; philosophy shared by Dunn.",
+     "claim_ids": [
+      "MT218-C15-2"
+     ]
+    },
+    {
+     "premise": "Dropping markets that have not recently trended is dangerous: cocoa idled for 15 years and then produced its biggest trend ever.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Cocoa anecdote.",
+     "claim_ids": [
+      "MT218-C12-X1"
+     ]
+    },
+    {
+     "premise": "CTAs drifted toward liquid financial markets because capacity and asset-based fees reward it, not because it is the best portfolio.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Incentive reasoning.",
+     "claim_ids": [
+      "MT218-C15-X2",
+      "MT218-C15-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why financial-heavy CTA books persist",
+     "steps": [
+      {
+       "from": "Financial futures are more liquid",
+       "to": "managers can run more assets",
+       "why": "Capacity.",
+       "claim_ids": [
+        "MT218-C15-X2"
+       ]
+      },
+      {
+       "from": "Managers are paid on assets managed",
+       "to": "incentive to tilt toward financials",
+       "why": "Fees scale with capacity.",
+       "claim_ids": [
+        "MT218-C15-X2"
+       ]
+      },
+      {
+       "from": "Financial tilt",
+       "to": "less true diversification and exposure to equities that have not paid trend followers over 20-25 years",
+       "why": "Commodities are the most consistent crisis sector.",
+       "claim_ids": [
+        "MT218-C15-2",
+        "MT218-C15-X1"
+       ]
+      }
+     ],
+     "evidence": "Recollection of a reputable but unnamed study and data he saw.",
+     "fails_when": "Fixed income will sometimes dominate (he concedes).",
+     "claim_ids": [
+      "MT218-C15-2",
+      "MT218-C15-X1",
+      "MT218-C15-X2"
+     ]
+    },
+    {
+     "topic": "Perpetual futures and exchange economics",
+     "steps": [
+      {
+       "from": "Futures without expiry",
+       "to": "no rolls, lower exchange volume",
+       "why": "Rolling generates volume.",
+       "claim_ids": [
+        "MT218-C11-2"
+       ]
+      },
+      {
+       "from": "Volume loss",
+       "to": "CME sues the CFTC, arguing perpetuals are swaps",
+       "why": "Exchange revenue at stake.",
+       "claim_ids": [
+        "MT218-C11-2"
+       ]
+      }
+     ],
+     "evidence": "News report he picked up that morning.",
+     "fails_when": "Outcome of the lawsuit not discussed.",
+     "claim_ids": [
+      "MT218-C11-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Build portfolios with as many truly uncorrelated markets as possible, more commodities.",
+     "why": "Commodities are the most consistent crisis sector; diversification beats financial concentration.",
+     "claim_ids": [
+      "MT218-C15-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Keep the trend program intact and fix excess equity by selling equity elsewhere; if the sleeve is only 5% do not worry about its equity exposure.",
+     "why": "Distorting sectors disrupts interaction across markets.",
+     "claim_ids": [
+      "MT218-C08-1",
+      "MT218-C08-X1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Use a trend barometer as a conditions gauge (36 = weak).",
+     "why": "Ties to realised June CTA returns.",
+     "claim_ids": [
+      "MT218-C03-2"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Do not rotate away from markets that have not trended recently.",
+     "why": "Biggest trends can follow long idle periods (cocoa).",
+     "claim_ids": [
+      "MT218-C12-X1"
+     ]
+    }
+   ],
+   "evidence_style": "Industry knowledge and anecdote; relays CTA index data and paper conclusions; admits not having read some papers.",
+   "current_views": [
+    {
+     "view": "Trend conditions weak in June 2026: barometer 36, with weak equities and metals and grains, gains in short rates and the dollar after the hawkish Fed.",
+     "as_of": "2026-06 (mid-June)",
+     "reasoning": "Matches the weak June numbers.",
+     "claim_ids": [
+      "MT218-C03-2",
+      "MT218-C04-2"
+     ]
+    },
+    {
+     "view": "CTA indices roughly -0.8% to -1.25% in June but about +9% YTD, matching equities year to date.",
+     "as_of": "2026-06 (mid-June)",
+     "reasoning": "Index data read out.",
+     "claim_ids": [
+      "MT218-C04-X1",
+      "MT218-C04-2"
+     ]
+    },
+    {
+     "view": "New Fed chair Warsh more hawkish than expected: smaller balance sheet, less forward guidance, little appetite for cuts amid inflation.",
+     "as_of": "2026-06 (mid-June)",
+     "reasoning": "First FOMC press conference.",
+     "claim_ids": [
+      "MT218-C02-1"
+     ]
+    },
+    {
+     "view": "Reworking government survey data would hurt economic-trend and systematic macro strategies but not price-based trend followers.",
+     "as_of": "2026-06 (mid-June)",
+     "reasoning": "Those strategies use economic releases as inputs.",
+     "claim_ids": [
+      "MT218-C02-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Should a trend sleeve be adjusted for the investor's other holdings?",
+   "positions": [
+    {
+     "speaker": "Rob Carver",
+     "position": "For a small sleeve inside a 60/40, make it more neutral (long only on strong trends) to avoid double-counting equity and bond premia; best is a bigger CTA bucket if possible.",
+     "claim_ids": [
+      "MT218-C07-2",
+      "MT218-C08-X1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Do not distort the program; sell the excess equity elsewhere, and with only 5% in trend the sleeve's equity exposure is not worth worrying about.",
+     "claim_ids": [
+      "MT218-C08-1",
+      "MT218-C08-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Is a trend program's long bias a defect or a feature?",
+   "positions": [
+    {
+     "speaker": "Rob Carver",
+     "position": "Long bias is the equity risk premium, desirable only if trend is the whole portfolio.",
+     "claim_ids": [
+      "MT218-C07-1",
+      "MT218-C07-2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "The value is access to markets one cannot trade oneself and unbiased long/short exposure, including being fully short in a crisis.",
+     "claim_ids": [
+      "MT218-C08-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "How to respond to sector rotation in trend following",
+   "positions": [
+    {
+     "speaker": "Rob Carver",
+     "position": "No tactical chasing; a continuous signal already tilts to the trending class, and shifting reduces diversification.",
+     "claim_ids": [
+      "MT218-C14-1",
+      "MT218-C14-2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Do not drop idle markets and structurally favour commodities and many uncorrelated markets over financial-heavy books.",
+     "claim_ids": [
+      "MT218-C12-X1",
+      "MT218-C15-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Carver endorses diversification yet agrees with tilting the CTA sleeve toward commodities, which is itself a sector weighting call; no rule for how much is stated.",
+   "claim_ids": [
+    "MT218-C08-3",
+    "MT218-C14-1"
+   ]
+  },
+  {
+   "issue": "Carver says path risk is not worth analysing per component but later says the Man paper's joint drawdown analysis is a more rigorous crisis-alpha test; the distinction is portfolio level versus component level, not spelled out.",
+   "claim_ids": [
+    "MT218-C05-3",
+    "MT218-C19-2"
+   ]
+  },
+  {
+   "issue": "Niels's claim that the 1970s-90s looked like 2000-09 and 2020-26 is conjecture; Carver supplies only the 1970s as supporting data.",
+   "claim_ids": [
+    "MT218-C15-1",
+    "MT218-C16-1"
+   ]
+  },
+  {
+   "issue": "The unnamed 'reputable firm' study that commodities are the most consistent crisis sector is not cited or verified.",
+   "claim_ids": [
+    "MT218-C15-2"
+   ]
+  },
+  {
+   "issue": "Neither speaker has read the Beyond Passive Investing paper in detail, and Niels had not read it at all; the neutral-sleeve argument is secondhand.",
+   "claim_ids": [
+    "MT218-C07-2",
+    "MT218-C08-1"
+   ]
+  },
+  {
+   "issue": "The Man paper conclusions are described as statistically weak (10-20 drawdown episodes) yet used as a template for a better crisis-alpha test.",
+   "claim_ids": [
+    "MT218-C19-1",
+    "MT218-C19-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) The speakers give no price predictors. Observable inputs they name: a trend barometer (36 = weak conditions), CTA index returns, strength of trend signals by asset class (continuous signal scaling), policy path (Fed chair Warsh hawkish, balance sheet shrinking), oil supply normalisation after the Hormuz deal, and availability of official economic data for macro-trend models. Horizon is months (monthly CTA returns) to decades (sector regimes), with emphasis on robustness over timing.",
+ "reader_inferences": [
+  "(reader) Carver's rejection of drawdown and path-risk metrics implies allocation rules built on Sharpe and probability weights, so a vault feature for 'how this investor sizes a new strategy' should record weight as a function of confidence, not pass/fail.",
+  "(reader) The single-factor story for sector dominance (rate cuts then hikes for fixed income, inflation for commodities in the 1970s and 2020s) suggests that sector leadership in trend following depends on macro regime, which links to a regime-detection test rather than performance chasing.",
+  "(reader) Niels's incentive argument (assets-based fees favour liquid financials) is a testable proposition for CTA index composition.",
+  "(reader) Both speakers treat null results (Quantica) as evidence quality signals, a marker for judging which published claims to weight."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT218-C03-R1",
+   "chunk": "C03",
+   "speaker": "Rob Carver",
+   "quote": "of the general belief that more data is always better",
+   "claim": "Carver believes more data is always better, so deliberately ending collection of official statistics is dangerous for the economy and irritating for computers trading on it.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "official statistics availability",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - belief",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT218-C05-R1",
+   "chunk": "C05",
+   "speaker": "Rob Carver",
+   "quote": "I'm a big fan of keeping things simple",
+   "claim": "Carver prefers simple evaluation of strategy components and avoids adding path-risk and loss-clustering tests on each one for fear of overfitting.",
+   "mechanism": "none",
+   "asset_class": "multi",
+   "indicator": "none",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "individual strategy components",
+   "testable": "no - preference",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT218-C13-R1",
+   "chunk": "C13",
+   "speaker": "Rob Carver",
+   "quote": "it takes both of those dimensions simultaneously",
+   "claim": "Quantica tests time-based predictability (after drawdowns) and cross-sectional predictability (which asset classes trend better) together, rather than one at a time.",
+   "mechanism": "none",
+   "asset_class": "multi",
+   "indicator": "sector trend performance by decade",
+   "horizon": "decades",
+   "direction": "",
+   "conditions": "trend following 2000-2026",
+   "testable": "yes - paper replication",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

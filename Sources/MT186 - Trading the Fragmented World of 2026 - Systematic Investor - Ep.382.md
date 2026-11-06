@@ -5,8 +5,8 @@ date: 2026-01-12
 channel: "Top Traders Unplugged"
 url: 
 words: 10467
-claims: 50
-added_by_crosscheck: 7
+claims: 53
+added_by_crosscheck: 10
 corrections: 0
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Rich Brennan (co-host, systematic trend follower, Australia)", "Niels Kaastrup-Larsen (host, Top Traders Unplugged)"]
@@ -21,6 +21,111 @@ tags: [source, layer0]
 **Approach:** trend following, CTA, risk management, research method, deglobalisation
 
 **Cross-check completeness estimate of first read:** 0.88 - the first reader captured nearly every method and mechanism in the Brennan monologue (C08-C15) and the 2025 review; it missed small data points (false starts in Nifty, April drawdown recovery, monthly leader rotation, trend barometer) and the Stoic process-control point.
+
+## Argument map
+
+**Episode thesis:** Rich Brennan argues that a fragmented, multipolar world, where coordination among central banks has weakened and imbalances persist regionally, is the most favourable environment for trend following in years, while 2025 was a concentrated, metals-led year (with April the worst drawdown) that showed the value of wide diversification, commodities and sticking to rules. He then argues for 'trading the present': size with variable brakes and acceleration set in advance, treat forecasts as hypotheses confirmed by the market, view the future as unfinished and reflexive rather than hidden, and avoid tightly optimised systems whose smoothness is an emotional comfort. Niels Kaastrup-Larsen adds 2025 data on lookbacks, short-term trend, capacity and diversification.
+
+### Rich Brennan (Co-host; systematic trend follower (Australia, 'outlier-hunting' approach))
+Fingerprint: #approach/trend_following #approach/regime_detection #approach/research_robustness_overfitting #approach/position_sizing_vol_target #approach/behavioral_sentiment #approach/structural_themes #approach/geopolitics #approach/short_term_systematic
+_Speaker note: Two-speaker conversation; attribution is clear from turn structure. Brennan's 'brakes and acceleration' framework credits Dave Dredge (via Jim) and Stoic philosophy; the 'unfinished future' idea is his own claim, not data._
+
+**Worldview premises**
+- Trends arise from imbalances that persist long enough for prices to adjust, not from correct forecasts. _[theoretical, stated; support: Reasoned from market mechanics.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C02-1|C02-1]])
+- In the globalised era, coordinated central bank action (QE) absorbed imbalances quickly and truncated trends; in a regionalised world release valves work slowly so energy, inflation, currency and trade imbalances stay local and persist. _[theoretical, stated; support: Historical narrative; no data presented.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C02-2|C02-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C02-3|C02-3]])
+- A fragmented world brings political shocks, sharp reversals and chop, but its underlying structure favours persistence; this is the most favourable period for trend following in years. _[theoretical, stated; support: Judgement ('purely from a trend following perspective').]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C03-1|C03-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C03-2|C03-2]])
+- Returns are concentrated: a few persistent trends produce most profit, metals contributed ~21% in 2025 (gold via a clean persistent trend), while currencies, bonds and energy lost; false-start markets (Nifty 50) lose even when equities are positive. _[empirical, stated; support: Attribution on the benchmark trend portfolio for 2025.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C04-2|C04-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C04-3|C04-3]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C04-4|C04-4]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C04-X1|C04-X1]])
+- Since the location of the next outlier trend is unknown, wide diversification (a trap) positions the portfolio to catch it and pay for the losses elsewhere; April 2025 (Liberation Day) was his programme's worst drawdown and metals recovered it. _[experience, stated; support: His own programme's 2025 experience.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C05-1|C05-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C05-X1|C05-X1]])
+- Averaging ensembles across lookbacks gives a better outcome than picking one, and avoids luck in selecting the best. _[theoretical, stated; support: Reaction to Niels' simulated lookback differences.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C07-3|C07-3]])
+- Backtests give a finished 'track' that feels like certainty, but markets are disclosed sequentially; backtests describe the past and are not a map of the future. _[theoretical, stated; support: Race-car analogy (Dave Dredge).]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C08-1|C08-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C08-2|C08-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C08-4|C08-4]])
+- Brakes (stop-losses, position limits, drawdown rules) are commitments defined in advance; acceleration is permission to remain exposed while structure persists, which captures convexity. _[theoretical, stated; support: Analogy and a stylised crude-oil example.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C08-3|C08-3]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C08-5|C08-5]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C09-1|C09-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C09-2|C09-2]])
+- Permanently conservative sizing is an always-on brake that removes upside too; variable braking (full exposure when structure supports it) is better. _[theoretical, stated; support: Argument by analogy.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C10-1|C10-1]])
+- The future is unfinished, not hidden: the price path does not yet exist because it is built by participants' reactions, so better data cannot reveal it and the advantage lies in response. _[theoretical, stated; support: Philosophical claim; no empirical test.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C10-2|C10-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C11-R2|C11-R2]])
+- Markets are reflexive: forecasts influence prices, so more traders using the same model make it fail (mean reversion is a negative feedback process); tightly fitted models embed stationarity and become fragile. _[theoretical, stated; support: Reasoning, no data.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C11-1|C11-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C11-2|C11-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C11-3|C11-3]])
+- Trend following recognises existing structure (persistence, volatility clustering) rather than forecasting; statistical regularities exist, but exact path, magnitude and timing are unpredictable. _[theoretical, stated; support: Reply to Niels' question.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C11-4|C11-4]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C12-2|C12-2]])
+- Optimisation gives an emotional sense of completeness without removing uncertainty; stacked calibration assumptions work only in the historical band and fail abruptly with hidden negative skew. _[theoretical, stated; support: Psychological argument.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C13-1|C13-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C13-2|C13-2]])
+- Smoothing the equity curve by optimisation or sizing reduces the positive asymmetry that makes trend following profitable; costs are deferred and statistical. _[theoretical, stated; support: Argument.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C14-2|C14-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C13-3|C13-3]])
+- Humans do not make calm, rational decisions under pressure, so systems should remove emotional pressure points; strong emotions are a signal to redesign (for example reduce size). _[behavioural, stated; support: Design principle with a Stoic framing.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C14-3|C14-3]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C15-1|C15-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C15-X1|C15-X1]])
+
+**Chain: Fragmentation to persistent trends**
+1. Globalised era with coordinated central banks and QE → Imbalances absorbed quickly, trends truncated: Intervention smoothed shocks ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C02-2|C02-2]])
+2. Regionalised world, weaker coordination → Energy shortages, inflation, currencies and trade barriers stay local and last longer: No single authority to resolve them; sanctions last years ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C02-3|C02-3]])
+3. Conditions persist → Trends have room to run: Pressure builds over months and years ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C02-1|C02-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C03-1|C03-1]])
+- Evidence: Qualitative argument; supported only by 2025's metals-led year.
+- Fails when: More frequent political shocks, reversals and chop when regional pressures offset each other.
+
+**Chain: Why average-based sizing and early exits hurt**
+1. Backtest presents a complete track → Positions sized for historical calm volatility: Sense of completion hides sequential disclosure ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C08-1|C08-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C08-2|C08-2]])
+2. Large open profits exceed the backtest norm → Winners exited early: Discomfort, not a rule signal, triggers exit ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C08-3|C08-3]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C13-3|C13-3]])
+3. Early exits and smoothing → Long right tail cut, convexity surrendered: Trend following depends on rare large winners ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C14-2|C14-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C09-1|C09-1]])
+- Evidence: Stylised crude-oil example; no quantitative evidence.
+- Fails when: If an exit follows a rule written before the trade it counts as risk management.
+
+**Chain: From reflexivity to responding rather than predicting**
+1. Markets react to being observed and acted upon → Predictions change the outcome they target: Reflexivity ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C11-1|C11-1]])
+2. More traders use the same model → Model cannibalises its own signal (mean reversion): Negative feedback process ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C11-2|C11-2]])
+3. Future still being constructed → Advantage goes to responding faster and appropriately: Nothing exists to peer through the fog ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C10-2|C10-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C11-4|C11-4]])
+- Evidence: Philosophical argument and the example of mean reversion.
+- Fails when: Statistical regularities still exist (persistence, clustering), so he accepts recognition but not path prediction.
+
+**Decision process**
+- [risk] Define stop-losses, position limits and drawdown rules in advance so they engage without debate.. Why: Brakes are commitments made before the corner. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C08-5|C08-5]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C09-2|C09-2]])
+- [risk] Treat an exit as legitimate only if you can state the pre-written rule that triggered it; otherwise it is rationalised emotion.. Why: Separates process from discomfort. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C09-2|C09-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C10-1|C10-1]])
+- [sizing] Size for what can be lost if conditions deteriorate, but allow full exposure when structure supports it (variable braking) rather than average-based or always-conservative sizing.. Why: Sizing to a historical average leaves the portfolio exposed to a volatility spike and caps winners. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C08-2|C08-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C10-1|C10-1]])
+- [research] Choose loosely optimised parameters from a plateau (e.g., 50 vs 200 days) rather than a precise optimum like 47; prefer good enough robust to optimal.. Why: The tighter the fit, the more it bets on stationarity. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C14-1|C14-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C11-3|C11-3]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C14-R1|C14-R1]])
+- [signal] Combine several lookback windows rather than selecting one; diversify across models, time frames and markets.. Why: No single lookback is best year to year. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C07-3|C07-3]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C07-X1|C07-X1]])
+- [research] Treat macro forecasts as hypotheses and trade only when the market confirms them (short bonds only if bonds actually sell off).. Why: The market is the final arbiter. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C12-1|C12-1]])
+- [execution] Use predetermined entries and exits, automation and size that keeps losses tolerable; control only entry, exit, size and adherence, not outcomes.. Why: Remove emotional pressure points. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C15-1|C15-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C15-X1|C15-X1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C14-3|C14-3]])
+
+**Evidence style:** First principles, analogy (race car, fog, Stoics) and his own programme's 2025 attribution; a few simulated lookback comparisons from Niels. No statistical tests of the 'unfinished future' or optimisation-fragility claims.
+
+**Views at the time**
+- (2026-01-12) Fragmented, multipolar world is the best period for trend following in years.. Reasoning: Persistent regional imbalances without coordinated central bank intervention. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C03-1|C03-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C03-2|C03-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C02-3|C02-3]])
+- (2026-01-12) 2025 was a concentration year led by metals (about 21% of performance), with April the worst drawdown for his approach.. Reasoning: Metals recovered the drawdown while currencies, bonds and energy lost. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C04-2|C04-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C04-3|C04-3]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C05-X1|C05-X1]])
+- (2026-01) Gold's trend remains intact and still going; platinum emerged as a late leader.. Reasoning: Persistence, clean trend. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C04-2|C04-2]])
+
+### Niels Kaastrup-Larsen (Host, Top Traders Unplugged; runs a trend-following programme)
+Fingerprint: #approach/trend_following #approach/commodity_fundamentals #approach/diversification_risk_parity #approach/manager_selection_allocation #approach/geopolitics #approach/nowcasting_data
+_Speaker note: His programme's results ('our program') are reported by him; he declines to state precise figures._
+
+**Worldview premises**
+- Fights over resources drive commodity trends and in 2025 trend following profits came from commodity markets, not financial markets; capacity-constrained large managers limited to liquid markets missed them. _[empirical, stated; support: 2025 performance attribution.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C03-3|C03-3]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C06-1|C06-1]])
+- Trend following has many small losses and a few large winners, so a concentrated year like 2025 is typical; in an unpredictable world a non-predictive strategy is a sensible component. _[theoretical, stated; support: Return distribution knowledge.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C05-2|C05-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C05-4|C05-4]])
+- Calls for the death of trend following clustered at the June 2025 drawdown trough just before six straight positive months; rules-based systems must be run through difficult stretches because payoffs come later. _[empirical, stated; support: SG Trend Index near worst drawdown in 25 years, then six positive months in his programme.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C05-3|C05-3]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C05-X3|C05-X3]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C06-2|C06-2]])
+- Trend profits rotate month by month (short JGBs, long gold, long silver), so a wide book is needed to catch each new leader. _[empirical, stated; support: Own programme H2 2025.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C05-X2|C05-X2]])
+- Trend following delivered double-digit average returns with ~0.15 correlation to the S&P 500 over 41 years; equity index concentration (~70% US, seven stocks) may push investors to diversify into trend. _[empirical, stated; support: Own programme history (since 1984).]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C06-3|C06-3]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C06-4|C06-4]])
+- Short-term trend followers lost ~5% in 2025 despite surprises; in a same-universe simulation 20-day lost most, 60-day slightly positive, 130-day and 260-day negative, so lookback choice matters year to year. _[empirical, stated; support: Internal simulation, 'massive grain of salt'.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C07-1|C07-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C07-2|C07-2]])
+- Diversification should be applied across model types as well as lookbacks and markets. _[theoretical, stated; support: Agreement with Brennan's ensemble.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C07-X1|C07-X1]])
+- A very large rates position (200,000 contracts in January Fed funds futures, previous biggest ~84,000) was probably not a trend follower. _[empirical, stated; support: Market observation.]_ ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C04-1|C04-1]])
+
+**Decision process**
+- [signal] Monitors a Trend Barometer and CTA indices as a read on trend conditions (52 on 2026-01-06).. Why: Gauge of how trend followers are doing. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C06-X1|C06-X1]])
+- [portfolio] Keep a fully diversified programme across commodities and financials rather than limiting to liquid markets.. Why: Capacity-constrained managers missed commodity trends. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C06-1|C06-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C05-X2|C05-X2]])
+
+**Evidence style:** Index data (SG indices, Trend Barometer), his own programme and internal simulations, flagged with caveats.
+
+**Views at the time**
+- (2026-01-06) Early 2026: Trend Barometer 52, SG CTA and Trend indices up ~1.5% so far; short-term traders index up less.. Reasoning: Strong start for trend. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C06-X1|C06-X1]])
+- (2026-01) Short-term trend following faces questions after losing ~5% in 2025.. Reasoning: Lookback simulation. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C07-1|C07-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C07-2|C07-2]])
+
+### Disagreements
+- **Is prediction pointless or just limited?**: Rich Brennan: Prediction of the specific path is futile; recognising existing structure (trends persist, volatility clusters) is not prediction. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C11-4|C11-4]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C12-2|C12-2]]); Niels Kaastrup-Larsen: Pushes back: some things are predictable, so asks whether macro forecasters rest on a category error; accepts the answer of forecasts as hypotheses (host question, no ledger claim; he separately holds that a non-predictive strategy is a sensible component). ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C05-4|C05-4]])
+- **Short-term vs long lookbacks in 2025**: Niels Kaastrup-Larsen: Short-term (20-day) did worst but 130-day and 260-day were also negative; 60-day slightly positive. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C07-1|C07-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C07-2|C07-2]]); Rich Brennan: This argues for an ensemble of lookbacks rather than picking the best. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C07-3|C07-3]])
+
+### Gaps and conflicts
+- The claim that fragmentation is the most favourable environment in years is asserted from narrative; the 2025 evidence (commodity-led year, drawdown in April) is mixed and the 2025 SG Trend Index touched its worst drawdown in 25 years in June. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C03-2|C03-2]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C05-3|C05-3]])
+- Brennan says 'prediction is futile in a specific way' yet trades on persistence, which is a forecast of continuation; the line between recognition and prediction is a framing. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C11-4|C11-4]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C12-2|C12-2]])
+- Variable braking vs sizing to a backtest average has no supporting test; the oil example is hypothetical. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C08-1|C08-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C10-1|C10-1]])
+- The lookback comparison is a same-universe simulation with the caveat 'massive grain of salt'; no fees or sample stated. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C07-2|C07-2]])
+- Brennan's 'always-on brake' critique of conservative sizing coexists with his advice to size for acceptable loss; the boundary is not quantified. ([[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C10-1|C10-1]], [[MT186 - Trading the Fragmented World of 2026 - Systematic Investor - Ep.382#^MT186-C08-5|C08-5]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Inputs named: persistence of regional imbalances (energy, inflation, currencies, sanctions, supply chains), commodity and metals trends (gold, silver, platinum), absence of coordinated central bank intervention, trend persistence and volatility clustering, the Trend Barometer and CTA indices, equity index concentration. Horizon: months to years for trends; 2026 view qualitative.
+
+### Reader inferences (not stated by the speakers)
+- (reader) The regime argument implies a testable hypothesis: trend returns should rise when cross-country dispersion of inflation, rates and currencies is high and central bank policy correlation is low.
+- (reader) 'Sizing to backtest average volatility' vs 'vary exposure with conditions' maps to a volatility-targeting choice that the framework could test.
+- (reader) Brennan's rule-before-trade test for exits is a design principle that can be audited in a rules-based book.
 
 ## Coverage
 
@@ -185,6 +290,10 @@ tags: [source, layer0]
   > Brakes are not predictions. They're commitments. They exist before the corners appear.
   indicator: stop-loss, position limits, drawdown rules · asset: multi · testable: yes - rules-based risk limits are testable · confidence: high
   ^MT186-C08-5
+- **Rich Brennan** Brennan says brakes (stop-losses, position limits, drawdown rules) are commitments defined before the corner arrives and define how much damage is acceptable, not predictions.  #mech/new _(added by map cross-check)_
+  > Brakes are not predictions. They're commitments.
+  indicator: predefined stop-loss, position limit, drawdown rules · asset: multi · direction: limit downside · horizon: n/a · conditions: Rules written and trusted in advance, engaged without debate · testable: yes: rules can be audited · confidence: high
+  ^MT186-C08-R1
 
 ### C09
 - **Rich Brennan** Staying exposed while trend structure persists, even when profits look large, is what captures convexity.  #mech/cycle_persistence
@@ -223,6 +332,10 @@ tags: [source, layer0]
   > this is why trend following works. Not because we predict where markets will go, but because we participate in structures as they form.
   indicator: trend persistence; volatility clustering · asset: multi · direction: follow current trend · horizon: months · testable: yes · confidence: high
   ^MT186-C11-4
+- **Rich Brennan** Brennan argues that market trends are emergent: global behaviour arises from local interactions with structure (trends persist, volatility clusters) that is generated continuously rather than pre-existing, which is why trend following participates in structure rather than forecasting it.  #mech/new _(added by map cross-check)_
+  > in complex systems global behavior emerges from local interactions
+  indicator: trend persistence, volatility clustering · asset: multi · direction: n/a · horizon: n/a · conditions: Complex adaptive systems · testable: no · confidence: medium
+  ^MT186-C11-R2
 
 ### C12
 - **Rich Brennan** Macro forecasts should be treated as hypotheses and traded only when the market confirms them (e.g. go short bonds only if bonds actually start to sell off).  #mech/research_method
@@ -261,6 +374,10 @@ tags: [source, layer0]
   > if the system you trade requires you to make calm, rational decisions under pressure, your system has a design flaw
   asset: multi · testable: no · confidence: high
   ^MT186-C14-3
+- **Rich Brennan** Brennan says the pursuit of the optimal parameter is usually wrong, and a good-enough choice that is robust across conditions beats the optimum almost every time.  #mech/new _(added by map cross-check)_
+  > Good enough with robustness across conditions beats optimal almost every time.
+  indicator: parameter plateau · asset: multi · direction: prefer robust · horizon: n/a · conditions: Loose optimisation of trend parameters · testable: yes: parameter-surface stability · confidence: high
+  ^MT186-C14-R1
 
 ### C15
 - **Rich Brennan** Remove emotional pressure points via predetermined entries/exits, automation and size that keeps losses tolerable; treat strong emotions as a signal to redesign the system (e.g. reduce size).  #mech/behavioral

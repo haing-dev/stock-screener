@@ -5,8 +5,8 @@ date: 2025-12-24
 channel: "Top Traders Unplugged"
 url: 
 words: 8575
-claims: 45
-added_by_crosscheck: 4
+claims: 47
+added_by_crosscheck: 6
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Doug King (founder, Merchant Commodity Fund; former Cargill head of petroleum trading)", "Moritz Seibert (host, Open Interest; caption 'Morett Sebert')"]
@@ -21,6 +21,113 @@ tags: [source, layer0]
 **Approach:** discretionary commodities, fundamental, volatility targeting, basis, risk control
 
 **Cross-check completeness estimate of first read:** 0.92 - first reader captured nearly all of King's methods, risk process, trades and numbers; missed a few secondary points (hedger margin-call risk, LNG decoupling, exchange bail-out, pod-shop leash) and merged two speakers in one claim.
+
+## Argument map
+
+**Episode thesis:** Doug King argues that commodities are cyclical because innovation and substitution (shale, GMO) end each scarcity story, so a bottom-up fundamental approach that checks the physical cash market before trading futures is the way to catch rare distortions, using curve trades when imbalances are temporary. He controls risk with a roughly 21% volatility target cut in staged fashion after losses, and warns that the last leg of spikes is margin-call stress rather than fundamentals.
+
+### Doug King (Founder of Merchant Commodity Fund (since 2004); former Cargill global head of petroleum trading; owner of Coventry City FC)
+Fingerprint: #approach/commodity_fundamentals #approach/bottom_up_fundamental #approach/position_sizing_vol_target #approach/relative_value_arbitrage #approach/valuation_contrarian #approach/liquidity_flows #approach/structural_themes
+_Speaker note: Captions spell him 'Duck King' and host 'Morett Sebert'; clear two-speaker interview. Fund returns (60% in 2014) are self-reported._
+
+**Worldview premises**
+- Commodities are cyclical, not secularly rising, because innovation and substitution end each scarcity story (shale, GMO seeds). _[empirical, stated; support: Oil at $55 in 2025 vs $50 in 2005; shale added about 9 million b/d in 15 years; $150-200 forecasts of 2007-08 failed; grains resilient to weather.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C04-1|C04-1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C04-2|C04-2]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C04-3|C04-3]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C03-4|C03-4]])
+- Buy-and-hold passive commodity exposure loses money. _[empirical, stated; support: USO and UNG static-roll ETFs lost everything, USO especially when WTI went negative.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C04-5|C04-5]])
+- Physical-market information (basis, cash market) is the key input; futures prices can diverge from cash and give conviction signals. _[experience, stated; support: Career at Cargill; copper 2024 example; takes information only from physical participants.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C03-1|C03-1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C11-1|C11-1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C11-2|C11-2]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C11-5|C11-5]])
+- Precious metals are not driven by physical supply and demand and are excluded from the universe. _[theoretical, stated; support: Definition of the fund's scope.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C03-2|C03-2]])
+- Edge is filtering relevant from irrelevant information; too granular tracking (ships, tank tops) misses the bigger picture. _[experience, stated; support: Own practice for 20 years.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C11-3|C11-3]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C05-1|C05-1]])
+- Trading houses use physical information to trade leveraged derivatives, which pays in distortions such as 2021-22. _[empirical, stated; support: Glencore, Vitol, Trafigura examples.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C05-2|C05-2]])
+- Rare distortions deliver the bulk of returns, so one must be positioned in advance; entering after the move is late. _[behavioural, stated; support: Advice given to investors; no data.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C06-1|C06-1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C02-2|C02-2]])
+- The last stage of a spike (cocoa, coffee, WTI negative, cotton) is margin-call stress, not fundamentals; exchange margin and limit rules shape moves. _[experience, stated; support: Cocoa, coffee, cotton merchant, 2007-09 limit-down episodes.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-3|C07-3]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-X1|C07-X1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C08-1|C08-1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-4|C07-4]])
+- Exchanges may intervene in extreme squeezes (LME nickel cancelled trades), so there is exchange-intervention risk. _[experience, stated; support: Own LME nickel experience.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C09-6|C09-6]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C10-X1|C10-X1]])
+- Losing money is very poor because cutting the volatility target after a loss slows recovery; the hardest job is to make money the right way. _[experience, stated; support: Risk process experience.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-1|C07-1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C12-1|C12-1]])
+- Independent positioning against the crowd, e.g. bearish at peak oil sentiment, is right. _[behavioural, stated; support: 2014 oil short.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C09-5|C09-5]])
+- A merchant's fundamental view had an edge in 2004 when Asia was booming and few vehicles offered commodity exposure. _[experience, stated; support: Founding context of the fund.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C02-2|C02-2]])
+
+**Chain: 2014 oil bear thesis**
+1. Shale growth eats OPEC's share and global GDP growth disappoints (1-2% vs 3-4%) → Surplus builds at $115-120, curve moves from inverse to contango: Modelled GDP-to-oil demand ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C09-1|C09-1]])
+2. Iraq/ISIS shock → Cut position, re-enter in July-August once thesis intact: Thesis still valid ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C09-2|C09-2]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C09-3|C09-3]])
+3. OPEC price war → Oil fell about 120 to 40 in five months, about 60% for the fund: Accelerated the thesis ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C09-4|C09-4]])
+- Evidence: Fund return 60% in 2014; self-reported.
+- Fails when: Not stated; the OPEC price war is called 'somewhat fortuitous'.
+
+**Chain: Curve trade at full carry**
+1. Full carry with storage filling → Low downside, leveraged curve position: Storage constraint caps downside ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C08-4|C08-4]])
+2. OPEC cuts or demand increase → Curve flips from carry to inverse, trade pays: Scarcity needs product released ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C08-4|C08-4]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C08-3|C08-3]])
+3. Temporary scarcity or surplus → Trade the curve, not flat price; outright only when price is too high or low for balance: Choose the structure that solves the imbalance ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C08-2|C08-2]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C08-3|C08-3]])
+- Evidence: Covid storage example; his best trades.
+- Fails when: Not stated.
+
+**Chain: Volatility targeting limits participation in spikes**
+1. Volatility target of about 21% (half after drawdown) → Positions cut when volatility spikes: Cannot hold full size on big moves ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C06-5|C06-5]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-2|C07-2]])
+2. Drawdown of risk budget → Staged cuts then sidelined: Risk process ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C06-4|C06-4]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-1|C07-1]])
+3. Cutting target after loss → Slower recovery: Must grind rather than shoot it back ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-1|C07-1]])
+- Evidence: Experience on WTI negative, cocoa, coffee.
+- Fails when: Fails if big winners are lost by forced size cuts (he accepts this).
+
+**Chain: Futures rally without cash confirmation**
+1. Copper up to $11,000 in 2024 on futures demand → Cash basis fell: Futures excitement without physical demand ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C11-5|C11-5]])
+2. No physical follow-through → Price fell to $9,000 six months later: Fund stayed out ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C11-5|C11-5]])
+- Evidence: Single copper episode.
+- Fails when: He says he might have traded it if basis matched.
+
+**Chain: Margin stress squeezes shorts and hedgers**
+1. Exchange raises margins near the highs (cocoa) → Shorts with 20% higher holding cost cover the next day: Margin cost ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-4|C07-4]])
+2. Physical merchants hedged short futures → Margin calls drive them out even though their book is hedged: Liquidity not solvency ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-X1|C07-X1]])
+3. Squeeze overshoots fundamentals → Final stage is financial stress, not real demand: Hence the 'real or not real' test ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-3|C07-3]])
+- Evidence: Cocoa (ICE margin), 130-year cotton merchant.
+- Fails when: Not stated.
+
+**Decision process**
+- [universe] Oil, gas, industrial metals and softs; no precious metals.. Why: Fundamental supply-demand drivers. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C03-2|C03-2]])
+- [signal] Bottom-up supply-demand work with cash-versus-futures divergence for conviction; optimisation and timing tools only for execution.. Why: Never removed from physical reality. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C02-1|C02-1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C03-1|C03-1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C11-1|C11-1]])
+- [research] Takes information from the physical industry, not derivative sellers; weighs others' views against physical facts; took physical delivery (rubber, raw sugar) to test scarcity.. Why: Traders talk their book. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C11-2|C11-2]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C11-4|C11-4]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C05-3|C05-3]])
+- [research] Demand stress tests and deep theoretical work rather than tracking ships or tank tops.. Why: Too granular misses the main point. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C05-1|C05-1]])
+- [portfolio] 5-20 strategies in 2-4 themes with limits per theme; concentrated but not all-in.. Why: Risk limits agreed with investors. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C06-2|C06-2]])
+- [portfolio] Sectors can sit idle for years when no supply-demand story gives a risk-reward (grains 2017-19).. Why: Do not waste risk on no story. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C03-3|C03-3]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C06-3|C06-3]])
+- [sizing] Volatility target about 21% annualised; no more than half of that when out of step after drawdown; positions cut in stages as risk budget is drawn down.. Why: Protects capital; losses are costly. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C06-4|C06-4]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C06-5|C06-5]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-1|C07-1]])
+- [execution] Outright trades only when price is too high or too low; otherwise curve spreads; stage out in spikes.. Why: Choose the trade structure that solves the problem. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C08-2|C08-2]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C08-3|C08-3]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-2|C07-2]])
+- [risk] Sell into spikes where final move is margin stress; accept de-risking and re-risking repeatedly on global risk-off days (Liberation Day).. Why: Noise around a theme does not mean the theme is wrong. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-3|C07-3]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C12-1|C12-1]])
+- [other] Be positioned for rare distortions and grind a decent return in quiet years.. Why: Entering after the move is late. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C06-1|C06-1]])
+- [other] Physical trading arm disbanded in 2014-17 for poor margins and high counterparty credit risk.. Why: Futures are more attractive. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C10-1|C10-1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C10-2|C10-2]])
+
+**Evidence style:** First-hand trading stories and a 20-year track record; analogy to career experience; few quantified tests.
+
+**Views at the time**
+- (2025-12-24) Pivoting to electrification metals (copper, aluminium, lithium) because supply and demand are harder to adjust; other commodities look well supplied.. Reasoning: Data centres, EVs, China trucks; electrification pace is the swing factor. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C04-4|C04-4]])
+- (2025-12-24) Oil near $55 is similar to 2005 levels because of shale innovation; commodities generally are disappointing as long-run stores of value.. Reasoning: Innovation and substitution. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C04-2|C04-2]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C04-1|C04-1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C04-3|C04-3]])
+- (2025-12-24) Fund not on copper's 2024 rally because cash basis did not follow; remained patient.. Reasoning: Futures excitement without physical confirmation. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C11-5|C11-5]])
+
+### Moritz Seibert (Host of Open Interest series; systematic trader and podcast host)
+Fingerprint: #approach/commodity_fundamentals #approach/liquidity_flows #approach/behavioral_sentiment
+_Speaker note: Host; his remarks are context and examples, with a few market observations. Caption 'Morett Sebert'._
+
+**Worldview premises**
+- Exchange margin hikes force shorts to cover and squeeze prices higher. _[experience, stated; support: Recalls ICE raising cocoa margin near the highs.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-4|C07-4]])
+- When an exchange cancels trades in a squeeze (LME nickel), the stated reason is protecting the clearing house but the effect is to bail out the distressed side. _[experience, stated; support: LME nickel 2022.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C10-X1|C10-X1]])
+- Fellow traders talk their book, so views must be weighed against physical facts. _[behavioural, stated; support: Own experience as trader.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C11-4|C11-4]])
+- Regional gas prices can decouple: Henry Hub stayed quiet while LNG rose when Europe competed with China after Ukraine. _[empirical, stated; support: Observation.]_ ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C04-X1|C04-X1]])
+
+**Evidence style:** Examples and questions; no data offered.
+
+### Disagreements
+- **Is physical information a durable edge?**: Doug King: Useful for conviction and filtering, but the physical trading arm was hard to run and disbanded. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C10-1|C10-1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C10-2|C10-2]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C11-1|C11-1]]); Moritz Seibert (as questioner): Suggested a physical business gives an information flow and could be a great advantage. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C11-2|C11-2]])
+- **Risk leash: single-team fund vs multi-manager platform**: Doug King: A single-team fund can sit through noise around a long-term supply-demand theme, while multi-manager platforms put commodity PMs on tight drawdown leashes (out after a few failures within months). ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C12-X1|C12-X1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C12-1|C12-1]]); Doug King (own fund): Still must cut and rebuild positions repeatedly on global risk-off days and has stringent risk processes. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C12-1|C12-1]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C06-4|C06-4]])
+
+### Gaps and conflicts
+- Correction applied: the ICE cocoa margin squeeze belongs to Seibert; the cotton merchants wiped out by margin calls is King's story (C07-X1). ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-4|C07-4]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-X1|C07-X1]])
+- The fund's volatility target and size discipline are said to prevent holding full size on big winners, yet the fund claims to want to be positioned for rocket-ship moves; the tension is acknowledged only indirectly. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C07-2|C07-2]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C06-1|C06-1]])
+- Fund performance claims (60% in 2014) and 'top performing hedge fund of the year' are self-reported. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C09-4|C09-4]])
+- No quantified rule for what counts as a 'full carry' or 'supply-demand story' worth risk; judgment-based. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C03-3|C03-3]], [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C08-4|C08-4]])
+- Claim that precious metals are not physical supply-demand driven is not supported; the host jokes about silver. ([[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C03-2|C03-2]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Inputs King says lead prices: cash-futures basis and physical follow-through (weeks to months), storage levels and curve shape (carry vs inverse), OPEC supply decisions and shale growth against global GDP growth (months), electrification demand for copper, aluminium and lithium (years), exchange margin and limit rules at extremes (days). Reason: commodities are cyclical, ended by innovation; real tightness shows in cash.
+
+### Reader inferences (not stated by the speakers)
+- (reader) King is a discretionary fundamental trader whose edge is judged by cash-market confirmation, which could be tested as a basis-confirmation filter on futures trends.
+- (reader) His volatility targeting explicitly caps participation in the fattest tails, so his return stream differs from trend followers.
+- (reader) The strategy is built around waiting for distortions; years of idleness are by design.
 
 ## Coverage
 
@@ -69,6 +176,10 @@ tags: [source, layer0]
   > I remember Goldman Sachs talking you know 200 bucks a barrel and and then we get the innovation of shale
   indicator: oil price forecasts · asset: commodities · direction: Oil down after scarcity forecasts · horizon: years · testable: partly - past episodes · confidence: high
   ^MT043-C03-4
+- **Doug King** King claims most commodity-conference participants have never seen the physical commodity, which is why cash and futures divergences give him an edge.  #mech/research_method _(added by map cross-check)_
+  > around 80% have never ever seen a commodity
+  asset: commodities · direction: edge from physical knowledge · testable: no · confidence: medium
+  ^MT043-C03-R1
 
 ### C04
 - **Doug King** Commodities are cyclical and do not trend upward over the long run because innovation and substitution cap prices.  #mech/cycle_persistence
@@ -198,6 +309,10 @@ tags: [source, layer0]
   > I think it was up 100% on that morning. So I did liquidate pretty much everything and then obviously was shocked when the futures exchange decided that they would not honor the futures trade
   indicator: LME nickel · asset: commodities · horizon: days · conditions: extreme squeeze · testable: no - one-off event · confidence: high
   ^MT043-C09-6
+- **Doug King** In the LME nickel squeeze the fund sold nearly everything after the price had doubled in a morning, then the exchange cancelled trades it did not honour.  #mech/risk_management _(added by map cross-check, time-bound view)_
+  > I think it was up 100% on that morning. So I did liquidate pretty much everything
+  indicator: LME nickel · asset: commodities · direction: exit into spike, exchange intervention · horizon: days · conditions: extreme squeeze · testable: partly - date is not given in the transcript · confidence: high
+  ^MT043-C09-R1
 
 ### C10
 - **Doug King** A physical trading arm fed information into the hedge fund (like Cargill/Black River, Trafigura/Galena) but proved hard to run and was disbanded.  #mech/structural_shift

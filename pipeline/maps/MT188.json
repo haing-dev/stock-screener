@@ -1,0 +1,335 @@
+{
+ "source_id": "MT188",
+ "episode_thesis": "Andrew Beer argues that 60/40 broke because bonds stopped diversifying, that a rules-based 10-major-market replication of CTA beta captures the same trend signal (beta, crisis alpha, zero stock-bond correlation) at far lower implementation cost than 70-190 market CTAs, and that allocators should compare all-in costs, not headline fees. Trend following works because prices reveal informed participants and because slow institutional models (60/40 rebalancers) give away alpha; it is best explained to non-specialists as a 'cloudy crystal ball'. Kaastrup-Larsen pushes back on calling replication a cheap CTA (swap costs are hidden, replication has tracking error) while agreeing on transparency of costs and on the logic that trend following captures correct views without forecasting.",
+ "speakers": [
+  {
+   "name": "Andrew Beer",
+   "role": "Co-host of the Systematic Investor series; manager of DBMF (10-market CTA replication ETF, weekly rebalanced since July 2016); founder of a commodity business (Pinnacle Asset Management) 20+ years ago; self-described non-quant",
+   "speaker_note": "Auto-captions; the two speakers alternate and are clear from host questions vs long answers. The ledger has no speaker corrections beyond two claim text fixes (C05-2, C10-2) which are applied here: the ~500bp after Liberation Day came mainly from holding only major markets; slower de-risking added only about two points; the Abbey Capital 350bp breakdown is low confidence because the caption is garbled. Beer sells the product he discusses, so his cost and signal arguments are advocacy.",
+   "fingerprint": ["trend_following", "replication_indexing", "costs_execution", "portfolio_construction_stacking", "diversification_risk_parity", "manager_selection_allocation", "research_robustness_overfitting", "structural_themes"],
+   "worldview_premises": [
+    {
+     "premise": "The 60/40 playbook broke this decade because bonds stopped diversifying: they behaved like lousy equity exposure (lower returns, similar drawdowns, higher volatility). Allocators now build stocks, shrinking bonds and an 'other' diversifier bucket.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation of the post-2020 decade; no figures given.",
+     "claim_ids": ["MT188-C02-1"]
+    },
+    {
+     "premise": "Allocation paradigms change abruptly (Kuhn): once the old framework visibly broke, wealth managers jump to a new one without explaining the break, which opens the door to managed futures and other alternatives.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Analogy to Kuhn's Structure of Scientific Revolutions; no data.",
+     "claim_ids": ["MT188-C02-X1"]
+    },
+    {
+     "premise": "Managed futures is a statistically obvious diversifier but is still at zero in many portfolios, notably ETF model portfolios that hold only stocks and bonds, so easy and cheap access could make it a standard allocation.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Own conversations with allocators; 80% of US ETF assets cost under 20bp and model portfolios have no diversifier.",
+     "claim_ids": ["MT188-C02-2", "MT188-C11-1", "MT188-C08-2"]
+    },
+    {
+     "premise": "The CTA trend signal is a major-market signal: 10 major markets reproduce CTA beta, crisis alpha and zero stock-bond correlation, so extras such as short-term models, volatility controls and exotic markets may detract rather than add alpha. He admits this is not yet proven.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "DBMF outperformance vs CTA indices and mutual funds in 2024-2025 and about 350bp a year over a decade; he says the answer needs several more years of live evidence.",
+     "claim_ids": ["MT188-C06-2", "MT188-C07-1", "MT188-C07-X1", "MT188-C09-2"]
+    },
+    {
+     "premise": "Implementation cost is the under-appreciated driver of CTA net returns: trading 10 liquid contracts less often costs much less than trading dozens to hundreds of instruments with short-term models and vol controls (notional turnover about 20 times a year), and each added market must trend enough to pay for itself.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Claimed decade of outperformance; turnover figure from his own experience; no breakdown by market.",
+     "claim_ids": ["MT188-C09-2", "MT188-C10-1", "MT188-C10-R1", "MT188-C10-2"]
+    },
+    {
+     "premise": "Investors are penalised for looking only at headline fees; hidden or unreported implementation costs (swap costs, zero reported transaction costs in some US mutual funds) distort comparisons, so all-in cost and even tax efficiency should be compared.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "US reporting rules; his view of allocator behaviour. He concedes the Simplify 35bp headline hides swap costs.",
+     "claim_ids": ["MT188-C09-1", "MT188-C12-2", "MT188-C12-X1", "MT188-C12-1"]
+    },
+    {
+     "premise": "Trend following works because price moves signal that someone knows something (information change, not sentiment change). One can follow informed participants voting with their portfolios, like tracking insider buys and sells, without knowing what they know.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Commodity-market experience (price drifting from 10 to 12); yen from 110 to 160 as an example of information-driven change; analogy to insider trading data.",
+     "claim_ids": ["MT188-C13-2", "MT188-C15-1"]
+    },
+    {
+     "premise": "Trend alpha is paid by institutions whose slow, fixed models cannot adapt when the world changes (for example 60/40 portfolios rebalancing into falling bonds in 2022), not by other trend followers; trend following using only past prices has worked for about 50 years despite weak-form efficiency arguments.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "2022 bond rebalancing example and 50-year track record; no counterparty data.",
+     "claim_ids": ["MT188-C15-2", "MT188-C15-X1"]
+    },
+    {
+     "premise": "CTAs act as global detectors across many local markets, giving early warning that something big is changing (yen, Treasuries, crude oil in 2022). Trend following is sometimes contrarian, early and right.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own examples: short Treasuries from Sept 2020, short yen at the 105-110 breakout, long gold below $3,000.",
+     "claim_ids": ["MT188-C13-1", "MT188-C14-1"]
+    },
+    {
+     "premise": "CTA design is ultimately human judgement: equally smart managers reach opposite conclusions on the same data, enhancements are presented with false certainty, and small changes in assumed implementation costs or signal speed can swing outcomes. The heterogeneity of approaches is healthy.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observations at the Stockholm CTA roundtable (Aspect, Lynx-type managers, Campbell, Alpha Simplex, Gresham, Jerry Parker and others); anthropological, self-described outsider view.",
+     "claim_ids": ["MT188-C16-1", "MT188-C16-2", "MT188-C16-X1", "MT188-C16-R1"]
+    },
+    {
+     "premise": "Hypothetical backtests of an index deserve scepticism; credibility comes from running identical rules live for years before building a benchmark on them. Bank-built derivative indices can be created overnight and shut if they fail, so backfilled histories carry survivorship and selection bias.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "How the DBMF index with Stockton was built only after proving the strategy live since 2016.",
+     "claim_ids": ["MT188-C07-X2", "MT188-C08-X1", "MT188-C07-3", "MT188-C08-1"]
+    },
+    {
+     "premise": "Pod shops face diminishing team quality as inflows grow, yet they have defied naysayers for years through leverage and risk controls.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Track record observation; he hopes they continue.",
+     "claim_ids": ["MT188-C03-2"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why replication outperformed the CTA index in 2025",
+     "steps": [
+      {"from": "Replication holds only 10 major markets, more concentrated than diversified CTAs", "to": "Idiosyncratic exposures (more short yen helped, more short euro hurt) add dispersion to the index", "why": "Fewer positions mean single-market bets matter more.", "claim_ids": ["MT188-C04-1"]},
+      {"from": "Liberation Day shock hit secondary and esoteric markets harder than major markets", "to": "Portfolios with many exotic markets were whipsawed more and the 10-market portfolio gained about 500bp in the days after", "why": "Nobody knew the global-economy outcome, so liquid-market noise was even larger in less liquid markets.", "claim_ids": ["MT188-C05-1"]},
+      {"from": "A short but not very short lookback is slightly slower to de-risk", "to": "Residual risk was on when the tariff policy reversed, adding roughly two points", "why": "Slow de-risking helps only when the shock reverses.", "claim_ids": ["MT188-C05-2"]},
+      {"from": "A fixed Monday rebalance day versus peers' timing", "to": "Some relative gain or loss is luck", "why": "A few days of signal drift differ across managers.", "claim_ids": ["MT188-C05-X1"]}
+     ],
+     "evidence": "His own 2025 attribution (about 500bp post-Liberation Day, 4 points from idiosyncratic risk this quarter, 2 points from slowness); no independent verification.",
+     "fails_when": "A shock that does not reverse or hits major markets hardest; concentration works against it (euro short earlier in 2025).",
+     "claim_ids": ["MT188-C04-1", "MT188-C05-1", "MT188-C05-2", "MT188-C05-X1"]
+    },
+    {
+     "topic": "Replication as a lower-cost route to the CTA beta",
+     "steps": [
+      {"from": "Hedge fund index costs (management, incentive, implementation) estimated at about 200bp conservatively", "to": "Target of index plus 400bp, which was delivered or exceeded", "why": "The simpler portfolio avoids the implementation drag of broader CTAs.", "claim_ids": ["MT188-C06-1"]},
+      {"from": "10 liquid futures traded less often", "to": "About 350bp annual outperformance over a decade versus funds trading hundreds of contracts", "why": "Lower turnover and no costly contracts in exotic markets.", "claim_ids": ["MT188-C09-2", "MT188-C10-1"]},
+      {"from": "Same statistical profile achieved with 10 markets", "to": "The space's signal is a major-market signal and extras may detract", "why": "If 10 instruments reproduce beta, crisis alpha and zero stock-bond correlation, the extras add cost rather than signal.", "claim_ids": ["MT188-C06-2", "MT188-C07-1"]}
+     ],
+     "evidence": "Live track record since July 2016 with unchanged rules; 350bp over a decade; comparison with Abbey Capital (low-confidence breakdown).",
+     "fails_when": "Extras (short-term models, exotic markets) prove to add value in a future regime; he says this will take years to know.",
+     "claim_ids": ["MT188-C06-1", "MT188-C06-2", "MT188-C07-1", "MT188-C07-3", "MT188-C07-X1", "MT188-C10-2", "MT188-C09-2"]
+    },
+    {
+     "topic": "Why trend following earns a return",
+     "steps": [
+      {"from": "Informed participants act on new information about inflation, policy or fundamentals", "to": "Price moves steadily in one direction (10 to 11 to 12)", "why": "A persistent move signals that someone knows something; sentiment alone does not move the yen from 110 to 160.", "claim_ids": ["MT188-C13-2"]},
+      {"from": "CTAs monitor many markets with price-only detectors", "to": "They detect major changes early without knowing the cause", "why": "Following prices means voting with informed portfolios, like insider buying and selling.", "claim_ids": ["MT188-C14-1", "MT188-C15-1"]},
+      {"from": "Slow institutional models (60/40 rebalancers) keep buying falling assets", "to": "They transfer alpha to trend followers", "why": "These models are built to be slow and not nimble.", "claim_ids": ["MT188-C15-2"]}
+     ],
+     "evidence": "50-year record of price-only trend following; 2022 episode across yen, Treasuries and crude oil; anecdotal early calls.",
+     "fails_when": "Whipsaw markets (2025 described as more snow globe than clear crystal ball) and sentiment-driven moves; he does not quantify.",
+     "claim_ids": ["MT188-C13-2", "MT188-C14-1", "MT188-C15-1", "MT188-C15-2", "MT188-C15-X1", "MT188-C13-R1"]
+    },
+    {
+     "topic": "Alpha/beta separation in CTA allocation",
+     "steps": [
+      {"from": "Allocators cannot get the core trend signal efficiently", "to": "They bundle four of six or eight managers to average out differences", "why": "The blend looks index-like but is a bolt-on of 'beta adjacent' strategies.", "claim_ids": ["MT188-C17-X1"]},
+      {"from": "A cheap core replication/beta allocation solves the beta", "to": "Allocators can take more single-manager, volatility and commodity risk (for example AQR)", "why": "With beta covered, idiosyncratic satellites become affordable even if a manager has a bad six years.", "claim_ids": ["MT188-C17-1"]}
+     ],
+     "evidence": "Expectation of evolution as investors get more sophisticated; AQR's strong last five years after a bad prior six as an example.",
+     "fails_when": "Allocators do not accept the core replication as the beta.",
+     "claim_ids": ["MT188-C17-1", "MT188-C17-X1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "universe", "practice": "Synthesise the broad CTA exposures into 10 major markets and hold the same 10 factors and same instruments since inception.", "why": "Major markets drive the CTA signal; secondary markets add noise and cost.", "claim_ids": ["MT188-C06-2", "MT188-C07-3", "MT188-C05-1"]},
+    {"element": "execution", "practice": "Rebalance weekly on Mondays (holidays excepted) since July 2016, with a short, not very short, lookback.", "why": "Simplicity and low turnover; accepted timing noise.", "claim_ids": ["MT188-C07-3", "MT188-C05-2", "MT188-C05-X1"]},
+    {"element": "research", "practice": "Replicate the distribution of CTA returns through fund exposures rather than via an index tracker, with target of the SG CTA index plus about 400bp.", "why": "Hedge fund index costs are about 200bp and more for complex strategies; replication saves those.", "claim_ids": ["MT188-C06-1", "MT188-C05-3"]},
+    {"element": "research", "practice": "Build an index around the live strategy only after years of unchanged live results so allocators can model and benchmark with long history, and offer a swap-based route.", "why": "Allocators distrust hypothetical numbers and have no tradable CTA index.", "claim_ids": ["MT188-C08-1", "MT188-C08-X1", "MT188-C07-X2"]},
+    {"element": "risk", "practice": "Accept idiosyncratic concentration risk (yen, euro) as a consequence of 10 markets rather than hedging it.", "why": "More concentrated than diversified CTAs; sometimes helps, sometimes hurts.", "claim_ids": ["MT188-C04-1"]},
+    {"element": "portfolio", "practice": "Core-plus-satellite: own a cheap core replication, then add single-manager, volatility or commodity risk on top.", "why": "Avoids bolting together managers into an inefficient index-like blend.", "claim_ids": ["MT188-C17-1", "MT188-C17-X1"]},
+    {"element": "other", "practice": "Evaluate any CTA by asking for the implementation cost of the marginal market and how much it must trend to cover it; compare all-in costs and tax effectiveness.", "why": "Headline fees miss turnover, swap and operating costs.", "claim_ids": ["MT188-C10-1", "MT188-C10-R1", "MT188-C09-1", "MT188-C12-X1"]}
+   ],
+   "evidence_style": "Mostly his own live track record and attribution of one year (2025), plus comparisons with indices and peers (SG CTA, Abbey Capital) and observational anecdotes from allocator conversations and a roundtable. He is explicit that hypothetical backtests deserve scepticism and that his central conclusion (major-market signal) is not yet proven. Uses analogies (Kuhn, insider buying, crystal ball) as persuasion for non-specialists.",
+   "current_views": [
+    {"view": "Bonds no longer diversify, allocators are shifting to an 'other' bucket, and managed futures via cheap ETFs and swaps should grow.", "as_of": "2025-11-28", "reasoning": "Post-2020 bond behaviour and the new Goldman view that wealth flows toward liquid alternatives.", "claim_ids": ["MT188-C02-1", "MT188-C02-2"]},
+    {"view": "The 2025 CTA rebound came from being contrarian and early: staying long equities and the 'let it run hot' trade after Liberation Day, while human strategists capitulated; gold had a historic run and the world had not changed.", "as_of": "2025-11-28", "reasoning": "Trend signals kept risk on while strategists predicted recession or inflation.", "claim_ids": ["MT188-C04-2", "MT188-C04-R1"]},
+    {"view": "Replication beat the CTA index in 2025 (about 500bp in days after Liberation Day) because of simplicity, slightly slower de-risking and idiosyncratic yen exposure.", "as_of": "2025-11-28", "reasoning": "Own attribution.", "claim_ids": ["MT188-C05-1", "MT188-C05-2", "MT188-C04-1"]},
+    {"view": "Pod shops may be fragile in principle but have defied naysayers; he hopes they continue.", "as_of": "2025-11-28", "reasoning": "Diminishing team quality versus a record of leverage and risk control.", "claim_ids": ["MT188-C03-2"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; veteran hedge fund manager; CTA-industry insider",
+   "speaker_note": "Host who argues positions on cost disclosure, replication terminology and trend logic; his own mapped views are lighter than Beer's.",
+   "fingerprint": ["trend_following", "costs_execution", "replication_indexing", "manager_selection_allocation", "short_term_systematic"],
+   "worldview_premises": [
+    {
+     "premise": "Replication through fund exposures produces tracking error relative to the CTA index, so it behaves more like an 'alternative data' CTA than a true tracker.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Compares expectation from equity trackers (about plus or minus 1%) with the large 2025 dispersion.",
+     "claim_ids": ["MT188-C05-3"]
+    },
+    {
+     "premise": "Implementation costs of CTA strategies (about 300bp) are real costs even if not paid to the manager, and all products should be compared apples to apples; but a swap-based product should not be marketed as a low-cost version of DBMF.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Allocator meeting experience; disclosure-of-fees argument.",
+     "claim_ids": ["MT188-C09-3"]
+    },
+    {
+     "premise": "Trend following captures correct forecasts without needing the forecast: if a view is right, the price path will itself produce the trend signal.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Apple 200-to-400 thought experiment.",
+     "claim_ids": ["MT188-C14-2"]
+    },
+    {
+     "premise": "Aggregate trend-index moves can hide dispersion: in November 2025 short-term trend managers struggled even though headline trend indices looked flat.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "SG indices as of late November (CTA -3.06%, Trend -0.79%, Short-Term Traders -5.76% YTD; BTOP50 +1.05%).",
+     "claim_ids": ["MT188-C04-X1", "MT188-C07-2"]
+    },
+    {
+     "premise": "Liquid alternatives are gaining at the expense of illiquid ones, and big managers (BlackRock, Fidelity, Invesco) are launching trend ETFs; Dalio is sceptical of pod shops because internal competition makes them uncollegial.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Goldman report and a Dalio podcast he heard; second-hand.",
+     "claim_ids": ["MT188-C02-3", "MT188-C03-1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Trend following without a crystal ball",
+     "steps": [
+      {"from": "A forecaster is right that a price will go from 200 to 400", "to": "The price path 201, 202, 203... generates trend-following entry signals", "why": "Trend signals follow realised moves, so correct views are captured automatically.", "claim_ids": ["MT188-C14-2"]}
+     ],
+     "evidence": "Thought experiment only.",
+     "fails_when": "Whipsaw losses; he acknowledges these but does not quantify.",
+     "claim_ids": ["MT188-C14-2"]
+    }
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Asks managers about implementation and trading costs in due-diligence meetings and wants public fee disclosure to show who gets paid what.", "why": "Headline fees can understate the true cost of a strategy.", "claim_ids": ["MT188-C09-3"]}
+   ],
+   "evidence_style": "Industry statistics (SG/BTOP indices), second-hand reports (Goldman, Dalio) and thought experiments; pushes for transparency rather than data.",
+   "current_views": [
+    {"view": "Trend indices were mixed and flat in 2025 YTD (BTOP50 +1.05%, SG CTA -3.06%, Trend -0.79%, Short-Term Traders -5.76%).", "as_of": "2025-11-27", "reasoning": "Reports index levels as of Wednesday before Thanksgiving.", "claim_ids": ["MT188-C07-2"]},
+    {"view": "Short-term trend managers struggled in November 2025 despite flat headline indices.", "as_of": "2025-11-28", "reasoning": "Dispersion beneath index-level numbers.", "claim_ids": ["MT188-C04-X1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Is replication a diluted or an efficient version of the CTA signal, and what should it be called?",
+   "positions": [
+    {"speaker": "Andrew Beer", "position": "Replication is a technological innovation capturing the same signal with an efficiency advantage; the signal is a major-market signal and complexity may detract. He notes the industry largely disagrees.", "claim_ids": ["MT188-C07-1", "MT188-C06-2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Because of large tracking error versus the index, it is closer to an alternative-data CTA than a replication; most industry listeners would disagree with Beer.", "claim_ids": ["MT188-C05-3"]}
+   ]
+  },
+  {
+   "topic": "How to present the cost of an index/swap-based CTA ETF",
+   "positions": [
+    {"speaker": "Andrew Beer", "position": "Headline fees ignore implementation, swap and operating costs, so all-in cost and tax efficiency should be compared; the swap route still saves hundreds of basis points versus other implementations (white hat with a gray band).", "claim_ids": ["MT188-C09-1", "MT188-C09-2", "MT188-C12-X1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "A product charging 20bp plus 15bp is not a low-cost version of DBMF; swap costs exist but are not shown, and investors should not think they get the returns for 35bp.", "claim_ids": ["MT188-C09-3"]}
+   ]
+  },
+  {
+   "topic": "Whether short-term models and extra markets add or detract value in CTAs",
+   "positions": [
+    {"speaker": "Andrew Beer", "position": "Extras may detract (whipsaw in exotic markets, vol controls de-risking at the wrong time), but this is unproven; enhancements are presented with false certainty.", "claim_ids": ["MT188-C06-2", "MT188-C07-X1", "MT188-C16-2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Notes that short-term managers have struggled in 2025 and November, consistent with Beer, but does not endorse Beer's conclusion about the signal.", "claim_ids": ["MT188-C04-X1", "MT188-C07-2"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "The 350bp annual outperformance over a decade and the 350bp versus Abbey Capital are the speaker's own claims with no benchmark definition or net-of-fee detail, and the breakdown (about 100bp, 150bp unexplained, some volatility) is garbled in the caption.", "claim_ids": ["MT188-C09-2", "MT188-C10-2"]},
+  {"issue": "Beer says replication targets index plus 400bp and 'delivered all 400 and sometimes more', yet 2024-2025 outperformance is far above expectation, so the sample is short and period-specific; no tracking-error statistics are given.", "claim_ids": ["MT188-C06-1", "MT188-C07-X1"]},
+  {"issue": "Internal tension: replication is described as a beta tracker and as an active strategy with idiosyncratic concentration (4 points from concentration in a quarter), which is where much of the 2025 outperformance came from.", "claim_ids": ["MT188-C04-1", "MT188-C05-3", "MT188-C05-2"]},
+  {"issue": "Attribution of the 2025 gain to simplicity, slow de-risking and noise is single-year and self-reported; ledger correction applied (500bp post-Liberation Day mainly from major-market-only portfolio).", "claim_ids": ["MT188-C05-1", "MT188-C05-2"]},
+  {"issue": "The claim that trend alpha is paid by slow institutions is asserted without counterparty evidence; 2022 bond rebalancing is the only example.", "claim_ids": ["MT188-C15-2", "MT188-C15-X1"]},
+  {"issue": "The same 'managed futures ETF' label covers materially different products: Simplify's existing CTA ETF trades only two of four asset classes and had a very different profile (up about 24% in 2024), so comparing ETFs by label misleads.", "claim_ids": ["MT188-C09-X1"]},
+  {"issue": "Conflict of interest: Beer's firm sub-advises the ETF whose costs and design he defends, and he argues Simplify's cost presentation is acceptable.", "claim_ids": ["MT188-C09-1", "MT188-C12-2"]}
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs the speakers treat as leading: stock-bond correlation and bond drawdowns (whether bonds diversify); live relative performance of 10-market replication versus broad CTA indices (SG CTA, Trend, Short-Term Traders) and mutual funds over several more years; flows into liquid alts and trend ETFs (BlackRock, Fidelity, Invesco, Simplify index ETF); price breakouts out of long ranges as information signals (yen 105-110 band, Treasuries, gold); dispersion between short-term and long-term trend managers; reported all-in cost disclosures. Horizon: multi-year for the replication-versus-complexity question, months for trend signals. Reasoning: price changes reveal informed trading, and slow institutional models are the source of alpha.",
+ "reader_inferences": [
+  "(reader) Beer's strongest evidence for a major-market signal is the absence of a performance gap despite 7-20x fewer markets; the opposite reading (selection of the right 10 markets, one-year attribution) is not tested in the conversation.",
+  "(reader) His account of why trend works (informed trading plus slow institutions) predicts that trend returns are larger after structural shifts (2022, 2025 yen/gold) and smaller in sentiment-driven noise; the testable corollary is trend profit concentrated around macro-information events.",
+  "(reader) The cost argument implies net Sharpe of CTAs should fall with number of instruments and turnover, which could be tested on SG CTA constituents versus a 10-market trend model.",
+  "(reader) The crystal-ball framing is a communication tool for non-specialist allocators; it is not a statement about expected returns."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT188-C04-R1",
+   "chunk": "C04",
+   "speaker": "Andrew Beer",
+   "quote": "the world hasn't changed and the you know the the people who maintain this kind of view that interest rates would remain low",
+   "claim": "In 2025, after the Liberation Day panic, the world had not changed for investors who kept the view that interest rates would stay low and be good for equities; gold had a historic run and the dollar re-strengthened, so staying risk-on was right.",
+   "mechanism": "market_view",
+   "asset_class": "multi",
+   "indicator": "interest rate level; equity trend; gold; dollar",
+   "horizon": "2025",
+   "direction": "long equities and gold, rates low",
+   "conditions": "no recession or inflation breakout",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT188-C10-R1",
+   "chunk": "C10",
+   "speaker": "Andrew Beer",
+   "quote": "how much does that market have to trend to be able to cover that",
+   "claim": "A key allocator question for CTAs that went from 70 to 190 instruments is the implementation cost of the marginal market and how much it must trend to cover that cost.",
+   "mechanism": "research_method",
+   "asset_class": "futures",
+   "indicator": "marginal instrument implementation cost vs trend payoff",
+   "horizon": "unspecified",
+   "direction": "fewer markets if marginal market does not pay",
+   "conditions": "",
+   "testable": "yes - marginal contribution of each added market to net returns",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT188-C13-R1",
+   "chunk": "C13",
+   "speaker": "Andrew Beer",
+   "quote": "the way to talk about the strategy is not to talk about it as a black box, but to talk about it as a crystal ball",
+   "claim": "Managed futures should be explained to non-specialist allocators as a cloudy crystal ball that does not work a lot of the time but sometimes works very well, rather than as a hedged black box with caveats; 2025 was more snow globe than clear crystal.",
+   "mechanism": "communication",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT188-C16-R1",
+   "chunk": "C16",
+   "speaker": "Andrew Beer",
+   "quote": "I'm not a quant to building these models myself",
+   "claim": "Beer describes himself as an outsider who is not a quant building the models and who observes CTA design debates almost anthropologically, so his view of CTA design is that of an allocator and product builder, not a model builder.",
+   "mechanism": "speaker_context",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  }
+ ]
+}

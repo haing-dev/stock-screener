@@ -1,0 +1,1072 @@
+{
+ "episode_thesis": "Systematic Investor 329 (early Jan 2025) debates how to access and judge managed futures: Andrew Beer (DBi) argues a mechanical weekly factor replication of the SG CTA Index delivers the index's diversification at lower cost and suits wealth managers, who need an index-like, investable product; Tom Roble (SocGen) explains the SG indices and notes that CTA edge lies in many idiosyncratic markets, risk management and implementation that a 10-instrument replicator cannot fully capture. Beer's second argument is that trend following should be sold as a way of extracting changing information (a 3% completion allocation, not a hedge-fund-bucket holding), and that BlackRock's managed-futures ETF could validate and scale the category.",
+ "speakers": [
+  {
+   "name": "Andrew Beer",
+   "role": "Founder of DBi (Dynamic Beta investments); runs replication-based managed futures strategies and ETF (DBMF)",
+   "speaker_note": "Per ledger correction, the statement about a quarter of European investors wanting ESG-sensitive products and commodity-restricted investors (C21-2) is Beer citing Tom's SG investor survey, not Roble's own statement.",
+   "fingerprint": [
+    "replication_indexing",
+    "trend_following",
+    "costs_execution",
+    "manager_selection_allocation",
+    "portfolio_construction_stacking",
+    "structural_themes",
+    "behavioral_sentiment",
+    "diversification_risk_parity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A hedge fund index is useful only to institutions that can invest in hedge funds; wealth managers need an investable mechanical approximation, which is what replication provides.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "His mandate from wealth-management clients since 2015-16; reasoning about audience.",
+     "claim_ids": [
+      "MT028-C06-1",
+      "MT028-C12-2"
+     ]
+    },
+    {
+     "premise": "Over a one-week horizon, broad factor exposures of the CTA index can be estimated from about 10 deep liquid markets accurately enough that next week's return is close to the index; single-market idiosyncratic hits and misses mostly cancel across managers.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Research conclusion from 2015-16 and nine years of live use; correlation ~0.9 with full factor set, ~0.8 with a limited set.",
+     "claim_ids": [
+      "MT028-C06-2",
+      "MT028-C09-1",
+      "MT028-C10-2",
+      "MT028-C10-4",
+      "MT028-C10-5"
+     ]
+    },
+    {
+     "premise": "Small cost advantages compound: a low-cost replicator beats the noisy index in only 53-54% of weeks, but in about 80% of years and 90% of three-year windows; the index beats cash in ~60% of rolling years but 80%+ once costs are eliminated.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own track record statistics, quoted from memory.",
+     "claim_ids": [
+      "MT028-C07-1",
+      "MT028-C07-2",
+      "MT028-C09-3",
+      "MT028-C07-X1"
+     ]
+    },
+    {
+     "premise": "Idiosyncratic markets (cocoa) contribute little to large CTAs because they cap sizes in illiquid markets; cocoa's $5-6bn profit is small versus $300bn of CTA assets.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "'Rudimentary' own back-of-envelope calculation, admitted to be less sophisticated than Tom's.",
+     "claim_ids": [
+      "MT028-C09-4",
+      "MT028-C10-1"
+     ]
+    },
+    {
+     "premise": "Diversification across managers arrives quickly with 2-4 managers; a five-manager index tracks the 20-manager SG CTA index closely.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Comparison of the Bridge Alternatives index with SG CTA.",
+     "claim_ids": [
+      "MT028-C07-3"
+     ]
+    },
+    {
+     "premise": "Allocators have no playbook for failing bonds and keep hoping for recovery, delaying reallocation; bonds delivered zero Sharpe in the first half of the 2020s.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Observation of wealth managers and institutions ('year of the bond' in 2023 and 2024).",
+     "claim_ids": [
+      "MT028-C03-1",
+      "MT028-C03-2",
+      "MT028-C03-3"
+     ]
+    },
+    {
+     "premise": "The industry did not evolve as expected after 2015: it settled into a cheaper, more commoditised core trend with more focus on risk controls; a one-week bet on industry positioning is therefore safer than locking into one trend design for 10 years.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Comparison of the industry then and now.",
+     "claim_ids": [
+      "MT028-C16-1",
+      "MT028-C16-2"
+     ]
+    },
+    {
+     "premise": "Trend following does not land with allocators because they hold the prior that past prices should not predict returns and want a stock-picking or information-advantage story.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Conversations with allocators and early hedge-fund investors.",
+     "claim_ids": [
+      "MT028-C17-3",
+      "MT028-C18-X1"
+     ]
+    },
+    {
+     "premise": "Prices change because information changes, so CTAs pick up shifts (e.g. inflation 2021) earlier than institutional allocators, who are slow by design; CTA alpha is earned against slow-moving investors, not zero-sum among managers.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reframing argument; discussion with Rob Carver and Nick Baltas; 2024 example.",
+     "claim_ids": [
+      "MT028-C18-1",
+      "MT028-C18-2",
+      "MT028-C19-1"
+     ]
+    },
+    {
+     "premise": "Managed futures is stuck in the hedge-fund bucket (about 8% of a pension, little in managed futures), which caps allocations at about 50bp; it should be a standalone 'completion' allocation of about 3%.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Typical pension allocation data; his view of how decisions are made.",
+     "claim_ids": [
+      "MT028-C16-3",
+      "MT028-C19-1",
+      "MT028-C16-R1"
+     ]
+    },
+    {
+     "premise": "Index products win in wealth management because investors can evaluate 20-25 years of history and are never wrong versus a benchmark; an index should be predictable and unchanged.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Observations about wealth-management adoption.",
+     "claim_ids": [
+      "MT028-C13-1",
+      "MT028-C12-1"
+     ]
+    },
+    {
+     "premise": "Once an asset becomes a strategic allocation, flows scale from zero to enormous; BlackRock entering managed futures ETFs could validate and grow the space (US ETF universe $12tn vs managed futures ~$2.5bn).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Analogy with private credit and private equity.",
+     "claim_ids": [
+      "MT028-C20-1",
+      "MT028-C20-2",
+      "MT028-C20-R2"
+     ]
+    },
+    {
+     "premise": "Multi-strategy pod shops with Sharpe near 2 cannot be replicated: replication works only where returns come from a few liquid factor exposures.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning about the method's scope.",
+     "claim_ids": [
+      "MT028-C15-X1"
+     ]
+    },
+    {
+     "premise": "Optimistic view on US risk appetite: a new administration of self-made billionaires will revive animal spirits.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Personal observation of the appointees and family background.",
+     "claim_ids": [
+      "MT028-C01-1"
+     ]
+    },
+    {
+     "premise": "Investors in the space seek low correlation to stocks and bonds, low equity beta, alpha and crisis performance; replication aims to retain these properties.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "What allocators say they want; Tesla analogy for a simpler engine.",
+     "claim_ids": [
+      "MT028-C08-4",
+      "MT028-C09-R3"
+     ]
+    },
+    {
+     "premise": "The late-2010s 'Long Winter' (Fed put making markets anti-trend, zero cash return, high fees) produced zero net returns for years: a difficult-environment case for the space and the case for lower fees.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Historical episode.",
+     "claim_ids": [
+      "MT028-C09-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "How weekly factor replication tracks a CTA index",
+     "steps": [
+      {
+       "from": "Recent reported index returns",
+       "to": "regression on about 10 liquid markets (S&P 500, 10-year Treasury, etc.) each Monday",
+       "why": "Estimates broad factor exposures of the index over a one-week interval.",
+       "claim_ids": [
+        "MT028-C06-2"
+       ]
+      },
+      {
+       "from": "Estimated exposures",
+       "to": "positions for the next week targeting pre-trading-cost index returns",
+       "why": "Fees vary across investors; the target avoids headline-fee noise.",
+       "claim_ids": [
+        "MT028-C07-1"
+       ]
+      },
+      {
+       "from": "Low trading cost (10-20bp) and lower fees",
+       "to": "small weekly edge that compounds to outperformance in most years",
+       "why": "53-54% weekly hit rate becomes ~80% annual and ~90% three-year.",
+       "claim_ids": [
+        "MT028-C07-2",
+        "MT028-C09-3"
+       ]
+      },
+      {
+       "from": "Large moves in oil or gold",
+       "to": "other markets pulled along (planets and moons)",
+       "why": "Holds some exposure to markets not traded.",
+       "claim_ids": [
+        "MT028-C10-4"
+       ]
+      }
+     ],
+     "evidence": "Nine years of live record; correlation 0.9 with full factor set, 0.8 limited set; crisis alpha and beta similar to the index.",
+     "fails_when": "Many untraded markets (Mexican peso, Canadian rates, softs, commodities) trend at once; sharp inflections like SVB where it lags by several hundred bp before catching up within months.",
+     "claim_ids": [
+      "MT028-C06-2",
+      "MT028-C07-2",
+      "MT028-C09-1",
+      "MT028-C10-2",
+      "MT028-C11-4"
+     ]
+    },
+    {
+     "topic": "Why replication lags at inflections but catches up",
+     "steps": [
+      {
+       "from": "Sharp inflection (e.g. SVB)",
+       "to": "replication underperforms by several hundred bp",
+       "why": "A weekly model reacts slowly.",
+       "claim_ids": [
+        "MT028-C11-4"
+       ]
+      },
+      {
+       "from": "Half of inflections are head fakes",
+       "to": "short-term models get wrong-footed and replication catches up in months",
+       "why": "Faster models pay the whipsaw cost; by end-September replication had caught up.",
+       "claim_ids": [
+        "MT028-C11-4"
+       ]
+      }
+     ],
+     "evidence": "SVB 2023 episode.",
+     "fails_when": "When an inflection continues (credit squeeze following) the lag is larger.",
+     "claim_ids": [
+      "MT028-C11-4",
+      "MT028-C11-3"
+     ]
+    },
+    {
+     "topic": "Why allocators under-allocate to trend and how the information reframing helps",
+     "steps": [
+      {
+       "from": "Allocators believe past prices should not predict returns",
+       "to": "strategy lacks a credible story and sits in the hedge-fund bucket",
+       "why": "No information-advantage narrative.",
+       "claim_ids": [
+        "MT028-C18-X1",
+        "MT028-C17-3",
+        "MT028-C16-3"
+       ]
+      },
+      {
+       "from": "Reframe: prices reveal changing information",
+       "to": "CTAs capture information shifts early (inflation 2021; equities long and rates higher-for-longer in 2024)",
+       "why": "Institutional allocators are slow by design.",
+       "claim_ids": [
+        "MT028-C18-1",
+        "MT028-C18-2"
+       ]
+      },
+      {
+       "from": "Alpha is earned against slow investors, not other managers",
+       "to": "managed futures as a completion strategy of about 3%",
+       "why": "Beacon of green when other assets fall (2022).",
+       "claim_ids": [
+        "MT028-C19-1"
+       ]
+      }
+     ],
+     "evidence": "Narrative and 2022/2024 outcomes; no formal test.",
+     "fails_when": "Sentiment whipsaws (beliefs flipping over months) hurt even when information reading is right, as in 2024.",
+     "claim_ids": [
+      "MT028-C18-2",
+      "MT028-C19-1"
+     ]
+    },
+    {
+     "topic": "BlackRock effect on managed futures flows",
+     "steps": [
+      {
+       "from": "BlackRock files an actively managed managed-futures ETF",
+       "to": "validation of the category for wealth management",
+       "why": "BlackRock sets model-portfolio norms via Aladdin and its models.",
+       "claim_ids": [
+        "MT028-C20-1",
+        "MT028-C20-2"
+       ]
+      },
+      {
+       "from": "Category treated as a 2-3% allocation in model portfolios",
+       "to": "institutional-style adoption and large asset inflows",
+       "why": "Flows scale when an asset becomes strategic.",
+       "claim_ids": [
+        "MT028-C20-1",
+        "MT028-C20-2"
+       ]
+      }
+     ],
+     "evidence": "Analogy with private credit / private equity.",
+     "fails_when": "Wild cards: pricing, quality, whether it is just a toe in the water, or a push to take hedge-fund assets.",
+     "claim_ids": [
+      "MT028-C20-1",
+      "MT028-C20-2",
+      "MT028-C20-R2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Each Monday regress recent reported CTA-index returns on about 10 deep liquid markets; mechanical approach unchanged since 2015-16.",
+     "why": "Predictable, index-like product; trades the factor exposures of the industry rather than a single trend design.",
+     "claim_ids": [
+      "MT028-C06-2",
+      "MT028-C06-1",
+      "MT028-C12-1",
+      "MT028-C16-2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Target pre-trading-cost index returns and measure results over the following week.",
+     "why": "Avoids headline-fee distortions.",
+     "claim_ids": [
+      "MT028-C07-1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Hold trading costs to 10-20bp a year with a handful of instruments and charge lower fees.",
+     "why": "The cost edge compounds and drives the 80% annual hit rate.",
+     "claim_ids": [
+      "MT028-C09-3",
+      "MT028-C07-2"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Use a commodity-free version (AUD and CAD as currency proxies) for investors restricted from commodities: expected outperformance versus hedge fund index of 250-300bp (standard model 350bp), correlation 0.8 versus 0.9.",
+     "why": "Excluding asset classes from a traditional trend model reduces diversification and returns; replication is instrument-agnostic because it is a short-term correlation bet.",
+     "claim_ids": [
+      "MT028-C21-1",
+      "MT028-C21-3",
+      "MT028-C20-3",
+      "MT028-C21-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Use replication as an incremental tool combined with managers (e.g. Man AHL) with short-term inflection skill; blends for client communication more than economics.",
+     "why": "Open about what replication does not do; clients want to say they hold someone responsive after events like SVB.",
+     "claim_ids": [
+      "MT028-C11-1",
+      "MT028-C11-3"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Prefer broad factor exposure over concentrating on idiosyncratic high-asymmetry bets.",
+     "why": "Concentration raises risk and drawdowns and is hard to model ex ante.",
+     "claim_ids": [
+      "MT028-C10-5"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Demand for a product should be tested by presenting a concrete investable product; stated preferences (e.g. top CTA in Article 9 wrapper) are unreliable.",
+     "why": "Real demand shows only when product exists; constraints vary by country (Germany avoids agricultural commodities but accepts gold and oil).",
+     "claim_ids": [
+      "MT028-C22-X1",
+      "MT028-C22-3"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Allocators should add diversifiers by taking money from bonds, keeping equities (60/20/20 rather than 50/30/20).",
+     "why": "Equities keep working; bonds do not.",
+     "claim_ids": [
+      "MT028-C03-3"
+     ]
+    }
+   ],
+   "evidence_style": "Own track record (nine years live), back-of-envelope calculations, analogies (Louis Vuitton versus Tesla), anecdotes from allocator meetings; statistical statistics stated from memory without exhibits.",
+   "current_views": [
+    {
+     "view": "The new US administration will revive animal spirits in the US.",
+     "as_of": "2025-01 (recording early Jan 2025)",
+     "reasoning": "Billionaire appointees focused on where America can go over 20 years.",
+     "claim_ids": [
+      "MT028-C01-1"
+     ]
+    },
+    {
+     "view": "Bonds will not recover quickly; allocators will gradually shift capital from bonds to diversifiers unless growth collapses.",
+     "as_of": "2025-01",
+     "reasoning": "Zero Sharpe for bonds since 2020; no playbook yet.",
+     "claim_ids": [
+      "MT028-C03-1",
+      "MT028-C03-2",
+      "MT028-C03-3"
+     ]
+    },
+    {
+     "view": "In 2024 CTAs read information changes correctly (long equities early, higher rates for longer) but were hurt by sentiment whipsaws.",
+     "as_of": "2025-01",
+     "reasoning": "Beliefs flipped over months.",
+     "claim_ids": [
+      "MT028-C18-2"
+     ]
+    },
+    {
+     "view": "BlackRock's managed-futures ETF filing could be phenomenally good for the space; its PMs come from the old BGI quant business, not managed futures.",
+     "as_of": "2025-01",
+     "reasoning": "Aladdin and models would spread a 2-3% allocation.",
+     "claim_ids": [
+      "MT028-C20-1",
+      "MT028-C20-2",
+      "MT028-C20-R2"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Tom Roble",
+   "role": "Director, Capital Consulting and Capital Introduction, SocGen Prime Services & Clearing; SG CTA/Trend index team",
+   "speaker_note": "C21-2 (quarter of European investors want ESG-sensitive products) was said by Beer citing Roble's survey; Roble's own related statements are C22-1 and C21-X1. C15-1 AUM range per correction: Roble says $300-350bn since 2014 (Niels recalled $350-400bn).",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "costs_execution",
+    "research_robustness_overfitting",
+    "portfolio_construction_stacking",
+    "structural_themes"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "CTA is a regulatory term, not a synonym for trend following; SG CTA index holds the 20 largest open CTAs, about half non-trend (quant macro, short-term, commodity-only, technical).",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Index construction rules he runs.",
+     "claim_ids": [
+      "MT028-C04-3"
+     ]
+    },
+    {
+     "premise": "Short-term CTAs show high dispersion and rarely persist for years, so they have the highest index turnover and hardest asset raising; trend indices had no constituent changes for 2025.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Index reconstitution data.",
+     "claim_ids": [
+      "MT028-C05-1"
+     ]
+    },
+    {
+     "premise": "Trend Sharpe in a single market is only 0.2-0.3; reaching about 0.9 requires adding many markets and idiosyncratic bets, which a 10-instrument replicator cannot access.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Industry rule 'diversification is the only free lunch'.",
+     "claim_ids": [
+      "MT028-C11-2"
+     ]
+    },
+    {
+     "premise": "Commodities were 2024's standout sector; omitting them means a different profile for clients; a bottom-up tracker can match long-run returns and correlation but not drawdowns, because it omits market selection and risk management.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His firm's trend indicator project and 2024 attribution.",
+     "claim_ids": [
+      "MT028-C10-3",
+      "MT028-C08-3"
+     ]
+    },
+    {
+     "premise": "Trend models are standard off-the-shelf; the edge is implementation, risk allocation, recognition of over-extended trends; innovation is in risk management and execution.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation of CTAs over years.",
+     "claim_ids": [
+      "MT028-C14-2"
+     ]
+    },
+    {
+     "premise": "A replicator is not static: its principal-component weights shift and it tracks an evolving constituent set, so it evolves like a CTA's research process.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning about the method.",
+     "claim_ids": [
+      "MT028-C14-X1"
+     ]
+    },
+    {
+     "premise": "AUM has been stable at $300-350bn since 2014 after reaching ~$350bn in 2009-10; strong 2022 drove the increase; index cutoffs rose from $800m (2010) to $1.82bn; SG Trend minimum $4.8bn.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Annual rebalance asset data.",
+     "claim_ids": [
+      "MT028-C15-1",
+      "MT028-C15-2"
+     ]
+    },
+    {
+     "premise": "Trend is ~80% of the CTA space and commoditised with few entrants; nearly 90% of new quant start-ups are non-trend, many becoming multi-asset quant groups targeting high Sharpe.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation from prime brokerage and capital introduction.",
+     "claim_ids": [
+      "MT028-C15-3"
+     ]
+    },
+    {
+     "premise": "CTAs are criticised either for equity correlation or for lagging equities while uncorrelated; investors' expectations misalign with the diversifier objective.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Example: CTAs +2% vs equities +25% in 2024.",
+     "claim_ids": [
+      "MT028-C17-2"
+     ]
+    },
+    {
+     "premise": "Allocators build robust portfolios with uncorrelated alternatives to fill the gap left by bonds, worried that equity returns slow; portable alpha overlays of CTAs (60/40/20) are rising because margin strategies are cheap.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Allocator events and panels hosted by SocGen.",
+     "claim_ids": [
+      "MT028-C03-X1",
+      "MT028-C17-1"
+     ]
+    },
+    {
+     "premise": "Futures are zero-sum so ESG labelling of derivatives is unclear; no CTA has SFDR Article 8/9 status; UCITS/ESMA rules read as banning direct commodity exposure split European investors.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Regulatory reading and client experience.",
+     "claim_ids": [
+      "MT028-C22-1",
+      "MT028-C21-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why replication cannot reach the Sharpe of the full CTA universe",
+     "steps": [
+      {
+       "from": "A single market's trend Sharpe is 0.2-0.3",
+       "to": "adding more markets raises portfolio Sharpe",
+       "why": "Diversification across markets.",
+       "claim_ids": [
+        "MT028-C11-2"
+       ]
+      },
+      {
+       "from": "Execution efficiency and low costs",
+       "to": "access to more markets",
+       "why": "Innovation over the past 5-10 years.",
+       "claim_ids": [
+        "MT028-C11-2",
+        "MT028-C14-2"
+       ]
+      },
+      {
+       "from": "A replicator holds about 10 instruments",
+       "to": "misses the idiosyncratic bets",
+       "why": "Sharpe near 0.9 requires them; omitting top commodity contributors changes the profile.",
+       "claim_ids": [
+        "MT028-C11-2",
+        "MT028-C10-3",
+        "MT028-C08-3"
+       ]
+      }
+     ],
+     "evidence": "Industry rule and 2024 commodity contribution; no replicator-specific numbers.",
+     "fails_when": "Not stated; Beer disagrees about materiality.",
+     "claim_ids": [
+      "MT028-C11-2",
+      "MT028-C10-3"
+     ]
+    },
+    {
+     "topic": "Why institutional clients see CTAs as failing",
+     "steps": [
+      {
+       "from": "Equities up 25% while CTAs up 2%",
+       "to": "investor perceives objective missed",
+       "why": "Expectation of absolute return versus diversifier role are misaligned.",
+       "claim_ids": [
+        "MT028-C17-2"
+       ]
+      },
+      {
+       "from": "CTA participating in equity trends",
+       "to": "criticised for equity correlation",
+       "why": "The opposite criticism applies when they are uncorrelated.",
+       "claim_ids": [
+        "MT028-C17-2"
+       ]
+      }
+     ],
+     "evidence": "2024 numbers.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT028-C17-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "universe",
+     "practice": "SG CTA index: annual reselection ranking the 20 largest open CTAs trading a diversified futures/FX strategy; SG Trend takes the top 10 trend followers; short-term index for under about 10 days average hold.",
+     "why": "Represent the industry's largest investable programs.",
+     "claim_ids": [
+      "MT028-C04-3",
+      "MT028-C15-2",
+      "MT028-C05-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Allow portable alpha overlays on equity (60/40/20) using margin-based CTA exposure.",
+     "why": "Cheap to implement; aligns diversifier role with equity beta kept intact.",
+     "claim_ids": [
+      "MT028-C17-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Track fee structure: SG CTA average 1.3% management and 13.9% performance fee; SG Trend 1.1% and 11%.",
+     "why": "Frames the fee advantage for low-cost products.",
+     "claim_ids": [
+      "MT028-C08-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Use a trend indicator project to see market-level positioning, reversal likelihood and P&L attribution, while recognising its drawdown profile differs from real CTAs.",
+     "why": "Useful analytic tool but not an investable substitute.",
+     "claim_ids": [
+      "MT028-C08-3",
+      "MT028-C10-3"
+     ]
+    }
+   ],
+   "evidence_style": "Index data, rebalance and AUM statistics, investor surveys and client conversations; careful qualifier language, defers to Beer on replication mechanics.",
+   "current_views": [
+    {
+     "view": "Trend following in 2024 was good in Q1, hard in Q2-Q3 and strong in Q4; performance is coming back.",
+     "as_of": "2025-01",
+     "reasoning": "Quarter-by-quarter index performance.",
+     "claim_ids": [
+      "MT028-C04-2"
+     ]
+    },
+    {
+     "view": "Commodities were the standout sector for trend followers in 2024.",
+     "as_of": "2025-01",
+     "reasoning": "Top commodity markets contributed much of the theoretical portfolio P&L.",
+     "claim_ids": [
+      "MT028-C10-3"
+     ]
+    },
+    {
+     "view": "Interest in uncorrelated alternatives is rising as bonds underdeliver and equity returns may slow.",
+     "as_of": "2025-01",
+     "reasoning": "Allocator conversations.",
+     "claim_ids": [
+      "MT028-C03-X1",
+      "MT028-C17-1"
+     ]
+    },
+    {
+     "view": "Core trend is commoditised with few new entrants; new quant groups are moving to multi-asset, high-Sharpe shapes.",
+     "as_of": "2025-01",
+     "reasoning": "Start-up and prime brokerage observation.",
+     "claim_ids": [
+      "MT028-C15-3",
+      "MT028-C05-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host; hedge fund manager (CTA) and podcast host",
+   "speaker_note": "Host who states several views and data points; acts as devil's advocate on index construction.",
+   "fingerprint": [
+    "trend_following",
+    "diversification_risk_parity",
+    "positioning_crowding",
+    "manager_selection_allocation",
+    "costs_execution"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Bonds' role as protection in 60/40 is undermined when long rates rise even after Fed cuts, strengthening the case for trend following.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "2024: 100bp of Fed cuts, TLT about -8%.",
+     "claim_ids": [
+      "MT028-C02-1"
+     ]
+    },
+    {
+     "premise": "Elevated SKEW and a very strong two-year equity run suggest investors fear a decline; after strong two-year S&P periods the average next 12-month return has been flat.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "CBOE SKEW at record in Dec 2024; best S&P two-year run since 1988.",
+     "claim_ids": [
+      "MT028-C02-2",
+      "MT028-C03-4"
+     ]
+    },
+    {
+     "premise": "Low fees alone do not improve performance: over nine years the flat-fee Bridge Alternatives index did not beat SG Trend and had 50% larger drawdowns.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own comparison of nine years of data.",
+     "claim_ids": [
+      "MT028-C08-2",
+      "MT028-C13-X1"
+     ]
+    },
+    {
+     "premise": "Trend managers make only small tweaks to models; improvement over the last decade is mainly in risk management and execution.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own career; fewer ways to do trend following.",
+     "claim_ids": [
+      "MT028-C13-2"
+     ]
+    },
+    {
+     "premise": "About 25% of SG CTA index managers exclude interest income, biasing index returns downward versus products with interest income.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Asked Tom Roble; reports finding.",
+     "claim_ids": [
+      "MT028-C14-1"
+     ]
+    },
+    {
+     "premise": "Commodities (grains and softs) have positive average market performance across all rolling windows in his program, supporting commodity inclusion in a CTA portfolio.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own program's market-level contributions.",
+     "claim_ids": [
+      "MT028-C22-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Check index construction issues (interest income inclusion, fee levels, platform fees) when comparing products to indices.",
+     "why": "Biases in index returns distort comparisons with replicators.",
+     "claim_ids": [
+      "MT028-C14-1",
+      "MT028-C08-2",
+      "MT028-C13-X1"
+     ]
+    }
+   ],
+   "evidence_style": "Data comparisons, index performance, own program statistics, questions to guests.",
+   "current_views": [
+    {
+     "view": "2024 CTA indices were modest (SG CTA +2.24%, SG Trend +2.56%, BTOP50 +4.44%) versus S&P 500 +25.2% and US Aggregate +1.82%.",
+     "as_of": "2025-01",
+     "reasoning": "Reported December and annual performance.",
+     "claim_ids": [
+      "MT028-C04-1"
+     ]
+    },
+    {
+     "view": "Bond weakness despite Fed cuts is a point for trend in 6040 portfolios.",
+     "as_of": "2025-01",
+     "reasoning": "TLT down about 8% in 2024.",
+     "claim_ids": [
+      "MT028-C02-1"
+     ]
+    },
+    {
+     "view": "A skeptical stance on index-like replication claims because model changes are hidden under the surface.",
+     "as_of": "2025-01",
+     "reasoning": "Analogy to a personal index; managers make only small tweaks.",
+     "claim_ids": [
+      "MT028-C13-2",
+      "MT028-C08-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Do missing idiosyncratic markets (cocoa, softs, commodities) matter for a replicator",
+   "positions": [
+    {
+     "speaker": "Andrew Beer",
+     "position": "Cocoa's $5-6bn profit is small versus $300bn CTA assets; large CTAs cap sizes in illiquid markets; hits and misses cancel; planets-and-moons effect captures some exposure.",
+     "claim_ids": [
+      "MT028-C10-1",
+      "MT028-C09-4",
+      "MT028-C10-2",
+      "MT028-C10-4"
+     ]
+    },
+    {
+     "speaker": "Tom Roble",
+     "position": "Commodities were the standout sector; Sharpe near 0.9 comes only from many idiosyncratic bets a 10-instrument replicator cannot reach; a bottom-up tracker's drawdowns differ from real CTAs.",
+     "claim_ids": [
+      "MT028-C10-3",
+      "MT028-C11-2",
+      "MT028-C08-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Is an index unchanging and are replication products index-like",
+   "positions": [
+    {
+     "speaker": "Andrew Beer",
+     "position": "An index should be predictable and consistent; replication has stayed mechanical since 2015-16 and suits wealth managers.",
+     "claim_ids": [
+      "MT028-C12-1",
+      "MT028-C13-1"
+     ]
+    },
+    {
+     "speaker": "Tom Roble",
+     "position": "A replicator's PCA weights shift and it tracks an evolving set of managers, so its implementation evolves like a CTA research process.",
+     "claim_ids": [
+      "MT028-C14-X1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Questions an index that is just one person's strategy and notes managers make only small tweaks anyway.",
+     "claim_ids": [
+      "MT028-C13-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Do low fees and compounding cost advantages show up as better performance",
+   "positions": [
+    {
+     "speaker": "Andrew Beer",
+     "position": "The cost edge compounds to outperformance of the index in most years.",
+     "claim_ids": [
+      "MT028-C07-2",
+      "MT028-C09-3"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "The low-fee flat-fee Bridge index did not beat SG Trend over nine years and had 50% larger drawdowns.",
+     "claim_ids": [
+      "MT028-C08-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Why investors blend replication with other managers",
+   "positions": [
+    {
+     "speaker": "Andrew Beer",
+     "position": "Client communication, not economics: they want to say they hold someone responsive after events like SVB.",
+     "claim_ids": [
+      "MT028-C11-3",
+      "MT028-C11-1"
+     ]
+    },
+    {
+     "speaker": "Tom Roble",
+     "position": "The economic case for idiosyncratic bets and many markets drives Sharpe, which a replicator lacks.",
+     "claim_ids": [
+      "MT028-C11-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Did the CTA industry change or settle",
+   "positions": [
+    {
+     "speaker": "Andrew Beer",
+     "position": "Expected change in 2015 but it settled into a cheaper commoditised core trend.",
+     "claim_ids": [
+      "MT028-C16-1"
+     ]
+    },
+    {
+     "speaker": "Tom Roble",
+     "position": "Trend models are off-the-shelf; innovation is in risk management and execution.",
+     "claim_ids": [
+      "MT028-C14-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Beer's cocoa calculation is a self-described rudimentary estimate (half of the profit assumed to be CTAs; $300bn assets) and ignores synthetic and internal programs.",
+   "claim_ids": [
+    "MT028-C10-1"
+   ]
+  },
+  {
+   "issue": "Beer's performance statistics (53-54% weekly, 80% annual, 90% three-year, 60% to 80% versus cash) are stated from memory without exhibits or the sample period.",
+   "claim_ids": [
+    "MT028-C07-2",
+    "MT028-C09-3"
+   ]
+  },
+  {
+   "issue": "Replication targets pre-trading-cost returns of an index whose members use different fees and (25%) exclude interest income, so the benchmark is itself approximate.",
+   "claim_ids": [
+    "MT028-C07-1",
+    "MT028-C14-1",
+    "MT028-C08-1"
+   ]
+  },
+  {
+   "issue": "Beer says replication is a mechanical index-like product unchanged since 2015-16 yet that the industry will change, and describes blending with discretionary short-term managers; tension between 'unchanging' and 'adaptive'.",
+   "claim_ids": [
+    "MT028-C12-1",
+    "MT028-C16-2",
+    "MT028-C11-1",
+    "MT028-C14-X1"
+   ]
+  },
+  {
+   "issue": "Bridge Alternatives comparison (nine years) is stated by Niels and Beer notes its returns may exclude implementation or platform fees and need minimums.",
+   "claim_ids": [
+    "MT028-C08-2",
+    "MT028-C13-X1"
+   ]
+  },
+  {
+   "issue": "Managed futures AUM range is disputed within the conversation ($300-350bn per Tom versus $350-400bn recalled by Niels).",
+   "claim_ids": [
+    "MT028-C15-1"
+   ]
+  },
+  {
+   "issue": "Beer's information-framing argument is described as not original and as not tested on allocators; 'it's jarring' and he will continue talking to people.",
+   "claim_ids": [
+    "MT028-C18-1",
+    "MT028-C18-X1"
+   ]
+  },
+  {
+   "issue": "Demand for non-commodity or ESG CTA exposure is not demonstrated; Beer himself says stated demand is unreliable.",
+   "claim_ids": [
+    "MT028-C21-2",
+    "MT028-C22-X1",
+    "MT028-C22-1"
+   ]
+  },
+  {
+   "issue": "BlackRock effect is speculative: the prospectus had missing elements; pricing, skill and intentions unknown.",
+   "claim_ids": [
+    "MT028-C20-1",
+    "MT028-C20-2",
+    "MT028-C20-R2"
+   ]
+  },
+  {
+   "issue": "Niels's own statement of commodity contribution rests on one program's averages and Roble's note that 2024 commodity P&L was large; neither is independent evidence.",
+   "claim_ids": [
+    "MT028-C22-2",
+    "MT028-C10-3"
+   ]
+  },
+  {
+   "issue": "The Gen Beta and the 'best two-year S&P since 1988' items are observations with no stated linkage to CTA outcomes beyond allocator worry.",
+   "claim_ids": [
+    "MT028-C02-2",
+    "MT028-C03-4"
+   ]
+  },
+  {
+   "issue": "Statement that 2024 sentiment whipsaws hurt CTAs while information was right is not shown with data.",
+   "claim_ids": [
+    "MT028-C18-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs said to matter: bond performance relative to equities (allocator shift away from bonds), equity two-year-run reversion, the pace of allocator adoption and BlackRock's managed-futures ETF (flows from $300-400bn toward a 2-3% model-portfolio allocation), inflection points where information changes and whipsaw frequency (sentiment stability), and commodity trends (the main source of idiosyncratic CTA P&L). Horizons: weeks for replication signal, years for allocation shifts.",
+ "reader_inferences": [
+  "(reader) Beer's argument has two layers: a technical one (a 10-instrument weekly regression captures index returns) and a commercial one (index-like products win with wealth managers); the evidence given is mostly for the first and anecdotal for the second.",
+  "(reader) The disagreement over idiosyncratic bets is empirical and testable: compare replication tracking error in months when top contributors were outside its universe (e.g. cocoa 2024).",
+  "(reader) Roble's Sharpe argument (single market 0.2-0.3, portfolio 0.9) implies replication will persistently under-deliver unless the index's return mostly derives from the liquid factor exposures; Beer's 0.9 correlation is the counter-evidence.",
+  "(reader) Beer's 'information' reframing makes the case for trend independent of the statistics, relying on the claim that allocators are slow by design."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT028-C16-R1",
+   "chunk": "C16",
+   "speaker": "Andrew Beer",
+   "quote": "this doesn't need to be in a hedge fund strategy",
+   "claim": "Managed futures was not in the hedge fund bucket in the 1980s and 1990s; placing it there limits growth because allocators protect existing portfolios, so it should be a standalone allocation alongside real assets.",
+   "mechanism": "institutional",
+   "asset_class": "managed futures",
+   "indicator": "allocation bucket classification",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "Pension and wealth allocation structures",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT028-C20-R2",
+   "chunk": "C20",
+   "speaker": "Andrew Beer",
+   "quote": "whether they're going to be any good at it",
+   "claim": "The BlackRock entry is a wild card: pricing, skill, and whether the filing is just testing the water are unknown.",
+   "mechanism": "institutional",
+   "asset_class": "managed futures ETF",
+   "indicator": "BlackRock managed-futures ETF launch terms",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "Prospectus had missing elements and boilerplate",
+   "testable": "yes - observe launch",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT028-C09-R3",
+   "chunk": "C09",
+   "speaker": "Andrew Beer",
+   "quote": "the right analogy is a Tesla",
+   "claim": "Replication is not a cheap imitation but a simpler engine (like an EV with far fewer parts) that aims for the same diversification benefits as the index.",
+   "mechanism": "portfolio construction",
+   "asset_class": "managed futures",
+   "indicator": "replication correlation to CTA index",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "Replication captures about 0.9 correlation with full factor set",
+   "testable": "partly - tracking statistics",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ],
+ "source_id": "MT028"
+}

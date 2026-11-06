@@ -1,0 +1,838 @@
+{
+ "source_id": "MT150",
+ "episode_thesis": "Jim Kasang argues that populism and tariffs create a slow, hot-inflation stagflation like 1969-70 in which bonds fail as a hedge, while the 2020 refinancing cliff draws liquidity from all assets and raises discount rates, so diversification beyond long assets (trend following) matters. He adds an oil mean-reversion buy after policy-driven weakness, and an S&P ceiling near 5700-6000 supported by options-expiry flows, within a fourth-turning crisis narrative where Western unity decides the outcome.",
+ "speakers": [
+  {
+   "name": "Jim Kasang",
+   "role": "Chicago macro and options-flow strategist, systematic investor series guest; discretionary macro/flow view framed by fourth-turning generational cycles",
+   "speaker_note": "Caption spelling 'Jim Kasang'; two-speaker interview, host turns identifiable from question structure. Some political comments are his opinion on incentives, not market data.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "debt_cycle_long_term",
+    "liquidity_flows",
+    "dealer_hedging_flows",
+    "policy_reaction_central_banks",
+    "fiscal_dominance",
+    "commodity_fundamentals",
+    "diversification_risk_parity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Generational cycles of 40-50 years (the fourth turning) repeat conditions such as inflation and populism, so the 1960s-70s is the template for now and structural problems resolve only through a crisis.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Strauss-Howe 'Fourth Turning', Warren Buffett's timing as example; no data.",
+     "claim_ids": [
+      "MT150-C02-2",
+      "MT150-C08-1",
+      "MT150-C13-1"
+     ]
+    },
+    {
+     "premise": "Populism driven by inequality is the political engine: policy will keep drifting toward spending on the bottom and away from supply-side, and the midterm incentive reinforces it.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Reading of recent administration events (Musk exit, no tax on tips, defence rise); Nixon analogy.",
+     "claim_ids": [
+      "MT150-C07-1",
+      "MT150-C07-X1",
+      "MT150-C07-X2",
+      "MT150-C08-1"
+     ]
+    },
+    {
+     "premise": "People and institutions respond to incentives; short-termism (Treasury issuance, five-year borrowing, Saudi/OPEC supply decisions) is structural, not a mistake of one person.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Anecdote and historical reasoning.",
+     "claim_ids": [
+      "MT150-C05-2",
+      "MT150-C05-R1"
+     ]
+    },
+    {
+     "premise": "The discount rate is the most important price: higher 10-year yields raise required returns on every asset so prices fall, and the discount-rate shock matters more than earnings.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "'Finance 101' reasoning; no data shown.",
+     "claim_ids": [
+      "MT150-C10-2"
+     ]
+    },
+    {
+     "premise": "Interest-rate damage to markets arrives with a variable lag that lengthens after rates fall near zero, because borrowers lock in ~5-year financing; the delayed hit is bigger.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Shiller smoothed CAPE as rationale; anecdote of a venture-backed CEO.",
+     "claim_ids": [
+      "MT150-C09-1",
+      "MT150-C09-X1",
+      "MT150-C09-X2"
+     ]
+    },
+    {
+     "premise": "Assets are all long the same risks (discount rate and liquidity), so 60/40 and private alternatives are not diversified; real diversification requires trend following or uncorrelated strategies.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument by logic; speaker admits he is not 'cutting his book'.",
+     "claim_ids": [
+      "MT150-C10-1"
+     ]
+    },
+    {
+     "premise": "Equities are not an inflation hedge because multiples fall when inflation rises; negative-working-capital businesses and some structures gain margins that offset contraction.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "'Plenty of data' claimed but not shown; Buffett 1970s example.",
+     "claim_ids": [
+      "MT150-C10-3",
+      "MT150-C02-1",
+      "MT150-C05-1"
+     ]
+    },
+    {
+     "premise": "Tails cannot be hedged except in a few places, so tiny probabilities of extreme events carry a large risk premium (CDS, skew) and move markets.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning about the unhedgeable tail; US CDS example.",
+     "claim_ids": [
+      "MT150-C08-2"
+     ]
+    },
+    {
+     "premise": "Oil is reflexive: cheap prices cut supply and expensive prices add supply, so buy cheap/sell expensive pays over years, and supply can be set by OPEC/political levers outside normal supply-demand.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "20 past Saudi episodes claimed; no figures.",
+     "claim_ids": [
+      "MT150-C11-2",
+      "MT150-C12-X1",
+      "MT150-C12-1",
+      "MT150-C12-3"
+     ]
+    },
+    {
+     "premise": "Markets are in a high-uncertainty, high-potential-energy state ('sumo market'): previously static variables become dynamic and interact, so the tail is unpredictable but the distribution is wide and fat-tailed.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Metaphor, no data.",
+     "claim_ids": [
+      "MT150-C16-1",
+      "MT150-C16-2"
+     ]
+    },
+    {
+     "premise": "Flows tied to the quarterly options-expiration cycle and confluences of technical levels explain short-term market turns and calendar adages.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Covid and 2025 declines starting after Feb opex and ending at March opex; his past calls.",
+     "claim_ids": [
+      "MT150-C17-1",
+      "MT150-C17-X1",
+      "MT150-C17-3",
+      "MT150-C17-4",
+      "MT150-C17-X2",
+      "MT150-C17-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Populism to hot-inflation stagflation",
+     "steps": [
+      {
+       "from": "Populist transfers from the top 10% to the bottom 40%",
+       "to": "Higher velocity of money",
+       "why": "Lower-income households spend everything; the top invests in assets",
+       "claim_ids": [
+        "MT150-C03-2"
+       ]
+      },
+      {
+       "from": "Protectionism plus populism",
+       "to": "More jobs but lower pay, higher inflation, lower corporate margins",
+       "why": "Inefficiency; reshoring creates local job demand first, which is inflationary",
+       "claim_ids": [
+        "MT150-C04-1",
+        "MT150-C04-7"
+       ]
+      },
+      {
+       "from": "Wealth effect on top 10% (half of spending)",
+       "to": "Consumption and earnings recession with stable jobs",
+       "why": "Pulling money from the top cuts total consumption",
+       "claim_ids": [
+        "MT150-C04-4"
+       ]
+      },
+      {
+       "from": "Hot inflation and earnings recession",
+       "to": "Sticky inflation: long bonds do not rally to hedge equities, as in 1969-70",
+       "why": "Inflation stays high so yields do not fall",
+       "claim_ids": [
+        "MT150-C04-2",
+        "MT150-C04-3",
+        "MT150-C04-5"
+       ]
+      },
+      {
+       "from": "Certain inflation effect, uncertain growth effect",
+       "to": "Fed holds rates",
+       "why": "Fed sees inflation from tariffs as sure, growth hit as unknown",
+       "claim_ids": [
+        "MT150-C04-6",
+        "MT150-C06-1",
+        "MT150-C06-X1"
+       ]
+      }
+     ],
+     "evidence": "1969-70 analog (shallow 1.5-year recession, poor earnings); Fed statements; no numbers on top-10% spending beyond the quoted share.",
+     "fails_when": "Fails if the recession is deep and disinflationary (consensus view) or if reshoring and automation/immigration changes reduce wage pressure (host's point).",
+     "claim_ids": [
+      "MT150-C04-2",
+      "MT150-C04-5",
+      "MT150-C05-X1"
+     ]
+    },
+    {
+     "topic": "Supply-side attempt fails, populism returns",
+     "steps": [
+      {
+       "from": "Early supply-side budget (cuts, DOGE, hope for Fed cut and lower 10-year)",
+       "to": "Failed within a month: 10-year did not fall, Fed did not respond",
+       "why": "Plan assumed a market drop would force the Fed",
+       "claim_ids": [
+        "MT150-C06-2"
+       ]
+      },
+      {
+       "from": "Worst approval rating since 1940 in first 100 days",
+       "to": "Pivot to populist base, supply-side faction out",
+       "why": "Midterm incentive",
+       "claim_ids": [
+        "MT150-C06-X2",
+        "MT150-C07-X1",
+        "MT150-C07-X2"
+       ]
+      },
+      {
+       "from": "Populist fiscal measures (no tax on tips, defence +$150bn a year, cuts reversed)",
+       "to": "Higher deficits and inflation",
+       "why": "Spending to the bottom",
+       "claim_ids": [
+        "MT150-C07-2",
+        "MT150-C07-1"
+       ]
+      },
+      {
+       "from": "Unsustainable debt",
+       "to": "Monetization rather than default",
+       "why": "Only exit",
+       "claim_ids": [
+        "MT150-C08-3"
+       ]
+      }
+     ],
+     "evidence": "Nixon analogy (supply-side try, then price controls); news items cited from WSJ.",
+     "fails_when": "Not stated; implicit failure if the administration returns to spending cuts.",
+     "claim_ids": [
+      "MT150-C08-1",
+      "MT150-C08-3"
+     ]
+    },
+    {
+     "topic": "Refinancing cliff drains liquidity",
+     "steps": [
+      {
+       "from": "Low rates in 2020",
+       "to": "Borrowers lock in about five-year financing (not one, not ten)",
+       "why": "Cost and short-termism",
+       "claim_ids": [
+        "MT150-C09-X1",
+        "MT150-C01-1"
+       ]
+      },
+      {
+       "from": "Financing comes due around 2025 at higher rates and lower valuations (e.g. venture down rounds)",
+       "to": "Simultaneous refinancing draws liquidity from other assets",
+       "why": "Someone must supply the money",
+       "claim_ids": [
+        "MT150-C09-X2",
+        "MT150-C09-2"
+       ]
+      },
+      {
+       "from": "Overhang rises, levels off, then re-accelerates",
+       "to": "Larger problem if rates are higher on the second wave",
+       "why": "Rolling maturity profile",
+       "claim_ids": [
+        "MT150-C10-X1"
+       ]
+      },
+      {
+       "from": "Liquidity withdrawal",
+       "to": "All assets fall together; 60/40 and privates hurt; oil falls less",
+       "why": "Common discount-rate and liquidity exposure",
+       "claim_ids": [
+        "MT150-C10-1",
+        "MT150-C10-4",
+        "MT150-C10-2"
+       ]
+      }
+     ],
+     "evidence": "Anecdote (a family member CEO), Ivy endowments tapping bond market; no maturity-wall data.",
+     "fails_when": "Fails if rates fall again before the wall or if the Fed injects liquidity.",
+     "claim_ids": [
+      "MT150-C09-1",
+      "MT150-C09-2",
+      "MT150-C01-1"
+     ]
+    },
+    {
+     "topic": "Foreign buyers, dollar and inflation",
+     "steps": [
+      {
+       "from": "Alienating international buyers while asset supply rises",
+       "to": "Weaker dollar and lower ceiling for US equities",
+       "why": "Buyers leave as selling arrives",
+       "claim_ids": [
+        "MT150-C10-5"
+       ]
+      },
+      {
+       "from": "Weaker dollar",
+       "to": "Higher import prices on top of tariffs",
+       "why": "'Tariff upon a tariff'",
+       "claim_ids": [
+        "MT150-C10-6"
+       ]
+      }
+     ],
+     "evidence": "Stated as observation, no data.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT150-C10-5",
+      "MT150-C10-6"
+     ]
+    },
+    {
+     "topic": "Oil: policy lever then reflexive mean reversion",
+     "steps": [
+      {
+       "from": "Administration needs a lever on inflation",
+       "to": "Oil: more US output and Saudi supply increases (a favour costing Saudis little)",
+       "why": "Incentives; Saudis play the long game and squeeze high-cost producers",
+       "claim_ids": [
+        "MT150-C11-1",
+        "MT150-C12-1",
+        "MT150-C12-X1"
+       ]
+      },
+      {
+       "from": "Asset deflation hits Saudi budgets and producers below ~$40",
+       "to": "Forced supply cuts reflexively",
+       "why": "Producers lose money",
+       "claim_ids": [
+        "MT150-C12-3"
+       ]
+      },
+      {
+       "from": "Cheap oil",
+       "to": "Generational buy opportunity in roughly 9-15 months",
+       "why": "Reflexive supply response",
+       "claim_ids": [
+        "MT150-C11-2",
+        "MT150-C12-2"
+       ]
+      }
+     ],
+     "evidence": "Early-2025 oil shorts profitable; history of OPEC squeezes.",
+     "fails_when": "Fails if the liquidity drain is longer, demand collapses deeper, or OPEC does not cut.",
+     "claim_ids": [
+      "MT150-C12-2",
+      "MT150-C12-3"
+     ]
+    },
+    {
+     "topic": "Tail risk and uncertainty",
+     "steps": [
+      {
+       "from": "Unhedgeable US default tail",
+       "to": "CDS and skew jump on tiny probability changes",
+       "why": "Risk premium on tail",
+       "claim_ids": [
+        "MT150-C08-2"
+       ]
+      },
+      {
+       "from": "Many variables turning dynamic (tariffs, alliances) and interacting",
+       "to": "Wider fat-tailed distribution, higher volatility",
+       "why": "Stored pressure",
+       "claim_ids": [
+        "MT150-C16-1",
+        "MT150-C16-2"
+       ]
+      }
+     ],
+     "evidence": "Odd Lots piece on US CDS; metaphor.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT150-C08-2",
+      "MT150-C16-2"
+     ]
+    },
+    {
+     "topic": "Options-expiry flow cycle for the S&P",
+     "steps": [
+      {
+       "from": "Year-end/January ramp stores potential energy",
+       "to": "Weakness from Feb opex to March opex",
+       "why": "Flows unwind around quarterly expiry",
+       "claim_ids": [
+        "MT150-C17-X2",
+        "MT150-C17-3"
+       ]
+      },
+      {
+       "from": "Spring push before June",
+       "to": "June less bad than March; 'sell in May' style adages are the same flows",
+       "why": "Less stored energy",
+       "claim_ids": [
+        "MT150-C17-4",
+        "MT150-C17-X2"
+       ]
+      },
+      {
+       "from": "Confluent technical levels (200-day plus others)",
+       "to": "Resistance because many watch them",
+       "why": "Partly self-fulfilling",
+       "claim_ids": [
+        "MT150-C17-1",
+        "MT150-C17-X1"
+       ]
+      }
+     ],
+     "evidence": "Covid and 2025 declines starting after Feb opex and ending at March opex; his published calls.",
+     "fails_when": "Fails when the event risk (deal, CPI) overrides the flow cycle.",
+     "claim_ids": [
+      "MT150-C17-3",
+      "MT150-C17-X2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Reads quarterly options-expiration cycle (Feb to March, May, June) as a flow signal for index direction.",
+     "why": "Stored potential energy unwinds around expiry.",
+     "claim_ids": [
+      "MT150-C17-3",
+      "MT150-C17-4",
+      "MT150-C17-X2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Looks for confluence of several technical levels (200-day average and about seven others) to mark resistance or support.",
+     "why": "Many participants watch the same levels.",
+     "claim_ids": [
+      "MT150-C17-1",
+      "MT150-C17-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Frames the macro regime through analog periods (1969-70, Nixon) and generational cycle position.",
+     "why": "History from the last fourth turning is a template.",
+     "claim_ids": [
+      "MT150-C04-2",
+      "MT150-C08-1",
+      "MT150-C02-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Plans for a wide leptokurtic distribution rather than predicting the tail event.",
+     "why": "Tail events cannot be predicted but the distribution can be shaped.",
+     "claim_ids": [
+      "MT150-C16-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hold uncorrelated strategies such as trend following; avoid pure long-asset books (60/40, privates).",
+     "why": "All long assets share discount-rate and liquidity risk.",
+     "claim_ids": [
+      "MT150-C10-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Basket for structural inflation: insurance, value/DCF names, software and telecom; avoid growth software that needs venture funding.",
+     "why": "Revenue and margins rise in such firms.",
+     "claim_ids": [
+      "MT150-C05-1",
+      "MT150-C02-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Oil: short early 2025 on policy lever; plan to buy oil and oil equities after the liquidity-driven drop.",
+     "why": "Reflexivity makes mean reversion pay over years, not one year.",
+     "claim_ids": [
+      "MT150-C11-1",
+      "MT150-C11-2",
+      "MT150-C12-2"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Gives conditional index forecasts with a ceiling that he lowers when news changes.",
+     "why": "Updates path with tariffs and politics.",
+     "claim_ids": [
+      "MT150-C16-X2",
+      "MT150-C16-4"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Watches CPI and the 10-year yield as the central drivers around events, with option-cycle flows concentrating risk.",
+     "why": "Discount-rate sensitivity.",
+     "claim_ids": [
+      "MT150-C18-1"
+     ]
+    }
+   ],
+   "evidence_style": "Narrative and analog reasoning, anecdotes, and past published calls (options-expiry pattern, S&P path); few numbers or backtests shown.",
+   "current_views": [
+    {
+     "view": "Slow stagflation: mild, slow recession (earnings and margins) with hot inflation, like 1969-70, not a deep disinflationary recession.",
+     "as_of": "2025-05-08",
+     "reasoning": "Populism, tariffs, wealth-effect hit on the top 10%, sticky inflation.",
+     "claim_ids": [
+      "MT150-C04-5",
+      "MT150-C04-2",
+      "MT150-C04-4",
+      "MT150-C04-1"
+     ]
+    },
+    {
+     "view": "Fed stays on hold, boxed in, and will be blamed (Powell as Burns).",
+     "as_of": "2025-05-08",
+     "reasoning": "Inflation effect certain, growth effect uncertain.",
+     "claim_ids": [
+      "MT150-C04-6",
+      "MT150-C06-1",
+      "MT150-C06-X1"
+     ]
+    },
+    {
+     "view": "Bonds fail as a hedge for equities in this regime.",
+     "as_of": "2025-05-08",
+     "reasoning": "Sticky inflation keeps long yields high.",
+     "claim_ids": [
+      "MT150-C04-3",
+      "MT150-C10-2"
+     ]
+    },
+    {
+     "view": "Liquidity drain from the five-year refinancing wall hits all assets; 60/40 and privates dangerous.",
+     "as_of": "2025-05-08",
+     "reasoning": "Simultaneous refinancing at lower valuations.",
+     "claim_ids": [
+      "MT150-C01-1",
+      "MT150-C09-2",
+      "MT150-C10-1",
+      "MT150-C10-X1"
+     ]
+    },
+    {
+     "view": "Weaker dollar and lower ceiling for US equities; dollar weakness feeds inflation.",
+     "as_of": "2025-05-08",
+     "reasoning": "Foreign buyers alienated while supply of assets rises.",
+     "claim_ids": [
+      "MT150-C10-5",
+      "MT150-C10-6"
+     ]
+    },
+    {
+     "view": "US would monetize rather than default, though tail risk premia rise.",
+     "as_of": "2025-05-08",
+     "reasoning": "Only exit from unsustainable debt.",
+     "claim_ids": [
+      "MT150-C08-3",
+      "MT150-C08-2"
+     ]
+    },
+    {
+     "view": "Oil pushed lower now by policy; generational buy in about 9-15 months.",
+     "as_of": "2025-05-08",
+     "reasoning": "Administration lever, Saudi long game, reflexive supply cuts below $40.",
+     "claim_ids": [
+      "MT150-C11-1",
+      "MT150-C12-1",
+      "MT150-C12-2",
+      "MT150-C12-3",
+      "MT150-C10-4"
+     ]
+    },
+    {
+     "view": "S&P 500 upside capped around 5700-6000 after the rebound; topping process, not V reversal; ceiling has come down.",
+     "as_of": "2025-05-08",
+     "reasoning": "Alienated buyers, supply of assets, volatility, option cycle, confluence of levels.",
+     "claim_ids": [
+      "MT150-C16-4",
+      "MT150-C16-X2",
+      "MT150-C17-2",
+      "MT150-C17-1"
+     ]
+    },
+    {
+     "view": "Administration will push deal announcements to support the market; a deal smaller than expected pulls risk forward.",
+     "as_of": "2025-05-08",
+     "reasoning": "Political need for market support.",
+     "claim_ids": [
+      "MT150-C17-5"
+     ]
+    },
+    {
+     "view": "CPI on the 13th and the 10-year are the key near-term event risk.",
+     "as_of": "2025-05-08",
+     "reasoning": "Concentration of risk when flows, levels and events meet.",
+     "claim_ids": [
+      "MT150-C18-1"
+     ]
+    },
+    {
+     "view": "The West faces a fourth-turning crisis whose outcome depends on unity; tariffs on allies and Russia closeness signal disunification.",
+     "as_of": "2025-05-08",
+     "reasoning": "Unity is the critical variable in the hero's journey framing.",
+     "claim_ids": [
+      "MT150-C13-1",
+      "MT150-C14-1",
+      "MT150-C15-X1",
+      "MT150-C13-R1",
+      "MT150-C14-R1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; veteran CTA and fund manager",
+   "speaker_note": "Host; states views only on trend following, diversification and confidence, mostly via guests he cites.",
+   "fingerprint": [
+    "trend_following",
+    "diversification_risk_parity",
+    "behavioral_sentiment",
+    "manager_selection_allocation"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Diversification is about resilience, not return, and has not paid off while seven stocks or one index dominated; passive may revert to active.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation of recent years.",
+     "claim_ids": [
+      "MT150-C16-3"
+     ]
+    },
+    {
+     "premise": "Low confidence shortens time horizons (Atwater), visible in short-dated Treasury issuance.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Cites Peter Atwater.",
+     "claim_ids": [
+      "MT150-C15-1"
+     ]
+    },
+    {
+     "premise": "Crowds debate the cycle (recession) while the real risk is a structural flaw, as before 2007; today the candidate is Treasury market dysfunction and loss of confidence in the US honouring its debt.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Cites Ben Hunt's 2007 analogy.",
+     "claim_ids": [
+      "MT150-C15-2",
+      "MT150-C16-X1"
+     ]
+    },
+    {
+     "premise": "Reshoring jobs can be filled by automation (not inflationary) or by labour whose supply is cut by immigration crackdowns (inflationary).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning.",
+     "claim_ids": [
+      "MT150-C05-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Tracks trend-follower indices (BTOP50, SG CTA, SG Trend, short-term index) against equity and bond indices and a personal trend barometer.",
+     "why": "Compares CTA performance to passive after the April 2025 tariff reversal.",
+     "claim_ids": [
+      "MT150-C03-1",
+      "MT150-C03-X1",
+      "MT150-C03-X2",
+      "MT150-C03-X3"
+     ]
+    }
+   ],
+   "evidence_style": "Reports index data and cites other guests' work.",
+   "current_views": [
+    {
+     "view": "Trend followers lagged in the April 2025 V-shaped reversal; short-term CTAs held up better; trends persisting were gold and live cattle.",
+     "as_of": "2025-05-08",
+     "reasoning": "Whipsaw; trend barometer at 50.",
+     "claim_ids": [
+      "MT150-C03-1",
+      "MT150-C03-X1",
+      "MT150-C03-X2",
+      "MT150-C03-X3"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Shape of the recession/bond hedge",
+   "positions": [
+    {
+     "speaker": "Jim Kasang",
+     "position": "Mild slow earnings recession with hot inflation; long bond does not hedge.",
+     "claim_ids": [
+      "MT150-C04-5",
+      "MT150-C04-3"
+     ]
+    },
+    {
+     "speaker": "Consensus (as described by Jim)",
+     "position": "Deep recession with disinflation and a bond rally.",
+     "claim_ids": [
+      "MT150-C04-5"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Job effect of reshoring on inflation",
+   "positions": [
+    {
+     "speaker": "Jim Kasang",
+     "position": "Reshoring is inflationary and creates a rush of job demand.",
+     "claim_ids": [
+      "MT150-C04-7"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Depends on filling: automation not inflationary, immigration crackdown adds wage pressure.",
+     "claim_ids": [
+      "MT150-C05-X1"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Many empirical claims (equities not an inflation hedge, top 10% = half of spending) asserted without figures.",
+   "claim_ids": [
+    "MT150-C10-3",
+    "MT150-C04-4"
+   ]
+  },
+  {
+   "issue": "Oil 'generational buy' timing (9-15 months) is a point estimate with no stated invalidation beyond the $40 reflexivity argument.",
+   "claim_ids": [
+    "MT150-C12-2",
+    "MT150-C12-3"
+   ]
+  },
+  {
+   "issue": "Claim that Saudi supply is a favour to the US administration is speculation about motives; Jim says one of several factors.",
+   "claim_ids": [
+    "MT150-C12-1",
+    "MT150-C11-1"
+   ]
+  },
+  {
+   "issue": "Quote of venture valuations (25-40% of prior levels) is garbled in the caption.",
+   "claim_ids": [
+    "MT150-C09-X2"
+   ]
+  },
+  {
+   "issue": "Internal tension: says inflation is certain but also expects oil and other assets to fall in a liquidity drain; resolved only by saying oil falls less.",
+   "claim_ids": [
+    "MT150-C10-4",
+    "MT150-C04-5"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs Jim says lead prices: the 10-year yield and CPI (days to months), the 2025 refinancing wall and financing-roll profile (years), quarterly options-expiration dates and confluence levels (weeks), oil price relative to $40 and Saudi/OPEC supply moves (months to years), dollar and foreign buying of US assets (months), and political incentives before the midterms (a year). Reason: discount-rate and liquidity shocks reprice all assets; flows drive timing.",
+ "reader_inferences": [
+  "(reader) Jim's framework produces regime labels (hot-inflation stagflation) more than testable signals; the only rule-like element is the options-expiry calendar.",
+  "(reader) His diversification advice (trend following) is partly self-interested, which he acknowledges, and the host's own data show trend followers lagging in this very episode.",
+  "(reader) Several calls (oil buy, S&P ceiling) are time-bound and can be scored later against the recording date 2025-05-08."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT150-C05-R1",
+   "chunk": "C05",
+   "speaker": "Jim Kasang",
+   "quote": "people respond to incentives",
+   "claim": "Treasury's short-dated issuance under Yellen is explained as election-period incentives, not incompetence; Trump's pressure on the Fed is the same behaviour, so incentives predict policy under either party.",
+   "mechanism": "policy_reaction",
+   "asset_class": "rates",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "short-dated issuance, political pressure on Fed",
+   "conditions": "election incentives",
+   "testable": "partly - issuance mix observable, motive is not",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map-reader",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT150-C13-R1",
+   "chunk": "C13",
+   "speaker": "Jim Kasang",
+   "quote": "the hero doesn't always rise to the challenge",
+   "claim": "The coming crisis can end badly: the West may fail to rise to it (not strong enough or unable to summon courage), so the fourth-turning resolution is not guaranteed to be positive.",
+   "mechanism": "cycle_persistence",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "outcome uncertain",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map-reader",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT150-C14-R1",
+   "chunk": "C14",
+   "speaker": "Jim Kasang",
+   "quote": "I think there is a concerted effort to disunify the west",
+   "claim": "Jim says outside actors explicitly pursue disunity in the West, and that social media magnifies both disunity and unity.",
+   "mechanism": "structural_shift",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "disunity risk up",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map-reader",
+   "quote_check": "exact"
+  }
+ ]
+}

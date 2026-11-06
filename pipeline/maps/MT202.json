@@ -1,0 +1,619 @@
+{
+ "source_id": "MT202",
+ "episode_thesis": "Kasang argues that the calm of summer 2024 was manufactured by heavy volatility supply that pinned index vol, and that a slowdown in Nvidia/AI call-buying, a Russell call-gamma squeeze and a narrative shift unpinned it earlier than expected, with forward vol supply too weak to absorb a rotation before the November election. His macro frame is that the wealth effect from about $200 trillion of equity collateral makes the Fed reactive to markets, and that a Trump 2.0 mix of tariffs, immigration limits and Fed activism is inflationary and bullish for gold, Bitcoin and commodities. His path view is a fall wobble, a rally into year end and bigger fireworks in early 2025.",
+ "speakers": [
+  {
+   "name": "Jim Kasang",
+   "role": "Guest; volatility and options market-structure specialist (Chicago) with a macro-and-flows framework",
+   "speaker_note": "Caption spelling 'Jim Kasang'; probably the same person as 'Cem Karsan' in other episodes (inferred, unconfirmed). He mentions Turkey as his home country. Captions mangle some terms ('wall' = vol, 'Vol mageddon' = Volmageddon).",
+   "fingerprint": [
+    "volatility_options",
+    "dealer_hedging_flows",
+    "positioning_crowding",
+    "liquidity_flows",
+    "policy_reaction_central_banks",
+    "macro_fundamental_topdown",
+    "crisis_alpha_convexity",
+    "geopolitics"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Volatility is not an asset class but the underlying distribution of all asset classes, so vol-market structure drives broad market performance.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Asserted from experience; no data.",
+     "claim_ids": [
+      "MT202-C04-5"
+     ]
+    },
+    {
+     "premise": "The options market is reflexive: when vol is heavily sold and well supplied, dealer hedging pins index vol and produces unnaturally calm index behaviour, and the longer the pin the larger the move when it breaks.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Summer 2024 (no 50 bp decline in two months); 2017 (no 3% decline, record low realised vol) followed by Volmageddon in early 2018.",
+     "claim_ids": [
+      "MT202-C03-5",
+      "MT202-C04-1",
+      "MT202-C04-2"
+     ]
+    },
+    {
+     "premise": "Index calm hides extreme single-stock dispersion; the dispersion itself can force stress back into the index.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation from summer 2024.",
+     "claim_ids": [
+      "MT202-C14-1"
+     ]
+    },
+    {
+     "premise": "Carry trades (including short-skew option positions) have positive expectancy but break convexly, and investors accept the tail because they expect policy backstops.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Dollar-yen carry, skew trade 'nine times out of ten'; no statistics.",
+     "claim_ids": [
+      "MT202-C06-3",
+      "MT202-C06-4",
+      "MT202-C07-1",
+      "MT202-C07-2"
+     ]
+    },
+    {
+     "premise": "Systematic put buying loses money standalone, but a volatility allocation raises portfolio geometric return because put payoffs in falls can be monetised and reinvested under rebalancing.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Insurance logic and rebalancing argument; no figures.",
+     "claim_ids": [
+      "MT202-C05-1",
+      "MT202-C05-2",
+      "MT202-C06-2"
+     ]
+    },
+    {
+     "premise": "Wealth effect from equity and equity-linked collateral (about $200 trillion) is roughly as important as the Fed itself ('50/50'), so a market decline mechanically shrinks money supply and forces the Fed to react.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "About 95% of money is bank loans backed by collateral; $100tn equities plus $100tn tied to equities, so a 10% fall removes about $20tn.",
+     "claim_ids": [
+      "MT202-C11-2",
+      "MT202-C12-X1",
+      "MT202-C11-3"
+     ]
+    },
+    {
+     "premise": "Interest rates act asymmetrically: hikes work slowly because households locked in rates, while cuts release accumulated demand more strongly, so the Fed manages demand better than inflation.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "1970s analogy and the 2022-24 lag after hikes; no data cited.",
+     "claim_ids": [
+      "MT202-C12-3",
+      "MT202-C12-4",
+      "MT202-C12-R5"
+     ]
+    },
+    {
+     "premise": "US inflation was held down by two release valves, a managed dollar exporting inflation and open borders easing labour pressure; protectionism, closed borders and an activist Fed remove them and are inflationary.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoned from policy incentives; no numbers.",
+     "claim_ids": [
+      "MT202-C08-2",
+      "MT202-C08-3",
+      "MT202-C08-X1"
+     ]
+    },
+    {
+     "premise": "Geopolitical conflict, oil shocks and fiscal spending are linked to an America First turn, so commodity supply control is a supporting factor for commodities.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "1970s: oil shocks, Vietnam and Great Society as one phenomenon.",
+     "claim_ids": [
+      "MT202-C13-1"
+     ]
+    },
+    {
+     "premise": "Volatility comes from concentrated, leveraged risk in few hands; unwinding big winners in a rotation raises that concentration.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Zero-sum market framing.",
+     "claim_ids": [
+      "MT202-C16-1"
+     ]
+    },
+    {
+     "premise": "A framework needs both macro (multi-year structural distributions and incentives) and flows/market microstructure so that short, medium and long term are aligned.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own method.",
+     "claim_ids": [
+      "MT202-C07-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "How the pin broke in July-August 2024",
+     "steps": [
+      {
+       "from": "Nvidia/AI momentum slows on idiosyncratic news",
+       "to": "speculative call buyers lose and stop buying",
+       "why": "Dealers short those calls and long stock must sell the stock as call delta decays, a slow persistent decline.",
+       "claim_ids": [
+        "MT202-C14-2",
+        "MT202-C15-1"
+       ]
+      },
+      {
+       "from": "call-gamma squeeze moves from AI names to Russell",
+       "to": "money rotates from one set of names to others",
+       "why": "Large Russell call purchases (open interest surged after a high-profile buyer) led the small-cap rally.",
+       "claim_ids": [
+        "MT202-C15-3",
+        "MT202-C15-X1"
+       ]
+      },
+      {
+       "from": "rotation with index vol pinned",
+       "to": "index vol is forced higher",
+       "why": "The index must absorb offsetting moves; a Trump comment on Taiwan changed the Nvidia narrative.",
+       "claim_ids": [
+        "MT202-C15-2",
+        "MT202-C15-4"
+       ]
+      },
+      {
+       "from": "Russell about four standard deviations versus S&P",
+       "to": "unwinding of crowded winners",
+       "why": "Concentrated, leveraged positions are unwound, raising stress; weak forward vol supply (Sept-Nov) leaves little to absorb it.",
+       "claim_ids": [
+        "MT202-C15-5",
+        "MT202-C16-1",
+        "MT202-C04-3"
+       ]
+      }
+     ],
+     "evidence": "Positioning observed in option open interest, expiry-by-expiry vol supply; a 2017-18 analogy; the sequence as it happened in July-Aug 2024.",
+     "fails_when": "The view is path-dependent on small events; if the Fed pre-empts at Jackson Hole or in September, stress diminishes; no systematic test offered.",
+     "claim_ids": [
+      "MT202-C17-2",
+      "MT202-C16-X1"
+     ]
+    },
+    {
+     "topic": "Wealth effect to Fed reaction",
+     "steps": [
+      {
+       "from": "equity fall of 10%",
+       "to": "about $20tn collateral removed",
+       "why": "About $200tn of equity and equity-linked collateral underpins loans.",
+       "claim_ids": [
+        "MT202-C11-2"
+       ]
+      },
+      {
+       "from": "collateral shrinks",
+       "to": "money supply shrinks with high leverage",
+       "why": "About 95% of money is bank loans backed by collateral.",
+       "claim_ids": [
+        "MT202-C12-X1"
+       ]
+      },
+      {
+       "from": "money supply shock",
+       "to": "Fed reacts (policy turn as in late 2018 and December 2023)",
+       "why": "The Fed is reflexive to markets; Powell's 'if something weird happens we will act'.",
+       "claim_ids": [
+        "MT202-C11-3",
+        "MT202-C12-1",
+        "MT202-C12-2"
+       ]
+      }
+     ],
+     "evidence": "December 2023 dovish repricing lifted equities 20% and improved growth; late 2018 reversal; Japan's direct equity support.",
+     "fails_when": "Not stated; the claim also relies on the Fed accepting that role.",
+     "claim_ids": [
+      "MT202-C13-3",
+      "MT202-C12-1"
+     ]
+    },
+    {
+     "topic": "Trump 2.0 to inflation and hard assets",
+     "steps": [
+      {
+       "from": "Trump wins with Senate and House and enlarged executive scope",
+       "to": "tariffs, immigration limits and Fed activism",
+       "why": "Broad mandate plus the Supreme Court immunity ruling.",
+       "claim_ids": [
+        "MT202-C08-1"
+       ]
+      },
+      {
+       "from": "tariffs, immigration limits, activist Fed",
+       "to": "inflation",
+       "why": "Labour inflation accelerates when borders close; dollar can no longer export inflation.",
+       "claim_ids": [
+        "MT202-C08-2",
+        "MT202-C08-3",
+        "MT202-C08-X1"
+       ]
+      },
+      {
+       "from": "inflation and Fed activism",
+       "to": "gold and Bitcoin as diversifiers",
+       "why": "Hedge against dollar and inflation.",
+       "claim_ids": [
+        "MT202-C09-1"
+       ]
+      },
+      {
+       "from": "US power plays",
+       "to": "short-term gain, long-term loss of trust",
+       "why": "The US benefits in the short run, but degrading the reason the world accepts US power creates a convex tail.",
+       "claim_ids": [
+        "MT202-C10-1"
+       ]
+      }
+     ],
+     "evidence": "Election arithmetic (Electoral College, Senate seats), a Turkey/Erdogan analogy; no market data.",
+     "fails_when": "Outcome depends on the election; he calls Trump's win likely but not guaranteed; Biden can do little.",
+     "claim_ids": [
+      "MT202-C09-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Use positioning in volatility supply across expiries as a timing and sizing mechanism to lever long-vol up and down where the distribution carries most risk, plus relative-value cheapness (dispersion, cross-index).",
+     "why": "Passive put buying loses more than it makes; edge comes from timing leverage and relative value.",
+     "claim_ids": [
+      "MT202-C04-3",
+      "MT202-C04-4",
+      "MT202-C05-3",
+      "MT202-C06-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hold a systematic volatility allocation for geometric-return benefit rather than standalone return; benchmark vol managers with specific Cboe strategy indexes, not a broad vol-manager index.",
+     "why": "Modest standalone return but a large effect on compound growth; managers differ by strategy.",
+     "claim_ids": [
+      "MT202-C06-2",
+      "MT202-C05-4"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Pair a leveraged carry position with convexity elsewhere in the portfolio.",
+     "why": "Linear hedges are imperfect and crowded.",
+     "claim_ids": [
+      "MT202-C07-X1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "For the rotation, hedge with puts on Nvidia, the most crowded winner, rather than index puts (advised about three weeks before the break); keep hedges in place after the unpin.",
+     "why": "Crowded winners carry the unwinding; the unpin is unlikely to re-pin quickly.",
+     "claim_ids": [
+      "MT202-C16-X2",
+      "MT202-C16-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Treat a 2%+ rally during stress with weak action elsewhere as a short squeeze, not recovery.",
+     "why": "Squeezes shake out positioning.",
+     "claim_ids": [
+      "MT202-C16-3"
+     ]
+    }
+   ],
+   "evidence_style": "Market-structure observation and mechanism reasoning from the option market (open interest, dealer positioning), historical analogies (2017-18, 1970s, late 2018), political reasoning from personal background; no backtests.",
+   "current_views": [
+    {
+     "view": "Volatility is unpinned and unlikely to re-pin quickly; the Nvidia-to-Russell rotation will continue for some time; stay cautious and hedged through September and arguably October-November.",
+     "as_of": "2024-08-02",
+     "reasoning": "Weak vol supply Sept-Nov, Fed meeting, volatile election, fragile supply.",
+     "claim_ids": [
+      "MT202-C16-X1",
+      "MT202-C16-4",
+      "MT202-C04-3"
+     ]
+    },
+    {
+     "view": "Path: calm summer, fall wobble (it started a month early), rally into year end, bigger fireworks in early 2025; this is not the cataclysmic end.",
+     "as_of": "2024-08-02",
+     "reasoning": "Distribution of outcomes; revisable if the move worsens.",
+     "claim_ids": [
+      "MT202-C17-1",
+      "MT202-C17-R1"
+     ]
+    },
+    {
+     "view": "Vol, skew and convexity are undervalued; skew was very low so tail protection was cheap.",
+     "as_of": "2024-08-02",
+     "reasoning": "Skew falls in declines, but a convex move makes it explode, as in Volmageddon.",
+     "claim_ids": [
+      "MT202-C16-R1",
+      "MT202-C16-2"
+     ]
+    },
+    {
+     "view": "The Fed will react to a market fall (a 50 bp cut or strong language at Jackson Hole could reverse the stress).",
+     "as_of": "2024-08-02",
+     "reasoning": "The wealth effect makes the Fed reflexive to markets.",
+     "claim_ids": [
+      "MT202-C11-3",
+      "MT202-C12-2",
+      "MT202-C17-2"
+     ]
+    },
+    {
+     "view": "A Trump win is likely with a broad mandate, and Trump 2.0 would be inflationary and bullish for hard assets, gold and Bitcoin.",
+     "as_of": "2024-08-02",
+     "reasoning": "Protectionism, immigration restriction, activist Fed.",
+     "claim_ids": [
+      "MT202-C08-1",
+      "MT202-C08-2",
+      "MT202-C09-1"
+     ]
+    },
+    {
+     "view": "More oil shocks and supply control of oil and copper should support commodities.",
+     "as_of": "2024-08-02",
+     "reasoning": "America First raises conflict.",
+     "claim_ids": [
+      "MT202-C13-1"
+     ]
+    },
+    {
+     "view": "Nvidia carries a Taiwan invasion tail risk; the August move changed the narrative and revealed neglected risks.",
+     "as_of": "2024-08-02",
+     "reasoning": "Most to lose of any US company; the Taiwan comment from Trump.",
+     "claim_ids": [
+      "MT202-C15-4"
+     ]
+    },
+    {
+     "view": "Cuts may have a larger effect than hikes did, but the Fed cannot easily manage inflation (stagflation-type environment).",
+     "as_of": "2024-08-02",
+     "reasoning": "Demand sequestered by locked-in rates.",
+     "claim_ids": [
+      "MT202-C12-3",
+      "MT202-C12-4",
+      "MT202-C12-R5"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged); hedge fund manager",
+   "speaker_note": "Caption spells 'Niels costr Larson'. He mostly asks; the views below are those he states himself.",
+   "fingerprint": [
+    "trend_following",
+    "regime_detection",
+    "geopolitics",
+    "behavioral_sentiment",
+    "manager_selection_allocation",
+    "policy_reaction_central_banks"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend followers lose when many markets reverse at the same time, as in 10-25 July 2024 when equities, energies, metals, grains and currencies turned together.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "July 2024 monthly performance review.",
+     "claim_ids": [
+      "MT202-C03-1",
+      "MT202-C02-1",
+      "MT202-C03-X1"
+     ]
+    },
+    {
+     "premise": "The S&P 500's 356-day streak without a 2% decline ending is notable because the previous comparable streak (351 days) ended in the Volmageddon of early 2018.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical comparison; he says he is 'not trying to scare anyone'.",
+     "claim_ids": [
+      "MT202-C03-4"
+     ]
+    },
+    {
+     "premise": "Rate expectations reprice quickly on labour data: after the 4.3% unemployment print about 100 bp of cuts were priced by year end, a number that had swung several times that year.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observed in the hour after the release.",
+     "claim_ids": [
+      "MT202-C11-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Sahm rule signal",
+     "steps": [
+      {
+       "from": "unemployment 4.3% in July 2024",
+       "to": "3-month average up 0.5 pt above the 12-month low",
+       "why": "He suspects (without calculating) the Sahm rule has triggered.",
+       "claim_ids": [
+        "MT202-C11-1"
+       ]
+      },
+      {
+       "from": "Sahm rule triggered",
+       "to": "recession signal",
+       "why": "Rule as described by its originator on an earlier episode.",
+       "claim_ids": [
+        "MT202-C11-1"
+       ]
+      }
+     ],
+     "evidence": "A tweet from an observer and a guest; no calculation.",
+     "fails_when": "The originator said it might not trigger this time (not understood by the host).",
+     "claim_ids": [
+      "MT202-C11-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Benchmark volatility strategies against an index (the Barclay Hedge Volatility Trading index of 23 funds, +3% to end of June 2024) and track trend performance with the trend barometer, a reading of 48 meaning a roughly flat month.",
+     "why": "Needs a reference for judging managers.",
+     "claim_ids": [
+      "MT202-C05-4",
+      "MT202-C03-2"
+     ]
+    }
+   ],
+   "evidence_style": "Reports index prints and others' views (Jim Grant on the Chicago Fed index, Sahm rule), anecdote; he flags his own limits ('not our core expertise').",
+   "current_views": [
+    {
+     "view": "Markets reacted too calmly to the escalating Middle East conflict.",
+     "as_of": "2024-08-02",
+     "reasoning": "Worry that more countries such as Iran will be drawn in.",
+     "claim_ids": [
+      "MT202-C01-1"
+     ]
+    },
+    {
+     "view": "July 2024 for trend: strong first 10 days, large reversals from 10 to 25 July, partial resumption at the end of the month; CTA indices about -1.6% to -2.5% for the month, up about 5-6% YTD; short-term traders lost less but earned less.",
+     "as_of": "2024-08-02",
+     "reasoning": "Monthly review.",
+     "claim_ids": [
+      "MT202-C03-2",
+      "MT202-C03-X1",
+      "MT202-C03-X2"
+     ]
+    },
+    {
+     "view": "Government bonds rose 1.78% in July as growth and rate narratives shifted; equities MSCI World +1.7%, S&P 500 about 1.25%.",
+     "as_of": "2024-08-02",
+     "reasoning": "Narrative shift toward slowdown.",
+     "claim_ids": [
+      "MT202-C03-3"
+     ]
+    },
+    {
+     "view": "Financial conditions looked loose (Chicago Fed index incl. credit spreads) despite high policy rates, per Jim Grant.",
+     "as_of": "2024-08-02",
+     "reasoning": "Second-hand from memory.",
+     "claim_ids": [
+      "MT202-C10-2"
+     ]
+    },
+    {
+     "view": "Japan's Topix had its largest two-day fall since 2011, a wealth-effect shock with a flight into bonds.",
+     "as_of": "2024-08-02",
+     "reasoning": "Early August sell-off.",
+     "claim_ids": [
+      "MT202-C13-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "The wealth-effect claim is quantified loosely ($100tn plus $100tn; 'about 50/50' with the Fed) with no source; the ledger correction notes the speaker said it is about as important as the Fed, not second to it.",
+   "claim_ids": [
+    "MT202-C11-2",
+    "MT202-C12-X1"
+   ]
+  },
+  {
+   "issue": "The trade recommendation for the rotation (Nvidia puts) is described after the fact, with no sizing, cost or outcome; the claim that he advised it three weeks earlier is unverifiable from the transcript.",
+   "claim_ids": [
+    "MT202-C16-X2"
+   ]
+  },
+  {
+   "issue": "Political claims (Trump winning all branches, Turkey-style consolidation of the judiciary, military) are opinion about incentives, and the election outcome was not a given at recording time; the host asks clarifying questions and does not challenge them.",
+   "claim_ids": [
+    "MT202-C08-1",
+    "MT202-C09-X1"
+   ]
+  },
+  {
+   "issue": "The Russell move is attributed jointly to Druckenmiller's call purchase, the call-gamma squeeze and a Trump Taiwan comment; the weights of these causes are not given.",
+   "claim_ids": [
+    "MT202-C15-X1",
+    "MT202-C15-3",
+    "MT202-C15-4"
+   ]
+  },
+  {
+   "issue": "Path view is internally flexible: it says the distribution of outcomes matters and small things change the path, so it cannot be falsified except by named triggers (Fed at Jackson Hole, Taiwan).",
+   "claim_ids": [
+    "MT202-C17-1",
+    "MT202-C17-R1",
+    "MT202-C17-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs named: vol supply by expiry (September-November weak), call open interest in AI and Russell names, dealer gamma and delta decay on call positions, skew level and VIX versus strike vol, index realised vol and single-stock dispersion, the Fed reaction function (50 bp in September, tone at Jackson Hole, post-September expiration), unemployment (Sahm rule) and cut pricing, the Chicago Fed financial conditions index, the US election and Taiwan statements, and Japanese wealth-effect interventions. Horizons: weeks to November for the wobble, rally into year end, early 2025 for larger moves, and several years for the inflation and geopolitical themes.",
+ "reader_inferences": [
+  "(reader) The mechanism chain from call-buying slowdown to dealer stock selling to index-vol pin release gives testable inputs: call open interest growth, dealer gamma estimates, and realised-versus-implied dispersion.",
+  "(reader) His 'fragile vol supply' claim implies the same structure that suppressed vol before the break would mean a regime of low realised vol is itself an early-warning indicator.",
+  "(reader) The macro layer (wealth effect, Fed reflexivity) and the micro layer (vol supply) are unified by a collateral-leverage argument, but no data links them within the episode."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT202-C17-R1",
+   "chunk": "C17",
+   "speaker": "Jim Kasang",
+   "quote": "I don't think this is the cataclysmic end now to be clear that could change right",
+   "claim": "The August 2024 unpinning is not the cataclysmic end; the base case stays a rally into year end, with the view revisable if the move worsens (the Taiwan scenario is his example).",
+   "mechanism": "path view with stated invalidation",
+   "asset_class": "equities",
+   "indicator": "fall wobble then year-end rally",
+   "horizon": "months",
+   "direction": "up after the decline",
+   "conditions": "if the decline grows or China moves on Taiwan",
+   "testable": "no - judgemental",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "b07-map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT202-C16-R1",
+   "chunk": "C16",
+   "speaker": "Jim Kasang",
+   "quote": "in my opinion undervalued in this environment as we speak and more importantly skew and convexity is undervalued",
+   "claim": "Implied volatility and, more so, skew and convexity are undervalued in early August 2024, so hedges are still cheap relative to the risk.",
+   "mechanism": "vol supply fragile; skew falls in declines",
+   "asset_class": "equity index vol",
+   "indicator": "VIX, skew",
+   "horizon": "weeks to months",
+   "direction": "long vol and tail protection favoured",
+   "conditions": "",
+   "testable": "partly - skew versus realised",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "b07-map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT202-C12-R5",
+   "chunk": "C12",
+   "speaker": "Jim Kasang",
+   "quote": "we're really in this stag fler environment the the the input to the system are very different",
+   "claim": "The US is in a stagflation-like environment because stimulus now goes to individuals rather than corporations, a different input from earlier cycles.",
+   "mechanism": "fiscal transfers to households",
+   "asset_class": "US macro",
+   "indicator": "policy transfers",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - judgemental",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "b07-map",
+   "quote_check": "exact"
+  }
+ ]
+}

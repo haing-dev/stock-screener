@@ -5,8 +5,8 @@ date: 2025-09-18
 channel: "Top Traders Unplugged"
 url: 
 words: 9994
-claims: 39
-added_by_crosscheck: 11
+claims: 40
+added_by_crosscheck: 12
 corrections: 2
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Niels Kaastrup-Larsen (host)", "Katy Kaminski (systematic researcher, AlphaSimplex)"]
@@ -21,6 +21,118 @@ tags: [source, layer0]
 **Approach:** trend following, return dispersion, alternative markets, manager selection
 
 **Cross-check completeness estimate of first read:** 0.80 - the first reader caught the four dispersion drivers, Man and Quantica findings, turbulence metric and the two-or-three-managers advice, but missed the performance table, fixed-income signal state, the Man hypothetical-manager method, random-signal studies, chance tracking gaps, and several Quantica points (per-market Sharpe, range-bound alt markets, two-edged crowding).
+
+## Argument map
+
+**Episode thesis:** Kaminski and Kaastrup-Larsen argue that return dispersion among trend followers is not random but the fingerprint of design choices (speed, asset-class allocation, alternative markets, carry), none of which dominates every year, so an investor cannot pick a winning factor and should hold two or three different CTAs. They add that the recent underperformance of alternative-market trend is a regime/sector effect (gas and power, credit after the COVID and Ukraine shocks), that alternative markets are a diversification argument rather than a better-trend argument, and that turbulence can be split into magnitude surprises (bad for CTAs) and correlation surprises (inflection points that drive dispersion).
+
+### Katy Kaminski (Systematic researcher at AlphaSimplex; co-author (with Alex Greyserman) of a book on trend following; former CTA allocator)
+Fingerprint: #approach/trend_following #approach/research_robustness_overfitting #approach/portfolio_construction_stacking #approach/manager_selection_allocation #approach/regime_detection #approach/crisis_alpha_convexity #approach/replication_indexing #approach/positioning_crowding
+_Speaker note: Name spelled Katie Kaminsky in captions. Two ledger claims carry corrections: MT220-C03-1 (surprise scenarios: more cuts than expected or no cut would be the shock; a 50bp cut is what was expected) and MT220-C11-1 (Liberation Day is not in the turbulence data set; she only presumes it is a magnitude surprise). Both are cited under the corrected reading._
+
+**Worldview premises**
+- Return dispersion among trend managers follows from design choices (speed, asset allocation, alternative markets, carry) and from basic math of differing volatilities and correlations, so it is explainable and can be estimated theoretically. _[theoretical, stated; support: Man AHL 'Dynamics of dispersion', her book chapter 11, and treating managers as random variables.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C05-1|C05-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C06-2|C06-2]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C07-2|C07-2]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C04-2|C04-2]])
+- No single design factor is the main driver of dispersion; each dominates in a different year (fixed income in 2019, no equities in 2025), and no style factor persists. _[empirical, stated; support: Her style-factor tracking at AlphaSimplex and the Man paper's yearly results.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C09-1|C09-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C05-X1|C05-X1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C11-2|C11-2]])
+- Faster trend following gives more crisis protection; the industry has drifted to slower products, so replicators and slow managers get less crisis alpha even though slow did better recently. _[empirical, stated; support: Man AHL paper and her 'CTA style evolution' study; history of the CTA index.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C05-2|C05-2]])
+- CTA indices are not investable and managers' styles drift, so one buys today's managers, not the index; study aspects of managers (speed, markets) rather than index behaviour. _[institutional, stated; support: Her style-drift study.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C06-1|C06-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C07-1|C07-1]])
+- A trend follower should include every asset, since assets that never trended (metals, palladium, copper, platinum) can start to trend. _[experience, stated; support: Past debates over excluding metals; recent trends in platinum, palladium, gold, nickel, copper.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C12-2|C12-2]])
+- Adding low-correlation trend P&L streams raises portfolio Sharpe mathematically; alternative markets provide this diversification, but higher costs offset some of the Sharpe. _[theoretical, stated; support: Portfolio-theory argument in the Quantica paper and her own book.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C13-2|C13-2]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C06-3|C06-3]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C14-X1|C14-X1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C13-R1|C13-R1]])
+- Extreme outperformance of alternative markets in 2020-22 came from specific sectors (gas and power, credit), raising expectations, which is why three weaker years caused doubt; those assets have been range-bound since the shocks. _[empirical, stated; support: Quantica's 50 traditional versus 120 alternative market comparison.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C12-1|C12-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C12-X1|C12-X1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C13-X2|C13-X2]])
+- Crowding is two-edged for trend: it still works in crowded liquid markets, but capacity-limited markets may have looked better in backtests when fewer participants traded them. _[theoretical, stated; support: No study; she wants a case-study analysis.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C14-X1|C14-X1]])
+- Macro and systematic macro outperformed trend around Liberation Day, which motivates research on economic versus technical trends. _[experience, stated; support: Observed April 2025 results; paper in progress.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C14-2|C14-2]])
+
+**Chain: Why fixed income trend signals have not built despite many themes**
+1. Market already prices Fed cuts (SOFR near 3.4% versus fed funds at 4.25-4.5%) → Bond trend signals stay mixed and weak, teetering between long and short: The market has been anticipating the Fed, so no sustained one-way move. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C03-1|C03-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C03-X1|C03-X1]])
+2. Outcome that differs from pricing (far more cuts than expected, or no cut) → A large move and a trend catalyst: Only a surprise relative to pricing moves a priced market; a 50bp cut is what was expected. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C03-1|C03-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C01-1|C01-1]])
+- Evidence: Mixed signals in September 2025: slightly more long in the US, short in the UK and some European bonds; recent jobs data had already priced in cuts.
+- Fails when: If futures price future rather than current rates, long yields can rise after cuts (host's point), so direction is not obvious.
+
+**Chain: How design choices become return dispersion across trend managers**
+1. Speed, allocation, alternative markets, carry differ across managers → Different return streams with different vol and correlation: Managers as random variables; range of differences set by volatility and correlation. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C05-1|C05-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C06-2|C06-2]])
+2. A year with a particular sector trend (2019 fixed income; 2025 no equities in ETFs) or a high-volatility year (2008, 2022) → A given factor dominates and the dispersion widens: Bigger moves amplify differences. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C09-1|C09-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C08-1|C08-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C05-X1|C05-X1]])
+3. Combine two or three managers → Much of the dispersion versus the index disappears, but 3-4% remains: Residual tracking is normal even for replication (500-600bp slippage). ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C08-2|C08-2]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C09-X1|C09-X1]])
+- Evidence: Man AHL hypothetical-manager aggregation, her chapter 11 random-sampling study, and a random-signal experiment.
+- Fails when: Not stated; she stresses that no factor is persistent.
+
+**Chain: Turbulence: magnitude versus correlation surprises**
+1. Mahalanobis distance across manager returns → Point-in-time measure of movement with no data window: Correlation needs a window and averages away a one-day event. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C10-1|C10-1]])
+2. Decompose into magnitude surprise and correlation surprise → Magnitude surprises (Brexit, SVB, Black Friday) hurt CTAs; correlation surprises are inflection points where trend signals rotate and drive dispersion: Shock versus change in how managers behave relative to each other. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C11-1|C11-1]])
+- Evidence: Her paper 'Quantifying turbulence in CTAs'; plotted history of surprises.
+- Fails when: Liberation Day is outside the sample and only presumed to be a magnitude surprise.
+
+**Chain: Alternative markets: why they underperformed recently and what remains**
+1. 2020-22 shocks (COVID, Ukraine) → Gas and power, credit and similar sectors trended extremely, 40-50% of the outperformance coming from gas and power: Specific sector events, not structural better trending. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C12-1|C12-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C13-1|C13-1]])
+2. Those assets became range-bound → Alternative-market managers lagged for about three years: Regime effect, not proof the thesis is broken. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C13-X2|C13-X2]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C12-X1|C12-X1]])
+3. Money flowed into less-liquid markets → Possible crowding and higher transaction costs: Host's hypothesis; she wants a case-study test. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C14-1|C14-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C14-X1|C14-X1]])
+- Evidence: Quantica Q3 2025 paper; Sharpe per market adjusted for the period instead of reading which sectors won; only about 10 years of history for such managers.
+- Fails when: Costs of exotic contracts reduce the net Sharpe; the benefit is diversification, not better trend.
+
+**Decision process**
+- [portfolio] Start simple: pick two or three CTAs that are different, avoid analysis paralysis, combine a faster manager (crisis alpha) with a slower manager or replication product.. Why: CTAs are among the few alternatives without hidden equity beta; no style factor persists; too much analysis creates false expectations. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C11-2|C11-2]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C11-X1|C11-X1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C08-2|C08-2]])
+- [research] Track style factors for trend (speed, market size, correlated markets) and regress manager returns to explain relative performance, as equity style factors do.. Why: Disentangles benchmark from style tilts, year by year. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C09-2|C09-2]])
+- [research] Study hypothetical trend managers built with many designs and aggregated over time rather than a single backtest; use random-signal experiments to split allocation from signal effects.. Why: Avoid cherry-picking the best backtest version. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C06-X1|C06-X1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C08-X1|C08-X1]])
+- [research] Do not match absolute Sharpe of an index replication; focus on relative and conditional differences.. Why: Backtest Sharpe 0.75 versus actual 0.36 reflects that longer lookbacks did better and managers differ. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C07-1|C07-1]])
+- [universe] Include all assets in a trend programme, accounting for costs of exotic contracts.. Why: Non-trending assets can start to trend; diversification raises Sharpe. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C12-2|C12-2]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C13-2|C13-2]])
+- [research] Evaluate alternative markets by Sharpe per market adjusted for the period and portfolio theory, not by recent sector winners.. Why: Short 10-year history. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C13-X1|C13-X1]])
+- [risk] Do not read a 400-500bp gap versus the index with two or three CTAs as poor selection.. Why: Such gaps arise by chance with these correlations. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C09-X1|C09-X1]])
+
+**Evidence style:** Academic literature and her own studies (book chapter 11, CTA style evolution, turbulence paper), mathematical arguments about variance and diversification, and random-sampling or hypothetical-manager simulations; explicit about the short sample for alternative markets.
+
+**Views at the time**
+- (2025-09) US fixed income trend signals have barely moved despite many themes (Fed independence, inflation); a bond breakout could be the next trend catalyst.. Reasoning: Many calls from clients and press on fixed income while signals stay put. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C01-1|C01-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C03-1|C03-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C03-X1|C03-X1]])
+- (2025-09) Bond market already prices cuts; surprise is needed (more cuts than expected or no cut) for a trend.. Reasoning: SOFR near 3.4%; jobs data baked in. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C03-1|C03-1]])
+- (2025-09) Systematic macro did better than trend around Liberation Day; researching economic versus technical trends.. Reasoning: April 2025 results. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C14-2|C14-2]])
+- (2025-09) In 2025 CTA ETFs that did not trade equities did relatively well.. Reasoning: Asset-class tilt example. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C05-X1|C05-X1]])
+
+### Niels Kaastrup-Larsen (Host of Top Traders Unplugged; veteran hedge fund (trend following) manager)
+Fingerprint: #approach/trend_following #approach/policy_reaction_central_banks #approach/manager_selection_allocation #approach/replication_indexing #approach/positioning_crowding #approach/geopolitics #approach/costs_execution
+_Speaker note: Mostly asks questions and relays paper content; his own views are marked here only where he asserts them (bond market, index dispersion, crowding)._
+
+**Worldview premises**
+- Bond yields react strongly to political and budget uncertainty, as UK and French politics show in September 2025. _[empirical, stated; support: Current events.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C01-2|C01-2]])
+- Long yields can rise after rate cuts if investors consider the cuts insufficient or fear inflation, because futures price future rates, not today's. _[theoretical, stated; support: Last cut episode, when yields rose.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C03-2|C03-2]])
+- Index dispersion comes from specific constituents (one outlier in 2009; two discretionary managers in 2014 later removed); do not infer manager risk or the case for replication without understanding the makeup. _[empirical, stated; support: Man AHL paper page 3.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C05-3|C05-3]])
+- Design choices explain return dispersion, so dispersion is the fingerprint of each trend system. _[theoretical, stated; support: Man AHL paper.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C04-2|C04-2]])
+- Flows into alternative markets after their outperformance may have crowded them and raised costs, contributing to recent underperformance; roughly 40-50% of their outperformance came from gas and power tied to the Ukraine shock and cannot be replicated going forward. _[experience, stated; support: From memory; no data.]_ ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C14-1|C14-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C13-1|C13-1]])
+
+**Chain: Cuts that push long yields up**
+1. Fed cuts already expected and shorts in place → Investors judge the cut insufficient or fear inflation: Futures price future, not today's, rates. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C03-2|C03-2]])
+2. Insufficient cut → Long yields rise: Happened at the last cut. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C03-2|C03-2]])
+- Evidence: Last cut episode, recalled.
+- Fails when: Not stated.
+
+**Decision process**
+- [research] Understand an index's makeup and each constituent before drawing conclusions about manager risk or replication.. Why: Outliers and discretionary managers create dispersion. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C05-3|C05-3]])
+- [risk] Test crowding in less-liquid markets, for example with a case study of one market.. Why: Possible role in recent underperformance. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C14-1|C14-1]])
+- [signal] Uses his own Trend Barometer, which uses shorter lookbacks and was weak in September 2025.. Why: Short-term models struggled most on a vol-adjusted basis in 2025. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C04-1|C04-1]])
+
+**Evidence style:** Industry observation, performance indices, and citing papers; asks questions to elicit Kaminski's research.
+
+**Views at the time**
+- (2025-09) CTA September 2025: equities, metals, sugar and oil products supported; livestock paused; managers disagree on fixed income direction.. Reasoning: Descriptive. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C02-1|C02-1]])
+- (2025-09-08) Performance to 8 Sep 2025: BTOP50 +91bp (-1.93% YTD), SG CTA about +1% (about -5.1% YTD), SG Trend +1.25% (-6.5% YTD), short-term traders +66bp (nearly -6% YTD); MSCI World +15.1% YTD, US Aggregate almost +6%, S&P 500 TR +11.74%. CTAs lagged both stocks and bonds in 2025.. Reasoning: Descriptive. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C04-X1|C04-X1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C04-1|C04-1]])
+- (2025-09) UK and French political chaos is a potential driver of bond yields.. Reasoning: Bond yields react to budget uncertainty. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C01-2|C01-2]])
+
+### Disagreements
+- **Why alternative-market trend lagged recently**: Niels Kaastrup-Larsen: Inflows into less-liquid markets may have crowded them and added costs, contributing to underperformance. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C14-1|C14-1]]); Katy Kaminski: Mostly a regime effect: the assets that drove 2020-22 gains went range-bound; crowding is two-edged and untested, so she would like a case study. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C13-X2|C13-X2]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C14-X1|C14-X1]])
+- **How much an index (or replication) says about manager risk**: Niels Kaastrup-Larsen: Index dispersion depends on constituents; do not conclude replication is better without understanding where dispersion comes from. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C05-3|C05-3]]); Katy Kaminski: The index is not investable and managers drift; replication Sharpe differs from actual; look at relative and conditional differences. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C06-1|C06-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C07-1|C07-1]])
+
+### Gaps and conflicts
+- Ledger claim MT220-C03-1 as originally worded had the surprise scenario wrong; the corrected reading (no cut or far more cuts than expected as the shock; a 50bp cut being expected) is used in the map. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C03-1|C03-1]])
+- Liberation Day is described as a magnitude surprise although it is outside the paper's sample; Kaminski says only that she is 'pretty sure'. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C11-1|C11-1]])
+- The causal claim that crowding explains recent alternative-market underperformance is untested; both speakers say so. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C14-1|C14-1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C14-X1|C14-X1]])
+- Alternative-market managers have only about 10 years of history, so conclusions about their long-run Sharpe are weak. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C13-X1|C13-X1]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C12-1|C12-1]])
+- The replication Sharpe gap (0.75 backtest versus 0.36 actual) is explained by lookbacks and manager differences without a quantitative decomposition. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C07-1|C07-1]])
+- The statement that managers in the Man AHL index have dispersion explained by design and the statement that no factor is the main driver leave open how much dispersion is explained at all. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C04-2|C04-2]], [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C09-1|C09-1]])
+- Alternative-market performance claim: 40-50% from gas and power is from the host's memory. ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C13-1|C13-1]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Speakers point to: the Fed decision relative to pricing (a no-cut or much larger cut would be the catalyst for a bond trend), UK and French budget politics for yields, whether gas and power or credit leave their range, and crowding in less-liquid markets. Horizon: the next Fed meeting for bonds; years for the alternative-market diversification argument.
+
+### Reader inferences (not stated by the speakers)
+- (reader) Kaminski's advice to hold two or three different CTAs follows from her finding that no style factor persists and that 3-4% tracking vs the index always remains.
+- (reader) The magnitude/correlation decomposition suggests a manager-level early-warning measure: rising correlation surprise marks regime rotation, rising magnitude surprise marks shock risk.
+- (reader) Alternative markets are defended as diversifiers, not as better trend, so their case does not depend on the 2020-22 outperformance.
 
 ## Coverage
 
@@ -215,6 +327,10 @@ tags: [source, layer0]
   > recently those assets have been very rangebound um after the big shock of co
   indicator: gas and power, credit and other alternative-market trend P&L · asset: commodities · horizon: years · conditions: after 2022 energy shock · testable: yes - sector attribution · confidence: medium
   ^MT220-C13-X2
+- **Katy Kaminski** The Quantica paper does not argue that alternative markets trend better; it argues that they trend and add diversification, with higher costs offsetting part of any extra Sharpe.  #mech/new _(added by map cross-check)_
+  > they don't argue that alt markets trend better per se
+  indicator: Sharpe per market, correlation of P&L streams · asset: multi · horizon: long term · conditions: net of higher costs in exotic contracts · testable: yes: per-market Sharpe net of costs · confidence: medium
+  ^MT220-C13-R1
 
 ### C14
 - **Niels Kaastrup-Larsen** Inflows after the alternative-market outperformance may have crowded less-liquid markets and added transaction costs, contributing to recent underperformance; crowding analysis (case study of one market) would test this.  #mech/crowding_positioning

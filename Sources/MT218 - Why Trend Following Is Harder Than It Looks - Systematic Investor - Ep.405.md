@@ -5,8 +5,8 @@ date: 2026-06-21
 channel: "Top Traders Unplugged"
 url: 
 words: 13905
-claims: 50
-added_by_crosscheck: 10
+claims: 53
+added_by_crosscheck: 13
 corrections: 4
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Niels Kaastrup-Larsen (host)", "Rob Carver (systematic trader and author)"]
@@ -21,6 +21,142 @@ tags: [source, layer0]
 **Approach:** trend following, portfolio optimization, backtest process, CTA
 
 **Cross-check completeness estimate of first read:** 0.82 - the first reader caught the main arguments (drawdown vs Sharpe, skew buckets, trend sleeve neutrality, perpetual futures mechanics, Quantica findings, AI overfitting, Man drawdown paper) but missed the June performance table, the CTA convergent-strategy mix, the small-allocation rebuttal, the cocoa and AUM-incentive points, and the due-diligence process answer.
+
+## Argument map
+
+**Episode thesis:** Rob Carver argues that systematic portfolios should be judged and sized mainly on Sharpe and robust process, not on drawdown, path risk or recent sector performance: drawdowns carry no information beyond Sharpe and history length, sector leadership in trend following rotates by decade because of single-factor macro stories, and a continuous trend-strength signal already tilts toward whichever asset class is trending. Both speakers hold that true diversification (more commodities, fewer correlated financial markets) is the durable edge, that AI-generated strategy ideas are acceptable only if tested through a process that assumes the idea was conceived with hindsight, and that perpetual futures are a structural change that may hurt hedgers and price discovery.
+
+### Rob Carver (Systematic trader, author, runs his own trend plus carry futures portfolio (ex-AHL head of fixed income))
+Fingerprint: #approach/trend_following #approach/carry #approach/research_robustness_overfitting #approach/position_sizing_vol_target #approach/diversification_risk_parity #approach/portfolio_construction_stacking #approach/costs_execution #approach/nowcasting_data
+_Speaker note: Captions carry no speaker labels. Turns were assigned from content: the speaker who mentions his books, his own 9% risk position, 40% non-trend allocation and AHL fixed income is Carver; the one who reads index numbers, the listener question and says 'at Dunn' is the host. The C03 'I did not watch the game' turn and the C13 remark about Yarra also fit the stated split._
+
+**Worldview premises**
+- Sharpe ratio is the right primary lens for adding, sizing or dropping a strategy; drawdown depth and duration add nothing beyond Sharpe and sample length. _[theoretical, stated; support: Statistical argument: ignoring autocorrelation drawdown grows with history and shrinks with Sharpe.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-1|C05-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-2|C05-2]])
+- Per-strategy path-risk and loss-clustering analysis overcomplicates and invites overfitting; it is more sensible at whole-portfolio level. _[experience, stated; support: Preference for simplicity; no data.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-3|C05-3]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-R1|C05-R1]])
+- Almost no CTA is a pure trend follower; the trend vs convergent (carry-like) mix is a design choice, constrained for others by client pools and allocator boxes. _[institutional, stated; support: Observation of industry practice and his own 40% allocation.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-X1|C05-X1]])
+- Skew is a useful label for sorting strategies into trend-like and carry-like buckets, but skew estimates are too statistically unreliable to enter a formal utility function. _[empirical, stated; support: Examples: EM FX carry negative skew, developed bond carry mildly positive; robustness argument.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-4|C05-4]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C06-1|C06-1]])
+- Hundreds of published factors reduce to a handful of independent drivers, so true diversification is less than the count of factors suggests. _[empirical, stated; support: Cites the Alpha Architect piece classifying the factor zoo.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C06-2|C06-2]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C06-X1|C06-X1]])
+- Trend following in equities is on average net long, so part of its return is the equity risk premium rather than trend skill. _[empirical, stated; support: Cites the Beyond Passive Investing post; equities tend to go up.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C07-1|C07-1]])
+- Return autocorrelation of trend strategies is too weak to time entry or exit after drawdowns. _[empirical, stated; support: His own research and a Winton study; no figures quoted.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C12-2|C12-2]])
+- More data is always better; deliberately removing official statistics harms economies and systematic models alike. _[experience, stated; support: Economist view; no data.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C02-3|C02-3]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C03-1|C03-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C03-R1|C03-R1]])
+- Backtest and fitting quality depends more on process than maths, and every idea is formed using future information, whether from AI, data mining or a junior researcher. _[experience, stated; support: Years of research and an upcoming book on backtesting.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C16-2|C16-2]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C17-1|C17-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C18-X1|C18-X1]])
+
+**Chain: Why drawdown adds no information beyond Sharpe**
+1. Longer history → deeper maximum drawdown: Excluding autocorrelation, drawdown scales with the length of the track record. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-2|C05-2]])
+2. Higher Sharpe ratio → smaller drawdown: Better strategies draw down less for the same length. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-2|C05-2]])
+3. Drawdown is a function of Sharpe and history → using it as a separate criterion duplicates Sharpe and adds overfitting risk: Per-component path risk is noisy and overcomplicates the allocation. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-1|C05-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-3|C05-3]])
+- Evidence: Statistical reasoning only.
+- Fails when: He concedes autocorrelation breaks the proportionality and that path risk may matter at whole-portfolio level.
+
+**Chain: Sector dominance in trend following is one factor, not diversification**
+1. Trend P&L by sector rotates by decade (2000-09 broad, 2010-19 fixed income, 2020-26 commodities) → one asset class dominates in each period: Quantica attribution. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C13-1|C13-1]])
+2. One asset class dominates → a single macro story drives all its markets (predictable rate cuts then hikes): Markets in that class move together, so returns are not from diversification. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C14-1|C14-1]])
+3. Single-factor story → shifting weights toward the hot sector lowers diversification: Concentrates risk in one driver. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C14-1|C14-1]])
+4. Continuous trend-strength scaling → already overweights the trending asset class: Signals are larger where trends are stronger, so extra chasing is redundant. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C14-2|C14-2]])
+- Evidence: Quantica paper (null result: tactical sector chasing does not add value).
+- Fails when: Not stated; applies to a continuous-signal system, a binary trader may differ.
+
+**Chain: Trend sleeve inside a 60/40 portfolio**
+1. Trend portfolio is on average net long equities and bonds → part of its return is the equity risk premium: Markets tend to rise. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C07-1|C07-1]])
+2. Sleeve is a small part of a portfolio already holding equity and bond premia → double-counting of premia: Premia already earned in the 60/40. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C07-2|C07-2]])
+3. Make sleeve more neutral (long only when trends are strong) → better overall portfolio for a limited allocation: Lower average beta in the sleeve. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C07-2|C07-2]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C08-X1|C08-X1]])
+- Evidence: Theoretical argument; secondhand from a Substack post he calls complex.
+- Fails when: Not needed if the investor can simply enlarge the CTA bucket or hold only a small sleeve (host's point).
+
+**Chain: Perpetual futures as daily-settled futures**
+1. Variation margin already settles futures cash flows daily → a perpetual future is effectively a daily future with identical cash flows: Compress expiry to one day; a new daily bet opens automatically. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C09-1|C09-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C10-1|C10-1]])
+2. Settlement each day → futures price tracks spot, interest, dividend and storage terms negligible, no rolls: No-arbitrage at each settlement. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C10-1|C10-1]])
+3. Hedgers need dated contracts and liquidity splits across venues → wider spreads, price discovery and concentration in market-maker houses: Dated hedging demand may move to OTC swaps. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C11-2|C11-2]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C12-1|C12-1]])
+- Evidence: Mechanical explanation and analogy to UK daily spread bets; the downside is opinion.
+- Fails when: He does not say; he admits uncertainty about where hedgers will go.
+
+**Chain: AI-assisted idea generation and overfitting**
+1. AI or data mining generates a strategy idea → the idea is contaminated by future information: It is conceived using data from the whole sample. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C17-1|C17-1]])
+2. Contaminated idea → must pass a robust backtest process away from the AI: Process matters more than maths; do not trust the AI's self-evaluation. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C16-2|C16-2]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C18-X1|C18-X1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C16-X1|C16-X1]])
+3. Process output → a probability the idea works, mapped into a portfolio weight: Not a yes/no: 10-15% for an outstanding idea, about 0.01% for a weak one. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C17-2|C17-2]])
+- Evidence: Experience; cites the Wisdom Trading blog.
+- Fails when: If the AI is a public model with unknown training data, or the process is flawed, all bets are off.
+
+**Decision process**
+- [signal] Continuous trend-strength signals rather than binary; weight scales with trend strength.. Why: Automatically leans toward trending asset classes without extra sector-timing. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C14-2|C14-2]])
+- [portfolio] About 40% of the portfolio in convergent, non-trend (carry-like) strategies, higher than CTAs who hold 20-30%.. Why: No client pool or allocator box constraining the mix. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-X1|C05-X1]])
+- [sizing] Weight a strategy by the probability it works: 10-15% for an outstanding idea, about 0.01% for a weak one, so nothing is ever entirely excluded.. Why: No idea has zero chance of working. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C17-2|C17-2]])
+- [risk] Drop a strategy only on very strong statistical evidence of a structural break; evaluate on Sharpe, not drawdown.. Why: Avoid overfitting and noise. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-1|C05-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-2|C05-2]])
+- [risk] Use skew to classify strategies into buckets and cap the negative-skew bucket (illustrated at 30%), not in a formal utility with Sharpe.. Why: Skew estimates are unreliable. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-4|C05-4]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C06-1|C06-1]])
+- [research] Use AI only for ideas and snippets under 10 lines; test every idea in a process designed for hindsight contamination; ask about research steps, checks and out-of-sample design in due diligence.. Why: Checking AI code or backtests costs more than writing it. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C16-2|C16-2]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C16-X1|C16-X1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C17-1|C17-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C18-1|C18-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C18-X1|C18-X1]])
+- [research] When a pattern appears, ask why it happens first, then whether it is exploitable; test the null.. Why: Many patterns do not add return and null results are valuable. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C13-X1|C13-X1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C14-3|C14-3]])
+- [execution] Rolls futures at expiry (IMM dates); perpetuals would remove roll code.. Why: Operational convenience, though he views perpetuals as a net negative for markets. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C09-1|C09-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C12-1|C12-1]])
+- [other] Investing into a fund below its high-water mark gets the first returns without performance fees, unless a separate share class has its own high-water mark (host's correction).. Why: Fee mechanics, separate from any return-timing signal. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C12-3|C12-3]])
+
+**Evidence style:** Statistical first principles and economist reasoning, backed by his own research and secondhand published papers (Quantica, Man, Alpha Architect, Wisdom Trading); little data of his own quoted. Treats null results as informative and warns about low counts of episodes (10-20 drawdowns in 50 years).
+
+**Views at the time**
+- (2026-06 (mid-June)) His own trend portfolio runs a low 9% annualised risk, biggest position a long equity position (pro peace deal), flat energies, so he was not positioned for the oil move.. Reasoning: Trend signals are weak; world is waiting. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C03-3|C03-3]])
+- (2026-06 (mid-June)) Peace deal in the Middle East has been priced in for weeks, so risk is buy the rumour, sell the fact, while oil supply shortages could keep normalisation slow.. Reasoning: Markets had priced the optimistic scenario already. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C04-1|C04-1]])
+- (2026-06 (mid-June)) US statistical data quality is degrading, worrying for economic indicators used as forecasting inputs.. Reasoning: Cuts, secrecy and delayed releases after the shutdown. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C02-3|C02-3]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C03-1|C03-1]])
+- (2026-06 (mid-June)) Perpetual futures are probably not a great development for futures markets generally.. Reasoning: Hedgers need dated contracts; liquidity may split across swaps and market-maker platforms. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C12-1|C12-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C11-2|C11-2]])
+- (2026-06 (mid-June)) Index providers relaxing rules to admit SpaceX is not an entirely responsible move.. Reasoning: Previous profitability and free-float rules (Tesla example) are being torn up. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C01-1|C01-1]])
+
+### Niels Kaastrup-Larsen (Host, Top Traders Unplugged; allocator and manager-selection background)
+Fingerprint: #approach/trend_following #approach/diversification_risk_parity #approach/crisis_alpha_convexity #approach/manager_selection_allocation #approach/regime_detection #approach/portfolio_construction_stacking
+_Speaker note: Host also states positions on index design and trend sleeve sizing; attribution from content (CTA index numbers, 'at Dunn', manager due diligence). Corrections applied: C11-2 split between host (CME lawsuit) and Rob (hedging); C15-1 is the host's conjecture, not a paper result._
+
+**Worldview premises**
+- Do not distort a trend program to fit the rest of the portfolio; adjust the other holdings instead, since sector tweaks change the interaction among all markets. _[experience, stated; support: Gut feel, admits he has not read the paper.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C08-1|C08-1]])
+- Trend following adds access to markets investors cannot easily trade themselves and is unbiased on long or short, e.g. fully short equities in a prolonged crisis. _[theoretical, stated; support: Skimmed paper conclusion.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C08-2|C08-2]])
+- The 2010-19 fixed-income-led decade (zero rates, suppressed inflation) was the odd one out; earlier decades and the 2020s are more diverse and commodity-heavy. _[experience, stated; support: Own recollection of the CTA-winter debate; he explicitly wished the paper covered the 1990s and 1980s.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C15-1|C15-1]])
+- Commodities are the most consistent trend sector in crises, so the best portfolio holds many truly uncorrelated markets rather than a financial-heavy book. _[empirical, stated; support: Unnamed reputable study; philosophy shared by Dunn.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C15-2|C15-2]])
+- Dropping markets that have not recently trended is dangerous: cocoa idled for 15 years and then produced its biggest trend ever. _[experience, stated; support: Cocoa anecdote.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C12-X1|C12-X1]])
+- CTAs drifted toward liquid financial markets because capacity and asset-based fees reward it, not because it is the best portfolio. _[institutional, stated; support: Incentive reasoning.]_ ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C15-X2|C15-X2]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C15-X1|C15-X1]])
+
+**Chain: Why financial-heavy CTA books persist**
+1. Financial futures are more liquid → managers can run more assets: Capacity. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C15-X2|C15-X2]])
+2. Managers are paid on assets managed → incentive to tilt toward financials: Fees scale with capacity. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C15-X2|C15-X2]])
+3. Financial tilt → less true diversification and exposure to equities that have not paid trend followers over 20-25 years: Commodities are the most consistent crisis sector. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C15-2|C15-2]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C15-X1|C15-X1]])
+- Evidence: Recollection of a reputable but unnamed study and data he saw.
+- Fails when: Fixed income will sometimes dominate (he concedes).
+
+**Chain: Perpetual futures and exchange economics**
+1. Futures without expiry → no rolls, lower exchange volume: Rolling generates volume. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C11-2|C11-2]])
+2. Volume loss → CME sues the CFTC, arguing perpetuals are swaps: Exchange revenue at stake. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C11-2|C11-2]])
+- Evidence: News report he picked up that morning.
+- Fails when: Outcome of the lawsuit not discussed.
+
+**Decision process**
+- [portfolio] Build portfolios with as many truly uncorrelated markets as possible, more commodities.. Why: Commodities are the most consistent crisis sector; diversification beats financial concentration. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C15-2|C15-2]])
+- [portfolio] Keep the trend program intact and fix excess equity by selling equity elsewhere; if the sleeve is only 5% do not worry about its equity exposure.. Why: Distorting sectors disrupts interaction across markets. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C08-1|C08-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C08-X1|C08-X1]])
+- [signal] Use a trend barometer as a conditions gauge (36 = weak).. Why: Ties to realised June CTA returns. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C03-2|C03-2]])
+- [other] Do not rotate away from markets that have not trended recently.. Why: Biggest trends can follow long idle periods (cocoa). ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C12-X1|C12-X1]])
+
+**Evidence style:** Industry knowledge and anecdote; relays CTA index data and paper conclusions; admits not having read some papers.
+
+**Views at the time**
+- (2026-06 (mid-June)) Trend conditions weak in June 2026: barometer 36, with weak equities and metals and grains, gains in short rates and the dollar after the hawkish Fed.. Reasoning: Matches the weak June numbers. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C03-2|C03-2]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C04-2|C04-2]])
+- (2026-06 (mid-June)) CTA indices roughly -0.8% to -1.25% in June but about +9% YTD, matching equities year to date.. Reasoning: Index data read out. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C04-X1|C04-X1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C04-2|C04-2]])
+- (2026-06 (mid-June)) New Fed chair Warsh more hawkish than expected: smaller balance sheet, less forward guidance, little appetite for cuts amid inflation.. Reasoning: First FOMC press conference. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C02-1|C02-1]])
+- (2026-06 (mid-June)) Reworking government survey data would hurt economic-trend and systematic macro strategies but not price-based trend followers.. Reasoning: Those strategies use economic releases as inputs. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C02-2|C02-2]])
+
+### Disagreements
+- **Should a trend sleeve be adjusted for the investor's other holdings?**: Rob Carver: For a small sleeve inside a 60/40, make it more neutral (long only on strong trends) to avoid double-counting equity and bond premia; best is a bigger CTA bucket if possible. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C07-2|C07-2]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C08-X1|C08-X1]]); Niels Kaastrup-Larsen: Do not distort the program; sell the excess equity elsewhere, and with only 5% in trend the sleeve's equity exposure is not worth worrying about. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C08-1|C08-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C08-X1|C08-X1]])
+- **Is a trend program's long bias a defect or a feature?**: Rob Carver: Long bias is the equity risk premium, desirable only if trend is the whole portfolio. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C07-1|C07-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C07-2|C07-2]]); Niels Kaastrup-Larsen: The value is access to markets one cannot trade oneself and unbiased long/short exposure, including being fully short in a crisis. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C08-2|C08-2]])
+- **How to respond to sector rotation in trend following**: Rob Carver: No tactical chasing; a continuous signal already tilts to the trending class, and shifting reduces diversification. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C14-1|C14-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C14-2|C14-2]]); Niels Kaastrup-Larsen: Do not drop idle markets and structurally favour commodities and many uncorrelated markets over financial-heavy books. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C12-X1|C12-X1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C15-2|C15-2]])
+
+### Gaps and conflicts
+- Carver endorses diversification yet agrees with tilting the CTA sleeve toward commodities, which is itself a sector weighting call; no rule for how much is stated. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C08-3|C08-3]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C14-1|C14-1]])
+- Carver says path risk is not worth analysing per component but later says the Man paper's joint drawdown analysis is a more rigorous crisis-alpha test; the distinction is portfolio level versus component level, not spelled out. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C05-3|C05-3]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C19-2|C19-2]])
+- Niels's claim that the 1970s-90s looked like 2000-09 and 2020-26 is conjecture; Carver supplies only the 1970s as supporting data. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C15-1|C15-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C16-1|C16-1]])
+- The unnamed 'reputable firm' study that commodities are the most consistent crisis sector is not cited or verified. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C15-2|C15-2]])
+- Neither speaker has read the Beyond Passive Investing paper in detail, and Niels had not read it at all; the neutral-sleeve argument is secondhand. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C07-2|C07-2]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C08-1|C08-1]])
+- The Man paper conclusions are described as statistically weak (10-20 drawdown episodes) yet used as a template for a better crisis-alpha test. ([[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C19-1|C19-1]], [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C19-2|C19-2]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) The speakers give no price predictors. Observable inputs they name: a trend barometer (36 = weak conditions), CTA index returns, strength of trend signals by asset class (continuous signal scaling), policy path (Fed chair Warsh hawkish, balance sheet shrinking), oil supply normalisation after the Hormuz deal, and availability of official economic data for macro-trend models. Horizon is months (monthly CTA returns) to decades (sector regimes), with emphasis on robustness over timing.
+
+### Reader inferences (not stated by the speakers)
+- (reader) Carver's rejection of drawdown and path-risk metrics implies allocation rules built on Sharpe and probability weights, so a vault feature for 'how this investor sizes a new strategy' should record weight as a function of confidence, not pass/fail.
+- (reader) The single-factor story for sector dominance (rate cuts then hikes for fixed income, inflation for commodities in the 1970s and 2020s) suggests that sector leadership in trend following depends on macro regime, which links to a regime-detection test rather than performance chasing.
+- (reader) Niels's incentive argument (assets-based fees favour liquid financials) is a testable proposition for CTA index composition.
+- (reader) Both speakers treat null results (Quantica) as evidence quality signals, a marker for judging which published claims to weight.
 
 ## Coverage
 
@@ -83,6 +219,10 @@ tags: [source, layer0]
   indicator: portfolio risk by sector · asset: multi · direction: long equities, flat energy · horizon: weeks · testable: no · confidence: low
   **Correction (cross-check):** The interpretation that the portfolio 'mostly reflects the market's recent priced-in optimism' is not stated. Rob describes his own book: 9% annualised risk (low), biggest risk a long equity position which he labels 'pro deal', and flat energies; the priced-in remark is a separate comment about the peace deal. → Rob Carver's own trend portfolio was running a low 9% annualised risk, with its largest risk a long equity position (pro peace deal) and no position in energies, so he was not positioned for the oil move.
   ^MT218-C03-3
+- **Rob Carver** Carver believes more data is always better, so deliberately ending collection of official statistics is dangerous for the economy and irritating for computers trading on it.  #mech/structural_shift _(added by map cross-check)_
+  > of the general belief that more data is always better
+  indicator: official statistics availability · asset: multi · testable: no - belief · confidence: high
+  ^MT218-C03-R1
 
 ### C04
 - **Rob Carver** A peace deal that markets had priced in for weeks may produce buy the rumor, sell the fact, while oil supply shortages could keep normalization slow.  #mech/overshoot _(time-bound view)_
@@ -120,6 +260,10 @@ tags: [source, layer0]
   > they'll have, you know, a 20 or a 30% allocation to what you might call divergent strategies.
   indicator: share of non-trend strategies in a CTA program · asset: multi · conditions: the speaker misspeaks 'divergent' and corrects himself to 'convergent' · testable: partly - mix of trend and carry can be backtested · confidence: medium
   ^MT218-C05-X1
+- **Rob Carver** Carver prefers simple evaluation of strategy components and avoids adding path-risk and loss-clustering tests on each one for fear of overfitting.  #mech/new _(added by map cross-check)_
+  > I'm a big fan of keeping things simple
+  indicator: none · asset: multi · conditions: individual strategy components · testable: no - preference · confidence: high
+  ^MT218-C05-R1
 
 ### C06
 - **Rob Carver** Skew estimates are statistically unreliable, so use skew only as a classification device with a cap on the negative-skew bucket, not as a formal utility with Sharpe.  #mech/research_method
@@ -213,6 +357,10 @@ tags: [source, layer0]
   > First of all, is there a reason why this is happening? Are there are there different explanations for why this is happening? And secondly, can I exploit this apparent predictability in some way?
   asset: multi · testable: no - research procedure · confidence: high
   ^MT218-C13-X1
+- **Rob Carver** Quantica tests time-based predictability (after drawdowns) and cross-sectional predictability (which asset classes trend better) together, rather than one at a time.  #mech/new _(added by map cross-check)_
+  > it takes both of those dimensions simultaneously
+  indicator: sector trend performance by decade · asset: multi · horizon: decades · conditions: trend following 2000-2026 · testable: yes - paper replication · confidence: high
+  ^MT218-C13-R1
 
 ### C14
 - **Rob Carver** Dominance of one asset class in trend returns is a single-factor story (e.g. predictable rate cuts and hikes), not diversification, so shifting into the hot sector reduces diversification.  #mech/structural_shift

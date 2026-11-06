@@ -1,0 +1,677 @@
+{
+ "source_id": "MT204",
+ "episode_thesis": "QIS (bank and asset-manager risk-premia indices) is a roughly $1.3tn, opaque, implementation-driven business whose size is uncertain and whose index count reflects customisation, with data mining controlled by culture and explainable performance. Crowding depends on the premium type: allocation-driven roll congestion decayed, vol selling shrinks but stays positive, trend may benefit from early crowding; the main risk is shared-signal externalities. The opening shows 2025 trend dispersion driven by speed around the April V-shape.",
+ "speakers": [
+  {
+   "name": "Nick Balters",
+   "role": "Goldman Sachs QIS/systematic strategies (regular Systematic Investor guest)",
+   "speaker_note": "Name is the caption spelling (likely Nick Baltas). Several ledger claims were mis-assigned to the host; corrections for C11-1 and C15-2 applied here.",
+   "fingerprint": [
+    "replication_indexing",
+    "research_robustness_overfitting",
+    "positioning_crowding",
+    "costs_execution",
+    "portfolio_construction_stacking",
+    "manager_selection_allocation",
+    "trend_following"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "QIS is a rules-based wrapper (like an S&P 500 index or future) that delivers a risk premium cheaply; growth is about implementation and operational ease, not a sudden belief in systematic investing.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Analogy to index futures; own experience at a bank",
+     "claim_ids": [
+      "MT204-C07-2",
+      "MT204-C07-X1",
+      "MT204-C07-3",
+      "MT204-C07-1"
+     ]
+    },
+    {
+     "premise": "Part of QIS growth is substitution (exposure moved from CDA/swap), so reported size overstates genuinely new demand.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Reasoning on reporting; no data",
+     "claim_ids": [
+      "MT204-C06-1"
+     ]
+    },
+    {
+     "premise": "Reported QIS size is uncertain both ways: notional conventions, double counting between banks and managers, and unreported hedge-fund premia.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Reporting conventions; own guess of $600bn +/- $100bn for brokers 'making it up'",
+     "claim_ids": [
+      "MT204-C05-1",
+      "MT204-C05-2",
+      "MT204-C06-X1"
+     ]
+    },
+    {
+     "premise": "Thousands of indices exist because of client customisation (net vs gross return, exclusions), not serial replacement after overfitting.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Examples from practice",
+     "claim_ids": [
+      "MT204-C09-1",
+      "MT204-C09-2",
+      "MT204-C09-X1"
+     ]
+    },
+    {
+     "premise": "Data mining is unavoidable; it is controlled by product culture and by explaining performance, not by process changes after drawdowns.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own role in product teams",
+     "claim_ids": [
+      "MT204-C12-1",
+      "MT204-C12-2",
+      "MT204-C12-R1",
+      "MT204-C13-1"
+     ]
+    },
+    {
+     "premise": "Crowding depends on the premium type: allocation-driven premia (roll congestion) can vanish; risk-sharing premia (vol selling) shrink but stay positive because entry barriers rise; behavioural premia (trend) may benefit from early crowding.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Car-insurance analogy; 2018-19 internal report on commodity congestion",
+     "claim_ids": [
+      "MT204-C14-3",
+      "MT204-C15-1",
+      "MT204-C15-2",
+      "MT204-C15-X1"
+     ]
+    },
+    {
+     "premise": "Capacity is a binding design constraint; nothing is built for infinite scale and banks can close indices.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Practice",
+     "claim_ids": [
+      "MT204-C11-2",
+      "MT204-C11-3",
+      "MT204-C11-X1"
+     ]
+    },
+    {
+     "premise": "The main crowding risk is externality: many investors with similar 60/40 plus overlay products deleverage on the same macro signals.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning, no data",
+     "claim_ids": [
+      "MT204-C15-4"
+     ]
+    },
+    {
+     "premise": "Flows follow index performance; non-delivery of the premium dries up volume.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Business logic",
+     "claim_ids": [
+      "MT204-C16-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Commodity roll congestion: decay and revival",
+     "steps": [
+      {
+       "from": "passive index investors must roll on a predictable schedule",
+       "to": "net supply/demand on roll days moves prices",
+       "why": "market inelastic to this passive flow",
+       "claim_ids": [
+        "MT204-C14-1"
+       ]
+      },
+      {
+       "from": "pre-positioning before benchmark rolls",
+       "to": "liquidity premium (congestion trade)",
+       "why": "provides liquidity ahead of passive flows",
+       "claim_ids": [
+        "MT204-C14-1"
+       ]
+      },
+      {
+       "from": "passive roll demand shrank (smarter, enhanced beta exposures)",
+       "to": "market became elastic, trade flattened 2015-18",
+       "why": "flat, not negative, so not crowding by QIS",
+       "claim_ids": [
+        "MT204-C14-2",
+        "MT204-C13-3"
+       ]
+      },
+      {
+       "from": "commodity demand returned after Russia-Ukraine",
+       "to": "trade returned in 2022",
+       "why": "passive demand re-emerged",
+       "claim_ids": [
+        "MT204-C14-2"
+       ]
+      }
+     ],
+     "evidence": "Internal 2018-19 report; performance path",
+     "fails_when": "Passive demand disappears (no premium) or QIS traders crowd (negative returns)",
+     "claim_ids": [
+      "MT204-C14-1",
+      "MT204-C14-2",
+      "MT204-C14-3"
+     ]
+    },
+    {
+     "topic": "Crowding by premium type",
+     "steps": [
+      {
+       "from": "risk-sharing premium (vol selling)",
+       "to": "competition lowers returns",
+       "why": "insurance price falls with more sellers",
+       "claim_ids": [
+        "MT204-C15-1"
+       ]
+      },
+      {
+       "from": "lower returns",
+       "to": "barrier to entry rises",
+       "why": "fewer willing sellers below a threshold, so premium stays positive",
+       "claim_ids": [
+        "MT204-C15-1"
+       ]
+      },
+      {
+       "from": "many similar products and overlays react to the same macro signal",
+       "to": "simultaneous deleveraging, correlations unseen in backtests",
+       "why": "externality",
+       "claim_ids": [
+        "MT204-C15-4"
+       ]
+      }
+     ],
+     "evidence": "Analogy and reasoning",
+     "fails_when": "Not tested; flows can reverse when indices underperform",
+     "claim_ids": [
+      "MT204-C15-1",
+      "MT204-C15-4",
+      "MT204-C16-1"
+     ]
+    },
+    {
+     "topic": "Why option wrappers on carry indices are tricky",
+     "steps": [
+      {
+       "from": "short-vol carry index earns premium for bearing occasional spikes",
+       "to": "buying a call on it removes the premium",
+       "why": "circular: the premium compensates the risk the call removes",
+       "claim_ids": [
+        "MT204-C10-1"
+       ]
+      },
+      {
+       "from": "vol-targeting makes momentum less negatively skewed",
+       "to": "option pricing on top is easier",
+       "why": "moderates negative skew",
+       "claim_ids": [
+        "MT204-C10-2"
+       ]
+      },
+      {
+       "from": "vol-targeting a strategy that recovers after spikes",
+       "to": "cuts exposure when rebound begins",
+       "why": "sub-optimal profile",
+       "claim_ids": [
+        "MT204-C11-1"
+       ]
+      }
+     ],
+     "evidence": "Economic reasoning",
+     "fails_when": "Strategies with linear, vol-controlled payoffs",
+     "claim_ids": [
+      "MT204-C10-1",
+      "MT204-C10-2",
+      "MT204-C11-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Control data mining via culture: call it out, treat tweaks as data-mined, ensure tweaks are not designed to make Sharpe look better after a drawdown.",
+     "why": "Unavoidable bias",
+     "claim_ids": [
+      "MT204-C12-1",
+      "MT204-C12-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Justify strategy changes by explaining recent performance, not repairing it.",
+     "why": "Client trust: explainable underperformance is acceptable, unexplained is worst",
+     "claim_ids": [
+      "MT204-C12-2",
+      "MT204-C13-1"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Design indices for capacity; broader universes with frontier or illiquid assets support only a fraction of capacity.",
+     "why": "Profitability depends on scale",
+     "claim_ids": [
+      "MT204-C11-2",
+      "MT204-C11-X1",
+      "MT204-C08-3"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Close an index when it cannot be run without market impact.",
+     "why": "Protect investors and market",
+     "claim_ids": [
+      "MT204-C11-3"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Product development has four drivers: academic research, client appetite shifting to outcomes (defensive, yield, inflation, regime), technology, and market evolution.",
+     "why": "Describes how the product pipeline works",
+     "claim_ids": [
+      "MT204-C08-2"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Clients add timing and sizing on top of QIS implementation.",
+     "why": "QIS supplies implementation, not alpha",
+     "claim_ids": [
+      "MT204-C07-3"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Intraday momentum became crowded via QIS wrappers in 2021-22: defensive payoff intact but cost of carry up.",
+     "why": "Evidence of wrapper-driven crowding",
+     "claim_ids": [
+      "MT204-C15-3"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Most volume is delta-1 swaps; option wrappers are a small share rising from insurers.",
+     "why": "Client demand for capped loss",
+     "claim_ids": [
+      "MT204-C09-2",
+      "MT204-C10-R1"
+     ]
+    }
+   ],
+   "evidence_style": "Practitioner reasoning and economic analogies; an internal report on commodity congestion; no backtest data shown on air.",
+   "current_views": [
+    {
+     "view": "The $1.3tn QIS figure could be too high (double counting, substitution) or too low (unreported hedge funds).",
+     "as_of": "2025-10-30",
+     "reasoning": "Reporting conventions",
+     "claim_ids": [
+      "MT204-C05-1",
+      "MT204-C06-X1",
+      "MT204-C06-1"
+     ]
+    },
+    {
+     "view": "Equity market kept absorbing negative news: a fragile vs resilient pendulum into November.",
+     "as_of": "2025-10-30",
+     "reasoning": "Observation",
+     "claim_ids": [
+      "MT204-C01-1"
+     ]
+    },
+    {
+     "view": "Fixed income and FX are in a growth phase within QIS.",
+     "as_of": "2025-10-30",
+     "reasoning": "Historic equity-centred academic work",
+     "claim_ids": [
+      "MT204-C05-X1",
+      "MT204-C05-3",
+      "MT204-C04-4"
+     ]
+    },
+    {
+     "view": "Crowding concerns about QIS are generally overstated but not absent.",
+     "as_of": "2025-10-30",
+     "reasoning": "Premium-by-premium analysis",
+     "claim_ids": [
+      "MT204-C15-X1"
+     ]
+    },
+    {
+     "view": "Dispersion in trend returns in 2025 is mostly explained by speed around the April V-shape.",
+     "as_of": "2025-10-30",
+     "reasoning": "Mid-speed whipsaw (hedged: 'not much data')",
+     "claim_ids": [
+      "MT204-C03-3"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Morris Seabirds",
+   "role": "Host standing in for Niels Kaastrup-Larsen; runs a systematic CTA book (uses 'we')",
+   "speaker_note": "Name is the caption spelling (likely Moritz Seibert). Attributions in the ledger follow the corrections list. A shared voice with Balters in places.",
+   "fingerprint": [
+    "trend_following",
+    "short_term_systematic",
+    "research_robustness_overfitting",
+    "position_sizing_vol_target",
+    "costs_execution",
+    "regime_detection"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "The dispersion of 2025 trend-following returns is driven by trading speed around the April V-shape, worth about 10% for the year.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own book and index comparison; 'not that I have too much data to support it'",
+     "claim_ids": [
+      "MT204-C03-2",
+      "MT204-C02-X1"
+     ]
+    },
+    {
+     "premise": "Equity risk premium is about 6-8%, but the last five years delivered 15-20% annually except 2022.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Recall, not data",
+     "claim_ids": [
+      "MT204-C02-2"
+     ]
+    },
+    {
+     "premise": "Reacting to the last drawdown (SVB, dollar-yen, April) by tweaking systems is a recipe for underperformance.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own practice",
+     "claim_ids": [
+      "MT204-C13-2"
+     ]
+    },
+    {
+     "premise": "Many new risk-premium indices are small twists on existing ones, a sign of launch pressure and over-optimisation.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Inbound pitches",
+     "claim_ids": [
+      "MT204-C12-X1"
+     ]
+    },
+    {
+     "premise": "Hedge funds buy intraday momentum and vol strategies from banks because of operational burden.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Observation",
+     "claim_ids": [
+      "MT204-C08-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "April 2025 V-shape and system speed",
+     "steps": [
+      {
+       "from": "April equity sell-off then recovery",
+       "to": "fast systems capture the V; slow systems ride it",
+       "why": "speed decides exposure at the turning points",
+       "claim_ids": [
+        "MT204-C03-3"
+       ]
+      },
+      {
+       "from": "medium speed",
+       "to": "whipsawed at the worst time",
+       "why": "delivered exposure just as market recovered",
+       "claim_ids": [
+        "MT204-C03-3"
+       ]
+      },
+      {
+       "from": "long-term system stopped out of nearly all equity indices",
+       "to": "re-entry only by July-August",
+       "why": "exits to flat (no-trade zone), wait for a new signal",
+       "claim_ids": [
+        "MT204-C04-1",
+        "MT204-C04-2"
+       ]
+      }
+     ],
+     "evidence": "Own book experience",
+     "fails_when": "Not tested on data",
+     "claim_ids": [
+      "MT204-C03-2",
+      "MT204-C04-1",
+      "MT204-C04-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Exits are trailing stops or other rules that go to flat; no forced reversal to short.",
+     "why": "Neutral zone avoids reversing into the whipsaw",
+     "claim_ids": [
+      "MT204-C04-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Do not change the system after a drawdown.",
+     "why": "Last-drawdown tweaking harms results",
+     "claim_ids": [
+      "MT204-C13-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Question new indices that are minor twists on old ones.",
+     "why": "Overfitting and product-for-product's-sake",
+     "claim_ids": [
+      "MT204-C12-X1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Watch the commodity roll (days 5-9) liquidity trade, now largely decayed.",
+     "why": "Example of crowding",
+     "claim_ids": [
+      "MT204-C13-3"
+     ]
+    }
+   ],
+   "evidence_style": "Own CTA book results and index data.",
+   "current_views": [
+    {
+     "view": "As of 29 Oct 2025 S&P +18% YTD and MSCI World +22% decoupled from CTA indices (BTop50 +2.35%, trend ~flat, short-term traders -4.6%).",
+     "as_of": "2025-10-29",
+     "reasoning": "Performance update",
+     "claim_ids": [
+      "MT204-C02-1",
+      "MT204-C02-X1"
+     ]
+    },
+    {
+     "view": "October trend gains in precious metals and livestock gave back after about 20 October.",
+     "as_of": "2025-10-29",
+     "reasoning": "Reversals in palladium, gold, silver, platinum and cattle",
+     "claim_ids": [
+      "MT204-C02-3"
+     ]
+    },
+    {
+     "view": "Rates were the main whipsaw in 2025; currencies second worst; equities the only clearly positive sector.",
+     "as_of": "2025-10-29",
+     "reasoning": "Own attribution",
+     "claim_ids": [
+      "MT204-C03-1",
+      "MT204-C03-X1"
+     ]
+    },
+    {
+     "view": "Long-term system exited almost all equity markets in April and re-entered July-August.",
+     "as_of": "2025-10",
+     "reasoning": "Own book",
+     "claim_ids": [
+      "MT204-C04-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Can the QIS size be trusted / how much is genuine growth",
+   "positions": [
+    {
+     "speaker": "Morris Seabirds",
+     "position": "Takes the Alborne $1.3tn as a large and growing figure but flags delta/leverage ambiguity and double counting.",
+     "claim_ids": [
+      "MT204-C04-3",
+      "MT204-C06-X1"
+     ]
+    },
+    {
+     "speaker": "Nick Balters",
+     "position": "Figure is uncertain both ways, partly substitution; broker-dealer ~$600bn +/- $100bn is a guess.",
+     "claim_ids": [
+      "MT204-C05-1",
+      "MT204-C05-2",
+      "MT204-C06-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Trend following and early crowding",
+   "positions": [
+    {
+     "speaker": "Nick Balters",
+     "position": "Behavioural strategies like trend may benefit from early crowding; risk is negative skew management.",
+     "claim_ids": [
+      "MT204-C15-2"
+     ]
+    },
+    {
+     "speaker": "Morris Seabirds",
+     "position": "Asks if QIS crowding has removed premia as in roll congestion (the commodity roll trade has decayed).",
+     "claim_ids": [
+      "MT204-C13-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Why the congestion trade flattened",
+   "positions": [
+    {
+     "speaker": "Morris Seabirds",
+     "position": "Suggests enough money crowded in so the effect has gone away.",
+     "claim_ids": [
+      "MT204-C13-3"
+     ]
+    },
+    {
+     "speaker": "Nick Balters",
+     "position": "Flat, not negative, so elastic market not QIS crowding.",
+     "claim_ids": [
+      "MT204-C14-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "QIS size, broker-dealer estimate and the survey's reporting conventions are acknowledged guesses.",
+   "claim_ids": [
+    "MT204-C05-1",
+    "MT204-C05-2",
+    "MT204-C04-3"
+   ]
+  },
+  {
+   "issue": "Crowding conclusions rest on analogy and one internal report; no data presented.",
+   "claim_ids": [
+    "MT204-C14-2",
+    "MT204-C15-1",
+    "MT204-C15-X1"
+   ]
+  },
+  {
+   "issue": "Speed explanation of 2025 dispersion is hedged as unsupported by data by the speaker.",
+   "claim_ids": [
+    "MT204-C03-2",
+    "MT204-C03-3"
+   ]
+  },
+  {
+   "issue": "Claim that equity momentum benefits from vol targeting asserted without evidence.",
+   "claim_ids": [
+    "MT204-C10-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "Observable inputs: client flows into QIS, index performance versus promised premium, passive roll demand in commodities, simultaneous deleveraging in 60/40 plus overlay products, tech and listed options market evolution. Horizon: years for product cycles; flows react to underperformance.",
+ "reader_inferences": [
+  "This episode is about market structure of derivatives wrappers, not return forecasting; its testable implications are about premium durability by type (allocation, risk-sharing, behavioural).",
+  "Both speakers work in this industry, so statements on crowding and data mining are self-reported practice."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT204-C12-R1",
+   "chunk": "C12",
+   "speaker": "Nick Balters",
+   "quote": "if I were to show you like 10 back tests, you would basically drop the bottom one",
+   "claim": "Balters: data mining cannot be avoided because anyone shown ten backtests discards the worst one without thinking; the control is awareness and culture, not elimination.",
+   "mechanism": "data_mining",
+   "asset_class": "multi",
+   "indicator": "backtest selection bias",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - process statement",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "sonnet-map"
+  },
+  {
+   "claim_id": "MT204-C10-R1",
+   "chunk": "C10",
+   "speaker": "Morris Seabirds",
+   "quote": "the only party that will quote a price is you",
+   "claim": "Morris: for a call option on a QIS index, the issuing bank is effectively the only liquidity source, so it protects its book with vol control and quotes wide premia.",
+   "mechanism": "liquidity_provider_risk",
+   "asset_class": "multi",
+   "indicator": "option on QIS index",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "bank-quoted option wrappers",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-map"
+  },
+  {
+   "claim_id": "MT204-C07-R1",
+   "chunk": "C07",
+   "speaker": "Nick Balters",
+   "quote": "the primary users in the early days were either asset owners",
+   "claim": "Balters: early QIS users were asset owners (pensions, sovereign wealth funds) and asset managers; the client base later widened to private banks and hedge funds.",
+   "mechanism": "client_base",
+   "asset_class": "multi",
+   "indicator": "QIS client mix",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "since ~2010",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-map"
+  }
+ ]
+}

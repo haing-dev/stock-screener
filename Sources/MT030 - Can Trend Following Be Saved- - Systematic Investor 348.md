@@ -5,8 +5,8 @@ date: 2025-05-22
 channel: "Top Traders Unplugged"
 url: 
 words: 14224
-claims: 61
-added_by_crosscheck: 7
+claims: 63
+added_by_crosscheck: 9
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Andrew Beer (DBi, replication ETF manager)", "Niels Kaastrup-Larsen (host, hedge fund manager)"]
@@ -21,6 +21,143 @@ tags: [source, layer0]
 **Approach:** trend following, CTA drawdowns, replication, allocator behaviour
 
 **Cross-check completeness estimate of first read:** 0.89 - first reader captured nearly all arguments and numbers with correct speakers; missed some reasoning steps (price-as-information logic, timing luck), fee history and internalisation incentives.
+
+## Argument map
+
+**Episode thesis:** Andrew Beer argues that Trump-era policy noise has produced sentiment head fakes that punished short-term models, vol controls and alternative-market additions, that the core medium to long-term trend beta is cheap and works against slow-by-design investors, and that managers' added complexity must be proven against cheap replication. Niels adds that drawdowns precede new highs, questions whether medium-term is a haven, and judges managers by relative performance.
+
+### Andrew Beer (Founder/manager of DBi (Dynamic Beta investments), runs a managed-futures replication ETF (DBMF); former allocator ('alligator'-style questions); Systematic Investor guest)
+Fingerprint: #approach/trend_following #approach/replication_indexing #approach/costs_execution #approach/manager_selection_allocation #approach/behavioral_sentiment #approach/research_robustness_overfitting #approach/policy_reaction_central_banks #approach/structural_themes
+_Speaker note: Guest; named in the host intro. Ledger correction applied to C11-1 (early 2024, before the election). In C17 the remark about a president with an economic interest in an alternative to the dollar (ledger C17-X2, labelled Andrew) reads in the transcript as Niels speaking just before Andrew resumes; mapped to Niels. 'Alligator' in the captions is 'allocator'._
+
+**Worldview premises**
+- Trump-era policy is noisy: announcements are picked without analysis (Liberation Day tariffs), negotiation is the goal, consistency and 'first do no harm' do not bind, so signals reverse and macro views built on them are hard to trade. _[experience, stated; support: Personal anecdote about New York real estate negotiating culture; Bloomberg quote about allocator difficulty distinguishing signal.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C05-4|C05-4]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C06-1|C06-1]])
+- Short-term trend models take headline-driven moves at face value, get head-faked two or three times en route to a trend and so have roughly zero Sharpe over time; medium to long-term models wait for confirmation. _[theoretical, stated; support: Reasoning and narrative observation; he says he has 'no concrete evidence'.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-1|C07-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-3|C07-3]])
+- Since 2022 there were five vicious reversals (inflation not falling, SVB, Powell pivot, growth fear plus yen unwind, Liberation Day), producing repeated drawdowns. _[empirical, stated; support: Event list.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-2|C07-2]])
+- Medium to long-term trend models are the core that worked for 50 years and may outperform innovations added to protect against whipsaws. _[empirical, stated; support: Track record of 50 years; economic rationale (information) offered.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-4|C07-4]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C13-1|C13-1]])
+- Managers who pitched better risk control and innovation (short models, vol controls, position management, alternative markets) suffered worse drawdowns than the space (SG CTA -15% y/y to April 2025, matching the worst since 2000). _[empirical, stated; support: Observed drawdown numbers; admits not knowing exactly why.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-4|C08-4]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-5|C08-5]])
+- Price moves reflect two competing components, changing information and changing sentiment; managed futures win when they detect true changes in information early, so alpha is contrarian. _[theoretical, stated; support: Reasoning; examples: early 2024 Trump trade, short Treasuries in September 2020.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C10-3|C10-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C11-1|C11-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C11-2|C11-2]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C11-X1|C11-X1]])
+- Since April 2024 information changed little but sentiment head fakes produced a 15% drawdown through a series of 2-5% drops; trend works if real information eventually outweighs sentiment noise. _[empirical, stated; support: Compared with his own 2022-2023 drawdown.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C11-3|C11-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C11-4|C11-4]])
+- Managed futures has no intrinsic-value anchor and cuts losers, so 'cheaper means rebound' arguments from value investing do not apply; communication must rest on the information story. _[theoretical, stated; support: Contrast with Buffett/Graham.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C10-2|C10-2]])
+- Trend alpha is earned against slow-by-design investors (60/40 holders, pensions) whose structural constraints prevent change even when they believe inflation or dollar risk is back; that edge can be captured with a few liquid instruments such as the 10-year Treasury. _[theoretical, stated; support: Argument from investor constraints; replication tracking.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C18-1|C18-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C18-2|C18-2]])
+- Alternative markets mostly provide diversification and do not trend more; managers adding complexity (more markets, vol controls, short-term models) should prove it by backtesting against the model of 3 and 6 years ago. _[empirical, stated; support: Researchers he respects found no evidence of more trend.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C14-2|C14-2]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C14-3|C14-3]])
+- Model overhauls can go either way (AQR rebuilt models and is doing very well, yet underperformed the other 19 SG CTA constituents by 20% in 2014-2020). _[empirical, stated; support: One firm example.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C14-4|C14-4]])
+- The core trend beta was commoditised in the early 2010s (bank QIS products, GSA's 50bp product), pushing managers to differentiate through features; fees must be justified against cheap alternatives, with 300-400bp of added value per extra 100bp of fees. _[institutional, stated; support: Industry history, cost figures (8bp vs about 200bp trading costs).]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C13-1|C13-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C15-2|C15-2]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C16-2|C16-2]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C16-3|C16-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C13-X1|C13-X1]])
+- Flow-chasing is recurrent: a fund with lucky positioning in March 2020 reached $5bn and then lagged; narrative follows luck; dispersion in April 2025 reflects rebalance timing luck. _[behavioural, stated; support: Unnamed fund anecdote and personal experience of Monday rebalances.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C14-1|C14-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-X1|C08-X1]])
+- Institutions internalise trend following not only for cost but for career/status reasons; large seeders historically demanded position transparency (an early replication). _[institutional, stated; support: Industry anecdotes.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C04-X1|C04-X1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C04-X2|C04-X2]])
+- Bonds have failed since 2020; allocators cannot admit the mistake of holding 40% in bonds, so trend will enter wealth portfolios, with musical chairs after poor performance. _[behavioural, stated; support: Late 2010s precedent.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C19-3|C19-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C19-4|C19-4]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C17-X1|C17-X1]])
+- Managed futures should be about a 3% allocation and must be sold to wealth managers with a narrative fitting their constructs. _[experience, stated; support: Own view repeated 'a couple of years ago'.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C20-3|C20-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C20-4|C20-4]])
+
+**Chain: Whipsaw to short-term model failure**
+1. Policy noise / headline-driven moves → Short-term models enter trends early: They take news at face value ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-1|C07-1]])
+2. Entry on noise → Head fakes two or three times: Zero Sharpe over time ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-3|C07-3]])
+3. Repeated head fakes in a succession of 2-5% drops → Drawdown without time to recover: Like his 2022-2023 drawdown ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C11-3|C11-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-2|C07-2]])
+- Evidence: SG CTA -15% y/y to April 2025; managers with short models and vol controls worse than space.
+- Fails when: Short-term models still help in single sharp events such as SVB.
+
+**Chain: Information vs sentiment**
+1. Price move → Informed participants know something: Fundamental analyst's 'who knows what I don't?' question ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C11-X1|C11-X1]])
+2. Early detection across many markets → Capture of change in information: September 2020 short Treasuries when yields rose 0.50 to 0.70; early 2024 Trump trade ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C11-1|C11-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C11-2|C11-2]])
+3. Sentiment head fakes → Whipsaw losses: Information unchanged since April 2024 ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C11-3|C11-3]])
+4. Eventual large change in information → Trend payoff outweighs noise: Policy risk spirals; inflation up and confidence in dollar lost ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C11-4|C11-4]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C12-1|C12-1]])
+- Evidence: Examples above.
+- Fails when: If nothing breaks and noise persists.
+
+**Chain: Structural edge: slow investors**
+1. 60/40 and pension investors slow by design and justified by assumptions → Can't change when the world changes: E.g. inflation never returning ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C18-1|C18-1]])
+2. Their inability to change → Managed futures earn against them: Alpha not zero-sum between managers ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C18-1|C18-1]])
+3. This edge lives in the main liquid markets → Replication with few instruments suffices: Niche markets (palm oil) add little ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C18-2|C18-2]])
+- Evidence: Replication results since 2016 (met promised numbers).
+- Fails when: Replicator slow at SVB and second Powell pivot in 2023.
+
+**Chain: Complexity vs cost**
+1. More markets, vol controls, short-term models → Higher fees and trading costs: About 200bp vs 8bp trading costs ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C16-3|C16-3]])
+2. Each extra 100bp of fees → Need 300-400bp of added value: Added complexity also raises trading costs ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C16-2|C16-2]])
+3. Cheap replicators and bank products as benchmarks → Managers must justify fees vs alternatives: Investable comparator ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C15-2|C15-2]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C17-X1|C17-X1]])
+- Evidence: Cost figures quoted from memory for competitors.
+- Fails when: Replicators also over-promised (Niels: 300-400bp claim became 50bp).
+
+**Decision process**
+- [research] Ask managers to backtest announced enhancements against the model of 3 and 6 years ago.. Why: Complexity can be tested; avoid brand-based selection. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C14-3|C14-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C17-X1|C17-X1]])
+- [portfolio] Core of medium to long-term trend models; short-term models as risk where policy is noisy.. Why: Worked for 50 years. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-4|C07-4]])
+- [portfolio] Trade only about 10 super-liquid contracts in replication (10-year Treasury etc.).. Why: Edge is against slow investors; costs about 8bp. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C16-3|C16-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C18-2|C18-2]])
+- [execution] Weekly rebalancing in the replicator (Mondays); outcomes depend on timing luck.. Why: Cheap, systematic. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-X1|C08-X1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C16-1|C16-1]])
+- [sizing] Managed futures at about 3% of a portfolio.. Why: Visible in a 2022-type event, hidden in 2025. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C20-3|C20-3]])
+- [research] Judge managers against cheap benchmarks and fee premium: 300-400bp added value per 100bp of fees.. Why: Beta is commoditised. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C16-2|C16-2]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C15-2|C15-2]])
+
+**Evidence style:** First principles and market-structure narrative, supported by recent drawdown numbers, fee/cost arithmetic and anecdotes; openly says he has no concrete evidence for the short-term-model explanation and could be wrong.
+
+**Views at the time**
+- (2025-05-22) The last 12 months are among the worst for trend following; SG CTA down 15% y/y to April 2025.. Reasoning: Whipsaws from sentiment. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-4|C08-4]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C11-3|C11-3]])
+- (2025-05-22) Short-term models may be a large negative in this policy regime; medium to long-term core may do better.. Reasoning: Head fakes; 2016-2020 'long winter'. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-3|C07-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-4|C07-4]])
+- (2025-05-22) Big things will break (inflation up, dollar confidence lost) as policy risk-taking spirals, creating the money-making opportunity.. Reasoning: Information change should outweigh sentiment. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C12-1|C12-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C11-4|C11-4]])
+- (2025-05-22) Expect musical chairs: managers fired, some leave the space, money flows to recent winners; stacked products delayed; allocation about 3%.. Reasoning: Late-2010s precedent; April 2025 weakness (a UCITS fund $200m weekly outflow). ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C19-4|C19-4]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C20-1|C20-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C20-2|C20-2]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C20-3|C20-3]])
+- (2025-05-22) Bonds have failed since 2020, which will drive trend into wealth portfolios.. Reasoning: Inflation not transitory; high stock-bond correlation. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C19-3|C19-3]])
+
+### Niels Kaastrup-Larsen (Host, Top Traders Unplugged; hedge fund manager and CTA industry insider)
+Fingerprint: #approach/trend_following #approach/manager_selection_allocation #approach/regime_detection #approach/policy_reaction_central_banks #approach/research_robustness_overfitting #approach/crisis_alpha_convexity #approach/behavioral_sentiment
+_Speaker note: Host; offers data (barometer, index returns, lookback tests, drawdown ratios) and takes positions in several places (judging managers on relative performance, trend coming back)._
+
+**Worldview premises**
+- Tariff-driven reshoring is unrealistic near term (Apple's supply chain in China), making trade-war policy hard to trade on fundamentals. _[experience, stated; support: Cites the Patrick McGee book; $275bn pledged 2016-2021.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C03-1|C03-1]])
+- Institutions internalise trend following (a sovereign wealth fund redeemed from external trend followers around 2007 after hosting staff; also via QIS swaps). _[experience, stated; support: Personal experience as former CEO.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C03-2|C03-2]])
+- May 2025 was a hostile environment: barometer 25; SG Trend down about 3% (down 12% YTD), SG CTA down 8.69% YTD, BTOP50 down 5.25%; very few tradable trends; losses mainly from fixed income and precious metals. _[empirical, stated; support: Index numbers.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C05-1|C05-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C05-2|C05-2]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C05-3|C05-3]])
+- In his YTD 2025 test varying only lookback, 20-day beat 60-day, which beat 260-day; 130-day was worst, so medium-term was not a safe haven; many CTAs prefer medium term for capacity reasons. _[empirical, stated; support: Internal test.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-1|C08-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-2|C08-2]])
+- Whipsaw protection may come from improved risk management rather than model speed. _[theoretical, stated; support: Own team's approach.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-3|C08-3]])
+- A cycle alternates between strong central banks/weak politicians and the reverse; 2025 resembles strong politicians and weak central banks. _[theoretical, stated; support: Reading from a cycle author followed 15 years ago.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C09-1|C09-1]])
+- Even 20-40 year managers hit their worst drawdowns in 2025, consistent with longevity eventually producing a worst period; trend will make new highs again. _[empirical, stated; support: Observation and conversation with Nick Bolters.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C09-2|C09-2]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C09-3|C09-3]])
+- Trend following is declared dead after drawdowns, usually the best time to buy or add; drawdowns precede strong periods (2012-2013 worst then best years). _[empirical, stated; support: History.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C10-1|C10-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C17-1|C17-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C19-2|C19-2]])
+- Bonds had about five reversals in 12 months; equities, dollar and energies also reversed, tricking managers into flipping exposure. _[empirical, stated; support: Market observation.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C12-2|C12-2]])
+- Max drawdown relative to annualised volatility over 12 years is worst for bonds and not better for equities than for many CTAs, so current CTA drawdowns are not extreme in relative terms. _[empirical, stated; support: Own chart.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C12-3|C12-3]])
+- The alternative-markets-trend-better narrative worked for a couple of years then failed for three to four years as momentum vanished when people crowded in. _[empirical, stated; support: Recent history.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C12-4|C12-4]])
+- Managers should be judged on relative performance, not asked to justify individual model changes; replicators also over-promise (300-400bp became about 50bp). _[experience, stated; support: Allocator-judging stance.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C15-1|C15-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C15-3|C15-3]])
+- The 10-year yield keeps returning to about 4.5% and rates could be where markets break. _[behavioural, stated; support: Market observation; timing unknown.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C17-2|C17-2]])
+- Managers with few markets, large risk in smaller markets and static sizing had top 5-year returns but outsized losses now; return-stacked products behave exactly as designed when CTA alpha is negative and equity beta recovers. _[empirical, stated; support: Observations.]_ ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C18-3|C18-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C19-1|C19-1]])
+
+**Chain: Drawdown to recovery**
+1. Longevity and many fronts of adverse markets → Worst drawdown for veteran managers: Chance of a worst period rises with time ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C09-2|C09-2]])
+2. Models adjust and markets begin trending → New highs: Past recoveries (2012-2013 then best years) ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C09-3|C09-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C17-1|C17-1]])
+3. Investor emotion → Redemptions at the low: Declared dead, best time to buy ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C10-1|C10-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C19-2|C19-2]])
+- Evidence: 2012-2013 worst drawdown followed by five flat years then best years.
+- Fails when: Behavioural redemptions; unknown timing.
+
+**Decision process**
+- [research] Vary only the lookback to test speed; do not assume medium term is safe.. Why: Test showed 20-day best, 130-day worst. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-1|C08-1]])
+- [risk] Seek whipsaw protection via risk management rather than faster models.. Why: Own experience. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-3|C08-3]])
+- [research] Judge managers by relative performance, not by asking for old-vs-new model comparisons.. Why: Hypothetical comparisons impractical. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C15-1|C15-1]])
+- [portfolio] Use drawdown/volatility ratios to compare managers, indices, bonds and equities.. Why: Puts drawdowns in context. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C12-3|C12-3]])
+
+**Evidence style:** Data and anecdote: index numbers, internal tests, a drawdown/vol chart, historical recoveries; diplomatic about the guest's challenges.
+
+**Views at the time**
+- (2025-05-22) Trend barometer 25: exceptionally weak; the year has few tradable trends.. Reasoning: Index numbers. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C05-1|C05-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C05-3|C05-3]])
+- (2025-05-22) Trend following will make new highs; investor reactions are the main concern.. Reasoning: History. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C09-3|C09-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C10-1|C10-1]])
+- (2025-05-22) It is 'strong politicians and weak central banks': Trump rather than Powell moves markets.. Reasoning: Cycle idea. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C09-1|C09-1]])
+- (2025-05-22) The 10-year yield keeps returning to 4.5% and rates could be where markets break.. Reasoning: Observation; timing unknown. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C17-2|C17-2]])
+- (2025-05-22) A US president with a personal economic interest in a dollar alternative adds to dollar-confidence risk.. Reasoning: Aside near end of C17. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C17-X2|C17-X2]])
+
+### Disagreements
+- **Which trend speed is protective?**: Andrew Beer: Short-term models are gullible and zero Sharpe; go back to medium to long-term models that worked for 50 years. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-1|C07-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-3|C07-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-4|C07-4]]); Niels Kaastrup-Larsen: In his YTD 2025 lookback test 20-day beat 60-day and 130-day was worst, so medium-term was not the safe haven; improve risk management instead of speeding up. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-1|C08-1]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-3|C08-3]])
+- **How to judge managers' model changes**: Andrew Beer: Ask them to backtest enhancements against the model of 3 and 6 years ago; fees must be justified against cheap alternatives. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C14-3|C14-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C15-2|C15-2]]); Niels Kaastrup-Larsen: Judge on relative performance; hypothetical old-vs-new comparisons are impractical and take investors into the engine room. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C15-1|C15-1]])
+- **Are replicators and managers held to the same standard?**: Niels Kaastrup-Larsen: Replicators also over-promise (300-400bp claimed, 50bp delivered). ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C15-3|C15-3]]); Andrew Beer: His replicator met its promised numbers since 2016; window choice matters, 2023 slowness acknowledged. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C16-1|C16-1]])
+- **How worrying is the drawdown**: Andrew Beer: Among the worst on record (SG CTA -15% y/y matching worst since 2000); the features sold as protection failed. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-4|C08-4]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-5|C08-5]]); Niels Kaastrup-Larsen: Not extreme relative to volatility compared with bonds and equities; longevity implies a worst period. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C12-3|C12-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C09-2|C09-2]])
+- **Why alternative markets**: Andrew Beer: They do not trend more; they provide diversification and add little to the edge against slow investors. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C14-2|C14-2]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C18-2|C18-2]]); Niels Kaastrup-Larsen: The narrative worked for a couple of years then failed as momentum vanished through crowding; small-market concentration is now being paid for. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C12-4|C12-4]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C18-3|C18-3]])
+
+### Gaps and conflicts
+- Andrew explicitly says he has no concrete evidence that short-term models caused the drawdowns and may be wrong. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-3|C07-3]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-5|C08-5]])
+- Nobody has a clear explanation of the worst-ever style drawdowns; Andrew's reading is a narrative inference. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-4|C08-4]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C08-5|C08-5]])
+- The claim that alternative markets do not trend more is attributed to unnamed smart researchers; Niels reports the opposite finding that momentum disappeared via crowding. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C14-2|C14-2]], [[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C12-4|C12-4]])
+- Fee/trading cost comparison (8bp vs 200bp) cites an unnamed competitor. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C16-3|C16-3]])
+- Ledger attributes C17-X2 to Andrew but the transcript flow suggests Niels spoke it; mapped to Niels. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C17-X2|C17-X2]])
+- Internal tension: Andrew says short-term models are zero Sharpe yet earlier accepts they help in two weeks around SVB. ([[MT030 - Can Trend Following Be Saved- - Systematic Investor 348#^MT030-C07-3|C07-3]])
+
+### Forward-looking inputs (reader synthesis)
+Observable inputs: changes in true information (inflation, dollar confidence, 10-year yield near 4.5%, policy actions) versus sentiment shocks; the number of reversals in bonds, equities, dollar and energy; trend barometer; drawdown/vol ratios; flows to winners vs losers. Horizon: a 'next nearly four years' policy regime; recovery expected after the drawdown.
+
+### Reader inferences (not stated by the speakers)
+- Beer's central test is whether a signal reflects changing information or changing sentiment, which he cannot observe directly and infers from outcomes.
+- The debate over short-term vs medium-term is unresolved in data presented (Niels's test contradicts Andrew's expectation).
+- Allocation advice (3%) is a business-positioning judgement rather than a derived optimum.
 
 ## Coverage
 
@@ -151,6 +288,10 @@ tags: [source, layer0]
   > I feel absolutely certain that we're going to go back and we're going to make new highs
   indicator: CTA index highs · asset: multi · horizon: years · testable: no - forecast · confidence: high
   ^MT030-C09-3
+- **Andrew Beer** Andrew asks whether a strategy can be configured for a possibly lasting policy regime of four, eight or twelve years.  #mech/new _(added by map cross-check, time-bound view)_
+  > is there something you can do to configure your strategy to deal with the next nearly four years
+  indicator: policy regime duration · asset: multi · horizon: years · testable: no - open question · confidence: low
+  ^MT030-C09-R1
 
 ### C10
 - **Niels Kaastrup-Larsen** Trend following is declared dead after drawdowns, and that is usually the best time to buy or add.  #mech/behavioral
@@ -165,6 +306,10 @@ tags: [source, layer0]
   > The information is going to change between now and when you next measure it and the sentiment about that information is going to change as well.
   indicator: information versus sentiment · asset: multi · horizon: months · testable: partly - decomposition difficult · confidence: medium
   ^MT030-C10-3
+- **Niels Kaastrup-Larsen** Niels cites Buffett's calm about three occasions when Berkshire was down more than 50% as the mindset trend followers should adopt about drawdowns.  #mech/new _(added by map cross-check)_
+  > just the the sheer calmness and that he was talking about these I think it was like three occasions where Bergkshire Hathaway had been down more than 50%
+  indicator: drawdown mindset · asset: multi · testable: no - anecdotal · confidence: medium
+  ^MT030-C10-R1
 
 ### C11
 - **Andrew Beer** In early 2024 CTAs picked up the post-election information shift early (long equities, dollar, gold, rate cuts priced out) before sentiment whipsaws began after April.  #mech/cycle_persistence _(time-bound view)_

@@ -1,0 +1,658 @@
+{
+ "source_id": "MT120",
+ "episode_thesis": "Trend following has recovered after a hard H1 2025 (a three-day Liberation Day magnitude shock that fell outside any backtest), led by equities and precious metals, with fixed income and short-term traders the laggards. Kaminski's core method claim is that strategies should be judged on out-of-sample results and robustness to parameter choices, then combined across schools, price trend with economic trend, and viewed as part of a total portfolio. Both speakers argue trend is a true diversifier whose value is greatest in stress and unstable inflation, and expect more private-wealth money to alternatives.",
+ "speakers": [
+  {
+   "name": "Katie Kaminski",
+   "role": "Co-host; trend-following researcher and portfolio manager (Boston)",
+   "speaker_note": "Caption spells 'Katie Kaminsky'. Ledger corrections moved the inflation study and Dunn track-record remarks (C03-3, C03-4) to the host; they are not hers.",
+   "fingerprint": [
+    "trend_following",
+    "research_robustness_overfitting",
+    "crisis_alpha_convexity",
+    "portfolio_construction_stacking",
+    "regime_detection",
+    "manager_selection_allocation",
+    "diversification_risk_parity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A total-portfolio view values trend following more than a bucket-by-bucket view, because trend is one of the few strategies whose effect is risk reduction for the whole portfolio, which line-item optimisation hides.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Locally optimal versus globally optimal; success of risk-mitigation buckets; no data offered in this episode.",
+     "claim_ids": [
+      "MT120-C02-2",
+      "MT120-C02-X2"
+     ]
+    },
+    {
+     "premise": "It is easy to overfit the past, so a strategy is only credible if its statistics stay stable when the parameter choices are permuted and if it holds out of sample.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning from the problem of living forward in time; no study cited.",
+     "claim_ids": [
+      "MT120-C06-1"
+     ]
+    },
+    {
+     "premise": "No single parameter school (fixed or dynamic, recent or long data, per-market or common) is reliable, because each banks on one view of the world; aggregating several is the most diversified choice.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Philosophical argument; the example is that bonds under a divided Fed may not behave as in the past.",
+     "claim_ids": [
+      "MT120-C06-2",
+      "MT120-C07-1"
+     ]
+    },
+    {
+     "premise": "Trend following is most valuable in stress: in the worst equity quintiles it shows convexity, because in stress fundamentals matter less than price changes. In calm positive-fundamental years such as 2025 it matters less and economic trend can win.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Her plot of SG Trend returns by equity-return quintile, presented in an academic talk that week.",
+     "claim_ids": [
+      "MT120-C11-1"
+     ]
+    },
+    {
+     "premise": "Large turbulent (high magnitude surprise) days hurt CTAs and normally recover within a day or so; a sustained three-day shock is outside the backtest and is hard for trend systems.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Her own turbulence-metrics paper; Liberation Day is the first three-day case in her data.",
+     "claim_ids": [
+      "MT120-C08-1",
+      "MT120-C08-2",
+      "MT120-C08-X1"
+     ]
+    },
+    {
+     "premise": "Macro managers and trend followers mostly harvest the same global trends across asset classes by different entry methods, so macro returns correlate highly with trend.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "A coming paper on macro trading, not yet public.",
+     "claim_ids": [
+      "MT120-C10-1"
+     ]
+    },
+    {
+     "premise": "Managed futures lift outcomes for individuals, who live one sample path, because they cut maximum drawdown in equity-heavy portfolios and so reduce the chance of retiring into a crash.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Cash-flow model of target-retirement portfolios (unfinished); 2008 example.",
+     "claim_ids": [
+      "MT120-C14-1",
+      "MT120-C14-2"
+     ]
+    },
+    {
+     "premise": "Some managed futures added to stocks and bonds improves diversification more than expected because it is one of few really different return sources.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Alternatives-completion work at her firm; no numbers given.",
+     "claim_ids": [
+      "MT120-C13-1",
+      "MT120-C12-R2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why trend struggled in H1 2025 and recovered in H2",
+     "steps": [
+      {
+       "from": "Liberation Day tariff shock",
+       "to": "erratic, headline-driven price discovery",
+       "why": "Markets had to assess a shock before the macro world had actually changed.",
+       "claim_ids": [
+        "MT120-C07-4"
+       ]
+      },
+      {
+       "from": "three consecutive days of magnitude surprise",
+       "to": "trend systems cannot ride through",
+       "why": "A one-day shock is bounded, a three-day consistent move is large and sits outside the backtest; the trend follower must balance trend strength against volatility.",
+       "claim_ids": [
+        "MT120-C08-2",
+        "MT120-C08-X1"
+       ]
+      },
+      {
+       "from": "headline risk calms and macro change shows up",
+       "to": "more consistent price trends in Q3-Q4",
+       "why": "With less noise, trends persist and trend systems get paid.",
+       "claim_ids": [
+        "MT120-C07-4"
+       ]
+      }
+     ],
+     "evidence": "Quarterly pattern of trend returns; her turbulence data series ('lots of years') in which the three-day run is unique.",
+     "fails_when": "She says one-off events lack statistical significance, so the mechanism cannot be confirmed and she would not change the model mechanically.",
+     "claim_ids": [
+      "MT120-C08-3",
+      "MT120-C09-X1"
+     ]
+    },
+    {
+     "topic": "Why economic trend helped in 2025 and when it will not",
+     "steps": [
+      {
+       "from": "headline risk causes chaos in price trends",
+       "to": "price trend noisy",
+       "why": "Price reacts to every headline.",
+       "claim_ids": [
+        "MT120-C09-2"
+       ]
+      },
+      {
+       "from": "economic trend follows overall themes of the economy",
+       "to": "filters the noise",
+       "why": "Fundamentals stayed positive (S&P +16%), so a macro-theme signal ignored the price swings.",
+       "claim_ids": [
+        "MT120-C09-2",
+        "MT120-C11-1"
+       ]
+      },
+      {
+       "from": "in stress, fundamentals become irrelevant",
+       "to": "price trend dominates",
+       "why": "Prices change faster than data; trend's convexity appears in the worst equity quintiles.",
+       "claim_ids": [
+        "MT120-C11-1"
+       ]
+      }
+     ],
+     "evidence": "AQR's 2025 result as reported in a CityWire article (relayed by the host), and her quintile plot.",
+     "fails_when": "Macro indicators can also predict a trend that never occurs; economic trend is 'more art', essentially macro under another name; official data can go missing (40-day US gap).",
+     "claim_ids": [
+      "MT120-C09-2",
+      "MT120-C09-X2",
+      "MT120-C02-X1"
+     ]
+    },
+    {
+     "topic": "Why unstable inflation helps trend followers",
+     "steps": [
+      {
+       "from": "inflation surges in one pocket (electricity) and falls in others",
+       "to": "turbulence in relative prices",
+       "why": "Pockets move at different speeds.",
+       "claim_ids": [
+        "MT120-C04-X1",
+        "MT120-C03-X2"
+       ]
+      },
+      {
+       "from": "relative-price turbulence",
+       "to": "more price trends",
+       "why": "Inflation is itself about how much prices move.",
+       "claim_ids": [
+        "MT120-C04-X1"
+       ]
+      }
+     ],
+     "evidence": "Only the host's track-record observation (C03-4); her own remark is a theoretical link.",
+     "fails_when": "Not stated; she notes bonds were hard for trend even in 18 months of fairly stable inflation (host).",
+     "claim_ids": [
+      "MT120-C04-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Rank strategies first on out-of-sample results and on how stable the performance statistics stay when the (about five) parameters are permuted; then check downside capture, upside capture and Sharpe.",
+     "why": "It is easy to overfit the past; the decisions you made must not drive the statistics.",
+     "claim_ids": [
+      "MT120-C06-1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Combine parameter schools: fixed and dynamic parameters, recent and long data, per-market and common settings; machine-learning adaptation can add some value over a classic moving-average crossover.",
+     "why": "Any single school banks too much on one view; the past may not resemble the present.",
+     "claim_ids": [
+      "MT120-C06-2",
+      "MT120-C07-1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Do not change the model after a one-off shock such as Liberation Day, but re-examine how volatility estimation and signals respond to sustained shocks.",
+     "why": "Three days is not statistically significant, yet it was not in the backtest.",
+     "claim_ids": [
+      "MT120-C08-3",
+      "MT120-C09-X1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Combine price trend with economic/macro strategies depending on the investor's mandate; risk-mitigation clients keep trend for its stress behaviour and accept modest results in strong equity years.",
+     "why": "Each approach has days of sunshine and rain.",
+     "claim_ids": [
+      "MT120-C11-2"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Reach private-wealth and model-portfolio channels through wrappers like ETFs and by educating model-portfolio researchers.",
+     "why": "Private wealth is the next wave of allocations to alternatives.",
+     "claim_ids": [
+      "MT120-C12-2",
+      "MT120-C12-R1"
+     ]
+    }
+   ],
+   "evidence_style": "Mixed: her own published research (turbulence metrics, crisis-alpha quintile plots, target-retirement cash-flow model), first-principles reasoning on robustness and diversification; little hard data stated in the episode itself.",
+   "current_views": [
+    {
+     "view": "Trend following is working again: H1 2025 was hard after Liberation Day, H2 much better as calmer markets show consistent trends.",
+     "as_of": "2025-11-20",
+     "reasoning": "Headline noise faded and macro change began to show in prices.",
+     "claim_ids": [
+      "MT120-C07-4"
+     ]
+    },
+    {
+     "view": "Precious metals surged as a hedge alongside equities with a weak dollar, possibly aided by central bank buying.",
+     "as_of": "2025-11-20",
+     "reasoning": "Investors hold equities but buy the safe asset as insurance.",
+     "claim_ids": [
+      "MT120-C04-4"
+     ]
+    },
+    {
+     "view": "Fixed income trends were hard because the market wants US cuts that are not delivered, though risk in the asset class may now be lower and interesting next year; energies went back and forth.",
+     "as_of": "2025-11-20",
+     "reasoning": "Waiting for cuts that do not arrive.",
+     "claim_ids": [
+      "MT120-C04-3",
+      "MT120-C04-X3"
+     ]
+    },
+    {
+     "view": "The weak-dollar theme shows a pivot, unclear whether it reflects an expected slowdown and unexpected cuts or a bottom after a large move.",
+     "as_of": "2025-11-20",
+     "reasoning": "Stated as an open question.",
+     "claim_ids": [
+      "MT120-C04-X4"
+     ]
+    },
+    {
+     "view": "Inflation can re-emerge in pockets (electricity, US healthcare, insurance); price rises arrive unevenly but drift up, so inflation matters for the next few years.",
+     "as_of": "2025-11-20",
+     "reasoning": "Uneven price rises in specific sectors.",
+     "claim_ids": [
+      "MT120-C03-X2"
+     ]
+    },
+    {
+     "view": "A very long-term view that ignored early-year noise helped in 2025; faster systems traded whipsaws.",
+     "as_of": "2025-11-20",
+     "reasoning": "Frequency mismatch for faster systems.",
+     "claim_ids": [
+      "MT120-C05-4"
+     ]
+    },
+    {
+     "view": "A wave of private wealth money into alternatives is coming.",
+     "as_of": "2025-11-20",
+     "reasoning": "Concern about 60/40 and new access products.",
+     "claim_ids": [
+      "MT120-C12-2",
+      "MT120-C12-R1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged); hedge fund manager",
+   "speaker_note": "Caption spells 'Neils Kostrup Larsen'. Ledger corrections assign to him the inflation study and the Dunn track-record points, and the price-is-truth point.",
+   "fingerprint": [
+    "trend_following",
+    "debt_cycle_long_term",
+    "structural_themes",
+    "manager_selection_allocation",
+    "positioning_crowding",
+    "behavioral_sentiment"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Price data is the pure, hard-to-manipulate signal, while official economic data can be delayed, manipulated or missing; the market price is the only truth.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Industry saying; the 40-day US data gap and the firing of the data head as illustration.",
+     "claim_ids": [
+      "MT120-C02-1",
+      "MT120-C01-1"
+     ]
+    },
+    {
+     "premise": "Trend following does well in high and rising inflation, and what matters is the instability of inflation, not its level.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "A long inflation study at his firm and Dunn's track record: worst CTA era 2000-2019 (low, stable inflation); fastest compounding 1982-2000 (low but unstable inflation).",
+     "claim_ids": [
+      "MT120-C03-3",
+      "MT120-C03-4"
+     ]
+    },
+    {
+     "premise": "Pure trend following does not predict and cannot anticipate, because it needs price data and time to adjust; every approach, including systematic macro, has sunshine and lean periods.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "IPM (Swedish systematic macro) example: strong record, then stopped working and closed.",
+     "claim_ids": [
+      "MT120-C10-2"
+     ]
+    },
+    {
+     "premise": "Fiduciaries who give trend zero or 1% are hard to justify because no paper shows trend fails to add value to a portfolio.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Twenty years of thinking about fiduciary duty; absence of contrary white papers.",
+     "claim_ids": [
+      "MT120-C12-1"
+     ]
+    },
+    {
+     "premise": "Private equity and private credit are familiar equity and credit exposure in another wrapper, so only trend-like strategies are real alternatives.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Assertion; the Dunn crisis-period paper he mentions is the supporting reference.",
+     "claim_ids": [
+      "MT120-C13-X1",
+      "MT120-C15-X1"
+     ]
+    },
+    {
+     "premise": "Funds that judge each holding by what it adds to the whole portfolio (total portfolio approach; Hawaii pension dropped buckets) should move trend following up their list of valuable components.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Hawaii pension anecdote (former head, now at Goldman Sachs); Calpers vote on total portfolio approach cited as context; no data.",
+     "claim_ids": [
+      "MT120-C03-1"
+     ]
+    },
+    {
+     "premise": "Equity trends are supported by heavy fund inflows until politicians disrupt them.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "A Deutsche Bank chart of weekly equity fund flows against the 2010-2024 median.",
+     "claim_ids": [
+      "MT120-C04-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "AI data centres to electricity prices to inflation",
+     "steps": [
+      {
+       "from": "AI build-out (data-centre spending up about 400% in two years)",
+       "to": "electricity demand",
+       "why": "US data centres use 183 TWh, expected to more than double in 4-5 years; 26% of Virginia supply.",
+       "claim_ids": [
+        "MT120-C03-X1",
+        "MT120-C03-2"
+       ]
+      },
+      {
+       "from": "electricity demand",
+       "to": "electricity prices as a new inflation source",
+       "why": "He offers it as a good guess for where inflation could come from; no price evidence.",
+       "claim_ids": [
+        "MT120-C03-2"
+       ]
+      }
+     ],
+     "evidence": "Ed Yardeni blog post, relayed second-hand.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT120-C03-2"
+     ]
+    },
+    {
+     "topic": "Unstable inflation as the regime for trend",
+     "steps": [
+      {
+       "from": "low but unstable inflation (1982-2000)",
+       "to": "best compounding in Dunn's trend record",
+       "why": "Contrast with the stable-inflation 2000-2019 worst period.",
+       "claim_ids": [
+        "MT120-C03-4"
+       ]
+      },
+      {
+       "from": "central banks unable to control inflation",
+       "to": "environment he expects",
+       "why": "Not constant 8-10% inflation but uncontrollable inflation.",
+       "claim_ids": [
+        "MT120-C03-X3"
+       ]
+      }
+     ],
+     "evidence": "One firm's track record over two periods; no other CTAs or statistics.",
+     "fails_when": "Not stated; he notes bonds were hard for trend followers even with stable inflation over 18 months.",
+     "claim_ids": [
+      "MT120-C04-X2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Treat price as the primary truth; consider per-market trend parameters informed by market elasticity (reaction speed), without overoptimising.",
+     "why": "Some markets react faster than others.",
+     "claim_ids": [
+      "MT120-C02-1",
+      "MT120-C07-2"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Know the end client; ETF flows hide the investor's identity, so a manager cannot stop clients from reallocating at the wrong time (such as after Q2 2025).",
+     "why": "Reaching clients avoids unnecessary hardship from badly timed allocations.",
+     "claim_ids": [
+      "MT120-C13-2"
+     ]
+    }
+   ],
+   "evidence_style": "Relays articles, data series and index prints (Deutsche Bank, Yardeni, CityWire on AQR, Capgemini, SG indices) and his firm's track record; anecdotes (IPM). Hosting role, so few self-built tests.",
+   "current_views": [
+    {
+     "view": "Markets barely reacted to 40 days without official US data, so routine data is perhaps not essential.",
+     "as_of": "2025-11-20",
+     "reasoning": "Observed non-reaction.",
+     "claim_ids": [
+      "MT120-C01-1"
+     ]
+    },
+    {
+     "view": "Expect an unstable, uncontrollable inflation environment resembling 1982-2000, which favours trend.",
+     "as_of": "2025-11-20",
+     "reasoning": "Central banks cannot control it.",
+     "claim_ids": [
+      "MT120-C03-X3"
+     ]
+    },
+    {
+     "view": "October 2025 started soft but trend followers re-aligned with longer trends: equities and precious metals strong, softs mixed, currencies recovering, fixed income the main challenge.",
+     "as_of": "2025-11-20",
+     "reasoning": "Fund-flow support for equities.",
+     "claim_ids": [
+      "MT120-C04-2",
+      "MT120-C04-1"
+     ]
+    },
+    {
+     "view": "Metals-led commodity gains (silver +73%, platinum +68%, gold +59% YTD) show why commodities belong in trend portfolios; trend indices were around flat to +2.6% YTD, BTOP50 up five of the last six years.",
+     "as_of": "2025-11-11",
+     "reasoning": "Breadth of markets traded.",
+     "claim_ids": [
+      "MT120-C05-1",
+      "MT120-C05-2"
+     ]
+    },
+    {
+     "view": "Short-term traders lagged in 2025 (-4.8% vol-adjusted) despite many short-term corrections.",
+     "as_of": "2025-11-11",
+     "reasoning": "Event-risk whipsaws; frequency mismatch (view shared by Kaminski).",
+     "claim_ids": [
+      "MT120-C05-3"
+     ]
+    },
+    {
+     "view": "AQR coped well in 2025 by mixing price trend with economic trend (50/50 in one program) and single-name equities, while headline risk caused chaos in price trends.",
+     "as_of": "2025-11-20",
+     "reasoning": "Relayed from a CityWire article; he flags that the no-data period will test it.",
+     "claim_ids": [
+      "MT120-C09-1"
+     ]
+    },
+    {
+     "view": "Alternatives could grow from about $4 trillion to $12 trillion by 2034 (Everest Group: $30 trillion by 2030), with private wealth and family offices allocating far more than institutions.",
+     "as_of": "2025-11-20",
+     "reasoning": "Capgemini and Everest Group projections as cited.",
+     "claim_ids": [
+      "MT120-C11-3",
+      "MT120-C12-1"
+     ]
+    },
+    {
+     "view": "Bank QIS and similar systematic strategies exceed official CTA assets yet are opaque, so disclosure regulation is suggested.",
+     "as_of": "2025-11-20",
+     "reasoning": "Size and opacity.",
+     "claim_ids": [
+      "MT120-C07-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Can economic trend anticipate, or is it still reactive?",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Pure trend following does not predict or anticipate; economic trend sounds a little predictive, and all approaches, like IPM, have lean periods.",
+     "claim_ids": [
+      "MT120-C10-2",
+      "MT120-C10-X1"
+     ]
+    },
+    {
+     "speaker": "Katie Kaminski",
+     "position": "Economic trend is a way to take the same global trends by a different entry method; it filtered noise in 2025 but is an art and can predict trends that never occur.",
+     "claim_ids": [
+      "MT120-C09-2",
+      "MT120-C10-1",
+      "MT120-C09-X2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "When trend beats economic trend",
+   "positions": [
+    {
+     "speaker": "Katie Kaminski",
+     "position": "In stress, price trend wins as fundamentals become irrelevant; in calm positive-fundamental years economic trend can win; the mix depends on mandate.",
+     "claim_ids": [
+      "MT120-C11-1",
+      "MT120-C11-2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Recent economic-trend performance is the 'sunshine' phase; he warns the pattern may reverse like IPM's.",
+     "claim_ids": [
+      "MT120-C10-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "The mechanism for why unstable inflation helps trend is theoretical; the only evidence is one firm's track record over two eras, offered by the host, and C03-4 is not statistically tested.",
+   "claim_ids": [
+    "MT120-C03-4",
+    "MT120-C04-X1"
+   ]
+  },
+  {
+   "issue": "Kaminski's evidence on turbulence (three-day Liberation Day run) is a single event with no significance, as she admits.",
+   "claim_ids": [
+    "MT120-C08-2",
+    "MT120-C09-X1"
+   ]
+  },
+  {
+   "issue": "Several quantitative figures (alternatives to $12tn, Everest $30tn, 183 TWh, 400% data-centre spend) are second-hand and the caption mangles 'sensors' for the facilities that house chips.",
+   "claim_ids": [
+    "MT120-C11-3",
+    "MT120-C03-2",
+    "MT120-C03-X1"
+   ]
+  },
+  {
+   "issue": "Target-retirement and macro-vs-trend papers are unfinished, so conclusions about worst-case improvement are asserted not shown.",
+   "claim_ids": [
+    "MT120-C14-1",
+    "MT120-C10-1"
+   ]
+  },
+  {
+   "issue": "Host cites BTOP50 'up four of five years including this year' then corrects to 'five of the last six'; only 2023 (-1.85%) was down.",
+   "claim_ids": [
+    "MT120-C05-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs named as leading or conditioning future trend returns: inflation instability across pockets (electricity, healthcare, insurance) rather than the level; whether central banks deliver the US cuts markets expect (fixed income trends); dollar direction (slowdown and cuts versus bottoming); equity fund flows as support for the equity trend; sustained multi-day magnitude surprises as a regime in which trend systems struggle; restoration of official data for economic-trend signals. Horizons are the next few years for inflation, and roughly a year for fixed income ('next year perhaps').",
+ "reader_inferences": [
+  "(reader) Kaminski's robustness test implies a parameter-permutation sensitivity metric could be a candidate screen for any strategy in a backtest framework.",
+  "(reader) Both speakers frame trend as a crisis hedge in stress and an inflation-instability play, yet they also say trend was only modest in the strong-equity regime of 2025; value is regime-dependent rather than constant.",
+  "(reader) The unstable-inflation thesis rests on one track record (Dunn) and may be confounded by the 1980s-90s interest-rate regime."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT120-C12-R1",
+   "chunk": "C12",
+   "speaker": "Katie Kaminski",
+   "quote": "Access is a function of both new products and new legislation. For example, the ETF market is a good example of that.",
+   "claim": "Access of private wealth investors to alternatives is widening through new products (such as ETFs) and new legislation, a slow evolution that has sped up as concern about 60/40 grew.",
+   "mechanism": "structural access shift",
+   "asset_class": "alternatives",
+   "indicator": "private wealth access",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - qualitative",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "b07-map",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT120-C12-R2",
+   "chunk": "C12",
+   "speaker": "Katie Kaminski",
+   "quote": "we have been you know for a long time in the alternatives completion space. So like building portfolios of alternatives together.",
+   "claim": "Her firm builds portfolios of alternatives together ('alternatives completion'), the approach from which she argues that some managed futures adds more than expected.",
+   "mechanism": "portfolio construction",
+   "asset_class": "alternatives",
+   "indicator": "alternatives completion",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "",
+   "testable": "no - qualitative",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "b07-map",
+   "quote_check": "exact"
+  }
+ ]
+}

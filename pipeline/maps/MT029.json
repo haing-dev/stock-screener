@@ -1,0 +1,560 @@
+{
+ "source_id": "MT029",
+ "episode_thesis": "Three former AHL colleagues (Graham Robertson, Rob Carver, Yav Git) and host Niels Kaastrup-Larsen debate whether trend following should be built per asset class or as one multi-asset program. Yav argues trends come from sustained imbalances that differ by asset class (rate gradients in fixed income and EM FX, valuation anchors in equities, slow supply in commodities, no anchor in crypto), so implementation, risk and execution should be tailored; Rob doubts the asset-class differences and the execution gains and prefers one general risk model. They also discuss why CTAs are under-allocated (a 0.7 Sharpe beside 1.5-Sharpe peers, a crude convexity hedge, unattractive high-volatility share classes) and whether large-AUM entrants such as BlackRock and Fidelity will help or lower the perceived Sharpe.",
+ "speakers": [
+  {
+   "name": "Yav Git",
+   "role": "Founder of Safi (fixed income CTA, Gresham Research); ex-Brevan Howard, Winton and head of fixed income and innovation at AHL",
+   "speaker_note": "Captions render names as 'Y git', 'Yav', 'y', and the transcript has several speaker mix-ups corrected in the ledger (see claim corrections for C03-1, C09-1, C17-1). His claims are the most numerous; where a claim is attributed to Graham in captions but belongs to him, the ledger correction is applied.",
+   "fingerprint": ["trend_following", "macro_fundamental_topdown", "costs_execution", "position_sizing_vol_target", "crisis_alpha_convexity", "liquidity_flows", "commodity_fundamentals", "manager_selection_allocation"],
+   "worldview_premises": [
+    {
+     "premise": "Trends arise from sustained imbalances: an interest-rate gradient between central banks creates sustained carry flows and positive autocorrelation (like a metal bar held at two temperatures); EURUSD without a gradient shows little trend while high-carry EM currencies trend strongly.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Analogy and what he sees in data; Rob calls the theory 'cute' and unproven.",
+     "claim_ids": ["MT029-C08-1", "MT029-C08-2"]
+    },
+    {
+     "premise": "Crypto trends well because it has no valuation anchor and is in permanent imbalance; it also has enormous right skew, so risk control and position management should differ from other asset classes.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reference to a crypto paper (Graham and a co-author); no data here.",
+     "claim_ids": ["MT029-C05-2", "MT029-C05-X1"]
+    },
+    {
+     "premise": "Equity trend is weaker than other sectors because value traders inject negative autocorrelation; in commodities supply takes time to meet demand (AI power demand example), creating sustained imbalance.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "First-principles reasoning.",
+     "claim_ids": ["MT029-C09-2", "MT029-C09-3"]
+    },
+    {
+     "premise": "Liquidity is mainly a limit on diversification and capacity, not an explainer of performance; Rob's blog found no correlation, but he thinks it measures the wrong liquidity (the imbalance matters).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Agrees with Rob's blog conclusion but argues the choice of liquidity measure.",
+     "claim_ids": ["MT029-C09-1", "MT029-C09-4"]
+    },
+    {
+     "premise": "A CTA's utility to an allocator is crisis alpha and convexity relative to what the allocator holds, so asset-class-specific trend products (for example fixed income only) are better building blocks than one pooled program.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument from allocator utility; his own firm is built that way (a commercial interest).",
+     "claim_ids": ["MT029-C05-1"]
+    },
+    {
+     "premise": "A single market's trend Sharpe is only about 0.25, so tailoring implementation per asset class to lift it to 0.30 adds real value after diversification.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Rough figures quoted from memory; no table.",
+     "claim_ids": ["MT029-C06-1"]
+    },
+    {
+     "premise": "Commodity markets diversify naturally (equal weight works), whereas fixed income has a high loading on the Fed as a common factor and strong left skew, like multi-strat pods, so it needs cleverer construction and tighter risk control.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own experience running fixed income portfolios.",
+     "claim_ids": ["MT029-C06-5", "MT029-C07-1"]
+    },
+    {
+     "premise": "About 70-75% of AHL's P&L over 25 years came from fixed income, and even since 2010 (after the secular decline in rates ended) fixed income has been the most consistent trend asset across periods and speeds, unlike FX.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own recollection of AHL's P&L and consistency across speeds; the figure is not documented here and Niels challenges it as being the 30-40 year rate decline.",
+     "claim_ids": ["MT029-C07-3", "MT029-C07-5"]
+    },
+    {
+     "premise": "Fixed income liquidity is fragmented across many maturities of the same issuer, so execution must tolerate partial fills or substitute bonds and use many brokers, not only big banks.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Safi was designed to accept partial fills or different bonds on the same curve.",
+     "claim_ids": ["MT029-C07-2", "MT029-C09-5"]
+    },
+    {
+     "premise": "After the GFC transaction reporting and central clearing improved OTC liquidity visibility, but broker relationships remain valuable; in less liquid OTC markets you cannot exit when volatility spikes, so a diversified portfolio must exist before the crisis.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Experience across 2000s to today.",
+     "claim_ids": ["MT029-C11-1", "MT029-C11-2"]
+    },
+    {
+     "premise": "CTAs are a crude way to buy convexity because they may not pay off in a given crisis; a tailored Treasury put replication would be more precise.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument by comparison with an ETF replicating a Treasury put; an investment committee would see a miss as game over.",
+     "claim_ids": ["MT029-C11-3"]
+    },
+    {
+     "premise": "Inside an absolute-return bucket a 0.7 Sharpe CTA beside peers at 1.5 lowers dollar returns, so under-allocation is rational unless leverage is available; CTAs need about 1.2-1.3 Sharpe or a tailored crisis role.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Bucket arithmetic (private credit, private equity, multi-strat and long-short together at Sharpe 2).",
+     "claim_ids": ["MT029-C12-1"]
+    },
+    {
+     "premise": "Trend following has positive skew and does not harvest a liquidity premium, so it deserves a larger allocation if made easier to hold.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Assertion; likely Yav per the ledger.",
+     "claim_ids": ["MT029-C13-1"]
+    },
+    {
+     "premise": "For liquid CTAs execution costs about 5bp of Sharpe a year, so it is production work, but in illiquid markets it costs 30-40bp of Sharpe and matters; the real cost is crossing the spread, not delay.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His blog and two conference talks on execution.",
+     "claim_ids": ["MT029-C14-1", "MT029-C14-2"]
+    },
+    {
+     "premise": "Technology tightly integrated with research accelerates and cleans implementation, and technologists spot issues researchers miss; open-sourcing core infrastructure attracts top technologists and improved code quality at AHL.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Weekly AHL tech meetings and the Arctic DB story; he was initially sceptical of open source and was proved wrong.",
+     "claim_ids": ["MT029-C16-3", "MT029-C17-1"]
+    },
+    {
+     "premise": "BlackRock and Fidelity's large AUM targets make a high-Sharpe diversified product hard, risking a perception of CTAs as a 0.5 Sharpe strategy.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Speculation, flagged as pure speculation by the host.",
+     "claim_ids": ["MT029-C18-1"]
+    },
+    {
+     "premise": "Around 2011-2013 the pressure on AHL's earnings from the liquid CTA program pushed it to diversify the Evolution program into alternative and OTC markets.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own recollection (the ledger correction assigns this part to Yav).",
+     "claim_ids": ["MT029-C03-1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Sustained imbalance creates trend (asset-class by asset-class)",
+     "steps": [
+      {"from": "Two central banks hold different policy rates", "to": "Sustained carry flows in one direction", "why": "Central banks tolerate the carry trade (Japan boosting the economy, Australia worried about inflation), so the flow is sustainable.", "claim_ids": ["MT029-C08-1"]},
+      {"from": "Sustained flow", "to": "Positive autocorrelation, trend", "why": "Persistent buying pressure; EM currencies with strong carry trend strongly while EURUSD with no gradient does not.", "claim_ids": ["MT029-C08-1", "MT029-C08-2"]},
+      {"from": "No valuation anchor (crypto)", "to": "Permanent imbalance and big trends", "why": "No one knows the true value, so price moves of +20% or -50% are not corrected.", "claim_ids": ["MT029-C05-2"]},
+      {"from": "Equity valuation traders", "to": "Weaker equity trend", "why": "Value traders inject negative autocorrelation.", "claim_ids": ["MT029-C09-2"]},
+      {"from": "Demand shock in commodities (AI power demand)", "to": "Price imbalance until supply arrives", "why": "Power plants and grids take years to build, so price must rise first.", "claim_ids": ["MT029-C09-3"]}
+     ],
+     "evidence": "Data observations in FX (EURUSD vs EM) and qualitative reasoning; no statistical test shown (Rob says no significant difference exists).",
+     "fails_when": "No sustained imbalance (EURUSD without a rate gradient); Rob thinks the theory is unproven.",
+     "claim_ids": ["MT029-C08-1", "MT029-C08-2", "MT029-C05-2", "MT029-C09-2", "MT029-C09-3"]
+    },
+    {
+     "topic": "Why asset-class specific implementation adds Sharpe",
+     "steps": [
+      {"from": "Single-market trend Sharpe is about 0.25", "to": "A small implementation gain matters", "why": "Raising 0.25 to 0.30 per market adds value after diversification.", "claim_ids": ["MT029-C06-1"]},
+      {"from": "Fixed income loads on the Fed and has left skew", "to": "Needs cleverer construction and tighter risk control than commodities", "why": "Naturally diversified commodities can use equal weight, whereas fixed income markets move together on one factor.", "claim_ids": ["MT029-C06-5", "MT029-C07-1"]},
+      {"from": "Fragmented bond liquidity", "to": "Execution must tolerate partial fills or substitute bonds", "why": "Many maturities of the same issuer, unlike one stock per company.", "claim_ids": ["MT029-C07-2", "MT029-C09-5"]},
+      {"from": "Crypto's right skew", "to": "Different risk control", "why": "A generalist implementation would leave alpha on the table.", "claim_ids": ["MT029-C05-X1"]}
+     ],
+     "evidence": "Yav's own experience; a rough Sharpe figure from memory.",
+     "fails_when": "Rob's counter: a generalised optimiser and risk model that handles higher moments and diversification differences can do the same without separate funds.",
+     "claim_ids": ["MT029-C06-1", "MT029-C06-5", "MT029-C07-1", "MT029-C07-2", "MT029-C05-X1"]
+    },
+    {
+     "topic": "Execution: patient trading saves more than delay costs",
+     "steps": [
+      {"from": "Most CTAs treat execution as a production line", "to": "Costs of about 5bp of Sharpe in liquid markets and 30-40bp in illiquid ones", "why": "The cost is crossing the spread and taking liquidity, not delay.", "claim_ids": ["MT029-C14-1"]},
+      {"from": "Delaying the signal a day", "to": "Alpha loses only 1-2bp", "why": "Trend signals decay slowly, so delay is cheap.", "claim_ids": ["MT029-C14-2"]},
+      {"from": "Give the desk the raw signal and several days", "to": "Partial, patient execution saves spread", "why": "Many CTAs already smooth signals for days then force execution within hours, which is the worst of both.", "claim_ids": ["MT029-C14-2", "MT029-C15-1"]},
+      {"from": "Pay execution desk a performance fee", "to": "Treated as an alpha source", "why": "A due-diligence test of whether the manager cares.", "claim_ids": ["MT029-C14-X1"]}
+     ],
+     "evidence": "Cost analysis from his blog; not published numbers here.",
+     "fails_when": "Rob: with 4bp of costs (half commissions) only about 2bp could be saved in liquid futures, and giving traders discretion creates a short-horizon alpha desk needing skills that may not exist.",
+     "claim_ids": ["MT029-C14-1", "MT029-C14-2", "MT029-C15-1", "MT029-C14-X1", "MT029-C15-X1"]
+    },
+    {
+     "topic": "Why CTAs are under-allocated",
+     "steps": [
+      {"from": "Allocator seeks convexity for an existing portfolio", "to": "CTA is a crude, untailored hedge", "why": "It may not pay off in a given crisis, leaving the allocator embarrassed before the committee.", "claim_ids": ["MT029-C11-3"]},
+      {"from": "Allocator seeks return in an absolute-return bucket", "to": "A 0.7-Sharpe CTA lowers dollar returns beside 1.5-Sharpe peers", "why": "Private credit, private equity, multi-strat and long-short together have Sharpe 2; leverage is not available.", "claim_ids": ["MT029-C12-1"]},
+      {"from": "Large AUM entrants", "to": "Perception of 0.5 Sharpe", "why": "A high-Sharpe diversified product is hard at BlackRock and Fidelity scale.", "claim_ids": ["MT029-C18-1"]}
+     ],
+     "evidence": "Reasoning from allocator constraints; no survey.",
+     "fails_when": "If a CTA reaches about 1.2-1.3 Sharpe or is tailored to a crisis role (his own conditions).",
+     "claim_ids": ["MT029-C11-3", "MT029-C12-1", "MT029-C18-1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "universe", "practice": "Run asset-class-specific trend products (fixed income and FX/rates in Safi; commodities by a colleague) that investors can mix as building blocks.", "why": "The CTA's utility depends on what the allocator holds; implementation differs by asset class.", "claim_ids": ["MT029-C05-1", "MT029-C06-1"]},
+    {"element": "portfolio", "practice": "Equal weight across commodity markets; fixed income built to offset the Fed factor.", "why": "Commodities diversify naturally; fixed income loads on one risk factor.", "claim_ids": ["MT029-C06-5"]},
+    {"element": "risk", "practice": "Tighter risk control for fixed income than for naturally diversified commodity books; risk control for crypto specific to right skew.", "why": "Left skew similar to multi-strat pods; right skew in crypto.", "claim_ids": ["MT029-C07-1", "MT029-C05-X1"]},
+    {"element": "execution", "practice": "Give the execution desk the raw signal and several days; accept partial fills or different bonds on the same curve; use many brokers.", "why": "Crossing the spread is the main cost; delay costs only 1-2bp a day.", "claim_ids": ["MT029-C14-2", "MT029-C15-1", "MT029-C09-5"]},
+    {"element": "execution", "practice": "Pay the execution desk a performance fee.", "why": "Aligns the desk with saving the spread, and signals that the firm treats execution as alpha.", "claim_ids": ["MT029-C14-X1"]},
+    {"element": "risk", "practice": "Build a properly diversified portfolio before a crisis in less liquid OTC markets.", "why": "Cannot exit when volatility spikes, unlike futures CTAs.", "claim_ids": ["MT029-C11-2"]},
+    {"element": "research", "practice": "Pair research and technology side by side; open-source core infrastructure.", "why": "Technologists catch issues researchers miss and open source attracts talent.", "claim_ids": ["MT029-C16-3", "MT029-C17-1"]}
+   ],
+   "evidence_style": "Mix of first-principles mechanisms (imbalance, rate gradients, analogies), practitioner experience at AHL, Winton and Safi, and approximate numbers from memory (Sharpe 0.25 per market, 5bp and 30-40bp execution costs, 70-75% of AHL P&L). He gives no statistical tests and acknowledges that his theory is not proven.",
+   "current_views": [
+    {"view": "BlackRock and Fidelity entering trend following may push the perception of CTAs down toward a 0.5 Sharpe strategy.", "as_of": "2025-04", "reasoning": "Large AUM targets make a high-Sharpe diversified product hard.", "claim_ids": ["MT029-C18-1"]},
+    {"view": "To earn a place among absolute-return peers CTAs need about 1.2-1.3 Sharpe or a tailored role (convexity or crisis alpha) rather than a 0.7 Sharpe generalist.", "as_of": "2025-04", "reasoning": "Allocator bucket arithmetic.", "claim_ids": ["MT029-C12-1", "MT029-C11-3"]},
+    {"view": "Fixed income has been the most consistent trend asset since 2010 despite the end of the secular decline in rates.", "as_of": "2025-04", "reasoning": "Consistency across periods and speeds; FX less so in developed markets.", "claim_ids": ["MT029-C07-5"]},
+    {"view": "AI-driven power demand in the US creates sustained supply-demand imbalance and trend in energy.", "as_of": "2025-04", "reasoning": "Power plants and grids take time to build, so price must adjust.", "claim_ids": ["MT029-C09-3"]}
+   ]
+  },
+  {
+   "name": "Rob Carver",
+   "role": "Independent systematic trader, author and blogger; former head of fixed income at AHL (left 2013)",
+   "speaker_note": "Speaker mix-ups corrected per ledger: the high-vol share-class remark (C12-2) is attributed to Rob as probable, not Graham; the statement that fixed income dominates CTA P&L (C07-4) belongs to the host, not Rob.",
+   "fingerprint": ["trend_following", "research_robustness_overfitting", "costs_execution", "position_sizing_vol_target", "portfolio_construction_stacking", "replication_indexing"],
+   "worldview_premises": [
+    {
+     "premise": "A standalone CTA should choose the weights across asset classes itself, because it can optimise the portfolio and understands how the building blocks interact; individual units make sense only if the buyer wants crisis alpha or tail hedging.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Portfolio-optimisation reasoning.",
+     "claim_ids": ["MT029-C06-4"]
+    },
+    {
+     "premise": "There is no strong statistically significant difference in trend performance across asset classes, and crypto has too short a history to tell; observed gaps (equity weaker than VIX or fixed income) may reflect higher carry in fixed income.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "A table from his latest book; he is sceptical of Yav's imbalance theory ('cute but unproven').",
+     "claim_ids": ["MT029-C06-2", "MT029-C06-3", "MT029-C08-X1"]
+    },
+    {
+     "premise": "A single universal risk model that includes higher moments can handle assets with different distributions such as crypto, so separate asset-class funds are not needed.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Methodological argument; no demonstration.",
+     "claim_ids": ["MT029-C06-4", "MT029-C08-X1"]
+    },
+    {
+     "premise": "Trend following does not suffer the crowding that spread and relative-value trades do: profits so far do not reduce future returns, so the liquidity-alpha link differs for momentum versus reversion strategies.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Comparison with spread compression cycles; no data given.",
+     "claim_ids": ["MT029-C10-1"]
+    },
+    {
+     "premise": "The mix of reversion players (stat arb in single stocks, curve trades in bonds) versus momentum players in a market may confuse how trendy it is, compared with gold or crude.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Speculation ('I would imagine').",
+     "claim_ids": ["MT029-C10-2"]
+    },
+    {
+     "premise": "Futures liquidity has two measures, volume and open interest, which matter differently for building and liquidating positions (Korean stocks: high volume, low open interest; interest rate futures the reverse).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Examples from futures markets.",
+     "claim_ids": ["MT029-C10-3"]
+    },
+    {
+     "premise": "With trading costs of about 4bp of Sharpe (half commissions), only about 2bp can be saved through execution effort on liquid futures, so the effort is not worthwhile there; the benefit exists mainly in OTC bonds.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Back-of-the-envelope calculation for his own system.",
+     "claim_ids": ["MT029-C15-2", "MT029-C15-X1"]
+    },
+    {
+     "premise": "Giving traders discretion over patient execution turns a CTA into a CTA plus a short-horizon alpha desk, needing skills and technology that may not exist; at 30bp costs Rob would slow the signal further or stop trading the market.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning about organisational scope.",
+     "claim_ids": ["MT029-C16-1"]
+    },
+    {
+     "premise": "Speeding up a trend program would add positive skew and tail protection but cost alpha, moving away from where trend works best, and would make it a synthetic option product.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning; no numbers.",
+     "claim_ids": ["MT029-C12-3"]
+    },
+    {
+     "premise": "Open-sourcing a trading system forces better code quality, testing and documentation.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own experience open-sourcing the second version of his trading system.",
+     "claim_ids": ["MT029-C17-2"]
+    },
+    {
+     "premise": "High-vol share classes give capital efficiency but few allocators see high vol as good, and many prefer low-vol funds; changing the products may be the lever rather than education.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Memory of AHL's high-vol share classes; speaker attribution probable (ledger correction).",
+     "claim_ids": ["MT029-C12-2"]
+    },
+    {
+     "premise": "AHL reorganised in 2011 from strategy teams to asset-class teams, and Rob was placed in charge of fixed income, which held a diverse group of assets and strategies.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own recollection.",
+     "claim_ids": ["MT029-C03-R1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Execution effort is worth little in liquid futures",
+     "steps": [
+      {"from": "Total trading cost of about 4bp of Sharpe", "to": "Half is commission", "why": "For an institution commissions are negligible and cannot be saved.", "claim_ids": ["MT029-C15-2"]},
+      {"from": "Only about 2bp is bid-ask", "to": "Little to save by execution effort", "why": "Not worth the effort on liquid markets; useful in weird OTC bonds.", "claim_ids": ["MT029-C15-2"]},
+      {"from": "Giving traders leeway", "to": "CTA becomes CTA plus an alpha desk", "why": "A separate alpha strategy with a horizon of hours or days needs skills that might not exist.", "claim_ids": ["MT029-C16-1"]}
+     ],
+     "evidence": "His own system's costs; AHL experience of execution windows (an hour per order, none beyond the day).",
+     "fails_when": "Costs are about 30bp: then he would slow the signal or stop trading the market.",
+     "claim_ids": ["MT029-C15-2", "MT029-C16-1"]
+    },
+    {
+     "topic": "Trend does not decay from crowding the way spread trades do",
+     "steps": [
+      {"from": "Spread or RV traders rush in", "to": "Spreads compress and everyone exits together", "why": "Leverage is needed to hold yield; the cycle is a liquidity cycle.", "claim_ids": ["MT029-C10-1"]},
+      {"from": "Momentum traders buy what has risen", "to": "More room to rise, not less", "why": "Past profits do not reduce future returns for trend followers.", "claim_ids": ["MT029-C10-1"]}
+     ],
+     "evidence": "Reasoning by contrast; no data.",
+     "fails_when": "Not stated; he says the proportion of reversion players can confuse trendiness.",
+     "claim_ids": ["MT029-C10-1", "MT029-C10-2"]
+    }
+   ],
+   "decision_process": [
+    {"element": "portfolio", "practice": "A standalone CTA chooses the asset weights through its own optimisation using a universal risk model with higher moments.", "why": "Avoids separate funds; handles crypto's distribution.", "claim_ids": ["MT029-C06-4"]},
+    {"element": "execution", "practice": "Does not put much effort into execution in liquid futures; would slow the signal or stop trading a market if costs reach 30bp.", "why": "Only about 2bp can be saved.", "claim_ids": ["MT029-C15-2", "MT029-C16-1"]},
+    {"element": "research", "practice": "Tests trend by asset class and liquidity using blog analyses and book tables, and reports no significant liquidity link.", "why": "No statistically significant difference found; short history for crypto.", "claim_ids": ["MT029-C06-2", "MT029-C06-3", "MT029-C09-1"]},
+    {"element": "research", "practice": "Open-sources his trading system.", "why": "Forces better code quality, testing and documentation.", "claim_ids": ["MT029-C17-2"]}
+   ],
+   "evidence_style": "Empirical and sceptical: asks for statistical significance, reports what his own data and book table show, does back-of-the-envelope cost calculations and distrusts theories that are untested.",
+   "current_views": [
+    {"view": "High-vol share classes may help capital efficiency but allocators prefer low-vol funds, so changing product design is the lever, not education.", "as_of": "2025-04", "reasoning": "Decades of banging heads on education.", "claim_ids": ["MT029-C12-2"]},
+    {"view": "Speeding up trend would add tail protection but cost alpha, so it is not what trend following should be.", "as_of": "2025-04", "reasoning": "Moves away from the speeds where trend works best.", "claim_ids": ["MT029-C12-3"]}
+   ]
+  },
+  {
+   "name": "Graham Robertson",
+   "role": "CEO of Man AHL (current AHL leader)",
+   "speaker_note": "Speaks least and several claims captioned to him belong to others (ledger corrections for C03-1, C13-4, C17-1). Claims left to him: the Fed-put/range-bound context, market size versus liquidity, institutions' steady allocations, and the view that more adoption is better.",
+   "fingerprint": ["trend_following", "manager_selection_allocation", "liquidity_flows", "portfolio_construction_stacking", "policy_reaction_central_banks"],
+   "worldview_premises": [
+    {
+     "premise": "Around 2011-2013 traditional liquid trend struggled in range-bound markets as the Fed put emerged, while OTC and alternative markets less affected by it (the Evolution program) kept earning during the CTA winter, so researching new markets with different price drivers added genuine value.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "AHL experience; Evolution program results.",
+     "claim_ids": ["MT029-C03-1", "MT029-C04-1"]
+    },
+    {
+     "premise": "Market size is not liquidity: industry players that dominate a market and its transaction costs shape how it trades and how trend performs there, so a single 'how liquid' measure is misleading.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Years of experience; no data.",
+     "claim_ids": ["MT029-C10-X1"]
+    },
+    {
+     "premise": "Large institutions keep a steady trend-following allocation through good and bad years, but wealth-segment investors and the media largely ignore it (an FT article on handling volatility did not mention trend following), which is where under-allocation lies.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "The FT article anecdote; description of institutional behaviour.",
+     "claim_ids": ["MT029-C12-X1"]
+    },
+    {
+     "premise": "Open-sourcing core infrastructure is a way to attract the best technologists.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "AHL's experience; Yav was initially sceptical.",
+     "claim_ids": ["MT029-C17-1"]
+    },
+    {
+     "premise": "The more investors hold trend strategies the better for the industry, including via large entrants.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Brief assertion; no argument.",
+     "claim_ids": ["MT029-C18-R1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Diversifying into OTC markets during the CTA winter",
+     "steps": [
+      {"from": "Fed put emerges and markets range-bound (2011-2013)", "to": "Traditional liquid trend struggles", "why": "Central banks suppress trends in the liquid markets that trend programs trade.", "claim_ids": ["MT029-C03-1"]},
+      {"from": "OTC and alternative markets less affected by the Fed put", "to": "Evolution program keeps earning", "why": "Different price drivers from the liquid markets.", "claim_ids": ["MT029-C04-1"]},
+      {"from": "New markets researched", "to": "Genuine value added", "why": "Diversification in price drivers helped through the winter.", "claim_ids": ["MT029-C04-1"]}
+     ],
+     "evidence": "AHL's own experience in 2011-2013.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT029-C03-1", "MT029-C04-1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "universe", "practice": "Research new, harder-to-access OTC markets for different price drivers.", "why": "They were less affected by the Fed put and added value during the winter.", "claim_ids": ["MT029-C04-1"]}
+   ],
+   "evidence_style": "Institutional experience and anecdote (AHL history, the FT article); little quantitative support offered in this conversation.",
+   "current_views": [
+    {"view": "Wealth investors should hold more trend following; making it easier (capital efficiency, higher vol) is the solution.", "as_of": "2025-04", "reasoning": "Trend following is absent from wealth-market commentary.", "claim_ids": ["MT029-C12-X1"]},
+    {"view": "BlackRock and Fidelity entering the space is welcome: more people holding the strategy is better.", "as_of": "2025-04", "reasoning": "Stated briefly.", "claim_ids": ["MT029-C18-R1"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged); CTA manager",
+   "speaker_note": "Argues positions as a CTA manager: challenges the focus on fixed income, rejects high-vol and crisis-alpha framing, and flags fixed income protection. Ledger corrections moved C07-4 and C13-4 to him.",
+   "fingerprint": ["trend_following", "crisis_alpha_convexity", "manager_selection_allocation", "costs_execution", "debt_cycle_long_term"],
+   "worldview_premises": [
+    {
+     "premise": "Fixed income dominates CTA P&L because it is the largest and most liquid sector and enjoyed a 30-40 year favourable trend that has made little recently, so focusing on it risks fitting to the past.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "What he sees from his own vantage point; flagged as speculation ('I'm speculating').",
+     "claim_ids": ["MT029-C07-4"]
+    },
+    {
+     "premise": "Higher-vol share classes did not make CTAs institutional before, and investors who say they prefer high vol give smaller allocations, so more vol will not fix under-allocation.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Conversations with investors; the deleveraging after institutions began investing in about 2000.",
+     "claim_ids": ["MT029-C13-2"]
+    },
+    {
+     "premise": "CTAs are not designed to profit from equity crises; good crisis returns result from the strategy and diversification, so selling them as crisis alpha is a mistake and uncorrelated returns are the real value.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own view; credits the originator of the term crisis alpha (caption 'ktie') while disagreeing with the framing.",
+     "claim_ids": ["MT029-C13-3"]
+    },
+    {
+     "premise": "Heavy government bond issuance means trend following should also be considered as protection for fixed-income portfolios, not just equities.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "His own view, labelled as such.",
+     "claim_ids": ["MT029-C13-4"]
+    },
+    {
+     "premise": "Large CTAs spend about 35-40% of research effort on execution.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Interviews with CTAs in the SG CTA index.",
+     "claim_ids": ["MT029-C16-2"]
+    },
+    {
+     "premise": "On a Sharpe-improvement calculation CTAs are completely under-represented in portfolios.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reference to a short paper on the right allocation to a 40/60 portfolio; the host puts the question to Yav, who accepts the premise.",
+     "claim_ids": ["MT029-C11-R1"]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Practitioner interviews and challenge questions; notes the sources of his claims (interview series, anecdotes) rather than data.",
+   "current_views": [
+    {"view": "Trend following should be considered as protection for fixed-income portfolios given heavy government issuance, not only equities.", "as_of": "2025-04", "reasoning": "Bond supply to fund policy changes.", "claim_ids": ["MT029-C13-4"]},
+    {"view": "Do not sell CTAs as crisis alpha; sell uncorrelated returns.", "as_of": "2025-04", "reasoning": "Managers do not design for equity crises.", "claim_ids": ["MT029-C13-3"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Asset-class-specific funds versus one multi-asset CTA",
+   "positions": [
+    {"speaker": "Yav Git", "position": "Asset-class-specific products are better building blocks because the CTA's utility is relative to what the allocator holds, and implementation, risk and execution differ by asset class.", "claim_ids": ["MT029-C05-1", "MT029-C06-5", "MT029-C07-1"]},
+    {"speaker": "Rob Carver", "position": "A standalone CTA should choose weights itself; specialised execution already exists within a multi-asset CTA and a generalised optimiser and risk model can handle different distributions and diversification.", "claim_ids": ["MT029-C06-4", "MT029-C08-X1"]}
+   ]
+  },
+  {
+   "topic": "Do asset classes trend differently, and why?",
+   "positions": [
+    {"speaker": "Yav Git", "position": "Differences come from sustained imbalances: rate gradients in fixed income and EM FX, value traders in equities, slow supply in commodities, no anchor in crypto.", "claim_ids": ["MT029-C08-1", "MT029-C09-2", "MT029-C09-3", "MT029-C05-2"]},
+    {"speaker": "Rob Carver", "position": "No strong statistically significant difference; equity trend is weaker than VIX or fixed income, possibly because carry is higher in fixed income; crypto history is too short.", "claim_ids": ["MT029-C06-2", "MT029-C06-3"]}
+   ]
+  },
+  {
+   "topic": "Is fixed income's dominance a past regime or a lasting feature?",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Fixed income dominates because it is the biggest sector and had a 30-40 year secular trend and has made little recently, so focusing on it may be optimised to the past.", "claim_ids": ["MT029-C07-4"]},
+    {"speaker": "Yav Git", "position": "Even since 2010, after the rate decline ended, fixed income has been the most consistent asset across periods and speeds, unlike FX.", "claim_ids": ["MT029-C07-5", "MT029-C07-3"]}
+   ]
+  },
+  {
+   "topic": "Does patient execution add value in liquid futures?",
+   "positions": [
+    {"speaker": "Yav Git", "position": "Giving the desk several days and the raw signal saves more than the 1-2bp of alpha lost, even in liquid bond futures such as the 5-year Bobl.", "claim_ids": ["MT029-C14-2", "MT029-C15-1", "MT029-C15-X1"]},
+    {"speaker": "Rob Carver", "position": "With total costs of about 4bp of Sharpe only about 2bp can be saved; effort is worth it only in OTC bonds, and discretion creates an alpha desk.", "claim_ids": ["MT029-C15-2", "MT029-C16-1"]}
+   ]
+  },
+  {
+   "topic": "Higher volatility share classes and the crisis-alpha pitch",
+   "positions": [
+    {"speaker": "Rob Carver", "position": "High-vol share classes give capital efficiency but allocators prefer low-vol funds, so product design is the lever.", "claim_ids": ["MT029-C12-2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "More vol did not make CTAs institutional and investors give smaller allocations; CTAs should not be sold as crisis alpha.", "claim_ids": ["MT029-C13-2", "MT029-C13-3"]},
+    {"speaker": "Yav Git", "position": "A CTA is a crude hedge for convexity; the issue is Sharpe, and CTAs need about 1.2-1.3 Sharpe or a tailored role.", "claim_ids": ["MT029-C11-3", "MT029-C12-1"]}
+   ]
+  },
+  {
+   "topic": "Will BlackRock and Fidelity entering trend following help?",
+   "positions": [
+    {"speaker": "Yav Git", "position": "Large AUM targets make a high-Sharpe diversified product hard and risk a perception of a 0.5 Sharpe strategy.", "claim_ids": ["MT029-C18-1"]},
+    {"speaker": "Graham Robertson", "position": "The more people hold these strategies the better.", "claim_ids": ["MT029-C18-R1"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Several claims were captioned to the wrong speaker (C03-1, C07-4, C09-1, C12-2, C13-4, C17-1); ledger corrections were applied, but the C12-2 attribution to Rob is only probable.", "claim_ids": ["MT029-C03-1", "MT029-C07-4", "MT029-C09-1", "MT029-C12-2", "MT029-C13-4", "MT029-C17-1"]},
+  {"issue": "Yav's imbalance theory is stated as mechanism but no statistical test or table is offered; Rob explicitly calls it unproven and says no significant difference between asset classes exists in his data.", "claim_ids": ["MT029-C08-1", "MT029-C06-2", "MT029-C08-X1"]},
+  {"issue": "The 70-75% share of AHL P&L from fixed income is asserted from memory with no period split; Niels notes that most of it came from the 30-40 year rate decline, and Yav replies that consistency continued after 2010 without giving figures.", "claim_ids": ["MT029-C07-3", "MT029-C07-4", "MT029-C07-5"]},
+  {"issue": "Yav quotes a per-market trend Sharpe of about 0.25 and a gain to 0.30 from asset-class tailoring without a source; his execution claim for the 5-year Bobl is not backed by figures, and Rob's 4bp / 2bp calculation is a back-of-the-envelope estimate for his own system.", "claim_ids": ["MT029-C06-1", "MT029-C15-X1", "MT029-C15-2"]},
+  {"issue": "Yav's commercial interest (a fixed income CTA offered as a building block) and Niels's advocacy for CTAs may colour the asset-class and under-allocation arguments.", "claim_ids": ["MT029-C05-1", "MT029-C12-1"]},
+  {"issue": "Yav says CTAs are a crude hedge for convexity, but Niels says CTAs should not be sold as crisis alpha; neither gives data on how often CTAs paid off in past equity or bond crises.", "claim_ids": ["MT029-C11-3", "MT029-C13-3"]},
+  {"issue": "The claim that large CTAs spend 35-40% of research effort on execution contradicts the common description of execution as a production line costing about 5bp; the conversation does not reconcile them.", "claim_ids": ["MT029-C16-2", "MT029-C14-1"]}
+ ],
+ "forward_looking_inputs": "(reader) Inputs the speakers say lead trend returns: central bank rate gradients (for FX and carry-driven trend in fixed income and EM currencies), the absence of valuation anchors (crypto), supply lags against demand shocks (energy, AI power demand), and the share of value or reversion traders (negative autocorrelation in equities). For allocation: Sharpe relative to the absolute-return bucket (1.2-1.3 needed), and the effect of large-AUM entrants on the perceived Sharpe. Horizons are months to years.",
+ "reader_inferences": [
+  "(reader) The asset-class debate turns on whether the dispersion in trend performance across sectors is signal or noise: Rob asks for significance, Yav argues from mechanism; neither shows a test that would separate them, so the disagreement is about priors, not data.",
+  "(reader) Yav's imbalance theory predicts that trend strength is greatest where an observable persistent flow exists (rate differentials, supply bottlenecks); a testable form is trend Sharpe by carry magnitude, which Rob's remark about carry in fixed income partly supports.",
+  "(reader) The execution disagreement depends on the cost level of the market: both agree that execution matters when costs reach 30-40bp and not when they are 4-5bp, so the real difference is the status of liquid bond futures.",
+  "(reader) The under-allocation arguments (Sharpe beside peers, crude hedge, high vol) explain why Niels's and Yav's allocators hold CTAs mainly for hedging, which Rob's tail-protection comment implies is at odds with trend's natural speed."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT029-C03-R1",
+   "chunk": "C03",
+   "speaker": "Rob Carver",
+   "quote": "they decided it would make more sense to organize things around asset class and I was put in charge of fixed income",
+   "claim": "In 2011 AHL reorganised from strategy teams (trend, relative value, global macro) to asset-class teams, and Rob Carver was put in charge of fixed income, a diverse group including cash bonds, credit default swaps and interest rate swaps.",
+   "mechanism": "research_method",
+   "asset_class": "fixed_income",
+   "indicator": "organisation by asset class",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "AHL from 2011",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "reader": "map"
+  },
+  {
+   "claim_id": "MT029-C11-R1",
+   "chunk": "C11",
+   "speaker": "Yav Git",
+   "quote": "we're completely under represented right",
+   "claim": "If one uses the mathematics of improving Sharpe, CTAs are completely under-represented in portfolios (a short paper by Graham on the right allocation to add to a 40/60 portfolio is cited), though CTAs remain difficult to allocate to.",
+   "mechanism": "portfolio_construction",
+   "asset_class": "multi",
+   "indicator": "CTA allocation in 40/60 portfolios",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "On a Sharpe-improvement calculation",
+   "testable": "yes",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map"
+  },
+  {
+   "claim_id": "MT029-C18-R1",
+   "chunk": "C18",
+   "speaker": "Graham Robertson",
+   "quote": "the more people have these strategies within their portfolios the better",
+   "claim": "From Graham Robertson's perspective, the more investors hold trend-following strategies in their portfolios the better, including through the entry of firms like BlackRock and Fidelity.",
+   "mechanism": "adoption",
+   "asset_class": "multi",
+   "indicator": "trend-following adoption",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "Large asset managers launching trend products",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map"
+  }
+ ]
+}

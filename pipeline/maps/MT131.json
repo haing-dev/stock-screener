@@ -1,0 +1,601 @@
+{
+ "source_id": "MT131",
+ "episode_thesis": "Baltas argues that the popular claim 'CTAs have slowed' rests on correlation to the SG Trend Index, which cannot separate a change in signal speed from added structure (stop-losses, carry, reversion, new markets, risk management); and that the SG Trend Index is a manager-based, survivorship-shaped benchmark rather than a pure trend beta. The pair also relay the Convex idea that short-term risk mitigation (trend, long vol) improves long-horizon compounding and allows more equity.",
+ "speakers": [
+  {
+   "name": "Nick Baltas (transcribed Nick Bolters)",
+   "role": "Co-host, quant researcher (QIS / systematic strategies)",
+   "speaker_note": "Ledger name 'Nick Bolters' is a caption spelling of Nick Baltas, used in MT002 ledger. Attribution clear: two-person conversation, but the long speaker turns are not marked, so a few host/co-host splits are inferred from content.",
+   "fingerprint": [
+    "trend_following",
+    "research_robustness_overfitting",
+    "portfolio_construction_stacking",
+    "diversification_risk_parity",
+    "position_sizing_vol_target",
+    "replication_indexing",
+    "crisis_alpha_convexity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A change in correlation to a trend benchmark is necessary but not sufficient evidence that the signal speed changed: stop-losses, carry, reversion, value signals, new markets or different risk estimation move correlation the same way.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Logical argument with examples (momentum plus value, momentum investor vs value investor looking like a contrarian).",
+     "claim_ids": [
+      "MT131-C04-3",
+      "MT131-C05-1",
+      "MT131-C05-2",
+      "MT131-C05-3",
+      "MT131-C06-2",
+      "MT131-C06-3"
+     ]
+    },
+    {
+     "premise": "The SG Trend Index is realised returns of real, evolving programs, not a simulation of today's algorithms, so speed-by-correlation inference on it is fragile.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Index construction; a paper maximising correlation to the index found a half-life of about 66 business days over 15 years, which is not slow.",
+     "claim_ids": [
+      "MT131-C05-4",
+      "MT131-C06-4",
+      "MT131-C07-1",
+      "MT131-C06-R1"
+     ]
+    },
+    {
+     "premise": "CTA model research mostly changes risk management (risk level, net/gross exposure, signal diversification) rather than signal speed, and the research direction is toward protecting the portfolio and anticipating falling signal-to-noise.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own continuous research and assumption about peers; he flags he could be wrong.",
+     "claim_ids": [
+      "MT131-C06-1",
+      "MT131-C07-2"
+     ]
+    },
+    {
+     "premise": "Different trend signal forms (sign of past return, EWMA, crossover) are functional transformations of each other, so effort belongs in portfolio construction and risk management (Lasse Pedersen et al., AQR 2016).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Cites an AQR paper.",
+     "claim_ids": [
+      "MT131-C07-4",
+      "MT131-C07-X6"
+     ]
+    },
+    {
+     "premise": "Trend following's value is defensiveness in prolonged equity or macro drawdowns plus long-term returns, with decorrelation visible over long horizons and around transition points, not locally; judge it against the investor's purpose.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Reasoning and investor conversations; 2022 versus 2023-2025 expectations mismatch.",
+     "claim_ids": [
+      "MT131-C08-1",
+      "MT131-C08-2",
+      "MT131-C08-3",
+      "MT131-C08-4",
+      "MT131-C08-X7"
+     ]
+    },
+    {
+     "premise": "Trend already carries equity beta, so diversifiers such as beta-neutral carry or reversion should be added rather than more beta.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Portfolio logic; beta-neutral carry did well in 2025.",
+     "claim_ids": [
+      "MT131-C09-1",
+      "MT131-C03-5"
+     ]
+    },
+    {
+     "premise": "A manager-based index (SG Trend) is not a pure trend beta: survivorship, AUM and design choices mean it is beta plus or minus alpha and a higher bar than a simple trend beta.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Index composition (10 largest managers); no visibility into construction admitted.",
+     "claim_ids": [
+      "MT131-C09-3",
+      "MT131-C10-1",
+      "MT131-C10-2",
+      "MT131-C09-X8"
+     ]
+    },
+    {
+     "premise": "Compounding investors need short-term risk mitigation: losses compound asymmetrically and the objective is long-horizon return with short-horizon risk control.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Arithmetic of recovery, comparison to single-period mean-variance, rental-property carry analogy, solvency checkpoints, own Monte Carlo.",
+     "claim_ids": [
+      "MT131-C13-2",
+      "MT131-C13-3",
+      "MT131-C13-4",
+      "MT131-C14-1",
+      "MT131-C14-2",
+      "MT131-C14-3",
+      "MT131-C14-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why apparent CTA slowing may be structure, not speed",
+     "steps": [
+      {
+       "from": "Rolling 1-2 year correlation of stylised fast-to-slow strategies with SG Trend Index rises for slow ones",
+       "to": "claim: CTAs have slowed",
+       "why": "Standard ex-post analysis",
+       "claim_ids": [
+        "MT131-C05-1"
+       ]
+      },
+      {
+       "from": "Managers add stop-losses, carry, reversion or value sleeves, new markets or different vol/covariance estimates",
+       "to": "correlation to a pure-speed benchmark shifts the same way",
+       "why": "These features interact with the trend signal's return stream",
+       "claim_ids": [
+        "MT131-C05-3",
+        "MT131-C06-2",
+        "MT131-C04-3"
+       ]
+      },
+      {
+       "from": "Index is of evolving real programs, not simulated rules",
+       "to": "speed inference from correlation is questionable",
+       "why": "Composition and design change through time",
+       "claim_ids": [
+        "MT131-C05-4",
+        "MT131-C10-2"
+       ]
+      },
+      {
+       "from": "Max-correlation half-life is about 66 business days over 15 years",
+       "to": "'slowed' story overstated",
+       "why": "Not a slow speed",
+       "claim_ids": [
+        "MT131-C07-1"
+       ]
+      }
+     ],
+     "evidence": "Logical examples and one cited paper (quant paper maximising correlation to SG Trend Index).",
+     "fails_when": "The research shows a stable speed measure independent of construction.",
+     "claim_ids": [
+      "MT131-C04-3",
+      "MT131-C05-1",
+      "MT131-C05-2",
+      "MT131-C05-3",
+      "MT131-C05-4",
+      "MT131-C06-2",
+      "MT131-C06-3",
+      "MT131-C06-4",
+      "MT131-C07-1"
+     ]
+    },
+    {
+     "topic": "Short-term risk mitigation lifts long-term compounding",
+     "steps": [
+      {
+       "from": "Losses compound asymmetrically (10% loss needs about 11% gain)",
+       "to": "short-term drawdowns reduce terminal and path wealth",
+       "why": "Arithmetic returns",
+       "claim_ids": [
+        "MT131-C13-2",
+        "MT131-C14-1"
+       ]
+      },
+      {
+       "from": "Investor needs long-horizon return and short-horizon risk control (e.g. annual solvency)",
+       "to": "strategies with downside mitigation (long vol, trend) are valued even with similar average arithmetic returns",
+       "why": "Mean-variance single period misses horizon structure",
+       "claim_ids": [
+        "MT131-C13-3",
+        "MT131-C14-2"
+       ]
+      },
+      {
+       "from": "Monte Carlo of 12-52 period sequences",
+       "to": "compounded return distribution shifted right for strategies with downside mitigation",
+       "why": "Early small losses are recovered over the year",
+       "claim_ids": [
+        "MT131-C14-3"
+       ]
+      },
+      {
+       "from": "Assess hedge in portfolio context, like insurance",
+       "to": "negative stand-alone expected return is acceptable",
+       "why": "Pays when needed",
+       "claim_ids": [
+        "MT131-C14-4"
+       ]
+      }
+     ],
+     "evidence": "Own Monte Carlo sampling (no figures given), analogy to carry harvesting and insurance.",
+     "fails_when": "Long-vol or trend premia are too costly relative to the compounding benefit.",
+     "claim_ids": [
+      "MT131-C13-2",
+      "MT131-C13-3",
+      "MT131-C13-4",
+      "MT131-C14-1",
+      "MT131-C14-2",
+      "MT131-C14-3",
+      "MT131-C14-4"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Treat speed as one dimension; analyse design features (risk management, sleeves, markets) separately.",
+     "why": "Correlation cannot identify behaviour.",
+     "claim_ids": [
+      "MT131-C06-1",
+      "MT131-C06-3",
+      "MT131-C07-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Add beta-neutral carry and reversion to a trend allocation rather than more beta.",
+     "why": "Diversify the periods when trend fails, as in 2025.",
+     "claim_ids": [
+      "MT131-C09-1",
+      "MT131-C03-5"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Assess trend in portfolio context and set/monitor investor expectations on drawdowns.",
+     "why": "Allocators must justify drawdowns to stakeholders.",
+     "claim_ids": [
+      "MT131-C08-3",
+      "MT131-C08-X7",
+      "MT131-C14-4"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Use the trend signal also as a measure of trendiness to set relative risk across assets under dynamic risk scaling.",
+     "why": "Trend signal is a measure of how trendy a market is.",
+     "claim_ids": [
+      "MT131-C07-X6"
+     ]
+    }
+   ],
+   "evidence_style": "Logical decomposition, stylised simulations and Monte Carlo; careful disclaimers about what the data can show.",
+   "current_views": [
+    {
+     "view": "Slower trend beat faster in recent months and years because V-shaped reversals (April 2025, August 2024) punish fast signals.",
+     "as_of": "2025-08-30",
+     "reasoning": "V-shaped moves catch fast signals.",
+     "claim_ids": [
+      "MT131-C03-2"
+     ]
+    },
+    {
+     "view": "Gold was the top contributor across an 80+ market universe in 2025; rates had no trend.",
+     "as_of": "2025-08-30",
+     "reasoning": "Own program data.",
+     "claim_ids": [
+      "MT131-C03-3",
+      "MT131-C03-4",
+      "MT131-C03-X3",
+      "MT131-C03-X4"
+     ]
+    },
+    {
+     "view": "Beta-neutral carry had one of its best years; CTAs with carry, stop-loss or reversion sleeves did better.",
+     "as_of": "2025-08-30",
+     "reasoning": "Own observation.",
+     "claim_ids": [
+      "MT131-C03-5"
+     ]
+    },
+    {
+     "view": "A better trend benchmark is a simple bottom-up academic-style model, as bank QIS trend indices already use; third-party aggregated QIS indices have survivorship bias; there is no agreed best allocation benchmark.",
+     "as_of": "2025-08-30",
+     "reasoning": "Reasoning about benchmark definition.",
+     "claim_ids": [
+      "MT131-C11-1",
+      "MT131-C11-2",
+      "MT131-C11-3"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged), hedge fund manager",
+   "speaker_note": "Caption names 'Neils Krup Larson'; refers to his own firm as 'Don' in C05 (caption; firm name uncertain).",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "crisis_alpha_convexity",
+    "portfolio_construction_stacking",
+    "fiscal_dominance",
+    "regime_detection"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend followers are not alike: replicators, core diversifiers, crisis risk offsetters, outlier hunters and pure trend followers serve different investor purposes.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Podcast conversations.",
+     "claim_ids": [
+      "MT131-C07-5"
+     ]
+    },
+    {
+     "premise": "A long-term signal with agile risk management can look like a short-term model; modern CTAs choose parameters dynamically, so speed buckets mislead.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own practice.",
+     "claim_ids": [
+      "MT131-C05-5",
+      "MT131-C07-3"
+     ]
+    },
+    {
+     "premise": "SG Trend Index is the 10 biggest managers, shaped by AUM, survivorship and compromises; benchmark definition matters because investors are paid on outperformance.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Index knowledge.",
+     "claim_ids": [
+      "MT131-C09-2",
+      "MT131-C10-3"
+     ]
+    },
+    {
+     "premise": "Portfolios built to look safe load up on correlated strategies that fall together; best brakes (long vol, trend) let the portfolio drive faster and permit higher equity allocation.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Dave Dredge (Convex) letters; race-car analogy.",
+     "claim_ids": [
+      "MT131-C12-1",
+      "MT131-C12-2",
+      "MT131-C12-3",
+      "MT131-C12-R1"
+     ]
+    },
+    {
+     "premise": "Fiscal expansion raises bond issuance so fixed income will weigh more in portfolios, but it is not a safe source of real compounding.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Macro reasoning.",
+     "claim_ids": [
+      "MT131-C13-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Policy shocks can reverse trends",
+     "steps": [
+      {
+       "from": "Sudden US policy announcements (copper tariff, Fed governance)",
+       "to": "established trends reverse",
+       "why": "Short-notice discontinuities",
+       "claim_ids": [
+        "MT131-C02-X2",
+        "MT131-C02-3"
+       ]
+      },
+      {
+       "from": "Trend followers lose on reversals",
+       "to": "bad month despite good trend",
+       "why": "Seen end-July 2025",
+       "claim_ids": [
+        "MT131-C02-X2"
+       ]
+      }
+     ],
+     "evidence": "End-July 2025 copper news.",
+     "fails_when": "Policy noise is absorbed by diversified trend books.",
+     "claim_ids": [
+      "MT131-C02-X2",
+      "MT131-C02-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Watch a trend barometer (short lookback) for the state of trendiness.",
+     "why": "Cross-check with CTA index performance.",
+     "claim_ids": [
+      "MT131-C04-1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Track the SG Trend Indicator (signal-based) for daily pure-trend performance.",
+     "why": "Tracks well versus manager index.",
+     "claim_ids": [
+      "MT131-C10-4"
+     ]
+    }
+   ],
+   "evidence_style": "Observation of index data and conversation with guests; endorses others' frameworks (Convex).",
+   "current_views": [
+    {
+     "view": "July 2025 looked like a turning point for CTAs; August continued with equity trends plus live cattle, gold, silver and short wheat; fixed income was the worst sector (range-bound, CTAs split).",
+     "as_of": "2025-08-30",
+     "reasoning": "Early numbers and daily fluctuations.",
+     "claim_ids": [
+      "MT131-C02-X1",
+      "MT131-C02-1",
+      "MT131-C02-2"
+     ]
+    },
+    {
+     "view": "Attempt to remove Fed governor Lisa Cook could give the administration about five of seven board seats, raising Fed-independence risk.",
+     "as_of": "2025-08-30",
+     "reasoning": "Board composition arithmetic.",
+     "claim_ids": [
+      "MT131-C02-3"
+     ]
+    },
+    {
+     "view": "Oil traded sideways with no follow-through.",
+     "as_of": "2025-08-30",
+     "reasoning": "Price action.",
+     "claim_ids": [
+      "MT131-C03-1"
+     ]
+    },
+    {
+     "view": "CTA indices were negative YTD through August 2025 (BTOP50 -3.29%, SG CTA -6.25%, SG Trend -7.39%, Short-term -6.29% YTD) while MSCI World +14.3% and S&P +11%; the short-term index was weakest on volatility-adjusted basis.",
+     "as_of": "2025-08-30",
+     "reasoning": "Index returns quoted; correction applied that the short-term index fell 1.25% in August while the Trend index rose almost 3%.",
+     "claim_ids": [
+      "MT131-C04-X5",
+      "MT131-C04-2",
+      "MT131-C04-1"
+     ]
+    },
+    {
+     "view": "A rules-based non-manager trend index could probably be replicated.",
+     "as_of": "2025-08-30",
+     "reasoning": "Idea, relayed to replication guests.",
+     "claim_ids": [
+      "MT131-C11-X9"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Is 'CTAs got slower' a speed change?",
+   "positions": [
+    {
+     "speaker": "Nick Baltas",
+     "position": "Shifts in correlation do not prove speed change; may be structure.",
+     "claim_ids": [
+      "MT131-C04-3",
+      "MT131-C05-2",
+      "MT131-C06-4"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Long-term signals with agile risk management can look short-term; speed is dynamic.",
+     "claim_ids": [
+      "MT131-C05-5",
+      "MT131-C07-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "What is a trend benchmark?",
+   "positions": [
+    {
+     "speaker": "Nick Baltas",
+     "position": "Simple bottom-up academic-style model; SG Trend Index is beta plus alpha, higher bar.",
+     "claim_ids": [
+      "MT131-C11-1",
+      "MT131-C10-1",
+      "MT131-C09-3"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "SG Trend Index is dominated by biggest managers; signal-based SG Trend Indicator tracks daily trend well.",
+     "claim_ids": [
+      "MT131-C09-2",
+      "MT131-C10-4",
+      "MT131-C11-X9"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Nick states he has no specific proof of the structure-not-speed claim and may be wrong; no quantified test is presented.",
+   "claim_ids": [
+    "MT131-C04-3",
+    "MT131-C05-2"
+   ]
+  },
+  {
+   "issue": "The Monte Carlo result is described only qualitatively (no figures, no strategy parameters).",
+   "claim_ids": [
+    "MT131-C14-3"
+   ]
+  },
+  {
+   "issue": "Nick says he has no visibility into SG Trend Index construction beyond 'average return of the largest managers'.",
+   "claim_ids": [
+    "MT131-C09-3",
+    "MT131-C10-2"
+   ]
+  },
+  {
+   "issue": "The index speed claim from one paper (66 days) is relayed from memory.",
+   "claim_ids": [
+    "MT131-C07-1"
+   ]
+  },
+  {
+   "issue": "Host's index statistics: ledger correction shows trend index was worse YTD than short-term index; 'by far the worst' only on volatility-adjusted basis.",
+   "claim_ids": [
+    "MT131-C04-2"
+   ]
+  },
+  {
+   "issue": "Host's Fed-governor board-seat claim is stated loosely.",
+   "claim_ids": [
+    "MT131-C02-3"
+   ]
+  },
+  {
+   "issue": "Dredge's argument is relayed second-hand; no data in this conversation.",
+   "claim_ids": [
+    "MT131-C12-1",
+    "MT131-C12-2",
+    "MT131-C12-3",
+    "MT131-C13-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "Index levels (trend barometer 34), sector trend persistence, V-shaped reversals, carry returns; horizon months. Policy/fiscal inputs: bond issuance, Fed independence.",
+ "reader_inferences": [
+  "Both speakers rely on tools like correlation to a benchmark and caution against them; the useful operational lesson is to separate speed from risk management when classifying managers.",
+  "Little is directional for markets; the August 2025 market discussion is descriptive."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT131-C06-R1",
+   "chunk": "C06",
+   "speaker": "Nick Baltas",
+   "quote": "I can produce variations of strategy that actually show that the socks and trend index has become faster not slower",
+   "claim": "Baltas says he could construct bottom-up variants showing the SG Trend Index became faster, not slower, so the 'CTAs slowed' conclusion depends on construction choices.",
+   "mechanism": "speed_inference_fragility",
+   "asset_class": "futures",
+   "indicator": "SG Trend Index correlation to stylised speed strategies",
+   "horizon": "years",
+   "direction": "Speed conclusions are not robust",
+   "conditions": "depends on markets, signal calculation (EWMA vs lookback)",
+   "testable": "yes - rerun rolling-correlation speed analysis with alternative constructions",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map-added",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT131-C12-R1",
+   "chunk": "C12",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "the starting point of this is from a uh report that came out recently from one of the sovereign wealth funds uh in Singapore GIC",
+   "claim": "The host frames the Convex compounding discussion around GIC's recently published long-term return review, to see whether institutions adopt the idea of building portfolios for compounding.",
+   "mechanism": "institutional_portfolio_construction",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "institutional portfolios tend to target long-term average return",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "map-added",
+   "quote_check": "exact"
+  }
+ ]
+}

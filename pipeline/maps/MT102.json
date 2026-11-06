@@ -1,0 +1,154 @@
+{
+ "source_id": "MT102",
+ "episode_thesis": "Jeffrey Hirsch argues that market calendar patterns (four-year/midterm cycle, best six months Nov-Apr, January barometer, monthly and intraday flows, sector seasonals) persist because people and institutions behave habitually and rebalance on calendar dates, and that algorithms inherit these habits because people program them. He treats seasonality as an average tendency that must be combined with technicals, fundamentals, monetary policy and sentiment and re-checked as patterns decay, and he adds a long-run super-boom thesis (war plus inflation plus a paradigm-shifting technology, now AI). Host Steve Eisman supplies the window-dressing mechanism, is sceptical of Bitcoin and sees a credit-cycle tightening from private credit.",
+ "speakers": [
+  {
+   "name": "Jeffrey Hirsch",
+   "role": "Author and editor of the Stock Trader's Almanac (seasonality and market patterns; son of founder Yale Hirsch)",
+   "speaker_note": "Auto-captions; ledger labels him 'Jeffrey' or 'Jeffrey Hirsch'. Two-speaker interview. One ledger claim (window dressing, C05-2) was corrected to Eisman, with Hirsch agreeing. The 'Gul' in 'Gul's rule' is a caption spelling of an old newsletter analyst.",
+   "fingerprint": ["behavioral_sentiment", "short_term_systematic", "regime_detection", "research_robustness_overfitting", "liquidity_flows", "structural_themes", "market_internals_leading"],
+   "worldview_premises": [
+    {"premise": "Calendar patterns arise because people and institutions behave repetitively (daily, weekly, monthly, quarterly, four-year and presidential cycles), so market behaviour has regular seasonal structure.", "type": "behavioural", "stated": "stated", "support": "Almanac tables and sixty years of tracking; habit examples (vacations, pay dates, holidays)", "claim_ids": ["MT102-C02-1"]},
+    {"premise": "Seasonal structure persists in the algorithmic era because humans programme the algorithms.", "type": "behavioural", "stated": "stated", "support": "His own trading experience with 2-2:30pm limit orders", "claim_ids": ["MT102-C07-2", "MT102-C07-X4"]},
+    {"premise": "The midterm year is weak mid-year because campaigning draws attention from markets and leaves them vulnerable to shocks; 11 of the last 16 bear markets bottomed in a midterm year.", "type": "empirical", "stated": "stated", "support": "Almanac history back to 1914 plus narrative of events in midterm years", "claim_ids": ["MT102-C02-2", "MT102-C02-3"]},
+    {"premise": "Mutual-fund fiscal year end (40 Act, October 31) and quarter-end flows, year-end performance chasing and holiday money drive the best-six-months pattern.", "type": "institutional", "stated": "stated", "support": "Institutional experience of the Almanac; no flow data shown", "claim_ids": ["MT102-C05-1", "MT102-C05-3"]},
+    {"premise": "Fixed-schedule inflows (bi-weekly 401(k) payroll deductions) force mutual funds with capped cash to buy, creating a mid-month pattern that replaced the old turn-of-month bulge; this pattern is unstable.", "type": "institutional", "stated": "stated", "support": "Observed change in the Barron's-based tables; he and his research director keep arguing whether it still works", "claim_ids": ["MT102-C06-1", "MT102-C06-2", "MT102-C07-X3", "MT102-C07-1"]},
+    {"premise": "The January barometer works because Congress, the inauguration and White House priorities begin in January, so the market in January reflects expectations for the year.", "type": "theoretical", "stated": "stated", "support": "Historical story of the 20th Amendment and the move of inauguration day; also says 'I know it's statistically true'", "claim_ids": ["MT102-C09-1", "MT102-C09-3"]},
+    {"premise": "Seasonal patterns are average tendencies that events can override and that decay or shift, so they must be tracked and re-checked rather than applied mechanically; failed indicators are logged in an 'indicator graveyard'.", "type": "experience", "stated": "stated", "support": "Examples of dead patterns (September reverse barometer, small-cap January effect, Bitcoin seasonal)", "claim_ids": ["MT102-C08-4", "MT102-C08-X6", "MT102-C08-X7"]},
+    {"premise": "A seasonal pattern needs support from other disciplines: seasonality, fundamentals, technicals, monetary policy and sentiment are used together.", "type": "experience", "stated": "stated", "support": "Practice in the Almanac trades (utilities, energy, copper)", "claim_ids": ["MT102-C08-3", "MT102-C04-2"]},
+    {"premise": "The best-six-months switching strategy is statistically real: of 6,200+ black-box systems tested by Aronson, all failed against chance, while the strategy tested out of sample from 1987 passed.", "type": "empirical", "stated": "stated", "support": "Citing Aronson's Evidence-Based Technical Analysis; the test is a one-off check by the Almanac", "claim_ids": ["MT102-C04-4", "MT102-C03-3"]},
+    {"premise": "Markets make roughly 500% moves after war and inflation, enabled by a paradigm-shifting technology (car, interstate, microprocessor, now AI).", "type": "empirical", "stated": "stated", "support": "Yale Hirsch's 1976-77 thesis and two past forecasts, with the 2010 Dow 38,820 forecast exceeded", "claim_ids": ["MT102-C11-1", "MT102-C11-X11", "MT102-C11-X12"]},
+    {"premise": "If a market fails to rally during its bullish seasonal period, other forces are stronger and will assert themselves when the period ends.", "type": "experience", "stated": "stated", "support": "Old rule of thumb attributed to a newsletter analyst; applied to Bitcoin", "claim_ids": ["MT102-C10-1"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Why the market is weak in September-October and strong November-April",
+     "steps": [
+      {"from": "Mutual-fund fiscal year end on October 31 and quarter-end window dressing", "to": "Institutions sell losers and reshuffle", "why": "Forced reconciliation and a wish not to show embarrassing holdings", "claim_ids": ["MT102-C05-1", "MT102-C05-2"]},
+      {"from": "Selling pressure into October", "to": "Autumn low and start of the best six months", "why": "Selling is exhausted once reporting dates pass", "claim_ids": ["MT102-C05-1"]},
+      {"from": "Year-end performance chasing, bonuses and holiday money", "to": "Strong November-January", "why": "Money follows money; retail adds funds", "claim_ids": ["MT102-C05-3"]}
+     ],
+     "evidence": "Best six months strategy introduced 1986/87, tested out of sample since 1987 and passing Aronson's test.",
+     "fails_when": "Exogenous events (war, Fed issues) dominate; a market that fails to rally in its bullish period signals other forces.",
+     "claim_ids": ["MT102-C05-1", "MT102-C05-2", "MT102-C05-3", "MT102-C03-3", "MT102-C04-4"]},
+    {"topic": "Four-year cycle: midterm low to pre-election-year high",
+     "steps": [
+      {"from": "Midterm-year Q2-Q3 campaigning", "to": "Choppy, vulnerable market and a low in late summer or October", "why": "Attention and policy focus shift to politics", "claim_ids": ["MT102-C02-3", "MT102-C03-X1"]},
+      {"from": "Midterm low", "to": "Strong rally; Q4 midterm to Q2 pre-election year is the sweet spot", "why": "Statistical tendency, no mechanism given beyond political cycle", "claim_ids": ["MT102-C03-1", "MT102-C03-2"]},
+      {"from": "Rally", "to": "Pre-election year high, most often in December", "why": "Pattern in the table of annual highs", "claim_ids": ["MT102-C03-X2"]}
+     ],
+     "evidence": "Dow average gain of 46.3% (Nasdaq 66.6%) from midterm low to pre-election high since 1914; about 19% Dow, 20% S&P, 29% Nasdaq in the sweet spot.",
+     "fails_when": "Events override the cycle; patterns shift over time.",
+     "claim_ids": ["MT102-C03-1", "MT102-C03-2", "MT102-C03-X1", "MT102-C03-X2", "MT102-C02-3"]},
+    {"topic": "Monthly and intraday flow patterns",
+     "steps": [
+      {"from": "Bi-weekly payroll deductions into 401(k) plans", "to": "Mutual funds with capped cash must buy", "why": "Cash holdings limited to about 5%", "claim_ids": ["MT102-C06-1", "MT102-C06-2"]},
+      {"from": "Predictable inflows", "to": "A mid-month spike ('super eight days')", "why": "Replaces the old last-day and first-days pattern", "claim_ids": ["MT102-C06-1", "MT102-C07-X3"]},
+      {"from": "Intraday human habits (weak opens, lunch lull, 2-2:30 drag, late rally by smart money)", "to": "Buy limits fill around 2-2:30pm", "why": "Algorithms replicate human timing", "claim_ids": ["MT102-C07-2", "MT102-C07-X4"]}
+     ],
+     "evidence": "Half-hourly Dow ticks from Barron's since 1987 plus own trading.",
+     "fails_when": "Patterns come and go (super eight days re-argued every year).",
+     "claim_ids": ["MT102-C06-1", "MT102-C06-2", "MT102-C07-2", "MT102-C07-X3"]},
+    {"topic": "War, oil and the Trump-year pattern",
+     "steps": [
+      {"from": "War outbreak", "to": "Market bottoms within about a month on average; shorter wars mean faster recoveries", "why": "Uncertainty is priced early; damage grows if war persists", "claim_ids": ["MT102-C12-1"]},
+      {"from": "War ends", "to": "Oil rises like a rocket and falls like a feather", "why": "Pump prices fall slowly", "claim_ids": ["MT102-C12-1"]},
+      {"from": "Trump pattern of Q1 shocks and extreme demands then settling for less", "to": "Double bottom late March or early April, then about +15% to year-end; weekend deals raise Monday gap risk", "why": "Observed over a five-year sample", "claim_ids": ["MT102-C12-2", "MT102-C12-X14"]}
+     ],
+     "evidence": "Five-year Trump-presidency sample and war history.",
+     "fails_when": "Very small sample.",
+     "claim_ids": ["MT102-C12-1", "MT102-C12-2", "MT102-C12-X14"]},
+    {"topic": "Super boom: war, inflation and technology produce a 500% move",
+     "steps": [
+      {"from": "War spending and inflation", "to": "Nominal market surge (500% from the secular low)", "why": "Historic pattern after WWI, WWII, Vietnam; COVID spending played the war role", "claim_ids": ["MT102-C11-1", "MT102-C11-X12"]},
+      {"from": "Paradigm-shifting technology (AI like Windows 95)", "to": "Productivity explosion that fuels the boom", "why": "Analogy with car, interstate, microprocessor", "claim_ids": ["MT102-C11-1", "MT102-C12-X13"]},
+      {"from": "500% from the 2009/2011 lows", "to": "Dow about 62,430, reachable around 2030 at 8.5% annual gain", "why": "Arithmetic from the long-run average", "claim_ids": ["MT102-C12-X13"]}
+     ],
+     "evidence": "2010 forecast of Dow 38,820 by 2025 exceeded (Dow about 45,000-46,000); Yale's 1977 forecast of Dow 3,420.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT102-C11-1", "MT102-C11-X11", "MT102-C12-X13"]}
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Best six months switching: own Dow, S&P and Nasdaq from end of October to April 30; Nasdaq to June; after April tighten up, limit new longs, sell losers and underperformers, go defensive without exiting.", "why": "Seasonal edge; 'sell in May' needs 'buy in October'", "claim_ids": ["MT102-C03-3", "MT102-C04-1", "MT102-C04-R2"]},
+    {"element": "signal", "practice": "Use MACD momentum as a confirmation of the seasonal entry and exit, never alone.", "why": "Confirmation by a second reason to buy or sell", "claim_ids": ["MT102-C04-2"]},
+    {"element": "universe", "practice": "Sector seasonal trades: utilities March-October (worst six months), copper and energy (XLE) from the December low to an April-May top; combine with technical entry and macro trend.", "why": "Seasonality in construction activity, plus electricity demand from data centers", "claim_ids": ["MT102-C08-1", "MT102-C08-2", "MT102-C08-3"]},
+    {"element": "execution", "practice": "Put buy limits at the price analysed with the market closed and wait for the 2-2:30pm lull to fill.", "why": "Intraday pattern persists", "claim_ids": ["MT102-C07-X4", "MT102-C07-2"]},
+    {"element": "risk", "practice": "Cut losers fast, let winners ride, sell half on a double and take profits (Loeb rules).", "why": "Behavioural discipline against instinct", "claim_ids": ["MT102-C04-3"]},
+    {"element": "research", "practice": "Test seasonal rules out of sample against a no-predictive-power null; keep a written record of failed patterns and revise the Almanac as patterns decay; debate each year whether the 401(k) pattern holds.", "why": "Patterns shift and chance can mimic signal", "claim_ids": ["MT102-C04-4", "MT102-C08-4", "MT102-C08-X7", "MT102-C07-X3"]},
+    {"element": "signal", "practice": "Use the January indicator trifecta (Santa Claus rally, first five days, full January) and Santa Claus failure as a warning to buy later.", "why": "All three up preceded higher markets 29 of 32 times", "claim_ids": ["MT102-C09-2", "MT102-C09-X8", "MT102-C09-1"]}
+   ],
+   "evidence_style": "Almanac tables and long historical averages (since 1914, 1950s onwards), an out-of-sample test by Aronson, track record of forecasts, family tradition and his own trading; patterns accepted when they persist, retired when they fail.",
+   "current_views": [
+    {"view": "2026 is a midterm year: bottom in late Q2-Q3 (late summer or October) then a strong Q4 to Q2 2027 rally (sweet spot about 19% Dow), pre-election high most likely December 2027.", "as_of": "2026-04-20", "reasoning": "Four-year cycle statistics.", "claim_ids": ["MT102-C03-X1", "MT102-C03-2", "MT102-C03-X2", "MT102-C03-1"]},
+    {"view": "January 2026 gave two of three trifecta signals (barometer and first five days up, Santa Claus down), which has preceded an S&P gain over the next 11 months 87.5% of the time (+12.2%).", "as_of": "2026-04-20", "reasoning": "Historical record of the trifecta.", "claim_ids": ["MT102-C09-2"]},
+    {"view": "Utilities and energy/copper seasonal trades still work; utilities are held in the worst six months, helped by data center demand.", "as_of": "2026-04-20", "reasoning": "Seasonal pattern plus technical entry and macro trend.", "claim_ids": ["MT102-C08-1", "MT102-C08-2"]},
+    {"view": "The Iran war should find a bottom within about a month of its outset on average; shorter wars mean faster recoveries; oil falls slowly; the Trump pattern points to a late March/early April double bottom and about +15% to year-end.", "as_of": "2026-04-20", "reasoning": "Past war and Trump-year behaviour.", "claim_ids": ["MT102-C12-1", "MT102-C12-2"]},
+    {"view": "Super boom still holds: AI is the technology fuel, Dow about 62,430 around 2030.", "as_of": "2026-04-20", "reasoning": "500% from the 2009/2011 lows; 8.5% average annual gain.", "claim_ids": ["MT102-C11-1", "MT102-C12-X13"]},
+    {"view": "Bitcoin seasonality failed last year, it is weak in midterm years and the luster has worn off.", "as_of": "2026-04-20", "reasoning": "A market failing to rally in its seasonal window signals trouble.", "claim_ids": ["MT102-C09-4", "MT102-C10-1"]},
+    {"view": "Private-credit fears look like the 2023 regional-bank scare: a few bad players may blow up with a psychological rather than real market impact.", "as_of": "2026-04-20", "reasoning": "The 2023 scare did not damage the market.", "claim_ids": ["MT102-C13-X15"]}
+   ]
+  },
+  {
+   "name": "Steve Eisman",
+   "role": "Host of The Real Eisman Playbook; investor",
+   "speaker_note": "Host who states views on Bitcoin, DeFi, private credit and the premise of the book. Host questions are context; only statements that carry a view are mapped.",
+   "fingerprint": ["bottom_up_fundamental", "behavioral_sentiment", "structural_themes", "macro_fundamental_topdown", "liquidity_flows"],
+   "worldview_premises": [
+    {"premise": "Stock trading has patterns because people buy stocks and humans program the algorithms.", "type": "behavioural", "stated": "stated", "support": "Summary of the book's premise at the end of the episode", "claim_ids": ["MT102-C14-1"]},
+    {"premise": "Window dressing: institutions sell embarrassing losers before quarter-end reports so that investors never see them, which adds to September/October weakness.", "type": "institutional", "stated": "stated", "support": "Experience as a fund manager; Hirsch agrees", "claim_ids": ["MT102-C05-2"]},
+    {"premise": "Bitcoin acts opposite to its thesis (a levered Nasdaq with unclear closing price and no recourse on theft); speculative demand is migrating to prediction markets.", "type": "experience", "stated": "stated", "support": "Anecdote of a theft; reports George Noble's view that Bitcoin is now for boomers", "claim_ids": ["MT102-C10-2", "MT102-C09-X9"]},
+    {"premise": "DeFi failed to displace card networks because rebuilding a network like Visa's from scratch is prohibitive.", "type": "theoretical", "stated": "stated", "support": "Scale argument: 200 million merchants, billions of users", "claim_ids": ["MT102-C10-X10"]},
+    {"premise": "Nearly all post-GFC US loan growth was in private credit, so a credit cycle tightening could slow the economy though banks are not at risk.", "type": "empirical", "stated": "stated", "support": "States the share without a source", "claim_ids": ["MT102-C13-1"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Private credit tightening and the economy",
+     "steps": [
+      {"from": "Loan growth since the GFC concentrated in private credit", "to": "Credit cycle tightening", "why": "Few bad players may blow up", "claim_ids": ["MT102-C13-1"]},
+      {"from": "Tightening", "to": "Slower economy, possible recession, but banks not at risk", "why": "Credit supply shrinks outside the banks", "claim_ids": ["MT102-C13-1"]}
+     ],
+     "evidence": "Aggregate loan growth statistic (unsourced).",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT102-C13-1"]}
+   ],
+   "decision_process": [],
+   "evidence_style": "Experience as a fund manager and anecdote; accepts Hirsch's patterns on the authority of the book and the Aronson test.",
+   "current_views": [
+    {"view": "A credit cycle is starting and tightening will slow the economy, as private credit dominates new lending.", "as_of": "2026-04-20", "reasoning": "Almost all post-GFC loan growth was private credit.", "claim_ids": ["MT102-C13-1"]},
+    {"view": "2026 leadership has flipped: last year's losers are doing well and last year's winners poorly, partly because of the war.", "as_of": "2026-04-20", "reasoning": "Observation of this year's markets.", "claim_ids": ["MT102-C07-X5"]},
+    {"view": "Bitcoin has lost speculative demand to prediction markets and has weak fundamentals as a hedge.", "as_of": "2026-04-20", "reasoning": "George Noble's remark and own critique.", "claim_ids": ["MT102-C09-X9", "MT102-C10-2"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {"topic": "Private credit: serious economy-wide risk or psychological scare", "positions": [
+   {"speaker": "Steve Eisman", "position": "Credit cycle tightening is starting and will slow the economy, even if banks are not at risk.", "claim_ids": ["MT102-C13-1"]},
+   {"speaker": "Jeffrey Hirsch", "position": "It resembles the 2023 regional-bank scare, which did no market damage; psychological rather than real impact.", "claim_ids": ["MT102-C13-X15"]}]},
+  {"topic": "Bitcoin as an asset", "positions": [
+   {"speaker": "Steve Eisman", "position": "Bitcoin acts opposite to its thesis and young speculators have moved on to prediction markets.", "claim_ids": ["MT102-C10-2", "MT102-C09-X9"]},
+   {"speaker": "Jeffrey Hirsch", "position": "Still tradable through ETFs, and its seasonality (low in late September) is a useful signal, though it failed last year and the data are thin.", "claim_ids": ["MT102-C09-4", "MT102-C10-1"]}]},
+  {"topic": "Why the best six months works", "positions": [
+   {"speaker": "Jeffrey Hirsch", "position": "Fiscal year end of mutual funds, window dressing and year-end flows, with testing showing it is not chance.", "claim_ids": ["MT102-C05-1", "MT102-C05-3", "MT102-C04-4"]},
+   {"speaker": "Steve Eisman", "position": "Pushes for the reason, adding window dressing as the mechanism and finding the pattern 'not intuitive' at first.", "claim_ids": ["MT102-C05-2"]}]}
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Hirsch tests only one seasonal rule (best six months) out of sample; the many other patterns (midterm cycle with few observations, January trifecta 29 of 32, Trump pattern from five years) have no multiple-testing adjustment or out-of-sample test.", "claim_ids": ["MT102-C04-4", "MT102-C09-2", "MT102-C12-2"]},
+  {"issue": "Hirsch says patterns decay (September reverse barometer, small-cap January effect, monthly turn-of-month pattern) and that seasonal rules are averages, yet presents surviving patterns as reliable; no criterion for retiring a pattern is given.", "claim_ids": ["MT102-C08-4", "MT102-C08-X6", "MT102-C06-1"]},
+  {"issue": "The 401(k) 'super eight days' pattern is described as a mechanism and also as something Hirsch and his partner argue about every year.", "claim_ids": ["MT102-C06-2", "MT102-C07-X3"]},
+  {"issue": "The causal story for the January barometer (20th Amendment, inauguration date) is a narrative, not tested; Hirsch uses it to explain what he calls statistically true.", "claim_ids": ["MT102-C09-3", "MT102-C09-1"]},
+  {"issue": "The Bitcoin seasonal is admitted to have too little data, yet its failure is treated as a signal of 'something wrong' via Gul's rule.", "claim_ids": ["MT102-C09-4", "MT102-C10-1"]},
+  {"issue": "The super-boom thesis reads the 2011 inflation condition loosely (no war inflation, so COVID spending is used instead); the 500% target depends on the choice of low (2009 vs 2011).", "claim_ids": ["MT102-C11-X12", "MT102-C12-X13", "MT102-C11-X11"]},
+  {"issue": "The transcript is ambiguous on whether Eisman thinks private credit is a systemic issue; the caption reads 'I don't think private credit has some really serious problems. It's a systemic issue'.", "claim_ids": ["MT102-C13-1"]},
+  {"issue": "Window-dressing claim was first attributed to Hirsch; it is Eisman's explanation that Hirsch endorsed (ledger correction applied).", "claim_ids": ["MT102-C05-2"]},
+  {"issue": "Hirsch says the Almanac did not foresee the Iran war and that exogenous events override seasonality; he nonetheless offers war-duration rules (bottom within about a month) derived from past wars.", "claim_ids": ["MT102-C02-R1", "MT102-C12-1"]}
+ ],
+ "forward_looking_inputs": "(reader) Calendar position (midterm-year Q2-Q3 low, Q4 to Q2 sweet spot, pre-election December high), October 31 fund fiscal year end and quarter-end flows, January trifecta, MACD momentum as confirmation, monthly payroll inflows, war duration and oil, and signs of private-credit stress. Horizons are days (intraday and monthly flows), months (best six months, sector seasonals) and years (four-year cycle, super boom to about 2030).",
+ "reader_inferences": [
+  "(reader) Hirsch's evidence is mostly historical averages with small samples for rarer cycles (eleven of sixteen bear markets; five Trump years), so the claims about timing within the year are weaker than the long-run best-six-months result.",
+  "(reader) The flow mechanisms (fiscal year end, 401(k) inflows) could be tested with fund flow data; the 401(k) effect would be expected to fade as flows are better anticipated.",
+  "(reader) Hirsch combines seasonality with confirmation rules (MACD, technical entry), which makes the system a filter on seasonal tendency, not a stand-alone signal.",
+  "(reader) Eisman's and Hirsch's views are not in conflict on mechanism; they differ on how serious the private-credit risk is."
+ ],
+ "added_claims": [
+  {"claim_id": "MT102-C02-R1", "chunk": "C02", "speaker": "Jeffrey Hirsch", "quote": "Granted, there are exogenous events", "claim": "Seasonal patterns do not foresee exogenous events (the Iran war); nobody predicts black swans, which by definition are unforeseen.", "mechanism": "behavioural", "asset_class": "equity", "indicator": "", "horizon": "", "direction": "", "conditions": "", "testable": "no: qualitative caveat", "speaker_confidence": "high", "time_bound": "no", "reader": "map"},
+  {"claim_id": "MT102-C04-R2", "chunk": "C04", "speaker": "Jeffrey Hirsch", "quote": "you're buying, you know, Dow, S&P, NASDAQ on uh October 30th and 31st or the last trading day of the month and selling April 30th", "claim": "The raw best-six-months rule buys the Dow, S&P and Nasdaq on the last trading day of October and sells on April 30 of the following year.", "mechanism": "seasonality", "asset_class": "equity", "indicator": "calendar date", "horizon": "months", "direction": "long Nov-Apr", "conditions": "MACD confirmation used in the Almanac version", "testable": "yes: calendar rule", "speaker_confidence": "high", "time_bound": "no", "reader": "map"}
+ ]
+}

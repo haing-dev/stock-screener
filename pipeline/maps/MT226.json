@@ -1,0 +1,620 @@
+{
+ "source_id": "MT226",
+ "episode_thesis": "Pile argues that the 2010s demand-starved regime (pinned rates, QE, negative stock-bond correlation, compressed dispersion) has given way to a supply-driven scarcity regime driven by energy shocks, fiscal activism and the AI buildout, so bonds now provide income not duration diversification. The 60/40 should become a growth/AI core, income across public and private credit, and market-neutral systematic diversifiers, with systematic multi-strategy hedge funds at the core of the hedge fund book; AI bottleneck profits will dissipate but valuations are modest.",
+ "speakers": [
+  {
+   "name": "Mike Pile",
+   "role": "Deputy head of BlackRock portfolio management group; ex-global CIO strategist; ex-US deputy national security adviser for international economics",
+   "speaker_note": "Speaks for himself and uses 'we' for BlackRock's house view; corporate framing may soften risks. Caption spelling of surname.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "regime_detection",
+    "policy_reaction_central_banks",
+    "fiscal_dominance",
+    "structural_themes",
+    "diversification_risk_parity",
+    "portfolio_construction_stacking",
+    "manager_selection_allocation"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Regimes differ by whether supply or demand dominates; 2010s were demand-starved, today is supply-driven scarcity (energy shocks, supply chains, AI buildout).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Contrast between 2014-2020 and 2024 experience",
+     "claim_ids": [
+      "MT226-C02-1",
+      "MT226-C04-3",
+      "MT226-C05-X1"
+     ]
+    },
+    {
+     "premise": "Stock-bond correlation depends on whether growth or inflation is the dominant risk; negative when growth dominates.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "2010s experience",
+     "claim_ids": [
+      "MT226-C02-2",
+      "MT226-C03-1"
+     ]
+    },
+    {
+     "premise": "Policy pinned rates and QE pushed investors out the risk curve and suppressed both economic and market volatility.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Policy actions of the 2010s",
+     "claim_ids": [
+      "MT226-C02-3",
+      "MT226-C02-X1"
+     ]
+    },
+    {
+     "premise": "Suppressed volatility compressed dispersion, shrinking the alpha opportunity set; the 2010s were poor for hedge funds because cheap diversification (long bonds) was abundant.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Hedge fund performance in the 2010s",
+     "claim_ids": [
+      "MT226-C03-2",
+      "MT226-C12-2"
+     ]
+    },
+    {
+     "premise": "Zero rates rewarded long duration everywhere: long bonds, risk parity, long-dated cash flow tech growth.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "2010s outperformers",
+     "claim_ids": [
+      "MT226-C03-3",
+      "MT226-C03-R1"
+     ]
+    },
+    {
+     "premise": "Policymakers fight the last crisis: the GFC fiscal response was seen as too small, so large fiscal activism followed; the 2016-20 recovery reinforced this.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "First-hand government experience",
+     "claim_ids": [
+      "MT226-C03-4",
+      "MT226-C04-1",
+      "MT226-C04-2"
+     ]
+    },
+    {
+     "premise": "In the short run factors of production are fixed; in the long run they move to where the opportunity is, so bottleneck profits dissipate.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Economics principle",
+     "claim_ids": [
+      "MT226-C07-4"
+     ]
+    },
+    {
+     "premise": "Breadth is key to active results (fundamental law of active management): breadth times forecast quality.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Textbook law",
+     "claim_ids": [
+      "MT226-C10-1",
+      "MT226-C15-2"
+     ]
+    },
+    {
+     "premise": "Pre-2007 quant strategies harvested factor exposures that drew down in stress; neutralising beta and known factors isolates alpha and is more resilient.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "BlackRock's quant-crisis experience; moderate stresses since",
+     "claim_ids": [
+      "MT226-C11-1",
+      "MT226-C11-2",
+      "MT226-C12-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Demand-starved 2010s to portfolio construction",
+     "steps": [
+      {
+       "from": "lack of aggregate demand",
+       "to": "pinned rates and QE",
+       "why": "central banks push investors up the risk curve",
+       "claim_ids": [
+        "MT226-C02-3",
+        "MT226-C02-X1"
+       ]
+      },
+      {
+       "from": "pinned rates and QE",
+       "to": "suppressed economic and market volatility",
+       "why": "policy concerns purely on growth",
+       "claim_ids": [
+        "MT226-C02-3",
+        "MT226-C03-1"
+       ]
+      },
+      {
+       "from": "growth risk dominates",
+       "to": "negative stock-bond correlation",
+       "why": "bonds hedge stocks",
+       "claim_ids": [
+        "MT226-C02-2",
+        "MT226-C03-1"
+       ]
+      },
+      {
+       "from": "suppressed vol",
+       "to": "compressed dispersion, weak alpha for active/hedge funds",
+       "why": "opportunity set shrinks",
+       "claim_ids": [
+        "MT226-C03-2",
+        "MT226-C12-2"
+       ]
+      }
+     ],
+     "evidence": "Experience at BlackRock 2014-2021 vs 2024",
+     "fails_when": "Does not claim a data test",
+     "claim_ids": [
+      "MT226-C02-2",
+      "MT226-C03-1",
+      "MT226-C03-2"
+     ]
+    },
+    {
+     "topic": "Supply-driven scarcity to higher rates, then maybe abundance",
+     "steps": [
+      {
+       "from": "war, energy shocks, supply chains, AI buildout",
+       "to": "real-resource bottlenecks",
+       "why": "chips, energy and inputs scarce",
+       "claim_ids": [
+        "MT226-C04-3",
+        "MT226-C05-1",
+        "MT226-C05-X1"
+       ]
+      },
+      {
+       "from": "AI capex, deficits, IG, housing, consumer finance",
+       "to": "heavy capital-market demand pushes up rates",
+       "why": "competition for capital",
+       "claim_ids": [
+        "MT226-C05-2",
+        "MT226-C06-3"
+       ]
+      },
+      {
+       "from": "AI productivity handoff",
+       "to": "scarcity to abundance, disinflation",
+       "why": "1990s analogy; direction of r-star unclear",
+       "claim_ids": [
+        "MT226-C05-3",
+        "MT226-C06-4",
+        "MT226-C07-1"
+       ]
+      }
+     ],
+     "evidence": "Fragmentary evidence: incremental investment gives incremental earnings",
+     "fails_when": "If productivity gains don't outweigh the resource demands",
+     "claim_ids": [
+      "MT226-C05-3",
+      "MT226-C06-2",
+      "MT226-C06-3",
+      "MT226-C06-4"
+     ]
+    },
+    {
+     "topic": "AI bottleneck earnings: dissipate, but multiples re-rate",
+     "steps": [
+      {
+       "from": "chokepoint firms earn extraordinary profits",
+       "to": "profits dissipate over quarters to years",
+       "why": "new entrants, expansion",
+       "claim_ids": [
+        "MT226-C07-3",
+        "MT226-C07-4"
+       ]
+      },
+      {
+       "from": "market doubts durability",
+       "to": "low multiples on peak earnings (memory firms under 10x forward)",
+       "why": "scepticism",
+       "claim_ids": [
+        "MT226-C07-2",
+        "MT226-C07-5"
+       ]
+      },
+      {
+       "from": "sustainable earnings become visible",
+       "to": "multiples re-rate higher",
+       "why": "demand for AI still above supply",
+       "claim_ids": [
+        "MT226-C07-5",
+        "MT226-C08-1"
+       ]
+      }
+     ],
+     "evidence": "Forward valuations, 2026 leadership of suppliers over hyperscalers",
+     "fails_when": "Demand outstripping supply stops",
+     "claim_ids": [
+      "MT226-C07-2",
+      "MT226-C07-3",
+      "MT226-C07-5",
+      "MT226-C08-1"
+     ]
+    },
+    {
+     "topic": "Why multi-strategy beats combining separate funds",
+     "steps": [
+      {
+       "from": "many alpha streams in one portfolio",
+       "to": "higher breadth",
+       "why": "fundamental law of active management",
+       "claim_ids": [
+        "MT226-C10-1"
+       ]
+      },
+      {
+       "from": "one manager controls all streams",
+       "to": "dynamic reallocation",
+       "why": "end investors combining funds cannot",
+       "claim_ids": [
+        "MT226-C10-2"
+       ]
+      }
+     ],
+     "evidence": "Theoretical",
+     "fails_when": "Severe stress (answered with satellite directional macro/long-short)",
+     "claim_ids": [
+      "MT226-C10-1",
+      "MT226-C10-2",
+      "MT226-C10-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Growth equity (US equities, tech/AI) as the core, overweight US equities, sized appropriately.",
+     "why": "Growth exposure is the core return source",
+     "claim_ids": [
+      "MT226-C08-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Shift fixed income from duration to income: corporate and EM credit and private markets.",
+     "why": "Bonds no longer a duration diversifier",
+     "claim_ids": [
+      "MT226-C08-3",
+      "MT226-C08-4",
+      "MT226-C09-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Add market-neutral low-net strategies (hedge funds, liquid alts) as diversifiers.",
+     "why": "Diversification is scarce; zero beta less growth-sensitive; not as clean as the 10y was",
+     "claim_ids": [
+      "MT226-C08-5",
+      "MT226-C09-2",
+      "MT226-C09-3"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Replace 60/40 with growth core, income across public/private, and diversifiers.",
+     "why": "Alternative to 60/40",
+     "claim_ids": [
+      "MT226-C14-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Total portfolio approach: build around risk drivers or themes (growth/AI, duration, income) not asset-class buckets.",
+     "why": "Underlying drivers",
+     "claim_ids": [
+      "MT226-C14-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Systematic multi-strategy at the core of a hedge fund programme, with directional macro and long-short equity satellites.",
+     "why": "Breadth, dynamic optimisation, change of risk shape",
+     "claim_ids": [
+      "MT226-C10-2",
+      "MT226-C10-3"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Neutralise beta and well-known factors such as momentum to isolate pure alpha.",
+     "why": "Resilience in stress",
+     "claim_ids": [
+      "MT226-C11-2",
+      "MT226-C12-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Portable alpha: beta via index vehicle plus market-neutral long-short overlay; long-only active struggles in concentrated markets.",
+     "why": "Shorts let managers use dispersion",
+     "claim_ids": [
+      "MT226-C13-1",
+      "MT226-C13-2",
+      "MT226-C13-R1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Use AI to widen analyst coverage and idea velocity, and improve the information mosaic with proprietary data.",
+     "why": "Breadth drives results",
+     "claim_ids": [
+      "MT226-C15-1",
+      "MT226-C15-2",
+      "MT226-C15-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Watch real-time data to judge the AI productivity handoff instead of relying on forecasts.",
+     "why": "Forecasts highly uncertain",
+     "claim_ids": [
+      "MT226-C06-1"
+     ]
+    }
+   ],
+   "evidence_style": "Regime narrative from first-hand policy and investing experience; economic principles; firm house view; limited numerical data (memory firms below 10x).",
+   "current_views": [
+    {
+     "view": "Overweight US equities; keep growth/AI as core.",
+     "as_of": "2026-08",
+     "reasoning": "Demand for AI above supply, earnings trajectory healthy though below peak",
+     "claim_ids": [
+      "MT226-C08-1",
+      "MT226-C08-2"
+     ]
+    },
+    {
+     "view": "Medium-term disinflation from technology is likely; direction of r-star unknowable.",
+     "as_of": "2026-08",
+     "reasoning": "1990s analogy",
+     "claim_ids": [
+      "MT226-C07-1",
+      "MT226-C06-4"
+     ]
+    },
+    {
+     "view": "Near term, upward pressure on inflation and rates.",
+     "as_of": "2026-08",
+     "reasoning": "Resource and capital-market demand",
+     "claim_ids": [
+      "MT226-C06-3",
+      "MT226-C05-2"
+     ]
+    },
+    {
+     "view": "AI-theme forward valuations are not stretched; 2026 leadership is with chokepoint suppliers, not hyperscalers.",
+     "as_of": "2026-08",
+     "reasoning": "Memory firms under 10x forward earnings",
+     "claim_ids": [
+      "MT226-C07-2",
+      "MT226-C07-3"
+     ]
+    },
+    {
+     "view": "Hedge funds regain allocator interest: diversification scarce, dispersion larger.",
+     "as_of": "2026-08",
+     "reasoning": "Dispersion plus scarce diversification",
+     "claim_ids": [
+      "MT226-C12-3"
+     ]
+    },
+    {
+     "view": "AI productivity evidence is fragmentary: too early to say the handoff has occurred.",
+     "as_of": "2026-08",
+     "reasoning": "Incremental investment leading to incremental earnings",
+     "claim_ids": [
+      "MT226-C06-2"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Alan Dunn",
+   "role": "Host of Allocator series (Top Traders Unplugged)",
+   "speaker_note": "Host framings, many put as questions; treated as context unless stated as view.",
+   "fingerprint": [
+    "portfolio_construction_stacking",
+    "manager_selection_allocation",
+    "regime_detection",
+    "structural_themes"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Allocators hesitated over hedge funds that lagged equities; track records look better combined with equity beta, driving extension and portable alpha.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation of allocator behaviour",
+     "claim_ids": [
+      "MT226-C12-4"
+     ]
+    },
+    {
+     "premise": "Hyperscaler earnings that funded buybacks now fund capex: ample capital turned to capital constraints.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Framing question",
+     "claim_ids": [
+      "MT226-C04-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "other",
+     "practice": "Pod-shop multi-strategies sell consistent low-vol returns with high Sharpe; the open question is stress performance.",
+     "why": "Host question on whether they need pairing",
+     "claim_ids": [
+      "MT226-C10-X1"
+     ]
+    }
+   ],
+   "evidence_style": "Questions to the guest; no analysis of own.",
+   "current_views": [
+    {
+     "view": "A recent AI momentum reversal produced margin calls at a hedge fund, echoing 2007 quant leverage stress.",
+     "as_of": "2026-08",
+     "reasoning": "Observation of last couple of weeks",
+     "claim_ids": [
+      "MT226-C11-3"
+     ]
+    },
+    {
+     "view": "Bond yields and commodities adjusted to the supply regime while equities kept rising; possible lag.",
+     "as_of": "2026-08",
+     "reasoning": "Question posed",
+     "claim_ids": [
+      "MT226-C08-X1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Whether equities have adjusted to the new regime",
+   "positions": [
+    {
+     "speaker": "Alan Dunn",
+     "position": "Bonds and commodities have repriced to the supply regime while equities carried on, so equities may not have adjusted.",
+     "claim_ids": [
+      "MT226-C08-X1"
+     ]
+    },
+    {
+     "speaker": "Mike Pile",
+     "position": "Equities (growth/AI) remain the portfolio core; overweight US equities; valuations of AI-theme firms are not stretched.",
+     "claim_ids": [
+      "MT226-C08-2",
+      "MT226-C07-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Do pod-shop multi-strategies need pairing in stress",
+   "positions": [
+    {
+     "speaker": "Alan Dunn",
+     "position": "Pod shops sell consistent low-vol returns; question whether they deliver in severe stress.",
+     "claim_ids": [
+      "MT226-C10-X1"
+     ]
+    },
+    {
+     "speaker": "Mike Pile",
+     "position": "Systematic multi-strategy at the core; complement with directional macro and long-short satellites depending on goals.",
+     "claim_ids": [
+      "MT226-C10-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Are hedge fund stress events like 2007",
+   "positions": [
+    {
+     "speaker": "Alan Dunn",
+     "position": "Recent margin call at a hedge fund after an AI momentum reversal echoes 2007 leverage stress.",
+     "claim_ids": [
+      "MT226-C11-3"
+     ]
+    },
+    {
+     "speaker": "Mike Pile",
+     "position": "Nothing of the 2006-07 magnitude since; factor-neutral construction is more resilient.",
+     "claim_ids": [
+      "MT226-C12-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Claims that factor-neutral systematic portfolios are 'more resilient' are asserted with no performance numbers.",
+   "claim_ids": [
+    "MT226-C11-2",
+    "MT226-C12-1"
+   ]
+  },
+  {
+   "issue": "The BlackRock house view sets growth equity as core and overweight US equities while also saying AI bottleneck profits dissipate; sizing is only 'appropriate'.",
+   "claim_ids": [
+    "MT226-C08-2",
+    "MT226-C07-4"
+   ]
+  },
+  {
+   "issue": "Direction of the real neutral rate is stated as unknowable, yet the near-term view is upward rates.",
+   "claim_ids": [
+    "MT226-C06-4",
+    "MT226-C06-3"
+   ]
+  },
+  {
+   "issue": "The claim that market-neutral strategies are best remaining diversifier is acknowledged as less straightforward than the 10-year Treasury but not quantified.",
+   "claim_ids": [
+    "MT226-C09-3"
+   ]
+  },
+  {
+   "issue": "Hedge-fund resilience argument is by a BlackRock officer about BlackRock's own products.",
+   "claim_ids": [
+    "MT226-C10-2",
+    "MT226-C15-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "Observable inputs: AI productivity data appearing in real time (earnings, productivity), duration of energy/supply shocks, fiscal deficits and capital-market demand, rate path and real neutral rate, equity dispersion and concentration. Horizon: quarters to years for bottleneck profits; medium-term for disinflation.",
+ "reader_inferences": [
+  "Stock-bond correlation sign is a function of the dominant risk (growth vs inflation), implying a testable regime variable.",
+  "Sets dispersion and diversification scarcity as the two reasons for hedge fund demand."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT226-C03-R1",
+   "chunk": "C03",
+   "speaker": "Mike Pile",
+   "quote": "relatively balanced portfolios call it a traditional uh 60/40 offered really attractive return",
+   "claim": "Pile: in the 2010s a balanced 60/40 portfolio offered both attractive returns and attractive diversification, because long duration paid on both the bond and equity side.",
+   "mechanism": "regime_portfolio",
+   "asset_class": "multi",
+   "indicator": "60/40 in 2010s",
+   "horizon": "2010s",
+   "direction": "",
+   "conditions": "zero rates, negative stock-bond correlation",
+   "testable": "yes - historical returns",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "sonnet-map"
+  },
+  {
+   "claim_id": "MT226-C13-R1",
+   "chunk": "C13",
+   "speaker": "Mike Pile",
+   "quote": "selection of underlying beta vehicle selection of overlying alpha vehicle",
+   "claim": "Pile: portable alpha is customised per client, by choosing the beta vehicle and the long-short alpha overlay and combining them.",
+   "mechanism": "portable_alpha",
+   "asset_class": "hedge_funds",
+   "indicator": "beta plus alpha overlay",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-map"
+  }
+ ]
+}

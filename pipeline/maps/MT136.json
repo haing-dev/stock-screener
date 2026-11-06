@@ -1,0 +1,428 @@
+{
+ "source_id": "MT136",
+ "episode_thesis": "Andrew Beer (replication ETF manager) and host Niels Kaastrup-Larsen discuss, in late September 2025, why investing paradigms such as efficient markets and 60/40 persist until contradicting evidence reaches critical mass (and why flows may dominate prices under the inelastic market hypothesis), and why a simple replication product beat most large single-manager CTAs in 2024-25. Beer's thesis is that broad, short-term, vol-controlled books with hundreds of instruments cannot be implemented at scale in thin stress-day liquidity, while Niels attributes the shortfall to reversals in all three financial sectors within about 14 months, lookback choice and markets that did not trend. Beer then explains why multistrategy pod funds deliver steady returns (talent plus structure and pay-outs of about 55% of revenue) while flagging capacity and dilution risk.",
+ "speakers": [
+  {
+   "name": "Andrew Beer",
+   "role": "Co-founder of DBi and co-manager of DBMF (managed futures replication ETF); previously ran a commodity multi-manager firm (Pinnacle Asset Management, 2003)",
+   "speaker_note": "Ledger spells the host 'Neils'; names and some terms are garbled in captions ('BUP 50' = BTOP50, 'usage funds' = UCITS funds). Beer sells a replication product and a Pivotal Path data user, so claims about replication performance, fees and multistrats come from an interested party. At two points he says 'August' but means April (Liberation Day).",
+   "fingerprint": ["replication_indexing", "trend_following", "costs_execution", "liquidity_flows", "behavioral_sentiment", "manager_selection_allocation", "crisis_alpha_convexity", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {
+     "premise": "Despite a long list of political, war and tariff shocks over about two years, equities rallied about 55%, showing the resilience of the system, though repeated shocks cannot be ignored forever ('you can't keep lighting matches').",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation of equity levels; no model.",
+     "claim_ids": ["MT136-C01-1"]
+    },
+    {
+     "premise": "Skill is monetised only where the opportunity set is favourable: talent cannot overcome a structurally declining or efficient area, so efficiency varies by segment (US large cap stocks are efficient, esoteric segments are not).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Anecdotes (a steel executive in structural decline, Bitcoin and Dubai investors); the Pinnacle experience.",
+     "claim_ids": ["MT136-C03-1", "MT136-C16-2"]
+    },
+    {
+     "premise": "Investment paradigms (efficient markets, Black-Litterman allocation) persist until contradicting evidence reaches critical mass, because practitioners' identity is tied to them; change is slow, then abrupt.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Kuhn's Structure of Scientific Revolutions; no market data.",
+     "claim_ids": ["MT136-C03-2"]
+    },
+    {
+     "premise": "60/40 worked because of the stock-bond correlation regime of the long bond bull market (zero or negative correlation) and reinforced itself as a paradigm; started in 1990 it would not have looked the same.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical description; claims the paradigm's origin is unknown.",
+     "claim_ids": ["MT136-C04-1"]
+    },
+    {
+     "premise": "This decade bonds became highly correlated with equities (about 0.8 in his words) with volatility doubled or tripled, fell with stocks in the inflation shock and earned less than cash, which broke the diversification premise of 60/40.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Correlation and volatility figures quoted from memory.",
+     "claim_ids": ["MT136-C04-2", "MT136-C06-3"]
+    },
+    {
+     "premise": "Holding a large bond allocation at the peak of the bond bubble (2021 yields) mathematically limited future returns, a mistake of the 60/40 paradigm; wealth managers moved to 60/20/20 with a 20% diversifying bucket without explaining why.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Yield arithmetic; observation of US wealth managers.",
+     "claim_ids": ["MT136-C06-2", "MT136-C06-3"]
+    },
+    {
+     "premise": "Passive investing may have impaired some active strategies (equity long/short) while others such as managed futures are affected differently, so the impact is uneven and may change in five years.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Equity long/short's years of underperformance; no causal test.",
+     "claim_ids": ["MT136-C04-3"]
+    },
+    {
+     "premise": "Allocators who deliberately do not change their minds quickly were slow to react when inflation returned, so fast trend followers made about a decade of alpha in 2022.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "2022 trend returns; allocator policy not to time markets.",
+     "claim_ids": ["MT136-C05-1"]
+    },
+    {
+     "premise": "Capital market assumptions and asset allocation models fit historical premia (the size factor in 2000, data issues) and extrapolate them, so they are overfit and judgement is layered on top; allocators haircut recent winners (Nasdaq) and assume mean reversion elsewhere, so they are unlikely to give large allocations to whatever has just worked.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Experience with model builders ('they torture the data'); small-cap example.",
+     "claim_ids": ["MT136-C05-4", "MT136-C06-1"]
+    },
+    {
+     "premise": "Allocation to managed futures is far below what its diversification statistics (low correlation to other strategies) would justify; a diversifier sized too small to matter gets cut (CalPERS closed its $4bn absolute-return bucket).",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Pivotal Path style allocation statistics (from prior writing); CalPERS example.",
+     "claim_ids": ["MT136-C05-X1", "MT136-C06-X1"]
+    },
+    {
+     "premise": "Replication always lags and underperforms when many idiosyncratic non-core trades (Mexican peso, Canadian front end, Nikkei, softs in early 2023) work at once, and at sharp inflection points such as SVB when a reversal persists, replication de-risks faster than actual funds; losses are a few hundred basis points at most and recover if it was a head fake.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own product's history; January-February 2023 and March 2023.",
+     "claim_ids": ["MT136-C09-2", "MT136-C10-1"]
+    },
+    {
+     "premise": "Replication outperforms when the extra non-core trades or the risk-management overlays of single-manager CTAs backfire.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His product's relative performance in 2024-25.",
+     "claim_ids": ["MT136-C10-2"]
+    },
+    {
+     "premise": "Pairing against replication costs money: DBMF outperformed single managers by about 300bp a year over 10 years (more for investable mutual fund or UCITS peers), so the short leg bleeds, and relative swings are unpredictable (about 600-800bp outperformance at the 2022 peak, partly from no incentive fee, then given back in 2023).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His product's own record versus an index; the ledger correction notes it is 'outperformance', not a cost advantage.",
+     "claim_ids": ["MT136-C08-3", "MT136-C09-1", "MT136-C09-X1"]
+    },
+    {
+     "premise": "In 2024-25 about 80-90% of ETFs beat the average mutual fund or hedge fund peer by a lot, which is statistically awkward and hints at a structural cause (cost, liquidity, simplicity).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His HedgeNordic article; scope per the ledger correction is ETFs versus fund peers.",
+     "claim_ids": ["MT136-C11-1"]
+    },
+    {
+     "premise": "Entering 2025 a chaotic year should have favoured complex multi-hundred-instrument single-manager funds with vol controls and short-term models over a slower replication model, and about $100bn of professional money was positioned that way, yet the simple model did better.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Beer's estimate of positioning; no source.",
+     "claim_ids": ["MT136-C11-X1"]
+    },
+    {
+     "premise": "CTA losses in 2024-25 have no single clear narrative (unlike stock pickers, who can name the thesis that failed); they came from many small timing, rebalancing and model-speed costs adding up.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Conversations with managers; 'diffuse' answers.",
+     "claim_ids": ["MT136-C11-X2"]
+    },
+    {
+     "premise": "Large multi-hundred-instrument CTAs with vol controls and short-term models must trade many positions in thin markets after shocks, incurring large impact costs and whipsaw, and exits in stressed illiquid markets trade against prop desks that anticipate forced flows.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Liberation Day example (position number 298); no cost data.",
+     "claim_ids": ["MT136-C11-2", "MT136-C12-1"]
+    },
+    {
+     "premise": "A trend only has value if transaction costs allow capture (Copenhagen housing example); strategies like high-frequency trading earned huge returns on a few million dollars but alpha disappeared at 30-50 million; slippage measured on simple 70-market liquid portfolios may not hold for 300 instruments.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Examples and quant conversations; slippage cut from 400 to 200bp was a boast.",
+     "claim_ids": ["MT136-C13-1", "MT136-C13-2", "MT136-C13-3"]
+    },
+    {
+     "premise": "Allocators judge strategies by worst-day outcomes (private credit risk is defaults and markdowns), so execution and liquidity must be evaluated for stress scenarios.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Analogy to private credit.",
+     "claim_ids": ["MT136-C13-4"]
+    },
+    {
+     "premise": "The rebound after April 2025 may reflect a liquidity influx (YOLO, FOMO, let it run hot) rather than durable expected returns.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Link to Bouchaud's inelastic market idea; no data.",
+     "claim_ids": ["MT136-C14-1"]
+    },
+    {
+     "premise": "Multistrategy hedge funds deliver steady returns (worst month -6% in March 2020, about -1% on the underlying unlevered book; Pivotal Path index: 13% in 2020, 9% 2021, 2% 2022, 6% 2023, 11% 2024, 8% year-to-date 2025) with total fees possibly 1000bp, and the index is the most accurate record because it uses data from institutions that invest.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Pivotal Path Multistrategy Hedge Fund Index; he had expected dead money over time and was wrong over 24 months, though equities up 55% and bonds up about 8% a year make it a poor test.",
+     "claim_ids": ["MT136-C14-2", "MT136-C15-1", "MT136-C15-X1", "MT136-C15-X2", "MT136-C14-R1"]
+    },
+    {
+     "premise": "An exceptional specialist manager given seed capital with capacity caps and full fees earns about 30% a year for the first three years, because new talented managers outperform before size grows.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Pinnacle's experience from 2003 (including a Santorus trader example).",
+     "claim_ids": ["MT136-C15-2"]
+    },
+    {
+     "premise": "Multistrat funds act like bank proprietary desks with better information, financing and a pay-out around 55% of revenue; their bet is that putting top portfolio managers in a structure that removes distractions, with high payouts, leaves clients, firm and PM better off.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Analogy to Goldman prop desks; LeBron James analogy.",
+     "claim_ids": ["MT136-C16-1", "MT136-C16-3"]
+    },
+    {
+     "premise": "Pod managers face harsh drawdown limits (a down 3% year can mean dismissal), which drives risk discipline and hunger; paying 1000bp is acceptable if the structure generates a Sharpe near 4 and half is paid out, but 200bp for a 3% multi-strategy mutual fund return is excessive.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Conversations with pod managers.",
+     "claim_ids": ["MT136-C18-1", "MT136-C18-2"]
+    },
+    {
+     "premise": "Marginal pods are logically less attractive than earlier ones, so capacity dilution is a risk, although leaders like Citadel have so far disproved it; despite 5x leverage on $50bn and major regime shifts since 2020, no multistrat blew up or had a catastrophic drawdown.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation of the industry since 2020.",
+     "claim_ids": ["MT136-C17-2", "MT136-C17-3"]
+    },
+    {
+     "premise": "Liquid-alt multi-strategy mutual funds returned under 3% a year over 10 years after about 200bp of fees (an embarrassing failure) and cannot replicate multistrats, which need the hedge-fund structure and capital that clients cannot pull every quarter; investors rotate among whichever is working.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Category return over 10 years (ledger correction for the quarterly liquidity point).",
+     "claim_ids": ["MT136-C17-4", "MT136-C17-X1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "How paradigms persist and the 60/40 breakdown",
+     "steps": [
+      {"from": "Generations trained in a paradigm", "to": "Identity tied to it", "why": "Practitioners' expertise is part of their identity (Kuhn).", "claim_ids": ["MT136-C03-2"]},
+      {"from": "Contradicting evidence builds", "to": "Abrupt shift at critical mass", "why": "Most abandon the old view only when evidence reaches critical mass.", "claim_ids": ["MT136-C03-2"]},
+      {"from": "Zero or negative stock-bond correlation during the long bond bull market", "to": "60/40 reinforces itself", "why": "It kept working, became the cornerstone of every asset allocation model.", "claim_ids": ["MT136-C04-1"]},
+      {"from": "Inflation shock; bond bubble peak in 2021", "to": "Bonds fall with stocks and earn less than cash", "why": "Correlation about 0.8 and volatility 2-3 times higher.", "claim_ids": ["MT136-C04-2", "MT136-C06-2", "MT136-C06-3"]},
+      {"from": "Advisers cannot admit the model was wrong", "to": "New 20% diversifying bucket without explanation", "why": "They sold clients on the old narrative.", "claim_ids": ["MT136-C06-3"]}
+     ],
+     "evidence": "Kuhn's book, correlation figures from memory, observation of US wealth managers.",
+     "fails_when": "Not stated; he says the paradigm shift could reveal itself within five years.",
+     "claim_ids": ["MT136-C03-2", "MT136-C04-1", "MT136-C04-2", "MT136-C06-2", "MT136-C06-3"]
+    },
+    {
+     "topic": "Allocator behaviour creates opportunities and small diversifier allocations",
+     "steps": [
+      {"from": "Allocators deliberately slow to change", "to": "Late to inflation return in 2022", "why": "They told clients not to change minds fast.", "claim_ids": ["MT136-C05-1"]},
+      {"from": "Late allocators", "to": "Fast trend followers earn a decade of alpha in a year", "why": "Few others could act.", "claim_ids": ["MT136-C05-1"]},
+      {"from": "Models fit historical premia and extrapolate", "to": "Overfit; judgement haircuts winners and assumes mean reversion", "why": "Allocators avoid putting large allocations in whatever just worked.", "claim_ids": ["MT136-C05-4", "MT136-C06-1"]},
+      {"from": "Diversifier sized at 1-2% of the fund", "to": "Cannot move total results and gets cut", "why": "CalPERS closed a $4bn absolute-return bucket.", "claim_ids": ["MT136-C06-X1"]}
+     ],
+     "evidence": "2022 trend returns, CalPERS example, small-cap factor history.",
+     "fails_when": "Under CalPERS's total portfolio approach (host) diversifiers could gain if judged by contribution.",
+     "claim_ids": ["MT136-C05-1", "MT136-C05-4", "MT136-C06-1", "MT136-C06-X1", "MT136-C05-3"]
+    },
+    {
+     "topic": "Why a slower replication model beat large single-manager CTAs in 2024-25",
+     "steps": [
+      {"from": "Shock (Liberation Day)", "to": "Liquidity vanishes in thin markets", "why": "Position number 298 in a 300-instrument book is thin.", "claim_ids": ["MT136-C11-2"]},
+      {"from": "Vol-control red lights and short-term models fire", "to": "Hundreds of positions sold or bought back in days", "why": "Large footprint in thin markets; prop desks smell blood.", "claim_ids": ["MT136-C11-2", "MT136-C12-1"]},
+      {"from": "Costs and whipsaw on many small positions", "to": "Many small paper cuts", "why": "No single losing thesis to name.", "claim_ids": ["MT136-C11-X2"]},
+      {"from": "Simple, slower, liquid-futures replication", "to": "Outperforms 80-90% of peers", "why": "Fewer, liquid markets; slower exits avoid whipsaw.", "claim_ids": ["MT136-C11-1", "MT136-C10-2"]}
+     ],
+     "evidence": "Hypothetical Liberation Day example, aggregate statistic of 80-90%, and absence of manager stories; he says he could be 'totally wrong'.",
+     "fails_when": "If wider diversification helps in a period when different sectors trend, or if the 2024-25 shortfall was lookback choice and non-trending markets (host's view).",
+     "claim_ids": ["MT136-C11-1", "MT136-C11-2", "MT136-C12-1", "MT136-C11-X2", "MT136-C10-2", "MT136-C12-2"]
+    },
+    {
+     "topic": "Let-it-run-hot trade detected early by trend",
+     "steps": [
+      {"from": "Political pressure on the Fed", "to": "Rates stay lower than warranted", "why": "Jawboning keeps rates low.", "claim_ids": ["MT136-C08-2"]},
+      {"from": "Lower rates", "to": "Higher equity valuations; gold and crypto rise", "why": "Bond tantrum comes later rather than sooner; the president is structurally short the dollar.", "claim_ids": ["MT136-C08-2"]},
+      {"from": "Trend models detect it early", "to": "Long equities, gold and crypto even when it felt reckless in June", "why": "Trend adds exposure as moves persist after the April 2025 whipsaw.", "claim_ids": ["MT136-C08-1"]}
+     ],
+     "evidence": "His portfolio positions in June and September 2025; no performance numbers.",
+     "fails_when": "A bond market tantrum.",
+     "claim_ids": ["MT136-C08-1", "MT136-C08-2"]
+    },
+    {
+     "topic": "Multistrategy pod engine",
+     "steps": [
+      {"from": "Top portfolio managers placed in a pod structure", "to": "Distractions removed, 55% payout", "why": "They do not raise money or manage staff; high payouts (for example $200m of $500m profit).", "claim_ids": ["MT136-C16-1", "MT136-C16-3"]},
+      {"from": "Harsh drawdown limits and hunger", "to": "Risk discipline", "why": "A down 3% year can mean dismissal.", "claim_ids": ["MT136-C18-1"]},
+      {"from": "Hedge fund structure and locked capital", "to": "Steady returns and no blow-up since 2020", "why": "Plug-and-play mutual fund versions earn under 3% a year.", "claim_ids": ["MT136-C17-3", "MT136-C17-4"]},
+      {"from": "More inflows", "to": "Marginal pod less attractive than earlier ones", "why": "Capacity dilution; allocators fund pods by past P&L (host).", "claim_ids": ["MT136-C17-2", "MT136-C17-1"]}
+     ],
+     "evidence": "Pivotal Path index, industry stories (Citadel), Pinnacle experience.",
+     "fails_when": "Capacity dilution or hidden leverage as inflows grow; Citadel-type leaders have so far disproved it.",
+     "claim_ids": ["MT136-C16-1", "MT136-C16-3", "MT136-C18-1", "MT136-C17-2", "MT136-C17-3", "MT136-C17-4", "MT136-C17-1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Replication model that tracks CTA returns with a lag, unchanged and adaptive.", "why": "Simple, slower, liquid futures; avoids head fakes.", "claim_ids": ["MT136-C10-1", "MT136-C11-1"]},
+    {"element": "risk", "practice": "Test whether a stress-day execution loss (for example 200bp) would have justified including a marginal market before adding it; judge liquidity under stress as a market-selection criterion.", "why": "Allocators judge strategies by worst-day outcomes; thin markets add cost and whipsaw.", "claim_ids": ["MT136-C12-2", "MT136-C13-4"]},
+    {"element": "universe", "practice": "Avoid broad hundreds-of-instrument universes for an implementable product; slippage measured on 70 liquid markets does not hold for 300.", "why": "Cost and capacity limit backtests.", "claim_ids": ["MT136-C13-3", "MT136-C11-2"]},
+    {"element": "portfolio", "practice": "Advises clients to buy the dip in a trend strategy after drawdowns.", "why": "Trend following has a known pattern of being rattled, then pivoting.", "claim_ids": ["MT136-C07-4"]},
+    {"element": "portfolio", "practice": "Do not pair-trade replication against single managers.", "why": "Costs about 300bp a year on average and relative timing is unpredictable.", "claim_ids": ["MT136-C09-1", "MT136-C08-3"]},
+    {"element": "other", "practice": "Seed exceptional specialists with capacity caps, full fees and managed accounts.", "why": "New talented managers earn about 30% a year for the first three years.", "claim_ids": ["MT136-C15-2"]}
+   ],
+   "evidence_style": "Anecdote and analogy (opera, LeBron James, Copenhagen housing, restaurant tables), his own product's performance record, vendor data from Pivotal Path and numbers quoted from memory; he flags uncertainty ('I could be totally wrong', 'I have no idea if those stories are true') but his conclusions about structural causes rest on logic and conversations rather than tests.",
+   "current_views": [
+    {"view": "Trend models detected the let-it-run-hot trade early (long equities, gold, crypto); a bond tantrum is more likely later than now.", "as_of": "2025-09", "reasoning": "Political pressure keeps rates lower than warranted, lifting equity valuations; the president is structurally short the dollar.", "claim_ids": ["MT136-C08-1", "MT136-C08-2"]},
+    {"view": "The rebound in CTAs after April 2025 may reflect a liquidity influx rather than higher expected returns.", "as_of": "2025-09", "reasoning": "YOLO and FOMO flows into areas where managers hold exposure.", "claim_ids": ["MT136-C14-1"]},
+    {"view": "Advised a client near the lows to buy the dip in trend following.", "as_of": "2025-04", "reasoning": "Known pattern of being rattled and then pivoting.", "claim_ids": ["MT136-C07-4"]},
+    {"view": "Equities up about 55% over two years of shocks; the system is resilient but repeated shocks cannot be ignored forever.", "as_of": "2025-09", "reasoning": "Observation.", "claim_ids": ["MT136-C01-1"]},
+    {"view": "Multistrat hedge funds work (steady returns, no blow-ups) but capacity dilution is a risk.", "as_of": "2025-09", "reasoning": "Pivotal Path returns from 2020 to 2025 and the logic of marginal pods.", "claim_ids": ["MT136-C14-2", "MT136-C15-1", "MT136-C17-2"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged); CTA manager (Dunn background, references to 'our belief at Dunn')",
+   "speaker_note": "The ledger spells his first name 'Neils'. Argues positions as a CTA manager: defends broad diversification and the view that all markets can trend, questions multistrat capacity.",
+   "fingerprint": ["trend_following", "liquidity_flows", "manager_selection_allocation", "regime_detection", "diversification_risk_parity"],
+   "worldview_premises": [
+    {
+     "premise": "Under the inelastic market hypothesis (Bouchaud, CFM, as described from an FT article), a dollar flowing into equities multiplies the price effect rather than moving it by one dollar's worth, so flows can dominate returns.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "FT lunch article by Robin Wigglesworth with JP Bouchaud; the host says he has not read it closely.",
+     "claim_ids": ["MT136-C02-1"]
+    },
+    {
+     "premise": "If market outcomes are driven mainly by flows (the growth of passive investing distorts equity prices, Mike Green), a reversal of passive inflows could produce a very different regime from the post-GFC rally.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Mike Green's argument as cited; no data.",
+     "claim_ids": ["MT136-C03-3", "MT136-C03-X1"]
+    },
+    {
+     "premise": "Strategies and allocation models validated on the post-GFC flow-driven period may behave differently over a longer sample, so evidence from a unique era is fragile.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning posed as a question.",
+     "claim_ids": ["MT136-C04-X1"]
+    },
+    {
+     "premise": "If passive funds see outflows and a long bear market arrives, allocator demand for dedicated short sellers would reverse from nil to high.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Observation that no allocator can name a dedicated short seller today.",
+     "claim_ids": ["MT136-C05-2"]
+    },
+    {
+     "premise": "Under CalPERS's total portfolio approach, assets are judged by contribution to total portfolio goals, which would favour diversifiers such as trend following that look unappealing standalone.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Institutional Investor article; he says he may be misreading it.",
+     "claim_ids": ["MT136-C05-3"]
+    },
+    {
+     "premise": "Large CTAs tilted to financials suffered because equities, fixed income and currencies each had two or three large reversals within about 14 months, forcing long/short flips; managers with commodity diversification mitigated losses.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation of market moves in each sector; he calls it a possibly too-simple explanation.",
+     "claim_ids": ["MT136-C10-3", "MT136-C10-4"]
+    },
+    {
+     "premise": "Every market can trend but not simultaneously, so broad diversification will sometimes lag a narrower longer-timeframe replication; the 2024-25 snapshot is not conclusive evidence of a permanent change, and dispersion among CTAs can come from lookback choice or many markets not trending.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "35 years in the industry and Dunn's belief that all markets can trend.",
+     "claim_ids": ["MT136-C12-3", "MT136-C12-X1"]
+    },
+    {
+     "premise": "Trading liquid exchange-listed futures is a structural advantage over off-exchange or illiquid instruments because exit costs and valuations stay transparent in stress.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Belief shared with Beer; no data.",
+     "claim_ids": ["MT136-C14-X1"]
+    },
+    {
+     "premise": "Multistrats allocate capital to pods mainly by past P&L, which risks capacity dilution and hidden leverage as inflows grow, as in private equity.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Analogy to private equity; he says he is not an expert.",
+     "claim_ids": ["MT136-C17-1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why large CTAs lagged in 2024-25 (host's view)",
+     "steps": [
+      {"from": "Large managers tilt to financials for liquidity and size", "to": "Exposed to equities, fixed income and currencies at once", "why": "Where size can be deployed.", "claim_ids": ["MT136-C10-3"]},
+      {"from": "Two or three large reversals in each sector within 14 months", "to": "Forced flips between long and short (whipsaw)", "why": "Positions in each sector swung from fully long to flat to long again.", "claim_ids": ["MT136-C10-3"]},
+      {"from": "Smaller markets like commodities", "to": "Mitigate the losses", "why": "Broader diversification.", "claim_ids": ["MT136-C10-4"]},
+      {"from": "Wrong lookback for the regime or many markets not trending", "to": "Dispersion among CTAs", "why": "Not necessarily permanent.", "claim_ids": ["MT136-C12-X1", "MT136-C12-3"]}
+     ],
+     "evidence": "Observation of sector moves; the host calls it a perfect storm and says it may be too simple.",
+     "fails_when": "Beer argues the cause is structural cost and liquidity.",
+     "claim_ids": ["MT136-C10-3", "MT136-C10-4", "MT136-C12-3", "MT136-C12-X1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Tracks a 'trend barometer' (36, weak, at the recording) alongside SG indices.", "why": "Reads the trend environment; he notes weak reading despite good performance data.", "claim_ids": ["MT136-C07-3"]}
+   ],
+   "evidence_style": "Observation of index levels and sector moves, citations of articles (FT, Institutional Investor) and industry experience; frames his points as questions and admits where he lacks expertise.",
+   "current_views": [
+    {"view": "In September 2025 trend profits came from equities and precious metals, with fixed income quiet despite the Fed pivot.", "as_of": "2025-09", "reasoning": "Observation of sector attribution.", "claim_ids": ["MT136-C07-1"]},
+    {"view": "As of late September 2025 the SG Trend index was up almost 5% for the month and down 3% YTD, BTOP50 +2.81% and about flat YTD, SG CTA +3.5% and -3% YTD, SG Short-Term Traders +1.5% and -5% YTD, against MSCI World up about 17% and S&P 500 up about 14% YTD.", "as_of": "2025-09", "reasoning": "Figures read out as of Tuesday; the short-term sub-style lagged trend.", "claim_ids": ["MT136-C07-2", "MT136-C07-X1"]},
+    {"view": "His trend barometer read 36 (weak) despite good performance data; a fourth positive month for SG Trend would be the first since January-April 2024.", "as_of": "2025-09", "reasoning": "Barometer and monthly returns.", "claim_ids": ["MT136-C07-3"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Why did large single-manager CTAs lag replication in 2024-25?",
+   "positions": [
+    {"speaker": "Andrew Beer", "position": "Structural: broad, short-term, vol-controlled books with hundreds of instruments cannot be implemented in thin stress-day liquidity; many small paper cuts and costs.", "claim_ids": ["MT136-C11-2", "MT136-C12-1", "MT136-C11-X2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Reversals in equities, fixed income and currencies within about 14 months, lookback choice and non-trending markets; the snapshot is not conclusive evidence of a permanent change.", "claim_ids": ["MT136-C10-3", "MT136-C12-3", "MT136-C12-X1"]}
+   ]
+  },
+  {
+   "topic": "How much diversification across markets helps",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Managers with broader diversification including commodities mitigated losses; all markets can trend but not simultaneously.", "claim_ids": ["MT136-C10-4", "MT136-C12-3"]},
+    {"speaker": "Andrew Beer", "position": "Adding marginal markets only helps if a stress-day execution loss would have justified inclusion; slippage on 70 markets does not carry to 300.", "claim_ids": ["MT136-C12-2", "MT136-C13-3"]}
+   ]
+  },
+  {
+   "topic": "Will multistrat capacity dilution break the model?",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Pods are funded by past P&L, so capacity dilution and hidden leverage can build, as in private equity.", "claim_ids": ["MT136-C17-1"]},
+    {"speaker": "Andrew Beer", "position": "Marginal pods are logically less attractive, but leaders like Citadel have disproved it so far and no multistrat has blown up.", "claim_ids": ["MT136-C17-2", "MT136-C17-3"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Beer's 80-90% ETF statistic is about ETFs versus fund peers in 2024-25 (ledger correction), not specifically simple replication ETFs versus managed futures peers; the sample and benchmark are not stated.", "claim_ids": ["MT136-C11-1"]},
+  {"issue": "The 300bp is an outperformance of DBMF versus peers over 10 years (ledger correction), not a cost advantage; it is the product's own record and Beer is the manager.", "claim_ids": ["MT136-C08-3", "MT136-C09-1"]},
+  {"issue": "The structural explanation (position number 298, thin liquidity, prop desks) is hypothetical; Beer says he has not heard such manager stories and 'could be totally wrong'.", "claim_ids": ["MT136-C11-2", "MT136-C12-1", "MT136-C12-2"]},
+  {"issue": "Beer's multistrat figures come from the Pivotal Path index (built from institutions' data) and are not net-of-fee verified here; total fees may be 1000bp, and the period is flattered by equities up 55% and bonds about 8% a year.", "claim_ids": ["MT136-C15-1", "MT136-C15-X1", "MT136-C15-X2"]},
+  {"issue": "The March 2020 figure is garbled: a -6% fund-level loss that is about -1% on the underlying unlevered book at 5x leverage (ledger correction).", "claim_ids": ["MT136-C14-2"]},
+  {"issue": "Beer's correlation (0.8) and volatility (2-3 times) figures are stated from memory; the ledger notes stock-bond correlation 'in his words' about 0.8.", "claim_ids": ["MT136-C04-2", "MT136-C06-3"]},
+  {"issue": "Beer says the rebound after April 2025 may be a liquidity influx, yet also says the trend detection of the let-it-run-hot trade is what the strategy is supposed to do; the two readings (luck of flows versus signal) are not separated.", "claim_ids": ["MT136-C14-1", "MT136-C08-1"]},
+  {"issue": "Beer expected multistrat 'dead money' and was wrong over 24 months; he calls this a poor test, so his later endorsement relies on a short, favourable sample.", "claim_ids": ["MT136-C15-X2", "MT136-C17-3"]},
+  {"issue": "The inelastic market hypothesis is described by the host without its stated mechanism (few participants absorbing flow); the ledger correction removes that reason.", "claim_ids": ["MT136-C02-1"]}
+ ],
+ "forward_looking_inputs": "(reader) Inputs the speakers treat as leading: flows (passive inflows and outflows, YOLO and FOMO liquidity) for equities; political pressure on the Fed and the dollar for a continued let-it-run-hot regime (long equities, gold, crypto) with a bond tantrum later; stress-day liquidity and costs for CTA implementability; and CalPERS's shift to a total portfolio approach for allocation to diversifiers. Horizons are months (trend), five years (paradigm shift) and multi-year (allocation).",
+ "reader_inferences": [
+  "(reader) Beer's paradigm argument and the host's flow argument are two accounts of the same fragility: allocation models fit to a regime (falling rates, positive flows) fail when the regime ends, which favours strategies that adapt (trend) over models that extrapolate.",
+  "(reader) Beer's implementability argument predicts that the replication advantage should shrink when liquidity is abundant and widen after shocks, which is a testable pattern (relative returns versus market liquidity); the host's account predicts it should track sector reversals.",
+  "(reader) Both speakers treat multistrat success as a talent-plus-structure result, but neither separates it from the favourable asset-return backdrop (equities up 55%, bonds 8% a year) or from leverage; the conclusion that the structure 'works' therefore rests on a short sample.",
+  "(reader) Beer's advice to buy the dip in trend and his comment that CTAs make a decade of alpha in a year after slow allocators fail to react imply that expected trend returns are lumpy and concentrated in a few episodes."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT136-C14-R1",
+   "chunk": "C14",
+   "speaker": "Andrew Beer",
+   "quote": "running hedge funds with enormously high cost structures that are generating returns that are staggeringly consistent and valuable for investors",
+   "claim": "Multistrategy hedge funds run enormously high-cost structures yet generate returns that are staggeringly consistent and valuable for investors, which Beer likens to cold fusion.",
+   "mechanism": "structure_and_talent",
+   "asset_class": "multi",
+   "indicator": "multistrategy hedge fund returns",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "As of September 2025",
+   "testable": "yes",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "reader": "map"
+  }
+ ]
+}

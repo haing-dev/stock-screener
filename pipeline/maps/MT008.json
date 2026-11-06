@@ -1,0 +1,202 @@
+{
+ "source_id": "MT008",
+ "episode_thesis": "Mark argues that asset relationships are conditional on the regime (volatility, monetary/fiscal, sentiment), so a trend follower with macro awareness gets an edge from decomposing regimes, detecting change points and modelling causal networks rather than mining factors. In early 2026 he sees metals and softs as possibly past a bubble peak (hard-to-value assets plus narrative plus excess money), a rotation away from US assets as uncertainty makes them relatively less safe, and a fiscal-versus-monetary tussle whose outcome depends on the new Fed chair. Alan Dunne supplies market evidence and counter-readings (AI narrative flip, EM credibility, Warsh's political flexibility) and both back trend following over years, not months.",
+ "speakers": [
+  {
+   "name": "Mark",
+   "role": "Guest: quantitative macro researcher and professor, global macro and trend-following believer (surname not given in the captions)",
+   "speaker_note": "Captions have no speaker labels; turns were assigned from content (Mark is the guest who spoke at length, mentions Fidelity, John Henry, trend following and his firm; Alan Dunne is the sitting-in host who reads index numbers, is in Dublin and heading to Miami). Ledger corrections applied: the AI narrative flip (C03-X1) and 'EM real yields are higher' are Alan's; 'fiscal dominance not yet' is Alan's, Mark defines it and cites WWII.",
+   "fingerprint": ["regime_detection", "macro_fundamental_topdown", "trend_following", "behavioral_sentiment", "research_robustness_overfitting", "fiscal_dominance", "policy_reaction_central_banks", "market_internals_leading"],
+   "worldview_premises": [
+    {"premise": "Bubbles need fuel (excess money) plus a narrative, and narratives form around assets that are hard to value.", "type": "behavioural", "stated": "stated", "support": "Cites the 'retail habitat' research: retail investors gravitate to hard-to-value stocks.", "claim_ids": ["MT008-C02-3", "MT008-C02-4"]},
+    {"premise": "Commodity bubbles differ from equity bubbles because mining supply is constrained, so demand shocks translate into price spikes.", "type": "theoretical", "stated": "stated", "support": "Supply constraint argument for gold and silver.", "claim_ids": ["MT008-C02-5"]},
+    {"premise": "Risk is countable (volatility, VIX) while uncertainty is not, so new technology like AI is priced on narrative and embedded growth can be too high or too low.", "type": "theoretical", "stated": "stated", "support": "Risk versus uncertainty distinction; no data.", "claim_ids": ["MT008-C03-3", "MT008-C04-1", "MT008-C04-2"]},
+    {"premise": "Safety is a relative concept: US Treasuries stay safe in absolute terms but less than before, so investors diversify their flows.", "type": "theoretical", "stated": "stated", "support": "Reasoning from higher US trade, geopolitical and monetary uncertainty.", "claim_ids": ["MT008-C06-1", "MT008-C05-3"]},
+    {"premise": "Asset-price relationships are conditional on the environment; there is no single beta, and awareness of regimes is an edge in portfolio formation.", "type": "empirical", "stated": "stated", "support": "Paper on stock beta by crisis/recession regime and personal anecdote at John Henry.", "claim_ids": ["MT008-C06-3", "MT008-C07-1", "MT008-C07-2", "MT008-C06-R1"]},
+    {"premise": "Regimes come in distinct types (volatility, monetary/fiscal-structural, geopolitical/sentiment) and the edge comes from decomposing them rather than using one label.", "type": "experience", "stated": "stated", "support": "Assertion; no evidence presented.", "claim_ids": ["MT008-C08-X1", "MT008-C08-1"]},
+    {"premise": "The VIX is non-linearly related to returns: above about 25 and rising is bad, near 40 marks a peak and a re-entry point.", "type": "empirical", "stated": "stated", "support": "Skewed distribution of the VIX; no figures.", "claim_ids": ["MT008-C08-2", "MT008-C08-3"]},
+    {"premise": "Stock-bond correlation depends on inflation, so third factors reveal the regime.", "type": "empirical", "stated": "stated", "support": "Cited as known; 2022 mentioned by host.", "claim_ids": ["MT008-C08-4"]},
+    {"premise": "The post-pandemic inflation burst came from excess fiscal policy never reversed, and the Treasury prefers lower rates and tolerates higher inflation to cut the real debt.", "type": "theoretical", "stated": "stated", "support": "War analogy from a paper; Cochrane's fiscal theory of the price level.", "claim_ids": ["MT008-C09-2", "MT008-C10-1", "MT008-C10-3", "MT008-C12-2"]},
+    {"premise": "Factors mined from past data often vanish out of sample (factor zoo); causal factors and domain knowledge matter more than model complexity, and ML struggles on non-stationary adaptive markets.", "type": "empirical", "stated": "stated", "support": "Research on features vs complexity; Lo's adaptive markets hypothesis; dog-picture analogy.", "claim_ids": ["MT008-C15-1", "MT008-C15-2", "MT008-C15-3", "MT008-C14-3"]},
+    {"premise": "Trend following and momentum work especially in uncertain regimes and non-stationary data, but alternate strong and weak periods and crowding makes improvement hard.", "type": "experience", "stated": "stated", "support": "History of strong and weak periods; self-declared belief.", "claim_ids": ["MT008-C16-2", "MT008-C16-3", "MT008-C06-R2"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "How a bubble forms and ends in metals and softs",
+     "steps": [
+      {"from": "Excess money plus hard-to-value asset", "to": "optimistic narrative", "why": "Hard-to-value assets allow stories, which retail investors favour.", "claim_ids": ["MT008-C02-3", "MT008-C02-4"]},
+      {"from": "Constrained mining supply", "to": "demand shocks become price spikes in gold and silver", "why": "No new supply responds to euphoria.", "claim_ids": ["MT008-C02-5"]},
+      {"from": "Blow-off top", "to": "correction or slow grind lower", "why": "Pattern repeated across bubbles; trend followers can profit both ways if they exit near the top.", "claim_ids": ["MT008-C02-2", "MT008-C02-1"]}
+     ],
+     "evidence": "Recent cocoa fall from 12 to 4, coffee, gold and silver spike and reversal; retail habitat research.",
+     "fails_when": "Fuel and narrative persist; he says it is hard to know whether this is a pause or initial deflation.",
+     "claim_ids": ["MT008-C02-1", "MT008-C02-2", "MT008-C02-3", "MT008-C02-4", "MT008-C02-5"]
+    },
+    {
+     "topic": "Central-bank gold buying as a sanction hedge",
+     "steps": [
+      {"from": "Fear of US sanctions (China, Poland, former Soviet states)", "to": "central banks buy gold instead of dollars", "why": "Gold is a quasi safe asset outside the dollar.", "claim_ids": ["MT008-C03-2"]},
+      {"from": "Part of gold's pullback", "to": "fewer retail buyers during Lunar New Year", "why": "Seasonal Chinese retail absence.", "claim_ids": ["MT008-C02-X1"]}
+     ],
+     "evidence": "Reserve-buying pattern from World Gold Council data cited by host.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT008-C03-2", "MT008-C02-X1"]
+    },
+    {
+     "topic": "Why money rotates out of the US (2026)",
+     "steps": [
+      {"from": "US core inflation about 3% above EM inflation", "to": "EM relatively more attractive", "why": "Inflation differential.", "claim_ids": ["MT008-C05-1"]},
+      {"from": "High US trade, geopolitical and monetary uncertainty", "to": "foreign and US investors demand a premium and treat US assets as less safe", "why": "Cash flows in less uncertain countries are easier to discount.", "claim_ids": ["MT008-C05-3", "MT008-C06-1"]},
+      {"from": "K-shaped US economy", "to": "asset flows worldwide change (US pensions abroad, foreign buyers hedge currency on Treasuries, software down, real assets up)", "why": "Divergence between real and asset economy.", "claim_ids": ["MT008-C05-2", "MT008-C04-3"]}
+     ],
+     "evidence": "Uncertainty indices he follows; flow observations; breadth broadening in early 2026.",
+     "fails_when": "He admits EM structural change is outside his expertise.",
+     "claim_ids": ["MT008-C04-3", "MT008-C04-4", "MT008-C05-1", "MT008-C05-2", "MT008-C05-3", "MT008-C06-1"]
+    },
+    {
+     "topic": "Regime-dependent portfolio construction",
+     "steps": [
+      {"from": "Inflation rises", "to": "stock-bond correlation rises", "why": "Inflation-dependent correlation.", "claim_ids": ["MT008-C08-4"]},
+      {"from": "Correlation turns positive with lower rates", "to": "hold more alternatives and hedge fund strategies", "why": "Bonds no longer hedge equities.", "claim_ids": ["MT008-C08-5"]},
+      {"from": "Correlation strongly negative with high rates", "to": "alternatives less needed", "why": "Bonds already diversify.", "claim_ids": ["MT008-C08-5"]},
+      {"from": "Knowledge of correlation regime", "to": "tilt trend-based exposures to avoid overweighting one sector", "why": "Correlation affects risk concentration.", "claim_ids": ["MT008-C08-6"]}
+     ],
+     "evidence": "Description; hidden Markov model identification of volatility regimes.",
+     "fails_when": "Regimes are only identified with delay.",
+     "claim_ids": ["MT008-C08-1", "MT008-C08-4", "MT008-C08-5", "MT008-C08-6"]
+    },
+    {
+     "topic": "Fiscal versus monetary dominance and asset markets",
+     "steps": [
+      {"from": "Large permanent deficits and unreversed pandemic spending", "to": "tussle between Treasury (wants lower rates and tolerates inflation) and the Fed", "why": "Inflation lowers real debt value.", "claim_ids": ["MT008-C10-1", "MT008-C10-3", "MT008-C09-1"]},
+      {"from": "Warsh shrinks the balance sheet", "to": "liquidity falls and asset markets deleverage, against Treasury interest", "why": "Treasury sold about $700bn in one week and relies on firm demand.", "claim_ids": ["MT008-C11-2", "MT008-C11-3"]},
+      {"from": "Expected permanent deficits (Cochrane)", "to": "money moves into real assets (gold) and inflation; financial assets bid up if savings are abundant", "why": "Fiscal theory of the price level.", "claim_ids": ["MT008-C12-2"]},
+      {"from": "Outcome of the Fed chair choice", "to": "regime change: smaller balance sheet, fiscal dominance, or continued deficits", "why": "Appointed officials may behave unexpectedly.", "claim_ids": ["MT008-C13-1", "MT008-C13-2"]}
+     ],
+     "evidence": "WWII rate cap and Treasury-Fed Accord history; Cochrane's research; benchmark revisions to payrolls.",
+     "fails_when": "Weak payrolls may reflect labour supply leaving the US, in which case the economy need not be run hotter.",
+     "claim_ids": ["MT008-C09-1", "MT008-C09-2", "MT008-C10-1", "MT008-C10-3", "MT008-C11-1", "MT008-C11-2", "MT008-C11-3", "MT008-C11-X1", "MT008-C12-2", "MT008-C13-1", "MT008-C13-2"]
+    },
+    {
+     "topic": "Why detection and causality beat factor mining",
+     "steps": [
+      {"from": "Many factors found in past data", "to": "they disappear out of sample (spurious or overfit)", "why": "Factor zoo.", "claim_ids": ["MT008-C15-1"]},
+      {"from": "ML needs stationary data", "to": "it struggles in adaptive, regime-changing markets", "why": "Agents' behaviour changes (Lo).", "claim_ids": ["MT008-C15-3"]},
+      {"from": "Change-point detection, hidden Markov models and causal network monitoring", "to": "earlier sensitivity to regime shifts, though never at the exact turn", "why": "Detection only after the break; macro awareness raises sensitivity.", "claim_ids": ["MT008-C14-1", "MT008-C14-2"]}
+     ],
+     "evidence": "Research cited; no results from his own firm shown.",
+     "fails_when": "Causal discovery is unsolved; the search for a perfect model is ongoing.",
+     "claim_ids": ["MT008-C14-1", "MT008-C14-2", "MT008-C14-3", "MT008-C15-1", "MT008-C15-2", "MT008-C15-3"]
+    }
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Trade trends in uncertain regimes, exiting near bubble tops to profit on both sides.", "why": "Trend following works especially when data are non-stationary.", "claim_ids": ["MT008-C02-2", "MT008-C16-2"]},
+    {"element": "risk", "practice": "Treat VIX above about 25 and rising as negative for many assets and VIX near 40 as a peak and re-entry signal.", "why": "Non-linear VIX relationship.", "claim_ids": ["MT008-C08-2", "MT008-C08-3"]},
+    {"element": "portfolio", "practice": "Condition holdings of alternatives on stock-bond correlation and rate level.", "why": "Diversification value of bonds changes.", "claim_ids": ["MT008-C08-5"]},
+    {"element": "portfolio", "practice": "Use regime knowledge to adjust trend tilts at the margin and avoid overexposure to one sector.", "why": "Correlation relationships change risk exposures.", "claim_ids": ["MT008-C08-6"]},
+    {"element": "research", "practice": "Detect regimes with hidden Markov models and breaks with change-point detection; model markets as a causal network and track how its connections change.", "why": "Get ahead of regime shifts, though never exactly at the break.", "claim_ids": ["MT008-C08-1", "MT008-C14-1", "MT008-C14-2"]},
+    {"element": "research", "practice": "Seek causal factors and check models against data; prefer features and domain knowledge over model complexity.", "why": "Factor zoo and non-stationarity.", "claim_ids": ["MT008-C15-1", "MT008-C15-2"]},
+    {"element": "research", "practice": "Learn AI and machine learning but benchmark against simple models and do not over-optimise.", "why": "Markets are non-stationary and adaptive.", "claim_ids": ["MT008-C16-1", "MT008-C15-3"]}
+   ],
+   "evidence_style": "Academic literature (retail habitat, beta by regime, factor zoo, features vs complexity, Cochrane, Lo), history (WWII Treasury-Fed Accord), personal anecdote, and conceptual definitions; few numbers of his own and no backtests presented.",
+   "current_views": [
+    {"view": "Metals and softs may have hit a peak bubble after January 2026; gold and silver reversed and cocoa fell from 12 to 4, coffee similarly.", "as_of": "2026-02", "reasoning": "Blow-off top then correction or slow grind; part of gold's dip is Lunar New Year retail absence.", "claim_ids": ["MT008-C02-1", "MT008-C02-X1"]},
+    {"view": "Rotation is the main 2026 theme: out of the US into Europe and global equities, EM favoured, software down and real assets up, broader breadth than 2025.", "as_of": "2026-02", "reasoning": "Lower relative US safety, EM inflation below US, K-shaped US economy.", "claim_ids": ["MT008-C04-3", "MT008-C04-4", "MT008-C05-1", "MT008-C05-2"]},
+    {"view": "Fed chair outcome (Warsh) could shift the monetary regime; uncertainty is high, so prepare for a Warsh different from press expectations.", "as_of": "2026-02", "reasoning": "Appointees often behave differently; smaller balance sheet vs Treasury's wish for easy policy.", "claim_ids": ["MT008-C13-1", "MT008-C13-2", "MT008-C11-2"]},
+    {"view": "Confident in trend following and momentum over five years, not over five months.", "as_of": "2026-02", "reasoning": "Strong and weak periods alternate throughout history.", "claim_ids": ["MT008-C16-3"]},
+    {"view": "Weak employment benchmark revisions (about one million fewer jobs) give the administration a reason to run the economy hotter, unless the weakness is labour supply.", "as_of": "2026-02", "reasoning": "Distrust of data; demographics alternative.", "claim_ids": ["MT008-C11-1", "MT008-C11-X1"]}
+   ]
+  },
+  {
+   "name": "Alan Dunne",
+   "role": "Guest host (sitting in for Niels Kaastrup-Larsen), trend-following and macro commentator based in Dublin",
+   "speaker_note": "Mapped because he states views on gold, EM, bonds, dollar, fiscal dominance and Warsh. His fiscal dominance, EM real yield and AI-narrative comments are corrected from Mark in the ledger.",
+   "fingerprint": ["macro_fundamental_topdown", "policy_reaction_central_banks", "fiscal_dominance", "trend_following", "behavioral_sentiment", "liquidity_flows"],
+   "worldview_premises": [
+    {"premise": "Gold's 2025 surge was driven by retail ETF flows more than central-bank buying, consistent with retail momentum.", "type": "empirical", "stated": "stated", "support": "World Gold Council data on central-bank buying lower in 2025 than 2024.", "claim_ids": ["MT008-C03-1"]},
+    {"premise": "Bonds are a less reliable but not a failed equity diversifier; in a crisis with aggressive Fed cuts they still diversify.", "type": "theoretical", "stated": "stated", "support": "Scenario reasoning.", "claim_ids": ["MT008-C06-2"]},
+    {"premise": "Relationships have shifted: the dollar-rate differential link weakened after Liberation Day (credibility discount) and gold has risen independent of real yields and the dollar.", "type": "empirical", "stated": "stated", "support": "Market observation; no statistics.", "claim_ids": ["MT008-C07-3"]},
+    {"premise": "EM carried a premium historically because of less credible central banks; as they adhere to inflation targets and US credibility weakens, EM real yields are higher and relative attractiveness shifts.", "type": "institutional", "stated": "stated", "support": "Credibility argument.", "claim_ids": ["MT008-C05-X1", "MT008-C05-1"]},
+    {"premise": "Lower rates because of debt concerns would run the economy hot and fuel asset bubbles.", "type": "theoretical", "stated": "stated", "support": "1990s analogy about asset prices ignored by inflation targeting.", "claim_ids": ["MT008-C12-1"]},
+    {"premise": "Financial repression in the 1940s pinned long rates while allowing inflation, giving bondholders negative real returns until the Fed regained independence.", "type": "empirical", "stated": "stated", "support": "Historical precedent.", "claim_ids": ["MT008-C10-2"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Warsh policy mix and Treasury financing",
+     "steps": [
+      {"from": "Warsh pairs a smaller Fed balance sheet with lower policy rates", "to": "Treasury issues more bills to exploit low short rates", "why": "Short rates cheap.", "claim_ids": ["MT008-C12-X1"]},
+      {"from": "SLR changes", "to": "banks hold more Treasuries", "why": "Makes Treasuries more attractive to banks.", "claim_ids": ["MT008-C12-X1"]},
+      {"from": "Lower rates despite debt concerns", "to": "hot economy and asset bubbles", "why": "Asset prices missing in the current debate.", "claim_ids": ["MT008-C12-1"]}
+     ],
+     "evidence": "Reasoning from policy proposals; no data.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT008-C12-1", "MT008-C12-X1"]
+    },
+    {
+     "topic": "Why the AI trade changed in 2026",
+     "steps": [
+      {"from": "A year earlier more AI capex was seen as good for Nvidia and infrastructure", "to": "now capex announcements are punished and software sold as an AI loser (SaaSpocalypse)", "why": "Narrative shifted to winners and losers.", "claim_ids": ["MT008-C03-X1"]},
+      {"from": "Cyclicals and defensives both rose", "to": "growth-to-value rotation, not a coherent growth call", "why": "Sector moves are internally inconsistent with a cyclical story.", "claim_ids": ["MT008-C04-X1"]}
+     ],
+     "evidence": "Market observation.",
+     "fails_when": "Not tested.",
+     "claim_ids": ["MT008-C03-X1", "MT008-C04-X1"]
+    }
+   ],
+   "decision_process": [
+    {"element": "other", "practice": "Reads CTA index performance each week as a trend-following health check (SG CTA, SG Trend, mix of gold, softs, energy and bonds).", "why": "Context for the discussion.", "claim_ids": ["MT008-C01-1"]},
+    {"element": "portfolio", "practice": "Thinks of bond diversification as degrees of reliability, not a yes/no.", "why": "Crisis scenarios with Fed cuts remain possible.", "claim_ids": ["MT008-C06-2"]}
+   ],
+   "evidence_style": "Market data and recent events, historical precedent and analyst-style reading of news; asks questions to test the guest's views.",
+   "current_views": [
+    {"view": "February 2026 CTA indices up about 1.1% month to date and 5.9% YTD, driven by gold, soft commodity shorts, rising energy and US bonds, with currencies choppy.", "as_of": "2026-02", "reasoning": "Index data read out.", "claim_ids": ["MT008-C01-1"]},
+    {"view": "Fiscal dominance is a risk but not yet reached.", "as_of": "2026-02", "reasoning": "Debt and deficits not yet dictating monetary policy, though pressure exists.", "claim_ids": ["MT008-C09-1"]},
+    {"view": "Warsh may be less hawkish than he looks: he sees AI as disinflationary and room for lower rates, and his stance has shifted with the party in power.", "as_of": "2026-02", "reasoning": "Past interviews; charts of dovish/hawkish flips.", "claim_ids": ["MT008-C13-X1", "MT008-C13-R1"]},
+    {"view": "The AI narrative has turned from uniformly positive to winners and losers, with the market punishing capex.", "as_of": "2026-02", "reasoning": "SaaSpocalypse and earnings reactions.", "claim_ids": ["MT008-C03-X1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "How hawkish a Warsh Fed will be",
+   "positions": [
+    {"speaker": "Mark", "position": "If he follows his own statements he will shrink the balance sheet, draining liquidity and deleveraging markets, against the Treasury's wish.", "claim_ids": ["MT008-C11-2", "MT008-C13-1"]},
+    {"speaker": "Alan Dunne", "position": "He sees AI as disinflationary with room for lower rates and has shifted with the party in power; the likely mix is a smaller balance sheet with lower policy rates.", "claim_ids": ["MT008-C13-X1", "MT008-C12-X1"]}
+   ]
+  },
+  {
+   "topic": "Are we in fiscal dominance?",
+   "positions": [
+    {"speaker": "Alan Dunne", "position": "A risk but not yet reached.", "claim_ids": ["MT008-C09-1"]},
+    {"speaker": "Mark", "position": "Frames the Fed-Treasury tussle as a fiscal versus monetary dominance question; the Fed chair could produce a fiscal-dominance regime, or the status quo of large deficits continues.", "claim_ids": ["MT008-C13-1", "MT008-C10-1"]}
+   ]
+  },
+  {
+   "topic": "Bond diversification",
+   "positions": [
+    {"speaker": "Mark", "position": "Safety is relative; Treasuries are less safe, so flows diversify.", "claim_ids": ["MT008-C06-1"]},
+    {"speaker": "Alan Dunne", "position": "Bonds are less reliable but still diversify in crises with aggressive Fed cuts; not a yes/no.", "claim_ids": ["MT008-C06-2"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Mark says regime awareness is the edge but gives no evidence of out-of-sample benefit; hidden Markov models and change-point detection identify regimes only after the break.", "claim_ids": ["MT008-C06-3", "MT008-C14-1", "MT008-C08-X1"]},
+  {"issue": "VIX 25 and 40 thresholds are quoted without data, and the claim that 40 is always a peak is stated as certainty.", "claim_ids": ["MT008-C08-2", "MT008-C08-3"]},
+  {"issue": "Mark criticises the factor zoo and ML overfitting while also advocating regime decomposition and network models, which have a large specification space and no stated validation.", "claim_ids": ["MT008-C15-1", "MT008-C08-X1", "MT008-C14-2"]},
+  {"issue": "The bubble call is hedged: Mark says 'I'd like to say' a peak was hit and later that it is hard to say whether this is a pause or the start of deflation.", "claim_ids": ["MT008-C02-1", "MT008-C02-3"]},
+  {"issue": "Two readings of the payroll revisions are offered (weaker economy needing a hotter run vs lower labour supply) with no resolution.", "claim_ids": ["MT008-C11-1", "MT008-C11-X1"]},
+  {"issue": "Retail-driven gold is proposed (Alan) while central banks of sanction-fearing countries are also cited (Mark); the relative weights are not quantified.", "claim_ids": ["MT008-C03-1", "MT008-C03-2"]}
+ ],
+ "forward_looking_inputs": "(reader) Inputs named that lead future prices: the VIX level and direction, stock-bond correlation and inflation, trade/geopolitical/monetary uncertainty indices, the Fed chair's balance-sheet and rate path, Treasury auction absorption (about $700bn in a week), EM versus US inflation and real yields, ETF versus central-bank gold flows, and break points in cross-market network connections. Horizons are months for bubble deflation and years (five) for trend following.",
+ "reader_inferences": [
+  "(reader) Mark's regime decomposition (price, policy-structural, sentiment) can be read as three observable layers: VIX and trend state, fiscal/monetary stance, and uncertainty indices.",
+  "(reader) His bubble recipe (excess money plus narrative plus hard-to-value plus constrained supply) gives a checklist that could be coded for commodity peak risk, but both peak calls are about the recent past and not testable from the talk.",
+  "(reader) Alan's contribution is mostly market-evidence checks (retail ETF flows, sector inconsistency) that qualify rather than refute Mark's thesis.",
+  "(reader) The Warsh disagreement shows the unresolved forward input: whether balance-sheet reduction or lower policy rates dominates, which maps to opposite signs for liquidity-sensitive assets."
+ ],
+ "added_claims": [
+  {"claim_id": "MT008-C06-R1", "chunk": "C06", "speaker": "Mark", "quote": "I don't believe this quote", "claim": "Mark rejects Peter Lynch's quip that spending 14 minutes on macro is 12 minutes too long and argues macro awareness matters because it affects all asset types.", "mechanism": "regime_change", "asset_class": "multi", "indicator": "macro awareness", "horizon": "unspecified", "direction": "", "conditions": "", "testable": "no - opinion", "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT008-C06-R2", "chunk": "C06", "speaker": "Mark", "quote": "obviously I'm trend follower, a strong believer in trend follower, but also global macro guy", "claim": "Mark describes himself as a trend follower and a global macro person, because regime changes alter relationships through time and awareness of them gives an edge.", "mechanism": "regime_change", "asset_class": "multi", "indicator": "none", "horizon": "unspecified", "direction": "", "conditions": "", "testable": "no - self-description", "speaker_confidence": "high", "time_bound": "no"},
+  {"claim_id": "MT008-C13-R1", "chunk": "C13", "speaker": "Alan Dunne", "quote": "the biggest macro forecasting mistake in 40 years", "claim": "Alan recalls Warsh calling the Fed's slowness to raise rates in 2021-22 the biggest macro forecasting mistake in 40 years and blaming the Fed for financing deficit expansion, consistent with Cochrane's view.", "mechanism": "policy_reaction", "asset_class": "rates", "indicator": "Fed policy stance", "horizon": "unspecified", "direction": "", "conditions": "Warsh interview last summer", "testable": "no - recollection", "speaker_confidence": "medium", "time_bound": "yes"}
+ ]
+}

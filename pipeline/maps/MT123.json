@@ -1,0 +1,663 @@
+{
+ "source_id": "MT123",
+ "episode_thesis": "Andurand argues that cocoa faces a historic, partly structural supply deficit (disease, climate change, low farmer incomes) hitting inelastic demand, so that stocks-to-grindings near 21% heading toward 13% means price must rise until demand is destroyed; he stayed long with skewed payoff. He applies the same balance-sheet method to copper (multi-year deficit with slow supply response, price signal missing because pod funds cannot hold long) and sees limited oil supply disruption and a marginal US election effect.",
+ "speakers": [
+  {
+   "name": "Pierre Andurand",
+   "role": "Founder, Andurand Capital Management (energy and metals discretionary commodity trader)",
+   "speaker_note": "Caption spelling 'Pier andon / andurand'. Single main guest, clear. Number in C02 caption ('177%') corrected to ~17.7%.",
+   "fingerprint": [
+    "commodity_fundamentals",
+    "macro_fundamental_topdown",
+    "kelly_or_conviction_sizing",
+    "structural_themes",
+    "liquidity_flows",
+    "positioning_crowding",
+    "position_sizing_vol_target",
+    "geopolitics"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Commodity prices are set by supply-demand balance modelled year by year; the key question is what price is needed to clear the market, not where price sits versus its historical range.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Own method; says experienced traders anchor on historical ranges.",
+     "claim_ids": [
+      "MT123-C04-2",
+      "MT123-C09-1",
+      "MT123-C04-5"
+     ]
+    },
+    {
+     "premise": "When demand is inelastic and supply responds slowly (trees take 3-5 years, mines 10-15 years), shortages are cleared only by large price moves, non-linear once inventories run out.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Cocoa and copper reasoning; small cost share in end products.",
+     "claim_ids": [
+      "MT123-C02-5",
+      "MT123-C02-6",
+      "MT123-C04-3",
+      "MT123-C07-2",
+      "MT123-C07-3",
+      "MT123-C08-4",
+      "MT123-C08-5",
+      "MT123-C09-6"
+     ]
+    },
+    {
+     "premise": "Demand is inelastic because cocoa and copper are a tiny fraction of consumer spending or end-product cost.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Back-of-envelope: ~1.7 grams per person per day, about 1.7 cents a day at $10,000/ton; milk chocolate under 10% cocoa; copper small share of end product.",
+     "claim_ids": [
+      "MT123-C02-6",
+      "MT123-C02-7",
+      "MT123-C02-X1",
+      "MT123-C08-5"
+     ]
+    },
+    {
+     "premise": "Much of cocoa's supply loss is structural (climate change, swollen shoot virus, low farmgate prices limiting fertilizer), not just weather, so a good season does not undo it.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Disease facts (swollen shoot yield loss 25%/50%, trees die in 3-4 years), fertilizer prices, farmer incomes.",
+     "claim_ids": [
+      "MT123-C03-1",
+      "MT123-C03-3",
+      "MT123-C03-4",
+      "MT123-C03-5",
+      "MT123-C03-6",
+      "MT123-C03-7"
+     ]
+    },
+    {
+     "premise": "Consensus lags supply shocks because sell-side analysts are conservative and traders anchor on past ranges, creating an edge for those who track high-frequency export and survey data.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own estimate of production down ~17.7% vs analysts' 11%; exports Ivory Coast -30%, Ghana -41%.",
+     "claim_ids": [
+      "MT123-C02-2",
+      "MT123-C02-3",
+      "MT123-C04-1",
+      "MT123-C04-2",
+      "MT123-C07-4",
+      "MT123-C07-R1"
+     ]
+    },
+    {
+     "premise": "Multi-strategy pod funds with tight drawdown limits cannot hold multi-year views, so the market does not give early price signals for multi-year deficits such as copper.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Reasoning about hedge fund structure.",
+     "claim_ids": [
+      "MT123-C08-3"
+     ]
+    },
+    {
+     "premise": "Fund positioning did not drive the cocoa rally; fund longs fell more than 80% while producers who had sold forward bought back futures.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Positioning data: 175,000 lots to 28,000 since February.",
+     "claim_ids": [
+      "MT123-C05-4",
+      "MT123-C05-5"
+     ]
+    },
+    {
+     "premise": "Thinning liquidity and rising volatility make position sizes shrink, which makes prices still more volatile (reflexive liquidity loop).",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Open interest shrank as the market moved.",
+     "claim_ids": [
+      "MT123-C05-6"
+     ]
+    },
+    {
+     "premise": "Physically settled futures converge to physical, so shorts face unbounded squeezes when physical is short.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Contract design.",
+     "claim_ids": [
+      "MT123-C05-3"
+     ]
+    },
+    {
+     "premise": "Climate change is a trending structural influence on soft commodity supply beyond random weather.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument; no data given here.",
+     "claim_ids": [
+      "MT123-C07-1",
+      "MT123-C03-3"
+     ]
+    },
+    {
+     "premise": "Oil disruption risk was overestimated in 2022-23; real supply loss would need an attack on Iranian facilities or Russian ports and pipelines.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observed outcomes: Russian output held, Iranian exports surged, US output grew.",
+     "claim_ids": [
+      "MT123-C10-1",
+      "MT123-C10-3",
+      "MT123-C10-4",
+      "MT123-C11-1"
+     ]
+    },
+    {
+     "premise": "US oil supply is set by geology and capital, not the president; Trump would likely enforce Iran sanctions more tightly but Saudi supply would offset.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning on production under Biden.",
+     "claim_ids": [
+      "MT123-C11-2",
+      "MT123-C11-3",
+      "MT123-C10-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Cocoa shortage to price",
+     "steps": [
+      {
+       "from": "Weather (El Nino), climate change, swollen shoot, black pod, low fertilizer use",
+       "to": "cocoa production down roughly 17-18% (consensus 11%)",
+       "why": "Structural and weather supply loss; exports down 30% and 41% year to date",
+       "claim_ids": [
+        "MT123-C02-2",
+        "MT123-C02-3",
+        "MT123-C03-2",
+        "MT123-C03-3",
+        "MT123-C03-4",
+        "MT123-C03-5",
+        "MT123-C03-6",
+        "MT123-C03-7"
+       ]
+      },
+      {
+       "from": "Deficit of about 800k tons on 5m tons",
+       "to": "inventories drawn; stocks-to-grindings 21% vs 35-40% last decade (1977 at 19%)",
+       "why": "Mid-crop is only ~20% of remaining season; grindings -3 to -3.5% with flat chocolate demand shows destocking along chain",
+       "claim_ids": [
+        "MT123-C02-4",
+        "MT123-C04-6",
+        "MT123-C04-7",
+        "MT123-C04-8",
+        "MT123-C05-1",
+        "MT123-C04-X1",
+        "MT123-C02-1"
+       ]
+      },
+      {
+       "from": "Another deficit year",
+       "to": "stocks-to-grindings about 13%, outright shortage",
+       "why": "Demand inelastic, supply response 4-5 years",
+       "claim_ids": [
+        "MT123-C05-2",
+        "MT123-C04-3",
+        "MT123-C02-6"
+       ]
+      },
+      {
+       "from": "Physically settled futures with little physical",
+       "to": "unbounded squeeze risk for shorts and price must rise until demand is destroyed",
+       "why": "Contract converges to physical",
+       "claim_ids": [
+        "MT123-C05-3",
+        "MT123-C02-5"
+       ]
+      },
+      {
+       "from": "Even 10% production rebound",
+       "to": "still ~300k ton deficit and ratio ~13%; price falls only to $5-6k",
+       "why": "Stocks must be rebuilt across the chain, a demand floor",
+       "claim_ids": [
+        "MT123-C06-2",
+        "MT123-C06-3",
+        "MT123-C06-4",
+        "MT123-C06-1"
+       ]
+      }
+     ],
+     "evidence": "Export tracking, grindings data, 1977 analogue (~$28,000 in today's dollars), consultants' surveys, exchange and port stocks.",
+     "fails_when": "A bumper West African crop with near-perfect weather; if surveys show great crop, price falls toward $5-6k; stock data are partial.",
+     "claim_ids": [
+      "MT123-C02-2",
+      "MT123-C02-3",
+      "MT123-C02-4",
+      "MT123-C04-6",
+      "MT123-C04-7",
+      "MT123-C04-8",
+      "MT123-C05-1",
+      "MT123-C05-2",
+      "MT123-C06-1",
+      "MT123-C06-2",
+      "MT123-C06-3",
+      "MT123-C06-4",
+      "MT123-C06-5",
+      "MT123-C06-R1",
+      "MT123-C04-4",
+      "MT123-C05-3"
+     ]
+    },
+    {
+     "topic": "Copper multi-year deficit",
+     "steps": [
+      {
+       "from": "Electrification, grid for renewables and data centres add demand",
+       "to": "demand rises about 1m tons a year despite weaker Chinese property",
+       "why": "Renewables are copper intensive",
+       "claim_ids": [
+        "MT123-C08-1",
+        "MT123-C08-2"
+       ]
+      },
+      {
+       "from": "Mine supply growth goes to zero or negative within 12-18 months; new mines take 10-15 years in less stable countries",
+       "to": "widening multi-year deficit",
+       "why": "Slow supply response",
+       "claim_ids": [
+        "MT123-C08-2",
+        "MT123-C08-4",
+        "MT123-C07-5",
+        "MT123-C09-2"
+       ]
+      },
+      {
+       "from": "2024 deficit 400-500k tons exceeds visible stocks; 2026 over 1m; 2030 over 3m; China SRB not sold early",
+       "to": "price must rise non-linearly to destroy demand",
+       "why": "Inventories insufficient and demand inelastic",
+       "claim_ids": [
+        "MT123-C09-3",
+        "MT123-C09-4",
+        "MT123-C09-5",
+        "MT123-C09-6"
+       ]
+      },
+      {
+       "from": "Pod funds cannot hold positions for months",
+       "to": "no early price signal",
+       "why": "Short horizons and tight drawdown limits",
+       "claim_ids": [
+        "MT123-C08-3"
+       ]
+      }
+     ],
+     "evidence": "Balance sheet projections year by year; long-run average of balanced market 0.5m ton annual growth each side.",
+     "fails_when": "If scrap supply or demand shifts respond more than expected; he does not know the exact price path.",
+     "claim_ids": [
+      "MT123-C07-5",
+      "MT123-C08-1",
+      "MT123-C08-2",
+      "MT123-C08-3",
+      "MT123-C08-4",
+      "MT123-C08-5",
+      "MT123-C09-1",
+      "MT123-C09-2",
+      "MT123-C09-3",
+      "MT123-C09-4",
+      "MT123-C09-5",
+      "MT123-C09-6",
+      "MT123-C09-7"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Build year-by-year supply-demand balances at current prices, assess price sensitivity of each side, then ask what price clears the market and what path.",
+     "why": "Avoids anchoring on historical range.",
+     "claim_ids": [
+      "MT123-C09-1",
+      "MT123-C04-2",
+      "MT123-C04-5"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Use specialist consultant surveys, export tracking, port and exchange stock data with cross-validation; use historical shortages as analogues (1977).",
+     "why": "High-frequency data beats consensus.",
+     "claim_ids": [
+      "MT123-C04-1",
+      "MT123-C06-5",
+      "MT123-C04-5",
+      "MT123-C02-3"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Key balance indicator is stocks-to-grindings ratio (inventory over industrial processing demand).",
+     "why": "Measures buffer relative to demand.",
+     "claim_ids": [
+      "MT123-C04-6",
+      "MT123-C04-8"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Calibrate position to survive a 50% adverse move in an illiquid, volatile commodity; being right on direction is not enough.",
+     "why": "Cocoa less liquid than oil or gas.",
+     "claim_ids": [
+      "MT123-C05-7"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hold the long for skewed payoff: about $2,000 downside (December contract $7,000 to $5,000) vs $13-15k upside.",
+     "why": "Asymmetric payoff.",
+     "claim_ids": [
+      "MT123-C05-8",
+      "MT123-C06-1"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Only trade supply shocks big enough to dominate the balance (e.g. screened coffee, not exciting enough).",
+     "why": "Selectivity.",
+     "claim_ids": [
+      "MT123-C06-X1",
+      "MT123-C02-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Rely on an analyst's idea but 'dig really deep together' on fundamentals outside usual markets.",
+     "why": "Collaboration process.",
+     "claim_ids": [
+      "MT123-C02-1"
+     ]
+    }
+   ],
+   "evidence_style": "First-principles supply-demand modelling with back-of-envelope numbers, high-frequency data, historical analogue; probabilistic view.",
+   "current_views": [
+    {
+     "view": "Cocoa has more upside than downside: potential above $20,000/ton later in 2024 or in 2025; December contract about $7,000, downside maybe $5,000.",
+     "as_of": "2024-05-16",
+     "reasoning": "Large deficit, low stocks, inelastic demand; fund selling means no speculative froth.",
+     "claim_ids": [
+      "MT123-C05-8",
+      "MT123-C06-1",
+      "MT123-C06-2",
+      "MT123-C05-4"
+     ]
+    },
+    {
+     "view": "Copper should go up a lot; potentially quadrupling over five years, a 20% rise would not change the balance.",
+     "as_of": "2024-05-16",
+     "reasoning": "Multi-year deficit, inelastic demand, inventories insufficient.",
+     "claim_ids": [
+      "MT123-C09-7",
+      "MT123-C09-6",
+      "MT123-C08-2",
+      "MT123-C09-5"
+     ]
+    },
+    {
+     "view": "Oil: little supply loss expected absent attack on Iranian facilities or Russian ports; US shale growth disappointing for four months but not yet a trend; Trump vs Biden marginal.",
+     "as_of": "2024-05-16",
+     "reasoning": "Disruptions in 2022-23 did not materialise.",
+     "claim_ids": [
+      "MT123-C10-1",
+      "MT123-C10-2",
+      "MT123-C10-3",
+      "MT123-C11-2",
+      "MT123-C11-3"
+     ]
+    },
+    {
+     "view": "Ukraine may attack Russian ports if more desperate, creating supply-disruption risk; US pressure to avoid high gasoline prices before the election.",
+     "as_of": "2024-05-16",
+     "reasoning": "Dependence on US weapons constrains Ukraine.",
+     "claim_ids": [
+      "MT123-C11-1",
+      "MT123-C10-4"
+     ]
+    },
+    {
+     "view": "Soft commodities will offer more structural stories from climate change.",
+     "as_of": "2024-05-16",
+     "reasoning": "Trending climate impact on production.",
+     "claim_ids": [
+      "MT123-C07-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Joe Weisenthal",
+   "role": "Co-host, Bloomberg Odd Lots",
+   "speaker_note": "Questions mostly; states a few observations.",
+   "fingerprint": [
+    "structural_themes",
+    "commodity_fundamentals",
+    "behavioral_sentiment"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Even in deficit with bullish fundamentals prices can correct sharply.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Cocoa surged above 11,000 then fell to about 8,000.",
+     "claim_ids": [
+      "MT123-C01-1"
+     ]
+    },
+    {
+     "premise": "Tree-based commodities have different market structure from field crops because of labour intensity and difficulty of automation.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Palm-oil magnate anecdote.",
+     "claim_ids": [
+      "MT123-C12-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Questions and anecdote.",
+   "current_views": []
+  },
+  {
+   "name": "Tracy Alaway",
+   "role": "Co-host, Bloomberg Odd Lots",
+   "speaker_note": "Questions mostly; speculation on stockpiling.",
+   "fingerprint": [
+    "behavioral_sentiment",
+    "commodity_fundamentals",
+    "positioning_crowding"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Consensus trader surveys expected higher cocoa while price was falling: a disconnect.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Bloomberg survey (above $15,000 later in year).",
+     "claim_ids": [
+      "MT123-C01-X1"
+     ]
+    },
+    {
+     "premise": "News-driven consumer stockpiling can pull demand forward and create a bullwhip, with hidden household inventory.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Speculation, own purchase anecdote.",
+     "claim_ids": [
+      "MT123-C12-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Anecdote and speculation.",
+   "current_views": []
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Does stockpiling or elastic demand dilute the cocoa shortage thesis?",
+   "positions": [
+    {
+     "speaker": "Pierre Andurand",
+     "position": "Demand is inelastic; price must clear supply shortage.",
+     "claim_ids": [
+      "MT123-C02-6",
+      "MT123-C02-7",
+      "MT123-C02-X1"
+     ]
+    },
+    {
+     "speaker": "Tracy Alaway",
+     "position": "Headlines could cause stockpiling that boosts demand and creates a bullwhip.",
+     "claim_ids": [
+      "MT123-C12-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Consensus view vs price action in cocoa",
+   "positions": [
+    {
+     "speaker": "Tracy Alaway",
+     "position": "Trader survey expects higher prices while price slides: a disconnect.",
+     "claim_ids": [
+      "MT123-C01-X1"
+     ]
+    },
+    {
+     "speaker": "Pierre Andurand",
+     "position": "Pullbacks are expected in a volatile thin market; deficit remains.",
+     "claim_ids": [
+      "MT123-C06-1",
+      "MT123-C05-6",
+      "MT123-C05-7"
+     ]
+    },
+    {
+     "speaker": "Joe Weisenthal",
+     "position": "Trees don't grow to the sky: bullish fundamentals can still see sharp corrections.",
+     "claim_ids": [
+      "MT123-C01-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Production-decline figure is uncertain in the caption (17.7% vs 'down 177%').",
+   "claim_ids": [
+    "MT123-C02-2"
+   ]
+  },
+  {
+   "issue": "Per-capita calculation: ~1.7 grams a day at $10,000 a ton is ~1.7 cents a day, not several cents as the ledger first summarised.",
+   "claim_ids": [
+    "MT123-C02-7"
+   ]
+  },
+  {
+   "issue": "Copper projections (deficits of >1m tons in 2026, >3m by 2030) are the speaker's model outputs with no inputs shown; 'quadrupling' range is explicitly unspecific.",
+   "claim_ids": [
+    "MT123-C09-5",
+    "MT123-C09-7",
+    "MT123-C09-6"
+   ]
+  },
+  {
+   "issue": "Cocoa stock data are partial (only 20% of European stocks on exchange); estimates rely on specialist firms.",
+   "claim_ids": [
+    "MT123-C06-5"
+   ]
+  },
+  {
+   "issue": "Claim that mid-crop is about 20% of remaining season and cannot close the deficit is not backed with numbers in the transcript.",
+   "claim_ids": [
+    "MT123-C02-4"
+   ]
+  },
+  {
+   "issue": "Statement that funds did not push prices is based on the positioning drop but ignores earlier fund buying.",
+   "claim_ids": [
+    "MT123-C05-4",
+    "MT123-C05-5"
+   ]
+  },
+  {
+   "issue": "Claim that pods explain absence of copper price signal is an unproven assertion.",
+   "claim_ids": [
+    "MT123-C08-3"
+   ]
+  },
+  {
+   "issue": "Pass-through arithmetic for chocolate is rough (cocoa share below 10%; $14/month for heavy eater).",
+   "claim_ids": [
+    "MT123-C02-X1"
+   ]
+  },
+  {
+   "issue": "1977 real-price comparison ($28,000) uses a deflator not stated.",
+   "claim_ids": [
+    "MT123-C04-4",
+    "MT123-C05-1"
+   ]
+  },
+  {
+   "issue": "Oil assertions on Iran and Ukraine are low-probability scenario statements without probabilities.",
+   "claim_ids": [
+    "MT123-C10-3",
+    "MT123-C11-1"
+   ]
+  },
+  {
+   "issue": "Andurand does not know orange juice and screened coffee only briefly.",
+   "claim_ids": [
+    "MT123-C06-X1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "Stocks-to-grindings ratio, Ivory Coast and Ghana exports and crop surveys, grindings data, producer forward-hedge buying, fund positioning; copper mine supply growth, visible stocks, China SRB; oil supply disruptions (Iran, Russian ports). Horizons: months to a year for cocoa, up to five years for copper.",
+ "reader_inferences": [
+  "Andurand's edge is claimed to be in modelling the market-clearing price when supply response is slow, not in timing.",
+  "Funds' short horizon is offered as the reason structural deficits stay unpriced; this implies longer-horizon capital earns the premium.",
+  "The cocoa thesis depends on weather for next year's crop; surveys over the next four months are the observable inputs."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT123-C06-R1",
+   "chunk": "C06",
+   "speaker": "Pierre Andurand",
+   "quote": "the balance of probabilities are still that we will have a deficit next year on top of the very large deficit this year",
+   "claim": "Andurand's view in May 2024 is that a second large cocoa deficit next year remains more likely than not, supporting a long position despite volatile pullbacks.",
+   "mechanism": "supply_deficit_persistence",
+   "asset_class": "commodities",
+   "indicator": "cocoa production vs grindings",
+   "horizon": "months",
+   "direction": "cocoa higher",
+   "conditions": "needs no bumper West African crop with perfect weather",
+   "testable": "yes - compare 2024/25 balance with ICCO data",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "map-added",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT123-C07-R1",
+   "chunk": "C07",
+   "speaker": "Pierre Andurand",
+   "quote": "I feel like we have enough data to understand in which direction we're going versus the grains",
+   "claim": "Andurand judges cocoa easier to analyse than grains because concentrated production and weekly crop data in Ivory Coast and Ghana give enough information on next year's crop.",
+   "mechanism": "data_availability",
+   "asset_class": "commodities",
+   "indicator": "Ivory Coast and Ghana crop data",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "one mega and one large producer",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map-added",
+   "quote_check": "exact"
+  }
+ ]
+}

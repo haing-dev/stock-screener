@@ -1,0 +1,336 @@
+{
+ "source_id": "MT119",
+ "episode_thesis": "Mark argues that nothing good happens below the 200-day moving average (a behavioural regime switch for risk) and that investors in Q1 2025 faced policy uncertainty, which is uncountable and distinct from measurable volatility. Uncertainty slows adjustment by hedgers and speculators (creating autocorrelation and trends) but also lowers signal-to-noise and shrinks quant positions; because analogues are scarce, expert judgement is less reliable and price-following systematic trend exposure (intermediate speed) is a sensible second-best response. The second half covers gold drivers, manager curiosity ('strong opinions weakly held') and portable alpha/return stacking as a way of mixing risk premia with cash, bond or equity cores.",
+ "speakers": [
+  {
+   "name": "Mark",
+   "role": "Co-host (finance academic based in Boston and systematic investor); surname not stated in this transcript",
+   "speaker_note": "Auto-captions give only 'Mark'. He talks in the first person about his own research on uncertainty indices and a book-free anecdotal style (grandmother, son at Notre Dame). The ledger correction moves 'talk the economy into a recession' to Alan Dunne. He speaks of 'we'll sort of say' a lot, so some statements are his research view rather than universal findings.",
+   "fingerprint": ["trend_following", "regime_detection", "behavioral_sentiment", "macro_fundamental_topdown", "policy_reaction_central_banks", "position_sizing_vol_target", "research_robustness_overfitting", "portfolio_construction_stacking"],
+   "worldview_premises": [
+    {
+     "premise": "Prices below the 200-day moving average change sentiment, selling pressure and volatility, so the average acts as a regime switch for risk; he does not know why it is the 200-day, and holders below it revise and sell while others add to what performs well, driving rotation.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Grandmother-quote analogy ('nothing good happens after midnight'), March 2025 observation that US indices were below it while European equities and some sectors were well above; no statistics.",
+     "claim_ids": ["MT119-C01-1", "MT119-C01-2", "MT119-C02-X1", "MT119-C01-R1"]
+    },
+    {
+     "premise": "Intermediate-term trend followers lag when trends change (transition underperformance); if new trends persist CTAs later outperform long-only.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Q1 2025 CTA performance; no figures beyond the host's index data.",
+     "claim_ids": ["MT119-C02-2"]
+    },
+    {
+     "premise": "Tariff gaps (New York vs London delivery in gold and copper) make contract specification and delivery location matter for trend portfolio construction, not just liquidity.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Observed gold and copper price gaps in March 2025.",
+     "claim_ids": ["MT119-C02-3"]
+    },
+    {
+     "premise": "Recessions are typically caused by policy mistakes or participant errors rather than old age (a mortality-table analogy with hazard rising with age), and recoveries have been longer since World War II because of fewer forced errors; the relevant unforced error now is an uncertainty shock, and the current uncertainty is policy-made.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Post-WWII comparison of expansion length and share of time in recession; no figures.",
+     "claim_ids": ["MT119-C03-1", "MT119-C03-X1", "MT119-C03-X2", "MT119-C04-X1"]
+    },
+    {
+     "premise": "Risk (countable, backward-looking volatility) differs from uncertainty (uncountable policy ambiguity measured forward by news-based indices counting stories on monetary, spending and trade policy); uncertainty indices form a separate factor from volatility.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own and others' research on news-based policy-uncertainty indices; late-March 2025 example of an inverted VIX curve while tariff and global policy uncertainty were at or near pandemic highs.",
+     "claim_ids": ["MT119-C04-1", "MT119-C04-2", "MT119-C05-1"]
+    },
+    {
+     "premise": "Higher uncertainty raises the required risk premium and reduces risky-asset holdings; firms delay capex and consumers delay big purchases. Uncertainty is two-sided (good or bad outcome) but financial shocks are asymmetric, with negative shocks hurting more.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "US versus Europe comparison (US more uncertain, Europe has debt financing and ECB easing); gift-box analogy.",
+     "claim_ids": ["MT119-C05-2", "MT119-C05-3", "MT119-C10-1", "MT119-C05-R1"]
+    },
+    {
+     "premise": "Policy uncertainty can be defined as ignorance of the policy reaction function (for example the Taylor rule): with inflation near 3% and expectations above, a 50bp cut in September, a December cut and quantitative tightening slowed from $25bn to $5bn a month, the Fed's reaction function was unclear.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Fed actions in 2024-25 and household survey results; one could argue for raising rather than cutting rates.",
+     "claim_ids": ["MT119-C09-2", "MT119-C09-X1"]
+    },
+    {
+     "premise": "In high-uncertainty regimes hedgers and speculators adjust slowly (dollar-cost-average), producing autocorrelation and therefore trends; but quant trend signals are discounted by noise, so when volatility or uncertainty rises the signal-to-noise ratio falls and positions shrink even if trends exist.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning from behaviour and from signal-to-noise sizing; no data.",
+     "claim_ids": ["MT119-C06-1", "MT119-C06-2"]
+    },
+    {
+     "premise": "Gold's rise despite lower inflation reflects financialisation (gold ETFs lowering transaction costs, per Harvey research) and large central-bank buying, especially by China, as demand for a safe asset governments cannot appropriate; a key macro-finance question is whether the supply of safe assets such as T-bills is large enough.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Research by Campbell Harvey and coauthors (cited from memory); his own thinking on safe assets and sanctions.",
+     "claim_ids": ["MT119-C06-3", "MT119-C06-X3"]
+    },
+    {
+     "premise": "Across long data intermediate-speed trend following works best, so use it as the Bayesian prior and tinker only a little around it; short speeds are ephemeral and long speeds sometimes better and sometimes worse.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Long-run data on trend speeds (unspecified).",
+     "claim_ids": ["MT119-C07-1"]
+    },
+    {
+     "premise": "Quants are searchers/adapters who optimise factors from large databases; discretionary traders are experts who use uncountable information. High uncertainty may break systematic links, so factors and risk premia perform differently by regime (business cycle, inflation cycle, and an uncertainty regime), though history may contain too few high-uncertainty regimes to test.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Literature on information usage (unnamed); regime work.",
+     "claim_ids": ["MT119-C07-2", "MT119-C07-X1", "MT119-C08-X1"]
+    },
+    {
+     "premise": "If the environment is truly unprecedented, expert judgement lacks analogues and one should lean toward quant traders who let price action speak; if policymakers' words and deeds may diverge, following market price action is the second-best solution.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument from lack of past analogues; no tests.",
+     "claim_ids": ["MT119-C08-1", "MT119-C08-2"]
+    },
+    {
+     "premise": "Increasing exposure to trend following helps in high uncertainty because it is long/short with variable beta, diversified across currencies, commodities and non-US equities, and follows a disciplined rule to cut exposure when trends fall; moving to T-bills is cheaper than usual but forfeits upside if uncertainty resolves well.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Recent research he has seen (unnamed) and Q1 2025 CTA positioning.",
+     "claim_ids": ["MT119-C10-2", "MT119-C10-X1"]
+    },
+    {
+     "premise": "Committees and individuals tend to take no action when uncertainty is high, whereas a systematic model discounts trend by volatility and rotates regardless (for example into European equities in January 2025).",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Behavioural reasoning and one rotation example.",
+     "claim_ids": ["MT119-C10-4", "MT119-C10-3"]
+    },
+    {
+     "premise": "Manager skill includes observation: separating facts from the biases one brings; curiosity increases observation and finds what others miss. Allocators often reward conviction over honest curiosity in a one-hour meeting.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Amy Herman's Visual Intelligence (police detectives at the Met) and a dinner with MBA students; anecdote.",
+     "claim_ids": ["MT119-C13-1", "MT119-C12-X1"]
+    },
+    {
+     "premise": "Ask one more why until answers are reasonable; trend followers stop at price because the link from fundamentals to price is unknown, others go to second-order effects; the type of person determines the type of trading.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Andy Grove's habit of asking why; reasoning, no data.",
+     "claim_ids": ["MT119-C14-1"]
+    },
+    {
+     "premise": "Portable alpha disappointed because of the alpha, not the portability; the trend in finance is toward efficient capital use and factor rather than asset-class allocation, with cash, bonds and stocks as building blocks plus risk premia (trend, momentum) instead of a credit spread; fees are lower and alpha products are better, so for large institutions it beats giving all cash to a manager.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Observation of market evolution; no performance evidence.",
+     "claim_ids": ["MT119-C14-2", "MT119-C15-1", "MT119-C15-X1"]
+    },
+    {
+     "premise": "When equities stay above their 200-day average plain beta suffices and portable alpha on top drags; when assets fall below it, paying margin to stack alpha is more attractive as directional beta declines.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning tied to the 200-day regime; no test.",
+     "claim_ids": ["MT119-C15-3"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "How policy uncertainty creates trends but shrinks trend positions",
+     "steps": [
+      {"from": "Policy uncertainty (unknown tariffs, taxes, monetary and regulatory policy)", "to": "Investors reduce risky assets and firms and consumers delay decisions", "why": "Higher required risk premium and ambiguity aversion.", "claim_ids": ["MT119-C05-2", "MT119-C05-3"]},
+      {"from": "Hedgers and speculators adjust slowly (dollar-cost-average)", "to": "Autocorrelation in returns and trends", "why": "Slow rebalancing spreads flows over time.", "claim_ids": ["MT119-C06-1"]},
+      {"from": "Noise or volatility rises while the trend is unchanged", "to": "Signal-to-noise falls and quant positions are cut", "why": "Return-to-risk ratio is lower than before.", "claim_ids": ["MT119-C06-2"]},
+      {"from": "Policy-maker words and deeds uncertain", "to": "Price action becomes the second-best guide; systematic trend rotates regardless of uncertainty", "why": "Models discount trends by volatility instead of reacting to narrative.", "claim_ids": ["MT119-C08-2", "MT119-C10-4"]}
+     ],
+     "evidence": "Q1 2025 observations (inverted VIX curve, policy-uncertainty highs, CTA equity beta falling and rotating to overseas equities); no formal tests offered.",
+     "fails_when": "Uncertainty regimes are rare, so behaviour in them cannot be tested (his own caveat); the market reaction reversed between December 2024 and early 2025.",
+     "claim_ids": ["MT119-C05-1", "MT119-C06-1", "MT119-C06-2", "MT119-C10-3", "MT119-C08-X1"]
+    },
+    {
+     "topic": "Why a 200-day break matters",
+     "steps": [
+      {"from": "Price falls below the 200-day moving average", "to": "Sentiment, selling pressure and volatility change", "why": "Widely watched level; holders revise portfolios.", "claim_ids": ["MT119-C01-1", "MT119-C01-X1"]},
+      {"from": "Holders revise and sell while others add to what is working", "to": "Rotation across markets and sectors (US below, Europe above)", "why": "Relative 200-day state drives flows.", "claim_ids": ["MT119-C02-X1", "MT119-C01-2"]}
+     ],
+     "evidence": "March 2025 US vs European and sector positions relative to their 200-day averages.",
+     "fails_when": "Not stated; the effect is asserted as a rule of thumb.",
+     "claim_ids": ["MT119-C01-1", "MT119-C01-2", "MT119-C02-X1"]
+    },
+    {
+     "topic": "Policy uncertainty as recession cause",
+     "steps": [
+      {"from": "Recessions arise from policy mistakes or participant errors, with rising hazard as expansions age", "to": "Current policy uncertainty is a man-made unforced error that can end the recovery", "why": "Fewer past errors do not preclude future ones.", "claim_ids": ["MT119-C03-1", "MT119-C03-X1", "MT119-C04-X1"]},
+      {"from": "Uncertainty makes firms postpone investment and consumers postpone spending", "to": "The economy can talk itself into recession", "why": "Real-economy decisions are delayed.", "claim_ids": ["MT119-C03-3", "MT119-C05-3"]},
+      {"from": "Falling stock prices feed into the real economy and monetary policy", "to": "A policy put may eventually appear", "why": "Feedback loops force reversal.", "claim_ids": ["MT119-C09-1"]}
+     ],
+     "evidence": "Historical comparison pre and post WWII; no data quoted.",
+     "fails_when": "Services-heavy economy lengthens cycles (Dunne's counterpoint, C03-2).",
+     "claim_ids": ["MT119-C03-1", "MT119-C03-2", "MT119-C03-3"]
+    }
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Use the 200-day moving average as a regime marker for risk and for rotation across markets and sectors.", "why": "Below it, sentiment and selling pressure change.", "claim_ids": ["MT119-C01-1", "MT119-C02-X1"]},
+    {"element": "signal", "practice": "Stay in the intermediate speed range for trend signals (Bayesian prior), tinkering only a little.", "why": "Intermediate speed works best over long data; short is ephemeral.", "claim_ids": ["MT119-C07-1"]},
+    {"element": "sizing", "practice": "Size by signal to noise: discount trend by volatility or noise so positions shrink as noise rises.", "why": "Reward per unit of risk falls with noise.", "claim_ids": ["MT119-C06-2", "MT119-C10-4"]},
+    {"element": "research", "practice": "Rubric: price trends first, then fundamental trends, then regime, then valuation extremes and potential mistakes, then signal-to-noise; set political names aside.", "why": "Avoid ideological bias; follow policies, price action and fundamentals.", "claim_ids": ["MT119-C13-3"]},
+    {"element": "portfolio", "practice": "In high uncertainty add trend exposure instead of going straight to cash; consider portable alpha on Treasuries as collateral, with trend or momentum on top.", "why": "Variable beta and diversification, with capital efficiency.", "claim_ids": ["MT119-C10-2", "MT119-C15-1", "MT119-C10-X1"]},
+    {"element": "portfolio", "practice": "Load up on quant (price-following) managers if the environment is truly unprecedented.", "why": "Experts have no analogues.", "claim_ids": ["MT119-C08-1"]},
+    {"element": "execution", "practice": "Pay attention to contract specification and delivery location for commodities when tariff gaps open between exchanges.", "why": "Not all contracts are equivalent when tariffs differ.", "claim_ids": ["MT119-C02-3"]}
+   ],
+   "evidence_style": "Anecdote and analogy (grandmother, mortality table, gift box, art museum) combined with references to academic literature recalled from memory (Harvey, uncertainty indices, Herman) and his own research claims; few numbers. He flags his own empirical limit (few high-uncertainty regimes).",
+   "current_views": [
+    {"view": "US stock indices were below the 200-day average at the end of March 2025 while European equities and some sectors were above, signalling rotation.", "as_of": "2025-03 (end of month)", "reasoning": "200-day state drives sentiment and flows.", "claim_ids": ["MT119-C01-2"]},
+    {"view": "Policy uncertainty is at or near pandemic-level highs while the VIX curve is inverted: risk and uncertainty are distinct; the US is more uncertain than Europe.", "as_of": "2025-03 (end of month)", "reasoning": "Tariff and global policy uncertainty indices.", "claim_ids": ["MT119-C05-1", "MT119-C05-2"]},
+    {"view": "The Fed's reaction function is unclear (inflation near 3% but cuts and slowed QT).", "as_of": "2025-03 (end of month)", "reasoning": "Conflicting signals.", "claim_ids": ["MT119-C09-2", "MT119-C09-X1"]},
+    {"view": "Gold's new highs reflect ETF financialisation and central-bank buying (especially China) rather than inflation.", "as_of": "2025-03 (end of month)", "reasoning": "Harvey research; demand for safe assets governments cannot seize.", "claim_ids": ["MT119-C06-3", "MT119-C06-X3"]},
+    {"view": "CTAs' equity beta fell in Q1 2025 and rotated toward overseas equities, which is what the trend rule should do; trend exposure is a sensible response to uncertainty.", "as_of": "2025-03 (end of month)", "reasoning": "Broker trackers.", "claim_ids": ["MT119-C10-3", "MT119-C10-2"]},
+    {"view": "Portable alpha / return stacking is attractive for capital efficiency, more so as assets fall below the 200-day average.", "as_of": "2025-03 (end of month)", "reasoning": "Lower fees and better alpha products; declining directional beta.", "claim_ids": ["MT119-C15-3", "MT119-C15-X1"]}
+   ]
+  },
+  {
+   "name": "Alan Dunne",
+   "role": "Host sitting in for Niels Kaastrup-Larsen; Dublin-based allocator and commentator on systematic investing",
+   "speaker_note": "Ledger correction applied: the 'talk itself into recession' remark is his. He reads the SG indices and frames most questions; his own views are brief.",
+   "fingerprint": ["trend_following", "manager_selection_allocation", "macro_fundamental_topdown", "behavioral_sentiment", "portfolio_construction_stacking", "policy_reaction_central_banks"],
+   "worldview_premises": [
+    {
+     "premise": "Cycles have lengthened because the economy is more service-oriented, so inventory-driven swings matter less; uncertainty can talk the economy into a recession as firms and consumers postpone decisions.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Standard macro argument; the last expansion lasted until COVID.",
+     "claim_ids": ["MT119-C03-2", "MT119-C03-3"]
+    },
+    {
+     "premise": "Policy uncertainty is stacked: erratic action (tariffs on, off, delayed), disputed economic effects of policies unused for long, and unknown central-bank reactions. A higher required risk premium mechanically raises the discount rate and justifies lower equity prices.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Q1 2025 tariff events.",
+     "claim_ids": ["MT119-C04-X2", "MT119-C06-X1"]
+    },
+    {
+     "premise": "The 200-day moving average gets heavy media attention, so crossing it is a focal point that signals something fundamental has changed and can itself shift behaviour.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Media attention; no data.",
+     "claim_ids": ["MT119-C01-X1"]
+    },
+    {
+     "premise": "Whether a policy put exists matters: if stock prices keep falling, feedback loops into the real economy and monetary policy may force a reversal, though the market is sceptical; the December 2024 Trump trade (equities up, gold down) reversed in early 2025, suggesting unstable cross-asset relationships.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Market observation.",
+     "claim_ids": ["MT119-C09-1", "MT119-C08-X2"]
+    },
+    {
+     "premise": "A trend follower does not need to know whether gold's trend is due to uncertainty, geopolitics or inflation, only that the trend exists; bonds were range-bound with some flight to quality.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Trend-following logic.",
+     "claim_ids": ["MT119-C06-X2"]
+    },
+    {
+     "premise": "Good managers hold strong conviction but stay open to changing their mind (strong opinions weakly held), and creativity matters because identical views produce identical portfolios.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Druckenmiller-attributed maxim; no data.",
+     "claim_ids": ["MT119-C13-2"]
+    },
+    {
+     "premise": "Return-stacking results look strong partly because the S&P 500 has returned about 15% annualised for years (combining anything with the S&P looks fantastic), so durability is uncertain even though capital efficiency is a real driver.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "S&P return history; caution, not a test.",
+     "claim_ids": ["MT119-C15-2"]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Market observation and data recital (SG index returns); raises counterpoints rather than tests.",
+   "current_views": [
+    {"view": "SG CTA was down 25bp in March and 2.23% in Q1 2025; SG Trend down 1.07% in March and just over 4% in Q1, driven by choppy equities, bonds and February commodity reversals.", "as_of": "2025-03 (end of month)", "reasoning": "Index data.", "claim_ids": ["MT119-C02-1"]},
+    {"view": "Uncertainty is unusually high and layered; the economy risks talking itself into recession.", "as_of": "2025-03 (end of month)", "reasoning": "Erratic tariff policy, disputed impact, unclear central-bank reaction.", "claim_ids": ["MT119-C04-X2", "MT119-C03-3"]},
+    {"view": "Gold was the standout trend and bonds were rangy in Q1; the Trump trade of December had reversed.", "as_of": "2025-03 (end of month)", "reasoning": "Market observation.", "claim_ids": ["MT119-C06-X2", "MT119-C08-X2"]},
+    {"view": "Portable alpha's strong results partly reflect the S&P's strong run, so durability is uncertain.", "as_of": "2025-03 (end of month)", "reasoning": "Anything combined with the S&P looks great.", "claim_ids": ["MT119-C15-2"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Why economic cycles end or have lengthened",
+   "positions": [
+    {"speaker": "Mark", "position": "Recessions are mostly policy or participant errors with hazard rising with age; recoveries lengthened post-WWII because of fewer forced errors; the current threat is an uncertainty shock.", "claim_ids": ["MT119-C03-1", "MT119-C03-X2", "MT119-C04-X1"]},
+    {"speaker": "Alan Dunne", "position": "Cycles lengthened because the economy is service-oriented and inventory swings matter less; uncertainty can still talk the economy into recession.", "claim_ids": ["MT119-C03-2", "MT119-C03-3"]}
+   ]
+  },
+  {
+   "topic": "Is portable alpha's current strength durable?",
+   "positions": [
+    {"speaker": "Mark", "position": "It is the natural extension of factor thinking and capital efficiency; competition has improved products and cut fees.", "claim_ids": ["MT119-C14-2", "MT119-C15-X1", "MT119-C15-1"]},
+    {"speaker": "Alan Dunne", "position": "Part of the appeal reflects the S&P's 15% annualised return; durability is uncertain.", "claim_ids": ["MT119-C15-2"]}
+   ]
+  },
+  {
+   "topic": "Whether a technical level such as the 200-day average is meaningful",
+   "positions": [
+    {"speaker": "Mark", "position": "It changes sentiment and behaviour; nothing good happens below it, though he does not know why 200 days.", "claim_ids": ["MT119-C01-1", "MT119-C01-R1"]},
+    {"speaker": "Alan Dunne", "position": "Notes the age-old technicals debate but sees it as a widely watched focal point that flags a fundamental change.", "claim_ids": ["MT119-C01-X1"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "The 200-day rule is asserted by analogy (grandmother's midnight rule) with no performance statistics, and he admits not knowing why it is 200 days.", "claim_ids": ["MT119-C01-1", "MT119-C01-R1"]},
+  {"issue": "Intermediate trend speed 'works best' over long data is stated without source or horizon; no evidence presented in the conversation.", "claim_ids": ["MT119-C07-1"]},
+  {"issue": "The claim that uncertainty creates trends via slow rebalancing conflicts with the claim that uncertainty shrinks positions and that the model should look through uncertainty; net effect on trend profit is not quantified.", "claim_ids": ["MT119-C06-1", "MT119-C06-2", "MT119-C10-4"]},
+  {"issue": "Regime-conditional claims (uncertainty regime) cannot be tested if few such regimes exist; he concedes this but still recommends leaning on quants.", "claim_ids": ["MT119-C08-X1", "MT119-C08-1"]},
+  {"issue": "Quoted research (Harvey on gold ETFs, uncertainty indices, trend research on uncertainty) is cited from memory without titles or figures.", "claim_ids": ["MT119-C06-3", "MT119-C04-2", "MT119-C10-2"]},
+  {"issue": "The Fed reaction-function argument suggests raising rates while the Fed cut; whether this is Mark's view or just illustration of ambiguity is unclear.", "claim_ids": ["MT119-C09-2", "MT119-C09-X1"]},
+  {"issue": "Ledger correction applied: speaker of 'talk itself into recession' is Alan Dunne.", "claim_ids": ["MT119-C03-3"]}
+ ],
+ "forward_looking_inputs": "(reader) Inputs the speakers name as leading trend profitability and risk appetite: price relative to the 200-day average by market and sector (rotation), news-based policy-uncertainty indices (tariff and global), the VIX term structure, signal-to-noise (trend to noise) of trend signals, CTA equity beta trackers, T-bill yields (cost of safety), central-bank buying and gold ETF flows (gold), and the Fed's reaction function (inflation expectations, QT pace). Horizon is months in the current uncertainty regime; reasoning is that uncertainty slows adjustment (trends) but shrinks sized positions, and that price action is the second-best guide when policy is unpredictable.",
+ "reader_inferences": [
+  "(reader) His advice to use intermediate speed as a prior while 'trend strategies discounted by noise' implies that in high-uncertainty regimes the optimal trend speed lengthens, which can be tested against realised CTA speed.",
+  "(reader) The risk-vs-uncertainty distinction suggests uncertainty indices could be a state variable for trend sizing separate from realised volatility; the episode does not provide evidence for that.",
+  "(reader) The portable-alpha comment (alpha adds little when equities are above the 200-day average and more when below) is a conditional rule for collateral usage, not a statement about expected alpha.",
+  "(reader) The recession-hazard (mortality-table) view makes policy shocks, not age, the key predictor, which conflicts with simple late-cycle heuristics."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT119-C01-R1",
+   "chunk": "C01",
+   "speaker": "Mark",
+   "quote": "nothing good happens below the 200 day moving average",
+   "claim": "Mark's central rule of thumb is that nothing good happens below the 200-day moving average, by analogy to his grandmother's warning about midnight; he offers it as a behavioural regime marker without evidence or an explanation of why 200 days.",
+   "mechanism": "regime_marker",
+   "asset_class": "equities",
+   "indicator": "price vs 200-day moving average",
+   "horizon": "unspecified",
+   "direction": "risk-off or reduce exposure when below",
+   "conditions": "",
+   "testable": "yes - returns and volatility conditional on price below 200-day average",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT119-C05-R1",
+   "chunk": "C05",
+   "speaker": "Mark",
+   "quote": "uncertainty could be both good and bad",
+   "claim": "Uncertainty is two-sided like a ticking gift box that could be a watch or a bomb, but he says it generally leads investors to move away from risky assets and demand a higher risk premium.",
+   "mechanism": "risk_premium",
+   "asset_class": "multi",
+   "indicator": "policy uncertainty indices",
+   "horizon": "unspecified",
+   "direction": "reduce risky assets",
+   "conditions": "higher policy uncertainty",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  }
+ ]
+}

@@ -1,0 +1,758 @@
+{
+ "source_id": "MT010",
+ "episode_thesis": "Carver argues that systematic means literally following the system: overriding signals makes a strategy untestable, so discretion should be confined to what and when to buy while speed, exits and position size stay rule-based, and parameter fitting should default to none (or the average of individual, asset-class and global fits) to avoid overfitting. He and Kaastrup-Larsen add that the Simplify CTA ETF's switch to an energy-only book betrays what investors bought, that AI in quant research chiefly adds overfitting and code-oversight risk, that trend speed should not be changed with the VIX because high volatility comes in V-shaped, secular and rapid-V forms with different optimal speeds, and that bond-market stress could revive bond trends.",
+ "speakers": [
+  {
+   "name": "Rob Carver",
+   "role": "Independent systematic futures trader, author of books on systematic trading and co-host of the Systematic Investor series; formerly at AHL",
+   "speaker_note": "Caption spells the host 'Neils Castro Razen'. Tuesday-to-Thursday timing: data quoted by the host are as of Tuesday of the recording week (mid-September 2026). Carver says he is 'plugging' his new book (The Art and Science of Trading, due December 1). One ledger date slip: Carver says '2026' for the tariff tantrum and the host corrects it to 2025.",
+   "fingerprint": [
+    "trend_following",
+    "research_robustness_overfitting",
+    "position_sizing_vol_target",
+    "portfolio_construction_stacking",
+    "costs_execution",
+    "regime_detection",
+    "short_term_systematic",
+    "manager_selection_allocation"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Systematic trading means mechanically following the system; overriding signals when inconvenient makes the system impossible to test and is the worst way to mix discretion and systematics.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Definition of the word and the testability argument; he reacted to an X post saying systematic does not mean blindly taking every setup.",
+     "claim_ids": [
+      "MT010-C10-1",
+      "MT010-C10-2"
+     ]
+    },
+    {
+     "premise": "Retail traders lose mainly through position, cost and risk-management errors, not entries alone: about 95% lose money rather than the roughly half that coin-flip entries would give.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Stated statistic (95% of retail traders, worse for day traders).",
+     "claim_ids": [
+      "MT010-C11-2"
+     ]
+    },
+    {
+     "premise": "Skill in entries and skill in exits are separate; mutual fund managers pick stocks well but exit poorly.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Academic research he cannot name; study of retail and institutional long-only managers.",
+     "claim_ids": [
+      "MT010-C11-3"
+     ]
+    },
+    {
+     "premise": "Fitting rule weights per instrument is overfitting (noise, little signal), while fitting by asset class or pooled across all instruments does about as well; with few instruments (for example 2 bonds, 3 equities, 1 FX) one should not fit by asset class.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His blog-post series on pooling and optimization, tested on his many-instrument data set.",
+     "claim_ids": [
+      "MT010-C07-1",
+      "MT010-C08-1"
+     ]
+    },
+    {
+     "premise": "The most robust approach is to average the individual, asset-class and global fits (equivalent to putting a third of risk in each), since one cannot know which explanation is right; it has about 0.98-0.99 correlation with global-only fitting.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Meta-fitting argument and his own comparison.",
+     "claim_ids": [
+      "MT010-C08-2"
+     ]
+    },
+    {
+     "premise": "Whether to use different rule weights by asset class was partly an organisational-politics question (asset-class research teams protective of their P&L) and should instead be an empirical question tested on data.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His AHL experience managing the fixed-income team.",
+     "claim_ids": [
+      "MT010-C07-X1"
+     ]
+    },
+    {
+     "premise": "Complex matrix fits (for example allocating to fast trend in cheap, diversifying markets even if it does not make money there) add complexity with little value.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Tested in his blog series.",
+     "claim_ids": [
+      "MT010-C09-1"
+     ]
+    },
+    {
+     "premise": "AI in quant research mainly risks overfitting, and AI-written code needs guard rails and human oversight; governance applies to AI-assisted systems as it does to others.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "An AI code review of his research code found a serious bug but introduced a worse one that would have deleted all short positions.",
+     "claim_ids": [
+      "MT010-C13-1",
+      "MT010-C13-2",
+      "MT010-C13-3"
+     ]
+    },
+    {
+     "premise": "Consumer-grade AI trading may raise turnover, risk and volatility, but evidence is too early; uninformed AI-driven retail herds create opportunities to trade the other side.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Speculation drawn from the social-media environment and meme-stock analogies.",
+     "claim_ids": [
+      "MT010-C14-1",
+      "MT010-C14-2"
+     ]
+    },
+    {
+     "premise": "LLMs recommend large trend-following allocations because their training text, including this podcast, advocates it, so their advice is circular.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning about training data.",
+     "claim_ids": [
+      "MT010-C14-3"
+     ]
+    },
+    {
+     "premise": "Published research should be revisited after about 10 years for out-of-sample evidence.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Alpha Architect VIX and trend update; Lasse Pedersen's 100-year trend paper.",
+     "claim_ids": [
+      "MT010-C15-1"
+     ]
+    },
+    {
+     "premise": "High volatility is not one thing: it may be 2008 (a secular turn), COVID 2020 (a wider V) or the 2025 tariff tantrum (a very quick V), each with a different optimal trend speed, and one cannot know ahead which.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Reading of the three episodes; he notes figures from the tariff tantrum and COVID.",
+     "claim_ids": [
+      "MT010-C15-4",
+      "MT010-C16-1",
+      "MT010-C16-2"
+     ]
+    },
+    {
+     "premise": "High volatility does not simply help trend following as the straddle intuition suggests; results depend on trend speed, reaction speed and trading speed.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "His own parallel finding that trend does less well when volatility is high.",
+     "claim_ids": [
+      "MT010-C16-3"
+     ]
+    },
+    {
+     "premise": "Classic quant factors (value, momentum) did badly in the 2018-2020 quant winter, factor R-squared in manager returns varies over 25 years, and quant equity managers differ rather than simply holding basic factors, so diversification across managers works except in crowded events.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Man Group Insights note read that morning.",
+     "claim_ids": [
+      "MT010-C17-1",
+      "MT010-C17-2",
+      "MT010-C17-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why overriding signals defeats a systematic process",
+     "steps": [
+      {
+       "from": "A trader ignores signals when they are inconvenient",
+       "to": "The strategy is no longer a defined system",
+       "why": "Backtest results no longer describe what is traded.",
+       "claim_ids": [
+        "MT010-C10-1"
+       ]
+      },
+      {
+       "from": "Untestable system",
+       "to": "Cannot know whether it works",
+       "why": "Cannot measure the system separately from discretionary choices.",
+       "claim_ids": [
+        "MT010-C10-1",
+        "MT010-C10-2"
+       ]
+      },
+      {
+       "from": "Retain discretion only for entries",
+       "to": "Retains potential skill while speed, exits and size are rules",
+       "why": "Position, cost and risk management are where retail traders fail.",
+       "claim_ids": [
+        "MT010-C11-1",
+        "MT010-C11-2"
+       ]
+      }
+     ],
+     "evidence": "95% retail failure rate; mutual-fund exit skill study; his book offers a test for skill.",
+     "fails_when": "Allowed to use discretionary exits only with a statistically significant track record; otherwise use a simple stop-loss.",
+     "claim_ids": [
+      "MT010-C11-1",
+      "MT010-C11-3",
+      "MT010-C11-4",
+      "MT010-C12-2"
+     ]
+    },
+    {
+     "topic": "Choosing the level at which to fit rule weights",
+     "steps": [
+      {
+       "from": "Fit each instrument individually",
+       "to": "Noise dominates, little robustness",
+       "why": "Too little data per instrument: overfitting.",
+       "claim_ids": [
+        "MT010-C07-1"
+       ]
+      },
+      {
+       "from": "Fit by asset class or pooled across all",
+       "to": "Both do well",
+       "why": "More data per parameter; asset-class fits need enough instruments in each class.",
+       "claim_ids": [
+        "MT010-C08-1"
+       ]
+      },
+      {
+       "from": "Unknown which hypothesis is right (idiosyncratic instruments, asset-class behaviour, or all alike)",
+       "to": "Average all three",
+       "why": "Equivalent to a third of risk on each; robust to the unknown.",
+       "claim_ids": [
+        "MT010-C08-2"
+       ]
+      }
+     ],
+     "evidence": "Blog-post series testing the three options; 0.98-0.99 correlation to global-only fitting, mattering more for small portfolios.",
+     "fails_when": "A small portfolio makes asset-class fits unworkable; a matrix fit adds complexity with little value.",
+     "claim_ids": [
+      "MT010-C07-1",
+      "MT010-C08-1",
+      "MT010-C08-2",
+      "MT010-C09-1"
+     ]
+    },
+    {
+     "topic": "Trend speed in high-volatility regimes (V versus secular)",
+     "steps": [
+      {
+       "from": "Quick V (2025 tariff tantrum)",
+       "to": "Fast trend whipsawed worst; medium and slow held through",
+       "why": "Only an extremely fast follower could ride down and up.",
+       "claim_ids": [
+        "MT010-C16-1",
+        "MT010-C15-3"
+       ]
+      },
+      {
+       "from": "Wider V (COVID 2020)",
+       "to": "Fast and very slow did well, medium speed worst",
+       "why": "Fast rode down and up; slow stayed through.",
+       "claim_ids": [
+        "MT010-C16-1",
+        "MT010-C15-4"
+       ]
+      },
+      {
+       "from": "Secular turn (2008)",
+       "to": "Market kept falling; a different speed optimum",
+       "why": "No dramatic bounce.",
+       "claim_ids": [
+        "MT010-C15-4"
+       ]
+      },
+      {
+       "from": "VIX high could mean any of the three",
+       "to": "Cannot set speed from the VIX ex ante",
+       "why": "Regime not known in advance; prior toward simplicity.",
+       "claim_ids": [
+        "MT010-C16-2",
+        "MT010-C16-4",
+        "MT010-C15-2"
+       ]
+      }
+     ],
+     "evidence": "Episode comparison from the figures; Alpha Architect update says the VIX-dependent speed still works out of sample, but he warns that the headline hides much.",
+     "fails_when": "The Alpha Architect result may still hold; he declines to implement it because of simplicity and ignorance of the regime.",
+     "claim_ids": [
+      "MT010-C16-X1",
+      "MT010-C16-4",
+      "MT010-C16-3"
+     ]
+    },
+    {
+     "topic": "Why AI advice favours trend following",
+     "steps": [
+      {
+       "from": "LLMs trained on internet text",
+       "to": "Text advocates more CTAs and trend",
+       "why": "Including this podcast.",
+       "claim_ids": [
+        "MT010-C14-3"
+       ]
+      },
+      {
+       "from": "LLM output recycles that text",
+       "to": "Recommends large trend allocations",
+       "why": "Circular, not independent evidence.",
+       "claim_ids": [
+        "MT010-C14-3"
+       ]
+      }
+     ],
+     "evidence": "Reasoning; the host reported the observation from another guest.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT010-C14-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Default to no fitting; fit only with strong, robust, out-of-sample evidence; avoid per-instrument fits; prefer the average of individual, asset-class and global fits, planning to move his own approach from global-only toward it.",
+     "why": "Building something to last in an unknown future from historical data invites overfitting.",
+     "claim_ids": [
+      "MT010-C09-2",
+      "MT010-C07-1",
+      "MT010-C08-2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Follow the system's signals; where discretion is retained, limit it to what to buy and when.",
+     "why": "Keeps the system testable.",
+     "claim_ids": [
+      "MT010-C10-1",
+      "MT010-C11-1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Make trading speed, exits and position size rule-based; if exits stay discretionary, use a simple stop-loss and allow discretionary exits only with a significant skill track record.",
+     "why": "Cost and risk management are science, not art.",
+     "claim_ids": [
+      "MT010-C11-1",
+      "MT010-C11-4",
+      "MT010-C12-2"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Non-leveraged traders must rank positions and follow path-dependent swap rules; the biggest debate is whether to resize positions for volatility after entry or let them ride.",
+     "why": "Without leverage not all signals can be taken.",
+     "claim_ids": [
+      "MT010-C10-3",
+      "MT010-C12-3"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Trades less momentum when volatility is high; will not implement VIX-based speed changes.",
+     "why": "Prior toward simplicity; the regime is unknowable ahead.",
+     "claim_ids": [
+      "MT010-C15-2",
+      "MT010-C16-4"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Revisit published research after about 10 years for out-of-sample evidence; do not copy blog-post findings into a system without understanding them.",
+     "why": "Headline results hide detail.",
+     "claim_ids": [
+      "MT010-C15-1",
+      "MT010-C16-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Use AI in research only behind guard rails and non-AI code, with human review of AI-written code.",
+     "why": "AI mainly overfits and introduced a worse bug when reviewing code.",
+     "claim_ids": [
+      "MT010-C13-1",
+      "MT010-C13-2",
+      "MT010-C13-3",
+      "MT010-C13-R1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Diversify across managers (including quant equity) rather than picking the best.",
+     "why": "Hard to pick the best; idiosyncratic performance is rising in quant equity.",
+     "claim_ids": [
+      "MT010-C18-1",
+      "MT010-C17-3"
+     ]
+    }
+   ],
+   "evidence_style": "Own empirical testing (blog series on pooling), first principles about definitions and testability, academic studies cited from memory, and his career experience; stresses a prior toward simplicity and out-of-sample evidence.",
+   "current_views": [
+    {
+     "view": "Government and AI-complex corporate debt worries and US fiscal promises are pushing yields up and complicating central bankers' lives.",
+     "as_of": "2026-09",
+     "reasoning": "Heavy issuance and fiscal promises.",
+     "claim_ids": [
+      "MT010-C01-1"
+     ]
+    },
+    {
+     "view": "He is short US 10-year and Korean 10-year bonds; Treasury buybacks of a few billion are too small to hold down yields and are at most a signal.",
+     "as_of": "2026-09",
+     "reasoning": "Yields keep rising despite the buybacks.",
+     "claim_ids": [
+      "MT010-C02-3",
+      "MT010-C02-X1"
+     ]
+    },
+    {
+     "view": "Markets feel poised for a shock without reacting, which means little profit in trend; his risk is about a third of average and his year is about +7.5% mostly from the first weeks (equities and energy).",
+     "as_of": "2026-09",
+     "reasoning": "Qualitative; no statistics.",
+     "claim_ids": [
+      "MT010-C05-2"
+     ]
+    },
+    {
+     "view": "The US Strategic Petroleum Reserve keeps falling and will hit a limit; midterms and the new Fed chair are further possible catalysts.",
+     "as_of": "2026-09",
+     "reasoning": "Weekly SPR declines; war since the beginning of the year with crude near $100.",
+     "claim_ids": [
+      "MT010-C06-1"
+     ]
+    },
+    {
+     "view": "The Simplify CTA ETF (reported by Seeking Alpha) went from over 50 markets to energy only with no shorts; he would sell it now if he held it as CTA exposure.",
+     "as_of": "2026-09",
+     "reasoning": "Lost diversification; style drift.",
+     "claim_ids": [
+      "MT010-C04-1",
+      "MT010-C04-2"
+     ]
+    },
+    {
+     "view": "Millennium nearing $100bn AUM is evidence of large multi-manager flows (host).",
+     "as_of": "2026-09",
+     "reasoning": "Reported headline.",
+     "claim_ids": [
+      "MT010-C04-3"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; veteran hedge fund (trend following) manager",
+   "speaker_note": "Caption spelling 'Neils Castro Razen'. Mostly supplies industry facts, performance data and challenges; his own views appear on ETF structure, bonds and trend speed. Two ledger claims (C02-1 mixes Rob's 5% arithmetic and his own quote of the 70% to 50% proposal and buyback) are treated as his.",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "policy_reaction_central_banks",
+    "fiscal_dominance",
+    "short_term_systematic",
+    "replication_indexing",
+    "research_robustness_overfitting"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Big bond trends are good for trend followers because bonds are a large part of the portfolio; bonds drove returns in late 2021 to early 2023 and have detracted in the last two years, so a new bond trend could be coming.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Sector history of CTA returns.",
+     "claim_ids": [
+      "MT010-C02-2"
+     ]
+    },
+    {
+     "premise": "The CTA world is built on disciplined systematic rules; when a managed-futures ETF manager overrides subadvisor signals and removes the subadvisor, investors cannot know what they bought, and ETF wrappers carry a risk that the strategy or subadvisor changes without notice.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Bloomberg article by Justina Lee on the Simplify managed futures ETF (ticker CTA); the subadvisor had been on the show weeks earlier with no sign of change.",
+     "claim_ids": [
+      "MT010-C03-1",
+      "MT010-C03-2",
+      "MT010-C03-R2"
+     ]
+    },
+    {
+     "premise": "Trend models enter at about the same time; managers differ most in risk management and exits, where the real skill shows.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own observation when asked why he chose a model.",
+     "claim_ids": [
+      "MT010-C12-1"
+     ]
+    },
+    {
+     "premise": "Slow trend following handled the 2025 tariff-tantrum V well, so being fast in high volatility may not pay.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observed performance of slow managers and replication; no named paper.",
+     "claim_ids": [
+      "MT010-C15-3"
+     ]
+    },
+    {
+     "premise": "Some managers use global parameters with different models for diversification.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own firm's change from individual to global parameter selection many years ago.",
+     "claim_ids": [
+      "MT010-C08-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Bond stress to a bond trend",
+     "steps": [
+      {
+       "from": "Worries about government debt, fiscal promises and Norway's fund cutting government debt weight",
+       "to": "Pressure on yields",
+       "why": "More supply, less demand, fiscal credibility.",
+       "claim_ids": [
+        "MT010-C02-1",
+        "MT010-C01-1"
+       ]
+      },
+      {
+       "from": "Treasury long-end buybacks (6bn in 10-20 year)",
+       "to": "Little effect on yields so far, but a signal",
+       "why": "Amounts are tiny relative to the market; yields not coming down.",
+       "claim_ids": [
+        "MT010-C02-1",
+        "MT010-C02-X1"
+       ]
+      },
+      {
+       "from": "Sustained rise in yields",
+       "to": "Short-bond trend profits for trend followers",
+       "why": "Bonds are a large part of CTA risk.",
+       "claim_ids": [
+        "MT010-C02-2"
+       ]
+      }
+     ],
+     "evidence": "CTA return history in 2021-23; current headlines.",
+     "fails_when": "Not stated; central banks and buybacks could cap yields.",
+     "claim_ids": [
+      "MT010-C02-2",
+      "MT010-C02-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Reads his own Trend Barometer (57, strong) and notes weakening equity momentum.",
+     "why": "Tracks the strength of trends and sector leadership.",
+     "claim_ids": [
+      "MT010-C05-1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Communicating style changes in advance would let investors vote with their feet (a soft expectation of governance for funds).",
+     "why": "Investors rely on a process.",
+     "claim_ids": [
+      "MT010-C03-1",
+      "MT010-C03-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Uses global parameters with different models for diversification (firm practice).",
+     "why": "Avoids per-instrument parameter selection.",
+     "claim_ids": [
+      "MT010-C08-3"
+     ]
+    }
+   ],
+   "evidence_style": "Industry data, press articles and index returns, plus experience with CTA managers; uses questions to test the guest.",
+   "current_views": [
+    {
+     "view": "Mid-September 2026: BTOP50 +1.15% for September and +12.42% YTD, SG Trend about +12.1% YTD; MSCI World +12.78% YTD, S&P 500 TR +12.45% YTD, world government bonds -0.32% YTD.",
+     "as_of": "2026-09 (to Tuesday of recording week)",
+     "reasoning": "Descriptive.",
+     "claim_ids": [
+      "MT010-C06-2",
+      "MT010-C05-1"
+     ]
+    },
+    {
+     "view": "Norway's sovereign wealth fund proposed cutting government debt from 70% to 50% of its bond portfolio (about 5% of its total, roughly $100bn) while the US Treasury expands long-end buybacks.",
+     "as_of": "2026-09",
+     "reasoning": "News headlines.",
+     "claim_ids": [
+      "MT010-C02-1"
+     ]
+    },
+    {
+     "view": "The Simplify CTA fund's move to mainly long energy has helped investors in recent weeks, but the second-largest CTA ETF breaking its mandate matters.",
+     "as_of": "2026-09",
+     "reasoning": "Performance since the Iran war started and after the sell-off.",
+     "claim_ids": [
+      "MT010-C03-1",
+      "MT010-C03-R2"
+     ]
+    },
+    {
+     "view": "A new bond trend could be coming; equity momentum may be weakening.",
+     "as_of": "2026-09",
+     "reasoning": "Bond headlines; sector data.",
+     "claim_ids": [
+      "MT010-C02-2",
+      "MT010-C05-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Whether trend speed should change with market volatility",
+   "positions": [
+    {
+     "speaker": "Rob Carver",
+     "position": "The Alpha Architect VIX-dependent speed finding is not random data mining, but high volatility can be 2008, 2020 or a quick V; he has a prior toward simplicity and will not implement it.",
+     "claim_ids": [
+      "MT010-C16-2",
+      "MT010-C16-4",
+      "MT010-C16-X1"
+     ]
+    },
+    {
+     "speaker": "Niels Kastrup-Larsen",
+     "position": "Intuition says be shorter-term when volatility rises, but he has seen no evidence that short-term managers do better and slow trend handled the tariff V well.",
+     "claim_ids": [
+      "MT010-C15-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Who should control exits",
+   "positions": [
+    {
+     "speaker": "Rob Carver",
+     "position": "Exits, speed and size should be rule-based; discretionary exits only with a statistically significant skill record.",
+     "claim_ids": [
+      "MT010-C11-1",
+      "MT010-C11-4"
+     ]
+    },
+    {
+     "speaker": "Niels Kastrup-Larsen",
+     "position": "Questions why traders who cannot exit well would be good at entering; notes exits are emotionally harder and where managers differ.",
+     "claim_ids": [
+      "MT010-C12-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Importance of the ETF's change",
+   "positions": [
+    {
+     "speaker": "Niels Kastrup-Larsen",
+     "position": "Unusual and a difficulty for investors; acknowledges the energy tilt has helped recently.",
+     "claim_ids": [
+      "MT010-C03-1",
+      "MT010-C03-R2"
+     ]
+    },
+    {
+     "speaker": "Rob Carver",
+     "position": "Would sell it if held as CTA exposure because diversification across 50+ markets is gone.",
+     "claim_ids": [
+      "MT010-C04-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Carver's account of the Simplify ETF is based only on a Seeking Alpha article, which he says he assumes is correct.",
+   "claim_ids": [
+    "MT010-C04-1"
+   ]
+  },
+  {
+   "issue": "Carver attributes the study that fund managers exit poorly to unnamed academics.",
+   "claim_ids": [
+    "MT010-C11-3"
+   ]
+  },
+  {
+   "issue": "Carver says he sees no evidence on the market impact of consumer-grade AI trading, yet speculates opportunities to trade against herds; no capture method is given.",
+   "claim_ids": [
+    "MT010-C14-1",
+    "MT010-C14-2"
+   ]
+  },
+  {
+   "issue": "Carver's view that the market is poised for a shock is explicitly qualitative, with no statistics.",
+   "claim_ids": [
+    "MT010-C05-2"
+   ]
+  },
+  {
+   "issue": "Carver plans to add instrument and asset-class information to his global-only fit but says the change would be minor (0.98-0.99 correlation), which weakens the case for urgency.",
+   "claim_ids": [
+    "MT010-C08-2"
+   ]
+  },
+  {
+   "issue": "Carver's own risk is a third of average and flat YTD after strong early weeks, while indices are up 12%, so his results are not representative.",
+   "claim_ids": [
+    "MT010-C05-2",
+    "MT010-C06-2"
+   ]
+  },
+  {
+   "issue": "Carver reports the Alpha Architect update says VIX-dependent speed still works, but also that he trades less momentum in high volatility, the opposite direction to the article's speed-up.",
+   "claim_ids": [
+    "MT010-C15-2",
+    "MT010-C16-X1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observables named: Treasury and Norwegian fund bond actions and yields (bond trend), the US Strategic Petroleum Reserve reaching its limit, US midterms and the new Fed chair's policy, momentum in equities, and manager-level style stability. Carver sees no forecast, only a sense of poise before a shock; horizon is weeks to the year-end.",
+ "reader_inferences": [
+  "(reader) Carver's rules reduce degrees of freedom: no per-instrument fitting, no discretionary exits, no VIX-based speed, which are all ways of keeping out-of-sample performance close to backtest.",
+  "(reader) His speed-versus-V-shape argument is that medium speed is the worst exposure in a V because it neither avoids nor rides it.",
+  "(reader) The ETF episode is read by both speakers as a governance and expectations problem rather than a performance problem."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT010-C13-R1",
+   "chunk": "C13",
+   "speaker": "Rob Carver",
+   "quote": "it really worries me this sort of what I call agentic AI",
+   "claim": "Carver is worried by agentic AI in which AI systems write code for other AI systems without human review; he calls it terrifying for live production code and more broadly.",
+   "mechanism": "operational_risk",
+   "asset_class": "multi",
+   "indicator": "AI-written production code",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "no or insufficient human oversight",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT010-C03-R2",
+   "chunk": "C03",
+   "speaker": "Niels Kastrup-Larsen",
+   "quote": "the intervention that was been done which is predominantly to go long energy so far",
+   "claim": "The Simplify CTA fund's discretionary intervention, mainly going long energy, has done well in recent weeks despite the earlier sell-off that challenged performance.",
+   "mechanism": "manager_discretion",
+   "asset_class": "commodities",
+   "indicator": "long energy positions",
+   "horizon": "weeks",
+   "direction": "long",
+   "conditions": "after the Iran war began",
+   "testable": "yes: fund NAV versus trend benchmark",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  }
+ ]
+}

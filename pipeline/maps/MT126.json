@@ -1,0 +1,912 @@
+{
+ "source_id": "MT126",
+ "episode_thesis": "Jim argues the new US administration deliberately cuts demand to push down the 10-year yield, producing a short-term growth air pocket before slow supply-side benefits, and expects the Fed to be forced into QE while a refinancing wall drains liquidity, so equities fall 30-40% over 12-18 months and policy reverses as under Nixon. He adds that debt will be monetised, non-US assets and gold calls against oil puts are favoured, and Taiwan, Turkey and Europe's rearmament are geopolitical tails to watch.",
+ "speakers": [
+  {
+   "name": "Jim Kasang",
+   "role": "Chicago systematic macro and options-flow strategist; recurring guest of the Systematic Investor series",
+   "speaker_note": "Captions spell 'Jim kasang' and host 'Neil costr Larson'; two speakers, turns separable by question/answer structure. Several geopolitical theories (Syria, Turkey, gold) are explicitly speculation.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "policy_reaction_central_banks",
+    "liquidity_flows",
+    "fiscal_dominance",
+    "geopolitics",
+    "volatility_options",
+    "dealer_hedging_flows",
+    "positioning_crowding"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "The world is moving from cooperative, give-now-for-later-gain relations to transactional bargaining, driven by a transactional US leader and a populist backlash against the status quo.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning from current events; no data.",
+     "claim_ids": [
+      "MT126-C02-1"
+     ]
+    },
+    {
+     "premise": "Populism is a 10-15 year demographic and political wave (boomers to millennials); responding to populist anger with policy that favours the top deepens the anger, so incumbents keep losing.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Voter-age argument and the Nixon analogy.",
+     "claim_ids": [
+      "MT126-C07-2",
+      "MT126-C07-X1"
+     ]
+    },
+    {
+     "premise": "Incentives explain policy: debt-heavy governments with rising interest costs want to reduce the burden by pressure on allies, calling in favours and using the central bank, so monetisation is the direction.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "'Incentives all the way down'; Japan precedent.",
+     "claim_ids": [
+      "MT126-C10-X1",
+      "MT126-C09-1"
+     ]
+    },
+    {
+     "premise": "Previously unthinkable policy shifts (ending gold convertibility in 1971) happen in regimes that ignore orthodoxy, so lack of precedent is no reason to rule out unconventional debt solutions.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Nixon 1971 precedent.",
+     "claim_ids": [
+      "MT126-C09-X2"
+     ]
+    },
+    {
+     "premise": "Debt held by a central bank is a claim of one part of the state on another and can be cancelled by an accounting entry; only external holdings (about 27% of US debt) are a real counterparty issue.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Bank of Japan example; accounting logic.",
+     "claim_ids": [
+      "MT126-C09-X1",
+      "MT126-C09-3"
+     ]
+    },
+    {
+     "premise": "Markets can overwhelm official attempts to manage yields, the dollar and volatility; manipulating one price causes adjustment in another unless the system is closed like China.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "General market-efficiency argument.",
+     "claim_ids": [
+      "MT126-C06-2",
+      "MT126-C06-3"
+     ]
+    },
+    {
+     "premise": "Markets reflexively drain liquidity when they fall, so a decline needs a large QE response, which the Fed may not deliver quickly; QE reaches financial markets before the real economy.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning about reflexivity; no data.",
+     "claim_ids": [
+      "MT126-C05-5",
+      "MT126-C05-X3"
+     ]
+    },
+    {
+     "premise": "Markets lead the economy and political outcomes: a large fall triggers political backlash and policy reversal (the 'fifth state' check).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Nixon price controls; economist's 'fifth state' phrase.",
+     "claim_ids": [
+      "MT126-C17-4",
+      "MT126-C17-X1",
+      "MT126-C17-3"
+     ]
+    },
+    {
+     "premise": "A Feb-March pullback is a warning shot that often precedes a much larger decline by months (1999, 2007).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Two historical examples, no sample.",
+     "claim_ids": [
+      "MT126-C08-2"
+     ]
+    },
+    {
+     "premise": "When a consensus-bullish obvious buy keeps falling, there may be an unconsidered risk; crowded leadership under forced selling magnifies downside.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Nvidia example.",
+     "claim_ids": [
+      "MT126-C13-3",
+      "MT126-C13-4",
+      "MT126-C13-2"
+     ]
+    },
+    {
+     "premise": "Supply-side economics is the only long-run 'cheat code' (supports markets and lowers inflation) but has bad politics and timing.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reagan reference.",
+     "claim_ids": [
+      "MT126-C04-X1",
+      "MT126-C04-2"
+     ]
+    },
+    {
+     "premise": "Crisis is needed to catalyse reform; pressure on a complacent ally forces resilience.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Europe example.",
+     "claim_ids": [
+      "MT126-C10-4",
+      "MT126-C11-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Demand removal then supply-side: growth air pocket and the QE bet",
+     "steps": [
+      {
+       "from": "Priority: lower the 10-year yield by removing demand",
+       "to": "Cuts to food aid, housing, Medicaid, federal jobs and Ukraine payments",
+       "why": "Direct removal of demand from lower and middle income cohorts",
+       "claim_ids": [
+        "MT126-C04-1",
+        "MT126-C04-3",
+        "MT126-C03-X1"
+       ]
+      },
+      {
+       "from": "Demand cuts act within a month; corporate tax cuts and deregulation take years",
+       "to": "Short-term growth air pocket (Q1 GDP nowcasts +3.5% to -3%)",
+       "why": "Different timelines; cuts front-loaded to blame the predecessor",
+       "claim_ids": [
+        "MT126-C04-4",
+        "MT126-C05-1",
+        "MT126-C05-2",
+        "MT126-C05-X1",
+        "MT126-C05-X2"
+       ]
+      },
+      {
+       "from": "Falling markets and economy",
+       "to": "Fed forced to end QT (March) and do QE-type easing within 3-6 months",
+       "why": "Administration wants a decline; Bessent's 6-12 month timeline",
+       "claim_ids": [
+        "MT126-C05-3",
+        "MT126-C05-4",
+        "MT126-C05-X4"
+       ]
+      },
+      {
+       "from": "Fed response",
+       "to": "Markets rally before the economy; but the Fed may be slow and liquidity drain large",
+       "why": "QE hits markets quickly, real economy with lag",
+       "claim_ids": [
+        "MT126-C05-X3",
+        "MT126-C05-5"
+       ]
+      }
+     ],
+     "evidence": "Bessent quoted 'about 20 times'; DC real estate -20% in a month; GDP nowcasts; budget items.",
+     "fails_when": "The plan fails if the Fed will not act in time or the political backlash comes first.",
+     "claim_ids": [
+      "MT126-C04-1",
+      "MT126-C05-4",
+      "MT126-C04-X2"
+     ]
+    },
+    {
+     "topic": "Two paths for the 10-year and equities",
+     "steps": [
+      {
+       "from": "Path one: growth disappoints, QE too small",
+       "to": "10-year keeps falling, equities fade in a deeper recession",
+       "why": "QE response inadequate",
+       "claim_ids": [
+        "MT126-C07-4"
+       ]
+      },
+      {
+       "from": "Path two: aggressive QE in recession coincides with heavy refinancing/debt demand",
+       "to": "10-year back above 5%, knee-jerk rally fails, worse for markets",
+       "why": "Supply and demand for debt",
+       "claim_ids": [
+        "MT126-C07-3",
+        "MT126-C08-1"
+       ]
+      },
+      {
+       "from": "Both paths",
+       "to": "A bigger equity decline (10-20% or more, up to 30-40%) within 12-18 months",
+       "why": "Warning-shot pattern",
+       "claim_ids": [
+        "MT126-C08-2",
+        "MT126-C08-3",
+        "MT126-C17-2"
+       ]
+      }
+     ],
+     "evidence": "Historical analogs 1999 and 2007; no quantification of probabilities.",
+     "fails_when": "Fails if QE is timely and refinancing demand is absorbed.",
+     "claim_ids": [
+      "MT126-C07-3",
+      "MT126-C08-3"
+     ]
+    },
+    {
+     "topic": "Dollar contradiction",
+     "steps": [
+      {
+       "from": "Officials say they want a strong dollar",
+       "to": "But austerity, QE and lower rates usually weaken a currency",
+       "why": "Weaker US growth with the rest of the world holding up",
+       "claim_ids": [
+        "MT126-C06-1"
+       ]
+      },
+      {
+       "from": "Manipulating yields lower",
+       "to": "Offsetting adjustment elsewhere (dollar), as capital is open",
+       "why": "Markets are efficient enough",
+       "claim_ids": [
+        "MT126-C06-3",
+        "MT126-C06-2"
+       ]
+      }
+     ],
+     "evidence": "General logic.",
+     "fails_when": "Fails in a closed system or if markets cooperate.",
+     "claim_ids": [
+      "MT126-C06-1"
+     ]
+    },
+    {
+     "topic": "Nixon analogy",
+     "steps": [
+      {
+       "from": "Nixon supply-side orientation, opening China and ending Bretton Woods, heavy monetary policy under Burns",
+       "to": "Inflation, which had been coming down, took off during his administration",
+       "why": "Policy mix",
+       "claim_ids": [
+        "MT126-C06-4",
+        "MT126-C06-5"
+       ]
+      },
+      {
+       "from": "1969-70 recession and monetary support",
+       "to": "Price controls, Watergate, populist anger",
+       "why": "Political backlash",
+       "claim_ids": [
+        "MT126-C07-1"
+       ]
+      }
+     ],
+     "evidence": "Historical record as recalled; the analogy is 'beaten to death' by Jim's own admission.",
+     "fails_when": "Differences: current administration is cutting demand more than Nixon did.",
+     "claim_ids": [
+      "MT126-C06-4",
+      "MT126-C07-1"
+     ]
+    },
+    {
+     "topic": "Debt resolution",
+     "steps": [
+      {
+       "from": "Rising interest costs on large US debt",
+       "to": "Monetisation / slow-rolling jubilee, with Japan and the central bank as helpers",
+       "why": "America First incentive to reduce the burden",
+       "claim_ids": [
+        "MT126-C09-1",
+        "MT126-C09-2",
+        "MT126-C10-X1",
+        "MT126-C09-4"
+       ]
+      },
+      {
+       "from": "External holdings only 27%",
+       "to": "Most restructuring internal",
+       "why": "Arithmetic",
+       "claim_ids": [
+        "MT126-C09-3"
+       ]
+      }
+     ],
+     "evidence": "Japan example; no mechanism detail; Mar-a-Lago accord judged speculative.",
+     "fails_when": "Not stated; the host disputes a technical point on BoJ debt.",
+     "claim_ids": [
+      "MT126-C09-1",
+      "MT126-C08-4"
+     ]
+    },
+    {
+     "topic": "Taiwan risk window",
+     "steps": [
+      {
+       "from": "US withdraws military support from Ukraine and tells Taiwan to pay",
+       "to": "No deterrent to China",
+       "why": "Incentive logic",
+       "claim_ids": [
+        "MT126-C12-X1",
+        "MT126-C12-4"
+       ]
+      },
+      {
+       "from": "Ukraine deal done and US in recession",
+       "to": "China may act (embargo or pressure) around Q4 2025",
+       "why": "Timing and incentives",
+       "claim_ids": [
+        "MT126-C12-3",
+        "MT126-C12-1"
+       ]
+      },
+      {
+       "from": "Taiwan shock with crowded semis under forced liquidation",
+       "to": "Bigger downside for Nvidia and leadership",
+       "why": "Crowded longs",
+       "claim_ids": [
+        "MT126-C13-4",
+        "MT126-C13-2",
+        "MT126-C13-R1"
+       ]
+      }
+     ],
+     "evidence": "Jim says he called the Nvidia top; otherwise reasoning.",
+     "fails_when": "Not stated; he calls it 'conspiracy' risk by others.",
+     "claim_ids": [
+      "MT126-C12-3",
+      "MT126-C12-X1"
+     ]
+    },
+    {
+     "topic": "Gold-oil volatility trade",
+     "steps": [
+      {
+       "from": "Oil vol high after rally, gold vol low",
+       "to": "Buy gold calls, sell oil puts",
+       "why": "Both assets perform in a decade-long inflationary, deglobalising environment; gold is the more volatile",
+       "claim_ids": [
+        "MT126-C16-1",
+        "MT126-C16-2",
+        "MT126-C16-5"
+       ]
+      },
+      {
+       "from": "Supply issues, geopolitics, weaker dollar, China demand",
+       "to": "Oil grinds higher to mid-range with low volatility",
+       "why": "Not a spike",
+       "claim_ids": [
+        "MT126-C16-3",
+        "MT126-C16-4",
+        "MT126-C16-X1"
+       ]
+      },
+      {
+       "from": "Equity decline",
+       "to": "Energy holds up, then outperforms coming out",
+       "why": "Relative performance",
+       "claim_ids": [
+        "MT126-C17-1"
+       ]
+      }
+     ],
+     "evidence": "Trade worked '3.5 years'; no numbers.",
+     "fails_when": "Fails if US recession plus drill-baby-drill dominates.",
+     "claim_ids": [
+      "MT126-C16-1",
+      "MT126-C16-X1"
+     ]
+    },
+    {
+     "topic": "Turkey and swing states",
+     "steps": [
+      {
+       "from": "Russia-West reconciliation",
+       "to": "Swing states (Turkey, India) lose bargaining power",
+       "why": "Russia no longer needs them; Russia holds a credit lever on Turkey",
+       "claim_ids": [
+        "MT126-C14-1",
+        "MT126-C14-2"
+       ]
+      },
+      {
+       "from": "Erdogan prefers loose policy but rates at 40%; election in about 2.5 years",
+       "to": "Likely currency crisis",
+       "why": "Political pressure on central bank",
+       "claim_ids": [
+        "MT126-C14-3",
+        "MT126-C15-1"
+       ]
+      },
+      {
+       "from": "Biden-era events in Syria; weakened US support for NATO",
+       "to": "Turkey may get European support",
+       "why": "Strategic importance of Turkey",
+       "claim_ids": [
+        "MT126-C15-2",
+        "MT126-C15-X1",
+        "MT126-C14-4"
+       ]
+      }
+     ],
+     "evidence": "Open speculation ('no way to prove').",
+     "fails_when": "Offsetting European support.",
+     "claim_ids": [
+      "MT126-C15-1",
+      "MT126-C15-X1"
+     ]
+    },
+    {
+     "topic": "European rearmament",
+     "steps": [
+      {
+       "from": "Dependence on the US",
+       "to": "Complacency and unwillingness to decide",
+       "why": "Lack of pressure",
+       "claim_ids": [
+        "MT126-C10-4"
+       ]
+      },
+      {
+       "from": "Rearmament shock (10-20% of GDP in Germany per host)",
+       "to": "Short-term pain, longer-term exit from stagnation",
+       "why": "Crisis catalyses reform; a dangerous world for about 20 years",
+       "claim_ids": [
+        "MT126-C10-3",
+        "MT126-C11-1",
+        "MT126-C11-2",
+        "MT126-C11-X1"
+       ]
+      }
+     ],
+     "evidence": "Opinion.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT126-C11-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Flags the quarterly options-expiration window (Feb opex) as the start of declines.",
+     "why": "Opex flows time the move.",
+     "claim_ids": [
+      "MT126-C08-R1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Treats a recurring political-economic analog (Nixon 1969-72) as a template for sequencing.",
+     "why": "Policy regime resembles it.",
+     "claim_ids": [
+      "MT126-C06-4",
+      "MT126-C07-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Reads official statements (Bessent's 6-12 month timeline, budget items) as the actual plan.",
+     "why": "Administration is more deliberate than in 2016-20.",
+     "claim_ids": [
+      "MT126-C03-X1",
+      "MT126-C05-4",
+      "MT126-C04-1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "When a crowded bullish trade keeps falling, step back and look for an unseen tail risk (Taiwan for Nvidia).",
+     "why": "Consensus can miss tails.",
+     "claim_ids": [
+      "MT126-C13-3",
+      "MT126-C13-4"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Buy gold calls, sell oil puts for 3.5 years.",
+     "why": "Gold vol underpriced, oil vol overpriced; both benefit from inflation/deglobalisation.",
+     "claim_ids": [
+      "MT126-C16-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Long non-US equities relative to US; green light on Chinese equities after rhetoric softening.",
+     "why": "US exceptionalism premium cracking; post-election softening.",
+     "claim_ids": [
+      "MT126-C01-1",
+      "MT126-C12-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hold energy through an equity decline; expect it to lead coming out.",
+     "why": "Oil supported by supply, dollar, China.",
+     "claim_ids": [
+      "MT126-C17-1",
+      "MT126-C16-3"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "States views as time-bound calls and revisits them on the show.",
+     "why": "Track record claims (Nvidia top, opex).",
+     "claim_ids": [
+      "MT126-C08-R1",
+      "MT126-C13-R1"
+     ]
+    }
+   ],
+   "evidence_style": "Historical analogy (Nixon, 1999/2007), reading of official statements and incentives, flow calendar, and own earlier calls; few quantified backtests.",
+   "current_views": [
+    {
+     "view": "Non-US markets outperforming as the US exceptionalism premium cracks; US equity records will mean revert over years.",
+     "as_of": "2025-03-20",
+     "reasoning": "Transactional America First policy; crack in exceptionalism.",
+     "claim_ids": [
+      "MT126-C01-1",
+      "MT126-C01-2"
+     ]
+    },
+    {
+     "view": "Stagflationary setup: inflation re-accelerating, 10-year higher, so the Fed cannot just ease.",
+     "as_of": "2025-03-20",
+     "reasoning": "Early 2025 data.",
+     "claim_ids": [
+      "MT126-C03-5"
+     ]
+    },
+    {
+     "view": "Refinancing wall (venture, PE, commercial real estate) starts hitting in 3-6 months; bankruptcies ticking up.",
+     "as_of": "2025-03-20",
+     "reasoning": "Five years after the 2020 low.",
+     "claim_ids": [
+      "MT126-C03-6",
+      "MT126-C05-6"
+     ]
+    },
+    {
+     "view": "US growth air pocket now; QT ends in March and QE-type response within 3-6 months.",
+     "as_of": "2025-03-20",
+     "reasoning": "Demand cuts, Bessent timeline.",
+     "claim_ids": [
+      "MT126-C05-1",
+      "MT126-C05-2",
+      "MT126-C05-3",
+      "MT126-C05-X4"
+     ]
+    },
+    {
+     "view": "Dollar will weaken despite 'strong dollar' talk.",
+     "as_of": "2025-03-20",
+     "reasoning": "Austerity plus QE plus lower rates with the rest of the world holding.",
+     "claim_ids": [
+      "MT126-C06-1"
+     ]
+    },
+    {
+     "view": "Equities fall 30-40% over the next 12-18 months, beyond a garden-variety 10-20%; this pullback is a warning shot.",
+     "as_of": "2025-03-20",
+     "reasoning": "Both paths lead to a bad place.",
+     "claim_ids": [
+      "MT126-C08-2",
+      "MT126-C08-3",
+      "MT126-C17-2",
+      "MT126-C07-3",
+      "MT126-C07-4"
+     ]
+    },
+    {
+     "view": "Debt will be monetised in some form, with Japan helping.",
+     "as_of": "2025-03-20",
+     "reasoning": "Only exit.",
+     "claim_ids": [
+      "MT126-C09-1",
+      "MT126-C09-2",
+      "MT126-C09-4",
+      "MT126-C10-X1"
+     ]
+    },
+    {
+     "view": "Taiwan pressure could come around Q4 2025.",
+     "as_of": "2025-03-20",
+     "reasoning": "US recession plus settled Ukraine plus no deterrent.",
+     "claim_ids": [
+      "MT126-C12-3",
+      "MT126-C12-X1"
+     ]
+    },
+    {
+     "view": "Nvidia vulnerable: AI capex pulled back and Taiwan tail risk.",
+     "as_of": "2025-03-20",
+     "reasoning": "Liquidity and crowding.",
+     "claim_ids": [
+      "MT126-C13-2",
+      "MT126-C13-3"
+     ]
+    },
+    {
+     "view": "Turkey faces a decent chance of a currency crisis; Indian equities hurt by lost swing-state value.",
+     "as_of": "2025-03-20",
+     "reasoning": "Weak economy, elections, Russia leverage.",
+     "claim_ids": [
+      "MT126-C14-3",
+      "MT126-C14-4",
+      "MT126-C15-1",
+      "MT126-C14-1",
+      "MT126-C14-2"
+     ]
+    },
+    {
+     "view": "Europe's rearmament is a good wakeup call and gets Europe out of stagnation in the long run.",
+     "as_of": "2025-03-20",
+     "reasoning": "Crisis forces reform.",
+     "claim_ids": [
+      "MT126-C11-2",
+      "MT126-C10-4"
+     ]
+    },
+    {
+     "view": "Oil gradually higher in a multi-year range; gold more volatile; trade stays on.",
+     "as_of": "2025-03-20",
+     "reasoning": "Supply, geopolitics, dollar, China.",
+     "claim_ids": [
+      "MT126-C16-2",
+      "MT126-C16-3",
+      "MT126-C16-4",
+      "MT126-C16-X1"
+     ]
+    },
+    {
+     "view": "A deep market fall will force political reversals, as with Nixon's price controls.",
+     "as_of": "2025-03-20",
+     "reasoning": "Job losses and wealthy donors.",
+     "claim_ids": [
+      "MT126-C17-3",
+      "MT126-C17-4",
+      "MT126-C17-X1",
+      "MT126-C05-X5"
+     ]
+    },
+    {
+     "view": "The Mar-a-Lago accord (forcing allies into 100-year zero-coupon bonds) is speculation and unlikely.",
+     "as_of": "2025-03-20",
+     "reasoning": "The US cannot bully the world indefinitely.",
+     "claim_ids": [
+      "MT126-C08-4"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; veteran CTA fund manager",
+   "speaker_note": "Host; opinion statements are brief and flagged as his own; index data are facts read from his tracker.",
+   "fingerprint": [
+    "trend_following",
+    "geopolitics",
+    "behavioral_sentiment",
+    "manager_selection_allocation"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Power is being used simply because it can be, a loss of norms linked to populism and falling trust.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observations on US moves on Greenland, Panama, the Gulf of Mexico.",
+     "claim_ids": [
+      "MT126-C02-2"
+     ]
+    },
+    {
+     "premise": "Even when an event is foreseen, market reaction can be counterintuitive (10-year yields rose after the Fed cut).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Single example.",
+     "claim_ids": [
+      "MT126-C13-1"
+     ]
+    },
+    {
+     "premise": "Large industrial investments (TSMC) may change US willingness to defend Taiwan; China is positioning as the free-trade advocate.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "News observation.",
+     "claim_ids": [
+      "MT126-C12-1",
+      "MT126-C01-3"
+     ]
+    },
+    {
+     "premise": "Debt issuance for European defence pushes up long yields and creates new trends for trend followers.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning about European fiscal expansion.",
+     "claim_ids": [
+      "MT126-C03-4"
+     ]
+    },
+    {
+     "premise": "Revaluing central-bank gold is floated as a way to ease the debt position.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument floated, not endorsed.",
+     "claim_ids": [
+      "MT126-C10-1",
+      "MT126-C10-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Tracks trend-follower indices (BTOP50, SG CTA, SG Trend, short-term index), a personal trend barometer and passive indices; reads a barometer of 50 as improving.",
+     "why": "Gauge of trend environment.",
+     "claim_ids": [
+      "MT126-C03-1",
+      "MT126-C03-2",
+      "MT126-C03-3"
+     ]
+    }
+   ],
+   "evidence_style": "Reports index data and cites other podcast guests.",
+   "current_views": [
+    {
+     "view": "Trend followers struggled in early 2025 on reversals in currencies, US fixed income and US equities; new European bond trends emerging.",
+     "as_of": "2025-03-20",
+     "reasoning": "Sharp reversals; European defence issuance.",
+     "claim_ids": [
+      "MT126-C03-1",
+      "MT126-C03-2",
+      "MT126-C03-3",
+      "MT126-C03-4"
+     ]
+    },
+    {
+     "view": "A federal crypto reserve executive order was signed in early March 2025, no surprise.",
+     "as_of": "2025-03",
+     "reasoning": "Policy fact.",
+     "claim_ids": [
+      "MT126-C02-X1"
+     ]
+    },
+    {
+     "view": "Bridgewater is bringing All Weather to an ETF with State Street.",
+     "as_of": "2025-03",
+     "reasoning": "News item.",
+     "claim_ids": [
+      "MT126-C02-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Mechanism for debt cancellation",
+   "positions": [
+    {
+     "speaker": "Jim Kasang",
+     "position": "Central-bank-held debt could be cancelled by an accounting entry at no economic cost; Japan will play a big role.",
+     "claim_ids": [
+      "MT126-C09-X1",
+      "MT126-C09-2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Asks what is the difference between BoJ holding the debt and cancelling it, noting it has not technically been cancelled.",
+     "claim_ids": [
+      "MT126-C09-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Relevance of gold in debt solutions",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Revaluing central-bank gold book value is floated as a way to ease the debt.",
+     "claim_ids": [
+      "MT126-C10-1"
+     ]
+    },
+    {
+     "speaker": "Jim Kasang",
+     "position": "Gold is not as relevant as it used to be for solving US debt, though it could help the accounts.",
+     "claim_ids": [
+      "MT126-C10-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Correction applied: Jim said US inflation had started to come down before Nixon but took off during Nixon's administration, tied to ending Bretton Woods and Burns's monetary policy; not 'after earlier easing'.",
+   "claim_ids": [
+    "MT126-C06-5"
+   ]
+  },
+  {
+   "issue": "The claim that the administration deliberately engineers a market decline to force QE rests on Bessent's repeated 6-12 month remark and is Jim's inference about motive.",
+   "claim_ids": [
+    "MT126-C05-3",
+    "MT126-C05-4"
+   ]
+  },
+  {
+   "issue": "Probability of the 10-year back above 5% is called 'higher than expected' without a number; equity-decline sizes shift between 10-20%, 'bigger', and 30-40%.",
+   "claim_ids": [
+    "MT126-C07-3",
+    "MT126-C08-3",
+    "MT126-C17-2"
+   ]
+  },
+  {
+   "issue": "Internal tension: path one has the 10-year falling and path two has it above 5%; he says both lead to the same place without stating which is likelier.",
+   "claim_ids": [
+    "MT126-C07-3",
+    "MT126-C07-4"
+   ]
+  },
+  {
+   "issue": "Theories on Syria and Turkey are explicit speculation; Taiwan Q4 2025 timing is an incentives argument.",
+   "claim_ids": [
+    "MT126-C15-2",
+    "MT126-C12-3"
+   ]
+  },
+  {
+   "issue": "Dollar view rests on the strategy contradiction (strong-dollar talk vs QE and lower rates); he also says markets can overwhelm officials but allows they may hold things for a while, and the US reserve privilege is conditional ('while we still have it').",
+   "claim_ids": [
+    "MT126-C06-1",
+    "MT126-C06-2",
+    "MT126-C09-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs Jim names as leading prices: Q1 GDP nowcasts and the speed of demand removal (weeks to months), Fed ending QT in March and QE-type response in 3-6 months (months), the 10-year yield vs 5% and refinancing demand (months), quarterly options-expiration dates (weeks), the dollar path and China demand for oil (months), Ukraine settlement then Taiwan pressure (Q4 2025), Turkey election and rates (years). Reason: demand removal hits fast, supply-side slowly, liquidity drain from refinancing overwhelms Fed response.",
+ "reader_inferences": [
+  "(reader) The core of Jim's argument is a sequencing claim: demand cuts (fast) then QE (fast to markets, slow to economy) then refinancing wall; the 10-year path depends on which wins.",
+  "(reader) Several explicit calls with dates (QT end in March, 30-40% decline in 12-18 months, Taiwan Q4 2025) can later be scored.",
+  "(reader) He mixes high-confidence flow claims (opex) with low-confidence geopolitical theories; fingerprints should weight the former as method."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT126-C08-R1",
+   "chunk": "C08",
+   "speaker": "Jim Kasang",
+   "quote": "Feb Opex was the start not a coincidence",
+   "claim": "Jim says he tied the early-2025 decline to the quarterly options-expiration window: the sell-off started at February opex, which he had flagged, as the first warning shot before a larger decline.",
+   "mechanism": "dealer_hedging_flows",
+   "asset_class": "equities",
+   "indicator": "S&P 500",
+   "horizon": "weeks",
+   "direction": "equities down from Feb opex",
+   "conditions": "quarterly options-expiration cycle",
+   "testable": "yes - dates of opex and declines are observable",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "map-reader",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT126-C13-R1",
+   "chunk": "C13",
+   "speaker": "Jim Kasang",
+   "quote": "called Almost exact top in Nvidia when it happened in real time",
+   "claim": "Jim says he called the near-exact Nvidia top live on the show, linking the move to Trump's Taiwan 'pay for protection' remark (a Taiwan tail risk priced late).",
+   "mechanism": "crowding_positioning",
+   "asset_class": "equities",
+   "indicator": "Nvidia",
+   "horizon": "weeks",
+   "direction": "Nvidia down",
+   "conditions": "Taiwan remark and crowded longs",
+   "testable": "partly - the call date is not given",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "map-reader",
+   "quote_check": "exact"
+  }
+ ]
+}

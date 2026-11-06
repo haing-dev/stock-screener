@@ -1,0 +1,507 @@
+{
+ "source_id": "MT057",
+ "episode_thesis": "Rich Brennan summarises a 2023 paper (Zakamulin/Giner, reviewed by Tom Stark) that derives optimal trend rules analytically from Markov, semi-Markov and autoregressive models of persistence; the derived rules are simple, medium-to-long-term, loosely parameterised and match what practitioners find by brute-force backtesting, which he reads as mathematical support for trend following, not a new edge. He argues AI will crowd the short-term prediction space (mean reversion, HFT) but not medium-to-long-term trend following, and Niels Kaastrup-Larsen adds that trend following has survived every technology wave, works only when diversified, and that 'optimal parameters' cannot be a holy grail. The first half covers a June 2024 choppy period (trend managers gave back about half of Q1), CFD swap costs and ATR sizing.",
+ "speakers": [
+  {
+   "name": "Rich Brennan",
+   "role": "Australian systematic trend follower (trades CFDs, ATR-based sizing)",
+   "speaker_note": "Captions have no speaker labels; the monologue on the paper is clearly Brennan's. He has read Tom Stark's review and the abstract, not necessarily the full paper (he says he relied on Stark's video).",
+   "fingerprint": [
+    "trend_following",
+    "regime_detection",
+    "research_robustness_overfitting",
+    "costs_execution",
+    "position_sizing_vol_target",
+    "short_term_systematic"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend following succeeds through serial correlation (autocorrelation) in prices whose strength waxes and wanes; the longer a trend persists the greater the chance it ends.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Paper's equivalence between autoregression and Markov/semi-Markov models.",
+     "claim_ids": [
+      "MT057-C08-2",
+      "MT057-C09-2",
+      "MT057-C10-X1"
+     ]
+    },
+    {
+     "premise": "Practitioners' ad hoc, heavily optimised backtests converge on the same simple, medium-to-long-term rules with loose parameters that analytic derivation finds, which is evidence that the rules are not data-mined.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Paper's conclusion; Stark's out-of-sample application to futures (Sharpe ~1.2 over 20-30 years).",
+     "claim_ids": [
+      "MT057-C06-1",
+      "MT057-C06-2",
+      "MT057-C06-3",
+      "MT057-C10-1",
+      "MT057-C06-X2"
+     ]
+    },
+    {
+     "premise": "Under realistic semi-Markov dynamics MACD is the best rule (EMA under plain Markov), but analytic optimality is a support for the approach, not a savior for the process.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Paper's results as relayed.",
+     "claim_ids": [
+      "MT057-C09-3",
+      "MT057-C10-1",
+      "MT057-C11-X1"
+     ]
+    },
+    {
+     "premise": "Regime forecasts from such models are only reliable very short term (days to a week, analogous to 14-day weather forecasts) and decay quickly because uncertainty compounds.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Weather analogy and observation of ML methods; he is 'a tiny bit doubtful' about medium-long horizons.",
+     "claim_ids": [
+      "MT057-C10-3",
+      "MT057-C13-X1"
+     ]
+    },
+    {
+     "premise": "Costs are first-order for a CFD trader: spreads, slippage and swap (financing) costs can eliminate otherwise good markets or models; positive swap adds carry to trend.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own trading of cash CFDs.",
+     "claim_ids": [
+      "MT057-C03-3",
+      "MT057-C03-4",
+      "MT057-C03-5",
+      "MT057-C04-1",
+      "MT057-C03-X1"
+     ]
+    },
+    {
+     "premise": "AI will quickly take over short-term prediction, whereas CTAs hold an advantage in medium-to-long-term trends; mean reversion and HFT are more at risk.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Renaissance's capacity-driven results: short-horizon models win but cannot scale, the scalable trend equity fund was marginal.",
+     "claim_ids": [
+      "MT057-C11-1",
+      "MT057-C13-1",
+      "MT057-C13-2",
+      "MT057-C12-1"
+     ]
+    },
+    {
+     "premise": "A choppy, whipsaw market ('pogo stick') produces mixed success across assets and is a hard period for trend models.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own models in June 2024.",
+     "claim_ids": [
+      "MT057-C01-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "From regime model to optimal trend rule",
+     "steps": [
+      {
+       "from": "Prices show serial correlation across many lags",
+       "to": "Autoregressive description of persistence",
+       "why": "Prior prices at different lags influence current price.",
+       "claim_ids": [
+        "MT057-C09-2"
+       ]
+      },
+      {
+       "from": "Autoregression is mathematically equivalent to a Markov (probability landscape) model",
+       "to": "Moving-average, EMA, MACD and momentum rules can be optimised analytically",
+       "why": "Same problem seen from two angles; each rule has parameters tied to market-state observables (volatility, direction).",
+       "claim_ids": [
+        "MT057-C09-2",
+        "MT057-C09-R1",
+        "MT057-C06-X1"
+       ]
+      },
+      {
+       "from": "Plain Markov model",
+       "to": "EMA best",
+       "why": "Strict Markov jumps between states with fixed transition probabilities.",
+       "claim_ids": [
+        "MT057-C09-3",
+        "MT057-C08-2"
+       ]
+      },
+      {
+       "from": "Semi-Markov (transition probabilities depend on trend duration)",
+       "to": "MACD best, with practitioner-like parameters",
+       "why": "More realistic: trends wax and wane, ending becomes likelier with age.",
+       "claim_ids": [
+        "MT057-C09-1",
+        "MT057-C10-1"
+       ]
+      }
+     ],
+     "evidence": "The 2023 paper's derivation as relayed from Stark's review; Stark's out-of-sample test on futures (Sharpe ~1.2, 20-30 years).",
+     "fails_when": "Brennan notes the formulas are not a holy grail and forecast skill is confined to the short term; the paper is equity-derived and was ported to futures only by Stark.",
+     "claim_ids": [
+      "MT057-C06-3",
+      "MT057-C10-3",
+      "MT057-C11-X1"
+     ]
+    },
+    {
+     "topic": "Hidden Markov: using trend models as thermometers",
+     "steps": [
+      {
+       "from": "Trend model returns correlate with the market state",
+       "to": "Returns reveal the hidden market state",
+       "why": "Each model (long-only, short-only, mean reverting) behaves like a thermometer of the environment.",
+       "claim_ids": [
+        "MT057-C08-1"
+       ]
+      },
+      {
+       "from": "State inferred",
+       "to": "State-dependent weights per model and a short-term forecast of the next state",
+       "why": "Transition matrix plus state probabilities.",
+       "claim_ids": [
+        "MT057-C08-1",
+        "MT057-C07-1"
+       ]
+      },
+      {
+       "from": "Short-term regime forecast",
+       "to": "Dynamic adjustment reduces late entry and early exit",
+       "why": "Trend models normally enter late and exit early; a preview of the next regime could pre-empt this.",
+       "claim_ids": [
+        "MT057-C10-2"
+       ]
+      }
+     ],
+     "evidence": "Conceptual explanation; fitting needs the Baum-Welch algorithm (Renaissance origin); no performance numbers for this step.",
+     "fails_when": "Forecast decays quickly beyond days to a week.",
+     "claim_ids": [
+      "MT057-C08-1",
+      "MT057-C10-2",
+      "MT057-C10-3",
+      "MT057-C12-X1"
+     ]
+    },
+    {
+     "topic": "Why AI threatens short-term but not medium-long trend following",
+     "steps": [
+      {
+       "from": "AI and ML improve short-term (1 day to 1 week) prediction",
+       "to": "Short-term space becomes intensely competitive",
+       "why": "Medallion-type models operate at these horizons using many data sources.",
+       "claim_ids": [
+        "MT057-C11-1",
+        "MT057-C12-1"
+       ]
+      },
+      {
+       "from": "Short-term alpha has market-impact limits",
+       "to": "Scalable external money must use medium-to-long-term models, which did only marginally well",
+       "why": "Capacity forced Renaissance's external equity fund into trend models.",
+       "claim_ids": [
+        "MT057-C13-1"
+       ]
+      },
+      {
+       "from": "Uncertainty compounds over longer horizons",
+       "to": "AI edge confined to short term",
+       "why": "Brennan doubts forecasting skill at medium-to-long horizons.",
+       "claim_ids": [
+        "MT057-C13-X1",
+        "MT057-C13-2"
+       ]
+      }
+     ],
+     "evidence": "Anecdote from the Zuckerman book on Renaissance; analogy to weather prediction.",
+     "fails_when": "Not stated; he is 'quietly confident' not certain.",
+     "claim_ids": [
+      "MT057-C13-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Backtest first for suitability to trending markets, then re-import actual broker costs (spread, slippage, swap) and discard markets/models that become untradeable.",
+     "why": "Costs can destroy marginal markets.",
+     "claim_ids": [
+      "MT057-C04-1"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Risk a fixed dollar amount per trade (e.g., $500): stop at a multiple of 25-day ATR, contracts = risk / stop distance, so contract counts change as price and ATR change; large early counts are expected.",
+     "why": "Constant risk per trade is the consistency test, not constant position size.",
+     "claim_ids": [
+      "MT057-C04-2"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Monitor CFD swap costs on a dashboard; trend with positive swap earns carry on top, trend in assets with negative swap is expensive to hold; compare cash vs dated CFDs (cash gives more markets but daily financing).",
+     "why": "Holding costs materially reduce long-hold performance.",
+     "claim_ids": [
+      "MT057-C03-4",
+      "MT057-C03-5",
+      "MT057-C03-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Use an LLM to explain academic quant papers step by step to lay readers; treat analytic rules as quick to port to new markets and as lower data-mining risk.",
+     "why": "Lowers cost of quant research.",
+     "claim_ids": [
+      "MT057-C05-1",
+      "MT057-C06-X2"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Stay in medium-to-long-term trends and avoid the short-term space to avoid competing with AI.",
+     "why": "AI will make the short-term space more competitive.",
+     "claim_ids": [
+      "MT057-C11-1"
+     ]
+    }
+   ],
+   "evidence_style": "Mostly relays a paper and a YouTube review; supports claims by agreement with his own backtests and by anecdote (Renaissance). Uses his own backtest experience for sizing and costs.",
+   "current_views": [
+    {
+     "view": "Trend models are in a choppy, whipsaw period.",
+     "as_of": "2024-06-14",
+     "reasoning": "Mixed success across assets.",
+     "claim_ids": [
+      "MT057-C01-1"
+     ]
+    },
+    {
+     "view": "AI will not displace medium-to-long-term trend followers soon but will quickly dominate short-term prediction; he is unsure about mean reverters and HFT.",
+     "as_of": "2024-06",
+     "reasoning": "Short-term prediction is where AI advances; uncertainty grows with horizon.",
+     "claim_ids": [
+      "MT057-C11-1",
+      "MT057-C13-2",
+      "MT057-C13-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host, Top Traders Unplugged; veteran hedge fund manager/allocator",
+   "speaker_note": "Host statements of view are mapped; he says he has not read the paper. 'We' for his firm's dynamic parameter selection is his claim.",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "diversification_risk_parity",
+    "policy_reaction_central_banks",
+    "regime_detection",
+    "research_robustness_overfitting"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend following works only when diversified across many markets and sectors; single-market trend following does not work.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "'All the data shows' (no citation).",
+     "claim_ids": [
+      "MT057-C13-3"
+     ]
+    },
+    {
+     "premise": "Technology waves have repeatedly been predicted to end trend following, yet the core rules have worked for 50 years; AI is a helpful tool, not a revolution.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Firm and industry history.",
+     "claim_ids": [
+      "MT057-C11-3"
+     ]
+    },
+    {
+     "premise": "Analytically derived 'optimal' parameters cannot be a holy grail; if everyone had them the edge would not persist.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning about crowding; his firm already uses dynamic parameter selection.",
+     "claim_ids": [
+      "MT057-C11-X1",
+      "MT057-C11-2"
+     ]
+    },
+    {
+     "premise": "Rebalancing back into trend after drawdowns and while equities are at highs can be a good diversifying entry, since allocators sold trend after its 2022 win.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Observed allocator behaviour; no data.",
+     "claim_ids": [
+      "MT057-C02-3"
+     ]
+    },
+    {
+     "premise": "Inflation is sticky ('higher for longer'), and the Fed's next move might even be a hike.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Dot-plot shift from several cuts to one.",
+     "claim_ids": [
+      "MT057-C02-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Tracks a trend barometer (27 = weak) and CTA index returns as a read on trend environment.",
+     "why": "Weak barometer matches weak CTA returns.",
+     "claim_ids": [
+      "MT057-C03-1",
+      "MT057-C03-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Uses dynamic parameter selection; speculates the same methods could extend to optimal position sizing.",
+     "why": "Adapting parameters/sizing to regime.",
+     "claim_ids": [
+      "MT057-C11-2"
+     ]
+    }
+   ],
+   "evidence_style": "Industry data points (indices, barometer), long experience, and scepticism about unverified claims (e.g., Renaissance external fund).",
+   "current_views": [
+    {
+     "view": "Trend managers gave back about half of Q1 gains, broad-based across metals, fixed income and currencies; may be a good entry for allocators.",
+     "as_of": "2024-06-14",
+     "reasoning": "Drawdown with equities at highs gives a diversification case.",
+     "claim_ids": [
+      "MT057-C02-2",
+      "MT057-C02-3"
+     ]
+    },
+    {
+     "view": "Weak trend environment: barometer 27; SG CTA -2.16% in June and +7.15% YTD vs S&P 500 +14.65% YTD.",
+     "as_of": "2024-06-14",
+     "reasoning": "Reported index data.",
+     "claim_ids": [
+      "MT057-C03-1",
+      "MT057-C03-2"
+     ]
+    },
+    {
+     "view": "Fed path unclear: cuts reduced from several to maybe one; inflation higher for longer; a hike is not ruled out.",
+     "as_of": "2024-06-14",
+     "reasoning": "Dot plot shift.",
+     "claim_ids": [
+      "MT057-C02-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Whether Renaissance's external-fund results show medium-to-long-term quant methods work",
+   "positions": [
+    {
+     "speaker": "Rich Brennan",
+     "position": "External equity fund used medium-to-long-term trend models because capacity forced it; performance was marginal and he doubts such math works at long horizons.",
+     "claim_ids": [
+      "MT057-C13-1",
+      "MT057-C13-X1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Skeptical of the Medallion story: why could the same technology not beat benchmarks for external clients; cannot confirm they used trend following, and single-market trend following does not work anyway.",
+     "claim_ids": [
+      "MT057-C12-2",
+      "MT057-C13-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Are analytically optimal parameters a basis for adoption?",
+   "positions": [
+    {
+     "speaker": "Rich Brennan",
+     "position": "Gives 'mathematical rigor' and quick transfer to new markets, but not a savior.",
+     "claim_ids": [
+      "MT057-C10-X1",
+      "MT057-C06-X2",
+      "MT057-C11-X1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Cannot be a holy grail; if everyone could derive them the edge would not hold; already uses dynamic parameter selection.",
+     "claim_ids": [
+      "MT057-C11-X1",
+      "MT057-C11-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Brennan relays the paper from Stark's review and admits he does not fully convey the maths; the Sharpe 1.2 is Stark's test, with no costs or detail on rules and sample.",
+   "claim_ids": [
+    "MT057-C06-3",
+    "MT057-C06-2"
+   ]
+  },
+  {
+   "issue": "Claim that practitioner and analytic optima agree is asserted, not shown with parameter values.",
+   "claim_ids": [
+    "MT057-C06-2",
+    "MT057-C10-1"
+   ]
+  },
+  {
+   "issue": "Brennan says regime forecast helps reduce late entry but also says forecast power is limited to days; the practical benefit for medium/long-term rules is not quantified.",
+   "claim_ids": [
+    "MT057-C10-2",
+    "MT057-C10-3"
+   ]
+  },
+  {
+   "issue": "Niels questions the Medallion external fund story while Brennan states the fund 'underperformed' trend followers; neither cites data.",
+   "claim_ids": [
+    "MT057-C13-1",
+    "MT057-C12-2"
+   ]
+  },
+  {
+   "issue": "AI-resilience of trend following is argued by analogy and capacity, with no evidence beyond the horizon argument.",
+   "claim_ids": [
+    "MT057-C11-1",
+    "MT057-C13-2",
+    "MT057-C11-3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs named: the trend barometer and CTA index returns (trend-environment strength), Fed dot plot and inflation persistence, swap/financing rates by instrument, and (for the paper) trend duration and market-state probabilities. Horizon: regime forecasts days to a week; trend rules medium-to-long term.",
+ "reader_inferences": [
+  "(reader) The paper's value for allocators is as a robustness argument: analytic derivation and brute-force backtests agree, which reduces overfitting concern, but it does not add a signal.",
+  "(reader) Semi-Markov duration dependence (trends more likely to end the longer they last) could be tested as a state variable in the book.",
+  "(reader) The CFD swap discussion implies trend performance depends on the carry direction of each trade, linking carry and trend components."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT057-C09-R1",
+   "chunk": "C09",
+   "speaker": "Rich Brennan",
+   "quote": "the state of a market will be defined by many different observables the state of a market might be defined by the level of volatility in the market the price direction of that market up or down",
+   "claim": "Brennan explains that a market state in the paper is defined by multiple observables such as volatility level and price direction, and these observables are tied to the parameters of the trend models.",
+   "mechanism": "state_definition",
+   "asset_class": "multi",
+   "indicator": "volatility level, price direction",
+   "horizon": "unspecified",
+   "direction": "n/a",
+   "conditions": "Within the paper's regime-switching framework",
+   "testable": "yes: state variables are measurable",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

@@ -5,8 +5,8 @@ date: 2025-09-02
 channel: "Top Traders Unplugged"
 url: 
 words: 10320
-claims: 59
-added_by_crosscheck: 9
+claims: 61
+added_by_crosscheck: 11
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, hedge fund manager; transcribed Neils Krup Larson)", "Nick Bolters (co-host, quant researcher/QIS)"]
@@ -21,6 +21,104 @@ tags: [source, layer0]
 **Approach:** trend following, CTA benchmarks, carry, risk management, compounding
 
 **Cross-check completeness estimate of first read:** 0.88 - first reader caught all main arguments (speed vs structure, trend beta, compounding); missed August sector/speed details (FX, rates speed reversal), policy-announcement risk, CTA index numbers, trend signal as risk-scaling input and the expectations/benchmark-psychology points; one YTD comparison misstated
+
+## Argument map
+
+**Episode thesis:** Baltas argues that the popular claim 'CTAs have slowed' rests on correlation to the SG Trend Index, which cannot separate a change in signal speed from added structure (stop-losses, carry, reversion, new markets, risk management); and that the SG Trend Index is a manager-based, survivorship-shaped benchmark rather than a pure trend beta. The pair also relay the Convex idea that short-term risk mitigation (trend, long vol) improves long-horizon compounding and allows more equity.
+
+### Nick Baltas (transcribed Nick Bolters) (Co-host, quant researcher (QIS / systematic strategies))
+Fingerprint: #approach/trend_following #approach/research_robustness_overfitting #approach/portfolio_construction_stacking #approach/diversification_risk_parity #approach/position_sizing_vol_target #approach/replication_indexing #approach/crisis_alpha_convexity
+_Speaker note: Ledger name 'Nick Bolters' is a caption spelling of Nick Baltas, used in MT002 ledger. Attribution clear: two-person conversation, but the long speaker turns are not marked, so a few host/co-host splits are inferred from content._
+
+**Worldview premises**
+- A change in correlation to a trend benchmark is necessary but not sufficient evidence that the signal speed changed: stop-losses, carry, reversion, value signals, new markets or different risk estimation move correlation the same way. _[theoretical, stated; support: Logical argument with examples (momentum plus value, momentum investor vs value investor looking like a contrarian).]_ ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C04-3|C04-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C05-1|C05-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C05-2|C05-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C05-3|C05-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C06-2|C06-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C06-3|C06-3]])
+- The SG Trend Index is realised returns of real, evolving programs, not a simulation of today's algorithms, so speed-by-correlation inference on it is fragile. _[empirical, stated; support: Index construction; a paper maximising correlation to the index found a half-life of about 66 business days over 15 years, which is not slow.]_ ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C05-4|C05-4]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C06-4|C06-4]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C07-1|C07-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C06-R1|C06-R1]])
+- CTA model research mostly changes risk management (risk level, net/gross exposure, signal diversification) rather than signal speed, and the research direction is toward protecting the portfolio and anticipating falling signal-to-noise. _[experience, stated; support: Own continuous research and assumption about peers; he flags he could be wrong.]_ ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C06-1|C06-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C07-2|C07-2]])
+- Different trend signal forms (sign of past return, EWMA, crossover) are functional transformations of each other, so effort belongs in portfolio construction and risk management (Lasse Pedersen et al., AQR 2016). _[theoretical, stated; support: Cites an AQR paper.]_ ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C07-4|C07-4]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C07-X6|C07-X6]])
+- Trend following's value is defensiveness in prolonged equity or macro drawdowns plus long-term returns, with decorrelation visible over long horizons and around transition points, not locally; judge it against the investor's purpose. _[experience, stated; support: Reasoning and investor conversations; 2022 versus 2023-2025 expectations mismatch.]_ ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C08-1|C08-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C08-2|C08-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C08-3|C08-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C08-4|C08-4]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C08-X7|C08-X7]])
+- Trend already carries equity beta, so diversifiers such as beta-neutral carry or reversion should be added rather than more beta. _[theoretical, stated; support: Portfolio logic; beta-neutral carry did well in 2025.]_ ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C09-1|C09-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C03-5|C03-5]])
+- A manager-based index (SG Trend) is not a pure trend beta: survivorship, AUM and design choices mean it is beta plus or minus alpha and a higher bar than a simple trend beta. _[theoretical, stated; support: Index composition (10 largest managers); no visibility into construction admitted.]_ ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C09-3|C09-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C10-1|C10-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C10-2|C10-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C09-X8|C09-X8]])
+- Compounding investors need short-term risk mitigation: losses compound asymmetrically and the objective is long-horizon return with short-horizon risk control. _[theoretical, stated; support: Arithmetic of recovery, comparison to single-period mean-variance, rental-property carry analogy, solvency checkpoints, own Monte Carlo.]_ ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C13-2|C13-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C13-3|C13-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C13-4|C13-4]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C14-1|C14-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C14-2|C14-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C14-3|C14-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C14-4|C14-4]])
+
+**Chain: Why apparent CTA slowing may be structure, not speed**
+1. Rolling 1-2 year correlation of stylised fast-to-slow strategies with SG Trend Index rises for slow ones → claim: CTAs have slowed: Standard ex-post analysis ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C05-1|C05-1]])
+2. Managers add stop-losses, carry, reversion or value sleeves, new markets or different vol/covariance estimates → correlation to a pure-speed benchmark shifts the same way: These features interact with the trend signal's return stream ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C05-3|C05-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C06-2|C06-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C04-3|C04-3]])
+3. Index is of evolving real programs, not simulated rules → speed inference from correlation is questionable: Composition and design change through time ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C05-4|C05-4]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C10-2|C10-2]])
+4. Max-correlation half-life is about 66 business days over 15 years → 'slowed' story overstated: Not a slow speed ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C07-1|C07-1]])
+- Evidence: Logical examples and one cited paper (quant paper maximising correlation to SG Trend Index).
+- Fails when: The research shows a stable speed measure independent of construction.
+
+**Chain: Short-term risk mitigation lifts long-term compounding**
+1. Losses compound asymmetrically (10% loss needs about 11% gain) → short-term drawdowns reduce terminal and path wealth: Arithmetic returns ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C13-2|C13-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C14-1|C14-1]])
+2. Investor needs long-horizon return and short-horizon risk control (e.g. annual solvency) → strategies with downside mitigation (long vol, trend) are valued even with similar average arithmetic returns: Mean-variance single period misses horizon structure ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C13-3|C13-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C14-2|C14-2]])
+3. Monte Carlo of 12-52 period sequences → compounded return distribution shifted right for strategies with downside mitigation: Early small losses are recovered over the year ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C14-3|C14-3]])
+4. Assess hedge in portfolio context, like insurance → negative stand-alone expected return is acceptable: Pays when needed ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C14-4|C14-4]])
+- Evidence: Own Monte Carlo sampling (no figures given), analogy to carry harvesting and insurance.
+- Fails when: Long-vol or trend premia are too costly relative to the compounding benefit.
+
+**Decision process**
+- [research] Treat speed as one dimension; analyse design features (risk management, sleeves, markets) separately.. Why: Correlation cannot identify behaviour. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C06-1|C06-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C06-3|C06-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C07-2|C07-2]])
+- [portfolio] Add beta-neutral carry and reversion to a trend allocation rather than more beta.. Why: Diversify the periods when trend fails, as in 2025. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C09-1|C09-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C03-5|C03-5]])
+- [portfolio] Assess trend in portfolio context and set/monitor investor expectations on drawdowns.. Why: Allocators must justify drawdowns to stakeholders. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C08-3|C08-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C08-X7|C08-X7]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C14-4|C14-4]])
+- [signal] Use the trend signal also as a measure of trendiness to set relative risk across assets under dynamic risk scaling.. Why: Trend signal is a measure of how trendy a market is. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C07-X6|C07-X6]])
+
+**Evidence style:** Logical decomposition, stylised simulations and Monte Carlo; careful disclaimers about what the data can show.
+
+**Views at the time**
+- (2025-08-30) Slower trend beat faster in recent months and years because V-shaped reversals (April 2025, August 2024) punish fast signals.. Reasoning: V-shaped moves catch fast signals. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C03-2|C03-2]])
+- (2025-08-30) Gold was the top contributor across an 80+ market universe in 2025; rates had no trend.. Reasoning: Own program data. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C03-3|C03-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C03-4|C03-4]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C03-X3|C03-X3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C03-X4|C03-X4]])
+- (2025-08-30) Beta-neutral carry had one of its best years; CTAs with carry, stop-loss or reversion sleeves did better.. Reasoning: Own observation. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C03-5|C03-5]])
+- (2025-08-30) A better trend benchmark is a simple bottom-up academic-style model, as bank QIS trend indices already use; third-party aggregated QIS indices have survivorship bias; there is no agreed best allocation benchmark.. Reasoning: Reasoning about benchmark definition. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C11-1|C11-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C11-2|C11-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C11-3|C11-3]])
+
+### Niels Kaastrup-Larsen (Host (Top Traders Unplugged), hedge fund manager)
+Fingerprint: #approach/trend_following #approach/manager_selection_allocation #approach/crisis_alpha_convexity #approach/portfolio_construction_stacking #approach/fiscal_dominance #approach/regime_detection
+_Speaker note: Caption names 'Neils Krup Larson'; refers to his own firm as 'Don' in C05 (caption; firm name uncertain)._
+
+**Worldview premises**
+- Trend followers are not alike: replicators, core diversifiers, crisis risk offsetters, outlier hunters and pure trend followers serve different investor purposes. _[experience, stated; support: Podcast conversations.]_ ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C07-5|C07-5]])
+- A long-term signal with agile risk management can look like a short-term model; modern CTAs choose parameters dynamically, so speed buckets mislead. _[experience, stated; support: Own practice.]_ ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C05-5|C05-5]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C07-3|C07-3]])
+- SG Trend Index is the 10 biggest managers, shaped by AUM, survivorship and compromises; benchmark definition matters because investors are paid on outperformance. _[empirical, stated; support: Index knowledge.]_ ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C09-2|C09-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C10-3|C10-3]])
+- Portfolios built to look safe load up on correlated strategies that fall together; best brakes (long vol, trend) let the portfolio drive faster and permit higher equity allocation. _[theoretical, stated; support: Dave Dredge (Convex) letters; race-car analogy.]_ ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C12-1|C12-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C12-2|C12-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C12-3|C12-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C12-R1|C12-R1]])
+- Fiscal expansion raises bond issuance so fixed income will weigh more in portfolios, but it is not a safe source of real compounding. _[theoretical, stated; support: Macro reasoning.]_ ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C13-1|C13-1]])
+
+**Chain: Policy shocks can reverse trends**
+1. Sudden US policy announcements (copper tariff, Fed governance) → established trends reverse: Short-notice discontinuities ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C02-X2|C02-X2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C02-3|C02-3]])
+2. Trend followers lose on reversals → bad month despite good trend: Seen end-July 2025 ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C02-X2|C02-X2]])
+- Evidence: End-July 2025 copper news.
+- Fails when: Policy noise is absorbed by diversified trend books.
+
+**Decision process**
+- [research] Watch a trend barometer (short lookback) for the state of trendiness.. Why: Cross-check with CTA index performance. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C04-1|C04-1]])
+- [other] Track the SG Trend Indicator (signal-based) for daily pure-trend performance.. Why: Tracks well versus manager index. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C10-4|C10-4]])
+
+**Evidence style:** Observation of index data and conversation with guests; endorses others' frameworks (Convex).
+
+**Views at the time**
+- (2025-08-30) July 2025 looked like a turning point for CTAs; August continued with equity trends plus live cattle, gold, silver and short wheat; fixed income was the worst sector (range-bound, CTAs split).. Reasoning: Early numbers and daily fluctuations. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C02-X1|C02-X1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C02-1|C02-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C02-2|C02-2]])
+- (2025-08-30) Attempt to remove Fed governor Lisa Cook could give the administration about five of seven board seats, raising Fed-independence risk.. Reasoning: Board composition arithmetic. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C02-3|C02-3]])
+- (2025-08-30) Oil traded sideways with no follow-through.. Reasoning: Price action. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C03-1|C03-1]])
+- (2025-08-30) CTA indices were negative YTD through August 2025 (BTOP50 -3.29%, SG CTA -6.25%, SG Trend -7.39%, Short-term -6.29% YTD) while MSCI World +14.3% and S&P +11%; the short-term index was weakest on volatility-adjusted basis.. Reasoning: Index returns quoted; correction applied that the short-term index fell 1.25% in August while the Trend index rose almost 3%. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C04-X5|C04-X5]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C04-2|C04-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C04-1|C04-1]])
+- (2025-08-30) A rules-based non-manager trend index could probably be replicated.. Reasoning: Idea, relayed to replication guests. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C11-X9|C11-X9]])
+
+### Disagreements
+- **Is 'CTAs got slower' a speed change?**: Nick Baltas: Shifts in correlation do not prove speed change; may be structure. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C04-3|C04-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C05-2|C05-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C06-4|C06-4]]); Niels Kaastrup-Larsen: Long-term signals with agile risk management can look short-term; speed is dynamic. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C05-5|C05-5]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C07-3|C07-3]])
+- **What is a trend benchmark?**: Nick Baltas: Simple bottom-up academic-style model; SG Trend Index is beta plus alpha, higher bar. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C11-1|C11-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C10-1|C10-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C09-3|C09-3]]); Niels Kaastrup-Larsen: SG Trend Index is dominated by biggest managers; signal-based SG Trend Indicator tracks daily trend well. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C09-2|C09-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C10-4|C10-4]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C11-X9|C11-X9]])
+
+### Gaps and conflicts
+- Nick states he has no specific proof of the structure-not-speed claim and may be wrong; no quantified test is presented. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C04-3|C04-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C05-2|C05-2]])
+- The Monte Carlo result is described only qualitatively (no figures, no strategy parameters). ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C14-3|C14-3]])
+- Nick says he has no visibility into SG Trend Index construction beyond 'average return of the largest managers'. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C09-3|C09-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C10-2|C10-2]])
+- The index speed claim from one paper (66 days) is relayed from memory. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C07-1|C07-1]])
+- Host's index statistics: ledger correction shows trend index was worse YTD than short-term index; 'by far the worst' only on volatility-adjusted basis. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C04-2|C04-2]])
+- Host's Fed-governor board-seat claim is stated loosely. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C02-3|C02-3]])
+- Dredge's argument is relayed second-hand; no data in this conversation. ([[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C12-1|C12-1]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C12-2|C12-2]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C12-3|C12-3]], [[MT131 - Redefining Trend Following - Systematic Investor - Ep.363#^MT131-C13-1|C13-1]])
+
+### Forward-looking inputs (reader synthesis)
+Index levels (trend barometer 34), sector trend persistence, V-shaped reversals, carry returns; horizon months. Policy/fiscal inputs: bond issuance, Fed independence.
+
+### Reader inferences (not stated by the speakers)
+- Both speakers rely on tools like correlation to a benchmark and caution against them; the useful operational lesson is to separate speed from risk management when classifying managers.
+- Little is directional for markets; the August 2025 market discussion is descriptive.
 
 ## Coverage
 
@@ -154,6 +252,10 @@ tags: [source, layer0]
   > if we use exponential weighted moving average with the same look back window the story might be slightly different
   asset: multi · testable: yes - vary construction · confidence: medium
   ^MT131-C06-4
+- **Nick Baltas** Baltas says he could construct bottom-up variants showing the SG Trend Index became faster, not slower, so the 'CTAs slowed' conclusion depends on construction choices.  #mech/new _(added by map cross-check)_
+  > I can produce variations of strategy that actually show that the socks and trend index has become faster not slower
+  indicator: SG Trend Index correlation to stylised speed strategies · asset: futures · direction: Speed conclusions are not robust · horizon: years · conditions: depends on markets, signal calculation (EWMA vs lookback) · testable: yes - rerun rolling-correlation speed analysis with alternative constructions · confidence: medium
+  ^MT131-C06-R1
 
 ### C07
 - **Nick Bolters** A paper maximising correlation to SG Trend Index found a best-fit half-life of about 66 business days over 15 years, which is not slow, so the 'CTAs have slowed' story is overstated.  #mech/research_method
@@ -270,6 +372,10 @@ tags: [source, layer0]
   > it actually allows you to own more equities. Um so you could have an 80/20 portfolio
   asset: multi · direction: more equities when hedged with trend/long vol · horizon: years · testable: yes - portfolio simulation · confidence: medium
   ^MT131-C12-3
+- **Niels Kaastrup-Larsen** The host frames the Convex compounding discussion around GIC's recently published long-term return review, to see whether institutions adopt the idea of building portfolios for compounding.  #mech/new _(added by map cross-check, time-bound view)_
+  > the starting point of this is from a uh report that came out recently from one of the sovereign wealth funds uh in Singapore GIC
+  asset: multi · horizon: years · conditions: institutional portfolios tend to target long-term average return · testable: no · confidence: medium
+  ^MT131-C12-R1
 
 ### C13
 - **Niels Kaastrup-Larsen** Fiscal expansion means rising bond issuance, so portfolios will hold more fixed income, which is not a safe source of long-term real compounding.  #mech/fiscal_debt _(time-bound view)_

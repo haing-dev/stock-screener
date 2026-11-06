@@ -1,0 +1,1220 @@
+{
+ "source_id": "MT155",
+ "episode_thesis": "Nine systematic managers at year-end 2024 debate: uncertainty vs risk (trend and positive convexity as the answer), a crypto/meme bubble, whether CTA replication is established, why alternatives adoption stays low (no economic narrative; multi-strat dominance), and the dollar (cyclically positive, structurally overvalued) with trend signals long US equities, long dollar, short bonds. Outrageous 2025 predictions close the show.",
+ "speakers": [
+  {
+   "name": "Katy Kaminski",
+   "role": "Trend follower/quant manager (AlphaSimplex); runs a replication-style ETF product too",
+   "speaker_note": "Panel of nine with no on-screen labels; ledger names used. 'Katie/Katy' spelling variants in captions.",
+   "fingerprint": [
+    "trend_following",
+    "crisis_alpha_convexity",
+    "regime_detection",
+    "diversification_risk_parity",
+    "macro_fundamental_topdown",
+    "replication_indexing"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Much of life is unknowable uncertainty, not countable risk; abundant data creates an illusion of risk, which is why quants overrate models.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reflection on data and past years",
+     "claim_ids": [
+      "MT155-C03-1",
+      "MT155-C03-X3"
+     ]
+    },
+    {
+     "premise": "Simple robust trend rules work because they move with what is happening rather than predicting.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "First principles",
+     "claim_ids": [
+      "MT155-C03-1"
+     ]
+    },
+    {
+     "premise": "Classic trend following diversifies across parameter sets, markets and strategies to capture crisis alpha; replication is one of many access points.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Practitioner",
+     "claim_ids": [
+      "MT155-C07-2",
+      "MT155-C07-3"
+     ]
+    },
+    {
+     "premise": "Many investors lack tail protection and uncorrelated diversifiers, so wider access to CTA exposure is valuable.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation of investors",
+     "claim_ids": [
+      "MT155-C07-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Dollar trend and what could end it",
+     "steps": [
+      {
+       "from": "pro-growth outlook and cautious Fed",
+       "to": "strong V-shaped dollar rally",
+       "why": "dollar = sentiment + policy + US growth",
+       "claim_ids": [
+        "MT155-C15-3"
+       ]
+      },
+      {
+       "from": "inflation, policy, deficits",
+       "to": "more disruptive correlations and wider macro outcomes",
+       "why": "uncertain direction",
+       "claim_ids": [
+        "MT155-C15-4"
+       ]
+      }
+     ],
+     "evidence": "Trend signals Dec 2024",
+     "fails_when": "Longer-term unclear",
+     "claim_ids": [
+      "MT155-C15-3",
+      "MT155-C15-4"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Trend signals as of Dec 2024: long US equities, short fixed income, long dollar in size.",
+     "why": "Systematic positioning",
+     "claim_ids": [
+      "MT155-C15-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Diversify across parameter sets, markets and strategies.",
+     "why": "Crisis alpha",
+     "claim_ids": [
+      "MT155-C07-3"
+     ]
+    }
+   ],
+   "evidence_style": "Practitioner reasoning, own signals.",
+   "current_views": [
+    {
+     "view": "Trend signals long US equities, short bonds, long dollar after V-shaped move; the question is how long it lasts.",
+     "as_of": "2024-12-04",
+     "reasoning": "Trend model state",
+     "claim_ids": [
+      "MT155-C15-2"
+     ]
+    },
+    {
+     "view": "The dollar trend may continue short-term; long-run unclear.",
+     "as_of": "2024-12-04",
+     "reasoning": "Pro-growth outlook, cautious Fed",
+     "claim_ids": [
+      "MT155-C15-3"
+     ]
+    },
+    {
+     "view": "Wider range of macro outcomes likely (inflation, policy, deficits).",
+     "as_of": "2024-12-04",
+     "reasoning": "Correlations could be more disruptive",
+     "claim_ids": [
+      "MT155-C15-4"
+     ]
+    },
+    {
+     "view": "Yield curve may steepen (2024 prediction that held).",
+     "as_of": "2024-12-04",
+     "reasoning": "Prediction round",
+     "claim_ids": [
+      "MT155-C16-4"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Jim Kasang",
+   "role": "Macro strategist and market maker (options-flow); runs a multi-strategy derivatives book",
+   "speaker_note": "Caption spelling; speaks about 'our podcast' and 'we run a multi strategy'.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "volatility_options",
+    "liquidity_flows",
+    "debt_cycle_long_term",
+    "structural_themes",
+    "diversification_risk_parity",
+    "dealer_hedging_flows"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Think in broad distributions across every vector, shifted for known structural pressures, rather than predicting events; this is a real edge.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Market-making practice",
+     "claim_ids": [
+      "MT155-C03-2"
+     ]
+    },
+    {
+     "premise": "Generational disaffection from inequality (a Fed policy effect) drives disruption and populist change as in the 1960s-70s.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical analogy",
+     "claim_ids": [
+      "MT155-C06-1"
+     ]
+    },
+    {
+     "premise": "After 40 years of falling rates, rising rates cut expected returns on bonds and stocks, so true alternatives are needed; PE, VC and real estate are equity/duration beta.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Global macro view and market sizing ($350tn of $450tn in bonds/equities)",
+     "claim_ids": [
+      "MT155-C10-1",
+      "MT155-C10-2",
+      "MT155-C10-X1"
+     ]
+    },
+    {
+     "premise": "Derivatives entered investing in the 1960s-70s because higher rates made their capital efficiency and non-correlation attractive.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "History",
+     "claim_ids": [
+      "MT155-C10-X2"
+     ]
+    },
+    {
+     "premise": "Multi-strat returns come from capital efficiency of derivatives (free leverage on diversified edge) and rise with rates; it is not magic.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Own multi-strat",
+     "claim_ids": [
+      "MT155-C12-1"
+     ]
+    },
+    {
+     "premise": "US outperformance vs rest of world is historically large; its normalisation (dollar, Fed) is a big trade.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observed dislocation",
+     "claim_ids": [
+      "MT155-C14-3"
+     ]
+    },
+    {
+     "premise": "Social media is the best way to reach outside one's network; algorithms push users into channels and toxicity.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own experience",
+     "claim_ids": [
+      "MT155-C02-X2",
+      "MT155-C03-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Higher rates to demand for non-correlated alternatives",
+     "steps": [
+      {
+       "from": "rates stop falling",
+       "to": "lower expected return for stocks and bonds, higher risk",
+       "why": "40-year decline ends",
+       "claim_ids": [
+        "MT155-C10-1"
+       ]
+      },
+      {
+       "from": "need for true alternatives",
+       "to": "flows into structured products and option/managed-futures ETFs",
+       "why": "products doubling, ETFs 7x",
+       "claim_ids": [
+        "MT155-C10-3"
+       ]
+      },
+      {
+       "from": "higher rates raise value of free leverage",
+       "to": "multi-strat succeeds",
+       "why": "capital efficiency of derivatives",
+       "claim_ids": [
+        "MT155-C12-1"
+       ]
+      }
+     ],
+     "evidence": "Product issuance growth, historical analogy",
+     "fails_when": "Rates falling again",
+     "claim_ids": [
+      "MT155-C10-1",
+      "MT155-C10-3",
+      "MT155-C12-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Shift broad distributions for known structural pressure, without bias.",
+     "why": "Method for macro forecasting",
+     "claim_ids": [
+      "MT155-C03-2"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Allocate a fraction of capital to each strategy and leverage for free.",
+     "why": "Multi-strat design",
+     "claim_ids": [
+      "MT155-C12-1"
+     ]
+    }
+   ],
+   "evidence_style": "First-principles macro, market-structure, historical analogy.",
+   "current_views": [
+    {
+     "view": "Compromise between Trump and China (like Nixon) revives Chinese assets in 2025; a big trade few see.",
+     "as_of": "2024-12-04",
+     "reasoning": "Prediction",
+     "claim_ids": [
+      "MT155-C17-1"
+     ]
+    },
+    {
+     "view": "Early innings of adoption of non-correlated investments as 60/40 loses appeal.",
+     "as_of": "2024-12-04",
+     "reasoning": "Flow growth",
+     "claim_ids": [
+      "MT155-C10-3"
+     ]
+    },
+    {
+     "view": "Disruption from generational frustration persists for a generation; expect more.",
+     "as_of": "2024-12-04",
+     "reasoning": "Cycle",
+     "claim_ids": [
+      "MT155-C06-1"
+     ]
+    },
+    {
+     "view": "Rising rates favour multi-strats and derivatives-based alternatives.",
+     "as_of": "2024-12-04",
+     "reasoning": "Free leverage",
+     "claim_ids": [
+      "MT155-C12-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Rob Carver",
+   "role": "Systematic trader, author and blogger",
+   "speaker_note": "Panel voice; ledger names are used (caption spelling 'Rob Cava').",
+   "fingerprint": [
+    "trend_following",
+    "replication_indexing",
+    "behavioral_sentiment",
+    "research_robustness_overfitting",
+    "costs_execution"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Crypto/meme frenzy (MicroStrategy premium, levered Bitcoin ETFs, 1%-float billion-dollar coins) looks like a late-stage speculative bubble.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Anecdotes; has seen several bubbles",
+     "claim_ids": [
+      "MT155-C04-3"
+     ]
+    },
+    {
+     "premise": "Crypto/meme enthusiasm is tied to the political cycle and Trump-supporter buyers (Musk/Tesla at centre).",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Anecdote",
+     "claim_ids": [
+      "MT155-C04-X2"
+     ]
+    },
+    {
+     "premise": "Bottom-up replication is better than top-down; what the world needs is cheap, basic CTA exposure for ordinary people, scarce in Europe.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own blog post",
+     "claim_ids": [
+      "MT155-C06-3",
+      "MT155-C07-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "other",
+     "practice": "Prefers bottom-up replication wrappers (ETFs) for cheap access.",
+     "why": "Cost and accessibility",
+     "claim_ids": [
+      "MT155-C06-3"
+     ]
+    }
+   ],
+   "evidence_style": "Anecdote and blog analysis.",
+   "current_views": [
+    {
+     "view": "Bitcoin to 200,000 in 2025, and he hopes he is wrong.",
+     "as_of": "2024-12-04",
+     "reasoning": "Bubble keeps inflating",
+     "claim_ids": [
+      "MT155-C17-3"
+     ]
+    },
+    {
+     "view": "Possibly the peak of the crypto/meme bubble; asks if it will pop.",
+     "as_of": "2024-12-04",
+     "reasoning": "Political overlay",
+     "claim_ids": [
+      "MT155-C04-X2"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Mark Rzepczynski",
+   "role": "Strategist/academic (Knightian risk and uncertainty)",
+   "speaker_note": "Caption spelling; named 'Mark rinsky' in intro.",
+   "fingerprint": [
+    "research_robustness_overfitting",
+    "regime_detection",
+    "behavioral_sentiment",
+    "manager_selection_allocation",
+    "portfolio_construction_stacking"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Risk is countable; uncertainty is subjective and not countable; the open modelling question is how to decompose and incorporate both.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Frank Knight framing",
+     "claim_ids": [
+      "MT155-C03-X2"
+     ]
+    },
+    {
+     "premise": "Multi-strats are convergence strategies (low vol, high alpha, levered) while trend followers are divergence strategies; competing worldviews.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Conceptual contrast",
+     "claim_ids": [
+      "MT155-C11-3"
+     ]
+    },
+    {
+     "premise": "Forecasters have a negativity bias, so crisis calls are over-predicted; an optimistic baseline is reasonable.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Book by BCG chief economist",
+     "claim_ids": [
+      "MT155-C17-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Question how to separate risk and uncertainty in model building.",
+     "why": "Open problem",
+     "claim_ids": [
+      "MT155-C03-X2"
+     ]
+    }
+   ],
+   "evidence_style": "Conceptual framing, a book.",
+   "current_views": [
+    {
+     "view": "Optimistic 2025: no crisis, a positive world for at least 12 months.",
+     "as_of": "2024-12-04",
+     "reasoning": "Negativity bias in forecasts",
+     "claim_ids": [
+      "MT155-C17-4"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Rich Brennan",
+   "role": "Trend follower; opened the social-media discussion",
+   "speaker_note": "Panel voice.",
+   "fingerprint": [
+    "trend_following",
+    "crisis_alpha_convexity",
+    "research_robustness_overfitting",
+    "replication_indexing"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "In chaotic tail regions uncertainty cannot be quantified and must be met with positive convexity; models that ignore uncertainty come undone.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Backtests cannot reveal uncertainty events",
+     "claim_ids": [
+      "MT155-C04-1",
+      "MT155-C04-X1"
+     ]
+    },
+    {
+     "premise": "Replication lacks a long enough track record across regimes to judge replication risk.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Track record argument",
+     "claim_ids": [
+      "MT155-C07-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "risk",
+     "practice": "Address uncertainty through positive convexity.",
+     "why": "Tail events come from left field",
+     "claim_ids": [
+      "MT155-C04-1",
+      "MT155-C04-X1"
+     ]
+    }
+   ],
+   "evidence_style": "Tail reasoning; track record.",
+   "current_views": [
+    {
+     "view": "Not a big fan of replication yet; wants more data and regimes.",
+     "as_of": "2024-12-04",
+     "reasoning": "Insufficient track record",
+     "claim_ids": [
+      "MT155-C07-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Alan Dunn",
+   "role": "Co-host of the Systematic Investor series",
+   "speaker_note": "Panel co-host; spoke about replication as an observer and the dollar as a macro commentator.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "policy_reaction_central_banks",
+    "replication_indexing",
+    "manager_selection_allocation",
+    "portfolio_construction_stacking"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Replication was expected to be too slow and not trade enough markets, but has performed reasonably and is now established.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation of track record",
+     "claim_ids": [
+      "MT155-C06-2"
+     ]
+    },
+    {
+     "premise": "Five years brings large changes in the industry: return stacking, QIS and replication moved from sceptical to mainstream; multi-strats dominate the hedge fund industry.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Industry history",
+     "claim_ids": [
+      "MT155-C10-4"
+     ]
+    },
+    {
+     "premise": "Institutions favour multi-strats for steady ~8% returns, which conflicts with the demand for diversifying alternatives.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Conference observation",
+     "claim_ids": [
+      "MT155-C11-1"
+     ]
+    },
+    {
+     "premise": "Alternatives adoption comes in vehicle-specific waves (mutual-fund liquid alts then ETFs).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "History",
+     "claim_ids": [
+      "MT155-C10-X3"
+     ]
+    },
+    {
+     "premise": "Dollar: cyclically positive; structurally overvalued with a funding/reserve-status dilemma.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Macro reasoning",
+     "claim_ids": [
+      "MT155-C16-1",
+      "MT155-C16-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Cyclical dollar strength vs structural overvaluation",
+     "steps": [
+      {
+       "from": "animal spirits under Trump 2.0",
+       "to": "Fed may need to raise rates while Europe cuts",
+       "why": "cyclical dollar positive",
+       "claim_ids": [
+        "MT155-C16-1",
+        "MT155-C16-X1"
+       ]
+      },
+      {
+       "from": "weaker dollar to rebalance trade",
+       "to": "who funds the deficit; reserve status questioned",
+       "why": "managed decline hard",
+       "claim_ids": [
+        "MT155-C16-2"
+       ]
+      },
+      {
+       "from": "dollar overshoot",
+       "to": "Plaza-type accord possible",
+       "why": "1985 precedent, needs coordination",
+       "claim_ids": [
+        "MT155-C16-3"
+       ]
+      }
+     ],
+     "evidence": "1985 Plaza",
+     "fails_when": "Coordination fails",
+     "claim_ids": [
+      "MT155-C16-1",
+      "MT155-C16-2",
+      "MT155-C16-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Allocators should raise managed-futures weight over five years.",
+     "why": "Perception improved after 2021-22",
+     "claim_ids": [
+      "MT155-C11-2"
+     ]
+    }
+   ],
+   "evidence_style": "Industry history and macro reasoning.",
+   "current_views": [
+    {
+     "view": "Optimistic on managed futures becoming more embedded over 5 years; are we at peak multi-strat?",
+     "as_of": "2024-12-04",
+     "reasoning": "Perception shift and crowding risk",
+     "claim_ids": [
+      "MT155-C11-2",
+      "MT155-C11-X1"
+     ]
+    },
+    {
+     "view": "Dollar cyclical positive; structural overvaluation.",
+     "as_of": "2024-12-04",
+     "reasoning": "See chain",
+     "claim_ids": [
+      "MT155-C16-1",
+      "MT155-C16-2"
+     ]
+    },
+    {
+     "view": "SG will launch an index of CTA replicators within 12 months (tongue-in-cheek).",
+     "as_of": "2024-12-04",
+     "reasoning": "Prediction",
+     "claim_ids": [
+      "MT155-C17-R1"
+     ]
+    },
+    {
+     "view": "Sentiment swung from recession alert in August 2024 to Trump 2.0 animal spirits.",
+     "as_of": "2024-12-04",
+     "reasoning": "Cycle",
+     "claim_ids": [
+      "MT155-C16-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Nick Baltas",
+   "role": "Quant working on cross-asset risk premia and customised wrappers (bank)",
+   "speaker_note": "Panel voice; ledger gives Nick Baltas.",
+   "fingerprint": [
+    "replication_indexing",
+    "portfolio_construction_stacking",
+    "research_robustness_overfitting",
+    "manager_selection_allocation",
+    "diversification_risk_parity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Risk is vol, correlation and estimation error; uncertainty is the higher-order remainder, so build portfolios to allow for the unseen.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Quant framing",
+     "claim_ids": [
+      "MT155-C04-2"
+     ]
+    },
+    {
+     "premise": "A replicator can only match underlying CTAs; if managers change profile the replicator follows, an existential risk.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Logic of replication",
+     "claim_ids": [
+      "MT155-C08-2"
+     ]
+    },
+    {
+     "premise": "Cross-asset risk premia and multi-strat came back because investors needed diversifying returns when stagflation left conventional markets without return.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observed demand",
+     "claim_ids": [
+      "MT155-C12-2"
+     ]
+    },
+    {
+     "premise": "As appetite for alternatives grows, 'alternative' is just a tag for something historically outside the core.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning",
+     "claim_ids": [
+      "MT155-C12-X2"
+     ]
+    },
+    {
+     "premise": "Investors increasingly allocate to defined objectives (yield enhancement, flash-correction defence, longer-correction defence) as markets and wrappers multiply.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own business",
+     "claim_ids": [
+      "MT155-C12-X3"
+     ]
+    },
+    {
+     "premise": "Adoption is limited because investors lack an economic reason that trend should work, not by statistics.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Borrowed from Beer",
+     "claim_ids": [
+      "MT155-C12-3",
+      "MT155-C13-2",
+      "MT155-C12-R1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "other",
+     "practice": "Build solutions around defined objectives rather than a generic alternatives bucket.",
+     "why": "Specific outcome focus",
+     "claim_ids": [
+      "MT155-C12-X3"
+     ]
+    }
+   ],
+   "evidence_style": "Practitioner experience.",
+   "current_views": [
+    {
+     "view": "Barclay CTA AUM near $350bn for ~14 years: adoption flat despite evidence.",
+     "as_of": "2024-12-04",
+     "reasoning": "Industry data",
+     "claim_ids": [
+      "MT155-C12-3"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Andrew Beer",
+   "role": "Replication/ETF manager (managed futures replication)",
+   "speaker_note": "Ledger name; speaks as a replicator and allocator-whisperer.",
+   "fingerprint": [
+    "replication_indexing",
+    "manager_selection_allocation",
+    "portfolio_construction_stacking",
+    "behavioral_sentiment",
+    "structural_themes"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Intrinsic value matters less in the speculative environment; value investors are disoriented by meme and crypto valuation.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own experience as value investor",
+     "claim_ids": [
+      "MT155-C05-1"
+     ]
+    },
+    {
+     "premise": "A pro-business administration of self-made entrepreneurs revives animal spirits after years of conservatism since the GFC.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Anecdote of small-fund fundraising in the 2000s vs 2010s",
+     "claim_ids": [
+      "MT155-C05-2",
+      "MT155-C05-X1"
+     ]
+    },
+    {
+     "premise": "Managed futures is uncorrelated with stocks and bonds, matters now that stock-bond correlation is positive, does best when needed, with no gates or lock-ups.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Product features",
+     "claim_ids": [
+      "MT155-C09-1",
+      "MT155-C09-X1"
+     ]
+    },
+    {
+     "premise": "Managed futures is underinvested: ~5% of ~8% hedge fund allocation (~50bp).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Typical institutional portfolio",
+     "claim_ids": [
+      "MT155-C09-2"
+     ]
+    },
+    {
+     "premise": "Multi-strats are a new business model (operator and capital allocator at scale), unlike funds of funds, so the 180th pod need not be worse.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Amazon analogy",
+     "claim_ids": [
+      "MT155-C11-4",
+      "MT155-C12-X1"
+     ]
+    },
+    {
+     "premise": "Allocators trained to seek information alpha and mispricing are disappointed by managed futures, which earns by following movements.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Own low hit rate",
+     "claim_ids": [
+      "MT155-C13-3",
+      "MT155-C14-1"
+     ]
+    },
+    {
+     "premise": "Investor preference functions are heterogeneous, driving product proliferation; large managers become portfolio consultants.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Industry observation",
+     "claim_ids": [
+      "MT155-C09-X2",
+      "MT155-C09-X3"
+     ]
+    },
+    {
+     "premise": "Adoption stalls at advisors; the loyal statistically minded pool is finite.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation",
+     "claim_ids": [
+      "MT155-C14-X1"
+     ]
+    },
+    {
+     "premise": "Social media works by consistent philosophy so aligned investors self-select.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own experience",
+     "claim_ids": [
+      "MT155-C02-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why adoption is low despite statistical case",
+     "steps": [
+      {
+       "from": "training to look for information-based alpha",
+       "to": "managed futures seems unexplained",
+       "why": "earns from movement",
+       "claim_ids": [
+        "MT155-C13-3"
+       ]
+      },
+      {
+       "from": "no narrative for why it belongs",
+       "to": "committees and advisors cannot justify 3-5%",
+       "why": "finite loyal pool",
+       "claim_ids": [
+        "MT155-C14-1",
+        "MT155-C14-X1"
+       ]
+      }
+     ],
+     "evidence": "Experience with a low hit rate",
+     "fails_when": "If a narrative is found",
+     "claim_ids": [
+      "MT155-C13-3",
+      "MT155-C14-1",
+      "MT155-C14-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Add managed futures as a low-correlation diversifier; no gates.",
+     "why": "Positive stock-bond correlation raises its value",
+     "claim_ids": [
+      "MT155-C09-1"
+     ]
+    }
+   ],
+   "evidence_style": "Anecdote, product experience, industry reasoning.",
+   "current_views": [
+    {
+     "view": "Resurgence of animal spirits and risk-taking after the election.",
+     "as_of": "2024-12-04",
+     "reasoning": "Entrepreneur administration",
+     "claim_ids": [
+      "MT155-C05-2"
+     ]
+    },
+    {
+     "view": "Administration may tackle entitlements and the structural deficit, giving a different rate outcome (lower term premium).",
+     "as_of": "2024-12-04",
+     "reasoning": "Prediction",
+     "claim_ids": [
+      "MT155-C17-2"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of the panel",
+   "speaker_note": "Hosts the panel and adds opinions on replication and prediction.",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "replication_indexing",
+    "geopolitics",
+    "behavioral_sentiment"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A replicator can infer trend exposure from manager performance data rather than price data.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning",
+     "claim_ids": [
+      "MT155-C08-1"
+     ]
+    },
+    {
+     "premise": "Pressure to deliver CTA exposure ever cheaper squeezes research-intensive managers' economics.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Concern",
+     "claim_ids": [
+      "MT155-C08-X1"
+     ]
+    },
+    {
+     "premise": "Barclay-type CTA AUM is distorted by Bridgewater; some CTA-like assets sit outside databases.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Database knowledge",
+     "claim_ids": [
+      "MT155-C13-1"
+     ]
+    },
+    {
+     "premise": "Knowing when a market will move is more profitable than knowing why.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Reasoning",
+     "claim_ids": [
+      "MT155-C14-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "other",
+     "practice": "Prefers timing (when) over narrative (why).",
+     "why": "Profit orientation",
+     "claim_ids": [
+      "MT155-C14-2"
+     ]
+    }
+   ],
+   "evidence_style": "Experience and industry reasoning.",
+   "current_views": [
+    {
+     "view": "BRICS de-dollarisation is widely discussed but may have no effect for now.",
+     "as_of": "2024-12-04",
+     "reasoning": "Reserve role persistence",
+     "claim_ids": [
+      "MT155-C15-1"
+     ]
+    },
+    {
+     "view": "Outrageous: AI-driven layoff recession sends the 10-year to 1% (not really believed).",
+     "as_of": "2024-12-04",
+     "reasoning": "Prediction",
+     "claim_ids": [
+      "MT155-C18-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Is replication a viable way to access CTA returns",
+   "positions": [
+    {
+     "speaker": "Alan Dunn",
+     "position": "Replication has performed reasonably and is established.",
+     "claim_ids": [
+      "MT155-C06-2"
+     ]
+    },
+    {
+     "speaker": "Rich Brennan",
+     "position": "Lacks a track record across regimes; replication risk.",
+     "claim_ids": [
+      "MT155-C07-1"
+     ]
+    },
+    {
+     "speaker": "Nick Baltas",
+     "position": "Replicator only matches underlying CTAs; existential risk if managers reverse.",
+     "claim_ids": [
+      "MT155-C08-2"
+     ]
+    },
+    {
+     "speaker": "Katy Kaminski",
+     "position": "One of many access points; slower but gives generalized exposure.",
+     "claim_ids": [
+      "MT155-C07-2"
+     ]
+    },
+    {
+     "speaker": "Rob Carver",
+     "position": "Bottom-up is better; cheap CTA exposure matters.",
+     "claim_ids": [
+      "MT155-C06-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Nature of multi-strat success",
+   "positions": [
+    {
+     "speaker": "Andrew Beer",
+     "position": "A new operator-plus-allocator business model; defied expectations.",
+     "claim_ids": [
+      "MT155-C11-4"
+     ]
+    },
+    {
+     "speaker": "Jim Kasang",
+     "position": "Not magic: capital efficiency of derivatives and free leverage.",
+     "claim_ids": [
+      "MT155-C12-1"
+     ]
+    },
+    {
+     "speaker": "Mark Rzepczynski",
+     "position": "Convergence strategies, ultimately competing with divergent trend followers.",
+     "claim_ids": [
+      "MT155-C11-3"
+     ]
+    },
+    {
+     "speaker": "Alan Dunn",
+     "position": "Institutional demand for steady 8% conflicts with demand for diversifying alternatives; peak multi-strat is an open question.",
+     "claim_ids": [
+      "MT155-C11-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Why alternatives adoption is low",
+   "positions": [
+    {
+     "speaker": "Nick Baltas",
+     "position": "Investors lack economic conviction; Barclay CTA AUM flat near $350bn.",
+     "claim_ids": [
+      "MT155-C13-2",
+      "MT155-C12-3"
+     ]
+    },
+    {
+     "speaker": "Andrew Beer",
+     "position": "Allocators trained for information alpha; need a narrative; advisors cannot justify 3-5%.",
+     "claim_ids": [
+      "MT155-C13-3",
+      "MT155-C14-1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Knowing when beats knowing why; the index is distorted by Bridgewater.",
+     "claim_ids": [
+      "MT155-C14-2",
+      "MT155-C13-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "What are real alternatives",
+   "positions": [
+    {
+     "speaker": "Jim Kasang",
+     "position": "Only non-correlated derivative strategies; PE, VC and real estate are not alternatives.",
+     "claim_ids": [
+      "MT155-C10-2"
+     ]
+    },
+    {
+     "speaker": "Nick Baltas",
+     "position": "'Alternative' is just a tag for something historically outside the core, losing meaning as it crowds.",
+     "claim_ids": [
+      "MT155-C12-X2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Dollar outlook",
+   "positions": [
+    {
+     "speaker": "Alan Dunn",
+     "position": "Cyclically positive, structurally overvalued; Plaza-type accord possible.",
+     "claim_ids": [
+      "MT155-C16-1",
+      "MT155-C16-2",
+      "MT155-C16-3"
+     ]
+    },
+    {
+     "speaker": "Katy Kaminski",
+     "position": "Trend long dollar; continuation short-term, unclear long-run.",
+     "claim_ids": [
+      "MT155-C15-2",
+      "MT155-C15-3"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "De-dollarisation talk may have no effect for now.",
+     "claim_ids": [
+      "MT155-C15-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Panel statements about replication performance ('reasonably good') are given without numbers.",
+   "claim_ids": [
+    "MT155-C06-2"
+   ]
+  },
+  {
+   "issue": "Beer's 'most underinvested asset class' rests on an illustrative typical institution with 8% in hedge funds and 5% of that in managed futures; the 50 bp figure is his own example, not data.",
+   "claim_ids": [
+    "MT155-C09-2"
+   ]
+  },
+  {
+   "issue": "Kasang's flows (2x structured products, 7x option ETFs) are asserted without sources.",
+   "claim_ids": [
+    "MT155-C10-3"
+   ]
+  },
+  {
+   "issue": "Beer's multi-strat argument (cost '800 or 1000 bp') is a caption number, possibly garbled.",
+   "claim_ids": [
+    "MT155-C09-X1"
+   ]
+  },
+  {
+   "issue": "Dunn cites papers arguing 60/40 is insufficient (50/30/20-type mixes) without naming or quantifying them.",
+   "claim_ids": [
+    "MT155-C10-X3"
+   ]
+  },
+  {
+   "issue": "Carver's bubble reading is anecdotal with no valuation measure beyond premium to NAV; his own Bitcoin prediction is that the bubble inflates further.",
+   "claim_ids": [
+    "MT155-C04-3",
+    "MT155-C17-3"
+   ]
+  },
+  {
+   "issue": "Predictions are 'outrageous' by design: Kaastrup-Larsen does not believe his own 1% yield forecast.",
+   "claim_ids": [
+    "MT155-C18-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "Observable inputs: trend signals (long US equity, short bonds, long dollar); stock-bond correlation sign; rates direction (40-year decline ended); US growth/Fed policy vs Europe cuts; dollar valuation and deficit funding; AUM of CTAs; flows into structured products/ETFs; crypto premium to NAV. Horizon: 2025 year; multi-year for alternatives adoption.",
+ "reader_inferences": [
+  "The panel treats trend following as the answer to uncertainty; this is conviction supported by logic (moves with what happens) rather than data in the episode.",
+  "Several claims (replication adoption, multi-strat peak) are about industry structure, with no price forecasts."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT155-C17-R1",
+   "chunk": "C17",
+   "speaker": "Alan Dunn",
+   "quote": "my outrageous prediction is that socken will launch an index of CTA replicators within the next 12 months",
+   "claim": "Dunn's tongue-in-cheek 2025 prediction: SG will launch an index of CTA replicators within 12 months, consistent with replication becoming established.",
+   "mechanism": "replication_adoption",
+   "asset_class": "managed_futures",
+   "indicator": "replicator index launch",
+   "horizon": "12 months",
+   "direction": "",
+   "conditions": "Dec 2024 year-end predictions",
+   "testable": "yes",
+   "speaker_confidence": "low",
+   "time_bound": "yes",
+   "reader": "sonnet-map"
+  },
+  {
+   "claim_id": "MT155-C12-R1",
+   "chunk": "C12",
+   "speaker": "Nick Baltas",
+   "quote": "we kind of live in a bit of a filter bubble",
+   "claim": "Baltas self-critically notes the group lives in a filter bubble: Barclay CTA AUM near $350bn for ~14 years suggests the industry's advocacy and education have not raised adoption.",
+   "mechanism": "adoption_gap",
+   "asset_class": "managed_futures",
+   "indicator": "Barclay CTA index AUM",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "2024",
+   "testable": "yes - AUM series",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "sonnet-map"
+  }
+ ]
+}

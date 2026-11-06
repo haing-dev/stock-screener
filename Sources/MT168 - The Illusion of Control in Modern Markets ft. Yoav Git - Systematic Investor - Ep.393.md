@@ -5,8 +5,8 @@ date: 2026-03-29
 channel: "Top Traders Unplugged"
 url: 
 words: 11507
-claims: 38
-added_by_crosscheck: 6
+claims: 41
+added_by_crosscheck: 9
 corrections: 1
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, hedge fund manager)", "Yoav Git (co-host, systematic fixed-income researcher; speaker label in captions is Yuval/Yoav)"]
@@ -21,6 +21,130 @@ tags: [source, layer0]
 **Approach:** trend following, fixed income, stock-bond correlation, risk management in crises, flows, excess volatility, market universe, capacity
 
 **Cross-check completeness estimate of first read:** 0.85 - the first reader captured the crisis, flows, paper and capacity arguments well; missed the EM-algorithm method, the excess-volatility motivation, the initial-positioning dispersion point, the pre-announcement trading remark, the caveat that factor hedging is not worth it for liquid CTAs, and Niels's tracking-error point.
+
+## Argument map
+
+**Episode thesis:** Git argues the March 2026 Iran-war shock was a risk-off event (stocks and bonds sold off together, oil spiked at the front of the curve only) and that CTAs should hedge a common first factor (duration) instead of scaling every position when spreads widen. A flow-based excess-volatility paper (value, noise and trend traders) is reviewed and critiqued, and CTA market-universe breadth is framed by correlation and capacity.
+
+### Yoav Git (Systematic fixed-income researcher/trader and co-host of the Systematic Investor series; works with Tom Babbage on commodities)
+Fingerprint: #approach/macro_fundamental_topdown #approach/portfolio_construction_stacking #approach/costs_execution #approach/position_sizing_vol_target #approach/trend_following #approach/liquidity_flows #approach/market_internals_leading
+_Speaker note: Caption labels the name Yuval/Yoav; ledger uses Yoav Git. Fixed income is his area; commodity view is relayed from colleague Tom Babbage._
+
+**Worldview premises**
+- Inflation regimes make the stock-bond correlation positive, so bonds fail as an equity hedge. _[empirical, stated; support: March 2026 selloffs in both; earlier talks]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C04-2|C04-2]])
+- Western fiscal stress makes inflation a way to erode debt, so higher yields are near-inevitable but untimeable. _[theoretical, stated; support: Weak 2-year auction; personal view]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C05-2|C05-2]])
+- Back-of-curve oil reflects fundamental supply and demand and is insulated from news-cycle shocks ('weather vs climate'). _[theoretical, stated; support: Colleague's framing; Brent 3y barely moved]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C07-1|C07-1]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C03-2|C03-2]])
+- Most volatility is noise; the EMH holds either because price is right (Shiller) or because there is no true price. _[theoretical, stated; support: Review of the excess-volatility paper]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C12-1|C12-1]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C12-X5|C12-X5]])
+- Markets are populated by three flows: value traders revert to target, noise traders inject volatility, trend followers trade returns. _[theoretical, stated; support: Flow model in the paper]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C12-2|C12-2]])
+- Genuine jumps in fundamental value (payrolls, weekend war) move prices without trading. _[empirical, stated; support: Examples: payroll liquidity shrinks then gaps, weekend Iran attack]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C14-1|C14-1]])
+- Value traders also face risk limits, so an unbounded (cubic) response is unrealistic. _[theoretical, stated; support: Risk-management reasoning]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C15-1|C15-1]])
+- Capacity limits risk per market so footprint remains unwindable; more AUM pushes risk into the biggest markets. _[institutional, stated; support: Industry practice]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C15-2|C15-2]])
+- CTA return is diversification times average market Sharpe; the value of many markets depends on their correlation. _[theoretical, stated; support: Blog post with Tom Babbage]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C16-1|C16-1]])
+
+**Chain: Oil shock to fixed income**
+1. front-end supply constraint → oil spike at front of curve; back barely moves: long run over-producing (105 vs 102 mb/d) ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C03-2|C03-2]])
+2. oil is ~6% direct inflation weight plus food and manufacturing → oil curve informs inflation curve: secondary effects ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C07-2|C07-2]])
+3. bond sell-offs at long ends in US, UK, EM → risk-off event not only inflation expectations: TY 114 to 110 is more than a year's move in weeks; gold sold off too ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C03-3|C03-3]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C03-R1|C03-R1]])
+- Evidence: Curve shape data and single episode
+- Fails when: Narrative changes with each tweet
+
+**Chain: CTA crisis de-risking: scale everything vs hedge the first factor**
+1. shock lifts volatility and spreads (EM about 10bp) → CTAs scale every position down per market: rules-based volatility scaling ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C08-1|C08-1]])
+2. correlations spike so assets become substitutes → selling Treasury futures hedges the common first factor as well as shrinking the whole book: first factor dominates volatility ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C08-2|C08-2]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C09-3|C09-3]])
+3. closing a long-short alternative book → cost of about 5% illustrative: wide spreads, thin liquidity ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C09-2|C09-2]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C09-1|C09-1]])
+4. constrained optimisation of factor vs specific risk → probably not worth it for a liquid-market CTA: can simply scale down ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C10-X4|C10-X4]])
+- Evidence: Own March 2026 trading experience; contrasts with discretionary risk practice (Brevan)
+- Fails when: Liquidity crisis where illiquid positions cannot be exited (host's objection)
+
+**Chain: Crisis flow sequence**
+1. weekend news gaps price → CTA flows when markets open as volatility gaps: models cut risk ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C10-2|C10-2]])
+2. falling bonds → value traders closed out (long squeeze): cannot hold losing positions ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C11-1|C11-1]])
+3. stabilisation → real money buys: value buyers ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C11-1|C11-1]])
+4. escalation (South Pars) → renewed selling; gilt and Treasury squeezes: repeat of the sequence ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C11-1|C11-1]])
+- Evidence: Observed March 2026 episode
+- Fails when: Single episode, no flow data shown
+
+**Chain: Pendulum of trend and value**
+1. through the centre of value → trend followers dominate: impulse swings fast ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C13-2|C13-2]])
+2. far from value → value traders dominate and push back: trend runs out of steam ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C13-2|C13-2]])
+3. two balance points → markets spend time over- or under-priced: paper's result ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C13-2|C13-2]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C13-1|C13-1]])
+- Evidence: Paper calibrated with EM algorithm on monthly data
+- Fails when: Genuine value jumps, risk limits on value traders
+
+**Chain: Capacity and market-universe breadth**
+1. high correlation among chosen markets → few big markets lose little diversification: plateau reached quickly ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C16-1|C16-1]])
+2. low-correlation hand-picked markets → capacity pushes risk to big markets: effective breadth shrinks ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C16-1|C16-1]])
+3. index replication → high correlation is the aim: replicating a CTA at 80% correlation is accepted ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C16-2|C16-2]])
+- Evidence: Blog post with Tom Babbage
+- Fails when: Replicators' tracking error (host)
+
+**Decision process**
+- [risk] Scale each market down in stress by volatility (standard CTA); alternative: hedge the common first factor while limiting specific risk per market.. Why: Reduce cost in crises ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C08-1|C08-1]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C08-2|C08-2]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C09-3|C09-3]])
+- [execution] Time of day of execution matters in a $20-25 oil daily range, making tracking of one's own model hard.. Why: Intraday volatility staggering ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C04-1|C04-1]])
+- [research] Scenario analysis back to 1998 for surprise volatility: March 2026 ranked at the top.. Why: Stress test of model risk ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C04-1|C04-1]])
+- [research] Estimate noise, value and trend populations with the EM algorithm (unlabelled mixtures).. Why: Calibration tool in the paper ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C02-X1|C02-X1]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C13-1|C13-1]])
+- [universe] Choose market universe by correlation and capacity: correlated big markets for index-like CTA; low-correlation markets need capacity thinking.. Why: Return = diversification x average Sharpe ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C16-1|C16-1]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C15-2|C15-2]])
+- [portfolio] Limit risk per market so the footprint can be unwound in a crisis.. Why: Avoid trading against oneself ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C15-2|C15-2]])
+
+**Evidence style:** First-hand trading experience of March 2026, literature review of a flow-model paper, and simple economic reasoning; scenario analysis on history.
+
+**Views at the time**
+- (2026-03-25) March 2026 was a risk-off event, not just inflation: bonds sold off as much as equities and gold fell.. Reasoning: Long-end sell-off, EM back of curve ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C03-3|C03-3]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C04-2|C04-2]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C03-R1|C03-R1]])
+- (2026-03-25) Higher yields are near-inevitable (fiscal stress, 2-year auction weakness) but timing unknowable.. Reasoning: Debt erosion via inflation ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C05-2|C05-2]])
+- (2026-03-25) Fixed-income trend trading has been difficult since 2023: moves reverse violently within the month.. Reasoning: 2022 clean short vs choppy since ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C05-3|C05-3]])
+- (2026-03-25) Oil: front-end spike due to supply constraints; the long end structurally oversupplied.. Reasoning: 105 vs 102 mb/d ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C03-2|C03-2]])
+- (2026-03-25) The flow-model paper's calibration (noise first order, value second, trend negligible) matches the view that CTA footprints are small.. Reasoning: No autocorrelation created ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C13-1|C13-1]])
+- (2026-03-25) Critique of the paper: ignores genuine jumps, cubic value response, monthly data, no predictive use.. Reasoning: Examples: payroll, weekend ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C14-1|C14-1]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C15-1|C15-1]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C14-R1|C14-R1]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C15-R1|C15-R1]])
+
+### Niels Kaastrup-Larsen (Host and CTA industry commentator (former hedge fund manager))
+Fingerprint: #approach/trend_following #approach/manager_selection_allocation #approach/regime_detection #approach/positioning_crowding #approach/replication_indexing #approach/behavioral_sentiment
+_Speaker note: Host states his own opinions in the news round, trend-barometer data, and in objections to the guest._
+
+**Worldview premises**
+- Narratives are unpredictable (Danish election, gold in the Iran war), which supports a rules-based approach. _[experience, stated; support: Anecdote]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C02-1|C02-1]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C03-1|C03-1]])
+- Short-window dispersion between CTAs is largely initial-positioning luck, not model quality. _[experience, stated; support: Observation]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C03-X2|C03-X2]])
+- CTAs only lose less than bonds in surprises; they cannot claim protection. _[experience, stated; support: March 2026 numbers]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C05-1|C05-1]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C06-3|C06-3]])
+- Core-market CTAs can cut duration cheaply in stress; alternative-market CTAs face higher costs, hidden in monthly performance. _[institutional, stated; support: Market-universe paper discussion]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C09-1|C09-1]])
+- Keeping illiquid positions hedged with futures is dangerous in a liquidity crisis (correlations go to one, exits close). _[theoretical, stated; support: Reasoning]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C10-1|C10-1]])
+- In practice replicators have modest correlation to the CTA index and substantial tracking error. _[empirical, stated; support: Numbers cited from prior studies (not shown)]_ ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C16-X6|C16-X6]])
+
+**Chain: Fragility signals in March 2026**
+1. private credit funds gate on redemptions → fragility adds to market stress: redemptions exceed liquidity ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C06-1|C06-1]])
+2. energy shock → may be rationing rather than price: Europe and Egypt vulnerable ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C06-2|C06-2]])
+- Evidence: News and anecdotes
+- Fails when: Not tested
+
+**Decision process**
+- [research] Track the trend barometer (52 over 44 markets) and CTA indices for breadth and relative results.. Why: Breadth gauge ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C06-3|C06-3]])
+- [other] Event-driven reversals around announcements are hard for rules to anticipate; apparent front-running is noted but deferred.. Why: Manipulation topic deferred ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C04-X3|C04-X3]])
+
+**Evidence style:** Narrative and index data; objections framed from the CTA industry.
+
+**Views at the time**
+- (2026-03-25) Industry lost little in March 2026; BTOP50 -2.25%, SG CTA -2%, SG Trend -2.6%; MSCI World -6%, bonds -2%, S&P -4.6% in March.. Reasoning: Index data as of Monday evening ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C06-3|C06-3]])
+- (2026-03-25) Gold sold off both at war start and at de-escalation, which supports a rules-based approach.. Reasoning: Observation ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C03-1|C03-1]])
+- (2026-03-25) Not a pure 2022 repeat claim; CTAs cannot claim protection.. Reasoning: Institutional question ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C05-1|C05-1]])
+- (2026-03-25) Energy shocks can be about availability, not just price.. Reasoning: European rationing ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C06-2|C06-2]])
+
+### Disagreements
+- **Cost of crisis de-risking and the right universe**: Yoav Git: Scaling every position is expensive in alternative markets (closing a long-short book could cost on the order of 5%); a factor hedge via Treasury futures is better. ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C08-1|C08-1]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C09-2|C09-2]]); Niels Kaastrup-Larsen: For core-market CTAs this is cheap; the problem is specific to alternative markets and is hidden in monthly returns. ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C09-1|C09-1]])
+- **Hedging with liquid futures while holding illiquid positions**: Yoav Git: Hedge first-factor risk with liquid duration while managing specific risk. ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C09-3|C09-3]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C08-2|C08-2]]); Niels Kaastrup-Larsen: In a liquidity crisis correlations go to one and illiquid exits close, so this risk is large. ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C10-1|C10-1]])
+- **How CTA replication performs**: Yoav Git: Replicating a CTA index at 80% correlation is accepted while S&P demands 99%. ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C16-2|C16-2]]); Niels Kaastrup-Larsen: In practice replicators' correlation is modest and tracking error substantial. ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C16-X6|C16-X6]])
+
+### Gaps and conflicts
+- The 5% cost of closing a long-short alternative book is illustrative ('let's say'), not measured. ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C09-2|C09-2]])
+- Git 'does not have the model' for the factor-hedge idea; no test shown. ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C08-1|C08-1]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C10-X4|C10-X4]])
+- Flow sequence in March (CTA, value close-out, real money, squeeze) is narrated without flow data. ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C10-2|C10-2]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C11-1|C11-1]])
+- Paper's calibration result (trend negligible) sits oddly with Git's remark that CTAs feature prominently in such models; the reader must reconcile prominence in the model structure with negligible estimated contribution. ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C11-2|C11-2]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C13-1|C13-1]])
+- Back-of-curve oil is insulated 'weather vs climate' is attributed to a colleague and not evidenced. ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C07-1|C07-1]])
+- Unverified: private credit gating, apparent pre-announcement trading in oil. ([[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C06-1|C06-1]], [[MT168 - The Illusion of Control in Modern Markets ft. Yoav Git - Systematic Investor - Ep.393#^MT168-C04-X3|C04-X3]])
+
+### Forward-looking inputs (reader synthesis)
+Observable inputs: spreads and liquidity costs in EM rates, front vs back of oil curve, stock-bond correlation, auction demand, CTA flows after volatility gaps, value-trader stop-outs. Horizon: weeks for flows, years for fiscal-driven yield rise.
+
+### Reader inferences (not stated by the speakers)
+- The flow model attributes first-order volatility to noise and negligible footprint to trend followers, which means trend following cannot be justified as a major source of price formation by this paper; the paper uses monthly data so cannot settle daily dynamics.
+- Git's proposal is a risk-management rule change (factor-based de-risking) rather than a forecast.
 
 ## Coverage
 
@@ -73,6 +197,10 @@ tags: [source, layer0]
   > we know that positioning, initial positioning is so important, and um and you can be lucky, you can be unlucky with how you enter a situation like that
   indicator: dispersion of CTA returns around shocks · asset: multi · horizon: weeks · conditions: short windows around geopolitical shocks (March 2026) · testable: yes - cross-sectional dispersion of manager returns vs prior positioning · confidence: medium
   ^MT168-C03-X2
+- **Yoav Git** Git: gold and long-term bonds behaved in ways inconsistent with a pure inflation-expectations story in March 2026, which indicates a risk-off event in addition to inflation narrative.  #mech/new _(added by map cross-check, time-bound view)_
+  > behaving in a way that you wouldn't expect gold to behave in an inflation based
+  indicator: gold behaviour in oil shock · asset: commodities · horizon: weeks · conditions: March 2026 Iran war · testable: partly - single episode · confidence: medium
+  ^MT168-C03-R1
 
 ### C04
 - **Yoav Git** With oil trading a $20-25 daily range (Brent near 120 then 90), execution time of day materially changes P&L and makes tracking one's own model difficult; scenario analysis back to 1998 ranks March 2026 surprise volatility at the top.  #mech/risk_management _(time-bound view)_
@@ -204,6 +332,10 @@ tags: [source, layer0]
   > half an hour before nonfarm payroll, nobody wants to trade.
   indicator: jumps, nonfarm payroll liquidity · asset: multi · horizon: days · testable: yes · confidence: medium
   ^MT168-C14-1
+- **Yoav Git** Git: the flow paper sets out to disprove the efficient market hypothesis; in reality markets are a mixture of price-driven flows, flows and genuine changes in fundamental value.  #mech/new _(added by map cross-check)_
+  > I don't like going all out to disprove something.
+  indicator: flow model vs EMH · asset: multi · conditions: excess-volatility paper · testable: no · confidence: medium
+  ^MT168-C14-R1
 
 ### C15
 - **Yoav Git** Critique: assuming a cubic value-trader response (unbounded) is unrealistic because value traders face risk limits too; the paper uses monthly data so cannot inform daily trading.  #mech/research_method
@@ -214,6 +346,10 @@ tags: [source, layer0]
   > the amount of risk that we like to put into each market is limited precisely for the same discussion that we had that we don't want to trade against ourselves
   indicator: capacity per market · asset: multi · testable: yes · confidence: high
   ^MT168-C15-2
+- **Yoav Git** Git: such flow models, as they stand, offer neither prediction nor a way to improve a trading model.  #mech/new _(added by map cross-check)_
+  > these models are not useful for providing any prediction
+  indicator: flow models · asset: multi · conditions: monthly data, long horizon · testable: no · confidence: medium
+  ^MT168-C15-R1
 
 ### C16
 - **Yoav Git** CTA return is diversification times average market Sharpe; if markets are highly correlated, trading only big markets costs little, but if you select low-correlation markets, capacity pushes risk into big markets and cuts effective breadth.  #mech/risk_management

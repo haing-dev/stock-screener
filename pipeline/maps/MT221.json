@@ -1,0 +1,983 @@
+{
+ "source_id": "MT221",
+ "episode_thesis": "A ten-manager year-end panel argues that (1) total-portfolio optimisation theoretically implies far larger CTA allocations than the roughly 50bp most US institutions hold, but flows follow performance and career risk, so TPA will not change much quickly; (2) the 2023-25 trend drawdown is explained by volatility compression and a share of winning markets below break-even, not by model failure, so managers should not change models after pain and should stay true to their stated thesis; (3) CTA drawdowns come from nothing happening, are long rather than deep, and are smaller than perceived; and (4) long volatility and trend following provide true diversification that stock-bond mixes do not. The panel also debates high-vol products, capital efficiency and 2026 predictions (higher yields, 2022-like, roller coaster).",
+ "speakers": [
+  {
+   "name": "Yoav Git",
+   "role": "CTA manager (Israel); sells non-financialized trend risk factors",
+   "speaker_note": "Ledger labels 'Yov'. Caption spelling varies. Assumed to be the speaker of C02, C07-C08 and C10-C11 per flow; turn boundaries rely on host cues.",
+   "fingerprint": [
+    "trend_following",
+    "research_robustness_overfitting",
+    "portfolio_construction_stacking",
+    "regime_detection",
+    "diversification_risk_parity",
+    "costs_execution"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Total-portfolio mean-variance optimisation implies a very large CTA allocation because of diversification (about 1/3 of risk even at CTA Sharpe 0.5 vs 1.5 for the rest), but flows follow performance, so TPA will not change allocations much.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Simple optimisation arithmetic; observation that flows chase performance.",
+     "claim_ids": [
+      "MT221-C02-1",
+      "MT221-C02-2"
+     ]
+    },
+    {
+     "premise": "CTA exposure should be matched to hedge the asset classes an allocator already holds; bucket-style allocation leaves CTAs at ~2%, too small to alter convexity.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Long-held argument.",
+     "claim_ids": [
+      "MT221-C02-3",
+      "MT221-C02-X2"
+     ]
+    },
+    {
+     "premise": "Recent CTA underperformance came from fewer outsized trends (volatility compression), not model breakdown; test it by measuring Sharpe extracted from markets that trended at a given underlying Sharpe versus history.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Measurement logic; says it is roughly unchanged for most CTAs.",
+     "claim_ids": [
+      "MT221-C07-1",
+      "MT221-C11-1"
+     ]
+    },
+    {
+     "premise": "CTA drawdowns come from nothing happening, like buying straddles paid for via trading costs; only ~40% of markets need to win for a good year, and a drawdown comes when winners fall to 30-35%.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Straddle analogy.",
+     "claim_ids": [
+      "MT221-C10-1",
+      "MT221-C10-2",
+      "MT221-C11-1"
+     ]
+    },
+    {
+     "premise": "Drawdowns have no single event to blame, so they are harder for allocators to explain to an investment committee; they are long rather than deep.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Allocator conversations.",
+     "claim_ids": [
+      "MT221-C11-X1",
+      "MT221-C11-X2"
+     ]
+    },
+    {
+     "premise": "A manager should stay true to the style the investor hired (e.g., non-financialized markets, fast trend) and change only when the underlying market properties change.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Example: iron ore front month where ~70% of volume is CTAs.",
+     "claim_ids": [
+      "MT221-C08-1",
+      "MT221-C08-X1"
+     ]
+    },
+    {
+     "premise": "AI is used cautiously (coding, summaries, testing message clarity), not in the models.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own practice.",
+     "claim_ids": [
+      "MT221-C02-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why CTA drawdowns occur",
+     "steps": [
+      {
+       "from": "Volatility compression and calm markets",
+       "to": "Fewer outsized trends",
+       "why": "Trends are fewer and smaller",
+       "claim_ids": [
+        "MT221-C11-1",
+        "MT221-C07-1"
+       ]
+      },
+      {
+       "from": "Share of winning markets falls below break-even (~40% to 30-35%)",
+       "to": "Multi-year drawdown without a single deep loss",
+       "why": "Costs of straddle-like trading are not offset",
+       "claim_ids": [
+        "MT221-C10-2",
+        "MT221-C11-X2"
+       ]
+      }
+     ],
+     "evidence": "Industry experience 2023-25.",
+     "fails_when": "Not stated; model breakdown test would show lower Sharpe extraction per unit of underlying trend.",
+     "claim_ids": [
+      "MT221-C10-1",
+      "MT221-C11-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Diagnose underperformance by measuring Sharpe extracted from trending markets versus history before touching the model.",
+     "why": "Separates model failure from fewer trends.",
+     "claim_ids": [
+      "MT221-C07-1",
+      "MT221-C07-R1"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Drop markets that become financialized (e.g., CTAs ~70% of iron-ore front-month volume) because the product thesis is trading what others do not trade.",
+     "why": "Preserve the factor exposure the investor bought.",
+     "claim_ids": [
+      "MT221-C08-1"
+     ]
+    }
+   ],
+   "evidence_style": "Industry experience and measurement logic; no data shown.",
+   "current_views": [
+    {
+     "view": "Most likely outcome for 2026: 10-year Treasury yield around 6%; he would wish for equities +25%.",
+     "as_of": "2025-12",
+     "reasoning": "Rate view stated without reasoning.",
+     "claim_ids": [
+      "MT221-C17-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Unnamed panelist (possibly Andrew Beer)",
+   "role": "Panelist agreeing with Yoav on TPA",
+   "speaker_note": "Ledger names Jim for C03-3/C03-4 but the transcript brings Jim in only at the end of C04; the speaker is unidentified (ledger correction). C04-X1 (breaking anchoring; theatre) also follows this speaker's turn.",
+   "fingerprint": [
+    "manager_selection_allocation",
+    "portfolio_construction_stacking",
+    "diversification_risk_parity",
+    "behavioral_sentiment"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "In a strategic allocation managed futures merits ~25% because almost nothing else is scalable, liquid, zero-correlated to stocks and bonds and pays off when needed (pod shops come close).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Statistical measures cited from the GIC/JPM paper.",
+     "claim_ids": [
+      "MT221-C03-3"
+     ]
+    },
+    {
+     "premise": "US institutions hold ~6% in hedge funds with managed futures <10% of that (~50bp of the portfolio); career risk and benchmarking to hedge fund indices prevent moving it to ~30% of the sleeve.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Allocator structure.",
+     "claim_ids": [
+      "MT221-C03-4"
+     ]
+    },
+    {
+     "premise": "TPA could break anchoring to indices and legacy bucket sizes by forcing a statistical blank sheet, though much of TPA is theatre to win broader mandates.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Cautiously optimistic.",
+     "claim_ids": [
+      "MT221-C04-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Statistical measures and observed allocator behaviour.",
+   "current_views": []
+  },
+  {
+   "name": "Allan Dunne",
+   "role": "CTA researcher (hedge fund allocator view)",
+   "speaker_note": "Name caption variants 'Alan/Allan Don'.",
+   "fingerprint": [
+    "trend_following",
+    "portfolio_construction_stacking",
+    "macro_fundamental_topdown",
+    "manager_selection_allocation",
+    "diversification_risk_parity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A hedge fund portfolio optimised within the total portfolio tilts to CTA, macro and commodities and away from equity long-short and credit, which duplicate held factors.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "GIC/JP Morgan asset management paper.",
+     "claim_ids": [
+      "MT221-C03-1"
+     ]
+    },
+    {
+     "premise": "A trend program already behaves like a total portfolio approach because it dynamically allocates risk to the best risk-adjusted markets.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Definition-based argument.",
+     "claim_ids": [
+      "MT221-C03-2"
+     ]
+    },
+    {
+     "premise": "TPA has an unresolved look-through problem: investment teams making tactical views while allocating to managers who also make tactical bets.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Reasoned.",
+     "claim_ids": [
+      "MT221-C03-X1"
+     ]
+    },
+    {
+     "premise": "High-vol trend managers repeat a cycle of exceptional years, asset gathering, deep drawdown and asset loss; a high-vol ETF would follow the same flow cycle.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Mulvaney as example.",
+     "claim_ids": [
+      "MT221-C16-X1"
+     ]
+    },
+    {
+     "premise": "Wealth portfolios should hold a balanced diversified portfolio and then lever to the desired risk rather than add equities.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Capital-efficiency logic.",
+     "claim_ids": [
+      "MT221-C16-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Academic papers and industry examples.",
+   "current_views": [
+    {
+     "view": "2026 will be the year of the bond breakout: US 10-year yields up to 6% then down to 3.5%.",
+     "as_of": "2025-12",
+     "reasoning": "Unspecified; repeats an earlier prediction.",
+     "claim_ids": [
+      "MT221-C16-2"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Jim (volatility specialist; caption 'Jim Kasang')",
+   "role": "Panelist focused on long volatility and portfolio construction",
+   "speaker_note": "The ledger's C03 attributions are removed (not Jim). C12 attributions follow the host's cue 'perception of risk' after Katie.",
+   "fingerprint": [
+    "volatility_options",
+    "crisis_alpha_convexity",
+    "diversification_risk_parity",
+    "regime_detection",
+    "structural_themes",
+    "behavioral_sentiment"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "95% of investors diversify by holding more correlated assets; stocks and 60/40 each have about a 0.35 Sharpe over 125 years so bonds gave no Sharpe benefit; true diversification needs non-asset strategies such as trend and long volatility.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Allocators he asked cannot name the Sharpe; the 0.35 figure is quoted from memory.",
+     "claim_ids": [
+      "MT221-C04-1"
+     ]
+    },
+    {
+     "premise": "Academic research points to a long-volatility hedge as the one consistent diversifier and most important portfolio component.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "'Tons of academic research' (uncited); David Dredge conversation.",
+     "claim_ids": [
+      "MT221-C04-2"
+     ]
+    },
+    {
+     "premise": "The stock-bond structure dates from about 1985 and persists through recency bias and the long falling-rate era that removed the need to manage risk.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "History.",
+     "claim_ids": [
+      "MT221-C05-X1"
+     ]
+    },
+    {
+     "premise": "Distribution width and tail fatness by regime (volatility) are forecastable while direction is not, so trend-model choice should rest on a forward view of the distribution, not backtest optimisation.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Vol-desk framing.",
+     "claim_ids": [
+      "MT221-C06-1"
+     ]
+    },
+    {
+     "premise": "Managed futures drawdown (~15-16% over 25 years) is small relative to equities, and bonds' recent 15-16% drawdown after 20 years undercuts the view that CTAs are riskier.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Drawdown comparisons.",
+     "claim_ids": [
+      "MT221-C12-1",
+      "MT221-C12-X1"
+     ]
+    },
+    {
+     "premise": "Trend following earns most when the world changes (inflation shock, regime shifts over ~24 months) and struggles in noisy markets that total-portfolio allocators with static assumptions handle badly.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Recent years' experience.",
+     "claim_ids": [
+      "MT221-C12-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Long volatility as brakes on a race car",
+     "steps": [
+      {
+       "from": "Long vol earns about zero long-run",
+       "to": "Allocators remove it as a drag",
+       "why": "Perceived as slowing the car",
+       "claim_ids": [
+        "MT221-C05-1"
+       ]
+      },
+      {
+       "from": "Brakes give control into corners",
+       "to": "Portfolio can keep risk on and accelerate on straights",
+       "why": "Raises geometric performance",
+       "claim_ids": [
+        "MT221-C05-1"
+       ]
+      }
+     ],
+     "evidence": "Metaphor from David Dredge's conversation; no numbers.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT221-C05-1"
+     ]
+    },
+    {
+     "topic": "Why CTAs matter in a concentrated portfolio",
+     "steps": [
+      {
+       "from": "Portfolio concentrated in AI trade across equities, rates and more",
+       "to": "Large loss if equities fall 50%",
+       "why": "Concentration in one theme",
+       "claim_ids": [
+        "MT221-C12-X2"
+       ]
+      },
+      {
+       "from": "Trend program cuts losers and can go short",
+       "to": "Protection",
+       "why": "Disciplined loss-cutting vs narrative of conviction",
+       "claim_ids": [
+        "MT221-C12-X3"
+       ]
+      }
+     ],
+     "evidence": "Reasoning, current positioning.",
+     "fails_when": "Noise year with no world change.",
+     "claim_ids": [
+      "MT221-C12-X2",
+      "MT221-C12-X3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Choose trend model by forward view of return distribution (volatility regime, supply and demand) rather than backtest optimisation.",
+     "why": "Distribution is more predictable than direction.",
+     "claim_ids": [
+      "MT221-C06-1"
+     ]
+    }
+   ],
+   "evidence_style": "Academic literature, metaphors and a few headline statistics from memory.",
+   "current_views": [
+    {
+     "view": "2026 resembles 2022: pain trade is stocks down and rates up; implied-vol and VIX hedges could pay; rates higher hurts those holding bonds for diversification.",
+     "as_of": "2025-12",
+     "reasoning": "Investors own stocks with long-vol bandaids and bonds as diversifier.",
+     "claim_ids": [
+      "MT221-C16-3"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Andrew Beer",
+   "role": "Replication ETF manager (managed futures replication)",
+   "speaker_note": "Ledger attribution used for C06-C07, C09, C13-C16.",
+   "fingerprint": [
+    "replication_indexing",
+    "manager_selection_allocation",
+    "research_robustness_overfitting",
+    "portfolio_construction_stacking",
+    "costs_execution"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A replication model left unchanged for ten years gives a fully consistent track record; the best outcome for an allocator is that the manager never needs changes, because it is hard to know whether changes help going forward.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own 10-year no-change record.",
+     "claim_ids": [
+      "MT221-C06-2"
+     ]
+    },
+    {
+     "premise": "A legitimate reason to revisit a model is evidence of industry-wide drift (all managers moving to 15-20 day models), visible against a benchmark or replication; without it do not change.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoned.",
+     "claim_ids": [
+      "MT221-C09-X1"
+     ]
+    },
+    {
+     "premise": "Slower and simpler trend models outperformed more complex ones over the last three years; managers should own the design decisions that cost return in this regime.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Presented data (about 1,100bp cost used as illustration).",
+     "claim_ids": [
+      "MT221-C09-2"
+     ]
+    },
+    {
+     "premise": "With wide dispersion and no persistence of alpha, allocators chase the recent winner and oversell it, producing a negative feedback loop when it underperforms.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Allocator incentives.",
+     "claim_ids": [
+      "MT221-C13-1"
+     ]
+    },
+    {
+     "premise": "ETF holders see price and drawdown every minute, so drawdowns matter; allocators trained to buy the dip want a rebound story that honest CTA managers cannot give.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Own ETF experience.",
+     "claim_ids": [
+      "MT221-C13-X1",
+      "MT221-C13-X2"
+     ]
+    },
+    {
+     "premise": "Managed futures becomes a standard allocation if presented as a strategic long-term holding judged by portfolio benefit rather than lookbacks or positions.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "His stated thesis; to be tested in five years.",
+     "claim_ids": [
+      "MT221-C13-X3"
+     ]
+    },
+    {
+     "premise": "Higher interest rates make capital efficiency (return stacking, portable alpha, yield stacking) valuable again; 2x/3x growth reflects need for efficiency, not more risk.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Options exchanges (1971) analogy.",
+     "claim_ids": [
+      "MT221-C15-1"
+     ]
+    },
+    {
+     "premise": "The large pool of money is risk-averse allocators avoiding embarrassment, not leverage-seeking retail; niche ETF structures can reach multi-billion scale.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Innovator sold for $2bn.",
+     "claim_ids": [
+      "MT221-C14-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Change nothing in the model unless evidence of structural deviation; accept a very high bar for changes.",
+     "why": "Hard to tell whether changes help; consistent record is valuable.",
+     "claim_ids": [
+      "MT221-C06-2",
+      "MT221-C09-X1"
+     ]
+    }
+   ],
+   "evidence_style": "Own track record, product experience and allocator observation.",
+   "current_views": [
+    {
+     "view": "Outrageous 2026: institutions begin buying managed futures ETFs (low probability, high significance).",
+     "as_of": "2025-12",
+     "reasoning": "Allocators with 'hedge fund analyst' mandates look for hedge funds.",
+     "claim_ids": [
+      "MT221-C16-X3"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Katie Kaminski",
+   "role": "CTA researcher/manager",
+   "speaker_note": "Name 'Kaminsky' caption variant.",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "behavioral_sentiment",
+    "regime_detection"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Managed futures drawdowns coincide with calm, equity-friendly, low-volatility environments, and recover faster when equity environments are challenging because hit ratio rises.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own paper on managed futures drawdowns (bubble chart).",
+     "claim_ids": [
+      "MT221-C11-2"
+     ]
+    },
+    {
+     "premise": "After a very challenging period, one or two strong years typically followed; manager top/bottom timing is trend-following-trend.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Fund-of-funds studies; mean reversion over longer horizons.",
+     "claim_ids": [
+      "MT221-C11-3",
+      "MT221-C11-X3"
+     ]
+    },
+    {
+     "premise": "A daily-liquid high-vol CTA product cannot smooth prints as private equity does, so it will attract performance chasing and disappoint, as with Bitcoin; institutional adoption pushed managers to lower risk and size management.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "History of the industry.",
+     "claim_ids": [
+      "MT221-C15-X1",
+      "MT221-C15-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Own research paper and history.",
+   "current_views": [
+    {
+     "view": "2026 will be a boom-and-bust roller coaster: rates fall and over-stimulation make conditions look strong before things fall apart.",
+     "as_of": "2025-12",
+     "reasoning": "Something brewing in the macro change of 2025.",
+     "claim_ids": [
+      "MT221-C16-X2"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Rich Brennan",
+   "role": "Australian systematic trend follower",
+   "speaker_note": "",
+   "fingerprint": [
+    "trend_following",
+    "research_robustness_overfitting",
+    "behavioral_sentiment",
+    "regime_detection"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Markets change but process should not change in response to recent outcomes; a stable process does not remove drawdowns but prevents panic and rule changes (the main investor mistake).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own practice; asks panel how much change is evolution vs reaction to pain.",
+     "claim_ids": [
+      "MT221-C05-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Pre-commit to a stable process; explain to allocators how the strategy behaves in uncomfortable conditions.",
+     "why": "Stability builds trust and prevents behavioral drift.",
+     "claim_ids": [
+      "MT221-C05-2"
+     ]
+    }
+   ],
+   "evidence_style": "Experience.",
+   "current_views": []
+  },
+  {
+   "name": "Nick Baltas",
+   "role": "Quant researcher (replication/benchmark work)",
+   "speaker_note": "",
+   "fingerprint": [
+    "replication_indexing",
+    "research_robustness_overfitting",
+    "trend_following",
+    "regime_detection"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Drawdowns are a prompt to review for blind spots but not a reason to change the model, especially when explained by repeated V-shaped reversals (yen, Liberation Day).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own practice.",
+     "claim_ids": [
+      "MT221-C08-2"
+     ]
+    },
+    {
+     "premise": "A replication of the CTA index need not change when underlying managers change models as long as the changes net out and managers do not become too fast to track.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Aggregation logic.",
+     "claim_ids": [
+      "MT221-C09-1"
+     ]
+    },
+    {
+     "premise": "A benchmark model need not minimise tracking error; high tracking error in a year does not show the model works or fails.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Outperformance matters.",
+     "claim_ids": [
+      "MT221-C09-X2"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Treat pain as invitation to reflect, not to change.",
+     "why": "Avoid reacting to explainable underperformance.",
+     "claim_ids": [
+      "MT221-C08-2"
+     ]
+    }
+   ],
+   "evidence_style": "Reasoning and benchmark practice.",
+   "current_views": []
+  },
+  {
+   "name": "Rob Carver",
+   "role": "Independent systematic trader",
+   "speaker_note": "His proposal is half in jest.",
+   "fingerprint": [
+    "position_sizing_vol_target",
+    "kelly_or_conviction_sizing",
+    "trend_following"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A Sharpe-1 strategy run at half Kelly implies roughly 40-50% annualised volatility, so high-vol CTA products are feasible and could be sold to retail with fees proportional to volatility.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Kelly arithmetic.",
+     "claim_ids": [
+      "MT221-C14-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "sizing",
+     "practice": "Half Kelly sizing for a Sharpe-near-1 strategy.",
+     "why": "Maximise growth with a safety margin.",
+     "claim_ids": [
+      "MT221-C14-1"
+     ]
+    }
+   ],
+   "evidence_style": "First-principles arithmetic.",
+   "current_views": []
+  },
+  {
+   "name": "Mark Rzepczynski",
+   "role": "CTA/macro manager (also posed the opening AI and TPA questions)",
+   "speaker_note": "Opening questions are not in the ledger.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "policy_reaction_central_banks",
+    "valuation_contrarian",
+    "behavioral_sentiment"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Inflation is a sleeper risk; equity strength concentrated in MAG 7 can burst and drag the market.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Prediction segment only.",
+     "claim_ids": [
+      "MT221-C17-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Opinion.",
+   "current_views": [
+    {
+     "view": "2026 pessimist: higher inflation lifts Treasury yields, credit crises carry over, MAG 7 bubble bursts, stable to down equities; Europe resurges.",
+     "as_of": "2025-12",
+     "reasoning": "Higher inflation, 2025 credit problems, index concentration.",
+     "claim_ids": [
+      "MT221-C17-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host, Top Traders Unplugged",
+   "speaker_note": "Barclay CTA volatility statement re-attributed to the host.",
+   "fingerprint": [
+    "trend_following",
+    "policy_reaction_central_banks",
+    "manager_selection_allocation"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "The Barclay CTA index ran at 20-25% annualised volatility in the 1980s and early 1990s and is below 5% in recent years.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Index data, quoted as an FYI.",
+     "claim_ids": [
+      "MT221-C15-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Index data.",
+   "current_views": [
+    {
+     "view": "The Fed will hike at least once in 2026 despite pressure and a new Trump-selected chair.",
+     "as_of": "2025-12",
+     "reasoning": "Stated without reasoning.",
+     "claim_ids": [
+      "MT221-C17-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Will total portfolio approach (TPA) help CTAs?",
+   "positions": [
+    {
+     "speaker": "Yoav Git",
+     "position": "Theoretically very large allocation but in practice a buzzword; flows follow performance.",
+     "claim_ids": [
+      "MT221-C02-1",
+      "MT221-C02-2"
+     ]
+    },
+    {
+     "speaker": "Unnamed panelist (possibly Andrew Beer)",
+     "position": "Could break anchoring to indices, but much is theatre; cautiously optimistic.",
+     "claim_ids": [
+      "MT221-C03-4",
+      "MT221-C04-X1"
+     ]
+    },
+    {
+     "speaker": "Allan Dunne",
+     "position": "Valid from the return lens and a CTA already acts like TPA, but look-through is unresolved.",
+     "claim_ids": [
+      "MT221-C03-1",
+      "MT221-C03-2",
+      "MT221-C03-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "When should a trend manager change the model?",
+   "positions": [
+    {
+     "speaker": "Andrew Beer",
+     "position": "Almost never; ten years without a change is the best outcome; only evidence of industry-wide drift justifies review.",
+     "claim_ids": [
+      "MT221-C06-2",
+      "MT221-C09-X1"
+     ]
+    },
+    {
+     "speaker": "Jim (volatility specialist; caption 'Jim Kasang')",
+     "position": "Moving from backtest optimisation to forward distribution views can improve process.",
+     "claim_ids": [
+      "MT221-C06-1"
+     ]
+    },
+    {
+     "speaker": "Yoav Git",
+     "position": "Change only when market properties change (financialisation) or measurement shows model breakdown; do not drift from the sold style.",
+     "claim_ids": [
+      "MT221-C07-1",
+      "MT221-C08-1",
+      "MT221-C08-X1"
+     ]
+    },
+    {
+     "speaker": "Nick Baltas",
+     "position": "Pain invites review for blind spots but a very high bar for change.",
+     "claim_ids": [
+      "MT221-C08-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Should CTAs offer high-volatility products?",
+   "positions": [
+    {
+     "speaker": "Rob Carver",
+     "position": "Half-Kelly implies 40-50% vol; sell high-vol products to retail (half in jest).",
+     "claim_ids": [
+      "MT221-C14-1"
+     ]
+    },
+    {
+     "speaker": "Katie Kaminski",
+     "position": "Daily prints without smoothing mean performance chasing and disappointment.",
+     "claim_ids": [
+      "MT221-C15-X1"
+     ]
+    },
+    {
+     "speaker": "Allan Dunne",
+     "position": "High-vol managers repeat a boom-bust asset cycle; capital efficiency favours balanced products plus leverage.",
+     "claim_ids": [
+      "MT221-C16-X1",
+      "MT221-C16-1"
+     ]
+    },
+    {
+     "speaker": "Andrew Beer",
+     "position": "Opportunity in capital-efficient stacked products rather than more risk per se.",
+     "claim_ids": [
+      "MT221-C15-1",
+      "MT221-C14-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "2026 rates",
+   "positions": [
+    {
+     "speaker": "Allan Dunne",
+     "position": "10-year to 6% then down to 3.5%.",
+     "claim_ids": [
+      "MT221-C16-2"
+     ]
+    },
+    {
+     "speaker": "Yoav Git",
+     "position": "10-year around 6% most likely.",
+     "claim_ids": [
+      "MT221-C17-X1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Fed has to hike at least once.",
+     "claim_ids": [
+      "MT221-C17-2"
+     ]
+    },
+    {
+     "speaker": "Katie Kaminski",
+     "position": "Rates go lower, boom-bust.",
+     "claim_ids": [
+      "MT221-C16-X2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Speaker attribution is uncertain for C03-C04 (Jim vs unnamed panelist), C07 (Yoav vs others) and the host question turns; ledger corrections applied.",
+   "claim_ids": [
+    "MT221-C03-3",
+    "MT221-C03-4",
+    "MT221-C04-X1"
+   ]
+  },
+  {
+   "issue": "The 25% and ~1/3 optimal-allocation claims rest on stated Sharpe and correlation assumptions (Sharpe 0.5 vs 1.5, zero correlation) that are not demonstrated.",
+   "claim_ids": [
+    "MT221-C02-1",
+    "MT221-C03-3"
+   ]
+  },
+  {
+   "issue": "Stock/60-40 Sharpe of 0.35 over 125 years is quoted from memory; no source given.",
+   "claim_ids": [
+    "MT221-C04-1"
+   ]
+  },
+  {
+   "issue": "Volatility compression as the sole cause of 2023-25 underperformance is argued from a Sharpe-extraction test that is described but not shown.",
+   "claim_ids": [
+    "MT221-C07-1",
+    "MT221-C11-1"
+   ]
+  },
+  {
+   "issue": "Andrew says changes are rarely helpful; Jim and Yoav propose forward-looking or thesis-driven adaptation, so 'never change' vs 'adapt to distribution' is not reconciled.",
+   "claim_ids": [
+    "MT221-C06-1",
+    "MT221-C06-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs named: share of markets winning (40% vs 30-35%), Sharpe extracted per unit of underlying trend, volatility compression, front-month CTA share of volume (financialisation), stock-bond correlation, rates and inflation regimes, manager dispersion and index volatility. Horizons: multi-year drawdowns recover over 1-2 years after challenging periods; 2026 views are annual.",
+ "reader_inferences": [
+  "(reader) The panel's shared claim is that drawdown diagnosis should separate trend availability from model quality; this suggests a monitoring metric (winner share, Sharpe extraction) for the book.",
+  "(reader) Several speakers (Jim, Yoav, Allan) converge on trend and long volatility as complements; only Jim attaches an explicit 2026 trade.",
+  "(reader) The predictions segment is flagged by the host as 'outrageous', so treat 2026 views as low-confidence."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT221-C07-R1",
+   "chunk": "C07",
+   "speaker": "Yoav Git",
+   "quote": "truly actually understanding the causes for performance or underperformance i.e. actually measuring things properly",
+   "claim": "Before changing any trend model, first understand the cause of underperformance by measuring properly (for example, Sharpe extracted from trending markets versus the past), and second understand and stay true to your thesis.",
+   "mechanism": "measure_before_change",
+   "asset_class": "multi",
+   "indicator": "Sharpe extracted per unit of underlying trend Sharpe",
+   "horizon": "years",
+   "direction": "diagnose",
+   "conditions": "After a multi-year drawdown",
+   "testable": "yes: extraction ratio is computable",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT221-C07-R2",
+   "chunk": "C07",
+   "speaker": "Andrew Beer",
+   "quote": "very good at owning their decisions",
+   "claim": "Owning one's investment decisions (admitting which choices were mistakes) differentiates quantitative managers and helps allocators build a mosaic of exposures; the asset allocation thesis and the source of excess returns are separate from individual design decisions.",
+   "mechanism": "decision_ownership",
+   "asset_class": "multi",
+   "indicator": "manager transparency",
+   "horizon": "years",
+   "direction": "n/a",
+   "conditions": "Cliff Asness cited as an example",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

@@ -1,0 +1,652 @@
+{
+ "source_id": "MT222",
+ "episode_thesis": "Brennan argues that trend following works because markets are structural feedback systems: across 68 futures markets since 1984 the Hurst exponent (0.866), fat tails (exponent 3.33) and volatility clustering (0.353) all contradict a memoryless market, and a participant-mix threshold (25-30% divergent) explains regimes. The March 2026 oil spike (66 to 119 to 84) is read as lightning on dry undergrowth, with implications that bell-curve risk and fixed vol targeting understate risk.",
+ "speakers": [
+  {
+   "name": "Rich Brennan",
+   "role": "Trend follower at Dunn, author of The Fractals of Finance, co-host of the Systematic Investor series",
+   "speaker_note": "Two-voice conversation with no on-screen labels; Brennan is the one presenting the research and the oil analysis, Kaastrup-Larsen the one quoting Dunn and the SocGen indices. Attribution consistent with the ledger.",
+   "fingerprint": [
+    "trend_following",
+    "regime_detection",
+    "crisis_alpha_convexity",
+    "position_sizing_vol_target",
+    "positioning_crowding",
+    "research_robustness_overfitting",
+    "diversification_risk_parity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Markets are feedback systems, not memoryless: persistence, fat tails and volatility clustering together prove structural feedback.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Hurst 0.866, tail exponent 3.33, vol autocorrelation 0.353 across 68 futures markets since 1984",
+     "claim_ids": [
+      "MT222-C07-1",
+      "MT222-C07-2",
+      "MT222-C09-1",
+      "MT222-C09-2",
+      "MT222-C08-R1",
+      "MT222-C06-4"
+     ]
+    },
+    {
+     "premise": "Trend memory sits in magnitude and clustering of moves, not in day-to-day directional autocorrelation, which averages near zero.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Hurst vs near-zero daily autocorrelation; second research phase promised",
+     "claim_ids": [
+      "MT222-C08-1",
+      "MT222-C07-X1",
+      "MT222-C08-X1"
+     ]
+    },
+    {
+     "premise": "Two participant types: convergent (value, arbitrage, mean reversion) make the narrow peak; divergent (trend, momentum, stop-loss, margin calls) make the fat tails.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Shape of the return distribution plus agent-based simulation",
+     "claim_ids": [
+      "MT222-C09-3",
+      "MT222-C10-X1"
+     ]
+    },
+    {
+     "premise": "A market flips regime when divergent participation crosses roughly 25-30%; regimes are observable, not random weather.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Agent-based simulation; link to real markets is argued, not tested",
+     "claim_ids": [
+      "MT222-C11-2",
+      "MT222-C12-1"
+     ]
+    },
+    {
+     "premise": "Bell-curve risk tools (vol targeting, VaR, 2-3 sigma stress) understate tail risk.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Five-sigma moves 5,791x more frequent than normal",
+     "claim_ids": [
+      "MT222-C09-1",
+      "MT222-C11-1",
+      "MT222-C12-3"
+     ]
+    },
+    {
+     "premise": "Portfolios must be built for being wrong; trend following gives a non-correlated stream and diversifies investment process, not just returns.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Cocoa took ~15 years to pay; Dave Dredge quote",
+     "claim_ids": [
+      "MT222-C03-1",
+      "MT222-C03-2"
+     ]
+    },
+    {
+     "premise": "Politically managed prices (energy) can be suppressed for a while but snap back sharply.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Anecdote (election incentives, California fires analogy)",
+     "claim_ids": [
+      "MT222-C02-X2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why oil spiked 66 to 119 and reversed",
+     "steps": [
+      {
+       "from": "18 months of drift lower, heavy shorts, suppressed vol, amplifiers gone",
+       "to": "structurally coiled market",
+       "why": "state of market, not news, sets the size of the response",
+       "claim_ids": [
+        "MT222-C01-1",
+        "MT222-C02-1"
+       ]
+      },
+      {
+       "from": "coiled market + geopolitical catalyst",
+       "to": "outsized spike",
+       "why": "no amplifying participants left to dampen/oppose; shock pushes divergent share above threshold",
+       "claim_ids": [
+        "MT222-C02-1",
+        "MT222-C12-2"
+       ]
+      },
+      {
+       "from": "spike-chasers stopped out, momentum flips",
+       "to": "30% reversal in days",
+       "why": "participant mix not durably changed, so system falls back below threshold",
+       "claim_ids": [
+        "MT222-C02-2",
+        "MT222-C12-2"
+       ]
+      },
+      {
+       "from": "sustained disruption",
+       "to": "spike becomes a genuine trend",
+       "why": "new price level builds its own structural support; otherwise back to mid-70s",
+       "claim_ids": [
+        "MT222-C12-X2"
+       ]
+      }
+     ],
+     "evidence": "Single episode (oil 2024-26); simulation threshold",
+     "fails_when": "Disruption is resolved or never sustained",
+     "claim_ids": [
+      "MT222-C01-1",
+      "MT222-C02-1",
+      "MT222-C02-2",
+      "MT222-C12-2",
+      "MT222-C12-X2"
+     ]
+    },
+    {
+     "topic": "Oil shock to inflation and rates",
+     "steps": [
+      {
+       "from": "oil price up",
+       "to": "transport, manufacturing, food costs up",
+       "why": "oil is the most consequential input price; diesel, plastics, fertiliser",
+       "claim_ids": [
+        "MT222-C04-1"
+       ]
+      },
+      {
+       "from": "cost pass-through",
+       "to": "wage pressure and sticky prices",
+       "why": "prices rise fast and fall slowly (fuel surcharges not cut)",
+       "claim_ids": [
+        "MT222-C04-1"
+       ]
+      },
+      {
+       "from": "persistent inflation",
+       "to": "fast central-bank hikes",
+       "why": "1970s tolerance was too costly",
+       "claim_ids": [
+        "MT222-C04-1"
+       ]
+      },
+      {
+       "from": "sustained oil + rate rise",
+       "to": "high inflation, high rates regime",
+       "why": "1990s Australian cash rate 17.5% as analogy; big trends for CTAs",
+       "claim_ids": [
+        "MT222-C14-1"
+       ]
+      }
+     ],
+     "evidence": "Historical analogy (1970s, 1990s)",
+     "fails_when": "Oil retraces and the shock stays a spike",
+     "claim_ids": [
+      "MT222-C04-1",
+      "MT222-C14-1"
+     ]
+    },
+    {
+     "topic": "Why volatility targeting fails in the tails",
+     "steps": [
+      {
+       "from": "size to recent calm volatility",
+       "to": "positions fit to the centre of the distribution",
+       "why": "vol targeting assumes recent vol predicts future",
+       "claim_ids": [
+        "MT222-C11-1"
+       ]
+      },
+      {
+       "from": "tail exponent 3.33",
+       "to": "large moves fall off more slowly than bell curve",
+       "why": "tails are fat across all liquid markets",
+       "claim_ids": [
+        "MT222-C09-1",
+        "MT222-C11-1"
+       ]
+      },
+      {
+       "from": "oil 66-80 range then 119",
+       "to": "losses the risk framework deemed unrealistic",
+       "why": "predictable consequence of bell-curve tool on power-law risk",
+       "claim_ids": [
+        "MT222-C11-1"
+       ]
+      }
+     ],
+     "evidence": "Tail-exponent estimate; oil example",
+     "fails_when": "Not prescriptive: research does not offer a replacement",
+     "claim_ids": [
+      "MT222-C11-1",
+      "MT222-C09-1"
+     ]
+    },
+    {
+     "topic": "Why trend following works (structural)",
+     "steps": [
+      {
+       "from": "persistent Hurst, vol clustering, fat tails",
+       "to": "feedback is structural",
+       "why": "three no-memory predictions all false in every market and decade",
+       "claim_ids": [
+        "MT222-C07-1",
+        "MT222-C07-2",
+        "MT222-C09-2"
+       ]
+      },
+      {
+       "from": "conditions sustaining trends persist once established",
+       "to": "trends continue without daily autocorrelation",
+       "why": "market does not reset to a blank slate each day",
+       "claim_ids": [
+        "MT222-C07-X1",
+        "MT222-C12-X1"
+       ]
+      },
+      {
+       "from": "trend followers are divergent participants",
+       "to": "they profit from the feedback they help create",
+       "why": "alignment with a structural feature of price formation",
+       "claim_ids": [
+        "MT222-C10-X1"
+       ]
+      }
+     ],
+     "evidence": "68 markets, 8 classes, 1984 onward",
+     "fails_when": "Quiet range regimes (below threshold) - but those are not evidence of failure",
+     "claim_ids": [
+      "MT222-C07-1",
+      "MT222-C07-X1",
+      "MT222-C10-X1",
+      "MT222-C12-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Hold a diversified trend portfolio across asset classes; diversification is participation in different feedback environments with the same structure.",
+     "why": "Coherence of the portfolio comes from universality of the structure",
+     "claim_ids": [
+      "MT222-C12-3"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Stay positioned to follow the confirmed trend; do not decide in advance whether a spike is a repricing or an overshoot.",
+     "why": "Market confirms the outcome",
+     "claim_ids": [
+      "MT222-C04-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Do not mistake a quiet period for failure; follow the process through low-trend regimes.",
+     "why": "Regime follows observable participant balance",
+     "claim_ids": [
+      "MT222-C12-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Robustness across all conditions rather than optimising for one regime.",
+     "why": "Opportunity density shifts as participant mix shifts",
+     "claim_ids": [
+      "MT222-C12-1"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Fixed vol targeting is risky given the fat tails; research gives no specific alternative.",
+     "why": "Tail underestimation",
+     "claim_ids": [
+      "MT222-C11-1"
+     ]
+    }
+   ],
+   "evidence_style": "Empirical research on long daily futures data plus a logic test (null world without memory) and an agent-based simulation; anecdotes from oil and cocoa.",
+   "current_views": [
+    {
+     "view": "Oil is a coiled-spring overshoot; outcome depends on whether the supply disruption is real and sustained: resolved means mid-70s, sustained means genuine trend.",
+     "as_of": "2026-03-11 (recording week)",
+     "reasoning": "Participant-mix threshold",
+     "claim_ids": [
+      "MT222-C02-1",
+      "MT222-C12-2",
+      "MT222-C12-X2"
+     ]
+    },
+    {
+     "view": "The regime ahead (tail events in metals, energy, deglobalisation) favours trend following and long-vol and hurts pod shops and other alternatives.",
+     "as_of": "2026-03",
+     "reasoning": "Most strategies fail in tail regimes",
+     "claim_ids": [
+      "MT222-C06-3"
+     ]
+    },
+    {
+     "view": "A sustained oil move would bring back high inflation and rates and a very healthy decade for trend following.",
+     "as_of": "2026-03",
+     "reasoning": "1990s analogy",
+     "claim_ids": [
+      "MT222-C14-1"
+     ]
+    },
+    {
+     "view": "Markets will not revert to the old normal; recency bias is dangerous.",
+     "as_of": "2026-03",
+     "reasoning": "Regime persistence",
+     "claim_ids": [
+      "MT222-C14-R1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged); former CTA manager",
+   "speaker_note": "Host speaks for himself and quotes Dunn's practices (a 'we' that is the guest's firm); takes positions on dynamic sizing and recency bias.",
+   "fingerprint": [
+    "trend_following",
+    "regime_detection",
+    "position_sizing_vol_target",
+    "debt_cycle_long_term",
+    "manager_selection_allocation",
+    "crisis_alpha_convexity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "The better a system is managed (inflation in the 2010s, oil via policy), the larger the coiled build-up for a consequential break.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Inflation 2% to 10-11% after the pandemic trigger",
+     "claim_ids": [
+      "MT222-C02-3",
+      "MT222-C02-X1"
+     ]
+    },
+    {
+     "premise": "Rate regimes and the stock-bond correlation persist once established; after 40 years of lower lows, higher highs in rates signal a long new cycle.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Cycle argument, no data shown",
+     "claim_ids": [
+      "MT222-C14-2"
+     ]
+    },
+    {
+     "premise": "Trend following is robust, not disaster insurance only: it stayed profitable (less so) in the unfavourable 2010s.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Dunn's track record",
+     "claim_ids": [
+      "MT222-C14-3",
+      "MT222-C13-1"
+     ]
+    },
+    {
+     "premise": "Planning must include events that look unimaginable, which bell-curve models call impossible.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Repeated theme on the podcast",
+     "claim_ids": [
+      "MT222-C02-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Dynamic sizing makes trend followers partly dampen spikes",
+     "steps": [
+      {
+       "from": "volatility expands",
+       "to": "dynamic-sizing CTAs cut exposure",
+       "why": "risk framework within a risk budget",
+       "claim_ids": [
+        "MT222-C10-1"
+       ]
+      },
+      {
+       "from": "exposure cut during the spike",
+       "to": "CTAs sell oil near the top",
+       "why": "they suppress rather than amplify the move",
+       "claim_ids": [
+        "MT222-C10-1",
+        "MT222-C10-X2"
+       ]
+      }
+     ],
+     "evidence": "Practitioner knowledge",
+     "fails_when": "Fixed vol target models that do not adjust to the tails",
+     "claim_ids": [
+      "MT222-C10-1",
+      "MT222-C10-X2",
+      "MT222-C11-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "risk",
+     "practice": "Dunn targets a daily risk level, not a fixed volatility target.",
+     "why": "Fat-tailed returns make the distinction matter",
+     "claim_ids": [
+      "MT222-C11-X1"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Reduce position as volatility expands (dynamic position sizing).",
+     "why": "Capture the vol expansion mechanically; alternative is buying cheap vol",
+     "claim_ids": [
+      "MT222-C10-1",
+      "MT222-C10-X2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Accept 6-12 months of small losses while waiting for the next regime; eight straight winning months occurred only twice in 50 years.",
+     "why": "Regimes pay consistently once established",
+     "claim_ids": [
+      "MT222-C13-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Monitor the trend barometer (50 = good breadth) and SocGen trend vs short-term indices.",
+     "why": "Breadth of trends and long-term vs short-term dominance",
+     "claim_ids": [
+      "MT222-C05-1",
+      "MT222-C04-3"
+     ]
+    }
+   ],
+   "evidence_style": "Track record of Dunn and index data; cycles and analogies.",
+   "current_views": [
+    {
+     "view": "Long-term trend strategies outperformed short-term ones, against the mid-2025 narrative.",
+     "as_of": "2026-03",
+     "reasoning": "SocGen Trend Index new high end of Feb 2026",
+     "claim_ids": [
+      "MT222-C04-3"
+     ]
+    },
+    {
+     "view": "Trend followers caught the oil spike (models flipped mid-February) and offset losses elsewhere.",
+     "as_of": "2026-03-10",
+     "reasoning": "Energy gains vs equity/FX/bond losses",
+     "claim_ids": [
+      "MT222-C05-2",
+      "MT222-C06-1"
+     ]
+    },
+    {
+     "view": "Stocks and bonds fell together in the oil shock, so bonds gave no hedge; SG Trend about -2.1% in March, +6.1% YTD.",
+     "as_of": "2026-03-10",
+     "reasoning": "Cross-asset data",
+     "claim_ids": [
+      "MT222-C05-X1"
+     ]
+    },
+    {
+     "view": "Multi-strategy pod shops struggled in March 2026 tail events.",
+     "as_of": "2026-03",
+     "reasoning": "Press report",
+     "claim_ids": [
+      "MT222-C06-2"
+     ]
+    },
+    {
+     "view": "A new rate regime (higher highs) may last decades; do not assume the old normal returns.",
+     "as_of": "2026-03",
+     "reasoning": "Rate-cycle persistence",
+     "claim_ids": [
+      "MT222-C14-2"
+     ]
+    },
+    {
+     "view": "The oil move is potentially an unimaginable event; also about 20 million bpd trapped by Hormuz with second-order storage and refinery effects.",
+     "as_of": "2026-03",
+     "reasoning": "Storage fills, production cuts, slow restarts",
+     "claim_ids": [
+      "MT222-C03-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Fixed volatility target vs daily risk target",
+   "positions": [
+    {
+     "speaker": "Rich Brennan",
+     "position": "Volatility targeting rests on recent vol predicting the future and understates tail losses; the research prescribes no specific fix.",
+     "claim_ids": [
+      "MT222-C11-1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Dunn uses a daily risk target not a vol target; the distinction matters with fat tails.",
+     "claim_ids": [
+      "MT222-C11-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Do trend followers amplify or dampen spikes",
+   "positions": [
+    {
+     "speaker": "Rich Brennan",
+     "position": "Trend followers are divergent, amplifying participants who help create fat tails.",
+     "claim_ids": [
+      "MT222-C10-X1",
+      "MT222-C09-3"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "With dynamic sizing they sell near the top and may dampen the move.",
+     "claim_ids": [
+      "MT222-C10-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Agent-based 25-30% threshold is a simulation result; mapping to real participants is asserted, not shown.",
+   "claim_ids": [
+    "MT222-C11-2",
+    "MT222-C12-2"
+   ]
+  },
+  {
+   "issue": "Hurst of 0.866 is much higher than decade averages 0.707-0.757; the estimator and how the 0.866 is computed are not explained.",
+   "claim_ids": [
+    "MT222-C07-2"
+   ]
+  },
+  {
+   "issue": "Autocorrelation 'close to zero' is called a deceptive average, deferred to a later episode.",
+   "claim_ids": [
+    "MT222-C08-1"
+   ]
+  },
+  {
+   "issue": "Oil reading as primed overshoot is one episode and a narrative; positioning data not shown.",
+   "claim_ids": [
+    "MT222-C01-1",
+    "MT222-C02-1"
+   ]
+  },
+  {
+   "issue": "Fat-tail frequency (5,791x) depends on the sigma estimate under clustering; not discussed.",
+   "claim_ids": [
+    "MT222-C09-1",
+    "MT222-C09-R1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "Observable inputs: volatility level, positioning (shorts), momentum, fear, margin levels, supply disruption persistence; horizon months for regime; years for rate cycle. Why: these set the balance of stabilising vs amplifying participants.",
+ "reader_inferences": [
+  "The episode treats unconditional Hurst and tail statistics as proof of trend profitability; these do not by themselves give a tradable edge or its sign.",
+  "Both speakers are CTA managers; the conclusions favour their own strategy."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT222-C08-R1",
+   "chunk": "C08",
+   "speaker": "Rich Brennan",
+   "quote": "the efficient market hypothesis, says none of this should exist.",
+   "claim": "Brennan: the independence assumption of the standard model (efficient market hypothesis) implies no persistence, bell-curve returns and steady volatility, so finding all three in every market means the model was wrong from the start; participants watch and respond to each other, creating feedback.",
+   "mechanism": "feedback",
+   "asset_class": "multi",
+   "indicator": "EMH vs measured structure",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "68 futures markets, 1984-2026",
+   "testable": "partly - conclusion rests on the tests reported in this episode",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "sonnet-map"
+  },
+  {
+   "claim_id": "MT222-C09-R1",
+   "chunk": "C09",
+   "speaker": "Rich Brennan",
+   "quote": "should occur roughly once every three and a half million trading days.",
+   "claim": "Under bell-curve returns a five-sigma daily move should occur about once in 3.5 million trading days, longer than all liquid-market history; the observed frequency is 5,791 times higher.",
+   "mechanism": "fat_tails",
+   "asset_class": "multi",
+   "indicator": "five-sigma frequency",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "yes - count exceedances",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "sonnet-map"
+  },
+  {
+   "claim_id": "MT222-C14-R1",
+   "chunk": "C14",
+   "speaker": "Rich Brennan",
+   "quote": "We're not going to go back to what was.",
+   "claim": "Brennan believes markets will not return to the pre-shock geopolitical and rate normal; investors expecting a return to the recent past are showing recency bias.",
+   "mechanism": "regime_persistence",
+   "asset_class": "multi",
+   "indicator": "geopolitical/rate regime",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "March 2026",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "sonnet-map"
+  }
+ ]
+}

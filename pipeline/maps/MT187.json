@@ -1,0 +1,795 @@
+{
+ "source_id": "MT187",
+ "episode_thesis": "Mark reads a cluster of August 2026 'rumblings' (leverage losses, speculative stocks, joint yen intervention, commodity buffer-stock exhaustion, the Treasury buyback) as signs of fragility, and argues that Treasuries are less safe than assumed because dealer capacity is limited and the marginal buyer is a levered basis-trade hedge fund financed in repo. He and Niels also discuss trend-follower styles (diversify by structure, blend pure-trend methods), short-term trend following and microstructure, and Mark closes with Niederhoffer's empiricism.",
+ "speakers": [
+  {
+   "name": "Mark Rzepczynski",
+   "role": "Co-host of the Systematic Investor series; quant with VUCA/uncertainty framing and Treasury-market research background (caption 'Mark Ramsinski')",
+   "speaker_note": "Caption spells the name 'Ramsinski'; identified from the ledger header. Hosting turns are clear from question/answer structure.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "liquidity_flows",
+    "commodity_fundamentals",
+    "regime_detection",
+    "positioning_crowding",
+    "research_robustness_overfitting",
+    "trend_following",
+    "geopolitics"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Before a storm there are rumblings: leveraged blow-ups, bubbles collapsing, new-issue reversals and failed FX intervention signal fragility even when VIX is low.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Weather analogy; a handful of August 2026 episodes (67% monthly loss, Korean bubble, joint yen intervention).",
+     "claim_ids": [
+      "MT187-C01-1",
+      "MT187-C01-2",
+      "MT187-C01-3",
+      "MT187-C02-X2",
+      "MT187-C04-3"
+     ]
+    },
+    {
+     "premise": "Concentrated single-stock run-ups look like excessive speculation; the reversal will hurt late buyers.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Micron from under 400 to about 1,200 in four months; no valuation work.",
+     "claim_ids": [
+      "MT187-C02-X2",
+      "MT187-C02-3"
+     ]
+    },
+    {
+     "premise": "Modern market makers take speculative, correlation-based hedge bets across hundreds of stocks and can suffer big losses if correlations break.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Reasoning from the reported $15bn loss.",
+     "claim_ids": [
+      "MT187-C03-1"
+     ]
+    },
+    {
+     "premise": "Low inventories remove the buffer stock; users then pay any price, producing extreme moves and backwardation, so inventories tell something that the price trend alone does not.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Cocoa two years earlier; oil after the Iran war; copper.",
+     "claim_ids": [
+      "MT187-C03-2",
+      "MT187-C03-3",
+      "MT187-C03-X1"
+     ]
+    },
+    {
+     "premise": "China and the US smoothed oil by cutting purchases and drawing on reserves; as buffers deplete, a blow-off in oil and refined products becomes the risk.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Policy actions described; no numbers.",
+     "claim_ids": [
+      "MT187-C04-1"
+     ]
+    },
+    {
+     "premise": "Complexity and ambiguity (yen carry unwind with intervention, unclear Fed policy and Treasury financing) force slow expectation adjustment, which creates trends.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "VUCA reasoning.",
+     "claim_ids": [
+      "MT187-C05-1"
+     ]
+    },
+    {
+     "premise": "The Treasury market is less liquid than assumed: huge number of off-the-run issues, dealer balance sheets limited by regulation (supplementary leverage ratio), HFT liquidity providers with no obligation, and a levered marginal buyer.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Experience (research on primary dealers in the 1980s); Fed studies cited.",
+     "claim_ids": [
+      "MT187-C05-3",
+      "MT187-C06-1",
+      "MT187-C08-3",
+      "MT187-C09-1",
+      "MT187-C09-2",
+      "MT187-C10-3"
+     ]
+    },
+    {
+     "premise": "Official reassurance is a warning sign; the buyback signals insufficient market-making capacity and could precede a shift to bills.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Personal heuristic, history of earlier buybacks (2000-2002).",
+     "claim_ids": [
+      "MT187-C06-2",
+      "MT187-C07-2",
+      "MT187-C07-3",
+      "MT187-C06-X1"
+     ]
+    },
+    {
+     "premise": "Treasury buybacks are a small stabiliser buying off-the-run bonds that trade cheap to the curve.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Programme design.",
+     "claim_ids": [
+      "MT187-C08-1"
+     ]
+    },
+    {
+     "premise": "Hedge funds hold over 9% of marketable Treasuries; their number one trade is the cash-futures basis trade run on extreme repo leverage, so repo stress would spill into the bond market.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Fed studies cited.",
+     "claim_ids": [
+      "MT187-C09-3",
+      "MT187-C10-1",
+      "MT187-C10-X1",
+      "MT187-C10-X2"
+     ]
+    },
+    {
+     "premise": "Safety of an asset includes the ability to sell at a fair price; Treasuries failed that test in March 2020.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "March 2020 liquidity shortage.",
+     "claim_ids": [
+      "MT187-C11-1"
+     ]
+    },
+    {
+     "premise": "Trend-follower styles (European, American, time-series momentum) have similar Sharpe ratios and drawdowns and all do well in strong trends; a few trend followers suffice to replicate the benchmark.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Arthur Sepp's LGT paper.",
+     "claim_ids": [
+      "MT187-C12-1",
+      "MT187-C12-2",
+      "MT187-C13-2"
+     ]
+    },
+    {
+     "premise": "Short-term trend profits survive only in futures with large vol-adjusted tick size; HFT market makers compete them away where ticks are small.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Cites recent research.",
+     "claim_ids": [
+      "MT187-C14-3",
+      "MT187-C15-1"
+     ]
+    },
+    {
+     "premise": "Market microstructure (tick size, players, financing) matters as much as model details.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own time allocation.",
+     "claim_ids": [
+      "MT187-C15-3",
+      "MT187-C15-X1"
+     ]
+    },
+    {
+     "premise": "Quality of empirical testing determines quality of results, but empiricism has tail and leverage risk (Niederhoffer blow-ups).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Niederhoffer's career; Taleb contrast.",
+     "claim_ids": [
+      "MT187-C16-1",
+      "MT187-C16-2",
+      "MT187-C16-3",
+      "MT187-C16-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Commodity buffer-stock exhaustion to price blow-off",
+     "steps": [
+      {
+       "from": "Low inventories / drawn-down reserves",
+       "to": "No buffer stock",
+       "why": "Warehouse stocks and government reserves can no longer smooth shocks",
+       "claim_ids": [
+        "MT187-C03-2",
+        "MT187-C04-1"
+       ]
+      },
+      {
+       "from": "No buffer",
+       "to": "Users pay any price",
+       "why": "Production must continue",
+       "claim_ids": [
+        "MT187-C03-2",
+        "MT187-C03-X1"
+       ]
+      },
+      {
+       "from": "Extreme price move",
+       "to": "Backwardation and front-end volatility",
+       "why": "Inventory changes curve shape",
+       "claim_ids": [
+        "MT187-C03-3",
+        "MT187-C04-1"
+       ]
+      }
+     ],
+     "evidence": "Cocoa two years earlier; copper spot-to-3m spread squeeze and LME inflow (Niels).",
+     "fails_when": "Timing is uncertain (Niels on missing billion barrels of oil).",
+     "claim_ids": [
+      "MT187-C03-2",
+      "MT187-C03-3",
+      "MT187-C03-X1",
+      "MT187-C04-1",
+      "MT187-C03-4"
+     ]
+    },
+    {
+     "topic": "Treasury plumbing to stress amplification",
+     "steps": [
+      {
+       "from": "Many off-the-run issues and limited dealer capital (SLR)",
+       "to": "Wide spreads, long holding of inventory, thin liquidity",
+       "why": "Dealers must finance inventory with scarce capital",
+       "claim_ids": [
+        "MT187-C06-1",
+        "MT187-C09-1",
+        "MT187-C09-X1"
+       ]
+      },
+      {
+       "from": "Levered hedge funds as marginal buyers financed in repo",
+       "to": "Basis-trade dependence on repo",
+       "why": "Few ticks of profit require huge leverage",
+       "claim_ids": [
+        "MT187-C09-2",
+        "MT187-C09-3",
+        "MT187-C10-1"
+       ]
+      },
+      {
+       "from": "Repo stress or Fed balance sheet cuts / higher short rates",
+       "to": "Spillover to the whole bond market",
+       "why": "Overnight financing reverberates",
+       "claim_ids": [
+        "MT187-C10-X2"
+       ]
+      },
+      {
+       "from": "HFT liquidity providers have no obligation",
+       "to": "Withdrawal in stress",
+       "why": "They can switch off",
+       "claim_ids": [
+        "MT187-C10-3",
+        "MT187-C11-1"
+       ]
+      }
+     ],
+     "evidence": "Fed studies cited; March 2020; 1980s dealer failures.",
+     "fails_when": "Not stated beyond stress; unclear how repo stress would transmit.",
+     "claim_ids": [
+      "MT187-C06-1",
+      "MT187-C09-1",
+      "MT187-C09-2",
+      "MT187-C09-3",
+      "MT187-C10-1",
+      "MT187-C10-3",
+      "MT187-C10-X2",
+      "MT187-C11-1"
+     ]
+    },
+    {
+     "topic": "Ambiguity to trends",
+     "steps": [
+      {
+       "from": "Yen carry unwind plus intervention; unclear Fed and Treasury financing",
+       "to": "Ambiguity",
+       "why": "Participants cautious",
+       "claim_ids": [
+        "MT187-C05-1"
+       ]
+      },
+      {
+       "from": "Ambiguity",
+       "to": "Slow expectation adjustment and trends in the fall",
+       "why": "Participants must adjust gradually",
+       "claim_ids": [
+        "MT187-C05-1"
+       ]
+      }
+     ],
+     "evidence": "VUCA framework; low VIX noted.",
+     "fails_when": "If stress turns into disorderly price jumps.",
+     "claim_ids": [
+      "MT187-C05-1",
+      "MT187-C04-3"
+     ]
+    },
+    {
+     "topic": "Short-term trend profits and tick size",
+     "steps": [
+      {
+       "from": "Small vol-adjusted tick size",
+       "to": "HFT market makers pull and add orders quickly",
+       "why": "Cost to short-term trend profits",
+       "claim_ids": [
+        "MT187-C15-1"
+       ]
+      },
+      {
+       "from": "Large tick size",
+       "to": "Short-term trend profits survive",
+       "why": "Less HFT competition",
+       "claim_ids": [
+        "MT187-C15-1"
+       ]
+      }
+     ],
+     "evidence": "Cited research.",
+     "fails_when": "Niels: short-term trend following is vol breakout, not comparable.",
+     "claim_ids": [
+      "MT187-C14-3",
+      "MT187-C15-1",
+      "MT187-C15-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Study inventories and buffer stocks to anticipate curve shape and front-end volatility.",
+     "why": "Information beyond price trend.",
+     "claim_ids": [
+      "MT187-C03-3"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Run American, European and time-series momentum models as internal pods; aggregate signals before execution; track each pod.",
+     "why": "Cuts transaction costs while preserving attribution.",
+     "claim_ids": [
+      "MT187-C14-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Study market plumbing (who the players are, financing, tick size) as a source of edge.",
+     "why": "Markets are ecosystems, not efficient pricing machines.",
+     "claim_ids": [
+      "MT187-C15-3",
+      "MT187-C15-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Verify with numbers and rigorous backtests; accept quality of testing limits results.",
+     "why": "Niederhoffer empiricism.",
+     "claim_ids": [
+      "MT187-C16-2",
+      "MT187-C16-X1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Monitor Treasury liquidity, repo and basis-trade leverage as warning signals.",
+     "why": "Possible source of market stress.",
+     "claim_ids": [
+      "MT187-C10-1",
+      "MT187-C10-X2"
+     ]
+    }
+   ],
+   "evidence_style": "Combines frameworks (VUCA, weather analogy), institutional detail on market plumbing, cited research (Fed studies, LGT paper, tick-size research) and the history of Niederhoffer; claims rarely carry numbers of his own.",
+   "current_views": [
+    {
+     "view": "Several 'rumblings' (leverage losses, Korean bubble, yen intervention, Treasury buyback) suggest fragility, though VIX is low and uncertainty has receded from its Ukraine high.",
+     "as_of": "2026-08-19",
+     "reasoning": "Fragility signals vs low market-implied stress.",
+     "claim_ids": [
+      "MT187-C01-1",
+      "MT187-C01-2",
+      "MT187-C01-3",
+      "MT187-C04-3"
+     ]
+    },
+    {
+     "view": "Oil and refined products face a blow-off risk as China and US buffers deplete; copper and other metals face the same inventory dynamic.",
+     "as_of": "2026-08-19",
+     "reasoning": "Buffer-stock exhaustion.",
+     "claim_ids": [
+      "MT187-C04-1",
+      "MT187-C03-X1"
+     ]
+    },
+    {
+     "view": "The fall may bring trends because of ambiguity in yen, bond markets and Fed policy.",
+     "as_of": "2026-08-19",
+     "reasoning": "Complexity and ambiguity.",
+     "claim_ids": [
+      "MT187-C05-1"
+     ]
+    },
+    {
+     "view": "The Treasury buyback is the start of something (possibly bills replacing bonds) and signals a liquidity problem in off-the-run issues.",
+     "as_of": "2026-08-19",
+     "reasoning": "Official reassurance as warning; precedent.",
+     "claim_ids": [
+      "MT187-C07-2",
+      "MT187-C07-3",
+      "MT187-C06-2"
+     ]
+    },
+    {
+     "view": "Treasuries are not as safe as assumed because liquidity can vanish and the marginal buyer is levered.",
+     "as_of": "2026-08-19",
+     "reasoning": "Plumbing analysis; March 2020.",
+     "claim_ids": [
+      "MT187-C09-2",
+      "MT187-C11-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host, Top Traders Unplugged; CTA industry insider",
+   "speaker_note": "Host; contributes market data (trend barometer, index returns) and arguments on single-stock gap risk, trend styles and fees.",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "costs_execution",
+    "crisis_alpha_convexity",
+    "policy_reaction_central_banks",
+    "behavioral_sentiment",
+    "commodity_fundamentals"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A concentrated bet inside a large multi-strategy firm shows hidden concentration despite many teams and good risk management.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Based on headlines about a $15bn loss after $40bn gain; admits limited information.",
+     "claim_ids": [
+      "MT187-C02-1"
+     ]
+    },
+    {
+     "premise": "Single stocks bring gap risk of order 177% in a day, far beyond futures; new single-stock futures may draw systematic managers into this risk.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Moderna example.",
+     "claim_ids": [
+      "MT187-C02-2",
+      "MT187-C02-X1"
+     ]
+    },
+    {
+     "premise": "A copper spot-to-3-month spread squeeze with large LME inflow indicates tight physical supply; commodity analyst Rosenswag sees about a billion barrels of oil unaccounted for which could lift prices.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "News and a guest's analysis.",
+     "claim_ids": [
+      "MT187-C03-4",
+      "MT187-C04-X1"
+     ]
+    },
+    {
+     "premise": "Trend barometer of 43 means neutral breadth of trending markets.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own indicator.",
+     "claim_ids": [
+      "MT187-C04-2"
+     ]
+    },
+    {
+     "premise": "A buyback announced right after the long bond hit 5.34% looks like soft yield curve control.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Timing inference.",
+     "claim_ids": [
+      "MT187-C07-1"
+     ]
+    },
+    {
+     "premise": "Short-rate trends follow policy paths and suit trend followers; the long end can have massive moves if rates truly change.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own bond-trading background.",
+     "claim_ids": [
+      "MT187-C08-2"
+     ]
+    },
+    {
+     "premise": "Crowded low-risk levered trades fail suddenly (SNB franc floor).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Historical example.",
+     "claim_ids": [
+      "MT187-C10-2"
+     ]
+    },
+    {
+     "premise": "Loss of trust in institutions is a slow cycle that, once broken in a market, makes moves disorderly.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Recurring theme on the show.",
+     "claim_ids": [
+      "MT187-C11-2"
+     ]
+    },
+    {
+     "premise": "European/American trend labels are historical, not geographic; diligence must check actual sizing and signal rules.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own firm's use of dynamic sizing.",
+     "claim_ids": [
+      "MT187-C12-X1"
+     ]
+    },
+    {
+     "premise": "Diversify managers by structural differences (markets, speed) rather than by style labels; programmes that blend pure-trend methodologies can be stronger.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own firm's evolution.",
+     "claim_ids": [
+      "MT187-C13-1",
+      "MT187-C13-X1"
+     ]
+    },
+    {
+     "premise": "Netting performance fees across models in one fund is an advantage over several managers; transaction costs are not the main hurdle in long-term exchange-traded futures.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Industry fee structure.",
+     "claim_ids": [
+      "MT187-C14-2",
+      "MT187-C14-X1"
+     ]
+    },
+    {
+     "premise": "Short-term 'trend following' is typically volatility breakout with different exits and is not comparable with longer-term trend.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation about firms.",
+     "claim_ids": [
+      "MT187-C15-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Trust and disorderly moves",
+     "steps": [
+      {
+       "from": "Declining trust in institutions",
+       "to": "Loss of trust in a market",
+       "why": "Slow cycle",
+       "claim_ids": [
+        "MT187-C11-2"
+       ]
+      },
+      {
+       "from": "Trust breaks",
+       "to": "Disorderly price moves",
+       "why": "'All hell breaks loose'",
+       "claim_ids": [
+        "MT187-C11-2"
+       ]
+      }
+     ],
+     "evidence": "Prior shows; no data.",
+     "fails_when": "Not specified.",
+     "claim_ids": [
+      "MT187-C11-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Build manager portfolios by structural differences (markets traded, speed), not by labels.",
+     "why": "Future path unknown.",
+     "claim_ids": [
+      "MT187-C13-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Check actual sizing and signal rules, not labels.",
+     "why": "Labels are historical.",
+     "claim_ids": [
+      "MT187-C12-X1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Prefer programmes that blend pure-trend methodologies.",
+     "why": "Diversification inside one programme.",
+     "claim_ids": [
+      "MT187-C13-X1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Set tail-risk limits for single-stock trading.",
+     "why": "Gap risk far beyond futures.",
+     "claim_ids": [
+      "MT187-C02-2",
+      "MT187-C02-X1"
+     ]
+    }
+   ],
+   "evidence_style": "Industry experience, reported news and own indicators; defers to Mark on plumbing.",
+   "current_views": [
+    {
+     "view": "Trend indices were up roughly 9.7-9.9% YTD on 18 Aug 2026; August 'okay'; trend barometer neutral at 43.",
+     "as_of": "2026-08-18",
+     "reasoning": "Index data.",
+     "claim_ids": [
+      "MT187-C04-2",
+      "MT187-C05-2"
+     ]
+    },
+    {
+     "view": "The Treasury buyback after the long bond hit 5.34% looks like soft yield curve control.",
+     "as_of": "2026-08-19",
+     "reasoning": "Timing.",
+     "claim_ids": [
+      "MT187-C07-1"
+     ]
+    },
+    {
+     "view": "Physical oil shortage could produce much higher oil prices, timing uncertain.",
+     "as_of": "2026-08-19",
+     "reasoning": "Rosenswag view.",
+     "claim_ids": [
+      "MT187-C04-X1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "What is the Treasury buyback?",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Looks like soft yield curve control for the long end because of the timing after 5.34%.",
+     "claim_ids": [
+      "MT187-C07-1"
+     ]
+    },
+    {
+     "speaker": "Mark Rzepczynski",
+     "position": "Not Fed QE or a yield-curve control; a Treasury liquidity programme (composition swap), possibly a precursor to bills replacing bonds.",
+     "claim_ids": [
+      "MT187-C06-2",
+      "MT187-C07-3",
+      "MT187-C08-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Short-term trend following",
+   "positions": [
+    {
+     "speaker": "Mark Rzepczynski",
+     "position": "Short-term trend profits remain where vol-adjusted tick size is large and are competed away by HFT elsewhere.",
+     "claim_ids": [
+      "MT187-C14-3",
+      "MT187-C15-1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Short-term 'trend following' is really volatility breakout with different exits and not comparable.",
+     "claim_ids": [
+      "MT187-C15-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Value of internal pods vs fees/costs",
+   "positions": [
+    {
+     "speaker": "Mark Rzepczynski",
+     "position": "Aggregate pod signals before execution to cut transaction costs.",
+     "claim_ids": [
+      "MT187-C14-1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Cost saving is modest in long-term futures; fee netting is the bigger advantage.",
+     "claim_ids": [
+      "MT187-C14-X1",
+      "MT187-C14-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Reading of trend labels",
+   "positions": [
+    {
+     "speaker": "Mark Rzepczynski",
+     "position": "Three styles (European, American, academic) differ in nuance but perform similarly.",
+     "claim_ids": [
+      "MT187-C12-1",
+      "MT187-C12-2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "The labels are historical; use structural differences and actual implementation.",
+     "claim_ids": [
+      "MT187-C12-X1",
+      "MT187-C13-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Reports of a $15bn loss and a 67% fund loss rely on headlines; no source details.",
+   "claim_ids": [
+    "MT187-C01-1",
+    "MT187-C02-1"
+   ]
+  },
+  {
+   "issue": "Treasury plumbing claims (hedge funds hold over 9%, basis trade number one) rest on unnamed Fed studies without figures.",
+   "claim_ids": [
+    "MT187-C09-2",
+    "MT187-C09-3"
+   ]
+  },
+  {
+   "issue": "Inference that a buyback signals insufficient dealer capacity or precedes a bill shift is Mark's reading, not stated by Treasury.",
+   "claim_ids": [
+    "MT187-C06-2",
+    "MT187-C07-3"
+   ]
+  },
+  {
+   "issue": "Tension: Mark says stress signals are rumbling yet VIX is low and uncertainty has receded.",
+   "claim_ids": [
+    "MT187-C04-3",
+    "MT187-C01-1"
+   ]
+  },
+  {
+   "issue": "Short-term trend research is described without authors or numbers.",
+   "claim_ids": [
+    "MT187-C14-3",
+    "MT187-C15-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "Observable inputs: commodity inventories and curve slope (backwardation), Chinese and US oil reserve draws, Treasury auction sizes and buyback size, repo stress, basis-trade leverage, dealer capacity, long-bond yield (5.34%), VIX and trend barometer; horizon: the fall of 2026 for trends, longer for oil blow-off.",
+ "reader_inferences": [
+  "The common thread is that stress transmits through financing and inventory buffers rather than through prices alone; trend followers would only capture it after the price move.",
+  "Mark's narrative is a risk watch, not a forecast of timing; both speakers avoid giving dates.",
+  "The 'podification' idea ties the Treasury fragility theme to manager selection only loosely."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT187-C13-R1",
+   "chunk": "C13",
+   "speaker": "Mark Rzepczynski",
+   "quote": "you should diversify across some trend followers but you don't have to have a portfolio of 10 different styles",
+   "claim": "A portfolio of managers needs several trend followers but not ten different styles.",
+   "mechanism": "manager_diversification",
+   "asset_class": "multi",
+   "indicator": "number of trend managers",
+   "horizon": "",
+   "direction": "",
+   "conditions": "",
+   "testable": "partly - optimal number of managers",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus-map"
+  }
+ ]
+}

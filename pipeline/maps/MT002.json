@@ -1,0 +1,1146 @@
+{
+ "source_id": "MT002",
+ "episode_thesis": "The panel explains 2024 trend following as a slow-and-large-market year: only equities and a few commodities trended, policy-expectation noise punished fast and medium speeds, and August's V-shaped shock hurt medium-speed models. Dispersion among managers came from speed, universe, purity and de-risking, while vol selling and structured products pinned the index; the panel debated crowding, whether illiquid markets trend more, market efficiency and AI.",
+ "speakers": [
+  {
+   "name": "Katy Kaminski",
+   "role": "Quant researcher, trend following (CTA style factors)",
+   "speaker_note": "Caption 'Katie kinsky'/'Katy Kaminski'; clear.",
+   "fingerprint": [
+    "trend_following",
+    "regime_detection",
+    "research_robustness_overfitting",
+    "positioning_crowding",
+    "manager_selection_allocation"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend performance is set by which trends exist and at which speed; in a year with one clear large-market trend, slow signals win and fast ones lose.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Annual review of her CTA style factors (speed, size, co-movement).",
+     "claim_ids": [
+      "MT002-C01-1",
+      "MT002-C02-1",
+      "MT002-C02-2"
+     ]
+    },
+    {
+     "premise": "Return dispersion among trend managers is structural and always underestimated, because parameterisation (horizon) makes return paths idiosyncratic despite high correlation.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation across years and managers.",
+     "claim_ids": [
+      "MT002-C14-3",
+      "MT002-C14-4b",
+      "MT002-C06-3"
+     ]
+    },
+    {
+     "premise": "Crowded positioning in 2024 was rewarded, so using a crowding measure to cut risk would have hurt.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "2024 outcome.",
+     "claim_ids": [
+      "MT002-C06-2",
+      "MT002-C06-5b"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why 2024 favoured slow trend",
+     "steps": [
+      {
+       "from": "Monetary-policy-expectation-driven FI and FX moves",
+       "to": "choppy sector trends",
+       "why": "Expectations swung, so no persistent rate or FX trend",
+       "claim_ids": [
+        "MT002-C01-2"
+       ]
+      },
+      {
+       "from": "Only equities (and a few commodities) trended",
+       "to": "long-horizon signals profit, short-horizon lose",
+       "why": "Short undulations around rate and political regime change whipsawed fast models",
+       "claim_ids": [
+        "MT002-C01-1",
+        "MT002-C02-1",
+        "MT002-C14-4b"
+       ]
+      },
+      {
+       "from": "Speed differences",
+       "to": "manager dispersion",
+       "why": "Dispersion explained mostly by speed, not co-movement",
+       "claim_ids": [
+        "MT002-C06-3",
+        "MT002-C14-3"
+       ]
+      }
+     ],
+     "evidence": "CTA style factor returns (slow ~+12%, fast ~-10/-11%).",
+     "fails_when": "A broad multi-sector trend year or a signal not explained by speed.",
+     "claim_ids": [
+      "MT002-C01-1",
+      "MT002-C01-2",
+      "MT002-C02-1",
+      "MT002-C14-4b"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Annual review of CTA style factors (speed, size, correlation) to see which sleeve of trend worked.",
+     "why": "Gives a decomposition of the year's trend performance.",
+     "claim_ids": [
+      "MT002-C02-1",
+      "MT002-C02-2",
+      "MT002-C02-3"
+     ]
+    }
+   ],
+   "evidence_style": "Factor-based performance attribution on a large manager universe.",
+   "current_views": [
+    {
+     "view": "Slow, big-market trend won 2024; trends in less correlated markets did better; fast signals were hurt by policy-expectation noise.",
+     "as_of": "2024-12-04",
+     "reasoning": "Style-factor spreads and the macro backdrop.",
+     "claim_ids": [
+      "MT002-C02-1",
+      "MT002-C02-2",
+      "MT002-C02-3",
+      "MT002-C01-1",
+      "MT002-C01-2"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Nick Baltas",
+   "role": "Quant, systematic strategies / QIS",
+   "speaker_note": "Caption 'Nick bols'; clear.",
+   "fingerprint": [
+    "trend_following",
+    "relative_value_arbitrage",
+    "positioning_crowding",
+    "research_robustness_overfitting",
+    "short_term_systematic",
+    "portfolio_construction_stacking"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A sudden V-shaped shock hurts the middle trend speeds: very slow ones stay through, very fast ones trade it, medium ones go short at the bottom and are caught on the rebound.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "August 2024 outcome; synchronised-soldiers-on-a-bridge analogy.",
+     "claim_ids": [
+      "MT002-C02-4"
+     ]
+    },
+    {
+     "premise": "Do not refit models after one event; behaviour is known and refitting overfits.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Experience; no data given.",
+     "claim_ids": [
+      "MT002-C02-5b"
+     ]
+    },
+    {
+     "premise": "Crowding cannot be timed, and commentators' blame of CTAs, vol targeting, risk parity and QIS is often not supported by data.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Anecdotes about 2024; says he does not see the data supporting QIS concentration claims.",
+     "claim_ids": [
+      "MT002-C06-1",
+      "MT002-C06-4",
+      "MT002-C06-2b",
+      "MT002-C06-5"
+     ]
+    },
+    {
+     "premise": "Trend managers' returns differ for speed, universe, purity of trend versus reversion/carry, and discretionary de-risking.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Conversations with managers; August 2024 example.",
+     "claim_ids": [
+      "MT002-C14-4",
+      "MT002-C15-2b",
+      "MT002-C15-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "August 2024 shock and speed",
+     "steps": [
+      {
+       "from": "Quick V-shaped fall and rebound",
+       "to": "medium-speed models short at the low",
+       "why": "They flip short as the market recovers and double down on the loss",
+       "claim_ids": [
+        "MT002-C02-4"
+       ]
+      },
+      {
+       "from": "Very slow models",
+       "to": "little damage",
+       "why": "Remain positioned through the move",
+       "claim_ids": [
+        "MT002-C02-4"
+       ]
+      }
+     ],
+     "evidence": "Fund outcomes in August 2024.",
+     "fails_when": "Event not V-shaped or sustained.",
+     "claim_ids": [
+      "MT002-C02-4"
+     ]
+    },
+    {
+     "topic": "Diversified-multi-strat returns 2024",
+     "steps": [
+      {
+       "from": "Cross-sectional reversion with skew",
+       "to": "gains in commodities and equities",
+       "why": "Reversion dynamics paid in 2023 and 2024",
+       "claim_ids": [
+        "MT002-C02-5",
+        "MT002-C15-2b"
+       ]
+      },
+      {
+       "from": "Single-stock momentum +44% vs -7% to +17% normal",
+       "to": "outperformance of long winners over losers",
+       "why": "Mega-cap/AI frenzy while crowding persisted",
+       "claim_ids": [
+        "MT002-C05-2",
+        "MT002-C06-1"
+       ]
+      }
+     ],
+     "evidence": "Own data on a momentum implementation.",
+     "fails_when": "A crowded-momentum unwind.",
+     "claim_ids": [
+      "MT002-C02-5",
+      "MT002-C05-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Treat one event as insufficient reason to refit; keep models stable.",
+     "why": "Avoid overfitting.",
+     "claim_ids": [
+      "MT002-C02-5b"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "In multi-strat context hold trend alongside reversion, carry, vol selling.",
+     "why": "Diversification smoothed a mediocre trend year.",
+     "claim_ids": [
+      "MT002-C02-5",
+      "MT002-C02-6",
+      "MT002-C03-1"
+     ]
+    }
+   ],
+   "evidence_style": "Empirical, manager data and anecdotes; sceptical about unsupported narratives.",
+   "current_views": [
+    {
+     "view": "Carry appetite more conservative after August 2024; vol selling less rewarded in H2.",
+     "as_of": "2024-12-04",
+     "reasoning": "Reaction to August unwind.",
+     "claim_ids": [
+      "MT002-C03-1",
+      "MT002-C02-6"
+     ]
+    },
+    {
+     "view": "Single-stock momentum extremely strong in 2024, not an obvious crowded unwind.",
+     "as_of": "2024-12-04",
+     "reasoning": "Return numbers vs 10-year range.",
+     "claim_ids": [
+      "MT002-C05-2",
+      "MT002-C06-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Andrew Beer",
+   "role": "Trend replication manager (top-down replication, hedge fund background)",
+   "speaker_note": "Caption 'Andre'/'Andrew beer'; clear.",
+   "fingerprint": [
+    "replication_indexing",
+    "trend_following",
+    "manager_selection_allocation",
+    "research_robustness_overfitting",
+    "costs_execution",
+    "bottom_up_fundamental"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend beta can be obtained cheaply by replication; fee budget should therefore go to esoteric alpha managers.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Industry structure reasoning; his own commodity-firm experience (power markets: mean reversion, information asymmetry, liquidity provision).",
+     "claim_ids": [
+      "MT002-C07-4",
+      "MT002-C07-5"
+     ]
+    },
+    {
+     "premise": "Small parameter or sector-weight differences produce big and persistent dispersion; a simple top-down replication is more stable and adaptive.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His 2015 survey of bank models and own build attempts.",
+     "claim_ids": [
+      "MT002-C15-2",
+      "MT002-C15-R1",
+      "MT002-C15-4b"
+     ]
+    },
+    {
+     "premise": "Equity stock selection has become more efficient; AI will amplify biases in poor data.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Career anecdotes (1990s vs now; hospital AI story).",
+     "claim_ids": [
+      "MT002-C10-3",
+      "MT002-C11-1",
+      "MT002-C12-3",
+      "MT002-C13-1"
+     ]
+    },
+    {
+     "premise": "Human beings are bad market timers; trend models are good at it.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Assertion.",
+     "claim_ids": [
+      "MT002-C13-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Replication behaviour in a shock",
+     "steps": [
+      {
+       "from": "Recent-window replication without stops",
+       "to": "slower de-risking",
+       "why": "Fresh data points mixed with old regime",
+       "claim_ids": [
+        "MT002-C03-2"
+       ]
+      },
+      {
+       "from": "Not cutting at the bottom",
+       "to": "recovery by month end",
+       "why": "Rebound recovered losses",
+       "claim_ids": [
+        "MT002-C03-2"
+       ]
+      }
+     ],
+     "evidence": "August 2024 own result.",
+     "fails_when": "Persistent trend reversal where slow de-risking loses.",
+     "claim_ids": [
+      "MT002-C03-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Simple top-down replication rather than a bespoke trend model.",
+     "why": "More stable and adaptive.",
+     "claim_ids": [
+      "MT002-C15-2",
+      "MT002-C15-R1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "No stop-losses or vol controls.",
+     "why": "Explains slower de-risking.",
+     "claim_ids": [
+      "MT002-C03-2"
+     ]
+    }
+   ],
+   "evidence_style": "First principles and anecdote.",
+   "current_views": [
+    {
+     "view": "Simple models worked better in 2024 as major markets were stable; trend dispersion is normal not elevated.",
+     "as_of": "2024-12-04",
+     "reasoning": "Own replication results.",
+     "claim_ids": [
+      "MT002-C03-3",
+      "MT002-C15-4b",
+      "MT002-C03-4"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Rob Carver",
+   "role": "Systematic trader and author",
+   "speaker_note": "Caption 'Rob carava'; clear.",
+   "fingerprint": [
+    "trend_following",
+    "research_robustness_overfitting",
+    "diversification_risk_parity",
+    "costs_execution",
+    "portfolio_construction_stacking"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Less liquid futures do not trend more; apparent evidence is a short-history artefact.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own review; histories coincide with strong trend periods; crypto shows the reverse.",
+     "claim_ids": [
+      "MT002-C08-2",
+      "MT002-C08-3b",
+      "MT002-C08-4",
+      "MT002-C08-R1"
+     ]
+    },
+    {
+     "premise": "Mean reversion is slow market making and so suits wide-spread illiquid markets.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning.",
+     "claim_ids": [
+      "MT002-C08-1"
+     ]
+    },
+    {
+     "premise": "The benefit of alternative markets is diversification.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own experience.",
+     "claim_ids": [
+      "MT002-C08-3"
+     ]
+    },
+    {
+     "premise": "AI has no serious use in his trading.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Personal.",
+     "claim_ids": [
+      "MT002-C11-3b"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why illiquid markets look more trending",
+     "steps": [
+      {
+       "from": "Illiquid markets have shorter histories",
+       "to": "history falls in good trend years",
+       "why": "Sample window overlap",
+       "claim_ids": [
+        "MT002-C08-2",
+        "MT002-C08-3b"
+       ]
+      },
+      {
+       "from": "Biased comparison",
+       "to": "false liquidity-trend relation",
+       "why": "Need same-window comparison",
+       "claim_ids": [
+        "MT002-C08-3b"
+       ]
+      }
+     ],
+     "evidence": "Informal review of studies, crypto.",
+     "fails_when": "A common-window study shows a significant effect.",
+     "claim_ids": [
+      "MT002-C08-2",
+      "MT002-C08-3b"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Compare markets over identical windows.",
+     "why": "Avoid sample bias.",
+     "claim_ids": [
+      "MT002-C08-3b"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Add alternative markets for diversification.",
+     "why": "Not for stronger trends.",
+     "claim_ids": [
+      "MT002-C08-3"
+     ]
+    }
+   ],
+   "evidence_style": "Sceptical, evidence-based, backtest hygiene.",
+   "current_views": [
+    {
+     "view": "No statistically significant liquidity effect in futures trend.",
+     "as_of": "2024-12-04",
+     "reasoning": "Informal review.",
+     "claim_ids": [
+      "MT002-C08-2",
+      "MT002-C08-4"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Mark Rzepczynski",
+   "role": "Macro and trend researcher",
+   "speaker_note": "Caption 'Mark raminski'; clear.",
+   "fingerprint": [
+    "trend_following",
+    "macro_fundamental_topdown",
+    "policy_reaction_central_banks",
+    "research_robustness_overfitting",
+    "manager_selection_allocation"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Efficiency is a joint hypothesis; outside equities there is no good valuation anchor, which is why trend following works (price is the valuation).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Samuelson micro-efficient macro-inefficient argument.",
+     "claim_ids": [
+      "MT002-C10-2",
+      "MT002-C10-2b"
+     ]
+    },
+    {
+     "premise": "Machine learning is only marginally better or worse than simple trend benchmarks.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own research.",
+     "claim_ids": [
+      "MT002-C12-1"
+     ]
+    },
+    {
+     "premise": "Manager dispersion largely disappears when managers are classified by style, timing and markets.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Own STM framework.",
+     "claim_ids": [
+      "MT002-C15-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Fed cut and bond market",
+     "steps": [
+      {
+       "from": "Fed cuts rates in Sept 2024",
+       "to": "assumed parallel shift down in curve",
+       "why": "Common assumption",
+       "claim_ids": [
+        "MT002-C13-3"
+       ]
+      },
+      {
+       "from": "Long yields rose",
+       "to": "macro trend differs from market trend",
+       "why": "Mistake conflating them",
+       "claim_ids": [
+        "MT002-C13-3"
+       ]
+      }
+     ],
+     "evidence": "2024 outcome.",
+     "fails_when": "Curve moves with policy.",
+     "claim_ids": [
+      "MT002-C13-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Benchmark new models against simple existing ones.",
+     "why": "Simple models hard to beat.",
+     "claim_ids": [
+      "MT002-C12-1"
+     ]
+    }
+   ],
+   "evidence_style": "Joint-hypothesis reasoning and experience.",
+   "current_views": [
+    {
+     "view": "Fed cut in Sept 2024 was followed by higher long yields, his biggest mistake.",
+     "as_of": "2024-12-04",
+     "reasoning": "Conflated macro and market trends.",
+     "claim_ids": [
+      "MT002-C13-3"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Rich Brennan",
+   "role": "Trend follower (Australia)",
+   "speaker_note": "Caption 'rich Brennan'; clear.",
+   "fingerprint": [
+    "trend_following",
+    "diversification_risk_parity",
+    "structural_themes",
+    "regime_detection",
+    "manager_selection_allocation"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Young markets trend more; maturity brings noise and mean reversion (Perry Kaufman).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Citing Kaufman.",
+     "claim_ids": [
+      "MT002-C09-1"
+     ]
+    },
+    {
+     "premise": "A 2020 monetary regime shift produced idiosyncratic outlier trends; alternative markets diversify.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "2024 moves in cocoa, coffee, OJ, bitcoin, yen crosses.",
+     "claim_ids": [
+      "MT002-C09-2",
+      "MT002-C08-5",
+      "MT002-C08-6"
+     ]
+    },
+    {
+     "premise": "Trend manager return dispersion was very wide, and SG Trend Index is not representative.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "IASG data.",
+     "claim_ids": [
+      "MT002-C14-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Outlier trends to dispersion",
+     "steps": [
+      {
+       "from": "Regime shift in monetary policy",
+       "to": "idiosyncratic outlier trends",
+       "why": "Decoupling globally",
+       "claim_ids": [
+        "MT002-C09-2"
+       ]
+      },
+      {
+       "from": "Small/diversified managers capture outliers",
+       "to": "wide dispersion",
+       "why": "Few-market managers benefited",
+       "claim_ids": [
+        "MT002-C08-5",
+        "MT002-C14-2"
+       ]
+      }
+     ],
+     "evidence": "2024 managers' YTD returns.",
+     "fails_when": "Outliers fade.",
+     "claim_ids": [
+      "MT002-C09-2",
+      "MT002-C08-5",
+      "MT002-C14-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "universe",
+     "practice": "Be very diversified to capture alternative markets.",
+     "why": "Outliers appear anywhere.",
+     "claim_ids": [
+      "MT002-C08-6"
+     ]
+    }
+   ],
+   "evidence_style": "Anecdote and observed returns.",
+   "current_views": [
+    {
+     "view": "Decoupling in financial markets is producing outlier trends.",
+     "as_of": "2024-12-04",
+     "reasoning": "Moves in smaller markets.",
+     "claim_ids": [
+      "MT002-C08-5",
+      "MT002-C08-6",
+      "MT002-C09-2"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Alan Dunne",
+   "role": "Macro/systematic panelist",
+   "speaker_note": "Caption 'Alan Dunn'; the ledger spells Dunne in some claims.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "geopolitics",
+    "policy_reaction_central_banks",
+    "value_mean_reversion"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Policy outcomes depend on which US administration voice dominates (Bessent vs Lutnick vs Trump).",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Personalities and roles.",
+     "claim_ids": [
+      "MT002-C05-1",
+      "MT002-C05-2b"
+     ]
+    },
+    {
+     "premise": "Per Asness, markets have become less efficient, so value strategies suffer longer drawdowns but face bigger mispricing.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reports Asness's blog.",
+     "claim_ids": [
+      "MT002-C09-4",
+      "MT002-C10-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Policy personalities to dollar",
+     "steps": [
+      {
+       "from": "Weaker-dollar camp",
+       "to": "tension with funding the deficit",
+       "why": "Treasury needs stable dollar",
+       "claim_ids": [
+        "MT002-C05-1",
+        "MT002-C05-2b"
+       ]
+      },
+      {
+       "from": "Bessent appointed",
+       "to": "yields steadied",
+       "why": "Hope for deficit reduction",
+       "claim_ids": [
+        "MT002-C05-1"
+       ]
+      }
+     ],
+     "evidence": "Market reaction after appointment.",
+     "fails_when": "Another voice dominates.",
+     "claim_ids": [
+      "MT002-C05-1",
+      "MT002-C05-2b"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "other",
+     "practice": "Track personalities and narrative.",
+     "why": "Policy mix drives yields and the dollar.",
+     "claim_ids": [
+      "MT002-C05-1"
+     ]
+    }
+   ],
+   "evidence_style": "Narrative and reporting others' research.",
+   "current_views": [
+    {
+     "view": "Markets hope Bessent steadies deficit, tariffs, dollar.",
+     "as_of": "2024-12-04",
+     "reasoning": "Yields steadied after appointment.",
+     "claim_ids": [
+      "MT002-C05-1",
+      "MT002-C05-2b"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Cem Karsan (caption: Jim Kasang)",
+   "role": "Volatility and options specialist",
+   "speaker_note": "Ledger uses 'Jim Kasang' in some claims (geopolitics, AI) and 'Cem Karsan' in others; vol claims are marked unidentified volatility specialist; probably the same person under caption spellings, uncertain.",
+   "fingerprint": [
+    "volatility_options",
+    "dealer_hedging_flows",
+    "liquidity_flows",
+    "positioning_crowding",
+    "geopolitics",
+    "regime_detection"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Vol selling plus structured products pin the index and reduce correlation among stocks; compression raises later explosions.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Issuance growth numbers.",
+     "claim_ids": [
+      "MT002-C03-5",
+      "MT002-C04-1",
+      "MT002-C04-3",
+      "MT002-C07-1",
+      "MT002-C03-7b"
+     ]
+    },
+    {
+     "premise": "Flows unrelated to fundamentals dominate prices, so markets deviate further from fundamentals.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "List of flows.",
+     "claim_ids": [
+      "MT002-C11-2"
+     ]
+    },
+    {
+     "premise": "AI is useful as a cost-saving worker not for quant problems.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own use.",
+     "claim_ids": [
+      "MT002-C12-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Vol supply to pinned index to dispersion",
+     "steps": [
+      {
+       "from": "Election liquidity and structured-product issuance",
+       "to": "vol selling",
+       "why": "Supply of index vol",
+       "claim_ids": [
+        "MT002-C03-5",
+        "MT002-C04-1"
+       ]
+      },
+      {
+       "from": "Pinned index",
+       "to": "low correlation",
+       "why": "Single stocks move apart",
+       "claim_ids": [
+        "MT002-C04-3"
+       ]
+      },
+      {
+       "from": "Compression",
+       "to": "later bigger expansion",
+       "why": "Potential energy builds",
+       "claim_ids": [
+        "MT002-C07-1",
+        "MT002-C07-2",
+        "MT002-C07-R1"
+       ]
+      }
+     ],
+     "evidence": "Issuance data, 2017 and 2024 compression.",
+     "fails_when": "Structured product demand falls.",
+     "claim_ids": [
+      "MT002-C04-1",
+      "MT002-C04-3",
+      "MT002-C04-2",
+      "MT002-C04-4b"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "risk",
+     "practice": "Watch dealer positioning as it correlates with trend.",
+     "why": "Crowding signal.",
+     "claim_ids": [
+      "MT002-C07-2"
+     ]
+    }
+   ],
+   "evidence_style": "Market structure first principles.",
+   "current_views": [
+    {
+     "view": "Vol compression persists through January; risk of bigger move after Jan 20.",
+     "as_of": "2024-12-04",
+     "reasoning": "Compression trend.",
+     "claim_ids": [
+      "MT002-C07-3",
+      "MT002-C04-4",
+      "MT002-C04-4b"
+     ]
+    },
+    {
+     "view": "Trump-China stance is the key geopolitical question.",
+     "as_of": "2024-12-04",
+     "reasoning": "Reasoning.",
+     "claim_ids": [
+      "MT002-C04-5"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kostner Larsen",
+   "role": "Host",
+   "speaker_note": "Mostly neutral; states views on few markets.",
+   "fingerprint": [
+    "manager_selection_allocation",
+    "trend_following",
+    "diversification_risk_parity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Wide-universe managers gain little from small-market outliers.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation.",
+     "claim_ids": [
+      "MT002-C09-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Observation.",
+   "current_views": []
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Do illiquid or alternative markets trend more?",
+   "positions": [
+    {
+     "speaker": "Rich Brennan",
+     "position": "Young/smaller markets trend and diversify.",
+     "claim_ids": [
+      "MT002-C09-1",
+      "MT002-C08-5"
+     ]
+    },
+    {
+     "speaker": "Rob Carver",
+     "position": "No significant effect; diversification only.",
+     "claim_ids": [
+      "MT002-C08-2",
+      "MT002-C08-3",
+      "MT002-C08-3b"
+     ]
+    },
+    {
+     "speaker": "Andrew Beer",
+     "position": "Open question; uses to allocate alpha.",
+     "claim_ids": [
+      "MT002-C07-6b",
+      "MT002-C07-4"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Market efficiency",
+   "positions": [
+    {
+     "speaker": "Alan Dunne (Asness)",
+     "position": "Less efficient.",
+     "claim_ids": [
+      "MT002-C09-4",
+      "MT002-C10-1"
+     ]
+    },
+    {
+     "speaker": "Andrew Beer",
+     "position": "Stock selection more efficient.",
+     "claim_ids": [
+      "MT002-C10-3",
+      "MT002-C11-1"
+     ]
+    },
+    {
+     "speaker": "Mark Rzepczynski",
+     "position": "Joint hypothesis.",
+     "claim_ids": [
+      "MT002-C10-2",
+      "MT002-C10-2b"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Was 2024 dispersion unusually large?",
+   "positions": [
+    {
+     "speaker": "Katy Kaminski",
+     "position": "Large, due to speed.",
+     "claim_ids": [
+      "MT002-C14-3",
+      "MT002-C14-4b"
+     ]
+    },
+    {
+     "speaker": "Andrew Beer",
+     "position": "Not meaningfully larger.",
+     "claim_ids": [
+      "MT002-C15-4b"
+     ]
+    },
+    {
+     "speaker": "Nick Baltas",
+     "position": "Speed, universe, purity.",
+     "claim_ids": [
+      "MT002-C15-2b",
+      "MT002-C14-4"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Crowding concern",
+   "positions": [
+    {
+     "speaker": "Nick Baltas",
+     "position": "Overstated; unsupported.",
+     "claim_ids": [
+      "MT002-C06-4",
+      "MT002-C06-5"
+     ]
+    },
+    {
+     "speaker": "Cem Karsan",
+     "position": "Compression builds potential energy.",
+     "claim_ids": [
+      "MT002-C07-1",
+      "MT002-C07-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Several claims are unattributed in captions (panelist views on the vol specialist's segment, mistake discussion, local maximum).",
+   "claim_ids": [
+    "MT002-C11-2",
+    "MT002-C13-4",
+    "MT002-C13-5",
+    "MT002-C14-1",
+    "MT002-C05-1b",
+    "MT002-C13-4b",
+    "MT002-C16-1"
+   ]
+  },
+  {
+   "issue": "Claim that 'trend following is never wrong' is a rhetorical point, ignores allocator timing errors raised right after.",
+   "claim_ids": [
+    "MT002-C13-5",
+    "MT002-C13-4b",
+    "MT002-C14-1"
+   ]
+  },
+  {
+   "issue": "Inconsistent attribution between Jim/Cem for the vol claims.",
+   "claim_ids": [
+    "MT002-C03-5",
+    "MT002-C04-1",
+    "MT002-C03-7b",
+    "MT002-C04-4b"
+   ]
+  },
+  {
+   "issue": "Quant statements (44% momentum, 12%/-10% speed factors) have no source data.",
+   "claim_ids": [
+    "MT002-C05-2",
+    "MT002-C02-1"
+   ]
+  },
+  {
+   "issue": "Large-fund size explanation untested.",
+   "claim_ids": [
+    "MT002-C16-1"
+   ]
+  },
+  {
+   "issue": "Duplicated claims on QIS and Dunne tension.",
+   "claim_ids": [
+    "MT002-C06-4",
+    "MT002-C06-2b",
+    "MT002-C05-1",
+    "MT002-C05-2b"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "Speed of trend signals, equity-market trend persistence, index vol supply (structured products, income ETFs), dealer positioning, vol compression into January, Fed expectations vs long yields; horizons of months.",
+ "reader_inferences": [
+  "The panel mostly explains past performance; few forward-testable signals apart from vol compression through January.",
+  "Speed vs state of macro (stable vs shock) is the main lever and is not forecastable ex ante."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT002-C08-R1",
+   "chunk": "C08",
+   "speaker": "Rob Carver",
+   "quote": "if you believe like the theory of trend following as it's around people digesting information slowly and asset prices adjusting more slowly then then that kind of makes sense I've never really liked that theory",
+   "claim": "Carver says the standard rationale for trend (slow information digestion makes illiquid assets trend more) does not convince him and he has not seen supporting evidence.",
+   "mechanism": "trend_rationale",
+   "asset_class": "futures",
+   "indicator": "",
+   "horizon": "structural",
+   "direction": "Doubts the slow-digestion explanation of trend following.",
+   "conditions": "applies to futures markets",
+   "testable": "yes - test trend strength vs liquidity on a common sample",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "map-added",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT002-C15-R1",
+   "chunk": "C15",
+   "speaker": "Andrew Beer",
+   "quote": "very very simple top down replication which is arguably not Trend fing to begin with was just because we found it to be somewhat more stable and more adaptive as the industry changes",
+   "claim": "Beer chose simple top-down replication over building own trend models because it is more stable and adaptive as the industry changes, and avoids parameter-driven dispersion.",
+   "mechanism": "replication_rationale",
+   "asset_class": "futures",
+   "indicator": "",
+   "horizon": "structural",
+   "direction": "Prefer replication to a bespoke trend model for stability.",
+   "conditions": "after finding that small parameter changes produce persistent dispersion",
+   "testable": "partly - compare replication vs bespoke model dispersion",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "map-added",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT002-C07-R1",
+   "chunk": "C07",
+   "speaker": "unidentified panelist (volatility specialist)",
+   "quote": "the more people Pile in and the more concentration happens and the more that happens the more likely you are to get a it's like potential energy building right bigger U blowup",
+   "claim": "Persistent trends attract more participants, which builds concentration like stored potential energy and raises the odds of a bigger blow-up.",
+   "mechanism": "trend_crowding_reflexivity",
+   "asset_class": "multi",
+   "indicator": "dealer positioning",
+   "horizon": "months",
+   "direction": "Longer trends raise future blow-up risk",
+   "conditions": "needs concentrated positioning",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map-added",
+   "quote_check": "exact"
+  }
+ ]
+}

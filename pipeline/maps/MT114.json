@@ -1,0 +1,633 @@
+{
+ "source_id": "MT114",
+ "episode_thesis": "Beer argues that a 10-factor weekly replication of the SG CTA Index, unchanged since 2016, delivers about 90% correlation and about 300bp of annual excess through fee and expense disintermediation, and that the SG CTA Investable Hedge Fund Index now built on this methodology lets allocators hold the trend space without manager-selection risk. He attributes allocator resistance to a belief that trend following 'should not work', and explains the August 2024 whipsaw as three reversing narratives that hurt both fast and slow models differently.",
+ "speakers": [
+  {
+   "name": "Andrew Beer",
+   "role": "Managing member, DBi (replication manager, DBMF); founded a commodity hedge fund 25 years ago",
+   "speaker_note": "Caption 'Andrew B'. Clear in a two-person conversation.",
+   "fingerprint": [
+    "replication_indexing",
+    "trend_following",
+    "costs_execution",
+    "manager_selection_allocation",
+    "research_robustness_overfitting",
+    "behavioral_sentiment",
+    "diversification_risk_parity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "In big whipsaws one cannot tell in real time whether the move is rational repricing or technical liquidation feedback; fundamental traders move views with price because they assume someone knows something.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Commodity hedge fund experience; August 2024 three-reversals narrative.",
+     "claim_ids": [
+      "MT114-C03-2",
+      "MT114-C03-3",
+      "MT114-C03-X1"
+     ]
+    },
+    {
+     "premise": "Over a one-week window most CTA exposures reduce to a handful of large liquid instruments (10-year Treasury has gravitational pull), so a 10-factor model captures about 90% of what the index does.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "8 years of live model: about 90% correlation to SG CTA Index.",
+     "claim_ids": [
+      "MT114-C05-3",
+      "MT114-C06-4",
+      "MT114-C08-X1",
+      "MT114-C05-4"
+     ]
+    },
+    {
+     "premise": "Complexity and hundreds of markets are not demonstrated to improve results; the claim has little data behind it, though adding instruments does add diversification.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own results versus complex funds; absence of data.",
+     "claim_ids": [
+      "MT114-C06-1",
+      "MT114-C07-4",
+      "MT114-C07-X1",
+      "MT114-C10-R1"
+     ]
+    },
+    {
+     "premise": "Replication's edge of about 300bp a year is mostly fee and expense disintermediation plus about 10bp trading costs; it is an average, not an expectation for every year.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Since July 2016, unchanged model.",
+     "claim_ids": [
+      "MT114-C06-2",
+      "MT114-C06-3",
+      "MT114-C07-X2",
+      "MT114-C05-1"
+     ]
+    },
+    {
+     "premise": "Replication is a one-week bet that is self-correcting, and its misses (Jan-Feb 2023, cocoa-type idiosyncratic moves) are expected and not structural failures.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Rolling correlation never near 20%; 2023 the only underperforming year.",
+     "claim_ids": [
+      "MT114-C04-4",
+      "MT114-C05-4",
+      "MT114-C06-5",
+      "MT114-C08-1",
+      "MT114-C05-X1",
+      "MT114-C05-2",
+      "MT114-C07-1",
+      "MT114-C16-1"
+     ]
+    },
+    {
+     "premise": "Allocators resist trend following because they are trained to believe in skill and information edge, partly motivated by economic stakes, and focus on headcount instead of the model.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Talks to allocators; CFA Society presentation.",
+     "claim_ids": [
+      "MT114-C04-3",
+      "MT114-C12-1",
+      "MT114-C12-2",
+      "MT114-C12-3",
+      "MT114-C12-4",
+      "MT114-C12-X1",
+      "MT114-C12-R1",
+      "MT114-C11-1"
+     ]
+    },
+    {
+     "premise": "Managed futures hit the hedge-fund trifecta over 10 years yet are only 6% of hedge fund allocations; at least 5% in every portfolio is a no-brainer.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "24 years of SG CTA Index data; charts.",
+     "claim_ids": [
+      "MT114-C11-2",
+      "MT114-C11-X1",
+      "MT114-C08-3"
+     ]
+    },
+    {
+     "premise": "Index products are valued because allocators never face manager selection risk; hedge fund indices are net of fees and not investable, which is the gap replication fills.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Allocator practice; capital market assumptions.",
+     "claim_ids": [
+      "MT114-C14-1",
+      "MT114-C14-2",
+      "MT114-C08-2",
+      "MT114-C13-1",
+      "MT114-C13-2"
+     ]
+    },
+    {
+     "premise": "Naive replication fails (a late-2000s bank replicating only Sharpe>2.5 funds ended up in mortgage-backed securities funds) and bottom-up replication does not beat simple top-down.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Industry history since 2006-07.",
+     "claim_ids": [
+      "MT114-C10-2",
+      "MT114-C10-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why trend followers struggle in a V-shaped whipsaw",
+     "steps": [
+      {
+       "from": "Three narratives reverse within two weeks (Trump odds, no Fed cut, BoJ noise) in July-August 2024",
+       "to": "sharp three-day repricing",
+       "why": "BoJ constrained by a stock market supported by a weak yen",
+       "claim_ids": [
+        "MT114-C03-3",
+        "MT114-C03-X1"
+       ]
+      },
+      {
+       "from": "Short-term models whipsawed",
+       "to": "miss mild recovery",
+       "why": "They overreact or get out",
+       "claim_ids": [
+        "MT114-C04-1"
+       ]
+      },
+      {
+       "from": "Long-term and replication models slower to de-risk",
+       "to": "bigger losses if August is an inflection (as in November 2023)",
+       "why": "Longer windows mix old regime data",
+       "claim_ids": [
+        "MT114-C04-2",
+        "MT114-C07-2"
+       ]
+      }
+     ],
+     "evidence": "August 2024 and 2023 episodes.",
+     "fails_when": "If whipsaw proves a real inflection.",
+     "claim_ids": [
+      "MT114-C03-3",
+      "MT114-C03-X1",
+      "MT114-C04-1",
+      "MT114-C04-2",
+      "MT114-C07-2"
+     ]
+    },
+    {
+     "topic": "Replication fee tailwind and volatility optics",
+     "steps": [
+      {
+       "from": "Replicator charges no incentive fee",
+       "to": "looks more volatile than net-of-fee index",
+       "why": "Incentive fees smooth returns",
+       "claim_ids": [
+        "MT114-C05-1"
+       ]
+      },
+      {
+       "from": "Managers with performance fees that crystallise quarterly (new highs early 2024)",
+       "to": "fees paid but not refunded in Q2",
+       "why": "Replicator outperforms in such years",
+       "claim_ids": [
+        "MT114-C09-1"
+       ]
+      },
+      {
+       "from": "Index may include interest unevenly (some managers exclude)",
+       "to": "apples vs different apples comparison",
+       "why": "Composite return conventions",
+       "claim_ids": [
+        "MT114-C09-2"
+       ]
+      }
+     ],
+     "evidence": "Replication vs SG CTA Index results since 2016.",
+     "fails_when": "Fee structures change or interest is included equally.",
+     "claim_ids": [
+      "MT114-C05-1",
+      "MT114-C09-1",
+      "MT114-C09-2"
+     ]
+    },
+    {
+     "topic": "Allocator psychology and the case for an investable index",
+     "steps": [
+      {
+       "from": "Hedge fund selection is information-efficient and subject to selection bias",
+       "to": "allocator anxiety",
+       "why": "Funds are seen only after success",
+       "claim_ids": [
+        "MT114-C11-1"
+       ]
+      },
+      {
+       "from": "Trend has no special information; trades in plain sight, exits when the market 'slaps you'",
+       "to": "allocators who expect skill dismiss evidence",
+       "why": "They want a story",
+       "claim_ids": [
+        "MT114-C12-1",
+        "MT114-C12-2"
+       ]
+      },
+      {
+       "from": "Investable index with fee disintermediation",
+       "to": "easier larger allocations",
+       "why": "No manager selection risk and better than full-fee average",
+       "claim_ids": [
+        "MT114-C14-2",
+        "MT114-C16-2",
+        "MT114-C15-1"
+       ]
+      }
+     ],
+     "evidence": "Anecdotes, allocator conversations, SG launch of an investable index.",
+     "fails_when": "Allocators demand idiosyncratic skill.",
+     "claim_ids": [
+      "MT114-C11-1",
+      "MT114-C12-1",
+      "MT114-C12-2",
+      "MT114-C14-2",
+      "MT114-C15-1",
+      "MT114-C16-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Weekly regression onto 10 liquid factors: 2y/10y/30y Treasuries, three equity indices, euro, yen, gold, oil, estimated from recent CTA index returns and implemented each Monday.",
+     "why": "One-week bet; self-correcting.",
+     "claim_ids": [
+      "MT114-C05-3",
+      "MT114-C05-4"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Models unchanged since July 2016; a very high bar for any change.",
+     "why": "Avoid dial-turning and overfitting.",
+     "claim_ids": [
+      "MT114-C06-2",
+      "MT114-C15-2",
+      "MT114-C15-R1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Estimated trading cost about 10bp a year; no incentive fee.",
+     "why": "Simple models keep costs low.",
+     "claim_ids": [
+      "MT114-C06-3",
+      "MT114-C05-1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Accept streaks of misses and low correlation periods; do not adjust.",
+     "why": "Coin-flip analogy.",
+     "claim_ids": [
+      "MT114-C08-1",
+      "MT114-C06-5"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Partner with larger firms and sell via regulated wrappers (UCITS, ETFs) to meet due-diligence headcount concerns.",
+     "why": "Allocators ask about headcount.",
+     "claim_ids": [
+      "MT114-C13-X1",
+      "MT114-C12-4"
+     ]
+    }
+   ],
+   "evidence_style": "Track record, first-hand industry experience, backtest scepticism, anecdote.",
+   "current_views": [
+    {
+     "view": "August 2024 was a rational-plus-technical whipsaw, not catastrophic.",
+     "as_of": "2024-08-29",
+     "reasoning": "Three reversing narratives.",
+     "claim_ids": [
+      "MT114-C03-2",
+      "MT114-C03-3"
+     ]
+    },
+    {
+     "view": "Replication has outperformed the SG CTA Index in 2024 so far; since the third-quarter 2022 peak it is in drawdown but ahead of the hedge fund index.",
+     "as_of": "2024-08-29",
+     "reasoning": "Fee tailwind and idiosyncratic whipsaws in markets it does not hold.",
+     "claim_ids": [
+      "MT114-C05-X1",
+      "MT114-C09-1",
+      "MT114-C07-X1"
+     ]
+    },
+    {
+     "view": "SG CTA Investable Hedge Fund Index, built on his replication methodology, backtested to 2002 and available on Bloomberg.",
+     "as_of": "2024-08-29",
+     "reasoning": "Contributed methodology; eight years of live unchanged model support the backtest.",
+     "claim_ids": [
+      "MT114-C15-1",
+      "MT114-C15-2"
+     ]
+    },
+    {
+     "view": "Managed futures industry about $300bn; mutual fund version $20bn; return-stacked ETFs near $1bn of a $10 trillion market.",
+     "as_of": "2024-08-29",
+     "reasoning": "Size comparison.",
+     "claim_ids": [
+      "MT114-C16-3"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host (Top Traders Unplugged), hedge fund manager; speaks hypothetically 'as a CTA' in C07",
+   "speaker_note": "Caption 'Neil costr Larson'. In C07 he role-plays a CTA, so those statements are not necessarily his own firm's views (ledger correction).",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "positioning_crowding",
+    "costs_execution",
+    "regime_detection",
+    "replication_indexing"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trading hundreds of markets is not shown to be better than about 60 in the data.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Says he has said it for years; does not claim 10-15 is equal.",
+     "claim_ids": [
+      "MT114-C07-3"
+     ]
+    },
+    {
+     "premise": "Performance-fee crystallisation timing lets a replicator outperform in a year when managers hit new highs early and then lost in Q2.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Fee mechanics.",
+     "claim_ids": [
+      "MT114-C09-1"
+     ]
+    },
+    {
+     "premise": "Composite-return conventions (interest excluded by some managers) may make index vs replication comparisons uneven.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own firm's composite practice since 2007.",
+     "claim_ids": [
+      "MT114-C09-2"
+     ]
+    },
+    {
+     "premise": "Replicator risk (model out of sync, bug) exists alongside manager risk.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Systematic experience.",
+     "claim_ids": [
+      "MT114-C10-1"
+     ]
+    },
+    {
+     "premise": "Regulated daily-liquidity wrappers invite lighter, shorter due diligence.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Practice with UCITS and ETFs.",
+     "claim_ids": [
+      "MT114-C13-X1"
+     ]
+    },
+    {
+     "premise": "If trend assets keep growing, crowding could make it harder.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Industry grew from under $10bn to about $400bn.",
+     "claim_ids": [
+      "MT114-C17-1",
+      "MT114-C17-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "August 2024 CTA losses by sector",
+     "steps": [
+      {
+       "from": "V-shaped equities, JGBs, non-US fixed income, energies hard",
+       "to": "down month",
+       "why": "Not fully recovered Japanese equities",
+       "claim_ids": [
+        "MT114-C02-1"
+       ]
+      },
+      {
+       "from": "Softs, grains, gold decent",
+       "to": "partial offset",
+       "why": "Small sector weights",
+       "claim_ids": [
+        "MT114-C02-1"
+       ]
+      }
+     ],
+     "evidence": "SG Trend 10.5% drawdown from March high, half the worst.",
+     "fails_when": "Prolonged drawdown.",
+     "claim_ids": [
+      "MT114-C02-1",
+      "MT114-C02-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Use a trend barometer to gauge trendiness (59 at end-August).",
+     "why": "Cross-check with index returns.",
+     "claim_ids": [
+      "MT114-C03-1"
+     ]
+    }
+   ],
+   "evidence_style": "Index statistics and fee mechanics; probes with questions.",
+   "current_views": [
+    {
+     "view": "August 2024 a down month for CTAs but not catastrophic; SG Trend Index in a 10.5% drawdown from March high, about half its worst.",
+     "as_of": "2024-08-29",
+     "reasoning": "Index levels.",
+     "claim_ids": [
+      "MT114-C02-1",
+      "MT114-C02-2"
+     ]
+    },
+    {
+     "view": "Late-August 2024 data: BTOP50 -1.68% (+3.43% YTD), SG CTA -2.58% (+2%), SG Trend -3.63% (+2.22%), STI +0.19%, MSCI World +14.6%, S&P 500 +18.3% YTD.",
+     "as_of": "2024-08-28",
+     "reasoning": "Reported index returns.",
+     "claim_ids": [
+      "MT114-C03-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Do many markets improve diversification enough to justify complexity?",
+   "positions": [
+    {
+     "speaker": "Andrew Beer",
+     "position": "Instruments add diversification, but 10 are enough for a one-week replication bet and complexity lacks data.",
+     "claim_ids": [
+      "MT114-C06-1",
+      "MT114-C07-4",
+      "MT114-C08-X1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen (role-playing a CTA)",
+     "position": "No evidence hundreds beat 60; unsure whether 10-15 equal.",
+     "claim_ids": [
+      "MT114-C07-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "The 300bp edge and 90% correlation are self-reported by the manager and relate to a product he manages; later years show smaller outperformance.",
+   "claim_ids": [
+    "MT114-C06-3",
+    "MT114-C07-X2"
+   ]
+  },
+  {
+   "issue": "Claim that 2016-22 vs 2023+ differences would break replication was not borne out; no independent test is given.",
+   "claim_ids": [
+    "MT114-C05-2",
+    "MT114-C07-1"
+   ]
+  },
+  {
+   "issue": "Statements on allocator motivation ('economic skin in the game') are speculative.",
+   "claim_ids": [
+    "MT114-C12-X1",
+    "MT114-C12-3",
+    "MT114-C12-4"
+   ]
+  },
+  {
+   "issue": "Host's role-play as CTA blurs whose view is stated.",
+   "claim_ids": [
+    "MT114-C07-3"
+   ]
+  },
+  {
+   "issue": "Industry assets figures conflict ($300bn vs $400bn) between speakers.",
+   "claim_ids": [
+    "MT114-C16-3",
+    "MT114-C17-1"
+   ]
+  },
+  {
+   "issue": "The 52-55% hit rate figure is approximate and not sourced.",
+   "claim_ids": [
+    "MT114-C07-4"
+   ]
+  },
+  {
+   "issue": "The back-tested SG investable index (to 2002) is subject to Beer's own warning about dial-turning; the defence rests on eight years of live use.",
+   "claim_ids": [
+    "MT114-C15-1",
+    "MT114-C15-2",
+    "MT114-C15-R1"
+   ]
+  },
+  {
+   "issue": "Allocation recommendation (5% vs 25-40%) depends on SG CTA Index history, which is not investable.",
+   "claim_ids": [
+    "MT114-C08-3",
+    "MT114-C11-X1",
+    "MT114-C11-2"
+   ]
+  },
+  {
+   "issue": "Whether the SG CTA Index reports excess or total returns is left open: Beer says he would be surprised if it were excess-only (speaker attribution of that remark is uncertain in the caption).",
+   "claim_ids": [
+    "MT114-C09-2",
+    "MT114-C09-3"
+   ]
+  },
+  {
+   "issue": "Late 2000s replication failure story is anecdotal.",
+   "claim_ids": [
+    "MT114-C10-2"
+   ]
+  },
+  {
+   "issue": "Claims about the new competitors (KFA/Alpha Simplex) are provisional.",
+   "claim_ids": [
+    "MT114-C10-3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "Weekly trend exposures in 10 liquid factors (Treasuries, equity indices, euro, yen, gold, oil), fee crystallisation timing, index composition; horizon one week for replication, years for allocation.",
+ "reader_inferences": [
+  "Beer's argument is largely about vehicle design and allocator behaviour, not market direction.",
+  "The replication premium is fee-based and would shrink if CTA fees fall or interest conventions equalise."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT114-C10-R1",
+   "chunk": "C10",
+   "speaker": "Andrew Beer",
+   "quote": "we just don't think complexity helps in this",
+   "claim": "Beer's design ethos for replication: complexity does not help, so the model stays simple and unchanged.",
+   "mechanism": "design_philosophy",
+   "asset_class": "futures",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "Prefer simple replication to complex models",
+   "conditions": "",
+   "testable": "partly - compare simple and complex replicators out of sample",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "map-added",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT114-C12-R1",
+   "chunk": "C12",
+   "speaker": "Andrew Beer",
+   "quote": "it's not that they believe it hasn't worked it's that they believe it shouldn't work",
+   "claim": "Beer diagnoses allocator resistance to trend following and replication as a belief that it should not work, not doubt about the data.",
+   "mechanism": "allocator_psychology",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "Allocators dismiss the record",
+   "conditions": "trained to believe in skill and information edge",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "map-added",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT114-C15-R1",
+   "chunk": "C15",
+   "speaker": "Andrew Beer",
+   "quote": "it's a natural human thing to build models that have fantastically unrealistic returns",
+   "claim": "Beer warns that index backtests tend toward unrealistic returns because quants turn dials until the product looks good.",
+   "mechanism": "backtest_overfitting",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "Discount long index backtests",
+   "conditions": "index product built by banks or quants",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "map-added",
+   "quote_check": "exact"
+  }
+ ]
+}

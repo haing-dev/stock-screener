@@ -5,8 +5,8 @@ date: 2026-01-03
 channel: "Top Traders Unplugged"
 url: 
 words: 11793
-claims: 57
-added_by_crosscheck: 23
+claims: 59
+added_by_crosscheck: 25
 corrections: 4
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Niels Kaastrup-Larsen (host)", "Katie Kaminski (CTA researcher)", "Jim Kasang (volatility)", "Rob Carver (systematic trader)", "Mark Rzepczynski (CTA manager)", "Rich Brennan (CTA researcher)", "Alan Dunne (CTA researcher)", "Nick Baltas (researcher)", "Andrew Beer (replication ETF manager)", "Yoav Git (CTA manager)"]
@@ -21,6 +21,214 @@ tags: [source, layer0]
 **Approach:** trend following, CTA, long volatility, portfolio construction
 
 **Cross-check completeness estimate of first read:** 0.60 - the first reader caught the main TPA, process-stability, drawdown-structure and Sharpe/vol-compression arguments; it missed the AI-use remark, several allocator-behaviour mechanisms (narrative, iron spine, ETF drawdown visibility, no-single-event drawdowns, long vs deep), the Katie, Yov and Andrew 2026 predictions, and misattributed two C03 claims and the Barclay-vol statement.
+
+## Argument map
+
+**Episode thesis:** A ten-manager year-end panel argues that (1) total-portfolio optimisation theoretically implies far larger CTA allocations than the roughly 50bp most US institutions hold, but flows follow performance and career risk, so TPA will not change much quickly; (2) the 2023-25 trend drawdown is explained by volatility compression and a share of winning markets below break-even, not by model failure, so managers should not change models after pain and should stay true to their stated thesis; (3) CTA drawdowns come from nothing happening, are long rather than deep, and are smaller than perceived; and (4) long volatility and trend following provide true diversification that stock-bond mixes do not. The panel also debates high-vol products, capital efficiency and 2026 predictions (higher yields, 2022-like, roller coaster).
+
+### Yoav Git (CTA manager (Israel); sells non-financialized trend risk factors)
+Fingerprint: #approach/trend_following #approach/research_robustness_overfitting #approach/portfolio_construction_stacking #approach/regime_detection #approach/diversification_risk_parity #approach/costs_execution
+_Speaker note: Ledger labels 'Yov'. Caption spelling varies. Assumed to be the speaker of C02, C07-C08 and C10-C11 per flow; turn boundaries rely on host cues._
+
+**Worldview premises**
+- Total-portfolio mean-variance optimisation implies a very large CTA allocation because of diversification (about 1/3 of risk even at CTA Sharpe 0.5 vs 1.5 for the rest), but flows follow performance, so TPA will not change allocations much. _[theoretical, stated; support: Simple optimisation arithmetic; observation that flows chase performance.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C02-1|C02-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C02-2|C02-2]])
+- CTA exposure should be matched to hedge the asset classes an allocator already holds; bucket-style allocation leaves CTAs at ~2%, too small to alter convexity. _[theoretical, stated; support: Long-held argument.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C02-3|C02-3]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C02-X2|C02-X2]])
+- Recent CTA underperformance came from fewer outsized trends (volatility compression), not model breakdown; test it by measuring Sharpe extracted from markets that trended at a given underlying Sharpe versus history. _[empirical, stated; support: Measurement logic; says it is roughly unchanged for most CTAs.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C07-1|C07-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C11-1|C11-1]])
+- CTA drawdowns come from nothing happening, like buying straddles paid for via trading costs; only ~40% of markets need to win for a good year, and a drawdown comes when winners fall to 30-35%. _[theoretical, stated; support: Straddle analogy.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C10-1|C10-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C10-2|C10-2]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C11-1|C11-1]])
+- Drawdowns have no single event to blame, so they are harder for allocators to explain to an investment committee; they are long rather than deep. _[experience, stated; support: Allocator conversations.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C11-X1|C11-X1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C11-X2|C11-X2]])
+- A manager should stay true to the style the investor hired (e.g., non-financialized markets, fast trend) and change only when the underlying market properties change. _[experience, stated; support: Example: iron ore front month where ~70% of volume is CTAs.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C08-1|C08-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C08-X1|C08-X1]])
+- AI is used cautiously (coding, summaries, testing message clarity), not in the models. _[experience, stated; support: Own practice.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C02-X1|C02-X1]])
+
+**Chain: Why CTA drawdowns occur**
+1. Volatility compression and calm markets → Fewer outsized trends: Trends are fewer and smaller ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C11-1|C11-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C07-1|C07-1]])
+2. Share of winning markets falls below break-even (~40% to 30-35%) → Multi-year drawdown without a single deep loss: Costs of straddle-like trading are not offset ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C10-2|C10-2]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C11-X2|C11-X2]])
+- Evidence: Industry experience 2023-25.
+- Fails when: Not stated; model breakdown test would show lower Sharpe extraction per unit of underlying trend.
+
+**Decision process**
+- [research] Diagnose underperformance by measuring Sharpe extracted from trending markets versus history before touching the model.. Why: Separates model failure from fewer trends. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C07-1|C07-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C07-R1|C07-R1]])
+- [universe] Drop markets that become financialized (e.g., CTAs ~70% of iron-ore front-month volume) because the product thesis is trading what others do not trade.. Why: Preserve the factor exposure the investor bought. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C08-1|C08-1]])
+
+**Evidence style:** Industry experience and measurement logic; no data shown.
+
+**Views at the time**
+- (2025-12) Most likely outcome for 2026: 10-year Treasury yield around 6%; he would wish for equities +25%.. Reasoning: Rate view stated without reasoning. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C17-X1|C17-X1]])
+
+### Unnamed panelist (possibly Andrew Beer) (Panelist agreeing with Yoav on TPA)
+Fingerprint: #approach/manager_selection_allocation #approach/portfolio_construction_stacking #approach/diversification_risk_parity #approach/behavioral_sentiment
+_Speaker note: Ledger names Jim for C03-3/C03-4 but the transcript brings Jim in only at the end of C04; the speaker is unidentified (ledger correction). C04-X1 (breaking anchoring; theatre) also follows this speaker's turn._
+
+**Worldview premises**
+- In a strategic allocation managed futures merits ~25% because almost nothing else is scalable, liquid, zero-correlated to stocks and bonds and pays off when needed (pod shops come close). _[theoretical, stated; support: Statistical measures cited from the GIC/JPM paper.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C03-3|C03-3]])
+- US institutions hold ~6% in hedge funds with managed futures <10% of that (~50bp of the portfolio); career risk and benchmarking to hedge fund indices prevent moving it to ~30% of the sleeve. _[empirical, stated; support: Allocator structure.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C03-4|C03-4]])
+- TPA could break anchoring to indices and legacy bucket sizes by forcing a statistical blank sheet, though much of TPA is theatre to win broader mandates. _[institutional, stated; support: Cautiously optimistic.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C04-X1|C04-X1]])
+
+**Evidence style:** Statistical measures and observed allocator behaviour.
+
+### Allan Dunne (CTA researcher (hedge fund allocator view))
+Fingerprint: #approach/trend_following #approach/portfolio_construction_stacking #approach/macro_fundamental_topdown #approach/manager_selection_allocation #approach/diversification_risk_parity
+_Speaker note: Name caption variants 'Alan/Allan Don'._
+
+**Worldview premises**
+- A hedge fund portfolio optimised within the total portfolio tilts to CTA, macro and commodities and away from equity long-short and credit, which duplicate held factors. _[empirical, stated; support: GIC/JP Morgan asset management paper.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C03-1|C03-1]])
+- A trend program already behaves like a total portfolio approach because it dynamically allocates risk to the best risk-adjusted markets. _[theoretical, stated; support: Definition-based argument.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C03-2|C03-2]])
+- TPA has an unresolved look-through problem: investment teams making tactical views while allocating to managers who also make tactical bets. _[institutional, stated; support: Reasoned.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C03-X1|C03-X1]])
+- High-vol trend managers repeat a cycle of exceptional years, asset gathering, deep drawdown and asset loss; a high-vol ETF would follow the same flow cycle. _[experience, stated; support: Mulvaney as example.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C16-X1|C16-X1]])
+- Wealth portfolios should hold a balanced diversified portfolio and then lever to the desired risk rather than add equities. _[theoretical, stated; support: Capital-efficiency logic.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C16-1|C16-1]])
+
+**Evidence style:** Academic papers and industry examples.
+
+**Views at the time**
+- (2025-12) 2026 will be the year of the bond breakout: US 10-year yields up to 6% then down to 3.5%.. Reasoning: Unspecified; repeats an earlier prediction. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C16-2|C16-2]])
+
+### Jim (volatility specialist; caption 'Jim Kasang') (Panelist focused on long volatility and portfolio construction)
+Fingerprint: #approach/volatility_options #approach/crisis_alpha_convexity #approach/diversification_risk_parity #approach/regime_detection #approach/structural_themes #approach/behavioral_sentiment
+_Speaker note: The ledger's C03 attributions are removed (not Jim). C12 attributions follow the host's cue 'perception of risk' after Katie._
+
+**Worldview premises**
+- 95% of investors diversify by holding more correlated assets; stocks and 60/40 each have about a 0.35 Sharpe over 125 years so bonds gave no Sharpe benefit; true diversification needs non-asset strategies such as trend and long volatility. _[empirical, stated; support: Allocators he asked cannot name the Sharpe; the 0.35 figure is quoted from memory.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C04-1|C04-1]])
+- Academic research points to a long-volatility hedge as the one consistent diversifier and most important portfolio component. _[empirical, stated; support: 'Tons of academic research' (uncited); David Dredge conversation.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C04-2|C04-2]])
+- The stock-bond structure dates from about 1985 and persists through recency bias and the long falling-rate era that removed the need to manage risk. _[experience, stated; support: History.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C05-X1|C05-X1]])
+- Distribution width and tail fatness by regime (volatility) are forecastable while direction is not, so trend-model choice should rest on a forward view of the distribution, not backtest optimisation. _[theoretical, stated; support: Vol-desk framing.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C06-1|C06-1]])
+- Managed futures drawdown (~15-16% over 25 years) is small relative to equities, and bonds' recent 15-16% drawdown after 20 years undercuts the view that CTAs are riskier. _[empirical, stated; support: Drawdown comparisons.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C12-1|C12-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C12-X1|C12-X1]])
+- Trend following earns most when the world changes (inflation shock, regime shifts over ~24 months) and struggles in noisy markets that total-portfolio allocators with static assumptions handle badly. _[theoretical, stated; support: Recent years' experience.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C12-2|C12-2]])
+
+**Chain: Long volatility as brakes on a race car**
+1. Long vol earns about zero long-run → Allocators remove it as a drag: Perceived as slowing the car ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C05-1|C05-1]])
+2. Brakes give control into corners → Portfolio can keep risk on and accelerate on straights: Raises geometric performance ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C05-1|C05-1]])
+- Evidence: Metaphor from David Dredge's conversation; no numbers.
+- Fails when: Not stated.
+
+**Chain: Why CTAs matter in a concentrated portfolio**
+1. Portfolio concentrated in AI trade across equities, rates and more → Large loss if equities fall 50%: Concentration in one theme ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C12-X2|C12-X2]])
+2. Trend program cuts losers and can go short → Protection: Disciplined loss-cutting vs narrative of conviction ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C12-X3|C12-X3]])
+- Evidence: Reasoning, current positioning.
+- Fails when: Noise year with no world change.
+
+**Decision process**
+- [signal] Choose trend model by forward view of return distribution (volatility regime, supply and demand) rather than backtest optimisation.. Why: Distribution is more predictable than direction. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C06-1|C06-1]])
+
+**Evidence style:** Academic literature, metaphors and a few headline statistics from memory.
+
+**Views at the time**
+- (2025-12) 2026 resembles 2022: pain trade is stocks down and rates up; implied-vol and VIX hedges could pay; rates higher hurts those holding bonds for diversification.. Reasoning: Investors own stocks with long-vol bandaids and bonds as diversifier. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C16-3|C16-3]])
+
+### Andrew Beer (Replication ETF manager (managed futures replication))
+Fingerprint: #approach/replication_indexing #approach/manager_selection_allocation #approach/research_robustness_overfitting #approach/portfolio_construction_stacking #approach/costs_execution
+_Speaker note: Ledger attribution used for C06-C07, C09, C13-C16._
+
+**Worldview premises**
+- A replication model left unchanged for ten years gives a fully consistent track record; the best outcome for an allocator is that the manager never needs changes, because it is hard to know whether changes help going forward. _[experience, stated; support: Own 10-year no-change record.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C06-2|C06-2]])
+- A legitimate reason to revisit a model is evidence of industry-wide drift (all managers moving to 15-20 day models), visible against a benchmark or replication; without it do not change. _[theoretical, stated; support: Reasoned.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C09-X1|C09-X1]])
+- Slower and simpler trend models outperformed more complex ones over the last three years; managers should own the design decisions that cost return in this regime. _[empirical, stated; support: Presented data (about 1,100bp cost used as illustration).]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C09-2|C09-2]])
+- With wide dispersion and no persistence of alpha, allocators chase the recent winner and oversell it, producing a negative feedback loop when it underperforms. _[behavioural, stated; support: Allocator incentives.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C13-1|C13-1]])
+- ETF holders see price and drawdown every minute, so drawdowns matter; allocators trained to buy the dip want a rebound story that honest CTA managers cannot give. _[behavioural, stated; support: Own ETF experience.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C13-X1|C13-X1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C13-X2|C13-X2]])
+- Managed futures becomes a standard allocation if presented as a strategic long-term holding judged by portfolio benefit rather than lookbacks or positions. _[theoretical, stated; support: His stated thesis; to be tested in five years.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C13-X3|C13-X3]])
+- Higher interest rates make capital efficiency (return stacking, portable alpha, yield stacking) valuable again; 2x/3x growth reflects need for efficiency, not more risk. _[theoretical, stated; support: Options exchanges (1971) analogy.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C15-1|C15-1]])
+- The large pool of money is risk-averse allocators avoiding embarrassment, not leverage-seeking retail; niche ETF structures can reach multi-billion scale. _[experience, stated; support: Innovator sold for $2bn.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C14-X1|C14-X1]])
+
+**Decision process**
+- [research] Change nothing in the model unless evidence of structural deviation; accept a very high bar for changes.. Why: Hard to tell whether changes help; consistent record is valuable. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C06-2|C06-2]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C09-X1|C09-X1]])
+
+**Evidence style:** Own track record, product experience and allocator observation.
+
+**Views at the time**
+- (2025-12) Outrageous 2026: institutions begin buying managed futures ETFs (low probability, high significance).. Reasoning: Allocators with 'hedge fund analyst' mandates look for hedge funds. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C16-X3|C16-X3]])
+
+### Katie Kaminski (CTA researcher/manager)
+Fingerprint: #approach/trend_following #approach/manager_selection_allocation #approach/behavioral_sentiment #approach/regime_detection
+_Speaker note: Name 'Kaminsky' caption variant._
+
+**Worldview premises**
+- Managed futures drawdowns coincide with calm, equity-friendly, low-volatility environments, and recover faster when equity environments are challenging because hit ratio rises. _[empirical, stated; support: Own paper on managed futures drawdowns (bubble chart).]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C11-2|C11-2]])
+- After a very challenging period, one or two strong years typically followed; manager top/bottom timing is trend-following-trend. _[empirical, stated; support: Fund-of-funds studies; mean reversion over longer horizons.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C11-3|C11-3]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C11-X3|C11-X3]])
+- A daily-liquid high-vol CTA product cannot smooth prints as private equity does, so it will attract performance chasing and disappoint, as with Bitcoin; institutional adoption pushed managers to lower risk and size management. _[behavioural, stated; support: History of the industry.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C15-X1|C15-X1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C15-2|C15-2]])
+
+**Evidence style:** Own research paper and history.
+
+**Views at the time**
+- (2025-12) 2026 will be a boom-and-bust roller coaster: rates fall and over-stimulation make conditions look strong before things fall apart.. Reasoning: Something brewing in the macro change of 2025. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C16-X2|C16-X2]])
+
+### Rich Brennan (Australian systematic trend follower)
+Fingerprint: #approach/trend_following #approach/research_robustness_overfitting #approach/behavioral_sentiment #approach/regime_detection
+
+**Worldview premises**
+- Markets change but process should not change in response to recent outcomes; a stable process does not remove drawdowns but prevents panic and rule changes (the main investor mistake). _[experience, stated; support: Own practice; asks panel how much change is evolution vs reaction to pain.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C05-2|C05-2]])
+
+**Decision process**
+- [research] Pre-commit to a stable process; explain to allocators how the strategy behaves in uncomfortable conditions.. Why: Stability builds trust and prevents behavioral drift. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C05-2|C05-2]])
+
+**Evidence style:** Experience.
+
+### Nick Baltas (Quant researcher (replication/benchmark work))
+Fingerprint: #approach/replication_indexing #approach/research_robustness_overfitting #approach/trend_following #approach/regime_detection
+
+**Worldview premises**
+- Drawdowns are a prompt to review for blind spots but not a reason to change the model, especially when explained by repeated V-shaped reversals (yen, Liberation Day). _[experience, stated; support: Own practice.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C08-2|C08-2]])
+- A replication of the CTA index need not change when underlying managers change models as long as the changes net out and managers do not become too fast to track. _[theoretical, stated; support: Aggregation logic.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C09-1|C09-1]])
+- A benchmark model need not minimise tracking error; high tracking error in a year does not show the model works or fails. _[theoretical, stated; support: Outperformance matters.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C09-X2|C09-X2]])
+
+**Decision process**
+- [research] Treat pain as invitation to reflect, not to change.. Why: Avoid reacting to explainable underperformance. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C08-2|C08-2]])
+
+**Evidence style:** Reasoning and benchmark practice.
+
+### Rob Carver (Independent systematic trader)
+Fingerprint: #approach/position_sizing_vol_target #approach/kelly_or_conviction_sizing #approach/trend_following
+_Speaker note: His proposal is half in jest._
+
+**Worldview premises**
+- A Sharpe-1 strategy run at half Kelly implies roughly 40-50% annualised volatility, so high-vol CTA products are feasible and could be sold to retail with fees proportional to volatility. _[theoretical, stated; support: Kelly arithmetic.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C14-1|C14-1]])
+
+**Decision process**
+- [sizing] Half Kelly sizing for a Sharpe-near-1 strategy.. Why: Maximise growth with a safety margin. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C14-1|C14-1]])
+
+**Evidence style:** First-principles arithmetic.
+
+### Mark Rzepczynski (CTA/macro manager (also posed the opening AI and TPA questions))
+Fingerprint: #approach/macro_fundamental_topdown #approach/policy_reaction_central_banks #approach/valuation_contrarian #approach/behavioral_sentiment
+_Speaker note: Opening questions are not in the ledger._
+
+**Worldview premises**
+- Inflation is a sleeper risk; equity strength concentrated in MAG 7 can burst and drag the market. _[experience, stated; support: Prediction segment only.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C17-1|C17-1]])
+
+**Evidence style:** Opinion.
+
+**Views at the time**
+- (2025-12) 2026 pessimist: higher inflation lifts Treasury yields, credit crises carry over, MAG 7 bubble bursts, stable to down equities; Europe resurges.. Reasoning: Higher inflation, 2025 credit problems, index concentration. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C17-1|C17-1]])
+
+### Niels Kaastrup-Larsen (Host, Top Traders Unplugged)
+Fingerprint: #approach/trend_following #approach/policy_reaction_central_banks #approach/manager_selection_allocation
+_Speaker note: Barclay CTA volatility statement re-attributed to the host._
+
+**Worldview premises**
+- The Barclay CTA index ran at 20-25% annualised volatility in the 1980s and early 1990s and is below 5% in recent years. _[empirical, stated; support: Index data, quoted as an FYI.]_ ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C15-2|C15-2]])
+
+**Evidence style:** Index data.
+
+**Views at the time**
+- (2025-12) The Fed will hike at least once in 2026 despite pressure and a new Trump-selected chair.. Reasoning: Stated without reasoning. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C17-2|C17-2]])
+
+### Disagreements
+- **Will total portfolio approach (TPA) help CTAs?**: Yoav Git: Theoretically very large allocation but in practice a buzzword; flows follow performance. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C02-1|C02-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C02-2|C02-2]]); Unnamed panelist (possibly Andrew Beer): Could break anchoring to indices, but much is theatre; cautiously optimistic. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C03-4|C03-4]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C04-X1|C04-X1]]); Allan Dunne: Valid from the return lens and a CTA already acts like TPA, but look-through is unresolved. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C03-1|C03-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C03-2|C03-2]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C03-X1|C03-X1]])
+- **When should a trend manager change the model?**: Andrew Beer: Almost never; ten years without a change is the best outcome; only evidence of industry-wide drift justifies review. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C06-2|C06-2]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C09-X1|C09-X1]]); Jim (volatility specialist; caption 'Jim Kasang'): Moving from backtest optimisation to forward distribution views can improve process. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C06-1|C06-1]]); Yoav Git: Change only when market properties change (financialisation) or measurement shows model breakdown; do not drift from the sold style. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C07-1|C07-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C08-1|C08-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C08-X1|C08-X1]]); Nick Baltas: Pain invites review for blind spots but a very high bar for change. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C08-2|C08-2]])
+- **Should CTAs offer high-volatility products?**: Rob Carver: Half-Kelly implies 40-50% vol; sell high-vol products to retail (half in jest). ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C14-1|C14-1]]); Katie Kaminski: Daily prints without smoothing mean performance chasing and disappointment. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C15-X1|C15-X1]]); Allan Dunne: High-vol managers repeat a boom-bust asset cycle; capital efficiency favours balanced products plus leverage. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C16-X1|C16-X1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C16-1|C16-1]]); Andrew Beer: Opportunity in capital-efficient stacked products rather than more risk per se. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C15-1|C15-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C14-X1|C14-X1]])
+- **2026 rates**: Allan Dunne: 10-year to 6% then down to 3.5%. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C16-2|C16-2]]); Yoav Git: 10-year around 6% most likely. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C17-X1|C17-X1]]); Niels Kaastrup-Larsen: Fed has to hike at least once. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C17-2|C17-2]]); Katie Kaminski: Rates go lower, boom-bust. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C16-X2|C16-X2]])
+
+### Gaps and conflicts
+- Speaker attribution is uncertain for C03-C04 (Jim vs unnamed panelist), C07 (Yoav vs others) and the host question turns; ledger corrections applied. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C03-3|C03-3]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C03-4|C03-4]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C04-X1|C04-X1]])
+- The 25% and ~1/3 optimal-allocation claims rest on stated Sharpe and correlation assumptions (Sharpe 0.5 vs 1.5, zero correlation) that are not demonstrated. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C02-1|C02-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C03-3|C03-3]])
+- Stock/60-40 Sharpe of 0.35 over 125 years is quoted from memory; no source given. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C04-1|C04-1]])
+- Volatility compression as the sole cause of 2023-25 underperformance is argued from a Sharpe-extraction test that is described but not shown. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C07-1|C07-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C11-1|C11-1]])
+- Andrew says changes are rarely helpful; Jim and Yoav propose forward-looking or thesis-driven adaptation, so 'never change' vs 'adapt to distribution' is not reconciled. ([[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C06-1|C06-1]], [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C06-2|C06-2]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Inputs named: share of markets winning (40% vs 30-35%), Sharpe extracted per unit of underlying trend, volatility compression, front-month CTA share of volume (financialisation), stock-bond correlation, rates and inflation regimes, manager dispersion and index volatility. Horizons: multi-year drawdowns recover over 1-2 years after challenging periods; 2026 views are annual.
+
+### Reader inferences (not stated by the speakers)
+- (reader) The panel's shared claim is that drawdown diagnosis should separate trend availability from model quality; this suggests a monitoring metric (winner share, Sharpe extraction) for the book.
+- (reader) Several speakers (Jim, Yoav, Allan) converge on trend and long volatility as complements; only Jim attaches an explicit 2026 trade.
+- (reader) The predictions segment is flagged by the host as 'outrageous', so treat 2026 views as low-confidence.
 
 ## Coverage
 
@@ -136,6 +344,14 @@ tags: [source, layer0]
   > the reason why we have seen the underperformance in the last few years is not because the model doesn't work is because we've seen this compression that we're talking about. We have seen just less outliers.
   indicator: Sharpe captured per unit of underlying market trend Sharpe · asset: multi · horizon: years · testable: yes - decomposition of returns into trend availability and capture · confidence: high
   ^MT221-C07-1
+- **Yoav Git** Before changing any trend model, first understand the cause of underperformance by measuring properly (for example, Sharpe extracted from trending markets versus the past), and second understand and stay true to your thesis.  #mech/new _(added by map cross-check)_
+  > truly actually understanding the causes for performance or underperformance i.e. actually measuring things properly
+  indicator: Sharpe extracted per unit of underlying trend Sharpe · asset: multi · direction: diagnose · horizon: years · conditions: After a multi-year drawdown · testable: yes: extraction ratio is computable · confidence: high
+  ^MT221-C07-R1
+- **Andrew Beer** Owning one's investment decisions (admitting which choices were mistakes) differentiates quantitative managers and helps allocators build a mosaic of exposures; the asset allocation thesis and the source of excess returns are separate from individual design decisions.  #mech/new _(added by map cross-check)_
+  > very good at owning their decisions
+  indicator: manager transparency · asset: multi · direction: n/a · horizon: years · conditions: Cliff Asness cited as an example · testable: no · confidence: medium
+  ^MT221-C07-R2
 
 ### C08
 - **Yov (CTA manager)** A market where CTAs account for ~70% of front-month volume (SORA/Ionor example) is financialized; a manager selling non-financialized risk factors should drop it, since the thesis of the product is trading what others do not.  #mech/crowding_positioning _(time-bound view)_

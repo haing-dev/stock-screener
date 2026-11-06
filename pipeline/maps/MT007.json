@@ -1,0 +1,173 @@
+{
+ "source_id": "MT007",
+ "episode_thesis": "Mark argues that the Biden-to-Trump handover is a regime change that can be measured with newspaper-based uncertainty indices, which in January 2025 were at their highest since 2020 while the VIX stayed below 20; because risk has a measurable part (volatility) and a non-measurable part (uncertainty), volatility understates true risk and models built on stable correlations and mean-reverting equilibria are exposed. He therefore favours divergent, assumption-light strategies (trend following, flexible 'beta flex' exposure) over convergent multistrat books, wants models stress-tested on past uncertainty spikes and on nonlinearity/correlations going to one, and warns that banks extending more leverage to multistrats is dangerous when uncertainty is high.",
+ "speakers": [
+  {
+   "name": "Mark",
+   "role": "Quantitative macro researcher and professor (Boston); long-term trend-following book (his own words: 'my long-term book'); allocator-side experience",
+   "speaker_note": "Surname not given in the transcript or captions (host calls him Mark; he is Boston-based). Dunne is the guest host and Mark's turns are inferred from question/answer structure. The Trump deal-making remark in C07 follows a host turn and is attributed to Mark with moderate confidence. Two ledger claims carry corrections: MT007-C10-3 (the list of regime breaks is mostly in C11; the rate spike is 'end of the Carter administration', not 1980) and MT007-C14-2 (Mark lists the August 2024 carry unwind, the long-short problem and Mag 7 drawdowns as existential-risk examples, not a bank funding squeeze).",
+   "fingerprint": ["regime_detection", "macro_fundamental_topdown", "trend_following", "crisis_alpha_convexity", "volatility_options", "policy_reaction_central_banks", "research_robustness_overfitting", "portfolio_construction_stacking"],
+   "worldview_premises": [
+    {"premise": "Risk has a measurable component (volatility) and a non-measurable component (uncertainty); volatility alone understates risk when uncertainty is high.", "type": "theoretical", "stated": "stated", "support": "Conceptual distinction; January 2025 uncertainty indices far above their normal level while the VIX stayed below 20 and VVIX was only elevated in the second half of 2024.", "claim_ids": ["MT007-C03-1", "MT007-C03-2", "MT007-C02-5", "MT007-C02-X1"]},
+    {"premise": "An uncertainty shock lowers investment and consumption because firms delay projects, which slows adjustment, creating trends and wider dispersion of expectations.", "type": "empirical", "stated": "stated", "support": "Cross-country research on uncertainty shocks (he cites a Stanford-originated index family and a friend from graduate school).", "claim_ids": ["MT007-C02-3", "MT007-C02-4"]},
+    {"premise": "Newspaper-word-count policy uncertainty indices give a number for the size of a regime change, which is how a quantitative investor can measure the political regime shift.", "type": "empirical", "stated": "stated", "support": "Indices (general, monetary, trade) count uncertainty words on a rolling one-month basis; world uncertainty hit its highest since 2020, with US above European uncertainty, which is unusual.", "claim_ids": ["MT007-C01-1", "MT007-C02-1", "MT007-C02-2"]},
+    {"premise": "Missing a regime change causes the biggest losses (excess leverage, under-diversification, wrong correlations, missed trends), so regime change should be measured to rebalance risk even though that does not guarantee profits.", "type": "experience", "stated": "stated", "support": "Reasoning from risk management; no cases quantified.", "claim_ids": ["MT007-C03-5", "MT007-C03-3"]},
+    {"premise": "Quant models struggle with high uncertainty because they need measurable inputs, while discretionary traders see more opportunity from their subjective views.", "type": "behavioural", "stated": "stated", "support": "Generalisation about trader types.", "claim_ids": ["MT007-C03-4"]},
+    {"premise": "The stock-bond correlation turns positive when inflation is high, and bonds hedged equities only when QE removed the term premium; with QE ended and term premium rising the hedge is less reliable.", "type": "empirical", "stated": "stated", "support": "Experience of the high-inflation period; QE history.", "claim_ids": ["MT007-C04-2", "MT007-C05-4", "MT007-C04-1"]},
+    {"premise": "Bond fair value is growth plus expected inflation plus a risk premium; leaving out the premium predicts bond rallies that may not occur.", "type": "theoretical", "stated": "stated", "support": "Rule-of-thumb valuation; deficits raise crowding-out risk.", "claim_ids": ["MT007-C06-1", "MT007-C06-2", "MT007-C07-X2"]},
+    {"premise": "Tariffs and changing trade flows (less US trade, more intra-Asia) should break down the cross-country correlations that globalisation produced.", "type": "theoretical", "stated": "stated", "support": "BCG piece on trade-flow changes; trade flows determine capital flows and prices.", "claim_ids": ["MT007-C04-3", "MT007-C05-1"]},
+    {"premise": "Trend following makes no mean-reversion assumptions and is antifragile (Taleb), buying what rises and selling what falls, so it should do better in high uncertainty; carry and long/short equity rely on stable linkages and equilibria.", "type": "theoretical", "stated": "stated", "support": "Conceptual argument; he flags that he is 'talking my long-term book'.", "claim_ids": ["MT007-C11-2", "MT007-C11-3", "MT007-C12-2"]},
+    {"premise": "Convergent (mean-reverting) strategies assume a known equilibrium; in a regime change the equilibrium (term premium, inflation target) is uncertain, so mean reversion fails and bond valuation is harder (last-mile inflation, tariffs).", "type": "theoretical", "stated": "stated", "support": "Bond valuation example.", "claim_ids": ["MT007-C12-2", "MT007-C12-3"]},
+    {"premise": "Multi-strategy platforms select high-Sharpe, mean-reverting trades and lever them, so they are structurally convergent and cannot hold volatile divergent strategies like trend following; divergent returns come as lumpy dislocation gains.", "type": "theoretical", "stated": "stated", "support": "Logic of how multistrats allocate capital; no data.", "claim_ids": ["MT007-C13-1", "MT007-C13-2"]},
+    {"premise": "Private equity has not delivered excess returns over public equity on rolling windows, its low volatility comes from infrequent marking, and exits depend on a working IPO market; liquid strategies deserve reconsideration.", "type": "empirical", "stated": "stated", "support": "Recent rolling 6- and 12-month numbers he saw (not shown).", "claim_ids": ["MT007-C13-3", "MT007-C14-1"]},
+    {"premise": "Banks keep extending leverage to multistrat managers because prime-broker position transparency makes it easy; prime-broker risk models measure volatility well but depend on assumed correlations, and unmeasurable uncertainty is what breaks leveraged books.", "type": "institutional", "stated": "stated", "support": "August 2024 carry unwind, the 2023 long-short problem, Mag 7 drawdowns.", "claim_ids": ["MT007-C14-2", "MT007-C14-3", "MT007-C15-X1"]},
+    {"premise": "Institutions and frictions matter: long-run growth is population plus productivity growth, and institutions (including labour-force composition) determine outcomes; likewise transaction costs and liquidity can erase apparent alpha.", "type": "theoretical", "stated": "stated", "support": "New institutional economics; a recent paper on long-only trend following in equities found alpha almost vanished after transaction costs.", "claim_ids": ["MT007-C08-2", "MT007-C08-3", "MT007-C09-1"]},
+    {"premise": "Markets and the economy are complex systems with nonlinear shock responses and contagion; complexity theory (Santa Fe Institute) has not been turned into systematic trading models.", "type": "theoretical", "stated": "stated", "support": "Literature review; he admits the tension with his own belief.", "claim_ids": ["MT007-C15-1", "MT007-C15-2"]},
+    {"premise": "Regime breaks (Bretton Woods 1971, double-digit rates at the end of the Carter administration, Plaza Accord, the 1992 EMS break, the euro) were not anticipated, yet markets and the world survived each one, so models should allow that anything is possible.", "type": "experience", "stated": "stated", "support": "Historical examples recited.", "claim_ids": ["MT007-C10-3", "MT007-C11-1", "MT007-C10-X1"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Uncertainty shock to markets and the mispricing in implied volatility",
+     "steps": [
+      {"from": "Policy and trade uncertainty indices spike (January 2025)", "to": "Firms delay investment and consumption slows", "why": "Option value of waiting under uncertainty.", "claim_ids": ["MT007-C02-2", "MT007-C02-3"]},
+      {"from": "Slower adjustment and diverging views", "to": "Trends and wider expectation dispersion", "why": "Information is absorbed slowly and unevenly.", "claim_ids": ["MT007-C02-4"]},
+      {"from": "High uncertainty while the VIX is below 20", "to": "True risk is higher than volatility indicates", "why": "Uncertainty is not measurable by volatility.", "claim_ids": ["MT007-C02-5", "MT007-C03-1", "MT007-C03-2"]},
+      {"from": "Higher chance of changes in trends and cross-market relationships", "to": "Risk models with stale correlations are exposed", "why": "Regime change alters volatility and correlation.", "claim_ids": ["MT007-C03-3", "MT007-C03-5"]}
+     ],
+     "evidence": "Uncertainty indices at their highest since 2020; VIX under 20; VVIX elevated in the second half of 2024 with a brief December spike.",
+     "fails_when": "He notes the market may simply be right (a valuation question), since the VIX is a forward volatility, not forward risk.",
+     "claim_ids": ["MT007-C02-5", "MT007-C03-1", "MT007-C03-2", "MT007-C02-X1"]},
+    {"topic": "Tariffs to correlations and prices",
+     "steps": [
+      {"from": "Tariffs (60% on all goods, 25% on Mexico and Canada were discussed)", "to": "Trade and capital flows change", "why": "Prices change with tariffs; trade flows follow capital and prices.", "claim_ids": ["MT007-C04-3"]},
+      {"from": "Less globalised flows", "to": "Cross-country correlations break down", "why": "More disconnectedness.", "claim_ids": ["MT007-C04-3"]},
+      {"from": "Tariff on imported metals (copper, zinc, lead, steel)", "to": "US versus London futures price gap equal to the tariff", "why": "Delivery in the US carries the tariff, so arbitrage pricing reflects it.", "claim_ids": ["MT007-C05-1"]}
+     ],
+     "evidence": "Steel precedent; BCG trade flow projection.",
+     "fails_when": "Not stated; the effect depends on tariffs actually being applied.",
+     "claim_ids": ["MT007-C04-3", "MT007-C05-1"]},
+    {"topic": "Regime change entering risk estimates with a lag",
+     "steps": [
+      {"from": "Policy regime change", "to": "Realised cross-market correlations shift, not in the first week but over roughly three months", "why": "Behaviour changes gradually.", "claim_ids": ["MT007-C05-X1"]},
+      {"from": "Managers recalibrate correlation matrices on a fixed calendar (for example every six months) while position sizes use short-term volatility", "to": "Regime changes enter risk estimates late", "why": "Periodic updating.", "claim_ids": ["MT007-C05-2"]},
+      {"from": "Shorten the update period", "to": "Earlier adaptation", "why": "Correlations will start moving within the next three months.", "claim_ids": ["MT007-C05-2", "MT007-C05-X1"]}
+     ],
+     "evidence": "Description of manager practice; no data.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT007-C05-2", "MT007-C05-X1"]},
+    {"topic": "Term premium and the bond hedge",
+     "steps": [
+      {"from": "QE ended; deficits raise crowding-out risk; growth and monetary uncertainty", "to": "Term premium rises", "why": "More volatility and uncertainty in long duration.", "claim_ids": ["MT007-C06-1", "MT007-C07-X2", "MT007-C05-4"]},
+      {"from": "Higher term premium", "to": "Bond rallies from growth-plus-inflation valuation may not occur", "why": "Fair value must include the premium.", "claim_ids": ["MT007-C06-2"]},
+      {"from": "High inflation regime", "to": "Stock-bond correlation positive, so bonds fail to hedge equities", "why": "Inflation drives both asset classes.", "claim_ids": ["MT007-C04-2", "MT007-C04-1"]}
+     ],
+     "evidence": "Recent high-inflation episode; Dunne adds that growth uncertainty favours owning bonds while inflation uncertainty does not.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT007-C06-3", "MT007-C05-4", "MT007-C06-2"]},
+    {"topic": "Why trend and beta flex suit regime change",
+     "steps": [
+      {"from": "Regime change alters market behaviour quickly", "to": "Strategies assuming stable linkages (carry, long/short equity) are fragile", "why": "They assume mean reversion.", "claim_ids": ["MT007-C11-2", "MT007-C12-2"]},
+      {"from": "Trend following only buys what rises and sells what falls", "to": "Antifragile, should do better in high uncertainty", "why": "No interpretation or forecast needed.", "claim_ids": ["MT007-C11-3"]},
+      {"from": "Beta that varies quickly with market direction", "to": "Convexity: higher beta when the market rises and negative when it falls", "why": "Flexible exposure adapts.", "claim_ids": ["MT007-C11-4"]}
+     ],
+     "evidence": "Conceptual; Taleb's fragile/antifragile framing.",
+     "fails_when": "Trend suffers from choppy markets and costs; January 2025 CTA performance was flat to down (host data).",
+     "claim_ids": ["MT007-C11-2", "MT007-C11-3", "MT007-C11-4", "MT007-C05-3"]},
+    {"topic": "Why leveraged multistrat books are fragile",
+     "steps": [
+      {"from": "Multistrats pick the highest-Sharpe trades and lever them", "to": "A structurally convergent, mean-reverting book", "why": "Divergent strategies have high volatility and lumpy returns that do not fit.", "claim_ids": ["MT007-C13-1", "MT007-C13-2"]},
+      {"from": "Prime brokers see all positions and lend more leverage", "to": "Leverage rises on measured volatility with assumed correlations", "why": "Transparency makes lending easy.", "claim_ids": ["MT007-C14-2", "MT007-C14-3"]},
+      {"from": "Unmeasurable uncertainty: linkages, volatility and dislocations change", "to": "Existential risk for leveraged books (carry unwind, Mag 7 losses)", "why": "Correlation assumptions fail.", "claim_ids": ["MT007-C14-3", "MT007-C15-X1"]}
+     ],
+     "evidence": "August 2024 carry unwind, the 2023 long-short problem, Mag 7 losses.",
+     "fails_when": "He says the model works as a business; the risk is in extending more leverage during high uncertainty.",
+     "claim_ids": ["MT007-C14-2", "MT007-C14-3", "MT007-C15-X1"]}
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Use the uncertainty indices (world, US, Europe; monetary, trade and general policy) as a measure of regime-change size, alongside VIX and VVIX.", "why": "Gives a number for how large a regime shift is.", "claim_ids": ["MT007-C01-1", "MT007-C02-1", "MT007-C02-5", "MT007-C02-X1"]},
+    {"element": "risk", "practice": "Shorten the correlation-matrix update period instead of a fixed six-month calendar.", "why": "A regime change appears in correlations over about three months.", "claim_ids": ["MT007-C05-2", "MT007-C05-X1"]},
+    {"element": "research", "practice": "Stress-test any model by its performance in past uncertainty-index spikes to bracket expected performance and understand why it works or fails; do not discard the backtests after launch.", "why": "Short-horizon and long-horizon models behaved differently in Feb-May 2020.", "claim_ids": ["MT007-C09-2", "MT007-C10-1", "MT007-C10-2"]},
+    {"element": "research", "practice": "Do not construct hypothetical stress data from the 1930s trade wars; accept that anything is possible.", "why": "Poor data and different institutions.", "claim_ids": ["MT007-C10-X1", "MT007-C10-3"]},
+    {"element": "research", "practice": "Model institutional frictions (transaction costs, liquidity) explicitly.", "why": "Alpha from long-only trend in equities nearly vanishes after costs.", "claim_ids": ["MT007-C09-1"]},
+    {"element": "research", "practice": "Due-diligence questions for quant modelers: how does the model handle nonlinearity, what happens if correlations go to one, how are institutional changes incorporated, how is the past weighted against the present (equal weighting 20 years of history is questionable).", "why": "Complex systems have nonlinear shocks and contagion; rules and structure change.", "claim_ids": ["MT007-C15-1", "MT007-C16-1", "MT007-C16-2", "MT007-C16-R1"]},
+    {"element": "portfolio", "practice": "Tilt toward divergent strategies (trend following, flexible beta) over convergent ones in regime change; reconsider liquid versus illiquid strategies.", "why": "Convergent strategies need a known equilibrium.", "claim_ids": ["MT007-C11-2", "MT007-C11-4", "MT007-C12-2", "MT007-C14-1"]},
+    {"element": "other", "practice": "Handicap political promises against actual delivery and expect new-administration uncertainty to resolve and re-create itself; think through second-order policy effects, for example reverse repo as QE reverses.", "why": "Each policy step resolves some uncertainty and creates new.", "claim_ids": ["MT007-C07-1", "MT007-C07-R1", "MT007-C17-1"]},
+    {"element": "other", "practice": "Reweight exposures to rule changes, for example fewer Federal Register pages favours small caps.", "why": "Compliance has a higher fixed cost for small firms (Laffer and Canto).", "claim_ids": ["MT007-C16-3"]}
+   ],
+   "evidence_style": "Conceptual and academic: risk taxonomy, institutional economics, complex-systems theory, the uncertainty-index literature, and historical regime breaks; he stresses stress-testing models against past uncertainty spikes rather than forecasts. Little hard data is quoted.",
+   "current_views": [
+    {"view": "The elephant in the room is the Biden-to-Trump regime change; uncertainty indices are at their highest since 2020 (world), with US above Europe.", "as_of": "2025-01 (week of inauguration)", "reasoning": "Newspaper-text uncertainty indices.", "claim_ids": ["MT007-C01-1", "MT007-C02-2"]},
+    {"view": "The VIX at under 20 is not pricing the uncertainty, so actual risk is higher than volatility suggests.", "as_of": "2025-01", "reasoning": "Measurable versus non-measurable risk.", "claim_ids": ["MT007-C02-5", "MT007-C03-2"]},
+    {"view": "Tariffs should break down cross-country correlations and show up in US-versus-London metals contract price gaps.", "as_of": "2025-01", "reasoning": "Trade-flow shifts and arbitrage pricing.", "claim_ids": ["MT007-C04-3", "MT007-C05-1"]},
+    {"view": "Bond term premium is being pushed up by growth and monetary-policy uncertainty (September 2024 Fed cut may have been too aggressive); inflation may be stickier or higher with tariffs, making bond valuation harder.", "as_of": "2025-01", "reasoning": "Deficit worries, last-mile inflation, tariffs.", "claim_ids": ["MT007-C07-X2", "MT007-C06-1", "MT007-C12-3"]},
+    {"view": "January 2025 starting conditions are not great for the euphoric outlook: low unemployment, mid-to-low real GDP growth, high utilisation, slightly elevated core inflation, poor debt/GDP, limiting room for improvement.", "as_of": "2025-01", "reasoning": "Comparison with starts of past presidential terms.", "claim_ids": ["MT007-C07-X1"]},
+    {"view": "Trend following should do better in this high-uncertainty regime; investors should favour divergent and flexible-beta strategies and be cautious about adding leverage to multistrats.", "as_of": "2025-01", "reasoning": "Antifragility and no mean-reversion assumption.", "claim_ids": ["MT007-C11-3", "MT007-C11-4", "MT007-C15-X1", "MT007-C13-1"]},
+    {"view": "Private equity has not delivered excess returns over public equity on rolling windows; marking-to-market liquid strategies is worth reconsidering.", "as_of": "2025-01", "reasoning": "Rolling returns; exit depends on IPO market.", "claim_ids": ["MT007-C13-3", "MT007-C14-1"]}
+   ]
+  },
+  {
+   "name": "Alan Dunne",
+   "role": "Guest host of Top Traders Unplugged (hedge fund / systematic manager, Dublin)",
+   "speaker_note": "Stands in for Niels Kaastrup-Larsen. Mostly interviews, but he asserts a few views (immigration as stagflationary, growth versus inflation uncertainty and bonds, allocator survey). Mapped as a secondary speaker.",
+   "fingerprint": ["trend_following", "macro_fundamental_topdown", "policy_reaction_central_banks", "manager_selection_allocation", "geopolitics", "nowcasting_data"],
+   "worldview_premises": [
+    {"premise": "Growth uncertainty favours owning bonds, whereas inflation uncertainty does not; the uncertainty indices separate trade, monetary and policy components.", "type": "theoretical", "stated": "stated", "support": "Reasoning; Mark agrees it is a good point.", "claim_ids": ["MT007-C06-3"]},
+    {"premise": "Cutting immigration shrinks labour supply, lowering payroll growth and potential growth while pushing up wages, which is stagflationary.", "type": "theoretical", "stated": "stated", "support": "Recent studies cited on immigration flows (1-2 million per year recently versus a couple of hundred thousand before).", "claim_ids": ["MT007-C08-1"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Immigration curbs to stagflation",
+     "steps": [
+      {"from": "Border closure or fewer migrants", "to": "Fewer workers, so lower payroll growth than the 150,000 per month run-rate", "why": "Smaller labour supply.", "claim_ids": ["MT007-C08-1"]},
+      {"from": "Labour shortage", "to": "Wage pressure with lower potential growth", "why": "Stagflationary combination.", "claim_ids": ["MT007-C08-1"]}
+     ],
+     "evidence": "Studies on immigration flows; he says it is hard to isolate given tariffs and tax.",
+     "fails_when": "Feasibility of deportations is debatable.",
+     "claim_ids": ["MT007-C08-1"]}
+   ],
+   "decision_process": [
+    {"element": "other", "practice": "Frames the allocator question: do survey flows (adding multi-managers, stat arb, quant multistrats; cutting credit long/short) fit a divergent-strategy tilt?", "why": "Check whether investor positioning matches the regime view.", "claim_ids": ["MT007-C12-1"]}
+   ],
+   "evidence_style": "Industry data points (CTA index, bank survey) and questions tested against the guest's framework.",
+   "current_views": [
+    {"view": "Late January 2025: SG CTA +0.26%, SG Trend -0.69% on the month; the dollar rose early and falling bond yields reversed, giving choppy trading.", "as_of": "2025-01 (late January)", "reasoning": "Descriptive.", "claim_ids": ["MT007-C05-3"]},
+    {"view": "A bank survey showed investors adding to multi-managers, stat arb and quant multistrats and cutting credit long/short.", "as_of": "2025-01", "reasoning": "Allocator appetite.", "claim_ids": ["MT007-C12-1"]},
+    {"view": "Immigration cuts would be stagflationary.", "as_of": "2025-01", "reasoning": "Labour supply and wages.", "claim_ids": ["MT007-C08-1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {"topic": "Whether allocators' move into multistrats fits the regime-change view",
+   "positions": [
+    {"speaker": "Alan Dunne", "position": "A bank survey shows investors increasing multi-manager and quant multistrat allocations, which is not a ramp-up in divergent strategies.", "claim_ids": ["MT007-C12-1"]},
+    {"speaker": "Mark", "position": "Multistrats are structurally convergent and hold few divergent strategies; adding leverage to them in high uncertainty is a risk.", "claim_ids": ["MT007-C13-1", "MT007-C15-X1"]}
+   ]},
+  {"topic": "Bank leverage to multistrat managers",
+   "positions": [
+    {"speaker": "Alan Dunne", "position": "Asks what could trigger stress in bank leverage given a benign banking world with SVB as the only wobble.", "claim_ids": ["MT007-C14-2"]},
+    {"speaker": "Mark", "position": "Banks lend as much as they can until they can't; prime-broker models are good at volatility but rely on assumed correlations, so this is a poor time to add leverage.", "claim_ids": ["MT007-C14-3", "MT007-C15-X1"]}
+   ]},
+  {"topic": "Immigration and growth",
+   "positions": [
+    {"speaker": "Alan Dunne", "position": "Cutting immigration is stagflationary: fewer workers, slower growth, upward wage pressure.", "claim_ids": ["MT007-C08-1"]},
+    {"speaker": "Mark", "position": "Avoids the politics; long-run growth is population plus productivity, and the composition and institutions of the workforce matter, not just worker counts.", "claim_ids": ["MT007-C08-2", "MT007-C08-3"]}
+   ]}
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Mark argues that new uncertainty creates trends and dispersion, yet also that quant models struggle with it; no evidence is offered on how trend models actually fared in past uncertainty spikes beyond 2020, where results depended on time horizon.", "claim_ids": ["MT007-C02-4", "MT007-C03-4", "MT007-C10-1"]},
+  {"issue": "Trend following is called antifragile and expected to do better in high uncertainty, but the host's January 2025 numbers show choppy trend performance, and Mark himself flags that he is 'talking my long-term book'.", "claim_ids": ["MT007-C11-3", "MT007-C05-3"]},
+  {"issue": "The statement that the VIX not rising is either a mispricing or reflects what the two measure is left unresolved; no test is given.", "claim_ids": ["MT007-C02-5", "MT007-C03-1"]},
+  {"issue": "The claim that long-only trend following in equities has alpha that nearly vanishes after transaction costs comes from a recent paper cited without name or numbers.", "claim_ids": ["MT007-C09-1"]},
+  {"issue": "The private equity underperformance claim cites 'recent numbers' on rolling 6- and 12-month windows without source.", "claim_ids": ["MT007-C13-3"]},
+  {"issue": "Mark says a regime change shows in correlations over three months, but also that stress testing hypothetical analogues is not robust; how to detect the regime in time is not specified.", "claim_ids": ["MT007-C05-X1", "MT007-C10-X1"]},
+  {"issue": "Complexity theory is said not to have been turned into systematic models, yet Mark calls himself a big believer; the practical use is limited to due-diligence questions.", "claim_ids": ["MT007-C15-2", "MT007-C15-1"]}
+ ],
+ "forward_looking_inputs": "(reader) Observables Mark says lead outcomes: the level and sub-components of the policy uncertainty indices (trade, monetary), the gap between uncertainty and the VIX/VVIX, term-premium indicators and deficit worries for bonds, realised cross-market correlations over the next three months after the regime change, US-London metals futures gaps (tariff pass-through), inflation stickiness (last mile), and prime-broker leverage conditions. Horizon: next three to six months for correlations and performance; one to two years for leveraged-book risks.",
+ "reader_inferences": [
+  "(reader) Mark's central claim is that the VIX and the uncertainty indices measure different things; implied volatility at 20 does not mean risk is low when uncertainty is record high, which implies volatility-targeted books carry hidden leverage.",
+  "(reader) His preference for divergent strategies is partly an argument by elimination: convergent strategies need equilibria he thinks are uncertain.",
+  "(reader) The advice to stress-test models on past uncertainty spikes treats the uncertainty index as a regime label for conditional performance reporting, rather than as a trading signal."
+ ],
+ "added_claims": [
+  {"claim_id": "MT007-C07-R1", "chunk": "C07", "speaker": "Mark", "quote": "you start out with some outrageous proposition or sort of outrageous point of view", "claim": "Trump's deal-making style (from his 1980s book) is to open with an outrageous position and negotiate toward what he wants, so campaign and post-election statements overstate what will be delivered and each step resolves some uncertainty while creating new.", "mechanism": "policy_uncertainty", "asset_class": "multi", "indicator": "policy uncertainty indices", "horizon": "months", "direction": "", "conditions": "new administration policy implementation", "testable": "partly: compare announced versus implemented policy", "speaker_confidence": "medium", "time_bound": "yes"},
+  {"claim_id": "MT007-C16-R1", "chunk": "C16", "speaker": "Mark", "quote": "tell me the rules of the system and I'll give you an idea of exactly what performance would look like", "claim": "Performance depends on the rules of the system (transaction costs, incentives, institutions), so a model builder must track changes in those rules and reweight exposures accordingly.", "mechanism": "institutional_rules", "asset_class": "multi", "indicator": "institutional and regulatory changes", "horizon": "unspecified", "direction": "", "conditions": "regime change", "testable": "partly", "speaker_confidence": "medium", "time_bound": "no"}
+ ]
+}

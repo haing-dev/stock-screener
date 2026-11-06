@@ -1,0 +1,885 @@
+{
+ "source_id": "MT099",
+ "episode_thesis": "A live debrief of the early-August 2024 yen-carry unwind and volatility spike (VIX 16 to 65 and back to 24 within a week; biggest Nikkei one-day fall since 1987) argues that a sharp spike-and-revert is an expected cost of trend following, not a sign the strategy is broken: the SG Trend index lost about 6% in a month that followed a very strong equity run. Nick Baltas shows that dispersion between managers comes from design choices (signal speed, balanced versus unconstrained risk across asset classes, equity caps, pure trend versus added reversion/carry), so choices should be matched to what the investor needs to defend; both speakers reject the lazy blame of risk parity, vol targeting and CTAs and point instead to correlation externalities and crowded positions.",
+ "speakers": [
+  {
+   "name": "Nick Baltas",
+   "role": "Co-host; quantitative practitioner running systematic trend-following strategies (dynamic risk allocation)",
+   "speaker_note": "Caption spells 'Nick Bolas'. Turns are separable from the host's by question/answer structure; two ledger claims mixed speakers and are applied below (C07-2 split; C05-3 date corrected to Thanksgiving 2021). Numbers such as the VIX path are quoted from memory in conversation.",
+   "fingerprint": [
+    "trend_following",
+    "position_sizing_vol_target",
+    "positioning_crowding",
+    "volatility_options",
+    "dealer_hedging_flows",
+    "regime_detection",
+    "research_robustness_overfitting",
+    "diversification_risk_parity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Sharp mean reversion after a spike (March 2023 rates, Feb 2018 VIX spike, Aug 2024) hurts trend followers; the cost is part of the exposure the investor subscribes to, particularly when equity exposure is unconstrained, and it does not show the strategy is broken.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Comparison of three episodes; none of the people he speaks to became concerned about trend following as a theme.",
+     "claim_ids": [
+      "MT099-C05-1",
+      "MT099-C05-R2",
+      "MT099-C04-1"
+     ]
+    },
+    {
+     "premise": "The August 2024 drawdown was a reversal of an exceptional run: equities to end-July were in the top decile of any year since 1928 and trend indices had been outperforming until just before.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Return history since 1928 (quoted from his own data).",
+     "claim_ids": [
+      "MT099-C03-1"
+     ]
+    },
+    {
+     "premise": "Signal speed should be tied to investor objectives, not to recent price action; clients asked for faster systems on Monday and slower ones two days later as the V shape unfolded.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Client conversations in the same week.",
+     "claim_ids": [
+      "MT099-C03-2"
+     ]
+    },
+    {
+     "premise": "Speed outcomes depend on whether a reversal is a true or false positive: faster systems win if the turn is real and lose the recovery if it is a V; the gap between fast and medium speeds widened on Monday and closed by week end.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own strategy statistics for the week.",
+     "claim_ids": [
+      "MT099-C10-3",
+      "MT099-C12-1"
+     ]
+    },
+    {
+     "premise": "The medium-term benchmark (SG CTA Trend) behaves like an exponentially weighted signal with about a 3-month half-life, not a 3-month window.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own replication plus Quantica research (about a 66-day half-life correlating highly with the index over 10-15 years).",
+     "claim_ids": [
+      "MT099-C10-2"
+     ]
+    },
+    {
+     "premise": "Dynamic risk allocation across asset classes lets risk flow to trending classes; forcing equal risk (25% each) versus letting it flow is the design choice that caused most of the dispersion between managers in August 2024. Neither is right or wrong; it is a trade-off between forced diversification and conviction.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Own risk-allocation numbers (rates fell to about 10% of risk; equities caused 60% of the loss).",
+     "claim_ids": [
+      "MT099-C08-1",
+      "MT099-C08-2",
+      "MT099-C09-1",
+      "MT099-C08-R3"
+     ]
+    },
+    {
+     "premise": "Bond futures used to drive trend returns but after 2022 rates stopped trending, so the book's returns now come from equities, JPY and commodities.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own attribution for 2024 year to date.",
+     "claim_ids": [
+      "MT099-C08-X1",
+      "MT099-C06-3",
+      "MT099-C07-1"
+     ]
+    },
+    {
+     "premise": "Assessing strategies should focus on turning points and rotations and on capital preservation, since one must remain solvent through a drawdown to reach new highs.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument by survivorship ('otherwise it is paper money').",
+     "claim_ids": [
+      "MT099-C11-1"
+     ]
+    },
+    {
+     "premise": "Added reversion or carry components can help in such months (his reversion signal went long Japan quickly after the loss), which makes many managers no longer pure trend.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own book; the host raises the 'not pure trend' point first.",
+     "claim_ids": [
+      "MT099-C11-2"
+     ]
+    },
+    {
+     "premise": "Equity dispersion trades and vol selling lost because correlations spiked from record lows driven by concentration in a few AI/mega-cap names; skew and implied levels then offered re-entry.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Market observations over the week.",
+     "claim_ids": [
+      "MT099-C04-X1",
+      "MT099-C04-3"
+     ]
+    },
+    {
+     "premise": "Value at risk is only a threshold; use expected shortfall for losses beyond it, and VaR is bounded by historical realisations. Contagion arises from many investors suffering losses at once and unwinding together, not from the measure itself.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Standard risk-management theory (parametric, Monte Carlo and historical variants).",
+     "claim_ids": [
+      "MT099-C15-1",
+      "MT099-C15-X1"
+     ]
+    },
+    {
+     "premise": "Good risk management should foresee correlation spikes and the externalities of many investors holding similar portfolios and reacting to the same signals (FX carry is the example); VaR cannot capture this.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Example of crowded FX carry; historical correlations understate the problem.",
+     "claim_ids": [
+      "MT099-C15-2"
+     ]
+    },
+    {
+     "premise": "Funding liquidity constraints (inability to lever up) can turn one or two big moves into a vicious circle.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "None beyond statement.",
+     "claim_ids": [
+      "MT099-C16-1"
+     ]
+    },
+    {
+     "premise": "Blaming systematic rule-followers (risk parity, vol targeting, CTAs) for each drawdown is overplayed, since discretionary managers would also cut losses; the sell-off was multi-dimensional (carry, correlation, liquidity).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Argument by analogy (a discretionary holder of the Magnificent 7 would also cut); no agent-level data, and he asks for a postmortem when data allow.",
+     "claim_ids": [
+      "MT099-C14-2",
+      "MT099-C16-2"
+     ]
+    },
+    {
+     "premise": "0DTE option selling lost money but is no different from selling longer tenors; hedging a zero-day option is harder as delta and gamma change quickly, and dealer long/short gamma can amplify or dampen moves, but there is no data that 0DTE drove the event.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Option theory; he disclaims having studied the market closely.",
+     "claim_ids": [
+      "MT099-C13-3",
+      "MT099-C14-1",
+      "MT099-C14-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "August 2024 yen-carry unwind to trend-follower losses",
+     "steps": [
+      {
+       "from": "BOJ hike and Fed cut expectations",
+       "to": "Dollar/yen less attractive; FX carry unwinds with losses",
+       "why": "Narrower rate differential removes the carry reward.",
+       "claim_ids": [
+        "MT099-C04-2"
+       ]
+      },
+      {
+       "from": "Record-low equity correlations from mega-cap concentration, plus crowded short-vol and dispersion trades",
+       "to": "Correlation spike and a VIX jump from 16 to 65",
+       "why": "Correlation and dispersion short positions were exposed to a sudden move.",
+       "claim_ids": [
+        "MT099-C04-X1",
+        "MT099-C04-3",
+        "MT099-C04-1"
+       ]
+      },
+      {
+       "from": "Equity market falls (Nikkei biggest daily loss since 1987)",
+       "to": "Trend portfolios long equities and short yen lose; equity part contributed 60% of the loss",
+       "why": "Positions built in the year-to-date rally and JPY weakness are hit by the reversal.",
+       "claim_ids": [
+        "MT099-C02-3",
+        "MT099-C09-1",
+        "MT099-C06-3"
+       ]
+      },
+      {
+       "from": "BOJ signals it will not hike if it upsets markets (a 'BOJ put')",
+       "to": "Rapid rebound; V shape; VIX back to 24 within a week",
+       "why": "Central-bank backstop and re-entry at attractive implied levels.",
+       "claim_ids": [
+        "MT099-C02-3",
+        "MT099-C04-1",
+        "MT099-C04-3"
+       ]
+      },
+      {
+       "from": "Sharp spike then reversal",
+       "to": "Trend losses for the month (about 6% for SG Trend), mostly reversing a prior gain",
+       "why": "Trend followers lose to a spike-and-revert; the loss is an expected feature.",
+       "claim_ids": [
+        "MT099-C05-1",
+        "MT099-C03-1",
+        "MT099-C02-2"
+       ]
+      }
+     ],
+     "evidence": "Index numbers as of 14 Aug 2024 (BTOP50 -3.6%, SG CTA -4.45%, SG Trend -5.98%, SG Short-Term Traders -0.72% month to date; S&P 500 +12.4% year to date); VIX path; own risk-allocation data.",
+     "fails_when": "A loss of this kind turns into a deeper drawdown only if the turn is a true positive rather than a V; faster systems do better in that case.",
+     "claim_ids": [
+      "MT099-C02-2",
+      "MT099-C04-1",
+      "MT099-C04-2",
+      "MT099-C05-1",
+      "MT099-C09-1"
+     ]
+    },
+    {
+     "topic": "Why managers' August outcomes diverged",
+     "steps": [
+      {
+       "from": "Rates stopped trending (dynamic risk allocation), commodities and equities trended",
+       "to": "Dynamic allocators had only about 10% of risk in rates versus 25% under balanced allocation",
+       "why": "Risk follows trendiness at the asset-class level.",
+       "claim_ids": [
+        "MT099-C08-1",
+        "MT099-C07-1"
+       ]
+      },
+      {
+       "from": "More risk in equities (unconstrained, medium speed)",
+       "to": "Larger August loss than balanced or equity-defensive designs",
+       "why": "Equities caused 60% of the loss; a balanced allocation loses less but captured less of the earlier rally.",
+       "claim_ids": [
+        "MT099-C09-1",
+        "MT099-C12-3",
+        "MT099-C12-R1"
+       ]
+      },
+      {
+       "from": "Equity-defensive designs with no long equities",
+       "to": "Roughly 0% month to date",
+       "why": "They do not hold the exposure that was hit.",
+       "claim_ids": [
+        "MT099-C13-1"
+       ]
+      },
+      {
+       "from": "Number of markets and non-trend features (reversion, carry)",
+       "to": "Further dispersion",
+       "why": "Few-market books are hit-or-miss on Nikkei/yen; mean-reversion components helped.",
+       "claim_ids": [
+        "MT099-C07-3",
+        "MT099-C11-2"
+       ]
+      }
+     ],
+     "evidence": "Own numbers for the week and the March 2023 comparison; dispersion observed across managers.",
+     "fails_when": "In March 2023 the shock was in rates and hit all trend programs similarly regardless of speed or equity caps, so the same design choices would not have separated managers.",
+     "claim_ids": [
+      "MT099-C08-2",
+      "MT099-C09-1",
+      "MT099-C12-3",
+      "MT099-C13-1",
+      "MT099-C12-R1"
+     ]
+    },
+    {
+     "topic": "Signal speed after a V-shaped shock",
+     "steps": [
+      {
+       "from": "Shock hits on Monday",
+       "to": "Faster systems cut exposure and lose less on Monday",
+       "why": "Short half-life signals adapt immediately.",
+       "claim_ids": [
+        "MT099-C10-3"
+       ]
+      },
+      {
+       "from": "Prices rebound through the week",
+       "to": "Faster systems miss the recovery; medium-term signals regain part of their Monday loss",
+       "why": "Medium signals keep exposure; the gap closes by week end.",
+       "claim_ids": [
+        "MT099-C10-3"
+       ]
+      },
+      {
+       "from": "No established trend in rates and commodities",
+       "to": "Shorter speeds do substantially better there; in equities, credit and FX speed made little difference",
+       "why": "Whipsawed markets reward quick response.",
+       "claim_ids": [
+        "MT099-C12-1"
+       ]
+      }
+     ],
+     "evidence": "Own signal comparisons for the month of August 2024.",
+     "fails_when": "Not stated; he notes that the answer reverses if the shock was a true positive.",
+     "claim_ids": [
+      "MT099-C10-3",
+      "MT099-C12-1"
+     ]
+    },
+    {
+     "topic": "Correlation externalities and contagion",
+     "steps": [
+      {
+       "from": "Many investors hold similar portfolios (FX carry) for similar objectives",
+       "to": "Realised correlations low in history but high when all react to the same global growth shock",
+       "why": "Unrecognised crowding; the externality is invisible in the back test.",
+       "claim_ids": [
+        "MT099-C15-2"
+       ]
+      },
+      {
+       "from": "Funding constraints and losses at the same time",
+       "to": "Synchronous unwinding and a vicious circle after one or two big moves",
+       "why": "Investors cannot lever up and must cut together.",
+       "claim_ids": [
+        "MT099-C16-1",
+        "MT099-C15-X1"
+       ]
+      },
+      {
+       "from": "Crisis",
+       "to": "Back-tested diversification overstates protection",
+       "why": "Correlations rise in a crisis.",
+       "claim_ids": [
+        "MT099-C15-3"
+       ]
+      }
+     ],
+     "evidence": "Illustration with the FX carry trade and the August episode; no statistical test.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT099-C15-2",
+      "MT099-C15-3",
+      "MT099-C16-1",
+      "MT099-C15-X1"
+     ]
+    },
+    {
+     "topic": "Option-market amplification (0DTE and gamma)",
+     "steps": [
+      {
+       "from": "Short-dated options held by dealers or traders",
+       "to": "Delta and gamma change quickly intraday, making hedging harder",
+       "why": "Expiry within hours.",
+       "claim_ids": [
+        "MT099-C14-1"
+       ]
+      },
+      {
+       "from": "Dealers short or long gamma",
+       "to": "Moves amplified if short gamma, contained if long gamma",
+       "why": "Hedge flows follow the direction of the move or oppose it.",
+       "claim_ids": [
+        "MT099-C14-1",
+        "MT099-C14-X1"
+       ]
+      }
+     ],
+     "evidence": "Theory only; he says there are no data showing that 0DTE drove the event, and long-gamma holders profited as expected.",
+     "fails_when": "Not stated; he disclaims the effect pending data.",
+     "claim_ids": [
+      "MT099-C13-3",
+      "MT099-C14-1",
+      "MT099-C14-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "sizing",
+     "practice": "Vol scale every exposure and allocate risk dynamically between asset classes (e.g. rates fell to about 10% when not trending) instead of forcing 25% each across equities, rates, FX and commodities.",
+     "why": "Concentrates risk where trends exist; he personally prefers dynamic vol scaling and dynamic allocation but acknowledges the defensive benefit of a balanced allocation.",
+     "claim_ids": [
+      "MT099-C08-1",
+      "MT099-C08-2",
+      "MT099-C08-R3",
+      "MT099-C09-1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Medium-term trend signal of roughly a 3-month exponential half-life, with a combination of speeds; may add mean-reversion and carry components.",
+     "why": "Matches the benchmark and adds diversification; reversion helped in August by going long Japan quickly.",
+     "claim_ids": [
+      "MT099-C10-2",
+      "MT099-C11-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Match speed, equity caps and class balance to what the investor needs to defend (e.g. 60/40 risk in equities and rates).",
+     "why": "Equity-defensive designs were about 0% while unconstrained medium-term designs lost in August; different objectives need different treatment.",
+     "claim_ids": [
+      "MT099-C13-1",
+      "MT099-C03-2",
+      "MT099-C12-3"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Use expected shortfall, not only VaR, and monitor correlation dynamics and crowding externalities.",
+     "why": "VaR is a threshold bounded by history and cannot see crowded-position correlation spikes.",
+     "claim_ids": [
+      "MT099-C15-1",
+      "MT099-C15-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Assess strategies on turning points and rotations and wait for data before blaming risk parity, vol targeting or CTAs or 0DTE.",
+     "why": "Solvency in drawdown matters; the sell-off was multi-dimensional.",
+     "claim_ids": [
+      "MT099-C11-1",
+      "MT099-C14-2"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Strategies following intraday moves from the open in Nikkei on 5 August would have profited from strong intraday momentum.",
+     "why": "Intraday momentum on the crash day.",
+     "claim_ids": [
+      "MT099-C14-X1"
+     ]
+    }
+   ],
+   "evidence_style": "Data from his own strategies and indices over a short window (one week to one month), compared with March 2023 and Feb 2018; theory (VaR, option gamma) and practitioner reasoning. He is open that conclusions rest on a few episodes and wants a postmortem with agent-level data.",
+   "current_views": [
+    {
+     "view": "The August episode was a learning week and an opportunity, not an alarm for trend following; the sell-off reversed within days.",
+     "as_of": "2024-08-16 (Friday; index data as of 14 Aug)",
+     "reasoning": "Spike-and-revert is a known cost; VIX back at 24 and S&P recovering.",
+     "claim_ids": [
+      "MT099-C05-1",
+      "MT099-C04-1",
+      "MT099-C03-1"
+     ]
+    },
+    {
+     "view": "Trend portfolios have flipped to long bonds across regions and tenors since June after a long range-bound period; commodities reversed in July (energy flipped) while precious metals longs held; equities and JPY positions depend on speed.",
+     "as_of": "2024-08-16",
+     "reasoning": "Signal transitions with speed and smoothing.",
+     "claim_ids": [
+      "MT099-C06-1",
+      "MT099-C06-2",
+      "MT099-C07-1"
+     ]
+    },
+    {
+     "view": "S&P skew moved from historic lows to its most attractive level in years, so there are re-entry opportunities in implied levels.",
+     "as_of": "2024-08-16",
+     "reasoning": "Repriced skew after the correlation spike.",
+     "claim_ids": [
+      "MT099-C04-3"
+     ]
+    },
+    {
+     "view": "Alternative (non-benchmark) commodity trends added performance almost daily in August 2024, showing the value of diversification insulated from macro moves.",
+     "as_of": "2024-08",
+     "reasoning": "Insulation from equity and yen moves. (Corrected from the host to Baltas.)",
+     "claim_ids": [
+      "MT099-C07-2"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; veteran trend follower and CTA",
+   "speaker_note": "Caption spells 'Neils Castro Larson'. He frames topics and states views of his own on trend following, speed and risk management, so he is mapped. The 'Thanksgiving 20121' caption is read as Thanksgiving 2021 (applied correction).",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "crisis_alpha_convexity",
+    "policy_reaction_central_banks",
+    "position_sizing_vol_target",
+    "research_robustness_overfitting"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend followers are rule-followers: a crash day is an ordinary day with no frantic activity, and the loss of one week is smaller than the gain of some single weeks earlier in the year. Trend came back quickly after the extreme one-day event around Thanksgiving 2021.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Personal trading experience.",
+     "claim_ids": [
+      "MT099-C05-2",
+      "MT099-C05-3"
+     ]
+    },
+    {
+     "premise": "A BOJ put exists: the BOJ said it would not hike if it upsets markets, which enabled the rebound after a small, telegraphed hike and weak US jobs triggered the biggest Nikkei fall since 1987.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Events of the week.",
+     "claim_ids": [
+      "MT099-C02-3"
+     ]
+    },
+    {
+     "premise": "A few-day shock is too short relative to medium and long look-back windows to flip equity or yen positions; it mainly deleverages and weakens signal strength, so trend books change little after brief crashes.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning from look-back lengths.",
+     "claim_ids": [
+      "MT099-C07-X1"
+     ]
+    },
+    {
+     "premise": "Fully diversified trend portfolios have components (such as strengthening grain downtrends) that cushioned July and August and are missed by equity and yen headlines; dispersion between managers depends on the number of markets traded.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation of the month.",
+     "claim_ids": [
+      "MT099-C07-2",
+      "MT099-C07-3"
+     ]
+    },
+    {
+     "premise": "Short-term trend following works less well than medium to long-term; the index data show SG Trend usually beats the short-term traders index. Short-term managers exit by time- or vol-based rules, so they are a different methodology, not just a shorter time frame.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Index data, no study; he says he has never seen data that short-term trend works as well.",
+     "claim_ids": [
+      "MT099-C09-2",
+      "MT099-C10-1"
+     ]
+    },
+    {
+     "premise": "Look-backs are not symmetrical for entry and exit: a slow entry does not mean a slow exit, so managers can design faster reaction into medium-term systems, which is a source of edge and uniqueness.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Practitioner view.",
+     "claim_ids": [
+      "MT099-C10-4"
+     ]
+    },
+    {
+     "premise": "Many CTAs are no longer pure trend, which explains performance divergences, and it is hard for an investor to understand differences between managers; replicator products led the benchmark into July 2024 and the gap vanished in six weeks.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation of replicator versus benchmark performance.",
+     "claim_ids": [
+      "MT099-C11-2",
+      "MT099-C13-2"
+     ]
+    },
+    {
+     "premise": "Trend followers are first risk managers: they control the risk taken, not the returns the market offers. Many have moved from stop losses with static sizing to VaR-based portfolio risk, which raises the worry that common VaR use synchronises selling.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Personal view; asked of Baltas as an open question.",
+     "claim_ids": [
+      "MT099-C14-X2"
+     ]
+    },
+    {
+     "premise": "Correlations rise in a crisis, so back-tested diversification overstates protection.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "'The only thing that goes up in a crisis is correlations'.",
+     "claim_ids": [
+      "MT099-C15-3"
+     ]
+    },
+    {
+     "premise": "Long calm streaks precede volatility spikes: the S&P streak without a 2% drawdown was about 356 days before Volmageddon (Feb 2018) and 351 days before August 2024 (offered half in jest).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Two data points.",
+     "claim_ids": [
+      "MT099-C12-2"
+     ]
+    },
+    {
+     "premise": "The short-horizon trend barometer stood at 52 during the August reversal because short time frames adapt quickly, while longer trend indices were down.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own barometer.",
+     "claim_ids": [
+      "MT099-C02-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why brief crashes barely change trend portfolios",
+     "steps": [
+      {
+       "from": "A shock lasting only a few days",
+       "to": "Too short relative to medium/long look-backs to flip equity or yen positions",
+       "why": "Signals average over months.",
+       "claim_ids": [
+        "MT099-C07-X1"
+       ]
+      },
+      {
+       "from": "Positions largely intact",
+       "to": "Deleveraging and weaker signal strength rather than reversal; continuation afterwards",
+       "why": "Volatility scaling cuts size while direction stays.",
+       "claim_ids": [
+        "MT099-C07-X1"
+       ]
+      }
+     ],
+     "evidence": "General reasoning; no position data for the week.",
+     "fails_when": "Faster systems do flip, and the longer a shock lasts the more signals turn.",
+     "claim_ids": [
+      "MT099-C07-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "risk",
+     "practice": "Run by rules, treat a crash day as an ordinary day, and see the trend follower first as a risk manager.",
+     "why": "Control of risk, not returns, is the part trend followers can influence.",
+     "claim_ids": [
+      "MT099-C05-2",
+      "MT099-C14-X2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Prefer medium- to long-term trend over short-term trend; short-term managers use time- or vol-based exits.",
+     "why": "Index evidence that SG Trend usually beats the short-term traders index.",
+     "claim_ids": [
+      "MT099-C09-2",
+      "MT099-C10-1"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Trade many markets including less conventional commodities.",
+     "why": "Few-market books are hit-or-miss; diversification cushioned July and August.",
+     "claim_ids": [
+      "MT099-C07-2",
+      "MT099-C07-3"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Expect equity-exit rules or market-neutral add-ons to differ by manager; manager look-back design (fast exit, slow entry) is a source of edge.",
+     "why": "Symmetry of look-backs cannot be assumed.",
+     "claim_ids": [
+      "MT099-C10-4"
+     ]
+    }
+   ],
+   "evidence_style": "Personal experience, index data and anecdote from the week; rules of thumb (the 351/356-day streak) offered with humour. He explicitly says he has never seen data on short-term trend and relies on SG index comparisons.",
+   "current_views": [
+    {
+     "view": "The week was not a big event for trend followers and the community handled it well; August losses are a normal part of the year.",
+     "as_of": "2024-08-16",
+     "reasoning": "Rules-based reaction; a big carry trade was shaken, and earlier single weeks gained more.",
+     "claim_ids": [
+      "MT099-C05-2",
+      "MT099-C02-2"
+     ]
+    },
+    {
+     "view": "Central banks now vocalise a put (the BOJ), which markets took as good news.",
+     "as_of": "2024-08-16",
+     "reasoning": "BOJ said it would not hike if it upsets markets.",
+     "claim_ids": [
+      "MT099-C02-3"
+     ]
+    },
+    {
+     "view": "The endogenous size of the carry trade was probably bigger than people realised, with correlation and crowding effects.",
+     "as_of": "2024-08-16",
+     "reasoning": "Offered as a closing comment after Baltas on externalities.",
+     "claim_ids": [
+      "MT099-C15-3",
+      "MT099-C14-X2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Speed: short-term versus medium/long-term trend",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Short-term trend following does not work as well as medium to long term (SG Trend usually beats short-term traders); short-term managers are a different methodology.",
+     "claim_ids": [
+      "MT099-C09-2",
+      "MT099-C10-1"
+     ]
+    },
+    {
+     "speaker": "Nick Baltas",
+     "position": "Neither speed is better in general: it depends on whether the reversal is a true or false positive, speed mattered mainly in rates and commodities, and speed should reflect investor objectives.",
+     "claim_ids": [
+      "MT099-C10-3",
+      "MT099-C12-1",
+      "MT099-C03-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Did the shock flip trend positions?",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "A few-day shock is too short to flip equity or yen positions in medium/long systems; mostly deleveraging and weaker signals.",
+     "claim_ids": [
+      "MT099-C07-X1"
+     ]
+    },
+    {
+     "speaker": "Nick Baltas",
+     "position": "Depending on speed, a fraction or most markets turned; equities are a big transition, though he accepts equities may not have flipped for most medium-term programs.",
+     "claim_ids": [
+      "MT099-C06-1",
+      "MT099-C10-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Does common VaR use create contagion?",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Worries that many managers moving from stop losses to VaR-based risk could synchronise forced selling.",
+     "claim_ids": [
+      "MT099-C14-X2"
+     ]
+    },
+    {
+     "speaker": "Nick Baltas",
+     "position": "Contagion comes from simultaneous losses and synchronous unwinding, not from the VaR measure; the real issue is whether it is the right measure and whether people over- or under-react, and crowded positions matter more.",
+     "claim_ids": [
+      "MT099-C15-1",
+      "MT099-C15-X1",
+      "MT099-C15-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Balanced versus dynamic asset-class risk allocation",
+   "positions": [
+    {
+     "speaker": "Nick Baltas",
+     "position": "A balanced allocation would have lost less in August (equities 60% of the loss) but gives up conviction in trending classes; he personally likes dynamic allocation but calls it a design trade-off.",
+     "claim_ids": [
+      "MT099-C09-1",
+      "MT099-C08-2",
+      "MT099-C08-R3"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Asks about dynamic versus static sizing for investor perception of risk, and notes managers hold firm beliefs in one or the other; states no preference.",
+     "claim_ids": [
+      "MT099-C14-X2",
+      "MT099-C10-4"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Most statements rest on one week and a few comparable episodes (Mar 2023, Feb 2018); there is no systematic study and conclusions on speed and balanced allocation are a posteriori.",
+   "claim_ids": [
+    "MT099-C12-3",
+    "MT099-C10-3",
+    "MT099-C09-1"
+   ]
+  },
+  {
+   "issue": "Baltas says the risk-allocation point is a hypothesis since he has not looked at long-term data.",
+   "claim_ids": [
+    "MT099-C08-1",
+    "MT099-C08-2"
+   ]
+  },
+  {
+   "issue": "No data support or refute that 0DTE options or risk-parity/vol-target/CTA selling drove the move; both speakers call for a postmortem when agent-level data exist.",
+   "claim_ids": [
+    "MT099-C14-1",
+    "MT099-C14-2",
+    "MT099-C16-2"
+   ]
+  },
+  {
+   "issue": "The 351/356-day calm streak rule of thumb is based on two episodes and offered as a half-joke.",
+   "claim_ids": [
+    "MT099-C12-2"
+   ]
+  },
+  {
+   "issue": "Host claims short-term trend works less well but says he has never seen data; the support is the index comparison for one month and the year.",
+   "claim_ids": [
+    "MT099-C09-2"
+   ]
+  },
+  {
+   "issue": "Ledger attribution fixes: C07-2 mixes speakers (grains is Niels; non-benchmark commodities is Baltas) and C05-3 should read Thanksgiving 2021. Index numbers quoted are as of 14 August, before final month-end values.",
+   "claim_ids": [
+    "MT099-C07-2",
+    "MT099-C05-3",
+    "MT099-C02-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs the speakers treat as leading or diagnostic: VIX level and the spike-and-revert profile; BOJ and Fed policy gaps that drive yen carry; equity correlation and concentration (record-low correlations preceded the shock); S&P skew and implied correlation as re-entry signals; length of the calm streak without a 2% drawdown; trendiness by asset class (rates versus equities and commodities) which drives dynamic risk allocation; funding liquidity and crowded positions. Horizon is days to weeks for the shock and months for speed effects.",
+ "reader_inferences": [
+  "(reader) The structure of the argument implies that whether faster or slower systems are better cannot be known ex ante; the choice is a payoff-shape decision tied to the investor's liabilities rather than a forecast.",
+  "(reader) The record-low correlation plus concentration setup suggests a testable relation: shock severity for short-correlation and dispersion trades rises when index correlation is at a low and top-name concentration is high.",
+  "(reader) Baltas's rates-risk-at-10% remark implies a dynamic-allocation book was structurally short on diversification into a rates shock like March 2023, which a balanced allocation would not have been; the two episodes are mirror images.",
+  "(reader) The two speakers agree that the crowded FX carry trade was the main amplifier but neither offers a measure of crowding; positioning data (CFTC yen shorts) would be a candidate input."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT099-C05-R2",
+   "chunk": "C05",
+   "speaker": "Nick Baltas",
+   "quote": "by no measure did we see anyone becoming concerned about Trend following as a um as a systematic theme",
+   "claim": "In the week after the shock, no one among the practitioners Baltas speaks to became concerned about trend following itself; the underperformance was seen as part of what the strategy is.",
+   "mechanism": "behavioural_sentiment",
+   "asset_class": "multi",
+   "indicator": "investor sentiment toward trend following",
+   "horizon": "weeks",
+   "direction": "",
+   "conditions": "After the August 2024 reversal; unconstrained equity exposure",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT099-C08-R3",
+   "chunk": "C08",
+   "speaker": "Nick Baltas",
+   "quote": "I personally like Dynamic Vol scaling and dynamic risk allocation between markets and as class",
+   "claim": "Baltas personally prefers dynamic vol scaling and dynamic risk allocation across markets and asset classes (stated as a preference, with the allocation question later described as a trade-off).",
+   "mechanism": "position_sizing",
+   "asset_class": "multi",
+   "indicator": "asset-class trendiness",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "Trend-following book with four major asset classes",
+   "testable": "yes: dynamic versus balanced allocation backtest",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT099-C12-R1",
+   "chunk": "C12",
+   "speaker": "Nick Baltas",
+   "quote": "however many Sigma moves for the two year Point uh in the treasury market it was like about 6",
+   "claim": "March 2023 saw a move of roughly six standard deviations (by his hazy recollection) in the two-year Treasury, unprecedented in decades and the main reason for the large trend reversion that month.",
+   "mechanism": "tail_event",
+   "asset_class": "rates",
+   "indicator": "2-year Treasury yield move in sigma",
+   "horizon": "days",
+   "direction": "reversion hurt trend",
+   "conditions": "March 2023 banking stress",
+   "testable": "yes: compute the sigma move from yield data",
+   "speaker_confidence": "low",
+   "time_bound": "yes"
+  }
+ ]
+}

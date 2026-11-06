@@ -5,8 +5,8 @@ date: 2024-06-23
 channel: "Top Traders Unplugged"
 url: 
 words: 7451
-claims: 38
-added_by_crosscheck: 4
+claims: 41
+added_by_crosscheck: 7
 corrections: 1
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Michael nobow (SMN co-founder, Vienna CTA)", "Joseph valin (SMN head of quant research and risk)", "Moritz seibert (host)"]
@@ -21,6 +21,132 @@ tags: [source, layer0]
 **Approach:** trend following, diversification, market universe, risk management, CTA
 
 **Cross-check completeness estimate of first read:** 0.90 - the first reader caught nearly every method and mechanism claim; only the robustness rationale for choosing trend following, the capacity argument, the sector/single-name equity idea and the volatility-is-non-directional rationale were missed.
+
+## Argument map
+
+**Episode thesis:** SMN's founders argue trend following needs no forecast, only a broad portfolio that will contain large outliers, so they keep equal long and short risk (to keep crisis alpha), avoid overfitting, and widen the universe to over 200 markets, including synthetic and illiquid alternative markets that correlate little with classic futures. They manage risk with an average volatility target plus per-position budgets, execute illiquid markets with algorithms, and see no arbitrage of outliers after the zero-rate lost decade.
+
+### Michael Nobow (Co-founder of SMN (the N in SMN), Vienna systematic CTA since 1997; ex-Austrian bank derivatives trader)
+Fingerprint: #approach/trend_following #approach/diversification_risk_parity #approach/research_robustness_overfitting #approach/crisis_alpha_convexity #approach/manager_selection_allocation
+_Speaker note: Caption spelling 'Michael nobow'; three-speaker conversation (host plus two guests), speakers separable by who answers. Statements about performance are firm self-reports._
+
+**Worldview premises**
+- Trend following needs no forecast; the single assumption is that a broadly diversified portfolio will contain large trend outliers over time. _[theoretical, stated; support: Core philosophy after 27 years; no formal proof.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C01-1|C01-1]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C11-2|C11-2]])
+- The location of the next outlier cannot be predicted from history (cocoa, historically negative-return, was the best CTA market in 2024), so tilting signals to what worked is overfitting. _[empirical, stated; support: Cocoa 2024 example.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-3|C05-3]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-4|C05-4]])
+- Short signals in equities and bonds are needed for crisis alpha; removing them would improve a backtest over 30 years of bull markets but destroy crisis protection. _[theoretical, stated; support: Reasoning about backtest vs crisis alpha.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-5|C05-5]])
+- More markets means more chances to catch outliers; market diversification is in SMN's DNA. _[experience, stated; support: Started with about 70 markets in 1996 and kept widening.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-1|C07-1]])
+- Synthetic markets (baskets or spreads) create return streams that differ from the underlying and add diversification. _[theoretical, stated; support: Idea that a combination curve differs from its two inputs.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-2|C07-2]])
+- Alternative (illiquid, regional) markets move on local factors, not on the global risk-on/risk-off regime, so correlate little with a classic futures portfolio. _[empirical, stated; support: SMN research since 2011.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-6|C07-6]])
+- Alpha in small markets is capacity-limited: multi-billion funds cannot use them, so only a mid-sized CTA can make them a real return source. _[theoretical, stated; support: Logic of size.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-X1|C07-X1]])
+- Allocators prefer the biggest CTA shops because of career risk, and flow chases performance: after drawdowns they say trend following does not work, after good years they add. _[behavioural, stated; support: Observed for 30 years; 2008 crisis redemptions despite crisis alpha.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-5|C07-5]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-4|C07-4]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C10-4|C10-4]])
+- Medium and long-term trend following is the most robust horizon; short-term systems were dropped around 2007-08. _[experience, stated; support: Own testing for ten years.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-3|C07-3]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C03-X1|C03-X1]])
+- Trend following cannot be arbitraged away because outliers have causes beyond CTA trading, though more noise may create more false signals; the 2009-2020 lost decade was artificial (zero rates, QE) and long quiet periods are followed by bigger moves. _[theoretical, stated; support: Reasoning from policy regime; 'as we see now'.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C11-1|C11-1]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C11-2|C11-2]])
+- A style shift in a live track record should never be done, so new ideas such as discretionary overlays are tested only in a side fund; the discretionary-plus-systematic mix failed. _[experience, stated; support: SMN's own side-fund experiment.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C04-1|C04-1]])
+
+**Chain: Why diversification beats forecasting**
+1. No forecast of direction, timing or location of outliers → Broad portfolio so some outliers are caught: Only assumption: outliers exist ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C01-1|C01-1]])
+2. More markets and non-classic markets → More chances to catch outliers, lower correlation: Local factors and different timing ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-1|C07-1]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-6|C07-6]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-4|C08-4]])
+3. Unpredictable location (cocoa) → Symmetric long and short signals, equal risk in every market: Anything else is overfitting ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-3|C05-3]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-4|C05-4]])
+- Evidence: Cocoa 2024; 27-year track record.
+- Fails when: Fails if there are no outliers (2009-2020 lost decade), as he admits.
+
+**Chain: Smaller size and alternative markets**
+1. 2008 crisis alpha did not bring new assets → Allocators choose the biggest shops because of career risk: Liquid CTAs were redeemed in a crisis ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-4|C07-4]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-5|C07-5]])
+2. Cannot compete on size → Differentiate via alternative markets large funds cannot trade: Capacity of small markets is limited ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-5|C07-5]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-X1|C07-X1]])
+3. Local-factor markets → Low correlation and higher Sharpe after costs: Cycle-driven pricing and different timing of trends ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-6|C07-6]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-2|C08-2]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-3|C08-3]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-4|C08-4]])
+- Evidence: Project started 2011, implemented 2014; Sharpe 'significantly' higher after stringent costs.
+- Fails when: Not stated: capacity limits if the firm grows.
+
+**Chain: Quiet periods precede large moves**
+1. Zero rates, QE and money printing → Few outliers in 2009-2020: Artificial regime ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C11-2|C11-2]])
+2. Long period without substantial moves → Bigger-than-average moves after: Markets are prepared for bigger moves ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C11-2|C11-2]])
+- Evidence: Claims it is visible now (2024).
+- Fails when: Not stated.
+
+**Decision process**
+- [signal] Medium to long-term trend following only; no short-term systems since 2007-08.. Why: Most robust horizon. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-3|C07-3]])
+- [signal] Equal risk on long and short signals in every market; no tilt to past winners.. Why: Avoid overfitting; keeps crisis alpha. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-3|C05-3]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-5|C05-5]])
+- [universe] Widen the universe continuously: about 70 markets at the start, then synthetics (2009), alternative markets (2014).. Why: More markets, more outliers. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-1|C07-1]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-2|C07-2]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-R1|C07-R1]])
+- [universe] Entry of equal-weighted vs cap-weighted stock index spreads or sector/single-name trend markets considered but not done (derivatives counterparty risk, prospectus).. Why: More diversification potential. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C09-4|C09-4]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C09-X1|C09-X1]])
+- [research] Test new ideas in a side fund, never change the flagship style.. Why: Preserve a consistent track record. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C04-1|C04-1]])
+- [research] Originally chose trend following because it was the most robust concept; Turtles and local CTAs as motivation.. Why: Robustness. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C03-X1|C03-X1]])
+
+**Evidence style:** Long track record (27 years), experience, logic about robustness; no data shown.
+
+**Views at the time**
+- (2024-06-23) Trend following is unlikely to be arbitraged away; the lost decade was artificial and a return of larger moves is now visible.. Reasoning: Outliers have causes other than CTA trading; quiet periods precede big moves. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C11-1|C11-1]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C11-2|C11-2]])
+- (2024-06-23) An equal-weighted vs cap-weighted stock index spread could provide a trend market, with an eventual large outlier in the other direction after the Magnificent Seven run.. Reasoning: The run cannot go on forever. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C09-4|C09-4]])
+- (2024-06-23) Cocoa was the best CTA market in 2024 despite a negative history.. Reasoning: Outlier location unpredictable. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-4|C05-4]])
+
+### Joseph Valin (Head of quantitative research and risk management at SMN (joined 2006))
+Fingerprint: #approach/trend_following #approach/position_sizing_vol_target #approach/research_robustness_overfitting #approach/costs_execution #approach/volatility_options #approach/portfolio_construction_stacking
+_Speaker note: Caption 'Joseph valin'; background in business administration and discretionary trading with quantitative support._
+
+**Worldview premises**
+- Dispersion among trend-following CTAs is explained more by market universe and position-sizing logic than by signal design, though biased signals (long bias in bonds and equities) add dispersion. _[empirical, stated; support: Discussed on a prep call; no data.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C04-2|C04-2]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C04-3|C04-3]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-1|C05-1]])
+- Over-optimisation of the past is the main research risk; backtests are judged by a standard set of rules for realism. _[experience, stated; support: SMN's research process.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-5|C08-5]])
+- Alternative markets are cycle-driven by local supply and demand, with medium to long-term cycles trend systems capture well, at different times from classic markets. _[empirical, stated; support: Backtests with stringent costs.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-3|C08-3]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-4|C08-4]])
+- Volatility is a non-directional asset class that needs its own signal design rather than the plain price-momentum rule. _[theoretical, stated; support: VIX behaviour in the lost decade.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C10-X1|C10-X1]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C10-1|C10-1]])
+- Slippage in illiquid markets is hard to know ex ante, so high assumptions are used. _[experience, stated; support: Smallest markets about four to five times classic slippage.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-1|C08-1]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-6|C08-6]])
+
+**Chain: Alternative markets pass a cost-stress test**
+1. Slippage hard to know for illiquid markets → Use deliberately high slippage plus broker execution costs: Avoid overstating results ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-1|C08-1]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-6|C08-6]])
+2. Stringent realism rules on backtests → Sharpe of whole portfolio still rises significantly: Local cycles and different timing ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-2|C08-2]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-5|C08-5]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-3|C08-3]])
+- Evidence: Backtests with stress costs; milk and cheese ~4-5x slippage.
+- Fails when: Real slippage may differ; as stated the number is from memory.
+
+**Chain: VIX enhancement**
+1. Pure momentum on VIX did poorly in the 2009-2019 lost decade → Enhanced model with price momentum, vol of vol and curve shape: Volatility is non-directional ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C10-1|C10-1]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C10-2|C10-2]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C10-X1|C10-X1]])
+2. VIX can explode → Hourly curve snapshots with quick intraday exits: Speed of risk ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C10-3|C10-3]])
+- Evidence: Research project that ended around 2020.
+- Fails when: Not stated.
+
+**Decision process**
+- [sizing] Volatility target is an annualised standard deviation goal met on average over the long run; no re-levering on days with few signals.. Why: Positions come only from long/medium-term trend signals. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C06-1|C06-1]])
+- [risk] Each position has a risk budget/stop limit to control drawdown, complementing the symmetric standard deviation target.. Why: Asymmetric drawdown control. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C06-2|C06-2]])
+- [risk] After a huge price move in one market (cocoa) with the exit far below price, positions are cut; limits are broad so ordinary moves do not trigger cuts.. Why: Prevent one market from dominating. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C06-3|C06-3]])
+- [execution] Trade illiquid markets with execution algos (TWAP-style) over a day or two with per-market instructions.. Why: Positions need more than one session. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C09-1|C09-1]])
+- [portfolio] Synthetics: risk-parity baskets (S&P vs 10-year note, 2009) and correlation spreads between related commodities (NY vs London cocoa, wheat types, South African maize and soybeans); host cites 20-25% of risk.. Why: Create new return streams. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C09-2|C09-2]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C09-3|C09-3]])
+- [research] Standard rules for evaluating whether a backtest is realistic.. Why: Over-optimisation. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-5|C08-5]])
+- [signal] VIX via enhanced momentum (price momentum, vol of vol, curve shape), hourly monitoring.. Why: Volatility is non-directional. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C10-1|C10-1]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C10-2|C10-2]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C10-3|C10-3]])
+
+**Evidence style:** Backtests with stress costs and realism rules; practical execution detail.
+
+**Views at the time**
+- (2024-06-23) Dispersion in trend following in 2023-24 is mainly universe and sizing, with some signal bias effect.. Reasoning: Prep-call analysis. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C04-2|C04-2]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C04-3|C04-3]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-1|C05-1]])
+
+### Moritz Seibert (Host of the Open Interest series, Top Traders Unplugged)
+Fingerprint: #approach/trend_following #approach/research_robustness_overfitting #approach/costs_execution
+_Speaker note: Host; caption 'Moritz seibert'. Brings data points and challenges to the guests._
+
+**Worldview premises**
+- Over the last 30-40 years long trades in equity and bond trend following beat short trades, while currencies and commodities differ; this is a sample-specific effect of secular bull markets. _[empirical, stated; support: Own knowledge of CTA backtests.]_ ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-2|C05-2]])
+- More markets are better for catching outliers (host puts it as a proposition and the guests agree). _[theoretical, implicit; support: Posed as a leading question.]_ ()
+- Large CTAs have reach, so small CTAs differentiate by markets they cannot trade; the host is interested in how small markets are traded. _[experience, implicit; support: Interview framing.]_ ()
+
+**Decision process**
+- [other] Asks whether to bias signals long given 30-40 years of data.. Why: Test of the guests' philosophy. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-2|C05-2]])
+
+**Evidence style:** Questions and anecdotes.
+
+### Disagreements
+- **Bias signals toward long in equities and bonds?**: Moritz Seibert: Notes long trades beat short trades over 30-40 years and asks if SMN would tilt signals. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-2|C05-2]]); Michael Nobow: No: equal risk in long and short; tilting to the past is overfitting and kills crisis alpha. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-3|C05-3]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-5|C05-5]]); Joseph Valin: Some CTAs do bias, and this is a source of dispersion. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-1|C05-1]])
+- **Could trend following decay?**: Moritz Seibert: Asks whether returns are decaying or episodic; the strategy may be evergreen. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C11-1|C11-1]]); Michael Nobow: Cannot be arbitraged away, but more noise could mean more false signals. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C11-1|C11-1]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C10-4|C10-4]])
+
+### Gaps and conflicts
+- Correction applied: the 20-25% synthetic risk share was read by the host from a Hedge Fund Journal article; SMN did not confirm it. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C09-3|C09-3]])
+- The claim that adding illiquid markets raises Sharpe 'significantly' after costs is stated with no figures; slippage multiple is from memory ('I don't have the number'). ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-2|C08-2]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C08-6|C08-6]])
+- Michael's explanation of why synthetic markets add diversification rests on the idea that a combination curve looks different from its inputs, with no test shown. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-2|C07-2]])
+- 2008 crisis alpha did not attract assets; the argument that small size is the only differentiator assumes allocator behaviour not shown. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-4|C07-4]], [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C07-5|C07-5]])
+- Statement that the lost decade was 'artificial' and that quiet periods precede big moves is asserted without evidence. ([[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C11-2|C11-2]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Inputs: none are used as forecasts; SMN says it is agnostic to direction. Observable input for the thesis is the presence of large outliers after long quiet periods and policy regimes (zero rates, QE) that suppress them (years); correlation of alternative markets vs classic (ongoing); allocator flows follow performance (annual).
+
+### Reader inferences (not stated by the speakers)
+- (reader) SMN's edge claim rests on capacity: the alternative-markets Sharpe uplift likely shrinks if the firm grows.
+- (reader) 'No forecast, symmetrical signals' is a robustness choice that pays in crisis at the cost of some backtest return.
+- (reader) The 20-25% synthetic share quoted by the host is unconfirmed, so risk allocation to synthetics is uncertain.
 
 ## Coverage
 
@@ -45,6 +171,10 @@ tags: [source, layer0]
   > there's only one assumption behind the concepts and this assumption is a broadly Diversified portfolio will have a certain amount of train outliers over time
   asset: multi · direction: long/short follow trend · horizon: years · conditions: needs broad market diversification · testable: partly - outlier frequency can be measured but is the assumption itself · confidence: high
   ^MT201-C01-1
+- **Moritz Seibert** Host states SMN today trades over 200 markets and 300 instruments, a very broad universe including alternative and synthetic markets.  #mech/new _(added by map cross-check, time-bound view)_
+  > today they trade more than 200 markets and more than 300 instruments
+  asset: multi · conditions: broad universe · testable: yes · confidence: high
+  ^MT201-C01-R1
 
 ### C03
 - **Michael nobow** SMN chose trend following (after testing technical indicators on the bank desk) because it was the concept it found most robust, with the Turtles' and local CTAs' success as extra motivation.  #mech/research_method _(added by sonnet-xhigh cross-check)_
@@ -65,6 +195,10 @@ tags: [source, layer0]
   > constant versus flexible risk targeting is one big issue
   asset: multi · testable: yes - alternative sizing rules can be backtested · confidence: high
   ^MT201-C04-3
+- **Joseph Valin** Joseph says the 2006 SMN experiment combining trend signals with human discretion in a partner-money fund failed, and the firm went back to systematic only.  #mech/research_method _(added by map cross-check)_
+  > the experiment failed to be honest
+  asset: multi · direction: discretionary overlay did not add · conditions: discretionary plus systematic mix · testable: no - no figures given · confidence: high
+  ^MT201-C04-R1
 
 ### C05
 - **Joseph valin** Some CTAs bias signals toward long positions in bonds and equities, which is another source of dispersion in trend following results.  #mech/research_method
@@ -131,6 +265,10 @@ tags: [source, layer0]
   > you can say you trade those markets but uh it doesn't have an effect on the outcome of the portfolio of performance wise
   indicator: fund size vs market liquidity · asset: commodities · direction: alternative markets add return mainly for smaller funds · horizon: years · conditions: needs assets small relative to market liquidity · testable: partly - capacity versus return analysis needs fund-level data · confidence: medium
   ^MT201-C07-X1
+- **Michael Nobow** The alternative-markets project began around 2011 after the financial crisis and was implemented in 2014, a multi-year research step before live trading.  #mech/research_method _(added by map cross-check, time-bound view)_
+  > we started with this project I think 2011 but we implemented it in 2014
+  asset: commodities · horizon: years · conditions: alternative markets research · testable: yes - dates observable · confidence: medium
+  ^MT201-C07-R1
 
 ### C08
 - **Joseph valin** Backtests of illiquid markets use deliberately high slippage assumptions, plus broker execution costs, to avoid overstating results.  #mech/research_method

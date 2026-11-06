@@ -5,8 +5,8 @@ date: 2024-10-16
 channel: "Top Traders Unplugged"
 url: 
 words: 10832
-claims: 50
-added_by_crosscheck: 5
+claims: 55
+added_by_crosscheck: 10
 corrections: 3
 crosscheck: "opus cross-check"
 speakers: ["Neils Kastrup-Larsen (host, Top Traders Unplugged)", "Rich Brennan (co-host, systematic trend-following manager)"]
@@ -21,6 +21,108 @@ tags: [source, layer0]
 **Approach:** trend following, ensemble systems, tactical asset allocation, complex adaptive systems
 
 **Cross-check completeness estimate of first read:** 0.91 - first reader caught nearly all method and mechanism ideas; missed a few data points (sector signal strength, short-term index, concentrated investors) and the hindsight-bias remark
+
+## Argument map
+
+**Episode thesis:** October 2024 was a tough month for trend followers (bonds reversed after a fresh long, hidden cross-market correlations, large dispersion across managers), and the episode turns to a listener question on a Faber-style long-only 10-month moving-average overlay on SPY/TLT/EEM, judged valid but slow, whipsaw-prone and regime-dependent. Brennan then lays out his outlier-hunting philosophy: wide diversification as a watch list, staggered activation of up to 20 uncorrelated systems with trailing stops, justified by complex-adaptive-systems reasoning (signals, boundaries, emergence, positive feedback) that explains fat tails and unpredictability.
+
+### Rich Brennan (Co-host; systematic trend-following manager (Australia; 'cyclones down here'))
+Fingerprint: #approach/trend_following #approach/position_sizing_vol_target #approach/diversification_risk_parity #approach/research_robustness_overfitting #approach/regime_detection #approach/portfolio_construction_stacking #approach/structural_themes
+_Speaker note: Caption spells 'Rich Bron'/'Rich Brennan'. Ledger corrections: the 5-10 systems figure is the host's; C14-1 (capacity/counterparties) is misframed and replaced by the stability argument. Caption errors: 'donkey' = Donchian, 'Kelner' = Keltner, 'Ballinger' = Bollinger, 'erotic' = ergodic._
+
+**Worldview premises**
+- Trend following earns its profit from rare, massive outlier moves in the tails; the bulk of the return distribution is noise, random or mean-reverting oscillation. _[empirical, stated; support: All liquid markets show fat-tailed (leptokurtic) daily returns, with mean reversion in the bulk and trending behaviour in the tails; he says he plots daily moves of markets he trades.]_ ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C07-2|C07-2]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C08-1|C08-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C14-2|C14-2]])
+- Markets are complex adaptive systems with fractal, scale-invariant structure that grow from small seeds into large trends; no part is independent. _[theoretical, stated; support: Books: Geoffrey West 'Scale', John Holland on signals, boundaries and emergence; analogies to ants, circulatory systems, coastlines.]_ ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C11-1|C11-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C11-2|C11-2]])
+- Agents interpret the same signal differently and reactions keep evolving, and boundaries (risk rules, regulation, stops, leverage caps) limit their degrees of freedom, so price paths are constrained and path-dependent, not random. _[theoretical, stated; support: Holland framework; building-and-corridors analogy; stochastic (ergodic) models lack path dependence.]_ ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C12-1|C12-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C12-2|C12-2]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C12-3|C12-3]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C13-1|C13-1]])
+- Enduring trends arise from positive feedback loops with serial dependence; mean-reversion traders supply negative feedback that interferes with trends, and the balance stabilises markets. _[theoretical, stated; support: Reasoned from complex-systems theory; no empirical test given.]_ ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C13-2|C13-2]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C13-3|C13-3]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C14-R1|C14-R1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C08-4|C08-4]])
+- Outliers are a natural part of market structure and occur more often than normal-distribution models imply, not anomalies. _[theoretical, stated; support: Rainforest canopy analogy.]_ ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C14-2|C14-2]])
+- Nonlinear deterministic dynamics and computational irreducibility make future prices unpredictable for an embedded observer, which supports reacting to price moves rather than predicting. _[theoretical, stated; support: Chaos theory, strange attractors, Stephen Wolfram's cellular automata.]_ ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C15-1|C15-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C15-2|C15-2]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-4|C10-4]])
+- Diversification across markets can fail in a reversal because hidden correlations make many trends reverse together; yet during outlier moves correlations between markets break down. _[experience, stated; support: His October 2024 experience; theory that outliers destroy correlations.]_ ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C02-2|C02-2]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C09-2|C09-2]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C02-R1|C02-R1]])
+- Benchmark CTA indices weighted to the largest funds misrepresent the group; dispersion in 2024 is large. _[empirical, stated; support: Compares SG indices with the Top Traders Unplugged equal-ish index, which was less gloomy.]_ ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C02-3|C02-3]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C03-3|C03-3]])
+
+**Chain: Staggered ensemble builds nonlinear payoff from outliers**
+1. small bets across a wide watch list → capital mostly inactive in noise: Uncorrelated entry systems (Donchian, Keltner, Bollinger breakouts) activate at different times. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C07-3|C07-3]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C07-4|C07-4]])
+2. a trend persists → more systems activate, concentrating capital: Each system captures the nonlinear move, so 20 systems multiply the payoff. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C08-2|C08-2]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C08-3|C08-3]])
+3. trailing stops on every system → open profit not given back: Many tight stops aggregate to a looser overall exit than two systems with wide stops ('loose pants'). ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C09-3|C09-3]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-1|C10-1]])
+- Evidence: His own research: as the number of uncorrelated systems rises, drawdown keeps improving and CAGR/MAR rises with diminishing but nonzero increments; capped at about 20 by margin.
+- Fails when: Margin limits (expensive-margin markets such as palladium) cap the ensemble at about 20; if trends dissipate early, only the few activated systems lose.
+
+**Chain: Why trends exist and markets stay stable**
+1. signals interpreted differently by agents within boundaries → varied actions that nest across scales: Chemical to electrical signal analogy from the body. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C12-1|C12-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C12-2|C12-2]])
+2. signals reinforce each other → positive feedback, path dependence, serial correlation: Trend followers exploit this amplification. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C13-2|C13-2]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C08-4|C08-4]])
+3. mean reverters trade against the trend → negative feedback destabilises trends and keeps system stable: If everyone followed trends, positive feedback would explode. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C13-3|C13-3]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C14-R1|C14-R1]])
+- Evidence: Analogy and theory; no data.
+- Fails when: Not stated.
+
+**Chain: Why a long-only trend overlay (Faber-style) works and where it fails**
+1. price above its 10-month SMA → stay long; else cash or short bonds: Simple rule applied separately to uncorrelated asset classes (SPY, TLT, EEM). ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C05-1|C05-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C05-5|C05-5]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C04-2|C04-2]])
+2. exits in prolonged downtrends → limits large drawdowns: Slow risk mitigation, not an immediate hedge; options are for short-term tail protection. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C05-2|C05-2]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C05-4|C05-4]])
+3. sharp quick recoveries → lag in re-entry: The cost is sacrificed upside; sideways markets give whipsaw. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C05-3|C05-3]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C06-1|C06-1]])
+- Evidence: Faber's paper 'A Quantitative Approach to Tactical Asset Allocation' as described; no numbers given.
+- Fails when: Whipsaw in sideways markets; long-only gives up short-side profits and cross-asset correlation benefits.
+
+**Decision process**
+- [universe] Diversify widely across markets as a watch list because outlier locations are unknown, not to reduce risk; then concentrate risk where outliers emerge.. Why: Buffett's 'diversification is protection against ignorance' applies to stock pickers; an outlier hunter diversifies to find the events that matter. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C07-1|C07-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C08-3|C08-3]])
+- [sizing] Start with small bets and add capital progressively as a trend endures, via staggered activation of multiple uncorrelated entry systems (about 10, moving to 20).. Why: Avoid committing all capital to a trend that may not become an outlier. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C07-3|C07-3]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C07-4|C07-4]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-R6|C10-R6]])
+- [risk] Every system in the ensemble carries a trailing stop at all times.. Why: Cannot afford to leave profit on the table as an outlier turns. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C09-3|C09-3]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-1|C10-1]])
+- [portfolio] Keep adding uncorrelated systems until margin binds (palladium etc. capped at about 20 systems).. Why: Drawdown keeps improving and MAR/CAGR keeps nudging up with no sharp stopping point. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C09-1|C09-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-2|C10-2]])
+- [research] Prefer a large ensemble over a few optimised systems, to reduce reliance on hindsight-chosen parameters.. Why: Less overfitting risk. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-X1|C10-X1]])
+- [execution] Treat a long-only moving-average overlay as risk mitigation, not a hedge; options for short-term protection; long-short trend following adds portfolio correlation benefit.. Why: Overlay exits slowly; shorts add benefits. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C05-4|C05-4]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C06-2|C06-2]])
+
+**Evidence style:** Mostly first-principles and analogy from complex-systems science (Holland, West, Wolfram, chaos theory) and his own in-house research on ensemble size; very little external data or test results quoted.
+
+**Views at the time**
+- (2024-10-16) October 2024 is a very difficult month for his systems: energy trends reversed, coffee hurt, everything reversed at once despite diversification; dispersion will be a major theme of 2024.. Reasoning: Hidden correlations across a large matrix of markets. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C02-R1|C02-R1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C02-2|C02-2]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C02-3|C02-3]])
+- (2024-10-16) Ensemble forecasting (weather, hurricanes) beats old single-method forecasts, analogous to ensembles of trend systems.. Reasoning: Analogy raised at the opening. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C01-1|C01-1]])
+- (2024-10-16) A Faber-style long-only trend overlay on SPY/TLT/EEM is a valid risk-mitigation strategy with caveats.. Reasoning: Simple, sidesteps big drawdowns; whipsaw and lag. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C05-2|C05-2]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C06-1|C06-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C06-X1|C06-X1]])
+
+### Niels Kaastrup-Larsen (Host (Top Traders Unplugged); hedge fund manager)
+Fingerprint: #approach/trend_following #approach/diversification_risk_parity #approach/research_robustness_overfitting #approach/regime_detection #approach/manager_selection_allocation #approach/positioning_crowding
+_Speaker note: Caption spells 'Neils Kastrup-Larsen'. Ledger corrections give him the 'five to ten ways' remark and the barometer wording._
+
+**Worldview premises**
+- Trend followers lose in a reversal where their signals and positions were strong; October 2024 fixed income hurt because models had just flipped long after years short, and the market delivered a meaningful correction. _[empirical, stated; support: October 2024 sector review: bonds worst; energy light damage (weak signals); meats the bright spot; GBP, AUD, NZD corrected.]_ ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C02-1|C02-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C02-X1|C02-X1]])
+- The benefit of protective rules such as a trend overlay can take 10-20 years to show, so a good starting date and discipline matter. _[experience, stated; support: General observation.]_ ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C06-3|C06-3]])
+- A backtest on three instruments is prone to regime bias; bonds had falling rates for about 37 of the past 40 years, so a bond trend result may not repeat; broader diversification is preferred. _[empirical, stated; support: Interest-rate history.]_ ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C06-4|C06-4]])
+- There are only about five to ten genuinely different ways to trend-follow; large ensembles are mostly parameter variants. _[experience, stated; support: 'I always say to people'.]_ ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-3|C10-3]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-R5|C10-R5]])
+- Concentration in the best discretionary investors (Buffett about 40% in Apple, Ackman 53% of a $10bn fund in three stocks, Nomad one or two stocks) raises the question of how much concentration a trend system should allow. _[empirical, stated; support: Headlines (Motley Fool) and Nomad Investment Partners documentation.]_ ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C09-X1|C09-X1]])
+
+**Chain: Why October 2024 was hard**
+1. trend followers settle into long bonds after years short → market delivers a correction: Often happens just after a new trend emerges. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C02-1|C02-1]])
+2. simultaneous corrections in bonds, currencies, parts of energy and metals → diversification fails: Everything ganged up on trend followers. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C02-X1|C02-X1]])
+3. short-horizon systems → hurt less (short-term traders about -1.5% vs SG Trend about -5%): Faster models exit sooner. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C03-X1|C03-X1]])
+- Evidence: Index prints mid-October 2024: BTOP50 -2.84%, SG CTA -3.64%, SG Trend almost -5%, MSCI World -0.33%.
+- Fails when: Not stated; he says it is too early to call a reversal of the bigger trend.
+
+**Decision process**
+- [signal] Use his trend barometer (shorter horizon than traditional trend following) as a descriptor of how hard conditions are for trend followers, not as a predictor.. Why: At 14 to 20 it labels 'as bad as it gets' but does not forecast turns. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C03-1|C03-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C03-R1|C03-R1]])
+
+**Evidence style:** Reports index prints and sector P&L; probes guests with challenge questions (concentration, ensemble size); uses historical regime caution.
+
+**Views at the time**
+- (2024-10-16) Fixed income was the worst sector in October 2024; it may be too early to say it is a reversal of the bigger trend.. Reasoning: Meaningful correction after trend flip. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C02-1|C02-1]])
+- (2024-10-16) Mid-October 2024: BTOP50 -2.84% (+1.23% YTD), SG CTA -3.64% (-1.22% YTD), SG Trend almost -5% (-2.6% YTD); MSCI World -0.33%, S&P 500 flat.. Reasoning: Index review. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C03-2|C03-2]])
+- (2024-10-16) A trend-replication product shows large tracking error versus the CTA benchmark in 2024, to the upside.. Reasoning: Replicator observation. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C04-1|C04-1]])
+- (2024-10-16) Long-only trend overlay is a valid strategy, likely better than unmanaged buy-and-hold.. Reasoning: With caveats on whipsaw and regime bias. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C06-X1|C06-X1]])
+
+### Disagreements
+- **How many genuinely different trend systems exist?**: Rich Brennan: Runs eight core systems with parameter variations to reach 20; more uncorrelated systems keep improving drawdown and MAR. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-R6|C10-R6]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-2|C10-2]]); Niels Kaastrup-Larsen: There are only about five to ten ways to do trend following, so big ensembles are mostly parameter variants. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-R5|C10-R5]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-3|C10-3]])
+- **Concentration versus diversification**: Niels Kaastrup-Larsen: Asks how much risk a trend system should concentrate, citing very concentrated successful discretionary investors. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C09-X1|C09-X1]]); Rich Brennan: Diversify widely for the purpose of focusing capital on outliers when they emerge; limited by margin to about 20 systems, with uncorrelated systems riding the outlier. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C07-1|C07-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C09-1|C09-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C09-2|C09-2]])
+
+### Gaps and conflicts
+- Brennan's claim that outliers destroy correlations and more uncorrelated systems improve results is based on unpublished in-house research with no numbers. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C09-2|C09-2]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-2|C10-2]])
+- The complex-systems argument (Wolfram, strange attractors, computational irreducibility) is analogy and metaphysics, not tested, and the link to trend profits is asserted; some caption errors (ergodic, Donchian) obscure terms. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C13-1|C13-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C15-1|C15-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C15-2|C15-2]])
+- The ledger C14-1 'capacity-limited' framing is wrong; the passage argues stability from feedback balance, not capacity. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C14-1|C14-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C14-R1|C14-R1]])
+- Ensemble of 20 'tight stops give looser aggregate exit' is a design claim without comparison data; ensemble size also depends on whether systems truly differ (host's challenge). ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-1|C10-1]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C10-3|C10-3]])
+- The 10-month SMA overlay discussion gives no performance numbers; benefits 'may take 10-20 years' is asserted by the host. ([[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C05-2|C05-2]], [[MT006 - A Challenging October for Trend Following - Systematic Investor 317#^MT006-C06-3|C06-3]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Little forward-looking content: the speakers say trend followers react rather than predict. Observables mentioned as context: the trend barometer level (14-20 'as bad as it gets'), sector signal strength (energy weak), dispersion among managers, bond correction after a trend flip. Horizon: the overlay's benefit over 10-20 years.
+
+### Reader inferences (not stated by the speakers)
+- (reader) Brennan's claim that outlier trends destroy correlations suggests his ensemble gains are concentrated in tail events and may underperform in range-bound regimes (whipsaw as in October).
+- (reader) The ensemble-size result (drawdown improves, MAR rises with diminishing increments) is consistent with generic diversification of entry rules and does not by itself show independence of systems, which the host questions.
+- (reader) The long-only overlay is judged valid by both speakers despite the 3-instrument regime-bias caveat; evidence is conceptual, not empirical.
 
 ## Coverage
 
@@ -68,6 +170,10 @@ tags: [source, layer0]
   > energies kind of mixed probably not where the damage is too much so far in in terms of trend followers simply because I don't think signals are particular strong in that sector at the moment
   indicator: trend signal strength by sector · asset: multi · direction: weak-signal sectors lose little in reversals · horizon: weeks · conditions: signal-strength-scaled position sizing · testable: yes - sector P&L vs prior signal strength · confidence: medium
   ^MT006-C02-X1
+- **Rich Brennan** In October 2024 Brennan's own systems lost in energies (crude, Brent reversed) and in the coffee trade, so energy hurt him although it did little damage to the average trend follower.  #mech/new _(added by map cross-check, time-bound view)_
+  > Energy's actually hit us
+  indicator: own P&L · asset: commodities · horizon: weeks · conditions: October 2024 · testable: no - own results · confidence: medium
+  ^MT006-C02-R1
 
 ### C03
 - **Neils Kastrup-Larsen** A trend barometer (share of markets with a clear trend, short-horizon) reflects but does not predict how hard conditions are for trend followers; a reading near 14-20 is about the worst.  #mech/cycle_persistence _(time-bound view)_
@@ -87,6 +193,10 @@ tags: [source, layer0]
   > the so genc short-term Traders index down one and a quish and for the month and down 75 basis points for the year
   indicator: SG Short-Term Traders index vs SG Trend index · asset: multi · direction: short-term CTAs outperform trend CTAs in a sharp reversal · horizon: weeks · conditions: sharp trend reversal · testable: yes - index returns · confidence: high
   ^MT006-C03-X1
+- **Niels Kaastrup-Larsen** His trend barometer carries a built-in 'as bad as it gets' label at very low readings (14 to 20 in October 2024).  #mech/new _(added by map cross-check, time-bound view)_
+  > when it gets to down to a certain level we just put the little caption as bad as it gets
+  indicator: trend barometer · asset: trend following · horizon: weeks · testable: partly · confidence: medium
+  ^MT006-C03-R1
 
 ### C04
 - **Neils Kastrup-Larsen** A trend-replication product shows large tracking error versus the CTA benchmark in 2024 (to the upside).  #mech/research_method _(time-bound view)_
@@ -218,6 +328,14 @@ tags: [source, layer0]
   > what I'm finding in my research is that the more I diversify with my uncorrelated systems the less how do I put it hindsight bias is required
   indicator: number of ensemble systems · asset: multi · direction: more systems = less hindsight bias · testable: partly - out-of-sample decay vs ensemble size · confidence: medium
   ^MT006-C10-X1
+- **Niels Kaastrup-Larsen** Niels holds that there are only about five to ten genuinely distinct ways to trend-follow, so large ensembles are mostly parameter variations.  #mech/new _(added by map cross-check)_
+  > I always say to people oh there's only like five or 10 ways you can do train following
+  indicator: number of distinct systems · asset: trend following · testable: no - judgemental · confidence: medium
+  ^MT006-C10-R5
+- **Rich Brennan** Brennan's ensemble of about 20 is built from eight core systems with parameter variations.  #mech/new _(added by map cross-check)_
+  > we actually have eight core systems so the eight core systems but the variations in that are our parameter are variations as well
+  indicator: number of core systems · asset: trend following · testable: no - own design · confidence: high
+  ^MT006-C10-R6
 
 ### C11
 - **Rich Brennan** Markets behave like complex adaptive systems with fractal, scale-invariant structure that grow from small seeds into large trends, so no part is independent of the others.  #mech/structural_shift
@@ -267,6 +385,10 @@ tags: [source, layer0]
   > to be expected much more frequently than what these traditional stochastic models would have you believe
   indicator: tail frequency · asset: multi · testable: yes - tail frequency vs normal · confidence: high
   ^MT006-C14-2
+- **Rich Brennan** If everyone followed trends, positive feedback would make markets explode; other participants with negative feedback are needed for stability.  #mech/new _(added by map cross-check)_
+  > we can't obviously all be Trend followers as the system would explode with positive feedback
+  indicator: trend follower share · asset: all markets · testable: no - theory · confidence: medium
+  ^MT006-C14-R1
 
 ### C15
 - **Rich Brennan** Nonlinear deterministic dynamics limit prediction, which supports reacting rather than predicting.  #mech/structural_shift

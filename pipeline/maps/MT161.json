@@ -1,0 +1,1025 @@
+{
+ "episode_thesis": "Recorded early August 2026 with Strategas' Jason Trennert and Chris Verrone: the US equity market has absorbed a 30-50% correction in AI leaders, a war, oil swings and rising long yields because internals are healthy and the economy is strong, so the bar for an equity-ending bond yield is much higher than the 4.5% 10-year that capped 2023-25. Trennert's cautions: market concentration, hyperscaler free cash flow turning negative and requiring external financing, a Fed (new chair Warsh) withdrawing forward guidance, and stocks ignoring rising yields as a late-cycle warning. Eisman concludes the strategists are bullish unless the 10-year rises significantly or the AI story breaks.",
+ "speakers": [
+  {
+   "name": "Jason Trennert",
+   "role": "Founder, Strategas (macro/policy strategist)",
+   "speaker_note": "Auto-captioned YouTube transcript with unlabelled turns; attribution follows the ledger. A few exchanges (Meta quarter, Dina Powell anecdote, Europe views) are attributed to Trennert from context.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "policy_reaction_central_banks",
+    "valuation_contrarian",
+    "structural_themes",
+    "geopolitics",
+    "fiscal_dominance",
+    "liquidity_flows"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A concentrated index (top 10 about 39%, tech about 36%, over 50% with tech-adjacent) makes market risk depend on a few AI-linked stocks.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Index weights quoted from memory ('slightly wrong').",
+     "claim_ids": [
+      "MT161-C01-1",
+      "MT161-C01-3"
+     ]
+    },
+    {
+     "premise": "A trade can be right on the long-run theme yet wipe out a levered fund when long and short legs are the same bet; Situational Awareness resembled LTCM.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Auto vs buggy-whip analogy; LTCM parallel; fund's name as a pride signal.",
+     "claim_ids": [
+      "MT161-C02-1",
+      "MT161-C02-2",
+      "MT161-C01-2"
+     ]
+    },
+    {
+     "premise": "Stocks rising while long yields rise and the market ignores it is the point of greatest risk (a late-cycle warning), though the index's resilience to a 40-50% fall in leaders is evidence of unusual strength.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Comparison with 1999-2000 when a similar fall in Cisco and Sun would have dragged the index down a lot.",
+     "claim_ids": [
+      "MT161-C03-1",
+      "MT161-C03-X1"
+     ]
+    },
+    {
+     "premise": "Detailed Fed communication (statements since 1994, press conferences since 2019) removes risk and encourages speculation; at full employment the Fed's reaction function is inflation; ending 15-16 years of near-zero rates means less support for asset prices.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Reading of Warsh's approach and Fed history; agrees with it.",
+     "claim_ids": [
+      "MT161-C03-6",
+      "MT161-C03-7",
+      "MT161-C03-X2",
+      "MT161-C12-5"
+     ]
+    },
+    {
+     "premise": "QE and near-zero rates benefited asset holders and the wealthy far more than ordinary savers, and private equity was the main beneficiary of zero rates.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Savings accounts earning zero; PE's growth; agreed by the other speakers.",
+     "claim_ids": [
+      "MT161-C03-8",
+      "MT161-C04-X1"
+     ]
+    },
+    {
+     "premise": "Hyperscalers have turned from asset-light cash-flow machines into capital-intensive businesses whose AI capex cannot be funded from internal cash flow, requiring debt and equity issuance and shareholder dilution.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Google $85bn equity raise (first since early 2000s), Oracle downgrade, Meta quarterly FCF $785m, Microsoft ~$19bn down 25%, Amazon negative over 12 months.",
+     "claim_ids": [
+      "MT161-C05-6",
+      "MT161-C06-1",
+      "MT161-C06-2",
+      "MT161-C06-3",
+      "MT161-C07-1"
+     ]
+    },
+    {
+     "premise": "AI demand exceeds supply so chip suppliers benefit; hyperscaler returns on that spend are uncertain and may be competed away; fiscal expansion plus AI capex is a bet that productivity offsets inflation.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Judgement; he is market-weight technology and would not short.",
+     "claim_ids": [
+      "MT161-C07-2",
+      "MT161-C07-6"
+     ]
+    },
+    {
+     "premise": "Long antitrust and social-media litigation distracts management and drags returns (IBM 1970s, Microsoft 1990s; hundreds of suits against Meta); lobbying can be an alpha source because Washington shapes AI.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Historical analogies; Judge Posner 'the lawsuit was the punishment'.",
+     "claim_ids": [
+      "MT161-C09-1",
+      "MT161-C09-2",
+      "MT161-C09-X1",
+      "MT161-C08-X1"
+     ]
+    },
+    {
+     "premise": "Oil supply disruptions will persist whether or not the war ends, and war headlines whipsaw the market with no discernible edge.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Shock at how fast oil fell on a memorandum of understanding; 'tennis match' of headlines.",
+     "claim_ids": [
+      "MT161-C05-1",
+      "MT161-C05-X1"
+     ]
+    },
+    {
+     "premise": "Banks benefit from a steeper curve and minimal credit losses in a strong economy; private credit is a post-Dodd-Frank regulatory arbitrage that could hurt wealthy holders but is not systemic.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning on regulation and the economy plus Verrone's charts.",
+     "claim_ids": [
+      "MT161-C10-1",
+      "MT161-C10-2"
+     ]
+    },
+    {
+     "premise": "Private equity exits now take about 7 years, leaving institutions that chose PE for low reported volatility illiquid and forced to cut spending.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Notre Dame about 50% in PE and venture.",
+     "claim_ids": [
+      "MT161-C04-3"
+     ]
+    },
+    {
+     "premise": "Europe is cheap for a reason (low dynamism, no AI, structurally harder to make money); Japan is preferred for exiting deflation and ROE reform.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Wealth-turnover studies, delisting rule, 400-year family persistence; German GDP stagnation noted by Eisman.",
+     "claim_ids": [
+      "MT161-C10-3",
+      "MT161-C10-4",
+      "MT161-C11-X3",
+      "MT161-C11-X2",
+      "MT161-C11-3"
+     ]
+    },
+    {
+     "premise": "Populist politics create a reaction against big institutions (pharma, banks, oil) and utility politics; health-care pricing pressure is a policy headwind despite chart strength.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Trump's attack on big oil; observation of political trend.",
+     "claim_ids": [
+      "MT161-C12-3",
+      "MT161-C12-X2"
+     ]
+    },
+    {
+     "premise": "The economy is strong (PMIs expanding rapidly) and the one big beautiful bill's full expensing is an incentive for capex across all US companies.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "PMIs and the tax provision.",
+     "claim_ids": [
+      "MT161-C03-2",
+      "MT161-C03-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Hyperscaler capex to dilution",
+     "steps": [
+      {
+       "from": "AI demand exceeds supply, so capex plans expand",
+       "to": "capex outruns internal cash flow",
+       "why": "Free cash flow is falling or negative.",
+       "claim_ids": [
+        "MT161-C07-2",
+        "MT161-C06-1"
+       ]
+      },
+      {
+       "from": "Funding gap",
+       "to": "bond and equity issuance (Google $85bn; Oracle downgrade)",
+       "why": "Cannot be funded from cash flow.",
+       "claim_ids": [
+        "MT161-C06-3",
+        "MT161-C05-6",
+        "MT161-C07-1"
+       ]
+      },
+      {
+       "from": "Equity issuance and heavier capital intensity",
+       "to": "shareholder dilution and need for a new valuation framework",
+       "why": "Business model has shifted from cash-flow machine to capital-intensive.",
+       "claim_ids": [
+        "MT161-C06-2",
+        "MT161-C05-6"
+       ]
+      },
+      {
+       "from": "Chip suppliers receive the capex",
+       "to": "semiconductors favoured over hyperscalers",
+       "why": "Hyperscaler returns may be competed away.",
+       "claim_ids": [
+        "MT161-C07-2"
+       ]
+      }
+     ],
+     "evidence": "Quoted cash-flow figures from quarterly results; client was upset by the dilution note.",
+     "fails_when": "Not stated; Verrone argues the market's re-pricing was mistaken for deteriorating AI fundamentals and sentiment can reverse.",
+     "claim_ids": [
+      "MT161-C05-6",
+      "MT161-C06-1",
+      "MT161-C06-2",
+      "MT161-C06-3",
+      "MT161-C07-1",
+      "MT161-C07-2"
+     ]
+    },
+    {
+     "topic": "Fed communication and market volatility",
+     "steps": [
+      {
+       "from": "Detailed guidance and press conferences",
+       "to": "removes risk and rewards speculation",
+       "why": "Markets are spoon-fed direction and timing of rate moves.",
+       "claim_ids": [
+        "MT161-C03-6",
+        "MT161-C12-5"
+       ]
+      },
+      {
+       "from": "New Fed leadership ends guidance and near-zero-rate support",
+       "to": "Fed policy fits the whole economy rather than Wall Street",
+       "why": "QE helped asset holders over savers.",
+       "claim_ids": [
+        "MT161-C03-X2",
+        "MT161-C03-8"
+       ]
+      },
+      {
+       "from": "Less certainty",
+       "to": "higher volatility, less speculation, good companies still rewarded",
+       "why": "The Fed no longer sows certainty.",
+       "claim_ids": [
+        "MT161-C13-1",
+        "MT161-C03-6"
+       ]
+      }
+     ],
+     "evidence": "Fed history (1994, 2019); Warsh's stated reaction function.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT161-C03-6",
+      "MT161-C03-7",
+      "MT161-C13-1"
+     ]
+    },
+    {
+     "topic": "Late-cycle risk from rising yields",
+     "steps": [
+      {
+       "from": "Long yields rise while stocks surge unimpeded",
+       "to": "greatest risk point",
+       "why": "Market ignores rising discount rates.",
+       "claim_ids": [
+        "MT161-C03-1"
+       ]
+      },
+      {
+       "from": "Narrow 85 bp range of the 10-year over 400 days",
+       "to": "yield move not yet explosive enough to disrupt equities",
+       "why": "Hyperbole about bond volatility is overdone.",
+       "claim_ids": [
+        "MT161-C12-4"
+       ]
+      }
+     ],
+     "evidence": "Narrowest 400-day 10-year range on record.",
+     "fails_when": "Yields move much higher.",
+     "claim_ids": [
+      "MT161-C03-1",
+      "MT161-C12-4"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Market-weight technology; would not short hyperscalers; prefer semiconductors over hyperscalers.",
+     "why": "AI demand exceeds supply but hyperscaler returns are uncertain.",
+     "claim_ids": [
+      "MT161-C07-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Prefer the US and Japan over Europe; long banks (steeper curve, minimal credit losses).",
+     "why": "Europe lacks dynamism; Japan has deflation exit and ROE reform.",
+     "claim_ids": [
+      "MT161-C10-2",
+      "MT161-C10-3",
+      "MT161-C10-4"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Treat leveraged long/short books where both legs are the same bet as fragile even if the theme is right.",
+     "why": "Short-term reversals can wipe out a 4x levered fund.",
+     "claim_ids": [
+      "MT161-C02-1",
+      "MT161-C02-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Watch Washington and lobbying as an alpha source in the AI industry.",
+     "why": "Government increasingly shapes the industry.",
+     "claim_ids": [
+      "MT161-C09-2",
+      "MT161-C08-X1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Treat the economy as strong using PMIs and capex incentives, and expect the Fed to respond to inflation prints at full employment.",
+     "why": "Reaction function stated by the new chair.",
+     "claim_ids": [
+      "MT161-C03-2",
+      "MT161-C03-7"
+     ]
+    }
+   ],
+   "evidence_style": "Historical analogy (LTCM, IBM, Microsoft, 1999), company-reported figures, policy reading and conversation with clients; opinions flagged as such ('I have no special insight').",
+   "current_views": [
+    {
+     "view": "The market faces a gathering storm: war and oil, tariffs returning, the hyperscaler capex debate and the Fed; forward progress is hard and he is nervous about concentration.",
+     "as_of": "2026-08 (early August 2026)",
+     "reasoning": "Concentrated index and macro risks.",
+     "claim_ids": [
+      "MT161-C01-1",
+      "MT161-C01-3"
+     ]
+    },
+    {
+     "view": "Stay market-weight tech; semis over hyperscalers; hyperscaler returns uncertain, free cash flow negative.",
+     "as_of": "2026-08",
+     "reasoning": "Capex dilution.",
+     "claim_ids": [
+      "MT161-C07-2",
+      "MT161-C06-1",
+      "MT161-C05-6"
+     ]
+    },
+    {
+     "view": "Banks should do well (steeper curve, low credit losses); Japan over Europe; Europe cheap for a reason.",
+     "as_of": "2026-08",
+     "reasoning": "Strong economy; dynamism.",
+     "claim_ids": [
+      "MT161-C10-2",
+      "MT161-C10-3",
+      "MT161-C10-4"
+     ]
+    },
+    {
+     "view": "Oil keeps a bid regardless of peace headlines.",
+     "as_of": "2026-08",
+     "reasoning": "Supply disruptions persist.",
+     "claim_ids": [
+      "MT161-C05-1"
+     ]
+    },
+    {
+     "view": "The Fed will respond to inflation; less guidance means higher volatility but good companies are still rewarded.",
+     "as_of": "2026-08",
+     "reasoning": "Warsh's regime.",
+     "claim_ids": [
+      "MT161-C03-7",
+      "MT161-C13-1"
+     ]
+    },
+    {
+     "view": "Health care carries pricing/policy risk; large institutions face populist reaction.",
+     "as_of": "2026-08",
+     "reasoning": "Political trend.",
+     "claim_ids": [
+      "MT161-C12-X2",
+      "MT161-C12-3"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Chris Verrone",
+   "role": "Market strategist, Strategas (technical/chart-based)",
+   "speaker_note": "Auto-captions; his chart-based statements follow the ledger attribution.",
+   "fingerprint": [
+    "market_internals_leading",
+    "trend_following",
+    "behavioral_sentiment",
+    "positioning_crowding",
+    "regime_detection",
+    "structural_themes",
+    "valuation_contrarian"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "The market is rotating and not breaking: breadth (share of S&P above its 200-day average) improved from 50% on the 2 June high to 75% even as leaders corrected 30-50%.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Breadth figures quoted; 8 weeks of churn.",
+     "claim_ids": [
+      "MT161-C02-3",
+      "MT161-C03-X1"
+     ]
+    },
+    {
+     "premise": "Money stays in equities and rotates between sectors until the risk-free rate becomes competitive; the 4.5% 10-year threshold of 2023-25 is now too low, and in bubbles (Japan 1989, Nasdaq 1999, 1987) yields rose a lot while stocks kept rising, so the level that ends a cycle is higher than people think.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical yield and equity moves: JGB 4 to 8 in 1989; US 10-year 4 to 7 in 1999; 6 to 9 in 1987.",
+     "claim_ids": [
+      "MT161-C02-4",
+      "MT161-C02-5",
+      "MT161-C02-6",
+      "MT161-C02-7",
+      "MT161-C02-X1"
+     ]
+    },
+    {
+     "premise": "A Fed that tightens because of strong growth rather than inflation is a different, less equity-hostile regime than 2022; the rise in yields is in real rates not breakevens.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Leadership pattern and the real-rate source of the yield rise.",
+     "claim_ids": [
+      "MT161-C03-4",
+      "MT161-C03-5"
+     ]
+    },
+    {
+     "premise": "2026 is an alpha market: earnings growth, not multiple expansion (P/E down two or three turns), making stock selection and active management matter more than passive.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Asset-manager stocks (State Street, T. Rowe, Invesco) breaking out; 'we glean our views from the tape'.",
+     "claim_ids": [
+      "MT161-C04-1",
+      "MT161-C04-2"
+     ]
+    },
+    {
+     "premise": "Sentiment swings on hyperscalers are tradeable at sector level; investors mistook the need for a new valuation framework for deteriorating AI fundamentals.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Microsoft's best 5-day move since 1987 IPO, Amazon new highs after fever-pitch negativity.",
+     "claim_ids": [
+      "MT161-C07-3",
+      "MT161-C07-4"
+     ]
+    },
+    {
+     "premise": "A leadership group is not finished after a 30% correction until it rallies, fails to make new highs and rolls over; a fast full reversal of an earnings gap-down is a bullish chart signal.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "AI build-out names (Quanta, Caterpillar) rebounded; Meta recovered a 10-12% post-earnings drop in three days.",
+     "claim_ids": [
+      "MT161-C08-1",
+      "MT161-C08-3"
+     ]
+    },
+    {
+     "premise": "Base-metal strength with collapsing iron ore signals AI and capex demand, not China; war and oil matter more to economies without an AI capex impulse (Europe).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Copper, zinc, tin at new highs; iron ore at 52-week lows; tepid crude rebound to high 90s then under 80.",
+     "claim_ids": [
+      "MT161-C05-2",
+      "MT161-C05-3",
+      "MT161-C05-5"
+     ]
+    },
+    {
+     "premise": "Global bank strength (US, Japan, Europe, brokers) with benign double-B spreads signals no imminent credit problem since banks usually lead on trouble; deregulation is a precondition for shrinking the Fed balance sheet.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Bank stock charts at new highs; credit spreads at cycle lows; Dan Clifton's deregulation call.",
+     "claim_ids": [
+      "MT161-C09-3",
+      "MT161-C09-4",
+      "MT161-C09-5"
+     ]
+    },
+    {
+     "premise": "Japan's higher JGB yields reflect reflation not distress and are good for equities; Japan has the themes the market wants (chips, AI build-out, defense) whereas Europe's index highs rest on a few AI names and banks while China-dependent autos and luxury are in bear markets.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Sector composition; 30-40 years of falling yields did not help Japan stocks.",
+     "claim_ids": [
+      "MT161-C11-1",
+      "MT161-C11-2",
+      "MT161-C11-X1"
+     ]
+    },
+    {
+     "premise": "Defensive sector ranking from charts: health care first (pharma, biotech, life sciences made major bottoms), staples last but possibly bottoming; utilities making new lows as politics consumes them.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Chart reversals in Thermo, Danaher, Illumina; Kraft Heinz, Hershey; admitted dogmatism missing health insurers' lows.",
+     "claim_ids": [
+      "MT161-C12-1",
+      "MT161-C12-2",
+      "MT161-C12-X1",
+      "MT161-C11-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why the S&P withstands a leader correction and rising yields",
+     "steps": [
+      {
+       "from": "Semis and hyperscalers fall 30-50% from mid-May",
+       "to": "money rotates inside equities",
+       "why": "Investors do not want to leave the asset class until rates compete.",
+       "claim_ids": [
+        "MT161-C02-3",
+        "MT161-C02-4"
+       ]
+      },
+      {
+       "from": "Rotation",
+       "to": "breadth up (50% to 75% above 200-day)",
+       "why": "Internals improve while leaders correct.",
+       "claim_ids": [
+        "MT161-C02-3"
+       ]
+      },
+      {
+       "from": "Nominal growth near 6.5% and a growth-driven Fed",
+       "to": "higher threshold yield for equity pain",
+       "why": "Equities tolerate higher yields when nominal growth is high.",
+       "claim_ids": [
+        "MT161-C02-X1",
+        "MT161-C03-4",
+        "MT161-C03-5"
+       ]
+      }
+     ],
+     "evidence": "Breadth data; 1987, 1989, 1999 yield episodes.",
+     "fails_when": "The 10-year rises far above the old 4.5% threshold; bank/insurer weakness in Japan would warn on JGB yields.",
+     "claim_ids": [
+      "MT161-C02-3",
+      "MT161-C02-5",
+      "MT161-C02-6",
+      "MT161-C02-7",
+      "MT161-C02-X1",
+      "MT161-C11-2"
+     ]
+    },
+    {
+     "topic": "What base metals say about demand",
+     "steps": [
+      {
+       "from": "Copper, zinc and tin at new highs",
+       "to": "strength is AI/capex demand",
+       "why": "Iron ore (China) is collapsing, so not China.",
+       "claim_ids": [
+        "MT161-C05-5"
+       ]
+      },
+      {
+       "from": "AI capex dominates in the US",
+       "to": "war and oil matter less to US equities than to Europe",
+       "why": "No AI impulse in Europe.",
+       "claim_ids": [
+        "MT161-C05-2"
+       ]
+      }
+     ],
+     "evidence": "Metals prices cited.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT161-C05-5",
+      "MT161-C05-2",
+      "MT161-C05-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Read market internals (percent of S&P above 200-day, group breadth) and sector charts as primary evidence.",
+     "why": "'We glean our views from the tape.'",
+     "claim_ids": [
+      "MT161-C02-3",
+      "MT161-C04-2",
+      "MT161-C09-5"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Stay with a corrected leadership group until it rallies, fails to make new highs and rolls over.",
+     "why": "Give the benefit of the doubt until the failed rally.",
+     "claim_ids": [
+      "MT161-C08-1",
+      "MT161-C08-3"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Use sector-level sentiment extremes (negativity at Oracle 120; Microsoft's best 5-day move) for tradeable rotation.",
+     "why": "Rotation is sentiment-driven.",
+     "claim_ids": [
+      "MT161-C07-3"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Watch Japanese banks and insurers as the warning for higher JGB yields; let the chart override a fixed group view.",
+     "why": "Admitted missing health insurers' lows through dogmatism.",
+     "claim_ids": [
+      "MT161-C11-2",
+      "MT161-C12-X1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Long banks, health care top defensive, staples last, avoid utilities; Japan over Europe.",
+     "why": "Chart leadership and thematic fit.",
+     "claim_ids": [
+      "MT161-C09-3",
+      "MT161-C12-2",
+      "MT161-C12-1",
+      "MT161-C11-4",
+      "MT161-C11-X1"
+     ]
+    }
+   ],
+   "evidence_style": "Technical analysis of price charts, breadth and relative strength plus historical yield analogies; admits dogmatism errors.",
+   "current_views": [
+    {
+     "view": "The market is rotating, internals are better, so remain constructive until the 10-year yield hits a level far above 4.5%.",
+     "as_of": "2026-08 (early August 2026)",
+     "reasoning": "Breadth 75% above 200-day; history of yields rising during bubbles; nominal growth ~6.5%.",
+     "claim_ids": [
+      "MT161-C02-3",
+      "MT161-C02-5",
+      "MT161-C02-6",
+      "MT161-C02-X1"
+     ]
+    },
+    {
+     "view": "2026 is an alpha market favouring active management and earnings-driven stock picking.",
+     "as_of": "2026-08",
+     "reasoning": "P/E down, asset managers outperform.",
+     "claim_ids": [
+      "MT161-C04-1",
+      "MT161-C04-2"
+     ]
+    },
+    {
+     "view": "Hyperscaler selling was overdone and is tradeable; AI build-out names remain long until a failed rally.",
+     "as_of": "2026-08",
+     "reasoning": "Sentiment reversal, price action.",
+     "claim_ids": [
+      "MT161-C07-3",
+      "MT161-C07-4",
+      "MT161-C08-1"
+     ]
+    },
+    {
+     "view": "Banks worldwide lead; no systemic credit threat; deregulation supports banks.",
+     "as_of": "2026-08",
+     "reasoning": "Charts, spreads at cycle lows.",
+     "claim_ids": [
+      "MT161-C09-3",
+      "MT161-C09-4",
+      "MT161-C09-5"
+     ]
+    },
+    {
+     "view": "Health care is the best defensive sector, staples near bottom but possibly bottoming; utilities weak.",
+     "as_of": "2026-08",
+     "reasoning": "Chart reversals.",
+     "claim_ids": [
+      "MT161-C12-2",
+      "MT161-C12-1",
+      "MT161-C11-4"
+     ]
+    },
+    {
+     "view": "Europe's highs are narrow; Japan better; higher JGB yields are not a concern unless Japanese banks and insurers weaken.",
+     "as_of": "2026-08",
+     "reasoning": "Sector mix and reflation.",
+     "claim_ids": [
+      "MT161-C11-1",
+      "MT161-C11-2",
+      "MT161-C11-X1"
+     ]
+    },
+    {
+     "view": "Base-metal strength is AI/capex, not China; crude rebound is tepid.",
+     "as_of": "2026-08",
+     "reasoning": "Iron ore weak; crude only to high 90s.",
+     "claim_ids": [
+      "MT161-C05-3",
+      "MT161-C05-5"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Steve Eisman",
+   "role": "Host, The Real Eisman Playbook",
+   "speaker_note": "Host who states some views and summarises in the closing segment; the oil oversupply claim is attributed to a guest from an earlier episode.",
+   "fingerprint": [
+    "bottom_up_fundamental",
+    "macro_fundamental_topdown",
+    "valuation_contrarian",
+    "structural_themes",
+    "geopolitics"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Leveraged thematic hedge funds can fail in quiet markets (VIX under 20, 15-20 bp rise in long yields).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "The Situational Awareness blow-up.",
+     "claim_ids": [
+      "MT161-C01-2"
+     ]
+    },
+    {
+     "premise": "About 70% of AI hyperscaler revenue comes from OpenAI and Anthropic, both negative cash flow, so trouble at either would hit the AI ecosystem.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "A report he read; the strategists find it undeniable.",
+     "claim_ids": [
+      "MT161-C07-5"
+     ]
+    },
+    {
+     "premise": "Meta's expenses (+55%) are growing far faster than revenue (+28%), and rising depreciation (from $4bn to $6bn, heading to $12bn) will weigh on earnings.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own reading of the quarterly numbers.",
+     "claim_ids": [
+      "MT161-C08-4"
+     ]
+    },
+    {
+     "premise": "Europe's cheap valuations reflect an absence of growth dynamism: German GDP has not grown for four to five years.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "GDP data point.",
+     "claim_ids": [
+      "MT161-C11-X2"
+     ]
+    },
+    {
+     "premise": "Oil may be in oversupply because China has withdrawn purchases and bypass pipelines for the strait are nearly complete.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reported from a guest on his show, not his own analysis.",
+     "claim_ids": [
+      "MT161-C05-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Interview strategists with a market-wide overview and distil a bottom line: what threshold changes the bullish stance.",
+     "why": "Closing takeaway format.",
+     "claim_ids": [
+      "MT161-C13-2",
+      "MT161-C13-X1"
+     ]
+    }
+   ],
+   "evidence_style": "Company numbers and reports; summarises guests; does not argue a macro view of his own.",
+   "current_views": [
+    {
+     "view": "The economy is quite strong; the strategists are bullish for the rest of the year unless the 10-year goes significantly higher or the AI story falls apart.",
+     "as_of": "2026-08 (early August 2026)",
+     "reasoning": "The 4.5% 10-year did not hurt stocks; AI payoff will be known only over a long time.",
+     "claim_ids": [
+      "MT161-C13-2",
+      "MT161-C13-X1"
+     ]
+    },
+    {
+     "view": "Meta's cost growth and rising depreciation will pressure earnings.",
+     "as_of": "2026-08",
+     "reasoning": "28% revenue growth vs 55% expenses.",
+     "claim_ids": [
+      "MT161-C08-4"
+     ]
+    },
+    {
+     "view": "AI ecosystem depends on OpenAI and Anthropic revenue.",
+     "as_of": "2026-08",
+     "reasoning": "70% revenue concentration.",
+     "claim_ids": [
+      "MT161-C07-5"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Whether stocks ignoring rising yields is a warning or a sign of strength",
+   "positions": [
+    {
+     "speaker": "Jason Trennert",
+     "position": "Stocks rising while yields rise and the market ignores it is the point of greatest risk, though internal strength is remarkable.",
+     "claim_ids": [
+      "MT161-C03-1",
+      "MT161-C03-X1"
+     ]
+    },
+    {
+     "speaker": "Chris Verrone",
+     "position": "The rate that ends the cycle is far higher than people think; history shows equities rising as yields climb; internals are improving.",
+     "claim_ids": [
+      "MT161-C02-5",
+      "MT161-C02-6",
+      "MT161-C02-7",
+      "MT161-C02-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Will the Fed tighten and why",
+   "positions": [
+    {
+     "speaker": "Jason Trennert",
+     "position": "At full employment the Fed's reaction function is inflation; it will respond to prints.",
+     "claim_ids": [
+      "MT161-C03-7"
+     ]
+    },
+    {
+     "speaker": "Chris Verrone",
+     "position": "Rise in real rates, not breakevens, argues against tightening, though the Fed may still tighten because of growth, a less hostile regime than 2022.",
+     "claim_ids": [
+      "MT161-C03-4",
+      "MT161-C03-5"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Oil outlook",
+   "positions": [
+    {
+     "speaker": "Jason Trennert",
+     "position": "Supply disruptions will persist so oil keeps a bid regardless of peace.",
+     "claim_ids": [
+      "MT161-C05-1"
+     ]
+    },
+    {
+     "speaker": "Chris Verrone",
+     "position": "The rebound after renewed fighting was tepid (high 90s then under 80), so the war risk premium is fading.",
+     "claim_ids": [
+      "MT161-C05-3"
+     ]
+    },
+    {
+     "speaker": "Steve Eisman",
+     "position": "A guest argued oversupply (China withdrawal, bypass pipelines).",
+     "claim_ids": [
+      "MT161-C05-4"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Hyperscaler stocks",
+   "positions": [
+    {
+     "speaker": "Jason Trennert",
+     "position": "Capex needs external financing and implies dilution; negative free cash flow; returns uncertain.",
+     "claim_ids": [
+      "MT161-C05-6",
+      "MT161-C06-1",
+      "MT161-C06-3",
+      "MT161-C07-2"
+     ]
+    },
+    {
+     "speaker": "Chris Verrone",
+     "position": "Negativity was a valuation-framework misunderstanding; rotation makes them tradeable and recovered fast.",
+     "claim_ids": [
+      "MT161-C07-3",
+      "MT161-C07-4",
+      "MT161-C08-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Health care",
+   "positions": [
+    {
+     "speaker": "Chris Verrone",
+     "position": "Charts show health care as the leading defensive sector.",
+     "claim_ids": [
+      "MT161-C12-2",
+      "MT161-C12-X1"
+     ]
+    },
+    {
+     "speaker": "Jason Trennert",
+     "position": "Government pricing pressure is a policy headwind.",
+     "claim_ids": [
+      "MT161-C12-X2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Concentration figures (top 10 39%, tech 36%, over 50% with tech-adjacent) are given from memory and Trennert admits getting the number 'slightly wrong'.",
+   "claim_ids": [
+    "MT161-C01-1"
+   ]
+  },
+  {
+   "issue": "Neither strategist can name the yield level that would end the equity cycle; 'much higher than 4.5%' is not quantified, and C02-X1 (nominal growth) gives only a qualitative anchor while another point says '7% as in 1999' is not expected.",
+   "claim_ids": [
+    "MT161-C02-5",
+    "MT161-C02-6",
+    "MT161-C02-X1",
+    "MT161-C13-2"
+   ]
+  },
+  {
+   "issue": "Trennert is cautious on market risk (late-cycle warning) yet the firm remains bullish; reconciliation relies on internals and the strong economy.",
+   "claim_ids": [
+    "MT161-C03-1",
+    "MT161-C13-2"
+   ]
+  },
+  {
+   "issue": "The Situational Awareness comparison to LTCM and the reason for its collapse are inferred in-conversation, with little detail about the fund's actual positions.",
+   "claim_ids": [
+    "MT161-C01-2",
+    "MT161-C02-1",
+    "MT161-C02-2"
+   ]
+  },
+  {
+   "issue": "Claim that Warsh's ending of guidance reduces speculation is asserted by analogy; no evidence on volatility.",
+   "claim_ids": [
+    "MT161-C03-6",
+    "MT161-C12-5",
+    "MT161-C13-1"
+   ]
+  },
+  {
+   "issue": "Oil: three incompatible stories (persistent supply bid, fading premium, oversupply) are not reconciled; the oversupply claim is from an earlier guest.",
+   "claim_ids": [
+    "MT161-C05-1",
+    "MT161-C05-3",
+    "MT161-C05-4"
+   ]
+  },
+  {
+   "issue": "Hyperscaler FCF figures (Meta $785m, Microsoft $19bn, Amazon negative) are quoted without a stated period or definition; whether Amazon's negative FCF is trailing is only 'over 12 months'.",
+   "claim_ids": [
+    "MT161-C06-1"
+   ]
+  },
+  {
+   "issue": "Statement that Japanese 10-year yields will exceed German yields is made as a data point without a source.",
+   "claim_ids": [
+    "MT161-C11-3"
+   ]
+  },
+  {
+   "issue": "Meta narrative mixes a chart signal (full recovery within three days) with fundamentals (cost growth) pointing in opposite directions; no resolution.",
+   "claim_ids": [
+    "MT161-C08-3",
+    "MT161-C08-4",
+    "MT161-C08-2"
+   ]
+  },
+  {
+   "issue": "Banks at new highs worldwide is read as no-credit-problem; Trennert notes private credit could hurt wealthy holders. The two readings differ in who is at risk.",
+   "claim_ids": [
+    "MT161-C09-5",
+    "MT161-C10-1"
+   ]
+  },
+  {
+   "issue": "Verrone admits dogmatism cost him the health insurer lows; chart-based group rankings are acknowledged as revisable.",
+   "claim_ids": [
+    "MT161-C12-X1",
+    "MT161-C12-2"
+   ]
+  },
+  {
+   "issue": "Statement that PE exits take about 7 years and endowments will cut spending is anecdotal (Notre Dame).",
+   "claim_ids": [
+    "MT161-C04-3",
+    "MT161-C04-X1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs said to lead prices: the 10-year yield versus an unspecified level well above 4.5% (equity cycle end), real rates versus breakevens, breadth (share above 200-day), failed rallies in leadership groups, Fed communication and inflation prints at full employment, hyperscaler free cash flow and external financing, OpenAI/Anthropic funding, oil supply disruptions, base metals as an AI/capex proxy, the bank and Japanese bank/insurer stocks as credit and JGB warnings. Horizons are weeks to months for market tone, years for AI payoff.",
+ "reader_inferences": [
+  "(reader) The bullish case is conditional: it stays only while yields remain below a threshold that the strategists themselves cannot quantify, so the stance is closer to a trend-and-breadth rule than a valuation view.",
+  "(reader) Verrone's chart signals (breadth, failed rally, gap reversal) are rules-of-thumb that could be tested; Trennert's are narrative and historical analogies.",
+  "(reader) Trennert's dilution thesis implies equity supply as a headwind for hyperscaler returns, while chip suppliers capture the capex; this is a simple capital-flow chain that could be checked against issuance data.",
+  "(reader) Eisman's closing summary compresses two triggers (yield spike, AI collapse) that the guests treat on very different timescales, with AI resolving slowly."
+ ],
+ "added_claims": [],
+ "source_id": "MT161"
+}

@@ -5,8 +5,8 @@ date: 2025-02-26
 channel: "Top Traders Unplugged"
 url: 
 words: 11139
-claims: 53
-added_by_crosscheck: 2
+claims: 54
+added_by_crosscheck: 3
 corrections: 0
 crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, Top Traders Unplugged)", "Graham Robertson (systematic trend-following manager, AHL)"]
@@ -21,6 +21,152 @@ tags: [source, layer0]
 **Approach:** trend following, CTA, portable alpha, quality factor, alternative markets
 
 **Cross-check completeness estimate of first read:** 0.96 - first reader was thorough and accurate; missed only the point that trend's bond-hedge evidence rests on few episodes (1970s, 2022) and the concentration of equity trend gains in a few indices
+
+## Argument map
+
+**Episode thesis:** Robertson (Man AHL) argues that a trend follower's long-run Sharpe comes from diversifying price drivers (Sharpe grows with the square root of independent markets), so alternative markets add return through diversification rather than by trending better, whereas liquid macro futures supply the crisis alpha an equity or bond portfolio needs. He adds that trend works as the alpha leg in portable alpha and as a defensive partner to equities and bonds, with long-short quality covering the faster flight-to-quality moves trend misses. Kaastrup-Larsen adds that a world where price is disconnected from fundamental value favours price-only strategies like trend.
+
+### Graham Robertson (Systematic trend-following manager at Man AHL)
+Fingerprint: #approach/trend_following #approach/diversification_risk_parity #approach/crisis_alpha_convexity #approach/portfolio_construction_stacking #approach/commodity_fundamentals #approach/position_sizing_vol_target #approach/costs_execution #approach/structural_themes
+_Speaker note: Caption spells 'Graeme/gram'. Graham speaks for AHL; he states he does not know competitors' signal mix. The taxi driver, portable alpha, DeepSeek and quality topics are his own agenda items. Attribution of remarks between the two voices follows the question/answer structure of the recording._
+
+**Worldview premises**
+- Trend-following performance is driven mostly by diversification across markets: with uncorrelated markets, Sharpe scales with the square root of the number of markets. _[theoretical, stated; support: Arithmetic example: 0.1 Sharpe per market becomes 1.0 with 100 independent markets.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C06-1|C06-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C04-2|C04-2]])
+- Alternative markets show a higher long-run Sharpe because they diversify better, not because they trend better; liquid futures have lower long-run Sharpe but stronger crisis alpha because they respond to central bank and macro events. _[empirical, stated; support: Properties observed at AHL and in 2008 and 2022.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C06-2|C06-2]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C06-3|C06-3]])
+- Design choices (lookback, market set, measurement) produce huge dispersion between trend managers who all follow trends; managers can be up and down over the same period. _[empirical, stated; support: Observation of early 2025 and of the industry.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C05-1|C05-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C05-2|C05-2]])
+- Diversification pays off in long-run simulation but over short periods anything can happen, which is a communication problem with investors. _[experience, stated; support: Experience explaining the strategy to clients; smaller diversifiers had not helped for a couple of years.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C05-3|C05-3]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C05-2|C05-2]])
+- Market prices can decouple from economic news (European equities rallied despite tariff headlines), which suits price-based trend rules. _[empirical, stated; support: Early 2025 market behaviour.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-5|C03-5]])
+- Assets with no anchor for fundamental value (crypto) tend to form bubbles, which trend followers like. _[theoretical, stated; support: No data; stated as a trader's view, explicitly not a fundamental opinion.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C08-1|C08-1]])
+- Trend following's crisis-alpha record is strong for equity falls (MSCI World lost about half twice since 2000, about 30% in Covid) but thin for bond sell-offs, which are rare (1970s, 2022). _[empirical, stated; support: Historical record; long history of Dunn and AHL.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C13-2|C13-2]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C13-X1|C13-X1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C13-3|C13-3]])
+- Long-short quality pays in flights to quality when trend struggles, and responds faster than trend, which needs weeks to months of sell-off; tech concentration in quality has not been a problem so far. _[empirical, stated; support: SVB 2023, yen carry unwind Q3 2024, DeepSeek day, and 2000-03 simulations.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C15-1|C15-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C15-2|C15-2]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C15-3|C15-3]])
+- A concentration of index returns in a few well-known stocks (taxi driver problem) leaves diversified investors underperforming, creating demand for solutions like portable alpha. _[experience, stated; support: Client conversations while travelling.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C11-2|C11-2]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C12-1|C12-1]])
+- Volatility is a dial: trend strategies can run at any volatility target because sizing is volatility-based. _[theoretical, stated; support: Design of vol-based sizing.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C14-1|C14-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C14-2|C14-2]])
+
+**Chain: Why alternative markets raise long-run Sharpe**
+1. More independent price drivers (Nord Pool hydro power driven by rainfall; Swiss swaps) → Trends uncorrelated with macro markets: Idiosyncratic drivers, not central bank events. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C04-2|C04-2]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C04-3|C04-3]])
+2. Uncorrelated P&L streams → Sharpe rises with the square root of the number of markets: Diversification maths. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C06-1|C06-1]])
+3. Alternative markets are not necessarily smaller, only harder to access (OTC, ISDA, some human execution) → Tradable at size under the same liquidity rules: Same position-sizing logic as futures; smaller markets get smaller size. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C04-1|C04-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C07-1|C07-1]])
+- Evidence: Maths of uncorrelated markets, AHL's simulations and experience; independent surveys of credit derivative and swap market size show growth.
+- Fails when: In short periods diversification may not pay; costs in exotic markets and crowding (which would show as rising transaction costs) could erode the benefit.
+
+**Chain: Early 2025 European energy trend**
+1. Low inventories, very cold weather and little wind output from German renewables → Gas and power prices up: Supply shock after a range-bound 2024. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-6|C03-6]])
+- Evidence: Direct observation travelling in the Nordics and Holland.
+- Fails when: Not stated.
+
+**Chain: Cross-market knock-on effects**
+1. Gold repricing → Changes in Treasury issuance: Revalued gold reserves could reduce needed issuance. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-4|C03-4]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C02-2|C02-2]])
+2. Treasury issuance change → Bond trends: Trading many markets globally lets a trend follower capture one market's effect on another. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-4|C03-4]])
+- Evidence: Illustrative, speculative.
+- Fails when: Not stated; the gold repricing is a possibility, not a fact.
+
+**Chain: Portable alpha and the beta-drawdown problem**
+1. Index dominated by a few mega-caps → Stock pickers and diversified investors underperform: Largest components perform best. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C11-2|C11-2]])
+2. Hold equity beta at index weight and port the alpha to quant, multi-strategy or trend → Diversified alpha sources: Takes alpha out of pure equities. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C12-1|C12-1]])
+3. Trend as the alpha leg → Gains when equity beta draws down: Crisis alpha; avoids joint drawdowns and margin problems. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C12-2|C12-2]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C12-3|C12-3]])
+- Evidence: Client demand and AHL bespoke solutions; no performance figures given.
+- Fails when: If the alpha leg draws down at the same time as beta, margin management is difficult.
+
+**Chain: Lines of defence: trend versus long-short quality**
+1. Flight-to-quality shock (SVB, yen carry unwind, DeepSeek day) → Trend lags because it needs sustained sell-offs over weeks to months: Signal speed. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C15-1|C15-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C15-2|C15-2]])
+2. Same shock → Long-short quality responds immediately: Behaves like a long-volatility strategy. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C15-2|C15-2]])
+3. Quality stocks concentrated in technology → Risk that a tech sell-off hurts quality too: Tested on DeepSeek day and in 2000-03 simulations, where it did not. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C15-3|C15-3]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C14-4|C14-4]])
+- Evidence: Recent episodes and simulation.
+- Fails when: Not stated; a tech-led sell-off could in principle hurt quality.
+
+**Chain: Trend as a defence against bond risk**
+1. 2022: bonds failed to hedge equities → Renewed interest in a dynamic strategy that can short bonds: Bonds and equities fell together. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C13-3|C13-3]])
+2. Possible higher bond issuance (defence spending, gold repricing) → Interest in trend as a fixed-income replacement: Host's framing; Robertson agrees alternatives with defensive capability could fill the hole but notes the thin record. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C13-1|C13-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C13-X1|C13-X1]])
+- Evidence: 2022 experience; bond crises are rare, so the evidence is limited.
+- Fails when: Evidence for bond crisis protection needs a much longer history.
+
+**Decision process**
+- [universe] Trade from tens to hundreds of markets, including alternative markets (OTC, swaps, European power, credit derivatives).. Why: More distinct price drivers improve trend diversification. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C05-1|C05-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C04-1|C04-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C04-2|C04-2]])
+- [sizing] Size alternative markets by the same liquidity rules as futures; volatility-based sizing handles high-volatility assets (Bitcoin around 100 vol) by smaller positions.. Why: Liquidity-aware, consistent risk. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C07-1|C07-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C14-2|C14-2]])
+- [sizing] Offer any volatility target (5, 10, 20) by turning a dial; investors' preferences differ.. Why: Asset volatility does not matter to the process. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C14-1|C14-1]])
+- [signal] Use several trend measures: moving-average crossovers (smooth, low impact), breakout channels, back returns, with design choices such as fixed versus recent-weighted windows.. Why: Smooth crossovers change positions incrementally with low market impact and transaction cost. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C09-1|C09-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C09-3|C09-3]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C10-1|C10-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C10-2|C10-2]])
+- [risk] Monitor crowding in alternative markets through internal measurement of market size, transaction costs and independent surveys; manage crypto by diversifying across many futures and coins.. Why: Would show as rising costs; investor appetite limits crypto allocation. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C07-2|C07-2]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C07-3|C07-3]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C08-2|C08-2]])
+- [portfolio] To hedge a risk-asset portfolio, trade the same instruments held in it (equity indices, Treasuries), not unrelated markets.. Why: Liquid futures carry stronger crisis alpha. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C06-4|C06-4]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C06-3|C06-3]])
+- [portfolio] Pair trend with long-short quality as a faster defensive layer; offer portable alpha with trend as the alpha leg, bespoke for larger clients.. Why: Complementary speeds of protection. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C15-1|C15-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C12-1|C12-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C12-2|C12-2]])
+
+**Evidence style:** Mathematical arguments (diversification and square-root rule), AHL's simulations and track record, recent episodes (2008, 2022, DeepSeek, SVB, yen carry) and client conversations; honest about limited bond-crisis history.
+
+**Views at the time**
+- (2025-02) Gold repricing would affect Treasury issuance and bond trends; trading many markets lets a manager capture such knock-on effects.. Reasoning: Cross-market links. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-4|C03-4]])
+- (2025-02) European equities rose despite tariff news, showing prices decoupled from economic news.. Reasoning: Early-2025 market behaviour. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-5|C03-5]])
+- (2025-02) European gas and power trended up because of low inventories, cold weather and little wind.. Reasoning: Supply shock after range-bound 2024. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-6|C03-6]])
+- (2025-02) After the US election the largest liquid markets trended well for slower signals, while smaller diversifiers had not helped in the previous couple of years.. Reasoning: AHL experience. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C05-2|C05-2]])
+- (2025-01-27) The DeepSeek shock on 27 Jan 2025 triggered a tech sell-off and Sputnik-moment narrative but Mag 7 bounced back, and the quality factor did not sell off.. Reasoning: Price action afterwards. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C14-4|C14-4]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C15-3|C15-3]])
+- (2025-02) Interest in portable alpha and in trend as a defensive allocation is rising, starting from the Magnificent 7 problem and from 2022's failure of bonds as a hedge.. Reasoning: Client demand. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C12-1|C12-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C13-3|C13-3]])
+- (2025-02) Mr Market is the portfolio manager: look at what price is doing rather than at value, which is relevant now.. Reasoning: Quoting Andrew Beer. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C16-R1|C16-R1]])
+
+### Niels Kaastrup-Larsen (Host of Top Traders Unplugged; veteran hedge fund (trend following) manager)
+Fingerprint: #approach/trend_following #approach/geopolitics #approach/structural_themes #approach/behavioral_sentiment #approach/valuation_contrarian #approach/policy_reaction_central_banks #approach/fiscal_dominance #approach/commodity_fundamentals
+_Speaker note: Most claims are market observations and questions; he argues one thesis himself (price versus value). He avoids naming other managers' study sources._
+
+**Worldview premises**
+- Alternative markets do not trend better; they trend at different times, which is the diversification benefit (as concluded by another manager's study). _[empirical, stated; support: Own look at the data and an unnamed manager's presentation.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C05-4|C05-4]])
+- Index trends can diverge from local macro: the DAX trended up despite a weak German economy because constituents are multinationals earning abroad. _[empirical, stated; support: Index composition.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-3|C03-3]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-X1|C03-X1]])
+- Price has become disconnected from traditional value (Bitcoin worth zero or millions), so strategies focused only on price, such as trend, may have more opportunity and investors are more open to them. _[theoretical, stated; support: Observation of crazy price moves; no data.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C15-4|C15-4]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C16-1|C16-1]])
+- Higher defence spending implies more government bond issuance, so the bigger portfolio risk may be in bonds, prompting interest in trend as a fixed-income replacement. _[theoretical, stated; support: Reasoning from European investors' 60-80% bond allocations.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C13-1|C13-1]])
+- Crypto carries exit-liquidity risk (ether fell over 20% in a day on a weekend when futures could not trade) that must be priced in position sizing. _[empirical, stated; support: The weekend ether drop.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C07-4|C07-4]])
+- Trend systems have a long history: Dunn used volatility breakout from the early 1970s, never moving averages, later adding continuous time-series momentum; Bollinger bands and ATR are volatility breakouts used by Dunn and Campbell since the early 1970s. _[experience, stated; support: Own career and archive reading (Donchian four-week rule 1960, Turtles 1984).]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C10-3|C10-3]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C11-1|C11-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C09-2|C09-2]])
+- Interest in portable alpha is cyclical and returns when equities do very well and clients feel they underperform. _[experience, stated; support: Worked on it in the 1990s.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C12-4|C12-4]])
+- Trend funds delevered after the GFC because investors wanted low-vol products; with higher rates and vol some investors may now want more return. _[experience, stated; support: Industry observation.]_ ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C14-3|C14-3]])
+
+**Chain: JGB widow-maker trade turning profitable**
+1. BoJ policy regime shift → JGB 10y yield rose from -0.25% to 1.44% since September 2024: Policy normalisation. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-2|C03-2]])
+2. Rising yields → Short JGB trend positions paid: The BoJ no longer punished shorts. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-2|C03-2]])
+- Evidence: Yield move quoted.
+- Fails when: Previously, BoJ intervention made shorts pay.
+
+**Chain: Gold reserve repricing as a catalyst**
+1. US gold reserves marked from $42/oz official price to market → Large balance-sheet asset that could be lent against (sovereign wealth fund idea): Valuation gain on about 8,000 tons. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C02-2|C02-2]])
+2. Repricing chatter → Supports the gold trend: Catalyst for trend followers. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C02-2|C02-2]])
+- Evidence: Speculative; reported suggestions.
+- Fails when: Not stated.
+
+**Chain: Price versus value**
+1. Value is subjective (Bitcoin zero or millions) → Price is the only thing known: It is on the screen. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C15-4|C15-4]])
+2. Price-only strategies → More opportunity and more investor openness: Disconnect between price and value. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C16-1|C16-1]])
+- Evidence: Travel conversations; no inflow data (he says there are not massive inflow changes).
+- Fails when: Not stated.
+
+**Decision process**
+- [signal] Uses his own Trend Barometer (30, weak, short timeframes) which follows the Short-Term Traders Index.. Why: Tracks short-term trend strength. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C08-3|C08-3]])
+- [risk] Price crypto exit-liquidity risk into position sizing.. Why: Ether dropped 20% in a day when futures could not trade. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C07-4|C07-4]])
+- [research] Look at which sectors drive CTA returns (equities offset by currencies, bonds in between) and how many markets drove equity trend gains (DAX, Hang Seng).. Why: Sector-level dispersion drives CTA returns. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C02-1|C02-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-X1|C03-X1]])
+
+**Evidence style:** Market observation, industry index data, historical archive research, and questions to the guest.
+
+**Views at the time**
+- (2025-02) Early 2025 trend following was mixed: equity trends offset by currency losses, bonds in between.. Reasoning: Sector-level dispersion. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C02-1|C02-1]])
+- (2025-02) Coffee is the new cocoa: a crop estimated 4-5% lower pushed prices up.. Reasoning: Supply. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-1|C03-1]])
+- (2025-02) JGB shorts have begun to pay as yields rose from -0.25% to 1.44%.. Reasoning: Policy regime shift. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-2|C03-2]])
+- (2025-02) Equity trend gains concentrated in a few indices (DAX, Hang Seng).. Reasoning: Narrow participation. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-3|C03-3]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C03-X1|C03-X1]])
+- (2025-02-25) Performance to 25 Feb 2025: BTOP50 +1.78% YTD, SG CTA +0.73%, SG Trend +0.56%, STI -0.25%, versus MSCI World +5.37%, S&P 500 +4.64%.. Reasoning: Descriptive. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C08-4|C08-4]])
+- (2025-02) Trend followers may see more openness among investors because price is disconnected from value.. Reasoning: Travel conversations. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C16-1|C16-1]])
+
+### Disagreements
+- **Do alternative markets trend better?**: Niels Kaastrup-Larsen: They do not trend better; they trend at different times, which is the diversification benefit. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C05-4|C05-4]]); Graham Robertson: Agrees in effect (higher long-run Sharpe from better diversification, not stronger trending), but frames it as a Sharpe-scaling maths argument and keeps liquid futures for crisis alpha. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C06-2|C06-2]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C06-3|C06-3]])
+- **Is crowding in alternative markets a concern?**: Niels Kaastrup-Larsen: Asks whether too many managers now crowd these markets and costs have risen. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C07-2|C07-2]]); Graham Robertson: Sees no evidence: transaction costs and market-size surveys show growing markets; credit derivative liquidity does not dry up in stress. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C07-2|C07-2]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C07-3|C07-3]])
+
+### Gaps and conflicts
+- Robertson says the square-root diversification arithmetic implies higher Sharpe for alternative markets, but also says short-period results are unpredictable; no out-of-sample numbers are given. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C06-1|C06-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C05-3|C05-3]])
+- Evidence that trend protects against bond sell-offs is thin (only the 1970s and 2022), yet the discussion proposes trend as a fixed-income replacement. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C13-X1|C13-X1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C13-1|C13-1]])
+- The claim that alternative markets do not trend better is attributed to unnamed other managers' presentation. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C05-4|C05-4]])
+- The 20/120-day crossover is described as best fit to the index, but Kaastrup-Larsen notes manager dispersion is huge, so one tool cannot represent them. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C09-2|C09-2]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C05-1|C05-1]])
+- Robertson says low exchange-visible liquidity is no barrier, yet the host reports ether fell 20% on a weekend when futures could not trade; liquidity of crypto is handled by sizing, not resolved. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C04-1|C04-1]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C07-4|C07-4]])
+- Gold repricing to market from $42/oz is speculative and used as a catalyst without confirmation that it will occur. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C02-2|C02-2]])
+- The Dunn volatility-breakout dating by the host contradicts earlier literature dates; he says 'I don't necessarily agree with the timing'. ([[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C10-3|C10-3]], [[MT111 - Navigating Market Chaos - Systematic Investor 336#^MT111-C11-1|C11-1]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Observables named: gold repricing and its effect on Treasury issuance, bond issuance from defence spending, BoJ policy and JGB yields, European gas and power inventories, coffee crop estimates, whether Mag 7 and tech sell-offs spread to the quality factor, and rate/vol regime for investor demand. Horizons range from months (trend in coffee, power) to years (diversification payoff).
+
+### Reader inferences (not stated by the speakers)
+- (reader) Robertson's two-layer view is that alternative markets maximise long-run Sharpe while liquid futures maximise crisis alpha, so the mix depends on whether the investor wants steady return or insurance.
+- (reader) Quality and trend are paired by speed of response: quality for days-to-weeks flights to quality, trend for sustained sell-offs.
+- (reader) The host's price-versus-value argument is a rationale for trend rather than an empirical result; it would be weakened if value reasserts.
 
 ## Coverage
 
@@ -286,4 +432,8 @@ tags: [source, layer0]
   > be a good idea to just focus on price because that's the one thing we do know
   asset: multi · direction: long trend following allocation · testable: no: opinion · confidence: medium
   ^MT111-C16-1
+- **Graham Robertson** Robertson, quoting Andrew Beer, frames trend following as letting the market act as portfolio manager: watch what price is doing, not what value is, a different way of looking at things that is relevant now.  #mech/new _(added by map cross-check)_
+  > Mr Market is your portfolio manager
+  indicator: price trends · asset: multi · conditions: when price and value are disconnected · testable: no · confidence: medium
+  ^MT111-C16-R1
 

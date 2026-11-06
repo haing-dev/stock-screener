@@ -1,0 +1,984 @@
+{
+ "source_id": "MT020",
+ "episode_thesis": "Bill Eckhardt (co-creator of the Turtle rules) argues that futures markets are too close to random to predict (hit rate about 51-52%), so success comes from risk control built on utility theory, robust distribution-free statistics on long samples, and a research process (E-score, Gauntlet) designed to limit overfitting and underfitting. Eckhardt Trading Company therefore runs mostly trend following (about 80%) across about 70 liquid futures markets, keeps position sizes constant instead of targeting volatility, rejects high win-rate strategies, avoids stocks and regression-based CTA replication, and treats the discomfort of trading as the real edge ('pain arbitrage').",
+ "speakers": [
+  {
+   "name": "Bill Eckhardt",
+   "role": "Founder, Eckhardt Trading Company (ETC); co-creator of the Turtle trading rules with Richard Dennis; background in philosophy of science and mathematics",
+   "speaker_note": "First podcast appearance. Auto-captions garble names ('Moret', 'Rich Dennis'). The intro calls Santino president and CEO while the ledger calls him COO; both appear. Which of Eckhardt and Santino answers a few mid-conversation questions on sizing is not always clear from the captions; the ledger's attribution (Santino for volatility and sizing) is kept.",
+   "fingerprint": [
+    "trend_following",
+    "research_robustness_overfitting",
+    "position_sizing_vol_target",
+    "crisis_alpha_convexity",
+    "behavioral_sentiment",
+    "diversification_risk_parity",
+    "costs_execution",
+    "replication_indexing"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Money flows from the many to the few; normal human reflexes (holding losers, enjoying trading) put you among the many and losing, so success requires going against inclination and suffering some discomfort.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Anecdote about non-traders at parties who say losers need not be cut; career observation.",
+     "claim_ids": [
+      "MT020-C01-1",
+      "MT020-C14-1",
+      "MT020-C14-2"
+     ]
+    },
+    {
+     "premise": "Trading success needs more than entry rules: risk management and attitudes to profit and loss matter at least as much, and mechanizing trading is much harder than Dennis's 'weighted rules' view suggested.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His account of the Turtle programme (Dennis ran risk control, Eckhardt developed rules).",
+     "claim_ids": [
+      "MT020-C01-2",
+      "MT020-C02-1"
+     ]
+    },
+    {
+     "premise": "A theory of trading should be built the way science builds theories: start oversimplified (as ballistics did) and add factors as research proves them relevant; he has formalised parts, not a complete theory.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Philosophy of science analogy (cannonball trajectories).",
+     "claim_ids": [
+      "MT020-C02-2",
+      "MT020-C03-1"
+     ]
+    },
+    {
+     "premise": "Markets are not random but too close to random for simple predictions, so effort should go into risk control (which one can know and control) rather than prediction; accuracy is only about 51-52%.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own experience; no data shown.",
+     "claim_ids": [
+      "MT020-C03-2",
+      "MT020-C04-1",
+      "MT020-C13-4"
+     ]
+    },
+    {
+     "premise": "Utility theory gives a rigorous basis for risk aversion (diminishing marginal utility, losses weigh more than gains); risk-neutral and risk-loving utilities lead to ruin, shown by the St Petersburg paradox, so risk aversion is primary in leveraged futures trading.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Decision theory, St Petersburg paradox, and observed traders who lost everything.",
+     "claim_ids": [
+      "MT020-C04-2",
+      "MT020-C04-4",
+      "MT020-C05-1"
+     ]
+    },
+    {
+     "premise": "Most traders build a profitable system and graft risk control on afterwards ('Island of Dr Moreau'); ETC instead brings expected utility in at the ground floor and judges every idea by its effect on expected utility.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Contrast with 'all other traders that I know of'.",
+     "claim_ids": [
+      "MT020-C04-3"
+     ]
+    },
+    {
+     "premise": "Futures returns and system trade results are radically non-normal with heavy tails (Mandelbrot: possibly no variance), so normal small-sample statistics, standard deviations and least-squares correlation give wrong answers; robust, distribution-free statistics are required.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Mandelbrot's cotton-price work; LTCM's failure; his own observation of leptokurtosis in every futures market.",
+     "claim_ids": [
+      "MT020-C12-1",
+      "MT020-C12-3",
+      "MT020-C12-X2",
+      "MT020-C13-2"
+     ]
+    },
+    {
+     "premise": "Robust statistics need 10 to 30 times more data, so ETC needs 10-20 years of data and cannot draw valid conclusions from two or three years, which would be overfitting.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Statistical argument.",
+     "claim_ids": [
+      "MT020-C12-2"
+     ]
+    },
+    {
+     "premise": "Overfitting is real (some good traders lost everything) but underfitting is also costly because it ignores worthwhile market information; fitting should capture permanent features and ignore transitory ones, and some overfitting is unavoidable.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "In-house techniques to estimate the overfit; no figures shown.",
+     "claim_ids": [
+      "MT020-C08-3",
+      "MT020-C09-1",
+      "MT020-C08-R3"
+     ]
+    },
+    {
+     "premise": "Summary statistics of signals (a moving average) discard structure; keeping the 20-day high and low retains position within the range. Structure cannot all be kept (combinatorially impossible), so research must discard structure while keeping what matters.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Worked example of 20 closes into 1 versus 2 numbers.",
+     "claim_ids": [
+      "MT020-C07-3",
+      "MT020-C08-1"
+     ]
+    },
+    {
+     "premise": "Volatility is a moving-average process, so moving averages suit volatility; price is non-stationary and not an MA process, so moving averages and crossovers on price are counterproductive and have no theoretical support.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Time-series statistics; a quip that traders also trade gold by the sun and silver by the moon.",
+     "claim_ids": [
+      "MT020-C08-2"
+     ]
+    },
+    {
+     "premise": "Futures prices do not mean-revert, but volatility does, so ETC's non-trend methods (about 20% of work) are neither trend following nor counter-trend, and not mean reversion.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Assertion; methods are not disclosed.",
+     "claim_ids": [
+      "MT020-C07-2"
+     ]
+    },
+    {
+     "premise": "High win-rate strategies (such as selling cheap options) periodically bust because they exploit the bulk of the distribution while the tails are heavy; ETC prefers a roughly 40% success rate with larger winners.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Principle used in rejecting any new system with a 70-80% success rate; no example data.",
+     "claim_ids": [
+      "MT020-C13-3"
+     ]
+    },
+    {
+     "premise": "Turtle breakout rules were widely published (one Turtle published the proprietary manual), so the edge was degraded by competition; trend following has been declared dead every few years, yet most of ETC's work is still trend following.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Career-long observation; he left the Turtle rules even before they were released.",
+     "claim_ids": [
+      "MT020-C05-4",
+      "MT020-C05-5"
+     ]
+    },
+    {
+     "premise": "Red Queen effect: with more competition and technical analysis knowledge, a trader must improve as fast as possible just to hold his own.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Alice in Wonderland analogy.",
+     "claim_ids": [
+      "MT020-C06-1"
+     ]
+    },
+    {
+     "premise": "Diversification is the greatest financial idea of the 20th century; ETC trades about 70 markets but avoids markets with too much slippage or too little liquidity, and many traders undercut diversification by concentrating on whichever few markets are hot.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Slippage and liquidity measurement on all markets.",
+     "claim_ids": [
+      "MT020-C10-3",
+      "MT020-C10-X1"
+     ]
+    },
+    {
+     "premise": "So-called alternative markets look better in backtests but slippage and difficulty exiting in a hurry make them worse in practice.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Argument about paper versus practical performance.",
+     "claim_ids": [
+      "MT020-C11-1"
+     ]
+    },
+    {
+     "premise": "Single stocks differ from futures (splits, dividends, a market dominated by longs, while futures are balanced one long per short) and have a weaker trend component, so ETC specialises in futures where it has a relative advantage.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Studied stocks but 'no claim of expertise'; relative-advantage argument.",
+     "claim_ids": [
+      "MT020-C11-2",
+      "MT020-C11-3"
+     ]
+    },
+    {
+     "premise": "Replicating CTA indices by regression 'sounds like an invitation to really overfit', since futures price changes and trade results are radically non-normal.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Statistical reasoning; no test of an actual product.",
+     "claim_ids": [
+      "MT020-C11-4"
+     ]
+    },
+    {
+     "premise": "Some Turtle trainees dropped out or could not get along, which showed they lacked the right emotional makeup.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Anecdote.",
+     "claim_ids": [
+      "MT020-C15-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "From unpredictable markets to risk control first",
+     "steps": [
+      {
+       "from": "Markets are not random but too close to random; accuracy only about 51-52%",
+       "to": "Prediction cannot be the main edge",
+       "why": "Simple predictions fail; profits come from handling outcomes.",
+       "claim_ids": [
+        "MT020-C03-2",
+        "MT020-C13-4"
+       ]
+      },
+      {
+       "from": "Risk can be known, changed and controlled",
+       "to": "Put ten times the emphasis on risk control as on prediction; decide what to do wherever the market goes",
+       "why": "Risk control makes profits follow.",
+       "claim_ids": [
+        "MT020-C04-1",
+        "MT020-C13-4"
+       ]
+      },
+      {
+       "from": "Diminishing marginal utility of money",
+       "to": "Risk aversion is a rigorous requirement; utility enters research at the ground floor",
+       "why": "Risk-neutral or risk-loving utilities mean ruin in leveraged trading.",
+       "claim_ids": [
+        "MT020-C04-2",
+        "MT020-C04-3",
+        "MT020-C04-4",
+        "MT020-C05-1"
+       ]
+      }
+     ],
+     "evidence": "Utility theory, St Petersburg paradox, observed ruin of risk-loving traders; no performance data.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT020-C03-2",
+      "MT020-C04-1",
+      "MT020-C04-2",
+      "MT020-C04-3",
+      "MT020-C13-4"
+     ]
+    },
+    {
+     "topic": "Heavy tails and why robust statistics need long samples",
+     "steps": [
+      {
+       "from": "Futures price changes and trade results have heavy tails (leptokurtosis; possibly no variance)",
+       "to": "Normal-distribution statistics, standard deviations and least-squares correlations are unreliable",
+       "why": "Mandelbrot's evidence; LTCM's failure using normal theory.",
+       "claim_ids": [
+        "MT020-C12-1",
+        "MT020-C12-3",
+        "MT020-C12-X2"
+       ]
+      },
+      {
+       "from": "Use robust, distribution-free statistics",
+       "to": "Need 10 to 30 times more data, hence 10-20 years; two or three years is overfitting",
+       "why": "They make no distribution assumptions and so waste information.",
+       "claim_ids": [
+        "MT020-C12-2"
+       ]
+      },
+      {
+       "from": "Heavy left tails in every market",
+       "to": "Trading rules must intervene (stops, exit rules) to keep the left tail under control",
+       "why": "Risk management is the main use of rules against leptokurtosis.",
+       "claim_ids": [
+        "MT020-C13-2"
+       ]
+      }
+     ],
+     "evidence": "Mandelbrot's cotton-price studies (cited by the host); LTCM; his observation across futures markets.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT020-C12-1",
+      "MT020-C12-2",
+      "MT020-C12-3",
+      "MT020-C13-2"
+     ]
+    },
+    {
+     "topic": "Why high win-rate strategies fail",
+     "steps": [
+      {
+       "from": "Strategies that sell cheap options or exploit oscillation around the mean",
+       "to": "Success rates of 70-90% from exploiting the bulk of the distribution",
+       "why": "Most observations sit around the mean (leptokurtosis).",
+       "claim_ids": [
+        "MT020-C13-3"
+       ]
+      },
+      {
+       "from": "Tail events eventually materialise",
+       "to": "Large, freakish, unprotected losses; periodic bust-outs",
+       "why": "The strategy depends on the tails not happening.",
+       "claim_ids": [
+        "MT020-C13-3"
+       ]
+      },
+      {
+       "from": "Rule: reject any new system with a 70-80% success rate",
+       "to": "Prefer roughly 40% success with winners much larger than losers",
+       "why": "Cut losses, let profits run.",
+       "claim_ids": [
+        "MT020-C13-3",
+        "MT020-C14-1"
+       ]
+      }
+     ],
+     "evidence": "Principle and long-sample observation; no numbers on specific systems.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT020-C13-3",
+      "MT020-C14-1"
+     ]
+    },
+    {
+     "topic": "Constant position size versus volatility-resizing",
+     "steps": [
+      {
+       "from": "Volatility often rises as a trend extends",
+       "to": "Resizing to current volatility would cut the position along with the trend",
+       "why": "Hidden mean-reversion trade against the trend (host's point).",
+       "claim_ids": [
+        "MT020-C06-4",
+        "MT020-C07-X1"
+       ]
+      },
+      {
+       "from": "Keep entry size roughly constant to exit with a stop loss",
+       "to": "Controlled risk and a synthetic long-optionality profile",
+       "why": "Losses are capped while trend extension is fully captured.",
+       "claim_ids": [
+        "MT020-C07-1",
+        "MT020-C06-4"
+       ]
+      },
+      {
+       "from": "Higher volatility helps trend systems; low volatility should not be 'juiced up'",
+       "to": "No portfolio volatility target; track each future's volatility for risk",
+       "why": "Let systems run as designed.",
+       "claim_ids": [
+        "MT020-C06-3",
+        "MT020-C06-2"
+       ]
+      }
+     ],
+     "evidence": "ETC tested adjusting to current volatility and found it counterproductive; no results shown.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT020-C06-3",
+      "MT020-C06-4",
+      "MT020-C07-1",
+      "MT020-C07-X1"
+     ]
+    },
+    {
+     "topic": "Why published rules decay",
+     "steps": [
+      {
+       "from": "Turtle rules and risk control were widely disclosed",
+       "to": "Breakout systems heavily degraded",
+       "why": "Competition on the same published edge.",
+       "claim_ids": [
+        "MT020-C05-4"
+       ]
+      },
+      {
+       "from": "Short-term systems show alpha decay (host)",
+       "to": "Many Turtle students moved to longer holding periods; longer-term systems (around 200-day look-backs) still work",
+       "why": "Edge persists where it is harder to arbitrage.",
+       "claim_ids": [
+        "MT020-C05-3",
+        "MT020-C05-X1"
+       ]
+      },
+      {
+       "from": "More competition and technical analysis knowledge",
+       "to": "Researchers must keep improving (Red Queen)",
+       "why": "Standing still means losing ground.",
+       "claim_ids": [
+        "MT020-C06-1"
+       ]
+      }
+     ],
+     "evidence": "Eckhardt's own Turtle history; the host's observation about students.",
+     "fails_when": "Not stated; he says trend following has been declared dead repeatedly without it being so.",
+     "claim_ids": [
+      "MT020-C05-3",
+      "MT020-C05-4",
+      "MT020-C05-X1",
+      "MT020-C06-1"
+     ]
+    },
+    {
+     "topic": "Why ETC avoids replication and stocks",
+     "steps": [
+      {
+       "from": "Regression-based replication fits index returns with 10-20 markets",
+       "to": "Invitation to overfit; radically non-normal data",
+       "why": "Normal-theory regression on fat-tailed series.",
+       "claim_ids": [
+        "MT020-C11-4",
+        "MT020-C12-X1"
+       ]
+      },
+      {
+       "from": "No predefined exits in replication portfolios",
+       "to": "Exposure to discontinuity and gap events",
+       "why": "Without stops losses are not known in advance (host's point, Eckhardt agrees).",
+       "claim_ids": [
+        "MT020-C13-1",
+        "MT020-C13-2"
+       ]
+      },
+      {
+       "from": "Stocks differ structurally from futures",
+       "to": "ETC does not trade them",
+       "why": "Weaker trend component and no relative advantage.",
+       "claim_ids": [
+        "MT020-C11-2",
+        "MT020-C11-3"
+       ]
+      }
+     ],
+     "evidence": "Reasoning from distribution theory; no test of replication products.",
+     "fails_when": "Not stated; Santino says only 'it will end badly' as a prediction.",
+     "claim_ids": [
+      "MT020-C11-2",
+      "MT020-C11-4",
+      "MT020-C12-X1",
+      "MT020-C13-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Evaluate every idea by its effect on expected utility from the start of research, using a small class of utility functions chosen for commodity trading and client circumstances.",
+     "why": "Avoids grafting risk control onto a profit system.",
+     "claim_ids": [
+      "MT020-C04-2",
+      "MT020-C04-3"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "E-score: combine many performance measures into one, and discount systems that earn most profit in a short span (for example 2 of 20 years).",
+     "why": "Guards against false impressions of quality.",
+     "claim_ids": [
+      "MT020-C09-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Gauntlet: a barrage of tests designed to tear a system apart; also tests the program code for subtle glitches.",
+     "why": "Shows where a system fails and removes emotion.",
+     "claim_ids": [
+      "MT020-C09-3",
+      "MT020-C10-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Use robust, distribution-free statistics with 10-20 years of data and in-house techniques to estimate and minimise overfit.",
+     "why": "Heavy tails and the data appetite of robust statistics.",
+     "claim_ids": [
+      "MT020-C12-1",
+      "MT020-C12-2",
+      "MT020-C08-3"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Prefer signals that keep structure (e.g. 20-day high and low) to single summary statistics; use moving averages for volatility only, not for price.",
+     "why": "Price is non-stationary; volatility is a moving-average process.",
+     "claim_ids": [
+      "MT020-C07-3",
+      "MT020-C08-2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Run short, medium and long-term systems with average trade lengths of about 4-5 days to 50-60 days; volatility enters five or six ways (sizing, measuring price change, risk control) alongside price.",
+     "why": "Covering several time horizons within trend following; about 80% trend, 20% non-trend, non-counter-trend methods.",
+     "claim_ids": [
+      "MT020-C05-2",
+      "MT020-C06-2",
+      "MT020-C07-2"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Keep initial position size roughly constant from entry to exit; no portfolio volatility target; no readjustment to rising volatility; stop-loss for each trade.",
+     "why": "Volatility rises with trends and resizing cuts exposure when the trend is working.",
+     "claim_ids": [
+      "MT020-C06-3",
+      "MT020-C06-4",
+      "MT020-C07-1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Reject any new system with a 70-80% success rate; accept about 40% winners with larger winners; cut losses, let profits run; place ten times more emphasis on risk control than on prediction.",
+     "why": "High win-rate systems depend on tails not happening.",
+     "claim_ids": [
+      "MT020-C13-3",
+      "MT020-C13-4",
+      "MT020-C14-1"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Trade about 70 futures markets, measuring liquidity and slippage on every market and avoiding illiquid or high-slippage ones; no single stocks.",
+     "why": "Diversification is valuable but slippage makes alternative markets worse than backtests suggest.",
+     "claim_ids": [
+      "MT020-C10-3",
+      "MT020-C11-1",
+      "MT020-C11-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Do not replicate CTA indices; do not concentrate on hot markets.",
+     "why": "Overfit and no exits; anti-diversification.",
+     "claim_ids": [
+      "MT020-C11-4",
+      "MT020-C10-X1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Keep specific Gauntlet and overfit-estimation methods secret and unpublished.",
+     "why": "Industry competition (he says he would like to publish).",
+     "claim_ids": [
+      "MT020-C10-R2"
+     ]
+    }
+   ],
+   "evidence_style": "First principles and mathematical argument (utility theory, statistics, philosophy of science) plus long personal experience and anecdote. He gives no backtest numbers, track record or performance data and says the key methods are secret, so claims about robustness are asserted rather than shown.",
+   "current_views": [
+    {
+     "view": "Trend following is not dead and remains the majority (about 80%) of ETC's systematic work; non-trend methods are about 20%.",
+     "as_of": "2024-10 (upload 2024-10-26; Open Interest 10)",
+     "reasoning": "Trend following has been declared dead every few years; competition requires constant research.",
+     "claim_ids": [
+      "MT020-C05-5",
+      "MT020-C07-2",
+      "MT020-C06-1"
+     ]
+    },
+    {
+     "view": "ETC trades about 70 markets and avoids alternative markets that look better only on paper; it does not trade stocks.",
+     "as_of": "2024-10",
+     "reasoning": "Liquidity and slippage; relative advantage in futures.",
+     "claim_ids": [
+      "MT020-C10-3",
+      "MT020-C11-1",
+      "MT020-C11-2"
+     ]
+    },
+    {
+     "view": "Regression-based CTA replication products are an invitation to overfit.",
+     "as_of": "2024-10",
+     "reasoning": "Non-normal data, no predefined exits.",
+     "claim_ids": [
+      "MT020-C11-4",
+      "MT020-C13-2"
+     ]
+    },
+    {
+     "view": "Do not infer anything from two or three years of data; 10-20 years are needed.",
+     "as_of": "2024-10",
+     "reasoning": "Robust statistics need much more data.",
+     "claim_ids": [
+      "MT020-C12-2"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Rob Santino",
+   "role": "President (and CEO/COO per the intro and ledger) of Eckhardt Trading Company; runs the research lab",
+   "speaker_note": "Answers on volatility, sizing, the Gauntlet and the firm's research culture. A couple of the sizing answers could be Eckhardt's; the ledger's attribution is kept.",
+   "fingerprint": [
+    "trend_following",
+    "research_robustness_overfitting",
+    "position_sizing_vol_target",
+    "costs_execution",
+    "replication_indexing"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Volatility enters ETC's systems in five or six ways (sizing, measuring price change, risk control) alongside price, so systems are based on both price and volatility.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own firm design; details withheld.",
+     "claim_ids": [
+      "MT020-C06-2"
+     ]
+    },
+    {
+     "premise": "ETC does not target portfolio volatility because higher volatility often helps trend systems and they do not want to juice up when volatility is low; they track individual futures' volatility for risk.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Firm practice.",
+     "claim_ids": [
+      "MT020-C06-3"
+     ]
+    },
+    {
+     "premise": "Position sizes are held roughly constant from entry to exit because readjusting to rising volatility would cut the position along with the trend, which they found counterproductive.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Testing at ETC; no results shown.",
+     "claim_ids": [
+      "MT020-C06-4"
+     ]
+    },
+    {
+     "premise": "The Gauntlet is a barrage of tests designed to tear a system apart, showing where it fails (as important as knowing why it works) and removing emotion; systems can have a strong 2-4 month run and then go flat.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Formal process used for many years, also offered to outside ideas and University of Chicago students.",
+     "claim_ids": [
+      "MT020-C09-3",
+      "MT020-C09-4"
+     ]
+    },
+    {
+     "premise": "Regression-based CTA-index replication products are likely to end badly.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Opinion, 'I'll go on record'.",
+     "claim_ids": [
+      "MT020-C12-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "sizing",
+     "practice": "No portfolio volatility target; keep original position size roughly constant, with only small technical adjustments; monitor volatility of each future for risk.",
+     "why": "Volatility helps trends; resizing is counterproductive.",
+     "claim_ids": [
+      "MT020-C06-3",
+      "MT020-C06-4"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Run systems through the Gauntlet and rely on the E-score, especially when blending systems.",
+     "why": "Know where failures are; remove emotion.",
+     "claim_ids": [
+      "MT020-C09-3",
+      "MT020-C09-4"
+     ]
+    }
+   ],
+   "evidence_style": "Firm practice and process description; no results disclosed.",
+   "current_views": [
+    {
+     "view": "Replication products will likely end badly.",
+     "as_of": "2024-10",
+     "reasoning": "Offered as opinion.",
+     "claim_ids": [
+      "MT020-C12-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Moritz Seibert",
+   "role": "Host of the Open Interest series (Top Traders Unplugged); systematic trading practitioner",
+   "speaker_note": "Asks most questions but contributes substantive views on alpha decay, hidden mean reversion, fat tails and exits, so he is mapped. The ledger's C13-1 was wrongly attributed to Santino; it is Seibert (applied correction).",
+   "fingerprint": [
+    "trend_following",
+    "research_robustness_overfitting",
+    "position_sizing_vol_target",
+    "replication_indexing",
+    "diversification_risk_parity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Many Turtle students and systematic diversified trend followers moved to longer holding periods because of alpha decay in short-term systems; longer-term systems (around 200-day look-backs) continue to work and are robust with drawdowns.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation of the trend-following community.",
+     "claim_ids": [
+      "MT020-C05-3",
+      "MT020-C05-X1"
+     ]
+    },
+    {
+     "premise": "Constant sizing with a stop-loss gives controlled risk and a synthetic long-optionality (volatility-seeking) profile.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Payoff reasoning.",
+     "claim_ids": [
+      "MT020-C07-1"
+     ]
+    },
+    {
+     "premise": "Resizing an open trend position to rising volatility is a hidden mean-reversion trade against the trend, since volatility usually rises as the trend extends.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning, 'not always true by definition but more often than not'.",
+     "claim_ids": [
+      "MT020-C07-X1"
+     ]
+    },
+    {
+     "premise": "More markets give more independent bets and less noise in any run, though smaller portfolios can outperform for periods through concentration.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Diversification is 'free' because the computer does the work.",
+     "claim_ids": [
+      "MT020-C10-2"
+     ]
+    },
+    {
+     "premise": "Futures returns are fat-tailed on both sides and jump-prone, possibly a stable Paretian distribution with no defined variance (Mandelbrot's cotton work); computing volatility as a standard deviation for sizing reintroduces normal-distribution assumptions, whereas range-based measures like ATR are not standard deviations.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Mandelbrot's 'Misbehavior of Markets'.",
+     "claim_ids": [
+      "MT020-C12-X2",
+      "MT020-C12-X3"
+     ]
+    },
+    {
+     "premise": "Regression-based replication portfolios lack predefined exits and so are exposed to discontinuity and gap events; stops and exit rules that keep losses small keep a trader in business.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Risk-management reasoning; he does not forecast how replication will end.",
+     "claim_ids": [
+      "MT020-C13-1"
+     ]
+    },
+    {
+     "premise": "The trend follower's edge is a pain arbitrage: enduring bad periods with individual losses kept small.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Practitioner framing.",
+     "claim_ids": [
+      "MT020-C14-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "sizing",
+     "practice": "Initial position sizing and keeping many small positions is the most important aspect of risk control; separately decide whether to hold size constant, or respond to correlations, volatility and VaR.",
+     "why": "Overtrading is the main risk.",
+     "claim_ids": [
+      "MT020-C07-1",
+      "MT020-C07-X1"
+     ]
+    }
+   ],
+   "evidence_style": "Practitioner reasoning and literature (Mandelbrot); no data.",
+   "current_views": [
+    {
+     "view": "Short-term systems show alpha decay while 200-day-type trend systems remain robust.",
+     "as_of": "2024-10",
+     "reasoning": "Student shift to longer holding periods.",
+     "claim_ids": [
+      "MT020-C05-3",
+      "MT020-C05-X1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Volatility targeting and position resizing",
+   "positions": [
+    {
+     "speaker": "Rob Santino",
+     "position": "ETC does not target portfolio volatility and keeps position sizes roughly constant; resizing to rising volatility is counterproductive.",
+     "claim_ids": [
+      "MT020-C06-3",
+      "MT020-C06-4"
+     ]
+    },
+    {
+     "speaker": "Moritz Seibert",
+     "position": "Asks whether markets are normalised to a common volatility target (the common industry approach), then agrees that resizing is a hidden mean-reversion trade; notes that standard-deviation-based volatility reintroduces normality.",
+     "claim_ids": [
+      "MT020-C07-X1",
+      "MT020-C12-X3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Alternative markets and market count",
+   "positions": [
+    {
+     "speaker": "Moritz Seibert",
+     "position": "Frames alternative markets as just markets, notes claims of better trending and risk-adjusted returns, and favours maximum diversification (more independent bets, less noise), while conceding that smaller portfolios can outperform for periods.",
+     "claim_ids": [
+      "MT020-C10-2"
+     ]
+    },
+    {
+     "speaker": "Bill Eckhardt",
+     "position": "Alternative markets look better on paper but are worse in practice because of slippage and exit difficulty; trades about 70 markets and avoids illiquid ones.",
+     "claim_ids": [
+      "MT020-C10-3",
+      "MT020-C11-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Is the non-trend part mean reversion or carry?",
+   "positions": [
+    {
+     "speaker": "Moritz Seibert",
+     "position": "Asks whether ETC's non-trend add-on is mean reversion or carry.",
+     "claim_ids": [
+      "MT020-C07-2"
+     ]
+    },
+    {
+     "speaker": "Bill Eckhardt",
+     "position": "It is not mean reversion because futures prices do not mean-revert (volatility does); the methods are neither trend nor counter-trend and are about 20% of the work.",
+     "claim_ids": [
+      "MT020-C07-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Mechanising trading and risk control within the Turtle programme",
+   "positions": [
+    {
+     "speaker": "Bill Eckhardt",
+     "position": "Mechanising trading is much harder than it looks; between him and Dennis he was the more risk-averse trader and Dennis controlled the programme's risk.",
+     "claim_ids": [
+      "MT020-C02-1",
+      "MT020-C01-2",
+      "MT020-C03-R1"
+     ]
+    },
+    {
+     "speaker": "Richard Dennis (as reported by Eckhardt)",
+     "position": "Thought trading could be mechanised with 'weighted rules' and ran risk control the Turtle way; he and Eckhardt argued often.",
+     "claim_ids": [
+      "MT020-C02-1",
+      "MT020-C01-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "No performance, backtest, E-score or Gauntlet results are disclosed; Eckhardt says the methods must stay secret, so claims such as accurate overfit estimation, 51-52% accuracy and the ~40% success target cannot be checked.",
+   "claim_ids": [
+    "MT020-C09-2",
+    "MT020-C13-4",
+    "MT020-C13-3",
+    "MT020-C10-R2"
+   ]
+  },
+  {
+   "issue": "Eckhardt says he knows of no one who does curve fitting yet also says some overfitting is inevitable and good traders lost everything from it; the tension is left unresolved.",
+   "claim_ids": [
+    "MT020-C08-3",
+    "MT020-C09-1",
+    "MT020-C08-R3"
+   ]
+  },
+  {
+   "issue": "He argues no portfolio volatility target and constant size, yet says volatility enters ETC's systems five or six ways and that range-based measures exist; the exact role of volatility is not specified.",
+   "claim_ids": [
+    "MT020-C06-2",
+    "MT020-C06-3",
+    "MT020-C12-X3"
+   ]
+  },
+  {
+   "issue": "He says ETC moves from short-term systems for alpha decay (per the host), yet runs trades averaging 4-5 days, which the host calls short term; Eckhardt calls them 'short only relative to other traders'.",
+   "claim_ids": [
+    "MT020-C05-2",
+    "MT020-C05-3"
+   ]
+  },
+  {
+   "issue": "The mean-reversion denial says futures prices do not mean-revert; no evidence is given and many CTAs add reversion components.",
+   "claim_ids": [
+    "MT020-C07-2"
+   ]
+  },
+  {
+   "issue": "Ledger attribution fix: the point on replication lacking predefined exits (C13-1) is the host's, not Santino's; Eckhardt agrees wholeheartedly.",
+   "claim_ids": [
+    "MT020-C13-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) The speakers do not offer forward-looking market inputs; they say prediction is only 51-52% accurate. Their forward-looking claims are about process: use 10-20 years of data, robust statistics, constant sizing, stop losses, many liquid markets; expect more competition and edge decay so research must continue; expect replication products to end badly in a tail event. The horizon for trend systems is 4-5 to 50-60 day average trade lengths.",
+ "reader_inferences": [
+  "(reader) Eckhardt's two themes, no prediction and robust statistics, imply that backtests on short samples (two or three years) or using Sharpe-type moments should be given little weight; this is directly testable against any claimed track record.",
+  "(reader) The claim that high win-rate systems 'periodically bust out' is a convexity argument: a ~40% hit-rate, positive-skew profile with stops is long optionality, consistent with Seibert's 'synthetic long optionality'.",
+  "(reader) Not targeting volatility means risk varies over time with volatility; a macro overlay using his framework would expect trend returns to be higher when volatility is high.",
+  "(reader) The preference for futures over stocks rests on a structural claim (balanced longs/shorts, no dividends/splits) that explains the lack of trend in stocks; no empirical test is offered."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT020-C03-R1",
+   "chunk": "C03",
+   "speaker": "Bill Eckhardt",
+   "quote": "between the two of us I was the more risk averse Trader",
+   "claim": "Eckhardt says that, of him and Richard Dennis, he was the more risk-averse trader; they disagreed throughout the Turtle years about risk.",
+   "mechanism": "risk_attitude",
+   "asset_class": "futures",
+   "indicator": "n/a",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "Turtle programme, 1980s",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT020-C10-R2",
+   "chunk": "C10",
+   "speaker": "Bill Eckhardt",
+   "quote": "this is an industry where we have to keep secrets",
+   "claim": "Eckhardt would like to publish parts of the Gauntlet but keeps the methods secret, and has not published anything specific about futures trading.",
+   "mechanism": "disclosure",
+   "asset_class": "n/a",
+   "indicator": "n/a",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "Competitive industry",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT020-C08-R3",
+   "chunk": "C08",
+   "speaker": "Bill Eckhardt",
+   "quote": "curve fitting is simply the wrong term",
+   "claim": "Curve fitting (a nonlinear regression term) is the wrong word for what traders do; 'overfitting' is preferred, which implies that underfitting is also possible.",
+   "mechanism": "model_selection",
+   "asset_class": "n/a",
+   "indicator": "n/a",
+   "horizon": "n/a",
+   "direction": "",
+   "conditions": "System development",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

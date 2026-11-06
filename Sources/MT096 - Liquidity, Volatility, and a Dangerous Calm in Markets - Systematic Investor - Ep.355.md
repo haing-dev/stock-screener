@@ -5,8 +5,8 @@ date: 2025-07-10
 channel: "Top Traders Unplugged"
 url: 
 words: 8503
-claims: 51
-added_by_crosscheck: 9
+claims: 54
+added_by_crosscheck: 12
 corrections: 2
 crosscheck: "opus cross-check"
 speakers: ["Niels Kaastrup-Larsen (host, hedge fund manager)", "Alan Dunne (Dunne/Archive Capital, systematic macro commentator)"]
@@ -21,6 +21,113 @@ tags: [source, layer0]
 **Approach:** trend following, CTA performance, fiscal deficits and yields, drawdown statistics, portfolio diversification
 
 **Cross-check completeness estimate of first read:** 0.85 - first reader caught nearly all mechanisms and the paper statistics; missed the post-recovery analogue outcome, Eichengreen's view, several behavioral/allocator points and the hedge-fund convexity caveat.
+
+## Argument map
+
+**Episode thesis:** Dunne and Kaastrup-Larsen argue the 2025 trend-following drawdown is statistically normal (Man paper) and not caused by crowding or decay, and that a long-vol plus trend blend may help but pure trend remains preferable to the host. In macro, Dunne argues fiscal deficits have decoupled from the cycle and keep long-term yields under upward pressure, while family-office portfolios look diversified but act like equity beta.
+
+### Alan Dunne (Systematic macro commentator (Archive Capital), regular guest co-host)
+Fingerprint: #approach/macro_fundamental_topdown #approach/fiscal_dominance #approach/debt_cycle_long_term #approach/trend_following #approach/research_robustness_overfitting #approach/behavioral_sentiment #approach/diversification_risk_parity #approach/regime_detection
+_Speaker note: Caption 'Alan Don'. Ledger correction: the C02 trend-barometer update ('trim router finished at 57') is the host's, not Alan's. Host's 'at Don 50-year record' (C08) is the host speaking._
+
+**Worldview premises**
+- Fiscal deficits have structurally decoupled from the business cycle (7-8% of GDP at near full employment) and political appetite for austerity is nil, so supply and term-premium pressure point to higher long-term yields. _[empirical, stated; support: Deficit-vs-unemployment chart; Eichengreen's pessimism; UK welfare U-turn; his own piece 'all roads lead to higher yields'.]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C03-4|C03-4]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C04-2|C04-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C04-3|C04-3]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C04-4|C04-4]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C04-X1|C04-X1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C03-R1|C03-R1]])
+- Dip-buying sentiment is strong: the 2025 S&P rebound from a 21% drawdown in 57 days came without Fed easing, unlike 1998 and 2020. _[empirical, stated; support: Historical analogues (1998 in 61 days, Covid).]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C01-1|C01-1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C01-X1|C01-X1]])
+- A trend drawdown of the current size is statistically normal for a 0.5 Sharpe strategy; narratives about choppy markets are easy to attach and often just randomness. _[empirical, stated; support: Man and Capstone paper statistics: ~80% chance of a 20% drawdown over 25 years; SG Trend Index fell >15% over 12m only twice in 25 years; past choppy periods (2011-12, 2016-19) ended.]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C06-2|C06-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-2|C07-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-5|C07-5]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-6|C07-6]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-R1|C07-R1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C06-3|C06-3]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-1|C07-1]])
+- Trend performance cannot be forecast from a macro scenario; trends emerge when they emerge. _[experience, stated; support: 2022 looked set for higher macro volatility, but 2023-25 had range-bound bonds and four recession scares.]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C08-1|C08-1]])
+- Drawdown-based timing of managers loses return, and statistics rarely persuade sceptics: staying invested requires prior conviction. _[empirical, stated; support: Man paper analysis; experience with allocators.]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-4|C07-4]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C08-X1|C08-X1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C09-X1|C09-X1]])
+- Family-office portfolios look diversified but are mostly equity/growth beta, with little commodity or convexity exposure. _[empirical, stated; support: UBS 2025 family office asset-allocation chart (about 4% hedge funds, under 1% commodities).]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C11-2|C11-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C11-3|C11-3]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C12-1|C12-1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C12-X1|C12-X1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C11-R1|C11-R1]])
+- Fast trend following decayed since the 70s-80s and pairs trading since the 2000s, while trend following and equity-factor long-short had tough but recoverable drawdowns. _[empirical, stated; support: Man paper.]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C06-1|C06-1]])
+- Individual managers have had worse drawdowns than the index, shaping investor perception. _[empirical, stated; support: Observation.]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C10-X1|C10-X1]])
+
+**Chain: Fiscal deficits to long-end yields**
+1. Deficits no longer track unemployment; politicians will not cut → structural supply of bonds keeps rising: Fiscal addiction from decade of zero rates and COVID spending ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C04-2|C04-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C04-4|C04-4]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C04-X1|C04-X1]])
+2. Weaker growth temporarily lowers yields → deficit widens further: Recession cuts revenue and raises welfare ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C04-3|C04-3]])
+3. Supply plus term premium pressures resume in recovery → higher long-term yields: Pressure returns after the downturn ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C03-4|C03-4]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C04-3|C04-3]])
+4. Dovish Fed chair appointed by Trump → long end sells off via inflation/term premium: One influential voice tilts the FOMC toward cuts ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C05-1|C05-1]])
+- Evidence: Deficit/unemployment chart; Eichengreen conversation; FT report of $11bn long-bond outflows.
+- Fails when: Calm bond market so far; possible offset from the supplementary leverage ratio change; steepener trade already crowded.
+
+**Chain: Why the 2025 trend drawdown is not 'different this time'**
+1. Lack of sustained trends in aggregate (choppy bonds, dollar, equities reversals) → 2025 drawdown: After the 2022 one-off rate adjustment from near zero rates ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C10-1|C10-1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C10-2|C10-2]])
+2. Statistical expectation for a 0.5 Sharpe strategy → a 20% drawdown is likely over 25 years: Normal distribution of returns ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-2|C07-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-5|C07-5]])
+3. Past drawdowns of the index → followed by rebounds (+10% typical, January 2019 to May 2024 very strong): Mean-reverting performance of the index ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C06-2|C06-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-1|C07-1]])
+- Evidence: Man paper (Russell, Man AHL) statistics; own reading.
+- Fails when: If trend followers have actually decayed like pairs trading.
+
+**Decision process**
+- [risk] Do not cut trend exposure in drawdowns and wait to re-enter.. Why: Historically loses a large part of returns. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-4|C07-4]])
+- [portfolio] Hold hedge funds that are divergent strategies at meaningful volatility.. Why: Low-vol market-neutral adds little crisis convexity. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C12-X1|C12-X1]])
+- [research] Test the crowding story with CTA volume as share of futures volume and CTA share of hedge fund AUM.. Why: Falling shares argue against crowding (caveat: QIS and in-house trend sit outside the CTA data). ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-3|C07-3]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C09-2|C09-2]])
+- [portfolio] Diversify across managers rather than hold one or two.. Why: Individual managers had worse drawdowns than the index. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C10-X1|C10-X1]])
+
+**Evidence style:** Papers, historical statistics and charts; emphasises statistics over narratives.
+
+**Views at the time**
+- (2025-07-04) Structural trend is still for higher long-term bond yields despite a 50bp correction from highs.. Reasoning: Fiscal, term premium, supply; dovish Fed chair risk; long-bond outflows. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C03-4|C03-4]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C05-1|C05-1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C05-2|C05-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C04-2|C04-2]])
+- (2025-07-04) Dollar weakness in 2025 reflected hedging of US assets rather than outright selling; the 'end of US exceptionalism' trade may be only beginning, if at all.. Reasoning: BIS report: selling in Asian hours and widening cross-currency basis. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C05-4|C05-4]])
+- (2025-07-04) Dollar downtrend (euro above 1.17) was dominant for trend managers in June 2025; vol-targeting cut realised vol after April.. Reasoning: Industry returns in June. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C03-2|C03-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C03-3|C03-3]])
+- (2025-07-04) S&P recovered 21% drawdown in 57 days; in 1998 and 2020 the rally continued for about a year.. Reasoning: Buy-the-dip sentiment. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C01-1|C01-1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C01-X1|C01-X1]])
+- (2025-07-04) 2025 trend drawdown comes from lack of sustained trends and is within statistical expectation; 2022 should not be extrapolated.. Reasoning: Man paper and own reading. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C10-1|C10-1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C10-2|C10-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-2|C07-2]])
+
+### Niels Kaastrup-Larsen (Host (Top Traders Unplugged), hedge fund manager)
+Fingerprint: #approach/trend_following #approach/crisis_alpha_convexity #approach/positioning_crowding #approach/manager_selection_allocation #approach/regime_detection #approach/research_robustness_overfitting
+_Speaker note: Caption 'Neil's Krup Larson'. Per ledger correction he gives the C02 market update. States a preference for pure trend over trend plus long volatility._
+
+**Worldview premises**
+- Trend profits are positively skewed: rolling 12m returns above +15% occurred about 59 times vs 2 below -15% in 25 years. _[empirical, stated; support: Own glance at the SG Trend Index chart (admits 'never do math live').]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C08-2|C08-2]])
+- Short track records understate drawdown risk; long ones are more informative (79% vs 21% chance of a two-sigma drawdown over 25 vs 5 years). _[empirical, stated; support: Man paper table.]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C08-3|C08-3]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C09-4|C09-4]])
+- Crowding is not a good explanation: CTA share of hedge-fund AUM fell from about 27% to 6% while futures volume rose; losses come from reversals in bonds, currencies and equities at once. _[empirical, stated; support: AUM and volume comparison.]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C09-2|C09-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C09-3|C09-3]])
+- Drawdown size depends on whether interest is included in index returns (75% of managers include it). _[empirical, stated; support: His own check.]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C09-1|C09-1]])
+- Long vol gives first-response protection in sudden crashes and trend second-response in prolonged declines; he is lukewarm and prefers pure trend. _[theoretical, stated; support: Capstone paper; 2022 long-vol failure.]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C10-3|C10-3]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C11-1|C11-1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C11-X1|C11-X1]])
+- Papers defending trend multiply as performance worsens; a wave of them marks a deep drawdown and weak allocator sentiment. _[experience, stated; support: Observation.]_ ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C05-X1|C05-X1]])
+
+**Chain: Geopolitical energy shock whipsaws trend**
+1. Surprise attack on Iran mid-June 2025 → oil spikes against short positions: Trend followers short oil ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C02-2|C02-2]])
+2. Exit from shorts → no gain when oil collapses days later: Missed the reversal ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C02-2|C02-2]])
+- Evidence: June 2025 events.
+- Fails when: Managers who held through.
+
+**Chain: Why short-term models did not help in 2025**
+1. Fast V-shaped market recoveries → expected benefit to short-term models: Short horizons should catch reversals ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C02-4|C02-4]])
+2. Erratic, range-bound market → short-term index as bad as SG Trend vol-adjusted: No sustained trend for any speed ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C02-4|C02-4]])
+- Evidence: Index returns.
+- Fails when: Corrected indices (SG CTA -7.8%, SG Trend -10% YTD).
+
+**Decision process**
+- [other] Track own trend barometer.. Why: Barometer 57 after a 10-day rise matched improving CTA industry performance. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C02-1|C02-1]])
+
+**Evidence style:** Index data and chart reading; deferential to papers he agrees with.
+
+**Views at the time**
+- (2025-07-04) CTA indices negative in H1 2025 (BTOP50 -3.16%, SG CTA about -7.8%, SG Trend about -10%, short-term traders -5.15% YTD) vs MSCI World +9.5%.. Reasoning: Early-July index numbers (corrected for swapped indices). ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C02-3|C02-3]])
+- (2025-07-04) Platinum +27% in June broke out; coffee -12%; cocoa fell.. Reasoning: Commodity swings. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C03-1|C03-1]])
+- (2025-07-04) Heavy Treasury bill issuance expected in autumn will pressure rates up and may support the dollar after its worst calendar-year start in 50 years.. Reasoning: Low issuance so far plus new bill. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C05-3|C05-3]])
+- (2025-07-04) Family offices seek risk-offsetting assets (38% biggest challenge); 20% raising hedge funds, 21% gold; biggest risks trade war (12m), geopolitics (5y), recession 53%, debt crisis 50% over five years.. Reasoning: UBS 2025 family office survey (317 offices, $2.7bn average). ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C12-2|C12-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C12-X2|C12-X2]])
+
+### Disagreements
+- **Add long volatility to trend?**: Niels Kaastrup-Larsen: Lukewarm; prefers pure trend. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C11-X1|C11-X1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C11-1|C11-1]]); Alan Dunne (relaying Capstone): Blend of long vol (first responder) and trend (second) is more robust and not new. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C10-3|C10-3]])
+- **Size and cause of the 2025 trend disappointment**: Alan Dunne: Lack of sustained trends after a one-off 2022; random, statistically normal. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C10-1|C10-1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C10-2|C10-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-6|C07-6]]); Niels Kaastrup-Larsen: Reversals in three main sectors at once; not crowding. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C09-3|C09-3]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C09-2|C09-2]])
+
+### Gaps and conflicts
+- Speaker of the C02 update initially assigned to Dunne; ledger correction attributes to host; 'trim router' is a caption error for trend barometer. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C02-1|C02-1]])
+- Index figures were swapped in the caption; corrected values (SG CTA -7.8%, SG Trend -10%). ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C02-3|C02-3]])
+- The interest-in-index exchange (C09) is hard to attribute in the caption: the ledger gives the 75%-include-interest and ex-interest 27-28% drawdown figures to the host, but the surrounding turn could be either speaker; the two disagree about whether the index includes interest. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C09-1|C09-1]])
+- Host computes '59 times' above +15% live and caveats he should not do math live. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C08-2|C08-2]])
+- Statistics on 'nearly 80%' and 79% drawdown probabilities relayed from papers without assumptions beyond Sharpe and vol. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-2|C07-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C08-3|C08-3]])
+- Man/Capstone papers' conclusions agree with the speakers' priors; both acknowledge sceptics will not be persuaded. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C08-X1|C08-X1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C05-X1|C05-X1]])
+- Dunne's earlier prediction of higher yields is not confirmed by the correction; he acknowledges yields fell about 50bp. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C03-4|C03-4]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C03-R1|C03-R1]])
+- Crowding rebuttal caveat: QIS and in-house trend following are not in CTA volume numbers. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C07-3|C07-3]])
+- Host's long-vol blend scepticism rests on 2020-22 experience, not tested. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C11-1|C11-1]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C11-X1|C11-X1]])
+- Dollar/BIS claim and FT outflow figure are second-hand. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C05-2|C05-2]], [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C05-4|C05-4]])
+- Statement that fast V recoveries without Fed support are a 'twist to common knowledge' is a one-sample comparison. ([[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C01-2|C01-2]])
+
+### Forward-looking inputs (reader synthesis)
+Fiscal deficit and bond supply (bill issuance in autumn), term premium, Fed chair appointment, long-bond outflows, dollar hedging flows; for trend performance, sustained trends in bonds, currencies and equities; horizon from months to years.
+
+### Reader inferences (not stated by the speakers)
+- The statistical normality argument is about base rates and does not predict when trends return.
+- Both speakers prefer statistics over narrative for trend drawdowns yet use narrative for macro views.
 
 ## Coverage
 
@@ -93,6 +200,10 @@ tags: [source, layer0]
   > I wrote a piece um all roads lead to higher yields
   indicator: long-end Treasury yields, term premium · asset: rates · direction: higher long yields over time · horizon: years · conditions: near term yields fell on dovish Fed governors · testable: partly: the long-run direction is a view, not a rule · confidence: medium
   ^MT096-C03-4
+- **Alan Dunne** Dunne's own published thesis (a piece written a month or two earlier) is that fiscal deficits, term premium and supply all point to higher long-term bond yields.  #mech/new _(added by map cross-check)_
+  > all roads lead to higher yields
+  indicator: long-end yields · asset: bonds · direction: long-term yields up · horizon: years · conditions: structural fiscal deficits persist · testable: partly · confidence: high
+  ^MT096-C03-R1
 
 ### C04
 - **Alan Dunne** The calm bond market reaction to the budget bill may reflect that the curve-steepener trade was already widely held, so the news was priced in.  #mech/crowding_positioning _(time-bound view)_
@@ -177,6 +288,10 @@ tags: [source, layer0]
   > people like stories better than stat statistics
   asset: multi · testable: partly · confidence: medium
   ^MT096-C07-6
+- **Alan Dunne** Dunne says investors respond to narratives (choppy markets, tariff on/off) more than to statistical evidence, which is why statistics rarely settle the trend-following drawdown debate.  #mech/new _(added by map cross-check)_
+  > people like stories better than stat statistics
+  asset: multi · horizon: n/a · testable: no · confidence: high
+  ^MT096-C07-R1
 
 ### C08
 - **Alan Dunne** Trend performance cannot be forecast from the macro scenario: 2022 looked set for higher macro volatility, inflation and rates yet 2023-25 had range-bound bonds (10y 3.5-5%) and four recession scares.  #mech/cycle_persistence _(time-bound view)_
@@ -253,6 +368,10 @@ tags: [source, layer0]
   > maybe combining them makes sense. I don't know. Um I still like the pure trend approach of course.
   asset: multi · horizon: years · testable: yes - compare pure trend vs long-vol/trend blend through equity drawdowns · confidence: low
   ^MT096-C11-X1
+- **Alan Dunne** Dunne's Substack argument: family-office portfolios across many labelled categories are mostly one equity/growth beta that fails together under stress.  #mech/new _(added by map cross-check)_
+  > looks diversified, acts like beta
+  asset: multi · horizon: n/a · conditions: stress periods · testable: partly · confidence: high
+  ^MT096-C11-R1
 
 ### C12
 - **Alan Dunne** A typical family-office allocation is a bet on favorable growth and stable inflation and lacks commodities and convexity, so it would struggle in stagflation.  #mech/risk_management

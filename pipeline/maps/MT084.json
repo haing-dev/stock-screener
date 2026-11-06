@@ -1,0 +1,715 @@
+{
+ "episode_thesis": "Systematic Investor Ep.377 (recorded early Dec 2025): trend following had a flat 2025 after policy shocks, but choppy regimes have always ended when fundamentals shifted, so investors should hold long-term. Alan Dunne argues the world has moved from 40 years of disinflation to a regime of stickier inflation, higher debt, rising global yields and a more positive stock-bond correlation, and that portfolios built on old labels (alternative/traditional) are over-concentrated in growth and stable inflation. His remedy is a risk-based 40% growth / 40% adaptive (trend, macro) / 20% diversifier portfolio built with futures leverage and return stacking, which beats 60/40 mainly through smaller drawdowns.",
+ "speakers": [
+  {
+   "name": "Alan Dunne",
+   "role": "Archive Capital; co-host; author of the regime-adaptive portfolio paper",
+   "speaker_note": "Transcript spells the name 'Alan Don'; the ledger identifies Alan Dunne. Speaker turns are unlabelled in the caption but the content (own paper, own portfolio) makes attribution clear.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "trend_following",
+    "regime_detection",
+    "diversification_risk_parity",
+    "portfolio_construction_stacking",
+    "debt_cycle_long_term",
+    "fiscal_dominance",
+    "policy_reaction_central_banks"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Choppy, policy-shock periods for trend following end when fundamentals change and new information produces breakouts ('this too shall pass').",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Historical episodes: 2012 risk-on/risk-off ended with weak growth, breakouts in Bund, euro, oil; late-2010s slump eased from 2019; COVID ended secular stagnation.",
+     "claim_ids": [
+      "MT084-C03-1",
+      "MT084-C03-2",
+      "MT084-C02-4"
+     ]
+    },
+    {
+     "premise": "Trends outlast consensus commentary: widely held bearish calls (e.g. Swiss franc/yen crosses) can be wrong for years while the trend persists.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Anecdote: the Swiss franc/yen bearish call heard 'so many times in the last two years' while it kept rising.",
+     "claim_ids": [
+      "MT084-C04-2",
+      "MT084-C04-1"
+     ]
+    },
+    {
+     "premise": "The 1980-2020 regime was a 40-year disinflation / great moderation driven by Volcker, China's trade entry, Soviet collapse, free-market consensus and central bank independence; since 2020 inflation is higher, stickier and shock-prone and the bond-equity correlation is less stable and more positive.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical narrative; change in bond market behaviour; no formal test given on the show.",
+     "claim_ids": [
+      "MT084-C10-1",
+      "MT084-C10-2",
+      "MT084-C10-6"
+     ]
+    },
+    {
+     "premise": "Long-term yields are set by the savings-investment balance: excess savings and capital-light tech pushed them down (conundrum, negative yields), but AI/data-centre capex, defence spending and no appetite for austerity now push them up.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Observed global yield rises (JGB, German 25-year) without news; US 10-year ~4.1% as the outlier.",
+     "claim_ids": [
+      "MT084-C07-3",
+      "MT084-C09-1"
+     ]
+    },
+    {
+     "premise": "The 1990s tech-boom parallel to AI is superficial: then, productivity came from diffusing PCs while internet capex added demand; now AI adds to GDP arithmetically through spending but productivity evidence is mixed, and debt/GDP is double with the 1999 surplus gone.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "McKinsey adoption study (more trying than using), St. Louis Fed study (marginal gains), debt/GDP comparison.",
+     "claim_ids": [
+      "MT084-C07-4",
+      "MT084-C08-1",
+      "MT084-C08-2"
+     ]
+    },
+    {
+     "premise": "High debt combined with high equity valuations is a joint vulnerability: a recession steps debt/GDP up, households hold ~$40T equities so a bear market is a ~$20T wealth hit, raising the chance of fiscal dominance and financial repression.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Debt/GDP step pattern in each recession; former IMF chief economist estimate; 'I don't hear a lot of people joining the dots'.",
+     "claim_ids": [
+      "MT084-C10-3",
+      "MT084-C10-4",
+      "MT084-C10-5",
+      "MT084-C09-1"
+     ]
+    },
+    {
+     "premise": "Tariffs hit unemployment immediately, lower inflation first, then raise inflation over the following two years, so markets pricing Fed cuts with inflation above target are complacent.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "San Francisco Fed 40-year cross-country study; caveat that historical tariff moves were much smaller than 2025's.",
+     "claim_ids": [
+      "MT084-C07-1",
+      "MT084-C06-X1",
+      "MT084-C07-2",
+      "MT084-C06-2"
+     ]
+    },
+    {
+     "premise": "Central bank inflation-fighting credibility was hard won and is being squandered; once inflation is embedded (1970s) it is very hard to remove, and after the 2021-22 spike expectations are more at risk of de-anchoring.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "1970s precedent; Fed acknowledging de-anchoring as a theoretical risk; affordability debate (prices stay high though inflation moderated).",
+     "claim_ids": [
+      "MT084-C12-X1",
+      "MT084-C12-2",
+      "MT084-C12-R2"
+     ]
+    },
+    {
+     "premise": "Labels mislead: 'alternative' or 'private' does not mean diversifying (PE/VC are private growth; credit correlates with equities in declines), so assets should be classed as growth or diversifying with a high bar for diversifier.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Correlation behaviour of credit in up vs down equity markets; argument by classification.",
+     "claim_ids": [
+      "MT084-C10-7",
+      "MT084-C13-2",
+      "MT084-C14-4"
+     ]
+    },
+    {
+     "premise": "Investors under-allocate to true diversifiers because of capital constraints, viewing buckets in isolation, and judging strategies on a 15-year equity bull market; standalone hedge-fund optimisation drifts to convergent equity-like strategies.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "JP Morgan AM / GIC study; Markowitz logic; observation of institutional portfolios.",
+     "claim_ids": [
+      "MT084-C13-3",
+      "MT084-C14-2",
+      "MT084-C14-3",
+      "MT084-C13-1"
+     ]
+    },
+    {
+     "premise": "Typical institutional and wealth portfolios are concentrated in growth and stable inflation (80% growth-linked by capital, 90%+ by risk) and hold little protection against high inflation or deflationary deleveraging; tail risks are underpriced.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Description of endowment/pension and wealth-manager allocations; 1966-82 derating of equities; IMF-economist warnings.",
+     "claim_ids": [
+      "MT084-C14-4",
+      "MT084-C15-1",
+      "MT084-C15-2",
+      "MT084-C15-3",
+      "MT084-C15-R1"
+     ]
+    },
+    {
+     "premise": "Smoother returns matter more in a regime where a large cohort is near retirement; large drawdowns near retirement are worst.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Host's point, not contested.",
+     "claim_ids": [
+      "MT084-C16-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why long-term yields are rising outside the US",
+     "steps": [
+      {
+       "from": "AI data-centre/chip capex and rising defence spending",
+       "to": "higher investment demand for capital",
+       "why": "Demand for savings increases relative to the old excess-savings world.",
+       "claim_ids": [
+        "MT084-C07-3"
+       ]
+      },
+      {
+       "from": "No political appetite for austerity or fiscal restraint",
+       "to": "persistent government borrowing need",
+       "why": "Cost-of-living pressure demands more fiscal support, and the peace dividend of the 2000s is gone.",
+       "claim_ids": [
+        "MT084-C09-1"
+       ]
+      },
+      {
+       "from": "Savings-investment balance shifts from excess savings to scarce capital",
+       "to": "higher long-term yields (JGB, Bunds first; US lagging)",
+       "why": "The reverse of the Greenspan conundrum and 2010s negative-yield era.",
+       "claim_ids": [
+        "MT084-C07-3",
+        "MT084-C09-1"
+       ]
+      }
+     ],
+     "evidence": "Observed global yield trends; no formal test.",
+     "fails_when": "US 10-year stays near 4.1%; the US is noted as the outlier so far.",
+     "claim_ids": [
+      "MT084-C07-3",
+      "MT084-C09-1"
+     ]
+    },
+    {
+     "topic": "Debt plus equity valuation as a fragility channel",
+     "steps": [
+      {
+       "from": "Recession",
+       "to": "larger fiscal deficit and a step up in debt/GDP",
+       "why": "Tax revenue falls and spending rises; the ratio has stepped higher in every recession.",
+       "claim_ids": [
+        "MT084-C10-3"
+       ]
+      },
+      {
+       "from": "Equity bear market in a financialised economy",
+       "to": "large wealth loss and likelihood of recession",
+       "why": "Households hold about $40T of equities; a 2022-style bear market could erase $20T.",
+       "claim_ids": [
+        "MT084-C10-4"
+       ]
+      },
+      {
+       "from": "Debt already near sustainability concerns",
+       "to": "higher odds of fiscal dominance and financial repression; tails of runaway inflation or deflationary deleveraging",
+       "why": "Policy framework and central bank independence also under threat.",
+       "claim_ids": [
+        "MT084-C10-5",
+        "MT084-C10-6",
+        "MT084-C15-2"
+       ]
+      }
+     ],
+     "evidence": "Historical debt/GDP step pattern and the IMF economist estimate; qualitative.",
+     "fails_when": "Not stated; presented as a risk, not a forecast.",
+     "claim_ids": [
+      "MT084-C10-3",
+      "MT084-C10-4",
+      "MT084-C10-5",
+      "MT084-C10-6"
+     ]
+    },
+    {
+     "topic": "Tariff transmission to inflation and the Fed",
+     "steps": [
+      {
+       "from": "Tariff imposition",
+       "to": "immediate rise in unemployment and a fall in inflation",
+       "why": "Consumers step back.",
+       "claim_ids": [
+        "MT084-C07-1"
+       ]
+      },
+      {
+       "from": "Wholesalers/importers absorbing costs first",
+       "to": "delayed pass-through, inflation rising in the next two years",
+       "why": "Historical cross-country pattern; plausible delayed US impact.",
+       "claim_ids": [
+        "MT084-C07-1",
+        "MT084-C07-2"
+       ]
+      },
+      {
+       "from": "Fed cutting with inflation already above target and a split committee",
+       "to": "complacent market pricing and eroded inflation credibility",
+       "why": "Easing before pass-through is complete.",
+       "claim_ids": [
+        "MT084-C06-2",
+        "MT084-C07-2",
+        "MT084-C12-X1"
+       ]
+      }
+     ],
+     "evidence": "SF Fed 40-year study applied by analogy.",
+     "fails_when": "Study moves were much smaller than 2025 tariffs, so the pattern may mis-size today's effects.",
+     "claim_ids": [
+      "MT084-C07-1",
+      "MT084-C06-X1"
+     ]
+    },
+    {
+     "topic": "Why trend following does well when inflation surprises",
+     "steps": [
+      {
+       "from": "Inflation expectations become less anchored or unpredictable",
+       "to": "sustained repricing in bonds, currencies, commodities",
+       "why": "Higher sensitivity after 2021-22 means shocks propagate.",
+       "claim_ids": [
+        "MT084-C12-1",
+        "MT084-C12-2"
+       ]
+      },
+      {
+       "from": "Persistent price moves",
+       "to": "trend following profits when inflation is 1 pp above or below its two-year average",
+       "why": "Paper finds trend stands out among strategies in those episodes.",
+       "claim_ids": [
+        "MT084-C12-3"
+       ]
+      }
+     ],
+     "evidence": "Paper's conditional analysis of inflation surprises.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT084-C12-1",
+      "MT084-C12-3"
+     ]
+    },
+    {
+     "topic": "Why the adaptive portfolio compounds better than 60/40",
+     "steps": [
+      {
+       "from": "Adaptive strategies add risk when equities trend up and cut it when conditions change",
+       "to": "rolling equity beta swinging from negative to above one",
+       "why": "Trend acts as a midfielder, not purely defence.",
+       "claim_ids": [
+        "MT084-C11-1",
+        "MT084-C11-3"
+       ]
+      },
+      {
+       "from": "Smaller drawdowns in 2008, 2020, 2022",
+       "to": "compounding from a higher base after recoveries",
+       "why": "60/40 suffers 20-30% in 2022 and equities 50% in 2008.",
+       "claim_ids": [
+        "MT084-C15-4"
+       ]
+      },
+      {
+       "from": "Balanced risk across growth, inflation and deflation scenarios",
+       "to": "robustness rather than outperformance in every period",
+       "why": "2015-2019 was best for 60/40; the design targets the next 10 years under uncertainty.",
+       "claim_ids": [
+        "MT084-C15-5",
+        "MT084-C16-1"
+       ]
+      }
+     ],
+     "evidence": "Backtest since 1990 versus 60/40 (hypothetical); better even in the disinflation period.",
+     "fails_when": "Underperforms in strong-bond, low-inflation bull periods such as 2015-2019.",
+     "claim_ids": [
+      "MT084-C15-4",
+      "MT084-C15-5",
+      "MT084-C16-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Allocate risk 40% to growth, 40% to adaptive strategies (trend, macro), 20% to diversifying assets and strategies.",
+     "why": "Growth-oriented over the long run, with diversifiers for risk-adjusted return and a high adaptive share to reflect the new macro regime.",
+     "claim_ids": [
+      "MT084-C11-2",
+      "MT084-C15-R0"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Think in risk contribution, not capital weights; choose the best risk-adjusted blend first, then set the risk level with leverage or deleverage (futures, return stacking, portable alpha).",
+     "why": "Markowitz logic; capital constraints otherwise force equity as the only way to raise risk.",
+     "claim_ids": [
+      "MT084-C14-1",
+      "MT084-C14-2",
+      "MT084-C16-3",
+      "MT084-C11-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Treat adaptive strategies as the mechanism that tilts the portfolio's risk posture, not as a crisis-hedge bucket; target ~8% tracking error to 60/40 (CalPERS ~4% to 75/25).",
+     "why": "More flexibility than a total-portfolio approach anchored to a reference portfolio.",
+     "claim_ids": [
+      "MT084-C11-1",
+      "MT084-C12-4",
+      "MT084-C13-1"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Class assets only as growth or diversifying, with a higher bar for diversifiers; private equity and venture capital count as growth.",
+     "why": "Avoid false diversification from labels.",
+     "claim_ids": [
+      "MT084-C13-2",
+      "MT084-C10-7"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Judge diversifying strategies on a total-portfolio view and not on the past 15-year equity bull market; show results across eras including 2015-2019.",
+     "why": "Standalone or bull-market judgement biases toward convergent equity-like strategies.",
+     "claim_ids": [
+      "MT084-C13-3",
+      "MT084-C14-3",
+      "MT084-C15-5"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Rebalance wealth portfolios away from 50-60% equities, 20% fixed income with little gold/hedge funds toward inflation and deflation protection.",
+     "why": "Tail risks are underpriced and portfolios are unprepared.",
+     "claim_ids": [
+      "MT084-C15-3",
+      "MT084-C15-2"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Reclassify return-stacked products as 'unconstrained multiasset' rather than 'levered multiasset'.",
+     "why": "The leverage label can restrict platform distribution; the products integrate long/short and leverage.",
+     "claim_ids": [
+      "MT084-C17-1"
+     ]
+    }
+   ],
+   "evidence_style": "Mix of historical episodes and narrative regime analysis, cited third-party studies (SF Fed, McKinsey, St. Louis Fed, JPM/GIC), and a hypothetical backtest since 1990 of his own paper portfolio; says he runs such a portfolio with his own money.",
+   "current_views": [
+    {
+     "view": "Hassett is the likely next Fed chair (Polymarket ~70%, peaked ~80%) and would likely be more dovish.",
+     "as_of": "2025-12 (recording around 2 Dec 2025)",
+     "reasoning": "Betting-market moves are read as informed money; Hassett is a supply-side economist aligned with the administration's productivity-boom view.",
+     "claim_ids": [
+      "MT084-C01-1",
+      "MT084-C01-2"
+     ]
+    },
+    {
+     "view": "Markets are complacent about Fed cuts with inflation above target and tariff pass-through still to come; the Fed is split.",
+     "as_of": "2025-12",
+     "reasoning": "SF Fed study pattern; stalled progress to 2%.",
+     "claim_ids": [
+      "MT084-C06-2",
+      "MT084-C07-2",
+      "MT084-C07-1"
+     ]
+    },
+    {
+     "view": "A yen carry unwind would be negative for trend followers who are short yen, especially crosses, with severity depending on speed and context.",
+     "as_of": "2025-12",
+     "reasoning": "Trend followers have been positioned short yen during a persistent, prolonged weakness.",
+     "claim_ids": [
+      "MT084-C04-1",
+      "MT084-C04-3"
+     ]
+    },
+    {
+     "view": "Global bond yields are trending higher and the US may follow; the AI/1990s equity parallel is superficial and the backdrop is riskier.",
+     "as_of": "2025-12",
+     "reasoning": "Savings-investment shift, high debt, elevated valuations.",
+     "claim_ids": [
+      "MT084-C07-3",
+      "MT084-C07-4",
+      "MT084-C08-1",
+      "MT084-C08-2"
+     ]
+    },
+    {
+     "view": "Trend following need not be permanently hurt by policy reversals; the question is unknowable but past choppy phases passed.",
+     "as_of": "2025-12",
+     "reasoning": "Precedent from 2012 and 2019-2020.",
+     "claim_ids": [
+      "MT084-C03-1",
+      "MT084-C03-2",
+      "MT084-C02-4"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host, Top Traders Unplugged; former CTA manager; runs trend barometer",
+   "speaker_note": "Host who also states views on trend, fed independence and market structure; most data recitations (index performance, SocGen cutoffs) are factual reporting.",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "regime_detection",
+    "behavioral_sentiment",
+    "portfolio_construction_stacking",
+    "research_robustness_overfitting"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Intuition that policy-reversal chop favours short-term trading is wrong in practice: short-term trend strategies had a very bad 2025.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "SocGen short-term traders index -5.41% YTD, large for its volatility.",
+     "claim_ids": [
+      "MT084-C03-3",
+      "MT084-C05-1"
+     ]
+    },
+    {
+     "premise": "A few discrete events can determine a trend manager's year (e.g. Liberation Day), so evaluation should take a long-term view.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Conversation with another manager whose outperformance came around Liberation Day.",
+     "claim_ids": [
+      "MT084-C03-4"
+     ]
+    },
+    {
+     "premise": "Trend should do well when inflation is unstable even if not high.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Intuition posed as a question; he is unsure whether research exists.",
+     "claim_ids": [
+      "MT084-C12-1"
+     ]
+    },
+    {
+     "premise": "The biggest investor mistake is assuming present conditions persist (Marks) and financial systems always break down (White).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Quotes of Howard Marks and Bill White.",
+     "claim_ids": [
+      "MT084-C09-2",
+      "MT084-C09-3"
+     ]
+    },
+    {
+     "premise": "The stock-bond correlation turns positive whenever rates exceed about 3-4%, across 125 years of data.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Long historical data, recalled not shown.",
+     "claim_ids": [
+      "MT084-C11-4"
+     ]
+    },
+    {
+     "premise": "Closeness of the likely Fed chair to the administration puts Fed independence in doubt.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Observation that the candidate defends administration policy on TV.",
+     "claim_ids": [
+      "MT084-C02-1"
+     ]
+    },
+    {
+     "premise": "Crabel's largest strategy now being trend, and the high SocGen AUM cutoffs, suggest long-term trend is more viable than short-term and large managers dominate indices.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Index membership observations; flagged as his own words.",
+     "claim_ids": [
+      "MT084-C05-3",
+      "MT084-C05-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Monitor a trend barometer (39 on 1 Dec 2025: neutral-to-weak) and index performance as a pulse of the CTA industry.",
+     "why": "Gives a read on near-term trend manager performance.",
+     "claim_ids": [
+      "MT084-C04-4",
+      "MT084-C04-5",
+      "MT084-C05-1"
+     ]
+    }
+   ],
+   "evidence_style": "Industry data points (indices, barometer, AUM cutoffs), anecdotes from other guests, and quoted authorities.",
+   "current_views": [
+    {
+     "view": "Trend followers had five or six consecutive positive months into Nov 2025 after a tough start; 2025 indices are about flat (SocGen CTA -1.6%, Trend +0.2%) versus MSCI World +20.7%.",
+     "as_of": "2025-12-02",
+     "reasoning": "Reported data.",
+     "claim_ids": [
+      "MT084-C04-5",
+      "MT084-C05-1"
+     ]
+    },
+    {
+     "view": "Vanguard allowing crypto funds is positive for crypto distribution; a possible MSCI removal of Strategy could force index-tracker selling.",
+     "as_of": "2025-12",
+     "reasoning": "Distribution and index mechanics.",
+     "claim_ids": [
+      "MT084-C02-2",
+      "MT084-C02-3"
+     ]
+    },
+    {
+     "view": "Trend exposure to Japan may sit more in JGBs than outright yen.",
+     "as_of": "2025-12",
+     "reasoning": "Offered as a twist, not verified.",
+     "claim_ids": [
+      "MT084-C04-3"
+     ]
+    },
+    {
+     "view": "AI adoption is widespread (McKinsey: 20% in 2017 to 88%).",
+     "as_of": "2025-12",
+     "reasoning": "Survey exhibit.",
+     "claim_ids": [
+      "MT084-C08-3"
+     ]
+    },
+    {
+     "view": "The 'levered multiasset' Morningstar label could restrict distribution of return-stacked products.",
+     "as_of": "2025-12",
+     "reasoning": "Platforms may refuse leveraged-labelled products.",
+     "claim_ids": [
+      "MT084-C17-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Backtest results of the adaptive portfolio are hypothetical and given only qualitatively on the show (outperformance since 1990 via smaller drawdowns); no Sharpe, costs or implementation detail stated.",
+   "claim_ids": [
+    "MT084-C15-4",
+    "MT084-C11-2"
+   ]
+  },
+  {
+   "issue": "The SF Fed tariff study uses much smaller historical tariff moves than the 2025 US tariffs; the claim of delayed inflation is applied by analogy and the speaker also says it is 'plausible'.",
+   "claim_ids": [
+    "MT084-C07-1",
+    "MT084-C06-X1"
+   ]
+  },
+  {
+   "issue": "The $20T wealth-loss figure is attributed to a former IMF chief economist, not derived by the speaker.",
+   "claim_ids": [
+    "MT084-C10-4"
+   ]
+  },
+  {
+   "issue": "Host's claim that trend does better when inflation is unstable is intuition; Dunne's paper provides only a 1 pp surprise test.",
+   "claim_ids": [
+    "MT084-C12-1",
+    "MT084-C12-3"
+   ]
+  },
+  {
+   "issue": "Inconsistency in reasoning: US yields flagged as rising pressure yet the US 10-year (4.1%) is the outlier; no mechanism given for why the US lags.",
+   "claim_ids": [
+    "MT084-C07-3"
+   ]
+  },
+  {
+   "issue": "Claim that Crabel's growth in trend shows long-term strategies are more viable than short-term is the host's inference from one firm.",
+   "claim_ids": [
+    "MT084-C05-3",
+    "MT084-C06-1"
+   ]
+  },
+  {
+   "issue": "Prediction-market inference that Hassett's rise reflects informed money is speculation.",
+   "claim_ids": [
+    "MT084-C01-1"
+   ]
+  },
+  {
+   "issue": "Trend barometer details and index AUM cutoffs are factual updates with no forecasting content.",
+   "claim_ids": [
+    "MT084-C04-4",
+    "MT084-C05-2"
+   ]
+  },
+  {
+   "issue": "The comparison with the 125-year stock-bond correlation threshold of 3-4% is stated from memory without a source.",
+   "claim_ids": [
+    "MT084-C11-4"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs said to lead prices: inflation surprises versus two-year average (trend payoff), Fed chair appointment and path of cuts versus inflation above target, tariff pass-through over 2 years, savings-investment balance shown in global long yields (JGB, Bund, US 10-year), debt/GDP and equity valuation (fiscal dominance risk), stock-bond correlation sign tied to rate level above 3-4%. Horizons are quarters to a decade; portfolio-level robustness is framed over 'the next 10 years'.",
+ "reader_inferences": [
+  "(reader) Dunne's thesis is a chain from regime change (higher, stickier inflation) to unstable stock-bond correlation to the need for flexible risk-posture strategies; the logical weak point is that the evidence for the new regime is mostly narrative.",
+  "(reader) The 40/40/20 split by risk is a normative design rather than an optimised result; no optimisation procedure is described.",
+  "(reader) The tariff-inflation view is a delayed-effect argument that would be falsified if inflation does not rise over the following two years.",
+  "(reader) Host and guest are aligned throughout; there is no substantive disagreement, only differences of emphasis (host questions on AI adoption, fiscal dominance and inflation instability are answered by the guest, not contested)."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT084-C15-R1",
+   "chunk": "C15",
+   "speaker": "Alan Dunne",
+   "quote": "It's that the tail risks are underpriced.",
+   "claim": "The consequence of a growth-and-stable-inflation concentration is that tail risks (runaway inflation or deflationary deleveraging) are underpriced, beyond the change in bond-equity correlation.",
+   "mechanism": "behavioral",
+   "asset_class": "multi-asset",
+   "indicator": "portfolio exposure to inflation and deflation tails",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "Concentrated growth portfolios assume the disinflation regime persists",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT084-C12-R2",
+   "chunk": "C12",
+   "speaker": "Alan Dunne",
+   "quote": "Prices have stayed high even though the inflation rate has has has moderated.",
+   "claim": "Affordability is the big US talking point because price levels stay high even though the inflation rate has moderated, adding to sensitivity about inflation.",
+   "mechanism": "behavioral",
+   "asset_class": "rates",
+   "indicator": "price level and affordability sentiment",
+   "horizon": "months",
+   "direction": "",
+   "conditions": "Post 2021-22 inflation spike",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT084-C15-R0",
+   "chunk": "C15",
+   "speaker": "Alan Dunne",
+   "quote": "it is a growth oriented portfolio over the long term but you diversification for enhancing the risk adjusted returns",
+   "claim": "The 40/40/20 portfolio is growth-oriented over the long term, with diversification added to enhance risk-adjusted returns and a high adaptive allocation reflecting the changed macro regime.",
+   "mechanism": "portfolio construction",
+   "asset_class": "multi-asset",
+   "indicator": "risk contribution by bucket",
+   "horizon": "years",
+   "direction": "",
+   "conditions": "Changed macro environment",
+   "testable": "partly - backtest",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ],
+ "source_id": "MT084"
+}
