@@ -1,0 +1,1698 @@
+{
+ "name": "Stanley Druckenmiller",
+ "sources": [
+  "MT153",
+  "MT152",
+  "MT148",
+  "MT149",
+  "MT046",
+  "MT151",
+  "MT085",
+  "MT069"
+ ],
+ "period": "October 2018 (MT153, uploaded 2018-11-13) - MT069 (recorded date not stated, ledger dates it 2025; uploaded 2026-02-27)",
+ "one_paragraph": "Druckenmiller is a top-down macro investor who says he works from the bottom up: his main driver is liquidity and policy, meaning the rate of change of central-bank balance sheets, financial conditions, and Fed mistakes, which he reads against long historical analogies (1970s, 1999-2000, Volcker 1982, Japan, 500 years of bubbles after rates below 2%). From 2018 to mid-2023 his central case was that years of free money built a debt-fuelled bubble that tightening would break (hard landing delayed, not cancelled); by late 2024 he had swung to fearing that the Fed declared victory too early (1970s template), was short bonds, saw no near-term weakness in company reports, and by about 2025 was long risk assets, copper, short the dollar and short bonds as a hedge, with equity valuations at the top of the range. He makes money by anticipating what will change in 18-24 months and how investors will see it, taking a meaningful starter position on intuition then investigating, sizing up hard only on rare asymmetric 'fat pitches' (payoff size over hit rate), cutting losers regardless of cost, and trading five asset classes so he can sit out equities when he has no edge. He repeatedly says the price-action signals he used for 35 years (price versus news, group strength) have decayed because of algos and central banks, that emotion rather than knowledge is his main error source, and that the US fiscal reckoning is real but cannot be timed or traded over three to six months.",
+ "fingerprint": [
+  {
+   "tag": "macro_fundamental_topdown",
+   "count": 8
+  },
+  {
+   "tag": "policy_reaction_central_banks",
+   "count": 8
+  },
+  {
+   "tag": "kelly_or_conviction_sizing",
+   "count": 8
+  },
+  {
+   "tag": "liquidity_flows",
+   "count": 6
+  },
+  {
+   "tag": "debt_cycle_long_term",
+   "count": 6
+  },
+  {
+   "tag": "market_internals_leading",
+   "count": 5
+  },
+  {
+   "tag": "valuation_contrarian",
+   "count": 4
+  },
+  {
+   "tag": "behavioral_sentiment",
+   "count": 4
+  },
+  {
+   "tag": "regime_detection",
+   "count": 4
+  },
+  {
+   "tag": "fiscal_dominance",
+   "count": 3
+  },
+  {
+   "tag": "structural_themes",
+   "count": 3
+  },
+  {
+   "tag": "bottom_up_fundamental",
+   "count": 2
+  },
+  {
+   "tag": "geopolitics",
+   "count": 2
+  },
+  {
+   "tag": "portfolio_construction_stacking",
+   "count": 1
+  }
+ ],
+ "core_beliefs": [
+  {
+   "belief": "Liquidity and policy drive markets: the rate of change of central-bank balance sheets, money supply and financial conditions matters more than rate levels, policy out of step with circumstances creates inflation and bubbles, and one does not fight the Fed. Most of his large profits came from central-bank mistakes.",
+   "times_stated": 7,
+   "sources": [
+    "MT153",
+    "MT152",
+    "MT148",
+    "MT149",
+    "MT046",
+    "MT151",
+    "MT085"
+   ],
+   "claim_ids": [
+    "MT153-C12-2",
+    "MT152-C04-1",
+    "MT148-C01-1",
+    "MT149-C02-2",
+    "MT046-C04-4",
+    "MT151-C01-2",
+    "MT085-C01-2"
+   ],
+   "stable": "stable as a framework; the direction applied flips: tightening is the danger in 2018-2023, while in late 2024 the worry is that financial conditions are already loose and further easing re-ignites inflation"
+  },
+  {
+   "belief": "Years of free money and QE create debt-funded bubbles, malinvestment and zombie balance sheets that stay hidden (few bankruptcies) until rates rise; bubbles are followed by economic trouble (500 years of history, rates below 2%).",
+   "times_stated": 5,
+   "sources": [
+    "MT153",
+    "MT152",
+    "MT148",
+    "MT149",
+    "MT046"
+   ],
+   "claim_ids": [
+    "MT153-C06-4",
+    "MT152-C01-4",
+    "MT148-C02-X1",
+    "MT149-C01-1",
+    "MT046-C03-1"
+   ],
+   "stable": "stable 2018-2023; not restated in MT151, MT085 or MT069 (2024-25), where he says he was only half right over the last two years"
+  },
+  {
+   "belief": "A hard landing / recession is more likely than a soft landing: soft landings are rare, none occurred once inflation exceeded 4.5-5%, and they followed proactive Fed policy. Delay from liquidity lags does not change the odds.",
+   "times_stated": 3,
+   "sources": [
+    "MT148",
+    "MT149",
+    "MT046"
+   ],
+   "claim_ids": [
+    "MT148-C02-1",
+    "MT148-C02-2",
+    "MT148-C02-3",
+    "MT149-C02-3",
+    "MT046-C04-1"
+   ],
+   "stable": "evolved - stated June 2022 to June 2023 (and as a bear-market/amber-signal view in December 2018); by late 2024 the hard landing is not repeated, company reports show no weakness over three to six months, and he calls himself half right in the last two years (MT151-C01-R1)"
+  },
+  {
+   "belief": "Stocks lead the economy by 6-12 months and the inside of the market (cyclicals versus defensives, leading industries such as homebuilders, trucking and retail, credit-sensitive equities) is a cleaner economic signal than the index, bonds or lagging data such as employment.",
+   "times_stated": 3,
+   "sources": [
+    "MT152",
+    "MT148",
+    "MT153"
+   ],
+   "claim_ids": [
+    "MT152-C02-1",
+    "MT152-C05-1",
+    "MT148-C03-1",
+    "MT148-C03-2",
+    "MT153-C04-2"
+   ],
+   "stable": "evolved - core method in 2018-2022; from 2023 the signals he cites are trucking and housing anecdotes, and by 2024 company conversations and financial conditions replace the stock-internals read"
+  },
+  {
+   "belief": "His price-action edges (price versus news, group relative strength, technicals) have decayed because of algos, central-bank cancelling of signals and wider learning of the rules; short-horizon prices are noise.",
+   "times_stated": 5,
+   "sources": [
+    "MT153",
+    "MT152",
+    "MT148",
+    "MT151",
+    "MT069"
+   ],
+   "claim_ids": [
+    "MT153-C04-3",
+    "MT153-C05-2",
+    "MT152-C11-1",
+    "MT148-C04-4",
+    "MT069-C05-3"
+   ],
+   "stable": "evolved and strengthening - 'main discipline for 35 years' (Oct 2018), 'diminished' (Dec 2018), 'weakened' (June 2022), technical analysis about 20% as effective (MT069); partly contradicted by his use of technical reads in MT151 (sold Nvidia on flattening rate of change) and MT069 (biotech momentum on the charts)"
+  },
+  {
+   "belief": "What matters is the asymmetry of payoffs (how much you make when right versus lose when wrong), not hit rate; sizing is 70-80% of returns (slugging percentage over batting average, learned from Soros).",
+   "times_stated": 6,
+   "sources": [
+    "MT153",
+    "MT148",
+    "MT149",
+    "MT151",
+    "MT085",
+    "MT069"
+   ],
+   "claim_ids": [
+    "MT153-C05-3",
+    "MT148-C08-1",
+    "MT149-C06-3",
+    "MT151-C08-2",
+    "MT085-C02-5",
+    "MT069-C02-4"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Invest first, investigate later: take a meaningful but not earth-shaking starter position when an idea fits a standing view or a theme signal, then research and add if confirmed or sell if wrong, because markets are fast and 60-70% of a move can happen in 2-3 weeks.",
+   "times_stated": 5,
+   "sources": [
+    "MT153",
+    "MT148",
+    "MT151",
+    "MT085",
+    "MT069"
+   ],
+   "claim_ids": [
+    "MT153-C10-3",
+    "MT148-C09-2",
+    "MT151-C04-6",
+    "MT085-C02-1",
+    "MT069-C04-3"
+   ],
+   "stable": "stable (starter size: about a third in 2018, 20-25% of the fund in the 1992 pound story, small-but-meaningful in 2025)"
+  },
+  {
+   "belief": "Value the situation 18-24 months ahead (look where the puck is going) and ask whether prices reflect it; investing in the present is the biggest mistake and returns come from anticipating change and how investors will perceive it.",
+   "times_stated": 4,
+   "sources": [
+    "MT148",
+    "MT151",
+    "MT046",
+    "MT069"
+   ],
+   "claim_ids": [
+    "MT148-C13-2",
+    "MT148-C13-3",
+    "MT151-C05-2",
+    "MT046-C05-3",
+    "MT069-C01-1"
+   ],
+   "stable": "stable (18-24 months in MT148 and MT151, 12-18 months for shorts in MT046)"
+  },
+  {
+   "belief": "The US fiscal path (entitlements plus interest, deficits near 7% of GDP at full employment) is unsustainable and reserve-currency status delays but does not cancel the reckoning; it cannot be timed and is not a trade over three to six months.",
+   "times_stated": 4,
+   "sources": [
+    "MT149",
+    "MT046",
+    "MT151",
+    "MT085"
+   ],
+   "claim_ids": [
+    "MT149-C08-1",
+    "MT149-C09-1",
+    "MT046-C01-2",
+    "MT151-C02-3",
+    "MT085-C01-3"
+   ],
+   "stable": "stable on the diagnosis; the timing hint evolves - entitlements plus interest above taxes in the 2040s-2050s (2023), refinancing wall so a problem is more likely late 2025 or early 2026 (Nov 2024); not restated in MT069"
+  },
+  {
+   "belief": "Cut a position when the reason is gone regardless of cost; cost basis is irrelevant; stay open-minded, change views when facts or prices disagree, and do not defend credibility by sticking to a plan.",
+   "times_stated": 4,
+   "sources": [
+    "MT153",
+    "MT152",
+    "MT151",
+    "MT046"
+   ],
+   "claim_ids": [
+    "MT153-C04-3",
+    "MT152-C07-R2",
+    "MT152-C06-1",
+    "MT151-C07-2",
+    "MT046-C04-X1"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Wait for a fat pitch and do not bet big when down or without an edge: sit out any asset class without conviction, keep gross and net low, and preserve capital for the dispersion after a downturn.",
+   "times_stated": 5,
+   "sources": [
+    "MT153",
+    "MT148",
+    "MT149",
+    "MT046",
+    "MT151"
+   ],
+   "claim_ids": [
+    "MT153-C11-3",
+    "MT148-C05-X1",
+    "MT149-C07-2",
+    "MT046-C08-1",
+    "MT151-C07-6"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Shorting is asymmetric and treacherous: shorting a bubble early is ruinous because mania lifts laggards and easing feeds the bubble; bear-market shorts get squeezed in sharp rallies.",
+   "times_stated": 5,
+   "sources": [
+    "MT153",
+    "MT152",
+    "MT148",
+    "MT046",
+    "MT151"
+   ],
+   "claim_ids": [
+    "MT153-C12-3",
+    "MT152-C07-3",
+    "MT148-C05-3",
+    "MT046-C05-4",
+    "MT151-C11-1"
+   ],
+   "stable": "stable (March 1999 internet short is the recurring example: $600M lost in 3-4 weeks)"
+  },
+  {
+   "belief": "Emotion, not knowledge, is his main source of error (fear of missing out, chasing losses, selling winners); a clean break from screens after big losses restores clarity (four-month break before the 2000 Treasury trade).",
+   "times_stated": 5,
+   "sources": [
+    "MT153",
+    "MT152",
+    "MT148",
+    "MT151",
+    "MT069"
+   ],
+   "claim_ids": [
+    "MT153-C11-3",
+    "MT152-C13-2",
+    "MT148-C11-3",
+    "MT151-C11-X1",
+    "MT069-C05-2"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "AI is a real secular theme, but how to play it and who wins is unresolved; talent flow (where the brightest young engineers and analysts go) flags big themes early.",
+   "times_stated": 4,
+   "sources": [
+    "MT046",
+    "MT151",
+    "MT085",
+    "MT069"
+   ],
+   "claim_ids": [
+    "MT046-C05-2",
+    "MT046-C05-7",
+    "MT151-C03-5",
+    "MT085-C01-6",
+    "MT069-C04-2"
+   ],
+   "stable": "evolved - AI leaders dominate the long book (June 2023) -> neutral on the group, sold Nvidia at about $2 trillion (late 2024) -> AI only small amounts in an eclectic basket with heated 1999-2000 comparisons and a rotation to biotech (MT069)"
+  },
+  {
+   "belief": "Macro investors have a structural bearish bias because they earn the most in bear markets, but the math favours being long; bulls make more money than bears over time and the bearish bias must be managed.",
+   "times_stated": 3,
+   "sources": [
+    "MT153",
+    "MT152",
+    "MT148"
+   ],
+   "claim_ids": [
+    "MT153-C12-3",
+    "MT152-C13-1",
+    "MT148-C16-2",
+    "MT148-C16-R3"
+   ],
+   "stable": "stable - and consistent with the later move to long risk assets (MT069)"
+  },
+  {
+   "belief": "Concentrate and trade five or six asset classes (equities, bonds, currencies, commodities, credit); put the biggest bets in liquid markets where he can change his mind, and use bonds and currencies when equities offer nothing.",
+   "times_stated": 4,
+   "sources": [
+    "MT153",
+    "MT046",
+    "MT151",
+    "MT148"
+   ],
+   "claim_ids": [
+    "MT153-C09-3",
+    "MT046-C07-2",
+    "MT151-C07-6",
+    "MT151-C08-1",
+    "MT148-C05-X2"
+   ],
+   "stable": "stable"
+  }
+ ],
+ "mechanisms": [
+  {
+   "name": "Free money to bubble to rate shock to credit accident and hard landing",
+   "chain": [
+    "zero rates and QE (hurdle rate gone, risk curve pushed out, bankruptcies suppressed) -> debt explosion, malinvestment, speculative excess, record margins and valuations",
+    "fast tightening (500bp in a year, QT) against free-money balance sheets -> hidden misallocation exposed: bank asset-liability mismatch (Treasuries bought at 1-2% funded at about 5%), commercial real estate, zombie companies, covenant-light credit",
+    "credit tightens and bankruptcies catch up -> profits fall 20%+ from record margins, unemployment above 5% -> hard landing"
+   ],
+   "fails_when": "Soft landing or a proactive Fed; excess liquidity and savings keep spending going; he says the air can be let out of the balloon without a crisis (possible but hard) and that he could be wrong; in Oct 2024 he concedes he was half right over the prior two years.",
+   "sources": [
+    "MT153",
+    "MT152",
+    "MT148",
+    "MT149",
+    "MT046"
+   ],
+   "claim_ids": [
+    "MT153-C06-4",
+    "MT152-C01-4",
+    "MT148-C02-4",
+    "MT149-C02-X3",
+    "MT046-C03-3"
+   ]
+  },
+  {
+   "name": "Liquidity withdrawal and lags: why the hard landing is late",
+   "chain": [
+    "central-bank purchases fall from about $1 trillion a year to zero, or QT adds to tightening even without hikes -> rate-of-change liquidity shock, with M2 growth falling (7.5% to 4% in Dec 2018)",
+    "stock of excess liquidity ($10T Covid stimulus, $2.5T excess deposits, BoJ bond purchases, TGA drawdown, student-loan pause) -> tightening works with long and variable lags and cushions spending",
+    "TGA rebuild, QT and end of the student-loan pause reverse the boosts -> liquidity withdrawn; a longer delay raises the Fed terminal rate and inflation stickiness -> higher, not lower, hard-landing odds"
+   ],
+   "fails_when": "Timing unknown: he moved the downturn date several times in 2023 (Q4 2023, pulled forward after SVB, back to end-2023); his July/August 2018 short on seasonality plus balance-sheet rate of change was early and lost.",
+   "sources": [
+    "MT153",
+    "MT152",
+    "MT149",
+    "MT046"
+   ],
+   "claim_ids": [
+    "MT153-C12-2",
+    "MT153-C12-1",
+    "MT152-C04-2",
+    "MT149-C03-2",
+    "MT046-C04-2"
+   ]
+  },
+  {
+   "name": "Market-internals read of the economy",
+   "chain": [
+    "stock groups lead fundamentals by 6-12 months -> cyclicals (autos, builders, banks, trucking, retail) versus defensives, credit-sensitive equities (AIG, Blackstone), credit spreads, yield curve and M2",
+    "several leaders weaken together (homebuilders -50%, trucking -40% despite record earnings) -> economic trouble 6-12 months out; the signal is amber, not red, until confirmed",
+    "do not call recession immediately -> lead time is 6-12 months"
+   ],
+   "fails_when": "Bond and index signals are contaminated by central banks and algos; Covid distorted retail; coincident data stay strong; he says he may be completely wrong three to four months later.",
+   "sources": [
+    "MT152",
+    "MT148"
+   ],
+   "claim_ids": [
+    "MT152-C02-1",
+    "MT152-C02-2",
+    "MT152-C02-3",
+    "MT152-C02-4",
+    "MT148-C03-1"
+   ]
+  },
+  {
+   "name": "Fed pause risk-reward asymmetry",
+   "chain": [
+    "leading indicators amber -> pause hikes and slow balance-sheet runoff",
+    "if indicators are wrong and the Fed pauses -> small credibility loss, hiking can resume in 2-3 months",
+    "if indicators are right and the Fed keeps hiking and shrinking -> cost five to ten times larger because hidden malinvestment makes the downturn bigger"
+   ],
+   "fails_when": "Not stated beyond the scenario; interviewer objects that 25bp makes little difference and he answers with rate of change and cumulative tightening.",
+   "sources": [
+    "MT152"
+   ],
+   "claim_ids": [
+    "MT152-C03-2",
+    "MT152-C03-X2",
+    "MT152-C04-1",
+    "MT152-C04-4",
+    "MT152-C05-X1"
+   ]
+  },
+  {
+   "name": "Fed error positioning: long Treasuries, short credit and financials, long secular growth",
+   "chain": [
+    "Fed mistake stalls the economy and brings QE and zero rates again -> 2-year yield could fall from 2.68% to 50-60bp (as 6.04% to 1.5-2% in 2000-01)",
+    "credit shorts lose if rates rise, so are paired with long Treasuries -> both pay in the same scenario",
+    "banks need rates up but equities fall when rates rise -> short financials; high yield at 5-6% against normal 8-9% has terrible risk-reward",
+    "slow growth makes 20-30% growers behave like long-duration bonds -> hold cloud software, which grows regardless of macro"
+   ],
+   "fails_when": "Shorts are squeezed in rallies; being early costs (short in July, three months early); high-multiple names suffer multiple compression in sell-offs (lost 1% while 20-30% short in October 2018); the Fed does not err.",
+   "sources": [
+    "MT152"
+   ],
+   "claim_ids": [
+    "MT152-C08-1",
+    "MT152-C07-6",
+    "MT152-C09-3",
+    "MT152-C09-5",
+    "MT152-C09-6"
+   ]
+  },
+  {
+   "name": "Dollar, rates and oil to earnings (Hyman regression)",
+   "chain": [
+    "rising dollar, interest rates and oil together -> bad for forward earnings (regression: currency 50%, oil 25%, rates 25%, leading earnings by a year)",
+    "in 2000 the regression gave earnings about -25% to -36% against Street +18%, with small-business clients reporting terrible business and the Fed tightening -> a 350% 10-year-equivalent Treasury position that made 40% in Q4 2000",
+    "stock rally that contradicts the regression and anecdotes -> more likely wrong"
+   ],
+   "fails_when": "Not stated; regression numbers vary by telling (-25%, -35%, -36%); used once as a trade, not as a repeated system.",
+   "sources": [
+    "MT153",
+    "MT148",
+    "MT151"
+   ],
+   "claim_ids": [
+    "MT153-C10-5",
+    "MT153-C11-1",
+    "MT153-C11-2",
+    "MT148-C11-1",
+    "MT151-C12-1"
+   ]
+  },
+  {
+   "name": "Premature inflation victory: 1970s template for bonds",
+   "chain": [
+    "inflation falls from about 8% to 3% after a recession, Fed declares victory and cuts 50bp with tight credit spreads, gold at highs and equities rising -> financial conditions ease into strength",
+    "Trump animal spirits, marginal tariffs, less immigrant labour -> inflation re-accelerates; the Fed, tied by guidance to a series of cuts, must reverse and hike",
+    "yields converge on nominal GDP (inflation 4.5% plus real growth 2.5-3% gives 6-7%) -> long bonds sell off, in the 1970s mostly on the second leg; possible trust event or failed Treasury auction"
+   ],
+   "fails_when": "The economy weakens or the Fed has really beaten inflation; he says he has no 2021-level conviction and takes the analogy with a grain of salt.",
+   "sources": [
+    "MT151"
+   ],
+   "claim_ids": [
+    "MT151-C01-3",
+    "MT151-C01-X1",
+    "MT151-C01-5",
+    "MT151-C01-6",
+    "MT151-C02-1"
+   ]
+  },
+  {
+   "name": "Fiscal reckoning and reserve-currency privilege",
+   "chain": [
+    "ageing and entitlements (present value about $200T versus $31T headline debt; fiscal gap 7.7% of GDP) plus higher rates -> interest plus entitlements exceed taxes by about 2040-2050",
+    "reserve-currency status (dollar rose in 2021-22 where sterling fell after Truss) -> no market discipline; mortgages under 4% and termed-out corporate debt hide the cost until a 2025-26 refinancing wall",
+    "persistent excess -> eventually the privilege itself is lost, via a trust event in Treasuries"
+   ],
+   "fails_when": "Timing is explicitly unknowable ('6 months or 6 years'); not tradable over 3-6 months; he holds only a modest dollar short in 2023.",
+   "sources": [
+    "MT149",
+    "MT046",
+    "MT151",
+    "MT085"
+   ],
+   "claim_ids": [
+    "MT149-C08-1",
+    "MT149-C08-2",
+    "MT046-C02-2",
+    "MT151-C02-4",
+    "MT085-C01-4"
+   ]
+  },
+  {
+   "name": "Peg between diverging economies: the one-way bet",
+   "chain": [
+    "booming Germany needs higher rates (Bundesbank inflation obsession) and slumping UK needs lower -> the pound/DM link cannot hold",
+    "short pound for six months costs about 0.5% in forward points -> small known cost, large payoff; start at 20-25% of the fund, go to 100% after the Bundesbank head's editorial, Soros pushes to 200%",
+    "UK hikes into a weak economy and fails; crowd arrival lifts forward points from 0.5% to 6-7% -> build early; afterwards buy gilts and British stocks (concentric circles)"
+   ],
+   "fails_when": "Not stated; the cheap cost disappears once the crowd arrives. Fixed-rate trades have no price momentum to confirm, so size must come from conviction alone.",
+   "sources": [
+    "MT153",
+    "MT151",
+    "MT085"
+   ],
+   "claim_ids": [
+    "MT153-C10-1",
+    "MT153-C10-2",
+    "MT151-C08-3",
+    "MT151-C08-4",
+    "MT085-C02-6"
+   ]
+  },
+  {
+   "name": "Theme discovery to beneficiary chain (AI)",
+   "chain": [
+    "top engineering graduates and young analysts move from crypto to AI (talent flow) -> early signal of a wave, buy a meaningful Nvidia position when it had fallen from 400 to 150, before ChatGPT",
+    "invest first, investigate later -> trade the beneficiaries chain (power, uranium) and second-order applications",
+    "firms fear rivals who invest -> capex persists; four or five modelers give the same answer so no single winner -> unclear how to play; he sold Nvidia at about $2 trillion on a technical flattening"
+   ],
+   "fails_when": "He credits 'total luck' for the timing; sold Nvidia at 800 (went to 1400) per MT069; tops cannot be known ex ante (bull flag versus top).",
+   "sources": [
+    "MT151",
+    "MT085",
+    "MT069"
+   ],
+   "claim_ids": [
+    "MT151-C03-6",
+    "MT151-C04-1",
+    "MT151-C04-2",
+    "MT085-C01-6",
+    "MT069-C04-2"
+   ]
+  },
+  {
+   "name": "Short bonds as a hedge against long risk assets, and a self-driven dollar decline",
+   "chain": [
+    "long equities, copper and other risk assets with US fiscal stimulus -> exposure to growth and inflation",
+    "disinflationary growth -> short bonds roughly break even, so risk assets can be held; if the Fed cuts into a booming economy with rising commodities, inflation takes off and the bond short pays",
+    "dollar at the top of its purchasing-power range with foreigners overloaded -> foreigners stop net buying US assets and the dollar falls without a sell-America event"
+   ],
+   "fails_when": "Not stated; implicit failure is a growth shock that lowers yields while equities fall (reader, see blind_spots).",
+   "sources": [
+    "MT069"
+   ],
+   "claim_ids": [
+    "MT069-C03-6",
+    "MT069-C03-X2",
+    "MT069-C03-3",
+    "MT069-C02-5"
+   ]
+  },
+  {
+   "name": "Two exits from a bubble: Volcker flush-out or Japan-style malaise",
+   "chain": [
+    "authorities allow creative destruction -> painful one to three years, then values return and decades of prosperity (Volcker 1982)",
+    "politicians avoid pain with more stimulus and debt -> permanent malaise as in Japan, with less fiscal and monetary room than in 1979-82",
+    "early Fed easing after inflation falls to 3-3.5% (Burns repeat, election year) -> stagflationary environment a few years out"
+   ],
+   "fails_when": "He says the outcome depends on the policy response over the next 6-9 months and he can argue for either 8% inflation or deflation in three years.",
+   "sources": [
+    "MT149",
+    "MT148"
+   ],
+   "claim_ids": [
+    "MT149-C10-1",
+    "MT149-C10-X1",
+    "MT149-C06-2",
+    "MT149-C03-3",
+    "MT148-C16-1"
+   ]
+  },
+  {
+   "name": "Algorithms degrade price-versus-news signals",
+   "chain": [
+    "algos built on standard-deviation and historical-factor models sell at three standard deviations against the start of trends -> group moves with no news (pharma example) and nonsense correlations",
+    "central banks cancel price signals (bond vigilantes) -> price versus news and bond divergence warn less than before",
+    "his response: lower weight on short-horizon price signals, more fundamental work, man plus machine, and treat tops as unknowable"
+   ],
+   "fails_when": "Over eight or nine months the market message is still useful (Trump election night); he says an algo-driven bear-market crash is untested and could even be an opportunity.",
+   "sources": [
+    "MT153",
+    "MT152",
+    "MT148"
+   ],
+   "claim_ids": [
+    "MT153-C05-1",
+    "MT153-C05-2",
+    "MT153-C05-5",
+    "MT152-C11-1",
+    "MT148-C04-4"
+   ]
+  }
+ ],
+ "playbook": [
+  {
+   "element": "signal",
+   "rule": "Monitor a set of leading indicators and call them amber, not red: cyclical-versus-defensive stock internals, yield curve, credit spreads and CDS, M2 growth, relative strength of credit-sensitive equities. Require several leaders (homebuilders, trucking, retail) to weaken together and allow 6-12 months of lead time.",
+   "why": "Together they predicted the last four recessions; coincident data and the index alone mislead.",
+   "sources": [
+    "MT152",
+    "MT148"
+   ],
+   "claim_ids": [
+    "MT152-C02-1",
+    "MT152-C02-2",
+    "MT152-C02-3",
+    "MT152-C02-4",
+    "MT148-C03-2"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Track liquidity items for timing: central-bank balance-sheet change, QT, M2, TGA, BoJ, excess savings, student-loan pause; plus anecdotes from CEOs and industry channels (trucking leads 6-8 months, housing).",
+   "why": "Liquidity changes lead economic and market turns; anecdotes show direction better than timing.",
+   "sources": [
+    "MT153",
+    "MT149",
+    "MT046"
+   ],
+   "claim_ids": [
+    "MT153-C12-1",
+    "MT149-C02-4",
+    "MT149-C02-5",
+    "MT149-C02-7",
+    "MT046-C04-2"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Do macro bottom-up: listen to what companies report for the next three to six months and add market-based financial conditions (dollar, long yields, credit spreads, gold, leadership breadth) as inputs. Narrow leadership is a yellow light, not a red one.",
+   "why": "Companies reveal the economy early; he calls himself a market animal rather than an economist.",
+   "sources": [
+    "MT151",
+    "MT085"
+   ],
+   "claim_ids": [
+    "MT151-C01-1",
+    "MT151-C01-2",
+    "MT151-C03-4",
+    "MT085-C01-1",
+    "MT085-C01-2"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Value the situation 18-24 months out (12-18 months for shorts) and compare with current prices; read price action versus news but with lower weight than in the past.",
+   "why": "Prices move on changes in expectations; investing in the present is the biggest mistake.",
+   "sources": [
+    "MT148",
+    "MT151",
+    "MT046",
+    "MT152"
+   ],
+   "claim_ids": [
+    "MT148-C13-2",
+    "MT151-C05-2",
+    "MT151-C05-3",
+    "MT046-C05-3",
+    "MT152-C11-3"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Spot themes early from talent flows (where top engineering graduates and young analysts go), then map the beneficiary chain and knock-on effects.",
+   "why": "Waves can be seen before prices move.",
+   "sources": [
+    "MT151",
+    "MT085",
+    "MT069"
+   ],
+   "claim_ids": [
+    "MT151-C03-6",
+    "MT151-C04-1",
+    "MT151-C09-7",
+    "MT085-C01-6",
+    "MT069-C04-2"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Time a short by seasonality plus liquidity change (balance-sheet rate of change); consider a big short around year-end if a Q4 blow-off coincides with EM stress. Plan to re-short a 15-20% bear-market rally because six-month post-bubble bear markets do not exist.",
+   "why": "Liquidity is the driver; history of post-bubble bear markets.",
+   "sources": [
+    "MT153",
+    "MT148"
+   ],
+   "claim_ids": [
+    "MT153-C12-1",
+    "MT153-C12-4",
+    "MT148-C12-1"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Build a thesis others lack, put on a starter position (about a third in 2018; 20-25% of the fund in the pound), and add heavily when price or evidence confirms; when no price confirmation exists (fixed rates) or conviction is overwhelming (2000 Treasuries) go all in at once. Leverage a one-way bet beyond fund size (Soros 200%).",
+   "why": "Slugging percentage over batting average; limited downside deserves leverage.",
+   "sources": [
+    "MT153",
+    "MT151",
+    "MT085"
+   ],
+   "claim_ids": [
+    "MT153-C10-3",
+    "MT153-C10-2",
+    "MT153-C11-2",
+    "MT151-C08-6",
+    "MT085-C02-5"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Concentrate: 15-20% of assets per position, sometimes 200-300% in macro positions, monitored daily. Size up when hot and down when cold; size up hot analysts, fade very cold technicians; do not trade a lot when down.",
+   "why": "Sizing is 70-80% of returns; streaks exist; stale positions cause trouble.",
+   "sources": [
+    "MT148",
+    "MT153"
+   ],
+   "claim_ids": [
+    "MT148-C08-1",
+    "MT148-C08-2",
+    "MT148-C08-3",
+    "MT148-C09-1",
+    "MT153-C11-3"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "With no fat pitch hold gross exposure around 60% and net about zero, avoid going crazy on the short side, and keep cash until conviction is high. Example fat pitch: short 2-year yield at 15bp with money supply growing 40%, downside 5bp, upside 200bp+.",
+   "why": "Avoid a 20-30% loss that would leave him unable to act when opportunities come.",
+   "sources": [
+    "MT149",
+    "MT046"
+   ],
+   "claim_ids": [
+    "MT149-C07-2",
+    "MT149-C06-3",
+    "MT149-C07-1",
+    "MT046-C08-1",
+    "MT046-C08-2"
+   ]
+  },
+  {
+   "element": "execution",
+   "rule": "Buy first, analyse later: take a meaningful but not earth-shaking position when an idea fits a macro view or theme, research over 2-3 weeks, sell if wrong, add if right. Use volatility from new market participants for entries and exit or reverse within days if evidence changes.",
+   "why": "Information spreads fast; 60-70% of a move can happen in 2-3 weeks; waiting causes paralysis.",
+   "sources": [
+    "MT148",
+    "MT151",
+    "MT085",
+    "MT069"
+   ],
+   "claim_ids": [
+    "MT148-C09-2",
+    "MT148-C09-3",
+    "MT151-C04-6",
+    "MT085-C02-2",
+    "MT069-C03-7"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Sell when the reason is gone regardless of cost; clean the slate and re-buy higher if needed. After a large loss step away from all price information to reset anchoring (four-month break in 2000). Stop torturing over drawdowns beyond about 48 hours and do not sell winners against plan out of emotion.",
+   "why": "Cost basis is irrelevant; emotion drove his worst errors.",
+   "sources": [
+    "MT151",
+    "MT148",
+    "MT069"
+   ],
+   "claim_ids": [
+    "MT151-C07-2",
+    "MT151-C07-X1",
+    "MT151-C06-3",
+    "MT148-C11-R1",
+    "MT069-C06-R1"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Be cautious with shorts; prefer asymmetric one-way payoffs over binary bets (Brexit pound at +10% or -10%); do not hold longs just because they fall less than the market. Keep a 2008-style tail in the risk matrix without forecasting it; use cheap options such as EM carry trades with limited downside.",
+   "why": "Losses on shorts are unbounded and early timing is ruinous; asymmetry is where the edge lies.",
+   "sources": [
+    "MT046",
+    "MT152",
+    "MT149",
+    "MT153"
+   ],
+   "claim_ids": [
+    "MT046-C05-4",
+    "MT046-C05-X1",
+    "MT152-C10-4",
+    "MT149-C04-2",
+    "MT153-C08-2"
+   ]
+  },
+  {
+   "element": "universe",
+   "rule": "Trade five or six asset classes (equities, bonds, currencies, commodities, credit); leave equities in a drawer in bear markets and use liquid bond, currency and commodity markets; put concentrated bets in liquid 24-hour markets.",
+   "why": "Avoids forced bets in one market; liquidity lets him change his mind; bond and currency action is largest in bear markets.",
+   "sources": [
+    "MT046",
+    "MT151",
+    "MT153"
+   ],
+   "claim_ids": [
+    "MT046-C07-2",
+    "MT151-C07-6",
+    "MT151-C08-1",
+    "MT153-C09-3"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "December 2018 hard-landing book: long 2-, 5- and 10-year Treasuries, short credit and financials, long cloud growth names, long disruptors and short the disrupted, 20-30% short the market in October 2018.",
+   "why": "Credit shorts and Treasuries pay in the same scenario; growth names grow regardless.",
+   "sources": [
+    "MT152"
+   ],
+   "claim_ids": [
+    "MT152-C08-1",
+    "MT152-C09-3",
+    "MT152-C09-5",
+    "MT152-C09-2",
+    "MT152-C08-4"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "2022-23 book: standing aside from bonds, expecting to re-short equities on a rally, long energy for 5-10 years, expecting a short dollar; in May 2023 low gross (about 60%), net near zero, no Treasury hedge, small gold, silver and a modest dollar short, avoiding a big copper position into a hard landing but planning to own it on the way out.",
+   "why": "No fat pitch; Treasuries at 3.5% against 5% Fed funds with inflation risk; cyclical commodities fall first in a hard landing.",
+   "sources": [
+    "MT148",
+    "MT149"
+   ],
+   "claim_ids": [
+    "MT148-C05-3",
+    "MT148-C05-X1",
+    "MT148-C06-1",
+    "MT148-C06-2",
+    "MT149-C07-2"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Late 2024 book: about 25% of NAV short bonds in 10-year equivalents, shorted the day of the first Fed cut and to be much bigger on confirmation of re-accelerating inflation; sold Nvidia at about $2 trillion and Lilly in the high 700s expecting a correction.",
+   "why": "Yields converge on nominal GDP; flattening rate of change signals a top.",
+   "sources": [
+    "MT151"
+   ],
+   "claim_ids": [
+    "MT151-C03-3",
+    "MT151-C03-R1",
+    "MT151-C03-1",
+    "MT151-C06-2",
+    "MT151-C06-3"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "About 2025 book: eclectic equity basket with AI only in small amounts and large Japan and Korea positions, long copper via front-end exposure rather than miners, bearish US dollar, short bonds paired with long risk assets, gold as a geopolitical hedge, long biotech and Teva.",
+   "why": "Hedge matrix covers inflationary and disinflationary growth; avoid 1999-2000 type crowding in AI.",
+   "sources": [
+    "MT069"
+   ],
+   "claim_ids": [
+    "MT069-C03-X1",
+    "MT069-C03-3",
+    "MT069-C03-4",
+    "MT069-C03-5",
+    "MT069-C03-6"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Hold trends of two to four years, not decades, and sell tops by technical reading while accepting that a top cannot be identified in advance; hold crowded trades if valuation against 1-2 year earnings is still cheap.",
+   "why": "A top is a flattening in the rate of change; crowding matters for entry, not for the thesis.",
+   "sources": [
+    "MT151",
+    "MT148",
+    "MT069"
+   ],
+   "claim_ids": [
+    "MT151-C04-5",
+    "MT151-C06-1",
+    "MT148-C14-3",
+    "MT069-C04-1"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "Study long history (500 years of rates below 2%, Burns 1970s, Volcker 1982, Japan) for analogues and run a forecast even at low confidence; treat rules as cycle-specific and re-derive them; use machines and specialists as co-pilots (man plus machine) and size up on hot specialists' positions.",
+   "why": "Analogues set odds; investing is an art that changes each cycle; he supplies the macro view and the size.",
+   "sources": [
+    "MT149",
+    "MT148",
+    "MT153",
+    "MT151"
+   ],
+   "claim_ids": [
+    "MT149-C01-1",
+    "MT149-C10-1",
+    "MT148-C05-X3",
+    "MT153-C06-1",
+    "MT151-C10-5"
+   ]
+  },
+  {
+   "element": "other",
+   "rule": "Do not trade the long-run fiscal story or political forecasts on a three to six month horizon; weight political calls at low confidence and rely on economic puzzle-solving over 18-24 months.",
+   "why": "No catalyst and unknowable timing; admits he is poor at political forecasting.",
+   "sources": [
+    "MT046",
+    "MT152",
+    "MT151"
+   ],
+   "claim_ids": [
+    "MT046-C01-2",
+    "MT152-C10-2",
+    "MT152-C06-4",
+    "MT151-C02-3"
+   ]
+  }
+ ],
+ "evidence_style": "Experience and anecdote from a long track record (predicted the last four recessions, 2005 housing, 1992 pound, 2000 Treasuries, Nvidia), historical analogy (1970s, 1999-2000, Volcker, Japan, 500 years of bubbles in The Price of Time), third-party numbers cited as not his own (CBO, Kotlikoff-style fiscal gap, Ed Hyman regression, money-supply work by a colleague), market internals read on the day, and first-principles asymmetry. He is open about being wrong, about luck (Nvidia timing), about missing precedent, and about low confidence in timing; he shows no backtests or formal tests and the 20-30 year record of beating Fed forecasts is self-reported.",
+ "views_timeline": [
+  {
+   "as_of": "October 2018",
+   "view": "Liquidity shrinkage will trigger an equity downturn, with one of the hikes doing it; ECB money spilling into US equities ends at year-end. He could take a big short around year-end if a Q4 blow-off occurs while EM bombs go off.",
+   "reasoning": "Central-bank purchases fall from about $1 trillion a year to zero within 12 months; valuations and margins at the top of the range; his July/August short was early.",
+   "source": "MT153",
+   "claim_ids": [
+    "MT153-C12-2",
+    "MT153-C03-3",
+    "MT153-C03-X1",
+    "MT153-C12-4",
+    "MT153-C12-1"
+   ]
+  },
+  {
+   "as_of": "October 2018",
+   "view": "Policy rates should be 4-5%, not 1.75%; the Fed should raise at every meeting until financial disruption appears; the ECB is the most egregious case.",
+   "reasoning": "Robust growth, fiscal stimulus, unemployment below 4%; predictable paths are too easy to price.",
+   "source": "MT153",
+   "claim_ids": [
+    "MT153-C03-4",
+    "MT153-C07-1",
+    "MT153-C07-X3"
+   ]
+  },
+  {
+   "as_of": "October 2018",
+   "view": "EM stress is already sending capital into the US; he holds Brazil and South Africa as cheap lottery tickets (risk limited to carry, upside 50-60%). A credit crisis larger than 2008 is possible once rates reflect credit risk (zombies, covenant-light high yield, perhaps a name like Tesla).",
+   "reasoning": "EM was the most extreme recipient of free money; few bankruptcies and $5 trillion of buybacks.",
+   "source": "MT153",
+   "claim_ids": [
+    "MT153-C08-X1",
+    "MT153-C08-2",
+    "MT153-C13-3",
+    "MT153-C13-2",
+    "MT153-C13-X1"
+   ]
+  },
+  {
+   "as_of": "October 2018",
+   "view": "Google at about 20x earnings (15x after cash) is cheap; high-sales-multiple stocks (cloud at 10x sales) can lose money over 3-4 years even if growth is met; the long-disruptors/short-disrupted pair theme reversed in mid-2018 and his Chinese internet thesis was wrong.",
+   "reasoning": "Multiple compression in bear markets (Alibaba example); algo-distorted price signals.",
+   "source": "MT153",
+   "claim_ids": [
+    "MT153-C08-5",
+    "MT153-C09-X3",
+    "MT153-C09-1",
+    "MT153-C09-2",
+    "MT153-C04-X1",
+    "MT153-C04-1",
+    "MT153-C03-5"
+   ]
+  },
+  {
+   "as_of": "October 2018",
+   "view": "The global trade system survives the Trump era with a probability of about 40-55%; trade restrictions push China to semiconductor self-sufficiency; he does not expect 30% a year again while free money lasts.",
+   "reasoning": "Sanctions overuse, supply-chain disruption, Samsung conversation; algo-distorted signals.",
+   "source": "MT153",
+   "claim_ids": [
+    "MT153-C15-2",
+    "MT153-C16-1",
+    "MT153-C15-1",
+    "MT153-C04-3"
+   ]
+  },
+  {
+   "as_of": "December 2018 (before the 19 December FOMC; uploaded 2020-01-06)",
+   "view": "The Fed should pause hikes, slow or soften balance-sheet runoff and drop forward guidance; he is not calling for a cut.",
+   "reasoning": "Indicators amber; cost of an unneeded hike is five to ten times that of an unneeded pause; conditions behind the September guidance (S&P rising, oil at $85) have reversed.",
+   "source": "MT152",
+   "claim_ids": [
+    "MT152-C03-2",
+    "MT152-C04-4",
+    "MT152-C04-R1",
+    "MT152-C01-R1",
+    "MT152-C06-1"
+   ]
+  },
+  {
+   "as_of": "December 2018",
+   "view": "A global bear market is under way (most stocks down nine to ten months); the highest probability is a struggle, with the bottom possibly far away or already here; S&P 500 returns of 0-5% a year over five years; global QT peaked at 1 October, yet after de-risking there could be a favourable period over the next 16 months.",
+   "reasoning": "Free money for eight or nine years, debt build-up, malinvestment; prices have adjusted and investors de-risked.",
+   "source": "MT152",
+   "claim_ids": [
+    "MT152-C07-2",
+    "MT152-C07-R1",
+    "MT152-C07-1",
+    "MT152-C07-4"
+   ]
+  },
+  {
+   "as_of": "December 2018",
+   "view": "Long Treasuries at the 2-, 5- and 10-year points (2-year could fall to 50-60bp if the Fed errs); short financials and credit (high yield at 5-6% against normal 8-9%).",
+   "reasoning": "Risk-reward and past bear markets; banks need rates up; credit spreads and credit-sensitive equities warn.",
+   "source": "MT152",
+   "claim_ids": [
+    "MT152-C08-1",
+    "MT152-C07-6",
+    "MT152-C09-3",
+    "MT152-C09-5",
+    "MT152-C09-6",
+    "MT152-C09-4"
+   ]
+  },
+  {
+   "as_of": "December 2018",
+   "view": "Hold cloud growth stocks (Microsoft, ServiceNow, Workday, Salesforce) for the longer term; falling oil and commodity indices will lower inflation, which the Fed ignores; trade wars hurt confidence; the China dispute will work itself out (low confidence); the hedge-fund industry is too big for the alpha available.",
+   "reasoning": "Structural growth that benefits from lower rates; commodity indexes down sharply in four or five months; competition has made markets more efficient.",
+   "source": "MT152",
+   "claim_ids": [
+    "MT152-C08-4",
+    "MT152-C09-1",
+    "MT152-C10-1",
+    "MT152-C06-4",
+    "MT152-C10-2",
+    "MT152-C12-2",
+    "MT152-C12-3"
+   ]
+  },
+  {
+   "as_of": "June 2022 (Sohn Conference; uploaded 2022-06-10)",
+   "view": "A hard landing is probable and a soft landing a long shot; he assumes a recession in 2023.",
+   "reasoning": "Inflation above 4.5-5% has never been tamed without a recession; the Fed is far behind the curve (policy near 2% against 8% CPI); excess household savings of $1.5-2tn delay it.",
+   "source": "MT148",
+   "claim_ids": [
+    "MT148-C02-1",
+    "MT148-C02-3",
+    "MT148-C02-X2",
+    "MT148-C02-5"
+   ]
+  },
+  {
+   "as_of": "June 2022",
+   "view": "The bear market has a long way to run, though tactical traders may have seen the first leg end; he waits for a fat pitch and plans to re-short on a 15-20% rally. Fixed income is less attractive to short and he is not comfortable owning bonds.",
+   "reasoning": "QE misallocation ($30tn) cannot be unwound in six months; no six-month post-bubble bear markets; front-end weakness; the usual long-Treasuries bear playbook may fail with 8% inflation.",
+   "source": "MT148",
+   "claim_ids": [
+    "MT148-C02-X1",
+    "MT148-C05-3",
+    "MT148-C12-1",
+    "MT148-C05-2",
+    "MT148-C05-X1",
+    "MT148-C05-1"
+   ]
+  },
+  {
+   "as_of": "June 2022",
+   "view": "Long energy for 5-10 years of short supply (demand destruction is the main risk); expects to be short the dollar within six months as $14tn of inflows reverse; over-earner shorts (about 80% already down) have run their course and big tech is too cheap to short but he is too bearish to buy.",
+   "reasoning": "ESG limits investment; Fed first to tighten; margins mean-revert in about three years.",
+   "source": "MT148",
+   "claim_ids": [
+    "MT148-C06-2",
+    "MT148-C14-3",
+    "MT148-C14-X3",
+    "MT148-C06-1",
+    "MT148-C14-X2",
+    "MT148-C14-X1",
+    "MT148-C13-4"
+   ]
+  },
+  {
+   "as_of": "June 2022",
+   "view": "Macro-driven markets for the next 4-5 years; the end state is unknown between inflation and deflation, possibly a sideways market like 1966-82 (a year and a half earlier he put 70% inflation, 30% deflation); never bet against America in the long term.",
+   "reasoning": "No analog for QE of this scale; bubbles end in deflation or sideways markets.",
+   "source": "MT148",
+   "claim_ids": [
+    "MT148-C13-1",
+    "MT148-C16-1",
+    "MT148-C15-1",
+    "MT148-C17-1"
+   ]
+  },
+  {
+   "as_of": "2023-05-10",
+   "view": "A hard landing is more likely than a soft landing; a recession could begin around Q2 2023 with official timing Q3 2023 to Q1 2024; he is more confident of direction than timing.",
+   "reasoning": "Biggest, broadest bubble meets the fastest tightening; trucking weakness, inverted curve and banking stress; soft landings only follow proactive policy.",
+   "source": "MT149",
+   "claim_ids": [
+    "MT149-C02-2",
+    "MT149-C02-3",
+    "MT149-C02-4",
+    "MT149-C02-7"
+   ]
+  },
+  {
+   "as_of": "2023-05-10",
+   "view": "Inflation falls to 3-3.5% in 6-9 months; then the Fed response is the unknown, with stagflation risk if it eases early. Regional banks and commercial real estate are the first stress and a 2008-style tail stays in the risk matrix. Fed independence survives with a 5-10% chance of being lost.",
+   "reasoning": "Tightening lags; Burns analogy and election year; office vacancy above 2008 and rate mismatch.",
+   "source": "MT149",
+   "claim_ids": [
+    "MT149-C03-3",
+    "MT149-C03-4",
+    "MT149-C03-X4",
+    "MT149-C02-6",
+    "MT149-C04-1",
+    "MT149-C04-2",
+    "MT149-C06-1"
+   ]
+  },
+  {
+   "as_of": "2023-05-10",
+   "view": "Low gross (about 60%) and net near zero; no Treasury hedge; holds gold, silver and a dollar short (modest but material); copper only after the hard landing; stocks unlikely to be higher in ten years (no 9% a year from buy-and-hold).",
+   "reasoning": "No fat pitch; 20x earnings, record margins and fiscal squeeze; cyclical commodities fall first.",
+   "source": "MT149",
+   "claim_ids": [
+    "MT149-C07-2",
+    "MT149-C07-3",
+    "MT149-C05-3",
+    "MT149-C07-X1",
+    "MT149-C04-4",
+    "MT149-C10-3"
+   ]
+  },
+  {
+   "as_of": "2023-05-10",
+   "view": "AI is an opportunity as big as the internet; prefers a carbon tax to top-down climate intervention; estrangement of the Saudi crown prince is a geopolitical mistake.",
+   "reasoning": "Policy preference and technology judgement; risk of pushing him toward China.",
+   "source": "MT149",
+   "claim_ids": [
+    "MT149-C05-2",
+    "MT149-C10-X2",
+    "MT149-C13-1",
+    "MT149-C11-1"
+   ]
+  },
+  {
+   "as_of": "2023-06",
+   "view": "Central case: more shoes to drop after 500bp of hikes, credit tightening in the next 6-9 months and a hard landing with corporate profits down 20-30%; probability is unchanged by the delay and the timing is now thought to be about end-2023, but he does not know.",
+   "reasoning": "Free-money bubble then a rapid rate rise; impaired bank balance sheets and CRE; BoJ, TGA and student-loan boosts are reversing.",
+   "source": "MT046",
+   "claim_ids": [
+    "MT046-C03-3",
+    "MT046-C03-4",
+    "MT046-C03-6",
+    "MT046-C03-5",
+    "MT046-C04-1",
+    "MT046-C04-4",
+    "MT046-C04-5",
+    "MT046-C04-6",
+    "MT046-C04-7"
+   ]
+  },
+  {
+   "as_of": "2023-06",
+   "view": "AI is real and as transformative as the internet; AI leaders (Nvidia) dominate the long book and he would hold Nvidia for at least two or three years, though not all AI companies survive. No fat pitch now; they are expected in the next 8-24 months as liquidity changes, and he holds cash.",
+   "reasoning": "Secular moves last years; strong earnings can lift stocks in a recession; the situation is unanalyzable and he does not want to bet while down.",
+   "source": "MT046",
+   "claim_ids": [
+    "MT046-C05-2",
+    "MT046-C05-6",
+    "MT046-C05-7",
+    "MT046-C04-X2",
+    "MT046-C05-R1",
+    "MT046-C08-1",
+    "MT046-C08-2",
+    "MT046-C08-R2"
+   ]
+  },
+  {
+   "as_of": "2023-06",
+   "view": "China is not a long-term growth challenge to the US (a short stimulus sugar high, then an undynamic economy) and raises the risk of military action; Japan has the best market breadth of the year (ending deflation, shareholder reforms, central bank behind the curve) but he holds it tentatively given his poor Japan record; taxes will be much higher in about 20 years and 30-40% inflation is unlikely.",
+   "reasoning": "Xi's consolidation of control; broad participation versus narrow US leadership; fiscal arithmetic.",
+   "source": "MT046",
+   "claim_ids": [
+    "MT046-C06-1",
+    "MT046-C06-2",
+    "MT046-C06-3",
+    "MT046-C06-4",
+    "MT046-C06-X1",
+    "MT046-C07-1",
+    "MT046-C02-5"
+   ]
+  },
+  {
+   "as_of": "late October 2024 (before the 5 November US election; uploaded 2024-11-06)",
+   "view": "The Fed declared victory on inflation too early and the 1970s template implies a second wave, but he has no 2021-level conviction. No sign of economic weakness bottom-up over the next three to six months except housing; financial conditions are loose, though they tightened in the last four or five weeks.",
+   "reasoning": "A 50bp cut into tight credit spreads, gold at highs and rising equities; company conversations.",
+   "source": "MT151",
+   "claim_ids": [
+    "MT151-C01-3",
+    "MT151-C01-X1",
+    "MT151-C01-5",
+    "MT151-C01-R1",
+    "MT151-C01-1",
+    "MT151-C01-2"
+   ]
+  },
+  {
+   "as_of": "late October 2024",
+   "view": "Short bonds, about 25% of NAV in 10-year equivalents, to be much bigger if inflation re-accelerates; the 10-year could reach 6-7% if inflation is 4.5%. A Trump win brings animal spirits, marginally inflationary tariffs and less immigrant labour.",
+   "reasoning": "Yields converge on nominal GDP; the bond market sells off hard on the second leg.",
+   "source": "MT151",
+   "claim_ids": [
+    "MT151-C03-3",
+    "MT151-C03-1",
+    "MT151-C03-2",
+    "MT151-C01-6"
+   ]
+  },
+  {
+   "as_of": "late October 2024",
+   "view": "US debt faces a reckoning with unknowable timing; if one comes it is more likely late 2025 or early 2026, probably as a failed auction. Narrow leadership is a yellow light, not a red one.",
+   "reasoning": "Refinancing wall and a Fed forced to reverse; narrow leadership is necessary but not sufficient for a bear market.",
+   "source": "MT151",
+   "claim_ids": [
+    "MT151-C02-3",
+    "MT151-C02-5",
+    "MT151-C02-6",
+    "MT151-C02-4",
+    "MT151-C03-4"
+   ]
+  },
+  {
+   "as_of": "late October 2024",
+   "view": "The AI boom is unabated and bullish but he is neither long nor short the group; he sold Nvidia at about $2 trillion (and Lilly in the high 700s) expecting a correction and would buy back higher; looking for AI applications not yet recognised.",
+   "reasoning": "Capex continues, no single winner, applications unknown, rich valuations; technical flattening of the rate of change.",
+   "source": "MT151",
+   "claim_ids": [
+    "MT151-C03-5",
+    "MT151-C04-2",
+    "MT151-C03-X1",
+    "MT151-C04-3",
+    "MT151-C06-2",
+    "MT151-C06-3",
+    "MT151-C06-1"
+   ]
+  },
+  {
+   "as_of": "2024-11 (uploaded 2024-11-08)",
+   "view": "No material signs of weakness in company reports over the next 3-6 months apart from housing; financial conditions very loose, tighter in recent weeks as the dollar rallied and rates rose; the AI boom continues unabated; the US fiscal path is unsustainable, with a problem most likely late 2025 to early 2026.",
+   "reasoning": "Bottom-up information from companies; market read of the dollar and rates; 7% deficit at full employment, refinanced households, corporate maturity wall.",
+   "source": "MT085",
+   "claim_ids": [
+    "MT085-C01-1",
+    "MT085-C01-2",
+    "MT085-C01-3",
+    "MT085-C01-5",
+    "MT085-C01-4",
+    "MT085-C01-6",
+    "MT085-C01-X1"
+   ]
+  },
+  {
+   "as_of": "not stated (uploaded 2026-02-27; mentions the big beautiful bill; ledger dates the view 2025)",
+   "view": "US economy strong with fiscal stimulus; the Fed will not hike and probably cuts; equity valuations at the top of the historical range with no cushion.",
+   "reasoning": "Fiscal stimulus; valuation.",
+   "source": "MT069",
+   "claim_ids": [
+    "MT069-C02-5",
+    "MT069-C03-1"
+   ]
+  },
+  {
+   "as_of": "same (about 2025)",
+   "view": "Eclectic equity basket with AI only in small amounts and large Japan and Korea positions; bearish US dollar; long copper (consensus, front-end exposure); gold as a geopolitical hedge; short bonds paired with long risk assets.",
+   "reasoning": "AI no longer drives the book; dollar at the top of its purchasing-power range with foreigners overloaded; no new copper supply for years plus AI data-centre demand; hedge matrix.",
+   "source": "MT069",
+   "claim_ids": [
+    "MT069-C03-X1",
+    "MT069-C03-3",
+    "MT069-C03-4",
+    "MT069-C03-5",
+    "MT069-C03-6",
+    "MT069-C03-X2"
+   ]
+  },
+  {
+   "as_of": "same (Teva 6-7 months before recording)",
+   "view": "Long biotech and Teva as recent examples of rotation away from a heated AI market; the macro opportunity set is rich for the next 3-4 years.",
+   "reasoning": "AI feels like 1999-2000; AI use cases in drug discovery; massive disruption after a dead macro decade.",
+   "source": "MT069",
+   "claim_ids": [
+    "MT069-C01-1",
+    "MT069-C02-1",
+    "MT069-C01-3",
+    "MT069-C03-2"
+   ]
+  }
+ ],
+ "how_views_changed": "Policy stance: in October 2018 he wanted the Fed to hike at every meeting to 4-5% (rates too low for the conditions); by December 2018 he asked the Fed to pause and slow QT because his leading indicators (cyclicals versus defensives, curve, credit spreads, M2 growth 7.5% to 4%, falling commodities) turned amber and the asymmetry favoured a pause. The reason is explained: conditions behind the September guidance had reversed. Positioning: October 2018 short equities (20-30% short) with EM lottery tickets; December 2018 long Treasuries, short credit and financials, long cloud growth. Recession call: December 2018 amber/bear market; June 2022 recession assumed for 2023 (inflation above 4.5-5% rule); May-June 2023 hard landing delayed not cancelled, with the date moved several times (Q4 2023, pulled forward after SVB, back to end-2023) and the reasons given as liquidity lags (BoJ, TGA, student-loan pause, excess savings). By late October 2024 the hard-landing case is no longer stated: he says he has swung from fearing the economy to fearing that the Fed declared victory too early, no weakness shows in company reports over three to six months, and he is half right over the last two years (MT151-C01-R1, MT151-C03-R1); he is short bonds (about 25% of NAV). He does not explicitly say why the hard landing did not come beyond that. Bonds: June 2022 not comfortable owning or shorting; May 2023 no Treasury hedge at 3.5%; late 2024 large short; about 2025 short bonds as a hedge to long risk assets. Dollar: expects to be short within six months (June 2022); modest short with gold and silver (May 2023); bearish dollar (about 2025). Equity stance: 2018-2023 bearish bias, valuations at the top of the range and stocks unlikely higher in ten years (2023); about 2025 long risk assets with valuations at the top of the range and an eclectic basket. AI: dominates the long book (June 2023), neutral and sold Nvidia at about $2 trillion (late 2024), small amounts and heated like 1999-2000 (about 2025); he cites talent flow as the early signal in all three. Price signals: the discipline he used for 35 years (October 2018) is progressively downgraded (December 2018, June 2022, about 2025 technicals about 20% as effective) with the reason given as algos, central banks and wider learning. Fiscal: the diagnosis (unsustainable, not tradable on 3-6 months) never changes, only the timing hint (2040-2050 in 2023 to late 2025/early 2026 in November 2024).",
+ "disagreements": [
+  {
+   "with": "Powell and media consensus (as characterised by Druckenmiller)",
+   "topic": "Whether Greenspan was right not to hike in the late 1990s",
+   "their_position": "Not hiking in the late 1990s was the original sin (Nasdaq at 125x earnings, then the dot-com bust, then housing); the blow-off was fuelled by cuts in autumn 1998.",
+   "other_position": "Greenspan was a genius for not hiking and letting the boom run.",
+   "sources": [
+    "MT153"
+   ]
+  },
+  {
+   "with": "Karl Sokoloff",
+   "topic": "Whether the US-led trade system is eroding or survives the Trump era",
+   "their_position": "Trust in the US cannot be lost in four years and the system can survive Trump as a one-off, but he puts the odds at only 40-55%.",
+   "other_position": "The US is shifting to nationalism while others build multilateral alignments, so flows may reroute around the US.",
+   "sources": [
+    "MT153"
+   ]
+  },
+  {
+   "with": "Karl Sokoloff",
+   "topic": "Whether algorithms are a threat or an opportunity for a thesis-driven investor",
+   "their_position": "The real challenge is the loss of group signals, not a crash; a crash could be an opportunity for someone who believes in the thesis, and he cannot hedge it directly.",
+   "other_position": "Algorithmic selling is a tail risk to markets and untested in a bear market.",
+   "sources": [
+    "MT153"
+   ]
+  },
+  {
+   "with": "Eric (interviewer, Bloomberg)",
+   "topic": "Does a 25bp hike in December versus March matter?",
+   "their_position": "It is the rate of change and cumulative tightening (hikes plus QT plus M2) that matter; the asymmetry is five to ten times; the Trump factor should be taken out of the decision.",
+   "other_position": "Economists would say 25bp makes no real difference and timing is already baked in; the interviewer raised the cynical reading that he wants a Powell put.",
+   "sources": [
+    "MT152"
+   ]
+  },
+  {
+   "with": "Eric (interviewer, Bloomberg)",
+   "topic": "Is the December 2018 sell-off a correction in a secular bull market?",
+   "their_position": "It is not clear-cut that it is a correction; free money and debt build-up mean it could take three to five years of sideways or down.",
+   "other_position": "Implicit in the questions: whether the sell-off is a normal correction.",
+   "sources": [
+    "MT152"
+   ]
+  },
+  {
+   "with": "Kiril Sokoloff",
+   "topic": "Whether past patterns imply reducing commodity exposure before a hard landing",
+   "their_position": "Commodities did well after easing, but he avoids a big copper position into a hard landing because cyclical commodities fall first; he owns gold and silver against history.",
+   "other_position": "History shows commodities held up after bubbles burst, so cutting them may not be right.",
+   "sources": [
+    "MT149"
+   ]
+  },
+  {
+   "with": "Kiril Sokoloff",
+   "topic": "Size of the dollar move and his own dollar position",
+   "their_position": "His dollar short is not massive though material, with uncertain duration; he stresses the reserve-currency curse and that the dollar rose in 2021-22.",
+   "other_position": "The dollar could fall 25% with central banks diversifying away from it.",
+   "sources": [
+    "MT149"
+   ]
+  },
+  {
+   "with": "The Fed and economists urging a soft landing (as described by Druckenmiller)",
+   "topic": "Fed practice: soft-landing fine-tuning and forward guidance",
+   "their_position": "The Fed should avoid big mistakes and be data dependent; forward guidance removes optionality and ties its hands.",
+   "other_position": "Guide the market and engineer a soft landing without losing credibility.",
+   "sources": [
+    "MT151"
+   ]
+  },
+  {
+   "with": "George Soros (as described by Druckenmiller)",
+   "topic": "When to take the trade: the turn or the middle innings",
+   "their_position": "Prefers to play the turn in a big move (his ego), with smaller size.",
+   "other_position": "Soros preferred the third to sixth innings, when there was more certainty, with much greater leverage.",
+   "sources": [
+    "MT151"
+   ]
+  },
+  {
+   "with": "Academic theory (as described by Druckenmiller)",
+   "topic": "Does a weak currency force interest rates up (pound after 1992)?",
+   "their_position": "Depreciation allowed lower rates; gilts and British stocks rose.",
+   "other_position": "A weak currency forces interest rates up.",
+   "sources": [
+    "MT151"
+   ]
+  },
+  {
+   "with": "Pure systematic investing (implicit)",
+   "topic": "Man versus machine",
+   "their_position": "Pure machines make money through discipline, but an intuitive investor using AI as a co-pilot would beat both machine and human.",
+   "other_position": "A disciplined process and math are enough.",
+   "sources": [
+    "MT151"
+   ]
+  }
+ ],
+ "internal_tensions": [
+  {
+   "issue": "Price-action signals: he says price versus news and technicals have decayed (MT153, MT152, MT148, MT069: technical analysis about 20% as effective), yet he sells Nvidia at about $2 trillion on a technical flattening of the rate of change (MT151) and cites technical momentum turning for biotech (MT069), and calls a market message 'great' over eight or nine months (MT152).",
+   "claim_ids": [
+    "MT069-C05-3",
+    "MT151-C06-1",
+    "MT151-C06-2",
+    "MT069-C02-1",
+    "MT152-C11-4"
+   ]
+  },
+  {
+   "issue": "Concentration versus fewer big bets: 15-20% per position and 200-300% macro positions (MT148), all in on conviction (MT153), versus 'fewer big bets now' and a low-gross, no-fat-pitch book (MT149, MT046, MT069).",
+   "claim_ids": [
+    "MT148-C08-1",
+    "MT153-C11-2",
+    "MT149-C07-2",
+    "MT046-C08-1",
+    "MT069-C06-3"
+   ]
+  },
+  {
+   "issue": "Hard-landing certainty versus timing admission: the hard landing is 'unchanged by the delay' and more likely than a soft one (MT046, MT149), while he says 'the real answer is I don't know' on timing and has moved the date several times; by late 2024 he no longer repeats the call and admits being half right.",
+   "claim_ids": [
+    "MT046-C04-1",
+    "MT046-C04-7",
+    "MT149-C02-X2",
+    "MT151-C01-R1"
+   ]
+  },
+  {
+   "issue": "Fed stance: October 2018 'raise at every meeting' and rates should be 4-5% versus December 2018 'pause' because indicators are amber; he also criticises forward guidance but in October 2018 favoured an unpredictable hike at every meeting.",
+   "claim_ids": [
+    "MT153-C07-1",
+    "MT153-C03-4",
+    "MT152-C03-2",
+    "MT152-C04-4"
+   ]
+  },
+  {
+   "issue": "Contrarian versus crowd-following: valuation_contrarian trades (DM in 1989, euro short in 2014, Google cheap) and fading the Berlin Wall consensus (MT153) versus 'contrarianism is overrated, the crowd is right most of the time, crowding matters for entry' (MT069), and he holds crowded trades if cheap (MT148).",
+   "claim_ids": [
+    "MT153-C10-1",
+    "MT153-C10-4",
+    "MT069-C04-1",
+    "MT148-C14-3"
+   ]
+  },
+  {
+   "issue": "Shorting record: in bear markets he made money in Treasuries, not by shorting stocks (MT152), and he is unsure he has made money on shorts in 40 years, yet he repeatedly runs 20-30% net short and says macro investors make most money in bear markets (MT148).",
+   "claim_ids": [
+    "MT152-C07-5",
+    "MT046-C05-5",
+    "MT152-C08-5",
+    "MT148-C16-2"
+   ]
+  },
+  {
+   "issue": "Gold: in a hard landing gold historically does poorly and he holds it against history (MT149); in the stagflation bear phase he treats gold as the bear asset (MT148); about 2025 it is a geopolitical hedge with long risk assets (MT069).",
+   "claim_ids": [
+    "MT149-C05-3",
+    "MT148-C06-4",
+    "MT069-C03-5"
+   ]
+  },
+  {
+   "issue": "Macro identity: he is known as a macro investor but says macro is built bottom-up from companies and financial conditions (MT151, MT085), while 2018-2023 views are driven top-down from liquidity, history and policy.",
+   "claim_ids": [
+    "MT085-C01-1",
+    "MT151-C01-1",
+    "MT153-C12-2",
+    "MT149-C02-2"
+   ]
+  }
+ ],
+ "testable_hypotheses": [
+  {
+   "hypothesis": "When cyclical equity groups (autos, homebuilders, banks, trucking, retail) fall materially more than defensives and several leading groups decline together, recession or earnings declines follow with a lead of 6-12 months; the signal outperforms the index alone.",
+   "data_needed": "Sector/industry total returns (cyclical minus defensive), NBER dates or GDP/earnings growth, long history",
+   "claim_ids": [
+    "MT152-C02-1",
+    "MT148-C03-1",
+    "MT148-C04-1",
+    "MT148-C04-3"
+   ]
+  },
+  {
+   "hypothesis": "A joint rise in the trade-weighted dollar, interest rates and oil (weights about 50/25/25) predicts negative forward-12-month earnings revisions against consensus and weak equity returns.",
+   "data_needed": "Trade-weighted dollar, 10-year or policy rate, oil, S&P EPS consensus and realised, since 1970s",
+   "claim_ids": [
+    "MT151-C12-1",
+    "MT151-C12-2",
+    "MT148-C11-1",
+    "MT153-C11-1"
+   ]
+  },
+  {
+   "hypothesis": "Inflation above 4.5-5% has never been tamed without a recession or a policy rate above CPI.",
+   "data_needed": "Long CPI and policy-rate history, recession dates across countries",
+   "claim_ids": [
+    "MT148-C02-2",
+    "MT148-C02-3",
+    "MT149-C02-3"
+   ]
+  },
+  {
+   "hypothesis": "A fall in the rate of change of central-bank balance sheets / M2 growth (e.g. 7.5% to 4% in a few months) precedes credit-spread widening and weaker cyclical equities; the rate of change matters more than the level.",
+   "data_needed": "Fed/ECB/BoJ balance sheets, M2 growth, HY and IG spreads, cyclical equity returns",
+   "claim_ids": [
+    "MT152-C04-1",
+    "MT152-C04-3",
+    "MT153-C12-2"
+   ]
+  },
+  {
+   "hypothesis": "Narrow market leadership is necessary but not sufficient for a bear market: no bear market began without breadth narrowing, but narrowing alone is a yellow light.",
+   "data_needed": "Market breadth/concentration series (e.g. top-10 weight, equal-weight vs cap-weight), bear-market dates",
+   "claim_ids": [
+    "MT151-C03-4"
+   ]
+  },
+  {
+   "hypothesis": "After a recession cuts inflation from about 8% to 3% and the central bank eases into loose financial conditions (tight spreads, rising equities and gold), inflation re-accelerates and long yields converge to nominal GDP growth, with the bond sell-off concentrated in the second inflation leg.",
+   "data_needed": "1970s and later disinflation episodes, financial conditions index, 10-year yield versus nominal GDP",
+   "claim_ids": [
+    "MT151-C01-3",
+    "MT151-C03-1",
+    "MT151-C03-2",
+    "MT151-C01-5"
+   ]
+  },
+  {
+   "hypothesis": "Yield-curve inversion plus trucking weakness (trucking leads the economy by 6-8 months) predicts recession onset roughly two to four quarters later.",
+   "data_needed": "Curve slope, trucking equity or freight indices, recession dates",
+   "claim_ids": [
+    "MT149-C02-4",
+    "MT149-C02-5",
+    "MT149-C02-7"
+   ]
+  },
+  {
+   "hypothesis": "Following a bubble burst, there is no bear market shorter than about six months; a 15-20% rally within the bear market is a sell (re-short) point.",
+   "data_needed": "Post-bubble equity drawdown histories (1929, 1973, 2000, 2008, 2022), rally and subsequent returns",
+   "claim_ids": [
+    "MT148-C12-1",
+    "MT148-C16-1"
+   ]
+  },
+  {
+   "hypothesis": "A pegged currency where the two economies need opposite rates, with short-pound-type carry cost under about 1% for six months, yields large positive skew; the carry cost jumps once the crowd arrives, so early entry matters.",
+   "data_needed": "Historical peg breaks (ERM 1992, Sweden, Asian 1997), forward points versus event timing",
+   "claim_ids": [
+    "MT151-C08-4",
+    "MT151-C08-5",
+    "MT151-C09-4",
+    "MT085-C02-6"
+   ]
+  },
+  {
+   "hypothesis": "Starting a position at one third of target and adding on price confirmation outperforms entering at full size, except in fixed-rate regimes where no price confirmation exists.",
+   "data_needed": "Trade-level or strategy backtests with scaled versus full entry on trend/macro signals",
+   "claim_ids": [
+    "MT153-C10-3",
+    "MT153-C10-2",
+    "MT151-C08-6"
+   ]
+  },
+  {
+   "hypothesis": "Sizing positions up after a hot period and down after a cold period (streaks) improves risk-adjusted return versus constant sizing.",
+   "data_needed": "Strategy P&L streak-conditioned sizing backtest, e.g. trailing 3-12 month performance as a leverage scaler",
+   "claim_ids": [
+    "MT148-C08-2",
+    "MT148-C08-3",
+    "MT153-C11-3"
+   ]
+  },
+  {
+   "hypothesis": "Technical and price-versus-news signals are less profitable after the algo era than before (about 20% as effective) while longer-horizon (8-9 months) market messages retain value.",
+   "data_needed": "Split-sample returns of short-horizon price-vs-news and breadth signals versus 8-9 month trend signals, pre- and post-2010",
+   "claim_ids": [
+    "MT069-C05-3",
+    "MT152-C11-3",
+    "MT152-C11-4"
+   ]
+  },
+  {
+   "hypothesis": "A dollar at the top of its purchasing-power range with foreign investors overweight US assets falls even without a sell-America event, once net foreign buying stops.",
+   "data_needed": "Real effective dollar versus PPP, TIC flows, foreign holdings of US assets, subsequent 12-24 month dollar return",
+   "claim_ids": [
+    "MT069-C03-3",
+    "MT149-C09-1"
+   ]
+  },
+  {
+   "hypothesis": "Long copper benefits from a multi-year absence of new supply plus incremental AI data-centre demand; front-end exposure rather than miners is the cleaner expression.",
+   "data_needed": "Copper supply pipeline, inventories, data-centre demand estimates, futures versus miner equity returns",
+   "claim_ids": [
+    "MT069-C03-4"
+   ]
+  },
+  {
+   "hypothesis": "Where top engineering graduates and young analysts concentrate (talent flow) leads capital flows into a theme by months to years; buying a meaningful position at that point beats waiting for full analysis.",
+   "data_needed": "Graduate-job-choice data, venture and analyst-coverage counts versus subsequent thematic equity returns",
+   "claim_ids": [
+    "MT151-C03-6",
+    "MT085-C01-6",
+    "MT069-C04-2"
+   ]
+  },
+  {
+   "hypothesis": "During a hard landing cyclical commodities (copper) fall first and gold historically does poorly, while commodities rally after easing following a bubble burst.",
+   "data_needed": "Commodity returns in recessions and in the 12-24 months after easing, 1970s, 2000s, 2008",
+   "claim_ids": [
+    "MT149-C04-3",
+    "MT149-C04-4",
+    "MT149-C05-3"
+   ]
+  },
+  {
+   "hypothesis": "Short-bond exposure pays when the Fed cuts into a booming economy with rising commodities, and roughly breaks even in disinflationary growth, so it hedges a long risk-asset book better than it hedges a growth shock.",
+   "data_needed": "Bond-short returns conditioned on Fed cuts, growth and commodity regimes, and stock-bond correlation regimes",
+   "claim_ids": [
+    "MT069-C03-6",
+    "MT069-C03-X2",
+    "MT151-C01-5"
+   ]
+  }
+ ],
+ "blind_spots": [
+  "(reader) No quantified track record or hit rate is given for the leading-indicator set or the stock-internals signal; the 'predicted the last four recessions' claim is self-reported and untested.",
+  "(reader) He does not explain why the 2022-2023 hard-landing call did not materialise, only that he was half right and the delay is due to liquidity; no post-mortem of the lags.",
+  "(reader) No explicit risk limits, stop-loss rules or drawdown thresholds are stated beyond 'cut when the reason is gone' and sizing by streaks.",
+  "(reader) Valuation rules are loose: stocks are 'cheap' or 'rich' (Google 20x, Apple 25-30x, market 20x) without a systematic threshold, and no valuation-based exit rule.",
+  "(reader) He does not address transaction costs, capacity or liquidity of 200-300% macro positions, or how much of the old record depended on pre-algo markets.",
+  "(reader) Positioning data, options or dealer flows are never used; crowding is dismissed as relevant to entry only.",
+  "(reader) He asserts the 18-24 month horizon and fiscal-reckoning timing (late 2025/early 2026) without a method; no scoreboard of past macro calls and their errors beyond anecdotes.",
+  "(reader) The 2025 book (MT069) is thinly supported: no recording date, no reasoning for the Japan and Korea longs beyond a mention, and no failure scenario for the short-bonds-plus-risk-assets hedge."
+ ],
+ "reader_inferences": [
+  "(reader) Across 2018-2025 the one constant is the process: a liquidity and policy narrative, a starter position, confirmation by price or company news, and asymmetric sizing; what changes is the macro regime narrative (tightening-induced bust, then inflation re-acceleration, then reflationary growth).",
+  "(reader) The December 2018 pivot from 'hike every meeting' to 'pause' within two months shows a rule-like reliance on market internals and credit spreads overriding his prior policy opinion, consistent with 'markets are smarter than I am'.",
+  "(reader) His later bullish stance (about 2025) with short bonds as hedge can be read as the same liquidity framework applied to an easing, fiscal-stimulus regime rather than a break from it.",
+  "(reader) Many testable ideas are conditional on regime (post-bubble, tightening, peg stress), so a backtest needs a regime classifier; fat-pitch sizing implies a fat-tailed, few-trades return profile that a plain monthly strategy will not replicate.",
+  "(reader) The recurring pairing of credit shorts with long duration (2018) and short bonds with long risk assets (2025) are both hedge-matrix constructions that could be tested as portfolio-stacking rules."
+ ]
+}

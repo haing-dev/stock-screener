@@ -1,19 +1,77 @@
-{"_note": "Caption spellings -> canonical investor name. 'uncertain' = inferred from context (role/topic), check before relying on it.",
+{
+ "_note": "Caption spellings -> canonical investor name. 'uncertain' = inferred from context (role/topic), check before relying on it.",
  "aliases": {
-  "Niels Kaastrup-Larsen": ["Niels Kaastrup Larsen", "Niels Kaastro Larsen", "Neils Castro Larsson", "Neils Kostrup Larsen", "Niels"],
-  "Alan Dunne": ["Alan Dunn", "Alan Don", "Alan Donn", "Alan"],
-  "Katie Kaminski": ["Katy Kaminski", "Katy Kaminsky"],
-  "Rich Brennan": ["Richard Brennan", "Rich"],
-  "Rob Carver": ["Robert Carver", "Rob"],
-  "Yoav Git": ["Yo Kit", "Yov Git"],
-  "Nick Baltas": ["Nick Balters", "Nick Palus"],
-  "Mark Rzepczynski": ["Mark Resiminski", "Mark rinsky", "Mark"],
-  "Moritz Seibert": ["Moritz"],
-  "Stanley Druckenmiller": ["Stan Druckenmiller"],
-  "Kiril Sokoloff": ["Karl Sokoloff"],
-  "Cem Karsan": ["Jim Kasang", "Jim"]
+  "Niels Kaastrup-Larsen": [
+   "Niels Kaastrup Larsen",
+   "Niels Kaastro Larsen",
+   "Neils Castro Larsson",
+   "Neils Kostrup Larsen",
+   "Niels",
+   "Niels Kastrup-Larsen",
+   "Niels Kostner Larsen"
+  ],
+  "Alan Dunne": [
+   "Alan Dunn",
+   "Alan Don",
+   "Alan Donn",
+   "Alan",
+   "Allan Dunne"
+  ],
+  "Katie Kaminski": [
+   "Katy Kaminski",
+   "Katy Kaminsky"
+  ],
+  "Rich Brennan": [
+   "Richard Brennan",
+   "Rich"
+  ],
+  "Rob Carver": [
+   "Robert Carver",
+   "Rob"
+  ],
+  "Yoav Git": [
+   "Yo Kit",
+   "Yov Git",
+   "Yav Git"
+  ],
+  "Nick Baltas": [
+   "Nick Balters",
+   "Nick Palus"
+  ],
+  "Mark Rzepczynski": [
+   "Mark Resiminski",
+   "Mark rinsky",
+   "Mark"
+  ],
+  "Moritz Seibert": [
+   "Moritz",
+   "Morris Seabirds"
+  ],
+  "Stanley Druckenmiller": [
+   "Stan Druckenmiller"
+  ],
+  "Kiril Sokoloff": [
+   "Karl Sokoloff"
+  ],
+  "Cem Karsan": [
+   "Jim Kasang",
+   "Jim",
+   "Cham",
+   "Jem",
+   "Jim Carson"
+  ],
+  "Tracy Alloway": [
+   "Tracy Alaway"
+  ]
  },
- "uncertain": {"Mark": "Mark Rzepczynski (co-host role, Systematic Investor)", "Jim": "Cem Karsan (captioned 'Jim'; vol/positioning content)",
-               "Yuval": "possibly Yoav Git (MT038) - left unmerged", "Nicole Kajin": "surname unverified - left as is",
-               "Alan": "Alan Dunne (host role)"}
+ "uncertain": {
+  "Mark": "Mark Rzepczynski (co-host role, Systematic Investor)",
+  "Jim": "Cem Karsan (captioned 'Jim'; vol/positioning content)",
+  "Yuval": "possibly Yoav Git (MT038) - left unmerged",
+  "Nicole Kajin": "surname unverified - left as is",
+  "Alan": "Alan Dunne (host role)",
+  "Cham": "Cem Karsan (caption)",
+  "Jem": "Cem Karsan (caption)",
+  "Jim Carson": "Cem Karsan (caption)"
+ }
 }

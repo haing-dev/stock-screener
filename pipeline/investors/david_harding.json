@@ -1,0 +1,835 @@
+{
+ "name": "David Harding",
+ "sources": [
+  "QP14",
+  "QP03",
+  "QP11",
+  "QP04",
+  "MT070"
+ ],
+ "period": "1994 (QP14, Phil. Trans. R. Soc. paper per pack summary) - QP03 undated in pack - 2013-06-18 (QP11 oral history) - Nov 2016 (QP04 FT profile) - 2019-03-18 (MT070 Bloomberg TV); the pack holds nothing later than 2019",
+ "one_paragraph": "Founder of AHL and Winton who treats finance as a social science with no immutable laws: markets are made of people who over-react, under-react and panic, so they are not efficient, prices of whole asset classes trend, and a diversified, rule-based, empirically tested approach earns money. He judges any model like a natural-science model, by falsifiable predictions tested against the market (1994), and distrusts Sharpe ratios because returns are non-stationary, non-parametric and gameable by smoothed or short-option payoffs (QP03). In 2013 he describes simple breakout/multi-horizon trend rules across about 100 futures as high-capacity, to be run without over-leverage and with discipline; edge comes from many weak signals across many markets, continually renewed as signals decay (2016). His core worry throughout is that success attracts capital and erodes edge, which by 2019 he says has made futures trend following crowded 'beta' after a Sharpe near 1 for about 30 years: Winton lowers its forecast, cuts leverage (about 2x gross vs rumoured 10x elsewhere), and shifts a third to a half of weight to a 7,000-stock equity book (event, organizational-metric, customised technical) built on cloud computing and long research cycles. He also holds that government macro data are too heavily revised to trade, that trend following is not a dependable crash hedge, and that volatility is a commercial leverage choice. Evidence is first principles, recalled track record and episodes (1987, LTCM, 2008, Feb 2018), mostly without statistics.",
+ "fingerprint": [
+  {
+   "tag": "research_robustness_overfitting",
+   "count": 5
+  },
+  {
+   "tag": "diversification_risk_parity",
+   "count": 3
+  },
+  {
+   "tag": "behavioral_sentiment",
+   "count": 3
+  },
+  {
+   "tag": "trend_following",
+   "count": 2
+  },
+  {
+   "tag": "positioning_crowding",
+   "count": 2
+  },
+  {
+   "tag": "short_term_systematic",
+   "count": 1
+  },
+  {
+   "tag": "position_sizing_vol_target",
+   "count": 1
+  },
+  {
+   "tag": "regime_detection",
+   "count": 1
+  },
+  {
+   "tag": "costs_execution",
+   "count": 1
+  },
+  {
+   "tag": "manager_selection_allocation",
+   "count": 1
+  },
+  {
+   "tag": "commodity_fundamentals",
+   "count": 1
+  }
+ ],
+ "core_beliefs": [
+  {
+   "belief": "Markets are not efficient: finance is a human/social science with over-reaction, inaction, mania and panic and no immutable laws (later 'an evolving ecosystem, not atoms in a box'); efficient market theory is a low-utility null prediction that returns are parametric.",
+   "times_stated": 4,
+   "sources": [
+    "QP14",
+    "QP04",
+    "QP11",
+    "MT070"
+   ],
+   "claim_ids": [
+    "QP14-C05-4",
+    "QP14-C05-5",
+    "QP04-C03-15",
+    "QP04-C03-8",
+    "QP11-C43-2",
+    "QP11-C43-3",
+    "MT070-C02-2",
+    "MT070-C03-2"
+   ],
+   "stable": "stable from 1994 to 2019 with changing metaphor (social science, ecosystem)"
+  },
+  {
+   "belief": "Models, like those in natural science, are never reality and must be judged by the falsifiable predictions they make; the most incorruptible test is trading against the market, and models should be judged on data unseen at their creation. Ideas must be validated by data analysis, not intuition.",
+   "times_stated": 3,
+   "sources": [
+    "QP14",
+    "QP11",
+    "MT070"
+   ],
+   "claim_ids": [
+    "QP14-C02-3",
+    "QP14-C05-2",
+    "QP14-C05-1b",
+    "QP11-C26-1",
+    "QP11-C43-1",
+    "MT070-C04-3"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Prices of whole asset classes trend (not a random walk) because markets are a social system and trends develop slowly; simple multi-horizon breakout rules over many markets capture this with very high capacity if there is no over-leverage and discipline.",
+   "times_stated": 2,
+   "sources": [
+    "QP11",
+    "MT070"
+   ],
+   "claim_ids": [
+    "QP11-C13-1",
+    "QP11-C28-2",
+    "QP11-C27-2",
+    "QP11-C36-2",
+    "QP11-C14-1",
+    "MT070-C06-1"
+   ],
+   "stable": "evolved - 2013: trend works, 'success eventually' with discipline; 2019: crowded beta, edge decayed, forecast lowered but still expected to make money. Reason given: too much capital chasing the same trends (QP11-C44-2 foresaw this in 2013)"
+  },
+  {
+   "belief": "Success attracts capital until edge decays: strong relationships are competed away, signals decay as markets change, too much money in a strategy lowers returns; hence continuous research and diversification into more markets and strategies.",
+   "times_stated": 3,
+   "sources": [
+    "QP04",
+    "QP11",
+    "MT070"
+   ],
+   "claim_ids": [
+    "QP04-C03-4",
+    "QP04-C03-9",
+    "QP11-C44-2",
+    "QP11-C45-1",
+    "QP11-C48-1",
+    "MT070-C01-1",
+    "MT070-C01-2",
+    "MT070-C06-1"
+   ],
+   "stable": "stable and strengthened over time"
+  },
+  {
+   "belief": "Edge comes from many weak, independent signals across a broad universe (breadth), with alternative data (weather, inventories, seasonality) in commodities, found by empirical research and constantly replaced; more markets give more chances that something is trending.",
+   "times_stated": 3,
+   "sources": [
+    "QP04",
+    "QP11",
+    "MT070"
+   ],
+   "claim_ids": [
+    "QP04-C03-3",
+    "QP04-C03-6",
+    "QP04-C03-7",
+    "QP11-C08-1b",
+    "QP11-C38-3",
+    "MT070-C01-3"
+   ],
+   "stable": "stable; breadth grows from about 100 futures to about 1,000 stocks (2013) to about 7,000 stocks (2019)"
+  },
+  {
+   "belief": "The Sharpe ratio is valid only for stationary, parametric returns and penalises upside; investors who rank managers by it induce smoothed or short-option negative-skew payoffs; prefer several measures, semi-variance and long-term return under a risk constraint. Returns are non-parametric and non-stationary.",
+   "times_stated": 2,
+   "sources": [
+    "QP03",
+    "QP14"
+   ],
+   "claim_ids": [
+    "QP03-C01-4",
+    "QP03-C01-2",
+    "QP03-C02-3",
+    "QP03-C01-9",
+    "QP03-C02-8",
+    "QP14-C05-5"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Risk and costs are forecastable; returns are not very forecastable. Volatility is a voluntary commercial choice set by leverage (a 'volume knob'), independent of the strategy.",
+   "times_stated": 2,
+   "sources": [
+    "QP11",
+    "MT070"
+   ],
+   "claim_ids": [
+    "QP11-C41-2",
+    "QP11-C41-3",
+    "QP11-C42-1",
+    "MT070-C08-3"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Crowding plus fat tails creates the risk of overnight catastrophic moves (LTCM, 2008), so leverage should be conservative (about 2x gross) especially for unsophisticated clients; part of the decline in hedge fund returns is mechanical (near-zero cash vs 6% earlier, halved leverage).",
+   "times_stated": 2,
+   "sources": [
+    "MT070",
+    "QP11"
+   ],
+   "claim_ids": [
+    "MT070-C02-5",
+    "MT070-C03-1",
+    "MT070-C02-4",
+    "QP11-C27-2"
+   ],
+   "stable": "evolved - 2013 'avoid over-leverage'; 2019 specific leverage cut"
+  },
+  {
+   "belief": "Trend following is a statistical, unpredictable system that cannot be timed and is not a dependable crash hedge: it gained in slow declines (2001-02, 2008) but is long after rallies and would aggravate a 1987-style fall (Feb 2018 hurt managed futures).",
+   "times_stated": 2,
+   "sources": [
+    "MT070",
+    "QP11"
+   ],
+   "claim_ids": [
+    "MT070-C09-2",
+    "MT070-C06-2",
+    "MT070-C08-4",
+    "QP11-C35-2",
+    "QP11-C36-2"
+   ],
+   "stable": "evolved in emphasis - 2013 recounts 2008 gains and 2009 losses; 2019 says it is not dependable as a hedge"
+  },
+  {
+   "belief": "Government macro statistics are revised too often and heavily to trade systematically (US 2009 double dip erased nine years later; Japan growth 0.4 vs 2.5); a two-year, multi-million-pound PMI study was inconclusive.",
+   "times_stated": 1,
+   "sources": [
+    "MT070"
+   ],
+   "claim_ids": [
+    "MT070-C04-2",
+    "MT070-C04-3",
+    "MT070-C04-R1"
+   ],
+   "stable": "single source (2019)"
+  },
+  {
+   "belief": "Futures trend rules do not carry over unchanged to equities; stocks need event, governance/organizational-metric and customised technical strategies, built on cloud compute and cumulative secret team research; AI is one part reality and nine parts hype.",
+   "times_stated": 2,
+   "sources": [
+    "MT070",
+    "QP11"
+   ],
+   "claim_ids": [
+    "MT070-C04-4",
+    "MT070-C05-1",
+    "MT070-C08-2",
+    "MT070-C12-1",
+    "MT070-C05-2",
+    "QP11-C39-1"
+   ],
+   "stable": "evolved - equity expansion planned in 2013 (about 1,000 stocks), executed to 7,000 by 2019"
+  },
+  {
+   "belief": "Volatility is not trending higher (percent volatility peaked in 1933-34; nominal point charts mislead), and low-volatility periods can precede crises.",
+   "times_stated": 1,
+   "sources": [
+    "MT070"
+   ],
+   "claim_ids": [
+    "MT070-C09-1",
+    "MT070-C08-4"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "Investors swing between extremes and adopt strategies after they have worked; inflows follow good records and the industry's growth hurts future returns; the hedge fund industry has been sustained by equity beta, and discretionary managers without real edge face automation and measurement.",
+   "times_stated": 2,
+   "sources": [
+    "QP11",
+    "MT070"
+   ],
+   "claim_ids": [
+    "QP11-C32-2b",
+    "QP11-C36-3",
+    "QP11-C37-1",
+    "MT070-C07-2",
+    "MT070-C09-3"
+   ],
+   "stable": "stable"
+  }
+ ],
+ "mechanisms": [
+  {
+   "name": "Trend persistence to trend profits (2013)",
+   "chain": [
+    "markets are social systems, trends change slowly -> asset-class prices trend over months (2008 bear market, 2000s commodities)",
+    "simple breakout / multi-horizon rules buy new highs and sell new lows, matching chart experts' signals -> make money",
+    "many markets -> something always moving -> smoother, larger, higher-capacity returns; no over-leverage and discipline -> eventual success and inflows"
+   ],
+   "fails_when": "Reversals (2009 losses), over-leverage, lack of discipline, too much money in the strategy",
+   "sources": [
+    "QP11"
+   ],
+   "claim_ids": [
+    "QP11-C36-2",
+    "QP11-C35-2",
+    "QP11-C14-1",
+    "QP11-C15-1",
+    "QP11-C28-1",
+    "QP11-C27-2"
+   ]
+  },
+  {
+   "name": "Edge decay through crowding",
+   "chain": [
+    "Sharpe near 1 for about 30 years -> capital and competitors pile in; easy to replicate and seen as beta",
+    "fast futures trend systems crowded first, then slower ones (2/20-day crossover paid in the 1980s, not now) -> lower returns and return-to-risk",
+    "forecast lowered year by year -> diversify into equity and other strategies without abandoning trend"
+   ],
+   "fails_when": "Not stated; trend following can still work but cannot be relied on",
+   "sources": [
+    "MT070",
+    "QP11",
+    "QP04"
+   ],
+   "claim_ids": [
+    "MT070-C06-1",
+    "MT070-C02-1",
+    "MT070-C02-3",
+    "MT070-C05-3",
+    "QP11-C44-2",
+    "QP04-C03-9"
+   ]
+  },
+  {
+   "name": "Many weak signals to reliable edge",
+   "chain": [
+    "behavioural biases (over-reaction, slumbering inaction) -> patterns in prices not fully reflecting information",
+    "competition -> only weak relationships remain profitable -> combine many weak signals across a broad universe -> aggregate edge; signal decay -> large ongoing research"
+   ],
+   "fails_when": "Signals decay; no out-of-sample discipline is described",
+   "sources": [
+    "QP04"
+   ],
+   "claim_ids": [
+    "QP04-C03-8",
+    "QP04-C03-4",
+    "QP04-C03-3",
+    "QP04-C03-9",
+    "QP04-C03-10"
+   ]
+  },
+  {
+   "name": "Sharpe maximisation leads to hidden tail risk",
+   "chain": [
+    "investors rank managers by Sharpe -> managers maximise it -> negative-skew, smoothed or option-like streams (illiquid marking, take-profit/run-loss)",
+    "non-stationary returns -> misleading Sharpe, hidden tail risk; symmetric standard deviation penalises upside-volatile strategies"
+   ],
+   "fails_when": "Returns close to i.i.d. normal; Sortino has the same stationarity requirement",
+   "sources": [
+    "QP03"
+   ],
+   "claim_ids": [
+    "QP03-C01-2",
+    "QP03-C02-7",
+    "QP03-C01-9",
+    "QP03-C02-1",
+    "QP03-C01-4",
+    "QP03-C02-3"
+   ]
+  },
+  {
+   "name": "Why efficient market theory has low utility and models need market tests",
+   "chain": [
+    "model makes falsifiable predictions -> test against the market's common view; trading profit is the incorruptible test",
+    "EMH predicts only a null and parametric returns -> low scientific utility; bank profits from EMH models come from relative-value arbitrage, and portfolio insurance failed in 1987"
+   ],
+   "fails_when": "Profit test ignores luck and multiple testing (no standard given)",
+   "sources": [
+    "QP14"
+   ],
+   "claim_ids": [
+    "QP14-C05-2",
+    "QP14-C05-4",
+    "QP14-C05-5",
+    "QP14-C06-1",
+    "QP14-C06-2",
+    "QP14-C06-4"
+   ]
+  },
+  {
+   "name": "Crowding, fat tails and leverage",
+   "chain": [
+    "crowded strategies with many holders -> risk of overnight systemic unwinding (LTCM, 2008)",
+    "catastrophe risk -> leverage cut (about 2x gross in long/short portfolios vs about 10x rumoured elsewhere); lower leverage plus near-zero cash -> lower headline returns that look similar to the past once adjusted"
+   ],
+   "fails_when": "Not stated",
+   "sources": [
+    "MT070"
+   ],
+   "claim_ids": [
+    "MT070-C02-5",
+    "MT070-C03-1",
+    "MT070-C02-4"
+   ]
+  },
+  {
+   "name": "Trend is not a crash hedge",
+   "chain": [
+    "trend systems are long indices after rallies -> sudden fall hits CTAs long (Feb 2018)",
+    "slow declines (2001-02, 2008) -> trends establish before the bulk of the loss -> gains; vol spikes after calm cannot be anticipated"
+   ],
+   "fails_when": "A 1987 or Feb 2018-style fast crash; 'one swallow does not make a summer'",
+   "sources": [
+    "MT070"
+   ],
+   "claim_ids": [
+    "MT070-C09-2",
+    "MT070-C08-4",
+    "MT070-C09-1"
+   ]
+  },
+  {
+   "name": "Government macro data as a poor input",
+   "chain": [
+    "statistics revised often and over long periods -> real-time prints differ from final series",
+    "unreliable series -> PMI test produced nothing provable after two years -> global macro on government data is hard to systematise"
+   ],
+   "fails_when": "Not stated; other data (weather in ag futures) are not ruled out",
+   "sources": [
+    "MT070"
+   ],
+   "claim_ids": [
+    "MT070-C04-2",
+    "MT070-C04-3",
+    "MT070-C04-R1"
+   ]
+  },
+  {
+   "name": "Expansion into global equities via compute and data",
+   "chain": [
+    "cloud computing -> portfolios of 7,000 stocks (from 1,000-1,500) and high-frequency data to measure correlations and factors",
+    "futures trend crowded -> a third to a half of weight in equity strategies (event, organizational metrics, customised technical); capacity-limited niches (ag futures) only long-term strategies"
+   ],
+   "fails_when": "Interviewer doubts a trend firm can carry across to equities; no performance data given",
+   "sources": [
+    "MT070"
+   ],
+   "claim_ids": [
+    "MT070-C01-3",
+    "MT070-C11-1",
+    "MT070-C04-4",
+    "MT070-C05-1",
+    "MT070-C03-3"
+   ]
+  }
+ ],
+ "playbook": [
+  {
+   "element": "signal",
+   "rule": "Futures: Donchian-style N-day channel breakout and multi-horizon trend across about 100 markets (N not given in the pack; 'frame days' in the transcript), with a checklist of pattern, seasonal, fundamental and volume. Equities: event, organizational/governance-metric and customised technical strategies; weather, inventory and seasonality in commodities.",
+   "why": "Simple rules reproduce chart experts' signals; stock markets need equity-specific signals",
+   "sources": [
+    "QP11",
+    "QP04",
+    "MT070"
+   ],
+   "claim_ids": [
+    "QP11-C14-1",
+    "QP11-C15-1",
+    "QP11-C12-2",
+    "QP04-C03-6",
+    "QP04-C03-7",
+    "MT070-C04-4",
+    "MT070-C05-1"
+   ]
+  },
+  {
+   "element": "universe",
+   "rule": "About 100 futures, extended to about 1,000 single stocks (2013) and about 7,000 stocks (2019); very long-term strategies only in capacity-limited markets such as agricultural futures.",
+   "why": "More uncorrelated markets improve results and capacity; cloud compute makes big universes tractable",
+   "sources": [
+    "QP11",
+    "MT070"
+   ],
+   "claim_ids": [
+    "QP11-C38-3",
+    "QP11-C39-1b",
+    "QP11-C39-1",
+    "MT070-C01-3",
+    "MT070-C03-3"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "Empirical, assumption-free pattern search and conditional-distribution research on trend, seasonality, spreads and cross-asset relations; judge models on data unseen at creation and by trading against the market; stop a project when evidence cannot be established (sunk cost not a reason); cumulative secret team research, cloud compute, in-house data cleaning (Hivemind).",
+   "why": "Data analysis over intuition; no IP protection and signals decay",
+   "sources": [
+    "QP04",
+    "QP11",
+    "QP14",
+    "MT070"
+   ],
+   "claim_ids": [
+    "QP04-C03-2",
+    "QP11-C42-2",
+    "QP11-C43-1",
+    "QP14-C05-1b",
+    "QP14-C05-2",
+    "MT070-C04-3",
+    "MT070-C08-2",
+    "MT070-C10-2"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Volatility set by one leverage 'volume knob' (10, 20 or 30 vol) as a commercial choice, independent of strategy; forecast risk, costs and returns and optimise (risk and costs easy, returns hard).",
+   "why": "Vol target is a client choice, not a property of the signal",
+   "sources": [
+    "MT070",
+    "QP11"
+   ],
+   "claim_ids": [
+    "MT070-C08-3",
+    "QP11-C41-1b",
+    "QP11-C41-2"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Conservative leverage (about 2x gross long/short vs about 10x rumoured elsewhere), more so for unsophisticated clients; avoid over-leverage and stick with the system; do not rely on trend following as a crash hedge.",
+   "why": "Crowding plus fat tails; returns are uneven",
+   "sources": [
+    "MT070",
+    "QP11"
+   ],
+   "claim_ids": [
+    "MT070-C03-1",
+    "MT070-C02-5",
+    "QP11-C27-2",
+    "MT070-C09-2"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Diversify away from sole reliance on trend into other statistical strategies, none of which can be timed; judge over years, not months; lower the trend forecast year by year but keep it.",
+   "why": "Objective long-term grounds for profit; edge decays",
+   "sources": [
+    "MT070",
+    "QP04"
+   ],
+   "claim_ids": [
+    "MT070-C06-2",
+    "MT070-C05-3",
+    "QP04-C03-3"
+   ]
+  },
+  {
+   "element": "execution",
+   "rule": "Fully systematic book: researchers write and run programs, separate teams handle 24-hour execution, humans intervene only to correct program errors and remain named as responsible.",
+   "why": "Responsibility must stay with people, not 'the computer'",
+   "sources": [
+    "MT070"
+   ],
+   "claim_ids": [
+    "MT070-C05-X1",
+    "MT070-C05-2"
+   ]
+  },
+  {
+   "element": "other",
+   "rule": "Evaluate any backtest with rolling volatility/mean for stationarity, return autocorrelation (smoothing), skew and tail losses, and downside deviation; fees 1/20 historically (cut to 0.9% and 16% by 2019); liquidity terms matched to assets; only client money, no proprietary book.",
+   "why": "Sharpe is gameable; returns did not justify fees; alignment",
+   "sources": [
+    "QP03",
+    "QP11",
+    "MT070"
+   ],
+   "claim_ids": [
+    "QP03-C01-6",
+    "QP03-C02-4",
+    "QP03-C02-1",
+    "QP11-C37-2",
+    "MT070-C07-1",
+    "MT070-C07-X1",
+    "MT070-C08-1"
+   ]
+  }
+ ],
+ "evidence_style": "Philosophy of science (1994) and conceptual critique without data (QP03, QP14); recalled personal track record and episodes in an oral history (2013) and a magazine profile (2016, a single unaudited 12.8% CAGR net); in 2019 a long record (nearly 40 years, Sharpe near 1 for 30 years), historical episodes (LTCM, 2008, 1987, Feb 2018), data-revision anecdotes and analogies (jungle vs atoms, Renaissance). He cites few quantitative tests, withheld the AHL research that showed EMH wrong, and says his PMI study was inconclusive rather than negative.",
+ "views_timeline": [
+  {
+   "as_of": "1994 (QP14)",
+   "view": "Financial models must be judged by falsifiable predictions and by trading profit against the market; efficient market theory has limited scientific utility; return processes are non-parametric and non-stationary; empirical speculation is the productive path.",
+   "reasoning": "Philosophy of science; markets contain agents with minds and controlled experiments are impossible; portfolio insurance failed in 1987",
+   "source": "QP14",
+   "claim_ids": [
+    "QP14-C02-3",
+    "QP14-C05-2",
+    "QP14-C05-4",
+    "QP14-C05-5",
+    "QP14-C06-2",
+    "QP14-C06-4"
+   ]
+  },
+  {
+   "as_of": "date not stated in pack (QP03)",
+   "view": "The Sharpe ratio is not a universal measure of quality; use stationarity checks, semi-variance and long-term return under a risk constraint.",
+   "reasoning": "Gaming via smoothing and option-like payoffs; upside penalised; stationarity required",
+   "source": "QP03",
+   "claim_ids": [
+    "QP03-C01-4",
+    "QP03-C01-9",
+    "QP03-C02-3",
+    "QP03-C02-8"
+   ]
+  },
+  {
+   "as_of": "2013-06-18 (QP11)",
+   "view": "Markets trend and EMH is wrong; simple, diversified, rule-based trend following is durable and very high capacity if not over-levered, but no system works forever and crowding erodes returns, so he diversifies into more markets and equities (about 1,000 stocks); credit stress led the 2007 equity peak by months; 2008 gave large gains and 2009 losses.",
+   "reasoning": "Hand-charting experience, breakout rules matching chart experts, AHL research (undisclosed), too much money lowers returns",
+   "source": "QP11",
+   "claim_ids": [
+    "QP11-C28-2",
+    "QP11-C27-2",
+    "QP11-C44-2",
+    "QP11-C48-1",
+    "QP11-C39-1",
+    "QP11-C35-1",
+    "QP11-C35-2",
+    "QP11-C37-1"
+   ]
+  },
+  {
+   "as_of": "Nov 2016 (QP04)",
+   "view": "Markets are imperfect; edge comes from many weak signals across many markets found empirically and continually replaced as they decay, including weather and inventories in commodities; client CAGR 12.8% net of fees.",
+   "reasoning": "Strong relationships are competed away; signals decay as markets change",
+   "source": "QP04",
+   "claim_ids": [
+    "QP04-C03-8",
+    "QP04-C03-3",
+    "QP04-C03-4",
+    "QP04-C03-9",
+    "QP04-C03-6",
+    "QP04-C03-12"
+   ]
+  },
+  {
+   "as_of": "2019-03-18 (MT070)",
+   "view": "Futures trend following is crowded beta and should earn less (forecast lowered, still expected to make money); not a dependable equity-crash hedge; volatility not structurally rising; hedge fund returns sustained by equity beta; government macro data untrustworthy; AI mostly hype; Winton shifts a third to a half of weight to a 7,000-stock equity book; leverage about 2x gross; fees cut to 0.9% and 16%.",
+   "reasoning": "Too much capital and competition; Feb 2018 managed futures long after rallies; heavy data revisions; PMI study inconclusive",
+   "source": "MT070",
+   "claim_ids": [
+    "MT070-C05-3",
+    "MT070-C06-1",
+    "MT070-C09-2",
+    "MT070-C09-1",
+    "MT070-C07-2",
+    "MT070-C04-2",
+    "MT070-C05-2",
+    "MT070-C01-3",
+    "MT070-C03-1",
+    "MT070-C07-X1"
+   ]
+  }
+ ],
+ "how_views_changed": "Unchanged core: markets are inefficient because of human behaviour, ideas need empirical tests, and edge decays as money arrives. What changed (1994 to 2019): (1) trend following goes from a durable, high-capacity engine with 'success eventually' for the disciplined (2013) to crowded accessible beta with a lowered forecast (2019), reason given: success attracts capital (foreseen in QP11-C44-2); (2) from avoiding over-leverage in general (2013) to a stated 2x gross limit and a leverage-as-commercial-knob view (2019); (3) breadth grows from about 100 futures to about 1,000 then 7,000 stocks, enabled by cloud computing; (4) from 2008 as a crisis-alpha episode (2013) to 'not a dependable crash hedge' (2019); (5) from forecasting returns, covariances and costs, to concluding government macro data are unusable after an inconclusive PMI study; (6) fees from 1/20 to 0.9%/16%, because returns did not justify them. The QP03 Sharpe critique is undated in the pack, so its place in the sequence cannot be stated.",
+ "disagreements": [
+  {
+   "with": "Efficient market theorists / economists",
+   "topic": "Are markets efficient and are returns parametric",
+   "their_position": "Markets are a social science; EMH has low utility and its parametric prediction is falsified; markets trend",
+   "other_position": "Random walk, efficient pricing (as characterised by Harding, no named speaker)",
+   "sources": [
+    "QP14",
+    "QP11",
+    "QP04"
+   ]
+  },
+  {
+   "with": "Investors who rank managers by the Sharpe ratio",
+   "topic": "Sharpe ratio as universal measure",
+   "their_position": "Valid only for stationary, parametric returns; penalises upside; gameable",
+   "other_position": "Sharpe ratio as the standard quality measure",
+   "sources": [
+    "QP03"
+   ]
+  },
+  {
+   "with": "Competitors running about 10x gross leverage (rumoured, Goldman Global Alpha)",
+   "topic": "Leverage",
+   "their_position": "About 2x gross; crowding plus fat tails creates catastrophe risk",
+   "other_position": "Higher leverage (as rumoured)",
+   "sources": [
+    "MT070"
+   ]
+  },
+  {
+   "with": "Global macro hedge funds relying on government data",
+   "topic": "Usability of macro statistics",
+   "their_position": "Government data are too revised to trade; PMI study inconclusive; global macro is similar to systematic but hard to systematise",
+   "other_position": "Macro fundamentals as signals (implied)",
+   "sources": [
+    "MT070",
+    "QP11"
+   ]
+  }
+ ],
+ "internal_tensions": [
+  {
+   "issue": "2013: success is eventually guaranteed for the disciplined, yet nothing works forever and crowding erodes returns; the guarantee ignores ruin and survivorship.",
+   "claim_ids": [
+    "QP11-C27-2",
+    "QP11-C44-2",
+    "QP11-C48-1"
+   ]
+  },
+  {
+   "issue": "Trend following is described as a deep law of how the world works, yet he says finance has no immutable laws.",
+   "claim_ids": [
+    "QP11-C28-2",
+    "QP11-C43-2"
+   ]
+  },
+  {
+   "issue": "Assumption-free pattern search (2016) and trading profit as the incorruptible test (1994) sit with his own warnings that returns are non-stationary and that early records mislead; no out-of-sample or multiple-testing standard is given.",
+   "claim_ids": [
+    "QP04-C03-2",
+    "QP04-C03-1",
+    "QP14-C05-2",
+    "QP14-C05-5",
+    "QP03-C01-6b",
+    "QP03-C01-7b"
+   ]
+  },
+  {
+   "issue": "2008 gains are told as a trend-following success and crisis episode (2013), but in 2019 trend following is not a dependable crash hedge; the distinction rests on slow versus fast declines.",
+   "claim_ids": [
+    "QP11-C35-2",
+    "QP11-C36-2",
+    "MT070-C09-2"
+   ]
+  },
+  {
+   "issue": "Rule-based systems are tested on long histories, but returns are said to be non-stationary and non-parametric, and the 30-year Sharpe near 1 is the evidence for trend.",
+   "claim_ids": [
+    "QP14-C05-5",
+    "QP03-C01-4",
+    "MT070-C06-1"
+   ]
+  }
+ ],
+ "testable_hypotheses": [
+  {
+   "hypothesis": "A multi-horizon N-day breakout (Donchian) rule on about 100 futures earns a positive net return and its Sharpe rises with the number of markets traded.",
+   "data_needed": "Daily futures prices for about 100 markets from 1980s, costs",
+   "claim_ids": [
+    "QP11-C14-1",
+    "QP11-C38-3",
+    "QP11-C08-1b"
+   ]
+  },
+  {
+   "hypothesis": "Trend-following returns fall with industry assets and inter-CTA correlation; faster systems decayed first (2/20-day crossover paid in the 1980s, not now).",
+   "data_needed": "CTA industry AUM, trend index returns by lookback, rolling Sharpe from 1980s to 2019",
+   "claim_ids": [
+    "MT070-C02-1",
+    "MT070-C02-3",
+    "QP11-C44-2",
+    "MT070-C06-1"
+   ]
+  },
+  {
+   "hypothesis": "Trend following hedges slow equity declines (2001-02, 2008) but not fast crashes (1987, Feb 2018) because it is long after rallies.",
+   "data_needed": "Trend index returns conditional on equity drawdown speed and prior 3-month trend",
+   "claim_ids": [
+    "MT070-C09-2",
+    "MT070-C06-2"
+   ]
+  },
+  {
+   "hypothesis": "Widening credit spreads lead equity tops by months and can condition equity trend exposure (2007).",
+   "data_needed": "Credit spreads and equity index history, lead-lag tests across cycles",
+   "claim_ids": [
+    "QP11-C35-1",
+    "QP11-C35-2b"
+   ]
+  },
+  {
+   "hypothesis": "Combining many weak, independent signals across markets raises information ratio roughly with breadth, net of decay.",
+   "data_needed": "Signal-level returns and correlations across a broad universe, with live-vs-backtest decay",
+   "claim_ids": [
+    "QP04-C03-3",
+    "QP04-C03-9",
+    "QP04-C03-4"
+   ]
+  },
+  {
+   "hypothesis": "Weather (soil moisture, cloud cover), inventories and seasonality lead commodity returns over weeks to months, but weaken when widely exploited.",
+   "data_needed": "Weather and inventory series, commodity futures returns, crowding proxies",
+   "claim_ids": [
+    "QP04-C03-6",
+    "QP04-C03-7"
+   ]
+  },
+  {
+   "hypothesis": "Government macro series have revisions large enough that real-time versions have no stable predictive power for asset returns (PMI included).",
+   "data_needed": "Real-time vintages vs revised data (PMI, growth), return forecasting tests",
+   "claim_ids": [
+    "MT070-C04-2",
+    "MT070-C04-3"
+   ]
+  },
+  {
+   "hypothesis": "Strategies with negative skew or smoothed marks show higher Sharpe before tail events; adjusting for autocorrelation and using downside deviation changes manager rankings.",
+   "data_needed": "Manager returns with skew, autocorrelation, Sharpe vs Sortino vs autocorrelation-adjusted Sharpe",
+   "claim_ids": [
+    "QP03-C01-9",
+    "QP03-C02-1",
+    "QP03-C02-3",
+    "QP03-C02-4"
+   ]
+  },
+  {
+   "hypothesis": "Percent (log) volatility of the stock market is not trending up over a century; peak was 1933-34.",
+   "data_needed": "Daily equity index returns since 1920s",
+   "claim_ids": [
+    "MT070-C09-1"
+   ]
+  },
+  {
+   "hypothesis": "Futures-style trend rules applied unchanged to single stocks earn less than equity-specific event, organizational and customised technical strategies.",
+   "data_needed": "Stock-level trend returns vs event/governance factors across a 7,000-stock universe",
+   "claim_ids": [
+    "MT070-C04-4",
+    "MT070-C05-1"
+   ]
+  }
+ ],
+ "blind_spots": [
+  "No statistics, costs, drawdowns, sizing rules or test periods for the trend rules; key AHL research was withheld (QP11) and the breakout lookback is not given",
+  "No performance data for the equity book or the new strategies in 2019; the single 12.8% CAGR figure in 2016 is unaudited",
+  "Crowding mechanism (more money, less return) asserted but not measured, though central to his story",
+  "No out-of-sample or multiple-testing standard for profit as the test of a model",
+  "QP14 and QP03 are conceptual and QP04 is a journalistic profile; most statements about 1994-2016 views cannot be dated to a recording or tied to later statements"
+ ],
+ "reader_inferences": [
+  "(reader) Fingerprint tags for the papers (QP03, QP04, QP11, QP14) are my assignments from their content; only MT070 carries tags in the pack.",
+  "(reader) The 2013 interview states the crowding risk that the 2019 interview says has occurred, making decay of simple trend rules a prediction he made and later reported confirmed; this is testable against CTA AUM and trend returns.",
+  "(reader) The weak-signals-plus-breadth logic maps to the fundamental law of active management (IR roughly IC times sqrt(breadth)), and his Sharpe critique favours positively skewed strategies such as trend, neither stated by him in those terms."
+ ]
+}

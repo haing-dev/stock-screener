@@ -1,0 +1,628 @@
+{
+ "name": "Howard Marks",
+ "sources": [
+  "MT051",
+  "MT078"
+ ],
+ "period": "2024-06-12 (MT078) - 2025-05-01 (MT051); both retell a career from the 1969 Nifty Fifty loss onward",
+ "one_paragraph": "Credit and distressed-debt investor who says returns depend on the price paid relative to value, not on asset quality: no asset is so good it cannot be overpriced, and few are so bad they cannot be cheap enough (the Nifty Fifty fell about 95% over five years from 1969). Markets are made of people, so randomness is large and outcomes are poor evidence of skill; he therefore controls risk first, judges decisions by process, and targets neglected, less efficient niches (convertibles, high yield from 1978, distressed debt from 1988) where he can quantify default risk against the spread, diversify and demand adequate pay. He does not forecast macro or time markets; cycles are driven by excessive optimism and pessimism, reversion of extremes is more dependable than continuation, but only at rare extremes and never with timing. Because consensus is already in the price, money is made only where consensus is wrong; his action is to ask what consensus thinks, what is wrong with it and what would expose the error, then buy what everyone hates when it is cheap (after Lehman, about $650m a week for 15 weeks). The edge is interpretation and judging where we stand in the cycle, not data everyone shares. In mid-2024 he saw US stocks about 20-25% overvalued (PE 21 vs post-war 16) but with only slightly better than 50/50 odds of a decline within a year, and he declined to call AI or China for lack of knowledge. Evidence is experience, memos, analogies and quotes, with almost no data.",
+ "fingerprint": [
+  {
+   "tag": "valuation_contrarian",
+   "count": 2
+  },
+  {
+   "tag": "value_mean_reversion",
+   "count": 2
+  },
+  {
+   "tag": "bottom_up_fundamental",
+   "count": 2
+  },
+  {
+   "tag": "behavioral_sentiment",
+   "count": 2
+  },
+  {
+   "tag": "kelly_or_conviction_sizing",
+   "count": 2
+  },
+  {
+   "tag": "manager_selection_allocation",
+   "count": 1
+  },
+  {
+   "tag": "structural_themes",
+   "count": 1
+  },
+  {
+   "tag": "relative_value_arbitrage",
+   "count": 1
+  },
+  {
+   "tag": "regime_detection",
+   "count": 1
+  },
+  {
+   "tag": "research_robustness_overfitting",
+   "count": 1
+  }
+ ],
+ "core_beliefs": [
+  {
+   "belief": "Return depends on price paid relative to value, not asset quality; buy things cheap enough regardless of quality and avoid very high valuations. Investors who ignore price (Nifty Fifty 'no price too high') lose.",
+   "times_stated": 2,
+   "sources": [
+    "MT051",
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT051-C03-2",
+    "MT051-C03-3",
+    "MT051-C03-R1",
+    "MT051-C05-R1",
+    "MT078-C07-4"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Risk is not good or bad but how risky and what return compensates: take risk that is aware, analyzable, diversifiable and highly paid (high yield priced like life insurance; quantify default against spread). Excessive certainty is the enemy.",
+   "times_stated": 2,
+   "sources": [
+    "MT051",
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT051-C03-4",
+    "MT051-C03-5",
+    "MT078-C04-6",
+    "MT078-C09-2",
+    "MT078-C09-3"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Neglected or unpopular niches produce bargains and reward skill; efficient markets (large-cap equities) do not, since one cannot know more than others there.",
+   "times_stated": 2,
+   "sources": [
+    "MT051",
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT051-C02-1",
+    "MT051-C03-1",
+    "MT051-C02-2",
+    "MT078-C01-2"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Consensus is already in the price, so money is made only where it is wrong and the payoff to the unlikely outcome is high; a superior investor sees the distribution of outcomes better and plays only when upside outweighs downside. Contrarianism is not mechanical.",
+   "times_stated": 2,
+   "sources": [
+    "MT078",
+    "MT051"
+   ],
+   "claim_ids": [
+    "MT078-C07-1",
+    "MT078-C07-2",
+    "MT078-C07-3",
+    "MT051-C05-1",
+    "MT051-C05-R2"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Do not forecast macro or time markets: macro forecasters are not right consistently enough to follow and show no record; forecasts are useful only at rare extremes (five contrarian calls in 50 years) and then name a price or a date, not both. The most profitable asset class a decade ahead cannot be forecast.",
+   "times_stated": 2,
+   "sources": [
+    "MT078",
+    "MT051"
+   ],
+   "claim_ids": [
+    "MT078-C01-3",
+    "MT078-C01-4",
+    "MT078-C03-3",
+    "MT078-C03-4",
+    "MT051-C09-X1"
+   ],
+   "stable": "stable, but see tension: he does state views on Fed cuts and valuation"
+  },
+  {
+   "belief": "Cycles come from overreaction (growth, overbuilding, fear, retrenchment); extrapolating a straight line is the biggest investor mistake; reversion of excess is dependable in direction but not in timing, cause or speed.",
+   "times_stated": 1,
+   "sources": [
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT078-C02-4",
+    "MT078-C03-1",
+    "MT078-C03-2",
+    "MT078-C03-3"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "Valuation signals have unreliable timing: overpriced markets often become more overpriced, so even a 20-25% overvalued market (PE 21 vs 16) has only a little better than 50/50 odds of falling within a year.",
+   "times_stated": 1,
+   "sources": [
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT078-C04-1",
+    "MT078-C04-2",
+    "MT078-C04-3"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "Markets are made of people, so randomness is very large; a good decision can fail and a bad one succeed, so judge by process and by a career of repeated success. A 60-70% hit rate is exceptional.",
+   "times_stated": 1,
+   "sources": [
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT078-C02-1",
+    "MT078-C02-2",
+    "MT078-C02-3",
+    "MT078-C09-6",
+    "MT078-C10-1"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "Everyone has the same data; edge comes from interpretation and from qualitative, forward-looking judgement of where we are in the cycle. His contrarian stands were not data driven (worry before the GFC without knowing subprime existed).",
+   "times_stated": 2,
+   "sources": [
+    "MT051",
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT051-C06-1",
+    "MT078-C09-4",
+    "MT078-C09-5"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Investor behaviour reveals valuation: excess optimism means high prices relative to value; read the market's temperature from how uniform, strong and self-satisfied opinions are.",
+   "times_stated": 2,
+   "sources": [
+    "MT051",
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT051-C08-1",
+    "MT078-C08-3",
+    "MT078-C09-1",
+    "MT078-C09-2"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Most years are good years, so skill shows in how little is lost in bad years; fixed income has capped upside so avoiding losers is the skill, while aspirational 15-20% targets also need winners.",
+   "times_stated": 1,
+   "sources": [
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT078-C01-1",
+    "MT078-C01-X1",
+    "MT078-C05-4",
+    "MT078-C05-5",
+    "MT078-C06-3"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "Oaktree's growth was demographic luck (positioned in a niche that became popular after the 2000-02 equity decline), not forecast; learning comes from failure.",
+   "times_stated": 1,
+   "sources": [
+    "MT051"
+   ],
+   "claim_ids": [
+    "MT051-C04-1",
+    "MT051-C04-2",
+    "MT051-C05-2"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "Central banks administer rates (negative rates were not a market phenomenon) and in the short run one should not fight the Fed even if the policy is unsustainable.",
+   "times_stated": 1,
+   "sources": [
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT078-C06-1"
+   ],
+   "stable": "single source"
+  }
+ ],
+ "mechanisms": [
+  {
+   "name": "Why high quality can lose and low quality can win",
+   "chain": [
+    "consensus 'great companies, no price too high' -> prices far above value -> about 95% loss over five years from 1969",
+    "unloved low-quality credit priced low enough -> spread exceeds expected default loss -> compensated risk"
+   ],
+   "fails_when": "Expected losses not quantified or spreads do not cover them",
+   "sources": [
+    "MT051"
+   ],
+   "claim_ids": [
+    "MT051-C03-1",
+    "MT051-C03-2",
+    "MT051-C03-3",
+    "MT051-C03-4"
+   ]
+  },
+  {
+   "name": "Cycles and reversion of extremes",
+   "chain": [
+    "good growth -> firms all build capacity -> utilisation falls -> retrenchment (greed to fear)",
+    "people assume a process continues -> bubbles and crashes -> regression toward the mean, dependable in direction",
+    "overpriced markets can become more overpriced first, so timing is not dependable"
+   ],
+   "fails_when": "Timing, cause and speed unknown; prices stay extreme for long",
+   "sources": [
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT078-C03-1",
+    "MT078-C03-2",
+    "MT078-C03-3",
+    "MT078-C03-4",
+    "MT078-C04-3"
+   ]
+  },
+  {
+   "name": "From consensus to contrarian bet",
+   "chain": [
+    "consensus belief embodied in price -> little profit from agreeing",
+    "consensus too strong / optimism too high -> payoff to the improbable outcome compelling (underdog odds)",
+    "test: what do they think, what is wrong, what would expose the error -> position different from others even if wrong for a while -> buy what everyone hates because it is cheap"
+   ],
+   "fails_when": "Froth is hard to measure; contrarianism is easier in frothy than fearful markets; one can look wrong a long time",
+   "sources": [
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT078-C07-1",
+    "MT078-C07-2",
+    "MT078-C07-3",
+    "MT078-C07-4",
+    "MT078-C08-2",
+    "MT078-C08-4"
+   ]
+  },
+  {
+   "name": "Distressed debt payoff",
+   "chain": [
+    "bond bought at par defaults -> falls to about 10 -> buy after the collapse, join the restructuring -> recovery to about 30"
+   ],
+   "fails_when": "Not stated; credit crises are when the best opportunities come",
+   "sources": [
+    "MT051"
+   ],
+   "claim_ids": [
+    "MT051-C02-2",
+    "MT051-C04-X1"
+   ]
+  },
+  {
+   "name": "Mid-2024 read on rates and equities",
+   "chain": [
+    "consensus priced six Fed cuts against a dot plot of three (Dec 2023) -> Goldilocks thinking corrected to two or three",
+    "optimism falls at the margin -> market stalls but does not fall (optimists still govern)",
+    "PE 21 vs 16 -> about 20-25% overvaluation but only slightly better than 50/50 odds of decline"
+   ],
+   "fails_when": "A possible AI bubble that he says he cannot judge",
+   "sources": [
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT078-C05-2",
+    "MT078-C05-3",
+    "MT078-C06-2",
+    "MT078-C04-2",
+    "MT078-C04-3"
+   ]
+  }
+ ],
+ "playbook": [
+  {
+   "element": "signal",
+   "rule": "Judge price against value; buy cheap enough regardless of quality; use valuation (S&P PE 21 vs 16) as context, not a timing trigger.",
+   "why": "Price drives return; overpriced markets often become more overpriced",
+   "sources": [
+    "MT051",
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT051-C03-2",
+    "MT051-C03-R1",
+    "MT078-C04-2",
+    "MT078-C04-3"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Take the market's temperature from how uniform, strong and self-satisfied opinions are (widespread admission of uncertainty = moderate); use the S&P 500 as a daily barometer of psychology because credit is priced infrequently. Forecast only at rare extremes.",
+   "why": "Judges the cycle position without precise data",
+   "sources": [
+    "MT078",
+    "MT051"
+   ],
+   "claim_ids": [
+    "MT078-C08-3",
+    "MT078-C09-2",
+    "MT078-C03-6",
+    "MT078-C03-3",
+    "MT051-C08-1"
+   ]
+  },
+  {
+   "element": "universe",
+   "rule": "Neglected or inefficient niches (convertibles, high yield, distressed debt, credit); specialise in a few things.",
+   "why": "Lack of competing buyers; no edge in efficient markets",
+   "sources": [
+    "MT051",
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT051-C02-1",
+    "MT051-C03-1",
+    "MT078-C01-2"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Risk control first: aim for consistency slightly above the middle each year and a bounce to the top in bad years; quantify default risk against the spread, diversify, demand adequate pay; the investment advocate owns the risk, with no separate risk department.",
+   "why": "Skill shows in bad years; nobody should count on others to limit risk",
+   "sources": [
+    "MT078",
+    "MT051"
+   ],
+   "claim_ids": [
+    "MT078-C01-1",
+    "MT078-C05-4",
+    "MT078-C01-X1",
+    "MT051-C03-4",
+    "MT051-C03-5"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Take positions only where the outcome distribution makes upside more than compensate downside (e.g. 75/25 odds); do not bet client money on subjects you know less well (China, AI); act contrarian with size when conditions warrant (about $650m a week for 15 weeks after Lehman), backed by a partner.",
+   "why": "Edge requires knowing more than others; experience and partners make it possible",
+   "sources": [
+    "MT051",
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT051-C05-1",
+    "MT051-C05-R2",
+    "MT078-C04-5",
+    "MT078-C04-7",
+    "MT078-C08-2",
+    "MT078-C08-R1"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "Ask what the consensus thinks, what is wrong with it and what could expose the error; go beyond common data to interpretation and qualitative information; read opposing-slant sources and two or three newspapers plus The Economist; filter rather than ingest all.",
+   "why": "Everyone has the data; contrarianism needs depth",
+   "sources": [
+    "MT078",
+    "MT051"
+   ],
+   "claim_ids": [
+    "MT078-C07-3",
+    "MT078-C09-R1",
+    "MT078-C09-4",
+    "MT051-C06-1",
+    "MT051-C08-X1",
+    "MT051-C08-2"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Fixed income: avoid losers. Aspirational strategies: also find winners. Judge decisions by process; a 60-70% hit rate is exceptional.",
+   "why": "Upside capped for bonds; randomness makes outcomes poor evidence",
+   "sources": [
+    "MT078"
+   ],
+   "claim_ids": [
+    "MT078-C05-5",
+    "MT078-C06-3",
+    "MT078-C02-2",
+    "MT078-C10-1"
+   ]
+  }
+ ],
+ "evidence_style": "Experience, memos and aphorism: decades of observation, historical episodes (Nifty Fifty, 2000 internet bubble, GFC, post-Lehman buying), analogies (life insurers, balls in a bag, betting on the Lakers, dentist) and quotes (Dimson, Twain, Boorstin, Taleb, Feynman). Few statistics (PE 21 vs 16), and he says his contrarian calls were not data driven; no track-record tables.",
+ "views_timeline": [
+  {
+   "as_of": "1969 and 1978-88 (retold in MT051, 2025-05-01)",
+   "view": "Nifty Fifty lost about 95% over five years; high yield from 1978 and distressed debt from 1988 were neglected niches; credit-crisis periods give distressed specialists their best opportunities; the most profitable asset class a decade ahead cannot be forecast.",
+   "reasoning": "Price paid relative to value; no competing buyers in niches",
+   "source": "MT051",
+   "claim_ids": [
+    "MT051-C03-3",
+    "MT051-C02-1",
+    "MT051-C04-X1",
+    "MT051-C09-X1"
+   ]
+  },
+  {
+   "as_of": "late 2008 (retold in MT078, 2024-06-12)",
+   "view": "Bought about $650m a week for 15 weeks (about $10bn) after Lehman.",
+   "reasoning": "Contrarian size when pessimism is extreme, supported by a partner",
+   "source": "MT078",
+   "claim_ids": [
+    "MT078-C08-2",
+    "MT078-C08-1",
+    "MT078-C08-R1"
+   ]
+  },
+  {
+   "as_of": "2024-06-12",
+   "view": "US stocks about 20-25% overvalued (PE 21 vs 16) but no dependable decline; odds only slightly above 50/50 within a year; consensus of six Fed cuts was Goldilocks thinking, corrected to two or three; AI may be a bubble and China may be too cheap but he does not know enough; market temperature moderate because many are uncertain; negative rates were unsustainable but do not fight the Fed in the short run.",
+   "reasoning": "Overvalued markets can stay overvalued; optimism falling at the margin stalls rather than breaks the market; certainty is dangerous",
+   "source": "MT078",
+   "claim_ids": [
+    "MT078-C03-5",
+    "MT078-C04-2",
+    "MT078-C04-3",
+    "MT078-C05-2",
+    "MT078-C06-2",
+    "MT078-C05-3",
+    "MT078-C04-4",
+    "MT078-C04-5",
+    "MT078-C04-7",
+    "MT078-C09-2",
+    "MT078-C06-1"
+   ]
+  }
+ ],
+ "how_views_changed": "Not explained and not visible: the two interviews (2024-06 and 2025-05) state the same method, and MT051 gives no market view for 2025. The career account shows lessons from the 1969 Nifty Fifty loss (price over quality), the high-yield and distressed niches, and learning from failure, but no later change of mind is stated.",
+ "disagreements": [
+  {
+   "with": "Macro forecasters / the interviewer's 'all the macroeconomists are useless'",
+   "topic": "Value of macro forecasts",
+   "their_position": "Softens to 'not right consistently enough to follow' and show no record; forecast only at extremes",
+   "other_position": "Interviewer: macroeconomists are useless",
+   "sources": [
+    "MT078"
+   ]
+  },
+  {
+   "with": "Nifty Fifty buyers (past consensus)",
+   "topic": "Quality versus price",
+   "their_position": "Price relative to value decides; a great company can be dangerous when overpriced",
+   "other_position": "Great companies, no price too high",
+   "sources": [
+    "MT051"
+   ]
+  },
+  {
+   "with": "Consensus in Dec 2023 (six Fed cuts)",
+   "topic": "Rate path",
+   "their_position": "Goldilocks thinking; dot plot of three, later two or three",
+   "other_position": "Market priced six cuts in 2024",
+   "sources": [
+    "MT078"
+   ]
+  }
+ ],
+ "internal_tensions": [
+  {
+   "issue": "Price relative to value is the core signal, but valuation signals do not time and he says do not time the market; the pack does not say what a high valuation changes in action (only that odds are slightly above 50/50).",
+   "claim_ids": [
+    "MT051-C03-2",
+    "MT078-C04-1",
+    "MT078-C04-3",
+    "MT078-C03-3"
+   ]
+  },
+  {
+   "issue": "Does not forecast macro, yet states a view on Fed cuts (six was Goldilocks, corrected to two or three), says the market will stall as optimism falls at the margin, and quantifies 20-25% overvaluation.",
+   "claim_ids": [
+    "MT078-C01-3",
+    "MT078-C05-2",
+    "MT078-C05-3",
+    "MT078-C06-2",
+    "MT078-C04-2"
+   ]
+  },
+  {
+   "issue": "Contrarian by doctrine, yet 'do not fight the Fed' in the short run and admits contrarianism is easier in frothy than fearful markets.",
+   "claim_ids": [
+    "MT078-C07-4",
+    "MT078-C06-1",
+    "MT078-C08-4"
+   ]
+  }
+ ],
+ "testable_hypotheses": [
+  {
+   "hypothesis": "When S&P 500 PE is 20-25% above its post-war norm, the probability of a negative 12-month return is only slightly above 50%, and valuation has predictive power only in the most extreme deciles.",
+   "data_needed": "S&P 500 PE history from 1945, forward 12-month returns, decile analysis",
+   "claim_ids": [
+    "MT078-C04-2",
+    "MT078-C04-3",
+    "MT078-C03-3"
+   ]
+  },
+  {
+   "hypothesis": "High-yield spread minus expected default loss predicts excess return on low-quality credit; the high-yield premium compensates risk when defaults are quantified and diversified.",
+   "data_needed": "HY spreads, default and recovery rates, index returns since 1978-81",
+   "claim_ids": [
+    "MT051-C03-4",
+    "MT051-C03-5"
+   ]
+  },
+  {
+   "hypothesis": "Distressed debt bought after the default price collapse (about 10) earns attractive returns when bought in credit-crisis periods versus other periods.",
+   "data_needed": "Defaulted-bond prices and ultimate recoveries by vintage, crisis-dated",
+   "claim_ids": [
+    "MT051-C02-2",
+    "MT051-C04-X1"
+   ]
+  },
+  {
+   "hypothesis": "Uniformly optimistic, self-satisfied opinion (low dispersion in forecasts or survey sentiment) predicts lower subsequent returns than high-dispersion or admitted-uncertainty periods.",
+   "data_needed": "Survey dispersion, sentiment indices, forecaster disagreement, forward returns",
+   "claim_ids": [
+    "MT078-C08-3",
+    "MT078-C09-2",
+    "MT051-C08-1"
+   ]
+  },
+  {
+   "hypothesis": "A large gap between market-implied policy rate cuts and the central bank's projected path predicts disappointment and a stall in equities rather than a fall.",
+   "data_needed": "Fed funds futures vs dot plot, equity returns after the gap",
+   "claim_ids": [
+    "MT078-C05-2",
+    "MT078-C05-3",
+    "MT078-C06-2"
+   ]
+  },
+  {
+   "hypothesis": "Buying steadily (equal weekly amounts over about 15 weeks) after a crash beats waiting for the bottom or lump-sum buying.",
+   "data_needed": "Post-crash price paths 1929, 1987, 2000-02, 2008, 2020 with simulated staged entry",
+   "claim_ids": [
+    "MT078-C08-2"
+   ]
+  },
+  {
+   "hypothesis": "Manager skill shows in drawdown control: persistent top-quartile performance in bad years, not in good years, predicts long-run outperformance.",
+   "data_needed": "Fund return histories by market regime and persistence tests",
+   "claim_ids": [
+    "MT078-C01-1",
+    "MT078-C01-X1",
+    "MT078-C05-4"
+   ]
+  },
+  {
+   "hypothesis": "Themes built around something new that impresses everyone (internet 2000, possibly AI) end in drawdowns larger than the market's, with the peak timing unpredictable.",
+   "data_needed": "Thematic index histories, narrative or media-intensity indicators, subsequent drawdowns",
+   "claim_ids": [
+    "MT078-C04-4",
+    "MT078-C09-1"
+   ]
+  }
+ ],
+ "blind_spots": [
+  "No numbers on realised performance, hit rate, or the size of positions relative to the portfolio",
+  "How 'cheap enough' or value is estimated for non-credit assets is not stated; the unit of 'value' is never defined",
+  "Does not say what action a 20-25% overvaluation implies for portfolio exposure",
+  "No explicit rule for when contrarian buying stops or for recognising being wrong early",
+  "2025 market view not given in MT051"
+ ],
+ "reader_inferences": [
+  "(reader) His testable core is a price-versus-value gap in neglected credit niches, with a spread-minus-expected-loss calculation that could be backtested; the macro and cycle talk is context and explicitly not a timing signal.",
+  "(reader) The 'moderate temperature' and 'optimists still govern' judgements are second-derivative sentiment readings; they could be coded as changes in survey optimism."
+ ]
+}

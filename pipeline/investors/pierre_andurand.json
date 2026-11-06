@@ -1,0 +1,707 @@
+{
+ "name": "Pierre Andurand",
+ "sources": [
+  "MT123",
+  "MT124",
+  "MT125"
+ ],
+ "period": "2022-03-10 (MT124, recorded; published 2022-03-18) - 2022-09-21 (MT125) - 2024-05-16 (MT123)",
+ "one_paragraph": "Discretionary energy and metals trader who believes commodity prices are set by physical supply-demand balances modelled year by year: the question is what price clears the market, not where price sits in its historical range. Where demand is inelastic (small share of end cost) and supply responds slowly (shale about 12 months, other oil about 7 years, mines 10-15 years, cocoa trees 3-5 years), a shortage can only be cleared by a large, non-linear price move once inventories run out, and he wants those multi-month to multi-year moves, long or short. His edge is tracking high-frequency data (exports, port and exchange stocks, consultant surveys, backwardation, stocks-to-grindings) faster than conservative analysts and pod funds that cannot hold multi-year views. He expresses views with futures and long options (never sells options), sizes so he survives a 50% adverse move in illiquid markets, and cuts risk when markets move against him for reasons he does not understand (Sep 2022). His big calls were Brent $200 (Mar 2022, not reached by Sep when the Russian loss had been offset by strategic-reserve releases), Europe getting through the winter without Russian gas (Sep 2022), and cocoa above $20,000 and copper multi-year deficit (May 2024), where he said oil disruption risk had been overestimated in 2022-23. Evidence is first-principles arithmetic and historical analogues (2008, 2011-14, 1977 cocoa), not backtests.",
+ "fingerprint": [
+  {
+   "tag": "commodity_fundamentals",
+   "count": 3
+  },
+  {
+   "tag": "macro_fundamental_topdown",
+   "count": 3
+  },
+  {
+   "tag": "structural_themes",
+   "count": 3
+  },
+  {
+   "tag": "positioning_crowding",
+   "count": 3
+  },
+  {
+   "tag": "geopolitics",
+   "count": 3
+  },
+  {
+   "tag": "kelly_or_conviction_sizing",
+   "count": 2
+  },
+  {
+   "tag": "liquidity_flows",
+   "count": 2
+  },
+  {
+   "tag": "position_sizing_vol_target",
+   "count": 1
+  },
+  {
+   "tag": "volatility_options",
+   "count": 1
+  },
+  {
+   "tag": "crisis_alpha_convexity",
+   "count": 1
+  },
+  {
+   "tag": "behavioral_sentiment",
+   "count": 1
+  },
+  {
+   "tag": "policy_reaction_central_banks",
+   "count": 1
+  }
+ ],
+ "core_beliefs": [
+  {
+   "belief": "Price is set by the supply-demand balance modelled year by year; the question is what price is needed to clear the market and keep inventories between empty and full, not where price sits versus its history. If price does not move early it overshoots later.",
+   "times_stated": 3,
+   "sources": [
+    "MT123",
+    "MT124",
+    "MT125"
+   ],
+   "claim_ids": [
+    "MT123-C04-2",
+    "MT123-C09-1",
+    "MT124-C02-4",
+    "MT124-C03-3",
+    "MT125-C07-1"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Inelastic demand plus slow supply response means shortages clear only through large non-linear price moves: shale about 12 months, other new oil about 7 years, metals 7-15 years, cocoa trees 3-5 years. Cocoa and copper are a tiny share of end-product cost.",
+   "times_stated": 2,
+   "sources": [
+    "MT123",
+    "MT124"
+   ],
+   "claim_ids": [
+    "MT123-C02-5",
+    "MT123-C02-6",
+    "MT123-C08-4",
+    "MT124-C10-3",
+    "MT124-C10-4",
+    "MT124-C07-3"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Demand destruction comes from large recessions (credit and trade-finance collapse) or mandates, not from high prices alone; society can absorb a 10-15% cut in energy use but not 50%.",
+   "times_stated": 3,
+   "sources": [
+    "MT124",
+    "MT125",
+    "MT123"
+   ],
+   "claim_ids": [
+    "MT124-C07-3",
+    "MT124-C08-1",
+    "MT124-C08-2",
+    "MT125-C10-2",
+    "MT123-C02-5"
+   ],
+   "stable": "evolved - Mar 2022 'no demand destruction at $110-114' and price must go to $200; Sep 2022 recession and rate hikes are the main downside risk (MT125-C11-4, C11-5)"
+  },
+  {
+   "belief": "Consensus lags supply shocks: sell-side analysts are conservative and traders anchor on past ranges, so tracking high-frequency exports, stocks and surveys is an edge; supply changes already expected (Iran about 1 mb/d) are discounted.",
+   "times_stated": 2,
+   "sources": [
+    "MT123",
+    "MT124"
+   ],
+   "claim_ids": [
+    "MT123-C02-2",
+    "MT123-C02-3",
+    "MT123-C04-1",
+    "MT123-C07-4",
+    "MT124-C09-X1"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Years of underinvestment (ESG pressure on miners and oil, shale capital discipline after about $600bn of losses, depleted acreage) leave thin spare capacity (about 1.5 mb/d) and mean commodity supply, not demand, will cap growth over the next decade.",
+   "times_stated": 3,
+   "sources": [
+    "MT124",
+    "MT125",
+    "MT123"
+   ],
+   "claim_ids": [
+    "MT124-C09-1",
+    "MT124-C04-3",
+    "MT124-C11-2",
+    "MT125-C07-4",
+    "MT125-C07-5",
+    "MT123-C09-2"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Market microstructure can break price signals: fund sizing is inverse to volatility, open interest and speculative longs fall (CFTC non-commercial net long 1.4bn barrels in 2018 to 300m), so hedging flows move price and moves occur on no news; pod funds with tight drawdown limits cannot hold multi-year views, so copper shows no early signal.",
+   "times_stated": 2,
+   "sources": [
+    "MT125",
+    "MT123"
+   ],
+   "claim_ids": [
+    "MT125-C08-1",
+    "MT125-C08-2",
+    "MT125-C08-3",
+    "MT125-C08-5",
+    "MT123-C08-3",
+    "MT123-C05-6"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Geopolitical supply loss is hard to size: sanctions were expected to be sticky and Russian oil out for long (Mar 2022), but outcomes showed disruption risk was overestimated in 2022-23 (May 2024).",
+   "times_stated": 3,
+   "sources": [
+    "MT124",
+    "MT125",
+    "MT123"
+   ],
+   "claim_ids": [
+    "MT124-C06-1",
+    "MT124-C06-2",
+    "MT125-C06-1",
+    "MT125-C06-3",
+    "MT123-C10-1",
+    "MT123-C10-3"
+   ],
+   "stable": "evolved - he does not describe this as an error; the reason given is observed outcomes (Russian output held, Iranian exports surged, US output grew, SPR offset the loss)"
+  },
+  {
+   "belief": "He is directionally agnostic and wants large multi-month to multi-year moves; bullish positions are held for months to years, bearish for months to about a year (short late 2008, 2014-15, before Covid).",
+   "times_stated": 1,
+   "sources": [
+    "MT124"
+   ],
+   "claim_ids": [
+    "MT124-C02-5",
+    "MT124-C02-X1"
+   ],
+   "stable": "single source; all his stated current views in 2022-24 are long"
+  },
+  {
+   "belief": "Backwardation and stocks ratios are the gauges of physical tightness (Brent front spread about $2 before the invasion, $4-5 after; stocks-to-grindings 21% heading to 13%); physically settled futures give shorts unbounded squeeze risk when physical is short.",
+   "times_stated": 2,
+   "sources": [
+    "MT124",
+    "MT123"
+   ],
+   "claim_ids": [
+    "MT124-C02-2",
+    "MT123-C04-6",
+    "MT123-C05-2",
+    "MT123-C05-3"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Energy security accelerates decarbonisation, but the transition takes about 20 years and is limited by grids and metals, so coal and oil use must rise for two to three years; hold real necessities (energy, food, metals) as the inflation hedge, and reserve status rests on rule of law, not gold or crypto.",
+   "times_stated": 2,
+   "sources": [
+    "MT124",
+    "MT125"
+   ],
+   "claim_ids": [
+    "MT124-C04-5",
+    "MT124-C05-1",
+    "MT124-C10-1",
+    "MT124-C09-4",
+    "MT125-C10-1",
+    "MT125-C09-5"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Public policy matters through demand: plan for zero Russian gas, run awareness campaigns (3 degree thermostat cut, about 15% of heating gas, plus 5% less power); caps and subsidies without demand reduction risk blackouts.",
+   "times_stated": 1,
+   "sources": [
+    "MT125"
+   ],
+   "claim_ids": [
+    "MT125-C01-2",
+    "MT125-C05-1",
+    "MT125-C05-3",
+    "MT125-C12-2"
+   ],
+   "stable": "single source"
+  }
+ ],
+ "mechanisms": [
+  {
+   "name": "Cocoa shortage to price (2024)",
+   "chain": [
+    "swollen shoot, climate, low fertilizer, weather -> production down about 17.7% vs consensus 11%, exports Ivory Coast -30%, Ghana -41%",
+    "deficit about 800k tons on 5m -> stocks-to-grindings 21% vs 35-40% last decade (1977 at 19%); another deficit year -> about 13%",
+    "physically settled futures, little physical -> shorts squeezed; price must rise until demand is destroyed"
+   ],
+   "fails_when": "Bumper West African crop; a 10% rebound still leaves about 300k deficit and ratio about 13%, so price falls only to $5-6k; stock data partial",
+   "sources": [
+    "MT123"
+   ],
+   "claim_ids": [
+    "MT123-C02-2",
+    "MT123-C04-6",
+    "MT123-C05-2",
+    "MT123-C05-3",
+    "MT123-C06-2",
+    "MT123-C06-3"
+   ]
+  },
+  {
+   "name": "Copper multi-year deficit",
+   "chain": [
+    "electrification, grids, data centres -> demand +1m tons a year despite weak Chinese property",
+    "mine supply growth to zero or negative in 12-18 months, new mines 10-15 years -> 2024 deficit 400-500k tons, 2026 over 1m, 2030 over 3m",
+    "pod funds cannot hold -> no early price signal -> price must rise non-linearly"
+   ],
+   "fails_when": "Scrap or demand respond more than expected; exact path unknown",
+   "sources": [
+    "MT123"
+   ],
+   "claim_ids": [
+    "MT123-C08-1",
+    "MT123-C08-2",
+    "MT123-C09-3",
+    "MT123-C09-4",
+    "MT123-C08-3"
+   ]
+  },
+  {
+   "name": "Russian supply loss to $200 Brent (Mar 2022)",
+   "chain": [
+    "low inventories, thin spare capacity, strong demand -> very tight physical market, steep backwardation",
+    "self-sanctioning (insurance, letters of credit) -> Russian cargoes unsold, port tanks full in weeks -> 2-3 mb/d shut in; sanctions persist until regime change",
+    "offsets limited: Gulf and US about 1.5 mb/d, SPR up to 2 mb/d for 2.5 years -> residual gap about 1.5 mb/d (about 2% of demand)",
+    "inelastic demand -> price rises until recession or mandates cut use: about $200 Brent ($150 in 2008 is about $220 now; oil intensity of GDP 15% lower)"
+   ],
+   "fails_when": "A large recession arrives first (as Lehman 2008), mandates, regime change returns Russian oil, or market already prices a short outage",
+   "sources": [
+    "MT124"
+   ],
+   "claim_ids": [
+    "MT124-C02-2",
+    "MT124-C06-1",
+    "MT124-C06-2",
+    "MT124-C07-1",
+    "MT124-C07-3",
+    "MT124-C08-4",
+    "MT124-C11-5"
+   ]
+  },
+  {
+   "name": "Why oil fell by Sep 2022 and why he still saw upside",
+   "chain": [
+    "Russian loss only about 0.5 mb/d vs SPR releases about 1.5 mb/d -> war added about 1 mb/d net supply; recession fears -> oil fell",
+    "EU embargo (crude December, products February), Putin reaction to cap -> loss of 1-2 mb/d; SPR release ends; China reopens (+2 mb/d)",
+    "almost no spare capacity, shale growth slowing to about 0.5 mb/d a year -> multi-year balance requires higher prices"
+   ],
+   "fails_when": "Global recession from rate hikes plus high energy prices",
+   "sources": [
+    "MT125"
+   ],
+   "claim_ids": [
+    "MT125-C06-1",
+    "MT125-C06-2",
+    "MT125-C06-3",
+    "MT125-C06-4",
+    "MT125-C06-8",
+    "MT125-C07-3",
+    "MT125-C11-5"
+   ]
+  },
+  {
+   "name": "Europe closes the winter gas balance without Russian gas",
+   "chain": [
+    "Russian gas down 75%, plan for zero -> LNG imports nearly double, covering about two thirds; terminals at 71%, capacity not binding",
+    "gas demand 50% residential/commercial, 25% industrial (35% already switched to oil), 20% power -> 3 degree thermostat cut (IEA: 5% per degree) plus 5% less power closes the gap",
+    "managed winter -> fear premium disappears, gas steps down but stays high two years; Russia loses about $100bn revenue"
+   ],
+   "fails_when": "Demand cuts start late and storage runs out; cold winter",
+   "sources": [
+    "MT125"
+   ],
+   "claim_ids": [
+    "MT125-C02-1",
+    "MT125-C02-4",
+    "MT125-C02-5",
+    "MT125-C02-6",
+    "MT125-C12-2",
+    "MT125-C11-2",
+    "MT125-C02-X1"
+   ]
+  },
+  {
+   "name": "Illiquidity snowball in oil futures",
+   "chain": [
+    "higher volatility -> funds cut positions (inverse to volatility) -> lower open interest, fewer speculative longs",
+    "same hedging flows move price more -> large no-news moves ($10 in 24 hours), price carries less information"
+   ],
+   "fails_when": "Not stated; he says he does not understand the behaviour",
+   "sources": [
+    "MT125",
+    "MT123"
+   ],
+   "claim_ids": [
+    "MT125-C08-1",
+    "MT125-C08-2",
+    "MT125-C08-3",
+    "MT125-C08-5",
+    "MT123-C05-6"
+   ]
+  },
+  {
+   "name": "Slow supply response (shale, miners)",
+   "chain": [
+    "shale burned $600bn, now profitable -> shareholders and climate pressure demand discipline",
+    "miners and non-shale oil 7-15 years -> only US shale adds within about 12 months; steel, sand, labour bottlenecks slow it further"
+   ],
+   "fails_when": "Faster US response or demand collapse removes scarcity",
+   "sources": [
+    "MT124",
+    "MT125"
+   ],
+   "claim_ids": [
+    "MT124-C04-3",
+    "MT124-C04-4",
+    "MT124-C10-3",
+    "MT124-C11-1",
+    "MT124-C11-3",
+    "MT125-C07-4"
+   ]
+  }
+ ],
+ "playbook": [
+  {
+   "element": "research",
+   "rule": "Build year-by-year supply-demand balances by commodity at current prices, assess price sensitivity of each side, ask what price clears the market and what path. Use consultant surveys, export tracking, port and exchange stocks, CFTC positioning, IEA data, historical analogues (1977 cocoa, 2008, 2011-14).",
+   "why": "High-frequency data beats consensus; avoids anchoring on range",
+   "sources": [
+    "MT123",
+    "MT124",
+    "MT125"
+   ],
+   "claim_ids": [
+    "MT123-C09-1",
+    "MT123-C04-1",
+    "MT123-C06-5",
+    "MT124-C02-4",
+    "MT125-C02-6",
+    "MT125-C08-2"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Read backwardation (front spreads), inventory and spare capacity, and stocks-to-grindings as the tightness gauges; track event risks against recession risk; discount supply changes already expected.",
+   "why": "Spreads show a physically short market; only unexpected balance changes move price",
+   "sources": [
+    "MT124",
+    "MT123",
+    "MT125"
+   ],
+   "claim_ids": [
+    "MT124-C02-1",
+    "MT124-C02-2",
+    "MT123-C04-6",
+    "MT125-C06-8",
+    "MT124-C09-X1"
+   ]
+  },
+  {
+   "element": "universe",
+   "rule": "Crude, products, metals and softs via futures and options, not physical; trade only supply shocks big enough to dominate the balance (coffee screened out as not exciting enough).",
+   "why": "Selectivity; understands delivery but does not take it",
+   "sources": [
+    "MT124",
+    "MT123"
+   ],
+   "claim_ids": [
+    "MT124-C03-3",
+    "MT124-C03-X1",
+    "MT123-C06-X1"
+   ]
+  },
+  {
+   "element": "execution",
+   "rule": "Use futures with the contract month matched to the horizon (front for tightness, December Brent for later); use long calls or puts for big moves in a short time; never sell options.",
+   "why": "More leverage with loss capped at the premium",
+   "sources": [
+    "MT124"
+   ],
+   "claim_ids": [
+    "MT124-C03-X1",
+    "MT124-C03-1",
+    "MT124-C03-2"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Hold large directional positions for the big moves (bullish months to years, bearish months to about a year); calibrate the size to survive a 50% adverse move in illiquid, volatile commodities such as cocoa.",
+   "why": "Being right on direction is not enough in thin markets",
+   "sources": [
+    "MT124",
+    "MT123"
+   ],
+   "claim_ids": [
+    "MT124-C02-5",
+    "MT124-C02-X1",
+    "MT123-C05-7"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Prefer skewed payoffs (cocoa: about $2,000 downside from $7,000 December vs $13-15k upside); express energy security through equities: US gas producers with export capacity, uranium, nuclear builders, solar, wind; less bullish EU carbon allowances.",
+   "why": "Asymmetry; mandates replace the carbon price",
+   "sources": [
+    "MT123",
+    "MT125"
+   ],
+   "claim_ids": [
+    "MT123-C05-8",
+    "MT123-C06-1",
+    "MT125-C09-3",
+    "MT125-C09-4",
+    "MT125-C10-3"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "When the market moves against the thesis for reasons not understood, cut positions and focus on survival rather than defend the view.",
+   "why": "Avoid giving back more; thin disconnected market (Sep 2022)",
+   "sources": [
+    "MT125"
+   ],
+   "claim_ids": [
+    "MT125-C08-6",
+    "MT125-C08-7"
+   ]
+  }
+ ],
+ "evidence_style": "First-principles supply-demand arithmetic with back-of-envelope numbers (grams of cocoa per person per day, bcm, mb/d), high-frequency data and historical analogues (1977, 2008, 2011-14, April 2020), plus personal track record; figures quoted from memory without charts. Probabilistic about timing; concedes the market may disagree (Sep 2022).",
+ "views_timeline": [
+  {
+   "as_of": "2022-03-10",
+   "view": "Brent could reach about $200 this year, $150+ even without Russia; 2-3 mb/d Russian oil shut in within weeks and out for a long time; OPEC+ disciplined and capacity-constrained; Gulf and US add about 1.5 mb/d once the loss is visible; commodities underowned, metals must rise, supply caps growth for 10 years; Europe may have to ration gas; dollar reserve status not at risk.",
+   "reasoning": "Residual gap about 2% of demand with inelastic demand; market at $114 assumes a short outage",
+   "source": "MT124",
+   "claim_ids": [
+    "MT124-C08-4",
+    "MT124-C08-6",
+    "MT124-C06-1",
+    "MT124-C06-2",
+    "MT124-C09-1",
+    "MT124-C05-4",
+    "MT124-C11-2",
+    "MT124-C06-4",
+    "MT124-C09-4"
+   ]
+  },
+  {
+   "as_of": "2022-09-21",
+   "view": "Europe gets through the winter with little Russian gas, gas prices stay high two years; oil risks skewed up medium term (embargo, SPR end, China reopening, no spare capacity, shale +0.5 mb/d) but recession dominates the short term; he cut energy positions and focused on survival; long US gas exporters, uranium, nuclear, solar and wind; coal and oil use must rise two to three years.",
+   "reasoning": "LNG plus 15% heating and 5% power cuts; market illiquid and disconnected",
+   "source": "MT125",
+   "claim_ids": [
+    "MT125-C01-2",
+    "MT125-C11-3",
+    "MT125-C06-8",
+    "MT125-C07-1",
+    "MT125-C07-3",
+    "MT125-C08-6",
+    "MT125-C09-3",
+    "MT125-C10-1"
+   ]
+  },
+  {
+   "as_of": "2024-05-16",
+   "view": "Cocoa has more upside than downside (above $20,000/ton later in 2024 or 2025; December about $7,000, downside about $5,000); copper should go up a lot, potentially quadrupling over five years; oil disruption risk overestimated, shale growth weak four months but not a trend, Trump vs Biden marginal; Ukraine attacks on Russian ports a risk; soft commodities will offer more climate stories.",
+   "reasoning": "Large deficits, low stocks, inelastic demand; fund selling (longs from 175,000 to 28,000 lots) means no froth; 2022-23 disruptions did not materialise",
+   "source": "MT123",
+   "claim_ids": [
+    "MT123-C05-8",
+    "MT123-C06-1",
+    "MT123-C05-4",
+    "MT123-C09-7",
+    "MT123-C10-1",
+    "MT123-C11-2",
+    "MT123-C10-4",
+    "MT123-C07-1"
+   ]
+  }
+ ],
+ "how_views_changed": "The method (balance sheet, inelastic demand, slow supply, high-frequency data) is constant. Oil moved from $200 Brent and long-lasting Russian outage (Mar 2022) to the observation by Sep 2022 that the Russian loss was only about 0.5 mb/d and was offset by SPR releases, so oil fell and he cut positions; by May 2024 he says disruption risk was overestimated in 2022-23. Europe: from possible gas rationing (Mar 2022) to getting through the winter (Sep 2022) once governments plan for zero Russian gas. Demand: from 'no demand destruction' at $110-114 to recession as the main downside. He gives observed outcomes as the reason; he does not label the $200 call an error. Focus shifts from oil to softs and metals in 2024.",
+ "disagreements": [
+  {
+   "with": "Tracy Alaway",
+   "topic": "Does stockpiling or elastic demand dilute the cocoa shortage",
+   "their_position": "Demand is inelastic; price must clear the shortage",
+   "other_position": "Headlines could cause stockpiling and a bullwhip",
+   "sources": [
+    "MT123"
+   ]
+  },
+  {
+   "with": "Joe Weisenthal / Tracy Alaway",
+   "topic": "Cocoa consensus versus price action",
+   "their_position": "Pullbacks expected in a thin volatile market; deficit remains",
+   "other_position": "Trader survey expects higher prices while price slides; trees don't grow to the sky",
+   "sources": [
+    "MT123"
+   ]
+  },
+  {
+   "with": "Joe Weisenthal",
+   "topic": "What policy can do about the energy shortage",
+   "their_position": "Demand-side policy (awareness, planning for zero Russian gas) closes the balance; caps without demand reduction risk blackouts",
+   "other_position": "Caps and subsidies do not provide more molecules",
+   "sources": [
+    "MT125"
+   ]
+  },
+  {
+   "with": "Tracy Alloway",
+   "topic": "Russian revenue and the price cap",
+   "their_position": "A cap below market can bite while Russia keeps selling, limited by shipping and cheating, and Putin may cut supply",
+   "other_position": "Higher prices offset lower volumes",
+   "sources": [
+    "MT125"
+   ]
+  }
+ ],
+ "internal_tensions": [
+  {
+   "issue": "Mar 2022: Russian oil out for a long time, 2-3 mb/d shut in; Sep 2022: net loss only about 0.5 mb/d offset by SPR; May 2024: Russian output held and disruption risk overestimated.",
+   "claim_ids": [
+    "MT124-C06-1",
+    "MT124-C06-2",
+    "MT125-C06-1",
+    "MT123-C10-3"
+   ]
+  },
+  {
+   "issue": "Speculators and price discovery clear markets and price must move early (2022 Mar), but Sep 2022 says the thin futures market no longer carries information and he cut his position despite an unchanged balance thesis.",
+   "claim_ids": [
+    "MT124-C03-3",
+    "MT124-C04-1",
+    "MT125-C08-5",
+    "MT125-C08-7"
+   ]
+  },
+  {
+   "issue": "Price clears the market through demand destruction (cocoa, copper, oil), but in gas he says price signals alone do not balance falling supply and demand campaigns are needed.",
+   "claim_ids": [
+    "MT123-C02-5",
+    "MT124-C07-3",
+    "MT125-C05-3",
+    "MT125-C11-X2"
+   ]
+  },
+  {
+   "issue": "Says he is directionally agnostic and short at times, but every structural view stated in 2022-24 is long (oil, metals, cocoa, copper) with commodity supply capping growth.",
+   "claim_ids": [
+    "MT124-C02-5",
+    "MT124-C11-2",
+    "MT123-C09-7",
+    "MT123-C06-1"
+   ]
+  }
+ ],
+ "testable_hypotheses": [
+  {
+   "hypothesis": "When stocks-to-grindings (or stocks/consumption) for a soft or metal falls below its multi-decade range while demand is inelastic, forward 6-12 month returns are non-linear (convex) in the ratio.",
+   "data_needed": "Cocoa stocks and grindings (ICCO), copper stocks, long price history incl. 1977",
+   "claim_ids": [
+    "MT123-C04-6",
+    "MT123-C05-2",
+    "MT123-C06-2"
+   ]
+  },
+  {
+   "hypothesis": "Steeper front-spread backwardation (versus its own history) predicts higher subsequent returns in oil and products.",
+   "data_needed": "Futures curves for Brent, WTI, gasoil with inventories",
+   "claim_ids": [
+    "MT124-C02-2",
+    "MT124-C02-1"
+   ]
+  },
+  {
+   "hypothesis": "Supply shocks in commodities with long supply lead times (7+ years) keep price elevated longer than shocks with short lead times (shale about 12 months, agriculture under a year).",
+   "data_needed": "Historical supply shock episodes by commodity with lead-time classification and price half-lives",
+   "claim_ids": [
+    "MT124-C10-3",
+    "MT124-C10-4",
+    "MT124-C11-1"
+   ]
+  },
+  {
+   "hypothesis": "Surprises in high-frequency export or arrival data relative to analyst production estimates predict subsequent estimate revisions and futures returns.",
+   "data_needed": "Port arrivals, export statistics, analyst estimate history, futures returns",
+   "claim_ids": [
+    "MT123-C02-2",
+    "MT123-C02-3",
+    "MT123-C04-1",
+    "MT123-C07-4"
+   ]
+  },
+  {
+   "hypothesis": "Oil demand falls with recessions and mandates, not price spikes alone: consumption responses to price spikes without recession are small and short (a month or two).",
+   "data_needed": "Monthly oil demand, price, recession dates 1973-2024",
+   "claim_ids": [
+    "MT124-C07-3",
+    "MT124-C08-1",
+    "MT124-C08-2",
+    "MT124-C11-6"
+   ]
+  },
+  {
+   "hypothesis": "Falling open interest and speculative net long raise the frequency of large no-news price moves and reduce the informational content of price.",
+   "data_needed": "CFTC positioning, open interest, intraday oil returns, news timestamps",
+   "claim_ids": [
+    "MT125-C08-2",
+    "MT125-C08-4",
+    "MT125-C08-5"
+   ]
+  },
+  {
+   "hypothesis": "Announced geopolitical supply-loss forecasts after sanctions overstate realised net loss; the realised loss is offset by stock releases and rerouting.",
+   "data_needed": "Forecast outages vs realised production and exports, SPR releases for 2022-24 and other sanction episodes",
+   "claim_ids": [
+    "MT124-C06-2",
+    "MT125-C06-1",
+    "MT123-C10-1",
+    "MT123-C10-3"
+   ]
+  },
+  {
+   "hypothesis": "Multi-year projected deficits in metals are not priced early because of short-horizon capital; futures curves underprice projected deficits relative to later spot.",
+   "data_needed": "Consultant deficit forecasts, copper futures curve, subsequent spot",
+   "claim_ids": [
+    "MT123-C08-3",
+    "MT123-C09-3",
+    "MT123-C09-5"
+   ]
+  }
+ ],
+ "blind_spots": [
+  "No track record of calls shown; $200 Brent not reached and not reviewed in later interviews",
+  "No account of how position size and stop levels were set beyond 'survive a 50% adverse move' and 'cut and survive'",
+  "Sell-side and policy forecasts treated as slow without evidence; own estimates (17.7% cocoa loss) not cross-checked in the pack",
+  "Back-of-envelope demand elasticities are asserted, not measured; price level that destroys demand is judged",
+  "Little on shorts or on when a deficit thesis stops working beyond a good crop"
+ ],
+ "reader_inferences": [
+  "(reader) His hit rate rests on timing of price-clearing events, which the interviews do not test; a rule-based version would use stocks ratios, backwardation and lead-time classes.",
+  "(reader) The same physical-balance logic is applied across oil, gas, cocoa and copper; cross-commodity tests of one inventory-to-use signal are possible.",
+  "(reader) The Sep 2022 position cut despite an unchanged thesis shows risk takes precedence over conviction when liquidity thins, a testable liquidity-conditioned sizing rule."
+ ]
+}

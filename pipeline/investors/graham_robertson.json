@@ -1,0 +1,944 @@
+{
+ "name": "Graham Robertson",
+ "sources": [
+  "MT014",
+  "MT029",
+  "MT111",
+  "MT158"
+ ],
+ "period": "2024-07 - 2025-04-03",
+ "one_paragraph": "Graham Robertson (Man AHL; partner and head of client portfolio management, later described as CEO of Man AHL) sees trend following as a long-run, equity-like return stream with near-zero correlation to equities that pays most when equities do badly, and whose performance is determined mainly by diversifying across as many genuinely different price drivers as possible (Sharpe grows roughly with the square root of independent markets). Alternative OTC and non-macro markets lift long-run Sharpe through independent drivers but give no crisis insurance, while liquid macro futures carry the crisis alpha, so he wants both. He argues that trend cannot be timed because it is its own timing mechanism, that capping equity inside trend costs long-run return, that bonds failed as an equity hedge in 2022 making trend a candidate partial bond substitute, and that investors hold too little trend. For sudden shocks he prefers a layered defence (long volatility, then long-short quality, then trend) and is cautious about AI/ML. His evidence is AHL's 13-year attribution, Man Institute notes, simple maths and recent episodes, not formal backtests in these conversations.",
+ "fingerprint": [
+  {
+   "tag": "trend_following",
+   "count": 4
+  },
+  {
+   "tag": "portfolio_construction_stacking",
+   "count": 4
+  },
+  {
+   "tag": "diversification_risk_parity",
+   "count": 3
+  },
+  {
+   "tag": "crisis_alpha_convexity",
+   "count": 3
+  },
+  {
+   "tag": "policy_reaction_central_banks",
+   "count": 2
+  },
+  {
+   "tag": "research_robustness_overfitting",
+   "count": 2
+  },
+  {
+   "tag": "regime_detection",
+   "count": 2
+  },
+  {
+   "tag": "manager_selection_allocation",
+   "count": 2
+  },
+  {
+   "tag": "position_sizing_vol_target",
+   "count": 2
+  },
+  {
+   "tag": "liquidity_flows",
+   "count": 1
+  },
+  {
+   "tag": "commodity_fundamentals",
+   "count": 1
+  },
+  {
+   "tag": "costs_execution",
+   "count": 1
+  },
+  {
+   "tag": "structural_themes",
+   "count": 1
+  }
+ ],
+ "core_beliefs": [
+  {
+   "belief": "Every market can trend, so the key to trend following performance is diversifying across as many genuinely different price drivers as possible, not several correlated contracts. With uncorrelated markets Sharpe scales with the square root of N (0.1 per market becomes 1.0 with 100); AHL's last 13 years were determined by this breadth; diversification pays most in years when trend struggles.",
+   "times_stated": 4,
+   "sources": [
+    "MT158",
+    "MT014",
+    "MT111",
+    "MT029"
+   ],
+   "claim_ids": [
+    "MT158-C13-1",
+    "MT158-C04-1",
+    "MT158-C13-4",
+    "MT158-C14-1",
+    "MT014-C14-4",
+    "MT014-C15-1",
+    "MT111-C06-1",
+    "MT111-C04-2",
+    "MT029-C04-1"
+   ],
+   "stable": "stable - same logic from July 2024 to April 2025. He concedes diversification can fail over short periods and that concentrated managers did well in 2022-24 (see tensions)."
+  },
+  {
+   "belief": "Alternative (OTC, non-macro) markets add long-run Sharpe through diversification (independent drivers such as weather and local supply), not because they trend better; they are steadier but give little or no crisis alpha. Liquid macro futures supply the crisis alpha at lower long-run Sharpe, so hedging a risk-asset portfolio should use the instruments it holds.",
+   "times_stated": 4,
+   "sources": [
+    "MT158",
+    "MT014",
+    "MT111",
+    "MT029"
+   ],
+   "claim_ids": [
+    "MT158-C07-1",
+    "MT158-C07-2",
+    "MT158-C07-3",
+    "MT014-C15-1",
+    "MT014-C15-2",
+    "MT014-C15-3",
+    "MT014-C16-3",
+    "MT111-C06-2",
+    "MT111-C06-3",
+    "MT111-C06-4",
+    "MT029-C04-1"
+   ],
+   "stable": "stable - MT158 puts alternative-market Sharpe at about 0.8-0.9 versus 0.5-0.6 for liquid futures; MT014 says alternatives did relatively better when the central-bank put hurt traditional trend (2009-19) but in 2022 core markets did best and diversification did not help (MT014-C16-1, C16-2)."
+  },
+  {
+   "belief": "Trend has earned about as much as equities long-run with near-zero correlation and pays most when equities do badly (a yield-put like bonds). Crisis alpha belongs to sustained sell-offs; it is neutral, not negative, to very short volatility spikes (Yenmageddon, outcome depends on positioning) and its record is strong for equity falls but thin for rare bond sell-offs (1970s, 2022).",
+   "times_stated": 4,
+   "sources": [
+    "MT158",
+    "MT014",
+    "MT111"
+   ],
+   "claim_ids": [
+    "MT158-C04-1",
+    "MT158-C06-R1",
+    "MT158-C12-2",
+    "MT158-C16-1",
+    "MT014-C06-5",
+    "MT014-C06-6",
+    "MT111-C13-2",
+    "MT111-C13-3",
+    "MT111-C13-X1"
+   ],
+   "stable": "stable, with the caveat that coverage of sudden shocks and bond crises is weak."
+  },
+  {
+   "belief": "An allocation to trend cannot sensibly be timed: trend follows its own direction changes. Its worst weeks are reversals during strongly trending periods and the 12 months before and after are relatively good, so a sharp reversal (SVB March 2023) is not a reason to exit. Trend thrives when markets move (the inflation up-and-down cycle since 2021).",
+   "times_stated": 1,
+   "sources": [
+    "MT158"
+   ],
+   "claim_ids": [
+    "MT158-C08-1",
+    "MT158-C08-R2",
+    "MT158-C08-2",
+    "MT158-C08-3",
+    "MT158-C08-X1"
+   ],
+   "stable": "stable (single appearance)."
+  },
+  {
+   "belief": "Investors hold too little trend. By conventional metrics they should hold more (a Sharpe of 0.2 would justify about 10%; allocations under 2% do not move the needle); trend breaks the asset-allocation mold and is sized by tracking error; a line-item problem and complexity premium cause under-allocation; wealth investors and the media ignore it, and more adoption (including BlackRock and Fidelity) is better.",
+   "times_stated": 4,
+   "sources": [
+    "MT158",
+    "MT014",
+    "MT111",
+    "MT029"
+   ],
+   "claim_ids": [
+    "MT158-C11-1",
+    "MT158-C11-2",
+    "MT158-C11-X2",
+    "MT158-C12-1",
+    "MT158-C12-3",
+    "MT014-C12-2",
+    "MT014-C13-1",
+    "MT014-C13-2",
+    "MT014-C14-2",
+    "MT014-C14-3",
+    "MT029-C12-X1",
+    "MT029-C18-R1"
+   ],
+   "stable": "stable. He rejects the attributed 40% figure as a recommendation (the point was that the level varies and people hold too little)."
+  },
+  {
+   "belief": "Bonds failed as an equity hedge in 2022 (US Treasuries worst year in about 200 years; record stock-bond correlation) while trend made money, so trend is a candidate partial bond substitute; bonds at 5% are more attractive than at 1% and the short-bond trend position that paid in 2022-23 is fading. Over 50-60 years bonds and equities have similar Sharpe but over the last decade the bond Sharpe is near zero.",
+   "times_stated": 3,
+   "sources": [
+    "MT158",
+    "MT014",
+    "MT111"
+   ],
+   "claim_ids": [
+    "MT158-C06-1",
+    "MT158-C06-2",
+    "MT158-C06-3",
+    "MT158-C15-3",
+    "MT158-C11-X1",
+    "MT014-C11-3",
+    "MT111-C13-3",
+    "MT111-C13-1",
+    "MT111-C13-X1"
+   ],
+   "stable": "stable."
+  },
+  {
+   "belief": "Capping long-equity exposure inside trend sacrifices long-run return for little protection (AHL looked in 2016; the capped version lagged by about 10-20% in 2017, when one big long-equity trend dominated). Where equity risk worries an investor, cut it elsewhere in the portfolio.",
+   "times_stated": 1,
+   "sources": [
+    "MT158"
+   ],
+   "claim_ids": [
+    "MT158-C16-2",
+    "MT158-C16-X1",
+    "MT158-C17-1",
+    "MT158-C17-X1"
+   ],
+   "stable": "stable (single appearance)."
+  },
+  {
+   "belief": "Protection against sudden short shocks costs long-term return; the best action in a one-week shock is often to do nothing. If protection is wanted, layer long volatility (costly), long-short quality equity (a yield-put on short sharp flights to quality; SVB 2023, August 2024, DeepSeek day) and trend (sustained crises). Responsive volatility scaling cuts positions in a spike and misses the rebound.",
+   "times_stated": 3,
+   "sources": [
+    "MT014",
+    "MT111",
+    "MT158"
+   ],
+   "claim_ids": [
+    "MT014-C07-1",
+    "MT014-C07-2",
+    "MT014-C07-3",
+    "MT014-C07-4",
+    "MT014-C08-1",
+    "MT014-C08-2",
+    "MT014-C08-3",
+    "MT014-C08-X1",
+    "MT014-C09-2",
+    "MT111-C15-1",
+    "MT111-C15-2",
+    "MT111-C15-3",
+    "MT158-C12-2"
+   ],
+   "stable": "stable - first stated July 2024 (pair with long-short quality), developed in December 2024."
+  },
+  {
+   "belief": "Returns are very hard to predict (investment-bank S&P forecasts have poor accuracy), so non-predictive adaptive, price-based strategies are preferable; prices can decouple from news (European equities rallied through tariff headlines; assets with no value anchor such as crypto form bubbles), which favours trend. AI/ML pattern recognition fails in unprecedented events (Covid) so AI has not yet revolutionised trend following; LLMs are a productivity tool.",
+   "times_stated": 3,
+   "sources": [
+    "MT014",
+    "MT111",
+    "MT158"
+   ],
+   "claim_ids": [
+    "MT014-C12-1",
+    "MT111-C03-5",
+    "MT111-C08-1",
+    "MT111-C16-R1",
+    "MT158-C15-1",
+    "MT158-C15-2",
+    "MT158-C02-X1"
+   ],
+   "stable": "stable."
+  },
+  {
+   "belief": "Trend manager results are highly dispersed despite conceptual simplicity because design choices (lookback, market set, speed, measurement) differ. Performance is not linear in speed: slow trend tends to have a higher Sharpe, faster trend better crisis alpha, and medium speed can be worst. In 2024 medium-speed bond and FX trends were whipsawed by rate-cut expectations that oscillated on the same 3-4 month cycle as holding periods ('harmonic frequency of death'), a sensitivity he expects to be transient.",
+   "times_stated": 2,
+   "sources": [
+    "MT014",
+    "MT111"
+   ],
+   "claim_ids": [
+    "MT014-C05-3",
+    "MT014-C05-4",
+    "MT014-C05-5",
+    "MT014-C06-1",
+    "MT014-C10-1",
+    "MT014-C10-2",
+    "MT014-C10-3",
+    "MT014-C10-4",
+    "MT111-C05-1",
+    "MT111-C05-2"
+   ],
+   "stable": "stable; the speed claims are hedged ('very cautious with my words')."
+  },
+  {
+   "belief": "Central-bank action (the Fed put after the GFC) suppresses macro trends in liquid markets: traditional liquid trend struggled in range-bound 2011-2013 (the CTA winter) while OTC and alternative markets kept earning, and from 2009-19 alternative trend did relatively better.",
+   "times_stated": 3,
+   "sources": [
+    "MT029",
+    "MT158",
+    "MT014"
+   ],
+   "claim_ids": [
+    "MT029-C03-1",
+    "MT029-C04-1",
+    "MT158-C13-5",
+    "MT158-C13-4",
+    "MT014-C16-1"
+   ],
+   "stable": "stable."
+  }
+ ],
+ "mechanisms": [
+  {
+   "name": "Diversification via alternative markets and crisis alpha",
+   "chain": [
+    "liquid futures tied to macro drivers move together in a crisis -> trend there has crisis alpha but lower Sharpe (about 0.5-0.6) -> alternative markets have independent price drivers (weather, local supply) -> steadier returns and higher Sharpe (about 0.8-0.9) but no crisis alpha -> Sharpe scales with sqrt(N) of independent markets -> diversification pays most in years when trend struggles"
+   ],
+   "fails_when": "Short periods (anything can happen); concentrated portfolios win in strong-trend years and a few managers with few markets did very well in 2022-24; alternative markets give no insurance in a crash; costs and crowding in exotic markets could erode the benefit.",
+   "sources": [
+    "MT158",
+    "MT014",
+    "MT111"
+   ],
+   "claim_ids": [
+    "MT158-C07-1",
+    "MT158-C07-2",
+    "MT158-C07-3",
+    "MT158-C14-1",
+    "MT158-C14-2",
+    "MT111-C06-1",
+    "MT111-C06-2",
+    "MT111-C05-3",
+    "MT111-C07-2",
+    "MT014-C14-4"
+   ]
+  },
+  {
+   "name": "Read trend from total positioning, not equity headlines",
+   "chain": [
+    "equities sell off -> long-equity trend positions lose -> short bonds and long dollar positions profit independently -> total is positive (April 2024)"
+   ],
+   "fails_when": "Positions concentrated in one direction, or a sudden reversal hits all books at once (SVB March 2023 hit long equities and short bonds together).",
+   "sources": [
+    "MT158",
+    "MT014"
+   ],
+   "claim_ids": [
+    "MT158-C04-2",
+    "MT158-C04-1",
+    "MT158-C08-X1",
+    "MT014-C13-3"
+   ]
+  },
+  {
+   "name": "Bonds' failed hedge and trend as bond substitute",
+   "chain": [
+    "inflation and rate shock 2022 -> Treasuries worst year in about 200 years and equities down together -> trend short bonds made money (traditional portfolios -15% to -20%, BTOP50 about +15%) -> investors consider trend alongside or in place of part of the bond allocation -> yields back at 5%: bonds more attractive and the short-bond trend position fades"
+   ],
+   "fails_when": "Bonds rally again (short-bond trend position vulnerable); sudden equity drops where bonds rally; bond-crisis evidence needs a much longer history.",
+   "sources": [
+    "MT158",
+    "MT111"
+   ],
+   "claim_ids": [
+    "MT158-C06-2",
+    "MT158-C06-3",
+    "MT158-C05-3",
+    "MT158-C06-1",
+    "MT158-C05-X1",
+    "MT158-C10-X2",
+    "MT111-C13-3",
+    "MT111-C13-X1"
+   ]
+  },
+  {
+   "name": "Why capping equities in a trend programme does not pay",
+   "chain": [
+    "investors fear long-equity beta in a sudden sell-off -> ask for capped or no-long-equity trend -> equity trends are a main source of long-run return, so return potential falls -> 2017 had one big long-equity trend and the capped version lagged by about 10-20%"
+   ],
+   "fails_when": "The investor's only goal is crisis alpha or bond replacement rather than long-term performance.",
+   "sources": [
+    "MT158"
+   ],
+   "claim_ids": [
+    "MT158-C16-1",
+    "MT158-C16-2",
+    "MT158-C16-X1",
+    "MT158-C17-1",
+    "MT158-C17-X1"
+   ]
+  },
+  {
+   "name": "Why allocators hold too little trend",
+   "chain": [
+    "trend in the growth bucket -> zero correlation makes it a laggard line item when growth assets rise -> tracking error shows up most when it works -> sub-2% allocations do not move the needle in a bad year -> stacking with equities hides the line item"
+   ],
+   "fails_when": "Allocator has no insurance mindset: monthly pain and no narrative make it hard to hold.",
+   "sources": [
+    "MT158",
+    "MT014",
+    "MT029"
+   ],
+   "claim_ids": [
+    "MT158-C11-1",
+    "MT158-C11-2",
+    "MT158-C11-X2",
+    "MT158-C12-1",
+    "MT158-C12-3",
+    "MT014-C13-1",
+    "MT029-C12-X1"
+   ]
+  },
+  {
+   "name": "Harmonic frequency of death (2024 bond and FX whipsaw)",
+   "chain": [
+    "rate-cut pricing oscillates (six cuts, then two, then ten by end of September, then reversal) -> bond and FX trends reverse every 3-4 months -> medium-term holding periods of 2-6 months (average 3-4) are caught -> unusually high central-bank sensitivity at the start of an easing cycle -> regional dispersion (Europe vs US) breaks the single central-bank factor and the headwind fades"
+   ],
+   "fails_when": "Multiple models and speeds run in parallel so oscillation hits only on average; the end-of-headwind view is hopeful and untested.",
+   "sources": [
+    "MT014"
+   ],
+   "claim_ids": [
+    "MT014-C10-1",
+    "MT014-C10-2",
+    "MT014-C10-3",
+    "MT014-C10-4",
+    "MT014-C06-1",
+    "MT014-C09-5"
+   ]
+  },
+  {
+   "name": "Layered defence for sudden shocks",
+   "chain": [
+    "very short sharp volatility spike (three-day Yenmageddon) -> trend neutral and volatility scaling barely changes positions in the first days -> flight to quality lifts long-short quality (SVB 2023, August 2024, DeepSeek day) -> layer long volatility first (costly), quality second (short bursts), trend third (sustained crises)"
+   ],
+   "fails_when": "A crisis from an equity all-time high (trend and stocks-plus-trend both long equities); long volatility bleeds if bought after spikes; a tech-led sell-off could hurt quality, though not on DeepSeek day or in 2000-03 simulations.",
+   "sources": [
+    "MT014",
+    "MT111"
+   ],
+   "claim_ids": [
+    "MT014-C06-5",
+    "MT014-C08-1",
+    "MT014-C07-1",
+    "MT014-C07-2",
+    "MT014-C08-3",
+    "MT014-C08-5",
+    "MT014-C08-4",
+    "MT111-C15-1",
+    "MT111-C15-2",
+    "MT111-C15-3"
+   ]
+  },
+  {
+   "name": "Fed put and the CTA winter",
+   "chain": [
+    "Fed put emerges and markets range-bound (2011-2013) -> central banks suppress trends in the liquid markets trend programmes trade -> OTC and alternative markets with different price drivers (Evolution programme) keep earning -> researching new markets adds genuine value"
+   ],
+   "fails_when": "Not stated; in 2022 core markets did best and diversification did not help.",
+   "sources": [
+    "MT029",
+    "MT158",
+    "MT014"
+   ],
+   "claim_ids": [
+    "MT029-C03-1",
+    "MT029-C04-1",
+    "MT158-C13-5",
+    "MT158-C13-4",
+    "MT014-C16-1",
+    "MT014-C16-2"
+   ]
+  },
+  {
+   "name": "Portable alpha and the concentrated index",
+   "chain": [
+    "index dominated by a few mega-caps -> stock pickers and diversified investors underperform -> hold equity beta at index weight and port the alpha to quant, multi-strategy or trend -> trend as the alpha leg gains when beta draws down"
+   ],
+   "fails_when": "The alpha leg draws down at the same time as beta, making margin management difficult.",
+   "sources": [
+    "MT111"
+   ],
+   "claim_ids": [
+    "MT111-C11-2",
+    "MT111-C12-1",
+    "MT111-C12-2",
+    "MT111-C12-3"
+   ]
+  },
+  {
+   "name": "Correlation surge in crises concentrates trend",
+   "chain": [
+    "pairwise correlations surge in crises (2008) -> trend concentrated in a few themes that paid in 2008 -> policy action ended the single bet in 2009 and it reversed"
+   ],
+   "fails_when": "Not stated.",
+   "sources": [
+    "MT014"
+   ],
+   "claim_ids": [
+    "MT014-C09-3",
+    "MT014-C09-4"
+   ]
+  }
+ ],
+ "playbook": [
+  {
+   "element": "universe",
+   "rule": "Trade as many diverse markets as possible (tens to hundreds), in a traditional-futures team and an alternative-markets team for OTC, harder-to-access but liquid markets; avoid several highly correlated contracts (five or six gold contracts); add alternative markets for different price drivers, not because they trend better; run crypto and China in separate vehicles so objecting investors can opt out.",
+   "why": "Diversification of price drivers is the main performance determinant.",
+   "sources": [
+    "MT158",
+    "MT111",
+    "MT014"
+   ],
+   "claim_ids": [
+    "MT158-C13-1",
+    "MT158-C13-4",
+    "MT158-C07-X1",
+    "MT158-C03-1",
+    "MT158-C03-2",
+    "MT111-C05-1",
+    "MT111-C04-1",
+    "MT014-C14-4",
+    "MT014-C15-1"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Target a fairly constant long-run volatility using volatility and correlation (a little above when trends are plentiful, below when scarce), unchanged for 13 years; volatility is a dial (5, 10, 20 targets); size alternative markets by the same liquidity rules as futures; high-volatility assets (Bitcoin about 100 vol) simply get smaller positions.",
+   "why": "Risk targeting rather than return targeting; asset volatility does not matter to the process; investors' preferences differ.",
+   "sources": [
+    "MT158",
+    "MT111"
+   ],
+   "claim_ids": [
+    "MT158-C13-2",
+    "MT158-C09-1",
+    "MT158-C13-X1",
+    "MT111-C14-1",
+    "MT111-C14-2",
+    "MT111-C07-1"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Do capacity analysis: quantify how Sharpe degrades as assets grow, including execution investment and the higher cost of OTC alternative markets.",
+   "why": "Larger funds hit liquidity thresholds in small markets (softs).",
+   "sources": [
+    "MT014"
+   ],
+   "claim_ids": [
+    "MT014-C04-4",
+    "MT014-C05-1"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Volatility scaling carries safeguards (if volatility tends to zero, implied position tends to infinity); positions are cut when volatility rises; monitor crowding in alternative markets via market size, transaction costs and independent surveys.",
+   "why": "Avoid unbounded leverage in quiet markets; crowding would show as rising costs.",
+   "sources": [
+    "MT158",
+    "MT111"
+   ],
+   "claim_ids": [
+    "MT158-C13-3",
+    "MT158-C02-2",
+    "MT111-C07-2",
+    "MT111-C07-3"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Use several trend measures and multiple speeds: moving-average crossovers (smooth, low impact), breakout channels, back returns; keep an adaptive, non-predictive strategy in the portfolio.",
+   "why": "Smooth crossovers change positions incrementally with low cost; returns are hard to predict.",
+   "sources": [
+    "MT111",
+    "MT014"
+   ],
+   "claim_ids": [
+    "MT111-C09-1",
+    "MT111-C09-3",
+    "MT111-C10-1",
+    "MT111-C10-2",
+    "MT014-C12-1",
+    "MT014-C10-2"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Pair trend with long-short quality (a faster flight-to-quality defence) and, if prepared to pay carry, long volatility; offer portable alpha with trend as the alpha leg; do not offer capped-equity trend without large demand; size a trend allocation relative to the benchmark's tracking error.",
+   "why": "Complementary speeds of protection; capping costs long-run return; trend breaks the asset-allocation mold.",
+   "sources": [
+    "MT014",
+    "MT111",
+    "MT158"
+   ],
+   "claim_ids": [
+    "MT014-C07-1",
+    "MT014-C08-3",
+    "MT014-C07-4",
+    "MT111-C15-1",
+    "MT111-C12-1",
+    "MT111-C12-2",
+    "MT158-C16-2",
+    "MT158-C17-X1",
+    "MT014-C13-1",
+    "MT014-C14-2"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "Attribute performance rather than accepting it (AHL attribution points to market diversification, so research widens the market set; simulations by others such as Quantica serve as confirmation). Use LLMs for reading research, DDQs and code, always checking output; ML pattern recognition tested for a decade but not trusted to replace trend.",
+   "why": "Understanding why a strategy works guards against complacency; hallucination and failure in unprecedented regimes.",
+   "sources": [
+    "MT158"
+   ],
+   "claim_ids": [
+    "MT158-C13-X2",
+    "MT158-C14-1",
+    "MT158-C13-4",
+    "MT158-C15-1",
+    "MT158-C15-2"
+   ]
+  },
+  {
+   "element": "other",
+   "rule": "Sell by region and need (large sovereigns open-minded, Europeans conservative on commodities, Asia higher-risk, Scandinavians ESG-driven); explain ESG treatment transparently.",
+   "why": "ESG thresholds differ across investors.",
+   "sources": [
+    "MT158"
+   ],
+   "claim_ids": [
+    "MT158-C09-X2",
+    "MT158-C10-X1"
+   ]
+  }
+ ],
+ "evidence_style": "AHL's 13-year attribution and track record, Man Institute notes and papers (worst weeks of SG Trend, 2016 capped-equity study, quality 'The Best Strategies for the Worst of Times', 'Honey, I Shrunk the Trend Following'), simple maths (square-root-of-N, 0.2 Sharpe means about 10%), third-party simulations (Quantica), and concrete episodes (2008-09, 2022, SVB, April 2024, 2017, Covid, Yenmageddon, DeepSeek) rather than formal backtests; few numbers beyond Sharpe ranges; careful with generalisations and honest about thin bond-crisis history.",
+ "views_timeline": [
+  {
+   "as_of": "2024-07",
+   "view": "Trend resurged in July 2024 after a soft Q2 (strong Q1; led by equities, credit, cocoa, crypto; fixed income range-bound); the short fixed-income position that paid in 2022-23 is coming off and looks vulnerable after the mid-2024 rally; the inflation-cycle environment is attractive for trend; bonds at 5% beat bonds at 1%; AI has not revolutionised trend.",
+   "reasoning": "Price action supportive in stocks and credit; expected policy moves repriced from six to about one; trend benefits from market movement; ML fails in unprecedented events.",
+   "source": "MT158",
+   "claim_ids": [
+    "MT158-C02-1",
+    "MT158-C03-1",
+    "MT158-C05-1",
+    "MT158-C02-3",
+    "MT158-C06-1",
+    "MT158-C05-X1",
+    "MT158-C08-2",
+    "MT158-C15-1",
+    "MT158-C15-2"
+   ]
+  },
+  {
+   "as_of": "2024-12-12",
+   "view": "Trend was already positioned for the global bond selloff before the US election, so the Trump trade added only modestly; US assets drove most late-2024 trend returns; Q1 2024 was the second-best first quarter in SG Trend history (after 2022) and the flat period since caused client frustration; MSCI World is over half US equities versus about a third in a classic diversified portfolio; the central-bank sensitivity headwind is transient and its end is in sight; diversification outside the US did not pay in 2024.",
+   "reasoning": "Markets moved before the election; index history; Europe-US dispersion; performance divergence and long-term Sharpe comparison.",
+   "source": "MT014",
+   "claim_ids": [
+    "MT014-C01-1",
+    "MT014-C01-2",
+    "MT014-C04-1",
+    "MT014-C03-3",
+    "MT014-C03-1",
+    "MT014-C10-3",
+    "MT014-C10-4",
+    "MT014-C11-3"
+   ]
+  },
+  {
+   "as_of": "2025-01-27",
+   "view": "The DeepSeek shock triggered a tech sell-off and Sputnik-moment narrative but the Magnificent 7 bounced back and the quality factor did not sell off.",
+   "reasoning": "Price action afterwards.",
+   "source": "MT111",
+   "claim_ids": [
+    "MT111-C14-4",
+    "MT111-C15-3"
+   ]
+  },
+  {
+   "as_of": "2025-02",
+   "view": "Gold repricing would affect Treasury issuance and bond trends; European equities rose despite tariff news (prices decoupled from news); European gas and power trended up on low inventories, cold weather and little wind; after the US election the largest liquid markets trended well for slower signals while smaller diversifiers had not helped for a couple of years; interest in portable alpha and in trend as a defensive allocation is rising.",
+   "reasoning": "Cross-market links; early-2025 behaviour; supply shock after range-bound 2024; client demand after the Magnificent 7 problem and 2022's failure of bonds as a hedge.",
+   "source": "MT111",
+   "claim_ids": [
+    "MT111-C03-4",
+    "MT111-C03-5",
+    "MT111-C03-6",
+    "MT111-C05-2",
+    "MT111-C12-1",
+    "MT111-C13-3"
+   ]
+  },
+  {
+   "as_of": "2025-04",
+   "view": "Wealth investors should hold more trend, and making it easier (capital efficiency, higher vol) is the solution; BlackRock and Fidelity entering the space is welcome because more people holding the strategy is better.",
+   "reasoning": "Trend following is absent from wealth-market commentary (an FT article on handling volatility did not mention it); stated briefly.",
+   "source": "MT029",
+   "claim_ids": [
+    "MT029-C12-X1",
+    "MT029-C18-R1"
+   ]
+  }
+ ],
+ "how_views_changed": "No explained revision in the four appearances (July 2024 to April 2025). The framework (breadth of price drivers, crisis alpha from liquid futures, too little trend, bonds' failed hedge) is the same throughout. What changes is emphasis and market reading: July 2024 centred on trend temperature, bond-short fading and capping equity; December 2024 added the central-bank whipsaw explanation, the layered defence and Man's quality paper; February 2025 added portable alpha, alternative-market crowding and DeepSeek; April 2025 reflects a CEO's institutional view. The expectation that the central-bank headwind would fade (December 2024) is not revisited.",
+ "disagreements": [
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "How to treat equity exposure inside trend",
+   "their_position": "Capping long-equity exposure inside trend sacrifices long-run return (2017); the choice depends on the goal; AHL would offer a version if demand were large.",
+   "other_position": "Investors who think they have too much equity should sell equities rather than cap them in trend.",
+   "sources": [
+    "MT158"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Does AHL target volatility",
+   "their_position": "AHL still targets a fairly constant long-run volatility, with modest fluctuation, unchanged in 13 years.",
+   "other_position": "Early European CTAs targeted volatility but most managers now have risk limits and let volatility fluctuate.",
+   "sources": [
+    "MT158"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Concentration versus diversification",
+   "their_position": "Diversification across many markets wins most in years when trend struggles and has been the main determinant of AHL performance.",
+   "other_position": "A few managers trading very few markets did incredibly well in 2022-24, complicating manager selection.",
+   "sources": [
+    "MT158"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Do alternative markets trend better; is more diversification always better",
+   "their_position": "Alternative markets genuinely diversify via different price drivers and slightly higher good-time Sharpe.",
+   "other_position": "They do not trend better; they trend at different times; he follows only a few of them.",
+   "sources": [
+    "MT014",
+    "MT111"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Will the central-bank headwind fade",
+   "their_position": "Sensitivity to central banks is transient; Europe-US dispersion means the end is in sight.",
+   "other_position": "A new administration may pressure the Fed so perception alone moves markets; central banks strongly influenced trend returns after the GFC.",
+   "sources": [
+    "MT014"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "How to treat short sharp shocks",
+   "their_position": "Protection costs long-term return; layer long volatility, quality, trend; responsive vol scaling misses the rebound.",
+   "other_position": "Removing painful periods destroys compounding; pension funds should not hedge single days; spikes reverse too fast to capture.",
+   "sources": [
+    "MT014"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Crowding in alternative markets",
+   "their_position": "No evidence: transaction costs and market-size surveys show growing markets; credit derivative liquidity does not dry up in stress.",
+   "other_position": "Asks whether too many managers now crowd these markets and costs have risen.",
+   "sources": [
+    "MT111"
+   ]
+  },
+  {
+   "with": "Yav Git",
+   "topic": "Will BlackRock and Fidelity entering trend following help",
+   "their_position": "The more people hold these strategies the better.",
+   "other_position": "Large AUM targets make a high-Sharpe diversified product hard and risk a perception of a 0.5 Sharpe strategy.",
+   "sources": [
+    "MT029"
+   ]
+  }
+ ],
+ "internal_tensions": [
+  {
+   "issue": "Trend 'pays most when equities do badly' like a yield-put, yet it is neutral to sudden spikes, depends on positioning (coin-toss) and fails from an equity all-time high where it is long equities; crisis alpha is limited to sustained sell-offs.",
+   "claim_ids": [
+    "MT158-C04-1",
+    "MT158-C06-R1",
+    "MT158-C16-1",
+    "MT014-C06-5",
+    "MT014-C06-6",
+    "MT014-C08-5"
+   ]
+  },
+  {
+   "issue": "Diversification across many markets is the main determinant of performance and wins most in weak years, but concentrated managers did very well in 2022-24, core markets did best in 2022 when diversification did not help, and smaller diversifiers had not helped for a couple of years.",
+   "claim_ids": [
+    "MT158-C14-1",
+    "MT158-C13-4",
+    "MT158-C14-2",
+    "MT014-C16-2",
+    "MT111-C05-2"
+   ]
+  },
+  {
+   "issue": "AHL targets a constant long-run vol and cuts positions when volatility rises, yet he says responsive volatility scaling cuts positions in a spike and misses the rebound.",
+   "claim_ids": [
+    "MT158-C13-2",
+    "MT158-C02-2",
+    "MT014-C09-2"
+   ]
+  },
+  {
+   "issue": "Alternative markets are described as not necessarily smaller, only harder to access and tradable at size under the same liquidity rules, but also as having liquidity thresholds (softs) and higher OTC costs that degrade Sharpe with asset growth.",
+   "claim_ids": [
+    "MT111-C04-1",
+    "MT111-C07-1",
+    "MT014-C04-4",
+    "MT014-C05-1"
+   ]
+  },
+  {
+   "issue": "Trend is a candidate bond substitute and a defence in bond sell-offs, yet the bond-crisis record is thin (1970s, 2022) and the short-bond position that made 2022-23 is fading.",
+   "claim_ids": [
+    "MT158-C06-3",
+    "MT158-C06-1",
+    "MT111-C13-3",
+    "MT111-C13-X1"
+   ]
+  },
+  {
+   "issue": "Strategy is described as non-predictive and adaptive, yet he forecasts that the central-bank headwind will fade and that gold repricing could change Treasury issuance.",
+   "claim_ids": [
+    "MT014-C12-1",
+    "MT014-C10-3",
+    "MT014-C10-4",
+    "MT111-C03-4"
+   ]
+  }
+ ],
+ "testable_hypotheses": [
+  {
+   "hypothesis": "Trend portfolio Sharpe scales with the square root of the number of independent markets (0.1 per market gives 1.0 at 100) and diversification pays most in years when trend struggles while concentrated portfolios win in strong-trend years.",
+   "data_needed": "Many-market trend returns; effective independent-market count; sub-period Sharpe of broad versus concentrated sets.",
+   "claim_ids": [
+    "MT111-C06-1",
+    "MT014-C14-4",
+    "MT158-C14-1",
+    "MT158-C14-2"
+   ]
+  },
+  {
+   "hypothesis": "Alternative-market trend has long-run Sharpe about 0.8-0.9 versus 0.5-0.6 for liquid futures trend but no crisis alpha; liquid futures carry the crisis alpha because a crisis means the S&P.",
+   "data_needed": "Trend returns for OTC/non-macro versus liquid macro futures; returns during equity drawdowns.",
+   "claim_ids": [
+    "MT158-C07-3",
+    "MT014-C15-3",
+    "MT111-C06-2",
+    "MT111-C06-3"
+   ]
+  },
+  {
+   "hypothesis": "The worst weeks of the SG Trend index occur during strong trending periods and returns in the 12 months before and after are relatively good, so reversals are not an exit signal.",
+   "data_needed": "SG Trend weekly returns; event-window returns around the worst weeks.",
+   "claim_ids": [
+    "MT158-C08-3",
+    "MT158-C08-X1"
+   ]
+  },
+  {
+   "hypothesis": "Capping long-equity exposure inside trend lowers long-run return (2017 lag about 10-20%) for little protection versus cutting equity elsewhere in the portfolio.",
+   "data_needed": "Trend with and without equity-long cap; portfolio-level alternatives.",
+   "claim_ids": [
+    "MT158-C16-2",
+    "MT158-C17-X1",
+    "MT158-C17-1"
+   ]
+  },
+  {
+   "hypothesis": "Trend is neutral (not negative) during very short volatility spikes (three-day Yenmageddon) with outcome a coin toss on positioning, while long-short quality gains in flights to quality (SVB 2023, August 2024, DeepSeek day) and has crisis Sharpe above good-time Sharpe.",
+   "data_needed": "Trend and long-short quality returns in short high-volatility windows; 17 quality metrics.",
+   "claim_ids": [
+    "MT014-C06-5",
+    "MT014-C06-6",
+    "MT014-C07-1",
+    "MT014-C07-2",
+    "MT014-C07-3",
+    "MT111-C15-2"
+   ]
+  },
+  {
+   "hypothesis": "In 2024 medium-speed bond and FX trends underperformed because rate-cut expectations oscillated on a 3-4 month cycle matching holding periods; speed is non-linear (slow higher Sharpe, fast better crisis alpha, medium worst).",
+   "data_needed": "Trend returns by lookback in rates and FX in 2024 with the rate-expectation series; longer samples by speed.",
+   "claim_ids": [
+    "MT014-C10-1",
+    "MT014-C10-2",
+    "MT014-C05-3",
+    "MT014-C05-4",
+    "MT014-C05-5"
+   ]
+  },
+  {
+   "hypothesis": "By tracking-error logic a Sharpe of 0.2 justifies roughly a 10% trend allocation, and allocations under 2% do not move the needle in a bad year (2022 offset).",
+   "data_needed": "Portfolio optimisation with tracking-error constraint; 2022 offset by trend weight.",
+   "claim_ids": [
+    "MT014-C14-3",
+    "MT014-C14-2",
+    "MT158-C11-1"
+   ]
+  },
+  {
+   "hypothesis": "Trend crisis alpha is strong for equity falls (MSCI World lost about half twice since 2000, about 30% in Covid) but evidence for bond sell-offs is thin (1970s, 2022).",
+   "data_needed": "Long history of trend returns in equity and bond drawdowns.",
+   "claim_ids": [
+    "MT111-C13-2",
+    "MT111-C13-X1",
+    "MT111-C13-3"
+   ]
+  },
+  {
+   "hypothesis": "Crowding in alternative markets would show up as rising transaction costs; none is evident and market-size surveys show growth.",
+   "data_needed": "Transaction cost estimates by market over time; ISDA/credit derivative size.",
+   "claim_ids": [
+    "MT111-C07-2",
+    "MT111-C07-3"
+   ]
+  },
+  {
+   "hypothesis": "Over 50-60 years bonds and equities have similar Sharpe (basis of risk parity), but over the last decade the bond Sharpe is near zero.",
+   "data_needed": "Bond and equity Sharpe by decade.",
+   "claim_ids": [
+    "MT014-C11-3"
+   ]
+  },
+  {
+   "hypothesis": "Pairwise market correlations surge in crises, concentrating trend into a few themes that reverse once policy action ends the single bet (2008 then 2009).",
+   "data_needed": "Rolling pairwise correlation across markets; trend theme contribution.",
+   "claim_ids": [
+    "MT014-C09-3",
+    "MT014-C09-4"
+   ]
+  },
+  {
+   "hypothesis": "ML/AI pattern recognition trend systems fail in unprecedented events (Covid) and may lose trend's crisis alpha and zero correlation.",
+   "data_needed": "ML trend versus simple trend in unprecedented episodes.",
+   "claim_ids": [
+    "MT158-C15-1",
+    "MT158-C15-2"
+   ]
+  }
+ ],
+ "blind_spots": [
+  "(reader) No numbers for AHL's own markets, costs, capacity or Sharpe by sleeve; the 0.5-0.6 and 0.8-0.9 Sharpe ranges and the 10-20% 2017 lag are asserted, not shown.",
+  "(reader) Speaks for AHL and states he does not know competitors' signal mix; little on how to choose between alternative markets or what a 'different price driver' is beyond examples (Nord Pool hydro power, Swiss swaps).",
+  "(reader) Does not quantify the independence assumption behind the square-root rule or its decay as markets are added and correlations rise in crises.",
+  "(reader) Little on trend's performance versus a plain bond-short alternative, or how much bond allocation trend should replace.",
+  "(reader) The MT029 appearance is thin (least talkative speaker; several captioned claims belong to others), so April 2025 views are minimal."
+ ],
+ "reader_inferences": [
+  "(reader) His coherent position is institutional: diversified, risk-targeted trend as one leg of a portfolio, supplemented by quality and portable alpha, with the main argument being that investors under-allocate and under-diversify.",
+  "(reader) The most testable core is the combination of a square-root diversification rule with the claim that alternative-market Sharpe is higher but without crisis alpha; this can be checked on public futures and swaps data.",
+  "(reader) Attribution caution: Robertson's role is described as partner/head of client portfolio management (2024-2025) and CEO (MT029); captions garble names and several claims in MT029 were corrected away from him."
+ ]
+}

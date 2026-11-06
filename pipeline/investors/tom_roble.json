@@ -1,0 +1,862 @@
+{
+ "name": "Tom Roble",
+ "sources": [
+  "MT013",
+  "MT027",
+  "MT028",
+  "MT146",
+  "MT189"
+ ],
+ "period": "2025-01 - 2026-08-17",
+ "one_paragraph": "Tom Roble is an index-provider and allocator-side researcher (SocGen Prime Services; runs the SG CTA, Trend and Short-Term Traders indices) who thinks of managed futures as a diversifying, risk-mitigating stream whose return comes from breadth across many markets, from disciplined risk allocation and execution, and not from clever trend models, which he calls off-the-shelf. He sees trend as the dominant common factor with dispersion coming from the periphery (speed, universe, sizing, stops), notes a long-run drift to slower models (a 'speed factor') while keeping short-term models valuable at inflection points, and argues that replicators and CTA indices capture the beta but not the drawdown profile or the idiosyncratic bets behind a Sharpe near 0.9. He favours portable alpha and managed accounts that overlay futures margin on full equity exposure, warns that crisis-alpha marketing set unrealistic expectations, and cautions that the CTA index is a set of the largest active managers with survivorship and cash-composite biases. He reads each year through the SG trend indicator (about 200-500 breakout parameters): 2025 was decided by risk management in a few trending markets (metals), and 2026 shows broad, diversified gains. His evidence is index data, manager meetings and client conversations, not backtests of his own.",
+ "fingerprint": [
+  {
+   "tag": "trend_following",
+   "count": 5
+  },
+  {
+   "tag": "manager_selection_allocation",
+   "count": 5
+  },
+  {
+   "tag": "portfolio_construction_stacking",
+   "count": 4
+  },
+  {
+   "tag": "research_robustness_overfitting",
+   "count": 3
+  },
+  {
+   "tag": "diversification_risk_parity",
+   "count": 3
+  },
+  {
+   "tag": "costs_execution",
+   "count": 3
+  },
+  {
+   "tag": "regime_detection",
+   "count": 2
+  },
+  {
+   "tag": "macro_fundamental_topdown",
+   "count": 1
+  },
+  {
+   "tag": "nowcasting_data",
+   "count": 1
+  },
+  {
+   "tag": "geopolitics",
+   "count": 1
+  },
+  {
+   "tag": "position_sizing_vol_target",
+   "count": 1
+  },
+  {
+   "tag": "short_term_systematic",
+   "count": 1
+  },
+  {
+   "tag": "replication_indexing",
+   "count": 1
+  },
+  {
+   "tag": "structural_themes",
+   "count": 1
+  },
+  {
+   "tag": "crisis_alpha_convexity",
+   "count": 1
+  },
+  {
+   "tag": "behavioral_sentiment",
+   "count": 1
+  }
+ ],
+ "core_beliefs": [
+  {
+   "belief": "Diversification across many markets is the only free lunch. A single market's trend Sharpe is only 0.2-0.5; around 0.9 needs many uncorrelated markets and idiosyncratic bets; excluding a market is itself a bet that the chosen ones do better net of cost, and a market should be added when marginal diversification beats its cost (15/50 to 150 markets is material, 150 to 151 is not). Adding markets efficiently is the trend philosophy, not over-engineering.",
+   "times_stated": 4,
+   "sources": [
+    "MT028",
+    "MT146",
+    "MT189",
+    "MT013"
+   ],
+   "claim_ids": [
+    "MT028-C11-2",
+    "MT028-C14-2",
+    "MT146-C13-3",
+    "MT146-C14-1",
+    "MT146-C17-2",
+    "MT146-C13-X2",
+    "MT189-C03-1",
+    "MT189-C11-X3"
+   ],
+   "stable": "stable on principle; he concedes that in 2025 concentrated programs created return (MT013-C10-4) and that alternative-market CTAs such as Man Evolution and Systematica are now working poorly (MT146-C17-3)."
+  },
+  {
+   "belief": "CTA edge is implementation, risk allocation and recognising over-extended trends. Trend models are standard off-the-shelf; innovation is in risk management and execution. When few markets trend (2025: poor average breakout z-scores, poor bonds, metals driving profit two years running) risk allocation decides manager returns.",
+   "times_stated": 3,
+   "sources": [
+    "MT028",
+    "MT013",
+    "MT189"
+   ],
+   "claim_ids": [
+    "MT028-C14-2",
+    "MT013-C06-3",
+    "MT013-C06-4",
+    "MT013-C06-X1",
+    "MT013-C08-3",
+    "MT013-C08-5",
+    "MT013-C08-7",
+    "MT189-C03-1"
+   ],
+   "stable": "stable."
+  },
+  {
+   "belief": "Trend is the dominant factor so trend followers are highly correlated; performance dispersion comes from the periphery (universe, sizing, speed, stops, risk-cutting) and is large even in a homogeneous-looking group. Allocators typically start with one CTA, then add CTAs or non-trend quants to diversify single-manager risk.",
+   "times_stated": 3,
+   "sources": [
+    "MT027",
+    "MT146",
+    "MT013"
+   ],
+   "claim_ids": [
+    "MT027-C04-3",
+    "MT146-C05-1",
+    "MT146-C05-2",
+    "MT146-C07-3",
+    "MT146-C09-3"
+   ],
+   "stable": "stable."
+  },
+  {
+   "belief": "Speed factor: CTAs drifted to slower trend models because longer-term models performed better, but they keep short-term models used adaptively in stress; a blend of fast and slow looks like a painful medium-term model; short-term models pay at major inflection points (GFC, COVID, Ukraine; Q1 2025 tariff shock) while long-term models dominate in between.",
+   "times_stated": 4,
+   "sources": [
+    "MT027",
+    "MT146",
+    "MT013",
+    "MT189"
+   ],
+   "claim_ids": [
+    "MT027-C12-2",
+    "MT027-C14-3",
+    "MT027-C04-2",
+    "MT146-C04-1",
+    "MT146-C04-2",
+    "MT146-C04-3",
+    "MT146-C07-1",
+    "MT146-C06-X2",
+    "MT013-C08-2",
+    "MT013-C08-R2"
+   ],
+   "stable": "evolved - in 2025-03 short-term models are 'vital' in the tool set (MT027-C12-2); in 2026-08 non-trend and short-term CTAs are fragile, parameter-dependent, hard to decompose and added mainly to smooth returns (MT189-C13-1, C12-2, C20-X1). No reason stated for the shift; the data point cited are different (Q1 2025 vs closures)."
+  },
+  {
+   "belief": "Managed futures is a diversifier and completion strategy, not a standalone Sharpe story. Institutional allocators want risk-mitigating portfolios and asymmetric diversification (bonds stopped diversifying after 2022); by portfolio theory efficient portfolios should hold far larger non-equity diversifier allocations. Crisis-alpha marketing set unrealistic expectations of short-term protection, which moved the rhetoric to risk-mitigating and all-weather.",
+   "times_stated": 5,
+   "sources": [
+    "MT028",
+    "MT027",
+    "MT146",
+    "MT013",
+    "MT189"
+   ],
+   "claim_ids": [
+    "MT028-C17-1",
+    "MT028-C17-2",
+    "MT028-C03-X1",
+    "MT027-C07-3",
+    "MT146-C14-X1",
+    "MT013-C11-1",
+    "MT013-C14-3",
+    "MT189-C12-X1",
+    "MT189-C15-2"
+   ],
+   "stable": "stable."
+  },
+  {
+   "belief": "Portable alpha, managed accounts and cross-margining are the efficient delivery: overlay futures-margin CTA exposure on full equity exposure, protecting the left tail without giving up the equity right tail and resolving strategic versus tactical allocation. Futures notional leverage is not borrowed leverage (risk sized to the investor, tight control, exit at will).",
+   "times_stated": 3,
+   "sources": [
+    "MT028",
+    "MT027",
+    "MT189"
+   ],
+   "claim_ids": [
+    "MT028-C17-1",
+    "MT027-C07-4",
+    "MT027-C10-2",
+    "MT189-C09-2",
+    "MT189-C11-2",
+    "MT189-C12-X2",
+    "MT189-C09-X1"
+   ],
+   "stable": "stable."
+  },
+  {
+   "belief": "Replicators and bottom-up trackers are useful for attribution and for matching long-run return and correlation, but they omit market selection, idiosyncratic bets and risk management, so drawdowns differ and the 10-instrument version cannot reach the full-universe Sharpe; a replicator is not static (its weights shift). A benchmark or indicator model itself should be kept unchanged for consistent statistics.",
+   "times_stated": 3,
+   "sources": [
+    "MT028",
+    "MT146",
+    "MT027"
+   ],
+   "claim_ids": [
+    "MT028-C10-3",
+    "MT028-C08-3",
+    "MT028-C11-2",
+    "MT028-C14-X1",
+    "MT146-C03-3",
+    "MT146-C03-4",
+    "MT027-C12-X2"
+   ],
+   "stable": "stable (but see internal tension on static versus evolving)."
+  },
+  {
+   "belief": "CTA indices are not simple benchmarks. 'CTA' is a regulatory term (about half of the 20 largest are non-trend); the index is of the largest and most sophisticated active managers; backfilling today's constituents flatters history; about half of contributors report managed-account composites without cash returns, biasing the index down when rates are high. Short-term CTAs have the highest turnover and rarely persist for years.",
+   "times_stated": 3,
+   "sources": [
+    "MT028",
+    "MT189"
+   ],
+   "claim_ids": [
+    "MT028-C04-3",
+    "MT028-C05-1",
+    "MT189-C18-1",
+    "MT189-C18-X1",
+    "MT189-C16-3",
+    "MT189-C12-1"
+   ],
+   "stable": "stable."
+  },
+  {
+   "belief": "Regime identification cannot avoid sudden shifts but can speed recognition of a new regime; a simpler alternative is to run several model time frames at a roughly constant allocation. CTAs now run many more models and allocate risk across them rather than simply lengthening horizons; capacity is unlikely to explain the slowing (no CTA has grown very large since Winton).",
+   "times_stated": 1,
+   "sources": [
+    "MT027"
+   ],
+   "claim_ids": [
+    "MT027-C11-1",
+    "MT027-C11-3",
+    "MT027-C11-4",
+    "MT027-C12-1",
+    "MT027-C12-X1",
+    "MT027-C11-X1"
+   ],
+   "stable": "stable (single appearance)."
+  },
+  {
+   "belief": "Macro backdrop reading: rising volatility and emerging trends are what CTAs profit from; stagflation, tariffs, geopolitics, stubborn inflation and higher rates favour CTAs and long-short tactical macro (2025 the best environment in a decade, probable attribution); non-US investors rethink US risk after the 2025 dollar weakness but only partially.",
+   "times_stated": 4,
+   "sources": [
+    "MT027",
+    "MT146",
+    "MT013",
+    "MT189"
+   ],
+   "claim_ids": [
+    "MT027-C03-2",
+    "MT027-C21-3",
+    "MT146-C03-2",
+    "MT013-C03-1",
+    "MT013-C03-4",
+    "MT013-C05-4",
+    "MT189-C01-X1"
+   ],
+   "stable": "stable."
+  },
+  {
+   "belief": "Industry structure: trend is about 80% of the CTA space and commoditised with few entrants; nearly 90% of new quant start-ups are non-trend and moving to multi-asset, high-Sharpe shapes; multistrat talent wars anchor emerging managers; mutual-fund CTA structures lag by about 200bp a year; trends can also arise from inefficiency in thinly traded alternative markets.",
+   "times_stated": 4,
+   "sources": [
+    "MT028",
+    "MT146",
+    "MT189"
+   ],
+   "claim_ids": [
+    "MT028-C15-3",
+    "MT146-C01-1",
+    "MT146-C18-2",
+    "MT189-C12-X2",
+    "MT189-C13-2",
+    "MT189-C05-2",
+    "MT189-C08-1"
+   ],
+   "stable": "stable."
+  }
+ ],
+ "mechanisms": [
+  {
+   "name": "Why a replicator cannot reach full-universe Sharpe",
+   "chain": [
+    "single-market trend Sharpe 0.2-0.3 -> adding many markets raises portfolio Sharpe (execution efficiency opened access) -> a replicator holds about 10 instruments and misses the idiosyncratic bets (top commodity contributors) -> long-run return and correlation match but drawdowns differ"
+   ],
+   "fails_when": "Not stated; Beer disputes the materiality (cocoa profit small versus $300bn).",
+   "sources": [
+    "MT028"
+   ],
+   "claim_ids": [
+    "MT028-C11-2",
+    "MT028-C10-3",
+    "MT028-C08-3",
+    "MT028-C14-2"
+   ]
+  },
+  {
+   "name": "Regime identification versus fixed multi-model allocation",
+   "chain": [
+    "long-term trends become less trendy -> research on regime identification to shift risk across model sets -> models cannot predict sudden shifts but can recognise a new regime faster; naive alternative: constant allocation across time frames -> short-term models deliver at inflections"
+   ],
+   "fails_when": "A shock no regime filter predicts (Niels's Omicron example).",
+   "sources": [
+    "MT027"
+   ],
+   "claim_ids": [
+    "MT027-C11-1",
+    "MT027-C11-3",
+    "MT027-C11-4",
+    "MT027-C12-1",
+    "MT027-C12-2"
+   ]
+  },
+  {
+   "name": "Why industry horizons lengthened and why the SG Trend indicator stays fixed",
+   "chain": [
+    "indicator built from the model best correlated with trend followers (medium term) -> over a decade managers drifted longer through more models and risk allocation (not capacity) -> indicator kept unchanged to avoid restating history"
+   ],
+   "fails_when": "A fixed replicating model loses fit as the industry changes.",
+   "sources": [
+    "MT027",
+    "MT146"
+   ],
+   "claim_ids": [
+    "MT027-C11-X1",
+    "MT027-C12-X1",
+    "MT027-C12-X2",
+    "MT146-C03-3",
+    "MT146-C04-1",
+    "MT146-C04-2"
+   ]
+  },
+  {
+   "name": "Breadth of markets and net diversification benefit",
+   "chain": [
+    "single-market trend IR 0.3-0.5 -> add uncorrelated markets, weighing transaction costs and slippage -> not adding a market implicitly bets the chosen ones beat it net of cost -> material gains from 15/50 to 150 markets"
+   ],
+   "fails_when": "Edges decay as capital arrives (Beer) and implicit costs exceed incremental return; Niels sees no benefit from 300-500 markets in 10 years of data.",
+   "sources": [
+    "MT146"
+   ],
+   "claim_ids": [
+    "MT146-C13-3",
+    "MT146-C14-1",
+    "MT146-C17-2",
+    "MT146-C17-3",
+    "MT146-C13-X2",
+    "MT146-C18-2"
+   ]
+  },
+  {
+   "name": "2025 trend performance depended on risk allocation",
+   "chain": [
+    "few broadly trending markets (poor z-scores, bonds poor) -> returns depend on being in the trending markets (metals) with the right risk -> managers cut risk fast as precious metals reversed, trimming late-January 2026 losses -> early 2026 returns about 8-15%"
+   ],
+   "fails_when": "A manager not trading the right markets (for example metals) misses the opportunity.",
+   "sources": [
+    "MT013"
+   ],
+   "claim_ids": [
+    "MT013-C06-3",
+    "MT013-C06-X1",
+    "MT013-C08-3",
+    "MT013-C08-5",
+    "MT013-C08-7",
+    "MT013-C08-4",
+    "MT013-C06-5"
+   ]
+  },
+  {
+   "name": "Dollar weakness and US assets for foreign investors",
+   "chain": [
+    "dollar weakens and loses safe-haven status in 2025 -> a euro investor's S&P 500 gain shrinks from 16% to about 2.5% -> non-US investors rethink which US assets they hold, not wholesale selling (global equity markets too small)"
+   ],
+   "fails_when": "Not discussed; he says investors are not looking to sell entirely.",
+   "sources": [
+    "MT013"
+   ],
+   "claim_ids": [
+    "MT013-C03-1",
+    "MT013-C03-2",
+    "MT013-C03-3",
+    "MT013-C03-4"
+   ]
+  },
+  {
+   "name": "Managed accounts and portable alpha as capital-efficient delivery",
+   "chain": [
+    "equity FOMO -> CTA allocation historically meant selling equities -> managed account with futures margin overlays CTAs on 100% equities, cross-margining -> access to high-Sharpe, low-capacity strategies large programmes cannot offer"
+   ],
+   "fails_when": "Not stated; Niels asks whether the extra engineering is over-clever.",
+   "sources": [
+    "MT189",
+    "MT027"
+   ],
+   "claim_ids": [
+    "MT189-C09-2",
+    "MT189-C11-2",
+    "MT189-C12-X2",
+    "MT027-C07-4",
+    "MT027-C10-2"
+   ]
+  },
+  {
+   "name": "Why crisis-alpha marketing disappoints",
+   "chain": [
+    "CTA marketing led with crisis protection -> investors expect protection in short equity drawdowns -> equity trends were strong into the drawdown so groups are long equities and cannot protect (portfolios and new trends need time) -> disappointment and rhetoric shift to risk mitigating and all-weather; also equities +25% vs CTAs +2% in 2024 shows expectation misalignment"
+   ],
+   "fails_when": "Not stated.",
+   "sources": [
+    "MT189",
+    "MT028"
+   ],
+   "claim_ids": [
+    "MT189-C15-2",
+    "MT028-C17-2"
+   ]
+  }
+ ],
+ "playbook": [
+  {
+   "element": "universe",
+   "rule": "SG CTA index: annual reselection of the 20 largest open CTAs trading a diversified futures/FX strategy; SG Trend: top 10 trend followers; short-term index for average holds under about 10 days; classify CTAs into trend and non-trend (short-term, quant macro, commodity specialists). Add a market when marginal diversification outweighs cost and it is not highly correlated with what is traded.",
+   "why": "Represent the industry's largest investable programmes; diversification versus transaction cost.",
+   "sources": [
+    "MT028",
+    "MT189",
+    "MT146"
+   ],
+   "claim_ids": [
+    "MT028-C04-3",
+    "MT028-C15-2",
+    "MT028-C05-1",
+    "MT189-C12-1",
+    "MT189-C13-X1",
+    "MT146-C13-3",
+    "MT146-C13-X2"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Hold short-, medium- and long-term trend models; if regime timing is too hard, a roughly constant allocation across time frames; keep short-term models as an adaptive stress tool.",
+   "why": "Short-term models profit at inflections, long-term in intervals.",
+   "sources": [
+    "MT027",
+    "MT146"
+   ],
+   "claim_ids": [
+    "MT027-C11-4",
+    "MT027-C12-1",
+    "MT027-C12-2",
+    "MT146-C04-3"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Overlay diversifiers on full equity exposure via portable alpha or managed accounts; allocators start with one CTA then add several or non-trend quants.",
+   "why": "Keeps equity right tail and strategic allocation while protecting the left tail; capital efficiency.",
+   "sources": [
+    "MT027",
+    "MT189",
+    "MT146"
+   ],
+   "claim_ids": [
+    "MT027-C07-4",
+    "MT027-C10-2",
+    "MT189-C11-2",
+    "MT189-C09-2",
+    "MT146-C07-3"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Size down late in trends with trend-strength and overextension models and cut risk quickly in reversals (as managers did in precious metals, late January 2026).",
+   "why": "Protect profits in over-extended markets.",
+   "sources": [
+    "MT013"
+   ],
+   "claim_ids": [
+    "MT013-C08-5",
+    "MT013-C08-7",
+    "MT013-C08-6"
+   ]
+  },
+  {
+   "element": "execution",
+   "rule": "Short-term strategies need execution expertise and low slippage to flip positions quickly.",
+   "why": "Profit from volatility breakouts when volatility persists.",
+   "sources": [
+    "MT027"
+   ],
+   "claim_ids": [
+    "MT027-C14-3"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "Run a trend indicator of breakout models across about 200-500 parameters (very short to super long term) over all tradable markets and read average z-scores as an opportunity barometer; build a transparent bottom-up replicator optimised for correlation to SG Trend, not performance; compare on weekly data (UCITS commodity P&L settles with a lag); keep the indicator model fixed; judge managers on whether they sustain an ongoing research process.",
+   "why": "Shows how broad the trending opportunity is, tracks industry speed, avoids time-zone mismatches and structural breaks.",
+   "sources": [
+    "MT013",
+    "MT146",
+    "MT189",
+    "MT027"
+   ],
+   "claim_ids": [
+    "MT013-C06-3",
+    "MT013-C06-5",
+    "MT146-C03-3",
+    "MT146-C03-4",
+    "MT146-C04-2",
+    "MT189-C06-2",
+    "MT027-C12-X2",
+    "MT027-C14-R1"
+   ]
+  },
+  {
+   "element": "other",
+   "rule": "Track fees: SG CTA average 1.3% management and 13.9% performance fee; SG Trend 1.1% and 11%.",
+   "why": "Frames the fee advantage for low-cost products.",
+   "sources": [
+    "MT028"
+   ],
+   "claim_ids": [
+    "MT028-C08-1"
+   ]
+  }
+ ],
+ "evidence_style": "Index-provider view: SG index data (monthly performance, reconstitution, AUM $300-350bn since 2014, cutoffs from $800m to $1.82bn), SG trend indicator heat maps, a paper-traded replicator, published studies (SBAI managed-account guide, Efficient Capital 'Blinded by Bias'), manager meetings and client conversations, and simple arithmetic (euro investor). Flags guesses explicitly (July divergence) and defers to Beer on replication mechanics; no backtests of his own strategy.",
+ "views_timeline": [
+  {
+   "as_of": "2025-01",
+   "view": "2024 trend was good in Q1, hard Q2-Q3 and strong Q4, with commodities the standout sector; interest in uncorrelated alternatives is rising as bonds underdeliver; core trend is commoditised and new quant groups move to multi-asset high-Sharpe shapes.",
+   "reasoning": "Quarterly index performance; allocator conversations; start-up observation.",
+   "source": "MT028",
+   "claim_ids": [
+    "MT028-C04-2",
+    "MT028-C10-3",
+    "MT028-C03-X1",
+    "MT028-C17-1",
+    "MT028-C15-3"
+   ]
+  },
+  {
+   "as_of": "2025-03",
+   "view": "SG CTA Index about -2.5% YTD (nearly -1% in March) and SG Trend about -4.5% YTD, drifting sideways; rising volatility and emerging trends improve the outlook; SG Short-Term Traders rose over 1% in March, the first real dispersion this year; main risks US stagflation, tariffs, a Ukraine ceasefire and a shifting US world role; 2025 the best environment for macro and CTA in a decade (probable attribution); BlackRock's own product is a notable test for the industry.",
+   "reasoning": "Index data month-to-date; model time frames; strategic choice by BlackRock.",
+   "source": "MT027",
+   "claim_ids": [
+    "MT027-C03-1",
+    "MT027-C03-2",
+    "MT027-C04-2",
+    "MT027-C02-X1",
+    "MT027-C21-3",
+    "MT027-C21-R1"
+   ]
+  },
+  {
+   "as_of": "2025-07-31",
+   "view": "Macro managers see an opportunity-rich environment and CTAs benefit if trends emerge across markets in 2H 2025; the multistrat talent war continues; short-term CTAs showed adaptability in the Q1 2025 tariff shock while longer-term CTAs were down double digits.",
+   "reasoning": "Stubborn inflation, high rates, geopolitical dislocations; more than half of the short-term traders positive.",
+   "source": "MT146",
+   "claim_ids": [
+    "MT146-C03-2",
+    "MT146-C01-1",
+    "MT146-C04-3"
+   ]
+  },
+  {
+   "as_of": "2026-02-12",
+   "view": "Early 2026 trends best in smaller equity indices (Kospi, Nikkei, OMX, IBEX 35); non-US investors rethink US risk (partial); environment better for long-short tactical global macro; manager returns about 8-15% YTD by mid-February with the trend index peaking near 7%.",
+   "reasoning": "SG trend indicator; dollar weakness; macro environment; manager data.",
+   "source": "MT013",
+   "claim_ids": [
+    "MT013-C06-5",
+    "MT013-C03-1",
+    "MT013-C03-2",
+    "MT013-C05-4",
+    "MT013-C08-4"
+   ]
+  },
+  {
+   "as_of": "2026-08-12",
+   "view": "Markets have digested volatility and the Iran war into prices (new normal) with volatility forgotten and the next major trends ahead; rising yields are ticking higher and not getting enough attention; 2026 CTA gains came from many places (precious metals early, energy when the war began, slow equity drift) and one trend model has gone short gold; non-trend CTAs are blending into quant multi-strategy groups and SMA investors are growing.",
+   "reasoning": "Complacency about volatility; diversified active risk allocation; multi-strats want high-Sharpe, low-capacity strategies.",
+   "source": "MT189",
+   "claim_ids": [
+    "MT189-C01-X1",
+    "MT189-C02-1",
+    "MT189-C03-1",
+    "MT189-C12-X2"
+   ]
+  }
+ ],
+ "how_views_changed": "Core views on diversification, risk allocation and the diversifier role are consistent from January 2025 to August 2026. The main shift is on short-term and non-trend models: described as a vital tool that pays at inflections (March 2025) and a long-term-preferred industry drift (July 2025, February 2026), then as fragile, parameter-dependent and used to smooth returns (August 2026). No reason given beyond the intervening evidence of closures and sentiment. His read of the macro environment moved from stagflation/tariff risk (2025) to a digested-volatility new normal with complacency (August 2026).",
+ "disagreements": [
+  {
+   "with": "Andrew Beer",
+   "topic": "Do missing idiosyncratic markets matter for a replicator; is the index consistent; why blend replication with managers",
+   "their_position": "Commodities were the standout sector; Sharpe near 0.9 needs many idiosyncratic bets; a replicator's PCA weights shift and it tracks an evolving manager set.",
+   "other_position": "Cocoa's $5-6bn is small versus $300bn; hits and misses cancel; an index should be predictable; blending is client communication, not economics.",
+   "sources": [
+    "MT028"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Regime identification and over-cleverness",
+   "their_position": "Regimes cannot be avoided but can be recognised sooner; constant multi-time-frame allocation as a naive alternative.",
+   "other_position": "Regime filters cannot predict shocks (Omicron); too much cleverness risks the strategy's value.",
+   "sources": [
+    "MT027"
+   ]
+  },
+  {
+   "with": "Andrew Beer",
+   "topic": "Value of short-term models and stacked products",
+   "their_position": "Short-term models vital at inflections; portable alpha is a more efficient use of capital.",
+   "other_position": "Short-term models cost about 100bp more and lower Sharpe; stacked products leak value through taxes and fees.",
+   "sources": [
+    "MT027"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Why trend horizons lengthened",
+   "their_position": "Capacity is unlikely; multi-model risk allocation is more likely.",
+   "other_position": "Some slowing could be capacity-driven; lookbacks cluster over multi-year regimes for performance.",
+   "sources": [
+    "MT027"
+   ]
+  },
+  {
+   "with": "Andrew Beer, Niels Kaastrup-Larsen",
+   "topic": "Are more (esoteric) markets worth it; source of alternative-market trends",
+   "their_position": "Diversification is the only free lunch; thin-market inefficiency can create trends; CTAs weigh costs.",
+   "other_position": "Beer: implicit costs 3-5 times explicit; no statistical evidence that alternative markets trend better. Niels: ten years of data show no benefit from 300-500 markets.",
+   "sources": [
+    "MT146"
+   ]
+  },
+  {
+   "with": "Andrew Beer",
+   "topic": "Replication as beta versus attribution tool",
+   "their_position": "Bottom-up replicators are useful for attribution but dispersion among managers is large.",
+   "other_position": "Replication gives broad industry exposure with lower single-manager risk (correlation about 90%).",
+   "sources": [
+    "MT146"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen, Andrew Beer",
+   "topic": "Concentrated programs and sizing; QIS and short-term models in 2026",
+   "their_position": "Concentrated programs create return but are hard to sell; QIS is used thematically to outsource execution and financing; longer-term models normally outperform.",
+   "other_position": "Niels: static-size 300-500 market managers did not do better in 2025. Beer: short-term models have zero Sharpe and detract; criticises QIS products sold not bought.",
+   "sources": [
+    "MT013"
+   ]
+  },
+  {
+   "with": "Andrew Beer, Niels Kaastrup-Larsen",
+   "topic": "Over-engineering; crisis alpha; short-term models; beating the index; outlook; July divergence",
+   "their_position": "Adding markets and futures leverage is the philosophy; marketing created unrealistic crisis-alpha expectations; short-term models smooth products; the index is of the largest active managers; volatility digested; does not know the July cause.",
+   "other_position": "Niels: over-engineering adds risk; managers should beat the index. Beer: crisis alpha is a Sharpe problem (cash plus 250bp); short-term models are zero Sharpe; markets resemble venture capital; two or three funds had large drawdowns in July.",
+   "sources": [
+    "MT189"
+   ]
+  }
+ ],
+ "internal_tensions": [
+  {
+   "issue": "Longer-term models normally outperform and CTAs drifted slower, yet short-term models are 'vital' (March 2025), then fragile and mostly smoothing devices (August 2026).",
+   "claim_ids": [
+    "MT146-C04-1",
+    "MT013-C08-2",
+    "MT027-C12-2",
+    "MT027-C14-3",
+    "MT189-C13-1",
+    "MT189-C20-X1"
+   ]
+  },
+  {
+   "issue": "Breadth (more markets, only free lunch) versus the statements that concentrated programs created return in 2025, that 2025 returns turned on risk allocation in a few metals markets, and that alternative-market CTAs are now working poorly.",
+   "claim_ids": [
+    "MT146-C17-2",
+    "MT189-C11-X3",
+    "MT013-C10-4",
+    "MT013-C06-3",
+    "MT146-C17-3"
+   ]
+  },
+  {
+   "issue": "A replicator is not static and evolves like a CTA research process, yet the SG Trend indicator model is deliberately kept fixed and a bottom-up tracker cannot match CTA drawdowns.",
+   "claim_ids": [
+    "MT028-C14-X1",
+    "MT027-C12-X2",
+    "MT028-C10-3"
+   ]
+  },
+  {
+   "issue": "Says 2025 is the best environment for CTAs in a decade and that rising volatility improves the outlook, while SG Trend was about -4.5% YTD and later notes 2025 as a flat year with few trends.",
+   "claim_ids": [
+    "MT027-C21-3",
+    "MT027-C03-2",
+    "MT027-C03-1",
+    "MT013-C06-3"
+   ]
+  },
+  {
+   "issue": "Argues the CTA index is not a passive benchmark and is biased by backfill and cash omission, yet relies on it (and on SG indices) as the evidence base for most industry claims.",
+   "claim_ids": [
+    "MT189-C18-X1",
+    "MT189-C18-1",
+    "MT189-C16-3",
+    "MT028-C15-2"
+   ]
+  }
+ ],
+ "testable_hypotheses": [
+  {
+   "hypothesis": "A single market's trend Sharpe is 0.2-0.5, a portfolio of 15-50 markets gains materially from going to about 150 markets, while 150 to 151 adds nothing, net of transaction costs.",
+   "data_needed": "Per-market trend Sharpe, correlations and cost estimates; incremental portfolio Sharpe by market count.",
+   "claim_ids": [
+    "MT028-C11-2",
+    "MT146-C13-3",
+    "MT146-C17-2",
+    "MT146-C13-X2"
+   ]
+  },
+  {
+   "hypothesis": "Speed factor: longer-term trend models outperform shorter-term ones over long samples, and a fast-slow blend behaves like a medium-term model that lacks both the long-term benefit and the short-term stress gain.",
+   "data_needed": "Trend returns by look-back across a broad universe; blend versus component Sharpes and drawdowns.",
+   "claim_ids": [
+    "MT146-C07-1",
+    "MT146-C06-X2",
+    "MT013-C08-2",
+    "MT146-C04-1"
+   ]
+  },
+  {
+   "hypothesis": "Short-term models profit at major inflection points (GFC, COVID, Ukraine, April 2025) and long-term models in the intervals; short-term traders were positive in Q1 2025 when trend was down double digits.",
+   "data_needed": "SG Short-Term Traders and Trend index returns around stress events; model-speed sleeves.",
+   "claim_ids": [
+    "MT027-C12-2",
+    "MT027-C04-2",
+    "MT146-C04-3"
+   ]
+  },
+  {
+   "hypothesis": "Trend followers are highly correlated and dispersion arises at the periphery (universe, sizing, speed, stops); the dispersion among SG CTA constituents is large and persistent.",
+   "data_needed": "Constituent returns and correlations; regress dispersion on speed, breadth and risk-cutting rules.",
+   "claim_ids": [
+    "MT027-C04-3",
+    "MT146-C05-1",
+    "MT146-C05-2",
+    "MT146-C07-3"
+   ]
+  },
+  {
+   "hypothesis": "A bottom-up trend replicator matches the long-run return and correlation of the SG Trend index but not its drawdowns, because it omits market selection and risk management.",
+   "data_needed": "Replicator vs SG Trend return and drawdown series; effect of adding commodities.",
+   "claim_ids": [
+    "MT028-C10-3",
+    "MT028-C08-3"
+   ]
+  },
+  {
+   "hypothesis": "The average z-score of 200-500 breakout parameters across markets measures the breadth of the trending opportunity; in low-z years (2025) manager returns are decided by risk allocation and a few markets (metals).",
+   "data_needed": "Breakout z-score history versus manager return dispersion and market contribution.",
+   "claim_ids": [
+    "MT013-C06-3",
+    "MT013-C06-5",
+    "MT013-C08-3",
+    "MT013-C06-X1"
+   ]
+  },
+  {
+   "hypothesis": "Managers' proprietary trend-strength and overextension sizing cut precious-metals risk faster than an unmanaged trend portfolio, so actual drawdowns were smaller than the SG trend indicator's hypothetical ones in January 2026.",
+   "data_needed": "SG trend indicator P&L versus index-manager reports, January-February 2026.",
+   "claim_ids": [
+    "MT013-C08-5",
+    "MT013-C08-6",
+    "MT013-C08-7"
+   ]
+  },
+  {
+   "hypothesis": "Mutual-fund CTA structures underperform by about 200bp a year because of structuring costs and untradable markets such as US-fund commodities.",
+   "data_needed": "Return series of US mutual-fund CTA versus UCITS or onshore CTAs with the same strategy.",
+   "claim_ids": [
+    "MT189-C05-2"
+   ]
+  },
+  {
+   "hypothesis": "Backfilling today's constituents flatters the CTA index history, and about half of contributors reporting managed-account composites without cash returns bias the index down when rates are high.",
+   "data_needed": "Index vintages, constituent changes, composite reporting basis.",
+   "claim_ids": [
+    "MT189-C18-1",
+    "MT189-C16-3"
+   ]
+  },
+  {
+   "hypothesis": "Portable alpha overlays of CTAs on full equity protect the left tail without giving up the equity right tail compared with funding CTAs from equities.",
+   "data_needed": "Equity-plus-overlay versus 100% equity and sell-equity-to-fund versions across drawdowns.",
+   "claim_ids": [
+    "MT027-C07-4",
+    "MT027-C10-2",
+    "MT189-C11-2"
+   ]
+  },
+  {
+   "hypothesis": "Capacity does not explain the drift to slower horizons; multi-model risk allocation does.",
+   "data_needed": "Manager AUM history against model speed estimates.",
+   "claim_ids": [
+    "MT027-C12-X1",
+    "MT027-C12-1"
+   ]
+  },
+  {
+   "hypothesis": "Short-term strategies added to a long-term programme mainly smooth returns while the long-term core would be better alone.",
+   "data_needed": "CTA programme returns with and without short-term sleeves.",
+   "claim_ids": [
+    "MT189-C20-X1",
+    "MT189-C13-1"
+   ]
+  },
+  {
+   "hypothesis": "Thin-market inefficiency in alternative markets can create persistent trends (Beer disputes this).",
+   "data_needed": "Trend statistics for alternative markets after implicit costs.",
+   "claim_ids": [
+    "MT146-C18-2",
+    "MT146-C18-1"
+   ]
+  }
+ ],
+ "blind_spots": [
+  "(reader) No backtest of his own; the replicator and indicator are described but no performance or tracking numbers are given.",
+  "(reader) Never explains how to choose an optimal blend of speeds beyond 'constant allocation'; the medium-term trap is asserted from heat maps not shown.",
+  "(reader) The claim that cost-adjusted extra markets help rests on manager meetings and record of CTAs he concedes are now struggling.",
+  "(reader) Does not define when a market's marginal benefit exceeds cost.",
+  "(reader) Macro views (stagflation, rising yields, volatility complacency) are asides with little support.",
+  "(reader) Own conflicts: works at a prime broker with an active QIS business and runs the indices he cites."
+ ],
+ "reader_inferences": [
+  "(reader) Roble reasons as an index operator: describe the industry as it is, avoid taking sides on alpha, and treat diversification, implementation and delivery (portable alpha, SMAs) as the real levers.",
+  "(reader) His 'speed factor' paper and indicator give a testable decomposition (speed, breadth, risk allocation) that could be reproduced on public futures data.",
+  "(reader) Captions in MT189 have no speaker labels, MT146 role is inferred, and MT028 and MT027 contain pack-builder corrections, so attribution may be imperfect for a few claims."
+ ]
+}

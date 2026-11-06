@@ -1,0 +1,658 @@
+{
+ "name": "Harry Moore",
+ "sources": [
+  "MT083",
+  "MT127"
+ ],
+ "period": "2026-04-02 (MT083, uploaded 2026-04-06) - 2026-08-06 (MT127, uploaded 2026-08-09)",
+ "one_paragraph": "Systematic trend-following researcher at Man Group (AHL; former actuary) who sees trend as a cash-efficient, liquid, rules-based diversifier whose job is to protect and fund a portfolio in the left tail. Trend has no long-term view, follows prices across assets (short bonds and equities or long commodities as narratives change), is zero or negatively correlated to equities in the worst periods, and needs only about $20-25 of cash per $100 of exposure because it manages to risk, so margin falls as volatility rises. From that he builds portfolios: market mix chosen by objective (traditional markets give the best crisis Sharpe, alternative markets the best long-run Sharpe; market count is a poor measure of diversification), a mostly-trend mandate (70-80%+), some fast models kept alongside slow ones, and portable alpha (trend on top of index beta) with about 40% cash (10% margin plus 30% unencumbered) so forced beta selling happens about once in 100-200 years. Drawdowns of a 0.6 Sharpe strategy can reach 33% for years and do not show it is broken; rules that deallocate in drawdowns underperform. In 2026 he stays balanced on whether the AI trade is a bubble or right for ten years, and wants a portfolio that survives both, with trend as the one holding uncorrelated in a 30-40% equity crash. Evidence is simulation, Monte Carlo, principal-component decomposition over about 900 markets and historical comparisons, with cautious statements about single episodes.",
+ "fingerprint": [
+  {
+   "tag": "trend_following",
+   "count": 2
+  },
+  {
+   "tag": "crisis_alpha_convexity",
+   "count": 2
+  },
+  {
+   "tag": "portfolio_construction_stacking",
+   "count": 2
+  },
+  {
+   "tag": "diversification_risk_parity",
+   "count": 2
+  },
+  {
+   "tag": "costs_execution",
+   "count": 2
+  },
+  {
+   "tag": "research_robustness_overfitting",
+   "count": 2
+  },
+  {
+   "tag": "manager_selection_allocation",
+   "count": 1
+  },
+  {
+   "tag": "position_sizing_vol_target",
+   "count": 1
+  },
+  {
+   "tag": "kelly_or_conviction_sizing",
+   "count": 1
+  }
+ ],
+ "core_beliefs": [
+  {
+   "belief": "Trend is cash-efficient ($20-30 per $100 of exposure) and manages to risk, so margin requirements fall in a crisis; it is a liquid alpha that can fund margin calls on a beta index and lets allocators add it without selling holdings.",
+   "times_stated": 2,
+   "sources": [
+    "MT083",
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT083-C10-3",
+    "MT083-C12-3",
+    "MT083-C07-4",
+    "MT127-C10-1",
+    "MT127-C20-2"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Trend has no long-term view and follows prices across assets, so in a left-tail shock it is zero or negatively correlated to equities while other correlations rise; it is a covariance-matrix diversifier and proved its diversification in Q1 2026 by following the shift to energy and inflation.",
+   "times_stated": 2,
+   "sources": [
+    "MT127",
+    "MT083"
+   ],
+   "claim_ids": [
+    "MT127-C08-2",
+    "MT127-C08-3",
+    "MT127-C08-4",
+    "MT127-C20-1",
+    "MT083-C03-3",
+    "MT083-C03-4"
+   ],
+   "stable": "stable, but see tension on July 2026 theme concentration"
+  },
+  {
+   "belief": "A long drawdown does not show a broken strategy (a 0.6 Sharpe, 15% volatility strategy still had a 33% drawdown for years); test whether the drawdown changed the belief, otherwise rebalance into it, since deallocation rules underperform holding.",
+   "times_stated": 1,
+   "sources": [
+    "MT083"
+   ],
+   "claim_ids": [
+    "MT083-C14-1",
+    "MT083-C14-2",
+    "MT083-C13-2"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "Market mix should follow the objective: traditional markets load on macro factors and earn the best crisis Sharpe; alternative markets have idiosyncratic drivers and earn the best long-run Sharpe. Number of markets is a poor measure of diversification (30 equity indices are correlated, 30 commodities are not).",
+   "times_stated": 1,
+   "sources": [
+    "MT083"
+   ],
+   "claim_ids": [
+    "MT083-C06-5",
+    "MT083-C07-1",
+    "MT083-C07-2",
+    "MT083-C08-1",
+    "MT083-C06-4"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "Faster trend trading gives more crisis alpha, slower trading slightly higher Sharpe; slower models won in 2026 because no persistent turning point let fast speeds shine, yet keep some faster, dynamic models for turning points.",
+   "times_stated": 2,
+   "sources": [
+    "MT083",
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT083-C06-2",
+    "MT127-C05-2",
+    "MT127-C05-3"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "A dedicated trend mandate should be mostly trend (70-80% or more) and divergent; below that other drivers (carry, value) can show horrible left tails in a full liquidity break.",
+   "times_stated": 1,
+   "sources": [
+    "MT083"
+   ],
+   "claim_ids": [
+    "MT083-C04-4",
+    "MT083-C04-5",
+    "MT083-C05-1"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "Portable alpha needs liquid alpha, large cash buffers and an alpha uncorrelated in the left tail: about 40% cash (10% margin plus 30% unencumbered) avoids forced beta selling more than once in 100-200 years; 2008-type failures came from liquidity and alpha-beta correlation. Liquidity-provision alphas (short vol, merger arbitrage) have big left tails.",
+   "times_stated": 2,
+   "sources": [
+    "MT083",
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT083-C12-1",
+    "MT083-C12-2",
+    "MT127-C13-1",
+    "MT127-C13-4",
+    "MT127-C14-2",
+    "MT127-C19-3",
+    "MT127-C20-1"
+   ],
+   "stable": "stable - MT083 gives about $40 per $100 of buffer, MT127 formalises it from the paper"
+  },
+  {
+   "belief": "Leverage is a portfolio-construction tool, not inherently risky: a 50/50 portfolio holds about 85% of its risk in equities, so leverage on bonds improves risk balance; what matters is the alpha ported. Swap versus futures is an operational choice (financing about 40bp implicit in futures).",
+   "times_stated": 1,
+   "sources": [
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT127-C19-1",
+    "MT127-C19-2",
+    "MT127-C15-2"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "Rebalancing rules matter little on average but a lot in 2008-type paths (equities fall while trend rises); tolerance bands around 10% are the compromise between tracking the index and controlling the mix.",
+   "times_stated": 1,
+   "sources": [
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT127-C14-4",
+    "MT127-C14-5",
+    "MT127-C15-1",
+    "MT127-C15-X1"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "A portfolio of equities, bonds, commodities and private assets looks diversified in normal times but may fall together in a 30-40% S&P crash (private marks lag, bonds and gold sold off together earlier in 2026, inflation above target may stop the Fed rescuing markets); AI may be a capex bubble or right for ten years, so prepare for both without predicting.",
+   "times_stated": 1,
+   "sources": [
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT127-C07-1",
+    "MT127-C07-2",
+    "MT127-C07-3",
+    "MT127-C07-4",
+    "MT127-C07-5",
+    "MT127-C08-1"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "Being right on a theme does not prevent trouble: a fund neutral on paper but concentrated in one theme lost heavily when the July 2026 AI theme reversed; authorities intervene (yen, end July 2026) when a move runs too far for too long, so size so no one position hurts the book.",
+   "times_stated": 1,
+   "sources": [
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT127-C02-1",
+    "MT127-C03-2",
+    "MT127-C03-4"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "The Turtle rules approximated later theory: range-based volatility units (Parkinson), stop at 2N with 2% equity risk per position as fractional Kelly, and drawdown control (cut equity used for sizing by 20% after a 10% loss, Grossman-Zhou).",
+   "times_stated": 1,
+   "sources": [
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT127-C16-2",
+    "MT127-C17-1",
+    "MT127-C17-2",
+    "MT127-C18-1",
+    "MT127-C18-2"
+   ],
+   "stable": "single source; he defers to the host on history"
+  },
+  {
+   "belief": "Fees are only very weakly related to net return in macro managers and manager indices suffer survivorship bias, so judge alpha above cheap trend and equity exposure; human behavioural biases explain why trend works.",
+   "times_stated": 1,
+   "sources": [
+    "MT083"
+   ],
+   "claim_ids": [
+    "MT083-C17-1",
+    "MT083-C17-2",
+    "MT083-C17-3",
+    "MT083-C14-3"
+   ],
+   "stable": "single source"
+  },
+  {
+   "belief": "Fixed income has been hard for trend for years (choppy reversals between political pressure for cuts and inflation and deficits); cross-sectional sector and factor trend models were profitable in 2026 but differently from index trend.",
+   "times_stated": 1,
+   "sources": [
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT127-C06-1",
+    "MT127-C06-2"
+   ],
+   "stable": "single source"
+  }
+ ],
+ "mechanisms": [
+  {
+   "name": "Traditional markets win in crises, alternatives win long run",
+   "chain": [
+    "crisis -> macro factors (risk on/off, growth, inflation, policy) explain more variance -> traditional markets load on them -> higher crisis Sharpe",
+    "alternative markets have idiosyncratic drivers -> higher long-run Sharpe; max crisis Sharpe overweights gold, crude, dollar vs pound; max long-run overweights hydropower, iron ore, China commodities"
+   ],
+   "fails_when": "Not stated; March 2026 not tested in the paper",
+   "sources": [
+    "MT083"
+   ],
+   "claim_ids": [
+    "MT083-C07-1",
+    "MT083-C07-2",
+    "MT083-C07-3",
+    "MT083-C06-5"
+   ]
+  },
+  {
+   "name": "Trend as left-tail diversifier",
+   "chain": [
+    "AI trade or capex cycle breaks, S&P down 30-40% -> private marks lag, bonds and gold may sell off together",
+    "trend follows prices across assets -> short equities and bonds, long commodities in an inflation shock -> zero or negative correlation in the left tail"
+   ],
+   "fails_when": "Trend gets some turns wrong; inflation shock with whipsaws; theme positions reverse (July 2026)",
+   "sources": [
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT127-C07-3",
+    "MT127-C07-5",
+    "MT127-C08-2",
+    "MT127-C08-3",
+    "MT127-C08-4"
+   ]
+  },
+  {
+   "name": "Cash buffer for portable alpha",
+   "chain": [
+    "futures or swap uses as little as 10% margin -> a 10% equity fall exhausts margin and counterparties call for more",
+    "a 20% unencumbered buffer on S&P plus trend is exhausted in GFC, dotcom and COVID -> forced beta sales at the lows, misses the 2009 rebound (about 30%) and creates tracking error",
+    "about 40% cash (10% margin + 30% unencumbered) -> forced degearing about once in 100-200 years (Monte Carlo)"
+   ],
+   "fails_when": "Alpha and beta draw down together; illiquid alpha cannot meet margin calls; investors with credit facilities may need less cash",
+   "sources": [
+    "MT083",
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT083-C12-1",
+    "MT083-C12-2",
+    "MT127-C13-1",
+    "MT127-C13-2",
+    "MT127-C13-3",
+    "MT127-C13-4"
+   ]
+  },
+  {
+   "name": "Rebalancing beta and alpha sleeves",
+   "chain": [
+    "periodic rebalancing -> index no longer replicated; buy and hold drifts the mix",
+    "2008 path: equities fall, trend rises -> rebalancing buys falling equities and sells rising trend and loses money; long-run average differences small -> tolerance bands about 10%"
+   ],
+   "fails_when": "Different investor constraints suit different rules; no single answer",
+   "sources": [
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT127-C14-3",
+    "MT127-C14-4",
+    "MT127-C14-5",
+    "MT127-C15-1"
+   ]
+  },
+  {
+   "name": "Picking the alpha to port",
+   "chain": [
+    "100% beta already held -> alpha layer should not add beta",
+    "liquidity-provision alphas look good normally -> liquidity dries up and deals break in shocks -> big left tails",
+    "test alpha against the worst 5% of beta returns -> trend has low to negative correlation and scales down with volatility"
+   ],
+   "fails_when": "History has few crises; tail behaviour could change",
+   "sources": [
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT127-C19-X1",
+    "MT127-C19-3",
+    "MT127-C20-1",
+    "MT127-C20-2"
+   ]
+  },
+  {
+   "name": "Why not to drop a strategy in drawdown",
+   "chain": [
+    "asset underperforms -> test whether the drawdown changed the belief that it works -> if not, rebalance into it",
+    "simulated good strategy (0.6 Sharpe) still draws down 33% for years; deallocation rules underperform"
+   ],
+   "fails_when": "The drawdown actually changes the belief that the strategy works",
+   "sources": [
+    "MT083"
+   ],
+   "claim_ids": [
+    "MT083-C13-2",
+    "MT083-C14-1",
+    "MT083-C14-2"
+   ]
+  }
+ ],
+ "playbook": [
+  {
+   "element": "portfolio",
+   "rule": "Build trend with maximum diversification so no market dominates; choose the market mix by objective (crisis Sharpe, long-run Sharpe, cash efficiency); keep a mandate 70-80%+ trend.",
+   "why": "Different objectives need different mixes; other drivers have left tails",
+   "sources": [
+    "MT083"
+   ],
+   "claim_ids": [
+    "MT083-C06-4",
+    "MT083-C07-3",
+    "MT083-C07-4",
+    "MT083-C04-4"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Port alpha over index beta with about 40% cash (10% margin plus 30% unencumbered); use liquid alpha that can be recapitalised; pick alpha uncorrelated in the left tail and test it against the worst 5% of beta returns; rebalance sleeves only beyond about 10% drift.",
+   "why": "Avoid forced degearing; liquidity-provision alphas fail when it matters",
+   "sources": [
+    "MT083",
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT083-C12-1",
+    "MT127-C13-4",
+    "MT127-C14-2",
+    "MT127-C19-3",
+    "MT127-C20-1",
+    "MT127-C14-4"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Scale positions inversely with volatility so margin falls as stress rises; size so that no single position (the yen) hurts the book if intervention reverses it; manager-level drawdown control cuts sizing equity by 20% after a 10% loss (formal rule discussed, not explicitly adopted).",
+   "why": "Policy gaps are hard to simulate; allocators cannot stomach an 80% drawdown",
+   "sources": [
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT127-C20-2",
+    "MT127-C03-2",
+    "MT127-C18-1",
+    "MT127-C18-2"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Keep some faster, dynamic models alongside slower ones to capture turning points.",
+   "why": "Slow models won in 2026 but persist only while trends do; faster gives more crisis alpha",
+   "sources": [
+    "MT127",
+    "MT083"
+   ],
+   "claim_ids": [
+    "MT127-C05-3",
+    "MT127-C05-2",
+    "MT083-C06-2"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Do not deallocate on drawdown if the belief is unchanged (rebalance in); use Monte Carlo beyond the single historical path; ask providers what happens in a 20% drawdown month (margin, beta sales, tracking error).",
+   "why": "Deallocation rules underperform; only one history path exists",
+   "sources": [
+    "MT083",
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT083-C13-2",
+    "MT083-C14-2",
+    "MT127-C13-5",
+    "MT127-C15-X2"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "Decompose manager returns against equities, trend (and bonds) and correct for survivorship; with AI shift researcher time from implementation to ideas, testing researchers by having them critique AI output.",
+   "why": "Judge alpha above cheap exposure; guard against skill atrophy",
+   "sources": [
+    "MT083",
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT083-C17-2",
+    "MT083-C17-3",
+    "MT127-C09-1",
+    "MT127-C09-3"
+   ]
+  },
+  {
+   "element": "execution",
+   "rule": "Choose swap versus futures by operational preference and counterparty risk, not performance.",
+   "why": "Financing costs wash out",
+   "sources": [
+    "MT127"
+   ],
+   "claim_ids": [
+    "MT127-C15-2"
+   ]
+  }
+ ],
+ "evidence_style": "Statistical portfolio construction over about 900 markets (maximum-diversification portfolios, principal-component decomposition), simulation of a stated Sharpe path, Monte Carlo and historical simulation with SG Trend as alpha; ties practical rules to published theory (Kelly, Parkinson, Grossman-Zhou); cautious about extrapolating one episode, stays balanced on AI, and defers to the host on history.",
+ "views_timeline": [
+  {
+   "as_of": "2026-04-02",
+   "view": "Most trend indices up about 3-7% year to date at end of Q1 2026, good versus equities, bonds and 60/40; trend went into March long oil and long equities (scaled down as momentum flipped) and fast models flipped to short bonds; if inflation returns or escalation continues, neither equities, bonds, gold nor private markets help and trend is a defensive candidate, long oil and short bonds if the inflation theme continues.",
+   "reasoning": "Trend diversified the March sell-off by following the energy and inflation theme; common drivers hit traditional assets together",
+   "source": "MT083",
+   "claim_ids": [
+    "MT083-C03-3",
+    "MT083-C03-4",
+    "MT083-C05-3",
+    "MT083-C18-2"
+   ]
+  },
+  {
+   "as_of": "2026-08-06",
+   "view": "July 2026 dispersion came from the AI-trade reversal and rallying energy: trend was long oil and stocks, and risk weights, market choices and speed created dispersion; the AI trade may be a bubble or right for ten years, prepare for both with trend as left-tail diversifier; fixed income still difficult for trend; slower trend did better in 2026 as no persistent turning point appeared.",
+   "reasoning": "Cannot predict; capex bubble analogies versus productivity gains inside Man Group; persistent shorts in bonds, longs in energy and stocks held across the year",
+   "source": "MT127",
+   "claim_ids": [
+    "MT127-C03-6",
+    "MT127-C04-1",
+    "MT127-C06-3",
+    "MT127-C07-1",
+    "MT127-C07-2",
+    "MT127-C08-4",
+    "MT127-C06-1",
+    "MT127-C05-2"
+   ]
+  }
+ ],
+ "how_views_changed": "No reversal; the two appearances are four months apart. The portable-alpha buffer moves from 'large, about $40 per $100' (MT083) to the paper's 40% (10% margin + 30% unencumbered) with a 100-200 year frequency (MT127). The macro framing moves from trend following the Q1 energy/inflation theme to concern over the AI-trade reversal and left-tail diversification. Reason: new market episodes and the portable-alpha paper; no explicit change of mind is stated.",
+ "disagreements": [
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Is stacking trend on beta leverage investors should worry about",
+   "their_position": "Leverage is a portfolio-construction tool that can reduce risk, provided the ported alpha is uncorrelated in the left tail and cash efficient",
+   "other_position": "Investors worry that stacking trend on beta is leverage (more than $100 in total)",
+   "sources": [
+    "MT127"
+   ]
+  },
+  {
+   "with": "Katie Kaminski",
+   "topic": "How separable alpha and beta are in portable alpha",
+   "their_position": "Trend on beta historically outperformed with more consistency, with liquid alpha and a large cash buffer",
+   "other_position": "Alpha and beta are never fully separated; in March equities and trend were in drawdown together, as in return-stacked ETFs",
+   "sources": [
+    "MT083"
+   ]
+  },
+  {
+   "with": "Katie Kaminski / Niels Kaastrup-Larsen",
+   "topic": "What explains March 2026 trend manager dispersion",
+   "their_position": "Below 70-80% trend content other drivers matter; market mix and speed also explain March",
+   "other_position": "Kaminski: energy exposure, avoiding selling-off positions and speed. Niels: large CTAs are not pure trend; carry and value sleeves may explain results",
+   "sources": [
+    "MT083"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Emphasis on trend speed",
+   "their_position": "Agrees slower did better in 2026 but wants some faster models for turning points",
+   "other_position": "Speed table shows slower lookbacks did better in 2026",
+   "sources": [
+    "MT127"
+   ]
+  }
+ ],
+ "internal_tensions": [
+  {
+   "issue": "Trend is zero or negatively correlated in the left tail, yet in July 2026 trend was long equities and long the AI complex and was hurt by the theme reversal, and Kaminski notes equities and trend drew down together in March.",
+   "claim_ids": [
+    "MT127-C08-4",
+    "MT127-C20-1",
+    "MT127-C03-6",
+    "MT127-C04-1",
+    "MT083-C11-2"
+   ]
+  },
+  {
+   "issue": "Faster trading gives more crisis alpha (prior work) but slower did better in 2026; he keeps fast models as a judgement, not as evidence.",
+   "claim_ids": [
+    "MT083-C06-2",
+    "MT127-C05-2",
+    "MT127-C05-3"
+   ]
+  },
+  {
+   "issue": "Deallocation rules underperform holding (MT083), but the Turtle/Grossman-Zhou rule he describes cuts sizing equity by 20% after a 10% loss.",
+   "claim_ids": [
+    "MT083-C14-2",
+    "MT083-C13-2",
+    "MT127-C18-1"
+   ]
+  },
+  {
+   "issue": "Rebalance into a strategy in drawdown if beliefs are unchanged, yet in 2008 paths rebalancing back to target loses money and only buy and hold did better.",
+   "claim_ids": [
+    "MT083-C13-2",
+    "MT127-C14-5"
+   ]
+  }
+ ],
+ "testable_hypotheses": [
+  {
+   "hypothesis": "A trend index has low to negative correlation with equities in the worst 5% of equity months and scales down exposure as volatility rises, requiring less margin.",
+   "data_needed": "SG Trend or CTA index returns versus S&P 500 monthly; trend exposure and margin proxies",
+   "claim_ids": [
+    "MT127-C20-1",
+    "MT127-C20-2",
+    "MT127-C08-4"
+   ]
+  },
+  {
+   "hypothesis": "With about 40% cash (10% margin + 30% unencumbered) an S&P-plus-trend futures portfolio is forced to de-gear no more than about once in 100-200 years in Monte Carlo, while a 20% buffer is exhausted in the GFC, dotcom and COVID.",
+   "data_needed": "S&P and SG Trend daily returns, margin rules, bootstrapped paths",
+   "claim_ids": [
+    "MT127-C13-2",
+    "MT127-C13-4",
+    "MT127-C13-5"
+   ]
+  },
+  {
+   "hypothesis": "A maximum-Sharpe-in-crises market mix overweights traditional markets (gold, crude, dollar vs pound); a maximum long-run Sharpe mix overweights alternative markets (hydropower, iron ore, China commodities).",
+   "data_needed": "Return history for about 900 markets including alternatives, crisis dates",
+   "claim_ids": [
+    "MT083-C06-5",
+    "MT083-C07-1",
+    "MT083-C07-3"
+   ]
+  },
+  {
+   "hypothesis": "Drawdown-triggered deallocation rules underperform buy-and-hold for a strategy with a stable true Sharpe of about 0.6.",
+   "data_needed": "Simulation or long strategy histories with deallocation rules",
+   "claim_ids": [
+    "MT083-C13-2",
+    "MT083-C14-1",
+    "MT083-C14-2"
+   ]
+  },
+  {
+   "hypothesis": "Rebalancing rules (periodic versus tolerance band around 10%) differ little in the long run but differ materially in 2008-type paths where equities fall and trend rises.",
+   "data_needed": "S&P 500 plus trend sleeve simulation under several rebalancing rules and crisis windows",
+   "claim_ids": [
+    "MT127-C14-4",
+    "MT127-C14-5",
+    "MT127-C15-1"
+   ]
+  },
+  {
+   "hypothesis": "Liquidity-provision alphas (short volatility, merger arbitrage, basis) have larger left-tail co-dependence with equities than trend.",
+   "data_needed": "Return series of those strategies vs equities in the worst 5% of months",
+   "claim_ids": [
+    "MT127-C19-3",
+    "MT127-C20-1"
+   ]
+  },
+  {
+   "hypothesis": "Faster trend has higher crisis alpha and slower trend slightly higher Sharpe; slower speeds win in years without persistent turning points.",
+   "data_needed": "Trend returns by lookback (20/60/130/260 days) across years and crises",
+   "claim_ids": [
+    "MT083-C06-2",
+    "MT127-C05-2"
+   ]
+  },
+  {
+   "hypothesis": "A trend mandate with less than 70-80% trend content shows a worse left tail in a full liquidity break than one above that level.",
+   "data_needed": "Manager return decompositions and crisis-period drawdowns",
+   "claim_ids": [
+    "MT083-C04-4",
+    "MT083-C04-5"
+   ]
+  },
+  {
+   "hypothesis": "Macro manager fees are only weakly related to net return, and manager-index returns are biased upward by survivorship.",
+   "data_needed": "Manager-level net returns and fees including dead funds",
+   "claim_ids": [
+    "MT083-C17-1",
+    "MT083-C17-3"
+   ]
+  }
+ ],
+ "blind_spots": [
+  "Few numbers on the live 2026 episodes (no P&L or exposure sizes for trend in July 2026)",
+  "No explicit view on what price evidence would reverse the AI-bubble stance",
+  "The tail-correlation claims rest on a handful of crises and one trend index; sample is small",
+  "Costs and slippage of portable alpha beyond the 40bp financing point are not discussed",
+  "Views are his own research views as a Man Group employee, not necessarily the firm's"
+ ],
+ "reader_inferences": [
+  "(reader) His strategy-level claims are concrete enough to backtest directly (40% buffer, 10% bands, left-tail correlation to the worst 5% of equity months).",
+  "(reader) The yen and AI-theme episodes suggest a position-concentration limit per theme in trend portfolios, which he does not quantify."
+ ]
+}

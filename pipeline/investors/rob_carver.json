@@ -1,0 +1,2222 @@
+{
+ "name": "Rob Carver",
+ "sources": [
+  "MT160",
+  "MT144",
+  "MT026",
+  "MT002",
+  "MT155",
+  "MT064",
+  "MT029",
+  "MT196",
+  "MT044",
+  "MT140",
+  "MT093",
+  "MT137",
+  "MT221",
+  "MT134",
+  "MT128",
+  "MT106",
+  "MT038",
+  "MT218",
+  "MT010"
+ ],
+ "period": "late June 2024 (MT160, upload 2024-06-25) - mid-September 2026 (MT010, upload 2026-09-13)",
+ "one_paragraph": "Carver is an independent systematic futures trader, author and ex-AHL head of fixed income who trades his own money in a slow, diversified, volatility-targeted book of trend, carry, skew, slow mean-reversion and relative rules across about 250-300 futures. He sees these returns as risk premia, not an edge over other participants, so the only durable edge is discipline: accurate and low costs, slow trading, breadth, moderate leverage (below half Kelly, rarely above 20-30% volatility), continuous volatility-scaled sizing with no stops, and an almost religious distrust of backtests, narratives and timing. He treats short samples as noise (bad years are normal, decay of a low-Sharpe strategy cannot be detected, a 'the world has changed' story is untestable), so the default is full-history evidence and buy-and-hold of strategies. He keeps opinions on macro (tariff inflation, Treasuries as a failing haven, Fed independence) strictly separate from the systematic book and admits when he was wrong. Money is made by leaving the system alone, keeping costs and leverage down and staying diversified; allocators should add diversifiers by correlation and size them with leverage-aware portfolio logic, not by recent performance.",
+ "fingerprint": [
+  {
+   "tag": "trend_following",
+   "count": 18
+  },
+  {
+   "tag": "research_robustness_overfitting",
+   "count": 18
+  },
+  {
+   "tag": "costs_execution",
+   "count": 16
+  },
+  {
+   "tag": "position_sizing_vol_target",
+   "count": 16
+  },
+  {
+   "tag": "diversification_risk_parity",
+   "count": 12
+  },
+  {
+   "tag": "portfolio_construction_stacking",
+   "count": 11
+  },
+  {
+   "tag": "replication_indexing",
+   "count": 6
+  },
+  {
+   "tag": "carry",
+   "count": 6
+  },
+  {
+   "tag": "crisis_alpha_convexity",
+   "count": 4
+  },
+  {
+   "tag": "kelly_or_conviction_sizing",
+   "count": 4
+  },
+  {
+   "tag": "behavioral_sentiment",
+   "count": 4
+  },
+  {
+   "tag": "regime_detection",
+   "count": 3
+  },
+  {
+   "tag": "short_term_systematic",
+   "count": 3
+  },
+  {
+   "tag": "manager_selection_allocation",
+   "count": 3
+  },
+  {
+   "tag": "volatility_options",
+   "count": 2
+  },
+  {
+   "tag": "macro_fundamental_topdown",
+   "count": 1
+  },
+  {
+   "tag": "commodity_fundamentals",
+   "count": 1
+  },
+  {
+   "tag": "positioning_crowding",
+   "count": 1
+  },
+  {
+   "tag": "value_mean_reversion",
+   "count": 1
+  },
+  {
+   "tag": "structural_themes",
+   "count": 1
+  },
+  {
+   "tag": "nowcasting_data",
+   "count": 1
+  }
+ ],
+ "core_beliefs": [
+  {
+   "belief": "Trend following (and carry, skew, slow mean reversion) is compensation for bearing risk, not an exploitable inefficiency: the methods are public and anyone can run them, the explanations are psychological bias and delayed reaction to information, and there is no big hidden secret. Real differences between managers come from marginal gains (cost estimation, data cleaning, breadth, avoiding errors) plus luck.",
+   "times_stated": 4,
+   "sources": [
+    "MT140",
+    "MT137",
+    "MT044",
+    "MT106"
+   ],
+   "claim_ids": [
+    "MT140-C09-1",
+    "MT137-C01-1",
+    "MT137-C01-2",
+    "MT044-C14-2",
+    "MT044-C14-3",
+    "MT044-C14-4",
+    "MT106-C09-2"
+   ],
+   "stable": "stable - same line in mid-2025 and 2026"
+  },
+  {
+   "belief": "Overfitting and overconfidence in backtests are the central danger: costs, excessive leverage and overfitting kill systematic traders. Selecting the best in-sample strategy or instrument is selecting luck (with 250 instruments some look significant by chance; all 100 instruments overlap once error bars are drawn); implicit fitting after seeing results is as bad as explicit overfitting; a clean out-of-sample test no longer exists after many backtests, so he wants one explicit procedure that uses only past data at each point.",
+   "times_stated": 11,
+   "sources": [
+    "MT026",
+    "MT160",
+    "MT064",
+    "MT140",
+    "MT137",
+    "MT093",
+    "MT038",
+    "MT218",
+    "MT010",
+    "MT106",
+    "MT044"
+   ],
+   "claim_ids": [
+    "MT026-C14-1",
+    "MT026-C13-2",
+    "MT160-C15-1",
+    "MT064-C14-4",
+    "MT140-C04-1",
+    "MT140-C06-2",
+    "MT137-C11-1",
+    "MT137-C07-2",
+    "MT093-C08-3",
+    "MT038-C02-1",
+    "MT218-C17-1",
+    "MT010-C07-1",
+    "MT106-C10-3"
+   ],
+   "stable": "stable - 2026 refinement: full-sample information may be used for inference if used carefully (MT038), and every idea (human or AI) is conceived with hindsight so the process, not the maths, must protect against it (MT218)"
+  },
+  {
+   "belief": "Costs are predictable while performance is almost random, so accurate cost measurement, slow trading, buffering and cost-aware optimisation are the most reliable gains; in liquid futures execution effort saves only about 2bp, and with institutional-size slow systems alpha decay is irrelevant.",
+   "times_stated": 6,
+   "sources": [
+    "MT196",
+    "MT106",
+    "MT029",
+    "MT026",
+    "MT140",
+    "MT137"
+   ],
+   "claim_ids": [
+    "MT196-C13-2",
+    "MT106-C07-6",
+    "MT106-C07-7",
+    "MT106-C09-1",
+    "MT029-C15-2",
+    "MT026-C10-1",
+    "MT140-C08-2",
+    "MT137-C14-1"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Leverage must be justified by Kelly logic using an uncertain Sharpe: risk above roughly 20-30% volatility is probably beyond any plausible expected return, his own target is under half Kelly, leveraged ETFs (2-4x daily reset) are toxic, and trend must not be used as an excuse to lever up. Unleveraged long-horizon investors do not need tail protection; leveraged ones can use puts at about 2% a year but not 30%.",
+   "times_stated": 7,
+   "sources": [
+    "MT064",
+    "MT044",
+    "MT196",
+    "MT221",
+    "MT160",
+    "MT106",
+    "MT026"
+   ],
+   "claim_ids": [
+    "MT064-C06-2",
+    "MT064-C06-3",
+    "MT044-C09-1",
+    "MT044-C09-2",
+    "MT044-C11-3",
+    "MT196-C19-1",
+    "MT196-C19-2",
+    "MT196-C19-X1",
+    "MT221-C14-1",
+    "MT160-C07-4",
+    "MT160-C06-2",
+    "MT160-C07-1"
+   ],
+   "stable": "stable on method; the numeric ceiling varies (see internal_tensions)"
+  },
+  {
+   "belief": "Position size should be continuously volatility-adjusted and scaled with forecast strength; fixed-size or let-it-ride sizing and stops add positive skew but lose more Sharpe than the skew is worth for terminal wealth (geometric return), concentrate risk, and create large outliers. Sharpe is the right comparison metric for someone who can lever; skew is the only thing leverage cannot buy. Risk management is position sizing plus diversification.",
+   "times_stated": 6,
+   "sources": [
+    "MT064",
+    "MT137",
+    "MT044",
+    "MT196",
+    "MT128",
+    "MT010"
+   ],
+   "claim_ids": [
+    "MT064-C16-1",
+    "MT064-C16-2",
+    "MT064-C16-4",
+    "MT064-C17-2",
+    "MT064-C18-1",
+    "MT137-C13-1",
+    "MT137-C13-2",
+    "MT137-C13-3",
+    "MT044-C10-1",
+    "MT044-C10-2",
+    "MT044-C10-3",
+    "MT196-C06-3",
+    "MT196-C06-4",
+    "MT128-C03-X1",
+    "MT128-C05-4",
+    "MT010-C12-3"
+   ],
+   "stable": "stable - first stated Mar 2025 and repeated to Feb 2026; he notes it is a theoretical result that assumes leverage can be adjusted"
+  },
+  {
+   "belief": "Diversification is the main free lunch and it comes from low correlation: add new markets before new trend variants (new market correlates 0.4-0.5, new trend rule 0.8-0.9, carry about 0.5); add strategies by correlation not Sharpe; true diversification is more commodities and fewer correlated financial markets. Yet CTA returns are driven by only a few latent macro factors, so hundreds of markets or published factors are fewer independent bets than they look.",
+   "times_stated": 8,
+   "sources": [
+    "MT064",
+    "MT144",
+    "MT026",
+    "MT002",
+    "MT218",
+    "MT128",
+    "MT106",
+    "MT196"
+   ],
+   "claim_ids": [
+    "MT064-C07-1",
+    "MT064-C07-2",
+    "MT064-C07-3",
+    "MT144-C06-4",
+    "MT144-C07-1",
+    "MT026-C16-1",
+    "MT026-C16-2",
+    "MT026-C17-4",
+    "MT002-C08-3",
+    "MT218-C06-2",
+    "MT218-C06-X1",
+    "MT128-C14-2",
+    "MT196-C11-1"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Systematic means following the system: overriding signals (elections, payrolls, gut views) makes the strategy untestable. Discretion may be confined to what and when to buy; sizing, speed, exits and volatility views should stay rule-based, and macro opinions are kept out of the book (he bets on a betting site or in a separate long-only account instead).",
+   "times_stated": 8,
+   "sources": [
+    "MT144",
+    "MT160",
+    "MT064",
+    "MT044",
+    "MT093",
+    "MT128",
+    "MT196",
+    "MT010"
+   ],
+   "claim_ids": [
+    "MT144-C02-1",
+    "MT160-C12-1",
+    "MT160-C13-1",
+    "MT064-C12-2",
+    "MT044-C12-3",
+    "MT093-C05-5",
+    "MT128-C08-1",
+    "MT010-C10-1",
+    "MT010-C10-2",
+    "MT010-C11-1"
+   ],
+   "stable": "stable as a rule, but he reports his own lapses (see internal_tensions)"
+  },
+  {
+   "belief": "A single year or even several years of results is noise for a modest-Sharpe strategy: bad years and ever-worse worst drawdowns are mathematically expected, decay cannot be told from noise for decades, so the right reaction to pain is a process check (costs, expected drawdown, diversification), not redesign; only a drawdown far beyond backtest (e.g. 50%) is a real concern.",
+   "times_stated": 9,
+   "sources": [
+    "MT196",
+    "MT093",
+    "MT140",
+    "MT044",
+    "MT064",
+    "MT026",
+    "MT144",
+    "MT160",
+    "MT106"
+   ],
+   "claim_ids": [
+    "MT196-C10-X1",
+    "MT196-C12-1",
+    "MT196-C12-2",
+    "MT196-C12-3",
+    "MT093-C16-4",
+    "MT093-C16-5",
+    "MT140-C07-4",
+    "MT140-C08-1",
+    "MT044-C21-3",
+    "MT064-C04-X2",
+    "MT026-C03-1",
+    "MT144-C02-X1",
+    "MT160-C03-X1",
+    "MT106-C07-1"
+   ],
+   "stable": "stable (but he keeps a 12-month review and uses it for conclusions - see internal_tensions)"
+  },
+  {
+   "belief": "'The world has changed' stories, market timing and strategy/fund timing are unproven: persistence and autocorrelation are weak, investors time badly (dollar-weighted returns trail fund returns by 1.7% a year and 4.4% in sector equity funds), so the default is full-history evidence and buy and hold of assets, funds, strategies and factors.",
+   "times_stated": 6,
+   "sources": [
+    "MT093",
+    "MT044",
+    "MT218",
+    "MT160",
+    "MT196",
+    "MT134"
+   ],
+   "claim_ids": [
+    "MT093-C14-2",
+    "MT093-C14-X1",
+    "MT093-C16-6",
+    "MT093-C12-1",
+    "MT093-C12-3",
+    "MT044-C19-1",
+    "MT044-C20-2",
+    "MT044-C21-2",
+    "MT218-C12-2",
+    "MT160-C03-X1",
+    "MT196-C13-1"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Momentum exists in futures from about an hour to about a year (perhaps 18 months); below an hour and beyond a year mean reversion dominates; short-horizon mean reversion does not survive costs; slow signals are the core. Trend is positively skewed at the right frequency (a good year about +2 Sharpe units, a bad year about -1).",
+   "times_stated": 5,
+   "sources": [
+    "MT064",
+    "MT137",
+    "MT140",
+    "MT106",
+    "MT044"
+   ],
+   "claim_ids": [
+    "MT064-C19-1",
+    "MT064-C20-1",
+    "MT064-C20-2",
+    "MT064-C20-5",
+    "MT137-C09-3",
+    "MT137-C10-1",
+    "MT140-C08-9",
+    "MT140-C08-8",
+    "MT106-C07-3",
+    "MT044-C04-3"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Most trend profit comes from the asset-class direction (roughly 70% from a volatility-weighted asset-class index trend, about 30% from relative trends; about 75% of trend risk is beta timing; about 55% of traditional-market trend returns are a risk-on/risk-off factor), so extra markets mostly add exposure to a few latent factors, and crisis alpha is beta timing, not market selection.",
+   "times_stated": 5,
+   "sources": [
+    "MT044",
+    "MT038",
+    "MT026",
+    "MT144",
+    "MT128"
+   ],
+   "claim_ids": [
+    "MT044-C07-3",
+    "MT044-C08-1",
+    "MT038-C10-1",
+    "MT038-C10-2",
+    "MT026-C16-1",
+    "MT026-C16-2",
+    "MT144-C05-3",
+    "MT144-C06-1",
+    "MT128-C14-1"
+   ],
+   "stable": "evolved - 2024 view was latent factors in general (MT026, MT144); 2025-26 gives numbers (70/30, 75%, 55%)"
+  },
+  {
+   "belief": "Trend and tail protection do different jobs: puts are persistently overpriced insurance useful only to leveraged investors, trend is a positive-expected-return, low-correlation allocation (10-30% of a long-only portfolio) that gives no guaranteed crisis protection; recent non-correlation of gold/crypto is empirical, not designed.",
+   "times_stated": 5,
+   "sources": [
+    "MT160",
+    "MT134",
+    "MT038",
+    "MT196",
+    "MT221"
+   ],
+   "claim_ids": [
+    "MT160-C05-1",
+    "MT160-C07-3",
+    "MT160-C07-4",
+    "MT160-C08-X1",
+    "MT134-C05-4",
+    "MT038-C10-2",
+    "MT196-C04-2"
+   ],
+   "stable": "evolved - 2024: trend not guaranteed protection; 2026 (MT038): crisis alpha present when carried by beta timing, and the April 2025 episode showed Treasuries and dollar failing as hedges"
+  },
+  {
+   "belief": "Bottom-up replication of CTA exposure (about 30 liquid futures, low fee) is acceptable and cheap CTA access matters; return-based (regression/lasso) replication is in-sample, backward-looking and cannot give manager diversification; an ETF is only a legal wrapper whose contents matter; ten years of ETF data cannot settle whether replication beats real CTAs.",
+   "times_stated": 5,
+   "sources": [
+    "MT144",
+    "MT026",
+    "MT155",
+    "MT106",
+    "MT002"
+   ],
+   "claim_ids": [
+    "MT144-C15-1",
+    "MT144-C20-X1",
+    "MT026-C21-2",
+    "MT026-C22-3",
+    "MT026-C23-1",
+    "MT155-C06-3",
+    "MT106-C19-1",
+    "MT106-C19-4",
+    "MT106-C20-1"
+   ],
+   "stable": "stable, slightly more agnostic by 2026"
+  },
+  {
+   "belief": "Fees: with unknown future returns and known costs the cheaper manager wins ex ante, fees should be compared net and volatility-adjusted, performance fees align better than flat fees, and multi-strategy pass-through costs are opaque.",
+   "times_stated": 3,
+   "sources": [
+    "MT160",
+    "MT106",
+    "MT064"
+   ],
+   "claim_ids": [
+    "MT160-C17-1",
+    "MT160-C18-1",
+    "MT106-C03-3",
+    "MT064-C03-2",
+    "MT064-C03-3"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "AI and LLMs add overfitting and oversight risk in trading: off-the-shelf LLMs applied to financial data are an overfitting machine with no visible fitting process; ML on existing data is low-yield; AI ideas are valid only after a hindsight-aware test; AI code needs guard rails; LLM advice favouring trend is circular.",
+   "times_stated": 7,
+   "sources": [
+    "MT160",
+    "MT064",
+    "MT002",
+    "MT128",
+    "MT106",
+    "MT218",
+    "MT010"
+   ],
+   "claim_ids": [
+    "MT160-C15-1",
+    "MT160-C15-2",
+    "MT064-C10-5",
+    "MT002-C11-3b",
+    "MT128-C17-2",
+    "MT128-C18-1",
+    "MT106-C10-4",
+    "MT218-C16-2",
+    "MT218-C17-1",
+    "MT010-C13-1",
+    "MT010-C13-2",
+    "MT010-C13-3",
+    "MT010-C14-3"
+   ],
+   "stable": "evolved - 2024: no serious use and an overfitting trap; 2026: uses AI for ideas and snippets under 10 lines, behind a hindsight-aware process"
+  },
+  {
+   "belief": "Liquidity is not constant and crowding matters: it vanishes in crises (especially in less-liquid markets), volume and open-interest spikes from 'tourists' overstate it (look back 1-2 years), and CTAs, risk parity and other quants all cut on volatility spikes so crowded volatility rules can magnify sell-offs; yet trend profits are not eroded by crowding the way spread trades are.",
+   "times_stated": 4,
+   "sources": [
+    "MT128",
+    "MT196",
+    "MT029",
+    "MT044"
+   ],
+   "claim_ids": [
+    "MT128-C05-1",
+    "MT128-C05-2",
+    "MT128-C05-3",
+    "MT196-C15-2",
+    "MT029-C10-1",
+    "MT044-C15-1"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Macro/political opinions are held with low conviction and kept apart from the systematic book: tariffs, deportations and institutional instability are inflationary and raise the equity risk premium (Feb 2025); Treasuries may no longer be the default haven if policy is stagflationary or China avoids them (May 2025); fundamental bond shorts are widow-maker trades and debt-driven sell-offs in developed markets are the dog that has never barked, UK weakness being inflation; Fed independence is unknowable; he says openly when such calls were wrong.",
+   "times_stated": 7,
+   "sources": [
+    "MT064",
+    "MT196",
+    "MT026",
+    "MT093",
+    "MT128",
+    "MT160",
+    "MT010"
+   ],
+   "claim_ids": [
+    "MT064-C22-4",
+    "MT064-C21-2",
+    "MT196-C02-4",
+    "MT196-C03-1",
+    "MT026-C05-2",
+    "MT026-C05-4",
+    "MT093-C05-4",
+    "MT093-C06-1",
+    "MT128-C08-X2",
+    "MT128-C09-X1",
+    "MT160-C11-1",
+    "MT010-C01-1"
+   ],
+   "stable": "evolved - Feb-May 2025 bearish on US assets; Feb 2026 admits expectation of a bad market was wrong ('TACO'); Sep 2026 reports higher yields from fiscal/AI debt issuance"
+  },
+  {
+   "belief": "Crypto and meme enthusiasm is a late-stage speculative bubble tied to the political cycle, and Bitcoin is not money (tax acceptance and state creation define money, so a government will not accept an uncontrolled asset); nevertheless trend following works fine on crypto as an instrument and the Bitcoin halving cycle has too few observations to model.",
+   "times_stated": 5,
+   "sources": [
+    "MT144",
+    "MT155",
+    "MT093",
+    "MT137",
+    "MT128"
+   ],
+   "claim_ids": [
+    "MT144-C10-2",
+    "MT144-C11-2",
+    "MT155-C04-3",
+    "MT155-C04-X2",
+    "MT093-C09-1",
+    "MT137-C05-1",
+    "MT128-C10-3"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Judging managers and allocating: the data needed depends on the hypothesis, the size of outperformance and correlation to the benchmark; 5% significance is too strict for allocation (about 75% confidence is acceptable); total portfolio approaches should help diversifiers but are vague; pick CTAs if you can, otherwise diversify across managers; cap negative-skew buckets and use skew only to label strategy types.",
+   "times_stated": 6,
+   "sources": [
+    "MT134",
+    "MT137",
+    "MT144",
+    "MT010",
+    "MT218",
+    "MT093"
+   ],
+   "claim_ids": [
+    "MT134-C17-2",
+    "MT134-C17-3",
+    "MT137-C19-2",
+    "MT137-C19-3",
+    "MT144-C17-2",
+    "MT144-C18-1",
+    "MT010-C18-1",
+    "MT218-C06-1",
+    "MT093-C13-1"
+   ],
+   "stable": "stable"
+  }
+ ],
+ "mechanisms": [
+  {
+   "name": "Continuous volatility scaling limits damage in a parabolic reversal (silver, cocoa)",
+   "chain": [
+    "trend strengthens -> position grows with forecast",
+    "volatility rises -> position shrinks even though the trend signal is still long",
+    "record one-day crash hits a smaller, diversified position -> loss of about 3% on the day",
+    "unscaled leveraged funds let the winner become a bigger share of the book -> far larger loss"
+   ],
+   "fails_when": "A daily-rebalanced system cannot trade the gap itself; a 25% one-day move breaches any reasonable stop; profit is measured vs entry so he misses the peak, and he is unsure scaling was better at the very top.",
+   "sources": [
+    "MT128",
+    "MT137",
+    "MT196"
+   ],
+   "claim_ids": [
+    "MT128-C03-1",
+    "MT128-C03-2",
+    "MT128-C03-3",
+    "MT128-C03-4",
+    "MT128-C05-4",
+    "MT128-C04-X2",
+    "MT137-C13-1",
+    "MT196-C06-4"
+   ]
+  },
+  {
+   "name": "Skew versus Sharpe versus terminal wealth",
+   "chain": [
+    "no volatility scaling -> outsized winners (positive skew) but position not cut as volatility rises",
+    "more variable risk -> lower Sharpe",
+    "terminal-wealth simulation -> Sharpe lost exceeds skew gained, so geometric return is lower",
+    "positive skew raises the optimal volatility target by less than people think"
+   ],
+   "fails_when": "Investors with a strong taste for positive skew, or leverage that cannot be adjusted; very high Sharpe with heavy leverage or opacity can hide negative skew (Madoff).",
+   "sources": [
+    "MT064",
+    "MT137",
+    "MT044"
+   ],
+   "claim_ids": [
+    "MT064-C16-3",
+    "MT064-C17-2",
+    "MT064-C17-5",
+    "MT064-C18-1",
+    "MT064-C18-2",
+    "MT137-C13-2",
+    "MT137-C13-3",
+    "MT044-C09-4",
+    "MT044-C10-2"
+   ]
+  },
+  {
+   "name": "Leveraged investor: negative-return hedge raises geometric return",
+   "chain": [
+    "leveraged long in a negatively skewed asset (S&P at 4x) -> gap drawdown too fast for volatility targeting",
+    "far OTM puts -> hard floor on loss but persistent premium cost (downside vol overpriced)",
+    "higher Sharpe despite lower raw return -> more leverage possible",
+    "more leverage on the better book -> higher geometric return"
+   ],
+   "fails_when": "Protection costs far more than about 2% a year (30% is a different story), hedge bought selectively, or investor unleveraged and long-horizon.",
+   "sources": [
+    "MT160"
+   ],
+   "claim_ids": [
+    "MT160-C05-1",
+    "MT160-C05-2",
+    "MT160-C05-3",
+    "MT160-C05-X1",
+    "MT160-C06-1",
+    "MT160-C06-2",
+    "MT160-C06-3",
+    "MT160-C07-1"
+   ]
+  },
+  {
+   "name": "Trend profit decomposes into asset-class direction plus relative trend; crisis alpha is beta timing",
+   "chain": [
+    "cap-weighted indices are America plus noise -> build a volatility-equal-weighted asset-class index",
+    "trade the index trend on every instrument in the class -> asset-class factor",
+    "add residual momentum versus the index (six months) -> about 30% of profit; about 70% from the index",
+    "regress positions into beta component and volatility-neutral tilt -> crisis alpha and most volatility sit in beta timing",
+    "replace the tilt with carry over volatility (beta-neutral) -> defensiveness kept, better returns in equity bull markets"
+   ],
+   "fails_when": "Factor structure unclear outside equities and crypto; a tilt that is not beta-neutral in volatility space; mix weights in the Fidelity paper were round numbers, not optimised.",
+   "sources": [
+    "MT044",
+    "MT038"
+   ],
+   "claim_ids": [
+    "MT044-C05-3",
+    "MT044-C06-1",
+    "MT044-C07-1",
+    "MT044-C07-3",
+    "MT044-C08-1",
+    "MT038-C10-1",
+    "MT038-C10-2",
+    "MT038-C10-4",
+    "MT038-C11-1",
+    "MT038-C13-1",
+    "MT038-C13-3"
+   ]
+  },
+  {
+   "name": "Why trend works better in bonds than in equities (consensus extrapolation)",
+   "chain": [
+    "forecasters assume rates mean-revert (4% expected 2009-2020 vs 6% in 1999) -> rates actually persist -> trend profits",
+    "equity analysts extrapolate good and bad times -> momentum already priced, V-shaped reversals",
+    "bond carry, secular rate decline and rising valuations give a tailwind, stronger in bonds"
+   ],
+   "fails_when": "Other explanations (carry, secular drift) may do the work; unclear which dominates.",
+   "sources": [
+    "MT044"
+   ],
+   "claim_ids": [
+    "MT044-C16-1",
+    "MT044-C17-1",
+    "MT044-C17-2",
+    "MT044-C18-1",
+    "MT044-C18-2"
+   ]
+  },
+  {
+   "name": "More markets give fewer independent bets than they appear",
+   "chain": [
+    "adding instruments -> less idiosyncratic risk, more exposure to common factors",
+    "backtested performance rises four to five times with more markets -> about 16-25 independent bets, half a dozen matter at once",
+    "positive skew in a big trend book comes from macro-factor exposure because idiosyncratic tails wash out",
+    "correlation understates diversification for non-linear trend returns -> benefits continue beyond where correlations level off"
+   ],
+   "fails_when": "Non-linear returns mean he still keeps 300 markets; Niels sees no evidence 300-400 markets beat 100 or fewer.",
+   "sources": [
+    "MT026",
+    "MT218"
+   ],
+   "claim_ids": [
+    "MT026-C15-1",
+    "MT026-C16-1",
+    "MT026-C16-2",
+    "MT026-C17-2",
+    "MT026-C17-4",
+    "MT026-C19-3",
+    "MT218-C06-2"
+   ]
+  },
+  {
+   "name": "Diversification multiplier: vol-targeted instruments need scaling up",
+   "chain": [
+    "every instrument targeted to the same volatility -> book risk depends only on correlations",
+    "low correlations -> book undershoots target unless positions are multiplied by about 4-5 (25% falls to 8% without multipliers)",
+    "estimate book correlation from combined P&L over about six months and volatility separately over about one month (volatility more predictable than correlation)"
+   ],
+   "fails_when": "Misusing the fixed 0.7 trend-to-underlying correlation from his book as a book correlation biases risk.",
+   "sources": [
+    "MT128",
+    "MT144"
+   ],
+   "claim_ids": [
+    "MT128-C11-1",
+    "MT128-C11-2",
+    "MT128-C11-3",
+    "MT128-C11-4",
+    "MT128-C12-1",
+    "MT128-C12-3",
+    "MT144-C07-3"
+   ]
+  },
+  {
+   "name": "Honest backtest: implicit fitting and over-optimism lead to blow-ups; rolling and pooled selection",
+   "chain": [
+    "researcher swaps models or drops markets after seeing results -> implicit fitting with hindsight",
+    "inflated Sharpe -> excess leverage or too-fast trading and high costs",
+    "short data misses outliers (peso problem) -> leverage too high (LTCM)",
+    "remedy: equal weight many rules, shift weights only as evidence accrues, fit by average of individual, asset-class and global (a third each)"
+   ],
+   "fails_when": "Very short time frames where data can separate strategies; matrix fits add complexity for little value; asset-class fits need enough instruments in each class.",
+   "sources": [
+    "MT140",
+    "MT137",
+    "MT010"
+   ],
+   "claim_ids": [
+    "MT140-C06-1",
+    "MT140-C06-2",
+    "MT140-C07-1",
+    "MT140-C07-2",
+    "MT140-C05-3",
+    "MT137-C06-5",
+    "MT137-C07-1",
+    "MT137-C07-3",
+    "MT010-C07-1",
+    "MT010-C08-1",
+    "MT010-C08-2",
+    "MT010-C09-1"
+   ]
+  },
+  {
+   "name": "Slow trading removes the need to monitor alpha decay",
+   "chain": [
+    "fast strategies have high Sharpe -> decay visible within weeks",
+    "slow strategies have modest Sharpe -> decay over decades cannot be separated from noise",
+    "trade slowly across many rules -> little signal churn, low costs, one model for years"
+   ],
+   "fails_when": "He concedes trend may already have stopped working for ten years without anyone being able to tell.",
+   "sources": [
+    "MT140",
+    "MT106",
+    "MT093"
+   ],
+   "claim_ids": [
+    "MT140-C07-3",
+    "MT140-C07-4",
+    "MT140-C08-1",
+    "MT140-C08-2",
+    "MT106-C11-1",
+    "MT093-C16-4"
+   ]
+  },
+  {
+   "name": "Why a trend book is not harmed by crowding like spread trades, yet vol-scalers can amplify sell-offs",
+   "chain": [
+    "spread and RV traders rush in -> spreads compress and everyone exits together (liquidity cycle)",
+    "momentum buyers push price further in the trend direction -> past profits do not reduce future ones",
+    "volatility spike -> CTAs, risk parity and quants all cut -> sell-off magnified in crowded markets"
+   ],
+   "fails_when": "No data given; Niels argues larger CTAs were selling silver during the run-up and acted as a buffer.",
+   "sources": [
+    "MT029",
+    "MT128"
+   ],
+   "claim_ids": [
+    "MT029-C10-1",
+    "MT128-C05-3",
+    "MT128-C06-1",
+    "MT026-C02-2"
+   ]
+  },
+  {
+   "name": "Return-based CTA replication fails; bottom-up works",
+   "chain": [
+    "positions flip sign over months -> regression needs short windows -> too many regressors, lasso picks about five",
+    "in-sample measurement -> overstated tracking, out-of-sample refits always worse",
+    "backward-looking regression -> cannot reproduce individual managers' diversification",
+    "position-level and simple bottom-up replication (about 30 liquid futures) avoid these problems"
+   ],
+   "fails_when": "Factor spread must be varied (30 US bond futures would fail); the paper's cost saving is a ceiling (about 100-200bp minus replicator fees).",
+   "sources": [
+    "MT026",
+    "MT144",
+    "MT106"
+   ],
+   "claim_ids": [
+    "MT026-C21-1",
+    "MT026-C21-2",
+    "MT026-C22-3",
+    "MT026-C18-1",
+    "MT026-C20-2",
+    "MT026-C23-1",
+    "MT106-C19-2",
+    "MT106-C19-3"
+   ]
+  },
+  {
+   "name": "Return stacking: size of a diversifier on top of equities",
+   "chain": [
+    "allocation is buying risk with cash -> futures need little cash (about 25% for 15% volatility)",
+    "less-correlated assets have lower raw returns (diversification drag) -> diversifying costs return with a fixed pie",
+    "leverage on cash-efficient diversifiers -> converts Sharpe improvement into return",
+    "optimal size set by correlation to equities, drag and cash efficiency (short vol about 10% of equity; long vol over 100%; trend, gold, Treasuries about 50%)"
+   ],
+   "fails_when": "Study periods flatter the diversifier (gold since 2000; gold futures lost 53% in the 1990s per the host); leverage too high; depends on forward-looking return assumptions; he calls results theoretical.",
+   "sources": [
+    "MT106"
+   ],
+   "claim_ids": [
+    "MT106-C14-2",
+    "MT106-C15-1",
+    "MT106-C16-X1",
+    "MT106-C16-2",
+    "MT106-C16-1",
+    "MT106-C16-3",
+    "MT106-C16-4",
+    "MT106-C17-2"
+   ]
+  },
+  {
+   "name": "Trend sleeve inside a 60/40 and sector rotation are single-factor, not diversification",
+   "chain": [
+    "trend book is on average net long equities and bonds -> part of its return is the equity risk premium",
+    "small sleeve beside a 60/40 -> double-counts premia -> make sleeve more neutral for a limited allocation",
+    "trend P&L by sector rotates by decade (2000-09 broad, 2010-19 fixed income, 2020-26 commodities) -> single macro story each time",
+    "continuous trend-strength sizing already tilts to the trending class -> tactical sector chasing is redundant and lowers diversification"
+   ],
+   "fails_when": "Niels: with 5% in trend the equity exposure is not worth worrying about; a binary trader may differ.",
+   "sources": [
+    "MT218"
+   ],
+   "claim_ids": [
+    "MT218-C07-1",
+    "MT218-C07-2",
+    "MT218-C08-X1",
+    "MT218-C13-1",
+    "MT218-C14-1",
+    "MT218-C14-2"
+   ]
+  },
+  {
+   "name": "Drawdowns add no information beyond Sharpe and history length",
+   "chain": [
+    "longer history -> deeper maximum drawdown (ignoring autocorrelation)",
+    "higher Sharpe -> smaller drawdown",
+    "so using drawdown as a separate criterion duplicates Sharpe and invites overfitting"
+   ],
+   "fails_when": "Autocorrelation breaks the proportionality; path risk may matter at whole-portfolio level.",
+   "sources": [
+    "MT218",
+    "MT196"
+   ],
+   "claim_ids": [
+    "MT218-C05-1",
+    "MT218-C05-2",
+    "MT218-C05-3",
+    "MT196-C11-2",
+    "MT196-C12-1"
+   ]
+  },
+  {
+   "name": "Trend speed in high-volatility regimes depends on the shape of the V",
+   "chain": [
+    "quick V (April 2025 tariff tantrum) -> fast trend whipsawed worst, medium and slow hold through",
+    "wider V (COVID 2020) -> fast and very slow did well, medium worst",
+    "secular turn (2008) -> different optimum",
+    "a high VIX could mean any of the three -> speed cannot be set from the VIX ex ante"
+   ],
+   "fails_when": "Alpha Architect VIX-dependent speed result may still hold out of sample; he declines to implement it on simplicity.",
+   "sources": [
+    "MT010",
+    "MT196"
+   ],
+   "claim_ids": [
+    "MT010-C15-3",
+    "MT010-C15-4",
+    "MT010-C16-1",
+    "MT010-C16-2",
+    "MT010-C16-3",
+    "MT010-C16-4",
+    "MT196-C06-1",
+    "MT196-C06-2",
+    "MT196-C06-3"
+   ]
+  },
+  {
+   "name": "Policy risk to inflation, risk premium and who prices it first",
+   "chain": [
+    "tariffs with retaliation and mass deportations -> higher inflation and fragile supply chains",
+    "unstable regulation and changing tariffs -> higher equity risk premium and uncertainty",
+    "bond investors are more professional and conservative than retail-heavy equity -> bonds and gold may price it earlier (2007-08 credit)",
+    "stagflation policy -> normal central bank reaction function may fail and traditional buyers (China) avoid Treasuries -> Treasuries fail as haven"
+   ],
+   "fails_when": "Conditional on the policies being carried through; tariffs may be diluted; midterms; effects reach data with a lag; Feb 2026 he admits markets shrugged it off.",
+   "sources": [
+    "MT064",
+    "MT196",
+    "MT128"
+   ],
+   "claim_ids": [
+    "MT064-C21-2",
+    "MT064-C21-3",
+    "MT064-C22-2",
+    "MT064-C22-4",
+    "MT064-C23-4",
+    "MT064-C23-5",
+    "MT196-C02-4",
+    "MT196-C03-1",
+    "MT196-C03-2",
+    "MT128-C08-X2"
+   ]
+  },
+  {
+   "name": "Investor returns trail fund returns",
+   "chain": [
+    "fund shows persistent gains (negative-skew strategy) -> flows chase it",
+    "money arrives just before the loss (or leaves before gains in positively skewed funds) -> dollar-weighted return far below fund return",
+    "summed over a decade -> 1.7% a year across US funds, 4.4% in sector equity funds"
+   ],
+   "fails_when": "Smaller for lower-skew funds and with no flows; funds where investors beat the fund are probably lucky.",
+   "sources": [
+    "MT093"
+   ],
+   "claim_ids": [
+    "MT093-C10-1",
+    "MT093-C10-2",
+    "MT093-C11-1",
+    "MT093-C11-3",
+    "MT093-C12-1",
+    "MT093-C12-2"
+   ]
+  },
+  {
+   "name": "Gold futures funding squeeze creates a carry versus trend conflict",
+   "chain": [
+    "gold inventory imbalance between warehouses -> borrowing cost jumps from about 4.5-5% to 10-12%",
+    "futures minus spot reflects borrowing cost for a yieldless asset -> December future about 150 points over spot",
+    "long position has negative carry while trend is positive -> mixed signals"
+   ],
+   "fails_when": "He admits the cause is unclear and waits to see how the squeeze resolves.",
+   "sources": [
+    "MT064"
+   ],
+   "claim_ids": [
+    "MT064-C01-1",
+    "MT064-C02-1",
+    "MT064-C02-2",
+    "MT064-C02-3"
+   ]
+  }
+ ],
+ "playbook": [
+  {
+   "element": "signal",
+   "rule": "Run a suite of rules: acceleration, asset-class trend, breakout, carry from the futures curve, EWMA-crossover momentum, very slow mean reversion, normalised momentum, relative carry, relative momentum within asset class, a skew rule; about 50 forecasting variables in total. Convert every signal to a forecast on a -20 to +20 scale (10 = average bullish).",
+   "why": "Diversifying across rules reduces exposure to pure trend decay; one numeric scale lets discretionary views be combined and tested; extra automated signals cost nothing.",
+   "sources": [
+    "MT140",
+    "MT196",
+    "MT044"
+   ],
+   "claim_ids": [
+    "MT140-C08-2",
+    "MT140-C08-3",
+    "MT140-C08-4",
+    "MT140-C08-5",
+    "MT140-C08-6",
+    "MT140-C08-7",
+    "MT140-C08-8",
+    "MT140-C08-10",
+    "MT140-C08-11",
+    "MT140-C08-12",
+    "MT140-C08-13",
+    "MT196-C11-1",
+    "MT196-C15-3",
+    "MT044-C11-4"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Trend and momentum on a single back-adjusted continuous price series (not per contract); carry forecast EMA-smoothed so the roll is immaterial; trend-follow the local-currency price and trade FX separately rather than converting to home currency.",
+   "why": "Avoids forecast jumps at roll; keeps asset and currency trends as two diversifying instruments.",
+   "sources": [
+    "MT160",
+    "MT093"
+   ],
+   "claim_ids": [
+    "MT160-C09-2",
+    "MT160-C10-1",
+    "MT093-C08-1",
+    "MT093-C08-2",
+    "MT093-C08-4"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Trend signal on a volatility-equal-weighted asset-class index applied to every instrument in the class, plus market-neutral residual momentum versus the index over six months; any tilt inside an asset class kept beta- and volatility-neutral (e.g. carry over volatility).",
+   "why": "About 70% of profit from the index; preserves crisis alpha while adding return in equity bull markets.",
+   "sources": [
+    "MT044",
+    "MT038"
+   ],
+   "claim_ids": [
+    "MT044-C06-1",
+    "MT044-C07-1",
+    "MT044-C07-3",
+    "MT038-C11-1",
+    "MT038-C12-2"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Skew rule: buy assets with heavy negative historic skew (recently fallen sharply), which tend to be underpriced because people dislike them; no other sentiment indicators, and any sentiment model should be built in-house.",
+   "why": "A form of buying negative sentiment; markets pay a premium for holding recently crashed assets; vendor models are fitted in-sample.",
+   "sources": [
+    "MT137",
+    "MT140",
+    "MT106"
+   ],
+   "claim_ids": [
+    "MT137-C15-1",
+    "MT137-C15-2",
+    "MT140-C08-13",
+    "MT106-C07-5"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Leave out short-horizon mean reversion (does not survive costs); consider an absolute long-term (multi-year) mean-reversion signal for diversification, untested recently; add about one new rule a year or less (about 20% of researched ideas implemented).",
+   "why": "Costs; long signals rarely reach significance; failing is better than overfitting.",
+   "sources": [
+    "MT140",
+    "MT064"
+   ],
+   "claim_ids": [
+    "MT140-C08-9",
+    "MT140-C10-1",
+    "MT064-C13-1",
+    "MT064-C13-2",
+    "MT064-C13-X1"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Keep about 50-60% of the book in trend and about 40% in convergent (carry-like) strategies, higher than CTAs' 20-30%; add non-trend systems only when confident; same forecast weights for every instrument today, with fitting pooled or averaged (a third each individual, asset-class, global).",
+   "why": "No client pool or allocator box constrains the mix; per-instrument weights are overfitting.",
+   "sources": [
+    "MT196",
+    "MT218",
+    "MT106",
+    "MT010"
+   ],
+   "claim_ids": [
+    "MT196-C12-X1",
+    "MT218-C05-X1",
+    "MT106-C12-2",
+    "MT010-C08-2",
+    "MT010-C07-1"
+   ]
+  },
+  {
+   "element": "universe",
+   "rule": "Hold a model portfolio of about 250-300 futures and trade a dynamically optimised subset (about 20 instruments for a small account) that replicates it; skip instruments barred by regulation or too illiquid or expensive; below about $100,000 a diversified futures portfolio is not feasible, use a CTA ETF or fund.",
+   "why": "Keeps diversification at lower cost; micros and minis dominated by equities and agriculturals.",
+   "sources": [
+    "MT026",
+    "MT128",
+    "MT144"
+   ],
+   "claim_ids": [
+    "MT026-C18-1",
+    "MT128-C02-2",
+    "MT128-C04-X4",
+    "MT144-C10-1",
+    "MT144-C20-2"
+   ]
+  },
+  {
+   "element": "universe",
+   "rule": "Add markets before adding trend variants; once many markets are held add a different style (carry); do not favour or drop instruments because trend 'works better' on them without a significance test; compare markets over identical windows.",
+   "why": "Correlations 0.4-0.5 (market), 0.8-0.9 (trend variant), about 0.5 (carry); with 250 instruments some look significant by chance; short histories coincide with strong trend years.",
+   "sources": [
+    "MT064",
+    "MT093",
+    "MT002",
+    "MT026"
+   ],
+   "claim_ids": [
+    "MT064-C07-1",
+    "MT064-C07-2",
+    "MT064-C07-3",
+    "MT064-C07-4",
+    "MT093-C08-3",
+    "MT002-C08-3b",
+    "MT026-C14-1"
+   ]
+  },
+  {
+   "element": "universe",
+   "rule": "Judge liquidity over a one-to-two-year history, not recent volume or open interest.",
+   "why": "Tourists inflate volume in hot markets; liquidity disappears in crises.",
+   "sources": [
+    "MT128"
+   ],
+   "claim_ids": [
+    "MT128-C05-1",
+    "MT128-C05-2"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Volatility-target each instrument and scale position with forecast strength (average forecast 10, cap 20), rebalancing daily from the prior close; multiply by about 4-5 so the diversified book hits its target; scale positions with account value (cut 10% after a 10% loss); risk target below half Kelly and under about 20-30% volatility (his retail account about 25%). In cash-only accounts cap forecasts at 10 or halve all positions.",
+   "why": "Kelly with uncertain Sharpe; losing money is a legitimate reason to cut risk; keeps risk at target when leverage is unavailable.",
+   "sources": [
+    "MT128",
+    "MT093",
+    "MT144",
+    "MT044",
+    "MT064",
+    "MT026"
+   ],
+   "claim_ids": [
+    "MT128-C02-1",
+    "MT128-C11-2",
+    "MT093-C06-2",
+    "MT093-C07-1",
+    "MT144-C04-4",
+    "MT144-C05-1",
+    "MT044-C09-2",
+    "MT064-C06-3",
+    "MT026-C10-3"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Risk floats with signal strength: when forecasts weaken or conflict, positions shrink automatically (risk at about half of target in June 2024, one third in April and September 2026, 9% annualised in June 2026); use average forecast strength as a trend barometer.",
+   "why": "Weak or conflicting signals mean a hard environment; risk should follow signal strength.",
+   "sources": [
+    "MT160",
+    "MT106",
+    "MT218",
+    "MT010"
+   ],
+   "claim_ids": [
+    "MT160-C03-1",
+    "MT106-C05-3",
+    "MT106-C05-X2",
+    "MT218-C03-3",
+    "MT010-C05-2"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Estimate volatility with about a one-month window and correlation with about six months (exponentially weighted), separately; weight any strategy by the probability it works (10-15% for an outstanding idea, about 0.01% for a weak one) instead of a yes/no.",
+   "why": "Volatility is more predictable than correlation (R-squared about 0.35 vs 0.2-0.25); no idea has zero chance.",
+   "sources": [
+    "MT128",
+    "MT026",
+    "MT218"
+   ],
+   "claim_ids": [
+    "MT128-C12-1",
+    "MT128-C12-3",
+    "MT026-C11-2",
+    "MT218-C17-2"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "No stop losses; if a volatility stop is used, widen it only together with a smaller position; no adjustment for elections, referendums or payrolls; no discretionary volatility views.",
+   "why": "Stops confound risk per trade with holding period and do not remove gap risk; political forecasting needs three hard predictions (outcome, implications, market reaction).",
+   "sources": [
+    "MT128",
+    "MT137",
+    "MT160",
+    "MT044"
+   ],
+   "claim_ids": [
+    "MT128-C04-1",
+    "MT128-C04-2",
+    "MT137-C12-2",
+    "MT160-C12-1",
+    "MT160-C13-1",
+    "MT044-C12-3",
+    "MT044-C12-4"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Keep trend at 10-30% of a long-only unlevered portfolio; do not lever up because trend lowers measured risk; buy tail protection only if leveraged and at about 2% a year; total volatility below about 20-30%; check how correlation changes the volatility of stacked products.",
+   "why": "Leverage plus an unprotected crisis is the failure mode; Kelly.",
+   "sources": [
+    "MT160",
+    "MT064"
+   ],
+   "claim_ids": [
+    "MT160-C07-3",
+    "MT160-C07-4",
+    "MT160-C07-1",
+    "MT160-C08-X1",
+    "MT064-C06-3",
+    "MT064-C06-4"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Leave the system running in a drawdown; read drawdowns as multiples of annual volatility (Sharpe units); treat a drawdown far beyond backtest (e.g. 50%) as a real concern; drop a strategy only on very strong evidence of a structural break; do not look at daily P&L.",
+   "why": "Single-period performance is noise; avoids emotional fiddling.",
+   "sources": [
+    "MT144",
+    "MT044",
+    "MT196",
+    "MT218",
+    "MT140"
+   ],
+   "claim_ids": [
+    "MT144-C02-X1",
+    "MT044-C04-2",
+    "MT196-C12-1",
+    "MT196-C10-X1",
+    "MT218-C05-1",
+    "MT140-C01-1",
+    "MT140-C02-1"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Classify strategies by skew into trend-like and carry-like buckets and cap the negative-skew bucket (illustrated at 30%); do not put skew in a formal utility function.",
+   "why": "Skew estimates are statistically unreliable.",
+   "sources": [
+    "MT218"
+   ],
+   "claim_ids": [
+    "MT218-C05-4",
+    "MT218-C06-1"
+   ]
+  },
+  {
+   "element": "execution",
+   "rule": "Test the effect of delaying fills by one or two days; if Sharpe changes by more than about 0.01 trade faster or use intraday data, else ignore intraday moves; trade off the previous close, passive limit orders first then market; use buffers (older version 10% of a standard vol-adjusted position) or dynamic optimisation so trades happen only when worth their cost, in the cheapest correlated market.",
+   "why": "Slow systems are insensitive to execution timing; realised slippage beat the half-spread assumption; costs matter more than tracking the optimum.",
+   "sources": [
+    "MT026",
+    "MT137",
+    "MT196"
+   ],
+   "claim_ids": [
+    "MT026-C07-1",
+    "MT026-C07-2",
+    "MT026-C08-1",
+    "MT026-C08-2",
+    "MT026-C11-1",
+    "MT026-C10-2",
+    "MT137-C06-2",
+    "MT137-C14-1",
+    "MT137-C14-2",
+    "MT196-C13-2"
+   ]
+  },
+  {
+   "element": "execution",
+   "rule": "Do not spend much effort on execution in liquid futures (only about 2bp can be saved out of about 4bp total cost); if costs reach about 30bp slow the signal or stop trading the market; do not give traders discretion over patient execution; do not trade routine rebalances aggressively because trend's information coefficient is low; in a crisis hedge with the cheapest available asset when a market is closed.",
+   "why": "Discretion turns a CTA into a CTA plus a short-horizon alpha desk; stale correlations and cost spikes in crises.",
+   "sources": [
+    "MT029",
+    "MT038"
+   ],
+   "claim_ids": [
+    "MT029-C15-2",
+    "MT029-C16-1",
+    "MT038-C15-3",
+    "MT038-C16-1",
+    "MT038-C17-1",
+    "MT038-C17-2"
+   ]
+  },
+  {
+   "element": "execution",
+   "rule": "Idea in his back book: execute slow signals the next day only if price has moved in your favour (buy only after a dip), combining slow trend with short-term mean reversion; untested for delays beyond one day.",
+   "why": "Cheaper execution without extra trades.",
+   "sources": [
+    "MT137"
+   ],
+   "claim_ids": [
+    "MT137-C16-4",
+    "MT137-C17-X1"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "Default to no fitting; fit only with strong out-of-sample evidence; put every model and parameter choice into one explicit procedure (rolling or expanding windows, weight parameter sets rather than pick one); include trading costs from the start and drop any strategy that does not make money before slippage; refit about annually for monthly-holding systems (his own about every three years).",
+   "why": "Avoids implicit fitting; an extra year adds under 2% to 55 years of data.",
+   "sources": [
+    "MT010",
+    "MT140",
+    "MT137"
+   ],
+   "claim_ids": [
+    "MT010-C09-2",
+    "MT140-C06-1",
+    "MT137-C06-5",
+    "MT137-C07-4",
+    "MT137-C08-1",
+    "MT137-C08-2"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "Annual review aligned to the UK tax year: compare raw and vol-adjusted returns with SG CTA and a same-currency fund (AHL) including margin interest, then break down by asset class, market and rule; check commissions plus slippage against the backtest (just under 100bp).",
+   "why": "Costs are predictable, P&L almost random.",
+   "sources": [
+    "MT106",
+    "MT196"
+   ],
+   "claim_ids": [
+    "MT106-C06-3",
+    "MT106-C06-4",
+    "MT106-C06-5",
+    "MT106-C21-4",
+    "MT196-C13-2"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "Test on random data (pseudo-CTAs) and with explicit in-sample/out-of-sample splits and increasing complexity; use gross-return autocorrelation tests and simulations; test what you trade and trade what you test (add the risk-free rate to back-adjusted futures); on missing data go flat and never interpolate; revisit published research after about 10 years.",
+   "why": "Real history may be a fluke; headline results hide detail.",
+   "sources": [
+    "MT026",
+    "MT160",
+    "MT044",
+    "MT064",
+    "MT010"
+   ],
+   "claim_ids": [
+    "MT026-C19-2",
+    "MT026-C21-2",
+    "MT160-C15-3",
+    "MT044-C21-1",
+    "MT064-C08-2",
+    "MT064-C09-1",
+    "MT064-C15-1",
+    "MT064-C15-3",
+    "MT010-C15-1"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "When a pattern appears ask why first, then whether it is exploitable, and treat null results as valuable; use full-sample extremes as inference about market structure only with a plausible fundamental reason, and for risk management rather than alpha; use AI only for ideas and snippets under 10 lines behind guard rails and a process that assumes hindsight contamination.",
+   "why": "Many patterns add no return; true out-of-sample no longer exists.",
+   "sources": [
+    "MT218",
+    "MT038",
+    "MT010"
+   ],
+   "claim_ids": [
+    "MT218-C13-X1",
+    "MT218-C14-3",
+    "MT218-C16-2",
+    "MT218-C17-1",
+    "MT038-C02-1",
+    "MT038-C03-1",
+    "MT010-C13-1",
+    "MT010-C13-2"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "Plan to test statistically whether instrument weights differ, then pool fitting across similar instruments (US 5- and 10-year); allow different weights only if evidence supports it; treat what weights to use by asset class as an empirical, not organisational, question.",
+   "why": "At AHL each asset-class team fitted its own weights; open question whether it added value.",
+   "sources": [
+    "MT106",
+    "MT010"
+   ],
+   "claim_ids": [
+    "MT106-C13-1",
+    "MT106-C13-X1",
+    "MT106-C13-X2",
+    "MT010-C07-X1"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Add a strategy by correlation: correlation about 0.4 justifies 5-10%; about 0.89 is not worth the extra work for an individual; diversify across managers; use hierarchical risk weights (more internal diversification gets more weight); crude portfolio construction works as well as sophisticated optimisation; do not reallocate between strategies or instruments on past performance.",
+   "why": "Correlation is more stable than Sharpe; performance differences are rarely significant.",
+   "sources": [
+    "MT144",
+    "MT140",
+    "MT026",
+    "MT010"
+   ],
+   "claim_ids": [
+    "MT144-C06-4",
+    "MT144-C07-1",
+    "MT144-C07-2",
+    "MT144-C08-1",
+    "MT140-C10-3",
+    "MT026-C13-2",
+    "MT026-C14-1",
+    "MT010-C18-1"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Allocator default: use the full history (since 1970) with equal weights to blend trend with a 60/40; build a backfilled trend index by replication if needed; do not time funds; stack futures diversifiers on equities with leverage sized by correlation, drag and cash efficiency; make a trend sleeve beside a 60/40 more neutral when allocation is small; in a CTA sleeve already beside equities and bonds use lower equity/bond weights, more agriculture and faster speed and weight trend over carry in equities.",
+   "why": "Avoids hindsight windows; avoids double-counting premia; crisis response wanted in equities.",
+   "sources": [
+    "MT093",
+    "MT106",
+    "MT218"
+   ],
+   "claim_ids": [
+    "MT093-C14-1",
+    "MT093-C16-6",
+    "MT106-C16-2",
+    "MT106-C16-1",
+    "MT218-C07-2",
+    "MT106-C13-3",
+    "MT106-C13-4"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Blend systematic and discretionary forecasts with a weighted average (50/50 or 70/30), the weight set by testing the discretionary forecasts as a backtest; Black-Litterman is the heavier alternative. Separately, his long-only account is discretionary.",
+   "why": "Simple semi-automatic blending that is verifiable.",
+   "sources": [
+    "MT044",
+    "MT196"
+   ],
+   "claim_ids": [
+    "MT044-C12-1",
+    "MT044-C12-2",
+    "MT044-C11-X1",
+    "MT196-C13-3"
+   ]
+  },
+  {
+   "element": "other",
+   "rule": "Compare fees after adjusting for volatility target (2-and-20 at 25% volatility is about 1-and-10 at half the volatility) and on net return; guarantees of returns are a red flag.",
+   "why": "CTAs with high volatility targets look cheap next to low-volatility long/short funds.",
+   "sources": [
+    "MT160",
+    "MT106"
+   ],
+   "claim_ids": [
+    "MT160-C18-1",
+    "MT160-C17-1",
+    "MT106-C21-X3"
+   ]
+  },
+  {
+   "element": "other",
+   "rule": "Open-source the trading system; automate monitoring (status page, nightly emails, checks for missing prices and positions vs broker).",
+   "why": "Forces code quality, testing and documentation; minimises supervision.",
+   "sources": [
+    "MT029",
+    "MT026"
+   ],
+   "claim_ids": [
+    "MT029-C17-2",
+    "MT026-C12-4",
+    "MT026-C13-1"
+   ]
+  }
+ ],
+ "evidence_style": "Mixes first-principles statistics (Kelly, Sharpe vs skew, multiple testing, statistical power, drawdown mathematics), his own long backtests (data since 1970) and live P&L/cost reviews, small self-run simulations, and reading of papers (Quantica, Man AHL, Safari-Schmidhuber, Asness, Ilmanen, Winton, Alpha Architect, Morningstar). He often flags numbers as from memory or hand-waving, welcomes hard evidence over his own guesses, treats null results as informative, and admits his macro/discretionary errors. Macro arguments rely on FT commentary and reasoning with no data of his own.",
+ "views_timeline": [
+  {
+   "as_of": "late June 2024",
+   "view": "Own book net long equities and risk-on (long equity indices, yen, euro, cattle; short bonds and short VIX) at about half target risk; trend allocation added at a high watermark was a mistake (+16% YTD in April, about +7.8% by late June); AI hype fading outside Nvidia; US election risk sits in October VIX.",
+   "reasoning": "Signals after a weak spring for trend; weak mean reversion in trend returns but timing left to the model.",
+   "source": "MT160",
+   "claim_ids": [
+    "MT160-C03-1",
+    "MT160-C03-2",
+    "MT160-C03-X2",
+    "MT160-C02-1",
+    "MT160-C14-1",
+    "MT160-C09-1"
+   ]
+  },
+  {
+   "as_of": "2024-09-05",
+   "view": "Long equities and bonds, short gas and agriculture at low risk in a drawdown about equal to his worst of ten years; a strategic US Bitcoin reserve is 'pretty dumb' and would erode dollar privilege.",
+   "reasoning": "Weak forecasts and low volatility; money rests on tax acceptance and state creation.",
+   "source": "MT144",
+   "claim_ids": [
+    "MT144-C01-1",
+    "MT144-C01-2",
+    "MT144-C02-X1",
+    "MT144-C10-2",
+    "MT144-C11-1",
+    "MT144-C12-X1"
+   ]
+  },
+  {
+   "as_of": "late October 2024",
+   "view": "Small short in crude, short Bunds only in fixed income; the US will behave like Japan rather than face a Minsky moment (prints its own reserve currency, ageing raises bond demand), rebutting Paul Tudor Jones.",
+   "reasoning": "Japan 1990s-2013 analogy, personal AHL experience of long JGB trend; fundamental bond shorts are widow-makers.",
+   "source": "MT026",
+   "claim_ids": [
+    "MT026-C02-1",
+    "MT026-C06-2",
+    "MT026-C05-2",
+    "MT026-C05-3",
+    "MT026-C05-4",
+    "MT026-C05-5"
+   ]
+  },
+  {
+   "as_of": "2024-12-04",
+   "view": "Bitcoin to 200,000 in 2025 (hopes he is wrong); possibly the peak of the crypto/meme bubble tied to the political cycle. No statistically significant liquidity effect on futures trend.",
+   "reasoning": "Bubble keeps inflating; short histories of illiquid markets coincide with good trend years.",
+   "source": "MT155 / MT002",
+   "claim_ids": [
+    "MT155-C17-3",
+    "MT155-C04-X2",
+    "MT155-C04-3",
+    "MT002-C08-2",
+    "MT002-C08-4"
+   ]
+  },
+  {
+   "as_of": "mid-February 2025",
+   "view": "Long gold, silver and bitcoin on trend but gold has negative carry; Trump tariffs, deportations and institutional instability are inflationary and raise the equity risk premium, so bonds and equities are both at risk and CTAs benefit; bonds and gold may price it first; his +1% YTD is noise.",
+   "reasoning": "Borrowing cost spike in gold; tariff and labour-supply inflation; bond investors more professional.",
+   "source": "MT064",
+   "claim_ids": [
+    "MT064-C02-2",
+    "MT064-C02-3",
+    "MT064-C22-4",
+    "MT064-C21-2",
+    "MT064-C23-5",
+    "MT064-C23-X1",
+    "MT064-C04-X2"
+   ]
+  },
+  {
+   "as_of": "2025-05-02",
+   "view": "Bearish US economy (deep technical recession as tariffs hit data with a lag); sold all remaining US stocks around Liberation Day in his long-only portfolio and holds cash at about 4%; Treasuries may not be the go-to safe asset; April 2025 return -5.5%, tax year 2024-25 about -15% (one-in-10 year); leveraged ETFs are toxic.",
+   "reasoning": "Tariff lag, Q1 GDP distorted, stagflationary policy and flows away from US assets; call looks wrong so far because the market rebounded.",
+   "source": "MT196",
+   "claim_ids": [
+    "MT196-C14-1",
+    "MT196-C15-1",
+    "MT196-C13-3",
+    "MT196-C02-1",
+    "MT196-C02-4",
+    "MT196-C03-1",
+    "MT196-C09-2",
+    "MT196-C19-1"
+   ]
+  },
+  {
+   "as_of": "end June 2025",
+   "view": "Live drawdown is his largest, on a par with the worst backtest since 1970 (one-in-10 to one-in-20 year), year to date about -5.5% (-1.3 Sharpe units); low risk, long equities, a little short bonds; bond trend should stay stronger than equity trend; worried by Fed capital-rule rollback.",
+   "reasoning": "Weak trend environment after April reversals; consensus mean-reversion expectations wrong in bonds.",
+   "source": "MT044",
+   "claim_ids": [
+    "MT044-C03-3",
+    "MT044-C04-2",
+    "MT044-C04-R5",
+    "MT044-C03-4",
+    "MT044-C18-1",
+    "MT044-C02-2"
+   ]
+  },
+  {
+   "as_of": "2025-07-24",
+   "view": "Basic trend following has probably decayed gradually over 50-60 years but it is too soon to switch it off; it may already have stopped working without anyone being able to tell.",
+   "reasoning": "Low Sharpe makes decay statistically undetectable.",
+   "source": "MT140",
+   "claim_ids": [
+    "MT140-C07-4",
+    "MT140-C08-1"
+   ]
+  },
+  {
+   "as_of": "2025-09-26",
+   "view": "Long equities, FX and bonds, short energy and Bitcoin at about 50-60% of typical risk; rates markets underprice bad news such as threats to Fed independence, yet his book stays long bonds; UK weakness is an inflation story (gilts above Italy); trend works on crypto.",
+   "reasoning": "Model output vs discretionary gut; UK vs Italy yield comparison.",
+   "source": "MT093",
+   "claim_ids": [
+    "MT093-C05-1",
+    "MT093-C05-X2",
+    "MT093-C05-2",
+    "MT093-C05-5",
+    "MT093-C06-1",
+    "MT093-C09-1"
+   ]
+  },
+  {
+   "as_of": "2025-11-20",
+   "view": "Risk below average with a neutral trend barometer; up about 5% for the year in a drawdown of just over 10%; largest short Bitcoin, net long equities (short DAX, long Italy); total portfolio approach could help trend but is vague and perhaps an excuse for more private assets.",
+   "reasoning": "System drives positions; no formal definition of TPA.",
+   "source": "MT137",
+   "claim_ids": [
+    "MT137-C04-3",
+    "MT137-C05-1",
+    "MT137-C17-2",
+    "MT137-C19-3"
+   ]
+  },
+  {
+   "as_of": "2025-12-17",
+   "view": "Currently non-correlated assets (crypto, gold) may not stay non-correlated in a shock; half-Kelly at Sharpe 1 implies 40-50% volatility, so high-volatility CTA products are feasible (half in jest).",
+   "reasoning": "They happened to be non-correlated, not by design; Kelly arithmetic.",
+   "source": "MT134 / MT221",
+   "claim_ids": [
+    "MT134-C05-4",
+    "MT221-C14-1"
+   ]
+  },
+  {
+   "as_of": "early February 2026",
+   "view": "Silver crash lesson is risk management: his loss was 3% because vol scaling had already sold silver (at $71 and $81) while the trend stayed long; Fed-chair nomination probably not the real cause and the chair's independence is unknowable; markets have shrugged off presidential policy shocks, so his bearish call a year earlier was wrong; January trend profit came from idiosyncratic sources (gold, silver, natural gas).",
+   "reasoning": "Muted two-year yield reaction; Powell precedent; factor decomposition.",
+   "source": "MT128",
+   "claim_ids": [
+    "MT128-C05-4",
+    "MT128-C03-1",
+    "MT128-C08-2",
+    "MT128-C08-3",
+    "MT128-C08-X2",
+    "MT128-C14-X1",
+    "MT128-C07-2"
+   ]
+  },
+  {
+   "as_of": "2026-04-16",
+   "view": "Oil supply shock has had a muted equity reaction but will eventually matter (physical oil far above futures); risk about a third of target with modest long equities, reasonable short bonds, small long energy; futures account +23.7% over the 12 months to 5 April 2026; a good year for slow trend, fast trend CTAs lagged.",
+   "reasoning": "Rule-by-rule review of his own signals; physical oil decoupling from grade-and-location futures.",
+   "source": "MT106",
+   "claim_ids": [
+    "MT106-C02-1",
+    "MT106-C03-1",
+    "MT106-C05-3",
+    "MT106-C05-4",
+    "MT106-C06-1",
+    "MT106-C07-3",
+    "MT106-C05-X1"
+   ]
+  },
+  {
+   "as_of": "2026-05 (mid-May)",
+   "view": "Trend followers are very bearish in rates, counterintuitive to the average investor.",
+   "reasoning": "Recent trend positioning data.",
+   "source": "MT038",
+   "claim_ids": [
+    "MT038-C05-5"
+   ]
+  },
+  {
+   "as_of": "2026-06 (mid-June)",
+   "view": "Low 9% annualised risk, biggest position a long equity position (pro peace deal), flat energies; a Middle East peace deal is priced in (buy the rumour, sell the fact) while oil supply shortages may slow normalisation; US statistical data quality is degrading; perpetual futures are probably not good for futures markets.",
+   "reasoning": "Weak trend signals; official-data cuts and delays; hedgers need dated contracts.",
+   "source": "MT218",
+   "claim_ids": [
+    "MT218-C03-3",
+    "MT218-C04-1",
+    "MT218-C02-3",
+    "MT218-C03-1",
+    "MT218-C12-1"
+   ]
+  },
+  {
+   "as_of": "2026-09",
+   "view": "Short US 10-year and Korean 10-year bonds; yields rising on government and AI-corporate debt and fiscal promises; Treasury buybacks too small to hold down yields; markets poised for a shock without reacting, risk about a third of average, +7.5% for the year; he would sell the Simplify CTA ETF now that it has moved to energy only.",
+   "reasoning": "Heavy issuance; lost diversification and style drift; SPR falling to a limit.",
+   "source": "MT010",
+   "claim_ids": [
+    "MT010-C01-1",
+    "MT010-C02-3",
+    "MT010-C02-X1",
+    "MT010-C05-2",
+    "MT010-C06-1",
+    "MT010-C04-1",
+    "MT010-C04-2"
+   ]
+  }
+ ],
+ "how_views_changed": "Core method has not changed by his own account (advice and principles unchanged for 10-20 years: MT137-C10-R1, MT137-C11-1). Changes are in application and in discretionary opinions, and he usually gives the evidence: (1) macro: bearish on US assets Feb-May 2025 (inflation, higher risk premium, deep recession, sold all US stocks and went to cash) then in Feb 2026 admits the bearish expectation and his April 2025 equity sale cost relative performance (MT128-C08-X2, MT128-C08-1); (2) trend allocation timing: twice he added capital after strong runs and regretted it (MT160-C02-1, MT196-C09-X1), reinforcing leave-timing-to-the-model; (3) AI: from 'no serious use' (2024) to limited idea generation under a hindsight-aware process (2026); (4) crisis alpha: from 'no guaranteed protection' to a decomposition showing it sits in beta timing (MT038), after Treasuries and the dollar failed as hedges in April 2025; (5) trend speed: as of April 2026 slow signals did best over the last year, but he refuses to infer a regime change from one year or from the VIX; (6) risk level: half of target (2024) falling to one third / 9% annualised (2026) as signals weakened, with +23.7% in the 12 months to April 2026 despite that. Reasons for changes are given as evidence from his own results or papers, not as revised theory.",
+ "disagreements": [
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Competing on low fees vs charging for track record",
+   "their_position": "Between two new managers the cheaper wins, so a two-tier fee market forms; compare fees after vol adjustment.",
+   "other_position": "Not in the camp winning attention with super-low fees; fees already reasonable, net return is what matters.",
+   "sources": [
+    "MT160"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Trend vs tail protection, and whether trend is crisis alpha",
+   "their_position": "Trend and puts should not share a protection bucket; trend suits unleveraged investors, puts leveraged ones.",
+   "other_position": "Puts respond first and trend later; trend is non-correlated return, not crisis alpha.",
+   "sources": [
+    "MT160"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Do more markets help (50-100 vs 250-300)?",
+   "their_position": "Keeps over 300 markets: backtested performance rises four to five times and non-linear benefits continue, while accepting only about half a dozen independent bets matter at once.",
+   "other_position": "50-100 markets is enough; no database evidence that 300-400 do better.",
+   "sources": [
+    "MT026",
+    "MT144"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen (relaying Paul Tudor Jones)",
+   "topic": "US bond Minsky moment",
+   "their_position": "US more likely to behave like Japan; does not make discretionary bond calls though model is short Bunds.",
+   "other_position": "US debt dynamics risk a Minsky moment; own no fixed income and short the back end.",
+   "sources": [
+    "MT026"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Replication ETFs / index-matching",
+   "their_position": "Matching the index is an institutional preoccupation; non-institutional buyers need only a trend-style ETF with reasonable fees; ETFs needed in UK ISAs/SIPPs; ten years of data cannot settle the replication question.",
+   "other_position": "An ETF with fewer than 20 markets cannot deliver CTA returns; UCITS suffices; after vol and interest adjustment replication shows no outperformance.",
+   "sources": [
+    "MT144",
+    "MT106"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Is Sharpe the right objective for trend following?",
+   "their_position": "Terminal-wealth simulation shows higher Sharpe outweighs lost upside volatility.",
+   "other_position": "Sharpe penalises upside volatility, not great to optimise for trend.",
+   "sources": [
+    "MT064"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Explaining weak CTA returns by structural change",
+   "their_position": "Change stories are untestable narratives; use full history; degradation not significant and may need 50 more years.",
+   "other_position": "The world always changes yet trend adapts and has worked 51 years; lower returns reflect lower index volatility.",
+   "sources": [
+    "MT093"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Rebound after bad trend years / drawdown reaction",
+   "their_position": "Gross annual autocorrelation is weakly positive and vanishes; neither adding after good nor after bad years is exploitable; do nothing in theory.",
+   "other_position": "Best returns often follow the worst, stay invested; surprised that 30-year veterans hit worst drawdowns.",
+   "sources": [
+    "MT044",
+    "MT196"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "April 2025 dispersion and CTA price impact",
+   "their_position": "Two drivers, signal speed and position-capture method; volatility-adjusting CTAs and risk parity all sell on spikes and can magnify a sell-off.",
+   "other_position": "Stop-based vs continuous systems differ materially; larger CTAs were reducing silver as volatility expanded so act as a buffer.",
+   "sources": [
+    "MT196",
+    "MT128"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Trend sleeve adjustment and sector rotation",
+   "their_position": "Make a small sleeve more neutral inside a 60/40 and do not chase hot sectors.",
+   "other_position": "Do not distort the program; structurally favour commodities and uncorrelated markets over financial-heavy books.",
+   "sources": [
+    "MT218"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen",
+   "topic": "Trend speed with volatility; who controls exits",
+   "their_position": "VIX does not tell you which type of V; exits, speed and size should be rules.",
+   "other_position": "Intuition says shorter-term when volatility rises but no evidence; questions why bad exiters would be good at entries.",
+   "sources": [
+    "MT010"
+   ]
+  },
+  {
+   "with": "Yav Git",
+   "topic": "Asset-class-specific funds vs one multi-asset CTA; execution",
+   "their_position": "No statistically significant difference in trend by asset class; a generalised risk model and weights chosen by the CTA; only about 2bp saved by patient execution in liquid futures.",
+   "other_position": "Trends come from asset-class-specific imbalances; tailor implementation, risk and execution; giving the desk several days saves more than the 1-2bp lost.",
+   "sources": [
+    "MT029"
+   ]
+  },
+  {
+   "with": "Rich Brennan / Andrew Beer",
+   "topic": "Do illiquid or alternative markets trend more?",
+   "their_position": "No significant effect; their value is diversification.",
+   "other_position": "Brennan: young/smaller markets trend and diversify; Beer: open question, used to allocate alpha.",
+   "sources": [
+    "MT002"
+   ]
+  },
+  {
+   "with": "Yuval (Fidelity paper co-author)",
+   "topic": "Why Betting Against Beta works; relative-value trend",
+   "their_position": "Quality explanation untested and cannot explain the Treasury result; partly buys leverage aversion; keep native relative value and overlay carry.",
+   "other_position": "Diversification/quality explains BAB; relative-value trend keeps negative equity correlation and should not be discarded.",
+   "sources": [
+    "MT038"
+   ]
+  },
+  {
+   "with": "Alan Dunn / Yov Git / Nick Baltas",
+   "topic": "How to judge managers: statistics vs design vs premium",
+   "their_position": "Depends on hypothesis, outperformance size and correlation; 5% significance too strict, 75% confidence acceptable.",
+   "other_position": "Dunn: 10+ years needed yet investors use 1-3; Git: judge design and operations; Baltas: change only when the premium changes.",
+   "sources": [
+    "MT134"
+   ]
+  },
+  {
+   "with": "Katie Kaminski / Allan Dunne / Andrew Beer",
+   "topic": "High-volatility CTA products",
+   "their_position": "Half-Kelly at Sharpe 1 implies 40-50% vol; sell high-vol products to retail with fees proportional to vol (half in jest).",
+   "other_position": "Kaminski: unsmoothed prints mean performance chasing; Dunne: boom-bust cycle; Beer: capital-efficient stacked products instead.",
+   "sources": [
+    "MT221"
+   ]
+  },
+  {
+   "with": "Alan Dunn / Rich Brennan / Nick Baltas / Katy Kaminski",
+   "topic": "Is CTA replication established?",
+   "their_position": "Bottom-up is better; cheap basic CTA exposure matters.",
+   "other_position": "Dunn: established; Brennan: no multi-regime record; Baltas: existential risk if managers reverse; Kaminski: one access point among many.",
+   "sources": [
+    "MT155"
+   ]
+  },
+  {
+   "with": "Ethan (host, Odds on Open)",
+   "topic": "Pod-shop consolidation applied to Man AHL",
+   "their_position": "Man is a listed company with non-pod funds and about 100-120 front-office staff in AHL; pod pay attracts money-motivated people.",
+   "other_position": "Capital and talent consolidate in Citadel/Millennium-type multi-managers.",
+   "sources": [
+    "MT140"
+   ]
+  }
+ ],
+ "internal_tensions": [
+  {
+   "issue": "Leverage ceiling: risk above roughly 20-30% volatility is more than any expected return justifies (MT064-C06-3) and his own account runs about 25% target, yet Kelly at a Sharpe of 0.5-1 gives up to 50% and half-Kelly at Sharpe 1 implies 40-50% volatility (MT044-C09-1, MT221-C14-1; the latter half in jest). He also criticises a manager at about 90% vol while accepting that investors may size down (MT044-C11-2).",
+   "claim_ids": [
+    "MT064-C06-3",
+    "MT026-C10-3",
+    "MT044-C09-1",
+    "MT221-C14-1",
+    "MT044-C11-2"
+   ]
+  },
+  {
+   "issue": "Leverage attitude: trend must not be an excuse to lever up (MT160-C07-4), but he endorses return stacking where leverage on cash-efficient diversifiers converts Sharpe into return (MT106-C16-2, MT106-C14-2) and leverage-adjusted Sharpe logic generally (MT064-C16-4).",
+   "claim_ids": [
+    "MT160-C07-4",
+    "MT106-C16-2",
+    "MT106-C14-2",
+    "MT064-C16-4"
+   ]
+  },
+  {
+   "issue": "Systematic purity vs his own discretionary acts: he says overrides cost him (April 2025 equity sale) and timing is left to the model, yet he added trend allocation at highs twice (MT160-C02-1, MT196-C09-X1) and made 'his biggest discretionary decision ever' by selling all US stocks (MT196-C13-3); he also proposes blending discretionary forecasts 50/50 or 70/30 if backtested (MT044-C12-1).",
+   "claim_ids": [
+    "MT128-C08-1",
+    "MT160-C03-X1",
+    "MT160-C02-1",
+    "MT196-C09-X1",
+    "MT196-C13-3",
+    "MT044-C12-1"
+   ]
+  },
+  {
+   "issue": "Short samples are noise, yet he draws conclusions from a single 12-month review (slowest signals did best, relative/convergent signals held up) and reads drawdowns as one-in-10-to-20-year events; he also says drawdown carries no information beyond Sharpe (MT218-C05-1) while treating a 50% drawdown as a real concern (MT196-C12-1).",
+   "claim_ids": [
+    "MT106-C07-1",
+    "MT106-C07-3",
+    "MT196-C11-1",
+    "MT218-C05-1",
+    "MT196-C12-1",
+    "MT044-C04-R5"
+   ]
+  },
+  {
+   "issue": "More markets: keeps 300 markets because performance scales and benefits continue beyond where correlations level off (MT026-C17-4), yet says only 16-25 independent bets exist, half a dozen matter at once (MT026-C16-2), extra alternative markets add one new factor (MT026-C19-3), and hundreds of factors reduce to a handful (MT218-C06-2).",
+   "claim_ids": [
+    "MT026-C16-2",
+    "MT026-C17-4",
+    "MT026-C19-3",
+    "MT218-C06-2"
+   ]
+  },
+  {
+   "issue": "Replication: a 30-market ETF at about 50bp is reasonable if few factors drive CTAs (MT026-C23-1) but more markets are better and replication with a few futures is not ideal (MT144-C19-1); index matching is an institutional preoccupation (MT144-C20-X1) while he also says no quality evidence exists for replication funds (MT106-C19-X2).",
+   "claim_ids": [
+    "MT026-C23-1",
+    "MT144-C19-1",
+    "MT144-C20-X1",
+    "MT106-C19-X2"
+   ]
+  },
+  {
+   "issue": "Crowding: trend profits are not eroded by crowding (MT029-C10-1), but crowded volatility-scaling can magnify sell-offs (MT128-C05-3) and basic trend may already have stopped working unnoticed (MT140-C08-1).",
+   "claim_ids": [
+    "MT029-C10-1",
+    "MT128-C05-3",
+    "MT140-C08-1"
+   ]
+  },
+  {
+   "issue": "Bonds: fundamental bond shorts are widow-makers and the US will behave like Japan (MT026-C05-3, MT026-C05-5), yet he later argues inflationary policy hurts bonds and Treasuries may fail as haven (MT064-C22-4, MT196-C02-4) and is short US and Korean 10-year in Sept 2026 (MT010-C02-3), while his book was long bonds against his gut view in Sept 2025 (MT093-C05-5).",
+   "claim_ids": [
+    "MT026-C05-3",
+    "MT026-C05-5",
+    "MT064-C22-4",
+    "MT196-C02-4",
+    "MT010-C02-3",
+    "MT093-C05-5"
+   ]
+  },
+  {
+   "issue": "Role and identity of the MT038 speaker: described as a Fidelity quantitative research portfolio manager co-authoring a crisis-alpha paper (MT038 speaker note says captions may mix 'Rob' and the host), while other 2026 episodes (MT106, MT218, MT010) describe him as an independent trader and author; MT038 attribution is the least certain in the pack.",
+   "claim_ids": [
+    "MT038-C09-3",
+    "MT038-C10-2",
+    "MT106-C06-1",
+    "MT218-C03-3"
+   ]
+  }
+ ],
+ "testable_hypotheses": [
+  {
+   "hypothesis": "A 10-30% allocation to a diversified trend/convergent futures book added to a 60/40 raises Sharpe, geometric return, volatility and drawdown measures over the full history since 1970 using equal-weight blending, and a recent-window (2-3 years) fit gives worse out-of-sample results than the full-history rule.",
+   "data_needed": "Trend index since 1970 (or backfilled replication), 60/40 series, rolling out-of-sample comparison of fitting windows of 50, 20-40, 10, 5, 3 years.",
+   "claim_ids": [
+    "MT093-C14-1",
+    "MT093-C15-2",
+    "MT093-C15-3",
+    "MT160-C07-3"
+   ]
+  },
+  {
+   "hypothesis": "Continuous volatility-scaled sizing beats fixed-size or static sizing on terminal wealth (geometric return) when leverage is free, because Sharpe lost by not scaling exceeds the skew gained; static sizing raises measured risk far above target at peaks.",
+   "data_needed": "Futures panel; run the same signals with vol-scaled and fixed-contract/fixed-notional sizing, compare CAGR, Sharpe, skew, tail outliers (cocoa 2024, silver Jan 2026).",
+   "claim_ids": [
+    "MT064-C17-2",
+    "MT064-C18-1",
+    "MT137-C13-2",
+    "MT044-C10-2",
+    "MT128-C03-4"
+   ]
+  },
+  {
+   "hypothesis": "About 70% of trend profit comes from a volatility-weighted asset-class index trend applied to all instruments and about 30% from market-neutral residual momentum (6-month); trading only the main instrument per class (S&P, 5-10y bond, gold) delivers about 70% of performance.",
+   "data_needed": "Futures panel by asset class; construct vol-equal-weighted indices; decompose P&L; compare with plain trend.",
+   "claim_ids": [
+    "MT044-C07-3",
+    "MT044-C08-1",
+    "MT144-C05-3"
+   ]
+  },
+  {
+   "hypothesis": "Trend crisis alpha sits in asset-class beta timing (about 75% of trend risk) with more negative conditional equity correlation than the relative-value tilt; replacing the tilt with beta- and vol-neutral carry-over-vol preserves defensiveness and improves bull-market returns.",
+   "data_needed": "Trend positions by instrument, asset-class beta decomposition, carry-over-vol tilts, conditional equity correlation in equity drawdowns.",
+   "claim_ids": [
+    "MT038-C10-2",
+    "MT038-C10-3",
+    "MT038-C10-4",
+    "MT038-C10-5",
+    "MT038-C11-1",
+    "MT038-C13-1"
+   ]
+  },
+  {
+   "hypothesis": "Futures momentum is positive from about 1 hour to about 1 year (possibly 18 months) and negative beyond about a year (reversion out to many years); an absolute long-horizon (2-4 year) mean-reversion rule diversifies a trend book but rarely reaches significance.",
+   "data_needed": "Long daily/intraday futures and index histories, signal horizon scan with costs; the Safari-Schmidhuber replication.",
+   "claim_ids": [
+    "MT064-C19-1",
+    "MT064-C20-1",
+    "MT064-C20-2",
+    "MT064-C20-5",
+    "MT064-C13-1",
+    "MT064-C13-2"
+   ]
+  },
+  {
+   "hypothesis": "Trend works better in bonds than in equity indices because forecasters assume rate mean reversion while equity analysts extrapolate; equity trend suffers V-shaped reversals.",
+   "data_needed": "Trend Sharpe by asset class with expectation survey data (rate forecasts, analyst EPS growth).",
+   "claim_ids": [
+    "MT044-C16-1",
+    "MT044-C17-1",
+    "MT044-C17-2",
+    "MT044-C18-1"
+   ]
+  },
+  {
+   "hypothesis": "There is no exploitable timing: annual gross trend returns have weak, fading autocorrelation, and no conditioning variable (including VIX, trend barometer, or recent drawdown) improves forecasts of next-12-month trend performance; speed should not be varied with the VIX.",
+   "data_needed": "Gross trend index returns since 1970, annual and monthly autocorrelation, VIX-conditioned speed results (Alpha Architect update), out-of-sample.",
+   "claim_ids": [
+    "MT044-C21-2",
+    "MT044-C21-3",
+    "MT093-C13-1",
+    "MT196-C13-1",
+    "MT010-C16-2",
+    "MT010-C16-3",
+    "MT218-C12-2"
+   ]
+  },
+  {
+   "hypothesis": "Buying assets with heavy negative historic skew (recent sharp falls) earns a premium and acts like a bounce strategy that diversifies trend.",
+   "data_needed": "Cross-section of futures with rolling skew; returns of long-negative-skew, short-positive-skew portfolio net of costs, correlation to trend.",
+   "claim_ids": [
+    "MT137-C15-1",
+    "MT140-C08-13",
+    "MT106-C07-5"
+   ]
+  },
+  {
+   "hypothesis": "In trendless regimes (such as 2024-25) relative momentum, relative carry and relative value skew earn while absolute trend and carry lose; a convergent 40% sleeve reduces trend-only losses.",
+   "data_needed": "Rule-level P&L by year for about 50 forecasting variables; regime definition by trend breadth.",
+   "claim_ids": [
+    "MT196-C11-1",
+    "MT106-C06-6",
+    "MT218-C05-X1"
+   ]
+  },
+  {
+   "hypothesis": "Realised annual trading costs track a pre-trade model within 1-2bp, passive limit orders beat half-spread assumptions, and execution effort saves only about 2bp in liquid futures; at about 30bp costs a signal should be slowed or the market dropped.",
+   "data_needed": "Fill-level data for a futures account with order timestamps and mid prices; cost by instrument.",
+   "claim_ids": [
+    "MT106-C07-7",
+    "MT196-C13-2",
+    "MT029-C15-2",
+    "MT029-C16-1"
+   ]
+  },
+  {
+   "hypothesis": "Averaging individual, asset-class and global fits of rule weights has 0.98-0.99 correlation with global-only fitting; per-instrument fitting is pure overfitting, and the averaging matters most for small portfolios.",
+   "data_needed": "Futures panel; rolling out-of-sample fits at three levels with different universe sizes.",
+   "claim_ids": [
+    "MT010-C07-1",
+    "MT010-C08-1",
+    "MT010-C08-2"
+   ]
+  },
+  {
+   "hypothesis": "Return-based (regression/lasso) CTA replication has out-of-sample tracking worse than in-sample and cannot capture manager-level diversification; bottom-up replication with about 30 liquid futures across asset classes tracks the index.",
+   "data_needed": "CTA index and manager returns, positions of a simple 30-market bottom-up model; weekly refit out-of-sample test with random pseudo-CTAs.",
+   "claim_ids": [
+    "MT026-C21-1",
+    "MT026-C21-2",
+    "MT026-C22-3",
+    "MT026-C23-1",
+    "MT106-C19-1"
+   ]
+  },
+  {
+   "hypothesis": "A continuous trend-strength system already tilts to whichever sector is trending; adding tactical sector chasing (shifting weights toward the best recent sector) adds no value and lowers diversification, because sector leadership rotates by decade with single macro stories.",
+   "data_needed": "Trend P&L by sector over decades; test of sector-momentum overlay on a continuous-forecast system.",
+   "claim_ids": [
+    "MT218-C13-1",
+    "MT218-C14-1",
+    "MT218-C14-2",
+    "MT218-C14-3"
+   ]
+  },
+  {
+   "hypothesis": "Backtested performance rises four to five times when moving to hundreds of markets but implies only 16-25 independent bets; CTAs with 300-400 markets do not beat those with 100 or fewer.",
+   "data_needed": "Trend backtest scaling with number of instruments; manager database by market count; PCA of instrument returns and of trend returns.",
+   "claim_ids": [
+    "MT026-C16-2",
+    "MT026-C16-1",
+    "MT026-C17-1"
+   ]
+  },
+  {
+   "hypothesis": "A trend sleeve small relative to a 60/40 is better made more neutral (long only when trends are strong) because the sleeve's average long equity and bond bias double-counts premia.",
+   "data_needed": "Trend index with average net long exposure, sleeve overlays of different sizes on a 60/40, with and without neutralisation.",
+   "claim_ids": [
+    "MT218-C07-1",
+    "MT218-C07-2"
+   ]
+  },
+  {
+   "hypothesis": "Dollar-weighted investor returns trail fund returns by about 1.7% a year, more in strongly skewed funds and sector funds (4.4%), because flows arrive before large losses.",
+   "data_needed": "Fund-level monthly returns and flows (Morningstar-type), including CTA/managed futures funds and option income ETFs.",
+   "claim_ids": [
+    "MT093-C10-2",
+    "MT093-C11-1",
+    "MT093-C12-1",
+    "MT093-C12-2"
+   ]
+  },
+  {
+   "hypothesis": "When a crisis originates in the US with a stagflationary policy mix, Treasuries and the dollar sell off with equities and fail as hedges; commodities and short rates gain; bond and credit markets flag trouble earlier than equities.",
+   "data_needed": "Stock-bond-dollar correlations by stress episode (April 2025 vs 2008, 2020), lead-lag of credit vs equity.",
+   "claim_ids": [
+    "MT196-C04-2",
+    "MT196-C04-7",
+    "MT196-C02-4",
+    "MT196-C03-1",
+    "MT064-C23-4"
+   ]
+  },
+  {
+   "hypothesis": "A futures-spot gap in a yieldless asset reflects borrowing cost; episodes where carry opposes trend (gold 2025) resolve toward trend and carry smoothing makes roll effects immaterial.",
+   "data_needed": "Gold futures curve and lease-rate data, carry vs trend conflicts and subsequent returns.",
+   "claim_ids": [
+    "MT064-C01-1",
+    "MT064-C02-1",
+    "MT064-C02-3",
+    "MT160-C10-1"
+   ]
+  },
+  {
+   "hypothesis": "Diversified markets sized with an unconstrained Sharpe maximiser favour about 30% traditional / 70% alternative markets; optimising only equity-down periods gives about 50% traditional; adding cash-efficiency gives about 70% / 30%.",
+   "data_needed": "Man AHL paper data or equivalent: futures universe with factor loadings, margin usage, equity-down subsample.",
+   "claim_ids": [
+    "MT128-C14-3",
+    "MT128-C14-4",
+    "MT128-C15-1",
+    "MT128-C16-1",
+    "MT128-C16-2"
+   ]
+  },
+  {
+   "hypothesis": "Vol-adjusting strategies (CTAs, risk parity, vol targeters) magnify sell-offs when many hold the same markets and liquidity is overstated by recent volume spikes; CTAs are too small to move oil or similar large markets.",
+   "data_needed": "CTA positioning estimates by market, price impact around volatility spikes, volume/open-interest history vs realised liquidity in stress.",
+   "claim_ids": [
+    "MT128-C05-2",
+    "MT128-C05-3",
+    "MT026-C01-1",
+    "MT026-C02-3"
+   ]
+  }
+ ],
+ "blind_spots": [
+  "(reader) Almost no valuation or fundamental equity analysis; macro opinions rely on FT commentary and are explicitly kept out of the systematic book, so there is no tested macro signal.",
+  "(reader) His own track record is quoted only as fragments (YTD, 12-month, drawdown) with no full audited series, and the Kelly/Sharpe inputs (0.5-1) come from his own in-sample backtests.",
+  "(reader) Many quantitative claims are from memory or 'hand-waving' (stop-ATR holding periods, R-squared figures, LTCM Sharpe), and several key results (pattern-fitting experiment, terminal-wealth simulation) are not shown.",
+  "(reader) Capacity and market impact for larger assets are mostly addressed by reference to AHL; his advice is calibrated to a small retail-sized account, so costs and execution results may not scale.",
+  "(reader) Survivorship, data-quality and backfill issues in the 50-year (since 1970) backtests are not discussed; he asks others for full-history evidence but the construction of that history is not described.",
+  "(reader) Regime detection is rejected rather than studied (no conditioning variable works), so how to react when a real structural break occurs is not specified beyond 'very strong evidence'.",
+  "(reader) Dealer positioning, options flows, and liquidity-flow drivers of price are barely addressed; crowding and volatility-scaler feedback are argued by reasoning without data.",
+  "(reader) Tail behaviour of the whole book in a trend-and-everything-else-fails crisis is acknowledged (MT160) but not quantified; the skew bucket cap of 30% is only illustrative."
+ ],
+ "reader_inferences": [
+  "(reader) Carver is a process and cost-control investor: the stated edge is not a signal but breadth, slow trading, accurate costs, moderate leverage and refusal to override; any strategy built from his ideas should be judged first on those operational choices.",
+  "(reader) His heavy reliance on full-history evidence and equal weights implies a strong prior for simple, pooled, slow rules; when a candidate strategy needs recent-window fitting, per-instrument weights or regime switches, his framework predicts it will not survive out of sample.",
+  "(reader) His macro views (tariffs, Fed independence, Treasuries, oil) are best treated as a record of opinions to be tested against his own systematic positions, not as inputs; in several cases the system and the opinion disagreed (long bonds Sept 2025; long equities June 2026).",
+  "(reader) Recurring signals most reusable as testable rules: asset-class index trend plus residual momentum, convergent sleeve of about 40%, skew bounce, vol-scaled sizing with 4-5x diversification multiplier, 1-month vol / 6-month correlation estimation, buffers and cost-aware optimisation, and the Sharpe-unit drawdown rule.",
+  "(reader) His risk was reduced to one third of target for many months across 2025-26 by signal weakness, yet the 12 months to April 2026 returned 23.7%, suggesting forecast-scaled risk is not itself a timing tool; the self-described neutral trend barometer is a useful state variable to test.",
+  "(reader) The MT038 attribution (Fidelity portfolio manager, co-author) conflicts with other 2026 sources; treat the beta-timing and carry-over-vol results as weaker evidence of Carver's own view until confirmed.",
+  "(reader) Disagreements with Niels Kaastrup-Larsen are largely about framing (crisis alpha, number of markets, replication) rather than method, and most would be resolved by data on independent bets, conditional correlation and out-of-sample replication tracking."
+ ]
+}

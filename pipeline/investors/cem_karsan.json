@@ -1,0 +1,2989 @@
+{
+ "name": "Cem Karsan (captions: Jim Kasang, Jim Carson, Jim, Cham, Jem; several attributions inferred)",
+ "sources": [
+  "MT002",
+  "MT016",
+  "MT031",
+  "MT076",
+  "MT104",
+  "MT126",
+  "MT132",
+  "MT134",
+  "MT150",
+  "MT155",
+  "MT163",
+  "MT183",
+  "MT202",
+  "MT206",
+  "MT221",
+  "MT227"
+ ],
+ "period": "2024-04-25 (MT076 recording) - 2026-07-04 (MT016)",
+ "one_paragraph": "Cem Karsan is an options and volatility strategist (captions: Jim Kasang/Carson, Cham, Jem; some attributions inferred) who believes prices over days to about two years are set by who is positioned and what flows must happen (dealer gamma/vanna/charm, option expiries, structured-product vol selling, year-end rebalancing, hedge-fund degrossing), not by news or fundamentals; valuation is only a distance-from-the-ground risk gauge. He tries to forecast the distribution and the path (compression then expansion, pinned then unpinned) rather than direction, ties forecasts to a calendar of events and expiries, and expresses them mostly with options: long-dated right-tail calls instead of stock, long-dated gold calls funded by oil puts, long FX/bond vol, calendar spreads, curve steepeners, and hedges in narrow windows. Underneath sits a structural macro thesis, repeated in all 16 appearances: an inequality-driven populist, fiscal, protectionist regime like 1964-82 (the analogy), in which rates and inflation rise, equity multiples and margins compress (flat nominal, down in real terms), 60/40 stops diversifying, gold/FX/bond volatility is the best vol, the Fed is political and in a box, debt ends in monetisation, and election years are pumped then retrace. Over 2024-2026 his calls swing between short-term bullish flow windows (year-end into about 13-15 January, summer compression) and bearish structural calls (stair-step decline in early 2025, equities down 30-40% in 12-18 months from March 2025, a 10-15% grind to September opex 2025), then a bullish 1998-99-style liquidity bubble (Oct 2025), then by July 2026 a state-directed-capitalism thesis (Treasury backstop plus a money-printed sovereign fund buying trillions of equities after the November 2026 midterms) in which one should not bet against the market or the administration short to medium term. He supports views with first-principles market structure, historical analogy (1998-2000, 2007, 2017-18, 1968-82, Nixon), on-air arithmetic and his own earlier calls; no backtests are shown and several statistics are quoted from memory.",
+ "fingerprint": [
+  {
+   "tag": "volatility_options",
+   "count": 14
+  },
+  {
+   "tag": "dealer_hedging_flows",
+   "count": 14
+  },
+  {
+   "tag": "positioning_crowding",
+   "count": 12
+  },
+  {
+   "tag": "liquidity_flows",
+   "count": 11
+  },
+  {
+   "tag": "policy_reaction_central_banks",
+   "count": 10
+  },
+  {
+   "tag": "debt_cycle_long_term",
+   "count": 8
+  },
+  {
+   "tag": "crisis_alpha_convexity",
+   "count": 8
+  },
+  {
+   "tag": "macro_fundamental_topdown",
+   "count": 8
+  },
+  {
+   "tag": "structural_themes",
+   "count": 7
+  },
+  {
+   "tag": "regime_detection",
+   "count": 6
+  },
+  {
+   "tag": "geopolitics",
+   "count": 5
+  },
+  {
+   "tag": "fiscal_dominance",
+   "count": 5
+  },
+  {
+   "tag": "diversification_risk_parity",
+   "count": 5
+  },
+  {
+   "tag": "behavioral_sentiment",
+   "count": 4
+  },
+  {
+   "tag": "market_internals_leading",
+   "count": 2
+  },
+  {
+   "tag": "manager_selection_allocation",
+   "count": 1
+  },
+  {
+   "tag": "commodity_fundamentals",
+   "count": 1
+  },
+  {
+   "tag": "valuation_contrarian",
+   "count": 1
+  }
+ ],
+ "core_beliefs": [
+  {
+   "belief": "Positioning and structural flows (who is long or short, dealer hedging, structured-product vol supply, rebalancing, expiries) set prices from days to about two years; this swamps news and fundamentals, and market size now makes it stronger. Over 5-10 years flows mean-revert and timing is unpredictable.",
+   "times_stated": 12,
+   "sources": [
+    "MT002",
+    "MT016",
+    "MT031",
+    "MT076",
+    "MT104",
+    "MT126",
+    "MT132",
+    "MT150",
+    "MT163",
+    "MT183",
+    "MT202",
+    "MT206"
+   ],
+   "claim_ids": [
+    "MT016-C02-2",
+    "MT016-C02-3",
+    "MT016-C02-4",
+    "MT031-C07-3",
+    "MT031-C07-4",
+    "MT031-C07-5",
+    "MT076-C04-4",
+    "MT002-C11-2",
+    "MT104-C04-2",
+    "MT104-C16-1",
+    "MT183-C07-1",
+    "MT206-C02-4",
+    "MT206-C02-5"
+   ],
+   "stable": "stable - every episode; 2026 adds an overlay that a state-managed market may not mean-revert (MT016-C11-1)"
+  },
+  {
+   "belief": "Predict the distribution (vol compression vs expansion, which paths are likely) and the event-calendar path, not direction; betting on path is as profitable. Delta flows explain at best about 40% of direction; effects on implied vol are stronger than on the underlying.",
+   "times_stated": 7,
+   "sources": [
+    "MT031",
+    "MT076",
+    "MT150",
+    "MT155",
+    "MT163",
+    "MT202",
+    "MT221"
+   ],
+   "claim_ids": [
+    "MT076-C04-3",
+    "MT076-C04-5",
+    "MT031-C08-2",
+    "MT031-C08-3",
+    "MT031-C08-4",
+    "MT150-C16-1",
+    "MT155-C03-2",
+    "MT202-C04-5",
+    "MT221-C06-1",
+    "MT163-C23-1"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Vol supply (structured products, vol selling, zero-DTE) pins the index, which forces higher single-stock vol, lower correlation and record dispersion; the longer the compression the bigger the later expansion. Seen in 2017 (Volmageddon 2018), summer 2024, summer 2025 and summer 2026 ('summer of George').",
+   "times_stated": 8,
+   "sources": [
+    "MT002",
+    "MT016",
+    "MT104",
+    "MT132",
+    "MT134",
+    "MT163",
+    "MT183",
+    "MT202"
+   ],
+   "claim_ids": [
+    "MT002-C04-1",
+    "MT002-C04-3",
+    "MT002-C07-1",
+    "MT132-C03-3",
+    "MT132-C04-1",
+    "MT183-C02-1",
+    "MT202-C04-1",
+    "MT202-C04-2",
+    "MT163-C08-1",
+    "MT134-C07-3",
+    "MT016-C12-3",
+    "MT016-C12-5",
+    "MT104-C02-3"
+   ],
+   "stable": "stable - same mechanism re-applied every summer; 2024 break came a month early (MT132-C09-4)"
+  },
+  {
+   "belief": "A break needs a concentrated, levered, illiquid entity or catalyst (XIV, LTCM, yen carry); fragile structures stay stable then break all at once. Unlevered structured-product supply itself will not be the cause.",
+   "times_stated": 3,
+   "sources": [
+    "MT076",
+    "MT163",
+    "MT183"
+   ],
+   "claim_ids": [
+    "MT183-C03-3",
+    "MT183-C04-1",
+    "MT183-C04-2",
+    "MT183-C05-X1",
+    "MT163-C03-3",
+    "MT076-C03-5"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Late in a bubble the biggest, fastest moves occur, vol rises with the market (market-up/vol-up), distribution is leptokurtic on both tails, and the right tail (OTM long-dated calls) is the cheapest part of the surface. Tops are blow-offs and warning signs play out later than expected.",
+   "times_stated": 6,
+   "sources": [
+    "MT016",
+    "MT031",
+    "MT076",
+    "MT104",
+    "MT163",
+    "MT206"
+   ],
+   "claim_ids": [
+    "MT076-C02-7",
+    "MT076-C03-3",
+    "MT076-C03-4",
+    "MT031-C03-3",
+    "MT031-C03-4",
+    "MT031-C03-5",
+    "MT104-C03-2",
+    "MT104-C10-2",
+    "MT206-C17-1",
+    "MT206-C17-2",
+    "MT016-C04-1"
+   ],
+   "stable": "evolved - 'late bubble, start managing long vol over next year or two' said April 2024 (MT076-C04-2); still 'late bubble' in Dec 2025 (MT031-C03-R1) and a state-supported bubble in Jul 2026; timing keeps extending"
+  },
+  {
+   "belief": "We are in an inequality-driven populist, fiscal, protectionist regime like 1964/68-82 (fourth-turning framing in places): structural inflation in waves, rising rates, nominal equities flat and about -55% to -67% real over 1968-82, equities not an inflation hedge because multiples fall as yields rise, margins fall for most firms (about 20-25% can expand margins: negative working capital, insurers, distributors).",
+   "times_stated": 12,
+   "sources": [
+    "MT016",
+    "MT031",
+    "MT104",
+    "MT126",
+    "MT132",
+    "MT150",
+    "MT155",
+    "MT163",
+    "MT183",
+    "MT202",
+    "MT206",
+    "MT227"
+   ],
+   "claim_ids": [
+    "MT031-C09-3",
+    "MT031-C09-4",
+    "MT031-C10-1",
+    "MT031-C04-3",
+    "MT132-C13-1",
+    "MT132-C13-2",
+    "MT150-C02-2",
+    "MT150-C10-3",
+    "MT163-C04-2",
+    "MT163-C16-1",
+    "MT163-C16-3",
+    "MT227-C09-1",
+    "MT227-C09-2",
+    "MT227-C09-3",
+    "MT206-C09-1",
+    "MT206-C09-2",
+    "MT183-C11-1",
+    "MT155-C06-1",
+    "MT016-C05-2"
+   ],
+   "stable": "stable as the core thesis; accelerant changes (Trump 2.0 tariffs/immigration 2024; refinancing wall and AI unemployment 2025; debt/state fund 2026) but the analogy is never dropped"
+  },
+  {
+   "belief": "Populism comes from inequality and generational shift (young = labour, old = capital; boomers to millennials); it lasts 10-15 years (cycle 2020-2038 in one episode) and incumbents keep losing; politically it favours spending on the bottom over supply-side.",
+   "times_stated": 9,
+   "sources": [
+    "MT016",
+    "MT031",
+    "MT126",
+    "MT132",
+    "MT150",
+    "MT155",
+    "MT163",
+    "MT183",
+    "MT206"
+   ],
+   "claim_ids": [
+    "MT031-C10-4",
+    "MT031-C10-5",
+    "MT132-C12-1",
+    "MT132-C13-2",
+    "MT126-C07-2",
+    "MT150-C07-1",
+    "MT155-C06-1",
+    "MT183-C11-1",
+    "MT206-C09-2",
+    "MT016-C05-3"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "In populist periods elections matter more: election years are pumped (all five 1962-82 presidential election years double-digit, average 21.5%, vs about 5% otherwise), then mean-revert; midterm years in the 1960s-70s saw large drawdowns (up to 42%) starting about 15 months earlier. Applied to 2024-25, 2026 and the midterm window.",
+   "times_stated": 8,
+   "sources": [
+    "MT016",
+    "MT031",
+    "MT076",
+    "MT104",
+    "MT132",
+    "MT163",
+    "MT206",
+    "MT227"
+   ],
+   "claim_ids": [
+    "MT031-C15-5",
+    "MT031-C16-1",
+    "MT031-C16-2",
+    "MT031-C16-5",
+    "MT031-C16-6",
+    "MT132-C10-1",
+    "MT132-C10-3",
+    "MT206-C16-2",
+    "MT206-C16-3",
+    "MT227-C07-5",
+    "MT227-C07-6",
+    "MT076-C13-5",
+    "MT016-C14-4",
+    "MT104-C09-3"
+   ],
+   "stable": "stable - figure quoted as 21.5%, about 21% and 22% in different episodes; sample 4-6 elections (MT206-C16-X2)"
+  },
+  {
+   "belief": "The Fed (with Treasury) is political and not truly independent; it puts a floor under markets, but the put is less reliable and the Fed is boxed in by inflation vs growth. Policy is modelled as jointly Fed-Treasury and driven by incentives.",
+   "times_stated": 10,
+   "sources": [
+    "MT016",
+    "MT076",
+    "MT104",
+    "MT126",
+    "MT132",
+    "MT150",
+    "MT163",
+    "MT202",
+    "MT206",
+    "MT227"
+   ],
+   "claim_ids": [
+    "MT076-C14-X1",
+    "MT076-C14-3",
+    "MT076-C15-1",
+    "MT132-C14-2",
+    "MT202-C11-3",
+    "MT150-C04-6",
+    "MT163-C12-1",
+    "MT227-C12-1",
+    "MT227-C12-2",
+    "MT104-C09-3",
+    "MT016-C11-3"
+   ],
+   "stable": "evolved - 2024: Fed/Treasury floor supports markets; Mar 2025: the new administration cuts demand and forces QE; Jul-Oct 2025: administration wants markets up/controlled demolition then reflation; 2026: Warsh as appearance of independence, Bessent as bad cop"
+  },
+  {
+   "belief": "Markets are the biggest source of liquidity (collateral and leverage), so the market drives the economy more than the reverse; a market fall mechanically shrinks money supply and forces the Fed to react. The 'wealth effect' is mostly institutional constant-risk rebalancing.",
+   "times_stated": 7,
+   "sources": [
+    "MT016",
+    "MT076",
+    "MT104",
+    "MT126",
+    "MT183",
+    "MT202",
+    "MT206"
+   ],
+   "claim_ids": [
+    "MT104-C07-1",
+    "MT104-C07-X1",
+    "MT202-C11-2",
+    "MT202-C11-3",
+    "MT183-C08-1",
+    "MT206-C02-2",
+    "MT206-C03-1",
+    "MT076-C12-2",
+    "MT016-C02-7",
+    "MT126-C05-5"
+   ],
+   "stable": "stable in logic; the collateral base quoted is $200T, $250T, $300T or $500T depending on the episode"
+  },
+  {
+   "belief": "Interest rates are non-linear and lagged: hikes sequester demand and work slowly (locked-in borrowers; refinancing about 5 years later), cuts release demand strongly; the discount-rate shock matters more than earnings. Rate falls from 1982 explain 60/40's success.",
+   "times_stated": 7,
+   "sources": [
+    "MT031",
+    "MT076",
+    "MT132",
+    "MT150",
+    "MT202",
+    "MT206",
+    "MT227"
+   ],
+   "claim_ids": [
+    "MT076-C13-1",
+    "MT132-C08-1",
+    "MT202-C12-3",
+    "MT202-C12-4",
+    "MT206-C10-1",
+    "MT206-C10-2",
+    "MT150-C09-1",
+    "MT150-C10-2",
+    "MT031-C12-3",
+    "MT227-C09-1"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "US debt is unsustainable and austerity not credible; the exit is monetisation (Fed or central-bank buying, soft default), not default; only a reserve-currency issuer can do it, and external holdings are only about 27%.",
+   "times_stated": 6,
+   "sources": [
+    "MT016",
+    "MT126",
+    "MT150",
+    "MT163",
+    "MT183",
+    "MT202"
+   ],
+   "claim_ids": [
+    "MT126-C09-1",
+    "MT126-C09-2",
+    "MT126-C09-3",
+    "MT150-C08-3",
+    "MT163-C14-1",
+    "MT163-C14-X1",
+    "MT183-C16-2",
+    "MT016-C06-4",
+    "MT016-C05-6"
+   ],
+   "stable": "stable, with the mechanism growing more explicit: 2024 'Fed buys debt', Mar 2025 Japan/accounting cancellation, Jul 2025 steepener and Twist-like operations, Jul 2026 Treasury buyback then Fed backstop of the long end plus a sovereign equity fund"
+  },
+  {
+   "belief": "60/40 and long-asset portfolios are not diversified: stocks and bonds gave no Sharpe benefit over 125 years (about 0.35 each), diversification came only from falling rates; real diversification is trend following, long volatility and other non-correlated strategies, and leverage should come after improving Sharpe.",
+   "times_stated": 8,
+   "sources": [
+    "MT031",
+    "MT104",
+    "MT134",
+    "MT150",
+    "MT155",
+    "MT163",
+    "MT221",
+    "MT227"
+   ],
+   "claim_ids": [
+    "MT031-C12-2",
+    "MT031-C12-5",
+    "MT031-C12-6",
+    "MT031-C13-1",
+    "MT031-C13-5",
+    "MT221-C04-1",
+    "MT221-C04-2",
+    "MT150-C10-1",
+    "MT155-C10-1",
+    "MT155-C10-2",
+    "MT163-C17-1",
+    "MT227-C11-X1"
+   ],
+   "stable": "stable; contested by panelists (MT134-C05-4, MT134-C08-1)"
+  },
+  {
+   "belief": "Flows into non-correlated assets (hedge funds, structured products, options ETFs, precious metals, crypto) are one multi-year, early-inning supply-demand phenomenon (about $5T to $15T in 2.5 years; about 20T vs 400-500T of long assets) and are themselves reflexive and market-supporting.",
+   "times_stated": 5,
+   "sources": [
+    "MT031",
+    "MT104",
+    "MT134",
+    "MT155",
+    "MT221"
+   ],
+   "claim_ids": [
+    "MT031-C13-7",
+    "MT031-C14-1",
+    "MT031-C14-3",
+    "MT104-C05-3",
+    "MT104-C05-4",
+    "MT104-C15-1",
+    "MT134-C05-1",
+    "MT134-C05-2",
+    "MT155-C10-3"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Gold/precious metals are the best and most volatile asset in structural inflation and their implied vol is cheap; FX vol (and then bond vol) is the best vol play of the decade; equity index vol is a poor hedge and long-dated equity vol falls; industrial commodities are capped by deglobalisation so sell oil puts, not calls.",
+   "times_stated": 9,
+   "sources": [
+    "MT016",
+    "MT031",
+    "MT104",
+    "MT126",
+    "MT132",
+    "MT163",
+    "MT183",
+    "MT202",
+    "MT206"
+   ],
+   "claim_ids": [
+    "MT031-C09-4",
+    "MT031-C09-5",
+    "MT031-C10-1",
+    "MT031-C10-3",
+    "MT132-C14-3",
+    "MT132-C15-1",
+    "MT132-C15-2",
+    "MT183-C16-2",
+    "MT126-C16-1",
+    "MT163-C05-2",
+    "MT163-C06-3",
+    "MT104-C11-3",
+    "MT202-C09-1"
+   ],
+   "stable": "evolved - 'long-dated gold calls cheap, own for ten years' (2024) to 'gold calls expensive though vol broadly cheap' (Oct 2025, MT104-C12-1) and 'gold calls less of a home run' (Jul 2025); on oil, MT202-C13-1 sees oil/copper supported but MT031 sells oil puts"
+  },
+  {
+   "belief": "Use fixed-strike implied vol (and delta-based long-dated skew), not the VIX, as the fear and risk gauge: the VIX rises mechanically as the market falls, and the cause of a VIX move (calls vs puts vs skew) matters more than its level.",
+   "times_stated": 5,
+   "sources": [
+    "MT031",
+    "MT132",
+    "MT163",
+    "MT206",
+    "MT227"
+   ],
+   "claim_ids": [
+    "MT031-C02-5",
+    "MT031-C02-6",
+    "MT132-C06-1",
+    "MT163-C02-1",
+    "MT206-C01-2",
+    "MT227-C04-4"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Time is not linear: event windows (Fed, Treasury refunding, expiries, month-end, year-end) dominate; seasonality is caused by flows and liquidity (thin holiday volume speeds charm decay), so the combination of seasonality plus flow analysis forecasts, not seasonality alone.",
+   "times_stated": 9,
+   "sources": [
+    "MT016",
+    "MT031",
+    "MT076",
+    "MT104",
+    "MT132",
+    "MT150",
+    "MT183",
+    "MT206",
+    "MT227"
+   ],
+   "claim_ids": [
+    "MT076-C07-5",
+    "MT076-C07-4",
+    "MT150-C17-3",
+    "MT150-C17-X2",
+    "MT132-C05-1",
+    "MT132-C10-X6",
+    "MT206-C02-4",
+    "MT206-C04-2",
+    "MT206-C04-4",
+    "MT227-C05-3",
+    "MT227-C06-2",
+    "MT183-C07-2",
+    "MT104-C16-1",
+    "MT016-C13-1"
+   ],
+   "stable": "stable; he warns widely publicised patterns weaken as people front-run them (MT227-C06-5)"
+  },
+  {
+   "belief": "Contrarian reversion: when everyone is positioned for the 'inevitable' outcome or the narrative is uniformly negative, the opposite is likelier; neglected 3-5 year underperformers mean-revert in about 85-90% of cases except where rule of law fails (Russia, Iran).",
+   "times_stated": 7,
+   "sources": [
+    "MT016",
+    "MT076",
+    "MT126",
+    "MT163",
+    "MT183",
+    "MT206",
+    "MT227"
+   ],
+   "claim_ids": [
+    "MT016-C02-5",
+    "MT016-C02-6",
+    "MT076-C15-3",
+    "MT183-C15-1",
+    "MT206-C06-2",
+    "MT206-C07-1",
+    "MT126-C13-3",
+    "MT227-C14-2",
+    "MT163-C20-X2"
+   ],
+   "stable": "stable, but 2026 qualifies it: a state-managed market is probably not natural so valuation reversion is less reliable (MT016-C11-1)"
+  },
+  {
+   "belief": "Geopolitics is a hot-conflict, transactional, deglobalising turn that creates convex tails (Taiwan, Iran, oil, concentrated supply of copper/uranium/rare earths) and relative-value chances (Europe, China, Turkey); events move markets through positioning and liquidity for path, not long-term value.",
+   "times_stated": 9,
+   "sources": [
+    "MT002",
+    "MT016",
+    "MT031",
+    "MT076",
+    "MT126",
+    "MT183",
+    "MT202",
+    "MT206",
+    "MT227"
+   ],
+   "claim_ids": [
+    "MT076-C05-4",
+    "MT076-C05-5",
+    "MT183-C05-2",
+    "MT202-C15-4",
+    "MT206-C13-2",
+    "MT126-C12-3",
+    "MT227-C14-1",
+    "MT016-C08-3",
+    "MT031-C01-1",
+    "MT002-C04-5"
+   ],
+   "stable": "stable theme; the specific probabilities and timing drift (see internal_tensions)"
+  },
+  {
+   "belief": "AI is a capex-driven earnings engine and a bubble whose winners are unknown and will be commoditised; value accrues to unique data sets and inputs (power, energy, rare earths); AI cuts entry-level hiring (graduate unemployment about 9% vs 4%) and may cause 10-20% unemployment in 1-5 years, feeding populism, UBI, fiscal spending.",
+   "times_stated": 5,
+   "sources": [
+    "MT002",
+    "MT016",
+    "MT104",
+    "MT126",
+    "MT163"
+   ],
+   "claim_ids": [
+    "MT104-C12-2",
+    "MT104-C13-1",
+    "MT163-C17-2",
+    "MT163-C17-X3",
+    "MT163-C18-1",
+    "MT016-C02-8",
+    "MT016-C10-1",
+    "MT126-C13-2"
+   ],
+   "stable": "evolved - 2025: AI as commoditised, bubble analog to 1998-99; Jul 2025: AI unemployment; 2026: AI capex is state-guaranteed strategic cycle"
+  },
+  {
+   "belief": "Risk should be judged with tail-penalising measures (Sortino, drawdown area) not Sharpe; drawdowns are rare so a 5-10 year record hides tail risk; managed futures drawdowns are small relative to equities and bonds.",
+   "times_stated": 2,
+   "sources": [
+    "MT031",
+    "MT221"
+   ],
+   "claim_ids": [
+    "MT031-C06-3",
+    "MT031-C06-4",
+    "MT221-C12-1",
+    "MT221-C12-X1"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "A state-directed capitalism endgame: the US is forced (debt, populism, structural inflation, too-big-to-fail equity market, China currency contest) to a Treasury backstop plus a money-created sovereign wealth fund buying equities; do not bet against the market or administration short to medium term.",
+   "times_stated": 1,
+   "sources": [
+    "MT016"
+   ],
+   "claim_ids": [
+    "MT016-C05-1",
+    "MT016-C05-5",
+    "MT016-C06-1",
+    "MT016-C06-2",
+    "MT016-C11-1",
+    "MT016-C11-2"
+   ],
+   "stable": "new in 2026 - earlier episodes (MT126-C09-1, MT163-C14-1) set monetisation but not an equity-buying fund; he calls parts speculation (MT016-C10-2)"
+  }
+ ],
+ "mechanisms": [
+  {
+   "name": "Vol supply pins the index, disperses constituents, then breaks",
+   "chain": [
+    "structured-product issuance + vol selling + zero-DTE (and thin summer/holiday volume) -> dealers hold the vol and gamma, index implied and realised vol compress",
+    "pinned index -> single-stock vol rises and correlation/breadth falls (constituent vol about 4x index vol)",
+    "dispersion with crowded 3x-gross hedge-fund long/short books -> degrossing pain; momentum-minus-value spread rolls over and leads equities lower",
+    "long compression -> potential energy; rotation, call-gamma squeezes (Nvidia then Russell) or a catalyst on a concentrated entity -> unpinning, vol rises"
+   ],
+   "fails_when": "A large left-tail event overrides flows; supply of structured products falls; or the break comes a month early (Aug 2024); Jim says there is no explicit measure of hedge-fund pain",
+   "sources": [
+    "MT002",
+    "MT016",
+    "MT132",
+    "MT134",
+    "MT163",
+    "MT183",
+    "MT202"
+   ],
+   "claim_ids": [
+    "MT002-C04-1",
+    "MT002-C04-3",
+    "MT132-C03-3",
+    "MT132-C04-1",
+    "MT183-C02-1",
+    "MT183-C06-2",
+    "MT202-C15-1",
+    "MT202-C15-3",
+    "MT202-C16-1",
+    "MT163-C07-2",
+    "MT163-C08-1",
+    "MT163-C08-2",
+    "MT134-C07-3",
+    "MT016-C12-3",
+    "MT016-C12-4"
+   ]
+  },
+  {
+   "name": "Year-end releveraging, skew decay and charm into a mid-January top",
+   "chain": [
+    "equities up about 20% -> about $50T new collateral; constant-risk institutions must add exposure; slow institutions (PE, real estate) reinvest on 1 January (about 10% of new capital vs about $100bn daily turnover)",
+    "high election/event skew decays and holiday-thinned volume speeds time decay -> dealers buy back stock and tail hedges (vanna/charm), self-reinforcing as dips are dampened",
+    "underweight managers chase before year-end reporting -> cascade",
+    "flows end about 13-15 January -> blow-off/unpinning, pullback January-February after January opex"
+   ],
+   "fails_when": "A 20% decline around the election or a massive left-tail event (COVID declined after Feb opex); the late-Dec 2024 decline showed the flows were not strong enough (MT227-C05-1)",
+   "sources": [
+    "MT104",
+    "MT132",
+    "MT206",
+    "MT227",
+    "MT183"
+   ],
+   "claim_ids": [
+    "MT206-C03-1",
+    "MT206-C03-2",
+    "MT206-C04-1",
+    "MT206-C04-3",
+    "MT206-C04-4",
+    "MT206-C05-1",
+    "MT206-C05-X2",
+    "MT206-C05-4",
+    "MT104-C16-2",
+    "MT104-C16-3",
+    "MT132-C05-1",
+    "MT132-C11-1",
+    "MT227-C05-1"
+   ]
+  },
+  {
+   "name": "Late-cycle call speculation and market-up/vol-up",
+   "chain": [
+    "long strong trend -> rampant call and VIX-call speculation",
+    "call buying -> leverage and gamma into the rally; dealers' hedging lifts vol on the way up (vol unpinned)",
+    "short upside exposure and demand for upside protection -> buyers replace stock with calls; long-dated calls pay on the way up and down",
+    "blow-off top, bubble leptokurtic -> later left tail; inflation (not controllable) is the eventual check"
+   ],
+   "fails_when": "Not months-to-quarters precise: 'does not mean the end is nigh'; squeezes can run long; inflation can lull",
+   "sources": [
+    "MT076",
+    "MT104",
+    "MT031",
+    "MT183"
+   ],
+   "claim_ids": [
+    "MT076-C02-6",
+    "MT076-C02-7",
+    "MT076-C03-1",
+    "MT076-C03-2",
+    "MT076-C03-3",
+    "MT076-C03-4",
+    "MT104-C08-2",
+    "MT104-C09-1",
+    "MT104-C09-2",
+    "MT104-C10-2",
+    "MT031-C03-4"
+   ]
+  },
+  {
+   "name": "Sticky long-dated skew and vanna dominance produce a stair-step decline",
+   "chain": [
+    "structured products, quarterly opex and event hedging -> persistently bid 2-4 month skew while short-dated skew is well supplied",
+    "short-dated puts fail to protect; hedgers forced into long-dated skew",
+    "vanna flows dominate gamma -> a vol event becomes a multi-month decline (1998-99, 2007-08, Aug 2024); slowing decline -> vanna compression and a sharp counter-trend rally that is sold"
+   ],
+   "fails_when": "Publicised patterns get front-run; short-term skew well supplied implies no spike",
+   "sources": [
+    "MT227",
+    "MT076",
+    "MT163"
+   ],
+   "claim_ids": [
+    "MT227-C03-4",
+    "MT227-C03-5",
+    "MT227-C04-1",
+    "MT227-C04-2",
+    "MT227-C04-3",
+    "MT227-C06-1",
+    "MT227-C08-1",
+    "MT227-C06-5",
+    "MT076-C11-5"
+   ]
+  },
+  {
+   "name": "Dealer positioning gives structural upward drift with a fat left tail",
+   "chain": [
+    "everyone long and buying downside protection -> dealers short puts, hedging with buyback flows about 95% of days",
+    "Fed, Treasury and buybacks tilt demand over supply -> small declines profitable and bought",
+    "downside gamma triggered -> selling perpetuates; blow-off top, vol off the ground, tail crossed, liquidation all at once"
+   ],
+   "fails_when": "Large shock triggers gamma and liquidity risk to the downside",
+   "sources": [
+    "MT076"
+   ],
+   "claim_ids": [
+    "MT076-C11-1",
+    "MT076-C11-2",
+    "MT076-C11-3",
+    "MT076-C11-4",
+    "MT076-C11-5",
+    "MT076-C12-1"
+   ]
+  },
+  {
+   "name": "Collateral wealth effect to Fed reaction",
+   "chain": [
+    "about $200-300T equity-linked collateral; a 10% fall removes about $20T -> money supply shrinks in a leveraged bank system (about 95% of money is loans backed by collateral)",
+    "market drop -> Fed turns (late 2018, Dec 2023 repricing lifted equities)",
+    "rising markets -> stimulate the economy, so equities can rise without cuts and policymakers will not withdraw liquidity"
+   ],
+   "fails_when": "Not stated; relies on the Fed accepting the role; collateral figure varies between episodes",
+   "sources": [
+    "MT076",
+    "MT104",
+    "MT183",
+    "MT202",
+    "MT206"
+   ],
+   "claim_ids": [
+    "MT202-C11-2",
+    "MT202-C12-X1",
+    "MT202-C11-3",
+    "MT202-C12-1",
+    "MT183-C08-1",
+    "MT104-C07-1",
+    "MT076-C12-2",
+    "MT206-C03-1"
+   ]
+  },
+  {
+   "name": "Populism and inequality to structural inflation, rising yields and multiple compression",
+   "chain": [
+    "40 years of easy money, globalisation, technology and low rates -> record margins and inequality",
+    "inequality + generational shift -> populist fiscal demand-push, redistribution, deglobalisation, conflict",
+    "cutting rates removes cyclical deflation, sequestered demand is released -> secular inflation reignites; long end rejects 'transitory'",
+    "yields rise -> P/E contracts (about 25x in 1968 to about 4.5x in 1982) and margins fall; nominal equities flat, real down; curve steepens",
+    "Fed cannot stimulate freely -> decade of stagflation; precious-metal, FX and bond vol rise"
+   ],
+   "fails_when": "Cycle can end in deflationary breakdown; US-China detente could reverse part (MT206-C14-X1, MT227-C14-X1); does not forecast 1-5 year outcomes (MT031-C11-1)",
+   "sources": [
+    "MT031",
+    "MT132",
+    "MT206",
+    "MT227",
+    "MT163",
+    "MT183"
+   ],
+   "claim_ids": [
+    "MT206-C09-1",
+    "MT206-C09-2",
+    "MT206-C10-1",
+    "MT206-C10-3",
+    "MT206-C10-4",
+    "MT206-C10-5",
+    "MT227-C09-1",
+    "MT227-C09-2",
+    "MT227-C09-3",
+    "MT031-C10-1",
+    "MT031-C10-2",
+    "MT031-C11-3",
+    "MT031-C11-X1",
+    "MT163-C16-2"
+   ]
+  },
+  {
+   "name": "Populist election-year stimulus then retrace",
+   "chain": [
+    "populist, high-turnover elections -> incumbents pump economy and markets (fiscal transfers, Fed/Treasury bill issuance) before elections",
+    "election years double-digit, then exuberance fades in about 6-9 months, 'pitchforks'; midterm years draw down from about 15 months earlier",
+    "back-to-back strong years pull performance forward -> negative expected next year"
+   ],
+   "fails_when": "Unless democracy is circumvented; tiny samples; midterm pattern found after looking at data (MT031-C16-X2)",
+   "sources": [
+    "MT031",
+    "MT132",
+    "MT206",
+    "MT227",
+    "MT076"
+   ],
+   "claim_ids": [
+    "MT031-C15-3",
+    "MT031-C15-4",
+    "MT031-C15-5",
+    "MT031-C16-5",
+    "MT031-C16-6",
+    "MT132-C10-3",
+    "MT206-C16-3",
+    "MT206-C11-2",
+    "MT227-C07-2",
+    "MT227-C07-5",
+    "MT076-C13-5"
+   ]
+  },
+  {
+   "name": "Debt, monetisation and the steepener",
+   "chain": [
+    "no credible austerity, deficits of 6-7% -> Fed eventually monetises (soft default); Japan precedent, external holdings only about 27%",
+    "front-end cuts then Twist-like operations -> long-end yields rise and curve steepens",
+    "long rates held below inflation -> borrow to buy real assets, pull demand forward, an inflation spiral (1970s, Burns)",
+    "rising long yields -> equity multiples compress; inflation hedges expensive so long-end repricing can be fast"
+   ],
+   "fails_when": "Timing uncertain, possibly several years (long-vol and steepener bets need at least a year); reserve-currency privilege could erode (MT016-C06-X1)",
+   "sources": [
+    "MT126",
+    "MT163",
+    "MT206",
+    "MT183",
+    "MT016"
+   ],
+   "claim_ids": [
+    "MT126-C09-1",
+    "MT126-C09-3",
+    "MT163-C14-1",
+    "MT163-C14-X1",
+    "MT163-C14-X2",
+    "MT163-C15-1",
+    "MT163-C13-2",
+    "MT163-C07-X1",
+    "MT206-C10-5",
+    "MT183-C16-2",
+    "MT016-C06-X1"
+   ]
+  },
+  {
+   "name": "Refinancing wall drains liquidity and bonds fail as a hedge",
+   "chain": [
+    "2020 low rates -> about 5-year financings fall due around 2025 at higher rates and lower valuations",
+    "simultaneous refinancing -> draws liquidity from other assets; all long assets fall together (60/40, privates)",
+    "sticky inflation -> long bonds do not rally to hedge equities (1969-70 analog)"
+   ],
+   "fails_when": "Rates fall again before the wall or the Fed injects liquidity",
+   "sources": [
+    "MT150",
+    "MT126"
+   ],
+   "claim_ids": [
+    "MT150-C09-1",
+    "MT150-C09-2",
+    "MT150-C09-X1",
+    "MT150-C09-X2",
+    "MT150-C10-1",
+    "MT150-C04-2",
+    "MT150-C04-3",
+    "MT126-C03-6",
+    "MT126-C05-6"
+   ]
+  },
+  {
+   "name": "Demand-removal air pocket forces Fed QE (March 2025 view)",
+   "chain": [
+    "administration priority: lower the 10-year by removing demand (aid, housing, Medicaid, federal jobs, Ukraine) -> growth air pocket within a month, supply-side benefits take years",
+    "falling markets and economy -> Fed ends QT (March) and does QE-type easing within 3-6 months",
+    "path one: QE too small -> deeper recession; path two: aggressive QE meets heavy refinancing and debt supply -> 10-year back above 5%, knee-jerk rally fails; both -> equities down 10-20% up to 30-40% over 12-18 months; then political reversal as with Nixon price controls"
+   ],
+   "fails_when": "Fed acts in time or political backlash comes first",
+   "sources": [
+    "MT126"
+   ],
+   "claim_ids": [
+    "MT126-C04-1",
+    "MT126-C04-4",
+    "MT126-C05-1",
+    "MT126-C05-3",
+    "MT126-C05-4",
+    "MT126-C07-3",
+    "MT126-C07-4",
+    "MT126-C08-2",
+    "MT126-C08-3",
+    "MT126-C17-2",
+    "MT126-C17-3"
+   ]
+  },
+  {
+   "name": "Populism and tariffs to slow hot-inflation stagflation",
+   "chain": [
+    "populist transfers and protectionism -> higher velocity, jobs but lower pay, higher inflation, lower margins",
+    "wealth-effect hit on the top 10% -> consumption/earnings recession with stable jobs",
+    "tariff cost hits corporate margins first, then CPI, then employment (with AI hiring cuts)",
+    "Fed boxed in (inflation effect certain, growth uncertain) -> holds; bonds fail"
+   ],
+   "fails_when": "Deep disinflationary recession (consensus view); automation/immigration changes wage pressure (host)",
+   "sources": [
+    "MT150",
+    "MT163"
+   ],
+   "claim_ids": [
+    "MT150-C03-2",
+    "MT150-C04-1",
+    "MT150-C04-4",
+    "MT150-C04-5",
+    "MT150-C04-6",
+    "MT163-C09-2",
+    "MT163-C09-X1",
+    "MT163-C17-2"
+   ]
+  },
+  {
+   "name": "Non-correlation demand and reflexive flow",
+   "chain": [
+    "2022 stock-bond correlation break, record valuations, debt, rising rates -> doubt that bonds hedge equities",
+    "flows into hedge funds, structured products, options ETFs, precious metals, crypto (about 20T vs 400-500T long assets)",
+    "structured products and long/short growth -> vol compression and stabler markets, forcing underweight institutions to buy back in"
+   ],
+   "fails_when": "Perceived non-correlation may not survive a shock (panelists); inflows could make these positions the main driver of underlying assets",
+   "sources": [
+    "MT031",
+    "MT104",
+    "MT134",
+    "MT155"
+   ],
+   "claim_ids": [
+    "MT104-C05-3",
+    "MT104-C05-4",
+    "MT104-C06-1",
+    "MT134-C05-3",
+    "MT134-C05-2",
+    "MT134-C07-X1",
+    "MT031-C14-1",
+    "MT031-C14-3",
+    "MT031-C15-1",
+    "MT155-C10-3"
+   ]
+  },
+  {
+   "name": "Positioning against the consensus narrative",
+   "chain": [
+    "experts call an outcome inevitable (oil $150-200 on Iran; Nvidia; Taiwan) -> everyone positions the same way",
+    "crowded positioning in a very large market -> flows against the crowd dominate news, the opposite occurs",
+    "capitulation (oil shorts at record highs) -> start working"
+   ],
+   "fails_when": "He says opposite is not inevitable, only a major tailwind or headwind; also administration macro stabilisation",
+   "sources": [
+    "MT016",
+    "MT126",
+    "MT163"
+   ],
+   "claim_ids": [
+    "MT016-C01-2",
+    "MT016-C02-2",
+    "MT016-C02-3",
+    "MT016-C02-5",
+    "MT016-C02-6",
+    "MT016-C14-5",
+    "MT126-C13-3",
+    "MT163-C20-1",
+    "MT163-C20-X1"
+   ]
+  },
+  {
+   "name": "Gold-versus-oil volatility trade",
+   "chain": [
+    "structural inflation and deglobalisation -> gold the best and most volatile asset while its vol sits low; oil vol rich",
+    "buy long-dated gold calls, sell OTM oil puts -> near zero cost, convexity to gold while collecting premium",
+    "equity decline -> energy holds up then outperforms coming out"
+   ],
+   "fails_when": "Won't work every week or year; fails if US recession plus 'drill baby drill' dominates oil",
+   "sources": [
+    "MT031",
+    "MT126",
+    "MT163",
+    "MT132"
+   ],
+   "claim_ids": [
+    "MT031-C09-1",
+    "MT031-C09-2",
+    "MT031-C09-3",
+    "MT031-C10-3",
+    "MT126-C16-1",
+    "MT126-C16-2",
+    "MT126-C16-X1",
+    "MT126-C17-1",
+    "MT163-C05-1",
+    "MT132-C15-1"
+   ]
+  },
+  {
+   "name": "Reflexive oil mean reversion",
+   "chain": [
+    "administration needs an inflation lever -> more US output and Saudi supply, pushing oil down",
+    "asset deflation hits Saudi budgets and producers below about $40 -> forced supply cuts",
+    "cheap oil -> generational buy in about 9-15 months"
+   ],
+   "fails_when": "Liquidity drain longer, demand collapses deeper, or OPEC does not cut",
+   "sources": [
+    "MT150"
+   ],
+   "claim_ids": [
+    "MT150-C11-1",
+    "MT150-C11-2",
+    "MT150-C12-1",
+    "MT150-C12-2",
+    "MT150-C12-3"
+   ]
+  },
+  {
+   "name": "State-directed capitalism and a money-created equity fund",
+   "chain": [
+    "debt, populism, structural inflation, too-big-to-fail equity market and the China contest all accelerate -> late-reacting democracy acts aggressively",
+    "Treasury backstop + sovereign wealth fund buying $10-15T of equities funded by money creation (precedents Japan, Norway, China); stakes 5-10% rising to 10-20%",
+    "equities rise, proceeds go to Treasury, populism short-circuited, inflation is the cost; Warsh good cop, Bessent bad cop; hyperscaler capex state-guaranteed"
+   ],
+   "fails_when": "China/world pushes back, monetisation erodes dollar privilege, administration loses control (both houses), infighting; no quantification of the buying or inflation cost",
+   "sources": [
+    "MT016"
+   ],
+   "claim_ids": [
+    "MT016-C04-6",
+    "MT016-C05-1",
+    "MT016-C05-5",
+    "MT016-C05-7",
+    "MT016-C06-1",
+    "MT016-C06-2",
+    "MT016-C07-1",
+    "MT016-C11-3",
+    "MT016-C12-1",
+    "MT016-C12-2",
+    "MT016-C09-3",
+    "MT016-C10-3"
+   ]
+  },
+  {
+   "name": "Falling rates made 60/40 work",
+   "chain": [
+    "rates fall from the 1982 peak -> 400%+ multiple expansion and record margins",
+    "bonds diversify stocks (Sharpe 0.62 for 60/40 vs 0.52 over 40 years)",
+    "rates rising or flat (10-year below the 60-year average of 5.8%) -> stocks and bonds fall together; steepener the good trade"
+   ],
+   "fails_when": "If one knew rates would keep falling, leveraged 60/40 would work",
+   "sources": [
+    "MT031"
+   ],
+   "claim_ids": [
+    "MT031-C12-3",
+    "MT031-C12-4",
+    "MT031-C12-5",
+    "MT031-C12-7",
+    "MT031-C13-1",
+    "MT031-C13-2",
+    "MT031-C13-4"
+   ]
+  }
+ ],
+ "playbook": [
+  {
+   "element": "signal",
+   "rule": "Read actual positioning (who can still buy or sell: institutional equity-allocation percentiles, cash and margin, hedge-fund long/short baskets, dealer gamma/vanna/charm, option open interest by expiry) and lean against a crowded consensus; crowded longs raise odds of a fall, crowded shorts raise odds of a rally.",
+   "why": "Positioning is the most predictable part of supply and demand and stores potential energy for the opposite move.",
+   "sources": [
+    "MT016",
+    "MT031",
+    "MT076",
+    "MT104"
+   ],
+   "claim_ids": [
+    "MT016-C02-2",
+    "MT016-C02-6",
+    "MT031-C07-4",
+    "MT031-C07-6",
+    "MT104-C10-1",
+    "MT104-C04-2",
+    "MT076-C06-1",
+    "MT076-C06-2"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Use fixed-strike implied vol and delta-based 2-4 month skew, not the VIX or the CBOE SKEW index; attribute a VIX move to call, put or skew demand.",
+   "why": "VIX is distorted by skew sliding; persistent long-dated skew signals a stuck supply-demand imbalance preceding structural declines.",
+   "sources": [
+    "MT031",
+    "MT132",
+    "MT163",
+    "MT227"
+   ],
+   "claim_ids": [
+    "MT031-C02-5",
+    "MT132-C06-1",
+    "MT163-C02-1",
+    "MT227-C03-4",
+    "MT227-C04-4"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Compare implied vol with its long-run average (S&P under 10 vs about 17.5 at the money; 25-delta call near 12 vs about 17) to judge whether options are cheap.",
+   "why": "Compressed vol after a rally is a mispricing against election and geopolitical risk.",
+   "sources": [
+    "MT206",
+    "MT031"
+   ],
+   "claim_ids": [
+    "MT206-C01-3",
+    "MT206-C01-2",
+    "MT031-C03-5"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Treat the quarterly options-expiration cycle as a flow signal: weakness from February opex to March opex, June less bad than March, September opex as pain point, year-end opex compressing vol; a stronger/violent pattern on opex Fridays and Mondays (about 95% strong otherwise).",
+   "why": "Stored potential energy unwinds around expiry; structured products make quarterly expiries bigger.",
+   "sources": [
+    "MT150",
+    "MT227",
+    "MT126",
+    "MT076",
+    "MT163",
+    "MT031"
+   ],
+   "claim_ids": [
+    "MT150-C17-3",
+    "MT150-C17-4",
+    "MT150-C17-X2",
+    "MT227-C05-1",
+    "MT227-C05-3",
+    "MT227-C06-2",
+    "MT126-C08-R1",
+    "MT076-C08-2",
+    "MT163-C21-X1",
+    "MT031-C03-1"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Watch the momentum-minus-value spread, hedge-fund long baskets, morning-rally reversals and known CTA trigger levels as deleveraging/crowding tells; look for confluence of several technical levels (200-day plus about seven others) for resistance.",
+   "why": "Crowded long/short unwinds show up in factor spreads; many participants watch the same levels (partly self-fulfilling).",
+   "sources": [
+    "MT076",
+    "MT163",
+    "MT150"
+   ],
+   "claim_ids": [
+    "MT076-C06-1",
+    "MT076-C06-2",
+    "MT076-C05-X1",
+    "MT163-C06-1",
+    "MT163-C08-2",
+    "MT150-C17-1",
+    "MT150-C17-X1"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "If-then path rule with a verification window: after deleveraging, if price recovers above technical levels with positive momentum within 1-15 May buy dips, otherwise risk rises; if no decline within 1.5-2 weeks (or 1.5-2 months for a base-case decline) drop the short and move to the blow-off scenario.",
+   "why": "Momentum as a function of time tells which path is unfolding.",
+   "sources": [
+    "MT076",
+    "MT132",
+    "MT163"
+   ],
+   "claim_ids": [
+    "MT076-C08-1",
+    "MT076-C09-1",
+    "MT132-C08-3",
+    "MT132-C09-X4",
+    "MT163-C20-X1",
+    "MT163-C22-2"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Follow a flow calendar: bullish structural flows from late October to about 13-15 January (year-end releveraging, skew decay, charm), then caution; summer volume halves and compresses vol; do not buy puts ahead of an expected slow grind.",
+   "why": "Year-end flows are the strongest four-week window of 125 years; a slow grind needs hedges to fail and vol to stay low.",
+   "sources": [
+    "MT104",
+    "MT132",
+    "MT206",
+    "MT163",
+    "MT016"
+   ],
+   "claim_ids": [
+    "MT206-C04-2",
+    "MT206-C05-4",
+    "MT104-C16-2",
+    "MT104-C17-2",
+    "MT132-C11-1",
+    "MT163-C20-3",
+    "MT163-C22-1",
+    "MT016-C12-6"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "Read macro in order margins (earnings guidance) then inflation prints then employment; weight private data (ADP) over government data; use graduate unemployment as a leading indicator; CPI and the 10-year are the central event drivers.",
+   "why": "CEOs must be forthright in guidance; BLS estimate share and resource cuts make official data less reliable.",
+   "sources": [
+    "MT163",
+    "MT150",
+    "MT227"
+   ],
+   "claim_ids": [
+    "MT163-C09-2",
+    "MT163-C11-1",
+    "MT163-C11-X1",
+    "MT163-C17-2",
+    "MT150-C18-1",
+    "MT227-C12-3"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Replace stock with out-of-the-money long-dated calls (S&P 112 strike 4-12 months, or 25-delta calls three months or more out) and, in 2024, long-dated calls with short stock; monetise 5% pullbacks.",
+   "why": "Right tail is the cheapest part of the surface; in a bubble calls beat owning stock; the short-stock hedge also pays on declines.",
+   "sources": [
+    "MT031",
+    "MT076",
+    "MT104"
+   ],
+   "claim_ids": [
+    "MT031-C03-3",
+    "MT031-C04-1",
+    "MT076-C05-3",
+    "MT076-C05-1",
+    "MT104-C11-1",
+    "MT104-C11-2"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Prefer right-tail call vol and dispersion over classic long-vol/put hedges (Jul 2026); equity-index vol is the wrong hedge in structural inflation; prefer cross-factor options and single-name dispersion.",
+   "why": "Long-vol hedges failed in slow grinds (2022, April 2025, 2026 drawdown of 9-10% with no payoff) while upside moves were large.",
+   "sources": [
+    "MT016",
+    "MT163"
+   ],
+   "claim_ids": [
+    "MT016-C04-1",
+    "MT016-C04-2",
+    "MT016-C03-5",
+    "MT016-C03-6",
+    "MT163-C05-2",
+    "MT163-C06-1"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Hold long-dated gold calls (ten-year horizon) funded by selling OTM oil puts; sell short-dated strangles after big moves and buy calendar call spreads; buy more when sentiment turns negative; own the calls rather than the underlying.",
+   "why": "Gold vol is cheap and two-way in inflationary regimes; industrial commodities capped by deglobalisation.",
+   "sources": [
+    "MT031",
+    "MT126",
+    "MT132",
+    "MT163",
+    "MT183"
+   ],
+   "claim_ids": [
+    "MT031-C09-2",
+    "MT126-C16-1",
+    "MT132-C15-2",
+    "MT132-C15-3",
+    "MT183-C17-1",
+    "MT163-C04-2"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Prefer FX vol (best of the decade) then bond vol; seek convexity in concentrated-supply commodities (uranium, copper, rare earths).",
+   "why": "Currency instability, gold behaving as a currency, bond stress, concentrated supply.",
+   "sources": [
+    "MT163",
+    "MT031"
+   ],
+   "claim_ids": [
+    "MT163-C06-3",
+    "MT163-C06-2",
+    "MT163-C06-X2",
+    "MT031-C10-1"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Express structural inflation with curve steepeners (every Fed cut should steepen) rather than outright duration; hold a steepener through the long-end stress; do not enter long-vol or steepener bets with less than a year of horizon.",
+   "why": "Positive carry ('win-win'); timing could take several years.",
+   "sources": [
+    "MT206",
+    "MT163",
+    "MT031",
+    "MT183"
+   ],
+   "claim_ids": [
+    "MT206-C10-5",
+    "MT206-C08-X1",
+    "MT163-C13-2",
+    "MT163-C07-X1",
+    "MT031-C13-2",
+    "MT183-C13-3"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Sell short-dated vol and buy long-dated vol in compression grinds while staying long equities; buy VIX calendar spread (long 30-90 day futures, short shorter-dated); use VIX futures not ETPs.",
+   "why": "Supply/demand beats fair value; futures are capital efficient.",
+   "sources": [
+    "MT132",
+    "MT183"
+   ],
+   "claim_ids": [
+    "MT132-C09-2",
+    "MT132-C09-1",
+    "MT132-C03-2",
+    "MT183-C09-1",
+    "MT183-C09-X1"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Hold 30-50% of the portfolio in non-correlated strategies (not just non-correlated assets); cut equity; if holding equities pick negative-working-capital, value/quality, rising-margin firms (insurance, software/telecom with DCF support), avoid growth needing venture funding; avoid gold/Bitcoin concentration (50-75% drawdowns).",
+   "why": "All long assets share discount-rate and liquidity risk; asset-only portfolios are '1960s investing'.",
+   "sources": [
+    "MT163",
+    "MT150",
+    "MT031"
+   ],
+   "claim_ids": [
+    "MT163-C17-1",
+    "MT163-C16-3",
+    "MT163-C16-X1",
+    "MT150-C10-1",
+    "MT150-C05-1",
+    "MT031-C04-2",
+    "MT031-C04-5"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Use trend following and long vol as true diversifiers; improve Sharpe (diversification, quality, a little convexity, geometric-return focus) and then add leverage; pair a levered carry position with convexity elsewhere.",
+   "why": "Good risk management lets you lever; linear hedges are crowded.",
+   "sources": [
+    "MT031",
+    "MT221",
+    "MT202",
+    "MT155"
+   ],
+   "claim_ids": [
+    "MT031-C06-1",
+    "MT031-C13-5",
+    "MT221-C04-1",
+    "MT202-C06-2",
+    "MT202-C07-X1",
+    "MT155-C12-1"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "Spread allocations across managers where no selection edge exists; diversification is the one free lunch.",
+   "why": "Own allocation practice.",
+   "sources": [
+    "MT134"
+   ],
+   "claim_ids": [
+    "MT134-C11-1",
+    "MT134-C11-R1"
+   ]
+  },
+  {
+   "element": "universe",
+   "rule": "Relative bets: long non-US (Europe, China tactically with calls) against US; Russell over Nvidia in narrative-driven rotations; energy held through equity declines; AI exposure via unique data owners (UnitedHealth example), energy/power inputs, and brokers/exchanges/market makers.",
+   "why": "US exceptionalism premium cracking, extreme bearish narratives elsewhere, AI commoditisation.",
+   "sources": [
+    "MT076",
+    "MT126",
+    "MT132",
+    "MT104",
+    "MT206"
+   ],
+   "claim_ids": [
+    "MT076-C16-1",
+    "MT126-C01-1",
+    "MT126-C17-1",
+    "MT132-C06-3",
+    "MT104-C13-1",
+    "MT104-C13-X1",
+    "MT206-C07-3"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Size the rates/inflation hedge large relative to the book (urged '10x as much as you can' while the curve was inverted and hedges paid); a token hedge cannot offset portfolio-wide losses.",
+   "why": "Secular rate rise damages most assets; hedges are cheap only with an inverted curve.",
+   "sources": [
+    "MT227"
+   ],
+   "claim_ids": [
+    "MT227-C09-4",
+    "MT227-C09-X1"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Use positioning in vol supply across expiries as timing and sizing for levering long-vol up and down; use tailored narrow-window shorts and exit if no decline in 1.5-2 weeks.",
+   "why": "Passive put buying loses; shorts are hard to time but narrow windows raise Sharpe of a long book.",
+   "sources": [
+    "MT202",
+    "MT132"
+   ],
+   "claim_ids": [
+    "MT202-C04-3",
+    "MT202-C04-4",
+    "MT202-C05-3",
+    "MT132-C08-3",
+    "MT132-C09-X4"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Hedge time-bounded tail windows with options (late May to mid-June 2024; mid-January after year-end flows); buy convexity before compressed-vol regimes break; hedge a vol-selling regime's tail even if it may run six more months.",
+   "why": "Some of the most profitable periods for vol sellers precede violent breaks; a time-bounded tail is hedgeable.",
+   "sources": [
+    "MT076",
+    "MT132",
+    "MT183"
+   ],
+   "claim_ids": [
+    "MT076-C08-6",
+    "MT132-C09-3",
+    "MT183-C03-2"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Use valuation as distance-from-the-ground risk gauge, not a sell signal; expect to be early on tops and do not short on first warning signs; do not short a long-neglected market that has begun to rise; do not bet against the market or the administration when the state is behind it (2026).",
+   "why": "Fundamentals do not time anything under 10 years; shorts and structural support extend rallies.",
+   "sources": [
+    "MT104",
+    "MT206",
+    "MT016"
+   ],
+   "claim_ids": [
+    "MT104-C02-1",
+    "MT206-C17-1",
+    "MT206-C17-2",
+    "MT206-C06-1",
+    "MT016-C11-1",
+    "MT016-C11-2",
+    "MT016-C13-4"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Judge risk with tail-penalising measures (Sortino or area under drawdown curve), not Sharpe; benchmark vol managers with specific Cboe strategy indexes; treat a 2%+ rally during stress with weak action elsewhere as a short squeeze.",
+   "why": "Sharpe treats upside and downside alike and short records hide tails; squeezes shake out positioning.",
+   "sources": [
+    "MT031",
+    "MT202"
+   ],
+   "claim_ids": [
+    "MT031-C06-3",
+    "MT031-C06-4",
+    "MT202-C05-4",
+    "MT202-C16-3"
+   ]
+  },
+  {
+   "element": "execution",
+   "rule": "For rotations hedge with puts on the most crowded winner (Nvidia) rather than index puts and keep hedges after unpin; buy the dip aggressively in a sharp event decline (Feb-April 2025 desk bought the dip after expecting 15% vs 25% actual).",
+   "why": "Crowded winners carry the unwinding; unpin does not re-pin quickly.",
+   "sources": [
+    "MT202",
+    "MT031",
+    "MT132"
+   ],
+   "claim_ids": [
+    "MT202-C16-X2",
+    "MT202-C16-X1",
+    "MT031-C15-2",
+    "MT132-C11-X7"
+   ]
+  },
+  {
+   "element": "execution",
+   "rule": "Position for both scenarios at once with options rather than committing to one forecast; state calls as time-bound, conditional and revisable, and revisit them on the show.",
+   "why": "Knowing the two paths is itself valuable.",
+   "sources": [
+    "MT163",
+    "MT150",
+    "MT132",
+    "MT126"
+   ],
+   "claim_ids": [
+    "MT163-C23-1",
+    "MT150-C16-X2",
+    "MT132-C09-R1",
+    "MT126-C08-R1"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "Start from a qualitative structural idea built on measurable drivers (generation, inequality, political views, incentives of officials) and then check the data; combine macro (multi-year distributions and incentives) with flows/microstructure so short, medium and long term align; read what officials say aloud as the plan.",
+   "why": "Conviction from theory first; data 'screams' afterwards (small samples).",
+   "sources": [
+    "MT031",
+    "MT202",
+    "MT016",
+    "MT126"
+   ],
+   "claim_ids": [
+    "MT031-C11-2",
+    "MT031-C16-4",
+    "MT202-C07-3",
+    "MT016-C10-R1",
+    "MT016-C05-R2",
+    "MT126-C03-X1",
+    "MT126-C05-4"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "Use historical regimes as templates (1998-2000, 2007, 2017-18, 1969-70, 1968-82, Nixon 1969-72, Japan) and the fourth-turning generational cycle; avoid long historical windows that cover only a falling-rate era.",
+   "why": "Policy and flow regimes rhyme; recency bias.",
+   "sources": [
+    "MT150",
+    "MT126",
+    "MT227",
+    "MT104"
+   ],
+   "claim_ids": [
+    "MT150-C04-2",
+    "MT150-C08-1",
+    "MT126-C06-4",
+    "MT126-C07-1",
+    "MT227-C11-X1",
+    "MT104-C03-1"
+   ]
+  },
+  {
+   "element": "other",
+   "rule": "Do not choose trend models by backtest optimisation; choose by forward view of the return distribution (vol regime, supply and demand) - a distribution is forecastable, direction is not.",
+   "why": "Vol-desk framing.",
+   "sources": [
+    "MT221"
+   ],
+   "claim_ids": [
+    "MT221-C06-1"
+   ]
+  },
+  {
+   "element": "other",
+   "rule": "Contrarian selective reversion: buy markets with one-sided negative rhetoric and positioning (BNP Paribas, European equities, China via calls with limited downside) but not every market; express China as a tactical call trade, not an investment.",
+   "why": "Reflexive positioning makes the opposite outcome likelier.",
+   "sources": [
+    "MT183",
+    "MT206",
+    "MT227"
+   ],
+   "claim_ids": [
+    "MT183-C15-1",
+    "MT183-C15-X1",
+    "MT206-C07-3",
+    "MT227-C15-2",
+    "MT227-C15-3"
+   ]
+  }
+ ],
+ "evidence_style": "Mechanism-first and first-principles: reasons from option-market and fund-flow structure (gamma, vanna, charm, skew, vol supply, expiry cycles), incentives of officials, and reflexivity (Soros). Heavy use of historical analogy (1998-2000, 2007, 2017-18, 1968-82, Nixon-Burns, Japan, Norway, 250-year/fourth-turning cycles), on-air orders-of-magnitude arithmetic (collateral and flow sizes that vary episode to episode), and reference to his own earlier public calls (gold call at 2500 / 3000 calls, 10-year to 5% about ten days late, Nvidia top, Feb-April 2025 dip buy, the August 2024 unpin, Feb-March opex pattern). Statistics are recited from memory (election-year averages of 21.5%, 1968-82 real return, Sharpe 0.35, 'data screams'); samples are tiny (4-6 elections) and no backtests, hit rates, sample sizes or tests are shown. Several claims come second-hand (coin-flip Taiwan odds from government contacts; asset-flow figures with no source). Theory comes first and data second (MT031-C16-4). In 2026 he explicitly mixes speculation ('where there is smoke') with inference and offers no quantification of the state buying plan.",
+ "views_timeline": [
+  {
+   "as_of": "2024-04-25",
+   "view": "Weak GDP with hot CPI is an unpriced stagflationary mix; equity skew near historic lows and stayed low through the decline (unusual).",
+   "reasoning": "GDP and CPI released together; vol traders focus on skew.",
+   "source": "MT076",
+   "claim_ids": [
+    "MT076-C01-1",
+    "MT076-C01-4"
+   ]
+  },
+  {
+   "as_of": "2024-04-25",
+   "view": "The April decline ends around 1 May (early) and no later than shortly after June OpEx, with high confidence; rally-resumption window after Fed/Treasury events; if price does not recover above technical levels with positive momentum in 1-15 May, risk rises.",
+   "reasoning": "Deleveraging ending, Fed/Treasury events passing, positive vanna/charm in the first half of the May options cycle.",
+   "source": "MT076",
+   "claim_ids": [
+    "MT076-C09-X1",
+    "MT076-C07-4",
+    "MT076-C07-X2",
+    "MT076-C09-1",
+    "MT076-C08-1"
+   ]
+  },
+  {
+   "as_of": "2024-04-25",
+   "view": "A tail risk window late May to mid-June should be hedged with options (June expiry, VIX-call speculation, Fed beforehand, five-week cycle).",
+   "reasoning": "Large June open interest, quarterly expiry with structured products, window without vanna/charm support lengthens to about 2.5 weeks.",
+   "source": "MT076",
+   "claim_ids": [
+    "MT076-C08-2",
+    "MT076-C08-4",
+    "MT076-C08-6"
+   ]
+  },
+  {
+   "as_of": "2024-04-25",
+   "view": "2024 should still finish positive with no policy cap on the upside even if hot inflation prevents new stimulus; the next rally is broad ('everything rally') into year end with a decline next year.",
+   "reasoning": "Fed and Treasury put under the market; election-year stimulus; late-cycle rally dynamics; narratives on Europe, China, commodities turning.",
+   "source": "MT076",
+   "claim_ids": [
+    "MT076-C09-2",
+    "MT076-C09-X2",
+    "MT076-C15-6",
+    "MT076-C03-3"
+   ]
+  },
+  {
+   "as_of": "2024-04-25",
+   "view": "Europe and China should hold up better than expected and US weakness will be structural; speculate on them on a relative basis. China autocallable snowballs amplified the Chinese decline and raise odds of steeper structural declines.",
+   "reasoning": "Extreme bearish narratives, falling European energy prices, possible US-China deal under Trump, structured-product hedging flows.",
+   "source": "MT076",
+   "claim_ids": [
+    "MT076-C16-1",
+    "MT076-C15-4",
+    "MT076-C15-5",
+    "MT076-C04-1"
+   ]
+  },
+  {
+   "as_of": "2024-04-25",
+   "view": "Fed politicisation is structural and likely worse under Trump (worse inflation, bigger market right tail); loss of independence is short-term upside, long-term problem. Iran-Israel matters through positioning and liquidity for path, not long-term performance.",
+   "reasoning": "Fed prefers growth over inflation and can be controlled via chair appointment; a Friday weekend-risk shock triggered deleveraging.",
+   "source": "MT076",
+   "claim_ids": [
+    "MT076-C14-2",
+    "MT076-C15-2",
+    "MT076-C05-5",
+    "MT076-C05-4"
+   ]
+  },
+  {
+   "as_of": "2024-07-10",
+   "view": "Vol supply keeps the US index pinned and placid for now (perhaps another month or six months); breadth is not a short-term signal but narrow breadth is a medium-term fragility.",
+   "reasoning": "Structured products, zero-DTE, short-gamma names; 2017 analogy (regime ran about 1.5 years).",
+   "source": "MT183",
+   "claim_ids": [
+    "MT183-C02-2",
+    "MT183-C03-2",
+    "MT183-C05-1"
+   ]
+  },
+  {
+   "as_of": "2024-07-10",
+   "view": "From mid-August to November vol supply dissipates: long-dated vol rises first, then a mini blow-off, a buyable warning-shot pullback (maybe 10%), year-end rally, larger fireworks in early 2025.",
+   "reasoning": "Calendar (14 Aug VIX expiry, September opex, election hedging), liquidity returning, flows.",
+   "source": "MT183",
+   "claim_ids": [
+    "MT183-C09-1",
+    "MT183-C09-2",
+    "MT183-C10-X1",
+    "MT183-C10-1"
+   ]
+  },
+  {
+   "as_of": "2024-07-10",
+   "view": "Break-trigger candidates: dollar-yen carry above 160 and a macro event stressing a concentrated entity (zero-DTE hedging by a stressed fund would be involved); Nvidia concentration plus Taiwan risk (about coin-flip odds over 2-3 years per people in the know, second-hand) could mean a 30% downturn.",
+   "reasoning": "1997 rhyme; Nvidia the biggest company and epicentre of Taiwan fear.",
+   "source": "MT183",
+   "claim_ids": [
+    "MT183-C04-1",
+    "MT183-C04-X1",
+    "MT183-C03-3",
+    "MT183-C05-2"
+   ]
+  },
+  {
+   "as_of": "2024-07-10",
+   "view": "A Trump win is highly probable; position for yield steepener, gold, vol and the 10-year back to 5% by year end; election vol is mean-reverting and the Olympics weeks historically quiet.",
+   "reasoning": "Hot economy and Fed change (Nixon-Burns analogy); past election vol was a buy.",
+   "source": "MT183",
+   "claim_ids": [
+    "MT183-C13-3",
+    "MT183-C14-1",
+    "MT183-C12-X2",
+    "MT183-C13-1",
+    "MT183-C14-2"
+   ]
+  },
+  {
+   "as_of": "2024-07-10",
+   "view": "Europe could catch up to the US into year end (cheap energy, near-shoring, overdone sentiment); French election is a short-term low-stress trade; a US wobble hits the US more than Europe; own long-dated gold calls for ten years; US debt ends with the Fed buying it.",
+   "reasoning": "Structural vol-supply effects centred in the US; 1968-82 and 1971 analogs; competing blocs and economic warfare boost vol and gold.",
+   "source": "MT183",
+   "claim_ids": [
+    "MT183-C14-3",
+    "MT183-C14-X1",
+    "MT183-C15-2",
+    "MT183-C16-1",
+    "MT183-C16-2",
+    "MT183-C16-3",
+    "MT183-C16-X2"
+   ]
+  },
+  {
+   "as_of": "2024-08-02",
+   "view": "Vol is unpinned and unlikely to re-pin quickly; the Nvidia-to-Russell rotation will continue; stay cautious and hedged through September and arguably October-November. Path: calm summer, fall wobble (started a month early), rally into year end, bigger fireworks early 2025.",
+   "reasoning": "Weak vol supply Sept-Nov, Fed meeting, volatile election; distribution of outcomes revisable if the move worsens.",
+   "source": "MT202",
+   "claim_ids": [
+    "MT202-C16-X1",
+    "MT202-C16-4",
+    "MT202-C04-3",
+    "MT202-C17-1",
+    "MT202-C17-R1"
+   ]
+  },
+  {
+   "as_of": "2024-08-02",
+   "view": "Vol, skew and convexity are undervalued; skew was very low so tail protection was cheap. The Fed will react to a market fall (a 50 bp cut or strong Jackson Hole language could reverse stress).",
+   "reasoning": "Skew falls in declines but explodes in a convex move (Volmageddon); wealth effect makes the Fed reflexive.",
+   "source": "MT202",
+   "claim_ids": [
+    "MT202-C16-R1",
+    "MT202-C16-2",
+    "MT202-C11-3",
+    "MT202-C12-2",
+    "MT202-C17-2"
+   ]
+  },
+  {
+   "as_of": "2024-08-02",
+   "view": "A Trump win is likely with a broad mandate and Trump 2.0 would be inflationary and bullish for hard assets, gold and Bitcoin; more oil shocks and supply control of oil and copper support commodities.",
+   "reasoning": "Protectionism, immigration restriction, activist Fed; America First raises conflict (1970s oil shocks).",
+   "source": "MT202",
+   "claim_ids": [
+    "MT202-C08-1",
+    "MT202-C08-2",
+    "MT202-C09-1",
+    "MT202-C13-1"
+   ]
+  },
+  {
+   "as_of": "2024-08-02",
+   "view": "Nvidia carries a Taiwan invasion tail risk and the August move changed the narrative; cuts may have a larger effect than hikes did, but the Fed cannot easily manage inflation (stagflation-type).",
+   "reasoning": "Most to lose of any US company; Trump's Taiwan comment; demand sequestered by locked-in rates.",
+   "source": "MT202",
+   "claim_ids": [
+    "MT202-C15-4",
+    "MT202-C12-3",
+    "MT202-C12-4",
+    "MT202-C12-R5"
+   ]
+  },
+  {
+   "as_of": "late Sept 2024",
+   "view": "Equities likely higher into early next year with long-dated vol rising on a fixed-strike basis even if the VIX is flat; S&P strongest through about 13-15 January 2025.",
+   "reasoning": "Year-end releveraging, high skew decay and holiday-thinned volume.",
+   "source": "MT206",
+   "claim_ids": [
+    "MT206-C02-1",
+    "MT206-C05-4",
+    "MT206-C05-1",
+    "MT206-C03-2"
+   ]
+  },
+  {
+   "as_of": "late Sept 2024",
+   "view": "The rally is a sugar high and probable blow-off top; earliest decline January, possibly later in 2025; being long after the election is dangerous.",
+   "reasoning": "Populist election-year stimulus fades; blow-off tops precede declines.",
+   "source": "MT206",
+   "claim_ids": [
+    "MT206-C17-1",
+    "MT206-C17-2",
+    "MT206-C16-3",
+    "MT206-C05-4"
+   ]
+  },
+  {
+   "as_of": "late Sept 2024",
+   "view": "Stay in curve steepeners: every Fed cut should steepen the curve; the Fed will be put back in a box and the US faces a decade of stagflation; rising back-end yields are evidence of the structural-inflation view.",
+   "reasoning": "Secular populist inflation reignites once cyclical deflation is removed; core PCE stuck near 2.7%.",
+   "source": "MT206",
+   "claim_ids": [
+    "MT206-C10-4",
+    "MT206-C10-5",
+    "MT206-C08-2",
+    "MT206-C11-1",
+    "MT206-C08-1"
+   ]
+  },
+  {
+   "as_of": "late Sept 2024",
+   "view": "Chinese assets: tactical long into December-January with calls, not an investment; outlook depends on election and US-China detente. Treasury stays supportive (bill-heavy issuance) up to the election.",
+   "reasoning": "China stimulus timed with positive flows but rule-of-law and bifurcation limits; incentives to make the short term look good.",
+   "source": "MT206",
+   "claim_ids": [
+    "MT206-C07-3",
+    "MT206-C06-X1",
+    "MT206-C07-2",
+    "MT206-C11-2",
+    "MT206-C11-4"
+   ]
+  },
+  {
+   "as_of": "late Sept 2024",
+   "view": "Trump win: short-term market positive but worse structural inflation, bigger moves under united government, earlier China move; Harris win: more measured redistribution, possibly worse for markets near term, later but longer China conflict.",
+   "reasoning": "Stimulus, pressure on the Fed, Taiwan deterrence and capital-gains tax differences.",
+   "source": "MT206",
+   "claim_ids": [
+    "MT206-C12-2",
+    "MT206-C13-1",
+    "MT206-C14-1",
+    "MT206-C15-1",
+    "MT206-C14-2"
+   ]
+  },
+  {
+   "as_of": "late Sept 2024",
+   "view": "About a 50% chance of Chinese action against Taiwan within four years, linked with Russia and Iran as one structured movement; the world is in a holding pattern until the US election; the populist, structurally inflationary regime lasts 10-15 years but arrives in fits and starts; a US-China detente is the main thing that could reverse part of it.",
+   "reasoning": "Statements by China, Trump's remark that Taiwan should pay for weapons, 1970s analogy.",
+   "source": "MT206",
+   "claim_ids": [
+    "MT206-C13-2",
+    "MT206-C13-3",
+    "MT206-C13-X1",
+    "MT206-C13-X2",
+    "MT206-C11-X1",
+    "MT206-C14-X1"
+   ]
+  },
+  {
+   "as_of": "2024-12-04",
+   "view": "Calm before a broader regime change, not necessarily a crash; vol compressed through early January with dispersion and rotation into short-vol-supply areas (Nvidia, Russell).",
+   "reasoning": "Slow-then-sudden regime shifts; dealers long options plus year-end flows.",
+   "source": "MT132",
+   "claim_ids": [
+    "MT132-C01-1",
+    "MT132-C02-1",
+    "MT132-C05-1",
+    "MT132-C06-2",
+    "MT132-C04-3"
+   ]
+  },
+  {
+   "as_of": "2024-12-04",
+   "view": "Russell outperforms, Nvidia lags, S&P grinds higher; narrative/meme stocks have a tailwind.",
+   "reasoning": "America First favours small domestic caps; Musk/Trump bully pulpit; Nvidia momentum slowing.",
+   "source": "MT132",
+   "claim_ids": [
+    "MT132-C07-1",
+    "MT132-C07-2",
+    "MT132-C06-3",
+    "MT132-C07-X2"
+   ]
+  },
+  {
+   "as_of": "2024-12-04",
+   "view": "S&P 500 to 6,000-6,200 by year end and mid-January, then a window to hedge (13-15 January, else February); a decline much bigger than a wobble in early 2025 is to be bought aggressively.",
+   "reasoning": "Year-end flows then blow-off and unpinning; vol compression gives way to a vol event.",
+   "source": "MT132",
+   "claim_ids": [
+    "MT132-C09-5",
+    "MT132-C11-1",
+    "MT132-C08-2",
+    "MT132-C10-5",
+    "MT132-C11-X7",
+    "MT132-C11-2"
+   ]
+  },
+  {
+   "as_of": "2024-12-04",
+   "view": "Populist cycle from 2020 to about 2038; Trump's dual approach (tariffs/immigration plus deregulation/cuts) extends it and prolongs poor real equity returns; gutting government during populism is contradictory.",
+   "reasoning": "2017 tax cuts gave 95% to corporations and the wealthy; capital vs labour is old vs young.",
+   "source": "MT132",
+   "claim_ids": [
+    "MT132-C13-2",
+    "MT132-C17-1",
+    "MT132-C18-1"
+   ]
+  },
+  {
+   "as_of": "2024-12-04",
+   "view": "Volatility will rise most in FX, bonds and gold; long-dated gold calls stay cheap; the Fed is more likely inflationary; Bitcoin is short-term supported (regulatory overhang gone for four years) but long-term capped without a sovereign sponsor; sceptical of $13 million.",
+   "reasoning": "Fed put less reliable; deglobalisation; Bitcoin would threaten dollar privilege.",
+   "source": "MT132",
+   "claim_ids": [
+    "MT132-C14-1",
+    "MT132-C14-3",
+    "MT132-C15-X9",
+    "MT132-C15-X10",
+    "MT132-C16-1",
+    "MT132-C16-X11"
+   ]
+  },
+  {
+   "as_of": "2024-12-04",
+   "view": "Vol compression persists through January; risk of a bigger move after 20 January. The Trump-China stance is the key geopolitical question.",
+   "reasoning": "Compression trend, potential energy builds.",
+   "source": "MT002",
+   "claim_ids": [
+    "MT002-C07-3",
+    "MT002-C04-4",
+    "MT002-C04-4b",
+    "MT002-C04-5"
+   ]
+  },
+  {
+   "as_of": "2024-12-04",
+   "view": "A Trump-China compromise (like Nixon) revives Chinese assets in 2025 - a big trade few see. Early innings of adoption of non-correlated investments as 60/40 loses appeal; generational frustration persists for a generation; rising rates favour multi-strats and derivatives-based alternatives.",
+   "reasoning": "Outrageous prediction format; product growth (products doubling, ETFs 7x); free leverage.",
+   "source": "MT155",
+   "claim_ids": [
+    "MT155-C17-1",
+    "MT155-C10-3",
+    "MT155-C06-1",
+    "MT155-C12-1"
+   ]
+  },
+  {
+   "as_of": "2025-01",
+   "view": "The 10-year yield hit 5% (his call came about ten days late) and he expects 6.5% this year; higher yields will have massive effects; participants stuck short duration make a pain trade that continues and accelerates.",
+   "reasoning": "Stuck participants, issuance exceeding capacity, structural inflation, pain trades work more than 90% of the time.",
+   "source": "MT227",
+   "claim_ids": [
+    "MT227-C01-2",
+    "MT227-C10-2",
+    "MT227-C10-3"
+   ]
+  },
+  {
+   "as_of": "2025-01",
+   "view": "S&P: a peak-to-trough decline of about 10% is the beginning of a bigger one; counter-trend rallies will be sold; stair-step lower into end-Q1 with March opex a real risk; a sharp bounce after a cathartic drop with January opex the biggest for single stocks; long vol is the preferred expression (vol was cheap in December).",
+   "reasoning": "Sticky long-dated skew, vanna flows, structured products; calendar-flow model.",
+   "source": "MT227",
+   "claim_ids": [
+    "MT227-C05-2",
+    "MT227-C06-1",
+    "MT227-C06-2",
+    "MT227-C06-3",
+    "MT227-C06-X1",
+    "MT227-C08-1",
+    "MT227-C05-3",
+    "MT227-C06-4"
+   ]
+  },
+  {
+   "as_of": "2025-01",
+   "view": "Back-to-back strong years and populist election years will be given back (negative next equity return); expect Trump to name a shadow Fed chair early; more global conflict and institutional breakdown as the Fed loses dominance.",
+   "reasoning": "Historical election-year data from memory; Nixon analogy; power-vacuum analogy.",
+   "source": "MT227",
+   "claim_ids": [
+    "MT227-C07-2",
+    "MT227-C07-5",
+    "MT227-C07-6",
+    "MT227-C12-2",
+    "MT227-C12-R2",
+    "MT227-C13-2",
+    "MT227-C13-3"
+   ]
+  },
+  {
+   "as_of": "2025-01",
+   "view": "A possible Trump-China deal makes China an asymmetric long via calls (he estimates 30-40% chance vs market about 2%) and would be a short-term supportive and disinflationary shock; long-dated Treasuries -1.88% YTD and SG Trend +62bp on a week of data.",
+   "reasoning": "Russia-China alignment, Trump less hard on China, Musk incentives, Nixon-opens-China analogy.",
+   "source": "MT227",
+   "claim_ids": [
+    "MT227-C14-2",
+    "MT227-C15-1",
+    "MT227-C15-2",
+    "MT227-C15-3",
+    "MT227-C16-1",
+    "MT227-C14-R1",
+    "MT227-C03-3",
+    "MT227-C03-X2"
+   ]
+  },
+  {
+   "as_of": "2025-03-20",
+   "view": "Non-US markets outperform as the US exceptionalism premium cracks and US equity records mean-revert over years; inflation re-accelerating and a stagflationary setup mean the Fed cannot just ease.",
+   "reasoning": "Transactional America First policy; early-2025 data.",
+   "source": "MT126",
+   "claim_ids": [
+    "MT126-C01-1",
+    "MT126-C01-2",
+    "MT126-C03-5"
+   ]
+  },
+  {
+   "as_of": "2025-03-20",
+   "view": "US growth air pocket now; QT ends in March and a QE-type response comes within 3-6 months; the dollar will weaken despite 'strong dollar' talk; the refinancing wall (venture, PE, commercial real estate) begins hitting in 3-6 months.",
+   "reasoning": "Demand cuts act within a month, supply-side takes years; Bessent timeline; austerity plus QE plus lower rates weaken a currency; five years after the 2020 low.",
+   "source": "MT126",
+   "claim_ids": [
+    "MT126-C05-1",
+    "MT126-C05-2",
+    "MT126-C05-3",
+    "MT126-C05-X4",
+    "MT126-C06-1",
+    "MT126-C03-6",
+    "MT126-C05-6"
+   ]
+  },
+  {
+   "as_of": "2025-03-20",
+   "view": "Equities fall 30-40% over the next 12-18 months, beyond a garden-variety 10-20%; the February-March pullback is a warning shot (1999, 2007); a deep fall forces political reversal as with Nixon's price controls.",
+   "reasoning": "Both paths (QE too small, or QE meeting heavy refinancing with the 10-year back above 5%) lead to a bad place.",
+   "source": "MT126",
+   "claim_ids": [
+    "MT126-C08-2",
+    "MT126-C08-3",
+    "MT126-C17-2",
+    "MT126-C07-3",
+    "MT126-C07-4",
+    "MT126-C17-3",
+    "MT126-C17-4",
+    "MT126-C17-X1",
+    "MT126-C05-X5"
+   ]
+  },
+  {
+   "as_of": "2025-03-20",
+   "view": "Debt will be monetised in some form with Japan helping; the Mar-a-Lago accord (100-year zero-coupon bonds) is speculation and unlikely.",
+   "reasoning": "Only exit; the US cannot bully the world indefinitely.",
+   "source": "MT126",
+   "claim_ids": [
+    "MT126-C09-1",
+    "MT126-C09-2",
+    "MT126-C09-4",
+    "MT126-C10-X1",
+    "MT126-C08-4"
+   ]
+  },
+  {
+   "as_of": "2025-03-20",
+   "view": "Taiwan pressure could come around Q4 2025; Nvidia is vulnerable (AI capex pullback, Taiwan, crowding); Turkey faces a decent chance of a currency crisis and Indian equities are hurt by lost swing-state value; Europe's rearmament is a wake-up call that gets Europe out of stagnation in the long run.",
+   "reasoning": "US recession plus settled Ukraine plus no deterrent; liquidity and crowding; Erdogan rates 40% and election; crisis forces reform. Several are explicit speculation.",
+   "source": "MT126",
+   "claim_ids": [
+    "MT126-C12-3",
+    "MT126-C12-X1",
+    "MT126-C13-2",
+    "MT126-C13-3",
+    "MT126-C14-3",
+    "MT126-C14-4",
+    "MT126-C15-1",
+    "MT126-C14-1",
+    "MT126-C14-2",
+    "MT126-C11-2",
+    "MT126-C10-4"
+   ]
+  },
+  {
+   "as_of": "2025-03-20",
+   "view": "Oil gradually higher in a multi-year range, gold more volatile; the gold-call/oil-put trade stays on (it worked 3.5 years); energy holds up in an equity decline and outperforms coming out.",
+   "reasoning": "Supply, geopolitics, dollar, China demand; both assets benefit from inflationary deglobalisation.",
+   "source": "MT126",
+   "claim_ids": [
+    "MT126-C16-2",
+    "MT126-C16-3",
+    "MT126-C16-4",
+    "MT126-C16-X1",
+    "MT126-C16-1",
+    "MT126-C17-1"
+   ]
+  },
+  {
+   "as_of": "2025-05-08",
+   "view": "Slow stagflation: mild, slow recession (earnings and margins) with hot inflation like 1969-70, not a deep disinflationary recession; the Fed stays on hold, boxed in (Powell as Burns); bonds fail as a hedge for equities.",
+   "reasoning": "Populism, tariffs, wealth-effect hit on the top 10%, sticky inflation; inflation effect certain, growth effect uncertain.",
+   "source": "MT150",
+   "claim_ids": [
+    "MT150-C04-5",
+    "MT150-C04-2",
+    "MT150-C04-4",
+    "MT150-C04-1",
+    "MT150-C04-6",
+    "MT150-C06-1",
+    "MT150-C06-X1",
+    "MT150-C04-3",
+    "MT150-C10-2"
+   ]
+  },
+  {
+   "as_of": "2025-05-08",
+   "view": "Liquidity drain from the five-year refinancing wall hits all assets; 60/40 and privates are dangerous; weaker dollar and a lower ceiling for US equities, with dollar weakness feeding inflation; the US would monetise rather than default though tail risk premia rise.",
+   "reasoning": "Simultaneous refinancing at lower valuations; foreign buyers alienated while asset supply rises; only exit from unsustainable debt.",
+   "source": "MT150",
+   "claim_ids": [
+    "MT150-C01-1",
+    "MT150-C09-2",
+    "MT150-C10-1",
+    "MT150-C10-X1",
+    "MT150-C10-5",
+    "MT150-C10-6",
+    "MT150-C08-3",
+    "MT150-C08-2"
+   ]
+  },
+  {
+   "as_of": "2025-05-08",
+   "view": "Oil is pushed lower now by policy; a generational buy comes in about 9-15 months.",
+   "reasoning": "Administration lever, Saudi long game, reflexive supply cuts below about $40.",
+   "source": "MT150",
+   "claim_ids": [
+    "MT150-C11-1",
+    "MT150-C12-1",
+    "MT150-C12-2",
+    "MT150-C12-3",
+    "MT150-C10-4"
+   ]
+  },
+  {
+   "as_of": "2025-05-08",
+   "view": "S&P 500 upside is capped around 5700-6000 after the rebound; a topping process, not a V reversal; the ceiling has come down; the administration will push deal announcements to support the market and a deal smaller than expected pulls risk forward; CPI on the 13th and the 10-year are the key near-term event risk.",
+   "reasoning": "Alienated buyers, asset supply, vol, option cycle, confluence of levels; political need for market support.",
+   "source": "MT150",
+   "claim_ids": [
+    "MT150-C16-4",
+    "MT150-C16-X2",
+    "MT150-C17-2",
+    "MT150-C17-1",
+    "MT150-C17-5",
+    "MT150-C18-1"
+   ]
+  },
+  {
+   "as_of": "2025-05-08",
+   "view": "The West faces a fourth-turning crisis whose outcome depends on unity; tariffs on allies and closeness to Russia signal disunification.",
+   "reasoning": "Unity is the critical variable in the hero's-journey framing.",
+   "source": "MT150",
+   "claim_ids": [
+    "MT150-C13-1",
+    "MT150-C14-1",
+    "MT150-C15-X1",
+    "MT150-C13-R1",
+    "MT150-C14-R1"
+   ]
+  },
+  {
+   "as_of": "2025-07-17",
+   "view": "Base case: a small 2.5-5% decline into July/August opex, possibly extending to 10-15% total (to about 5,700) by September opex as a slow grind with vol compression; momentum-value pain until late August; then a 10-15% relief rally.",
+   "reasoning": "Internals show weakness; August/September skew dislocation; institutional shorts must be bought back; authorities cushion any decline.",
+   "source": "MT163",
+   "claim_ids": [
+    "MT163-C21-1",
+    "MT163-C21-X1",
+    "MT163-C21-X2",
+    "MT163-C22-X1"
+   ]
+  },
+  {
+   "as_of": "2025-07-17",
+   "view": "Alternative: if no decline in 1.5-2 months, a 1998-style blow-off top into the midterms, resolving badly after them. The market is placid because of vol supply and low volume with a pain trade underneath; it cannot fall meaningfully until institutional shorts cover.",
+   "reasoning": "Supportive year-end flows, short institutions squeezed, administration wants stimulus; structured-product flows and doubled hedge-fund positioning.",
+   "source": "MT163",
+   "claim_ids": [
+    "MT163-C22-2",
+    "MT163-C20-2",
+    "MT163-C07-2",
+    "MT163-C08-X2",
+    "MT163-C20-1",
+    "MT163-C20-X1"
+   ]
+  },
+  {
+   "as_of": "2025-07-17",
+   "view": "The curve steepener will continue and may move faster; long-end stress (30-year JGB, Bund) is visible; the Fed eventually monetises debt.",
+   "reasoning": "Hard-to-hedge inflation and deficits.",
+   "source": "MT163",
+   "claim_ids": [
+    "MT163-C13-2",
+    "MT163-C14-1",
+    "MT163-C15-2"
+   ]
+  },
+  {
+   "as_of": "2025-07-17",
+   "view": "FX vol is the best vol play of the decade, bond vol next; gold calls and short oil puts still work though less of a home run; uranium and copper could see convex moves.",
+   "reasoning": "Currency instability and concentrated supply.",
+   "source": "MT163",
+   "claim_ids": [
+    "MT163-C06-3",
+    "MT163-C05-1",
+    "MT163-C06-2",
+    "MT163-C06-X2"
+   ]
+  },
+  {
+   "as_of": "2025-07-17",
+   "view": "Avoid equity-index vol as a hedge and reduce equities; rotation and a growth-versus-value shift is the equity opportunity; Russell call buying (Druckenmiller) is a positioning squeeze.",
+   "reasoning": "Inflationary regime, positioning, dispersion.",
+   "source": "MT163",
+   "claim_ids": [
+    "MT163-C05-2",
+    "MT163-C16-1",
+    "MT163-C06-X1"
+   ]
+  },
+  {
+   "as_of": "2025-07-17",
+   "view": "Tariff effects on margins and prices are not yet fully visible (Q2 reflects soft tariffs); guidance is the key release. The Powell threat is a narrative tool and a controlled demolition and slowdown may suit the administration before the midterms; treat government data with scepticism.",
+   "reasoning": "Many tariffs rolled back, companies absorb first; incentives of a data-dependent Fed; CPI estimate share.",
+   "source": "MT163",
+   "claim_ids": [
+    "MT163-C09-X1",
+    "MT163-C09-2",
+    "MT163-C12-X1",
+    "MT163-C12-2",
+    "MT163-C11-X2",
+    "MT163-C10-X1"
+   ]
+  },
+  {
+   "as_of": "2025-07-17",
+   "view": "AI-driven unemployment of 10-20% in 1-5 years is likely and happening faster than he expected; UBI is coming; populism and protectionism intensify; resources are the long-run AI beneficiary; China gains as the stable partner; Mag 7 and prime-broker concentration add fragility.",
+   "reasoning": "Graduate unemployment 9%, own hiring experience; power and materials needs; concentration.",
+   "source": "MT163",
+   "claim_ids": [
+    "MT163-C17-X3",
+    "MT163-C17-2",
+    "MT163-C18-X1",
+    "MT163-C18-1",
+    "MT163-C03-1",
+    "MT163-C02-2",
+    "MT163-C03-3"
+   ]
+  },
+  {
+   "as_of": "2025-10-10",
+   "view": "Bullish into year end and about mid-January with volatility rising on the upside; the seasonal rally is 'on steroids' and gets front-run; probable pullback January-February; support into the midterm year.",
+   "reasoning": "Underweight institutions, about $3T year-end buy order, record structured-product compression and charm flows, a Fed takeover in May already expected by markets.",
+   "source": "MT104",
+   "claim_ids": [
+    "MT104-C17-2",
+    "MT104-C16-2",
+    "MT104-C16-3",
+    "MT104-C16-X1",
+    "MT104-C17-1"
+   ]
+  },
+  {
+   "as_of": "2025-10-10",
+   "view": "Long-dated right-tail calls are dramatically underpriced even after a month-long repricing (first inning of a multi-year trade); replace stock with 112-strike calls over the next year or two.",
+   "reasoning": "Debasement, net-short institutions and structured-product flows; a bubble is leptokurtic.",
+   "source": "MT104",
+   "claim_ids": [
+    "MT104-C10-2",
+    "MT104-C10-X2",
+    "MT104-C11-1",
+    "MT104-C11-2"
+   ]
+  },
+  {
+   "as_of": "2025-10-10",
+   "view": "2025 is like 1998-99: a liquidity-driven bubble with a sumo-market stand-off whose resolution releases large potential energy; inflation is the eventual check. Short term the administration controls asset reflation into the midterms, lasting until inflation breaks it.",
+   "reasoning": "Same liquidity push and narrative inputs, bigger risks but bigger counter-forces; short-term incentives and increasing control.",
+   "source": "MT104",
+   "claim_ids": [
+    "MT104-C03-2",
+    "MT104-C04-1",
+    "MT104-C04-X1",
+    "MT104-C08-3",
+    "MT104-C09-3",
+    "MT104-C10-1"
+   ]
+  },
+  {
+   "as_of": "2025-10-10",
+   "view": "Crypto will keep performing but is volatile and could go vertical; gold calls are expensive though volatility is broadly cheap; precious metals and crypto are the debasement hedges; governmental and institutional changes accelerate into the 2026 midterms.",
+   "reasoning": "1968-1982 precedent; ongoing non-correlation flow; markets ignore governance until structural effects arrive.",
+   "source": "MT104",
+   "claim_ids": [
+    "MT104-C12-1",
+    "MT104-C11-3",
+    "MT104-C09-2",
+    "MT104-C01-X1",
+    "MT104-C10-X1"
+   ]
+  },
+  {
+   "as_of": "2025-10-10",
+   "view": "Options access, options ETFs ($20bn to $300bn in three years) and structured products keep growing exponentially, helped by AI (beneficiaries RIAs, brokers, exchanges, market makers, platforms); AI profits accrue to unique data sets (healthcare, e.g. UnitedHealth) and inputs, not AI itself.",
+   "reasoning": "Three-dimensional trading made easy by AI; commoditisation of intelligence; privacy rules lock up healthcare data. He says he is talking his own book.",
+   "source": "MT104",
+   "claim_ids": [
+    "MT104-C15-1",
+    "MT104-C15-X1",
+    "MT104-C13-2",
+    "MT104-C06-2",
+    "MT104-C12-2",
+    "MT104-C13-1",
+    "MT104-C13-X1",
+    "MT104-C14-1"
+   ]
+  },
+  {
+   "as_of": "2025-12-17",
+   "view": "Precious metals, crypto, structured products and hedge funds have all grown massively together over three years; the flow into non-correlated assets is still early and likely to rise if long assets underperform or rates rise (a very interesting decade for trend and non-correlated strategies); their positioning could become the primary driver of underlying assets.",
+   "reasoning": "Only about 20T non-correlated vs 400-500T long assets; rate and valuation pressures; reflexive effects of flows.",
+   "source": "MT134",
+   "claim_ids": [
+    "MT134-C04-5",
+    "MT134-C05-1",
+    "MT134-C05-2",
+    "MT134-C05-3",
+    "MT134-C07-2",
+    "MT134-C07-X1"
+   ]
+  },
+  {
+   "as_of": "2025-12-18",
+   "view": "Equities are fragile and in a bubble (record-low cash, margin and valuations); the desk stays long right-tail vol, with implied vol likely higher into year end.",
+   "reasoning": "Positioning, late-bubble distribution.",
+   "source": "MT031",
+   "claim_ids": [
+    "MT031-C02-2",
+    "MT031-C03-R1",
+    "MT031-C04-1",
+    "MT031-C03-2"
+   ]
+  },
+  {
+   "as_of": "2025-12-18",
+   "view": "Structural inflation is not going away but comes in waves with lulls; long gold, FX and bond vol; long-dated equity vol lower. Structural rise in rates is a high-probability scenario (10-year still below the 60-year average of 5.8%); the steepener has been the best rates trade; 60/40 is dangerous if rates rise.",
+   "reasoning": "1960s-70s analog; 60/40 only worked because rates fell.",
+   "source": "MT031",
+   "claim_ids": [
+    "MT031-C09-3",
+    "MT031-C10-1",
+    "MT031-C13-2",
+    "MT031-C13-4",
+    "MT031-C13-1"
+   ]
+  },
+  {
+   "as_of": "2025-12-18",
+   "view": "The 2026 midterm window (starting around Q3/October 2025) carries elevated risk of a large equity drawdown; flows into non-correlated strategies should continue if rates trend higher.",
+   "reasoning": "Populist-period midterm pattern; exuberance fading and fiscal spending likely to return; investors react only after losses.",
+   "source": "MT031",
+   "claim_ids": [
+    "MT031-C16-X1",
+    "MT031-C16-5",
+    "MT031-C17-1",
+    "MT031-C14-2"
+   ]
+  },
+  {
+   "as_of": "2025-12-18",
+   "view": "Chevron is the major most likely to benefit from Venezuela; Buffett's top holdings are positioned for rising long rates and a steeper curve; geopolitics is turning into hot conflict on several fronts (Russia-Ukraine tanker flows tied to the Venezuela embargo).",
+   "reasoning": "Existing Venezuelan operations; negative-working-capital and transactional models; connections between embargoes and seizures.",
+   "source": "MT031",
+   "claim_ids": [
+    "MT031-C05-3",
+    "MT031-C05-2",
+    "MT031-C01-1"
+   ]
+  },
+  {
+   "as_of": "2025-12",
+   "view": "2026 resembles 2022: the pain trade is stocks down and rates up; implied-vol and VIX hedges could pay; higher rates hurt those holding bonds for diversification.",
+   "reasoning": "Investors own stocks with long-vol bandaids and bonds as diversifier.",
+   "source": "MT221",
+   "claim_ids": [
+    "MT221-C16-3"
+   ]
+  },
+  {
+   "as_of": "2026-07-04",
+   "view": "Large-scale US government equity buying on a trillions scale begins after the November 2026 midterms and before June 2027; the programme is a 10-20 year incremental effort and stakes come with more state say over firm decisions.",
+   "reasoning": "The administration wants markets moving before the 2028 election and it is the only exit from the five pressures.",
+   "source": "MT016",
+   "claim_ids": [
+    "MT016-C08-1",
+    "MT016-C06-2",
+    "MT016-C06-1",
+    "MT016-C07-X2",
+    "MT016-C07-X3"
+   ]
+  },
+  {
+   "as_of": "2026-07-04",
+   "view": "Calendar: choppy but no negative fireworks to about September; a more volatile window from September to early November; weaker after the midterms with flows gone after mid-December and a possible controlled crisis; messy November to June.",
+   "reasoning": "Three-legged stool of flows, macro and the administration; a reset may be allowed before the plan.",
+   "source": "MT016",
+   "claim_ids": [
+    "MT016-C13-2",
+    "MT016-C13-4",
+    "MT016-C14-1",
+    "MT016-C14-2",
+    "MT016-C09-2"
+   ]
+  },
+  {
+   "as_of": "2026-07-04",
+   "view": "The oil-up bet is turning more interesting (the April-May oil spike failed on positioning and macro stabilisation); the Iran deal holds only to the midterms, then renewed oil and commodity volatility November to June.",
+   "reasoning": "Record oil shorts and the dollar-moat motive for continued engagement.",
+   "source": "MT016",
+   "claim_ids": [
+    "MT016-C02-6",
+    "MT016-C14-5",
+    "MT016-C08-4",
+    "MT016-C08-5",
+    "MT016-C14-3"
+   ]
+  },
+  {
+   "as_of": "2026-07-04",
+   "view": "Summer-of-George compression, dispersion and correlation breakdown continue for roughly the next month; fade recent winners.",
+   "reasoning": "Halved volumes and constant structured-product hedging.",
+   "source": "MT016",
+   "claim_ids": [
+    "MT016-C12-3",
+    "MT016-C12-6"
+   ]
+  },
+  {
+   "as_of": "2026-07-04",
+   "view": "Structural inflation persists and accelerates; the US will back-stop the Treasury market and the Fed will back-stop the long end in a crisis.",
+   "reasoning": "Monetisation is the only exit from the debt.",
+   "source": "MT016",
+   "claim_ids": [
+    "MT016-C05-2",
+    "MT016-C06-4",
+    "MT016-C12-1",
+    "MT016-C05-5"
+   ]
+  },
+  {
+   "as_of": "2026-07-04",
+   "view": "Do not bet against the market or the administration in the short to medium term; the US plan is more likely than not to work, though far from guaranteed.",
+   "reasoning": "It is already forcing dollar strength and more control, with incumbent advantages and a more open, more popular system.",
+   "source": "MT016",
+   "claim_ids": [
+    "MT016-C11-1",
+    "MT016-C11-X2",
+    "MT016-C10-3"
+   ]
+  },
+  {
+   "as_of": "2026-07-04",
+   "view": "Right-tail call vol and dispersion pay; long-vol hedges stay frustrating.",
+   "reasoning": "Cheap call vol versus large upside moves.",
+   "source": "MT016",
+   "claim_ids": [
+    "MT016-C04-1",
+    "MT016-C03-6"
+   ]
+  },
+  {
+   "as_of": "2026-07-04",
+   "view": "The US will likely let China buy more passive stakes in US businesses as part of a trade bargain, with the line drawn at influence.",
+   "reasoning": "A concession that costs little if there is no control.",
+   "source": "MT016",
+   "claim_ids": [
+    "MT016-C08-X1"
+   ]
+  }
+ ],
+ "how_views_changed": "Unchanged core: positioning and flow structure drives the path; a populist, inflationary, rising-rate regime like 1964/68-82; equities not an inflation hedge; gold/FX/bond vol and steepeners; non-correlated assets and early-inning flows; election-year pump then retrace; Fed boxed in and political; debt resolved by monetisation. Changed: the market call and its justification. Apr-Aug 2024: pullbacks bought, Fed/Treasury put floors markets, 2024 positive, broad rally to year end with blow-off; 'pin' breaks mid-August earlier than expected, bigger fireworks early 2025. Late Sep-Dec 2024: bullish flows to 13-15 January 2025, S&P 6,000-6,200, hedge mid-January; Trump win seen as inflationary (steepener, gold, vol). Jan 2025: stair-step decline in Q1 and yields higher (he notes the late-December decline and the 10-year hitting 5% about ten days after his call). Mar 2025: Fed forced to QE and equities down 30-40% in 12-18 months. May 2025: ceiling near 5700-6000, slow stagflation, bonds fail. Jul 2025: base case 10-15% grind to September opex or a 1998-style blow-off alternative. Oct 2025: bullish into mid-January, 1998-99 liquidity bubble. Dec 2025: fragile, late bubble, 2026 midterm window risk. Jul 2026: state-managed market, do not bet against it. Reasons given: (a) Oct 2025 - structured-product vol compression, institutions underweight (0th percentile in June, 25th later), the Fed takeover expected, market structure reflexively supports prices (MT104-C04-X1); (b) 2026 - incentives of an administration needing the market and the debt exit; (c) he says paths are conditional and revised when news changes (MT150-C16-X2) and that timing is imprecise (MT132-C09-4). Why the March 2025 30-40% fall did not become the Oct 2025 bullish view is not explicitly explained in the pack ('not explained').",
+ "disagreements": [
+  {
+   "with": "Niels Kaastrup-Larsen (host)",
+   "topic": "Which risk metric to use; is 1960s-70s one sample; could passive flows and vol suppression overwhelm political pressure",
+   "their_position": "Sharpe makes no sense, use Sortino/drawdown area; the analogy is a structural inequality/populism cycle with generational mechanics; political pressures cannot be turned away, though reflexive factors worth thinking about",
+   "other_position": "Sharpe is the professional standard; a statistician would say sample of one; passive investing and reflexive vol suppression could overwhelm the structural political pressures",
+   "sources": [
+    "MT031"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen (host)",
+   "topic": "State equity fund, China's model, Fed execution, Iran after midterms, inevitable-sounding outcomes (2026)",
+   "their_position": "Norway-style stakes lift market and give people ownership; US approach more likely than not to work; Treasury buys back debt then Fed backstops long end; Iran engagement resumes after midterms; positioning beats news",
+   "other_position": "US lacks Norway's mindset and purchases pay selling billionaires; China's model produced a property bust; FOMC needs a majority; another guest expects executive-order governance; markets quickly strip crisis premium",
+   "sources": [
+    "MT016"
+   ]
+  },
+  {
+   "with": "Niels Kaastrup-Larsen (host)",
+   "topic": "Options for non-professionals; debt cancellation by central bank; gold relevance to debt; recession shape; reshoring and inflation; populism vs inflation as driver; government efficiency experiment",
+   "their_position": "Options are the superior technology; BoJ-held debt can be cancelled by an accounting entry; gold less relevant now; mild slow earnings recession with hot inflation, long bond does not hedge; reshoring is inflationary; inflation and rates matter through populism; gutting government in a populist period is contradictory",
+   "other_position": "Options cut both ways for non-pros; asks what cancelling means; floats revaluing gold; consensus deep disinflationary recession; automation/immigration change the picture; asks whether populism or inflation drives returns; interested in Musk/Ramaswamy efficiency experiment",
+   "sources": [
+    "MT076",
+    "MT126",
+    "MT150",
+    "MT132"
+   ]
+  },
+  {
+   "with": "Nick Baltas",
+   "topic": "Crowding concern in trend following",
+   "their_position": "Compression builds potential energy; dealer positioning correlates with trend",
+   "other_position": "Crowding concern is overstated and unsupported",
+   "sources": [
+    "MT002"
+   ]
+  },
+  {
+   "with": "Alan Dunne",
+   "topic": "How close 2025 is to 1998-99; Fed independence",
+   "their_position": "Same bubble inputs (liquidity push, narrative); larger risks but also larger government control and toolset; managing liquidity manages the market; loss of independence = short-term reflation then inflation",
+   "other_position": "Parallels but a deficit, tariffs and weaker productivity are differences; independence delivered the Great Moderation whose success now leads people to give it up",
+   "sources": [
+    "MT104"
+   ]
+  },
+  {
+   "with": "Rob Carver, Alan Dunne, Nick Baltas (panel)",
+   "topic": "How reliable is the new non-correlation",
+   "their_position": "Non-correlated flows are a durable early-stage supply-demand story",
+   "other_position": "Recent non-correlation of crypto/gold may not hold in a shock; liquidity-driven assets may not provide convexity; allocators with the same objective cut risk together, creating correlation",
+   "sources": [
+    "MT134"
+   ]
+  },
+  {
+   "with": "Paul Tudor Jones (as relayed by Niels)",
+   "topic": "Ideal portfolio and how US debt is resolved",
+   "their_position": "Agrees on the steepener and deficit drag but not on equities; gold and Bitcoin carry 50-75% drawdown risk, prefer 30-50% non-correlated strategies; Fed monetises debt rather than forced fiscal stabilisation",
+   "other_position": "Gold, Bitcoin and equities on a vol-adjusted basis; markets will force stabilisation of debt-to-GDP",
+   "sources": [
+    "MT163"
+   ]
+  },
+  {
+   "with": "Consensus / endowment professionals (as reported by him)",
+   "topic": "Equities as inflation hedge; decline path and bond hedge; Trump on China",
+   "their_position": "Equities are not an inflation hedge; decline likely a slow low-vol grind where puts fail and the long bond does not rally; Trump may do a China deal (30-40% vs market about 2%)",
+   "other_position": "Equities hedge inflation and crowd into PE/VC; coming decline means puts and a V bottom, deep recession with bond rally; Trump tough on China",
+   "sources": [
+    "MT227",
+    "MT150",
+    "MT163"
+   ]
+  },
+  {
+   "with": "Andrew Beer, Yoav Git, Nick Baltas (panel)",
+   "topic": "When a trend manager should change the model; what multi-strat and 'alternatives' are",
+   "their_position": "Move from backtest optimisation to forward distribution views; multi-strat success is capital efficiency of derivatives (free leverage), not magic; only non-correlated derivative strategies are real alternatives (PE, VC, real estate are beta)",
+   "other_position": "Beer: almost never change; Git: change only if market properties change; Baltas: very high bar; Beer: new business model; Rzepczynski: convergence strategies; Baltas: 'alternative' is a tag; Dunne: demand for steady 8% conflicts",
+   "sources": [
+    "MT221",
+    "MT155"
+   ]
+  },
+  {
+   "with": "Alan (host, sitting in for Niels)",
+   "topic": "Chinese stimulus and cyclical vs structural inflation",
+   "their_position": "Time a whatever-it-takes stimulus with positive flows as a tactical call trade; secular inflation returns while cyclical falls, cuts steepen the curve",
+   "other_position": "Stimulus is liquidity for the equity market not fundamentals; core PCE stuck near 2.7% and the Fed's labour-market pivot is read cyclically",
+   "sources": [
+    "MT206"
+   ]
+  }
+ ],
+ "internal_tensions": [
+  {
+   "issue": "Fed/Treasury put under markets (2024 'floor', 'will not withdraw liquidity') versus Mar 2025 'Fed may not deliver QE fast, equities down 30-40%' versus Oct 2025 bullish liquidity bubble with the administration able to reflate; and in Dec 2024 'the Fed put is less reliable so volatility rises' alongside 2024 claims of a reliable floor.",
+   "claim_ids": [
+    "MT076-C09-2",
+    "MT076-C14-3",
+    "MT132-C14-2",
+    "MT126-C05-X3",
+    "MT126-C08-3",
+    "MT104-C09-3",
+    "MT104-C16-2"
+   ]
+  },
+  {
+   "issue": "Bearish structural calls repeatedly collide with bullish flow windows: a 'late bubble, start long vol' stance in April 2024, 'bigger fireworks early 2025', stair-step decline Q1 2025, 30-40% fall in 12-18 months (Mar 2025), 10-15% grind to Sept 2025, but bullish into mid-January 2026 (Oct 2025) and 'late bubble' still in Dec 2025; he says warning signs play out later than expected.",
+   "claim_ids": [
+    "MT076-C04-2",
+    "MT183-C10-X1",
+    "MT227-C06-X1",
+    "MT126-C08-3",
+    "MT163-C21-1",
+    "MT104-C17-2",
+    "MT031-C03-R1",
+    "MT206-C17-2"
+   ]
+  },
+  {
+   "issue": "Cash and institutional positioning cut both ways: record-low cash (<3%) and record margin leave little buying power (fragile) vs institutions underweight/net short, so forced buying supports the market and it cannot fall until shorts cover.",
+   "claim_ids": [
+    "MT031-C02-1",
+    "MT031-C02-2",
+    "MT104-C04-3",
+    "MT104-C16-3",
+    "MT163-C20-1",
+    "MT163-C20-X1"
+   ]
+  },
+  {
+   "issue": "How he hedges: Aug 2024 'skew very low so tail protection cheap, hedge'; Jul 2025 'do not buy puts in advance, slow grind makes hedges fail, avoid index vol'; Jan 2025 'long vol preferred'; Jul 2026 'long-vol hedges are frustrating, prefer right-tail call vol'; Oct 2025 calls instead of stock. Expressions change with the expected path.",
+   "claim_ids": [
+    "MT202-C16-R1",
+    "MT163-C20-3",
+    "MT227-C06-4",
+    "MT016-C03-6",
+    "MT104-C11-1"
+   ]
+  },
+  {
+   "issue": "Gold: long-dated gold calls cheap and a ten-year position (2024), best asset in the regime; but Jul 2025 avoid concentrated gold/Bitcoin because of 50-75% drawdowns and Oct 2025 gold calls expensive; Bitcoin viewed as supported short-term but capped long-term; gold view relative to oil changes from 'oil vol high / gold low' (Mar 2025) to 'oil supported by supply/OPEC' (Aug 2024) to oil-short on policy lever (May 2025).",
+   "claim_ids": [
+    "MT183-C16-2",
+    "MT163-C16-X1",
+    "MT163-C05-1",
+    "MT104-C12-1",
+    "MT132-C16-1",
+    "MT126-C16-1",
+    "MT150-C11-1",
+    "MT202-C13-1"
+   ]
+  },
+  {
+   "issue": "Mean reversion and valuation: mean reversion of neglected markets works 85-90% of the time and valuation is a risk gauge; yet 'valuation has zero predictive value under 10 years'; and in 2026 a state-managed market is 'probably not natural' so valuation reversion is less reliable.",
+   "claim_ids": [
+    "MT206-C06-2",
+    "MT104-C02-1",
+    "MT016-C11-1"
+   ]
+  },
+  {
+   "issue": "Collateral and wealth-effect arithmetic uses different bases: $300T +25% = $75T (Jul 2024); $200T and a 10% fall = $20T (Aug 2024); $250T +20% = $50T (Sep 2024); $500T +20% = $100T (Oct 2025); about $50T for 20% (Jul 2026); and the 'floats' multiple is inconsistent (20x vs 50x).",
+   "claim_ids": [
+    "MT183-C08-1",
+    "MT202-C11-2",
+    "MT206-C03-1",
+    "MT206-C04-1",
+    "MT104-C07-1",
+    "MT016-C02-4"
+   ]
+  },
+  {
+   "issue": "Taiwan risk: roughly coin-flip odds in 2-3 years (second-hand, Jul 2024); about 50% within four years (Sep 2024); a risk window around Q4 2025 (Mar 2025); and Jul 2024 Nvidia/Taiwan 30% downturn. The probability and timing drift while the fear is called 'markets get bored of tail risks though probability has not changed'.",
+   "claim_ids": [
+    "MT183-C05-2",
+    "MT206-C13-2",
+    "MT126-C12-3",
+    "MT183-C05-X2"
+   ]
+  },
+  {
+   "issue": "Rates: Mar 2025 the administration's demand cuts aim to lower the 10-year and path one has the 10-year keep falling; he elsewhere expects the 10-year to rise to 5%/6.5% with a steepener, 'bonds fail as a hedge'; in May 2025 he notes the 10-year did not fall and the Fed did not respond.",
+   "claim_ids": [
+    "MT126-C04-1",
+    "MT126-C07-4",
+    "MT227-C01-2",
+    "MT150-C06-2",
+    "MT150-C04-3"
+   ]
+  },
+  {
+   "issue": "Sharpe figures: stocks and 60/40 each about 0.35 over 125 years (no bond benefit) versus 0.62 for 60/40 vs 0.52 for stocks over 40 years, and 0.35 vs 0.37; also 'zero real return in 60 of 82 years'. Different horizons, all recited from memory.",
+   "claim_ids": [
+    "MT031-C12-2",
+    "MT031-C12-5",
+    "MT031-C12-6",
+    "MT031-C12-7",
+    "MT221-C04-1"
+   ]
+  },
+  {
+   "issue": "Election-year statistics: +21.5% (average of five years), about 21%/22% and 100% win rate, vs a hand-classified 4-6 election sample and a midterm pattern he says was seen after looking at the remaining years; he also says a theory-first approach.",
+   "claim_ids": [
+    "MT031-C15-5",
+    "MT206-C16-2",
+    "MT206-C16-X2",
+    "MT227-C07-5",
+    "MT031-C16-X2",
+    "MT031-C16-4"
+   ]
+  },
+  {
+   "issue": "Administration and Fed: Jul 2025 the administration may prefer a credible threat to firing Powell and 'controlled demolition' before midterms; Jul 2026 Warsh as good cop with the appearance of independence, Bessent the bad cop; while Mar 2025 'new administration is deliberate, reads Bessent as the plan' and May 2025 the supply-side faction is out.",
+   "claim_ids": [
+    "MT163-C12-1",
+    "MT163-C12-2",
+    "MT016-C11-3",
+    "MT126-C05-4",
+    "MT150-C06-X2"
+   ]
+  }
+ ],
+ "testable_hypotheses": [
+  {
+   "hypothesis": "Persistent delta-based 2-4 month S&P skew (relative to short-dated skew) precedes multi-month equity declines; the CBOE SKEW index does not.",
+   "data_needed": "Option surface history (OptionMetrics/Cboe), forward S&P returns, event study",
+   "claim_ids": [
+    "MT227-C03-4",
+    "MT227-C04-2",
+    "MT227-C04-4"
+   ]
+  },
+  {
+   "hypothesis": "From mid-December to mid-January is the strongest four-week S&P window, especially after a >20% year and institutional underweight, with weakness after about 13-15 January (January/February opex); conditional on opex dates and holiday volume.",
+   "data_needed": "S&P 1900-present daily returns, opex calendar, volume, institutional equity-allocation percentiles",
+   "claim_ids": [
+    "MT206-C04-2",
+    "MT206-C05-4",
+    "MT104-C16-2",
+    "MT132-C11-1"
+   ]
+  },
+  {
+   "hypothesis": "S&P returns are weak from February opex to March opex (COVID, 2025, 2022) and June is less bad than March; 'sell in May' is the same flows; opex Fridays and following Mondays are strong about 95% of the time.",
+   "data_needed": "Daily S&P, opex dates, conditioning on prior year-end gain",
+   "claim_ids": [
+    "MT150-C17-3",
+    "MT150-C17-4",
+    "MT227-C06-2",
+    "MT126-C08-R1"
+   ]
+  },
+  {
+   "hypothesis": "Populist-regime presidential election years average about +21.5% (all five 1962-82 up double digits) versus about 5% otherwise; midterm years in populist periods draw down up to 42% from about 15 months earlier; back-to-back strong years predict negative next-year return. Needs a pre-registered regime classification.",
+   "data_needed": "S&P annual data from 1928, an ex-ante populism indicator (inequality, generational voting, inflation regime), election dates",
+   "claim_ids": [
+    "MT031-C15-5",
+    "MT031-C16-1",
+    "MT031-C16-5",
+    "MT206-C16-2",
+    "MT227-C07-2",
+    "MT227-C07-5"
+   ]
+  },
+  {
+   "hypothesis": "Structured-product / vol-selling issuance growth lowers index realised vol and implied correlation, raises dispersion (constituent vol about 4x index vol), and long compression periods precede larger vol expansions (2017 then Feb 2018).",
+   "data_needed": "Structured-product issuance, index vol, implied and realised correlation, dispersion indices, S&P history",
+   "claim_ids": [
+    "MT183-C02-1",
+    "MT132-C04-1",
+    "MT002-C04-3",
+    "MT202-C04-2",
+    "MT016-C12-3"
+   ]
+  },
+  {
+   "hypothesis": "A rolling-over momentum-minus-value spread while index vol is compressed and hedge-fund gross is high leads equities lower over the following weeks; in summer, doing the opposite of recent winners pays for about a month.",
+   "data_needed": "Daily factor returns (MOM, HML), hedge-fund gross leverage and 13F/prime-broker data, VIX/dispersion",
+   "claim_ids": [
+    "MT163-C08-2",
+    "MT163-C06-1",
+    "MT016-C12-6"
+   ]
+  },
+  {
+   "hypothesis": "When yields rise secularly, equity P/E and margins compress and nominal equity returns are flat to negative even with above-trend GDP; stock-bond correlation turns positive and 60/40 loses. Condition on rising 10-year yields below and above 5.8%.",
+   "data_needed": "Shiller CAPE/earnings yield, 10-year yields, corporate margins, stock-bond correlation, 1900-present",
+   "claim_ids": [
+    "MT227-C09-1",
+    "MT227-C09-2",
+    "MT227-C09-3",
+    "MT163-C16-1",
+    "MT031-C13-1",
+    "MT031-C13-2"
+   ]
+  },
+  {
+   "hypothesis": "In an inflationary regime, rate cuts steepen the curve (front falls, long end rises); a 2s10s or 5s30s steepener earns positive carry and outperforms outright duration.",
+   "data_needed": "Yield curve, Fed cut dates, 1960s-70s and 2024-25 episodes, carry-and-roll returns",
+   "claim_ids": [
+    "MT206-C10-5",
+    "MT206-C08-X1",
+    "MT031-C13-4"
+   ]
+  },
+  {
+   "hypothesis": "Long-dated gold calls (implied vol low vs realised) funded by selling OTM oil puts earn positive risk-adjusted returns in inflationary regimes; gold has the highest realised vol of assets in 1968-82.",
+   "data_needed": "Gold and crude option surfaces and realised vol, 1970s asset returns, backtest of the gold-call/oil-put structure after costs",
+   "claim_ids": [
+    "MT031-C09-2",
+    "MT031-C09-4",
+    "MT126-C16-1",
+    "MT132-C15-1"
+   ]
+  },
+  {
+   "hypothesis": "In late bubbles (1998-2002 and now) 25-delta calls 3+ months out beat the stock after premium, and market-up/vol-up for a year has not occurred since 2001 before breaking.",
+   "data_needed": "Option histories, S&P/VIX 1998-2002 and 2023-26, call-replacement return simulation",
+   "claim_ids": [
+    "MT031-C03-5",
+    "MT104-C11-1",
+    "MT104-C10-2"
+   ]
+  },
+  {
+   "hypothesis": "Neglected markets after 3-5 years of underperformance mean-revert in 85-90% of cases, except in jurisdictions with weak rule of law.",
+   "data_needed": "Country/market index history, drawdown and rebound frequency, rule-of-law scores",
+   "claim_ids": [
+    "MT206-C06-2",
+    "MT206-C07-1"
+   ]
+  },
+  {
+   "hypothesis": "Record crowded positioning predicts reversal: record oil shorts precede oil rallies; crowded longs raise odds of a fall; when everyone positions for the 'inevitable' outcome the opposite occurs more often than chance.",
+   "data_needed": "CFTC positioning, fund surveys, forward returns by percentile; expert forecast surveys",
+   "claim_ids": [
+    "MT016-C02-2",
+    "MT016-C02-3",
+    "MT016-C02-6",
+    "MT016-C14-5"
+   ]
+  },
+  {
+   "hypothesis": "When oil falls toward about $40 producers are forced to cut, and buying oil/oil equities after a policy- or liquidity-driven drop pays over 9-15 months.",
+   "data_needed": "Oil and OPEC history, drawdown-conditioned 12-month forward returns, break-even costs",
+   "claim_ids": [
+    "MT150-C11-2",
+    "MT150-C12-2",
+    "MT150-C12-3"
+   ]
+  },
+  {
+   "hypothesis": "A date-stamped scoring of his explicit calls is possible: S&P 6,000-6,200 by end-2024 and hedge window 13-15 January 2025 (MT132); stair-step decline into March opex 2025 and 10-year 5%/6.5% (MT227); equities -30-40% over 12-18 months from March 2025 (MT126); S&P ceiling 5700-6000 (MT150); 10-15% decline to about 5700 by September 2025 opex or blow-off (MT163); bullish to mid-January 2026 (MT104); government equity buying after the November 2026 midterms to mid-2027 (MT016).",
+   "data_needed": "S&P 500, 10-year, oil, gold, option history over the stated windows; a pre-set scoring rule for hits and partial hits",
+   "claim_ids": [
+    "MT132-C09-5",
+    "MT227-C06-1",
+    "MT227-C01-2",
+    "MT126-C08-3",
+    "MT150-C16-4",
+    "MT163-C21-1",
+    "MT104-C16-2",
+    "MT016-C08-1"
+   ]
+  },
+  {
+   "hypothesis": "Delta-hedging flows explain at best about 40% of daily direction but more of the implied-vol path; predicted vol-path (compression vs expansion) beats direction forecasts.",
+   "data_needed": "Dealer gamma/vanna/charm estimates (SpotGamma-type), realised and implied vol changes, regression",
+   "claim_ids": [
+    "MT031-C08-3",
+    "MT031-C08-2",
+    "MT031-C08-4"
+   ]
+  },
+  {
+   "hypothesis": "Graduate unemployment (about 9% vs 4% overall) leads aggregate unemployment because firms stop hiring before they fire; AI explains part.",
+   "data_needed": "BLS/NY Fed graduate unemployment series, hiring data by major, aggregate unemployment lead-lag",
+   "claim_ids": [
+    "MT163-C17-2",
+    "MT163-C18-X1"
+   ]
+  },
+  {
+   "hypothesis": "Wealth-effect: a 10% equity fall reduces credit/money supply and causes Fed easing within weeks; equity falls with the Fed reacting (late 2018, Dec 2023) are shorter than falls without.",
+   "data_needed": "Equity collateral estimates, M2/credit growth, Fed reaction dates",
+   "claim_ids": [
+    "MT202-C11-2",
+    "MT202-C12-1",
+    "MT202-C12-X1"
+   ]
+  },
+  {
+   "hypothesis": "Government-stake announcements and state support lift targeted equities and the broad market (Intel +40% after the 10% stake); after the 2026 midterms large-scale government equity buying begins and valuation-based mean reversion weakens.",
+   "data_needed": "Event study of US government equity-stake announcements; Treasury/Fed purchase disclosures after November 2026",
+   "claim_ids": [
+    "MT016-C06-1",
+    "MT016-C06-2",
+    "MT016-C08-1",
+    "MT016-C11-1"
+   ]
+  }
+ ],
+ "blind_spots": [
+  "(reader) No track record or hit-rate statistics are shown for the many dated calls; no sample sizes or significance tests for seasonal, election-year or opex claims; data are recited from memory.",
+  "(reader) No explicit position sizes, stop-losses or risk budgets; sizing appears only as '30-50% non-correlated' and '10x as much as you can' for the hedge; the cost of option carry and its drag are not quantified.",
+  "(reader) The framework is hard to falsify: paths are conditional, windows wide (e.g. 'no later than shortly after June OpEx'), and misses are explained by early/late timing or by the publicised pattern being front-run.",
+  "(reader) The 1964-82 analogy is a single regime, justified by an inequality/generational mechanism but never tested out of sample; he does not address how fiscal dominance and the 2020s differ in structure (e.g. central bank independence tools, passive flows) beyond brief concession.",
+  "(reader) Motive attribution about the administration, the Fed and China (controlled demolition, protection racket, shadow Fed chair) is speculative and admitted as such in places; the state-equity-fund thesis has no quantification of size, timing or inflation cost.",
+  "(reader) Rarely addresses capacity, liquidity and crowding of his own structures (long-dated calls, steepeners, vol dispersion) or that the flow edge decays as it becomes widely known (he concedes this only for publicised calendar patterns).",
+  "(reader) Fundamental stock-level drivers (earnings, balance sheets) appear only as examples; sector/stock selection is rarely systematic, and he does not say how bottom-up picks (UnitedHealth, Chevron, BNP) fit the flow framework.",
+  "(reader) Never reconciles the bullish flow calls with the bearish structural thesis into one expected-return statement; the market-level conclusion switches by horizon."
+ ],
+ "reader_inferences": [
+  "(reader) Identity: captions render the name as Jim Kasang, Jim Carson, Jim, Cham/Chem, Jem; the project ledger treats them as Cem Karsan. MT016 (ledger-identified), MT031 and MT076 are the strongest attributions. MT183 and MT202 are labelled 'probably Cem Karsan' (inferred from content); MT104 (Jem) and MT163 (surname garbled) rely on host intro/content; MT002 vol claims are marked unidentified volatility specialist; MT134 (allocator at Kai Wealth), MT221 (panel; ledger C03 attributions removed) and MT155 and MT227 (systematic investor at Kai) are attributed by caption and voice. Treat views from MT002, MT104, MT134, MT155, MT183, MT202 and MT221 as moderately certain.",
+  "(reader) Two-layer method: a structural macro layer (populism, inflation, rates, debt, monetisation) sets the multi-year distribution and which vol to own; a flow/calendar layer (dealer positioning, expiries, year-end) times the path. The bullish-near-term / bearish-structural split recurs and may be the stable identity of the approach.",
+  "(reader) Recurring calendar of calls: flow windows to about mid-January (Dec 2024, Oct 2025), summer compression (2024, 2025, 2026), Feb-March opex weakness (2025 call), September opex pain (2025), the November 2026 midterms; these make the views testable with ordinary price data.",
+  "(reader) He treats volatility as a distribution rather than a bearish/long trade; so the same person can be bullish equities and long vol (calls). A hypothesis-testing system should therefore test option payoffs (calls, call vol, dispersion, calendar, gold calls vs oil puts) not just index direction.",
+  "(reader) Strategy candidates from this pack: (1) calendar-flow overlay (late-Oct to mid-Jan long bias, Feb-March opex caution); (2) long-dated OTM call replacement of stock; (3) steepener in rising-rate populist regime; (4) gold calls funded by oil puts; (5) positioning-contrarian signals (record shorts); (6) vol-supply/dispersion indicators (momentum-minus-value spread, correlation) for fade-the-winners; (7) populist election-year/midterm pattern.",
+  "(reader) Differs from trend-following panelists: he explicitly argues direction is not forecastable and chooses instruments by distribution, which is closest to a convexity/relative-value view; the one place he sides with the trend panel is non-correlation and long-vol/trend as true diversifiers (MT221, MT150, MT031).",
+  "(reader) Sources from other appearances in which he is not the sole speaker (MT002, MT134, MT155, MT221) contain few of his own detailed arguments; the richest sources are MT016, MT031, MT076, MT104, MT126, MT132, MT150, MT163, MT183, MT202, MT206, MT227."
+ ]
+}

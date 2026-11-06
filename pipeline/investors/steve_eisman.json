@@ -1,0 +1,472 @@
+{
+ "name": "Steve Eisman",
+ "sources": [
+  "MT004",
+  "MT102",
+  "MT161",
+  "MT172"
+ ],
+ "period": "2026-04-20 - 2026-10-05",
+ "one_paragraph": "Steve Eisman appears only as host of The Real Eisman Playbook (April to October 2026), so his own views are thin and mostly come in questions, summaries and closing remarks; he defers to guests on Fed mechanics, seasonality and ETF flows. Across the four episodes he reads the market top-down through a few drivers: oil and the 10-year Treasury yield move daily equities; the economy eventually slows at some (unknown) long rate and the market is 'getting closer to the Rubicon'; QE inflated asset prices without helping the real economy; Treasury's 6 billion dollar buyback was a BB gun and Bessent lost credibility. He worries about concentration (US equities are effectively one AI-hardware theme, tech near 40% of the S&P, with nowhere to hide if it reverses), about AI-ecosystem fragility (about 70% of hyperscaler revenue from OpenAI and Anthropic, both with negative cash flow; Meta's costs outrunning revenue), and about a private-credit-led credit-cycle tightening. He is sceptical of Bitcoin and DeFi, accepts calendar patterns because humans program algorithms, and in the closing takeaway formats asks what threshold would change the bullish stance. He gives no explicit portfolio rules; his first-hand evidence is fund-manager experience and his reading of company numbers.",
+ "fingerprint": [
+  {
+   "tag": "macro_fundamental_topdown",
+   "count": 3
+  },
+  {
+   "tag": "bottom_up_fundamental",
+   "count": 3
+  },
+  {
+   "tag": "structural_themes",
+   "count": 3
+  },
+  {
+   "tag": "valuation_contrarian",
+   "count": 2
+  },
+  {
+   "tag": "policy_reaction_central_banks",
+   "count": 1
+  },
+  {
+   "tag": "market_internals_leading",
+   "count": 1
+  },
+  {
+   "tag": "liquidity_flows",
+   "count": 1
+  },
+  {
+   "tag": "behavioral_sentiment",
+   "count": 1
+  },
+  {
+   "tag": "geopolitics",
+   "count": 1
+  },
+  {
+   "tag": "positioning_crowding",
+   "count": 1
+  },
+  {
+   "tag": "diversification_risk_parity",
+   "count": 1
+  }
+ ],
+ "core_beliefs": [
+  {
+   "belief": "Daily equity market moves are driven by oil prices and the 10-year yield; at some long-term rate the economy slows, the market is 'getting closer to the Rubicon', but he does not know where the rate is. Earlier (August) he relays that the bar for an equity-ending bond yield is higher than the 4.5% 10-year of 2023-25 and the strategists are bullish unless the 10-year rises significantly or the AI story breaks.",
+   "times_stated": 3,
+   "sources": [
+    "MT004",
+    "MT161"
+   ],
+   "claim_ids": [
+    "MT004-C12-2",
+    "MT004-C12-R1",
+    "MT004-C03-5",
+    "MT161-C13-2",
+    "MT161-C13-X1"
+   ],
+   "stable": "evolved - August 2026 summary is conditionally bullish (10-year about 4.5%); October 2026, with the 10-year at about 5.25% and a failed buyback, he talks of the Rubicon. No explicit reason given beyond the move in yields."
+  },
+  {
+   "belief": "QE inflated asset prices without helping the real economy (offered as personal opinion, debatable).",
+   "times_stated": 1,
+   "sources": [
+    "MT004"
+   ],
+   "claim_ids": [
+    "MT004-C02-3"
+   ],
+   "stable": "stable (single appearance)."
+  },
+  {
+   "belief": "Treasury's 6 billion dollar buyback was too small against the market (a BB gun), failed, and Bessent lost credibility; a real tool might be looser bank liquidity rules (LCR) so big banks hold more Treasuries.",
+   "times_stated": 1,
+   "sources": [
+    "MT004"
+   ],
+   "claim_ids": [
+    "MT004-C07-R1",
+    "MT004-C12-R2",
+    "MT004-C08-R1",
+    "MT004-C08-1",
+    "MT004-C03-5"
+   ],
+   "stable": "stable (single appearance); the LCR idea is his own untested theory ('hasn't happened yet')."
+  },
+  {
+   "belief": "US equities are effectively one AI-hardware theme: tech is near 40% of the S&P (over 50% including Alphabet and Amazon), Nvidia is about twice the whole consumer staples sector, flows are one-sided, and Meta, Oracle, Microsoft and Amazon look weak because of software exposure to AI and AI capital intensity while the best tech groups (semis, equipment, power such as GEV) are not exposed. If the theme reverses there is no place to hide.",
+   "times_stated": 1,
+   "sources": [
+    "MT172"
+   ],
+   "claim_ids": [
+    "MT172-C13-2",
+    "MT172-C11-X2",
+    "MT172-C13-X1"
+   ],
+   "stable": "stable (single appearance); he does not predict a reversal."
+  },
+  {
+   "belief": "The AI ecosystem is financially fragile: about 70% of AI hyperscaler revenue comes from OpenAI and Anthropic, both negative cash flow; Meta's expenses (+55%) are growing far faster than revenue (+28%) and rising depreciation (from $4bn to $6bn, heading to $12bn) will weigh on earnings; leveraged thematic hedge funds can fail even in quiet markets (VIX under 20, 15-20 bp rise in long yields, Situational Awareness).",
+   "times_stated": 1,
+   "sources": [
+    "MT161"
+   ],
+   "claim_ids": [
+    "MT161-C07-5",
+    "MT161-C08-4",
+    "MT161-C01-2"
+   ],
+   "stable": "stable (single appearance); the 70% figure comes from a report he read."
+  },
+  {
+   "belief": "A credit cycle is starting: nearly all post-GFC US loan growth was in private credit, so tightening could slow the economy and risk recession even though banks are not at risk.",
+   "times_stated": 1,
+   "sources": [
+    "MT102"
+   ],
+   "claim_ids": [
+    "MT102-C13-1"
+   ],
+   "stable": "stable (single appearance); Hirsch disagrees."
+  },
+  {
+   "belief": "Stock trading has patterns because people buy stocks and humans program the algorithms; window dressing (institutions selling embarrassing losers before quarter-end reports) adds to September/October weakness.",
+   "times_stated": 1,
+   "sources": [
+    "MT102"
+   ],
+   "claim_ids": [
+    "MT102-C14-1",
+    "MT102-C05-2"
+   ],
+   "stable": "stable (single appearance); based on fund-manager experience and on accepting Hirsch's book."
+  },
+  {
+   "belief": "Bitcoin acts opposite to its thesis (a levered Nasdaq with an unclear closing price and no recourse on theft) and speculative demand is migrating to prediction markets; DeFi failed to displace card networks because rebuilding a network like Visa's is prohibitive.",
+   "times_stated": 1,
+   "sources": [
+    "MT102"
+   ],
+   "claim_ids": [
+    "MT102-C10-2",
+    "MT102-C09-X9",
+    "MT102-C10-X10"
+   ],
+   "stable": "stable (single appearance); relies on an anecdote and George Noble's remark."
+  },
+  {
+   "belief": "Europe's cheap valuations reflect an absence of growth dynamism (German GDP flat for four to five years); 2026 leadership has flipped (last year's losers do well, winners poorly, partly because of the war); oil may be in oversupply (China withdrawal, bypass pipelines) but this is reported from a guest.",
+   "times_stated": 3,
+   "sources": [
+    "MT161",
+    "MT102"
+   ],
+   "claim_ids": [
+    "MT161-C11-X2",
+    "MT102-C07-X5",
+    "MT161-C05-4"
+   ],
+   "stable": "stable."
+  }
+ ],
+ "mechanisms": [
+  {
+   "name": "Possible bazooka for Treasury demand via bank liquidity rules",
+   "chain": [
+    "loosen the LCR so big banks need to hold less liquidity -> banks buy more Treasuries -> demand for Treasuries (a bazooka Treasury lacks on its own)"
+   ],
+   "fails_when": "Guha notes banks may prefer bills to long bonds.",
+   "sources": [
+    "MT004"
+   ],
+   "claim_ids": [
+    "MT004-C08-R1",
+    "MT004-C08-1"
+   ]
+  },
+  {
+   "name": "Private credit tightening and the economy",
+   "chain": [
+    "post-GFC loan growth concentrated in private credit -> credit cycle tightening (a few bad players may blow up) -> credit supply shrinks outside the banks -> slower economy, possible recession, banks not at risk"
+   ],
+   "fails_when": "Not stated (Hirsch: it resembles the 2023 regional-bank scare with no market damage).",
+   "sources": [
+    "MT102"
+   ],
+   "claim_ids": [
+    "MT102-C13-1",
+    "MT102-C13-X15"
+   ]
+  },
+  {
+   "name": "Concentration and no place to hide",
+   "chain": [
+    "one AI-hardware theme dominates -> index and flows concentrated in it -> on reversal, index, growth and factor funds all hold the same exposure so there is no diversification inside the index"
+   ],
+   "fails_when": "He does not predict a reversal.",
+   "sources": [
+    "MT172"
+   ],
+   "claim_ids": [
+    "MT172-C13-X1",
+    "MT172-C13-2"
+   ]
+  }
+ ],
+ "playbook": [
+  {
+   "element": "research",
+   "rule": "In closing segments distil the guests' view into a bottom line: which threshold or event would change the bullish stance (10-year significantly higher, or the AI story breaking).",
+   "why": "Closing takeaway format for the show.",
+   "sources": [
+    "MT161"
+   ],
+   "claim_ids": [
+    "MT161-C13-2",
+    "MT161-C13-X1"
+   ]
+  },
+  {
+   "element": "other",
+   "rule": "Treat oil and the 10-year as the daily drivers of the equity market.",
+   "why": "Observation of daily market behaviour.",
+   "sources": [
+    "MT004"
+   ],
+   "claim_ids": [
+    "MT004-C12-2"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Do not rely on leveraged thematic positioning in a concentrated theme; a modest rise in long yields can break such funds even when the VIX is under 20, and an index reversal in the one dominant theme leaves no place to hide.",
+   "why": "Situational Awareness blow-up; weights and flows discussed in the Sohn episode.",
+   "sources": [
+    "MT161",
+    "MT172"
+   ],
+   "claim_ids": [
+    "MT161-C01-2",
+    "MT172-C13-2"
+   ]
+  }
+ ],
+ "evidence_style": "Fund-manager experience, personal anecdotes (a Bitcoin theft), his own reading of company numbers and a report on AI revenue concentration, market observation, and summaries of guests (Guha, Hirsch, Trennert/Verrone, Sohn); defers to guests on Fed mechanics, seasonality and ETF flows and flags when a claim is attributed to a guest.",
+ "views_timeline": [
+  {
+   "as_of": "2026-04-20",
+   "view": "A credit cycle is starting and tightening will slow the economy as private credit dominates new lending; 2026 leadership has flipped (last year's losers do well, winners poorly, partly because of the war); Bitcoin has lost speculative demand to prediction markets and has weak fundamentals as a hedge.",
+   "reasoning": "Almost all post-GFC loan growth was private credit; observation of this year's markets; George Noble's remark and his own critique.",
+   "source": "MT102",
+   "claim_ids": [
+    "MT102-C13-1",
+    "MT102-C07-X5",
+    "MT102-C09-X9",
+    "MT102-C10-2"
+   ]
+  },
+  {
+   "as_of": "2026-06 (recorded about 15 June; uploaded 2026-06-29)",
+   "view": "If the AI hardware theme reverses there is no place to hide.",
+   "reasoning": "Concentration of index and flows.",
+   "source": "MT172",
+   "claim_ids": [
+    "MT172-C13-2",
+    "MT172-C13-X1"
+   ]
+  },
+  {
+   "as_of": "2026-08 (early August)",
+   "view": "The economy is quite strong and the strategists are bullish for the rest of the year unless the 10-year goes significantly higher or the AI story falls apart; Meta's cost growth and rising depreciation will pressure earnings; the AI ecosystem depends on OpenAI and Anthropic revenue.",
+   "reasoning": "The 4.5% 10-year did not hurt stocks; 28% revenue growth versus 55% expense growth; 70% revenue concentration.",
+   "source": "MT161",
+   "claim_ids": [
+    "MT161-C13-2",
+    "MT161-C13-X1",
+    "MT161-C08-4",
+    "MT161-C07-5"
+   ]
+  },
+  {
+   "as_of": "2026-10-05",
+   "view": "Yields have marched higher (10-year from about 4.5% to well over 5%), the Bessent buyback failed and he has lost credibility; the economy slows at some unknown long-term rate that may be near.",
+   "reasoning": "Yield rise and the observation that markets move with oil and the 10-year.",
+   "source": "MT004",
+   "claim_ids": [
+    "MT004-C03-5",
+    "MT004-C12-R2",
+    "MT004-C12-R1",
+    "MT004-C12-2"
+   ]
+  }
+ ],
+ "how_views_changed": "Not explained directly. Between August 2026 (conditional bullishness relayed from strategists with the 10-year near 4.5%) and October 2026 (10-year above 5%, buyback failed, 'getting closer to the Rubicon'), his tone moves from conditional bullish to cautious, but the October remarks are about rates rather than a reversal of the August view. The private-credit concern (April) and AI/concentration concerns (June, August) are consistent through the period.",
+ "disagreements": [
+  {
+   "with": "Krishna Guha; Kevin Walsh (as relayed)",
+   "topic": "Did QE help the real economy",
+   "their_position": "QE lifted asset prices but did nothing for the real economy.",
+   "other_position": "Guha: QE contributed to demand through lower yields, lower corporate cost of capital and wealth effects. Walsh (relayed): QE was massively overdone beyond the point where benefits exceeded costs.",
+   "sources": [
+    "MT004"
+   ]
+  },
+  {
+   "with": "Krishna Guha",
+   "topic": "Whether the Bessent buyback could be a meaningful yield tool",
+   "their_position": "Six billion dollars is a BB gun; a real tool needs something like looser bank liquidity rules.",
+   "other_position": "Narrowly sensible but small; some two-sided-risk effect; the bank-rule route is being worked on but may favour bills.",
+   "sources": [
+    "MT004"
+   ]
+  },
+  {
+   "with": "Jeffrey Hirsch",
+   "topic": "Private credit: economy-wide risk or psychological scare",
+   "their_position": "Credit cycle tightening is starting and will slow the economy, even if banks are not at risk.",
+   "other_position": "It resembles the 2023 regional-bank scare, which did no market damage; psychological rather than real impact.",
+   "sources": [
+    "MT102"
+   ]
+  },
+  {
+   "with": "Jeffrey Hirsch",
+   "topic": "Bitcoin as an asset; why the best six months works",
+   "their_position": "Bitcoin acts opposite to its thesis; adds window dressing as a mechanism and finds the pattern 'not intuitive' at first.",
+   "other_position": "Bitcoin is tradable through ETFs and its seasonality is a useful signal though it failed last year; the best six months comes from fiscal year-end flows and window dressing, with testing showing it is not chance.",
+   "sources": [
+    "MT102"
+   ]
+  },
+  {
+   "with": "Jason Trennert, Chris Verrone",
+   "topic": "Oil outlook",
+   "their_position": "Reports a guest's argument for oversupply (China withdrawal, bypass pipelines).",
+   "other_position": "Trennert: supply disruptions persist so oil keeps a bid. Verrone: the tepid rebound after renewed fighting means the war risk premium is fading.",
+   "sources": [
+    "MT161"
+   ]
+  },
+  {
+   "with": "Todd Sohn",
+   "topic": "What the weak big-tech charts mean",
+   "their_position": "Software and AI capital-intensity exposure explains the weakness of Meta, Oracle, Microsoft and Amazon.",
+   "other_position": "Reads the same charts as relative weakness (200-day slopes, no new highs) without a stated fundamental cause.",
+   "sources": [
+    "MT172"
+   ]
+  }
+ ],
+ "internal_tensions": [
+  {
+   "issue": "Explains the weakness of Amazon (and Meta, Oracle, Microsoft) by AI capital intensity, while the episode role note records that he states he is long Amazon and GEV.",
+   "claim_ids": [
+    "MT172-C13-X1"
+   ]
+  },
+  {
+   "issue": "In August he relays that the equity-ending yield bar is higher than 4.5% and the market is bullish unless the 10-year rises significantly, while in October with the 10-year above 5% and the economy slowing at an unknown long rate he does not say whether that threshold has been reached.",
+   "claim_ids": [
+    "MT161-C13-2",
+    "MT161-C13-X1",
+    "MT004-C12-R1",
+    "MT004-C03-5"
+   ]
+  }
+ ],
+ "testable_hypotheses": [
+  {
+   "hypothesis": "Daily US equity returns are explained by changes in oil prices and the 10-year Treasury yield.",
+   "data_needed": "Daily S&P 500, oil and 10-year yield changes; regression by year, with 2026 split out.",
+   "claim_ids": [
+    "MT004-C12-2"
+   ]
+  },
+  {
+   "hypothesis": "There is a long-term rate level above which the economy slows and equities stop absorbing higher yields; the 4.5% 10-year that capped 2023-25 was not that level.",
+   "data_needed": "10-year yield levels against subsequent equity and GDP outcomes, including real-rate and AI capex effects.",
+   "claim_ids": [
+    "MT004-C12-R1",
+    "MT161-C13-2",
+    "MT161-C13-X1"
+   ]
+  },
+  {
+   "hypothesis": "Because nearly all post-GFC US loan growth was in private credit, a tightening in private credit slows the economy without threatening banks.",
+   "data_needed": "Private versus bank credit growth and subsequent GDP, default and recession data.",
+   "claim_ids": [
+    "MT102-C13-1"
+   ]
+  },
+  {
+   "hypothesis": "With tech near 40% of the S&P and semis dominant, a reversal of the AI-hardware theme hits index, growth and factor funds together so diversification inside the index fails.",
+   "data_needed": "ETF holdings overlap; drawdown correlations during AI-theme sell-offs.",
+   "claim_ids": [
+    "MT172-C13-2",
+    "MT172-C11-X2",
+    "MT172-C13-X1"
+   ]
+  },
+  {
+   "hypothesis": "Institutional window dressing (selling losers before quarter-end) adds to September/October weakness.",
+   "data_needed": "Seasonal returns of prior-quarter losers in the weeks before quarter-end reports.",
+   "claim_ids": [
+    "MT102-C05-2"
+   ]
+  },
+  {
+   "hypothesis": "A 6 billion dollar Treasury buyback is too small to cap yields, whereas looser bank liquidity rules (LCR) would raise bank Treasury demand (perhaps more in bills than in long bonds).",
+   "data_needed": "Buyback event studies; bank Treasury holdings against LCR changes.",
+   "claim_ids": [
+    "MT004-C07-R1",
+    "MT004-C08-R1",
+    "MT004-C08-1"
+   ]
+  },
+  {
+   "hypothesis": "QE raised asset prices without lifting real-economy outcomes.",
+   "data_needed": "QE episodes, asset prices and real investment/GDP outcomes.",
+   "claim_ids": [
+    "MT004-C02-3"
+   ]
+  },
+  {
+   "hypothesis": "Leveraged thematic hedge funds can fail in quiet markets (VIX under 20, long yields up 15-20 bp).",
+   "data_needed": "Leverage and drawdown data for thematic funds around small yield moves.",
+   "claim_ids": [
+    "MT161-C01-2"
+   ]
+  },
+  {
+   "hypothesis": "Bitcoin trades as a levered Nasdaq and its speculative demand is migrating to prediction markets.",
+   "data_needed": "Bitcoin and Nasdaq beta; prediction-market volumes.",
+   "claim_ids": [
+    "MT102-C10-2",
+    "MT102-C09-X9"
+   ]
+  },
+  {
+   "hypothesis": "2026 leadership flipped: last year's losers are outperforming last year's winners.",
+   "data_needed": "Cross-sectional return of 2025 losers versus winners over 2026.",
+   "claim_ids": [
+    "MT102-C07-X5"
+   ]
+  }
+ ],
+ "blind_spots": [
+  "(reader) No portfolio construction, sizing, entry or exit rules, and no valuation framework in these episodes, despite a fund-manager background.",
+  "(reader) Most statements are questions or summaries of guests; several claims are explicitly attributed to others (oil oversupply, Bitcoin hedge weakness).",
+  "(reader) Does not say where the 'Rubicon' rate lies, nor how a private-credit tightening would be observed.",
+  "(reader) The AI revenue concentration figure and loan-growth share are quoted without source; Meta analysis is limited to expense growth and depreciation."
+ ],
+ "reader_inferences": [
+  "(reader) His emerging frame is macro-plus-concentration: rates and oil set the day, an AI concentration trade dominates the index, and the weak points are the financing of that trade (hyperscaler cash flow, private credit).",
+  "(reader) Because he is a host, treat first-hand statements (QE opinion, buyback as BB gun, Bitcoin theft, Meta numbers) as his views and closing summaries as relayed views.",
+  "(reader) Supports pairing with credit-spread and long-yield data for any testable follow-up since his main risk channel is rates plus credit."
+ ]
+}

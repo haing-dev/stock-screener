@@ -1,0 +1,763 @@
+{
+ "name": "Scott Bessent",
+ "sources": [
+  "MT141",
+  "MT142",
+  "MT203"
+ ],
+ "period": "spring 2024 (MT203, dated by content; uploaded 2024-11-12) - late Oct 2024 (MT141) - 2026-03 (MT142, as US Treasury Secretary)",
+ "one_paragraph": "Soros/Druckenmiller-school global macro investor who says the big money is made at turning points, in a few large asymmetric bets built on imagining a state of the world consensus says 'has never happened' (sterling 1992, US house prices, Abenomics yen). A trade needs a vision of a different state, a timed catalyst (usually authorities forced to reverse an unsustainable policy) and a mispricing, ideally cheap options with small negative carry. He reads the macro from company-level (micro) information, proves the theory empirically, then checks Wall Street positioning and option skew and shelves the idea if the crowd already agrees. He sizes by what the market offers and by the year's P&L cushion (add when the year is good, reset 1 January), builds in thirds, and never lets a book be concentrated, illiquid and leveraged at once. In 2024 he saw the US as the unstable system (7% peacetime deficit, short maturities, fiscal dominance) with gold as the release valve; in March 2026, as Treasury Secretary, the same lens is applied to policy (keep price discovery working, oil damage depends on duration, announced actions are priced early) and the US is described as relatively strong. Evidence is career anecdote and mentor maxims, never backtests.",
+ "fingerprint": [
+  {
+   "tag": "macro_fundamental_topdown",
+   "count": 3
+  },
+  {
+   "tag": "policy_reaction_central_banks",
+   "count": 3
+  },
+  {
+   "tag": "geopolitics",
+   "count": 3
+  },
+  {
+   "tag": "kelly_or_conviction_sizing",
+   "count": 2
+  },
+  {
+   "tag": "positioning_crowding",
+   "count": 2
+  },
+  {
+   "tag": "valuation_contrarian",
+   "count": 2
+  },
+  {
+   "tag": "behavioral_sentiment",
+   "count": 2
+  },
+  {
+   "tag": "bottom_up_fundamental",
+   "count": 1
+  },
+  {
+   "tag": "crisis_alpha_convexity",
+   "count": 1
+  },
+  {
+   "tag": "position_sizing_vol_target",
+   "count": 1
+  },
+  {
+   "tag": "commodity_fundamentals",
+   "count": 1
+  },
+  {
+   "tag": "regime_detection",
+   "count": 1
+  },
+  {
+   "tag": "structural_themes",
+   "count": 1
+  },
+  {
+   "tag": "fiscal_dominance",
+   "count": 1
+  }
+ ],
+ "core_beliefs": [
+  {
+   "belief": "Biggest macro payoffs come from imagining a state of the world that has not happened ('never happened' is the consensus) and finding an asymmetric instrument for it; the structure that prevented it has usually changed.",
+   "times_stated": 3,
+   "sources": [
+    "MT141",
+    "MT203",
+    "MT142"
+   ],
+   "claim_ids": [
+    "MT141-C02-1",
+    "MT203-C02-X1",
+    "MT203-C05-2",
+    "MT142-C03-1"
+   ],
+   "stable": "stable - same cases in all three; MT142 adds the explicit three-part test (vision, timing, mispricing)"
+  },
+  {
+   "belief": "Consensus is right most of the time, so money is made at turning points by asking how the framing could be wrong; today's edge is inferential/framing, not data.",
+   "times_stated": 3,
+   "sources": [
+    "MT142",
+    "MT203",
+    "MT141"
+   ],
+   "claim_ids": [
+    "MT142-C01-3",
+    "MT142-C02-1",
+    "MT203-C03-2"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Micro drives macro: company read-throughs (trucking, Home Depot, bank CEOs on cards) beat forecasting aggregates such as the PCE deflator.",
+   "times_stated": 2,
+   "sources": [
+    "MT141",
+    "MT203"
+   ],
+   "claim_ids": [
+    "MT141-C05-1",
+    "MT141-C05-2",
+    "MT203-C01-1"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Unsustainable policy creates opportunity: authorities reverse a policy that drives at a wall, and a regime change moves prices whether or not it works; an attack only brings forward a failure that was bound to happen.",
+   "times_stated": 3,
+   "sources": [
+    "MT141",
+    "MT203",
+    "MT142"
+   ],
+   "claim_ids": [
+    "MT141-C04-1",
+    "MT141-C13-2",
+    "MT141-C10-7",
+    "MT203-C04-2",
+    "MT203-C04-X1",
+    "MT142-C04-2"
+   ],
+   "stable": "stable on mechanism; in 2026, as policymaker, he asks what can, should and will be done and how markets react (MT142-C04-4)"
+  },
+  {
+   "belief": "Choose the instrument that best expresses the view; asymmetry (small negative carry, large upside) and cheap options beat the obvious proxy or the 'widowmaker'.",
+   "times_stated": 2,
+   "sources": [
+    "MT141",
+    "MT203"
+   ],
+   "claim_ids": [
+    "MT141-C05-3",
+    "MT141-C10-5",
+    "MT203-C05-1"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Risk is probability times severity, not volatility; never concentrated, illiquid and leveraged at once; be able to exit part of the book in 24-72 hours; know your tolerance so you never sell the bottom or chase the top.",
+   "times_stated": 2,
+   "sources": [
+    "MT141",
+    "MT142"
+   ],
+   "claim_ids": [
+    "MT141-C11-4",
+    "MT141-C11-5",
+    "MT142-C01-2"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Thesis is not timing: do immense work then shelve the idea until a dated catalyst (endowment bias is the trap); valuation does not time currency moves.",
+   "times_stated": 3,
+   "sources": [
+    "MT142",
+    "MT203",
+    "MT141"
+   ],
+   "claim_ids": [
+    "MT142-C03-2",
+    "MT142-C03-3",
+    "MT203-C10-3",
+    "MT203-C10-4"
+   ],
+   "stable": "stable, but see tension on valuation as a reference point"
+  },
+  {
+   "belief": "The US is the unstable system: 7% deficit in a peacetime expansion, shortening maturities (debt service 1.1tn in 2024, 1.6tn if rates are not cut), foreign funding, flirtation with fiscal dominance; release valve eventually the dollar, possibly rates first; easy conditions favour asset owners (top 20% about 40% of consumption).",
+   "times_stated": 3,
+   "sources": [
+    "MT203",
+    "MT141",
+    "MT142"
+   ],
+   "claim_ids": [
+    "MT203-C09-1",
+    "MT203-C09-2",
+    "MT203-C08-4",
+    "MT203-C13-2",
+    "MT141-C12-4",
+    "MT142-C06-4"
+   ],
+   "stable": "evolved - spring/Oct 2024 stress deficit and fiscal dominance (Oct 2024: a Republican win could grow out of it, Harris leaves a rising 7% deficit); Mar 2026 says the war cost is no fiscal constraint and Treasury demand is firm. Reason: not explained beyond election result and new role"
+  },
+  {
+   "belief": "Gold is in structural accumulation (central banks, global South, retail), not a rate-driven rally; his biggest position in Oct 2024.",
+   "times_stated": 3,
+   "sources": [
+    "MT203",
+    "MT141",
+    "MT142"
+   ],
+   "claim_ids": [
+    "MT203-C08-2",
+    "MT203-C08-3",
+    "MT141-C12-6",
+    "MT142-C09-2"
+   ],
+   "stable": "stable as an investor; 2026 only says gold revaluation and balance-sheet reduction are independent"
+  },
+  {
+   "belief": "China is not sustainable (Xi is a Leninist who will not allow clearing); exports deflation up the value chain; FDI, not portfolio flows, is the gauge; asset-freeze tail; US-China decoupling continues under either party.",
+   "times_stated": 2,
+   "sources": [
+    "MT203",
+    "MT141"
+   ],
+   "claim_ids": [
+    "MT141-C12-5",
+    "MT203-C07-1",
+    "MT203-C07-3",
+    "MT203-C07-X1"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Markets live in the future: announced actions are priced before they occur, and political tail risk is over-hedged after earlier surprises, so skew overpays for the tail.",
+   "times_stated": 2,
+   "sources": [
+    "MT142",
+    "MT203"
+   ],
+   "claim_ids": [
+    "MT142-C06-1",
+    "MT203-C06-1",
+    "MT203-C06-2"
+   ],
+   "stable": "stable"
+  },
+  {
+   "belief": "Panic comes from loss of price discovery, so functioning Treasury markets come first; extraordinary central-bank measures should be brief (BoE 2020 stepped away; the Fed's continued QE helped the 2022-23 inflation).",
+   "times_stated": 2,
+   "sources": [
+    "MT142",
+    "MT203"
+   ],
+   "claim_ids": [
+    "MT142-C01-1",
+    "MT142-C02-2",
+    "MT142-C09-1",
+    "MT203-C09-4"
+   ],
+   "stable": "QE criticism stable 2024 and 2026; price-discovery point new in 2026"
+  },
+  {
+   "belief": "Macro returns are home runs with a low batting average (Babe Ruth); luck is dealt in liquid markets, so be prepared for large events.",
+   "times_stated": 1,
+   "sources": [
+    "MT141"
+   ],
+   "claim_ids": [
+    "MT141-C11-6",
+    "MT141-C09-1",
+    "MT141-C14-1"
+   ],
+   "stable": "single source"
+  }
+ ],
+ "mechanisms": [
+  {
+   "name": "Bet against an unsustainable peg (ERM 1992)",
+   "chain": [
+    "UK mortgages float on base rate -> defending sterling by raising rates crushes housing -> defence self-defeating",
+    "peg in a 2.5% band -> authorities must buy unlimited pounds -> loss capped near 2.5%, a break pays a lot in a day",
+    "banks and corporates exit sterling -> peg breaks earlier than otherwise"
+   ],
+   "fails_when": "Flawed structures take longer to break than expected; sometimes the car hits the wall",
+   "sources": [
+    "MT141",
+    "MT203"
+   ],
+   "claim_ids": [
+    "MT141-C06-1",
+    "MT141-C06-2",
+    "MT203-C03-3",
+    "MT203-C04-1",
+    "MT203-C04-X1",
+    "MT141-C12-7"
+   ]
+  },
+  {
+   "name": "Policy regime change as the trade (Abenomics yen 2011-13)",
+   "chain": [
+    "yen most expensive PPP currency after disinflation -> setup for a large fall",
+    "Fukushima current-account shift does not move the yen (78-83) -> idea shelved",
+    "Abe returns, three BoJ board seats open -> board can be reconstituted (dated catalyst)",
+    "yen vol 4-6 -> cheap options; yen cleanest expression, equities second, no JGB short -> targets stepped up (78-82, 95, 105, 115), built in thirds"
+   ],
+   "fails_when": "Timing early or endowment bias forces the trade; policy need not work, only move prices",
+   "sources": [
+    "MT141",
+    "MT142"
+   ],
+   "claim_ids": [
+    "MT141-C09-3",
+    "MT141-C10-1",
+    "MT141-C10-5",
+    "MT141-C10-6",
+    "MT142-C03-3",
+    "MT142-C04-1",
+    "MT142-C04-3"
+   ]
+  },
+  {
+   "name": "Policy reversal and leverage-cycle entry points",
+   "chain": [
+    "policymakers care about voters and history -> respond to pressure; policy far out of equilibrium -> good entry, expected brake is the risk control",
+    "Drexel/S&L leverage boom -> bust in financials; high dispersion -> shorts +50% in 1990 as S&P fell high teens to 20%"
+   ],
+   "fails_when": "Headlines do not give the trade (Israel war with lower oil; 7% deficit with higher rates and a tech bubble); dispersion now compressed by baskets",
+   "sources": [
+    "MT141"
+   ],
+   "claim_ids": [
+    "MT141-C13-1",
+    "MT141-C13-2",
+    "MT141-C04-X2",
+    "MT141-C04-2",
+    "MT141-C12-3"
+   ]
+  },
+  {
+   "name": "US fiscal path to a release valve",
+   "chain": [
+    "7% deficit plus shorter maturities -> debt service rises mechanically",
+    "foreign funding -> vulnerable to repatriation (Japanese savings if BoJ hikes)",
+    "markets reluctant to finance -> release valve in rates then the dollar; gold outperforms"
+   ],
+   "fails_when": "Timing not given; Fed or Treasury may adjust",
+   "sources": [
+    "MT203"
+   ],
+   "claim_ids": [
+    "MT203-C09-1",
+    "MT203-C09-2",
+    "MT203-C11-X1",
+    "MT203-C08-4",
+    "MT203-C08-6"
+   ]
+  },
+  {
+   "name": "Over-hedged political tail (France 2017)",
+   "chain": [
+    "wrong on Brexit and Trump -> over-hedge French risk -> euro puts extreme (euro 105)",
+    "Macron wins -> euro only 107-108; buying euros paid"
+   ],
+   "fails_when": "A payoff bet, not 99% confidence",
+   "sources": [
+    "MT203"
+   ],
+   "claim_ids": [
+    "MT203-C06-1",
+    "MT203-C06-2",
+    "MT203-C05-3"
+   ]
+  },
+  {
+   "name": "China stress and decoupling",
+   "chain": [
+    "China up the value chain -> exports deflation (Korea, Germany)",
+    "sanctions and decoupling -> low FDI, no G20 corporation builds a factory",
+    "asset-freeze tail -> yuan and equities could go to zero; China funds at 40-70% discounts"
+   ],
+   "fails_when": "Equities can bounce on portfolio flows (Bridgewater)",
+   "sources": [
+    "MT203"
+   ],
+   "claim_ids": [
+    "MT203-C07-1",
+    "MT203-C07-3",
+    "MT203-C07-4",
+    "MT203-C08-1"
+   ]
+  },
+  {
+   "name": "Oil shock transmission (March 2026)",
+   "chain": [
+    "Hormuz disruption, WTI from under 60 to 114-115 -> damage depends on duration, not level (2008 hit 147); US output insulates bills",
+    "400m barrel release reported in advance -> oil reversed before the decision (priced in)",
+    "escorts plus $20bn insurance backstop -> flows recover; energy shock lifts inflation expectations -> Fed hesitates"
+   ],
+   "fails_when": "Duration long, straits mined, coalition fails; military claims are an official's, not verified",
+   "sources": [
+    "MT142"
+   ],
+   "claim_ids": [
+    "MT142-C05-1",
+    "MT142-C06-1",
+    "MT142-C06-2",
+    "MT142-C06-3",
+    "MT142-C07-4"
+   ]
+  },
+  {
+   "name": "Sizing by P&L cushion",
+   "chain": [
+    "year's P&L good -> add to winners",
+    "1 January -> reset risk budget; December profits on trending currencies taken down (always a counter-trend)"
+   ],
+   "fails_when": "Not stated",
+   "sources": [
+    "MT141"
+   ],
+   "claim_ids": [
+    "MT141-C11-1",
+    "MT141-C11-2",
+    "MT141-C11-3"
+   ]
+  }
+ ],
+ "playbook": [
+  {
+   "element": "signal",
+   "rule": "Find turning points where consensus is wrong: require a vision of a different state, a timed catalyst (policy reversal) and a mispricing. Use Wall Street positioning and option skew as the last check; if priced in, shelve. Enter on a dated catalyst (Abe plus BoJ board), not on thesis alone.",
+   "why": "Asymmetry sits there; no edge if the crowd agrees",
+   "sources": [
+    "MT141",
+    "MT142",
+    "MT203"
+   ],
+   "claim_ids": [
+    "MT141-C12-7",
+    "MT142-C03-1",
+    "MT142-C04-1",
+    "MT203-C03-1",
+    "MT203-C05-1"
+   ]
+  },
+  {
+   "element": "signal",
+   "rule": "FX: ask what would make a cash-rich corporation move money or not repatriate. China gauges: trade balances, sanctions, PBoC and yield curve, FDI, fund flows, fund discounts.",
+   "why": "Capital flows drive currency trends",
+   "sources": [
+    "MT203"
+   ],
+   "claim_ids": [
+    "MT203-C01-2",
+    "MT203-C07-2",
+    "MT203-C07-3"
+   ]
+  },
+  {
+   "element": "research",
+   "rule": "Start from company information and let equities tell the macro; for a macro trade lay out fundamentals (current account, valuation vs history), reference points, technicals (positioning, exporter flows) and verify the policy mechanism with primary sources. Order: theory, empirical proof, framing check, the street. Do immense work then shelve.",
+   "why": "Cannot beat aggregates; avoids endowment bias",
+   "sources": [
+    "MT141",
+    "MT203",
+    "MT142"
+   ],
+   "claim_ids": [
+    "MT141-C05-1",
+    "MT141-C10-3",
+    "MT141-C10-X1",
+    "MT203-C02-1",
+    "MT142-C03-2"
+   ]
+  },
+  {
+   "element": "universe",
+   "rule": "Few large positions on big themes; small core team plus about 30 regional consultants; vet ideas by open challenge.",
+   "why": "Concentration and speed, less noise",
+   "sources": [
+    "MT141"
+   ],
+   "claim_ids": [
+    "MT141-C09-2",
+    "MT141-C09-R1",
+    "MT141-C05-X1"
+   ]
+  },
+  {
+   "element": "sizing",
+   "rule": "Trade in thirds; keep adding if the year's P&L is good; size by what the market offers (vol-implied asymmetry); reset on 1 January; take down winning currency trades in December. Sit in cash for the fat pitch; check correlation to the book first (a 'unique' idea can be 98% R-squared with the S&P); size up in tectonic theses (gold) and after overreactions (Trump 2016).",
+   "why": "P&L earns the right to risk; skill is sizing not path prediction",
+   "sources": [
+    "MT141",
+    "MT203"
+   ],
+   "claim_ids": [
+    "MT141-C10-8",
+    "MT141-C11-1",
+    "MT141-C11-3",
+    "MT141-C05-X2",
+    "MT203-C08-6",
+    "MT203-C05-3"
+   ]
+  },
+  {
+   "element": "risk",
+   "rule": "Risk = probability x severity; never concentrated, illiquid and leveraged together; be able to exit part of the book in 24-72 hours; use options when vol is low and thesis is a regime break; accept loss when thesis right but path wrong; say no, require an inferential edge.",
+   "why": "Tail days (Russia: equities down 95% in a day) cannot be hedged by vol estimates",
+   "sources": [
+    "MT141",
+    "MT142",
+    "MT203"
+   ],
+   "claim_ids": [
+    "MT141-C11-4",
+    "MT141-C11-5",
+    "MT141-C10-5",
+    "MT142-C01-2",
+    "MT203-C10-4",
+    "MT203-C03-2"
+   ]
+  },
+  {
+   "element": "execution",
+   "rule": "Move fast on forced sellers (answered in three days, took the whole $3.5bn Italian bond trade with repo, MF Global autumn 2011).",
+   "why": "Large unconstrained liquid capital is an edge",
+   "sources": [
+    "MT141"
+   ],
+   "claim_ids": [
+    "MT141-C08-1",
+    "MT141-C08-3"
+   ]
+  },
+  {
+   "element": "portfolio",
+   "rule": "One fulcrum trade, portfolio simple and expressible as up or down; skip complexity (swaptions) and JGBs when unsure.",
+   "why": "Keep the main thing the main thing",
+   "sources": [
+    "MT203"
+   ],
+   "claim_ids": [
+    "MT203-C09-5",
+    "MT203-C10-1",
+    "MT203-C10-2"
+   ]
+  },
+  {
+   "element": "other",
+   "rule": "Business matches payoff shape: core fund judged on three-year average, episodic SPVs for lumpy ideas, allocators trim after strong years and add in slumps; do what the fund is good at (regrets promising long/short equities in 2000).",
+   "why": "Patient capital absorbs home-run returns",
+   "sources": [
+    "MT141"
+   ],
+   "claim_ids": [
+    "MT141-C11-X1",
+    "MT141-C12-1",
+    "MT141-C12-2",
+    "MT141-C07-R1"
+   ]
+  }
+ ],
+ "evidence_style": "Career anecdote and case history (ERM 1992, subprime, Italian bonds 2011, Abenomics, Brexit, Trump 2016, France 2017, FTX), mentor maxims (Kovner, Druckenmiller, Soros, Rogers, Taleb, Annie Duke), analogies (poker, baseball), a few data points (interest cost, delinquencies, gold flows, fund discounts, compute share). No backtests; the Common Fund study is cited by name only. MT142 claims are official-position statements.",
+ "views_timeline": [
+  {
+   "as_of": "spring 2024 (MT203)",
+   "view": "US trajectory unstable (7% deficit, short maturities, foreign funding), release valve the dollar, possibly rates first; hold gold; Fed/Treasury too loose, favouring asset owners; decoupling from China continues; own Japanese equities but the yen (40% undervalued) kept weakening and he was wrong; Kishida likely out in about two months.",
+   "reasoning": "Debt service mechanics; gold +15% while rates rose; stocks +25%; delinquencies at series highs; fund discounts 40-70%",
+   "source": "MT203",
+   "claim_ids": [
+    "MT203-C08-4",
+    "MT203-C09-1",
+    "MT203-C08-2",
+    "MT203-C09-3",
+    "MT203-C07-3",
+    "MT203-C10-3",
+    "MT203-C10-5"
+   ]
+  },
+  {
+   "as_of": "late Oct 2024 (MT141, before the 5 Nov election)",
+   "view": "Republican trifecta means growth shock and animal spirits, the Fed's jumbo cut a mistake, risk of hikes; Harris leaves a rising 7% deficit; long gold (largest position); China stabilising only tactically; Japan could be a secular bull market; Le Pen president within 18-24 months; the US can grow out of debt, last chance.",
+   "reasoning": "Deregulation and growth mindset; reserve accumulation (Poland to 20%); Xi will not allow clearing; he says he is working for a Trump win",
+   "source": "MT141",
+   "claim_ids": [
+    "MT141-C12-4",
+    "MT141-C13-5",
+    "MT141-C12-6",
+    "MT141-C12-5",
+    "MT141-C13-3",
+    "MT141-C13-X1"
+   ]
+  },
+  {
+   "as_of": "2026-03 (MT142, as Treasury Secretary)",
+   "view": "Oil damage depends on duration; WTI about 94-95 after a 114-115 peak, possibly well below pre-war (under 60) once the conflict is resolved in US favour; Hormuz recovers with escorts and $20bn insurance backstop; war cost (about $11bn) not a fiscal constraint; Treasury demand firm; return to QE not worth discussing; private-credit wobbles not systemic; tariffs rebuilt under Section 301 and a 10% Section 122 tariff; US relatively stronger (energy, AI compute, military), growth back to about 3% vs 0.3% for the EU.",
+   "reasoning": "US energy output, release priced in, escorts and coalition planning; compute share 70-80% vs 40-50%",
+   "source": "MT142",
+   "claim_ids": [
+    "MT142-C05-1",
+    "MT142-C08-1",
+    "MT142-C06-2",
+    "MT142-C06-4",
+    "MT142-C07-4",
+    "MT142-C09-3",
+    "MT142-C10-1",
+    "MT142-C12-1",
+    "MT142-C12-2"
+   ]
+  }
+ ],
+ "how_views_changed": "Method (consensus-wrong turning points, asymmetry, catalyst timing, positioning check) is constant 2024-2026. The macro view tracks events and his role: spring 2024 fiscal-dominance and gold hedge; Oct 2024 election-dependent, hoping a Republican win lets the US grow out of debt; Mar 2026 as Treasury Secretary the war cost is no constraint and the US is relatively strong. No explicit explanation for the shift beyond the election and new role (not explained). The yen: a losing position in 2024; 2026 retells the earlier Abenomics case with no new yen view.",
+ "disagreements": [
+  {
+   "with": "Fundamental investors as characterised by Bessent (not a speaker)",
+   "topic": "What sets position size",
+   "their_position": "What the market offers and the year's P&L chip stack",
+   "other_position": "Conviction, not the year's P&L",
+   "sources": [
+    "MT141"
+   ]
+  },
+  {
+   "with": "Volatility-based risk management (implicit)",
+   "topic": "How to define risk",
+   "their_position": "Probability times severity; liquidity rule (not concentrated, illiquid and leveraged together)",
+   "other_position": "Volatility and correlation",
+   "sources": [
+    "MT141"
+   ]
+  },
+  {
+   "with": "Bridgewater (as relayed)",
+   "topic": "Chinese equities",
+   "their_position": "FDI is the gauge, asset-freeze tail material, equities only bounce on portfolio flows",
+   "other_position": "Bullish",
+   "sources": [
+    "MT203"
+   ]
+  },
+  {
+   "with": "Ash Bennington",
+   "topic": "Did a lone hedge fund break sterling",
+   "their_position": "Never going to work; attack only brought it forward; a wave of banks and corporates",
+   "other_position": "A hedge fund's market forces contradicted the Bank of England; markets have power over sovereigns",
+   "sources": [
+    "MT203"
+   ]
+  }
+ ],
+ "internal_tensions": [
+  {
+   "issue": "Authorities 'hit the brakes' before the wall and that brake is his risk control (Oct 2024), yet for the US he describes no adjustment except a dollar/gold release valve, and says flawed structures take longer than expected to break.",
+   "claim_ids": [
+    "MT141-C13-2",
+    "MT141-C12-7",
+    "MT203-C08-4",
+    "MT203-C04-2"
+   ]
+  },
+  {
+   "issue": "Valuation is the yen reference point (most expensive PPP currency) but in 2024 'valuation does not time' and a 40% undervalued yen kept falling.",
+   "claim_ids": [
+    "MT141-C09-3",
+    "MT203-C10-3",
+    "MT203-C10-4"
+   ]
+  },
+  {
+   "issue": "US debt: fiscal-dominance and funding risk (2024) vs 'grow out of debt' (Oct 2024, conditional) vs war cost no constraint and firm demand (Mar 2026, official).",
+   "claim_ids": [
+    "MT203-C09-1",
+    "MT141-C13-5",
+    "MT142-C06-4",
+    "MT142-C07-1"
+   ]
+  },
+  {
+   "issue": "Cannot beat aggregate forecasts, yet states dated political calls (Le Pen in 18-24 months, Kishida out in about two months) and an oil regime view after the war, while warning that headlines do not give the trade.",
+   "claim_ids": [
+    "MT141-C05-1",
+    "MT141-C13-X1",
+    "MT203-C10-5",
+    "MT141-C12-3",
+    "MT142-C08-1"
+   ]
+  }
+ ],
+ "testable_hypotheses": [
+  {
+   "hypothesis": "Policy regime changes with a dated catalyst (reflationary central-bank board or governor appointments, leader change) produce same-direction currency moves over 12 months even if success is uncertain; valuation or current-account signals alone do not.",
+   "data_needed": "Event list of central-bank leadership/regime changes; FX returns; valuation and current-account signals",
+   "claim_ids": [
+    "MT142-C04-1",
+    "MT142-C03-3",
+    "MT141-C10-7",
+    "MT203-C10-3"
+   ]
+  },
+  {
+   "hypothesis": "Buying options on the policy-break side when 3-month FX implied vol is very low (yen 4-6) and positions are built up earns a positive net payoff around catalysts.",
+   "data_needed": "FX implied vol, option prices, positioning, catalyst dates",
+   "claim_ids": [
+    "MT141-C10-4",
+    "MT141-C10-5"
+   ]
+  },
+  {
+   "hypothesis": "Before binary political events, option skew pays more for the tail than its realised frequency; buying the currency or selling the extreme skew earns on average.",
+   "data_needed": "Risk reversals and implied vol before elections and referenda with realised moves",
+   "claim_ids": [
+    "MT203-C06-1",
+    "MT203-C06-2"
+   ]
+  },
+  {
+   "hypothesis": "Reported official supply releases are priced on the press report, so oil returns after the formal announcement are about zero.",
+   "data_needed": "Intraday oil around reported and official IEA/SPR announcements",
+   "claim_ids": [
+    "MT142-C06-1",
+    "MT142-C06-R2"
+   ]
+  },
+  {
+   "hypothesis": "Growth damage from an oil spike scales with months above a threshold, not with the peak.",
+   "data_needed": "Monthly oil, US and global growth across shocks since 1973",
+   "claim_ids": [
+    "MT142-C05-1"
+   ]
+  },
+  {
+   "hypothesis": "Gold outperforms when central-bank buying is high and US interest cost or short-maturity share rises, even with rising real rates.",
+   "data_needed": "Central-bank gold purchases, Treasury maturity profile, interest cost/GDP, real rates, gold",
+   "claim_ids": [
+    "MT203-C08-2",
+    "MT203-C09-2",
+    "MT141-C12-6"
+   ]
+  },
+  {
+   "hypothesis": "China FDI and fund discounts lead Chinese equity and yuan returns better than portfolio flows.",
+   "data_needed": "FDI, portfolio flows, fund discounts to NAV, CNY and equity returns",
+   "claim_ids": [
+    "MT203-C07-3",
+    "MT203-C07-4"
+   ]
+  },
+  {
+   "hypothesis": "Raising risk after in-year profits and cutting winning currency trend positions in December improves risk-adjusted return versus constant risk.",
+   "data_needed": "Daily currency-trend or macro strategy returns; P&L-linked risk scalar reset 1 January",
+   "claim_ids": [
+    "MT141-C11-1",
+    "MT141-C11-2",
+    "MT141-C11-3"
+   ]
+  }
+ ],
+ "blind_spots": [
+  "No hit rate or systematic test for any signal; failures (yen 2024) mentioned briefly",
+  "How catalyst timing is estimated ex ante, and how often reversals come late or never, is not quantified",
+  "Sizing described (thirds, 300% in the 1980s) without expected value or loss limits",
+  "What would make gold fall, or when the US release valve arrives, is not said",
+  "MT142 war, insurance, tariff and compute figures are unsourced official statements"
+ ],
+ "reader_inferences": [
+  "(reader) The recurring test is a three-part checklist (different state, dated catalyst, cheap convexity) that can be coded as an event study with a skew filter.",
+  "(reader) The 2024 fiscal-dominance thesis and the 2026 official view point in opposite directions; strategies built on 2024 statements should treat 2026 statements as policy, not forecast.",
+  "(reader) 'Micro drives macro' implies company-level text (earnings calls, bank commentary) as nowcasting inputs, which is testable."
+ ]
+}
