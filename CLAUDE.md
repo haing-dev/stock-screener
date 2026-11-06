@@ -69,7 +69,12 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Transcript argument maps (2026-11-06): tier A (103 of 227, by investing value + key investors; transcript_priority.csv)
   DONE with Sonnet high per TRANSCRIPT_MAP_SPEC.md (per speaker: premises, mechanism chains, decision process, evidence,
   dated views, fingerprint tags; disagreements; gaps). macro-vault pipeline/ (docs, maps, spec, queue). Tiers B/C open.
-  Speaker-name aliases (caption spellings) still to normalise before per-investor synthesis.
+  Tier B (72) DONE 2026-11-06 too (175 of 227 mapped; tier C open). Alias table pipeline/speaker_aliases.json.
+- Investor syntheses (2026-11-06): 19 people with >=2 appearances (Sonnet, INVESTOR_SYNTH_SPEC.md) -> vault Investors/;
+  Niels (host, 112 appearances) not done (needs 3-part split).
+- Fable phase started: F1 = AQR Economic Trend (docs/research/fable/F1_economic_trend.md, Fable max, ~0.23M tokens):
+  keep econ 15%; no Holm slot for econ structure; zero-slot diagnostics T1 delay-decay, T2 sign audit by era;
+  T3 forecast-based growth/inflation as the one Batch 2 econ challenger. Next: F2 trend, F3 value/carry, F4 rates, F5 method.
 - Adoption rule (2026-11-01): docs/research/global_macro/TESTING_PROTOCOL.md (paired bootstrap dSR, Holm, non-inferiority per era);
   run `python -m gm.protocol batch0|batch1|diag`; register each new batch in that file BEFORE running it. Batch 2 = Bloomberg.
 - Holdout 2011-2026 has NOT been looked at: never print or inspect it until rules are frozen (then run once).
