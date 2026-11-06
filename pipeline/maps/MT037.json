@@ -1,0 +1,1021 @@
+{
+ "source_id": "MT037",
+ "episode_thesis": "Alan Dunne reads Germany's slump as the combined result of external shocks (cheap Russian gas lost, China moving from customer to competitor) and domestic missteps, and reads the rise in US long yields while the Fed cut as mostly higher real yields (recession priced out) plus a rising term premium on deficit worries, a fiscal challenge rather than a credit-bubble crisis. With Niels Kaastro Larsen he then reviews AQR's 'Broad Strategic Asset Allocation', Asness's 2035 retrospective and Howard Marks's bubble note, concluding that portfolios lean on correlations from the last 20-30 years, that constraints (leverage, career and benchmark risk, complexity) explain underallocation to alternatives, and that trend following works as the 'brakes' that let investors hold equity risk and guard against unknown unknowns; Dunne adds that a robust view favours more risk mitigation than AQR's mean-variance blend.",
+ "speakers": [
+  {
+   "name": "Alan Dunne",
+   "role": "Co-host; macro and allocation researcher based in Dublin; weekly macro segment of the Systematic Investor series",
+   "speaker_note": "Ledger spelling 'Alan Dunne' kept. Corrections applied: MT037-C14-4 (the 0.3 Sharpe is for the traditional asset classes; he corrected 'alt strategies'); MT037-C15-5 (investors haircutting Sharpe ratios for uncertainty and complexity) is Alan's, not Niels's. Debt-to-GDP '6 7%' in the captions is probably the deficit-to-GDP ratio of 6-7%. The host's reading of the AQR and Marks papers is partly Alan's relay; where Alan states 'AQR assume' it is a reading of the paper, not his own view.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "debt_cycle_long_term",
+    "fiscal_dominance",
+    "policy_reaction_central_banks",
+    "valuation_contrarian",
+    "portfolio_construction_stacking",
+    "diversification_risk_parity",
+    "manager_selection_allocation"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Germany's slump has external causes (a model built on capital-goods exports to China and cheap Russian gas, both of which turned against it) and domestic ones (nuclear closure, fiscal conservatism limiting public investment, weak digitalisation, a rising dependency ratio with anti-immigration politics).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Bundesbank forecasts; sectoral examples (chemicals, solar panels, EVs); demographic data.",
+     "claim_ids": [
+      "MT037-C02-1",
+      "MT037-C02-2",
+      "MT037-C02-3",
+      "MT037-C02-4",
+      "MT037-C03-2",
+      "MT037-C01-1"
+     ]
+    },
+    {
+     "premise": "Germany has room to borrow for productive investment (debt near 60% of GDP, 10-year yields about 2.5%) despite its debt brake, and the February 2025 election could change policy, though European policy normally moves slowly.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Level of debt and yields.",
+     "claim_ids": [
+      "MT037-C02-5",
+      "MT037-C01-2"
+     ]
+    },
+    {
+     "premise": "Western policymakers wrongly assumed China's WTO entry would bring political liberalisation and open markets; instead China became a strong producer closed to foreigners, a forecasting error with trade consequences for Germany.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Hindsight on the 2000 WTO entry.",
+     "claim_ids": [
+      "MT037-C03-1"
+     ]
+    },
+    {
+     "premise": "Diversification and resilient portfolio construction went unrewarded for 10-15 years, so many investors skipped them and got away with it.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation of the investment industry.",
+     "claim_ids": [
+      "MT037-C04-2"
+     ]
+    },
+    {
+     "premise": "Trend following has near-zero equity beta over the long term, so statistically its return is alpha, though commoditisation and large dispersion between managers weaken both the alpha and the single-beta view.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Equity-beta regression logic; he says 'a different language' is needed.",
+     "claim_ids": [
+      "MT037-C05-1",
+      "MT037-C05-R2"
+     ]
+    },
+    {
+     "premise": "The 1% rise in US long yields since September 2024, while the Fed cut 1%, is two-thirds real yields and one-third inflation expectations; the real-yield rise reflects recession fears being priced out (Fed funds futures for end-2025 moved from about 3% to about 4%) after the Sahm rule trigger in August proved a false alarm.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Yield decomposition; unemployment stabilised at 4.1-4.2%.",
+     "claim_ids": [
+      "MT037-C05-3",
+      "MT037-C05-4",
+      "MT037-C06-1",
+      "MT037-C06-2"
+     ]
+    },
+    {
+     "premise": "The term premium (unobservable, model-estimated) reflects supply and demand for bonds; years of strong demand kept it low, and its rise to about 50bp reflects worries about US deficits and debt.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Standard term-premium models; no specific model named.",
+     "claim_ids": [
+      "MT037-C06-3",
+      "MT037-C06-4"
+     ]
+    },
+    {
+     "premise": "A dollar that stays strong can hide a changing composition of buyers: foreign central bank Treasury holdings and repo balances are falling, and short-term speculative money may be holding the dollar up.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Data seen that week; stated as a warning sign.",
+     "claim_ids": [
+      "MT037-C06-5"
+     ]
+    },
+    {
+     "premise": "Big debt crises occur when debt and credit growth combine with credit-fuelled asset bubbles; the current situation is more a fiscal challenge than a credit bubble, and rising yields self-limit because a spike could push the economy into recession and relieve the bond market.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Contrast with Dalio's debt-crisis cases (Asian crisis, GFC).",
+     "claim_ids": [
+      "MT037-C07-1",
+      "MT037-C07-2"
+     ]
+    },
+    {
+     "premise": "Excess debt financed by Fed purchases can cause a loss of confidence, showing up as higher domestic inflation or a weaker dollar rather than default; the relevant question is the yield needed to attract buyers.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Currency-confidence argument; no data.",
+     "claim_ids": [
+      "MT037-C07-5",
+      "MT037-C08-1"
+     ]
+    },
+    {
+     "premise": "Trend followers need a breakout; range-bound yields make trend following painful, and medium-term trend followers heavily short bonds create a crowding risk.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Observations of mid-January 2025 yield range.",
+     "claim_ids": [
+      "MT037-C08-4",
+      "MT037-C08-5"
+     ]
+    },
+    {
+     "premise": "Past regimes looked permanent until they ended (US strength in 1999-2000, then the dot-com bust and the GFC), so investors should be open to all scenarios.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Historical examples.",
+     "claim_ids": [
+      "MT037-C10-3"
+     ]
+    },
+    {
+     "premise": "Bubbles are driven by newness with no history to temper enthusiasm (AI, crypto), the biggest stocks of one era rarely remain the biggest (Nifty Fifty, 2000), and starting P/Es imply low forward returns; Marks's counterpoints are that sentiment is not at 2000 extremes and the Magnificent 7 have moats and cash flows.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Marks's 'Bubble Watch' memo and a J.P. Morgan chart relayed from memory.",
+     "claim_ids": [
+      "MT037-C11-1",
+      "MT037-C11-2",
+      "MT037-C11-3",
+      "MT037-C11-4",
+      "MT037-C11-X1"
+     ]
+    },
+    {
+     "premise": "Exiting on valuation warnings can be costly: after the December 1996 'irrational exuberance' speech the market rose 20%+ in 1997-1999, helped by an easy Fed.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "1990s history.",
+     "claim_ids": [
+      "MT037-C12-3",
+      "MT037-C12-X1"
+     ]
+    },
+    {
+     "premise": "In theory everyone holds one tangency portfolio levered to risk appetite; in practice allocations differ because of beliefs about returns and constraints (leverage, liquidity needs, peer/benchmark/career risk, complexity, fees, vehicles such as UCITS).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "AQR 'Broad Strategic Asset Allocation' paper.",
+     "claim_ids": [
+      "MT037-C13-1",
+      "MT037-C13-2",
+      "MT037-C13-3",
+      "MT037-C13-5",
+      "MT037-C13-6",
+      "MT037-C14-1"
+     ]
+    },
+    {
+     "premise": "Combining uncorrelated positive-return strategies such as trend following with equities improves Sharpe, yet many investors do not allocate; underallocation can be explained theoretically by haircutting uncertain Sharpe ratios and complexity.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Basic portfolio arithmetic and the AQR framing.",
+     "claim_ids": [
+      "MT037-C13-4",
+      "MT037-C15-5",
+      "MT037-C15-6"
+     ]
+    },
+    {
+     "premise": "Institutional portfolios of public equity, private equity and private credit load heavily on one equity factor, so the apparent diversification is illusory.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Factor-exposure translation in the AQR paper.",
+     "claim_ids": [
+      "MT037-C16-3"
+     ]
+    },
+    {
+     "premise": "A robust view, which looks at tails and drawdowns, favours more risk-mitigation (trend) exposure than AQR's mean-variance blend, as the GIC/J.P. Morgan paper found.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Comparison of the AQR and GIC/JPM papers.",
+     "claim_ids": [
+      "MT037-C17-1",
+      "MT037-C17-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why US long yields rose while the Fed cut",
+     "steps": [
+      {
+       "from": "Data improved after the August 2024 scare (Sahm rule triggered, unemployment stabilised at 4.1-4.2%)",
+       "to": "Recession priced out of Fed funds futures (end-2025 from about 3% to 4%)",
+       "why": "Less need for cuts.",
+       "claim_ids": [
+        "MT037-C06-2",
+        "MT037-C06-1"
+       ]
+      },
+      {
+       "from": "Fewer cuts expected",
+       "to": "Real yields up (two-thirds of the 1% rise)",
+       "why": "Higher expected policy path.",
+       "claim_ids": [
+        "MT037-C05-4",
+        "MT037-C06-1"
+       ]
+      },
+      {
+       "from": "Stickier inflation prints in September-December",
+       "to": "Inflation expectations up (one-third)",
+       "why": "Higher realised inflation.",
+       "claim_ids": [
+        "MT037-C05-4"
+       ]
+      },
+      {
+       "from": "Worry about US deficits and debt",
+       "to": "Term premium up to about 50bp",
+       "why": "Years of strong demand for bonds are fading; the buyer mix may be shifting.",
+       "claim_ids": [
+        "MT037-C06-3",
+        "MT037-C06-4",
+        "MT037-C06-5"
+       ]
+      },
+      {
+       "from": "A spike in yields",
+       "to": "Recession risk that eventually relieves the bond market",
+       "why": "Higher yields hit the economy directly.",
+       "claim_ids": [
+        "MT037-C07-2"
+       ]
+      }
+     ],
+     "evidence": "Yield decompositions, Fed funds futures, foreign central bank holdings data; the term premium is model-dependent and not observed.",
+     "fails_when": "Not a credit-bubble crisis, so strains are fiscal; he says yields could go a bit higher, and a loss of confidence could appear as inflation or a weaker dollar.",
+     "claim_ids": [
+      "MT037-C07-1",
+      "MT037-C07-5",
+      "MT037-C08-1"
+     ]
+    },
+    {
+     "topic": "Germany's slump",
+     "steps": [
+      {
+       "from": "Export model relying on Chinese demand for capital goods and cheap Russian gas",
+       "to": "Both legs turned against Germany",
+       "why": "China moved up-value-chain (solar panels, EVs) and gas prices made chemicals uneconomical.",
+       "claim_ids": [
+        "MT037-C02-1",
+        "MT037-C02-2",
+        "MT037-C02-3"
+       ]
+      },
+      {
+       "from": "Demographics, anti-immigration politics, debt brake, nuclear closure, weak digitalisation",
+       "to": "Domestic constraints amplified the shock",
+       "why": "Dependency ratio is biting; limited public investment.",
+       "claim_ids": [
+        "MT037-C02-4",
+        "MT037-C03-2"
+       ]
+      },
+      {
+       "from": "Possible Trump tariffs",
+       "to": "A further 0.6pp off growth and a third year of contraction",
+       "why": "Bundesbank scenario.",
+       "claim_ids": [
+        "MT037-C01-1"
+       ]
+      }
+     ],
+     "evidence": "Bundesbank forecasts and sectoral examples; the host questions whether energy alone explains it since oil is no higher than before the invasion.",
+     "fails_when": "A policy turn after the February election (e.g. borrowing for investment).",
+     "claim_ids": [
+      "MT037-C01-2",
+      "MT037-C02-5",
+      "MT037-C02-6"
+     ]
+    },
+    {
+     "topic": "Constraints explain why portfolios under-allocate to alternatives and trend",
+     "steps": [
+      {
+       "from": "Theory: one optimal portfolio levered to risk appetite",
+       "to": "Real allocations differ due to beliefs and constraints",
+       "why": "Leverage unavailable to retail and private wealth, liquidity needs, fees, vehicle limits.",
+       "claim_ids": [
+        "MT037-C13-1",
+        "MT037-C13-2",
+        "MT037-C13-3",
+        "MT037-C14-1"
+       ]
+      },
+      {
+       "from": "Peer, benchmark and career risk, plus complexity and unfamiliarity",
+       "to": "Investors skip unconventional strategies such as trend following",
+       "why": "They fear tracking error and board questions.",
+       "claim_ids": [
+        "MT037-C13-5",
+        "MT037-C13-6",
+        "MT037-C17-3"
+       ]
+      },
+      {
+       "from": "Haircut to Sharpe ratios for uncertainty and complexity",
+       "to": "Underallocation to liquid alternatives",
+       "why": "Theoretical explanation of the gap between optimiser output and practice.",
+       "claim_ids": [
+        "MT037-C15-5"
+       ]
+      },
+      {
+       "from": "Leverage constraint",
+       "to": "Investors reach for higher-volatility assets or managers instead of levering diversified portfolios",
+       "why": "AQR optimisation with leverage borrows about 50% and adds fixed income; managers with higher volatility act as leverage.",
+       "claim_ids": [
+        "MT037-C15-X1",
+        "MT037-C15-3"
+       ]
+      }
+     ],
+     "evidence": "AQR 'Broad Strategic Asset Allocation' optimiser outputs (60/40 volatility with 4% tracking error gives 11% commodities, 15% long/short, 16% trend, 12% private equity; alternatives 40-50% with reasonable assumptions).",
+     "fails_when": "Assumed Sharpe ratios and return inputs are debatable (trend 0.24 looks conservative; long/short 0.36 may be generous, more correlated with equities).",
+     "claim_ids": [
+      "MT037-C14-4",
+      "MT037-C15-1",
+      "MT037-C15-4",
+      "MT037-C15-7"
+     ]
+    },
+    {
+     "topic": "Bubble watch: persistence, valuation and not exiting too early",
+     "steps": [
+      {
+       "from": "Newness (AI, crypto) with no history",
+       "to": "Enthusiasm unchecked and bets on persistence of current leaders",
+       "why": "Marks: nothing tempers 'this time is different'; leaders rarely stay on top.",
+       "claim_ids": [
+        "MT037-C11-1",
+        "MT037-C11-2"
+       ]
+      },
+      {
+       "from": "High starting P/E",
+       "to": "Low forward 10-year S&P returns (about flat or 2%)",
+       "why": "J.P. Morgan chart.",
+       "claim_ids": [
+        "MT037-C11-3"
+       ]
+      },
+      {
+       "from": "Warnings in 1996 (irrational exuberance)",
+       "to": "Market kept rising for years",
+       "why": "Fed kept policy easy (1998 wobble, Y2K), productivity story.",
+       "claim_ids": [
+        "MT037-C12-3",
+        "MT037-C12-X1"
+       ]
+      }
+     ],
+     "evidence": "Marks's memo, J.P. Morgan chart (remembered approximately), 1990s history.",
+     "fails_when": "Counterarguments: P/E high but not insane, sentiment not extreme, Magnificent 7 have moats and cash flows.",
+     "claim_ids": [
+      "MT037-C11-4",
+      "MT037-C11-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Look at the composition of the alternatives allocation (liquid versus illiquid, drivers) rather than a headline percentage; blend several diversifying strategies because true Sharpe ratios are uncertain.",
+     "why": "Robustness to uncertainty about the true Sharpe.",
+     "claim_ids": [
+      "MT037-C15-2",
+      "MT037-C15-6"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Where borrowing is not possible, lever by choosing higher-volatility managers.",
+     "why": "Leverage constraint workaround.",
+     "claim_ids": [
+      "MT037-C15-3"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Lean toward risk-mitigation (trend) exposure alongside growth drivers rather than relying on a mean-variance blend of steady strategies.",
+     "why": "A robust, tail- and drawdown-aware approach.",
+     "claim_ids": [
+      "MT037-C17-1",
+      "MT037-C17-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Do not anchor return, volatility and correlation estimates on 1980-2020; open to all scenarios; read bonds' yield decomposition into real yield, inflation expectations and term premium.",
+     "why": "Regimes look permanent until they end.",
+     "claim_ids": [
+      "MT037-C10-3",
+      "MT037-C05-4",
+      "MT037-C06-3"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Track Fed funds futures, term premium and foreign central bank Treasury holdings as bond-market warning signs.",
+     "why": "Shift in the composition of dollar buyers.",
+     "claim_ids": [
+      "MT037-C06-1",
+      "MT037-C06-4",
+      "MT037-C06-5"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Use scenario sets that include a less favourable decade for equities (Asness 2035 retrospective) when assessing portfolio mix.",
+     "why": "Cash plus 2% for US equities, 1% real bonds, inflation 3-4%; diversifiers and trend do well.",
+     "claim_ids": [
+      "MT037-C09-1",
+      "MT037-C09-2",
+      "MT037-C09-4"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Read the AQR optimiser inputs critically: ten building blocks (equities, bonds, credit; commodities, diversifying long/short, risk mitigation represented by trend; private equity, real assets, private credit) plus cash; private equity proxied by 1.2x Russell 2000 blended with a private equity index (20% volatility versus about 15% public); with broader blocks the optimiser gives a more diversified portfolio than 60/40 at the same volatility.",
+     "why": "Assumptions drive the result and can be quibbled with.",
+     "claim_ids": [
+      "MT037-C14-2",
+      "MT037-C14-3",
+      "MT037-C14-6"
+     ]
+    }
+   ],
+   "evidence_style": "Macro data decompositions, academic and practitioner papers (AQR, GIC/J.P. Morgan, Marks), historical analogy (1990s, 2000), and conversations with named experts; reports the papers' assumptions and notes where he disagrees.",
+   "current_views": [
+    {
+     "view": "Germany is in a prolonged slump (second year of contraction, third possible with tariffs); the February 2025 election could be a game-changing policy moment.",
+     "as_of": "mid-January 2025 (recording; upload 2025-01-23)",
+     "reasoning": "External shocks plus policy missteps; room to borrow for investment.",
+     "claim_ids": [
+      "MT037-C01-1",
+      "MT037-C01-2",
+      "MT037-C02-5"
+     ]
+    },
+    {
+     "view": "US yields may go somewhat higher; the Treasury market faces a fiscal challenge, not a credit-bubble crisis, and the term premium has risen to about 50bp, with warning signs in foreign central bank holdings.",
+     "as_of": "mid-January 2025 (recording; upload 2025-01-23)",
+     "reasoning": "Real-yield rise plus term premium.",
+     "claim_ids": [
+      "MT037-C08-1",
+      "MT037-C06-4",
+      "MT037-C06-5",
+      "MT037-C07-1"
+     ]
+    },
+    {
+     "view": "Medium-term trend followers are heavily short bonds, a worked trade now in a correction and range, and a crowding risk; trend needs a breakout.",
+     "as_of": "mid-January 2025 (recording; upload 2025-01-23)",
+     "reasoning": "10-year and 2-year yields oscillating around a central point.",
+     "claim_ids": [
+      "MT037-C08-4",
+      "MT037-C08-5"
+     ]
+    },
+    {
+     "view": "US equities look expensive and starting P/E implies low forward returns, but sentiment is not at 2000-style extremes; risks exist in both directions (too cautious or too exposed).",
+     "as_of": "mid-January 2025 (recording; upload 2025-01-23)",
+     "reasoning": "Marks's memo, J.P. Morgan chart, 1990s comparison.",
+     "claim_ids": [
+      "MT037-C11-3",
+      "MT037-C11-4",
+      "MT037-C12-3",
+      "MT037-C12-X1"
+     ]
+    },
+    {
+     "view": "Large alternatives allocations (40-50%) are justified with reasonable return assumptions, but composition matters more than the headline percentage.",
+     "as_of": "mid-January 2025 (recording; upload 2025-01-23)",
+     "reasoning": "AQR optimiser results.",
+     "claim_ids": [
+      "MT037-C15-1",
+      "MT037-C15-2",
+      "MT037-C15-4"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastro Larsen",
+   "role": "Host of Top Traders Unplugged; veteran hedge fund manager and trend follower",
+   "speaker_note": "Ledger spelling 'Niels Kaastro Larsen' kept (the surname is spelled Kaastrup-Larsen elsewhere). Mostly host, but states views on unknown-unknown risk, correlation breakdowns, the illusion of private-asset diversification, the role of trend as 'brakes', and tracking-error and fiduciary barriers, so mapped. Correction applied: MT037-C15-5 (Sharpe haircut) is Alan's. The Bill Gerhart point about trend beta is relayed by Niels from an episode with Moritz Seibert.",
+   "fingerprint": [
+    "trend_following",
+    "diversification_risk_parity",
+    "portfolio_construction_stacking",
+    "behavioral_sentiment",
+    "manager_selection_allocation",
+    "regime_detection"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Portfolios are built around the risks investors have thought of, while the real risk is vulnerability to events they have not considered; risk is vulnerability, not predictability.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Quote attributed to a co-host (Harry Kristan) via Dave Dredge; the Denmark and Greenland episode as an example.",
+     "claim_ids": [
+      "MT037-C04-1"
+     ]
+    },
+    {
+     "premise": "Investors treat private assets as diversifiers although they hold similar risk; private equity is levered equity with infrequently reported prices, so its low measured volatility understates its risk.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Asness's joke in the retrospective ('levered equities are still equities').",
+     "claim_ids": [
+      "MT037-C04-3",
+      "MT037-C09-3"
+     ]
+    },
+    {
+     "premise": "Large dispersion between trend managers' returns argues that trend following is not a single beta.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Bill Gerhart's remark relayed from a podcast.",
+     "claim_ids": [
+      "MT037-C05-2"
+     ]
+    },
+    {
+     "premise": "Portfolios are allocated on relationships that held in the last 20-30 years; the stock-bond correlation is positive over the long run, so the negative correlation of the last 20-30 years was the exception and portfolios relying on it are exposed. Gold and the dollar rising together is another breakdown.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Long-run history; 2022; 'imagine the unimaginable'.",
+     "claim_ids": [
+      "MT037-C09-5",
+      "MT037-C10-1",
+      "MT037-C10-2"
+     ]
+    },
+    {
+     "premise": "Large sources of US debt are a pressure on yields (about $10 trillion mostly short-term debt to refinance in 2025), and reserve-currency status does not make US debt irrelevant, as MMT claims about inflation proved wrong.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Refinancing amounts; the MMT analogy; unsure of the outcome.",
+     "claim_ids": [
+      "MT037-C07-3",
+      "MT037-C07-X1",
+      "MT037-C07-4"
+     ]
+    },
+    {
+     "premise": "Passive flows are price-insensitive, so 'no price too high' behaviour exists today via indexing, and from 1995 to 2000 the S&P compounded about 28% for five years, so valuation-based exits can miss a long run.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Dave Dredge's paper; history.",
+     "claim_ids": [
+      "MT037-C12-1",
+      "MT037-C12-2"
+     ]
+    },
+    {
+     "premise": "Trend following in equities protects the downside and keeps investors invested, reducing the cost of being too cautious.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument that it is not only risk mitigation but participation.",
+     "claim_ids": [
+      "MT037-C12-4"
+     ]
+    },
+    {
+     "premise": "Low-risk 'drive slowly' diversification (heavy fixed income, including 60/40 or 80/20 in bonds in parts of Europe) worked while rates fell but is doubtful when rates rise, and its underperformance compounds; trend and risk-mitigation strategies act as brakes that allow meaningful equity exposure.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Dave Dredge's race-car analogy.",
+     "claim_ids": [
+      "MT037-C16-1",
+      "MT037-C16-2",
+      "MT037-C16-X1"
+     ]
+    },
+    {
+     "premise": "Tracking error to a benchmark is a barrier to allocating to trend; conventional wisdom shifts (ESG), so a fiduciary-duty argument against not allocating to risk mitigation is conceivable, though he admits it is a stretch.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Nick Baltas's paper and a news story on ESG.",
+     "claim_ids": [
+      "MT037-C17-3",
+      "MT037-C17-4",
+      "MT037-C17-R3"
+     ]
+    },
+    {
+     "premise": "Investor preferences flip unpredictably (defence stocks fashionable now), so benchmark conventions are not stable.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Examples: ESG, defence.",
+     "claim_ids": [
+      "MT037-C18-1"
+     ]
+    },
+    {
+     "premise": "Policy is poor at anticipating simple trends (dependency, digital infrastructure, China's competition).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Anecdotes about Germany (fax, rail).",
+     "claim_ids": [
+      "MT037-C03-R1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why portfolios are mis-allocated for the coming regime",
+     "steps": [
+      {
+       "from": "Allocators set weights from relationships of the last 20-30 years",
+       "to": "Reliance on negative stock-bond correlation and stable cross-asset links",
+       "why": "Careers spanned the exception period.",
+       "claim_ids": [
+        "MT037-C09-5",
+        "MT037-C10-1"
+       ]
+      },
+      {
+       "from": "Relationships break (positive stock-bond correlation, gold and dollar up together)",
+       "to": "Portfolios are exposed",
+       "why": "They rely on correlations that do not hold.",
+       "claim_ids": [
+        "MT037-C10-1",
+        "MT037-C10-2"
+       ]
+      },
+      {
+       "from": "Diversification into private assets",
+       "to": "Illusion of diversification",
+       "why": "Same underlying risk; infrequent pricing.",
+       "claim_ids": [
+        "MT037-C04-3",
+        "MT037-C09-3"
+       ]
+      }
+     ],
+     "evidence": "Asness's 2035 retrospective read as a warning; 2022 as evidence the relationships are breaking.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT037-C09-5",
+      "MT037-C10-1"
+     ]
+    },
+    {
+     "topic": "Brakes versus driving slowly",
+     "steps": [
+      {
+       "from": "Heavy fixed income diversification",
+       "to": "Safe-feeling but slows the car; underperformance compounds year after year",
+       "why": "Worked while rates fell; doubtful when rates rise.",
+       "claim_ids": [
+        "MT037-C16-X1",
+        "MT037-C16-2"
+       ]
+      },
+      {
+       "from": "Trend following / risk mitigation as good brakes",
+       "to": "Ability to hold meaningful equity exposure and drive faster",
+       "why": "It cuts losses in the equity portion.",
+       "claim_ids": [
+        "MT037-C16-1",
+        "MT037-C12-4"
+       ]
+      }
+     ],
+     "evidence": "Analogy from Dave Dredge; empirical blend of trend with traditional returns raising return (asserted).",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT037-C16-1",
+      "MT037-C17-R3"
+     ]
+    },
+    {
+     "topic": "January 2025 for trend followers",
+     "steps": [
+      {
+       "from": "Strong early readings (Trend Barometer very strong)",
+       "to": "A strong start to the year",
+       "why": "Bond trends and equities.",
+       "claim_ids": [
+        "MT037-C08-X1"
+       ]
+      },
+      {
+       "from": "Cooler yields after a lower US inflation print; stronger yen on BOJ hike talk",
+       "to": "Gave up early bond gains and hurt Asian equities",
+       "why": "Reversals in mid-January.",
+       "claim_ids": [
+        "MT037-C08-2",
+        "MT037-C08-3"
+       ]
+      }
+     ],
+     "evidence": "Index numbers: Beta50 +1.25%, SG CTA +0.93%, SG Trend +0.40%, short-term traders +0.81%, MSCI World ~+1%, S&P 500 TR +0.95%, long Treasury index -0.56%.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT037-C08-6"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Add a risk-mitigation (trend) sleeve so that the portfolio can hold meaningful equity exposure and cope with unknown unknowns, rather than diversifying into bonds or private assets.",
+     "why": "Brakes allow driving faster; private assets hold similar risk.",
+     "claim_ids": [
+      "MT037-C04-1",
+      "MT037-C16-1",
+      "MT037-C04-3"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Track the Trend Barometer and index returns against equities and bonds (January 2025 numbers).",
+     "why": "State and dispersion across trend managers.",
+     "claim_ids": [
+      "MT037-C08-X1",
+      "MT037-C08-6"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Test allocations against the relationships of a longer history, not the last 20-30 years, and imagine the unimaginable.",
+     "why": "Allocations rely on exceptional correlations.",
+     "claim_ids": [
+      "MT037-C10-1",
+      "MT037-C09-5"
+     ]
+    }
+   ],
+   "evidence_style": "Relays papers and conversations of the week (Asness, Marks, Dredge, Gerhart, Baltas), analogies (race car, aircraft), and industry numbers; admits where an idea is a stretch.",
+   "current_views": [
+    {
+     "view": "January 2025 started strongly for trend, but mid-month fixed income corrections and a stronger yen hurt: Beta50 +1.25%, SG CTA +0.93%, SG Trend +0.40%, short-term traders +0.81% against MSCI World ~+1% and S&P 500 TR +0.95%.",
+     "as_of": "mid-January 2025 (recording; upload 2025-01-23)",
+     "reasoning": "Year-to-date numbers read out.",
+     "claim_ids": [
+      "MT037-C08-2",
+      "MT037-C08-3",
+      "MT037-C08-6",
+      "MT037-C08-X1"
+     ]
+    },
+    {
+     "view": "He would not dismiss further rises in US bond yields and is surprised that equities have held up so well.",
+     "as_of": "mid-January 2025 (recording; upload 2025-01-23)",
+     "reasoning": "About $10 trillion mostly short-term refinancing in 2025; debt matters even with reserve-currency status.",
+     "claim_ids": [
+      "MT037-C07-3",
+      "MT037-C07-4",
+      "MT037-C07-X1"
+     ]
+    },
+    {
+     "view": "Many investors are allocated incorrectly for the coming environment and should build portfolios that allow driving faster with good brakes.",
+     "as_of": "mid-January 2025 (recording; upload 2025-01-23)",
+     "reasoning": "Reliance on the last 20-30 years of relationships.",
+     "claim_ids": [
+      "MT037-C09-5",
+      "MT037-C10-1",
+      "MT037-C16-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Is energy the main cause of Germany's slump",
+   "positions": [
+    {
+     "speaker": "Alan Dunne",
+     "position": "Energy (cheap Russian gas lost) is part of it, with China's competition, demographics and domestic policy also at work.",
+     "claim_ids": [
+      "MT037-C02-1",
+      "MT037-C02-2",
+      "MT037-C02-3"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastro Larsen",
+     "position": "Energy alone cannot be the explanation: oil is no higher than before the invasion (gas may differ).",
+     "claim_ids": [
+      "MT037-C02-6"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Is there a trend-following beta, and is it alpha",
+   "positions": [
+    {
+     "speaker": "Alan Dunne",
+     "position": "Against equities it is statistically alpha (near-zero beta), but commoditisation weakens that, so neither alpha nor beta is the right word.",
+     "claim_ids": [
+      "MT037-C05-1",
+      "MT037-C05-R2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastro Larsen",
+     "position": "Large dispersion between managers (Gerhart's point) argues that trend following is not a single beta.",
+     "claim_ids": [
+      "MT037-C05-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "How to size alternatives and trend: AQR's mean-variance blend versus a robust, tail-aware view",
+   "positions": [
+    {
+     "speaker": "AQR paper (as presented by Alan Dunne)",
+     "position": "With reasonable assumptions, alternatives reach 40-50% of the optimal portfolio, with a blend of trend (about 16%), long/short (15%), commodities (11%) and private equity (12%).",
+     "claim_ids": [
+      "MT037-C15-1",
+      "MT037-C15-4",
+      "MT037-C14-4"
+     ]
+    },
+    {
+     "speaker": "Alan Dunne",
+     "position": "Mean-variance ignores tails and drawdowns; a robust view favours more risk mitigation (trend) than AQR's blend, in line with the GIC/J.P. Morgan paper.",
+     "claim_ids": [
+      "MT037-C17-1",
+      "MT037-C17-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Whether to act on bubble warnings",
+   "positions": [
+    {
+     "speaker": "Alan Dunne",
+     "position": "Valuations and newness resemble past bubbles and imply low forward returns, but exiting after warnings (1996) missed years of gains; risks exist on both sides.",
+     "claim_ids": [
+      "MT037-C11-3",
+      "MT037-C12-3",
+      "MT037-C12-X1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastro Larsen",
+     "position": "There is a risk of getting too cautious; passive flows mean 'no price too high' exists anyway; trend in equities protects the downside while keeping the investor invested.",
+     "claim_ids": [
+      "MT037-C12-1",
+      "MT037-C12-2",
+      "MT037-C12-4"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "The term premium of about 50bp is model-dependent and Alan acknowledges it cannot be observed; no model or source is named.",
+   "claim_ids": [
+    "MT037-C06-3",
+    "MT037-C06-4"
+   ]
+  },
+  {
+   "issue": "The rise in yields is attributed to deficit worries via the term premium and to recession-fear unwinding via real yields; the relative contribution of fiscal worry versus Fed expectations is not separated.",
+   "claim_ids": [
+    "MT037-C05-4",
+    "MT037-C06-1",
+    "MT037-C06-4"
+   ]
+  },
+  {
+   "issue": "Foreign central bank Treasury holdings and repo balances are read as a warning although the dollar is strong; Alan offers it as a possibility with data seen only that week.",
+   "claim_ids": [
+    "MT037-C06-5"
+   ]
+  },
+  {
+   "issue": "AQR assumed Sharpe ratios and returns drive the 40-50% alternatives result; trend at 0.24 'looks conservative' and long/short at 0.36 may be generous, so the optimiser output depends on inputs the speakers dispute.",
+   "claim_ids": [
+    "MT037-C14-4",
+    "MT037-C14-5",
+    "MT037-C15-1",
+    "MT037-C15-7"
+   ]
+  },
+  {
+   "issue": "Corrections: C14-4 (0.3 Sharpe applies to the asset classes) and C15-5 (Sharpe haircut is Alan's point).",
+   "claim_ids": [
+    "MT037-C14-4",
+    "MT037-C15-5"
+   ]
+  },
+  {
+   "issue": "The J.P. Morgan chart's implied S&P return ('flat or 2%') is recalled approximately and the real or nominal basis is unclear.",
+   "claim_ids": [
+    "MT037-C11-3"
+   ]
+  },
+  {
+   "issue": "Niels says he does not have a strong opinion on yields yet would not dismiss higher yields; his 'AI-driven miracle' rate-cut prediction is described as fun, not a view.",
+   "claim_ids": [
+    "MT037-C07-X1",
+    "MT037-C07-4"
+   ]
+  },
+  {
+   "issue": "Alan says trend followers heavily short bonds worked until the correction and is a crowding risk, but offers no positioning data; Niels says medium-term trend followers had a tricky bond market in 2024.",
+   "claim_ids": [
+    "MT037-C08-5",
+    "MT037-C08-4"
+   ]
+  },
+  {
+   "issue": "The fiduciary-duty suggestion that failing to allocate to trend could be a breach is acknowledged by Niels as 'a bit of a stretch'; the empirical claim that blending trend raises return is asserted without a source.",
+   "claim_ids": [
+    "MT037-C17-4",
+    "MT037-C17-R3"
+   ]
+  },
+  {
+   "issue": "Asness's 2035 retrospective is satire and a hypothetical scenario; using it for evidence on valuation-implied returns is limited.",
+   "claim_ids": [
+    "MT037-C09-1",
+    "MT037-C09-X1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs Alan names as leading yields: Fed funds futures (end-2025 path), the Sahm-rule/unemployment signal for recession fears, the term premium and deficit trajectory, foreign central bank Treasury holdings, and the Fed's response to inflation. For equities he treats starting P/E and forward-looking return estimates as indicators of low 10-year returns (horizon ten years). Niels cites about $10 trillion of 2025 refinancing and the breakdown of stock-bond correlation as risks, plus an unpredictable political environment; neither names an input for trend returns beyond the Trend Barometer and breakouts in yields.",
+ "reader_inferences": [
+  "(reader) Both speakers frame trend following as a hedge against unforeseen events rather than a forecastable return source, consistent with their argument that portfolios fail through unconsidered risks.",
+  "(reader) The constraint list (leverage, liquidity, benchmark and career risk, complexity, fees, vehicles) suggests underallocation to trend is driven by agency problems, a testable claim if allocator surveys are cross-tabulated by mandate type.",
+  "(reader) Alan's two-thirds real yield, one-third inflation expectation split implies the 2024-25 selloff was driven by growth/policy repricing more than inflation fear, which would predict differing behaviour from the 2022 inflation-led selloff.",
+  "(reader) Dunne's remark that rising yields self-limit through recession suggests a negative feedback loop that could cap trend profits in short bond positions."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT037-C03-R1",
+   "chunk": "C03",
+   "speaker": "Niels Kaastro Larsen",
+   "quote": "policy has been very poor in predicting either trouble with dependency",
+   "claim": "German policy has been poor at anticipating simple, visible trends such as demographic dependency, digital infrastructure and China's competition.",
+   "mechanism": "policy_error",
+   "asset_class": "equities",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "n/a",
+   "conditions": "Germany",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT037-C05-R2",
+   "chunk": "C05",
+   "speaker": "Alan Dunne",
+   "quote": "maybe it's not Alpha maybe it's not beta it's something else",
+   "claim": "Trend following may be neither alpha nor beta in the usual sense and needs different language.",
+   "mechanism": "strategy_classification",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "n/a",
+   "direction": "n/a",
+   "conditions": "commoditisation and high manager dispersion",
+   "testable": "no",
+   "speaker_confidence": "low",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT037-C17-R3",
+   "chunk": "C17",
+   "speaker": "Niels Kaastro Larsen",
+   "quote": "we know the empirical data is there the evidence is there that when you blend Trend with these traditional um you know return streams fixed",
+   "claim": "Empirical evidence shows that blending trend with traditional stock and bond return streams raises return over time, which makes a fiduciary argument for allocating to risk mitigation conceivable.",
+   "mechanism": "portfolio_blend",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "trend plus 60/40 improves return",
+   "conditions": "",
+   "testable": "yes - blend backtests of trend with stocks and bonds",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}

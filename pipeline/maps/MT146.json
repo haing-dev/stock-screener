@@ -1,0 +1,174 @@
+{
+ "source_id": "MT146",
+ "episode_thesis": "Tom Roble's paper finds that CTAs have drifted to slower trend models (the 'speed factor'), that a blend of fast and slow looks like a painful medium-term model, and that even a homogeneous-looking CTA group shows huge dispersion. Andrew Beer uses this to argue that broad top-down replication captures the industry beta more reliably than any single manager and that the 'complexity crisis' (hundreds of esoteric markets) is not paid for once implicit trading costs are counted; Roble defends marginal diversification and Niels Kaastrup-Larsen sides with 'show it in the data'.",
+ "speakers": [
+  {
+   "name": "Tom Roble",
+   "role": "Guest; author of the paper on CTA trend speed, builds a paper-traded CTA replicator against the SG Trend index; allocator-side research",
+   "speaker_note": "Name spelled 'Roble' in captions; role is inferred from the discussion (meets CTAs and multistrats, wrote the paper), not stated.",
+   "fingerprint": ["trend_following", "manager_selection_allocation", "portfolio_construction_stacking", "costs_execution", "regime_detection", "diversification_risk_parity", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {"premise": "CTAs are not one model but a toolbox: they have drifted to longer-term trend models because those performed better, yet keep short-term models they deploy adaptively in stress.", "type": "empirical", "stated": "stated", "support": "Correlation heat map of the replicator versus SG Trend over time frames; manager meetings; Q1 2025 evidence that over half of short-term traders were positive while trend was down double digits", "claim_ids": ["MT146-C04-1", "MT146-C04-2", "MT146-C04-3"]},
+    {"premise": "A blend of long and short trend looks like medium-term, and medium-term can be the worst place: it lacks long-term trend benefits and short-term stress gains.", "type": "empirical", "stated": "stated", "support": "Heat maps of returns by speed", "claim_ids": ["MT146-C07-1", "MT146-C06-X2"]},
+    {"premise": "Trend followers using the same techniques produce widely different results because speed, risk allocation, markets, stops and risk-cutting all differ; drawdown shape matters.", "type": "empirical", "stated": "stated", "support": "Exhibit 1 dispersion chart for SG CTA index managers", "claim_ids": ["MT146-C05-1", "MT146-C05-2", "MT146-C07-3"]},
+    {"premise": "Diversification is the only free lunch: single-market trend IR is only 0.3-0.5, so adding uncorrelated markets raises portfolio Sharpe; excluding a market is itself a bet that the chosen markets will do better net of cost.", "type": "theoretical", "stated": "stated", "support": "Portfolio theory; success of Man Evolution, Systematica, etc.", "claim_ids": ["MT146-C13-3", "MT146-C14-1", "MT146-C17-2"]},
+    {"premise": "CTAs weigh transaction costs and slippage before adding a market and have become implementation experts, so costly markets are added only if net marginal benefit is positive.", "type": "institutional", "stated": "stated", "support": "Manager meetings; futures moving from exotic to mainstream", "claim_ids": ["MT146-C13-X2"]},
+    {"premise": "Trends have many causes, including inefficiency in thinly traded alternative markets, not only information digestion.", "type": "theoretical", "stated": "stated", "support": "Argument only", "claim_ids": ["MT146-C18-2"]},
+    {"premise": "Institutional allocators hold CTAs to diversify equity risk and want risk-mitigating portfolios, not 'crisis alpha' per se.", "type": "institutional", "stated": "stated", "support": "Allocator conversations", "claim_ids": ["MT146-C14-X1"]},
+    {"premise": "Manager outperformance can come from one or two markets, which reverses (cocoa, coffee 2024 then a harder 2025).", "type": "empirical", "stated": "stated", "support": "Example of Mulvaney", "claim_ids": ["MT146-C09-3"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Why the replicator was too fast and what it implies for CTA speed",
+     "steps": [
+      {"from": "Replicator built to maximise correlation with SG Trend (20/120 crossover)", "to": "Occasional short-term dislocations in correlation", "why": "Model was a medium-term model", "claim_ids": ["MT146-C03-3", "MT146-C03-4"]},
+      {"from": "Slower crossover tested", "to": "Higher correlation in dislocations", "why": "CTAs drifted to longer horizons where performance was better", "claim_ids": ["MT146-C04-1", "MT146-C04-2"]},
+      {"from": "Industry mixes long and short models", "to": "Blend looks medium-term and is painful as a stand-alone", "why": "Neither long-term benefits nor short-term stress gains", "claim_ids": ["MT146-C07-1"]}
+     ],
+     "evidence": "Heat maps of correlation and return by trend speed; Q1 2025 short-term index constituents.",
+     "fails_when": "Short-term models only win briefly (host: long-run longer-term models work better).",
+     "claim_ids": ["MT146-C04-3", "MT146-C06-X2"]},
+    {"topic": "Breadth of markets and net diversification benefit",
+     "steps": [
+      {"from": "Single-market trend IR is low (0.3-0.5)", "to": "Add many uncorrelated markets", "why": "Diversification is the only free lunch", "claim_ids": ["MT146-C13-3"]},
+      {"from": "Not adding a market", "to": "Implicit assumption that chosen markets will beat it net of cost", "why": "Reverse assumption is dangerous", "claim_ids": ["MT146-C14-1"]},
+      {"from": "Moving from 15/50 to 150 markets", "to": "Material extra diversification (150 to 151 is not)", "why": "Track records of alternative-market CTAs", "claim_ids": ["MT146-C17-2"]}
+     ],
+     "evidence": "Man Evolution, Systematica records; concedes they are now working poorly.",
+     "fails_when": "Edges decay as capital arrives (Beer) and costs exceed incremental return.",
+     "claim_ids": ["MT146-C17-3", "MT146-C18-2"]}
+   ],
+   "decision_process": [
+    {"element": "research", "practice": "Build a transparent bottom-up CTA replicator, optimise for correlation to the SG Trend index (not for performance), and review correlation by horizon with heat maps.", "why": "Attribute trend performance and monitor drift in industry speed", "claim_ids": ["MT146-C03-3", "MT146-C03-4", "MT146-C04-2"]},
+    {"element": "portfolio", "practice": "Allocators typically start with one CTA, then add several CTAs or non-trend quant strategies to diversify single-manager risk.", "why": "Dispersion between managers", "claim_ids": ["MT146-C07-3"]},
+    {"element": "universe", "practice": "Add a market when its marginal diversification outweighs its cost and it is not highly correlated with what is traded.", "why": "Diversification benefit versus transaction costs", "claim_ids": ["MT146-C13-3", "MT146-C13-X2"]}
+   ],
+   "evidence_style": "Empirical replication and heat maps on SG indices, manager meetings, portfolio theory, and named track records; relies on industry data rather than backtests of own strategy.",
+   "current_views": [
+    {"view": "Macro managers see a very opportunity-rich environment; CTAs benefit if trends emerge across markets in 2H 2025.", "as_of": "2025-07-31", "reasoning": "Stubborn inflation, relatively high rates, geopolitical dislocations", "claim_ids": ["MT146-C03-2"]},
+    {"view": "Multistrat talent war continues and emerging managers are now typically anchored by large multistrat tickets.", "as_of": "2025-07-31", "reasoning": "Multistrats see talent as alpha and use SMAs and seeds", "claim_ids": ["MT146-C01-1"]},
+    {"view": "Short-term CTAs showed adaptability in the Q1 2025 tariff shock, when longer-term CTAs were down double digits.", "as_of": "2025-07-31", "reasoning": "More than half of the short-term traders index constituents were positive", "claim_ids": ["MT146-C04-3"]}
+   ]
+  },
+  {
+   "name": "Andrew Beer",
+   "role": "Guest; runs DBi, a top-down managed futures replication manager (weekly rebalance, about 10 core positions)",
+   "speaker_note": "Ledger corrections applied: the cocoa/'no market inherently trends better' remark and the portfolio-Sharpe closing remark (webinar yesterday) are attributed to Beer, not the host.",
+   "fingerprint": ["replication_indexing", "costs_execution", "trend_following", "manager_selection_allocation", "research_robustness_overfitting", "portfolio_construction_stacking", "diversification_risk_parity"],
+   "worldview_premises": [
+    {"premise": "Managed futures performance at industry level is driven by a few major themes in the largest, most liquid markets; alpha is detecting information changes early, so the best implementation is in liquid instruments.", "type": "theoretical", "stated": "stated", "support": "2015 bottom-up and top-down analysis; his own replication results", "claim_ids": ["MT146-C09-1", "MT146-C09-2", "MT146-C17-1"]},
+    {"premise": "Bottom-up replicators calibrated at one date drift as the industry evolves, so top-down adaptive replication keeps correlation in the 80s-90s.", "type": "empirical", "stated": "stated", "support": "Redoing the model-selection exercise as of 2012, 2009, 2006 gave different answers; Mount Lucas index example", "claim_ids": ["MT146-C06-1", "MT146-C06-2", "MT146-C06-X1", "MT146-C05-3"]},
+    {"premise": "Bottom-up CTA models add model risk through the many parameters, so inferences from them are noisy; single-manager risk is large and breaks allocator capital-market assumptions.", "type": "empirical", "stated": "stated", "support": "30-point gap between best and worst funds in H1 2025; manager-specific choices on equities and FX", "claim_ids": ["MT146-C07-2", "MT146-C08-1", "MT146-C08-X1", "MT146-C08-X2"]},
+    {"premise": "Replicating a pool of funds reduces single-manager risk (correlations about 90% versus mid-80s for single managers) and is the cheapest way to hold the industry beta.", "type": "empirical", "stated": "stated", "support": "Own long-term correlations; 9 years above the index", "claim_ids": ["MT146-C08-2", "MT146-C10-1", "MT146-C11-2", "MT146-C09-R1", "MT146-C10-R1"]},
+    {"premise": "Implicit trading costs (market impact) are much larger than commonly believed: all-in about 200bp for a typical CTA, implicit costs about 3-5 times explicit, and complexity adds more.", "type": "empirical", "stated": "stated", "support": "BestEx analysis of every trade since 2019; UCITS reporting rules (TransTrend paper) allow zero reported costs", "claim_ids": ["MT146-C13-1", "MT146-C15-2", "MT146-C16-2", "MT146-C16-X1"]},
+    {"premise": "A complexity crisis: firms add non-core markets as a badge of honour and as a response to cheap replication and QIS products, and the extra markets do not cover their costs.", "type": "empirical", "stated": "stated", "support": "Hypothetical market 193 versus market 14 arithmetic (illustrative); simple managed futures ETFs beat complex funds in 2025", "claim_ids": ["MT146-C13-2", "MT146-C13-X1", "MT146-C15-1", "MT146-C19-1"]},
+    {"premise": "Esoteric-market edges decay as capital arrives (power markets 2004 to 2007), so past excess returns may no longer justify costs.", "type": "experience", "stated": "stated", "support": "Own experience founding a commodity firm", "claim_ids": ["MT146-C17-3"]},
+    {"premise": "Incentives drive the push to complexity and the lack of allocator scrutiny.", "type": "behavioural", "stated": "stated", "support": "Anecdote of lost mandates; talking to people who declined to do it", "claim_ids": ["MT146-C18-1", "MT146-C15-X2"]},
+    {"premise": "Trend following delivers when other strategies do not; Sharpe is a portfolio measure, and trend raises the Sharpe of stock-bond portfolios with the most diversification per unit.", "type": "theoretical", "stated": "stated", "support": "Portfolio argument", "claim_ids": ["MT146-C19-3"]},
+    {"premise": "No market inherently trends better; it depends on the time frame (cocoa went from worst to a top market in three years).", "type": "empirical", "stated": "stated", "support": "Cocoa anecdote; remark by a large alternative-market manager", "claim_ids": ["MT146-C19-2", "MT146-C17-X2"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Why more markets can lower net returns",
+     "steps": [
+      {"from": "Low-cost replication and QIS products compete", "to": "Firms add non-core markets as a differentiator", "why": "Business incentive, marketing", "claim_ids": ["MT146-C13-X1", "MT146-C15-X1"]},
+      {"from": "More markets traded at scale", "to": "Higher implicit costs (3-5 times explicit costs)", "why": "Ripple effects of large trades", "claim_ids": ["MT146-C15-2", "MT146-C13-2"]},
+      {"from": "Costs exceed incremental return", "to": "Simple replication does better after fees", "why": "Complex strategies should beat simple ones but have not in 2025", "claim_ids": ["MT146-C15-1", "MT146-C19-1", "MT146-C20-1"]}
+     ],
+     "evidence": "Illustrative cost arithmetic (hypothetical 400bp vs 1000bp), 2025 ETFs versus mutual funds and hedge funds, absence of evidence from managers.",
+     "fails_when": "Edge persists in new markets, costs are lower than assumed, or the underperformance is 2025 luck.",
+     "claim_ids": ["MT146-C15-1", "MT146-C20-X1"]},
+    {"topic": "Why top-down replication stays correlated",
+     "steps": [
+      {"from": "Industry mix of speeds changes over time", "to": "Bottom-up fixed-parameter replicators decorrelate", "why": "Calibration is date-specific", "claim_ids": ["MT146-C06-X1", "MT146-C06-1"]},
+      {"from": "Top-down method fitted to the industry returns with constant adaptation", "to": "Correlations stay in the 80s-90s and misses self-correct in weeks", "why": "Self-adaptive process", "claim_ids": ["MT146-C06-2", "MT146-C11-2"]}
+     ],
+     "evidence": "Own correlation history; PCA checks against bottom-up models.",
+     "fails_when": "Assets for the major themes are unavailable or the industry becomes fully short-term; correlation breaks down in volatile markets.",
+     "claim_ids": ["MT146-C10-X1"]}
+   ],
+   "decision_process": [
+    {"element": "signal", "practice": "Top-down replication of the industry using about 10 core positions, rebalanced weekly; the pre-implementation-cost return is the target.", "why": "Capture industry beta in the most liquid instruments at low cost", "claim_ids": ["MT146-C05-3", "MT146-C09-R1"]},
+    {"element": "universe", "practice": "Trade only about 10 of the most liquid futures; consider reading signals from ~150 markets and implementing in ~15 liquid positions.", "why": "Implicit costs dominate when the underlying signal Sharpe is low", "claim_ids": ["MT146-C17-X1", "MT146-C17-1", "MT146-C15-2"]},
+    {"element": "execution", "practice": "Benchmark every trade against arrival price with an algorithmic execution firm.", "why": "Nickels and dimes matter on a low-Sharpe signal", "claim_ids": ["MT146-C15-2", "MT146-C17-1"]},
+    {"element": "research", "practice": "Monitor tracking by running many bottom-up trend models and applying the same PCA to confirm the replicator picks up the main themes.", "why": "Check coverage of themes while accepting divergence", "claim_ids": ["MT146-C10-X1"]},
+    {"element": "portfolio", "practice": "Allocators should use an investable replication-based index to build capital-market assumptions and benchmark managers; the replicator then has no tracking error to it.", "why": "Hedge fund indices are net of fees and not investable", "claim_ids": ["MT146-C10-2", "MT146-C11-X1"]},
+    {"element": "other", "practice": "Allocators should ask managers to state implicit costs next to headline fees and justify extra markets; talk to smart people who chose not to do the strategy.", "why": "Allocators lack incentive to ask hard questions", "claim_ids": ["MT146-C19-X1", "MT146-C18-1", "MT146-C15-X2"]}
+   ],
+   "evidence_style": "Replication correlations, his own cost analysis (BestEx), industry statistics from 2025, anecdote and incentive reasoning; uses rhetorical hypotheticals (market 193) and admits 2025 evidence could be luck.",
+   "current_views": [
+    {"view": "Complex alternative-market CTAs and funds with many markets have underperformed simple replication and ETFs in 2025; the space is in a 'complexity crisis'.", "as_of": "2025-07-31", "reasoning": "Implicit costs of about 3-5 times explicit costs and 400bp-type incremental costs", "claim_ids": ["MT146-C13-2", "MT146-C15-1", "MT146-C19-1"]},
+    {"view": "Another long winter may come; if so cost efficiency will matter most, though fewer big trends may also be a cause.", "as_of": "2025-07-31", "reasoning": "The late-2010s winter may have partly reflected industry costs", "claim_ids": ["MT146-C20-1", "MT146-C20-X1"]},
+    {"view": "Trend following remains the best diversifier of stock-bond portfolios.", "as_of": "2025-07-31", "reasoning": "Delivers when other strategies do not", "claim_ids": ["MT146-C19-3"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host; CTA manager, argues for evidence over narrative",
+   "speaker_note": "Ledger corrections removed two claims from the host (C19-2, C19-3) and gave them to Beer; the host's own views are in the opening commentary and the challenges.",
+   "fingerprint": ["trend_following", "replication_indexing", "research_robustness_overfitting", "costs_execution", "manager_selection_allocation"],
+   "worldview_premises": [
+    {"premise": "Evidence, not narrative: ultra-diversified 300-500 market portfolios have not beaten 70-100 liquid-market portfolios over 10-year or rolling 5-year windows, and managers show only backtests.", "type": "empirical", "stated": "stated", "support": "Observation of returns; no manager has produced evidence", "claim_ids": ["MT146-C14-2", "MT146-C15-X1", "MT146-C18-X1"]},
+    {"premise": "A replicator should be judged against the real index, not an index built from its own model.", "type": "theoretical", "stated": "stated", "support": "Argument; calls own-model benchmark 'cheating' though good marketing", "claim_ids": ["MT146-C11-1"]},
+    {"premise": "Execution should aim at the price used in the backtest (we trade what we test); slippage against a chosen reference price is partly random.", "type": "experience", "stated": "stated", "support": "Own practice", "claim_ids": ["MT146-C16-1"]},
+    {"premise": "Trend following is not as poor as claimed over the long run, and weak starts have precedents.", "type": "empirical", "stated": "stated", "support": "SG Trend 10-year rolling return stats; Aspect Capital paper", "claim_ids": ["MT146-C12-1", "MT146-C12-X1"]},
+    {"premise": "Short-term models beat longer-term ones only briefly; the middle may be the weak spot.", "type": "empirical", "stated": "stated", "support": "Index data and Roble's heat maps", "claim_ids": ["MT146-C06-X2"]}
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {"element": "execution", "practice": "Fill at the same reference price (open or close) as the backtest; do not obsess over intraday slippage.", "why": "We trade what we test and test what we trade", "claim_ids": ["MT146-C16-1"]}
+   ],
+   "evidence_style": "Index return data and rolling statistics, personal track-record experience, and challenges to guests' claims (marketing versus data).",
+   "current_views": [
+    {"view": "Trend barometer at 52 (strong) fits a decent July for CTAs; CTA indices still down YTD (SG CTA -6.64%, SG Trend -8.92%, short-term -4.23%).", "as_of": "2025-07-31", "reasoning": "Metals and equities strong; daily CTA gains", "claim_ids": ["MT146-C02-2", "MT146-C03-1"]},
+    {"view": "Chinese outbound investment is rising while the West turns protectionist; copycat Bitcoin 'yield' companies look like a late-cycle product.", "as_of": "2025-07-31", "reasoning": "Divergent trade regimes; paying twice the price for leveraged Bitcoin exposure", "claim_ids": ["MT146-C02-1", "MT146-C02-X1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {"topic": "Are more (esoteric) markets worth it for a trend follower?",
+   "positions": [
+    {"speaker": "Tom Roble", "position": "Diversification is the only free lunch; moving from 15-50 to 150 markets adds material diversification; CTAs weigh costs before adding markets", "claim_ids": ["MT146-C13-3", "MT146-C17-2", "MT146-C13-X2"]},
+    {"speaker": "Andrew Beer", "position": "Implicit costs of 3-5 times explicit costs mean extra markets do not pay; complexity crisis", "claim_ids": ["MT146-C13-2", "MT146-C15-2", "MT146-C19-1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "The data over 10 years does not show benefits from 300-500 markets; the claim is partly marketing", "claim_ids": ["MT146-C14-2", "MT146-C15-X1"]}
+   ]},
+  {"topic": "Tracking error benchmark for a replicator",
+   "positions": [
+    {"speaker": "Andrew Beer", "position": "Hedge fund indices are net of fees and not investable; benchmark against a replication-based index with no tracking error", "claim_ids": ["MT146-C10-2", "MT146-C11-X1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Tracking error must be measured against the CTA index, not a self-built model", "claim_ids": ["MT146-C11-1"]}
+   ]},
+  {"topic": "Does execution slippage versus a reference price matter?",
+   "positions": [
+    {"speaker": "Andrew Beer", "position": "Implicit costs are large and should be measured honestly; reported figures can be gamed", "claim_ids": ["MT146-C15-2", "MT146-C16-2", "MT146-C16-X1"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Slippage versus a chosen reference price is random; target the backtest price and expect little annual slippage from good managers", "claim_ids": ["MT146-C16-1"]}
+   ]},
+  {"topic": "Is replication a way to get the beta or a self-referential benchmark?",
+   "positions": [
+    {"speaker": "Andrew Beer", "position": "Replication gives broad industry exposure with lower single-manager risk, correlation about 90%", "claim_ids": ["MT146-C08-2", "MT146-C10-1", "MT146-C11-2"]},
+    {"speaker": "Tom Roble", "position": "Bottom-up replicators like his own are useful for attribution but there is large dispersion among managers", "claim_ids": ["MT146-C05-1", "MT146-C07-3"]}
+   ]},
+  {"topic": "Source of trends in alternative markets",
+   "positions": [
+    {"speaker": "Tom Roble", "position": "Thin-market inefficiencies can create persistent trends", "claim_ids": ["MT146-C18-2"]},
+    {"speaker": "Andrew Beer", "position": "Quants find no statistical evidence that alternative markets trend more; no market inherently trends better", "claim_ids": ["MT146-C18-1", "MT146-C19-2"]}
+   ]}
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Beer's 400bp / 1000bp / 600bp numbers are a hypothetical rhetorical question, not measured estimates (ledger correction applied).", "claim_ids": ["MT146-C13-2", "MT146-C17-3"]},
+  {"issue": "Speaker attribution of the closing remarks (cocoa worst-to-best, trend Sharpe at portfolio level) is corrected to Beer by the ledger; captions are ambiguous.", "claim_ids": ["MT146-C19-2", "MT146-C19-3"]},
+  {"issue": "Beer's own replication is compared with a SocGen index built from the same model, which the host calls circular; no independent tracking-error figure is given.", "claim_ids": ["MT146-C10-2", "MT146-C11-1", "MT146-C11-2"]},
+  {"issue": "The 2025 evidence (simple ETFs beating complex funds) is a single short episode, admitted as possibly luck.", "claim_ids": ["MT146-C15-1"]},
+  {"issue": "Host's claim that no manager has shown evidence for ultra-diversification conflicts with Roble's cited track records of Man Evolution and Systematica, which Beer says are now working badly.", "claim_ids": ["MT146-C14-2", "MT146-C17-2", "MT146-C17-3"]},
+  {"issue": "Reported 10-year rolling index statistics were calculated by the host on air and flagged as possibly wrong.", "claim_ids": ["MT146-C12-1"]},
+  {"issue": "Replicator correlation stays 'in the 80s-90s' but reference to the true industry benchmark (pre- or post-cost) is mixed, so correlation numbers are not strictly comparable between single managers and replicators.", "claim_ids": ["MT146-C06-1", "MT146-C08-2"]}
+ ],
+ "forward_looking_inputs": "(reader) Roble: stubborn inflation, high rates and geopolitical dislocation as inputs for a rich trend/macro environment in 2H 2025; short-term model performance as an indicator of stress regimes. Beer: implicit-cost drag and the mix of trend speeds in the industry; whether complex funds beat replication over the next 3 to 5 years. Host: trend barometer reading and SG Trend 10-year rolling returns. No quantitative forecast is given; horizons are 3 to 5 years for the breadth debate.",
+ "reader_inferences": [
+  "(reader) Roble and Beer agree on the empirical drift to longer-term trend but draw different conclusions: Roble that CTAs adaptively keep short-term tools, Beer that the answer is not to fit a speed at all.",
+  "(reader) The cost-versus-breadth debate cannot be settled without disclosed net-of-implicit-cost returns by market bucket; neither side supplies them.",
+  "(reader) Beer's business interest (replication fund) aligns with his complexity-crisis thesis; Roble's allocator-advisory role aligns with the multi-manager framing; each speaker's evidence should be read with that in mind.",
+  "(reader) The warning against the medium-term speed is consistent with the finding that CTAs mix speeds, but no out-of-sample test of a pure long-term versus medium-term model is shown."
+ ],
+ "added_claims": [
+  {"claim_id": "MT146-C09-R1", "chunk": "C09", "speaker": "Andrew Beer", "quote": "will actually increase our tracking error relative to the reported ind indices or reported mutual funds", "claim": "Because the replication targets pre-implementation-cost returns while reported CTA indices and mutual funds are net of fees and costs, the replicator's measured tracking error to them is higher by construction.", "mechanism": "benchmark_mismatch", "asset_class": "managed futures", "indicator": "tracking error versus SG CTA index", "horizon": "unspecified", "direction": "none", "conditions": "Replication aimed at pre-cost returns", "testable": "yes - compare gross and net returns to indices", "speaker_confidence": "medium", "time_bound": "no"},
+  {"claim_id": "MT146-C10-R1", "chunk": "C10", "speaker": "Andrew Beer", "quote": "ideally it's the index returns plus 100 basis points because you're good at picking those four", "claim": "An allocator picking a handful of managers is trying to reconstruct the industry beta, ideally plus about 100bp from manager selection skill.", "mechanism": "manager_selection_beta", "asset_class": "managed futures", "indicator": "manager selection alpha", "horizon": "unspecified", "direction": "none", "conditions": "Allocators selecting four managers from the SG CTA index", "testable": "partly", "speaker_confidence": "medium", "time_bound": "no"}
+ ]
+}

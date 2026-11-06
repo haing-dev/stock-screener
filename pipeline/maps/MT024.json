@@ -1,0 +1,196 @@
+{
+ "source_id": "MT024",
+ "episode_thesis": "Yoav Git argues that bonds fail as the defensive building block when inflation rises (CPI minus, and correlated with equities above about 4.5% inflation), commodity trend is their mirror image, and a 50/50 mix delivers roughly CPI+4% in every inflation regime, so allocators need not forecast inflation. He adds that trend profits depend on positive autocorrelation, which differs by asset class and over time, so trend should be tilted by market structure (carry, supply shocks, physical players). Niels frames the same world through geopolitical breakdown and robustness: build portfolios of truly uncorrelated strategies that survive five to seven years, and expect large trend opportunities if world order breaks down.",
+ "speakers": [
+  {
+   "name": "Yoav Git",
+   "role": "Co-host; Gresham fixed income trend manager and researcher (Safi fund); author of the ERAS inflation-regime paper and the autocorrelation paper with Adam Pedel",
+   "speaker_note": "Transcript spells him 'Yorov Git'; ledger spelling kept. The ERAS paper is co-written with Adam Pedel, a commodity researcher at Gresham. He refers to 'Safi' as the fixed income trend fund (ledger and transcript use that spelling).",
+   "fingerprint": ["trend_following", "carry", "commodity_fundamentals", "regime_detection", "portfolio_construction_stacking", "structural_themes", "debt_cycle_long_term", "diversification_risk_parity"],
+   "worldview_premises": [
+    {"premise": "Current inflation pressure is largely supply-driven and structural (deglobalisation, security of supply chains, military spending, the carbon-to-metal energy transition with a roughly 20-year lag to build mines), not just demand pull.", "type": "theoretical", "stated": "stated", "support": "Cites Bill White and Mark Blyth conversations; Russian gas, compromised supply chains.", "claim_ids": ["MT024-C04-3", "MT024-C04-4", "MT024-C04-5", "MT024-C08-X2"]},
+    {"premise": "Monetary and fiscal conditions are inflation-friendly: real rates about 1%, the Fed cutting while CPI is above target, and US interest costs about 1 trillion a year versus about 250 billion ten years ago.", "type": "empirical", "stated": "stated", "support": "Figures quoted from memory (US debt 30 trillion).", "claim_ids": ["MT024-C08-1", "MT024-C08-2"]},
+    {"premise": "Equities are the all-weather growth asset in CPI-plus terms, returning roughly CPI+0 in high inflation and CPI+10-15 in low inflation.", "type": "empirical", "stated": "stated", "support": "ERAS regime study (high, rising, low, falling inflation).", "claim_ids": ["MT024-C05-1", "MT024-C05-2"]},
+    {"premise": "Bonds are CPI-plus in falling-rate periods and negatively correlated to equities, but in rising inflation they return CPI minus, and above about 4.5% inflation they are strongly negative and more correlated with equities.", "type": "empirical", "stated": "stated", "support": "ERAS regime statistics; 4.5% threshold is a chosen boundary (see gaps).", "claim_ids": ["MT024-C06-1", "MT024-C06-R3"]},
+    {"premise": "Commodities are the mirror image of bonds (strong in inflation, very poor in low inflation), and commodity trend does better than long-only in low inflation because carry drag is smaller; falling inflation is bad for commodity trend.", "type": "empirical", "stated": "stated", "support": "ERAS results; Covid-to-Ukraine period as an example of weak commodity trends.", "claim_ids": ["MT024-C06-2", "MT024-C06-3", "MT024-C07-3"]},
+    {"premise": "Inflation spikes quickly and is stickier on the way down, and the Fed since the 1970s has overshot with high real rates when bringing it down, so inflation spends more time falling; the Volcker-to-Yellen era is not representative of the full history.", "type": "empirical", "stated": "stated", "support": "ERAS regime durations; good data back to the 1920s; Dimson-style long-history argument (the transcript name is garbled).", "claim_ids": ["MT024-C07-1", "MT024-C07-2", "MT024-C07-X1"]},
+    {"premise": "Trend arises from supply constraints and shocks (low storage plus a cold spell gives big natural gas trends).", "type": "theoretical", "stated": "stated", "support": "Natural gas example.", "claim_ids": ["MT024-C07-4", "MT024-C03-1"]},
+    {"premise": "Commodities are non-fungible across time, geography and grade (oil this year versus next, 61% versus 65% iron ore), giving true diversification and requiring asset-class-specific trend treatment.", "type": "theoretical", "stated": "stated", "support": "Examples; physical attributes matter in commodities while supply shocks are irrelevant in fixed income.", "claim_ids": ["MT024-C09-2", "MT024-C09-4"]},
+    {"premise": "Trend profit depends on positive autocorrelation of the underlying price, not merely on the presence of trends; equities show negative autocorrelation at times and horizons while fixed income shows much higher autocorrelation, and these differences stem from market structure that changes over time.", "type": "theoretical", "stated": "stated", "support": "Git and Pedel's mathematical paper; Rob Carver's empirical blog on asset-class Sharpe.", "claim_ids": ["MT024-C14-2", "MT024-C14-3", "MT024-C14-4", "MT024-C14-5", "MT024-C14-X5"]},
+    {"premise": "Trend Sharpe is about 0.8 whether the underlying asset Sharpe is +1 or -1; spot-only and carry-only Sharpes do not explain trend returns, and bonds, FX and metals harvest trend while equities do not.", "type": "empirical", "stated": "stated", "support": "Rob Carver's blog data across asset classes and markets (relayed by Git).", "claim_ids": ["MT024-C13-1", "MT024-C13-2"]},
+    {"premise": "A single-market trend Sharpe is low (about 0.2) and the portfolio Sharpe comes from a diversification multiple of about 3.5; carry lifts the average market Sharpe to about 0.3 and the portfolio to about 1.05.", "type": "theoretical", "stated": "stated", "support": "Back-of-envelope arithmetic of CTA portfolio construction.", "claim_ids": ["MT024-C13-3", "MT024-C13-4"]},
+    {"premise": "A rate gradient creates drift: developed-market FX trended poorly at zero rates and improves when central banks diverge; the narrowing JGB-US yield gap (about 3% to about 1.5% in 2025) weakens yen carry.", "type": "empirical", "stated": "stated", "support": "Observation of FX trend history and the 2025 yield gap.", "claim_ids": ["MT024-C15-3", "MT024-C15-4", "MT024-C04-2"]},
+    {"premise": "Allocators find timing strategies very difficult, so a stable building block removes the need to predict.", "type": "experience", "stated": "stated", "support": "Experience of allocator practice; mentions a paper on timing strategies by Guppy and Pogo (garbled names).", "claim_ids": ["MT024-C12-1"]},
+    {"premise": "Trend followers are small relative to total equity markets (CTA about 300 billion plus about 300 billion QIS versus 56 trillion) but significant in some commodity markets, and trading against yourself signals poor trend performance.", "type": "empirical", "stated": "stated", "support": "Industry size estimates from memory.", "claim_ids": ["MT024-C11-1", "MT024-C11-2"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Why bonds fail and commodity trend works in rising inflation (ERAS)",
+     "steps": [
+      {"from": "Inflation rises toward and beyond about 4.5%", "to": "Bonds earn CPI minus and become more correlated with equities", "why": "Real return on nominal bonds falls and the stock-bond hedge breaks", "claim_ids": ["MT024-C06-1"]},
+      {"from": "Inflation rises through supply shocks and constraints", "to": "Commodity prices trend", "why": "Supply is inelastic (20 years to build a mine; low storage), so price must do the adjusting", "claim_ids": ["MT024-C04-4", "MT024-C07-4"]},
+      {"from": "Commodity trend positive in inflation, smaller drag than long-only in low inflation", "to": "50% bonds plus 50% commodity trend gives roughly CPI+4% in every regime with little equity correlation", "why": "Bonds win if inflation falls, commodity trend wins if it rises", "claim_ids": ["MT024-C06-3", "MT024-C06-4", "MT024-C08-3"]}
+     ],
+     "evidence": "ERAS historical regime study over about 70 years (data back to 1920s available); regime boundaries set at 2% and 4.5% so each covers about 25% of time.",
+     "fails_when": "Falling inflation hurts commodity trend (as between Covid and Ukraine) so the mix leans on bonds; if rates and inflation both rise unusually, bond losses may exceed commodity trend gains. Git concedes the boundaries were chosen ('cook the books') and the regime sample depends on the era.",
+     "claim_ids": ["MT024-C06-4", "MT024-C07-1", "MT024-C07-3"]},
+    {"topic": "Japan yield rise and US bond pressure",
+     "steps": [
+      {"from": "Japanese budget concern and JGB sell-off", "to": "JGB yields rise toward US yields, so the yen carry trade fades", "why": "Japan holds large US debt and the yield differential narrows", "claim_ids": ["MT024-C04-2", "MT024-C15-4", "MT024-C04-R1"]},
+      {"from": "Narrower differential", "to": "Flows from US bonds back to Japan, pressure on US yields (10-year above 4.2%) and stronger yen", "why": "Less incentive for Japanese investors to park money in the US", "claim_ids": ["MT024-C04-2"]}
+     ],
+     "evidence": "JGB 10-year at about 2.41% in January 2026; yield gap about 3% to about 1.5% in 2025.",
+     "fails_when": "Not stated; Niels calls Japan more important than people realise.",
+     "claim_ids": ["MT024-C04-2", "MT024-C15-4", "MT024-C16-1", "MT024-C03-2"]},
+    {"topic": "Autocorrelation and asset-class trend performance",
+     "steps": [
+      {"from": "Positive autocorrelation of the underlying price", "to": "Higher trend-following profit; Git and Pedel quantify the value of 1% of autocorrelation", "why": "Mathematics of trend: a trend system earns when moves persist", "claim_ids": ["MT024-C14-2", "MT024-C14-X5"]},
+      {"from": "Market structure (equity rebalancing, value traders, day traders, zero-day options; coupon and carry in bonds)", "to": "Different autocorrelation by asset class and time", "why": "Different players produce different dynamics", "claim_ids": ["MT024-C14-5", "MT024-C15-5"]},
+      {"from": "Equities' negative autocorrelation at times and horizons", "to": "Generic trend earns less in equities", "why": "Up-down-up-down price action whipsaws a trend position", "claim_ids": ["MT024-C14-3"]}
+     ],
+     "evidence": "Their paper's mathematics and Carver's data; Niels notes the bond result may reflect 40 years of falling rates.",
+     "fails_when": "Structure and regime change (autocorrelation is a moving target). Git accepts it varies over time, hence selection of about 50 markets by current characteristics.",
+     "claim_ids": ["MT024-C14-5", "MT024-C15-X6"]},
+    {"topic": "Carry and structure-based tilts in trend",
+     "steps": [
+      {"from": "Markets with a positive carry or rate gradient, supply shocks or many physical players", "to": "More likely to trend and drift", "why": "Structural reasons for persistent price moves", "claim_ids": ["MT024-C14-1", "MT024-C15-3"]},
+      {"from": "Tilting trend allocation to such markets", "to": "Higher average market Sharpe (0.2 to 0.3) and higher portfolio Sharpe (about 0.7 to 1.05)", "why": "Diversification multiple of about 3.5 applied to a higher base", "claim_ids": ["MT024-C13-3", "MT024-C13-4", "MT024-C15-2"]}
+     ],
+     "evidence": "Carver's spot-versus-carry plots; Safi allocation of about 50 of 100-150 markets.",
+     "fails_when": "Carry-heavy markets reverse when the gradient fades (yen carry).",
+     "claim_ids": ["MT024-C15-2", "MT024-C15-4"]}
+   ],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Build the defensive core as 50% bonds plus 50% commodity trend (ERAS) rather than forecasting inflation regimes.", "why": "Resilient across inflation regimes; avoids timing.", "claim_ids": ["MT024-C06-4", "MT024-C06-5", "MT024-C08-3", "MT024-C12-1"]},
+    {"element": "universe", "practice": "Offer commodity-only trend separately from financial trend so allocators can choose a real-asset/inflation factor; trade each asset class slightly differently.", "why": "Allocators value distinct risk factors; commodity physical attributes differ from fixed income.", "claim_ids": ["MT024-C09-1", "MT024-C09-2", "MT024-C11-4"]},
+    {"element": "universe", "practice": "Trade 100-150 markets but allocate meaningfully to about 50 at a time, selected on characteristics (such as carry or rate gradient) that make markets trend-friendly.", "why": "Autocorrelation varies over time and by market.", "claim_ids": ["MT024-C15-2", "MT024-C15-X6"]},
+    {"element": "sizing", "practice": "Be less present in markets where the manager is the main player; avoid trading against oneself.", "why": "Trading against yourself is a leading indicator of poor trend performance.", "claim_ids": ["MT024-C11-1"]},
+    {"element": "signal", "practice": "Incorporate each market's structural characteristics (physical nature, other players, carry) into trend without a separate model per market, keeping trend's convexity.", "why": "Structure drives autocorrelation.", "claim_ids": ["MT024-C15-1", "MT024-C14-5"]},
+    {"element": "research", "practice": "Test inflation-regime results over long history (back to the 1920s) rather than the Volcker-to-Yellen era only.", "why": "Falling-inflation era is unrepresentative; older data less reliable.", "claim_ids": ["MT024-C07-X1"]},
+    {"element": "risk", "practice": "Provide liquidity in new markets (lithium) early; trend followers do not set prices.", "why": "Hedgers need to pre-sell production; trend followers provide liquidity.", "claim_ids": ["MT024-C10-2"]}
+   ],
+   "evidence_style": "Historical regime studies (ERAS, about 70 years, extendable to the 1920s), mathematics of trend and autocorrelation (own paper), relaying Carver's blog data, and own fund track record (Safi about 12% over three years after fees). Admits that regime boundaries were chosen for round numbers and equal time shares.",
+   "current_views": [
+    {"view": "Inflation risks are tilted up (supply shocks, relaxed monetary policy, US interest burden), but he will not forecast; the bond plus commodity-trend mix is the response.", "as_of": "2026-01-22", "reasoning": "Real rates about 1%, Fed cutting with CPI above target, interest costs about 1 trillion a year, deglobalisation and tariffs.", "claim_ids": ["MT024-C08-1", "MT024-C08-2", "MT024-C08-3", "MT024-C08-X2"]},
+    {"view": "Japanese yields rising toward US yields will fade the yen carry trade, pressure US bonds and favour a stronger yen; 2026 started with trends in Japan, Taiwan dollar, rates, Turkish lira and EM FX.", "as_of": "2026-01-22", "reasoning": "Yield gap narrowed from about 3% to about 1.5% in 2025; 10-year US above 4.2%.", "claim_ids": ["MT024-C04-1", "MT024-C04-2", "MT024-C15-4"]},
+    {"view": "Fixed income trend had three poor years after being the best asset class; specialised, asset-class-specific trend held up better.", "as_of": "2026-01-22", "reasoning": "Safi up about 12% after fees over three years while generic managers lagged.", "claim_ids": ["MT024-C11-3", "MT024-C11-4"]},
+    {"view": "Strong commodity trends have been absent since Covid because inflation was falling, but supply constraints are bringing them back.", "as_of": "2026-01-22", "reasoning": "Falling inflation is bad for commodity trend; natural gas trend on low storage plus cold.", "claim_ids": ["MT024-C07-3", "MT024-C07-4", "MT024-C04-4"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host, Top Traders Unplugged; trend-following allocator and commentator",
+   "speaker_note": "Transcript spells him 'Neils Castro Larsson'. In this episode he gives his own opening views on geopolitics and robustness, and acts as an interviewer on the ERAS and Carver topics. His 'commodity trend 100-year portfolio paper' reference refers to a well-known volatility manager whose name he cannot recall.",
+   "fingerprint": ["trend_following", "geopolitics", "diversification_risk_parity", "manager_selection_allocation", "crisis_alpha_convexity", "behavioral_sentiment"],
+   "worldview_premises": [
+    {"premise": "A breakdown of trust and world order (a 'fourth turning') could cause huge market moves, including in financial markets, beyond those already seen in commodities, which is an opportunity for trend following.", "type": "theoretical", "stated": "stated", "support": "Greenland dispute, loss of trust between allies; refers to Neil Howe's fourth turning. No data.", "claim_ids": ["MT024-C02-3"]},
+    {"premise": "Investors should aim for robustness over the next five to seven years rather than maximum return, and robustness only comes from combining truly uncorrelated strategies and assets.", "type": "experience", "stated": "stated", "support": "His long-standing 'imagine the unimaginable' stance; no data.", "claim_ids": ["MT024-C02-1", "MT024-C02-2"]},
+    {"premise": "Commodity moves have different, often non-geopolitical causes: natural gas +71% in a week on a US cold front, gold on loss of trust in fiat currencies.", "type": "empirical", "stated": "stated", "support": "Market observation, Dalio comment on gold.", "claim_ids": ["MT024-C03-1", "MT024-C03-3"]},
+    {"premise": "Japan's rate, JGB and carry changes matter for global markets more than people realise.", "type": "experience", "stated": "stated", "support": "Past episodes with Dave Dredge; JGB 10-year at about 2.41% as a 'mini Truss moment'.", "claim_ids": ["MT024-C03-2", "MT024-C16-1"]},
+    {"premise": "Over 70 years, rising inflation periods have lasted about as long as falling ones, though investors remember mostly falling or low inflation.", "type": "empirical", "stated": "stated", "support": "Reading of Git's regime chart; the chart's boundaries are chosen (Git admits this).", "claim_ids": ["MT024-C06-6"]},
+    {"premise": "Institutional resistance to commodities is philosophical rather than return-based and should be overridden by evidence, as in the Danish pension CEO's view of the mandate; green-tilted pensions have underperformed over the last two or three years.", "type": "institutional", "stated": "stated", "support": "Anecdote of a Danish pension CEO; German institutions refuse anything containing commodities.", "claim_ids": ["MT024-C09-3", "MT024-C10-1", "MT024-C10-X3"]},
+    {"premise": "CTAs did not cause the 2024 cocoa spike; they were long from early 2023 and sold into the rally via risk management.", "type": "empirical", "stated": "stated", "support": "Recollection from an earlier episode, with some exceptions acknowledged.", "claim_ids": ["MT024-C10-3"]},
+    {"premise": "Fixed income trend suffered in recent years because positions swung from very long to very short and back to very long; repeated reversals.", "type": "experience", "stated": "stated", "support": "Exposure he observes in portfolios.", "claim_ids": ["MT024-C11-X4"]},
+    {"premise": "Bonds' high autocorrelation may merely reflect 40 years of falling rates.", "type": "empirical", "stated": "stated", "support": "Challenge posed to Git; he does not claim it.", "claim_ids": ["MT024-C15-X6"]}
+   ],
+   "mechanism_chains": [
+    {"topic": "Geopolitical breakdown to trend opportunity",
+     "steps": [
+      {"from": "Breakdown of trust between allies and of fiat-currency confidence", "to": "Large moves in commodities (gold) and potentially in financial markets (JGBs, yen)", "why": "Historical alliances and ties no longer hold; markets reprice", "claim_ids": ["MT024-C02-3", "MT024-C03-3"]},
+      {"from": "Large persistent moves", "to": "Trend followers benefit", "why": "Trend rules capture persistent moves; longer-term managers avoid reacting to every headline", "claim_ids": ["MT024-C02-3", "MT024-C02-4"]}
+     ],
+     "evidence": "January 2026 CTA performance (BTOP50 +3.18%, SG CTA +3.46%, SG Trend +3.78%, Trend Barometer 50).",
+     "fails_when": "If the world order does not really break down; headlines are volatile and Davos headlines moved markets only briefly.",
+     "claim_ids": ["MT024-C02-3", "MT024-C03-4"]},
+    {"topic": "Commodity trend as an inflation early warning",
+     "steps": [
+      {"from": "Commodity trends emerging (gas, metals)", "to": "Inflation numbers should pick up", "why": "Commodities as a pre-warning; Git declines to forecast", "claim_ids": ["MT024-C08-X2"]}
+     ],
+     "evidence": "None given; the host states a question to Git, which Git redirects.",
+     "fails_when": "Git says events overtake forecasts.",
+     "claim_ids": ["MT024-C08-X2"]}
+   ],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Combine truly uncorrelated strategies and assets to build a portfolio for the next five to seven years.", "why": "Robustness under breakdown scenarios.", "claim_ids": ["MT024-C02-1", "MT024-C02-2"]},
+    {"element": "research", "practice": "Monitors a Trend Barometer and trend indices (BTOP50, SG CTA, SG Trend, short-term traders) weekly against MSCI World and S&P 500.", "why": "Tracks trend conditions.", "claim_ids": ["MT024-C03-4"]},
+    {"element": "portfolio", "practice": "Prefers evidence over philosophy when allocating to commodities, for example combining fixed income holders with commodity trend.", "why": "Pension mandate is the best long-term return.", "claim_ids": ["MT024-C09-3", "MT024-C10-1"]}
+   ],
+   "evidence_style": "Anecdote, headlines and index performance tables; conversation with guests; asks sceptical questions (autocorrelation versus falling rates, commodity trend definition). Names are sometimes recalled loosely.",
+   "current_views": [
+    {"view": "Geopolitical breakdown (Greenland, loss of trust) argues for robust, uncorrelated portfolios and may bring unimaginable market moves that benefit trend following.", "as_of": "2026-01-22", "reasoning": "Breakdown of trust and truth; Davos headlines have not resolved the details.", "claim_ids": ["MT024-C02-1", "MT024-C02-2", "MT024-C02-3"]},
+    {"view": "Trend has started 2026 strongly; long-term trend managers fared okay in a headline-driven week depending on gold, silver, equities and JGB exposure; Trend Barometer at 50.", "as_of": "2026-01-22", "reasoning": "Index numbers as of Tuesday of that week.", "claim_ids": ["MT024-C02-4", "MT024-C03-4"]},
+    {"view": "Gold's rise reflects loss of trust in fiat currencies; natural gas and other commodities move on different, non-geopolitical shocks.", "as_of": "2026-01-22", "reasoning": "Dalio's gold comment; US cold front.", "claim_ids": ["MT024-C03-1", "MT024-C03-3"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {"topic": "Whether commodity-only trend or combined financial-plus-commodity trend is the better product",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Most managers combine trends in financial markets and commodities because it seems to work better as a standalone portfolio; asks whether commodity-only trend is really a thing.", "claim_ids": ["MT024-C08-4", "MT024-C09-1"]},
+    {"speaker": "Yoav Git", "position": "Standalone commodity trend serves allocators who want a separate real-asset/inflation factor; mixing may not be more diversified; also traded differently.", "claim_ids": ["MT024-C09-1", "MT024-C09-2"]}
+   ]},
+  {"topic": "Whether bonds' high autocorrelation is structural or a product of falling rates",
+   "positions": [
+    {"speaker": "Yoav Git", "position": "Fixed income shows higher autocorrelation because of coupon, carry and market structure; but it varies over time, hence selecting about 50 markets on current characteristics.", "claim_ids": ["MT024-C14-4", "MT024-C15-5", "MT024-C15-X6"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "The higher autocorrelation may simply reflect 40 years of falling interest rates.", "claim_ids": ["MT024-C15-X6"]}
+   ]},
+  {"topic": "Reading commodity trends as an inflation forecast",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Suggests commodity moves may be an early warning that inflation numbers will rise.", "claim_ids": ["MT024-C08-X2"]},
+    {"speaker": "Yoav Git", "position": "Declines to forecast; lists reasons for concern and argues for a portfolio resilient either way.", "claim_ids": ["MT024-C08-1", "MT024-C08-3", "MT024-C12-1"]}
+   ]}
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Regime boundaries (2% and 4.5%) were chosen so each regime covers about 25% of time with round numbers; the equal time shares and the bond failure threshold at 4.5% partly reflect that choice and the post-1970 sample.", "claim_ids": ["MT024-C07-1", "MT024-C06-1"]},
+  {"issue": "The CPI+4% result for the 50/50 mix is stated as a historical average across regimes without drawdowns, costs or confidence intervals in the conversation.", "claim_ids": ["MT024-C06-4"]},
+  {"issue": "Equity returns by regime are stated as CPI+0 in high inflation and CPI+10-15 in low inflation; the figures are quoted loosely and the 'real return zero' reading depends on the regime definition.", "claim_ids": ["MT024-C05-2"]},
+  {"issue": "Niels's 'Over 70 years rising and falling are equal' reading is partly an artefact of the regime boundaries Git admits he chose; Git adds that inflation spends more time falling.", "claim_ids": ["MT024-C06-6", "MT024-C07-1"]},
+  {"issue": "Git says the industry is small relative to equities yet significant in commodity markets; no evidence beyond AUM numbers that CTA crowding is not affecting commodity trend.", "claim_ids": ["MT024-C11-2", "MT024-C11-1"]},
+  {"issue": "Git's account of Carver's result (trend Sharpe 0.8 symmetric around underlying +/-1) conflicts loosely with his own '0.2 times 3.5 gives 0.7' arithmetic about average market Sharpe; the two are different samples.", "claim_ids": ["MT024-C13-1", "MT024-C13-3"]},
+  {"issue": "The fixed-income autocorrelation advantage may be a falling-rate artefact (Niels's point), only partly answered.", "claim_ids": ["MT024-C14-4", "MT024-C15-X6"]},
+  {"issue": "Safi's three-year 12% after fees is used as evidence that specialisation helped; three years is a short sample.", "claim_ids": ["MT024-C11-3", "MT024-C11-4"]}
+ ],
+ "forward_looking_inputs": "(reader) Inputs the speakers treat as leading: the inflation regime (CPI near the 2% and 4.5% thresholds), real rates (about 1%), US interest costs, JGB-US yield gap and Japanese budget news (yen carry, US 10-year), supply constraints and storage in commodities (natural gas, metals; lithium), central-bank divergence (rate gradient for FX trend), and the autocorrelation of each market. Horizons: the all-weather block is multi-year; trend opportunities from geopolitical breakdown are 'coming years'; Niels's robustness horizon is five to seven years.",
+ "reader_inferences": [
+  "(reader) The ERAS argument is a regime-based substitute for a macro forecast: the commodity-trend leg is effectively a long inflation-shock option that only pays if prices actually trend, which links its value to realised supply shocks rather than to CPI itself.",
+  "(reader) Git's framework of tilting trend by structure (carry, supply shock, physical players) and Carver's autocorrelation results point to the same selection variable (persistence of the underlying price), though they use different estimates.",
+  "(reader) Niels and Git share the diversification view, but Git's contribution is a specific inflation-regime diversifier; Niels's is a scenario view of geopolitical breakdown. Neither provides a test linking the geopolitical scenario to trend payoffs."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT024-C06-R3",
+   "chunk": "C06",
+   "speaker": "Yoav Git",
+   "quote": "and also of course they've got negative correlation to equities",
+   "claim": "In falling-rate and low-rate periods bonds have done great and been negatively correlated with equities, which is why allocators adopt them as the defensive building block until inflation rises.",
+   "mechanism": "diversification",
+   "asset_class": "rates",
+   "indicator": "stock-bond correlation",
+   "horizon": "n/a",
+   "direction": "bonds hedge equities in falling rates",
+   "conditions": "Falling or low interest rates, low inflation",
+   "testable": "yes: stock-bond correlation by inflation regime",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT024-C04-R1",
+   "chunk": "C04",
+   "speaker": "Yoav Git",
+   "quote": "concerns about the spending plans for the government um about the budget",
+   "claim": "The January 2026 JGB sell-off was triggered by concern about Japanese government spending plans and the budget.",
+   "mechanism": "fiscal",
+   "asset_class": "rates",
+   "indicator": "Japanese budget concerns",
+   "horizon": "weeks",
+   "direction": "higher JGB yields",
+   "conditions": "Government spending plans",
+   "testable": "no: event description",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  }
+ ]
+}

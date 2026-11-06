@@ -1,0 +1,975 @@
+{
+ "source_id": "MT071",
+ "episode_thesis": "Alan Dunne presents the CFM-linked paper arguing that the decline of fast trend following is a microstructure story: fast trend profited partly from the price momentum created by its own large orders being passed along dealer chains, and since about 2010 (high-frequency traders, banks no longer warehousing risk, small volatility-adjusted tick size) that mechanism survives only in large-tick markets such as bonds, rates and some commodities. Niels broadly agrees with the evidence (his own short-term models have been unprofitable for 15 years) but offers further causes (post-2009 regime, bank trading rules, multi-manager pod shops, execution algorithms), and both note the paper does not explain why fast trend improved after 2020. The episode also covers H1 2026 CTA performance, the new Fed chair's retreat from forward guidance (more volatility and longer rate trends), and two pro-trend allocation papers (Aspect, Systematica) arguing that bonds no longer diversify equities.",
+ "speakers": [
+  {
+   "name": "Alan Dunne",
+   "role": "Co-host (Systematic Investor series); allocator and researcher who monitors CTA managers",
+   "speaker_note": "Transcript spells him 'Alan Don'/'Alan Don' and the CFM co-author 'Jean Philip Bushau'; ledger spelling 'Alan Dunne' kept. Alan presents the CFM paper; Niels says he has not studied it in as much detail. Ledger correction on MT071-C14-1: Alan also says slow trend was challenged from about 2008 in large-tick markets before recovering, alongside the remark that large-tick markets show no clear CTA winter at any time frame (the two remarks sit uneasily together).",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "policy_reaction_central_banks",
+    "macro_fundamental_topdown",
+    "portfolio_construction_stacking",
+    "costs_execution",
+    "diversification_risk_parity",
+    "structural_themes"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Momentum and value are complementary, so combining them diversifies better than either alone; and once a quant model captures the core effect it is very hard to improve it by enhancements, while strong in-sample factors often fail after going live (Grantham's firm examples).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Anecdotes from the Grantham biography (IMF model, 'neglect factor' failing for six years after implementation).",
+     "claim_ids": [
+      "MT071-C01-1",
+      "MT071-C02-1",
+      "MT071-C02-2"
+     ]
+    },
+    {
+     "premise": "Fed forward guidance was introduced (Bernanke, 2004) to steer long-term rates before QE, and as a way to reduce policy-shock volatility; markets have become addicted to Fed communication (68% of 5-year yield variance after meetings from the statement, 12% from the rate decision).",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Bernanke's 2004 speeches; a study quoting the 68%/12% split.",
+     "claim_ids": [
+      "MT071-C07-1",
+      "MT071-C07-X1",
+      "MT071-C07-2"
+     ]
+    },
+    {
+     "premise": "Less forward guidance means more uncertainty and volatility, a higher bond term premium, and slower, incremental absorption of tightening cycles that produces longer trends in rates.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning: without Fed projections of the rate path, markets price a tightening cycle step by step rather than all at once.",
+     "claim_ids": [
+      "MT071-C08-1",
+      "MT071-C08-2",
+      "MT071-C08-3"
+     ]
+    },
+    {
+     "premise": "The Greenspan-era Fed often validated what markets had already priced from the data, which is the model Warsh wants to return to.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own recollection of the 1990s as a market participant.",
+     "claim_ids": [
+      "MT071-C06-1",
+      "MT071-C06-2"
+     ]
+    },
+    {
+     "premise": "An AI productivity shock has a demand effect now (chips, memory, electricity) and a disinflationary supply effect later, creating a Greenspan-1990s dilemma for Warsh; he doubts Warsh is as hawkish as the market inferred.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "WSJ article on AI-driven price increases; Warsh's remarks in Europe.",
+     "claim_ids": [
+      "MT071-C08-4",
+      "MT071-C09-1",
+      "MT071-C08-R2"
+     ]
+    },
+    {
+     "premise": "The Hormuz disruption did not cause the feared oil-price spike because China tapped reserves and flows were rerouted, so consensus pessimism was too severe; if disruption persisted the shock could still occur.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Post-hoc explanations (Chinese demand fall, reserves, pipelines) after listening to many podcasts.",
+     "claim_ids": [
+      "MT071-C05-1"
+     ]
+    },
+    {
+     "premise": "The commodity trend has a demand-side leg independent of supply disruption: AI/data-center capex drives copper.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Hyperscaler capex plans.",
+     "claim_ids": [
+      "MT071-C05-2"
+     ]
+    },
+    {
+     "premise": "Aspect's thesis: the last 25 years were an anomaly of cheap energy and the globalisation peace dividend, and structural breaks now (bonds less reliable as equity diversifiers; dollar's store-of-value role reassessed; central bank gold demand) favour trend following as an adaptive diversifier and managed commodity exposure.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Summary of the Aspect paper; he reports it rather than testing it.",
+     "claim_ids": [
+      "MT071-C09-4",
+      "MT071-C09-5",
+      "MT071-C09-6"
+     ]
+    },
+    {
+     "premise": "Supply shocks in other commodities (copper, food), fiscal problems in bonds, or large dollar moves can also hurt bonds and equities, so oil is not the only scenario and diversifiers across currencies and rates are needed.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Extension of the Aspect paper by Alan.",
+     "claim_ids": [
+      "MT071-C10-1",
+      "MT071-C10-2"
+     ]
+    },
+    {
+     "premise": "Systematica's thesis: the total portfolio approach beats strategic asset allocation because bonds no longer diversify equity risk; many hedge fund strategies and private equity carry hidden equity beta; equity market neutral diversifies but lacks convexity, so trend is complementary through dynamic risk management.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Summary of the Systematica paper.",
+     "claim_ids": [
+      "MT071-C10-3",
+      "MT071-C10-4",
+      "MT071-C10-5"
+     ]
+    },
+    {
+     "premise": "Crowding does not explain weaker fast trend returns: CTA AUM stagnated while futures liquidity grew, so the CTA footprint shrank; electronification does not either (rate futures electronified with no loss of profitability).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "The paper's dismissals, relayed by Alan.",
+     "claim_ids": [
+      "MT071-C11-4",
+      "MT071-C12-1"
+     ]
+    },
+    {
+     "premise": "Volatility-adjusted tick size is the key variable for whether a market suits fast trend: large-tick markets (bonds, rates, some commodities) work, small-tick ones (currencies, equities) do not; liquidity exists in small-tick markets but is not displayed at the touch since high-frequency trading, and liquidity alone did not explain the cross-section.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "CFM paper's cross-sectional results and order-book analysis (since 2010 less liquidity available to trend followers).",
+     "claim_ids": [
+      "MT071-C12-2",
+      "MT071-C12-X1",
+      "MT071-C13-4",
+      "MT071-C16-3"
+     ]
+    },
+    {
+     "premise": "Part of fast trend returns came from momentum created by trend followers' own order flow, passed along dealer-to-dealer chains when banks warehoused risk; after about 2010 high-frequency traders rose and banks stopped warehousing risk, so big trades could no longer be executed cheaply and that momentum disappeared.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "The paper's thesis plus Alan's 1990s FX experience (calling Bank of America for a price in a billion dollars of dollar-yen).",
+     "claim_ids": [
+      "MT071-C12-3",
+      "MT071-C12-4",
+      "MT071-C13-1",
+      "MT071-C16-1",
+      "MT071-C16-2"
+     ]
+    },
+    {
+     "premise": "The standard behavioural explanation for trend is heterogeneous adjustment speeds with initial underreaction and later overreaction; the microstructure account is complementary, not a replacement.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "The paper acknowledges both; Alan says it is a hypothesis that trend works for two reasons.",
+     "claim_ids": [
+      "MT071-C12-5",
+      "MT071-C12-4"
+     ]
+    },
+    {
+     "premise": "Counter-trend trades have become more dominant, so markets are more mean-reverting at short horizons and breakouts reverse rather than follow through.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "The paper's order-book finding and a comment from Toby Crabel on opening range breakouts.",
+     "claim_ids": [
+      "MT071-C13-5"
+     ]
+    },
+    {
+     "premise": "The headline overstates the decline: fast trend still works in large-tick contracts, and most trend followers already avoid short-term trading, so degraded fast trend is unlikely to be the main driver of CTA returns.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Paper's large-tick results and industry practice.",
+     "claim_ids": [
+      "MT071-C13-3",
+      "MT071-C14-1",
+      "MT071-C16-5"
+     ]
+    },
+    {
+     "premise": "Passive execution misses breakouts while aggressive execution is costly, so a trend follower who is passive gives up the large-move profits that used to exist.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Paper's discussion.",
+     "claim_ids": [
+      "MT071-C17-1",
+      "MT071-C13-2"
+     ]
+    },
+    {
+     "premise": "Equity microstructure has changed through zero-day options, volatility selling and structured products, which may hurt fast equity trend.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Market observation, no data.",
+     "claim_ids": [
+      "MT071-C15-4"
+     ]
+    },
+    {
+     "premise": "June 2026 was hard on CTAs because of commodity reversals tied to Middle East news (metals, soybean oil), followed by rebounds in July; manager dispersion around the index was high.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Manager results he monitors.",
+     "claim_ids": [
+      "MT071-C04-3",
+      "MT071-C04-X1"
+     ]
+    },
+    {
+     "premise": "Micro futures contracts make diversified futures trading practical for small systematic accounts, and retail finds ways to speculate on oil anyway (ETFs, spread betting), with structural product risk such as the oil ETF when front futures went negative.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Experience of retail products.",
+     "claim_ids": [
+      "MT071-C03-3",
+      "MT071-C03-X2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "CFM microstructure account of fast trend decline",
+     "steps": [
+      {
+       "from": "Before about 2010: banks warehouse risk and quote size; large trend orders executed in one go",
+       "to": "Dealers lay the position off with other dealers in a chain of trades",
+       "why": "Dealer-to-dealer hedging of a large client order",
+       "claim_ids": [
+        "MT071-C12-3"
+       ]
+      },
+      {
+       "from": "The chain of dealer buying",
+       "to": "Momentum in the price that rewards fast trend followers",
+       "why": "Order flow itself moves price in the direction of the trend",
+       "claim_ids": [
+        "MT071-C12-4",
+        "MT071-C13-1"
+       ]
+      },
+      {
+       "from": "After 2010: high-frequency traders, banks stop warehousing, displayed depth at the touch disappears in small-tick markets",
+       "to": "Large orders cannot be executed cheaply or in size",
+       "why": "Liquidity exists but is not displayed at the quote",
+       "claim_ids": [
+        "MT071-C13-1",
+        "MT071-C12-X1",
+        "MT071-C13-4"
+       ]
+      },
+      {
+       "from": "Smaller volatility-adjusted tick size (FX, equities)",
+       "to": "Fast trend loses its execution-driven momentum; large-tick markets still work",
+       "why": "Tick size determines transmission and available liquidity at the touch",
+       "claim_ids": [
+        "MT071-C12-2",
+        "MT071-C13-3",
+        "MT071-C16-3"
+       ]
+      },
+      {
+       "from": "Counter-trend and high-frequency participants dominate short horizons",
+       "to": "Breakouts reverse; trend followers can no longer profit from large one-day moves",
+       "why": "Short-horizon participants have shifted from momentum to mean-reverting types",
+       "claim_ids": [
+        "MT071-C13-5",
+        "MT071-C16-1",
+        "MT071-C16-2",
+        "MT071-C16-6"
+       ]
+      }
+     ],
+     "evidence": "CFM paper cross-section of contracts by volatility-adjusted tick size, order-book data since 2010, Figure 10 on fast-trend performance, and Niels's own models (short-term not profitable for 15 years, break about 2009).",
+     "fails_when": "Alan and Niels note the paper does not explain why fast trend improved after 2020 (a decade-long drought rather than a permanent break?), nor the 2008-onward slow-trend weakness in large-tick markets; Niels disputes whether the number of counterparties or only relative order size matters.",
+     "claim_ids": [
+      "MT071-C13-6",
+      "MT071-C14-1",
+      "MT071-C16-4"
+     ]
+    },
+    {
+     "topic": "Warsh's reduced guidance to more volatility and longer rate trends",
+     "steps": [
+      {
+       "from": "Warsh dislikes forward guidance, issues shorter statements and no dot",
+       "to": "Markets must infer policy from data; more uncertainty and volatility",
+       "why": "Less information on the likely rate path",
+       "claim_ids": [
+        "MT071-C06-1",
+        "MT071-C08-1"
+       ]
+      },
+      {
+       "from": "No SEP rate path",
+       "to": "Tightening cycles priced incrementally rather than at once, so longer trends in rates and a higher term premium",
+       "why": "Slower information absorption",
+       "claim_ids": [
+        "MT071-C08-2",
+        "MT071-C08-3"
+       ]
+      }
+     ],
+     "evidence": "First Warsh press conference and the Greenspan-era analogy; no data on the new regime.",
+     "fails_when": "If markets infer the data quickly (as under Greenspan) the volatility effect may be small; Alan says it 'remains to be seen' and notes less accountability.",
+     "claim_ids": [
+      "MT071-C06-2",
+      "MT071-C08-2"
+     ]
+    },
+    {
+     "topic": "AI productivity shock and the Fed dilemma",
+     "steps": [
+      {
+       "from": "AI capex demand (chips, memory, electricity) raises prices now",
+       "to": "Pressure on the Fed to tighten",
+       "why": "Demand impact arrives before supply gains",
+       "claim_ids": [
+        "MT071-C08-4",
+        "MT071-C09-2"
+       ]
+      },
+      {
+       "from": "Expected disinflationary productivity gains later",
+       "to": "Warsh may not be as hawkish as the market read",
+       "why": "Dilemma echoing Greenspan in the 1990s",
+       "claim_ids": [
+        "MT071-C09-1",
+        "MT071-C08-4"
+       ]
+      }
+     ],
+     "evidence": "WSJ article on AI-driven price rises; Apple's 20-25% price increase (Niels).",
+     "fails_when": "Timing of the supply benefit is unknown.",
+     "claim_ids": [
+      "MT071-C08-4"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "execution",
+     "practice": "CTAs trading fast should reduce weight on or penalise small-tick contracts, as they already penalise illiquid contracts.",
+     "why": "Fast trend works in large-tick markets only.",
+     "claim_ids": [
+      "MT071-C14-2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Keep some fast trend even if returns degraded, for convexity, skew and crisis alpha (Man papers).",
+     "why": "Diversification value persists.",
+     "claim_ids": [
+      "MT071-C14-3"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Add trend to portfolios alongside equity market neutral and treat trend as the convex diversifier within a total portfolio approach.",
+     "why": "Trend adds dynamic risk management and convexity missing from market neutral.",
+     "claim_ids": [
+      "MT071-C10-5",
+      "MT071-C10-3"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Monitor a set of CTA managers and compare them with the index to see dispersion; note non-trend sleeves and alternative-market exposure.",
+     "why": "Allocator vantage point.",
+     "claim_ids": [
+      "MT071-C04-X1",
+      "MT071-C04-3"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Do not tinker endlessly with a model that captures the core effect; in-sample research may fail live.",
+     "why": "Grantham experience.",
+     "claim_ids": [
+      "MT071-C02-1",
+      "MT071-C02-2"
+     ]
+    }
+   ],
+   "evidence_style": "Summaries of papers and research (CFM, Aspect, Systematica, Fed history), his experience of 1990s FX and bond markets, and anecdote (Grantham biography); transparent about the paper's limits and open questions.",
+   "current_views": [
+    {
+     "view": "H1 2026 has been a good year for trend: plenty of directional movement and volatility, better than average year to date, despite a June drawdown from commodity reversals.",
+     "as_of": "2026-07-08",
+     "reasoning": "Precious metals earlier in the year, Middle East-driven reversals in June, rebounds in July.",
+     "claim_ids": [
+      "MT071-C04-4",
+      "MT071-C04-3",
+      "MT071-C04-X1"
+     ]
+    },
+    {
+     "view": "Warsh's retreat from forward guidance implies more volatility and bigger term premium, potentially good for trend, but he is more sceptical than the market that Warsh is hawkish.",
+     "as_of": "2026-07-08",
+     "reasoning": "AI demand-then-supply dilemma, Greenspan analogy.",
+     "claim_ids": [
+      "MT071-C08-1",
+      "MT071-C08-2",
+      "MT071-C08-3",
+      "MT071-C09-1"
+     ]
+    },
+    {
+     "view": "Copper's strength reflects the AI capex demand story, not only supply disruptions; the Hormuz disruption did not produce the feared spike.",
+     "as_of": "2026-07-08",
+     "reasoning": "China tapped reserves, flows rerouted; hyperscaler capex plans.",
+     "claim_ids": [
+      "MT071-C05-1",
+      "MT071-C05-2"
+     ]
+    },
+    {
+     "view": "Bonds are less reliable equity diversifiers and trend is an adaptive diversifier and a managed way to gain commodity exposure.",
+     "as_of": "2026-07-08",
+     "reasoning": "Aspect and Systematica papers.",
+     "claim_ids": [
+      "MT071-C09-5",
+      "MT071-C09-6",
+      "MT071-C10-3"
+     ]
+    },
+    {
+     "view": "The decline of fast trend is concentrated in small-tick markets (equities, currencies) and the headline overstates it; fast trend still works in large-tick contracts.",
+     "as_of": "2026-07-08",
+     "reasoning": "CFM paper.",
+     "claim_ids": [
+      "MT071-C13-3",
+      "MT071-C12-2",
+      "MT071-C14-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host, Top Traders Unplugged; CTA-industry veteran who runs own trend research at his firm",
+   "speaker_note": "Transcript spells him 'Neils Castro Lson'. He says he has not studied the CFM paper as thoroughly as Alan. Where he refers to his own firm's models (short-term trend 15 years unprofitable) the analysis is internal and no data is shown. The ledger names the firm 'Dawn' in earlier episodes; here he says 'internally'.",
+   "fingerprint": [
+    "trend_following",
+    "research_robustness_overfitting",
+    "costs_execution",
+    "manager_selection_allocation",
+    "behavioral_sentiment",
+    "short_term_systematic"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A sound trend model should not be changed during a poor period (the CTA winter) because poor results reflect an absence of trends, not a flaw.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His experience of investor meetings during the CTA winter.",
+     "claim_ids": [
+      "MT071-C02-3"
+     ]
+    },
+    {
+     "premise": "Retail inflows into a market tend to arrive late near highs (silver last year), so expanded retail access (CME 10-barrel oil contract) risks losses for unprepared participants; not all instruments are meant for everyone.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Silver craze observation; he admits professional bias.",
+     "claim_ids": [
+      "MT071-C03-1",
+      "MT071-C03-2",
+      "MT071-C03-R1"
+     ]
+    },
+    {
+     "premise": "Systematic trend followers do not need forecasts: 2026 super-cycle talk resembles 2022 (Ukraine), when commodities collapsed after a spike yet CTAs had a great year.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "2022 analogy; explicitly not a prediction.",
+     "claim_ids": [
+      "MT071-C04-5",
+      "MT071-C05-3"
+     ]
+    },
+    {
+     "premise": "In H1 2026 CTAs with non-trend strategies did somewhat better than pure trend followers, and CTAs trading alternative markets struggled with few exceptions.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Early impression, not a full picture.",
+     "claim_ids": [
+      "MT071-C04-1",
+      "MT071-C04-2"
+     ]
+    },
+    {
+     "premise": "As of 7 July 2026 CTA indices (8.5-8.9% YTD) roughly matched equities while bonds were nearly flat, and slower trend beat short-term traders (4.65%); early July was soft with renewed Middle East bombing reversing energy trends, and cocoa surged after a long downtrend.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Index readings.",
+     "claim_ids": [
+      "MT071-C05-4",
+      "MT071-C06-X1",
+      "MT071-C03-X1",
+      "MT071-C06-3",
+      "MT071-C03-4"
+     ]
+    },
+    {
+     "premise": "Portfolio construction should target behavioural exposures (trend, carry) rather than asset-class lists, and under the total portfolio approach strategies are judged by their contribution to the whole portfolio rather than versus peers.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reaction to the Aspect and Systematica papers.",
+     "claim_ids": [
+      "MT071-C10-6",
+      "MT071-C11-1"
+     ]
+    },
+    {
+     "premise": "Short-term trend following has deteriorated: short-term managers are weak and slower parameter settings do better in his own models; short-term timeframes of a classical trend model have not been profitable for 15 years, with a break around 2009.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Internal tests of short timeframes; weak short-term managers.",
+     "claim_ids": [
+      "MT071-C11-2",
+      "MT071-C11-3",
+      "MT071-C14-4"
+     ]
+    },
+    {
+     "premise": "Fast trend worked poorly 2010-2020 but improved since (Figure 10), so it may be a decade-long drought rather than a permanent break.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Reading Figure 10 of the paper.",
+     "claim_ids": [
+      "MT071-C13-6"
+     ]
+    },
+    {
+     "premise": "Post-2009 central bank involvement, bank proprietary trading rules, and multi-manager pod shops (which cut risk fast on small drawdowns) may explain the decline of short-term trend by changing participants and microstructure toward mean reversion.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Conversation with a pod-shop insider (Friday call to cut risk 50% in two hours); no data.",
+     "claim_ids": [
+      "MT071-C15-1",
+      "MT071-C15-2",
+      "MT071-C15-3",
+      "MT071-C16-6"
+     ]
+    },
+    {
+     "premise": "Execution has moved from human traders to algorithms that go straight from signal to exchange and behave differently (patient, unemotional), which may change short-term dynamics.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Personal observation of the last 15 years.",
+     "claim_ids": [
+      "MT071-C17-2"
+     ]
+    },
+    {
+     "premise": "Smaller contracts carry unchanged per-contract fees, so the same exposure costs more; any small-tick backtest must reflect that cost.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Unchecked recollection; he says not to take it as 100% sure.",
+     "claim_ids": [
+      "MT071-C15-5"
+     ]
+    },
+    {
+     "premise": "Changes to published economic data would break models built on those series, so data-definition risk matters.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Reasoning about the new Fed's data changes.",
+     "claim_ids": [
+      "MT071-C09-3"
+     ]
+    },
+    {
+     "premise": "Momentum from execution depends on order size relative to the market, not on the number of counterparties.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Intuition; he says he may be wrong.",
+     "claim_ids": [
+      "MT071-C16-4"
+     ]
+    },
+    {
+     "premise": "US retailers selling smaller pack sizes signals stretched consumers who cannot pay normal prices.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "A Bloomberg story he saw that morning; anecdotal.",
+     "claim_ids": [
+      "MT071-C02-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Alternative explanations for the end of fast trend",
+     "steps": [
+      {
+       "from": "Post-GFC era: central banks heavily involved and rules on bank proprietary trading",
+       "to": "Change in market participants and liquidity provision",
+       "why": "Banks outsource or stop warehousing risk",
+       "claim_ids": [
+        "MT071-C15-1",
+        "MT071-C15-2"
+       ]
+      },
+      {
+       "from": "Rise of multi-manager pod shops (cut risk quickly on small drawdowns) and of high-frequency, mean-reverting participants",
+       "to": "Short-horizon dynamics become more mean-reverting",
+       "why": "Short-term participants shift from momentum to mean reversion",
+       "claim_ids": [
+        "MT071-C15-3",
+        "MT071-C16-6"
+       ]
+      },
+      {
+       "from": "Algorithmic execution from signal to exchange",
+       "to": "Different micro-dynamics from human-worked orders",
+       "why": "Algos are patient and unemotional",
+       "claim_ids": [
+        "MT071-C17-2"
+       ]
+      }
+     ],
+     "evidence": "Largely conceptual; his internal tests agree with a 2009 break point; he proposes simulations on small-tick versus large-tick markets with a consistent model.",
+     "fails_when": "He says tick size could still be part of the explanation and he has no data on pod shops.",
+     "claim_ids": [
+      "MT071-C14-4",
+      "MT071-C14-5",
+      "MT071-C15-3"
+     ]
+    },
+    {
+     "topic": "Retail access to futures and late entry",
+     "steps": [
+      {
+       "from": "CME launches a 10-barrel oil contract to attract retail",
+       "to": "Retail inflows come late near highs",
+       "why": "Retail tends to buy near tops (silver last year)",
+       "claim_ids": [
+        "MT071-C03-1",
+        "MT071-C03-2"
+       ]
+      }
+     ],
+     "evidence": "Silver craze anecdote.",
+     "fails_when": "Alan sees the product as helpful for small accounts and a competitive response.",
+     "claim_ids": [
+      "MT071-C03-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Test the CFM result by running one model separately on small-tick and large-tick contracts with consistent parameters.",
+     "why": "Easy for managers to replicate.",
+     "claim_ids": [
+      "MT071-C14-5"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Favour slower lookbacks and avoid short-term timeframes of a classical trend model.",
+     "why": "Short timeframes unprofitable for 15 years; slower parameters do better.",
+     "claim_ids": [
+      "MT071-C11-2",
+      "MT071-C14-4",
+      "MT071-C11-3"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Account for per-contract fees when substituting smaller contracts for the same exposure.",
+     "why": "More contracts means higher commission costs.",
+     "claim_ids": [
+      "MT071-C15-5"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Express portfolio construction through behavioural exposures (trend, carry) and judge strategies by total-portfolio contribution rather than peer ranking.",
+     "why": "Moves away from silos.",
+     "claim_ids": [
+      "MT071-C10-6",
+      "MT071-C11-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Do not change a sound model in the CTA winter.",
+     "why": "No trends rather than model flaw.",
+     "claim_ids": [
+      "MT071-C02-3"
+     ]
+    }
+   ],
+   "evidence_style": "Internal model tests, industry anecdote and conversations (a pod-shop contact), index tables; probes the paper by suggesting alternative explanations and replication tests.",
+   "current_views": [
+    {
+     "view": "H1 2026 was a decent first half for CTAs but with dispersion: non-trend sleeves helped, alternative-market CTAs struggled; early July was soft because Middle East bombing reversed energy trends.",
+     "as_of": "2026-07-08",
+     "reasoning": "Trend barometer at 50; early manager results.",
+     "claim_ids": [
+      "MT071-C03-4",
+      "MT071-C04-1",
+      "MT071-C04-2",
+      "MT071-C03-X1"
+     ]
+    },
+    {
+     "view": "As of 7 July, the Stocken CTA index was up 8.9% YTD and trend up 8.5% against MSCI World 9.65% and the S&P 500 about 10%; bonds only about 0.25%.",
+     "as_of": "2026-07-07",
+     "reasoning": "Reported index numbers.",
+     "claim_ids": [
+      "MT071-C05-4",
+      "MT071-C06-X1"
+     ]
+    },
+    {
+     "view": "Commodity super-cycle talk resembles 2022; trend followers do not need to predict because CTAs did very well in 2022.",
+     "as_of": "2026-07-08",
+     "reasoning": "2022 narrative analogue.",
+     "claim_ids": [
+      "MT071-C04-5",
+      "MT071-C05-3"
+     ]
+    },
+    {
+     "view": "Apple's price increases will show up in inflation data as AI hardware pass-through.",
+     "as_of": "2026-07-08",
+     "reasoning": "20-25% price increases in a day.",
+     "claim_ids": [
+      "MT071-C09-2"
+     ]
+    },
+    {
+     "view": "The CFM paper is convincing but there is probably more to the decline of fast trend (post-2009 regime, pod shops, algos).",
+     "as_of": "2026-07-08",
+     "reasoning": "Internal tests agree with the 2009 break.",
+     "claim_ids": [
+      "MT071-C14-4",
+      "MT071-C15-1",
+      "MT071-C15-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Why fast trend following declined",
+   "positions": [
+    {
+     "speaker": "Alan Dunne",
+     "position": "The paper's account: volatility-adjusted tick size and the loss of order-flow-created momentum after about 2010; industry size, electronification and liquidity alone do not explain it; the weakness is concentrated in equities and currencies.",
+     "claim_ids": [
+      "MT071-C11-4",
+      "MT071-C12-1",
+      "MT071-C12-2",
+      "MT071-C12-4",
+      "MT071-C13-3"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Convincing but incomplete: post-2009 regime and bank trading rules, multi-manager pod shops with fast risk cuts, algorithmic execution and contract fees may also matter; possibly a decade-long drought rather than a permanent break.",
+     "claim_ids": [
+      "MT071-C15-1",
+      "MT071-C15-2",
+      "MT071-C15-3",
+      "MT071-C17-2",
+      "MT071-C13-6"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Does the number of counterparties matter for execution-driven momentum",
+   "positions": [
+    {
+     "speaker": "Alan Dunne",
+     "position": "The dealer chain (a bank passes on a large trade to other banks) is what creates momentum, and that chain disappeared when banks stopped warehousing risk.",
+     "claim_ids": [
+      "MT071-C12-3",
+      "MT071-C13-1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "What matters is order size relative to the total market, not how many counterparties are involved.",
+     "claim_ids": [
+      "MT071-C16-4"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Importance of fast trend for CTA returns",
+   "positions": [
+    {
+     "speaker": "Alan Dunne",
+     "position": "Most trend followers already avoid short-term, so degradation of fast trend is unlikely to be the main driver of CTA returns; fast trend still adds convexity.",
+     "claim_ids": [
+      "MT071-C16-5",
+      "MT071-C14-3"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Short-term managers are weak and short timeframes have been unprofitable in his models for 15 years, so avoid them.",
+     "claim_ids": [
+      "MT071-C11-2",
+      "MT071-C14-4"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Retail access to futures",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Retail inflows come late near highs; expanding access may lead to losses for unprepared participants.",
+     "claim_ids": [
+      "MT071-C03-2",
+      "MT071-C03-R1"
+     ]
+    },
+    {
+     "speaker": "Alan Dunne",
+     "position": "Micro contracts help small systematic portfolios and retail can speculate anyway; the CME is competing for a market segment.",
+     "claim_ids": [
+      "MT071-C03-3",
+      "MT071-C03-X2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Whether Warsh is hawkish",
+   "positions": [
+    {
+     "speaker": "Alan Dunne",
+     "position": "The market is going with the hawkish narrative, but he doubts Warsh is as hawkish as inferred given his European remarks that inflation risks are falling.",
+     "claim_ids": [
+      "MT071-C09-1",
+      "MT071-C08-R2"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Offers no view on hawkishness; points to Apple price rises as inflation pass-through and to data-definition risk.",
+     "claim_ids": [
+      "MT071-C09-2",
+      "MT071-C09-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Ledger correction on MT071-C14-1: Alan says large-tick markets show no CTA winter at any time frame yet also that slow trend was challenged from about 2008 there before recovering; the claims sit uneasily together and the paper does not explain the post-2008 weakness or the post-2020 improvement.",
+   "claim_ids": [
+    "MT071-C14-1",
+    "MT071-C13-6"
+   ]
+  },
+  {
+   "issue": "The paper's title suggests fast trend no longer works at all, yet its result is that it fails only in small-tick markets (equities, currencies); the framing may overstate the decline.",
+   "claim_ids": [
+    "MT071-C13-3",
+    "MT071-C12-2"
+   ]
+  },
+  {
+   "issue": "The tick-size account is a cross-sectional association; neither speaker shows a test separating tick size from other changes at the same time (HFT, bank rules, pods). Niels proposes a small-tick versus large-tick replication but no results are given.",
+   "claim_ids": [
+    "MT071-C14-5",
+    "MT071-C12-2"
+   ]
+  },
+  {
+   "issue": "Fast trend improved after 2020 per Figure 10, which neither the paper nor the speakers explain; this weakens a permanent structural reading.",
+   "claim_ids": [
+    "MT071-C13-6"
+   ]
+  },
+  {
+   "issue": "Niels's multi-manager pod-shop explanation rests on one anecdote with no data, and his comment on fixed per-contract fees is unchecked.",
+   "claim_ids": [
+    "MT071-C15-3",
+    "MT071-C15-5"
+   ]
+  },
+  {
+   "issue": "The 68%/12% variance split of 5-year yields after Fed meetings is cited from a study the speaker does not name.",
+   "claim_ids": [
+    "MT071-C07-2"
+   ]
+  },
+  {
+   "issue": "The Hormuz outcome is explained after the fact (Chinese reserves, rerouting); the claim that consensus pessimism was too severe has no quantification and Alan says the problem could still reappear.",
+   "claim_ids": [
+    "MT071-C05-1"
+   ]
+  },
+  {
+   "issue": "Alan notes that Niels's pod-shop point and the paper's liquidity explanation conflict on the mechanism for mean reversion: HFT liquidity providers versus multi-manager risk cutting.",
+   "claim_ids": [
+    "MT071-C13-5",
+    "MT071-C15-3",
+    "MT071-C16-6"
+   ]
+  },
+  {
+   "issue": "The Systematica claim that other hedge fund strategies and private equity carry hidden equity beta is asserted without figures.",
+   "claim_ids": [
+    "MT071-C10-4"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs the speakers treat as leading: the Fed's communication regime (statements, dots, press conferences, task forces) and bond term premium and rate-path trends; AI capex demand versus eventual productivity-driven disinflation (copper, memory, electricity prices); Middle East news and Hormuz flows for energy trend reversals; the volatility-adjusted tick size of each contract for fast-trend allocation; the stock-bond correlation and fiscal or dollar shocks (diversifier scarcity); changes to published economic data definitions. Horizon: H2 2026 for Fed regime effects; multi-year for structural breaks and for tick-size and microstructure effects.",
+ "reader_inferences": [
+  "(reader) The tick-size paper implies the execution-induced component of fast trend returns is a transient market-structure rent, so fast trend in large-tick markets (rates, bonds, some commodities) is the only place where the rent plausibly persists; its rate-market focus overlaps with Alan's argument that less Fed guidance lengthens rate trends.",
+  "(reader) Alan's two papers (Aspect, Systematica) and Niels's behavioural-exposure framing share a view that trend's value is as a regime-adaptive diversifier, not a standalone return source; neither tests it against the recent 2026 CTA experience beyond index data.",
+  "(reader) Niels's replication suggestion (same model on small-tick versus large-tick contracts) would also reveal whether the post-2020 recovery in Figure 10 came from large-tick contracts, which would partly answer the structural-versus-drought question."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT071-C03-R1",
+   "chunk": "C03",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "not all I think financial instruments um are are meant to be traded by everyone",
+   "claim": "Niels is wary of pushing more retail money into products where unprepared participants get burned: not every financial instrument is meant to be traded by everyone.",
+   "mechanism": "retail_participation",
+   "asset_class": "commodities",
+   "indicator": "retail access to futures",
+   "horizon": "n/a",
+   "direction": "retail losses",
+   "conditions": "Admits professional bias",
+   "testable": "no: opinion",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT071-C08-R2",
+   "chunk": "C08",
+   "speaker": "Alan Dunne",
+   "quote": "when he spoke in Europe he said inflation risks are are are down are coming down",
+   "claim": "Warsh looked hawkish at his first meeting, but when he spoke at a European conference he said inflation risks are coming down, which is why Alan doubts he is as hawkish as the market inferred.",
+   "mechanism": "policy_reaction",
+   "asset_class": "rates",
+   "indicator": "Warsh communication",
+   "horizon": "H2 2026",
+   "direction": "less hawkish than priced",
+   "conditions": "AI productivity dilemma",
+   "testable": "yes: later Fed decisions",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  }
+ ]
+}

@@ -1,0 +1,792 @@
+{
+ "source_id": "MT110",
+ "episode_thesis": "Mark Rzepczynski argues that trend followers profit from regime changes and uncertainty that slow price adjustment, and that the key regime change for H2 2026 is structural: a new Fed chair (Warsh) who is expected to shrink the Fed's balance sheet, cut forward guidance and tolerate worse data, all of which he sees as favouring price-based trend following over speech-driven or data-driven approaches. His own hedge fund study finds that most strategies lose excess return and alpha in high-VIX regimes and shocks, while managed futures is insensitive with a negative beta, so an allocator expecting high uncertainty should choose managed futures rather than a bundle of alternatives. Niels reviews H1 2026 trend performance, stresses breadth of markets and data-reliability risk for economic trend models, and supports the VIX-regime finding with similar analysis at his own firm.",
+ "speakers": [
+  {
+   "name": "Mark Rzepczynski",
+   "role": "Co-host (Systematic Investor series); quasi-fundamental/systematic researcher and daily blogger; self-described 'trend follower plus fundamentalist'",
+   "speaker_note": "Transcript spells the Fed chair 'Walsh'; ledger spelling 'Warsh' kept. The hedge fund VIX-regime study is described as his own ongoing research; its data, sample and significance levels are not stated in the conversation. Mark sometimes corrects himself ('dirty secret number two').",
+   "fingerprint": [
+    "trend_following",
+    "macro_fundamental_topdown",
+    "policy_reaction_central_banks",
+    "regime_detection",
+    "nowcasting_data",
+    "volatility_options",
+    "manager_selection_allocation",
+    "portfolio_construction_stacking"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Individual central bankers matter at key moments; a single person can have a huge influence on the US and global economy (Greenspan 1994, Greenspan's near-1% rates feeding the housing bubble).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Personal experience of painful mortgage losses in February 1994; the 2001-04 cuts.",
+     "claim_ids": [
+      "MT110-C02-1",
+      "MT110-C02-2"
+     ]
+    },
+    {
+     "premise": "Trend-following profits are concentrated in a few markets each year (a 'dirty secret'), but the winning market is unknown in advance, so a broad set of markets is needed; too many markets dilute exposure, so a middle ground that preserves liquidity is best.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "H1 2026 oil, gold and dollar examples; the trade-off between coverage and dilution.",
+     "claim_ids": [
+      "MT110-C03-4",
+      "MT110-C04-3",
+      "MT110-C04-4"
+     ]
+    },
+    {
+     "premise": "Trend followers want correlations to rise in a shock, since positions in related contracts (crude, Brent, heating oil, RBOB) multiply the gain; only the absolute correlation matters because long and short positions both profit.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Energy complex example; Niels's data that crude +37% but heating oil +130% over 12 months.",
+     "claim_ids": [
+      "MT110-C05-2",
+      "MT110-C05-3",
+      "MT110-C05-1"
+     ]
+    },
+    {
+     "premise": "Regime changes come in two forms: behavioural (response to a shock) and structural (such as a new Fed chair stamping policy); both lead to longer-term trends or reversals.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Definitions offered in the conversation; no test.",
+     "claim_ids": [
+      "MT110-C06-1",
+      "MT110-C06-2"
+     ]
+    },
+    {
+     "premise": "High uncertainty makes investors dollar-cost-average into positions, slowing price adjustment to a new equilibrium and creating trends.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Simple reasoning about cautious behaviour; no data.",
+     "claim_ids": [
+      "MT110-C06-3"
+     ]
+    },
+    {
+     "premise": "Trend followers see macro trends drive price trends, so fundamentals corroborate direction; the pure price view holds that macro information is backward-looking and slow, so prices already carry the information. He takes a middle ground.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Self-description as trend follower plus fundamentalist.",
+     "claim_ids": [
+      "MT110-C09-1",
+      "MT110-C09-X2"
+     ]
+    },
+    {
+     "premise": "Less Fed speech and a smaller balance sheet make prices less noisy and improve price discovery (no single dominant player, profit-motivated marginal buyers), which favours trend following.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Forward guidance served a purpose at the zero bound but actions should now drive prices; the Fed as the 800-lb gorilla in bonds.",
+     "claim_ids": [
+      "MT110-C09-2",
+      "MT110-C09-3",
+      "MT110-C09-X3",
+      "MT110-C10-X2"
+     ]
+    },
+    {
+     "premise": "If the Fed stops buying Treasuries, someone else must buy, and the clearing yield is higher.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Supply-demand logic; Niels's counter that regulation could make banks the buyer.",
+     "claim_ids": [
+      "MT110-C10-1",
+      "MT110-C08-2",
+      "MT110-C10-X1"
+     ]
+    },
+    {
+     "premise": "US data quality is falling (low survey response rates, large BLS revisions), which devalues fundamental or quasi-fundamental signals in the short run and favours price-based systems; better data would help in the long run.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Survey response rates, BLS revisions mentioned by Niels.",
+     "claim_ids": [
+      "MT110-C08-3",
+      "MT110-C10-2",
+      "MT110-C10-X3",
+      "MT110-C11-5"
+     ]
+    },
+    {
+     "premise": "In practice the Fed runs a 3-4% inflation range (hikes near 4%, cuts below 3%) despite the 2% target; inflation has been above 2% for five-plus years even though Bernanke and Yellen feared deflation.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observed Fed behaviour; no data cited.",
+     "claim_ids": [
+      "MT110-C07-3",
+      "MT110-C10-4",
+      "MT110-C10-R1"
+     ]
+    },
+    {
+     "premise": "Fed politics has several layers: executive versus Fed, Wall Street versus Main Street, internal dissent, and academics who validate what the central bank does (which shows internal consistency, not good policy).",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Observation of recent dissent counts and academic commentary.",
+     "claim_ids": [
+      "MT110-C07-4",
+      "MT110-C08-X1"
+     ]
+    },
+    {
+     "premise": "An AI productivity boom could allow looser monetary policy, as in the 1990s, but its effect on trend following is neutral or unclear.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Greenspan analogy.",
+     "claim_ids": [
+      "MT110-C08-4",
+      "MT110-C11-1",
+      "MT110-C11-X1"
+     ]
+    },
+    {
+     "premise": "A combination of a price-based system and a separate fundamental system with systematic weights lowers volatility and smooths returns; if the data quality of the fundamental system declines, optimised weights shift toward the price-based system.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "'Most of the research in this area'; his observation of lower fundamental weights.",
+     "claim_ids": [
+      "MT110-C11-4",
+      "MT110-C11-5"
+     ]
+    },
+    {
+     "premise": "Hedge fund managers are expected to manage risk skilfully (null: returns independent of risk regime and shocks), but most strategies lose excess return and alpha in high-VIX regimes and shocks while managed futures is insensitive with a negative beta.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His regressions by VIX bin (low, medium, high) and VIX change, controlling for beta; sample and significance details not given.",
+     "claim_ids": [
+      "MT110-C12-1",
+      "MT110-C12-2",
+      "MT110-C13-2",
+      "MT110-C13-4",
+      "MT110-C13-5",
+      "MT110-C14-1",
+      "MT110-C14-2",
+      "MT110-C14-3"
+     ]
+    },
+    {
+     "premise": "Arbitrage, long-short and structured strategies fail in high-volatility regimes because the relationships they depend on disconnect.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Explanation of the negative alpha result; also fixed income arb's negative sensitivity.",
+     "claim_ids": [
+      "MT110-C13-3",
+      "MT110-C15-X2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Uncertainty to trends (behavioural regime)",
+     "steps": [
+      {
+       "from": "Geopolitical or policy uncertainty rises",
+       "to": "Investors become cautious and dollar-cost-average rather than moving at once",
+       "why": "Behavioural response to uncertainty",
+       "claim_ids": [
+        "MT110-C06-3"
+       ]
+      },
+      {
+       "from": "Gradual adjustment",
+       "to": "Price adjustment to a new equilibrium takes time, producing trends",
+       "why": "Time dimension that trend followers exploit",
+       "claim_ids": [
+        "MT110-C06-3",
+        "MT110-C06-1"
+       ]
+      }
+     ],
+     "evidence": "H1 2026 oil run-up and reversal, gold and dollar trends; no formal test.",
+     "fails_when": "Shocks that reverse quickly (oil after the Iran conflict spike, Hormuz normalisation) require managing risk at the turn.",
+     "claim_ids": [
+      "MT110-C03-5",
+      "MT110-C06-3"
+     ]
+    },
+    {
+     "topic": "New Fed chair to trend-following conditions",
+     "steps": [
+      {
+       "from": "Chair Warsh is less dovish than expected and favours less forward guidance, no dots, a smaller balance sheet, better data and an inflation focus",
+       "to": "Structural regime change in monetary policy",
+       "why": "A new chair stamps his own policy",
+       "claim_ids": [
+        "MT110-C07-2",
+        "MT110-C08-1",
+        "MT110-C06-2"
+       ]
+      },
+      {
+       "from": "Less Fed speech and a smaller balance sheet",
+       "to": "Prices driven by supply and demand and fundamentals rather than speeches; less noise",
+       "why": "Single dominant buyer removed; guidance matters less above the zero bound",
+       "claim_ids": [
+        "MT110-C09-2",
+        "MT110-C09-3",
+        "MT110-C09-X3"
+       ]
+      },
+      {
+       "from": "Fed no longer buying Treasuries",
+       "to": "Higher market-clearing yields",
+       "why": "Someone else must absorb heavy debt supply",
+       "claim_ids": [
+        "MT110-C10-1",
+        "MT110-C08-2"
+       ]
+      },
+      {
+       "from": "Poorer US data quality",
+       "to": "Fundamental signals lose value and price-based systems gain relative value",
+       "why": "Garbage in for survey-based and revised data",
+       "claim_ids": [
+        "MT110-C08-3",
+        "MT110-C10-2"
+       ]
+      }
+     ],
+     "evidence": "Warsh's announced task forces and press-conference behaviour; first three months of new chairs saw S&P declines (Niels's Barclays/Bloomberg source, small sample).",
+     "fails_when": "Mark notes the effect is not immediately visible in P&L and early months could be negative; the net effect on trend profits is an argument, not shown.",
+     "claim_ids": [
+      "MT110-C11-2",
+      "MT110-C02-4"
+     ]
+    },
+    {
+     "topic": "Regime-dependent hedge fund returns (VIX study)",
+     "steps": [
+      {
+       "from": "High-VIX regime or large VIX shock",
+       "to": "Most strategies' betas rise and alphas turn negative, excess returns fall",
+       "why": "Relationships that strategies rely on disconnect; arbitrage and structured trades are hurt",
+       "claim_ids": [
+        "MT110-C13-4",
+        "MT110-C14-2",
+        "MT110-C14-3",
+        "MT110-C15-X2"
+       ]
+      },
+      {
+       "from": "Managed futures",
+       "to": "Insensitive excess return and negative beta in high-risk regimes and shocks",
+       "why": "Beta near zero and trend positions adapt",
+       "claim_ids": [
+        "MT110-C13-2",
+        "MT110-C13-5",
+        "MT110-C14-1",
+        "MT110-C14-3"
+       ]
+      },
+      {
+       "from": "Expected high uncertainty",
+       "to": "Increase managed futures allocation; a bundle of alternatives does not protect",
+       "why": "Only managed futures keeps its profile in high-risk regimes",
+       "claim_ids": [
+        "MT110-C15-1",
+        "MT110-C15-4"
+       ]
+      }
+     ],
+     "evidence": "Regressions with VIX-level bins and VIX changes after controlling for beta, plus an anecdotal recent VIX spike and Niels's firm's separate analysis.",
+     "fails_when": "Mark warns that one anecdote cannot be extrapolated; global macro's sign is negative but insignificant; equity market neutral may do slightly better in some shocks.",
+     "claim_ids": [
+      "MT110-C15-2",
+      "MT110-C14-X1",
+      "MT110-C15-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "universe",
+     "practice": "Trade a broad but not excessive market set (a middle ground), because the winning market is unknown in advance and too many markets dilute exposure; keep liquidity.",
+     "why": "Profits are concentrated in a few markets each year.",
+     "claim_ids": [
+      "MT110-C04-3",
+      "MT110-C04-4",
+      "MT110-C03-4"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Look for regime changes or dislocations that may start longer-term trends when deciding allocation to managed futures; for H2 2026 watch the new Fed chair's policy.",
+     "why": "Structural regime changes create new trends or reversals.",
+     "claim_ids": [
+      "MT110-C06-1",
+      "MT110-C06-2",
+      "MT110-C11-2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Run a price-based system and a separate fundamental system and weight them systematically; reduce the fundamental weight as data quality declines.",
+     "why": "Combination lowers volatility and smooths returns.",
+     "claim_ids": [
+      "MT110-C11-4",
+      "MT110-C11-5"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Allocator rule: if expecting high uncertainty or a high-VIX environment, raise managed futures; do not bundle alternative strategies expecting protection.",
+     "why": "Study shows other strategies lose alpha in high-VIX regimes.",
+     "claim_ids": [
+      "MT110-C15-1",
+      "MT110-C15-4"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Evaluate managed futures against the whole hedge fund strategy universe (more than ten strategies), not only against other CTAs; separate regime sensitivity (VIX level) and shock sensitivity (VIX change) from beta.",
+     "why": "Competition and substitution occur across strategies.",
+     "claim_ids": [
+      "MT110-C12-X1",
+      "MT110-C12-1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Use NLP and LLMs to convert earnings calls and Fed statements into numerical signals.",
+     "why": "Changes how markets react to announcements.",
+     "claim_ids": [
+      "MT110-C07-1"
+     ]
+    }
+   ],
+   "evidence_style": "Mix of personal experience (1994 mortgage portfolio), conceptual definitions of regime types, and an own empirical study (regressions by VIX bin). Acknowledges limits (one anecdote, small chair sample, effects not yet visible in P&L).",
+   "current_views": [
+    {
+     "view": "The key H2 2026 regime change is monetary policy under Chair Warsh, who is less dovish than perceived; effects will not show immediately in P&L and early months could be negative.",
+     "as_of": "2026-06-25",
+     "reasoning": "No dot, dot plots 'in pencil', five task forces, smaller balance sheet; first three months of new chairs have been bad for equities.",
+     "claim_ids": [
+      "MT110-C07-2",
+      "MT110-C08-1",
+      "MT110-C11-2",
+      "MT110-C02-4",
+      "MT110-C08-R1"
+     ]
+    },
+    {
+     "view": "Poor US data quality favours price-based over fundamental systems at present.",
+     "as_of": "2026-06-25",
+     "reasoning": "Low survey response rates and BLS revisions.",
+     "claim_ids": [
+      "MT110-C08-3",
+      "MT110-C10-2",
+      "MT110-C10-3"
+     ]
+    },
+    {
+     "view": "The H2 2026 equity rally is in doubt because confidence and survey data are weak (consumer confidence near 2020 levels, high inflation expectations).",
+     "as_of": "2026-06-25",
+     "reasoning": "Conference Board and survey readings.",
+     "claim_ids": [
+      "MT110-C11-3"
+     ]
+    },
+    {
+     "view": "H1 2026 profits came from oil (run-up at the Iran conflict then reversal), gold (5,200 to about 4,000) and the dollar (from weak to strong uptrend); 10-year yields were range-bound at 4-4.5% for about a year.",
+     "as_of": "2026-06-25",
+     "reasoning": "Observed market moves.",
+     "claim_ids": [
+      "MT110-C03-5",
+      "MT110-C04-1",
+      "MT110-C04-2"
+     ]
+    },
+    {
+     "view": "Fed will tolerate 3-4% inflation; hikes near 4%, cuts below 3%.",
+     "as_of": "2026-06-25",
+     "reasoning": "Observed behaviour despite the 2% target.",
+     "claim_ids": [
+      "MT110-C07-3",
+      "MT110-C10-4"
+     ]
+    },
+    {
+     "view": "Allocators expecting high uncertainty should hold managed futures rather than a bundle of alternatives.",
+     "as_of": "2026-06-25",
+     "reasoning": "VIX regime study.",
+     "claim_ids": [
+      "MT110-C15-1",
+      "MT110-C15-4"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host, Top Traders Unplugged; trend-following allocator and industry observer",
+   "speaker_note": "Transcript spells him 'Niels Kaastrup-Larsen'. He reads index data (ledger correction on MT110-C03-3: the two trend-type indices are captioned 'short term trend index' and the third, the short term traders index, is up about 5.5% YTD, omitted from the ledger line). He argues positions from his own recollection of 1994 and states that data from Barclays/Bloomberg is a source he did not research.",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "crisis_alpha_convexity",
+    "diversification_risk_parity",
+    "replication_indexing",
+    "nowcasting_data"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "A surprise policy shift after a long pause can hurt trend followers initially (the 1994 hike was the first in about five years and was badly received).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Recollection of an MFA conference in Chicago; admits he could be wrong.",
+     "claim_ids": [
+      "MT110-C02-3"
+     ]
+    },
+    {
+     "premise": "In the first three months of a new Fed chair equity markets tended to fall (Greenspan -33%, Powell -7%, Yellen -4%, Bernanke -2%); no case of a rise in the sample of about 10-12 chairs.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Barclays/Bloomberg data he found but did not research.",
+     "claim_ids": [
+      "MT110-C02-4"
+     ]
+    },
+    {
+     "premise": "The Greenspan era is remembered as the Great Moderation, and many link the financial crisis to Fed policy before it; Fed communication has grown from a couple of hundred words in 1994 to notes, projections and press conferences, and the new chair is moving back to minimal communication.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Historical recollection.",
+     "claim_ids": [
+      "MT110-C01-X1",
+      "MT110-C02-X1"
+     ]
+    },
+    {
+     "premise": "June 2026 brought a regime change in energy (Hormuz normalisation, Brent at 4-month lows) and corrections in equities and metals (silver about -19%) while the dollar strengthened; trend indices are up about 10-11% YTD, ahead of equities.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Index readings as of Tuesday of that week.",
+     "claim_ids": [
+      "MT110-C03-1",
+      "MT110-C03-2",
+      "MT110-C03-3"
+     ]
+    },
+    {
+     "premise": "Regression replicators can express trend exposure with 10-12 markets, but running a real trend system needs a much broader set for risk and opportunity.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Contrast between replicators and large managers (50-100+ markets).",
+     "claim_ids": [
+      "MT110-C04-5"
+     ]
+    },
+    {
+     "premise": "Economic-data trend models have done very well recently and become fashionable, but large BLS revisions and possible data-collection changes create data-integrity and reliability risk, a reason to trust prices more.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "BLS job revisions he recalls; suspects changes may be motivated to make data look better.",
+     "claim_ids": [
+      "MT110-C09-X1",
+      "MT110-C10-3",
+      "MT110-C10-X4"
+     ]
+    },
+    {
+     "premise": "If the Fed steps back from buying Treasuries, regulation may push banks to be the buyer, so who owns the bonds matters less than that heavy supply must be absorbed.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Reasoning; he concedes he does not know the technicalities.",
+     "claim_ids": [
+      "MT110-C10-X1"
+     ]
+    },
+    {
+     "premise": "Many hedge fund strategies are correlated and negatively skewed in equity stress, while trend following is the opposite; in high-risk regimes tail-risk strategies are on the right side but he prefers trend following as the diversifier.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Intuition confirmed by Mark's study and his own firm's analysis.",
+     "claim_ids": [
+      "MT110-C13-1",
+      "MT110-C13-X1",
+      "MT110-C15-X3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Policy surprise to trend follower losses (1994)",
+     "steps": [
+      {
+       "from": "First rate hike in about five years, announced suddenly",
+       "to": "Trend followers initially lose (gloomy faces at an industry conference)",
+       "why": "Sudden policy shift after a long pause reverses established trends",
+       "claim_ids": [
+        "MT110-C02-3"
+       ]
+      }
+     ],
+     "evidence": "Recollection only; he flags it as possibly wrong.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT110-C02-3"
+     ]
+    },
+    {
+     "topic": "Related contracts within a sector hold the larger move",
+     "steps": [
+      {
+       "from": "Energy shock",
+       "to": "Heating oil rose 130% against crude's 37% over 12 months",
+       "why": "Contracts within a sector move by different amounts; trading only the benchmark leaves profit on the table",
+       "claim_ids": [
+        "MT110-C05-1"
+       ]
+      }
+     ],
+     "evidence": "12-month futures price changes he looked up.",
+     "fails_when": "Not discussed.",
+     "claim_ids": [
+      "MT110-C05-1",
+      "MT110-C05-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Track weekly trend indices (SG CTA/Trend, short term traders), Beta50, MSCI World, S&P TR and US aggregate bonds, and sector events.",
+     "why": "Monitoring of trend conditions.",
+     "claim_ids": [
+      "MT110-C03-3"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Prefers a broader market set for a real trend system than a replicator would use, including related contracts within a sector.",
+     "why": "Risk management and opportunity.",
+     "claim_ids": [
+      "MT110-C04-5",
+      "MT110-C05-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Prefers trend following to tail-risk strategies as the diversifier for high-VIX regimes.",
+     "why": "Stated preference supported by Mark's study.",
+     "claim_ids": [
+      "MT110-C13-X1",
+      "MT110-C15-X3"
+     ]
+    }
+   ],
+   "evidence_style": "Anecdote, headline data and index tables; probes Mark's reasoning with cases (heating oil, BLS revisions) and relies on guest research. Flags uncertainty in recollection.",
+   "current_views": [
+    {
+     "view": "H1 2026 trend performance is strong but June was pressured by the energy regime change (Brent 4-month low), equity and metals corrections; indices are up about 10-11% YTD versus equities about 8%.",
+     "as_of": "2026-06-25",
+     "reasoning": "Index readings as of Tuesday.",
+     "claim_ids": [
+      "MT110-C03-1",
+      "MT110-C03-2",
+      "MT110-C03-3"
+     ]
+    },
+    {
+     "view": "The past 12 months were unusually uncertain and managed futures trend following had a solid year, consistent with the regime finding.",
+     "as_of": "2026-06-25",
+     "reasoning": "Observed performance.",
+     "claim_ids": [
+      "MT110-C15-X1"
+     ]
+    },
+    {
+     "view": "Economic-data trend models face data-reliability risk from large BLS revisions and possible changes in what data is collected.",
+     "as_of": "2026-06-25",
+     "reasoning": "Revisions recalled.",
+     "claim_ids": [
+      "MT110-C10-3",
+      "MT110-C10-X4",
+      "MT110-C09-X1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Who buys Treasuries if the Fed steps back",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Someone must buy, possibly banks through regulation, so the identity of the owner matters less than the heavy supply.",
+     "claim_ids": [
+      "MT110-C10-X1"
+     ]
+    },
+    {
+     "speaker": "Mark Rzepczynski",
+     "position": "Identity matters: price discovery is better when marginal buyers are profit-motivated rather than policy-driven; yields are likely higher without the Fed.",
+     "claim_ids": [
+      "MT110-C10-1",
+      "MT110-C10-X2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "How many markets a trend system needs",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Replicators can express exposure with 10-12 markets, but a real system needs a much broader set.",
+     "claim_ids": [
+      "MT110-C04-5"
+     ]
+    },
+    {
+     "speaker": "Mark Rzepczynski",
+     "position": "Middle ground: broad enough to catch the unknown big winner, not so broad that exposure dilutes; liquidity matters.",
+     "claim_ids": [
+      "MT110-C04-3",
+      "MT110-C04-4"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Value of data-driven trend models given data-quality doubts",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Economic-data trend models have done very well and are fashionable, but the data reliability risk is large.",
+     "claim_ids": [
+      "MT110-C09-X1",
+      "MT110-C10-3",
+      "MT110-C10-X4"
+     ]
+    },
+    {
+     "speaker": "Mark Rzepczynski",
+     "position": "In the short run poor data hurts quasi-fundamental signals and favours price-based systems; weights shift toward price, and better data would help in the long run.",
+     "claim_ids": [
+      "MT110-C10-2",
+      "MT110-C10-X3",
+      "MT110-C11-5"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Ledger correction on the index names: the captions name the first two figures 'short term trend index' and add a short term traders index at about +5.5% YTD, omitted from the ledger line; names for SG CTA/SG Trend are inferred.",
+   "claim_ids": [
+    "MT110-C03-3"
+   ]
+  },
+  {
+   "issue": "Mark's VIX-regime study gives no sample, period, strategy indices (e.g. HFR/Eurekahedge), significance levels or number of observations, and managed futures' high-risk coefficient is described as both 'positive but insignificant' and 'indifferent', so 'unaffected' rests on non-significance.",
+   "claim_ids": [
+    "MT110-C13-4",
+    "MT110-C13-5",
+    "MT110-C14-1"
+   ]
+  },
+  {
+   "issue": "The study says managed futures beta becomes negative and significant in high-risk regimes, yet excess returns are described as unaffected; the link from negative beta to positive diversification is stated but not quantified.",
+   "claim_ids": [
+    "MT110-C14-3",
+    "MT110-C13-5"
+   ]
+  },
+  {
+   "issue": "The 'anecdotal' recent VIX spike and the past 12 months are used in support, but Mark himself warns against extrapolating from one case.",
+   "claim_ids": [
+    "MT110-C15-2",
+    "MT110-C15-X1"
+   ]
+  },
+  {
+   "issue": "The new-chair equity data come from a source Niels did not check and a small sample (about 10-12 chairs, with Greenspan's -33% likely driven by the 1987 crash).",
+   "claim_ids": [
+    "MT110-C02-4"
+   ]
+  },
+  {
+   "issue": "Mark claims less Fed speech and balance sheet help trend following, but also says early months could be negative and the effect is not visible in P&L; there is no evidence offered that trend profits rise.",
+   "claim_ids": [
+    "MT110-C09-2",
+    "MT110-C09-3",
+    "MT110-C11-2"
+   ]
+  },
+  {
+   "issue": "Mark says low-quality data hurts him as a quasi-fundamentalist and that fundamental weights are lower than before, which is partly self-referential evidence.",
+   "claim_ids": [
+    "MT110-C10-2",
+    "MT110-C11-5"
+   ]
+  },
+  {
+   "issue": "Mark expects Warsh to be less dovish than perceived, yet also observes the Fed tolerates 3-4% inflation; no explicit forecast for rates is given.",
+   "claim_ids": [
+    "MT110-C07-2",
+    "MT110-C07-3"
+   ]
+  },
+  {
+   "issue": "Mark's claim that the 3-4% inflation range is the de facto policy is an inference with no cited statement from the Fed.",
+   "claim_ids": [
+    "MT110-C07-3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs the speakers treat as leading: VIX level and VIX changes (risk regime and shock) for managed futures versus other strategies; the new Fed chair's behaviour (forward guidance, dot plot, balance sheet, task forces); US inflation versus the 3-4% range; Treasury yield range (4-4.5%) and who absorbs issuance; data quality (survey response rates, BLS revisions); confidence and survey data for the H2 equity rally; oil and Hormuz flows; dollar trend. Horizon: H2 2026, with the first three months of the new chair seen as potentially negative.",
+ "reader_inferences": [
+  "(reader) Mark's three channels (forward guidance, balance sheet, data) each reduce a source of non-price information or non-profit-motivated trading; he argues they raise the share of price movement due to profit-motivated flows, which is the condition favoured by trend followers.",
+  "(reader) The VIX-regime study implies managed futures diversifies precisely when VIX is high, but it says nothing about whether trend profits in a high-VIX environment are positive, only that they are not significantly worse and that beta falls.",
+  "(reader) Mark's two 'dirty secrets' (profit concentration in a few markets; liking rising correlation in shocks) both argue for market breadth in related contracts, but Niels's replicator point shows 10-12 markets already capture the exposure for index purposes."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT110-C08-R1",
+   "chunk": "C08",
+   "speaker": "Mark Rzepczynski",
+   "quote": "Chairman Warsh talked about five task force that he's now going to in has set up within the Fed",
+   "claim": "Chair Warsh has set up five Fed task forces (forward guidance, the balance sheet, the Fed and data, inflation, AI productivity), which Mark treats as the concrete content of the structural regime change in monetary policy.",
+   "mechanism": "policy_regime",
+   "asset_class": "multi",
+   "indicator": "Fed task force agenda",
+   "horizon": "H2 2026",
+   "direction": "structural monetary policy change",
+   "conditions": "Membership and timing of task forces unknown",
+   "testable": "no: institutional",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT110-C10-R1",
+   "chunk": "C10",
+   "speaker": "Mark Rzepczynski",
+   "quote": "right now is this is that Fed policy is not conducive to price stability",
+   "claim": "Mark welcomes an inflation task force but says current Fed policy is not conducive to price stability, since inflation has been above the 2% target for five-plus years.",
+   "mechanism": "policy_credibility",
+   "asset_class": "rates",
+   "indicator": "inflation versus target",
+   "horizon": "years",
+   "direction": "inflation above target persists",
+   "conditions": "",
+   "testable": "yes: CPI versus 2% target",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  }
+ ]
+}

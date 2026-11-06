@@ -1,0 +1,727 @@
+{
+ "source_id": "MT093",
+ "episode_thesis": "Rob Carver argues that systematic discipline means testing claims rather than telling stories: investors systematically earn less than the funds they hold because they chase returns (YieldMax ETF, Morningstar 1.7% gap), instrument-by-instrument claims about trend lack significance, and 'the world has changed' stories about weak CTA returns cannot be backtested, so the default is to use the full history and buy and hold strategies. Niels Kaastrup-Larsen adds the industry view that trend survives by adapting, that lower index volatility explains lower returns, and that large asset managers' entry signals interest; the episode also answers listener questions on cash-only sizing and currency conversion.",
+ "speakers": [
+  {
+   "name": "Rob Carver",
+   "role": "Independent systematic trader, author (position sizing, trading without leverage), consultant to a crypto hedge fund",
+   "speaker_note": "Rob Carver (UK). Ledger C02-2 (allocators giving money after losses) has Rob stating the hedge-fund half while Niels adds that CTA allocation behaves oppositely. Ledger C02-1 corrected: the Morgan Stanley note details are Niels's; Rob only mentions the sell-side Lehman note via the FT Alphaville article. C05-X3 (gilt yields 27-year high, UK vs EU inflation) is ambiguous between Rob and Niels in captions; assigned to Rob in the first part of that exchange (Rob continues \"it can't just be a debt story, it must be an inflation story\").",
+   "fingerprint": [
+    "research_robustness_overfitting",
+    "position_sizing_vol_target",
+    "trend_following",
+    "behavioral_sentiment",
+    "portfolio_construction_stacking",
+    "manager_selection_allocation",
+    "diversification_risk_parity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Statistical evidence is the arbiter: claims that trend works better on some instruments than others usually fail significance tests, and testing 250 instruments will find a few that look significant by chance.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Own testing practice: overlay return distributions and run a test.",
+     "claim_ids": [
+      "MT093-C08-3"
+     ]
+    },
+    {
+     "premise": "Cash (dollar-weighted) investor returns trail fund returns because investors pile in before losses and leave before gains; the gap is larger for strongly skewed funds and worst in sector equity funds.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "YieldMax coin option income ETF (42% fund gain, investors lost about 35.5m on 2.5bn net inflows) plus Morningstar average gap of 1.7% a year over 10 years and 4.4% for sector equity funds.",
+     "claim_ids": [
+      "MT093-C09-2",
+      "MT093-C10-1",
+      "MT093-C10-2",
+      "MT093-C11-1",
+      "MT093-C11-2",
+      "MT093-C11-3",
+      "MT093-C12-1",
+      "MT093-C12-2",
+      "MT093-C12-3",
+      "MT093-C10-R1",
+      "MT093-C10-X1"
+     ]
+    },
+    {
+     "premise": "Persistence and autocorrelation of strategy returns are weak, so there is no reliable conditioning variable to forecast CTA performance over the next 12 months; people are poor at timing in and out of funds.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Review of persistence evidence; the persistence-scorecard debate is unsettled.",
+     "claim_ids": [
+      "MT093-C13-1",
+      "MT093-C13-X1",
+      "MT093-C15-1",
+      "MT093-C12-3",
+      "MT093-C16-5"
+     ]
+    },
+    {
+     "premise": "Out-of-sample performance degrades as the fitting window shrinks, nonlinearly: 50 years is good, 20-40 almost as good, 2-3 much worse.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "General statistics of optimisation; extreme 10-day example.",
+     "claim_ids": [
+      "MT093-C15-2",
+      "MT093-C15-3",
+      "MT093-C15-X1"
+     ]
+    },
+    {
+     "premise": "\"The world has changed\" stories for weak CTA returns (Trump policy, more algorithmic trading, efficient markets) are narratives indistinguishable from bad luck unless a testable, backtestable method exists.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Using only the last 2-3 years of data smuggles in future information.",
+     "claim_ids": [
+      "MT093-C14-2",
+      "MT093-C14-X1",
+      "MT093-C13-2"
+     ]
+    },
+    {
+     "premise": "Even if rolling trend returns look degraded, the difference is not statistically significant, and for a low-Sharpe strategy it could take another 50 years to know.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Statistical power argument.",
+     "claim_ids": [
+      "MT093-C16-4",
+      "MT093-C16-3",
+      "MT093-C16-5"
+     ]
+    },
+    {
+     "premise": "The default should be to buy and hold assets, funds, strategies or factors unless one can convincingly show that timing adds value.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "All evidence he has seen shows investors time badly.",
+     "claim_ids": [
+      "MT093-C16-6",
+      "MT093-C12-3"
+     ]
+    },
+    {
+     "premise": "Developed-market bond sell-offs on debt worries are the dog that has never barked; UK yields above Italy's with worse Italian debt/GDP show UK weakness is inflation, not debt alone.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Truss exception; UK vs Italy yield comparison.",
+     "claim_ids": [
+      "MT093-C05-4",
+      "MT093-C06-1",
+      "MT093-C05-X3"
+     ]
+    },
+    {
+     "premise": "A model-driven systematic book can contradict the trader's gut views and cost money if the gut is right; he is comfortable with that.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own long bond position versus bearish discretionary view on Fed independence.",
+     "claim_ids": [
+      "MT093-C05-2",
+      "MT093-C05-5",
+      "MT093-C05-X2"
+     ]
+    },
+    {
+     "premise": "Passive has largely won the passive-versus-active debate.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Persistent long-term rise in the share of assets in passive strategies.",
+     "claim_ids": [
+      "MT093-C12-X1"
+     ]
+    },
+    {
+     "premise": "Trend following works well on cryptocurrencies, with no guarantee for the future.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His testing and a crypto hedge fund he advises.",
+     "claim_ids": [
+      "MT093-C09-1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why fund returns exceed investor returns",
+     "steps": [
+      {
+       "from": "Fund shows persistent gains (negative-skew strategy, e.g. option income)",
+       "to": "Flows chase it",
+       "why": "Investors buy after persistent gains",
+       "claim_ids": [
+        "MT093-C11-3",
+        "MT093-C10-2"
+       ]
+      },
+      {
+       "from": "Large flows arrive just before the big loss (and leave before gains in positively skewed funds)",
+       "to": "Aggregate cash return is far below the percentage return",
+       "why": "Dollar-weighting: more money present when losses occur",
+       "claim_ids": [
+        "MT093-C10-2",
+        "MT093-C10-1",
+        "MT093-C11-1",
+        "MT093-C10-X1"
+       ]
+      },
+      {
+       "from": "Gap summed over a decade",
+       "to": "Investor return trails fund return by 1.7% a year across US funds and 4.4% in sector equity funds",
+       "why": "News and emotion (e.g. AI theme) drive buying after rallies",
+       "claim_ids": [
+        "MT093-C12-1",
+        "MT093-C12-2"
+       ]
+      }
+     ],
+     "evidence": "Stylised 51-week example; YieldMax net flows and loss; Morningstar study of all US funds over 10 years.",
+     "fails_when": "Funds where investors beat the fund are probably lucky; effect smaller for lower-skew funds and in buy-and-hold with no flows.",
+     "claim_ids": [
+      "MT093-C10-R1",
+      "MT093-C11-X1",
+      "MT093-C11-2"
+     ]
+    },
+    {
+     "topic": "Should an allocator give up on trend because the world has changed",
+     "steps": [
+      {
+       "from": "Allocator uses the full 50-year history with equal weight",
+       "to": "Blend of trend with 60/40 improves mean, volatility, drawdown and Sharpe",
+       "why": "Equal treatment assumes no structural change",
+       "claim_ids": [
+        "MT093-C14-1",
+        "MT093-C03-2"
+       ]
+      },
+      {
+       "from": "Allocator instead fits only the last 2-3 years",
+       "to": "Trend allocation falls towards zero",
+       "why": "Misses 2022; choice of window cannot have been made in advance, so it is polluted by future information",
+       "claim_ids": [
+        "MT093-C14-2"
+       ]
+      },
+      {
+       "from": "Rule-based shorter windows (10, 5, 3 years)",
+       "to": "Worse out-of-sample results",
+       "why": "Optimisation needs data; noise dominates",
+       "claim_ids": [
+        "MT093-C15-2",
+        "MT093-C15-3",
+        "MT093-C15-X1"
+       ]
+      },
+      {
+       "from": "Persistence and autocorrelation are weak",
+       "to": "No testable conditioning variable",
+       "why": "So default remains buy and hold",
+       "claim_ids": [
+        "MT093-C15-1",
+        "MT093-C16-6",
+        "MT093-C13-1"
+       ]
+      }
+     ],
+     "evidence": "Own 50-year backtest back to 1970; backfilled trend indexes by replication; general statistics.",
+     "fails_when": "If a backtestable, genuinely out-of-sample timing signal existed he would reconsider; none found.",
+     "claim_ids": [
+      "MT093-C14-1",
+      "MT093-C14-2",
+      "MT093-C15-1",
+      "MT093-C16-4"
+     ]
+    },
+    {
+     "topic": "Currency conversion before trend following",
+     "steps": [
+      {
+       "from": "Convert foreign price to home currency",
+       "to": "Signal blends asset trend and FX trend",
+       "why": "Falling pound makes US ETF look stronger",
+       "claim_ids": [
+        "MT093-C08-X1",
+        "MT093-C08-2"
+       ]
+      },
+      {
+       "from": "Blend plus separate FX trade",
+       "to": "Diversification lost and correlation to FX trade rises",
+       "why": "One instrument in place of two",
+       "claim_ids": [
+        "MT093-C08-2"
+       ]
+      },
+      {
+       "from": "Futures only convert margin",
+       "to": "FX exposure is a fraction of notional and can be traded separately",
+       "why": "Margin of roughly 20-25%",
+       "claim_ids": [
+        "MT093-C08-4",
+        "MT093-C08-1"
+       ]
+      }
+     ],
+     "evidence": "Reasoning; admits he has not tested the performance difference.",
+     "fails_when": "Works only if trend works better on the combined series than on the two separately, which he doubts.",
+     "claim_ids": [
+      "MT093-C08-1",
+      "MT093-C08-3"
+     ]
+    },
+    {
+     "topic": "Cash-only position sizing with forecast scaling",
+     "steps": [
+      {
+       "from": "Forecast-scaled positions sum above 100% of capital",
+       "to": "Either halve every position or cap forecasts at the average (10) instead of 20",
+       "why": "Halving gives average 50% invested",
+       "claim_ids": [
+        "MT093-C06-2",
+        "MT093-C07-1"
+       ]
+      },
+      {
+       "from": "Halving applied to a liquid S&P 500 portfolio",
+       "to": "Risk target falls from about 25% to 12.5%, probably too low",
+       "why": "Fine for 50%-vol emerging-market stocks (25% target)",
+       "claim_ids": [
+        "MT093-C06-3"
+       ]
+      },
+      {
+       "from": "Capping at 10",
+       "to": "Weak forecasts shrink positions and cash creeps back; stronger-than-average cannot add",
+       "why": "Reallocating cash is optimal in theory but rarely worth the complexity",
+       "claim_ids": [
+        "MT093-C07-1",
+        "MT093-C07-2",
+        "MT093-C06-X1"
+       ]
+      }
+     ],
+     "evidence": "Own sizing framework; details deferred to forthcoming book.",
+     "fails_when": "Where cash constraints force less information from forecast strength.",
+     "claim_ids": [
+      "MT093-C06-2",
+      "MT093-C06-3",
+      "MT093-C07-1",
+      "MT093-C07-2",
+      "MT093-C06-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "sizing",
+     "practice": "Position size scales with forecast strength (average forecast 10, cap 20); in cash-only accounts cap at 10 or halve all positions depending on the volatility of the instruments.",
+     "why": "Preserves risk target when leverage is unavailable.",
+     "claim_ids": [
+      "MT093-C06-2",
+      "MT093-C06-3",
+      "MT093-C07-1",
+      "MT093-C07-2",
+      "MT093-C06-X1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Trend-follow the local-currency price and trade FX as a separate instrument; do not convert price series into home currency first.",
+     "why": "Retains diversification between asset and currency trends.",
+     "claim_ids": [
+      "MT093-C08-1",
+      "MT093-C08-2",
+      "MT093-C08-X1",
+      "MT093-C08-4"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Do not drop or favour instruments because trend \"works better\" on them unless a significance test says so.",
+     "why": "With 250 instruments some look significant by chance.",
+     "claim_ids": [
+      "MT093-C08-3"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Treat anecdotes as hypotheses to test for generality; do not extrapolate.",
+     "why": "Quant discipline.",
+     "claim_ids": [
+      "MT093-C11-4"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Allocator default: use full-history (since 1970) equal-weight evidence for blending trend with 60/40; build a backfill trend index by replication if needed.",
+     "why": "Avoids hindsight windows.",
+     "claim_ids": [
+      "MT093-C14-1",
+      "MT093-C14-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Currently running about 50-60% of typical risk because clear trends are lacking; long equities, FX, bonds, short energy and Bitcoin.",
+     "why": "Model-dictated risk when trends are weak.",
+     "claim_ids": [
+      "MT093-C05-1",
+      "MT093-C05-2",
+      "MT093-C05-X2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Buy and hold funds, strategies and factors; do not time in and out unless timing is convincingly proven.",
+     "why": "Evidence that investors time badly.",
+     "claim_ids": [
+      "MT093-C16-6",
+      "MT093-C12-3",
+      "MT093-C13-1"
+     ]
+    }
+   ],
+   "evidence_style": "Statistical testing and first principles; stylised numerical examples; published studies (Morningstar investor-return gaps); explicit humility about macro views and about untested claims.",
+   "current_views": [
+    {
+     "view": "Long equities, FX and bonds and short energy and Bitcoin in his systematic book at about 50-60% of typical risk; no very clear trends yet.",
+     "as_of": "2025-09-26",
+     "reasoning": "Model output as of the show.",
+     "claim_ids": [
+      "MT093-C05-1",
+      "MT093-C05-X2"
+     ]
+    },
+    {
+     "view": "Rates markets underprice bad news such as threats to Fed independence, yet his systematic book stays long bonds and will lose if his gut is right.",
+     "as_of": "2025-09-26",
+     "reasoning": "Discretionary gut versus model.",
+     "claim_ids": [
+      "MT093-C05-2",
+      "MT093-C05-5"
+     ]
+    },
+    {
+     "view": "Big asset managers (BlackRock, Fidelity) entering trend products will likely allocate model-portfolio flows to their own trend products; the timing may be dip-buying after weak trend years.",
+     "as_of": "2025-09-26",
+     "reasoning": "Curiosity about why they did not launch 10-15 years ago.",
+     "claim_ids": [
+      "MT093-C03-3",
+      "MT093-C04-1",
+      "MT093-C03-2"
+     ]
+    },
+    {
+     "view": "UK bond weakness is an inflation story, not only debt (gilts above Italy), and gilt yields hit 27-year highs.",
+     "as_of": "2025-09-26",
+     "reasoning": "UK vs Italy yield comparison.",
+     "claim_ids": [
+      "MT093-C06-1",
+      "MT093-C05-X3"
+     ]
+    },
+    {
+     "view": "Trend following on crypto works fine; he is writing a book on trading without leverage.",
+     "as_of": "2025-09-26",
+     "reasoning": "Own testing.",
+     "claim_ids": [
+      "MT093-C09-1"
+     ]
+    },
+    {
+     "view": "Whether trend has stopped working cannot be settled statistically; belief matters, and the default is buy and hold.",
+     "as_of": "2025-09-26",
+     "reasoning": "Low-Sharpe strategy needs decades of data.",
+     "claim_ids": [
+      "MT093-C16-4",
+      "MT093-C16-5",
+      "MT093-C16-6"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; veteran CTA/hedge fund investor, works with Dawn Capital",
+   "speaker_note": "Host who also states views (trend barometer, performance data, Fed commentary, bond risk premium, adaptability of trend). Ledger C02-1 corrected: the Morgan Stanley note details are his. C04-3 corrected: the 50-60% risk is Rob's.",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "policy_reaction_central_banks",
+    "fiscal_dominance",
+    "behavioral_sentiment",
+    "regime_detection"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend following survives structural change because it adapts through continuous research, though 1970s rules should not be applied unchanged.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "51 years of trend following at the firm he works with and the Barclay CTA index volatility history.",
+     "claim_ids": [
+      "MT093-C16-1"
+     ]
+    },
+    {
+     "premise": "Lower CTA index returns reflect lower index volatility (above 25% in the 1970s-80s, below 5% now), so lower returns are expected.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Rolling volatility of the Barclay CTA index in the Dawn paper.",
+     "claim_ids": [
+      "MT093-C16-2",
+      "MT093-C16-3"
+     ]
+    },
+    {
+     "premise": "With large fiscal deficits and rising debt almost everywhere, many government bond markets should carry a higher risk premium.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Debt trajectories; UK gilt yield highs.",
+     "claim_ids": [
+      "MT093-C05-X1"
+     ]
+    },
+    {
+     "premise": "Divergence in CTA bond positioning arises because carry matters more for bonds than for equities, so the carry weight changes positions relative to trend.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Observed daily moves across ETFs and mutual funds.",
+     "claim_ids": [
+      "MT093-C05-3"
+     ]
+    },
+    {
+     "premise": "Large-manager entry into trend products signals growing institutional interest; the standard case for managed futures is diversification and crisis protection without outperforming in every environment.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Reads the Fidelity paper conclusion.",
+     "claim_ids": [
+      "MT093-C02-4",
+      "MT093-C03-1",
+      "MT093-C04-2"
+     ]
+    },
+    {
+     "premise": "CTA allocation behaves oppositely to hedge-fund allocation: investors do not add to CTAs after losses.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Industry experience.",
+     "claim_ids": [
+      "MT093-C02-R1",
+      "MT093-C02-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Tracks a trend barometer (41, improving but weak) and index performance to gauge the trend environment.",
+     "why": "Gives a read on how strong trends are.",
+     "claim_ids": [
+      "MT093-C04-3",
+      "MT093-C04-4",
+      "MT093-C04-5",
+      "MT093-C04-X1",
+      "MT093-C04-X2"
+     ]
+    }
+   ],
+   "evidence_style": "Industry data and published papers; track record of long-lived trend firms; read-outs of index numbers.",
+   "current_views": [
+    {
+     "view": "Fed cut 25bp in September 2025 with Miran dissenting for 50 and Waller (a contender for chair) not dissenting; Powell did not signal capitulation to many cuts.",
+     "as_of": "2025-09-18",
+     "reasoning": "Dissent pattern and press conference.",
+     "claim_ids": [
+      "MT093-C02-3",
+      "MT093-C02-X1"
+     ]
+    },
+    {
+     "view": "Trend barometer at 41, improving over 10 days but still weak; CTA gains from equity and gold trends; CTA indices still negative YTD (CTA -3.62%, SG Trend about -4%, Beta 50 -0.45%) versus MSCI World +16.6% and S&P 500 TR +13.29%, with bonds +6.25%.",
+     "as_of": "2025-09-26",
+     "reasoning": "Index data.",
+     "claim_ids": [
+      "MT093-C04-3",
+      "MT093-C04-4",
+      "MT093-C04-5",
+      "MT093-C04-X1",
+      "MT093-C04-X2"
+     ]
+    },
+    {
+     "view": "Many government bond markets should carry a higher risk premium given global fiscal deficits.",
+     "as_of": "2025-09-26",
+     "reasoning": "Debt and deficits.",
+     "claim_ids": [
+      "MT093-C05-X1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Whether to explain weak CTA returns by structural change",
+   "positions": [
+    {
+     "speaker": "Rob Carver",
+     "position": "Stories of change are untestable narratives; evidence of degradation is not significant and may need 50 more years to confirm; use full history.",
+     "claim_ids": [
+      "MT093-C14-X1",
+      "MT093-C14-2",
+      "MT093-C16-4",
+      "MT093-C16-5"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "The world always changes, yet trend adapts and has worked 51 years; lower returns reflect much lower index volatility.",
+     "claim_ids": [
+      "MT093-C16-1",
+      "MT093-C16-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Why large managers launch trend products now",
+   "positions": [
+    {
+     "speaker": "Rob Carver",
+     "position": "Possibly dip-buying after weak performance; curious why not 10-15 years ago (or personnel driven).",
+     "claim_ids": [
+      "MT093-C04-1",
+      "MT093-C03-3"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Treats it as a sign of growing institutional interest and legitimacy.",
+     "claim_ids": [
+      "MT093-C02-4",
+      "MT093-C03-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Bond risk premium and debt",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Many bond markets should carry a higher risk premium given deficits.",
+     "claim_ids": [
+      "MT093-C05-X1"
+     ]
+    },
+    {
+     "speaker": "Rob Carver",
+     "position": "Debt-driven sell-offs are the dog that has never barked; UK weakness is inflation-led.",
+     "claim_ids": [
+      "MT093-C05-4",
+      "MT093-C06-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Rob's systematic book is long bonds while his stated gut view is that Fed-independence risk is under-priced; he accepts the conflict but gives no rule on when to override the model.",
+   "claim_ids": [
+    "MT093-C05-2",
+    "MT093-C05-5",
+    "MT093-C05-X2"
+   ]
+  },
+  {
+   "issue": "The claim that investors lose from bad timing relies on one anecdotal fund plus the Morningstar average; the YieldMax figure (35.5m loss on 2.5bn inflows) is second-hand from an article.",
+   "claim_ids": [
+    "MT093-C11-1",
+    "MT093-C09-2",
+    "MT093-C12-1"
+   ]
+  },
+  {
+   "issue": "Rob has not tested the currency-conversion claim and says so; the dismissal of instrument-level differences is a statistical prior, not a result.",
+   "claim_ids": [
+    "MT093-C08-3",
+    "MT093-C08-1"
+   ]
+  },
+  {
+   "issue": "Two speakers disagree on whether visible degradation of trend returns exists; Rob concedes \"looks degraded\" but not significant, Niels attributes it to volatility, and no test of the degradation is shown on air.",
+   "claim_ids": [
+    "MT093-C16-2",
+    "MT093-C16-3",
+    "MT093-C16-4"
+   ]
+  },
+  {
+   "issue": "Rob says the full-history default means treating 2025 like 1975, but also says the 1970s early results had fewer markets, which complicates the same comparison.",
+   "claim_ids": [
+    "MT093-C14-1",
+    "MT093-C16-3"
+   ]
+  },
+  {
+   "issue": "Lehman anecdote: no explicit lesson drawn by the speakers; the ledger's reader inference that buy ratings are poor risk signals is not stated.",
+   "claim_ids": [
+    "MT093-C02-1"
+   ]
+  },
+  {
+   "issue": "CTA positioning/risk figures: Niels's read-out is as of Tuesday and some numbers (Beta 50, SG Trend) are quoted from memory; Rob gives no P&L because his computer is broken.",
+   "claim_ids": [
+    "MT093-C04-5",
+    "MT093-C04-X1",
+    "MT093-C05-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) No explicit price forecasts. Observable inputs named: strength of the trend barometer, equity and gold trends driving CTA P&L, bond positioning divergence (carry weight), Fed independence and the pace of cuts, UK inflation versus EU. The main forward claim is that trend allocations should not be conditioned on recent performance because persistence is weak.",
+ "reader_inferences": [
+  "(reader) Rob's 'default is buy and hold unless proven otherwise' treats the burden of proof as lying on the timer; combined with weak autocorrelation it implies allocators should not redeem or add after drawdowns, which clashes with the observed behaviour he describes.",
+  "(reader) His investor-return argument implies that for skewed products the realised client experience, not the fund track record, is the relevant risk measure for product design.",
+  "(reader) Niels's volatility argument and Rob's market-count argument both imply raw return comparisons across eras are not like for like; neither provides a normalised comparison on the show."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT093-C10-R1",
+   "chunk": "C10",
+   "speaker": "Rob Carver",
+   "quote": "it's going to be impossible for any individual um investor to actually earn the returns of a fund unless they literally buy and hold",
+   "claim": "Using a stylised fund that loses 1% for 51 weeks and gains 200% on the last day, Rob shows that only a buy-and-hold investor with no flows earns the fund's percentage return; any timing yields a very different cash return.",
+   "mechanism": "investor_vs_fund_return",
+   "asset_class": "funds",
+   "indicator": "",
+   "horizon": "annual",
+   "direction": "",
+   "conditions": "fund returns concentrated in a few days (skewed)",
+   "testable": "yes: dollar-weighted vs time-weighted return",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "map"
+  },
+  {
+   "claim_id": "MT093-C02-R1",
+   "chunk": "C02",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "it doesn't work in our in funny enough in the CTA world, it doesn't seem to be the way the work things work",
+   "claim": "Niels says that unlike hedge funds that attract money after large losses, CTAs do not get new allocations after losing money.",
+   "mechanism": "allocator_behaviour",
+   "asset_class": "CTA",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no: qualitative",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map"
+  }
+ ]
+}

@@ -1,0 +1,248 @@
+{
+ "source_id": "MT072",
+ "episode_thesis": "Alan Dunne argues that debt, deficits and policy trends over three decades point to structurally higher US bond yields ('all roads lead to higher yields'): bond-market discipline of fiscal policy has weakened, rates above growth make debt dynamics self-reinforcing, and most scenarios end in financial repression or fiscal dominance. For asset allocation he recommends scenario-based construction instead of anchoring on 1980-2020, and notes that forward-looking return estimates point to below-average equity returns. Niels Kaastrup-Larsen reviews a weak May 2025 for trend followers (medium-term models hit hardest) and argues that, because scenario selection can go wrong and unforeseen risks cannot be listed, a regime-agnostic, non-predictive trend allocation is useful and should not be timed on macro or political views; Alan agrees.",
+ "speakers": [
+  {
+   "name": "Alan Dunne",
+   "role": "Co-host; allocator/researcher; writes the Substack 'Beyond the Cycle'; Dublin-based",
+   "speaker_note": "Ledger spelling 'Alan Dunne' kept (captions give 'Alan Don'). Corrections applied: MT072-C17-3 (linking trend allocation to a macro view works for a year, then something surprises) and MT072-C17-6 (the 2016-2022 timing example ending 'Don't try and time it') are Alan's, not Niels's. MT072-C13-2 (pod shops) is ledger-credited to Alan but the first half ('pod shops have done reasonably well') may be Niels's; treat as uncertain. Alan lays out the bond thesis, SG Prime survey, and asset allocation / valuation material.",
+   "fingerprint": ["macro_fundamental_topdown", "debt_cycle_long_term", "fiscal_dominance", "policy_reaction_central_banks", "valuation_contrarian", "portfolio_construction_stacking", "diversification_risk_parity", "manager_selection_allocation"],
+   "worldview_premises": [
+    {"premise": "Bond-market discipline of US fiscal policy has weakened: in 1993 a deficit of about 4% of GDP and debt of 45% of GDP intimidated politicians, whereas today debt is about 100% of GDP (net of agency holdings) and the 2025 budget bill adds nearly 4 trillion over ten years.", "type": "empirical", "stated": "stated", "support": "1993 Carville quote and numbers from memory; current debt/deficit figures.", "claim_ids": ["MT072-C04-1", "MT072-C05-1", "MT072-C05-2"]},
+    {"premise": "In the 1990s, deficit reduction (Clinton tax hikes) let the Fed ease and lowered yields, fuelling investment; the opposite fiscal stance today does not help.", "type": "empirical", "stated": "stated", "support": "Greenspan-Clinton conversation as recounted; a 1990s productivity boom helped as well.", "claim_ids": ["MT072-C05-3", "MT072-C05-X1"]},
+    {"premise": "From 2017 the US ran large deficits at full employment (a procyclical turning point), followed by MMT ideas and huge Covid spending; the end of the neoliberal era removed ideological appetite for cutting deficits.", "type": "empirical", "stated": "stated", "support": "Chronology of US fiscal policy 2017-2025; guest Gary Gerstle cited.", "claim_ids": ["MT072-C06-1", "MT072-C06-2"]},
+    {"premise": "High public debt levels are here to stay (Eichengreen); the 2021-22 inflation eroded real debt, but disinflation reverses this, so the debt burden rises again.", "type": "theoretical", "stated": "stated", "support": "Jackson Hole paper by Barry Eichengreen and a conversation with him.", "claim_ids": ["MT072-C04-X1", "MT072-C06-3"]},
+    {"premise": "When interest rates exceed growth (R greater than G) debt service takes a growing share of resources and debt becomes unsustainable regardless of the debt/GDP level.", "type": "theoretical", "stated": "stated", "support": "Standard debt-dynamics arithmetic.", "claim_ids": ["MT072-C06-4"]},
+    {"premise": "Higher yields make debt less sustainable, which raises yields further: a self-reinforcing loop.", "type": "theoretical", "stated": "stated", "support": "Argument from fiscal arithmetic.", "claim_ids": ["MT072-C07-2", "MT072-C07-1"]},
+    {"premise": "Fiscal crises develop slowly then move fast (Dornbusch), so the timing of the bond break is hard to call while the direction is clear.", "type": "experience", "stated": "stated", "support": "Rudi Dornbusch quote.", "claim_ids": ["MT072-C07-7", "MT072-C07-8"]},
+    {"premise": "Most scenarios end in financial repression or fiscal dominance (forced bond buying or easier-than-warranted policy); politicians act on deficits only after a crisis forces them to.", "type": "theoretical", "stated": "stated", "support": "Political-economy reasoning, no precedent beyond the 1990s contrast.", "claim_ids": ["MT072-C07-6", "MT072-C09-1"]},
+    {"premise": "Growth is unlikely to fix the debt soon: labour force limits (immigration, ageing) and a 10-15 year lag from new technology (AI) to productivity gains.", "type": "empirical", "stated": "stated", "support": "Internet and computers lag as precedent; contrast with post-WWII growth.", "claim_ids": ["MT072-C08-2", "MT072-C08-3"]},
+    {"premise": "A negative stock-bond correlation let investors accept a low term premium; as that hedge value fades they require a higher yield, so real yields can decouple from inflation.", "type": "theoretical", "stated": "stated", "support": "Portfolio-role argument; real yields about 2% now, over 3% in 1993.", "claim_ids": ["MT072-C09-4", "MT072-C09-5"]},
+    {"premise": "Reindustrialising a full-employment US economy creates bottlenecks, skill shortages and wage pressure that may spill over into broad inflation, though the tariff effect cannot be modelled with conviction.", "type": "theoretical", "stated": "stated", "support": "Reasoning from labour market slack.", "claim_ids": ["MT072-C10-1", "MT072-C10-R1"]},
+    {"premise": "Private equity and private credit are less diversifying than assumed: low distributions (DPI) constrain new flows, the last buyer may be retail, and private credit holds the same sectors and weaker ratings.", "type": "empirical", "stated": "stated", "support": "Conversations with institutional investors and listened-to discussions.", "claim_ids": ["MT072-C02-3", "MT072-C02-4"]},
+    {"premise": "The BOJ's bond purchases moved losses from the private sector to the central bank, so the JGB yield rise did not cause private-sector stress or a yen carry unwind.", "type": "empirical", "stated": "stated", "support": "Observation that dollar-yen stayed in range; insurers possibly shifting from 40-year to 10-year bonds.", "claim_ids": ["MT072-C03-3", "MT072-C03-4"]},
+    {"premise": "Asset allocation inputs should not be anchored on one period such as 1980-2020, which was favoured by disinflation and falling yields; use scenario-based construction and robustness to volatility and correlation assumptions.", "type": "theoretical", "stated": "stated", "support": "Investor questions and the shift from the 1980-2020 regime.", "claim_ids": ["MT072-C13-3", "MT072-C13-4", "MT072-C14-1"]},
+    {"premise": "Forward-looking return estimates (dividend yield plus earnings growth) correlate positively with realised 10-year returns, whereas trailing past returns correlate negatively; realised returns overshoot high estimates and undershoot low ones.", "type": "empirical", "stated": "stated", "support": "AQR papers and examples (2010 estimate 8-10% vs 15% realised; 2000 estimate 3-4% vs flat).", "claim_ids": ["MT072-C15-3", "MT072-C16-1"]},
+    {"premise": "US outperformance came largely from re-rating (CAPE from about half of non-US in 1990 to double today), so mean reversion argues for less US bullishness; if the US is safer its required return is lower (Dimson).", "type": "empirical", "stated": "stated", "support": "AQR paper and a conversation with Elroy Dimson.", "claim_ids": ["MT072-C15-1", "MT072-C15-2"]},
+    {"premise": "Large equity drawdowns follow periods of optimism and rich valuations, as in 2000, not pessimism.", "type": "empirical", "stated": "stated", "support": "Dimson's point; 2000 as example.", "claim_ids": ["MT072-C16-3"]},
+    {"premise": "Trend allocations should not be linked to a macro view or political backdrop; waiting for conditions to look favourable misses years.", "type": "experience", "stated": "stated", "support": "2016-2022 example: a 'central banks control markets' view held for a year or two, 2019-2021 were good for trend, consensus only in 2022.", "claim_ids": ["MT072-C17-3", "MT072-C17-6"]},
+    {"premise": "True diversification means balancing across risk factors; equities, private equity and credit share the same tail risk.", "type": "theoretical", "stated": "stated", "support": "Argument that these assets share a big negative tail.", "claim_ids": ["MT072-C17-2"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why all roads lead to higher US yields",
+     "steps": [
+      {"from": "Large deficits at full employment, no ideological appetite for restraint, 2025 budget bill adding nearly 4 trillion", "to": "Rising debt supply and debt/GDP", "why": "Procyclical fiscal stance since 2017, end of the neoliberal era, disinflation reversing the 2021-22 erosion of real debt.", "claim_ids": ["MT072-C06-1", "MT072-C06-2", "MT072-C06-3", "MT072-C05-1"]},
+      {"from": "Rising debt with weak bond-market discipline and Treasury leaning on bills", "to": "Doubts about demand at the long end and a higher term premium", "why": "Less hedge value from bonds and more supply require a higher yield.", "claim_ids": ["MT072-C05-X1", "MT072-C09-5", "MT072-C09-4"]},
+      {"from": "Yields of 5% or more versus nominal GDP growth of 4-4.5%", "to": "R above G, worse fiscal arithmetic, and a vicious cycle of higher yields", "why": "Debt service takes a growing share of resources.", "claim_ids": ["MT072-C06-4", "MT072-C07-1", "MT072-C07-2"]},
+      {"from": "Pressure on yields", "to": "Financial repression or fiscal dominance as the likely end state", "why": "Forced buying by the Fed or private sector, or easier-than-warranted policy, e.g. a Fed chair under administration influence after Powell's term ends in 2026 (Nixon-Burns).", "claim_ids": ["MT072-C07-6", "MT072-C07-5"]},
+      {"from": "A fast spike from 5% to 6%", "to": "Stops only with a credible deficit policy", "why": "Politically unlikely; 'no votes in doing the right thing'.", "claim_ids": ["MT072-C08-4", "MT072-C09-1"]}
+     ],
+     "evidence": "1993 versus 2025 comparison, R-G arithmetic, Eichengreen and Dornbusch, term premium logic; the recent pattern that weak data brings yields back down is acknowledged.",
+     "fails_when": "A recession pulls yields down short-term as the Fed eases, but automatic stabilisers widen the deficit, so it delays rather than solves; strong growth or AI productivity could help but lags 10-15 years.",
+     "claim_ids": ["MT072-C07-3", "MT072-C07-4", "MT072-C08-3", "MT072-C07-X1", "MT072-C07-8"]
+    },
+    {
+     "topic": "Why US exceptionalism implies lower, not higher, future US returns",
+     "steps": [
+      {"from": "US outperformance over 15 and 125 years", "to": "Largely a valuation re-rating (CAPE half of non-US in 1990, double today)", "why": "AQR decomposition.", "claim_ids": ["MT072-C15-1"]},
+      {"from": "US considered safer, entrepreneurial, rule-of-law", "to": "Its required return should be lower", "why": "Dimson: safer means lower required return, so bullish expected return and required return views are inconsistent.", "claim_ids": ["MT072-C15-2"]},
+      {"from": "Rich valuations and forward-looking estimates of about 5-6%", "to": "Below-average equity returns and downside risk, with mean reversion", "why": "Forward-looking estimates correlate positively with realised returns; drawdowns follow optimism.", "claim_ids": ["MT072-C15-3", "MT072-C16-2", "MT072-C16-3"]}
+     ],
+     "evidence": "AQR papers, Dimson conversation, Global Investment Returns Yearbook (which in 2000 was right on lower returns but wrong on less US outperformance).",
+     "fails_when": "Valuation-based forecasts have limits (the 2000 yearbook missed US outperformance); returns can overshoot estimates in both directions.",
+     "claim_ids": ["MT072-C14-3", "MT072-C16-1"]
+    },
+    {
+     "topic": "From shifting regime to scenario-based allocation",
+     "steps": [
+      {"from": "1980-2020 disinflation and falling yields favoured financial assets and private markets", "to": "Historical correlations and returns are a poor guide for the new regime", "why": "The regime is shifting.", "claim_ids": ["MT072-C13-3"]},
+      {"from": "Map a portfolio for each macro scenario (stagflation, inflation) and weight by probability", "to": "Tilt away from financial assets toward real assets, commodities and pure diversifiers", "why": "More robust than a point estimate; avoids over-weighting the last regime (commodities in 2021).", "claim_ids": ["MT072-C14-2", "MT072-C13-4", "MT072-C14-R1"]}
+     ],
+     "evidence": "Investor discussions at London events; no test.",
+     "fails_when": "Scenario weights are subjective; Niels points out choosing the wrong scenario can hurt.",
+     "claim_ids": ["MT072-C14-1", "MT072-C16-4"]
+    },
+    {
+     "topic": "Hard data patchiness hurts macro-data-based strategies",
+     "steps": [
+      {"from": "Tariff front-loading, pauses and court rulings", "to": "Noisy hard data (durable goods -7% after +6-7%) and a gap with pessimistic soft data", "why": "Single prints mislead; turning point unclear.", "claim_ids": ["MT072-C01-1", "MT072-C01-2", "MT072-C01-3"]},
+      {"from": "Noisy macro data", "to": "Trouble for strategies built on high-frequency macro data; falling allocator interest in quant macro", "why": "Hard to read the economy for months.", "claim_ids": ["MT072-C01-4", "MT072-C12-3"]}
+     ],
+     "evidence": "Durable goods print; the SG Prime survey.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT072-C01-4"]
+    }
+   ],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Construct allocations by mapping a portfolio for each macro scenario and weighting by probability, rather than plugging in historical averages or anchoring on 1980-2020.", "why": "The regime is shifting; scenario weights tilt toward real assets, commodities and pure diversifiers.", "claim_ids": ["MT072-C13-4", "MT072-C14-2", "MT072-C13-3"]},
+    {"element": "portfolio", "practice": "Make the allocation process robust to volatility and correlation assumptions.", "why": "The future may differ from the past.", "claim_ids": ["MT072-C14-1"]},
+    {"element": "portfolio", "practice": "Hold a higher allocation to pure diversifiers (e.g. trend following), diversified across risk factors rather than across labels such as equities, private equity and credit.", "why": "Robustness and shared tail risk among equity-like assets.", "claim_ids": ["MT072-C14-2", "MT072-C17-2"]},
+    {"element": "signal", "practice": "Form return expectations from forward-looking measures (dividend yield plus earnings growth) rather than trailing returns.", "why": "Forward-looking estimates correlate positively with realised returns; trailing returns correlate negatively.", "claim_ids": ["MT072-C15-3", "MT072-C16-1"]},
+    {"element": "portfolio", "practice": "Do not time trend-following allocations on macro or political views; stick with them.", "why": "A macro-linked call may be right for a year before something surprises; consensus arrives late.", "claim_ids": ["MT072-C17-3", "MT072-C17-6"]},
+    {"element": "research", "practice": "Read the SG Prime allocator survey, conversations with investors and academic papers (AQR, Dimson, Eichengreen) as inputs to the macro and allocation picture.", "why": "Real-time snapshot of allocator flows and academic evidence on required and expected returns.", "claim_ids": ["MT072-C12-1", "MT072-C12-2", "MT072-C15-2"]}
+   ],
+   "evidence_style": "Historical analogy (1993 versus 2025, 1990s deficit reduction, Nixon-Burns), academic papers and conversations with named experts (Eichengreen, Dimson, AQR), arithmetic (R minus G), and conversations with allocators; does not backtest.",
+   "current_views": [
+    {"view": "US yields are headed higher: 'all roads lead to higher yields', whether this year or next, because of the three-decade trajectory of debt, deficits and policy.", "as_of": "2025-05-30", "reasoning": "R-G arithmetic, fading bond-market discipline, fiscal dominance, Fed chair risk in 2026.", "claim_ids": ["MT072-C07-8", "MT072-C07-7", "MT072-C07-2"]},
+    {"view": "A recession would pull yields down only temporarily; in the alternative where the economy holds up and near-term inflation rises, a forced Fed response could be the trigger for higher yields.", "as_of": "2025-05-30", "reasoning": "Pattern of the last two to three years; automatic stabilisers widen the deficit.", "claim_ids": ["MT072-C07-3", "MT072-C07-4", "MT072-C07-X1"]},
+    {"view": "Economic data will be hard to read for months; the economy could be turning down but hard data are noisy and soft data are pessimistic.", "as_of": "2025-05-30", "reasoning": "Tariff front-loading, pause and court rulings.", "claim_ids": ["MT072-C01-1", "MT072-C01-2", "MT072-C01-3"]},
+    {"view": "The JGB yield spike did not trigger yen carry unwinding; the private sector dodged a bullet because the BOJ bought bonds ahead of the move.", "as_of": "2025-05-30", "reasoning": "Dollar-yen stayed in range.", "claim_ids": ["MT072-C03-3", "MT072-C03-4"]},
+    {"view": "Forward-looking measures point to below-average equity returns (about 5-6% for US equities) and downside risk; US equities are expensive after a re-rating.", "as_of": "2025-05-30", "reasoning": "Required versus expected return inconsistency; rich valuations.", "claim_ids": ["MT072-C16-2", "MT072-C15-1", "MT072-C15-3"]},
+    {"view": "The high-dispersion 2025 environment offers big asymmetric opportunities for discretionary macro, though results vary widely by manager, as April showed.", "as_of": "2025-05-30", "reasoning": "Dispersion and volatility in macro markets.", "claim_ids": ["MT072-C13-X1", "MT072-C12-1"]},
+    {"view": "Tariff effects on inflation are unclear; reindustrialisation of a full-employment economy may add wage pressure.", "as_of": "2025-05-30", "reasoning": "Labour constraints.", "claim_ids": ["MT072-C10-1", "MT072-C10-R1"]},
+    {"view": "Medium-term FX trend positions (long euro, short dollar) turned choppy and range-bound for four to six weeks, and managers were more likely to be long the US short end, which reversed; ultra-slow trend followers did best through the April-May equity V-reversal.", "as_of": "2025-05-30", "reasoning": "Observations from speaking with managers.", "claim_ids": ["MT072-C11-3", "MT072-C11-4", "MT072-C11-R1"]},
+    {"view": "SG Prime spring 2025 survey: global macro, then equity market neutral, then commodities most likely to gain allocations; trend CTA interest about 30%, down 2.5 points from fall 2024; quant macro and ESG interest down; possible performance chasing.", "as_of": "2025-05-30", "reasoning": "Survey of about 370 allocators, mostly fund of funds, family offices, consultants and wealth.", "claim_ids": ["MT072-C12-1", "MT072-C12-2", "MT072-C12-3"]},
+    {"view": "Pod shops (multi-strategy funds) were hit in February-March 2025 by the momentum unwind but recovered in April-May.", "as_of": "2025-05-30", "reasoning": "Observation of multi-strategy performance (speaker attribution uncertain).", "claim_ids": ["MT072-C13-2"]},
+    {"view": "Private equity exits packaged for retail may reflect weak institutional demand; low distributions constrain new flows.", "as_of": "2025-05-30", "reasoning": "Thoma Bravo co-founder's remark and DPI data.", "claim_ids": ["MT072-C02-2", "MT072-C02-3", "MT072-C02-4"]}
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; veteran CTA manager and trend follower; runs the Trend Barometer",
+   "speaker_note": "Mostly host, but states views on trend-following performance, model speed, discretionary macro and the role of trend in portfolios. Corrections applied: MT072-C17-3 and MT072-C17-6 are Alan's. Items such as Port of LA bookings, Bitcoin market cap, Stargate and Section 899 are headlines he relays, not his reasoning.",
+   "fingerprint": ["trend_following", "diversification_risk_parity", "manager_selection_allocation", "policy_reaction_central_banks", "behavioral_sentiment", "regime_detection", "geopolitics", "position_sizing_vol_target"],
+   "worldview_premises": [
+    {"premise": "Trend following's role is regime-agnostic positioning for risks nobody planned for, not crisis alpha; portfolio managers list known risks but have no answer for unforeseen ones.", "type": "theoretical", "stated": "stated", "support": "David Dredge's argument; 'I'm not so sure it really is crisis alpha'.", "claim_ids": ["MT072-C16-5", "MT072-C16-6"]},
+    {"premise": "Choosing among several regime scenarios raises the risk of picking the wrong one, which is an argument for trend following.", "type": "theoretical", "stated": "stated", "support": "Logic only.", "claim_ids": ["MT072-C16-4"]},
+    {"premise": "Robust portfolios come from diversification across risk factors, not from strong forecasts in a world changing in ways we cannot imagine.", "type": "theoretical", "stated": "stated", "support": "Assertion.", "claim_ids": ["MT072-C17-1"]},
+    {"premise": "When allocators flock to discretionary macro, a non-predictive rules-based diversified approach is useful in unpredictable policy regimes; otherwise outcomes are a coin flip.", "type": "theoretical", "stated": "stated", "support": "Self-declared bias ('massively biased here').", "claim_ids": ["MT072-C13-1"]},
+    {"premise": "The current trend drawdown looks normal in the drawdown profile; blaming Trump is no excuse, and political changes may be good or bad but often break something that creates trends.", "type": "empirical", "stated": "stated", "support": "Drawdown profile of the SG Trend track record (he says it is close to, but not at, new maximum drawdown).", "claim_ids": ["MT072-C17-4", "MT072-C17-5"]},
+    {"premise": "Policy power alternates between politicians and central banks; today politicians dominate, so inflation becomes a political choice.", "type": "theoretical", "stated": "stated", "support": "Someone told him years ago about cycles of strong politicians and weak central banks.", "claim_ids": ["MT072-C09-3"]},
+    {"premise": "Debt is acknowledged as unsustainable but nobody acts, so the market can ignore it until something shifts the narrative.", "type": "theoretical", "stated": "stated", "support": "Ben Hunt's narrative view, quoted from memory.", "claim_ids": ["MT072-C08-1"]},
+    {"premise": "Surging long-end Japanese yields matter globally because they reduce Japanese incentives to buy foreign debt.", "type": "theoretical", "stated": "stated", "support": "Weak 40-year JGB auction; followed with Alan and David Dredge for over a year.", "claim_ids": ["MT072-C03-1", "MT072-C03-2"]},
+    {"premise": "Section 899 could tax foreign holders of US stocks, bonds and dividends, a risk to foreign demand for US assets.", "type": "institutional", "stated": "stated", "support": "FT article read that morning.", "claim_ids": ["MT072-C10-2"]}
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Weak signals and equity rebound shape trend positioning in May 2025",
+     "steps": [
+      {"from": "Lack of strong signals across most markets", "to": "Trend models cut risk", "why": "Weak signal strength means smaller positions.", "claim_ids": ["MT072-C11-1"]},
+      {"from": "Equities back near highs", "to": "Models add long risk again", "why": "Signals turn positive.", "claim_ids": ["MT072-C11-1"]},
+      {"from": "April equity V-reversal", "to": "Results depend on model speed: managers that did not flip in April benefited, ultra-slow did best", "why": "Fast and medium models flipped short and were whipsawed.", "claim_ids": ["MT072-C10-5", "MT072-C11-4"]},
+      {"from": "Medium-term horizon between fast and slow", "to": "Toughest time of 2025", "why": "Caught by the reversal and FX range.", "claim_ids": ["MT072-C11-2", "MT072-C11-3"]}
+     ],
+     "evidence": "Trend Barometer at 30 and index numbers as of 28 May (SG Trend -2.13% in May, -11.25% YTD; short-term traders -2% YTD; S&P 500 +1% YTD).",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT072-C10-3", "MT072-C11-5"]
+    },
+    {
+     "topic": "Why trend allocation should be non-predictive and untimed",
+     "steps": [
+      {"from": "Scenario-based allocation requires picking among scenarios", "to": "Risk of choosing the wrong one", "why": "Subjective weights.", "claim_ids": ["MT072-C16-4"]},
+      {"from": "Known risks have answers; unforeseen risks have none", "to": "A component that reacts regardless of the outcome fills the gap", "why": "Trend follows whatever comes.", "claim_ids": ["MT072-C16-5", "MT072-C16-6"]},
+      {"from": "Robust portfolios", "to": "Built by diversification across risk factors, not strong forecasts", "why": "The world is changing in ways we cannot imagine.", "claim_ids": ["MT072-C17-1"]}
+     ],
+     "evidence": "Argument and anecdote; the drawdown profile of the trend track record.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT072-C17-4"]
+    }
+   ],
+   "decision_process": [
+    {"element": "portfolio", "practice": "Hold trend following as a non-predictive diversifier that is not allowed to have an opinion; do not tie it to the macro outlook.", "why": "Regime-agnostic; unforeseen risks.", "claim_ids": ["MT072-C16-5", "MT072-C16-6", "MT072-C17-1"]},
+    {"element": "research", "practice": "Track the Trend Barometer (30 at end May 2025, weak) and index returns to anticipate industry losses and dispersion.", "why": "Weak barometer implies losses with dispersion.", "claim_ids": ["MT072-C10-3", "MT072-C11-5"]},
+    {"element": "research", "practice": "Judge trend drawdowns against the historical drawdown profile, ignoring political explanations.", "why": "Current drawdown looks normal.", "claim_ids": ["MT072-C17-4"]},
+    {"element": "signal", "practice": "Note differentiators such as model speed (one of three or four), sector mix and positioning during April.", "why": "Dispersion among managers in May.", "claim_ids": ["MT072-C10-5", "MT072-C10-4", "MT072-C11-2"]}
+   ],
+   "evidence_style": "Weekly industry data and headlines read out, Trend Barometer, anecdote and arguments borrowed from guests (Dredge, Hunt); openly biased toward trend following.",
+   "current_views": [
+    {"view": "May 2025 was weak for longer-term CTAs: long fixed income (especially the short end), coffee corrections and a gold pause hurt, while live cattle and equities for managers that did not flip in April helped.", "as_of": "2025-05-30", "reasoning": "Observations at month end; Trend Barometer at 30.", "claim_ids": ["MT072-C10-3", "MT072-C10-4", "MT072-C10-5"]},
+    {"view": "Medium-term trend followers had the toughest 2025 relative to short- and long-term ones; risk levels are probably down on weak signals.", "as_of": "2025-05-30", "reasoning": "Lack of strong signals leads to risk cuts.", "claim_ids": ["MT072-C11-1", "MT072-C11-2"]},
+    {"view": "As of 28 May the trend index was down 2.13% in May and 11.25% YTD, the short-term traders index down about 2% YTD, versus S&P 500 up about 1% YTD.", "as_of": "2025-05-28 (data date; recorded 2025-05-30)", "reasoning": "Index numbers read out.", "claim_ids": ["MT072-C11-5"]},
+    {"view": "Higher Japanese long-end yields reduce Japanese demand for foreign bonds, a global risk factor; Bitcoin at new all-time highs.", "as_of": "2025-05-30", "reasoning": "Weak 40-year auction.", "claim_ids": ["MT072-C03-1", "MT072-C03-2", "MT072-C03-5"]},
+    {"view": "Debt is unsustainable but ignored; he sees more risks to the upside for interest rates, though an AI boom might still allow big cuts.", "as_of": "2025-05-30", "reasoning": "Narrative view; AI-growth hope.", "claim_ids": ["MT072-C08-1"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Scenario-based allocation versus a regime-agnostic trend allocation",
+   "positions": [
+    {"speaker": "Alan Dunne", "position": "Map portfolios for macro scenarios and weight by probability; tilt to real assets, commodities and pure diversifiers.", "claim_ids": ["MT072-C13-4", "MT072-C14-2"]},
+    {"speaker": "Niels Kaastrup-Larsen", "position": "Choosing among scenarios raises the risk of choosing wrongly; regime-agnostic trend following covers risks nobody planned for.", "claim_ids": ["MT072-C16-4", "MT072-C16-5", "MT072-C16-6"]}
+   ]
+  },
+  {
+   "topic": "Discretionary macro in the 2025 environment",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "How on earth can one make sense of this world discretionarily; it is almost a coin flip, so a rules-based diversified approach is more useful.", "claim_ids": ["MT072-C13-1"]},
+    {"speaker": "Alan Dunne", "position": "High dispersion offers big asymmetric opportunities, though not every discretionary manager will be on the right side, as April showed.", "claim_ids": ["MT072-C13-X1"]}
+   ]
+  },
+  {
+   "topic": "Can AI-driven growth ease the debt problem",
+   "positions": [
+    {"speaker": "Niels Kaastrup-Larsen", "position": "An AI boom is part of the narrative and might even let the Fed cut deeply (his 2024 'outrageous prediction' of 1%); stronger growth would solve things.", "claim_ids": ["MT072-C08-1"]},
+    {"speaker": "Alan Dunne", "position": "Productivity gains typically lag new technology by 10-15 years and labour force growth is limited, so growth will not fix the debt soon.", "claim_ids": ["MT072-C08-2", "MT072-C08-3"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "The thesis is directional but without timing ('this year or next'); Alan notes recession would pull yields down short-term, which conflicts with 'all roads lead to higher yields' unless the horizon is stated.", "claim_ids": ["MT072-C07-3", "MT072-C07-8", "MT072-C07-7"]},
+  {"issue": "R greater than G is described as making debt unsustainable regardless of the debt/GDP level, yet the current 10-year yield is said to be roughly equal to nominal growth (4-4.5%); the threshold for 'the break' (5%) is asserted, not derived.", "claim_ids": ["MT072-C06-4", "MT072-C07-1"]},
+  {"issue": "Real yields about 2% versus over 3% in 1993 are used both to show rising term premia and that they may decouple from inflation; no term-premium estimate is given.", "claim_ids": ["MT072-C09-4", "MT072-C09-5"]},
+  {"issue": "Speaker corrections: the macro-view-timing points (C17-3, C17-6) are Alan's; pod-shop remark (C13-2) may be shared between speakers.", "claim_ids": ["MT072-C17-3", "MT072-C17-6", "MT072-C13-2"]},
+  {"issue": "Valuation-based forecasting is endorsed as the better guide even though the same source (Yearbook) was wrong on US outperformance; Alan accepts this limit but does not say how much weight to give it.", "claim_ids": ["MT072-C14-3", "MT072-C15-3"]},
+  {"issue": "The dismissal of the carry-trade unwind (dollar-yen stayed in range) is explained by several possibilities (insurers shifting, BOJ buying) without evidence for any.", "claim_ids": ["MT072-C03-3", "MT072-C03-4"]},
+  {"issue": "Unverified headline claims relayed by the host (Bitcoin market cap above Alphabet; Thoma Bravo remark; Stargate energy use).", "claim_ids": ["MT072-C03-5", "MT072-C02-2", "MT072-C09-2"]},
+  {"issue": "Niels says allocators flocking to macro suggests performance chasing; Alan says the survey results are unsurprising; neither shows evidence of chasing, and the survey percentages are quoted from memory.", "claim_ids": ["MT072-C12-1", "MT072-C12-2"]},
+  {"issue": "The Port of Los Angeles remark is evidence for shipping lead times but is not tied to any trade or forecast.", "claim_ids": ["MT072-C02-1"]}
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs that Alan says lead yields: the 10-year yield relative to nominal GDP growth (4-4.5%; a move to 5% or above breaks R-G), the deficit and debt path (2025 budget bill, Treasury reliance on bills), term premium and the stock-bond correlation (hedge value), Fed leadership after Powell's term ends in 2026, and near-term inflation forcing a Fed response. Horizon is 'this year or next' for the direction and decades for fiscal dominance. For equities he uses forward-looking return estimates (dividend yield plus earnings growth) with a 10-year horizon. Niels offers no predictive input: trend signals, the Trend Barometer and model speed describe the state of trend performance, and he says trend allocations should not be tied to macro views.",
+ "reader_inferences": [
+  "(reader) Alan's chain implies a testable relationship: episodes when the 10-year yield exceeded nominal GDP growth with rising debt/GDP should show higher subsequent term premia; he gives no sample.",
+  "(reader) The disagreement over scenarios versus trend suggests a combined approach: scenario-based core with trend as the untimed residual for unplanned risks.",
+  "(reader) Both speakers treat the weak-data environment as bad for macro-data-driven strategies, which would predict relatively better results for price-based trend, but May 2025 results were poor for trend as well.",
+  "(reader) The pattern Alan describes (deficit worries fade on weak data and return) implies yields at a given growth state should be higher than in earlier cycles, an effect observable in the level of yields at similar unemployment rates."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT072-C14-R1",
+   "chunk": "C14",
+   "speaker": "Alan Dunne",
+   "quote": "if you were conducting this kind of analysis say back in 2021 like commodity markets wouldn't have done great over that period",
+   "claim": "A scenario analysis done in 2021 would have given commodities a low allocation because they had not done well, illustrating the risk of anchoring on the recent past.",
+   "mechanism": "allocation_process",
+   "asset_class": "commodities",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "n/a",
+   "conditions": "scenario weights chosen from recent performance",
+   "testable": "partly - compare scenario-based allocations in 2021 and after",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT072-C10-R1",
+   "chunk": "C10",
+   "speaker": "Alan Dunne",
+   "quote": "it's not something that people can model with any conviction I would say",
+   "claim": "The inflation effect of tariffs and reindustrialisation cannot be modelled with conviction.",
+   "mechanism": "inflation_uncertainty",
+   "asset_class": "rates",
+   "indicator": "tariff effects on inflation",
+   "horizon": "years",
+   "direction": "uncertain",
+   "conditions": "tariffs, reindustrialisation at full employment",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT072-C11-R1",
+   "chunk": "C11",
+   "speaker": "Alan Dunne",
+   "quote": "Managers were more likely to be getting long the the US short end which as you say has reversed.",
+   "claim": "Trend managers were more likely to have bought the US short end, which then reversed in May.",
+   "mechanism": "trend_positioning",
+   "asset_class": "rates",
+   "indicator": "trend positioning US short end",
+   "horizon": "weeks",
+   "direction": "long positions hurt in May 2025",
+   "conditions": "May 2025 rates reversal",
+   "testable": "yes - CTA positioning versus short-end returns",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  }
+ ]
+}

@@ -1,0 +1,879 @@
+{
+ "source_id": "MT196",
+ "episode_thesis": "Rob Carver argues that bad years are a normal, mathematically expected part of trend following, that how a system sizes and exits positions (continuous volatility-scaled sizing versus stops) matters as much as signal speed in a V-shaped shock like April 2025, and that the right response to a drawdown is process discipline (check costs, compare to expected drawdown, keep diversification) rather than redesign. He also holds a bearish discretionary view on the US economy after tariffs and argues leveraged ETFs are toxic. Niels frames April 2025 as a stress test in which Treasuries and the dollar failed as safe havens, trend followers were wrong-footed in equities and FX but helped by commodities, and risk-management systems mostly worked as designed.",
+ "speakers": [
+  {
+   "name": "Rob Carver",
+   "role": "Co-host; independent systematic futures trader, author on systematic trading; ex-AHL, trades his own money",
+   "speaker_note": "Transcript spells him 'Rob Carver'. Corrections applied from the ledger: MT196-C09-2 is the 2024-25 tax year (about -15%, roughly a one-in-10-year event), with his previous worst year being April 2014 to April 2015; MT196-C18-3 is Niels describing the leveraged Nasdaq tweet, with Rob only saying it is not remotely a good idea. The 'Sebastian Valerie' paper is 'Breaking the Trend: How to Avoid Cherrypicked Signals'.",
+   "fingerprint": [
+    "trend_following",
+    "position_sizing_vol_target",
+    "kelly_or_conviction_sizing",
+    "costs_execution",
+    "research_robustness_overfitting",
+    "diversification_risk_parity",
+    "portfolio_construction_stacking",
+    "regime_detection"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Bad years happen to well-diversified trend portfolios because everything goes wrong at once in a trendless year, not because of concentration in one market; a 2024-25 loss of about -15% was roughly a one-in-10-year event for him.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own P&L by asset class for the year: losses in equities, energies, FX, metals and bonds, with gains only in the S&P; natural gas worst. Worst previous year April 2014 to April 2015.",
+     "claim_ids": [
+      "MT196-C09-2",
+      "MT196-C10-1",
+      "MT196-C10-2"
+     ]
+    },
+    {
+     "premise": "The longer a strategy runs, the larger its expected worst drawdown, so veteran funds hitting new worst drawdowns is mathematically unsurprising.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Drawdowns grow over time in expectation (he is unsure if the growth follows the square root of time).",
+     "claim_ids": [
+      "MT196-C11-2",
+      "MT196-C12-1"
+     ]
+    },
+    {
+     "premise": "Because trend signals have a modest Sharpe ratio, it takes a very long time to tell statistically that a system has stopped working, so continuing is a matter of faith; systematic traders should in theory do nothing when the strategy underperforms, though in practice that is hard.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reasoning from Sharpe-ratio statistics; no calculation shown.",
+     "claim_ids": [
+      "MT196-C12-2",
+      "MT196-C12-3"
+     ]
+    },
+    {
+     "premise": "Variable position sizing (daily risk adjustment) makes the return distribution closer to normal with fewer outliers, while stop-based systems create larger outliers both ways; stops can close at the wrong moment, and outsized positions in a market that has run up (cocoa) are a source of downside outliers.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Described by himself as a handwaving academic argument.",
+     "claim_ids": [
+      "MT196-C06-4",
+      "MT196-C07-1",
+      "MT196-C06-3"
+     ]
+    },
+    {
+     "premise": "Capturing a V-shaped reversal such as April 2025 needs extremely fast trading; slightly too slow trading is whipsawed, a very wide stop simply holds, and a tight stop is triggered near the low.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Walk-through of the S&P path around April 8-9, 2025.",
+     "claim_ids": [
+      "MT196-C06-1",
+      "MT196-C06-2",
+      "MT196-C06-X1"
+     ]
+    },
+    {
+     "premise": "Few quantitative variables predict when trend following will do well or badly, so meta-timing is not productive; the best answer to a client's worry is visibility into historical analogues.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own attempts at quantitative conditioning.",
+     "claim_ids": [
+      "MT196-C13-1",
+      "MT196-C12-4"
+     ]
+    },
+    {
+     "premise": "Costs are predictable while P&L is nearly random, so an annual cost check (commissions plus slippage versus mid) is the most reliable review; his costs were about 100 bp, in line with the backtest, and passive limit orders beat the conservative half-spread assumption.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own annual review.",
+     "claim_ids": [
+      "MT196-C13-2"
+     ]
+    },
+    {
+     "premise": "Different trend indicators are highly correlated, so no single one is uniquely best, but once automated, extra signals cost nothing; a single calibrated EMA (112 days) can represent the trend universe.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Comparison of his own five or six indicators across speeds; the Breaking the Trend paper's mathematical link between exponential and simple moving averages.",
+     "claim_ids": [
+      "MT196-C15-3",
+      "MT196-C15-4",
+      "MT196-C16-1"
+     ]
+    },
+    {
+     "premise": "Relative (cross-sectional) signals and style diversification held up in the 2024-25 trendless regime: of about 50 forecasting variables, only fast relative momentum, relative carry and relative value skew made money.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own attribution by indicator; even carry (especially slowest) lost.",
+     "claim_ids": [
+      "MT196-C11-1"
+     ]
+    },
+    {
+     "premise": "US Treasuries may no longer be the default safe haven: US policy seems designed to create stagflation so the normal central bank reaction (cutting rates) may not apply, and traditional buyers (China) may avoid Treasuries in a crisis born in the US; breakdown of institutional rules is bad for US assets.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Two competing explanations he calls policy-reaction and flows; the FT 'Giffen good' article framing.",
+     "claim_ids": [
+      "MT196-C01-1",
+      "MT196-C02-1",
+      "MT196-C02-4",
+      "MT196-C03-1",
+      "MT196-C03-2"
+     ]
+    },
+    {
+     "premise": "Tariffs lag in the data: Q1 GDP was not affected by them, CEOs avoid honest forward earnings guidance, and the real-economy effect and earnings downgrades come later, producing a deep technical recession.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "FT articles (Martin Wolf's Road Runner analogy), Bezos tariff example, noted distortion of Q1 GDP by gold flows and import front-running.",
+     "claim_ids": [
+      "MT196-C14-1",
+      "MT196-C14-X1"
+     ]
+    },
+    {
+     "premise": "Funds that can make 100% in good years can lose 30-60% in bad years; whether that is Kelly-optimal matters less than whether investors can stomach it, and fixed 2-4x leverage on already risky assets is far beyond Kelly sizing.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Brief reasoning on Kelly; leveraged ETF example.",
+     "claim_ids": [
+      "MT196-C07-3",
+      "MT196-C19-2",
+      "MT196-C19-X1"
+     ]
+    },
+    {
+     "premise": "Leveraged ETFs reset daily so compounding makes adverse, choppy moves devastating (a 4x S&P ETF down 52% year to date versus S&P about -4.5%) and carry high expense ratios (about 295 bp).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own data download for his new book; quoted year-to-date figures.",
+     "claim_ids": [
+      "MT196-C19-1",
+      "MT196-C19-2",
+      "MT196-C18-3"
+     ]
+    },
+    {
+     "premise": "Practical market-structure knowledge (contract quotation, settlement, data cleaning) is essential in systematic futures work.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Career experience; advice to a young quant.",
+     "claim_ids": [
+      "MT196-C08-X1"
+     ]
+    },
+    {
+     "premise": "In extreme stress liquidity can vanish: in the first days after Liberation Day some positions had no bid and could not be sold.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own attempt to sell positions.",
+     "claim_ids": [
+      "MT196-C15-2"
+     ]
+    },
+    {
+     "premise": "Trend followers form a family tree with distinct lineages (US pit-trading wing, British quantitative wing, Scandinavian), which explains differences of opinion about sizing and position changes.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Substack article on industry history; his AHL background.",
+     "claim_ids": [
+      "MT196-C16-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why April 2025 hurt different trend followers differently",
+     "steps": [
+      {
+       "from": "Liberation Day shock drives a sharp equity sell-off (S&P about 20% off its high)",
+       "to": "Trend followers cut or reverse equity and FX positions, some via stops",
+       "why": "Trend and risk rules react to drawdown and volatility",
+       "claim_ids": [
+        "MT196-C06-2",
+        "MT196-C04-1"
+       ]
+      },
+      {
+       "from": "Equity market V-reverses within days (bottom April 8-9)",
+       "to": "Tight-stop systems are flat with a loss booked; wide-stop systems hold; continuous sizing systems are down then sideways at one third of normal risk",
+       "why": "Position-capture method determines participation after the reversal",
+       "claim_ids": [
+        "MT196-C06-1",
+        "MT196-C06-2",
+        "MT196-C06-3",
+        "MT196-C04-6"
+       ]
+      },
+      {
+       "from": "Fastest models catch part of the initial bounce",
+       "to": "Later whipsaw erases it; moves too fast for even fast models (overnight gaps)",
+       "why": "Reversals were too quick",
+       "claim_ids": [
+        "MT196-C05-2",
+        "MT196-C04-8",
+        "MT196-C06-1"
+       ]
+      },
+      {
+       "from": "Treasuries and the dollar sold off with equities",
+       "to": "Traditional hedge legs failed; gains came from commodities (energies, grains) and short rates",
+       "why": "Safe-haven status shifted when the crisis originated in the US",
+       "claim_ids": [
+        "MT196-C04-2",
+        "MT196-C04-7",
+        "MT196-C04-5",
+        "MT196-C04-X1"
+       ]
+      }
+     ],
+     "evidence": "April 2025 index results: BTOP50 -3.49%, SG CTA -4.47%, SG Trend -4.98% (-9.41% YTD), short-term traders -0.86%, Bridge flat-fee trend -6.24%; Rob's own -5.5%; large trend followers -1% to -10%.",
+     "fails_when": "Depends on speed and the path; in a slower, trending sell-off, stops and sizing would behave differently. Rob notes he has not looked at individual market P&L.",
+     "claim_ids": [
+      "MT196-C06-X1",
+      "MT196-C04-3",
+      "MT196-C07-4"
+     ]
+    },
+    {
+     "topic": "Why Treasuries failed as a safe haven in the tariff shock",
+     "steps": [
+      {
+       "from": "US policy seen as stagflationary (stagnation plus tariff inflation)",
+       "to": "Central bank reaction function (cut rates when growth weakens) may not apply",
+       "why": "Supply shock raises inflation while growth falls",
+       "claim_ids": [
+        "MT196-C02-4"
+       ]
+      },
+      {
+       "from": "Crisis born in the US and breakdown of institutional rules",
+       "to": "Traditional foreign buyers (China) avoid Treasuries",
+       "why": "Flows-based explanation: the US is hurt most",
+       "claim_ids": [
+        "MT196-C03-1",
+        "MT196-C03-2"
+       ]
+      },
+      {
+       "from": "Treasuries sell off with equities",
+       "to": "Bonds hedge less; Swiss franc retains haven behaviour (Niels)",
+       "why": "Recency bias from a 40-year falling-rate cycle may be ending (Niels)",
+       "claim_ids": [
+        "MT196-C02-1",
+        "MT196-C02-2",
+        "MT196-C02-3"
+       ]
+      }
+     ],
+     "evidence": "April 2025 price action; the Giffen-good analogy of the FT article.",
+     "fails_when": "Both explanations are stated as competing; neither is tested, and bonds partly recovered later in the month (Niels).",
+     "claim_ids": [
+      "MT196-C02-1",
+      "MT196-C02-4",
+      "MT196-C04-2"
+     ]
+    },
+    {
+     "topic": "From tariffs to a US recession (Rob's discretionary view)",
+     "steps": [
+      {
+       "from": "Tariffs hit goods in transit and stockpiles run down",
+       "to": "Real-economy data and earnings deteriorate with a lag",
+       "why": "Q1 GDP unaffected by tariffs; CEOs avoid honest forward guidance",
+       "claim_ids": [
+        "MT196-C14-1",
+        "MT196-C14-X1"
+       ]
+      },
+      {
+       "from": "Two negative GDP quarters",
+       "to": "Technical recession deep enough that the equity market cannot stay where it is",
+       "why": "Expected earnings downgrades and demand destruction",
+       "claim_ids": [
+        "MT196-C14-1"
+       ]
+      },
+      {
+       "from": "Cash earning about 4% against equity expected return of maybe 4% with large downside",
+       "to": "Stay in cash in the long-only portfolio",
+       "why": "Risk-reward",
+       "claim_ids": [
+        "MT196-C15-1",
+        "MT196-C13-3"
+       ]
+      }
+     ],
+     "evidence": "FT commentary (Wolf, Bezos), Q1 GDP quirks (gold, import spike).",
+     "fails_when": "Rob admits the call looks wrong so far because the market rebounded, and that he would be long equities in his systematic portfolio if equities rise.",
+     "claim_ids": [
+      "MT196-C14-R1",
+      "MT196-C15-1"
+     ]
+    },
+    {
+     "topic": "Why leveraged ETFs destroy value",
+     "steps": [
+      {
+       "from": "Daily reset of 2-4x leverage on volatile assets",
+       "to": "Compounding losses in choppy markets (4x S&P ETF -52% versus S&P -4.5%)",
+       "why": "Volatility drag and path dependence",
+       "claim_ids": [
+        "MT196-C19-1",
+        "MT196-C19-X1"
+       ]
+      },
+      {
+       "from": "High expense ratio (about 295 bp)",
+       "to": "Toxic as a holding instrument",
+       "why": "Product designed for short-term exposure management",
+       "claim_ids": [
+        "MT196-C19-2"
+       ]
+      }
+     ],
+     "evidence": "Rob's own ETF data.",
+     "fails_when": "Short holding periods in trending markets (not discussed).",
+     "claim_ids": [
+      "MT196-C19-1",
+      "MT196-C18-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "sizing",
+     "practice": "Adjust positions daily to risk (variable position sizing), which automatically cut risk to about a third of normal as the trend became unclear (less in equities).",
+     "why": "Avoids both the stop-out and the oversized exposure outliers.",
+     "claim_ids": [
+      "MT196-C06-3",
+      "MT196-C06-4"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Run about 50 forecasting variables (several trend indicators at multiple speeds, carry, relative momentum, value skew) and keep adding signals because additional automated signals cost nothing.",
+     "why": "Diversification across styles; relative signals held up in 2024-25.",
+     "claim_ids": [
+      "MT196-C11-1",
+      "MT196-C15-3"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Dynamically select positions from a larger instrument universe even though year-to-year return differences are noisy.",
+     "why": "Better risk targeting.",
+     "claim_ids": [
+      "MT196-C10-3"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Keep about 50-60% in trend and add non-trend systems only when confident in them.",
+     "why": "More diversified than many peers; trend remains the core.",
+     "claim_ids": [
+      "MT196-C12-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Annual review includes a cost check (commissions plus slippage versus mid price at order time), which should match the backtest (just under 100 bp).",
+     "why": "Costs are predictable, P&L is almost random.",
+     "claim_ids": [
+      "MT196-C13-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Do not redesign after a bad year: the same review should be asked after an exceptional year and changes made only if evidence is clear. Compare the current drawdown with the probability of such a drawdown in a comparable period (about 30% over 12 years) and with backtest drawdowns.",
+     "why": "Single-year performance is mostly noise.",
+     "claim_ids": [
+      "MT196-C10-X1",
+      "MT196-C12-1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Treat a 50% drawdown (far beyond the backtest and expectation) as a real concern; otherwise follow the process.",
+     "why": "Statistical bound from backtest and simulation.",
+     "claim_ids": [
+      "MT196-C12-1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Use passive limit orders first and switch to market orders if necessary; conservative backtest assumes paying half the spread.",
+     "why": "Lower realised slippage than the backtest assumption.",
+     "claim_ids": [
+      "MT196-C13-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Raised the allocation to trend at the end of the previous tax year after trend's best quarter in 25 years, which meant the later losses hit a larger capital base.",
+     "why": "Not a deliberate timing call; the outcome illustrates the give-back risk of adding capital after a strong run.",
+     "claim_ids": [
+      "MT196-C09-X1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "In the discretionary long-only portfolio he sold all remaining US stocks around Liberation Day and went to cash, calling it his biggest discretionary decision ever.",
+     "why": "Bearish US economy view; cash at 4%.",
+     "claim_ids": [
+      "MT196-C13-3",
+      "MT196-C15-1"
+     ]
+    }
+   ],
+   "evidence_style": "Mostly own track record and own data (P&L by market and indicator, cost analysis), plus simple mathematics of drawdowns and Sharpe ratios; first-principles reasoning on position-sizing; sceptical of meta-timing. Discretionary macro views rely on FT commentary and reasoning about lags; he is open about his call looking wrong so far.",
+   "current_views": [
+    {
+     "view": "Bearish on the US economy: expects a deep technical recession and equity weakness; prefers cash (about 4%) in his long-only portfolio over equities.",
+     "as_of": "2025-05-02",
+     "reasoning": "Tariffs lag; earnings downgrades to come; Q1 GDP distorted by gold and import front-running; institutional breakdown is bad for US assets.",
+     "claim_ids": [
+      "MT196-C14-1",
+      "MT196-C14-X1",
+      "MT196-C15-1",
+      "MT196-C03-2"
+     ]
+    },
+    {
+     "view": "US Treasuries may not be the go-to safe asset in this crisis; the normal central bank reaction function may not apply if policy produces stagflation.",
+     "as_of": "2025-05-02",
+     "reasoning": "Stagflation policy mix and flows away from US assets.",
+     "claim_ids": [
+      "MT196-C02-1",
+      "MT196-C02-4",
+      "MT196-C03-1"
+     ]
+    },
+    {
+     "view": "His own April 2025 return was -5.5%, roughly in line with the industry, and the 2024-25 tax year about -15%, a one-in-10-year event; the strategy is not broken.",
+     "as_of": "2025-05-02",
+     "reasoning": "Industry comparison: SG CTA about -10% versus his about -14.7% at higher volatility; probability of such a drawdown in 12 years about 30%.",
+     "claim_ids": [
+      "MT196-C05-2",
+      "MT196-C09-2",
+      "MT196-C10-2",
+      "MT196-C12-1"
+     ]
+    },
+    {
+     "view": "Leveraged ETFs are toxic and the proliferation of 3-4x products is alarming.",
+     "as_of": "2025-05-02",
+     "reasoning": "Daily reset compounding, cost, Kelly-exceeding leverage.",
+     "claim_ids": [
+      "MT196-C19-1",
+      "MT196-C19-2",
+      "MT196-C19-X1"
+     ]
+    },
+    {
+     "view": "Pure trend is open to question after a long weak stretch (most firms diversified into other strategies), but he accepts that trend-is-dead worries have recurred and the industry survived.",
+     "as_of": "2025-05-02",
+     "reasoning": "Winton and Aspect history from the Substack article read aloud.",
+     "claim_ids": [
+      "MT196-C17-X1",
+      "MT196-C18-1",
+      "MT196-C11-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host, Top Traders Unplugged; trend-following allocator and industry observer",
+   "speaker_note": "Transcript spells him 'Neils Castro Larson'. He reports index numbers as of April 30/May 1, 2025, early manager indications, and describes the leveraged Nasdaq tweet (ledger correction for MT196-C18-3). 'Bill Dunn' comment is his: he says he worked for Bill Dunn.",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "crisis_alpha_convexity",
+    "behavioral_sentiment",
+    "positioning_crowding",
+    "diversification_risk_parity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Safe-haven assets are changing: bonds' safe-haven status may be recency bias from a 40-year falling-rate cycle; the Swiss franc still seems to retain safe-haven behaviour.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Observation of April 2025; admits he may be talking his book (Swiss resident) but denies it.",
+     "claim_ids": [
+      "MT196-C02-2",
+      "MT196-C02-3",
+      "MT196-C04-2"
+     ]
+    },
+    {
+     "premise": "In stress months commodities again delivered trend-following gains, while equities and currencies were headwinds in April 2025.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Early manager indications; no precise attribution.",
+     "claim_ids": [
+      "MT196-C04-7",
+      "MT196-C04-X1",
+      "MT196-C04-5"
+     ]
+    },
+    {
+     "premise": "Dispersion between trend followers is usual and comes from speed, risk management and markets traded; hard-stop versus continuous-signal systems may differ materially in a V-shaped reversal.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "CFM research on dispersion; reasoning.",
+     "claim_ids": [
+      "MT196-C04-4",
+      "MT196-C04-6",
+      "MT196-C05-3"
+     ]
+    },
+    {
+     "premise": "Funds with large open profits (high flyers) risk big give-backs, so investors entering after a hot streak face outsized drawdown risk.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "A fund he noted being hit hard in April 2025.",
+     "claim_ids": [
+      "MT196-C07-2"
+     ]
+    },
+    {
+     "premise": "Risk management systems worked as designed in April 2025, so a down month for managers who followed process is normal and not evidence of strategy failure; investors should not redeem on a bad month (November 2021 example).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Early data; November 2021 was a bad day followed by one of the best 12 months for many managers.",
+     "claim_ids": [
+      "MT196-C07-X1",
+      "MT196-C12-4"
+     ]
+    },
+    {
+     "premise": "Portable alpha products (trend overlay on equity beta) looked bad in April 2025 with negative alpha and flat beta even though they did what they are designed to do.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Imagined from index moves, not from reported results.",
+     "claim_ids": [
+      "MT196-C05-1"
+     ]
+    },
+    {
+     "premise": "Trend following had its best quarter in about 25 years in Q1 2024, then became much more challenging from April 2024.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Index history.",
+     "claim_ids": [
+      "MT196-C09-1"
+     ]
+    },
+    {
+     "premise": "The industry has survived the recurrent 'is trend following dead' question; Winton diversified away from trend, did poorly when CTAs did well, and has since rebuilt its trend allocation, while Aspect stuck to trend.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Substack article read aloud; his industry knowledge.",
+     "claim_ids": [
+      "MT196-C17-1",
+      "MT196-C18-2",
+      "MT196-C17-R1"
+     ]
+    },
+    {
+     "premise": "There is a fine balance between simplicity and over-complication in trend systems and it makes a big difference.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Past podcast discussions.",
+     "claim_ids": [
+      "MT196-C16-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Stop-out versus continuous participation in a V reversal",
+     "steps": [
+      {
+       "from": "A stop-based follower is stopped out in the sell-off",
+       "to": "Cannot re-enter until a new signal, missing the bounce",
+       "why": "Rule requires a fresh signal",
+       "claim_ids": [
+        "MT196-C05-3"
+       ]
+      },
+      {
+       "from": "Continuous-signal system keeps participating",
+       "to": "Different April P&L from stop systems",
+       "why": "Position adjusts with the signal rather than switching off",
+       "claim_ids": [
+        "MT196-C04-6"
+       ]
+      }
+     ],
+     "evidence": "Observed performance differences among managers he can see online.",
+     "fails_when": "Rob adds that the real difference is the speed and capture method combined; a V reversal is extreme.",
+     "claim_ids": [
+      "MT196-C05-3",
+      "MT196-C06-X1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Track a trend barometer (52 at end of April 2025, a short-term measure) plus BTOP50, SG CTA, SG Trend, SG Short-Term Traders and Bridge flat-fee trend indices against MSCI World, S&P 500 and bonds.",
+     "why": "Weekly health check of the category.",
+     "claim_ids": [
+      "MT196-C03-3",
+      "MT196-C07-4"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "When evaluating managers, look at speed, risk management and markets traded as sources of dispersion, and consider open-profit levels of funds.",
+     "why": "Dispersion is usual; give-back risk for new entrants.",
+     "claim_ids": [
+      "MT196-C04-4",
+      "MT196-C07-2"
+     ]
+    }
+   ],
+   "evidence_style": "Index tables, early manager reports, news and anecdote; relies on guests for mechanics. Acknowledges the limit of early data.",
+   "current_views": [
+    {
+     "view": "April 2025 was a stress test: CTAs lost on the V-reversal in equities and FX, Treasuries and the dollar failed as hedges, commodities and short-term rates helped; the largest trend followers lost 1-10% in April and were between slightly up and -15-18% YTD.",
+     "as_of": "2025-05-02",
+     "reasoning": "Early manager reports and index results.",
+     "claim_ids": [
+      "MT196-C04-1",
+      "MT196-C04-2",
+      "MT196-C04-3",
+      "MT196-C04-7",
+      "MT196-C04-X1"
+     ]
+    },
+    {
+     "view": "Short-term models did better in the first half of April, but later reversals erased most of it; the fast models were still too slow for some moves.",
+     "as_of": "2025-05-02",
+     "reasoning": "Observed performance by speed.",
+     "claim_ids": [
+      "MT196-C04-8",
+      "MT196-C07-4"
+     ]
+    },
+    {
+     "view": "Risk management systems held up and a down month is within normal range; no sign that trend following is broken.",
+     "as_of": "2025-05-02",
+     "reasoning": "Early indications only.",
+     "claim_ids": [
+      "MT196-C07-X1",
+      "MT196-C17-1"
+     ]
+    },
+    {
+     "view": "Bonds may stop providing cover if rates trend higher after a 40-year falling-rate cycle.",
+     "as_of": "2025-05-02",
+     "reasoning": "Recency bias argument.",
+     "claim_ids": [
+      "MT196-C02-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Stops versus continuous signals as the explanation for April dispersion",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "April may differ materially between hard-stop systems and continuous-signal systems because a stopped-out system cannot re-enter before a new signal.",
+     "claim_ids": [
+      "MT196-C04-6",
+      "MT196-C05-3"
+     ]
+    },
+    {
+     "speaker": "Rob Carver",
+     "position": "Two separate drivers: signal speed and position-capture method; capturing the bounce needed extremely fast trading, wide stops simply held, and continuous sizing was down then flat.",
+     "claim_ids": [
+      "MT196-C06-X1",
+      "MT196-C06-1",
+      "MT196-C06-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Explanation of the Treasury selloff",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Bond safe-haven status may be recency bias from a 40-year falling-rate cycle.",
+     "claim_ids": [
+      "MT196-C02-3"
+     ]
+    },
+    {
+     "speaker": "Rob Carver",
+     "position": "Two competing explanations: stagflationary policy that breaks the central bank reaction function, and flows (traditional buyers such as China avoid Treasuries in a crisis born in the US).",
+     "claim_ids": [
+      "MT196-C02-4",
+      "MT196-C03-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Should a veteran trend system react to a long drawdown",
+   "positions": [
+    {
+     "speaker": "Rob Carver",
+     "position": "Do nothing in theory; only a drawdown well beyond backtest (for example 50%) is a real concern; avoid redesign and keep trend as 50-60% of the book while adding confident non-trend systems.",
+     "claim_ids": [
+      "MT196-C12-3",
+      "MT196-C12-1",
+      "MT196-C10-X1",
+      "MT196-C12-X1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Surprised that managers with 30 years of experience hit their worst-ever drawdown, and notes investors will want to redeem; asks how to keep them from projecting.",
+     "claim_ids": [
+      "MT196-C12-4",
+      "MT196-C11-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Ledger correction: Rob's -15% is the April 2024 to April 2025 tax year, not his worst-ever year (April 2014 to April 2015); the later figure is -14.7%.",
+   "claim_ids": [
+    "MT196-C09-2",
+    "MT196-C10-2"
+   ]
+  },
+  {
+   "issue": "Ledger correction: Niels, not Rob, describes the leveraged Nasdaq tweet (7% a year becomes 21% with 3x); Rob's daily-reset explanation comes later.",
+   "claim_ids": [
+    "MT196-C18-3",
+    "MT196-C19-1"
+   ]
+  },
+  {
+   "issue": "Index figures are early and partial (as of April 30/May 1), the ledger line for April omits the SG CTA YTD (-6.88%) and BTOP50 YTD (-3.54%) given in the transcript, and the trend barometer of 52 is a short-term measure Niels does not define.",
+   "claim_ids": [
+    "MT196-C07-4",
+    "MT196-C03-3"
+   ]
+  },
+  {
+   "issue": "Rob has not looked at individual market P&L for April; his claim about the fastest models is an expectation of whipsaw afterwards, not a measured result.",
+   "claim_ids": [
+    "MT196-C05-2"
+   ]
+  },
+  {
+   "issue": "The statement that worst drawdown grows with time is mathematical in expectation but Rob is unsure about the growth rate; the 30% probability over 12 years is quoted without the model.",
+   "claim_ids": [
+    "MT196-C11-2",
+    "MT196-C12-1"
+   ]
+  },
+  {
+   "issue": "Rob's bearish call (cash over equities) conflicted with the market rebound he admits; his systematic portfolio remains long if equities rise.",
+   "claim_ids": [
+    "MT196-C14-R1",
+    "MT196-C15-1"
+   ]
+  },
+  {
+   "issue": "Niels says portable alpha did badly from imagination rather than reported results.",
+   "claim_ids": [
+    "MT196-C05-1"
+   ]
+  },
+  {
+   "issue": "Rob says even the slowest carry signal lost money in 2024-25, contradicting the usual diversifier role of carry; he does not explain why.",
+   "claim_ids": [
+    "MT196-C11-1"
+   ]
+  },
+  {
+   "issue": "Rob's costs claim (about 100 bp, in line with backtest) is one number without breakdown; passive-order slippage advantage is asserted.",
+   "claim_ids": [
+    "MT196-C13-2"
+   ]
+  },
+  {
+   "issue": "Rob raised trend allocation at the end of the tax year before the drawdown, which conflicts with his own advice against adding after strong runs.",
+   "claim_ids": [
+    "MT196-C09-X1",
+    "MT196-C07-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs these speakers treat as leading: tariff pass-through (goods in transit, stockpiles) to Q2-Q3 US GDP and earnings guidance; direction of Treasury yields and whether Treasuries rally on bad news (central bank reaction function); dollar and Swiss franc behaviour in stress; trend barometer; speed and position-capture method of trend models in V-shaped markets; commodity trends (energies, grains). Horizon: months for the tariff-recession call; the trend drawdown question is statistical and multi-year.",
+ "reader_inferences": [
+  "(reader) Rob's account implies that variable position sizing behaves like an automatic reduction of exposure when signals become unclear, which gives a flat P&L after a shock instead of a clear stop-out; it protects against whipsaw but forfeits recoveries.",
+  "(reader) The 2024-25 pattern (only relative signals making money, every outright trend and even carry lost) suggests the loss was a trendless regime for outright trend rather than a failure of any one market, consistent with his diversified-portfolio argument.",
+  "(reader) Niels's and Rob's views on safe-haven change point to the same observable: whether Treasuries rally on bad US news. Neither provides a test beyond April 2025."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT196-C14-R1",
+   "chunk": "C14",
+   "speaker": "Rob Carver",
+   "quote": "right now that decision is looking looking bad because the market has rebounded since then",
+   "claim": "Rob concedes that his sale of all US stocks and move to cash is looking wrong so far because the market rebounded after the April low; he regrets not going to cash earlier, as Warren Buffett did.",
+   "mechanism": "timing_outcome",
+   "asset_class": "equities",
+   "indicator": "own discretionary US equity exit",
+   "horizon": "weeks",
+   "direction": "cash decision lost to rebound",
+   "conditions": "After the April 2025 rebound",
+   "testable": "no: anecdote",
+   "speaker_confidence": "high",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT196-C17-R1",
+   "chunk": "C17",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "frankly Richard Dennis and um uh John Henry were not the pioneers right",
+   "claim": "Niels adds that the early trend-following pioneers in the US were people such as Keith Campbell and Bill Dunn (from the mid-1970s), not the Turtles' teacher Richard Dennis and John Henry.",
+   "mechanism": "industry_history",
+   "asset_class": "multi",
+   "indicator": "none",
+   "horizon": "n/a",
+   "direction": "n/a",
+   "conditions": "",
+   "testable": "no: history",
+   "speaker_confidence": "high",
+   "time_bound": "no",
+   "reader": "opus",
+   "quote_check": "exact"
+  },
+  {
+   "claim_id": "MT196-C05-R1",
+   "chunk": "C05",
+   "speaker": "Rob Carver",
+   "quote": "that was actually a worse single month return for me",
+   "claim": "Rob says November 2021 was a worse single-month return for him than April 2025, but it hurt less in context because he was at a high-water mark and the following months recovered; the current drawdown has lasted longer since his high-water mark of May 2024.",
+   "mechanism": "own_drawdown_comparison",
+   "asset_class": "multi",
+   "indicator": "own monthly returns",
+   "horizon": "months",
+   "direction": "n/a",
+   "conditions": "",
+   "testable": "no: anecdote",
+   "speaker_confidence": "medium",
+   "time_bound": "yes",
+   "reader": "opus",
+   "quote_check": "exact"
+  }
+ ]
+}

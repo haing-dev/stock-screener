@@ -1,0 +1,771 @@
+{
+ "source_id": "MT210",
+ "episode_thesis": "Narratives flip within days (AI disinflation to Iran stagflation, tariff chaos to debasement trade), so allocators should look at statistics and structure rather than prevailing stories. Alan argues trend followers diversify 60/40 through dynamic bond/equity sizing and commodity/currency positioning, that the AI productivity boom carries a Greenspan-style demand response and a Fed-policy-error risk later in 2026-27, and that CTA allocators should avoid narrative-chasing and packaging effects; Niels adds trend-barometer data, the March oil-spike positioning and views on replication and manager choice.",
+ "speakers": [
+  {
+   "name": "Alan (co-host, allocator, Dublin; captions 'Alan Donn')",
+   "role": "Co-host; hedge fund allocator and macro writer (Substack \"Beyond the Cycle\")",
+   "speaker_note": "Ledger name kept. Two speakers; the host is Niels. Attribution check: the Winton-paper remarks on manager speed, universe and non-trend signals (ledger C16-3, C17-1) appear to be Alan's in the sequence of turns (he says \"The second paper then is how to build a portfolio of CTAs\"); the ledger attributes them to Niels, so they are cited under Alan with a gap note.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "policy_reaction_central_banks",
+    "manager_selection_allocation",
+    "portfolio_construction_stacking",
+    "behavioral_sentiment",
+    "trend_following",
+    "dealer_hedging_flows",
+    "structural_themes"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Narratives flip within days (AI disinflation to Iran/oil stagflation; tariffs to debasement), so market sentiment, including toward CTAs and hedge funds, can also flip fast.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observed bond move on the Citrini report then reversal on Middle East fear; conference mood.",
+     "claim_ids": [
+      "MT210-C01-1",
+      "MT210-C01-2",
+      "MT210-C08-3",
+      "MT210-C08-4"
+     ]
+    },
+    {
+     "premise": "Trend's diversifying value is that it underperforms 60/40 in many years and massively outperforms in a few (2008, 2022 about 40 points); it has low correlation and does best when 60/40 suffers.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical performance differentials.",
+     "claim_ids": [
+      "MT210-C05-1",
+      "MT210-C06-1"
+     ]
+    },
+    {
+     "premise": "Trend differs from a static 60/40 through two sources: dynamic bond/equity sizing (short bonds, less equity in 2022) and long/short commodity and currency positions (2007-08 oil, 2014-15); attribution differs by crisis and is hard to disentangle.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Historical episodes; no year-by-year P&L attribution run.",
+     "claim_ids": [
+      "MT210-C05-2",
+      "MT210-C05-4",
+      "MT210-C05-5",
+      "MT210-C05-X1",
+      "MT210-C06-2"
+     ]
+    },
+    {
+     "premise": "Trend is diversification, not insurance, and is better described as a midfielder: it contributes in pro-risk periods and tilts the portfolio defensive in stress.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "2025 episode and 2H-2025 gold trend.",
+     "claim_ids": [
+      "MT210-C14-4",
+      "MT210-C15-2",
+      "MT210-C15-1"
+     ]
+    },
+    {
+     "premise": "Allocators should ignore the prevailing narrative about trend and look at statistics; the 2025 narrative (tariffs make trend hard) proved wrong and decisions should be judged on process, not on one outcome (resulting).",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "April 2025 adaptation cost money when Trump reversed, but the decision was sound.",
+     "claim_ids": [
+      "MT210-C14-1",
+      "MT210-C14-3",
+      "MT210-C14-5"
+     ]
+    },
+    {
+     "premise": "An AI productivity supply shock is followed by a demand response (capex, optimism, wages, wealth effect), so it may not be disinflationary for long; gains may accrue to capital owners rather than wages.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Furman FT article on Greenspan 1996-2000; Gilded Age analogy; hyperscaler capex now meeting negative stock reactions.",
+     "claim_ids": [
+      "MT210-C11-1",
+      "MT210-C11-2",
+      "MT210-C11-3",
+      "MT210-C11-4",
+      "MT210-C11-5",
+      "MT210-C12-1"
+     ]
+    },
+    {
+     "premise": "An inflation-targeting Fed facing a disinflationary AI shock during an equity bubble could stimulate and create asset bubbles; combined with political pressure and a chair who has already chosen his framework, policy error risk is substantial.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Fed mandate logic; Greenspan 1990s dilemma; threats to Powell.",
+     "claim_ids": [
+      "MT210-C12-2",
+      "MT210-C12-3",
+      "MT210-C12-4",
+      "MT210-C13-1",
+      "MT210-C12-X1"
+     ]
+    },
+    {
+     "premise": "Pod shops attract capital into high-Sharpe strategies, reinforcing them until they eventually blow up.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Recalled from a guest (Niego/Miguel) earlier on the show.",
+     "claim_ids": [
+      "MT210-C04-1"
+     ]
+    },
+    {
+     "premise": "Option flows pin US equity indices in a range, so price action must be read alongside option expiry and flows; European equities reacted more because gas reacted more.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Recalled from a guest (Jim) the week before; European gas price response.",
+     "claim_ids": [
+      "MT210-C02-2",
+      "MT210-C02-X1"
+     ]
+    },
+    {
+     "premise": "Allocators to hedge funds should pick strategies with proven record in equity downturns, not those that did best in a bull market; return stacking and portable alpha packaging merely reflects an equity bull market.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Conference observation.",
+     "claim_ids": [
+      "MT210-C07-2",
+      "MT210-C07-R1",
+      "MT210-C08-1",
+      "MT210-C07-X1"
+     ]
+    },
+    {
+     "premise": "Short-term CTAs are often vol-expansion strategies, differ widely in models, and had a poor environment while equities trended higher, though several did well over 12 months.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Short-term index performance versus individual names.",
+     "claim_ids": [
+      "MT210-C03-3",
+      "MT210-C03-X1"
+     ]
+    },
+    {
+     "premise": "Fewer managers can be better for an allocator because understanding a program makes it easier to stick with it, with tension against diversification; separate specialists bring different IP at the cost of fee netting.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own change of mind.",
+     "claim_ids": [
+      "MT210-C18-2",
+      "MT210-C17-2",
+      "MT210-C17-X1"
+     ]
+    },
+    {
+     "premise": "Blending randomly chosen trend managers leaves large tracking error versus the index (about 5% for two managers); matching volatility or picking correlated managers reduces it, and blending less-correlated managers at slightly higher vol is an alternative.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Winton paper; his own additions.",
+     "claim_ids": [
+      "MT210-C16-1",
+      "MT210-C16-2",
+      "MT210-C16-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "AI productivity boom and the Fed: from supply shock to policy error",
+     "steps": [
+      {
+       "from": "AI productivity boom (supply shift)",
+       "to": "Initially disinflationary, holds off rate hikes (Greenspan 1996) or justifies cuts (Warsh)",
+       "why": "Productivity keeps prices down",
+       "claim_ids": [
+        "MT210-C10-4",
+        "MT210-C11-1"
+       ]
+      },
+      {
+       "from": "Disinflation plus technology optimism",
+       "to": "Demand response: capex, optimism, wages, wealth effect",
+       "why": "New technology raises investment and consumption",
+       "claim_ids": [
+        "MT210-C11-3",
+        "MT210-C11-2"
+       ]
+      },
+      {
+       "from": "Demand overheats",
+       "to": "Fed raises rates later (1999-2000)",
+       "why": "Inflation picks up as economy overheats",
+       "claim_ids": [
+        "MT210-C11-2"
+       ]
+      },
+      {
+       "from": "Fed inflation target applied to a disinflationary AI shock during an equity bubble",
+       "to": "Stimulus into a bubble and asset bubbles; risk of policy error",
+       "why": "Mandate forces the Fed to counter below-target inflation; political pressure for cuts",
+       "claim_ids": [
+        "MT210-C12-2",
+        "MT210-C13-1",
+        "MT210-C12-4"
+       ]
+      }
+     ],
+     "evidence": "Greenspan 1996 and 2000 testimony; Furman FT article; hyperscaler capex reaction; Gilded Age.",
+     "fails_when": "If AI gains accrue to capital rather than wages, or demand response is weak, the sequence changes; three unknowns: size, beneficiaries, demand response.",
+     "claim_ids": [
+      "MT210-C11-4",
+      "MT210-C11-5",
+      "MT210-C12-1",
+      "MT210-C12-X1"
+     ]
+    },
+    {
+     "topic": "Where trend's edge over 60/40 comes from",
+     "steps": [
+      {
+       "from": "Static 60/40 versus dynamic trend positioning in bonds and equities",
+       "to": "Trend cuts risk after dips (whipsaw cost) and goes short bonds/less equity in 2022",
+       "why": "Dynamic sizing",
+       "claim_ids": [
+        "MT210-C05-2",
+        "MT210-C05-3"
+       ]
+      },
+      {
+       "from": "Long/short commodity and currency positions",
+       "to": "Capture oil run-up 2007, sell-off 2008, volatility 2014-15",
+       "why": "Directional exposure beyond 60/40",
+       "claim_ids": [
+        "MT210-C05-4"
+       ]
+      },
+      {
+       "from": "Crisis year attribution",
+       "to": "2008 mostly commodities; 2022 dynamic bonds/equities plus long dollar",
+       "why": "Differs by crisis",
+       "claim_ids": [
+        "MT210-C05-5",
+        "MT210-C06-2"
+       ]
+      }
+     ],
+     "evidence": "Historical years; large CTA sector attribution study (from Niels).",
+     "fails_when": "Attribution unmeasured year by year; equities usually lose initially in crises.",
+     "claim_ids": [
+      "MT210-C05-X1",
+      "MT210-C06-3"
+     ]
+    },
+    {
+     "topic": "Narrative flips and allocator sentiment",
+     "steps": [
+      {
+       "from": "Citrini scenario report (outlier)",
+       "to": "Bonds rally on disinflation",
+       "why": "Narrative of AI white-collar job losses",
+       "claim_ids": [
+        "MT210-C10-3",
+        "MT210-C01-1"
+       ]
+      },
+      {
+       "from": "Middle East/Iran shock and oil",
+       "to": "Stagflation fear; equities and bonds fall together; yields rebound",
+       "why": "Oil shock removes bond hedge",
+       "claim_ids": [
+        "MT210-C01-2"
+       ]
+      },
+      {
+       "from": "Equity wobble while trend works",
+       "to": "Allocator sentiment toward CTAs turns quickly",
+       "why": "Visible trends",
+       "claim_ids": [
+        "MT210-C08-4",
+        "MT210-C08-3"
+       ]
+      }
+     ],
+     "evidence": "Week-to-week observation.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT210-C01-1",
+      "MT210-C01-2",
+      "MT210-C08-3",
+      "MT210-C08-4"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "New hedge fund allocators should choose strategies with a record in major equity downturns (trend, macro, commodities, vol) not recent bull-market winners; consider what pays off if the view is wrong.",
+     "why": "Avoids chasing packaged equity-beta performance.",
+     "claim_ids": [
+      "MT210-C07-2",
+      "MT210-C08-1",
+      "MT210-C09-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Ignore the narrative about trend; look at statistics, and judge decisions by process not single outcomes.",
+     "why": "Narrative about tariffs proved wrong in 2025.",
+     "claim_ids": [
+      "MT210-C14-3",
+      "MT210-C14-5",
+      "MT210-C14-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Blend trend managers while knowing that two random managers give about 5% tracking error versus the index; adjust for volatility or pick correlated (or less-correlated at higher vol) managers.",
+     "why": "Matches index or improves diversification.",
+     "claim_ids": [
+      "MT210-C16-1",
+      "MT210-C16-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Lean toward fewer managers to understand programs and stay with them, accepting less diversification; consider specialists versus one multi-signal manager, weighing fee netting.",
+     "why": "Behavioural ability to stick with a program.",
+     "claim_ids": [
+      "MT210-C18-2",
+      "MT210-C17-1",
+      "MT210-C17-2",
+      "MT210-C16-3"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Read price action alongside option flows and expiry.",
+     "why": "Option flows pin indices.",
+     "claim_ids": [
+      "MT210-C02-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Do not time CTA allocation on drawdowns; CTAs' first job is keeping investors in, though some clients time it successfully.",
+     "why": "Buy-the-dip calls in mid-2024 were early by about 24 months.",
+     "claim_ids": [
+      "MT210-C14-X1",
+      "MT210-C14-2"
+     ]
+    }
+   ],
+   "evidence_style": "Historical episodes and published papers (Furman, Winton), cited conference conversations and prior guests; reasoning from the Fed mandate; honest about uncertainty (attribution not disentangled); distinguishes process from outcome.",
+   "current_views": [
+    {
+     "view": "Stagflation fear after the Iran/oil shock: equities and bonds falling together, bonds reversed sharply from the disinflation theme (10y below 4% then higher).",
+     "as_of": "2026-03-05",
+     "reasoning": "Oil and European gas prices.",
+     "claim_ids": [
+      "MT210-C01-1",
+      "MT210-C01-2"
+     ]
+    },
+    {
+     "view": "Reasonably strong risk of a Fed policy error later this year and into next, not this month, with Warsh arriving in May and political pressure for easing.",
+     "as_of": "2026-03-05",
+     "reasoning": "AI disinflation framework plus pressure from administration.",
+     "claim_ids": [
+      "MT210-C12-4",
+      "MT210-C12-2",
+      "MT210-C13-1",
+      "MT210-C10-4"
+     ]
+    },
+    {
+     "view": "AI is a bigger productivity story than a year ago, but there is no consensus on policy response; imbalances persist.",
+     "as_of": "2026-03-05",
+     "reasoning": "Labor-market mismatch.",
+     "claim_ids": [
+      "MT210-C12-X1",
+      "MT210-C12-3"
+     ]
+    },
+    {
+     "view": "Hyperscaler capex now draws negative stock reactions; the demand response may already be seen as excessive.",
+     "as_of": "2026-03-05",
+     "reasoning": "Market reaction.",
+     "claim_ids": [
+      "MT210-C12-1"
+     ]
+    },
+    {
+     "view": "Mood toward hedge funds and CTAs is positive at the Miami conference with global macro, portable alpha and return stacking in vogue; sentiment can change quickly.",
+     "as_of": "2026-03-05",
+     "reasoning": "Conference observation.",
+     "claim_ids": [
+      "MT210-C07-X1",
+      "MT210-C08-4",
+      "MT210-C08-3",
+      "MT210-C08-X1"
+     ]
+    },
+    {
+     "view": "Total portfolio approach may lead to larger allocations to pure diversifiers.",
+     "as_of": "2026-03-05",
+     "reasoning": "TPA conversations.",
+     "claim_ids": [
+      "MT210-C08-2"
+     ]
+    },
+    {
+     "view": "Trend in 2026 is in a trendier environment with broadening opportunities across equities, metals and bonds; dispersion from position sizing in metals.",
+     "as_of": "2026-03-05",
+     "reasoning": "Performance observation.",
+     "claim_ids": [
+      "MT210-C07-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen (host)",
+   "role": "Host of Top Traders Unplugged; long-term trend follower (fixed-size camp) at Dawn",
+   "speaker_note": "Host, with a view of his own (trend barometer, performance data, closure of AlphaQuest, drawdown timing). Ledger C16-3 and C17-1 cited under Alan (see his note).",
+   "fingerprint": [
+    "trend_following",
+    "manager_selection_allocation",
+    "regime_detection",
+    "nowcasting_data",
+    "crisis_alpha_convexity",
+    "position_sizing_vol_target",
+    "behavioral_sentiment"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Trend delivers when equity crises hit but usually loses on equities first (possibly for long) and profits in commodities and elsewhere; it also delivers in strong equity markets, unlike other risk-mitigation strategies.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Large CTA sector attribution study (unnamed); own data.",
+     "claim_ids": [
+      "MT210-C06-2",
+      "MT210-C06-3",
+      "MT210-C06-4"
+     ]
+    },
+    {
+     "premise": "Fixed versus dynamic sizing matters little in the long run but changes how strategies perform from time to time.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own data; Jerry Parker's Bitcoin point.",
+     "claim_ids": [
+      "MT210-C04-2",
+      "MT210-C04-3"
+     ]
+    },
+    {
+     "premise": "Narrative is a poor guide to trend performance: after negative headlines in summer 2025 trend produced one of its strongest, most consistent runs.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "SG Trend and own record: eight consecutive positive months in Feb 2026 equalling 1999.",
+     "claim_ids": [
+      "MT210-C08-5",
+      "MT210-C08-6"
+     ]
+    },
+    {
+     "premise": "Pod shops may affect market behaviour in a way that hurts some CTAs (speculation); AlphaQuest's closure was a business decision, not a statistical failure.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Speculation, AlphaQuest drawdown within historic range.",
+     "claim_ids": [
+      "MT210-C03-1",
+      "MT210-C03-2"
+     ]
+    },
+    {
+     "premise": "Low index vol implies higher dispersion and vol underneath single stocks.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Recalled from a guest (Jim).",
+     "claim_ids": [
+      "MT210-C02-3"
+     ]
+    },
+    {
+     "premise": "Sovereign wealth funds applying total portfolio approach see the portfolio benefit of trend clearly, which should boost allocations.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Conversations at the conference.",
+     "claim_ids": [
+      "MT210-C09-1"
+     ]
+    },
+    {
+     "premise": "Replication or blending to smooth an index loses the convexity that makes CTAs valuable; replication tracking error stays material unless all ten index managers are held.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Winton paper; replication experience.",
+     "claim_ids": [
+      "MT210-C17-3",
+      "MT210-C16-X1",
+      "MT210-C18-1"
+     ]
+    },
+    {
+     "premise": "Investing in trend near its worst-ever drawdown is attractive.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Long history; he admits researchers would disagree.",
+     "claim_ids": [
+      "MT210-C14-2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why trend followers were right-sided in the March 2026 oil spike",
+     "steps": [
+      {
+       "from": "Many trend followers flipped energy from flat/short to long in February",
+       "to": "They were on the right side of the early March oil move (heating oil +33%)",
+       "why": "Positioning before the shock decided the first-days performance",
+       "claim_ids": [
+        "MT210-C09-3",
+        "MT210-C10-2"
+       ]
+      },
+      {
+       "from": "Sudden shocks \"out of the blue\"",
+       "to": "Performance in the first days is random",
+       "why": "Positioning before the event is unknown",
+       "claim_ids": [
+        "MT210-C09-4"
+       ]
+      }
+     ],
+     "evidence": "Early March performance and standout markets.",
+     "fails_when": "Natural gas positions small due to volatility; metals sold off.",
+     "claim_ids": [
+      "MT210-C09-3",
+      "MT210-C09-4",
+      "MT210-C10-1",
+      "MT210-C10-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Tracks a trend barometer: share of the 44 markets that are trending (55 at end of February 2026, a broad strong environment).",
+     "why": "Breadth of trending markets.",
+     "claim_ids": [
+      "MT210-C06-5",
+      "MT210-C06-6"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Allocator should ask what pays off if the view is wrong (Dave Dredge).",
+     "why": "Stress test of portfolio views.",
+     "claim_ids": [
+      "MT210-C09-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Consider a small number of long-tenured trend followers rather than chasing the smoothest ride.",
+     "why": "Smooth blends lose convexity.",
+     "claim_ids": [
+      "MT210-C18-1",
+      "MT210-C17-3",
+      "MT210-C16-X1"
+     ]
+    }
+   ],
+   "evidence_style": "Index data, own record, long experience and recollection of studies and conversations; speculation flagged as such.",
+   "current_views": [
+    {
+     "view": "Trend barometer at 55 with broad trending; February strong; March started negative (SG CTA -1.94%, SG Trend -1.85%) but YTD +6.22% and +6.78%; bonds gave no offset in March.",
+     "as_of": "2026-03-05",
+     "reasoning": "Index data to the Tuesday before.",
+     "claim_ids": [
+      "MT210-C06-5",
+      "MT210-C10-1",
+      "MT210-C10-2"
+     ]
+    },
+    {
+     "view": "Financial markets reacted little to Iran; the real move was in commodities and energy, and more surprises may come.",
+     "as_of": "2026-03-05",
+     "reasoning": "Muted equity/bond response.",
+     "claim_ids": [
+      "MT210-C02-1"
+     ]
+    },
+    {
+     "view": "Manager closures raise index-construction questions (AlphaQuest in the SG CTA index, survivorship bias).",
+     "as_of": "2026-03-05",
+     "reasoning": "Unclear treatment of mid-year exit.",
+     "claim_ids": [
+      "MT210-C10-X1"
+     ]
+    },
+    {
+     "view": "It is doubtful that a stable CTA beta exists to be benchmarked; the ChatGPT-posed question sounds plausible but is empty (Alan and Niels discuss it together).",
+     "as_of": "2026-03-05",
+     "reasoning": "They have debated for a long time whether a CTA beta exists at all.",
+     "claim_ids": [
+      "MT210-C18-3"
+     ]
+    },
+    {
+     "view": "Prediction markets favoured another candidate before Warsh was named, an example of a consensus forecast missing a political outcome.",
+     "as_of": "2026-03-05",
+     "reasoning": "Surprise nomination.",
+     "claim_ids": [
+      "MT210-C13-X1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Timing trend allocations near drawdown extremes",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen (host)",
+     "position": "Near the worst-ever drawdown it is not a bad time to invest or top up, although he knows researchers disagree.",
+     "claim_ids": [
+      "MT210-C14-2"
+     ]
+    },
+    {
+     "speaker": "Alan (co-host, allocator, Dublin; captions 'Alan Donn')",
+     "position": "CTAs make the same argument at highs; mid-2024 dip-buying calls were early; the first job is keeping investors in, though some clients time it.",
+     "claim_ids": [
+      "MT210-C14-2",
+      "MT210-C14-X1",
+      "MT210-C14-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Portfolio construction of CTAs: one multi-signal manager versus specialists and number of managers",
+   "positions": [
+    {
+     "speaker": "Alan (co-host, allocator, Dublin; captions 'Alan Donn')",
+     "position": "Fee netting and capital efficiency favour a multi-signal manager, but separate specialists bring different IP; fewer managers aids stickiness.",
+     "claim_ids": [
+      "MT210-C17-1",
+      "MT210-C17-2",
+      "MT210-C18-2",
+      "MT210-C17-X1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen (host)",
+     "position": "Replicating or smoothing removes convexity; one or two long-tenured trend followers may be better than the smoothest ride.",
+     "claim_ids": [
+      "MT210-C17-3",
+      "MT210-C18-1",
+      "MT210-C16-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Fixed versus dynamic position sizing",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen (host)",
+     "position": "Matters little long run but changes timing of performance; classic fixed-size trend followers (Jerry Parker) differ.",
+     "claim_ids": [
+      "MT210-C04-2",
+      "MT210-C04-3"
+     ]
+    },
+    {
+     "speaker": "Alan (co-host, allocator, Dublin; captions 'Alan Donn')",
+     "position": "Dispersion in 2026 among CTAs linked to metals sizing, with more static sizing helping on the upside.",
+     "claim_ids": [
+      "MT210-C07-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Attribution of trend's edge over 60/40 between dynamic bond/equity sizing and commodities/currencies is not quantified; Alan says it needs year-by-year P&L analysis.",
+   "claim_ids": [
+    "MT210-C05-X1",
+    "MT210-C05-5"
+   ]
+  },
+  {
+   "issue": "Niels's large-CTA sector attribution study is unnamed and recalled from memory (\"pretty sure I'm right\").",
+   "claim_ids": [
+    "MT210-C06-2"
+   ]
+  },
+  {
+   "issue": "Ledger attributes the Winton \"speed/universe/non-trend\" summary (C16-3) and the SG non-trend index commentary (C17-1) to Niels, but the turn sequence suggests Alan spoke them.",
+   "claim_ids": [
+    "MT210-C16-3",
+    "MT210-C17-1"
+   ]
+  },
+  {
+   "issue": "Niels speculates pod shops hurt CTAs and Alan relays a guest's recollection of pod-shop reinforcement; neither supplies evidence.",
+   "claim_ids": [
+    "MT210-C03-1",
+    "MT210-C04-1"
+   ]
+  },
+  {
+   "issue": "Niels says many trend followers flipped energy from short to long in February but flags that he is generalising and cannot be sure.",
+   "claim_ids": [
+    "MT210-C09-3"
+   ]
+  },
+  {
+   "issue": "Policy-error call (Fed, later 2026-27) has no stated indicator or trigger; the Warsh framework is inferred from interviews.",
+   "claim_ids": [
+    "MT210-C12-4",
+    "MT210-C10-4",
+    "MT210-C11-1"
+   ]
+  },
+  {
+   "issue": "Alan's reading of return-stacking presentations is corrected in the ledger to \"fair but symptomatic of the equity bull market\", not a causal statement.",
+   "claim_ids": [
+    "MT210-C08-1"
+   ]
+  },
+  {
+   "issue": "Jerry Parker's Bitcoin sizing point is relayed second-hand by Niels, who also acknowledges his own bias against dynamic sizing.",
+   "claim_ids": [
+    "MT210-C04-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs: oil and European gas prices (stagflation channel and bond hedge failure), bond yields reversal from below 4%, option flows and expiry (pinning), breadth of trending markets (barometer), Fed chair transition in May and political pressure on rates, AI capex reaction in hyperscaler stocks. Alan's horizon for the policy error is 'later this year and into next'; no specific price targets.",
+ "reader_inferences": [
+  "(reader) Alan's attribution (dynamic positioning versus commodity/currency exposure) implies trend's crisis performance depends on which asset classes are in the crisis; an equity-only crisis would favour the dynamic part.",
+  "(reader) Both speakers treat narrative as a contrarian indicator for CTA allocation (negative headlines preceded the best run), yet Alan warns against timing, so the lesson is to stay allocated not to buy dips.",
+  "(reader) The Greenspan analogy assumes the AI supply shock is followed by a demand shock; if capex disappoints (hyperscaler reaction), the Fed's easing pressure could be on a weaker economy, which the speakers do not examine."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT210-C07-R1",
+   "chunk": "C07",
+   "speaker": "Alan (co-host, allocator, Dublin; captions 'Alan Donn')",
+   "quote": "they can point to good performance in recent years and still talk about kind of being diversifiers",
+   "claim": "Alan says hedge funds are in a sweet spot: recent good performance plus a diversifier story, even though many strategies may not do well if equities reverse for long.",
+   "mechanism": "allocator_sentiment",
+   "asset_class": "hedge_funds",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "bull equity market",
+   "testable": "no: qualitative",
+   "speaker_confidence": "medium",
+   "time_bound": "no",
+   "reader": "map"
+  }
+ ]
+}

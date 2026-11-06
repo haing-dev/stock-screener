@@ -1,0 +1,916 @@
+{
+ "source_id": "MT021",
+ "episode_thesis": "Katy Kaminski argues that bonds 'behave badly' when inflation is higher (stock-bond correlation turns positive and bond volatility rises from about 4% to about 6%), so a static 60/40 loses its safety leg, whereas long-short trend in bonds, dollar, gold and commodities diversifies equity-down periods. With the host she reads the August 2024 yen carry unwind as a test of convergent strategies (carry) in a more divergent, less policy-synchronised world, and stresses that crisis alpha needs sustained moves, is not guaranteed, and is diluted by carry sleeves and by too-slow signals in very quick shocks. Both advise sticking to process rather than reacting to headline numbers such as a VIX of 65.",
+ "speakers": [
+  {
+   "name": "Katy Kaminski",
+   "role": "Chief research strategist at AlphaSimplex; guest co-host of the Systematic Investor series; coined 'crisis alpha'",
+   "speaker_note": "Ledger spelling 'Katy Kaminski' kept (captions give 'K Kaminsky'). The host and guest alternate without labels in the captions; the long answers on bonds/inflation, crisis alpha, carry in CTAs and the VIX/Japan episode are taken as Katy's, the topic introductions and fund-industry anecdotes (Hedge Nordic items, Trend Barometer, index numbers) as Niels's. Correction applied to MT021-C11-1: the trend signals were weak but still slightly long equities, so the move is toward, not a full flip to, a recession-type profile. Wording 'consolidating monetary policy' in C04 is a caption artefact.",
+   "fingerprint": [
+    "trend_following",
+    "crisis_alpha_convexity",
+    "regime_detection",
+    "diversification_risk_parity",
+    "carry",
+    "macro_fundamental_topdown",
+    "policy_reaction_central_banks",
+    "behavioral_sentiment"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "When inflation is higher the stock-bond correlation turns positive and bond volatility rises (about 4% on average to about 6% in high-inflation regimes), so bonds stop being the safety trade and a 60/40 portfolio is less stable.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Estimated over decades of data in her bonds-and-inflation paper; 2022 as the recent example.",
+     "claim_ids": [
+      "MT021-C06-1",
+      "MT021-C06-2",
+      "MT021-C08-1"
+     ]
+    },
+    {
+     "premise": "In equity-down periods bond returns are right-shifted with a thin left tail when inflation is low, but negative on average, wider and fat-tailed to the left when inflation is high.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Conditional return distribution plot in the paper (described verbally).",
+     "claim_ids": [
+      "MT021-C08-2"
+     ]
+    },
+    {
+     "premise": "Inflation tends to come in waves rather than disappear, so a smooth fall in CPI is not proof that bonds are safe again.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "General knowledge of inflation episodes ('anybody who studies inflation knows').",
+     "claim_ids": [
+      "MT021-C06-4",
+      "MT021-C07-X3"
+     ]
+    },
+    {
+     "premise": "Most investors have never invested through inflation (the 1970s), so they are surprised and frustrated when bonds do not hedge equities.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Observation about investor experience.",
+     "claim_ids": [
+      "MT021-C06-X2"
+     ]
+    },
+    {
+     "premise": "When central banks stop moving in sync, there are multiple macro narratives and so more tactical, dynamic opportunity, which favours active management after 2020.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument from divergence across the Fed, ECB, Bank of Canada and others; no data cited.",
+     "claim_ids": [
+      "MT021-C02-1",
+      "MT021-C05-3"
+     ]
+    },
+    {
+     "premise": "Convergence strategies (carry is the classic one) assume things return to normal and are vulnerable to unexpected shocks; divergent thinkers ask where the market could go next.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Covid and the August 2024 yen carry unwind as examples.",
+     "claim_ids": [
+      "MT021-C02-3",
+      "MT021-C03-1"
+     ]
+    },
+    {
+     "premise": "Crisis alpha means gain during sustained market losses lasting weeks to months; a correction that reverses quickly is not a crisis and trend followers are too slow to benefit from it.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Her own definition (she coined the term); trading frequency of trend programs.",
+     "claim_ids": [
+      "MT021-C10-3",
+      "MT021-C10-5"
+     ]
+    },
+    {
+     "premise": "Crisis alpha is something trend searches for, not a guaranteed hedge or put option; it appears only when the world moves in a drastically different direction.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Title and thesis of 'In Search of Crisis Alpha'.",
+     "claim_ids": [
+      "MT021-C12-1"
+     ]
+    },
+    {
+     "premise": "A static 60/40 cannot adapt when moves are not all long, and long-run averages hide decade-long gaps in what works (gold, for example).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument from the structure of long-only portfolios; gold timing never in sync with recessions or inflation.",
+     "claim_ids": [
+      "MT021-C10-1",
+      "MT021-C10-2"
+     ]
+    },
+    {
+     "premise": "Big, sudden moves are hard to predict or trade; not overreacting is usually best, and extreme one-day moves can only be caught by a strategy that bears the cost on all other days.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Those who sold at Monday's low missed the rebound; the 'falling knife' point.",
+     "claim_ids": [
+      "MT021-C15-4",
+      "MT021-C15-5",
+      "MT021-C11-X4"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Inflation turns bonds from hedge to risk asset, damaging 60/40",
+     "steps": [
+      {
+       "from": "Higher inflation regime",
+       "to": "Stock-bond correlation turns positive",
+       "why": "Bonds fall when equities fall, so they are no longer the safety trade.",
+       "claim_ids": [
+        "MT021-C06-1",
+        "MT021-C08-2"
+       ]
+      },
+      {
+       "from": "Higher inflation regime",
+       "to": "Bond volatility rises (about 4% to about 6%)",
+       "why": "Bonds move around more, so the 60/40 'stool' is both unreliable and unstable.",
+       "claim_ids": [
+        "MT021-C06-2"
+       ]
+      },
+      {
+       "from": "Bonds fail as hedge and are marked to market",
+       "to": "Locked-in yield does not protect (2022)",
+       "why": "Valuation changes matter especially in a flight-to-safety scenario; entry timing and rolling add volatility.",
+       "claim_ids": [
+        "MT021-C08-1",
+        "MT021-C07-4"
+       ]
+      },
+      {
+       "from": "Inflation arrives in waves and may be volatile",
+       "to": "Fixed income volatility stays high even while CPI falls",
+       "why": "Another supply or geopolitical shock can push inflation up again, or it can slide into deflation.",
+       "claim_ids": [
+        "MT021-C06-4",
+        "MT021-C07-X3"
+       ]
+      }
+     ],
+     "evidence": "Paper estimated over decades of data plus the 2022 episode; the effect of inflation volatility was not tested.",
+     "fails_when": "Inflation is low (bonds then give the classic right-shifted flight-to-safety distribution).",
+     "claim_ids": [
+      "MT021-C06-3",
+      "MT021-C08-2"
+     ]
+    },
+    {
+     "topic": "Convergent positioning and the August 2024 yen carry unwind",
+     "steps": [
+      {
+       "from": "Consensus soft-landing view and stable-looking markets",
+       "to": "Crowded Japan-related and carry positions",
+       "why": "Convergence strategies assume return to normal and earn a risk premium in calm times.",
+       "claim_ids": [
+        "MT021-C02-3",
+        "MT021-C03-1",
+        "MT021-C14-X5"
+       ]
+      },
+      {
+       "from": "Small BoJ hike plus slight cut in bond purchases, on top of nervous risk-off sentiment",
+       "to": "Catalyst for deleveraging",
+       "why": "Risk limits and rule-based rebalancing (buffer funds, as with 1987 portfolio insurance) magnify the selling.",
+       "claim_ids": [
+        "MT021-C01-1",
+        "MT021-C15-3"
+       ]
+      },
+      {
+       "from": "Yen surge and equity shock on Monday 5 August",
+       "to": "Systemic event rather than classic risk-off",
+       "why": "Bonds did not rally much; the carry unwind and Japan positioning drove it.",
+       "claim_ids": [
+        "MT021-C14-1",
+        "MT021-C14-X5"
+       ]
+      },
+      {
+       "from": "Headline VIX near 65",
+       "to": "Possible feedback into panic",
+       "why": "If the number was mis-measured it still affected people; she cites MIT work linking traders' physiological stress to the VIX.",
+       "claim_ids": [
+        "MT021-C14-2"
+       ]
+      }
+     ],
+     "evidence": "Narrative reconstruction after the fact ('the story makes sense after the fact'); MIT studies cited second-hand; the size of the risk-limit effect is called hard to measure.",
+     "fails_when": "Not stated; she says she cannot say whether the VIX or the news came first ('chicken or the egg').",
+     "claim_ids": [
+      "MT021-C15-3",
+      "MT021-C14-2"
+     ]
+    },
+    {
+     "topic": "Signal speed, trend adaptation and why crisis alpha is scarce in quick shocks",
+     "steps": [
+      {
+       "from": "Recent price moves leak information about a turning theme",
+       "to": "Faster trend models adjust before the shock",
+       "why": "Long-term models stay anchored on the early-year moves.",
+       "claim_ids": [
+        "MT021-C04-1"
+       ]
+      },
+      {
+       "from": "Long-term (12-month) momentum has the higher Sharpe ratio",
+       "to": "It dominates in practice",
+       "why": "Smoother, higher Sharpe in a world that was converging.",
+       "claim_ids": [
+        "MT021-C04-2"
+       ]
+      },
+      {
+       "from": "Less converging, more divergent world with larger and faster moves",
+       "to": "Shorter signals may work better again",
+       "why": "SG Trend Index deconstruction shows CTAs used faster models in 2000; Covid and the reflation-then-collapse in commodities favour shorter horizons.",
+       "claim_ids": [
+        "MT021-C04-3",
+        "MT021-C04-4"
+       ]
+      },
+      {
+       "from": "Shock reverses within days",
+       "to": "No crisis alpha for trend",
+       "why": "Trend trades medium- to long-term themes; first responders (short-term trading, options) profit when VIX spikes but are hard to capture, second responders change positions once a shift is visible.",
+       "claim_ids": [
+        "MT021-C10-5",
+        "MT021-C11-2",
+        "MT021-C11-3"
+       ]
+      }
+     ],
+     "evidence": "Index deconstruction she co-authored and the 2024 episode; no signal-speed backtest cited.",
+     "fails_when": "Shorter signals are whipsawed in a quick rebound; she says the value of trend lies in prolonged crises.",
+     "claim_ids": [
+      "MT021-C04-3",
+      "MT021-C11-3"
+     ]
+    },
+    {
+     "topic": "Long-short trend as a 60/40 diversifier",
+     "steps": [
+      {
+       "from": "Long-only add-ons (bonds, gold, commodities) have poor correlation in equity-down periods",
+       "to": "They add correlation and volatility to the 60/40",
+       "why": "Diversification depends on correlation and on added volatility.",
+       "claim_ids": [
+        "MT021-C09-2"
+       ]
+      },
+      {
+       "from": "Make positions long or short by trend and manage volatility",
+       "to": "Negative correlation with equities in down periods (bonds, dollar, gold) and flat for commodities",
+       "why": "The portfolio can be on the right side in either direction.",
+       "claim_ids": [
+        "MT021-C09-1",
+        "MT021-C10-1"
+       ]
+      }
+     ],
+     "evidence": "Paper results on trend correlation in equity-down periods (no numbers given).",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT021-C09-1",
+      "MT021-C09-2"
+     ]
+    },
+    {
+     "topic": "Carry inside CTA portfolios waters down crisis alpha",
+     "steps": [
+      {
+       "from": "Pure trend struggled for years",
+       "to": "Managers added carry and other convergent strategies to smooth returns",
+       "why": "Investors want consistency; her CTA Evolution study finds carry increasingly present in CTA returns.",
+       "claim_ids": [
+        "MT021-C12-3"
+       ]
+      },
+      {
+       "from": "Violent, short event (Covid, August 2024)",
+       "to": "Carry sleeves lose, pure and faster trend copes better",
+       "why": "Carry is convergent; it is most dangerous run relative-value with leverage, less so directional with controlled leverage.",
+       "claim_ids": [
+        "MT021-C12-5",
+        "MT021-C13-1"
+       ]
+      },
+      {
+       "from": "Large carry allocation",
+       "to": "Less ability to capture crisis alpha",
+       "why": "Carry is great until it isn't.",
+       "claim_ids": [
+        "MT021-C13-2"
+       ]
+      }
+     ],
+     "evidence": "Her CTA Evolution paper and a Covid-crisis paper; the Nordic CTA loss is the host's speculation.",
+     "fails_when": "Carry sleeve is small or unlevered directional (less damage).",
+     "claim_ids": [
+      "MT021-C13-1",
+      "MT021-C13-2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Core trend signal is classic 12-month momentum, long or short; she leans toward considering shorter signals in a more divergent regime.",
+     "why": "Higher Sharpe for the long window; but faster models adjusted earlier ahead of the August shock.",
+     "claim_ids": [
+      "MT021-C04-1",
+      "MT021-C04-2",
+      "MT021-C04-3"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Add long-short trend in bonds, dollar, gold and commodities to a 60/40 rather than long-only bonds or gold; use gold tactically long or short.",
+     "why": "Negative or flat correlation with equities in down periods without extra volatility.",
+     "claim_ids": [
+      "MT021-C09-1",
+      "MT021-C09-2",
+      "MT021-C10-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Keep carry exposure limited and directional with controlled leverage, not relative-value with leverage, when carry is combined with trend.",
+     "why": "Large carry waters down crisis alpha and was hurt in Covid; unlevered directional carry was less damaged.",
+     "claim_ids": [
+      "MT021-C13-1",
+      "MT021-C13-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Stick to the process in a shock; do not sell on headline numbers like VIX 65.",
+     "why": "Not overreacting 'works on average'; sellers at Monday's low missed the rebound.",
+     "claim_ids": [
+      "MT021-C15-4"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Study how strategies behave in extreme episodes (Covid, CTA evolution, the 2022 bond failure) with dedicated papers; test conditional distributions in equity-down periods.",
+     "why": "To see what a strategy actually gives in stress.",
+     "claim_ids": [
+      "MT021-C08-2",
+      "MT021-C12-3",
+      "MT021-C12-5"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Do not try to capture one-day extreme moves.",
+     "why": "That requires a strategy that trades that way every day and bears the costs on all ordinary days.",
+     "claim_ids": [
+      "MT021-C11-X4"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hold bonds through a trend program that can go long or short (about 85% of trend portfolios sit in fixed income) and collect the futures carry/cash yield, rather than buy-and-hold bonds.",
+     "why": "Buy-and-hold stays exposed to valuation changes whatever yield is locked in; trend can go short.",
+     "claim_ids": [
+      "MT021-C07-2",
+      "MT021-C07-3"
+     ]
+    }
+   ],
+   "evidence_style": "Published research and long data samples (bond-inflation paper over decades, CTA Evolution, Covid study, SG Trend Index deconstruction), plus ex-post narrative of recent episodes; cites second-hand studies (MIT) loosely.",
+   "current_views": [
+    {
+     "view": "Trend signals are moving from a soft-landing (short bonds, long equities, long commodities, long dollar) profile toward a more recession-type one: weak, still slightly long equities, long bonds, short commodities, neutral dollar.",
+     "as_of": "2024-08-24 (upload date; recorded late August 2024)",
+     "reasoning": "Visible in trend positioning after the August shock; the open question is whether the correction becomes a real crisis or just noise.",
+     "claim_ids": [
+      "MT021-C02-4",
+      "MT021-C11-1",
+      "MT021-C11-R1"
+     ]
+    },
+    {
+     "view": "Markets are at an inflection point with fast sentiment shifts and 'undulations' despite a low VIX, until the new regime without coordinated central bank policy is clear.",
+     "as_of": "2024-08-24 (upload date; recorded late August 2024)",
+     "reasoning": "Fed starting to cut, uncertain US election and geopolitics.",
+     "claim_ids": [
+      "MT021-C05-3",
+      "MT021-C05-R1"
+     ]
+    },
+    {
+     "view": "Falling CPI does not make bonds safe again; inflation may return in waves, so the convergent view that bonds will now behave is doubtful.",
+     "as_of": "2024-08-24 (upload date; recorded late August 2024)",
+     "reasoning": "Inflation tends to go in waves; geopolitics and supply chains could cause another shock.",
+     "claim_ids": [
+      "MT021-C06-4",
+      "MT021-C07-X3"
+     ]
+    },
+    {
+     "view": "The 5 August 2024 move was an equity shock from the carry unwind and the yen, not a classic risk-off, and the VIX 65 headline may have been a mis-measured number.",
+     "as_of": "2024-08-24 (upload date; recorded late August 2024)",
+     "reasoning": "Bonds did not rally much on Monday; the earlier Friday was the classic risk-off day.",
+     "claim_ids": [
+      "MT021-C14-1",
+      "MT021-C14-2",
+      "MT021-C14-X5"
+     ]
+    },
+    {
+     "view": "No crisis alpha has appeared in this episode so far; trend followers are 'searching' and nobody knows what the macro environment will turn into.",
+     "as_of": "2024-08-24 (upload date; recorded late August 2024)",
+     "reasoning": "The shock was quick and reversed, so the sustained-loss condition was not met.",
+     "claim_ids": [
+      "MT021-C12-1",
+      "MT021-C12-R1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; veteran hedge fund manager; runs the Trend Barometer",
+   "speaker_note": "Mostly interviewer, but states views on divergence, carry within CTAs, VIX measurement, VaR and the usefulness of stress tests, so he is mapped. Attribution of unlabeled turns is by content (see Katy's note). He explicitly hedges many views ('I am not predicting', 'I don't know').",
+   "fingerprint": [
+    "trend_following",
+    "positioning_crowding",
+    "volatility_options",
+    "crisis_alpha_convexity",
+    "portfolio_construction_stacking",
+    "manager_selection_allocation",
+    "geopolitics",
+    "regime_detection"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Typical endowment and pension portfolios are 85-90% convergent strategies that are implicitly short volatility, with very few divergent strategies, so divergent exposure is hard to find.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Recalled from an unnamed source ('I don't know if it was you who wrote about it').",
+     "claim_ids": [
+      "MT021-C02-2"
+     ]
+    },
+    {
+     "premise": "Decades of monetary easing are hard to unwind, so even a tiny BoJ move (15 bp hike, small cut in bond purchases) can set off a large market unwind.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "The August 2024 episode.",
+     "claim_ids": [
+      "MT021-C01-1"
+     ]
+    },
+    {
+     "premise": "Active geopolitical conflicts are an additional source of sudden shocks with large unintended consequences.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "None beyond current events.",
+     "claim_ids": [
+      "MT021-C03-X1"
+     ]
+    },
+    {
+     "premise": "The volatility or unpredictability of inflation, beyond its level, may make bonds behave even worse; and after decades of stable low inflation the reaction on the way back could be more violent.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Intuition; he says it was not tested and he has no way to know.",
+     "claim_ids": [
+      "MT021-C06-3",
+      "MT021-C07-1"
+     ]
+    },
+    {
+     "premise": "Growing deficits and bond vigilantes (as in the UK) could eventually reduce the safe-asset quality of government bonds.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "UK episode; explicitly not a prediction.",
+     "claim_ids": [
+      "MT021-C08-3"
+     ]
+    },
+    {
+     "premise": "Being long gold does not reliably help in equity downturns or inflation spikes; the data are not consistent.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "'I just don't see any consistency in that argument.'",
+     "claim_ids": [
+      "MT021-C09-3"
+     ]
+    },
+    {
+     "premise": "Investors want smooth returns but pure trend cannot deliver them; adding carry smooths lean times but produces losses in a crisis, a real tradeoff.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Experience with investors' reactions to 2022 versus 2023.",
+     "claim_ids": [
+      "MT021-C13-3",
+      "MT021-C13-R1",
+      "MT021-C12-2"
+     ]
+    },
+    {
+     "premise": "In trend following 'the only truth really is price'; models size by each market's own volatility, not by the VIX.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Description of trend practice.",
+     "claim_ids": [
+      "MT021-C14-4",
+      "MT021-C14-R1"
+     ]
+    },
+    {
+     "premise": "Many VaR-based risk models force simultaneous deleveraging, amplifying selloffs; equities can fall 12% in a day with only a catalyst.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Covid and Japan one-day moves; a paper he mentions without detail.",
+     "claim_ids": [
+      "MT021-C15-1",
+      "MT021-C15-2"
+     ]
+    },
+    {
+     "premise": "A headline VIX of about 65.7 on 5 August came from a very short window of option quotes while VIX futures were far lower, so stress may have been overstated.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Academy Securities article relayed second-hand.",
+     "claim_ids": [
+      "MT021-C13-4",
+      "MT021-C14-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Quick shock versus trend: volatility-targeted sizing and speed",
+     "steps": [
+      {
+       "from": "Long equity / short yen theme tiring weeks to months before the BoJ move",
+       "to": "Some trend models flagged the change early",
+       "why": "Trend can adapt to a turning theme before the event.",
+       "claim_ids": [
+        "MT021-C03-3"
+       ]
+      },
+      {
+       "from": "Vol spike in a quick shock",
+       "to": "Position sizes in vol-targeted trend programs change even if prices revert",
+       "why": "Models pick up the higher volatility regardless of where prices end.",
+       "claim_ids": [
+        "MT021-C11-4"
+       ]
+      },
+      {
+       "from": "Short-term strategies win on days one and two",
+       "to": "They are on the wrong side if markets rebound immediately",
+       "why": "August 2024 rebound.",
+       "claim_ids": [
+        "MT021-C11-5"
+       ]
+      },
+      {
+       "from": "July precursor plus first week of August",
+       "to": "Two-stage hit to trend",
+       "why": "Reversal of the first-half pattern (strong Q1, weak Q2).",
+       "claim_ids": [
+        "MT021-C03-2",
+        "MT021-C10-4"
+       ]
+      }
+     ],
+     "evidence": "Index returns for August 2024 (BTOP50 -2.25%, SG Trend -4.36%, short-term traders +0.62%).",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT021-C05-1",
+      "MT021-C04-5"
+     ]
+    },
+    {
+     "topic": "Carry sleeves in CTAs and the smoothness tradeoff",
+     "steps": [
+      {
+       "from": "Managers want smoother returns than pure trend gives",
+       "to": "They hold 70-80% trend plus 20-30% diversifiers including carry",
+       "why": "Investors love consistency.",
+       "claim_ids": [
+        "MT021-C12-2",
+        "MT021-C13-3"
+       ]
+      },
+      {
+       "from": "Yen carry unwind",
+       "to": "A Nordic CTA's early-August losses seem linked to carry sleeves",
+       "why": "A rare test of carry within CTAs in the last 20 years; the host says he is speculating.",
+       "claim_ids": [
+        "MT021-C12-4"
+       ]
+      }
+     ],
+     "evidence": "Hedge Nordic reporting; explicitly speculative.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT021-C12-4"
+     ]
+    },
+    {
+     "topic": "Synchronised deleveraging from risk models and a mis-measured VIX",
+     "steps": [
+      {
+       "from": "Many investors use VaR-type models",
+       "to": "They must deleverage at the same time",
+       "why": "Same risk rules trigger together, amplifying the selloff.",
+       "claim_ids": [
+        "MT021-C15-1"
+       ]
+      },
+      {
+       "from": "VIX computed from a short window of option bid-ask quotes",
+       "to": "Headline VIX may overstate stress and instil panic",
+       "why": "VIX futures were far lower at the same time.",
+       "claim_ids": [
+        "MT021-C13-4",
+        "MT021-C14-3"
+       ]
+      }
+     ],
+     "evidence": "Academy Securities article; the VaR paper is mentioned without detail.",
+     "fails_when": "Not all trend followers use VaR.",
+     "claim_ids": [
+      "MT021-C15-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "sizing",
+     "practice": "Size each market by its own volatility, not the VIX, unless trading the VIX itself; price is the only input.",
+     "why": "Price is the only truth in trend models.",
+     "claim_ids": [
+      "MT021-C14-4",
+      "MT021-C14-R1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hold spare cash in short-dated paper inside the trend fund (about 80% free cash, up to a year's paper) instead of long-duration bonds.",
+     "why": "Earns the yield without the reaction-pattern risk of an outright long-duration bond buyer.",
+     "claim_ids": [
+      "MT021-C07-5",
+      "MT021-C07-3"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Use his Trend Barometer (39 in this episode, neutral to weak) as a read on current trend performance.",
+     "why": "Summarises the state of trend followers' conditions.",
+     "claim_ids": [
+      "MT021-C04-6"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Use short stress episodes as out-of-sample tests of how held or considered strategies behave in a shock.",
+     "why": "Investors can learn how strategies actually behave.",
+     "claim_ids": [
+      "MT021-C15-X6"
+     ]
+    }
+   ],
+   "evidence_style": "Industry data and manager anecdotes (index returns, Hedge Nordic, Academy Securities, Trend Barometer), conversational intuition flagged as untested.",
+   "current_views": [
+    {
+     "view": "Trend followers are in neutral-to-weak conditions; August was down for trend indices (SG Trend -4.36% for the month, +1.44% YTD) while a flat month hid the S&P's worst-then-best day in two years.",
+     "as_of": "2024-08-24 (upload date; recorded late August 2024)",
+     "reasoning": "Trend Barometer at 39; intramonth swings.",
+     "claim_ids": [
+      "MT021-C04-6",
+      "MT021-C05-1",
+      "MT021-C05-2"
+     ]
+    },
+    {
+     "view": "The industry has done reasonably well in this stress; the BoJ's small step was enough to start the unwind.",
+     "as_of": "2024-08-24 (upload date; recorded late August 2024)",
+     "reasoning": "Index losses small compared with earlier stress periods.",
+     "claim_ids": [
+      "MT021-C01-1",
+      "MT021-C15-X6"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Whether the 'VIX 65' print was a real measure of stress",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "The headline reading came from a very short window of option quotes while futures were far lower, so the stress was probably overstated; there may have been no reason to panic.",
+     "claim_ids": [
+      "MT021-C13-4",
+      "MT021-C14-3"
+     ]
+    },
+    {
+     "speaker": "Katy Kaminski",
+     "position": "She would not be surprised if it was not really 65 but the number matters anyway, since a mis-measured VIX can feed back into panic (MIT physiology work); she does not know which is the cause.",
+     "claim_ids": [
+      "MT021-C14-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "How much divergence helps investors now",
+   "positions": [
+    {
+     "speaker": "Katy Kaminski",
+     "position": "More divergence means more narratives and tactical opportunity, so active management is more interesting after 2020.",
+     "claim_ids": [
+      "MT021-C02-1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Opportunity may be hard to use because 85-90% of typical institutional portfolios are convergent strategies, implicitly short volatility.",
+     "claim_ids": [
+      "MT021-C02-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Is the early-August episode a crisis or a correction for trend followers (soft disagreement)",
+   "positions": [
+    {
+     "speaker": "Katy Kaminski",
+     "position": "A correction that reverses is not a crisis; whether it becomes one is still open, and crisis alpha is in short supply in very quick shocks.",
+     "claim_ids": [
+      "MT021-C10-3",
+      "MT021-C10-5",
+      "MT021-C11-R1"
+     ]
+    },
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "A crisis can be so quick that it counts as a correction and barely hurts trend followers, but it can still move positions through volatility sizing, and short-term strategies get caught on the rebound.",
+     "claim_ids": [
+      "MT021-C11-4",
+      "MT021-C11-5"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Katy says the 4% to 6% bond volatility and the correlation flip were estimated over decades, but gives no sample, country, or threshold for 'higher inflation'.",
+   "claim_ids": [
+    "MT021-C06-1",
+    "MT021-C06-2"
+   ]
+  },
+  {
+   "issue": "Inflation volatility as a driver of bond behaviour is proposed by the host and accepted by Katy, but the paper did not test it.",
+   "claim_ids": [
+    "MT021-C06-3",
+    "MT021-C07-X3"
+   ]
+  },
+  {
+   "issue": "The statement that faster trend models may work better again conflicts in emphasis with the statement that long-term momentum dominates because of its higher Sharpe; she does not reconcile them with data.",
+   "claim_ids": [
+    "MT021-C04-2",
+    "MT021-C04-3"
+   ]
+  },
+  {
+   "issue": "Trend-signal summary needed correction: signals were weak but still slightly long equities, not a full recession flip.",
+   "claim_ids": [
+    "MT021-C11-1"
+   ]
+  },
+  {
+   "issue": "The 85-90% convergent allocation figure and the Nordic CTA's carry link are second-hand or speculative.",
+   "claim_ids": [
+    "MT021-C02-2",
+    "MT021-C12-4"
+   ]
+  },
+  {
+   "issue": "The statement that the Covid event favoured pure, faster trend and hurt carry is asserted from her earlier study without numbers; August 2024 index returns show trend indices also lost.",
+   "claim_ids": [
+    "MT021-C12-5",
+    "MT021-C05-1"
+   ]
+  },
+  {
+   "issue": "Gold: Katy says gold helps 'on average' in recessions or inflation with timing off; the host says there is no consistency; neither gives data.",
+   "claim_ids": [
+    "MT021-C10-1",
+    "MT021-C09-3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs they treat as leading prices: the inflation regime (level, and possibly its volatility) for the sign of the stock-bond correlation and bond volatility; divergence of central bank policy (BoJ hikes versus Fed cuts) for yen carry and equity shock risk; trend signal mix (equity versus bond and commodity direction) as a read on recession-type positioning; the speed of the market move (days versus weeks to months) for whether trend can earn crisis alpha; crowding in carry and Japan-related positions. Horizons are weeks to months for crisis alpha and trend, years for the inflation-bond relationship.",
+ "reader_inferences": [
+  "(reader) Kaminski's framework gives one switch for bond hedging, the inflation regime, but no threshold or lead time; usable only with an external inflation-regime definition.",
+  "(reader) Both speakers treat convergent (carry, short-volatility-like) exposure as the main tail risk in the August 2024 event, but neither shows that carry exposure predicted the size of the unwind.",
+  "(reader) The crisis alpha argument implies a testable horizon condition: trend gains should show up only when equity drawdowns last weeks to months, and be absent for sub-week reversals.",
+  "(reader) Niels's remark that vol-targeting changes positions even when prices revert implies trend books de-risk after volatility spikes, which can lag a rebound."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT021-C05-R1",
+   "chunk": "C05",
+   "speaker": "Katy Kaminski",
+   "quote": "we're looking at the FED starting to cut rates and the markets are trying to digest you know are we going to see a correction or not",
+   "claim": "Markets are at an inflection point as the Fed starts cutting and investors try to judge whether a correction is coming.",
+   "mechanism": "policy_reaction",
+   "asset_class": "multi",
+   "indicator": "Fed rate path",
+   "horizon": "weeks",
+   "direction": "uncertain",
+   "conditions": "Fed easing, uncertain election and geopolitics",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT021-C11-R1",
+   "chunk": "C11",
+   "speaker": "Katy Kaminski",
+   "quote": "the question will be does this correction eventually turn into an actual crisis or was this just noise",
+   "claim": "Whether the August 2024 correction becomes a sustained crisis, in which trend would profit, or proves to be noise is the open question.",
+   "mechanism": "crisis_alpha",
+   "asset_class": "multi",
+   "indicator": "trend positioning shift",
+   "horizon": "months",
+   "direction": "uncertain",
+   "conditions": "trend signals pivoting toward a recession-type profile",
+   "testable": "yes - later drawdown length and trend returns",
+   "speaker_confidence": "low",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT021-C12-R1",
+   "chunk": "C12",
+   "speaker": "Katy Kaminski",
+   "quote": "certainly in the trend world we know nothing about the future",
+   "claim": "Trend followers claim no forecasting knowledge; they adapt to what unfolds, and no one knows the coming macro environment.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "n/a",
+   "direction": "n/a",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT021-C13-R1",
+   "chunk": "C13",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "people love Trend in 2022 when everything is roaring but then they really don't like it in 20123 when it's giving back some of those profits",
+   "claim": "Investors love trend when it earns (2022) and dislike it when it gives back profits (2023), which pushes managers toward smoother blends with carry.",
+   "mechanism": "investor_behaviour",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "years",
+   "direction": "n/a",
+   "conditions": "",
+   "testable": "partly - fund flows versus trend returns",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT021-C14-R1",
+   "chunk": "C14",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "the only truth really is price and that's what we use in our models",
+   "claim": "Trend models rely on price alone as the only truth.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "price",
+   "horizon": "n/a",
+   "direction": "n/a",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

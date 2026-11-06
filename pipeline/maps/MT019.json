@@ -1,0 +1,957 @@
+{
+ "source_id": "MT019",
+ "episode_thesis": "Richard Brennan argues that backtests overfit through hindsight selection and fitting to a known sequence of events and so cannot predict returns, and that only a walk-forward test on untouched out-of-sample data gives realistic drawdown (35-40% rather than 5-10%), CAGR and volatility benchmarks. He also argues that trends and mean reversion arise from collective trader impact (divergent versus convergent feedback forces) rather than from human behavioural bias, so AI agents will not end them, and that for 'outlier hunter' ensemble trend programs trade-return correlations, not price correlations, decide whether correlated markets diversify. Niels Kaastrup-Larsen adds that vol-scaled trend followers keep resizing after a volatility spike (so sell-side forced-selling estimates mislead), that convergence and systematic-macro strategies are what break in turbulence while sensible rule-based trend does not, and that the early-August 2024 shock was short and quickly reversed.",
+ "speakers": [
+  {
+   "name": "Richard Brennan",
+   "role": "Guest co-host; Australia-based systematic trend-following manager and researcher; self-described 'outlier hunter' using ensembles of trend models",
+   "speaker_note": "Ledger spelling 'Richard Brennan' kept (captions give 'Richard Bren'/'Rich'). Captions carry no speaker labels; attribution is by content (Australia, 'our models', backtest vs walk-forward lecture, outlier hunter, I wasn't selling cocoa). Correction applied: the cocoa example of trend followers selling 80-90% of notional (MT019-C13-1) is Niels's; Brennan answers afterwards (C13-4). In C13, 'exogenous Africa supply news started the run, endogenous flows accelerated it' and 'large holders selling in April' are Brennan's.",
+   "fingerprint": [
+    "trend_following",
+    "research_robustness_overfitting",
+    "regime_detection",
+    "liquidity_flows",
+    "behavioral_sentiment",
+    "portfolio_construction_stacking",
+    "diversification_risk_parity",
+    "crisis_alpha_convexity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Backtests always overfit; they should be used for sensitivity tests across simulated regimes but never to predict future expected returns.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Comparison of backtest versus walk-forward results in his current research phase; argument from hindsight.",
+     "claim_ids": [
+      "MT019-C06-1",
+      "MT019-C06-3",
+      "MT019-C06-2"
+     ]
+    },
+    {
+     "premise": "Choosing the best of several parameter streams after the fact is a hindsight selection bias that cannot occur in live trading, and a backtest also overfits to noise and to a known sequence of events that the future will not repeat.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Worked example with ten parameter settings over twenty years; 'we never have the road map'.",
+     "claim_ids": [
+      "MT019-C06-4",
+      "MT019-C07-1",
+      "MT019-C07-2"
+     ]
+    },
+    {
+     "premise": "Out-of-sample data, once used for development, is tainted; touching it to select or change models contaminates the test and results are far more sensitive to overfitting than people realise.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Experience with in-sample/out-of-sample workflow; criticism of data-mining packages.",
+     "claim_ids": [
+      "MT019-C07-4",
+      "MT019-C10-1",
+      "MT019-C10-2"
+     ]
+    },
+    {
+     "premise": "A realistic out-of-sample equity curve resembles other managers' live track records, and its drawdown is much bigger (35-40%) than the backtest's (5-10%).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His own comparison (1970-2000 in-sample, 2000-2024 out-of-sample); 'trust me it is much bigger'. No dataset or specification given.",
+     "claim_ids": [
+      "MT019-C07-5",
+      "MT019-C08-2",
+      "MT019-C09-1"
+     ]
+    },
+    {
+     "premise": "Trend following depends on regime: in unfavourable regimes expect stagnation and drawdowns, so a volatile equity curve is normal and a straight line should not be expected; mean reversion modellers can expect no out-of-sample decay but trend followers cannot.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Trends arrive irregularly; contrast with mean-reversion testing practice.",
+     "claim_ids": [
+      "MT019-C08-1",
+      "MT019-C09-2"
+     ]
+    },
+    {
+     "premise": "Trend followers' weak point is psychology, not the models: overriding rules causes errors, so discipline and patience are required.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Plane-turbulence analogy and years of discussion on the podcast.",
+     "claim_ids": [
+      "MT019-C03-3"
+     ]
+    },
+    {
+     "premise": "Medium- to long-term trend following is more robust and has performed better than shorter-term trend following.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "'All the data that I've seen' (not cited).",
+     "claim_ids": [
+      "MT019-C03-4"
+     ]
+    },
+    {
+     "premise": "Trends exist in any complex adaptive system, so human behavioural bias (prospect theory) is a symptom rather than the root cause; trends and mean reversion come from trader impact, the pressure of orders that must be matched.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "First-principles, physics-style argument; fundamentals and behaviour are 'derivative reasons'.",
+     "claim_ids": [
+      "MT019-C10-3",
+      "MT019-C10-4",
+      "MT019-C13-R1"
+     ]
+    },
+    {
+     "premise": "Price impact is nonlinear (square-root law, Bouchaud), and groups of traders (trend followers, mean reverters, fundamental investors, HFT) exert collective forces whose combination moves price.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Bouchaud microstructure research cited.",
+     "claim_ids": [
+      "MT019-C11-1",
+      "MT019-C11-2"
+     ]
+    },
+    {
+     "premise": "Markets are nonstationary: the mix of participant groups changes as traders enter and leave, so the balance of divergent (positive-feedback) and convergent (negative-feedback) pressure shifts.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reference to Andrew Lo's adaptive markets hypothesis.",
+     "claim_ids": [
+      "MT019-C11-3",
+      "MT019-C11-4"
+     ]
+    },
+    {
+     "premise": "Market structure falls into three states: divergent wins (trend), convergent wins (mean reversion), or noise when neither wins and there is no directional move.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Conceptual framework.",
+     "claim_ids": [
+      "MT019-C12-1"
+     ]
+    },
+    {
+     "premise": "In strong trends participants switch style to join them, amplifying the signal; so too many trend followers make trends more extreme, not extinct, while enough mean reverters can dissipate their own edge and the trend's.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Feedback-loop reasoning; no data.",
+     "claim_ids": [
+      "MT019-C12-2",
+      "MT019-C12-3",
+      "MT019-C12-4"
+     ]
+    },
+    {
+     "premise": "AI agents also exert impact, so trends and mean reversion will persist and AI will not remove them.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Extension of the agent-based, trader-impact view.",
+     "claim_ids": [
+      "MT019-C14-1"
+     ]
+    },
+    {
+     "premise": "Outliers are volatile and need an ensemble of models to extract; tiny differences in initial price paths (butterfly effect) produce widely dispersed trade results, so highly price-correlated markets can still have uncorrelated strategy returns.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Brent versus WTI example with his own ensemble; nonlinear-mechanics analogy.",
+     "claim_ids": [
+      "MT019-C14-2",
+      "MT019-C14-3",
+      "MT019-C14-4",
+      "MT019-C14-5",
+      "MT019-C15-1",
+      "MT019-C15-2"
+     ]
+    },
+    {
+     "premise": "Publicly shown backtests (for example on Twitter) are beautiful equity curves; the industry should demand realism, since one never sees a bad backtest.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Observation of social media and of a guest's remark that you never see a bad backtest.",
+     "claim_ids": [
+      "MT019-C08-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why backtests mislead and what walk-forward testing fixes",
+     "steps": [
+      {
+       "from": "Full history laid out in hindsight",
+       "to": "Selection among parameter streams and overfitting to noise and event order",
+       "why": "The tester can pick the best stream and fit the known path; live trading has no such option.",
+       "claim_ids": [
+        "MT019-C06-2",
+        "MT019-C06-4",
+        "MT019-C07-2"
+       ]
+      },
+      {
+       "from": "Selected, overfit backtest",
+       "to": "Upward-biased forward expectation and an unrealistically small drawdown",
+       "why": "Hindsight selection bias.",
+       "claim_ids": [
+        "MT019-C07-1",
+        "MT019-C08-2"
+       ]
+      },
+      {
+       "from": "Develop on 1970-2000 only, then run untouched on 2000-2024",
+       "to": "Benchmarks for drawdown, CAGR and volatility that resemble live track records",
+       "why": "Out-of-sample data simulates the right-hand side of the chart.",
+       "claim_ids": [
+        "MT019-C07-3",
+        "MT019-C07-5"
+       ]
+      },
+      {
+       "from": "Touching out-of-sample data to select or change models",
+       "to": "Contamination and overfitting return",
+       "why": "Tainted data cannot be reused.",
+       "claim_ids": [
+        "MT019-C10-1",
+        "MT019-C07-4"
+       ]
+      }
+     ],
+     "evidence": "His own comparisons of backtest, out-of-sample and adaptive curves; figures (35-40% vs 5-10% drawdown) given without dataset or rules.",
+     "fails_when": "Out-of-sample data is reused for selection; also for trend followers one cannot expect no out-of-sample deterioration the way mean-reversion modellers do (regime dependence).",
+     "claim_ids": [
+      "MT019-C06-1",
+      "MT019-C09-1",
+      "MT019-C09-2",
+      "MT019-C08-4"
+     ]
+    },
+    {
+     "topic": "Trader impact, divergent versus convergent forces and why trends persist",
+     "steps": [
+      {
+       "from": "Buyers and sellers must be matched",
+       "to": "Price moves through order pressure, scaling with size by a square-root law",
+       "why": "Mechanistic view of price formation.",
+       "claim_ids": [
+        "MT019-C10-4",
+        "MT019-C11-1"
+       ]
+      },
+      {
+       "from": "Groups of traders with the same model",
+       "to": "Collective force that amplifies (divergent, positive feedback) or dissipates (convergent, negative feedback) trends",
+       "why": "Aggregation of impacts across styles.",
+       "claim_ids": [
+        "MT019-C11-2",
+        "MT019-C11-4"
+       ]
+      },
+      {
+       "from": "A strong trend gets going",
+       "to": "Mean reverters and others switch to trend, amplifying it",
+       "why": "Fear of missing out; style switching.",
+       "claim_ids": [
+        "MT019-C12-2",
+        "MT019-C12-3"
+       ]
+      },
+      {
+       "from": "Enough mean reverters oppose a trend",
+       "to": "Trend signal dissipates and a reversion to equilibrium follows",
+       "why": "Convergence signals fight the prior trend.",
+       "claim_ids": [
+        "MT019-C12-4"
+       ]
+      },
+      {
+       "from": "Neither side dominates",
+       "to": "Noise with no directional move",
+       "why": "Third market structure.",
+       "claim_ids": [
+        "MT019-C12-1"
+       ]
+      }
+     ],
+     "evidence": "Microstructure literature (Bouchaud), Lo's adaptive markets, and the 2024 cocoa run as an illustration; no test of the divergent/convergent mix.",
+     "fails_when": "Not stated; he treats the mix as nonstationary rather than breaking.",
+     "claim_ids": [
+      "MT019-C11-3",
+      "MT019-C13-4",
+      "MT019-C14-1"
+     ]
+    },
+    {
+     "topic": "Cocoa 2024 as an example of endogenous flows",
+     "steps": [
+      {
+       "from": "Supply news in Africa",
+       "to": "Start of the cocoa run",
+       "why": "Exogenous trigger.",
+       "claim_ids": [
+        "MT019-C13-4"
+       ]
+      },
+      {
+       "from": "Participants jumping on the bandwagon, global macro funds buying in March while dynamic-sizing trend followers sold",
+       "to": "Acceleration of the trend and a higher price",
+       "why": "Endogenous flow of participants.",
+       "claim_ids": [
+        "MT019-C13-2",
+        "MT019-C13-4"
+       ]
+      },
+      {
+       "from": "Large holders selling in April",
+       "to": "Roughly 40% correction",
+       "why": "Change in trader impact.",
+       "claim_ids": [
+        "MT019-C13-4",
+        "MT019-C13-2"
+       ]
+      }
+     ],
+     "evidence": "Press reports and Brennan's recollection ('I can't remember the exact month'); Bouchaud's endogenous-over-exogenous conclusion is the host's gloss.",
+     "fails_when": "Not stated; Brennan notes the explanation is more intuitive than fundamental analysis, which is 'very complex and no guarantee'.",
+     "claim_ids": [
+      "MT019-C13-3",
+      "MT019-C13-R1"
+     ]
+    },
+    {
+     "topic": "Outlier hunting with ensembles: why correlated markets diversify",
+     "steps": [
+      {
+       "from": "Outlier (anomaly) with nonlinear, volatile price path",
+       "to": "A single trend model is snagged by volatility and misses the move",
+       "why": "Needs many models to maximise extraction.",
+       "claim_ids": [
+        "MT019-C15-1"
+       ]
+      },
+      {
+       "from": "Tiny differences in initial price paths",
+       "to": "Widely dispersed trade results in nonlinear territory",
+       "why": "Butterfly effect; trade correlation, not price correlation, matters.",
+       "claim_ids": [
+        "MT019-C14-5",
+        "MT019-C15-2",
+        "MT019-C14-3"
+       ]
+      },
+      {
+       "from": "Same ensemble on Brent and WTI",
+       "to": "Quite uncorrelated return streams despite highly correlated prices",
+       "why": "Small variations alter return profiles.",
+       "claim_ids": [
+        "MT019-C14-4"
+       ]
+      },
+      {
+       "from": "Strong outlier trend",
+       "to": "Hold and pyramid with more models, accept big give-back at the turn",
+       "why": "Outlier hunter's payoff structure.",
+       "claim_ids": [
+        "MT019-C15-3"
+       ]
+      }
+     ],
+     "evidence": "His own test of an ensemble on Brent and crude (no numbers) and the 2024 cocoa episode.",
+     "fails_when": "Not stated; he says the conventional wisdom is right for nearly all other models.",
+     "claim_ids": [
+      "MT019-C14-2",
+      "MT019-C15-3"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Develop and test models on in-sample data only (e.g. 1970-2000, multi-market over 30 years and about 100 markets); run the frozen models once on out-of-sample data (2000-2024) and never touch it afterwards.",
+     "why": "In-sample needs a lot of data for robustness; out-of-sample is the crucible for the whole process.",
+     "claim_ids": [
+      "MT019-C07-3",
+      "MT019-C09-4",
+      "MT019-C10-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Compare three curves: the backtest ('pink unicorn'), the out-of-sample curve, and an adaptive workflow that periodically re-estimates in-sample and walks forward; set drawdown, CAGR and volatility expectations from the out-of-sample curve.",
+     "why": "Realistic benchmark; the backtest is always best and unrealistic.",
+     "claim_ids": [
+      "MT019-C08-4",
+      "MT019-C09-1",
+      "MT019-C08-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Use backtests only for sensitivity tests across simulated regimes, not for expected-return forecasts; avoid data-mining packages that overfit and then try to remove it.",
+     "why": "Backtests are always overfit.",
+     "claim_ids": [
+      "MT019-C06-3",
+      "MT019-C10-2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Prefer medium- to long-term trend following and treat short-term trading as different from trend following.",
+     "why": "Data he has seen suggest more robust and better performance.",
+     "claim_ids": [
+      "MT019-C03-4"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Run an ensemble of trend models per market for outliers; hold and pyramid with more systems getting in as the trend persists.",
+     "why": "A single system is snagged out by outlier volatility; ensemble maximises extraction.",
+     "claim_ids": [
+      "MT019-C15-1",
+      "MT019-C15-3"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Trade highly price-correlated markets (Brent and WTI) together when the ensemble's trade returns are uncorrelated.",
+     "why": "Trade correlation, not price correlation, determines diversification for outlier hunters.",
+     "claim_ids": [
+      "MT019-C14-2",
+      "MT019-C14-3",
+      "MT019-C14-4"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Does not resize positions down with rising volatility after entry (cocoa 2024: held and added); accepts the big give-back when the trend turns.",
+     "why": "Outlier hunters stay with the trend; selling would miss the extreme move.",
+     "claim_ids": [
+      "MT019-C15-3",
+      "MT019-C02-X1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Follow the rules, with discipline and patience; do not override models under stress.",
+     "why": "Psychology is the weak point.",
+     "claim_ids": [
+      "MT019-C03-3"
+     ]
+    }
+   ],
+   "evidence_style": "Argument from first principles and analogy (hindsight, physics of price impact, butterfly effect), and his own in-house walk-forward and ensemble tests reported without data; cites academic ideas (Bouchaud, Lo) and anecdotes such as cocoa.",
+   "current_views": [
+    {
+     "view": "The early-August 2024 volatility shock was a short, sharp event that reversed quickly; trend models adapt fast and would have been well placed in a prolonged downtrend.",
+     "as_of": "late August 2024 (recording; upload 2024-08-28)",
+     "reasoning": "Trend followers were hit by the yen, Nikkei and Nasdaq early on but trends resumed.",
+     "claim_ids": [
+      "MT019-C01-1",
+      "MT019-C01-2"
+     ]
+    },
+    {
+     "view": "The August losses came from the Nikkei, yen and equity indexes; equity indexes recovered within the month while the yen and Nikkei stayed down, and commodities kept trending well.",
+     "as_of": "late August 2024 (recording; upload 2024-08-28)",
+     "reasoning": "His own book.",
+     "claim_ids": [
+      "MT019-C04-X1"
+     ]
+    },
+    {
+     "view": "Monthly statistics hide intra-month volatility, so a month with a violent shock can look benign in the records.",
+     "as_of": "late August 2024 (recording; upload 2024-08-28)",
+     "reasoning": "Industry data is collected monthly.",
+     "claim_ids": [
+      "MT019-C04-4"
+     ]
+    },
+    {
+     "view": "AI will not end trends or mean reversion; they are here to stay.",
+     "as_of": "late August 2024 (recording; upload 2024-08-28)",
+     "reasoning": "AI agents are traders whose orders exert impact.",
+     "claim_ids": [
+      "MT019-C14-1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Niels Kaastrup-Larsen",
+   "role": "Host of Top Traders Unplugged; veteran hedge fund manager; creator of the Trend Barometer",
+   "speaker_note": "Mostly host, but states views on volatility-scaled trend sizing, what breaks in turbulence, carry in trend programs and sell-side flow estimates, so mapped. Correction applied: MT019-C13-1 (cocoa selling of 80-90% of notional) is his, not Brennan's. Correction applied to MT019-C05-3: SG CTA is +2.1% YTD (he caught his own slip), short-term traders +0.61% both month and year-to-date.",
+   "fingerprint": [
+    "trend_following",
+    "position_sizing_vol_target",
+    "positioning_crowding",
+    "manager_selection_allocation",
+    "replication_indexing",
+    "volatility_options",
+    "research_robustness_overfitting",
+    "costs_execution"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Vol-scaled trend followers become more defensive after a quick volatile event and keep selling after volatility rises even if prices recover, so a bounce does not mean a symmetric re-buy.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "How volatility-targeted sizing works; 'some of us' resize, 'you don't'.",
+     "claim_ids": [
+      "MT019-C02-1",
+      "MT019-C02-3",
+      "MT019-C02-X1"
+     ]
+    },
+    {
+     "premise": "Sell-side estimates of forced CTA equity selling (about $170B) are misleading because they ignore ongoing volatility-driven sizing and do not imply CTAs simply buy everything back.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Reasoning from vol-targeted sizing; no data.",
+     "claim_ids": [
+      "MT019-C02-2"
+     ]
+    },
+    {
+     "premise": "No market event breaks a rule-based trend system with sensible, tested (not AI-optimised) rules; drawdowns are painful but do not break the models, while convergence strategies and systematic macro tend to break in turbulence.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Decades of trend history; the airplane-turbulence analogy (damage is inside, not structural).",
+     "claim_ids": [
+      "MT019-C02-4",
+      "MT019-C02-5",
+      "MT019-C03-1"
+     ]
+    },
+    {
+     "premise": "Investor pressure for smoother returns pushes trend programs to add non-trend models such as carry, which dilutes the pure trend profile and may explain dispersion between managers.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Observation of the industry; he expects August dispersion to show it.",
+     "claim_ids": [
+      "MT019-C03-2"
+     ]
+    },
+    {
+     "premise": "Volatility dampening and research that lowers drawdown are acceptable only if they do not change the long-term return profile or cause style drift; otherwise they just lower expectations.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Aircraft-stabiliser analogy (stay on course).",
+     "claim_ids": [
+      "MT019-C03-5",
+      "MT019-C04-1"
+     ]
+    },
+    {
+     "premise": "True diversification into commodities matters: managers concentrated in financials (to hold large AUM) suffered more in August.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Cross-manager observation in the month.",
+     "claim_ids": [
+      "MT019-C04-3",
+      "MT019-C04-2"
+     ]
+    },
+    {
+     "premise": "Endogenous flows explain big moves more than exogenous news (Bouchaud), which fits the 2024 cocoa run in which global macro funds bought while dynamic-sizing trend followers sold.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Bouchaud's conclusion as the host recalls it; cocoa episode.",
+     "claim_ids": [
+      "MT019-C13-1",
+      "MT019-C13-2",
+      "MT019-C13-3"
+     ]
+    },
+    {
+     "premise": "Social-media backtests are unlikely to reproduce; big managers use some walk-forward process.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Industry knowledge; not documented.",
+     "claim_ids": [
+      "MT019-C09-3",
+      "MT019-C10-R1"
+     ]
+    },
+    {
+     "premise": "Not all managers use VaR-style volatility-sensitive risk models, so the market is not forced into synchronised selling.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "'A lot of people do but not everyone.'",
+     "claim_ids": [
+      "MT019-C15-4"
+     ]
+    },
+    {
+     "premise": "Third-party indicators and data feeds can silently stop updating, so systematic users who rely on them face data-reliability risk.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His Trend Barometer app stopped updating for a week.",
+     "claim_ids": [
+      "MT019-C05-X1"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Quick vol spike and vol-scaled trend positioning",
+     "steps": [
+      {
+       "from": "Volatility rises in a short sharp event",
+       "to": "Vol-scaled trend followers reduce exposure",
+       "why": "Position sizes are tied to volatility.",
+       "claim_ids": [
+        "MT019-C02-3",
+        "MT019-C02-1"
+       ]
+      },
+      {
+       "from": "Prices rebound but volatility stays higher",
+       "to": "CTAs may keep selling instead of buying back everything",
+       "why": "Sell-side forced-selling estimates ignore this.",
+       "claim_ids": [
+        "MT019-C02-2"
+       ]
+      },
+      {
+       "from": "Trend followers split into those who resize continuously and those who hold size fixed after entry",
+       "to": "Their flows and results differ in shocks",
+       "why": "Different position management.",
+       "claim_ids": [
+        "MT019-C02-X1"
+       ]
+      },
+      {
+       "from": "The shock was quick",
+       "to": "The next shock may hurt less because positioning is more defensive",
+       "why": "Positions already reduced.",
+       "claim_ids": [
+        "MT019-C02-1"
+       ]
+      }
+     ],
+     "evidence": "Reasoning from sizing mechanics plus the August 2024 numbers read out (SG Trend -3.55%, short-term traders +0.61%); no flow data.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT019-C05-3",
+      "MT019-C04-2"
+     ]
+    },
+    {
+     "topic": "Pressure for smoothness dilutes trend into non-trend models",
+     "steps": [
+      {
+       "from": "Investor pressure for return when there are no trends and for smoother returns",
+       "to": "Managers add carry and other non-trend models",
+       "why": "Wants a little extra return when trends are scarce.",
+       "claim_ids": [
+        "MT019-C03-2"
+       ]
+      },
+      {
+       "from": "Non-trend models in the program",
+       "to": "Different performance in a turbulent month; dispersion between managers",
+       "why": "Pure trend vs diluted profile.",
+       "claim_ids": [
+        "MT019-C03-2"
+       ]
+      }
+     ],
+     "evidence": "Speculative; to be seen in end-of-month dispersion.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT019-C03-2"
+     ]
+    },
+    {
+     "topic": "VIX print versus futures and the speed of recovery",
+     "steps": [
+      {
+       "from": "VIX cash spike to about 65 that futures did not match",
+       "to": "A short-lived volatility spike that subsided quickly",
+       "why": "Like a fast news cycle.",
+       "claim_ids": [
+        "MT019-C05-1"
+       ]
+      },
+      {
+       "from": "Quick return to low-vol conditions",
+       "to": "Trend Barometer (short timeframe) recovers to 61",
+       "why": "Shorter-term signals recover quickly.",
+       "claim_ids": [
+        "MT019-C05-2"
+       ]
+      }
+     ],
+     "evidence": "Blog post he read; barometer reading.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT019-C05-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "sizing",
+     "practice": "Vol-scaled trend sizing: resize continuously with volatility rather than hold size fixed after entry.",
+     "why": "Keeps risk constant; after a vol rise exposure falls even if prices recover.",
+     "claim_ids": [
+      "MT019-C02-3",
+      "MT019-C02-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Accept risk-reducing research (vol adjustment, lower drawdown) only if it leaves the long-term return profile and style unchanged.",
+     "why": "Otherwise it just lowers expectations or causes style drift.",
+     "claim_ids": [
+      "MT019-C04-1",
+      "MT019-C03-5"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Be truly diversified across sectors, including commodities, rather than concentrated in financials.",
+     "why": "Concentrated programs suffered more in August 2024.",
+     "claim_ids": [
+      "MT019-C04-3"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Monitor trend through his Trend Barometer (61 late August) and track industry indices (Beta 50, SG CTA, SG Trend, short-term traders) against equities and bonds.",
+     "why": "Read on state and dispersion across managers.",
+     "claim_ids": [
+      "MT019-C05-2",
+      "MT019-C05-3",
+      "MT019-C05-4"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Keep sensible, tested rules and avoid AI-optimised tweaks.",
+     "why": "Rule-based trend with sensible rules does not break in turbulence.",
+     "claim_ids": [
+      "MT019-C02-5"
+     ]
+    }
+   ],
+   "evidence_style": "Industry data read out weekly (indices, barometer), analogies (airplane turbulence), and long experience with trend managers; flags several views as untested.",
+   "current_views": [
+    {
+     "view": "August 2024 was a roller coaster: equities were the hardest sector for trend followers, currencies (yen) difficult, fixed income divided, while sugar, coffee and grains trended well.",
+     "as_of": "late August 2024 (recording; upload 2024-08-28)",
+     "reasoning": "Observations from the month so far.",
+     "claim_ids": [
+      "MT019-C04-2"
+     ]
+    },
+    {
+     "view": "The industry had not recovered as strongly as the managers he knows: Beta 50 -1.7% (+3.4% YTD), SG CTA -2.6% (+2.1% YTD), SG Trend -3.55% (+2.3% YTD), short-term traders +0.61%, against MSCI World +1% and S&P 500 TR +17.8% YTD.",
+     "as_of": "late August 2024 (recording; upload 2024-08-28)",
+     "reasoning": "Index numbers read out.",
+     "claim_ids": [
+      "MT019-C05-3",
+      "MT019-C05-4"
+     ]
+    },
+    {
+     "view": "The calm may be the quiet before the storm when it really gets hairy; the quick volatile event is lucky because it leaves trend followers more defensive.",
+     "as_of": "late August 2024 (recording; upload 2024-08-28)",
+     "reasoning": "Little has changed across markets over a few weeks.",
+     "claim_ids": [
+      "MT019-C02-R1",
+      "MT019-C02-1"
+     ]
+    },
+    {
+     "view": "Convergence and systematic-macro strategies are the ones likely to break in turbulence, not trend following.",
+     "as_of": "late August 2024 (recording; upload 2024-08-28)",
+     "reasoning": "Structure of those strategies.",
+     "claim_ids": [
+      "MT019-C03-1",
+      "MT019-C02-5"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Resizing positions when volatility rises (cocoa 2024)",
+   "positions": [
+    {
+     "speaker": "Niels Kaastrup-Larsen",
+     "position": "Vol-scaled trend followers cut exposure as volatility rose (selling roughly 80-90% of notional in cocoa from January to April/May) and keep selling after a vol spike even if prices recover.",
+     "claim_ids": [
+      "MT019-C13-1",
+      "MT019-C02-3",
+      "MT019-C02-X1"
+     ]
+    },
+    {
+     "speaker": "Richard Brennan",
+     "position": "An outlier hunter does not resize down: he held cocoa and pyramided with more systems, accepting a big slap when the trend turned.",
+     "claim_ids": [
+      "MT019-C15-3",
+      "MT019-C15-1"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Why trends exist: behavioural bias versus trader impact",
+   "positions": [
+    {
+     "speaker": "Richard Brennan",
+     "position": "Behavioural bias (prospect theory) and fundamentals are symptoms; the root cause is trader impact and collective order flow, which AI agents will also exert.",
+     "claim_ids": [
+      "MT019-C10-3",
+      "MT019-C10-4",
+      "MT019-C14-1"
+     ]
+    },
+    {
+     "speaker": "Conventional view as characterised by Brennan",
+     "position": "Trends come from behavioural bias (fear and greed) and from fundamental drivers; AI might make markets efficient enough to end trends.",
+     "claim_ids": [
+      "MT019-C10-3"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Whether highly price-correlated markets add diversification",
+   "positions": [
+    {
+     "speaker": "Richard Brennan",
+     "position": "True for nearly all models, but not for outlier hunters using ensembles, where trade-return correlation matters and Brent versus WTI returns are quite uncorrelated.",
+     "claim_ids": [
+      "MT019-C14-2",
+      "MT019-C14-3",
+      "MT019-C14-4"
+     ]
+    },
+    {
+     "speaker": "Conventional view as characterised by Brennan",
+     "position": "Pick one of two highly correlated markets because diversification benefits dissipate after a certain number of markets.",
+     "claim_ids": [
+      "MT019-C14-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "The 35-40% out-of-sample versus 5-10% backtest drawdown comparison is asserted without dataset, rules, markets or sample size; the same-period live comparison with other managers is described, not shown.",
+   "claim_ids": [
+    "MT019-C08-2",
+    "MT019-C07-5"
+   ]
+  },
+  {
+   "issue": "Brennan says out-of-sample results are 'close to live track records of other managers', but also that out-of-sample data cannot be reused for selection; he does not say what happens to the first-use out-of-sample result once it is used to judge a program.",
+   "claim_ids": [
+    "MT019-C07-5",
+    "MT019-C07-4",
+    "MT019-C10-1"
+   ]
+  },
+  {
+   "issue": "Brennan's rule against hindsight selection conflicts with the practice of choosing his own program's rules after years of live experience; he does not address how the 2000-2024 period stays untouched when his own knowledge of it is in his design.",
+   "claim_ids": [
+    "MT019-C07-3",
+    "MT019-C10-2"
+   ]
+  },
+  {
+   "issue": "The ensemble/outlier-hunter claims (Brent versus WTI, 20 models) rest on his own test with no numbers; the butterfly-effect link is an analogy, not a test.",
+   "claim_ids": [
+    "MT019-C14-4",
+    "MT019-C14-5",
+    "MT019-C15-2"
+   ]
+  },
+  {
+   "issue": "Cocoa: Niels's 80-90% selling claim is generalised ('trend followers generally speaking'), not measured; Brennan cannot remember the month the run turned.",
+   "claim_ids": [
+    "MT019-C13-1",
+    "MT019-C13-4"
+   ]
+  },
+  {
+   "issue": "Corrections applied: cocoa example speaker (Niels), and the August index numbers (SG CTA +2.1% YTD, short-term traders +0.61% YTD).",
+   "claim_ids": [
+    "MT019-C13-1",
+    "MT019-C05-3"
+   ]
+  },
+  {
+   "issue": "Niels says convergence strategies and systematic macro 'break' in turbulence, but also that some trend programs hold carry; the breaking claim is asserted from structure, not evidence.",
+   "claim_ids": [
+    "MT019-C03-1",
+    "MT019-C03-2"
+   ]
+  },
+  {
+   "issue": "Brennan asserts medium- to long-term trend following has performed better than shorter-term, but cites no data and says short-term trading is not trend following.",
+   "claim_ids": [
+    "MT019-C03-4"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) The speakers claim no forward-looking input for prices: Brennan's thesis is that backtests cannot predict the future, so expectations should come from out-of-sample drawdown, CAGR and volatility benchmarks, with regime (favourable or unfavourable for trend) as the driver. Niels reads the Trend Barometer (short timeframe), index dispersion and model speed as state indicators, and expects volatility to stay higher after a spike, keeping vol-scaled trend followers defensive. The trader-impact framework implies watching the mix of divergent and convergent participants, but no observable proxy is named.",
+ "reader_inferences": [
+  "(reader) Brennan's framework suggests a test: trend returns should be higher when order-flow concentration (many participants flipping to trend) is high; no measurable proxy is proposed in the episode.",
+  "(reader) The disagreement over resizing volatility (Niels resizes, Brennan holds and pyramids) implies a testable difference in outlier-period performance: constant-risk sizing should lag in extreme trends and lose less at reversals.",
+  "(reader) Walk-forward testing as described is a single split; it is sensitive to the choice of split date (2000), which the speaker does not discuss."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT019-C02-R1",
+   "chunk": "C02",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "this could be quiet before the storm when it really gets hairy",
+   "claim": "Little has changed in most markets over a few weeks, so the calm could be the quiet before a harder stress.",
+   "mechanism": "regime_risk",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "weeks",
+   "direction": "n/a",
+   "conditions": "after a quick volatile event",
+   "testable": "no",
+   "speaker_confidence": "low",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT019-C10-R1",
+   "chunk": "C10",
+   "speaker": "Niels Kaastrup-Larsen",
+   "quote": "they'll make you pay for having something that gives you complete over optimized and overfitted result and then the next module you have to pay for is the one that takes it all out again",
+   "claim": "Data-mining software vendors may sell an overfitting module and then a second module to remove the overfit.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "n/a",
+   "direction": "n/a",
+   "conditions": "joking aside about vendors",
+   "testable": "no",
+   "speaker_confidence": "low",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT019-C13-R1",
+   "chunk": "C13",
+   "speaker": "Richard Brennan",
+   "quote": "rather than having to worry about all the details of knowing your fundamental analysis and all of these things which is very complex and there's no guarantee that is actually causing that result",
+   "claim": "Trader-impact explanations are more intuitive than fundamental analysis, which is complex and gives no guarantee that a given fundamental is what is causing the move.",
+   "mechanism": "price_formation",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "n/a",
+   "direction": "n/a",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "medium",
+   "time_bound": "no"
+  }
+ ]
+}
