@@ -66,6 +66,10 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Layer 0 DONE 2026-11-04: all 227 Macro Transcripts -> 12,597 claims (quotes script-checked), cross-checked (Opus high 95+5 pilot, Sonnet xhigh 127; list opus_cross_ids.txt). Branch macro-vault (ledger/, raw/, build.py, vault notes); vault copied to G:\...\Obsidian Macro\Macro. Open: calibrate Sonnet-xhigh vs Opus cross-check on ~10 docs; Quant papers DONE 2026-11-05: 15 papers (Quant folder) -> 1,490 claims, all quotes exact, Sonnet + Opus blind read, Opus
   reasoning map per paper (question, thesis, premises, mechanism chain, design rationale, evidence, regimes, gaps, relations);
   spec/tools in macro-vault branch papers/; vault Papers/ (copied to Obsidian). Fable phase NOT started (user controls batches).
+- Transcript argument maps (2026-11-06): tier A (103 of 227, by investing value + key investors; transcript_priority.csv)
+  DONE with Sonnet high per TRANSCRIPT_MAP_SPEC.md (per speaker: premises, mechanism chains, decision process, evidence,
+  dated views, fingerprint tags; disagreements; gaps). macro-vault pipeline/ (docs, maps, spec, queue). Tiers B/C open.
+  Speaker-name aliases (caption spellings) still to normalise before per-investor synthesis.
 - Adoption rule (2026-11-01): docs/research/global_macro/TESTING_PROTOCOL.md (paired bootstrap dSR, Holm, non-inferiority per era);
   run `python -m gm.protocol batch0|batch1|diag`; register each new batch in that file BEFORE running it. Batch 2 = Bloomberg.
 - Holdout 2011-2026 has NOT been looked at: never print or inspect it until rules are frozen (then run once).
