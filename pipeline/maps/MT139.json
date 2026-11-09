@@ -1,0 +1,676 @@
+{
+ "source_id": "MT139",
+ "episode_thesis": "Citrone, founder of Discovery Capital, describes a top-down plus bottom-up EM and global macro approach inherited from Julian Robertson (Tiger) and George Soros: roughly 80% of ideas come from macro analysts, cross-referenced with outside contacts, with shorts chosen for asymmetric skew and held when conviction stays high but cut completely when conviction is lost. In July 2022 he is bearish on risk assets (Fed cannot rescue markets this time, quantitative tightening still ahead, China, Europe and tech shorts, short JGBs, short Turkey) and constructive on the US long term, India, Brazil and Argentina.",
+ "speakers": [
+  {
+   "name": "Rob Citrone",
+   "role": "Founder and CIO of Discovery Capital Management (EM and global macro hedge fund, about $2bn, peak $15bn); ex-Fidelity, ex-Tiger, ran money for Soros family",
+   "speaker_note": "Interview with host Ted Seides (Capital Allocators), whose questions are context only; every claim is Citrone's. Auto-captions have no punctuation and garble some words (e.g. 'sure' for 'short', 'Pudong' as 'poo dong'). Ledger correction on core inflation applied: three consecutive year-over-year declines plus lower month-over-month, not three monthly declines.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "bottom_up_fundamental",
+    "geopolitics",
+    "policy_reaction_central_banks",
+    "kelly_or_conviction_sizing",
+    "valuation_contrarian",
+    "liquidity_flows",
+    "position_sizing_vol_target"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Central-bank liquidity drives asset prices: heavy injection after the 1987 crash made crashes buying opportunities; in 2022 the Fed cannot do that because of inflation, and withdrawing about $3tn of the $6tn QE should hit asset prices.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Personal memory of 1987 and the size of QE; no model.",
+     "claim_ids": [
+      "MT139-C02-1",
+      "MT139-C03-1",
+      "MT139-C03-2"
+     ]
+    },
+    {
+     "premise": "A market correction now transmits more strongly to the real economy than in 1987 because far more households (401ks) hold equities.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Comparison of market participation then and now.",
+     "claim_ids": [
+      "MT139-C03-3"
+     ]
+    },
+    {
+     "premise": "The US avoids EM-style currency-to-debt crises because it is the reserve currency with debt in its own currency; the problem is inflation, not debt.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Contrast with EM crises he lived through.",
+     "claim_ids": [
+      "MT139-C03-5"
+     ]
+    },
+    {
+     "premise": "In EM, equity markets react more slowly than currency and debt markets, so macro signals can be monetised in equities, often through country baskets.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Years of trading experience.",
+     "claim_ids": [
+      "MT139-C08-2"
+     ]
+    },
+    {
+     "premise": "Post-crisis EM assets are highly asymmetric entry points: restructured debt yielded about 25% after the 1980s crisis, and Turkish equities doubled in a month after 1998 while investors chased Nasdaq.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own early trades.",
+     "claim_ids": [
+      "MT139-C02-X1",
+      "MT139-C12-X1"
+     ]
+    },
+    {
+     "premise": "The best shorts are broken businesses or broken situations (fundamental flaw or bankruptcy) that fall about 90%, not shorts with catalysts that correct 30-40%.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Tiger examples: Thai baht 1997, China red chips, Mexican builders.",
+     "claim_ids": [
+      "MT139-C07-1",
+      "MT139-C07-2",
+      "MT139-C06-2"
+     ]
+    },
+    {
+     "premise": "Shorts have unlimited loss, so keep them small and choose those whose skew is heavily favourable.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Lessons from Julian Robertson.",
+     "claim_ids": [
+      "MT139-C06-1"
+     ]
+    },
+    {
+     "premise": "Exit fully and at the market when conviction is lost; waiting for a better price tends to lead to a worse one.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observed practice of Robertson and Soros.",
+     "claim_ids": [
+      "MT139-C05-1"
+     ]
+    },
+    {
+     "premise": "Cross-referencing ideas with outside people (policymakers, consultants, other managers) reduces idea error and group-think.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Robertson and Soros rolodex stories (Soros called Gordon Brown on his Eastern Europe idea).",
+     "claim_ids": [
+      "MT139-C05-2",
+      "MT139-C05-4",
+      "MT139-C13-1",
+      "MT139-C13-2"
+     ]
+    },
+    {
+     "premise": "A permanent network and long country experience (33 years, dozens of trips) let him get up to speed when a dormant market becomes interesting.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Trip counts to Argentina, Brazil, China, Turkey, Russia.",
+     "claim_ids": [
+      "MT139-C08-X1"
+     ]
+    },
+    {
+     "premise": "Globalisation is reversing into a West-versus-China/Russia cold war, which means lower growth, higher inflation and weaker asset prices.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Reading of geopolitics after Ukraine; no data.",
+     "claim_ids": [
+      "MT139-C09-3",
+      "MT139-C10-2"
+     ]
+    },
+    {
+     "premise": "Crowding matters when a fund is large and needs big ideas; a small, eclectic, EM-heavy book shares few names with other hedge funds.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Review of his top ten longs and shorts.",
+     "claim_ids": [
+      "MT139-C14-1",
+      "MT139-C12-4"
+     ]
+    },
+    {
+     "premise": "State-directed development can overturn bearish vacancy-based calls (Pudong), so a China bear case needs a better basis than empty buildings.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own early error.",
+     "claim_ids": [
+      "MT139-C04-X1"
+     ]
+    },
+    {
+     "premise": "A big macro view can be expressed through individual stocks and held through painful interim losses: Tiger's decade-long short Japan, long US trade was the bedrock of its 1990s returns.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Tiger's 1990s record (Nikkei from over 40,000 to about 9,000).",
+     "claim_ids": [
+      "MT139-C04-1"
+     ]
+    },
+    {
+     "premise": "Time is a continuum: short-term focus is impossible to manage money by.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Stated as pet peeve.",
+     "claim_ids": [
+      "MT139-C16-3"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Two-phase 2022 correction from tightening",
+     "steps": [
+      {
+       "from": "inflation forces Fed to tighten and stop easing liquidity",
+       "to": "phase one: falling asset prices as the Fed catches up",
+       "why": "Fed was behind the curve",
+       "claim_ids": [
+        "MT139-C03-1"
+       ]
+      },
+      {
+       "from": "quantitative tightening removes about $3tn of QE",
+       "to": "phase two: significant liquidity withdrawal hits asset prices",
+       "why": "QE lifted asset prices, so reversing it lowers them",
+       "claim_ids": [
+        "MT139-C03-2"
+       ]
+      },
+      {
+       "from": "broad household equity ownership",
+       "to": "correction transmits to the economy",
+       "why": "wealth effect from 401ks",
+       "claim_ids": [
+        "MT139-C03-3"
+       ]
+      },
+      {
+       "from": "core inflation peaked but falls too slowly",
+       "to": "Fed keeps tightening into a slowdown",
+       "why": "inflation not low enough to stop",
+       "claim_ids": [
+        "MT139-C03-4"
+       ]
+      },
+      {
+       "from": "slowdown and tight policy",
+       "to": "mild US and global recession by early 2023; markets may bottom in six to seven months at lower levels",
+       "why": "consequence of the above",
+       "claim_ids": [
+        "MT139-C11-3",
+        "MT139-C16-2"
+       ]
+      }
+     ],
+     "evidence": "Analogy to 1987 and the size of QE; core CPI data points (three consecutive year-over-year declines).",
+     "fails_when": "Not stated; inflation falls faster than expected would allow the Fed to stop.",
+     "claim_ids": [
+      "MT139-C03-1",
+      "MT139-C03-2",
+      "MT139-C03-4",
+      "MT139-C16-2"
+     ]
+    },
+    {
+     "topic": "Turkey as the best short",
+     "steps": [
+      {
+       "from": "reserves about minus $50bn and bank deposits spent",
+       "to": "unsustainable currency defence",
+       "why": "no reserves left",
+       "claim_ids": [
+        "MT139-C08-3"
+       ]
+      },
+      {
+       "from": "inflation 70-80% with continued intervention",
+       "to": "currency and credit crisis",
+       "why": "policy is bad and the market does not appreciate the stress",
+       "claim_ids": [
+        "MT139-C08-3"
+       ]
+      },
+      {
+       "from": "expected crisis",
+       "to": "CDS widens from 400 to over 1,000 basis points; short currency and banks",
+       "why": "classic EM currency-then-debt crisis",
+       "claim_ids": [
+        "MT139-C08-3"
+       ]
+      }
+     ],
+     "evidence": "Same template as Thai baht 1997 (unsustainable rates, no reserves).",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT139-C08-3",
+      "MT139-C06-2"
+     ]
+    },
+    {
+     "topic": "China",
+     "steps": [
+      {
+       "from": "leader prioritising power over economy",
+       "to": "damage to long-term growth, possibly uninvestable",
+       "why": "same advisors, no reformers",
+       "claim_ids": [
+        "MT139-C09-2"
+       ]
+      },
+      {
+       "from": "China over 30% of EM equity index with much foreign money stuck",
+       "to": "large risk for EM investors",
+       "why": "index weight and capital trapped",
+       "claim_ids": [
+        "MT139-C09-2"
+       ]
+      },
+      {
+       "from": "autumn party congress outcome",
+       "to": "short CNH sized to the probability (about 15% Xi loses second term) and tempered",
+       "why": "reformers around Xi would make China positive",
+       "claim_ids": [
+        "MT139-C09-2",
+        "MT139-C09-X1",
+        "MT139-C09-R3"
+       ]
+      }
+     ],
+     "evidence": "Political reading; short since August 2021.",
+     "fails_when": "Reformers join the Standing Committee (he would not be bearish).",
+     "claim_ids": [
+      "MT139-C09-2",
+      "MT139-C09-X1"
+     ]
+    },
+    {
+     "topic": "Russia regime change option",
+     "steps": [
+      {
+       "from": "Russian assets collapsed to about 1/99th of prior prices (ADRs/GDRs before freeze)",
+       "to": "extreme valuation discount",
+       "why": "sanctions and war",
+       "claim_ids": [
+        "MT139-C10-1"
+       ]
+      },
+      {
+       "from": "regime change or major policy shift",
+       "to": "about 50x on a small position within a short period",
+       "why": "1998 precedent, when oligarchs bought companies cheaply",
+       "claim_ids": [
+        "MT139-C10-1"
+       ]
+      }
+     ],
+     "evidence": "1998 crisis.",
+     "fails_when": "No regime change.",
+     "claim_ids": [
+      "MT139-C10-1"
+     ]
+    },
+    {
+     "topic": "Europe",
+     "steps": [
+      {
+       "from": "gas prices six times US and uncompetitive industry",
+       "to": "recession and DAX earnings misses",
+       "why": "no domestic energy companies, heavy industrial weights",
+       "claim_ids": [
+        "MT139-C12-1",
+        "MT139-C11-4"
+       ]
+      },
+      {
+       "from": "14 national policies and rate hikes",
+       "to": "accident in 18-24 months, Italian spread blow-out around next year's election",
+       "why": "fragmented policy response",
+       "claim_ids": [
+        "MT139-C11-4",
+        "MT139-C12-1"
+       ]
+      }
+     ],
+     "evidence": "Energy price gap.",
+     "fails_when": "Russia-Ukraine resolution (needed 'as fast as possible').",
+     "claim_ids": [
+      "MT139-C11-4",
+      "MT139-C12-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Top-down and bottom-up together: macro analysts generate about 80% of ideas; stock analysts select the securities and feed insight back to macro; technology analysts always on staff.",
+     "why": "Copy of the Tiger model; macro and micro inform each other.",
+     "claim_ids": [
+      "MT139-C08-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Start with views on equities, the dollar and rates; then populate positions where weaknesses or strengths lie.",
+     "why": "Overall market view sets risk.",
+     "claim_ids": [
+      "MT139-C09-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "About 10 themes, each with 10-15 positions (120-150 positions); baskets count as one position.",
+     "why": "Diversified expression of themes.",
+     "claim_ids": [
+      "MT139-C12-2"
+     ]
+    },
+    {
+     "element": "sizing",
+     "practice": "Net exposure up to 20-25% net short in equities when very concerned; credit risk is about half and currency about a third of equity volatility; large positions were a mistake at 10-15%.",
+     "why": "Vol differences across asset classes; liquidity lesson from the 2019 regulatory losses.",
+     "claim_ids": [
+      "MT139-C12-3",
+      "MT139-C16-1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Choose shorts with favourable skew, keep them small; hold them when the thesis is a broken business, cut out all at once when conviction is lost.",
+     "why": "Unlimited loss on shorts; waiting makes exits worse.",
+     "claim_ids": [
+      "MT139-C06-1",
+      "MT139-C07-1",
+      "MT139-C07-2",
+      "MT139-C05-1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "Lighten Japanese shorts early in the quarter and re-add near quarter end to avoid the fiscal-year-end ramp.",
+     "why": "Quarter-end ramping hurt shorts.",
+     "claim_ids": [
+      "MT139-C04-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Cross-reference every idea outside the firm; avoid group-think; ask where the firm is different and whether it has an edge.",
+     "why": "Reduces error and crowding.",
+     "claim_ids": [
+      "MT139-C05-2",
+      "MT139-C13-1",
+      "MT139-C13-2"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Weekly idea-in/idea-out discipline (Tiger Friday lunch): one idea to add and one to remove.",
+     "why": "Forces preparation.",
+     "claim_ids": [
+      "MT139-C05-3"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Keep coverage of dormant markets so he can switch long or short when they become interesting.",
+     "why": "Toolbox and network.",
+     "claim_ids": [
+      "MT139-C08-X1"
+     ]
+    },
+    {
+     "element": "execution",
+     "practice": "24-hour desk: follows European close and Asian open; trades some around it.",
+     "why": "Feel for market direction and edge.",
+     "claim_ids": [
+      "MT139-C13-X1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Aligned fees: after a bad year credit back management fees to investors who stay and do not close and relaunch to reset the high-water mark.",
+     "why": "Trust and alignment with investors; they recovered losses and more in under two years.",
+     "claim_ids": [
+      "MT139-C15-X1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Replace good ideas with better ideas; analysts must change their mind when facts change.",
+     "why": "Julian Robertson principle.",
+     "claim_ids": [
+      "MT139-C14-2"
+     ]
+    }
+   ],
+   "evidence_style": "Experience and anecdote (Tiger, Soros, Fidelity), historical analogy (1987, 1997, 1998), country knowledge from trips and network; specific numbers (CDS, reserves, inflation) for current calls; no backtests.",
+   "current_views": [
+    {
+     "view": "Bearish risk assets: second phase of the correction is QT, not yet started; substantial slowdown while the Fed keeps tightening.",
+     "as_of": "2022-07 (upload 2022-07-11)",
+     "reasoning": "Fed cannot rescue markets; $3tn of QE to be withdrawn; households heavily exposed.",
+     "claim_ids": [
+      "MT139-C03-1",
+      "MT139-C03-2",
+      "MT139-C03-3",
+      "MT139-C16-2"
+     ]
+    },
+    {
+     "view": "Core inflation has peaked but falls too slowly for the Fed to stop; energy and food are headline risks.",
+     "as_of": "2022-07 (upload 2022-07-11)",
+     "reasoning": "Three year-over-year declines and lower month-over-month readings.",
+     "claim_ids": [
+      "MT139-C03-4"
+     ]
+    },
+    {
+     "view": "Mild US recession by early 2023, somewhat global, travel to do well on pent-up demand; markets may bottom in six to seven months at lower levels.",
+     "as_of": "2022-07 (upload 2022-07-11)",
+     "reasoning": "Tightening into slowdown.",
+     "claim_ids": [
+      "MT139-C11-3",
+      "MT139-C16-2"
+     ]
+    },
+    {
+     "view": "Short Turkey (currency, banks, CDS), the best short in the world.",
+     "as_of": "2022-07 (upload 2022-07-11)",
+     "reasoning": "Negative reserves, inflation 70-80%, deposits spent.",
+     "claim_ids": [
+      "MT139-C08-3"
+     ]
+    },
+    {
+     "view": "Short CNH and some Chinese equities, tempered; China may become uninvestable; swing factor is the party congress.",
+     "as_of": "2022-07 (upload 2022-07-11)",
+     "reasoning": "Leader focused on power; about 15% chance Xi fails to win a second term, and reformers would change the call.",
+     "claim_ids": [
+      "MT139-C09-2",
+      "MT139-C09-X1"
+     ]
+    },
+    {
+     "view": "Cold war between the West and China/Russia, globalisation reversing, lower growth and higher inflation; Ukraine remains a quagmire.",
+     "as_of": "2022-07 (upload 2022-07-11)",
+     "reasoning": "Geopolitical split.",
+     "claim_ids": [
+      "MT139-C09-3",
+      "MT139-C10-2",
+      "MT139-C09-X1"
+     ]
+    },
+    {
+     "view": "Russian assets are a lifetime option on regime change.",
+     "as_of": "2022-07 (upload 2022-07-11)",
+     "reasoning": "Prices 1/99th of prior levels; 1998 precedent.",
+     "claim_ids": [
+      "MT139-C10-1"
+     ]
+    },
+    {
+     "view": "Long term bullish on the US and on India (new growth country); long Brazil rates, equities and currency; Argentina may be best market next year.",
+     "as_of": "2022-07 (upload 2022-07-11)",
+     "reasoning": "Reforms and rule of law in India; Brazil has stable political risk, 14% rates and 12% net currency yield; Argentina election could bring market policies.",
+     "claim_ids": [
+      "MT139-C10-R1",
+      "MT139-C10-X1",
+      "MT139-C10-3"
+     ]
+    },
+    {
+     "view": "Short Japanese government bonds: the 25 bp yield-curve-control cap will not hold; developed sovereigns generally shorts.",
+     "as_of": "2022-07 (upload 2022-07-11)",
+     "reasoning": "Global inflation; potential 50-75 bp move at the long end.",
+     "claim_ids": [
+      "MT139-C11-1"
+     ]
+    },
+    {
+     "view": "Short expensive tech (price-to-sales, TAM stories); long tech needed over the long term but not now.",
+     "as_of": "2022-07 (upload 2022-07-11)",
+     "reasoning": "Multiples too high; QT and recession.",
+     "claim_ids": [
+      "MT139-C11-2",
+      "MT139-C11-R2"
+     ]
+    },
+    {
+     "view": "Europe in or near recession; short Italian debt later (election next year) and short DAX now.",
+     "as_of": "2022-07 (upload 2022-07-11)",
+     "reasoning": "Energy shock, fragmented policy.",
+     "claim_ids": [
+      "MT139-C11-4",
+      "MT139-C12-1"
+     ]
+    },
+    {
+     "view": "Single-stock shorts have been working and will keep working.",
+     "as_of": "2022-07 (upload 2022-07-11)",
+     "reasoning": "Single-stock short selling is a lost art.",
+     "claim_ids": [
+      "MT139-C07-X1"
+     ]
+    },
+    {
+     "view": "Little to buy in Africa directly; play it via Western firms with African operations.",
+     "as_of": "2022-07 (upload 2022-07-11)",
+     "reasoning": "Political chaos and weak governance.",
+     "claim_ids": [
+      "MT139-C11-X1"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Tension between exiting fully when conviction is lost and holding shorts through large drawdowns (Thai baht, down 225m, red chips -40%): the rule depends on separating lost conviction from thesis-intact pain, which is judgemental and not defined.",
+   "claim_ids": [
+    "MT139-C05-1",
+    "MT139-C07-1",
+    "MT139-C06-2",
+    "MT139-C07-2"
+   ]
+  },
+  {
+   "issue": "The QT argument is qualitative: no estimate of how much asset prices fall per trillion removed, and the 2022 timing (six to seven months to a bottom) has no stated driver.",
+   "claim_ids": [
+    "MT139-C03-2",
+    "MT139-C16-2"
+   ]
+  },
+  {
+   "issue": "China bearishness is partly based on political reading and has a stated 15% chance of being wrong, but his own early Pudong 'ghost town' call was wrong; no explicit stop or revisit rule is given.",
+   "claim_ids": [
+    "MT139-C09-2",
+    "MT139-C04-X1"
+   ]
+  },
+  {
+   "issue": "Crowding claim (few hedge funds share his top ten names) is asserted without evidence; he also says crowding was a larger issue at larger scale.",
+   "claim_ids": [
+    "MT139-C14-1",
+    "MT139-C12-4"
+   ]
+  },
+  {
+   "issue": "The Russia '50 times' payoff is stated as a general possibility with no probability or sizing; the Turkey short has no stated target or stop.",
+   "claim_ids": [
+    "MT139-C10-1",
+    "MT139-C08-3"
+   ]
+  },
+  {
+   "issue": "He says the Fed cannot ease because of inflation but also expects a recession by early 2023; the interaction with a possible policy pivot is not discussed.",
+   "claim_ids": [
+    "MT139-C03-1",
+    "MT139-C11-3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs he names: Fed balance sheet runoff (QT), core CPI trend and energy/food prices, Fed tightening path, the Ukraine war outcome, the October-November 2022 Chinese party congress and Standing Committee composition, Turkish reserves, CDS and inflation, Japan's yield curve control cap, Brazil's election, Argentina's election next year, Italian election next year, European gas prices. Horizons: months for rates and recession, 6-7 months to a possible market bottom, 18-24 months for European accident, years for geopolitics and India.",
+ "reader_inferences": [
+  "(reader) Citrone's shorts are selected on balance-sheet or reserve exhaustion and policy errors, a recurring template from 1997 Thailand to 2022 Turkey, which makes the Turkey call a repeat of a known pattern rather than a new idea.",
+  "(reader) His portfolio design (10 themes, many baskets, 20-25% net short ceiling in equities) implies theme-level rather than position-level risk control, with sizing scaled by asset-class volatility ratios (equity 1, credit 0.5, currency 0.33).",
+  "(reader) The cross-referencing habit and small team size are presented as hedges against both group-think and crowding, but both are qualitative controls with no measurement."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT139-C10-R1",
+   "chunk": "C10",
+   "speaker": "Rob Citrone",
+   "quote": "we're certainly bullish on the u.s long term we're bullish on india",
+   "claim": "Despite the bearish near-term view, Citrone is a long-term bull on the US and on India.",
+   "mechanism": "long_term_growth_view",
+   "asset_class": "equities",
+   "indicator": "US and India long-term growth",
+   "horizon": "years",
+   "direction": "long US and India over the long term",
+   "conditions": "near-term bearish on risk assets",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT139-C11-R2",
+   "chunk": "C11",
+   "speaker": "Rob Citrone",
+   "quote": "technology is still a fantastic area to invest in going forward but i still think that multiples are still too high for most companies",
+   "claim": "Technology is a good long-term area but multiples are too high now, so he sees few longs in tech in the near term.",
+   "mechanism": "valuation",
+   "asset_class": "equities",
+   "indicator": "technology valuation multiples",
+   "horizon": "months",
+   "direction": "short high-multiple tech now, long tech later",
+   "conditions": "valuations compress during tightening and recession",
+   "testable": "partly - multiples versus forward returns",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT139-C09-R3",
+   "chunk": "C09",
+   "speaker": "Rob Citrone",
+   "quote": "in that case i wouldn't be bearish on china i think it actually could be positive",
+   "claim": "If Xi wins a further term but with reformers around him, Citrone would no longer be bearish on China and could turn positive; the bearish view is conditional on current advisors staying.",
+   "mechanism": "political_regime_condition",
+   "asset_class": "China assets",
+   "indicator": "composition of China's Standing Committee after the party congress",
+   "horizon": "months",
+   "direction": "bearish China if no reformers, positive if reformers",
+   "conditions": "party congress outcome in autumn 2022",
+   "testable": "yes after the congress",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  }
+ ]
+}

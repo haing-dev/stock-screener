@@ -1,0 +1,353 @@
+{
+ "source_id": "MT162",
+ "episode_thesis": "Law, CEO of Caxton, says macro investing is forecasting economic cycles and asset behaviour while reading the psychology of other traders (greed to join trends, fear of large losses) and policymaker behaviour, with a forecast hit rate of about 50% made profitable by cutting losers fast. He argues that algorithms and machine learning handle repetitive pattern-reaction work but the big opportunities come in new situations (politics, crises) where consensus is wrong, and that crises arrive unexpectedly with markets flipping abruptly from ignoring to panicking.",
+ "speakers": [
+  {
+   "name": "Andrew Law",
+   "role": "Chair and CEO, Caxton Associates (global macro hedge fund); ex-Goldman Sachs head of London proprietary trading",
+   "speaker_note": "A student career talk (Sheffield Alumni, recorded about August 2020, uploaded 2020-09-17) with student Q&A. Single speaker; the moderators and students ask questions and are not mapped. Captions have no punctuation. Most of the talk is career and ESG advice; market-method content is limited and comes in short passages in chunks C03, C04, C08, C09, C11 and C12.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "behavioral_sentiment",
+    "policy_reaction_central_banks",
+    "nowcasting_data",
+    "regime_detection",
+    "short_term_systematic",
+    "structural_themes",
+    "crisis_alpha_convexity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Macro trading is forecasting macro trends and economic cycles and how asset classes behave through them; buy what you expect to rise and sell what you expect to fall over several weeks to several months, sometimes up to a year.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Firm description; no data.",
+     "claim_ids": ["MT162-C03-1", "MT162-C03-2"]
+    },
+    {
+     "premise": "Psychology matters as much as economics: participants fear missing out on trends and fear losing too much, so trends persist and then reverse.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Assertion from experience; no data.",
+     "claim_ids": ["MT162-C03-3"]
+    },
+    {
+     "premise": "The best macro traders combine three things: fundamental understanding of economies, understanding of how policymakers decide, and a read on what other traders are doing.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation of the hedge fund 'legends' (mostly American).",
+     "claim_ids": ["MT162-C03-4"]
+    },
+    {
+     "premise": "Hit rate is about 50%; edge comes from not being bothered by errors, selling what does not work, keeping what does, and losing less on losers than is made on winners.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Personal account of his own forecasts.",
+     "claim_ids": ["MT162-C08-2"]
+    },
+    {
+     "premise": "Human decisions can be reduced to rules, so algorithms and coding take a growing share of hedge fund assets, yet the best people combine coded or scraped inputs with human intuition.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation of Caxton's trading floor, where nearly everybody now codes.",
+     "claim_ids": ["MT162-C03-5"]
+    },
+    {
+     "premise": "Machine learning does repetitive pattern-reaction work, but the big opportunities arise in new situations (politics) that models cannot learn from past data.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "2016 US election night anecdote; no systematic test.",
+     "claim_ids": ["MT162-C11-1", "MT162-C11-R1"]
+    },
+    {
+     "premise": "Consensus reaction to a political shock can be badly wrong, and the opportunity lies in forecasting the policy (tax cuts) not reacting to headlines.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "The 2016 election: equities fell 6-8% in Asian hours, reversed within 12 hours, then strong three years.",
+     "claim_ids": ["MT162-C11-2", "MT162-C11-X1"]
+    },
+    {
+     "premise": "Markets ignore developing crises until they flip to panic; crises always happen and arrive when unexpected.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Covid timeline (data in December, Hubei lockdown mid-January, market reaction only after the Italy ski weekend in late February).",
+     "claim_ids": ["MT162-C12-1", "MT162-C12-2"]
+    },
+    {
+     "premise": "Past crashes and pandemics are templates for how crises unfold: 1987 lessons were reused in 2008 and the Spanish flu and plague in 2020.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Personal experience and history.",
+     "claim_ids": ["MT162-C04-2", "MT162-C04-X1"]
+    },
+    {
+     "premise": "Hedge fund assets are now almost entirely pension money, a structural demand for diversifiers, yet the industry is only about 3% of the investable universe.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Figures given: $3 trillion against about $100 trillion.",
+     "claim_ids": ["MT162-C03-X1", "MT162-C03-X2"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Trend persistence and reversal from trader psychology",
+     "steps": [
+      {
+       "from": "Greed to participate in trends and fear of missing out",
+       "to": "Trends persist as participants pile in",
+       "why": "Participants do not want to miss out.",
+       "claim_ids": ["MT162-C03-3"]
+      },
+      {
+       "from": "Fear of losing too much when it goes wrong",
+       "to": "Trends reverse when participants exit",
+       "why": "Loss fear dominates once things go wrong.",
+       "claim_ids": ["MT162-C03-3"]
+      },
+      {
+       "from": "Skilled read of fundamentals, policymaker behaviour and what other traders are doing",
+       "to": "Profitable positioning ahead of persistence and reversal",
+       "why": "The best traders combine all three.",
+       "claim_ids": ["MT162-C03-4"]
+      }
+     ],
+     "evidence": "Observation of hedge fund legends; no numbers.",
+     "fails_when": "Not stated; forecasts are wrong about half the time.",
+     "claim_ids": ["MT162-C03-3", "MT162-C03-4"]
+    },
+    {
+     "topic": "Crisis dynamics: ignore, then flip to panic",
+     "steps": [
+      {
+       "from": "A crisis develops while data already exists (Covid cases in late December, Hubei lockdown mid-January)",
+       "to": "Markets ignore it",
+       "why": "Stated as an empirical regularity; no mechanism beyond expectations.",
+       "claim_ids": ["MT162-C12-1"]
+      },
+      {
+       "from": "A visible trigger (the Italy ski-resort case spike in late February)",
+       "to": "Markets flip abruptly to panic",
+       "why": "Spread beyond China made lockdown a foregone conclusion.",
+       "claim_ids": ["MT162-C03-6", "MT162-C12-1"]
+      },
+      {
+       "from": "Panic and a 35% US equity fall in six weeks",
+       "to": "Central banks cut rates to zero and restart QE; governments launch large fiscal support",
+       "why": "Policy response designed to avoid a repeat of the 1930s depression.",
+       "claim_ids": ["MT162-C04-1", "MT162-C04-X2"]
+      }
+     ],
+     "evidence": "Covid 2020 timeline from his own firm's real-time scraping.",
+     "fails_when": "Not stated; timing of crises is called hard to forecast.",
+     "claim_ids": ["MT162-C12-1", "MT162-C03-6", "MT162-C04-1"]
+    },
+    {
+     "topic": "Political surprise and wrong consensus",
+     "steps": [
+      {
+       "from": "Surprise election result (Trump, 2016)",
+       "to": "Markets price the consensus view that he would hurt growth; US equity futures fell 6-8% in Asian hours",
+       "why": "Consensus assumption on trade war and growth.",
+       "claim_ids": ["MT162-C11-2"]
+      },
+      {
+       "from": "Realisation that the assumption was wrong (tax cuts, China less relevant)",
+       "to": "Reversal within 12 hours and one of the strongest three-year equity runs until Covid",
+       "why": "Policy, not headline, drove earnings and markets.",
+       "claim_ids": ["MT162-C11-2", "MT162-C11-X1"]
+      },
+      {
+       "from": "Models trained on past data meet a new political situation",
+       "to": "Quant and ML strategies lose heavily; a few discretionary traders betting on tax cuts profit",
+       "why": "Models cannot learn from past data in novel situations.",
+       "claim_ids": ["MT162-C11-1", "MT162-C11-3"]
+      }
+     ],
+     "evidence": "One election night; no counts of other cases.",
+     "fails_when": "Stated implicitly: where situations are repetitive, machine pattern-reaction works.",
+     "claim_ids": ["MT162-C11-1", "MT162-C11-2", "MT162-C11-3", "MT162-C11-X1"]
+    },
+    {
+     "topic": "Pension demand for diversifiers to hedge fund assets",
+     "steps": [
+      {
+       "from": "Pensions can only hold so many equities and bonds",
+       "to": "They allocate to hedge funds as a diversified source of return",
+       "why": "Diversification for pensioners' money.",
+       "claim_ids": ["MT162-C03-X1"]
+      }
+     ],
+     "evidence": "Statement of his client base; industry size figures.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT162-C03-X1", "MT162-C03-X2"]
+    },
+    {
+     "topic": "Covid and structural change in work and leverage",
+     "steps": [
+      {
+       "from": "Covid shows people can work productively from home",
+       "to": "Employees save commuting time and employers need less office space",
+       "why": "Cost savings on both sides; communication tools suffice.",
+       "claim_ids": ["MT162-C06-X1"]
+      },
+      {
+       "from": "A sudden shock stops business overnight",
+       "to": "Overleveraged firms go bankrupt unless government steps in",
+       "why": "Leverage sized only for forecast events cannot survive unforecast ones.",
+       "claim_ids": ["MT162-C06-X3"]
+      }
+     ],
+     "evidence": "Anecdote (commuting times in London, travel companies in February 2020).",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT162-C06-X1", "MT162-C06-X3", "MT162-C06-X2"]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Forecast macro trends and economic cycles and buy what is expected to rise, sell what is expected to fall; horizon several weeks to several months, up to a year.",
+     "why": "Core macro approach at Caxton.",
+     "claim_ids": ["MT162-C03-1", "MT162-C03-2"]
+    },
+    {
+     "element": "research",
+     "practice": "Real-time web scraping of daily Covid case counts worldwide with email alerts; the Saturday-morning alert of an Italian spike led to a Sunday conclusion that lockdowns were inevitable, a month before the UK acted.",
+     "why": "Gets ahead of consensus and government decisions.",
+     "claim_ids": ["MT162-C03-6"]
+    },
+    {
+     "element": "research",
+     "practice": "Staff increasingly code their own analysis; combine coded or scraped inputs with human intuition.",
+     "why": "Rules capture repetitive work; intuition handles new situations.",
+     "claim_ids": ["MT162-C03-5", "MT162-C11-1"]
+    },
+    {
+     "element": "research",
+     "practice": "Use crash and pandemic history (1987, 2008, Spanish flu, plague) as templates for how crises unfold and spread.",
+     "why": "Lessons transfer between episodes.",
+     "claim_ids": ["MT162-C04-2", "MT162-C04-X1"]
+    },
+    {
+     "element": "risk",
+     "practice": "Sell what is not working, keep what is, and make sure losses on losers are smaller than gains on winners; do not let wrong forecasts (about half) bother you.",
+     "why": "Forecast accuracy is about 50%, so payoff asymmetry carries the result.",
+     "claim_ids": ["MT162-C08-2"]
+    },
+    {
+     "element": "risk",
+     "practice": "Watch risk before prices react; build resilience for crises that arrive unexpected; size business leverage for events nobody forecasts.",
+     "why": "Markets flip from ignoring to panic; shocks can stop business overnight.",
+     "claim_ids": ["MT162-C12-1", "MT162-C12-2", "MT162-C06-X3"]
+    },
+    {
+     "element": "risk",
+     "practice": "Most Caxton staff close nearly all positions before a one- or two-week holiday; Law does not, and keeps following markets.",
+     "why": "Staff avoid unmonitored risk; Law judges missing a theme he has worked on for six months costs more than staying in.",
+     "claim_ids": ["MT162-C09-1", "MT162-C09-X2"]
+    },
+    {
+     "element": "risk",
+     "practice": "24/7 escalation filter: phone on do-not-disturb with named callers allowed through, which rings about ten times a year.",
+     "why": "Markets are open from Sunday evening to Friday night, so an escalation filter prevents burnout.",
+     "claim_ids": ["MT162-C09-X1", "MT162-C09-1"]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hedge fund assets are almost entirely pension money allocated as a diversifier.",
+     "why": "Pensions can hold only so many equities and bonds.",
+     "claim_ids": ["MT162-C03-X1"]
+    },
+    {
+     "element": "other",
+     "practice": "On political shocks, forecast the policy (tax cuts) rather than react to the first-night headline.",
+     "why": "Consensus first reactions can be wrong.",
+     "claim_ids": ["MT162-C11-X1", "MT162-C11-3"]
+    }
+   ],
+   "evidence_style": "Experience, anecdote and historical analogy: remembered episodes (1987, 2008, Covid, the 2016 election night) and firm practices; no backtests or performance numbers; only a few industry-size figures.",
+   "current_views": [
+    {
+     "view": "ESG will become central to all investing, unlike niche exclusion-based socially responsible investing.",
+     "as_of": "2020-08/09 (upload 2020-09-17)",
+     "reasoning": "Voters care about climate; climate damage is seen as proven; savers and consumers will favour sustainable companies; weak governance tends to coincide with poor social and environmental practice.",
+     "claim_ids": ["MT162-C07-1", "MT162-C08-1"]
+    },
+    {
+     "view": "Covid fast-forwarded working from home by perhaps 10-20 years, a structural shift away from large office buildings.",
+     "as_of": "2020-08/09 (upload 2020-09-17)",
+     "reasoning": "Employees reclaim commuting time and employers need less office space.",
+     "claim_ids": ["MT162-C06-X1"]
+    },
+    {
+     "view": "The 2020 policy response is fiscal as well as monetary, in contrast with the post-2008 austerity that prolonged the after-effects.",
+     "as_of": "2020-08/09 (upload 2020-09-17)",
+     "reasoning": "Governments used furlough, mortgage holidays and loans to avoid a repeat of the 1930s.",
+     "claim_ids": ["MT162-C04-X2", "MT162-C06-X2"]
+    },
+    {
+     "view": "Investors after 2008 and Covid are more skittish, and future crises will have a large impact.",
+     "as_of": "2020-08/09 (upload 2020-09-17)",
+     "reasoning": "Crises always occur when unexpected; people are now more aware of that.",
+     "claim_ids": ["MT162-C12-2"]
+    },
+    {
+     "view": "Covid caused a 35% US equity fall in six weeks and was a template for earlier pandemics; central banks cut to zero and restarted QE.",
+     "as_of": "2020-02/03 (looking back from August 2020)",
+     "reasoning": "Past pandemics (Spanish flu, plague) show how quickly it spreads.",
+     "claim_ids": ["MT162-C04-1", "MT162-C04-2"]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Law says most Caxton staff flatten positions for holidays while he never changes positions; the firm practice and the CEO's own practice differ and no rule is given for who decides.",
+   "claim_ids": ["MT162-C09-1", "MT162-C09-X2"]
+  },
+  {
+   "issue": "Machine learning is described as doing repetitive work yet losing money on election night; Law also says the best people combine code with intuition. No performance comparison is given for either, and the election-night claim rests on one event.",
+   "claim_ids": ["MT162-C11-1", "MT162-C11-3", "MT162-C03-5"]
+  },
+  {
+   "issue": "Markets are said to ignore crises until a switch flips, but the Covid claim relies on dated data points recalled from memory; no measure of how often markets lag developing crises is offered.",
+   "claim_ids": ["MT162-C12-1"]
+  },
+  {
+   "issue": "Hit rate of about 50% is stated without a payoff ratio, holding-period or stop rule; 'lose less on losers than made on winners' is not quantified.",
+   "claim_ids": ["MT162-C08-2"]
+  },
+  {
+   "issue": "The October 1987 fall is given as about 25% in a couple of days from memory; the Covid fall of 35% is the S&P-style US equity move quoted without index name.",
+   "claim_ids": ["MT162-C04-X1", "MT162-C04-1"]
+  },
+  {
+   "issue": "ESG view is reasoned from voter preferences and an asset manager's remark at a breakfast; no evidence on returns or flows is given and the link to Caxton's own trading is not stated.",
+   "claim_ids": ["MT162-C07-1", "MT162-C08-1"]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs Law names as leading prices: policymaker decisions and central bank and fiscal responses; what other traders are positioned for (greed to join trends and fear of loss); real-time web-scraped event data such as case counts that arrive before official action; and consensus assumptions about political outcomes, which may be wrong. Horizon several weeks to several months, up to a year. He does not give numeric thresholds.",
+ "reader_inferences": [
+  "(reader) Law's edge claim rests on information and interpretation speed in rare events (scraped data, policy forecasts) rather than on a repeatable signal; this is hard to test.",
+  "(reader) He treats algorithms as complements for stable patterns and discretion as the response to regime novelty, which implies the human edge is largest exactly where history is least informative.",
+  "(reader) Staff flatten before holidays but he does not; the difference suggests risk practice at Caxton depends on the individual's stated theme conviction, not a firm-wide rule."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT162-C11-R1",
+   "chunk": "C11",
+   "speaker": "Andrew Law",
+   "quote": "politics is very hard to forecast makeup of every politician every government around the world is different to what has preceded it",
+   "claim": "Politics is very hard to forecast because each leader and government differs from what preceded it, so the knowledge needed to predict what a prospective leader will do is high.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "political forecasting",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Novel political situations",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

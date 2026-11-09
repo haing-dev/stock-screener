@@ -1,0 +1,194 @@
+[
+ {
+  "id": "U01",
+  "name": "AQR Economic Trend",
+  "papers": [
+   "QP01"
+  ],
+  "done": "fable/F1_economic_trend.md"
+ },
+ {
+  "id": "U02",
+  "name": "Rob Carver",
+  "investors": [
+   "rob_carver"
+  ],
+  "extra": [
+   "fable/carver_blog_digest.json"
+  ],
+  "topic": "trend/carry systematic practice: sizing, costs, forecasts, diversification, fitting",
+  "speaker_match": {
+   "rob_carver": "carver|^rob\\b"
+  }
+ },
+ {
+  "id": "U03",
+  "name": "Katie Kaminski",
+  "investors": [
+   "katie_kaminski"
+  ],
+  "topic": "trend as crisis alpha, inflation and stock-bond correlation, design dispersion"
+ },
+ {
+  "id": "U04",
+  "name": "Nick Baltas",
+  "investors": [
+   "nick_baltas"
+  ],
+  "topic": "QIS, trend design, premia vs flow anomalies, carry"
+ },
+ {
+  "id": "U05",
+  "name": "Yoav Git",
+  "investors": [
+   "yoav_git"
+  ],
+  "topic": "sources of trend by asset class, market selection, execution"
+ },
+ {
+  "id": "U06",
+  "name": "Man AHL (Robertson, Moore)",
+  "investors": [
+   "graham_robertson",
+   "harry_moore"
+  ],
+  "topic": "trend attribution, market breadth, crisis vs long-run Sharpe, portable alpha"
+ },
+ {
+  "id": "U07",
+  "name": "Winton (Harding, Judes)",
+  "investors": [
+   "david_harding"
+  ],
+  "maps": [
+   "MT177"
+  ],
+  "topic": "empirical finance, crowding and edge decay, research controls"
+ },
+ {
+  "id": "U08",
+  "name": "Eckhardt Trading",
+  "maps": [
+   "MT020"
+  ],
+  "topic": "risk-first trend trading, robust statistics, anti-overfit testing"
+ },
+ {
+  "id": "U09",
+  "name": "Fung & Hsieh trend followers",
+  "papers": [
+   "QP09"
+  ],
+  "topic": "risk structure of trend following (lookback straddles)"
+ },
+ {
+  "id": "U10",
+  "name": "Value and Momentum Everywhere",
+  "papers": [
+   "QP15"
+  ],
+  "topic": "cross-asset value and momentum factors, funding liquidity"
+ },
+ {
+  "id": "U11",
+  "name": "Dissecting Investment Strategies",
+  "papers": [
+   "QP08"
+  ],
+  "topic": "cross-sectional vs time-series value, momentum, carry"
+ },
+ {
+  "id": "U12",
+  "name": "Mean-reverting yield curve strategies",
+  "papers": [
+   "QP06"
+  ],
+  "topic": "curve spread and curvature mean reversion"
+ },
+ {
+  "id": "U13",
+  "name": "Predicting short-term Eurodollar futures",
+  "papers": [
+   "QP07"
+  ],
+  "topic": "short-rate futures curve model"
+ },
+ {
+  "id": "U14",
+  "name": "Stanley Druckenmiller",
+  "investors": [
+   "stanley_druckenmiller"
+  ],
+  "topic": "discretionary macro: liquidity, policy, sizing"
+ },
+ {
+  "id": "U15",
+  "name": "Scott Bessent",
+  "investors": [
+   "scott_bessent"
+  ],
+  "topic": "discretionary macro process: catalysts, positioning veto, sizing"
+ },
+ {
+  "id": "U16",
+  "name": "Bridgewater (Dalio, Jensen, Karniol-Tambour, Prince)",
+  "maps": [
+   "MT058",
+   "MT068",
+   "MT147",
+   "MT138",
+   "MT049"
+  ],
+  "topic": "debt cycle, five forces, diversification, systematized discretion"
+ },
+ {
+  "id": "U17",
+  "name": "Graham Capital (Tropin, Calderini, Murray)",
+  "maps": [
+   "MT066",
+   "MT214",
+   "MT089",
+   "MT090",
+   "MT092",
+   "MT113",
+   "MT133",
+   "MT067"
+  ],
+  "papers": [
+   "QP05"
+  ],
+  "topic": "macro fund combining discretionary and systematic books"
+ },
+ {
+  "id": "U18",
+  "name": "Elliott (Paul Singer)",
+  "maps": [
+   "MT122"
+  ],
+  "topic": "risk culture, leverage, never lose big"
+ },
+ {
+  "id": "U19",
+  "name": "Cem Karsan",
+  "investors": [
+   "cem_karsan"
+  ],
+  "topic": "dealer flows, volatility, positioning; dated forecast record"
+ },
+ {
+  "id": "U20",
+  "name": "Pierre Andurand",
+  "investors": [
+   "pierre_andurand"
+  ],
+  "topic": "commodity physical balances, supply response lags"
+ },
+ {
+  "id": "U21",
+  "name": "Stine: Valuing Investments",
+  "papers": [
+   "QP13"
+  ],
+  "topic": "alpha testing, growth-optimal sizing, multiple testing"
+ }
+]

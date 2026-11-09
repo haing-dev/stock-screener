@@ -1,0 +1,322 @@
+{
+ "source_id": "MT050",
+ "episode_thesis": "Zulauf describes a selective, top-down discretionary macro process (political pendulum, then a policy-distorted business cycle, then rates, currencies, capital flows and asset classes) checked every weekend against about a thousand charts, so that the market's disagreement with his thesis triggers digging rather than stubbornness. He pairs this with humility and failsafe stop-losses, and argues that the Trump-era trade regime break ends the 30-year globalisation wave and will shift the dollar's reserve role, capital flows and US rates.",
+ "speakers": [
+  {
+   "name": "Felix Zulauf",
+   "role": "Founder, Zulauf Consulting; ex-UBS head of investment strategy; long/short macro hedge fund manager since 1990",
+   "speaker_note": "Auto-captions render the name Zulof/Zulu/Zulaf. Single guest; the host (Generating Alpha Podcast) only asks questions and is not mapped. Much of the episode is career story with little method content; no market-level numbers are given beyond leverage and past episodes.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "valuation_contrarian",
+    "behavioral_sentiment",
+    "market_internals_leading",
+    "geopolitics",
+    "policy_reaction_central_banks",
+    "kelly_or_conviction_sizing",
+    "structural_themes"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Politics runs as a pendulum (left/right, conservative/progressive); knowing where the swing stands lets you understand the political process and its results, which then drive the economy and markets.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "None beyond long personal experience; no historical series cited.",
+     "claim_ids": ["MT050-C05-2"]
+    },
+    {
+     "premise": "The business cycle is no longer lean: growing interventions and manipulations by the authorities distort it compared with the 1960s and 1970s, so classic cycle analysis must be adjusted for policy.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Contrast with the 1960s-70s; no data.",
+     "claim_ids": ["MT050-C05-3"]
+    },
+    {
+     "premise": "Managers are conditioned by the preceding regime, so in a new secular bull market the older manager shaped by the previous structural bear will be too cautious and a young bullish one should be used; you must know where you stand in the long cycle.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Anecdote and experience; no evidence.",
+     "claim_ids": ["MT050-C05-5"]
+    },
+    {
+     "premise": "The Trump trade changes are a regime break of the order of the Berlin Wall, the end of Bretton Woods and the end of the gold standard: the end of the WTO order as known and of the 30-year globalisation wave.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Historical analogy only.",
+     "claim_ids": ["MT050-C05-7"]
+    },
+    {
+     "premise": "Large losses are very hard to make up and damage the decision-maker psychologically, so a failsafe stop-loss is needed whatever the analysis says; one may not know the truth.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own 50% loss at about age 30 on a position without a stop.",
+     "claim_ids": ["MT050-C07-2", "MT050-C07-3", "MT050-C07-4"]
+    },
+    {
+     "premise": "Staying near the benchmark or within institutional constraints is incompatible with his style; when he sees big risks or opportunities he goes to extreme positioning, and otherwise waits for the odds to turn in his favour.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Track of calls: 1980 commodity peak, 1987 crash.",
+     "claim_ids": ["MT050-C03-1", "MT050-C05-1"]
+    },
+    {
+     "premise": "A contrarian is lonely at the top with a bearish view; doubt is overcome by a fixed working discipline rather than by temperament alone.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "40 years of a weekend routine.",
+     "claim_ids": ["MT050-C06-2"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Top-down process from politics to asset allocation",
+     "steps": [
+      {
+       "from": "Political pendulum and zeitgeist",
+       "to": "Political process and its results",
+       "why": "Knowing where the swing stands tells you what policy follows.",
+       "claim_ids": ["MT050-C05-2"]
+      },
+      {
+       "from": "Policy-distorted business cycle",
+       "to": "Implications for interest rates, currencies and capital flows",
+       "why": "Cycle position set by politics and intervention determines rates and flows.",
+       "claim_ids": ["MT050-C05-3", "MT050-C05-4"]
+      },
+      {
+       "from": "Rates, currencies and capital flows",
+       "to": "Bonds, equities, defensive vs deep-cyclical sectors, currency hedging, commodities",
+       "why": "Each implies a different payoff; the sequence is deduced, not modelled.",
+       "claim_ids": ["MT050-C05-4"]
+      }
+     ],
+     "evidence": "Process description and past calls (1980, 1987); no systematic test.",
+     "fails_when": "Not stated; he says more pitfalls are visible now, which makes the job harder, and the market itself may disagree.",
+     "claim_ids": ["MT050-C05-4"]
+    },
+    {
+     "topic": "Trade regime break to US interest rates",
+     "steps": [
+      {
+       "from": "Trump administration changes trade policy (tariffs back and forth, but a change of magnitude)",
+       "to": "End of the WTO order and the 30-year globalisation wave",
+       "why": "Comparable to the Berlin Wall, Bretton Woods and gold-standard breaks.",
+       "claim_ids": ["MT050-C05-6", "MT050-C05-7"]
+      },
+      {
+       "from": "Geopolitical backlash and the end of the old trade order",
+       "to": "Reduced importance of the dollar as reserve currency and changed capital flows",
+       "why": "Trade and reserve roles are linked.",
+       "claim_ids": ["MT050-C06-1"]
+      },
+      {
+       "from": "Changed capital flows",
+       "to": "Different level of US interest rates",
+       "why": "Stated as a principle; no direction or size given.",
+       "claim_ids": ["MT050-C06-1"]
+      }
+     ],
+     "evidence": "Analogy to past regime breaks; no data.",
+     "fails_when": "Not stated; he notes policy goes back and forth, but says the change is real regardless.",
+     "claim_ids": ["MT050-C05-7", "MT050-C06-1"]
+    },
+    {
+     "topic": "Weekend chart discipline as a thesis falsification loop",
+     "steps": [
+      {
+       "from": "Fundamentals set a business-cycle view",
+       "to": "Technicals on about 1,000 time series test whether the market confirms it",
+       "why": "Technical analysis supports or shows he is wrong and shows trend health.",
+       "claim_ids": ["MT050-C06-3", "MT050-C06-4"]
+      },
+      {
+       "from": "Market disagrees with the thesis",
+       "to": "Dig deeper for the problem",
+       "why": "The disagreement is a signal to re-examine, not to ignore.",
+       "claim_ids": ["MT050-C06-5"]
+      },
+      {
+       "from": "News item that does not fit the thesis",
+       "to": "Check it and, if the thesis fails, return to the drawing board",
+       "why": "Treats the thesis like science.",
+       "claim_ids": ["MT050-C07-1"]
+      }
+     ],
+     "evidence": "40 years of the routine; no performance attribution.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT050-C06-3", "MT050-C06-5", "MT050-C07-1"]
+    },
+    {
+     "topic": "Loss avoidance and mental balance",
+     "steps": [
+      {
+       "from": "Big loss on a position",
+       "to": "Psychological damage and worse decisions",
+       "why": "You become mentally off balance; recovery is hard.",
+       "claim_ids": ["MT050-C07-2", "MT050-C07-3"]
+      },
+      {
+       "from": "Failsafe stop-loss in place",
+       "to": "Limits the loss and protects judgement",
+       "why": "Humility: you may be wrong.",
+       "claim_ids": ["MT050-C07-2", "MT050-C07-4"]
+      }
+     ],
+     "evidence": "Own 50% loss at about 30 when he forgot the stop.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT050-C07-2", "MT050-C07-4"]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Top-down: political setup and pendulum position, then classic business-cycle analysis adjusted for authority interventions, then deduce rates, currencies, capital flows, asset classes and sectors.",
+     "why": "Politics drives policy and the cycle; process is the same as 40 years ago but more refined.",
+     "claim_ids": ["MT050-C05-2", "MT050-C05-3", "MT050-C05-4"]
+    },
+    {
+     "element": "signal",
+     "practice": "Fundamentals set the view; technical analysis (long, medium and short term) confirms or contradicts it and shows the health of trends.",
+     "why": "Technicals tell him whether he is wrong.",
+     "claim_ids": ["MT050-C06-4"]
+    },
+    {
+     "element": "research",
+     "practice": "Every weekend about five hours: roughly 1,000 charts of money market rates, bond yields, the 30 largest currencies, equity and sector indices, and the 100 largest stocks in the US, Europe and Asia.",
+     "why": "Surfaces where the market does not agree with his thesis; discipline counters doubt.",
+     "claim_ids": ["MT050-C06-3", "MT050-C06-2"]
+    },
+    {
+     "element": "research",
+     "practice": "Daily news scan for items that do not fit the thesis; those get checked in depth, items that fit are only glanced at.",
+     "why": "Thesis treated like science.",
+     "claim_ids": ["MT050-C07-1"]
+    },
+    {
+     "element": "research",
+     "practice": "When the market disagrees with the thesis, dig for the problem and why it is not the way he thought.",
+     "why": "Divergence is information.",
+     "claim_ids": ["MT050-C06-5"]
+    },
+    {
+     "element": "sizing",
+     "practice": "Enters a position only on strong conviction; waits until the odds turn in his favour; goes to extreme positions at big risks or opportunities.",
+     "why": "No need to play at his age; concentration where the odds are best.",
+     "claim_ids": ["MT050-C05-1", "MT050-C03-1"]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Long/short hedge funds with about 30% leverage at times, with net exposure able to run from long to net 100% short.",
+     "why": "Freedom to act on either side.",
+     "claim_ids": ["MT050-C03-4"]
+    },
+    {
+     "element": "risk",
+     "practice": "Failsafe stop-loss on every position in addition to the normal procedure.",
+     "why": "Avoid big losses that unbalance decisions and are hard to recover.",
+     "claim_ids": ["MT050-C07-2", "MT050-C07-3"]
+    },
+    {
+     "element": "risk",
+     "practice": "Cut equities hard ahead of peaks: 70% cash and 30% commodity-company bonds at the 1980 commodity peak; zero equities in institutional accounts before the 1987 crash.",
+     "why": "Acted on perceived extremes.",
+     "claim_ids": ["MT050-C03-2", "MT050-C03-3"]
+    },
+    {
+     "element": "other",
+     "practice": "With clients, explain the whole process, act as said, and report results including mistakes and lapses of discipline.",
+     "why": "Trust comes from authenticity and honesty.",
+     "claim_ids": ["MT050-C04-R1"]
+    }
+   ],
+   "evidence_style": "Experience and anecdote: remembered calls (1980, 1987) and a 40-year routine; first-principles and historical analogy for the regime thesis; no backtests or numbers.",
+   "current_views": [
+    {
+     "view": "Trade policy is the most important variable now; capital flows will probably be the next big issue.",
+     "as_of": "2025-04 (upload 2025-04-10)",
+     "reasoning": "The Trump trade changes go back and forth but are a change of regime magnitude.",
+     "claim_ids": ["MT050-C05-6"]
+    },
+    {
+     "view": "The trade regime break ends the globalisation wave of the last 30 years and makes the environment much more difficult for entrepreneurs and corporations.",
+     "as_of": "2025-04 (upload 2025-04-10)",
+     "reasoning": "Comparable to the Berlin Wall, Bretton Woods and the gold standard ending.",
+     "claim_ids": ["MT050-C05-7"]
+    },
+    {
+     "view": "The dollar's reserve-currency relevance falls, changing capital flows and therefore the level of US interest rates (direction not stated).",
+     "as_of": "2025-04 (upload 2025-04-10)",
+     "reasoning": "Geopolitical backlash to the trade change.",
+     "claim_ids": ["MT050-C06-1"]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "The claim that a regime break changes the level of US interest rates states no direction, size or timing; the dollar and rate view is not actionable as stated.",
+   "claim_ids": ["MT050-C06-1"]
+  },
+  {
+   "issue": "Calls cited as proof (1980 commodity peak, 1987 crash) are single remembered episodes with no returns, sizes or dates of entry; the sell-off to zero equities in 1987 is described only in passing.",
+   "claim_ids": ["MT050-C03-2", "MT050-C03-3"]
+  },
+  {
+   "issue": "He says he enters only on strong conviction and goes extreme at big opportunities, but also insists on failsafe stops and humility; no rule links conviction to size or stop distance.",
+   "claim_ids": ["MT050-C05-1", "MT050-C03-1", "MT050-C07-2"]
+  },
+  {
+   "issue": "The claim that older managers are conditioned by the prior bear market is anecdotal and untested.",
+   "claim_ids": ["MT050-C05-5"]
+  },
+  {
+   "issue": "He says the pendulum framework helps anticipate politics, but the political pendulum is not measured or dated; the position of the swing today is not given.",
+   "claim_ids": ["MT050-C05-2"]
+  },
+  {
+   "issue": "He says he manages his own money outside a performance game, while stop-loss discipline is justified partly by performance; the context of the stop rule for his own portfolio is not specified.",
+   "claim_ids": ["MT050-C07-R1"]
+  }
+ ],
+ "forward_looking_inputs": "(reader) The inputs he names as leading prices are: the political pendulum position, the policy-distorted business cycle, trade policy (tariffs and the end of the old WTO order), capital flows and the dollar's reserve role feeding US interest rates, and the technical health of trends across about 1,000 series on long, medium and short horizons. Horizon is years for the regime thesis ('the most important topic over the next few years') and weeks for the chart check. Reason: he treats the market as the judge of whether his fundamental thesis is right.",
+ "reader_inferences": [
+  "(reader) The weekend routine is a thesis-falsification loop rather than a trend-following signal: technicals have veto power over a fundamental view.",
+  "(reader) The process is sequential top-down but its links (pendulum to cycle to rates) are not specified, so the same inputs could generate opposite portfolio conclusions.",
+  "(reader) His stated risk lesson comes from a single early failure, which suggests the stop-loss rule is a behavioural safeguard and not an optimised parameter."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT050-C04-R1",
+   "chunk": "C04",
+   "speaker": "Felix Zulauf",
+   "quote": "You have to explain the process how you do it and then later on you have to do according to what you said",
+   "claim": "When raising money, explain the whole process, then follow it, and report results including mistakes and lapses in discipline honestly.",
+   "mechanism": "behavioral",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Raising client assets for a fund",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT050-C07-R1",
+   "chunk": "C07",
+   "speaker": "Felix Zulauf",
+   "quote": "I am in the performance game for my subscribers but I'm not in the performance game for the portfolios I manage which is my my own money",
+   "claim": "He is in a performance game only for his subscribers, not for the portfolios he manages, which hold his own money.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Current role at Zulauf Consulting",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

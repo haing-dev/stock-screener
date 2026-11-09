@@ -1,0 +1,795 @@
+{
+ "source_id": "MT138",
+ "episode_thesis": "Karniol-Tambour (Bridgewater) and Citrone (Discovery Capital) agree that the US-centred globalisation paradigm of the last 15 years is giving way to a more mercantilist, fragmented world that markets have barely begun to price, and that investors are over-concentrated in US assets. Both therefore favour taking risk mostly outside the US (Latin America and other EM for Citrone; non-US government bonds, euro and yen against the dollar, and broader asset-class flexibility for Karniol-Tambour), while differing on the US rates and growth path and on tactical oil versus gold (May 2025).",
+ "speakers": [
+  {
+   "name": "Karen Karniol-Tambour",
+   "role": "Macro investor at Bridgewater (fundamental and systematic, global macro)",
+   "speaker_note": "Captions have no speaker labels; the ledger infers her from content (secular-paradigm, Bridgewater-style systematic language). The opening question may come from Citrone or an unnamed moderator. The gold-versus-oil crowding argument at the end of C06 is probably Citrone's counterpoint (see ledger correction), so it is not credited to her here.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "structural_themes",
+    "geopolitics",
+    "diversification_risk_parity",
+    "policy_reaction_central_banks",
+    "positioning_crowding",
+    "regime_detection",
+    "relative_value_arbitrage"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Investment returns over decades are driven by large secular paradigms. The last 15 years rested on globalisation, a US security umbrella and deflationary easy money, which made a plain S&P 500 the best asset.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical description; no data shown.",
+     "claim_ids": [
+      "MT138-C01-1"
+     ]
+    },
+    {
+     "premise": "A new paradigm of 'modern mercantilism' (state maximises national wealth and self-sufficiency, treats trade deficits as wealth transfers, treats allies coercively) is starting, and markets still price the old one.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument that the shift predates Trump and runs through many countries; contrast with 2010 when US profitability was priced low and now it is priced high.",
+     "claim_ids": [
+      "MT138-C01-2",
+      "MT138-C01-3",
+      "MT138-C01-X1"
+     ]
+    },
+    {
+     "premise": "Reduced foreign appetite for US assets cannot unwind in a day because the trade deficit's flip side is large current-account inflows, mostly from allies, so adjustment is gradual.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Balance-of-payments logic.",
+     "claim_ids": [
+      "MT138-C02-3"
+     ]
+    },
+    {
+     "premise": "Market-cap-guided investors are heavily concentrated in the US; real diversification needs markets with different growth, inflation, monetary policy and elections, and a portfolio that works under different economic outcomes.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument from concentration; Mexico/Brazil tiny in world indices.",
+     "claim_ids": [
+      "MT138-C03-1",
+      "MT138-C03-2",
+      "MT138-C03-R2"
+     ]
+    },
+    {
+     "premise": "Tariffs are inflationary in the US (more so if they bring supply disruption) but deflationary abroad, so the Fed cannot easily ease while other central banks can.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Comparison of the US with other countries' currency moves and energy prices; VAT-vs-Covid analogy for the Fed's dilemma.",
+     "claim_ids": [
+      "MT138-C04-1",
+      "MT138-C04-X1"
+     ]
+    },
+    {
+     "premise": "Country views can be expressed in stocks, bonds and currencies, and doing so lets one earn from a country even when its stock market does badly; investors who express views only in equities forgo that range.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "China-only and ex-China funds were biggest winners; weak economy, good bonds, devalued currency.",
+     "claim_ids": [
+      "MT138-C05-3",
+      "MT138-C05-4",
+      "MT138-C05-X1"
+     ]
+    },
+    {
+     "premise": "Fixed income as a recession hedge was hollowed out in the zero-rate era as institutions moved to private credit, which carries equity-like risk; duration and cross-country currency selection are again sources of uncorrelated alpha.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Observation of institutional clients.",
+     "claim_ids": [
+      "MT138-C06-1",
+      "MT138-C06-2",
+      "MT138-C06-X1"
+     ]
+    },
+    {
+     "premise": "Commodities, including gold, are ignored but useful assets in a world with more inflation risk.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument that the long period without inflation made them look uninteresting.",
+     "claim_ids": [
+      "MT138-C06-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Paradigm shift to US asset underperformance",
+     "steps": [
+      {
+       "from": "mercantilist policy (tariffs, self-sufficiency, coercion of allies)",
+       "to": "foreign investors reconsider US allocation and capital stays home",
+       "why": "fewer reasons to recycle trade-deficit dollars into US assets",
+       "claim_ids": [
+        "MT138-C01-2",
+        "MT138-C02-3"
+       ]
+      },
+      {
+       "from": "prices start from an old-paradigm assumption that US companies keep beating past results",
+       "to": "larger downside to US assets if the paradigm shifts",
+       "why": "expectations are higher than in 2010",
+       "claim_ids": [
+        "MT138-C01-3",
+        "MT138-C01-X1"
+       ]
+      },
+      {
+       "from": "gradual unwinding of current-account inflows",
+       "to": "slow, uneven dollar and asset repricing",
+       "why": "inflows are from allies and large, so they do not reverse in a day",
+       "claim_ids": [
+        "MT138-C02-3"
+       ]
+      }
+     ],
+     "evidence": "Narrative of the last 15 years; Mexico and Brazil size anecdote from DeepSeek day.",
+     "fails_when": "US exceptionalism in technology and capital markets keeps capital in the US (raised by Citrone).",
+     "claim_ids": [
+      "MT138-C01-3",
+      "MT138-C02-3",
+      "MT138-C01-X1"
+     ]
+    },
+    {
+     "topic": "Tariffs, central banks and non-US bonds",
+     "steps": [
+      {
+       "from": "tariffs raise US prices, with a possible supply shock",
+       "to": "Fed cannot ease proactively",
+       "why": "may be a one-off VAT-like shock or a persistent Covid-style supply problem, and more certainty on fiscal stimulus or reshoring removes the case for easing",
+       "claim_ids": [
+        "MT138-C04-1",
+        "MT138-C04-X1",
+        "MT138-C03-5"
+       ]
+      },
+      {
+       "from": "tariffs abroad cause weaker currencies and lower energy prices",
+       "to": "other central banks ease more easily",
+       "why": "slowdown not of their making and no inflation impulse",
+       "claim_ids": [
+        "MT138-C04-1",
+        "MT138-C03-5"
+       ]
+      },
+      {
+       "from": "little non-US easing priced",
+       "to": "long non-US government bonds",
+       "why": "everything prices off the US",
+       "claim_ids": [
+        "MT138-C04-1",
+        "MT138-C03-5"
+       ]
+      },
+      {
+       "from": "systematic pressure measure at once-in-10-to-15-year extremes",
+       "to": "conviction in non-US bonds and euro/yen",
+       "why": "gauge compares pressure with history",
+       "claim_ids": [
+        "MT138-C04-3",
+        "MT138-C04-R1"
+       ]
+      }
+     ],
+     "evidence": "Currency and energy moves; Bridgewater's systematic extremes gauge (not shown).",
+     "fails_when": "US yields rise enough to drag other markets' yields up (Citrone's counter) or tariff-driven slowdown fails to spread.",
+     "claim_ids": [
+      "MT138-C04-1",
+      "MT138-C04-3",
+      "MT138-C04-X2"
+     ]
+    },
+    {
+     "topic": "Dollar decline pace",
+     "steps": [
+      {
+       "from": "fast speculative money and easy hedgers",
+       "to": "dollar fell first",
+       "why": "they can move quickly",
+       "claim_ids": [
+        "MT138-C04-4"
+       ]
+      },
+      {
+       "from": "slow drivers (governance-bound institutional and official flows)",
+       "to": "further dollar weakness over time",
+       "why": "they take a while to work through",
+       "claim_ids": [
+        "MT138-C04-4"
+       ]
+      },
+      {
+       "from": "expected outflows from the dollar",
+       "to": "short USD against euro and yen",
+       "why": "extremes in big crosses",
+       "claim_ids": [
+        "MT138-C04-4",
+        "MT138-C04-3"
+       ]
+      }
+     ],
+     "evidence": "Positioning reasoning; no flow data cited.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT138-C04-4"
+     ]
+    },
+    {
+     "topic": "US growth and inflation path in 2025-26",
+     "steps": [
+      {
+       "from": "tariff pain in 2025",
+       "to": "slowdown and some inflation",
+       "why": "policy shock before offsets arrive",
+       "claim_ids": [
+        "MT138-C03-2",
+        "MT138-C03-4",
+        "MT138-C03-X1"
+       ]
+      },
+      {
+       "from": "fiscal stimulus and reshoring in 2026",
+       "to": "growth boost",
+       "why": "faster resolution of tariff uncertainty speeds reshoring",
+       "claim_ids": [
+        "MT138-C03-4"
+       ]
+      },
+      {
+       "from": "Treasuries with nil risk premium at the start",
+       "to": "yield backup includes a new risk premium",
+       "why": "investors worldwide ask for compensation",
+       "claim_ids": [
+        "MT138-C04-2"
+       ]
+      }
+     ],
+     "evidence": "Policy reading; 'last 48 hours' tariff de-escalation removed tail risk.",
+     "fails_when": "Tariff uncertainty drags on; supply disruption shows up as empty shelves.",
+     "claim_ids": [
+      "MT138-C03-X1",
+      "MT138-C03-4"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Take moderate risk, mostly outside the US; 'not the best time ever to take risk' but least attractive in the US.",
+     "why": "Concentration risk and paradigm shift.",
+     "claim_ids": [
+      "MT138-C05-1",
+      "MT138-C03-1"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Fundamental and systematic: measure the strength of the pressure on a market relative to history and act when it is once-in-10-to-15-years.",
+     "why": "Combines judgement with a historical gauge.",
+     "claim_ids": [
+      "MT138-C04-3",
+      "MT138-C04-R1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Express a country view through stocks, bonds and currencies together, not only through equities.",
+     "why": "Gets paid even if the stock market does badly.",
+     "claim_ids": [
+      "MT138-C05-3",
+      "MT138-C05-4",
+      "MT138-C05-X1"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Hold liquid allocations and shorts to respond to conditions and exploit pricing opportunities.",
+     "why": "Portfolios are constrained by illiquids.",
+     "claim_ids": [
+      "MT138-C03-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Ask what diversifies what you already hold; use zero-correlated assets outside the benchmark.",
+     "why": "Benchmark holdings are concentrated.",
+     "claim_ids": [
+      "MT138-C07-1",
+      "MT138-C03-R2"
+     ]
+    }
+   ],
+   "evidence_style": "Secular-paradigm narrative, historical analogy (2010, VAT, Covid), institutional anecdote and her firm's systematic extremes gauge; no numbers shown.",
+   "current_views": [
+    {
+     "view": "Prefer government bonds outside the US; other central banks can ease.",
+     "as_of": "2025-05",
+     "reasoning": "Tariffs inflationary in the US but deflationary abroad; little easing priced; once-in-10-to-15-years pressure.",
+     "claim_ids": [
+      "MT138-C03-5",
+      "MT138-C04-1",
+      "MT138-C04-3"
+     ]
+    },
+    {
+     "view": "Short the dollar against euro and yen, not against everything.",
+     "as_of": "2025-05",
+     "reasoning": "Slow drivers have not yet moved; extremes in big crosses.",
+     "claim_ids": [
+      "MT138-C04-4"
+     ]
+    },
+    {
+     "view": "Some US slowdown and inflation ahead; tariff pain in 2025, fiscal stimulus and reshoring in 2026.",
+     "as_of": "2025-05",
+     "reasoning": "Policy set; recent tariff de-escalation removed only the tail risk.",
+     "claim_ids": [
+      "MT138-C03-2",
+      "MT138-C03-4",
+      "MT138-C03-X1"
+     ]
+    },
+    {
+     "view": "Take risk mostly outside the US; China exposure across stocks, bonds and currency.",
+     "as_of": "2025-05",
+     "reasoning": "Cheap Chinese stocks but multiple scenarios; US concentration.",
+     "claim_ids": [
+      "MT138-C05-1",
+      "MT138-C05-3",
+      "MT138-C05-X1"
+     ]
+    },
+    {
+     "view": "Tactically she prefers gold to oil, as part of an ignored commodity complex useful against inflation risk.",
+     "as_of": "2025-05",
+     "reasoning": "More inflation risk than before.",
+     "claim_ids": [
+      "MT138-C06-4",
+      "MT138-C06-5"
+     ]
+    },
+    {
+     "view": "Likes Brazilian and Mexican currencies as part of Latin American exposure; capital staying at home as the US pushes self-sufficiency.",
+     "as_of": "2025-05",
+     "reasoning": "Self-sufficiency policy keeps capital at home; Latin America under-owned.",
+     "claim_ids": [
+      "MT138-C02-X4"
+     ]
+    },
+    {
+     "view": "Parts of the Treasury yield backup are a new risk premium.",
+     "as_of": "2025-05",
+     "reasoning": "Little premium over cash at the start.",
+     "claim_ids": [
+      "MT138-C04-2"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Rob Citrone",
+   "role": "Founder of Discovery Capital; discretionary EM and global macro investor",
+   "speaker_note": "Identified by content (Latin America focus, 70% of risk outside the US, America Movil). MT138-C02-4 (two Mexicos) is probably his per the ledger correction; MT138-C06-X2 (gold crowded long, oil short) is inferred to be his counterpoint.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "bottom_up_fundamental",
+    "carry",
+    "geopolitics",
+    "valuation_contrarian",
+    "positioning_crowding",
+    "structural_themes",
+    "crisis_alpha_convexity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "US private-sector exceptionalism (technology, financial services, capital markets) persists, so capital will not leave the US easily, even as global investors begin to reduce their US overweight.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Assertion of US edge.",
+     "claim_ids": [
+      "MT138-C01-4",
+      "MT138-C02-1"
+     ]
+    },
+    {
+     "premise": "Countries are assessed like companies: management quality and policy come first; political change toward better management creates opportunity.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Milei in Argentina and spreading regional change; four elections in 18 months.",
+     "claim_ids": [
+      "MT138-C02-X1",
+      "MT138-C02-2"
+     ]
+    },
+    {
+     "premise": "The world is siloing into Americas, Europe and Asia blocs, which creates dislocations.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Assertion.",
+     "claim_ids": [
+      "MT138-C02-X2"
+     ]
+    },
+    {
+     "premise": "Because the world is tricky and dislocated, a portfolio needs shorts and dynamic protection rather than being structurally long.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Assertion.",
+     "claim_ids": [
+      "MT138-C02-X3"
+     ]
+    },
+    {
+     "premise": "Mexico and Brazil are negligible in market-cap terms (Nvidia fell by about two Mexicos on DeepSeek Monday), which shows how under-capitalised they are in world indices.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Anecdote (attribution probable, per ledger correction).",
+     "claim_ids": [
+      "MT138-C02-4"
+     ]
+    },
+    {
+     "premise": "Rising US yields push yields higher in most other countries, so rates fall only where local conditions differ (Brazil, Mexico, Argentina, Turkey).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Assertion.",
+     "claim_ids": [
+      "MT138-C04-X2",
+      "MT138-C04-5"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "US growth rebound and higher US yields",
+     "steps": [
+      {
+       "from": "significant tax cuts with fewer spending cuts than discussed",
+       "to": "US boom in 2026, pick-up from Q3-Q4 2025",
+       "why": "fiscal impulse",
+       "claim_ids": [
+        "MT138-C03-3"
+       ]
+      },
+      {
+       "from": "reshoring and end of tariff uncertainty",
+       "to": "companies and individuals spend more",
+       "why": "uncertainty paralysis lifts",
+       "claim_ids": [
+        "MT138-C03-3"
+       ]
+      },
+      {
+       "from": "stronger growth and no Fed cuts",
+       "to": "US 10-year at 5-5.25% in 2025",
+       "why": "rates back up",
+       "claim_ids": [
+        "MT138-C03-3"
+       ]
+      },
+      {
+       "from": "higher US yields",
+       "to": "higher yields in Japan and most countries",
+       "why": "the US forces rates up elsewhere",
+       "claim_ids": [
+        "MT138-C04-X2",
+        "MT138-C04-5"
+       ]
+      }
+     ],
+     "evidence": "Forecast; no data.",
+     "fails_when": "Not stated (Karniol-Tambour flags they differ somewhat).",
+     "claim_ids": [
+      "MT138-C03-3",
+      "MT138-C04-X2"
+     ]
+    },
+    {
+     "topic": "Latin America opportunity",
+     "steps": [
+      {
+       "from": "better management and policy (Argentina, then Peru, Colombia, Chile, Brazil elections)",
+       "to": "substantial regional change",
+       "why": "political shift",
+       "claim_ids": [
+        "MT138-C02-X1",
+        "MT138-C02-2"
+       ]
+      },
+      {
+       "from": "high rates, cheap currencies",
+       "to": "returns in equities, currencies, credit and rates",
+       "why": "room for improvement",
+       "claim_ids": [
+        "MT138-C02-2",
+        "MT138-C04-5"
+       ]
+      },
+      {
+       "from": "devalued, high-rate currencies (Nigeria 30%, Turkey 45%)",
+       "to": "carry opportunity",
+       "why": "yield after devaluation",
+       "claim_ids": [
+        "MT138-C05-2"
+       ]
+      }
+     ],
+     "evidence": "Position sizes: 70% of risk outside US, about half in EM.",
+     "fails_when": "Brazil: Lula's actions and 500 bp of hikes in recent months.",
+     "claim_ids": [
+      "MT138-C05-2",
+      "MT138-C02-2"
+     ]
+    },
+    {
+     "topic": "Oil near-term spike",
+     "steps": [
+      {
+       "from": "Iran/Israel conflict risk",
+       "to": "possible spike in oil",
+       "why": "Israel will not let Iran stay nuclear, something happens soon",
+       "claim_ids": [
+        "MT138-C06-3"
+       ]
+      },
+      {
+       "from": "positioning: gold crowded long, oil short",
+       "to": "oil can spike while gold lags",
+       "why": "crowded versus under-owned",
+       "claim_ids": [
+        "MT138-C06-X2",
+        "MT138-C06-5"
+       ]
+      }
+     ],
+     "evidence": "Entry at 55-58 dollars.",
+     "fails_when": "Long-term he is unsure.",
+     "claim_ids": [
+      "MT138-C06-3",
+      "MT138-C06-X2"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "universe",
+     "practice": "Look at countries like companies: management and its policies first.",
+     "why": "Political and management change drives EM re-rating.",
+     "claim_ids": [
+      "MT138-C02-X1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "About 70% of risk outside the US and about half in EM.",
+     "why": "Opportunities in Latin America and other EM.",
+     "claim_ids": [
+      "MT138-C05-2"
+     ]
+    },
+    {
+     "element": "risk",
+     "practice": "Keep shorts and be dynamic, protecting the portfolio at certain points.",
+     "why": "A tricky, dislocated world.",
+     "claim_ids": [
+      "MT138-C02-X3"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Buy oil on dips when conflict risk makes the reward-to-risk attractive (bought between 55 and 58).",
+     "why": "Near-term geopolitical event risk.",
+     "claim_ids": [
+      "MT138-C06-3"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Single names screened on FCF yield, EV/EBITDA, growth, buybacks and controlling-holder trust (America Movil).",
+     "why": "High-quality, cheap Latin American franchise.",
+     "claim_ids": [
+      "MT138-C06-6"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Credit exposure mostly sovereign (Argentina, Nigeria, Ecuador), specialised and sized for big returns.",
+     "why": "Yields are still large.",
+     "claim_ids": [
+      "MT138-C05-X2"
+     ]
+    }
+   ],
+   "evidence_style": "Discretionary judgement, position disclosure and specific numbers (yields, FCF yield, multiples); anecdote; no backtests.",
+   "current_views": [
+    {
+     "view": "US 10-year yield reaches 5-5.25% in 2025; no Fed cuts this year; US economy picks up in H2 2025 and booms in 2026.",
+     "as_of": "2025-05",
+     "reasoning": "Tax cuts, reshoring, end of tariff uncertainty.",
+     "claim_ids": [
+      "MT138-C03-3"
+     ]
+    },
+    {
+     "view": "Short US and Japanese government bonds; long EM rates (Brazil, Mexico, Argentina, Turkey) and perhaps the UK.",
+     "as_of": "2025-05",
+     "reasoning": "US forces rates higher in most countries; EM rates can fall by hundreds to thousands of bp.",
+     "claim_ids": [
+      "MT138-C04-5",
+      "MT138-C04-X2"
+     ]
+    },
+    {
+     "view": "Long Latin America (Argentina, Mexico favourites); Brazil could be the best market in 2026 but with Lula and rate-hike risk.",
+     "as_of": "2025-05",
+     "reasoning": "Political shifts and cheap valuations.",
+     "claim_ids": [
+      "MT138-C02-2",
+      "MT138-C05-2"
+     ]
+    },
+    {
+     "view": "Long Nigerian and Turkish currency carry.",
+     "as_of": "2025-05",
+     "reasoning": "Big devaluations followed by 30-45% rates.",
+     "claim_ids": [
+      "MT138-C05-2"
+     ]
+    },
+    {
+     "view": "Long oil near term, long America Movil.",
+     "as_of": "2025-05",
+     "reasoning": "Iran/Israel risk; 10% FCF yield and 4x EV/EBITDA.",
+     "claim_ids": [
+      "MT138-C06-3",
+      "MT138-C06-6",
+      "MT138-C06-X2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "US rates and growth path",
+   "positions": [
+    {
+     "speaker": "Rob Citrone",
+     "position": "10-year to 5-5.25%, no Fed cuts, US boom in 2026, short US and Japan bonds.",
+     "claim_ids": [
+      "MT138-C03-3",
+      "MT138-C04-X2"
+     ]
+    },
+    {
+     "speaker": "Karen Karniol-Tambour",
+     "position": "Agrees 2025 is pain and 2026 stimulus, but sees tariffs as inflationary in the US with a slowdown ahead and prefers non-US bonds; Citrone says they 'differ a little', though her own US yield call is not stated.",
+     "claim_ids": [
+      "MT138-C03-4",
+      "MT138-C04-1",
+      "MT138-C03-2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "Tactical oil versus gold",
+   "positions": [
+    {
+     "speaker": "Karen Karniol-Tambour",
+     "position": "Does not tactically like oil; prefers gold tactically, within a broadly ignored commodity complex.",
+     "claim_ids": [
+      "MT138-C06-4",
+      "MT138-C06-5"
+     ]
+    },
+    {
+     "speaker": "Rob Citrone",
+     "position": "Bought oil at 55-58 on Iran/Israel risk; gold crowded long and oil crowded short, so oil can spike while gold lags.",
+     "claim_ids": [
+      "MT138-C06-3",
+      "MT138-C06-X2"
+     ]
+    }
+   ]
+  },
+  {
+   "topic": "How far US exceptionalism holds",
+   "positions": [
+    {
+     "speaker": "Rob Citrone",
+     "position": "US edge in technology and capital markets means money will not easily leave.",
+     "claim_ids": [
+      "MT138-C02-1"
+     ]
+    },
+    {
+     "speaker": "Karen Karniol-Tambour",
+     "position": "Prices still assume the old paradigm; regime change is fundamental and under-priced, though unwinding is gradual.",
+     "claim_ids": [
+      "MT138-C01-3",
+      "MT138-C01-X1",
+      "MT138-C02-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Speaker attribution is uncertain for C02-4 (two Mexicos story) and the gold-oil crowding sentence in C06; the ledger corrections reassign them to Citrone.",
+   "claim_ids": [
+    "MT138-C02-4",
+    "MT138-C06-5",
+    "MT138-C06-X2"
+   ]
+  },
+  {
+   "issue": "Karniol-Tambour says a systematic measure shows once-in-10-to-15-year pressure, but gives no metric, universe or threshold.",
+   "claim_ids": [
+    "MT138-C04-3"
+   ]
+  },
+  {
+   "issue": "Citrone's 5-5.25% 10-year forecast and 2026 boom are given without a horizon beyond year-end 2025 or any sizing; Karniol-Tambour's yield view is not stated despite 'we differ a little'.",
+   "claim_ids": [
+    "MT138-C03-3",
+    "MT138-C04-2"
+   ]
+  },
+  {
+   "issue": "Oil is bought for a near-term spike but he is unsure long term; no exit rule.",
+   "claim_ids": [
+    "MT138-C06-3"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Policy inputs: tariff announcements and de-escalation, US fiscal bill (tax cuts versus spending cuts), reshoring decisions, Fed communication on tariff inflation. Market inputs: positioning in gold and oil, the Treasury term/risk premium, speed of foreign allocation shifts away from the US, EM election outcomes (Peru, Colombia, Chile, Brazil), Brazil rate path. Horizon: months for rates and currency, through 2026 for the growth rebound and Brazil, years for the paradigm.",
+ "reader_inferences": [
+  "(reader) The two disagree less on direction (outside-US tilt) than on the US cycle: Citrone expects a strong US 2026 with higher yields while Karniol-Tambour expects slowdown plus sticky inflation.",
+  "(reader) Both approaches avoid market-cap weighting; Citrone chooses by country management quality, Karniol-Tambour by diversification across growth, inflation and policy regimes.",
+  "(reader) Karniol-Tambour's non-US bond view and Citrone's short Japan bonds are compatible only if the stronger-yen/euro currency view dominates the rate view."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT138-C04-R1",
+   "chunk": "C04",
+   "speaker": "Karen Karniol-Tambour",
+   "quote": "we're fundamental we're also systematic and so we can kind of measure the strength of the pressure relative to history",
+   "claim": "Bridgewater combines fundamental judgement with a systematic gauge that measures the strength of pressure on a market relative to its history, and uses extreme readings to build conviction.",
+   "mechanism": "systematic_extreme_gauge",
+   "asset_class": "multi-asset",
+   "indicator": "systematic pressure measure vs history",
+   "horizon": "months",
+   "direction": "positions sized or justified when pressure is at historical extremes",
+   "conditions": "gauge not described",
+   "testable": "no - the measure is not specified",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT138-C03-R2",
+   "chunk": "C03",
+   "speaker": "Karen Karniol-Tambour",
+   "quote": "Also treating it seriously in terms of how are you going to do depending on what happens to the economy.",
+   "claim": "Diversification should be built around economic outcomes (slowdown, inflation) as well as geography, so the portfolio is robust to how the economy evolves.",
+   "mechanism": "outcome_diversification",
+   "asset_class": "multi-asset",
+   "indicator": "portfolio performance across growth/inflation outcomes",
+   "horizon": "unspecified",
+   "direction": "hold assets that work under slowdown and inflation",
+   "conditions": "policy set implies slowdown and inflation",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

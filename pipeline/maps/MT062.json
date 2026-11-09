@@ -1,0 +1,822 @@
+{
+ "source_id": "MT062",
+ "episode_thesis": "A Global Alts 2025 panel of two macro managers (CFM systematic, Graham quant plus discretionary) and two allocators (CPP Investments, PAMCO Prisma) argues that discretionary and systematic macro are complements, not rivals: quant processes more data, more diversified ideas and a rigid method, while discretionary PMs have bandwidth limits and few concentrated ideas but can change view on the fly. Allocators hold both for diversification and positive convexity, expect cash plus 3-5% (or double digits) in a policy-driven, volatile 2025, and pick managers by process and track record.",
+ "speakers": [
+  {
+   "name": "Christian Derry",
+   "role": "Head of macro strategy, CFM (Paris-based systematic manager, about 17 billion AUM, founded 1991 by physicists); former discretionary trader",
+   "speaker_note": "Auto-captions garble names and some sentences; the section where the 'systematic has to remain systematic' point is made (chunk C06) has unclear speaker turns, and that remark is left unattributed. Panel moderated by David Shang of Axia (not mapped; he asks questions).",
+   "fingerprint": [
+    "research_robustness_overfitting",
+    "trend_following",
+    "portfolio_construction_stacking",
+    "nowcasting_data",
+    "regime_detection",
+    "short_term_systematic"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Humans have a bandwidth limit (like pilots limited to seven gauges), so discretionary macro is concentrated in a couple of ideas a year; systematic processes remove that limit.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Air Force pilot study analogy; no market data.",
+     "claim_ids": ["MT062-C04-1", "MT062-C04-2"]
+    },
+    {
+     "premise": "Systematic strategies search a large idea space and hold hundreds of competing ideas, giving more diversity than discretionary books.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "CFM's own structure.",
+     "claim_ids": ["MT062-C04-3", "MT062-C01-X1"]
+    },
+    {
+     "premise": "Large unstructured alternative data is where the edge is moving: over 50% of CFM's models rely on it, and few firms have the technology stack, investments and experience to exploit it.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "CFM's own model mix; data volume growth quote he says is probably inaccurate.",
+     "claim_ids": ["MT062-C04-4", "MT062-C04-X1"]
+    },
+    {
+     "premise": "Convexity is a mechanical outcome of trend following, not a separate skill.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Assertion in reply to the allocators.",
+     "claim_ids": ["MT062-C06-2"]
+    },
+    {
+     "premise": "A new predictor adds value only if it contains new information; many macro ideas just correlate with a cluster of trend-following predictors.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "CFM research infrastructure practice.",
+     "claim_ids": ["MT062-C06-3", "MT062-C06-4"]
+    },
+    {
+     "premise": "Markets are nonstationary and nonlinear, so even a systematic firm needs a human process for risks the model does not cover (regulation, elections, DeepSeek).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "CFM's non-model-risk committee.",
+     "claim_ids": ["MT062-C06-7", "MT062-C06-R1"]
+    },
+    {
+     "premise": "Machine learning is old; the large language model is the genuinely disruptive new tool.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "About 20 years of use at CFM; LLM handles unstructured text.",
+     "claim_ids": ["MT062-C07-X1", "MT062-C07-4"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Bandwidth limit to concentration to systematic diversification",
+     "steps": [
+      {
+       "from": "Human bandwidth limit (pilot with seven gauges)",
+       "to": "Discretionary macro concentrated in a couple of ideas a year",
+       "why": "More than a few inputs raise the chance of a mistake.",
+       "claim_ids": ["MT062-C04-1", "MT062-C04-2"]
+      },
+      {
+       "from": "Systematic processes that ingest terabytes of data",
+       "to": "Hundreds of competing ideas inside each strategy",
+       "why": "A search space with many ideas gives more diversity.",
+       "claim_ids": ["MT062-C04-3"]
+      }
+     ],
+     "evidence": "CFM description; no performance data.",
+     "fails_when": "Not stated; he says it is not an us-versus-them discussion.",
+     "claim_ids": ["MT062-C04-1", "MT062-C04-2", "MT062-C04-3", "MT062-C04-R1"]
+    },
+    {
+     "topic": "Research gate: new information required",
+     "steps": [
+      {
+       "from": "A macro idea is tested on the research infrastructure",
+       "to": "Rejected if it correlates with an existing predictor",
+       "why": "Correlation with existing signals is not new information.",
+       "claim_ids": ["MT062-C06-3"]
+      },
+      {
+       "from": "Many macro ideas correlate with a cluster of trend-following predictors",
+       "to": "Few macro ideas reach production",
+       "why": "They duplicate trend exposure.",
+       "claim_ids": ["MT062-C06-3", "MT062-C06-2"]
+      }
+     ],
+     "evidence": "CFM practice; no counts.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT062-C06-3", "MT062-C06-4"]
+    },
+    {
+     "topic": "Non-model risk handled without overriding signals",
+     "steps": [
+      {
+       "from": "Emergent risks (regulatory changes, elections, DeepSeek)",
+       "to": "A committee he chairs reviews impact on the businesses",
+       "why": "Markets are nonstationary and nonlinear.",
+       "claim_ids": ["MT062-C06-7"]
+      },
+      {
+       "from": "Committee view",
+       "to": "Constraints on risk models in rare cases, not signal overrides, then codified into the system",
+       "why": "Sustainability of the business and system integrity.",
+       "claim_ids": ["MT062-C06-8", "MT062-C06-R1"]
+      }
+     ],
+     "evidence": "CFM practice.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT062-C06-7", "MT062-C06-8"]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Test every new idea against the shared research base; reject if it correlates with existing predictors (often a trend-following cluster); look for effects inconsistent with luck.",
+     "why": "Only new information adds value.",
+     "claim_ids": ["MT062-C06-3", "MT062-C06-4"]
+    },
+    {
+     "element": "research",
+     "practice": "Flat structure with no pods: all researchers collaborate and research done in the flagship fund propagates to other strategies.",
+     "why": "Ideas are tested once against a common predictor set.",
+     "claim_ids": ["MT062-C01-X1"]
+    },
+    {
+     "element": "signal",
+     "practice": "Ingest about five terabytes of data a day; over 50% of models rely on large unstructured alternative data; LLMs for classification, sentiment signals and coding.",
+     "why": "No human can leverage these data sets.",
+     "claim_ids": ["MT062-C04-4", "MT062-C07-4"]
+    },
+    {
+     "element": "risk",
+     "practice": "Never override signals; on rare occasions constrain risk models, ideally feeding back by codifying the logic; a committee reviews non-model risks.",
+     "why": "Preserve the systematic process while managing emergent risks.",
+     "claim_ids": ["MT062-C06-8", "MT062-C06-7"]
+    },
+    {
+     "element": "other",
+     "practice": "Measure returns by contribution of each embedded idea, unlike discretionary traders measured only on P&L.",
+     "why": "Attribution is possible in systematic books.",
+     "claim_ids": ["MT062-C06-5"]
+    }
+   ],
+   "evidence_style": "Firm practice and analogy (pilots), statistical-inference framing (effects inconsistent with luck); no performance figures.",
+   "current_views": [
+    {
+     "view": "Large unstructured alternative data and LLMs are the main driver of systematic alpha now.",
+     "as_of": "2025-02",
+     "reasoning": "More than 50% of CFM models use large unstructured data sets in the last five years; few firms can exploit them.",
+     "claim_ids": ["MT062-C04-4", "MT062-C07-4"]
+    },
+    {
+     "view": "LLM is the disruptive tool in AI for macro: classification, compression of unstructured text, coding.",
+     "as_of": "2025-02",
+     "reasoning": "Machine learning is 20 years old; the LLM handles unstructured text.",
+     "claim_ids": ["MT062-C07-X1", "MT062-C07-4"]
+    },
+    {
+     "view": "Biggest macro risk named by the panel is an unsustainable fiscal trajectory (AI disruption and higher inflation and rates also named); speaker attribution in the lightning round is unclear.",
+     "as_of": "2025-02",
+     "reasoning": "Lightning round answers with no reasoning.",
+     "claim_ids": ["MT062-C07-7"]
+    }
+   ]
+  },
+  {
+   "name": "Pablo Calderini",
+   "role": "CIO and president, Graham Capital (about 20 billion AUM, about 70-75% quantitative systematic, 25% discretionary)",
+   "speaker_note": "Both quant and discretionary macro are run in his firm. Statements about the quant side describe Graham's programs.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "carry",
+    "value_mean_reversion",
+    "policy_reaction_central_banks",
+    "research_robustness_overfitting",
+    "portfolio_construction_stacking",
+    "short_term_systematic"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Discretionary and systematic macro are not that dissimilar: the same liquid markets and the same signal families (fiscal and monetary policy, central banks, growth, inflation) plus factors such as value, mean reversion and carry; they differ in method.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Graham runs both side by side.",
+     "claim_ids": ["MT062-C03-1", "MT062-C01-X2"]
+    },
+    {
+     "premise": "Quant macro can use many correlated inputs because machine learning compresses data, with nonlinear pattern-recognition regressions and robust portfolio construction.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Graham's methods; no performance data.",
+     "claim_ids": ["MT062-C03-2"]
+    },
+    {
+     "premise": "A systematic program has to be rigid: inserting news manually (a weekend AI release, tariff comments) removes alpha.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Assertion from experience.",
+     "claim_ids": ["MT062-C03-3"]
+    },
+    {
+     "premise": "The key advantage of discretionary macro is the ability to change view on the fly (tariffs, DeepSeek), which a quant data process cannot do; a good PM treats a geopolitical accident as a possible alpha signal while a quant does not react.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Assertion.",
+     "claim_ids": ["MT062-C03-5", "MT062-C07-1"]
+    },
+    {
+     "premise": "Unsupervised machine learning overfits (strong in sample, poor out of sample), so use ML for alpha discovery and then understand why the alpha exists.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Assertion.",
+     "claim_ids": ["MT062-C07-5", "MT062-C07-6"]
+    },
+    {
+     "premise": "Markets are highly nonstationary; the more big data and machine learning, the less is understood about what the system is doing, so humans must still monitor.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Graham's daily risk meeting.",
+     "claim_ids": ["MT062-C07-3", "MT062-C07-R1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Data processing versus flexibility",
+     "steps": [
+      {
+       "from": "Quant methods (data compression, machine learning, nonlinear regression)",
+       "to": "Maximum extraction from macro fundamentals and forecasts on one to two (up to three) month horizons",
+       "why": "Machines handle large correlated data sets.",
+       "claim_ids": ["MT062-C03-2", "MT062-C03-4"]
+      },
+      {
+       "from": "Quant system must stay rigid",
+       "to": "It cannot react to weekend news such as an AI program in China or tariff comments without losing alpha",
+       "why": "Manual overrides undermine the system.",
+       "claim_ids": ["MT062-C03-3", "MT062-C03-5"]
+      },
+      {
+       "from": "Discretionary PM flexibility",
+       "to": "Reaction to geopolitical accidents and regime changes week to week",
+       "why": "Years of knowledge and ability to change view on the fly.",
+       "claim_ids": ["MT062-C03-5", "MT062-C07-1", "MT062-C03-4"]
+      }
+     ],
+     "evidence": "Assertion from managing both; no numbers.",
+     "fails_when": "A discretionary PM cannot process as much data as the quant side.",
+     "claim_ids": ["MT062-C03-2", "MT062-C03-3", "MT062-C03-5", "MT062-C07-1"]
+    },
+    {
+     "topic": "ML opacity and need for humans",
+     "steps": [
+      {
+       "from": "More big data and machine learning",
+       "to": "Less understanding of what the system is doing",
+       "why": "Opacity grows with complexity.",
+       "claim_ids": ["MT062-C07-3"]
+      },
+      {
+       "from": "Nonstationary markets and disruptions",
+       "to": "Humans intervene for risk response, never for alpha",
+       "why": "Interventions are about responsibility, not forecasts.",
+       "claim_ids": ["MT062-C07-2", "MT062-C07-R1"]
+      }
+     ],
+     "evidence": "Graham's daily risk meeting.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT062-C07-2", "MT062-C07-3"]
+    },
+    {
+     "topic": "Alpha discovery with AI",
+     "steps": [
+      {
+       "from": "Techniques that already existed (SVD, data compression, pattern matching, cosine similarity)",
+       "to": "AI combines them into one coherent pipeline for extracting signals",
+       "why": "Cohesive use of the same building blocks.",
+       "claim_ids": ["MT062-C07-X2"]
+      },
+      {
+       "from": "ML discovers a candidate alpha",
+       "to": "Researchers explain why it exists before using it",
+       "why": "Guard against over-fitting.",
+       "claim_ids": ["MT062-C07-5", "MT062-C07-6"]
+      }
+     ],
+     "evidence": "Assertion.",
+     "fails_when": "Unsupervised ML is prone to overfit in sample.",
+     "claim_ids": ["MT062-C07-5", "MT062-C07-6", "MT062-C07-X2"]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Signals mostly from fundamentals (fiscal, monetary, central banks, growth, inflation) plus factor-type signals (value, mean reversion, carry).",
+     "why": "Same markets and problems for quant and discretionary.",
+     "claim_ids": ["MT062-C03-1"]
+    },
+    {
+     "element": "signal",
+     "practice": "Quant macro uses machine-learning data compression, nonlinear pattern-recognition regression and robust portfolio construction, on one to two (up to three) month horizons; discretionary PMs trade week to week.",
+     "why": "Extract the maximum from macro fundamentals data.",
+     "claim_ids": ["MT062-C03-2", "MT062-C03-4"]
+    },
+    {
+     "element": "research",
+     "practice": "Do not use unsupervised ML; use ML for alpha discovery and then require an explanation of why the alpha is there.",
+     "why": "Overfitting.",
+     "claim_ids": ["MT062-C07-5", "MT062-C07-6"]
+    },
+    {
+     "element": "risk",
+     "practice": "Do not override quant processes; hold a daily risk meeting to understand what systems are doing; interventions in disruptions are about response, never alpha.",
+     "why": "Preserves the process while allowing risk response.",
+     "claim_ids": ["MT062-C07-2", "MT062-C07-3"]
+    },
+    {
+     "element": "portfolio",
+     "practice": "About 70-75% of Graham's assets in quantitative systematic strategies and 25% in discretionary PMs, treated as two methods for the same markets.",
+     "why": "Different ways of dealing with the same problems.",
+     "claim_ids": ["MT062-C01-X2"]
+    },
+    {
+     "element": "other",
+     "practice": "Discretionary PMs change their view on the fly when there is a big tariff or a DeepSeek-type event.",
+     "why": "It is the key strength of discretionary trading.",
+     "claim_ids": ["MT062-C07-1"]
+    }
+   ],
+   "evidence_style": "Practitioner assertion from running both styles; no performance data; some technical vocabulary (SVD, cosine similarity).",
+   "current_views": [
+    {
+     "view": "AI is a great tool for alpha discovery and will help researchers find better alpha, but unsupervised ML overfits.",
+     "as_of": "2025-02",
+     "reasoning": "Explain the alpha after discovery.",
+     "claim_ids": ["MT062-C07-5", "MT062-C07-6"]
+    },
+    {
+     "view": "Discretionary macro's ability to change view quickly is its key advantage over quant in an environment of tariffs and surprises such as DeepSeek.",
+     "as_of": "2025-02",
+     "reasoning": "Quant systems cannot react to news the way PMs can.",
+     "claim_ids": ["MT062-C07-1", "MT062-C03-5"]
+    }
+   ]
+  },
+  {
+   "name": "Nicholas Cormier",
+   "role": "Portfolio manager, external portfolio management at CPP Investments (allocator to public-market hedge funds; focus on systematic macro)",
+   "speaker_note": "Allocator view; statements are about how CPPIB uses macro managers and the market outlook.",
+   "fingerprint": [
+    "manager_selection_allocation",
+    "diversification_risk_parity",
+    "crisis_alpha_convexity",
+    "portfolio_construction_stacking",
+    "relative_value_arbitrage"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Forecasting which hedge fund strategy will do best is too hard, so diversify across a breadth of strategies.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Allocator stance.",
+     "claim_ids": ["MT062-C02-1"]
+    },
+    {
+     "premise": "Hedge fund macro diversifies away from security selection into asset selection, via relative value and directional trend capture.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "CPPIB's portfolio construction logic.",
+     "claim_ids": ["MT062-C04-5"]
+    },
+    {
+     "premise": "Systematic macro supplies style exposures (carry, momentum, fundamental momentum); discretionary is expected to supply real convexity at the right time from one or two big ideas a year, so timing and conviction matter.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Allocator expectation; no data.",
+     "claim_ids": ["MT062-C04-6", "MT062-C05-1"]
+    },
+    {
+     "premise": "Discretionary and systematic macro are held together to diversify across asset classes, styles and timing horizons.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Allocator construction.",
+     "claim_ids": ["MT062-C05-X1"]
+    },
+    {
+     "premise": "Cross-country dispersion (China weak, US exceptionalism, developed markets downshifting) is the opportunity for macro.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Description of 2025 backdrop.",
+     "claim_ids": ["MT062-C02-2"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Dispersion to macro returns",
+     "steps": [
+      {
+       "from": "China weak, US exceptional, developed markets downshifting",
+       "to": "Fundamental dispersion across countries",
+       "why": "Economies diverge.",
+       "claim_ids": ["MT062-C02-2"]
+      },
+      {
+       "from": "Dispersion",
+       "to": "Opportunity for macro strategies; hedge fund portfolio at cash plus 3-5%",
+       "why": "Relative value and directional strategies can capture it.",
+       "claim_ids": ["MT062-C02-2", "MT062-C02-3"]
+      }
+     ],
+     "evidence": "Backdrop description only.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT062-C02-2", "MT062-C02-3"]
+    },
+    {
+     "topic": "Roles of the two macro styles in the allocator portfolio",
+     "steps": [
+      {
+       "from": "Systematic macro",
+       "to": "Style exposures: carry, momentum, fundamental momentum",
+       "why": "Rules capture established styles.",
+       "claim_ids": ["MT062-C04-6"]
+      },
+      {
+       "from": "Discretionary macro",
+       "to": "Real convexity from one or two big ideas a year",
+       "why": "Timing and conviction.",
+       "claim_ids": ["MT062-C04-6", "MT062-C05-1"]
+      }
+     ],
+     "evidence": "Allocator expectations.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT062-C04-6", "MT062-C05-1", "MT062-C05-X1"]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "portfolio",
+     "practice": "Allocate across a breadth of strategies with a high focus on diversification; hold discretionary and systematic macro to diversify across asset classes, styles and timing horizons.",
+     "why": "Strategy forecasting is too hard.",
+     "claim_ids": ["MT062-C02-1", "MT062-C05-X1"]
+    },
+    {
+     "element": "universe",
+     "practice": "Use macro hedge funds to move from corporate security selection to asset selection through relative value and directional trend capture.",
+     "why": "Diversify away from traditional security selection.",
+     "claim_ids": ["MT062-C04-5"]
+    },
+    {
+     "element": "signal",
+     "practice": "Expect style exposures from systematic managers and real convexity from discretionary ones.",
+     "why": "Each style has a different role.",
+     "claim_ids": ["MT062-C04-6", "MT062-C05-1"]
+    }
+   ],
+   "evidence_style": "Allocator reasoning and expectation; no numbers except the return range.",
+   "current_views": [
+    {
+     "view": "Constructive on macro opportunities; a diversified hedge fund portfolio should return roughly cash plus 3-5% with no beta.",
+     "as_of": "2025-02",
+     "reasoning": "Fundamental dispersion among China, US and developed markets.",
+     "claim_ids": ["MT062-C02-2", "MT062-C02-3"]
+    }
+   ]
+  },
+  {
+   "name": "Jackie Rosner",
+   "role": "Investment team, PAMCO Prisma (hedge fund allocator; global macro and RV)",
+   "speaker_note": "Speaks as an allocator; the lightning-round and a few sentences are unattributed in the captions.",
+   "fingerprint": [
+    "manager_selection_allocation",
+    "crisis_alpha_convexity",
+    "portfolio_construction_stacking",
+    "geopolitics",
+    "policy_reaction_central_banks",
+    "volatility_options"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Allocators target double-digit absolute returns, reasonable drawdowns and low equity correlation; cash rates are high and hedge funds compete with equity rallies.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Allocator objective.",
+     "claim_ids": ["MT062-C02-4"]
+    },
+    {
+     "premise": "Policy changes (tariffs, immigration, tax cuts), high debt and deficits, a strong dollar and duration worries create volatility that favors active management.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Description of the 2025 backdrop.",
+     "claim_ids": ["MT062-C02-5", "MT062-C02-X1"]
+    },
+    {
+     "premise": "Geopolitical risk is two-sided for macro: elevated risk can be inflationary and its removal deflationary.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Assertion.",
+     "claim_ids": ["MT062-C02-6"]
+    },
+    {
+     "premise": "The old trader mantra 'don't fight the Fed' now has a sibling, 'don't fight Trump': the administration is transparent about its aims and 'beta dependent' (sensitive to equity wealth levels), so large policy-driven moves are expected.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Assertion; Trump described as beta dependent.",
+     "claim_ids": ["MT062-C02-8"]
+    },
+    {
+     "premise": "Both discretionary and systematic macro are positively convex, volatility friendly and capture right tails, but become correlated in large moves.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Allocator experience.",
+     "claim_ids": ["MT062-C05-2", "MT062-C05-3"]
+    },
+    {
+     "premise": "A good discretionary macro trader has a Sharpe just under 1, the average systematic strategy about 0.5 but with about twice the volatility, so absolute returns end up similar.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Rough figures from experience, no data source.",
+     "claim_ids": ["MT062-C05-4"]
+    },
+    {
+     "premise": "Systematic managers differ widely in strategy mix, speed, holding period and asset class mix, so outcomes depend on the manager chosen.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Allocator experience (30-day commodity manager example).",
+     "claim_ids": ["MT062-C05-6", "MT062-C06-1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Policy volatility to demand for convex strategies",
+     "steps": [
+      {
+       "from": "Tariffs, immigration, tax cuts, deficits, strong dollar, China exporting deflation, geopolitical risk",
+       "to": "Volatility and a wall of worry",
+       "why": "Many policy and market uncertainties at once.",
+       "claim_ids": ["MT062-C02-5", "MT062-C02-X1", "MT062-C02-6"]
+      },
+      {
+       "from": "Volatility, worries about equity rally and duration",
+       "to": "More focus on active, positively convex, volatility-friendly strategies",
+       "why": "Those strategies benefit from movement.",
+       "claim_ids": ["MT062-C02-7", "MT062-C03-X1"]
+      },
+      {
+       "from": "Equity rally cannot continue forever and volatility offers trading opportunity",
+       "to": "Returns above cash plus 3-5% possible",
+       "why": "Trading opportunity from movement.",
+       "claim_ids": ["MT062-C03-X1", "MT062-C02-4"]
+      }
+     ],
+     "evidence": "Descriptive; no data.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT062-C02-5", "MT062-C02-7", "MT062-C03-X1"]
+    },
+    {
+     "topic": "Too many systematic managers dilute returns",
+     "steps": [
+      {
+       "from": "Using a single systematic manager",
+       "to": "Idiosyncratic experience",
+       "why": "Strategy mix, speed and asset class mix differ.",
+       "claim_ids": ["MT062-C05-6", "MT062-C06-1"]
+      },
+      {
+       "from": "Using too many managers",
+       "to": "Diversifying away the returns (watering down the soup)",
+       "why": "Excess diversification.",
+       "claim_ids": ["MT062-C06-1"]
+      }
+     ],
+     "evidence": "Allocator experience.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT062-C06-1"]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "universe",
+     "practice": "Hold both discretionary and systematic macro for strategy diversification and positive convexity.",
+     "why": "Both capture right tails differently.",
+     "claim_ids": ["MT062-C05-2", "MT062-C05-3"]
+    },
+    {
+     "element": "research",
+     "practice": "Underwrite the people and the process: a tested, repeatable process and a proven track record; do not pay for someone's tuition (no managers learning on the allocator's capital).",
+     "why": "Track record and process are the evidence.",
+     "claim_ids": ["MT062-C05-5"]
+    },
+    {
+     "element": "research",
+     "practice": "Prefer specialists whose expertise is an inch wide and a mile deep.",
+     "why": "Proven narrow expertise.",
+     "claim_ids": ["MT062-C05-X2"]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hold more than two but fewer than ten systematic managers; concentrate in the best and increase as they are tested.",
+     "why": "One manager gives an idiosyncratic experience; too many dilute returns.",
+     "claim_ids": ["MT062-C06-1"]
+    },
+    {
+     "element": "other",
+     "practice": "Aim for double-digit absolute returns, reasonable drawdowns and low equity correlation.",
+     "why": "Cash rates are elevated and hedge funds compete with equity rallies.",
+     "claim_ids": ["MT062-C02-4"]
+    }
+   ],
+   "evidence_style": "Allocator experience and rules of thumb; Sharpe figures are stated without sources.",
+   "current_views": [
+    {
+     "view": "2025 should be a good year for hedge funds and trading strategies, with returns above cash plus 3-5% (double digits) possible.",
+     "as_of": "2025-02",
+     "reasoning": "Policy changes, debt, strong dollar, geopolitical risk and a long equity rally create volatility and opportunity.",
+     "claim_ids": ["MT062-C02-4", "MT062-C03-X1", "MT062-C02-5"]
+    },
+    {
+     "view": "Lean into positively convex, volatility-friendly strategies; do not fight Trump.",
+     "as_of": "2025-02",
+     "reasoning": "Trump is transparent about his aims and 'beta dependent', so large policy-driven moves are expected.",
+     "claim_ids": ["MT062-C02-7", "MT062-C02-8"]
+    },
+    {
+     "view": "Geopolitical risk cuts both ways for inflation: elevated risk inflationary, its removal deflationary; part of the wall of worry is China exporting deflation.",
+     "as_of": "2025-02",
+     "reasoning": "Two-sided effects on prices.",
+     "claim_ids": ["MT062-C02-6", "MT062-C02-X1"]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "What each style offers: flexibility versus bandwidth and breadth",
+   "positions": [
+    {
+     "speaker": "Christian Derry",
+     "position": "Human bandwidth limits discretionary macro to a few concentrated ideas; systematic strategies hold hundreds of competing ideas and exploit unstructured data no human can.",
+     "claim_ids": ["MT062-C04-1", "MT062-C04-2", "MT062-C04-3"]
+    },
+    {
+     "speaker": "Pablo Calderini",
+     "position": "Quant processes more data but must stay rigid; discretionary's ability to change view on the fly is its key advantage.",
+     "claim_ids": ["MT062-C03-3", "MT062-C03-5", "MT062-C07-1"]
+    }
+   ]
+  },
+  {
+   "topic": "Origin of convexity",
+   "positions": [
+    {
+     "speaker": "Christian Derry",
+     "position": "Convexity is mechanically produced by trend following; it is not a separate skill.",
+     "claim_ids": ["MT062-C06-2"]
+    },
+    {
+     "speaker": "Nicholas Cormier",
+     "position": "Systematic macro supplies style exposures; discretionary macro is expected to deliver real convexity at the right time from a few big ideas.",
+     "claim_ids": ["MT062-C04-6", "MT062-C05-1"]
+    },
+    {
+     "speaker": "Jackie Rosner",
+     "position": "Both discretionary and systematic macro are positively convex and capture right tails, though in different ways.",
+     "claim_ids": ["MT062-C05-2"]
+    }
+   ]
+  },
+  {
+   "topic": "Return expectation for hedge funds in 2025",
+   "positions": [
+    {
+     "speaker": "Nicholas Cormier",
+     "position": "A diversified hedge fund portfolio should earn roughly cash plus 3 to 5 with no beta.",
+     "claim_ids": ["MT062-C02-3"]
+    },
+    {
+     "speaker": "Jackie Rosner",
+     "position": "Aim for double-digit returns; volatility and trading opportunity should allow more than cash plus 3-5.",
+     "claim_ids": ["MT062-C02-4", "MT062-C03-X1"]
+    }
+   ]
+  },
+  {
+   "topic": "Human intervention in a systematic process",
+   "positions": [
+    {
+     "speaker": "Unidentified panelist",
+     "position": "Systematic has to remain systematic; overriding a system turns it into a discretionary strategy.",
+     "claim_ids": ["MT062-C06-6"]
+    },
+    {
+     "speaker": "Christian Derry",
+     "position": "Not a label; never override signals, but occasionally constrain risk models and codify the logic, with a committee for non-model risks.",
+     "claim_ids": ["MT062-C06-7", "MT062-C06-8", "MT062-C06-R1"]
+    },
+    {
+     "speaker": "Pablo Calderini",
+     "position": "Do not override the process ever; interventions in disruptions are about response, never alpha, and a daily risk meeting keeps humans informed.",
+     "claim_ids": ["MT062-C07-2", "MT062-C07-3"]
+    }
+   ]
+  },
+  {
+   "topic": "Framing of the title question 'who wins'",
+   "positions": [
+    {
+     "speaker": "Christian Derry",
+     "position": "It is not an us-versus-them discussion; the two are complements.",
+     "claim_ids": ["MT062-C04-R1"]
+    },
+    {
+     "speaker": "Pablo Calderini",
+     "position": "Same markets and signal families, different methods; Graham runs both at 70-75% quant and 25% discretionary.",
+     "claim_ids": ["MT062-C03-1", "MT062-C01-X2"]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Sharpe figures (discretionary just under 1; systematic about 0.5 at twice the volatility) come without a data source, period or fee basis; 'twice the volatility' and 'similar absolute returns' together imply a higher Sharpe for discretionary, which is not reconciled with the allocator's preference for both.",
+   "claim_ids": ["MT062-C05-4"]
+  },
+  {
+   "issue": "Derry says convexity is mechanical to trend following while Cormier expects it from discretionary; no evidence is offered by either side and the panel does not resolve it.",
+   "claim_ids": ["MT062-C06-2", "MT062-C04-6"]
+  },
+  {
+   "issue": "The data-growth figure (all data up to 2006 is about 5 exabytes, now created every two days) is quoted by the speaker himself as probably incorrect.",
+   "claim_ids": ["MT062-C04-X1"]
+  },
+  {
+   "issue": "The 'who wins' remark, 'systematic has to remain systematic', and the lightning-round answers on macro risk are not attributed to a named speaker in the captions.",
+   "claim_ids": ["MT062-C06-6", "MT062-C07-7"]
+  },
+  {
+   "issue": "Pablo says the quant side does not use unsupervised machine learning yet earlier lists machine-learning compression and pattern-recognition regression; the boundary between supervised and unsupervised use is not defined.",
+   "claim_ids": ["MT062-C03-2", "MT062-C07-5"]
+  },
+  {
+   "issue": "'Don't fight Trump' is stated as a mantra with 'beta dependent' as evidence of sensitivity to equity levels, but the corrected claim states no mechanism or past episodes; the 'Trump put' is an inference not made by the speaker.",
+   "claim_ids": ["MT062-C02-8"]
+  },
+  {
+   "issue": "Quant horizons (one to three months) and discretionary horizons (week to week) are given, but no turnover or Sharpe comparison within Graham's own book is offered.",
+   "claim_ids": ["MT062-C03-4"]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs the panel names as leading prices: US policy actions (tariffs, immigration, tax cuts, regulation) and equity market levels as a policy sensitivity; fiscal and monetary policy, central banks, growth and inflation; cross-country dispersion (China, US, developed markets); the strong dollar and duration; China exporting deflation; geopolitical risk (two-sided for inflation); news shocks such as DeepSeek; and alternative data and LLM-derived sentiment. Horizons: one to three months for Graham's quant programs, week to week for discretionary PMs, one year for the allocators' outlook.",
+ "reader_inferences": [
+  "(reader) The panel's consensus is a division of labour: systematic for breadth, data and consistency; discretionary for flexibility around regime breaks and a few large ideas; allocators hold both for diversification and convexity.",
+  "(reader) Both managers rule out signal override but accept human intervention for risk response, so the real boundary between systematic and discretionary is whether humans can add alpha views, not whether humans watch the system.",
+  "(reader) Derry's research gate (reject ideas correlated with existing predictors) implies that a large share of discretionary macro alpha is, to a systematic shop, a repackaging of trend exposure, which is exactly the claim the allocators dispute."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT062-C04-R1",
+   "chunk": "C04",
+   "speaker": "Christian Derry",
+   "quote": "it's really not an Us Versus Them discuss discussion",
+   "claim": "He says the debate between discretionary and systematic macro is not us versus them; he was a discretionary trader for a long time.",
+   "mechanism": "research_method",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT062-C06-R1",
+   "chunk": "C06",
+   "speaker": "Christian Derry",
+   "quote": "even a high frequency firm there's a metaphorical button with a human",
+   "claim": "Even a high-frequency systematic firm retains a metaphorical button operated by a human, because markets are nonstationary and nonlinear.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Non-model risks such as regulation, elections, DeepSeek",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  },
+  {
+   "claim_id": "MT062-C07-R1",
+   "chunk": "C07",
+   "speaker": "Pablo Calderini",
+   "quote": "markets are highly nonstationary and that things can happen and you have to have humans looking at things",
+   "claim": "Markets are highly nonstationary, so humans must watch systems even when the process is not overridden.",
+   "mechanism": "risk_management",
+   "asset_class": "multi",
+   "indicator": "",
+   "horizon": "unspecified",
+   "direction": "",
+   "conditions": "Systematic process",
+   "testable": "no",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

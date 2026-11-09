@@ -1,0 +1,196 @@
+{
+ "source_id": "MT090",
+ "episode_thesis": "Ken Tropin (Graham Capital, about $20bn, roughly 75% of risk in macro) describes a conservative, innovation-minded philosophy: be tactical, cut risk when conviction is low, build talent and culture, and use AI and new quant tools. His highest-probability macro view in December 2025 is that term premium is underpriced because of the large US deficit, so US curve steepeners work, though timing is hard and policy pressure for lower rates has stalled it. He sees AI equities as real but expensive, a dollar in a trading range because every central bank is somewhat hawkish, and Japan as the surprising driver of global rates.",
+ "speakers": [
+  {
+   "name": "Ken Tropin",
+   "role": "Founder and chairman, Graham Capital Management (about $20bn, about 250 people; offices in Connecticut, New York, London and one more)",
+   "speaker_note": "Two-person podcast (host Bilal Hafeez of Macro Hive). Auto-captions with some errors (for example 'Blamage' for a fourth office, 'Hawinson' for Canada's hawkish turn). The host asks questions and relays market debates; he states no position of his own except framing the AI-bubble analogy (C04-5), so only Tropin is mapped. Ledger correction applied to C06-4: Tropin says the hawkishness comes even though Europe's economy is not strong and Asia may be strong; he does not call every economy weak.",
+   "fingerprint": ["macro_fundamental_topdown", "policy_reaction_central_banks", "fiscal_dominance", "relative_value_arbitrage", "valuation_contrarian", "position_sizing_vol_target", "regime_detection", "research_robustness_overfitting"],
+   "worldview_premises": [
+    {
+     "premise": "Term premium in US long bonds is underpriced because the deficit is extraordinarily large and, in his view, incurable; duration risk has been a non-event for years, so the market is insensitive to it until it eventually reprices.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Experience of high long-end rates earlier in his career, size of the deficit; no model or number.",
+     "claim_ids": ["MT090-C04-2", "MT090-C04-3"]
+    },
+    {
+     "premise": "In FX the country with the most hawkish central bank usually has the strongest currency; when all central banks lean hawkish, currencies range-trade.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Rule of thumb applied to the dollar's six-month trading range.",
+     "claim_ids": ["MT090-C07-1"]
+    },
+    {
+     "premise": "Markets can run ahead of or away from any central bank for a while, but in the long run central banks get their arms around problems.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Repeated episodes; current hawkish turns in Japan, Canada and Europe despite weak economies.",
+     "claim_ids": ["MT090-C05-2", "MT090-C06-4"]
+    },
+    {
+     "premise": "The US-China relationship is mutual interdependence, so conflict is limited (Taiwan is a tail risk), while a quick Russia-Ukraine settlement is naive.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Judgement about leaders and economic ties.",
+     "claim_ids": ["MT090-C07-2"]
+    },
+    {
+     "premise": "The best long-run approach is conservative: succeed across market cycles, keep risk close to home when conviction is low, and accept bad cycles; few very aggressive traders survive.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "45 years in the industry, learned partly 'the hard way'.",
+     "claim_ids": ["MT090-C01-2", "MT090-C06-3"]
+    },
+    {
+     "premise": "Sustained success requires evolving with technology (AI, computing power) and continual innovation.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "The tools are radically different from when he started.",
+     "claim_ids": ["MT090-C02-2", "MT090-C01-2"]
+    },
+    {
+     "premise": "Talent and culture drive results: grow young talent, build bigger discretionary teams, be patient with PMs, and recruit globally.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Renaissance example; about 25 PM teams at Graham; New York office two-thirds full.",
+     "claim_ids": ["MT090-C02-3", "MT090-C03-1"]
+    },
+    {
+     "premise": "Humility and effort matter: loss of humility tends to coincide with losing money, and working harder with a good attitude drives success.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Personal story; no data.",
+     "claim_ids": ["MT090-C08-1", "MT090-C08-2"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Deficit to term premium to steeper curve",
+     "steps": [
+      {"from": "large, uncorrected US deficit", "to": "greater supply of duration and rising sensitivity to duration risk", "why": "he sees no credible way to shrink it", "claim_ids": ["MT090-C04-3"]},
+      {"from": "duration risk becomes a factor again after years as a non-factor", "to": "term premium reprices higher, long yields rise relative to the short end", "why": "market not yet sensitive; likely within a year or two", "claim_ids": ["MT090-C04-2", "MT090-C04-3"]},
+      {"from": "administration pressure for lower rates and reluctance to take risk", "to": "steepening stalls or goes sideways in the short run", "why": "position churn and policy pressure lean against it", "claim_ids": ["MT090-C04-X1", "MT090-C04-4"]}
+     ],
+     "evidence": "Curve steepened for part of 2025, then went sideways; no quantitative term-premium estimate.",
+     "fails_when": "He says timing is the risk: you must know when to put the trade on and take it off; policy pressure and growth shocks can delay or reverse it.",
+     "claim_ids": ["MT090-C04-2", "MT090-C04-3", "MT090-C04-X1"]
+    },
+    {
+     "topic": "Fiscal stimulus and Fed pressure into the midterms",
+     "steps": [
+      {"from": "midterm elections and a president wanting stimulus", "to": "enormous pressure on the new Fed chair to ease and stimulate", "why": "political incentives", "claim_ids": ["MT090-C06-2"]},
+      {"from": "inflation and tariff pass-through (consumer tax) versus slowing non-AI economy", "to": "mixed inflation picture and a constrained Fed", "why": "tariff cost is passed on, but two thirds of the economy outside AI slows", "claim_ids": ["MT090-C05-3", "MT090-C04-1"]},
+      {"from": "bond markets telling the opposite in recent days", "to": "sentiment could swing quickly in the new year", "why": "markets can overdo moves", "claim_ids": ["MT090-C06-2"]}
+     ],
+     "evidence": "Recent bond-market reaction; no data cited.",
+     "fails_when": "He is skeptical of more cuts; if growth slows enough the Fed cuts a couple of times or more.",
+     "claim_ids": ["MT090-C06-2", "MT090-C04-1", "MT090-C05-3"]
+    },
+    {
+     "topic": "AI equity correction and spillover to macro",
+     "steps": [
+      {"from": "AI stocks' performance is very concentrated and expensive", "to": "a correction would be normal at some point", "why": "valuation after enormous gains; but AI is real, not a meme", "claim_ids": ["MT090-C05-1"]},
+      {"from": "possible correction with an outsider as next Fed chair (Hassett)", "to": "uncertain Fed put", "why": "committee cohesion and reaction function unknown", "claim_ids": ["MT090-C05-X1"]}
+     ],
+     "evidence": "Performance and concentration; no dot-com parallel endorsed.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT090-C05-1", "MT090-C05-X1"]
+    },
+    {
+     "topic": "Liquidity shock in private markets",
+     "steps": [
+      {"from": "private credit growth", "to": "risk that may be overblown", "why": "most managers understand their risks", "claim_ids": ["MT090-C05-4"]},
+      {"from": "a liquidity shock and demand for cash", "to": "even well-managed funds suspend redemptions", "why": "liquidity mismatch", "claim_ids": ["MT090-C06-1"]}
+     ],
+     "evidence": "Private equity redemptions precedent.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT090-C05-4", "MT090-C06-1"]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "universe",
+     "practice": "About 75% of risk in macro markets (rates, FX, equities, some commodities, much of it fixed-income relative value, curve and breakeven/inflation trades), the rest in equities, credit and a little emerging markets.",
+     "why": "Macro focus rather than a multi-strat spread; multi-strats allocate only 10-15% of risk to macro.",
+     "claim_ids": ["MT090-C01-1", "MT090-C02-1"]
+    },
+    {
+     "element": "sizing",
+     "practice": "When there is no conviction, stay close to home; traders were tactical with low risk levels in 2025; most traders use less than their normal risk limits when policy and geopolitical shocks could be disruptive.",
+     "why": "Learned lessons; few aggressive traders last.",
+     "claim_ids": ["MT090-C06-3", "MT090-C03-2", "MT090-C04-4"]
+    },
+    {
+     "element": "risk",
+     "practice": "Run the firm conservatively and thoughtfully on risk; investors should pick managers with strong risk management in case of liquidity shocks.",
+     "why": "Even good funds can be forced to suspend redemptions.",
+     "claim_ids": ["MT090-C06-3", "MT090-C06-1"]
+    },
+    {
+     "element": "signal",
+     "practice": "Trade the dollar as a range (little risk either way) when all central banks lean hawkish; place curve steepeners with attention to entry and exit timing.",
+     "why": "Hawkish-bank rule and timing risk.",
+     "claim_ids": ["MT090-C07-1", "MT090-C04-2"]
+    },
+    {
+     "element": "research",
+     "practice": "Stay ahead of or at least competitive in AI and new quantitative opportunities; look around the corner for next year's and the next three years' opportunities.",
+     "why": "Computing and AI make past approaches obsolete.",
+     "claim_ids": ["MT090-C02-2", "MT090-C01-2"]
+    },
+    {
+     "element": "other",
+     "practice": "Offer custom-designed funds to clients; develop young talent and large discretionary teams (about 25 PM teams, some with 15 people); recruit from academia and globally.",
+     "why": "Control over outcomes; avoid overpaying for competitors' talent.",
+     "claim_ids": ["MT090-C02-1", "MT090-C02-3", "MT090-C03-1"]
+    }
+   ],
+   "evidence_style": "Experience and rules of thumb: career recollection, historical contrasts (high long rates earlier in his career), and 2025 trading results described in general terms. No backtests, no statistics.",
+   "current_views": [
+    {"view": "Highest-probability macro trade: US term premium is underpriced; like curve steepeners, but timing entry and exit matters.", "as_of": "2025-12", "reasoning": "Extraordinary and incurable deficit; duration risk ignored for years.", "claim_ids": ["MT090-C04-2", "MT090-C04-3"]},
+    {"view": "Skeptical of more Fed cuts in 2026: one more cut priced for year end, inflation pressure on the new chair, though a slowdown could allow a couple.", "as_of": "2025-12", "reasoning": "Tariff pass-through, sticky prices; divergence with Japan raising rates.", "claim_ids": ["MT090-C04-1", "MT090-C05-3"]},
+    {"view": "Fiscal and Fed-easing pressure into the midterms is likely, although bond markets say the opposite; be tactical and careful.", "as_of": "2025-12", "reasoning": "Political incentives; sentiment can swing in the new year.", "claim_ids": ["MT090-C06-2"]},
+    {"view": "The AI equity trade is real but expensive and concentrated; a correction would be normal and deserves attention in risk management; a Fed put is uncertain under an outsider chair.", "as_of": "2025-12", "reasoning": "Performance move, concentration.", "claim_ids": ["MT090-C05-1", "MT090-C05-X1"]},
+    {"view": "Japan is the most hawkish he can remember and is driving global rates; Canada and Europe also turned hawkish despite weak economies (Asia stronger).", "as_of": "2025-12", "reasoning": "Observed central-bank moves, hard to explain.", "claim_ids": ["MT090-C06-4", "MT090-C05-2", "MT090-C04-1"]},
+    {"view": "The dollar is in a six-month trading range; do not take much risk in either direction.", "as_of": "2025-12", "reasoning": "Every central bank somewhat hawkish.", "claim_ids": ["MT090-C07-1"]},
+    {"view": "The US cannot decouple from China, so escalation is limited with Taiwan the tail risk; a Russia-Ukraine settlement is not easy.", "as_of": "2025-12", "reasoning": "Mutual need; mistrust of Russia's leader.", "claim_ids": ["MT090-C07-2"]},
+    {"view": "Private credit risk may be overblown but a liquidity shock would hurt even well-run funds.", "as_of": "2025-12", "reasoning": "Manager sophistication versus liquidity mismatch.", "claim_ids": ["MT090-C05-4", "MT090-C06-1"]},
+    {"view": "The steepener stalled in recent months because trades are put on and off, administration pressure for lower rates, and low risk-taking.", "as_of": "2025-12", "reasoning": "Normal market behaviour plus political pressure.", "claim_ids": ["MT090-C04-X1", "MT090-C04-4"]}
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "AI equities as a dot-com-style bubble",
+   "positions": [
+    {"speaker": "Bilal Hafeez (relaying others' framing)", "position": "Some people expect a sharp AI-equity correction and use the dot-com period as the template, with a credit event and Fed cuts to follow.", "claim_ids": ["MT090-C04-5"]},
+    {"speaker": "Ken Tropin", "position": "AI is real, not a meme or imaginary bubble, but expensive and concentrated, so a correction would be normal and calls for risk-management attention.", "claim_ids": ["MT090-C05-1"]}
+   ]
+  },
+  {
+   "topic": "Fed cuts in 2026",
+   "positions": [
+    {"speaker": "Those expecting a couple of cuts (relayed by Tropin)", "position": "Economy slows and the Fed can cut a couple of times or more.", "claim_ids": ["MT090-C04-1"]},
+    {"speaker": "Ken Tropin", "position": "Skeptical; inflation pressure constrains the new chair, although he expects political pressure to ease.", "claim_ids": ["MT090-C04-1", "MT090-C06-2"]}
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {"issue": "Term-premium thesis rests on the deficit being 'incurable' without any numbers; the curve steepened part of 2025, then went sideways, and he gives no stop or sizing rule beyond 'know when to put it on and take it off'.", "claim_ids": ["MT090-C04-2", "MT090-C04-3", "MT090-C04-X1"]},
+  {"issue": "He expects both easing pressure from the administration and a more hawkish term premium; bond markets were already signalling the opposite, which he calls possibly overdone.", "claim_ids": ["MT090-C06-2", "MT090-C04-X1"]},
+  {"issue": "Hawkishness of Japan, Canada and Europe is described as hard to explain given weak European growth; no reasoning offered.", "claim_ids": ["MT090-C06-4", "MT090-C05-2"]},
+  {"issue": "The inflation picture is left both slowing (non-AI economy) and rising (tariffs) with no resolution.", "claim_ids": ["MT090-C05-3"]},
+  {"issue": "Private credit risk is dismissed as overblown yet he warns of liquidity shocks; the two statements are reconciled only by 'choose a fund with strong risk management'.", "claim_ids": ["MT090-C05-4", "MT090-C06-1"]},
+  {"issue": "Statements on tactical trading success in 2025 give no figures.", "claim_ids": ["MT090-C03-2"]},
+  {"issue": "Career and humility advice is incidental to the market argument.", "claim_ids": ["MT090-C08-1", "MT090-C08-2"]}
+ ],
+ "forward_looking_inputs": "(reader) US deficit and Treasury supply, the US 2s10s and term-premium behaviour, the new Fed chair's reaction function and political pressure for lower rates, Japan, Canada and Europe hawkishness, AI equity concentration and valuations, tariff pass-through to prices, any liquidity shock in private markets. Horizon: one to two years for term premium; months for Fed and curve timing.",
+ "reader_inferences": [
+  "(reader) The December 2025 view is the same term-premium theme he held in 2022-2023 (MT066, MT089); across the sequence the thesis has not changed while the reasoning moved from inflation persistence to the deficit.",
+  "(reader) His risk philosophy implies position size should shrink when views conflict with market direction, consistent with stalled steepener positioning.",
+  "(reader) Treating the dollar as a range because all central banks are hawkish is a relative-policy model; it would fail if one central bank moved decisively."
+ ],
+ "added_claims": []
+}

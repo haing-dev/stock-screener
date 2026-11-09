@@ -1,0 +1,492 @@
+{
+ "source_id": "MT089",
+ "episode_thesis": "Ken Tropin (Graham Capital) argues macro funds earn their place as an uncorrelated diversifier, and that the opportunity set is governed by central-bank activity: 2010-2021 was starved of it (13 quarter-point hikes in 11 years by the Fed, ECB and BoE) and 2022 had about 30 times as much. A successful macro firm needs experience, talented and retained people, daily hands-on risk management, diversified alpha sources and constant innovation. His spring-2023 views: inflation is slow to return to 2%, equities are expensive and he leans short, the dollar is slightly weak, and a curve steepener is the best rates trade because duration risk is unpriced.",
+ "speakers": [
+  {
+   "name": "Ken Tropin",
+   "role": "Founder, Graham Capital Management (started 1994); earlier Shearson, Dean Witter hedge fund practice (1982-89), John W. Henry",
+   "speaker_note": "Two-person podcast (host Bilal Hafeez of Macro Hive asks the questions and states no view of his own, so only Tropin is mapped). Auto-captions without punctuation. The header upload date is 2025-02-14, but the content (SVB failure 'two weeks ago', debt-ceiling talk, EUR/USD near 1.10, 4-5% risk-free rates, 'next 36 to 60 months') dates the recording to about late March to April 2023, so market views carry as_of 2023-04. The ledger's C03-4 wording ('about 1325bp') garbles what he says: 13 hikes of 25bp-equivalent, which is the 1.2 hikes per year he quotes.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "policy_reaction_central_banks",
+    "trend_following",
+    "diversification_risk_parity",
+    "portfolio_construction_stacking",
+    "valuation_contrarian",
+    "behavioral_sentiment",
+    "regime_detection"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Hedge funds were originally meant to diversify from market beta, and macro/CTAs were the dominant style in the first decade or so because their returns were uncorrelated to stocks and bonds.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Industry history, recalled; star traders of the era.",
+     "claim_ids": [
+      "MT089-C02-1",
+      "MT089-C03-1"
+     ]
+    },
+    {
+     "premise": "Early CTA and macro returns were high because markets were less efficient and the industry was young; edge came from being early.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own entry into a young field.",
+     "claim_ids": [
+      "MT089-C01-2"
+     ]
+    },
+    {
+     "premise": "Macro is trading equities, FX, fixed income and commodities, directionally or relative value, on any horizon, but typically directional.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Definition.",
+     "claim_ids": [
+      "MT089-C02-2"
+     ]
+    },
+    {
+     "premise": "Macro diversifies in equity crises: 1987 (short equities, long bonds after the crash), 2000-2003 and the second half of 2008 were strong, while 2010-2021 was quiet.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Personal recollection of episodes, no figures.",
+     "claim_ids": [
+      "MT089-C03-2",
+      "MT089-C03-3"
+     ]
+    },
+    {
+     "premise": "Macro opportunity is proportional to central-bank action and the volatility it brings in FX, rates, equities and commodities; easy policy with forward guidance sucks volatility out.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Counts: 13 quarter-point-equivalent hikes in July 2010 to July 2021 versus just under 50 in 2022 (30 times); the retired Fed-watcher saw nothing to do.",
+     "claim_ids": [
+      "MT089-C03-3",
+      "MT089-C03-4",
+      "MT089-C04-1"
+     ]
+    },
+    {
+     "premise": "Inflation is like an ocean liner: hard to create, hard to reverse, so a return to 2% will be slower than markets expect.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Analogy; data show inflation falling but not to target quickly.",
+     "claim_ids": [
+      "MT089-C04-2"
+     ]
+    },
+    {
+     "premise": "A traditional stock/bond portfolio is vulnerable: inflation not priced, duration risk with no term premium, expensive equities; SVB failed from unpriced duration.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "SVB example: long duration portfolio with a low yield.",
+     "claim_ids": [
+      "MT089-C05-2",
+      "MT089-C08-2"
+     ]
+    },
+    {
+     "premise": "A manager's durable edge is experience across cycles and counterparty and liquidity events, steady conservative management, the best people (pay and culture) and rigorous risk management.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "29 years at Graham, 45 in the industry.",
+     "claim_ids": [
+      "MT089-C05-3",
+      "MT089-C06-1"
+     ]
+    },
+    {
+     "premise": "Reliance on one alpha source (momentum) is dangerous; strategies must keep innovating because what worked ten years ago will not always work.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Built discretionary in 1998 and long-term quant equities later.",
+     "claim_ids": [
+      "MT089-C06-2",
+      "MT089-C06-3",
+      "MT089-C01-1"
+     ]
+    },
+    {
+     "premise": "Investor psychology (buy every dip for 15 years, TINA) can keep prices up against fundamentals until the economy or the alternatives change.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "15-year experience of dip buying; TINA reversed by 4-5% cash rates.",
+     "claim_ids": [
+      "MT089-C07-3",
+      "MT089-C07-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Central-bank activity to macro opportunity to allocator demand",
+     "steps": [
+      {
+       "from": "easy policy and forward guidance, low inflation (2010-2021)",
+       "to": "suppressed volatility in FX, rates and equities",
+       "why": "no uncertainty about the path of rates",
+       "claim_ids": [
+        "MT089-C03-3",
+        "MT089-C03-4"
+       ]
+      },
+      {
+       "from": "inflation and rapid hikes (2022)",
+       "to": "30 times as much central-bank action and heightened volatility",
+       "why": "central banks moving, some diverging",
+       "claim_ids": [
+        "MT089-C03-4",
+        "MT089-C04-1"
+       ]
+      },
+      {
+       "from": "larger opportunity set and fragile stock/bond mix",
+       "to": "allocators raise macro weights (for example 10% to 15%)",
+       "why": "diversification need and attractive returns",
+       "claim_ids": [
+        "MT089-C05-1",
+        "MT089-C05-2"
+       ]
+      }
+     ],
+     "evidence": "Hike counts; macro's share of hedge fund assets fell from about 50-70% in the 1990s to 15-20%.",
+     "fails_when": "Central banks go back on hold with forward guidance (the 2010-2021 pattern); he expects heightened volatility for 36-60 months, so he does not see it soon.",
+     "claim_ids": [
+      "MT089-C04-1",
+      "MT089-C04-3",
+      "MT089-C05-1"
+     ]
+    },
+    {
+     "topic": "Why volatility persists for 36-60 months",
+     "steps": [
+      {
+       "from": "sticky inflation, supply-chain bottlenecks, Ukraine, Asia tension, 2024 US election uncertainty",
+       "to": "central banks keep moving and markets keep repricing",
+       "why": "multiple unresolved shocks",
+       "claim_ids": [
+        "MT089-C04-2"
+       ]
+      },
+      {
+       "from": "green-energy policy without domestic energy development",
+       "to": "inflationary pressure",
+       "why": "constrained energy supply",
+       "claim_ids": [
+        "MT089-C04-2"
+       ]
+      }
+     ],
+     "evidence": "Listed risks; no quantitative support.",
+     "fails_when": "These shocks resolve or inflation falls fast.",
+     "claim_ids": [
+      "MT089-C04-2",
+      "MT089-C10-1"
+     ]
+    },
+    {
+     "topic": "Equity weakness from recession, earnings and the end of TINA",
+     "steps": [
+      {
+       "from": "base-case recession with tech layoffs",
+       "to": "contraction in earnings",
+       "why": "company shrinkage",
+       "claim_ids": [
+        "MT089-C07-2"
+       ]
+      },
+      {
+       "from": "forward P/E near 19 against a normal 16-17 and a 4-5% risk-free alternative",
+       "to": "equities decline",
+       "why": "TINA no longer holds",
+       "claim_ids": [
+        "MT089-C07-2",
+        "MT089-C07-3"
+       ]
+      },
+      {
+       "from": "buy-the-dip psychology and Fed nearly done",
+       "to": "equities still rising near term",
+       "why": "investors look for reasons to buy",
+       "claim_ids": [
+        "MT089-C07-4"
+       ]
+      }
+     ],
+     "evidence": "Valuation levels; economists' consensus on recession.",
+     "fails_when": "Soft landing (he allows it but sees it as less likely) or the dip-buying psychology persists.",
+     "claim_ids": [
+      "MT089-C07-2",
+      "MT089-C07-3",
+      "MT089-C07-4"
+     ]
+    },
+    {
+     "topic": "Unpriced duration risk to a curve steepener",
+     "steps": [
+      {
+       "from": "no term premium and SVB-style duration losses",
+       "to": "long end under-compensated",
+       "why": "term premium absent",
+       "claim_ids": [
+        "MT089-C08-2",
+        "MT089-C05-2"
+       ]
+      },
+      {
+       "from": "recession arriving",
+       "to": "2s10s steepens from about -60bp",
+       "why": "front-end rates fall as the economy contracts",
+       "claim_ids": [
+        "MT089-C08-1"
+       ]
+      },
+      {
+       "from": "market pricing of 30-40bp of cuts in late 2023",
+       "to": "mildly over-optimistic",
+       "why": "he doubts the Fed can cut with inflation sticky",
+       "claim_ids": [
+        "MT089-C08-3"
+       ]
+      }
+     ],
+     "evidence": "Curve levels (inverted 100bp earlier, now about 60bp), SVB case.",
+     "fails_when": "Recession does not come or the Fed hikes more.",
+     "claim_ids": [
+      "MT089-C08-1",
+      "MT089-C08-2",
+      "MT089-C08-3"
+     ]
+    },
+    {
+     "topic": "Dollar weakness from ECB hawkishness",
+     "steps": [
+      {
+       "from": "perception that the ECB is more hawkish than the Fed after a strong dollar for 15 months",
+       "to": "EUR/USD tries to break above 1.10 and the dollar looks slightly weak",
+       "why": "policy divergence narrowing",
+       "claim_ids": [
+        "MT089-C07-5"
+       ]
+      }
+     ],
+     "evidence": "Price action; he says the trend is not strong yet.",
+     "fails_when": "The trend does not develop.",
+     "claim_ids": [
+      "MT089-C07-5"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "risk",
+     "practice": "A daily 9:30 risk meeting (since 2007) reviews yesterday's P&L, every trader's position, liquidity, counterparty risk and stress tests.",
+     "why": "Attention over time compounds into better risk management.",
+     "claim_ids": [
+      "MT089-C06-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hold several uncorrelated alpha sources: systematic momentum, discretionary macro and long-term quantitative equities (value as well as momentum), hunting for more that are synergistic with the core.",
+     "why": "Avoid being a one-trick pony; earn when value beats momentum.",
+     "claim_ids": [
+      "MT089-C06-2",
+      "MT089-C01-1"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Keep innovating and being creative because past formulas do not persist.",
+     "why": "Alpha sources change.",
+     "claim_ids": [
+      "MT089-C06-3"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Hire and retain top people through pay and a collaborative culture, recruit where others are not looking, and run a three-day office / two-day remote week.",
+     "why": "People are the source of alpha; in-person collaboration is more effective.",
+     "claim_ids": [
+      "MT089-C05-3",
+      "MT089-C09-1",
+      "MT089-C09-2"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Offer a macro-focused multi-strategy fund as well, to match competitors' economics for top talent, while noting clients dislike pass-through fees and long lockups of the pod shops.",
+     "why": "Compete for talent and respond to client interest.",
+     "claim_ids": [
+      "MT089-C06-4"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Use AI as a powerful tool but expect humans' strategic judgment to remain an edge.",
+     "why": "He was impressed by AI output yet does not predict replacement of humans.",
+     "claim_ids": [
+      "MT089-C07-1"
+     ]
+    },
+    {
+     "element": "other",
+     "practice": "Read Reminiscences of a Stock Operator and Market Wizards.",
+     "why": "Starting place for portfolio managers and traders.",
+     "claim_ids": [
+      "MT089-C10-2"
+     ]
+    }
+   ],
+   "evidence_style": "Personal history, episode recall (1987, 2000-03, 2008), simple counts of central-bank hikes and market levels (forward P/E, curve spread). No backtests or statistics.",
+   "current_views": [
+    {
+     "view": "Macro is less spectacular than 2022 over the next two to three years but much more interesting than 2010-2021, and will stay non-correlated; favourable for 36-60 months.",
+     "as_of": "2023-04",
+     "reasoning": "Inflation sticky, bottlenecks, Ukraine, Asia tension, 2024 US election, energy policy.",
+     "claim_ids": [
+      "MT089-C10-1",
+      "MT089-C04-2"
+     ]
+    },
+    {
+     "view": "Lean short equities: forward P/E just under 19 versus a normal 16-17, recession likely, and 4-5% cash rates remove TINA; near-term strength is explained by dip-buying psychology.",
+     "as_of": "2023-04",
+     "reasoning": "Earnings contraction plus alternatives.",
+     "claim_ids": [
+      "MT089-C07-2",
+      "MT089-C07-3",
+      "MT089-C07-4"
+     ]
+    },
+    {
+     "view": "The dollar looks slightly weak; EUR/USD trying to break above 1.10.",
+     "as_of": "2023-04",
+     "reasoning": "ECB seen as more hawkish than the Fed; strong-dollar run of 15 months ended.",
+     "claim_ids": [
+      "MT089-C07-5"
+     ]
+    },
+    {
+     "view": "Rates are priced about right overall, but the curve (about -60bp from -100bp) should steepen as recession comes; this is the more interesting fixed-income trade.",
+     "as_of": "2023-04",
+     "reasoning": "No term premium; recession lowers front-end yields.",
+     "claim_ids": [
+      "MT089-C08-1",
+      "MT089-C08-2"
+     ]
+    },
+    {
+     "view": "The market is slightly optimistic on US cuts in Q3-Q4 (30-40bp priced for late 2023); he is not convinced the Fed can cut.",
+     "as_of": "2023-04",
+     "reasoning": "Inflation slow to fall.",
+     "claim_ids": [
+      "MT089-C08-3"
+     ]
+    },
+    {
+     "view": "No 2008-style crisis, though the bank runs came close; the Fed response was good, but debt ceiling, Ukraine and politics need vigilance.",
+     "as_of": "2023-04",
+     "reasoning": "Policy backstop; ongoing risks.",
+     "claim_ids": [
+      "MT089-C08-4"
+     ]
+    },
+    {
+     "view": "The US remains among the most competitive economies over 5-10 years.",
+     "as_of": "2023-04",
+     "reasoning": "Europe and Asia have their own problems.",
+     "claim_ids": [
+      "MT089-C08-X1"
+     ]
+    },
+    {
+     "view": "Allocators are likely to raise macro allocations this year, for example 10% to 15%.",
+     "as_of": "2023-04",
+     "reasoning": "Improving opportunity set and stock/bond fragility.",
+     "claim_ids": [
+      "MT089-C05-1",
+      "MT089-C04-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Path of Fed policy and how fast inflation falls",
+   "positions": [
+    {
+     "speaker": "Market (as described by Tropin)",
+     "position": "Inflation returns to 2% quickly; 30-40bp of US cuts priced for late 2023 while Europe still hikes.",
+     "claim_ids": [
+      "MT089-C04-2",
+      "MT089-C08-3"
+     ]
+    },
+    {
+     "speaker": "Ken Tropin",
+     "position": "Inflation is slow to return; not convinced the Fed can cut; a modest mispricing.",
+     "claim_ids": [
+      "MT089-C04-2",
+      "MT089-C08-3"
+     ]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Headline reading dates: the header upload date (2025-02-14) conflicts with the spring-2023 content; all market views are as of about April 2023.",
+   "claim_ids": [
+    "MT089-C07-2",
+    "MT089-C08-4"
+   ]
+  },
+  {
+   "issue": "The ledger wording 'about 1325bp of hike-equivalent moves' misstates the statistic: he means 13 hikes of 25bp (about 1.2 per year), against just under 50 in 2022.",
+   "claim_ids": [
+    "MT089-C03-4"
+   ]
+  },
+  {
+   "issue": "He says he leans short equities and also that they probably decline from current levels, yet he explains why they keep rising (dip-buying psychology, Fed nearly done); the timing of the fall is left open.",
+   "claim_ids": [
+    "MT089-C07-2",
+    "MT089-C07-4"
+   ]
+  },
+  {
+   "issue": "Macro's hedge fund asset share of 15-20% is quoted with rough figures (CTAs and macro managers of $600-700 million against a $4 trillion industry, which he treats as 15-18%); the arithmetic is garbled in the captions.",
+   "claim_ids": [
+    "MT089-C04-3"
+   ]
+  },
+  {
+   "issue": "Crisis-period performance (1987, 2000-03, 2008) is recalled without numbers; no statement of how often macro lost in equity falls.",
+   "claim_ids": [
+    "MT089-C03-2"
+   ]
+  },
+  {
+   "issue": "He says the dollar looks slightly weak but also says the trend is not strong; no sizing or entry rule.",
+   "claim_ids": [
+    "MT089-C07-5"
+   ]
+  },
+  {
+   "issue": "Reading list and career advice are incidental to market reasoning.",
+   "claim_ids": [
+    "MT089-C10-2",
+    "MT089-C09-1"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Central-bank hiking and cutting activity (pricing in Europe versus the US), inflation prints versus the 2% path, the 2s10s spread, forward P/E, risk-free rate level, bank stress and the debt ceiling, Ukraine, Asia tension and the 2024 election. Horizon: months for curve and equity views; 36-60 months for the macro opportunity set.",
+ "reader_inferences": [
+  "(reader) His core model is that macro returns need volatility supplied by central banks; the demand story (allocator shift) follows from that plus stock/bond fragility.",
+  "(reader) The steepener is the one concrete trade whose logic ties together recession, front-end easing and missing term premium.",
+  "(reader) Bearish equities and sticky inflation together imply a stagflation-leaning view in 2023 that sits uneasily with expecting recession-driven curve steepening; he does not address this."
+ ],
+ "added_claims": []
+}

@@ -1,0 +1,185 @@
+{
+ "source_id": "MT133",
+ "episode_thesis": "Pablo Calderini (Graham Capital macro PM) presents a client talk arguing that macro adds value to equity-heavy portfolios because it has conditional low-to-negative correlation to equities and bonds: it follows central-bank policy and changes direction by regime. He explains why 2010-2020 starved macro (the central-bank put suppressed volatility), why the 2022 inflation shock changed that, and why mid-2024 calm (low VIX, MOVE and FX vol) sits against large tail risks (inflation rebound, China-Taiwan, Middle East) and a positive stock-bond correlation. Adding 10-20% macro to a 60/40 portfolio since 1990 raised return, cut volatility, lifted Sharpe and shrank drawdown.",
+ "speakers": [
+  {
+   "name": "Pablo Calderini",
+   "role": "Macro portfolio manager, Graham Capital Management (presenting to clients)",
+   "speaker_note": "Single-speaker presentation from Whisper speech-to-text; he refers to slides ('this chart here'), so some chart values are inferred from his narration. Ledger correction applied to C01-3: the S&P rose about 1000 points from a late-October 2023 low near 4200, and the rally began before the Fed's December dovish pivot (markets anticipated it). 'Information ratio' is used for the Sharpe-type ratio. Recording is dated 2024-06-03 and refers to April 2024 events, so views carry as_of 2024-05/06.",
+   "fingerprint": ["macro_fundamental_topdown", "policy_reaction_central_banks", "crisis_alpha_convexity", "diversification_risk_parity", "regime_detection", "portfolio_construction_stacking", "volatility_options", "geopolitics"],
+   "worldview_premises": [
+    {
+     "premise": "From 2010 to 2020 the central-bank put turned bad news into higher asset prices, compressing volatility, which was a great time for asset owners and a difficult one for macro traders.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Narrative of GFC aftermath; low volatility in the period.",
+     "claim_ids": ["MT133-C01-1"]
+    },
+    {
+     "premise": "Loose monetary and fiscal policy after COVID led to asset inflation and then the 2022 inflation shock, which broke the central-bank put: banks had to tighten rather than ease, in the fastest hike cycle outside Volcker with the largest real-rate rise.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Fed funds from 0-0.25% to 5.25-5.5%; PCE monthly prints (headline 1.2% in a month, 15% annualised; core about 8% annualised).",
+     "claim_ids": ["MT133-C01-2", "MT133-C01-X1", "MT133-C03-X1"]
+    },
+    {
+     "premise": "Macro performs best when central banks are actively changing policy because central-bank policy is the input a macro book can anticipate; growth, inflation and the Fed are the main inputs, along with any micro story that moves global markets (for example Nvidia as an AI proxy).",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Own record in 2022; no formal test.",
+     "claim_ids": ["MT133-C04-X1", "MT133-C04-4"]
+    },
+    {
+     "premise": "The stock-bond correlation is bimodal over 100 years (zero on average, almost never near zero): positive in 1960-1995 and negative in the last 20 years. It is negative when growth shocks dominate (rates fall on bad news) and positive when inflation is high (bad news hits both).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Century-long correlation chart.",
+     "claim_ids": ["MT133-C03-4", "MT133-C04-1", "MT133-C04-2"]
+    },
+    {
+     "premise": "Macro is a dynamic strategy with no long or short bias: it goes long equities in good markets and cuts or shorts them in bad ones, so correlation is conditional rather than reliably negative.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Rolling-correlation chart of the macro index versus MSCI World; drawdown table.",
+     "claim_ids": ["MT133-C05-2", "MT133-C05-X1", "MT133-C06-1", "MT133-C04-X2"]
+    },
+    {
+     "premise": "Macro is not a guaranteed hedge: a fast shock (Q1 2020) can find the book unready and cost money, unlike buying equity puts.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Q1 2020, macro down about 2%.",
+     "claim_ids": ["MT133-C05-4"]
+    },
+    {
+     "premise": "Very low volatility with elevated geopolitical and inflation tail risk leaves equities exposed to large corrections after strong rallies.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Straight-line Q1 2024 equity rally with a Sharpe-type ratio near 4; low VIX, MOVE and FX vol.",
+     "claim_ids": ["MT133-C01-3", "MT133-C02-1", "MT133-C03-2"]
+    },
+    {
+     "premise": "Climate-driven weather extremes can produce large commodity moves (cocoa up four times or more).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Cocoa price chart; anecdotes about snow and West African rain and drought.",
+     "claim_ids": ["MT133-C03-3"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Why macro profited in 2022 and what it held",
+     "steps": [
+      {"from": "inflation shock after loose policy", "to": "central banks cannot ease and must tighten by 400-500bp", "why": "inflation prevents accommodation", "claim_ids": ["MT133-C01-2", "MT133-C01-X1"]},
+      {"from": "large rate rises", "to": "stocks and commodities fall; dollar rises as the Fed is the most aggressive", "why": "usual effect of heavy tightening; relative policy stance", "claim_ids": ["MT133-C04-X3", "MT133-C04-5"]},
+      {"from": "positioned short rates, short stocks, short commodities, long USD", "to": "macro index about +10% while equities fell 25%", "why": "book was positioned for tightening", "claim_ids": ["MT133-C04-5", "MT133-C05-3", "MT133-C05-X2"]}
+     ],
+     "evidence": "2022 numbers: MSCI World down 25%; macro index up about 10%; Graham's program more than double.",
+     "fails_when": "Central banks on hold or positions mistimed; in Q1 2020 a fast shock hurt.",
+     "claim_ids": ["MT133-C04-5", "MT133-C04-X3", "MT133-C05-X2"]
+    },
+    {
+     "topic": "Stock-bond correlation, inflation and the failing 60/40",
+     "steps": [
+      {"from": "growth shocks dominate (inflation low)", "to": "rates fall on bad growth news; stocks and bonds move opposite", "why": "central banks cut", "claim_ids": ["MT133-C04-2"]},
+      {"from": "inflation high or a hot inflation print", "to": "stocks and bonds fall together (positive correlation)", "why": "central banks cannot ease", "claim_ids": ["MT133-C04-2", "MT133-C04-3"]},
+      {"from": "positive correlation back in 2024", "to": "worse diversification for 60/40 owners, depends on inflation path", "why": "60/40 assumes negative correlation", "claim_ids": ["MT133-C04-3", "MT133-C03-4"]}
+     ],
+     "evidence": "Century correlation chart.",
+     "fails_when": "Inflation falls and growth shocks dominate again.",
+     "claim_ids": ["MT133-C04-2", "MT133-C04-3"]
+    },
+    {
+     "topic": "2024 equity rally and the left tail",
+     "steps": [
+      {"from": "Fed and every developed central bank except the BoJ turn dovish with decent growth (Dec 2023), anticipated by markets", "to": "S&P up about 1000 points in four months with very low volatility", "why": "benign easing backdrop", "claim_ids": ["MT133-C01-X2", "MT133-C01-3"]},
+      {"from": "a big rally with low vol", "to": "left tail if a shock hits (core PCE at 5% annualised forcing another hike, a China-Taiwan crisis, Middle East escalation)", "why": "markets can retrace 1000 points as easily", "claim_ids": ["MT133-C03-1", "MT133-C03-2", "MT133-C02-2", "MT133-C02-X1"]}
+     ],
+     "evidence": "Chart of the S&P, VIX, MOVE and JPM FX vol; PCE series.",
+     "fails_when": "Earnings keep rising and inflation continues down; he notes AI profits are real unlike the 2002 internet.",
+     "claim_ids": ["MT133-C01-3", "MT133-C03-1", "MT133-C03-2"]
+    },
+    {
+     "topic": "How adding macro improves a 60/40 portfolio",
+     "steps": [
+      {"from": "macro index has lower volatility than equities and almost zero correlation to the portfolio", "to": "portfolio volatility falls", "why": "diversification arithmetic", "claim_ids": ["MT133-C06-X1"]},
+      {"from": "lower volatility with similar or higher return", "to": "higher Sharpe ratio and smaller drawdown, lower equity beta", "why": "return up, risk down", "claim_ids": ["MT133-C06-2", "MT133-C06-1"]}
+     ],
+     "evidence": "1990 to December 2023: adding 20% macro raised return from 6.7% to 7.2%, cut volatility from 10.2% to 8.7%, lifted Sharpe from 0.65 to 0.83, cut max drawdown from 36% to 29% and beta from 0.7 to 0.55.",
+     "fails_when": "Macro correlation rises or macro fails in a fast shock.",
+     "claim_ids": ["MT133-C06-2", "MT133-C06-X1"]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Forecast growth, inflation and central-bank policy; trade directional and relative positions across rates, equities, commodities and FX, and change equity exposure by regime.",
+     "why": "Central-bank action is the most anticipatable input.",
+     "claim_ids": ["MT133-C04-X1", "MT133-C05-X1"]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Take no standing long or short equity bias; get short in anticipation of and during bad equity markets and long in good ones.",
+     "why": "Dynamic exposure produces negative conditional correlation without buying puts.",
+     "claim_ids": ["MT133-C05-X1", "MT133-C05-2", "MT133-C06-1"]
+    },
+    {
+     "element": "other",
+     "practice": "Watch anything that moves global markets, including single-stock stories that become macro (Nvidia).",
+     "why": "AI drove the equity move.",
+     "claim_ids": ["MT133-C04-4"]
+    },
+    {
+     "element": "sizing",
+     "practice": "Conviction is scaled by regime: lower in 2024 than 2022 though still short rates, with US curve steepeners, short Japanese rates and long dollar.",
+     "why": "Less aggressive central-bank tightening than 2022.",
+     "claim_ids": ["MT133-C04-5", "MT133-C05-1"]
+    },
+    {
+     "element": "other",
+     "practice": "Position macro between passive/long-only tactical allocation and pure arbitrage: low long-run correlation but active directional exposure.",
+     "why": "Style definition.",
+     "claim_ids": ["MT133-C04-X2"]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Recommend investors allocate 10-20% of a 60/40 portfolio to macro.",
+     "why": "Backtested improvement in returns, volatility, Sharpe and drawdown.",
+     "claim_ids": ["MT133-C06-2", "MT133-C06-X1"]
+    },
+    {
+     "element": "research",
+     "practice": "Follow core PCE, the Fed's target series, rather than headline PCE.",
+     "why": "Excludes volatile energy and food.",
+     "claim_ids": ["MT133-C02-3"]
+    }
+   ],
+   "evidence_style": "Presentation-based historical statistics and charts: drawdown table (1990, 2000-02, 2008, 2022), century stock-bond correlation, portfolio-with-macro numbers 1990-2023, volatility indices, PCE data. Manager-specific claims come from a firm presentation, with the macro index as the comparator.",
+   "current_views": [
+    {"view": "Inflation is the biggest shock; core PCE prints annualising near 5% would force another Fed hike. It is a main tail risk, not the base case.", "as_of": "2024-06", "reasoning": "Inflation has bounced back off its lows to levels not consistent with 2%.", "claim_ids": ["MT133-C03-1", "MT133-C02-3"]},
+    {"view": "Stay short rates (US steepeners, short Japan) and long the dollar, with less conviction than in 2022.", "as_of": "2024-06", "reasoning": "Strong US economy limits Fed cuts while the ECB is about to cut independently; Japanese rates should rise a lot.", "claim_ids": ["MT133-C04-5", "MT133-C05-1"]},
+    {"view": "Equity valuations are not a complete concern since earnings and AI profits are growing, but a shock could retrace the 1000-point rally.", "as_of": "2024-06", "reasoning": "Part P/E expansion, part earnings; AI firms make real profits.", "claim_ids": ["MT133-C03-2", "MT133-C01-3"]},
+    {"view": "Volatility is low (VIX about 16 after 13, MOVE about 100, FX vol low) while geopolitical risk is the highest since WWII: a China-Taiwan blockade or invasion would be the largest financial shock ever.", "as_of": "2024-06", "reasoning": "Low vol is at odds with tail risks.", "claim_ids": ["MT133-C02-1", "MT133-C02-2"]},
+    {"view": "The April Iran-Israel exchange was largely symbolic and a short-term truce, but a line was crossed and escalation by miscalculation remains possible; Ukraine is far from settled.", "as_of": "2024-06", "reasoning": "Attacks were staged for domestic audiences; one mass-casualty strike would have prompted a harder response.", "claim_ids": ["MT133-C02-X1", "MT133-C02-2"]},
+    {"view": "Stock-bond correlation is positive again, bad for 60/40 owners, and depends on the inflation path.", "as_of": "2024-06", "reasoning": "Inflation regime.", "claim_ids": ["MT133-C04-3", "MT133-C04-2"]},
+    {"view": "Climate-driven weather extremes (cocoa quadrupled) may foreshadow commodity volatility, though not currently a concern for trading.", "as_of": "2024-06", "reasoning": "West African rain then drought.", "claim_ids": ["MT133-C03-3"]},
+    {"view": "Central banks (all except the BoJ) turned dovish in December 2023 into a decent-growth backdrop, which markets had anticipated.", "as_of": "2024-06", "reasoning": "Description of the Q1 2024 setup.", "claim_ids": ["MT133-C01-X2"]}
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {"issue": "He says the macro index averaged 'up 10%' in 2022 and Graham's program 'more than double', a manager-specific claim from a firm presentation; the index is not named and the 1990 and 2000-02 figures are also from the same source (2008 stated only as 'positive').", "claim_ids": ["MT133-C05-3", "MT133-C05-X2"]},
+  {"issue": "Macro is not a guaranteed hedge (Q1 2020 -2%) yet the sales case stresses drawdown protection across four episodes; sample is selected to show wins and there is no distribution of conditional returns.", "claim_ids": ["MT133-C05-4", "MT133-C05-3", "MT133-C05-X1"]},
+  {"issue": "Portfolio effect (1990-2023) uses a macro index, not Graham's own track record, so the 6.7-to-7.2% and 0.65-to-0.83 figures cannot be attributed to Graham; no costs or fee treatment given.", "claim_ids": ["MT133-C06-2", "MT133-C06-X1"]},
+  {"issue": "Skill at forecasting bad equity markets is self-reported; the correlation chart is described qualitatively ('does a really good job') with no tracking statistic.", "claim_ids": ["MT133-C05-X1", "MT133-C05-2"]},
+  {"issue": "Captions say 'average correlation is zero, 400 years' and 'roll down' for drawdown, which look like transcription errors for 100 years and drawdown; the ledger reads 100 years.", "claim_ids": ["MT133-C03-4", "MT133-C06-2"]},
+  {"issue": "Equity valuations are not a concern because earnings are growing, yet he also warns that a 1000-point rally can unwind quickly; both statements rely on the shock case.", "claim_ids": ["MT133-C03-2", "MT133-C01-3"]}
+ ],
+ "forward_looking_inputs": "(reader) Core PCE monthly prints and annualised pace, Fed reaction (hike risk), the stock-bond correlation sign, VIX, MOVE and FX vol levels versus geopolitical events (Taiwan, Middle East, Ukraine), US growth strength relative to Europe (ECB independent cuts), Japanese rate path. Horizon: months for inflation and policy, with tail risks undated.",
+ "reader_inferences": [
+  "(reader) The central logic is regime dependence: macro does well when central banks act and when inflation prevents the central-bank put; in a put regime it is starved.",
+  "(reader) The sales case rests on dynamic exposure rather than convexity; he states explicitly that macro is not an equity put.",
+  "(reader) Compared with MT066, MT089, MT090 and MT214 (all Graham, Tropin), the same volatility-supply thesis appears with added stock-bond correlation and portfolio-construction evidence."
+ ],
+ "added_claims": []
+}

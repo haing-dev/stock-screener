@@ -1,0 +1,508 @@
+{
+ "source_id": "MT147",
+ "episode_thesis": "Karniol-Tambour argues that aggregate US corporate profits can only exceed wage income when spending is funded by borrowing, dissaving or government deficits, and that each of those funding channels (private leverage, fiscal transfers, falling rates, weak labor power) is now fading or reversing. Record profit shares are therefore expected to mean-revert, and because equities have repriced only for higher rates and not for lower earnings or an inflation risk premium, she is bearish on US equities (June 2022).",
+ "speakers": [
+  {
+   "name": "Karen Karniol-Tambour",
+   "role": "Co-CIO for sustainability, partner and investment committee member at Bridgewater; macro investor (Sohn 2022 keynote)",
+   "speaker_note": "Single-speaker talk; the host (Graeme) only introduces her, so he is not mapped. Captions have no punctuation and garble some words (e.g. 'foster tools' for fossil fuels, 'carneal tambor'); attribution is not in doubt.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "debt_cycle_long_term",
+    "fiscal_dominance",
+    "policy_reaction_central_banks",
+    "valuation_contrarian",
+    "structural_themes",
+    "geopolitics"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "For the whole economy, profits above wage income require someone to spend money they did not earn as wages: borrowing, dissaving or government deficits. Profit margins are therefore a flow-of-funds outcome, not only a company-level one.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Accounting identity (everyone's spending is someone's income), applied to households, firms and government.",
+     "claim_ids": [
+      "MT147-C01-1",
+      "MT147-C01-2",
+      "MT147-C01-3",
+      "MT147-C01-4"
+     ]
+    },
+    {
+     "premise": "The identity is only mechanical; whether sectors actually borrow or run deficits depends on structural and behavioural drivers, so the forecast must model why they would.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Says 'they have to choose to borrow for a reason'; globalization and deregulation named as the impetus.",
+     "claim_ids": [
+      "MT147-C01-X2",
+      "MT147-C01-5"
+     ]
+    },
+    {
+     "premise": "Structural forces (globalization, deregulation, fewer unions) weakened worker bargaining power; workers kept spending by borrowing, which lifted profit share for decades.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical narrative of the pre-2008 era; no data shown beyond one profit chart.",
+     "claim_ids": [
+      "MT147-C02-1",
+      "MT147-C01-5"
+     ]
+    },
+    {
+     "premise": "Falling interest rates, driven by emerging-market and oil-producer dollar saving, were what allowed borrowing to keep funding profit-supporting spending.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Narrative of reserve accumulation by China and oil producers before 2008.",
+     "claim_ids": [
+      "MT147-C02-2"
+     ]
+    },
+    {
+     "premise": "QE is an ineffective way to support demand per dollar because its gains accrue to wealthy asset owners who spend little of them, and it raises inequality.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Mechanism argument; compared with direct checks in 2020.",
+     "claim_ids": [
+      "MT147-C02-4"
+     ]
+    },
+    {
+     "premise": "Direct fiscal transfers are the most dollar-effective way to sustain spending, so profits can decouple from activity when transfers exceed lost wages.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "2020 episode: profits at record highs while the economy collapsed.",
+     "claim_ids": [
+      "MT147-C02-5",
+      "MT147-C02-6",
+      "MT147-C02-X1"
+     ]
+    },
+    {
+     "premise": "Public equity prices let you see what is priced in: a stock is expected profits discounted by the risk-free rate and a risk premium, so one can check whether a price move matches a discount-rate change or an earnings change.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Back-of-envelope duration calculation (1.5 pt rise on a 10-year earnings stream is about 15%).",
+     "claim_ids": [
+      "MT147-C04-X1",
+      "MT147-C04-4",
+      "MT147-C04-R1"
+     ]
+    },
+    {
+     "premise": "Higher inflation raises the required risk-free return and makes the economy harder to manage, so equities can do badly in inflationary regimes even when profits hold up (1970s).",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "1970s was the worst decade for equities despite good profits from resource companies.",
+     "claim_ids": [
+      "MT147-C05-3",
+      "MT147-C04-2"
+     ]
+    },
+    {
+     "premise": "Single-country outperformance tends to be priced in and rarely repeats over the next decade, so high expectations set up disappointment.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "General historical pattern, no cases given.",
+     "claim_ids": [
+      "MT147-C05-4"
+     ]
+    },
+    {
+     "premise": "Peak-pro-corporate conditions mean-revert: low corporate taxes, little antitrust enforcement and weak labor power are at multi-decade extremes, and political pressure to address inequality points the other way.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Observations that corporate taxes and antitrust are at multi-decade lows; no polling or policy data.",
+     "claim_ids": [
+      "MT147-C03-5",
+      "MT147-C03-6"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "How profits were built up to 2020",
+     "steps": [
+      {
+       "from": "globalization, deregulation, union decline",
+       "to": "worker bargaining power falls, wages lag",
+       "why": "firms can move jobs abroad and face less pressure to pay",
+       "claim_ids": [
+        "MT147-C02-1",
+        "MT147-C01-5"
+       ]
+      },
+      {
+       "from": "wages lag but workers want to keep spending",
+       "to": "private borrowing rises",
+       "why": "leverage lets spending exceed wage income",
+       "claim_ids": [
+        "MT147-C02-1",
+        "MT147-C01-2"
+       ]
+      },
+      {
+       "from": "emerging-market and oil-producer dollar saving",
+       "to": "rates fall, borrowing stays affordable",
+       "why": "global savings glut keeps funding supply high",
+       "claim_ids": [
+        "MT147-C02-2"
+       ]
+      },
+      {
+       "from": "spending funded by non-wage sources",
+       "to": "corporate profit share rises",
+       "why": "revenue arrives without matching wage payout",
+       "claim_ids": [
+        "MT147-C01-1",
+        "MT147-C01-3"
+       ]
+      }
+     ],
+     "evidence": "Narrative plus one chart of US corporate profits to GDP at multi-decade highs.",
+     "fails_when": "If everyone borrows at once rates rise (she notes this); the chain held only because foreign savers pushed rates down.",
+     "claim_ids": [
+      "MT147-C01-X1",
+      "MT147-C02-2"
+     ]
+    },
+    {
+     "topic": "2008 to 2021: government replaces private leverage",
+     "steps": [
+      {
+       "from": "financial crisis",
+       "to": "private leveraging ends",
+       "why": "subprime and housing borrowing can no longer be done",
+       "claim_ids": [
+        "MT147-C02-3"
+       ]
+      },
+      {
+       "from": "government steps in via QE",
+       "to": "asset prices and inequality rise, little spending boost",
+       "why": "wealthy spend little of asset gains",
+       "claim_ids": [
+        "MT147-C02-4",
+        "MT147-C02-X2"
+       ]
+      },
+      {
+       "from": "Covid layoffs plus direct checks exceeding lost wages",
+       "to": "households keep spending, payroll falls, profits surge to records",
+       "why": "non-wage income fully replaces wages",
+       "claim_ids": [
+        "MT147-C02-5",
+        "MT147-C02-6",
+        "MT147-C03-1"
+       ]
+      }
+     ],
+     "evidence": "2020 profits at record highs during a recession; household balance sheets healed fastest ever for bottom 60-80%.",
+     "fails_when": "Transfers stop; the setup depends on continuing fiscal support.",
+     "claim_ids": [
+      "MT147-C02-5",
+      "MT147-C02-6",
+      "MT147-C03-1",
+      "MT147-C02-X1"
+     ]
+    },
+    {
+     "topic": "Why profit support is fading (the turning point)",
+     "steps": [
+      {
+       "from": "transfers end",
+       "to": "households fund spending by cutting savings rates and using credit cards",
+       "why": "healthy balance sheets let them bridge the gap temporarily",
+       "claim_ids": [
+        "MT147-C03-1",
+        "MT147-C03-2"
+       ]
+      },
+      {
+       "from": "stimulus-fuelled boom",
+       "to": "inflation, then rate rises and falling asset prices",
+       "why": "excess demand pushes prices up and the Fed responds",
+       "claim_ids": [
+        "MT147-C03-X1"
+       ]
+      },
+      {
+       "from": "rising mortgage rates and falling asset prices",
+       "to": "households cannot lever up or save less further",
+       "why": "already low saving rates and tighter credit",
+       "claim_ids": [
+        "MT147-C03-3",
+        "MT147-C03-2"
+       ]
+      },
+      {
+       "from": "lagged effect of tightening",
+       "to": "spending slowdown still ahead",
+       "why": "transmission takes time and is not yet in the data",
+       "claim_ids": [
+        "MT147-C03-X2"
+       ]
+      },
+      {
+       "from": "spending slowdown with non-wage funding gone",
+       "to": "profits revert down from record levels",
+       "why": "profits need non-wage spending",
+       "claim_ids": [
+        "MT147-C04-X2",
+        "MT147-C01-1"
+       ]
+      }
+     ],
+     "evidence": "Last two or three months of spending funded by dissaving and card borrowing; biggest rise in mortgage rates in decades.",
+     "fails_when": "A new source of non-wage spending appears (new fiscal transfers, renewed private leverage).",
+     "claim_ids": [
+      "MT147-C03-2",
+      "MT147-C03-X1",
+      "MT147-C03-X2"
+     ]
+    },
+    {
+     "topic": "Margin squeeze from labor, inflation and capex",
+     "steps": [
+      {
+       "from": "tightest labor market in decades",
+       "to": "wage gains concentrated in the bottom 60-80%",
+       "why": "workers' bargaining power has swung back",
+       "claim_ids": [
+        "MT147-C03-4"
+       ]
+      },
+      {
+       "from": "inflation concentrated in inelastic fuel and food",
+       "to": "bottom 40-60% of consumers lose spending power",
+       "why": "most consumers are not producers of those goods",
+       "claim_ids": [
+        "MT147-C04-1"
+       ]
+      },
+      {
+       "from": "consumer budget squeeze",
+       "to": "non-commodity firms struggle to pass on costs, margins fall",
+       "why": "customers cannot absorb price rises",
+       "claim_ids": [
+        "MT147-C04-1"
+       ]
+      },
+      {
+       "from": "index has far fewer commodity producers (3% vs 30% in the 1970s)",
+       "to": "index does not capture the inflation benefit",
+       "why": "composition change",
+       "claim_ids": [
+        "MT147-C04-2"
+       ]
+      },
+      {
+       "from": "resilience, supply-chain and decarbonization spending",
+       "to": "capex without matching profit growth",
+       "why": "spending is defensive, not revenue-generating",
+       "claim_ids": [
+        "MT147-C04-3"
+       ]
+      }
+     ],
+     "evidence": "1970s comparison (30% vs 3% commodity weight).",
+     "fails_when": "Firms can pass on prices fully or inflation is broad-based so wages and prices rise together (she mentions this scenario and dismisses it).",
+     "claim_ids": [
+      "MT147-C04-1",
+      "MT147-C04-2",
+      "MT147-C03-4",
+      "MT147-C04-3"
+     ]
+    },
+    {
+     "topic": "What the market has priced",
+     "steps": [
+      {
+       "from": "10-year yield up about 1.5 pt on a 10-year earnings stream",
+       "to": "about 15% lower equity price",
+       "why": "discount-rate duration arithmetic",
+       "claim_ids": [
+        "MT147-C04-4"
+       ]
+      },
+      {
+       "from": "equities have fallen about that much",
+       "to": "rates are priced, earnings decline and inflation risk premium are not",
+       "why": "price move matches rates alone",
+       "claim_ids": [
+        "MT147-C05-1",
+        "MT147-C04-X1"
+       ]
+      },
+      {
+       "from": "market embeds goldilocks plus continued US outperformance",
+       "to": "downside if profits revert",
+       "why": "requires even higher profitability or more share gains",
+       "claim_ids": [
+        "MT147-C05-2",
+        "MT147-C05-4"
+       ]
+      }
+     ],
+     "evidence": "Back-of-envelope arithmetic and a qualitative read of prices; no data shown.",
+     "fails_when": "Profits hold at record levels or the Fed tightens only slightly and inflation falls quickly.",
+     "claim_ids": [
+      "MT147-C05-1",
+      "MT147-C05-2",
+      "MT147-C05-3",
+      "MT147-C05-4"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "signal",
+     "practice": "Start from the macro identity for profits (non-wage spending sources) and track each source: household dissaving and credit, fiscal transfers, private capex borrowing, labor power, tax and regulation.",
+     "why": "Profit levels are determined by flows that can be observed and projected.",
+     "claim_ids": [
+      "MT147-C01-1",
+      "MT147-C01-2",
+      "MT147-C01-3",
+      "MT147-C01-4",
+      "MT147-C03-2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Check what is priced in by splitting the equity move into a discount-rate part and an earnings part, using duration arithmetic.",
+     "why": "Public equities show what is priced in fairly clearly; a mismatch is the opportunity.",
+     "claim_ids": [
+      "MT147-C04-X1",
+      "MT147-C04-4",
+      "MT147-C05-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Express the view as bearish on US equities and relative US equity returns, based on lower earnings and an unpriced inflation risk premium.",
+     "why": "Priced for goldilocks; profits at records and US expectations already high.",
+     "claim_ids": [
+      "MT147-C04-X2",
+      "MT147-C05-2",
+      "MT147-C05-4"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Combine top-down macro with a nuts-and-bolts view of how corporate profits are made across the whole economy, not stock by stock.",
+     "why": "Stock pickers often ignore macro; macro drives aggregate profits.",
+     "claim_ids": [
+      "MT147-C01-1",
+      "MT147-C01-5"
+     ]
+    }
+   ],
+   "evidence_style": "Accounting identity plus historical narrative and analogy (1970s, 2020); one profit chart; back-of-envelope arithmetic; no backtests or quantified forecasts.",
+   "current_views": [
+    {
+     "view": "US corporate profits (record share of GDP) are unlikely to stay at current levels and should fall.",
+     "as_of": "2022-06 (upload 2022-06-10)",
+     "reasoning": "Non-wage funding sources are fading and structural margin tailwinds have reversed.",
+     "claim_ids": [
+      "MT147-C01-X1",
+      "MT147-C04-X2",
+      "MT147-C03-2"
+     ]
+    },
+    {
+     "view": "Equities have priced rate rises only; neither an earnings decline nor an inflation-driven risk premium is priced. Bearish on US equities.",
+     "as_of": "2022-06",
+     "reasoning": "Price fall matches duration math for 1.5 pt higher yields; market is priced for goldilocks.",
+     "claim_ids": [
+      "MT147-C05-1",
+      "MT147-C05-2",
+      "MT147-C05-3",
+      "MT147-C04-4"
+     ]
+    },
+    {
+     "view": "US stocks are priced to keep outperforming the world, which is hard to deliver and rarely repeats.",
+     "as_of": "2022-06",
+     "reasoning": "Needs higher profitability from record levels or more market share.",
+     "claim_ids": [
+      "MT147-C05-4"
+     ]
+    },
+    {
+     "view": "Household spending is being funded by dissaving and card borrowing and will not accelerate; the effect of higher rates on spending has lagged and is still ahead.",
+     "as_of": "2022-06",
+     "reasoning": "Low saving rates, rising mortgage rates and falling asset prices.",
+     "claim_ids": [
+      "MT147-C03-2",
+      "MT147-C03-3",
+      "MT147-C03-X2"
+     ]
+    },
+    {
+     "view": "Inflation squeezes non-commodity margins, and commodity producers are too small an index weight (3%) to offset it.",
+     "as_of": "2022-06",
+     "reasoning": "Inelastic fuel and food costs hit the bottom 40-60% of consumers.",
+     "claim_ids": [
+      "MT147-C04-1",
+      "MT147-C04-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "No quantified earnings forecast, target, horizon or sizing is given; the bearish call rests on qualitative reasoning and a single profit-to-GDP chart.",
+   "claim_ids": [
+    "MT147-C04-X2",
+    "MT147-C01-X1"
+   ]
+  },
+  {
+   "issue": "The 15% duration figure is a rough illustration (10-year earnings stream, 1.5 pt yield rise) and ignores the equity risk premium; the claim that equities fell only 'in line' with rates is asserted without showing the actual index decline.",
+   "claim_ids": [
+    "MT147-C04-4",
+    "MT147-C05-1"
+   ]
+  },
+  {
+   "issue": "The 1970s analogy cuts both ways: she says profits did well then, but equities fell on a higher required return, so the link from profit decline to equity decline is separate from the inflation-risk-premium channel.",
+   "claim_ids": [
+    "MT147-C05-3",
+    "MT147-C04-2"
+   ]
+  },
+  {
+   "issue": "Households' 2020 savings were partly invested in stocks and crypto, which she says helped keep spending going but does not reconcile with the claim that household balance sheets are now a spent resource.",
+   "claim_ids": [
+    "MT147-C02-X1",
+    "MT147-C03-1",
+    "MT147-C03-2"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observables said to lead profits: household saving rate and credit card borrowing, fiscal transfers and deficit size, mortgage rates and asset prices (household borrowing capacity), wage growth for the bottom 60-80% and labor market tightness, fuel and food inflation versus consumer spending power, corporate tax and antitrust policy. Horizon: months for spending and margin squeeze, years for the profit-share reversion; equity-relevant risk premium via inflation.",
+ "reader_inferences": [
+  "(reader) The framework implies a testable relationship between profit share of GDP and the sum of household, business and government net borrowing (a Kalecki-style identity); the talk does not show the test.",
+  "(reader) The bearish equity call is a conditional bet on earnings mean-reversion; it would be falsified by profits staying at record levels without fresh non-wage funding.",
+  "(reader) Her 'what is priced in' check is a decomposition approach, not a valuation threshold; no level of price would change the view."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT147-C04-R1",
+   "chunk": "C04",
+   "speaker": "Karen Karniol-Tambour",
+   "quote": "the good thing about public equities is you can see what's priced in pretty well",
+   "claim": "Public equity prices reveal what is priced in well enough to compare against the macro view, so the investment test is whether the market has priced the profit decline she forecasts.",
+   "mechanism": "market_pricing",
+   "asset_class": "equities",
+   "indicator": "equity price move vs rate move",
+   "horizon": "months",
+   "direction": "mispricing exists when earnings risk is unpriced",
+   "conditions": "requires a view on earnings and discount rate",
+   "testable": "partly - decompose index move into discount-rate and earnings revisions",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

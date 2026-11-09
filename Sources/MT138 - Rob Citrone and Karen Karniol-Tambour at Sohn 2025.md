@@ -5,8 +5,8 @@ date: 2025-05-20
 channel: "Sohn Conference Foundation"
 url: https://www.youtube.com/watch?v=GNDpVJAx6uA
 words: 4358
-claims: 41
-added_by_crosscheck: 12
+claims: 43
+added_by_crosscheck: 14
 corrections: 2
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Karen Karniol-Tambour (macro investor, Bridgewater; inferred from content)", "Rob Citrone (Discovery Capital, EM/macro discretionary)", "moderator (unnamed)"]
@@ -21,6 +21,140 @@ tags: [source, layer0]
 **Approach:** discretionary global macro, geopolitical regime shift, geographic diversification, emerging markets, rates and FX
 
 **Cross-check completeness estimate of first read:** 0.78 - first reader caught the main macro theses (modern mercantilism, geographic diversification, non-US bonds, dollar shorts, EM, oil/gold, America Movil); missed regional-bloc and management-first method, US-yield spillover, China valuation/stimulus scenario, sovereign credit, bond-as-recession-hedge role, and mixed up speakers on two items.
+
+## Argument map
+
+**Episode thesis:** Karniol-Tambour (Bridgewater) and Citrone (Discovery Capital) agree that the US-centred globalisation paradigm of the last 15 years is giving way to a more mercantilist, fragmented world that markets have barely begun to price, and that investors are over-concentrated in US assets. Both therefore favour taking risk mostly outside the US (Latin America and other EM for Citrone; non-US government bonds, euro and yen against the dollar, and broader asset-class flexibility for Karniol-Tambour), while differing on the US rates and growth path and on tactical oil versus gold (May 2025).
+
+### Karen Karniol-Tambour (Macro investor at Bridgewater (fundamental and systematic, global macro))
+Fingerprint: #approach/macro_fundamental_topdown #approach/structural_themes #approach/geopolitics #approach/diversification_risk_parity #approach/policy_reaction_central_banks #approach/positioning_crowding #approach/regime_detection #approach/relative_value_arbitrage
+_Speaker note: Captions have no speaker labels; the ledger infers her from content (secular-paradigm, Bridgewater-style systematic language). The opening question may come from Citrone or an unnamed moderator. The gold-versus-oil crowding argument at the end of C06 is probably Citrone's counterpoint (see ledger correction), so it is not credited to her here._
+
+**Worldview premises**
+- Investment returns over decades are driven by large secular paradigms. The last 15 years rested on globalisation, a US security umbrella and deflationary easy money, which made a plain S&P 500 the best asset. _[empirical, stated; support: Historical description; no data shown.]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C01-1|C01-1]])
+- A new paradigm of 'modern mercantilism' (state maximises national wealth and self-sufficiency, treats trade deficits as wealth transfers, treats allies coercively) is starting, and markets still price the old one. _[theoretical, stated; support: Argument that the shift predates Trump and runs through many countries; contrast with 2010 when US profitability was priced low and now it is priced high.]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C01-2|C01-2]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C01-3|C01-3]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C01-X1|C01-X1]])
+- Reduced foreign appetite for US assets cannot unwind in a day because the trade deficit's flip side is large current-account inflows, mostly from allies, so adjustment is gradual. _[institutional, stated; support: Balance-of-payments logic.]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-3|C02-3]])
+- Market-cap-guided investors are heavily concentrated in the US; real diversification needs markets with different growth, inflation, monetary policy and elections, and a portfolio that works under different economic outcomes. _[theoretical, stated; support: Argument from concentration; Mexico/Brazil tiny in world indices.]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-1|C03-1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-2|C03-2]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-R2|C03-R2]])
+- Tariffs are inflationary in the US (more so if they bring supply disruption) but deflationary abroad, so the Fed cannot easily ease while other central banks can. _[theoretical, stated; support: Comparison of the US with other countries' currency moves and energy prices; VAT-vs-Covid analogy for the Fed's dilemma.]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-1|C04-1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-X1|C04-X1]])
+- Country views can be expressed in stocks, bonds and currencies, and doing so lets one earn from a country even when its stock market does badly; investors who express views only in equities forgo that range. _[experience, stated; support: China-only and ex-China funds were biggest winners; weak economy, good bonds, devalued currency.]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-3|C05-3]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-4|C05-4]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-X1|C05-X1]])
+- Fixed income as a recession hedge was hollowed out in the zero-rate era as institutions moved to private credit, which carries equity-like risk; duration and cross-country currency selection are again sources of uncorrelated alpha. _[experience, stated; support: Observation of institutional clients.]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-1|C06-1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-2|C06-2]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-X1|C06-X1]])
+- Commodities, including gold, are ignored but useful assets in a world with more inflation risk. _[theoretical, stated; support: Argument that the long period without inflation made them look uninteresting.]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-4|C06-4]])
+
+**Chain: Paradigm shift to US asset underperformance**
+1. mercantilist policy (tariffs, self-sufficiency, coercion of allies) → foreign investors reconsider US allocation and capital stays home: fewer reasons to recycle trade-deficit dollars into US assets ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C01-2|C01-2]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-3|C02-3]])
+2. prices start from an old-paradigm assumption that US companies keep beating past results → larger downside to US assets if the paradigm shifts: expectations are higher than in 2010 ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C01-3|C01-3]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C01-X1|C01-X1]])
+3. gradual unwinding of current-account inflows → slow, uneven dollar and asset repricing: inflows are from allies and large, so they do not reverse in a day ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-3|C02-3]])
+- Evidence: Narrative of the last 15 years; Mexico and Brazil size anecdote from DeepSeek day.
+- Fails when: US exceptionalism in technology and capital markets keeps capital in the US (raised by Citrone).
+
+**Chain: Tariffs, central banks and non-US bonds**
+1. tariffs raise US prices, with a possible supply shock → Fed cannot ease proactively: may be a one-off VAT-like shock or a persistent Covid-style supply problem, and more certainty on fiscal stimulus or reshoring removes the case for easing ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-1|C04-1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-X1|C04-X1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-5|C03-5]])
+2. tariffs abroad cause weaker currencies and lower energy prices → other central banks ease more easily: slowdown not of their making and no inflation impulse ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-1|C04-1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-5|C03-5]])
+3. little non-US easing priced → long non-US government bonds: everything prices off the US ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-1|C04-1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-5|C03-5]])
+4. systematic pressure measure at once-in-10-to-15-year extremes → conviction in non-US bonds and euro/yen: gauge compares pressure with history ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-3|C04-3]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-R1|C04-R1]])
+- Evidence: Currency and energy moves; Bridgewater's systematic extremes gauge (not shown).
+- Fails when: US yields rise enough to drag other markets' yields up (Citrone's counter) or tariff-driven slowdown fails to spread.
+
+**Chain: Dollar decline pace**
+1. fast speculative money and easy hedgers → dollar fell first: they can move quickly ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-4|C04-4]])
+2. slow drivers (governance-bound institutional and official flows) → further dollar weakness over time: they take a while to work through ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-4|C04-4]])
+3. expected outflows from the dollar → short USD against euro and yen: extremes in big crosses ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-4|C04-4]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-3|C04-3]])
+- Evidence: Positioning reasoning; no flow data cited.
+- Fails when: Not stated.
+
+**Chain: US growth and inflation path in 2025-26**
+1. tariff pain in 2025 → slowdown and some inflation: policy shock before offsets arrive ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-2|C03-2]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-4|C03-4]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-X1|C03-X1]])
+2. fiscal stimulus and reshoring in 2026 → growth boost: faster resolution of tariff uncertainty speeds reshoring ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-4|C03-4]])
+3. Treasuries with nil risk premium at the start → yield backup includes a new risk premium: investors worldwide ask for compensation ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-2|C04-2]])
+- Evidence: Policy reading; 'last 48 hours' tariff de-escalation removed tail risk.
+- Fails when: Tariff uncertainty drags on; supply disruption shows up as empty shelves.
+
+**Decision process**
+- [portfolio] Take moderate risk, mostly outside the US; 'not the best time ever to take risk' but least attractive in the US.. Why: Concentration risk and paradigm shift. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-1|C05-1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-1|C03-1]])
+- [signal] Fundamental and systematic: measure the strength of the pressure on a market relative to history and act when it is once-in-10-to-15-years.. Why: Combines judgement with a historical gauge. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-3|C04-3]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-R1|C04-R1]])
+- [portfolio] Express a country view through stocks, bonds and currencies together, not only through equities.. Why: Gets paid even if the stock market does badly. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-3|C05-3]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-4|C05-4]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-X1|C05-X1]])
+- [risk] Hold liquid allocations and shorts to respond to conditions and exploit pricing opportunities.. Why: Portfolios are constrained by illiquids. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-2|C03-2]])
+- [portfolio] Ask what diversifies what you already hold; use zero-correlated assets outside the benchmark.. Why: Benchmark holdings are concentrated. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C07-1|C07-1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-R2|C03-R2]])
+
+**Evidence style:** Secular-paradigm narrative, historical analogy (2010, VAT, Covid), institutional anecdote and her firm's systematic extremes gauge; no numbers shown.
+
+**Views at the time**
+- (2025-05) Prefer government bonds outside the US; other central banks can ease.. Reasoning: Tariffs inflationary in the US but deflationary abroad; little easing priced; once-in-10-to-15-years pressure. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-5|C03-5]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-1|C04-1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-3|C04-3]])
+- (2025-05) Short the dollar against euro and yen, not against everything.. Reasoning: Slow drivers have not yet moved; extremes in big crosses. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-4|C04-4]])
+- (2025-05) Some US slowdown and inflation ahead; tariff pain in 2025, fiscal stimulus and reshoring in 2026.. Reasoning: Policy set; recent tariff de-escalation removed only the tail risk. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-2|C03-2]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-4|C03-4]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-X1|C03-X1]])
+- (2025-05) Take risk mostly outside the US; China exposure across stocks, bonds and currency.. Reasoning: Cheap Chinese stocks but multiple scenarios; US concentration. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-1|C05-1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-3|C05-3]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-X1|C05-X1]])
+- (2025-05) Tactically she prefers gold to oil, as part of an ignored commodity complex useful against inflation risk.. Reasoning: More inflation risk than before. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-4|C06-4]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-5|C06-5]])
+- (2025-05) Likes Brazilian and Mexican currencies as part of Latin American exposure; capital staying at home as the US pushes self-sufficiency.. Reasoning: Self-sufficiency policy keeps capital at home; Latin America under-owned. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-X4|C02-X4]])
+- (2025-05) Parts of the Treasury yield backup are a new risk premium.. Reasoning: Little premium over cash at the start. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-2|C04-2]])
+
+### Rob Citrone (Founder of Discovery Capital; discretionary EM and global macro investor)
+Fingerprint: #approach/macro_fundamental_topdown #approach/bottom_up_fundamental #approach/carry #approach/geopolitics #approach/valuation_contrarian #approach/positioning_crowding #approach/structural_themes #approach/crisis_alpha_convexity
+_Speaker note: Identified by content (Latin America focus, 70% of risk outside the US, America Movil). MT138-C02-4 (two Mexicos) is probably his per the ledger correction; MT138-C06-X2 (gold crowded long, oil short) is inferred to be his counterpoint._
+
+**Worldview premises**
+- US private-sector exceptionalism (technology, financial services, capital markets) persists, so capital will not leave the US easily, even as global investors begin to reduce their US overweight. _[empirical, stated; support: Assertion of US edge.]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C01-4|C01-4]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-1|C02-1]])
+- Countries are assessed like companies: management quality and policy come first; political change toward better management creates opportunity. _[experience, stated; support: Milei in Argentina and spreading regional change; four elections in 18 months.]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-X1|C02-X1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-2|C02-2]])
+- The world is siloing into Americas, Europe and Asia blocs, which creates dislocations. _[theoretical, stated; support: Assertion.]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-X2|C02-X2]])
+- Because the world is tricky and dislocated, a portfolio needs shorts and dynamic protection rather than being structurally long. _[experience, stated; support: Assertion.]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-X3|C02-X3]])
+- Mexico and Brazil are negligible in market-cap terms (Nvidia fell by about two Mexicos on DeepSeek Monday), which shows how under-capitalised they are in world indices. _[empirical, stated; support: Anecdote (attribution probable, per ledger correction).]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-4|C02-4]])
+- Rising US yields push yields higher in most other countries, so rates fall only where local conditions differ (Brazil, Mexico, Argentina, Turkey). _[empirical, stated; support: Assertion.]_ ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-X2|C04-X2]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-5|C04-5]])
+
+**Chain: US growth rebound and higher US yields**
+1. significant tax cuts with fewer spending cuts than discussed → US boom in 2026, pick-up from Q3-Q4 2025: fiscal impulse ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-3|C03-3]])
+2. reshoring and end of tariff uncertainty → companies and individuals spend more: uncertainty paralysis lifts ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-3|C03-3]])
+3. stronger growth and no Fed cuts → US 10-year at 5-5.25% in 2025: rates back up ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-3|C03-3]])
+4. higher US yields → higher yields in Japan and most countries: the US forces rates up elsewhere ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-X2|C04-X2]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-5|C04-5]])
+- Evidence: Forecast; no data.
+- Fails when: Not stated (Karniol-Tambour flags they differ somewhat).
+
+**Chain: Latin America opportunity**
+1. better management and policy (Argentina, then Peru, Colombia, Chile, Brazil elections) → substantial regional change: political shift ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-X1|C02-X1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-2|C02-2]])
+2. high rates, cheap currencies → returns in equities, currencies, credit and rates: room for improvement ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-2|C02-2]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-5|C04-5]])
+3. devalued, high-rate currencies (Nigeria 30%, Turkey 45%) → carry opportunity: yield after devaluation ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-2|C05-2]])
+- Evidence: Position sizes: 70% of risk outside US, about half in EM.
+- Fails when: Brazil: Lula's actions and 500 bp of hikes in recent months.
+
+**Chain: Oil near-term spike**
+1. Iran/Israel conflict risk → possible spike in oil: Israel will not let Iran stay nuclear, something happens soon ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-3|C06-3]])
+2. positioning: gold crowded long, oil short → oil can spike while gold lags: crowded versus under-owned ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-X2|C06-X2]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-5|C06-5]])
+- Evidence: Entry at 55-58 dollars.
+- Fails when: Long-term he is unsure.
+
+**Decision process**
+- [universe] Look at countries like companies: management and its policies first.. Why: Political and management change drives EM re-rating. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-X1|C02-X1]])
+- [portfolio] About 70% of risk outside the US and about half in EM.. Why: Opportunities in Latin America and other EM. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-2|C05-2]])
+- [risk] Keep shorts and be dynamic, protecting the portfolio at certain points.. Why: A tricky, dislocated world. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-X3|C02-X3]])
+- [signal] Buy oil on dips when conflict risk makes the reward-to-risk attractive (bought between 55 and 58).. Why: Near-term geopolitical event risk. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-3|C06-3]])
+- [universe] Single names screened on FCF yield, EV/EBITDA, growth, buybacks and controlling-holder trust (America Movil).. Why: High-quality, cheap Latin American franchise. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-6|C06-6]])
+- [portfolio] Credit exposure mostly sovereign (Argentina, Nigeria, Ecuador), specialised and sized for big returns.. Why: Yields are still large. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-X2|C05-X2]])
+
+**Evidence style:** Discretionary judgement, position disclosure and specific numbers (yields, FCF yield, multiples); anecdote; no backtests.
+
+**Views at the time**
+- (2025-05) US 10-year yield reaches 5-5.25% in 2025; no Fed cuts this year; US economy picks up in H2 2025 and booms in 2026.. Reasoning: Tax cuts, reshoring, end of tariff uncertainty. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-3|C03-3]])
+- (2025-05) Short US and Japanese government bonds; long EM rates (Brazil, Mexico, Argentina, Turkey) and perhaps the UK.. Reasoning: US forces rates higher in most countries; EM rates can fall by hundreds to thousands of bp. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-5|C04-5]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-X2|C04-X2]])
+- (2025-05) Long Latin America (Argentina, Mexico favourites); Brazil could be the best market in 2026 but with Lula and rate-hike risk.. Reasoning: Political shifts and cheap valuations. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-2|C02-2]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-2|C05-2]])
+- (2025-05) Long Nigerian and Turkish currency carry.. Reasoning: Big devaluations followed by 30-45% rates. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C05-2|C05-2]])
+- (2025-05) Long oil near term, long America Movil.. Reasoning: Iran/Israel risk; 10% FCF yield and 4x EV/EBITDA. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-3|C06-3]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-6|C06-6]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-X2|C06-X2]])
+
+### Disagreements
+- **US rates and growth path**: Rob Citrone: 10-year to 5-5.25%, no Fed cuts, US boom in 2026, short US and Japan bonds. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-3|C03-3]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-X2|C04-X2]]); Karen Karniol-Tambour: Agrees 2025 is pain and 2026 stimulus, but sees tariffs as inflationary in the US with a slowdown ahead and prefers non-US bonds; Citrone says they 'differ a little', though her own US yield call is not stated. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-4|C03-4]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-1|C04-1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-2|C03-2]])
+- **Tactical oil versus gold**: Karen Karniol-Tambour: Does not tactically like oil; prefers gold tactically, within a broadly ignored commodity complex. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-4|C06-4]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-5|C06-5]]); Rob Citrone: Bought oil at 55-58 on Iran/Israel risk; gold crowded long and oil crowded short, so oil can spike while gold lags. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-3|C06-3]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-X2|C06-X2]])
+- **How far US exceptionalism holds**: Rob Citrone: US edge in technology and capital markets means money will not easily leave. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-1|C02-1]]); Karen Karniol-Tambour: Prices still assume the old paradigm; regime change is fundamental and under-priced, though unwinding is gradual. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C01-3|C01-3]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C01-X1|C01-X1]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-3|C02-3]])
+
+### Gaps and conflicts
+- Speaker attribution is uncertain for C02-4 (two Mexicos story) and the gold-oil crowding sentence in C06; the ledger corrections reassign them to Citrone. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C02-4|C02-4]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-5|C06-5]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-X2|C06-X2]])
+- Karniol-Tambour says a systematic measure shows once-in-10-to-15-year pressure, but gives no metric, universe or threshold. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-3|C04-3]])
+- Citrone's 5-5.25% 10-year forecast and 2026 boom are given without a horizon beyond year-end 2025 or any sizing; Karniol-Tambour's yield view is not stated despite 'we differ a little'. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C03-3|C03-3]], [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C04-2|C04-2]])
+- Oil is bought for a near-term spike but he is unsure long term; no exit rule. ([[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025#^MT138-C06-3|C06-3]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Policy inputs: tariff announcements and de-escalation, US fiscal bill (tax cuts versus spending cuts), reshoring decisions, Fed communication on tariff inflation. Market inputs: positioning in gold and oil, the Treasury term/risk premium, speed of foreign allocation shifts away from the US, EM election outcomes (Peru, Colombia, Chile, Brazil), Brazil rate path. Horizon: months for rates and currency, through 2026 for the growth rebound and Brazil, years for the paradigm.
+
+### Reader inferences (not stated by the speakers)
+- (reader) The two disagree less on direction (outside-US tilt) than on the US cycle: Citrone expects a strong US 2026 with higher yields while Karniol-Tambour expects slowdown plus sticky inflation.
+- (reader) Both approaches avoid market-cap weighting; Citrone chooses by country management quality, Karniol-Tambour by diversification across growth, inflation and policy regimes.
+- (reader) Karniol-Tambour's non-US bond view and Citrone's short Japan bonds are compatible only if the stronger-yen/euro currency view dominates the rate view.
 
 ## Coverage
 
@@ -118,6 +252,10 @@ tags: [source, layer0]
   > the last 48 hours or so have taken some tail risk off the table
   indicator: tariff policy path · asset: multi · direction: reduced severe-slowdown risk · horizon: months · testable: no - view on a specific episode · confidence: medium
   ^MT138-C03-X1
+- **Karen Karniol-Tambour** Diversification should be built around economic outcomes (slowdown, inflation) as well as geography, so the portfolio is robust to how the economy evolves.  #mech/new _(added by map cross-check)_
+  > Also treating it seriously in terms of how are you going to do depending on what happens to the economy.
+  indicator: portfolio performance across growth/inflation outcomes · asset: multi-asset · direction: hold assets that work under slowdown and inflation · conditions: policy set implies slowdown and inflation · testable: partly · confidence: high
+  ^MT138-C03-R2
 
 ### C04
 - **Karen Karniol-Tambour** Tariff effects are inflationary in the US (more so if supply constraints) but deflationary abroad (weaker currencies, lower energy), so the Fed cannot ease easily while other central banks can, and little non-US easing is priced.  #mech/policy_reaction _(time-bound view)_
@@ -148,6 +286,10 @@ tags: [source, layer0]
   > the US is going force rates in most countries higher
   indicator: US Treasury yield spillover to other bond markets · asset: rates · direction: short US and Japan bonds · horizon: months · conditions: except high-rate EM where rates can fall · testable: yes - cross-market yield beta · confidence: medium
   ^MT138-C04-X2
+- **Karen Karniol-Tambour** Bridgewater combines fundamental judgement with a systematic gauge that measures the strength of pressure on a market relative to its history, and uses extreme readings to build conviction.  #mech/new _(added by map cross-check)_
+  > we're fundamental we're also systematic and so we can kind of measure the strength of the pressure relative to history
+  indicator: systematic pressure measure vs history · asset: multi-asset · direction: positions sized or justified when pressure is at historical extremes · horizon: months · conditions: gauge not described · testable: no - the measure is not specified · confidence: high
+  ^MT138-C04-R1
 
 ### C05
 - **Karen Karniol-Tambour** How much risk and where is the key question; take moderate risk, mostly outside the United States.  #mech/risk_management _(time-bound view)_

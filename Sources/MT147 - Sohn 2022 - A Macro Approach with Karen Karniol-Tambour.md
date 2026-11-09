@@ -5,8 +5,8 @@ date: 2022-06-10
 channel: "Sohn Conference Foundation"
 url: https://www.youtube.com/watch?v=b5q1l3aJ-_s
 words: 3158
-claims: 33
-added_by_crosscheck: 8
+claims: 34
+added_by_crosscheck: 9
 corrections: 0
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Karen Karniol-Tambour (Bridgewater co-CIO, speaker)", "Graeme (Sohn host)"]
@@ -21,6 +21,95 @@ tags: [source, layer0]
 **Approach:** macro fundamental, top-down equities, profit cycle
 
 **Cross-check completeness estimate of first read:** 0.76 - the first reader (25 claims) caught the core profit-identity, fiscal-transfer, labour-power, inflation-squeeze and priced-in arguments; it missed the record-profit premise, the DCF 'read what is priced in' framing, the explicit mean-reversion conclusion, the inflation/lag feedback from the stimulus, and a few smaller links.
+
+## Argument map
+
+**Episode thesis:** Karniol-Tambour argues that aggregate US corporate profits can only exceed wage income when spending is funded by borrowing, dissaving or government deficits, and that each of those funding channels (private leverage, fiscal transfers, falling rates, weak labor power) is now fading or reversing. Record profit shares are therefore expected to mean-revert, and because equities have repriced only for higher rates and not for lower earnings or an inflation risk premium, she is bearish on US equities (June 2022).
+
+### Karen Karniol-Tambour (Co-CIO for sustainability, partner and investment committee member at Bridgewater; macro investor (Sohn 2022 keynote))
+Fingerprint: #approach/macro_fundamental_topdown #approach/debt_cycle_long_term #approach/fiscal_dominance #approach/policy_reaction_central_banks #approach/valuation_contrarian #approach/structural_themes #approach/geopolitics
+_Speaker note: Single-speaker talk; the host (Graeme) only introduces her, so he is not mapped. Captions have no punctuation and garble some words (e.g. 'foster tools' for fossil fuels, 'carneal tambor'); attribution is not in doubt._
+
+**Worldview premises**
+- For the whole economy, profits above wage income require someone to spend money they did not earn as wages: borrowing, dissaving or government deficits. Profit margins are therefore a flow-of-funds outcome, not only a company-level one. _[theoretical, stated; support: Accounting identity (everyone's spending is someone's income), applied to households, firms and government.]_ ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-1|C01-1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-2|C01-2]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-3|C01-3]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-4|C01-4]])
+- The identity is only mechanical; whether sectors actually borrow or run deficits depends on structural and behavioural drivers, so the forecast must model why they would. _[theoretical, stated; support: Says 'they have to choose to borrow for a reason'; globalization and deregulation named as the impetus.]_ ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-X2|C01-X2]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-5|C01-5]])
+- Structural forces (globalization, deregulation, fewer unions) weakened worker bargaining power; workers kept spending by borrowing, which lifted profit share for decades. _[empirical, stated; support: Historical narrative of the pre-2008 era; no data shown beyond one profit chart.]_ ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-1|C02-1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-5|C01-5]])
+- Falling interest rates, driven by emerging-market and oil-producer dollar saving, were what allowed borrowing to keep funding profit-supporting spending. _[empirical, stated; support: Narrative of reserve accumulation by China and oil producers before 2008.]_ ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-2|C02-2]])
+- QE is an ineffective way to support demand per dollar because its gains accrue to wealthy asset owners who spend little of them, and it raises inequality. _[empirical, stated; support: Mechanism argument; compared with direct checks in 2020.]_ ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-4|C02-4]])
+- Direct fiscal transfers are the most dollar-effective way to sustain spending, so profits can decouple from activity when transfers exceed lost wages. _[empirical, stated; support: 2020 episode: profits at record highs while the economy collapsed.]_ ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-5|C02-5]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-6|C02-6]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-X1|C02-X1]])
+- Public equity prices let you see what is priced in: a stock is expected profits discounted by the risk-free rate and a risk premium, so one can check whether a price move matches a discount-rate change or an earnings change. _[theoretical, stated; support: Back-of-envelope duration calculation (1.5 pt rise on a 10-year earnings stream is about 15%).]_ ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-X1|C04-X1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-4|C04-4]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-R1|C04-R1]])
+- Higher inflation raises the required risk-free return and makes the economy harder to manage, so equities can do badly in inflationary regimes even when profits hold up (1970s). _[empirical, stated; support: 1970s was the worst decade for equities despite good profits from resource companies.]_ ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-3|C05-3]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-2|C04-2]])
+- Single-country outperformance tends to be priced in and rarely repeats over the next decade, so high expectations set up disappointment. _[empirical, stated; support: General historical pattern, no cases given.]_ ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-4|C05-4]])
+- Peak-pro-corporate conditions mean-revert: low corporate taxes, little antitrust enforcement and weak labor power are at multi-decade extremes, and political pressure to address inequality points the other way. _[institutional, stated; support: Observations that corporate taxes and antitrust are at multi-decade lows; no polling or policy data.]_ ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-5|C03-5]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-6|C03-6]])
+
+**Chain: How profits were built up to 2020**
+1. globalization, deregulation, union decline → worker bargaining power falls, wages lag: firms can move jobs abroad and face less pressure to pay ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-1|C02-1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-5|C01-5]])
+2. wages lag but workers want to keep spending → private borrowing rises: leverage lets spending exceed wage income ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-1|C02-1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-2|C01-2]])
+3. emerging-market and oil-producer dollar saving → rates fall, borrowing stays affordable: global savings glut keeps funding supply high ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-2|C02-2]])
+4. spending funded by non-wage sources → corporate profit share rises: revenue arrives without matching wage payout ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-1|C01-1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-3|C01-3]])
+- Evidence: Narrative plus one chart of US corporate profits to GDP at multi-decade highs.
+- Fails when: If everyone borrows at once rates rise (she notes this); the chain held only because foreign savers pushed rates down.
+
+**Chain: 2008 to 2021: government replaces private leverage**
+1. financial crisis → private leveraging ends: subprime and housing borrowing can no longer be done ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-3|C02-3]])
+2. government steps in via QE → asset prices and inequality rise, little spending boost: wealthy spend little of asset gains ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-4|C02-4]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-X2|C02-X2]])
+3. Covid layoffs plus direct checks exceeding lost wages → households keep spending, payroll falls, profits surge to records: non-wage income fully replaces wages ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-5|C02-5]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-6|C02-6]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-1|C03-1]])
+- Evidence: 2020 profits at record highs during a recession; household balance sheets healed fastest ever for bottom 60-80%.
+- Fails when: Transfers stop; the setup depends on continuing fiscal support.
+
+**Chain: Why profit support is fading (the turning point)**
+1. transfers end → households fund spending by cutting savings rates and using credit cards: healthy balance sheets let them bridge the gap temporarily ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-1|C03-1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-2|C03-2]])
+2. stimulus-fuelled boom → inflation, then rate rises and falling asset prices: excess demand pushes prices up and the Fed responds ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-X1|C03-X1]])
+3. rising mortgage rates and falling asset prices → households cannot lever up or save less further: already low saving rates and tighter credit ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-3|C03-3]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-2|C03-2]])
+4. lagged effect of tightening → spending slowdown still ahead: transmission takes time and is not yet in the data ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-X2|C03-X2]])
+5. spending slowdown with non-wage funding gone → profits revert down from record levels: profits need non-wage spending ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-X2|C04-X2]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-1|C01-1]])
+- Evidence: Last two or three months of spending funded by dissaving and card borrowing; biggest rise in mortgage rates in decades.
+- Fails when: A new source of non-wage spending appears (new fiscal transfers, renewed private leverage).
+
+**Chain: Margin squeeze from labor, inflation and capex**
+1. tightest labor market in decades → wage gains concentrated in the bottom 60-80%: workers' bargaining power has swung back ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-4|C03-4]])
+2. inflation concentrated in inelastic fuel and food → bottom 40-60% of consumers lose spending power: most consumers are not producers of those goods ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-1|C04-1]])
+3. consumer budget squeeze → non-commodity firms struggle to pass on costs, margins fall: customers cannot absorb price rises ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-1|C04-1]])
+4. index has far fewer commodity producers (3% vs 30% in the 1970s) → index does not capture the inflation benefit: composition change ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-2|C04-2]])
+5. resilience, supply-chain and decarbonization spending → capex without matching profit growth: spending is defensive, not revenue-generating ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-3|C04-3]])
+- Evidence: 1970s comparison (30% vs 3% commodity weight).
+- Fails when: Firms can pass on prices fully or inflation is broad-based so wages and prices rise together (she mentions this scenario and dismisses it).
+
+**Chain: What the market has priced**
+1. 10-year yield up about 1.5 pt on a 10-year earnings stream → about 15% lower equity price: discount-rate duration arithmetic ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-4|C04-4]])
+2. equities have fallen about that much → rates are priced, earnings decline and inflation risk premium are not: price move matches rates alone ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-1|C05-1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-X1|C04-X1]])
+3. market embeds goldilocks plus continued US outperformance → downside if profits revert: requires even higher profitability or more share gains ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-2|C05-2]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-4|C05-4]])
+- Evidence: Back-of-envelope arithmetic and a qualitative read of prices; no data shown.
+- Fails when: Profits hold at record levels or the Fed tightens only slightly and inflation falls quickly.
+
+**Decision process**
+- [signal] Start from the macro identity for profits (non-wage spending sources) and track each source: household dissaving and credit, fiscal transfers, private capex borrowing, labor power, tax and regulation.. Why: Profit levels are determined by flows that can be observed and projected. ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-1|C01-1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-2|C01-2]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-3|C01-3]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-4|C01-4]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-2|C03-2]])
+- [signal] Check what is priced in by splitting the equity move into a discount-rate part and an earnings part, using duration arithmetic.. Why: Public equities show what is priced in fairly clearly; a mismatch is the opportunity. ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-X1|C04-X1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-4|C04-4]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-1|C05-1]])
+- [portfolio] Express the view as bearish on US equities and relative US equity returns, based on lower earnings and an unpriced inflation risk premium.. Why: Priced for goldilocks; profits at records and US expectations already high. ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-X2|C04-X2]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-2|C05-2]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-4|C05-4]])
+- [research] Combine top-down macro with a nuts-and-bolts view of how corporate profits are made across the whole economy, not stock by stock.. Why: Stock pickers often ignore macro; macro drives aggregate profits. ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-1|C01-1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-5|C01-5]])
+
+**Evidence style:** Accounting identity plus historical narrative and analogy (1970s, 2020); one profit chart; back-of-envelope arithmetic; no backtests or quantified forecasts.
+
+**Views at the time**
+- (2022-06 (upload 2022-06-10)) US corporate profits (record share of GDP) are unlikely to stay at current levels and should fall.. Reasoning: Non-wage funding sources are fading and structural margin tailwinds have reversed. ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-X1|C01-X1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-X2|C04-X2]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-2|C03-2]])
+- (2022-06) Equities have priced rate rises only; neither an earnings decline nor an inflation-driven risk premium is priced. Bearish on US equities.. Reasoning: Price fall matches duration math for 1.5 pt higher yields; market is priced for goldilocks. ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-1|C05-1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-2|C05-2]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-3|C05-3]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-4|C04-4]])
+- (2022-06) US stocks are priced to keep outperforming the world, which is hard to deliver and rarely repeats.. Reasoning: Needs higher profitability from record levels or more market share. ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-4|C05-4]])
+- (2022-06) Household spending is being funded by dissaving and card borrowing and will not accelerate; the effect of higher rates on spending has lagged and is still ahead.. Reasoning: Low saving rates, rising mortgage rates and falling asset prices. ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-2|C03-2]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-3|C03-3]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-X2|C03-X2]])
+- (2022-06) Inflation squeezes non-commodity margins, and commodity producers are too small an index weight (3%) to offset it.. Reasoning: Inelastic fuel and food costs hit the bottom 40-60% of consumers. ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-1|C04-1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-2|C04-2]])
+
+### Gaps and conflicts
+- No quantified earnings forecast, target, horizon or sizing is given; the bearish call rests on qualitative reasoning and a single profit-to-GDP chart. ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-X2|C04-X2]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C01-X1|C01-X1]])
+- The 15% duration figure is a rough illustration (10-year earnings stream, 1.5 pt yield rise) and ignores the equity risk premium; the claim that equities fell only 'in line' with rates is asserted without showing the actual index decline. ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-4|C04-4]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-1|C05-1]])
+- The 1970s analogy cuts both ways: she says profits did well then, but equities fell on a higher required return, so the link from profit decline to equity decline is separate from the inflation-risk-premium channel. ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C05-3|C05-3]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C04-2|C04-2]])
+- Households' 2020 savings were partly invested in stocks and crypto, which she says helped keep spending going but does not reconcile with the claim that household balance sheets are now a spent resource. ([[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C02-X1|C02-X1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-1|C03-1]], [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour#^MT147-C03-2|C03-2]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Observables said to lead profits: household saving rate and credit card borrowing, fiscal transfers and deficit size, mortgage rates and asset prices (household borrowing capacity), wage growth for the bottom 60-80% and labor market tightness, fuel and food inflation versus consumer spending power, corporate tax and antitrust policy. Horizon: months for spending and margin squeeze, years for the profit-share reversion; equity-relevant risk premium via inflation.
+
+### Reader inferences (not stated by the speakers)
+- (reader) The framework implies a testable relationship between profit share of GDP and the sum of household, business and government net borrowing (a Kalecki-style identity); the talk does not show the test.
+- (reader) The bearish equity call is a conditional bet on earnings mean-reversion; it would be falsified by profits staying at record levels without fresh non-wage funding.
+- (reader) Her 'what is priced in' check is a decomposition approach, not a valuation threshold; no level of price would change the view.
 
 ## Coverage
 
@@ -157,6 +246,10 @@ tags: [source, layer0]
   > profits are extremely high and it seems very unlikely they can remain this high at unprecedented levels forever
   indicator: profit share of GDP, corporate margins · asset: equities · direction: short or underweight equities as profits mean-revert · horizon: years · conditions: when the profit share is at a record and borrowing, deficits and labour weakness stop supporting it · testable: yes - forward earnings versus starting profit share · confidence: high
   ^MT147-C04-X2
+- **Karen Karniol-Tambour** Public equity prices reveal what is priced in well enough to compare against the macro view, so the investment test is whether the market has priced the profit decline she forecasts.  #mech/new _(added by map cross-check)_
+  > the good thing about public equities is you can see what's priced in pretty well
+  indicator: equity price move vs rate move · asset: equities · direction: mispricing exists when earnings risk is unpriced · horizon: months · conditions: requires a view on earnings and discount rate · testable: partly - decompose index move into discount-rate and earnings revisions · confidence: high
+  ^MT147-C04-R1
 
 ### C05
 - **Karen Karniol-Tambour** Equities have only repriced for higher rates, not for lower profits, so no earnings slowdown is priced in.  #mech/policy_reaction _(time-bound view)_

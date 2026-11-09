@@ -1,0 +1,952 @@
+{
+ "source_id": "MT067",
+ "episode_thesis": "Graham's discretionary macro team argues that persistent, broad inflation ended the 2010-20 regime of suppressed volatility, the Fed put and negative stock-bond correlation, so central bank reaction functions become the main source of opportunity and risk (terminal rate higher than expected, Europe tightening into recession, Japan's yield curve control unsustainable). They add that in this regime risk is managed by volatility-unit sizing, cutting books where cross-asset trades collapse into one, scaling down into events, and daily independent risk review.",
+ "speakers": [
+  {
+   "name": "Katie Woodridge",
+   "role": "Chief economist, Graham Capital",
+   "speaker_note": "Auto-captions garble names (Kelly, Katie dropping Woodridge). Speaker turns are inferred from conversation order; the ledger corrections on C04-4, C04-5, C07-2, C08-3 and C09-1 were applied. Recorded September 2022 (the video was uploaded in 2025).",
+   "fingerprint": [
+    "policy_reaction_central_banks",
+    "macro_fundamental_topdown",
+    "nowcasting_data",
+    "regime_detection",
+    "research_robustness_overfitting",
+    "positioning_crowding"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Persistently low inflation before the pandemic let the Fed be quick to ease and slow to tighten, producing the Fed put and well-telegraphed policy with little room for a research edge.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "2015-18 tightening every other meeting at 25bp.",
+     "claim_ids": ["MT067-C01-1"]
+    },
+    {
+     "premise": "The Fed's new flexible average inflation targeting framework (Aug 2020) and its 'transitory' call made it slow to respond to inflation, creating a lag between data and policy that research can exploit.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Fed behaviour since 2020; the Fed was proven wrong.",
+     "claim_ids": ["MT067-C02-1"]
+    },
+    {
+     "premise": "An edge exists when research shows the central bank mispositioned relative to inflation and labour data; this was rare while policy was well telegraphed.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Her team's experience at the start of 2021 and 2022.",
+     "claim_ids": ["MT067-C02-2"]
+    },
+    {
+     "premise": "Central banks worldwide surprised on aggressiveness (75bp hikes) a year after still doing QE, so the policy debate has moved from taper to pace of tightening.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observed policy path in 2021-22.",
+     "claim_ids": ["MT067-C02-3"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "From low inflation to the Fed put and from high inflation to its loss",
+     "steps": [
+      {
+       "from": "Persistently low inflation",
+       "to": "Fed quick to ease, slow to tighten (fed put, forward guidance, QE without inflation fear)",
+       "why": "No inflation constraint on accommodating downside growth risk.",
+       "claim_ids": ["MT067-C01-1"]
+      },
+      {
+       "from": "New average inflation targeting framework and 'transitory' call",
+       "to": "Fed slow to respond to inflation, then forced to tighten aggressively",
+       "why": "The Fed assumed inflation would not be persistent and welcomed early high prints.",
+       "claim_ids": ["MT067-C02-1", "MT067-C02-3"]
+      },
+      {
+       "from": "Entrenched services and core goods inflation",
+       "to": "Terminal rate rises to 4% then 5% and soft-landing odds fall",
+       "why": "Persistence leaves the Fed more work to do.",
+       "claim_ids": ["MT067-C06-1"]
+      }
+     ],
+     "evidence": "Fed behaviour 2015-22 and her team's forecasts.",
+     "fails_when": "If inflation unexpectedly cooled, easing cycles would also become opportunities.",
+     "claim_ids": ["MT067-C01-1", "MT067-C02-1", "MT067-C06-1", "MT067-C06-3"]
+    },
+    {
+     "topic": "Europe: tightening into recession",
+     "steps": [
+      {
+       "from": "Energy-driven inflation and second-round effects",
+       "to": "European central banks must tighten",
+       "why": "Higher energy prices and risk to inflation expectations.",
+       "claim_ids": ["MT067-C06-2"]
+      },
+      {
+       "from": "Tightening while economies weaken",
+       "to": "Reverse of fed-put logic of accommodating downside growth risk",
+       "why": "Inflation outranks growth.",
+       "claim_ids": ["MT067-C06-2"]
+      }
+     ],
+     "evidence": "Stated as a current observation; no figures.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT067-C06-2"]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "The economists provide research and flag where Fed thinking differs from consensus, but there is no house view that portfolio managers must put on; PMs express it independently.",
+     "why": "Prepare PMs for any central bank event while leaving expression to them.",
+     "claim_ids": ["MT067-C02-4"]
+    },
+    {
+     "element": "signal",
+     "practice": "Read Fed communications early for signals outside consensus, for example December 2021 press conference hints at earlier balance sheet runoff while QE was still running.",
+     "why": "Such items were not being discussed in markets.",
+     "claim_ids": ["MT067-C02-5"]
+    },
+    {
+     "element": "signal",
+     "practice": "Look for central bank mispositioning relative to inflation and labour data.",
+     "why": "That is where an edge on the central bank arises.",
+     "claim_ids": ["MT067-C02-2"]
+    },
+    {
+     "element": "other",
+     "practice": "Hold both the persistent-inflation scenario and the cooling scenario.",
+     "why": "Easing cycles would also be an opportunity if inflation unexpectedly cooled.",
+     "claim_ids": ["MT067-C06-3"]
+    }
+   ],
+   "evidence_style": "Policy history and her team's recent experience; no statistics beyond a few rate numbers.",
+   "current_views": [
+    {
+     "view": "Inflation will stay persistently high; entrenched services and core goods inflation means the Fed lifts the terminal rate to the 4% range and perhaps 5%.",
+     "as_of": "2022-09",
+     "reasoning": "Services and core goods inflation remain sticky and broad.",
+     "claim_ids": ["MT067-C06-1"]
+    },
+    {
+     "view": "Soft-landing odds are low.",
+     "as_of": "2022-09",
+     "reasoning": "Persistent inflation means the Fed must tighten further; the Fed itself has begun to acknowledge this.",
+     "claim_ids": ["MT067-C06-1"]
+    },
+    {
+     "view": "European central banks will tighten into recession because of energy-driven inflation.",
+     "as_of": "2022-09",
+     "reasoning": "Higher energy prices raise inflation and second-round risks.",
+     "claim_ids": ["MT067-C06-2"]
+    },
+    {
+     "view": "Central banks worldwide are aggressive, with 75bp hikes; the debate is the pace of tightening, not taper.",
+     "as_of": "2022-09",
+     "reasoning": "A year earlier the Fed was still doing QE.",
+     "claim_ids": ["MT067-C02-3"]
+    }
+   ]
+  },
+  {
+   "name": "Peter Chapson",
+   "role": "Senior discretionary portfolio manager, Graham Capital (mid-1990s start in the business)",
+   "speaker_note": "Name spelled 'Chapson' in captions. Ledger corrections moved the vol-unit sizing and liquidity answers (C08-3, C09-1) to him from Keelan, and the 'Japan defies the imagination' remark (C07-2) is his; the 30-year-high CPI and YCC points are Keelan's.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "policy_reaction_central_banks",
+    "position_sizing_vol_target",
+    "positioning_crowding",
+    "diversification_risk_parity",
+    "structural_themes",
+    "bottom_up_fundamental"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Inflation is the hardest variable to predict; models built on 20 years of 0.2% monthly prints break down, so central bank response models are unreliable.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "His experience since the mid-1990s and the absence of inflation like this in most careers.",
+     "claim_ids": ["MT067-C03-1"]
+    },
+    {
+     "premise": "Central banks now react to headline CPI and even the Michigan inflation expectations survey, so those releases act as policy triggers.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Recent central bank reactions.",
+     "claim_ids": ["MT067-C03-2"]
+    },
+    {
+     "premise": "Fiscal support for higher prices works against monetary tightening and sustains inflation.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Governments spending to help people afford higher prices.",
+     "claim_ids": ["MT067-C03-3"]
+    },
+    {
+     "premise": "The negative stock-bond correlation underpinning 60/40 portfolios has gone in the inflation regime, so diversification between them fails.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "2022 experience.",
+     "claim_ids": ["MT067-C03-4"]
+    },
+    {
+     "premise": "Deglobalisation and labour regaining power over capital are secular changes supporting structurally higher inflation.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "None beyond assertion.",
+     "claim_ids": ["MT067-C03-5"]
+    },
+    {
+     "premise": "In a regime with no precedent, economists and traders are on equal footing, so common sense, imagination and risk management carry the premium.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "None beyond assertion.",
+     "claim_ids": ["MT067-C03-6"]
+    },
+    {
+     "premise": "A sentiment factor correlates positions: overbought things get sold and oversold things get bought together.",
+     "type": "behavioural",
+     "stated": "stated",
+     "support": "Experience of correlated moves.",
+     "claim_ids": ["MT067-C09-2"]
+    },
+    {
+     "premise": "Thinking the old two percent target will simply return after eight percent is naive, because two percent is an arbitrary level.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Argument that the central bank pick has no reason.",
+     "claim_ids": ["MT067-C07-1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Inflation regime to loss of diversification",
+     "steps": [
+      {
+       "from": "Persistent inflation, with central banks hiking on headline CPI and governments adding fiscal support",
+       "to": "Policy fights itself and rates and stocks react to the same inflation shock",
+       "why": "Fiscal support sustains prices while monetary policy tightens.",
+       "claim_ids": ["MT067-C03-2", "MT067-C03-3"]
+      },
+      {
+       "from": "Inflation regime",
+       "to": "Stock-bond correlation turns positive; 60/40 diversification fails",
+       "why": "Both fall on inflation and tightening.",
+       "claim_ids": ["MT067-C03-4"]
+      },
+      {
+       "from": "Deglobalisation and labour regaining power",
+       "to": "Structurally higher inflation",
+       "why": "Secular supply and bargaining changes.",
+       "claim_ids": ["MT067-C03-5"]
+      }
+     ],
+     "evidence": "2022 experience; no figures.",
+     "fails_when": "Not stated; he allows that inflation could go to deflation instead.",
+     "claim_ids": ["MT067-C03-4", "MT067-C03-5", "MT067-C07-1"]
+    },
+    {
+     "topic": "Global liquidity tightening to risk assets",
+     "steps": [
+      {
+       "from": "Liquidity tightening globally",
+       "to": "Risk assets, and then stocks and bonds, sell off",
+       "why": "Bad for traditional investors; good for macro funds.",
+       "claim_ids": ["MT067-C07-1", "MT067-C07-R1"]
+      }
+     ],
+     "evidence": "An anecdote about a friend retiring; no data.",
+     "fails_when": "Stocks and bonds sell-off 'could be a little trickier' per his own caveat.",
+     "claim_ids": ["MT067-C07-1", "MT067-C07-R1"]
+    },
+    {
+     "topic": "Sentiment factor correlating positions",
+     "steps": [
+      {
+       "from": "Overbought assets",
+       "to": "Sold together",
+       "why": "Sentiment acts as a common factor across assets.",
+       "claim_ids": ["MT067-C09-2"]
+      },
+      {
+       "from": "Oversold assets",
+       "to": "Bought together",
+       "why": "Same factor in reverse.",
+       "claim_ids": ["MT067-C09-2"]
+      }
+     ],
+     "evidence": "Experience.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT067-C09-2"]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "sizing",
+     "practice": "Size positions in volatility units so higher volatility means smaller positions; be ready for tails and gap risk.",
+     "why": "Standard practice, unchanged by the regime.",
+     "claim_ids": ["MT067-C08-3"]
+    },
+    {
+     "element": "execution",
+     "practice": "Place a premium on liquid instruments; skip trades that cannot be sized large enough to matter in poor liquidity.",
+     "why": "Market liquidity is poor.",
+     "claim_ids": ["MT067-C09-1"]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Generate trade ideas bottom-up, then check the combined book's overall risk orientation; the same process in quiet 2018 and busy 2022.",
+     "why": "More volatility and more stories is better for him.",
+     "claim_ids": ["MT067-C09-X1"]
+    },
+    {
+     "element": "risk",
+     "practice": "Watch the sentiment factor that makes overbought and oversold positions correlate.",
+     "why": "It correlates positions across the book.",
+     "claim_ids": ["MT067-C09-2"]
+    },
+    {
+     "element": "signal",
+     "practice": "Treat headline CPI and Michigan inflation expectations as tradable policy triggers.",
+     "why": "Central banks react to them.",
+     "claim_ids": ["MT067-C03-2"]
+    },
+    {
+     "element": "other",
+     "practice": "Do not rely on central bank response models; use common sense, imagination and risk management.",
+     "why": "Inflation models built on 20 years of low prints break.",
+     "claim_ids": ["MT067-C03-1", "MT067-C03-6"]
+    }
+   ],
+   "evidence_style": "Career experience and recent market anecdote; no data or backtests.",
+   "current_views": [
+    {
+     "view": "Inflation stays high (possibly deflation) rather than returning smoothly to 2%.",
+     "as_of": "2022-09",
+     "reasoning": "The 2% target is arbitrary; secular deglobalisation and labour power.",
+     "claim_ids": ["MT067-C07-1", "MT067-C03-5"]
+    },
+    {
+     "view": "Liquidity will keep tightening globally, which is bad for risk assets; risk assets, stocks and bonds sell off further.",
+     "as_of": "2022-09",
+     "reasoning": "Tightening liquidity is bad for traditional investors and good for macro funds.",
+     "claim_ids": ["MT067-C07-1", "MT067-C07-R1"]
+    },
+    {
+     "view": "Most 2022 returns came from short stocks plus short bonds (anti-risk-parity) and long dollar, with extra gains in yen and the Mexican peso, which appreciated on top of large carry on reshoring to North America.",
+     "as_of": "2022-09",
+     "reasoning": "Anti-risk-parity trade plus dollar strength and reshoring flows.",
+     "claim_ids": ["MT067-C04-5"]
+    },
+    {
+     "view": "It is implausible that Japan stays the only developed country without inflation; people stuck in old ways miss it.",
+     "as_of": "2022-09",
+     "reasoning": "Inflation is global; people lack imagination.",
+     "claim_ids": ["MT067-C07-2"]
+    }
+   ]
+  },
+  {
+   "name": "David Keelan",
+   "role": "Senior discretionary portfolio manager, Graham Capital",
+   "speaker_note": "Referred to as 'Dave' or 'Day' in captions. Per ledger corrections, vol-unit sizing and liquidity answers are Chapson's, and Keelan owns the Japan CPI, YCC, yen and BoJ points. Turn-taking is inferred.",
+   "fingerprint": [
+    "policy_reaction_central_banks",
+    "diversification_risk_parity",
+    "behavioral_sentiment",
+    "position_sizing_vol_target",
+    "portfolio_construction_stacking",
+    "regime_detection",
+    "short_term_systematic"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Risk parity worked for decades on falling rates and QE-suppressed volatility, peaking when about $7 trillion of debt was negative-yielding and equity valuations were at highs; it has since been thrown out.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Career since the early 1990s.",
+     "claim_ids": ["MT067-C04-1"]
+    },
+    {
+     "premise": "QE suppresses volatility and pushes investors out the risk spectrum (3% mortgages, cheap credit); withdrawing it raises volatility.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Observed central bank involvement; no data.",
+     "claim_ids": ["MT067-C04-2"]
+    },
+    {
+     "premise": "A Fed put still exists but its strike is far lower because inflation limits easing; buying dips on pivot hopes is the old playbook.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Fed credibility is on the line on inflation.",
+     "claim_ids": ["MT067-C04-3"]
+    },
+    {
+     "premise": "Bear markets contain vicious rallies, and recognising when sentiment is so dire that the market can snap back is itself the opportunity.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Summer 2022: stocks up 20% off the lows while 10-year notes rallied 75bp.",
+     "claim_ids": ["MT067-C04-4"]
+    },
+    {
+     "premise": "Getting the theme right matters more than portfolio structure: on the wrong side of trades, structure does not help.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Assertion.",
+     "claim_ids": ["MT067-C09-X2"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "QE, volatility and the risk parity trade",
+     "steps": [
+      {
+       "from": "QE and fiscal-monetary response",
+       "to": "Lower volatility, negative-yielding debt, higher valuations",
+       "why": "QE pushes investors out the risk spectrum.",
+       "claim_ids": ["MT067-C04-2", "MT067-C04-1"]
+      },
+      {
+       "from": "Low volatility and falling rates",
+       "to": "Risk parity extreme and then thrown out",
+       "why": "The conditions that supported it reversed.",
+       "claim_ids": ["MT067-C04-1"]
+      },
+      {
+       "from": "Withdrawal of QE and inflation limiting Fed easing",
+       "to": "Higher volatility and a Fed put struck far below",
+       "why": "Inflation means the Fed will do what it takes.",
+       "claim_ids": ["MT067-C04-2", "MT067-C04-3"]
+      }
+     ],
+     "evidence": "Career experience; 2022 market behaviour.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT067-C04-1", "MT067-C04-2", "MT067-C04-3"]
+    },
+    {
+     "topic": "Japan: YCC versus the weak yen",
+     "steps": [
+      {
+       "from": "Inflation at a 30-year high (3%) and markets testing yield curve control",
+       "to": "Pressure on the BoJ",
+       "why": "YCC conflicts with intervening to support the yen.",
+       "claim_ids": ["MT067-C07-2", "MT067-C07-X1"]
+      },
+      {
+       "from": "BoJ buying large amounts of JGBs while the yen weakens",
+       "to": "Limited ability to intervene in the currency",
+       "why": "Buying JGBs adds supply of yen.",
+       "claim_ids": ["MT067-C07-X1"]
+      },
+      {
+       "from": "Policy mix looks unsustainable and BoJ leadership change is due",
+       "to": "Trade opportunity",
+       "why": "Policy could change.",
+       "claim_ids": ["MT067-C07-X1", "MT067-C07-2"]
+      }
+     ],
+     "evidence": "Recent CPI print; observation of markets testing YCC.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT067-C07-X1", "MT067-C07-2"]
+    },
+    {
+     "topic": "Quantitative tightening and real yields",
+     "steps": [
+      {
+       "from": "Quantitative tightening, larger than ever",
+       "to": "Real yields keep rising",
+       "why": "Balance sheet shrinking.",
+       "claim_ids": ["MT067-C07-4"]
+      },
+      {
+       "from": "Yields get too high",
+       "to": "Central banks might flinch",
+       "why": "Financial stability limits.",
+       "claim_ids": ["MT067-C07-4"]
+      }
+     ],
+     "evidence": "None given; flagged as a known unknown.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT067-C07-4"]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "sizing",
+     "practice": "A position should be big enough to matter at the portfolio level if right but small enough that noise does not shake you out; they have worked on sizing improvements over the years.",
+     "why": "Right theme with bad sizing still loses.",
+     "claim_ids": ["MT067-C09-X2"]
+    },
+    {
+     "element": "risk",
+     "practice": "Across dollar, rates and equities into a central bank meeting, shrink the book so that one outcome is not a triple-sized bet.",
+     "why": "Cross-asset correlations become one trade.",
+     "claim_ids": ["MT067-C09-3"]
+    },
+    {
+     "element": "execution",
+     "practice": "Combine core thematic positions with trading around them: add on retraces, press squeezes, fade, take profits at key levels.",
+     "why": "Creates more opportunities in a moving market; liquidity must be respected.",
+     "claim_ids": ["MT067-C09-4"]
+    },
+    {
+     "element": "risk",
+     "practice": "Daily afternoon team risk meeting; each member must say which positions are too big and which are too small.",
+     "why": "Sizing is critical.",
+     "claim_ids": ["MT067-C09-5"]
+    },
+    {
+     "element": "signal",
+     "practice": "Recognise when sentiment is so dire that a bear-market rally can start, and trade the snapback.",
+     "why": "Summer 2022 rallies were vicious.",
+     "claim_ids": ["MT067-C04-4"]
+    },
+    {
+     "element": "signal",
+     "practice": "Do not buy dips on pivot hopes; the old playbook is wrong while inflation limits Fed easing.",
+     "why": "The Fed put is struck far lower.",
+     "claim_ids": ["MT067-C04-3"]
+    }
+   ],
+   "evidence_style": "Career experience and recent market observation; no data or backtests.",
+   "current_views": [
+    {
+     "view": "This year's trade to be in is long dollar, short rates, short equities, but bear-market rallies are vicious and a snapback is a trading opportunity.",
+     "as_of": "2022-09",
+     "reasoning": "Anti-risk-parity and dollar strength, with sentiment so dire that rallies like the summer 20% bounce can occur.",
+     "claim_ids": ["MT067-C04-R1", "MT067-C04-4"]
+    },
+    {
+     "view": "Central banks will tighten somewhat further than market pricing implies because inflation is sticky.",
+     "as_of": "2022-09",
+     "reasoning": "Sticky inflation.",
+     "claim_ids": ["MT067-C07-X2"]
+    },
+    {
+     "view": "Japan is a key opportunity: 3% CPI (30-year high), markets testing YCC, weak yen, intervention limits, and a coming BoJ leadership change.",
+     "as_of": "2022-09",
+     "reasoning": "YCC conflicts with defending the yen.",
+     "claim_ids": ["MT067-C07-X1", "MT067-C07-2"]
+    },
+    {
+     "view": "Key variables ahead are European winter weather and China's zero-covid policy after the party congress; quantitative tightening could push real yields until central banks flinch.",
+     "as_of": "2022-09",
+     "reasoning": "Cold winter would hurt Europe; QT is an unprecedented shrinkage.",
+     "claim_ids": ["MT067-C07-3", "MT067-C07-4"]
+    },
+    {
+     "view": "The Fed put exists but is struck far down; do not expect an easy pivot.",
+     "as_of": "2022-09",
+     "reasoning": "The Fed's credibility is on the line to get inflation down.",
+     "claim_ids": ["MT067-C04-3"]
+    }
+   ]
+  },
+  {
+   "name": "Chris McCann",
+   "role": "Chief risk officer, Graham Capital",
+   "speaker_note": "Moderator Pablo Calderini introduces him. Attribution of all his turns is clear from the context of risk questions.",
+   "fingerprint": [
+    "position_sizing_vol_target",
+    "portfolio_construction_stacking",
+    "diversification_risk_parity",
+    "manager_selection_allocation",
+    "regime_detection",
+    "crisis_alpha_convexity"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Diversification is built in at hiring and monthly capital allocation, using pairwise PM return correlations and hiring PMs for what they add that is different.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "Graham's process.",
+     "claim_ids": ["MT067-C05-X1"]
+    },
+    {
+     "premise": "When themes are clear, PM returns become more correlated and their information ratio is higher, but volatility is higher, so position sizes shrink as an offset.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation of Graham's PMs in 2022.",
+     "claim_ids": ["MT067-C05-2"]
+    },
+    {
+     "premise": "Low-vol periods give low VaR but larger tail risk because positions are sized up; in high-vol 2022 VaR is high but tails are smaller.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Graham's own risk statistics.",
+     "claim_ids": ["MT067-C05-3"]
+    },
+    {
+     "premise": "With unstable correlations VaR loses value; stress tests and gap-risk analysis matter more.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Statistics change with correlations.",
+     "claim_ids": ["MT067-C05-4"]
+    },
+    {
+     "premise": "The risk team advises and monitors; PMs own the risk, and a risk committee gives a cold-eyes review.",
+     "type": "institutional",
+     "stated": "stated",
+     "support": "About 4,000 daily risk committee meetings since the global financial crisis.",
+     "claim_ids": ["MT067-C08-1", "MT067-C08-2"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Volatility regime, sizing and risk statistics",
+     "steps": [
+      {
+       "from": "Low volatility",
+       "to": "Larger position sizes",
+       "why": "Sizes offset low volatility.",
+       "claim_ids": ["MT067-C05-3"]
+      },
+      {
+       "from": "Larger position sizes",
+       "to": "Low VaR but larger tail risk",
+       "why": "VaR looks at the money; tails reflect size.",
+       "claim_ids": ["MT067-C05-3"]
+      },
+      {
+       "from": "High volatility (2022)",
+       "to": "Smaller positions, higher VaR, smaller tails",
+       "why": "Same offset in reverse.",
+       "claim_ids": ["MT067-C05-2", "MT067-C05-3"]
+      }
+     ],
+     "evidence": "Graham's observed statistics in 2022 compared with quiet periods.",
+     "fails_when": "Unstable correlations make VaR less useful, so stress tests carry the load.",
+     "claim_ids": ["MT067-C05-2", "MT067-C05-3", "MT067-C05-4"]
+    },
+    {
+     "topic": "Scaling down into events",
+     "steps": [
+      {
+       "from": "No edge going into any given event",
+       "to": "PMs scale down into events",
+       "why": "Edge is not available on every event.",
+       "claim_ids": ["MT067-C10-1"]
+      },
+      {
+       "from": "Reacting afterward with liquid instruments",
+       "to": "Re-scale up into opportunities after the event",
+       "why": "Liquid books can scale up and down, unlike long-only or illiquid books.",
+       "claim_ids": ["MT067-C10-1"]
+      }
+     ],
+     "evidence": "Observed PM behaviour in 2022.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT067-C10-1"]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "risk",
+     "practice": "Frontline PM sizing; a daily risk committee (about 4,000 meetings since GFC); risk team runs Greeks, hundreds of shocks and dozens of stress tests, and VaR; plus qualitative 'why' from the trading floor.",
+     "why": "Statistics show the 'what' of the position but not the 'why'.",
+     "claim_ids": ["MT067-C08-1"]
+    },
+    {
+     "element": "risk",
+     "practice": "Risk team advises and monitors; PMs own risk; committee of non-managing managers provides cold-eyes review.",
+     "why": "Independent view without position bias.",
+     "claim_ids": ["MT067-C08-2"]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Allocate capital across PMs monthly using pairwise return correlations; hire PMs for what they add that is different.",
+     "why": "Avoid concentration in one style.",
+     "claim_ids": ["MT067-C05-X1"]
+    },
+    {
+     "element": "risk",
+     "practice": "Lean on stress tests and gap-risk analysis more than VaR when correlations are unstable.",
+     "why": "VaR loses value.",
+     "claim_ids": ["MT067-C05-4"]
+    },
+    {
+     "element": "sizing",
+     "practice": "Expect PM sizes to shrink as volatility rises and scale down into events with no edge.",
+     "why": "Natural offset; reacting afterward is possible with liquid instruments.",
+     "claim_ids": ["MT067-C05-2", "MT067-C10-1"]
+    }
+   ],
+   "evidence_style": "Institutional process and Graham's own risk statistics; no outside data.",
+   "current_views": [
+    {
+     "view": "Higher volatility is not necessarily more challenging for risk; offsets exist, and the environment is more interesting.",
+     "as_of": "2022-09",
+     "reasoning": "PM sizes shrink and tails are smaller than in low-vol years.",
+     "claim_ids": ["MT067-C05-3", "MT067-C05-2"]
+    },
+    {
+     "view": "Themes were clearer in 2022, so PM returns were more correlated and information ratios higher.",
+     "as_of": "2022-09",
+     "reasoning": "Independent PMs reached the same conclusion.",
+     "claim_ids": ["MT067-C05-2"]
+    },
+    {
+     "view": "Gap risk is the main concern; VaR is less useful because correlations are unstable.",
+     "as_of": "2022-09",
+     "reasoning": "Cross-asset correlations moved to record levels.",
+     "claim_ids": ["MT067-C05-4"]
+    }
+   ]
+  },
+  {
+   "name": "Pablo Calderini",
+   "role": "President and CIO, Graham Capital (moderator)",
+   "speaker_note": "Mapped because he states positions in C05 and C10 (conviction sizing, the 2010-20 anomaly). His questions are otherwise context.",
+   "fingerprint": [
+    "regime_detection",
+    "volatility_options",
+    "policy_reaction_central_banks",
+    "kelly_or_conviction_sizing",
+    "macro_fundamental_topdown"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "The 2010-20 era of suppressed volatility, when every shock was met by looser monetary policy, was an anomaly; pre-2010 volatility was the norm for decades.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Market behaviour over 40-50 years before 2010.",
+     "claim_ids": ["MT067-C10-2"]
+    },
+    {
+     "premise": "Macro value comes from scaling position size to conviction, which also creates risk-management challenges.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Observation of macro PMs.",
+     "claim_ids": ["MT067-C05-1"]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "Inflation ends suppressed volatility",
+     "steps": [
+      {
+       "from": "Macroeconomic shocks in the 2010-20 decade",
+       "to": "Looser monetary policy (QE, lower rates) and a stable, suppressed-volatility environment",
+       "why": "Central banks answered every shock with easing.",
+       "claim_ids": ["MT067-C10-2"]
+      },
+      {
+       "from": "Inflation means a shock must be met by tighter monetary policy",
+       "to": "Instability, massive volatility and opportunity for macro",
+       "why": "Easing is no longer available as a response.",
+       "claim_ids": ["MT067-C10-R1", "MT067-C10-2"]
+      }
+     ],
+     "evidence": "Period contrast 2010-20 vs pre-2010.",
+     "fails_when": "Not stated.",
+     "claim_ids": ["MT067-C10-2", "MT067-C10-R1"]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "sizing",
+     "practice": "Match position size to conviction and trade dynamically; low conviction leads to small positions and strong conviction to far more risk.",
+     "why": "This is one of the ways macro creates value.",
+     "claim_ids": ["MT067-C05-1"]
+    },
+    {
+     "element": "other",
+     "practice": "Expect higher volatility ahead and brace for markets behaving like the pre-2010 decades.",
+     "why": "The 2010-20 period was an anomaly.",
+     "claim_ids": ["MT067-C10-2"]
+    }
+   ],
+   "evidence_style": "Historical contrast between periods; no data given.",
+   "current_views": [
+    {
+     "view": "Brace for much higher volatility; markets will behave closely to how they did in the 40-50 years before 2010; inflation forces tighter policy responses.",
+     "as_of": "2022-09",
+     "reasoning": "2010-20 was an anomaly of suppressed volatility; inflation changes the policy response.",
+     "claim_ids": ["MT067-C10-2", "MT067-C10-R1"]
+    }
+   ]
+  },
+  {
+   "name": "Opening speaker (Graham founder, name not captioned)",
+   "role": "Introduces the panel (Graham leadership)",
+   "speaker_note": "The opening remarks are not attributed to a named person in the captions; the ledger labels this speaker as the Graham founder introducing the panel. Only one view is mapped.",
+   "fingerprint": [
+    "structural_themes",
+    "volatility_options",
+    "macro_fundamental_topdown"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "The last decade rewarded passive stock and bond beta, but the years ahead look much less constructive for traditional investments and better for macro because volatility is expected across FX, rates, equities and commodities.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "None offered.",
+     "claim_ids": ["MT067-C01-X1"]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Opening remarks only; no evidence.",
+   "current_views": [
+    {
+     "view": "Opportunity set for macro over the next several years is exciting; expects volatility in FX, rates, equities and commodities.",
+     "as_of": "2022-09",
+     "reasoning": "A decade of strong beta is unlikely to repeat.",
+     "claim_ids": ["MT067-C01-X1"]
+    }
+   ]
+  }
+ ],
+ "disagreements": [
+  {
+   "topic": "Is there an edge on central bank events?",
+   "positions": [
+    {
+     "speaker": "Katie Woodridge",
+     "position": "Edge arises when research shows the central bank mispositioned on inflation and labour data, and the team flags such cases outside consensus.",
+     "claim_ids": ["MT067-C02-2", "MT067-C02-5"]
+    },
+    {
+     "speaker": "Chris McCann",
+     "position": "PMs have no edge going into any given event, certainly not every event, so they scale down into events and react afterwards.",
+     "claim_ids": ["MT067-C10-1"]
+    }
+   ]
+  },
+  {
+   "topic": "Do economists have an informational advantage?",
+   "positions": [
+    {
+     "speaker": "Peter Chapson",
+     "position": "In a no-precedent regime economists and traders are on equal footing; common sense and imagination count for more.",
+     "claim_ids": ["MT067-C03-6", "MT067-C03-1"]
+    },
+    {
+     "speaker": "Katie Woodridge",
+     "position": "Research can find where the Fed's thinking differs from consensus and give PMs an edge.",
+     "claim_ids": ["MT067-C02-4", "MT067-C02-2"]
+    }
+   ]
+  },
+  {
+   "topic": "Inflation path and the central bank response",
+   "positions": [
+    {
+     "speaker": "Katie Woodridge",
+     "position": "Baseline is persistently high inflation, a terminal rate at 4-5%, and low soft-landing odds; cooling is an alternative scenario.",
+     "claim_ids": ["MT067-C06-1", "MT067-C06-3"]
+    },
+    {
+     "speaker": "Peter Chapson",
+     "position": "Inflation stays high or possibly goes to deflation; the smooth return to 2% is ludicrous.",
+     "claim_ids": ["MT067-C07-1"]
+    },
+    {
+     "speaker": "David Keelan",
+     "position": "Central banks will go a little farther than the market prices because inflation is sticky; QT may eventually make central banks flinch.",
+     "claim_ids": ["MT067-C07-X2", "MT067-C07-4"]
+    }
+   ]
+  },
+  {
+   "topic": "State of the Fed put",
+   "positions": [
+    {
+     "speaker": "Katie Woodridge",
+     "position": "The fed put was a feature of the low-inflation pre-pandemic regime; now the reverse, with central banks tightening into recessions.",
+     "claim_ids": ["MT067-C01-1", "MT067-C06-2"]
+    },
+    {
+     "speaker": "David Keelan",
+     "position": "A Fed put still exists but its strike is so far down that no one knows where it is yet.",
+     "claim_ids": ["MT067-C04-3"]
+    }
+   ]
+  }
+ ],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Speaker turns are inferred from conversation order in unpunctuated captions; five ledger claims (C04-4, C04-5, C07-2, C08-3, C09-1) needed attribution corrections.",
+   "claim_ids": ["MT067-C04-4", "MT067-C04-5", "MT067-C07-2", "MT067-C08-3", "MT067-C09-1"]
+  },
+  {
+   "issue": "Calderini says a central question is matching conviction to position size, but no PM states a rule linking conviction to size; Keelan's sizing rule ('big enough to matter, small enough not to be shaken out') is qualitative.",
+   "claim_ids": ["MT067-C05-1", "MT067-C09-X2"]
+  },
+  {
+   "issue": "McCann's claim that tails are smaller in 2022 because sizes are smaller is asserted without figures; the earlier claim that low-vol periods carry larger tails is consistent but not quantified.",
+   "claim_ids": ["MT067-C05-3", "MT067-C05-2"]
+  },
+  {
+   "issue": "Chapson's view that stocks and bonds sell off further is hedged ('could be a little trickier') and sits beside Keelan's point that bear-market rallies are vicious; no resolution on when to fade rallies.",
+   "claim_ids": ["MT067-C07-R1", "MT067-C04-4"]
+  },
+  {
+   "issue": "Woodridge's terminal rate path is stated in loose ranges (4%, then 5%) and described as a possible surprise, without a date or an inflation threshold.",
+   "claim_ids": ["MT067-C06-1"]
+  },
+  {
+   "issue": "The claim that the negative stock-bond correlation 'is gone' is stated on one year of experience; no data on persistence or on which inflation levels it requires.",
+   "claim_ids": ["MT067-C03-4"]
+  },
+  {
+   "issue": "The 2% inflation target is called 'ludicrous' to return to, yet Woodridge keeps a cooling scenario open; the panel does not give odds.",
+   "claim_ids": ["MT067-C07-1", "MT067-C06-3"]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Inputs the panel names as leading prices: US and European inflation data (services, core goods, headline CPI, Michigan inflation expectations) feeding central bank reaction functions; central bank communications and balance sheet decisions (QT and real yields); European winter weather and energy prices; China zero-covid policy after the party congress; Japanese CPI, YCC pressure, the yen and BoJ leadership change; sentiment extremes that allow snapbacks in bear markets. Horizon is the next quarter and 2023.",
+ "reader_inferences": [
+  "(reader) The panel's shared structure is a regime thesis (inflation ends suppressed volatility), then central bank reaction function, then risk management by sizing to volatility; the individual calls are the output of that thesis.",
+  "(reader) Woodridge's edge-from-research and McCann's no-edge-on-events views fit together if edge is episodic (mispositioned central banks) while average events carry none, hence scaling down by default.",
+  "(reader) Many conclusions (anti-risk-parity, long dollar) are described after the fact for 2022, so the panel gives few testable forward rules."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT067-C04-R1",
+   "chunk": "C04",
+   "speaker": "David Keelan",
+   "quote": "this year long the dollar short rates short equities um has been the trade to be in",
+   "claim": "In 2022 the best trade has been long dollar, short rates (bonds), short equities.",
+   "mechanism": "policy_reaction",
+   "asset_class": "multi",
+   "indicator": "dollar, rates, equities",
+   "horizon": "months",
+   "direction": "long USD, short rates, short equities",
+   "conditions": "2022 tightening",
+   "testable": "partly - one year",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT067-C07-R1",
+   "chunk": "C07",
+   "speaker": "Peter Chapson",
+   "quote": "my Outlook would be I think risk assets continue to sell off I think stocks and bonds sell off that could be a little trickier",
+   "claim": "He expects risk assets, stocks and bonds to continue selling off, though the combined stock and bond sell-off is a trickier call.",
+   "mechanism": "liquidity_flows",
+   "asset_class": "multi",
+   "indicator": "global liquidity",
+   "horizon": "months",
+   "direction": "risk assets down",
+   "conditions": "Global liquidity tightening",
+   "testable": "partly",
+   "speaker_confidence": "medium",
+   "time_bound": "yes"
+  },
+  {
+   "claim_id": "MT067-C10-R1",
+   "chunk": "C10",
+   "speaker": "Pablo Calderini",
+   "quote": "now we have a macroeconomic shop that has to be met by another microeconomic shop which is much more tighter monetary policy",
+   "claim": "Because of inflation, a macro shock now has to be met by much tighter monetary policy instead of easing, which creates instability, volatility and opportunity for macro funds.",
+   "mechanism": "policy_reaction",
+   "asset_class": "multi",
+   "indicator": "monetary policy response to shocks",
+   "horizon": "years",
+   "direction": "higher volatility",
+   "conditions": "Inflation regime",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "yes"
+  }
+ ]
+}

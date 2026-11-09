@@ -60,7 +60,7 @@ Mechanism pages: [[Slow reaction (trend)]], [[Risk premium (carry, term premium)
 | MT047 | [[MT047 - ETFs, Size, and the Commodity Problem - Systematic Investor 340]] | 2025-04-05 | 74 | 10 | opus cross-check |
 | MT048 | [[MT048 - Ep14. Public Market Volatility, AI Air Pocket, $GOOG Ruling - BG2 w- Bill Gurley & Brad Ge]] | 2024-08-09 | 81 | 8 | opus cross-check |
 | MT049 | [[MT049 - Episode 12- Bob Prince - Co-CIO of Bridgewater Associates]] | 2025-03-20 | 26 | 5 | opus cross-check |
-| MT050 | [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting]] | 2025-04-10 | 20 | 0 | opus cross-check |
+| MT050 | [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting]] | 2025-04-10 | 22 | 2 | opus cross-check |
 | MT051 | [[MT051 - Episode 17- Howard Marks - Co-Chairman of Oaktree Capital Management]] | 2025-05-01 | 24 | 9 | opus cross-check |
 | MT052 | [[MT052 - Episode 28- Paul Krugman - Professor of Economics at The City University of New York]] | 2025-07-24 | 20 | 4 | opus cross-check |
 | MT053 | [[MT053 - Episode 4- Noah Yechiely - Former Head of Equities at Bridgewater Associates]] | 2024-12-27 | 15 | 6 | opus cross-check |
@@ -71,13 +71,13 @@ Mechanism pages: [[Slow reaction (trend)]], [[Risk premium (carry, term premium)
 | MT058 | [[MT058 - Five Forces Shaping the Global Economy - With Ray Dalio, Founder of Bridgewater Associates]] | 2023-11-02 | 41 | 9 | opus cross-check |
 | MT059 | [[MT059 - GBE Founder Cory Paddock- Great Traders Know When a Regime Change Is Coming]] | 2025-10-09 | 23 | 2 | opus cross-check |
 | MT060 | [[MT060 - Geoffrey Garrett - Podcast - In Good Company - Norges Bank Investment Management]] | 2025-05-07 | 10 | 1 | opus cross-check |
-| MT061 | [[MT061 - Global Macro Investing And Geoeconomics With Hedge Fund Investor Kyle Bass - Hoover Instit]] | 2025-06-19 | 64 | 5 | opus cross-check |
-| MT062 | [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin]] | 2025-02-25 | 49 | 9 | sonnet-xhigh cross-check |
+| MT061 | [[MT061 - Global Macro Investing And Geoeconomics With Hedge Fund Investor Kyle Bass - Hoover Instit]] | 2025-06-19 | 66 | 7 | opus cross-check |
+| MT062 | [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin]] | 2025-02-25 | 52 | 12 | sonnet-xhigh cross-check |
 | MT063 | [[MT063 - Global Market Risks, Fertility Crisis & Navigating Uncertainty - Systematic Investor 324]] | 2024-12-07 | 83 | 16 | sonnet-xhigh cross-check |
 | MT064 | [[MT064 - Gold, Futures Pricing & Market Trends - Systematic Investor 335 REUPLOAD]] | 2025-03-18 | 116 | 23 | sonnet-xhigh cross-check |
 | MT065 | [[MT065 - Goldman Sachs’s Chief Global Equity Strategist, Peter Oppenheimer, Discusses Macro and Mar]] | 2022-10-20 | 62 | 7 | sonnet-xhigh cross-check |
 | MT066 | [[MT066 - Graham Capital Management's Tropin on Why Macro is Killing It]] | 2022-10-12 | 32 | 6 | opus cross-check |
-| MT067 | [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel]] | 2025-01-07 | 44 | 6 | opus cross-check |
+| MT067 | [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel]] | 2025-01-07 | 47 | 9 | opus cross-check |
 | MT068 | [[MT068 - Greg Jensen - Co-CIO of Bridgewater Podcast In Good Company Norges Bank Investment Managem]] | 2025-11-26 | 54 | 9 | opus cross-check |
 | MT069 | [[MT069 - Hard Lessons- Stan Druckenmiller- Invest, then investigate]] | 2026-02-27 | 32 | 7 | opus cross-check |
 | MT070 | [[MT070 - Harding Rewrites Winton's Quant Playbook in Search for Returns]] | 2019-03-18 | 37 | 4 | opus cross-check |
@@ -148,8 +148,8 @@ Mechanism pages: [[Slow reaction (trend)]], [[Risk premium (carry, term premium)
 | MT135 | [[MT135 - Return Stacking Explained - Open Interest - Ep.16]] | 2025-06-07 | 54 | 17 | sonnet-xhigh cross-check |
 | MT136 | [[MT136 - Risk, Replication & Portfolio Strategy - Systematic Investor - Ep.367]] | 2025-10-06 | 64 | 14 | sonnet-xhigh cross-check |
 | MT137 | [[MT137 - Rob Carver on Trend Following, Skew, and the Total Portfolio Shift - Systematic Investor -]] | 2025-11-27 | 64 | 11 | sonnet-xhigh cross-check |
-| MT138 | [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025]] | 2025-05-20 | 41 | 12 | sonnet-xhigh cross-check |
-| MT139 | [[MT139 - Rob Citrone – Emerging Markets, Hedge Funds, and Staying in the Game (Capital Allocators,]] | 2022-07-11 | 50 | 10 | sonnet-xhigh cross-check |
+| MT138 | [[MT138 - Rob Citrone and Karen Karniol-Tambour at Sohn 2025]] | 2025-05-20 | 43 | 14 | sonnet-xhigh cross-check |
+| MT139 | [[MT139 - Rob Citrone – Emerging Markets, Hedge Funds, and Staying in the Game (Capital Allocators,]] | 2022-07-11 | 53 | 13 | sonnet-xhigh cross-check |
 | MT140 | [[MT140 - Robert Carver Ran a Multi-Billion Dollar Systematic Portfolio for Man AHL. Now He Invests]] | 2025-07-24 | 43 | 6 | sonnet-xhigh cross-check |
 | MT141 | [[MT141 - Scott Bessent - Macro Maven (EP.415)]] | 2024-11-04 | 72 | 18 | sonnet-xhigh cross-check |
 | MT142 | [[MT142 - Scott Bessent- Inside Trump’s Treasury; War Costs; & Why Bond Market is King]] | 2026-03-13 | 44 | 13 | sonnet-xhigh cross-check |
@@ -157,7 +157,7 @@ Mechanism pages: [[Slow reaction (trend)]], [[Risk premium (carry, term premium)
 | MT144 | [[MT144 - Should You Just Buy a CTA Index- - Systematic Investor 312]] | 2024-09-11 | 66 | 16 | sonnet-xhigh cross-check |
 | MT145 | [[MT145 - Skew, Convexity, and the Hidden Risks in Systematic Investing - Systematic Investor - Ep.3]] | 2025-10-24 | 92 | 28 | sonnet-xhigh cross-check |
 | MT146 | [[MT146 - Slower Models, Bigger Risks - Systematic Investor - Ep.358]] | 2025-07-31 | 67 | 21 | sonnet-xhigh cross-check |
-| MT147 | [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour]] | 2022-06-10 | 33 | 8 | sonnet-xhigh cross-check |
+| MT147 | [[MT147 - Sohn 2022 - A Macro Approach with Karen Karniol-Tambour]] | 2022-06-10 | 34 | 9 | sonnet-xhigh cross-check |
 | MT148 | [[MT148 - Sohn 2022 - John Collison in conversation with Stanley Druckenmiller]] | 2022-06-10 | 75 | 27 | sonnet-xhigh cross-check |
 | MT149 | [[MT149 - Sohn 2023 - Kiril Sokoloff in conversation with Stanley Druckenmiller]] | 2023-05-10 | 60 | 17 | sonnet-xhigh cross-check |
 | MT150 | [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347]] | 2025-05-12 | 68 | 20 | sonnet-xhigh cross-check |
@@ -172,7 +172,7 @@ Mechanism pages: [[Slow reaction (trend)]], [[Risk premium (carry, term premium)
 | MT159 | [[MT159 - Tariffs, Free Trade, Export Controls, H20 & Rare Earth Ban - BG2 w- Bill Gurley & Brad Ger]] | 2025-04-24 | 76 | 39 | sonnet-xhigh cross-check |
 | MT160 | [[MT160 - The AI Hype within Investing... a Step Too Far- - Systematic Investor 301]] | 2024-06-25 | 62 | 28 | sonnet-xhigh cross-check |
 | MT161 | [[MT161 - The AI Trade, Rising Rates, and Why the Market Is Still Standing - The Real Eisman Playboo]] | 2026-08-17 | 73 | 13 | sonnet-xhigh cross-check |
-| MT162 | [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield]] | 2020-09-17 | 27 | 10 | sonnet-xhigh cross-check |
+| MT162 | [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield]] | 2020-09-17 | 28 | 11 | sonnet-xhigh cross-check |
 | MT163 | [[MT163 - The Calm Before the Storm- AI Risk, and Market Fragility - Systematic Investor - Ep.357]] | 2025-07-21 | 79 | 35 | sonnet-xhigh cross-check |
 | MT164 | [[MT164 - The Challenge isn’t Prediction—it’s Positioning - Systematic Investor - Ep.359]] | 2025-08-05 | 43 | 15 | sonnet-xhigh cross-check |
 | MT165 | [[MT165 - The Fed’s Playbook is Broken — Here’s What’s Next - Systematic Investor - Ep.360]] | 2025-08-15 | 59 | 26 | sonnet-xhigh cross-check |

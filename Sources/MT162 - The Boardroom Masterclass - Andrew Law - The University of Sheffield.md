@@ -5,8 +5,8 @@ date: 2020-09-17
 channel: "Sheffield Alumni"
 url: https://www.youtube.com/watch?v=Ju2U3xm7mvA
 words: 8382
-claims: 27
-added_by_crosscheck: 10
+claims: 28
+added_by_crosscheck: 11
 corrections: 0
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["Andrew Law (chair and CEO, Caxton Associates)"]
@@ -21,6 +21,95 @@ tags: [source, layer0]
 **Approach:** discretionary macro, behavioral finance, risk management, career advice, crisis analysis
 
 **Cross-check completeness estimate of first read:** 0.82 - the first reader caught the core method statements (macro horizon, psychology, loss cutting, web scraping, ESG, 2016 election, crisis recognition lag); the rest of the talk is career advice. Added points are secondary context (pension demand, industry size, fiscal response, WFH shift, risk practices); no misstatements found
+
+## Argument map
+
+**Episode thesis:** Law, CEO of Caxton, says macro investing is forecasting economic cycles and asset behaviour while reading the psychology of other traders (greed to join trends, fear of large losses) and policymaker behaviour, with a forecast hit rate of about 50% made profitable by cutting losers fast. He argues that algorithms and machine learning handle repetitive pattern-reaction work but the big opportunities come in new situations (politics, crises) where consensus is wrong, and that crises arrive unexpectedly with markets flipping abruptly from ignoring to panicking.
+
+### Andrew Law (Chair and CEO, Caxton Associates (global macro hedge fund); ex-Goldman Sachs head of London proprietary trading)
+Fingerprint: #approach/macro_fundamental_topdown #approach/behavioral_sentiment #approach/policy_reaction_central_banks #approach/nowcasting_data #approach/regime_detection #approach/short_term_systematic #approach/structural_themes #approach/crisis_alpha_convexity
+_Speaker note: A student career talk (Sheffield Alumni, recorded about August 2020, uploaded 2020-09-17) with student Q&A. Single speaker; the moderators and students ask questions and are not mapped. Captions have no punctuation. Most of the talk is career and ESG advice; market-method content is limited and comes in short passages in chunks C03, C04, C08, C09, C11 and C12._
+
+**Worldview premises**
+- Macro trading is forecasting macro trends and economic cycles and how asset classes behave through them; buy what you expect to rise and sell what you expect to fall over several weeks to several months, sometimes up to a year. _[experience, stated; support: Firm description; no data.]_ ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-1|C03-1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-2|C03-2]])
+- Psychology matters as much as economics: participants fear missing out on trends and fear losing too much, so trends persist and then reverse. _[behavioural, stated; support: Assertion from experience; no data.]_ ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-3|C03-3]])
+- The best macro traders combine three things: fundamental understanding of economies, understanding of how policymakers decide, and a read on what other traders are doing. _[experience, stated; support: Observation of the hedge fund 'legends' (mostly American).]_ ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-4|C03-4]])
+- Hit rate is about 50%; edge comes from not being bothered by errors, selling what does not work, keeping what does, and losing less on losers than is made on winners. _[experience, stated; support: Personal account of his own forecasts.]_ ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C08-2|C08-2]])
+- Human decisions can be reduced to rules, so algorithms and coding take a growing share of hedge fund assets, yet the best people combine coded or scraped inputs with human intuition. _[empirical, stated; support: Observation of Caxton's trading floor, where nearly everybody now codes.]_ ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-5|C03-5]])
+- Machine learning does repetitive pattern-reaction work, but the big opportunities arise in new situations (politics) that models cannot learn from past data. _[theoretical, stated; support: 2016 US election night anecdote; no systematic test.]_ ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-1|C11-1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-R1|C11-R1]])
+- Consensus reaction to a political shock can be badly wrong, and the opportunity lies in forecasting the policy (tax cuts) not reacting to headlines. _[empirical, stated; support: The 2016 election: equities fell 6-8% in Asian hours, reversed within 12 hours, then strong three years.]_ ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-2|C11-2]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-X1|C11-X1]])
+- Markets ignore developing crises until they flip to panic; crises always happen and arrive when unexpected. _[experience, stated; support: Covid timeline (data in December, Hubei lockdown mid-January, market reaction only after the Italy ski weekend in late February).]_ ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C12-1|C12-1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C12-2|C12-2]])
+- Past crashes and pandemics are templates for how crises unfold: 1987 lessons were reused in 2008 and the Spanish flu and plague in 2020. _[experience, stated; support: Personal experience and history.]_ ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C04-2|C04-2]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C04-X1|C04-X1]])
+- Hedge fund assets are now almost entirely pension money, a structural demand for diversifiers, yet the industry is only about 3% of the investable universe. _[institutional, stated; support: Figures given: $3 trillion against about $100 trillion.]_ ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-X1|C03-X1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-X2|C03-X2]])
+
+**Chain: Trend persistence and reversal from trader psychology**
+1. Greed to participate in trends and fear of missing out → Trends persist as participants pile in: Participants do not want to miss out. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-3|C03-3]])
+2. Fear of losing too much when it goes wrong → Trends reverse when participants exit: Loss fear dominates once things go wrong. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-3|C03-3]])
+3. Skilled read of fundamentals, policymaker behaviour and what other traders are doing → Profitable positioning ahead of persistence and reversal: The best traders combine all three. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-4|C03-4]])
+- Evidence: Observation of hedge fund legends; no numbers.
+- Fails when: Not stated; forecasts are wrong about half the time.
+
+**Chain: Crisis dynamics: ignore, then flip to panic**
+1. A crisis develops while data already exists (Covid cases in late December, Hubei lockdown mid-January) → Markets ignore it: Stated as an empirical regularity; no mechanism beyond expectations. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C12-1|C12-1]])
+2. A visible trigger (the Italy ski-resort case spike in late February) → Markets flip abruptly to panic: Spread beyond China made lockdown a foregone conclusion. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-6|C03-6]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C12-1|C12-1]])
+3. Panic and a 35% US equity fall in six weeks → Central banks cut rates to zero and restart QE; governments launch large fiscal support: Policy response designed to avoid a repeat of the 1930s depression. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C04-1|C04-1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C04-X2|C04-X2]])
+- Evidence: Covid 2020 timeline from his own firm's real-time scraping.
+- Fails when: Not stated; timing of crises is called hard to forecast.
+
+**Chain: Political surprise and wrong consensus**
+1. Surprise election result (Trump, 2016) → Markets price the consensus view that he would hurt growth; US equity futures fell 6-8% in Asian hours: Consensus assumption on trade war and growth. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-2|C11-2]])
+2. Realisation that the assumption was wrong (tax cuts, China less relevant) → Reversal within 12 hours and one of the strongest three-year equity runs until Covid: Policy, not headline, drove earnings and markets. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-2|C11-2]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-X1|C11-X1]])
+3. Models trained on past data meet a new political situation → Quant and ML strategies lose heavily; a few discretionary traders betting on tax cuts profit: Models cannot learn from past data in novel situations. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-1|C11-1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-3|C11-3]])
+- Evidence: One election night; no counts of other cases.
+- Fails when: Stated implicitly: where situations are repetitive, machine pattern-reaction works.
+
+**Chain: Pension demand for diversifiers to hedge fund assets**
+1. Pensions can only hold so many equities and bonds → They allocate to hedge funds as a diversified source of return: Diversification for pensioners' money. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-X1|C03-X1]])
+- Evidence: Statement of his client base; industry size figures.
+- Fails when: Not stated.
+
+**Chain: Covid and structural change in work and leverage**
+1. Covid shows people can work productively from home → Employees save commuting time and employers need less office space: Cost savings on both sides; communication tools suffice. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C06-X1|C06-X1]])
+2. A sudden shock stops business overnight → Overleveraged firms go bankrupt unless government steps in: Leverage sized only for forecast events cannot survive unforecast ones. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C06-X3|C06-X3]])
+- Evidence: Anecdote (commuting times in London, travel companies in February 2020).
+- Fails when: Not stated.
+
+**Decision process**
+- [signal] Forecast macro trends and economic cycles and buy what is expected to rise, sell what is expected to fall; horizon several weeks to several months, up to a year.. Why: Core macro approach at Caxton. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-1|C03-1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-2|C03-2]])
+- [research] Real-time web scraping of daily Covid case counts worldwide with email alerts; the Saturday-morning alert of an Italian spike led to a Sunday conclusion that lockdowns were inevitable, a month before the UK acted.. Why: Gets ahead of consensus and government decisions. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-6|C03-6]])
+- [research] Staff increasingly code their own analysis; combine coded or scraped inputs with human intuition.. Why: Rules capture repetitive work; intuition handles new situations. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-5|C03-5]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-1|C11-1]])
+- [research] Use crash and pandemic history (1987, 2008, Spanish flu, plague) as templates for how crises unfold and spread.. Why: Lessons transfer between episodes. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C04-2|C04-2]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C04-X1|C04-X1]])
+- [risk] Sell what is not working, keep what is, and make sure losses on losers are smaller than gains on winners; do not let wrong forecasts (about half) bother you.. Why: Forecast accuracy is about 50%, so payoff asymmetry carries the result. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C08-2|C08-2]])
+- [risk] Watch risk before prices react; build resilience for crises that arrive unexpected; size business leverage for events nobody forecasts.. Why: Markets flip from ignoring to panic; shocks can stop business overnight. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C12-1|C12-1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C12-2|C12-2]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C06-X3|C06-X3]])
+- [risk] Most Caxton staff close nearly all positions before a one- or two-week holiday; Law does not, and keeps following markets.. Why: Staff avoid unmonitored risk; Law judges missing a theme he has worked on for six months costs more than staying in. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C09-1|C09-1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C09-X2|C09-X2]])
+- [risk] 24/7 escalation filter: phone on do-not-disturb with named callers allowed through, which rings about ten times a year.. Why: Markets are open from Sunday evening to Friday night, so an escalation filter prevents burnout. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C09-X1|C09-X1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C09-1|C09-1]])
+- [portfolio] Hedge fund assets are almost entirely pension money allocated as a diversifier.. Why: Pensions can hold only so many equities and bonds. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-X1|C03-X1]])
+- [other] On political shocks, forecast the policy (tax cuts) rather than react to the first-night headline.. Why: Consensus first reactions can be wrong. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-X1|C11-X1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-3|C11-3]])
+
+**Evidence style:** Experience, anecdote and historical analogy: remembered episodes (1987, 2008, Covid, the 2016 election night) and firm practices; no backtests or performance numbers; only a few industry-size figures.
+
+**Views at the time**
+- (2020-08/09 (upload 2020-09-17)) ESG will become central to all investing, unlike niche exclusion-based socially responsible investing.. Reasoning: Voters care about climate; climate damage is seen as proven; savers and consumers will favour sustainable companies; weak governance tends to coincide with poor social and environmental practice. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C07-1|C07-1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C08-1|C08-1]])
+- (2020-08/09 (upload 2020-09-17)) Covid fast-forwarded working from home by perhaps 10-20 years, a structural shift away from large office buildings.. Reasoning: Employees reclaim commuting time and employers need less office space. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C06-X1|C06-X1]])
+- (2020-08/09 (upload 2020-09-17)) The 2020 policy response is fiscal as well as monetary, in contrast with the post-2008 austerity that prolonged the after-effects.. Reasoning: Governments used furlough, mortgage holidays and loans to avoid a repeat of the 1930s. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C04-X2|C04-X2]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C06-X2|C06-X2]])
+- (2020-08/09 (upload 2020-09-17)) Investors after 2008 and Covid are more skittish, and future crises will have a large impact.. Reasoning: Crises always occur when unexpected; people are now more aware of that. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C12-2|C12-2]])
+- (2020-02/03 (looking back from August 2020)) Covid caused a 35% US equity fall in six weeks and was a template for earlier pandemics; central banks cut to zero and restarted QE.. Reasoning: Past pandemics (Spanish flu, plague) show how quickly it spreads. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C04-1|C04-1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C04-2|C04-2]])
+
+### Gaps and conflicts
+- Law says most Caxton staff flatten positions for holidays while he never changes positions; the firm practice and the CEO's own practice differ and no rule is given for who decides. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C09-1|C09-1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C09-X2|C09-X2]])
+- Machine learning is described as doing repetitive work yet losing money on election night; Law also says the best people combine code with intuition. No performance comparison is given for either, and the election-night claim rests on one event. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-1|C11-1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C11-3|C11-3]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C03-5|C03-5]])
+- Markets are said to ignore crises until a switch flips, but the Covid claim relies on dated data points recalled from memory; no measure of how often markets lag developing crises is offered. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C12-1|C12-1]])
+- Hit rate of about 50% is stated without a payoff ratio, holding-period or stop rule; 'lose less on losers than made on winners' is not quantified. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C08-2|C08-2]])
+- The October 1987 fall is given as about 25% in a couple of days from memory; the Covid fall of 35% is the S&P-style US equity move quoted without index name. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C04-X1|C04-X1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C04-1|C04-1]])
+- ESG view is reasoned from voter preferences and an asset manager's remark at a breakfast; no evidence on returns or flows is given and the link to Caxton's own trading is not stated. ([[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C07-1|C07-1]], [[MT162 - The Boardroom Masterclass - Andrew Law - The University of Sheffield#^MT162-C08-1|C08-1]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Inputs Law names as leading prices: policymaker decisions and central bank and fiscal responses; what other traders are positioned for (greed to join trends and fear of loss); real-time web-scraped event data such as case counts that arrive before official action; and consensus assumptions about political outcomes, which may be wrong. Horizon several weeks to several months, up to a year. He does not give numeric thresholds.
+
+### Reader inferences (not stated by the speakers)
+- (reader) Law's edge claim rests on information and interpretation speed in rare events (scraped data, policy forecasts) rather than on a repeatable signal; this is hard to test.
+- (reader) He treats algorithms as complements for stable patterns and discretion as the response to regime novelty, which implies the human edge is largest exactly where history is least informative.
+- (reader) Staff flatten before holidays but he does not; the difference suggests risk practice at Caxton depends on the individual's stated theme conviction, not a firm-wide rule.
 
 ## Coverage
 
@@ -155,6 +244,10 @@ tags: [source, layer0]
   > the stock market through to cavite 19 earlier this year one of us strongest and best performances ever over that three year period since donald trump became president
   indicator: US equities 2016-2020 · asset: equities · direction: consensus bearish reaction reversed · horizon: years · conditions: election surprise · testable: yes - event study of election-night moves · confidence: medium
   ^MT162-C11-X1
+- **Andrew Law** Politics is very hard to forecast because each leader and government differs from what preceded it, so the knowledge needed to predict what a prospective leader will do is high.  #mech/research_method _(added by map cross-check)_
+  > politics is very hard to forecast makeup of every politician every government around the world is different to what has preceded it
+  indicator: political forecasting · asset: multi · conditions: Novel political situations · testable: no · confidence: high
+  ^MT162-C11-R1
 
 ### C12
 - **Andrew Law** Markets ignore developing crises until they abruptly flip to panic (Covid data existed in late December, Hubei locked down mid-January, markets reacted only after the Italy ski weekend), so risk must be watched before the price reacts.  #mech/slow_reaction

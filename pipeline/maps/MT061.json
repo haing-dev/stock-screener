@@ -1,0 +1,749 @@
+{
+ "source_id": "MT061",
+ "episode_thesis": "Bass argues that his macro successes (subprime 2006-08, Greece and Ireland, Japan) all came from tracing leverage from private to bank to sovereign balance sheets until one fails, and that the current system of central-bank balance-sheet growth and deficits is inflating assets faster than wages, damaging demographics and social cohesion, and making conflict more likely. He applies the same architecture-first method to China, concluding that a Chinese move on Taiwan within two to three years is likely, that Chinese assets are uninvestable for Westerners, and that the US remains the best place for long-term capital while Europe is not.",
+ "speakers": [
+  {
+   "name": "Kyle Bass",
+   "role": "Founder of Hayman Capital Management (Dallas global macro hedge fund); known for the subprime, Japan and Greece trades; China critic and defence-board member",
+   "speaker_note": "Auto-captions with correct speaker turns from question/answer structure; some words garbled (e.g. 'Coleman Sachs'). Bass's own views and the host's are separated by turn; the host's remarks are mapped under his own entry.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "debt_cycle_long_term",
+    "fiscal_dominance",
+    "geopolitics",
+    "crisis_alpha_convexity",
+    "valuation_contrarian",
+    "structural_themes",
+    "policy_reaction_central_banks"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Financial crises are traceable chains of leverage: dissociated risk in levered private structures, then banks, then sovereign balance sheets. The analysis is arithmetic, such as a bank levered 30x holding assets that fall 40%.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "2006-08 subprime/Lehman/Bear leverage numbers; Iceland/Ireland at 10x GDP banking assets.",
+     "claim_ids": [
+      "MT061-C02-1",
+      "MT061-C02-3",
+      "MT061-C03-1",
+      "MT061-C03-3",
+      "MT061-C03-5"
+     ]
+    },
+    {
+     "premise": "Capacity to absorb bank losses differs by sovereign: the US could recapitalise (about $800bn of losses on $1tn bank equity) while Europe could not.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "US banking assets about 1x GDP; Iceland and Ireland 10x.",
+     "claim_ids": [
+      "MT061-C03-4",
+      "MT061-C03-5"
+     ]
+    },
+    {
+     "premise": "Advanced sovereigns with their own currency almost never default; they print, so the consequence is debasement and inflation, not default.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical pattern asserted; Japan as the case.",
+     "claim_ids": [
+      "MT061-C05-2",
+      "MT061-C04-1"
+     ]
+    },
+    {
+     "premise": "Japan, at about 265% debt to GDP, cannot let rates rise, so the currency is the adjustment valve.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Debt/GDP arithmetic; BoJ control of yields to 10 years only.",
+     "claim_ids": [
+      "MT061-C04-1",
+      "MT061-C04-X1"
+     ]
+    },
+    {
+     "premise": "Ageing countries with shrinking native populations (Japan, Italy) cannot grow out of debt, so they rely on low rates and printing.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Assertion.",
+     "claim_ids": [
+      "MT061-C05-X1"
+     ]
+    },
+    {
+     "premise": "Central bank balance-sheet growth and deficits inflate asset and housing prices faster than wages, and chain-weighted official inflation hides this, so real wages are worse than reported.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "FHFA unchained house price index up 50% from 2020 to 2024; China home prices 26x median income.",
+     "claim_ids": [
+      "MT061-C05-5",
+      "MT061-C06-2",
+      "MT061-C05-4",
+      "MT061-C05-6"
+     ]
+    },
+    {
+     "premise": "High asset prices relative to wages delay marriage and fertility, bending demographic curves down, which he links to money creation (a theory he says he has not discussed much).",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Marriage and fertility rates; no data shown.",
+     "claim_ids": [
+      "MT061-C05-3",
+      "MT061-C05-6"
+     ]
+    },
+    {
+     "premise": "Asset inflation widens inequality and social tension, so more wars are expected until the monetary and fiscal approach changes.",
+     "type": "theoretical",
+     "stated": "stated",
+     "support": "Chain of social-fabric arguments, no data.",
+     "claim_ids": [
+      "MT061-C06-3",
+      "MT061-C06-4",
+      "MT061-C13-4"
+     ]
+    },
+    {
+     "premise": "Understanding a system's architecture, history and incentives beats following consensus narratives; Wall Street sold China stocks while nobody mapped the banking system.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "His own China banking study 2012-15.",
+     "claim_ids": [
+      "MT061-C06-5",
+      "MT061-C07-1",
+      "MT061-C03-X1"
+     ]
+    },
+    {
+     "premise": "Deep curiosity and special-situation handicapping win; you only need roughly 55% of outcomes right.",
+     "type": "experience",
+     "stated": "stated",
+     "support": "Bear Stearns risk-arbitrage background.",
+     "claim_ids": [
+      "MT061-C02-4"
+     ]
+    },
+    {
+     "premise": "China's grand strategy and values are incompatible with the West; economic statecraft (IP theft about $300bn a year, VC infiltration, rare-earth coercion) shows it is an adversary, not a trading partner.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "2016 DIU report, Unrestricted Warfare, Uyghur treatment, rare-earth episode.",
+     "claim_ids": [
+      "MT061-C07-2",
+      "MT061-C10-1",
+      "MT061-C10-2",
+      "MT061-C10-3",
+      "MT061-C07-4"
+     ]
+    },
+    {
+     "premise": "GDP growth in a state-controlled economy does not accrue to foreign shareholders.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "CSI 300 lost a third of capital over 18 years while GDP grew 505%.",
+     "claim_ids": [
+      "MT061-C15-1",
+      "MT061-C11-3"
+     ]
+    },
+    {
+     "premise": "The US is the best place for long-term capital (4% of population, 26% of GDP, 60% of capital markets), with the caveat of $1.8tn deficits; Europe is not a real union and regulates itself out of growth.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Statistics cited; history of failed forecasts about challengers (host).",
+     "claim_ids": [
+      "MT061-C14-1",
+      "MT061-C14-3",
+      "MT061-C14-4",
+      "MT061-C15-3",
+      "MT061-C15-X2"
+     ]
+    }
+   ],
+   "mechanism_chains": [
+    {
+     "topic": "2006-08 subprime to banking crisis",
+     "steps": [
+      {
+       "from": "easy credit to unqualified borrowers (bartender with three loans)",
+       "to": "housing bubble",
+       "why": "street-level evidence of speculative excess",
+       "claim_ids": [
+        "MT061-C02-1",
+        "MT061-C02-2"
+       ]
+      },
+      {
+       "from": "risk held in dissociated, levered structures",
+       "to": "hedge fund blow-ups (not systemic) and bank losses (systemic)",
+       "why": "Lehman 36x and Bear 29x levered",
+       "claim_ids": [
+        "MT061-C02-3",
+        "MT061-C03-1"
+       ]
+      },
+      {
+       "from": "banks hold assets that lose about 40%",
+       "to": "capital wiped out; whole system in trouble",
+       "why": "leverage arithmetic",
+       "claim_ids": [
+        "MT061-C03-1"
+       ]
+      },
+      {
+       "from": "he sought out the Fed and Rogoff to refute the thesis",
+       "to": "conviction to go ahead",
+       "why": "nobody could refute it",
+       "claim_ids": [
+        "MT061-C03-2"
+       ]
+      }
+     ],
+     "evidence": "Leverage ratios; his Bellagio anecdote; his 2006 firm launch and subprime bet.",
+     "fails_when": "Not discussed.",
+     "claim_ids": [
+      "MT061-C02-1",
+      "MT061-C03-1"
+     ]
+    },
+    {
+     "topic": "From bank crisis to sovereign crisis (Iceland, Ireland, Greece)",
+     "steps": [
+      {
+       "from": "private bank bailout",
+       "to": "bad assets move to public balance sheets",
+       "why": "governments recapitalise",
+       "claim_ids": [
+        "MT061-C03-3"
+       ]
+      },
+      {
+       "from": "banking systems about 10x GDP (Iceland, Ireland)",
+       "to": "sovereign failure in succession then Greece",
+       "why": "too many banking assets chasing deposits",
+       "claim_ids": [
+        "MT061-C03-5"
+       ]
+      },
+      {
+       "from": "US banking assets about 1x GDP with equity recap",
+       "to": "US absorbed the loss",
+       "why": "recapitalisation with common and preferred equity",
+       "claim_ids": [
+        "MT061-C03-4"
+       ]
+      }
+     ],
+     "evidence": "Banking assets to GDP ratios.",
+     "fails_when": "Not stated.",
+     "claim_ids": [
+      "MT061-C03-3",
+      "MT061-C03-5"
+     ]
+    },
+    {
+     "topic": "Japan fork trade",
+     "steps": [
+      {
+       "from": "Japanese debt at 200%+ of GDP and rates pinned at zero",
+       "to": "either Abenomics reflation or crush under debt",
+       "why": "no other way to service debt",
+       "claim_ids": [
+        "MT061-C04-2",
+        "MT061-C03-X1"
+       ]
+      },
+      {
+       "from": "binary fork",
+       "to": "two-thirds in JGB optionality, one-third in a weaker yen",
+       "why": "payoff by branch",
+       "claim_ids": [
+        "MT061-C04-3"
+       ]
+      },
+      {
+       "from": "Abenomics (yen from 85 to 120)",
+       "to": "JGB option premium lost, yen leg won multiples; fund up about 250%",
+       "why": "convex payoff when fork resolved one way",
+       "claim_ids": [
+        "MT061-C04-4"
+       ]
+      },
+      {
+       "from": "debt at 265% of GDP now",
+       "to": "currency is the valve; 30-year yields float while 10-year is pegged",
+       "why": "cannot let rates move",
+       "claim_ids": [
+        "MT061-C04-1",
+        "MT061-C04-X1"
+       ]
+      }
+     ],
+     "evidence": "His own trade record.",
+     "fails_when": "If Japan inflates its way out without the bond market breaking (he now says Japan is 'under control').",
+     "claim_ids": [
+      "MT061-C04-3",
+      "MT061-C04-4",
+      "MT061-C05-1"
+     ]
+    },
+    {
+     "topic": "Asset inflation to war",
+     "steps": [
+      {
+       "from": "balance-sheet growth and deficits",
+       "to": "asset prices outrun wages; official inflation understates",
+       "why": "chain-weighted inflation and asset-price extension; central bankers see balance-sheet growth as the answer",
+       "claim_ids": [
+        "MT061-C05-5",
+        "MT061-C06-2",
+        "MT061-C06-4",
+        "MT061-C06-R2"
+       ]
+      },
+      {
+       "from": "unaffordable homes",
+       "to": "lower marriage and fertility, falling demographic curves",
+       "why": "men cannot afford homes",
+       "claim_ids": [
+        "MT061-C05-3"
+       ]
+      },
+      {
+       "from": "poor poorer, middle class immobilised, gap widens",
+       "to": "social tension and conflict",
+       "why": "wealth ends in rich hands",
+       "claim_ids": [
+        "MT061-C06-3",
+        "MT061-C06-4"
+       ]
+      },
+      {
+       "from": "dollar-priced inflation (about 50% in four years)",
+       "to": "stress in import-dependent countries, kinetic conflict before de-escalation",
+       "why": "negative convexity to the dollar",
+       "claim_ids": [
+        "MT061-C13-4",
+        "MT061-C05-6"
+       ]
+      }
+     ],
+     "evidence": "FHFA index +50% 2020-24; China 26x price to income.",
+     "fails_when": "Fiscal responsibility and a change in the central bank approach (he sees none).",
+     "claim_ids": [
+      "MT061-C06-3",
+      "MT061-C06-4",
+      "MT061-C13-4"
+     ]
+    },
+    {
+     "topic": "China-Taiwan conflict path",
+     "steps": [
+      {
+       "from": "Chinese statements since 2017 and rising air-defence incursions",
+       "to": "invasion is coming",
+       "why": "trend charted yearly",
+       "claim_ids": [
+        "MT061-C07-R1",
+        "MT061-C07-3",
+        "MT061-C07-5"
+       ]
+      },
+      {
+       "from": "three paths (soft via KMT in 2028, blockade, assault)",
+       "to": "blockade or soft path preferred by China",
+       "why": "assault feasible only about three months a year; Taiwan has two weeks of energy",
+       "claim_ids": [
+        "MT061-C08-2",
+        "MT061-C08-3",
+        "MT061-C08-4",
+        "MT061-C09-2"
+       ]
+      },
+      {
+       "from": "blockade forces US to unblock",
+       "to": "kinetic conflict, possible strikes on Fujian",
+       "why": "US response",
+       "claim_ids": [
+        "MT061-C08-3",
+        "MT061-C11-1"
+       ]
+      },
+      {
+       "from": "war starts",
+       "to": "US hobbles China financially via dollar access and bank sanctions",
+       "why": "four SOE and twelve joint-stock banks are the Achilles heel",
+       "claim_ids": [
+        "MT061-C12-1",
+        "MT061-C11-4"
+       ]
+      },
+      {
+       "from": "financial hobbling",
+       "to": "regime change",
+       "why": "Xi cannot hang on",
+       "claim_ids": [
+        "MT061-C12-2"
+       ]
+      }
+     ],
+     "evidence": "Chinese statements; incursion chart; his China banking study.",
+     "fails_when": "Soft takeover via the KMT in 2028 (US has no plan for it).",
+     "claim_ids": [
+      "MT061-C07-3",
+      "MT061-C08-2",
+      "MT061-C12-1"
+     ]
+    },
+    {
+     "topic": "Why Chinese assets are uninvestable",
+     "steps": [
+      {
+       "from": "likelihood of conflict plus closed capital account",
+       "to": "risk of loss for dollar investors",
+       "why": "Western investors are exposed to sanctions and conflict",
+       "claim_ids": [
+        "MT061-C11-2"
+       ]
+      },
+      {
+       "from": "earlier westernisation expectation failed",
+       "to": "China bet turned bad",
+       "why": "assumption of liberalisation no longer holds",
+       "claim_ids": [
+        "MT061-C11-3"
+       ]
+      },
+      {
+       "from": "CSI 300 lost a third in 18 years while GDP rose 505%",
+       "to": "growth does not reach foreign shareholders",
+       "why": "state-controlled economy",
+       "claim_ids": [
+        "MT061-C15-1"
+       ]
+      }
+     ],
+     "evidence": "CSI 300 vs GDP growth.",
+     "fails_when": "A regime change (he sees it as likely after a Taiwan war).",
+     "claim_ids": [
+      "MT061-C11-2",
+      "MT061-C15-1"
+     ]
+    }
+   ],
+   "decision_process": [
+    {
+     "element": "research",
+     "practice": "Study the architecture of the system (banking, capital account, currency link) before trading it; whiteboard the operative parts and incentives of the players.",
+     "why": "Information gap: sell-side sells stocks, not system maps.",
+     "claim_ids": [
+      "MT061-C06-5",
+      "MT061-C07-1",
+      "MT061-C02-4"
+     ]
+    },
+    {
+     "element": "research",
+     "practice": "Seek out the strongest critics (Fed, Rogoff) and ask them to refute a contrarian thesis before committing.",
+     "why": "Test thesis; reduces error.",
+     "claim_ids": [
+      "MT061-C03-2"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Look at the excluded outlier (Japan) in cross-country analysis and ask how it survives.",
+     "why": "Where models drop the case, the trade is.",
+     "claim_ids": [
+      "MT061-C03-X1",
+      "MT061-C04-1"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Structure binary macro outcomes with options: two-thirds of the fund in JGB optionality and one-third in a yen bet.",
+     "why": "Accept the loss of premium for convex payoff.",
+     "claim_ids": [
+      "MT061-C04-2",
+      "MT061-C04-3",
+      "MT061-C04-4"
+     ]
+    },
+    {
+     "element": "signal",
+     "practice": "Use street-level and chartable indicators (bartender with three mortgages; annual Chinese ADIZ incursions) as confirmation of macro theses.",
+     "why": "Observable corroboration.",
+     "claim_ids": [
+      "MT061-C02-2",
+      "MT061-C07-3"
+     ]
+    },
+    {
+     "element": "universe",
+     "practice": "Avoid Chinese assets and European assets; prefer long-term holdings of US companies that can succeed; avoid short-term trading in structurally risky markets.",
+     "why": "Conflict risk, policy-made weakness, and 'dimes in front of bulldozers'.",
+     "claim_ids": [
+      "MT061-C11-2",
+      "MT061-C14-4",
+      "MT061-C15-2",
+      "MT061-C15-3"
+     ]
+    },
+    {
+     "element": "portfolio",
+     "practice": "Hold US equities for long-term capital allocation despite deficits.",
+     "why": "Deep liquid markets, entrepreneurship, 60% of world capital markets.",
+     "claim_ids": [
+      "MT061-C14-1",
+      "MT061-C14-3"
+     ]
+    }
+   ],
+   "evidence_style": "Balance-sheet arithmetic, historical case studies from his own trades, government and think-tank reports (DIU 2016), charted trends, anecdotes; theories like the demography link are offered without data and marked by him as undiscussed.",
+   "current_views": [
+    {
+     "view": "China will move on Taiwan within two to three years with US kinetic involvement; blockade or soft path more likely than all-out assault.",
+     "as_of": "2025-06 (around the Israeli strike on Iran; upload 2025-06-19)",
+     "reasoning": "Chinese statements, rising incursions, incompatible grand strategy.",
+     "claim_ids": [
+      "MT061-C11-1",
+      "MT061-C08-2",
+      "MT061-C08-4",
+      "MT061-C07-5"
+     ]
+    },
+    {
+     "view": "Do not own Chinese assets; China is a mortal enemy, not a trading partner; US-China talks are hostage negotiations.",
+     "as_of": "2025-06 (around the Israeli strike on Iran; upload 2025-06-19)",
+     "reasoning": "Conflict likelihood; CSI 300 record.",
+     "claim_ids": [
+      "MT061-C11-2",
+      "MT061-C10-2",
+      "MT061-C10-3",
+      "MT061-C15-1"
+     ]
+    },
+    {
+     "view": "A Taiwan war would end in Chinese financial hobbling and probable regime change.",
+     "as_of": "2025-06 (around the Israeli strike on Iran; upload 2025-06-19)",
+     "reasoning": "Dollar access and four SOE plus twelve joint-stock banks are vulnerabilities.",
+     "claim_ids": [
+      "MT061-C12-1",
+      "MT061-C12-2",
+      "MT061-C11-4"
+     ]
+    },
+    {
+     "view": "More war ahead; things escalate before they de-escalate because the world's financial architecture is broken.",
+     "as_of": "2025-06 (around the Israeli strike on Iran; upload 2025-06-19)",
+     "reasoning": "Dollar inflation hits import-dependent nations; social-fabric strain.",
+     "claim_ids": [
+      "MT061-C06-4",
+      "MT061-C13-4",
+      "MT061-C12-3"
+     ]
+    },
+    {
+     "view": "Japan has its situation under control (not a first domino); its demographics make growth difficult.",
+     "as_of": "2025-06 (around the Israeli strike on Iran; upload 2025-06-19)",
+     "reasoning": "Ageing, low rates, printing; sovereigns rarely default.",
+     "claim_ids": [
+      "MT061-C05-1",
+      "MT061-C05-2",
+      "MT061-C05-X1"
+     ]
+    },
+    {
+     "view": "US is the best place for long-term capital; Europe is a poor place; selective long European branded luxury.",
+     "as_of": "2025-06 (around the Israeli strike on Iran; upload 2025-06-19)",
+     "reasoning": "Liquid markets, entrepreneurship; Europe lacks union and over-regulates.",
+     "claim_ids": [
+      "MT061-C14-1",
+      "MT061-C14-4",
+      "MT061-C15-3",
+      "MT061-C15-X1",
+      "MT061-C15-X2"
+     ]
+    },
+    {
+     "view": "US policy blunder in turning away from Saudi Arabia; UAE shifting to the US (G42); Abraham Accords will proceed.",
+     "as_of": "2025-06 (around the Israeli strike on Iran; upload 2025-06-19)",
+     "reasoning": "Alignment with US interests after Israel's strike on Iran's nuclear sites.",
+     "claim_ids": [
+      "MT061-C13-1",
+      "MT061-C13-2",
+      "MT061-C13-3",
+      "MT061-C07-6"
+     ]
+    },
+    {
+     "view": "Ultra-long JGB yields are where Japanese debt stress shows up first.",
+     "as_of": "2025-06 (around the Israeli strike on Iran; upload 2025-06-19)",
+     "reasoning": "BoJ controls only up to 10 years.",
+     "claim_ids": [
+      "MT061-C04-X1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "John Hartley",
+   "role": "Host, Hoover Institution Economic Policy Working Group (economist); interviewer who adds views",
+   "speaker_note": "Host views appear in his longer questions; they are context, but the ledger tags five as his own claims, so they are mapped.",
+   "fingerprint": [
+    "macro_fundamental_topdown",
+    "structural_themes",
+    "fiscal_dominance",
+    "geopolitics",
+    "debt_cycle_long_term"
+   ],
+   "worldview_premises": [
+    {
+     "premise": "Japan is strangely ahead of the West (asset bubble, flat GDP per capita, QE, high debt to GDP, stock buying) and is a preview of Western economies.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Comparison with other countries since the 1990s.",
+     "claim_ids": [
+      "MT061-C04-5"
+     ]
+    },
+    {
+     "premise": "Real house prices were flat for a century from the 1800s until the 1970s-80s and then rose steeply, so the housing affordability problem is recent and may reflect zoning or other policy.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Case-Shiller long series.",
+     "claim_ids": [
+      "MT061-C06-1"
+     ]
+    },
+    {
+     "premise": "Investors in China since the BRIC era would have roughly flat returns today.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Remark, no data.",
+     "claim_ids": [
+      "MT061-C09-1"
+     ]
+    },
+    {
+     "premise": "US outperformance and flat GDP per capita elsewhere are largely a tech story, and EU regulation holds European tech back.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Observation of large-cap tech.",
+     "claim_ids": [
+      "MT061-C14-2"
+     ]
+    },
+    {
+     "premise": "Repeated forecasts that the USSR, Japan or China would overtake the US failed, so betting against the US has been a bad strategy.",
+     "type": "empirical",
+     "stated": "stated",
+     "support": "Historical list (Samuelson on the USSR).",
+     "claim_ids": [
+      "MT061-C15-4"
+     ]
+    }
+   ],
+   "mechanism_chains": [],
+   "decision_process": [],
+   "evidence_style": "Economic history and comparison; no investment process described.",
+   "current_views": [
+    {
+     "view": "US long-term equity superiority continues; betting against the US is a poor strategy.",
+     "as_of": "2025-06 (around the Israeli strike on Iran; upload 2025-06-19)",
+     "reasoning": "Tech sector strength and failed past forecasts of US decline.",
+     "claim_ids": [
+      "MT061-C14-2",
+      "MT061-C15-4"
+     ]
+    }
+   ]
+  }
+ ],
+ "disagreements": [],
+ "gaps_and_conflicts": [
+  {
+   "issue": "Japan is described as a binary fork where Bass bet on the bond market breaking, but now he says Japan has it under control and is not a first domino; the bet's resolution (Abenomics) is the reason, not a general view on Japanese debt sustainability.",
+   "claim_ids": [
+    "MT061-C04-2",
+    "MT061-C04-1",
+    "MT061-C05-1"
+   ]
+  },
+  {
+   "issue": "The link from money creation to collapsing demographics is a theory Bass says he has not discussed much, supported only by anecdotes and ratios; it is the weakest causal step in the inflation-to-war chain.",
+   "claim_ids": [
+    "MT061-C05-3",
+    "MT061-C05-6",
+    "MT061-C06-4"
+   ]
+  },
+  {
+   "issue": "'Almost no sovereign defaults' conflicts with his profits on Iceland, Ireland and Greece (countries without their own currency control); the rule holds only for sovereigns that print.",
+   "claim_ids": [
+    "MT061-C05-2",
+    "MT061-C03-5"
+   ]
+  },
+  {
+   "issue": "The Hong Kong takeover timed to COVID and the current-account swing is a speculative narrative he flags as tinfoil-hat-like; no evidence for intent.",
+   "claim_ids": [
+    "MT061-C08-1"
+   ]
+  },
+  {
+   "issue": "Taiwan invasion timing (two to three years) and likely Chinese regime change are forecasts with no stated probability or trade expression beyond avoiding Chinese assets.",
+   "claim_ids": [
+    "MT061-C11-1",
+    "MT061-C12-2"
+   ]
+  },
+  {
+   "issue": "He is bullish on the US while warning of $1.8tn deficits and social strain; the tension between the inflation-to-war chain and the case for US capital is not reconciled.",
+   "claim_ids": [
+    "MT061-C14-3",
+    "MT061-C14-1",
+    "MT061-C06-4"
+   ]
+  }
+ ],
+ "forward_looking_inputs": "(reader) Observable inputs: Chinese air-defence-zone incursions into Taiwan, Taiwan's 2028 election and KMT share, Chinese statements on force, current-account swings, rare-earth export controls, ultra-long JGB yields versus the pegged 10-year, FHFA/asset price indices versus wages, US deficits ($1.8tn), fertility and marriage rates. Horizons: two to three years for Taiwan, years for demographics and inflation, weeks for a post-attack financial response.",
+ "reader_inferences": [
+  "(reader) Bass's method is the same across trades: pick the balance sheet that must break, then size the option-like expression; the unresolved issue is that this method is silent on timing, which he handles with options or long-dated structures.",
+  "(reader) His China avoidance is a geopolitical filter rather than a valuation call, so it would not respond to cheap prices; conversely it is a view that regime change could produce a re-rating.",
+  "(reader) The long-US stance and the 'more war' view are compatible only if US assets are treated as relatively safe in a world of rising conflict."
+ ],
+ "added_claims": [
+  {
+   "claim_id": "MT061-C07-R1",
+   "chunk": "C07",
+   "speaker": "Kyle Bass",
+   "quote": "china has told us since 2017 that they are certainly going to take taiwan by force",
+   "claim": "China has stated since 2017 that it will take Taiwan by force if necessary, and Bass treats that stated intent plus rising incursions as the basis for expecting an invasion.",
+   "mechanism": "stated_intent_geopolitical_risk",
+   "asset_class": "China and Taiwan assets",
+   "indicator": "Chinese statements and annual air-defence-zone incursions",
+   "horizon": "years",
+   "direction": "invasion risk rises, so avoid Chinese assets",
+   "conditions": "statements are credible and incursions keep increasing",
+   "testable": "partly - incursion counts are measurable",
+   "speaker_confidence": "high",
+   "time_bound": "yes - within two to three years"
+  },
+  {
+   "claim_id": "MT061-C06-R2",
+   "chunk": "C06",
+   "speaker": "Kyle Bass",
+   "quote": "the central bankers believe that it's the answer",
+   "claim": "Central bankers believe growing balance sheets is the answer and see no need for fiscal responsibility because they can keep doing it, which Bass says feeds inflation, social strain and fertility decline.",
+   "mechanism": "policy_reaction_function",
+   "asset_class": "macro",
+   "indicator": "central bank balance-sheet growth and fiscal deficits",
+   "horizon": "years",
+   "direction": "continued balance-sheet growth sustains asset-price inflation and social strain",
+   "conditions": "no change in policy approach",
+   "testable": "partly",
+   "speaker_confidence": "high",
+   "time_bound": "no"
+  }
+ ]
+}

@@ -5,8 +5,8 @@ date: 2025-04-10
 channel: "Generating Alpha Podcast"
 url: https://www.youtube.com/watch?v=ZAFHdNYs0KE
 words: 5097
-claims: 20
-added_by_crosscheck: 0
+claims: 22
+added_by_crosscheck: 2
 corrections: 1
 crosscheck: "opus cross-check"
 speakers: ["Felix Zulauf (founder, Zulauf Consulting)", "Interviewer (Generating Alpha Podcast host)"]
@@ -21,6 +21,85 @@ tags: [source, layer0]
 **Approach:** discretionary global macro, top-down, technical confirmation, contrarian
 
 **Cross-check completeness estimate of first read:** 0.97 - largely biography; the first reader captured every process, positioning and macro idea (top-down chain, political pendulum, trade regime break, weekend chart discipline, stop-losses); remaining content is career, client-sales and life advice with no method content for a macro researcher.
+
+## Argument map
+
+**Episode thesis:** Zulauf describes a selective, top-down discretionary macro process (political pendulum, then a policy-distorted business cycle, then rates, currencies, capital flows and asset classes) checked every weekend against about a thousand charts, so that the market's disagreement with his thesis triggers digging rather than stubbornness. He pairs this with humility and failsafe stop-losses, and argues that the Trump-era trade regime break ends the 30-year globalisation wave and will shift the dollar's reserve role, capital flows and US rates.
+
+### Felix Zulauf (Founder, Zulauf Consulting; ex-UBS head of investment strategy; long/short macro hedge fund manager since 1990)
+Fingerprint: #approach/macro_fundamental_topdown #approach/valuation_contrarian #approach/behavioral_sentiment #approach/market_internals_leading #approach/geopolitics #approach/policy_reaction_central_banks #approach/kelly_or_conviction_sizing #approach/structural_themes
+_Speaker note: Auto-captions render the name Zulof/Zulu/Zulaf. Single guest; the host (Generating Alpha Podcast) only asks questions and is not mapped. Much of the episode is career story with little method content; no market-level numbers are given beyond leverage and past episodes._
+
+**Worldview premises**
+- Politics runs as a pendulum (left/right, conservative/progressive); knowing where the swing stands lets you understand the political process and its results, which then drive the economy and markets. _[theoretical, stated; support: None beyond long personal experience; no historical series cited.]_ ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-2|C05-2]])
+- The business cycle is no longer lean: growing interventions and manipulations by the authorities distort it compared with the 1960s and 1970s, so classic cycle analysis must be adjusted for policy. _[institutional, stated; support: Contrast with the 1960s-70s; no data.]_ ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-3|C05-3]])
+- Managers are conditioned by the preceding regime, so in a new secular bull market the older manager shaped by the previous structural bear will be too cautious and a young bullish one should be used; you must know where you stand in the long cycle. _[behavioural, stated; support: Anecdote and experience; no evidence.]_ ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-5|C05-5]])
+- The Trump trade changes are a regime break of the order of the Berlin Wall, the end of Bretton Woods and the end of the gold standard: the end of the WTO order as known and of the 30-year globalisation wave. _[theoretical, stated; support: Historical analogy only.]_ ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-7|C05-7]])
+- Large losses are very hard to make up and damage the decision-maker psychologically, so a failsafe stop-loss is needed whatever the analysis says; one may not know the truth. _[experience, stated; support: His own 50% loss at about age 30 on a position without a stop.]_ ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-2|C07-2]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-3|C07-3]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-4|C07-4]])
+- Staying near the benchmark or within institutional constraints is incompatible with his style; when he sees big risks or opportunities he goes to extreme positioning, and otherwise waits for the odds to turn in his favour. _[experience, stated; support: Track of calls: 1980 commodity peak, 1987 crash.]_ ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C03-1|C03-1]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-1|C05-1]])
+- A contrarian is lonely at the top with a bearish view; doubt is overcome by a fixed working discipline rather than by temperament alone. _[behavioural, stated; support: 40 years of a weekend routine.]_ ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C06-2|C06-2]])
+
+**Chain: Top-down process from politics to asset allocation**
+1. Political pendulum and zeitgeist → Political process and its results: Knowing where the swing stands tells you what policy follows. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-2|C05-2]])
+2. Policy-distorted business cycle → Implications for interest rates, currencies and capital flows: Cycle position set by politics and intervention determines rates and flows. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-3|C05-3]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-4|C05-4]])
+3. Rates, currencies and capital flows → Bonds, equities, defensive vs deep-cyclical sectors, currency hedging, commodities: Each implies a different payoff; the sequence is deduced, not modelled. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-4|C05-4]])
+- Evidence: Process description and past calls (1980, 1987); no systematic test.
+- Fails when: Not stated; he says more pitfalls are visible now, which makes the job harder, and the market itself may disagree.
+
+**Chain: Trade regime break to US interest rates**
+1. Trump administration changes trade policy (tariffs back and forth, but a change of magnitude) → End of the WTO order and the 30-year globalisation wave: Comparable to the Berlin Wall, Bretton Woods and gold-standard breaks. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-6|C05-6]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-7|C05-7]])
+2. Geopolitical backlash and the end of the old trade order → Reduced importance of the dollar as reserve currency and changed capital flows: Trade and reserve roles are linked. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C06-1|C06-1]])
+3. Changed capital flows → Different level of US interest rates: Stated as a principle; no direction or size given. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C06-1|C06-1]])
+- Evidence: Analogy to past regime breaks; no data.
+- Fails when: Not stated; he notes policy goes back and forth, but says the change is real regardless.
+
+**Chain: Weekend chart discipline as a thesis falsification loop**
+1. Fundamentals set a business-cycle view → Technicals on about 1,000 time series test whether the market confirms it: Technical analysis supports or shows he is wrong and shows trend health. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C06-3|C06-3]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C06-4|C06-4]])
+2. Market disagrees with the thesis → Dig deeper for the problem: The disagreement is a signal to re-examine, not to ignore. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C06-5|C06-5]])
+3. News item that does not fit the thesis → Check it and, if the thesis fails, return to the drawing board: Treats the thesis like science. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-1|C07-1]])
+- Evidence: 40 years of the routine; no performance attribution.
+- Fails when: Not stated.
+
+**Chain: Loss avoidance and mental balance**
+1. Big loss on a position → Psychological damage and worse decisions: You become mentally off balance; recovery is hard. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-2|C07-2]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-3|C07-3]])
+2. Failsafe stop-loss in place → Limits the loss and protects judgement: Humility: you may be wrong. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-2|C07-2]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-4|C07-4]])
+- Evidence: Own 50% loss at about 30 when he forgot the stop.
+- Fails when: Not stated.
+
+**Decision process**
+- [signal] Top-down: political setup and pendulum position, then classic business-cycle analysis adjusted for authority interventions, then deduce rates, currencies, capital flows, asset classes and sectors.. Why: Politics drives policy and the cycle; process is the same as 40 years ago but more refined. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-2|C05-2]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-3|C05-3]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-4|C05-4]])
+- [signal] Fundamentals set the view; technical analysis (long, medium and short term) confirms or contradicts it and shows the health of trends.. Why: Technicals tell him whether he is wrong. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C06-4|C06-4]])
+- [research] Every weekend about five hours: roughly 1,000 charts of money market rates, bond yields, the 30 largest currencies, equity and sector indices, and the 100 largest stocks in the US, Europe and Asia.. Why: Surfaces where the market does not agree with his thesis; discipline counters doubt. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C06-3|C06-3]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C06-2|C06-2]])
+- [research] Daily news scan for items that do not fit the thesis; those get checked in depth, items that fit are only glanced at.. Why: Thesis treated like science. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-1|C07-1]])
+- [research] When the market disagrees with the thesis, dig for the problem and why it is not the way he thought.. Why: Divergence is information. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C06-5|C06-5]])
+- [sizing] Enters a position only on strong conviction; waits until the odds turn in his favour; goes to extreme positions at big risks or opportunities.. Why: No need to play at his age; concentration where the odds are best. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-1|C05-1]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C03-1|C03-1]])
+- [portfolio] Long/short hedge funds with about 30% leverage at times, with net exposure able to run from long to net 100% short.. Why: Freedom to act on either side. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C03-4|C03-4]])
+- [risk] Failsafe stop-loss on every position in addition to the normal procedure.. Why: Avoid big losses that unbalance decisions and are hard to recover. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-2|C07-2]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-3|C07-3]])
+- [risk] Cut equities hard ahead of peaks: 70% cash and 30% commodity-company bonds at the 1980 commodity peak; zero equities in institutional accounts before the 1987 crash.. Why: Acted on perceived extremes. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C03-2|C03-2]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C03-3|C03-3]])
+- [other] With clients, explain the whole process, act as said, and report results including mistakes and lapses of discipline.. Why: Trust comes from authenticity and honesty. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C04-R1|C04-R1]])
+
+**Evidence style:** Experience and anecdote: remembered calls (1980, 1987) and a 40-year routine; first-principles and historical analogy for the regime thesis; no backtests or numbers.
+
+**Views at the time**
+- (2025-04 (upload 2025-04-10)) Trade policy is the most important variable now; capital flows will probably be the next big issue.. Reasoning: The Trump trade changes go back and forth but are a change of regime magnitude. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-6|C05-6]])
+- (2025-04 (upload 2025-04-10)) The trade regime break ends the globalisation wave of the last 30 years and makes the environment much more difficult for entrepreneurs and corporations.. Reasoning: Comparable to the Berlin Wall, Bretton Woods and the gold standard ending. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-7|C05-7]])
+- (2025-04 (upload 2025-04-10)) The dollar's reserve-currency relevance falls, changing capital flows and therefore the level of US interest rates (direction not stated).. Reasoning: Geopolitical backlash to the trade change. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C06-1|C06-1]])
+
+### Gaps and conflicts
+- The claim that a regime break changes the level of US interest rates states no direction, size or timing; the dollar and rate view is not actionable as stated. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C06-1|C06-1]])
+- Calls cited as proof (1980 commodity peak, 1987 crash) are single remembered episodes with no returns, sizes or dates of entry; the sell-off to zero equities in 1987 is described only in passing. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C03-2|C03-2]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C03-3|C03-3]])
+- He says he enters only on strong conviction and goes extreme at big opportunities, but also insists on failsafe stops and humility; no rule links conviction to size or stop distance. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-1|C05-1]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C03-1|C03-1]], [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-2|C07-2]])
+- The claim that older managers are conditioned by the prior bear market is anecdotal and untested. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-5|C05-5]])
+- He says the pendulum framework helps anticipate politics, but the political pendulum is not measured or dated; the position of the swing today is not given. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-2|C05-2]])
+- He says he manages his own money outside a performance game, while stop-loss discipline is justified partly by performance; the context of the stop rule for his own portfolio is not specified. ([[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-R1|C07-R1]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) The inputs he names as leading prices are: the political pendulum position, the policy-distorted business cycle, trade policy (tariffs and the end of the old WTO order), capital flows and the dollar's reserve role feeding US interest rates, and the technical health of trends across about 1,000 series on long, medium and short horizons. Horizon is years for the regime thesis ('the most important topic over the next few years') and weeks for the chart check. Reason: he treats the market as the judge of whether his fundamental thesis is right.
+
+### Reader inferences (not stated by the speakers)
+- (reader) The weekend routine is a thesis-falsification loop rather than a trend-following signal: technicals have veto power over a fundamental view.
+- (reader) The process is sequential top-down but its links (pendulum to cycle to rates) are not specified, so the same inputs could generate opposite portfolio conclusions.
+- (reader) His stated risk lesson comes from a single early failure, which suggests the stop-loss rule is a behavioural safeguard and not an optimised parameter.
 
 ## Coverage
 
@@ -54,6 +133,12 @@ tags: [source, layer0]
   > We used perhaps at times we used 30% leverage and that was all. So, but we were long and short. We could go net 100% short
   indicator: net exposure range, leverage · asset: equities · direction: net long to net 100% short · testable: partly · confidence: high
   ^MT050-C03-4
+
+### C04
+- **Felix Zulauf** When raising money, explain the whole process, then follow it, and report results including mistakes and lapses in discipline honestly.  #mech/behavioral _(added by map cross-check)_
+  > You have to explain the process how you do it and then later on you have to do according to what you said
+  asset: multi · conditions: Raising client assets for a fund · testable: no · confidence: high
+  ^MT050-C04-R1
 
 ### C05
 - **Felix Zulauf** He trades only when odds turn in his favour and otherwise stays out, so selectivity and waiting matter more than being always positioned.  #mech/risk_management
@@ -125,4 +210,8 @@ tags: [source, layer0]
   > I forgot the stop loss and uh and I finally uh killed the position when I was down 50%
   asset: multi · conditions: Overconfidence · testable: no - anecdote · confidence: high
   ^MT050-C07-4
+- **Felix Zulauf** He is in a performance game only for his subscribers, not for the portfolios he manages, which hold his own money.  #mech/risk_management _(added by map cross-check)_
+  > I am in the performance game for my subscribers but I'm not in the performance game for the portfolios I manage which is my my own money
+  asset: multi · conditions: Current role at Zulauf Consulting · testable: no · confidence: high
+  ^MT050-C07-R1
 

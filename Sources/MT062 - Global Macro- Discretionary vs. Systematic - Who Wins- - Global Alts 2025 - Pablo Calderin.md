@@ -5,8 +5,8 @@ date: 2025-02-25
 channel: "Graham Capital Management"
 url: https://www.youtube.com/watch?v=vsf0cuWqwys
 words: 4892
-claims: 49
-added_by_crosscheck: 9
+claims: 52
+added_by_crosscheck: 12
 corrections: 1
 crosscheck: "sonnet-xhigh cross-check"
 speakers: ["David Shang (moderator, Axia)", "Christian Derry (head of macro strategy, CFM)", "Pablo Calderini (CIO, Graham Capital)", "Nicholas Cormier (portfolio manager, CPP Investments)", "Jackie Rosner (investment team, PAMCO Prisma)"]
@@ -21,6 +21,197 @@ tags: [source, layer0]
 **Approach:** global macro, systematic macro, discretionary macro, trend following, manager selection, machine learning
 
 **Cross-check completeness estimate of first read:** 0.85 - first reader caught nearly all substantive panel points; missed mostly firm-structure remarks, the China deflation worry, the 'more than cash+3-5' volatility view, the diversification axes and a few AI technique remarks.
+
+## Argument map
+
+**Episode thesis:** A Global Alts 2025 panel of two macro managers (CFM systematic, Graham quant plus discretionary) and two allocators (CPP Investments, PAMCO Prisma) argues that discretionary and systematic macro are complements, not rivals: quant processes more data, more diversified ideas and a rigid method, while discretionary PMs have bandwidth limits and few concentrated ideas but can change view on the fly. Allocators hold both for diversification and positive convexity, expect cash plus 3-5% (or double digits) in a policy-driven, volatile 2025, and pick managers by process and track record.
+
+### Christian Derry (Head of macro strategy, CFM (Paris-based systematic manager, about 17 billion AUM, founded 1991 by physicists); former discretionary trader)
+Fingerprint: #approach/research_robustness_overfitting #approach/trend_following #approach/portfolio_construction_stacking #approach/nowcasting_data #approach/regime_detection #approach/short_term_systematic
+_Speaker note: Auto-captions garble names and some sentences; the section where the 'systematic has to remain systematic' point is made (chunk C06) has unclear speaker turns, and that remark is left unattributed. Panel moderated by David Shang of Axia (not mapped; he asks questions)._
+
+**Worldview premises**
+- Humans have a bandwidth limit (like pilots limited to seven gauges), so discretionary macro is concentrated in a couple of ideas a year; systematic processes remove that limit. _[theoretical, stated; support: Air Force pilot study analogy; no market data.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-1|C04-1]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-2|C04-2]])
+- Systematic strategies search a large idea space and hold hundreds of competing ideas, giving more diversity than discretionary books. _[theoretical, stated; support: CFM's own structure.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-3|C04-3]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C01-X1|C01-X1]])
+- Large unstructured alternative data is where the edge is moving: over 50% of CFM's models rely on it, and few firms have the technology stack, investments and experience to exploit it. _[empirical, stated; support: CFM's own model mix; data volume growth quote he says is probably inaccurate.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-4|C04-4]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-X1|C04-X1]])
+- Convexity is a mechanical outcome of trend following, not a separate skill. _[theoretical, stated; support: Assertion in reply to the allocators.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-2|C06-2]])
+- A new predictor adds value only if it contains new information; many macro ideas just correlate with a cluster of trend-following predictors. _[experience, stated; support: CFM research infrastructure practice.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-3|C06-3]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-4|C06-4]])
+- Markets are nonstationary and nonlinear, so even a systematic firm needs a human process for risks the model does not cover (regulation, elections, DeepSeek). _[experience, stated; support: CFM's non-model-risk committee.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-7|C06-7]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-R1|C06-R1]])
+- Machine learning is old; the large language model is the genuinely disruptive new tool. _[empirical, stated; support: About 20 years of use at CFM; LLM handles unstructured text.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-X1|C07-X1]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-4|C07-4]])
+
+**Chain: Bandwidth limit to concentration to systematic diversification**
+1. Human bandwidth limit (pilot with seven gauges) → Discretionary macro concentrated in a couple of ideas a year: More than a few inputs raise the chance of a mistake. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-1|C04-1]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-2|C04-2]])
+2. Systematic processes that ingest terabytes of data → Hundreds of competing ideas inside each strategy: A search space with many ideas gives more diversity. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-3|C04-3]])
+- Evidence: CFM description; no performance data.
+- Fails when: Not stated; he says it is not an us-versus-them discussion.
+
+**Chain: Research gate: new information required**
+1. A macro idea is tested on the research infrastructure → Rejected if it correlates with an existing predictor: Correlation with existing signals is not new information. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-3|C06-3]])
+2. Many macro ideas correlate with a cluster of trend-following predictors → Few macro ideas reach production: They duplicate trend exposure. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-3|C06-3]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-2|C06-2]])
+- Evidence: CFM practice; no counts.
+- Fails when: Not stated.
+
+**Chain: Non-model risk handled without overriding signals**
+1. Emergent risks (regulatory changes, elections, DeepSeek) → A committee he chairs reviews impact on the businesses: Markets are nonstationary and nonlinear. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-7|C06-7]])
+2. Committee view → Constraints on risk models in rare cases, not signal overrides, then codified into the system: Sustainability of the business and system integrity. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-8|C06-8]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-R1|C06-R1]])
+- Evidence: CFM practice.
+- Fails when: Not stated.
+
+**Decision process**
+- [research] Test every new idea against the shared research base; reject if it correlates with existing predictors (often a trend-following cluster); look for effects inconsistent with luck.. Why: Only new information adds value. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-3|C06-3]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-4|C06-4]])
+- [research] Flat structure with no pods: all researchers collaborate and research done in the flagship fund propagates to other strategies.. Why: Ideas are tested once against a common predictor set. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C01-X1|C01-X1]])
+- [signal] Ingest about five terabytes of data a day; over 50% of models rely on large unstructured alternative data; LLMs for classification, sentiment signals and coding.. Why: No human can leverage these data sets. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-4|C04-4]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-4|C07-4]])
+- [risk] Never override signals; on rare occasions constrain risk models, ideally feeding back by codifying the logic; a committee reviews non-model risks.. Why: Preserve the systematic process while managing emergent risks. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-8|C06-8]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-7|C06-7]])
+- [other] Measure returns by contribution of each embedded idea, unlike discretionary traders measured only on P&L.. Why: Attribution is possible in systematic books. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-5|C06-5]])
+
+**Evidence style:** Firm practice and analogy (pilots), statistical-inference framing (effects inconsistent with luck); no performance figures.
+
+**Views at the time**
+- (2025-02) Large unstructured alternative data and LLMs are the main driver of systematic alpha now.. Reasoning: More than 50% of CFM models use large unstructured data sets in the last five years; few firms can exploit them. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-4|C04-4]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-4|C07-4]])
+- (2025-02) LLM is the disruptive tool in AI for macro: classification, compression of unstructured text, coding.. Reasoning: Machine learning is 20 years old; the LLM handles unstructured text. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-X1|C07-X1]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-4|C07-4]])
+- (2025-02) Biggest macro risk named by the panel is an unsustainable fiscal trajectory (AI disruption and higher inflation and rates also named); speaker attribution in the lightning round is unclear.. Reasoning: Lightning round answers with no reasoning. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-7|C07-7]])
+
+### Pablo Calderini (CIO and president, Graham Capital (about 20 billion AUM, about 70-75% quantitative systematic, 25% discretionary))
+Fingerprint: #approach/macro_fundamental_topdown #approach/carry #approach/value_mean_reversion #approach/policy_reaction_central_banks #approach/research_robustness_overfitting #approach/portfolio_construction_stacking #approach/short_term_systematic
+_Speaker note: Both quant and discretionary macro are run in his firm. Statements about the quant side describe Graham's programs._
+
+**Worldview premises**
+- Discretionary and systematic macro are not that dissimilar: the same liquid markets and the same signal families (fiscal and monetary policy, central banks, growth, inflation) plus factors such as value, mean reversion and carry; they differ in method. _[experience, stated; support: Graham runs both side by side.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-1|C03-1]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C01-X2|C01-X2]])
+- Quant macro can use many correlated inputs because machine learning compresses data, with nonlinear pattern-recognition regressions and robust portfolio construction. _[theoretical, stated; support: Graham's methods; no performance data.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-2|C03-2]])
+- A systematic program has to be rigid: inserting news manually (a weekend AI release, tariff comments) removes alpha. _[theoretical, stated; support: Assertion from experience.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-3|C03-3]])
+- The key advantage of discretionary macro is the ability to change view on the fly (tariffs, DeepSeek), which a quant data process cannot do; a good PM treats a geopolitical accident as a possible alpha signal while a quant does not react. _[experience, stated; support: Assertion.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-5|C03-5]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-1|C07-1]])
+- Unsupervised machine learning overfits (strong in sample, poor out of sample), so use ML for alpha discovery and then understand why the alpha exists. _[theoretical, stated; support: Assertion.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-5|C07-5]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-6|C07-6]])
+- Markets are highly nonstationary; the more big data and machine learning, the less is understood about what the system is doing, so humans must still monitor. _[theoretical, stated; support: Graham's daily risk meeting.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-3|C07-3]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-R1|C07-R1]])
+
+**Chain: Data processing versus flexibility**
+1. Quant methods (data compression, machine learning, nonlinear regression) → Maximum extraction from macro fundamentals and forecasts on one to two (up to three) month horizons: Machines handle large correlated data sets. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-2|C03-2]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-4|C03-4]])
+2. Quant system must stay rigid → It cannot react to weekend news such as an AI program in China or tariff comments without losing alpha: Manual overrides undermine the system. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-3|C03-3]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-5|C03-5]])
+3. Discretionary PM flexibility → Reaction to geopolitical accidents and regime changes week to week: Years of knowledge and ability to change view on the fly. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-5|C03-5]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-1|C07-1]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-4|C03-4]])
+- Evidence: Assertion from managing both; no numbers.
+- Fails when: A discretionary PM cannot process as much data as the quant side.
+
+**Chain: ML opacity and need for humans**
+1. More big data and machine learning → Less understanding of what the system is doing: Opacity grows with complexity. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-3|C07-3]])
+2. Nonstationary markets and disruptions → Humans intervene for risk response, never for alpha: Interventions are about responsibility, not forecasts. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-2|C07-2]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-R1|C07-R1]])
+- Evidence: Graham's daily risk meeting.
+- Fails when: Not stated.
+
+**Chain: Alpha discovery with AI**
+1. Techniques that already existed (SVD, data compression, pattern matching, cosine similarity) → AI combines them into one coherent pipeline for extracting signals: Cohesive use of the same building blocks. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-X2|C07-X2]])
+2. ML discovers a candidate alpha → Researchers explain why it exists before using it: Guard against over-fitting. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-5|C07-5]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-6|C07-6]])
+- Evidence: Assertion.
+- Fails when: Unsupervised ML is prone to overfit in sample.
+
+**Decision process**
+- [signal] Signals mostly from fundamentals (fiscal, monetary, central banks, growth, inflation) plus factor-type signals (value, mean reversion, carry).. Why: Same markets and problems for quant and discretionary. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-1|C03-1]])
+- [signal] Quant macro uses machine-learning data compression, nonlinear pattern-recognition regression and robust portfolio construction, on one to two (up to three) month horizons; discretionary PMs trade week to week.. Why: Extract the maximum from macro fundamentals data. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-2|C03-2]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-4|C03-4]])
+- [research] Do not use unsupervised ML; use ML for alpha discovery and then require an explanation of why the alpha is there.. Why: Overfitting. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-5|C07-5]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-6|C07-6]])
+- [risk] Do not override quant processes; hold a daily risk meeting to understand what systems are doing; interventions in disruptions are about response, never alpha.. Why: Preserves the process while allowing risk response. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-2|C07-2]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-3|C07-3]])
+- [portfolio] About 70-75% of Graham's assets in quantitative systematic strategies and 25% in discretionary PMs, treated as two methods for the same markets.. Why: Different ways of dealing with the same problems. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C01-X2|C01-X2]])
+- [other] Discretionary PMs change their view on the fly when there is a big tariff or a DeepSeek-type event.. Why: It is the key strength of discretionary trading. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-1|C07-1]])
+
+**Evidence style:** Practitioner assertion from running both styles; no performance data; some technical vocabulary (SVD, cosine similarity).
+
+**Views at the time**
+- (2025-02) AI is a great tool for alpha discovery and will help researchers find better alpha, but unsupervised ML overfits.. Reasoning: Explain the alpha after discovery. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-5|C07-5]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-6|C07-6]])
+- (2025-02) Discretionary macro's ability to change view quickly is its key advantage over quant in an environment of tariffs and surprises such as DeepSeek.. Reasoning: Quant systems cannot react to news the way PMs can. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-1|C07-1]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-5|C03-5]])
+
+### Nicholas Cormier (Portfolio manager, external portfolio management at CPP Investments (allocator to public-market hedge funds; focus on systematic macro))
+Fingerprint: #approach/manager_selection_allocation #approach/diversification_risk_parity #approach/crisis_alpha_convexity #approach/portfolio_construction_stacking #approach/relative_value_arbitrage
+_Speaker note: Allocator view; statements are about how CPPIB uses macro managers and the market outlook._
+
+**Worldview premises**
+- Forecasting which hedge fund strategy will do best is too hard, so diversify across a breadth of strategies. _[experience, stated; support: Allocator stance.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-1|C02-1]])
+- Hedge fund macro diversifies away from security selection into asset selection, via relative value and directional trend capture. _[theoretical, stated; support: CPPIB's portfolio construction logic.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-5|C04-5]])
+- Systematic macro supplies style exposures (carry, momentum, fundamental momentum); discretionary is expected to supply real convexity at the right time from one or two big ideas a year, so timing and conviction matter. _[experience, stated; support: Allocator expectation; no data.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-6|C04-6]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-1|C05-1]])
+- Discretionary and systematic macro are held together to diversify across asset classes, styles and timing horizons. _[theoretical, stated; support: Allocator construction.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-X1|C05-X1]])
+- Cross-country dispersion (China weak, US exceptionalism, developed markets downshifting) is the opportunity for macro. _[empirical, stated; support: Description of 2025 backdrop.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-2|C02-2]])
+
+**Chain: Dispersion to macro returns**
+1. China weak, US exceptional, developed markets downshifting → Fundamental dispersion across countries: Economies diverge. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-2|C02-2]])
+2. Dispersion → Opportunity for macro strategies; hedge fund portfolio at cash plus 3-5%: Relative value and directional strategies can capture it. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-2|C02-2]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-3|C02-3]])
+- Evidence: Backdrop description only.
+- Fails when: Not stated.
+
+**Chain: Roles of the two macro styles in the allocator portfolio**
+1. Systematic macro → Style exposures: carry, momentum, fundamental momentum: Rules capture established styles. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-6|C04-6]])
+2. Discretionary macro → Real convexity from one or two big ideas a year: Timing and conviction. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-6|C04-6]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-1|C05-1]])
+- Evidence: Allocator expectations.
+- Fails when: Not stated.
+
+**Decision process**
+- [portfolio] Allocate across a breadth of strategies with a high focus on diversification; hold discretionary and systematic macro to diversify across asset classes, styles and timing horizons.. Why: Strategy forecasting is too hard. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-1|C02-1]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-X1|C05-X1]])
+- [universe] Use macro hedge funds to move from corporate security selection to asset selection through relative value and directional trend capture.. Why: Diversify away from traditional security selection. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-5|C04-5]])
+- [signal] Expect style exposures from systematic managers and real convexity from discretionary ones.. Why: Each style has a different role. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-6|C04-6]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-1|C05-1]])
+
+**Evidence style:** Allocator reasoning and expectation; no numbers except the return range.
+
+**Views at the time**
+- (2025-02) Constructive on macro opportunities; a diversified hedge fund portfolio should return roughly cash plus 3-5% with no beta.. Reasoning: Fundamental dispersion among China, US and developed markets. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-2|C02-2]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-3|C02-3]])
+
+### Jackie Rosner (Investment team, PAMCO Prisma (hedge fund allocator; global macro and RV))
+Fingerprint: #approach/manager_selection_allocation #approach/crisis_alpha_convexity #approach/portfolio_construction_stacking #approach/geopolitics #approach/policy_reaction_central_banks #approach/volatility_options
+_Speaker note: Speaks as an allocator; the lightning-round and a few sentences are unattributed in the captions._
+
+**Worldview premises**
+- Allocators target double-digit absolute returns, reasonable drawdowns and low equity correlation; cash rates are high and hedge funds compete with equity rallies. _[experience, stated; support: Allocator objective.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-4|C02-4]])
+- Policy changes (tariffs, immigration, tax cuts), high debt and deficits, a strong dollar and duration worries create volatility that favors active management. _[empirical, stated; support: Description of the 2025 backdrop.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-5|C02-5]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-X1|C02-X1]])
+- Geopolitical risk is two-sided for macro: elevated risk can be inflationary and its removal deflationary. _[theoretical, stated; support: Assertion.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-6|C02-6]])
+- The old trader mantra 'don't fight the Fed' now has a sibling, 'don't fight Trump': the administration is transparent about its aims and 'beta dependent' (sensitive to equity wealth levels), so large policy-driven moves are expected. _[behavioural, stated; support: Assertion; Trump described as beta dependent.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-8|C02-8]])
+- Both discretionary and systematic macro are positively convex, volatility friendly and capture right tails, but become correlated in large moves. _[empirical, stated; support: Allocator experience.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-2|C05-2]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-3|C05-3]])
+- A good discretionary macro trader has a Sharpe just under 1, the average systematic strategy about 0.5 but with about twice the volatility, so absolute returns end up similar. _[empirical, stated; support: Rough figures from experience, no data source.]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-4|C05-4]])
+- Systematic managers differ widely in strategy mix, speed, holding period and asset class mix, so outcomes depend on the manager chosen. _[empirical, stated; support: Allocator experience (30-day commodity manager example).]_ ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-6|C05-6]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-1|C06-1]])
+
+**Chain: Policy volatility to demand for convex strategies**
+1. Tariffs, immigration, tax cuts, deficits, strong dollar, China exporting deflation, geopolitical risk → Volatility and a wall of worry: Many policy and market uncertainties at once. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-5|C02-5]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-X1|C02-X1]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-6|C02-6]])
+2. Volatility, worries about equity rally and duration → More focus on active, positively convex, volatility-friendly strategies: Those strategies benefit from movement. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-7|C02-7]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-X1|C03-X1]])
+3. Equity rally cannot continue forever and volatility offers trading opportunity → Returns above cash plus 3-5% possible: Trading opportunity from movement. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-X1|C03-X1]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-4|C02-4]])
+- Evidence: Descriptive; no data.
+- Fails when: Not stated.
+
+**Chain: Too many systematic managers dilute returns**
+1. Using a single systematic manager → Idiosyncratic experience: Strategy mix, speed and asset class mix differ. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-6|C05-6]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-1|C06-1]])
+2. Using too many managers → Diversifying away the returns (watering down the soup): Excess diversification. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-1|C06-1]])
+- Evidence: Allocator experience.
+- Fails when: Not stated.
+
+**Decision process**
+- [universe] Hold both discretionary and systematic macro for strategy diversification and positive convexity.. Why: Both capture right tails differently. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-2|C05-2]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-3|C05-3]])
+- [research] Underwrite the people and the process: a tested, repeatable process and a proven track record; do not pay for someone's tuition (no managers learning on the allocator's capital).. Why: Track record and process are the evidence. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-5|C05-5]])
+- [research] Prefer specialists whose expertise is an inch wide and a mile deep.. Why: Proven narrow expertise. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-X2|C05-X2]])
+- [portfolio] Hold more than two but fewer than ten systematic managers; concentrate in the best and increase as they are tested.. Why: One manager gives an idiosyncratic experience; too many dilute returns. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-1|C06-1]])
+- [other] Aim for double-digit absolute returns, reasonable drawdowns and low equity correlation.. Why: Cash rates are elevated and hedge funds compete with equity rallies. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-4|C02-4]])
+
+**Evidence style:** Allocator experience and rules of thumb; Sharpe figures are stated without sources.
+
+**Views at the time**
+- (2025-02) 2025 should be a good year for hedge funds and trading strategies, with returns above cash plus 3-5% (double digits) possible.. Reasoning: Policy changes, debt, strong dollar, geopolitical risk and a long equity rally create volatility and opportunity. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-4|C02-4]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-X1|C03-X1]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-5|C02-5]])
+- (2025-02) Lean into positively convex, volatility-friendly strategies; do not fight Trump.. Reasoning: Trump is transparent about his aims and 'beta dependent', so large policy-driven moves are expected. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-7|C02-7]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-8|C02-8]])
+- (2025-02) Geopolitical risk cuts both ways for inflation: elevated risk inflationary, its removal deflationary; part of the wall of worry is China exporting deflation.. Reasoning: Two-sided effects on prices. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-6|C02-6]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-X1|C02-X1]])
+
+### Disagreements
+- **What each style offers: flexibility versus bandwidth and breadth**: Christian Derry: Human bandwidth limits discretionary macro to a few concentrated ideas; systematic strategies hold hundreds of competing ideas and exploit unstructured data no human can. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-1|C04-1]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-2|C04-2]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-3|C04-3]]); Pablo Calderini: Quant processes more data but must stay rigid; discretionary's ability to change view on the fly is its key advantage. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-3|C03-3]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-5|C03-5]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-1|C07-1]])
+- **Origin of convexity**: Christian Derry: Convexity is mechanically produced by trend following; it is not a separate skill. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-2|C06-2]]); Nicholas Cormier: Systematic macro supplies style exposures; discretionary macro is expected to deliver real convexity at the right time from a few big ideas. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-6|C04-6]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-1|C05-1]]); Jackie Rosner: Both discretionary and systematic macro are positively convex and capture right tails, though in different ways. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-2|C05-2]])
+- **Return expectation for hedge funds in 2025**: Nicholas Cormier: A diversified hedge fund portfolio should earn roughly cash plus 3 to 5 with no beta. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-3|C02-3]]); Jackie Rosner: Aim for double-digit returns; volatility and trading opportunity should allow more than cash plus 3-5. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-4|C02-4]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-X1|C03-X1]])
+- **Human intervention in a systematic process**: Unidentified panelist: Systematic has to remain systematic; overriding a system turns it into a discretionary strategy. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-6|C06-6]]); Christian Derry: Not a label; never override signals, but occasionally constrain risk models and codify the logic, with a committee for non-model risks. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-7|C06-7]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-8|C06-8]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-R1|C06-R1]]); Pablo Calderini: Do not override the process ever; interventions in disruptions are about response, never alpha, and a daily risk meeting keeps humans informed. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-2|C07-2]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-3|C07-3]])
+- **Framing of the title question 'who wins'**: Christian Derry: It is not an us-versus-them discussion; the two are complements. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-R1|C04-R1]]); Pablo Calderini: Same markets and signal families, different methods; Graham runs both at 70-75% quant and 25% discretionary. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-1|C03-1]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C01-X2|C01-X2]])
+
+### Gaps and conflicts
+- Sharpe figures (discretionary just under 1; systematic about 0.5 at twice the volatility) come without a data source, period or fee basis; 'twice the volatility' and 'similar absolute returns' together imply a higher Sharpe for discretionary, which is not reconciled with the allocator's preference for both. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C05-4|C05-4]])
+- Derry says convexity is mechanical to trend following while Cormier expects it from discretionary; no evidence is offered by either side and the panel does not resolve it. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-2|C06-2]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-6|C04-6]])
+- The data-growth figure (all data up to 2006 is about 5 exabytes, now created every two days) is quoted by the speaker himself as probably incorrect. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C04-X1|C04-X1]])
+- The 'who wins' remark, 'systematic has to remain systematic', and the lightning-round answers on macro risk are not attributed to a named speaker in the captions. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-6|C06-6]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-7|C07-7]])
+- Pablo says the quant side does not use unsupervised machine learning yet earlier lists machine-learning compression and pattern-recognition regression; the boundary between supervised and unsupervised use is not defined. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-2|C03-2]], [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-5|C07-5]])
+- 'Don't fight Trump' is stated as a mantra with 'beta dependent' as evidence of sensitivity to equity levels, but the corrected claim states no mechanism or past episodes; the 'Trump put' is an inference not made by the speaker. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C02-8|C02-8]])
+- Quant horizons (one to three months) and discretionary horizons (week to week) are given, but no turnover or Sharpe comparison within Graham's own book is offered. ([[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C03-4|C03-4]])
+
+### Forward-looking inputs (reader synthesis)
+(reader) Inputs the panel names as leading prices: US policy actions (tariffs, immigration, tax cuts, regulation) and equity market levels as a policy sensitivity; fiscal and monetary policy, central banks, growth and inflation; cross-country dispersion (China, US, developed markets); the strong dollar and duration; China exporting deflation; geopolitical risk (two-sided for inflation); news shocks such as DeepSeek; and alternative data and LLM-derived sentiment. Horizons: one to three months for Graham's quant programs, week to week for discretionary PMs, one year for the allocators' outlook.
+
+### Reader inferences (not stated by the speakers)
+- (reader) The panel's consensus is a division of labour: systematic for breadth, data and consistency; discretionary for flexibility around regime breaks and a few large ideas; allocators hold both for diversification and convexity.
+- (reader) Both managers rule out signal override but accept human intervention for risk response, so the real boundary between systematic and discretionary is whether humans can add alpha views, not whether humans watch the system.
+- (reader) Derry's research gate (reject ideas correlated with existing predictors) implies that a large share of discretionary macro alpha is, to a systematic shop, a repackaging of trend exposure, which is exactly the claim the allocators dispute.
 
 ## Coverage
 
@@ -141,6 +332,10 @@ tags: [source, layer0]
   > all of civilization's data up to 2006 is about 5 exabytes now we create that data every two days
   indicator: volume of alternative data · asset: other · horizon: years · conditions: needs large technology investment; few firms qualify · testable: no - illustration, number admitted unreliable · confidence: low
   ^MT062-C04-X1
+- **Christian Derry** He says the debate between discretionary and systematic macro is not us versus them; he was a discretionary trader for a long time.  #mech/research_method _(added by map cross-check)_
+  > it's really not an Us Versus Them discuss discussion
+  asset: multi · testable: no · confidence: high
+  ^MT062-C04-R1
 
 ### C05
 - **Nicholas Cormier** Discretionary macro convexity arrives from one or two big ideas a year, so timing and conviction matter.  #mech/risk_management
@@ -209,6 +404,10 @@ tags: [source, layer0]
   > we never override signals but on rare occasions we'll put constraints on our risk models and ideally that'll feed back into the system you know you codify the logic
   asset: multi · testable: partly - process · confidence: high
   ^MT062-C06-8
+- **Christian Derry** Even a high-frequency systematic firm retains a metaphorical button operated by a human, because markets are nonstationary and nonlinear.  #mech/risk_management _(added by map cross-check)_
+  > even a high frequency firm there's a metaphorical button with a human
+  asset: multi · conditions: Non-model risks such as regulation, elections, DeepSeek · testable: no · confidence: high
+  ^MT062-C06-R1
 
 ### C07
 - **Pablo Calderini** The main advantage of discretionary macro is the ability to change view on the fly (big tariff, DeepSeek), which quant data processing cannot do.  #mech/behavioral
@@ -247,4 +446,8 @@ tags: [source, layer0]
   > techniques like singular value composition data compression and pattern matching what have you they were there before cosign similarity but now we're using them in a cohesive way
   indicator: SVD, cosine similarity, pattern matching · asset: other · testable: partly - method comparison possible · confidence: medium
   ^MT062-C07-X2
+- **Pablo Calderini** Markets are highly nonstationary, so humans must watch systems even when the process is not overridden.  #mech/risk_management _(added by map cross-check)_
+  > markets are highly nonstationary and that things can happen and you have to have humans looking at things
+  asset: multi · conditions: Systematic process · testable: no · confidence: high
+  ^MT062-C07-R1
 
