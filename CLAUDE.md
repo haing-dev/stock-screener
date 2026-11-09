@@ -75,6 +75,13 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Fable phase started: F1 = AQR Economic Trend (docs/research/fable/F1_economic_trend.md, Fable max, ~0.23M tokens):
   keep econ 15%; no Holm slot for econ structure; zero-slot diagnostics T1 delay-decay, T2 sign audit by era;
   T3 forecast-based growth/inflation as the one Batch 2 econ challenger. Next: F2 trend, F3 value/carry, F4 rates, F5 method.
+- Foundation phase (2026-11-09): 21 units (top funds, practitioners, core papers), one Fable max unit every 4 h via send_later.
+  Spec/units/pack builder in macro-vault pipeline/foundation (FOUNDATION_SPEC.md, units.json, build_pack.py). Done: U01 AQR,
+  U02 Carver (+31-post blog digest), U03 Kaminski, U04 Baltas. Notes also in docs/research/fable/foundation/.
+- OBSIDIAN = SINGLE TRACEABLE STORE (user rule 2026-11-09): everything goes into the vault (G:\...\Obsidian Macro\Macro):
+  Sources/Papers/Investors/Mechanisms, Fable/Foundation (claim ids linked to quote blocks, code refs linked to GitHub at a
+  fixed commit), Method/ (all specs, routing, units, aliases), _data/ (raw JSON bundles + exact Fable input packs). After each
+  step run L0 build.py + build_fable.py <commit>, push macro-vault, copy changed files to the PC vault.
 - Adoption rule (2026-11-01): docs/research/global_macro/TESTING_PROTOCOL.md (paired bootstrap dSR, Holm, non-inferiority per era);
   run `python -m gm.protocol batch0|batch1|diag`; register each new batch in that file BEFORE running it. Batch 2 = Bloomberg.
 - Holdout 2011-2026 has NOT been looked at: never print or inspect it until rules are frozen (then run once).
