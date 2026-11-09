@@ -11,7 +11,7 @@ Order and scope: [[Foundation units]]. Brief: [[FOUNDATION_SPEC]]. Each note's e
 | U02 | [[U02 Rob Carver]] | trend/carry systematic practice: sizing, costs, forecasts, diversification, fitting |
 | U03 | [[U03 Katie Kaminski]] | trend as crisis alpha, inflation and stock-bond correlation, design dispersion |
 | U04 | [[U04 Nick Baltas]] | QIS, trend design, premia vs flow anomalies, carry |
-| U05 | _pending_ | sources of trend by asset class, market selection, execution |
+| U05 | [[U05 Yoav Git]] | sources of trend by asset class, market selection, execution |
 | U06 | _pending_ | trend attribution, market breadth, crisis vs long-run Sharpe, portable alpha |
 | U07 | _pending_ | empirical finance, crowding and edge decay, research controls |
 | U08 | _pending_ | risk-first trend trading, robust statistics, anti-overfit testing |
