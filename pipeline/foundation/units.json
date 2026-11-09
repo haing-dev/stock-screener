@@ -64,9 +64,16 @@
    "david_harding"
   ],
   "maps": [
-   "MT177"
+   "MT177",
+   "MT070"
   ],
-  "topic": "empirical finance, crowding and edge decay, research controls"
+  "topic": "empirical finance, crowding and edge decay, research controls",
+  "papers": [
+   "QP03",
+   "QP04",
+   "QP11",
+   "QP14"
+  ]
  },
  {
   "id": "U08",
