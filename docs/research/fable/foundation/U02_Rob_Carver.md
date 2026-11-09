@@ -1,0 +1,255 @@
+# U02: Rob Carver - judgement brief (Fable, 2026-11-09)
+
+Inputs: foundation/packs/U02.json (synthesis over 19 transcripts, 784 claims, 766 quotes script-checked "exact"; blog
+digest B01-B31) and the repo /home/claude/stock-screener (read only). SHOW = a test with numbers; ASSERT = stated, no
+test; (reader) = my inference. Caveats: the digest is a model-written extract, so its numbers are likely but unverified
+(B12 was later corrected by B13); the "Rob" of MT038 may be a Fidelity co-author, so MT038 is cited as weaker evidence
+of his view. No code was run; the 2011-2026 holdout was not touched.
+
+## 1. Verdict
+
+1. Core logic: trend, carry and their relatives are public risk premia with a low Sharpe (his long run 0.5-1,
+   MT044-C04-2), so a few years of results carry no information and nothing can be timed; the only durable edge is
+   operational: continuous vol-scaled sizing by forecast strength, breadth before styles, trading no faster than costs
+   allow, a priori weights, no overrides (MT137-C01-1, MT140-C09-1, MT137-C11-1, MT106-C09-2).
+2. Grounding: the operational rules are SHOWN in blog backtests, one system, in sample, digest numbers unverified: vol
+   scaling beats static sizing (B22 Sharpe 1.18 vs 0.88; B31 0.92 vs 0.57, t 3.59), skew is worth a few bp of Sharpe
+   (B17), forecast strength predicts risk-adjusted return (B04) yet adds only 0.03 Sharpe over a binary position (B22),
+   forced constant risk cuts Sharpe 0.93 to 0.64 (B03), live costs match the model within 1-2 bp (MT106-C07-7). The
+   economics (risk premium, delayed reaction) is ASSERTED; the macro views are opinions he partly retracted
+   (MT128-C08-X2); the record is fragments at 25% vol: +23.7% to April 2026, worst year about -15% (MT106-C06-1,
+   MT196-C09-2), vol-adjusted slightly behind the SG CTA index and AHL (MT106-C06-5).
+3. We already run most of his sizing stack: 70/30 fast/slow vol blend (vol.py:4; B06), risk floating with forecast
+   strength through a slow book scaler (book.py:198; B03), 60/40 divergent/convergent shares (config.py:62; B06,
+   MT218-C05-X1), identical rules and weights for every market (MT106-C12-2), full-history fitting
+   (TESTING_PROTOCOL.md:11; MT093-C15-2), costs inside the backtest (book.py:210-215; MT137-C07-4), no stops, no regime
+   timing (MT137-C16-X2, MT196-C13-1).
+4. We differ in: no no-trade buffer (gap_review_crosscheck:37), no vol-regime attenuation of trend forecasts (B24), a
+   four-level trend forecast after the continuous version was rejected (config.py:19; CHANGES.md:14-15), an implied
+   diversification multiplier from 36-month realised book vol instead of 1-month vol with 6-month correlations
+   (book.py:198; MT128-C12-3), equal risk per asset class where he hand-weights commodities to about 40% (book.py:9; B06),
+   and a one-day delay cost of 0.10 Sharpe on the trend leg against his 0.01 threshold (CHANGES.md:25; MT026-C07-1). Each
+   remaining Carver rule promises +0.02 to +0.04 book Sharpe at most, under our dSR >= 0.05 bar (TESTING_PROTOCOL.md:18):
+   his method of accumulating small a-priori gains, above all on costs, cannot pass our protocol one change at a time.
+5. Action: two zero-slot audits (forecast calibration; execution and costs), three Batch 2 challengers in rank order
+   (cost-scaled buffer, vol-regime attenuation, Carver-capped continuous trend, the last conditional on the audits), and
+   two decisions for the user: a cost-only adoption route, and whether the -25% holdout drawdown criterion, which his
+   drawdown arithmetic says adds nothing beyond Sharpe and length (MT218-C05-2) and which our audit shows is the binding
+   one (stats_audit:35), should stay.
+
+## 2. Logical foundation
+
+| Premise | Type | Source |
+|---|---|---|
+| P1 Momentum in futures from about an hour to about a year (perhaps 18 months); reversion below an hour and beyond a year | empirical | MT064-C19-1, C20-1, C20-2, C20-5; MT137-C09-4; B30 |
+| P2 Returns are risk premia plus behavioural lag; anyone can harvest them | theoretical/behavioural, ASSERT | MT137-C01-1, C01-2; MT140-C09-1 |
+| P3 Low Sharpe makes (a) years of results noise and decay undetectable, (b) means unforecastable while vol is (R2 0.35 month to month, correlation 0.2-0.25), (c) selection among many strategies or instruments a selection of luck | statistical | MT140-C07-4, C08-1; MT093-C16-4; MT128-C12-2; MT137-C07-2; MT026-C14-1 |
+| P4 Kelly: optimal vol = Sharpe; uncertain Sharpe -> half Kelly; leverage is free for a futures trader, so Sharpe is the metric and skew second order | theoretical | MT044-C09-1, C09-2; B01, B19; MT064-C16-4; B17 |
+| P5 Costs are predictable, returns are not; liquidity is not constant | institutional | MT106-C07-6; MT160-C17-1; MT128-C05-1 |
+| P6 An overridden system cannot be tested; humans fiddle in drawdowns | behavioural | MT010-C10-1; MT144-C02-1 |
+
+Chains (every arrow is a step he states):
+
+- Sizing: P3b + P4 -> size by forecast / instrument vol (B01) -> re-size as vol moves, so a parabolic winner is sold
+  into its peak (silver bought at $53 and $59, sold at $71 and $81, 3% lost on the record down day; MT128-C03-3, C05-4)
+  -> higher Sharpe than static sizing (B22, B31; MT064-C16-2) -> the skew static sizing buys is worth less than the
+  Sharpe it costs (B17, MT137-C13-2) -> continuous, vol-scaled, no stops (MT137-C16-X2, MT128-C04-X2). Extreme forecasts
+  arrive when vol is unusually low and about to revert, so blend one-month vol 70/30 with ten-year (B05, B06).
+- Forecast: P1 + P3b -> forecast = scaled risk-adjusted expected return, average 10, cap 20 (B04, MT044-C11-4) ->
+  larger forecast, larger position (B04) -> cap because extreme buckets flatten or revert (B04, B05) -> let book risk
+  float with aggregate forecast strength (B03).
+- Breadth: P3 -> a new market correlates 0.4-0.5 with the book, a new trend variant 0.8-0.9, carry about 0.5
+  (MT064-C07-2, C07-3) -> markets first, then styles -> multiply the book 4-5x to reach target (MT128-C11-2) -> but a
+  handful of latent factors drive CTA returns, 55% factor / 45% idiosyncratic (MT026-C16-1, MT128-C14-2), so breadth
+  buys fewer bets than it seems; alternatives settle near 30% once cash efficiency binds (MT128-C16-2).
+- Costs and speed: P5 + P1 -> at most a third of pre-cost Sharpe on costs, 0.13 Sharpe units a year (B02, B26) -> slow
+  expensive instruments, fast rules only where cheap (B26, B27) -> buffer or dynamic optimisation so a trade happens only
+  when worth its cost (MT026-C08-1, C08-2; B13) -> a slow system must be insensitive to a one-day fill delay; over 0.01
+  Sharpe lost means trade slower or use intraday data (MT026-C07-1, MT137-C06-2).
+- Research: P3c + P6 -> default no fitting (MT010-C09-2) -> same rule weights for every instrument, or an average of
+  instrument, class and global fits (MT106-C12-2, MT010-C08-2) -> full history; 20-50 years alike, 2-3 years much worse
+  (MT093-C15-2, C15-3) -> weight parameter sets, do not pick one (MT140-C06-1) -> backtest output is a probability that
+  becomes a weight (MT218-C17-2) -> never time the strategy (MT044-C21-3, MT196-C13-1, MT218-C12-2).
+
+Decision process: position_i = capital x target x (sum_r w_r F_r,i / 10) / (N x vol_i) x IDM, forecasts capped at
++/-20 (B01, B06), rule weights 0.6 trend-like / 0.4 convergent (B06), daily decision from the prior close with buffering
+(MT026-C08-X1, C08-2), 25% target under half Kelly (B01, MT044-C09-2), weights refit about every three years
+(MT137-C08-2), about one new rule a year (MT140-C10-1), annual cost reconciliation (MT196-C13-2). Risk falls by itself
+when forecasts weaken: half of target in June 2024, a third in 2025-26 (MT160-C03-1, MT196-C06-3).
+
+## 3. Evidence grading
+
+| Claim | Grade | Reason |
+|---|---|---|
+| Vol scaling beats static sizing: B22 FV Sharpe 1.18 vs 1E1S 0.88, about 100 futures; B31 0.92 vs 0.57, t 3.59; B21 0.25 vs 0.19 per instrument | moderate-strong | SHOWN three times, after costs in B31, matches Quantica (MT064-C16-2); one rule family, in sample, digest unverified. |
+| Skew worth at most 4-6 bp of Sharpe per 5 units (B17) | moderate | bootstrap; assumes free leverage; not peer reviewed. |
+| Non-binary forecasts: pooled first-to-last t 35.7, carry 40.9 (B04); FV vs BV Sharpe 1.18 vs 1.15 (B22) | direction strong, size weak | overlapping returns inflate the t-stats; Sharpe gain over binary 0.03. |
+| Blended vol removes two thirds of a 10-20% risk bias at extreme forecasts (B05) | weak-moderate | in-sample blend, one motivating market, Durbin-Watson 0.03. |
+| Forced constant risk cuts Sharpe 0.93 -> 0.64 (B03) | moderate | one system, 20 instruments; mechanism matches B04. |
+| Cost arithmetic: EWMAC 2 -> 64 turnover 42 -> 2.1, limit 0.13 (B02, B26); live costs just under 100 bp, within 1-2 bp of model (MT196-C13-2, MT106-C07-7) | strong | costs are observable; the one-third rule is a heuristic (ASSERT). |
+| Pooled fitting about equals equal weights, 0.60-0.66 (B11) | weak-moderate | 14 instruments, one period, inside noise. |
+| Vol-regime attenuation +0.04 to +0.09 net per rule (B24) | weak-moderate | overlapping daily data, cutoffs by eye, weaker at a 3-day lag, motivated by 2020. |
+| Skew rule +7 bp (B18); asset-class demeaned 0.1 Sharpe, insignificant (B15) | weak | his own tests; weight 0.04 (B06). |
+| 70% of trend profit from the class index (MT044-C07-3) vs 80-85% (MT144-C06-1) | ASSERT | numbers differ by episode. |
+| 16-25 independent bets (MT026-C16-2) | ASSERT | inferred from backtest scaling. |
+| Decay undetectable (MT140-C07-4); average return roughly halved since 2010, environmental (B25) | moderate | sound statistics; B25 pre-cost, small cohorts. |
+| Bonds trend better (MT044-C18-1) vs no class difference (MT029-C06-2) | ASSERT, inconsistent | both within a year. |
+| Risk premium, not inefficiency (MT137-C01-1); macro views | ASSERT; opinion | untested; views admitted wrong Feb 2026 (MT128-C08-X2), kept out of the book. |
+| Record: +23.7% (MT106-C06-1); -14.7% vs SG CTA -10% in 2024-25 (MT196-C10-2); 300 bp of the good year was margin interest (MT106-C21-4) | weak as skill | 12 years, fragments, 25% vol. |
+
+## 4. Rules worth keeping
+
+Tags: ALREADY (file:line) / DIFFERS (how) / MISSING.
+
+| # | Rule (codable) | Source | Status |
+|---|---|---|---|
+| 1 | Forecast = scaled risk-adjusted expected return, average abs 10, cap +/-20; non-binary; no intercept | B04; MT044-C11-4; MT064-C10-2 | DIFFERS: trend = mean of three signs, four levels (book.py:71-72); econ tanh(z/2), z capped at 3 (signals.py:98, 244); scores clipped to [-1,1], no common average (book.py:127); continuous trend rejected, 1.43 vs 1.48 and 0.76 vs 0.93 (CHANGES.md:14-15). No intercept ALREADY (signals.py:95). |
+| 2 | Vol = 70% one-month EW + 30% ten-year; vol floor | B05, B06; MT128-C12-3 | ALREADY: fast_w 0.7, floor 0.75 x 10-year (config.py:22; vol.py:4-7, 48-51); our fast half-life 35 days, his about a month. |
+| 3 | Position = forecast x capital x target / (N x vol) x IDM; scale with account value | B01; MT128-C11-2; MT144-C05-1 | ALREADY in structure: score x 0.40 / vol, 1/N in class, unit-vol blocks, family share, book to 10% (book.py:132-139, 191-199). |
+| 4 | IDM from 6-month EW correlation of subsystem P&L and 1-month vol, estimated separately; set below the estimate | MT128-C11-4, C12-1, C12-3; MT026-C11-2; B06 | DIFFERS: implied IDM = 10% / 36-month realised vol of the unscaled book (book.py:198); block scaler clipped at 50 (book.py:191). |
+| 5 | Let book risk float with aggregate forecast strength | B03; MT106-C05-X2 | ALREADY: the slow scaler leaves monthly forecast strength in (book.py:197-199); realised 36m vol 4.9-14.2% vs 10% (protocol_diagnostics:4, 6). |
+| 6 | Risk target under half Kelly and under 20-30% vol; no stops | B01, B19; MT064-C06-3; MT137-C16-X2 | ALREADY, safe side: 10% (config.py:27); no stops. |
+| 7 | Exogenous overlay: min(1, 2T/risk, 4T/risk at correlations 1, 6T/risk at 99th-pct vols); 30-day vol, 120-day corr | B14 | MISSING; per-market risk cap and 5x gross cap only (book.py:200-204); scenario limit rejected on Sharpe (CHANGES.md:19, 23). |
+| 8 | Speed limit: annual cost <= 0.13 Sharpe units and <= a third of pre-cost Sharpe; per-trade cost <= 0.01 to trade an instrument; costs in the backtest from day one | B02, B11, B26, B29; MT137-C07-4 | Costs ALREADY (book.py:210-215; 2x test TESTING_PROTOCOL.md:20). Gate DIFFERS: none; (reader) design cost drag about 0.11 Sharpe (1.47 vs 1.36 at 2x costs, CHANGES.md:51), under his limit; EM FX at 8 bp one way (book.py:53) is about 0.013 per round trip at an assumed 12% vol, above his 0.01. |
+| 9 | No-trade buffer: skip a change under 10% of a standard position, wider for expensive instruments; or a portfolio tracking-error buffer of 10% of target | MT026-C08-2, C11-1; B13; MT137-C14-2 | MISSING (planned, gap_review_crosscheck:37). |
+| 10 | Delay test: fills one or two days late; over 0.01 Sharpe lost = sensitive | MT026-C07-1; MT137-C06-2 | DIFFERS: trend leg 0.95 -> 0.85 at one day, 0.64 at five (CHANGES.md:25); book 1.01 -> 0.96 (timing_grid row 2); answered with "trade on day one" (config.py:43), since slower loses at every delay (CHANGES.md:26). |
+| 11 | Trend 60 / convergent 40 | B06; MT218-C05-X1 | ALREADY by share: trend 45 + econ 15 / carry 25 + value 15 (config.py:62); econ is not in his set. |
+| 12 | Same rule weights for all instruments; pooled or averaged fits; full history, never 2-3 years | MT106-C12-2; MT010-C07-1, C08-2; MT093-C14-1, C15-2 | ALREADY (one rule set, fixed shares; design 1975-2010, TESTING_PROTOCOL.md:11). |
+| 13 | Hierarchical handcrafted weights; group clusters so they do not eat the budget; class weights equities 0.22, bonds/STIR 0.19, ags 0.15, FX 0.13, metals 0.13, energy 0.13, vol 0.05 | B06, B08; MT144-C08-1; MT218-C08-3 | DIFFERS: equal risk per class (book.py:9), equal weight in class (book.py:138-139), so the US curve holds 5 of 15 FI slots; cluster weights rejected (CHANGES.md:17). |
+| 14 | Alternative markets about 30% once cash efficiency binds; add a style by correlation (0.4 -> 5-10%; 0.89 -> skip) | MT128-C16-2; MT144-C06-4, C07-1, C07-2 | ALREADY in spirit: alternative commodities capped at 30% of commodity risk (book.py:140-148); family correlations -0.16 to 0.26 (CHANGES.md:30). |
+| 15 | Trend the local-currency price, FX separate; one back-adjusted series; EMA-smoothed carry | MT093-C08-1; MT160-C09-2, C10-1 | ALREADY for the first two (panel.py:7, 13); carry unsmoothed, monthly (signals.py:329-347). |
+| 16 | Attenuate momentum forecasts in high vol: L = 2 - 1.5 Q, Q = percentile of current vol in its 10-year history | B24, B06; MT010-C15-2 | MISSING. |
+| 17 | Skew rule: long recent heavy negative skew, weight 0.04 | MT137-C15-1; MT140-C08-13; B15, B18 | MISSING; weak evidence (section 3). |
+| 18 | Asset-class index trend plus residual momentum | MT044-C06-1, C07-1 | MISSING; he says results almost identical to plain trend (MT044-C07-3). |
+| 19 | Never time trend by drawdowns, VIX or recent return | MT044-C21-3; MT196-C13-1; MT218-C12-2; MT010-C16-4 | ALREADY: scalers rejected (CHANGES.md:73). |
+| 20 | Drawdown read in Sharpe units; not a separate criterion | MT044-C04-2; MT218-C05-2; MT196-C11-2 | DIFFERS: holdout needs worst fall > -25% (CHANGES.md:34-35); protocol test 5 (TESTING_PROTOCOL.md:21). |
+| 21 | Backtest output = probability -> weight; 5% significance too strict for allocation | MT218-C17-2; MT134-C17-3 | DIFFERS: Holm p < 0.05 and dSR >= 0.05, adopt or not (TESTING_PROTOCOL.md:17-18). |
+| 22 | Judge liquidity over 1-2 years, not recent volume | MT128-C05-2 | MISSING until Bloomberg file 5 (BLOOMBERG_PULL_GUIDE.md:13). |
+
+## 5. Conflicts
+
+- Niels, markets: 300 vs 100 (MT026-C17-1). Carver's own factor view (five bets, MT026-C16-1; alternatives add one
+  factor, MT026-C16-X1) undercuts his 300; his defence is non-linearity (MT026-C17-4). Unresolved; our concentration
+  (fx_krw contributed 42% of capital, protocol_diagnostics:10) says 62 markets are fewer bets than they look.
+- Niels, Sharpe as the objective for trend: evidence favours Carver (B17, B22, B31).
+- Yoav Git (U05), execution: Carver's 2 bp saving (MT029-C15-2) is for liquid futures only. Unresolved until U05.
+- U01 (AQR Economic Trend): Carver finds macro data costly and expects macro momentum to correlate highly with price
+  trend (MT144-C06-X1, C06-2); AQR shows econ-trend Sharpe 1.1 gross at 0.4 correlation (U01 section 1). Ours sit
+  between: econ adds (t 2.8, CHANGES.md:30) but the book was better without it at 30% (1.57 vs 1.47, trials.csv:6, 4);
+  econ is now 15% (config.py:62). Evidence favours Carver at 30%, neither side at 15%. Both reject regime timing.
+- Inside the unit: (a) leverage ceiling 20-30% (MT064-C06-3) vs half Kelly 40-50% at Sharpe 1 (MT221-C14-1): the
+  ceiling rules, by Sharpe uncertainty; (b) no regime switching (MT010-C16-4) vs attenuating momentum in high vol
+  (MT010-C15-2, B24): size, not speed, a fine line; (c) drawdown carries no information (MT218-C05-2) vs a 50% drawdown
+  is a real concern (MT196-C12-1): consistent, 50% is outside what Sharpe and length predict; (d) short samples are
+  noise vs conclusions from one 12-month review (MT106-C07-3): he reports, does not act; (e) the class-level claims in
+  section 3: unresolved.
+- Our book, continuous forecasts: 'cont' lost 0.05 and 0.17 (CHANGES.md:14-15) where B04 says forecast strength carries
+  information. (reader) Our cap of 2 on z was roughly 2.5-4x the average absolute z, far looser than his 2x, and B04-B05
+  predict tail reversion in loosely capped slow forecasts; B22 puts the gain over binary at 0.03. Unresolved; T1, T5.
+- Our book, delay: 0.10 per day against his 0.01 (row 10). Our data beat his heuristic on speed (slower loses at every
+  delay, CHANGES.md:26) but confirm his warning: a late month-end trade costs real Sharpe.
+- Our protocol: he adopts cost rules on arithmetic and signal rules on robust evidence (MT106-C09-1, MT010-C09-2); ours
+  applies one bar, dSR >= 0.05 with Holm, to both (TESTING_PROTOCOL.md:17-18, 41). A buffer, or a cost gate that trims
+  an in-sample winner (KRW: 1.46 -> 1.35 without it, protocol_diagnostics:10), can never pass. Decision for the user.
+
+## 6. Test proposals (ranked)
+
+T1. Forecast-calibration audit (zero slot). Hypothesis: as in B04, next-month vol-normalised return rises
+monotonically with our trend forecast, and the extreme buckets of the uncapped continuous z flatten or revert. Rule:
+per leg (1, 3, 12 months) and blend, z_h as in book.py:74-75 unclipped, four buckets by sign and quantile, all markets
+pooled, design months only, Newey-West t per adjacent pair. Data: free. Expected (reader): monotone for 3 and 12 months,
+weakest for 1, reversion in the top 12-month bucket (B04, B05). Fails usefully if flat: T5 is dropped. Cost: no Holm
+slot; logged; it fixes no parameter, only whether T5 is registered.
+
+T2. Execution and cost audit (zero slot). (a) Delay profile k = 0, 1, 2, 3, 5 days per leg and family against his 0.01
+rule (MT026-C07-1): which leg carries the 0.10 loss (CHANGES.md:25). (b) Turnover split into signal, vol-estimate and
+book-scaler churn, holding the other two fixed each month (MT137-C14-1). (c) Cost drag per market in Sharpe units per
+trade and per year against his 0.01 and 0.13 ceilings (B26, B29), EM FX, natural gas and EM equities first
+(book.py:46-57). Data: free; Bloomberg file 6 later adds daily commodities (BLOOMBERG_PULL_GUIDE.md:14). Expected
+(reader): the 1-month leg carries most of the delay loss; non-signal churn 20-40% of turnover; EM FX breaches the
+per-trade ceiling. Fails usefully if churn is under 10% (T3 not registered). Cost: none.
+
+T3. Cost-scaled no-trade buffer (one Holm slot, Batch 2, only if T2 finds non-signal churn >= 20%). Rule: after all
+caps (book.py:204), trade market i only if |target_i - held_i| > b_i x u_i, u_i = trailing 36-month mean |pos_i| (the
+standard position, point in time), b_i = 0.10 x cost_i / median cost in [0.05, 0.30] (MT026-C08-2, C11-1); trade to
+the buffer edge (B13). Expected: turnover down 20-30% (B27: EWMAC4 61.8 -> 49.8, digest, unverified), cost drag 0.11 ->
+about 0.08, gross Sharpe unchanged within noise, so dSR +0.02 to +0.03: fails test 2 by construction. Fails if gross
+Sharpe falls by more than the cost saved or turnover falls under 15%. Why anyway: the gain is in the predictable part of
+returns (MT106-C09-1). Amendment for the user: a "cost route" for execution-only changes, adopt if net dSR > 0 at 1x
+and 2x costs, |gross dSR| <= 0.02, turnover down >= 20%, test 5 passes, no Holm slot. Without it T3 is a diagnostic.
+
+T4. Vol-regime attenuation of the trend family (one Holm slot, Batch 2). Rule: Q_i,t = percentile of the hybrid vol
+(vol.py:38-52) in its own trailing 10-year distribution (minimum 5 years); L = 2 - 1.5 Q in [0.5, 2] multiplies the
+trend score before block scaling (book.py:191); other families untouched (B24: carry p 0.32). Data: free; Bloomberg
+file 6 for commodity daily vol. Expected: B24 gives +0.04 to +0.07 per rule at our speeds, less with lag, so trend
+family +0.03 to +0.06 and book +0.02 to +0.04 (reader: 45% share, 0.65 pass-through): fails test 2 by a small margin
+unless our panel shows more. Era risk: 1970s-80s inflation trends ran at high vol, so the 1975-89 lower bound may
+breach -0.10. Fails if dSR < 0.05 or that bound breaks. Worth the slot: the one SHOWN Carver rule we lack, with a
+mechanism (vol mean reversion whipsaws momentum, B24; MT010-C16-3), not a regime call, so Harding's H3 holds.
+
+T5. Carver-capped continuous trend (one Holm slot, Batch 2, only if T1 shows monotone buckets with tail reversion).
+Rule: F_h = 10 x z_h / mean|z_h|, the mean pooled across markets over an expanding window from 1960 (minimum 10 years,
+point in time), cap +/-20, legs blended equally, position proportional to F / vol. Differs from the rejected variant
+(fixed cap 2 on z, CHANGES.md:15) in a cap at twice the average (B04) and an estimated scalar. Expected: B22's 0.03 at
+rule level gives book dSR 0 to +0.02: fails test 2 unless T1 shows strong tail reversion (then the earlier loss was a
+capping artefact). Fails if dSR < 0.05 or the 1975-89 bound < -0.10 (the rejected variant lost 0.17 there).
+
+No test, not worth a slot: the skew rule (+7 bp, insignificant demeaned version; B18, B15); the exogenous overlay
+(Sharpe-neutral by his numbers, B14, cannot pass test 2); class weights tilted to commodities (B06 is judgement; our
+commodity data are front-month Yahoo until Bloomberg, gap_review_crosscheck:26); a faster IDM window (B03 argues against
+forcing risk back to target); asset-class index trend (identical results, MT044-C07-3; an effective-bets PCA can ride
+along the Batch 2 universe decision); the half-Kelly target (a scaling choice); a per-instrument cost gate (cannot pass
+a Sharpe test when it removes KRW; a decision, not a test).
+
+## 7. Forward-looking logic
+
+Inputs that lead prices, in his chain: own past excess return over one month to a year (P1), best held three weeks to
+three months (B30), decaying under two weeks and gone beyond about 18 months (MT064-C20-5, MT137-C09-4); futures curve
+slope for carry (MT140-C08-6), smoothed over 10-125 days (B06); realised vol, which forecasts next month's vol (R2 0.35,
+MT128-C12-2) and so the right size, and whose level forecasts the payoff to momentum (high vol, weaker momentum, B24);
+recent negative skew, a small premium (B15); multi-year relative underperformance beyond two years (B30, MT140-C08-8).
+The system's own aggregate forecast strength forecasts its risk-adjusted return (B03) and is a readable state variable
+(risk at a third of target = trendless market, MT106-C05-X2), though he refuses to time with it. It stops working: (a)
+in sharp V-shaped reversals at the wrong speed, April 2025 -5.5% (MT196-C05-2, MT010-C15-4), where no speed is right ex
+ante (MT010-C16-2); (b) when a long smooth trend reverses and vol-scalers all cut together (MT026-C02-2, MT128-C05-3,
+asserted); (c) in high-vol regimes (B24, MT010-C16-3); (d) at the 1-2 year horizon where neither trend nor reversion pays
+(B30); (e) when liquidity vanishes in stress (MT128-C05-1, MT196-C15-2); (f) slowly, as an environmental decay that
+roughly halved the average pre-cost return after 2010 (B25), our holdout era: expect the live Sharpe well below the
+design 1.63 (CHANGES.md:28), as the holdout bar of 0.3 already assumes (TESTING_PROTOCOL.md:87-89).
+
+## 8. Self-check
+
+Re-verified against the pack: 0.5-1 (MT044-C04-2); 1.18 / 1.15 / 0.88 (B22); 0.92 / 0.569 / 3.59 (B31); 0.25 / 0.19
+(B21); 4-6 bp per 5 units (B17); 35.7 / 40.9 (B04); 10-20%, two thirds (B05); 0.93 / 0.64 (B03); 42 -> 2.1, 0.13
+(B26); 61.8 -> 49.8 (B27); just under 100 bp (MT196-C13-2); 1-2 bp (MT106-C07-7); 0.60-0.66 (B11); +0.04 to +0.09,
+p 0.32 (B24); +7 bp (B18); 0.1 (B15); 70/30 (MT044-C07-3); 80-85% (MT144-C06-1); 4-5x, 16-25 (MT026-C16-2,
+MT128-C11-2); 55/45 (MT128-C14-2); 70/30 traditional/alternative (MT128-C16-2); 0.4-0.5 / 0.8-0.9 / 0.5 (MT064-C07-2,
+C07-3); 5-10% at 0.4 (MT144-C07-1); 40% (MT218-C05-X1); 0.6/0.4 and the class weights (B06); R2 0.35, 0.2-0.25
+(MT128-C12-2); 6 months / 1 month (MT128-C12-3); 10% buffer (MT026-C08-2); 0.01 (MT026-C07-1); 20-30% (MT064-C06-3);
+40-50% (MT221-C14-1); 25%, 1% (MT026-C10-3); 2 bp of 4 (MT029-C15-2); $53/$59/$71/$81, 3% (MT128-C03-3, C05-4); +23.7%
+(MT106-C06-1); -15%, -14.7% vs -10% (MT196-C09-2, C10-2); 300 bp (MT106-C21-4); -5.5% (MT196-C05-2); half / a third
+(MT160-C03-1, MT196-C06-3); 20-50 vs 2-3 years (MT093-C15-2, C15-3); 3 years (MT137-C08-2); one a year (MT140-C10-1);
+75% (MT134-C17-3). Against the repo: 0.30/0.30/0.20/0.15/0.05 and 0.45/0.15/0.25/0.15 (config.py:16, 62); sign 1/3/12,
+cap 2 (config.py:19); 35 days, 6 months, 0.7, 0.75 (config.py:22); 10%, 5x, 0.10 (config.py:27-29); 1-8 bp, rolls 4-12
+(book.py:46-57); 0.40 (book.py:132); 30% (book.py:147); 36 months, clip 50 (book.py:187-191, 198); 1.43 / 1.48 / 0.76 /
+0.93 (CHANGES.md:14-15); 0.95 -> 0.85 -> 0.64 -> 0.61 (CHANGES.md:25-26); 1.47 / 1.36 (CHANGES.md:51); 1.57 vs 1.47
+(trials.csv:6, 4); 1.63, t 2.8, -0.16..0.26 (CHANGES.md:28-30); 1.46 -> 1.35, 42% (protocol_diagnostics:10);
+4.9/10.3/13.3, 6.1/9.5/14.2 (protocol_diagnostics:4, 6); 0.61, 0.41 (stats_audit:35); dSR >= 0.05, -0.10, Holm
+(TESTING_PROTOCOL.md:17-19); 62 markets (TESTING_PROTOCOL.md:25; panel.py:1 says 64). Derived (reader): cost drag 0.11 =
+1.47 - 1.36; EM FX 0.013 = 2 x 8 bp / 12% assumed vol; pass-through 0.65; 2.5-4x average for the old cap. Corrections
+during the check: MT144-C06-1's 80-85% does not match MT044-C07-3's 70%, so both are cited as a range; B14's Sharpe
+pair is ambiguous in the digest and is cited only as "neutral"; three line references (Bloomberg files 5 and 6, the
+1.48 base row) were off by one line and were fixed; the per-trade cost of EM FX rests on an assumed 12% vol, not a
+measured one.
+
+Strongest counter-argument to the verdict: his rules were built for a daily-rebalanced 250-market retail book at 25%
+vol (MT128-C02-2, MT026-C10-3); a monthly 62-market book at 10% vol has already buffered and slowed by construction, so
+his remaining rules may be worth even less here than estimated, and the matches counted as "already in our book" (70/30,
+60/40) are round numbers two practitioners chose independently: agreement, not validation. Conversely, our 0.10-per-day
+delay loss says our book has a fast component his daily system would handle; the right answer might be his (trade daily
+with buffers), and nothing here tests that.
+
+Strongest counter-argument to T1: it is a look at design-period returns that shapes a later challenger, a mild
+selection step even with no parameter chosen; pooled bucket t-stats are inflated by overlap and cross-market dependence
+that Newey-West does not remove; and monotone bucket means do not imply that a continuous position function raises
+Sharpe (B22's 0.03 says it barely does), so T1 can pass and T5 still come out null.
