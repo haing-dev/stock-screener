@@ -2,7 +2,7 @@
 tags: [fable, foundation]
 unit: U01
 name: "AQR Economic Trend"
-model: Fable 5.1, effort max
+model: claude-fable-5-1, effort max
 inputs: _data/foundation_packs/U01.json
 code_commit: dac10db
 ---

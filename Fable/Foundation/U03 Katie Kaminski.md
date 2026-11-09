@@ -2,7 +2,7 @@
 tags: [fable, foundation]
 unit: U03
 name: "Katie Kaminski"
-model: Fable 5.1, effort max
+model: claude-fable-5-1, effort max
 inputs: _data/foundation_packs/U03.json
 code_commit: dac10db
 ---

@@ -2,7 +2,7 @@
 tags: [fable, foundation]
 unit: U06
 name: "Man AHL (Robertson, Moore)"
-model: Fable 5.1, effort max
+model: claude-fable-5-2, effort max
 inputs: _data/foundation_packs/U06.json
 code_commit: dac10db
 ---

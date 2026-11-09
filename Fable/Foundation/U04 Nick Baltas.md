@@ -2,7 +2,7 @@
 tags: [fable, foundation]
 unit: U04
 name: "Nick Baltas"
-model: Fable 5.1, effort max
+model: claude-fable-5-1, effort max
 inputs: _data/foundation_packs/U04.json
 code_commit: dac10db
 ---

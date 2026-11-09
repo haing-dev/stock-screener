@@ -5,7 +5,8 @@
   "papers": [
    "QP01"
   ],
-  "done": "fable/F1_economic_trend.md"
+  "done": "fable/F1_economic_trend.md",
+  "model": "claude-fable-5-1"
  },
  {
   "id": "U02",
@@ -19,7 +20,8 @@
   "topic": "trend/carry systematic practice: sizing, costs, forecasts, diversification, fitting",
   "speaker_match": {
    "rob_carver": "carver|^rob\\b"
-  }
+  },
+  "model": "claude-fable-5-1"
  },
  {
   "id": "U03",
@@ -27,7 +29,8 @@
   "investors": [
    "katie_kaminski"
   ],
-  "topic": "trend as crisis alpha, inflation and stock-bond correlation, design dispersion"
+  "topic": "trend as crisis alpha, inflation and stock-bond correlation, design dispersion",
+  "model": "claude-fable-5-1"
  },
  {
   "id": "U04",
@@ -35,7 +38,8 @@
   "investors": [
    "nick_baltas"
   ],
-  "topic": "QIS, trend design, premia vs flow anomalies, carry"
+  "topic": "QIS, trend design, premia vs flow anomalies, carry",
+  "model": "claude-fable-5-1"
  },
  {
   "id": "U05",
@@ -46,7 +50,8 @@
   "topic": "sources of trend by asset class, market selection, execution",
   "speaker_match": {
    "yoav_git": "\\bgit\\b|yo kit|^yov\\b"
-  }
+  },
+  "model": "claude-fable-5-1"
  },
  {
   "id": "U06",
@@ -55,7 +60,8 @@
    "graham_robertson",
    "harry_moore"
   ],
-  "topic": "trend attribution, market breadth, crisis vs long-run Sharpe, portable alpha"
+  "topic": "trend attribution, market breadth, crisis vs long-run Sharpe, portable alpha",
+  "model": "claude-fable-5-2"
  },
  {
   "id": "U07",
@@ -73,7 +79,8 @@
    "QP04",
    "QP11",
    "QP14"
-  ]
+  ],
+  "model": ""
  },
  {
   "id": "U08",
@@ -81,7 +88,8 @@
   "maps": [
    "MT020"
   ],
-  "topic": "risk-first trend trading, robust statistics, anti-overfit testing"
+  "topic": "risk-first trend trading, robust statistics, anti-overfit testing",
+  "model": ""
  },
  {
   "id": "U09",
@@ -89,7 +97,8 @@
   "papers": [
    "QP09"
   ],
-  "topic": "risk structure of trend following (lookback straddles)"
+  "topic": "risk structure of trend following (lookback straddles)",
+  "model": ""
  },
  {
   "id": "U10",
@@ -97,7 +106,8 @@
   "papers": [
    "QP15"
   ],
-  "topic": "cross-asset value and momentum factors, funding liquidity"
+  "topic": "cross-asset value and momentum factors, funding liquidity",
+  "model": ""
  },
  {
   "id": "U11",
@@ -105,7 +115,8 @@
   "papers": [
    "QP08"
   ],
-  "topic": "cross-sectional vs time-series value, momentum, carry"
+  "topic": "cross-sectional vs time-series value, momentum, carry",
+  "model": ""
  },
  {
   "id": "U12",
@@ -113,7 +124,8 @@
   "papers": [
    "QP06"
   ],
-  "topic": "curve spread and curvature mean reversion"
+  "topic": "curve spread and curvature mean reversion",
+  "model": ""
  },
  {
   "id": "U13",
@@ -121,7 +133,8 @@
   "papers": [
    "QP07"
   ],
-  "topic": "short-rate futures curve model"
+  "topic": "short-rate futures curve model",
+  "model": ""
  },
  {
   "id": "U14",
@@ -129,7 +142,8 @@
   "investors": [
    "stanley_druckenmiller"
   ],
-  "topic": "discretionary macro: liquidity, policy, sizing"
+  "topic": "discretionary macro: liquidity, policy, sizing",
+  "model": ""
  },
  {
   "id": "U15",
@@ -137,7 +151,8 @@
   "investors": [
    "scott_bessent"
   ],
-  "topic": "discretionary macro process: catalysts, positioning veto, sizing"
+  "topic": "discretionary macro process: catalysts, positioning veto, sizing",
+  "model": ""
  },
  {
   "id": "U16",
@@ -149,7 +164,8 @@
    "MT138",
    "MT049"
   ],
-  "topic": "debt cycle, five forces, diversification, systematized discretion"
+  "topic": "debt cycle, five forces, diversification, systematized discretion",
+  "model": ""
  },
  {
   "id": "U17",
@@ -167,7 +183,8 @@
   "papers": [
    "QP05"
   ],
-  "topic": "macro fund combining discretionary and systematic books"
+  "topic": "macro fund combining discretionary and systematic books",
+  "model": ""
  },
  {
   "id": "U18",
@@ -175,7 +192,8 @@
   "maps": [
    "MT122"
   ],
-  "topic": "risk culture, leverage, never lose big"
+  "topic": "risk culture, leverage, never lose big",
+  "model": ""
  },
  {
   "id": "U19",
@@ -183,7 +201,8 @@
   "investors": [
    "cem_karsan"
   ],
-  "topic": "dealer flows, volatility, positioning; dated forecast record"
+  "topic": "dealer flows, volatility, positioning; dated forecast record",
+  "model": ""
  },
  {
   "id": "U20",
@@ -191,7 +210,8 @@
   "investors": [
    "pierre_andurand"
   ],
-  "topic": "commodity physical balances, supply response lags"
+  "topic": "commodity physical balances, supply response lags",
+  "model": ""
  },
  {
   "id": "U21",
@@ -199,6 +219,7 @@
   "papers": [
    "QP13"
   ],
-  "topic": "alpha testing, growth-optimal sizing, multiple testing"
+  "topic": "alpha testing, growth-optimal sizing, multiple testing",
+  "model": ""
  }
 ]
