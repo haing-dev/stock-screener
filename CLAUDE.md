@@ -78,6 +78,9 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Foundation phase (2026-11-09): 21 units (top funds, practitioners, core papers), one Fable max unit every 4 h via send_later.
   Spec/units/pack builder in macro-vault pipeline/foundation (FOUNDATION_SPEC.md, units.json, build_pack.py). Done: U01 AQR,
   U02 Carver (+31-post blog digest), U03 Kaminski, U04 Baltas. Notes also in docs/research/fable/foundation/.
+- Foundation PAUSED 2026-11-09 after U06 (user resumes; next U07 Winton, pack built). Units now run on claude-fable-5-2.
+  User rule: no "decisions/routes" for the user; open choices -> variant registry docs/research/fable/foundation/VARIANTS.md
+  (dimensions A-H, walk-forward selection on Bloomberg data, one Holm slot for the procedure; register before running).
 - OBSIDIAN = SINGLE TRACEABLE STORE (user rule 2026-11-09): everything goes into the vault (G:\...\Obsidian Macro\Macro):
   Sources/Papers/Investors/Mechanisms, Fable/Foundation (claim ids linked to quote blocks, code refs linked to GitHub at a
   fixed commit), Method/ (all specs, routing, units, aliases), _data/ (raw JSON bundles + exact Fable input packs). After each
