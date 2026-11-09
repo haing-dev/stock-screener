@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Cycle persistence (economic trend, regimes)
 
-933 claims from 192 sources. Each line links to the claim inside its source note.
+937 claims from 192 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -777,6 +777,7 @@ tags: [mechanism]
 - [[MT132 - Regime Shifts, Populism, and 2025 Predictions - Systematic Investor 323#^MT132-C10-2|MT132-C10-2]] — From 1968 to 1982 the market went nowhere (-70% real) yet every election year was up double digits.
 - [[MT132 - Regime Shifts, Populism, and 2025 Predictions - Systematic Investor 323#^MT132-C13-2|MT132-C13-2]] — Treating 2020 as the analogue of 1964, the populist cycle (1964-82 length) would run to about 2038.
 - [[MT132 - Regime Shifts, Populism, and 2025 Predictions - Systematic Investor 323#^MT132-C13-3|MT132-C13-3]] — Populist periods can be deflationary (Great Depression) yet in real terms markets show the same pattern; inflation and rates drive nominal outcomes.
+- [[MT132 - Regime Shifts, Populism, and 2025 Predictions - Systematic Investor 323#^MT132-C13-R1|MT132-C13-R1]] — The host notes that equities have doubled since 2020, so this populist cycle looks different from 1964-82 so far; he asks whether the driver is inflation rather than populism itself.
 - [[MT132 - Regime Shifts, Populism, and 2025 Predictions - Systematic Investor 323#^MT132-C18-1|MT132-C18-1]] — A dual approach (populist tariffs and immigration plus deregulation/cuts) likely extends the populist cycle and prolongs poor equity returns in real terms.
 
 ## [[MT133 - Resilient Strategies- Tailwinds in Left-Tail Scenarios - Pablo Calderini]]
@@ -871,6 +872,7 @@ tags: [mechanism]
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C04-2|MT150-C04-2]] — The 1969-70 analog is a shallow 1.5-year recession with poor earnings and equities rather than a deep V recession.
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C08-1|MT150-C08-1]] — As in the Nixon era, a short supply-side try gave way to more populist and interventionist policy.
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C13-1|MT150-C13-1]] — Structural problems resolve only through a crisis (the fourth turning), after which a new regime begins; outcome depends on unity, per Campbell's hero's journey.
+- [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C13-R1|MT150-C13-R1]] — The coming crisis can end badly: the West may fail to rise to it (not strong enough or unable to summon courage), so the fourth-turning resolution is not guaranteed to be positive.
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C16-4|MT150-C16-4]] — After the Feb-Mar drop and a rally, S&P 500 upside was capped around 5700-6000 as tariffs and politics worsened.
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C16-X2|MT150-C16-X2]] — Conditional forecast track record: after the Feb-March drop (about 15%, later 21%) he called a steep rally toward 6,000 or new highs, then lowered the ceiling after the tariff news and political changes; the S&P reached about 5,720 that week.
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C17-2|MT150-C17-2]] — Market tops form through a process, not a V reversal, so after a drop and rally the high may still be in a topping range.
@@ -893,6 +895,7 @@ tags: [mechanism]
 - [[MT153 - Stanley F. Druckenmiller- Monetary Policy & Markets#^MT153-C12-X1|MT153-C12-X1]] — Short JGBs was the favorite widowmaker trade in the late 1990s because Japan was seen as an outlier, but Japanese yields were really the leader of the global fall in yields (the 10-year later reached about minus 30 bp); betting on a JGB breakout needs a catalyst because it was dead money for years.
 
 ## [[MT154 - Steve Cohen and Jawad Mian at Sohn 2025]]
+- [[MT154 - Steve Cohen and Jawad Mian at Sohn 2025#^MT154-C01-R2|MT154-C01-R2]] — Cohen sees equities in a trading range for a while rather than a large decline or a new leg up.
 - [[MT154 - Steve Cohen and Jawad Mian at Sohn 2025#^MT154-C02-2|MT154-C02-2]] — Markets can go sideways for long stretches, which is historically normal.
 
 ## [[MT155 - Systematic Investing in 2025- Trends, Predictions & Bold Debates - Systematic Investor 328]]
@@ -1037,6 +1040,7 @@ tags: [mechanism]
 - [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-X1|MT178-C13-X1]] — Because history rhymes and geopolitical-risk episodes have been followed by inflation, lower growth and different asset behaviour, Kaminski expects the next three to five years to look different and treats the literature as a roadmap for allocating to trend.
 - [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-1|MT178-C15-1]] — Geopolitical shocks cause supply and demand shocks, especially commodities; fixed income is vulnerable to inflation shocks; equities depend on whether growth is hit, which has not happened in this episode; trend adapts to a changing macro environment.
 - [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-2|MT178-C15-2]] — In high inflation commodities trend up and bonds fall, so geopolitical risk through inflation creates profitable trends.
+- [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-R1|MT178-C15-R1]] — Trend is well positioned for changes in the macro environment; geopolitical risk is an indicator that the macro environment is changing, so it is one kind of stress among others.
 - [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-X1|MT178-C15-X1]] — Recollection (attributed uncertainly) that across true equity crises the most consistent trend contributor is the commodity sector, even though equity positions typically lose money.
 - [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C16-1|MT178-C16-1]] — In high-inflation historical periods stocks and bonds were mixed and negatively correlated 60/40 assumptions failed; long commodities and trend following stood out, so don't over-rely on 30-40 years of 60/40 history.
 

@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Structural shifts
 
-2069 claims from 220 sources. Each line links to the claim inside its source note.
+2079 claims from 220 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -958,6 +958,7 @@ tags: [mechanism]
 - [[MT074 - How CTAs and Portable Alpha Could Reshape Investing in 2025 - Top Traders Unplugged 149#^MT074-C09-4|MT074-C09-4]] — The 2010s of secular stagnation and low macro volatility gave way to higher macro volatility, favoring CTAs.
 - [[MT074 - How CTAs and Portable Alpha Could Reshape Investing in 2025 - Top Traders Unplugged 149#^MT074-C12-1|MT074-C12-1]] — Organizations unable to adopt TPA use portable alpha within existing sleeves to move toward the same result without restructuring.
 - [[MT074 - How CTAs and Portable Alpha Could Reshape Investing in 2025 - Top Traders Unplugged 149#^MT074-C12-2|MT074-C12-2]] — A CTA does not fit a single asset-class bucket (hedge fund team wants low beta, equity team wants equities), hence the bucket problem.
+- [[MT074 - How CTAs and Portable Alpha Could Reshape Investing in 2025 - Top Traders Unplugged 149#^MT074-C13-R1|MT074-C13-R1]] — Replication-based businesses spend more on marketing than research, whereas Aspect concentrates resources on research (about 90 people in research and development).
 
 ## [[MT076 - How Global Conflicts affect the Economy & 2024 Outlook - Systematic Investor 293]]
 - [[MT076 - How Global Conflicts affect the Economy & 2024 Outlook - Systematic Investor 293#^MT076-C01-3|MT076-C01-3]] — A record-low Chinese 10-year yield signals a weaker Chinese economy than it appears.
@@ -1187,6 +1188,7 @@ tags: [mechanism]
 - [[MT095 - Liquidity, Leverage, and the End of Safety - Systematic Investor - Ep.369#^MT095-C03-4|MT095-C03-4]] — Gold ETFs and CME acceptance of gold as margin collateral financialize gold and give it safe-asset characteristics.
 - [[MT095 - Liquidity, Leverage, and the End of Safety - Systematic Investor - Ep.369#^MT095-C06-X1|MT095-C06-X1]] — With ample reserves and interest paid on reserves, banks no longer need to borrow reserves, so the Fed funds market has shrunk to foreign-bank buyers and Federal Home Loan Bank providers and no longer represents true money-market funding rates.
 - [[MT095 - Liquidity, Leverage, and the End of Safety - Systematic Investor - Ep.369#^MT095-C09-1|MT095-C09-1]] — CME and FanDuel/Robinhood push prediction markets and retail into futures; financial innovation can have unintended consequences.
+- [[MT095 - Liquidity, Leverage, and the End of Safety - Systematic Investor - Ep.369#^MT095-C10-R1|MT095-C10-R1]] — Trade finance is an old banking business, so the novelty behind the First Brands losses is the packaging of it as a stable-return fund product rather than a new instrument.
 
 ## [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355]]
 - [[MT096 - Liquidity, Volatility, and a Dangerous Calm in Markets - Systematic Investor - Ep.355#^MT096-C10-2|MT096-C10-2]] — The 2022 trend gains came from a one-off rate adjustment from zero, with managers positioning early with large size, so 2022 performance should not be extrapolated.
@@ -1339,6 +1341,7 @@ tags: [mechanism]
 ## [[MT112 - Navigating Uncertainty- Trend Following and Market Distortions - Systematic Investor - Ep]]
 - [[MT112 - Navigating Uncertainty- Trend Following and Market Distortions - Systematic Investor - Ep#^MT112-C02-1|MT112-C02-1]] — Modern trade rests on integrated global supply chains, so tariffs aimed at reshoring final-goods manufacturing cannot easily bring production back (Apple cannot build iPhones outside China), a headwind for tariff-driven policy aims.
 - [[MT112 - Navigating Uncertainty- Trend Following and Market Distortions - Systematic Investor - Ep#^MT112-C02-2|MT112-C02-2]] — Long-term inflation is inversely related to social trust in institutions (cited from Vincent Deluard on Jesse Felder's podcast), e.g. Switzerland has high trust and low inflation.
+- [[MT112 - Navigating Uncertainty- Trend Following and Market Distortions - Systematic Investor - Ep#^MT112-C02-R2|MT112-C02-R2]] — Policy makers rely on textbook comparative advantage and miss that modern trade is driven by integrated supply chains, which explains flawed tariff thinking.
 - [[MT112 - Navigating Uncertainty- Trend Following and Market Distortions - Systematic Investor - Ep#^MT112-C07-2|MT112-C07-2]] — Volatility differs by market (cocoa vs S&P), so a single volatility regime across a multi-asset trend portfolio is not well defined.
 - [[MT112 - Navigating Uncertainty- Trend Following and Market Distortions - Systematic Investor - Ep#^MT112-C08-1|MT112-C08-1]] — 2025 uncertainty was created by the state (tariffs, man-made), unlike past crises built on market excesses like housing and tech bubbles; hence different behaviour from earlier trend-friendly crises.
 - [[MT112 - Navigating Uncertainty- Trend Following and Market Distortions - Systematic Investor - Ep#^MT112-C09-1|MT112-C09-1]] — Low cross-asset dispersion (one driver, here tariffs) reduces diversification and trend profit; dispersion rose in 2025 but not to an extreme.
@@ -1353,6 +1356,7 @@ tags: [mechanism]
 - [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-1|MT113-C08-1]] — Quant macro blends price-based signals with fundamental data, giving a more dynamically evolving positioning than pure trend.
 - [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-3|MT113-C08-3]] — The quant macro program has four sub-strategies: trend, value (long-run reversion), carry and macro fundamentals, combined by mean-variance; running eight years with Sharpe above one.
 - [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-4|MT113-C08-4]] — Fundamentals affect markets non-linearly and regime-dependently, so the macro signal uses about 900,000 time series, NLP sentiment and data compression with non-linear regression.
+- [[MT113 - Navigating a New World Order- Macro Strategies for Uncertain Times - Pablo Calderini#^MT113-C08-R1|MT113-C08-R1]] — About 15% of the absolute-return business (trend and quant macro programs) is quantitative.
 
 ## [[MT114 - New CTA Index being revealed! - Systematic Investor 311]]
 - [[MT114 - New CTA Index being revealed! - Systematic Investor 311#^MT114-C05-1|MT114-C05-1]] — Because a replicator charges no incentive fees, it looks more volatile than the net-of-fee index it is compared with; fee and expense intermediation provides a tailwind.
@@ -1796,6 +1800,7 @@ tags: [mechanism]
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C05-X1|MT150-C05-X1]] — Niels adds that how reshored jobs are filled changes the inflation effect: automation would not be inflationary, while an immigration crackdown removes the low-paid labour that would otherwise fill them, adding wage pressure.
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C07-1|MT150-C07-1]] — Inequality drives populism, so politics will keep moving toward spending on the bottom and away from supply-side policy.
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C14-1|MT150-C14-1]] — Unity decides whether the West meets the coming crisis; disunity (including from outside actors) is a risk factor.
+- [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C14-R1|MT150-C14-R1]] — Jim says outside actors explicitly pursue disunity in the West, and that social media magnifies both disunity and unity.
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C15-2|MT150-C15-2]] — As in 2007, crowds debate recession while a structural flaw (now Treasury market dysfunction) may be the real risk, so the real danger may be unspoken.
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C15-X1|MT150-C15-X1]] — Jim sees tariffs on allies, with a stated closeness to Russia, as disunifying the West, which he treats as a risk factor for the coming crisis (and a sign that the policy maker may be a 'useful fool').
 
@@ -2174,13 +2179,16 @@ tags: [mechanism]
 ## [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep]]
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C07-1|MT189-C07-1]] — In fundamental commodity trading (e.g. natural gas with step-function costs from coal to gas) distributions are non-normal and information asymmetries are large.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C09-2|MT189-C09-2]] — SMA usage keeps growing, offering capital efficiency (margin only), cross-margining, liquidity, transparency and customisation.
+- [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C10-R0|MT189-C10-R0]] — Beer says investors differ widely in preferences (capital efficiency, customisation, vehicle), so different vehicles for one strategy serve different investors.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C11-1|MT189-C11-1]] — Over 25 years of extra engineering and instruments the CTA Sharpe ratio has not improved.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C11-X2|MT189-C11-X2]] — Before the early 2000s CTAs were a managed-account business for high-net-worth futures accounts (Dean Witter, John W. Henry, Campbell) with heavy leverage; the hedge-fund wrapper was a historical accident, and the later spread into mutual funds, UCITS, QIS, managed accounts and ETFs is a return to flexible delivery.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C12-1|MT189-C12-1]] — SG splits CTAs into trend (dominated by large blue-chip firms) and non-trend (short-term, quant macro, commodity specialists), with non-trend niche or blending into quant multi-strats.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C12-X2|MT189-C12-X2]] — Non-trend CTAs are blending into quant multi-strategy groups, and a growing set of sophisticated managed-account investors (multi-strats and new fund-group structures) are happy to allocate to high-Sharpe, low-capacity strategies that large trend programmes cannot offer.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C13-2|MT189-C13-2]] — Quant macro (fundamental forward-looking data) was expected to grow versus trend but many such groups closed.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C13-3|MT189-C13-3]] — Calling trend 'plain vanilla' invites cheap, undifferentiated products which then failed.
+- [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C13-R1|MT189-C13-R1]] — Kaastrup-Larsen restates his point: trend is not plain vanilla, but its role as a portfolio element is now more broadly accepted than ten years ago.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C14-X1|MT189-C14-X1]] — Persistent investment opportunities exist because smart participants face constraints ('handcuffs', such as fixed strategic asset allocations) that stop them acting on them, in the spirit of the economists-and-the-$100-bill joke; this is the reason to expect trend alpha to persist.
+- [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C20-R1|MT189-C20-R1]] — Beer sees non-trend strategies as satellites to the core trend driver and not as big drivers of performance over time.
 
 ## [[MT190 - Trend Following Is Changing Faster Than Ever - Systematic Investor - Ep.409]]
 - [[MT190 - Trend Following Is Changing Faster Than Ever - Systematic Investor - Ep.409#^MT190-C01-1|MT190-C01-1]] — Practical issues such as tax treatment of dividends and price changes for single-stock futures (and Kalshi compute contracts) can block adoption even when the instruments are attractive.
@@ -2270,6 +2278,7 @@ tags: [mechanism]
 ## [[MT200 - Trend Following- How much to Allocate- - Systematic Investor 316]]
 - [[MT200 - Trend Following- How much to Allocate- - Systematic Investor 316#^MT200-C14-1|MT200-C14-1]] — Roy Niedhoefer's 2014 paper argued trend followers would struggle when rates rise; instead shorting bonds became profitable, showing no one knows the future.
 - [[MT200 - Trend Following- How much to Allocate- - Systematic Investor 316#^MT200-C16-2|MT200-C16-2]] — Include trend following inside strategic asset allocation (5-20%) so the benchmark absorbs the tracking error.
+- [[MT200 - Trend Following- How much to Allocate- - Systematic Investor 316#^MT200-C17-R1|MT200-C17-R1]] — Baltas says his 2019 sizing paper became relevant again for many clients because asset owners are asking more questions about 60/40 and trend than five years ago.
 
 ## [[MT201 - Trend Following...Austrian Style - Open Interest 8]]
 - [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C05-2|MT201-C05-2]] — Over the last 30-40 years long trades in equity and bond trend following beat short trades, while currencies and commodities show a different pattern; this is a sample-specific effect of secular bull markets.
@@ -2435,6 +2444,7 @@ tags: [mechanism]
 - [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C02-2|MT218-C02-2]] — Reworking or removing government survey data would hurt economic-trend and systematic global macro strategies that use economic releases, while pure price-based trend followers are unaffected.
 - [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C02-3|MT218-C02-3]] — US statistical data quality has degraded (cuts, secrecy, delayed releases from the government shutdown), which weakens economic indicators used as forecasting inputs.
 - [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C03-1|MT218-C03-1]] — Third-party nowcasting services can replace official statistics only if raw data remains available; deliberately removing data is dangerous for models trading on it.
+- [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C03-R1|MT218-C03-R1]] — Carver believes more data is always better, so deliberately ending collection of official statistics is dangerous for the economy and irritating for computers trading on it.
 - [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C08-2|MT218-C08-2]] — Trend following adds access to markets investors cannot easily trade themselves and is unbiased about long or short, e.g. fully short equities in a prolonged crisis.
 - [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C09-1|MT218-C09-1]] — The CFTC approved the first perpetual futures contract (crypto), which is effectively a daily-settled future with no expiry.
 - [[MT218 - Why Trend Following Is Harder Than It Looks - Systematic Investor - Ep.405#^MT218-C10-1|MT218-C10-1]] — Perpetual futures are daily-settled futures whose cash flows equal variation margin, so futures price tracks spot (interest, dividend and storage costs are negligible) and no rolling is needed.

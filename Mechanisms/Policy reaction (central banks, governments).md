@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Policy reaction (central banks, governments)
 
-1174 claims from 191 sources. Each line links to the claim inside its source note.
+1185 claims from 191 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -52,6 +52,7 @@ tags: [mechanism]
 - [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C12-1|MT008-C12-1]] — Lower rates because of debt concerns would run the economy hot and fuel asset bubbles.
 - [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C12-X1|MT008-C12-X1]] — A Warsh mix of smaller Fed balance sheet with lower policy rates would likely push the Treasury toward more bill issuance to exploit low short rates, with SLR changes to make banks hold more Treasuries.
 - [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C13-1|MT008-C13-1]] — The Fed chair outcome could change the monetary regime: smaller balance sheet, fiscal dominance, or continued deficits; uncertainty is high.
+- [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C13-R1|MT008-C13-R1]] — Alan recalls Warsh calling the Fed's slowness to raise rates in 2021-22 the biggest macro forecasting mistake in 40 years and blaming the Fed for financing deficit expansion, consistent with Cochrane's view.
 - [[MT008 - AI Bubble Peak- - Systematic Investor - Ep.388#^MT008-C13-X1|MT008-C13-X1]] — Counter to the literal hawkish reading of Warsh, he argues AI is disinflationary and allows lower rates, and his past stance has shifted with the party in power, so his policy is uncertain.
 
 ## [[MT009 - AI Can Build Your Portfolio—But Can You Trust It- - Systematic Investor - Ep.419]]
@@ -93,6 +94,7 @@ tags: [mechanism]
 - [[MT014 - Adapt or Perish- Why Systematic Investors Must Evolve in 2024 - Systematic Investor 325#^MT014-C09-4|MT014-C09-4]] — In 2009 trend gave back gains when policy action (Paulson bazooka) ended the single bet.
 - [[MT014 - Adapt or Perish- Why Systematic Investors Must Evolve in 2024 - Systematic Investor 325#^MT014-C10-3|MT014-C10-3]] — Market sensitivity to central bank expectations (and fixed income-FX-dollar correlation) is unusually high at the start of a new cycle, but is likely transient.
 - [[MT014 - Adapt or Perish- Why Systematic Investors Must Evolve in 2024 - Systematic Investor 325#^MT014-C10-4|MT014-C10-4]] — Regional dispersion (Europe vs US) is reducing the single central-bank factor, so the end of this headwind is in sight.
+- [[MT014 - Adapt or Perish- Why Systematic Investors Must Evolve in 2024 - Systematic Investor 325#^MT014-C10-R1|MT014-C10-R1]] — Kaastrup-Larsen notes that central-bank policy is diverging, with Europe and the US cutting while Japan raises rates, which is not business as usual.
 - [[MT014 - Adapt or Perish- Why Systematic Investors Must Evolve in 2024 - Systematic Investor 325#^MT014-C11-1|MT014-C11-1]] — After the GFC central banks stabilised inflation and GDP, removing trend opportunities.
 - [[MT014 - Adapt or Perish- Why Systematic Investors Must Evolve in 2024 - Systematic Investor 325#^MT014-C16-1|MT014-C16-1]] — Central-bank put in 2009-19 hurt traditional trend while alternative markets were more resilient.
 
@@ -105,6 +107,7 @@ tags: [mechanism]
 - [[MT016 - America's 250-Year Reset feat. Cem Karsan - Systematic Investor - Ep. 407#^MT016-C04-5|MT016-C04-5]] — The US reacts late to crises but once it decides to act it moves aggressively, and that is when regimes change; accumulated pressures are now forcing action.
 - [[MT016 - America's 250-Year Reset feat. Cem Karsan - Systematic Investor - Ep. 407#^MT016-C05-3|MT016-C05-3]] — The equity market is too big to fail: a two-quarter decline above 20% would drain liquidity and growth too much, so policy will not tolerate it.
 - [[MT016 - America's 250-Year Reset feat. Cem Karsan - Systematic Investor - Ep. 407#^MT016-C05-7|MT016-C05-7]] — Only a reserve-currency issuer can print money at scale without a currency collapse, so the US can do what weaker countries cannot.
+- [[MT016 - America's 250-Year Reset feat. Cem Karsan - Systematic Investor - Ep. 407#^MT016-C05-R2|MT016-C05-R2]] — The administration is publicly announcing its plan (Treasury backstop, sovereign wealth fund), so the policy direction can be read from officials' statements.
 - [[MT016 - America's 250-Year Reset feat. Cem Karsan - Systematic Investor - Ep. 407#^MT016-C06-3|MT016-C06-3]] — A state-funded equity fund short-circuits the populism of a K-shaped economy by giving everyone ownership instead of taxing the rich directly.
 - [[MT016 - America's 250-Year Reset feat. Cem Karsan - Systematic Investor - Ep. 407#^MT016-C08-1|MT016-C08-1]] — Large-scale government equity buying will start after the Nov 2026 midterms and before June 2027, aiming to get markets moving ahead of the 2028 election.
 - [[MT016 - America's 250-Year Reset feat. Cem Karsan - Systematic Investor - Ep. 407#^MT016-C08-2|MT016-C08-2]] — The administration deliberately lets markets fall and then reverses to rally them, so expect repeated drop-then-rally cycles.
@@ -144,6 +147,7 @@ tags: [mechanism]
 ## [[MT021 - Bonds Behaving Badly - Systematic Investor 309]]
 - [[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C01-1|MT021-C01-1]] — A small BoJ hike plus a tiny cut in bond purchases was enough to start a market unwind, showing how fragile unwinding of long-running monetary policy is.
 - [[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C05-3|MT021-C05-3]] — Even with a low VIX, markets see undulations and fast sentiment shifts because central bank policy is no longer coordinated and the election and geopolitics are uncertain.
+- [[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C05-R1|MT021-C05-R1]] — Markets are at an inflection point as the Fed starts cutting and investors try to judge whether a correction is coming.
 
 ## [[MT022 - Bonds- The Voldemort of Asset Allocation - Systematic Investor 320]]
 - [[MT022 - Bonds- The Voldemort of Asset Allocation - Systematic Investor 320#^MT022-C03-4|MT022-C03-4]] — In July 2024 the Trump trade (long equities and dollar, short bonds because of tariffs and deficits) looked right, but the Biden-Harris swap and BoJ move reversed it.
@@ -427,6 +431,7 @@ tags: [mechanism]
 - [[MT064 - Gold, Futures Pricing & Market Trends - Systematic Investor 335 REUPLOAD#^MT064-C05-X1|MT064-C05-X1]] — The 20+ year Treasury index fell 32 basis points in February 2025 after hot inflation figures, which hurt long-duration trend positions, but was still slightly positive for the year.
 - [[MT064 - Gold, Futures Pricing & Market Trends - Systematic Investor 335 REUPLOAD#^MT064-C21-2|MT064-C21-2]] — Tariffs increase inflation in the US and globally through retaliation.
 - [[MT064 - Gold, Futures Pricing & Market Trends - Systematic Investor 335 REUPLOAD#^MT064-C21-3|MT064-C21-3]] — Mass deportations cut labor supply and lift wages, adding to inflation.
+- [[MT064 - Gold, Futures Pricing & Market Trends - Systematic Investor 335 REUPLOAD#^MT064-C21-R4|MT064-C21-R4]] — Rob's analysis of Trump's economic consequences assumes Trump succeeds in doing what he has said and appears to be trying to do.
 - [[MT064 - Gold, Futures Pricing & Market Trends - Systematic Investor 335 REUPLOAD#^MT064-C21-X1|MT064-C21-X1]] — Tariffs face the most pushback from Republicans and other people the president listens to, so tariff plans are the policy most likely to be diluted or reversed.
 - [[MT064 - Gold, Futures Pricing & Market Trends - Systematic Investor 335 REUPLOAD#^MT064-C22-1|MT064-C22-1]] — Tariffs on integrated US-Canada auto supply chains would be inflationary.
 - [[MT064 - Gold, Futures Pricing & Market Trends - Systematic Investor 335 REUPLOAD#^MT064-C22-3|MT064-C22-3]] — Stopping government payments could cause unemployment, supply and demand shocks and uncertainty.
@@ -466,10 +471,12 @@ tags: [mechanism]
 - [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel#^MT067-C02-5|MT067-C02-5]] — Example of early reading of Fed communications (Dec 2021 press conference hints at earlier balance sheet runoff while still doing QE) as an opportunity outside consensus.
 - [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel#^MT067-C03-2|MT067-C03-2]] — Central banks now react to headline CPI and even the Michigan inflation expectations survey, so those releases are tradable policy triggers.
 - [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel#^MT067-C04-3|MT067-C04-3]] — The Fed put still exists but its strike is far lower because inflation limits easing; buying dips on pivot hopes is the old playbook.
+- [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel#^MT067-C04-R1|MT067-C04-R1]] — In 2022 the best trade has been long dollar, short rates (bonds), short equities.
 - [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel#^MT067-C06-2|MT067-C06-2]] — European central banks face energy-driven inflation and second-round effects yet must tighten into recession, reversing the fed-put logic of accommodating downside growth risk.
 - [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel#^MT067-C07-2|MT067-C07-2]] — Japan's inflation (30-year high at 3%), YCC testing, weak yen and intervention limits create trade opportunities, with BoJ leadership change due.
 - [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel#^MT067-C07-X1|MT067-C07-X1]] — Japan's yield-curve control (buying large amounts of JGBs) conflicts with intervening to support the yen, so with inflation at a 30-year high and markets testing YCC, the policy mix looks unsustainable and is a trade opportunity.
 - [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel#^MT067-C07-X2|MT067-C07-X2]] — View: central banks will tighten somewhat further than market pricing implies because inflation is sticky.
+- [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel#^MT067-C10-R1|MT067-C10-R1]] — Because of inflation, a macro shock now has to be met by much tighter monetary policy instead of easing, which creates instability, volatility and opportunity for macro funds.
 
 ## [[MT068 - Greg Jensen - Co-CIO of Bridgewater Podcast In Good Company Norges Bank Investment Managem]]
 - [[MT068 - Greg Jensen - Co-CIO of Bridgewater Podcast In Good Company Norges Bank Investment Managem#^MT068-C08-1|MT068-C08-1]] — Base case: US inflation about 3% for the next couple of years with Fed tolerant above 2.5%, versus breakeven near 2.25-2.5%.
@@ -486,6 +493,7 @@ tags: [mechanism]
 - [[MT071 - Has Trend Following Changed Forever- - Systematic Investor - Ep.408#^MT071-C07-2|MT071-C07-2]] — A study found 68% of 5-year Treasury yield variance after Fed meetings came from the statement and only 12% from the rate decision, so markets are addicted to Fed communication.
 - [[MT071 - Has Trend Following Changed Forever- - Systematic Investor - Ep.408#^MT071-C07-X1|MT071-C07-X1]] — A second rationale for Fed transparency was that policy surprises create market volatility, so forward guidance was meant to reduce shock-driven volatility; after the GFC, committing to low rates for long became a core unconventional tool.
 - [[MT071 - Has Trend Following Changed Forever- - Systematic Investor - Ep.408#^MT071-C08-1|MT071-C08-1]] — Less forward guidance should mean more uncertainty and more volatility around Fed policy.
+- [[MT071 - Has Trend Following Changed Forever- - Systematic Investor - Ep.408#^MT071-C08-R2|MT071-C08-R2]] — Warsh looked hawkish at his first meeting, but when he spoke at a European conference he said inflation risks are coming down, which is why Alan doubts he is as hawkish as the market inferred.
 - [[MT071 - Has Trend Following Changed Forever- - Systematic Investor - Ep.408#^MT071-C09-1|MT071-C09-1]] — Warsh faces the choice of tightening against AI-driven demand despite expected future disinflation; Alan doubts he is as hawkish as the market inferred.
 - [[MT071 - Has Trend Following Changed Forever- - Systematic Investor - Ep.408#^MT071-C15-1|MT071-C15-1]] — Post-2009 central bank involvement and changed participants may explain fast trend's decline instead of tick size.
 
@@ -723,6 +731,7 @@ tags: [mechanism]
 ## [[MT104 - Market Structure, Liquidity, and Reflexivity in 2025 - Systematic Investor - Ep.368]]
 - [[MT104 - Market Structure, Liquidity, and Reflexivity in 2025 - Systematic Investor - Ep.368#^MT104-C01-X1|MT104-C01-X1]] — Governmental and institutional changes are ignored by markets until they have structural effects, and Jem expects them to accelerate into the 2026 midterms and become a market focus.
 - [[MT104 - Market Structure, Liquidity, and Reflexivity in 2025 - Systematic Investor - Ep.368#^MT104-C08-3|MT104-C08-3]] — Inflation is the ultimate check on liquidity-driven markets because government cannot control it, especially when the Fed abandons rules-based smoothing.
+- [[MT104 - Market Structure, Liquidity, and Reflexivity in 2025 - Systematic Investor - Ep.368#^MT104-C08-R1|MT104-C08-R1]] — An independent Fed would normally react to inflation or an overextended market by withdrawing liquidity, which usually triggers the end of a bubble; its absence removes that brake.
 - [[MT104 - Market Structure, Liquidity, and Reflexivity in 2025 - Systematic Investor - Ep.368#^MT104-C09-2|MT104-C09-2]] — Persistent negative real rates drive leveraged borrowing into appreciating assets and feed inflation (1970s); best hedges are non-inflation-controlled assets: precious metals, crypto, debasement trades, not breakevens.
 - [[MT104 - Market Structure, Liquidity, and Reflexivity in 2025 - Systematic Investor - Ep.368#^MT104-C09-3|MT104-C09-3]] — Short term, an incentivized administration controls asset reflation into midterms; this lasts until inflation breaks it.
 - [[MT104 - Market Structure, Liquidity, and Reflexivity in 2025 - Systematic Investor - Ep.368#^MT104-C15-X2|MT104-C15-X2]] — A calendar event risk for the end of 2025: Supreme Court arguments on the tariffs in November with a ruling afterwards.
@@ -1045,6 +1054,7 @@ tags: [mechanism]
 ## [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347]]
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C04-5|MT150-C04-5]] — Consensus expects a deep recession with disinflation; the speaker expects a mild, slow recession with hot inflation, i.e. stagflation of the high-inflation kind.
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C04-6|MT150-C04-6]] — The Fed holds because inflation effects from tariffs are certain while the growth effect is uncertain.
+- [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C05-R1|MT150-C05-R1]] — Treasury's short-dated issuance under Yellen is explained as election-period incentives, not incompetence; Trump's pressure on the Fed is the same behaviour, so incentives predict policy under either party.
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C06-1|MT150-C06-1]] — The Fed is stuck between inflation and growth, with a shrinking set of choices, as Burns was in the 1970s, and populist politics add to it.
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C06-2|MT150-C06-2]] — The administration's early supply-side plan assumed a market drop would make the Fed cut and lower the 10-year; it failed in a month, ending the plan.
 - [[MT150 - Stagflation, Regime Change, and the Clues We Missed - Systematic Investor 347#^MT150-C06-X1|MT150-C06-X1]] — Fed chairs squeezed between inflation and growth (Burns, Powell) get cast as fools, while Volcker looked heroic mainly because he had room to act decisively at the right time; the current Fed's set of choices keeps shrinking.
@@ -1109,6 +1119,7 @@ tags: [mechanism]
 - [[MT154 - Steve Cohen and Jawad Mian at Sohn 2025#^MT154-C01-2|MT154-C01-2]] — The effective US tariff rate is expected near 14-17% (cut from a 16-20% expectation) after the China tariff retreat.
 - [[MT154 - Steve Cohen and Jawad Mian at Sohn 2025#^MT154-C01-3|MT154-C01-3]] — The Fed will not cut quickly when growth slows because tariff inflation keeps it cautious.
 - [[MT154 - Steve Cohen and Jawad Mian at Sohn 2025#^MT154-C01-6|MT154-C01-6]] — After the policy pivot, downside is limited to the 10-15% below the April lows and equities should trade in a range for a while.
+- [[MT154 - Steve Cohen and Jawad Mian at Sohn 2025#^MT154-C01-R1|MT154-C01-R1]] — Point72 expects US growth next year of about 1.5% or lower, which he calls okay but not phenomenal.
 
 ## [[MT155 - Systematic Investing in 2025- Trends, Predictions & Bold Debates - Systematic Investor 328]]
 - [[MT155 - Systematic Investing in 2025- Trends, Predictions & Bold Debates - Systematic Investor 328#^MT155-C15-3|MT155-C15-3]] — The dollar combines sentiment, monetary policy and US growth; the pro-growth outlook and cautious Fed support the trend short-term but the long-run is unclear.

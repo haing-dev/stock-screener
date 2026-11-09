@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Risk premium (carry, term premium)
 
-599 claims from 177 sources. Each line links to the claim inside its source note.
+600 claims from 177 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT002 - 2024 Trend Following Recap- Key Insights from Top Traders - Systematic Investor 327]]
@@ -499,6 +499,7 @@ tags: [mechanism]
 ## [[MT119 - Nothing Good Happens Below the 200-Day Moving Average - Systematic Investor 341]]
 - [[MT119 - Nothing Good Happens Below the 200-Day Moving Average - Systematic Investor 341#^MT119-C05-1|MT119-C05-1]] — In late March 2025 the VIX curve was inverted while tariff and global policy uncertainty indices were at or near pandemic-level highs, showing that risk (volatility) and uncertainty are distinct.
 - [[MT119 - Nothing Good Happens Below the 200-Day Moving Average - Systematic Investor 341#^MT119-C05-2|MT119-C05-2]] — Higher uncertainty raises the required risk premium and causes investors to reduce risky assets, as in the US where uncertainty is greater than in Europe (where debt financing and ECB easing give more certainty).
+- [[MT119 - Nothing Good Happens Below the 200-Day Moving Average - Systematic Investor 341#^MT119-C05-R1|MT119-C05-R1]] — Uncertainty is two-sided like a ticking gift box that could be a watch or a bomb, but he says it generally leads investors to move away from risky assets and demand a higher risk premium.
 - [[MT119 - Nothing Good Happens Below the 200-Day Moving Average - Systematic Investor 341#^MT119-C06-X1|MT119-C06-X1]] — A higher required risk premium mechanically raises the discount rate on future earnings and so justifies lower equity prices.
 - [[MT119 - Nothing Good Happens Below the 200-Day Moving Average - Systematic Investor 341#^MT119-C10-1|MT119-C10-1]] — Negative shocks affect markets more than positive ones, so uncertainty is mostly a downside concern and investors move to safe assets, but that also cuts upside if uncertainty resolves well.
 - [[MT119 - Nothing Good Happens Below the 200-Day Moving Average - Systematic Investor 341#^MT119-C10-X1|MT119-C10-X1]] — Moving to safe assets is cheaper than usual in this period because T-bill rates are higher, but staying in cash forfeits the upside if uncertainty resolves positively.

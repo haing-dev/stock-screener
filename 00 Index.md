@@ -6,6 +6,8 @@ tags: [index]
 Every claim from every transcript, with verbatim quotes (script-checked) and a completeness cross-check (Opus 5.5 high for the first 95 sources, Sonnet 5.5 xhigh for the rest; column below).
 Quant papers (argument maps + claims): [[00 Papers index]]
 Investors (one synthesis per person): [[00 Investors index]]
+Fable judgement (foundation units): [[00 Foundation index]]
+How every note was made, specs, routing, raw data: [[00 Method]] (raw JSON in `_data/`)
 
 Mechanism pages: [[Slow reaction (trend)]], [[Risk premium (carry, term premium)]], [[Overshoot (value, mean reversion)]], [[Cycle persistence (economic trend, regimes)]], [[Liquidity and flows]], [[Policy reaction (central banks, governments)]], [[Crowding and positioning]], [[Seasonality]], [[Fiscal and debt dynamics]], [[Structural shifts]], [[Risk management and sizing]], [[Research and testing method]], [[Behavioural]], [[New mechanisms (unclassified)]]
 

@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Seasonality
 
-74 claims from 27 sources. Each line links to the claim inside its source note.
+75 claims from 27 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT002 - 2024 Trend Following Recap- Key Insights from Top Traders - Systematic Investor 327]]
@@ -55,6 +55,7 @@ tags: [mechanism]
 - [[MT102 - Market Patterns Work and Jeffrey Hirsch Explains Why - The Real Eisman Playbook Ep 56#^MT102-C03-X1|MT102-C03-X1]] — Midterm-year market lows usually come in late Q2-Q3 (late summer), with many in October and a few in March; 2022 gave a textbook October midterm low.
 - [[MT102 - Market Patterns Work and Jeffrey Hirsch Explains Why - The Real Eisman Playbook Ep 56#^MT102-C03-X2|MT102-C03-X2]] — The pre-election-year high that ends the midterm-low rally most often comes in December, close to the last trading day of the pre-election year.
 - [[MT102 - Market Patterns Work and Jeffrey Hirsch Explains Why - The Real Eisman Playbook Ep 56#^MT102-C04-1|MT102-C04-1]] — 'Sell in May' needs a 'buy in October' companion; the Almanac does not go fully away in summer but tightens up, limits new longs, sells losers and repositions defensively (Nasdaq best eight months).
+- [[MT102 - Market Patterns Work and Jeffrey Hirsch Explains Why - The Real Eisman Playbook Ep 56#^MT102-C04-R2|MT102-C04-R2]] — The raw best-six-months rule buys the Dow, S&P and Nasdaq on the last trading day of October and sells on April 30 of the following year.
 - [[MT102 - Market Patterns Work and Jeffrey Hirsch Explains Why - The Real Eisman Playbook Ep 56#^MT102-C07-1|MT102-C07-1]] — Each month has a personality: early August is weak and turn-of-month in October-November is strong.
 - [[MT102 - Market Patterns Work and Jeffrey Hirsch Explains Why - The Real Eisman Playbook Ep 56#^MT102-C08-1|MT102-C08-1]] — Utilities seasonal trade March-October (worst six months defensive); pattern strengthened by data center electricity demand.
 - [[MT102 - Market Patterns Work and Jeffrey Hirsch Explains Why - The Real Eisman Playbook Ep 56#^MT102-C08-2|MT102-C08-2]] — Copper and energy (XLE) tend to bottom in December and peak April-May, with construction activity seasonality.

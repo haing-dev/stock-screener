@@ -1,8 +1,17 @@
+---
+tags: [fable, foundation]
+unit: U03
+name: "Katie Kaminski"
+model: Fable 5.1, effort max
+inputs: _data/foundation_packs/U03.json
+code_commit: a7d48c8
+---
+> Claim ids link to the verbatim quote in its source note; B-ids link to the [[Carver blog digest]]; code refs link to GitHub at commit a7d48c8. Brief: [[FOUNDATION_SPEC]].
 # U03: Katie Kaminski (AlphaSimplex, MIT) - judgement brief (Fable, 2026-11-09)
 
 Inputs: foundation/packs/U03.json (synthesis over 16 Systematic Investor transcripts, 2024-08-24 to 2026-10-20; 501
 claims, 486 quotes script-checked "exact", 15 reader/R claims unchecked; 14 corrections, five moving a claim from Katie
-to Niels: MT120-C03-3, MT120-C03-4, MT191-C03-3, MT191-C08-1, MT194-C01-1) and the repo /home/claude/stock-screener
+to Niels: [[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C03-3|MT120-C03-3]], [[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C03-4|MT120-C03-4]], [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C03-3|MT191-C03-3]], [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C08-1|MT191-C08-1]], [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C01-1|MT194-C01-1]]) and the repo /home/claude/stock-screener
 (read only). SHOW = a test with numbers (hers or peers', described, exhibits not shown); ASSERT = stated, no test;
 (reader) = my inference. Numbers that sit in claim text but not in the quote are marked. No code was run; the 2011-2026
 holdout was not touched. Interviews: nearly everything is assertion plus description of papers; I weigh specificity and
@@ -14,21 +23,21 @@ admitted sample limits, not fluency.
    drawdown is under about 15% or reverses within days, and pays only when the move persists for weeks to months through
    whichever liquid markets trend (bonds and energy first); inflation makes bonds co-move with stocks, so long/short bond
    trend is the repair for 60/40; speed, market set, vol-sizing speed and carry share create dispersion no one can pick
-   ex ante, so diversify designs and never time the strategy (MT194-C06-2, C06-4; MT021-C10-3; MT086-C07-2, C07-3;
-   MT083-C05-2; MT045-C09-2).
+   ex ante, so diversify designs and never time the strategy ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C06-2|MT194-C06-2]], C06-4; [[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C10-3|MT021-C10-3]]; [[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C07-2|MT086-C07-2]], C07-3;
+   [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-2|MT083-C05-2]]; [[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C09-2|MT045-C09-2]]).
 2. Grounding: moderate for the regime facts (inflation -> positive stock-bond correlation, bond vol about 4% -> 6%;
    fixed income positive for trend in every studied crisis; losses in sub-15% drawdowns; about 20 months carry trend's
    return; 2024 dispersion explained by speed), from her own or peers' papers on post-1990/2000 samples with few deep
    episodes, described not shown; the mechanism language ("we like chaos", "shocks are bad", endogenous vs exogenous)
    is assertion reconciled only informally; no own P&L; she sells managed futures.
 3. We already hold her operational core: multi-speed trend around a 12-month anchor, risk-not-notional sizing, no
-   timing, one change at a time (config.py:19; book.py:132; CHANGES.md:73; TESTING_PROTOCOL.md:9). We sit at the
-   dynamic end of her vol-sizing spectrum (70% on a 35-day EWMA, config.py:22; vol.py:48), which by her and Quantica's
+   timing, one change at a time ([config.py:19](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/config.py#L19); [book.py:132](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/book.py#L132); [CHANGES.md:73](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L73); [TESTING_PROTOCOL.md:9](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/TESTING_PROTOCOL.md#L9)). We sit at the
+   dynamic end of her vol-sizing spectrum (70% on a 35-day EWMA, [config.py:22](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/config.py#L22); [vol.py:48](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/vol.py#L48)), which by her and Quantica's
    evidence buys Sharpe at the cost of crisis convexity; 2022 is the year she names where slow vol estimates won
-   (MT042-C12-4).
-4. So the holdout test "2022 positive" (CHANGES.md:34-35) is partly a test of vol-sizing speed, bond share and carry
-   share rather than of signal quality, with power 0.67 at a true Sharpe of 0.5 (stats_audit:35); "corr S&P <= 0.3"
-   averages away the conditional behaviour she says is the point (MT120-C11-1).
+   ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-4|MT042-C12-4]]).
+4. So the holdout test "2022 positive" ([CHANGES.md:34-35](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L34-L35)) is partly a test of vol-sizing speed, bond share and carry
+   share rather than of signal quality, with power 0.67 at a true Sharpe of 0.5 ([stats_audit:35](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/stats_audit_2026-11-02.md#L35)); "corr S&P <= 0.3"
+   averages away the conditional behaviour she says is the point ([[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C11-1|MT120-C11-1]]).
 5. Action: no new Holm slot. Three zero-slot diagnostics (vol speed by shock type with 1994 as the design-era 2022;
    payoff by equity-drawdown depth and age; correlation-regime audit of the 36-month book scaler), one lead-lag look at
    the geopolitical-risk index that may become a Batch 3 challenger, and one decision for the user on how a 2022 fail is
@@ -38,69 +47,69 @@ admitted sample limits, not fluency.
 
 | Premise | Type | Source |
 |---|---|---|
-| P1 Macro themes persist for weeks to months; price captures them without a forecast | empirical, ASSERT | MT083-C09-1; MT191-C02-2; MT021-C10-5 |
-| P2 Trend is behavioural: macro change takes time to be realised, sentiment swings, investors chase | behavioural, ASSERT | MT195-C09-R1; MT083-C15-1; MT086-C04-5 |
-| P3 Higher inflation -> positive stock-bond correlation, bond vol about 4% -> about 6% | empirical, SHOWN (own papers, 800-year series) | MT021-C06-1, C06-2; MT086-C07-2; MT191-C06-5 |
-| P4 Rises in geopolitical risk are followed by 2-3 years of higher inflation | empirical, cited literature (100+ years, 44 countries) | MT178-C13-1; MT191-C05-3 |
-| P5 Only vol, and a little correlation, can be estimated; design dispersion follows from managers' vol and correlation | statistical | MT178-C11-1; MT220-C06-2; MT080-C06-1 |
-| P6 Shocks run against prevailing positions; the industry drifted slower and added carry | institutional, SHOWN (SG Trend decomposition since 2000) | MT194-C06-3, C12-3; MT021-C04-3, C12-3 |
-| P7 Returns come from a few months; the strategy mean-reverts over years | empirical (Quantica) / ASSERT | MT191-C13-1; MT042-C14-4; MT221-C11-3 |
+| P1 Macro themes persist for weeks to months; price captures them without a forecast | empirical, ASSERT | [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C09-1|MT083-C09-1]]; [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C02-2|MT191-C02-2]]; [[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C10-5|MT021-C10-5]] |
+| P2 Trend is behavioural: macro change takes time to be realised, sentiment swings, investors chase | behavioural, ASSERT | [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C09-R1|MT195-C09-R1]]; [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C15-1|MT083-C15-1]]; [[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C04-5|MT086-C04-5]] |
+| P3 Higher inflation -> positive stock-bond correlation, bond vol about 4% -> about 6% | empirical, SHOWN (own papers, 800-year series) | [[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C06-1|MT021-C06-1]], C06-2; [[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C07-2|MT086-C07-2]]; [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C06-5|MT191-C06-5]] |
+| P4 Rises in geopolitical risk are followed by 2-3 years of higher inflation | empirical, cited literature (100+ years, 44 countries) | [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-1|MT178-C13-1]]; [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C05-3|MT191-C05-3]] |
+| P5 Only vol, and a little correlation, can be estimated; design dispersion follows from managers' vol and correlation | statistical | [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C11-1|MT178-C11-1]]; [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C06-2|MT220-C06-2]]; [[MT080 - Index vs. Mechanical Replication in Trend Following - Systematic Investor 337#^MT080-C06-1|MT080-C06-1]] |
+| P6 Shocks run against prevailing positions; the industry drifted slower and added carry | institutional, SHOWN (SG Trend decomposition since 2000) | [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C06-3|MT194-C06-3]], C12-3; [[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C04-3|MT021-C04-3]], C12-3 |
+| P7 Returns come from a few months; the strategy mean-reverts over years | empirical (Quantica) / ASSERT | [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C13-1|MT191-C13-1]]; [[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C14-4|MT042-C14-4]]; [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C11-3|MT221-C11-3]] |
 
 Chains (each arrow a step she states):
 
-- Crisis alpha: P6 -> the first phase of a drawdown is negative, "anything less than 15%" (MT194-C06-2) -> a move that
-  reverses within days (Liberation Day, three days, MT045-C12-2) has no trend to follow (MT083-C14-4) -> one that
+- Crisis alpha: P6 -> the first phase of a drawdown is negative, "anything less than 15%" ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C06-2|MT194-C06-2]]) -> a move that
+  reverses within days (Liberation Day, three days, [[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C12-2|MT045-C12-2]]) has no trend to follow ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C14-4|MT083-C14-4]]) -> one that
   extends (tech bubble, GFC, 2022) flips the signals and pays through the classes that trend: fixed income "in every
-  crisis period" (MT086-C06-3), energy either way (MT042-C14-3) -> endogenous shocks extend, exogenous whipsaws do not
-  (MT045-C11-1, C11-4) -> crisis alpha is a search, not a put (MT021-C12-1), needing unbiased, liquid, adaptable
-  (MT083-C09-2).
+  crisis period" ([[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C06-3|MT086-C06-3]]), energy either way ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C14-3|MT042-C14-3]]) -> endogenous shocks extend, exogenous whipsaws do not
+  ([[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C11-1|MT045-C11-1]], C11-4) -> crisis alpha is a search, not a put ([[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C12-1|MT021-C12-1]]), needing unbiased, liquid, adaptable
+  ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C09-2|MT083-C09-2]]).
 - Inflation and bonds: P3 -> in equity-down months bonds are right-shifted when inflation is low, negative with a fat
-  left tail when high (MT021-C08-2) -> 60/40 loses its safety leg (MT086-C07-4) -> long/short bond trend stays
-  negatively correlated to equities in down periods (MT021-C09-1; MT086-C07-3) -> add trend, more when cash rates are
-  high (MT086-C13-5; Niels relays Quantica's 55/35/10 vs 55/25/20, MT086-C14-1); post-1990 data hold few
-  positive-correlation periods (MT086-C08-2, C13-6).
-- Geopolitics: P4 -> supply-side risk builds an inflation premium (MT191-C05-4) -> in the largest GPR-increase months
-  of 25 years bonds fell, energy spiked, the dollar rose (MT178-C14-1) -> managed futures gained through commodities
-  and fixed income, not equities (MT178-C14-2, C14-X1) -> commodities first responder, trend second (MT191-C11-2);
-  monthly data miss slow events (MT178-C15-X2).
+  left tail when high ([[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C08-2|MT021-C08-2]]) -> 60/40 loses its safety leg ([[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C07-4|MT086-C07-4]]) -> long/short bond trend stays
+  negatively correlated to equities in down periods ([[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C09-1|MT021-C09-1]]; [[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C07-3|MT086-C07-3]]) -> add trend, more when cash rates are
+  high ([[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C13-5|MT086-C13-5]]; Niels relays Quantica's 55/35/10 vs 55/25/20, [[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C14-1|MT086-C14-1]]); post-1990 data hold few
+  positive-correlation periods ([[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C08-2|MT086-C08-2]], C13-6).
+- Geopolitics: P4 -> supply-side risk builds an inflation premium ([[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C05-4|MT191-C05-4]]) -> in the largest GPR-increase months
+  of 25 years bonds fell, energy spiked, the dollar rose ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C14-1|MT178-C14-1]]) -> managed futures gained through commodities
+  and fixed income, not equities ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C14-2|MT178-C14-2]], C14-X1) -> commodities first responder, trend second ([[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C11-2|MT191-C11-2]]);
+  monthly data miss slow events ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-X2|MT178-C15-X2]]).
 - Dispersion: a few big trends make the profits, so the risk allocated to them, speed, vol-sizing speed and the
-  non-trend share set relative performance (MT042-C03-1; MT083-C05-2) -> 2024: slow factor +12%, fast -10 to -11%
-  (MT002-C02-1); 2025: 4-9 month windows worst (MT042-C09-1; MT134-C02-2); March 2026: energy weight the first
-  principal component (MT083-C04-1) -> no factor persists (MT220-C09-1): diversify parameters (MT194-C10-3), hold two
-  or three designs (MT220-C08-2), specialise only in proportion to evidence (MT194-C14-2).
-- Vol sizing: vol expands with winners (entry-to-exit ratio 1.2 vs 1.05 for losers, MT195-C07-4; partly endogenous,
-  MT195-C07-X2) -> static sizing concentrates in winners, about 40% correlation to long vol vs about 20% for the
-  industry (MT195-C08-2, C08-1); dynamic sizing cuts at reversals (cocoa 20% -> 120%, Dunne MT195-C08-4) -> Sharpe
-  with scaling, return and convexity without, a spectrum set by objective (MT195-C08-5, C11-2) -> estimator speed is
-  path-dependent: slow won in 2022 when bond vol doubled (MT042-C12-4; MT194-C18-1), fast at Liberation Day and in H2
-  2025 (MT134-C02-X1; MT042-C12-5).
+  non-trend share set relative performance ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C03-1|MT042-C03-1]]; [[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-2|MT083-C05-2]]) -> 2024: slow factor +12%, fast -10 to -11%
+  ([[MT002 - 2024 Trend Following Recap- Key Insights from Top Traders - Systematic Investor 327#^MT002-C02-1|MT002-C02-1]]); 2025: 4-9 month windows worst ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C09-1|MT042-C09-1]]; [[MT134 - Return Dispersion- The 2025 Story - Systematic Investor - Ep.380 REUPLOAD#^MT134-C02-2|MT134-C02-2]]); March 2026: energy weight the first
+  principal component ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C04-1|MT083-C04-1]]) -> no factor persists ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C09-1|MT220-C09-1]]): diversify parameters ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C10-3|MT194-C10-3]]), hold two
+  or three designs ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C08-2|MT220-C08-2]]), specialise only in proportion to evidence ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C14-2|MT194-C14-2]]).
+- Vol sizing: vol expands with winners (entry-to-exit ratio 1.2 vs 1.05 for losers, [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C07-4|MT195-C07-4]]; partly endogenous,
+  [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C07-X2|MT195-C07-X2]]) -> static sizing concentrates in winners, about 40% correlation to long vol vs about 20% for the
+  industry ([[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C08-2|MT195-C08-2]], C08-1); dynamic sizing cuts at reversals (cocoa 20% -> 120%, Dunne [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C08-4|MT195-C08-4]]) -> Sharpe
+  with scaling, return and convexity without, a spectrum set by objective ([[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C08-5|MT195-C08-5]], C11-2) -> estimator speed is
+  path-dependent: slow won in 2022 when bond vol doubled ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-4|MT042-C12-4]]; [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C18-1|MT194-C18-1]]), fast at Liberation Day and in H2
+  2025 ([[MT134 - Return Dispersion- The 2025 Story - Systematic Investor - Ep.380 REUPLOAD#^MT134-C02-X1|MT134-C02-X1]]; [[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-5|MT042-C12-5]]).
 
-Decision process: several trend measures, 12-month core for Sharpe, short legs for convexity (MT021-C04-2; MT080-C06-2);
-every market, the signal decides (MT194-C15-1); each market a unit of risk, 10%-vol FX vs 40%-vol commodities = 4:1
-(MT042-C12-3; MT194-C17-5); between static and dynamic sizing (MT195-C08-5); current correlations in the risk model,
-distrusted (MT194-C17-1, C17-2); carry small, directional, never levered relative value (MT021-C13-1, C13-2); expected
-return = Sharpe x risk (MT080-C10-1; the 0.4-0.5 is claim text); no model change after a one-off shock (MT120-C08-3);
-research ranked by out-of-sample results and parameter-permutation stability (MT120-C06-1), walk-forward with variables
-counted (MT045-C14-1), one design decision perturbed at a time, hypothetical managers, random-signal baselines
-(MT195-C02-4; MT220-C06-X1, C08-X1). Allocators: hold, rebalance, add in drawdowns, assign a role (MT045-C09-2;
-MT086-C15-2; MT191-C09-2).
+Decision process: several trend measures, 12-month core for Sharpe, short legs for convexity ([[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C04-2|MT021-C04-2]]; [[MT080 - Index vs. Mechanical Replication in Trend Following - Systematic Investor 337#^MT080-C06-2|MT080-C06-2]]);
+every market, the signal decides ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C15-1|MT194-C15-1]]); each market a unit of risk, 10%-vol FX vs 40%-vol commodities = 4:1
+([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-3|MT042-C12-3]]; [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C17-5|MT194-C17-5]]); between static and dynamic sizing ([[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C08-5|MT195-C08-5]]); current correlations in the risk model,
+distrusted ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C17-1|MT194-C17-1]], C17-2); carry small, directional, never levered relative value ([[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C13-1|MT021-C13-1]], C13-2); expected
+return = Sharpe x risk ([[MT080 - Index vs. Mechanical Replication in Trend Following - Systematic Investor 337#^MT080-C10-1|MT080-C10-1]]; the 0.4-0.5 is claim text); no model change after a one-off shock ([[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C08-3|MT120-C08-3]]);
+research ranked by out-of-sample results and parameter-permutation stability ([[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C06-1|MT120-C06-1]]), walk-forward with variables
+counted ([[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C14-1|MT045-C14-1]]), one design decision perturbed at a time, hypothetical managers, random-signal baselines
+([[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C02-4|MT195-C02-4]]; [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C06-X1|MT220-C06-X1]], C08-X1). Allocators: hold, rebalance, add in drawdowns, assign a role ([[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C09-2|MT045-C09-2]];
+[[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C15-2|MT086-C15-2]]; [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C09-2|MT191-C09-2]]).
 
 ## 3. Evidence grading
 
 | Claim | Grade | Reason |
 |---|---|---|
-| Inflation -> positive stock-bond correlation, bond vol 4% -> 6% (MT021-C06-1, C06-2; MT086-C07-2; MT191-C06-5) | moderate-strong | own papers over decades plus 800 years; fits the wider literature (reader); no inflation threshold given. |
-| Long/short bond trend negative to equities in down periods; FI positive in every crisis (MT021-C09-1; MT086-C06-3) | moderate | Defensive Rotation paper, equities only as conditioning variable (MT086-C06-R2); windows ex post; few positive-correlation periods post-1990 (MT086-C08-2). |
-| Trend negative in S&P drawdowns under 15%, positive in deep/long ones (MT194-C06-2, C06-4, C07-1) | moderate-weak | Trade War paper; few episodes above 15%; SG index history (reader). |
-| 2024 dispersion = speed, slow +12% / fast -10-11% (MT002-C02-1; MT195-C04-2) | moderate for 2024 | own style factors; one year; she later concedes 2024 dispersion was not exceptional (MT195-C03-5). |
-| 2025: mid-range windows worst; 10-market set beat broad (MT042-C09-1; MT134-C02-2, C02-1) | weak as a rule | one V-shaped year; rankings flip (MT220-C09-1); the 10-market set lost for ten years running (MT042-C12-1). |
-| Slow vol better in 2022, fast at Liberation Day (MT042-C12-4; MT134-C02-X1) | weak-moderate | path dependence admitted (MT042-C12-5); the pack's MT134-C02-3 claim text says fast was "also better in 2022" but its quote never mentions 2022: extraction error, I take the two consistent claims. |
-| Static vs dynamic sizing: 1.2 vs 1.05; 40% vs 20% long-vol correlation (MT195-C07-4, C08-1, C08-2) | moderate | Quantica 1994-2024, outlier-dependent (Dunne MT195-C10-4); partly endogenous; matches Carver B22/B31 on Sharpe (U02). |
-| 20 largest months: 5.6% -> about -0.5%; dollar-weighted far below (MT191-C13-1, C13-2) | moderate | Quantica; -0.5% claim text only; the dollar-weighted figure uncertain in her words ("1.7% or ... four something"). |
-| GPR extreme months -> bonds down, energy/dollar up, managed futures positive (MT178-C14-1, C14-2) | weak-moderate | monthly since 2000, sorts on extremes of a jumpy index (MT178-C13-3), misses slow episodes (MT178-C15-X2); GPR -> inflation is others' work (MT191-C05-3). |
-| Carry dilutes crisis alpha; carry 30-40% correlated with trend (MT021-C13-2; MT220-C05-1) | ASSERT with numbers | Covid and Aug 2024 anecdotes; the rising carry loading is SHOWN (MT021-C12-3); contradicted by March 2026 (MT083-C05-4). |
-| Trend drawdowns coincide with good equity markets, recover faster in stress; good years follow bad (MT045-C05-3, C06-1; MT221-C11-3) | moderate / weak | drawdown paper plots depth and recovery (MT045-C05-1); "one or two good years" is a chart reading. |
-| Econ trend 40-50% correlated with price trend, complements by regime (MT042-C07-3; MT120-C11-1); crowding overstated (MT042-C15-2) | ASSERT | no tests shown; AQR's 0.4 in U01; she says a crowding cut would have lost in 2024 (MT002-C06-2). |
+| Inflation -> positive stock-bond correlation, bond vol 4% -> 6% ([[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C06-1|MT021-C06-1]], C06-2; [[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C07-2|MT086-C07-2]]; [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C06-5|MT191-C06-5]]) | moderate-strong | own papers over decades plus 800 years; fits the wider literature (reader); no inflation threshold given. |
+| Long/short bond trend negative to equities in down periods; FI positive in every crisis ([[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C09-1|MT021-C09-1]]; [[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C06-3|MT086-C06-3]]) | moderate | Defensive Rotation paper, equities only as conditioning variable ([[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C06-R2|MT086-C06-R2]]); windows ex post; few positive-correlation periods post-1990 ([[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C08-2|MT086-C08-2]]). |
+| Trend negative in S&P drawdowns under 15%, positive in deep/long ones ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C06-2|MT194-C06-2]], C06-4, C07-1) | moderate-weak | Trade War paper; few episodes above 15%; SG index history (reader). |
+| 2024 dispersion = speed, slow +12% / fast -10-11% ([[MT002 - 2024 Trend Following Recap- Key Insights from Top Traders - Systematic Investor 327#^MT002-C02-1|MT002-C02-1]]; [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C04-2|MT195-C04-2]]) | moderate for 2024 | own style factors; one year; she later concedes 2024 dispersion was not exceptional ([[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C03-5|MT195-C03-5]]). |
+| 2025: mid-range windows worst; 10-market set beat broad ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C09-1|MT042-C09-1]]; [[MT134 - Return Dispersion- The 2025 Story - Systematic Investor - Ep.380 REUPLOAD#^MT134-C02-2|MT134-C02-2]], C02-1) | weak as a rule | one V-shaped year; rankings flip ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C09-1|MT220-C09-1]]); the 10-market set lost for ten years running ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-1|MT042-C12-1]]). |
+| Slow vol better in 2022, fast at Liberation Day ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-4|MT042-C12-4]]; [[MT134 - Return Dispersion- The 2025 Story - Systematic Investor - Ep.380 REUPLOAD#^MT134-C02-X1|MT134-C02-X1]]) | weak-moderate | path dependence admitted ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-5|MT042-C12-5]]); the pack's [[MT134 - Return Dispersion- The 2025 Story - Systematic Investor - Ep.380 REUPLOAD#^MT134-C02-3|MT134-C02-3]] claim text says fast was "also better in 2022" but its quote never mentions 2022: extraction error, I take the two consistent claims. |
+| Static vs dynamic sizing: 1.2 vs 1.05; 40% vs 20% long-vol correlation ([[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C07-4|MT195-C07-4]], C08-1, C08-2) | moderate | Quantica 1994-2024, outlier-dependent (Dunne [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C10-4|MT195-C10-4]]); partly endogenous; matches Carver [[Carver blog digest#^B22|B22]]/B31 on Sharpe (U02). |
+| 20 largest months: 5.6% -> about -0.5%; dollar-weighted far below ([[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C13-1|MT191-C13-1]], C13-2) | moderate | Quantica; -0.5% claim text only; the dollar-weighted figure uncertain in her words ("1.7% or ... four something"). |
+| GPR extreme months -> bonds down, energy/dollar up, managed futures positive ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C14-1|MT178-C14-1]], C14-2) | weak-moderate | monthly since 2000, sorts on extremes of a jumpy index ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-3|MT178-C13-3]]), misses slow episodes ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-X2|MT178-C15-X2]]); GPR -> inflation is others' work ([[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C05-3|MT191-C05-3]]). |
+| Carry dilutes crisis alpha; carry 30-40% correlated with trend ([[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C13-2|MT021-C13-2]]; [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C05-1|MT220-C05-1]]) | ASSERT with numbers | Covid and Aug 2024 anecdotes; the rising carry loading is SHOWN ([[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C12-3|MT021-C12-3]]); contradicted by March 2026 ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-4|MT083-C05-4]]). |
+| Trend drawdowns coincide with good equity markets, recover faster in stress; good years follow bad ([[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C05-3|MT045-C05-3]], C06-1; [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C11-3|MT221-C11-3]]) | moderate / weak | drawdown paper plots depth and recovery ([[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C05-1|MT045-C05-1]]); "one or two good years" is a chart reading. |
+| Econ trend 40-50% correlated with price trend, complements by regime ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C07-3|MT042-C07-3]]; [[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C11-1|MT120-C11-1]]); crowding overstated ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C15-2|MT042-C15-2]]) | ASSERT | no tests shown; AQR's 0.4 in U01; she says a crowding cut would have lost in 2024 ([[MT002 - 2024 Trend Following Recap- Key Insights from Top Traders - Systematic Investor 327#^MT002-C06-2|MT002-C06-2]]). |
 | Track record | none | no own P&L, limits or slippage; commercial interest in "hold and add in drawdowns". |
 
 ## 4. Rules worth keeping
@@ -109,148 +118,148 @@ Tags: ALREADY (file:line) / DIFFERS (how) / MISSING.
 
 | # | Rule (codable) | Source | Status |
 |---|---|---|---|
-| 1 | Blend speeds around a 12-month core with at least one fast leg; tilt speed only as far as evidence supports | MT021-C04-2; MT080-C06-1, C06-2; MT194-C14-2 | ALREADY: sign blend 1/3/12 (config.py:19; book.py:69-72); 3/6/12, 6/12, 12 rejected (CHANGES.md:22, 77-79). (reader) Our barbell skips her 2025 "worst" 4-9 months on design Sharpe, not on her evidence. |
-| 2 | Allocate risk, not notional | MT042-C12-3; MT194-C17-5 | ALREADY: score x 0.40 / vol, unit-vol blocks (book.py:132, 190-193). |
-| 3 | Pick a point on the static-dynamic vol spectrum by objective; estimator speed is path-dependent; decide how much shocks and jumps enter the estimate | MT195-C08-5, C11-2; MT042-C12-4, C12-5; MT194-C18-4 | DIFFERS: dynamic end, 70% 35-day EWMA + 30% 10-year, floor 0.75 x slow (config.py:22; vol.py:48-50); chosen on Sharpe (+0.12, CHANGES.md:91); vol.py:8-10 cites her Quantica trade-off; daily moves >= 25% dropped from the fast EWMA (vol.py:32). |
-| 4 | Current correlations in the risk model; never a long-run negative stock-bond correlation | MT194-C16-3, C17-1, C17-2 | DIFFERS: correlations enter only via 36-month realised block and book vol (book.py:191, 198); realised book vol 4.9-14.2% vs 10% (protocol_diagnostics:4, 6). |
-| 5 | Trade every market; alternative markets for diversification net of costs, judged by per-market Sharpe | MT194-C15-1; MT220-C12-2, C13-2, C13-X1 | PARTLY: 62 hand-picked survivors (TESTING_PROTOCOL.md:25; CHANGES.md:49); alternative commodities capped at 30% of commodity risk (book.py:140-148); Bloomberg file 5 pending (BLOOMBERG_PULL_GUIDE.md:13). |
-| 6 | Carry small, directional, no levered relative value | MT021-C13-1, C13-2 | DIFFERS: carry 25% of risk, half cross-sectional (config.py:62; book.py:131); directional-only tried, not adopted (CHANGES.md:70); carry alpha t 4.9 (CHANGES.md:30). |
-| 7 | No timing; no model change after a one-off shock | MT045-C09-2; MT120-C08-3 | ALREADY: scalers and scenario limit rejected (CHANGES.md:19, 73); no in-batch re-runs (TESTING_PROTOCOL.md:32). |
-| 8 | Out-of-sample and parameter-permutation stability before Sharpe; count variables tried | MT120-C06-1; MT045-C14-1 | ALREADY: untouched holdout, Holm, trial log (TESTING_PROTOCOL.md:17, 29-31; CHANGES.md:85). MISSING: Sharpe spread across the parameter grid (planned, gap_review_crosscheck:35). |
-| 9 | Perturb one decision against a plain benchmark; random-signal baseline for allocation vs signal | MT195-C02-4; MT220-C06-X1, C08-X1 | PARTLY: one change per challenger (TESTING_PROTOCOL.md:9). MISSING: random-signal baseline; (reader) warranted when one market gave 42% of capital (protocol_diagnostics:10). |
-| 10 | Condition on equity-drawdown depth and duration; crisis = weeks to months | MT194-C06-1, C07-1; MT021-C10-3 | PARTLY: quintile smile, stress windows (protocol_diagnostics:17-18; config.py:66-73); no depth or age conditioning (T2). |
-| 11 | Measure geopolitical risk (GPR index) before managing it | MT178-C13-3; MT191-C04-1 | MISSING; "later, lower priority", free (gap_review_crosscheck:66). |
-| 12 | When stacked on equities, size jointly or cap the trend book's equity beta | MT194-C13-X1; MT195-C15-3 | MISSING, not needed standalone; planned variant (gap_review_crosscheck:20). |
+| 1 | Blend speeds around a 12-month core with at least one fast leg; tilt speed only as far as evidence supports | [[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C04-2|MT021-C04-2]]; [[MT080 - Index vs. Mechanical Replication in Trend Following - Systematic Investor 337#^MT080-C06-1|MT080-C06-1]], C06-2; [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C14-2|MT194-C14-2]] | ALREADY: sign blend 1/3/12 ([config.py:19](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/config.py#L19); [book.py:69-72](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/book.py#L69-L72)); 3/6/12, 6/12, 12 rejected ([CHANGES.md:22](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L22), 77-79). (reader) Our barbell skips her 2025 "worst" 4-9 months on design Sharpe, not on her evidence. |
+| 2 | Allocate risk, not notional | [[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-3|MT042-C12-3]]; [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C17-5|MT194-C17-5]] | ALREADY: score x 0.40 / vol, unit-vol blocks ([book.py:132](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/book.py#L132), 190-193). |
+| 3 | Pick a point on the static-dynamic vol spectrum by objective; estimator speed is path-dependent; decide how much shocks and jumps enter the estimate | [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C08-5|MT195-C08-5]], C11-2; [[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-4|MT042-C12-4]], C12-5; [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C18-4|MT194-C18-4]] | DIFFERS: dynamic end, 70% 35-day EWMA + 30% 10-year, floor 0.75 x slow ([config.py:22](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/config.py#L22); [vol.py:48-50](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/vol.py#L48-L50)); chosen on Sharpe (+0.12, [CHANGES.md:91](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L91)); [vol.py:8-10](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/vol.py#L8-L10) cites her Quantica trade-off; daily moves >= 25% dropped from the fast EWMA ([vol.py:32](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/vol.py#L32)). |
+| 4 | Current correlations in the risk model; never a long-run negative stock-bond correlation | [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C16-3|MT194-C16-3]], C17-1, C17-2 | DIFFERS: correlations enter only via 36-month realised block and book vol ([book.py:191](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/book.py#L191), 198); realised book vol 4.9-14.2% vs 10% (protocol_diagnostics:4, 6). |
+| 5 | Trade every market; alternative markets for diversification net of costs, judged by per-market Sharpe | [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C15-1|MT194-C15-1]]; [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C12-2|MT220-C12-2]], C13-2, C13-X1 | PARTLY: 62 hand-picked survivors ([TESTING_PROTOCOL.md:25](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/TESTING_PROTOCOL.md#L25); [CHANGES.md:49](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L49)); alternative commodities capped at 30% of commodity risk ([book.py:140-148](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/book.py#L140-L148)); Bloomberg file 5 pending ([BLOOMBERG_PULL_GUIDE.md:13](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/data_requests/BLOOMBERG_PULL_GUIDE.md#L13)). |
+| 6 | Carry small, directional, no levered relative value | [[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C13-1|MT021-C13-1]], C13-2 | DIFFERS: carry 25% of risk, half cross-sectional ([config.py:62](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/config.py#L62); [book.py:131](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/book.py#L131)); directional-only tried, not adopted ([CHANGES.md:70](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L70)); carry alpha t 4.9 ([CHANGES.md:30](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L30)). |
+| 7 | No timing; no model change after a one-off shock | [[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C09-2|MT045-C09-2]]; [[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C08-3|MT120-C08-3]] | ALREADY: scalers and scenario limit rejected ([CHANGES.md:19](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L19), 73); no in-batch re-runs ([TESTING_PROTOCOL.md:32](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/TESTING_PROTOCOL.md#L32)). |
+| 8 | Out-of-sample and parameter-permutation stability before Sharpe; count variables tried | [[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C06-1|MT120-C06-1]]; [[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C14-1|MT045-C14-1]] | ALREADY: untouched holdout, Holm, trial log ([TESTING_PROTOCOL.md:17](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/TESTING_PROTOCOL.md#L17), 29-31; [CHANGES.md:85](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L85)). MISSING: Sharpe spread across the parameter grid (planned, [gap_review_crosscheck:35](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/gap_review_crosscheck_2026-10-31.md#L35)). |
+| 9 | Perturb one decision against a plain benchmark; random-signal baseline for allocation vs signal | [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C02-4|MT195-C02-4]]; [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C06-X1|MT220-C06-X1]], C08-X1 | PARTLY: one change per challenger ([TESTING_PROTOCOL.md:9](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/TESTING_PROTOCOL.md#L9)). MISSING: random-signal baseline; (reader) warranted when one market gave 42% of capital (protocol_diagnostics:10). |
+| 10 | Condition on equity-drawdown depth and duration; crisis = weeks to months | [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C06-1|MT194-C06-1]], C07-1; [[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C10-3|MT021-C10-3]] | PARTLY: quintile smile, stress windows (protocol_diagnostics:17-18; [config.py:66-73](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/config.py#L66-L73)); no depth or age conditioning (T2). |
+| 11 | Measure geopolitical risk (GPR index) before managing it | [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-3|MT178-C13-3]]; [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C04-1|MT191-C04-1]] | MISSING; "later, lower priority", free ([gap_review_crosscheck:66](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/gap_review_crosscheck_2026-10-31.md#L66)). |
+| 12 | When stacked on equities, size jointly or cap the trend book's equity beta | [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C13-X1|MT194-C13-X1]]; [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C15-3|MT195-C15-3]] | MISSING, not needed standalone; planned variant ([gap_review_crosscheck:20](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/gap_review_crosscheck_2026-10-31.md#L20)). |
 
 ## 5. Conflicts
 
-- Inside the unit: (a) "we like chaos" (MT191-C01-1) vs "shocks are not good" (MT042-C07-1): reconciled by shock type
-  (MT045-C11-1, C11-4), never as a rule beyond "15%" and "weeks to months". (b) Vol speed in 2022: MT134-C02-3's claim
-  text contradicts MT042-C12-4 and MT134-C02-X1; evidence favours slow-won-2022. (c) "FI positive in every crisis"
-  (MT086-C06-3) vs no FI offset in April 2025 (Niels, MT194-C03-2): consistent with her definition, April 2025 was a
-  three-day correction (MT045-C12-2). (d) Dispersion as "coin tosses" in a shock (MT194-C10-1) vs a design fingerprint
-  over a year (MT195-C02-4): horizon-dependent (reader). (e) 2024 dispersion "large" (MT002-C14-3) then "not
-  exceptionally larger" (MT195-C03-5): Beer's view wins. (f) Carry harms crisis alpha (MT021-C13-2) vs FX and energy
-  carry worked in March 2026 (MT083-C05-4): unresolved.
-- With Niels on speed: her "12-month has the higher Sharpe" (MT021-C04-2) agrees with him on average and adds
-  convexity; our trial 9 (CHANGES.md:77-79) keeps fast legs, on design data.
-- With U02 (Carver). Agreements: vol scaling for Sharpe (MT195-C08-1); no timing (MT045-C09-2); breadth (MT194-C15-1);
-  equal risk per class, which her book found beat cap weighting (MT220-C07-2), weakly supporting book.py:9 against
-  Carver's hand weights (U02 row 13). Conflicts: (a) "allocate in drawdowns, good years follow" (MT086-C15-2;
-  MT221-C11-3) vs Carver's "drawdowns carry no information" (U02 sections 3, 5): unresolved, hers is a chart reading;
+- Inside the unit: (a) "we like chaos" ([[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C01-1|MT191-C01-1]]) vs "shocks are not good" ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C07-1|MT042-C07-1]]): reconciled by shock type
+  ([[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C11-1|MT045-C11-1]], C11-4), never as a rule beyond "15%" and "weeks to months". (b) Vol speed in 2022: [[MT134 - Return Dispersion- The 2025 Story - Systematic Investor - Ep.380 REUPLOAD#^MT134-C02-3|MT134-C02-3]]'s claim
+  text contradicts [[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-4|MT042-C12-4]] and [[MT134 - Return Dispersion- The 2025 Story - Systematic Investor - Ep.380 REUPLOAD#^MT134-C02-X1|MT134-C02-X1]]; evidence favours slow-won-2022. (c) "FI positive in every crisis"
+  ([[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C06-3|MT086-C06-3]]) vs no FI offset in April 2025 (Niels, [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C03-2|MT194-C03-2]]): consistent with her definition, April 2025 was a
+  three-day correction ([[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C12-2|MT045-C12-2]]). (d) Dispersion as "coin tosses" in a shock ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C10-1|MT194-C10-1]]) vs a design fingerprint
+  over a year ([[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C02-4|MT195-C02-4]]): horizon-dependent (reader). (e) 2024 dispersion "large" ([[MT002 - 2024 Trend Following Recap- Key Insights from Top Traders - Systematic Investor 327#^MT002-C14-3|MT002-C14-3]]) then "not
+  exceptionally larger" ([[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C03-5|MT195-C03-5]]): Beer's view wins. (f) Carry harms crisis alpha ([[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C13-2|MT021-C13-2]]) vs FX and energy
+  carry worked in March 2026 ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C05-4|MT083-C05-4]]): unresolved.
+- With Niels on speed: her "12-month has the higher Sharpe" ([[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C04-2|MT021-C04-2]]) agrees with him on average and adds
+  convexity; our trial 9 ([CHANGES.md:77-79](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L77-L79)) keeps fast legs, on design data.
+- With U02 (Carver). Agreements: vol scaling for Sharpe ([[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C08-1|MT195-C08-1]]); no timing ([[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C09-2|MT045-C09-2]]); breadth ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C15-1|MT194-C15-1]]);
+  equal risk per class, which her book found beat cap weighting ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C07-2|MT220-C07-2]]), weakly supporting [book.py:9](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/book.py#L9) against
+  Carver's hand weights (U02 row 13). Conflicts: (a) "allocate in drawdowns, good years follow" ([[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C15-2|MT086-C15-2]];
+  [[MT221 - Why Trend Following Still Works in Tough Markets - Systematic Investor - Ep.381#^MT221-C11-3|MT221-C11-3]]) vs Carver's "drawdowns carry no information" (U02 sections 3, 5): unresolved, hers is a chart reading;
   (b) Carver's 40% convergent share (U02 row 11) vs "carry waters down crisis alpha": a difference of objective
-  (MT080-C07-4), and our holdout mixes both; (c) U02's T4 (vol-regime attenuation, motivated by 2020) runs against her
-  rule on one-off shocks (MT120-C08-3) and her finding that fast risk cuts hurt in 2022 (MT042-C12-4): neutral on net,
+  ([[MT080 - Index vs. Mechanical Replication in Trend Following - Systematic Investor 337#^MT080-C07-4|MT080-C07-4]]), and our holdout mixes both; (c) U02's T4 (vol-regime attenuation, motivated by 2020) runs against her
+  rule on one-off shocks ([[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C08-3|MT120-C08-3]]) and her finding that fast risk cuts hurt in 2022 ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-4|MT042-C12-4]]): neutral on net,
   but T1 below should run before U02-T4 is registered.
-- With U01 (AQR Economic Trend): econ-price correlation 40-50% (MT042-C07-3) vs AQR 0.4 vs ours -0.16 to 0.26
-  (CHANGES.md:30): our econ family is less trend-like than either, consistent with U01's reading that AQR's best themes
-  are price-based. Her "economic trend is more art" and its dependence on official releases (MT120-C09-X2, C02-X1)
-  support econ at 15% (config.py:62). Her regime complementarity (MT120-C11-1) is the claim U01 graded "suggestive
+- With U01 (AQR Economic Trend): econ-price correlation 40-50% ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C07-3|MT042-C07-3]]) vs AQR 0.4 vs ours -0.16 to 0.26
+  ([CHANGES.md:30](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L30)): our econ family is less trend-like than either, consistent with U01's reading that AQR's best themes
+  are price-based. Her "economic trend is more art" and its dependence on official releases ([[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C09-X2|MT120-C09-X2]], C02-X1)
+  support econ at 15% ([config.py:62](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/config.py#L62)). Her regime complementarity ([[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C11-1|MT120-C11-1]]) is the claim U01 graded "suggestive
   only"; both reject switching.
 - With our book: Sharpe and crisis protection pull design in opposite directions (slow and dynamic for Sharpe, fast and
-  static for crisis, MT080-C07-4; MT195-C11-2). We optimised the Sharpe side (hybrid vol +0.12; 1/3/12) and test the
+  static for crisis, [[MT080 - Index vs. Mechanical Replication in Trend Following - Systematic Investor 337#^MT080-C07-4|MT080-C07-4]]; [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C11-2|MT195-C11-2]]). We optimised the Sharpe side (hybrid vol +0.12; 1/3/12) and test the
   crisis side with "2022 positive" and "corr S&P <= 0.3". Evidence favours her reading that these are two objectives;
   the criteria stand as pre-registered (decision in section 6).
 
 ## 6. Test proposals (ranked)
 
-T1. Vol-sizing speed by shock type (zero slot). Hypothesis (MT042-C12-4, C12-5; MT134-C02-X1; MT195-C08-2): against
+T1. Vol-sizing speed by shock type (zero slot). Hypothesis ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-4|MT042-C12-4]], C12-5; [[MT134 - Return Dispersion- The 2025 Story - Systematic Investor - Ep.380 REUPLOAD#^MT134-C02-X1|MT134-C02-X1]]; [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C08-2|MT195-C08-2]]): against
 the 36-month estimate, the hybrid estimate captures less of a persistent move whose vol expands with the trend and loses
 less in a move that reverses within a month or two. Rule: run CANDIDATE with vol in {hybrid, m36, slow-only 120
 months, static-at-entry = vol frozen at the month the market's 12-month trend sign last changed}, all else fixed; report
 trend-family and book P&L and the share of each window's move captured over the design-era stress windows
-(config.py:66-73): persistent = 1994-02..11 bond rout (the design-era analogue of 2022: bonds, policy-driven, vol up),
+([config.py:66-73](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/config.py#L66-L73)): persistent = 1994-02..11 bond rout (the design-era analogue of 2022: bonds, policy-driven, vol up),
 1990-08..10, 2008-09..12; reversing = 1987-10..11, 1998-08..10, 2007-07..08; plus 1979-10..1982-08 (reader-chosen, fixed
 at registration). Data: free, design months only; Bloomberg file 6 later adds daily commodity vol
-(BLOOMBERG_PULL_GUIDE.md:14). Expected (reader): hybrid captures 10-30% less of 1994 than m36 and loses less in 1987 and
+([BLOOMBERG_PULL_GUIDE.md:14](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/data_requests/BLOOMBERG_PULL_GUIDE.md#L14)). Expected (reader): hybrid captures 10-30% less of 1994 than m36 and loses less in 1987 and
 1998; static-at-entry worst Sharpe, best 1994. Fails usefully if hybrid wins in both window types (a 2022-type year is
 then not a vol-speed question) or differences sit inside monthly noise. Cost: none against Holm; logged. Consequence:
 fixes how a "2022 positive" fail is read; a slower-vol challenger would have to beat a +0.12 adoption, so probably never.
 
-T2. Second-responder profile (zero slot). Hypothesis (MT194-C06-2, C06-4; MT045-C05-3, C06-1): book returns are
+T2. Second-responder profile (zero slot). Hypothesis ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C06-2|MT194-C06-2]], C06-4; [[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C05-3|MT045-C05-3]], C06-1): book returns are
 negative where the world-equity drawdown from its 24-month high is 5-15% and young (<= 2 months), positive when deeper
 than 15% or older, and the early losses come from the trend family's prior long-equity position (1987: trend EQ -6.4%,
 protocol_diagnostics:21). Rule: classify design months by depth {<5, 5-15, >15%} x age {<= 2, > 2 months}; report
 book, family and class P&L per cell, split by the sign of the trend family's equity position at the prior month end
-(gap_review_crosscheck:20); add every family's P&L in the six design-era stress windows (extending
+([gap_review_crosscheck:20](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/gap_review_crosscheck_2026-10-31.md#L20)); add every family's P&L in the six design-era stress windows (extending
 protocol_diagnostics:20-24). Expected (reader): the young 5-15% cell negative (1975-89 worst-quintile return -1.0%/yr,
 protocol_diagnostics:17), the >15% cell positive from FI and CM, carry and value negative in both. Fails usefully if
 flat across cells: "second responder" is then not a property of our 45/40 mix and the correlation test is the only
 crisis criterion worth keeping. Cost: none. Consequence: whether an equity-beta cap becomes a challenger (only if the
-book is ever stacked, MT194-C13-X1); the smile goes into the holdout report as a report, not a criterion.
+book is ever stacked, [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C13-X1|MT194-C13-X1]]); the smile goes into the holdout report as a report, not a criterion.
 
 T3. Correlation-regime audit of the book scaler (zero slot; Batch 2 challenger only on evidence). Hypothesis
-(MT194-C16-3, C17-1, C17-2; MT021-C06-1): the 36-month realised-vol scaler (book.py:198) understates book risk when the
+([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C16-3|MT194-C16-3]], C17-1, C17-2; [[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C06-1|MT021-C06-1]]): the 36-month realised-vol scaler ([book.py:198](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/book.py#L198)) understates book risk when the
 trailing 12-month stock-bond correlation is positive, because positions across the two classes then co-move; the
 4.9-14.2% realised range (protocol_diagnostics:4, 6) is partly regime-driven. Rule: per design month, the sign of the
 12-month correlation of eq_us_spx and bd_us_10y; realised 12-month-forward book vol vs 10% and vs the ex-ante estimate,
 positive vs negative months. Expected (reader): 1-3 points higher realised vol in positive months. If so, challenger:
-book scaler from 70% 12-month EWMA + 30% 36-month book vol, floor 0.75 (vol.py:48-50 at book level). Expected dSR about
-0 (Carver's B03: forcing risk to target costs Sharpe, U02 row 5), so it cannot pass test 2; it would be a "risk route"
+book scaler from 70% 12-month EWMA + 30% 36-month book vol, floor 0.75 ([vol.py:48-50](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/vol.py#L48-L50) at book level). Expected dSR about
+0 (Carver's [[Carver blog digest#^B03|B03]]: forcing risk to target costs Sharpe, U02 row 5), so it cannot pass test 2; it would be a "risk route"
 decision like U02's cost route (adopt if max fall improves >= 2 points, |dSR| <= 0.02, tests 3-5 pass). Fails if
 realised vol shows no regime pattern. Cost: none for the audit; one slot only if registered.
 
-T4. Geopolitical-risk lead-lag (zero slot; Batch 3 challenger if it clears). Hypothesis (MT178-C13-1, C14-1, C14-X1;
-MT191-C05-3): 12-month rises in the Caldara-Iacoviello GPR index lead 12-month CPI changes and are followed by negative
+T4. Geopolitical-risk lead-lag (zero slot; Batch 3 challenger if it clears). Hypothesis ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-1|MT178-C13-1]], C14-1, C14-X1;
+[[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C05-3|MT191-C05-3]]): 12-month rises in the Caldara-Iacoviello GPR index lead 12-month CPI changes and are followed by negative
 bond, positive energy and positive dollar excess returns. Rule: on design months, regress forward 12-month CPI change and
-bond, energy and USD class returns on the standardised 12-month GPR change (z over 10 years as in signals.py:94-98),
+bond, energy and USD class returns on the standardised 12-month GPR change (z over 10 years as in [signals.py:94-98](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/signals.py#L94-L98)),
 Newey-West 12 lags, 1975-2010 and 1990-2010; register a fifth econ theme "geopolitics" (bonds -, commodities +, USD +,
 equities 0, same tanh pipeline) only if |t| > 2 for bonds or commodities in both eras. Data: free
-(gap_review_crosscheck:66); a Bloomberg ticker exists (MT191-C04-1). Expected (reader): weak; her result is trend's
-conditional performance in extreme months, not forecasting power; the index is jumpy (MT178-C13-3); at a 15% econ share
+([gap_review_crosscheck:66](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/gap_review_crosscheck_2026-10-31.md#L66)); a Bloomberg ticker exists ([[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C04-1|MT191-C04-1]]). Expected (reader): weak; her result is trend's
+conditional performance in extreme months, not forecasting power; the index is jumpy ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-3|MT178-C13-3]]); at a 15% econ share
 one theme cannot move the book by 0.05 (U01's lesson). Fails if |t| < 2 or the sign flips across eras. Cost: none now.
 
-T5. No test, not worth a slot: trend speed (settled on design data, CHANGES.md:22, 77-79; her evidence is one year per
-statement); directional-only carry (tried, CHANGES.md:70); cutting carry for crisis alpha (an objective choice; carry's
-alpha t 4.9); an equity-beta cap on a standalone book (her rule is for stacking, MT194-C13-X1); the alternative-commodity
-cap (wait for Bloomberg file 5; judge per-market Sharpe, MT220-C13-X1); econ-vs-price regime switching (she and U01 say
-no, MT086-C11-1); a co-movement crowding filter (would have lost in 2024, MT002-C06-2); turbulence metrics (reporting,
-MT220-C10-1); allocator rules (15-20%, add in drawdowns; Niels's MT086-C14-1, C14-2) concern holding the book, not
+T5. No test, not worth a slot: trend speed (settled on design data, [CHANGES.md:22](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L22), 77-79; her evidence is one year per
+statement); directional-only carry (tried, [CHANGES.md:70](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L70)); cutting carry for crisis alpha (an objective choice; carry's
+alpha t 4.9); an equity-beta cap on a standalone book (her rule is for stacking, [[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C13-X1|MT194-C13-X1]]); the alternative-commodity
+cap (wait for Bloomberg file 5; judge per-market Sharpe, [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C13-X1|MT220-C13-X1]]); econ-vs-price regime switching (she and U01 say
+no, [[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C11-1|MT086-C11-1]]); a co-movement crowding filter (would have lost in 2024, [[MT002 - 2024 Trend Following Recap- Key Insights from Top Traders - Systematic Investor 327#^MT002-C06-2|MT002-C06-2]]); turbulence metrics (reporting,
+[[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C10-1|MT220-C10-1]]); allocator rules (15-20%, add in drawdowns; Niels's [[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C14-1|MT086-C14-1]], C14-2) concern holding the book, not
 building it.
 
 Decision for the user, before the holdout runs: keep "2022 positive" as registered but pre-commit its reading. Her
-logic says 2022 outcomes were design-dependent (MT194-C11-3; MT042-C12-4) and about 20 months make trend's whole return
-(MT191-C13-1), which is why a one-year test has power 0.67 at Sharpe 0.5 (stats_audit:35). Proposal: a 2022 fail with
+logic says 2022 outcomes were design-dependent ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C11-3|MT194-C11-3]]; [[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-4|MT042-C12-4]]) and about 20 months make trend's whole return
+([[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C13-1|MT191-C13-1]]), which is why a one-year test has power 0.67 at Sharpe 0.5 ([stats_audit:35](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/stats_audit_2026-11-02.md#L35)). Proposal: a 2022 fail with
 the other three criteria passing triggers T1's decomposition on the holdout run itself (one run, logged), not a
-redesign; a 2022 pass is not proof of crisis alpha. Written down now, never after the result (gap_review_crosscheck:80).
+redesign; a 2022 pass is not proof of crisis alpha. Written down now, never after the result ([gap_review_crosscheck:80](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/gap_review_crosscheck_2026-10-31.md#L80)).
 
 ## 7. Forward-looking logic
 
-Inputs she says lead prices: (1) price itself over weeks to months, the only input she trades (MT083-C09-1;
-MT021-C10-5), the edge arriving after a shock is visible; (2) the inflation regime, not as timing but as the state that
-sets the stock-bond correlation sign and bond vol over years (MT021-C06-1; MT191-C06-2, C06-3), irrelevant when
-inflation is low and bonds are a safe haven again (MT086-C09-1); (3) jumps in the GPR index, leading inflation by 2-3
-years and bonds, energy and the dollar within the month (MT178-C13-1, C14-1), failing for slow episodes and when a
-risk-off reversal hits equity-long/bond-short books (MT178-C15-X2; MT191-C03-1 as corrected); (4) policy pricing vs
-delivery: a bond trend starts only on a surprise relative to what SOFR prices (MT220-C03-1), with curve slope and rate
-direction setting the bond regime (MT045-C07-1); (5) positioning shifts to long bonds and short commodities as
-recession repricing, even signals across classes as consolidation before a theme (MT086-C06-X1, C15-3): asserted, read
+Inputs she says lead prices: (1) price itself over weeks to months, the only input she trades ([[MT083 - Inside Q1’s Chaos - Systematic Investor - Ep.394#^MT083-C09-1|MT083-C09-1]];
+[[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C10-5|MT021-C10-5]]), the edge arriving after a shock is visible; (2) the inflation regime, not as timing but as the state that
+sets the stock-bond correlation sign and bond vol over years ([[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C06-1|MT021-C06-1]]; [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C06-2|MT191-C06-2]], C06-3), irrelevant when
+inflation is low and bonds are a safe haven again ([[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C09-1|MT086-C09-1]]); (3) jumps in the GPR index, leading inflation by 2-3
+years and bonds, energy and the dollar within the month ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C13-1|MT178-C13-1]], C14-1), failing for slow episodes and when a
+risk-off reversal hits equity-long/bond-short books ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C15-X2|MT178-C15-X2]]; [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C03-1|MT191-C03-1]] as corrected); (4) policy pricing vs
+delivery: a bond trend starts only on a surprise relative to what SOFR prices ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C03-1|MT220-C03-1]]), with curve slope and rate
+direction setting the bond regime ([[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C07-1|MT045-C07-1]]); (5) positioning shifts to long bonds and short commodities as
+recession repricing, even signals across classes as consolidation before a theme ([[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C06-X1|MT086-C06-X1]], C15-3): asserted, read
 not traded; (6) turbulence: magnitude-surprise days lose and recover within a day, correlation surprises mark
-inflections (MT120-C08-1; MT220-C11-1); (7) media attention and sentiment extremes as contrarian markers (MT042-C06-1;
-MT195-C07-X1). It stops working in steady or consolidating markets and when few markets trend (MT042-C07-1;
-MT002-C01-1); in shocks that reverse within days or stay under about 15% (MT194-C06-2; MT045-C12-2); when policy
-expectations oscillate (MT086-C04-2); in fixed income when the path is already priced (MT220-C03-1); and, for a fast
-vol-sized book, when vol doubles inside a persistent trend (MT194-C18-1; MT042-C12-4).
+inflections ([[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C08-1|MT120-C08-1]]; [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C11-1|MT220-C11-1]]); (7) media attention and sentiment extremes as contrarian markers ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C06-1|MT042-C06-1]];
+[[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C07-X1|MT195-C07-X1]]). It stops working in steady or consolidating markets and when few markets trend ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C07-1|MT042-C07-1]];
+[[MT002 - 2024 Trend Following Recap- Key Insights from Top Traders - Systematic Investor 327#^MT002-C01-1|MT002-C01-1]]); in shocks that reverse within days or stay under about 15% ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C06-2|MT194-C06-2]]; [[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C12-2|MT045-C12-2]]); when policy
+expectations oscillate ([[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C04-2|MT086-C04-2]]); in fixed income when the path is already priced ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C03-1|MT220-C03-1]]); and, for a fast
+vol-sized book, when vol doubles inside a persistent trend ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C18-1|MT194-C18-1]]; [[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C12-4|MT042-C12-4]]).
 
 ## 8. Self-check
 
-Numbers re-verified against the pack (every cited id resolved by script): +12%, -10/-11% (MT002-C02-1); 4%, six
-(MT021-C06-2); 15% (MT194-C06-2); 5.6%, 20 (MT191-C13-1; -0.5% claim text); 1.7% / four-something (MT191-C13-2);
-30-40% (MT220-C05-1); 20%, 40% (MT195-C08-1, C08-2); 1.05 / 1.2 (MT195-C07-4); 20% -> 120% (MT195-C08-4, Dunne); 2x
-(MT194-C18-1); 10% / 40% / 4:1 (MT194-C17-5); 7-9 or 4-9 months (MT042-C09-1); 2021 / 2024 / 2025, 10 years
-(MT042-C11-4, C12-1); 40-50% (MT042-C07-3); 100+ years, 44 countries (MT191-C05-3); 25 years (MT178-C14-1); three
-days (MT120-C08-2; MT045-C12-2); 1990 (MT086-C13-6); 800 years (MT191-C06-5); 2015-2019 (MT045-C05-1); 55/35/10,
-55/25/20, 15 (MT086-C14-1, C14-2: Niels); 30 years (MT195-C10-4, Dunne). Against the repo: 1/3/12 sign (config.py:19);
-35 days, 0.7, 0.75 (config.py:22); 10% (config.py:27); 45/15/25/15 (config.py:62); windows (config.py:66-73); 0.40 /
-vol (book.py:132); half carry (book.py:131); 30% cap (book.py:140-148); 36 months, scaler (book.py:191, 198); 0.25
-(vol.py:32); 0.7 / 0.75 (vol.py:48-50); +0.12 (CHANGES.md:91); slow trend 1.43/1.40, 1.03/1.10 (CHANGES.md:22);
-1.48/1.35/1.28/1.27 (CHANGES.md:77-78); t 4.9, -0.16..0.26 (CHANGES.md:30); criteria (CHANGES.md:34-35); 4.9/10.3/13.3,
+Numbers re-verified against the pack (every cited id resolved by script): +12%, -10/-11% ([[MT002 - 2024 Trend Following Recap- Key Insights from Top Traders - Systematic Investor 327#^MT002-C02-1|MT002-C02-1]]); 4%, six
+([[MT021 - Bonds Behaving Badly - Systematic Investor 309#^MT021-C06-2|MT021-C06-2]]); 15% ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C06-2|MT194-C06-2]]); 5.6%, 20 ([[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C13-1|MT191-C13-1]]; -0.5% claim text); 1.7% / four-something ([[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C13-2|MT191-C13-2]]);
+30-40% ([[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C05-1|MT220-C05-1]]); 20%, 40% ([[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C08-1|MT195-C08-1]], C08-2); 1.05 / 1.2 ([[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C07-4|MT195-C07-4]]); 20% -> 120% ([[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C08-4|MT195-C08-4]], Dunne); 2x
+([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C18-1|MT194-C18-1]]); 10% / 40% / 4:1 ([[MT194 - Trend Following during Trump Tariff Turmoil! - Systematic Investor 344#^MT194-C17-5|MT194-C17-5]]); 7-9 or 4-9 months ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C09-1|MT042-C09-1]]); 2021 / 2024 / 2025, 10 years
+([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C11-4|MT042-C11-4]], C12-1); 40-50% ([[MT042 - Diversification is more important than ever! - Systematic Investor - Ep.385#^MT042-C07-3|MT042-C07-3]]); 100+ years, 44 countries ([[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C05-3|MT191-C05-3]]); 25 years ([[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C14-1|MT178-C14-1]]); three
+days ([[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C08-2|MT120-C08-2]]; [[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C12-2|MT045-C12-2]]); 1990 ([[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C13-6|MT086-C13-6]]); 800 years ([[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C06-5|MT191-C06-5]]); 2015-2019 ([[MT045 - Drawdowns, Recovery, and Replication - Systematic Investor - Ep.356#^MT045-C05-1|MT045-C05-1]]); 55/35/10,
+55/25/20, 15 ([[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C14-1|MT086-C14-1]], C14-2: Niels); 30 years ([[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C10-4|MT195-C10-4]], Dunne). Against the repo: 1/3/12 sign ([config.py:19](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/config.py#L19));
+35 days, 0.7, 0.75 ([config.py:22](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/config.py#L22)); 10% ([config.py:27](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/config.py#L27)); 45/15/25/15 ([config.py:62](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/config.py#L62)); windows ([config.py:66-73](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/config.py#L66-L73)); 0.40 /
+vol ([book.py:132](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/book.py#L132)); half carry ([book.py:131](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/book.py#L131)); 30% cap ([book.py:140-148](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/book.py#L140-L148)); 36 months, scaler ([book.py:191](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/book.py#L191), 198); 0.25
+([vol.py:32](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/vol.py#L32)); 0.7 / 0.75 ([vol.py:48-50](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/vol.py#L48-L50)); +0.12 ([CHANGES.md:91](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L91)); slow trend 1.43/1.40, 1.03/1.10 ([CHANGES.md:22](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L22));
+1.48/1.35/1.28/1.27 ([CHANGES.md:77-78](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L77-L78)); t 4.9, -0.16..0.26 ([CHANGES.md:30](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L30)); criteria ([CHANGES.md:34-35](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/gm/CHANGES.md#L34-L35)); 4.9/10.3/13.3,
 6.1/9.5/14.2 (protocol_diagnostics:4, 6); 42% (:10); smile -1.0 / 18.1 (:17-18); 1987 EQ -6.38 (:21); 0.67
-(stats_audit:35); 62 markets (TESTING_PROTOCOL.md:25); dSR >= 0.05 (:18); live 0.4-0.8 (gap_review_crosscheck:16); GPR
-free (:66). Corrections during the check: MT134-C02-3's "2022" dropped as unsupported by its quote; MT195-C04-2's range,
-MT220-C07-1's Sharpes and MT220-C08-2's residual are claim text only, not used as numbers; MT086-C14-1/2 and
-MT120-C03-3/4 re-attributed to Niels; MT191-C03-1 used as corrected; the synthesis's "2-2.5% inflation" for
-MT086-C09-1 was dropped because the quote has no number; Carver's drawdown claim is cited through U02, its id is not in
+([stats_audit:35](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/stats_audit_2026-11-02.md#L35)); 62 markets ([TESTING_PROTOCOL.md:25](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/TESTING_PROTOCOL.md#L25)); dSR >= 0.05 (:18); live 0.4-0.8 ([gap_review_crosscheck:16](https://github.com/haing-dev/stock-screener/blob/a7d48c8cd386865935f20360ad71245f5f406836/docs/research/global_macro/gap_review_crosscheck_2026-10-31.md#L16)); GPR
+free (:66). Corrections during the check: [[MT134 - Return Dispersion- The 2025 Story - Systematic Investor - Ep.380 REUPLOAD#^MT134-C02-3|MT134-C02-3]]'s "2022" dropped as unsupported by its quote; [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C04-2|MT195-C04-2]]'s range,
+[[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C07-1|MT220-C07-1]]'s Sharpes and [[MT220 - Why Trend Following Never Looks the Same Twice - Systematic Investor - Ep.365#^MT220-C08-2|MT220-C08-2]]'s residual are claim text only, not used as numbers; [[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C14-1|MT086-C14-1]]/2 and
+[[MT120 - October Market Recap- Missing Data, Strong Equities, and more - Systematic Investor - Ep.3#^MT120-C03-3|MT120-C03-3]]/4 re-attributed to Niels; [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C03-1|MT191-C03-1]] used as corrected; the synthesis's "2-2.5% inflation" for
+[[MT086 - Interest Rates & Trend Following - Systematic Investor 318#^MT086-C09-1|MT086-C09-1]] was dropped because the quote has no number; Carver's drawdown claim is cited through U02, its id is not in
 this pack.
 
 Strongest counter-argument to the verdict: her strongest material is about CTA indices and allocators, not about
@@ -264,3 +273,4 @@ signal speed and prior positioning; the hybrid estimate's +0.12 was earned over 
 persistent windows is the price already paid; and reading those windows is a look at design returns that could tempt a
 slow-vol challenger the protocol would then refuse on dSR. T1 informs the reading of a holdout criterion; it cannot
 change the vol model without a slot it is unlikely to win.
+

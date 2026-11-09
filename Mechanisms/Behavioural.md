@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Behavioural
 
-1047 claims from 212 sources. Each line links to the claim inside its source note.
+1058 claims from 212 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -350,6 +350,7 @@ tags: [mechanism]
 - [[MT049 - Episode 12- Bob Prince - Co-CIO of Bridgewater Associates#^MT049-C08-4|MT049-C08-4]] — Markets are zero-sum and returns are the objective standard of right or wrong, so an organisation without internal meritocracy will not compete.
 
 ## [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting]]
+- [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C04-R1|MT050-C04-R1]] — When raising money, explain the whole process, then follow it, and report results including mistakes and lapses in discipline honestly.
 - [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C05-5|MT050-C05-5]] — Portfolio managers are conditioned by the previous regime, so in a new secular bull market an older manager shaped by the preceding bear market will be too cautious; match manager traits to the long cycle.
 - [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C06-2|MT050-C06-2]] — A contrarian is lonely at tops with a bearish view; a fixed analytical routine counters doubt.
 
@@ -364,8 +365,11 @@ tags: [mechanism]
 - [[MT053 - Episode 4- Noah Yechiely - Former Head of Equities at Bridgewater Associates#^MT053-C02-1|MT053-C02-1]] — Many hedge funds drifted into holding assets long because that earns market returns over time on which they can charge fees, so they sell beta, not unique returns.
 
 ## [[MT054 - Episode 5- Jim Rogers - Legendary Investor & Co-Founder of Quantum Fund]]
+- [[MT054 - Episode 5- Jim Rogers - Legendary Investor & Co-Founder of Quantum Fund#^MT054-C03-R1|MT054-C03-R1]] — His first major investment was buying many puts expecting a collapse, which came four or five months later; he sold at the bottom and felt like a genius before losing everything.
+- [[MT054 - Episode 5- Jim Rogers - Legendary Investor & Co-Founder of Quantum Fund#^MT054-C03-R2|MT054-C03-R2]] — He concludes the market is smarter than he is, and that there was a lot he did not know, especially about emotion and market timing.
 - [[MT054 - Episode 5- Jim Rogers - Legendary Investor & Co-Founder of Quantum Fund#^MT054-C04-1|MT054-C04-1]] — Investors fail by adopting other people's strategies they do not understand instead of sticking to the approach that has worked for them; there are many ways to make money (Roy Neuberger traded ticks, Rogers studied companies), so find what suits you.
 - [[MT054 - Episode 5- Jim Rogers - Legendary Investor & Co-Founder of Quantum Fund#^MT054-C09-3|MT054-C09-3]] — Ignore hot tips and copying others' trades: without knowing why you bought you cannot decide what to do when the price moves, so invest only in what you know well.
+- [[MT054 - Episode 5- Jim Rogers - Legendary Investor & Co-Founder of Quantum Fund#^MT054-C09-R4|MT054-C09-R4]] — Hot tips ruin investors because without knowing why you bought you cannot decide what to do when the price rises or falls.
 
 ## [[MT055 - Episode 55- Economic Myths with Jeff Yass - Co-Founder and Managing Director of Susquehann]]
 - [[MT055 - Episode 55- Economic Myths with Jeff Yass - Co-Founder and Managing Director of Susquehann#^MT055-C05-2|MT055-C05-2]] — Government hides costs by not billing citizens directly, so waste persists; if people saw the bill, they would change their behaviour.
@@ -541,8 +545,10 @@ tags: [mechanism]
 ## [[MT084 - Inside the Regime-Adaptive Portfolio - Systematic Investor - Ep.377]]
 - [[MT084 - Inside the Regime-Adaptive Portfolio - Systematic Investor - Ep.377#^MT084-C01-1|MT084-C01-1]] — Prediction-market odds on the next Fed chair (Hassett from second or third to about 70%) are read as a signal that someone informed is betting.
 - [[MT084 - Inside the Regime-Adaptive Portfolio - Systematic Investor - Ep.377#^MT084-C09-2|MT084-C09-2]] — The biggest investor mistake is to assume current conditions persist (Howard Marks).
+- [[MT084 - Inside the Regime-Adaptive Portfolio - Systematic Investor - Ep.377#^MT084-C12-R2|MT084-C12-R2]] — Affordability is the big US talking point because price levels stay high even though the inflation rate has moderated, adding to sensitivity about inflation.
 - [[MT084 - Inside the Regime-Adaptive Portfolio - Systematic Investor - Ep.377#^MT084-C14-2|MT084-C14-2]] — Capital constraints cause underallocation to diversifiers; futures leverage removes this constraint.
 - [[MT084 - Inside the Regime-Adaptive Portfolio - Systematic Investor - Ep.377#^MT084-C14-3|MT084-C14-3]] — Judging diversifying strategies by the past 15-year equity bull market is misleading when equity returns are likely lower going forward.
+- [[MT084 - Inside the Regime-Adaptive Portfolio - Systematic Investor - Ep.377#^MT084-C15-R1|MT084-C15-R1]] — The consequence of a growth-and-stable-inflation concentration is that tail risks (runaway inflation or deflationary deleveraging) are underpriced, beyond the change in bond-equity correlation.
 
 ## [[MT085 - Inside the mind of a legendary investor - Stan Druckenmiller - Highlights - In Good Compan]]
 - [[MT085 - Inside the mind of a legendary investor - Stan Druckenmiller - Highlights - In Good Compan#^MT085-C01-X1|MT085-C01-X1]] — His Nvidia entry combined a strong in-house theme signal (the AI buzz among young analysts) with a stock already down sharply (about 400 to 150), but he credits the timing, a month before ChatGPT, to luck rather than foresight.
@@ -1186,6 +1192,7 @@ tags: [mechanism]
 ## [[MT181 - The Two Tribes of Trend - Systematic Investor - Ep.351]]
 - [[MT181 - The Two Tribes of Trend - Systematic Investor - Ep.351#^MT181-C04-1|MT181-C04-1]] — April 2025 tariff announcements hit equities, commodities and currencies at once and caused massive whipsaws for all trend followers; the speaker expects this regime not to last because a direction must emerge.
 - [[MT181 - The Two Tribes of Trend - Systematic Investor - Ep.351#^MT181-C12-X1|MT181-C12-X1]] — Limited capital is an advantage for a retail trend follower because it forces a lean process with no waste, no overfitting and no extreme risk, and enough money at stake keeps the trader careful and disciplined.
+- [[MT181 - The Two Tribes of Trend - Systematic Investor - Ep.351#^MT181-C14-R1|MT181-C14-R1]] — An LLM that surfaces a trading model has shown only that it is widely discussed in online communities, which it treats as evidence that it works, not that it is causally effective.
 
 ## [[MT182 - The VUCA World Is Here - Systematic Investor - Ep.398]]
 - [[MT182 - The VUCA World Is Here - Systematic Investor - Ep.398#^MT182-C08-1|MT182-C08-1]] — High ambiguity and conflicting signals make investors slow down, dollar-cost average and delay action, which spreads decisions over time and produces longer price trends.
@@ -1229,6 +1236,7 @@ tags: [mechanism]
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C01-X1|MT189-C01-X1]] — Tom Roble sees markets as having digested volatility and the Iran war into prices (a 'new normal'), with equities rebounding and the next big trends still to come, so complacency about volatility is high.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C14-2|MT189-C14-2]] — Humans hold losers with a white-knuckle grip; the ruthless rules-based exit is a money-generating alpha source.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C15-2|MT189-C15-2]] — Crisis alpha marketing creates disappointment when trend funds do not protect over short equity drawdowns, because trends take time to adapt; the rhetoric moved to risk mitigating strategies and all-weather.
+- [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C16-R1|MT189-C16-R1]] — Kaastrup-Larsen agrees it is wrong to sell trend following as a crisis alpha strategy, while recognising the term was useful to the industry.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C17-X1|MT189-C17-X1]] — US mutual fund flow data show investors mistime CTA allocations by buying after strong runs, as with every other fund category, so investor-weighted returns lag fund returns and many allocators leave after a poorly timed entry.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C19-X1|MT189-C19-X1]] — Allocators who choose a manager from today's survivors expect index plus about 200bp and often do not get it, and pro-single-manager papers pointing to three funds that crushed the index are survivor stories, so the sensible remedy is diversifying across managers or using multi-manager solutions (often via managed accounts).
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C20-X1|MT189-C20-X1]] — Short-term models are added to long-term trend programmes mainly to smooth the return profile in volatile periods so the product is easier to hold and present to an investment committee, even if the long-term core product is better on its own.
@@ -1250,6 +1258,9 @@ tags: [mechanism]
 - [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C11-X2|MT191-C11-X2]] — Commodity-scarcity narratives after the Ukraine invasion (for example an aluminium shortage halting aircraft output) did not materialise, yet they fuel a late push to add commodities to portfolios after the geopolitical shock.
 - [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C13-2|MT191-C13-2]] — Dollar-weighted investor returns in trend were well below the 5.6 percent index return (about 4 percent, speaker unsure), because investors exit after underperformance and buy after strong periods.
 - [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C13-3|MT191-C13-3]] — The timing penalty is larger in liquid public funds than in private funds, where investors cannot trade.
+- [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C13-R1|MT191-C13-R1]] — Investors believe they can predict when trend's big run-up will arrive, which is why they time their entry and exit.
+- [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C13-R2|MT191-C13-R2]] — Because trend returns are punchy and episodic, the working approach is to hold the allocation and wait for the big months.
+- [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C13-R3|MT191-C13-R3]] — Worked example of the timing penalty: an investor who buys after a strong year, sells after the following negative returns and misses the next run-up earns far less than the index.
 - [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C14-1|MT191-C14-1]] — Liquidity lets investors trade their trend allocation and focus on the short term, whereas illiquid assets hide drawdowns and force holding.
 - [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C14-2|MT191-C14-2]] — Daily-liquid ETF and mutual-fund trend products have anonymous investors the manager cannot coach through drawdowns, which may worsen timing behavior.
 - [[MT191 - Trend Following Rewards Investors Who Wait - Systematic Investor - Ep.422#^MT191-C14-X1|MT191-C14-X1]] — Investors stay patient with stocks and bonds through underperformance because they see no alternative, but treat trend working as confirmation and, by watching short-term results, miss the later data points that confirm the long-run case; patience is asymmetric across asset classes.

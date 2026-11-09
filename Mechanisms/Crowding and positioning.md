@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Crowding and positioning
 
-640 claims from 170 sources. Each line links to the claim inside its source note.
+641 claims from 170 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -482,6 +482,7 @@ tags: [mechanism]
 ## [[MT126 - Politics, Markets & Power Plays - Systematic Investor 338]]
 - [[MT126 - Politics, Markets & Power Plays - Systematic Investor 338#^MT126-C13-3|MT126-C13-3]] — When everyone is bullish and an obvious buy keeps falling, caution is warranted since there may be a risk not being considered (a Taiwan tail risk).
 - [[MT126 - Politics, Markets & Power Plays - Systematic Investor 338#^MT126-C13-4|MT126-C13-4]] — Forced liquidation of crowded leadership stocks while a Taiwan shock arrives would amplify downside; be mindful of tail risk in crowded longs.
+- [[MT126 - Politics, Markets & Power Plays - Systematic Investor 338#^MT126-C13-R1|MT126-C13-R1]] — Jim says he called the near-exact Nvidia top live on the show, linking the move to Trump's Taiwan 'pay for protection' remark (a Taiwan tail risk priced late).
 
 ## [[MT127 - Portable Alpha, Trend Following & AI Investing ft. Harry Moore - Systematic Investor - Ep]]
 - [[MT127 - Portable Alpha, Trend Following & AI Investing ft. Harry Moore - Systematic Investor - Ep#^MT127-C02-1|MT127-C02-1]] — A hedge fund that is dollar or market neutral on paper can still be concentrated in one theme (the other side of the AI trade), so a theme reversal caused a large loss; being right does not prevent trouble.

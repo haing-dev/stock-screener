@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Liquidity and flows
 
-668 claims from 171 sources. Each line links to the claim inside its source note.
+670 claims from 171 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -267,6 +267,7 @@ tags: [mechanism]
 ## [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel]]
 - [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel#^MT067-C04-2|MT067-C04-2]] — QE suppresses volatility and pushes investors out the risk spectrum (3% mortgages, cheap credit), whereas withdrawing it raises volatility.
 - [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel#^MT067-C07-4|MT067-C07-4]] — Quantitative tightening raises real yields until yields get so high central banks might flinch.
+- [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel#^MT067-C07-R1|MT067-C07-R1]] — He expects risk assets, stocks and bonds to continue selling off, though the combined stock and bond sell-off is a trickier call.
 - [[MT067 - Graham's 2022 Virtual Investment Symposium- Discretionary Strategies Panel#^MT067-C09-1|MT067-C09-1]] — Poor liquidity means some trades cannot be sized, so illiquid ideas are skipped; place a premium on liquid instruments.
 
 ## [[MT068 - Greg Jensen - Co-CIO of Bridgewater Podcast In Good Company Norges Bank Investment Managem]]
@@ -359,6 +360,7 @@ tags: [mechanism]
 
 ## [[MT085 - Inside the mind of a legendary investor - Stan Druckenmiller - Highlights - In Good Compan]]
 - [[MT085 - Inside the mind of a legendary investor - Stan Druckenmiller - Highlights - In Good Compan#^MT085-C01-2|MT085-C01-2]] — He watches financial conditions: very loose, looser than when the Fed began tightening, and tighter recently because the dollar rallied and rates rose after the Fed cut.
+- [[MT085 - Inside the mind of a legendary investor - Stan Druckenmiller - Highlights - In Good Compan#^MT085-C01-R1|MT085-C01-R1]] — He describes himself as more a market animal than an economist, which is why he watches market-based financial conditions alongside bottom-up company information.
 
 ## [[MT088 - Is OpenAI the Achilles’ Heel of the US Economy- - The Weekly Wrap]]
 - [[MT088 - Is OpenAI the Achilles’ Heel of the US Economy- - The Weekly Wrap#^MT088-C01-3|MT088-C01-3]] — Higher rates hurt debt issuers but benefit saver consumers via bank and money market income.

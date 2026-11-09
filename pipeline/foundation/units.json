@@ -43,7 +43,10 @@
   "investors": [
    "yoav_git"
   ],
-  "topic": "sources of trend by asset class, market selection, execution"
+  "topic": "sources of trend by asset class, market selection, execution",
+  "speaker_match": {
+   "yoav_git": "\\bgit\\b|yo kit|^yov\\b"
+  }
  },
  {
   "id": "U06",

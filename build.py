@@ -249,7 +249,7 @@ def build_vault(ledgers):
         open(os.path.join(V, "Mechanisms", safe(MECH_TXT.get(mk, mk), 60) + ".md"), "w").write("\n".join(lines) + "\n")
     idx = ["---", "tags: [index]", "---", "# Macro Transcripts: Layer 0 ledger", "",
            "Every claim from every transcript, with verbatim quotes (script-checked) and a completeness cross-check (Opus 5.5 high for the first 95 sources, Sonnet 5.5 xhigh for the rest; column below).",
-           "Quant papers (argument maps + claims): [[00 Papers index]]", "Investors (one synthesis per person): [[00 Investors index]]", "", "Mechanism pages: " + ", ".join("[[%s]]" % safe(MECH_TXT[k], 60) for k in MECH_TXT if k in by_mech), "",
+           "Quant papers (argument maps + claims): [[00 Papers index]]", "Investors (one synthesis per person): [[00 Investors index]]", "Fable judgement (foundation units): [[00 Foundation index]]", "How every note was made, specs, routing, raw data: [[00 Method]] (raw JSON in `_data/`)", "", "Mechanism pages: " + ", ".join("[[%s]]" % safe(MECH_TXT[k], 60) for k in MECH_TXT if k in by_mech), "",
            "| ID | Source | Date | Claims | Added by cross-check | Cross-check |", "|---|---|---|---|---|---|"]
     for sid, fname, d, n, a, x in rows:
         idx.append("| %s | [[%s]] | %s | %d | %d | %s |" % (sid, fname, d, n, a, x))

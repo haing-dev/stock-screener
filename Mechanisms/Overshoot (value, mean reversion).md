@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Overshoot (value, mean reversion)
 
-361 claims from 149 sources. Each line links to the claim inside its source note.
+364 claims from 149 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -564,9 +564,12 @@ tags: [mechanism]
 
 ## [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep]]
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C01-1|MT189-C01-1]] — Traditional valuation analysis seems unusable in current equity markets, which resemble venture capital with fantastical projections (SpaceX IPO), possibly a repeat of 2000.
+- [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C02-R1|MT189-C02-R1]] — Beer says the current equity market could repeat 2000 or be something very different, and that this cannot be known now.
 
 ## [[MT193 - Trend Following as a Return Enhancement Overlay - Systematic Investor 297]]
 - [[MT193 - Trend Following as a Return Enhancement Overlay - Systematic Investor 297#^MT193-C05-5|MT193-C05-5]] — With excess savings declining, credit spreads (BBB near lows, similar to 2007) and the VIX are very low, so markets price almost no recession risk.
+- [[MT193 - Trend Following as a Return Enhancement Overlay - Systematic Investor 297#^MT193-C05-R1|MT193-C05-R1]] — Dunne reports Waller saying that the risk of recession seems to have been totally removed from the market.
+- [[MT193 - Trend Following as a Return Enhancement Overlay - Systematic Investor 297#^MT193-C12-R1|MT193-C12-R1]] — Dunne notes equity valuations are high in some instances after a long run, with risks (economic cracks) but no way to know when to leave the bull market.
 
 ## [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326]]
 - [[MT195 - Trend Following in 2025- New Challenges, New Strategies! - Systematic Investor 326#^MT195-C07-2|MT195-C07-2]] — Equity sentiment at an all-time high and bears capitulating is a warning sign of over-exuberance, though it cannot be timed.

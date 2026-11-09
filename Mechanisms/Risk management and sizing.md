@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Risk management and sizing
 
-1899 claims from 215 sources. Each line links to the claim inside its source note.
+1909 claims from 215 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -440,6 +440,7 @@ tags: [mechanism]
 - [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C09-2|MT043-C09-2]] — Fund cut the oil short when ISIS risk emerged in Iraq, and re-entered once the thesis held.
 - [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C09-3|MT043-C09-3]] — After the Iraq shock, adding back to the short was right: global growth disappointed and surpluses built.
 - [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C09-6|MT043-C09-6]] — In the LME nickel squeeze the exchange cancelled trades after the market opened, so exchange intervention risk exists in extreme squeezes.
+- [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C09-R1|MT043-C09-R1]] — In the LME nickel squeeze the fund sold nearly everything after the price had doubled in a morning, then the exchange cancelled trades it did not honour.
 - [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C10-2|MT043-C10-2]] — Physical trading in 2014-17 had poor margins and high counterparty credit risk, which makes it less attractive than futures.
 - [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C12-1|MT043-C12-1]] — Global risk-off days (Liberation Day) force de-risking even when the commodity story is strong, repeatedly cutting and rebuilding positions.
 - [[MT043 - Doug King on Commodities, Risk Control & the Illusion of Trends - Open Interest - Ep.20#^MT043-C12-X1|MT043-C12-X1]] — Multi-manager platforms run commodity PMs on very tight drawdown leashes (out after a few failures within months), unlike a single-team fund that can sit through noise around a long-term supply-demand theme.
@@ -514,6 +515,7 @@ tags: [mechanism]
 - [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-2|MT050-C07-2]] — Always keep a failsafe stop-loss and stay humble: a large loss unbalances decision-making and is hard to recover.
 - [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-3|MT050-C07-3]] — Large losses are hard to recover (needed gains grow nonlinearly), which matters even more in a performance game.
 - [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-4|MT050-C07-4]] — His biggest loss was a position held without a stop that was finally closed down 50% when he was about 30.
+- [[MT050 - Episode 15- Felix Zulauf - Founder of Zulauf Consulting#^MT050-C07-R1|MT050-C07-R1]] — He is in a performance game only for his subscribers, not for the portfolios he manages, which hold his own money.
 
 ## [[MT051 - Episode 17- Howard Marks - Co-Chairman of Oaktree Capital Management]]
 - [[MT051 - Episode 17- Howard Marks - Co-Chairman of Oaktree Capital Management#^MT051-C03-5|MT051-C03-5]] — Risk should be judged as how risky and what expected return versus compensation, not as good or bad; intelligent risk-taking needs quantification, diversification and adequate payment.
@@ -524,6 +526,7 @@ tags: [mechanism]
 
 ## [[MT054 - Episode 5- Jim Rogers - Legendary Investor & Co-Founder of Quantum Fund]]
 - [[MT054 - Episode 5- Jim Rogers - Legendary Investor & Co-Founder of Quantum Fund#^MT054-C03-1|MT054-C03-1]] — Being right on the thesis does not help if timing is wrong: his shorts on companies that later went bankrupt first soared in a rising market and wiped him out, so the market is harder to read than the analysis and there is more emotion than expected.
+- [[MT054 - Episode 5- Jim Rogers - Legendary Investor & Co-Founder of Quantum Fund#^MT054-C06-R3|MT054-C06-R3]] — Timing is part of investing; knowing facts such as the price of copper is necessary but not sufficient.
 - [[MT054 - Episode 5- Jim Rogers - Legendary Investor & Co-Founder of Quantum Fund#^MT054-C08-1|MT054-C08-1]] — He has no rule for cutting losses: some use stop-losses (e.g. out if it falls 12%), he holds through the pain until he sees he made a mistake.
 
 ## [[MT056 - Finding Alpha in the Strait of Chaos ft. Andrew Beer - Systematic Investor - Ep.395]]
@@ -582,7 +585,9 @@ tags: [mechanism]
 - [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-1|MT062-C06-1]] — Hold more than two but fewer than ten systematic managers: too many dilutes returns, a single one gives an idiosyncratic experience (a 30-day commodity manager vs others); concentrate in the best over time.
 - [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-7|MT062-C06-7]] — CFM uses a committee for non-model risks (regulation, elections, DeepSeek), since markets are nonstationary and nonlinear.
 - [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-8|MT062-C06-8]] — Never override signals, but occasionally constrain risk models and later codify the logic into the system.
+- [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C06-R1|MT062-C06-R1]] — Even a high-frequency systematic firm retains a metaphorical button operated by a human, because markets are nonstationary and nonlinear.
 - [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-2|MT062-C07-2]] — Quant firms run a daily risk meeting to understand system positions; interventions in disruptions are risk responses, never alpha.
+- [[MT062 - Global Macro- Discretionary vs. Systematic - Who Wins- - Global Alts 2025 - Pablo Calderin#^MT062-C07-R1|MT062-C07-R1]] — Markets are highly nonstationary, so humans must watch systems even when the process is not overridden.
 
 ## [[MT063 - Global Market Risks, Fertility Crisis & Navigating Uncertainty - Systematic Investor 324]]
 - [[MT063 - Global Market Risks, Fertility Crisis & Navigating Uncertainty - Systematic Investor 324#^MT063-C03-1|MT063-C03-1]] — Trend following is a core allocation that should be held regardless of equity performance, especially when equities are strong and could turn.
@@ -860,6 +865,7 @@ tags: [mechanism]
 - [[MT087 - Investing in the Age of AI, Uncertainty, and Data Overload - Systematic Investor - Ep.352#^MT087-C08-2|MT087-C08-2]] — If V-shapes become more frequent and signal-to-noise is low, lower volatility targets (less leverage) may be warranted.
 - [[MT087 - Investing in the Age of AI, Uncertainty, and Data Overload - Systematic Investor - Ep.352#^MT087-C08-3|MT087-C08-3]] — SG Trend index realized volatility over the last 1-2 years was about 7-11%, below the historic 10-13%, hinting managers already run lower or more dynamic risk.
 - [[MT087 - Investing in the Age of AI, Uncertainty, and Data Overload - Systematic Investor - Ep.352#^MT087-C08-4|MT087-C08-4]] — Motivation for dynamic vol targets: cut drawdowns and take more risk when trends are plentiful; open question is how managers decide the level.
+- [[MT087 - Investing in the Age of AI, Uncertainty, and Data Overload - Systematic Investor - Ep.352#^MT087-C09-R1|MT087-C09-R1]] — Baltas accepts lagging peers in a strong year (15 versus 20) as the price of being under-levered to avoid a deeper loss in a bad year, which is the asymmetry that motivates dynamic de-leveraging.
 - [[MT087 - Investing in the Age of AI, Uncertainty, and Data Overload - Systematic Investor - Ep.352#^MT087-C10-2|MT087-C10-2]] — Niels's firm has used dynamic risk budgeting for over 12 years and sees value in it, using volatility and correlations beyond price; critics call it contrary to pure trend following.
 - [[MT087 - Investing in the Age of AI, Uncertainty, and Data Overload - Systematic Investor - Ep.352#^MT087-C11-1|MT087-C11-1]] — Mean-variance would put 100% in managed futures (higher Sharpe), but investors are judged against a benchmark, so career and tracking-error risk constrain the allocation.
 - [[MT087 - Investing in the Age of AI, Uncertainty, and Data Overload - Systematic Investor - Ep.352#^MT087-C14-1|MT087-C14-1]] — Trend following should be a strategic allocation (like insurance), because timing it is not possible: past performance is a weak predictor of future returns.
@@ -937,6 +943,7 @@ tags: [mechanism]
 - [[MT097 - Living With Ed Seykota - Open Interest - Ep.19 BONUS#^MT097-C05-1|MT097-C05-1]] — There is an optimal bet size given a known edge per trade (Seykota and Drew wrote an article on heat distribution), but because edge is unstable over time it is only a rule of thumb, and the optimal size is bigger than most people would use.
 - [[MT097 - Living With Ed Seykota - Open Interest - Ep.19 BONUS#^MT097-C05-2|MT097-C05-2]] — Betting too large raises risk of ruin steeply, while betting too little makes risk of ruin near zero but gives low returns.
 - [[MT097 - Living With Ed Seykota - Open Interest - Ep.19 BONUS#^MT097-C05-3|MT097-C05-3]] — To make a lot of money one must bet bigger than seems comfortable, taking considerable heat, but not so big as to risk ruin.
+- [[MT097 - Living With Ed Seykota - Open Interest - Ep.19 BONUS#^MT097-C05-R1|MT097-C05-R1]] — Drew relays Seykota's answer on his biggest drawdown: he does not think he lost more than 50% in a day, i.e. extreme heat is part of his return.
 - [[MT097 - Living With Ed Seykota - Open Interest - Ep.19 BONUS#^MT097-C06-3|MT097-C06-3]] — Drawdown reduction rules (dialing risk back after losses) can keep a system underwater indefinitely, so size should instead scale with current equity.
 - [[MT097 - Living With Ed Seykota - Open Interest - Ep.19 BONUS#^MT097-C06-4|MT097-C06-4]] — Bet size should scale proportionally with equity (2x at 2 million), rising and falling, otherwise risk of ruin rises if you only scale up.
 - [[MT097 - Living With Ed Seykota - Open Interest - Ep.19 BONUS#^MT097-C07-1|MT097-C07-1]] — Sizing from closed-trade equity (after stops) is more stable than from open-trade equity, which includes large open profits and encourages over-risking.
@@ -1820,6 +1827,7 @@ tags: [mechanism]
 - [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C08-2|MT178-C08-2]] — Return dispersion across CTAs is large (about 80% in 2022; one manager lost over 30% while the asset class gained 20%), so a diversified multi-manager approach with equal risk allocation and volatility targeting gives more consistent crisis alpha.
 - [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C08-3|MT178-C08-3]] — Managed accounts let investors scale a high-Sharpe multi-manager CTA portfolio to a desired volatility, unlike funds of hedge funds that cannot scale returns up.
 - [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C10-3|MT178-C10-3]] — Volatility targeting at portfolio level diversifies bets across time, further improving performance beyond equal risk allocation across managers.
+- [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C10-R1|MT178-C10-R1]] — Molyboga believes diversification is the only free lunch in finance and the best principle to use.
 - [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C16-X1|MT178-C16-X1]] — Allocators worried about crises, inflation or geopolitical risk should hold diversified trend with meaningful commodity trend exposure, because commodity trend is the sleeve that helps most in geopolitical environments.
 - [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C17-2|MT178-C17-2]] — The benefit of short-term trend is very sensitive to transaction costs and market impact and disappears without investment in execution infrastructure (colocation, specialised algos).
 - [[MT178 - The Strategy That Thrives When Markets Panic - Systematic Investor - Ep.403#^MT178-C17-X1|MT178-C17-X1]] — A practical target for diversifying manager risk is six to ten trend managers instead of the usual one or two, which captures crisis alpha more consistently.
@@ -1924,6 +1932,7 @@ tags: [mechanism]
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C11-X3|MT189-C11-X3]] — Disagreeing with the over-engineering concern, Roble argues that the logic of trend following is to capture trends in as many places as possible, so adding markets (efficiently, using futures leverage) is consistent with the philosophy rather than needless complexity.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C20-1|MT189-C20-1]] — Allocate to two to four structurally different trend managers rather than one.
 - [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C21-1|MT189-C21-1]] — Short-term models sold after 2022 as protection at inflection points act like vol controls or stop-losses, reducing drawdowns at a true economic cost of lost returns.
+- [[MT189 - Trend Following Is Becoming Something Bigger Than Crisis Alpha - Systematic Investor - Ep#^MT189-C21-R1|MT189-C21-R1]] — Beer voices the investor's reconsideration: for an all-weather solution with enough returns, one may have to accept more volatility instead of paying for protection at small inflection points.
 
 ## [[MT190 - Trend Following Is Changing Faster Than Ever - Systematic Investor - Ep.409]]
 - [[MT190 - Trend Following Is Changing Faster Than Ever - Systematic Investor - Ep.409#^MT190-C02-2|MT190-C02-2]] — Retail access to shorting via futures is dangerous because short losses are unlimited (takeover risk).
@@ -2077,6 +2086,7 @@ tags: [mechanism]
 - [[MT200 - Trend Following- How much to Allocate- - Systematic Investor 316#^MT200-C15-1|MT200-C15-1]] — Mean-variance analysis would put about 70% in trend following because its historical Sharpe is higher than a stock-bond portfolio; minimising downside risk gives about 52% (1999-2019 data), both too high for institutions.
 - [[MT200 - Trend Following- How much to Allocate- - Systematic Investor 316#^MT200-C15-2|MT200-C15-2]] — Sizing must balance benchmark-relative active risk (tracking error to the policy portfolio) against benefits, since institutions are judged against a benchmark.
 - [[MT200 - Trend Following- How much to Allocate- - Systematic Investor 316#^MT200-C16-1|MT200-C16-1]] — Assess scenario analysis for increments of trend allocation (2%, 5%, 10%, 15%) with tracking error against benchmark; larger sizes improve tail, Sharpe and downside but carry career risk, and the horizon (1 vs 10 years) changes the value.
+- [[MT200 - Trend Following- How much to Allocate- - Systematic Investor 316#^MT200-C16-R1|MT200-C16-R1]] — Baltas says a trend allocation should not be too small because the impact would be tiny, but the larger it becomes the more conscious institutions must be about tracking error to their benchmark.
 
 ## [[MT201 - Trend Following...Austrian Style - Open Interest 8]]
 - [[MT201 - Trend Following...Austrian Style - Open Interest 8#^MT201-C04-3|MT201-C04-3]] — Position sizing choices that differ across managers include constant versus flexible risk targeting and whether sizing uses only signal direction or the signal value.

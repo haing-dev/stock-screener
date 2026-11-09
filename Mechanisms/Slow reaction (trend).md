@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Slow reaction (trend)
 
-791 claims from 181 sources. Each line links to the claim inside its source note.
+795 claims from 181 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -229,6 +229,8 @@ tags: [mechanism]
 
 ## [[MT056 - Finding Alpha in the Strait of Chaos ft. Andrew Beer - Systematic Investor - Ep.395]]
 - [[MT056 - Finding Alpha in the Strait of Chaos ft. Andrew Beer - Systematic Investor - Ep.395#^MT056-C04-2|MT056-C04-2]] — In whipsaw regimes of the last three years, slower trend models have fared better than faster ones, although speed may differentiate returns differently this time.
+- [[MT056 - Finding Alpha in the Strait of Chaos ft. Andrew Beer - Systematic Investor - Ep.395#^MT056-C05-R1|MT056-C05-R1]] — Beer's replication portfolios were up roughly 11-12% through January and February 2026, in a period he calls 'trend heaven' around a handful of trades (gold up 30%, rotation into non-US and EM equities), before the March reversal.
+- [[MT056 - Finding Alpha in the Strait of Chaos ft. Andrew Beer - Systematic Investor - Ep.395#^MT056-C05-R2|MT056-C05-R2]] — Gold rose about 30% in January-February 2026 and then fell roughly 20% in March, one of the positions reversing in what Beer called the great macro doover of 2026.
 - [[MT056 - Finding Alpha in the Strait of Chaos ft. Andrew Beer - Systematic Investor - Ep.395#^MT056-C06-2|MT056-C06-2]] — Either short-term models that exit quickly or broad diversification across many contracts (not concentrated in WTI) may explain which CTAs fared better in March.
 - [[MT056 - Finding Alpha in the Strait of Chaos ft. Andrew Beer - Systematic Investor - Ep.395#^MT056-C07-1|MT056-C07-1]] — Longer-term trend managers remained long equities with reduced size, so the April equity rebound probably helped them, with currencies and precious metals also contributing.
 - [[MT056 - Finding Alpha in the Strait of Chaos ft. Andrew Beer - Systematic Investor - Ep.395#^MT056-C09-2|MT056-C09-2]] — Trend signals pay by catching a few big moves early, e.g. shorting Treasuries in Sept 2020 once yields rose from 0.5% to 0.7%, buying gold below 3,000 after a decade of failure, shorting crude at 105-110 and riding it down.
@@ -678,6 +680,7 @@ tags: [mechanism]
 ## [[MT143 - Sharing the Trend Following Pie - Systematic Investor 299]]
 - [[MT143 - Sharing the Trend Following Pie - Systematic Investor 299#^MT143-C06-1|MT143-C06-1]] — Fundamental pickers buy after declines (long holding periods, belief the market mispriced) while trend following shorts more as the market goes from 100 to 80, a competitive advantage because it ignores intrinsic value.
 - [[MT143 - Sharing the Trend Following Pie - Systematic Investor 299#^MT143-C06-2|MT143-C06-2]] — Trend following alpha comes from being the one group built to exploit large trends: in 2022 hundreds of billions of alpha were available because most of the investing world could not act.
+- [[MT143 - Sharing the Trend Following Pie - Systematic Investor 299#^MT143-C06-R1|MT143-C06-R1]] — Q1 2024 was good for trend followers, while Q2 so far had corrections and reversals in the markets.
 - [[MT143 - Sharing the Trend Following Pie - Systematic Investor 299#^MT143-C07-4|MT143-C07-4]] — Replication looks back about four weeks of data and so always lags the funds it tracks.
 - [[MT143 - Sharing the Trend Following Pie - Systematic Investor 299#^MT143-C08-1|MT143-C08-1]] — Sharp one- or two-day reversals often reverse; a slower window (17 old data points plus 3 new) therefore avoids some whipsaw even if it misses real reversals.
 - [[MT143 - Sharing the Trend Following Pie - Systematic Investor 299#^MT143-C08-X1|MT143-C08-X1]] — Window-return trend signals stay long through the first part of a reversal (10 to 20 then back to 18 still shows +80% over the window), so exits are inherently late; when a steady rise has every short, medium and long horizon long, the whole trend universe is all in and a reversal hits every horizon at once.
@@ -781,6 +784,7 @@ tags: [mechanism]
 - [[MT158 - Taking the Trend Following Temperature - Systematic Investor 304#^MT158-C06-X1|MT158-C06-X1]] — Niels's trend barometer rose from about 20 at the end of June to 34 in early July 2024, matching the pick-up in trend-following performance.
 - [[MT158 - Taking the Trend Following Temperature - Systematic Investor 304#^MT158-C08-1|MT158-C08-1]] — Trend follows its own direction changes, so timing an allocation to trend is very hard; large institutions hold it, wealth clients try to time it.
 - [[MT158 - Taking the Trend Following Temperature - Systematic Investor 304#^MT158-C08-3|MT158-C08-3]] — Trend's worst weeks (reversals such as the SVB flight to quality) occur during strongly trending periods and the 12 months before and after are relatively good.
+- [[MT158 - Taking the Trend Following Temperature - Systematic Investor 304#^MT158-C08-R2|MT158-C08-R2]] — Trend followers' return depends on markets moving, so the question is whether the macro environment generates large price moves rather than whether it is good or bad for risk assets.
 - [[MT158 - Taking the Trend Following Temperature - Systematic Investor 304#^MT158-C14-3|MT158-C14-3]] — Trend managers' performance varies greatly with markets, holding periods and risk weights even though the concept is the same.
 - [[MT158 - Taking the Trend Following Temperature - Systematic Investor 304#^MT158-C16-1|MT158-C16-1]] — Trend's crisis alpha holds for sustained sell-offs, not for sudden equity drops where the result depends on positioning; bonds rally on sudden drops.
 
