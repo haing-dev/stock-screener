@@ -1,0 +1,324 @@
+# U05: Yoav Git (ex-Winton, AHL, Brevan Howard; fixed-income and commodity trend at Gresham/Safi) - judgement brief (Fable, 2026-11-09)
+
+Inputs: foundation/packs/U05.json (synthesis over 10 Systematic Investor transcripts, 2025-04 to 2026-07; 363 claims,
+352 quotes script-checked "exact", 11 reader/R claims unchecked and marked where used; five claims are Niels's or Graham
+Robertson's and are cited as theirs). Caption names vary ("Yav Git", "Yo Kit", "Yov"); the synthesis says the MT205 and
+MT221 attributions rest on content and flow, so those two sources carry attribution risk. Repo read only. SHOW = a test
+with numbers (described, never shown on air); ASSERT = stated, no test; (reader) = my inference. Most numbers sit in the
+extracted claim text, not the short quote; section 8 says which. No code was run; the 2011-2026 holdout was not
+touched. His remarks on 2023-2026 markets describe our holdout era and are cited as his views, never as design input.
+
+## 1. Verdict
+
+1. Core logic: trend P&L is the harvest of positive return autocorrelation created by sustained imbalances whose
+   structure differs by market and changes over time (rate gradients and coupons in bonds and EM FX, slow supply
+   response in commodities, value traders and option dealers in equities); the signal is a commodity worth about 0.2
+   Sharpe per market, so the edge is market selection by structure, a diversification multiple set by the average beta
+   to the first factor rather than by market count, risk scaling and cost-aware execution; drawdowns are years in which
+   fewer than about 40% of markets trend, not model failure (MT029-C08-1, MT223-C15-2, MT205-C12-2, MT221-C10-2).
+2. Grounding: assertion almost throughout. Numbers are from memory or relayed (Carver's smile, CFM's 50% pairwise
+   correlation, Quantica, the SG trend indicator, a QIS haircut study); his own tests (ERAS inflation study,
+   autocorrelation paper, COT regression) are described, never shown; the one track-record figure is "about 12% after
+   fees over three years" with no volatility (MT024-C11-3, claim text). He sells asset-class-specific and
+   alternative-market trend and concedes several theories are unproven. Direction credible, sizes unknown.
+3. Our book already matches his practice where matching is cheap: vol-scaled multi-speed trend with carry inside the
+   price series (config.py:19; CHANGES.md:18), dynamic vol sizing (vol.py:4-10), per-market risk caps (book.py:200-201),
+   a long design window, no model change on pain (TESTING_PROTOCOL.md:29-32). Our trial log agrees with him twice:
+   spot-only trend lost (1.39 vs 1.48, CHANGES.md:18) as his "carry in the series raises Sharpe" predicts
+   (MT024-C14-1), and signal variants failed while construction changes passed (CHANGES.md:14-24).
+4. We differ where his logic bites: diversification by count (62 equal-weight markets in four equal-risk classes,
+   book.py:9, 138-139) where he says only the average beta to the first factor counts, and our concentration (fx_krw
+   42%, st_jp_2y 35% of capital, protocol_diagnostics:10-11) says he has a point; no selection by structure (he puts
+   meaningful risk in about 50 of 100-150, MT024-C15-2); a one-day delay cost of 0.10 Sharpe (CHANGES.md:25) against
+   his 1-2 bp, which by his arithmetic marks our 1-month leg as the fast, structure-exposed source he expects to erode
+   first (MT029-C14-2, MT190-C12-1); and three built spreads that, traded through our unit-vol blocks, would be exactly
+   his constant-risk trap (panel.py:353; book.py:190-193; MT073-C05-1).
+5. Action: no Holm slot now. Five zero-slot items: an effective-breadth audit (first-factor beta, diversification
+   multiple, trend Sharpe by class) to steer the Batch 2 universe; a structure-tilt diagnostic (trend P&L by |carry|
+   tercile with a spot-only control and the EM exclusion) that becomes a Batch 3 challenger only if it survives both
+   controls; a winner-share break-even pre-committed as the reading of the holdout; an inflation-regime split of family
+   P&L; and a vol gate written down as the precondition for ever trading spreads.
+
+## 2. Logical foundation
+
+| Premise | Type | Source |
+|---|---|---|
+| P1 Trend profit needs positive autocorrelation of the price, not merely trends; each 1% of autocorrelation has a computable worth; returns = autocorrelation + drift | theoretical, SHOWN as mathematics (paper described) | MT024-C14-2, C14-X5; MT192-C13-5 |
+| P2 Autocorrelation comes from sustained imbalances and market structure that differ by class and change over time: rate gradients and carry flows (bonds, EM FX), slow supply response (commodities), no anchor (crypto), value traders and option dealers (equities) | empirical/institutional, ASSERT; conceded unproven | MT029-C08-1, C08-2, C05-2, C09-2; MT024-C14-5, C15-3; MT223-C03-1 |
+| P3 Elasticity sets trend size and length: inelastic markets need large moves to clear; slow supply response (a year for crops and cattle, 20 years for a mine) prolongs them; elastic markets (bonds) have lower vol; equities re-equilibrate within a week | theoretical, ASSERT with two described observations | MT223-C03-1, C08-1, C08-X1, C08-X2; MT024-C04-4 |
+| P4 The signal is a commodity: 0.2-0.25 Sharpe per market whatever the rule; 12-month vol-adjusted TSMOM near optimal for drift; nearly every speed and school made money over 25 years | empirical, ASSERT (round numbers) | MT223-C15-2; MT029-C06-1; MT192-C15-2, C13-3 |
+| P5 Portfolio Sharpe = diversification multiple x average market Sharpe; the multiple is set by average beta to the first factor, not by N | algebra strong; empirics relayed (Quantica, CFM) | MT168-C16-1; MT205-C12-1, C12-2, C13-1, C13-2 |
+| P6 Trend is zero correlated to what it trades by construction and so earns a large risk share at a lower Sharpe; drawdowns are long, not deep, and come from fewer winners | theoretical + empirical, ASSERT | MT192-C07-1, C09-6; MT221-C10-2, C11-X2 |
+| P7 Above about 4.5% inflation bonds earn CPI-minus and co-move with equities; commodity trend is the mirror; falling inflation is bad for commodity trend | empirical, SHOWN in his ERAS study and the Man AHL paper (described) | MT024-C06-1, C06-2, C07-3; MT223-C10-2, C11-2 |
+| P8 Crossing the spread is the cost, delay is not; trend signals decay slowly and are OU-like, so patient, path-aware execution saves more than it loses | institutional, ASSERT (Carver disputes the size) | MT029-C14-1, C14-2; MT205-C17-2 |
+| P9 Backtests lose about 60% of Sharpe live; bugs show under negative-lag and noise tests; measure before changing a model; statistics lag regime change | empirical (QIS study, described) + method | MT223-C15-1; MT192-C14-2, C14-3; MT221-C07-1; MT134-C18-1 |
+
+Chains (each arrow a step he states):
+
+- Where to trade: P1 + P2 -> seek markets with a structural reason for autocorrelation (carry or rate gradient, supply
+  shocks, physical players) -> trade 100-150, allocate meaningfully to about 50, re-chosen as the characteristics move
+  (MT024-C14-1, C15-2, C15-X6) -> carry in the series lifts the average market Sharpe from about 0.2 to 0.3 and, at a
+  3.5x multiple, the portfolio from 0.7 to about 1.05 (MT024-C13-3, C13-4) -> equities are the exception, unable to
+  harvest their own trend because value traders and dealers inject negative autocorrelation (MT024-C13-2; MT029-C09-2)
+  -> drop markets that financialise (a front month 70% CTA volume) and never be the main player (MT221-C08-1;
+  MT024-C11-1).
+- How to size: P5 -> allocate to low-beta markets (metals, some energy); a multiple of 3 turns 0.25 into 0.75 and 50
+  versus 200 markets makes no material difference (MT205-C13-1, C12-1, C09-1) -> commodities diversify naturally (equal
+  weight works) while bonds load on one Fed factor with left skew and need factor-aware risk control (MT029-C06-5,
+  C07-1) -> cap risk per market so the footprint stays unwindable (MT168-C15-2) -> in stress, scale down by vol or
+  hedge the first factor; a liquid book just scales down (MT168-C08-2, C10-X4).
+- Speed: P3 + P4 -> 12-month TSMOM is near optimal unless autocorrelation varies through the year (MT192-C15-2) -> but
+  each market has a lookback in its mean-reversion zone, so commodities with a year-long supply response are harvested
+  slowly and equities quickly (MT223-C08-2, C08-X2) -> tilt speeds only for diversification, more risk to the signal
+  currently negatively correlated with the book (MT192-C15-3, C15-4, C16-1) -> two harvests, secular trend and
+  short-term autocorrelation, need different predictors and cost budgets (MT205-C11-2) -> dealer gamma from retail
+  0DTE selling erodes the short one: a point of one-day autocorrelation costs a 1-day signal about 0.16 Sharpe, a 5/20
+  crossover about 0.03 per market, a two-month trend little (MT190-C09-1, C09-2, C12-1, C12-2).
+- Holding through drawdowns: P6 -> the strategy bleeds like bought straddles and pays when many markets trend;
+  break-even about 40% winners, recent years about 30%, 2021-22 about 60% (MT221-C10-2; MT223-C12-1, C12-X2) ->
+  before touching the model, measure the Sharpe extracted from markets that did trend against history (MT221-C07-1) ->
+  change only when market properties change or measurement shows breakdown (MT221-C08-X1; MT134-C18-2).
+- Inflation: P7 -> bonds stop being the defensive block; commodity trend profits and drags less than long-only
+  commodities in low inflation -> 50% bonds plus 50% commodity trend gives roughly CPI+4% in every regime, so no
+  forecast is needed (MT024-C06-3, C06-4, C08-3), though he calls higher yields near-inevitable (MT168-C05-2).
+- Execution and research: P8 -> raw signal to the desk, several days, partial fills; skip a spike that reverts before
+  costs are recouped; play a 1-3 month window forward since half of it is known (MT029-C14-2, C15-1; MT205-C17-1,
+  C16-1) -> worth about 5 bp of Sharpe a year liquid, 30-40 bp illiquid (MT029-C14-1; MT205-C09-3). P9 -> 50% haircut,
+  negative-lag and noise tests, simulated known processes as the benchmark (MT223-C15-1; MT192-C14-2, C14-3, C14-4).
+
+Decision process: asset-class-specific products (MT029-C05-1); a TSMOM-family signal, speed set per market; 100-150
+markets, meaningful risk in about 50 chosen by structure; alternative markets at about 25% correlation to the liquid
+universe (MT223-C14-R1, unchecked); spreads by breakout only after a dislocation lifts their vol from about 2% to about
+10% of leg vol, sized dynamically, exited when vol fades (MT073-C05-2, C06-3, C07-1, C07-3); vol scaling with
+per-market limits; patient execution; a 50% haircut on backtests.
+
+## 3. Evidence grading
+
+| Claim | Grade | Reason |
+|---|---|---|
+| Trend Sharpe about 0.8 whether the underlying Sharpe is +1 or -1; bonds, FX, metals harvest trend, equities do not (MT024-C13-1, C13-2) | weak-moderate, relayed | Carver's blog, not his test; Carver is inconsistent on class differences (U02 section 3); Niels's 40-years-of-falling-rates objection is partly conceded (MT024-C15-X6). |
+| High-carry EM currencies trend strongly, EURUSD does not; DM FX trended poorly at zero rates (MT029-C08-2; MT024-C15-3) | ASSERT | (reader) a trend rule on a carry-inclusive series in a high-carry currency is long most of the time and earns the carry: "trends well" and "drifts" are not separated; he calls it drift himself (MT192-C13-5). |
+| Single-market Sharpe 0.2-0.25; multiple 3-3.5; portfolio about 0.7 (MT029-C06-1; MT024-C13-3; MT205-C12-1) | ASSERT, consistent | round numbers repeated across five episodes; consistent with the SG CTA index at 0.4 net out of sample (MT192-C11-3) once fees are added. |
+| Diversification = average beta to the first factor; CTAs 70% loaded, 50% pairwise, stable since 2011; 50 vs 200 markets no different (MT205-C12-2, C13-2, C14-1, C09-1) | algebra strong; empirics moderate (third-party, described) | the $30 index vs under $10 idiosyncratic example is arithmetic; CFM and Goldman figures described; "50 vs 200" untested. |
+| Execution: 5 bp of Sharpe a year liquid, 30-40 bp illiquid; delay 1-2 bp a day; patience pays even in Bobl (MT029-C14-1, C14-2, C15-X1) | ASSERT (AHL experience) | no numbers shown; Carver's 2-of-4 bp bound for liquid futures is arithmetic (U02 section 5); plausible for OTC bonds, his domain. |
+| Cost-aware trading: OU-like signals, skip reverting spikes, play forward; about 5 bp (MT205-C17-2, C17-1, C16-1, C09-3) | ASSERT with a mechanism | the mean reversion of a moving-average signal is mathematical; the saving is unmeasured and immaterial against our 0.05 bar. |
+| Break-even about 40% winners; 30-35% in drawdowns; 60% in 2021-22; about 30% lately (MT221-C10-2; MT223-C12-1) | ASSERT with numbers | straddle logic sound; "winner" undefined (annual market P&L, reader); recent figures are holdout-era observations. |
+| Compression, not breakdown: Sharpe extracted per unit of underlying trend roughly unchanged (MT221-C07-1) | ASSERT | the right diagnostic, no number; "roughly unchanged" is claim text. |
+| Inflation regimes: bonds CPI-minus above about 4.5%; 50/50 bonds + commodity trend about CPI+4% in each regime; falling inflation bad for commodity trend (MT024-C06-1, C06-4, C07-1, C07-3) | moderate for direction, weak for the figures | own regime study, described; boundaries 2% and 4.5% chosen for equal time shares (claim text); Man AHL 1925+ paper corroborates and predated 2022 (MT223-C10-2, C11-2); no dispersion for "CPI+4%". |
+| No crowding in COT: fast-trend loading fell since the early 2000s, slow did not rise; speculators cut when vol rises (MT073-C10-1, C10-2, C10-3) | weak-moderate | own regression, described; reportable positions only; descriptive, not predictive. |
+| 0DTE gamma turned one-day equity autocorrelation negative, about 3 points in 20 years; 0.16 and 0.03 Sharpe per point (MT190-C09-2, C12-X1, C12-1) | mechanism ASSERT; arithmetic SHOWN as back-of-envelope | "maybe a drop of 3%" is hedged; the loss figures are his calculation; the period is 2012+ (our holdout era); CFM's blog agrees in direction as he reads it (MT190-C08-1, C11-2). |
+| Spreads: residual vol about 2% of leg vol, 50x leverage at constant risk, 10% after a dislocation (MT073-C06-4, C06-5, C07-1) | ASSERT, illustrative numbers | LTCM is the example; the vol-of-vol mechanism is sound; no P&L. |
+| Front contract explains 90-99% of risk in financial futures, less in commodities; index futures cover about 30% of harvestable equity risk (MT190-C07-1, C16-3) | ASSERT | plausible from the variance decomposition he cites (MT190-C13-1); no source shown. |
+| QIS products lose about 60% of backtest Sharpe live (MT223-C15-1) | moderate, third-party (described) | about 200 products (claim text); matches our selection-inflation estimate of about 0.23 on 1.63 (stats_audit:16-17) in sign, not size. |
+| A trivial +1/-1 crossover is 80% correlated with the SG CTA index yet earned 0.43% a year since 2002 (MT192-C10-5; MT192-C11-2, Niels) | strong, third-party SHOWN | the SG indicator is public; correlation ignores the mean. |
+| Track record: about 12% after fees over three years (MT024-C11-3) | weak | from memory, no vol, no benchmark; MT205 and MT221 attribution risk. |
+
+## 4. Rules worth keeping
+
+Tags: ALREADY (file:line) / DIFFERS (how) / MISSING.
+
+| # | Rule (codable) | Source | Status |
+|---|---|---|---|
+| 1 | Vol-adjusted trend, 12-month core, multi-speed; carry kept inside the price series | MT192-C15-2, C13-1; MT024-C14-1 | ALREADY: sign blend 1/3/12 on excess returns incl. carry (config.py:19; book.py:71-72); spot-only rejected (CHANGES.md:18). |
+| 2 | Tilt speeds by their correlation to the rest of the book, not standalone alpha | MT192-C15-3, C15-4, C16-1 | DIFFERS: legs equal-weighted (book.py:72). |
+| 3 | Size by vol; cap risk per market; stress response = scale down by vol (liquid book) | MT192-C15-1; MT168-C15-2, C10-X4 | ALREADY: score x 0.40 / hybrid vol (book.py:132; vol.py:48-51); per-market cap 10% of risk (config.py:29; book.py:200-201). |
+| 4 | Diversify by average beta to the first factor; allocate to low-beta markets; equal weight commodities, factor-aware fixed income | MT205-C12-2, C13-1; MT029-C06-5 | DIFFERS: equal class risk, equal weight within class (book.py:9, 138-139); cluster weights rejected (CHANGES.md:17). MISSING: first-factor diagnostic (planned "PC1 share", gap_review_crosscheck:44). T1. |
+| 5 | Select markets by structure (carry or rate gradient, supply shocks, physical players); meaningful risk in about 50 of 100-150, re-chosen as characteristics move | MT024-C15-2, C14-1, C15-X6 | MISSING as a rule; PARTLY via the carry family at 25% (config.py:62) and carry inside trend returns. T3. |
+| 6 | Drop markets where speculators dominate front-month volume; never be the main player | MT221-C08-1; MT024-C11-1 | MISSING; n/a for a paper book; Bloomberg file 5 brings open interest and volume (BLOOMBERG_PULL_GUIDE.md:13). |
+| 7 | Spreads: breakout only after a dislocation lifts spread vol above a floor; dynamic size; exit when vol fades; never constant risk | MT073-C05-1, C05-2, C06-3, C07-1, C07-3 | MISSING: three spreads built, untraded (panel.py:353; not in CLASSES, signals.py:28); "trading the 3 built spreads" is on the do-now list (gap_review_crosscheck:42). T5. |
+| 8 | Front-contract history for signals; contract-specific vol or roll adjustment where adjacent months differ; deferred contracts only as separate risk factors | MT190-C06-2, C07-X1, C07-1 | PARTLY: front series with unadjusted roll gaps flagged (panel.py:14-15; gap_review_crosscheck:26); no contract-specific vol; Bloomberg curves 1-12 pending (BLOOMBERG_PULL_GUIDE.md:13). |
+| 9 | Execution: raw signal to the desk, several days, partial fills; skip reverting spikes; play the window forward | MT029-C14-2, C15-1; MT205-C17-1, C16-1 | DIFFERS: trade on day one because the fast leg loses about 0.10 Sharpe per day (config.py:43; CHANGES.md:25-27); no buffer (U02-T3). |
+| 10 | Diagnose before changing: winner share vs break-even; Sharpe extracted per unit of underlying trend | MT221-C10-2, C07-1; MT223-C12-1 | MISSING. T2. |
+| 11 | Stay true to the style; change only when market properties change or measurement shows breakdown | MT221-C08-X1; MT134-C18-2 | ALREADY: pre-registration, trial log, no in-batch re-runs (TESTING_PROTOCOL.md:29-32); DIFFERS in trigger (statistical). |
+| 12 | 50% haircut; negative-lag and noise tests; simulated processes; scenario analysis back to 1998; regimes over the full history | MT223-C15-1; MT192-C14-2, C14-3, C14-4; MT168-C04-1; MT024-C07-X1 | PARTLY: truncation audit (CHANGES.md:37-39), stress windows (config.py:66-73), design from 1975, live target 0.4-0.8 vs design 1.63 (gap_review_crosscheck:16; CHANGES.md:28). MISSING: negative-lag and noise tests as routine; random-signal baseline (also U03 row 9). |
+| 13 | Judge trend over long periods, never 1-6 months | MT073-C03-3 | ALREADY: 15-year holdout, power table (stats_audit:31-36). |
+| 14 | Credit trend behaves like delayed equity beta | MT205-C04-2 | not in the book; a caution for the planned FRED credit markets (gap_review_crosscheck:42). |
+| 15 | 50% bonds + 50% commodity trend as the defensive block | MT024-C06-4 | allocator rule; bears on how "2022 positive" is read (U03 section 6). |
+
+## 5. Conflicts
+
+- Carver (U02). Execution: Carver bounds the saving in liquid futures at 2 bp of 4 (U02 section 5); Git says patience
+  pays even in Bobl, 5 bp of Sharpe a year, 30-40 bp illiquid (MT029-C15-X1, C14-1). Both put a sound signal's delay
+  cost at 1-2 bp a day (MT029-C14-2; Carver's 0.01, U02 row 10). Evidence favours Carver for liquid futures (an
+  arithmetic bound), is silent for OTC bonds, and both indict our 0.10 per day (CHANGES.md:25). Tailoring: Carver's one
+  rule set for all (U02 row 12) vs Git's +0.05 per market from class-specific implementation (MT029-C06-1), which he
+  half-retracts ("the signal is a commodity", MT223-C15-2): unresolved; our book is Carver's. Breadth: Carver's 300 vs
+  Git's "50 vs 200 no different" (MT205-C09-1); Carver's own five-factor view sides with Git. Commodities: Carver
+  hand-weights them to about 40% (U02 row 13); Git calls them the lowest-beta, most crisis-consistent sector
+  (MT205-C13-1, C08-3): both against our equal class risk (book.py:9); Kaminski's equal-risk evidence is against cap
+  weighting, not this. Unresolved; T1 reports it. Haircut: 50% (MT223-C15-1) of our 1.63 is about 0.8, inside the live
+  target 0.4-0.8 (gap_review_crosscheck:16): consistent.
+- Kaminski (U03). Agreements: second responder (convex over 1-3 months, negative skew on day one, MT205-C08-1;
+  MT190-C03-2; MT223-C13-2); inflation turns the stock-bond correlation positive (MT205-C03-2; MT168-C04-2); dispersion
+  is diversification, pairwise correlation stable near 50% (MT134-C15-2, C15-3; MT205-C14-1). Conflicts: (a) vol
+  speed: she names 2022 as the year slow vol won; he calls vol scaling the major innovation and the stress response
+  (MT192-C15-1; MT168-C10-X4) and sits with Carver and Baltas; the synchronised exits he describes (MT205-C10-1, C10-2)
+  are the cost she means. Resolved as an objective choice; our hybrid stands. (b) Carry: she says it dilutes crisis
+  alpha; he selects markets by it and keeps it in the series (MT024-C14-1, C13-4): our spot-only trial (CHANGES.md:18)
+  favours him on Sharpe; her crisis point is untouched. (c) "Fixed income positive in every crisis" vs his "three poor
+  years, choppy since 2023" (MT024-C11-3; MT168-C05-3): different conditions, both open to Niels's 40-year objection,
+  holdout era, unresolved.
+- Baltas (U04). Agreements: 50-100 effective markets (MT205-C09-1); crowding not aggregate (MT073-C10-3) with a
+  crisis-flow tail (MT205-C10-2); dealer gamma hurts only short-term trend (MT190-C12-2); signal form is secondary
+  (MT223-C15-2). Conflicts: (a) Baltas never screens on past contribution; Git selects by structural traits re-chosen
+  as they move (MT024-C15-X6), which past autocorrelation validates, so it is partly past-based. Unresolved; our
+  universe is screened only by data availability (CHANGES.md:49). (b) Flows: Baltas trades around rebalancing flows;
+  Git says CTAs ignore flows and flow models predict nothing (MT168-C11-2, C15-R1 unchecked), though prop desks do
+  simulate CTA models forward (MT205-C16-3). Unresolved; U04-T1 is the only test. (c) Curve: Baltas closes the calendar
+  spread in backwardation; Git gates on spread vol and warns two legs double the cost per unit of risk (MT073-C07-1,
+  C08-4). Compatible; U04-T3 should carry both conditions or say why not.
+- AQR (U01): no conflict; his elasticity story (MT223-C05-1, C08-X1) and inflation logic agree with AQR's
+  inflation-bearish-bonds sign; he trades no economic data.
+- Inside the unit. (a) Speed: 12-month near optimal (MT192-C15-2) vs tailor by adjustment speed (MT223-C08-2) vs +0.05
+  by class (MT029-C06-1): his escape clause ("unless autocorrelation varies") covers it; on our panel the fast legs add
+  Sharpe (1/3/12 1.48 vs 12-only 1.27, CHANGES.md:77-78), so "beginners can stop at 12 months" is false here, and his
+  "two sources" view (MT205-C11-2) says why. (b) Hedge or not: zero correlated and not a hedge (MT192-C07-1) vs a crude
+  convexity hedge (MT029-C11-3) vs defensive with upside bias (MT190-C03-2): consistent as "zero on average, convex over
+  months, negative skew on day one". (c) Crowding: none in COT (MT073-C10-3) vs iron ore at 70% CTA volume
+  (MT221-C08-1) vs synchronised exits (MT205-C10-1): consistent as aggregate / per-market / crisis. (d) He declines to
+  forecast inflation (MT024-C08-3) yet calls a 6% ten-year most likely (MT221-C17-X1): unresolved; neither he nor we
+  trade it. (e) Fixed income as the engine (70-75% of AHL P&L, MT029-C07-3) vs three poor years (MT024-C11-3): his
+  compression story and Niels's rate-decline story both fit; unresolved until the holdout.
+
+## 6. Test proposals (ranked)
+
+T1. Effective breadth audit (zero slot). Hypothesis (MT205-C12-2, C13-1, C09-1; MT168-C16-1): our 62 markets are far
+fewer independent bets than their count, the first factor is the duration/Fed factor carried by 15 fixed-income
+markets, and commodities have the lowest average beta to it. Rule: design months; per market the trend family's
+unit-risk P&L (score x 0.40 / vol, book.py:132, lagged one month, gross); trailing 36-month covariance (min 24, shrunk
+toward the diagonal since 62 markets exceed the observations, reader) -> first principal component; report PC1's
+variance share, each market's beta and the class averages through time; the diversification multiple (Sharpe of the
+equal-risk portfolio / mean market Sharpe) per era against sqrt(N), for equal market risk and for our equal-class-risk
+weights (book.py:9); the trend family's Sharpe by class. Data: free. Expected (reader): multiple 2.5-3.5 against
+sqrt(62) about 7.9 (his 3-3.5, MT024-C13-3); fixed income the highest beta, commodities the lowest; equities the weakest
+class (MT024-C13-2; U03 and U04 agree). Fails usefully if commodity betas match fixed income's or the multiple nears
+sqrt(N). Consequence, fixed now: alternative commodities from Bloomberg file 5 enter Batch 2 only if they lower the
+average PC1 beta, and their 30% cap (book.py:147) is revisited by beta, not count; no class-weight challenger unless
+commodities' class Sharpe beats fixed income's by more than the bootstrap SE. Cost: none against Holm; logged.
+
+T2. Winner-share break-even and extraction ratio (zero slot, pre-committed as the holdout reading). Hypothesis
+(MT221-C10-2, C11-1, C07-1; MT223-C12-1; MT024-C13-1): the trend family's annual return is near-linear in the share of
+markets with positive annual trend P&L, crossing zero near 40%, and the Sharpe a market's trend P&L extracts rises with
+the market's own absolute Sharpe (Carver's smile) with a slope stable across eras. Rule: design years; per market-year,
+trend P&L sign and Sharpe and the market's excess-return Sharpe; regress family return on winner share (break-even =
+zero crossing with SE); pool market-years, regress trend Sharpe on |market Sharpe| by era, Newey-West. Data: free.
+Expected (reader): break-even 35-45%; trend Sharpe about 0.6-0.9 at |market Sharpe| 1 (his 0.8 is Carver's). Fails
+usefully if winner share explains little of the family return: "nothing happened" then has no measurable content.
+Consequence, written before the holdout runs: the holdout report shows winner share and extraction ratio per year; a
+losing year under the design break-even is read as compression, one above it as a breakdown signal; neither changes a
+rule.
+
+T3. Structure tilt: trend P&L by |carry| tercile with two controls (zero slot now; Batch 3 challenger only if it
+survives). Hypothesis (MT029-C08-1, C08-2; MT024-C15-2, C15-3, C13-4): within fixed income and FX, the top tercile of
+|carry| (bond yield minus 3-month rate; rate differential, signals.py:329-335) earns a higher trend Sharpe than the
+bottom. Rule: design months; cross-sectional terciles within class; trend-family unit-risk P&L (book.py:71-72, 132) per
+tercile, Sharpe and Newey-West t, 1975-89 and 1990-2010; control 1: the same on spot-only trend P&L (config.py:19
+spot=True; book.py:64-68), separating "high-carry markets trend" from "high-carry markets drift"; control 2: EM FX
+excluded before 2000 (stats_audit:40-42; CHANGES.md:49-50). Data: free. Expected (reader): a large spread on
+carry-inclusive P&L from EM FX and 1975-89 bonds, a much smaller one on spot-only P&L: most of his claim is the carry
+premium relabelled, which our carry family holds at 25%. Registration rule: a Batch 3 challenger (trend-block weights
+within FI and FX proportional to 0.5 + |carry| percentile, normalised; other classes untouched) only if the spot-only
+top-minus-bottom spread has t > 2 in both eras after control 2, and only once Bloomberg file 3 adds NDF-based EM
+currencies (BLOOMBERG_PULL_GUIDE.md:11), so it is not decided on four surviving EM currencies that already flatter carry
+(CHANGES.md:49-50). Expected book effect if registered: FI and FX carry about 22% of risk through the trend family (45%
+x 2 of 4 classes, reader), so even +0.15 block Sharpe gives dSR about +0.03, under the 0.05 bar. Fails if the spot-only
+spread vanishes or the EM exclusion removes it.
+
+T4. Inflation-regime split of family P&L (zero slot). Hypothesis (MT024-C06-1, C06-2, C07-3; MT223-C11-1, C11-2): with
+US CPI inflation split at 4.5% (his boundary, claim text) and by 12-month direction, commodity trend is positive in
+rising cells and negative in the high-and-falling cell, fixed-income trend positive in falling cells, long bonds
+negative in high-and-rising, and 50% long bonds plus 50% commodity trend positive in every cell. Rule: design months;
+CPI year-on-year lagged one month (signals.py cpi_yoy, as in the inflation theme); four cells; book, family and class
+P&L per cell plus a long-bond series and the 50/50 mix; months per cell reported. Data: free. Expected (reader):
+1975-81 and 1987-90 fill the rising cells, 1981-86 and 1991-98 the falling ones; commodity trend loses in 1981-86 as he
+says (MT024-C07-3). Fails usefully if commodity trend is positive in the high-and-falling cell. Consequence: a report
+for the forward-looking section and the holdout write-up; no rule, we do not time regimes (U01, U03 agree).
+
+T5. Spread vol gate as a precondition, and the no-test list (zero slot). If the three built spreads (panel.py:353) are
+ever traded, they enter only with his gate: a position is allowed when trailing 3-month spread vol exceeds a fixed
+fraction of average leg vol (he gives 2% dormant, 10% tradeable, MT073-C06-4, C07-1; fixed at registration), sized on
+current spread vol, zero otherwise; never through the 36-month unit-vol block (book.py:190-193), his constant-risk trap
+(MT073-C04-5, C05-1). A one-off look at the three spreads' vol ratio over the design period decides whether to register
+them at all. No test, not worth a slot: patient execution and play-forward (U02-T2/T3, U04-T1 cover them; our data say
+the fast leg loses with delay); class-specific rules (Carver's pooled evidence, U02 row 12, and his own "signal is a
+commodity"); 0DTE conditioning (2012+, holdout era); the 50/50 allocator mix; PCA bond trend with middle factors
+overweighted (MT073-C08-2: needs Batch 2 zero curves, a new family not a tweak); single-stock futures, compute curves,
+narrative momentum (out of scope); the COT crowding regression (a free monitor, gap_review_crosscheck:41, not a rule);
+trend-conditional vol (MT205-C10-3), one extra regressor in U04-T2 at no cost.
+
+## 7. Forward-looking logic
+
+Inputs he says lead prices, with the chain step: (1) rate gradients and carry from central-bank divergence create
+sustained flows and autocorrelation in bonds and EM FX over months to years; the edge vanishes with the gradient, as DM
+FX showed at zero rates, while bond carry should persist (MT029-C08-1; MT024-C15-3, C15-5). (2) Supply shocks against
+slow supply response (storage, a year for crops and cattle, 20 years for a mine, power plants for AI demand) force
+price to adjust over about a year, so commodity trend is harvested slowly and stops when supply catches up or inflation
+falls (MT024-C04-4, C07-4, C07-3; MT029-C09-3; MT223-C08-X2). (3) The inflation regime: above about 4.5% bonds earn
+CPI-minus and co-move with equities and commodity trend pays; inflation evolves slowly, matching trend's speed, while
+equity crises happen in days and allow only a second response (MT024-C06-1; MT223-C13-2). (4) Market-structure shifts
+erode the short horizon first: retail 0DTE selling gives dealers positive gamma whose hedging sells rallies and buys
+dips, so one-day equity autocorrelation turned negative and dip-buying has worked for ten years; short expiries are
+spreading to bond futures and oil (MT190-C09-1, C09-2, C08-4, C10-X2). (reader) Our 1-month leg is the part of our
+Sharpe that depends on trading within days of month end (CHANGES.md:77-79) and the horizon he says is eroding;
+U04-T1's class split should say how much of the day-1 capture sits in equities, where his mechanism predicts it shrinks
+after 2012. (5) Vol spikes make all vol-scaled traders cut together, adding next-day volatility; an extended trend makes
+historical vol under-forecast the next day and the trend level adds 5-10% to vol-forecast accuracy (MT205-C10-2,
+C10-3, claim text). (6) Speculator share of front-month volume marks a market about to stop trending for a
+fundamentals-based manager (MT221-C08-1; MT073-C09-1). (7) Long-horizon allocators cut equities after rallies, the
+other side of trend at a ten-year horizon (MT073-C15-2, C15-3). Horizon: industry speed one to three months
+(MT205-C07-4), up to about a year in commodities. Dated views, not for design: a 6% ten-year as the 2026 base case
+(MT221-C17-X1); a yen carry unwind as the JGB-UST gap narrowed from about 3% to 1.5% in 2025 (MT024-C15-4). It stops
+working when nothing is in imbalance (vol compression, winner share under about 40%, MT221-C11-1), when a market's
+structure changes (financialisation, option gamma), on day one of a cross-asset shock (MT205-C08-1, C08-2), and when
+prop desks front-run a predictable signal path (MT205-C16-3).
+
+## 8. Self-check
+
+Numbers re-verified against the pack by script (foundation/tmp_u05/check_ids.py: all 145 cited ids resolve; "quote" =
+in the verbatim quote, "claim" = in the extracted claim text only): 0.25 -> 0.30 (MT029-C06-1, quote); 0.2 x 3.5 = 0.7
+(MT024-C13-3, quote "between 2 and 3", "3 and a half"); 0.3 (MT024-C13-4, quote), 1.05 (claim); factor 3 (MT205-C12-1,
+quote), 0.25 -> 0.75 (claim); $30 vs under $10, 100 stocks, 30% beta (MT205-C12-2, claim); 50% pairwise, 70% loading
+(MT205-C13-2, quote); stable since 2011 (MT205-C14-1, "2011" claim); 200 vs 50 (MT205-C09-1, quote); 100-150 and about
+50 (MT024-C15-2, quote); 5 bp a year (MT029-C14-1, quote), 30-40 bp (claim); 1-2 bp a day (MT029-C14-2, quote); 5 bp
+(MT205-C09-3, quote); 0.02-0.03 (MT073-C08-X1, quote); 40% (MT221-C10-2, quote), 30-35% (claim); 40% and 30%
+(MT223-C12-1, quote), 60% (claim); 4.5% (MT024-C06-1, claim); 2% and 4.5%, 25% of time (MT024-C07-1, claim); 50/50
+(MT024-C06-4, quote), CPI+4% (claim); 12% over three years (MT024-C11-3, claim); 70-75% (MT029-C07-3, quote); 60%
+haircut, 1 -> 0.4 (MT223-C15-1, quote), 200 products and 50% (claim); 0.2 per market (MT223-C15-2, quote); 0.55 since
+2000 (MT192-C09-4, quote), 0.76 (claim); about 0.5 for 2000-2025 (MT192-C09-5, quote); almost 30% of risk
+(MT192-C09-6, quote); 0.4 out of sample (MT192-C11-3, quote); 80% (MT192-C10-5, quote); 0.43% since October 2002
+(MT192-C11-2, Niels, quote); 1.5 vs 0.5 (MT221-C02-1, quote); 0.16 (MT190-C12-1, quote), 0.03 and 0.2 (claim); 3% over
+20 years (MT190-C12-X1, quote, "maybe"); 90-99% (MT190-C07-1, quote); about 30% of equity risk (MT190-C16-3, quote);
+35% -> 25-30% (MT190-C13-1, quote); 10% of leg vol (MT073-C07-1, quote), 2% (claim); 50x-100x (MT073-C06-5, quote);
+90-98% and 50x (MT073-C06-4, claim); 70% of front-month volume (MT221-C08-1, quote); about 25% correlation
+(MT223-C14-R1, quote, unchecked); 5% of performance (MT168-C09-2, quote); month to three months (MT205-C07-4, quote);
+5-10% accuracy (MT205-C10-3, claim); 3% -> 1.5% (MT024-C15-4, quote); 6% ten-year (MT221-C17-X1, quote); 30-day window,
+15 days known (MT205-C16-1, quote); 20 years for a mine (MT024-C04-4, quote); May 2021 (MT223-C10-2, quote), 1925
+(claim); 40 years (MT024-C15-X6, Niels, quote); 0.8 at +1 (MT024-C13-1, quote "point8"). Against the repo: 62 markets
+(TESTING_PROTOCOL.md:25; panel.py:1 says 64; the 18+9+6+13+16 traded ids in panel.py:304-352 sum to 62, plus cm_aqr_ew
+to 2000 and three untraded spreads); 1/3/12 sign, cap 2 (config.py:19); hybrid 35 days, 0.7, 0.75 (config.py:22); 10%,
+0.10 cap (config.py:27, 29); 45/15/25/15 (config.py:62); day-one rule (config.py:43); equal class risk (book.py:9);
+costs 1-8 bp (book.py:46-57); sign blend (book.py:71-72); 0.40 / vol (book.py:132); equal weight (book.py:138-139);
+30% alt cap (book.py:140-148); 36-month blocks and scaler (book.py:190-193, 198); per-market cap (book.py:200-201);
+1.39/0.92 vs 1.48/0.93 (CHANGES.md:14, 18); 1.48 vs 1.27 (CHANGES.md:77-78); 0.95 -> 0.85 (CHANGES.md:25); 1.63, t
+2.8-4.9 (CHANGES.md:28-30); hand-picked universe, four EM currencies (CHANGES.md:49-50); 42%, 35%
+(protocol_diagnostics:10-11); 0.23 inflation (stats_audit:16-17); power table (stats_audit:31-36); EM before 2000
+(stats_audit:40-42); 0.4-0.8 (gap_review_crosscheck:16); spreads, PC1 share, COT (gap_review_crosscheck:42, 44, 41);
+Bloomberg files 3 and 5 (BLOOMBERG_PULL_GUIDE.md:11, 13). Derived (reader): 1.63 x 0.5 about 0.8; sqrt(62) about 7.9;
+22% = 0.45 x 2/4; +0.03 from +0.15 block Sharpe at that share. Corrections during the check: "about 12%" and "CPI+4%"
+are claim text and cited as such; MT205-C12-3 ("capacity as alpha") has a quote of "100% 100%" and is used only through
+the synthesis; MT073-C06-4's 50x is claim text, so the leverage figure is also tied to MT073-C06-5 where "50x 100x" is
+spoken; the unchecked R-claims used (MT223-C14-R1, MT168-C15-R1, MT073-C16-R1) are marked.
+
+Strongest counter-argument to the verdict: he is the only unit so far who has worked exactly our two open problems,
+market selection and execution, at AHL, Winton and his own fund, and the things our data have since confirmed (carry
+inside trend helps, construction beats signal tweaks, the fast leg is execution-dependent, 62 markets are fewer bets
+than they look) were his points before we tested them; grading him "assertion" because a podcast shows no exhibits may
+undervalue a practitioner who names his own errors (MT073-C16-R1, unchecked). Against that, every number is round,
+several are relayed, two sources have attribution risk, and his commercial case (asset-class-specific and alternative
+products, 30% of risk in trend) runs in the same direction as his claims.
+
+Strongest counter-argument to T1: a first principal component of 62 trend P&L series from 36 monthly observations is
+ill-conditioned, so the betas depend on the shrinkage chosen; the P&L series mix signal correlation with market
+correlation, so the audit measures a property of our book, not of the markets he speaks of; the multiple also depends
+on the vol estimate and the sign blend; and reading design-period breadth to shape the Batch 2 universe is a mild
+selection step, logged but not free.
