@@ -42,6 +42,10 @@ over a confident guess.
 6. Test proposals (at most 5, ranked): hypothesis, exact rule, data (free / WRDS / Bloomberg file number), expected effect
    with reasoning, how it would fail, and its cost against the multiple-testing budget (Holm slot or zero-slot
    diagnostic). "No test: not worth a slot" is a valid answer.
+   Never hand choices to the user as "decisions" or adoption "routes" (user rule 2026-11-09). Express every open
+   design choice as a level of a dimension in the variant registry (Method/VARIANTS: A universe, B market weights,
+   C vol sizing, D book scaler, E trend signal, F execution, G commodity carry, H econ themes), or propose a new
+   dimension with its levels. The registry's walk-forward selection procedure on Bloomberg data makes the choice.
 7. Forward-looking logic: which observable inputs this unit's logic says lead prices, at which horizon, through which
    step of the chain, and the regime in which it stops working.
 8. Self-check: re-verify every number you cited (list them with ids), give the strongest counter-argument to your verdict

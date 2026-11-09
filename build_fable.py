@@ -72,7 +72,7 @@ def main():
         body = open(src).read()
         if u["id"] == "U01":   # F1 cites QP01 claims by short id (C05-1)
             body = re.sub(r"(?<![\w-])C(\d{2})-([0-9]+|[A-Z][0-9]+)(?![\w-])", r"QP01-C\1-\2", body)
-        head = ["---", "tags: [fable, foundation]", "unit: %s" % u["id"], 'name: "%s"' % u["name"], "model: Fable 5.1, effort max",
+        head = ["---", "tags: [fable, foundation]", "unit: %s" % u["id"], 'name: "%s"' % u["name"], "model: %s, effort max" % (u.get("model") or "fable"),
                 "inputs: _data/foundation_packs/%s.json" % u["id"], "code_commit: %s" % COMMIT[:7], "---",
                 "> Claim ids link to the verbatim quote in its source note; B-ids link to the [[Carver blog digest]]; code refs link to GitHub at commit %s. Brief: [[FOUNDATION_SPEC]]." % COMMIT[:7], ""]
         open(os.path.join(F, name + ".md"), "w").write("\n".join(head) + linkify(body) + "\n")
@@ -106,7 +106,7 @@ def main():
     M = os.path.join(V, "Method"); os.makedirs(M, exist_ok=True)
     specs = {"EXTRACT_SPEC": "EXTRACT_SPEC.md", "CROSSCHECK_SPEC": "CROSSCHECK_SPEC.md", "TRANSCRIPT_MAP_SPEC": "TRANSCRIPT_MAP_SPEC.md",
              "INVESTOR_SYNTH_SPEC": "INVESTOR_SYNTH_SPEC.md", "PAPER_SPEC": "papers/PAPER_SPEC.md", "F1_SPEC": "fable/F1_SPEC.md",
-             "FOUNDATION_SPEC": "foundation/FOUNDATION_SPEC.md"}
+             "FOUNDATION_SPEC": "foundation/FOUNDATION_SPEC.md", "VARIANTS": "/home/claude/stock-screener/docs/research/fable/foundation/VARIANTS.md"}
     for n, p in specs.items():
         open(os.path.join(M, n + ".md"), "w").write("---\ntags: [method, spec]\nfile: %s\n---\n" % p + open(os.path.join(L, p)).read())
     u = ["---", "tags: [method]", "---", "# Foundation units", "", "| Unit | Name | Inputs | Topic |", "|---|---|---|---|"]
