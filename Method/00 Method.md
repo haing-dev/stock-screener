@@ -3,6 +3,9 @@ tags: [method, index]
 ---
 # Method: how every note was made (traceability)
 
+**From 2026-11-11 all new work follows [[WORKFLOW]] (pod shop workflow v2.0: steps, agent per step, tests, budget).**
+The steps below describe how the existing notes were made.
+
 1. **Transcripts** (originals in the Macro Transcripts folder) are split into ~700-word chunks [Cnn].
 2. **Layer 0 extraction** (Sonnet, [[EXTRACT_SPEC]]) -> claims with verbatim quotes; **cross-check** by a second blind
    reader ([[CROSSCHECK_SPEC]]; routing in [[Cross-check routing]]); a script checks every quote against the chunk text

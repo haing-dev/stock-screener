@@ -6,7 +6,8 @@
    "QP01"
   ],
   "done": "fable/F1_economic_trend.md",
-  "model": "claude-fable-5-1"
+  "model": "claude-fable-5-1",
+  "code_commit": "934dd586efce627cb8e28fb55f6b6f558a10cc47"
  },
  {
   "id": "U02",
@@ -21,7 +22,8 @@
   "speaker_match": {
    "rob_carver": "carver|^rob\\b"
   },
-  "model": "claude-fable-5-1"
+  "model": "claude-fable-5-1",
+  "code_commit": "ec93dd02d463057d3e1742cdbbaba31cba031226"
  },
  {
   "id": "U03",
@@ -30,7 +32,8 @@
    "katie_kaminski"
   ],
   "topic": "trend as crisis alpha, inflation and stock-bond correlation, design dispersion",
-  "model": "claude-fable-5-1"
+  "model": "claude-fable-5-1",
+  "code_commit": "da557dd878435933515e8093e2b907a8b4392ccf"
  },
  {
   "id": "U04",
@@ -39,7 +42,8 @@
    "nick_baltas"
   ],
   "topic": "QIS, trend design, premia vs flow anomalies, carry",
-  "model": "claude-fable-5-1"
+  "model": "claude-fable-5-1",
+  "code_commit": "a3438686d8b9b2940459c6befe1be8a8220de23d"
  },
  {
   "id": "U05",
@@ -51,7 +55,8 @@
   "speaker_match": {
    "yoav_git": "\\bgit\\b|yo kit|^yov\\b"
   },
-  "model": "claude-fable-5-1"
+  "model": "claude-fable-5-1",
+  "code_commit": "fc6729a0a954ea6461c8648fd8d254c9acf10614"
  },
  {
   "id": "U06",
@@ -61,7 +66,8 @@
    "harry_moore"
   ],
   "topic": "trend attribution, market breadth, crisis vs long-run Sharpe, portable alpha",
-  "model": "claude-fable-5-2"
+  "model": "claude-fable-5-2",
+  "code_commit": "78cd1665592914601034754f672a6cd679f787e6"
  },
  {
   "id": "U07",
@@ -80,7 +86,8 @@
    "QP11",
    "QP14"
   ],
-  "model": "claude-fable-5-2"
+  "model": "claude-fable-5-2",
+  "code_commit": "6aee2bdb9ececf7cd9c470e70454237a236ab3fe"
  },
  {
   "id": "U08",
