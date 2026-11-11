@@ -30,6 +30,43 @@ foreach ($pat in @("jobs\tri_*.json", "jobs\tri_*.tries", "lib\tri_*.py", "resul
         Move-Item -Force -Path $f.FullName -Destination (Join-Path (Join-Path $S $sub) $f.Name) -ErrorAction SilentlyContinue
     }
 }
+# ---- local jobs (Bloomberg research data; added 2026-11-10) -------------------------------------------------------
+# Claude drops Python job files into Documents\WRDS results\local\jobs. They run on THIS PC against the pulled Bloomberg
+# workbooks, and only the printed report (names, counts, date ranges, summary statistics) is saved to local\results.
+# The data never leaves this PC. Rules: tools/bbgq/README.md in the repo.
+try {
+    $LR = Join-Path $D "local"
+    New-Item -ItemType Directory -Force (Join-Path $LR "jobs"), (Join-Path $LR "jobs\done"), (Join-Path $LR "results"), (Join-Path $LR "lib"), (Join-Path $LR "work") | Out-Null
+    $lstat = Join-Path $LR "runner_status.txt"
+    $ljobs = @(Get-ChildItem -Path (Join-Path $LR "jobs") -Filter *.py -File | Sort-Object LastWriteTime)
+    $py = $null; $pyv = ""
+    foreach ($cand in @(@{e = "py"; a = @("-3") }, @{e = "python"; a = @() }, @{e = "python3"; a = @() })) {
+        try {
+            $ca = $cand.a
+            $v = (& $cand.e @ca -c "import sys;print(sys.version.split()[0])" 2>$null) -join ""
+            if ($v -match "^\d+\.\d+") { $py = $cand; $pyv = $v; break }
+        } catch {}
+    }
+    if ($null -eq $py) {
+        Set-Content -Path $lstat -Value ("PYTHON NOT FOUND {0:yyyy-MM-dd HH:mm}" -f (Get-Date))
+    } else {
+        $ca = $py.a
+        $mods = (& $py.e @ca -c "import importlib.util as u;print(' '.join(m+('=ok' if u.find_spec(m) else '=MISSING') for m in ('numpy','pandas','openpyxl','scipy','pyarrow')))" 2>$null) -join ""
+        if ($ljobs.Count -eq 0) { Set-Content -Path $lstat -Value ("idle, python $pyv ($($py.e)), $mods, last check {0:yyyy-MM-dd HH:mm}" -f (Get-Date)) }
+        $env:BBG_DIR = Join-Path $D "mscifreedata\Bloomberg_UBC_pull_2026-11-04\pulled results"
+        $env:BBG_WORK = Join-Path $LR "work"; $env:PYTHONPATH = Join-Path $LR "lib"; $env:PYTHONIOENCODING = "utf-8"
+        foreach ($j in $ljobs) {
+            $n = $j.BaseName; $rf = Join-Path $LR "results\${n}.txt"; $ef = Join-Path $LR "results\${n}.err.txt"
+            Set-Content -Path $lstat -Value ("running ${n} since {0:yyyy-MM-dd HH:mm}, python $pyv" -f (Get-Date)); Log "local: running ${n}"
+            $al = @($py.a) + @("-u", ('"' + $j.FullName + '"'))
+            $p = Start-Process -FilePath $py.e -ArgumentList $al -WorkingDirectory $LR -RedirectStandardOutput $rf -RedirectStandardError $ef -NoNewWindow -PassThru
+            if (-not $p.WaitForExit(150 * 60 * 1000)) { Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Add-Content -Path $ef -Value "TIMEOUT after 150 minutes"; Log "local: ${n} timed out" }
+            Move-Item -Force -Path $j.FullName -Destination (Join-Path $LR "jobs\done\$($j.Name)")
+            Log "local: ${n} finished"
+        }
+        if ($ljobs.Count -gt 0) { Set-Content -Path $lstat -Value ("idle, python $pyv ($($py.e)), $mods, last run {0:yyyy-MM-dd HH:mm}" -f (Get-Date)) }
+    }
+} catch { Log ("local jobs error: " + $_.Exception.Message) }
 try {
     $pending = @($roots | ForEach-Object { Get-ChildItem -Path (Join-Path $_ "jobs") -Filter *.json -File } | Sort-Object LastWriteTime)
     if ($pending.Count -eq 0) { Set-Content -Path $status -Value ("idle, last check {0:yyyy-MM-dd HH:mm}" -f (Get-Date)); return }
