@@ -22,6 +22,8 @@ past data, and its out-of-sample result is judged once against the live book.
 | F | Execution | 0 monthly, day 1; 1 day 3 (skip the turn); 2 weekly re-read; 3 = 0 + cost-scaled no-trade buffer | U04-T1, U06-T3, U02-T3 |
 | G | Commodity carry | 0 current; 1 calendar spread (12m vs front, off in backwardation) | U04-T3 |
 | H | Econ themes | 0 current; 1 forecast-based growth/inflation (first release + consensus) | U01-T3 |
+| S | Selection statistic (procedure) | 0 shrunk net Sharpe; 1 shrunk net downside ratio with a concavity bar (chosen by the U07-T1 shape audit rule, fixed before the run) | U07-T1 |
+| P | Holdout form (procedure) | 0 frozen picks at end of design era; 1 annual re-selection continued through the holdout | U07-T3 |
 
 Fixed (not dimensions): family shares 45/25/15/15, costs model, the 30% alternative cap, rules per market identical.
 Excluded until their diagnostic says otherwise: carry-tercile structure tilt (U05-T3), geopolitical-risk theme (U03-T4),
