@@ -1,0 +1,78 @@
+{
+ "version": "v1",
+ "locked": "2026-11-11",
+ "lock_id": "f5a4fb7cd3776b2a3bee4158e13cdb218fe99615b996d4886e65973477dc072a",
+ "seal_date": "2010-12-31",
+ "code": {
+  "version": "bbgdata-1.0.0",
+  "sha256": "fd7631f701464d01f99cb03df56c62caa5aab7cf2ea80e96056b1f974ad94911"
+ },
+ "workbooks": {
+  "1": {
+   "file": "1_Bloomberg_macro_UBC_6 1.xlsx",
+   "sha256": "d9a815421c5f689996699b155a56b5502c9684d3318432a527c835c3fac1e123",
+   "bytes": 7213881,
+   "mtime": "2026-11-11T04:32:12Z"
+  },
+  "2": {
+   "file": "2_Bloomberg_econ_policy_monthly (1).xlsx",
+   "sha256": "67443b3297bbd385e362f40188a24c72febb0c272277ff1abe5471e74180e899",
+   "bytes": 2045566,
+   "mtime": "2026-11-11T04:13:06Z"
+  },
+  "3": {
+   "file": "3_Bloomberg_rates_credit_fx_monthly_6 1.xlsx",
+   "sha256": "c118d6b41e6b746488db4ad8dde44e1898df3c50e65be806ac568b494e624b47",
+   "bytes": 2595531,
+   "mtime": "2026-11-11T04:32:21Z"
+  },
+  "4": {
+   "file": "4_Bloomberg_equity_vol_funds_monthly_5 1.xlsx",
+   "sha256": "26dee1308babbcad3d935daaa6a10ee361a4c7afbb407e7377c123fa4a5a1535",
+   "bytes": 5249478,
+   "mtime": "2026-11-11T04:32:31Z"
+  },
+  "5": {
+   "file": "5_Bloomberg_commodities_ext_monthly_5 1.xlsx",
+   "sha256": "5d472f51054b765ca5094bbc89ae0b61c60c0718bae869eda952b1e1f149a32e",
+   "bytes": 1983564,
+   "mtime": "2026-11-11T04:32:36Z"
+  },
+  "6": {
+   "file": "6_Bloomberg_daily_A_futures_fx_5 1.xlsx",
+   "sha256": "ad53cfce150cb824b070097fd90e89605c686436a518e1bb312c6aba561e39d1",
+   "bytes": 25862358,
+   "mtime": "2026-11-11T04:32:52Z"
+  },
+  "7": {
+   "file": "7_Bloomberg_daily_B_rates_equity_vol_5 1.xlsx",
+   "sha256": "6583952192e8ba37c94b5b837789401876f5396ae8304ca4823b829d0b2f3be9",
+   "bytes": 17161759,
+   "mtime": "2026-11-11T04:33:03Z"
+  }
+ },
+ "config": {
+  "live_sources.csv": "fe905d6d268d8e4a174fe1687c4523a06864e7f0b10002279cc182500f10e546",
+  "untouched_markets.csv": "95bce64e4313716abc0297796272db77b4a5ed505c0f90a0f2e553ae92395454"
+ },
+ "tables": {
+  "design/daily.pkl": "37ce6f17140923e8378639b8966a39bd3f974302815dd7161f83e87dab236a69",
+  "design/monthly.pkl": "ae97ca5917769edfb3bb0fc7349252f597c3a2a3d5cef48ab71f6acb0466de21",
+  "sealed/daily.pkl": "9de3a9a7a5ef0a2ccbe234bde0f98223175cc7ba6490218e6f7b94a7d3ea052f",
+  "sealed/monthly.pkl": "e99d9ca1e0a4ff563c8760f1aff6dcacec2d99f5cf45d07ba232d3395301e0e9"
+ },
+ "catalog": {
+  "sha256": "05345d3ec6df034c240220d1a8ce302755183b243e33e334473282cd098bc0aa",
+  "rows": 4204
+ },
+ "counts": {
+  "blocks": 2470,
+  "ticker_fields": 4204,
+  "ok": 3471,
+  "requesting": 591,
+  "invalid": 94,
+  "empty": 48
+ },
+ "status": "PROVISIONAL: files 1 and 3 have truncated monthly history and file 5 is partly loaded; superseded by v2 after the re-pull",
+ "source": "tools/bbgq/results/bbg_build_v1.txt (PC run 2026-11-11 00:19 local)"
+}

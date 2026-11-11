@@ -87,13 +87,19 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   Core / Incubator / Shelved by rule; forecast ledger (descriptive); weekly live cycle on free data; agent per step
   (Fable judges small inputs + independent Opus check; Opus builds/tests/rebuilds; Sonnet ops; scripts). It replaces
   the PLAYBOOK routing/schedule, the per-person units U08-U21 and the VARIANTS selection procedure.
-  Bloomberg pulled files: stay on the PC (local job runner like the WRDS one, summary statistics only, 2011+ sealed);
-  the folder Documents\WRDS results\mscifreedata\Bloomberg_UBC_pull_2026-11-04 holds only blank templates (user to point).
+  Bloomberg pulled files: stay on the PC (local job runner like the WRDS one, summary statistics only, 2011+ sealed).
 - 2026-11-10 status: WORKFLOW block 1 DONE: local job runner on the PC (tools/bbgq; jobs dropped in Documents\WRDS results\local\jobs
   run on the PC, report only; Python 3.15 + numpy/pandas/scipy/openpyxl in local\pylib). Bloomberg inventory (metadata):
   docs/research/bbg/inventory_2026-11-10.md = 2,017 of 2,470 tickers loaded; file 1 complete (490/494); file 5 commodities
   only 246/631 (367 saved while still loading -> user re-pulls file 5 and 8 indexes of file 4). Next: block 2 (reader, data
   check, lock, seal 2011+) on the user's go.
+- 2026-11-11 status: WORKFLOW block 2 DONE (provisional): reader tools/bbgq/lib/bbgdata.py (as-of access, 2011+ sealed, 45
+  held-back markets), data check, lock v1 = docs/research/bbg/LOCK_v1.json + LOCK_v1_check_2026-11-11.md (lock id f5a4fb7c...).
+  FINDING: monthly history is cut off in file 1 (rates futures, curves, returns, yields, bond futures, breakevens, surprise:
+  from 2009-06) and file 3 (all sheets: from 2004-04); file 5 mostly still loading; 100 of 260 must-have groups not usable.
+  User re-pulls files 1, 3, 5 (+8 EquityIndexes tickers in file 4) -> re-run bbg_build -> lock v2. Usable now: daily files 6, 7
+  (from 1990), file 1 DailyCommodities / EquityTR / EquityValuation / Economics, files 2 and 4. Next: block 3 on the user's go
+  (engine on the PC, reproduce the book on free data; does not need the re-pull).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
