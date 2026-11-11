@@ -1,0 +1,361 @@
+file,sheet,ticker,label,reason
+1,Curves,CC1 Comdty,Cocoa 1st,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+1,Curves,CC2 Comdty,Cocoa 2nd,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+1,Curves,CC3 Comdty,Cocoa 3rd,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+1,Curves,CC6 Comdty,Cocoa ~12m,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+1,Curves,LH1 Comdty,Lean hogs 1st,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+1,Curves,LH2 Comdty,Lean hogs 2nd,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+1,Curves,LH3 Comdty,Lean hogs 3rd,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+1,Curves,LH7 Comdty,Lean hogs ~12m,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+1,Curves,FC1 Comdty,Feeder cattle 1st,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+1,Curves,FC2 Comdty,Feeder cattle 2nd,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+1,Curves,FC3 Comdty,Feeder cattle 3rd,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+1,Curves,FC6 Comdty,Feeder cattle ~12m,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+1,Curves,KW1 Comdty,KC wheat 1st,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+1,Curves,KW2 Comdty,KC wheat 2nd,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+1,Curves,KW3 Comdty,KC wheat 3rd,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+1,Curves,KW6 Comdty,KC wheat ~12m,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+1,Curves,SM1 Comdty,Soybean meal 1st,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+1,Curves,SM2 Comdty,Soybean meal 2nd,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+1,Curves,SM3 Comdty,Soybean meal 3rd,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+1,Curves,SM8 Comdty,Soybean meal ~12m,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+1,Curves,BO1 Comdty,Soybean oil 1st,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+1,Curves,BO2 Comdty,Soybean oil 2nd,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+1,Curves,BO3 Comdty,Soybean oil 3rd,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+1,Curves,BO8 Comdty,Soybean oil ~12m,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+1,Curves,LA1 Comdty,Aluminium (LME) 1st,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+1,Curves,LA2 Comdty,Aluminium (LME) 2nd,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+1,Curves,LA3 Comdty,Aluminium (LME) 3rd,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+1,Curves,LA13 Comdty,Aluminium (LME) ~12m,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+1,Curves,LX1 Comdty,Zinc (LME) 1st,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+1,Curves,LX2 Comdty,Zinc (LME) 2nd,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+1,Curves,LX3 Comdty,Zinc (LME) 3rd,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+1,Curves,LX13 Comdty,Zinc (LME) ~12m,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+1,Curves,LN1 Comdty,Nickel (LME) 1st,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+1,Curves,LN2 Comdty,Nickel (LME) 2nd,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+1,Curves,LN3 Comdty,Nickel (LME) 3rd,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+1,Curves,LN13 Comdty,Nickel (LME) ~12m,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+1,Curves,LL1 Comdty,Lead (LME) 1st,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+1,Curves,LL2 Comdty,Lead (LME) 2nd,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+1,Curves,LL3 Comdty,Lead (LME) 3rd,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+1,Curves,LL13 Comdty,Lead (LME) ~12m,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+1,Curves,QS1 Comdty,Gasoil (ICE) 1st,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+1,Curves,QS2 Comdty,Gasoil (ICE) 2nd,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+1,Curves,QS3 Comdty,Gasoil (ICE) 3rd,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+1,Curves,QS13 Comdty,Gasoil (ICE) ~12m,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+1,Returns,SPGSCCP Index,Cocoa GSCI ER,alternative commodity not in the book (gm ALT_COMMOD cocoa): excess-return index
+1,Returns,SPGSLHP Index,Lean hogs GSCI ER,alternative commodity not in the book (gm ALT_COMMOD lean hogs): excess-return index
+1,Returns,BCOMLH Index,Lean hogs BCOM ER,alternative commodity not in the book (gm ALT_COMMOD lean hogs): excess-return index
+1,Returns,SPGSFCP Index,Feeder cattle GSCI ER,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): excess-return index
+1,Returns,SPGSKWP Index,KC wheat GSCI ER,alternative commodity not in the book (gm ALT_COMMOD KC wheat): excess-return index
+1,Returns,BCOMKW Index,KC wheat BCOM ER,alternative commodity not in the book (gm ALT_COMMOD KC wheat): excess-return index
+1,Returns,BCOMSM Index,Soybean meal BCOM ER,alternative commodity not in the book (gm ALT_COMMOD soybean meal): excess-return index
+1,Returns,BCOMBO Index,Soybean oil BCOM ER,alternative commodity not in the book (gm ALT_COMMOD soybean oil): excess-return index
+1,Returns,SPGSIAP Index,Aluminium (LME) GSCI ER,alternative commodity not in the book (gm ALT_COMMOD aluminium): excess-return index
+1,Returns,BCOMAL Index,Aluminium (LME) BCOM ER,alternative commodity not in the book (gm ALT_COMMOD aluminium): excess-return index
+1,Returns,SPGSIZP Index,Zinc (LME) GSCI ER,alternative commodity not in the book (gm ALT_COMMOD zinc): excess-return index
+1,Returns,BCOMZS Index,Zinc (LME) BCOM ER,alternative commodity not in the book (gm ALT_COMMOD zinc): excess-return index
+1,Returns,SPGSIKP Index,Nickel (LME) GSCI ER,alternative commodity not in the book (gm ALT_COMMOD nickel): excess-return index
+1,Returns,BCOMNI Index,Nickel (LME) BCOM ER,alternative commodity not in the book (gm ALT_COMMOD nickel): excess-return index
+1,Returns,SPGSILP Index,Lead (LME) GSCI ER,alternative commodity not in the book (gm ALT_COMMOD lead): excess-return index
+1,Returns,SPGSGOP Index,Gasoil (ICE) GSCI ER,alternative commodity not in the book (gm ALT_COMMOD gasoil): excess-return index
+1,DailyCommodities,SPGSCCP Index,Cocoa GSCI ER,alternative commodity not in the book (gm ALT_COMMOD cocoa): excess-return index
+1,DailyCommodities,SPGSLHP Index,Lean hogs GSCI ER,alternative commodity not in the book (gm ALT_COMMOD lean hogs): excess-return index
+1,DailyCommodities,SPGSFCP Index,Feeder cattle GSCI ER,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): excess-return index
+1,DailyCommodities,SPGSKWP Index,KC wheat GSCI ER,alternative commodity not in the book (gm ALT_COMMOD KC wheat): excess-return index
+1,DailyCommodities,SPGSIAP Index,Aluminium (LME) GSCI ER,alternative commodity not in the book (gm ALT_COMMOD aluminium): excess-return index
+1,DailyCommodities,SPGSIZP Index,Zinc (LME) GSCI ER,alternative commodity not in the book (gm ALT_COMMOD zinc): excess-return index
+1,DailyCommodities,SPGSIKP Index,Nickel (LME) GSCI ER,alternative commodity not in the book (gm ALT_COMMOD nickel): excess-return index
+1,DailyCommodities,SPGSILP Index,Lead (LME) GSCI ER,alternative commodity not in the book (gm ALT_COMMOD lead): excess-return index
+1,DailyCommodities,SPGSGOP Index,Gasoil (ICE) GSCI ER,alternative commodity not in the book (gm ALT_COMMOD gasoil): excess-return index
+3,YieldsExtra,GVSK3YR Index,Korea 3,emerging-market government bond yield not traded by the book (Korea)
+3,YieldsExtra,GVSK10YR Index,Korea 10,emerging-market government bond yield not traded by the book (Korea)
+3,YieldsExtra,GCNY2YR Index,China 2,emerging-market government bond yield not traded by the book (China)
+3,YieldsExtra,GCNY10YR Index,China 10,emerging-market government bond yield not traded by the book (China)
+3,YieldsExtra,GIND2YR Index,India 2,emerging-market government bond yield not traded by the book (India)
+3,YieldsExtra,GIND10YR Index,India 10,emerging-market government bond yield not traded by the book (India)
+3,YieldsExtra,GIDN2YR Index,Indonesia 2,emerging-market government bond yield not traded by the book (Indonesia)
+3,YieldsExtra,GIDN10YR Index,Indonesia 10,emerging-market government bond yield not traded by the book (Indonesia)
+3,YieldsExtra,GVTL2YR Index,Thailand 2 ?,emerging-market government bond yield not traded by the book (Thailand)
+3,YieldsExtra,GVTL10YR Index,Thailand 10 ?,emerging-market government bond yield not traded by the book (Thailand)
+3,YieldsExtra,MGIY3Y Index,Malaysia 3 ?,emerging-market government bond yield not traded by the book (Malaysia)
+3,YieldsExtra,MGIY10Y Index,Malaysia 10 ?,emerging-market government bond yield not traded by the book (Malaysia)
+3,YieldsExtra,GTWN10Y Index,Taiwan 10 ?,emerging-market government bond yield not traded by the book (Taiwan)
+3,YieldsExtra,PDSF10YR Index,Philippines 10 ?,emerging-market government bond yield not traded by the book (Philippines)
+3,YieldsExtra,GEBR2Y Index,Brazil 2 ?,emerging-market government bond yield not traded by the book (Brazil)
+3,YieldsExtra,GEBR10Y Index,Brazil 10 ?,emerging-market government bond yield not traded by the book (Brazil)
+3,YieldsExtra,GMXN2YR Index,Mexico 2 ?,emerging-market government bond yield not traded by the book (Mexico)
+3,YieldsExtra,GMXN10YR Index,Mexico 10 ?,emerging-market government bond yield not traded by the book (Mexico)
+3,YieldsExtra,GCOL10Y Index,Colombia 10 ?,emerging-market government bond yield not traded by the book (Colombia)
+3,YieldsExtra,CLGB10Y Index,Chile 10 ?,emerging-market government bond yield not traded by the book (Chile)
+3,YieldsExtra,GRPE10Y Index,Peru 10 ?,emerging-market government bond yield not traded by the book (Peru)
+3,YieldsExtra,GSAB2YR Index,South Africa 2 ?,emerging-market government bond yield not traded by the book (South Africa)
+3,YieldsExtra,GSAB10YR Index,South Africa 10 ?,emerging-market government bond yield not traded by the book (South Africa)
+3,YieldsExtra,POGB2YR Index,Poland 2,emerging-market government bond yield not traded by the book (Poland)
+3,YieldsExtra,POGB10YR Index,Poland 10,emerging-market government bond yield not traded by the book (Poland)
+3,YieldsExtra,GHGB3YR Index,Hungary 3,emerging-market government bond yield not traded by the book (Hungary)
+3,YieldsExtra,GHGB10YR Index,Hungary 10,emerging-market government bond yield not traded by the book (Hungary)
+3,YieldsExtra,CZGB2YR Index,Czech 2,emerging-market government bond yield not traded by the book (Czech Republic)
+3,YieldsExtra,CZGB10YR Index,Czech 10,emerging-market government bond yield not traded by the book (Czech Republic)
+3,YieldsExtra,IECM2Y Index,Turkey 2 ?,emerging-market government bond yield not traded by the book (Turkey)
+3,YieldsExtra,IECM10Y Index,Turkey 10 ?,emerging-market government bond yield not traded by the book (Turkey)
+3,YieldsExtra,RUGE10Y Index,Russia 10 ?,emerging-market government bond yield not traded by the book (Russia)
+3,FXSpot,USDCNY Curncy,USDCNY,emerging-market currency not traded by the book (CNY): spot
+3,FXSpot,USDCNH Curncy,USDCNH,emerging-market currency not traded by the book (CNY): spot
+3,FXSpot,USDTWD Curncy,USDTWD,emerging-market currency not traded by the book (TWD): spot
+3,FXSpot,USDINR Curncy,USDINR,emerging-market currency not traded by the book (INR): spot
+3,FXSpot,USDIDR Curncy,USDIDR,emerging-market currency not traded by the book (IDR): spot
+3,FXSpot,USDMYR Curncy,USDMYR,emerging-market currency not traded by the book (MYR): spot
+3,FXSpot,USDTHB Curncy,USDTHB,emerging-market currency not traded by the book (THB): spot
+3,FXSpot,USDPHP Curncy,USDPHP,emerging-market currency not traded by the book (PHP): spot
+3,FXSpot,USDCLP Curncy,USDCLP,emerging-market currency not traded by the book (CLP): spot
+3,FXSpot,USDCOP Curncy,USDCOP,emerging-market currency not traded by the book (COP): spot
+3,FXSpot,USDPEN Curncy,USDPEN,emerging-market currency not traded by the book (PEN): spot
+3,FXSpot,USDTRY Curncy,USDTRY,emerging-market currency not traded by the book (TRY): spot
+3,FXSpot,USDPLN Curncy,USDPLN,emerging-market currency not traded by the book (PLN): spot
+3,FXSpot,USDHUF Curncy,USDHUF,emerging-market currency not traded by the book (HUF): spot
+3,FXSpot,USDCZK Curncy,USDCZK,emerging-market currency not traded by the book (CZK): spot
+3,FXSpot,USDRUB Curncy,USDRUB,emerging-market currency not traded by the book (RUB): spot
+3,FXForwards,TRY1M Curncy,TRY 1M forward points,emerging-market currency not traded by the book (TRY): forward points
+3,FXForwards,TRY3M Curncy,TRY 3M forward points,emerging-market currency not traded by the book (TRY): forward points
+3,FXForwards,TRY12M Curncy,TRY 12M forward points,emerging-market currency not traded by the book (TRY): forward points
+3,FXForwards,PLN1M Curncy,PLN 1M forward points,emerging-market currency not traded by the book (PLN): forward points
+3,FXForwards,PLN3M Curncy,PLN 3M forward points,emerging-market currency not traded by the book (PLN): forward points
+3,FXForwards,PLN12M Curncy,PLN 12M forward points,emerging-market currency not traded by the book (PLN): forward points
+3,FXForwards,HUF1M Curncy,HUF 1M forward points,emerging-market currency not traded by the book (HUF): forward points
+3,FXForwards,HUF3M Curncy,HUF 3M forward points,emerging-market currency not traded by the book (HUF): forward points
+3,FXForwards,HUF12M Curncy,HUF 12M forward points,emerging-market currency not traded by the book (HUF): forward points
+3,FXForwards,CZK1M Curncy,CZK 1M forward points,emerging-market currency not traded by the book (CZK): forward points
+3,FXForwards,CZK3M Curncy,CZK 3M forward points,emerging-market currency not traded by the book (CZK): forward points
+3,FXForwards,CZK12M Curncy,CZK 12M forward points,emerging-market currency not traded by the book (CZK): forward points
+3,FXForwards,THB1M Curncy,THB 1M forward points ?,emerging-market currency not traded by the book (THB): forward points
+3,FXForwards,THB3M Curncy,THB 3M forward points ?,emerging-market currency not traded by the book (THB): forward points
+3,FXForwards,THB12M Curncy,THB 12M forward points ?,emerging-market currency not traded by the book (THB): forward points
+3,FXForwards,NTN1M Curncy,TWD 1M NDF outright ?,emerging-market currency not traded by the book (TWD): NDF outright
+3,FXForwards,NTN3M Curncy,TWD 3M NDF outright ?,emerging-market currency not traded by the book (TWD): NDF outright
+3,FXForwards,NTN12M Curncy,TWD 12M NDF outright ?,emerging-market currency not traded by the book (TWD): NDF outright
+3,FXForwards,IRN1M Curncy,INR 1M NDF outright ?,emerging-market currency not traded by the book (INR): NDF outright
+3,FXForwards,IRN3M Curncy,INR 3M NDF outright ?,emerging-market currency not traded by the book (INR): NDF outright
+3,FXForwards,IRN12M Curncy,INR 12M NDF outright ?,emerging-market currency not traded by the book (INR): NDF outright
+3,FXForwards,IHN1M Curncy,IDR 1M NDF outright ?,emerging-market currency not traded by the book (IDR): NDF outright
+3,FXForwards,IHN3M Curncy,IDR 3M NDF outright ?,emerging-market currency not traded by the book (IDR): NDF outright
+3,FXForwards,IHN12M Curncy,IDR 12M NDF outright ?,emerging-market currency not traded by the book (IDR): NDF outright
+3,FXForwards,PPN1M Curncy,PHP 1M NDF outright ?,emerging-market currency not traded by the book (PHP): NDF outright
+3,FXForwards,PPN3M Curncy,PHP 3M NDF outright ?,emerging-market currency not traded by the book (PHP): NDF outright
+3,FXForwards,PPN12M Curncy,PHP 12M NDF outright ?,emerging-market currency not traded by the book (PHP): NDF outright
+3,FXForwards,CCN1M Curncy,CNY 1M NDF outright ?,emerging-market currency not traded by the book (CNY): NDF outright
+3,FXForwards,CCN3M Curncy,CNY 3M NDF outright ?,emerging-market currency not traded by the book (CNY): NDF outright
+3,FXForwards,CCN12M Curncy,CNY 12M NDF outright ?,emerging-market currency not traded by the book (CNY): NDF outright
+3,FXForwards,CHN1M Curncy,CLP 1M NDF outright ?,emerging-market currency not traded by the book (CLP): NDF outright
+3,FXForwards,CHN3M Curncy,CLP 3M NDF outright ?,emerging-market currency not traded by the book (CLP): NDF outright
+3,FXForwards,CHN12M Curncy,CLP 12M NDF outright ?,emerging-market currency not traded by the book (CLP): NDF outright
+3,FXForwards,CLN1M Curncy,COP 1M NDF outright ?,emerging-market currency not traded by the book (COP): NDF outright
+3,FXForwards,CLN3M Curncy,COP 3M NDF outright ?,emerging-market currency not traded by the book (COP): NDF outright
+3,FXForwards,CLN12M Curncy,COP 12M NDF outright ?,emerging-market currency not traded by the book (COP): NDF outright
+3,FXForwards,MRN1M Curncy,MYR 1M NDF outright ?,emerging-market currency not traded by the book (MYR): NDF outright
+3,FXForwards,MRN3M Curncy,MYR 3M NDF outright ?,emerging-market currency not traded by the book (MYR): NDF outright
+3,FXForwards,MRN12M Curncy,MYR 12M NDF outright ?,emerging-market currency not traded by the book (MYR): NDF outright
+3,FXForwards,RUB1M Curncy,RUB 1M NDF outright ?,emerging-market currency not traded by the book (RUB): forward points
+3,FXForwards,RUB3M Curncy,RUB 3M NDF outright ?,emerging-market currency not traded by the book (RUB): forward points
+3,FXForwards,RUB12M Curncy,RUB 12M NDF outright ?,emerging-market currency not traded by the book (RUB): forward points
+3,FXVol,USDCNHV1M Curncy,USDCNH 1M ATM implied vol,emerging-market currency not traded by the book (CNY): implied vol / risk reversal / butterfly
+3,FXVol,USDCNHV3M Curncy,USDCNH 3M ATM implied vol,emerging-market currency not traded by the book (CNY): implied vol / risk reversal / butterfly
+3,FXVol,USDCNHV1Y Curncy,USDCNH 1Y ATM implied vol,emerging-market currency not traded by the book (CNY): implied vol / risk reversal / butterfly
+3,FXVol,USDCNH25R1M Curncy,USDCNH 1M 25d risk reversal,emerging-market currency not traded by the book (CNY): implied vol / risk reversal / butterfly
+3,FXVol,USDCNH25B1M Curncy,USDCNH 1M 25d butterfly ?,emerging-market currency not traded by the book (CNY): implied vol / risk reversal / butterfly
+3,FXVol,USDCNH25R3M Curncy,USDCNH 3M 25d risk reversal,emerging-market currency not traded by the book (CNY): implied vol / risk reversal / butterfly
+3,FXVol,USDCNH25B3M Curncy,USDCNH 3M 25d butterfly ?,emerging-market currency not traded by the book (CNY): implied vol / risk reversal / butterfly
+3,FXVol,USDTRYV1M Curncy,USDTRY 1M ATM implied vol,emerging-market currency not traded by the book (TRY): implied vol / risk reversal / butterfly
+3,FXVol,USDTRYV3M Curncy,USDTRY 3M ATM implied vol,emerging-market currency not traded by the book (TRY): implied vol / risk reversal / butterfly
+3,FXVol,USDTRYV1Y Curncy,USDTRY 1Y ATM implied vol,emerging-market currency not traded by the book (TRY): implied vol / risk reversal / butterfly
+3,FXVol,USDTRY25R1M Curncy,USDTRY 1M 25d risk reversal,emerging-market currency not traded by the book (TRY): implied vol / risk reversal / butterfly
+3,FXVol,USDTRY25B1M Curncy,USDTRY 1M 25d butterfly ?,emerging-market currency not traded by the book (TRY): implied vol / risk reversal / butterfly
+3,FXVol,USDTRY25R3M Curncy,USDTRY 3M 25d risk reversal,emerging-market currency not traded by the book (TRY): implied vol / risk reversal / butterfly
+3,FXVol,USDTRY25B3M Curncy,USDTRY 3M 25d butterfly ?,emerging-market currency not traded by the book (TRY): implied vol / risk reversal / butterfly
+3,FXVol,USDINRV1M Curncy,USDINR 1M ATM implied vol,emerging-market currency not traded by the book (INR): implied vol / risk reversal / butterfly
+3,FXVol,USDINRV3M Curncy,USDINR 3M ATM implied vol,emerging-market currency not traded by the book (INR): implied vol / risk reversal / butterfly
+3,FXVol,USDINRV1Y Curncy,USDINR 1Y ATM implied vol,emerging-market currency not traded by the book (INR): implied vol / risk reversal / butterfly
+3,FXVol,USDINR25R1M Curncy,USDINR 1M 25d risk reversal,emerging-market currency not traded by the book (INR): implied vol / risk reversal / butterfly
+3,FXVol,USDINR25B1M Curncy,USDINR 1M 25d butterfly ?,emerging-market currency not traded by the book (INR): implied vol / risk reversal / butterfly
+3,FXVol,USDINR25R3M Curncy,USDINR 3M 25d risk reversal,emerging-market currency not traded by the book (INR): implied vol / risk reversal / butterfly
+3,FXVol,USDINR25B3M Curncy,USDINR 3M 25d butterfly ?,emerging-market currency not traded by the book (INR): implied vol / risk reversal / butterfly
+5,ComFront,QS1 Comdty,Gasoil 1st,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+5,ComFront,LA1 Comdty,Aluminium LME 1st,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+5,ComFront,LX1 Comdty,Zinc LME 1st,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+5,ComFront,LN1 Comdty,Nickel LME 1st,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+5,ComFront,LL1 Comdty,Lead LME 1st,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+5,ComFront,KW1 Comdty,KC wheat 1st,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+5,ComFront,SM1 Comdty,Soy meal 1st,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+5,ComFront,BO1 Comdty,Soy oil 1st,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+5,ComFront,CC1 Comdty,Cocoa 1st,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+5,ComFront,FC1 Comdty,Feeder cattle 1st,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+5,ComFront,LH1 Comdty,Lean hogs 1st,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+5,ComCurve,QS2 Comdty,Gasoil 2,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+5,ComCurve,QS3 Comdty,Gasoil 3,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+5,ComCurve,QS4 Comdty,Gasoil 4,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+5,ComCurve,QS5 Comdty,Gasoil 5,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+5,ComCurve,QS6 Comdty,Gasoil 6,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+5,ComCurve,QS7 Comdty,Gasoil 7,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+5,ComCurve,QS8 Comdty,Gasoil 8,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+5,ComCurve,QS9 Comdty,Gasoil 9,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+5,ComCurve,QS10 Comdty,Gasoil 10,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+5,ComCurve,QS11 Comdty,Gasoil 11,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+5,ComCurve,QS12 Comdty,Gasoil 12,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+5,ComCurve,LA2 Comdty,Aluminium LME 2,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+5,ComCurve,LA3 Comdty,Aluminium LME 3,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+5,ComCurve,LA4 Comdty,Aluminium LME 4,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+5,ComCurve,LA5 Comdty,Aluminium LME 5,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+5,ComCurve,LA6 Comdty,Aluminium LME 6,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+5,ComCurve,LA7 Comdty,Aluminium LME 7,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+5,ComCurve,LA8 Comdty,Aluminium LME 8,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+5,ComCurve,LA9 Comdty,Aluminium LME 9,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+5,ComCurve,LA10 Comdty,Aluminium LME 10,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+5,ComCurve,LA11 Comdty,Aluminium LME 11,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+5,ComCurve,LA12 Comdty,Aluminium LME 12,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+5,ComCurve,LX2 Comdty,Zinc LME 2,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+5,ComCurve,LX3 Comdty,Zinc LME 3,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+5,ComCurve,LX4 Comdty,Zinc LME 4,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+5,ComCurve,LX5 Comdty,Zinc LME 5,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+5,ComCurve,LX6 Comdty,Zinc LME 6,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+5,ComCurve,LX7 Comdty,Zinc LME 7,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+5,ComCurve,LX8 Comdty,Zinc LME 8,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+5,ComCurve,LX9 Comdty,Zinc LME 9,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+5,ComCurve,LX10 Comdty,Zinc LME 10,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+5,ComCurve,LX11 Comdty,Zinc LME 11,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+5,ComCurve,LX12 Comdty,Zinc LME 12,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+5,ComCurve,LN2 Comdty,Nickel LME 2,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+5,ComCurve,LN3 Comdty,Nickel LME 3,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+5,ComCurve,LN4 Comdty,Nickel LME 4,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+5,ComCurve,LN5 Comdty,Nickel LME 5,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+5,ComCurve,LN6 Comdty,Nickel LME 6,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+5,ComCurve,LN7 Comdty,Nickel LME 7,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+5,ComCurve,LN8 Comdty,Nickel LME 8,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+5,ComCurve,LN9 Comdty,Nickel LME 9,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+5,ComCurve,LN10 Comdty,Nickel LME 10,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+5,ComCurve,LN11 Comdty,Nickel LME 11,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+5,ComCurve,LN12 Comdty,Nickel LME 12,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+5,ComCurve,LL2 Comdty,Lead LME 2,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+5,ComCurve,LL3 Comdty,Lead LME 3,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+5,ComCurve,LL4 Comdty,Lead LME 4,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+5,ComCurve,LL5 Comdty,Lead LME 5,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+5,ComCurve,LL6 Comdty,Lead LME 6,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+5,ComCurve,LL7 Comdty,Lead LME 7,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+5,ComCurve,LL8 Comdty,Lead LME 8,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+5,ComCurve,LL9 Comdty,Lead LME 9,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+5,ComCurve,LL10 Comdty,Lead LME 10,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+5,ComCurve,LL11 Comdty,Lead LME 11,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+5,ComCurve,LL12 Comdty,Lead LME 12,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+5,ComCurve,KW2 Comdty,KC wheat 2,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+5,ComCurve,KW3 Comdty,KC wheat 3,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+5,ComCurve,KW4 Comdty,KC wheat 4,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+5,ComCurve,KW5 Comdty,KC wheat 5,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+5,ComCurve,KW6 Comdty,KC wheat 6,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+5,ComCurve,KW7 Comdty,KC wheat 7,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+5,ComCurve,KW8 Comdty,KC wheat 8,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+5,ComCurve,KW9 Comdty,KC wheat 9,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+5,ComCurve,KW10 Comdty,KC wheat 10,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+5,ComCurve,KW11 Comdty,KC wheat 11,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+5,ComCurve,KW12 Comdty,KC wheat 12,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+5,ComCurve,SM2 Comdty,Soy meal 2,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+5,ComCurve,SM3 Comdty,Soy meal 3,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+5,ComCurve,SM4 Comdty,Soy meal 4,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+5,ComCurve,SM5 Comdty,Soy meal 5,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+5,ComCurve,SM6 Comdty,Soy meal 6,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+5,ComCurve,SM7 Comdty,Soy meal 7,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+5,ComCurve,SM8 Comdty,Soy meal 8,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+5,ComCurve,SM9 Comdty,Soy meal 9,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+5,ComCurve,SM10 Comdty,Soy meal 10,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+5,ComCurve,SM11 Comdty,Soy meal 11,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+5,ComCurve,SM12 Comdty,Soy meal 12,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+5,ComCurve,BO2 Comdty,Soy oil 2,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+5,ComCurve,BO3 Comdty,Soy oil 3,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+5,ComCurve,BO4 Comdty,Soy oil 4,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+5,ComCurve,BO5 Comdty,Soy oil 5,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+5,ComCurve,BO6 Comdty,Soy oil 6,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+5,ComCurve,BO7 Comdty,Soy oil 7,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+5,ComCurve,BO8 Comdty,Soy oil 8,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+5,ComCurve,BO9 Comdty,Soy oil 9,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+5,ComCurve,BO10 Comdty,Soy oil 10,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+5,ComCurve,BO11 Comdty,Soy oil 11,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+5,ComCurve,BO12 Comdty,Soy oil 12,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+5,ComCurve,CC2 Comdty,Cocoa 2,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+5,ComCurve,CC3 Comdty,Cocoa 3,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+5,ComCurve,CC4 Comdty,Cocoa 4,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+5,ComCurve,CC5 Comdty,Cocoa 5,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+5,ComCurve,CC6 Comdty,Cocoa 6,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+5,ComCurve,CC7 Comdty,Cocoa 7,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+5,ComCurve,CC8 Comdty,Cocoa 8,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+5,ComCurve,CC9 Comdty,Cocoa 9,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+5,ComCurve,CC10 Comdty,Cocoa 10,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+5,ComCurve,CC11 Comdty,Cocoa 11,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+5,ComCurve,CC12 Comdty,Cocoa 12,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+5,ComCurve,FC2 Comdty,Feeder cattle 2,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+5,ComCurve,FC3 Comdty,Feeder cattle 3,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+5,ComCurve,FC4 Comdty,Feeder cattle 4,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+5,ComCurve,FC5 Comdty,Feeder cattle 5,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+5,ComCurve,FC6 Comdty,Feeder cattle 6,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+5,ComCurve,FC7 Comdty,Feeder cattle 7,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+5,ComCurve,FC8 Comdty,Feeder cattle 8,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+5,ComCurve,FC9 Comdty,Feeder cattle 9,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+5,ComCurve,FC10 Comdty,Feeder cattle 10,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+5,ComCurve,FC11 Comdty,Feeder cattle 11,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+5,ComCurve,FC12 Comdty,Feeder cattle 12,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+5,ComCurve,LH2 Comdty,Lean hogs 2,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+5,ComCurve,LH3 Comdty,Lean hogs 3,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+5,ComCurve,LH4 Comdty,Lean hogs 4,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+5,ComCurve,LH5 Comdty,Lean hogs 5,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+5,ComCurve,LH6 Comdty,Lean hogs 6,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+5,ComCurve,LH7 Comdty,Lean hogs 7,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+5,ComCurve,LH8 Comdty,Lean hogs 8,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+5,ComCurve,LH9 Comdty,Lean hogs 9,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+5,ComCurve,LH10 Comdty,Lean hogs 10,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+5,ComCurve,LH11 Comdty,Lean hogs 11,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+5,ComCurve,LH12 Comdty,Lean hogs 12,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+5,ComFundamentals,LMAHDY Index,Aluminium LME cash,alternative commodity not in the book (gm ALT_COMMOD aluminium): LME cash / 3m price
+5,ComFundamentals,LMAHDY Comdty,LME aluminium cash,alternative commodity not in the book (gm ALT_COMMOD aluminium): LME cash / 3m price
+5,ComFundamentals,LMAHDS03 Comdty,LME aluminium 3m,alternative commodity not in the book (gm ALT_COMMOD aluminium): LME cash / 3m price
+5,ComFundamentals,LMZSDS03 Comdty,LME zinc 3m,alternative commodity not in the book (gm ALT_COMMOD zinc): LME cash / 3m price
+5,ComFundamentals,LMNIDS03 Comdty,LME nickel 3m,alternative commodity not in the book (gm ALT_COMMOD nickel): LME cash / 3m price
+6,DailyFutures,QS1 Comdty,Gasoil 1st,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+6,DailyFutures,LA1 Comdty,Aluminium LME 1st,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+6,DailyFutures,LX1 Comdty,Zinc LME 1st,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+6,DailyFutures,LN1 Comdty,Nickel LME 1st,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+6,DailyFutures,LL1 Comdty,Lead LME 1st,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+6,DailyFutures,KW1 Comdty,KC wheat 1st,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+6,DailyFutures,SM1 Comdty,Soy meal 1st,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+6,DailyFutures,BO1 Comdty,Soy oil 1st,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+6,DailyFutures,CC1 Comdty,Cocoa 1st,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+6,DailyFutures,FC1 Comdty,Feeder cattle 1st,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+6,DailyFutures,LH1 Comdty,Lean hogs 1st,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+6,DailyFutures,QS2 Comdty,Gasoil 2nd,alternative commodity not in the book (gm ALT_COMMOD gasoil): futures contract
+6,DailyFutures,LA2 Comdty,Aluminium LME 2nd,alternative commodity not in the book (gm ALT_COMMOD aluminium): futures contract
+6,DailyFutures,LX2 Comdty,Zinc LME 2nd,alternative commodity not in the book (gm ALT_COMMOD zinc): futures contract
+6,DailyFutures,LN2 Comdty,Nickel LME 2nd,alternative commodity not in the book (gm ALT_COMMOD nickel): futures contract
+6,DailyFutures,LL2 Comdty,Lead LME 2nd,alternative commodity not in the book (gm ALT_COMMOD lead): futures contract
+6,DailyFutures,KW2 Comdty,KC wheat 2nd,alternative commodity not in the book (gm ALT_COMMOD KC wheat): futures contract
+6,DailyFutures,SM2 Comdty,Soy meal 2nd,alternative commodity not in the book (gm ALT_COMMOD soybean meal): futures contract
+6,DailyFutures,BO2 Comdty,Soy oil 2nd,alternative commodity not in the book (gm ALT_COMMOD soybean oil): futures contract
+6,DailyFutures,CC2 Comdty,Cocoa 2nd,alternative commodity not in the book (gm ALT_COMMOD cocoa): futures contract
+6,DailyFutures,FC2 Comdty,Feeder cattle 2nd,alternative commodity not in the book (gm ALT_COMMOD feeder cattle): futures contract
+6,DailyFutures,LH2 Comdty,Lean hogs 2nd,alternative commodity not in the book (gm ALT_COMMOD lean hogs): futures contract
+6,DailyFX,USDCNY Curncy,USDCNY,emerging-market currency not traded by the book (CNY): spot
+6,DailyFX,USDCNH Curncy,USDCNH,emerging-market currency not traded by the book (CNY): spot
+6,DailyFX,USDTWD Curncy,USDTWD,emerging-market currency not traded by the book (TWD): spot
+6,DailyFX,USDINR Curncy,USDINR,emerging-market currency not traded by the book (INR): spot
+6,DailyFX,USDIDR Curncy,USDIDR,emerging-market currency not traded by the book (IDR): spot
+6,DailyFX,USDMYR Curncy,USDMYR,emerging-market currency not traded by the book (MYR): spot
+6,DailyFX,USDTHB Curncy,USDTHB,emerging-market currency not traded by the book (THB): spot
+6,DailyFX,USDPHP Curncy,USDPHP,emerging-market currency not traded by the book (PHP): spot
+6,DailyFX,USDCLP Curncy,USDCLP,emerging-market currency not traded by the book (CLP): spot
+6,DailyFX,USDCOP Curncy,USDCOP,emerging-market currency not traded by the book (COP): spot
+6,DailyFX,USDPEN Curncy,USDPEN,emerging-market currency not traded by the book (PEN): spot
+6,DailyFX,USDTRY Curncy,USDTRY,emerging-market currency not traded by the book (TRY): spot
+6,DailyFX,USDPLN Curncy,USDPLN,emerging-market currency not traded by the book (PLN): spot
+6,DailyFX,USDHUF Curncy,USDHUF,emerging-market currency not traded by the book (HUF): spot
+6,DailyFX,USDCZK Curncy,USDCZK,emerging-market currency not traded by the book (CZK): spot
+6,DailyFX,USDRUB Curncy,USDRUB,emerging-market currency not traded by the book (RUB): spot
+7,DailyRates,GCNY10YR Index,China 10y,emerging-market government bond yield not traded by the book (China)
+7,DailyRates,GVSK10YR Index,Korea 10y,emerging-market government bond yield not traded by the book (Korea)
+7,DailyRates,GIND10YR Index,India 10y,emerging-market government bond yield not traded by the book (India)
+7,DailyVol,USDCNHV1M Curncy,USDCNH 1M ATM implied vol,emerging-market currency not traded by the book (CNY): implied vol / risk reversal / butterfly
+7,DailyVol,USDCNH25R1M Curncy,USDCNH 1M 25d risk reversal,emerging-market currency not traded by the book (CNY): implied vol / risk reversal / butterfly

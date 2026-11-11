@@ -1,0 +1,43 @@
+file,sheet,live_source,live_delay_days,note
+1,Economics,official_release,45,release date (ECO_RELEASE_DT) used where present; 45 days only where it is blank (mostly before ~2000); PX_LAST is the latest revised value
+1,RatesFutures,bloomberg_only,1,short-rate futures strips: no reliable free daily source for deferred contracts
+1,SpotRates3m,bloomberg_only,1,T-bill/SOFR/ESTR/SONIA are free (FRED/ECB/BoE) but Libor/CDOR/BBSW/Tibor are not; confirm per ticker before Core
+1,Curves,bloomberg_only,1,generic 2nd/3rd/12m commodity contracts: free sources give the front contract only
+1,Returns,bloomberg_only,1,S&P GSCI / BCOM excess-return indexes: licensed
+1,Yields,free_daily,1,generic government yields: central-bank daily curves (Fed H.15 Bundesbank BoE MoF BoC RBA BdF SNB Riksbank)
+1,EquityTR,bloomberg_only,1,index price is free (Yahoo/stooq) but the gross total-return index is not; ETFs are the free stand-in
+1,BondFutures,bloomberg_only,1,free data only for US Treasury futures fronts
+1,EquityValuation,bloomberg_only,1,MSCI P/E P/B dividend yield forward EPS: licensed
+1,Breakevens,bloomberg_only,1,US 10y breakeven and TIPS yield are free (FRED); others are not
+1,Benchmarks,bloomberg_only,20,CTA / hedge-fund indexes: monthly indexes are published 1-3 weeks after month end
+1,Surprise,bloomberg_only,1,Citi economic surprise indexes: licensed
+1,Volatility,bloomberg_only,1,VIX is free; VSTOXX / MOVE / FX implied vols are not
+1,FXBasis,bloomberg_only,1,cross-currency basis: licensed
+1,DailyCommodities,bloomberg_only,1,S&P GSCI excess-return indexes (daily): licensed
+2,EconUS,official_release,45,release date (ECO_RELEASE_DT) used where present; 45 days only where it is blank; PX_LAST is the latest revised value
+2,EconIntl,official_release,45,release date (ECO_RELEASE_DT) used where present; 45 days only where it is blank; PX_LAST is the latest revised value
+2,PolicyMoney,official_release,35,conservative: policy rates are known the same day but balance sheets and money supply are published weeks later; refine per ticker before use
+2,Conditions,bloomberg_only,7,BFCI is licensed; NFCI / AAII / EPU are free but weekly with a lag
+3,YieldsExtra,bloomberg_only,1,many EM and short-maturity yields have no reliable free daily source; DM ones do (confirm per ticker)
+3,Swaps,bloomberg_only,1,swap / OIS / inflation-swap rates and spreads: licensed
+3,Credit,bloomberg_only,1,Bloomberg index OAS / total returns and CDS: licensed (ICE BofA OAS on FRED are a different index)
+3,FXSpot,free_daily,1,FX spot and metals: free daily (FRED H.10 / ECB / Yahoo); BBDXY and the EM FX / carry indexes are not free
+3,FXForwards,bloomberg_only,1,forward points and NDF outrights: licensed
+3,FXVol,bloomberg_only,1,FX implied vols / risk reversals / butterflies: licensed
+3,FXBasis,bloomberg_only,1,cross-currency basis: licensed
+3,RatesFutExtra,bloomberg_only,1,deferred short-rate and bond futures: licensed
+4,EquityIndexes,bloomberg_only,1,index price is free but the total-return / valuation / market-cap fields are not
+4,SectorsStyles,bloomberg_only,1,sector and style indexes with total return and forward EPS: licensed
+4,VolComplex,bloomberg_only,1,mixed (VIX family is free from Cboe; the rest is not)
+4,Benchmarks2,bloomberg_only,20,CTA / hedge-fund indexes: monthly indexes are published 1-3 weeks after month end
+4,ETFs,free_daily,1,ETF prices and adjusted closes are free (Yahoo); FUND_TOTAL_ASSETS and EQY_SH_OUT are not reliably free
+5,ComFront,bloomberg_only,1,front contracts with open interest / volume: free price only for some fronts
+5,ComCurve,bloomberg_only,1,generic curve contracts 2-12: licensed
+5,ComIndexes,bloomberg_only,1,BCOM / S&P GSCI / CRB indexes and subindexes: licensed
+5,ComFundamentals,bloomberg_only,7,EIA / Baker Hughes are free but weekly with a lag; LME stocks and prices are licensed
+6,DailyFutures,bloomberg_only,1,generic 1st/2nd futures: free sources give unadjusted fronts only for some markets
+6,DailyFX,free_daily,1,FX spot and metals: free daily (FRED H.10 / ECB / Yahoo); BBDXY and the EM FX / carry indexes are not free
+7,DailyRates,bloomberg_only,1,mixed: government yields are free; swaps / OAS / term premium / MOVE are not
+7,DailyEquity,bloomberg_only,1,index price is free but the gross total-return index is not
+7,DailyVol,bloomberg_only,1,mixed (VIX family is free); FX implied vols and the rest are not
+7,DailyIndexes,bloomberg_only,1,commodity and CTA indexes (daily): licensed
