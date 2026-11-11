@@ -48,8 +48,17 @@ Exists: daily returns for 62 markets (gm/daily.py), a k-day delay test (gm/timin
 four staggered weekly tranches with their own turnover and costs, daily total returns (carry, dividends, rolls), an
 as-of path from the Bloomberg daily tables.
 
-## Open after the re-check
-Reader fixes before lock v2 (in progress): a `_CUT` twin must not win by date; a shorter re-pull must not replace a
-longer first pull; sheet-name matching; copied-block detection (see the cut-off finding in
-`LOCK_v1_check_2026-11-11.md` addendum / `tools/bbgq/results/bbg_diag_v2.txt`). Engine fixes C1-C3 = one new engine
-version to register before Batch A.
+## After the re-check (same day)
+- Reader bbgdata-1.2.0: copied blocks get status `copy` (identical numbers under 5+ different tickers in one workbook);
+  a `_CUT` twin never wins; a shorter re-pull does not replace a longer first pull; sheet names matched loosely;
+  the truncation cut also covers Bloomberg inputs (new cause C4: `>24` / `>36`-month gates on Bloomberg series).
+- Run on the PC on the first-pull files (`tools/bbgq/results/bbg_build_v2.txt`, `bbg_check_v2.txt`): exactly the 836
+  copied blocks are flagged (file 1: 355 in ten sheets; file 3: 481 in eight sheets); nothing else. Provisional lock id
+  22f52578... (replaces lock v1 f5a4fb7c... as the working build until lock v2). File 3 keeps only 51 usable blocks,
+  file 1's ten sheets almost none: the Friday re-pull (R1-R7) covers all of them.
+- PC truncation run (`gm_trunc_v1.txt`): same verdicts as the cloud at all eight cut dates (one displayed count on the
+  "daily returns" line differs between pandas versions; no pass/fail changes). Reproduction re-run with the new
+  reference: 24 of 24 PASS.
+- Coverage map (`gm_bbg_map_v1.txt`), first-pull data: valuation ratios 23 of 23 and economics 35 of 35 served;
+  commodity curves 28 of 95; commodity return indexes 0 of 31 (all copies) -> after the re-pull.
+- Engine fixes C1-C4 = one new engine version to register before Batch A (not applied).

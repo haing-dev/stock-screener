@@ -2,9 +2,10 @@
 gm_engine gm_engine-1.0.0 | python 3.15.0, numpy 2.5.4, pandas 3.1.1, scipy 1.18.1, openpyxl 3.1.5, xlrd missing
 reference: gm commit 2e1b35a5a2, libraries numpy 2.5.3, openpyxl 3.1.5, pandas 3.0.5, python 3.13.16, scipy 1.18.1, xlrd 2.0.2
 PASS gm code | 18 files compared | differing or missing: none
+PASS gm data files | 1 compared | differing or missing: none
 PASS config hashes | BASE 989f1ef313, CANDIDATE 331b2a63dd
-PASS free inputs | 239 files | already in place 0 | unpacked now 239 | not matching the manifest 0 | original digest equals the reference | 17 converted xls | 0s
-engine run 111s (panel, signals, daily, BASE and CANDIDATE books)
+PASS free inputs | 239 files | already in place 222 | unpacked now 17 | not matching the manifest 0 | file list and sizes match the reference | 17 converted xls | 0s
+engine run 98s (panel, signals, daily, BASE and CANDIDATE books)
 --- comparison with the reference (design period; max abs diff vs tolerance)
 PASS statistics | BASE / 1975-2010 | values 10 | missing or extra 0 | max abs diff 0.0e+00 | tol 1e-06
 PASS statistics | BASE / 1990-2010 | values 10 | missing or extra 0 | max abs diff 0.0e+00 | tol 1e-06
@@ -32,4 +33,4 @@ PASS signals (per-market sum of |signal|) | trend | values 66 | missing or extra
 PASS market months with a return (count) |  | values 66 | missing or extra 0 | max abs diff 0.0e+00 | tol 0e+00
 REPRO SUMMARY | items 24 | pass 24 | fail 0 | largest diff per group: statistics 0.0e+00, book returns 0.0e+00, positions 0.0e+00, volatility estimate 0.0e+00, family positions 0.0e+00, signals 0.0e+00, market months with a return 0.0e+00
 REPRODUCTION PASS
-=== END === 113s
+=== END === 98s

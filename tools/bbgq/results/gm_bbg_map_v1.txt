@@ -1,0 +1,558 @@
+=== gm_bbg_map_v1 ===
+bbgdata bbgdata-1.2.0 | bbg_panel bbg_panel-1.0.0 | lock id 22f525789d321ab31aa33c15fdd5440c4c33c108195bbce392020c93616fff97
+--- per market and input (route | series id | status and copy | first design month | design months | months served as of 2010-12-31 | gm uses it)
+MARKET eq_us_spx
+   value composite | Bloomberg | MXUS Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   value composite | Bloomberg | MXUS Index|PE_RATIO | ok (1|EquityValuation, source first) | 1995-02 | 191 | 190 | yes
+   value composite | Bloomberg | MXUS Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1995-02 | 191 | 190 | yes
+   value composite | Bloomberg | MXUS Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_us_ndx
+   value composite | Bloomberg | MXUS Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   value composite | Bloomberg | MXUS Index|PE_RATIO | ok (1|EquityValuation, source first) | 1995-02 | 191 | 190 | yes
+   value composite | Bloomberg | MXUS Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1995-02 | 191 | 190 | yes
+   value composite | Bloomberg | MXUS Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_us_r2k
+   value composite | Bloomberg | MXUS Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   value composite | Bloomberg | MXUS Index|PE_RATIO | ok (1|EquityValuation, source first) | 1995-02 | 191 | 190 | yes
+   value composite | Bloomberg | MXUS Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1995-02 | 191 | 190 | yes
+   value composite | Bloomberg | MXUS Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_eu_stoxx50
+   value composite | Bloomberg | MXEM Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 1995-03 | 190 | 189 | yes
+   value composite | Bloomberg | MXEM Index|PE_RATIO | ok (1|EquityValuation, source first) | 1995-03 | 190 | 189 | yes
+   value composite | Bloomberg | MXEM Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1995-03 | 190 | 189 | yes
+   value composite | Bloomberg | MXEM Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_de_dax
+   value composite | Bloomberg | MXDE Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 2000-04 | 129 | 128 | yes
+   value composite | Bloomberg | MXDE Index|PE_RATIO | ok (1|EquityValuation, source first) | 1995-04 | 189 | 188 | yes
+   value composite | Bloomberg | MXDE Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1995-04 | 189 | 188 | yes
+   value composite | Bloomberg | MXDE Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_gb_ftse
+   value composite | Bloomberg | MXGB Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 1996-05 | 176 | 175 | yes
+   value composite | Bloomberg | MXGB Index|PE_RATIO | ok (1|EquityValuation, source first) | 1995-05 | 188 | 187 | yes
+   value composite | Bloomberg | MXGB Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1995-09 | 184 | 183 | yes
+   value composite | Bloomberg | MXGB Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_fr_cac
+   value composite | Bloomberg | MXFR Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 1997-03 | 166 | 165 | yes
+   value composite | Bloomberg | MXFR Index|PE_RATIO | ok (1|EquityValuation, source first) | 1995-03 | 190 | 189 | yes
+   value composite | Bloomberg | MXFR Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1995-03 | 190 | 189 | yes
+   value composite | Bloomberg | MXFR Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_jp_nikkei
+   value composite | Bloomberg | MXJP Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 2005-06 | 67 | 66 | yes
+   value composite | Bloomberg | MXJP Index|PE_RATIO | ok (1|EquityValuation, source first) | 1995-05 | 188 | 187 | yes
+   value composite | Bloomberg | MXJP Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1995-05 | 188 | 187 | yes
+   value composite | Bloomberg | MXJP Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_ca_tsx
+   value composite | Bloomberg | MXCA Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   value composite | Bloomberg | MXCA Index|PE_RATIO | ok (1|EquityValuation, source first) | 1995-02 | 191 | 190 | yes
+   value composite | Bloomberg | MXCA Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1995-03 | 190 | 189 | yes
+   value composite | Bloomberg | MXCA Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_au_asx
+   value composite | Bloomberg | MXAU Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 2005-10 | 63 | 62 | yes
+   value composite | Bloomberg | MXAU Index|PE_RATIO | ok (1|EquityValuation, source first) | 1995-10 | 183 | 182 | yes
+   value composite | Bloomberg | MXAU Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1995-10 | 183 | 182 | yes
+   value composite | Bloomberg | MXAU Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_hk_hsi
+   value composite | Bloomberg | MXHK Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 2001-03 | 118 | 117 | yes
+   value composite | Bloomberg | MXHK Index|PE_RATIO | ok (1|EquityValuation, source first) | 1995-04 | 189 | 188 | yes
+   value composite | Bloomberg | MXHK Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1996-01 | 180 | 179 | yes
+   value composite | Bloomberg | MXHK Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_cn
+   value composite | Bloomberg | MXCN Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 1996-04 | 177 | 176 | yes
+   value composite | Bloomberg | MXCN Index|PE_RATIO | ok (1|EquityValuation, source first) | 1996-04 | 177 | 176 | yes
+   value composite | Bloomberg | MXCN Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1995-11 | 182 | 181 | yes
+   value composite | Bloomberg | MXCN Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-11 | 182 | 181 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_kr_kospi
+   value composite | Bloomberg | MXKR Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 2006-04 | 57 | 56 | yes
+   value composite | Bloomberg | MXKR Index|PE_RATIO | ok (1|EquityValuation, source first) | 1996-04 | 177 | 176 | yes
+   value composite | Bloomberg | MXKR Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1995-10 | 183 | 182 | yes
+   value composite | Bloomberg | MXKR Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_tw
+   value composite | Bloomberg | MXTW Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 2006-04 | 57 | 56 | yes
+   value composite | Bloomberg | MXTW Index|PE_RATIO | ok (1|EquityValuation, source first) | 1996-04 | 177 | 176 | yes
+   value composite | Bloomberg | MXTW Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1996-01 | 180 | 179 | yes
+   value composite | Bloomberg | MXTW Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_in
+   value composite | Bloomberg | MXIN Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 2005-07 | 66 | 65 | yes
+   value composite | Bloomberg | MXIN Index|PE_RATIO | ok (1|EquityValuation, source first) | 2002-07 | 102 | 101 | yes
+   value composite | Bloomberg | MXIN Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 2002-07 | 102 | 101 | yes
+   value composite | Bloomberg | MXIN Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_br_ibov
+   value composite | Bloomberg | MXBR Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 2003-02 | 95 | 94 | yes
+   value composite | Bloomberg | MXBR Index|PE_RATIO | ok (1|EquityValuation, source first) | 1996-03 | 178 | 177 | yes
+   value composite | Bloomberg | MXBR Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1996-01 | 180 | 179 | yes
+   value composite | Bloomberg | MXBR Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_mx_ipc
+   value composite | Bloomberg | MXMX Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 1998-02 | 155 | 154 | yes
+   value composite | Bloomberg | MXMX Index|PE_RATIO | ok (1|EquityValuation, source first) | 1995-03 | 190 | 189 | yes
+   value composite | Bloomberg | MXMX Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1995-03 | 190 | 189 | yes
+   value composite | Bloomberg | MXMX Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET eq_za
+   value composite | Bloomberg | MXZA Index|BEST_PE_RATIO | ok (1|EquityValuation, source first) | 2005-11 | 62 | 61 | yes
+   value composite | Bloomberg | MXZA Index|PE_RATIO | ok (1|EquityValuation, source first) | 1995-11 | 182 | 181 | yes
+   value composite | Bloomberg | MXZA Index|PX_TO_BOOK_RATIO | ok (1|EquityValuation, source first) | 1996-04 | 177 | 176 | yes
+   value composite | Bloomberg | MXZA Index|EQY_DVD_YLD_12M | ok (1|EquityValuation, source first) | 1995-01 | 192 | 191 | yes
+   return | free: country ETF / MSCI manual file / Ken French / index + dividend proxy, minus local 3m rate
+   carry | not used by the book (equity carry dropped)
+   value (without Bloomberg) | free: dividend yield (Ken French, SPY minus S&P 500)
+   econ themes | free: OECD CPI, BIS NEER, 2y yields / 3m rates, equity momentum, BAA spread
+MARKET bd_us_2y
+   return | free: month-end yields (FRED, central banks, stooq), par-bond pricing, minus 3m rate
+   carry | free: yield minus 3m rate
+   value | free: 10y yield minus 3y average CPI inflation
+   econ themes | free
+MARKET bd_us_5y
+   return | free: month-end yields (FRED, central banks, stooq), par-bond pricing, minus 3m rate
+   carry | free: yield minus 3m rate
+   value | free: 10y yield minus 3y average CPI inflation
+   econ themes | free
+MARKET bd_us_10y
+   return | free: month-end yields (FRED, central banks, stooq), par-bond pricing, minus 3m rate
+   carry | free: yield minus 3m rate
+   value | free: 10y yield minus 3y average CPI inflation
+   econ themes | free
+MARKET bd_us_30y
+   return | free: month-end yields (FRED, central banks, stooq), par-bond pricing, minus 3m rate
+   carry | free: yield minus 3m rate
+   value | free: 10y yield minus 3y average CPI inflation
+   econ themes | free
+MARKET bd_de_10y
+   return | free: month-end yields (FRED, central banks, stooq), par-bond pricing, minus 3m rate
+   carry | free: yield minus 3m rate
+   value | free: 10y yield minus 3y average CPI inflation
+   econ themes | free
+MARKET bd_gb_10y
+   return | free: month-end yields (FRED, central banks, stooq), par-bond pricing, minus 3m rate
+   carry | free: yield minus 3m rate
+   value | free: 10y yield minus 3y average CPI inflation
+   econ themes | free
+MARKET bd_jp_10y
+   return | free: month-end yields (FRED, central banks, stooq), par-bond pricing, minus 3m rate
+   carry | free: yield minus 3m rate
+   value | free: 10y yield minus 3y average CPI inflation
+   econ themes | free
+MARKET bd_ca_10y
+   return | free: month-end yields (FRED, central banks, stooq), par-bond pricing, minus 3m rate
+   carry | free: yield minus 3m rate
+   value | free: 10y yield minus 3y average CPI inflation
+   econ themes | free
+MARKET bd_au_10y
+   return | free: month-end yields (FRED, central banks, stooq), par-bond pricing, minus 3m rate
+   carry | free: yield minus 3m rate
+   value | free: 10y yield minus 3y average CPI inflation
+   econ themes | free
+MARKET st_us_2y
+   return | free: 2y / 5y month-end yields, par-note pricing
+   carry | free: yield minus 3m rate
+   econ themes | free
+MARKET st_de_2y
+   return | free: 2y / 5y month-end yields, par-note pricing
+   carry | free: yield minus 3m rate
+   econ themes | free
+MARKET st_gb_5y
+   return | free: 2y / 5y month-end yields, par-note pricing
+   carry | free: yield minus 3m rate
+   econ themes | free
+MARKET st_ca_2y
+   return | free: 2y / 5y month-end yields, par-note pricing
+   carry | free: yield minus 3m rate
+   econ themes | free
+MARKET st_au_2y
+   return | free: 2y / 5y month-end yields, par-note pricing
+   carry | free: yield minus 3m rate
+   econ themes | free
+MARKET st_jp_2y
+   return | free: 2y / 5y month-end yields, par-note pricing
+   carry | free: yield minus 3m rate
+   econ themes | free
+MARKET fx_eur
+   return | free: FRED H.10 / Yahoo / stooq spot + 3m rate differential
+   carry | free: 3m rate differential
+   value | free: 5-year real exchange-rate change
+   econ themes | free (local minus US)
+MARKET fx_jpy
+   return | free: FRED H.10 / Yahoo / stooq spot + 3m rate differential
+   carry | free: 3m rate differential
+   value | free: 5-year real exchange-rate change
+   econ themes | free (local minus US)
+MARKET fx_gbp
+   return | free: FRED H.10 / Yahoo / stooq spot + 3m rate differential
+   carry | free: 3m rate differential
+   value | free: 5-year real exchange-rate change
+   econ themes | free (local minus US)
+MARKET fx_chf
+   return | free: FRED H.10 / Yahoo / stooq spot + 3m rate differential
+   carry | free: 3m rate differential
+   value | free: 5-year real exchange-rate change
+   econ themes | free (local minus US)
+MARKET fx_aud
+   return | free: FRED H.10 / Yahoo / stooq spot + 3m rate differential
+   carry | free: 3m rate differential
+   value | free: 5-year real exchange-rate change
+   econ themes | free (local minus US)
+MARKET fx_nzd
+   return | free: FRED H.10 / Yahoo / stooq spot + 3m rate differential
+   carry | free: 3m rate differential
+   value | free: 5-year real exchange-rate change
+   econ themes | free (local minus US)
+MARKET fx_cad
+   return | free: FRED H.10 / Yahoo / stooq spot + 3m rate differential
+   carry | free: 3m rate differential
+   value | free: 5-year real exchange-rate change
+   econ themes | free (local minus US)
+MARKET fx_sek
+   return | free: FRED H.10 / Yahoo / stooq spot + 3m rate differential
+   carry | free: 3m rate differential
+   value | free: 5-year real exchange-rate change
+   econ themes | free (local minus US)
+MARKET fx_nok
+   return | free: FRED H.10 / Yahoo / stooq spot + 3m rate differential
+   carry | free: 3m rate differential
+   value | free: 5-year real exchange-rate change
+   econ themes | free (local minus US)
+MARKET fx_mxn
+   return | free: FRED H.10 / Yahoo / stooq spot + 3m rate differential
+   carry | free: 3m rate differential
+   value | free: 5-year real exchange-rate change
+   econ themes | free (local minus US)
+MARKET fx_brl
+   return | free: FRED H.10 / Yahoo / stooq spot + 3m rate differential
+   carry | free: 3m rate differential
+   value | free: 5-year real exchange-rate change
+   econ themes | free (local minus US)
+MARKET fx_krw
+   return | free: FRED H.10 / Yahoo / stooq spot + 3m rate differential
+   carry | free: 3m rate differential
+   value | free: 5-year real exchange-rate change
+   econ themes | free (local minus US)
+MARKET fx_zar
+   return | free: FRED H.10 / Yahoo / stooq spot + 3m rate differential
+   carry | free: 3m rate differential
+   value | free: 5-year real exchange-rate change
+   econ themes | free (local minus US)
+MARKET cm_wti
+   return | Bloomberg | SPGSCLP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMCL Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | CL1 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | CL13 Comdty|PX_LAST | copy | - | 0 | 0 | no
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_brent
+   return | Bloomberg | SPGSBRP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMCO Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | CO1 Comdty|PX_LAST | ok (5|ComFront, source first) | 1988-06 | 271 | 270 | yes
+   carry (farthest contract) | Bloomberg | CO13 Comdty|PX_LAST | copy | - | 0 | 0 | no
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_natgas
+   return | Bloomberg | SPGSNGP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMNG Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | NG1 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | NG13 Comdty|PX_LAST | copy | - | 0 | 0 | no
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_heatoil
+   return | Bloomberg | SPGSHOP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMHO Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | HO1 Comdty|PX_LAST | ok (5|ComFront, source first) | 1986-07 | 294 | 293 | yes
+   carry (farthest contract) | Bloomberg | HO13 Comdty|PX_LAST | copy | - | 0 | 0 | no
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_gasoline
+   return | Bloomberg | SPGSRBP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMRB Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | XB1 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | XB13 Comdty|PX_LAST | copy | - | 0 | 0 | no
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_gold
+   return | Bloomberg | SPGSGCP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMGC Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | GC1 Comdty|PX_LAST | ok (5|ComFront, source first) | 1975-01 | 432 | 431 | yes
+   carry (farthest contract) | Bloomberg | GC7 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_silver
+   return | Bloomberg | SPGSSIP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMSI Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | SI1 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | SI6 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_copper
+   return | Bloomberg | SPGSICP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMHG Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | HG1 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | HG13 Comdty|PX_LAST | copy | - | 0 | 0 | no
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_platinum
+   return | Bloomberg | SPGSPLP Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | PL1 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | PL5 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_corn
+   return | Bloomberg | SPGSCNP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMCN Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | C 1 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | C 6 Comdty|PX_LAST | ok (5|ComCurve, source first) | 1970-01 | 492 | 491 | yes
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_wheat
+   return | Bloomberg | SPGSWHP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMWH Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | W 1 Comdty|PX_LAST | ok (5|ComFront, source first) | 1969-12 | 493 | 492 | yes
+   carry (farthest contract) | Bloomberg | W 6 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_soybeans
+   return | Bloomberg | SPGSSOP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMSY Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | S 1 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | S 8 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_sugar
+   return | Bloomberg | SPGSSBP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMSB Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | SB1 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | SB5 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_coffee
+   return | Bloomberg | SPGSKCP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMKC Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | KC1 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | KC6 Comdty|PX_LAST | ok (5|ComCurve, source first) | 1973-07 | 450 | 449 | yes
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_cotton
+   return | Bloomberg | SPGSCTP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMCT Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | CT1 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | CT6 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET cm_cattle
+   return | Bloomberg | SPGSLCP Index|PX_LAST | copy | - | 0 | 0 | no
+   return | Bloomberg | BCOMLC Index|PX_LAST | copy | - | 0 | 0 | no
+   carry (front) | Bloomberg | LC1 Comdty|PX_LAST | requesting | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | LC7 Comdty|PX_LAST | ok (5|ComCurve, source first) | 1969-12 | 493 | 492 | yes
+   return (without Bloomberg) | free: EIA contract-2 roll / ETF / Yahoo / stooq front
+   carry (without Bloomberg) | free: EIA F1/F2 for the four NYMEX energies; none for the rest
+   econ themes | free (global demand block)
+MARKET sp_us_2s10s
+   return | free: FRED / Bundesbank yields
+MARKET sp_de_2s10s
+   return | free: FRED / Bundesbank yields
+MARKET sp_us_breakeven10
+   return | free: FRED / Bundesbank yields
+MARKET cm_cocoa
+   return | Bloomberg | SPGSCCP Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (front) | Bloomberg | CC1 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | CC6 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   all inputs | no free source: the market exists only with Bloomberg data (gm adds it when its return has more than 36 months)
+MARKET cm_hogs
+   return | Bloomberg | SPGSLHP Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   return | Bloomberg | BCOMLH Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (front) | Bloomberg | LH1 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | LH7 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   all inputs | no free source: the market exists only with Bloomberg data (gm adds it when its return has more than 36 months)
+MARKET cm_feeder
+   return | Bloomberg | SPGSFCP Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (front) | Bloomberg | FC1 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | FC6 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   all inputs | no free source: the market exists only with Bloomberg data (gm adds it when its return has more than 36 months)
+MARKET cm_kcwheat
+   return | Bloomberg | SPGSKWP Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   return | Bloomberg | BCOMKW Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (front) | Bloomberg | KW1 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | KW6 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   all inputs | no free source: the market exists only with Bloomberg data (gm adds it when its return has more than 36 months)
+MARKET cm_soymeal
+   return | Bloomberg | BCOMSM Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (front) | Bloomberg | SM1 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | SM8 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   all inputs | no free source: the market exists only with Bloomberg data (gm adds it when its return has more than 36 months)
+MARKET cm_soyoil
+   return | Bloomberg | BCOMBO Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (front) | Bloomberg | BO1 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | BO8 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   all inputs | no free source: the market exists only with Bloomberg data (gm adds it when its return has more than 36 months)
+MARKET cm_alu
+   return | Bloomberg | SPGSIAP Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   return | Bloomberg | BCOMAL Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (front) | Bloomberg | LA1 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | LA13 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   all inputs | no free source: the market exists only with Bloomberg data (gm adds it when its return has more than 36 months)
+MARKET cm_zinc
+   return | Bloomberg | SPGSIZP Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   return | Bloomberg | BCOMZS Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (front) | Bloomberg | LX1 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | LX13 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   all inputs | no free source: the market exists only with Bloomberg data (gm adds it when its return has more than 36 months)
+MARKET cm_nickel
+   return | Bloomberg | SPGSIKP Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   return | Bloomberg | BCOMNI Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (front) | Bloomberg | LN1 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | LN13 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   all inputs | no free source: the market exists only with Bloomberg data (gm adds it when its return has more than 36 months)
+MARKET cm_lead
+   return | Bloomberg | SPGSILP Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (front) | Bloomberg | LL1 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | LL13 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   all inputs | no free source: the market exists only with Bloomberg data (gm adds it when its return has more than 36 months)
+MARKET cm_gasoil
+   return | Bloomberg | SPGSGOP Index|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (front) | Bloomberg | QS1 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   carry (farthest contract) | Bloomberg | QS13 Comdty|PX_LAST | held back (untouched market) | - | 0 | 0 | no
+   all inputs | no free source: the market exists only with Bloomberg data (gm adds it when its return has more than 36 months)
+MARKET country US
+   growth surprise | Bloomberg | NAPMPMI Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 1996-10 | 171 | 169 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | NAPMPMI Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 1998-05 | 152 | 150 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | NFP TCH Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 1996-12 | 169 | 168 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | NFP TCH Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 1997-07 | 162 | 161 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | USURTOT Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 1996-12 | 169 | 168 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | USURTOT Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 1996-12 | 169 | 168 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | IP CHNG Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 1996-10 | 171 | 170 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | IP CHNG Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 1998-05 | 152 | 151 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | RSTAMOM Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 2001-05 | 116 | 115 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | RSTAMOM Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 2001-05 | 116 | 115 | no (GROWTH_SOURCE off)
+MARKET country DE
+   growth surprise | Bloomberg | MPMIEZMA Index|ACTUAL_RELEASE | ok (1|Economics, source first) | - | 0 | 0 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | MPMIEZMA Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 2004-04 | 81 | 80 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | GRIFPBUS Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 2004-01 | 84 | 83 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | GRIFPBUS Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 2004-02 | 83 | 83 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | GRIPIYOY Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 1997-01 | 168 | 156 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | GRIPIYOY Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 1997-02 | 167 | 155 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | GRUEPR Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 1998-01 | 156 | 142 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | GRUEPR Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 1998-09 | 148 | 134 | no (GROWTH_SOURCE off)
+MARKET country GB
+   growth surprise | Bloomberg | MPMIGBMA Index|ACTUAL_RELEASE | ok (1|Economics, source first) | - | 0 | 0 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | MPMIGBMA Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 2004-04 | 81 | 80 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | UKIPIYOY Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 1996-12 | 169 | 167 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | UKIPIYOY Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 1998-08 | 149 | 147 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | UKUEILOR Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 2002-03 | 106 | 104 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | UKUEILOR Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 2002-03 | 106 | 104 | no (GROWTH_SOURCE off)
+MARKET country JP
+   growth surprise | Bloomberg | JNTSMFG Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 1998-09 | 148 | 82 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | JNTSMFG Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 1998-09 | 148 | 82 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | JNIPYOY Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 2002-02 | 107 | 105 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | JNIPYOY Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 2002-02 | 107 | 105 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | JNUE Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 2000-01 | 132 | 120 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | JNUE Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 2000-01 | 132 | 120 | no (GROWTH_SOURCE off)
+MARKET country CA
+   growth surprise | Bloomberg | CANLXEMR Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 1996-12 | 169 | 168 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | CANLXEMR Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 1998-06 | 151 | 150 | no (GROWTH_SOURCE off)
+MARKET country AU
+   growth surprise | Bloomberg | AULFUNEM Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 1996-12 | 169 | 167 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | AULFUNEM Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 1998-07 | 150 | 148 | no (GROWTH_SOURCE off)
+MARKET country CN
+   growth surprise | Bloomberg | CPMINDX Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 2005-07 | 66 | 56 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | CPMINDX Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 2009-09 | 16 | 16 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | CHVAIOY Index|ACTUAL_RELEASE | ok (1|Economics, source first) | 2000-01 | 132 | 125 | no (GROWTH_SOURCE off)
+   growth surprise | Bloomberg | CHVAIOY Index|BN_SURVEY_MEDIAN | ok (1|Economics, source first) | 2000-10 | 123 | 118 | no (GROWTH_SOURCE off)
+--- summary (Bloomberg inputs)
+SUMMARY carry (farthest contract) | held back 11, missing or failed (copy) 6, missing or failed (requesting) 7, used 3
+SUMMARY carry (front) | held back 11, missing or failed (requesting) 12, used 4
+SUMMARY growth surprise | no (GROWTH_SOURCE off) 38
+SUMMARY return | held back 16, missing or failed (copy) 31
+SUMMARY value composite | used 72
+markets whose RETURN would come from Bloomberg: 0 ()
+markets whose CARRY would come from Bloomberg curves: 0 ()
+equity markets in the Bloomberg VALUE composite: 18 (eq_au_asx, eq_br_ibov, eq_ca_tsx, eq_cn, eq_de_dax, eq_eu_stoxx50, eq_fr_cac, eq_gb_ftse, eq_hk_hsi, eq_in, eq_jp_nikkei, eq_kr_kospi, eq_mx_ipc, eq_tw, eq_us_ndx, eq_us_r2k, eq_us_spx, eq_za)
+markets entirely on free data: 40 (bd_au_10y, bd_ca_10y, bd_de_10y, bd_gb_10y, bd_jp_10y, bd_us_10y, bd_us_2y, bd_us_30y, bd_us_5y, cm_copper, cm_cotton, cm_gasoline, cm_natgas, cm_platinum, cm_silver, cm_soybeans, cm_sugar, cm_wti, fx_aud, fx_brl, fx_cad, fx_chf, fx_eur, fx_gbp, fx_jpy, fx_krw, fx_mxn, fx_nok, fx_nzd, fx_sek, fx_zar, sp_de_2s10s, sp_us_2s10s, sp_us_breakeven10, st_au_2y, st_ca_2y, st_de_2y, st_gb_5y, st_jp_2y, st_us_2y)
+alternative commodities without a usable Bloomberg return (not in the book; held back = untouched): 11 (cm_alu, cm_cocoa, cm_feeder, cm_gasoil, cm_hogs, cm_kcwheat, cm_lead, cm_nickel, cm_soymeal, cm_soyoil, cm_zinc)
+NOTE gm/bloomberg.py EQ_INDEX maps eq_us_ndx, eq_us_r2k to MXUS Index as well: in the value composite they carry the S&P 500's valuation (MSCI USA), not their own
+--- adapter dry run: gm.bloomberg workbook dict as of 2010-12-31 (econ dating: release)
+SHEET Returns | tickers in file 1 31 | served 0 | months per ticker min - median - max - | first month -..- | last month -..-
+SHEET Curves | tickers in file 1 95 | served 28 | months per ticker min 66 median 431 max 492 | first month 1969-12..2005-06 | last month 2010-11..2010-11
+SHEET EquityValuation | tickers in file 1 23 | served 23 | months per ticker min 181 median 191 max 191 | first month 1995-01..1995-11 | last month 2010-11..2010-11
+SHEET Economics | tickers in file 1 35 | served 35 | months per ticker min 57 median 382 max 491 | first month 1970-02..2005-07 | last month 2010-10..2010-12
+SHEET RatesFutures | tickers in file 1 75 | served 1 | months per ticker min 296 median 296 max 296 | first month 1986-04..1986-04 | last month 2010-11..2010-11
+SHEET Breakevens | tickers in file 1 9 | served 0 | months per ticker min - median - max - | first month -..- | last month -..-
+SHEET Benchmarks | tickers in file 1 6 | served 0 | months per ticker min - median - max - | first month -..- | last month -..-
+=== END === 1s

@@ -1,0 +1,154 @@
+=== bbg_build_v2 === 2026-11-11 11:54
+python 3.15.0
+module numpy 2.5.4
+module pandas 3.1.1
+module openpyxl 3.1.5
+BBG_DIR ok | BBG_WORK ok
+bbgdata bbgdata-1.2.0 | seal date 2010-12-31
+--- workbook candidates (every file found; first pull: the newest per digit; re-pull: no _CUT first, then the most ok blocks after copy detection, then the most design observations, then the newest)
+CANDIDATE 1 | 1_Bloomberg_macro_UBC_6 1.xlsx | _CUT no | ok blocks 135 | design observations 181892 | modified 2026-11-11T04:32:12Z | USED
+CANDIDATE 2 | 2_Bloomberg_econ_policy_monthly (1).xlsx | _CUT no | ok blocks 158 | design observations 70618 | modified 2026-11-11T04:13:06Z | USED
+CANDIDATE 3 | 3_Bloomberg_rates_credit_fx_monthly_6 1.xlsx | _CUT no | ok blocks 51 | design observations 8174 | modified 2026-11-11T04:32:21Z | USED
+CANDIDATE 4 | 4_Bloomberg_equity_vol_funds_monthly_5 1.xlsx | _CUT no | ok blocks 231 | design observations 142136 | modified 2026-11-11T04:32:31Z | USED
+CANDIDATE 5 | 5_Bloomberg_commodities_ext_monthly_5 1.xlsx | _CUT no | ok blocks 246 | design observations 69147 | modified 2026-11-11T04:32:36Z | USED
+CANDIDATE 6 | 6_Bloomberg_daily_A_futures_fx_5 1.xlsx | _CUT no | ok blocks 236 | design observations 966867 | modified 2026-11-11T04:32:52Z | USED
+CANDIDATE 7 | 7_Bloomberg_daily_B_rates_equity_vol_5 1.xlsx | _CUT no | ok blocks 124 | design observations 619267 | modified 2026-11-11T04:33:03Z | USED
+--- copied blocks (identical value arrays under 5 or more different tickers in one workbook: status copy, not usable)
+COPYGROUP 1 | blocks 355 | different tickers 354 | numbers per block 209 | by sheet: Benchmarks 6, BondFutures 32, Breakevens 9, Curves 139, FXBasis 1, RatesFutures 69, Returns 46, SpotRates3m 11, Surprise 6, Yields 36
+   examples: ED1 Comdty, ED2 Comdty, ED4 Comdty, ED5 Comdty, ED6 Comdty, ED7 Comdty, ED8 Comdty, SFR2 Comdty, SFR3 Comdty, SFR4 Comdty
+COPYGROUP 3 | blocks 481 | different tickers 481 | numbers per block 271 | by sheet: Credit 46, FXBasis 13, FXForwards 88, FXSpot 50, FXVol 111, RatesFutExtra 41, Swaps 67, YieldsExtra 65
+   examples: USGG6M Index, USGG12M Index, USGG1YR Index, USGG3YR Index, USGG20YR Index, GJGB1 Index, GJGB3 Index, GJGB20 Index, GJGB40 Index, GDBR1 Index
+COPIES 1|Benchmarks | blocks 6
+COPIES 1|BondFutures | blocks 32
+COPIES 1|Breakevens | blocks 9
+COPIES 1|Curves | blocks 139
+COPIES 1|FXBasis | blocks 1
+COPIES 1|RatesFutures | blocks 69
+COPIES 1|Returns | blocks 46
+COPIES 1|SpotRates3m | blocks 11
+COPIES 1|Surprise | blocks 6
+COPIES 1|Yields | blocks 36
+COPIES 3|Credit | blocks 46
+COPIES 3|FXBasis | blocks 13
+COPIES 3|FXForwards | blocks 88
+COPIES 3|FXSpot | blocks 50
+COPIES 3|FXVol | blocks 111
+COPIES 3|RatesFutExtra | blocks 41
+COPIES 3|Swaps | blocks 67
+COPIES 3|YieldsExtra | blocks 65
+--- files
+FILE 1 | 1_Bloomberg_macro_UBC_6 1.xlsx | 7044 KB
+FILE 2 | 2_Bloomberg_econ_policy_monthly (1).xlsx | 1997 KB
+FILE 3 | 3_Bloomberg_rates_credit_fx_monthly_6 1.xlsx | 2534 KB
+FILE 4 | 4_Bloomberg_equity_vol_funds_monthly_5 1.xlsx | 5126 KB
+FILE 5 | 5_Bloomberg_commodities_ext_monthly_5 1.xlsx | 1937 KB
+FILE 6 | 6_Bloomberg_daily_A_futures_fx_5 1.xlsx | 25256 KB
+FILE 7 | 7_Bloomberg_daily_B_rates_equity_vol_5 1.xlsx | 16759 KB
+--- sheets (status counts are per ticker field: ok / requesting / invalid / empty / copy)
+SHEET 1|Read me | skipped
+SHEET 1|Economics | monthly | rows 684 | blocks 35 | fields 140 | ok 140 | requesting 0 | invalid 0 | empty 0 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 1|RatesFutures | monthly | rows 683 | blocks 75 | fields 75 | ok 4 | requesting 0 | invalid 0 | empty 2 | copy 69 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 1|SpotRates3m | monthly | rows 683 | blocks 12 | fields 12 | ok 1 | requesting 0 | invalid 0 | empty 0 | copy 11 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 1|Curves | monthly | rows 683 | blocks 140 | fields 140 | ok 1 | requesting 0 | invalid 0 | empty 0 | copy 139 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 1s
+SHEET 1|Returns | monthly | rows 683 | blocks 47 | fields 47 | ok 1 | requesting 0 | invalid 0 | empty 0 | copy 46 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 1|Yields | monthly | rows 683 | blocks 43 | fields 43 | ok 7 | requesting 0 | invalid 0 | empty 0 | copy 36 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 1|EquityTR | monthly | rows 683 | blocks 21 | fields 42 | ok 42 | requesting 0 | invalid 0 | empty 0 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 1|BondFutures | monthly | rows 683 | blocks 32 | fields 32 | ok 0 | requesting 0 | invalid 0 | empty 0 | copy 32 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 1|EquityValuation | monthly | rows 683 | blocks 23 | fields 115 | ok 115 | requesting 0 | invalid 0 | empty 0 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 1|Breakevens | monthly | rows 683 | blocks 9 | fields 9 | ok 0 | requesting 0 | invalid 0 | empty 0 | copy 9 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 1|Benchmarks | monthly | rows 683 | blocks 6 | fields 6 | ok 0 | requesting 0 | invalid 0 | empty 0 | copy 6 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 1|Surprise | monthly | rows 683 | blocks 9 | fields 9 | ok 3 | requesting 0 | invalid 0 | empty 0 | copy 6 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 1|Volatility | monthly | rows 683 | blocks 14 | fields 14 | ok 14 | requesting 0 | invalid 0 | empty 0 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 1|FXBasis | monthly | rows 683 | blocks 3 | fields 3 | ok 1 | requesting 0 | invalid 1 | empty 0 | copy 1 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 1|DailyCommodities | daily | rows 13458 | blocks 25 | fields 25 | ok 24 | requesting 0 | invalid 1 | empty 0 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 7s
+SHEET 2|Read me | skipped
+SHEET 2|Check | skipped
+SHEET 2|EconUS | monthly | rows 684 | blocks 51 | fields 204 | ok 176 | requesting 0 | invalid 16 | empty 12 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 1s
+SHEET 2|EconIntl | monthly | rows 684 | blocks 70 | fields 280 | ok 239 | requesting 0 | invalid 28 | empty 13 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 2s
+SHEET 2|PolicyMoney | monthly | rows 683 | blocks 41 | fields 41 | ok 34 | requesting 0 | invalid 7 | empty 0 | copy 0 | date cells: datetime 94%, serial 6%, text 0%, other 0% | 0s
+SHEET 2|Conditions | monthly | rows 683 | blocks 23 | fields 23 | ok 14 | requesting 0 | invalid 9 | empty 0 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 3|Read me | skipped
+SHEET 3|Check | skipped
+SHEET 3|YieldsExtra | monthly | rows 683 | blocks 71 | fields 71 | ok 6 | requesting 0 | invalid 0 | empty 0 | copy 65 | date cells: datetime 99%, serial 1%, text 0%, other 0% | 1s
+SHEET 3|Swaps | monthly | rows 683 | blocks 72 | fields 72 | ok 5 | requesting 0 | invalid 0 | empty 0 | copy 67 | date cells: datetime 99%, serial 1%, text 0%, other 0% | 1s
+SHEET 3|Credit | monthly | rows 683 | blocks 47 | fields 47 | ok 1 | requesting 0 | invalid 0 | empty 0 | copy 46 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 1s
+SHEET 3|FXSpot | monthly | rows 683 | blocks 56 | fields 56 | ok 6 | requesting 0 | invalid 0 | empty 0 | copy 50 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 1s
+SHEET 3|FXForwards | monthly | rows 683 | blocks 93 | fields 93 | ok 5 | requesting 0 | invalid 0 | empty 0 | copy 88 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 1s
+SHEET 3|FXVol | monthly | rows 683 | blocks 130 | fields 130 | ok 19 | requesting 0 | invalid 0 | empty 0 | copy 111 | date cells: datetime 92%, serial 8%, text 0%, other 0% | 2s
+SHEET 3|FXBasis | monthly | rows 683 | blocks 18 | fields 18 | ok 3 | requesting 0 | invalid 1 | empty 1 | copy 13 | date cells: datetime 82%, serial 18%, text 0%, other 0% | 0s
+SHEET 3|RatesFutExtra | monthly | rows 683 | blocks 47 | fields 47 | ok 6 | requesting 0 | invalid 0 | empty 0 | copy 41 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 1s
+SHEET 4|Read me | skipped
+SHEET 4|Check | skipped
+SHEET 4|EquityIndexes | monthly | rows 683 | blocks 81 | fields 648 | ok 584 | requesting 64 | invalid 0 | empty 0 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 5s
+SHEET 4|SectorsStyles | monthly | rows 683 | blocks 52 | fields 208 | ok 201 | requesting 0 | invalid 4 | empty 3 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 2s
+SHEET 4|VolComplex | monthly | rows 683 | blocks 39 | fields 39 | ok 33 | requesting 0 | invalid 3 | empty 3 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 4|Benchmarks2 | monthly | rows 683 | blocks 20 | fields 20 | ok 5 | requesting 0 | invalid 14 | empty 1 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 4|ETFs | monthly | rows 683 | blocks 69 | fields 276 | ok 276 | requesting 0 | invalid 0 | empty 0 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 2s
+SHEET 5|Read me | skipped
+SHEET 5|Check | skipped
+SHEET 5|ComFront | monthly | rows 683 | blocks 48 | fields 240 | ok 40 | requesting 200 | invalid 0 | empty 0 | copy 0 | date cells: datetime 99%, serial 0%, text 0%, other 1% | 0s
+SHEET 5|ComCurve | monthly | rows 683 | blocks 528 | fields 528 | ok 219 | requesting 295 | invalid 4 | empty 10 | copy 0 | date cells: datetime 85%, serial 15%, text 0%, other 0% | 3s
+SHEET 5|ComIndexes | monthly | rows 683 | blocks 23 | fields 23 | ok 9 | requesting 12 | invalid 2 | empty 0 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 5|ComFundamentals | monthly | rows 683 | blocks 32 | fields 32 | ok 10 | requesting 20 | invalid 1 | empty 1 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 0s
+SHEET 6|Read me | skipped
+SHEET 6|Check | skipped
+SHEET 6|DailyFutures | daily | rows 11535 | blocks 188 | fields 188 | ok 186 | requesting 0 | invalid 0 | empty 2 | copy 0 | date cells: datetime 94%, serial 6%, text 0%, other 0% | 36s
+SHEET 6|DailyFX | daily | rows 13458 | blocks 50 | fields 50 | ok 50 | requesting 0 | invalid 0 | empty 0 | copy 0 | date cells: datetime 96%, serial 4%, text 0%, other 0% | 10s
+SHEET 7|Read me | skipped
+SHEET 7|Check | skipped
+SHEET 7|DailyRates | daily | rows 13458 | blocks 49 | fields 49 | ok 49 | requesting 0 | invalid 0 | empty 0 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 9s
+SHEET 7|DailyEquity | daily | rows 13458 | blocks 31 | fields 62 | ok 62 | requesting 0 | invalid 0 | empty 0 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 8s
+SHEET 7|DailyVol | daily | rows 9613 | blocks 36 | fields 36 | ok 36 | requesting 0 | invalid 0 | empty 0 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 6s
+SHEET 7|DailyIndexes | daily | rows 9613 | blocks 11 | fields 11 | ok 8 | requesting 0 | invalid 3 | empty 0 | copy 0 | date cells: datetime 100%, serial 0%, text 0%, other 0% | 2s
+--- re-pull workbooks (R files): 0
+no re-pull workbook found: first-pull data only
+--- cell types by field name (share of non-blank data cells: numeric / date / string)
+FIELD ACTUAL_RELEASE | cells 99058 | numeric 38% | date 0% | string 62%
+FIELD BEST_EPS | cells 100401 | numeric 41% | date 0% | string 59%
+FIELD BEST_PE_RATIO | cells 100401 | numeric 41% | date 0% | string 59%
+FIELD BN_SURVEY_MEDIAN | cells 99058 | numeric 38% | date 0% | string 62%
+FIELD CUR_MKT_CAP | cells 49859 | numeric 44% | date 0% | string 56%
+FIELD ECO_RELEASE_DT | cells 99058 | numeric 41% | date 0% | string 59%
+FIELD EQY_DVD_YLD_12M | cells 65568 | numeric 47% | date 0% | string 53%
+FIELD EQY_SH_OUT | cells 47127 | numeric 32% | date 0% | string 68%
+FIELD FUND_TOTAL_ASSETS | cells 47127 | numeric 32% | date 0% | string 68%
+FIELD FUT_AGGTE_OPEN_INT | cells 5464 | numeric 52% | date 0% | string 48%
+FIELD FUT_AGGTE_VOL | cells 5464 | numeric 52% | date 0% | string 48%
+FIELD OPEN_INT | cells 5464 | numeric 64% | date 0% | string 36%
+FIELD PE_RATIO | cells 65568 | numeric 46% | date 0% | string 54%
+FIELD PX_LAST | cells 4259865 | numeric 86% | date 0% | string 14%
+FIELD PX_TO_BOOK_RATIO | cells 65568 | numeric 46% | date 0% | string 54%
+FIELD PX_VOLUME | cells 5464 | numeric 64% | date 0% | string 36%
+FIELD TOT_RETURN_INDEX_GROSS_DVDS | cells 422545 | numeric 85% | date 0% | string 15%
+release-date cell formats (ECO_RELEASE_DT): yyyymmdd 40450
+--- tables
+TABLE design/daily.pkl | rows 5480 | columns 415 | grid 1990-01-01 to 2010-12-31
+TABLE design/monthly.pkl | rows 493 | columns 2220 | grid 1969-12-31 to 2010-12-31
+TABLE sealed/daily.pkl | rows 4134 | columns 415 | grid 2011-01-03 to 2026-11-05
+TABLE sealed/monthly.pkl | rows 191 | columns 2220 | grid 2011-01-31 to 2026-11-30
+--- catalog
+blocks 2470 | ticker fields 4204 | status copy 836, empty 48, invalid 94, ok 2635, requesting 591
+stored series: monthly 2220, daily 415 | of which duplicates kept for comparison 62
+stored by kind: date 139, other 1263, price 1020, rate 213
+stored by live source: bloomberg_only 1707, free_daily 339, official_release 589
+stored with a release-date rule: 556
+untouched: 269 tickers listed, 269 found in the files, 125 stored series hidden by default
+--- hashes
+RAW 1 | 1_Bloomberg_macro_UBC_6 1.xlsx | sha256 d9a815421c5f689996699b155a56b5502c9684d3318432a527c835c3fac1e123 | 7213881 bytes | mtime 2026-11-11T04:32:12Z
+RAW 2 | 2_Bloomberg_econ_policy_monthly (1).xlsx | sha256 67443b3297bbd385e362f40188a24c72febb0c272277ff1abe5471e74180e899 | 2045566 bytes | mtime 2026-11-11T04:13:06Z
+RAW 3 | 3_Bloomberg_rates_credit_fx_monthly_6 1.xlsx | sha256 c118d6b41e6b746488db4ad8dde44e1898df3c50e65be806ac568b494e624b47 | 2595531 bytes | mtime 2026-11-11T04:32:21Z
+RAW 4 | 4_Bloomberg_equity_vol_funds_monthly_5 1.xlsx | sha256 26dee1308babbcad3d935daaa6a10ee361a4c7afbb407e7377c123fa4a5a1535 | 5249478 bytes | mtime 2026-11-11T04:32:31Z
+RAW 5 | 5_Bloomberg_commodities_ext_monthly_5 1.xlsx | sha256 5d472f51054b765ca5094bbc89ae0b61c60c0718bae869eda952b1e1f149a32e | 1983564 bytes | mtime 2026-11-11T04:32:36Z
+RAW 6 | 6_Bloomberg_daily_A_futures_fx_5 1.xlsx | sha256 ad53cfce150cb824b070097fd90e89605c686436a518e1bb312c6aba561e39d1 | 25862358 bytes | mtime 2026-11-11T04:32:52Z
+RAW 7 | 7_Bloomberg_daily_B_rates_equity_vol_5 1.xlsx | sha256 6583952192e8ba37c94b5b837789401876f5396ae8304ca4823b829d0b2f3be9 | 17161759 bytes | mtime 2026-11-11T04:33:03Z
+CONFIG live_sources.csv | sha256 fe905d6d268d8e4a174fe1687c4523a06864e7f0b10002279cc182500f10e546
+CONFIG untouched_markets.csv | sha256 95bce64e4313716abc0297796272db77b4a5ed505c0f90a0f2e553ae92395454
+TABLE design/daily.pkl | content sha256 37ce6f17140923e8378639b8966a39bd3f974302815dd7161f83e87dab236a69
+TABLE design/monthly.pkl | content sha256 a28f05f627f339cf9a632cf610e0097bdc096fdad3bda2ab3a35d6057676e745
+TABLE sealed/daily.pkl | content sha256 9de3a9a7a5ef0a2ccbe234bde0f98223175cc7ba6490218e6f7b94a7d3ea052f
+TABLE sealed/monthly.pkl | content sha256 62882e96a638f38d095b020d647d37c85dcd6a0732c173a137adcb9be5d59b29
+CATALOG catalog.csv | sha256 113afad19b44cc92f5154d536991a7c83266839c32eecae9030e39e4c7542a52 | rows 4204
+CODE bbgdata-1.2.0 | sha256 0b26bb21b50671dca7c2153d3d66a2a09f7f33eeaa7c96ca536b69bbca8e6351
+build time 2026-11-11T18:56:37Z | build 108s
+LOCK ID 22f525789d321ab31aa33c15fdd5440c4c33c108195bbce392020c93616fff97
+=== END === 109s
