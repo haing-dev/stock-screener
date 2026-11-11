@@ -89,6 +89,16 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   the PLAYBOOK routing/schedule, the per-person units U08-U21 and the VARIANTS selection procedure.
   Bloomberg pulled files: stay on the PC (local job runner like the WRDS one, summary statistics only, 2011+ sealed);
   the folder Documents\WRDS results\mscifreedata\Bloomberg_UBC_pull_2026-11-04 holds only blank templates (user to point).
+- 2026-11-10 status: WORKFLOW block 1 DONE: local job runner on the PC (tools/bbgq; jobs dropped in Documents\WRDS results\local\jobs
+  run on the PC, report only; Python 3.15 + numpy/pandas/scipy/openpyxl in local\pylib). Bloomberg inventory (metadata):
+  docs/research/bbg/inventory_2026-11-10.md = 2,017 of 2,470 tickers loaded; file 1 complete (490/494); file 5 commodities
+  only 246/631 (367 saved while still loading -> user re-pulls file 5 and 8 indexes of file 4). Next: block 2 (reader, data
+  check, lock, seal 2011+) on the user's go.
+- MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
+  with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
+  pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
+  layer / Macro Compass indicator candidates (oil +90% y/y, backwardation extremes, breadth divergence, equal- vs
+  cap-weight, gold+dollar both down, issuance/IPO supply, news-reaction asymmetry). Not yet tested.
 - OBSIDIAN = SINGLE TRACEABLE STORE (user rule 2026-11-09): everything goes into the vault (G:\...\Obsidian Macro\Macro):
   Sources/Papers/Investors/Mechanisms, Fable/Foundation (claim ids linked to quote blocks, code refs linked to GitHub at a
   fixed commit), Method/ (all specs, routing, units, aliases), _data/ (raw JSON bundles + exact Fable input packs). After each
