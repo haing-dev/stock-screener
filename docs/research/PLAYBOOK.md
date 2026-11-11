@@ -1,5 +1,8 @@
 # Macro research playbook (v1.1, 2026-11-02): definitive workflow
 
+> 2026-11-11: routing (section 1) and schedule (section 7) are superseded by `docs/research/WORKFLOW.md` (pod shop
+> workflow v2.0). Sections 0, 2, 4, 5 and the hard rules still hold.
+
 ## 0. Decisions (user, 2026-11-02)
 - Models and effort: judgement Fable 5.1 effort max; extraction Sonnet 5.5 effort high; blind second read Opus 5.5 high;
   build/test Opus 5.5 high. Work happens in chat; Claude spawns subagents with these models/efforts.

@@ -1,5 +1,9 @@
 # Strategy variant registry and selection procedure (draft, 2026-11-09)
 
+> 2026-11-11: the walk-forward SELECTION procedure below is superseded by `docs/research/WORKFLOW.md` v2.0. Versions
+> are now AVERAGED inside each pod (no picking), so dimensions S and P fall away. The table of dimensions A-H stays as
+> the starting version grid; grids are fixed at registration (WORKFLOW step 3.4).
+
 User rule (2026-11-09): the foundation notes do not hand "decisions" to the user (cost route, risk route, breadth route,
 how to read a 2022 fail). Each open choice becomes levels of a strategy dimension. The choices are then made by data,
 on the Bloomberg design-era panel, through ONE pre-registered selection procedure. Status: DRAFT. Register it in
