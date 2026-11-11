@@ -32,6 +32,24 @@ block gets column R_COL_OFFSET x n + its R column (so it sorts after the origina
 each row came from (column `source`: "first" or "R<n>") and, for replaced rows, the first pull's first date and counts.
 The first-pull copies of replaced series are kept (design dates only) in design/replaced_first.pkl for the data check.
 Without R files the tables are byte-identical to bbgdata-1.0.0 and the catalog differs only by the new columns.
+
+1.2.0 (2026-11-11, after the independent check and the PC diagnostic bbg_diag_v2):
+- Copied blocks. Inside one workbook, blocks with the same number of fields whose full value arrays are identical
+  (same dates, values equal to 9 significant digits, at least COPY_MIN_VALUES numbers; compared by a hash) form a group;
+  a group with COPY_MIN_TICKERS or more DIFFERENT tickers is a copy of one series pasted under many tickers (the cut-off
+  blocks of files 1 and 3 of the first pull). Every block of such a group gets status "copy" (not ok: no series id, not
+  in the tables; catalog column copy_group = number of blocks in the group). No member is kept as the owner: when the
+  real series is in the workbook, its own array is longer than the pasted copies (JYBSV1 Curncy in file 1 has history
+  before 2009-06), so the identical group holds only the copies. Legit identical pairs (aliases such as USGG12M /
+  USGG1YR, the same ticker in two sheets) have fewer than COPY_MIN_TICKERS different tickers and stay ok. With real data
+  a build without R files therefore differs from 1.0.0 by exactly the copy blocks.
+- Several files for one R number: names without _CUT first; among those the one with the most ok blocks (after copy
+  detection), then the most design observations, then the newest. Every candidate is reported.
+- A re-pulled ok block replaces the current one only if that is not ok (incl. copy) or the re-pull has at least as many
+  design observations; otherwise the current one stays and repull_status says "R<n>:shorter". A copy block in an R file
+  never replaces anything. The same key in two R files: the later R file wins only on the same rule (warning).
+- R sheet names are matched to the known sheets of file <digit> ignoring case and spaces; a sheet that matches none is
+  skipped with a warning.
 """
 import csv
 import datetime as dt
@@ -49,7 +67,7 @@ from collections import Counter
 import numpy as np
 import pandas as pd
 
-VERSION = "bbgdata-1.1.0"
+VERSION = "bbgdata-1.2.0"
 SEAL_DATE = pd.Timestamp("2010-12-31")
 HOLDOUT_KEY_SHA256 = None            # set once, when the holdout run is authorised (WORKFLOW 5.3); None = always refuse
 LIVE_SOURCES = ("free_daily", "official_release", "bloomberg_only")
@@ -64,10 +82,15 @@ CATALOG_COLUMNS = ["file", "file_name", "sheet", "col", "label", "ticker", "fiel
                    # 1.1.0 (re-pull): where the row came from; for a replaced row the first pull's status, first date
                    # and counts; for a first-pull row that a failed re-pull left in place, the re-pull's status
                    "source", "first_pull_status", "first_pull_first", "first_pull_count", "first_pull_n_design",
-                   "repull_status"]
+                   "repull_status",
+                   # 1.2.0: number of blocks in the copy group (status "copy"), else ""
+                   "copy_group"]
+COPY_MIN_TICKERS = 5                 # identical value arrays under this many different tickers = pasted copies
+COPY_MIN_VALUES = 12                 # a block needs this many numbers before its array is compared (short = no evidence)
 R_COL_OFFSET = 100000                # column of an added block = R_COL_OFFSET x R number + its column in the R sheet
 REPULL_FILE = re.compile(r"^\s*R(\d+)\D")
-REPULL_SHEET = re.compile(r"^\s*([1-7])\s+(\S.*?)\s*$")
+REPULL_SHEET = re.compile(r"^\s*([1-7])\s*(\S.*?)\s*$")
+CUT_NAME = re.compile(r"_cut", re.I)
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ORD0 = dt.date(1970, 1, 1).toordinal()
 _EXCEL0 = dt.date(1899, 12, 30).toordinal() - _ORD0       # Excel serial 0 as days since 1970-01-01
@@ -220,6 +243,43 @@ def find_workbooks(bbg_dir):
             warn.append("file %s: two candidates, used the newest %s, ignored %s" % (d, os.path.basename(ps[-1]),
                                                                                    os.path.basename(q)))
     return out, warn
+
+
+def find_candidates(bbg_dir):
+    """-> ({key: [paths, oldest first]}, warnings): every workbook per first-pull digit and per R number."""
+    found, warn = {}, []
+    for p in sorted(glob.glob(os.path.join(bbg_dir, "*.xls*"))):
+        name = os.path.basename(p)
+        if name.startswith("~$"):
+            continue
+        m = re.match(r"^\s*([1-7])\D", name)
+        r = REPULL_FILE.match(name)
+        if m:
+            found.setdefault(m.group(1), []).append(p)
+        elif r:
+            found.setdefault("R%d" % int(r.group(1)), []).append(p)
+        else:
+            warn.append("ignored file without a leading digit 1-7 or R<n>: %s" % name)
+    return {k: sorted(v, key=lambda q: (os.path.getmtime(q), q)) for k, v in found.items()}, warn
+
+
+def _norm_sheet(s):
+    return re.sub(r"\s+", "", s).lower()
+
+
+def _value_hash(days, vals):
+    """Hash of one field's valid (date, value) pairs, values rounded to 9 significant digits; and the count."""
+    d = np.frombuffer(days, dtype="int64")
+    v = np.frombuffer(vals, dtype="float64")
+    ok = (d > -10 ** 8) & np.isfinite(v)
+    d, v = d[ok], v[ok]
+    a = np.abs(v)
+    mag = np.where(a > 0, np.floor(np.log10(np.where(a > 0, a, 1.0))), 0.0)
+    scale = 10.0 ** (8 - mag)
+    r = np.round(v * scale) / scale
+    h = hashlib.sha1(d.tobytes())
+    h.update(r.tobytes())
+    return h.hexdigest(), int(ok.sum())
 
 
 def _key_order(k):
@@ -385,46 +445,91 @@ def _median_date(dates):
     return s[(len(s) - 1) // 2]
 
 
-def _merge_repull(entries, r_entries):
+def _merge_repull(entries, r_entries, warnings):
     """Apply the re-pull rule in place. Matching key: (original file digit, original sheet, ticker, field); when the
-    same key occurs several times in a sheet, the k-th re-pulled occurrence matches the k-th first-pull occurrence.
-      re-pull ok                  -> replaces the first-pull entry (which is marked _dropped); takes its column
-      re-pull not ok, first exists-> first-pull entry kept, its repull_status says what the re-pull returned
-      no first-pull entry         -> added (any status), column R_COL_OFFSET x n + R column
-    Returns ({id(R entry): first-pull Series or None}, per-original-sheet merge counts)."""
-    by_key = {}
+    same key occurs several times in one R sheet, its k-th occurrence matches the k-th occupant of that key.
+      re-pull ok and (current not ok -- incl. copy -- or re-pull design count >= current) -> replaces the current
+          entry (marked _dropped) and takes its column; the current entry is the first pull or an earlier R file's
+      re-pull ok but shorter          -> current kept, repull_status gets "R<n>:shorter"
+      re-pull not ok (incl. copy)     -> current kept, repull_status gets "R<n>:<status>"
+      no current entry                -> added (any status), column R_COL_OFFSET x n + R column
+    r_entries come in R-number order, so a later R file can only win on the same rule. Returns
+    ({id(final R entry): first-pull Series or None}, per-original-sheet merge counts and names)."""
+    def nd(e):
+        s0 = e.get("_s")
+        return 0 if s0 is None or e["status"] != "ok" else int((s0.index <= SEAL_DATE).sum())
+
+    slots = {}
     for e in entries:
-        by_key.setdefault((e["file"], e["sheet"], e["ticker"], e["field"]), []).append(e)
-    seen = Counter()
-    replaced_first, merge = {}, {}
+        slots.setdefault((e["file"], e["sheet"], e["ticker"], e["field"]), []).append(e)
+    seen, repeated, two_r = Counter(), Counter(), {}
+    merge = {}
     for e in r_entries:
         k = (e["file"], e["sheet"], e["ticker"], e["field"])
-        j = seen[k]
-        seen[k] += 1
-        cand = by_key.get(k, [])
-        m = merge.setdefault("%s|%s" % (e["file"], e["sheet"]), Counter())
-        m["repulled"] += 1
-        if j < len(cand):
-            f = cand[j]
-            if e["status"] == "ok":
-                f["_dropped"] = True
+        sk = (e["source"], e["_rsheet"], k)
+        j = seen[sk]
+        seen[sk] += 1
+        if j:
+            repeated[(e["source"], e["_rsheet"])] += 1
+        m = merge.setdefault("%s|%s" % (e["file"], e["sheet"]), {"counts": Counter(), "shorter": []})
+        m["counts"]["repulled"] += 1
+        lst = slots.setdefault(k, [])
+        if j < len(lst):
+            cur = lst[j]
+            cur_r = cur["source"] != "first"
+            if cur_r:
+                two_r.setdefault((cur["source"], e["source"]), []).append("%s|%s" % (e["ticker"], e["field"]))
+            if e["status"] == "ok" and (cur["status"] != "ok" or nd(e) >= nd(cur)):
+                cur["_dropped"] = True
                 e["_merge"] = "replaced"
-                e["col"], e["_i"] = f["col"], f["_i"]
-                e["first_pull_status"] = f["status"]
-                e["first_pull_first"], e["first_pull_count"], e["first_pull_n_design"] = _first_info(f)
-                replaced_first[id(e)] = f["_s"]
-                m["replaced"] += 1
-                if f["status"] != "ok":
-                    m["replaced_failed_first"] += 1
+                e["col"], e["_i"] = cur["col"], cur["_i"]
+                e["_orig"] = cur.get("_orig") if cur_r else cur
+                if cur_r:
+                    cur["_merge"] = "superseded"
+                    m["counts"]["later_R_won"] += 1
+                lst[j] = e
             else:
-                e["_merge"] = "kept_first"
-                f["repull_status"] = "%s:%s" % (e["source"], e["status"])
-                m["kept_first"] += 1
+                tag = "shorter" if e["status"] == "ok" else e["status"]
+                e["_merge"] = "kept_current"
+                cur["repull_status"] = ";".join(x for x in (cur.get("repull_status", ""), "%s:%s" % (e["source"], tag))
+                                                if x)
+                if tag == "shorter":
+                    m["counts"]["shorter"] += 1
+                    m["shorter"].append("%s|%s (%s)" % (e["ticker"], e["field"], e["source"]))
+                else:
+                    m["counts"]["kept_first"] += 1
+                    if tag == "copy":
+                        m["counts"]["kept_repull_copy"] += 1
         else:
             e["_merge"] = "added"
+            e["_orig"] = None
             e["col"] = R_COL_OFFSET * int(e["source"][1:]) + e["_rcol"]
+            lst.append(e)
+    replaced_first = {}
+    for e in r_entries:
+        if e.get("_dropped") or e.get("_merge") not in ("replaced", "added"):
+            continue
+        m = merge["%s|%s" % (e["file"], e["sheet"])]["counts"]
+        o = e.get("_orig")
+        if o is None:
+            e["_merge"] = "added"
             m["added"] += 1
-    return replaced_first, {k: dict(v) for k, v in merge.items()}
+            continue
+        e["first_pull_status"] = o["status"]
+        e["first_pull_first"], e["first_pull_count"], e["first_pull_n_design"] = _first_info(o)
+        replaced_first[id(e)] = o["_s"]
+        m["replaced"] += 1
+        if o["status"] != "ok":
+            m["replaced_failed_first"] += 1
+        if o["status"] == "copy":
+            m["replaced_copy_first"] += 1
+    for (a, b), names in sorted(two_r.items()):
+        warnings.append("same key in %s and %s: %d ticker fields (the later file wins only if ok and not shorter), "
+                        "e.g. %s" % (a, b, len(names), ", ".join(names[:5])))
+    for (src, sh), n in sorted(repeated.items()):
+        warnings.append("re-pull %s sheet %r: %d ticker fields appear more than once (k-th occurrence matched to the "
+                        "k-th)" % (src, sh, n))
+    return replaced_first, {k: {"counts": dict(v["counts"]), "shorter": v["shorter"]} for k, v in merge.items()}
 
 
 # =====================================================================================================================
@@ -435,65 +540,73 @@ def build(bbg_dir, work_dir, live_csv=None, untouched_csv=None):
     t0 = time.time()
     live, live_path = read_live_sources(live_csv)
     untouched, unt_path = read_untouched(untouched_csv)
-    found, warnings = find_workbooks(bbg_dir)
-    files = {k: p for k, p in found.items() if not k.startswith("R")}          # first pull, by digit
-    rfiles = {k: p for k, p in found.items() if k.startswith("R")}             # re-pull, by "R<n>"
-    rep = {"files": [], "sheets": [], "field_types": {}, "release_formats": Counter(), "warnings": warnings}
+    cands, warnings = find_candidates(bbg_dir)
+    rep = {"files": [], "sheets": [], "field_types": {}, "release_formats": Counter(), "warnings": warnings,
+           "candidates": [], "copies": []}
     fstats = {}
-    entries = []          # one per block field (first pull)
-    r_entries = []        # one per block field (re-pull), merged below
     sheet_order = {}
+    known = {}                                       # file digit -> {normalised sheet name: sheet name}
+    for (d, sh) in live:
+        known.setdefault(d, {})[_norm_sheet(sh)] = sh
 
-    def read_workbook(key, path, out):
-        """Read one workbook; append one entry per block field to `out`. key: digit (first pull) or "R<n>"."""
+    def read_workbook(key, path):
+        """Read one workbook -> result dict (entries, sheet reports, field stats, warnings, copy groups); nothing is
+        added to the build until the workbook is chosen. key: digit (first pull) or "R<n>"."""
         fname = os.path.basename(path)
-        rep["files"].append({"file": key, "name": fname, "kb": os.path.getsize(path) // 1024})
+        res = {"key": key, "path": path, "name": fname, "entries": [], "sheets": [], "fstats": {}, "warnings": [],
+               "rel": Counter(), "copies": [], "order": {}}
         is_r = key.startswith("R")
         try:
             import openpyxl
             wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
         except Exception as e:  # noqa: BLE001
-            rep["sheets"].append({"file": key, "sheet": "(workbook)", "error": "%s: %s" % (type(e).__name__,
+            res["sheets"].append({"file": key, "sheet": "(workbook)", "error": "%s: %s" % (type(e).__name__,
                                                                                           str(e)[:160])})
-            return
+            return res
+        blockinfo = []                               # (block entries, n fields, hash, n values, sheet, ticker)
         for si, ws in enumerate(wb.worksheets):
             name = ws.title.strip()
             if name.lower().startswith("read") or name.lower() == "check":
-                rep["sheets"].append({"file": key, "sheet": name, "skipped": True})
+                res["sheets"].append({"file": key, "sheet": name, "skipped": True})
                 continue
             if is_r:                                       # "<digit> <sheet>": the block's original place
                 m = REPULL_SHEET.match(name)
-                if not m:
-                    warnings.append("re-pull %s: sheet %r is not named '<file digit> <sheet>': skipped" % (key, name))
-                    rep["sheets"].append({"file": key, "sheet": name, "skipped": True})
+                oname = known.get(m.group(1), {}).get(_norm_sheet(m.group(2))) if m else None
+                if oname is None:
+                    res["warnings"].append("re-pull %s: sheet %r matches no known sheet of file %s: skipped, its blocks "
+                                           "are not read" % (key, ws.title, m.group(1) if m else "?"))
+                    res["sheets"].append({"file": key, "sheet": name, "skipped": True})
                     continue
-                digit, oname = m.group(1), m.group(2)
-                if (digit, oname) not in sheet_order:          # original sheet not read: sort after all others
-                    sheet_order[(digit, oname)] = 1000 + len(sheet_order)
+                digit = m.group(1)
+                if oname != m.group(2):
+                    res["warnings"].append("re-pull %s: sheet %r read as %s|%s" % (key, ws.title, digit, oname))
             else:
                 digit, oname = key, name
-                sheet_order[(digit, name)] = si
+                res["order"][(digit, name)] = si
             per = "D" if oname.lower().startswith("daily") else "M"
             t1 = time.time()
             try:
-                blocks, info = _read_sheet(ws, per, fstats)
+                blocks, info = _read_sheet(ws, per, res["fstats"])
             except Exception as e:  # noqa: BLE001
-                rep["sheets"].append({"file": key, "sheet": name, "error": "%s: %s" % (type(e).__name__,
+                res["sheets"].append({"file": key, "sheet": name, "error": "%s: %s" % (type(e).__name__,
                                                                                        str(e)[:160])})
                 continue
             src, delay = live.get((digit, oname), ("bloomberg_only", MISSING_SHEET_DELAY))
             if (digit, oname) not in live:
-                warnings.append("sheet %s|%s not in live_sources.csv: bloomberg_only, %d days" % (digit, oname,
-                                                                                                 MISSING_SHEET_DELAY))
-            st = Counter()
+                res["warnings"].append("sheet %s|%s not in live_sources.csv: bloomberg_only, %d days" % (
+                    digit, oname, MISSING_SHEET_DELAY))
+            sheet_entries = []
             for b in blocks:
                 b["kind"] = [field_kind(oname, b["ticker"], f) for f in b["fields"]]
-                rep["release_formats"].update(b["rel_fmt"])
+                res["rel"].update(b["rel_fmt"])
                 has_rel = RELEASE_FIELD in b["fields"]
+                bents, hs, nv = [], [], 0
                 for i, f in enumerate(b["fields"]):
                     status = _status(b, i)
-                    st[status] += 1
                     s = _collapse(b["days"], b["vals"][i], per) if status == "ok" else None
+                    h, n = _value_hash(b["days"], b["vals"][i])
+                    hs.append(h)
+                    nv += n
                     top = b["errors"].most_common(1)[0][0] if b["errors"] else ""
                     e = {"file": digit, "file_name": fname, "sheet": oname, "col": b["col"],
                          "label": b["label"], "ticker": b["ticker"], "field": f, "per": per,
@@ -502,30 +615,111 @@ def build(bbg_dir, work_dir, live_csv=None, untouched_csv=None):
                          "revised": int(has_rel and f == "PX_LAST"),
                          "untouched": int(b["ticker"] in untouched),
                          "untouched_reason": untouched.get(b["ticker"], ""), "_s": s, "_i": i,
-                         "source": key if is_r else "first"}
+                         "source": key if is_r else "first", "copy_group": ""}
                     if is_r:
                         e["_rcol"], e["_rsheet"] = b["col"], name
-                    out.append(e)
+                    bents.append(e)
+                if any(e["status"] == "ok" for e in bents) and nv >= COPY_MIN_VALUES:
+                    blockinfo.append((bents, len(b["fields"]), "|".join(hs), nv, name, b["ticker"]))
+                sheet_entries += bents
+            res["entries"] += sheet_entries
             sh = {"file": key, "sheet": name, "per": per, "blocks": len(blocks),
-                  "fields": sum(len(b["fields"]) for b in blocks), "status": dict(st),
+                  "fields": sum(len(b["fields"]) for b in blocks), "_entries": sheet_entries,
                   "rows": info["rows"], "date_types": dict(info["date_types"]),
                   "no_ticker": info["no_ticker"], "seconds": round(time.time() - t1, 1)}
             if is_r:
                 sh["original"] = "%s|%s" % (digit, oname)
-            rep["sheets"].append(sh)
+            res["sheets"].append(sh)
             del blocks
         wb.close()
+        # ---- copy detection inside this workbook
+        groups = {}
+        for bi in blockinfo:
+            groups.setdefault((bi[1], bi[2]), []).append(bi)
+        for g in groups.values():
+            tks = []
+            for bi in g:
+                if bi[5] not in tks:
+                    tks.append(bi[5])
+            if len(tks) < COPY_MIN_TICKERS:
+                continue
+            for bi in g:
+                for e in bi[0]:
+                    e["copy_group"] = len(g)
+                    if e["status"] == "ok":
+                        e["status"], e["_s"] = "copy", None
+            res["copies"].append({"file": key, "blocks": len(g), "tickers": len(tks), "values": g[0][3],
+                                  "sheets": dict(Counter(bi[4] for bi in g)), "examples": tks[:10]})
+        for sh in res["sheets"]:
+            if "_entries" in sh:
+                sh["status"] = dict(Counter(e["status"] for e in sh.pop("_entries")))
+        return res
 
-    for digit, path in sorted(files.items()):
-        read_workbook(digit, path, entries)
-    for key, path in sorted(rfiles.items(), key=lambda kv: _key_order(kv[0])):
-        read_workbook(key, path, r_entries)
+    def score(res):
+        oks = [e for e in res["entries"] if e["status"] == "ok"]
+        blocks = len({(e["file"], e["sheet"], e.get("_rsheet", ""), e["col"]) for e in oks})
+        design = sum(int((e["_s"].index <= SEAL_DATE).sum()) for e in oks if e["_s"] is not None)
+        return blocks, design
+
+    def accept(res):
+        rep["files"].append({"file": res["key"], "name": res["name"], "kb": os.path.getsize(res["path"]) // 1024})
+        rep["sheets"] += res["sheets"]
+        rep["release_formats"].update(res["rel"])
+        rep["copies"] += res["copies"]
+        warnings.extend(res["warnings"])
+        for f, (a, b, c) in res["fstats"].items():
+            st = fstats.setdefault(f, [0, 0, 0])
+            st[0] += a
+            st[1] += b
+            st[2] += c
+        for k, v in res["order"].items():
+            sheet_order[k] = v
+        return res["entries"]
+
+    def mtime_txt(p):
+        return dt.datetime.fromtimestamp(int(os.path.getmtime(p)), dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    files, rfiles = {}, {}
+    entries, r_entries = [], []
+    for key in sorted(cands, key=_key_order):
+        ps = cands[key]
+        if not key.startswith("R"):                 # first pull: newest file per digit (as in 1.0.0)
+            path = ps[-1]
+            for q in ps[:-1]:
+                warnings.append("file %s: two candidates, used the newest %s, ignored %s" % (
+                    key, os.path.basename(path), os.path.basename(q)))
+            res = read_workbook(key, path)
+            ok_b, des = score(res)
+            for q in ps:
+                rep["candidates"].append({"file": key, "name": os.path.basename(q), "cut": bool(CUT_NAME.search(
+                    os.path.basename(q))), "ok_blocks": ok_b if q == path else None, "design_obs": des if q == path
+                    else None, "mtime": mtime_txt(q), "used": q == path, "rule": "newest (first pull)"})
+            files[key] = path
+            entries += accept(res)
+            continue
+        reads = [read_workbook(key, q) for q in ps]
+        best = max(reads, key=lambda r: (not CUT_NAME.search(r["name"]), *score(r), os.path.getmtime(r["path"]),
+                                         r["name"]))
+        for r in reads:
+            ok_b, des = score(r)
+            rep["candidates"].append({"file": key, "name": r["name"], "cut": bool(CUT_NAME.search(r["name"])),
+                                      "ok_blocks": ok_b, "design_obs": des, "mtime": mtime_txt(r["path"]),
+                                      "used": r is best, "rule": "no _CUT, most ok blocks, most design observations, "
+                                                                 "newest"})
+            if r is not best:
+                warnings.append("file %s: %d candidates, used %s, ignored %s" % (key, len(reads), best["name"],
+                                                                                  r["name"]))
+        rfiles[key] = best["path"]
+        for (d, sh) in {(e["file"], e["sheet"]) for e in best["entries"]}:
+            if (d, sh) not in sheet_order:          # original sheet not read: sort after all others
+                sheet_order[(d, sh)] = 1000 + len(sheet_order)
+        r_entries += accept(best)
     rep["field_types"] = {f: {"numeric": a, "date": b, "string": c} for f, (a, b, c) in sorted(fstats.items())}
 
     # ---- re-pull merge (no R files: nothing happens here)
-    replaced_first, merge = _merge_repull(entries, r_entries)
+    replaced_first, merge = _merge_repull(entries, r_entries, warnings)
     entries = [e for e in entries if not e.get("_dropped")] + [e for e in r_entries if e.get("_merge") in
-                                                               ("replaced", "added")]
+                                                               ("replaced", "added") and not e.get("_dropped")]
     rep["repull"] = merge
 
     # ---- series ids, duplicates, grids
@@ -619,6 +813,10 @@ def build(bbg_dir, work_dir, live_csv=None, untouched_csv=None):
             m["median_first_before"] = _median_date(before)
             m["median_first_after"] = _median_date(after)
             m["series_before"], m["series_after"] = len(before), len(after)
+            m["first_copies_replaced"] = sum(1 for e in entries if e["file"] == d and e["sheet"] == sh and
+                                             e.get("first_pull_status") == "copy")
+            m["first_copies_remaining"] = sum(1 for e in entries if e["file"] == d and e["sheet"] == sh and
+                                              e["source"] == "first" and e["status"] == "copy")
 
     # ---- write (clean, versioned)
     root = os.path.join(work_dir, "bbg")
@@ -681,8 +879,10 @@ def build(bbg_dir, work_dir, live_csv=None, untouched_csv=None):
     if rfiles:
         cnt["repull"] = {"files": sorted(rfiles, key=_key_order),
                          "by_source": dict(Counter(e["source"] for e in entries)),
-                         **{k: sum(m.get(k, 0) for m in merge.values())
-                            for k in ("repulled", "replaced", "replaced_failed_first", "added", "kept_first")}}
+                         **{k: sum(m["counts"].get(k, 0) for m in merge.values())
+                            for k in ("repulled", "replaced", "replaced_failed_first", "replaced_copy_first",
+                                      "added", "kept_first", "kept_repull_copy", "shorter", "later_R_won")}}
+    cnt["copy_groups"] = [{k: g[k] for k in ("file", "blocks", "tickers")} for g in rep["copies"]]
     manifest = {
         "code_version": VERSION, "code_sha256": sha256_file(os.path.abspath(__file__)),
         "build_time": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

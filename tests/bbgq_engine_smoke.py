@@ -25,13 +25,15 @@ PKG = os.path.join(BBGQ, "engine_pkg")
 TRUNC_DATE = "1995-12-31"
 DATE_RE = re.compile(r"\b(19|20)\d{2}-\d{2}(-\d{2})?\b")
 LATE_RE = re.compile(r"\b20(1[1-9]|[2-9]\d)-(0[1-9]|1[0-2])\b")
-DEC_RE = re.compile(r"(?<![\w.])-?\d+\.\d+(?![\w.])")
+DEC_RE = re.compile(r"(?<![\w.])-?\d+(?:\.\d+(?:[eE][-+]?\d+)?|[eE][-+]?\d+)(?![\w.])")   # 1.5, 1.5e-03, 2e+05
+DIFF_RE = re.compile(r"\b(max|diff|tol|max abs diff)\s+-?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?(?![\w.])")
 
 
 def scan(text, name):
+    """No line with a date and a number that is not a labelled difference / tolerance; no date after 2010."""
     bad = []
     for line in text.splitlines():
-        if DATE_RE.search(line) and DEC_RE.search(line):
+        if DATE_RE.search(line) and DEC_RE.search(DIFF_RE.sub("", line)):
             bad.append("dated line with a decimal value: " + line[:140])
         if LATE_RE.search(line):
             bad.append("date after 2010: " + line[:140])
@@ -142,6 +144,14 @@ def main():
         n_carry_b = int(withb["S"]["C"].loc[:E].reindex(columns=cm).notna().any().sum())
         n_carry_f = int(base["S"]["C"].loc[:E].reindex(columns=cm).notna().any().sum())
         assert n_carry_b > n_carry_f, (n_carry_b, n_carry_f)
+        # the truncation cut covers the Bloomberg inputs too (gm.bloomberg.load is wrapped)
+        M["BBG"]._CACHE["wb"] = wb
+        with GE.Cut(M, "1995-12-31"):
+            cw = M["BBG"].load()
+            assert all(df.index.max() <= GE.pd.Period("1995-12", "M") for b in cw.values() for df in b.values()
+                       if len(df))
+            assert M["BBG"].commodity_return("cm_wti").last_valid_index() <= GE.pd.Period("1995-12", "M")
+        assert M["BBG"].load() is wb
         print("  adapter: %d commodity markets switched to Bloomberg returns, commodity carry for %d markets (free "
               "data: %d), other markets unchanged, held-back markets absent (%.0fs)" % (
                   len(changed), n_carry_b, n_carry_f, time.time() - t))

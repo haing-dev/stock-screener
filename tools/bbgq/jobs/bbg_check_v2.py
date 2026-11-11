@@ -53,7 +53,7 @@ for per in ("M", "D"):
         "monthly" if per == "M" else "daily", df.shape[0], df.shape[1],
         df.index[0].date() if len(df) else "-", df.index[-1].date() if len(df) else "-"))
 
-STATUS_FLAG = {"requesting": "REQ", "invalid": "INV", "empty": "EMPTY"}
+STATUS_FLAG = {"requesting": "REQ", "invalid": "INV", "empty": "EMPTY", "copy": "COPY"}
 
 
 def longest_run(mask):
@@ -254,6 +254,35 @@ try:
             print("   " + "; ".join(diff_list[i:i + 4]))
 except Exception as e:  # noqa: BLE001
     print("RE-PULL COMPARISON FAILED", type(e).__name__, str(e)[:300])
+
+# ---------------------------------------------------------------- copies and shorter re-pulls (from the catalog)
+try:
+    has_src = "source" in CAT.columns
+    print("--- copied blocks per original sheet (status copy = identical numbers under %d+ different tickers in one "
+          "workbook; counts are ticker fields: first-pull copies replaced by an ok re-pull / still unusable)" % bbgdata.COPY_MIN_TICKERS)
+    rows = []
+    for (f, sh), g in CAT.groupby(["file", "sheet"], sort=True):
+        rem = int((g["status"] == "copy").sum())
+        repl = int((g["first_pull_status"] == "copy").sum()) if has_src else 0
+        kept_rcopy = int(g["repull_status"].str.contains(":copy").sum()) if has_src else 0
+        if rem or repl or kept_rcopy:
+            rows.append((f, sh, repl, rem, kept_rcopy))
+            print("COPIES %s|%s | first-pull copies replaced %d | still copy (unusable) %d | re-pulled copies ignored %d"
+                  % (f, sh, repl, rem, kept_rcopy))
+    if not rows:
+        print("no copied block")
+    else:
+        print("COPIES ALL | first-pull copies replaced %d | still copy (unusable) %d | re-pulled copies ignored %d" % (
+            sum(r[2] for r in rows), sum(r[3] for r in rows), sum(r[4] for r in rows)))
+    if has_src:
+        sh_ = CAT[CAT["repull_status"].str.contains(":shorter")]
+        print("--- shorter re-pulls (re-pull ok but fewer design observations: first pull kept): %d" % len(sh_))
+        for (f, sh), g in sh_.groupby(["file", "sheet"], sort=True):
+            print("SHORTER %s|%s | %d | %s" % (f, sh, len(g), "; ".join("%s|%s (%s)" % (r.ticker, r.field,
+                                                                                         r.repull_status)
+                                                                       for r in g.itertuples())))
+except Exception as e:  # noqa: BLE001
+    print("COPY / SHORTER SUMMARY FAILED", type(e).__name__, str(e)[:300])
 
 # ---------------------------------------------------------------- per series ranges (design)
 print("=== SERIES (file|sheet|ticker|field|status|first|last|design count|missing inside range|source) ===")

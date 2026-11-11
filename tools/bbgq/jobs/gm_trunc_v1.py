@@ -3,7 +3,9 @@ Same code as tools/bbgq/engine_trunc.py (gm_engine.truncation_report) on the shi
 For each cut date T (1980-2010): every input cut at T at the loader level, every stage compared with the full run for
 decision months <= T (counts of differing market-months, largest absolute difference, first and last differing
 month, market names), each stage also run ALONE to separate its own look-ahead from an inherited one, and every failure
-attributed to a place in the gm code with a proposed fix. Design period only. No data value is printed."""
+attributed to a place in the gm code with a proposed fix. Design period only. No data value is printed.
+Arguments (optional): cut dates YYYY-MM-DD; "bbg" = also feed the Bloomberg inputs from work\bbg through the adapter
+(cut at T like the free inputs). The report says on its first and last line whether Bloomberg inputs were in the run."""
 import os
 import sys
 
@@ -25,7 +27,16 @@ try:
     print("free inputs: %d files, unpacked now %d, not matching the manifest %d" % (
         len(st["manifest"]["files"]), st["extracted"], len(st["bad"])))
     dates = [a for a in sys.argv[1:] if a[:2] in ("19", "20")] or list(GE.CUT_DATES)
-    GE.truncation_report(FREE, dates, print)
+    wb, note = None, ""
+    if "bbg" in sys.argv[1:] or os.environ.get("GM_TRUNC_BBG") == "1":   # Bloomberg inputs from work\\bbg
+        import bbgdata
+        import bbg_panel as BP
+        P = bbgdata.Panel(WORK)
+        wb = BP.Source(P, asof="2010-12-31").workbook()
+        note = "bbg_panel %s, lock %s, as of 2010-12-31" % (BP.VERSION, P.lock_id[:12])
+    else:
+        print("run without Bloomberg inputs (add the argument bbg to include them)")
+    GE.truncation_report(FREE, dates, print, bbg=wb, bbg_note=note)
 except Exception as e:  # noqa: BLE001
     print("TRUNCATION TEST STOPPED", type(e).__name__, str(e)[:300])
     print("".join(traceback.format_exc().splitlines(True)[-8:]))

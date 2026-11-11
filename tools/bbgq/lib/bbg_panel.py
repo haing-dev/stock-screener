@@ -273,8 +273,9 @@ def engine_map(P, markets=None, asof="2010-12-31"):
         for t, _sg in lst:
             for f in ("ACTUAL_RELEASE", "BN_SURVEY_MEDIAN"):
                 x = look(t, f, "Economics", 24)
-                rows.append({"market": "country %s" % cc, "input": "growth surprise (not used: GROWTH_SOURCE=%s)" %
-                             G.GROWTH_SOURCE, "route": "Bloomberg", **x})
+                if G.GROWTH_SOURCE != "surprise":           # BASE and CANDIDATE: growth theme switched off
+                    x["used"], x["used_note"] = False, "no (GROWTH_SOURCE %s)" % G.GROWTH_SOURCE
+                rows.append({"market": "country %s" % cc, "input": "growth surprise", "route": "Bloomberg", **x})
     return rows, src
 
 

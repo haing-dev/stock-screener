@@ -39,6 +39,12 @@ try:
     print("%s gm code | %d files compared | differing or missing: %s" % ("PASS" if not bad else "FAIL", len(want),
                                                                           ", ".join(bad) or "none"))
     n_fail += bool(bad)
+    if "gm_data_sha256" in ref["code"]:
+        hd, wd = GE.gm_data_hashes(os.path.dirname(os.path.abspath(gm.__file__))), ref["code"]["gm_data_sha256"]
+        badd = sorted(k for k in set(hd) | set(wd) if hd.get(k) != wd.get(k))
+        print("%s gm data files | %d compared | differing or missing: %s" % ("PASS" if not badd else "FAIL", len(wd),
+                                                                              ", ".join(badd) or "none"))
+        n_fail += bool(badd)
     cfg = GE.config_hashes()
     badc = [k for k in cfg if cfg[k] != ref["configs"].get(k)]
     print("%s config hashes | %s" % ("PASS" if not badc else "FAIL", ", ".join("%s %s" % kv for kv in cfg.items())))
@@ -47,20 +53,19 @@ except Exception as e:  # noqa: BLE001
     print("FAIL gm code check", type(e).__name__, str(e)[:200])
     n_fail += 1
 
-# ---- inputs: unpack if needed, verify against the shipped manifest and the reference digest
+# ---- inputs: unpack if needed, verify against the shipped manifest and the reference file list
 try:
     t = time.time()
     st = GE.ensure_free_inputs(FREE)
     if st["manifest"] is None:
         raise RuntimeError("work\\free\\gm_free_inputs.zip not found")
     man = st["manifest"]
-    dig = GE.original_digest(man)
-    ok = not st["bad"] and dig == ref["inputs"]["digest"]
+    same, how = GE.inputs_match(man, ref)
+    ok = not st["bad"] and same
     print("%s free inputs | %d files | already in place %d | unpacked now %d | not matching the manifest %d | "
-          "original digest %s the reference | %d converted xls | %.0fs" % (
-              "PASS" if ok else "FAIL", len(man["files"]), st["ok"], st["extracted"], len(st["bad"]),
-              "equals" if dig == ref["inputs"]["digest"] else "DIFFERS FROM", len(man.get("converted", [])),
-              time.time() - t))
+          "%s %s the reference | %d converted xls | %.0fs" % (
+              "PASS" if ok else "FAIL", len(man["files"]), st["ok"], st["extracted"], len(st["bad"]), how,
+              "match" if same else "DO NOT MATCH", len(man.get("converted", [])), time.time() - t))
     if st["bad"]:
         print("   not matching: " + ", ".join(st["bad"][:20]))
     n_fail += not ok

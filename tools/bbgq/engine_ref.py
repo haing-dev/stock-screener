@@ -14,7 +14,6 @@ Nothing dated after 2010-12 is printed or stored (gm_engine.fingerprint checks t
 discarded unread (panel.build prints a count over the full sample).
 """
 import datetime as dt
-import hashlib
 import json
 import os
 import subprocess
@@ -53,9 +52,8 @@ def main():
             if p.startswith(root + os.sep) and os.path.isfile(p) and "__pycache__" not in p:
                 files["%s/%s" % (tag, os.path.relpath(p, root).replace(os.sep, "/"))] = p
                 break                                # research/ lies inside raw/: the first (most specific) wins
-    inputs = {rel: {"sha256": hashlib.sha256(open(p, "rb").read()).hexdigest(), "bytes": os.path.getsize(p)}
-              for rel, p in sorted(files.items())}
-    digest, n = GE.inputs_digest({k: v for k, v in files.items() if not k.startswith("gm_data/")})
+    # no hashes of the input files here: they hold data after 2010 (the shipped zip's manifest carries them)
+    inputs = {rel: {"bytes": os.path.getsize(p)} for rel, p in sorted(files.items())}
     try:
         commit = subprocess.run(["git", "-C", REPO, "log", "-1", "--format=%H", "--", "gm"], capture_output=True,
                                 text=True, timeout=30).stdout.strip()
@@ -66,10 +64,11 @@ def main():
     ref = {"what": "book engine (gm/) on free data: design-period fingerprint (months <= 2010-12 only)",
            "made": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d"),
            "engine_helper": GE.VERSION,
-           "code": {"gm_commit": commit, "gm_dirty": bool(dirty), "gm_files_sha256": GE.gm_code_hashes()},
+           "code": {"gm_commit": commit, "gm_dirty": bool(dirty), "gm_files_sha256": GE.gm_code_hashes(),
+                    "gm_data_sha256": GE.gm_data_hashes()},
            "configs": GE.config_hashes(M), "libraries": GE.lib_versions(),
            "run_seconds": round(secs),
-           "inputs": {"digest": digest, "files_in_digest": n, "files": inputs,
+           "inputs": {"files": inputs,
                       "note": "research/ and raw/ ship in work\\free\\gm_free_inputs.zip; gm_data/ travels inside "
                               "lib\\gm\\data"},
            "tolerances": GE.TOL, **fp}

@@ -83,3 +83,31 @@ Engine on the PC (deploy with `python3 tools/bbgq/build_engine.py`, which fills 
   economic releases by the month they became known; a series with a one-day live delay ends at 2010-11.
 - Tests: `python3 tests/bbgq_smoke.py` (reader, ~17 min) and `python3 tests/bbgq_engine_smoke.py` (engine, ~12 min;
   `BBGQ_ALT_PYTHON=<python>` also runs the reproduction in another environment).
+
+### Block 3 follow-up (bbgdata 1.2.0, 2026-11-11, after the independent check and bbg_diag_v2)
+- Copied blocks: inside one workbook, blocks with the same number of fields and identical value arrays (same dates,
+  values equal to 9 significant digits, at least 12 numbers) under 5 or more DIFFERENT tickers get status `copy`: not
+  usable (no series id, not in the tables), catalog column `copy_group` = blocks in the group. No member is kept as
+  the owner: the real series, where it is in the workbook (JYBSV1 Curncy in file 1), has a longer history than the pasted
+  copies and so is not in the identical group. Alias pairs and the same ticker in two sheets stay ok. A copy in an R file
+  never replaces anything; a first-pull copy is replaced by an ok re-pull, otherwise it stays unusable.
+  **With the real data a build without R files now differs from bbgdata 1.0.0 by exactly the copy blocks** (the mock
+  identity test checks this with a planted copy group; elsewhere tables are identical).
+- Several files for one R number: no `_CUT` first, then most ok blocks (after copy detection), then most design
+  observations, then newest; every candidate is a CANDIDATE line at the top of bbg_build_v2.
+- A re-pull replaces the current block only if that is not ok (incl. copy) or the re-pull has at least as many design
+  observations; else `repull_status` = `R<n>:shorter` (MERGE lines and SHORTER lines in the check). The same key in two R
+  files: the later file wins on the same rule (warning). R sheet names are matched to file <digit>'s sheets ignoring case
+  and spaces; a sheet that matches none is skipped with a warning (its blocks are not read).
+- bbg_build_v2: CANDIDATE, COPYGROUP (up to 10 example tickers), COPIES per file|sheet; bbg_check_v2: COPIES per original
+  sheet (first-pull copies replaced / still unusable / re-pulled copies ignored, in ticker fields), SHORTER.
+- Truncation with Bloomberg inputs: `gm_engine.Cut` also wraps `gm.bloomberg.load` (months <= T);
+  `jobs/gm_trunc_v1.py bbg` (or env GM_TRUNC_BBG=1) feeds the adapter's tables; the report's first and last lines say
+  whether Bloomberg inputs were in the run. Cause C4: gm's "more than 24 months over the whole sample" gates.
+- Live delay: every Bloomberg market sheet has a one-day live delay, so `Source(asof="2010-12-31")` does not serve the
+  2010-12 month-end of those series (it becomes known on 2011-01-01); design runs with Bloomberg inputs end at 2010-11
+  for them.
+- engine_ref.json no longer holds hashes of the input files (they contain data after 2010); the reproduction checks the
+  unpacked files against the zip's own manifest and the reference's file list and sizes. It now also hashes gm/data/*.csv
+  (RBI_CALLMONEY_M.csv; a hash only).
+- Keep pandas below 4 on the PC (the engine and the reference were checked on pandas 3.0.5 and 3.1.1 only).

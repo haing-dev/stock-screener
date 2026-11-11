@@ -130,10 +130,11 @@ def main():
         diff = sorted(k for k in set(hashes) | set(ref["code"]["gm_files_sha256"])
                       if hashes.get(k) != ref["code"]["gm_files_sha256"].get(k))
         sys.exit("gm/ differs from the reference run (%s): re-run engine_ref.py" % ", ".join(diff))
+    if GE.gm_data_hashes(os.path.join(PKG, "lib", "gm")) != ref["code"].get("gm_data_sha256", {}):
+        sys.exit("gm/data differs from the reference run: re-run engine_ref.py")
 
     # free inputs
-    man = {"made": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d"), "reference_digest": ref["inputs"]["digest"],
-           "files": {}}
+    man = {"made": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d"), "files": {}}
     zpath = os.path.join(PKG, "work", "free", "gm_free_inputs.zip")
     converted = []
     with zipfile.ZipFile(zpath, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6) as z:
@@ -143,9 +144,9 @@ def main():
                 continue                                 # travels inside lib/gm/data
             src = os.path.join(SRC_DIRS[tag], name)
             data = open(src, "rb").read()
-            if hashlib.sha256(data).hexdigest() != meta["sha256"]:
+            if len(data) != meta["bytes"]:
                 sys.exit("input %s changed since the reference run: re-run engine_ref.py" % rel)
-            entry = {"original_sha256": meta["sha256"]}
+            entry = {"original_sha256": hashlib.sha256(data).hexdigest(), "original_bytes": len(data)}
             if name.lower().endswith(".xls") and is_biff(src):
                 conv = xls_to_xlsx_bytes(src)
                 if not same_reads(src, conv, name):
@@ -181,12 +182,12 @@ def main():
         f.write("Copy each file to the PC path on the right (folders lib\\gm\\... as they are).\n")
         for rel, sz, to in lines:
             f.write("%-46s %10d  ->  %s\n" % (rel, sz, to))
-    gm_files = [x for x in lines if x[0].startswith(os.path.join("lib", "gm"))]
+    gm_files = [x for x in lines if x[0].startswith(os.path.join("lib", "gm") + os.sep)]
     print("engine_pkg built: %d files, %.1f MB" % (len(lines), total / 1e6))
     print("  lib/gm/ (gm package unchanged): %d files, %d KB -> Documents\\WRDS results\\local\\lib\\gm\\" % (
         len(gm_files), sum(x[1] for x in gm_files) // 1024))
     for rel, sz, to in lines:
-        if not rel.startswith(os.path.join("lib", "gm")):
+        if not rel.startswith(os.path.join("lib", "gm") + os.sep):
             print("  %-40s %9d bytes -> %s" % (rel.replace(os.sep, "/"), sz, to))
     print("  free inputs in the zip: %d files, %.1f MB unpacked; %d converted from binary .xls to xlsx content: %s" % (
         len(man["files"]), sum(e["bytes"] for e in man["files"].values()) / 1e6, len(converted),

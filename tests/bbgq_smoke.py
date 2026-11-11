@@ -134,8 +134,15 @@ def _write_sheet(ws, digit, name, hdr, dates, mode, allvals, blocks, truth, labe
         planted = tk in {k[2] for k in PLANT}                     # all copies of a planted ticker start early
         late = seed_of("late", tk) % 9 == 0 and not planted         # ~1 block in 9 starts after 2010
         start0 = 0 if (planted or md == "r") else None
+        pos = lambda day: int(np.searchsorted(np.array(dlist, dtype="datetime64[ns]"), np.datetime64(day)))  # noqa
         if late and md == "orig":
-            start0 = int(np.searchsorted(np.array(dlist, dtype="datetime64[ns]"), np.datetime64("2012-01-31")))
+            start0 = pos("2012-01-31")
+        same = (SAME if md == "orig" else R_SAME).get(key)          # identical values under another ticker
+        seed_tk = tk
+        if same:
+            seed_tk, start0 = same[0], pos(same[1])
+        elif md == "r" and key in R_SHORT:
+            start0 = pos(R_SHORT[key])
         for f in fields:
             if f == "ECO_RELEASE_DT":
                 fmt = REL_FORMAT.get((digit, name), "yyyymmdd")
@@ -157,9 +164,9 @@ def _write_sheet(ws, digit, name, hdr, dates, mode, allvals, blocks, truth, labe
             if key in EMPTY and md == "orig":
                 fcols.append([None] * n)
                 continue
-            x, st = gen_values(per, tk, f, n, start0)
+            x, st = gen_values(per, seed_tk, f, n, start0)
             x = x.copy()
-            p = PLANT.get(key) if md == "orig" else None
+            p = PLANT.get(key) if md == "orig" and not same else None
             di = pd.DatetimeIndex(dlist)
             if p == "gap":
                 x[(di >= "1995-03-01") & (di <= "1995-05-31")] = np.nan
@@ -174,7 +181,7 @@ def _write_sheet(ws, digit, name, hdr, dates, mode, allvals, blocks, truth, labe
                 m = (di >= "2000-01-01") & (di <= "2005-12-31")
                 x[m] = np.round(x[m] * 1.01, 7)
             col = [None] * st + [None if np.isnan(v) else float(v) for v in x[st:]]
-            if md == "orig" and seed_of("na", tk, f) % 7 == 0 and n > st + 10:
+            if md == "orig" and not same and seed_of("na", tk, f) % 7 == 0 and n > st + 10:
                 for j in (st + 3, st + 7):
                     col[j] = "#N/A N/A"
             allvals.append(x[st:][np.isfinite(x[st:])])
@@ -227,9 +234,22 @@ REPULL_DIR = os.path.join(REPO, "docs", "data_requests", "bloomberg_repull_2026-
 R_NAMES = {"R1": "R1_rates_yields_bondfutures 1.xlsx", "R2": "R2_commodity_curves_returns.xlsx",
            "R3": "R3_commodities_missing_A (1).xlsx", "R4": "R4_commodities_missing_B_VALUES.xlsx",
            "R5": "R5_yields_swaps_credit.xlsx", "R6": "R6_fx_spot_forwards_ratesfut.xlsx", "R7": "R7_fx_vol.xlsx"}
-R_CUT_TWIN = "R2_commodity_curves_returns_CUT.xlsx"        # older modification time: must be ignored
+R_CUT_TWIN = "R2_commodity_curves_returns_CUT.xlsx"        # NEWER than the good R2 but _CUT: must be ignored
+R_SMALL_TWIN = "R7_fx_vol (2).xlsx"                         # newest, not _CUT, but fewer ok blocks: must be ignored
 R_REQUESTING = {("1", "Yields", "GDBR10 Index")}           # re-pull still loading: the first pull is kept
 R_EXTRA = {("1", "Yields"): [("TEST block only in the re-pull", "ZZADD Index", ["PX_LAST"])]}
+R_SHORT = {("1", "Curves", "CL2 Comdty"): "2005-01-31"}    # re-pull ok but shorter than the first pull: first kept
+R_RENAME = {("R6", "3 FXBasis"): " 3  fxBASIS "}           # odd case and spacing: still read as 3|FXBasis
+R_UNMATCHED = ("R1", "1 NoSuchSheet", [("TEST no such sheet", "ZZNONE Index", ["PX_LAST"])])
+# identical value arrays: a planted copy group of 6 tickers in one first-pull workbook (3 of them re-pulled in R3, 3 not),
+# a legit alias pair (2 tickers, stays ok), and a copy group of 5 tickers inside an R file (never replaces anything)
+COPY_GROUP = [("4", "EquityIndexes", t) for t in ("BUX Index", "KOSDAQ Index", "MXEE Index", "INDU Index",
+                                                   "CCMP Index", "RIY Index")]
+ALIAS = [("3", "YieldsExtra", "USGG12M Index"), ("3", "YieldsExtra", "USGG1YR Index")]
+R_COPY = [("3", "FXForwards", t) for t in ("EUR1M Curncy", "EUR3M Curncy", "EUR12M Curncy", "JPY1M Curncy",
+                                           "JPY3M Curncy")]
+SAME = {**{k: ("COPYGROUP", "2009-06-30") for k in COPY_GROUP}, **{k: ("ALIAS", "1969-12-31") for k in ALIAS}}
+R_SAME = {**{k: ("RCOPY", "1969-12-31") for k in R_COPY}, **{k: ("ALIAS", "1969-12-31") for k in ALIAS}}
 
 
 def make_repull_mocks(out_dir, truth):
@@ -250,6 +270,8 @@ def make_repull_mocks(out_dir, truth):
                     ws.append([("NAME" if isinstance(v, str) and v.startswith("=") else v) for v in r])
                 continue
             digit, sheet = name.split(" ", 1)
+            if (key, name) in R_RENAME:
+                ws.title = R_RENAME[(key, name)]
             n0 = len(blocks)
             ex = R_EXTRA.get((digit, sheet), ())
             _write_sheet(ws, digit, sheet, hdr, MONTHS, mode, allvals, blocks, truth, None, ex)
@@ -260,8 +282,22 @@ def make_repull_mocks(out_dir, truth):
                     lab = hdr[1][c] if c < len(hdr[1]) else ""
                 p = placed.setdefault((b[0], b[1], b[2]), (key, [], b[4]))
                 p[1].append(str(lab).strip() if lab is not None else "")
+        if key == R_UNMATCHED[0]:                       # a sheet that matches no sheet of file 1: skipped
+            ws = wb.create_sheet(R_UNMATCHED[1])
+            hdr = [["x"], ["x", R_UNMATCHED[2][0][0]], ["x", R_UNMATCHED[2][0][1]], ["x", "date", "PX_LAST"]]
+            _write_sheet(ws, "1", "NoSuchSheet", [r[1:] for r in hdr], MONTHS, mode, allvals, [], truth)
         wb.save(os.path.join(out_dir, fname))
-    # the _CUT twin: same name stem, older file, history cut at 2009-06 (would change everything if it were used)
+    # small non-_CUT twin of R7, newest of all: one block only, must lose on ok blocks
+    wb = Workbook(write_only=True)
+    ws = wb.create_sheet("3 FXVol")
+    for r in (["small copy"], ["EUR 1m vol"], ["EURUSDV1M Curncy"], ["date", "PX_LAST"]):
+        ws.append(r)
+    for d in MONTHS:
+        ws.append([d.to_pydatetime(), 1.0])
+    wb.save(os.path.join(out_dir, R_SMALL_TWIN))
+    new = time.time() + 120
+    os.utime(os.path.join(out_dir, R_SMALL_TWIN), (new, new))
+    # the _CUT twin: same name stem, NEWER file, history cut at 2009-06 (would change everything if it were used)
     wb = Workbook(write_only=True)
     ws = wb.create_sheet("1 Returns")
     ws.append(["cut copy"])
@@ -272,8 +308,8 @@ def make_repull_mocks(out_dir, truth):
         ws.append([d.to_pydatetime(), 1.0])
     twin = os.path.join(out_dir, R_CUT_TWIN)
     wb.save(twin)
-    old = time.time() - 86400
-    os.utime(twin, (old, old))
+    new = time.time() + 60
+    os.utime(twin, (new, new))
     truth["values"] = np.sort(np.concatenate([truth["values"]] + allvals))
     truth["r_blocks"] = blocks
     return placed
@@ -281,7 +317,15 @@ def make_repull_mocks(out_dir, truth):
 
 # ---------------------------------------------------------------- whitelist scan
 DATE_RE = re.compile(r"\b(19|20)\d{2}-\d{2}-\d{2}\b")
-DEC_RE = re.compile(r"(?<![\w.])-?\d+\.\d+(?![\w.])")
+DEC_RE = re.compile(r"(?<![\w.])-?\d+(?:\.\d+(?:[eE][-+]?\d+)?|[eE][-+]?\d+)(?![\w.])")   # 1.5, 1.5e-03, 2e+05
+
+
+def _tol(tok):
+    """Half a unit in the last printed digit of a number token (plain or e-notation)."""
+    t = tok.lower()
+    mant, exp = (t.split("e") + ["0"])[:2]
+    k = len(mant.split(".")[1]) if "." in mant else 0
+    return 0.5 * 10 ** (int(exp) - k)
 
 
 def whitelist_scan(text, values):
@@ -291,11 +335,11 @@ def whitelist_scan(text, values):
         if DATE_RE.search(line) and decs:
             bad.append("dated row with a decimal number: " + line[:120])
         for tok in decs:
-            k = len(tok.split(".")[1])
             v = float(tok)
+            tol = _tol(tok)
             i = np.searchsorted(values, v)
             for j in (i - 1, i):
-                if 0 <= j < len(values) and abs(values[j] - v) <= 0.5 * 10 ** -k + 1e-12:
+                if 0 <= j < len(values) and abs(values[j] - v) <= tol + 1e-12:
                     bad.append("mock value %s printed: %s" % (tok, line[:120]))
                     break
     return bad
@@ -319,7 +363,8 @@ def run_job(local, bbg, name):
 
 V1_COMMIT = "0ff846f799afd968ec1e4d107778ce8f8d8e9f0c"      # block 2 commit: bbgdata-1.0.0
 NEW_COLS = ["source", "first_pull_status", "first_pull_first", "first_pull_count", "first_pull_n_design",
-            "repull_status"]
+            "repull_status", "copy_group"]
+TABLES = ("design/monthly.pkl", "design/daily.pkl", "sealed/monthly.pkl", "sealed/daily.pkl")
 
 
 def make_local(tmp, sub, bbgdata_src, jobs):
@@ -345,7 +390,24 @@ def _catalog_rows(path, drop=()):
     return [[r[i] for i in keep] for r in rows]
 
 
+def check_copy_detection(work):
+    """First pull: the planted group of 6 identical blocks is 'copy' (not usable), the alias pair stays ok."""
+    import bbgdata
+    cat = bbgdata.read_catalog(work)
+    st = {(r.file, r.sheet, r.ticker): r for r in cat.itertuples()}
+    for k in COPY_GROUP:
+        rows = cat[(cat.file == k[0]) & (cat.sheet == k[1]) & (cat.ticker == k[2])]
+        assert len(rows) and (rows["status"] == "copy").all() and (rows["copy_group"] == "6").all(), k
+        assert (rows["series_id"] == "").all(), k
+    for k in ALIAS:
+        assert st[k].status == "ok" and st[k].copy_group == "", k
+    assert (cat["status"] == "copy").sum() == sum(len(cat[(cat.file == k[0]) & (cat.sheet == k[1]) &
+                                                          (cat.ticker == k[2])]) for k in COPY_GROUP)
+    print("  copy detection: planted group of 6 identical blocks marked copy, alias pair kept ok")
+
+
 def check_no_r_identity(tmp, bbg, work):
+    """No R files: bbgdata 1.2.0 = bbgdata 1.0.0 except exactly the copy blocks (and the new catalog columns)."""
     try:
         src = subprocess.run(["git", "-C", REPO, "show", V1_COMMIT + ":tools/bbgq/lib/bbgdata.py"],
                              capture_output=True, text=True, timeout=60)
@@ -358,18 +420,23 @@ def check_no_r_identity(tmp, bbg, work):
     run_job(loc, bbg, "bbg_build_v1")
     w0 = os.path.join(loc, "work", "bbg")
     w1 = os.path.join(work, "bbg")
-    for part in ("design", "sealed"):
-        for nm in ("monthly.pkl", "daily.pkl"):
-            a, b = open(os.path.join(w0, part, nm), "rb").read(), open(os.path.join(w1, part, nm), "rb").read()
-            assert a == b, "no-R build: %s/%s differs from bbgdata 1.0.0" % (part, nm)
-    assert not os.path.exists(os.path.join(w1, "design", "replaced_first.pkl"))
+    copy_tk = {k[2] for k in COPY_GROUP}
     c0 = _catalog_rows(os.path.join(w0, "catalog.csv"))
+    i_tk, i_sid = c0[0].index("ticker"), c0[0].index("series_id")
+    copy_ids = {r[i_sid] for r in c0[1:] if r[i_tk] in copy_tk and r[i_sid]}
+    for part in TABLES:
+        a, b = pd.read_pickle(os.path.join(w0, part)), pd.read_pickle(os.path.join(w1, part))
+        dropped = [c for c in a.columns if c in copy_ids]
+        assert set(a.columns) - set(b.columns) == set(dropped), part
+        assert a.drop(columns=dropped).equals(b) and list(a.drop(columns=dropped).columns) == list(b.columns), part
+    assert not os.path.exists(os.path.join(w1, "design", "replaced_first.pkl"))
     c1 = _catalog_rows(os.path.join(w1, "catalog.csv"), drop=NEW_COLS)
-    assert c0 == c1, "no-R build: catalog differs from bbgdata 1.0.0 beyond the new columns"
+    keep = lambda rows: [r for r in rows if r[i_tk] not in copy_tk]          # noqa: E731
+    assert keep(c0) == keep(c1), "no-R build: catalog differs from bbgdata 1.0.0 beyond the copy blocks"
     full = _catalog_rows(os.path.join(w1, "catalog.csv"))
     assert full[0][-len(NEW_COLS):] == NEW_COLS and all(r[full[0].index("source")] == "first" for r in full[1:])
-    print("  no R files: tables byte-identical to bbgdata 1.0.0, catalog identical apart from the %d new columns "
-          "(%d rows)" % (len(NEW_COLS), len(c0) - 1))
+    print("  no R files: tables equal to bbgdata 1.0.0 apart from exactly the %d copy series, catalog identical "
+          "apart from the copy blocks and the %d new columns (%d rows)" % (len(copy_ids), len(NEW_COLS), len(c0) - 1))
 
 
 def check_repull(tmp, bbg, local, work, truth, cat1, lock1):
@@ -383,28 +450,44 @@ def check_repull(tmp, bbg, local, work, truth, cat1, lock1):
         shutil.copy(os.path.join(BBGQ, "jobs", j + ".py"), os.path.join(local, "jobs"))
     outb = run_job(local, bbg, "bbg_build_v2")
     outc = run_job(local, bbg, "bbg_check_v2")
-    assert "ignored %s" % R_CUT_TWIN in outb, "the older _CUT twin was not reported as ignored"
+    for twin in (R_CUT_TWIN, R_SMALL_TWIN):
+        assert re.search(r"CANDIDATE R\d \| %s \| .*\| not used" % re.escape(twin), outb), twin + " was used"
+    assert re.search(r"CANDIDATE R2 \| %s \| _CUT no \|.*\| USED" % re.escape(R_NAMES["R2"]), outb)
+    assert re.search(r"CANDIDATE R7 \| %s \| _CUT no \|.*\| USED" % re.escape(R_NAMES["R7"]), outb)
     assert outb.count("RSHEET ") >= 20 and "MERGE ALL" in outb
+    assert "read as 3|FXBasis" in outb and "matches no known sheet of file 1" in outb
+    assert re.search(r"COPYGROUP R6 \| blocks 5 \| different tickers 5", outb), "R copy group not reported"
+    assert re.search(r"COPYGROUP 4 \| blocks 6 \| different tickers 6", outb), "first-pull copy group not reported"
+    assert re.search(r"COPIES 4\|EquityIndexes \| blocks 6", outb)
+    assert re.search(r"MERGE 1\|Curves \|.*shorter, first kept 1", outb) and "CL2 Comdty|PX_LAST (R2)" in outb
+    assert re.search(r"SHORTER 1\|Curves \| 1 \| CL2 Comdty\|PX_LAST", outc), "shorter re-pull not in the check"
+    assert re.search(r"COPIES 4\|EquityIndexes \| first-pull copies replaced 24 \| still copy \(unusable\) 24", outc)
+    assert re.search(r"COPIES 3\|FXForwards \| first-pull copies replaced 0 \| still copy \(unusable\) 0 \| "
+                     r"re-pulled copies ignored 5", outc)
     cat2 = bbgdata.read_catalog(work)
     man = bbgdata.Panel(work).manifest
     assert sorted(k for k in man["workbooks"] if k.startswith("R")) == sorted(R_NAMES), man["workbooks"].keys()
-    assert all(w["name"] != R_CUT_TWIN for w in man["workbooks"].values())
+    assert all(w["name"] not in (R_CUT_TWIN, R_SMALL_TWIN) for w in man["workbooks"].values())
     lock2 = re.search(r"LOCK ID ([0-9a-f]{64})", outb).group(1)
     assert lock2 != lock1, "lock id did not change when R files appeared"
     assert not cat2.duplicated(["file", "sheet", "col", "field"]).any()
+    assert not (cat2["ticker"] == "ZZNONE Index").any(), "a block of an unmatched R sheet was read"
 
     # replacement rule, per (original file, sheet, ticker, field)
     r_occ = Counter((d, s, tk, f) for d, s, tk, c, fs in truth["r_blocks"] for f in fs)
     first_occ = Counter((r.file, r.sheet, r.ticker, r.field) for r in cat1.itertuples())
     old_first = {(r.file, r.sheet, r.ticker, r.field): r for r in cat1.itertuples()}
     g2 = {k: v for k, v in cat2.groupby(["file", "sheet", "ticker", "field"])}
-    n_rep = n_kept = n_add = 0
+    n_rep = n_kept = n_add = n_short = n_rcopy = 0
     for k, n in r_occ.items():
         rows = g2[k]
         rkey = placed[k[:3]][0]
-        if k[:3] in R_REQUESTING:
-            assert (rows["source"] == "first").all() and rows["repull_status"].str.startswith(rkey + ":").all(), k
-            n_kept += len(rows)
+        if k[:3] in R_REQUESTING or k[:3] in R_SHORT or k[:3] in R_COPY:
+            tag = "requesting" if k[:3] in R_REQUESTING else ("shorter" if k[:3] in R_SHORT else "copy")
+            assert (rows["source"] == "first").all() and (rows["repull_status"] == "%s:%s" % (rkey, tag)).all(), k
+            n_kept += tag == "requesting"
+            n_short += tag == "shorter"
+            n_rcopy += tag == "copy"
         elif first_occ[k] == 0:
             assert len(rows) == n and (rows["source"] == rkey).all() and (rows["col"] >= 100000).all(), k
             n_add += n
@@ -421,8 +504,21 @@ def check_repull(tmp, bbg, local, work, truth, cat1, lock1):
     assert st[("5", "ComFront", "CL1 Comdty")] == ("R3", "requesting")
     assert st[("4", "EquityIndexes", "SPW Index")] == ("R3", "requesting")
     assert st[("1", "Yields", "GDBR10 Index")] == ("first", "")
-    print("  re-pull rule: %d replaced, %d kept first (re-pull still loading), %d added; lock id changed" % (
-        n_rep, n_kept, n_add))
+    in_r3 = {k for k in COPY_GROUP if k in placed}
+    assert len(in_r3) == 3
+    for k in COPY_GROUP:
+        rows = cat2[(cat2.file == k[0]) & (cat2.sheet == k[1]) & (cat2.ticker == k[2])]
+        if k in in_r3:
+            assert (rows["source"] == "R3").all() and (rows["first_pull_status"] == "copy").all() and \
+                (rows["status"] == "ok").all(), k
+        else:
+            assert (rows["source"] == "first").all() and (rows["status"] == "copy").all(), k
+    for k in ALIAS:
+        assert st[k] == ("R5", "ok"), k
+    assert n_short == 1 and n_rcopy == 5
+    print("  re-pull rule: %d replaced, %d kept first (re-pull still loading), %d kept (re-pull shorter), %d kept "
+          "(re-pull copies), %d added; first-pull copies of 3 tickers replaced, 3 unusable; _CUT twin and smaller twin ignored; "
+          "odd sheet name matched, unknown sheet skipped; lock id changed" % (n_rep, n_kept, n_short, n_rcopy, n_add))
 
     # check_v2: replaced series compared with their first-pull copies (counts only)
     m = re.search(r"REPULL ALL \| compared (\d+) \| months compared (\d+) \| months equal (\d+) \| all equal "
@@ -436,7 +532,7 @@ def check_repull(tmp, bbg, local, work, truth, cat1, lock1):
     # blocks in place (and the added block appended), without R files -> same tables and catalog
     asif = os.path.join(tmp, "asif pulled")
     os.makedirs(asif)
-    rk = {k for k in placed if k not in R_REQUESTING}           # replaced and added blocks carry re-pull values
+    rk = {k for k in placed if k not in R_REQUESTING and k not in R_SHORT and k not in R_COPY}   # replaced, added
     labels = {k + (i,): lab for k in rk for i, lab in enumerate(placed[k][1])}
     t2 = {"release": {}}
     touched = sorted({k[0] for k in placed})
@@ -446,12 +542,22 @@ def check_repull(tmp, bbg, local, work, truth, cat1, lock1):
             shutil.copy(os.path.join(bbg, nm), os.path.join(asif, nm))
     la = make_local(tmp, "local_asif", os.path.join(BBGQ, "lib", "bbgdata.py"), ["bbg_build_v1"])
     run_job(la, asif, "bbg_build_v1")
-    ma = json_load(os.path.join(la, "work", "bbg", "manifest.json"))
-    for k in ("design/monthly.pkl", "design/daily.pkl", "sealed/monthly.pkl", "sealed/daily.pkl"):
-        assert ma["tables"][k]["content_sha256"] == man["tables"][k]["content_sha256"], "as-if tables differ: " + k
+    # the 3 first-pull copies without a re-pull stay 'copy' in the merged build; in the as-if workbook only 3 identical
+    # blocks remain (below the group size), so they are compared separately above and left out here
+    rem = {k[2] for k in COPY_GROUP if k not in in_r3}
+    la_cat = bbgdata.read_catalog(os.path.join(la, "work"))
+    rem_ids = set(la_cat.loc[la_cat["ticker"].isin(rem) & (la_cat["series_id"] != ""), "series_id"])
+    for k in TABLES:
+        a = pd.read_pickle(os.path.join(la, "work", "bbg", k))
+        b = pd.read_pickle(os.path.join(work, "bbg", k))
+        a = a.drop(columns=[c for c in a.columns if c in rem_ids])
+        assert a.equals(b) and list(a.columns) == list(b.columns), "as-if tables differ: " + k
     skip = ["file_name", "col"] + NEW_COLS
-    ca = sorted(_catalog_rows(os.path.join(la, "work", "bbg", "catalog.csv"), drop=skip)[1:])
-    cb = sorted(_catalog_rows(os.path.join(work, "bbg", "catalog.csv"), drop=skip)[1:])
+    i_tk = _catalog_rows(os.path.join(work, "bbg", "catalog.csv"), drop=skip)[0].index("ticker")
+    ca = sorted(r for r in _catalog_rows(os.path.join(la, "work", "bbg", "catalog.csv"), drop=skip)[1:]
+                if r[i_tk] not in rem)
+    cb = sorted(r for r in _catalog_rows(os.path.join(work, "bbg", "catalog.csv"), drop=skip)[1:]
+                if r[i_tk] not in rem)
     assert ca == cb, "catalog differs from the as-if build: %s" % ([r for r in cb if r not in ca][:3])
     print("  same tables and catalog (ids, duplicates, live sources, untouched) as a build with the re-pulled blocks "
           "placed in the original sheets")
@@ -604,6 +710,7 @@ def main():
 
         # 9. no R files: bbgdata 1.1.0 gives the same tables, byte for byte, and the same catalog apart from the new
         #    columns as bbgdata 1.0.0 (taken from git at the block-2 commit)
+        check_copy_detection(work)
         check_no_r_identity(tmp, bbg, work)
 
         # 10. re-pull: R1..R7 mocks (+ an older _CUT twin), build_v2 and check_v2

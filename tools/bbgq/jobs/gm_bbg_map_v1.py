@@ -38,7 +38,8 @@ try:
             print("MARKET %s" % last)
         if r["route"] == "Bloomberg":
             print("   %s | Bloomberg | %s | %s | %s | %d | %d | %s" % (
-                r["input"], r["sid"], r["status"], r["first"], r["n"], r["served"], "yes" if r["used"] else "no"))
+                r["input"], r["sid"], r["status"], r["first"], r["n"], r["served"],
+                r.get("used_note") or ("yes" if r["used"] else "no")))
         else:
             print("   %s | %s" % (r["input"], r["route"]))
     # summary per input type
@@ -47,7 +48,7 @@ try:
     for r in rows:
         if r["route"] != "Bloomberg":
             continue
-        st = "used" if r["used"] else ("held back" if r["status"].startswith("held back") else
+        st = "used" if r["used"] else r.get("used_note") or ("held back" if r["status"].startswith("held back") else
                                        ("present, too short" if r["status"].startswith("ok") else
                                         "missing or failed (%s)" % r["status"]))
         by.setdefault(r["input"], Counter())[st] += 1

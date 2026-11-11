@@ -109,6 +109,10 @@ class Cut:
             return x
         return x[x.index <= self.T + pd.Timedelta(hours=23, minutes=59)]
 
+    def _wb(self, wb):
+        """gm.bloomberg workbook dict {sheet: {ticker: DataFrame(month index)}}: drop months after T."""
+        return {sh: {tk: df.loc[df.index <= self.Tp] for tk, df in blocks.items()} for sh, blocks in wb.items()}
+
     def _wrap(self, mod, name, post):
         orig = getattr(mod, name)
 
@@ -143,6 +147,7 @@ class Cut:
             self._wrap(G, name, self._pi)
         for name in ("_daily_csv", "cb_daily"):
             self._wrap(DL, name, self._d)
+        self._wrap(M["BBG"], "load", self._wb)       # Bloomberg inputs (adapter cache or old file): months <= T
         self.saved.append((pd, "read_excel", pd.read_excel))
         pd.read_excel = self._read_excel(pd.read_excel)
         G._SDMX.clear()
@@ -161,15 +166,24 @@ class Cut:
 # =====================================================================================================================
 # one engine run
 # =====================================================================================================================
+def bbg_dict(bbg, asof):
+    """bbg: None, a gm.bloomberg workbook dict, or a function asof -> dict (e.g. lambda T: bbg_panel.Source(work,
+    asof=T).workbook()). Returns the dict for this date (a dict is used as it is; Cut drops its months after T)."""
+    if bbg is None:
+        return None
+    return bbg(asof) if callable(bbg) else bbg
+
+
 def run(free_dir=None, cut=None, M=None, bbg=None):
     """panel -> signals (E, C, V as gm.signals.main computes them) -> daily returns -> BASE and CANDIDATE books
     (gm.book.run with daily data and the signals, as gm.protocol does). cut: a date T for the truncation test.
-    bbg: optional gm.bloomberg workbook dict from bbg_panel.Source(...).workbook() (Bloomberg inputs; None = free data
-    only, the reference run)."""
+    bbg: optional Bloomberg inputs, a gm.bloomberg workbook dict or a function asof -> dict (see bbg_dict; with a cut
+    the function is called with T, so the adapter's as-of guard applies; None = free data only, the reference run)."""
     M = M or setup(free_dir)
     M["BBG"]._CACHE.clear()
-    if bbg is not None:
-        M["BBG"]._CACHE["wb"] = bbg
+    wb = bbg_dict(bbg, cut if cut is not None else "2010-12-31")
+    if wb is not None:
+        M["BBG"]._CACHE["wb"] = wb
     P, G, DL, B, CF = M["P"], M["G"], M["DL"], M["B"], M["CF"]
     t0 = time.time()
     ctx = Cut(M, cut) if cut is not None else contextlib.nullcontext()
@@ -188,7 +202,8 @@ def run(free_dir=None, cut=None, M=None, bbg=None):
             books[name] = B.run(R, cfg=getattr(CF, name), daily=D, S=S)
         trend = B.trend_signal(R, CF.BASE, books["BASE"]["vol"], S)
     del sink
-    out = {"R": R, "S": S, "D": D, "books": books, "trend": trend, "seconds": time.time() - t0, "cut": cut}
+    out = {"R": R, "S": S, "D": D, "books": books, "trend": trend, "seconds": time.time() - t0, "cut": cut,
+           "bbg_tickers": sum(len(b) for b in wb.values()) if wb else 0}
     if cut is not None:
         Tp = pd.Period(pd.Timestamp(cut), "M")
         out["after_cut_empty"] = bool(R.loc[R.index > Tp].isna().all().all()) and \
@@ -340,7 +355,7 @@ def _mask(x, T):
     return y
 
 
-def run_isolated(full, T, M):
+def run_isolated(full, T, M, bbg=None):
     """Each stage ALONE: its inputs come from the full run, cut at T (values after T set to missing), so a failure here
     is the stage's own (its code uses data after T), not one inherited from an earlier stage.
       signals: gm.signals.econ_scores / carry_values / value_values on the cut full-run panel, loaders cut at T
@@ -349,6 +364,10 @@ def run_isolated(full, T, M):
                family positions, positions, book returns)"""
     G, B, CF = M["G"], M["B"], M["CF"]
     Rm, Dm = _mask(full["R"], T), _mask(full["D"], T)
+    M["BBG"]._CACHE.clear()
+    wb = bbg_dict(bbg, T)
+    if wb is not None:
+        M["BBG"]._CACHE["wb"] = wb
     sink = io.StringIO()
     with Cut(M, T), contextlib.redirect_stdout(sink):
         S = {"E": G.econ_scores(Rm), "C": G.carry_values(Rm), "V": G.value_values(Rm)}
@@ -395,6 +414,31 @@ def gm_code_hashes(gm_dir=None):
             with open(os.path.join(gm_dir, n), "rb") as f:
                 out[n] = hashlib.sha256(f.read()).hexdigest()
     return out
+
+
+def gm_data_hashes(gm_dir=None):
+    """sha256 of every csv file in gm/data (small manual files that travel inside lib\\gm\\data)."""
+    if gm_dir is None:
+        import gm
+        gm_dir = os.path.dirname(os.path.abspath(gm.__file__))
+    d = os.path.join(gm_dir, "data")
+    out = {}
+    for n in sorted(os.listdir(d)) if os.path.isdir(d) else []:
+        if n.lower().endswith(".csv"):
+            with open(os.path.join(d, n), "rb") as f:
+                out[n] = hashlib.sha256(f.read()).hexdigest()
+    return out
+
+
+def inputs_match(manifest, ref):
+    """Shipped inputs vs the reference: same file list and the same original sizes (engine_ref.json keeps no hashes of
+    the input files, which hold data after 2010); with an older reference that has a digest, the digest."""
+    if "digest" in ref["inputs"]:
+        return original_digest(manifest) == ref["inputs"]["digest"], "digest"
+    rf = {k: v for k, v in ref["inputs"]["files"].items() if not k.startswith("gm_data/")}
+    ok = set(rf) == set(manifest["files"]) and all(
+        manifest["files"][k].get("original_bytes", -1) == rf[k]["bytes"] for k in rf)
+    return ok, "file list and sizes"
 
 
 def config_hashes(M=None):
@@ -504,6 +548,12 @@ CAUSES = {
            "fix": "drop the length gate (vol.daily_ewma already needs 40 observations) or apply it per date "
                   "(observations up to t)"},
 }
+CAUSES["C4"] = {
+    "where": "gm/panel.py build() (BBG.commodity_return: notna().sum() > 24, alternative markets > 36), "
+             "gm/bloomberg.py commodity_return (> 24) and gm/signals.py carry_values (commodity_carry > 24)",
+    "why": "with Bloomberg inputs, whether a commodity uses the Bloomberg series at all depends on how many months it "
+           "has over the whole sample: a cut before month 25 switches the market back to free data",
+    "fix": "decide month by month (use the Bloomberg value from its first month, or require 24 months up to t)"}
 STAGE_ORDER = ["panel returns", "daily returns", "signal econ", "signal carry", "signal value",
                "signal trend (sign 1/3/12)", "volatility BASE", "volatility CANDIDATE"]
 
@@ -561,11 +611,17 @@ def panel_causes(full_R, cut_R, T):
     return out
 
 
-def truncation_report(free_dir, dates, out=print, M=None):
-    """Full run, then per cut date: end-to-end run cut at T and each stage alone; prints the table and the causes."""
+def truncation_report(free_dir, dates, out=print, M=None, bbg=None, bbg_note=""):
+    """Full run, then per cut date: end-to-end run cut at T and each stage alone; prints the table and the causes.
+    bbg: Bloomberg inputs (see run); a dict is cut at T by Cut like every free loader (observation month <= T)."""
     t0 = time.time()
     M = M or setup(free_dir)
-    full = run(M=M)
+    full = run(M=M, bbg=bbg)
+    if full["bbg_tickers"]:
+        out("BLOOMBERG INPUTS: YES, %d tickers through gm.bloomberg (%s); cut at T like the free inputs" % (
+            full["bbg_tickers"], bbg_note or "adapter"))
+    else:
+        out("BLOOMBERG INPUTS: NONE (free data only; gm.bloomberg serves nothing, so its paths are not exercised)")
     out("full run %.0fs; cut dates: %s" % (time.time() - t0, ", ".join(dates)))
     out("columns: stage | end-to-end PASS/FAIL, differing market-months / compared, max abs diff, months first..last "
         "| stage alone PASS/FAIL, differing | markets (most differing first)")
@@ -575,12 +631,16 @@ def truncation_report(free_dir, dates, out=print, M=None):
         if pd.Timestamp(T) > pd.Timestamp("2010-12-31"):
             out("CUT %s skipped: after the design period" % T)
             continue
-        c = run(M=M, cut=T)
-        iso = run_isolated(full, T, M)
+        c = run(M=M, cut=T, bbg=bbg)
+        iso = run_isolated(full, T, M, bbg=bbg)
         e2e = {r["stage"]: r for r in trunc_compare(full, c, T)}
         own = {r["stage"]: r for r in trunc_compare(full, iso, T)}
         e2e["daily returns"] = daily_diff(full["D"], c["D"], T)
         pc = panel_causes(full["R"], c["R"], T)
+        if full["bbg_tickers"]:
+            for m_, p_ in pc.items():
+                if m_.startswith("cm_"):
+                    p_["causes"] = ["C4" if x == "unattributed" else x for x in p_["causes"]]
         n_fail = sum(1 for r in e2e.values() if not r["pass"])
         out("CUT %s | inputs after T seen by the engine: %s | stages failing end-to-end %d of %d | %.0fs" % (
             T, "none" if c["after_cut_empty"] else "SOME (cut incomplete)", n_fail, len(e2e), time.time() - t1))
@@ -614,6 +674,9 @@ def truncation_report(free_dir, dates, out=print, M=None):
             if o["pass"]:
                 up = [u for u in _upstream(k) if u in e2e and not e2e[u]["pass"]]
                 out("  cause %s: inherited (stage alone passes) from %s" % (k, ", ".join(up) or "?"))
+            elif full["bbg_tickers"] and k == "signal carry" and all(x.startswith("cm_") for x in o["markets"]):
+                used.add("C4")
+                out("  cause %s: C4 (stage alone fails on commodity markets only, %d market-months)" % (k, o["differ"]))
             else:
                 out("  cause %s: OWN look-ahead (stage alone fails, %d market-months): not attributed" % (k, o["differ"]))
                 used.add("own:" + k)
@@ -632,5 +695,7 @@ def truncation_report(free_dir, dates, out=print, M=None):
         out("TRUNC %s | %s | end-to-end failing stages %d of %d | stages failing alone %d" % (
             T, "PASS" if nf == 0 else "FAIL", nf, n, no))
     allpass = all(nf == 0 for _, nf, _, _ in summary)
-    out("TRUNCATION TEST %s" % ("PASS" if allpass else "FAIL (honest failures listed above; nothing was fixed)"))
+    out("TRUNCATION TEST %s | Bloomberg inputs %s" % (
+        "PASS" if allpass else "FAIL (honest failures listed above; nothing was fixed)",
+        "YES (%d tickers)" % full["bbg_tickers"] if full["bbg_tickers"] else "NONE (free data only)"))
     return summary
