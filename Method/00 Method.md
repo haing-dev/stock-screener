@@ -4,7 +4,7 @@ tags: [method, index]
 # Method: how every note was made (traceability)
 
 **From 2026-11-11 all new work follows [[WORKFLOW]] (pod shop workflow v2.1: steps, agent per step, tests, budget).**
-Data: [[Bloomberg job runner]] (files stay on the PC, reports only), [[Bloomberg inventory 2026-11-10]], [[Bloomberg data lock v1]] (block 2; hashes in `_data/bbg_LOCK_v1.json`).
+Data: [[Bloomberg job runner]] (files stay on the PC, reports only), [[Bloomberg inventory 2026-11-10]], [[Bloomberg data lock v1]] (block 2; hashes in `_data/bbg_LOCK_v1.json`). [[Block 3 engine on the PC]] (reproduction pass, truncation causes C1-C4).
 The steps below describe how the existing notes were made.
 
 1. **Transcripts** (originals in the Macro Transcripts folder) are split into ~700-word chunks [Cnn].
