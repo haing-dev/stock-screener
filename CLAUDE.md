@@ -103,9 +103,19 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Re-pull set (2026-11-11, user pulls Fri 13 Nov): docs/data_requests/bloomberg_repull_2026-11-13/R1..R7 (builder
   build_bloomberg_repull.py; 1,283 series; sheets named '<file digit> <sheet>'; Check sheet with live STATUS and a
   'should start by' month per series). Copy on the PC: ...\Bloomberg_UBC_pull_2026-11-04\repull_2026-11-13; pulled files go to
-  'pulled results' (current reader ignores R files). AFTER the pull: extend bbgdata so R sheets replace the same sheet of files
-  1/3/5/4, rebuild -> lock v2. Cause of the cut-off unknown: the cut-off copies also DISAGREE with other copies in every
-  overlapping month (30 pairs, 19/19); job tools/bbgq/jobs/bbg_diag_v1.py is queued on the PC (runner stopped ticking 07:44).
+  'pulled results'. AFTER the pull: run jobs bbg_build_v2 + bbg_check_v2 (reader bbgdata-1.2.0 merges R files: an ok re-pull
+  replaces the first-pull block unless it is shorter; _CUT twins never win) -> lock v2 (docs/research/bbg/LOCK_v2.json).
+  CUT-OFF EXPLAINED (bbg_diag_v1/v2 in tools/bbgq/results): the late blocks are COPIES of one series (file 1: 355 blocks =
+  the 209 numbers of JYBSV1 Curncy; file 3: 481 blocks with one set of 271 numbers), cause not proven (add-in glitch
+  suspected). The Check sheet flags copies ("WRONG NUMBERS", columns J/K); the reader gives them status `copy` (unusable).
+- 2026-11-11 status: WORKFLOW block 3 DONE (gate: reproduction PASS, truncation FAIL with 3 causes). Note
+  docs/research/bbg/BLOCK3_engine_2026-11-11.md. Engine on the PC: tools/bbgq/build_engine.py -> engine_pkg/ (git-ignored;
+  gm/ unchanged -> local\lib\gm, free inputs zip -> local\work\free), reference tools/bbgq/engine_ref.json (design period),
+  jobs gm_repro_v1 (PC: 24/24 PASS, diff 0), gm_trunc_v1 (PC = cloud), gm_bbg_map_v1, adapter lib/bbg_panel.py (mocks only).
+  Look-ahead found in the INPUT layer (rules clean; 2010-12 cut passes): C1 panel.py dividend mean up to 2010, C2 panel.py
+  local-rate stand-in start, C3 daily.py >500-day gate, C4 >24/>36-month gates on Bloomberg series. NOT fixed: they need ONE
+  new registered engine version (gm/CHANGES.md, new reference) before Batch A; C2 fix = `& rl.notna().cummax()`.
+  Usage: Opus builder ~566k tokens, Opus checker ~317k. Next: lock v2 after the Friday pull; block 4/5 on the user's go.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
