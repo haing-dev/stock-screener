@@ -5,7 +5,7 @@
 - Method/: every spec, unit list, priority list, speaker aliases, cross-check routing, pipeline overview
 - _data/: raw JSON bundles (ledger, maps, investors, papers, Fable input packs) + README
 usage: python3 build_fable.py <repo_commit>"""
-import csv, glob, json, os, re, sys
+import csv, glob, json, os, re, shutil, sys
 
 L = os.path.dirname(os.path.abspath(__file__))
 V = os.path.join(L, "vault")
@@ -37,7 +37,7 @@ def notes():
 N = notes()
 
 
-def linkify(t, blog=True):
+def linkify(t, blog=True, gh=None):
     def cl(m):
         i = m.group(0); src = i.split("-")[0]
         return "[[%s#^%s|%s]]" % (N[src], bid(i), i) if src in N else i
@@ -52,7 +52,7 @@ def linkify(t, blog=True):
         p = PATHS.get(key) or (name if os.path.exists("/home/claude/stock-screener/" + name) else None)
         if not p:
             return m.group(0)
-        return "[%s](%s%s#L%s%s)" % (m.group(0), GH, p, a, "-L" + b if b else "")
+        return "[%s](%s%s#L%s%s)" % (m.group(0), gh or GH, p, a, "-L" + b if b else "")
     t = re.sub(r"(?<![\[/\w])((?:[\w-]+/)*[\w.-]+?(?:\.py|\.md|\.csv)?):(\d+)(?:-(\d+))?(?![\]\w])", code, t)
     return t
 
@@ -73,9 +73,9 @@ def main():
         if u["id"] == "U01":   # F1 cites QP01 claims by short id (C05-1)
             body = re.sub(r"(?<![\w-])C(\d{2})-([0-9]+|[A-Z][0-9]+)(?![\w-])", r"QP01-C\1-\2", body)
         head = ["---", "tags: [fable, foundation]", "unit: %s" % u["id"], 'name: "%s"' % u["name"], "model: %s, effort max" % (u.get("model") or "fable"),
-                "inputs: _data/foundation_packs/%s.json" % u["id"], "code_commit: %s" % COMMIT[:7], "---",
-                "> Claim ids link to the verbatim quote in its source note; B-ids link to the [[Carver blog digest]]; code refs link to GitHub at commit %s. Brief: [[FOUNDATION_SPEC]]." % COMMIT[:7], ""]
-        open(os.path.join(F, name + ".md"), "w").write("\n".join(head) + linkify(body) + "\n")
+                "inputs: _data/foundation_packs/%s.json" % u["id"], "code_commit: %s" % (u.get("code_commit") or COMMIT)[:7], "---",
+                "> Claim ids link to the verbatim quote in its source note; B-ids link to the [[Carver blog digest]]; code refs link to GitHub at commit %s (the repo as it was when this note was written). Brief: [[FOUNDATION_SPEC]]." % (u.get("code_commit") or COMMIT)[:7], ""]
+        open(os.path.join(F, name + ".md"), "w").write("\n".join(head) + linkify(body, gh="https://github.com/haing-dev/stock-screener/blob/%s/" % (u.get("code_commit") or COMMIT)) + "\n")
         done.append((u, name))
     # blog digest
     dg = json.load(open(os.path.join(L, "fable", "carver_blog_digest.json")))
@@ -106,7 +106,8 @@ def main():
     M = os.path.join(V, "Method"); os.makedirs(M, exist_ok=True)
     specs = {"EXTRACT_SPEC": "EXTRACT_SPEC.md", "CROSSCHECK_SPEC": "CROSSCHECK_SPEC.md", "TRANSCRIPT_MAP_SPEC": "TRANSCRIPT_MAP_SPEC.md",
              "INVESTOR_SYNTH_SPEC": "INVESTOR_SYNTH_SPEC.md", "PAPER_SPEC": "papers/PAPER_SPEC.md", "F1_SPEC": "fable/F1_SPEC.md",
-             "FOUNDATION_SPEC": "foundation/FOUNDATION_SPEC.md"}
+             "FOUNDATION_SPEC": "foundation/FOUNDATION_SPEC.md", "VARIANTS": "/home/claude/stock-screener/docs/research/fable/foundation/VARIANTS.md", "WORKFLOW": "/home/claude/stock-screener/docs/research/WORKFLOW.md", "X_EXTRACT_BRIEF": "X_EXTRACT_BRIEF.md",
+             "Bloomberg inventory 2026-11-10": "/home/claude/stock-screener/docs/research/bbg/inventory_2026-11-10.md", "Bloomberg data lock v1": "/home/claude/stock-screener/docs/research/bbg/LOCK_v1_check_2026-11-11.md", "Bloomberg job runner": "/home/claude/stock-screener/tools/bbgq/README.md"}
     for n, p in specs.items():
         open(os.path.join(M, n + ".md"), "w").write("---\ntags: [method, spec]\nfile: %s\n---\n" % p + open(os.path.join(L, p)).read())
     u = ["---", "tags: [method]", "---", "# Foundation units", "", "| Unit | Name | Inputs | Topic |", "|---|---|---|---|"]
@@ -134,6 +135,10 @@ def main():
 tags: [method, index]
 ---
 # Method: how every note was made (traceability)
+
+**From 2026-11-11 all new work follows [[WORKFLOW]] (pod shop workflow v2.1: steps, agent per step, tests, budget).**
+Data: [[Bloomberg job runner]] (files stay on the PC, reports only), [[Bloomberg inventory 2026-11-10]], [[Bloomberg data lock v1]] (block 2; hashes in `_data/bbg_LOCK_v1.json`).
+The steps below describe how the existing notes were made.
 
 1. **Transcripts** (originals in the Macro Transcripts folder) are split into ~700-word chunks [Cnn].
 2. **Layer 0 extraction** (Sonnet, [[EXTRACT_SPEC]]) -> claims with verbatim quotes; **cross-check** by a second blind
@@ -165,6 +170,7 @@ chunk in the original transcript or PDF page. Code refs link to GitHub at a fixe
     for p in glob.glob(os.path.join(L, "foundation", "packs", "*.json")):
         json.dump(json.load(open(p)), open(os.path.join(D, "foundation_packs", os.path.basename(p)), "w"), ensure_ascii=False)
     json.dump(dg, open(os.path.join(D, "carver_blog_digest.json"), "w"), ensure_ascii=False, indent=1)
+    shutil.copy("/home/claude/stock-screener/docs/research/bbg/LOCK_v1.json", os.path.join(D, "bbg_LOCK_v1.json"))
     open(os.path.join(D, "README.md"), "w").write(
         "---\ntags: [data]\n---\n# Raw data (JSON)\n\nEach file is a dict keyed by source id (MTnnn / QPnn / investor slug).\n\n" +
         "\n".join("- `%s`: %d entries" % (k, v) for k, v in n.items()) +

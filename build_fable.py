@@ -5,7 +5,7 @@
 - Method/: every spec, unit list, priority list, speaker aliases, cross-check routing, pipeline overview
 - _data/: raw JSON bundles (ledger, maps, investors, papers, Fable input packs) + README
 usage: python3 build_fable.py <repo_commit>"""
-import csv, glob, json, os, re, sys
+import csv, glob, json, os, re, shutil, sys
 
 L = os.path.dirname(os.path.abspath(__file__))
 V = os.path.join(L, "vault")
@@ -106,7 +106,8 @@ def main():
     M = os.path.join(V, "Method"); os.makedirs(M, exist_ok=True)
     specs = {"EXTRACT_SPEC": "EXTRACT_SPEC.md", "CROSSCHECK_SPEC": "CROSSCHECK_SPEC.md", "TRANSCRIPT_MAP_SPEC": "TRANSCRIPT_MAP_SPEC.md",
              "INVESTOR_SYNTH_SPEC": "INVESTOR_SYNTH_SPEC.md", "PAPER_SPEC": "papers/PAPER_SPEC.md", "F1_SPEC": "fable/F1_SPEC.md",
-             "FOUNDATION_SPEC": "foundation/FOUNDATION_SPEC.md", "VARIANTS": "/home/claude/stock-screener/docs/research/fable/foundation/VARIANTS.md", "WORKFLOW": "/home/claude/stock-screener/docs/research/WORKFLOW.md", "X_EXTRACT_BRIEF": "X_EXTRACT_BRIEF.md"}
+             "FOUNDATION_SPEC": "foundation/FOUNDATION_SPEC.md", "VARIANTS": "/home/claude/stock-screener/docs/research/fable/foundation/VARIANTS.md", "WORKFLOW": "/home/claude/stock-screener/docs/research/WORKFLOW.md", "X_EXTRACT_BRIEF": "X_EXTRACT_BRIEF.md",
+             "Bloomberg inventory 2026-11-10": "/home/claude/stock-screener/docs/research/bbg/inventory_2026-11-10.md", "Bloomberg data lock v1": "/home/claude/stock-screener/docs/research/bbg/LOCK_v1_check_2026-11-11.md", "Bloomberg job runner": "/home/claude/stock-screener/tools/bbgq/README.md"}
     for n, p in specs.items():
         open(os.path.join(M, n + ".md"), "w").write("---\ntags: [method, spec]\nfile: %s\n---\n" % p + open(os.path.join(L, p)).read())
     u = ["---", "tags: [method]", "---", "# Foundation units", "", "| Unit | Name | Inputs | Topic |", "|---|---|---|---|"]
@@ -135,7 +136,8 @@ tags: [method, index]
 ---
 # Method: how every note was made (traceability)
 
-**From 2026-11-11 all new work follows [[WORKFLOW]] (pod shop workflow v2.0: steps, agent per step, tests, budget).**
+**From 2026-11-11 all new work follows [[WORKFLOW]] (pod shop workflow v2.1: steps, agent per step, tests, budget).**
+Data: [[Bloomberg job runner]] (files stay on the PC, reports only), [[Bloomberg inventory 2026-11-10]], [[Bloomberg data lock v1]] (block 2; hashes in `_data/bbg_LOCK_v1.json`).
 The steps below describe how the existing notes were made.
 
 1. **Transcripts** (originals in the Macro Transcripts folder) are split into ~700-word chunks [Cnn].
@@ -168,6 +170,7 @@ chunk in the original transcript or PDF page. Code refs link to GitHub at a fixe
     for p in glob.glob(os.path.join(L, "foundation", "packs", "*.json")):
         json.dump(json.load(open(p)), open(os.path.join(D, "foundation_packs", os.path.basename(p)), "w"), ensure_ascii=False)
     json.dump(dg, open(os.path.join(D, "carver_blog_digest.json"), "w"), ensure_ascii=False, indent=1)
+    shutil.copy("/home/claude/stock-screener/docs/research/bbg/LOCK_v1.json", os.path.join(D, "bbg_LOCK_v1.json"))
     open(os.path.join(D, "README.md"), "w").write(
         "---\ntags: [data]\n---\n# Raw data (JSON)\n\nEach file is a dict keyed by source id (MTnnn / QPnn / investor slug).\n\n" +
         "\n".join("- `%s`: %d entries" % (k, v) for k, v in n.items()) +
