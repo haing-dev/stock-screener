@@ -21,6 +21,17 @@ Panel(work_dir, allow_untouched=False, holdout_key=None)
 Workbook layout (all seven files): each data sheet holds blocks side by side; row 2 label, row 3 ticker, row 4 "date"
 then field names, row 5+ dates and values; a block is n_fields + 2 columns wide. "Read me" and "Check" sheets are
 skipped. Sheets whose name starts with "Daily" are daily, all others monthly.
+
+Re-pull workbooks (1.1.0, 2026-11-11): files named "R<n>_..." (re-pull of 13 Nov 2026). Their data sheets are named
+"<original file digit> <original sheet>" (e.g. "1 Curves") and hold blocks that belong to that original sheet. Rule, per
+(original file, original sheet, ticker, field): a re-pulled block with status ok REPLACES the first-pull block; a
+re-pulled block that is requesting / invalid / empty leaves the first-pull block in place ("kept first"); a block that
+exists only in the R file is ADDED. Everything else (series ids, duplicates, live-source tags, untouched flags, periodicity)
+comes out as if the block had been in the original sheet: a replaced block takes the original block's column, an added
+block gets column R_COL_OFFSET x n + its R column (so it sorts after the original sheet's blocks). The catalog says where
+each row came from (column `source`: "first" or "R<n>") and, for replaced rows, the first pull's first date and counts.
+The first-pull copies of replaced series are kept (design dates only) in design/replaced_first.pkl for the data check.
+Without R files the tables are byte-identical to bbgdata-1.0.0 and the catalog differs only by the new columns.
 """
 import csv
 import datetime as dt
@@ -38,7 +49,7 @@ from collections import Counter
 import numpy as np
 import pandas as pd
 
-VERSION = "bbgdata-1.0.0"
+VERSION = "bbgdata-1.1.0"
 SEAL_DATE = pd.Timestamp("2010-12-31")
 HOLDOUT_KEY_SHA256 = None            # set once, when the holdout run is authorised (WORKFLOW 5.3); None = always refuse
 LIVE_SOURCES = ("free_daily", "official_release", "bloomberg_only")
@@ -49,7 +60,14 @@ DATE_FIELDS = {RELEASE_FIELD}        # fields whose cells are dates, not numbers
 CATALOG_COLUMNS = ["file", "file_name", "sheet", "col", "label", "ticker", "field", "per", "kind", "status",
                    "top_error", "first", "last", "count", "n_design", "n_sealed", "last_design", "series_id",
                    "duplicate_of", "live_source", "live_delay_days", "release_sid", "revised", "untouched",
-                   "untouched_reason"]
+                   "untouched_reason",
+                   # 1.1.0 (re-pull): where the row came from; for a replaced row the first pull's status, first date
+                   # and counts; for a first-pull row that a failed re-pull left in place, the re-pull's status
+                   "source", "first_pull_status", "first_pull_first", "first_pull_count", "first_pull_n_design",
+                   "repull_status"]
+R_COL_OFFSET = 100000                # column of an added block = R_COL_OFFSET x R number + its column in the R sheet
+REPULL_FILE = re.compile(r"^\s*R(\d+)\D")
+REPULL_SHEET = re.compile(r"^\s*([1-7])\s+(\S.*?)\s*$")
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ORD0 = dt.date(1970, 1, 1).toordinal()
 _EXCEL0 = dt.date(1899, 12, 30).toordinal() - _ORD0       # Excel serial 0 as days since 1970-01-01
@@ -178,25 +196,35 @@ def _release_day(x):
 
 
 def find_workbooks(bbg_dir):
-    """-> ({digit: path}, warnings). Files are matched by their leading digit 1-7 (names carry suffixes)."""
+    """-> ({key: path}, warnings). First-pull files are matched by their leading digit 1-7 (key "1".."7"), re-pull
+    files by "R<n>" at the start of the name (key "R<n>"); names carry suffixes (" 1", "(1)", "_CUT", "_VALUES").
+    Several candidates for one key: the newest by modification time is used, the others are named in a warning."""
     found, warn = {}, []
     for p in sorted(glob.glob(os.path.join(bbg_dir, "*.xls*"))):
         name = os.path.basename(p)
         if name.startswith("~$"):
             continue
         m = re.match(r"^\s*([1-7])\D", name)
-        if not m:
-            warn.append("ignored file without a leading digit 1-7: %s" % name)
-            continue
-        found.setdefault(m.group(1), []).append(p)
+        r = REPULL_FILE.match(name)
+        if m:
+            found.setdefault(m.group(1), []).append(p)
+        elif r:
+            found.setdefault("R%d" % int(r.group(1)), []).append(p)
+        else:
+            warn.append("ignored file without a leading digit 1-7 or R<n>: %s" % name)
     out = {}
-    for d, ps in sorted(found.items()):
+    for d, ps in sorted(found.items(), key=lambda kv: _key_order(kv[0])):
         ps = sorted(ps, key=lambda q: (os.path.getmtime(q), q))
         out[d] = ps[-1]
         for q in ps[:-1]:
             warn.append("file %s: two candidates, used the newest %s, ignored %s" % (d, os.path.basename(ps[-1]),
                                                                                    os.path.basename(q)))
     return out, warn
+
+
+def _key_order(k):
+    """First-pull digits first ("1".."7"), then re-pull files by number ("R1", "R2", ..., "R10")."""
+    return (1, int(k[1:]), "") if k.startswith("R") else (0, 0, k)
 
 
 def _config_path(name):
@@ -339,6 +367,67 @@ def _collapse(days, vals, per):
 
 
 # =====================================================================================================================
+# re-pull merge
+# =====================================================================================================================
+def _first_info(e):
+    """First valid date, total count and design count of an entry's collapsed series ('' / 0 when not ok)."""
+    s = e.get("_s")
+    if s is None or not len(s):
+        return "", 0, 0
+    return s.index[0].strftime("%Y-%m-%d"), int(len(s)), int((s.index <= SEAL_DATE).sum())
+
+
+def _median_date(dates):
+    """Median of ISO dates (the lower middle one for an even count); '' when empty."""
+    if not dates:
+        return ""
+    s = sorted(dates)
+    return s[(len(s) - 1) // 2]
+
+
+def _merge_repull(entries, r_entries):
+    """Apply the re-pull rule in place. Matching key: (original file digit, original sheet, ticker, field); when the
+    same key occurs several times in a sheet, the k-th re-pulled occurrence matches the k-th first-pull occurrence.
+      re-pull ok                  -> replaces the first-pull entry (which is marked _dropped); takes its column
+      re-pull not ok, first exists-> first-pull entry kept, its repull_status says what the re-pull returned
+      no first-pull entry         -> added (any status), column R_COL_OFFSET x n + R column
+    Returns ({id(R entry): first-pull Series or None}, per-original-sheet merge counts)."""
+    by_key = {}
+    for e in entries:
+        by_key.setdefault((e["file"], e["sheet"], e["ticker"], e["field"]), []).append(e)
+    seen = Counter()
+    replaced_first, merge = {}, {}
+    for e in r_entries:
+        k = (e["file"], e["sheet"], e["ticker"], e["field"])
+        j = seen[k]
+        seen[k] += 1
+        cand = by_key.get(k, [])
+        m = merge.setdefault("%s|%s" % (e["file"], e["sheet"]), Counter())
+        m["repulled"] += 1
+        if j < len(cand):
+            f = cand[j]
+            if e["status"] == "ok":
+                f["_dropped"] = True
+                e["_merge"] = "replaced"
+                e["col"], e["_i"] = f["col"], f["_i"]
+                e["first_pull_status"] = f["status"]
+                e["first_pull_first"], e["first_pull_count"], e["first_pull_n_design"] = _first_info(f)
+                replaced_first[id(e)] = f["_s"]
+                m["replaced"] += 1
+                if f["status"] != "ok":
+                    m["replaced_failed_first"] += 1
+            else:
+                e["_merge"] = "kept_first"
+                f["repull_status"] = "%s:%s" % (e["source"], e["status"])
+                m["kept_first"] += 1
+        else:
+            e["_merge"] = "added"
+            e["col"] = R_COL_OFFSET * int(e["source"][1:]) + e["_rcol"]
+            m["added"] += 1
+    return replaced_first, {k: dict(v) for k, v in merge.items()}
+
+
+# =====================================================================================================================
 # build
 # =====================================================================================================================
 def build(bbg_dir, work_dir, live_csv=None, untouched_csv=None):
@@ -346,43 +435,59 @@ def build(bbg_dir, work_dir, live_csv=None, untouched_csv=None):
     t0 = time.time()
     live, live_path = read_live_sources(live_csv)
     untouched, unt_path = read_untouched(untouched_csv)
-    files, warnings = find_workbooks(bbg_dir)
+    found, warnings = find_workbooks(bbg_dir)
+    files = {k: p for k, p in found.items() if not k.startswith("R")}          # first pull, by digit
+    rfiles = {k: p for k, p in found.items() if k.startswith("R")}             # re-pull, by "R<n>"
     rep = {"files": [], "sheets": [], "field_types": {}, "release_formats": Counter(), "warnings": warnings}
     fstats = {}
-    entries = []          # one per block field
-    series = {"M": {}, "D": {}}
+    entries = []          # one per block field (first pull)
+    r_entries = []        # one per block field (re-pull), merged below
     sheet_order = {}
-    for digit, path in sorted(files.items()):
+
+    def read_workbook(key, path, out):
+        """Read one workbook; append one entry per block field to `out`. key: digit (first pull) or "R<n>"."""
         fname = os.path.basename(path)
-        rep["files"].append({"file": digit, "name": fname, "kb": os.path.getsize(path) // 1024})
+        rep["files"].append({"file": key, "name": fname, "kb": os.path.getsize(path) // 1024})
+        is_r = key.startswith("R")
         try:
             import openpyxl
             wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
         except Exception as e:  # noqa: BLE001
-            rep["sheets"].append({"file": digit, "sheet": "(workbook)", "error": "%s: %s" % (type(e).__name__,
-                                                                                            str(e)[:160])})
-            continue
+            rep["sheets"].append({"file": key, "sheet": "(workbook)", "error": "%s: %s" % (type(e).__name__,
+                                                                                          str(e)[:160])})
+            return
         for si, ws in enumerate(wb.worksheets):
             name = ws.title.strip()
             if name.lower().startswith("read") or name.lower() == "check":
-                rep["sheets"].append({"file": digit, "sheet": name, "skipped": True})
+                rep["sheets"].append({"file": key, "sheet": name, "skipped": True})
                 continue
-            sheet_order[(digit, name)] = si
-            per = "D" if name.lower().startswith("daily") else "M"
+            if is_r:                                       # "<digit> <sheet>": the block's original place
+                m = REPULL_SHEET.match(name)
+                if not m:
+                    warnings.append("re-pull %s: sheet %r is not named '<file digit> <sheet>': skipped" % (key, name))
+                    rep["sheets"].append({"file": key, "sheet": name, "skipped": True})
+                    continue
+                digit, oname = m.group(1), m.group(2)
+                if (digit, oname) not in sheet_order:          # original sheet not read: sort after all others
+                    sheet_order[(digit, oname)] = 1000 + len(sheet_order)
+            else:
+                digit, oname = key, name
+                sheet_order[(digit, name)] = si
+            per = "D" if oname.lower().startswith("daily") else "M"
             t1 = time.time()
             try:
                 blocks, info = _read_sheet(ws, per, fstats)
             except Exception as e:  # noqa: BLE001
-                rep["sheets"].append({"file": digit, "sheet": name, "error": "%s: %s" % (type(e).__name__,
-                                                                                         str(e)[:160])})
+                rep["sheets"].append({"file": key, "sheet": name, "error": "%s: %s" % (type(e).__name__,
+                                                                                       str(e)[:160])})
                 continue
-            src, delay = live.get((digit, name), ("bloomberg_only", MISSING_SHEET_DELAY))
-            if (digit, name) not in live:
-                warnings.append("sheet %s|%s not in live_sources.csv: bloomberg_only, %d days" % (digit, name,
+            src, delay = live.get((digit, oname), ("bloomberg_only", MISSING_SHEET_DELAY))
+            if (digit, oname) not in live:
+                warnings.append("sheet %s|%s not in live_sources.csv: bloomberg_only, %d days" % (digit, oname,
                                                                                                  MISSING_SHEET_DELAY))
             st = Counter()
             for b in blocks:
-                b["kind"] = [field_kind(name, b["ticker"], f) for f in b["fields"]]
+                b["kind"] = [field_kind(oname, b["ticker"], f) for f in b["fields"]]
                 rep["release_formats"].update(b["rel_fmt"])
                 has_rel = RELEASE_FIELD in b["fields"]
                 for i, f in enumerate(b["fields"]):
@@ -390,20 +495,38 @@ def build(bbg_dir, work_dir, live_csv=None, untouched_csv=None):
                     st[status] += 1
                     s = _collapse(b["days"], b["vals"][i], per) if status == "ok" else None
                     top = b["errors"].most_common(1)[0][0] if b["errors"] else ""
-                    entries.append({"file": digit, "file_name": fname, "sheet": name, "col": b["col"],
-                                    "label": b["label"], "ticker": b["ticker"], "field": f, "per": per,
-                                    "kind": b["kind"][i], "status": status, "top_error": top,
-                                    "live_source": src, "live_delay_days": delay, "has_rel": has_rel,
-                                    "revised": int(has_rel and f == "PX_LAST"),
-                                    "untouched": int(b["ticker"] in untouched),
-                                    "untouched_reason": untouched.get(b["ticker"], ""), "_s": s, "_i": i})
-            rep["sheets"].append({"file": digit, "sheet": name, "per": per, "blocks": len(blocks),
-                                  "fields": sum(len(b["fields"]) for b in blocks), "status": dict(st),
-                                  "rows": info["rows"], "date_types": dict(info["date_types"]),
-                                  "no_ticker": info["no_ticker"], "seconds": round(time.time() - t1, 1)})
+                    e = {"file": digit, "file_name": fname, "sheet": oname, "col": b["col"],
+                         "label": b["label"], "ticker": b["ticker"], "field": f, "per": per,
+                         "kind": b["kind"][i], "status": status, "top_error": top,
+                         "live_source": src, "live_delay_days": delay, "has_rel": has_rel,
+                         "revised": int(has_rel and f == "PX_LAST"),
+                         "untouched": int(b["ticker"] in untouched),
+                         "untouched_reason": untouched.get(b["ticker"], ""), "_s": s, "_i": i,
+                         "source": key if is_r else "first"}
+                    if is_r:
+                        e["_rcol"], e["_rsheet"] = b["col"], name
+                    out.append(e)
+            sh = {"file": key, "sheet": name, "per": per, "blocks": len(blocks),
+                  "fields": sum(len(b["fields"]) for b in blocks), "status": dict(st),
+                  "rows": info["rows"], "date_types": dict(info["date_types"]),
+                  "no_ticker": info["no_ticker"], "seconds": round(time.time() - t1, 1)}
+            if is_r:
+                sh["original"] = "%s|%s" % (digit, oname)
+            rep["sheets"].append(sh)
             del blocks
         wb.close()
+
+    for digit, path in sorted(files.items()):
+        read_workbook(digit, path, entries)
+    for key, path in sorted(rfiles.items(), key=lambda kv: _key_order(kv[0])):
+        read_workbook(key, path, r_entries)
     rep["field_types"] = {f: {"numeric": a, "date": b, "string": c} for f, (a, b, c) in sorted(fstats.items())}
+
+    # ---- re-pull merge (no R files: nothing happens here)
+    replaced_first, merge = _merge_repull(entries, r_entries)
+    entries = [e for e in entries if not e.get("_dropped")] + [e for e in r_entries if e.get("_merge") in
+                                                               ("replaced", "added")]
+    rep["repull"] = merge
 
     # ---- series ids, duplicates, grids
     entries.sort(key=lambda e: (e["file"], sheet_order.get((e["file"], e["sheet"]), 0), e["col"], e["_i"]))
@@ -471,6 +594,31 @@ def build(bbg_dir, work_dir, live_csv=None, untouched_csv=None):
         for k in ("n_design", "n_sealed"):
             e.setdefault(k, 0)
         e["release_sid"] = rel_of.get((e["file"], e["sheet"], e["col"]), "") if e["has_rel"] else ""
+        for k in ("first_pull_status", "first_pull_first", "first_pull_count", "first_pull_n_design", "repull_status"):
+            e.setdefault(k, "")
+
+    # ---- re-pull: first-pull copies of replaced series (design dates only) and history added per original sheet
+    rf_cols = {}
+    if rfiles:
+        for e in entries:
+            s0 = replaced_first.get(id(e)) if e.get("_merge") == "replaced" else None
+            if s0 is not None and e["series_id"] and e["kind"] != "date" and e["per"] == "M":
+                rf_cols[e["series_id"]] = s0[s0.index <= SEAL_DATE]
+        for key, m in merge.items():
+            d, sh = key.split("|", 1)
+            before, after = [], []
+            for e in entries:
+                if e["file"] != d or e["sheet"] != sh:
+                    continue
+                if e["first"]:
+                    after.append(e["first"])
+                b = e["first_pull_first"] if e.get("_merge") == "replaced" else (e["first"] if e["source"] == "first"
+                                                                                  else "")
+                if b:
+                    before.append(b)
+            m["median_first_before"] = _median_date(before)
+            m["median_first_after"] = _median_date(after)
+            m["series_before"], m["series_after"] = len(before), len(after)
 
     # ---- write (clean, versioned)
     root = os.path.join(work_dir, "bbg")
@@ -500,6 +648,19 @@ def build(bbg_dir, work_dir, live_csv=None, untouched_csv=None):
                 "content_sha256": content_sha256(sub), "rows": int(sub.shape[0]), "columns": int(sub.shape[1]),
                 "first": sub.index[0].strftime("%Y-%m-%d") if len(sub) else "",
                 "last": sub.index[-1].strftime("%Y-%m-%d") if len(sub) else ""}
+    rf_path = os.path.join(root, "design", "replaced_first.pkl")
+    if rfiles:                                         # only with R files, so a build without them is unchanged
+        g = tables["M"].index[tables["M"].index <= SEAL_DATE]
+        rf = pd.DataFrame({k: v.reindex(g).to_numpy(dtype="float64") for k, v in rf_cols.items()}, index=g)
+        rf.index.name = "date"
+        rf.to_pickle(rf_path + ".tmp")
+        os.replace(rf_path + ".tmp", rf_path)
+        man_tables["design/replaced_first.pkl"] = {
+            "content_sha256": content_sha256(rf), "rows": int(rf.shape[0]), "columns": int(rf.shape[1]),
+            "first": rf.index[0].strftime("%Y-%m-%d") if len(rf) else "",
+            "last": rf.index[-1].strftime("%Y-%m-%d") if len(rf) else ""}
+    elif os.path.exists(rf_path):
+        os.remove(rf_path)
     buf = io.StringIO()
     w = csv.writer(buf, lineterminator="\n")
     w.writerow(CATALOG_COLUMNS)
@@ -517,13 +678,19 @@ def build(bbg_dir, work_dir, live_csv=None, untouched_csv=None):
            "untouched_series": sum(1 for e in entries if e["series_id"] and e["untouched"]),
            "untouched_tickers": len({e["ticker"] for e in entries if e["untouched"]}),
            "untouched_listed": len(untouched), "release_dated": sum(1 for e in entries if e["release_sid"])}
+    if rfiles:
+        cnt["repull"] = {"files": sorted(rfiles, key=_key_order),
+                         "by_source": dict(Counter(e["source"] for e in entries)),
+                         **{k: sum(m.get(k, 0) for m in merge.values())
+                            for k in ("repulled", "replaced", "replaced_failed_first", "added", "kept_first")}}
     manifest = {
         "code_version": VERSION, "code_sha256": sha256_file(os.path.abspath(__file__)),
         "build_time": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "seal_date": SEAL_DATE.strftime("%Y-%m-%d"),
         "workbooks": {d: {"name": os.path.basename(p), "sha256": sha256_file(p), "size": os.path.getsize(p),
                           "mtime": dt.datetime.fromtimestamp(int(os.path.getmtime(p)), dt.timezone.utc)
-                          .strftime("%Y-%m-%dT%H:%M:%SZ")} for d, p in sorted(files.items())},
+                          .strftime("%Y-%m-%dT%H:%M:%SZ")}
+                      for d, p in sorted(list(files.items()) + list(rfiles.items()), key=lambda kv: _key_order(kv[0]))},
         "config": {"live_sources.csv": sha256_file(live_path), "untouched_markets.csv": sha256_file(unt_path)},
         "tables": man_tables,
         "catalog": {"file": "catalog.csv", "sha256": hashlib.sha256(cat_bytes).hexdigest(), "rows": len(entries)},

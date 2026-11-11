@@ -32,3 +32,54 @@ Holdout: until the one-time key is used, jobs print no price statistics for date
   (`HOLDOUT_KEY_SHA256`, unset). Every refused or granted attempt goes to `work\bbg\sealed_access.log`.
 - `live_sources.csv` (sheet defaults, conservative) and `untouched_markets.csv` are registered inputs: changing either
   changes the lock id. Test here: `python3 tests/bbgq_smoke.py` (mock workbooks from the real templates).
+
+## Block 3 (WORKFLOW 0.5): re-pull reader, engine on the PC, truncation test, Bloomberg adapter (2026-11-11)
+Brief: `BLOCK3_BRIEF.md`. Nothing in `gm/` was changed.
+
+Re-pull (reader `lib/bbgdata.py` 1.1.0):
+- Files named `R<n>_...` in `pulled results` are re-pull workbooks (suffixes ` 1`, `(1)`, `_CUT`, `_VALUES` are fine; with
+  two candidates for one R number the newest by modification time is used, the other is named in a WARNING line).
+  Their sheets `<file digit> <sheet>` belong to that original sheet. Per (file, sheet, ticker, field): a re-pulled block
+  that came back ok REPLACES the first-pull block; requesting / invalid / empty leaves the first pull in place ("kept
+  first"); a block only in the R file is ADDED. Ids, duplicates, live sources and held-back flags come out as if the block
+  had been in the original sheet. Catalog: new columns `source` (first / R<n>), `first_pull_status`, `first_pull_first`,
+  `first_pull_count`, `first_pull_n_design`, `repull_status`. First-pull copies of replaced series (design dates only):
+  `work\bbg\design\replaced_first.pkl`. The R hashes are in the manifest and the lock id.
+  Without R files the tables are byte-identical to 1.0.0 (only the catalog gains the new columns, so the lock id changes).
+- `jobs/bbg_build_v2.py`: as v1 plus RSHEET lines (each R sheet, its original sheet, block counts) and MERGE lines per
+  original sheet (re-pulled, replaced, of which the first pull had failed, added, kept first, median first valid date
+  before -> after). `jobs/bbg_check_v2.py`: as v1 plus REPULL lines (replaced series vs their first-pull copy over
+  common design months: months compared, months equal within 1e-6 relative; series that differ are named with counts);
+  SERIES lines end with the source. The v1 jobs still work unchanged.
+
+Engine on the PC (deploy with `python3 tools/bbgq/build_engine.py`, which fills `tools/bbgq/engine_pkg/`, git-ignored;
+`engine_pkg/DEPLOY.txt` lists every file with its size and PC destination):
+- `lib\gm\` = the gm package unchanged; `lib\gm_engine.py` (runner: path shim, fingerprint, comparison, truncation);
+  `lib\bbg_panel.py` (Bloomberg adapter); `lib\engine_ref.json`; `lib\bbgdata.py` + the two CSVs;
+  `work\free\gm_free_inputs.zip` (the 239 free files the engine opens, 9 MB; unpacked by the jobs into
+  `work\free\research` and `work\free\raw`). Path shim: `gm_engine.setup(free_dir)` sets `gm.panel.RD` / `RAW` (module
+  variables every gm loader reads at call time) and switches the old single-file Bloomberg reader off.
+- Input compatibility: the PC has no xlrd, so the 17 binary .xls inputs (EIA futures, RBA history) ship as xlsx content
+  under the same name (pandas picks the reader from the content); build_engine checks every gm read of each file gives
+  an identical DataFrame (floats written exactly). Tested here in a pandas 3.1.1 / numpy 2.5.4 environment without xlrd.
+- `engine_ref.py` -> `engine_ref.json` (committed): design-period fingerprint of the cloud run (BASE and CANDIDATE:
+  net and gross Sharpe, mean, vol, worst drawdown 1975-2010 and 1990-2010; per-year sums of book returns; per-market
+  sums of |positions|, volatility, family positions and signals; months with a return per market), gm commit and file
+  hashes, config hashes, library versions, input file hashes. Re-run it (and build_engine) whenever gm/ or an input
+  changes.
+- `jobs/gm_repro_v1.py`: unpacks the inputs, checks the gm code and input hashes, runs the engine, compares with the
+  reference. Read: one PASS/FAIL line per item with the largest absolute difference and the tolerance (book returns
+  1e-8, positions 1e-6, statistics 1e-6, counts exact); the gate is the last line `REPRODUCTION PASS`.
+- `engine_trunc.py` (cloud) / `jobs/gm_trunc_v1.py` (PC, ~25 min): truncation test at 8 cut dates 1980-2010. Inputs are
+  cut at the loader level (gm_engine.Cut wraps gm's loader functions; no observation dated after T reaches the rules).
+  Per cut and stage: end-to-end PASS/FAIL with differing market-months, max abs diff, first..last month, markets; then
+  the same stage ALONE (its inputs from the full run, cut at T): a failure that disappears there is inherited.
+  `cause` lines attribute every failure; `--- causes found` gives where / why / proposed fix (not applied).
+- `jobs/gm_bbg_map_v1.py` (needs a bbg build in `work\bbg`): per market and engine input, the Bloomberg series id the
+  adapter would serve, its status and copy, first design month, design months, months served as of 2010-12-31 and
+  whether gm would use it; what stays on free data; a dry run of the adapter (counts only).
+- Adapter use in a later job: `wb = bbg_panel.Source(work, asof="2010-12-31").workbook(markets=[...])`, then
+  `gm_engine.run(free_dir, bbg=wb)` (or `with bbg_panel.using(wb): ...`). Market data are dated by observation month,
+  economic releases by the month they became known; a series with a one-day live delay ends at 2010-11.
+- Tests: `python3 tests/bbgq_smoke.py` (reader, ~17 min) and `python3 tests/bbgq_engine_smoke.py` (engine, ~12 min;
+  `BBGQ_ALT_PYTHON=<python>` also runs the reproduction in another environment).
