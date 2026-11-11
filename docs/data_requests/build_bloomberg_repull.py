@@ -6,7 +6,7 @@ Source of truth for WHAT to pull: the data check of lock v1 (tools/bbgq/results/
   file 5: only the tickers saved while 'Requesting Data'      file 4: the 8 EquityIndexes tickers still loading
 Same block layout and BDH formula as the first pull (row 2 label, row 3 ticker, row 4 'date' + fields, row 5 BDH).
 Data sheets are named '<original file digit> <original sheet>' so the reader can put each series back in its place.
-New: a Check sheet with a live STATUS line (WAIT / HISTORY CUT OFF / READY) and, per series, the month its history
+New: a Check sheet with a live STATUS line (WAIT / WRONG NUMBERS / HISTORY CUT OFF / READY) and, per series, the month its history
 should start by, taken from another copy of the same ticker in the first pull (daily files, file 5, file 3).
 
 Run: python3 docs/data_requests/build_bloomberg_repull.py [out_dir]
@@ -160,7 +160,7 @@ STEPS = [
     "2. Stay on this sheet and watch the STATUS line. Do nothing while it says WAIT (a few minutes).",
     "3. READY (green): save it the same way as last time, keeping the file name. Then open the next file (R1 to R7, in this order).",
     "4. Still WAIT or NOT LOADED after 15 minutes: Bloomberg tab > Refresh Workbook and wait again. No change: save anyway, go on.",
-    "5. HISTORY CUT OFF (red): close Excel completely, open this file again and wait. Still red: save it anyway with _CUT at the end",
+    "5. WRONG NUMBERS or HISTORY CUT OFF (red): close Excel completely WITHOUT saving, open this file again and wait. Still red: save it anyway with _CUT at the end",
     "   of the name and go on to the next file. Tell Claude which files were red.",
     "6. '#N/A Limit' anywhere = the terminal's download allowance is used up. Save, stop, continue another day.",
     "Research and paper trading only. The data stays on your PC: never on GitHub, never shared.",
@@ -192,19 +192,21 @@ def build_file(out_dir, k, fname, title, parts, sel):
     ck.cell(10, 1, "history cut off"); ck.cell(10, 2, '=COUNTIF(%s,"CUT")' % rng("H"))
     ck.cell(11, 1, "history checked and complete"); ck.cell(11, 2, '=COUNTIF(%s,"ok")' % rng("H"))
     ck.cell(12, 1, "not on a Bloomberg terminal"); ck.cell(12, 2, '=COUNTIF(%s,"no Bloomberg")' % rng("D"))
+    ck.cell(13, 1, "same numbers as another series"); ck.cell(13, 2, '=COUNTIF(%s,"COPY")' % rng("K"))
     st = ck.cell(4, 2, '=IF(B12>0,"NOT CONNECTED: open this file on the Bloomberg terminal",'
                        'IF(B8>0,"WAIT: "&B8&" of "&B6&" series still loading",'
                        'IF(B7<0.5*B6,"NOT LOADED: only "&B7&" of "&B6&" series have data: see step 4",'
+                       'IF(B13>=5,"WRONG NUMBERS: "&B13&" series hold the numbers of another series: see step 5",'
                        'IF(B10>=3,"HISTORY CUT OFF in "&B10&" series: see step 5",'
-                       '"READY: save now (step 3)"))))')
+                       '"READY: save now (step 3)")))))')
     st.font = Font(name=F, bold=True, size=14)
     ck.conditional_formatting.add("B4", FormulaRule(formula=['ISNUMBER(SEARCH("READY",$B$4))'], fill=GREEN))
     ck.conditional_formatting.add("B4", FormulaRule(formula=['ISNUMBER(SEARCH("WAIT",$B$4))'], fill=AMBER))
-    ck.conditional_formatting.add("B4", FormulaRule(formula=['OR(ISNUMBER(SEARCH("CUT",$B$4)),ISNUMBER(SEARCH("NOT ",$B$4)))'], fill=RED))
+    ck.conditional_formatting.add("B4", FormulaRule(formula=['OR(ISNUMBER(SEARCH("CUT",$B$4)),ISNUMBER(SEARCH("NOT ",$B$4)),ISNUMBER(SEARCH("WRONG",$B$4)))'], fill=RED))
     for i, t in enumerate(STEPS):
         ck.cell(14 + i, 1, t).font = Font(name=F)
     for j, h in enumerate(("sheet", "label", "ticker", "status", "first month with data", "months with data",
-                           "should start by", "history", "cut-off month of the first pull")):
+                           "should start by", "history", "cut-off month of the first pull", "fingerprint", "copy")):
         ck.cell(T0, j + 1, h).font = Font(name=F, bold=True)
     for i, (name, lab, tk, c, v, exp) in enumerate(rows):
         r = r1 + i
@@ -225,9 +227,14 @@ def build_file(out_dir, k, fname, title, parts, sel):
             ck.cell(r, 9, CUT[name[0]]).number_format = "mmm yyyy"
         ck.cell(r, 8, '=IF(AND(D%d="ok",ISNUMBER(E%d)),IF(ISNUMBER(G%d),IF(E%d>G%d+45,"CUT","ok"),IF(AND(ISNUMBER(I%d),ABS(E%d-I%d)<20),"CUT","")),"")'
                 % (r, r, r, r, r, r, r, r))
+        # first pull, files 1 and 3: hundreds of blocks held the numbers of ONE other series (bbg_diag_v2). A block whose
+        # count and sum of values equal another block's, more often than its ticker is listed, is such a copy.
+        ck.cell(r, 10, '=IF(D%d="ok",IFERROR(F%d&"|"&SUM(%s),""),"")' % (r, r, vcol))
+        ck.cell(r, 11, '=IF(J%d="","",IF(COUNTIF(J$%d:J$%d,J%d)>COUNTIF(C$%d:C$%d,C%d),"COPY",""))' % (r, r1, rn, r, r1, rn, r))
     ck.conditional_formatting.add("H%d:H%d" % (r1, rn), FormulaRule(formula=['$H%d="CUT"' % r1], fill=RED))
+    ck.conditional_formatting.add("K%d:K%d" % (r1, rn), FormulaRule(formula=['$K%d="COPY"' % r1], fill=RED))
     ck.conditional_formatting.add("D%d:D%d" % (r1, rn), FormulaRule(formula=['$D%d="loading"' % r1], fill=AMBER))
-    for col, w in zip("ABCDEFGHI", (30, 44, 30, 14, 20, 16, 16, 10, 28)):
+    for col, w in zip("ABCDEFGHIJK", (30, 44, 30, 14, 20, 16, 16, 10, 28, 24, 8)):
         ck.column_dimensions[col].width = w
     ck.column_dimensions["B"].alignment = Alignment(wrap_text=False)
     ck.freeze_panes = "A%d" % r1

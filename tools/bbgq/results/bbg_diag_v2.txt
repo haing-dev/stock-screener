@@ -1,0 +1,234 @@
+=== bbg_diag_v2 === 2026-11-11 10:54
+read file 1 in 9s
+read file 2 in 3s
+read file 3 in 5s
+read file 4 in 6s
+read file 5 in 3s
+read file 6 in 37s
+read file 7 in 20s
+blocks: 4204 | late (start in the cut-off month of file 1 or 3): 836 | other monthly with data: 2220 | daily with data: 415
+--- E structure of the late blocks
+E 1|Benchmarks | late blocks 6 | numbers per block: 209 x6 | last month with a number: 2026-10 x6
+E 1|BondFutures | late blocks 32 | numbers per block: 209 x32 | last month with a number: 2026-10 x32
+E 1|Breakevens | late blocks 9 | numbers per block: 209 x9 | last month with a number: 2026-10 x9
+E 1|Curves | late blocks 139 | numbers per block: 209 x139 | last month with a number: 2026-10 x139
+E 1|FXBasis | late blocks 1 | numbers per block: 209 x1 | last month with a number: 2026-10 x1
+E 1|RatesFutures | late blocks 69 | numbers per block: 209 x69 | last month with a number: 2026-10 x69
+E 1|Returns | late blocks 46 | numbers per block: 209 x46 | last month with a number: 2026-10 x46
+E 1|SpotRates3m | late blocks 11 | numbers per block: 209 x11 | last month with a number: 2026-10 x11
+E 1|Surprise | late blocks 6 | numbers per block: 209 x6 | last month with a number: 2026-10 x6
+E 1|Yields | late blocks 36 | numbers per block: 209 x36 | last month with a number: 2026-10 x36
+E 3|Credit | late blocks 46 | numbers per block: 271 x46 | last month with a number: 2026-10 x46
+E 3|FXBasis | late blocks 13 | numbers per block: 271 x13 | last month with a number: 2026-10 x13
+E 3|FXForwards | late blocks 88 | numbers per block: 271 x88 | last month with a number: 2026-10 x88
+E 3|FXSpot | late blocks 50 | numbers per block: 271 x50 | last month with a number: 2026-10 x50
+E 3|FXVol | late blocks 111 | numbers per block: 271 x111 | last month with a number: 2026-10 x111
+E 3|RatesFutExtra | late blocks 41 | numbers per block: 271 x41 | last month with a number: 2026-10 x41
+E 3|Swaps | late blocks 67 | numbers per block: 271 x67 | last month with a number: 2026-10 x67
+E 3|YieldsExtra | late blocks 65 | numbers per block: 271 x65 | last month with a number: 2026-10 x65
+E late blocks that hold exactly the same numbers as another late block: 2 groups, 836 blocks
+E same numbers: 1|RatesFutures|ED1 Comdty|PX_LAST = 1|RatesFutures|ED2 Comdty|PX_LAST = 1|RatesFutures|ED4 Comdty|PX_LAST = 1|RatesFutures|ED5 Comdty|PX_LAST = 1|RatesFutures|ED6 Comdty|PX_LAST = 1|RatesFutures|ED7 Comdty|PX_LAST
+E same numbers: 3|YieldsExtra|USGG6M Index|PX_LAST = 3|YieldsExtra|USGG12M Index|PX_LAST = 3|YieldsExtra|USGG1YR Index|PX_LAST = 3|YieldsExtra|USGG3YR Index|PX_LAST = 3|YieldsExtra|USGG20YR Index|PX_LAST = 3|YieldsExtra|GJGB1 Index|PX_LAST
+--- A-D per sheet (a block counts when at least 80% of its numbers dated up to 2010-12 fit)
+SHEET 1|Benchmarks
+   A no other copy of this ticker and field                       6
+   B no daily pull of this ticker and field                       6
+   C = the numbers of ANOTHER ticker or field, same month         6
+   late blocks                                                    6
+   C where the other ticker sits: ticker of another sheet x6 | block offset in the sheet: -
+   C example: NEIXCTA Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: NEIXCTAT Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: HFRIMI Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: HFRIMTI Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: BARCCTA Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: BTOP50 Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+SHEET 1|BondFutures
+   A no month shift fits                                          32
+   B numbers found among the daily values (any date)              0
+   B numbers tested                                               608
+   C = the numbers of ANOTHER ticker or field, same month         32
+   late blocks                                                    32
+   C where the other ticker sits: ticker of another sheet x32 | block offset in the sheet: -
+   C example: TU1 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: TU2 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: FV1 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: FV2 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: TY1 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: TY2 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+SHEET 1|Breakevens
+   A no month shift fits                                          2
+   A no other copy of this ticker and field                       7
+   B no daily pull of this ticker and field                       7
+   B numbers found among the daily values (any date)              14
+   B numbers tested                                               38
+   C = the numbers of ANOTHER ticker or field, same month         9
+   late blocks                                                    9
+   C where the other ticker sits: ticker of another sheet x9 | block offset in the sheet: -
+   C example: USGGBE10 Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: DEGGBE10 Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: UKGGBE10 Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: FRGGBE10 Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: ITGGBE10 Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: JYGGBE10 Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+SHEET 1|Curves
+   A no month shift fits                                          91
+   A no other copy of this ticker and field                       48
+   B no daily pull of this ticker and field                       69
+   B numbers found among the daily values (any date)              5
+   B numbers tested                                               1330
+   C = the numbers of ANOTHER ticker or field, same month         139
+   late blocks                                                    139
+   C where the other ticker sits: ticker of another sheet x139 | block offset in the sheet: -
+   C example: CL1 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: CL2 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: CL3 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: CL13 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: CO1 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: CO2 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+SHEET 1|FXBasis
+   A no other copy of this ticker and field                       1
+   B no daily pull of this ticker and field                       1
+   C = the numbers of ANOTHER ticker or field, same month         1
+   late blocks                                                    1
+   C where the other ticker sits: ticker of the same sheet x1 | block offset in the sheet: -1 x1
+   C example: BPBSV1 Curncy|PX_LAST holds JYBSV1 Curncy|PX_LAST
+SHEET 1|RatesFutures
+   A no month shift fits                                          44
+   A no other copy of this ticker and field                       25
+   B no daily pull of this ticker and field                       25
+   B numbers found among the daily values (any date)              0
+   B numbers tested                                               836
+   C = the numbers of ANOTHER ticker or field, same month         69
+   late blocks                                                    69
+   C where the other ticker sits: ticker of another sheet x69 | block offset in the sheet: -
+   C example: ED1 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: ED2 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: ED4 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: ED5 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: ED6 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: ED7 Comdty|PX_LAST holds JYBSV1 Curncy|PX_LAST
+SHEET 1|Returns
+   A no month shift fits                                          24
+   A no other copy of this ticker and field                       22
+   B no daily pull of this ticker and field                       22
+   B numbers found among the daily values (any date)              0
+   B numbers tested                                               456
+   C = the numbers of ANOTHER ticker or field, same month         46
+   late blocks                                                    46
+   C where the other ticker sits: ticker of another sheet x46 | block offset in the sheet: -
+   C example: SPGSCLP Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: BCOMCL Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: SPGSBRP Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: BCOMCO Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: SPGSNGP Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: BCOMNG Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+SHEET 1|SpotRates3m
+   A no month shift fits                                          4
+   A no other copy of this ticker and field                       7
+   B no daily pull of this ticker and field                       7
+   B numbers found among the daily values (any date)              3
+   B numbers tested                                               76
+   C = the numbers of ANOTHER ticker or field, same month         11
+   late blocks                                                    11
+   C where the other ticker sits: ticker of another sheet x11 | block offset in the sheet: -
+   C example: USGG3M Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: SOFRRATE Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: US0003M Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: EUR003M Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: BP0003M Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: SONIO/N Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+SHEET 1|Surprise
+   A no other copy of this ticker and field                       6
+   B no daily pull of this ticker and field                       6
+   C = the numbers of ANOTHER ticker or field, same month         6
+   late blocks                                                    6
+   C where the other ticker sits: ticker of another sheet x6 | block offset in the sheet: -
+   C example: CESIUSD Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: CESIGBP Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: CESIJPY Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: CESICAD Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: CESICNY Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: CESIG10 Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+SHEET 1|Yields
+   A no month shift fits                                          19
+   A no other copy of this ticker and field                       17
+   B no daily pull of this ticker and field                       17
+   B numbers found among the daily values (any date)              23
+   B numbers tested                                               361
+   C = the numbers of ANOTHER ticker or field, same month         36
+   late blocks                                                    36
+   C where the other ticker sits: ticker of another sheet x36 | block offset in the sheet: -
+   C example: USGG2YR Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: USGG5YR Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: USGG7YR Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: USGG30YR Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: GDBR2 Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+   C example: GDBR5 Index|PX_LAST holds JYBSV1 Curncy|PX_LAST
+SHEET 3|Credit
+   A no month shift fits                                          2
+   A no other copy of this ticker and field                       44
+   B no daily pull of this ticker and field                       44
+   B numbers found among the daily values (any date)              42
+   B numbers tested                                               162
+   NOTHING fits (A-D)                                             46
+   late blocks                                                    46
+SHEET 3|FXBasis
+   A no other copy of this ticker and field                       13
+   B no daily pull of this ticker and field                       13
+   NOTHING fits (A-D)                                             13
+   late blocks                                                    13
+SHEET 3|FXForwards
+   A no other copy of this ticker and field                       88
+   B no daily pull of this ticker and field                       88
+   NOTHING fits (A-D)                                             88
+   late blocks                                                    88
+SHEET 3|FXSpot
+   A no month shift fits                                          45
+   A no other copy of this ticker and field                       5
+   B no daily pull of this ticker and field                       5
+   B numbers found among the daily values (any date)              257
+   B numbers tested                                               3645
+   NOTHING fits (A-D)                                             50
+   late blocks                                                    50
+SHEET 3|FXVol
+   A no month shift fits                                          15
+   A no other copy of this ticker and field                       96
+   B no daily pull of this ticker and field                       96
+   B numbers found among the daily values (any date)              63
+   B numbers tested                                               1215
+   NOTHING fits (A-D)                                             111
+   late blocks                                                    111
+SHEET 3|RatesFutExtra
+   A no month shift fits                                          2
+   A no other copy of this ticker and field                       39
+   B no daily pull of this ticker and field                       39
+   B numbers found among the daily values (any date)              0
+   B numbers tested                                               162
+   NOTHING fits (A-D)                                             41
+   late blocks                                                    41
+SHEET 3|Swaps
+   A no month shift fits                                          9
+   A no other copy of this ticker and field                       58
+   B no daily pull of this ticker and field                       58
+   B numbers found among the daily values (any date)              146
+   B numbers tested                                               729
+   NOTHING fits (A-D)                                             67
+   late blocks                                                    67
+SHEET 3|YieldsExtra
+   A no month shift fits                                          6
+   A no other copy of this ticker and field                       59
+   B no daily pull of this ticker and field                       59
+   B numbers found among the daily values (any date)              191
+   B numbers tested                                               486
+   NOTHING fits (A-D)                                             65
+   late blocks                                                    65
+--- TOTAL
+   A no month shift fits                                          295
+   A no other copy of this ticker and field                       541
+   B no daily pull of this ticker and field                       562
+   B numbers found among the daily values (any date)              744
+   B numbers tested                                               10104
+   C = the numbers of ANOTHER ticker or field, same month         355
+   NOTHING fits (A-D)                                             481
+   late blocks                                                    836
+=== END === 90s
