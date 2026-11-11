@@ -81,7 +81,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Foundation PAUSED (user runs units one at a time on request; U07 done 2026-11-11, next U08 Eckhardt). Units now run on claude-fable-5-2.
   User rule: no "decisions/routes" for the user; open choices -> variant registry docs/research/fable/foundation/VARIANTS.md
   (dimensions A-H, walk-forward selection on Bloomberg data, one Holm slot for the procedure; register before running).
-- WORKFLOW v2.0 (2026-11-11; FINAL DESIGN, awaiting user go, nothing executed): docs/research/WORKFLOW.md = pod shop.
+- WORKFLOW v2.1 (2026-11-11; FINAL DESIGN, awaiting user go per block, nothing executed; Bloomberg files 1-7 now in ...\Bloomberg_UBC_pull_2026-11-04\pulled results): docs/research/WORKFLOW.md = pod shop.
   Systematic + discretionary pods (rule layer + shadow analyst); versions averaged inside a pod (no picking); fixed
   budget Batch A / B1 / B2 -> freeze -> one holdout (verdict only for theses documented before 2011) -> live record;
   Core / Incubator / Shelved by rule; forecast ledger (descriptive); weekly live cycle on free data; agent per step
