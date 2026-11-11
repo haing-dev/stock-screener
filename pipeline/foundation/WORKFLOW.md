@@ -1,10 +1,11 @@
-# Macro pod shop: workflow v2.0 (final design, 2026-11-11)
+# Macro pod shop: workflow v2.1 (final design, 2026-11-11)
 
 Status: design only, nothing executed yet; execution starts when the user says go.
 Replaces the routing and schedule in `docs/research/PLAYBOOK.md` and the selection procedure in
 `docs/research/fable/foundation/VARIANTS.md` (its table of design choices becomes the version grid).
 `docs/research/global_macro/TESTING_PROTOCOL.md` stays and gets a new section at step 3.4.
 An independent Opus reader reviewed the draft; its findings are folded in (section 8).
+v2.1 adds controls taken from three papers on agentic research systems (section 10).
 
 ## 1. What we are building
 A small systematic-macro shop run as pods. A pod is one way of making money (one mechanism) with its own written
@@ -54,10 +55,10 @@ The chat is orchestrated on Opus; Fable is called only for its own steps and rea
 |---|---|---|---|
 | **0** | **Data lock (on the PC)** | | |
 | 0.1 | Set up: local job runner (same pattern as the WRDS runner), Python check, export whitelist, inventory of the pulled files (cells hold values, not formulas) | Opus; Sonnet moves files | runner alive; inventory complete |
-| 0.2 | One reader for files 1-7 -> clean tables (monthly 1969+, daily 1990+); each series tagged with its live source and delay | Opus | every ticker read or listed as failed |
+| 0.2 | One reader for files 1-7 -> clean tables (monthly 1969+, daily 1990+); each series tagged with its live source and delay. All access goes through an as-of function that cannot return data later than the date asked for | Opus | every ticker read or listed as failed |
 | 0.3 | Data check: to 2010 in full; 2011+ structure only (dates, gaps), no price statistics | script; Opus triage | must-have series usable; differences from free data explained |
 | 0.4 | Lock and seal: file hashes committed; 2011+ behind a one-time key; untouched markets named and sealed | script | lock id |
-| 0.5 | Engine on the PC (monthly tests, weekly implementation); must reproduce the current book on free data first | Opus; fresh Opus re-check | match within tolerance |
+| 0.5 | Engine on the PC (monthly tests, weekly implementation); must reproduce the current book on free data first. Truncation test: cutting the data at any date must leave every earlier signal unchanged | Opus; fresh Opus re-check | match within tolerance; truncation test passes |
 | **1** | **Thesis library** | | |
 | 1.1 | Fable audit: planted-error test on the small Eckhardt pack; independent re-derivation of the ten key statements of the Carver note | Opus plants and scores; Fable runs | at least 80% of planted errors caught and none carried into a conclusion; else tighten the brief and fact-check every Fable note |
 | 1.2 | Systematic charter: one consolidation of the seven notes (what is established, the systematic pods, their version grids, the queued checks cut down to one diagnostic pass) | Fable, 1 run; then Opus checks it against claims and code and reads the remaining trend sources (Eckhardt, Fung and Hsieh) for contradictions | charter + check |
@@ -69,17 +70,18 @@ The chat is orchestrated on Opus; Fable is called only for its own steps and rea
 | 2.2 | Scoring rules written before any outcome is looked at: what counts as resolvable, default horizons, baselines (base rate, trend continuation) | Opus | committed |
 | 2.3 | Scorecard pooled by call type. Descriptive only, never used for weights. Forecasts still open are scored as they resolve. The same scorer later serves our pods and analysts | Opus builds; script runs | scorecard |
 | **3** | **Specs and registration** | | |
-| 3.1 | One-page pod spec: mechanism, markets, signal, sizing, version grid, data (history, live source and delay), costs, predictions, drop rule | Opus | spec |
+| 3.1 | One-page pod spec in a fixed form: economic claim, what is predicted, the signal, the sample (fixed here, not by the builder), what would prove it wrong, when it should stop working, the knobs that were tuned; plus markets, sizing, version grid, data (history, live source and delay), costs. The sign of a signal cannot be flipped after results | Opus | spec |
 | 3.2 | Spec check: faithful to the card and claims? can it fail? is the hindsight flag right? | fresh Opus agent; Fable only to settle a disagreement | approved spec |
 | 3.3 | Power check: simulated pods with known true Sharpe (0, 0.2, 0.4) run through the test sheet -> pass rates; decisive statistic and thresholds fixed | script; Opus | pass-rate table |
 | 3.4 | Registration: batches, pods, grids, tests, error budget, freeze rule, holdout consequences, live checkpoints written into TESTING_PROTOCOL.md and committed before any run | Opus | one-page summary to the user |
+| 3.5 | Checker test: backtests with planted defects (look-ahead, shifted sample, missing costs, cherry-picked period, unstable knob) mixed with clean ones; catch rate and false alarms measured before the checks are relied on, and again whenever a checker brief changes | Opus plants; a fresh Opus checks; script scores | catch rate and false-alarm rate on record |
 | **4** | **Design-era tests (PC, to 2010)** | | |
 | 4.1 | Batch A1, data swap: the current design on Bloomberg data; differences explained | Opus | report |
 | 4.2 | Batch A2: weekly tranches and version averaging against the incumbent net of its selection inflation (about 0.23 Sharpe): must not hurt. Plus the diagnostic pass | Opus | report |
-| 4.3 | Batches B1 and B2: new pods, at most 4 each, on the test sheet (section 5) | Opus | result sheets |
+| 4.3 | Batches B1 and B2: new pods, at most 4 each, on the test sheet (section 5). The agent that builds a pod does not see earlier backtest results | Opus builds; Sonnet may run the standard sheet once the engine is fixed | result sheets |
 | 4.4 | Verdict by rule: Core / Incubator / Shelved | script | verdict |
-| 4.5 | Independent rebuild of each Core pod from its written spec alone; results must match | fresh Opus agent | match report |
-| 4.6 | Batch review from the result tables only: what is refuted, what goes into the next registered batch. No re-runs with tweaks | Fable; Opus checks the numbers | review note |
+| 4.5 | Independent rebuild of each Core pod from its written spec alone; results must match within 15% | fresh Opus agent | match report |
+| 4.6 | Batch review from the result tables only: what is refuted, what goes into the next registered batch. No re-runs with tweaks. Every statement about a result quotes the number from the table | Fable; Opus checks the numbers | review note |
 | **5** | **Book, freeze, holdout** | | |
 | 5.1 | Book: Core pods at equal risk, volatility target, caps. No switching between pods | Opus | book config |
 | 5.2 | Freeze: config id + lock id (pass chances and consequences were registered at 3.4) | Opus | freeze record |
@@ -90,12 +92,12 @@ The chat is orchestrated on Opus; Fable is called only for its own steps and rea
 | W2 | Core pods: signals -> positions -> trade list; each signal also stated as a probability from its design-era hit rate | script | trade list |
 | W3 | Shadow: Incubator pods; analyst pods (each reads its card and the same snapshot, blind to the others; dated forecasts with probabilities at 4 and 13 weeks on a fixed asset list; model id logged, a model change starts a new record) | script; Opus analysts | forecasts |
 | W4 | Ledger: predictions and positions appended before the week starts | script | append-only ledger |
-| W5 | Scoring: resolved predictions, live against backtest bands, flags | script | scorecard |
+| W5 | Scoring and health checks: resolved predictions; signal health (signals arrive, long/short mix as expected); performance health (live against backtest bands); data health (stale or missing inputs); each pod's own stop-working conditions from its spec | script | scorecard + flags |
 | W6 | Weekly report, one page, fixed template | Sonnet | note in Obsidian |
 | M | Monthly: reads the month's ledger and scorecards, adds its own dated forecasts (shadow-scored) | Fable | forecasts + one page |
 | Q | Quarterly review; promotions only at registered checkpoints with stated sample sizes | Fable; Opus checks | review |
 | **7** | **Always on** | | |
-| 7.1 | Trial log counts every run on design data, diagnostics and grid changes included | script | trials.csv |
+| 7.1 | Research log: one typed record per thesis, build, result, check and robustness run, each with its id, parent id, code version and data lock id. It counts every run on design data, diagnostics and grid changes included | script | research log (extends trials.csv) |
 | 7.2 | Every Fable output stored with its exact input; ids and numbers checked | script; Opus | check log |
 | 7.3 | Obsidian stays the single store: Method/WORKFLOW, Pods/, Tests/, Forecasts/, Weekly/ | Sonnet | vault |
 | 7.4 | Usage: token estimate before each step, actual after | - | usage log |
@@ -117,7 +119,10 @@ Decisive, all four:
 4. Tail: worst fall and worst month of the book not materially worse (TESTING_PROTOCOL test 5).
 
 Reported, not decisive: the two eras; by asset class; share of versions positive; one-period trading delay; untouched
-markets; deflated Sharpe from the trial log; the weekly-implementation check.
+markets; deflated Sharpe from the trial log; the weekly-implementation check; cost sensitivity; number of tuned knobs;
+fragility (the largest loss in the result when any one year, market or asset class is removed, flagged when one period
+gives more than 40% of the profit). Anything estimated from data (volatility, normalisers, hit rates) uses an
+expanding window.
 
 Verdict:
 - **Core**: passes the four decisive tests, thesis documented before 2011, a live source for every input, and the
@@ -160,3 +165,31 @@ before the week starts.
 - The folder with the pulled Bloomberg files (the expected folder holds only the blank templates).
 - Whether Bloomberg can be refreshed regularly and used for live signals. Default if not: live runs on free data only.
 - Before step 5.4 only: account size and broker.
+
+## 10. Additions from three papers on agentic research systems (v2.1)
+Sources (folder "Agentic system papers"): Kinlay, "Agentic Workflows for Alpha Research" (May 2026, a 12-week FX-carry
+case study by one practitioner); Algo Insights, "How Quant Funds Are Using Agentic AI" (Aug 2026, a popular article,
+its fund claims unsourced); Fan and Huang, "Beyond Prompting" (arXiv 2603.14288, March 2026, not peer reviewed).
+
+Taken over:
+1. Data access that cannot look ahead, plus the truncation test (0.2, 0.5). Kinlay builds this first.
+2. A typed research log with ids, parents, code and data versions (7.1). Kinlay calls it the most valuable part.
+3. The fixed spec form: claim, predicted variable, signal, fixed sample, null, stop-working conditions, tuned knobs;
+   no sign flips after results (3.1).
+4. The builder does not see earlier results (4.3).
+5. The checker itself is tested with planted defects and clean controls (3.5). Kinlay's critic caught 20 of 25 planted
+   defects and raised 4 false alarms on 25 clean cases, which is why no single check is trusted alone.
+6. Reviews quote the exact numbers (4.6). This removed confident-but-wrong summaries in Kinlay's setup.
+7. Cost sensitivity, tuned-knob count and fragility on the test sheet; 15% tolerance for the rebuild (section 5, 4.5).
+8. Live health checks for signal, performance and data, and each pod's stop-working conditions (W5).
+9. Sonnet for standard implementation once the engine is fixed (4.3): both practitioner sources find it sufficient.
+
+Not taken over:
+- A self-directed loop that proposes, tests and re-proposes from its own results (Fan and Huang). It is the forking
+  path the fixed budget exists to prevent, and its 2021-24 test is not clean for a model that knows those years. Its
+  reported Sharpe of 3.11 is gross, daily, on US stocks; it does not transfer to 62 macro markets.
+- A t-statistic of 3 or a false-discovery-rate correction. Those suit hundreds of machine-generated signals; we test a
+  handful of pre-registered pods, where Holm inside small batches does the same job with more power.
+- A human sign-off at promotion. All three sources keep one. Here the verdict is by a registered rule, and the user
+  releases each block; a human decision remains unavoidable only before real money (5.4).
+
