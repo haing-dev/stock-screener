@@ -51,10 +51,11 @@ try {
         Set-Content -Path $lstat -Value ("PYTHON NOT FOUND {0:yyyy-MM-dd HH:mm}" -f (Get-Date))
     } else {
         $ca = $py.a
+        $env:PYTHONPATH = (Join-Path $LR "lib") + ";" + (Join-Path $LR "pylib"); $env:PYTHONIOENCODING = "utf-8"
         $mods = (& $py.e @ca -c "import importlib.util as u;print(' '.join(m+('=ok' if u.find_spec(m) else '=MISSING') for m in ('numpy','pandas','openpyxl','scipy','pyarrow')))" 2>$null) -join ""
         if ($ljobs.Count -eq 0) { Set-Content -Path $lstat -Value ("idle, python $pyv ($($py.e)), $mods, last check {0:yyyy-MM-dd HH:mm}" -f (Get-Date)) }
         $env:BBG_DIR = Join-Path $D "mscifreedata\Bloomberg_UBC_pull_2026-11-04\pulled results"
-        $env:BBG_WORK = Join-Path $LR "work"; $env:PYTHONPATH = Join-Path $LR "lib"; $env:PYTHONIOENCODING = "utf-8"
+        $env:BBG_WORK = Join-Path $LR "work"
         foreach ($j in $ljobs) {
             $n = $j.BaseName; $rf = Join-Path $LR "results\${n}.txt"; $ef = Join-Path $LR "results\${n}.err.txt"
             Set-Content -Path $lstat -Value ("running ${n} since {0:yyyy-MM-dd HH:mm}, python $pyv" -f (Get-Date)); Log "local: running ${n}"
