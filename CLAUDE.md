@@ -100,6 +100,12 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   User re-pulls files 1, 3, 5 (+8 EquityIndexes tickers in file 4) -> re-run bbg_build -> lock v2. Usable now: daily files 6, 7
   (from 1990), file 1 DailyCommodities / EquityTR / EquityValuation / Economics, files 2 and 4. Next: block 3 on the user's go
   (engine on the PC, reproduce the book on free data; does not need the re-pull).
+- Re-pull set (2026-11-11, user pulls Fri 13 Nov): docs/data_requests/bloomberg_repull_2026-11-13/R1..R7 (builder
+  build_bloomberg_repull.py; 1,283 series; sheets named '<file digit> <sheet>'; Check sheet with live STATUS and a
+  'should start by' month per series). Copy on the PC: ...\Bloomberg_UBC_pull_2026-11-04\repull_2026-11-13; pulled files go to
+  'pulled results' (current reader ignores R files). AFTER the pull: extend bbgdata so R sheets replace the same sheet of files
+  1/3/5/4, rebuild -> lock v2. Cause of the cut-off unknown: the cut-off copies also DISAGREE with other copies in every
+  overlapping month (30 pairs, 19/19); job tools/bbgq/jobs/bbg_diag_v1.py is queued on the PC (runner stopped ticking 07:44).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
