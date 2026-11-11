@@ -13,7 +13,7 @@ Order and scope: [[Foundation units]]. Brief: [[FOUNDATION_SPEC]]. Each note's e
 | U04 | [[U04 Nick Baltas]] | QIS, trend design, premia vs flow anomalies, carry |
 | U05 | [[U05 Yoav Git]] | sources of trend by asset class, market selection, execution |
 | U06 | [[U06 Man AHL]] | trend attribution, market breadth, crisis vs long-run Sharpe, portable alpha |
-| U07 | _pending_ | empirical finance, crowding and edge decay, research controls |
+| U07 | [[U07 Winton]] | empirical finance, crowding and edge decay, research controls |
 | U08 | _pending_ | risk-first trend trading, robust statistics, anti-overfit testing |
 | U09 | _pending_ | risk structure of trend following (lookback straddles) |
 | U10 | _pending_ | cross-asset value and momentum factors, funding liquidity |
