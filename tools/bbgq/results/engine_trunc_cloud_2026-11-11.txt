@@ -1,0 +1,331 @@
+full run 62s; cut dates: 1980-06-30, 1984-12-31, 1989-06-30, 1993-12-31, 1998-06-30, 2002-12-31, 2007-06-30, 2010-12-31
+columns: stage | end-to-end PASS/FAIL, differing market-months / compared, max abs diff, months first..last | stage alone PASS/FAIL, differing | markets (most differing first)
+CUT 1980-06-30 | inputs after T seen by the engine: none | stages failing end-to-end 8 of 21 | 89s
+  panel returns                      | PASS 0/2302 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | FAIL 0/39890 max 0.0e+00  | alone n/a (loader stage) | eq_ca_tsx
+  signal econ                        | PASS 0/10915 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/2758 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/1042 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/2036 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/2059 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | FAIL 11/2631 max 8.4e-02 1979-08..1980-06 | alone PASS 0 | eq_ca_tsx
+  family position trend BASE         | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/184 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | FAIL 224/12210 max 9.9e-02 1979-08..1980-06 | alone PASS 0 | eq_us_spx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y,bd_us_10y +13
+  family position econ CANDIDATE     | FAIL 247/12210 max 1.6e-02 1979-08..1980-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y +15
+  family position carry CANDIDATE    | FAIL 164/12210 max 4.1e-03 1979-08..1980-06 | alone PASS 0 | bd_us_5y,bd_us_10y,bd_us_30y,bd_de_10y,st_de_2y,st_jp_2y,fx_jpy,fx_gbp +8
+  family position value CANDIDATE    | FAIL 121/12210 max 1.5e-02 1979-08..1980-06 | alone PASS 0 | eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,bd_de_10y,fx_jpy,fx_gbp,fx_chf,fx_cad +4
+  positions CANDIDATE                | FAIL 252/12210 max 7.7e-02 1979-08..1980-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y +16
+  book net return CANDIDATE          | FAIL 10/184 max 6.5e-03 1979-09..1980-06 | alone PASS 0 | book
+  cause daily returns: C3 (markets with daily data up to T that the cut run drops: eq_ca_tsx)
+  cause volatility CANDIDATE: inherited (stage alone passes) from daily returns
+  cause family position trend CANDIDATE: inherited (stage alone passes) from daily returns, volatility CANDIDATE
+  cause family position econ CANDIDATE: inherited (stage alone passes) from daily returns, volatility CANDIDATE
+  cause family position carry CANDIDATE: inherited (stage alone passes) from daily returns, volatility CANDIDATE
+  cause family position value CANDIDATE: inherited (stage alone passes) from daily returns, volatility CANDIDATE
+  cause positions CANDIDATE: inherited (stage alone passes) from daily returns, volatility CANDIDATE
+  cause book net return CANDIDATE: inherited (stage alone passes) from daily returns, volatility CANDIDATE
+CUT 1984-12-31 | inputs after T seen by the engine: none | stages failing end-to-end 8 of 21 | 109s
+  panel returns                      | PASS 0/3680 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | FAIL 0/62463 max 0.0e+00  | alone n/a (loader stage) | eq_gb_ftse
+  signal econ                        | PASS 0/14103 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/4089 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/1906 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/3383 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/3409 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | FAIL 6/4114 max 1.3e-02 1984-05..1984-10 | alone PASS 0 | eq_gb_ftse
+  family position trend BASE         | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/238 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | FAIL 192/15774 max 5.5e-03 1984-05..1984-12 | alone PASS 0 | eq_us_spx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y,bd_us_5y +16
+  family position econ CANDIDATE     | FAIL 192/15774 max 3.7e-04 1984-05..1984-12 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y +16
+  family position carry CANDIDATE    | FAIL 132/15774 max 2.4e-05 1984-05..1984-12 | alone PASS 0 | bd_us_5y,bd_us_10y,bd_us_30y,bd_de_10y,st_de_2y,st_jp_2y,fx_jpy,fx_gbp +9
+  family position value CANDIDATE    | FAIL 98/15774 max 8.4e-04 1984-05..1984-12 | alone PASS 0 | eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_hk_hsi,bd_us_10y,bd_de_10y,fx_jpy,fx_gbp +6
+  positions CANDIDATE                | FAIL 151/15774 max 6.4e-03 1984-05..1984-12 | alone PASS 0 | eq_gb_ftse,eq_us_spx,eq_us_ndx,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y +17
+  book net return CANDIDATE          | FAIL 7/238 max 1.9e-04 1984-06..1984-12 | alone PASS 0 | book
+  cause daily returns: C3 (markets with daily data up to T that the cut run drops: eq_gb_ftse)
+  cause volatility CANDIDATE: inherited (stage alone passes) from daily returns
+  cause family position trend CANDIDATE: inherited (stage alone passes) from daily returns, volatility CANDIDATE
+  cause family position econ CANDIDATE: inherited (stage alone passes) from daily returns, volatility CANDIDATE
+  cause family position carry CANDIDATE: inherited (stage alone passes) from daily returns, volatility CANDIDATE
+  cause family position value CANDIDATE: inherited (stage alone passes) from daily returns, volatility CANDIDATE
+  cause positions CANDIDATE: inherited (stage alone passes) from daily returns, volatility CANDIDATE
+  cause book net return CANDIDATE: inherited (stage alone passes) from daily returns, volatility CANDIDATE
+CUT 1989-06-30 | inputs after T seen by the engine: none | stages failing end-to-end 17 of 21 | 97s
+  panel returns                      | FAIL 74/5264 max 2.6e-04 1985-02..1989-06 | alone n/a (loader stage) | eq_us_ndx,eq_us_r2k
+  daily returns                      | FAIL 0/88826 max 0.0e+00  | alone n/a (loader stage) | eq_us_r2k,eq_de_dax
+  signal econ                        | PASS 0/17397 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/5529 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/2899 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | FAIL 1/4907 max 6.7e-01 1987-06..1987-06 | alone PASS 0 | eq_us_ndx
+  volatility BASE                    | PASS 0/4938 max 5.6e-17  | alone PASS 0 | 
+  volatility CANDIDATE               | FAIL 116/5750 max 1.7e-01 1987-11..1989-06 | alone PASS 0 | eq_us_r2k,eq_de_dax,eq_us_spx,bd_jp_10y,fx_gbp,fx_chf,fx_aud,fx_nzd +11
+  family position trend BASE         | FAIL 1078/19338 max 2.7e-02 1986-03..1989-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y +21
+  family position econ BASE          | FAIL 978/19338 max 1.9e-04 1986-03..1989-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y +19
+  family position carry BASE         | FAIL 721/19338 max 1.5e-04 1986-03..1989-06 | alone PASS 0 | bd_us_2y,bd_us_5y,bd_us_10y,bd_us_30y,bd_de_10y,st_us_2y,st_de_2y,st_jp_2y +11
+  family position value BASE         | FAIL 596/19338 max 1.3e-04 1986-03..1989-06 | alone PASS 0 | eq_gb_ftse,eq_jp_nikkei,eq_au_asx,bd_de_10y,fx_jpy,fx_gbp,fx_chf,fx_cad +8
+  family position xsmom BASE         | FAIL 907/19338 max 4.7e-03 1986-03..1989-06 | alone PASS 0 | bd_us_30y,bd_de_10y,eq_au_asx,eq_hk_hsi,st_de_2y,fx_cad,bd_us_10y,fx_chf +19
+  positions BASE                     | FAIL 1071/19338 max 2.7e-02 1986-03..1989-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_hk_hsi,bd_us_2y,bd_us_5y +21
+  book net return BASE               | FAIL 41/292 max 5.3e-04 1986-02..1989-06 | alone PASS 0 | book
+  family position trend CANDIDATE    | FAIL 1368/19338 max 4.7e-02 1985-03..1989-06 | alone PASS 0 | eq_us_spx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y,bd_us_5y +21
+  family position econ CANDIDATE     | FAIL 1347/19338 max 4.9e-03 1985-03..1989-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y +20
+  family position carry CANDIDATE    | FAIL 940/19338 max 3.0e-04 1985-03..1989-06 | alone PASS 0 | bd_us_5y,bd_us_10y,bd_us_30y,bd_de_10y,st_de_2y,st_jp_2y,fx_gbp,fx_chf +11
+  family position value CANDIDATE    | FAIL 795/19338 max 7.0e-03 1985-03..1989-06 | alone PASS 0 | eq_gb_ftse,eq_jp_nikkei,bd_de_10y,fx_jpy,fx_cad,fx_sek,fx_zar,eq_ca_tsx +10
+  positions CANDIDATE                | FAIL 1433/19338 max 5.1e-02 1985-03..1989-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y +22
+  book net return CANDIDATE          | FAIL 53/292 max 1.1e-03 1985-02..1989-06 | alone PASS 0 | book
+  cause panel eq_us_ndx: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 53; first 1985-02)
+  cause panel eq_us_r2k: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 21; first 1987-10)
+  cause daily returns: C3 (markets with daily data up to T that the cut run drops: eq_us_r2k, eq_de_dax)
+  cause signal trend (sign 1/3/12): inherited (stage alone passes) from panel returns
+  cause volatility CANDIDATE: inherited (stage alone passes) from panel returns, daily returns
+  cause family position trend BASE: inherited (stage alone passes) from panel returns, daily returns, signal trend (sign 1/3/12)
+  cause family position econ BASE: inherited (stage alone passes) from panel returns, daily returns, signal trend (sign 1/3/12)
+  cause family position carry BASE: inherited (stage alone passes) from panel returns, daily returns, signal trend (sign 1/3/12)
+  cause family position value BASE: inherited (stage alone passes) from panel returns, daily returns, signal trend (sign 1/3/12)
+  cause family position xsmom BASE: inherited (stage alone passes) from panel returns, daily returns, signal trend (sign 1/3/12)
+  cause positions BASE: inherited (stage alone passes) from panel returns, daily returns, signal trend (sign 1/3/12)
+  cause book net return BASE: inherited (stage alone passes) from panel returns, daily returns, signal trend (sign 1/3/12)
+  cause family position trend CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position econ CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position carry CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position value CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause positions CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause book net return CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal trend (sign 1/3/12), volatility CANDIDATE
+CUT 1993-12-31 | inputs after T seen by the engine: none | stages failing end-to-end 19 of 21 | 93s
+  panel returns                      | FAIL 260/7052 max 7.2e-04 1985-02..1993-12 | alone n/a (loader stage) | eq_us_ndx,eq_us_r2k,eq_fr_cac,eq_mx_ipc,eq_br_ibov
+  daily returns                      | FAIL 0/120462 max 0.0e+00  | alone n/a (loader stage) | bd_gb_10y,st_gb_5y,eq_au_asx,eq_br_ibov
+  signal econ                        | FAIL 10/20763 max 3.6e-03 1993-03..1993-12 | alone PASS 0 | eq_fr_cac
+  signal carry                       | PASS 0/7025 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/3975 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | FAIL 15/6650 max 6.7e-01 1987-06..1993-12 | alone PASS 0 | eq_mx_ipc,eq_us_ndx,eq_us_r2k
+  volatility BASE                    | FAIL 14/6684 max 8.3e-17 1992-11..1993-12 | alone PASS 0 | eq_mx_ipc
+  volatility CANDIDATE               | FAIL 15/7555 max 2.8e-02 1993-02..1993-12 | alone PASS 0 | eq_au_asx,eq_br_ibov,bd_gb_10y
+  family position trend BASE         | FAIL 2713/22902 max 2.7e-02 1986-03..1993-12 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y +24
+  family position econ BASE          | FAIL 2544/22902 max 8.2e-03 1986-03..1993-12 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y +23
+  family position carry BASE         | FAIL 1762/22902 max 3.3e-03 1986-03..1993-12 | alone PASS 0 | bd_us_2y,bd_us_5y,bd_us_10y,bd_us_30y,bd_de_10y,st_us_2y,st_de_2y,st_jp_2y +12
+  family position value BASE         | FAIL 1518/22902 max 1.2e-03 1986-03..1993-12 | alone PASS 0 | eq_gb_ftse,eq_jp_nikkei,fx_jpy,fx_gbp,fx_chf,fx_cad,fx_sek,fx_zar +11
+  family position xsmom BASE         | FAIL 2360/22902 max 8.4e-03 1986-03..1993-12 | alone PASS 0 | eq_hk_hsi,bd_us_2y,bd_us_30y,st_us_2y,fx_chf,fx_cad,bd_us_10y,st_de_2y +22
+  positions BASE                     | FAIL 2686/22902 max 3.3e-02 1986-03..1993-12 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_ca_tsx,eq_hk_hsi,bd_us_2y,bd_us_5y,bd_us_10y +24
+  book net return BASE               | FAIL 95/346 max 5.7e-03 1986-02..1993-12 | alone PASS 0 | book
+  family position trend CANDIDATE    | FAIL 3003/22902 max 6.4e-02 1985-03..1993-12 | alone PASS 0 | eq_us_spx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y,bd_us_5y +24
+  family position econ CANDIDATE     | FAIL 2972/22902 max 1.6e-02 1985-03..1993-12 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y +25
+  family position carry CANDIDATE    | FAIL 1993/22902 max 4.7e-02 1985-03..1993-12 | alone PASS 0 | bd_us_5y,bd_us_10y,bd_us_30y,bd_de_10y,st_de_2y,st_jp_2y,fx_gbp,fx_aud +13
+  family position value CANDIDATE    | FAIL 1757/22902 max 1.7e-01 1985-03..1993-12 | alone PASS 0 | eq_gb_ftse,eq_jp_nikkei,fx_jpy,fx_cad,fx_sek,fx_zar,bd_de_10y,bd_us_30y +12
+  positions CANDIDATE                | FAIL 3084/22902 max 1.3e-01 1985-03..1993-12 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y +26
+  book net return CANDIDATE          | FAIL 107/346 max 9.8e-03 1985-02..1993-12 | alone PASS 0 | book
+  cause panel eq_br_ibov: C2 (months with a return only in the cut run 8, only in the full run 0, value differences 0; first 1993-05)
+  cause panel eq_fr_cac: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 45; first 1990-04)
+  cause panel eq_mx_ipc: C2 (months with a return only in the cut run 25, only in the full run 0, value differences 0; first 1991-12)
+  cause panel eq_us_ndx: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 107; first 1985-02)
+  cause panel eq_us_r2k: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 75; first 1987-10)
+  cause daily returns: C3 (markets with daily data up to T that the cut run drops: bd_gb_10y, st_gb_5y, eq_au_asx, eq_br_ibov)
+  cause signal econ: inherited (stage alone passes) from panel returns
+  cause signal trend (sign 1/3/12): inherited (stage alone passes) from panel returns
+  cause volatility BASE: inherited (stage alone passes) from panel returns, daily returns
+  cause volatility CANDIDATE: inherited (stage alone passes) from panel returns, daily returns
+  cause family position trend BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position econ BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position carry BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position value BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position xsmom BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause positions BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause book net return BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position trend CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position econ CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position carry CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position value CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause positions CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause book net return CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+CUT 1998-06-30 | inputs after T seen by the engine: none | stages failing end-to-end 18 of 21 | 88s
+  panel returns                      | FAIL 460/9226 max 3.3e-03 1985-02..1998-06 | alone n/a (loader stage) | eq_us_ndx,eq_us_r2k,eq_fr_cac,eq_br_ibov,eq_kr_kospi,eq_cn,eq_tw,eq_in
+  daily returns                      | FAIL 0/162460 max 0.0e+00  | alone n/a (loader stage) | bd_de_10y,st_de_2y,eq_cn,eq_kr_kospi,eq_tw,eq_in,cm_platinum
+  signal econ                        | FAIL 64/24165 max 3.9e-03 1993-03..1998-06 | alone PASS 0 | eq_fr_cac
+  signal carry                       | PASS 0/8927 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/5163 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | FAIL 4/8675 max 6.7e-01 1987-06..1996-12 | alone PASS 0 | eq_us_ndx,eq_us_r2k,eq_fr_cac
+  volatility BASE                    | PASS 0/8719 max 1.1e-16  | alone PASS 0 | 
+  volatility CANDIDATE               | FAIL 74/9887 max 2.4e-01 1997-02..1998-06 | alone PASS 0 | eq_kr_kospi,eq_cn,eq_tw,eq_in,bd_de_10y,st_de_2y,cm_platinum
+  family position trend BASE         | FAIL 4630/26466 max 2.7e-02 1986-03..1998-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y +34
+  family position econ BASE          | FAIL 4417/26466 max 2.2e-03 1986-03..1998-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y +33
+  family position carry BASE         | FAIL 3083/26466 max 3.4e-03 1986-03..1998-06 | alone PASS 0 | bd_us_2y,bd_us_5y,bd_us_10y,bd_us_30y,bd_de_10y,st_us_2y,st_de_2y,st_jp_2y +20
+  family position value BASE         | FAIL 2591/26466 max 1.4e-03 1986-03..1998-06 | alone PASS 0 | eq_gb_ftse,eq_jp_nikkei,fx_jpy,fx_gbp,fx_chf,fx_cad,fx_sek,fx_zar +13
+  family position xsmom BASE         | FAIL 4069/26466 max 8.4e-03 1986-03..1998-06 | alone PASS 0 | eq_hk_hsi,bd_us_2y,st_us_2y,fx_chf,fx_cad,bd_us_30y,fx_jpy,eq_jp_nikkei +33
+  positions BASE                     | FAIL 4594/26466 max 2.9e-02 1986-03..1998-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_ca_tsx,eq_hk_hsi,bd_us_2y,bd_us_5y,bd_us_10y +34
+  book net return BASE               | FAIL 149/400 max 1.7e-03 1986-02..1998-06 | alone PASS 0 | book
+  family position trend CANDIDATE    | FAIL 4920/26466 max 7.0e-02 1985-03..1998-06 | alone PASS 0 | eq_us_spx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y,bd_us_5y +34
+  family position econ CANDIDATE     | FAIL 5142/26466 max 2.9e-02 1985-03..1998-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y +37
+  family position carry CANDIDATE    | FAIL 3396/26466 max 5.1e-02 1985-03..1998-06 | alone PASS 0 | bd_us_5y,bd_us_10y,bd_us_30y,bd_de_10y,st_de_2y,st_jp_2y,fx_gbp,fx_aud +20
+  family position value CANDIDATE    | FAIL 2837/26466 max 3.1e-02 1985-03..1998-06 | alone PASS 0 | eq_gb_ftse,eq_jp_nikkei,fx_jpy,fx_cad,fx_sek,fx_zar,fx_nok,eq_ca_tsx +13
+  positions CANDIDATE                | FAIL 5267/26466 max 8.9e-02 1985-03..1998-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y +38
+  book net return CANDIDATE          | FAIL 161/400 max 2.9e-03 1985-02..1998-06 | alone PASS 0 | book
+  cause panel eq_br_ibov: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 20; first 1996-11)
+  cause panel eq_cn: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 11; first 1997-08)
+  cause panel eq_fr_cac: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 99; first 1990-04)
+  cause panel eq_in: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 11; first 1997-08)
+  cause panel eq_kr_kospi: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 18; first 1997-01)
+  cause panel eq_tw: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 11; first 1997-08)
+  cause panel eq_us_ndx: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 161; first 1985-02)
+  cause panel eq_us_r2k: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 129; first 1987-10)
+  cause daily returns: C3 (markets with daily data up to T that the cut run drops: bd_de_10y, st_de_2y, eq_cn, eq_kr_kospi, eq_tw, eq_in, cm_platinum)
+  cause signal econ: inherited (stage alone passes) from panel returns
+  cause signal trend (sign 1/3/12): inherited (stage alone passes) from panel returns
+  cause volatility CANDIDATE: inherited (stage alone passes) from panel returns, daily returns
+  cause family position trend BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12)
+  cause family position econ BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12)
+  cause family position carry BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12)
+  cause family position value BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12)
+  cause family position xsmom BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12)
+  cause positions BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12)
+  cause book net return BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12)
+  cause family position trend CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position econ CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position carry CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position value CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause positions CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause book net return CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+CUT 2002-12-31 | inputs after T seen by the engine: none | stages failing end-to-end 19 of 21 | 94s
+  panel returns                      | FAIL 631/12157 max 3.3e-03 1985-02..2000-12 | alone n/a (loader stage) | eq_us_ndx,eq_us_r2k,eq_fr_cac,eq_br_ibov,eq_cn,eq_kr_kospi,eq_in,eq_tw
+  daily returns                      | FAIL 0/222074 max 0.0e+00  | alone n/a (loader stage) | cm_cattle
+  signal econ                        | FAIL 337/27567 max 3.9e-03 1993-03..2002-12 | alone PASS 0 | eq_fr_cac,eq_br_ibov,fx_brl,eq_kr_kospi,eq_tw,fx_krw,eq_in
+  signal carry                       | PASS 0/10973 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/6556 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | FAIL 9/11528 max 6.7e-01 1987-06..2001-03 | alone PASS 0 | eq_cn,eq_us_ndx,eq_us_r2k,eq_fr_cac,eq_tw,eq_br_ibov
+  volatility BASE                    | FAIL 239/11539 max 1.8e-03 1999-02..2002-12 | alone PASS 0 | eq_us_ndx,eq_fr_cac,eq_us_r2k,eq_kr_kospi,eq_tw,eq_br_ibov,eq_cn,eq_in
+  volatility CANDIDATE               | FAIL 282/12897 max 5.7e-02 1999-02..2002-12 | alone PASS 0 | eq_fr_cac,eq_us_ndx,eq_us_r2k,eq_kr_kospi,eq_tw,eq_br_ibov,eq_cn,eq_in +1
+  family position trend BASE         | FAIL 7302/30030 max 2.7e-02 1986-03..2002-12 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y +54
+  family position econ BASE          | FAIL 7075/30030 max 2.2e-03 1986-03..2002-12 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y +53
+  family position carry BASE         | FAIL 4655/30030 max 3.4e-03 1986-03..2002-12 | alone PASS 0 | bd_us_2y,bd_us_5y,bd_us_10y,bd_us_30y,bd_de_10y,st_us_2y,st_de_2y,st_jp_2y +23
+  family position value BASE         | FAIL 3779/30030 max 1.4e-03 1986-03..2002-12 | alone PASS 0 | eq_gb_ftse,eq_jp_nikkei,fx_gbp,fx_zar,fx_cad,fx_jpy,fx_chf,fx_sek +16
+  family position xsmom BASE         | FAIL 6465/30030 max 8.4e-03 1986-03..2002-12 | alone PASS 0 | eq_hk_hsi,bd_us_2y,st_us_2y,bd_us_30y,eq_jp_nikkei,eq_au_asx,fx_jpy,fx_chf +53
+  positions BASE                     | FAIL 7291/30030 max 2.9e-02 1986-03..2002-12 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_ca_tsx,eq_hk_hsi,bd_us_2y,bd_us_5y,bd_us_10y +54
+  book net return BASE               | FAIL 203/454 max 1.7e-03 1986-02..2002-12 | alone PASS 0 | book
+  family position trend CANDIDATE    | FAIL 7627/30030 max 4.7e-02 1985-03..2002-12 | alone PASS 0 | eq_us_spx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y,bd_us_5y +54
+  family position econ CANDIDATE     | FAIL 7990/30030 max 1.6e-02 1985-03..2002-12 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y +53
+  family position carry CANDIDATE    | FAIL 5000/30030 max 3.8e-03 1985-03..2002-12 | alone PASS 0 | bd_us_5y,bd_us_10y,bd_us_30y,bd_de_10y,st_de_2y,st_jp_2y,fx_gbp,fx_aud +23
+  family position value CANDIDATE    | FAIL 4036/30030 max 1.1e-03 1985-03..2002-12 | alone PASS 0 | eq_gb_ftse,eq_jp_nikkei,fx_zar,fx_cad,fx_jpy,fx_sek,eq_ca_tsx,fx_gbp +16
+  positions CANDIDATE                | FAIL 8155/30030 max 5.1e-02 1985-03..2002-12 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y +54
+  book net return CANDIDATE          | FAIL 215/454 max 2.9e-03 1985-02..2002-12 | alone PASS 0 | book
+  cause panel eq_br_ibov: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 45; first 1996-11)
+  cause panel eq_cn: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 41; first 1997-08)
+  cause panel eq_fr_cac: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 106; first 1990-04)
+  cause panel eq_in: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 41; first 1997-08)
+  cause panel eq_kr_kospi: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 41; first 1997-01)
+  cause panel eq_tw: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 35; first 1997-08)
+  cause panel eq_us_ndx: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 170; first 1985-02)
+  cause panel eq_us_r2k: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 152; first 1987-10)
+  cause daily returns: C3 (markets with daily data up to T that the cut run drops: cm_cattle)
+  cause signal econ: inherited (stage alone passes) from panel returns
+  cause signal trend (sign 1/3/12): inherited (stage alone passes) from panel returns
+  cause volatility BASE: inherited (stage alone passes) from panel returns, daily returns
+  cause volatility CANDIDATE: inherited (stage alone passes) from panel returns, daily returns
+  cause family position trend BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position econ BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position carry BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position value BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position xsmom BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause positions BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause book net return BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position trend CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position econ CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position carry CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position value CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause positions CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause book net return CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+CUT 2007-06-30 | inputs after T seen by the engine: none | stages failing end-to-end 19 of 21 | 91s
+  panel returns                      | FAIL 590/15456 max 1.3e-03 1985-02..2000-12 | alone n/a (loader stage) | eq_us_ndx,eq_us_r2k,eq_fr_cac,eq_br_ibov,eq_kr_kospi,eq_in,eq_tw
+  daily returns                      | FAIL 0/288810 max 0.0e+00  | alone n/a (loader stage) | eq_eu_stoxx50
+  signal econ                        | FAIL 715/30969 max 3.0e-03 1993-03..2007-06 | alone PASS 0 | eq_fr_cac,eq_br_ibov,fx_brl,eq_kr_kospi,eq_tw,fx_krw,eq_in
+  signal carry                       | PASS 0/13100 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/8086 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | FAIL 4/15025 max 6.7e-01 1994-08..1998-09 | alone PASS 0 | eq_us_ndx,eq_fr_cac,eq_br_ibov
+  volatility BASE                    | FAIL 245/14983 max 6.3e-04 1999-02..2003-11 | alone PASS 0 | eq_us_ndx,eq_us_r2k,eq_fr_cac,eq_kr_kospi,eq_tw,eq_in,eq_br_ibov
+  volatility CANDIDATE               | FAIL 616/16395 max 7.8e-03 1999-02..2007-06 | alone PASS 0 | eq_fr_cac,eq_us_ndx,eq_us_r2k,eq_kr_kospi,eq_tw,eq_br_ibov,eq_in,eq_eu_stoxx50
+  family position trend BASE         | FAIL 10550/33594 max 3.6e-02 1986-03..2007-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y +54
+  family position econ BASE          | FAIL 10369/33594 max 1.2e-03 1986-03..2007-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y +53
+  family position carry BASE         | FAIL 6349/33594 max 1.1e-03 1986-03..2007-06 | alone PASS 0 | bd_us_2y,bd_us_5y,bd_us_10y,bd_us_30y,bd_de_10y,st_us_2y,st_de_2y,st_jp_2y +24
+  family position value BASE         | FAIL 5075/33594 max 3.7e-04 1986-03..2007-06 | alone PASS 0 | eq_gb_ftse,eq_jp_nikkei,fx_jpy,fx_zar,fx_chf,fx_gbp,eq_ca_tsx,eq_au_asx +17
+  family position xsmom BASE         | FAIL 9091/33594 max 5.9e-03 1986-03..2007-06 | alone PASS 0 | eq_hk_hsi,bd_us_2y,st_us_2y,eq_jp_nikkei,eq_au_asx,fx_jpy,bd_us_30y,fx_chf +53
+  positions BASE                     | FAIL 10584/33594 max 3.6e-02 1986-03..2007-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_ca_tsx,eq_hk_hsi,bd_us_2y,bd_us_5y,bd_us_10y +54
+  book net return BASE               | FAIL 257/508 max 2.0e-03 1986-02..2007-06 | alone PASS 0 | book
+  family position trend CANDIDATE    | FAIL 10875/33594 max 5.1e-02 1985-03..2007-06 | alone PASS 0 | eq_us_spx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y,bd_us_5y +54
+  family position econ CANDIDATE     | FAIL 11284/33594 max 2.3e-03 1985-03..2007-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,bd_us_2y,bd_us_5y +53
+  family position carry CANDIDATE    | FAIL 6694/33594 max 4.3e-03 1985-03..2007-06 | alone PASS 0 | bd_us_5y,bd_us_10y,bd_us_30y,bd_de_10y,st_de_2y,st_jp_2y,fx_gbp,fx_aud +24
+  family position value CANDIDATE    | FAIL 5332/33594 max 2.0e-03 1985-03..2007-06 | alone PASS 0 | eq_gb_ftse,eq_jp_nikkei,fx_jpy,fx_zar,eq_ca_tsx,fx_chf,fx_cad,fx_gbp +17
+  positions CANDIDATE                | FAIL 11449/33594 max 5.3e-02 1985-03..2007-06 | alone PASS 0 | eq_us_spx,eq_us_ndx,eq_gb_ftse,eq_jp_nikkei,eq_ca_tsx,eq_au_asx,eq_hk_hsi,bd_us_2y +54
+  book net return CANDIDATE          | FAIL 269/508 max 3.0e-03 1985-02..2007-06 | alone PASS 0 | book
+  cause panel eq_br_ibov: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 45; first 1996-11)
+  cause panel eq_fr_cac: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 106; first 1990-04)
+  cause panel eq_in: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 41; first 1997-08)
+  cause panel eq_kr_kospi: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 41; first 1997-01)
+  cause panel eq_tw: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 35; first 1997-08)
+  cause panel eq_us_ndx: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 170; first 1985-02)
+  cause panel eq_us_r2k: C1 (months with a return only in the cut run 0, only in the full run 0, value differences 152; first 1987-10)
+  cause daily returns: C3 (markets with daily data up to T that the cut run drops: eq_eu_stoxx50)
+  cause signal econ: inherited (stage alone passes) from panel returns
+  cause signal trend (sign 1/3/12): inherited (stage alone passes) from panel returns
+  cause volatility BASE: inherited (stage alone passes) from panel returns, daily returns
+  cause volatility CANDIDATE: inherited (stage alone passes) from panel returns, daily returns
+  cause family position trend BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position econ BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position carry BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position value BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position xsmom BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause positions BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause book net return BASE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility BASE
+  cause family position trend CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position econ CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position carry CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause family position value CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause positions CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+  cause book net return CANDIDATE: inherited (stage alone passes) from panel returns, daily returns, signal econ, signal trend (sign 1/3/12), volatility CANDIDATE
+CUT 2010-12-31 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 95s
+  panel returns                      | PASS 0/18082 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/342978 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/33615 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/14780 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/9327 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/17783 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/17698 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/19165 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/550 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/550 max 0.0e+00  | alone PASS 0 | 
+--- causes found
+C1 | where: gm/panel.py build(), equity loop: d = mean((tr0 + rl) - r_px) over `both = ... & (GRID <= DIV_EST_END)` (DIV_EST_END = 2010-12), gated by tr0.notna().sum() > 60 and both.sum() > 60
+   why: the dividend yield added to a price index before the ETF / MSCI / French total-return series starts is ONE number estimated from all design months, including months after the decision month
+   proposed fix (not applied): estimate it on an expanding window (months <= t, with the same 60-month minimum) or register a fixed per-market dividend yield
+C2 | where: gm/panel.py build(), equity loop: f0 = rl.first_valid_index(); gap = rl.isna() & (GRID >= max(f0, 1990-01))
+   why: whether the US 3-month rate stands in for a missing local rate depends on whether the local rate ever starts later: with the full sample the months before its start stay empty (no return), with a cut before its start they get returns
+   proposed fix (not applied): decide the stand-in month by month: gap = rl.isna() & (GRID >= 1990-01) (or never use the stand-in before the local rate exists)
+C3 | where: gm/daily.py build(): a daily series is kept only if len(...) > 500 over the WHOLE sample (bonds, equities, Yahoo commodities)
+   why: a market with fewer than 500 daily observations up to T but more later uses the monthly EWMA in the cut run and the daily EWMA in the full run, so the CANDIDATE (hybrid) volatility changes
+   proposed fix (not applied): drop the length gate (vol.daily_ewma already needs 40 observations) or apply it per date (observations up to t)
+--- summary
+TRUNC 1980-06-30 | FAIL | end-to-end failing stages 8 of 21 | stages failing alone 0
+TRUNC 1984-12-31 | FAIL | end-to-end failing stages 8 of 21 | stages failing alone 0
+TRUNC 1989-06-30 | FAIL | end-to-end failing stages 17 of 21 | stages failing alone 0
+TRUNC 1993-12-31 | FAIL | end-to-end failing stages 19 of 21 | stages failing alone 0
+TRUNC 1998-06-30 | FAIL | end-to-end failing stages 18 of 21 | stages failing alone 0
+TRUNC 2002-12-31 | FAIL | end-to-end failing stages 19 of 21 | stages failing alone 0
+TRUNC 2007-06-30 | FAIL | end-to-end failing stages 19 of 21 | stages failing alone 0
+TRUNC 2010-12-31 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNCATION TEST FAIL (honest failures listed above; nothing was fixed)

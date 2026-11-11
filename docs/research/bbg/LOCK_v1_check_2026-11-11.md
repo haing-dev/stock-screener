@@ -82,3 +82,11 @@ clean 1,073; SHORT (under 120 months / 1,250 days) 1,659; REQ 591; STALE runs 30
 INV 94; GAP 73; EMPTY 48; duplicates that disagree 30; release-date junk 17, late 5; non-positive price 1.
 Release dates: 14,463 dated cells; 2,255 before the observation date; 558 more than 31 days before (ignored, fixed delay used); 57 more than 120 days after.
 Not yet reviewed series by series: JUMP, STALE, GAP and DUPDIFF lists (done in block 3 for the markets the engine uses).
+
+## Addendum 2026-11-11 (diagnostics bbg_diag_v1 / v2, `tools/bbgq/results/`)
+The late-starting blocks are not short history: they are COPIES of one series. File 1: all 355 blocks in ten sheets
+that start 2009-06 hold exactly the same 209 numbers (the numbers of JYBSV1 Curncy). File 3: all 481 blocks that
+start 2004-04 hold one identical set of 271 numbers. They match neither the daily pull nor another monthly pull of
+the same ticker in any month; blocks with full history in the same sheets match exactly. Cause not proven (most
+likely the Excel add-in answered every waiting request with one reply). Consequence: these 836 blocks are unusable;
+the re-pull stays as planned; the re-pull Check sheet and the reader (from bbgdata-1.2.0) flag copied blocks.
