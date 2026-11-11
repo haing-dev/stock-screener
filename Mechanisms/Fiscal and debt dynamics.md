@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Fiscal and debt dynamics
 
-437 claims from 128 sources. Each line links to the claim inside its source note.
+453 claims from 129 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -698,3 +698,21 @@ tags: [mechanism]
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C03-X1|MT227-C03-X1]] — UK gilt yields have reached very high levels (a 'bond crisis') and France is also struggling, so long-end sovereign bond stress is spreading beyond the US, which supports the guest's higher-yield thesis and helps short-bond trend positions.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C08-3|MT227-C08-3]] — NATO defence spending of 5% of GDP would mean larger deficits and more government bond issuance.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C10-3|MT227-C10-3]] — Leveraged long-bond exposures across the market and heavy issuance (e.g. Europe) are too large for market capacity, so bond vigilantes can push yields higher.
+
+## [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08]]
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C079-4|MT228-C079-4]] — Whether frontier models or open-source win, AI economics break: lab purchase commitments become uncollectable and leverage in the ecosystem creates a death spiral; odds of major disruption are very high.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C089-3|MT228-C089-3]] — A benign June CPI is misleading; oil rose from the high 60s to the mid 80s on Iran, which will feed later inflation prints.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C094-5|MT228-C094-5]] — NVDA's balance-sheet risk from propping up its ecosystem (circular financing) lifts its credit risk; a break below 189 sends it to 165-175.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C094-6|MT228-C094-6]] — Rating downgrades of leveraged AI companies would trigger a credit-driven downward spiral.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C097-3|MT228-C097-3]] — July CPI will be hotter than June because gasoline and oil rose in July.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C098-1|MT228-C098-1]] — NVDA at $190 is a line in the sand: a close at $187-188 sends it to $165-170; he calls it a 'bank' behind the ecosystem.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C099-4|MT228-C099-4]] — Hearsay from smart investors that conditions are the most precarious since pre-GFC.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C099-5|MT228-C099-5]] — NVDA is not a safe haven inside AI because it carries the ecosystem's financing risk (the 'bank of NVDA').
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C109-2|MT228-C109-2]] — Government deficits plus the AI buildout both need debt financing, crowding out and pushing up long-end yields or forcing money printing.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C109-3|MT228-C109-3]] — Competing debt demand from deficits and AI will end in money supply expansion and USD debasement, favoring commodities over the next decade.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C112-2|MT228-C112-2]] — Higher oil worsens Japan's bond doom loop since Japan imports 97% of its energy; HO clusters flag the stress.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C124-5|MT228-C124-5]] — A hyperscaler capex cut eases yields via less crowding out but collapses AI stocks and likely causes recession.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C128-2|MT228-C128-2]] — 10-year yield to 5.5% and 30-year to 6%.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C130-2|MT228-C130-2]] — Long rates rise even as oil falls, a sign of fiscal/credit pressure.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C132-3|MT228-C132-3]] — EURUSD falling to 0.96-0.98 on European sovereign debt problems (France) fuels DXY strength.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C134-6|MT228-C134-6]] — Treasury auction was not truly robust.

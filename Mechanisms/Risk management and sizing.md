@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Risk management and sizing
 
-1909 claims from 215 sources. Each line links to the claim inside its source note.
+1971 claims from 216 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -2344,3 +2344,67 @@ tags: [mechanism]
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C11-1|MT227-C11-1]] — Callable municipal bonds hide duration risk: if yields rise 1-2% the call is no longer exercised and effective duration jumps from about 5 to 15 years.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C11-2|MT227-C11-2]] — Private equity, private credit and other private assets carry both duration and liquidity risk when rates rise.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C15-3|MT227-C15-3]] — Express it with calls in a barbell alongside inflation-oriented positioning, rather than all-in Chinese stocks.
+
+## [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08]]
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C013-4|MT228-C013-4]] — After a roughly 50% retrace of the $10-$32 run, he sees a long entry near $21 with a $20 stop, risking $2 for about $10 of upside.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C019-7|MT228-C019-7]] — He expects a difficult market in the following 12 months in which protecting capital matters more than making gains.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C044-2|MT228-C044-2]] — He caps equities at 20-25% of liquid capital to keep dry powder for when others need liquidity.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C056-4|MT228-C056-4]] — He cut to 93-94% cash because DXY/10-year broke out, midterm summer is weak and margin use is a record.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C059-4|MT228-C059-4]] — He expects a rough four months with a small hedged equity book.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C061-1|MT228-C061-1]] — He stays buttoned up until new highs with focus on rates and USD, expecting volatility to 9/30.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C065-1|MT228-C065-1]] — Platform funds grind 5-7% unlevered hedged returns levered 300-400%, avoiding beta and drawdown.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C068-3|MT228-C068-3]] — He hedges down net exposure, started LABU for a biotech euphoria later in the year.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C068-6|MT228-C068-6]] — VIX at 17 makes protection cheap before early fall.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C068-7|MT228-C068-7]] — Accounting issues keep a stock uninvestable until the management is cleaned out.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C070-6|MT228-C070-6]] — He tactically covers puts and ETF shorts into oversold extremes while keeping the bearish view, to stay flexible around the MU print.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C071-2|MT228-C071-2]] — He lifts hedges after big declines but leaves the big-picture bearish view unchanged and stays heavily in cash.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C071-5|MT228-C071-5]] — Being permanently bullish or bearish fails; he stays flexible and changes view when evidence changes.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C072-1|MT228-C072-1]] — He never runs net short: risk is unlimited and he hedges with index ETFs or puts that define risk.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C072-5|MT228-C072-5]] — He trims puts and short ETFs on green or oversold days to get slightly longer, while treating primary downtrend names as hard avoids.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C076-1|MT228-C076-1]] — He expresses bearishness by cutting gross equity exposure to 10-12% of net worth and keeping it modestly net long (overall equity exposure ~2-3% of NW), never net short.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C081-1|MT228-C081-1]] — In a bear tape he covers shorts on sharp red days and presses on green days, keeping powder for the violent rallies.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C082-3|MT228-C082-3]] — With software and hardware both falling, the correct tech allocation is cash/sidelines.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C083-1|MT228-C083-1]] — He raises gross from 7-8% to 10-12% and net to about 20% long on red days, adds uranium/humanoid names, and hedges with short EWT, EWY and EWJ.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C085-1|MT228-C085-1]] — He scales net long in steps (20% -> 35% -> 50%) into flushes while holding gross ~12%, to trade the countertrend bounce.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C088-2|MT228-C088-2]] — He sells into any 10%+ rally and reduces net exposure, because he considers this a broken sector not a correction.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C089-2|MT228-C089-2]] — He does not add exposure on rallies inside a primary downtrend; he lets the charts decide.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C093-1|MT228-C093-1]] — He holds 85-90% cash and adds only on a durable tech bottom or when non-tech wishlist names become cheap from forced liquidations.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C093-3|MT228-C093-3]] — He covers shorts and puts after large gains in the unwind to keep capacity to re-short into violent bounces.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C093-4|MT228-C093-4]] — Capital preservation matters because a 50% loss needs a 100% gain; recovery typically takes 6-8 years outside the post-Covid era.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C098-3|MT228-C098-3]] — SMH above 593 invalidates his bearish tech thesis (lowered from 615-618); this is his stop for added shorts.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C098-4|MT228-C098-4]] — He presses shorts only after a roughly 10% SMH rally, not after a 1-day bounce.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C099-1|MT228-C099-1]] — After the big rally he re-adds EWY and SMH shorts, cutting net to about 25% long on a 10-15% equity sleeve, rest in T-bills.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C099-2|MT228-C099-2]] — As SMH hit his 550 target and oil, rates and dollar rose, he hedged up more with shorts in ALAB, CBRS, CAT, BE, FCEL, SHAZ, taking net to about 10%.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C100-2|MT228-C100-2]] — He holds a bear base case but will play the long side if charts turn bullish; no digging in heels.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C101-3|MT228-C101-3]] — Stay at very low gross and low net; SMH may bounce another 5%.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C101-4|MT228-C101-4]] — Playbook: sell rallies, do not press shorts, lighten shorts when super oversold.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C103-1|MT228-C103-1]] — He avoids net short positions because bear-market rallies are violent; when cautious he sits mostly in cash with a 10-15% equity book between neutral and 50% net long.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C103-2|MT228-C103-2]] — He expects a rally in SMH to $550-575 and treats a move above $593 as the invalidation level of his bearish semiconductor stance.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C103-3|MT228-C103-3]] — A decisive break above $175 in EWY (Korea) would invalidate his bearish base case on Korea.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C104-1|MT228-C104-1]] — After the 10-15% rally in SMH he moved to 90% cash and net neutral on the rest, judging odds have turned back toward bears on tech.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C106-3|MT228-C106-3]] — Short AAOI via his basket of AI shorts; he judges a Chinese transceiver import ban unlikely since it would delay the DC buildout.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C110-4|MT228-C110-4]] — He bought SPY puts expiring in a few months because VIX near 15 makes insurance cheap, citing an HO signal and macro risks.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C112-8|MT228-C112-8]] — His mostly cash and hedged book made a new yearly high on a down day.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C113-7|MT228-C113-7]] — Hard avoid on ORCL and CRWV (and SFTBY) because AI build leverage is stacked.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C114-6|MT228-C114-6]] — He keeps net neutral and hedged against longs; adds to BWEN when it trades well below his bear case.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C115-5|MT228-C115-5]] — Short basket rules: cover on extreme weakness, re-short weak-chart names on rallies; covered AAOI at 109.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C115-8|MT228-C115-8]] — He buys red and sells green: trims shorts on big down days, because the decline is multi-month.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C117-2|MT228-C117-2]] — He closed put sales and plans to sell puts again when VIX reaches 40-50.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C118-1|MT228-C118-1]] — 90% cash, 10% hard assets, rest fully hedged; hard assets also fall if the market bottoms out, so size modestly.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C118-2|MT228-C118-2]] — Reports Roth account up 150% this year, moved to cash.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C118-4|MT228-C118-4]] — Smaller neoclouds will fail or sell cheaply; CRWV has heavy debt; NBIS the best of the group but not spared.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C120-3|MT228-C120-3]] — Neoclouds are shorts; most vulnerable CRWV, SHAZ, BRUN; NBIS has risky assumptions.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C121-1|MT228-C121-1]] — Stays in cash.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C122-3|MT228-C122-3]] — Holds cash and a modest hard-asset position; do not oversize yet.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C126-5|MT228-C126-5]] — CRWV's capital structure puts it at high risk of permanent impairment; NBIS worth no more than $125-150.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C135-3|MT228-C135-3]] — FCEL counterparty (Fit Energy family office) risk if the AI trade busts; his call worked.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C137-4|MT228-C137-4]] — He sizes a speculative bet with defined risk (long calls, exit if no lease by end of November, $30K loss vs $120K gain) and hedges it by shorting the sector ETF DTCR.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C137-5|MT228-C137-5]] — Public markets' liquidity lets an investor cut a position and change his mind, which he sees as the main advantage over private investing.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C138-5|MT228-C138-5]] — Avoid leveraged companies now and hold clean-balance-sheet FCF generators outside AI; levered stubs can be bought for cents later in the unwind.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C139-3|MT228-C139-3]] — At a major inflection tomorrow's fundamentals differ from today's, so fundamental analysis fails; selling puts and using margin become dangerous.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C151-7|MT228-C151-7]] — In this tape rips must be locked in quickly, so he sold most of QSI after a 75% run.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C153-4|MT228-C153-4]] — A good hedge-fund manager spends almost all of the time on what could go wrong with positions; making money takes care of itself.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C154-4|MT228-C154-4]] — When asset prices are deflating rapidly, small gains and being flat count as wins; preserve capital.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C161-3|MT228-C161-3]] — He covers shorts into big drops to keep dry powder and aims to raise purchasing power as risk assets fall, expecting QQQ to fall much more.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C165-4|MT228-C165-4]] — Banking profits as a cushion lets him take risk in a poor tape.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C165-9|MT228-C165-9]] — Hedges uranium longs with shorts in the euro, bitcoin ETF and metal/mining ETFs, expecting a dollar spike.

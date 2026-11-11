@@ -240,3 +240,4 @@ Mechanism pages: [[Slow reaction (trend)]], [[Risk premium (carry, term premium)
 | MT225 | [[MT225 - Why the Market Isn’t Moving, And Why That’s Dangerous - Systematic Investor - Ep.389]] | 2026-02-28 | 38 | 12 | sonnet-xhigh cross-check |
 | MT226 | [[MT226 - Why the Old Rules of Diversification Are Changing - Allocator - Ep.38]] | 2026-08-20 | 54 | 8 | sonnet-xhigh cross-check |
 | MT227 | [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330]] | 2025-01-18 | 70 | 14 | sonnet-xhigh cross-check |
+| MT228 | [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08]] | 2026-11-09 | 733 | 0 | pending |

@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Risk premium (carry, term premium)
 
-600 claims from 177 sources. Each line links to the claim inside its source note.
+629 claims from 178 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT002 - 2024 Trend Following Recap- Key Insights from Top Traders - Systematic Investor 327]]
@@ -959,3 +959,34 @@ tags: [mechanism]
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C09-2|MT227-C09-2]] — Higher bond yields compress equity P/E multiples (25x in 1968 to about 4.5x in 1982, a 20% earnings yield).
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C09-4|MT227-C09-4]] — An inverted yield curve paid investors to hedge rate and inflation risk; with the curve upward sloping, the hedge is now harder and costlier.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C15-2|MT227-C15-2]] — A China reversion is an asymmetric trade: guest estimates a 30-40% chance versus the market's roughly 2%, with a very large payoff.
+
+## [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08]]
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C015-2|MT228-C015-2]] — Oracle credit default swaps are a gauge of OpenAI counterparty stress, and he sees leveraged CoreWeave and OpenAI as the weakest links of the AI capex chain.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C015-3|MT228-C015-3]] — He expects SoftBank to run into trouble when the leverage in the OpenAI/AI complex unwinds.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C017-4|MT228-C017-4]] — Spot-exposed microcap tankers carry the highest beta to an Iran/Hormuz disruption, since rate spikes flow to earnings.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C018-1|MT228-C018-1]] — He holds a basket of shippers, expecting debt-free operators to show large operating leverage to a rate spike (a 30% rate rise could double EPS at IMPP).
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C047-2|MT228-C047-2]] — Verizon at 10-11x earnings with a 6.1% yield about 150 bps over the 10-year works as a cash substitute with a double by 2030.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C075-5|MT228-C075-5]] — A VIX of 16.7 while tech is breaking is complacent; volatility will jump.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C078-5|MT228-C078-5]] — The tech/Korea unwind ends in a broad risk-asset decline with VIX near 40+, which he places at fall 2026, possibly into Q1 2027.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C079-1|MT228-C079-1]] — Rising long-term rates are a hidden problem that reprices all risk assets, not just tech.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C086-1|MT228-C086-1]] — With a large cash hoard and very high implied vols he sells puts on names he is willing to own, collecting premium or buying at a lower cost.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C087-3|MT228-C087-3]] — A strongly backwardated oil curve means the spot spike is seen as temporary; oil bulls since March are vulnerable until the long end catches up.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C090-3|MT228-C090-3]] — Oil becomes a macro problem only if the long end of the curve rises toward spot (backwardation narrowing); this is not yet as severe as March.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C094-3|MT228-C094-3]] — The final phase has both hyperscalers and suppliers falling together with VIX at 40-50+.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C107-9|MT228-C107-9]] — Equity risk premium is as thin as at previous market peaks.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C111-3|MT228-C111-3]] — With risk-free rates and commodities offering alternatives, TINA no longer holds, yet equity valuations exceed those under negative real rates.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C112-4|MT228-C112-4]] — Higher risk-free rates cut terminal values of growth stocks and data centers.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C115-1|MT228-C115-1]] — Biotech rally is rotation of AI money; long-duration cash flows make biotech vulnerable when long rates rise.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C127-7|MT228-C127-7]] — Falling Treasuries (TLT) make SMH overvalued.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C127-8|MT228-C127-8]] — Higher financing costs and capex inflation will undermine AI buildout economics.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C128-3|MT228-C128-3]] — Data center projects need 12% discount rate, capex per MW rising to $14-17.5M; very bearish for buildout economics.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C128-7|MT228-C128-7]] — Higher rates (NPV at 10-12%) make many data center projects marginal, with a lag.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C131-4|MT228-C131-4]] — Lightening VPG after a 20% rise: with high rates, stocks won't run to insane valuations again; take profits.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C136-2|MT228-C136-2]] — CCC-and-below yields at 17% could reach 20% in an AI bust.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C139-1|MT228-C139-1]] — Staples outperforming, or long bonds rising on a day when they would otherwise be subdued, signals fear of a capex and/or consumer recession.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C145-6|MT228-C145-6]] — Credit stress starts at the weakest borrowers (CCC and lower yields approaching 18%) and then creeps up the quality ladder, just as consumer stress starts in subprime; it undermines the 'AI trade resumes after midterms' consensus.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C146-1|MT228-C146-1]] — If neocloud economics were riskless the debt would clear easily; CRWV raising at 15% shows the market prices the business as risky, so claimed paybacks are not credible.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C147-2|MT228-C147-2]] — Staples outperforming is a bad sign, and the dollar rally has not even started, which he expects to be the next hit.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C157-9|MT228-C157-9]] — A breakout in consumer staples is a defensive-rotation tell that is bearish for equities.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C158-5|MT228-C158-5]] — A 25% drop in Fannie and Freddie signals thin capital against rising delinquencies, risking a bailout that would spread to mortgage insurers, non-bank servicers and the housing complex.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C159-5|MT228-C159-5]] — Another day of staples strength is read as a bearish defensive-rotation signal.

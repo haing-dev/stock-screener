@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Seasonality
 
-75 claims from 27 sources. Each line links to the claim inside its source note.
+81 claims from 28 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT002 - 2024 Trend Following Recap- Key Insights from Top Traders - Systematic Investor 327]]
@@ -134,3 +134,11 @@ tags: [mechanism]
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C05-X1|MT227-C05-X1]] — The guest's calendar framework treated late October into mid-January as a constructive period (best case a rally into mid-January) after a weak summer and September, with the flow model (vanna/charm, year-end rebalancing) as the check on whether the rally would end early.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C07-4|MT227-C07-4]] — In 1968-82 equity gains were concentrated in election years (average 21%) while non-election years were poor, so strong election-year returns are in line with history.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C07-5|MT227-C07-5]] — All five populist-era elections saw double-digit equity gains (average 22%) versus about 5% for other elections, which the guest sees as an outlier that will be given back.
+
+## [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08]]
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C038-2|MT228-C038-2]] — Midterm-election years are weak for equities through the summer and then strong in Q4, so cash raised in May-Sept should be redeployed into a falling market.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C071-4|MT228-C071-4]] — The June selloff is only a first leg; the severe part of the decline comes in August-September 2026.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C072-4|MT228-C072-4]] — Base case: end of June weak, July a seasonal reprieve with oversold bounces, then a larger decline in August-September.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C076-2|MT228-C076-2]] — Market stays difficult through September 2026; correct response is small size and standing aside.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C122-5|MT228-C122-5]] — If a big flush occurs in September, Q4 of a midterm year has tended to bounce.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C127-3|MT228-C127-3]] — The bull case rests on midterm-year Oct/Nov seasonality.

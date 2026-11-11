@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # New mechanisms (unclassified)
 
-504 claims from 166 sources. Each line links to the claim inside its source note.
+507 claims from 167 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT002 - 2024 Trend Following Recap- Key Insights from Top Traders - Systematic Investor 327]]
@@ -841,3 +841,8 @@ tags: [mechanism]
 ## [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330]]
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C12-R2|MT227-C12-R2]] — Powell, being smart, is expected to play along with the administration to avoid the alternative of a shadow Fed chair that would discredit him. (institutional)
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C14-R1|MT227-C14-R1]] — Since the February 2022 joint communique Russia and China are allies, so a Trump who is friendly to Russia may not be as strong on China as the consensus assumes. (geopolitical)
+
+## [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08]]
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C002-1|MT228-C002-1]] — When a holding company trades far below the value of its listed stakes, buying back its own shares at ever lower prices raises net asset value per share, so a deeper discount makes the buyback more accretive. (new: capital_allocation)
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C010-1|MT228-C010-1]] — He predicts European Lithium (0.26 AUD) will overtake Dateline (0.64 AUD) by year end because its CRML stake and buyback imply a much higher NAV. (new: capital_allocation)
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C013-3|MT228-C013-3]] — For a holding-company discount trade, the discount to NAV and buyback pace matter more than the direction of the underlying stock. (new: capital_allocation)

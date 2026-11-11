@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Structural shifts
 
-2079 claims from 220 sources. Each line links to the claim inside its source note.
+2165 claims from 221 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -2524,3 +2524,91 @@ tags: [mechanism]
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C13-3|MT227-C13-3]] — Expect more global conflict and breakdown of institutions because power is being questioned.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C13-X1|MT227-C13-X1]] — Major global institutions (WTO after China's entry, the WHO, and the EU, whose competitiveness the Draghi report called into question) are seen as failing, leaving a leadership vacuum that adds to geopolitical and market instability.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C16-2|MT227-C16-2]] — Narrative-driven political influence will produce more volatility, dispersion and rotations in markets.
+
+## [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08]]
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C010-3|MT228-C010-3]] — The shift to securing non-Chinese critical-mineral supply, with a 1 Jan 2027 legal cut-off on Chinese content, is a new structural driver that the market has not priced.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C011-2|MT228-C011-2]] — Water scarcity is a bottleneck for data-center build-outs, so a microcap with a 50/50 JV with GE Vernova that recycles water from waste heat has a sector-driven tailwind.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C016-2|MT228-C016-2]] — He sees NUAI, a natural-gas data-center power developer, as 4-6x higher, leaning on a Grok DCF base case.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C016-3|MT228-C016-3]] — If AI displaces white-collar jobs, borrowers who qualified for mortgages may no longer qualify, which would raise demand for HELOCs and benefit Figure.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C017-1|MT228-C017-1]] — Relaying a Grok screen, he views Aeluma as the microcap with the most leverage to the indium phosphide / AI optics bottleneck.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C017-3|MT228-C017-3]] — Block-style layoffs spreading would push more households to borrow against home equity, a demand driver for Figure.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C019-8|MT228-C019-8]] — He values NUAI at $16-24 per gigawatt of natural-gas data-center power, which on 3GW implies a stock far above its price.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C020-1|MT228-C020-1]] — He puts fair value of NUAI’s 3GW natural-gas data-center power at $48-72 per share, with nuclear as extra optionality.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C022-1|MT228-C022-1]] — Rasa supplies ultra-high-purity indium and phosphorus for InP wafers, so it is a chokepoint in AI optics supply at about 14.5x earnings.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C022-2|MT228-C022-2]] — AI power demand outrunning clean-energy supply pushes hyperscalers toward natural gas, which supports gas-fired data-center power developers.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C024-1|MT228-C024-1]] — Of the two data-center electrical-equipment names, Forgent is preferred on faster order intake (bookings +268% y/y, book-to-bill 2.6x, backlog $1.5B).
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C026-1|MT228-C026-1]] — If the Google-backed Fluidstack campus is powered from Hallador’s Merom plant, HNRG is worth $35-40.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C027-1|MT228-C027-1]] — He values HNRG at $42-53 per share once a 10-15 year data-center power contract lifts EBITDA toward $250M at an 8-10x multiple.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C028-1|MT228-C028-1]] — Taking an AI-model EPS of $4-5 on 1.5GW at 14x, he gets $56-70 per share versus a $16 price.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C029-1|MT228-C029-1]] — He prefers equipment suppliers that sell the tools for a technology shift, such as SCHMID for glass-substrate packaging.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C030-1|MT228-C030-1]] — AI optics spending is growing about 60% a year, which supports the bull case for Smartoptics.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C031-1|MT228-C031-1]] — If revenue reaches $250M with 20%+ EBITDA margins, an 8-12x sales multiple gives Smartoptics a $2-3B market cap, roughly 4x.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C032-2|MT228-C032-2]] — Smartoptics at 4.5x his 2026 sales estimate is cheap for a 40%+ grower with operating leverage.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C034-1|MT228-C034-1]] — IPWR’s bidirectional power switch targets AI data-center circuit protection, giving a nanocap asymmetric upside if commercialization works.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C037-1|MT228-C037-1]] — MACOM supply agreement plus 45m GBP investment de-risks IQE; he sees 3-4x in 36 months as AI photonics epi capacity is re-rated toward peer sales multiples.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C039-1|MT228-C039-1]] — He sees limited downside and a possible triple for Hallador because its Merom plant is the only local 1 GW grid-connected asset next to a $65B data center campus plus 500 MW of new gas.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C040-1|MT228-C040-1]] — He holds Allient as a decade-long picks-and-shovels play on humanoid robot actuators (motors are a core part of actuator cost).
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C042-1|MT228-C042-1]] — Uranium demand will soar with the nuclear renaissance while supply deficit worsens, and the Iran conflict reinforces energy independence, so uranium is a 3-5 year buy-and-hold.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C043-1|MT228-C043-1]] — Geothermal is one of few pure plays on data-center baseload power, and the FRVO IPO at a market cap near ORA could re-rate hard.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C044-4|MT228-C044-4]] — Solid-state transformers are the relief for the transformer bottleneck at data centers and will be a major theme into 2027; utilities will be customers too.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C047-3|MT228-C047-3]] — Volex is cheap at 1.25x sales and gives free data-center interconnect optionality.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C048-1|MT228-C048-1]] — A large insider-style private placement by a respected commodities investor, plus UK political shift toward domestic shale gas, is a tell for a re-rating of STAR.L.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C049-1|MT228-C049-1]] — He believes FuelCell can reach an $8-10B market cap because its efficiency gap to Bloom is small and closable.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C050-1|MT228-C050-1]] — Harmonic Drive and Nabtesco are picks-and-shovels humanoid robot gear plays to hold for a decade.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C050-2|MT228-C050-2]] — Large gas turbine makers are sold out through 2032, so time to power is the decisive factor for data-center buyers and benefits small turbine suppliers.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C052-3|MT228-C052-3]] — AirJoule, a pre-revenue waste-heat-to-water technology tested with a hyperscaler, could re-rate sharply as water scarcity limits data-center sites.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C053-1|MT228-C053-1]] — Ideal Power B-TRAN solid-state circuit breakers for NVIDIA 800V DC data centers are a speculative long, with FLNC strength used as a tell for market appetite.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C054-1|MT228-C054-1]] — Volex data-center interconnect at 12x 2028 sales ($500M) plus 1x for the rest gives about $7B EV, a $37.84 price target in 12 months versus $9.30.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C055-2|MT228-C055-2]] — He likes the INIO IPO at $33, seeing $2 per share EPS in 2028 as with FPS.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C055-3|MT228-C055-3]] — Thin-film lithium niobate wafers are an overlooked photonics supply-chain theme, with G&H a profitable US play.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C066-1|MT228-C066-1]] — Volex is the lowest-risk highest-reward fiber/interconnect name.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C067-1|MT228-C067-1]] — He holds humanoid picks-and-shovels through 2035.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C067-2|MT228-C067-2]] — CPO adoption reduces DSP content per link, putting MXL optical DSP at risk from 2028; range $50-150.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C068-5|MT228-C068-5]] — Power is the true bottleneck and last standing sector; chips will pile up like channel stuffing without power.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C068-8|MT228-C068-8]] — INIO is a buy on $1.80-2 EPS in 2028 at 35-40x.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C070-1|MT228-C070-1]] — If power limits how many data centers can be energized, ordered chips and transceivers (with double ordering) will pile up unused and orders will fall.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C074-5|MT228-C074-5]] — Hyperscalers launching their own GPU clouds from excess compute contradicts the scarcity story and creates competition for neoclouds (also SoftBank SB Neo).
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C076-3|MT228-C076-3]] — Once tech breaks it will not lead again for a long time, so investors should analyze other industries (value-based philosophy returns).
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C085-3|MT228-C085-3]] — He rotates to Cameco for nuclear plus commodity exposure, consistent with his view that commodities are the next secular bull.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C086-2|MT228-C086-2]] — INDI is his humanoid-robotics long (derivative of Unitree), a theme he expects to hold up outside the AI hardware crash.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C091-2|MT228-C091-2]] — A delay of 800VDC data-center power architecture to 2027-2028 (short-circuit concerns) hurts power semiconductor stories priced for an earlier ramp.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C096-8|MT228-C096-8]] — A blanket rule that battery companies (TE, FLNC) lose money for investors.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C097-5|MT228-C097-5]] — Commodities hold the next secular bull but fall near-term until a deflation/growth scare is priced in.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C101-6|MT228-C101-6]] — He holds INDI and BWEN into the 8/10 Unitree IPO as cheap humanoid options while the tech tape is difficult.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C101-7|MT228-C101-7]] — STAR.L (UK gas) is one of his largest positions and rises against a weak energy tape, an example of the outside-tech opportunities he favors.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C104-4|MT228-C104-4]] — Dependence of MSFT AI revenue on OpenAI and NVDA financing its customers (circular funding) makes him avoid both at current prices.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C104-5|MT228-C104-5]] — Battery companies are a sector to avoid because they historically fail to create lasting shareholder value.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C105-2|MT228-C105-2]] — He sees a plausible path within 12 months where data-center exposure turns from a plus to a minus for stocks.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C105-3|MT228-C105-3]] — Long INDI for humanoid-robot optionality while accepting weak near-term legacy auto business.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C106-4|MT228-C106-4]] — Long BWEN as a cheap, little-understood growth name with strong momentum.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C107-2|MT228-C107-2]] — Commodities and physical assets will beat equities over the next ten years.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C110-1|MT228-C110-1]] — Long VPG as a small-cap humanoid-robot (Optimus) component play for a theme lasting into the 2030s; added on pullback to technical support $61-63.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C110-2|MT228-C110-2]] — Bearish AAOI: commodity product, poor management, new competition (Visera/TSM), likely equity raise; a ban on Chinese imports is unlikely because it would delay data-center buildout.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C110-5|MT228-C110-5]] — Shorts VRT at $300 resistance as part of his AI short basket.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C110-6|MT228-C110-6]] — Core long physical-asset book: COPX, CCJ, junior miners, plus humanoid component names.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C111-4|MT228-C111-4]] — Strong demand for the Unitree listing signals the humanoid theme is heating up; he holds INDI, VPG and several component names.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C111-5|MT228-C111-5]] — BWEN has based since 2012 and is near a breakout; a long base implies a big move, and its tie to gas turbines (GEV) is the fundamental driver, trading at 3.5x 2028 EBITDA.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C112-11|MT228-C112-11]] — AI ecosystem funding depends on OpenAI's commitments, a single point of failure.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C113-5|MT228-C113-5]] — He owns hard assets: gold, copper, uranium, PGMs via ETFs and equities.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C113-6|MT228-C113-6]] — He claims his thesis that the secular bull is rotating from tech to physical assets is being validated.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C114-5|MT228-C114-5]] — The secular bull market is rotating from tech to hard assets; after a washout tech will not lead and will build a multi-year base.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C115-2|MT228-C115-2]] — AI bottleneck trade is over.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C115-7|MT228-C115-7]] — Inference efficiency gains will cut unit GPU demand and pricing.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C116-1|MT228-C116-1]] — INDI: restructuring plus a cheap call option on humanoid ramp; at $3s valuation reflects the legacy business.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C116-3|MT228-C116-3]] — Rare earth stocks are poor hard-asset exposure: poor management, abundant supply, dependence on subsidies.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C116-5|MT228-C116-5]] — Tech leadership ended about three months earlier.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C117-6|MT228-C117-6]] — Ranking of weakness: AI infrastructure first, then neoclouds, then memory.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C117-9|MT228-C117-9]] — NVDA's results look flattered by self-funding customers; he expects forensic accounting scrutiny.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C119-3|MT228-C119-3]] — More pain ahead, then recovery without tech leadership.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C120-1|MT228-C120-1]] — Lists stocks tied to cooling, wiring, transformers and networking; he owns HPS.A; the bottleneck call used by others.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C120-2|MT228-C120-2]] — Uranium, not oil, is the long-run winner of the Iran conflict.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C120-4|MT228-C120-4]] — Long VPG as sensor supplier to Optimus; scale-down buyer to $56.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C122-2|MT228-C122-2]] — The tech bull market has ended and the change of leadership is disruptive.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C126-7|MT228-C126-7]] — Battery stocks he told people to avoid all performed poorly.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C128-4|MT228-C128-4]] — AI money rotated into biotech as he anticipated.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C130-4|MT228-C130-4]] — Frontier models are commoditized, hurting AI economics.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C132-1|MT228-C132-1]] — Hyperscalers will contract for HALEU nuclear fuel soon, lifting LEU.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C134-4|MT228-C134-4]] — Circular AI interdependencies are a systemic fragility.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C158-2|MT228-C158-2]] — Anthropic targeting only 3.5 GW of compute by end-2026 implies efficiency gains that make the 'compute shortage' narrative false; he expects a GPU glut.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C158-8|MT228-C158-8]] — Buying uranium and nuclear-fuel names as long-term (5-year) holdings while expecting the broader market to go lower.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C161-1|MT228-C161-1]] — Adding LEU at $88; expects it to retake its $400 all-time high only in the early 2030s.

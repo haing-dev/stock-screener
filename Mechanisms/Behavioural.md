@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Behavioural
 
-1058 claims from 212 sources. Each line links to the claim inside its source note.
+1121 claims from 213 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -1487,3 +1487,68 @@ tags: [mechanism]
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C11-4|MT227-C11-4]] — In the 1960s-70s rising inflation expectations led people to pull forward demand and buy inventory, making inflation nonlinear and self-reinforcing.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C11-X1|MT227-C11-X1]] — A muni manager reassured a client by showing a chart from 1990 in which muni yields never exceeded 5.25%; the sample window covers only the falling-rate era, so it understates rate-regime risk (an example of recency bias in risk assessment).
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C16-1|MT227-C16-1]] — Musk's incentives may push the administration towards a short-term China deal, while narrative shifts move outcomes.
+
+## [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08]]
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C010-2|MT228-C010-2]] — He says he bought Nebius at about $20 and has done well, using it as his benchmark for the return he expects from European Lithium.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C016-5|MT228-C016-5]] — Battery-storage equities follow a hype-then-fade pattern, so he avoids the whole group.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C019-2|MT228-C019-2]] — War news is lifting Reddit traffic, a possible earnings accelerator that supports the stock.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C025-1|MT228-C025-1]] — Do not chase influencer-driven spikes; buy pullbacks after substantive fundamental news instead.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C033-1|MT228-C033-1]] — He reports a 2.5x gain in a few weeks on MaxLinear from another investor’s call.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C034-2|MT228-C034-2]] — A CEO open-market purchase at a depressed price is among the strongest bullish signals in microcaps.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C056-6|MT228-C056-6]] — A CNBC Markets In Turmoil special has historically been a buy signal.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C057-1|MT228-C057-1]] — He uses the 1999 list of tech names to hold until 2025 as an analogy that bubble favourites rarely deliver.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C058-1|MT228-C058-1]] — 10x returns come from cycle lows, not euphoric tops, yet margin debt is at its lowest at cheap lows, so leverage chases highs.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C063-5|MT228-C063-5]] — A CEO calming nerves over a weekend signals a fragile market.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C064-3|MT228-C064-3]] — Influencer gains and subscription inflows will fall off together when the market turns.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C065-2|MT228-C065-2]] — Retail outperforming hedge funds with concentrated margin portfolios happened in 1999 before the bust.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C066-2|MT228-C066-2]] — If you cannot spot the greater fool, you are it.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C067-3|MT228-C067-3]] — Battery stocks are added to defense tech and space as avoid lists because they spike and faceplant.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C072-2|MT228-C072-2]] — In 2008-09 (VIX ~90) countertrend rallies and rule changes (short-sale bans) made even waterfall declines untradeable on the short side.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C075-6|MT228-C075-6]] — Weak, anxious tape into the July 4 weekend is abnormal and, in his reading, a bearish sign.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C075-7|MT228-C075-7]] — Charts are breaking but violent countertrend rallies will occur over the next three months; he moved to modest net long on 10% gross.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C078-6|MT228-C078-6]] — A bottom is not in while retail still adds money to losing positions and full-ports on dips; capitulation requires that behaviour to end.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C080-4|MT228-C080-4]] — Speculative excess, not Korea alone, is the problem; a cleansing needs the inexperienced levered retail cohort to be flushed out before tech can resume.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C080-6|MT228-C080-6]] — The market regime for the next couple of months favours short-term trading, not long-term investing.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C082-2|MT228-C082-2]] — Muted reaction to good news and punishment for misses is a change in tape character that signals a top; gains on good news do not hold.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C082-4|MT228-C082-4]] — In this regime tech should be sold on strength; trend-following fails and mean reversion works, so no sacred cows and take profits.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C082-5|MT228-C082-5]] — Negative one-day autocorrelation: a green day tends to be followed by a red day.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C083-3|MT228-C083-3]] — After a bubble bursts, a new bull in the same sector needs a new generation of investors; the 2022 SaaS bust followed by 2023 hardware speculation was unusual, so the next bust should be worse.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C085-2|MT228-C085-2]] — A short-term oversold countertrend rally is expected within 2-3 trading days.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C088-1|MT228-C088-1]] — Countertrend rallies in bear markets are typically 10-15% (three in 2022), which are normal and not a trend change.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C088-3|MT228-C088-3]] — Nvidia's 9.3% Nebius stake is old news and circular financing (supplier invests in customers); pops on it fade.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C088-4|MT228-C088-4]] — A violent 15% single-day rally in tech names is typical of bear markets, so he cuts net exposure to about 35% into it, especially with rates, dollar and oil rising.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C093-2|MT228-C093-2]] — He says he warned of the tech top in May 2026 and explained his reasoning daily; contrasts with Baker, Altcap and Jensen who said stocks were cheap.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C095-2|MT228-C095-2]] — Top signal 2: retail posts of huge returns from full-port YOLO with a 2023 start date and silence about 2022.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C095-3|MT228-C095-3]] — Top signals 3-6: tech influencers become celebrities; Korean memory-gambling stories, mainstream TV features of finance meme accounts, and influencer depression at only +100% YTD.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C095-6|MT228-C095-6]] — The tech rollover started before and independent of Iran, so geopolitics is not the cause of the decline.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C096-2|MT228-C096-2]] — After heavy forced selling the near-term risk shifts from further decline to a violent rally.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C097-7|MT228-C097-7]] — He made a profitable intraday short of STX, an example of fading earnings pops as a day trade.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C098-2|MT228-C098-2]] — SMH bounces to about 550 in a countertrend rally; he scales shorts back up between 550 and 575.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C098-5|MT228-C098-5]] — Distribution of daily returns identifies the trend: violent up days in downtrends, violent down days in uptrends.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C100-3|MT228-C100-3]] — Tops form when news is good; a selloff on good fundamentals is a top warning, not a buying signal.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C101-5|MT228-C101-5]] — Korea fell 5% despite positive Iran news, showing weakness independent of geopolitics.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C104-2|MT228-C104-2]] — In choppy, manic tapes with wild swings, one-sided positioning gets punished.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C105-5|MT228-C105-5]] — Overtrading in choppy tapes destroys returns; doing nothing is an edge.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C116-2|MT228-C116-2]] — Young people quitting school to join AI firms resembles late-1990s Akamai hiring; a possible top signal.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C116-6|MT228-C116-6]] — When strong earnings fail to lift stocks (SMTC), it signals sector exhaustion.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C133-6|MT228-C133-6]] — Ignoring cash flow and balance sheets (PENG NI $93M, operating cash flow -$150M) is a late-cycle sign.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C134-3|MT228-C134-3]] — Due diligence deteriorates at the end of a secular bull market.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C138-3|MT228-C138-3]] — Buying should wait for the full unwind (SMH 385-435); tech is too hard to trade now even for skilled traders.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C142-8|MT228-C142-8]] — Neocloud/HPC stocks that pop 15% on lease or deal news give it all back, so the upside is capped and the risk asymmetric against longs.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C143-1|MT228-C143-1]] — Compares prices on 8 June 2026, when AI executives said to buy the dip, with today: nearly every AI stock is lower, so management 'buy now' calls were bad timing signals.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C145-2|MT228-C145-2]] — A double top with the second peak on lower RSI, confirmed by a break of the neckline ($51), is a sell regardless of strong fundamentals.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C146-3|MT228-C146-3]] — Adds to the Taiwan short; the 'AI is early, shortage forever' narratives are the ones heard at a top.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C147-5|MT228-C147-5]] — Says his earlier warning that the tape would become too difficult even for skilled traders has come true.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C150-1|MT228-C150-1]] — Professional incentives ('be bullish or be right') bias managers to stay long and consensus bullish, which keeps bearish calls scarce and adds to late exits.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C150-7|MT228-C150-7]] — In a primary downtrend the tape mean-reverts, so sell rallies (CLS fair value $180-315 and sold at $290) and sit on hands rather than buy dips.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C152-1|MT228-C152-1]] — Recycles profits from an AI stock into a beaten-down bio/AI IPO with EV under $500M and a cash runway; likes buying things beaten down for no reason and trades around core holdings, warning of euphoria in the sector.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C153-3|MT228-C153-3]] — Claims he told followers to go to cash in May/June 2026 while Jensen and others said AI stocks were a great value.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C157-3|MT228-C157-3]] — Stay with the primary downtrend but sell or short strength and buy or cover weakness, since the tape mean-reverts; avoid pressing shorts after a big down day.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C158-3|MT228-C158-3]] — Wait for SMH to fill the $535-555 gap before pressing shorts; tops are a process and a Republican Senate could trigger the fill.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C159-11|MT228-C159-11]] — Shorts AAPL and MSFT because of valuation, OpenAI exposure and bearish price/RSI divergences that suggest a bull trap.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C159-6|MT228-C159-6]] — Says his CLMT double-top call (first stop $45, next $40 from $53) played out against fundamental analysts.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C160-7|MT228-C160-7]] — Insider buying by smart management does not mean the cycle is right: NOK insiders bought at $15 and overpaid by 100%, so management does not call cycle turns.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C165-1|MT228-C165-1]] — In a primary downtrend buy or cover on down days and sell or short on up days; add some shorts back after covering.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C165-10|MT228-C165-10]] — Capitulation has not arrived while many still bull the theme; after the washout nobody discusses the sector, as with CSCO ($82 to $13 in a year).
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C165-11|MT228-C165-11]] — A one-day rebound from quantum, space and data-center names is a low-quality dead-cat bounce in a primary downtrend.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C165-2|MT228-C165-2]] — The bottom comes when retail sentiment shifts from hope to apathy and resignation, i.e. when green days stop generating excitement.

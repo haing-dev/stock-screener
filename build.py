@@ -218,7 +218,7 @@ def build_vault(ledgers):
                 line = "- **%s** %s  #mech/%s%s" % (esc(c.get("speaker")), esc(c.get("claim")), mk,
                                                    (" _(%s)_" % ", ".join(flags)) if flags else "")
                 det = []
-                for k, lab in (("indicator", "indicator"), ("asset_class", "asset"), ("direction", "direction"),
+                for k, lab in (("as_of", "date"), ("kind", "kind"), ("tickers_txt", "tickers"), ("forecast_txt", "forecast"), ("indicator", "indicator"), ("asset_class", "asset"), ("direction", "direction"),
                                ("horizon", "horizon"), ("conditions", "conditions"), ("testable", "testable"),
                                ("speaker_confidence", "confidence")):
                     if esc(c.get(k)) and esc(c.get(k)).lower() not in ("unspecified", "empty", ""):

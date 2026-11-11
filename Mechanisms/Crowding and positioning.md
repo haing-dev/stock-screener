@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Crowding and positioning
 
-641 claims from 170 sources. Each line links to the claim inside its source note.
+714 claims from 171 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -986,3 +986,78 @@ tags: [mechanism]
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C06-4|MT227-C06-4]] — Long-term volatility was cheap in December and likely to rally through Q1, which is how the guest plans to play the view.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C06-X1|MT227-C06-X1]] — The guest saw a possible 150-200 point S&P 500 drop within two days, agreed with the host that weakness could last to the end of Q1, and expected a re-decline because March and April skew is not well supplied (a short-term view, not a crash call).
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C10-2|MT227-C10-2]] — Pain trades usually work (over 90%) because stuck participants must eventually trade, so the trend in yields will continue and accelerate when they are stopped out.
+
+## [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08]]
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C004-2|MT228-C004-2]] — Hong Kong-style micro-cap listings with no put market and no borrow can run to absurd valuations because they cannot be shorted, a froth signal.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C013-2|MT228-C013-2]] — A 15% stake by Druckenmiller in a tungsten junior is read as smart-money confirmation of the critical-mineral theme.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C019-4|MT228-C019-4]] — A large holding by a respected investor (Gendell) is used as a check on management quality.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C019-6|MT228-C019-6]] — SoftBank’s price is a tell for the AI trade, so its breakdown warns of weakness in AI equities.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C038-1|MT228-C038-1]] — He holds low equity exposure May-Sept after a sharp April rally because sentiment flipped from extreme fear to greed while long rates, private credit and AI capex risks are unchanged.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C041-1|MT228-C041-1]] — A directed placement at 14.5 SEK, about 30-35% of the traded price, shows institutions refusing to pay retail-hype prices, a warning for parabolic microcap photonics names.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C045-1|MT228-C045-1]] — He raised cash to about 90% because the technical picture is worsening and a SpaceX IPO adds supply, which ends bull markets.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C051-1|MT228-C051-1]] — Froth spreading to foreign microcaps and Taiwanese/Korean charts reflects a maturing US bull market moving down the quality spectrum and easy retail access via IBKR.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C052-2|MT228-C052-2]] — The microcap photonics names trade as one highly correlated basket around a single earnings event.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C058-4|MT228-C058-4]] — When everyone becomes an expert on every layer of the AI chain, it is a late-cycle sign of saturation.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C059-2|MT228-C059-2]] — Won down a third in 5 years; if Koreans lose on memory stocks, a currency crisis in Asia could follow with FX-adjusted losses.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C059-9|MT228-C059-9]] — Record share of participants use margin, so unwinds hit retail with no hedges.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C061-4|MT228-C061-4]] — Hot themes feeling picked over and predictable is a late-stage sentiment sign.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C062-3|MT228-C062-3]] — Capital concentrated in AI/hardware/optics with all other sectors ignored is a myopia like 1999-2000.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C071-3|MT228-C071-3]] — Memory spikes without confirmation from NVDA/AVGO are a squeeze rather than a broad AI-demand signal.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C073-5|MT228-C073-5]] — Korea (memory-heavy KOSPI) shows momentum deterioration (negative RSI divergences) and is set for a major fall.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C074-1|MT228-C074-1]] — Thematic ETF launches cluster at theme tops (QQQ in March 1999; over 90 AI ETFs now), so launch counts signal late-stage mania.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C074-2|MT228-C074-2]] — A break of 175 on EWY is the trigger that Korea (memory) leads the SMH and AI trade lower.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C075-1|MT228-C075-1]] — After breaking 190, EWY retests 175; below 175, 150 is the next target.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C078-1|MT228-C078-1]] — Anecdotal retail leverage in Korean memory stocks is extreme, which marks a speculative top and a forced unwind risk in KOSPI.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C078-3|MT228-C078-3]] — A chart (not captured) shows retail fully invested, contradicting the idea of trillions on the sidelines; he reads it as a positioning extreme. Chart content unknown.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C078-4|MT228-C078-4]] — KOSPI falls to 6,000 by September and then to 4,000 as levered retail is liquidated.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C079-3|MT228-C079-3]] — Margin debt, in dollars and as a share of GDP, is at pre-GFC type extremes in his reading; chart content was not captured.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C080-5|MT228-C080-5]] — KOSPI breaks down another 10-12%, EWY heading to about 150.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C081-2|MT228-C081-2]] — He will buy a tactical bounce only if EWY reaches the low 150s; EWY is his gauge for the memory/AI washout.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C081-3|MT228-C081-3]] — PENG is a re-entry long below $65 after the equity raise, with caveat that it trades with memory and that EWY low 150s should deliver that price.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C083-2|MT228-C083-2]] — The rotation into mega-caps is forced by mandate limits (max ~5% cash), not conviction, so it is not a durable bullish rotation.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C084-4|MT228-C084-4]] — INTC closing below 98 is a tell: the chip complex (foundries TSM, GFS, TSEM, UMC) is intertwined and would follow it down.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C090-6|MT228-C090-6]] — Tech's share of S&P market cap peaked; diversified managers will cut it while forced buyers rotate within tech.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C095-1|MT228-C095-1]] — Hynix breaking down to 1-1.1M won (another 35-40% drop) maps to SMH at 335-400 over several months.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C095-4|MT228-C095-4]] — A mega IPO at about 150x sales promoted to retail is a late-cycle top signal.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C096-5|MT228-C096-5]] — NBIS and Bloom Energy trade in lockstep, so a move in BE after hours predicts NBIS.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C096-7|MT228-C096-7]] — Short EWY/EWT (and EWJ) are efficient hedges for the memory/AI trade; sidecar activations signal continued stress.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C103-5|MT228-C103-5]] — Fear of missing out still exceeds fear of loss in tech/AI even after a drawdown, which he reads as a sign the washout is not complete.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C104-7|MT228-C104-7]] — Sarcastic call that institutional selling into the retail-driven bounce is done so tech resumes falling.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C105-1|MT228-C105-1]] — Large equity raises by richly valued AI hardware companies (CLS $3B) signal management thinks the stock is overvalued, a late-cycle tell.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C105-4|MT228-C105-4]] — Wild two-sided swings hurt hedge funds first, they cut net exposure, then are forced to de-gross en masse, which can turn ugly fast (like summer 2007).
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C106-2|MT228-C106-2]] — A new cluster of HO signals (probably Hindenburg Omens; chart not captured) formed in late July/August after the previous cluster in early June.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C107-7|MT228-C107-7]] — Margin debt relative to M2 sits at levels seen at prior market peaks.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C107-8|MT228-C107-8]] — Household allocation to equities as share of net worth is a record, historically a peak signal.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C108-7|MT228-C108-7]] — Equity issuance by large AI-linked companies (GOOG before, now INTC and CLS) has marked turning points in SMH.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C110-3|MT228-C110-3]] — A cluster of HO signals (Hindenburg Omen, inferred) from late July is a warning for the market heading into fall.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C111-6|MT228-C111-6]] — Sarcastically declares the AI bottleneck narrative exhausted as every analyst finds a different bottleneck, treating it as a late-stage theme signal.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C112-1|MT228-C112-1]] — The HO cluster in August matches the June cluster that preceded July's selloff, so caution applies for at least 30 days.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C112-9|MT228-C112-9]] — Korean sidecar triggers (48th of the year) signal forced selling in Samsung and SK Hynix, a repeat of July's selloff.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C114-4|MT228-C114-4]] — Memory, which outperformed while money rotated from optics, is due to be hit again; he re-initiated EWY puts.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C114-7|MT228-C114-7]] — His AAOI short was confirmed by a $500M equity offering, fitting his 'equity raise' warning.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C115-3|MT228-C115-3]] — HO signals this summer form one of the biggest clusters on record, a bad omen.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C117-1|MT228-C117-1]] — More Korean sidecars after Labor Day and memory continues falling.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C117-3|MT228-C117-3]] — Breadth deterioration inside AI stocks resembles Hindenburg Omen conditions; max caution.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C124-2|MT228-C124-2]] — Speculative thematic groups (space, defense tech, SMR) roll over one by one; AI and oil unwind later because they are religions, elevator down.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C124-4|MT228-C124-4]] — Equity issuance by AI companies signals overvaluation, especially with no insider buying.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C124-6|MT228-C124-6]] — Unanimous dip-buying sentiment shows positioning is extreme; bear markets happen when nobody wants them.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C126-2|MT228-C126-2]] — Margin requirement hikes broke the silver and Kospi speculative runs and could do the same to oil.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C126-3|MT228-C126-3]] — When everyone expects a bullish reaction to Warsh's remarks, rumor-buy/news-sell is likely.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C126-4|MT228-C126-4]] — Another HO signal means crash risk is elevated through mid-October.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C129-2|MT228-C129-2]] — Large buybacks at AI leaders mark tops; NVDA and GPU margins unsustainable like memory.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C131-5|MT228-C131-5]] — Mega-IPOs (Anthropic, OpenAI) pulling supply into the market before Thanksgiving will hurt AI stocks like SPCX did to space names.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C134-1|MT228-C134-1]] — QQQ makes new highs on lower RSI, lower volume and poor breadth, a topping pattern like BTC in early 2022.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C136-3|MT228-C136-3]] — Biotech mania marks the end of bull markets; he trades QSI and PACB for a final run before the collapse.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C137-1|MT228-C137-1]] — Popular, retail-crowded second/third-tier names get destroyed in this tape, so avoid them (ASTS at a new 52-week low is the example).
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C137-3|MT228-C137-3]] — A large gap between net income and operating cash flow attracts forensic short sellers, and the first short report triggers a rush for the exit.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C137-7|MT228-C137-7]] — Says his advice to never touch the small-cap battery stocks has been proven right as they fade.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C140-2|MT228-C140-2]] — Space stocks are a hard place to make money: RKLB is seen at $25-30 and ASTS lower; avoid retail favorites and do not catch falling knives until they base and charts turn up.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C140-4|MT228-C140-4]] — Korean market stress (sell-side sidecar trigger) is a tell for AI/semiconductor stress; Taiwan stays an easy short.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C142-2|MT228-C142-2]] — A chart pattern that fails against its usual resolution, with everyone positioned one way, produces a powerful move the other way.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C145-5|MT228-C145-5]] — Media and investor consensus remains bullish on AI, which he reads as a contrarian sign that the trade is not finished.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C151-8|MT228-C151-8]] — Large one-day rebounds in destroyed AI names are bear-market rallies and not a change of trend; institutions use the retail demand to exit.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C153-6|MT228-C153-6]] — Expects revenue at tech-focused Substacks to fall about 80% from peak, mirroring the average AI stock, as retail leaves the theme.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C155-2|MT228-C155-2]] — A popular commodity commentator pivoting to a tech Substack (and a tech fan being upset he was 'only' up 100%) are late-cycle sentiment tells for a top in tech.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C155-3|MT228-C155-3]] — When non-finance people discuss a theme in a restaurant (humanoid actuators), the 'it is early' thesis is over and the theme is crowded.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C158-7|MT228-C158-7]] — Retail broker HOOD depends on young traders whose accounts are being wiped out, so AUM and trading activity will fall; target $50-52.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C165-5|MT228-C165-5]] — Buying at the close came from retail and not smart money, so a rug pull is likely.

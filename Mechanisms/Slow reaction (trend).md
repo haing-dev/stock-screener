@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Slow reaction (trend)
 
-795 claims from 181 sources. Each line links to the claim inside its source note.
+840 claims from 182 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -1162,3 +1162,50 @@ tags: [mechanism]
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C03-1|MT227-C03-1]] — Early 2025 trends in long equities, long US dollar, live cattle, gold, silver and grains are generous to trend followers while UK and French yields hit highs.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C03-3|MT227-C03-3]] — Long-dated (20+ year) Treasuries were down 1.88% YTD, versus CTA indices up 85 bp, S&P 500 up 62 bp, a data point on bond weakness helping trend followers.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C03-X2|MT227-C03-X2]] — In early January 2025 the SG Trend index was up 62 bp while the SG Short-Term Traders index was flat, so longer-horizon trend exposure was paying while short-horizon CTA trading was not (data point, one week of returns).
+
+## [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08]]
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C003-2|MT228-C003-2]] — He expects Nvidia management to stress robotics on its next earnings call, which would favour service-robotics pure plays.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C004-3|MT228-C004-3]] — FCEL, a laggard fuel-cell microcap, should follow Bloom Energy (BE) higher as data-center power demand gives it a large addressable market.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C008-1|MT228-C008-1]] — FCEL is tiny next to BE and PLUG and says data-center deals are at an inflection point, so he sees a catch-up move after BE’s run.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C011-3|MT228-C011-3]] — BKSY has little chart resistance and could follow the earlier space-stock runs (PL, RKLB, ASTS) to about $80.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C013-1|MT228-C013-1]] — NPWR addresses the same power market as OKLO using natural gas, so the large market-cap gap is a relative-value opportunity.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C016-4|MT228-C016-4]] — He expects Circle to return to $140, and notes it has decoupled fintech names such as FIGR and CEPT from bitcoin.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C017-2|MT228-C017-2]] — He thinks NUAI should trade at $6-7 after news of a hyperscale-ready data-center site.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C021-1|MT228-C021-1]] — Rising local job postings for data-center construction near a project site are a tell that a project is progressing.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C040-2|MT228-C040-2]] — A break above $38 out of a multi-year base would signal a much larger move for Penguin Solutions.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C041-2|MT228-C041-2]] — Smartoptics growth (59% revenue growth, margins improving) looks too good for 5x sales, so he stays long.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C051-2|MT228-C051-2]] — He trims Power Integrations after a spike to highs because it is missing from the Yole NVIDIA 800VDC GaN partner list, adding risk.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C069-6|MT228-C069-6]] — Prices fall before reported fundamentals deteriorate, so charts must be used rather than waiting for fundamental confirmation.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C077-3|MT228-C077-3]] — MU fell $140 after a beat, a bearish reaction showing the memory cycle top is in; he marks the late-March uptrend as breaking.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C084-5|MT228-C084-5]] — He says his call that PENG and AEHR would give back post-earnings gains was right, supporting the sell-the-rip regime.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C089-4|MT228-C089-4]] — Beats followed by drops (GEV, TXN) mean good news is priced in; the market is voting for a top in AI power and analog/semis.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C090-1|MT228-C090-1]] — GOOGL fell on a capex raise because the increase was cost inflation, meaning less capacity per dollar and worse ROI; capex raises are now punished.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C090-5|MT228-C090-5]] — Hyperscaler customers will push memory prices down, ending peak margins; memory earnings will never be this good again so the stocks are overvalued.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C091-1|MT228-C091-1]] — Memory stocks fall hard as hyperscalers force price concessions; he says pushback has already begun.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C097-2|MT228-C097-2]] — Memory and SSD stocks fall materially further; he shorted STX at $800 and expects a near-term return to $745-750.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C097-8|MT228-C097-8]] — His chart levels for AAOI ($143, then $100, $84) played out, and he now sees $40-50.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C102-1|MT228-C102-1]] — AI infrastructure stocks (VRT, POWL, STRL) keep dropping on earnings even after prior declines, confirming a weakening AI buildout.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C114-2|MT228-C114-2]] — In the current choppy mean-reverting tape he fades strength instead of following trends.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C117-4|MT228-C117-4]] — Adds to shorts in CAT, VRT, GEV as growth deceleration (second derivative) should compress multiples.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C117-5|MT228-C117-5]] — He acts when the second derivative of growth in a crowd-favorite stock turns down, especially after valuations 4x.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C121-7|MT228-C121-7]] — Energy equities lead commodity prices; flat equities amid higher oil says oil will fall (Iran resolution or demand digestion), with beta working against energy stocks.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C122-6|MT228-C122-6]] — GEV growth deceleration and new competition (turbine blades) imply valuation can't last; targets $850 then $750.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C125-2|MT228-C125-2]] — Energy stocks fail to follow crude, signalling weakness in oil; banks also start to weaken (BAC -5%).
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C134-2|MT228-C134-2]] — EWY (Korea) breaking down from a bearish wedge is a negative for memory stocks.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C135-1|MT228-C135-1]] — PENG trades with memory and EWY breakdown implies further decline.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C141-3|MT228-C141-3]] — A decisive close of SOXX below $504 is the next tell; the cap-weighted SMH, skewed by NVDA, follows later because the large leaders break last.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C141-5|MT228-C141-5]] — PENG is expected to fall from $57 to $30-35 because poor earnings quality (cash conversion) is finally being noticed in a falling tech tape.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C142-6|MT228-C142-6]] — SOXX (equal-weighted semis) breaking its July low is more informative about the average chip stock than cap-weighted SMH, which lags because NVDA is overweight; next levels $464 then $300-350.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C145-1|MT228-C145-1]] — Stocks that barely rise on up days but fall hard on down days mark a bear market; the same pattern appeared in defense tech, then space, then AI/semis.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C145-3|MT228-C145-3]] — A stock with superlative fundamentals that cannot rise on earnings and sits 50% below its high signals the end of the bull market; bad news later would halve it.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C146-4|MT228-C146-4]] — Absent upside reflexivity, neocloud and BTC/HPC stocks are dead; funding-dependent names are heading to penny-stock levels.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C149-1|MT228-C149-1]] — At major tops stocks stop rising on good news (fundamentals are always great at tops) and at bottoms stop falling on bad news; the reaction to news matters, not the news.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C151-3|MT228-C151-3]] — Rallies in AI stocks are quickly given back in this tape, so sell strength aggressively; CLS $290 headed to $250.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C151-4|MT228-C151-4]] — An AI stock that does not rise after an outstanding quarter on a green SOXX day signals the end of the bull market.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C158-1|MT228-C158-1]] — Claims his call that CLS would give up its after-hours gain in 7-10 days came true and unfilled gaps pull price back; do not chase.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C158-6|MT228-C158-6]] — The sequence of declines runs from HPC/BTC to neoclouds and AI infrastructure and then memory; avoid them and cancel the newsletters.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C159-1|MT228-C159-1]] — Semiconductors lead the overall market, so a rally in semis that is not confirmed is not bullish for the Nasdaq.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C159-10|MT228-C159-10]] — Selling after a beat and raise (QCOM -5% after-hours, ARM and MELI too) is a sign the bull market is over.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C163-5|MT228-C163-5]] — Says his AEHR short (earnings gain would round-trip) worked and closed it; sees $35-40 eventually.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C164-4|MT228-C164-4]] — A tiny gain on earnings after a large intraday drop shows missing upside reflexivity, a bear-market signature.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C165-7|MT228-C165-7]] — IREN gives back all of its earnings gains within 7-10 days and approaches $100.

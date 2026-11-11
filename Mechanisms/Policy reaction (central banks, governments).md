@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Policy reaction (central banks, governments)
 
-1185 claims from 191 sources. Each line links to the claim inside its source note.
+1242 claims from 192 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -1572,3 +1572,62 @@ tags: [mechanism]
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C14-2|MT227-C14-2]] — Trump may be less hard on China than expected because of Russia-China alignment and statements on Taiwan cost, and tariffs may target Canada and Mexico instead.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C14-X1|MT227-C14-X1]] — Caveat to the guest's structural-inflation, rising-yield thesis: the only meaningful counter-argument he has seen is a US-China deal and China reversion, which could ease inflation pressure and change the macro picture.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C15-1|MT227-C15-1]] — Trump could do a deal with China (Nixon analog), which would be short-term supportive and reduce inflation pressure.
+
+## [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08]]
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C003-1|MT228-C003-1]] — He expects the US government to take an equity stake in the company holding the Tanbreez rare-earth asset, following the earlier stakes in MP and Intel.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C007-1|MT228-C007-1]] — A rule taking effect in 2027 that bars Chinese-sourced rare earths, directly or indirectly, will force Western supply-chain buyers to pay for non-China sources such as Tanbreez.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C007-2|MT228-C007-2]] — A US government equity stake in Lithium Americas lifted the stock 75% after hours, which he reads as a template for the same treatment of other critical-mineral names.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C009-1|MT228-C009-1]] — Reports that the Trump administration is discussing a stake in CRML sent the stock sharply higher after hours, another instance of government-stake headlines moving critical-mineral equities.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C011-1|MT228-C011-1]] — Citing Reuters on stakes already taken in MP, LAC and TMQ, he expects the US government to take a small stake in CRML.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C011-4|MT228-C011-4]] — A Pentagon order to stockpile $1B of critical metals marks the start of a state-driven scramble for critical-mineral supply.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C014-1|MT228-C014-1]] — Rare-earth stocks should rally into the scheduled 20 Oct US-Australia leaders’ talks on rare earths.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C015-1|MT228-C015-1]] — An indium phosphide shortage in semiconductors would worsen if China halts all indium exports, which would favour the only permitted US indium mine.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C016-1|MT228-C016-1]] — He had seen OKLO as too expensive as a pure SMR play but says a DOE policy signal on spent-fuel recycling could change the story and make shorting it dangerous.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C038-3|MT228-C038-3]] — Higher long rates are a headwind to equities that cuts in the fed funds rate will not offset, because the long end is set by the market.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C044-1|MT228-C044-1]] — Falling TLT and rising long yields signal that investors will eventually apply a higher discount rate to long-duration assets, which will hit stretched AI equities.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C046-2|MT228-C046-2]] — Further-out WTI months rising despite backwardation and rising TIPS breakevens point to higher inflation expectations, a negative for stocks.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C056-1|MT228-C056-1]] — Dovish talk from the president and the Fed was faded and DXY and 10-year yields broke out, a sign the Fed is losing control of the yield curve.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C059-3|MT228-C059-3]] — Korean defence of the won would be a headwind for EWY as it signals tightening liquidity.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C060-6|MT228-C060-6]] — Mortgage rates over 6.5% confirm the XHB/ITB top of Nov 2024 as a signal.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C060-7|MT228-C060-7]] — He expects the Iran regime to fall under blockade, though it may take months and may hurt the midterms.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C060-8|MT228-C060-8]] — Repeated Trump deal announcements lose credibility, and 1973 shows resolution is not bullish.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C062-1|MT228-C062-1]] — Oil backwardation (front $120, back $75-85) absorbed the shock so the Iran spike does not matter; concerns lie elsewhere.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C063-1|MT228-C063-1]] — Fed funds cuts can leave long rates flat or higher, as in the 1970s; the market sets long rates.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C063-2|MT228-C063-2]] — QE will return only after a crisis, with risk assets already down, since Warsh favors a smaller balance sheet.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C064-1|MT228-C064-1]] — Warsh firmed short rates and flattened the curve, long rates fell, DXY rallied, with 101 the line in the sand.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C068-2|MT228-C068-2]] — After the nastiness another round of QE and a reflation trade will follow.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C069-5|MT228-C069-5]] — Fed funds cuts will not lower long yields; only QE could bring the 30-year to about 3%, which would be needed to revive housing equity extraction.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C070-3|MT228-C070-3]] — Current policy rates are still loose versus the long-run average of 5.5-6%, so ZIRP was the anomaly and excesses are normally unwound.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C075-2|MT228-C075-2]] — When CEOs, officials or the government talk up or prop a sector, that signals a weak asset that will fall; strong assets need no propping.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C079-2|MT228-C079-2]] — Korea is using sidecar trading halts repeatedly to defend EWY 175; he treats official market support as a sign of stress, not strength.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C080-2|MT228-C080-2]] — Gold turns up only after a growth scare/deflation trade forces the Fed (Warsh) to cut and do QE, which is not possible with indexes at records.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C094-7|MT228-C094-7]] — The Fed no longer controls the yield curve and the US does not control the Iran conflict, both macro tail risks.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C096-4|MT228-C096-4]] — A US ban on Chinese robot and inverter imports is a policy tailwind for Western humanoid suppliers (also ENPH, SEDG).
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C097-1|MT228-C097-1]] — Government statements about stabilising markets signal that the decline continues; comfort from them was a mistake in the GFC.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C101-1|MT228-C101-1]] — Trump tweets about bombing Iran or a quick deal are not credible; the real path is oil embargo and no deal on enriched uranium, so headline whipsaws dominate.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C101-2|MT228-C101-2]] — Any US-Iran deal fails within 6-12 months, keeping geopolitical oil risk elevated.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C102-3|MT228-C102-3]] — Long rates can only be lowered by QE (unlikely under Warsh) or a cleansing recession; the Fed chair opposes QE.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C102-4|MT228-C102-4]] — The Fed may allow a recession and equity decline to bring long yields down, since it has been 18 years since the last cleansing recession.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C104-8|MT228-C104-8]] — He believes Iran is stalling talks on the Strait until the midterms, so the Strait is not reopening soon.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C109-4|MT228-C109-4]] — In a recession/slowdown VIX spikes, risk assets fall, the curve inverts, bonds and USD rally, and then money-supply expansion and USD debasement follow.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C112-6|MT228-C112-6]] — Expected sequence: global growth/deflation scare with inflation (infression) handcuffing the Fed, then supply shocks fade, the Fed buys the long end with massive QE, debasing USD and reflating physical and financial assets.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C113-3|MT228-C113-3]] — Treasury long-end buybacks are not QE; modest support for long bonds is expected and the program ends 11/4, the day after elections.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C113-4|MT228-C113-4]] — QE returns only in a crisis; he sees that as unlikely near term but supports the decade view on physical assets.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C116-4|MT228-C116-4]] — AI infrastructure stocks (GEV, VRT, STRL, CAT, etc.) feel heavy; rising political opposition to data centers before the midterms is a headwind.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C117-8|MT228-C117-8]] — ETN expected to slow down as data-center opposition grows toward November elections.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C121-3|MT228-C121-3]] — Under Warsh the bust lasts longer since only massive QE reflates risk assets.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C122-7|MT228-C122-7]] — The Fed faces a no-win: hiking hurts stocks, not hiking sends long rates higher.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C123-1|MT228-C123-1]] — Base case: a deflationary shock hits tech and oil before the Warsh Fed expands its balance sheet.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C123-2|MT228-C123-2]] — Currently managed yen strength is temporary and USDJPY will head to 170+; intervention delays the market.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C123-3|MT228-C123-3]] — Political manipulation and prop-ups drive daily moves; he stays on the sidelines until markets unravel.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C123-7|MT228-C123-7]] — Recession first, then yield curve control and balance sheet expansion; sequencing is why he is heavy cash.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C125-1|MT228-C125-1]] — The government intervenes to prop markets, so he expects a squeeze or bounce in the weakest names.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C128-5|MT228-C128-5]] — Yen intervention around 160 holds back USD breakouts; he trims metals hedges near 160 and is more USD-bullish below 154.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C128-6|MT228-C128-6]] — Fed losing control of the long end.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C129-1|MT228-C129-1]] — Fed hawkishness failed to reduce long yields.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C132-6|MT228-C132-6]] — QE-scale policy arrives only after a crisis, so he waits for the problem first.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C150-2|MT228-C150-2]] — Expects political investigations of AI leaders (Congress hearings) in 2027 after the bust.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C150-8|MT228-C150-8]] — A stronger dollar and a hot PCE print would show the Fed (chair Warsh) is in a bind between inflation and a slowing economy, which hurts risk assets.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C152-4|MT228-C152-4]] — 'Infression' (inflation plus recession fear) explains why yields trend lower despite inflation: bonds are bid on growth fears.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C157-2|MT228-C157-2]] — He doubts Democrats take the Senate as much as the market prices; if they do not, markets bounce for a day or two, giving shorts a better entry, though his AI thesis does not depend on the election.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C158-4|MT228-C158-4]] — If Republicans do not hold the Senate, equities could cascade lower rather than fill the gap.

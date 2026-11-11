@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Research and testing method
 
-1779 claims from 204 sources. Each line links to the claim inside its source note.
+1787 claims from 205 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -2192,3 +2192,13 @@ tags: [mechanism]
 
 ## [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330]]
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C04-4|MT227-C04-4]] — The CBOE SKEW index is a poor measure of skew; a delta-based (probabilistic) measure is better than a moneyness-based one.
+
+## [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08]]
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C093-5|MT228-C093-5]] — Spotting tops needs a full toolbox (history, cycles, psychology, technicals, macro, intermarket), not only fundamentals or technology knowledge.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C103-6|MT228-C103-6]] — Reports that his book (mostly cash plus hedged shorts) is making new highs daily as support for his defensive stance.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C104-6|MT228-C104-6]] — His method: weigh the evidence, size probabilities and payoffs of outcomes; nobody bats 1.000.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C112-7|MT228-C112-7]] — He indicates SMH stalled at his $593 level, so the call worked.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C124-3|MT228-C124-3]] — Green days on low volume have little information.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C133-4|MT228-C133-4]] — At turning points technicals and breadth outrank fundamentals.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C149-3|MT228-C149-3]] — Most retail 'skill' is beta in a rising market; performance must be judged after the cycle turns, when negative alpha shows.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C162-1|MT228-C162-1]] — Skill must be judged over a full cycle, because in a euphoric bull market you can throw darts at hot sectors and there is no moat or differentiator.

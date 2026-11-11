@@ -3,7 +3,7 @@ tags: [mechanism]
 ---
 # Overshoot (value, mean reversion)
 
-364 claims from 149 sources. Each line links to the claim inside its source note.
+467 claims from 150 sources. Each line links to the claim inside its source note.
 
 
 ## [[MT001 - 133 - Jan van Eck- Macro Forces Shape Markets]]
@@ -667,3 +667,108 @@ tags: [mechanism]
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C04-1|MT227-C04-1]] — August 2024 produced a historic breakdown between short-term and long-term skew after a fast, large move when front-of-curve skew supply was ample.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C05-2|MT227-C05-2]] — Guest expects a roughly 10% peak-to-trough decline as the beginning of a bigger decline, with a counter-trend rally that will be sold.
 - [[MT227 - Yield Storm Ahead- Preparing for a New Era - Systematic Investor 330#^MT227-C14-1|MT227-C14-1]] — Chinese assets are abandoned while US assets and the dollar are extremely favoured, a roughly 50-year dislocation whose reversion needs a catalyst.
+
+## [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08]]
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C018-2|MT228-C018-2]] — Oil and tanker equities fell after the Iran strikes because the crude futures curve was in extreme backwardation, which signals a temporary spike that the market expects to fade.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C018-3|MT228-C018-3]] — Severe crude backwardation tends to mark price peaks because the near-term premium draws supply and cuts demand.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C019-1|MT228-C019-1]] — Energy equities discount the whole futures curve, not the front month, so a steeper backwardation means a spike that equities do not capitalize.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C026-2|MT228-C026-2]] — The oil and gas equity sell-off confirmed the earlier signal from the steeply backwardated crude curve.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C044-3|MT228-C044-3]] — Entry price matters more than the story: ALMU at 125x sales went from $10 to $33, and he expects the same for parabolic Taiwanese optics names.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C046-3|MT228-C046-3]] — He expects QQQ to retrace 50% of its run to about 640, dragging pumped microcaps such as IQE to 30p.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C052-1|MT228-C052-1]] — Adtran is cheap at 1x sales with optics catalysts in 2027 while the market pays for 2030 bull cases elsewhere.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C056-5|MT228-C056-5]] — Companies with P/S above 20x or no profits will be rough when rates and the dollar rise.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C058-2|MT228-C058-2]] — Markets overshoot both ways; levered longs near euphoria hold losers until drawdowns reach 50-70% as momentum turns into valuation excuses.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C059-8|MT228-C059-8]] — QQQ below 695 opens a drop toward 630.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C071-1|MT228-C071-1]] — Memory stocks are in a blow-off analogous to silver in January (which later collapsed); price-to-sales is his evidence of a mania.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C073-3|MT228-C073-3]] — Neocloud valuations will compress sharply and quickly as AI sentiment turns.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C073-6|MT228-C073-6]] — Growth of a technology does not imply returns; valuation at entry decides the outcome.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C084-1|MT228-C084-1]] — KOSPI today is analogous to silver at its January blow-off top, implying a long multi-month decline.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C084-2|MT228-C084-2]] — Expensive tech names can fall another 40-50% (low-quality high-beta up to 80% from highs).
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C086-3|MT228-C086-3]] — ALAB halves by end of September 2026 because 30x sales cannot persist while multiples contract.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C086-4|MT228-C086-4]] — In the unwind, valuations compress toward 10-12x sales at most; stocks above that are vulnerable, and a first bottom will not be the final one.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C087-1|MT228-C087-1]] — Tight compute supply does not protect AI stocks: ROI disappointment, multiple compression and capex discipline can still de-rate them, as fiber overbuild did in 2000.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C087-2|MT228-C087-2]] — AI-related equities keep falling until valuations return to historical norms.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C089-5|MT228-C089-5]] — After a 17-18 year secular bull from 2009, extreme valuations make this a generational selling opportunity, comparable to Mississippi and South Sea pitches.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C090-7|MT228-C090-7]] — He says his call that LPKFF (glass substrate play) would halve was right.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C092-3|MT228-C092-3]] — Low-quality neoclouds (SHAZ, BRUN) have 60-70% downside in the AI unwind.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C094-8|MT228-C094-8]] — ALAB (from $125 to $350 on memory) returns to $125 by end of September.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C100-4|MT228-C100-4]] — The AI bubble is hyperscaler FCF (valued at 20-25x earnings) recycled as revenue for suppliers valued at 20-25x sales; a multiple mismatch.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C102-2|MT228-C102-2]] — PLTR will not make new highs for years due to extreme valuation after a bubble.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C103-4|MT228-C103-4]] — Violent 10-15%+ countertrend rallies are normal inside a bear/bubble-deflation phase (as in 2022) and do not change the larger picture.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C104-3|MT228-C104-3]] — He sees AEHR, ALAB and CBRS valuations as egregious after the rally and sold put premium on AEHR, planning to repeat on a rollover.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C106-1|MT228-C106-1]] — Bubble-era leaders (AKAM, CIEN) have not regained 1999-2000 highs after 25 years, illustrating capital impairment from buying at bubble entry points.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C107-1|MT228-C107-1]] — Bubble tops take months to a year to deflate and contain violent countertrend rallies, so he stays cautious rather than going net short.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C107-11|MT228-C107-11]] — S&P 500 is far above its long-term trend line, a mean-reversion warning.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C107-3|MT228-C107-3]] — He argues US equities are at record valuations on most long-run metrics, and stocks are rarely cheap after an 18-year bull run.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C107-4|MT228-C107-4]] — Low forward P/E is misleading when forecast earnings are inflated; in 2009 depressed earnings made stocks look expensive just as they were a buy.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C107-5|MT228-C107-5]] — Equities-to-commodities price ratio is at an all-time high (chart not captured), consistent with his long commodities view.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C107-6|MT228-C107-6]] — Semiconductor stocks chart resembles prior bubble patterns (chart not captured).
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C108-2|MT228-C108-2]] — Valuation-based regression of 10-year forward equity returns points to close to zero.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C108-3|MT228-C108-3]] — Adjusted CAPE is at a record 42x.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C108-4|MT228-C108-4]] — Market cap to GDP is above its 1999-2000 peak.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C108-5|MT228-C108-5]] — Tobin's Q is about 185% of replacement cost versus 65-70% at the 2008-09 low, a record valuation reading.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C110-7|MT228-C110-7]] — AEHR at $4.5B market cap on $200M forward sales is overvalued; his fair value is $60-70.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C110-8|MT228-C110-8]] — SMH and EWY rallies have run their course; he expects stalling or a decline, with the severe damage possibly in September.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C111-1|MT228-C111-1]] — He frames $593 (without a close above) as the possible top of the SMH countertrend rally.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C111-2|MT228-C111-2]] — He suggests the July selloff was the start and a bigger decline follows.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C112-10|MT228-C112-10]] — He expects Korea (likely EWY, previously flagged $175) to fall to 110-120 by the end of the decline.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C113-1|MT228-C113-1]] — Shorted MRVL at $246 after the GOOG deal pop of 13%, estimating deal value adds only about 2% to the share price, so the stock fades toward $180.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C113-2|MT228-C113-2]] — Rallies in AI stocks should be sold.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C113-8|MT228-C113-8]] — Expects a capitulation phase still to come.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C114-3|MT228-C114-3]] — MRVL is in his short basket (covered before earnings to avoid event risk); target $180, then $150.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C115-4|MT228-C115-4]] — Expects EWY capitulation and despair ahead (chart not captured).
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C115-6|MT228-C115-6]] — 12-month SMH target $378-428, from $563+, with cash and physical assets the preferred posture.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C117-7|MT228-C117-7]] — September could bring a bigger decline than July.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C118-3|MT228-C118-3]] — Re-shorted MRVL at $241 (fair value range $125-180) and the short is working.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C118-5|MT228-C118-5]] — Low-quality AI stocks will end 80-90% off highs; avoid AI infra and Neos, memory next.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C119-1|MT228-C119-1]] — Secondary and tertiary names with bad charts (FCEL, SHAZ, BRUN) will see large declines from all-time highs.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C119-2|MT228-C119-2]] — BE is too expensive and could reach $180 by next Friday.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C121-5|MT228-C121-5]] — FCEL call confirming.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C121-6|MT228-C121-6]] — Earlier call on AI optics names (CRDO) is working.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C126-1|MT228-C126-1]] — BRUN fell from $35 to about $13 as predicted; neoclouds are the lowest quality businesses.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C127-4|MT228-C127-4]] — This is closer to a generational selling opportunity than a buying one.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C130-1|MT228-C130-1]] — Mean reversion implies a decade of subpar Nasdaq returns, negative real for richly valued names.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C131-2|MT228-C131-2]] — MRVL (fair value $125-180) should come back to earth after what MU did; risk/reward poor into earnings.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C132-5|MT228-C132-5]] — Base case: equities flat nominal and down real for a decade; hard assets lead; dividend payers outperform.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C133-2|MT228-C133-2]] — Complacency rivals 1999 and 1H 2008; buy later at lower prices.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C133-5|MT228-C133-5]] — His call that SMH would close red worked.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C135-2|MT228-C135-2]] — Neocloud shorts SHAZ and BRUN continue to work.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C136-1|MT228-C136-1]] — More decline to come until a final purge; capital preservation becomes the theme.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C139-4|MT228-C139-4]] — In the AI unwind secondary and tertiary names built on unrealistic expectations will become penny stocks; valuation falls to private-company cash-flow value once speculation disappears.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C139-5|MT228-C139-5]] — Claims BRUN fell to about the $8 target he gave when it traded at $35.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C140-3|MT228-C140-3]] — Anthropic is a no-touch above a $750B-1T valuation as most of the money has been made in private rounds and public AI stocks are falling.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C141-4|MT228-C141-4]] — The unwind ends with a fast final leg and a VIX spike to 50-60+, then apathy toward AI stocks and many years of basing.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C141-6|MT228-C141-6]] — After SMTC fell from $200 to the $130s in one week he argues $90-100 is plausible in a true semiconductor bear market.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C142-1|MT228-C142-1]] — Bloated tech stocks have another 40-60% to fall before the decline ends.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C142-3|MT228-C142-3]] — NVDA is not a safe haven; when the AI financing structure fails it will lose about a couple of trillion dollars of market value.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C142-5|MT228-C142-5]] — Reports that his BRUN target of about $8 (called at $35) was hit and PENG went to the $57s as predicted.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C142-7|MT228-C142-7]] — Semis are expected to fall to $300-350 eventually, with the first SMH objective at $385-435.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C144-2|MT228-C144-2]] — High-beta AI names typically trough about 80% below their all-time high, which would put AEHR near $30 from a $150 peak.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C144-3|MT228-C144-3]] — The mania phase is behind us (even biotech rallied), so the market is just below the bull-trap stage of the bubble cycle and awaits fear and capitulation with cascading price declines.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C146-2|MT228-C146-2]] — The Korean index (memory exposure) is headed to 4,000, about 30% lower.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C147-3|MT228-C147-3]] — Expects NBIS (sold last year) to fall to $80-100 within 4-5 months.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C149-2|MT228-C149-2]] — After 15 years of 17% annual QQQ returns versus a long-run 10.5-11% for equities, mean reversion requires a lost decade; bear markets work through price and time.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C149-4|MT228-C149-4]] — SMH, which peaked above $670, is unlikely to regain that level before 2030-2035.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C150-4|MT228-C150-4]] — Expects a failed retest of the July low and a move toward $100 in NBIS.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C151-2|MT228-C151-2]] — When holders justify weak charts with 'they are cheap', the secular bull is ending: multiples collapse ahead of margins and earnings, and memory belongs in this group.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C153-5|MT228-C153-5]] — Expects NBIS to fall from $160 to $80-100, probably the lower end, as repeated declines continue.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C154-1|MT228-C154-1]] — SMTC at $128.50 is on track for his $80-100 target within about six months.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C154-2|MT228-C154-2]] — NBIS halves, CRWV restructures with debt holders receiving equity, and marginal AI names end on the OTC bulletin board; no durable bottom until conditions are met, with green days still occurring.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C155-1|MT228-C155-1]] — Normalized NVDA earnings power is $5-6 a share after cost cuts and buybacks, which implies $100-120, and he wants to short any Iran-optimism bounce.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C156-1|MT228-C156-1]] — Claims his $125-180 range for MRVL (against a consensus of $300) is being validated as the stock falls to $190 and nears his bull-case objective.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C156-2|MT228-C156-2]] — A close below $147 in NBIS would trigger a collapse, with another $40-60 to fall before stabilization.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C157-4|MT228-C157-4]] — NBIS and MRVL have violated key levels; NBIS can reach $80-100.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C159-12|MT228-C159-12]] — TSM falls to $300-325.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C159-2|MT228-C159-2]] — SMTC fell to $111 on the way to his $90 target, which was mocked earlier.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C159-3|MT228-C159-3]] — AAOI fell from $233 to $59 and is likely headed to about $40.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C159-8|MT228-C159-8]] — His space-stock price objectives ($25 ASTS, $35 RKLB) are being reached.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C159-9|MT228-C159-9]] — NBIS breaking $140 could unravel quickly toward $120, $100 and finally $80; a bounce to fill the $160-161 gap is possible.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C160-1|MT228-C160-1]] — Private-round valuations at 40x ARR do not survive bear markets; 10-15x is already expensive in the wrong environment, so sum-of-the-parts holdings must be marked down.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C160-4|MT228-C160-4]] — If MRVL falls to $100 then LITE (merger partner) would be a $400 stock, matching his prior bear-market objective.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C160-6|MT228-C160-6]] — Korean equity holders will lose about one third from here.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C163-1|MT228-C163-1]] — With VIX at only 23, panic has only begun; capitulation will likely lift VIX to 50-60+, so accumulate very slowly but cover shorts into big red days.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C163-3|MT228-C163-3]] — Mean reversion from QQQ's 17% annual returns toward a 10.5% long-run return implies about zero return for a decade; Nasdaq is flat in ten years.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C164-1|MT228-C164-1]] — MRVL could hit $100 and LITE $400 within a week.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C164-5|MT228-C164-5]] — SMTC reached his $90-100 target (closed $91); if it does not hold the next stop is the spring low near $70.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C167-3|MT228-C167-3]] — SMH could trade below $450 the next day; he disputes that it returns to $670+ by end-2027.
+- [[MT228 - John Galt (@AtlasShrug1) posts on X, 2025-07-31 to 2026-11-08#^MT228-C167-5|MT228-C167-5]] — Clickhouse is worth about $5B (15x sales on $350M ARR), not $56B, so NBIS's stake is worth only $1-2B after tax and the core business is not free.
