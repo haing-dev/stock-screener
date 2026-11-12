@@ -155,6 +155,20 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   then an LSEG reader into the engine, registered as a SECOND source (cross-check + live weekly data); Bloomberg stays the
   registered backtest source. Daily Fable units run at 22:00 Vancouver time (user 2026-11-12; Vancouver = UTC-7).
   PC runner stalls overnight (last check 23:14); one-line fix given (allow start on battery), not confirmed applied.
+- LSEG PROBE 2 (2026-11-12, tools/bbgq/results/lseg_probe_v2.txt; 167 of 203 return data). DATED FUTURES: RDP.HistoricalPricing
+  with display "SORT:ASC TSREPEAT:NO CH:Fd RH:Timestamp" (also RHistory ".Timestamp;.Close", DSGRID "<RIC>", RDP.Data
+  TR.SETTLEMENTPRICE). 58 of 67 futures roots work (all commodities except lumber and LME; all bond and equity-index futures;
+  SRA, FF, FEI, SON3, YBA); curves: CL to c36, LCO/NG to c24, metals c12, grains c9. NOT available: Eurodollar, short
+  sterling, BAX, Euroswiss (ended contracts), LME, US breakeven code, MSCI valuation ratios and ICAP swaps in Datastream
+  (access denied), economic releases with consensus/first release (=ECI history has no poll field). Available: Datastream
+  S&P GSCI total/excess-return indexes by commodity (GS<code>TOT / GS<code>EXR), BCOM TR (DJUBSTR), MSCI total-return
+  indexes, 3m deposit rates (EC<ccy>3M from 1975), national economics (<CC>CONPRCF etc.), Citi surprise indexes
+  (USCESIR, .CESIxxx from 2003), USD swaps, cross-currency basis, TIPS yields. Datastream monthly with a month-end start
+  date returns the last weekday of each month. Pull set 2: build_lseg_pull2.py -> L4a energy curves, L4b metals/agri
+  curves, L5 financial futures, L6 commodity indexes/MSCI/surprise, L7 short rates/swaps/economics (555 formulas;
+  helpers lseg_pull_helpers.py). 11 files to pull in total (L1a-L7); none read back yet except the two probes.
+  Bloomberg re-pull priority given to the user: R1 (Eurodollar/short-rate futures, breakevens, surprise, first release),
+  R5 (swaps, credit), then R2-R4 (commodity cross-check, fundamentals), R6, R7 (LSEG covers FX).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
