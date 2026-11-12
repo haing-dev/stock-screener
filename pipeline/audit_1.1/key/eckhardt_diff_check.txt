@@ -1,0 +1,8 @@
+structure differences: none
+changed leaf paths: 17 | listed paths: 17
+changed but not listed: none
+listed but not changed: none
+quotes: 58 byte-identical: True
+claim-id occurrences: 238 identical multiset: True
+planted errors: 12 | by type: {'a': 2, 'b': 2, 'c': 2, 'd': 1, 'e': 1, 'f': 2, 'g': 2} | core: 9
+RESULT: PASS

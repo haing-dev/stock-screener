@@ -1,0 +1,329 @@
+{
+ "unit": "U08",
+ "source_pack": "/tmp/claude-0/-home-claude/a8a60852-162d-5d9b-8463-3f9415508c73/scratchpad/L0/vault/_data/foundation_packs/U08.json",
+ "planted_pack": "/tmp/claude-0/-home-claude/a8a60852-162d-5d9b-8463-3f9415508c73/scratchpad/audit/work_e/foundation/packs/U08.json",
+ "n_planted": 12,
+ "planted": [
+  {
+   "id": "P01",
+   "type": "a_number_changed",
+   "importance": "core",
+   "locations": [
+    {
+     "path": "items/0/data/speakers/0/worldview_premises/7/premise",
+     "original": "Robust statistics need 10 to 30 times more data, so ETC needs 10-20 years of data and cannot draw valid conclusions from two or three years, which would be overfitting.",
+     "altered": "Robust statistics need two to three times more data, so ETC needs 10-20 years of data and cannot draw valid conclusions from two or three years, which would be overfitting."
+    },
+    {
+     "path": "items/0/data/speakers/0/mechanism_chains/1/steps/1/to",
+     "original": "Need 10 to 30 times more data, hence 10-20 years; two or three years is overfitting",
+     "altered": "Need two to three times more data, hence 10-20 years; two or three years is overfitting"
+    },
+    {
+     "path": "claims/43/claim",
+     "original": "Robust statistics need 10-30 times more data, so ETC needs 10-20 years of data and cannot conclude anything from two or three years (that is overfitting).",
+     "altered": "Robust statistics need 2-3 times more data, so ETC needs 10-20 years of data and cannot conclude anything from two or three years (that is overfitting)."
+    }
+   ],
+   "exposed_by": "MT020-C12-2 quote: 'you need 10 20 time 30 times as much data to make a reliable inference'",
+   "a_conclusion_that_carried_this_error_would_say": "robust statistics cost only two to three times the data of normal statistics, so the data penalty for robust methods is modest"
+  },
+  {
+   "id": "P02",
+   "type": "b_direction_inverted",
+   "importance": "core",
+   "locations": [
+    {
+     "path": "items/0/data/speakers/0/decision_process/6/practice",
+     "original": "Keep initial position size roughly constant from entry to exit; no portfolio volatility target; no readjustment to rising volatility; stop-loss for each trade.",
+     "altered": "Keep initial position size roughly constant from entry to exit; scale the whole portfolio to a volatility target; no readjustment of open positions to rising volatility; stop-loss for each trade."
+    }
+   ],
+   "exposed_by": "MT020-C06-3 quote: 'increased volatility often helps us we don't want to restrain it' (and claim C06-3: ETC does not target portfolio volatility)",
+   "a_conclusion_that_carried_this_error_would_say": "ETC scales the whole portfolio to a volatility target (like a book-level scaler) and only refrains from resizing open positions"
+  },
+  {
+   "id": "P03",
+   "type": "c_condition_dropped",
+   "importance": "core",
+   "locations": [
+    {
+     "path": "claims/24/claim",
+     "original": "Resizing an open trend position to rising volatility amounts to a hidden mean-reversion trade against the trend, because volatility usually rises as the trend extends.",
+     "altered": "Resizing an open trend position to rising volatility is always a hidden mean-reversion trade against the trend, since volatility rises as the trend extends."
+    },
+    {
+     "path": "claims/24/conditions",
+     "original": "when volatility rises with the trend (usual but not always)",
+     "altered": "holds by definition for any open trend position"
+    }
+   ],
+   "exposed_by": "MT020-C07-X1 quote: 'that is not always true by definition but uh it is true in my experience more often than not'",
+   "a_conclusion_that_carried_this_error_would_say": "resizing an open trend position to volatility is by definition (always) a counter-trend / mean-reversion trade"
+  },
+  {
+   "id": "P04",
+   "type": "d_unsupported_citation",
+   "importance": "core",
+   "locations": [
+    {
+     "path": "items/0/data/speakers/0/decision_process/3/practice",
+     "original": "Use robust, distribution-free statistics with 10-20 years of data and in-house techniques to estimate and minimise overfit.",
+     "altered": "Use robust, distribution-free statistics with 10-20 years of data, hold back the most recent three years as an untouched out-of-sample test, and use in-house techniques to estimate and minimise overfit."
+    }
+   ],
+   "exposed_by": "decision_process[3] cites MT020-C12-1, C12-2, C08-3; none of their quotes mentions a holdout ('use what statisticians call robust or distribution free statistics'; 'data Hogs ... 10 20 time 30 times as much data'; 'fit to the permanent features ... ignore the transitory features')",
+   "a_conclusion_that_carried_this_error_would_say": "Eckhardt/ETC validates systems on the most recent three years held back as an untouched out-of-sample test"
+  },
+  {
+   "id": "P05",
+   "type": "e_asserted_stated_as_shown",
+   "importance": "core",
+   "locations": [
+    {
+     "path": "items/0/data/speakers/0/worldview_premises/3/support",
+     "original": "Own experience; no data shown.",
+     "altered": "ETC's measured hit rate across its systems and markets over decades of trading."
+    }
+   ],
+   "exposed_by": "MT020-C13-4 quote: 'you almost never know better than about 51 or 52% which way the Market's going' (a general assertion, no measurement); also contradicts evidence_style ('no backtest numbers') and gaps_and_conflicts[0] ('51-52% accuracy ... cannot be checked')",
+   "a_conclusion_that_carried_this_error_would_say": "the 51-52% hit rate is a measured statistic from ETC's systems (shown), not an assertion"
+  },
+  {
+   "id": "P06",
+   "type": "f_speaker_misattribution",
+   "importance": "core",
+   "locations": [
+    {
+     "path": "items/0/data/speakers/0/mechanism_chains/3/steps/0/why",
+     "original": "Hidden mean-reversion trade against the trend (host's point).",
+     "altered": "Hidden mean-reversion trade against the trend (Eckhardt's point)."
+    }
+   ],
+   "exposed_by": "MT020-C07-X1 speaker field 'Moritz Seibert' (quote 'hidden Mar reversion trade ... true in my experience'); Seibert's own premise lists it",
+   "a_conclusion_that_carried_this_error_would_say": "Eckhardt himself argues that resizing to volatility is a hidden mean-reversion trade against the trend"
+  },
+  {
+   "id": "P07",
+   "type": "g_internal_contradiction",
+   "importance": "secondary",
+   "locations": [
+    {
+     "path": "items/0/data/speakers/0/decision_process/8/practice",
+     "original": "Trade about 70 futures markets, measuring liquidity and slippage on every market and avoiding illiquid or high-slippage ones; no single stocks.",
+     "altered": "Trade about 120 futures markets, measuring liquidity and slippage on every market and avoiding illiquid or high-slippage ones; no single stocks."
+    }
+   ],
+   "exposed_by": "claim MT020-C10-3 ('ETC trades about 70 markets'), worldview_premises[15], current_views[1] and disagreements[1] all say about 70",
+   "a_conclusion_that_carried_this_error_would_say": "ETC trades about 120 futures markets"
+  },
+  {
+   "id": "P08",
+   "type": "a_number_changed",
+   "importance": "secondary",
+   "locations": [
+    {
+     "path": "items/0/data/speakers/1/worldview_premises/3/premise",
+     "original": "The Gauntlet is a barrage of tests designed to tear a system apart, showing where it fails (as important as knowing why it works) and removing emotion; systems can have a strong 2-4 month run and then go flat.",
+     "altered": "The Gauntlet is a barrage of tests designed to tear a system apart, showing where it fails (as important as knowing why it works) and removing emotion; systems can have a strong 2-4 year run and then go flat."
+    }
+   ],
+   "exposed_by": "MT020-C09-4 quote: 'they might have a two three four month really strong run and then they just go flat or degrade'",
+   "a_conclusion_that_carried_this_error_would_say": "systems can look strong for two to four years before going flat, so several years of good results prove little"
+  },
+  {
+   "id": "P09",
+   "type": "b_direction_inverted",
+   "importance": "core",
+   "locations": [
+    {
+     "path": "items/0/data/speakers/0/worldview_premises/11/premise",
+     "original": "Futures prices do not mean-revert, but volatility does, so ETC's non-trend methods (about 20% of work) are neither trend following nor counter-trend, and not mean reversion.",
+     "altered": "Futures prices mean-revert over short horizons while volatility does not, so ETC's non-trend methods (about 20% of work) are short-horizon mean-reversion trades on price rather than carry."
+    }
+   ],
+   "exposed_by": "MT020-C07-2 quote: 'it's volatility that mean reverts uh price doesn't doesn't mean revert at least Futures prices'; also disagreements[2] (Eckhardt: not mean reversion)",
+   "a_conclusion_that_carried_this_error_would_say": "Eckhardt holds that futures prices mean-revert over short horizons and ETC's ~20% non-trend sleeve is price mean reversion"
+  },
+  {
+   "id": "P10",
+   "type": "c_causal_step_reversed",
+   "importance": "core",
+   "locations": [
+    {
+     "path": "items/0/data/speakers/0/mechanism_chains/4/steps/0/from",
+     "original": "Turtle rules and risk control were widely disclosed",
+     "altered": "Breakout systems had already degraded heavily"
+    },
+    {
+     "path": "items/0/data/speakers/0/mechanism_chains/4/steps/0/to",
+     "original": "Breakout systems heavily degraded",
+     "altered": "Turtle rules and risk control were then released"
+    },
+    {
+     "path": "items/0/data/speakers/0/mechanism_chains/4/steps/0/why",
+     "original": "Competition on the same published edge.",
+     "altered": "Little edge was left to protect."
+    }
+   ],
+   "exposed_by": "MT020-C05-4 quote: 'they've been heavily degraded since we let the turtles go and all all this information got revealed' (degradation followed disclosure)",
+   "a_conclusion_that_carried_this_error_would_say": "publication did not cause the decay: the Turtle rules were released only after their edge had already gone"
+  },
+  {
+   "id": "P11",
+   "type": "f_speaker_misattribution",
+   "importance": "secondary",
+   "locations": [
+    {
+     "path": "claims/31/speaker",
+     "original": "Rob Santino",
+     "altered": "Bill Eckhardt"
+    }
+   ],
+   "exposed_by": "MT020-C09-3 quote: 'bill has spent as much time uh tearing systems apart as we do putting them together' (speaker refers to Bill in the third person, so it is not Eckhardt); map lists it under Rob Santino",
+   "a_conclusion_that_carried_this_error_would_say": "Eckhardt says he spends as much time tearing systems apart as building them (self-description rather than a colleague's testimony)"
+  },
+  {
+   "id": "P12",
+   "type": "g_internal_contradiction",
+   "importance": "core",
+   "locations": [
+    {
+     "path": "items/0/data/speakers/0/worldview_premises/12/premise",
+     "original": "High win-rate strategies (such as selling cheap options) periodically bust because they exploit the bulk of the distribution while the tails are heavy; ETC prefers a roughly 40% success rate with larger winners.",
+     "altered": "High win-rate strategies (such as selling cheap options) periodically bust because they exploit the bulk of the distribution while the tails are heavy; ETC prefers a roughly 60% success rate with larger winners."
+    }
+   ],
+   "exposed_by": "claim MT020-C13-3 ('prefers a ~40% success rate'), mechanism_chains[2].steps[2].to ('roughly 40%'), decision_process[7] ('about 40% winners')",
+   "a_conclusion_that_carried_this_error_would_say": "ETC targets a win rate of about 60% with larger winners"
+  }
+ ],
+ "pre_existing": {
+  "note": "Mismatches already present in the ORIGINAL U08 pack (before planting). Scored separately; not part of the 12. Class A = statement contradicted by, or misattributed against, a quote or the pack's own correction. Class B = detail that goes beyond its quote (taken from the transcript context, not contradicted, but not verifiable from the pack). A tested model that lists any of these in section 9 is NOT making a false alarm.",
+  "class_A_mismatch": [
+   {
+    "id": "X01",
+    "location": "claims MT020-C13-1 speaker",
+    "pack_says": "speaker 'Rob Santino'",
+    "quote_or_pack_shows": "the claim's own correction field and the map (Seibert premise, Eckhardt chain 'host's point, Eckhardt agrees', gaps_and_conflicts[5]) say Moritz Seibert",
+    "note": "already flagged inside the pack by the correction field"
+   },
+   {
+    "id": "X02",
+    "location": "transcript_map gaps_and_conflicts[1]",
+    "pack_says": "'Eckhardt says he knows of no one who does curve fitting'",
+    "quote_or_pack_shows": "no quote says this; MT020-C08-R3 quote is only 'curve fitting is simply the wrong term'"
+   },
+   {
+    "id": "X03",
+    "location": "transcript_map gaps_and_conflicts[3]",
+    "pack_says": "'He says ETC moves from short-term systems for alpha decay (per the host) ... Eckhardt calls them short only relative to other traders'",
+    "quote_or_pack_shows": "MT020-C05-3 is Seibert speaking about Turtle students, not ETC; C05-2 quote says ETC still runs 4-5 day trades; the phrase 'short only relative to other traders' appears in no quote"
+   },
+   {
+    "id": "X04",
+    "location": "speakers[2] (Seibert) decision_process[0]",
+    "pack_says": "'Initial position sizing and keeping many small positions is the most important aspect of risk control ... Overtrading is the main risk'",
+    "quote_or_pack_shows": "cited quotes MT020-C07-1 ('controlled risk ... synthetic long optionality profile') and C07-X1 ('hidden mean reversion trade') say nothing about 'most important aspect' or overtrading"
+   },
+   {
+    "id": "X05",
+    "location": "speakers[0] worldview_premises[6] support; claim MT020-C12-1 text",
+    "pack_says": "Mandelbrot's cotton work given as support for Eckhardt's premise; C12-1 (Eckhardt) claim text inserts '(Mandelbrot: possibly no variance)'",
+    "quote_or_pack_shows": "the Mandelbrot point is Seibert's (MT020-C12-X2, speaker Moritz Seibert); C12-1 quote does not mention Mandelbrot. mechanism_chains[1].evidence correctly says 'cited by the host'",
+    "note": "mild attribution blur"
+   },
+   {
+    "id": "X06",
+    "location": "speakers[0] mechanism_chains[3].steps[2].from ('Higher volatility helps trend systems'); speakers[1] decision_process[0].why ('Volatility helps trends')",
+    "pack_says": "unqualified 'higher volatility helps trend systems'",
+    "quote_or_pack_shows": "MT020-C06-3 quote: 'in a lot of situations um increased volatility often helps us'",
+    "note": "qualifier dropped; minor"
+   },
+   {
+    "id": "X07",
+    "location": "claim MT020-C06-4; speakers[0] mechanism_chains[3].evidence; speakers[1] worldview_premises[2]",
+    "pack_says": "readjusting to volatility was tested and 'found counterproductive'",
+    "quote_or_pack_shows": "quote is cut off: 'since um volatility often increases with a trend we have found that and if we were readjusting to volatility we would' - the verdict 'counterproductive' is not in the quote",
+    "note": "beyond the quote; borderline A/B"
+   },
+   {
+    "id": "X08",
+    "location": "claim MT020-C13-3; speakers[0] mechanism_chains[2].steps[2]; decision_process[7]",
+    "pack_says": "ETC 'rejects any new system with a 70-80% success rate' and prefers ~40%",
+    "quote_or_pack_shows": "quote: 'they make money 70 80 90% of the time but then they're subject to large freakish losses' - describes other strategies; the rejection rule and the 40% target are not in the quote",
+    "note": "beyond the quote; borderline A/B"
+   }
+  ],
+  "class_B_beyond_quote": [
+   {
+    "location": "claim MT020-C10-3 (and map)",
+    "detail": "'about 70 markets'; 'diversification ... greatest financial idea of the 20th century'"
+   },
+   {
+    "location": "claim MT020-C05-2 (and map)",
+    "detail": "upper end '50-60 days' (quote gives only the 4-5 day average)"
+   },
+   {
+    "location": "claim MT020-C12-2 (and map)",
+    "detail": "'10-20 years of data'; 'cannot conclude anything from two or three years'"
+   },
+   {
+    "location": "claim MT020-C09-2 (and map)",
+    "detail": "'Super Value'; 'e.g. 2 of 20 years'; 'combines many performance measures'"
+   },
+   {
+    "location": "claim MT020-C13-4 (and map)",
+    "detail": "'ten times as much emphasis on risk control'"
+   },
+   {
+    "location": "claims MT020-C05-5, C07-2 (and map)",
+    "detail": "trend about 80% / non-trend about 20% of work"
+   },
+   {
+    "location": "claim MT020-C08-2 (and map)",
+    "detail": "price is non-stationary, not an MA process; MAs and crossovers on price counterproductive (quote only: MAs appropriate for volatility)"
+   },
+   {
+    "location": "claim MT020-C05-4",
+    "detail": "'Eckhardt moved to different trend-following systems even before they were released'"
+   },
+   {
+    "location": "claim MT020-C04-2 (and map decision_process[0])",
+    "detail": "'small class of utility functions suited to commodity trading and client circumstances'"
+   },
+   {
+    "location": "claim MT020-C04-4",
+    "detail": "St Petersburg paradox"
+   },
+   {
+    "location": "claim MT020-C06-2 (and map)",
+    "detail": "the list '(position sizing, measuring price change, risk control)'"
+   },
+   {
+    "location": "speakers[0] mechanism_chains[5].steps[0].from",
+    "detail": "replication 'fits index returns with 10-20 markets'"
+   },
+   {
+    "location": "speakers[1] worldview_premises[3].support",
+    "detail": "'used for many years, also offered to outside ideas and University of Chicago students'"
+   },
+   {
+    "location": "claim MT020-C14-2; Seibert premise",
+    "detail": "'while keeping individual losses small' (quote: 'sticking to your system during bad times')"
+   },
+   {
+    "location": "claim MT020-C09-1",
+    "detail": "'some good traders lost all their money from overfitting'"
+   },
+   {
+    "location": "claim MT020-C05-X1 (and map)",
+    "detail": "'around 200-day look-backs' read from the garbled caption 'two and a day time frames' (reasonable reading)"
+   },
+   {
+    "location": "claim MT020-C11-2",
+    "detail": "reasons '(splits, dividends, long-dominated)' (partly supported by C11-3 only for long/short balance)"
+   }
+  ]
+ }
+}

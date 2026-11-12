@@ -107,7 +107,7 @@ def main():
     specs = {"EXTRACT_SPEC": "EXTRACT_SPEC.md", "CROSSCHECK_SPEC": "CROSSCHECK_SPEC.md", "TRANSCRIPT_MAP_SPEC": "TRANSCRIPT_MAP_SPEC.md",
              "INVESTOR_SYNTH_SPEC": "INVESTOR_SYNTH_SPEC.md", "PAPER_SPEC": "papers/PAPER_SPEC.md", "F1_SPEC": "fable/F1_SPEC.md",
              "FOUNDATION_SPEC": "foundation/FOUNDATION_SPEC.md", "VARIANTS": "/home/claude/stock-screener/docs/research/fable/foundation/VARIANTS.md", "WORKFLOW": "/home/claude/stock-screener/docs/research/WORKFLOW.md", "X_EXTRACT_BRIEF": "X_EXTRACT_BRIEF.md",
-             "Bloomberg inventory 2026-11-10": "/home/claude/stock-screener/docs/research/bbg/inventory_2026-11-10.md", "Bloomberg data lock v1": "/home/claude/stock-screener/docs/research/bbg/LOCK_v1_check_2026-11-11.md", "Bloomberg job runner": "/home/claude/stock-screener/tools/bbgq/README.md", "Block 3 engine on the PC": "/home/claude/stock-screener/docs/research/bbg/BLOCK3_engine_2026-11-11.md"}
+             "Bloomberg inventory 2026-11-10": "/home/claude/stock-screener/docs/research/bbg/inventory_2026-11-10.md", "Bloomberg data lock v1": "/home/claude/stock-screener/docs/research/bbg/LOCK_v1_check_2026-11-11.md", "Bloomberg job runner": "/home/claude/stock-screener/tools/bbgq/README.md", "Block 3 engine on the PC": "/home/claude/stock-screener/docs/research/bbg/BLOCK3_engine_2026-11-11.md", "Fable audit 1.1": "/home/claude/stock-screener/docs/research/fable/AUDIT_1.1_2026-11-12.md", "Forecast ledger spec": "/home/claude/stock-screener/docs/research/forecasts/FORECAST_SPEC.md", "Forecast scoring rules": "/home/claude/stock-screener/docs/research/forecasts/SCORING_RULES.md", "Forecast coding agreement": "/home/claude/stock-screener/docs/research/forecasts/CODING_AGREEMENT_2026-11-11.md", "Forecast scorecard 2026-11-12": "/home/claude/stock-screener/docs/research/forecasts/SCORECARD_2026-11-12.md", "Engine change log": "/home/claude/stock-screener/gm/CHANGES.md"}
     for n, p in specs.items():
         open(os.path.join(M, n + ".md"), "w").write("---\ntags: [method, spec]\nfile: %s\n---\n" % p + open(os.path.join(L, p)).read())
     u = ["---", "tags: [method]", "---", "# Foundation units", "", "| Unit | Name | Inputs | Topic |", "|---|---|---|---|"]
@@ -137,7 +137,7 @@ tags: [method, index]
 # Method: how every note was made (traceability)
 
 **From 2026-11-11 all new work follows [[WORKFLOW]] (pod shop workflow v2.1: steps, agent per step, tests, budget).**
-Data: [[Bloomberg job runner]] (files stay on the PC, reports only), [[Bloomberg inventory 2026-11-10]], [[Bloomberg data lock v1]] (block 2; hashes in `_data/bbg_LOCK_v1.json`). [[Block 3 engine on the PC]] (reproduction pass, truncation causes C1-C4).
+Data: [[Bloomberg job runner]] (files stay on the PC, reports only), [[Bloomberg inventory 2026-11-10]], [[Bloomberg data lock v1]] (block 2; hashes in `_data/bbg_LOCK_v1.json`). [[Block 3 engine on the PC]] (reproduction pass, truncation causes C1-C4). Engine gm-1.2.1 / gm-2.0.1 (look-ahead fixed): [[Engine change log]].\nFable audit (step 1.1, gate passed; brief v2 rules): [[Fable audit 1.1]]. Forecast ledger (steps 2.1-2.3): [[Forecast ledger spec]], [[Forecast coding agreement]], [[Forecast scoring rules]], [[Forecast scorecard 2026-11-12]].
 The steps below describe how the existing notes were made.
 
 1. **Transcripts** (originals in the Macro Transcripts folder) are split into ~700-word chunks [Cnn].

@@ -1,0 +1,32 @@
+{
+ "note": "Mismatches already present in the ORIGINAL U08 pack (before planting). Scored separately; not part of the 12. Class A = statement contradicted by, or misattributed against, a quote or the pack's own correction. Class B = detail that goes beyond its quote (taken from the transcript context, not contradicted, but not verifiable from the pack). A tested model that lists any of these in section 9 is NOT making a false alarm.",
+ "class_A_mismatch": [
+  {"id": "X01", "location": "claims MT020-C13-1 speaker", "pack_says": "speaker 'Rob Santino'", "quote_or_pack_shows": "the claim's own correction field and the map (Seibert premise, Eckhardt chain 'host's point, Eckhardt agrees', gaps_and_conflicts[5]) say Moritz Seibert", "note": "already flagged inside the pack by the correction field"},
+  {"id": "X02", "location": "transcript_map gaps_and_conflicts[1]", "pack_says": "'Eckhardt says he knows of no one who does curve fitting'", "quote_or_pack_shows": "no quote says this; MT020-C08-R3 quote is only 'curve fitting is simply the wrong term'"},
+  {"id": "X03", "location": "transcript_map gaps_and_conflicts[3]", "pack_says": "'He says ETC moves from short-term systems for alpha decay (per the host) ... Eckhardt calls them short only relative to other traders'", "quote_or_pack_shows": "MT020-C05-3 is Seibert speaking about Turtle students, not ETC; C05-2 quote says ETC still runs 4-5 day trades; the phrase 'short only relative to other traders' appears in no quote"},
+  {"id": "X04", "location": "speakers[2] (Seibert) decision_process[0]", "pack_says": "'Initial position sizing and keeping many small positions is the most important aspect of risk control ... Overtrading is the main risk'", "quote_or_pack_shows": "cited quotes MT020-C07-1 ('controlled risk ... synthetic long optionality profile') and C07-X1 ('hidden mean reversion trade') say nothing about 'most important aspect' or overtrading"},
+  {"id": "X05", "location": "speakers[0] worldview_premises[6] support; claim MT020-C12-1 text", "pack_says": "Mandelbrot's cotton work given as support for Eckhardt's premise; C12-1 (Eckhardt) claim text inserts '(Mandelbrot: possibly no variance)'", "quote_or_pack_shows": "the Mandelbrot point is Seibert's (MT020-C12-X2, speaker Moritz Seibert); C12-1 quote does not mention Mandelbrot. mechanism_chains[1].evidence correctly says 'cited by the host'", "note": "mild attribution blur"},
+  {"id": "X06", "location": "speakers[0] mechanism_chains[3].steps[2].from ('Higher volatility helps trend systems'); speakers[1] decision_process[0].why ('Volatility helps trends')", "pack_says": "unqualified 'higher volatility helps trend systems'", "quote_or_pack_shows": "MT020-C06-3 quote: 'in a lot of situations um increased volatility often helps us'", "note": "qualifier dropped; minor"},
+  {"id": "X07", "location": "claim MT020-C06-4; speakers[0] mechanism_chains[3].evidence; speakers[1] worldview_premises[2]", "pack_says": "readjusting to volatility was tested and 'found counterproductive'", "quote_or_pack_shows": "quote is cut off: 'since um volatility often increases with a trend we have found that and if we were readjusting to volatility we would' - the verdict 'counterproductive' is not in the quote", "note": "beyond the quote; borderline A/B"},
+  {"id": "X08", "location": "claim MT020-C13-3; speakers[0] mechanism_chains[2].steps[2]; decision_process[7]", "pack_says": "ETC 'rejects any new system with a 70-80% success rate' and prefers ~40%", "quote_or_pack_shows": "quote: 'they make money 70 80 90% of the time but then they're subject to large freakish losses' - describes other strategies; the rejection rule and the 40% target are not in the quote", "note": "beyond the quote; borderline A/B"}
+ ],
+ "class_B_beyond_quote": [
+  {"location": "claim MT020-C10-3 (and map)", "detail": "'about 70 markets'; 'diversification ... greatest financial idea of the 20th century'"},
+  {"location": "claim MT020-C05-2 (and map)", "detail": "upper end '50-60 days' (quote gives only the 4-5 day average)"},
+  {"location": "claim MT020-C12-2 (and map)", "detail": "'10-20 years of data'; 'cannot conclude anything from two or three years'"},
+  {"location": "claim MT020-C09-2 (and map)", "detail": "'Super Value'; 'e.g. 2 of 20 years'; 'combines many performance measures'"},
+  {"location": "claim MT020-C13-4 (and map)", "detail": "'ten times as much emphasis on risk control'"},
+  {"location": "claims MT020-C05-5, C07-2 (and map)", "detail": "trend about 80% / non-trend about 20% of work"},
+  {"location": "claim MT020-C08-2 (and map)", "detail": "price is non-stationary, not an MA process; MAs and crossovers on price counterproductive (quote only: MAs appropriate for volatility)"},
+  {"location": "claim MT020-C05-4", "detail": "'Eckhardt moved to different trend-following systems even before they were released'"},
+  {"location": "claim MT020-C04-2 (and map decision_process[0])", "detail": "'small class of utility functions suited to commodity trading and client circumstances'"},
+  {"location": "claim MT020-C04-4", "detail": "St Petersburg paradox"},
+  {"location": "claim MT020-C06-2 (and map)", "detail": "the list '(position sizing, measuring price change, risk control)'"},
+  {"location": "speakers[0] mechanism_chains[5].steps[0].from", "detail": "replication 'fits index returns with 10-20 markets'"},
+  {"location": "speakers[1] worldview_premises[3].support", "detail": "'used for many years, also offered to outside ideas and University of Chicago students'"},
+  {"location": "claim MT020-C14-2; Seibert premise", "detail": "'while keeping individual losses small' (quote: 'sticking to your system during bad times')"},
+  {"location": "claim MT020-C09-1", "detail": "'some good traders lost all their money from overfitting'"},
+  {"location": "claim MT020-C05-X1 (and map)", "detail": "'around 200-day look-backs' read from the garbled caption 'two and a day time frames' (reasonable reading)"},
+  {"location": "claim MT020-C11-2", "detail": "reasons '(splits, dividends, long-dominated)' (partly supported by C11-3 only for long/short balance)"}
+ ]
+}
