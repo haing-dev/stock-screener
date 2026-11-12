@@ -1,0 +1,195 @@
+=== gm_trunc_v1 ===
+gm_engine gm_engine-1.0.0 | python 3.15.0, numpy 2.5.4, pandas 3.1.1, scipy 1.18.1, openpyxl 3.1.5, xlrd missing
+free inputs: 239 files, unpacked now 0, not matching the manifest 0
+run without Bloomberg inputs (add the argument bbg to include them)
+BLOOMBERG INPUTS: NONE (free data only; gm.bloomberg serves nothing, so its paths are not exercised)
+full run 56s; cut dates: 1980-06-30, 1984-12-31, 1989-06-30, 1993-12-31, 1998-06-30, 2002-12-31, 2007-06-30, 2010-12-31
+columns: stage | end-to-end PASS/FAIL, differing market-months / compared, max abs diff, months first..last | stage alone PASS/FAIL, differing | markets (most differing first)
+CUT 1980-06-30 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 152s
+  panel returns                      | PASS 0/2302 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/40140 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/10915 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/2758 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/1042 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/2036 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/2059 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/2631 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/184 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/12210 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/184 max 0.0e+00  | alone PASS 0 | 
+CUT 1984-12-31 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 166s
+  panel returns                      | PASS 0/3680 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/62715 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/14103 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/4089 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/1906 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/3383 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/3409 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/4114 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/238 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/15774 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/238 max 0.0e+00  | alone PASS 0 | 
+CUT 1989-06-30 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 155s
+  panel returns                      | PASS 0/5264 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/89658 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/17397 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/5529 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/2899 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/4907 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/4938 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/5750 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/19338 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/19338 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/19338 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/19338 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/19338 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/19338 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/292 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/19338 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/19338 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/19338 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/19338 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/19338 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/292 max 0.0e+00  | alone PASS 0 | 
+CUT 1993-12-31 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 147s
+  panel returns                      | PASS 0/7019 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/120955 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/20763 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/7025 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/3975 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/6637 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/6670 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/7555 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/22902 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/22902 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/22902 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/22902 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/22902 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/22902 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/346 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/22902 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/22902 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/22902 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/22902 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/22902 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/346 max 0.0e+00  | alone PASS 0 | 
+CUT 1998-06-30 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 150s
+  panel returns                      | PASS 0/9226 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/164167 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/24165 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/8927 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/5163 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/8675 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/8719 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/9887 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/26466 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/26466 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/26466 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/26466 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/26466 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/26466 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/400 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/26466 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/26466 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/26466 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/26466 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/26466 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/400 max 0.0e+00  | alone PASS 0 | 
+CUT 2002-12-31 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 150s
+  panel returns                      | PASS 0/12157 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/222537 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/27567 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/10973 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/6556 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/11528 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/11539 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/12897 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/30030 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/30030 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/30030 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/30030 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/30030 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/30030 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/454 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/30030 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/30030 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/30030 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/30030 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/30030 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/454 max 0.0e+00  | alone PASS 0 | 
+CUT 2007-06-30 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 166s
+  panel returns                      | PASS 0/15456 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/288869 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/30969 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/13100 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/8086 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/15025 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/14983 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/16395 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/33594 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/33594 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/33594 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/33594 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/33594 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/33594 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/508 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/33594 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/33594 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/33594 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/33594 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/33594 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/508 max 0.0e+00  | alone PASS 0 | 
+CUT 2010-12-31 | inputs after T seen by the engine: none | stages failing end-to-end 0 of 21 | 183s
+  panel returns                      | PASS 0/18082 max 0.0e+00  | alone n/a (loader stage) | 
+  daily returns                      | PASS 0/342978 max 0.0e+00  | alone n/a (loader stage) | 
+  signal econ                        | PASS 0/33615 max 0.0e+00  | alone PASS 0 | 
+  signal carry                       | PASS 0/14780 max 0.0e+00  | alone PASS 0 | 
+  signal value                       | PASS 0/9327 max 0.0e+00  | alone PASS 0 | 
+  signal trend (sign 1/3/12)         | PASS 0/17783 max 0.0e+00  | alone PASS 0 | 
+  volatility BASE                    | PASS 0/17698 max 0.0e+00  | alone PASS 0 | 
+  volatility CANDIDATE               | PASS 0/19165 max 0.0e+00  | alone PASS 0 | 
+  family position trend BASE         | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position econ BASE          | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position carry BASE         | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position value BASE         | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position xsmom BASE         | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  positions BASE                     | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  book net return BASE               | PASS 0/550 max 0.0e+00  | alone PASS 0 | 
+  family position trend CANDIDATE    | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position econ CANDIDATE     | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position carry CANDIDATE    | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  family position value CANDIDATE    | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  positions CANDIDATE                | PASS 0/36366 max 0.0e+00  | alone PASS 0 | 
+  book net return CANDIDATE          | PASS 0/550 max 0.0e+00  | alone PASS 0 | 
+--- causes found
+--- summary
+TRUNC 1980-06-30 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 1984-12-31 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 1989-06-30 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 1993-12-31 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 1998-06-30 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 2002-12-31 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 2007-06-30 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNC 2010-12-31 | PASS | end-to-end failing stages 0 of 21 | stages failing alone 0
+TRUNCATION TEST PASS | Bloomberg inputs NONE (free data only)
+=== END === 1325s
