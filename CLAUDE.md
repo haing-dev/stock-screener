@@ -140,6 +140,21 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   +26 pp over base rate (n=47). Descriptive only, never weights. 27 rule gaps listed (macro levels ignored; WEO has no
   actuals); cache stale (ends 2026-10-23/30). Re-run score.py + scorecard.py after a data refresh to resolve open rows.
   Lesson: give each parallel agent a PRIVATE scratch folder (coders overwrote each other's helper scripts).
+- LSEG WORKSPACE (2026-11-12): the user has LSEG Workspace + Datastream in Excel on her OWN PC (usable any day). Probe v1
+  (tools/bbgq/results/lseg_probe_v1.txt): 57 of 69 test formulas return data. Works WITH dates: RHistory (BID.Timestamp;
+  BID.Close; FX from 1990+), RDP.Data TR fields (.SPX, yields; not futures or FX), DSGRID (Datastream: S&P from 1950, MSCI,
+  benchmark bonds from ~1980, economics, GSCI, continuous futures; monthly dates = the day of the START date, so use a
+  month-end start). RDP.HistoricalPricing returns values WITHOUT dates (futures c1..c12, yields, forwards, vols all have
+  data; needs SOURCE:RFV); .SPX/.VIX "no permission" there; EDc1 (Eurodollar) not retrievable; =ECI economic codes need other
+  fields. Pull set v1: docs/data_requests/build_lseg_pull.py -> lseg_pull_2026-11-12/ L1a FX spot+forwards, L1b FX vol+SOFR
+  swaps, L2a Datastream benchmark bonds (yield + return index), L2b Workspace yields, L3 equity markets/indexes (377 series)
+  + P2 probe (203 formulas: how to date futures, 67 futures roots, curve depth, GSCI/BCOM/MSCI codes, short rates, swaps,
+  economics with polls). PC copy: Documents\WRDS results\lseg\pull_2026-11-12. Reader: tools/bbgq/jobs/lseg_read_v1.py
+  (metadata only; env LSEG_DIR). The user attaches saved files to the chat herself; read them ONLY through the reader (no
+  values printed, never commit the files). NEXT: read P2 -> build the futures-curve, commodity-index and economics files;
+  then an LSEG reader into the engine, registered as a SECOND source (cross-check + live weekly data); Bloomberg stays the
+  registered backtest source. Daily Fable units run at 22:00 Vancouver time (user 2026-11-12; Vancouver = UTC-7).
+  PC runner stalls overnight (last check 23:14); one-line fix given (allow start on battery), not confirmed applied.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
