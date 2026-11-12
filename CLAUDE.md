@@ -169,6 +169,20 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   helpers lseg_pull_helpers.py). 11 files to pull in total (L1a-L7); none read back yet except the two probes.
   Bloomberg re-pull priority given to the user: R1 (Eurodollar/short-rate futures, breakevens, surprise, first release),
   R5 (swaps, credit), then R2-R4 (commodity cross-check, fundamentals), R6, R7 (LSEG covers FX).
+- LSEG PULL READ BACK (2026-11-12, tools/bbgq/results/lseg_pull_2026-11-12_read.txt; reader now reports dates of rows that
+  hold numbers + a copy check): 913 of 932 blocks have data, 0 still loading, 0 copied blocks (3 legit duplicates). History:
+  FX spot from 1975, forwards from 1982 (median 1996), FX vol from 1995; Datastream benchmark bonds (yield + return index)
+  from 1979-12; equity markets (price, return, P/E, yield) from 1973; commodity curves from 1973 (grains/softs/metals), WTI
+  1983 (c24 from 1995, c36 from 2006), Brent 1988, natural gas 1990; bond futures from 1977 (TY 1982, Bund 1990, JGB 1987);
+  GSCI by commodity from 1970-87; 3m deposit rates from 1975; economics for 18 countries. FAILED (19): Norway 2y, 30y
+  benchmarks for CH/SE/NO/NZ, VIX (no licence in any function), GSCI platinum code, 9 economics pattern guesses; 8 economics
+  series are discontinued codes. GAPS LSEG CANNOT FILL (need Bloomberg or free data): Eurodollar / short sterling / BAX /
+  Euroswiss futures (LSEG rate futures: Euribor 1994, Fed funds 2000, SOFR/SONIA 2018), swap rates before 2011, economic
+  surprise by release + first release + consensus (Citi surprise only from 2003), non-US breakevens (US TIPS from 1997),
+  credit spreads, commodity fundamentals, forward EPS and MSCI valuation (denied), LME metals, EM NDF forwards before
+  ~2010, VIX (free source). Files were read via the bridge with the metadata reader because the PC runner is stalled.
+  PROPOSED NEXT (not done): LSEG reader + lock with the 2011+ seal (like bbgdata), register LSEG in the data plan as the
+  source for the families it covers (same source in backtest and live), Bloomberg for the gaps and as cross-check.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule

@@ -4,6 +4,7 @@ kind, and any error text. Metadata only: no data value is printed.
 Folder: env LSEG_DIR, else <Documents>\\WRDS results\\lseg\\pull_2026-11-12."""
 import datetime as dt
 import glob
+import hashlib
 import os
 import re
 import statistics
@@ -56,6 +57,7 @@ def num(v):
 
 
 GRAND = {"DATA": 0, "TEXT": 0, "EXCEL ERROR": 0, "EMPTY": 0}
+HASH = {}
 
 
 def read(path):
@@ -80,25 +82,45 @@ def read(path):
               cols.append([grid[r][k] if k < len(grid[r]) else None for r in range(ROW0 - 1, len(grid))])
           first = cols[0][0] if cols and cols[0] else None
           texts, nnum, datecol, dates = [], 0, None, []
+          NA = (None, "", "NULL", "NA", "#N/A")
+          # the date column = the column with the most date-like cells (cells such as NULL before a series starts are ignored)
+          best = (0, None, None)
           for j, col in enumerate(cols):
-              filled = [v for v in col if v is not None and v != ""]
-              if not filled:
+              filled = [v for v in col if v not in NA]
+              if len(filled) < 3:
                   continue
-              dd = [as_date(v) for v in filled]
+              dd = [as_date(v) for v in col]
               nd = sum(1 for d in dd if d)
-              serial = [v for v in filled if num(v) and 15000 <= v <= 60000]
-              if datecol is None and nd >= 0.8 * len(filled) and nd >= 3:
-                  datecol, dates = j, [d for d in dd if d]
+              if nd >= 0.8 * len(filled) and nd > best[0]:
+                  best = (nd, j, dd)
                   continue
-              if datecol is None and len(serial) >= 0.8 * len(filled) and len(serial) >= 12:
-                  steps = [b - a for a, b in zip(serial, serial[1:])]
-                  if steps and (all(s >= 0 for s in steps) or all(s <= 0 for s in steps)) and any(steps):
-                      datecol, dates = j, [EPOCH + dt.timedelta(days=int(v)) for v in serial]
-                      continue
-              nnum += sum(1 for v in filled if num(v))
-              for v in filled[:3]:
+              serial = [v for v in filled if num(v) and 15000 <= v <= 60000]
+              if len(serial) >= 0.8 * len(filled) and len(serial) >= 12 and len(serial) > best[0]:
+                  steps = [y - x for x, y in zip(serial, serial[1:])]
+                  if steps and (all(x >= 0 for x in steps) or all(x <= 0 for x in steps)) and any(steps):
+                      best = (len(serial), j, [EPOCH + dt.timedelta(days=int(v)) if num(v) and 15000 <= v <= 60000 else None for v in col])
+          datecol, drow = best[1], best[2]
+          valid = set()
+          for j, col in enumerate(cols):
+              if j == datecol:
+                  continue
+              for i, v in enumerate(col):
+                  if num(v):
+                      nnum += 1
+                      valid.add(i)
+              for v in [x for x in col if x not in NA][:3]:
                   if isinstance(v, str) and len(texts) < 6:
                       texts.append(v[:60])
+          if datecol is not None:
+              dates = [drow[i] for i in sorted(valid) if i < len(drow) and drow[i]]   # dates of rows that hold a number
+          h = hashlib.sha1()
+          for j, col in enumerate(cols):
+              if j != datecol:
+                  for v in col:
+                      if num(v):
+                          h.update(("%.9g|" % v).encode())
+          if nnum >= 24:
+              HASH.setdefault(h.hexdigest(), []).append("%s %s (%s)" % (os.path.basename(path)[:4], pid, str(label)[:40]))
           err = isinstance(first, str) and first.startswith("#")
           if nnum > 0:
               status = "DATA"
@@ -115,7 +137,7 @@ def read(path):
                   gaps = [abs((b - a).days) for a, b in zip(dates, dates[1:])]
                   order = "oldest first" if dates[0] <= dates[-1] else "newest first"
                   eom = sum(1 for d in dates if (d + dt.timedelta(days=1)).month != d.month)
-                  line += " | numbers %d | dates %d: %s to %s (%s, typical gap %s days, calendar month-end %d%%)" % (
+                  line += " | numbers %d | dated rows %d: %s to %s (%s, typical gap %s days, calendar month-end %d%%)" % (
                       nnum, len(dates), min(dates), max(dates), order, int(statistics.median(gaps)) if gaps else "-",
                       round(100 * eom / len(dates)))
               else:
@@ -138,5 +160,9 @@ for p in files:
         read(p)
     except Exception as e:
         print("FILE %s could not be read: %s %s" % (os.path.basename(p), type(e).__name__, str(e)[:120]))
+dup = [v for v in HASH.values() if len(v) > 1]
+print("COPY CHECK | blocks holding exactly the same numbers as another block: %d groups" % len(dup))
+for g in dup[:40]:
+    print("COPY | " + " = ".join(g[:8]) + (" ... +%d" % (len(g) - 8) if len(g) > 8 else ""))
 print("GRAND TOTAL | " + " | ".join("%s %d" % kv for kv in GRAND.items()))
 print("=== END === %.0fs" % (time.time() - T0))
