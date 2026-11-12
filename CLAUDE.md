@@ -183,6 +183,21 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   ~2010, VIX (free source). Files were read via the bridge with the metadata reader because the PC runner is stalled.
   PROPOSED NEXT (not done): LSEG reader + lock with the 2011+ seal (like bbgdata), register LSEG in the data plan as the
   source for the families it covers (same source in backtest and live), Bloomberg for the gaps and as cross-check.
+- 2026-11-12 (later) USER RULE: Bloomberg needs a campus visit; anything LSEG can supply should come from LSEG (refreshable
+  daily on her PC). Done: (1) LSEG set 3 = build_lseg_pull3.py -> L8_fixes_and_alternatives (181 formulas: failed codes +
+  guessed LSEG alternatives for ended rate futures via Datastream, swaps by Workspace codes, inflation-linked yields, LME via
+  Datastream, 13 other commodities, extra bond futures, FX option quotes, Fed series, forward EPS guesses), L9a/L9b DAILY
+  from 1990 (46 commodity c1/c2; 73 rates, equity futures, FX, yields). Not pulled yet. (2) SLIM BLOOMBERG VISIT SET =
+  build_bloomberg_slim.py -> docs/data_requests/bloomberg_visit_2026-11-13/ (PC: ...\Bloomberg_UBC_pull_2026-11-04\
+  visit_2026-11-13): R8 rates only on Bloomberg (149: ED / short sterling / BA / Euroyen / Euroswiss futures, extra bond
+  futures, breakevens, CTA benchmarks, swaps), R9 (108: credit, commodity fundamentals, 8 equity indexes, NDF forwards),
+  R10 cross-check sample (47), R11 other commodity curves (205, lowest priority) = 509 series; replaces R1-R7 (1,283).
+  One R number per file (the reader keeps one workbook per number). If L8 shows an LSEG alternative works, drop that part
+  of R8/R9 before the visit. (3) RUNNER: schedule repair script Documents\WRDS results\fix_runner.ps1 (repo:
+  tools/wrdsq/runner/fix_runner.ps1): daily trigger repeating every 10 min, allowed on battery, start when available;
+  writes local\task_fix_report.txt (before/after). Needs ONE paste by the user:
+  powershell -ExecutionPolicy Bypass -File "C:\Users\admin\Documents\WRDS results\fix_runner.ps1"
+  Computer use cannot type into terminals, so this cannot be done remotely. Job lseg_read_v1.py is queued in local\jobs.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
