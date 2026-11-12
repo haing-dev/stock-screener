@@ -200,7 +200,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   Computer use cannot type into terminals, so this cannot be done remotely. Job lseg_read_v1.py is queued in local\jobs.
 - 2026-11-12 (evening) L8/L9 READ BACK + RUNNER FIXED. Runner: the user pasted fix_runner.ps1; cause was the task's battery
   settings (no start on battery, stop on battery, no catch-up; 74 missed runs); now a daily trigger repeating every 10 min.
-  LSEG files are read ON THE PC by job lseg_read_v1b (report tools/bbgq/results/lseg_pull_2026-11-12_read_v1b.txt: all 14
+  LSEG files are read ON THE PC by job lseg_read_v1b (report tools/bbgq/results/lseg_pull_2026-11-12_read_v1c.txt, which replaced v1b: then 14
   files, 1,343 of 1,435 blocks with data, no unexplained copies). L8: 144 of 181 work. NOW ON LSEG: Eurodollar (Datastream
   "<EDc1>" style, 1981-12 to 2023), Canada BA "<BAXc1>" 1989, Euroswiss "<FESc1>" 1991, Euroyen JEYc1 1989, short sterling
   "<FSSc1>" only from 1999-06; swaps USD/EUR/GBP/JPY/CHF from 1987-89 (codes USDAM3L10Y=, EURAB6E.., GBPSB6L.., JPYSB6L..,
@@ -219,6 +219,19 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   swaps LSEG lacks), R9 (95: credit 47, commodity fundamentals 15, NDF forwards 33), R10 cross-check (75), R11 (47: lumber,
   milk, London cocoa, Newcastle coal, rapeseed, NBP gas; lowest priority). PC folders updated. Vault not yet updated with
   the LSEG notes. NEXT: read L10 -> LSEG reader + lock with the 2011+ seal -> register LSEG as source (still proposed).
+- 2026-11-12 (night) L10 READ BACK (job lseg_read_v1c; report tools/bbgq/results/lseg_pull_2026-11-12_read_v1c.txt: 15 files,
+  1,455 of 1,579 blocks with data). L10: 112 of 144. WORKS: Eurodollar c1-c12 (c1-c4 1981-12, c9-c12 1987-06; daily from
+  1989-12), Euroswiss c1-c8 (1991; c5+ 1996-98), Euroyen JEYc1-c6 (1989; c7-c8 not found), short sterling c1 1999-06 and
+  c2-c8 only 2002-03, Canada BA ONLY c1 and c9-c12 ("<BAXc2>".."<BAXc8>" invalid in Datastream); swap tenors 1/3/7y
+  (GBP 1y only 2016), CHF/AUD/SEK/NZD 5y; NOK swaps NOKAB6O2Y= (1995); USD OIS USD2YOIS= (2001; 10y 2011); GBP SONIA OIS
+  GBP2YOIS= (2007); JPY OIS JPY2YOIS= (2005); EUR OIS 5/10y (2005); US/UK inflation swaps 1-30y (2007); Korea 10y 10TBc1
+  (2008); Swiss bond CONFc1 (1992); London cocoa LCCc (1974), Newcastle coal NCFMc (2008), rapeseed COMc (1994), NBP gas
+  NGLNMc (1997), class III milk DCSc (1998), TTF c12/c13. Guessed Workspace codes return no series name: they are cross-checked
+  against Bloomberg in R10 before use. FAILED: CAD swaps (3 guesses), euro and Japan inflation swaps, lumber LBRc, JGB mini,
+  AUD 30y, GSCI platinum, Baltic Dry (denied); Rotterdam coal ATWc returned numbers without dates (unusable as is).
+  BLOOMBERG VISIT SET v3 (237 series): R8 (45: short sterling L1-L12, Canada BA2-BA8, JGB mini, 7 non-US breakevens, 6 CTA
+  benchmarks, 12 swaps: CAD 2/5/10, euro inflation 1/2/5/10 + 5y5y, yen inflation 10, 2 swaption vols, FRA-OIS), R9 (95,
+  unchanged), R10 cross-check (85, now incl. the guessed LSEG codes), R11 (12: lumber only, optional). PC folder updated.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule

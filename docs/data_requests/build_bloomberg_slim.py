@@ -1,14 +1,16 @@
-"""Bloomberg visit set, slim version 2 (2026-11-12, after the L8/L9 read-back). LSEG Workspace on the user's PC now
-covers most of the old re-pull set R1-R7 (see tools/bbgq/results/lseg_pull_2026-11-12_read_v1b.txt), so the campus
+"""Bloomberg visit set, slim version 3 (2026-11-12, after the L8/L9 and L10 read-backs). LSEG Workspace on the user's PC now
+covers most of the old re-pull set R1-R7 (see tools/bbgq/results/lseg_pull_2026-11-12_read_v1c.txt), so the campus
 visit only needs what LSEG cannot supply, plus a small cross-check sample. Version 2 drops what L8 proved on LSEG:
 Eurodollar / Canada BA / Euroswiss / Euroyen futures, most swaps, US breakevens (TIPS), LME metals, 8 equity indexes,
-12 other commodity curves, 6 extra bond futures. Same block layout, same sheet names ('<file digit> <sheet>') and the same
+12 other commodity curves, 6 extra bond futures. Version 3 drops what L10 proved (NOK swaps, USD and GBP OIS, Korea 10y
+and Swiss bond futures, London cocoa, Newcastle coal, rapeseed, NBP gas, milk) and adds Canada BA contracts 2-8, which
+Datastream does not return. Same block layout, same sheet names ('<file digit> <sheet>') and the same
 Check sheet as the old set, so the reader (bbgdata-1.2.0) merges these files unchanged.
-  R8   only on Bloomberg, rates: short sterling futures (LSEG starts 1999), 3 bond futures, non-US breakevens, CTA
-       benchmarks, the swaps LSEG did not return (CAD, NOK, USD and GBP OIS, euro and yen inflation, swaption vol)
+  R8   only on Bloomberg, rates: short sterling futures (LSEG starts 1999), Canada BA 2-8, JGB mini, non-US breakevens,
+       CTA benchmarks, the swaps LSEG did not return (CAD, euro and yen inflation, swaption vol, FRA-OIS)
   R9   only on Bloomberg, other: credit, commodity fundamentals, non-deliverable FX forwards
   R10  cross-check sample: series LSEG also has, to compare the two sources
-  R11  6 other commodity curves LSEG has not returned yet (lowest priority)
+  R11  lumber curve, the only commodity LSEG has not returned (optional)
 usage: python3 docs/data_requests/build_bloomberg_slim.py [out dir]"""
 import collections, csv, os, re, sys
 import openpyxl
@@ -30,18 +32,18 @@ def pick(digit, sheet, keep):
 
 
 ENDED = {"L"}                                            # short sterling: LSEG history starts 1999-06
-XBOND = {"KAA", "FB", "JBA"}                             # Korea 10y, Swiss bond, JGB mini: not returned by LSEG
-SWAPS = {"BPSWS1", "BPSWS2", "BPSWS10", "CDSW2", "CDSW5", "CDSW10", "NKSW2", "NKSW10", "USSO1", "USSO2", "USSO5", "EUSWI1", "EUSWI2",
-         "EUSWI5", "EUSWI10", "JYSWIT10", "USSN0110", "USSN0C10", "FWISEU55", "USFOSC1"}
+XBOND = {"JBA"}                                          # JGB mini: not returned by LSEG
+BA_KEEP = {"BA%d" % k for k in range(2, 9)}              # Datastream returns BA contracts 1 and 9-12 only
+SWAPS = {"CDSW2", "CDSW5", "CDSW10", "EUSWI1", "EUSWI2", "EUSWI5", "EUSWI10", "JYSWIT10", "USSN0110", "USSN0C10", "FWISEU55", "USFOSC1"}
 US_BE = {"USGGBE10", "USGGT10Y"}                         # US breakeven = LSEG TIPS yields
 LME_F = {"LMAHDY", "LMCADS03", "LMZSDS03", "LMNIDS03"}   # LME cash / 3 months: LSEG Datastream from 1970
-R11_KEEP = {"LB", "DA", "QC", "XW", "IJ", "FN"}          # lumber, milk, London cocoa, Newcastle coal, rapeseed, NBP gas
+R11_KEEP = {"LB"}                                        # lumber
 def name(t):
     return t.rsplit(" ", 1)[0]
 NDF = ("KWN", "NTN", "IRN", "IHN", "PPN", "CCN", "BCN", "CHN", "CLN", "MRN", "RUB")
 LSEG_COM = {"CL", "CO", "NG", "HO", "XB", "GC", "SI", "HG", "PL", "PA", "C", "W", "S", "SB", "KC", "CT", "LC", "CC", "JO", "LH", "FC",
             "KW", "SM", "BO", "QS"}                      # commodity roots LSEG delivered with curves
-A = {("1", "RatesFutures"): pick("1", "RatesFutures", lambda t: root(t) in ENDED),
+A = {("1", "RatesFutures"): pick("1", "RatesFutures", lambda t: root(t) in ENDED or name(t) in BA_KEEP),
      ("3", "RatesFutExtra"): pick("3", "RatesFutExtra", lambda t: root(t) in ENDED | XBOND),
      ("1", "Breakevens"): pick("1", "Breakevens", lambda t: name(t) not in US_BE),
      ("1", "Benchmarks"): pick("1", "Benchmarks", lambda t: True),
@@ -59,11 +61,13 @@ XC = {("1", "Curves"): ["CL1 Comdty", "CL2 Comdty", "CO1 Comdty", "NG1 Comdty", 
       ("1", "Yields"): ["USGG2YR Index", "USGG10YR Index", "GDBR10 Index", "GJGB10 Index", "GUKG10 Index"],
       ("1", "SpotRates3m"): ["US0003M Index", "EUR003M Index"],
       ("1", "RatesFutures"): ["ER1 Comdty", "ER4 Comdty", "FF1 Comdty", "SFR1 Comdty", "ED1 Comdty", "ED4 Comdty", "ED8 Comdty", "BA1 Comdty",
-                              "BA4 Comdty", "ES1 Comdty", "ES4 Comdty", "YE1 Comdty", "YE4 Comdty"],
+                              "ES1 Comdty", "ES4 Comdty", "YE1 Comdty", "YE4 Comdty"],
       ("1", "Breakevens"): ["USGGBE10 Index", "USGGT10Y Index"],
       ("3", "Swaps"): ["USSW2 Curncy", "USSW10 Curncy", "EUSA10 Curncy", "BPSW10 Curncy", "JYSW10 Curncy", "ADSWAP10 Curncy", "USSWIT10 Curncy",
-                       "EESWE1 Curncy", "USOSFR10 Curncy"],
-      ("3", "RatesFutExtra"): ["UXY1 Comdty", "KE1 Comdty", "CF1 Comdty"],
+                       "EESWE1 Curncy", "USOSFR10 Curncy", "NKSW10 Curncy", "USSO2 Curncy", "BPSWS2 Curncy"],
+      ("3", "RatesFutExtra"): ["UXY1 Comdty", "KE1 Comdty", "CF1 Comdty", "KAA1 Comdty", "FB1 Comdty", "BA9 Comdty"],
+      ("5", "ComFront"): ["QC1 Comdty", "IJ1 Comdty", "XW1 Comdty"],
+      ("5", "ComCurve"): ["DA2 Comdty", "FN3 Comdty"],
       ("5", "ComFundamentals"): ["LMCADS03 Comdty", "LMAHDY Comdty"],
       ("4", "EquityIndexes"): ["SPW Index", "MXWD Index", "NDDUWI Index"],
       ("1", "Surprise"): ["CESIUSD Index", "CESIEUR Index"],
@@ -77,10 +81,10 @@ C = {k: pick(k[0], k[1], lambda t, v=v: t in v) for k, v in XC.items()}
 B1 = {k: B[k] for k in [("3", "Credit"), ("5", "ComFundamentals"), ("3", "FXForwards")]}
 B2 = {k: B[k] for k in [("5", "ComFront"), ("5", "ComCurve"), ("1", "Curves")]}
 # one R number per file: the reader keeps only one workbook per number
-PLAN = [("R8_bloomberg_only_rates.xlsx", "PRIORITY 1, only on Bloomberg: short sterling futures, 3 bond futures, non-US breakevens, CTA benchmarks, swaps LSEG lacks", A),
+PLAN = [("R8_bloomberg_only_rates.xlsx", "PRIORITY 1, only on Bloomberg: short sterling and Canada BA futures, non-US breakevens, CTA benchmarks, swaps LSEG lacks", A),
         ("R9_bloomberg_only_credit_fundamentals.xlsx", "PRIORITY 2, only on Bloomberg: credit, commodity fundamentals, non-deliverable forwards", B1),
         ("R10_crosscheck_sample.xlsx", "PRIORITY 3, cross-check sample: series LSEG also has, to compare the two sources", C),
-        ("R11_other_commodity_curves.xlsx", "PRIORITY 4 (only if there is time): 6 other commodity curves LSEG has not returned", B2)]
+        ("R11_other_commodity_curves.xlsx", "OPTIONAL: lumber curve (the only commodity LSEG has not returned)", B2)]
 os.makedirs(OUT, exist_ok=True)
 master = []
 for k, (fname, title, part) in enumerate(PLAN, 1):
@@ -91,7 +95,7 @@ for k, (fname, title, part) in enumerate(PLAN, 1):
     wb = openpyxl.load_workbook(p)                       # fix the two title lines written for the old 7-file set
     ck = wb["Check"]
     ck.cell(1, 1).value = "%s (file %d of 4 for the Bloomberg visit): %s" % (fname.split("_")[0], k, title)
-    ck.cell(2, 1).value = "Bloomberg visit of 13 Nov 2026, slim set version 2. %d series. Monthly history from 1969. The old files R1-R7 are no longer needed." % n
+    ck.cell(2, 1).value = "Bloomberg visit of 13 Nov 2026, slim set version 3. %d series. Monthly history from 1969. The old files R1-R7 are no longer needed." % n
     wb.save(p)
     print("%-34s %4d series | sheets: %s" % (fname, n, ", ".join("%s (%d)" % (s, c) for s, c in collections.Counter(r[0] for r in rows).items())))
     master += [(fname, r[0], r[1], r[2], r[5].isoformat() if r[5] else "") for r in rows]
@@ -99,4 +103,4 @@ with open(os.path.join(OUT, "visit_tickers.csv"), "w", newline="") as f:
     w = csv.writer(f)
     w.writerow(("file", "sheet", "label", "ticker", "should_start_by"))
     w.writerows(master)
-print("total series", len(master), "(first slim set: 509; old set: 1,283)")
+print("total series", len(master), "(version 2: 265; first slim set: 509; old set: 1,283)")
