@@ -4,6 +4,26 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## gm-1.2.1 and gm-2.0.1 candidate (registered 2026-11-11, BEFORE the code change): input-layer look-ahead removed
+Found by the block 3 truncation test (docs/research/bbg/BLOCK3_engine_2026-11-11.md; 8 cut dates 1980-2010, loader-level
+cuts, stricter than the gm-1.2.0 audit). Signals, volatility, positions and book code are clean; four places in the
+input layer read the whole sample. The fixes below are the point-in-time form of each existing rule. They were fixed
+here before any number was produced and are not to be tuned after the results.
+1. C1 gm/panel.py, pre-total-return dividend proxy: the yield added in month t is the mean gap between total-return
+   and price-index returns over overlap months up to t only, used when more than 60 such months exist (same
+   threshold), otherwise the registered constant per market. (Before total-return data exist this is the constant.)
+2. C2 gm/panel.py, local-rate stand-in for equity excess returns: `gap = rl.isna() & (GRID >= 1990-01) &
+   rl.notna().cummax()` (the stand-in is used only after the local rate has first appeared, decided month by month).
+3. C3 gm/daily.py: the whole-sample "more than 500 days" gate is dropped (the volatility estimate already needs its
+   own minimum of observations).
+4. C4 Bloomberg paths (gm/panel.py commodity_return, gm/signals.py carry_values and growth_surprise, gm/bloomberg.py
+   index choice): "more than 24 / 36 observations" is counted on observations up to each month; a choice between two
+   series is a fixed preference order written in gm/config.py, not a comparison of sample lengths. Inactive on free data.
+Gate: the truncation test passes at all 8 cut dates for BASE and CANDIDATE on free data (and the Bloomberg-input cut
+on mock data). Reported once: design-period statistics before and after (1975-2010, 1990-2010). Logged in
+gm/trials.csv as one fix run per config (not a selection trial). Live paper ledger: untouched; the next live run
+restates under the new version name. Holdout not run.
+
 ## gm-2.0 candidate (2026-11-01, NOT frozen: waits for the Bloomberg data)
 Framework rebuilt to be config-driven and statistics-driven: gm/config.py (every rule), gm/vol.py, gm/daily.py,
 gm/timing.py, gm/stats.py (decade table, bootstrap, deflated Sharpe, marginal alpha), gm/trials.py (every trial
