@@ -198,6 +198,27 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   writes local\task_fix_report.txt (before/after). Needs ONE paste by the user:
   powershell -ExecutionPolicy Bypass -File "C:\Users\admin\Documents\WRDS results\fix_runner.ps1"
   Computer use cannot type into terminals, so this cannot be done remotely. Job lseg_read_v1.py is queued in local\jobs.
+- 2026-11-12 (evening) L8/L9 READ BACK + RUNNER FIXED. Runner: the user pasted fix_runner.ps1; cause was the task's battery
+  settings (no start on battery, stop on battery, no catch-up; 74 missed runs); now a daily trigger repeating every 10 min.
+  LSEG files are read ON THE PC by job lseg_read_v1b (report tools/bbgq/results/lseg_pull_2026-11-12_read_v1b.txt: all 14
+  files, 1,343 of 1,435 blocks with data, no unexplained copies). L8: 144 of 181 work. NOW ON LSEG: Eurodollar (Datastream
+  "<EDc1>" style, 1981-12 to 2023), Canada BA "<BAXc1>" 1989, Euroswiss "<FESc1>" 1991, Euroyen JEYc1 1989, short sterling
+  "<FSSc1>" only from 1999-06; swaps USD/EUR/GBP/JPY/CHF from 1987-89 (codes USDAM3L10Y=, EURAB6E.., GBPSB6L.., JPYSB6L..,
+  CHFAB6L..), AUD (AUDQM3AB..), SEK (SEKAB3S..), NZD (NZDSM3NB..); EUR OIS EUREON1Y= 1999; US and UK inflation swaps 2007
+  (USCPIZ10Y=, GBRPIZ10Y=); US TIPS 5/10/30y; LME cash + 3 months via Datastream from 1970 (LCPCASH, LCP3MTH; LAH, LZZ, LNI,
+  LED, LTI); oats, rice, TTF, robusta, white sugar, canola, palm oil, milling wheat, iron ore, uranium, EU carbon, rubber
+  (c1-c3); ultra 10y, short BTP, Bono, Canada 2y/5y, Korea 3y futures; gold/silver/platinum/palladium spot; DEM/FRF/ITL;
+  risk reversals from 2010; 11 more equity indexes; S&P 500 12m forward EPS (@:USSP500, A12FE) from 1985.
+  WRONG SERIES, do not use: L8 Datastream guesses CEDCS00, LSSCS00, MBACS00, LESCS00 (other contracts) and GSPTTOT (petroleum,
+  not platinum). Dead after 2019: Datastream Moody's Aaa/Baa. STILL FAILED on LSEG: CAD and NOK swaps, USD OIS, euro inflation
+  swap, non-US inflation-linked yields (UK only from 2010), Korea 10y, class III milk, SG CTA / BTOP50 (no permission),
+  Baltic Dry (denied), Norway 3y, Argentina / Chile indexes. L9a/L9b daily from 1990: 119 of 119 with data.
+  NEW: L10 (build_lseg_pull4.py, 144 formulas, not pulled yet): full strips of the ended rate futures (monthly + daily),
+  remaining swap tenors, last guesses for the failures. BLOOMBERG VISIT SET v2 (build_bloomberg_slim.py, 265 series, was
+  509): R8 (48: short sterling L1-L12, Korea 10y / Swiss bond / JGB mini futures, 7 non-US breakevens, 6 CTA benchmarks, 20
+  swaps LSEG lacks), R9 (95: credit 47, commodity fundamentals 15, NDF forwards 33), R10 cross-check (75), R11 (47: lumber,
+  milk, London cocoa, Newcastle coal, rapeseed, NBP gas; lowest priority). PC folders updated. Vault not yet updated with
+  the LSEG notes. NEXT: read L10 -> LSEG reader + lock with the 2011+ seal -> register LSEG as source (still proposed).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule

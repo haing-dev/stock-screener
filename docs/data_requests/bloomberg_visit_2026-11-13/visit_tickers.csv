@@ -1,12 +1,4 @@
 file,sheet,label,ticker,should_start_by
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Eurodollar 1,ED1 Comdty,1990-01-02
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Eurodollar 2,ED2 Comdty,1990-01-02
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Eurodollar 3,ED3 Comdty,1986-04-30
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Eurodollar 4,ED4 Comdty,1990-01-02
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Eurodollar 5,ED5 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Eurodollar 6,ED6 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Eurodollar 7,ED7 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Eurodollar 8,ED8 Comdty,1990-01-02
 R8_bloomberg_only_rates.xlsx,1 RatesFutures,Short sterling 1,L 1 Comdty,1990-01-02
 R8_bloomberg_only_rates.xlsx,1 RatesFutures,Short sterling 2,L 2 Comdty,1990-01-02
 R8_bloomberg_only_rates.xlsx,1 RatesFutures,Short sterling 3,L 3 Comdty,1990-01-02
@@ -15,53 +7,13 @@ R8_bloomberg_only_rates.xlsx,1 RatesFutures,Short sterling 5,L 5 Comdty,
 R8_bloomberg_only_rates.xlsx,1 RatesFutures,Short sterling 6,L 6 Comdty,
 R8_bloomberg_only_rates.xlsx,1 RatesFutures,Short sterling 7,L 7 Comdty,
 R8_bloomberg_only_rates.xlsx,1 RatesFutures,Short sterling 8,L 8 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Canada BAX 1,BA1 Comdty,1990-08-16
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Canada BAX 2,BA2 Comdty,1990-08-16
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Canada BAX 3,BA3 Comdty,1990-08-16
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Canada BAX 4,BA4 Comdty,1991-02-11
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Canada BAX 5,BA5 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Canada BAX 6,BA6 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Canada BAX 7,BA7 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Canada BAX 8,BA8 Comdty,1991-02-11
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroyen ? 1,YE1 Comdty,1990-01-04
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroyen ? 2,YE2 Comdty,1990-01-04
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroyen ? 3,YE3 Comdty,1990-01-05
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroyen ? 4,YE4 Comdty,1990-03-13
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroyen ? 5,YE5 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroyen ? 6,YE6 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroyen ? 7,YE7 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroyen ? 8,YE8 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroswiss ? 1,ES1 Comdty,1991-02-08
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroswiss ? 2,ES2 Comdty,1991-02-08
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroswiss ? 3,ES3 Comdty,1991-02-08
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroswiss ? 4,ES4 Comdty,1991-02-08
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroswiss ? 5,ES5 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroswiss ? 6,ES6 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroswiss ? 7,ES7 Comdty,
-R8_bloomberg_only_rates.xlsx,1 RatesFutures,Euroswiss ? 8,ES8 Comdty,1991-07-01
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Eurodollar 9,ED9 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Eurodollar 10,ED10 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Eurodollar 11,ED11 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Eurodollar 12,ED12 Comdty,
 R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Short sterling 9,L 9 Comdty,
 R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Short sterling 10,L 10 Comdty,
 R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Short sterling 11,L 11 Comdty,
 R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Short sterling 12,L 12 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Canada BAX 9,BA9 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Canada BAX 10,BA10 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Canada BAX 11,BA11 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Canada BAX 12,BA12 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,US ultra 10y 1st,UXY1 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,US ultra 10y 2nd,UXY2 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Korea 3y 1st ?,KE1 Comdty,
 R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Korea 10y 1st ?,KAA1 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Italy short BTP 1st ?,BTS1 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Spain Bono 1st ?,FBON1 Comdty,
 R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Swiss bond 1st ?,FB1 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Canada 2y 1st ?,CV1 Comdty,
-R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,Canada 5y 1st ?,CF1 Comdty,
 R8_bloomberg_only_rates.xlsx,3 RatesFutExtra,JGB mini 1st ?,JBA1 Comdty,
-R8_bloomberg_only_rates.xlsx,1 Breakevens,US 10y breakeven,USGGBE10 Index,1998-08-03
 R8_bloomberg_only_rates.xlsx,1 Breakevens,Germany 10y breakeven,DEGGBE10 Index,
 R8_bloomberg_only_rates.xlsx,1 Breakevens,UK 10y breakeven,UKGGBE10 Index,
 R8_bloomberg_only_rates.xlsx,1 Breakevens,France 10y breakeven,FRGGBE10 Index,
@@ -69,85 +21,32 @@ R8_bloomberg_only_rates.xlsx,1 Breakevens,Italy 10y breakeven,ITGGBE10 Index,
 R8_bloomberg_only_rates.xlsx,1 Breakevens,Japan 10y breakeven ?,JYGGBE10 Index,
 R8_bloomberg_only_rates.xlsx,1 Breakevens,Canada 10y breakeven ?,CAGGBE10 Index,
 R8_bloomberg_only_rates.xlsx,1 Breakevens,Australia 10y breakeven ?,ADGGBE10 Index,
-R8_bloomberg_only_rates.xlsx,1 Breakevens,US 10y real yield (TIPS),USGGT10Y Index,1997-01-30
 R8_bloomberg_only_rates.xlsx,1 Benchmarks,SG CTA Index,NEIXCTA Index,
 R8_bloomberg_only_rates.xlsx,1 Benchmarks,SG Trend Index,NEIXCTAT Index,
 R8_bloomberg_only_rates.xlsx,1 Benchmarks,HFRI Macro,HFRIMI Index,
 R8_bloomberg_only_rates.xlsx,1 Benchmarks,HFRI Systematic Diversified,HFRIMTI Index,
 R8_bloomberg_only_rates.xlsx,1 Benchmarks,Barclay CTA Index ?,BARCCTA Index,
 R8_bloomberg_only_rates.xlsx,1 Benchmarks,Barclay BTOP50 ?,BTOP50 Index,
-R8_bloomberg_only_rates.xlsx,3 Swaps,"USD swap (Libor, to 2023) 2",USSW2 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,"USD swap (Libor, to 2023) 5",USSW5 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,"USD swap (Libor, to 2023) 10",USSW10 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,"USD swap (Libor, to 2023) 30",USSW30 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,USD SOFR swap 1,USOSFR1 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,USD SOFR swap 2,USOSFR2 Curncy,2007-01-01
-R8_bloomberg_only_rates.xlsx,3 Swaps,USD SOFR swap 5,USOSFR5 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,USD SOFR swap 10,USOSFR10 Curncy,2007-01-01
-R8_bloomberg_only_rates.xlsx,3 Swaps,USD SOFR swap 30,USOSFR30 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,EUR swap 2,EUSA2 Curncy,1999-01-01
-R8_bloomberg_only_rates.xlsx,3 Swaps,EUR swap 5,EUSA5 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,EUR swap 10,EUSA10 Curncy,1999-01-01
-R8_bloomberg_only_rates.xlsx,3 Swaps,EUR swap 30,EUSA30 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,GBP swap 2,BPSW2 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,GBP swap 5,BPSW5 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,GBP swap 10,BPSW10 Curncy,2009-10-01
-R8_bloomberg_only_rates.xlsx,3 Swaps,GBP swap 30,BPSW30 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,GBP SONIA swap 1 ?,BPSWS1 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,GBP SONIA swap 2 ?,BPSWS2 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,GBP SONIA swap 10 ?,BPSWS10 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,JPY swap 2,JYSW2 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,JPY swap 5,JYSW5 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,JPY swap 10,JYSW10 Curncy,2009-09-30
-R8_bloomberg_only_rates.xlsx,3 Swaps,JPY swap 30,JYSW30 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,CAD swap 2,CDSW2 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,CAD swap 5,CDSW5 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,CAD swap 10,CDSW10 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,AUD swap 2 ?,ADSWAP2 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,AUD swap 5 ?,ADSWAP5 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,AUD swap 10 ?,ADSWAP10 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,CHF swap 2,SFSW2 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,CHF swap 10,SFSW10 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,SEK swap 2,SKSW2 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,SEK swap 10,SKSW10 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,NOK swap 2,NKSW2 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,NOK swap 10,NKSW10 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,NZD swap 2 ?,NDSWAP2 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,NZD swap 10 ?,NDSWAP10 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,USD OIS (Fed funds) 1 ?,USSO1 Curncy,2001-12-31
 R8_bloomberg_only_rates.xlsx,3 Swaps,USD OIS (Fed funds) 2 ?,USSO2 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,USD OIS (Fed funds) 5 ?,USSO5 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,EUR OIS 1 ?,EESWE1 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,EUR OIS 2 ?,EESWE2 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,EUR OIS 5 ?,EESWE5 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,USD inflation swap 1,USSWIT1 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,USD inflation swap 2,USSWIT2 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,USD inflation swap 5,USSWIT5 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,USD inflation swap 10,USSWIT10 Curncy,2004-07-21
-R8_bloomberg_only_rates.xlsx,3 Swaps,USD inflation swap 30,USSWIT30 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,EUR inflation swap 1,EUSWI1 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,EUR inflation swap 2,EUSWI2 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,EUR inflation swap 5,EUSWI5 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,EUR inflation swap 10,EUSWI10 Curncy,2004-04-26
-R8_bloomberg_only_rates.xlsx,3 Swaps,GBP RPI inflation swap 5 ?,BPSWIT5 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,GBP RPI inflation swap 10 ?,BPSWIT10 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,JPY inflation swap 10 ?,JYSWIT10 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,USD swaption normal vol 1y10y 110 ?,USSN0110 Curncy,
 R8_bloomberg_only_rates.xlsx,3 Swaps,USD swaption normal vol 3m10y C10 ?,USSN0C10 Curncy,
-R8_bloomberg_only_rates.xlsx,3 Swaps,US 5y5y inflation swap forward,FWISUS55 Index,2004-07-21
 R8_bloomberg_only_rates.xlsx,3 Swaps,Euro 5y5y inflation swap forward,FWISEU55 Index,
-R8_bloomberg_only_rates.xlsx,3 Swaps,UK 5y5y inflation swap forward ?,FWISBP55 Index,
-R8_bloomberg_only_rates.xlsx,3 Swaps,US 5y breakeven,USGGBE05 Index,
-R8_bloomberg_only_rates.xlsx,3 Swaps,US 30y breakeven ?,USGGBE30 Index,
-R8_bloomberg_only_rates.xlsx,3 Swaps,US 5y real yield,USGGT05Y Index,
-R8_bloomberg_only_rates.xlsx,3 Swaps,US 30y real yield,USGGT30Y Index,
-R8_bloomberg_only_rates.xlsx,3 Swaps,US 2y10y slope ?,USYC2Y10 Index,
-R8_bloomberg_only_rates.xlsx,3 Swaps,US 3m10y slope ?,USYC3M10 Index,
-R8_bloomberg_only_rates.xlsx,3 Swaps,US 10y swap spread ?,USSP10 Index,1988-11-30
-R8_bloomberg_only_rates.xlsx,3 Swaps,US 30y swap spread ?,USSP30 Index,
-R8_bloomberg_only_rates.xlsx,3 Swaps,Euribor-OIS 3m ?,EUR003M Index,1998-12-30
 R8_bloomberg_only_rates.xlsx,3 Swaps,FRA-OIS 3m ?,USFOSC1 Index,
-R8_bloomberg_only_rates.xlsx,3 Swaps,TED spread ?,BASPTDSP Index,
 R9_bloomberg_only_credit_fundamentals.xlsx,3 Credit,US IG OAS,LUACOAS Index,1990-01-31
 R9_bloomberg_only_credit_fundamentals.xlsx,3 Credit,US HY OAS,LF98OAS Index,1994-01-31
 R9_bloomberg_only_credit_fundamentals.xlsx,3 Credit,US IG total return,LUACTRUU Index,
@@ -206,23 +105,10 @@ R9_bloomberg_only_credit_fundamentals.xlsx,5 ComFundamentals,LME aluminium stock
 R9_bloomberg_only_credit_fundamentals.xlsx,5 ComFundamentals,COMEX gold stocks,COMXGOLD Index,
 R9_bloomberg_only_credit_fundamentals.xlsx,5 ComFundamentals,COMEX copper stocks,COMXCOPR Index,
 R9_bloomberg_only_credit_fundamentals.xlsx,5 ComFundamentals,Gold ETF holdings total ?,ETFGTOTL Index,
-R9_bloomberg_only_credit_fundamentals.xlsx,5 ComFundamentals,Aluminium LME cash,LMAHDY Index,
 R9_bloomberg_only_credit_fundamentals.xlsx,5 ComFundamentals,China iron ore port stocks ?,IOPIINVT Index,
 R9_bloomberg_only_credit_fundamentals.xlsx,5 ComFundamentals,US ethanol stocks ?,DOEETHST Index,
 R9_bloomberg_only_credit_fundamentals.xlsx,5 ComFundamentals,OPEC crude production ?,OPCRTOTL Index,
-R9_bloomberg_only_credit_fundamentals.xlsx,5 ComFundamentals,LME aluminium cash,LMAHDY Comdty,
-R9_bloomberg_only_credit_fundamentals.xlsx,5 ComFundamentals,LME copper 3m,LMCADS03 Comdty,
-R9_bloomberg_only_credit_fundamentals.xlsx,5 ComFundamentals,LME zinc 3m,LMZSDS03 Comdty,
-R9_bloomberg_only_credit_fundamentals.xlsx,5 ComFundamentals,LME nickel 3m,LMNIDS03 Comdty,
 R9_bloomberg_only_credit_fundamentals.xlsx,5 ComFundamentals,Iron ore 62% Fe ?,IOE62CNF Comdty,
-R9_bloomberg_only_credit_fundamentals.xlsx,4 EquityIndexes,S&P 500 equal weight ?,SPW Index,
-R9_bloomberg_only_credit_fundamentals.xlsx,4 EquityIndexes,Ibovespa,IBOV Index,1989-12-31
-R9_bloomberg_only_credit_fundamentals.xlsx,4 EquityIndexes,Budapest BUX,BUX Index,
-R9_bloomberg_only_credit_fundamentals.xlsx,4 EquityIndexes,KOSDAQ ?,KOSDAQ Index,
-R9_bloomberg_only_credit_fundamentals.xlsx,4 EquityIndexes,Singapore STI,FSSTI Index,1999-08-31
-R9_bloomberg_only_credit_fundamentals.xlsx,4 EquityIndexes,MSCI ACWI,MXWD Index,1990-01-01
-R9_bloomberg_only_credit_fundamentals.xlsx,4 EquityIndexes,MSCI EM EMEA ?,MXEE Index,
-R9_bloomberg_only_credit_fundamentals.xlsx,4 EquityIndexes,MSCI World net TR USD,NDDUWI Index,
 R9_bloomberg_only_credit_fundamentals.xlsx,3 FXForwards,KRW 1M NDF outright ?,KWN1M Curncy,
 R9_bloomberg_only_credit_fundamentals.xlsx,3 FXForwards,KRW 3M NDF outright ?,KWN3M Curncy,
 R9_bloomberg_only_credit_fundamentals.xlsx,3 FXForwards,KRW 12M NDF outright ?,KWN12M Curncy,
@@ -282,10 +168,38 @@ R10_crosscheck_sample.xlsx,1 Yields,UK 10y,GUKG10 Index,1990-01-01
 R10_crosscheck_sample.xlsx,1 Yields,Japan 10y,GJGB10 Index,1990-01-02
 R10_crosscheck_sample.xlsx,1 SpotRates3m,US 3m Libor (to 2023),US0003M Index,
 R10_crosscheck_sample.xlsx,1 SpotRates3m,Euribor 3m,EUR003M Index,1998-12-30
+R10_crosscheck_sample.xlsx,1 RatesFutures,Eurodollar 1,ED1 Comdty,1990-01-02
+R10_crosscheck_sample.xlsx,1 RatesFutures,Eurodollar 4,ED4 Comdty,1990-01-02
+R10_crosscheck_sample.xlsx,1 RatesFutures,Eurodollar 8,ED8 Comdty,1990-01-02
 R10_crosscheck_sample.xlsx,1 RatesFutures,SOFR 3m 1,SFR1 Comdty,
 R10_crosscheck_sample.xlsx,1 RatesFutures,Euribor 1,ER1 Comdty,1998-12-08
 R10_crosscheck_sample.xlsx,1 RatesFutures,Euribor 4,ER4 Comdty,1998-12-08
+R10_crosscheck_sample.xlsx,1 RatesFutures,Canada BAX 1,BA1 Comdty,1990-08-16
+R10_crosscheck_sample.xlsx,1 RatesFutures,Canada BAX 4,BA4 Comdty,1991-02-11
+R10_crosscheck_sample.xlsx,1 RatesFutures,Euroyen ? 1,YE1 Comdty,1990-01-04
+R10_crosscheck_sample.xlsx,1 RatesFutures,Euroyen ? 4,YE4 Comdty,1990-03-13
+R10_crosscheck_sample.xlsx,1 RatesFutures,Euroswiss ? 1,ES1 Comdty,1991-02-08
+R10_crosscheck_sample.xlsx,1 RatesFutures,Euroswiss ? 4,ES4 Comdty,1991-02-08
 R10_crosscheck_sample.xlsx,1 RatesFutures,Fed funds 1st,FF1 Comdty,1990-01-02
+R10_crosscheck_sample.xlsx,1 Breakevens,US 10y breakeven,USGGBE10 Index,1998-08-03
+R10_crosscheck_sample.xlsx,1 Breakevens,US 10y real yield (TIPS),USGGT10Y Index,1997-01-30
+R10_crosscheck_sample.xlsx,3 Swaps,"USD swap (Libor, to 2023) 2",USSW2 Curncy,
+R10_crosscheck_sample.xlsx,3 Swaps,"USD swap (Libor, to 2023) 10",USSW10 Curncy,
+R10_crosscheck_sample.xlsx,3 Swaps,USD SOFR swap 10,USOSFR10 Curncy,2007-01-01
+R10_crosscheck_sample.xlsx,3 Swaps,EUR swap 10,EUSA10 Curncy,1999-01-01
+R10_crosscheck_sample.xlsx,3 Swaps,GBP swap 10,BPSW10 Curncy,2009-10-01
+R10_crosscheck_sample.xlsx,3 Swaps,JPY swap 10,JYSW10 Curncy,2009-09-30
+R10_crosscheck_sample.xlsx,3 Swaps,AUD swap 10 ?,ADSWAP10 Curncy,
+R10_crosscheck_sample.xlsx,3 Swaps,EUR OIS 1 ?,EESWE1 Curncy,
+R10_crosscheck_sample.xlsx,3 Swaps,USD inflation swap 10,USSWIT10 Curncy,2004-07-21
+R10_crosscheck_sample.xlsx,3 RatesFutExtra,US ultra 10y 1st,UXY1 Comdty,
+R10_crosscheck_sample.xlsx,3 RatesFutExtra,Korea 3y 1st ?,KE1 Comdty,
+R10_crosscheck_sample.xlsx,3 RatesFutExtra,Canada 5y 1st ?,CF1 Comdty,
+R10_crosscheck_sample.xlsx,5 ComFundamentals,LME aluminium cash,LMAHDY Comdty,
+R10_crosscheck_sample.xlsx,5 ComFundamentals,LME copper 3m,LMCADS03 Comdty,
+R10_crosscheck_sample.xlsx,4 EquityIndexes,S&P 500 equal weight ?,SPW Index,
+R10_crosscheck_sample.xlsx,4 EquityIndexes,MSCI ACWI,MXWD Index,1990-01-01
+R10_crosscheck_sample.xlsx,4 EquityIndexes,MSCI World net TR USD,NDDUWI Index,
 R10_crosscheck_sample.xlsx,1 Surprise,Citi surprise US,CESIUSD Index,
 R10_crosscheck_sample.xlsx,1 Surprise,Citi surprise euro area,CESIEUR Index,2003-01-31
 R10_crosscheck_sample.xlsx,3 FXSpot,EURUSD,EURUSD Curncy,1990-01-02
@@ -303,67 +217,10 @@ R10_crosscheck_sample.xlsx,3 YieldsExtra,US 3M,USGG3M Index,1969-12-31
 R10_crosscheck_sample.xlsx,3 YieldsExtra,Spain 10,GSPG10YR Index,1993-01-04
 R10_crosscheck_sample.xlsx,3 FXBasis,EUR V1 cross-currency basis ?,EUBSV1 Curncy,2003-07-31
 R10_crosscheck_sample.xlsx,3 FXBasis,JPY V1 cross-currency basis ?,JYBSV1 Curncy,
-R11_other_commodity_curves.xlsx,5 ComFront,Aluminium LME 1st,LA1 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,5 ComFront,Zinc LME 1st,LX1 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,5 ComFront,Nickel LME 1st,LN1 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,5 ComFront,Lead LME 1st,LL1 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,5 ComFront,Tin LME 1st,LT1 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,5 ComFront,Oats 1st,O 1 Comdty,1990-01-02
-R11_other_commodity_curves.xlsx,5 ComFront,Rough rice 1st,RR1 Comdty,1990-01-02
 R11_other_commodity_curves.xlsx,5 ComFront,Lumber ? 1st,LB1 Comdty,1990-01-02
-R11_other_commodity_curves.xlsx,5 ComFront,EU carbon 1st,MO1 Comdty,2005-04-22
-R11_other_commodity_curves.xlsx,5 ComFront,TTF gas 1st,TZT1 Comdty,2005-06-29
 R11_other_commodity_curves.xlsx,5 ComFront,London cocoa ? 1st,QC1 Comdty,
-R11_other_commodity_curves.xlsx,5 ComFront,London coffee robusta ? 1st,DF1 Comdty,
-R11_other_commodity_curves.xlsx,5 ComFront,London sugar white ? 1st,QW1 Comdty,
-R11_other_commodity_curves.xlsx,5 ComFront,Canola ? 1st,RS1 Comdty,
 R11_other_commodity_curves.xlsx,5 ComFront,Rapeseed Paris ? 1st,IJ1 Comdty,
-R11_other_commodity_curves.xlsx,5 ComFront,Iron ore SGX ? 1st,SCO1 Comdty,
 R11_other_commodity_curves.xlsx,5 ComFront,Newcastle coal ? 1st,XW1 Comdty,
-R11_other_commodity_curves.xlsx,5 ComFront,Uranium ? 1st,UXA1 Comdty,
-R11_other_commodity_curves.xlsx,5 ComFront,Japan rubber ? 1st,JN1 Comdty,
-R11_other_commodity_curves.xlsx,5 ComFront,Palm oil ? 1st,KO1 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Aluminium LME 2,LA2 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,5 ComCurve,Aluminium LME 5,LA5 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Aluminium LME 6,LA6 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Aluminium LME 7,LA7 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Aluminium LME 8,LA8 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Aluminium LME 9,LA9 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Aluminium LME 11,LA11 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Zinc LME 3,LX3 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Zinc LME 7,LX7 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Nickel LME 2,LN2 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,5 ComCurve,Nickel LME 3,LN3 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Nickel LME 4,LN4 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Nickel LME 7,LN7 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Nickel LME 8,LN8 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Nickel LME 10,LN10 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Nickel LME 11,LN11 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Lead LME 3,LL3 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Lead LME 4,LL4 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Lead LME 6,LL6 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Lead LME 8,LL8 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Lead LME 10,LL10 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Lead LME 11,LL11 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Tin LME 2,LT2 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,5 ComCurve,Tin LME 4,LT4 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Tin LME 6,LT6 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Tin LME 9,LT9 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Tin LME 11,LT11 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Oats 2,O 2 Comdty,1990-01-02
-R11_other_commodity_curves.xlsx,5 ComCurve,Oats 3,O 3 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Oats 4,O 4 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Oats 5,O 5 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Oats 8,O 8 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Oats 9,O 9 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Oats 10,O 10 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Oats 11,O 11 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Rough rice 2,RR2 Comdty,1990-01-02
-R11_other_commodity_curves.xlsx,5 ComCurve,Rough rice 4,RR4 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Rough rice 5,RR5 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Rough rice 6,RR6 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Rough rice 9,RR9 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Rough rice 12,RR12 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Lumber ? 5,LB5 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Lumber ? 6,LB6 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Lumber ? 8,LB8 Comdty,
@@ -371,44 +228,9 @@ R11_other_commodity_curves.xlsx,5 ComCurve,Lumber ? 9,LB9 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Lumber ? 10,LB10 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Lumber ? 11,LB11 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Lumber ? 12,LB12 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,EU carbon 3,MO3 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,EU carbon 4,MO4 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,EU carbon 5,MO5 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,EU carbon 7,MO7 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,EU carbon 8,MO8 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,EU carbon 10,MO10 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,EU carbon 12,MO12 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,TTF gas 2,TZT2 Comdty,2005-06-29
-R11_other_commodity_curves.xlsx,5 ComCurve,TTF gas 4,TZT4 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,TTF gas 5,TZT5 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,TTF gas 6,TZT6 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,TTF gas 7,TZT7 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,TTF gas 8,TZT8 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,TTF gas 10,TZT10 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,TTF gas 12,TZT12 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,London cocoa ? 2,QC2 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,London cocoa ? 5,QC5 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,London cocoa ? 7,QC7 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,London coffee robusta ? 2,DF2 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,London coffee robusta ? 3,DF3 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,London coffee robusta ? 5,DF5 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,London coffee robusta ? 7,DF7 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,London coffee robusta ? 8,DF8 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,London coffee robusta ? 11,DF11 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,London sugar white ? 5,QW5 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,London sugar white ? 8,QW8 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,London sugar white ? 12,QW12 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Canola ? 3,RS3 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Canola ? 4,RS4 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Canola ? 5,RS5 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Canola ? 7,RS7 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Canola ? 8,RS8 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Canola ? 9,RS9 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Milling wheat Paris ? 2,CA2 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Milling wheat Paris ? 3,CA3 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Milling wheat Paris ? 8,CA8 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Milling wheat Paris ? 10,CA10 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Milling wheat Paris ? 12,CA12 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Rapeseed Paris ? 2,IJ2 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Rapeseed Paris ? 3,IJ3 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Rapeseed Paris ? 5,IJ5 Comdty,
@@ -417,24 +239,10 @@ R11_other_commodity_curves.xlsx,5 ComCurve,Rapeseed Paris ? 9,IJ9 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Rapeseed Paris ? 10,IJ10 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Rapeseed Paris ? 11,IJ11 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Rapeseed Paris ? 12,IJ12 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Iron ore SGX ? 2,SCO2 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Iron ore SGX ? 3,SCO3 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Iron ore SGX ? 5,SCO5 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Iron ore SGX ? 6,SCO6 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Iron ore SGX ? 7,SCO7 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Iron ore SGX ? 8,SCO8 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Iron ore SGX ? 10,SCO10 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Iron ore SGX ? 11,SCO11 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Iron ore SGX ? 12,SCO12 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Newcastle coal ? 4,XW4 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Newcastle coal ? 5,XW5 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Newcastle coal ? 7,XW7 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Newcastle coal ? 12,XW12 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Uranium ? 3,UXA3 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Uranium ? 4,UXA4 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Uranium ? 5,UXA5 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Uranium ? 7,UXA7 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Uranium ? 9,UXA9 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,UK natural gas NBP ? 3,FN3 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,UK natural gas NBP ? 4,FN4 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,UK natural gas NBP ? 6,FN6 Comdty,
@@ -442,22 +250,6 @@ R11_other_commodity_curves.xlsx,5 ComCurve,UK natural gas NBP ? 8,FN8 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,UK natural gas NBP ? 9,FN9 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,UK natural gas NBP ? 10,FN10 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,UK natural gas NBP ? 12,FN12 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Japan rubber ? 3,JN3 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Japan rubber ? 4,JN4 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Japan rubber ? 5,JN5 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Japan rubber ? 6,JN6 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Japan rubber ? 7,JN7 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Japan rubber ? 8,JN8 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Japan rubber ? 9,JN9 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Japan rubber ? 10,JN10 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Japan rubber ? 12,JN12 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Palm oil ? 2,KO2 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Palm oil ? 4,KO4 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Palm oil ? 6,KO6 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Palm oil ? 8,KO8 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Palm oil ? 9,KO9 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Palm oil ? 10,KO10 Comdty,
-R11_other_commodity_curves.xlsx,5 ComCurve,Palm oil ? 12,KO12 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Class III milk ? 2,DA2 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Class III milk ? 3,DA3 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Class III milk ? 4,DA4 Comdty,
@@ -468,43 +260,7 @@ R11_other_commodity_curves.xlsx,5 ComCurve,Class III milk ? 8,DA8 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Class III milk ? 9,DA9 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Class III milk ? 10,DA10 Comdty,
 R11_other_commodity_curves.xlsx,5 ComCurve,Class III milk ? 11,DA11 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,Oats 1st,O 1 Comdty,1990-01-02
-R11_other_commodity_curves.xlsx,1 Curves,Oats 2nd,O 2 Comdty,1990-01-02
-R11_other_commodity_curves.xlsx,1 Curves,Oats 3rd,O 3 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,Oats ~12m,O 5 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,Rough rice 1st,RR1 Comdty,1990-01-02
-R11_other_commodity_curves.xlsx,1 Curves,Rough rice 2nd,RR2 Comdty,1990-01-02
-R11_other_commodity_curves.xlsx,1 Curves,Rough rice 3rd,RR3 Comdty,1988-12-31
-R11_other_commodity_curves.xlsx,1 Curves,Rough rice ~12m,RR6 Comdty,
 R11_other_commodity_curves.xlsx,1 Curves,Lumber ? 1st,LB1 Comdty,1990-01-02
 R11_other_commodity_curves.xlsx,1 Curves,Lumber ? 2nd,LB2 Comdty,1986-07-31
 R11_other_commodity_curves.xlsx,1 Curves,Lumber ? 3rd,LB3 Comdty,1986-08-31
 R11_other_commodity_curves.xlsx,1 Curves,Lumber ? ~12m,LB6 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,Aluminium (LME) 1st,LA1 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,1 Curves,Aluminium (LME) 2nd,LA2 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,1 Curves,Aluminium (LME) 3rd,LA3 Comdty,1997-07-31
-R11_other_commodity_curves.xlsx,1 Curves,Aluminium (LME) ~12m,LA13 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,Zinc (LME) 1st,LX1 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,1 Curves,Zinc (LME) 2nd,LX2 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,1 Curves,Zinc (LME) 3rd,LX3 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,Zinc (LME) ~12m,LX13 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,Nickel (LME) 1st,LN1 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,1 Curves,Nickel (LME) 2nd,LN2 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,1 Curves,Nickel (LME) 3rd,LN3 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,Nickel (LME) ~12m,LN13 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,Lead (LME) 1st,LL1 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,1 Curves,Lead (LME) 2nd,LL2 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,1 Curves,Lead (LME) 3rd,LL3 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,Lead (LME) ~12m,LL13 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,Tin (LME) 1st,LT1 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,1 Curves,Tin (LME) 2nd,LT2 Comdty,1997-07-23
-R11_other_commodity_curves.xlsx,1 Curves,Tin (LME) 3rd,LT3 Comdty,1997-07-31
-R11_other_commodity_curves.xlsx,1 Curves,Tin (LME) ~12m,LT13 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,EU carbon (EUA) 1st,MO1 Comdty,2005-04-22
-R11_other_commodity_curves.xlsx,1 Curves,EU carbon (EUA) 2nd,MO2 Comdty,2005-04-22
-R11_other_commodity_curves.xlsx,1 Curves,EU carbon (EUA) 3rd,MO3 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,EU carbon (EUA) ~12m,MO3 Comdty,
-R11_other_commodity_curves.xlsx,1 Curves,TTF gas 1st,TZT1 Comdty,2005-06-29
-R11_other_commodity_curves.xlsx,1 Curves,TTF gas 2nd,TZT2 Comdty,2005-06-29
-R11_other_commodity_curves.xlsx,1 Curves,TTF gas 3rd,TZT3 Comdty,2005-06-30
-R11_other_commodity_curves.xlsx,1 Curves,TTF gas ~12m,TZT13 Comdty,
