@@ -116,6 +116,30 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   local-rate stand-in start, C3 daily.py >500-day gate, C4 >24/>36-month gates on Bloomberg series. NOT fixed: they need ONE
   new registered engine version (gm/CHANGES.md, new reference) before Batch A; C2 fix = `& rl.notna().cummax()`.
   Usage: Opus builder ~566k tokens, Opus checker ~317k. Next: lock v2 after the Friday pull; block 4/5 on the user's go.
+- 2026-11-12 ENGINE gm-1.2.1 (BASE, live) / gm-2.0.1-candidate: look-ahead fixes C1-C4 registered in gm/CHANGES.md BEFORE the
+  code change, implemented by Opus (81fe176). Truncation test PASSES at all 8 cut dates (free data; mock Bloomberg inputs too).
+  Design numbers barely move (BASE 1975-2010 SR 1.235 -> 1.236; CANDIDATE 1.464 -> 1.464; only C1 changes numbers: 631 early
+  equity market-months). New reference tools/bbgq/engine_ref.json (old: engine_ref_gm-1.2.0.json); PC redeployed, reproduction
+  24/24 PASS. Open risk (not registered): commodity_carry's "farthest contract" depends on which tickers have data.
+- 2026-11-12 FABLE AUDIT (WORKFLOW 1.1) PASS: docs/research/fable/AUDIT_1.1_2026-11-12.md. 12 of 12 planted errors caught, 0
+  carried, 0 false alarms (Eckhardt pack); Carver re-derivation: substance 6 agree / 4 partly / 0 disagree, but the ORIGINAL
+  U02 note has 4 real errors (T4 "with a mechanism" vs B24 "No mechanism was established"; costs "within 1-2 bp" graded strong
+  on summary text only; buffer test read from wrong columns). So notes U01-U07 = sound logic, UNVERIFIED numbers. Brief v2
+  rules appended to FOUNDATION_SPEC.md (quotes = ground truth; summary-only numbers cannot support grades/tests; "Pack
+  problems" section; Opus checks test premises before registration). Exact inputs/outputs/keys: macro-vault pipeline/audit_1.1.
+  Usage: Fable ~0.91M tokens (two runs; quote-checking makes units ~2-4x longer), Opus prep+scoring ~0.32M.
+- FABLE SCHEDULE (user 2026-11-11): ONE Fable max unit per day via send_later. Day 1 = 1.1 audit (done). Next, in order: 1.2
+  systematic charter (then Opus check vs claims and code), 1.3 thesis notes (rates/curve QP06-07-12; value/momentum/carry
+  QP15-08; testing method QP13), 1.4 playbook cards x5 (Druckenmiller+Bessent; Bridgewater; Graham+Elliott; Karsan; Andurand).
+  Every unit: brief v2 rules, private work folder per agent, report tokens, store exact input in the vault.
+- 2026-11-12 FORECAST LEDGER (WORKFLOW block 5, steps 2.1-2.3) DONE: tools/fcast (pull, validate, merge, agree, score,
+  scorecard; tests/fcast_smoke.py), docs/research/forecasts (FORECAST_SPEC v1, CODING_AGREEMENT, SCORING_RULES v1 frozen
+  before outcomes, SCORECARD_2026-11-12), data on macro-vault pipeline/forecasts (ledger.csv 2,102 rows from 1,815 views;
+  outcomes.csv; scored_frozen.csv). Sonnet coded, Opus blind-recoded 20% (is-forecast 94%, variable 90%, direction 92%,
+  resolvable 80%, confidence 55% = unusable). 329 resolved, 227 open. Direction calls ~ base rate (+1 pp, n=113); macro calls
+  +26 pp over base rate (n=47). Descriptive only, never weights. 27 rule gaps listed (macro levels ignored; WEO has no
+  actuals); cache stale (ends 2026-10-23/30). Re-run score.py + scorecard.py after a data refresh to resolve open rows.
+  Lesson: give each parallel agent a PRIVATE scratch folder (coders overwrote each other's helper scripts).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
