@@ -604,7 +604,7 @@ def panel_causes(full_R, cut_R, T):
             c.append("C2")
         if len(dv) and m.startswith("eq_") and float(dv.max() - dv.min()) < 1e-12:
             c.append("C1")
-        if only_full or (len(dv) and "C1" not in c):
+        if only_full or (len(dv) and "C1" not in c) or (only_cut and not m.startswith("eq_")):
             c.append("unattributed")
         out[m] = {"causes": c, "only_cut": only_cut, "only_full": only_full, "value_months": int(len(dv)),
                   "first": str(x.index[(x.isna() != y.isna()) | ((x - y).abs() > TRUNC_TOL)][0])}

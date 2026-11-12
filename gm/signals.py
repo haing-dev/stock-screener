@@ -191,7 +191,8 @@ def growth_surprise(cc):
     """Growth theme from data surprises: 3-month average of (first release - consensus) z-scores, sign by series."""
     from . import bloomberg as BBG
     parts = [BBG.surprise(tk, sg) for tk, sg in SURPRISE_MAP.get(FX_MACRO.get(cc, cc), [])]
-    parts = [p for p in parts if p.notna().sum() > 24]
+    parts = [p.where(p.notna().cumsum() > 24) for p in parts]      # C4 (gm-1.2.1): counted up to each month
+    parts = [p for p in parts if p.notna().any()]
     if not parts:
         return pd.Series(np.nan, index=GRID)
     s = pd.concat(parts, axis=1).mean(axis=1)
@@ -342,7 +343,8 @@ def carry_values(R):
     for k in BBG.CURVE_ROOT:                            # commodity carry from Bloomberg curves (non-energy too)
         if k in R.columns:
             cc = BBG.commodity_carry(k)
-            if cc.notna().sum() > 24:
+            cc = cc.where(cc.notna().cumsum() > 24)     # C4 (gm-1.2.1): more than 24 months counted up to each month
+            if cc.notna().any():
                 out[k] = cc.combine_first(out[k]) if k in out else cc
     return pd.DataFrame(out).reindex(GRID)
 

@@ -127,11 +127,11 @@ def build():
                 out[k] = np.log(v if usd_per else 1 / v).diff()
     for k, (cc, n) in G.BD.items():
         y = fred_daily({2: "DGS2", 5: "DGS5", 10: "DGS10", 30: "DGS30"}[n]) if cc == "US" else cb_daily(cc, n)
-        if len(y) > 500:
+        if len(y):                      # C3 (gm-1.2.1): no whole-sample length gate
             out[k] = bond_ret(y, n)
     for k, sym in EQ_DAILY.items():
         v = yahoo_daily(sym)
-        if len(v) > 500:
+        if len(v):                      # C3 (gm-1.2.1): no whole-sample length gate
             out[k] = np.log(v).diff()
     for k, root in P.EIA_ROOT.items():
         p = os.path.join(P.RD, "eia_%s2.xls" % root)
@@ -144,7 +144,7 @@ def build():
             out[k] = np.log(v.clip(lower=0.01)).diff()
     for k, sym in CM_DAILY.items():
         v = yahoo_daily(sym)
-        if len(v) > 500:
+        if len(v):                      # C3 (gm-1.2.1): no whole-sample length gate
             out[k] = np.log(v.clip(lower=0.01)).diff()
     D = pd.DataFrame(out).sort_index()
     D = D[D.index.dayofweek < 5]

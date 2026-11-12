@@ -135,7 +135,9 @@ class Source:
                         cols[f] = s
                 if not cols:
                     continue
-                df = pd.DataFrame(cols).sort_index()
+                # every field of the block as a column (NaN where it has no data), as the old single-file reader did:
+                # gm/bloomberg.py value_composite expects all valuation fields to be present
+                df = pd.DataFrame(cols).sort_index().reindex(columns=fields)
                 df = df.dropna(how="all")
                 if len(df):
                     blocks[ticker] = df

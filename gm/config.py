@@ -3,7 +3,8 @@
 A config is a plain dict. `book.run(R, cfg=...)` reads only these keys, so a variant is a changed copy of a config
 (`variant(BASE, trend={"kind": "cont"})`) and every trial is reproducible from its config (gm/trials.py logs it).
 
-BASE = gm-1.2.0 exactly (the live paper book). CANDIDATE = the gm-2.0 candidate, frozen only after the Bloomberg data
+BASE = gm-1.2.1 (the live paper book; gm-1.2.0 with the registered input-layer look-ahead fixes C1-C4, gm/CHANGES.md
+2026-11-11). CANDIDATE = the gm-2.0.1 candidate (gm-2.0 + the same fixes), frozen only after the Bloomberg data
 and the decisions in docs/research/global_macro/gap_review_crosscheck_2026-10-31.md.
 """
 import copy
@@ -11,7 +12,7 @@ import hashlib
 import json
 
 BASE = {
-    "name": "gm-1.2.0",
+    "name": "gm-1.2.1",
     # family risk shares (sum 1)
     "family_w": {"trend": 0.30, "econ": 0.30, "carry": 0.20, "value": 0.15, "xsmom": 0.05},
     # price trend: 'sign' = mean of sign(n-month excess return); 'cont' = mean of clip(z_n, -cap, cap) / cap, where
@@ -58,7 +59,7 @@ def cfg_hash(cfg):
     return hashlib.sha1(json.dumps(cfg, sort_keys=True, default=list).encode()).hexdigest()[:10]
 
 
-CANDIDATE = variant(BASE, name="gm-2.0-candidate",
+CANDIDATE = variant(BASE, name="gm-2.0.1-candidate",
                     family_w={"trend": 0.45, "econ": 0.15, "carry": 0.25, "value": 0.15, "xsmom": 0.0},
                     vol={"model": "hybrid"})
 
@@ -71,3 +72,8 @@ STRESS_WINDOWS = {
     "2020 Covid": ("2020-02", "2020-03"), "2022 rates shock": ("2022-01", "2022-10"),
     "2024 Aug yen carry": ("2024-07", "2024-08"), "2025 Apr tariffs": ("2025-03", "2025-04"),
 }
+
+# C4 (gm-1.2.1, registered 2026-11-11): fixed preference order between Bloomberg commodity excess-return indexes,
+# decided by the index family in the ticker name only (no data needed): S&P GSCI ("SPGS...") first, then Bloomberg
+# Commodity ("BCOM..."), the order of gm/bloomberg.py COMMOD_ER and of its docstring "GSCI, else BCOM".
+BBG_ER_PREFERENCE = ("SPGS", "BCOM")

@@ -4,8 +4,8 @@
    runs jobs/gm_repro_v1.py there as the PC runner does: must print REPRODUCTION PASS against lib/engine_ref.json;
    with BBGQ_ALT_PYTHON=<python of another environment, e.g. pandas 3.1.1 / numpy 2.5.4 without xlrd> it runs the job
    there too;
-2. one truncation date with jobs/gm_trunc_v1.py: the cut must be complete (no input after T reaches the engine), no
-   stage may fail on its own (every failure inherited from the inputs), and the known causes must be named;
+2. one truncation date with jobs/gm_trunc_v1.py: the cut must be complete (no input after T reaches the engine) and,
+   since gm-1.2.1 / gm-2.0.1 (registered fixes C1-C4), every stage must pass;
 3. the Bloomberg adapter on mock workbooks (tests/bbgq_smoke.make_mocks): jobs/gm_bbg_map_v1.py, the as-of guard, held-back
    markets invisible, and an engine run with Bloomberg commodity inputs that leaves every other market's returns unchanged;
 4. a whitelist scan of every job output: no line with a date and a decimal value, no date after 2010.
@@ -85,11 +85,10 @@ def main():
                       r"(\d+)" % TRUNC_DATE, out_t)
         assert m, out_t[-3000:]
         assert m.group(4) == "0", "a stage fails on its own (look-ahead inside gm rules):\n" + out_t[-4000:]
-        for cid in ("C1 |", "C2 |", "C3 |"):
-            assert cid in out_t, "cause %s not reported:\n%s" % (cid, out_t[-4000:])
-        assert "not attributed" not in out_t and "unattributed" not in out_t, out_t[-4000:]
-        print("  truncation at %s: %s, %s of %s stages differ end-to-end, 0 alone; causes C1 C2 C3 named" % (
-            TRUNC_DATE, m.group(1), m.group(2), m.group(3)))
+        # gm-1.2.1 / gm-2.0.1 (registered fixes C1-C4): every stage must pass
+        assert m.group(1) == "PASS" and m.group(2) == "0", "truncation fails:\n" + out_t[-4000:]
+        assert "TRUNCATION TEST PASS" in out_t and "BLOOMBERG INPUTS: NONE" in out_t, out_t[-2000:]
+        print("  truncation at %s: PASS, 0 of %s stages differ (free data)" % (TRUNC_DATE, m.group(3)))
         outs["gm_trunc_v1"] = out_t
 
         # 3. Bloomberg adapter on mock workbooks

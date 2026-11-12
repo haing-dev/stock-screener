@@ -108,12 +108,21 @@ def series(sheet, ticker, field=None):
 
 # ---------------------------------------------------------------- returns and markets
 def commodity_return(market):
-    """Monthly excess return from the first available excess-return index (GSCI, else BCOM)."""
-    for tk in COMMOD_ER.get(market, ()):
+    """Monthly excess return from the excess-return indexes in the fixed preference order of gm/config.py
+    (BBG_ER_PREFERENCE: S&P GSCI, then BCOM). C4 (gm-1.2.1): an index is used in month t only when it has more than
+    24 levels up to t, and month by month the first preferred index that is usable wins (no comparison of lengths)."""
+    from .config import BBG_ER_PREFERENCE
+
+    def rank(tk):
+        return next((i for i, p in enumerate(BBG_ER_PREFERENCE) if tk.startswith(p)), len(BBG_ER_PREFERENCE))
+    out = pd.Series(np.nan, index=P.GRID)
+    for tk in sorted(COMMOD_ER.get(market, ()), key=rank):
         s = series("Returns", tk, "PX_LAST")
-        if s.notna().sum() > 24:
-            return s.pct_change(fill_method=None)
-    return pd.Series(np.nan, index=P.GRID)
+        if not s.notna().any():
+            continue
+        r = s.pct_change(fill_method=None).where(s.notna().cumsum() > 24)
+        out = out.combine_first(r.reindex(P.GRID))
+    return out
 
 
 def commodity_carry(market):

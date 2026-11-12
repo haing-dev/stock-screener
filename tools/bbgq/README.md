@@ -111,3 +111,14 @@ Engine on the PC (deploy with `python3 tools/bbgq/build_engine.py`, which fills 
   unpacked files against the zip's own manifest and the reference's file list and sizes. It now also hashes gm/data/*.csv
   (RBI_CALLMONEY_M.csv; a hash only).
 - Keep pandas below 4 on the PC (the engine and the reference were checked on pandas 3.0.5 and 3.1.1 only).
+
+### Engine look-ahead fixes (gm-1.2.1 / gm-2.0.1-candidate, registered in gm/CHANGES.md 2026-11-11, built 2026-11-12)
+| Cause | Where | Status |
+|---|---|---|
+| C1 dividend proxy from all design months | gm/panel.py | FIXED: mean up to each month (> 60 overlap months), else the constant; changes 631 equity market-months |
+| C2 local-rate stand-in start | gm/panel.py | FIXED: `& rl.notna().cummax()`; no design number changes |
+| C3 whole-sample 500-day gate | gm/daily.py | FIXED: gate dropped; no design number changes |
+| C4 whole-sample 24 / 36-month gates on Bloomberg series | gm/panel.py, signals.py, bloomberg.py, config.py | FIXED: counted up to each month; GSCI before BCOM by fixed order; inactive on free data |
+Truncation test: PASS at all 8 cut dates for BASE and CANDIDATE (free data), and at 3 dates with mock Bloomberg inputs.
+The reference `engine_ref.json` is for gm-1.2.1; `engine_ref_gm-1.2.0.json` keeps the old one.
+

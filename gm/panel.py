@@ -424,8 +424,8 @@ def build():
     # equities -----------------------------------------------------------------
     for k, (etf, idxs, cur, cc, div) in EQUITY.items():
         rl = rate3m(cc).shift(1) / 1200                  # rate known at the start of the month (audit 2026-10-31)
-        f0 = rl.first_valid_index()
-        gap = rl.isna() & (GRID >= max(f0, pd.Period("1990-01", "M")) if f0 is not None else GRID >= pd.Period("1990-01", "M"))
+        # C2 (gm-1.2.1): stand-in only after the local rate has first appeared, decided month by month
+        gap = rl.isna() & (GRID >= pd.Period("1990-01", "M")) & rl.notna().cummax()
         us_rate_used = int(gap.sum()) > 12
         rl = rl.combine_first((rate3m("US").shift(1) / 1200).where(gap))   # local rate stops (India after 2023): US rate, flagged
         if k == "eq_us_spx":
@@ -454,14 +454,19 @@ def build():
             r_px = ret(px)
             if tag == "etf":
                 r_px = (1 + r_px) / fx_ch - 1
-            d = 0.0 if tag in ("tr", "etf") else div
+            d0 = 0.0 if tag in ("tr", "etf") else div      # registered constant per market
+            d = pd.Series(d0, index=GRID)
             tr0 = first(*pieces) if pieces else None      # total-return excess series (MSCI, then ETF)
-            if tr0 is not None and r_px.notna().sum() and tr0.notna().sum() > 60 and tag != "tr":
+            if tr0 is not None and tag != "tr":
+                # C1 (gm-1.2.1): dividend yield implied by the total-return era, from overlap months up to t only;
+                # used once more than 60 such months exist, otherwise the registered constant
                 both = tr0.notna() & r_px.notna() & rl.notna() & (GRID <= DIV_EST_END)   # design data only
-                if both.sum() > 60:                       # dividend yield implied by the total-return era
-                    d = float(np.clip(((tr0 + rl) - r_px)[both].mean() * 12, 0, 0.06))
+                n_t = both.cumsum()
+                est = (((tr0 + rl) - r_px).where(both).fillna(0).cumsum() / n_t.where(n_t > 0) * 12).clip(0, 0.06)
+                d = est.where(n_t > 60, d0)
             pieces.append(r_px + d / 12 - rl)
-            parts.append("%s price index + %.1f%%/yr dividends" % (sym, d * 100) if tag not in ("tr",) else sym + " (total return)")
+            parts.append("%s price index + dividends (%.1f%%/yr until 60 overlap months, then their mean up to each "
+                         "month)" % (sym, d0 * 100) if tag not in ("tr",) else sym + " (total return)")
             if tag not in ("tr",):
                 flags.append("div proxy before ETF")
         R[k] = first(*pieces)
@@ -511,7 +516,8 @@ def build():
     for k, (etf, fut, stq, wbcol) in COMMOD.items():
         pieces, parts, flags = [], [], []
         bb = BBG.commodity_return(k)
-        if bb.notna().sum() > 24:                         # Bloomberg excess-return index: properly rolled, longest
+        bb = bb.where(bb.notna().cumsum() > 24)           # C4 (gm-1.2.1): more than 24 months counted up to each month
+        if bb.notna().any():                              # Bloomberg excess-return index: properly rolled, longest
             pieces.append(bb)
             parts.append("Bloomberg/S&P GSCI excess-return index")
         if k in EIA_ROOT:
@@ -562,7 +568,8 @@ def build():
 
     for k in BBG.ALT_COMMOD:                             # alternative commodities exist only with Bloomberg data
         bb = BBG.commodity_return(k)
-        if bb.notna().sum() > 36:
+        bb = bb.where(bb.notna().cumsum() > 36)           # C4 (gm-1.2.1): more than 36 months counted up to each month
+        if bb.notna().any():
             R[k] = bb
             note(k, ["Bloomberg/S&P GSCI excess-return index"], ["alternative market (capped at 30% of commodity risk)"])
     R = pd.DataFrame(R).reindex(GRID)
