@@ -232,6 +232,25 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   BLOOMBERG VISIT SET v3 (237 series): R8 (45: short sterling L1-L12, Canada BA2-BA8, JGB mini, 7 non-US breakevens, 6 CTA
   benchmarks, 12 swaps: CAD 2/5/10, euro inflation 1/2/5/10 + 5y5y, yen inflation 10, 2 swaption vols, FRA-OIS), R9 (95,
   unchanged), R10 cross-check (85, now incl. the guessed LSEG codes), R11 (12: lumber only, optional). PC folder updated.
+- 2026-11-13 SYSTEMATIC CHARTER (WORKFLOW 1.2) DONE, PASS WITH CORRECTIONS: docs/research/fable/CHARTER_1.2.md (Fable max, one
+  run, ~0.67M tokens; the 24 corrections of the Opus check are applied in the text) + CHARTER_1.2_check.md (Opus high, ~0.36M;
+  verified against the verbatim quotes and code; read Eckhardt MT020 and Fung-Hsieh QP09). Exact inputs, briefs, original
+  Fable text: macro-vault pipeline/charter_1.2. CONTENT: pods = Trend, Economic trend, Carry, Value (existing book) + Curve
+  carry (new, B1; far vs near commodity contract; rests on one seller's unshown claims, no live source registered). The notes
+  give NO thesis for Carry or Value (step 1.3 must) and do not establish why trends exist (4 rival mechanisms). Version
+  grids (averaged, equal weight): Trend 16 (lookback 1/3/6/12 x sign/graded x hybrid/36-month vol), Economic trend 2, Carry
+  2, Value 1, Curve carry 2; all in four weekly tranches. ONE diagnostic pass D1-D6 (zero slots, design months) replaces the
+  34 queued tests: D1 breadth (gates alternative commodities), D2 non-signal turnover (gates a no-trade buffer), D3 book risk
+  by state (gates a faster book scaler), D4 crisis profile, D5 econ delay decay, D6 trend return per unit of market move.
+  Nothing registered or run (registration = step 3.4). FINDINGS: (a) bd_us_2y and st_us_2y are the SAME series (61 distinct
+  markets, US 2y double weight); removal needs a registered engine version before any run, effect unknown; (b) numbers: 11
+  of 19 source numbers are in the quote, 6 summary only (U01 Sharpe figures are chart reads); (c) Fung-Hsieh: trend pays
+  like lookback straddles (skew, weak mean) so Sharpe / linear alpha alone can reward a rule that lost its shape; trend
+  funds earned in the 1987 and 1990 crashes while our engine lost in 1987 from long equities; (d) Eckhardt's firm does not
+  resize with volatility and rates alternative markets worse in practice; (e) rule 5: no note dates a thesis before 2011;
+  Economic trend's sources are 2017 and 2023 (Incubator unless step 1.5 finds an earlier source). 9 open judgement points
+  are listed in section 11 with the step that closes each (1.5, 3.1-3.2, 3.4); none is a decision for the user.
+  NEXT Fable unit: 1.3 thesis note rates and curve (QP06, QP07, QP12), daily 22:00 Vancouver.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
