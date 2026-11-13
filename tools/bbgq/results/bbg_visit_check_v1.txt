@@ -1,0 +1,270 @@
+##### R10_crosscheck_sample.xlsx 720561
+1 Curves           | CL1 Comdty         | WTI crude 1st                        | ok      | 1984-11..2026-10 n=504
+1 Curves           | CL2 Comdty         | WTI crude 2nd                        | ok      | 1984-11..2026-10 n=504
+1 Curves           | CO1 Comdty         | Brent crude 1st                      | ok      | 1988-06..2026-10 n=461
+1 Curves           | NG1 Comdty         | Natural gas 1st                      | ok      | 1990-04..2026-10 n=439
+1 Curves           | GC1 Comdty         | Gold 1st                             | ok      | 1975-01..2026-10 n=622
+1 Curves           | HG1 Comdty         | Copper 1st                           | ok      | 1988-12..2026-10 n=455
+1 Curves           | C 1 Comdty         | Corn 1st                             | ok      | 1969-12..2026-10 n=683
+1 Curves           | S 1 Comdty         | Soybeans 1st                         | ok      | 1969-12..2026-10 n=683
+1 Curves           | SB1 Comdty         | Sugar 1st                            | ok      | 1969-12..2026-10 n=683
+1 Curves           | LC1 Comdty         | Live cattle 1st                      | ok      | 1969-12..2026-10 n=683
+1 Returns          | SPGSCLP Index      | WTI crude GSCI ER                    | ok      | 1987-01..2026-10 n=478
+1 Returns          | BCOMCL Index       | WTI crude BCOM ER                    | ok      | 1984-01..2026-10 n=514
+1 Returns          | SPGSGCP Index      | Gold GSCI ER                         | ok      | 1978-01..2026-10 n=586
+1 Returns          | SPGSICP Index      | Copper GSCI ER                       | ok      | 1977-01..2026-10 n=598
+1 Returns          | SPGSCNP Index      | Corn GSCI ER                         | ok      | 1969-12..2026-10 n=683
+1 BondFutures      | TY1 Comdty         | US 10y note 1st                      | ok      | 1982-05..2026-10 n=534
+1 BondFutures      | RX1 Comdty         | Bund 1st                             | ok      | 1990-11..2026-10 n=432
+1 BondFutures      | G 1 Comdty         | Long gilt 1st                        | ok      | 1982-11..2026-10 n=528
+1 BondFutures      | JB1 Comdty         | JGB 10y 1st                          | ok      | 1985-10..2026-10 n=493
+1 Yields           | USGG2YR Index      | US 2y                                | ok      | 1976-06..2026-10 n=605
+1 Yields           | USGG10YR Index     | US 10y                               | ok      | 1969-12..2026-10 n=683
+1 Yields           | GDBR10 Index       | Germany 10y                          | ok      | 1989-01..2026-10 n=454
+1 Yields           | GUKG10 Index       | UK 10y                               | ok      | 1989-01..2026-10 n=454
+1 Yields           | GJGB10 Index       | Japan 10y                            | ok      | 1987-10..2026-10 n=469
+1 SpotRates3m      | US0003M Index      | US 3m Libor (to 2023)                | ok      | 1984-12..2026-10 n=503
+1 SpotRates3m      | EUR003M Index      | Euribor 3m                           | ok      | 1998-12..2026-10 n=335
+1 RatesFutures     | ED1 Comdty         | Eurodollar 1                         | ok      | 1986-04..2026-10 n=487
+1 RatesFutures     | ED4 Comdty         | Eurodollar 4                         | ok      | 1986-04..2026-10 n=487
+1 RatesFutures     | ED8 Comdty         | Eurodollar 8                         | ok      | 1986-12..2026-10 n=479
+1 RatesFutures     | SFR1 Comdty        | SOFR 3m 1                            | ok      | 2018-05..2026-10 n=102
+1 RatesFutures     | ER1 Comdty         | Euribor 1                            | ok      | 1998-12..2026-10 n=335
+1 RatesFutures     | ER4 Comdty         | Euribor 4                            | ok      | 1998-12..2026-10 n=335
+1 RatesFutures     | BA1 Comdty         | Canada BAX 1                         | ok      | 1990-08..2026-10 n=435
+1 RatesFutures     | BA4 Comdty         | Canada BAX 4                         | ok      | 1991-02..2026-10 n=429
+1 RatesFutures     | YE1 Comdty         | Euroyen ? 1                          | ok      | 1989-06..2026-10 n=449
+1 RatesFutures     | YE4 Comdty         | Euroyen ? 4                          | ok      | 1989-09..2026-10 n=446
+1 RatesFutures     | ES1 Comdty         | Euroswiss ? 1                        | ok      | 1991-02..2026-10 n=429
+1 RatesFutures     | ES4 Comdty         | Euroswiss ? 4                        | ok      | 1991-02..2026-10 n=429
+1 RatesFutures     | FF1 Comdty         | Fed funds 1st                        | ok      | 1988-12..2026-10 n=455
+1 Breakevens       | USGGBE10 Index     | US 10y breakeven                     | ok      | 1998-08..2026-10 n=339
+1 Breakevens       | USGGT10Y Index     | US 10y real yield (TIPS)             | ok      | 1997-01..2026-10 n=358
+3 Swaps            | USSW2 Curncy       | USD swap (Libor, to 2023) 2          | ok      | 2009-09..2026-10 n=206
+3 Swaps            | USSW10 Curncy      | USD swap (Libor, to 2023) 10         | ok      | 2009-09..2026-10 n=206
+3 Swaps            | USOSFR10 Curncy    | USD SOFR swap 10                     | ok      | 2007-01..2026-10 n=238
+3 Swaps            | EUSA10 Curncy      | EUR swap 10                          | ok      | 1999-01..2026-10 n=334
+3 Swaps            | BPSW10 Curncy      | GBP swap 10                          | ok      | 2009-10..2026-10 n=205
+3 Swaps            | JYSW10 Curncy      | JPY swap 10                          | ok      | 2009-09..2026-10 n=206
+3 Swaps            | ADSWAP10 Curncy    | AUD swap 10 ?                        | ok      | 1988-06..2026-10 n=461
+3 Swaps            | EESWE1 Curncy      | EUR OIS 1 ?                          | ok      | 2007-01..2026-10 n=238
+3 Swaps            | USSWIT10 Curncy    | USD inflation swap 10                | ok      | 2004-07..2026-10 n=268
+3 RatesFutExtra    | UXY1 Comdty        | US ultra 10y 1st                     | ok      | 2016-01..2026-10 n=130
+3 RatesFutExtra    | KE1 Comdty         | Korea 3y 1st ?                       | ok      | 1999-09..2026-10 n=326
+3 RatesFutExtra    | CF1 Comdty         | Canada 5y 1st ?                      | ok      | 1991-07..2026-10 n=424
+5 ComFundamentals  | LMAHDY Comdty      | LME aluminium cash                   | ok      | 1987-08..2026-10 n=471
+5 ComFundamentals  | LMCADS03 Comdty    | LME copper 3m                        | ok      | 1986-04..2026-10 n=487
+4 EquityIndexes    | SPW Index          | S&P 500 equal weight ?               | ok      | 1989-12..2026-10 n=443
+4 EquityIndexes    | MXWD Index         | MSCI ACWI                            | ok      | 1987-12..2026-10 n=467
+4 EquityIndexes    | NDDUWI Index       | MSCI World net TR USD                | ok      | 1969-12..2026-10 n=683
+1 Surprise         | CESIUSD Index      | Citi surprise US                     | ok      | 2003-01..2026-10 n=286
+1 Surprise         | CESIEUR Index      | Citi surprise euro area              | ok      | 2003-01..2026-10 n=286
+3 FXSpot           | EURUSD Curncy      | EURUSD                               | ok      | 1975-01..2026-10 n=622
+3 FXSpot           | USDJPY Curncy      | USDJPY                               | ok      | 1971-01..2026-10 n=670
+3 FXSpot           | GBPUSD Curncy      | GBPUSD                               | ok      | 1971-01..2026-10 n=670
+3 FXSpot           | AUDUSD Curncy      | AUDUSD                               | ok      | 1971-01..2026-10 n=670
+3 FXSpot           | USDKRW Curncy      | USDKRW                               | ok      | 1981-04..2026-10 n=547
+3 FXSpot           | USDMXN Curncy      | USDMXN                               | ok      | 1971-01..2026-10 n=670
+3 FXForwards       | EUR3M Curncy       | EUR 3M forward points                | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | JPY3M Curncy       | JPY 3M forward points                | ok      | 1988-12..2026-10 n=455
+3 FXForwards       | MXN3M Curncy       | MXN 3M forward points                | ok      | 1997-11..2026-10 n=348
+3 FXVol            | EURUSDV3M Curncy   | EURUSD 3M ATM implied vol            | ok      | 1998-12..2026-10 n=335
+3 FXVol            | USDJPYV3M Curncy   | USDJPY 3M ATM implied vol            | ok      | 1995-12..2026-10 n=371
+3 YieldsExtra      | USGG3M Index       | US 3M                                | ok      | 1969-12..2026-10 n=683
+3 YieldsExtra      | GSPG10YR Index     | Spain 10                             | ok      | 1993-01..2026-10 n=406
+3 FXBasis          | EUBSV1 Curncy      | EUR V1 cross-currency basis ?        | ok      | 2003-07..2026-10 n=280
+3 FXBasis          | JYBSV1 Curncy      | JPY V1 cross-currency basis ?        | NO DATA | first cell: #N/A Invalid Security
+##### R11_other_commodity_curves.xlsx 340996
+5 ComFront         | LB1 Comdty         | Lumber ? 1st                         | ok      | 1986-04..2026-10 n=487
+5 ComFront         | QC1 Comdty         | London cocoa ? 1st                   | ok      | 1989-01..2026-10 n=454
+5 ComFront         | IJ1 Comdty         | Rapeseed Paris ? 1st                 | ok      | 1999-01..2026-10 n=334
+5 ComFront         | XW1 Comdty         | Newcastle coal ? 1st                 | ok      | 2008-12..2026-10 n=215
+5 ComCurve         | LB5 Comdty         | Lumber ? 5                           | ok      | 1986-12..2026-10 n=479
+5 ComCurve         | LB6 Comdty         | Lumber ? 6                           | ok      | 1987-02..2026-10 n=477
+5 ComCurve         | LB8 Comdty         | Lumber ? 8                           | ok      | 2026-04..2026-10 n=7
+5 ComCurve         | LB9 Comdty         | Lumber ? 9                           | NO DATA | first cell: #N/A N/A
+5 ComCurve         | LB10 Comdty        | Lumber ? 10                          | NO DATA | first cell: #N/A Invalid Security
+5 ComCurve         | LB11 Comdty        | Lumber ? 11                          | NO DATA | first cell: #N/A Invalid Security
+5 ComCurve         | LB12 Comdty        | Lumber ? 12                          | NO DATA | first cell: #N/A Invalid Security
+5 ComCurve         | QC2 Comdty         | London cocoa ? 2                     | ok      | 1989-01..2026-10 n=454
+5 ComCurve         | QC5 Comdty         | London cocoa ? 5                     | ok      | 1989-01..2026-10 n=454
+5 ComCurve         | QC7 Comdty         | London cocoa ? 7                     | ok      | 1989-01..2026-10 n=454
+5 ComCurve         | IJ2 Comdty         | Rapeseed Paris ? 2                   | ok      | 1999-01..2026-10 n=334
+5 ComCurve         | IJ3 Comdty         | Rapeseed Paris ? 3                   | ok      | 1999-01..2026-10 n=334
+5 ComCurve         | IJ5 Comdty         | Rapeseed Paris ? 5                   | ok      | 1999-01..2026-10 n=334
+5 ComCurve         | IJ7 Comdty         | Rapeseed Paris ? 7                   | ok      | 2012-03..2026-10 n=176
+5 ComCurve         | IJ9 Comdty         | Rapeseed Paris ? 9                   | ok      | 2012-03..2026-10 n=176
+5 ComCurve         | IJ10 Comdty        | Rapeseed Paris ? 10                  | ok      | 2012-03..2026-10 n=176
+5 ComCurve         | IJ11 Comdty        | Rapeseed Paris ? 11                  | NO DATA | first cell: #N/A Invalid Security
+5 ComCurve         | IJ12 Comdty        | Rapeseed Paris ? 12                  | NO DATA | first cell: #N/A Invalid Security
+5 ComCurve         | XW4 Comdty         | Newcastle coal ? 4                   | ok      | 2008-12..2026-10 n=215
+5 ComCurve         | XW5 Comdty         | Newcastle coal ? 5                   | ok      | 2008-12..2026-10 n=215
+5 ComCurve         | XW7 Comdty         | Newcastle coal ? 7                   | ok      | 2008-12..2026-10 n=215
+5 ComCurve         | XW12 Comdty        | Newcastle coal ? 12                  | ok      | 2008-12..2026-10 n=215
+5 ComCurve         | FN3 Comdty         | UK natural gas NBP ? 3               | ok      | 1997-01..2026-10 n=358
+5 ComCurve         | FN4 Comdty         | UK natural gas NBP ? 4               | ok      | 1997-01..2026-10 n=358
+5 ComCurve         | FN6 Comdty         | UK natural gas NBP ? 6               | ok      | 1997-01..2026-10 n=358
+5 ComCurve         | FN8 Comdty         | UK natural gas NBP ? 8               | ok      | 1997-01..2026-10 n=358
+5 ComCurve         | FN9 Comdty         | UK natural gas NBP ? 9               | ok      | 1997-01..2026-10 n=358
+5 ComCurve         | FN10 Comdty        | UK natural gas NBP ? 10              | ok      | 1997-01..2026-10 n=358
+5 ComCurve         | FN12 Comdty        | UK natural gas NBP ? 12              | ok      | 1997-01..2026-10 n=358
+5 ComCurve         | DA2 Comdty         | Class III milk ? 2                   | ok      | 1996-01..2026-10 n=370
+5 ComCurve         | DA3 Comdty         | Class III milk ? 3                   | ok      | 1996-01..2026-10 n=370
+5 ComCurve         | DA4 Comdty         | Class III milk ? 4                   | ok      | 1996-01..2026-10 n=370
+5 ComCurve         | DA5 Comdty         | Class III milk ? 5                   | ok      | 1996-05..2026-10 n=366
+5 ComCurve         | DA6 Comdty         | Class III milk ? 6                   | ok      | 1997-07..2026-10 n=352
+5 ComCurve         | DA7 Comdty         | Class III milk ? 7                   | ok      | 1997-08..2026-10 n=351
+5 ComCurve         | DA8 Comdty         | Class III milk ? 8                   | ok      | 1997-10..2026-10 n=349
+5 ComCurve         | DA9 Comdty         | Class III milk ? 9                   | ok      | 1997-10..2026-10 n=349
+5 ComCurve         | DA10 Comdty        | Class III milk ? 10                  | ok      | 1997-10..2026-10 n=349
+5 ComCurve         | DA11 Comdty        | Class III milk ? 11                  | ok      | 1997-11..2026-10 n=348
+1 Curves           | LB1 Comdty         | Lumber ? 1st                         | ok      | 1986-04..2026-10 n=487
+1 Curves           | LB2 Comdty         | Lumber ? 2nd                         | ok      | 1986-07..2026-10 n=484
+1 Curves           | LB3 Comdty         | Lumber ? 3rd                         | ok      | 1986-08..2026-10 n=483
+1 Curves           | LB6 Comdty         | Lumber ? ~12m                        | ok      | 1987-02..2026-10 n=477
+##### R8_bloomberg_only_rates.xlsx 253622
+1 RatesFutures     | L 1 Comdty         | Short sterling 1                     | ok      | 1988-02..2026-10 n=465
+1 RatesFutures     | L 2 Comdty         | Short sterling 2                     | ok      | 1988-02..2026-10 n=465
+1 RatesFutures     | L 3 Comdty         | Short sterling 3                     | ok      | 1988-02..2026-10 n=465
+1 RatesFutures     | L 4 Comdty         | Short sterling 4                     | ok      | 1988-02..2026-10 n=465
+1 RatesFutures     | L 5 Comdty         | Short sterling 5                     | ok      | 1988-09..2026-10 n=458
+1 RatesFutures     | L 6 Comdty         | Short sterling 6                     | NO DATA | first cell: #N/A N/A
+1 RatesFutures     | L 7 Comdty         | Short sterling 7                     | NO DATA | first cell: #N/A N/A
+1 RatesFutures     | L 8 Comdty         | Short sterling 8                     | NO DATA | first cell: #N/A N/A
+3 RatesFutExtra    | L 9 Comdty         | Short sterling 9                     | NO DATA | first cell: #N/A N/A
+3 RatesFutExtra    | L 10 Comdty        | Short sterling 10                    | NO DATA | first cell: #N/A N/A
+3 RatesFutExtra    | L 11 Comdty        | Short sterling 11                    | NO DATA | first cell: #N/A N/A
+3 RatesFutExtra    | L 12 Comdty        | Short sterling 12                    | NO DATA | first cell: #N/A N/A
+3 RatesFutExtra    | KAA1 Comdty        | Korea 10y 1st ?                      | ok      | 2008-02..2026-10 n=225
+3 RatesFutExtra    | FB1 Comdty         | Swiss bond 1st ?                     | ok      | 1992-06..2026-10 n=413
+3 RatesFutExtra    | JBA1 Comdty        | JGB mini 1st ?                       | ok      | 2009-01..2026-10 n=214
+1 Breakevens       | DEGGBE10 Index     | Germany 10y breakeven                | ok      | 2009-06..2026-10 n=209
+1 Breakevens       | UKGGBE10 Index     | UK 10y breakeven                     | ok      | 1992-07..2026-10 n=412
+1 Breakevens       | FRGGBE10 Index     | France 10y breakeven                 | ok      | 2003-02..2026-10 n=285
+1 Breakevens       | ITGGBE10 Index     | Italy 10y breakeven                  | NO DATA | first cell: #N/A Invalid Security
+1 Breakevens       | JYGGBE10 Index     | Japan 10y breakeven ?                | ok      | 2004-04..2026-10 n=271
+1 Breakevens       | CAGGBE10 Index     | Canada 10y breakeven ?               | NO DATA | first cell: #N/A Invalid Security
+1 Breakevens       | ADGGBE10 Index     | Australia 10y breakeven ?            | ok      | 2000-03..2026-10 n=320
+1 Benchmarks       | NEIXCTA Index      | SG CTA Index                         | NO DATA | first cell: #N/A Invalid Security
+1 Benchmarks       | NEIXCTAT Index     | SG Trend Index                       | NO DATA | first cell: #N/A Invalid Security
+1 Benchmarks       | HFRIMI Index       | HFRI Macro                           | NO DATA | first cell: #N/A Invalid Security
+1 Benchmarks       | HFRIMTI Index      | HFRI Systematic Diversified          | NO DATA | first cell: #N/A Invalid Security
+1 Benchmarks       | BARCCTA Index      | Barclay CTA Index ?                  | ok      | 1979-12..2026-10 n=563
+1 Benchmarks       | BTOP50 Index       | Barclay BTOP50 ?                     | NO DATA | first cell: #N/A Invalid Security
+3 Swaps            | BPSWS1 Curncy      | GBP SONIA swap 1 ?                   | ok      | 2000-12..2026-10 n=311
+3 Swaps            | BPSWS2 Curncy      | GBP SONIA swap 2 ?                   | ok      | 2000-12..2026-10 n=311
+3 Swaps            | BPSWS10 Curncy     | GBP SONIA swap 10 ?                  | ok      | 2008-05..2026-10 n=222
+3 Swaps            | CDSW2 Curncy       | CAD swap 2                           | ok      | 2009-09..2026-10 n=206
+3 Swaps            | CDSW5 Curncy       | CAD swap 5                           | ok      | 2009-09..2026-10 n=206
+3 Swaps            | CDSW10 Curncy      | CAD swap 10                          | ok      | 2009-09..2026-10 n=206
+3 Swaps            | NKSW2 Curncy       | NOK swap 2                           | ok      | 1992-07..2026-10 n=412
+3 Swaps            | NKSW10 Curncy      | NOK swap 10                          | ok      | 1993-10..2026-10 n=397
+3 Swaps            | USSO1 Curncy       | USD OIS (Fed funds) 1 ?              | ok      | 2001-12..2026-10 n=299
+3 Swaps            | USSO2 Curncy       | USD OIS (Fed funds) 2 ?              | ok      | 2001-12..2026-10 n=299
+3 Swaps            | USSO5 Curncy       | USD OIS (Fed funds) 5 ?              | ok      | 2002-02..2026-10 n=297
+3 Swaps            | EUSWI1 Curncy      | EUR inflation swap 1                 | ok      | 2004-06..2026-10 n=269
+3 Swaps            | EUSWI2 Curncy      | EUR inflation swap 2                 | ok      | 2003-11..2026-10 n=276
+3 Swaps            | EUSWI5 Curncy      | EUR inflation swap 5                 | ok      | 2004-04..2026-10 n=271
+3 Swaps            | EUSWI10 Curncy     | EUR inflation swap 10                | ok      | 2004-04..2026-10 n=271
+3 Swaps            | JYSWIT10 Curncy    | JPY inflation swap 10 ?              | ok      | 2011-05..2026-10 n=186
+3 Swaps            | USSN0110 Curncy    | USD swaption normal vol 1y10y 110 ?  | ok      | 2021-04..2026-10 n=67
+3 Swaps            | USSN0C10 Curncy    | USD swaption normal vol 3m10y C10 ?  | ok      | 2021-04..2026-10 n=67
+3 Swaps            | FWISEU55 Index     | Euro 5y5y inflation swap forward     | ok      | 2004-04..2026-10 n=271
+3 Swaps            | USFOSC1 Index      | FRA-OIS 3m ?                         | ok      | 2015-11..2026-10 n=132
+##### R9_bloomberg_only_credit_fundamentals.xlsx 578610
+3 Credit           | LUACOAS Index      | US IG OAS                            | ok      | 1989-06..2026-10 n=449
+3 Credit           | LF98OAS Index      | US HY OAS                            | ok      | 1994-01..2026-10 n=394
+3 Credit           | LUACTRUU Index     | US IG total return                   | ok      | 1973-01..2026-10 n=646
+3 Credit           | LF98TRUU Index     | US HY total return                   | ok      | 1983-07..2026-10 n=520
+3 Credit           | LBUSTRUU Index     | US Aggregate total return            | ok      | 1976-01..2026-10 n=610
+3 Credit           | LUATTRUU Index     | US Treasury total return             | ok      | 1973-01..2026-10 n=646
+3 Credit           | LUTLTRUU Index     | US long Treasury total return ?      | ok      | 1973-01..2026-10 n=646
+3 Credit           | LBUTTRUU Index     | US TIPS total return ?               | ok      | 1997-03..2026-10 n=356
+3 Credit           | LEGATRUU Index     | Global Aggregate TR (unhedged)       | ok      | 1990-01..2026-10 n=442
+3 Credit           | LEGATRUH Index     | Global Aggregate TR (USD hedged) ?   | ok      | 1990-01..2026-10 n=442
+3 Credit           | LGTRTRUU Index     | Global Treasury TR ?                 | ok      | 2000-09..2026-10 n=314
+3 Credit           | LBEATREU Index     | Euro Aggregate TR ?                  | ok      | 1998-06..2026-10 n=341
+3 Credit           | LECPOAS Index      | Euro corporate OAS ?                 | ok      | 1998-06..2026-10 n=341
+3 Credit           | LP01OAS Index      | Pan-European HY OAS ?                | ok      | 1998-11..2026-10 n=336
+3 Credit           | LP01TREU Index     | Euro HY total return ?               | ok      | 1999-01..2026-10 n=334
+3 Credit           | EMUSOAS Index      | EM USD aggregate OAS ?               | ok      | 2000-08..2026-10 n=315
+3 Credit           | EMUSTRUU Index     | EM USD aggregate TR ?                | ok      | 1993-01..2026-10 n=406
+3 Credit           | JPEIDIVS Index     | JPM EMBI Global Diversified spread ? | NO DATA | first cell: #N/A Invalid Security
+3 Credit           | JPEIDIVR Index     | JPM EMBI Global Diversified TR ?     | ok      | 1993-12..2026-10 n=395
+3 Credit           | JGENVUUG Index     | JPM GBI-EM Global Diversified TR ?   | NO DATA | first cell: #N/A Invalid Security
+3 Credit           | LUCBOAS Index      | US BBB OAS ?                         | NO DATA | first cell: #N/A Invalid Security
+3 Credit           | LF98CCC Index      | US CCC OAS ?                         | NO DATA | first cell: #N/A Invalid Security
+3 Credit           | SPBDAL Index       | Leveraged loan index ?               | ok      | 1996-12..2026-10 n=359
+3 Credit           | MOODCBAA Index     | Moody's Baa yield ?                  | ok      | 1969-12..2026-10 n=683
+3 Credit           | MOODCAAA Index     | Moody's Aaa yield ?                  | ok      | 1969-12..2026-10 n=683
+3 Credit           | CDX IG CDSI GEN 5Y Corp | CDX IG 5y                            | ok      | 2011-09..2026-10 n=182
+3 Credit           | CDX HY CDSI GEN 5Y PRC Corp | CDX HY 5y price                      | ok      | 2011-09..2026-10 n=182
+3 Credit           | CDX EM CDSI GEN 5Y PRC Corp | CDX EM 5y price ?                    | ok      | 2011-09..2026-10 n=182
+3 Credit           | ITRX EUR CDSI GEN 5Y Corp | iTraxx Europe main 5y                | ok      | 2011-10..2026-10 n=181
+3 Credit           | ITRX XOVER CDSI GEN 5Y Corp | iTraxx crossover 5y                  | ok      | 2011-09..2026-10 n=182
+3 Credit           | ITRX SNRFIN CDSI GEN 5Y Corp | iTraxx senior financials 5y ?        | NO DATA | first cell: #N/A Invalid Security
+3 Credit           | ITALY CDS USD SR 5Y D14 Corp | Italy sovereign CDS 5y ?             | ok      | 2003-03..2026-10 n=284
+3 Credit           | SPAIN CDS USD SR 5Y D14 Corp | Spain sovereign CDS 5y ?             | ok      | 2004-04..2026-10 n=271
+3 Credit           | FRANCE CDS USD SR 5Y D14 Corp | France sovereign CDS 5y ?            | ok      | 2003-03..2026-10 n=284
+3 Credit           | GERMANY CDS USD SR 5Y D14 Corp | Germany sovereign CDS 5y ?           | ok      | 2003-03..2026-10 n=284
+3 Credit           | UNITED STATES CDS USD SR 5Y D14 Corp | United States sovereign CDS 5y ?     | NO DATA | first cell: #N/A Invalid Security
+3 Credit           | JAPAN CDS USD SR 5Y D14 Corp | Japan sovereign CDS 5y ?             | ok      | 2003-01..2026-10 n=286
+3 Credit           | CHINA CDS USD SR 5Y D14 Corp | China sovereign CDS 5y ?             | NO DATA | first cell: #N/A Invalid Security
+3 Credit           | BRAZIL CDS USD SR 5Y D14 Corp | Brazil sovereign CDS 5y ?            | ok      | 2001-10..2026-10 n=301
+3 Credit           | MEXICO CDS USD SR 5Y D14 Corp | Mexico sovereign CDS 5y ?            | ok      | 2001-10..2026-10 n=301
+3 Credit           | TURKEY CDS USD SR 5Y D14 Corp | Turkey sovereign CDS 5y ?            | ok      | 2000-10..2026-10 n=313
+3 Credit           | SOUTH AFRICA CDS USD SR 5Y D14 Corp | South Africa sovereign CDS 5y ?      | ok      | 2000-10..2026-10 n=313
+3 Credit           | INDONESIA CDS USD SR 5Y D14 Corp | Indonesia sovereign CDS 5y ?         | ok      | 2004-10..2026-10 n=265
+3 Credit           | KOREA CDS USD SR 5Y D14 Corp | Korea sovereign CDS 5y ?             | ok      | 2002-02..2026-10 n=297
+3 Credit           | UK CDS USD SR 5Y D14 Corp | UK sovereign CDS 5y ?                | ok      | 2008-08..2026-10 n=219
+3 Credit           | GREECE CDS USD SR 5Y D14 Corp | Greece sovereign CDS 5y ?            | ok      | 2003-03..2026-10 n=284
+3 Credit           | PORTUGAL CDS USD SR 5Y D14 Corp | Portugal sovereign CDS 5y ?          | ok      | 2003-03..2026-10 n=284
+5 ComFundamentals  | DOESMGTT Index     | US gasoline stocks ?                 | NO DATA | first cell: #N/A Invalid Security
+5 ComFundamentals  | DOESDIST Index     | US distillate stocks ?               | ok      | 1982-08..2026-10 n=531
+5 ComFundamentals  | DOEPRUTL Index     | US refinery utilisation ?            | NO DATA | first cell: #N/A Invalid Security
+5 ComFundamentals  | NGSWTOTL Index     | US natural gas storage ?             | NO DATA | first cell: #N/A Invalid Security
+5 ComFundamentals  | BDIY Index         | Baltic Dry                           | ok      | 1985-01..2026-10 n=502
+5 ComFundamentals  | DRWCTOTL Index     | Drewry container index ?             | NO DATA | first cell: #N/A Invalid Security
+5 ComFundamentals  | NLSCA Index        | LME copper stocks ?                  | ok      | 1970-01..2026-10 n=682
+5 ComFundamentals  | NLSAA Index        | LME aluminium stocks ?               | ok      | 1994-04..2026-10 n=391
+5 ComFundamentals  | COMXGOLD Index     | COMEX gold stocks                    | ok      | 1992-09..2026-10 n=410
+5 ComFundamentals  | COMXCOPR Index     | COMEX copper stocks                  | ok      | 1992-09..2026-10 n=410
+5 ComFundamentals  | ETFGTOTL Index     | Gold ETF holdings total ?            | ok      | 2003-10..2026-10 n=277
+5 ComFundamentals  | IOPIINVT Index     | China iron ore port stocks ?         | NO DATA | first cell: #N/A Invalid Security
+5 ComFundamentals  | DOEETHST Index     | US ethanol stocks ?                  | NO DATA | first cell: #N/A Invalid Security
+5 ComFundamentals  | OPCRTOTL Index     | OPEC crude production ?              | ok      | 1969-12..2026-10 n=683
+5 ComFundamentals  | IOE62CNF Comdty    | Iron ore 62% Fe ?                    | NO DATA | first cell: #N/A Invalid Security
+3 FXForwards       | KWN1M Curncy       | KRW 1M NDF outright ?                | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | KWN3M Curncy       | KRW 3M NDF outright ?                | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | KWN12M Curncy      | KRW 12M NDF outright ?               | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | NTN1M Curncy       | TWD 1M NDF outright ?                | ok      | 1999-01..2026-10 n=334
+3 FXForwards       | NTN3M Curncy       | TWD 3M NDF outright ?                | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | NTN12M Curncy      | TWD 12M NDF outright ?               | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | IRN1M Curncy       | INR 1M NDF outright ?                | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | IRN3M Curncy       | INR 3M NDF outright ?                | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | IRN12M Curncy      | INR 12M NDF outright ?               | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | IHN1M Curncy       | IDR 1M NDF outright ?                | ok      | 2004-02..2026-10 n=273
+3 FXForwards       | IHN3M Curncy       | IDR 3M NDF outright ?                | ok      | 2004-02..2026-10 n=273
+3 FXForwards       | IHN12M Curncy      | IDR 12M NDF outright ?               | ok      | 2004-02..2026-10 n=273
+3 FXForwards       | PPN1M Curncy       | PHP 1M NDF outright ?                | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | PPN3M Curncy       | PHP 3M NDF outright ?                | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | PPN12M Curncy      | PHP 12M NDF outright ?               | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | CCN1M Curncy       | CNY 1M NDF outright ?                | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | CCN3M Curncy       | CNY 3M NDF outright ?                | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | CCN12M Curncy      | CNY 12M NDF outright ?               | ok      | 1998-12..2026-10 n=335
+3 FXForwards       | BCN1M Curncy       | BRL 1M NDF outright ?                | ok      | 1999-02..2026-10 n=333
+3 FXForwards       | BCN3M Curncy       | BRL 3M NDF outright ?                | ok      | 1999-02..2026-10 n=333
+3 FXForwards       | BCN12M Curncy      | BRL 12M NDF outright ?               | ok      | 1999-02..2026-10 n=333
+3 FXForwards       | CHN1M Curncy       | CLP 1M NDF outright ?                | ok      | 1998-04..2026-10 n=343
+3 FXForwards       | CHN3M Curncy       | CLP 3M NDF outright ?                | ok      | 1997-10..2026-10 n=349
+3 FXForwards       | CHN12M Curncy      | CLP 12M NDF outright ?               | ok      | 1997-10..2026-10 n=349
+3 FXForwards       | CLN1M Curncy       | COP 1M NDF outright ?                | ok      | 1999-02..2026-10 n=333
+3 FXForwards       | CLN3M Curncy       | COP 3M NDF outright ?                | ok      | 1999-02..2026-10 n=333
+3 FXForwards       | CLN12M Curncy      | COP 12M NDF outright ?               | ok      | 1999-02..2026-10 n=333
+3 FXForwards       | MRN1M Curncy       | MYR 1M NDF outright ?                | ok      | 2005-04..2026-10 n=259
+3 FXForwards       | MRN3M Curncy       | MYR 3M NDF outright ?                | ok      | 2005-04..2026-10 n=259
+3 FXForwards       | MRN12M Curncy      | MYR 12M NDF outright ?               | ok      | 2005-04..2026-10 n=259
+3 FXForwards       | RUB1M Curncy       | RUB 1M NDF outright ?                | ok      | 2001-08..2026-10 n=303
+3 FXForwards       | RUB3M Curncy       | RUB 3M NDF outright ?                | ok      | 2001-08..2026-10 n=303
+3 FXForwards       | RUB12M Curncy      | RUB 12M NDF outright ?               | ok      | 2001-08..2026-10 n=303
+TOTALS [(('R10_crosscheck_sample.xlsx', 'NO DATA'), 1), (('R10_crosscheck_sample.xlsx', 'ok'), 74), (('R11_other_commodity_curves.xlsx', 'NO DATA'), 6), (('R11_other_commodity_curves.xlsx', 'ok'), 41), (('R8_bloomberg_only_rates.xlsx', 'NO DATA'), 14), (('R8_bloomberg_only_rates.xlsx', 'ok'), 34), (('R9_bloomberg_only_credit_fundamentals.xlsx', 'NO DATA'), 14), (('R9_bloomberg_only_credit_fundamentals.xlsx', 'ok'), 81)]

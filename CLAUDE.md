@@ -255,6 +255,12 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   =BDP("SPX Index","PX_LAST") in a blank sheet. Likely cause: the 4 Nov pull (~2,500 macro series + 4,500-stock workbook) used
   the terminal's or the login's allowance. R8-R11 (237 series) not pulled; retry on another terminal or after the limit
   resets. Nothing in the engine depends on them now (LSEG covers most).
+- 2026-11-13 (later) BLOOMBERG VISIT PULLED after all (limit cleared): files R8 (v2, 48 series), R9, R10, R11 saved in
+  Documents\WRDS results\lseg\pull_2026-11-12\bloomber 13 Nov 2026 (NOT in 'pulled results'; point BBG reader there or copy).
+  Check job bbg_visit_check_v1 (tools/bbgq/results/bbg_visit_check_v1.txt, metadata only): 230 of 265 with data, 0 copies,
+  0 late starts. Short sterling L1-L5 from 1988; L6-L12 no data. Failed tickers: SG CTA/Trend, HFRI x2, BTOP50, Italy and
+  Canada breakevens, 7 credit guesses, 7 commodity-fundamental guesses (EIA free instead). CAD swaps only from 2009-09.
+  R12_canada_bax_swaps.xlsx (BA2-BA8 + CAD swap BGN/CMPN guesses, 13 series) given to the user to pull before leaving.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
