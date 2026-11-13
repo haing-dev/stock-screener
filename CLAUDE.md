@@ -251,6 +251,10 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   Economic trend's sources are 2017 and 2023 (Incubator unless step 1.5 finds an earlier source). 9 open judgement points
   are listed in section 11 with the step that closes each (1.5, 3.1-3.2, 3.4); none is a decision for the user.
   NEXT Fable unit: 1.3 thesis note rates and curve (QP06, QP07, QP12), daily 22:00 Vancouver.
+- 2026-11-13 BLOOMBERG VISIT BLOCKED: every BDH/BDP on the campus terminal returns "#N/A Review" (data-download capacity limit), even
+  =BDP("SPX Index","PX_LAST") in a blank sheet. Likely cause: the 4 Nov pull (~2,500 macro series + 4,500-stock workbook) used
+  the terminal's or the login's allowance. R8-R11 (237 series) not pulled; retry on another terminal or after the limit
+  resets. Nothing in the engine depends on them now (LSEG covers most).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
