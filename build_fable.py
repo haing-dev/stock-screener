@@ -77,6 +77,17 @@ def main():
                 "> Claim ids link to the verbatim quote in its source note; B-ids link to the [[Carver blog digest]]; code refs link to GitHub at commit %s (the repo as it was when this note was written). Brief: [[FOUNDATION_SPEC]]." % (u.get("code_commit") or COMMIT)[:7], ""]
         open(os.path.join(F, name + ".md"), "w").write("\n".join(head) + linkify(body, gh="https://github.com/haing-dev/stock-screener/blob/%s/" % (u.get("code_commit") or COMMIT)) + "\n")
         done.append((u, name))
+    # charter 1.2 (WORKFLOW step 1.2) and its independent check
+    FB = os.path.join(V, "Fable")
+    for title, src, note in (("Charter 1.2 - Systematic charter", "CHARTER_1.2.md", "Fable 5.2 max, one run; the 24 corrections of the independent check are applied"),
+                             ("Charter 1.2 - Independent check", "CHARTER_1.2_check.md", "Opus 5.5 high, against the verbatim quotes and the code")):
+        body = open("/home/claude/stock-screener/docs/research/fable/" + src).read()
+        head = ["---", "tags: [fable, charter]", "step: 1.2", "inputs: _data/charter_1.2/", "code_commit: %s" % COMMIT[:7], "---",
+                "> %s. Full claim ids link to the verbatim quote in its source note; code refs link to GitHub at commit %s. Exact input pack, briefs and the original Fable text: `_data/charter_1.2/`. See also [[Charter 1.2 - Systematic charter]], [[Charter 1.2 - Independent check]], [[WORKFLOW]].\n" % (note, COMMIT[:7])]
+        open(os.path.join(FB, title + ".md"), "w").write("\n".join(head) + linkify(body) + "\n")
+    cs = os.path.join(L, "charter_1.2"); cd = os.path.join(V, "_data", "charter_1.2")
+    if os.path.isdir(cd): shutil.rmtree(cd)
+    shutil.copytree(cs, cd)
     # blog digest
     dg = json.load(open(os.path.join(L, "fable", "carver_blog_digest.json")))
     o = ["---", "tags: [source, blog, carver]", "---", "# Carver blog digest (qoppac.blogspot.com)", "",
@@ -137,7 +148,7 @@ tags: [method, index]
 # Method: how every note was made (traceability)
 
 **From 2026-11-11 all new work follows [[WORKFLOW]] (pod shop workflow v2.1: steps, agent per step, tests, budget).**
-Data: [[Bloomberg job runner]] (files stay on the PC, reports only), [[Bloomberg inventory 2026-11-10]], [[Bloomberg data lock v1]] (block 2; hashes in `_data/bbg_LOCK_v1.json`). [[Block 3 engine on the PC]] (reproduction pass, truncation causes C1-C4). Engine gm-1.2.1 / gm-2.0.1 (look-ahead fixed): [[Engine change log]].\nFable audit (step 1.1, gate passed; brief v2 rules): [[Fable audit 1.1]]. Forecast ledger (steps 2.1-2.3): [[Forecast ledger spec]], [[Forecast coding agreement]], [[Forecast scoring rules]], [[Forecast scorecard 2026-11-12]].
+Data: [[Bloomberg job runner]] (files stay on the PC, reports only), [[Bloomberg inventory 2026-11-10]], [[Bloomberg data lock v1]] (block 2; hashes in `_data/bbg_LOCK_v1.json`). [[Block 3 engine on the PC]] (reproduction pass, truncation causes C1-C4). Engine gm-1.2.1 / gm-2.0.1 (look-ahead fixed): [[Engine change log]].\nFable audit (step 1.1, gate passed; brief v2 rules): [[Fable audit 1.1]]. Systematic charter (step 1.2: pods, version grids, one diagnostic pass; checked by Opus): [[Charter 1.2 - Systematic charter]], [[Charter 1.2 - Independent check]]. Forecast ledger (steps 2.1-2.3): [[Forecast ledger spec]], [[Forecast coding agreement]], [[Forecast scoring rules]], [[Forecast scorecard 2026-11-12]].
 The steps below describe how the existing notes were made.
 
 1. **Transcripts** (originals in the Macro Transcripts folder) are split into ~700-word chunks [Cnn].

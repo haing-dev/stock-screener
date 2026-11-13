@@ -66,3 +66,9 @@ as-of path from the Bloomberg daily tables.
 - Coverage map (`gm_bbg_map_v1.txt`), first-pull data: valuation ratios 23 of 23 and economics 35 of 35 served;
   commodity curves 28 of 95; commodity return indexes 0 of 31 (all copies) -> after the re-pull.
 - Engine fixes C1-C4 = one new engine version to register before Batch A (not applied).
+
+## 2026-11-12: fixes applied
+C1-C4 were registered in gm/CHANGES.md and implemented as gm-1.2.1 / gm-2.0.1-candidate (commit 81fe176). The
+truncation test now passes at all eight cut dates, in the cloud and on the PC
+(`tools/bbgq/results/gm_trunc_v1_gm-1.2.1.txt`); reproduction of the new reference on the PC: 24 of 24
+(`gm_repro_v1_gm-1.2.1.txt`). The Bloomberg-input cut has run on mock data only; it runs on real data after lock v2.
