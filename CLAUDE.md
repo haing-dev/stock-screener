@@ -264,7 +264,10 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - 2026-11-14 R12 pulled: 13 of 13 with data (job bbg_visit_check_v2): BA2-BA8 from 1990-91; CAD swaps CMPN source from 1989-04
   (tickers 'CDSW2 CMPN Curncy' etc.; BGN only 2009). Job bbg_visit_merge_v1 (tools/bbgq/jobs) QUEUED on the PC: copies R8-R12
   from the lseg\...\bloomber 13 Nov 2026 folder into 'pulled results', then runs the bbg_build_v2 + bbg_check_v2 code (lock
-  v2). Result not read yet: stage local\results\bbg_visit_merge_v1.txt, save it in tools/bbgq/results, write LOCK_v2.
+  v2). RAN 2026-11-13 22:10 PC time (report tools/bbgq/results/bbg_visit_merge_v1.txt): all 5 R files used, 315 series
+  re-pulled, 273 replaced a failed or copied first-pull block, 6 added, 0 re-pulled copies; LOCK v2 id d85a46cb2853...ea41fc9
+  (on the PC in local\work; docs/research/bbg/LOCK_v2.json NOT yet written in the repo). First-pull copies that were not
+  re-pulled stay unusable in Bloomberg (e.g. 125 curve blocks, 28 bond futures): LSEG covers those families.
 - 2026-11-14 THESIS NOTE 1.3a RATES AND CURVE DONE, PASS WITH CORRECTIONS: docs/research/fable/THESIS_1.3_rates.md (Fable max,
   ~0.65M tokens; 20 corrections of the Opus check applied) + THESIS_1.3_rates_check.md (Opus high, ~0.28M; 36 of 38 numbers in
   quote, 0 contradicted). Inputs/briefs/original: macro-vault pipeline/thesis_1.3_rates. RESULT: one new pod, Strip reversion
