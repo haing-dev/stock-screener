@@ -261,6 +261,26 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   0 late starts. Short sterling L1-L5 from 1988; L6-L12 no data. Failed tickers: SG CTA/Trend, HFRI x2, BTOP50, Italy and
   Canada breakevens, 7 credit guesses, 7 commodity-fundamental guesses (EIA free instead). CAD swaps only from 2009-09.
   R12_canada_bax_swaps.xlsx (BA2-BA8 + CAD swap BGN/CMPN guesses, 13 series) given to the user to pull before leaving.
+- 2026-11-14 R12 pulled: 13 of 13 with data (job bbg_visit_check_v2): BA2-BA8 from 1990-91; CAD swaps CMPN source from 1989-04
+  (tickers 'CDSW2 CMPN Curncy' etc.; BGN only 2009). Job bbg_visit_merge_v1 (tools/bbgq/jobs) QUEUED on the PC: copies R8-R12
+  from the lseg\...\bloomber 13 Nov 2026 folder into 'pulled results', then runs the bbg_build_v2 + bbg_check_v2 code (lock
+  v2). Result not read yet: stage local\results\bbg_visit_merge_v1.txt, save it in tools/bbgq/results, write LOCK_v2.
+- 2026-11-14 THESIS NOTE 1.3a RATES AND CURVE DONE, PASS WITH CORRECTIONS: docs/research/fable/THESIS_1.3_rates.md (Fable max,
+  ~0.65M tokens; 20 corrections of the Opus check applied) + THESIS_1.3_rates_check.md (Opus high, ~0.28M; 36 of 38 numbers in
+  quote, 0 contradicted). Inputs/briefs/original: macro-vault pipeline/thesis_1.3_rates. RESULT: one new pod, Strip reversion
+  (fade local bends between neighbouring short-rate futures contracts, QP06 rules 2-B and 3-B; 2 versions averaged), grade
+  WEAK, Batch B2 behind every stronger candidate and only if zero-slot diagnostic R1 passes (are local bends on the dollar
+  strip bigger than trading cost and still there a day later, 1990-2010; at least half of triple-months, else dropped
+  unbuilt). Needs daily prices for dollar contracts 1-8 (LSEG L10 has daily only for Eurodollar c1, c2, c4, c8: a small
+  extra pull). NOT specced: QP06 Treasury-bill form, whole-curve level/slope/curvature reversion (the engine's three built
+  spreads stay untraded), QP07 model as a signal, QP12 commodity forecast. Short-rate futures (U01-T4) = markets added to
+  Trend / Economic trend / Carry through charter gate D1 (euro, sterling, yen if live; not the dollar; live source needed).
+  Spread gate (U05-T5) = two fixed rules inside Strip reversion. Evidence: QP06 on ESTIMATED Treasury yields 1973-2000, before
+  costs, fading after the late 1980s; no test of the local rule on traded prices; QP07 puts such bends in the component it
+  expects to last (C10-4). 9 open judgement points in section 10 with closing steps. Rule 5: QP06 = J. Fixed Income 2006
+  (checker's knowledge). NEXT Fable unit: 1.3b value / momentum / carry (QP15, QP08): must supply the Carry and Value theses.
+  SCRATCH FOLDER WAS CLEARED during the pause (L0 build tree lost; vault_wt re-cloned from branch macro-vault). Single vault
+  notes are now built with vault_wt/build_note.py (same linkify as build_fable.py); a full rebuild needs L0 recreated.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
