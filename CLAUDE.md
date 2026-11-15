@@ -326,8 +326,40 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Placeholders: Bloomberg commodity workbook docs/data_requests/Bloomberg_macro_UBC.xlsx (commodities + first-release/consensus economics; user at UBC next week; built by build_bloomberg.py);
   equity value/carry; WRDS revisions; econ on first-release data. Manual files: gm/data (RBI); MSCI kept out of git.
 
-## Equity pod shop (DESIGN ONLY, v0.2, 2026-11-15; nothing built or run)
-- docs/research/equity/EQUITY_POD_SHOP_DESIGN_v0.2.md (project doc claude/equity_pod_shop_design_v0.2_2026-11-15.md;
+## Equity pod shop (DESIGN ONLY: plan v0.3 + annex v0.2, 2026-11-15; nothing built or run)
+- PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
+  claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
+  returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->
+  backtest; judge on stocks they bought) + our own plan. v0.2 stays in force as the annex; where they differ v0.3 wins
+  (its section 11 lists the amendments). Checked twice by separate Opus agents, corrections applied:
+  EQUITY_POD_SHOP_PLAN_v0.3_check.md (5 must-fix / 17 should / 14 notes; ~236k tokens) and ..._recheck.md (0 / 9 / 10;
+  ~212k). Three rules added after the re-check are unchecked (plan section 13) and go to the Stage 0 review.
+  NEW LIBRARY (built by DocProcessor on the PC): G:\My Drive\Transcripts\Processed Transcripts = 2,257 documents, 17.0M
+  words (AI CEO Interviews 883, General 695, Healthcare 431, Macro 214, Banking 24, Media 10); each has .txt with [Lnnn]
+  anchors, .note.md with machine-checked quotes, _catalog.md; _system/manifest.json, search.db, search.py. General: 327
+  documents with an investor present, ~240 names (191 appear once, 48 twice or more), 647 of 695 dated 2022+. Counts:
+  docs/research/equity/library_inventory_2026-11-15.md (tools/equity/library_stats.py reads only the manifest). Raw
+  folders not yet processed: Tech&AI, Energy, Consumer & Retail, Automotive & Industrial, AI Transformation, Real Estate,
+  Crypto. The research branch (397 transcripts) is the older store.
+  CONTENT: (1) INVESTOR SCORECARD on WRDS: 13F copy portfolios for ALL filers, windows 2011-15 / 2016-20 / 2021-25 /
+  2011-25 only (never before 2011), style-adjusted, record grades A/B/C/F/N, persistence check -> tier A = 40 investors
+  (30 by record, max 8 per style, + 10 with the most explicit criteria), 10 random control, tier B, foundation list
+  (40-60 technique documents). The ranking orders the reading only; never proof. (2) HOLDINGS MODULE: sector ranks of
+  purchases at the end of the quarter BEFORE, say-do table, revealed thresholds (odd years set, even years check), no
+  later returns. (3) FOUNDATION TRACK -> methods register (definition / version / check / analyst question / dropped;
+  never its own test slot). (4) ONE YARDSTICK: v0.2 test sheet; 8 registered slots (B1/B2) + "Incubator pass" (one
+  design-era run for every other family, best outcome Incubator, fail = Shelved); investor families can NOT be Core on
+  history (theses stated after 2010 by people picked on post-2010 returns): design era -> untouched regions ->
+  holdouts reported by region -> promotion on the live record (joins the book, never labelled Core). (5) DATA: history
+  on WRDS, live + second source on LSEG (needs an equity probe workbook of ~150 formulas, one refresh on the PC: dead
+  companies, first-reported values, past consensus, holders, short interest), Bloomberg no role. Gate G8 amended: the
+  scorecard and the holdings job are "registered descriptive jobs" that may read US 2011+, each run logged.
+  NEXT (on the user's go): STAGE 0 = independent review of v0.2, E0.1 inventory/typing, E1.2 WRDS table check, E1.1 LSEG
+  probe (side by side); then seal log -> register tier rule + "follow the best managers" signal -> E0.4 scorecard ->
+  E0.5 tiers (= the investor league table and reading order). Then Stage 1 (engine, Batch 0, reference book live on
+  paper, 16-document pilot). Vault: Method notes on macro-vault (61e384e); PC vault copy PENDING (vault folder is not in
+  the connected folders).
+- ANNEX docs/research/equity/EQUITY_POD_SHOP_DESIGN_v0.2.md (project doc claude/equity_pod_shop_design_v0.2_2026-11-15.md;
   replaces v0.1 of 2026-11-14, which was long-only): the macro pod-shop method applied to stocks as a LONG/SHORT book,
   market- and sector-neutral, slow (monthly signals, holdings of months to years, no intraday data; user 2026-11-15: no
   high frequency, long/short, statistical, logic verified by data). Four parts: (1) REFERENCE BOOK = plain long/short
@@ -344,8 +376,8 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   costs; not worse in any era incl. 2001-10; double costs; placebo; tail). Samples and seal as in v0.1 (design US
   1975-2010, untouched regions, holdout 2011+, live). Budget: Batch 0, Batch A (hygiene on the reference book), B1/B2
   (<= 4 pods each, Holm 2.5%). Banks, insurers, real estate and biotech stay out of generic pods. Section 2 of the file
-  = the critique of v0.1 (14 points). SELF-REVIEW ONLY: the independent Opus review is still due (step 0).
-  NEXT (on the user's go): Opus review -> v0.3; then Stage 1 (E0.1-E0.2, E1.1-E1.6, Batch 0, 12-transcript pilot).
+  = the critique of v0.1 (14 points). SELF-REVIEW ONLY: the independent Opus review of v0.2 as a whole is still due
+  (now part of Stage 0 of plan v0.3; order of work = plan v0.3 section 10).
   Steps are numbered E0-E7 to avoid clashing with macro steps.
 - BIOTECH DESK (design v0.1, 2026-11-15; nothing built): docs/research/equity/BIOTECH_DESK_DESIGN_v0.1.md (project doc
   claude/biotech_desk_design_v0.1_2026-11-15.md) = sector desk on top of haing-dev/crash-triage + the 37 healthcare
