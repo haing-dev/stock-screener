@@ -364,6 +364,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   cannot be proven live (about 410 resolved calls needed, about 30 a year). A code comment in crash-triage
   pipeline/fit.py records an earlier WRDS test 1998-2023 of the top-performer pick (train 1998-2019); its report is in
   neither repo: step B0.1 finds it (PC results folders) before any year is called clean.
+  Vault: both designs are Method notes on branch macro-vault (197c515); PC vault copy PENDING (PC offline 2026-11-15).
 
 ## WRDS (tools/wrdsq, 2026-10-29)
 - User ttdlisa (UBC) has WRDS; subscription list incl. Compustat Global/NA, CRSP (annual), CRSP Treasuries, LSEG IBES,
