@@ -284,6 +284,22 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   (checker's knowledge). NEXT Fable unit: 1.3b value / momentum / carry (QP15, QP08): must supply the Carry and Value theses.
   SCRATCH FOLDER WAS CLEARED during the pause (L0 build tree lost; vault_wt re-cloned from branch macro-vault). Single vault
   notes are now built with vault_wt/build_note.py (same linkify as build_fable.py); a full rebuild needs L0 recreated.
+- 2026-11-14 THESIS NOTE 1.3b VALUE / MOMENTUM / CARRY DONE, PASS WITH CORRECTIONS (run on the user's word, same day):
+  docs/research/fable/THESIS_1.3_xs.md (Fable max, ~0.63M tokens; 22 corrections applied) + THESIS_1.3_xs_check.md (Opus
+  high, ~0.27M; 27 of 34 numbers in quote, 0 contradicted). Inputs: macro-vault pipeline/thesis_1.3_xs. RESULT: CARRY thesis
+  supplied for currencies and commodities (asserted risk premium / hedgers), NOT for bonds (pattern, no mechanism); grade
+  weak; stays in both forms (directional + cross-asset), 2 versions unchanged; equities stay out. VALUE thesis supplied with
+  a reservation, grade WEAK after the check (only per-class figure in a quote = bonds, which fails; nobody establishes who
+  pays; QP15 itself says the cross-asset pattern is hard to fit to behavioural theories); cross-asset form only; 1 -> 2
+  versions (second anchor for bonds and currencies). CROSS-SECTIONAL MOMENTUM = neither a pod nor a Trend version (what is
+  left of Trend once each class's average position is removed); Trend registered directional only. Two zero-slot
+  diagnostics: X1 (is energy carry a calendar pattern; gate 0.25 of signal variance -> seasonal adjustment), X2 (is Value
+  paid by prices coming back or by income). Limits: both papers before costs, both author groups sell the strategies,
+  QP08's sample runs 52 months into the sealed years. Rule 5: neither paper dated before 2011 in the pack; checker's
+  knowledge: Asness-Liew-Stevens 1997, Fama 1984, Fama-Bliss 1987 (step 1.5). 9 open judgement points in section 10.
+  PC vault copy of this unit NOT done (PC offline at the time): copy vault Fable/Thesis 1.3b notes, Method/00 Method.md and
+  _data/thesis_1.3_xs from branch macro-vault when the PC is linked. NEXT Fable unit: 1.3c testing method (QP13),
+  2026-11-15 22:00 Vancouver (trigger trig_01JvgC3A3rV5N9JuQFvvVYjh; its stored prompt may still describe 1.3b: do 1.3c).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
