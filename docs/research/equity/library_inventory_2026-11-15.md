@@ -49,12 +49,14 @@ Most frequent: Tobias Carlisle 15; Hari Ramachandra 12; Robert Vinall 8; Howard 
 
 ## Technique topics in the tags and one-line summaries (a document can count in several)
 
-| Area | Documents |
-|---|---|
-| portfolio construction and sizing | 178 |
-| valuation | 177 |
-| risk management | 127 |
-| analysis and accounting | 114 |
-| screening and idea sourcing | 79 |
-| short selling | 28 |
-| any of these | 440 |
+Loose = any word match (also catches 'hedge fund', 'multiple times'); strict = whole phrases only.
+
+| Area | Documents (loose) | Documents (strict) |
+|---|---|---|
+| portfolio construction and sizing | 178 | 117 |
+| valuation | 177 | 168 |
+| risk management | 127 | 58 |
+| analysis and accounting | 114 | 114 |
+| screening and idea sourcing | 79 | 22 |
+| short selling | 28 | 28 |
+| any of these | 440 | 347 |

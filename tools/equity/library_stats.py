@@ -35,6 +35,22 @@ TECH = {"valuation": r"valuation|intrinsic value|dcf|discounted cash|multiple|ow
         "short selling": r"short sell|short-sell|shorting|short thesis|short book|long.?short"}
 
 
+# Stricter patterns for the same areas: whole phrases, no bare "multiple", "quant", "leverage", "hedg" or "concentrat"
+# (the loose patterns also match "hedge fund", "multiple times", and so on).
+STRICT = {"valuation": r"valuation|intrinsic value|\bdcf\b|discounted cash|owner earnings|margin of safety|"
+                       r"earnings yield|free cash flow yield",
+          "analysis and accounting": r"accounting|financial statements?|\bmoats?\b|competitive advantage|"
+                                     r"unit economics|\broic\b|return on (invested )?capital|checklist|"
+                                     r"due diligence|scuttlebutt",
+          "screening and idea sourcing": r"\bscreen(s|ing|er|ers)?\b|idea generation|idea sourcing|magic formula|"
+                                         r"backtest|quantitative (value|investing)|factor investing",
+          "portfolio construction and sizing": r"portfolio construction|position siz|concentrated portfolio|"
+                                               r"diversification|kelly|portfolio management|sell discipline|"
+                                               r"when to sell",
+          "risk management": r"risk management|drawdowns?|hedging|permanent (capital )?loss|tail risk|stop.?loss",
+          "short selling": r"short sell|short-sell|shorting|short thesis|short book|long.?short"}
+
+
 def split_speakers(s):
     out, depth, cur = [], 0, ""
     for c in s:
@@ -129,20 +145,25 @@ def main(path, folder="General Transcripts"):
                                          sum(docs[i]["tokens"] for i in ids) / 1e6))
     p("\nMost frequent: " + "; ".join("%s %d" % (n, len(L)) for n, L in rank[:40]) + ".")
     p("\n## Technique topics in the tags and one-line summaries (a document can count in several)\n\n"
-      "| Area | Documents |\n|---|---|")
-    tc, anyt = collections.Counter(), 0
+      "Loose = any word match (also catches 'hedge fund', 'multiple times'); strict = whole phrases only.\n\n"
+      "| Area | Documents (loose) | Documents (strict) |\n|---|---|---|")
+    tc, ts, anyt, anys = collections.Counter(), collections.Counter(), 0, 0
     for d in docs:
         fm = d.get("fm") or {}
         txt = (fm.get("topics", "") + " " + fm.get("one_line", "")).lower()
-        hit = False
-        for k, pat in TECH.items():
-            if re.search(pat, txt):
+        hit = hs = False
+        for k in TECH:
+            if re.search(TECH[k], txt):
                 tc[k] += 1
                 hit = True
+            if re.search(STRICT[k], txt):
+                ts[k] += 1
+                hs = True
         anyt += hit
+        anys += hs
     for k, n in tc.most_common():
-        p("| %s | %d |" % (k, n))
-    p("| any of these | %d |" % anyt)
+        p("| %s | %d | %d |" % (k, n, ts[k]))
+    p("| any of these | %d | %d |" % (anyt, anys))
 
 
 if __name__ == "__main__":
