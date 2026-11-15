@@ -1,0 +1,108 @@
+crash close
+    n 154
+    companies 122
+    mean_abs -0.336
+    median_abs -0.588
+    mean_ex -0.349
+    median_ex -0.515
+    sd_ex 0.981
+    t_naive -4.416
+    months 54
+    t_month -5.738
+    beat_xbi 0.169
+    dropped 3
+    mean_ex_wo_top2pct -0.453
+    top5_share_of_gains 0.649
+    by_year {'2020': (11, -0.281), '2021': (29, -0.214), '2022': (33, -0.245), '2023': (24, -0.255), '2024': (41, -0.344), '2025': (16, -1.009)}
+    loss_gt_50 0.584
+    gain_gt_100 0.052
+crash justified
+    n 490
+    companies 279
+    mean_abs -0.417
+    median_abs -0.794
+    mean_ex -0.585
+    median_ex -0.84
+    sd_ex 1.048
+    t_naive -12.358
+    months 61
+    t_month -9.806
+    beat_xbi 0.137
+    dropped 10
+    mean_ex_wo_top2pct -0.693
+    top5_share_of_gains 0.261
+    by_year {'2020': (11, -0.102), '2021': (25, -0.25), '2022': (94, -0.456), '2023': (116, -0.604), '2024': (126, -0.407), '2025': (118, -0.975)}
+    loss_gt_50 0.686
+    gain_gt_100 0.067
+crash overdone
+    n 150
+    companies 131
+    mean_abs 0.257
+    median_abs -0.077
+    mean_ex 0.154
+    median_ex -0.176
+    sd_ex 1.087
+    t_naive 1.733
+    months 55
+    t_month 1.658
+    beat_xbi 0.413
+    dropped 3
+    mean_ex_wo_top2pct 0.067
+    top5_share_of_gains 0.299
+    by_year {'2020': (3, -0.125), '2021': (22, 0.129), '2022': (38, -0.02), '2023': (34, 0.247), '2024': (28, -0.007), '2025': (25, 0.527)}
+    loss_gt_50 0.273
+    gain_gt_100 0.193
+slide close
+    n 894
+    companies 412
+    mean_abs -0.127
+    median_abs -0.358
+    mean_ex -0.138
+    median_ex -0.318
+    sd_ex 0.83
+    t_naive -4.961
+    months 56
+    t_month -3.638
+    beat_xbi 0.285
+    dropped 18
+    mean_ex_wo_top2pct -0.216
+    top5_share_of_gains 0.119
+    by_year {'2021': (239, -0.144), '2022': (179, -0.106), '2023': (196, -0.161), '2024': (177, -0.004), '2025': (103, -0.364)}
+    loss_gt_50 0.39
+    gain_gt_100 0.075
+slide justified
+    n 631
+    companies 334
+    mean_abs -0.178
+    median_abs -0.48
+    mean_ex -0.277
+    median_ex -0.481
+    sd_ex 0.94
+    t_naive -7.414
+    months 56
+    t_month -7.341
+    beat_xbi 0.217
+    dropped 13
+    mean_ex_wo_top2pct -0.369
+    top5_share_of_gains 0.17
+    by_year {'2021': (98, -0.204), '2022': (114, -0.321), '2023': (143, -0.222), '2024': (155, -0.206), '2025': (121, -0.452)}
+    loss_gt_50 0.483
+    gain_gt_100 0.094
+slide overdone
+    n 1168
+    companies 428
+    mean_abs 0.075
+    median_abs -0.144
+    mean_ex 0.014
+    median_ex -0.171
+    sd_ex 0.861
+    t_naive 0.548
+    months 56
+    t_month 0.95
+    beat_xbi 0.387
+    dropped 23
+    mean_ex_wo_top2pct -0.065
+    top5_share_of_gains 0.069
+    by_year {'2021': (235, -0.042), '2022': (283, 0.06), '2023': (243, 0.027), '2024': (225, -0.056), '2025': (182, 0.083)}
+    loss_gt_50 0.268
+    gain_gt_100 0.111

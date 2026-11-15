@@ -326,20 +326,44 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Placeholders: Bloomberg commodity workbook docs/data_requests/Bloomberg_macro_UBC.xlsx (commodities + first-release/consensus economics; user at UBC next week; built by build_bloomberg.py);
   equity value/carry; WRDS revisions; econ on first-release data. Manual files: gm/data (RBI); MSCI kept out of git.
 
-## Equity pod shop (DESIGN ONLY, v0.1, 2026-11-14; nothing built or run)
-- docs/research/equity/EQUITY_POD_SHOP_DESIGN_v0.1.md (also project doc claude/equity_pod_shop_design_v0.1_2026-11-14.md):
-  the macro pod-shop method applied to stock picking. Pods = strategy families found bottom-up in the stock-picker
-  transcripts (claims with quotes -> investor fingerprint cards -> strategy map -> charter per family -> spec -> tests ->
-  live screen + paper portfolio). Three layers per strategy: rule (backtested), proxy (backtested, flagged), analyst
-  (forward only). Chain tested link by link: rule -> selection (re-implementation, say-do vs 13F holdings), selection ->
-  business outcome (accounts only, one fixed gate), business outcome -> price (test sheet). Samples: design = US 1975-2010,
-  untouched regions to 2010 (sealed), holdout 2011+ (same seal as macro), live. Skill = alpha after FF5+UMD, simple
-  published rules, matched random portfolios, costs. Classes: Core / Sleeve (factor harvest) / Exclusion (warning rules) /
-  Incubator / Shelved. Data default: history on WRDS (CRSP, Compustat, IBES, 13F, Global Factor Data), live on LSEG,
-  free SEC + Massive as fallback; two-source reconciliation gate. Budget: Batch 0 plumbing, Batch A hygiene on baselines,
-  B1/B2 at most 4 pods each (Holm, 2.5% per batch), freeze, one run on untouched regions and one on the holdout.
-  NEXT (on the user's go): independent Opus review of the draft -> v0.2; then Stage 1 (transcript inventory, LSEG equity
-  probe, WRDS table check, 12-transcript pilot, Batch 0). Steps are numbered E0-E7 to avoid clashing with macro steps.
+## Equity pod shop (DESIGN ONLY, v0.2, 2026-11-15; nothing built or run)
+- docs/research/equity/EQUITY_POD_SHOP_DESIGN_v0.2.md (project doc claude/equity_pod_shop_design_v0.2_2026-11-15.md;
+  replaces v0.1 of 2026-11-14, which was long-only): the macro pod-shop method applied to stocks as a LONG/SHORT book,
+  market- and sector-neutral, slow (monthly signals, holdings of months to years, no intraday data; user 2026-11-15: no
+  high frequency, long/short, statistical, logic verified by data). Four parts: (1) REFERENCE BOOK = plain long/short
+  portfolio of published signals with a mechanism (value, momentum, quality, expectations; ranked inside the sector, no
+  fitted weights): the benchmark every pod must add to, the plumbing test, the first live record (Stage 1) and the honest
+  null; (2) investor pods = strategy families found bottom-up in the stock-picker transcripts (claims with quotes ->
+  fingerprint cards -> strategy map -> charter -> spec), joined only for what they add to the reference book; (3) short
+  and avoid rules (short where borrowable, else Exclusion); (4) analyst layer judged on a live forecast record (quarterly
+  results vs consensus, scenarios, kill criteria; checkpoint 200 resolved). Chain tested link by link: rule -> selection
+  -> business outcome -> surprise vs expectations -> price. Risk: own simple risk model, written risk charter (gross
+  <= 200%, net market sensitivity within 0.1, sector net within 5%, long <= 2.5%, short <= 1.5%, target risk 8%; all
+  proposals), shortable set (1,000 largest US, ownership floor, short-interest cap), flat borrow fee tested at double,
+  netting across pods, crowding report, monthly attribution. Five decisive tests (adds to the reference book after all
+  costs; not worse in any era incl. 2001-10; double costs; placebo; tail). Samples and seal as in v0.1 (design US
+  1975-2010, untouched regions, holdout 2011+, live). Budget: Batch 0, Batch A (hygiene on the reference book), B1/B2
+  (<= 4 pods each, Holm 2.5%). Banks, insurers, real estate and biotech stay out of generic pods. Section 2 of the file
+  = the critique of v0.1 (14 points). SELF-REVIEW ONLY: the independent Opus review is still due (step 0).
+  NEXT (on the user's go): Opus review -> v0.3; then Stage 1 (E0.1-E0.2, E1.1-E1.6, Batch 0, 12-transcript pilot).
+  Steps are numbered E0-E7 to avoid clashing with macro steps.
+- BIOTECH DESK (design v0.1, 2026-11-15; nothing built): docs/research/equity/BIOTECH_DESK_DESIGN_v0.1.md (project doc
+  claude/biotech_desk_design_v0.1_2026-11-15.md) = sector desk on top of haing-dev/crash-triage + the 37 healthcare
+  transcripts (26 investor talks by ten people, Kolchinsky 9 and Wong 6; notes only, no quote-level claims yet). Long book
+  of 25-50 small positions + biotech-index hedge + exclusion list + small tested short sleeve + ODDS LEDGER (probability
+  forecasts on pivotal results and FDA decisions, Brier-scored vs base rates, every event in the universe). Candidate
+  pods P1 Aftermath (the triage), P2 Asset floor, P3 Run-up, P4 Odds, P5 Launch drift, P6 Specialist footprint, P7
+  Financing reset; exclusions E1-E8; sizing by loss-if-wrong (<= 0.5% of capital per position scenario, <= 3% per 30
+  days; proposals). History can reject a pod, only the live record promotes one (career overlap, no untouched regions).
+  Event database + calendar as known built from SEC 8-Ks, ClinicalTrials.gov version histories, FDA letters (openFDA);
+  hindsight rule for model-read history (quote-anchored fields only, masked re-read test). Steps B0-B6.
+  DESCRIPTIVE RE-RUN of the public crash-triage backtest (docs/research/equity/biotech_checks/2026-11-15; the 2020-26
+  sample is SPENT: the rules were chosen on it; 12-month return minus XBI): crash Avoid -59 points (n=490, every year),
+  crash Watch -35, crash Buy candidates +15 (n=150, t 1.7, median below XBI, +7 without the 3 best; the top-performer
+  subset of 23 carries it), slide Buy +1 (n=1,168), slide Avoid -28. So the warnings work; the Buy side is unproven and
+  cannot be proven live (about 410 resolved calls needed, about 30 a year). A code comment in crash-triage
+  pipeline/fit.py records an earlier WRDS test 1998-2023 of the top-performer pick (train 1998-2019); its report is in
+  neither repo: step B0.1 finds it (PC results folders) before any year is called clean.
 
 ## WRDS (tools/wrdsq, 2026-10-29)
 - User ttdlisa (UBC) has WRDS; subscription list incl. Compustat Global/NA, CRSP (annual), CRSP Treasuries, LSEG IBES,
