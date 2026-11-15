@@ -311,6 +311,21 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
 - Placeholders: Bloomberg commodity workbook docs/data_requests/Bloomberg_macro_UBC.xlsx (commodities + first-release/consensus economics; user at UBC next week; built by build_bloomberg.py);
   equity value/carry; WRDS revisions; econ on first-release data. Manual files: gm/data (RBI); MSCI kept out of git.
 
+## Equity pod shop (DESIGN ONLY, v0.1, 2026-11-14; nothing built or run)
+- docs/research/equity/EQUITY_POD_SHOP_DESIGN_v0.1.md (also project doc claude/equity_pod_shop_design_v0.1_2026-11-14.md):
+  the macro pod-shop method applied to stock picking. Pods = strategy families found bottom-up in the stock-picker
+  transcripts (claims with quotes -> investor fingerprint cards -> strategy map -> charter per family -> spec -> tests ->
+  live screen + paper portfolio). Three layers per strategy: rule (backtested), proxy (backtested, flagged), analyst
+  (forward only). Chain tested link by link: rule -> selection (re-implementation, say-do vs 13F holdings), selection ->
+  business outcome (accounts only, one fixed gate), business outcome -> price (test sheet). Samples: design = US 1975-2010,
+  untouched regions to 2010 (sealed), holdout 2011+ (same seal as macro), live. Skill = alpha after FF5+UMD, simple
+  published rules, matched random portfolios, costs. Classes: Core / Sleeve (factor harvest) / Exclusion (warning rules) /
+  Incubator / Shelved. Data default: history on WRDS (CRSP, Compustat, IBES, 13F, Global Factor Data), live on LSEG,
+  free SEC + Massive as fallback; two-source reconciliation gate. Budget: Batch 0 plumbing, Batch A hygiene on baselines,
+  B1/B2 at most 4 pods each (Holm, 2.5% per batch), freeze, one run on untouched regions and one on the holdout.
+  NEXT (on the user's go): independent Opus review of the draft -> v0.2; then Stage 1 (transcript inventory, LSEG equity
+  probe, WRDS table check, 12-transcript pilot, Batch 0). Steps are numbered E0-E7 to avoid clashing with macro steps.
+
 ## WRDS (tools/wrdsq, 2026-10-29)
 - User ttdlisa (UBC) has WRDS; subscription list incl. Compustat Global/NA, CRSP (annual), CRSP Treasuries, LSEG IBES,
   TRACE, Cboe VIX, FRB rates, Fama-French, Global Factor Data, World Indices, Penn World Tables, Dow Jones, 13F.
