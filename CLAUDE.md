@@ -297,8 +297,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   paid by prices coming back or by income). Limits: both papers before costs, both author groups sell the strategies,
   QP08's sample runs 52 months into the sealed years. Rule 5: neither paper dated before 2011 in the pack; checker's
   knowledge: Asness-Liew-Stevens 1997, Fama 1984, Fama-Bliss 1987 (step 1.5). 9 open judgement points in section 10.
-  PC vault copy of this unit NOT done (PC offline at the time): copy vault Fable/Thesis 1.3b notes, Method/00 Method.md and
-  _data/thesis_1.3_xs from branch macro-vault when the PC is linked. NEXT Fable unit: 1.3c testing method (QP13),
+  PC vault copy done. NEXT Fable unit: 1.3c testing method (QP13),
   2026-11-15 22:00 Vancouver (trigger trig_01JvgC3A3rV5N9JuQFvvVYjh, prompt updated to 1.3c).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
