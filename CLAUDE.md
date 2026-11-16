@@ -329,6 +329,11 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   writes the card), 2026-11-16 22:00 Vancouver (trigger trig_01Nd4vmLiA5Mc6cGt2nwnGGf).
   NEW TOOL tools/vault/make_sync_job.py: builds ONE PC-runner job that carries vault notes inside itself and writes them
   into the Obsidian vault (the device shell is not available in every session; the bridge writes single files only).
+  How: generate the job, send the file, write it to Documents\WRDS results\local\jobs through the bridge, read
+  local\results\<job>.txt after the runner's next pass (every 10 minutes). Vault branch macro-vault 011f178.
+  PC VAULT COPY DONE 2026-11-15 22:30 PC time (job vault_sync_20261115a: 24 files written = the two 1.3c notes,
+  _data/thesis_1.3_method, Method/00 Method.md and the Method notes that were pending: equity design v0.2, biotech
+  desk v0.1, equity plan v0.3 with its two checks, transcript library inventory).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
@@ -387,8 +392,8 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   NEXT (on the user's go): STAGE 0 = independent review of v0.2, E0.1 inventory/typing, E1.2 WRDS table check, E1.1 LSEG
   probe (side by side); then seal log -> register tier rule + "follow the best managers" signal -> E0.4 scorecard ->
   E0.5 tiers (= the investor league table and reading order). Then Stage 1 (engine, Batch 0, reference book live on
-  paper, 16-document pilot). Vault: Method notes on macro-vault (61e384e); PC vault copy PENDING (vault folder is not in
-  the connected folders).
+  paper, 16-document pilot). Vault: Method notes on macro-vault (61e384e); PC vault copy done 2026-11-15 (job
+  vault_sync_20261115a, see the 1.3c entry).
 - ANNEX docs/research/equity/EQUITY_POD_SHOP_DESIGN_v0.2.md (project doc claude/equity_pod_shop_design_v0.2_2026-11-15.md;
   replaces v0.1 of 2026-11-14, which was long-only): the macro pod-shop method applied to stocks as a LONG/SHORT book,
   market- and sector-neutral, slow (monthly signals, holdings of months to years, no intraday data; user 2026-11-15: no
@@ -426,7 +431,8 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   cannot be proven live (about 410 resolved calls needed, about 30 a year). A code comment in crash-triage
   pipeline/fit.py records an earlier WRDS test 1998-2023 of the top-performer pick (train 1998-2019); its report is in
   neither repo: step B0.1 finds it (PC results folders) before any year is called clean.
-  Vault: both designs are Method notes on branch macro-vault (197c515); PC vault copy PENDING (PC offline 2026-11-15).
+  Vault: both designs are Method notes on branch macro-vault (197c515); PC vault copy done 2026-11-15 (job
+  vault_sync_20261115a, see the 1.3c entry).
 
 ## WRDS (tools/wrdsq, 2026-10-29)
 - User ttdlisa (UBC) has WRDS; subscription list incl. Compustat Global/NA, CRSP (annual), CRSP Treasuries, LSEG IBES,
