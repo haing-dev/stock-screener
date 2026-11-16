@@ -326,7 +326,8 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   steps (3.1-3.4); none is a decision for the user. Settled from the code: gm/panel.py holds futures-style EXCESS
   returns, so the book's return is in excess of cash.
   NEXT Fable unit: 1.4 first playbook card (policy and liquidity: Druckenmiller, Bessent; Sonnet builds the pack, Fable
-  writes the card), 2026-11-16 22:00 Vancouver (trigger trig_01Nd4vmLiA5Mc6cGt2nwnGGf).
+  writes the card), MOVED to 2026-11-17 22:00 Vancouver (trigger trig_01Nd4vmLiA5Mc6cGt2nwnGGf; user paused 16 Nov).
+  USER RULE 2026-11-16: Fable units run at effort HIGH, not max, from unit 1.4 on (max uses too much); prompt updated.
   NEW TOOL tools/vault/make_sync_job.py: builds ONE PC-runner job that carries vault notes inside itself and writes them
   into the Obsidian vault (the device shell is not available in every session; the bridge writes single files only).
   How: generate the job, send the file, write it to Documents\WRDS results\local\jobs through the bridge, read
