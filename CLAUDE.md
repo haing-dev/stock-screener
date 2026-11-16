@@ -299,6 +299,36 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   knowledge: Asness-Liew-Stevens 1997, Fama 1984, Fama-Bliss 1987 (step 1.5). 9 open judgement points in section 10.
   PC vault copy done. NEXT Fable unit: 1.3c testing method (QP13),
   2026-11-15 22:00 Vancouver (trigger trig_01JvgC3A3rV5N9JuQFvvVYjh, prompt updated to 1.3c).
+- 2026-11-15 THESIS NOTE 1.3c TESTING METHOD DONE, PASS WITH CORRECTIONS (scheduled unit, 22:00 Vancouver):
+  docs/research/fable/THESIS_1.3_method.md (Fable max, ~0.46M tokens; 22 corrections of the Opus check applied) +
+  THESIS_1.3_method_check.md (Opus high, ~0.24M; 87 numbers checked, none summary-only, 1 arithmetic slip corrected).
+  Inputs/briefs/original: macro-vault pipeline/thesis_1.3_method (pack = QP13 claims AND the slide text itself, because
+  slide quotes are fragments; TESTING_PROTOCOL; WORKFLOW 1-6; digest; design-era book facts from the repo result files).
+  RESULT: QP13 (Stine's 45 teaching slides, 2009) establishes one thing: the martingale test of alpha (Foster, Stine,
+  Young 2008) keeps false alarms at 1 in 20 even against a fund with steady gains and a hidden total loss. The rest is
+  asserted or shown on dice and four hand-picked assets. NO new decisive test. Four protocol items for step 3.4:
+  P1 correct two citations in TESTING_PROTOCOL (Stine 2009 backs the worry behind the tail test, not its fall statistic;
+  the Newey-West alpha t is not a "Foster-Stine" test); P2 test 1 for a NEW POD = regression alpha on the Core book
+  with a p-value from the registered whole-month bootstrap, Holm at 0.025 per batch (Sharpe difference at the held size
+  reported only); P3 scope paragraph: error rates do not cover a loss rarer than the window, for pods and challengers
+  (+ one computed row in the power table: a zero-mean pod with a hidden loss is adopted >= 0.37 x as often as a
+  Sharpe-0.4 pod at 432 months; "loss not seen" flag in pod specs, no effect on verdicts); P4 reported line: Sharpe of
+  the book after taking out its S&P 500 exposure (expanding-window slope, from month 37). One zero-slot diagnostic M1
+  (S&P alone or S&P + US 10-year in P4; gate 0.05 Sharpe in either era). MARTINGALE TEST DROPPED as decisive and as a
+  reported line: as held, a typical path clears the bar of 20 only at a Sharpe gap of ~0.84 (registered minimum 0.05);
+  for the whole book the volatility convention sets the verdict (candidate compounds to ~143 over 1975-2010: p 0.007,
+  0.22 after 32 variants, 0.021 at a 15% target). Sizing: the 10% target is cautious (growth-best only at a true Sharpe
+  of 0.10); a fifth independent pod at equal risk helps only if its Sharpe exceeds 0.236 x the book's.
+  TO RECONCILE AT 3.4 (pack problems): WORKFLOW vs TESTING_PROTOCOL disagree on the error level per batch (2.5% vs 5%),
+  the decisive sets (era test), the form of test 1 (alpha vs Sharpe difference), hygiene ("does not hurt" vs
+  superiority) and "double costs" for a pod; WORKFLOW still reports the deflated Sharpe the audit calls uninformative;
+  5.1 equal risk vs the candidate's family shares 45/25/15/15. 10 open judgement points in section 13 with closing
+  steps (3.1-3.4); none is a decision for the user. Settled from the code: gm/panel.py holds futures-style EXCESS
+  returns, so the book's return is in excess of cash.
+  NEXT Fable unit: 1.4 first playbook card (policy and liquidity: Druckenmiller, Bessent; Sonnet builds the pack, Fable
+  writes the card), 2026-11-16 22:00 Vancouver (trigger trig_01Nd4vmLiA5Mc6cGt2nwnGGf).
+  NEW TOOL tools/vault/make_sync_job.py: builds ONE PC-runner job that carries vault notes inside itself and writes them
+  into the Obsidian vault (the device shell is not available in every session; the bridge writes single files only).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
