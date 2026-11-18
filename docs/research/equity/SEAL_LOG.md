@@ -28,4 +28,4 @@ Lock id: e680ca33c77ec51ed50372ec66e5733001cd4867adf1e692f88a4e2645015099 (2026-
 ## B. Openings of the seal by the seal-exempt jobs
 | When | Job | Code hash | Inputs | What came back |
 |---|---|---|---|---|
-| 2026-11-18 | `eq_sc_pull_v1` (pulls only; re-runs v1b, v1c... until complete) | f7f542646da4... (input c77e38e77851...) | CRSP, 13F, firm_ratio, factors, CRSP funds, 2009-06 to 2025-12, stored on WRDS | Pull status lines only |
+| 2026-11-18 | `eq_sc_pull_v1` (pulls only; 3,177 s; base, CRSP and funds complete, 13F aggregates 2010-19 of 2010-25; report `scorecard_check/eq_sc_pull_v1_report.txt`), then `eq_sc_pull_v1b` | f7f542646da4... (input c77e38e77851...) | CRSP, 13F, firm_ratio, factors, CRSP funds, 2009-06 to 2025-12, stored on WRDS | Pull status lines only |
