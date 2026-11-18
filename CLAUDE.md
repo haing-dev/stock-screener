@@ -335,6 +335,28 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   PC VAULT COPY DONE 2026-11-15 22:30 PC time (job vault_sync_20261115a: 24 files written = the two 1.3c notes,
   _data/thesis_1.3_method, Method/00 Method.md and the Method notes that were pending: equity design v0.2, biotech
   desk v0.1, equity plan v0.3 with its two checks, transcript library inventory).
+- 2026-11-17 PLAYBOOK CARD 1.4 (1 of 5) POLICY AND LIQUIDITY (Druckenmiller, Bessent) DONE, PASS WITH CORRECTIONS:
+  docs/research/fable/CARD_1.4_policy_liquidity.md (Fable at effort HIGH, ~0.34M tokens; 45 corrections of the Opus check
+  applied) + CARD_1.4_policy_liquidity_check.md (Opus high, ~0.22M as reported; cut once by the usage limit, resumed).
+  Inputs: macro-vault pipeline/card_1.4_policy (pack built BY SCRIPT from the ledger: 590 claims, 11 recordings
+  2018-2026, forecast rows, digest, data sheet of live series; no Sonnet agent needed). RESULT: playbook = find where
+  policy is out of step with the economy, wait for a cheap one-sided bet, size big, cut fast. Part can be coded: six
+  rules R1 Squeeze (oil, dollar, rates all up -> long US 2y/10y), R2 Tightening into warnings, R3 Easing into strength,
+  R4 Behind on inflation, R5 After the fall (currency collapse -> long that stock index), R6 Gold that ignores yields
+  (HELD BACK: its only quote points to a pullback, not a rise); 28 versions to register (56 with two entry versions),
+  all averaged; 10 weekly analyst questions; 11 open forecasts; 2 zero-slot diagnostics. NOT codable: liquidity itself,
+  peg breaks, policy personnel, conviction sizing (where the recalled profits came from). ALL six rules are hindsight
+  under rule 5 (nothing recorded before 2018). Ledger record: Druckenmiller 4 of 16 forecasts right, three recession
+  calls missed. Check findings: the 1999 long behind R3 ended in his largest recalled loss; his 2021 front-end short on
+  money growth was missing; the R1/R2 inflation gate was built knowing 2022 (now a version). 10 open judgement points
+  with closing steps (1.5, 2.2-2.3, 3.1-3.2); none is a decision for the user. Pack problems: MT085 repeats MT151 (one
+  statement scored twice with opposite results), 10 claim ids cited by the forecast ledger are missing from the claims,
+  Bessent's Le Pen forecast window has closed but shows open.
+  FABLE DAILY UNIT PAUSED (user 2026-11-18) until she says resume: NO next unit is scheduled. Next in order when
+  resumed: 1.4 second card (regime and debt cycle, Bridgewater), Fable at effort high, same procedure as this unit
+  (brief templates in pipeline/card_1.4_policy).
+  Vault branch 4c10eb7; PC vault copy QUEUED (job vault_sync_20261117a in local\jobs, 17 files; read
+  local\results\vault_sync_20261117a.txt to confirm).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
