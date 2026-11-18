@@ -355,6 +355,8 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   FABLE DAILY UNIT PAUSED (user 2026-11-18) until she says resume: NO next unit is scheduled. Next in order when
   resumed: 1.4 second card (regime and debt cycle, Bridgewater), Fable at effort high, same procedure as this unit
   (brief templates in pipeline/card_1.4_policy).
+  Vault branch 4c10eb7; PC vault copy QUEUED (job vault_sync_20261117a in local\jobs, 17 files; read
+  local\results\vault_sync_20261117a.txt to confirm).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
