@@ -515,7 +515,9 @@ def checks(res, parts, W, fz):
     ft = res["ftab"]
     out_ = ft[ft.bk.isin(["G6100", "G6101", "G6102"]) & ft.grp]
     ck("C09 fund ranks among funds only: planted fund rank share 1",
-       inv["I003"]["win"]["2011-25"]["rk"] == 1.0 and inv["I003"]["months"] == 180,
+       inv["I003"]["win"]["2011-25"]["rk"] == 1.0 and inv["I003"]["months"] == 180
+       and abs(inv["I003"]["win"]["2011-25"]["a"] - float(ft[(ft.bk == "G900") & (ft.w == "2011-25")].a.iloc[0]))
+       < 1e-9,
        inv["I003"]["win"]["2011-25"].get("rk"))
     ck("C09b index, small and non-domestic funds stay out of the fund rank group; style gap excluded 2011-15",
        len(out_) == 0 and not ft[(ft.bk == "G6103") & (ft.w == "2011-15")].grp.any())
