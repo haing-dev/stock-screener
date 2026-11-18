@@ -132,6 +132,12 @@ Sciences, Sofinnova), plus Cota, Stonepine, Keywise, Exor, L1 Capital, Cape Ann,
 theme funds (semiconductors, blockchain, gold) and Invenomic. The six-factor alpha does not take out industry bets,
 so sector funds that rode one industry top this list; it is a list to look at, not a list of the skilled.
 
+## After the result
+- Stanley Druckenmiller added to the reading list by the user after seeing the result (grade C by the registered
+  rule: his library transcripts are macro; his 13F stock book scored .922). Outside tier A; no effect on the control.
+- The size-filtered list of managers without a transcript (Addendum A) was registered, built and checked, then
+  cancelled before it ran; the user looks for further managers outside the scorecard.
+
 ## Limits
 - Five years cannot separate skill from luck (see the persistence result); the style cap and the control group are
   there for that reason.

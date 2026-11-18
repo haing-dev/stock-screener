@@ -217,3 +217,5 @@ opening of the seal for the same descriptive purpose (reading order), logged in 
   and adding them would mean re-pulling every data set under a new pull version (about three hours). The two columns
   are dropped from Addendum A; sector specialists are left to be recognised by name. Code eq_scorecard-1.1.0, code
   sha256 49adb087...; the v1 part of the report is unchanged (checked line by line on invented data).
+- Cancelled 2026-11-18 at the user's request before it ran: Addendum A was never computed. The user searches for
+  further managers outside the scorecard. The code (eq_scorecard-1.1.0) stays in the repo, unused.
