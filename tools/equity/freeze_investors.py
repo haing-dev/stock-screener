@@ -92,6 +92,12 @@ def main(mdir, report, inv_dir, out, agree=None):
             months = (int(m1[:4]) - int(m0[:4])) * 12 + int(m1[5:7]) - int(m0[5:7]) + 1
             if f["obj"].startswith("ED") and not f["index"] and f["tna"] >= 15 and min(months, f["months"]) >= 60:
                 fund_ok.append(x)
+        if fund_ok and not start:
+            w = re.sub(r"[^a-z ]", "", p["name"].lower()).split()
+            sur = w[-2] if len(w) >= 3 and w[-1] in ("iv", "jr", "ii", "iii") else (w[-1] if w else "")
+            since = [M[p["id"]][x]["since"] if sur and sur in M[p["id"]][x]["mgr"].lower() else "" for x in fund_ok]
+            if all(v > "2011-01" for v in since):          # every fund was taken over after 2011-01
+                start = min(since)
         q = sum(quarters_after_2010(F[p["id"]][x]["nq"], F[p["id"]][x]["first"]) for x in mg)
         main_f = max(mg, key=lambda x: F[p["id"]][x]["nq"]) if mg else None
         pos = F[p["id"]][main_f]["pos"] if mg else 0
@@ -117,10 +123,19 @@ def main(mdir, report, inv_dir, out, agree=None):
                      ("; ".join(M[p["id"]][x]["fund"][:60] for x in fund_ok) if kind == "fund" else
                       "; ".join(F[p["id"]][x]["name"][:40] for x in mg)),
                      (r.get("why") or "")[:160], " ".join(map(str, mg)), " ".join(map(str, fn))])
+    # investors with the same record: the one with more own-words documents (then the lower id) holds it
+    holder = {}
+    for r in sorted(rows, key=lambda r: (-int(r[12] or 0), r[0])):
+        key = (r[2], r[3], r[4])
+        if r[2] in ("13f", "fund"):
+            r.append("" if key not in holder else holder[key])
+            holder.setdefault(key, r[0])
+        else:
+            r.append("")
     w = csv.writer(open(out, "w", newline="", encoding="utf-8"))
     w.writerow(["id", "name", "record_kind", "mgrnos", "fundnos", "start_ym", "end_ym", "grade", "primary_style",
                 "region", "explicit_max", "explicit_mean", "own_docs", "ran_money", "role", "quarters_after_2010",
-                "positions_median", "value_median_musd", "matched_name", "why", "known_mgrnos", "known_fundnos"])
+                "positions_median", "value_median_musd", "matched_name", "why", "known_mgrnos", "known_fundnos", "shares_record_with"])
     w.writerows(rows)
     A = ["# E0.4 phase A2: matching check\n", "Investors: %d. Grades: %s. Form problems: %d.\n"
          % (len(rows), ", ".join("%s %d" % kv for kv in sorted(grades.items())), len(errs))] + ["- " + e for e in errs]

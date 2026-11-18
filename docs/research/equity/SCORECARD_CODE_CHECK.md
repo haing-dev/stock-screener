@@ -193,3 +193,112 @@ Not verifiable here:
 ## 6. Effort
 About 2.5 hours of agent time: reading ~3,400 lines, a local PostgreSQL run of all queries, 18 extra mutations,
 14 checker attacks, the Newey-West re-derivation, and this note.
+
+## Re-check (2026-11-17)
+
+I re-checked commit 2369664 against 996baaf: the module (code sha256 d46db69f...), the reader, the checker,
+`seal_exempt.json`, the generator, the three jobs, `eq_precheck.py`, the smoke test, build note readings 1-25 and the
+three registration changes (3.5, the allocator rule in section 6, section 12). Scripts are in the work folder:
+`re/attack2.py`, `pgrun2.py`. Nothing in the repo was edited except this file.
+
+### R1. Status of the earlier findings
+| Finding | Status | Evidence |
+|---|---|---|
+| B1 seal checker | FIXED WITH A NEW PROBLEM | A1-A7 and A9-A14 are now refused (attack jobs re-run). New holes: R2.1 and R2.2 below; A8 only partly closed (R3.1) |
+| B2 TNA -99 | FIXED | `_fund_months` sets TNA <= 0 and returns < -1 to missing; stocks get the same guard; smoke world has -99 months |
+| B3 watchdog | FIXED | Separate jobs: `eq_sc_pull_v1` (budgets 900+900+3000+2400+900 s = 2.25 h; the overrun is one data set per pull, likely minutes) and `eq_scorecard_v1` (build + report only) |
+| B4 stale pulls | FIXED, two narrow gaps remain (R3.2) | The pull key is stored in `eq_sc_cand` and `eq_sc_fmeta`; `build` and `pull_status` refuse missing or stale pulls (S30) |
+| B5 best-scored lists | FIXED | `known_mgrnos` / `known_fundnos` are in the frozen file and are left out (whole class groups). Gotham (12775) sits in I010's `known_mgrnos` |
+| 2 late first versions | FIXED (measured by precheck (ii)) | |
+| 4 firm_ratio duplicates | FIXED | ambiguous permno-years dropped and counted |
+| 5 classes without style row | FIXED | whole class groups pulled (C33); real SQL pulls the same classes as the fake rules |
+| 6 several funds | FIXED (registered in section 12) | |
+| 9 run-time code hash | FIXED | header prints `code_sha()` from the running file (C34) |
+| 10 atomic saves | FIXED | `name_part` then `os.replace` |
+| 11 SQL in error text | FIXED | pulls re-raise class + first line, number runs masked, no `[SQL`; build prints class and line only |
+| 12, 14, 15, 16 | FIXED | |
+| 17 tests | FIXED | 6 of 6 registered + 13 of 14 extra mutations caught; the 14th (top-10 renormalisation) is truly equivalent because `_hold` divides by the weight sum |
+| 3 peer universe | kept as registered; header states it | not a defect |
+
+### R2. Blocking
+**R2.1 Exempt templates accept swapped helpers, which prints data rows.** `seal_check.check_exempt` checks each
+argument against `sql|load|save|out|DATA|\d+|budget=\d+`, not its position. So
+`import eq_scorecard\neq_scorecard.pull_crsp(sql, out, out, 0)` PASSES as an `eq_sc_pull_v<n>` job. With `data` = 0,
+`_runner.step` calls `save(name, df)` = `out(name, df)`, and wrdsq's `out` is `print`. Reproduced: every year's
+`msf_v2` frame is printed (permno, yyyymm, mthret, mthprc; pandas shows the first and last rows). The same happens
+with `pull_base(sql, out, out, DATA)`: the `_part` frame is printed before `os.replace` fails. Fix: register the
+exact argument list per function, for example in `seal_exempt.json`
+`"functions": {"pull_base": "sql, save, out, DATA, budget=\\d+", ..., "build": "load, save, out, DATA",
+"report": "load, out, \\d+, \\d+"}`, and full-match each step against `import eq_scorecard\neq_scorecard.<f>(<that>)`.
+Alternatively, compare each positional argument with the parameter name in the module's `def` (read from the AST).
+
+**R2.2 `eq_reader.count` leaks values on sealed months.** Its `where` and `keep` clauses take free text, and
+`count` is open to every non-exempt `eq_` job on sealed months. Counts filtered by value are return statistics, and
+bisection gives single data points. Reproduced on the local Postgres:
+- 30 calls of `count(sql, 'crsp.msf_v2', '2015-03', '2015-03', where='permno = 10010 and mthret > x')` recover one
+  sealed stock-month return exactly (0.057824).
+- `where='mthret > 0.05'` gives a histogram.
+- `per=['permno'], keep='avg(mthret) > 0.012'` counts by a mean.
+- `where="mgrno = ... and cusip = ... and shares > ..."` recovers one holding.
+
+All six count attacks (C1-C6) PASS the checker. Plan 8.2 allows structure counts only ("never a mean ..."). Fix: no
+free text. `count(sql, check_name, lo, hi)` with `CHECKS = MappingProxyType({"s34_quarters": ("tfn.s34",
+["mgrno", "rdate"], None, None), "s34_no_first_version": ("tfn.s34", ["mgrno", "rdate"], None,
+"sum(case when fdate = rdate then 1 else 0 end) = 0")})`. Add new checks to the reader (which changes the lock id).
+Update `eq_precheck.first_versions` to match, and add C1-C6 as refused jobs to the smoke test.
+
+### R3. Non-blocking
+1. A8 is only partly closed. A job whose name does not start with `eq_` is refused only if the literal text
+   `eq_sc_` appears. `load('eq_s' + 'c_msf_2015')` passes, and so does any read of the older `tri_*` / `bio_*` data
+   sets that hold 2011+ data (a deliberate act, not an accident). Two remedies: delete `eq_sc_hold_*`,
+   `eq_sc_msf_*` and `eq_sc_fret_*` after the build run (the pull pattern allows the delete), and log that the
+   `tri_`/`bio_` sets stay readable by non-equity jobs.
+2. Two ways around the pull key, reasoned:
+   - (a) If the pull job's budget ends after the last `eq_sc_fret_*` year but before `eq_sc_fmeta`, and the
+     investor file changes before the next pull run, the old fund pulls get stamped with the new key.
+   - (b) A partial delete (cand and fmeta only) stamps old holdings with the new key.
+
+   Fix: write `eq_sc_fmeta` before the fund years. In `pull_hold` / `pull_funds`, refuse when any hold or fret year
+   exists while `eq_sc_cand` / `eq_sc_fmeta` is missing.
+3. The pull key covers the inputs the pulls depend on (library 13F filers and library fundnos; the aggregates,
+   CRSP, factors, ratios and headers do not depend on the investor file). It does not cover the pull code: a later
+   code fix that changes a pull query or `PRE_*` would accept old pulls. Add a constant `PULL_VERSION` (or a hash of
+   the SQL strings and pre-filter constants) to the key.
+4. Frozen file:
+   - I042 Pilecki: fund 6972 shows "mgr since 2017-01", but `start_ym` is blank (the matcher left it unset on
+     purpose). E0.4 match rule 4 asks for the since-date when it is after 2011-01. As frozen, 2011-2016 returns under
+     a possible earlier manager enter his record. Decide before the freeze.
+   - I069 Fitch: Oakmark Select "since 1996-01" is probably the first listed manager's date. Check.
+   - Three filers are shared by two library investors: 11450 (I056, I229), 54860 (I084, I113), 14968 (I171, I218).
+     Shared filers give identical records, so one book can take two tier places (I056 and I229 are both grade A).
+     The registration is silent; state it.
+   - Otherwise the input is consistent: 241 rows; grades N 151, C 37, A 36, F 13, B 4; record kind follows grade
+     exactly; the 21 allocators are C (13F) or N; no A/B/F has 0 own documents; 635 documents with words; the
+     foundation list is computed.
+5. Precheck: all four queries run on the local Postgres and print counts only. `count` is the only sealed-month
+   access, and it needs R2.2.
+
+### R4. Re-run of every query on the local Postgres
+I ran the queries on PostgreSQL 16 with the real column names and types, through SQLAlchemy `text()` + psycopg2:
+- All `eq_sc_pull` queries ran, including the new class-group `FUND_GROUPS` SQL with and without the library clause.
+  `pull_status` printed ALL PULLS COMPLETE (73 data sets).
+- The SQL aggregate equals the independent aggregate in all 16 years.
+- Fund pulls hold the same classes and rows as the fake rules (2010, 2015, 2025 checked).
+- The built report equals the fake-sql report in 327 of 331 lines. The 2 changed lines are alphas moved by 0.01
+  from NUMERIC(10,6) rounding in my tables.
+- `eq_reader.count` and the four precheck queries ran.
+- The smoke test passes (pandas 3.0.5).
+
+### R5. Still not verifiable without WRDS
+- How `msf_v2.mthret` treats delisting returns, and how many s34 quarters lack a first version (both are counted by
+  the precheck job, which can run once R2.2 is fixed).
+- That the factors are decimals.
+- Run time and memory of the pulls and of `build` on a compute node.
+- That `~/wrdsq/lib` holds the checked files; the run-time code hash in the header now shows this after the run.
+- Fund TNA -99 frequency (handled either way).
+- Planner behaviour of the nested `FUND_GROUPS` subqueries on the 10M-row fund table. If slow, compute the fundno
+  list once in Python.
+
+**Re-check verdict: FIX FIRST (2): R2.1 swapped template arguments print data rows; R2.2 `eq_reader.count` with
+free-text clauses leaks sealed values.** The scorecard computation itself is ready. Both fixes are in the checker,
+the reader and the exempt list; neither changes `eq_scorecard.py`.

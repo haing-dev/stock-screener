@@ -91,7 +91,13 @@ ties take the average rank.
 A person coded as allocator at E0.1 (chooses managers or asset classes) is graded C if a filer is matched and N
 otherwise: the filing is not a stock-picking record. Matching follows `E0.4_MATCH_SPEC.md`; the blind second
 matcher gave the same filer for 16 of 19 investors and the same funds for 17 of 19 (`inventory/match_agreement.md`).
-The first matcher's answer stands.
+The first matcher's answer stands. Two rules are applied by script after the matching
+(`tools/equity/freeze_investors.py`): (i) where every matched fund names the investor in its manager field with a
+"manager since" date after 2011-01, the record starts at the earliest of those dates; (ii) investors with the very
+same record (same filer numbers or same funds) share one place: the one with more own-words documents holds it,
+and the others join that investor's tier without taking a place (`shares_record_with`). A co-manager whose own
+start date the data do not show (one case, a fund co-managed with its lead manager) keeps the fund's full period;
+that record is the fund's, not proof of the person's own tenure.
 
 "Primary style": the style code given most often across the investor's own-words documents (kind `investor_talk`)
 in the E0.1 inventory, ties by the order of the style list in the spec; none coded = "none". "Region": the most
