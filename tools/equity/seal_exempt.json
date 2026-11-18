@@ -1,12 +1,12 @@
 {
- "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Exactly two registered jobs may exist: the scorecard and the holdings job. code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call, each with its exact argument list (a regular expression that the whole argument text must match, in order).",
+ "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Exactly two registered jobs may exist: the scorecard and the holdings job. code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call, each with its exact argument list (a regular expression that the whole argument text must match, in order). code_history lists earlier registered hashes (record only; the checker uses code_sha256).",
  "jobs": [
   {
    "registered_job": "scorecard",
    "module": "eq_scorecard",
-   "code_sha256": "f7f542646da4da43a96cbfdfe8e817247ccb519b7872519dab299188f6bb5db8",
-   "registration": "docs/research/equity/STAGE0_REGISTRATION.md sections 2-9, 11, 12",
-   "output": "section 8",
+   "code_sha256": "49adb08739090e36ff7e77a976e408d82933015845c4513b45c687ee2ed5ee3d",
+   "registration": "docs/research/equity/STAGE0_REGISTRATION.md sections 2-9, 11, 12, 13 (Addendum A)",
+   "output": "section 8 + section 13 (Addendum A)",
    "names": [
     {
      "pattern": "eq_sc_pull_v\\d+[a-z]?",
@@ -32,6 +32,14 @@
      "functions": {
       "cleanup": "out, DATA"
      }
+    }
+   ],
+   "code_history": [
+    {
+     "code_sha256": "f7f542646da4da43a96cbfdfe8e817247ccb519b7872519dab299188f6bb5db8",
+     "version": "eq_scorecard-1.0.0",
+     "runs": "eq_sc_pull_v1, eq_sc_pull_v1b, eq_scorecard_v1 (2026-11-18)",
+     "replaced_by": "49adb08739090e36ff7e77a976e408d82933015845c4513b45c687ee2ed5ee3d"
     }
    ]
   }

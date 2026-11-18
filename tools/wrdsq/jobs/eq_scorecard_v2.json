@@ -1,0 +1,25 @@
+{
+ "name": "eq_scorecard_v2",
+ "steps": [
+  {
+   "do": "python",
+   "code": "import eq_scorecard\neq_scorecard.build(load, save, out, DATA)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_scorecard\neq_scorecard.report(load, out, 1, 4)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_scorecard\neq_scorecard.report(load, out, 2, 4)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_scorecard\neq_scorecard.report(load, out, 3, 4)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_scorecard\neq_scorecard.report(load, out, 4, 4)"
+  }
+ ]
+}

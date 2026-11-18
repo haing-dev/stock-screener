@@ -213,3 +213,7 @@ opening of the seal for the same descriptive purpose (reading order), logged in 
 - Grades and tiers stay as frozen. The user also asked to read Stanley Druckenmiller (grade C: his primary style in
   the library is macro, so by the registered rule his 13F is not taken as his record); he is added to the reading
   list as "added by the user after the result", outside tier A, with no effect on the control comparison.
+- Amendment before the run (2026-11-18): the stored pulls hold neither the CRSP industry code nor the filer's country,
+  and adding them would mean re-pulling every data set under a new pull version (about three hours). The two columns
+  are dropped from Addendum A; sector specialists are left to be recognised by name. Code eq_scorecard-1.1.0, code
+  sha256 49adb087...; the v1 part of the report is unchanged (checked line by line on invented data).

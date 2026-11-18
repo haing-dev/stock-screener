@@ -154,13 +154,15 @@ def make_13f(W, rng):
             rows.append((d.strftime("%Y-%m-%d"), float(mg), d.strftime("%Y-%m-%d"), cusip_at(p, d), float(sh),
                          W["px"][(p, ym)]))
 
-    def generic(mg, skip=(), stop=None, extra=None, v=None):
+    def generic(mg, skip=(), stop=None, extra=None, v=None, start=None):
         k = int(rng.integers(8, 40))
         held = list(rng.choice(alive_common, k, replace=False))
         val = v or float(rng.uniform(2e8, 2e9))
         for d in qends():
             if stop is not None and d > stop:
                 break
+            if start is not None and d < start:
+                continue
             n_keep = int(len(held) * 0.7)
             held = list(rng.choice(held, n_keep, replace=False))
             while len(held) < k:
@@ -184,6 +186,10 @@ def make_13f(W, rng):
         ym = d.year * 100 + d.month
         file(1, d, [(A, 0.9 * 5e8 / W["px"][(A, ym)])] + [(p, 0.025 * 5e8 / W["px"][(p, ym)]) for p in oth])
     generic(2, stop=pd.Timestamp("2016-12-31"))
+    generic(160, v=5e9)                                              # Addendum A: $5bn, in
+    generic(161, v=4e10)                                             # $40bn: out
+    generic(162, v=5e9)                                              # $5bn but a known library filer: out
+    generic(163, v=5e9, start=pd.Timestamp("2021-09-30"))            # 49 months in 2021-25: in, on neither list
     generic(3, skip=("2013-06-30",))
     generic(4, skip=("2013-06-30", "2013-09-30"))
 
@@ -216,8 +222,8 @@ def make_13f(W, rng):
     am["shares"] = am.shares * 7
     W["n100_2015q1"] = s34[(s34.mgrno == 100) & (s34.rdate == "2015-03-31")].cusip.nunique()
     W["s34"] = pd.concat([s34, am], ignore_index=True)
-    W["s34names"] = pd.DataFrame({"mgrno": [float(m) for m in list(range(100, 160)) + list(range(1, 11))],
-                                  "mgrname": ["FILER %03d" % m for m in list(range(100, 160)) + list(range(1, 11))],
+    W["s34names"] = pd.DataFrame({"mgrno": [float(m) for m in list(range(100, 164)) + list(range(1, 11))],
+                                  "mgrname": ["FILER %03d" % m for m in list(range(100, 164)) + list(range(1, 11))],
                                   "rdate2": "2025-12-31"})
 
 
@@ -276,7 +282,7 @@ def frozen_rows():
     add("I003", "Fund Planted", "fund", "F", "deep_value", fn="5002", own=2, km="150")   # one class = the fund
     add("I004", "Stopper", "13f", "A", "growth", mg="2", s="2012-01")
     add("I005", "Writer", "none", "N", "none", ran="no", xm="3", xe="3")
-    add("I006", "Explicit Man", "none", "N", "none", own=4, xm="3", xe="2.5")
+    add("I006", "Explicit Man", "none", "N", "none", own=4, xm="3", xe="2.5", km="162")
     add("I007", "Delist Holder", "13f", "A", "deep_value", mg="5")
     add("I008", "Exact Book", "13f", "A", "special_situations", mg="6", e="2024-06")
     for k in range(12):
@@ -722,7 +728,7 @@ def checks(res, parts, W, fz):
     kn = {"FILER %03d" % m for m in list(range(1, 7)) + list(range(100, 132)) + [140, 141, 142, 143, 150]}
     tm = {n for _, n, _ in res["top_funds"]}
     ck("C29 best-scored lists leave out every known filer and fund (incl. known-only filer 150 and fund 6005)",
-       not (names_top & kn) and "FUND 6005" not in tm and "FUND 6001" not in tm and len(names_top) == 23,
+       not (names_top & kn) and "FUND 6005" not in tm and "FUND 6001" not in tm and len(names_top) == 25 and "FILER 162" not in names_top,
        (sorted(names_top & kn)[:3], len(names_top), sorted(tm)[:12]))
     t13 = tab[tab.bk >= 0]
     okp = all(np.array_equal(p["tbl"], persist_ref(t13, b1, b2)) for b1, b2, p in res["persist"]["13f"]) and \
@@ -751,6 +757,23 @@ def checks(res, parts, W, fz):
     ck("C35 an investor sharing another's record takes no place and joins that investor's tier ('with I055')",
        T["with"].get("I056") == (tier55, "I055") and "I056" not in T["record"] + T["control"] + T["explicit"] + T["B"]
        and re.search(r"I056 .* with I055", rep) is not None, T["with"].get("I056"))
+    A = res["addendum"]
+    t21 = tab[(tab.w == "2021-25") & tab.grp & (tab.bk >= 0)]
+    knownm = {1, 2, 3, 4, 5, 6, 140, 141, 142, 143, 150, 162} | set(range(100, 132))
+    popref = sorted(int(b) for b, v in zip(t21.bk, t21.valm) if 1e9 <= v <= 30e9 and int(b) not in knownm)
+    l1, l2 = A["list1"], A["list2"]
+    ck("C36 Addendum A population: 2021-25 rank group, $1-30bn, no known filer (160 in, 161 $40bn out, 162 known "
+       "out, 163 in but under 60 months)",
+       sorted(int(b) for b in A["rows"]) == popref and 160 in popref and 161 not in A["rows"] and 162 not in A["rows"]
+       and 163 in A["rows"] and all(1 <= r["val"] <= 30 for r in A["rows"].values()), (popref[:8], len(popref)))
+    s1 = [A["rows"][b]["score"] for b in l1]
+    s2 = [A["rows"][b]["comp"][1] for b in l2]
+    ck("C37 Addendum A lists: list 1 by score (60 months after 2010), list 2 by 2021-25 alpha rank share (60 months "
+       "in 2021-25); 163 on neither; printed",
+       160 in l1 and 160 in l2 and 163 not in l1 + l2 and s1 == sorted(s1, reverse=True)
+       and s2 == sorted(s2, reverse=True) and all(A["rows"][b]["n21"] >= 60 for b in l2)
+       and all(A["rows"][b]["n11"] >= 60 for b in l1) and "ADDENDUM A" in rep and "FILER 160" in rep
+       and len(l1) <= 40 and len(l2) <= 40, (len(l1), len(l2)))
     return C
 
 
@@ -971,6 +994,37 @@ def seal_tests(tmp, libdir, fk, src, modp):
     return C
 
 
+def v1_same(tmp, fzp, invp, fk, res):
+    """The report of the registered v1 code (tests/eq_scorecard_v1_0_0_ref.py, code hash f7f54264...) on the same
+    invented world equals the v1.1 report except the version / code-hash header lines and the Addendum A block."""
+    d = os.path.join(tmp, "lib_v1")
+    os.makedirs(d, exist_ok=True)
+    mp = os.path.join(d, "eq_scorecard.py")
+    shutil.copy(os.path.join(ROOT, "tests", "eq_scorecard_v1_0_0_ref.py"), mp)
+    g = subprocess.run([sys.executable, GEN, "--frozen", fzp, "--inventory", invp, "--module", mp, "--job",
+                        os.path.join(d, "j.json"), "--pull-job", os.path.join(d, "p.json")], capture_output=True,
+                       text=True)
+    assert g.returncode == 0, g.stderr
+    v1 = load_module(open(mp).read(), "eqsc_v1", mp)
+    with contextlib.redirect_stdout(io.StringIO()):
+        v1.build(fk.load, fk.save, lambda *a: None, fk.data)
+    old = v1.LAST.get("lines", [])
+    new, skip = [], False
+    for k, x in enumerate(res["lines"]):
+        if x == "" and k + 1 < len(res["lines"]) and res["lines"][k + 1].startswith("ADDENDUM A"):
+            skip = True
+        if x == "END OF SCORECARD":
+            skip = False
+        if not skip:
+            new.append(x)
+    hdr = ("EQ SCORECARD", "code sha256")
+    a = [x for x in old if not x.startswith(hdr)]
+    b = [x for x in new if not x.startswith(hdr)]
+    diff = [(i, x, y) for i, (x, y) in enumerate(zip(a, b)) if x != y][:2]
+    return [("V1 the v1 part of the report is unchanged (registered v1.0.0 code on the same world: %d lines)" % len(a),
+             bool(a) and a == b, (len(a), len(b), diff))]
+
+
 def cleanup_test(src, modp, fk):
     mod = load_module(src, "eqsc_clean", modp)
     buf = []
@@ -1111,6 +1165,10 @@ def main():
         print("catch rate: registration %d of %d; extra %d of %d (%d equivalent, no effect on any number)"
               % (c1, len(MUTATIONS), c2, len(EXTRA), len(EQUIVALENT)))
         assert c1 == len(MUTATIONS) and not missed, missed
+        V = v1_same(tmp, fzp, invp, fk, res)
+        for name, ok, det in V:
+            print("%-4s %s%s" % ("ok" if ok else "FAIL", name, "" if ok else "  [%s]" % (det,)))
+        assert all(v[1] for v in V)
         K = cleanup_test(src, modp, fk)
         for name, ok, det in K:
             print("%-4s %s%s" % ("ok" if ok else "FAIL", name, "" if ok else "  [%s]" % (det,)))

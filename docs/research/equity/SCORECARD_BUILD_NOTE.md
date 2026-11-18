@@ -148,3 +148,18 @@ The pull budgets sum to 2.25 h per run, and each pull stops starting new data se
 | Persistence and counts | `PERSISTENCE` (rho and the 5x6 tables, 13F and funds apart) and `COUNTS` |
 
 The header carries the code hash, input hash, pull key and peer universe. The report holds no holding, stock, return series or style/sector/factor average; the smoke test checks that no CUSIP or permno appears in it.
+
+## 8. Addendum A (registration section 13; module eq_scorecard-1.1.0, job eq_scorecard_v2)
+- **What it adds.** A new report block "ADDENDUM A" just before `END OF SCORECARD`. It is computed in `build` from the stored data sets, with no new pull and the same pull key: `PULL_VERSION` and the library ids are unchanged, so the existing `eq_sc_*` data sets are accepted.
+- **Population.** 13F filers in the 2021-25 rank group whose median matched 13F value over the 2021-25 filings (`valm`, shares × CRSP quarter-end price) is $1-30bn, with no filer number in any `mgrnos` / `known_mgrnos` of the frozen file.
+- **List 1:** the section 7.2 score, which needs 60 months in 2011-25; top 40.
+- **List 2:** the 2021-25 alpha rank share, which needs 60 months in 2021-25; top 40.
+- **Ties:** broken by filer number.
+- **Printed per filer:**
+  - name, score and its three rank shares;
+  - a21 t21, and a11 t11 where 2011-25 has 60 months;
+  - median value in $bn, median positions, turnover.
+- **Not printed: country and the largest SIC-division share.** Neither is in the stored pulls (`pull_base` read `mgrno, mgrname, rdate2` from `tfn.s34names`; `pull_crsp` did not read `siccd`). Adding them needs a new pull, which was not made. The block says so.
+- **Druckenmiller.** He is added to the reading list by the user. The report does not print him: that is a reading-list decision, not a computed output.
+- **Unchanged.** Everything else is unchanged, except the version and code-hash header lines. The smoke test (check V1) runs the registered v1.0.0 code (`tests/eq_scorecard_v1_0_0_ref.py`, code hash f7f54264...) on the same invented world and compares every other line with the v1.1 report.
+- **Hashes.** `seal_exempt.json` carries the new code hash for all three job names; the old hash stays under `code_history`. The report goes in 4 parts of up to 55,000 characters, as v1 needed 2.
