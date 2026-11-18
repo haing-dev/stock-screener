@@ -313,7 +313,7 @@ def _bm_table(bm, panel):
     b["fy"] = d[d.dt.month <= 6].dt.year.to_numpy()
     b["d"] = d[d.dt.month <= 6].to_numpy()
     b["bm"] = pd.to_numeric(b.bm, errors="coerce")
-    b = b[np.isfinite(b.bm)].sort_values(["permno", "fy", "d"]).drop_duplicates(["permno", "fy"], keep="last")
+    b = b[np.isfinite(b.bm)].sort_values(["permno", "fy", "d", "bm"]).drop_duplicates(["permno", "fy"], keep="last")
     out = np.full((len(panel.perm), FY1 - FY0 + 1), np.nan)
     ri, ok = panel.rows(b.permno.to_numpy())
     col = b.fy.to_numpy() - FY0
@@ -496,8 +496,8 @@ def _positions(h, cus, panel):
     fil = g.groupby(["mgrno", "q"], as_index=False).agg(fv_all=("fv", "sum"))
     c = cus[cus.cusip.notna() & cus.permno.notna()].copy()
     c["cusip"] = c.cusip.astype(str)
-    c["namedt"] = pd.to_datetime(c.namedt)
-    c["nameenddt"] = pd.to_datetime(c.nameenddt).fillna(pd.Timestamp("2099-12-31"))
+    c["namedt"] = pd.to_datetime(c.namedt, errors="coerce").fillna(pd.Timestamp("1900-01-01"))
+    c["nameenddt"] = pd.to_datetime(c.nameenddt, errors="coerce").fillna(pd.Timestamp("2099-12-31"))
     m = g.merge(c[["cusip", "permno", "namedt", "nameenddt"]], on="cusip", how="inner")
     m = m[(m.rdate >= m.namedt) & (m.rdate <= m.nameenddt)]
     m = m.sort_values(["mgrno", "q", "cusip", "permno"]).drop_duplicates(["mgrno", "q", "cusip"])
@@ -705,8 +705,8 @@ def _fund_months(fret, sty):
     f["dt"] = pd.to_datetime(_ym(f.mi).astype(str), format="%Y%m") + pd.offsets.MonthEnd(0)
     s = sty.copy()
     s["crsp_fundno"] = s.crsp_fundno.astype("int64")
-    s["begdt"] = pd.to_datetime(s.begdt)
-    s["enddt"] = pd.to_datetime(s.enddt).fillna(pd.Timestamp("2099-12-31"))
+    s["begdt"] = pd.to_datetime(s.begdt, errors="coerce")
+    s["enddt"] = pd.to_datetime(s.enddt, errors="coerce").fillna(pd.Timestamp("2099-12-31"))
     s = s.dropna(subset=["begdt"]).sort_values("begdt")
     f = pd.merge_asof(f.sort_values("dt"), s[["crsp_fundno", "begdt", "enddt", "crsp_obj_cd"]],
                       left_on="dt", right_on="begdt", by="crsp_fundno", direction="backward")
@@ -856,8 +856,11 @@ def build(load, save, out, data=None):
     ff = Factors(load("eq_sc_ff"))
     out("build: CRSP panel %d securities x %d months, peer groups formed (%.0f s)"
         % (len(panel.perm), panel.nm, time.time() - t0))
-    pos, fil = _positions(_load_years(load, "eq_sc_hold", _hyears(), dtype={"cusip": str}),
-                          load("eq_sc_cusip", dtype={"cusip": str}), panel)
+    cus = load("eq_sc_cusip", dtype={"cusip": str})
+    parts = [_positions(load("eq_sc_hold_%d" % y, dtype={"cusip": str}), cus, panel) for y in _hyears()]
+    pos = pd.concat([x[0] for x in parts], ignore_index=True)       # one year at a time: memory stays small
+    fil = pd.concat([x[1] for x in parts], ignore_index=True)
+    del parts
     st, M, lib = _books(pos, fil, panel, peers)
     tab = _book_windows(st, M, ff)
     out("build: %d filers, %d filings, %d book-months (%.0f s)" % (pos.mgrno.nunique(), len(fil), len(M),

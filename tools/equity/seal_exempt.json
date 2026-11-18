@@ -4,7 +4,7 @@
   {
    "job_pattern": "eq_scorecard_v\\d+[a-z]?",
    "module": "eq_scorecard",
-   "code_sha256": "1de83e83c2951b8ecb370e91c8ea11d1cc1f7c4e87874af954953036c71b4612",
+   "code_sha256": "a7792a0f4cd965c77cbc759d5094d6ba7385601bf275bcfeea8e83eea5ab59f4",
    "registration": "docs/research/equity/STAGE0_REGISTRATION.md sections 2-9 and 11",
    "output": "section 8"
   }
