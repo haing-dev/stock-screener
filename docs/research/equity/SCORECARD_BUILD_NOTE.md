@@ -15,7 +15,8 @@ findings and every non-blocking finding that can change a number or leak (sectio
 | `tools/equity/seal_check.py` | The pre-send checker (rules in its docstring). Prints PASS or REFUSED and the lock id |
 | `tools/equity/seal_exempt.json` | The registered scorecard job: its module, code hash, two name patterns and the functions each pattern may call |
 | `tools/equity/wrds/eq_precheck.py`, `tools/wrdsq/jobs/eq_precheck_v1.json` | Pre-run structure checks, run as a non-exempt job (section 6) |
-| `tests/eq_scorecard_smoke.py` | Invented data. 39 scorecard checks and 32 seal checks. Mutations: the 6 planted errors of section 11 and the code check's 14 extra mutations |
+| `tools/wrdsq/jobs/eq_sc_cleanup_v1.json` | Deletes the stored `eq_sc_*` data sets (report kept) once the result is accepted |
+| `tests/eq_scorecard_smoke.py` | Invented data. 40 scorecard checks and 49 seal checks. Mutations: the 6 planted errors of section 11 and the code check's 14 extra mutations |
 
 ## 2. Functions (module)
 | Function | Does |
@@ -72,12 +73,23 @@ findings and every non-blocking finding that can change a number or leak (sectio
 20. **Statistics or rank shares only.** Statistics are printed if the window or the 2011-25 record has 60 months. Every matched investor gets an `INV` line, even with 0 months.
 21. **Newey-West.** Bartlett weights with the factor n/(n−k). Gaps in a record are treated as adjacent months.
 22. **Foundation list.** Uses the `words` column of `inventory.csv` (now present).
-23. **Pull key.** A hash of the library 13F filers and library fundnos, the two inputs the pulls depend on. A change in either needs a re-pull of `eq_sc_cand`, `eq_sc_hold_*`, `eq_sc_fret_*` and `eq_sc_fmeta`. A change only in grades, styles, months or names does not.
+23. **Pull key.** A hash of `PULL_VERSION` (bump it whenever a pull query or a pre-filter constant changes), the library 13F filers and the library fundnos. A change in any of them needs a re-pull of `eq_sc_cand`, `eq_sc_hold_*`, `eq_sc_fret_*` and `eq_sc_fmeta`. A change only in grades, styles, months or names does not.
+   - `eq_sc_fmeta` is written before the fund years.
+   - Holdings or fund years found without their key file count as orphans: the pull is refused until they are deleted.
 24. **Read range.** Design months are also read, outside "2010-06 to the seal end": `msf_v2` from 2009-06 (momentum), factors from 2009-01, `firm_ratio` from 2010-01. Registration section 1 should say so.
 25. **Seal rules for SEAL_LOG.**
    - Equity jobs use no pull or export steps, and only the pull job may delete `eq_sc_*`.
-   - The registered scorecard runs under `eq_sc_pull_v<n>[x]` (pulls) and `eq_scorecard_v<n>[x]` (build/report). Its steps are fixed templates.
+   - The registered scorecard runs under three names: `eq_sc_pull_v<n>[x]` (pulls), `eq_scorecard_v<n>[x]` (build/report) and `eq_sc_cleanup_v<n>[x]` (cleanup).
+   - Each step's whole text must match `import eq_scorecard\neq_scorecard.<function>(<registered argument list>)`, arguments in order, with the list registered per function in `seal_exempt.json`.
+   - `eq_reader.count` takes only a check name from the fixed list `eq_reader.CHECKS`. Each check is a fixed query that returns counts by year. Callers can pass no where, keep, column or bucket.
    - Each run logs the code hash printed in the report header (computed at run time from the module file), the input hash and the lock id.
+
+26. **Shared records.** Optional frozen column `shares_record_with`: an investor whose record is another investor's (same filer or funds).
+   - It is not eligible for a place by record nor for the control draw, and does not count toward the style cap.
+   - It joins the tier of the investor it points to without a place, printed "with I###".
+   - It can still take an explicit place on its own.
+   - The generator refuses a pointer to itself, to an unknown id, or to an investor that itself points on.
+27. **Cleanup.** The stored `eq_sc_*` data sets are kept after the build, because a logged bug-fix re-run needs them. Job `eq_sc_cleanup_v1` deletes them all except `eq_sc_report` once the result is accepted. This also closes code-check R3.1 for the scorecard's own data sets. The older `tri_*` and `bio_*` data sets stay readable by non-equity jobs; log that in SEAL_LOG.
 
 ## 4. Expected run on WRDS (estimates; nothing measured)
 | Job / step | Rows (est.) | Stored (est.) | Time (est.) |

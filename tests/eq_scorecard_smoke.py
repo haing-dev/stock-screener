@@ -266,11 +266,11 @@ def frozen_rows():
     R = []
 
     def add(i, name, kind, grade, style, mg="", fn="", s="", e="", own=1, ran="yes", xm="", xe="", region="us",
-            role="investor", km="", kf=""):
+            role="investor", km="", kf="", sw=""):
         R.append({"id": i, "name": name, "record_kind": kind, "mgrnos": mg, "fundnos": fn, "start_ym": s,
                   "end_ym": e, "grade": grade, "primary_style": style, "region": region, "explicit_max": xm,
                   "explicit_mean": xe, "own_docs": own, "ran_money": ran, "role": role,
-                  "known_mgrnos": km or mg, "known_fundnos": kf or fn})
+                  "known_mgrnos": km or mg, "known_fundnos": kf or fn, "shares_record_with": sw})
     add("I001", "Alpha One", "13f", "A", "quality_compounders", mg="1", own=3, xm="2", xe="1.5", kf="6005")
     add("I002", "Gap Pair", "13f", "B", "long_short", mg="3 4", own=2)
     add("I003", "Fund Planted", "fund", "F", "deep_value", fn="5002", own=2, km="150")   # one class = the fund
@@ -292,6 +292,8 @@ def frozen_rows():
     add("I052", "Fifty Months", "13f", "A", "growth", mg="141", s="2021-01", e="2025-02", ran="unclear")
     add("I053", "Thirty Months", "13f", "A", "growth", mg="142", s="2023-07", ran="unclear")
     add("I054", "Allocator", "none", "N", "none", own=5, xm="3", xe="3", role="allocator")
+    add("I055", "Book Owner", "13f", "A", "growth", mg="143", ran="unclear")
+    add("I056", "Same Book", "13f", "A", "growth", mg="143", own=2, ran="unclear", sw="I055")
     return R
 
 
@@ -640,14 +642,15 @@ def checks(res, parts, W, fz):
     styles = {}
     for i in T["record"]:
         styles[inv[i]["style"]] = styles.get(inv[i]["style"], 0) + 1
-    elig = sorted(d["id"] for d in res["inv"] if d["grade"] in "ABF" and d["own_docs"] >= 1 and d["months"] >= 60)
+    elig = sorted(d["id"] for d in res["inv"] if d["grade"] in "ABF" and d["own_docs"] >= 1 and d["months"] >= 60
+                  and not d.get("shares_with"))
     pool_c = sorted(i for i in elig if i not in set(T["record"]) | set(T["explicit"]))
     ctrl = sorted(random.Random(20261117).sample(pool_c, 10)) if len(pool_c) > 10 else pool_c
     sc = [inv[i]["score"] for i in T["record"]]
     ck("C15 tier rule: at most 8 per style, scores descending, explicit places, control by seed 20261117",
        max(styles.values()) == 8 and sc == sorted(sc, reverse=True) and T["control"] == ctrl
        and len(pool_c) > 10 and T["explicit"][0] == "I006" and "I005" not in T["explicit"]
-       and len(T["record"]) == 19, "record %d control pool %d" % (len(T["record"]), len(pool_c)))
+       and len(T["record"]) == 20, "record %d control pool %d" % (len(T["record"]), len(pool_c)))
     ck("C15b explicit places: only role investor with ran_money yes (allocator I054 left out)",
        "I054" not in T["explicit"] and "I054" not in T["record"])
     ck("C16 two investors on one filer, months cut to the frozen years (I024 120, I010 180, I008 145, I004 68)",
@@ -716,10 +719,10 @@ def checks(res, parts, W, fz):
     ck("C28 rank group bounds: 180 positions or $80M value are out (filers 9, 10)",
        not tab[tab.bk.isin([9, 10])].grp.any() and len(tab[tab.bk.isin([9, 10])]))
     names_top = {n for _, n, _ in res["top_filers"]}
-    kn = {"FILER %03d" % m for m in list(range(1, 7)) + list(range(100, 132)) + [140, 141, 142, 150]}
+    kn = {"FILER %03d" % m for m in list(range(1, 7)) + list(range(100, 132)) + [140, 141, 142, 143, 150]}
     tm = {n for _, n, _ in res["top_funds"]}
     ck("C29 best-scored lists leave out every known filer and fund (incl. known-only filer 150 and fund 6005)",
-       not (names_top & kn) and "FUND 6005" not in tm and "FUND 6001" not in tm and len(names_top) == 24,
+       not (names_top & kn) and "FUND 6005" not in tm and "FUND 6001" not in tm and len(names_top) == 23,
        (sorted(names_top & kn)[:3], len(names_top), sorted(tm)[:12]))
     t13 = tab[tab.bk >= 0]
     okp = all(np.array_equal(p["tbl"], persist_ref(t13, b1, b2)) for b1, b2, p in res["persist"]["13f"]) and \
@@ -744,13 +747,17 @@ def checks(res, parts, W, fz):
        len(g9) == 180 and all(abs(r - ce9[ym_of(int(m))]) < 1e-12 for m, r in zip(g9.mi, g9.ret)))
     ck("C34 report header carries the code hash computed at run time and the input hash",
        ("code sha256 %s" % fz.code_hash) in rep and "input sha256" in rep and "peer groups:" in rep)
+    tier55 = "record" if "I055" in T["record"] else "control" if "I055" in T["control"] else "B"
+    ck("C35 an investor sharing another's record takes no place and joins that investor's tier ('with I055')",
+       T["with"].get("I056") == (tier55, "I055") and "I056" not in T["record"] + T["control"] + T["explicit"] + T["B"]
+       and re.search(r"I056 .* with I055", rep) is not None, T["with"].get("I056"))
     return C
 
 
 # ================================================================================================== seal
 def seal_tests(tmp, libdir, fk, src, modp):
     C = []
-    jobs = {n: os.path.join(tmp, n + ".json") for n in ("eq_sc_pull_v1", "eq_scorecard_v1")}
+    jobs = {n: os.path.join(tmp, n + ".json") for n in ("eq_sc_pull_v1", "eq_scorecard_v1", "eq_sc_cleanup_v1")}
     for n, p in jobs.items():
         ok, msgs, extra = seal_check.check_job(p, [libdir])
         C.append(("S1 %s passes as seal-exempt" % n, ok, msgs[:2]))
@@ -843,6 +850,41 @@ def seal_tests(tmp, libdir, fk, src, modp):
             {"do": "delete", "names": ["eq_sc_hold_2015"]}]), False, [libdir]),
         ("S27 dunder attribute (exempt default via __kwdefaults__)", jobfile("eq_a15", py(
             R + "eq_reader.read.__kwdefaults__['exempt'] = True")), False, [libdir]),
+        ("S31 R2.1 swapped helpers: pull_crsp(sql, out, out, 0)", jobfile("eq_sc_pull_v2", py(
+            "import eq_scorecard\neq_scorecard.pull_crsp(sql, out, out, 0)")), False, [libdir]),
+        ("S32 R2.1 swapped helpers: pull_base(sql, out, out, DATA)", jobfile("eq_sc_pull_v3", py(
+            "import eq_scorecard\neq_scorecard.pull_base(sql, out, out, DATA)")), False, [libdir]),
+        ("S33 R2.1 permuted arguments: pull_base(save, sql, out, DATA, budget=900)", jobfile("eq_sc_pull_v4", py(
+            "import eq_scorecard\neq_scorecard.pull_base(save, sql, out, DATA, budget=900)")), False, [libdir]),
+        ("S34 R2.1 build(load, out, out, DATA)", jobfile("eq_scorecard_v12", py(
+            "import eq_scorecard\neq_scorecard.build(load, out, out, DATA)")), False, [libdir]),
+        ("S35 R2.1 report(load, load, 1, 4)", jobfile("eq_scorecard_v13", py(
+            "import eq_scorecard\neq_scorecard.report(load, load, 1, 4)")), False, [libdir]),
+        ("S36 R2.1 cleanup(out, out) and a trailing newline", jobfile("eq_sc_cleanup_v2", py(
+            "import eq_scorecard\neq_scorecard.cleanup(out, out)") + py(
+            "import eq_scorecard\neq_scorecard.cleanup(out, DATA)\n")), False, [libdir]),
+        ("S37 R2.1 a registered function under another job name (cleanup in the pull job)", jobfile(
+            "eq_sc_pull_v5", py("import eq_scorecard\neq_scorecard.cleanup(out, DATA)")), False, [libdir]),
+        ("S38 R2.2 C1 count with a value filter (where=)", jobfile("eq_c1", py(
+            R + "n = eq_reader.count(sql, 'crsp.msf_v2', '2015-03', '2015-03', where='permno = 10010 and mthret > 0.05')")),
+         False, [libdir]),
+        ("S39 R2.2 C2 count with the filter passed by position", jobfile("eq_c2", py(
+            R + "n = eq_reader.count(sql, 'crsp.msf_v2', '2015-01', '2015-12', 'mthret > 0.05')")), False, [libdir]),
+        ("S40 R2.2 C3 count by a mean (per=, keep=)", jobfile("eq_c3", py(
+            R + "n = eq_reader.count(sql, 'crsp.msf_v2', '2015-01', '2015-12', per=['permno'], "
+            "keep='avg(mthret) > 0.012')")), False, [libdir]),
+        ("S41 R2.2 C4 count recovering one holding", jobfile("eq_c4", py(
+            R + "n = eq_reader.count(sql, 'tfn.s34', '2015-01', '2015-03', where=\"mgrno = 1 and shares > 100\")")),
+         False, [libdir]),
+        ("S42 R2.2 C5 count with a computed check name", jobfile("eq_c5", py(
+            R + "c = 's34_' + 'manager_quarters'\nn = eq_reader.count(sql, c, '2015-01', '2015-12')")), False,
+         [libdir]),
+        ("S43 R2.2 C6 count with **options", jobfile("eq_c6", py(
+            R + "o = {'where': 'mthret > 0'}\nn = eq_reader.count(sql, 's34_manager_quarters', '2015-01', '2015-12', **o)")),
+         False, [libdir]),
+        ("S44 a named structure check passes", jobfile("eq_ok_count", py(
+            R + "n = eq_reader.count(sql, 's34_no_first_version', '2010-01', '2025-12')\nout(n.n.sum())")), True,
+         [libdir]),
         ("S28 the pull job may delete scorecard data sets to pull again", jobfile("eq_sc_pull_v1b", [
             {"do": "delete", "names": ["eq_sc_cand"]}, {"do": "python", "code":
                                                          "import eq_scorecard\neq_scorecard.pull_status(load, out, DATA)"}]),
@@ -886,10 +928,14 @@ def seal_tests(tmp, libdir, fk, src, modp):
           refused(lambda: eq_reader.load_ds(fl, "eq_sc_msf_2015", "2009-01", "2015-12")),
           refused(lambda: eq_reader.load_ds(fl, "eq_sc_cusip", "2009-01", "2010-12")),
           refused(lambda: eq_reader.load_ds(flf, "eq_sc_msf_2015", "2009-01", "2010-12")),
-          list(eq_reader.count(fsql, "tfn.s34", "2010-01", "2025-12", per=["mgrno", "rdate"],
-                               keep="sum(case when fdate = rdate then 1 else 0 end) = 0").columns) == ["year", "n"],
-          refused(lambda: eq_reader.count(fsql, "tfn.s34", "2010-01", "2025-12", per=["mgrno"],
-                                          keep="1=1) union (select 1"))]
+          list(eq_reader.count(fsql, "s34_no_first_version", "2010-01", "2025-12").columns) == ["year", "n"],
+          refused(lambda: eq_reader.count(fsql, "tfn.s34", "2010-01", "2025-12")),
+          refused(lambda: eq_reader.count(fsql, "s34_manager_quarters", "2015-01", "2015-12", where="mthret > 0"),
+                  TypeError),
+          refused(lambda: eq_reader.count(fsql, "s34_manager_quarters", "2015-01", "2015-12", "mthret > 0"),
+                  TypeError),
+          refused(lambda: operator.setitem(eq_reader.CHECKS, "x", ("crsp.msf_v2", ("permno",), "avg(mthret) > 0")),
+                  TypeError)]
     C.append(("S29 reader: sealed months refused (US 2011-01.., non-US 1990-01..), injected clauses and rows outside "
               "the range refused, exempt only by keyword, constants read-only, data sets declared with their own "
               "date column, counts only by year", all(rr), rr))
@@ -909,7 +955,28 @@ def seal_tests(tmp, libdir, fk, src, modp):
     st2 = buf[0].startswith("build refused") and buf[-1].startswith("PULLS NOT COMPLETE") and not mod3.LAST
     C.append(("S30 build refuses pulls made for another investor input, and incomplete pulls", st1 and st2,
               [st1, st2]))
+    mod4 = load_module(src.replace('PULL_VERSION = "pull-1"', 'PULL_VERSION = "pull-2"'), "eqsc_ver", modp)
+    buf = []
+    mod4.build(fk.load, fk.save, lambda *a: buf.append(" ".join(map(str, a))), fk.data)
+    st3 = buf[-1].startswith("build refused") and not mod4.LAST
+    fm = os.path.join(fk.data, "eq_sc_fmeta.csv.gz")
+    os.rename(fm, fm + ".x")
+    mod5 = load_module(src, "eqsc_orph", modp)
+    buf = []
+    mod5.pull_funds(fk.sql, fk.load, fk.save, lambda *a: buf.append(" ".join(map(str, a))), fk.data)
+    st4 = any("orphans" in x for x in buf) and not os.path.exists(fm)
+    os.rename(fm + ".x", fm)
+    C.append(("S45 pull key: a new PULL_VERSION makes old pulls stale; fund years without eq_sc_fmeta are refused",
+              st3 and st4, [st3, st4]))
     return C
+
+
+def cleanup_test(src, modp, fk):
+    mod = load_module(src, "eqsc_clean", modp)
+    buf = []
+    mod.cleanup(lambda *a: buf.append(" ".join(map(str, a))), fk.data)
+    left = sorted(f for f in os.listdir(fk.data) if f.startswith("eq_sc_"))
+    return [("S46 cleanup deletes every eq_sc_ data set except the report", left == ["eq_sc_report.csv.gz"], left)]
 
 
 # ============================================================================================== mutations
@@ -1044,6 +1111,10 @@ def main():
         print("catch rate: registration %d of %d; extra %d of %d (%d equivalent, no effect on any number)"
               % (c1, len(MUTATIONS), c2, len(EXTRA), len(EQUIVALENT)))
         assert c1 == len(MUTATIONS) and not missed, missed
+        K = cleanup_test(src, modp, fk)
+        for name, ok, det in K:
+            print("%-4s %s%s" % ("ok" if ok else "FAIL", name, "" if ok else "  [%s]" % (det,)))
+        assert all(k[1] for k in K)
         print("eq_scorecard smoke: PASS")
     finally:
         shutil.rmtree(tmp, ignore_errors=True)

@@ -5,14 +5,13 @@ non-US months from 1990-01 to the seal end are sealed until the freeze. Every ta
 may read is declared below with its date column and region; the caller cannot choose either. A read whose month range
 touches a sealed month is refused, unless the keyword exempt=True is passed; tools/equity/seal_check.py lets no job
 pass that flag except the registered seal-exempt jobs, and refuses any equity job that reads another way.
-count() returns row counts by year only and may run on sealed months (structure checks, plan 8.2).
+count() runs one of the named structure checks in CHECKS: counts by year only, allowed on sealed months (plan 8.2).
 
     import eq_reader
     df = eq_reader.read(sql, "crsp.msf_v2", ["permno", "mthcaldt", "mthret"], "1990-01", "2010-12",
                         where="securitytype = 'EQTY'")
     df = eq_reader.load_ds(load, "eq_sc_msf_2009", "2009-06", "2009-12")
-    n = eq_reader.count(sql, "tfn.s34", "2010-01", "2025-12", per=["mgrno", "rdate"],
-                        keep="sum(case when fdate = rdate then 1 else 0 end) = 0")
+    n = eq_reader.count(sql, "s34_no_first_version", "2010-01", "2025-12")
 """
 import re
 import types
@@ -119,32 +118,28 @@ def read(sql, table, cols, lo, hi, where=None, *, exempt=False):
     return df
 
 
-def count(sql, table, lo, hi, where=None, per=None, keep=None):
-    """Row counts by year of the declared date column (allowed on sealed months). per: count groups of these
-    columns instead of rows (a group falls in the year of its date column, which is then part of the group);
-    keep: a condition on aggregates that a group must meet. Returns only (year, n)."""
-    if table not in TABLES:
-        raise SealError("table %s is not declared in eq_reader.TABLES" % table)
+# Named structure checks (plan 8.2: counts, coverage, date ranges allowed on sealed months). Each is a fixed query
+# that returns only (year, n): n = number of groups of the listed columns whose date column falls in that year and
+# that meet the fixed condition. Callers name a check; they cannot add columns, conditions or buckets. A new check is
+# a change to this file (new lock id).
+CHECKS = types.MappingProxyType({
+    "s34_manager_quarters": ("tfn.s34", ("mgrno", "rdate"), None),
+    "s34_no_first_version": ("tfn.s34", ("mgrno", "rdate"), "sum(case when fdate = rdate then 1 else 0 end) = 0"),
+})
+
+
+def count(sql, check, lo, hi):
+    """Counts by year of a named structure check (allowed on sealed months). Returns only (year, n)."""
+    if not isinstance(check, str) or check not in CHECKS:
+        raise SealError("count: unknown check %r (see eq_reader.CHECKS)" % (check,))
+    table, per, keep = CHECKS[check]
     dcol, _ = TABLES[table]
     _, _, d0, d1 = _range(lo, hi)
-    per = list(per or [])
-    if any(not isinstance(c, str) or not _IDENT.match(c) for c in per):
-        raise SealError("per must be plain lower-case names")
-    rng = "%s >= '%s' and %s < '%s'" % (dcol, d0, dcol, d1)
-    if where:
-        rng += " and (%s)" % _clause(where)
-    if per:
-        g = ", ".join(dict.fromkeys(per + [dcol]))
-        inner = "select %s from %s where %s group by %s" % (g, table, rng, g)
-        if keep:
-            inner += " having %s" % _clause(keep)
-        q = "select extract(year from t.%s)::int as year, count(*) as n from (%s) t group by 1 order by 1" % (dcol,
-                                                                                                         inner)
-    else:
-        if keep:
-            raise SealError("keep needs per")
-        q = "select extract(year from %s)::int as year, count(*) as n from %s where %s group by 1 order by 1" % (
-            dcol, table, rng)
+    g = ", ".join(per)
+    inner = "select %s from %s where %s >= '%s' and %s < '%s' group by %s" % (g, table, dcol, d0, dcol, d1, g)
+    if keep:
+        inner += " having %s" % keep
+    q = "select extract(year from t.%s)::int as year, count(*) as n from (%s) t group by 1 order by 1" % (dcol, inner)
     df = sql(q)
     if list(df.columns) != ["year", "n"]:
         raise SealError("count returned other columns")

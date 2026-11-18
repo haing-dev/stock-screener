@@ -1,0 +1,12 @@
+{
+ "name": "eq_sc_cleanup_v1",
+ "steps": [
+  {
+   "do": "python",
+   "code": "import eq_scorecard\neq_scorecard.cleanup(out, DATA)"
+  },
+  {
+   "do": "datasets"
+  }
+ ]
+}

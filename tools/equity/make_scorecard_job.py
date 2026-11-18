@@ -11,7 +11,8 @@ tools/wrdsq/jobs/eq_sc_pull_v1.json (pulls) and eq_scorecard_v1.json (build + re
             grade (A B C F N), primary_style, region, explicit_max, explicit_mean, own_docs, ran_money
             (yes | no | unclear), role (E0.1 role: investor | allocator | ...), known_mgrnos, known_fundnos
             (every filer and fund matched to the investor, whatever its record kind; left out of the best-scored
-            lists). Other columns are ignored.
+            lists); optional shares_record_with (an investor id: same record as that investor, no place of its
+            own by record or control). Other columns are ignored.
 --inventory docs/research/equity/inventory/inventory.csv (E0.1): doc, technique, technique_depth and words (word
             count of the document) for the foundation list; --words CSV (doc, words) supplies words if the
             inventory has no such column. Without word counts the generator stops.
@@ -97,7 +98,8 @@ def read_frozen(path):
              "explicit_max": num(r["explicit_max"], w), "explicit_mean": num(r["explicit_mean"], w),
              "own_docs": num(r["own_docs"], w, int) or 0, "ran_money": r["ran_money"].strip().lower(),
              "role": (r["role"] or "").strip().lower(),
-             "known_mgrnos": ids(r["known_mgrnos"], w), "known_fundnos": ids(r["known_fundnos"], w)}
+             "known_mgrnos": ids(r["known_mgrnos"], w), "known_fundnos": ids(r["known_fundnos"], w),
+             "shares_with": (r.get("shares_record_with") or "").strip() or None}
         if p["role"] not in ("investor", "allocator", "executive", "expert", "host"):
             die("%s: role %r" % (w, p["role"]))
         if kind == "13f" and not p["mgrnos"]:
@@ -109,6 +111,12 @@ def read_frozen(path):
         if p["ran_money"] not in ("yes", "no", "unclear"):
             die("%s: ran_money %r" % (w, p["ran_money"]))
         inv.append(p)
+    for p in inv:
+        t = p["shares_with"]
+        if t and (t not in seen or t == p["id"]):
+            die("frozen row %s: shares_record_with %r is not another investor id" % (p["id"], t))
+        if t and [q for q in inv if q["id"] == t][0]["shares_with"]:
+            die("frozen row %s: shares_record_with points to an investor that itself shares a record" % p["id"])
     return sorted(inv, key=lambda p: p["id"])
 
 
@@ -162,6 +170,11 @@ def pull_job(name):
     return {"name": name, "steps": steps}
 
 
+def cleanup_job(name="eq_sc_cleanup_v1"):
+    """Run once the result is accepted: deletes the stored eq_sc_ data sets (eq_sc_report kept)."""
+    return {"name": name, "steps": [_py("eq_scorecard.cleanup(out, DATA)"), {"do": "datasets"}]}
+
+
 def job(name):
     """Build and report only."""
     steps = [_py("eq_scorecard.build(load, save, out, DATA)")]
@@ -190,6 +203,8 @@ def main():
     os.makedirs(os.path.dirname(os.path.abspath(a.job)), exist_ok=True)
     json.dump(job(a.name), open(a.job, "w"), indent=1)
     json.dump(pull_job(a.pull_name), open(a.pull_job, "w"), indent=1)
+    json.dump(cleanup_job(), open(os.path.join(os.path.dirname(os.path.abspath(a.job)), "eq_sc_cleanup_v1.json"), "w"),
+              indent=1)
     kinds = [p["record_kind"] for p in inv]
     print("wrote %s (%d investors: 13f %d, fund %d, none %d; %d documents)" % (a.module, len(inv), kinds.count("13f"),
                                                                              kinds.count("fund"), kinds.count("none"),

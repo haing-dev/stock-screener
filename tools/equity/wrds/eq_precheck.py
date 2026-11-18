@@ -1,6 +1,6 @@
 """eq_precheck (runs on WRDS Cloud): structure checks before the scorecard runs (not seal-exempt). Every read goes
 through eq_reader: rows only from design months (2001-2010, 1990-2010, 2005-2010), and on sealed months only row
-counts by year (eq_reader.count). Prints counts and one maximum; no data rows.
+counts by year (named checks of eq_reader.count). Prints counts and one maximum; no data rows.
 Job: tools/wrdsq/jobs/eq_precheck_v1.json. Build note: docs/research/equity/SCORECARD_BUILD_NOTE.md section 6."""
 import numpy as np
 import pandas as pd
@@ -45,9 +45,8 @@ def delist(sql, out):
 
 def first_versions(sql, out):
     """(ii) Manager-quarters in tfn.s34 with rows but none with fdate = rdate, per year from 2010 (counts only)."""
-    tot = eq_reader.count(sql, "tfn.s34", "2010-01", "2025-12", per=["mgrno", "rdate"])
-    no1 = eq_reader.count(sql, "tfn.s34", "2010-01", "2025-12", per=["mgrno", "rdate"],
-                          keep="sum(case when fdate = rdate then 1 else 0 end) = 0")
+    tot = eq_reader.count(sql, "s34_manager_quarters", "2010-01", "2025-12")
+    no1 = eq_reader.count(sql, "s34_no_first_version", "2010-01", "2025-12")
     t = tot.merge(no1, on="year", how="left", suffixes=("", "_no")).fillna(0)
     out("(ii) tfn.s34 manager-quarters by year: all | without a first version (fdate = rdate)")
     for y, n, k in zip(t.year, t.n, t.n_no):

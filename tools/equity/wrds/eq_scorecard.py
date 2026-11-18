@@ -18,6 +18,8 @@ resumable, one data set per year, written under a temporary name and renamed:
   pull_hold(sql, load, save, out, DATA)        holdings rows of filers that can be in a rank group + library filers
   pull_funds(sql, load, save, out, DATA)       CRSP fund monthly returns and assets (whole class groups)
   pull_status(load, out, DATA)                 ALL PULLS COMPLETE, or what is missing
+eq_sc_cleanup_v1 (once the result is accepted):
+  cleanup(out, DATA)                           deletes every eq_sc_ data set except eq_sc_report
 eq_scorecard_v1 (build and report only):
   build(load, save, out, DATA)                 refuses to start unless every pull is complete and made for this input;
                                                keeps the report lines as data set eq_sc_report; returns nothing
@@ -94,10 +96,14 @@ def input_sha():
     return hashlib.sha256(json.dumps([INV, DOCS], sort_keys=True).encode()).hexdigest()
 
 
+PULL_VERSION = "pull-1"     # change whenever a pull query or a pre-filter constant changes: old pulls then go stale
+
+
 def pull_key():
-    """Hash of the investor input the pulls depend on: library 13F filers (always pulled) and library funds (all
-    their share classes pulled). A change here needs fresh eq_sc_cand, eq_sc_hold_*, eq_sc_fret_* and eq_sc_fmeta."""
-    return hashlib.sha256(json.dumps([_lib_mgrnos(), _lib_fundnos()]).encode()).hexdigest()
+    """Hash of what the investor-dependent pulls depend on: the pull code version, library 13F filers (always
+    pulled) and library funds (all their share classes pulled). A change needs fresh eq_sc_cand, eq_sc_hold_*,
+    eq_sc_fret_* and eq_sc_fmeta."""
+    return hashlib.sha256(json.dumps([PULL_VERSION, _lib_mgrnos(), _lib_fundnos()]).encode()).hexdigest()
 
 
 def code_sha():
@@ -293,6 +299,9 @@ def pull_hold(sql, load, save, out, data, budget=9000):
         return
     if _stale(load, have, "eq_sc_cand", out):
         return
+    if not have("eq_sc_cand") and any(have("eq_sc_hold_%d" % y) for y in _hyears()):
+        out("pull_hold refused: holdings years exist without eq_sc_cand (orphans): delete eq_sc_hold_* and pull again")
+        return
     step("eq_sc_cand", lambda: pd.DataFrame({"mgrno": candidates(load)}).assign(key=pull_key()))
     if not have("eq_sc_cand"):
         out("pull_hold: candidate list not written yet; run again")
@@ -321,6 +330,10 @@ def pull_funds(sql, load, save, out, data, budget=9000):
     have, step, st, t0 = _runner(save, out, data, budget)
     if _stale(load, have, "eq_sc_fmeta", out):
         return
+    if not have("eq_sc_fmeta") and any(have("eq_sc_fret_%d" % y) for y in _fund_years()):
+        out("pull_funds refused: fund years exist without eq_sc_fmeta (orphans): delete eq_sc_fret_* and pull again")
+        return
+    step("eq_sc_fmeta", lambda: pd.DataFrame({"key": [pull_key()]}))     # written before the fund years
     lib = ",".join(str(f) for f in _lib_fundnos())
     cond = FUND_GROUPS % {"s": "select crsp_fundno from crsp.fund_style where crsp_obj_cd like 'ED%'"}
     if lib:
@@ -331,8 +344,6 @@ def pull_funds(sql, load, save, out, data, budget=9000):
             "/* eqsc fret %s %d-12-31 lib=%s */ select crsp_fundno, caldt, mtna::float8 as mtna, mret::float8 as "
             "mret from crsp.monthly_tna_ret_nav where caldt between '%s' and '%d-12-31' and %s"
             % (lo, y, lib or "-", lo, y, cond)))
-    if all(have("eq_sc_fret_%d" % y) for y in _fund_years()):
-        step("eq_sc_fmeta", lambda: pd.DataFrame({"key": [pull_key()]}))
     _done(out, "pull_funds", st, t0)
 
 
@@ -350,6 +361,17 @@ def _pull_state(load, data):
     stale = [n for n in ("eq_sc_cand", "eq_sc_fmeta") if n not in miss
              and str(load(n).key.astype(str).iloc[0]) != pull_key()]
     return miss, stale
+
+
+def cleanup(out, data):
+    """Job eq_sc_cleanup_v<n>, run once the result is accepted: deletes every stored eq_sc_ data set except the
+    report (eq_sc_report holds results only)."""
+    n = 0
+    for f in sorted(os.listdir(data)):
+        if f.startswith("eq_sc_") and f.endswith(".csv.gz") and f != "eq_sc_report.csv.gz":
+            os.remove(os.path.join(data, f))
+            n += 1
+    out("cleanup: %d eq_sc_ data sets deleted (eq_sc_report kept)" % n)
 
 
 def pull_status(load, out, data):
@@ -940,7 +962,9 @@ def _tiers(inv):
     """Registration section 7. inv: list of dicts with id, grade, own_docs, months, score, style, explicit_*."""
     def num(x, d):
         return d if x is None or (isinstance(x, float) and not np.isfinite(x)) else x
-    elig = [p for p in inv if p["grade"] in ("A", "B", "F") and p["own_docs"] >= 1 and p["months"] >= MIN_STATS]
+    join = {p["id"]: p["shares_with"] for p in inv if p.get("shares_with")}   # same record as another investor
+    elig = [p for p in inv if p["grade"] in ("A", "B", "F") and p["own_docs"] >= 1 and p["months"] >= MIN_STATS
+            and p["id"] not in join]
     sc = sorted([p for p in elig if np.isfinite(p["score"])], key=lambda p: (-p["score"], -p["own_docs"], p["id"]))
     rec, per = [], {}
     for p in sc:
@@ -958,8 +982,13 @@ def _tiers(inv):
     a = set(rec) | set(exp)
     pool = sorted(p["id"] for p in elig if p["id"] not in a)
     ctrl = sorted(random.Random(SEED).sample(pool, CONTROL_N)) if len(pool) > CONTROL_N else list(pool)
-    b = sorted(p["id"] for p in inv if p["id"] not in a and p["id"] not in set(ctrl))
-    return {"record": rec, "explicit": exp, "control": ctrl, "B": b, "eligible": len(elig)}
+    withs = {}
+    for j, t in sorted(join.items()):
+        if j in exp:
+            continue                       # took an explicit place on its own
+        withs[j] = ("record" if t in rec else "explicit" if t in exp else "control" if t in ctrl else "B", t)
+    b = sorted(p["id"] for p in inv if p["id"] not in a and p["id"] not in set(ctrl) and p["id"] not in withs)
+    return {"record": rec, "explicit": exp, "control": ctrl, "B": b, "eligible": len(elig), "with": withs}
 
 
 def _foundation():
@@ -1067,6 +1096,7 @@ def _results(tab, ftab, ltab, lib, lown, load, hdr, frec):
              "style": p.get("primary_style") or "none", "own_docs": int(p.get("own_docs") or 0),
              "explicit_max": p.get("explicit_max"), "explicit_mean": p.get("explicit_mean"),
              "ran_money": p.get("ran_money"), "role": p.get("role", "investor"), "months": 0, "score": np.nan,
+             "shares_with": p.get("shares_with") or None,
              "win": {}}
         if kind == "13f" and p["id"] in bk_of:
             t, own = libtab[libtab.bk == bk_of[p["id"]]], lib[bk_of[p["id"]]][1]
@@ -1197,19 +1227,28 @@ def _report_lines(res):
     T = res["tiers"]
     L.append("")
     L.append("TIERS (section 7) | eligible by record %d" % T["eligible"])
+    W_ = T.get("with", {})
+
+    def withs(tier):
+        return ["  %-6s %-28s with %s (same record, no place)" % (j, nm[j]["name"][:28], t)
+                for j, (tr, t) in sorted(W_.items()) if tr == tier]
     L.append("TIER A by record (%d):" % len(T["record"]))
     for i in T["record"]:
         L.append("  %-6s %-28s %-20s score %s" % (i, nm[i]["name"][:28], nm[i]["style"][:20],
                                                  _f(nm[i]["score"], "%.3f")))
+    L.extend(withs("record"))
     L.append("TIER A by explicit criteria (%d):" % len(T["explicit"]))
     for i in T["explicit"]:
         L.append("  %-6s %-28s explicit max %s mean %s docs %d" % (i, nm[i]["name"][:28],
                                                                   _f(nm[i]["explicit_max"], "%.0f"),
                                                                   _f(nm[i]["explicit_mean"], "%.2f"),
                                                                   nm[i]["own_docs"]))
+    L.extend(withs("explicit"))
     L.append("CONTROL (seed %d, %d): %s" % (SEED, len(T["control"]), " ".join(T["control"])))
+    L.extend(withs("control"))
     for k in range(0, max(len(T["B"]), 1), 20):
         L.append(("TIER B (%d): " % len(T["B"]) if k == 0 else "  ") + " ".join(T["B"][k:k + 20]))
+    L.extend(withs("B"))
     for k in range(0, max(len(res["found"]), 1), 25):
         L.append(("FOUNDATION documents (%d): " % len(res["found"]) if k == 0 else "  ")
                  + " ".join(str(x) for x in res["found"][k:k + 25]))

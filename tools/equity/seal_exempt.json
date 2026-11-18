@@ -1,31 +1,37 @@
 {
- "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Exactly two registered jobs may exist: the scorecard and the holdings job. code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call.",
+ "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Exactly two registered jobs may exist: the scorecard and the holdings job. code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call, each with its exact argument list (a regular expression that the whole argument text must match, in order).",
  "jobs": [
   {
    "registered_job": "scorecard",
    "module": "eq_scorecard",
-   "code_sha256": "d46db69f457b25ca012fd548fee9a81e41c425a7a4593168ee55e77c29c7de63",
+   "code_sha256": "f7f542646da4da43a96cbfdfe8e817247ccb519b7872519dab299188f6bb5db8",
    "registration": "docs/research/equity/STAGE0_REGISTRATION.md sections 2-9, 11, 12",
    "output": "section 8",
    "names": [
     {
      "pattern": "eq_sc_pull_v\\d+[a-z]?",
-     "functions": [
-      "pull_base",
-      "pull_crsp",
-      "pull_agg",
-      "pull_hold",
-      "pull_funds",
-      "pull_status"
-     ],
-     "delete_prefix": "eq_sc_"
+     "delete_prefix": "eq_sc_",
+     "functions": {
+      "pull_base": "sql, save, out, DATA, budget=\\d+",
+      "pull_crsp": "sql, save, out, DATA, budget=\\d+",
+      "pull_agg": "sql, save, out, DATA, budget=\\d+",
+      "pull_hold": "sql, load, save, out, DATA, budget=\\d+",
+      "pull_funds": "sql, load, save, out, DATA, budget=\\d+",
+      "pull_status": "load, out, DATA"
+     }
     },
     {
      "pattern": "eq_scorecard_v\\d+[a-z]?",
-     "functions": [
-      "build",
-      "report"
-     ]
+     "functions": {
+      "build": "load, save, out, DATA",
+      "report": "load, out, [1-9]\\d?, [1-9]\\d?"
+     }
+    },
+    {
+     "pattern": "eq_sc_cleanup_v\\d+[a-z]?",
+     "functions": {
+      "cleanup": "out, DATA"
+     }
     }
    ]
   }

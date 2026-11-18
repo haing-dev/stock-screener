@@ -3,7 +3,8 @@
 
     python3 tools/equity/seal_check.py [JOB.json ...] [--lib DIR ...]
 
-Default jobs: tools/wrdsq/jobs/eq_sc_pull_v1.json, eq_scorecard_v1.json, eq_precheck_v1.json; default lib folders:
+Default jobs: tools/wrdsq/jobs/eq_sc_pull_v1.json, eq_scorecard_v1.json, eq_precheck_v1.json,
+eq_sc_cleanup_v1.json; default lib folders:
 tools/equity/wrds, tools/wrdsq/lib. Prints PASS or REFUSED per job with the reasons, the lock id and, for a
 seal-exempt job, its code hash and input hash. Exit code 0 only if every job passes.
 
@@ -11,16 +12,17 @@ Rules
 - Every job: no file in a lib folder may carry the name of a standard-library module, numpy or pandas (it would be
   imported instead of the real one, unchecked).
 - Seal-exempt jobs (tools/equity/seal_exempt.json): the job name matches a registered pattern; every python step is
-  exactly the template `import <module>\\n<module>.<function>(<args>)` with a registered function and arguments only
-  from sql, load, save, out, DATA, whole numbers, budget=<n>; other steps only `datasets` (and `delete` of the
-  registered prefix where the pattern allows it). The module's code hash (the module with its frozen input block
+  exactly the template `import <module>\\n<module>.<function>(<args>)`, the whole step text, where the function is
+  registered for that job name and <args> fully matches its registered argument list (in order); other steps only
+  `datasets` (and `delete` of the registered prefix where the pattern allows it). The module's code hash (the module with its frozen input block
   left out) must match; the block may hold only NAME = json.loads("...") with valid JSON; the module may import no
   lib module.
 - Other jobs whose name starts with eq_: no pull or export step; no delete of a scorecard data set; python steps and
   every lib module they import are read as syntax trees. Refused: a direct read (the names sql, db, load, DATA,
   unless passed to eq_reader.read / load_ds / count or to a function of a lib module that is itself checked; any
   read_sql / read_csv / raw_sql / execute call; open, exec, eval, getattr and similar), any dunder attribute, *args /
-  **kwargs in a reader call, the keyword exempt=, access to anything in eq_reader except read, load_ds, count and
+  **kwargs in a reader call, the keyword exempt=, any keyword a reader function does not accept (count takes none:
+  only a named check as a plain string), access to anything in eq_reader except read, load_ds, count and
   SealError, imports outside a short list, importing a seal-exempt module, and a string naming a scorecard data set
   (eq_sc_...) anywhere except as the name given to eq_reader.load_ds. eq_reader.py must equal the registered file.
 - Jobs whose name does not start with eq_: refused if any step or imported lib module names a scorecard data set
@@ -39,7 +41,8 @@ READER = os.path.join(ROOT, "tools", "equity", "wrds", "eq_reader.py")
 EXEMPT = os.path.join(ROOT, "tools", "equity", "seal_exempt.json")
 ME = os.path.abspath(__file__)
 JOBS = os.path.join(ROOT, "tools", "wrdsq", "jobs")
-DEFAULT_JOBS = [os.path.join(JOBS, n) for n in ("eq_sc_pull_v1.json", "eq_scorecard_v1.json", "eq_precheck_v1.json")]
+DEFAULT_JOBS = [os.path.join(JOBS, n) for n in ("eq_sc_pull_v1.json", "eq_scorecard_v1.json", "eq_precheck_v1.json",
+                                                "eq_sc_cleanup_v1.json")]
 DEFAULT_LIBS = [os.path.join(ROOT, "tools", "equity", "wrds"), os.path.join(ROOT, "tools", "wrdsq", "lib")]
 
 META = {"libraries", "tables", "search", "describe", "datasets"}
@@ -56,8 +59,8 @@ BAD_ATTRS = {"raw_sql", "read_sql", "read_sql_query", "read_sql_table", "execute
              "read_html", "read_clipboard", "load", "loadtxt", "genfromtxt", "fromfile", "memmap", "system",
              "popen", "f_globals", "f_locals", "f_back", "gi_frame", "cr_frame", "tb_frame"}
 READER_FUNCS = {"read", "load_ds", "count", "SealError"}
-READER_MAXPOS = {"read": 6, "load_ds": 4, "count": 7}
-ARG_OK = re.compile(r"^(sql|load|save|out|DATA|\d+|budget=\d+)$")
+READER_MAXPOS = {"read": 6, "load_ds": 4, "count": 4}
+READER_KW = {"read": {"where"}, "load_ds": set(), "count": set()}
 INPUT_BEGIN = "# >>> FROZEN INPUT"
 INPUT_END = "# <<< FROZEN INPUT"
 DS_MARK = "eq_sc_"
@@ -199,6 +202,11 @@ class Scan(ast.NodeVisitor):
                     self.err(node, "eq_reader.%s is not a reader function" % fn)
                 if len(node.args) > READER_MAXPOS.get(fn, 0):
                     self.err(node, "too many positional arguments to eq_reader.%s" % fn)
+                for k in node.keywords:
+                    if k.arg is not None and k.arg != "exempt" and k.arg not in READER_KW.get(fn, set()):
+                        self.err(node, "keyword %s= is not accepted by eq_reader.%s" % (k.arg, fn))
+                if fn == "count" and len(node.args) >= 2 and not isinstance(node.args[1], ast.Constant):
+                    self.err(node, "eq_reader.count takes a named check as a plain string")
                 if fn == "load_ds" and len(node.args) >= 2 and isinstance(node.args[1], ast.Constant):
                     self.ok_str.add(id(node.args[1]))
             for a in node.args:
@@ -278,7 +286,7 @@ def check_exempt(job, entry, pat, libs):
     for m in sorted(_module_imports(text)):
         if m not in EXEMPT_MODULE_IMPORTS:
             errs.append("exempt module imports %s (not allowed)" % m)
-    tmpl = re.compile(r"^import %s\n%s\.(\w+)\(([^()]*)\)\s*$" % (mod, mod))
+    tmpl = re.compile(r"^import %s\n%s\.(\w+)\(([^()]*)\)$" % (mod, mod))
     for i, st in enumerate(job.get("steps", []), 1):
         do = st.get("do")
         if do == "datasets":
@@ -295,13 +303,13 @@ def check_exempt(job, entry, pat, libs):
         if not m:
             errs.append("step %d: not the registered template 'import %s\\n%s.<function>(<args>)'" % (i, mod, mod))
             continue
-        if m.group(1) not in pat["functions"]:
+        fns = pat["functions"]
+        if m.group(1) not in fns:
             errs.append("step %d: %s.%s is not registered for jobs named like %s" % (i, mod, m.group(1),
                                                                                     pat["pattern"]))
-        args = [a.strip() for a in m.group(2).split(",")] if m.group(2).strip() else []
-        bad = [a for a in args if not ARG_OK.match(a)]
-        if bad:
-            errs.append("step %d: arguments %s are not allowed" % (i, bad))
+        elif not re.fullmatch(fns[m.group(1)], m.group(2)):
+            errs.append("step %d: arguments (%s) do not match the registered (%s)" % (i, m.group(2)[:80],
+                                                                                    fns[m.group(1)]))
     return errs, extra
 
 
