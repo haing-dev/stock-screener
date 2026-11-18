@@ -5,7 +5,7 @@ It becomes binding when the line REGISTERED below carries a commit id, and that 
 computes any return. Plan: `EQUITY_POD_SHOP_PLAN_v0.3.md` sections 5, 6, 8.2 and 11. Every number here is fixed by
 this file. A later change is a new version of this file with its own date, and the old result is kept.
 
-REGISTERED: (not yet)
+REGISTERED: commit 184b5d0 (2026-11-18), before any return was computed
 
 ## 1. Order of work, and what each part may see
 | Phase | What | May read | Comes back |
