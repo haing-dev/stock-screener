@@ -885,7 +885,7 @@ def build(load, save, out, data=None):
             if lrec else pd.DataFrame(columns=["bk", "w", "n"]))
     out("build: %d fund portfolios with returns (%.0f s)" % (frec.gid.nunique(), time.time() - t0))
     res = _results(tab, ftab, ltab, lib, lown, load, hdr, frec)
-    res.update({"st": st, "M": M, "tab": tab, "ftab": ftab, "ltab": ltab, "frec": frec, "panel": panel,
+    res.update({"lib": lib, "st": st, "M": M, "tab": tab, "ftab": ftab, "ltab": ltab, "frec": frec, "panel": panel,
                 "peers": peers})
     lines = _report_lines(res)
     save("eq_sc_report", pd.DataFrame({"line": lines}))

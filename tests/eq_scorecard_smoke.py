@@ -257,7 +257,7 @@ def frozen_rows():
                   "explicit_mean": xe, "own_docs": own, "ran_money": ran})
     add("I001", "Alpha One", "13f", "A", "quality_compounders", mg="1", own=3, xm="2", xe="1.5")
     add("I002", "Gap Pair", "13f", "B", "long_short", mg="3 4", own=2)
-    add("I003", "Fund Planted", "fund", "F", "deep_value", fn="5001 5002", own=2)
+    add("I003", "Fund Planted", "fund", "F", "deep_value", fn="5002", own=2)      # one class stands for the fund
     add("I004", "Stopper", "13f", "A", "growth", mg="2", s="2012-01")
     add("I005", "Writer", "none", "N", "none", ran="no", xm="3", xe="3")
     add("I006", "Explicit Man", "none", "N", "none", own=4, xm="3", xe="2.5")
@@ -320,8 +320,12 @@ class Fake(object):
         if kind == "fret":
             ed = set(W["fsty"][W["fsty"].crsp_obj_cd.str.startswith("ED")].crsp_fundno)
             lib = re.search(r"or crsp_fundno in \(([\d,]+)\)", q)
-            if lib:
-                ed |= {int(x) for x in lib.group(1).split(",")}
+            if lib:                                         # the listed classes and all classes of their funds
+                ln = {int(x) for x in lib.group(1).split(",")}
+                h = W["fhdr"]
+                cg = set(h[h.crsp_fundno.isin(ln)].crsp_cl_grp.dropna())
+                pt = set(h[h.crsp_fundno.isin(ln) & h.crsp_cl_grp.isna()].crsp_portno.dropna())
+                ed |= ln | set(h[h.crsp_cl_grp.isin(cg) | (h.crsp_cl_grp.isna() & h.crsp_portno.isin(pt))].crsp_fundno)
             f = W["fret"]
             return f[(f.caldt >= args[0]) & (f.caldt <= args[1]) & f.crsp_fundno.isin(ed)].copy()
         raise AssertionError("unknown query " + kind)
@@ -511,7 +515,8 @@ def checks(res, parts, W, fz):
     ft = res["ftab"]
     out_ = ft[ft.bk.isin(["G6100", "G6101", "G6102"]) & ft.grp]
     ck("C09 fund ranks among funds only: planted fund rank share 1",
-       inv["I003"]["win"]["2011-25"]["rk"] == 1.0, inv["I003"]["win"]["2011-25"].get("rk"))
+       inv["I003"]["win"]["2011-25"]["rk"] == 1.0 and inv["I003"]["months"] == 180,
+       inv["I003"]["win"]["2011-25"].get("rk"))
     ck("C09b index, small and non-domestic funds stay out of the fund rank group; style gap excluded 2011-15",
        len(out_) == 0 and not ft[(ft.bk == "G6103") & (ft.w == "2011-15")].grp.any())
     pe = res["peers"]
@@ -558,6 +563,13 @@ def checks(res, parts, W, fz):
        inv["I024"]["months"] == 120 and inv["I010"]["months"] == 180 and inv["I008"]["months"] == 145
        and inv["I004"]["months"] == 65)
     ex_ = g6[np.isfinite(g6.pa)]
+    r3_, r4_ = book_months(res, 3)[0], book_months(res, 4)[0]
+    lb = [d for d in res["lib"] if res["lib"][d][0] == "I002"][0]
+    rl, _ = book_months(res, lb)
+    v34 = {m: float(st[(st.bk == m) & (st.q == 2011 * 4 + 2)].val.iloc[0]) for m in (3, 4)}
+    big_ = 3 if v34[3] >= v34[4] else 4
+    ck("C16b one filer under two mgrno: per quarter the larger filing (Jan 2012 = that filer's book; 180 months)",
+       abs(rl[201201] - (r3_ if big_ == 3 else r4_)[201201]) < 1e-12 and len(rl) == 180, len(rl))
     ck("C17 variants: top-10 = whole book when 10 or fewer positions; no new positions in a constant book",
        np.allclose(ex_.pa, ex_.p10) and g6.pn.isna().all())
     ck("C18 peer-adjusted return leaves out the ETF and the ADR (value share with a peer group < 1)",
