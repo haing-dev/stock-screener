@@ -149,3 +149,20 @@ both); and the table of first-block fifth against second-block fifth with an ext
   class, a rank computed across record kinds. The code check must catch each one. Catch rate on record.
 - The job passes the seal checker as one of the two seal-exempt jobs, and the run is logged in `SEAL_LOG.md` with
   the code hash and the lock id.
+
+## 12. Exact readings (fixed with this registration)
+Where the sections above left room, the reading is the one written in `SCORECARD_BUILD_NOTE.md` section 3, items 1
+to 22, which the code implements. They are part of this registration. The ones that matter most:
+- A library investor's alpha over its frozen months takes the place of its own filers or funds in the window's rank
+  group; the rank share is (number below + half the number equal) / (group size - 1).
+- Quarter-end weights are the weights at entry. Only a gap of exactly one missed quarter is bridged.
+- Any CRSP security with a price at the quarter-end counts as matched (funds and ADRs included); peer groups cover
+  common shares on NYSE, NYSE American and Nasdaq only.
+- The market is the Fama-French market return (excess return plus T-bill).
+- Statistics are printed for a window if the window or the whole 2011-25 record has 60 months; otherwise rank
+  shares only.
+- An investor with no rank share takes no place by record. If ten or fewer are eligible for control, all are taken.
+- The frozen file carries the role coded at E0.1; only role investor with `ran_money` = yes can take an explicit
+  place.
+- Equity jobs use no pull or export steps outside the reader. The scorecard runs under names `eq_scorecard_v<n>`;
+  a re-run on the same inputs fixes a logged bug only.
