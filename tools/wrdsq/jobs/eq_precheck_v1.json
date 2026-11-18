@@ -1,0 +1,21 @@
+{
+ "name": "eq_precheck_v1",
+ "steps": [
+  {
+   "do": "python",
+   "code": "import eq_precheck\neq_precheck.delist(sql, out)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_precheck\neq_precheck.first_versions(sql, out)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_precheck\neq_precheck.factors(sql, out)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_precheck\neq_precheck.ratios(sql, out)"
+  }
+ ]
+}

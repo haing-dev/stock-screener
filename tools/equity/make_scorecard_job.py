@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Writes the frozen investor table into tools/equity/wrds/eq_scorecard.py and the job file
-tools/wrdsq/jobs/eq_scorecard_v1.json (registration STAGE0_REGISTRATION.md sections 6-8, step E0.4 phase B).
+"""Writes the frozen investor table into tools/equity/wrds/eq_scorecard.py and the job files
+tools/wrdsq/jobs/eq_sc_pull_v1.json (pulls) and eq_scorecard_v1.json (build + report) (registration STAGE0_REGISTRATION.md sections 6-8, step E0.4 phase B).
 
     python3 tools/equity/make_scorecard_job.py [--frozen CSV] [--inventory CSV] [--words CSV]
                                                 [--module PY] [--job JSON] [--name eq_scorecard_v1]
@@ -9,7 +9,9 @@ tools/wrdsq/jobs/eq_scorecard_v1.json (registration STAGE0_REGISTRATION.md secti
             (13f | fund | none), mgrnos (space-separated tfn mgrno), fundnos (space-separated crsp_fundno of all
             share classes), start_ym, end_ym (YYYY-MM, months the investor ran the book; blank = whole period),
             grade (A B C F N), primary_style, region, explicit_max, explicit_mean, own_docs, ran_money
-            (yes | no | unclear); optional role (investor | allocator; blank = investor).
+            (yes | no | unclear), role (E0.1 role: investor | allocator | ...), known_mgrnos, known_fundnos
+            (every filer and fund matched to the investor, whatever its record kind; left out of the best-scored
+            lists). Other columns are ignored.
 --inventory docs/research/equity/inventory/inventory.csv (E0.1): doc, technique, technique_depth and words (word
             count of the document) for the foundation list; --words CSV (doc, words) supplies words if the
             inventory has no such column. Without word counts the generator stops.
@@ -31,8 +33,9 @@ FROZEN = os.path.join(ROOT, "docs", "research", "equity", "inventory", "frozen_i
 INVENTORY = os.path.join(ROOT, "docs", "research", "equity", "inventory", "inventory.csv")
 MODULE = os.path.join(ROOT, "tools", "equity", "wrds", "eq_scorecard.py")
 JOB = os.path.join(ROOT, "tools", "wrdsq", "jobs", "eq_scorecard_v1.json")
+PULL_JOB = os.path.join(ROOT, "tools", "wrdsq", "jobs", "eq_sc_pull_v1.json")
 COLS = ["id", "name", "record_kind", "mgrnos", "fundnos", "start_ym", "end_ym", "grade", "primary_style", "region",
-        "explicit_max", "explicit_mean", "own_docs", "ran_money"]
+        "explicit_max", "explicit_mean", "own_docs", "ran_money", "role", "known_mgrnos", "known_fundnos"]
 REPORT_PARTS = 4
 
 
@@ -93,7 +96,10 @@ def read_frozen(path):
              "primary_style": (r["primary_style"] or "none").strip() or "none", "region": r["region"].strip(),
              "explicit_max": num(r["explicit_max"], w), "explicit_mean": num(r["explicit_mean"], w),
              "own_docs": num(r["own_docs"], w, int) or 0, "ran_money": r["ran_money"].strip().lower(),
-             "role": (r.get("role") or "investor").strip().lower() or "investor"}
+             "role": (r["role"] or "").strip().lower(),
+             "known_mgrnos": ids(r["known_mgrnos"], w), "known_fundnos": ids(r["known_fundnos"], w)}
+        if p["role"] not in ("investor", "allocator", "executive", "expert", "host"):
+            die("%s: role %r" % (w, p["role"]))
         if kind == "13f" and not p["mgrnos"]:
             die("%s: record_kind 13f without mgrnos" % w)
         if kind == "fund" and not p["fundnos"]:
@@ -139,17 +145,27 @@ def write_module(path, inv, docs):
     return seal_check.code_hash(new), seal_check.input_hash(new)
 
 
+def _py(code):
+    return {"do": "python", "code": "import eq_scorecard\n" + code}
+
+
+def pull_job(name):
+    """Pulls only (budgets sum to 2.25 h, under the runner's 3-hour watchdog); re-run as v1b, v1c ... until
+    pull_status prints ALL PULLS COMPLETE."""
+    steps = [_py("eq_scorecard.pull_base(sql, save, out, DATA, budget=900)"),
+             _py("eq_scorecard.pull_crsp(sql, save, out, DATA, budget=900)"),
+             _py("eq_scorecard.pull_agg(sql, save, out, DATA, budget=3000)"),
+             _py("eq_scorecard.pull_hold(sql, load, save, out, DATA, budget=2400)"),
+             _py("eq_scorecard.pull_funds(sql, load, save, out, DATA, budget=900)"),
+             _py("eq_scorecard.pull_status(load, out, DATA)"),
+             {"do": "datasets"}]
+    return {"name": name, "steps": steps}
+
+
 def job(name):
-    def py(code):
-        return {"do": "python", "code": "import eq_scorecard\n" + code}
-    steps = [py("eq_scorecard.pull_base(sql, save, out, DATA, budget=1200)"),
-             py("eq_scorecard.pull_crsp(sql, save, out, DATA, budget=1500)"),
-             py("eq_scorecard.pull_agg(sql, save, out, DATA, budget=3600)"),
-             py("eq_scorecard.pull_hold(sql, load, save, out, DATA, budget=1800)"),
-             py("eq_scorecard.pull_funds(sql, save, out, DATA, budget=1200)"),
-             py("eq_scorecard.build(load, save, out, DATA)")]
-    steps += [py("eq_scorecard.report(load, out, %d, %d)" % (k, REPORT_PARTS)) for k in range(1, REPORT_PARTS + 1)]
-    steps.append({"do": "datasets"})
+    """Build and report only."""
+    steps = [_py("eq_scorecard.build(load, save, out, DATA)")]
+    steps += [_py("eq_scorecard.report(load, out, %d, %d)" % (k, REPORT_PARTS)) for k in range(1, REPORT_PARTS + 1)]
     return {"name": name, "steps": steps}
 
 
@@ -161,9 +177,11 @@ def main():
     ap.add_argument("--module", default=MODULE)
     ap.add_argument("--job", default=JOB)
     ap.add_argument("--name", default="eq_scorecard_v1")
+    ap.add_argument("--pull-job", default=PULL_JOB)
+    ap.add_argument("--pull-name", default="eq_sc_pull_v1")
     a = ap.parse_args()
-    if not re.match(r"^eq_scorecard_v\d+[a-z]?$", a.name):
-        die("job name must look like eq_scorecard_v1")
+    if not re.match(r"^eq_scorecard_v\d+[a-z]?$", a.name) or not re.match(r"^eq_sc_pull_v\d+[a-z]?$", a.pull_name):
+        die("job names must look like eq_scorecard_v1 and eq_sc_pull_v1")
     if not os.path.exists(a.frozen):
         die("%s does not exist (phase A2 writes it)" % a.frozen)
     inv = read_frozen(a.frozen)
@@ -171,11 +189,12 @@ def main():
     ch, ih = write_module(a.module, inv, docs)
     os.makedirs(os.path.dirname(os.path.abspath(a.job)), exist_ok=True)
     json.dump(job(a.name), open(a.job, "w"), indent=1)
+    json.dump(pull_job(a.pull_name), open(a.pull_job, "w"), indent=1)
     kinds = [p["record_kind"] for p in inv]
     print("wrote %s (%d investors: 13f %d, fund %d, none %d; %d documents)" % (a.module, len(inv), kinds.count("13f"),
                                                                              kinds.count("fund"), kinds.count("none"),
                                                                              len(docs)))
-    print("wrote %s" % a.job)
+    print("wrote %s and %s" % (a.pull_job, a.job))
     print("code sha256 %s" % ch)
     print("input sha256 %s" % ih)
 

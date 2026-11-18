@@ -9,20 +9,27 @@ Build note (functions, the reading taken where the registration left room, run t
 docs/research/equity/SCORECARD_BUILD_NOTE.md. The investor table is the frozen file of phase A2, embedded below by
 tools/equity/make_scorecard_job.py; it is the only investor input.
 
-Job steps (tools/wrdsq/jobs/eq_scorecard_v1.json); every pull is resumable (one data set per year, kept on WRDS):
-  pull_base(sql, save, out, DATA)        manager names, CUSIP map, factors, book-to-market, fund headers and styles
-  pull_crsp(sql, save, out, DATA)        crsp.msf_v2 2009-06..2025-12
-  pull_agg(sql, save, out, DATA)         per filer and quarter: matched positions and value (SQL aggregate)
-  pull_hold(sql, load, save, out, DATA)  holdings rows of the filers that can be in a rank group, and library filers
-  pull_funds(sql, save, out, DATA)       CRSP fund monthly returns and assets
-  build(load, save, out)                 the scorecard; the report lines are kept as data set eq_sc_report
-  report(load, out, part, parts)         prints one part of the report (each python step stays under 60,000 chars)
+Two job names, both registered in tools/equity/seal_exempt.json (template steps only):
+eq_sc_pull_v1 (re-run as eq_sc_pull_v1b, v1c, ... until pull_status prints ALL PULLS COMPLETE); every pull is
+resumable, one data set per year, written under a temporary name and renamed:
+  pull_base(sql, save, out, DATA)              manager names, CUSIP map, factors, book-to-market, fund headers, styles
+  pull_crsp(sql, save, out, DATA)              crsp.msf_v2 2009-06..2025-12
+  pull_agg(sql, save, out, DATA)               per filer and quarter: matched positions and value (SQL aggregate)
+  pull_hold(sql, load, save, out, DATA)        holdings rows of filers that can be in a rank group + library filers
+  pull_funds(sql, load, save, out, DATA)       CRSP fund monthly returns and assets (whole class groups)
+  pull_status(load, out, DATA)                 ALL PULLS COMPLETE, or what is missing
+eq_scorecard_v1 (build and report only):
+  build(load, save, out, DATA)                 refuses to start unless every pull is complete and made for this input;
+                                               keeps the report lines as data set eq_sc_report; returns nothing
+  report(load, out, part, parts)               prints one part of the report (each python step under 60,000 chars)
 """
 import hashlib
 import json
 import os
 import random
+import re
 import time
+import traceback
 import warnings
 
 import numpy as np
@@ -87,6 +94,35 @@ def input_sha():
     return hashlib.sha256(json.dumps([INV, DOCS], sort_keys=True).encode()).hexdigest()
 
 
+def pull_key():
+    """Hash of the investor input the pulls depend on: library 13F filers (always pulled) and library funds (all
+    their share classes pulled). A change here needs fresh eq_sc_cand, eq_sc_hold_*, eq_sc_fret_* and eq_sc_fmeta."""
+    return hashlib.sha256(json.dumps([_lib_mgrnos(), _lib_fundnos()]).encode()).hexdigest()
+
+
+def code_sha():
+    """SHA-256 of this module's code with the frozen input block left out (seal_check.code_hash), computed from the
+    file that is running."""
+    try:
+        text = open(__file__, encoding="utf-8").read()
+    except (IOError, OSError, NameError):
+        return "unknown"
+    lines = text.splitlines(True)
+    try:
+        i = next(k for k, x in enumerate(lines) if x.startswith("# >>> FROZEN INPUT"))
+        j = next(k for k, x in enumerate(lines) if x.startswith("# <<< FROZEN INPUT"))
+    except StopIteration:
+        return "unknown"
+    return hashlib.sha256("".join(lines[:i + 1] + lines[j:]).encode("utf-8")).hexdigest()
+
+
+def _clean(e):
+    """Exception text without SQL, id lists or data: class and the first line, before any '[SQL'."""
+    s = str(e).split("[SQL")[0].strip().splitlines()
+    s = s[0] if s else ""
+    return "%s: %s" % (type(e).__name__, re.sub(r"\d[\d,.\s]{20,}", "<numbers>", s)[:200])
+
+
 # ------------------------------------------------------------------------------------------------------- pulls
 def _runner(save, out, data, budget):
     t0 = time.time()
@@ -102,8 +138,15 @@ def _runner(save, out, data, budget):
             st["left"] += 1
             return
         t1 = time.time()
-        df = fn()
-        save(name, df)
+        try:
+            df = fn()
+        except Exception as e:  # noqa: BLE001
+            raise RuntimeError("%s not pulled: %s" % (name, _clean(e))) from None
+        if data:                                  # written under a temporary name, then renamed: never half a file
+            save(name + "_part", df)
+            os.replace(os.path.join(data, name + "_part.csv.gz"), os.path.join(data, name + ".csv.gz"))
+        else:
+            save(name, df)
         out("  %-18s %9d rows %6.0f s" % (name, len(df), time.time() - t1))
     return have, step, st, t0
 
@@ -135,9 +178,17 @@ def pull_base(sql, save, out, data, budget=9000):
     _done(out, "pull_base", st, t0)
 
 
+def _crsp_years():
+    return list(range(CRSP_FROM // 100, M_LAST // 100 + 1))
+
+
+def _fund_years():
+    return list(range(M_FIRST // 100 - 1, M_LAST // 100 + 1))
+
+
 def pull_crsp(sql, save, out, data, budget=9000):
     have, step, st, t0 = _runner(save, out, data, budget)
-    for y in range(CRSP_FROM // 100, M_LAST // 100 + 1):
+    for y in _crsp_years():
         lo = "%d-%02d-01" % (y, CRSP_FROM % 100) if y == CRSP_FROM // 100 else "%d-01-01" % y
         step("eq_sc_msf_%d" % y, lambda lo=lo, y=y: sql(
             "/* eqsc msf %s %d-12-31 */ select permno, yyyymm, mthret, mthprc, shrout, primaryexch, securitytype, "
@@ -188,11 +239,21 @@ def pull_agg(sql, save, out, data, budget=9000):
 
 
 def _lib_mgrnos():
+    """Filers of investors ranked on their 13F (their holdings are always pulled)."""
     return sorted({int(m) for p in INV if p.get("record_kind") == "13f" for m in p.get("mgrnos", [])})
 
 
 def _lib_fundnos():
     return sorted({int(f) for p in INV if p.get("record_kind") == "fund" for f in p.get("fundnos", [])})
+
+
+def _known_mgrnos():
+    """Every filer matched to a library investor, whatever its record kind (left out of the best-scored list)."""
+    return {int(m) for p in INV for k in ("mgrnos", "known_mgrnos") for m in p.get(k, [])}
+
+
+def _known_fundnos():
+    return {int(f) for p in INV for k in ("fundnos", "known_fundnos") for f in p.get(k, [])}
 
 
 def candidates(load):
@@ -201,7 +262,7 @@ def candidates(load):
     a = a[(a.npos >= 1) & (a.val > 0)]
     f = pd.DataFrame({"bk": a.mgrno.astype("int64").to_numpy(), "q": _q_of(a.rdate),
                       "npos": a.npos.to_numpy(float), "val": a.val.to_numpy(float)})
-    f = f.groupby(["bk", "q"], as_index=False).agg(npos=("npos", "sum"), val=("val", "sum"))
+    f = f.groupby(["bk", "q"], as_index=False).agg(npos=("npos", "max"), val=("val", "max"))
     f = _schedule(f, {})
     keep = set()
     for w, a0, b0 in WIN:
@@ -213,12 +274,26 @@ def candidates(load):
     return sorted(keep | set(_lib_mgrnos()))
 
 
+def _stale(load, have, name, out):
+    """True (and a message) if a stored data set was made for another investor input."""
+    if not have(name):
+        return False
+    k = load(name).key.astype(str)
+    if len(k) and k.iloc[0] == pull_key():
+        return False
+    out("%s was pulled for another investor input: delete eq_sc_cand, eq_sc_hold_*, eq_sc_fret_*, eq_sc_fmeta "
+        "(a delete step in the pull job) and pull again" % name)
+    return True
+
+
 def pull_hold(sql, load, save, out, data, budget=9000):
     have, step, st, t0 = _runner(save, out, data, budget)
     if not all(have("eq_sc_agg_%d" % y) for y in _hyears()):
         out("pull_hold: the per-quarter aggregates are not complete; run pull_agg again")
         return
-    step("eq_sc_cand", lambda: pd.DataFrame({"mgrno": candidates(load)}))
+    if _stale(load, have, "eq_sc_cand", out):
+        return
+    step("eq_sc_cand", lambda: pd.DataFrame({"mgrno": candidates(load)}).assign(key=pull_key()))
     if not have("eq_sc_cand"):
         out("pull_hold: candidate list not written yet; run again")
         return
@@ -234,22 +309,56 @@ def pull_hold(sql, load, save, out, data, budget=9000):
     _done(out, "pull_hold", st, t0)
 
 
-def pull_funds(sql, save, out, data, budget=9000):
+FUND_GROUPS = ("crsp_fundno in (select h.crsp_fundno from crsp.fund_hdr h where h.crsp_fundno in (%(s)s) or "
+               "h.crsp_cl_grp in (select h2.crsp_cl_grp from crsp.fund_hdr h2 where h2.crsp_fundno in (%(s)s)) or "
+               "(h.crsp_cl_grp is null and h.crsp_portno in (select h3.crsp_portno from crsp.fund_hdr h3 where "
+               "h3.crsp_cl_grp is null and h3.crsp_fundno in (%(s)s))))")
+
+
+def pull_funds(sql, load, save, out, data, budget=9000):
+    """Every share class of every fund (class group, else portfolio) with a class that ever had an ED code, and of
+    every library fund."""
     have, step, st, t0 = _runner(save, out, data, budget)
+    if _stale(load, have, "eq_sc_fmeta", out):
+        return
     lib = ",".join(str(f) for f in _lib_fundnos())
-    cond = "crsp_fundno in (select crsp_fundno from crsp.fund_style where crsp_obj_cd like 'ED%')"
-    if lib:      # all share classes of the library funds (same class group, else same portfolio)
-        cond = ("(%s or crsp_fundno in (%s) or crsp_fundno in (select crsp_fundno from crsp.fund_hdr where "
-                "crsp_cl_grp in (select crsp_cl_grp from crsp.fund_hdr where crsp_fundno in (%s)) or "
-                "(crsp_cl_grp is null and crsp_portno in (select crsp_portno from crsp.fund_hdr where "
-                "crsp_cl_grp is null and crsp_fundno in (%s)))))" % (cond, lib, lib, lib))
-    for y in range(M_FIRST // 100 - 1, M_LAST // 100 + 1):
+    cond = FUND_GROUPS % {"s": "select crsp_fundno from crsp.fund_style where crsp_obj_cd like 'ED%'"}
+    if lib:
+        cond = "(%s or %s)" % (cond, FUND_GROUPS % {"s": lib})
+    for y in _fund_years():
         lo = "%d-12-01" % y if y < M_FIRST // 100 else "%d-01-01" % y
         step("eq_sc_fret_%d" % y, lambda lo=lo, y=y: sql(
-            "/* eqsc fret %s %d-12-31 */ select crsp_fundno, caldt, mtna::float8 as mtna, mret::float8 as mret "
-            "from crsp.monthly_tna_ret_nav where caldt between '%s' and '%d-12-31' and %s"
-            % (lo, y, lo, y, cond)))
+            "/* eqsc fret %s %d-12-31 lib=%s */ select crsp_fundno, caldt, mtna::float8 as mtna, mret::float8 as "
+            "mret from crsp.monthly_tna_ret_nav where caldt between '%s' and '%d-12-31' and %s"
+            % (lo, y, lib or "-", lo, y, cond)))
+    if all(have("eq_sc_fret_%d" % y) for y in _fund_years()):
+        step("eq_sc_fmeta", lambda: pd.DataFrame({"key": [pull_key()]}))
     _done(out, "pull_funds", st, t0)
+
+
+def _inputs():
+    n = ["eq_sc_names", "eq_sc_cusip", "eq_sc_ff", "eq_sc_bm", "eq_sc_fhdr", "eq_sc_fsty", "eq_sc_cand", "eq_sc_fmeta"]
+    n += ["eq_sc_msf_%d" % y for y in _crsp_years()]
+    n += ["eq_sc_agg_%d" % y for y in _hyears()]
+    n += ["eq_sc_hold_%d" % y for y in _hyears()]
+    n += ["eq_sc_fret_%d" % y for y in _fund_years()]
+    return n
+
+
+def _pull_state(load, data):
+    miss = [n for n in _inputs() if not os.path.exists(os.path.join(data, n + ".csv.gz"))]
+    stale = [n for n in ("eq_sc_cand", "eq_sc_fmeta") if n not in miss
+             and str(load(n).key.astype(str).iloc[0]) != pull_key()]
+    return miss, stale
+
+
+def pull_status(load, out, data):
+    miss, stale = _pull_state(load, data)
+    if not miss and not stale:
+        out("ALL PULLS COMPLETE: %d data sets, pull key %s" % (len(_inputs()), pull_key()[:16]))
+    else:
+        out("PULLS NOT COMPLETE: %d data sets missing (first: %s), %d made for another investor input%s"
+            % (len(miss), miss[0] if miss else "-", len(stale), (" (%s)" % ", ".join(stale)) if stale else ""))
 
 
 # ----------------------------------------------------------------------------------------------- CRSP panel
@@ -271,7 +380,9 @@ class Panel(object):
         self.C = np.full(shape, np.nan)
         self.COM = np.zeros(shape, bool)
         self.NY = np.zeros(shape, bool)
-        self.R[ri, j] = pd.to_numeric(msf.mthret, errors="coerce").to_numpy(float)
+        r = np.array(pd.to_numeric(msf.mthret, errors="coerce"), dtype=float)   # includes the delisting return
+        r[r < -1] = np.nan                                                 # any missing-value code
+        self.R[ri, j] = r
         p = np.abs(pd.to_numeric(msf.mthprc, errors="coerce").to_numpy(float))
         p[p == 0] = np.nan
         self.P[ri, j] = p
@@ -299,10 +410,7 @@ class Panel(object):
         return v
 
 
-def stock_returns(msf):
-    """Monthly total return per CRSP security: crsp.msf_v2 mthret, which includes the delisting return in the
-    delisting month. After its last month a security has no row: a position in it earns zero and keeps its weight."""
-    return msf
+BM_AMBIGUOUS = [0]
 
 
 def _bm_table(bm, panel):
@@ -313,7 +421,13 @@ def _bm_table(bm, panel):
     b["fy"] = d[d.dt.month <= 6].dt.year.to_numpy()
     b["d"] = d[d.dt.month <= 6].to_numpy()
     b["bm"] = pd.to_numeric(b.bm, errors="coerce")
-    b = b[np.isfinite(b.bm)].sort_values(["permno", "fy", "d", "bm"]).drop_duplicates(["permno", "fy"], keep="last")
+    b = b[np.isfinite(b.bm)]
+    last = b.groupby(["permno", "fy"]).d.transform("max")
+    b = b[b.d == last]
+    nb = b.groupby(["permno", "fy"]).bm.transform("nunique")
+    amb = b[nb > 1][["permno", "fy"]].drop_duplicates()
+    b = b[nb == 1].drop_duplicates(["permno", "fy"])          # two different values on the latest date: no value
+    BM_AMBIGUOUS[0] = len(amb)
     out = np.full((len(panel.perm), FY1 - FY0 + 1), np.nan)
     ri, ok = panel.rows(b.permno.to_numpy())
     col = b.fy.to_numpy() - FY0
@@ -482,6 +596,9 @@ def _stats(mi, ret, ff, extra=None):
 
 
 # ------------------------------------------------------------------------------------------ 13F copy books
+NON_QUARTER_END = [0]
+
+
 def _positions(h, cus, panel):
     """Matched positions per filer and quarter (first versions; CUSIP valid at the quarter-end; CRSP price at the
     quarter-end) and per filing the filed and used value."""
@@ -490,6 +607,8 @@ def _positions(h, cus, panel):
     h["mgrno"] = h.mgrno.astype("int64")
     h["rdate"] = pd.to_datetime(h.rdate)
     h["q"] = _q_of(h.rdate)
+    NON_QUARTER_END[0] += int((h.rdate != h.rdate + pd.offsets.QuarterEnd(0)).sum())
+    h = h[h.rdate == h.groupby(["mgrno", "q"]).rdate.transform("max")]     # one filing per manager and quarter
     h["fv"] = h.shares.astype(float) * pd.to_numeric(h.prc, errors="coerce").abs().fillna(0.0).to_numpy()
     g = h.groupby(["mgrno", "q", "cusip"], as_index=False).agg(sh=("shares", "sum"), fv=("fv", "sum"),
                                                               rdate=("rdate", "first"))
@@ -514,12 +633,13 @@ def _positions(h, cus, panel):
 
 
 def _schedule(f, cut):
-    """Holding months of each filing: from the close of the deadline month, three months, buy and hold; six when
-    the filer's next filing is exactly two quarters later (one missed quarter bridged); a longer gap or no later
-    filing ends the spell after three months. cut: book -> (first, last) record month index."""
+    """Holding months of each filing (registration 3.4-3.5): from the close of the deadline month, three months,
+    buy and hold. If the next quarter's filing is missing, the portfolio is held three more months (six in all),
+    whether or not the filer files again; if the quarter after is missing too the spell ends there. Decided only
+    from what was public. cut: book -> (first, last) record month index."""
     f = f.sort_values(["bk", "q"]).reset_index(drop=True)
     nxt = f.groupby("bk").q.shift(-1)
-    f["H"] = np.where((nxt - f.q) == 2, 6, 3).astype("int64")
+    f["H"] = np.where((nxt - f.q) == 1, 3, 6).astype("int64")
     em = {q: _entry_mi(q) for q in f.q.unique()}
     f["em"] = f.q.map(em).astype("int64")
     lo = np.full(len(f), MI_FIRST, dtype="int64")
@@ -578,8 +698,9 @@ def _hold(pos, em, panel, peers):
 
 
 def _books(pos, fil, panel, peers):
-    """All filers (book = mgrno) and library 13F investors (book = -(n+1), union of their filers): filing table
-    and monthly record (copy portfolio, peer-adjusted, top-10 and new-positions variants)."""
+    """All filers (book = mgrno) and library 13F investors (book = -(n+1); several mgrno = one filer, the larger
+    filing when two file the same quarter): filing table and monthly record (copy portfolio, peer-adjusted, top-10
+    and new-positions variants). Turnover and new positions are computed quarter by quarter to keep memory small."""
     P = [pos.rename(columns={"mgrno": "bk"})]
     F = [fil.rename(columns={"mgrno": "bk"})]
     cut, lib = {}, {}
@@ -601,42 +722,52 @@ def _books(pos, fil, panel, peers):
         F.append(t[["q", "fv_all", "fv_used"]].assign(bk=bk))
     P = pd.concat(P, ignore_index=True)[["bk", "q", "permno", "val"]]
     P["w"] = P.val / P.groupby(["bk", "q"]).val.transform("sum")
+    P = P.sort_values(["q", "bk", "w", "permno"], ascending=[True, True, False, True]).reset_index(drop=True)
     st = P.groupby(["bk", "q"], as_index=False).agg(npos=("permno", "count"), val=("val", "sum"))
-    top = P.sort_values(["bk", "q", "w", "permno"], ascending=[True, True, False, True])
-    top["rk"] = top.groupby(["bk", "q"]).cumcount()
-    top = top[top.rk < 10]
-    st = st.merge(top.groupby(["bk", "q"], as_index=False).agg(top10=("w", "sum")), on=["bk", "q"])
     Fa = pd.concat(F, ignore_index=True).groupby(["bk", "q"], as_index=False)[["fv_all", "fv_used"]].sum()
     st = st.merge(Fa, on=["bk", "q"], how="left")
     with np.errstate(invalid="ignore", divide="ignore"):
         st["fvsh"] = np.where(st.fv_all > 0, st.fv_used / st.fv_all, np.nan)
-    # turnover against the previous quarter's filing, and the new positions
-    prev = P[["bk", "q", "permno", "w"]].assign(q=P.q + 1)
-    has_prev = set(zip(st.bk, st.q + 1))
-    st["hasprev"] = [(b, q) in has_prev for b, q in zip(st.bk, st.q)]
-    mm = P[["bk", "q", "permno", "w"]].merge(prev, on=["bk", "q", "permno"], how="outer", suffixes=("", "_p"))
-    mm = mm.fillna({"w": 0.0, "w_p": 0.0})
-    to = mm.assign(d=(mm.w - mm.w_p).abs()).groupby(["bk", "q"], as_index=False).d.sum()
-    st = st.merge(to, on=["bk", "q"], how="left")
-    st["to"] = np.where(st.hasprev, 0.5 * st.d, np.nan)
-    new = P.merge(prev[["bk", "q", "permno"]].assign(old=1), on=["bk", "q", "permno"], how="left")
-    new = new[new.old.isna()].merge(st.loc[st.hasprev, ["bk", "q"]], on=["bk", "q"])
-    new = new.assign(w=new.val / new.groupby(["bk", "q"]).val.transform("sum"))
     st = _schedule(st, cut)
     H = st.set_index(["bk", "q"]).H
-    res, r10, rnew = [], [], []
-    for q in sorted(st.q.unique()):
+    qs = P.q.to_numpy()
+    uq = np.unique(qs)
+    cuts = {q: (np.searchsorted(qs, q, "left"), np.searchsorted(qs, q, "right")) for q in uq}
+    res, r10, rnew, extra = [], [], [], []
+    for q in uq:
+        a0, b0 = cuts[q]
+        cur = P.iloc[a0:b0]
+        rk = cur.groupby("bk").cumcount().to_numpy()
+        top = cur[rk < 10]
+        t10 = top.groupby("bk").w.sum()
+        tov = pd.Series(np.nan, index=t10.index)
+        new = cur.iloc[0:0]
+        if q - 1 in cuts:
+            a1, b1 = cuts[q - 1]
+            prv = P.iloc[a1:b1]
+            both = set(prv.bk) & set(cur.bk)
+            c2, p2 = cur[cur.bk.isin(both)], prv[prv.bk.isin(both)]
+            mm = c2[["bk", "permno", "w"]].merge(p2[["bk", "permno", "w"]], on=["bk", "permno"], how="outer",
+                                                 suffixes=("", "_p")).fillna({"w": 0.0, "w_p": 0.0})
+            d = (mm.w - mm.w_p).abs().groupby(mm.bk).sum()
+            tov.loc[d.index] = 0.5 * d
+            nw = c2.merge(p2[["bk", "permno"]].assign(old=1), on=["bk", "permno"], how="left")
+            new = nw[nw.old.isna()].drop(columns=["old"])
+            new = new.assign(w=new.val / new.groupby("bk").val.transform("sum"))
+        extra.append(pd.DataFrame({"bk": t10.index, "q": q, "top10": t10.to_numpy(), "to": tov.to_numpy()}))
         em = _entry_mi(q)
         if em + 1 > MI_LAST or em + 6 < MI_FIRST:
             continue
-        for src, acc in ((P, res), (top, r10), (new, rnew)):
-            s = src[src.q == q]
-            if not len(s):
+        for src, acc in ((cur, res), (top, r10), (new, rnew)):
+            if not len(src):
                 continue
+            s = src.assign(q=q)
             s = s.assign(h=H.reindex(pd.MultiIndex.from_arrays([s.bk, s.q])).to_numpy())
             if src is top:
                 s = s.assign(w=s.w / s.groupby("bk").w.transform("sum"))
             acc.extend(_hold(s, em, panel, peers))
+    st = st.merge(pd.concat(extra, ignore_index=True), on=["bk", "q"], how="left")
+    del P
     M = pd.concat(res, ignore_index=True) if res else pd.DataFrame(columns=["bk", "mi", "ret", "miss", "pa", "pash"])
     for acc, col in ((r10, "p10"), (rnew, "pn")):
         if acc:
@@ -697,6 +828,8 @@ def _fund_months(fret, sty):
     """Class-months with return, start-of-month assets (previous month-end TNA) and objective code in force."""
     f = fret.copy()
     f["crsp_fundno"] = f.crsp_fundno.astype("int64")
+    f["mtna"] = pd.to_numeric(f.mtna, errors="coerce").where(lambda x: x > 0)      # CRSP -99 = missing
+    f["mret"] = pd.to_numeric(f.mret, errors="coerce").where(lambda x: x >= -1)    # any missing-value code
     d = pd.to_datetime(f.caldt)
     f["mi"] = (d.dt.year * 12 + d.dt.month - 1).to_numpy()
     f = f.drop_duplicates(["crsp_fundno", "mi"]).sort_values(["crsp_fundno", "mi"]).reset_index(drop=True)
@@ -839,36 +972,63 @@ def _load_years(load, prefix, years, **kw):
     return pd.concat([load("%s_%d" % (prefix, y), **kw) for y in years], ignore_index=True)
 
 
-def build(load, save, out, data=None):
-    t0 = time.time()
-    names = ["eq_sc_names", "eq_sc_cusip", "eq_sc_ff", "eq_sc_bm", "eq_sc_fhdr", "eq_sc_fsty", "eq_sc_cand"]
-    names += ["eq_sc_msf_%d" % y for y in range(CRSP_FROM // 100, M_LAST // 100 + 1)]
-    names += ["eq_sc_hold_%d" % y for y in _hyears()]
-    names += ["eq_sc_fret_%d" % y for y in range(M_FIRST // 100 - 1, M_LAST // 100 + 1)]
+LAST = {}      # the last build's internal tables, kept inside the module (never returned or printed)
+
+
+def _where(e):
+    """Name and line of the deepest frame of this module in a traceback (no message: it could hold data)."""
+    fr = [f for f in traceback.extract_tb(e.__traceback__) if f.filename == globals().get("__file__")]
+    f = fr[-1] if fr else traceback.extract_tb(e.__traceback__)[-1]
+    return "%s line %d" % (f.name, f.lineno)
+
+
+def build(load, save, out, data):
+    """The scorecard. Starts only if every pull is complete and was made for this investor input (pull key)."""
+    LAST.clear()
     save("eq_sc_report", pd.DataFrame({"line": ["build started but not finished: no scorecard"]}))
-    if data:
-        miss = [n for n in names if not os.path.exists(os.path.join(data, n + ".csv.gz"))]
-        if miss:
-            out("build: %d input data sets missing (first: %s); run the pulls again" % (len(miss), miss[0]))
-            return None
-    panel = Panel(stock_returns(_load_years(load, "eq_sc_msf", range(CRSP_FROM // 100, M_LAST // 100 + 1))))
+    miss, stale = _pull_state(load, data)
+    if miss or stale:
+        out("build refused: %d input data sets missing (first: %s), %d made for another investor input; run the "
+            "pull job (eq_sc_pull_v1, v1b, ...) until it prints ALL PULLS COMPLETE"
+            % (len(miss), miss[0] if miss else "-", len(stale)))
+        return None
+    try:
+        res = _build(load, out)
+        lines = _report_lines(res)
+    except Exception as e:  # noqa: BLE001
+        out("build FAILED: %s in %s (message not shown: it could hold data)" % (type(e).__name__, _where(e)))
+        return None
+    save("eq_sc_report", pd.DataFrame({"line": lines}))
+    out("build: report %d lines, %d characters" % (len(lines), sum(len(x) + 1 for x in lines)))
+    res["lines"] = lines
+    LAST.update(res)
+    return None
+
+
+def _build(load, out):
+    t0 = time.time()
+    BM_AMBIGUOUS[0] = NON_QUARTER_END[0] = 0
+
+    def tick(what):
+        out("build: %-34s %6.0f s" % (what, time.time() - t0))
+    panel = Panel(_load_years(load, "eq_sc_msf", _crsp_years()))
+    tick("CRSP panel %d x %d" % (len(panel.perm), panel.nm))
     peers = Peers(panel, _bm_table(load("eq_sc_bm"), panel))
     ff = Factors(load("eq_sc_ff"))
-    out("build: CRSP panel %d securities x %d months, peer groups formed (%.0f s)"
-        % (len(panel.perm), panel.nm, time.time() - t0))
+    tick("peer groups (bm ambiguous: %d)" % BM_AMBIGUOUS[0])
     cus = load("eq_sc_cusip", dtype={"cusip": str})
     parts = [_positions(load("eq_sc_hold_%d" % y, dtype={"cusip": str}), cus, panel) for y in _hyears()]
     pos = pd.concat([x[0] for x in parts], ignore_index=True)       # one year at a time: memory stays small
     fil = pd.concat([x[1] for x in parts], ignore_index=True)
     del parts
+    tick("positions (non-quarter-end rdates: %d)" % NON_QUARTER_END[0])
     st, M, lib = _books(pos, fil, panel, peers)
+    tick("copy books (%d filers, %d filings)" % (pos.mgrno.nunique(), len(fil)))
+    del pos, fil
     tab = _book_windows(st, M, ff)
-    out("build: %d filers, %d filings, %d book-months (%.0f s)" % (pos.mgrno.nunique(), len(fil), len(M),
-                                                                     time.time() - t0))
-    # funds
+    tick("13F windows")
     hdr = _fund_classes(load("eq_sc_fhdr"))
-    fm = _fund_months(_load_years(load, "eq_sc_fret", range(M_FIRST // 100 - 1, M_LAST // 100 + 1)),
-                      load("eq_sc_fsty"))
+    fm = _fund_months(_load_years(load, "eq_sc_fret", _fund_years()), load("eq_sc_fsty"))
     fm = fm.merge(hdr[["crsp_fundno", "gid"]], on="crsp_fundno", how="inner")
     idx_ids = set(hdr[hdr.idx].gid)
     frec = _combine(fm, "gid")
@@ -879,22 +1039,17 @@ def build(load, save, out, data=None):
             continue
         fn = sorted({int(x) for x in p.get("fundnos", [])})
         gids = set(hdr[hdr.crsp_fundno.isin(fn)].gid)      # each listed fundno stands for all its share classes
-        x = fm[fm.gid.isin(gids)].assign(inv=p["id"])
-        lrec.append(x)
+        lrec.append(fm[fm.gid.isin(gids)].assign(inv=p["id"]))   # several funds: one record, combined by assets
         lcut[p["id"]] = (int(_mi(int(p["start_ym"]))) if p.get("start_ym") else MI_FIRST,
                          int(_mi(int(p["end_ym"]))) if p.get("end_ym") else MI_LAST)
         lown[p["id"]] = gids
     ltab = (_fund_windows(_combine(pd.concat(lrec, ignore_index=True), "inv"), "inv", ff, set(), lcut)
             if lrec else pd.DataFrame(columns=["bk", "w", "n"]))
-    out("build: %d fund portfolios with returns (%.0f s)" % (frec.gid.nunique(), time.time() - t0))
+    tick("funds (%d portfolios)" % frec.gid.nunique())
     res = _results(tab, ftab, ltab, lib, lown, load, hdr, frec)
+    tick("ranks, tiers, persistence")
     res.update({"lib": lib, "st": st, "M": M, "tab": tab, "ftab": ftab, "ltab": ltab, "frec": frec, "panel": panel,
                 "peers": peers})
-    lines = _report_lines(res)
-    save("eq_sc_report", pd.DataFrame({"line": lines}))
-    out("build: report %d lines, %d characters (%.0f s)" % (len(lines), sum(len(x) + 1 for x in lines),
-                                                         time.time() - t0))
-    res["lines"] = lines
     return res
 
 
@@ -938,8 +1093,8 @@ def _results(tab, ftab, ltab, lib, lown, load, hdr, frec):
         inv.append(d)
     tiers = _tiers(inv)
     # best-scored filers and funds without a library document
-    libm = set(_lib_mgrnos())
-    libg = set().union(*lown.values()) if lown else set()
+    libm = _known_mgrnos()                                   # every filer matched to a library investor
+    libg = set(hdr[hdr.crsp_fundno.isin(list(_known_fundnos()))].gid)   # every fund (whole class group)
 
     def best(tb, kind, exclude, n):
         own_t = tb[~tb.bk.isin(list(exclude))]
@@ -1006,7 +1161,11 @@ def _wline(pid, w, s, full):
 def _report_lines(res):
     L = []
     kinds = [p.get("record_kind") for p in INV]
-    L.append("EQ SCORECARD %s | registration STAGE0_REGISTRATION.md s.8 | input sha256 %s" % (VERSION, input_sha()[:16]))
+    L.append("EQ SCORECARD %s | registration STAGE0_REGISTRATION.md s.8" % VERSION)
+    L.append("code sha256 %s (computed at run time from the module file) | input sha256 %s | pull key %s"
+             % (code_sha(), input_sha(), pull_key()[:16]))
+    L.append("peer groups: CRSP common shares (EQTY/COM/NS) on NYSE, NYSE American, Nasdaq; foreign-incorporated "
+             "and REIT/trust common shares included (registration reading 8)")
     L.append("investors %d (13f %d, fund %d, none %d) | record months %d-%02d..%d-%02d | seal-exempt run"
              % (len(INV), kinds.count("13f"), kinds.count("fund"), kinds.count("none"), M_FIRST // 100,
                 M_FIRST % 100, M_LAST // 100, M_LAST % 100))
@@ -1023,7 +1182,7 @@ def _report_lines(res):
              "| ms weight share without a return | rk rank share. Statistics only where the window or the record "
              "has 60 months; '.' = none")
     for d in res["inv"]:
-        if d["kind"] not in ("13f", "fund") or not d["win"]:
+        if d["kind"] not in ("13f", "fund"):
             continue
         full_rec = d["months"] >= MIN_STATS
         L.append("INV %-6s %-28s | grade %s | %-4s | months %3d | style %s | score %s | components %s"
@@ -1077,8 +1236,8 @@ def _report_lines(res):
 def report(load, out, part=1, parts=1):
     try:
         lines = load("eq_sc_report", keep_default_na=False).line.astype(str).tolist()
-    except (IOError, OSError):
-        out("report: not built")
+    except Exception as e:  # noqa: BLE001
+        out("report: not built (%s)" % type(e).__name__)
         return
     chunks, cur, size = [], [], 0
     for x in lines:

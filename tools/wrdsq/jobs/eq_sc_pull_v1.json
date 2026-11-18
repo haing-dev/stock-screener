@@ -1,0 +1,32 @@
+{
+ "name": "eq_sc_pull_v1",
+ "steps": [
+  {
+   "do": "python",
+   "code": "import eq_scorecard\neq_scorecard.pull_base(sql, save, out, DATA, budget=900)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_scorecard\neq_scorecard.pull_crsp(sql, save, out, DATA, budget=900)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_scorecard\neq_scorecard.pull_agg(sql, save, out, DATA, budget=3000)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_scorecard\neq_scorecard.pull_hold(sql, load, save, out, DATA, budget=2400)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_scorecard\neq_scorecard.pull_funds(sql, load, save, out, DATA, budget=900)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_scorecard\neq_scorecard.pull_status(load, out, DATA)"
+  },
+  {
+   "do": "datasets"
+  }
+ ]
+}
