@@ -1,0 +1,214 @@
+﻿=== WRDSQ REPORT v1.0.7 | job eq_sc_pull_v1b | 2026-11-18 16:01 | metadata and results only ===
+Loading library list...
+Done
+
+## 1. python
+pull_base: complete after 0 s
+
+## 2. python
+pull_crsp: complete after 0 s
+
+## 3. python
+pull_agg: complete after 0 s
+
+## 4. python
+  candidate filers: 6542
+pull_hold: complete after 0 s
+
+## 5. python
+pull_funds: complete after 0 s
+
+## 6. python
+ALL PULLS COMPLETE: 73 data sets, pull key 45671094f38c9a10
+
+## 7. datasets
+   bio_13f.csv.gz                               57.9 MB  2026-10-30
+   bio_cusips.csv.gz                             0.1 MB  2026-10-30
+   bio_delist.csv.gz                             0.0 MB  2026-10-30
+   bio_dsf.csv.gz                               65.3 MB  2026-10-30
+   bio_fundq.csv.gz                              1.7 MB  2026-10-30
+   bio_link.csv.gz                               0.0 MB  2026-10-30
+   bio_names.csv.gz                              0.0 MB  2026-10-30
+   bio_permnos.csv.gz                            0.0 MB  2026-10-30
+   bio_ptg.csv.gz                                1.0 MB  2026-10-30
+   bio_ptgu.csv.gz                               1.0 MB  2026-10-30
+   crash_eps.csv.gz                              0.1 MB  2026-10-30
+   crash_eval_base.csv.gz                        0.2 MB  2026-10-30
+   crash_scored.csv.gz                           0.2 MB  2026-10-30
+   crash_x.csv.gz                                0.2 MB  2026-10-30
+   eq_fundhdr.csv.gz                             2.7 MB  2026-11-17
+   eq_mgrq.csv.gz                                4.1 MB  2026-11-17
+   eq_s34names.csv.gz                            0.3 MB  2026-11-17
+   eq_sc_agg_2010.csv.gz                         0.2 MB  2026-11-18
+   eq_sc_agg_2011.csv.gz                         0.3 MB  2026-11-18
+   eq_sc_agg_2012.csv.gz                         0.4 MB  2026-11-18
+   eq_sc_agg_2013.csv.gz                         0.4 MB  2026-11-18
+   eq_sc_agg_2014.csv.gz                         0.4 MB  2026-11-18
+   eq_sc_agg_2015.csv.gz                         0.4 MB  2026-11-18
+   eq_sc_agg_2016.csv.gz                         0.4 MB  2026-11-18
+   eq_sc_agg_2017.csv.gz                         0.5 MB  2026-11-18
+   eq_sc_agg_2018.csv.gz                         0.5 MB  2026-11-18
+   eq_sc_agg_2019.csv.gz                         0.5 MB  2026-11-18
+   eq_sc_agg_2020.csv.gz                         0.6 MB  2026-11-18
+   eq_sc_agg_2021.csv.gz                         0.6 MB  2026-11-18
+   eq_sc_agg_2022.csv.gz                         0.6 MB  2026-11-18
+   eq_sc_agg_2023.csv.gz                         0.7 MB  2026-11-18
+   eq_sc_agg_2024.csv.gz                         0.7 MB  2026-11-18
+   eq_sc_agg_2025.csv.gz                         0.8 MB  2026-11-18
+   eq_sc_bm.csv.gz                               2.9 MB  2026-11-18
+   eq_sc_cand.csv.gz                             0.0 MB  2026-11-18
+   eq_sc_cusip.csv.gz                            1.1 MB  2026-11-18
+   eq_sc_ff.csv.gz                               0.0 MB  2026-11-18
+   eq_sc_fhdr.csv.gz                             1.1 MB  2026-11-18
+   eq_sc_fmeta.csv.gz                            0.0 MB  2026-11-18
+   eq_sc_fret_2010.csv.gz                        0.2 MB  2026-11-18
+   eq_sc_fret_2011.csv.gz                        2.5 MB  2026-11-18
+   eq_sc_fret_2012.csv.gz                        2.5 MB  2026-11-18
+   eq_sc_fret_2013.csv.gz                        2.6 MB  2026-11-18
+   eq_sc_fret_2014.csv.gz                        2.7 MB  2026-11-18
+   eq_sc_fret_2015.csv.gz                        2.8 MB  2026-11-18
+   eq_sc_fret_2016.csv.gz                        2.8 MB  2026-11-18
+   eq_sc_fret_2017.csv.gz                        2.9 MB  2026-11-18
+   eq_sc_fret_2018.csv.gz                        2.9 MB  2026-11-18
+   eq_sc_fret_2019.csv.gz                        2.8 MB  2026-11-18
+   eq_sc_fret_2020.csv.gz                        2.8 MB  2026-11-18
+   eq_sc_fret_2021.csv.gz                        2.7 MB  2026-11-18
+   eq_sc_fret_2022.csv.gz                        2.7 MB  2026-11-18
+   eq_sc_fret_2023.csv.gz                        2.7 MB  2026-11-18
+   eq_sc_fret_2024.csv.gz                        2.7 MB  2026-11-18
+   eq_sc_fret_2025.csv.gz                        2.6 MB  2026-11-18
+   eq_sc_fsty.csv.gz                             0.5 MB  2026-11-18
+   eq_sc_hold_2010.csv.gz                        4.9 MB  2026-11-18
+   eq_sc_hold_2011.csv.gz                        6.4 MB  2026-11-18
+   eq_sc_hold_2012.csv.gz                        6.7 MB  2026-11-18
+   eq_sc_hold_2013.csv.gz                        7.4 MB  2026-11-18
+   eq_sc_hold_2014.csv.gz                        8.3 MB  2026-11-18
+   eq_sc_hold_2015.csv.gz                        9.0 MB  2026-11-18
+   eq_sc_hold_2016.csv.gz                        9.2 MB  2026-11-18
+   eq_sc_hold_2017.csv.gz                       10.3 MB  2026-11-18
+   eq_sc_hold_2018.csv.gz                       11.9 MB  2026-11-18
+   eq_sc_hold_2019.csv.gz                       12.4 MB  2026-11-18
+   eq_sc_hold_2020.csv.gz                       13.2 MB  2026-11-18
+   eq_sc_hold_2021.csv.gz                       16.4 MB  2026-11-18
+   eq_sc_hold_2022.csv.gz                       17.1 MB  2026-11-18
+   eq_sc_hold_2023.csv.gz                       16.8 MB  2026-11-18
+   eq_sc_hold_2024.csv.gz                       17.5 MB  2026-11-18
+   eq_sc_hold_2025.csv.gz                       18.8 MB  2026-11-18
+   eq_sc_msf_2009.csv.gz                         0.6 MB  2026-11-18
+   eq_sc_msf_2010.csv.gz                         1.1 MB  2026-11-18
+   eq_sc_msf_2011.csv.gz                         1.1 MB  2026-11-18
+   eq_sc_msf_2012.csv.gz                         1.1 MB  2026-11-18
+   eq_sc_msf_2013.csv.gz                         1.1 MB  2026-11-18
+   eq_sc_msf_2014.csv.gz                         1.1 MB  2026-11-18
+   eq_sc_msf_2015.csv.gz                         1.2 MB  2026-11-18
+   eq_sc_msf_2016.csv.gz                         1.2 MB  2026-11-18
+   eq_sc_msf_2017.csv.gz                         1.2 MB  2026-11-18
+   eq_sc_msf_2018.csv.gz                         1.2 MB  2026-11-18
+   eq_sc_msf_2019.csv.gz                         1.2 MB  2026-11-18
+   eq_sc_msf_2020.csv.gz                         1.2 MB  2026-11-18
+   eq_sc_msf_2021.csv.gz                         1.4 MB  2026-11-18
+   eq_sc_msf_2022.csv.gz                         1.5 MB  2026-11-18
+   eq_sc_msf_2023.csv.gz                         1.5 MB  2026-11-18
+   eq_sc_msf_2024.csv.gz                         1.5 MB  2026-11-18
+   eq_sc_msf_2025.csv.gz                         1.6 MB  2026-11-18
+   eq_sc_names.csv.gz                            0.3 MB  2026-11-18
+   ff_daily.csv.gz                               0.1 MB  2026-10-30
+   ibes_ctry.csv.gz                              0.3 MB  2026-10-30
+   jkp_ctry.csv.gz                               1.8 MB  2026-10-30
+   jkp_ctry2.csv.gz                              0.6 MB  2026-10-30
+   mgr_value.csv.gz                              6.4 MB  2026-10-30
+   mkt.csv.gz                                    0.1 MB  2026-10-30
+   tri_13p_2007.csv.gz                           0.8 MB  2026-10-31
+   tri_13p_2008.csv.gz                           0.9 MB  2026-10-31
+   tri_13p_2009.csv.gz                           0.9 MB  2026-10-31
+   tri_13p_2010.csv.gz                           1.0 MB  2026-10-31
+   tri_13p_2011.csv.gz                           1.1 MB  2026-10-31
+   tri_13p_2012.csv.gz                           1.2 MB  2026-10-31
+   tri_13p_2013.csv.gz                           1.2 MB  2026-10-31
+   tri_13p_2014.csv.gz                           1.4 MB  2026-10-31
+   tri_13p_2015.csv.gz                           1.5 MB  2026-10-31
+   tri_13p_2016.csv.gz                           1.5 MB  2026-10-31
+   tri_13p_2017.csv.gz                           1.6 MB  2026-10-31
+   tri_13p_2018.csv.gz                           1.7 MB  2026-10-31
+   tri_13p_2019.csv.gz                           1.9 MB  2026-10-31
+   tri_13p_2020.csv.gz                           2.1 MB  2026-10-31
+   tri_13p_2021.csv.gz                           2.4 MB  2026-10-31
+   tri_13p_2022.csv.gz                           2.4 MB  2026-10-31
+   tri_13p_2023.csv.gz                           2.6 MB  2026-10-31
+   tri_13p_2024.csv.gz                           2.9 MB  2026-10-31
+   tri_13p_2025.csv.gz                           3.2 MB  2026-10-31
+   tri_13p_2026.csv.gz                           1.0 MB  2026-10-31
+   tri_13t_2007.csv.gz                           0.1 MB  2026-10-31
+   tri_13t_2008.csv.gz                           0.2 MB  2026-10-31
+   tri_13t_2009.csv.gz                           0.2 MB  2026-10-31
+   tri_13t_2010.csv.gz                           0.2 MB  2026-10-31
+   tri_13t_2011.csv.gz                           0.2 MB  2026-10-31
+   tri_13t_2012.csv.gz                           0.2 MB  2026-10-31
+   tri_13t_2013.csv.gz                           0.2 MB  2026-10-31
+   tri_13t_2014.csv.gz                           0.2 MB  2026-10-31
+   tri_13t_2015.csv.gz                           0.2 MB  2026-10-31
+   tri_13t_2016.csv.gz                           0.2 MB  2026-10-31
+   tri_13t_2017.csv.gz                           0.2 MB  2026-10-31
+   tri_13t_2018.csv.gz                           0.3 MB  2026-10-31
+   tri_13t_2019.csv.gz                           0.3 MB  2026-10-31
+   tri_13t_2020.csv.gz                           0.3 MB  2026-10-31
+   tri_13t_2021.csv.gz                           0.3 MB  2026-10-31
+   tri_13t_2022.csv.gz                           0.3 MB  2026-10-31
+   tri_13t_2023.csv.gz                           0.4 MB  2026-10-31
+   tri_13t_2024.csv.gz                           0.4 MB  2026-10-31
+   tri_13t_2025.csv.gz                           0.4 MB  2026-10-31
+   tri_13t_2026.csv.gz                           0.1 MB  2026-10-31
+   tri_bk_2006.csv.gz                            5.7 MB  2026-10-31
+   tri_bk_2007.csv.gz                            5.8 MB  2026-10-31
+   tri_bk_2008.csv.gz                            5.5 MB  2026-10-31
+   tri_bk_2009.csv.gz                            5.1 MB  2026-10-31
+   tri_bk_2010.csv.gz                            5.1 MB  2026-10-31
+   tri_bk_2011.csv.gz                            4.9 MB  2026-10-31
+   tri_bk_2012.csv.gz                            4.8 MB  2026-10-31
+   tri_bk_2013.csv.gz                            4.8 MB  2026-10-31
+   tri_bk_2014.csv.gz                            5.0 MB  2026-10-31
+   tri_bk_2015.csv.gz                            5.1 MB  2026-10-31
+   tri_bk_2016.csv.gz                            5.0 MB  2026-10-31
+   tri_bk_2017.csv.gz                            4.9 MB  2026-10-31
+   tri_bk_2018.csv.gz                            4.9 MB  2026-10-31
+   tri_bk_2019.csv.gz                            5.0 MB  2026-10-31
+   tri_bk_2020.csv.gz                            5.0 MB  2026-10-31
+   tri_bk_2021.csv.gz                            5.8 MB  2026-10-31
+   tri_bk_2022.csv.gz                            6.3 MB  2026-10-31
+   tri_bk_2023.csv.gz                            6.0 MB  2026-10-31
+   tri_bk_2024.csv.gz                            5.7 MB  2026-10-31
+   tri_bk_2025.csv.gz                            5.6 MB  2026-10-31
+   tri_cal.csv.gz                                0.0 MB  2026-10-30
+   tri_co.csv.gz                                 0.3 MB  2026-10-30
+   tri_cusip.csv.gz                              1.1 MB  2026-10-30
+   tri_etf.csv.gz                                0.0 MB  2026-10-30
+   tri_events.csv.gz                             0.7 MB  2026-10-31
+   tri_fa.csv.gz                                18.9 MB  2026-10-30
+   tri_ff.csv.gz                                 0.0 MB  2026-10-30
+   tri_fq.csv.gz                                33.4 MB  2026-10-30
+   tri_ibes.csv.gz                               5.4 MB  2026-10-31
+   tri_link.csv.gz                               0.3 MB  2026-10-30
+   tri_px_2006.csv.gz                            1.9 MB  2026-10-31
+   tri_px_2007.csv.gz                            1.8 MB  2026-10-31
+   tri_px_2008.csv.gz                            1.8 MB  2026-10-31
+   tri_px_2009.csv.gz                            1.7 MB  2026-10-31
+   tri_px_2010.csv.gz                            1.6 MB  2026-10-31
+   tri_px_2011.csv.gz                            1.6 MB  2026-10-31
+   tri_px_2012.csv.gz                            1.5 MB  2026-10-31
+   tri_px_2013.csv.gz                            1.5 MB  2026-10-31
+   tri_px_2014.csv.gz                            1.6 MB  2026-10-31
+   tri_px_2015.csv.gz                            1.6 MB  2026-10-31
+   tri_px_2016.csv.gz                            1.6 MB  2026-10-31
+   tri_px_2017.csv.gz                            1.5 MB  2026-10-31
+   tri_px_2018.csv.gz                            1.6 MB  2026-10-31
+   tri_px_2019.csv.gz                            1.6 MB  2026-10-31
+   tri_px_2020.csv.gz                            1.6 MB  2026-10-31
+   tri_px_2021.csv.gz                            1.8 MB  2026-10-31
+   tri_px_2022.csv.gz                            2.0 MB  2026-10-31
+   tri_px_2023.csv.gz                            1.9 MB  2026-10-31
+   tri_px_2024.csv.gz                            1.8 MB  2026-10-31
+   tri_px_2025.csv.gz                            1.7 MB  2026-10-31
+   tri_series.csv.gz                             7.7 MB  2026-10-31
+187 datasets; storage used 0.67 GB of 10 GB
+
+=== END (2 s) ===
