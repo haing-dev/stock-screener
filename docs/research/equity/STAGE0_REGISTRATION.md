@@ -87,6 +87,11 @@ ties take the average rank.
 | C | Matched 13F filer that is not A or B (too many or too few positions, too small, too few quarters, or a style in the list under A) |
 | N | No match |
 
+A person coded as allocator at E0.1 (chooses managers or asset classes) is graded C if a filer is matched and N
+otherwise: the filing is not a stock-picking record. Matching follows `E0.4_MATCH_SPEC.md`; the blind second
+matcher gave the same filer for 16 of 19 investors and the same funds for 17 of 19 (`inventory/match_agreement.md`).
+The first matcher's answer stands.
+
 "Primary style": the style code given most often across the investor's own-words documents (kind `investor_talk`)
 in the E0.1 inventory, ties by the order of the style list in the spec; none coded = "none". "Region": the most
 frequent region code in those documents. "Explicitness": the highest `explicit` value in those documents, then the

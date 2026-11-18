@@ -97,7 +97,9 @@ def main(mdir, report, inv_dir, out, agree=None):
         pos = F[p["id"]][main_f]["pos"] if mg else 0
         val = F[p["id"]][main_f]["val"] if mg else 0
         screen = bool(mg) and q >= 20 and 5 <= pos <= 150 and val >= 100
-        if fund_ok:
+        if p["role"] != "investor" and (mg or fund_ok):
+            kind, grade = ("13f" if mg else "none"), ("C" if mg else "N")     # allocators pick managers, not stocks
+        elif fund_ok:
             kind, grade = "fund", "F"
         elif screen and style not in NOT_A and region in ("us", "global"):
             kind, grade = "13f", "A"
@@ -112,7 +114,8 @@ def main(mdir, report, inv_dir, out, agree=None):
                      " ".join(map(str, fund_ok)) if kind == "fund" else "", start, end, grade, style, region,
                      max(ex) if ex else "", "%.2f" % (sum(ex) / len(ex)) if ex else "", p["own_docs"], p["ran_money"],
                      p["role"], q if mg else "", pos if mg else "", val if mg else "",
-                     "; ".join(F[p["id"]][x]["name"][:40] for x in mg) or "; ".join(M[p["id"]][x]["fund"][:50] for x in fn),
+                     ("; ".join(M[p["id"]][x]["fund"][:60] for x in fund_ok) if kind == "fund" else
+                      "; ".join(F[p["id"]][x]["name"][:40] for x in mg)),
                      (r.get("why") or "")[:160]])
     w = csv.writer(open(out, "w", newline="", encoding="utf-8"))
     w.writerow(["id", "name", "record_kind", "mgrnos", "fundnos", "start_ym", "end_ym", "grade", "primary_style",

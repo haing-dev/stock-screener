@@ -1,0 +1,242 @@
+id,name,record_kind,mgrnos,fundnos,start_ym,end_ym,grade,primary_style,region,explicit_max,explicit_mean,own_docs,ran_money,role,quarters_after_2010,positions_median,value_median_musd,matched_name,why
+I001,Brad Gerstner,13f,13112,,,,A,growth,us,2,0.11,27,yes,investor,58,23,2821,"ALTIMETER CAPITAL MGMT, LLC / ALTIMETER ",Altimeter Capital Mgmt is Gerstner's firm per notes.
+I002,Bill Gurley,none,,,,,N,growth,us,2,0.12,26,yes,investor,,,,,Benchmark filers are unrelated wealth managers; Gurley is a venture capitalist.
+I003,Stig Brodersen,none,,,,,N,deep_value,global,2,1.79,19,unclear,investor,,,,,
+I004,Tobias Carlisle,fund,,95344,,,F,deep_value,global,2,2.00,16,yes,investor,,,,ETF Series Solutions: Acquirers Fund,Notes name the ZIG and DEEP funds as his; matched to the Acquirers ETFs by name (general knowledge of identity); no 13F filer.
+I005,Kyle Grieve,none,,,,,N,quality_compounders,global,2,1.71,7,unclear,investor,,,,,
+I006,Hari Ramachandra,none,,,,,N,deep_value,global,2,2.00,12,unclear,investor,,,,,
+I007,Clay Finck,none,,,,,N,quality_compounders,global,2,1.60,5,unclear,investor,,,,,
+I008,Chris Davis,fund,,8750 28357 7317,,,F,quality_compounders,us,2,1.11,9,yes,investor,61,135,20899,"Davis New York Venture Fund, Inc: Davis New York Venture Fun; Selected American Shares, Inc; Class D Shares; Clipper Funds Trust: Clipper Fund",Davis Selected Advisers = Davis Advisors; Davis is chairman and PM; M* funds Davis/Goei.
+I009,Howard Marks,13f,66138,,,,C,credit_distressed,global,1,0.89,9,yes,investor,47,51,3703,"OAKTREE CAPITAL MANAGEMENT, LL / OAKTREE","Oaktree Capital Management is the co-founder firm; 11786 files same quarters with shorter record, funds are team-run."
+I010,Joel Greenblatt,fund,,56165 58470 59064,,,F,deep_value,us,3,1.89,9,yes,investor,61,938,5784,FundVantage Trust: Gotham Absolute Return Fund; Institutiona; FundVantage Trust: Gotham Enhanced Return Fund; Institutiona; FundVantage Trust: Gotham Neutral Fund; Institutional Class ,Founder of Gotham; Gotham Asset Management is the filer; funds list Greenblatt as manager.
+I011,Robert Vinall,13f,26263,,,,A,quality_compounders,global,3,1.22,9,yes,investor,30,6,317,RV CAPITAL GMBH,"RV Capital GmbH is his firm, founder and fund manager."
+I012,Ian Cassel,none,,,,,N,small_micro_cap,us,3,2.14,7,yes,investor,,,,,Candidates are unrelated Intelligent/MicroCapital firms; no fund of his.
+I013,Mohnish Pabrai,13f,10558,,,,C,quality_compounders,global,2,1.14,7,yes,investor,50,4,252,PABRAI (MOHNISH) / PABRAI INVESTMENT FUN,Pabrai Investment Funds filer; Dalal Street overlaps same quarters so longer record kept; Wagons funds list him as manager.
+I014,Chris Bloomstran,13f,11757,,,,A,quality_compounders,us,2,1.67,6,yes,investor,61,30,153,SEMPER AUGUSTUS INVTS GRP LLC,Semper Augustus filer; CIO/founder.
+I015,Dev Kantesaria,13f,14460,,,,A,quality_compounders,us,3,2.17,6,yes,investor,38,9,2175,"VALLEY FORGE ADVISORS, LLC / VALLEY FORG","Valley Forge Capital Mgmt LP is the firm he manages (9 positions, concentrated)."
+I016,François Rochon,13f,14144,,,,A,quality_compounders,us,3,2.00,5,yes,investor,45,50,1104,GIVERNY CAPITAL INC.,Founder and PM of Giverny Capital; filer is the firm.
+I017,Tom Gayner,13f,53990,,,,A,quality_compounders,us,2,1.80,5,yes,investor,61,126,4915,MARKEL GAYNER ASSET MANAGEMENT / MARKEL ,Markel Gayner Asset Mgmt is Gayner's investment book (CIO); Markel Corp New has no holdings.
+I018,Guy Spier,13f,9118 14885,,,,A,quality_compounders,global,2,1.00,4,yes,investor,46,13,157,"AQUAMARINE CAPITAL MGMT, LLC; AQUAMARINE ZURICH AG",Aquamarine Capital Mgmt then Aquamarine Zurich AG are successive filers of his fund; Cayman entity not matched.
+I019,Jeremy Grantham,13f,41500,,,,C,macro_multi_asset,global,1,0.75,4,yes,investor,61,592,25466,GMO LLC / GRANTHAM MAYO VAN OTTER / GRAN,Co-founder and chairman of GMO per notes; GMO LLC filer; no fund lists him as a current manager.
+I020,Andrew Brenton,13f,8805,,,,A,quality_compounders,global,3,2.33,3,yes,investor,47,26,1508,TURTLE CREEK ASSET MGMT INC.,Turtle Creek Asset Mgmt (Canada) is the firm; the wealth advisors filer is a different entity.
+I021,Chris Hohn,13f,11194,,,,A,quality_compounders,global,2,2.00,3,yes,investor,61,10,16643,CHILDREN'S INV MGMT (UK) LLP / CHILDREN',Children's Investment Mgmt / TCI Fund Mgmt is the founder firm; TCI Wealth Advisors is unrelated.
+I022,Christopher Begg,13f,13616,,,,A,quality_compounders,us,2,2.00,3,yes,investor,54,70,283,"EAST COAST ASSET MGMT, LLC.",CEO and CIO of East Coast Asset Management.
+I023,Connor Haley,13f,9843,,,,C,small_micro_cap,us,3,2.33,3,yes,investor,18,14,223,ALTA FOX CAPITAL MANAGEMENT LL,"Alta Fox Capital Management, founder."
+I024,Dan Sundheim,13f,26407,,,,B,long_short,global,2,1.33,3,yes,investor,30,35,6980,D1 CAPITAL PTNR L.P.,D1 Capital Partners is his firm.
+I025,David Einhorn,13f,42315,,,,B,deep_value,europe,2,1.00,3,yes,investor,61,34,3199,GREENLIGHT CAPITAL INC / GREENLIGHT CAPI,Founder of Greenlight Capital.
+I026,David Gardner,none,,,,,N,growth,us,2,2.00,3,unclear,investor,,,,,
+I027,Dmitry Balyasny,13f,7808,,,,C,long_short,global,0,0.00,3,yes,investor,61,1086,14648,BALYASNY ASSET MANAGEMENT LP / BALYASNY ,"Balyasny Asset Management, founder and CIO."
+I028,Joseph Shaposhnik,fund,,86781,2016-01,,F,quality_compounders,us,2,2.00,3,yes,investor,,,,"TCW Funds, Inc: TCW New America Premier Equities Fund; Class","Fund manager field has Shaposhnik on TCW New America Premier Equities (since 2016-01) and Rainwater Equity ETF; Rainwater, Inc. filer not plainly his."
+I029,Murray Stahl,fund,,17878,,,F,deep_value,us,2,1.33,3,yes,investor,61,340,3489,"Kinetics Mutual Funds, Inc: Paradigm Fund; No Load Class",CEO/CIO of Horizon Kinetics; Paradigm Fund named in notes as his; Japan ETF lists Stahl; Kinetics Asset Mgmt overlaps same quarters so longer record kept.
+I030,Shawn O'Malley,none,,,,,N,quality_compounders,us,2,1.67,3,unclear,investor,,,,,
+I031,Warren Buffett,13f,8350,,,,A,quality_compounders,global,1,1.00,3,yes,investor,61,44,179904,BERKSHIRE HATHAWAY / BERKSHIRE HATHAWAY ,"Berkshire Hathaway Inc, chairman and CEO; other Berkshire names are unrelated."
+I032,Alex,none,,,,,N,growth,global,2,1.00,2,yes,investor,,,,,"Only a first name; cannot tell which Whale Rock person, not shown as founder/CIO."
+I033,Anthony Scaramucci,13f,14367,,,,C,growth,global,0,0.00,2,yes,allocator,21,30,185,"SKYBRIDGE CAPITAL II, LLC",Founder of SkyBridge; SkyBridge Capital II filer; First Trust SkyBridge ETF lists Scaramucci.
+I034,Arnold Van Den Berg,fund,,6867,,,F,deep_value,global,1,0.50,2,yes,investor,61,89,740,CM Advisors Family of Funds: CM Advisors Fund; Class I Share,Century Management / Van Den Berg Management is his firm (identity from general knowledge); CM Advisors Fund is M* equity fund; fixed income fund excluded.
+I035,Bill Miller,none,,,,,N,none,unclear,1,0.50,2,unclear,investor,,,,,
+I036,Bill Nygren,fund,,14612 14617,,,F,deep_value,us,3,2.50,2,yes,investor,,,,Harris Associates Investment Trust: Oakmark Fund; Investor C; Harris Associates Investment Trust: Oakmark Select Fund; Inv,Named PM of Oakmark and Oakmark Select (M*); Harris Associates is a large multi-book firm so its 13F is not matched.
+I037,Brian Feroldi,none,,,,,N,growth,us,3,2.50,2,unclear,investor,,,,,
+I038,Chris Mayer,none,,,,,N,quality_compounders,global,2,2.00,2,yes,investor,,,,,No candidates found.
+I039,Daniel Mahncke,none,,,,,N,quality_compounders,global,1,1.00,2,unclear,investor,,,,,
+I040,David Fagan,none,,,,,N,index_allocation,other,3,1.50,2,unclear,investor,,,,,
+I041,David Rubenstein,13f,13265,,,,C,private_venture,global,0,0.00,2,yes,investor,56,11,3567,CARLYLE GROUP L.P.,Carlyle Group L.P. co-founder; Voya Rubenstein is another person.
+I042,Derek Pilecki,fund,,6972,,,F,long_short,us,3,2.50,2,yes,investor,28,66,136,"Caldwell & Orkin Funds, Inc: Gator Capital Long/Short Fund","Founder of Gator Capital Management; funds list him as manager (6972 mgr-since 2017-01 may be a takeover date, left unset)."
+I043,Eddy Elfenbein,fund,,88558,,,F,quality_compounders,us,2,2.00,2,yes,investor,,,,AdvisorShares Trust: AdvisorShares Focused Equity ETF,AdvisorShares is not his firm so no 13F; notes name the Focused Equity ETF (CWS) as the one he manages.
+I044,Ernie Chan,none,,,,,N,quant_systematic,global,0,0.00,2,yes,investor,,,,,No candidates.
+I045,Gautam Baid,none,,,,,N,quality_compounders,emerging,2,2.00,2,yes,investor,,,,,Stellar Capital Management is not Stellar Wealth Partners India; no fund.
+I046,Gavin Baker,13f,28301,,,,A,growth,global,1,0.50,2,yes,investor,26,36,2918,"ATREIDES MANAGEMENT, LP",Managing partner and CIO of Atreides.
+I047,James Ferguson,none,,,,,N,none,global,0,0.00,2,unclear,allocator,,,,,
+I048,Jim Mellon,none,,,,,N,macro_multi_asset,global,0,0.00,2,unclear,investor,,,,,
+I049,John Huber,none,,,,,N,quality_compounders,us,2,2.00,1,unclear,investor,,,,,
+I050,John Spears,none,,,,,N,deep_value,global,2,1.00,2,yes,investor,,,,,Notes: former partner among many at Tweedy Browne; funds team managed; Davis/Spears is another person.
+I051,Li Lu,13f,14546,,,,A,deep_value,global,2,1.50,2,yes,investor,34,6,1900,"HIMALAYA CAPITAL, L.L.C.",Himalaya Capital LLC is his firm.
+I052,Marc Rowan,none,,,,,N,credit_distressed,global,1,1.00,2,unclear,investor,,,,,
+I053,Matthew McLennan,fund,,12560,,,F,deep_value,global,2,2.00,2,yes,investor,,,,First Eagle Funds: First Eagle US Fund; Class A Shares,Head of a team inside large First Eagle so no 13F; three funds list McLennan as manager.
+I054,Nima Shayegh,none,,,,,N,quality_compounders,global,1,1.00,2,yes,investor,,,,,No candidates.
+I055,Pat Dorsey,13f,14201,,,,A,quality_compounders,global,2,2.00,2,yes,investor,38,10,765,DORSEY ASSET MANAGEMENT LLC,Dorsey Asset Management LLC is his firm; other Dorsey filers are unrelated.
+I056,Philippe Laffont,13f,11450,,,,A,growth,global,0,0.00,2,yes,investor,61,55,9008,"COATUE MANAGEMENT, LLC",Philippe Laffont is founder of Coatue.
+I057,Ray Dalio,13f,11218,,,,C,macro_multi_asset,global,1,0.50,2,yes,investor,61,390,11376,BRIDGEWATER ASSOCIATES INC. / BRIDGEWATE,"Bridgewater Associates, founder; other Bridgewater filers are different entities."
+I058,Robert Hagstrom,none,,,,,N,quality_compounders,us,2,1.50,2,yes,investor,,,,,Equity Compass not among candidates; Compass filers are unrelated.
+I059,Samantha McLemore,fund,,17996,,,F,quality_compounders,us,1,1.00,2,yes,investor,17,41,1884,Advisor Managed Portfolios: Patient Opportunity Trust; Class,Founder and CIO of Patient Capital Management; Patient Opportunity Trust lists McLemore; Patient Square is a different firm.
+I060,Sander Gerber,13f,11912,,,,C,long_short,global,1,0.50,2,yes,investor,61,333,2205,HUDSON BAY CAPITAL MGMT LP / HUDSON BAY ,"Hudson Bay Capital Mgmt, CEO and CIO; USCF Gerber funds are a different Gerber."
+I061,Seth Klarman,13f,8200,,,,A,deep_value,global,2,1.50,2,yes,investor,61,27,5255,"BAUPOST GROUP INC / BAUPOST GROUP, INC. ",Baupost Group is his firm.
+I062,Terry Smith,13f,13408,,,,A,quality_compounders,global,2,2.00,2,yes,investor,54,31,17356,FUNDSMITH LLP,Founder and CIO of Fundsmith; Fundsmith LLP longest record; ETF lists Terence Smith.
+I063,Thomas Russo,13f,39925,,,,A,quality_compounders,global,2,1.50,2,yes,investor,61,83,7566,GARDNER RUSSO & GARDNER,Gardner Russo & Gardner = Gardner Russo & Quinn renamed (general knowledge for identity); founder PM.
+I064,Vinod Khosla,none,,,,,N,private_venture,global,1,1.00,2,yes,investor,,,,,"Khosla Ventures does not file 13F; funds list Alex Khosla, a different person."
+I065,Abby Zimmerman,none,,,,,N,quality_compounders,global,2,2.00,1,yes,investor,,,,,Lowell Capital not plainly any candidate filer; William Blair/Virtus Zimmerman funds not tied to her by the notes.
+I066,Adam Shapiro,none,,,,,N,none,global,1,1.00,1,yes,allocator,,,,,No 13F; MFS Shapiro and PGIM Shapiro are other people.
+I067,Adam Wilk,none,,,,,N,quality_compounders,us,2,2.00,1,yes,investor,,,,,Greystone candidates are unrelated large firms.
+I068,Alan Patricof,13f,9956,,,,C,private_venture,global,1,1.00,1,yes,investor,18,6,131,GREYCROFT LP,Notes say founder of Greycroft; Greycroft LP is the filer.
+I069,Alex Fitch,fund,,14617,,,F,deep_value,us,2,2.00,1,yes,investor,,,,Harris Associates Investment Trust: Oakmark Select Fund; Inv,Oakmark Select lists Fitch as co-manager (M*); Harris Associates is a large firm so no 13F match.
+I070,Alex Morris,none,,,,,N,quality_compounders,us,1,1.00,1,yes,investor,,,,,TSOH not a filer; M* funds are other Morrises.
+I071,Alex Sacerdote,13f,11405,,,,A,growth,global,2,2.00,1,yes,investor,61,33,3032,WHALE ROCK CAPITAL MGMT LLC / WHALE ROCK,Founder of Whale Rock.
+I072,Alfonso Peccatiello,none,,,,,N,macro_multi_asset,global,0,0.00,1,unclear,investor,,,,,
+I073,Andrew Ballou,none,,,,,N,deep_value,global,1,1.00,1,yes,investor,,,,,General Equity Holdings not among the candidates; name-similar filers are unrelated.
+I074,Andrew Fox,none,,,,,N,growth,us,0,0.00,1,unclear,investor,,,,,
+I075,Andrew Martin,none,,,,,N,deep_value,global,2,2.00,1,yes,investor,,,,,No firm; the one fund is a different Andrew Martin (7Twelve).
+I076,Andrew Wilkinson,none,,,,,N,quality_compounders,global,2,2.00,1,unclear,investor,,,,,
+I077,Anthony Bolton,none,,,,,N,deep_value,global,2,2.00,1,yes,investor,,,,,One manager inside very large Fidelity; no fund with this Bolton clearly his.
+I078,Anthony Kingsley,none,,,,,N,quality_compounders,us,2,2.00,1,yes,investor,,,,,No candidates.
+I079,Antonio Gracias,13f,9698,,,,C,growth,global,2,2.00,1,yes,investor,18,4,390,VALOR EQUITY PARTNERS,Valor Equity Partners is the firm he founded and leads.
+I080,Arif Karim,none,,,,,N,quality_compounders,global,1,1.00,1,yes,investor,,,,,"Former employee of Ensemble, not founder or lead; fund managed by someone else."
+I081,Asher Edelman,none,,,,,N,special_situations,us,0,0.00,1,yes,investor,,,,,No 13F; Edelman funds are managed by other Edelmans.
+I082,Aswath Damodaran,none,,,,,N,deep_value,global,3,3.00,1,yes,investor,,,,,"Professor, no fund."
+I083,Barry Ritholtz,none,,,,,N,none,us,0,0.00,1,yes,investor,,,,,No candidates.
+I084,Ben Silver,13f,54860,,,,C,growth,global,1,1.00,1,yes,investor,61,189,6565,"MAVERICK CAPITAL LTD / MAVERICK CAPITAL,","Maverick Capital, co-CIO of the public funds."
+I085,Bill Gebhardt,none,,,,,N,quant_systematic,global,1,1.00,1,yes,investor,,,,,10 Dynamics not a candidate.
+I086,Bill Miller IV,none,,,,,N,deep_value,us,2,2.00,1,yes,investor,,,,,CIO of Miller Value Funds; three funds list Bill Miller IV; no 13F candidate.
+I087,Bill Priest,none,,,,,N,quant_systematic,global,2,2.00,1,yes,investor,,,,,Notes give only BEA and no role; Epoch not named in notes.
+I088,Bob Mylod,none,,,,,N,growth,us,0,0.00,1,unclear,investor,,,,,
+I089,Bob Robotti,13f,10247,,,,A,deep_value,us,2,2.00,1,yes,investor,61,59,291,"ROBOTTI & CO ADVISORS, LLC","Robotti & Company Advisors, CIO."
+I090,Brent Johnson,none,,,,,N,small_micro_cap,global,1,1.00,1,unclear,investor,,,,,
+I091,Brian Gaines,none,,,,,N,deep_value,us,2,2.00,1,yes,investor,,,,,Springhouse filer exists but notes give no role for him.
+I092,Bruce Berkowitz,13f,26630,,,,A,deep_value,us,1,1.00,1,yes,investor,61,12,1374,"FAIRHOLME CAPITAL MANAGEMENT, / FAIRHOLM","Fairholme Capital Mgmt, founder; Fairholme Fund is his flagship; income fund excluded."
+I093,Bryan Lawrence,13f,14445,,,,C,quality_compounders,unclear,2,2.00,1,yes,investor,37,10,158,OAKCLIFF CAPITAL MGMT LLC,"Oakcliff Capital Mgmt, founder."
+I094,Carson Block,none,,,,,N,long_short,global,1,1.00,1,yes,investor,,,,,No candidates.
+I095,Cathie Wood,fund,,62590 62589 62312,2014-01,,F,growth,us,1,1.00,1,yes,investor,38,207,11777,ARK ETF Trust: ARK Innovation ETF; ARK ETF Trust: ARK Genomic Revolution ETF; ARK ETF Trust: ARK Autonomous Technology & Robotics ETF,"ARK Investment Management, founder and CIO; M* ARK ETFs managed by Wood since 2014-01."
+I096,Charlie Munger,none,,,,,N,quality_compounders,global,1,1.00,1,yes,investor,,,,,"Vice chairman of Berkshire, not its portfolio manager; Berkshire filing not matched."
+I097,Chris,none,,,,,N,long_short,us,1,1.00,1,yes,investor,,,,,No candidates.
+I098,Christian Angermayer,none,,,,,N,private_venture,global,0,0.00,1,yes,investor,,,,,Apeiron Capital Limited and Apeiron RIA not plainly Apeiron Investment Group.
+I099,Christian Billinger,none,,,,,N,quality_compounders,europe,2,2.00,1,yes,investor,,,,,"No firm in notes, no candidates."
+I100,Clark Tang,none,,,,,N,growth,us,0,0.00,1,unclear,investor,,,,,
+I101,Clay Fink,none,,,,,N,quality_compounders,us,2,2.00,1,unclear,investor,,,,,
+I102,Collin Roche,none,,,,,N,private_venture,us,1,1.00,1,yes,investor,,,,,No candidates.
+I103,Cory Paddock,none,,,,,N,sector_specialist,us,0,0.00,1,yes,investor,,,,,GBE has no 13F; Invesco Paddock funds are another person.
+I104,Cristiano Souza,13f,16135,,2024-03,,C,quality_compounders,global,2,2.00,1,yes,investor,9,11,275,ZENO EQUITY PARTNERS LLP,Zeno Equity Partners LLP is his firm; filer starts 2024-03.
+I105,Dan Loeb,13f,83400,,,,A,special_situations,global,1,1.00,1,yes,investor,61,37,7507,THIRD POINT LLC / THIRD POINT MANAGEMENT,Founder and CEO of Third Point.
+I106,Dan Rasmussen,none,,,,,N,small_micro_cap,global,1,1.00,1,yes,investor,,,,,"Notes say only investor at Verdad, no founder or lead role stated."
+I107,Daniel Pronk,none,,,,,N,none,unclear,,,0,unclear,investor,,,,,
+I108,David Booth,13f,23000,,,,C,quant_systematic,us,1,1.00,1,yes,investor,61,3334,223136,"DIMENSIONAL FD ADVISORS, INC. / DIMENSIO",Dimensional Fund Advisors is the firm he founded (funds are team-managed).
+I109,David Orr,13f,17392,,,,C,long_short,global,1,1.00,1,yes,investor,4,160,207,MILITIA CAPITAL PARTNERS LP,Founder and PM of Militia Capital; ETF lists David Orr.
+I110,David Rosen,13f,14088 22705,,,,A,deep_value,global,1,1.00,1,yes,investor,43,58,1710,RUBRIC CAPITAL MANAGEMENT LP; RUBRIC CAPITAL MANAGEMENT,Rubric Capital Management LP and its earlier same-name entity; notes name him portfolio manager.
+I111,David Stein,none,,,,,N,macro_multi_asset,global,1,1.00,1,unclear,allocator,,,,,
+I112,David Tepper,13f,4423,,,,A,none,us,0,0.00,1,yes,investor,61,39,4612,"APPALOOSA MANAGEMENT, L.P. / APPALOOSA M",Appaloosa Management is his firm (identity by general knowledge; notes do not name it).
+I113,David Tykoczynski,13f,54860,,,,C,growth,global,1,1.00,1,yes,investor,61,189,6565,"MAVERICK CAPITAL LTD / MAVERICK CAPITAL,","Co-CIO public funds of Maverick; match uncertain, co-CIO among several books; start date not shown."
+I114,Dede Eyesan,none,,,,,N,quality_compounders,global,2,2.00,1,yes,investor,,,,,No candidates.
+I115,Dilhan Pillay Sandrasegara,none,,,,,N,none,global,0,0.00,1,unclear,allocator,,,,,
+I116,Django Davidson,none,,,,,N,deep_value,global,2,2.00,1,yes,investor,,,,,Hosking & Co NLE with 3 quarters is not plainly Hosking Partners; M* funds are other Davidsons.
+I117,Dwayne Louie,none,,,,,N,special_situations,global,2,2.00,1,unclear,investor,,,,,
+I118,Ed Perks,none,,,,,N,none,us,1,1.00,1,yes,investor,,,,,Lead PM of Franklin Income Fund inside giant Franklin so no 13F; three income funds list Perks.
+I119,Eduardo Marques,none,,,,,N,deep_value,global,1,1.00,1,yes,investor,,,,,No 13F; BNY muni bond fund is a different Marques and a bond fund.
+I120,Edwin Lugo,none,,,,,N,quality_compounders,global,2,2.00,1,yes,investor,,,,,No candidates.
+I121,Fabrice Grinda,none,,,,,N,private_venture,global,2,2.00,1,yes,investor,,,,,No candidates.
+I122,Fred Martin,13f,23050,,,,A,growth,us,3,3.00,1,yes,investor,61,84,4182,"DISCIPLINED GR INVESTORS, INC / DISCIPLI","Disciplined Growth Investors, founder and PM; other Disciplined names unrelated."
+I123,Freddie Lait,none,,,,,N,quality_compounders,global,2,2.00,1,yes,investor,,,,,Latitude Advisors LLC not plainly Latitude Investment Management.
+I124,Garrett Finn,none,,,,,N,small_micro_cap,global,2,2.00,1,unclear,investor,,,,,
+I125,George Noble,none,,,,,N,long_short,global,0,0.00,1,yes,investor,,,,,No candidates.
+I126,Gil Scrollback,none,,,,,N,none,global,0,0.00,1,unclear,allocator,,,,,
+I127,Glenn Dubin,none,,,,,N,long_short,us,0,0.00,1,yes,allocator,,,,,No candidates.
+I128,Glenn Kacher,none,,,,,N,growth,us,1,1.00,1,yes,investor,,,,,Legg Mason Light Street funds predate and are unrelated to Light Street Capital.
+I129,Graeme Forster,none,,,,,N,deep_value,global,2,2.00,1,yes,investor,,,,,"Professional at Orbis, not founder or lead; Hartford fund is another Forster."
+I130,Hamilton Helmer,none,,,,,N,quality_compounders,unclear,2,2.00,1,unclear,investor,,,,,
+I131,Hari Rama,none,,,,,N,quality_compounders,global,2,2.00,1,unclear,investor,,,,,
+I132,Harris Kupperman,13f,15389,,,,C,deep_value,us,3,3.00,1,yes,investor,13,16,206,PRAETORIAN CAPITAL MANAGEMENT,"Praetorian Capital Management, founder and PM; Praetorian Guard is different."
+I133,Helena Morrissey,none,,,,,N,macro_multi_asset,europe,0,0.00,1,yes,investor,,,,,Former CEO of a firm; Newton filers not her record.
+I134,Henry Ellenbogen,13f,9442,,,,A,growth,us,2,2.00,1,yes,investor,26,51,11332,DURABLE CAPITAL PTNR LP,Founder of Durable Capital Partners; fund candidates are name coincidences.
+I135,Host of We Study Billionaires,none,,,,,N,quality_compounders,us,2,2.00,1,unclear,investor,,,,,
+I136,Howard Lindzon,none,,,,,N,private_venture,us,1,1.00,1,yes,investor,,,,,No candidates.
+I137,Jack Raines,none,,,,,N,none,unclear,,,0,unclear,investor,,,,,
+I138,James Anderson,none,,,,,N,growth,global,1,1.00,1,yes,investor,,,,,Baillie Gifford is a large multi-book firm and he is a former investor; Kinnevik is chair role only.
+I139,James Zimmerman,none,,,,,N,quality_compounders,global,2,2.00,1,yes,investor,,,,,Lowell Capital not plainly any candidate filer; Zimmerman funds not tied to him by the notes.
+I140,Jamin Ball,none,,,,,N,private_venture,us,0,0.00,1,unclear,investor,,,,,
+I141,Jared Kushner,13f,17446,,,,C,private_venture,global,1,1.00,1,yes,investor,5,1,630,AFFINITY PARTNERS GP LP,Affinity Partners GP LP is the Kushner firm; other Affinity filers are unrelated.
+I142,Jason Donville,none,,,,,N,growth,other,3,3.00,1,yes,investor,,,,,No candidates.
+I143,Jason Karp,13f,13787,,,,C,none,unclear,0,0.00,1,yes,investor,21,35,1857,"TOURBILLON CAP PARTNERS, LLC / TOURBILLO","Founder of Tourbillon; filer record ends 2018-12, departure not shown."
+I144,Jay Bowen,none,,,,,N,quality_compounders,us,1,1.00,1,yes,investor,,,,,No candidates.
+I145,Jeff Horing,13f,11615,,,,C,private_venture,unclear,2,2.00,1,yes,investor,52,6,1252,INSIGHT VENTURE PTNR,Insight Venture Partners is the former name of Insight Partners (general knowledge for identity); founder.
+I146,Jeff Yass,none,,,,,N,quant_systematic,us,0,0.00,1,yes,investor,,,,,Susquehanna is a market-making group with thousands of positions; its filing is not his stock-picking record.
+I147,Jens,none,,,,,N,none,global,0,0.00,1,unclear,allocator,,,,,
+I148,Jesse Gamble,none,,,,,N,growth,other,3,3.00,1,yes,investor,,,,,No candidates.
+I149,Jim Chanos,13f,12867,,,,B,long_short,us,2,2.00,1,yes,investor,43,26,206,KYNIKOS ASSOCIATES LP,"Kynikos Associates, founder."
+I150,Joel Tillinghast,none,,,,,N,deep_value,us,2,2.00,1,yes,investor,,,,,Manager inside giant Fidelity so no 13F; Flex Intrinsic Opportunities fund lists Tillinghast.
+I151,John Armitage,13f,24580,,,,A,quality_compounders,global,2,2.00,1,yes,investor,61,26,9240,EGERTON CAPITAL (UK) LLP / EGERTON CAPIT,"Egerton Capital, founder; Mondrian fund Armitage is another person."
+I152,John Graham,none,,,,,N,macro_multi_asset,global,0,0.00,1,unclear,allocator,,,,,
+I153,John Jennings,none,,,,,N,index_allocation,us,0,0.00,1,yes,allocator,,,,,Multi-family office filers not identified as his; M* funds are other Jenningses.
+I154,John Lennon,13f,9090,,,,A,deep_value,global,1,1.00,1,yes,investor,24,43,246,PLEASANT LAKE PTNR LLC,Notes call him PM of Pleasant Lake Partners; general knowledge: he runs the firm; Pleasantville is a different firm.
+I155,Jon Cukierwar,none,,,,,N,quality_compounders,global,2,2.00,1,yes,investor,,,,,No candidates.
+I156,Jon Gray,none,,,,,N,private_venture,global,2,2.00,1,yes,investor,,,,,"President/COO, not founder or lead PM of Blackstone filer."
+I157,Jonathan Boyar,none,,,,,N,small_micro_cap,us,2,2.00,1,yes,investor,,,,,No candidates.
+I158,Josh Resnick,none,,,,,N,long_short,global,1,1.00,1,yes,investor,,,,,No candidates.
+I159,Josh Wolfe,none,,,,,N,private_venture,global,1,1.00,1,yes,investor,,,,,Lux Capital not a candidate; fund is an index ETF.
+I160,Josh Young,none,,,,,N,small_micro_cap,global,1,1.00,1,yes,investor,,,,,No candidates.
+I161,Jurrien Timmer,none,,,,,N,macro_multi_asset,global,1,1.00,1,unclear,allocator,,,,,
+I162,Keith Rabois,none,,,,,N,private_venture,us,1,1.00,1,yes,investor,,,,,"Managing director at a venture firm, no candidates."
+I163,Kelly Granat,13f,53255,,,,A,quality_compounders,global,1,1.00,1,yes,investor,61,36,16814,LONE PINE CAPITAL LLC / LONE PINE CAPITA,Co-CIO of Lone Pine Capital.
+I164,Ken Fisher,13f,38240,,,,C,macro_multi_asset,global,1,1.00,1,yes,investor,61,823,72817,FISHER INVESTMENTS / FISHER INVESTMENTS ,Founder and chairman of Fisher Investments; Purisima funds have no data since 2011.
+I165,Ken Griffin,13f,16210,,,,C,long_short,global,0,0.00,1,yes,investor,61,3839,62411,CITADEL ADVR LLC / CITADEL INVESTMENT GR,"Citadel Advisors / Citadel Investment Group, founder; funds with Griffin are other people."
+I166,Kevin Hartz,none,,,,,N,private_venture,us,1,1.00,1,yes,investor,,,,,A* Capital not among candidates.
+I167,Kris Sidial,none,,,,,N,none,us,0,0.00,1,yes,investor,,,,,Ambrus bond funds are managed by others.
+I168,Kristof Gleich,none,,,,,N,macro_multi_asset,us,1,1.00,1,unclear,allocator,,,,,
+I169,Larry Connor,none,,,,,N,none,us,2,2.00,1,yes,investor,,,,,Connor Group not among candidates; O'Connor names unrelated.
+I170,Laura Geritz,none,,,2017-01,,N,deep_value,emerging,2,2.00,1,yes,investor,,,,,Geritz is manager of Rondure New World and Overseas funds since 2017-01; Rondure not a 13F candidate.
+I171,Lauren Templeton,13f,14968,,,,C,deep_value,global,2,2.00,1,yes,investor,14,46,118,TEMPLETON PHILLIPS CAPITAL MAN,Founder of Templeton & Phillips; Franklin Templeton filers are a different firm.
+I172,Leah,none,,,,,N,growth,us,0,0.00,1,yes,investor,,,,,No candidates.
+I173,Leon,none,,,,,N,growth,global,0,0.00,1,yes,investor,,,,,"Only a first name, no firm."
+I174,Leon Cooperman,13f,21430,,,,A,none,us,0,0.00,1,yes,investor,55,62,2859,"OMEGA ADVISORS, INC. / OMEGA ADVR INC",Founder of Omega Advisors.
+I175,Leon Shaulov,none,,,,,N,long_short,global,1,1.00,1,yes,investor,,,,,No candidates.
+I176,Mala Gaonkar,13f,15774,,,,C,quality_compounders,global,2,2.00,1,yes,investor,10,13,1949,SURGOCAP PARTNERS LP,SurgoCap Partners LP is her firm.
+I177,Marcus Wallenberg,none,,,,,N,quality_compounders,europe,0,0.00,1,unclear,investor,,,,,
+I178,Maria Vassalou,none,,,,,N,macro_multi_asset,global,0,0.00,1,yes,investor,,,,,"Research head at Pictet, not lead PM of any matching book."
+I179,Matt Cherwin,none,,,,,N,macro_multi_asset,us,0,0.00,1,yes,investor,,,,,No candidates.
+I180,Matt Mark,13f,10779,,,,A,special_situations,us,2,2.00,1,yes,investor,52,17,315,"JET CAPITAL INVESTORS, LP",Jet Capital Investors LP is his firm.
+I181,Michael Anders,none,,,,,N,none,unclear,0,0.00,1,unclear,allocator,,,,,
+I182,Michael Buckley,none,,,,,N,growth,us,1,1.00,1,unclear,investor,,,,,
+I183,Michael Chu,none,,,,,N,private_venture,global,1,1.00,1,yes,investor,,,,,No candidates.
+I184,Michael Moritz,none,,,,,N,private_venture,global,1,1.00,1,yes,investor,,,,,Former Sequoia partner; Sequoia filers are not his venture firm.
+I185,Michael Rees,13f,8401,,,,C,private_venture,us,1,1.00,1,yes,investor,18,43,309,BLUE OWL CAPITAL HOLDINGS LP,"Blue Owl Capital Holdings, co-president and founder."
+I186,Mike Paulus,none,,,,,N,index_allocation,us,0,0.00,1,unclear,allocator,,,,,
+I187,Muhammad Andreala,none,,,,,N,growth,us,1,1.00,1,unclear,investor,,,,,
+I188,Nate Chesley,none,,,,,N,none,global,0,0.00,1,unclear,allocator,,,,,
+I189,Nick Shallik,none,,,,,N,growth,us,1,1.00,1,unclear,investor,,,,,
+I190,Nick Sleep,none,,,,,N,quality_compounders,us,1,1.00,1,yes,investor,,,,,No candidates.
+I191,Nishant Gargnani,none,,,,,N,special_situations,global,2,2.00,1,yes,investor,,,,,"Partner at Versor, no candidates."
+I192,Noah Yechiely,none,,,,,N,macro_multi_asset,global,0,0.00,1,yes,investor,,,,,"Former Bridgewater executive, not owner or lead manager."
+I193,Omar Aguilar,none,,,,,N,index_allocation,us,0,0.00,1,unclear,allocator,,,,,
+I194,Orlando Bravo,13f,9474,,,,C,private_venture,global,1,1.00,1,yes,investor,29,4,7324,"THOMA BRAVO, L.P.","Founder of Thoma Bravo; Thoma Cressey Bravo is a 4-quarter predecessor with one position, not matched."
+I195,Paul Andreola,none,,,,,N,small_micro_cap,other,3,3.00,1,yes,investor,,,,,Candidate filer is an unrelated closed fund; many unrelated funds.
+I196,Paul Black,13f,93315,,,,C,growth,global,2,2.00,1,yes,investor,60,151,9672,WCM INVESTMENT MANAGEMENT / WCM INVESTME,"WCM Investment Management, co-CEO and portfolio manager; its funds are team-managed."
+I197,Paul Enright,none,,,,,N,long_short,us,2,2.00,1,yes,investor,,,,,"Former Viking PM now private; Viking filings are the firm and others, not his book."
+I198,Paul Tudor Jones,13f,85625,,,,C,macro_multi_asset,global,0,0.00,1,yes,investor,61,1248,2315,TUDOR INVESTMENT CORP / TUDOR INVESTMENT,"Tudor Investment Corp, founder."
+I199,Paul Marshall,13f,10643,,,,C,long_short,global,1,1.00,1,yes,investor,59,1029,10891,"MARSHALL WACE LLP / MARSHALL WACE, L.L.P",Marshall Wace LLP is the co-founder firm; North America and Asia entities overlap its quarters with shorter records.
+I200,Paul Singer,13f,78988,,,,A,special_situations,global,1,1.00,1,yes,investor,61,25,6441,ELLIOTT INTL CAP ADVISORS INC. / ELLIOTT,"Founder of Elliott; longest-record filer kept, Elliott & Associates same quarters."
+I201,Paul Zummo,none,,,,,N,long_short,global,1,1.00,1,yes,allocator,,,,,One CIO inside very large JPMorgan; filer is not his record.
+I202,Pete Muller,13f,13574,,,,C,quant_systematic,us,0,0.00,1,yes,investor,53,615,1522,"PDT PARTNERS, LLC","PDT Partners, founder; M* funds are other Mullers."
+I203,Peter Keefe,13f,5300,,,,A,quality_compounders,us,2,2.00,1,yes,investor,61,64,984,AVENIR CORP / AVENIR CORPORATION,Co-manager at Avenir Corporation; Avenir Corp is the filer (general knowledge: he leads the firm).
+I204,Peter Thiel,none,,,,,N,private_venture,us,1,1.00,1,yes,investor,,,,,"Only Founders Fund vehicle GPs file; venture funds, no firm-level filer match."
+I205,Pierre-Olivier Langevin,none,,,,,N,quality_compounders,global,2,2.00,1,yes,investor,,,,,No candidates.
+I206,Prem Watsa,13f,11659,,,,A,deep_value,global,2,2.00,1,yes,investor,61,37,1515,FAIRFAX FINL HOLDINGS LIMITED / FAIRFAX ,"Founder, chairman and CEO of Fairfax; filer is Fairfax Financial."
+I207,Preston Pysh,none,,,,,N,macro_multi_asset,global,0,0.00,1,unclear,investor,,,,,
+I208,Reid Hoffman,none,,,,,N,growth,global,1,1.00,1,yes,investor,,,,,Partner at Greylock among many; GP vehicles only; SEI Hoffman is another person.
+I209,Richard Lawrence,none,,,,,N,quality_compounders,asia,2,2.00,1,yes,investor,,,,,Overlook Holdings (BVI) not plainly Overlook Investments.
+I210,Rick Rieder,none,,,,,N,none,global,1,1.00,1,yes,investor,,,,,CIO inside giant BlackRock so no 13F; two funds list Rieder (bond-only funds excluded).
+I211,Ricky Sandler,13f,25190,,,,B,long_short,unclear,2,2.00,1,yes,investor,61,49,5678,"EMINENCE CAPITAL, L.L.C. / EMINENCE CAPI","Eminence Capital, CEO and CIO."
+I212,Rob Goldstein,none,,,,,N,deep_value,us,3,3.00,1,yes,investor,,,,,"Partner, not lead; Gotham Asset Mgmt is a different firm from Gotham Capital."
+I213,Robert Carver,none,,,,,N,macro_multi_asset,global,2,2.00,1,yes,investor,,,,,No candidates.
+I214,Robert Wallace,13f,11535,,,,C,private_venture,global,1,1.00,1,yes,allocator,60,21,785,STANFORD MANAGEMENT COMPANY,"Stanford Management Company, CEO and CIO; FocusShares Wallace funds are index funds."
+I215,Roger Fan,none,,,,,N,special_situations,global,2,2.00,1,yes,investor,,,,,No candidates.
+I216,Ryan Tolkin,none,,,,,N,long_short,global,0,0.00,1,unclear,investor,,,,,
+I217,Scott Barbee,none,,,,,N,deep_value,global,2,2.00,1,yes,investor,,,,,Aegis Value Fund lists Barbee; AIS has no 13F candidate; high yield bond fund excluded.
+I218,Scott Phillips,13f,14968,,,,C,deep_value,global,2,2.00,1,yes,investor,14,46,118,TEMPLETON PHILLIPS CAPITAL MAN,"Templeton & Phillips Capital Management, co-manager; DFA Phillips funds are other people."
+I219,Shirley,none,,,,,N,none,global,0,0.00,1,unclear,allocator,,,,,
+I220,Shree Viswanathan,none,,,,,N,quality_compounders,global,2,2.00,1,yes,investor,,,,,Gerstein Fisher funds are not SVN Capital; surname match only.
+I221,Sinan Xin,none,,,,,N,long_short,emerging,2,2.00,1,yes,investor,,,,,No candidates.
+I222,Soo Chuen Tan,13f,7272,,,,A,deep_value,global,2,2.00,1,yes,investor,22,12,769,DISCERENE GROUP LP,"Discerene Group, founder."
+I223,Stan Druckenmiller,13f,13021,,,,C,macro_multi_asset,us,1,1.00,1,yes,investor,58,41,2087,DUQUESNE FAMILY OFFICE LLC,Duquesne Family Office is Druckenmiller's (identity by general knowledge; notes name no firm).
+I224,Stephanie Link,none,,,,,N,growth,us,2,2.00,1,yes,investor,,,,,"CIO of a large wealth platform; Hightower filing is client assets, not her book."
+I225,Steve Cohen,13f,75106,,,,C,long_short,global,1,1.00,1,yes,investor,61,1001,15913,"POINT72 ASSET MANAGEMENT, L.P.","Point72 Asset Management L.P., founder and CEO; Asia and other filers are sub-entities."
+I226,Steve Eisman,none,,,,,N,long_short,global,0,0.00,1,yes,investor,,,,,Notes show only a host role; Emrys filer (2 quarters) not plainly his record.
+I227,Steven Bregman,none,,,,,N,deep_value,us,2,2.00,1,unclear,investor,,,,,
+I228,Thomas Kaplan,none,,,,,N,sector_specialist,global,1,1.00,1,yes,investor,,,,,Electrum has no filer; Kaplan funds are other people.
+I229,Thomas Laffont,13f,11450,,,,A,growth,global,0,0.00,1,yes,investor,61,55,9008,"COATUE MANAGEMENT, LLC","Coatue Management, co-founder per notes."
+I230,Thomas Mueller-Borja,none,,,,,N,none,global,0,0.00,1,yes,investor,,,,,BlackRock is a large multi-book firm and no role is shown.
+I231,Tim Draper,none,,,,,N,private_venture,us,1,1.00,1,yes,investor,,,,,Kalmar fund Draper is a different person.
+I232,Tom,none,,,,,N,long_short,us,1,1.00,1,yes,investor,,,,,No candidates.
+I233,Tom Morgan,none,,,,,N,growth,us,1,1.00,1,unclear,investor,,,,,
+I234,Tully Friedman,13f,13391,,,,C,private_venture,us,1,1.00,1,yes,investor,17,1,1101,HELLMAN & FRIEDMAN LLC,"Hellman & Friedman LLC, co-founder per notes."
+I235,Unnamed fund-of-managers allocator,none,,,,,N,none,global,0,0.00,1,unclear,allocator,,,,,
+I236,Unnamed head of Liberty Mutual Investments,none,,,,,N,private_venture,us,0,0.00,1,yes,allocator,,,,,Unnamed person; insurer filer is the company.
+I237,Victor Haghani,none,,,2025-01,,N,quant_systematic,global,2,2.00,1,yes,investor,,,,,Elm Market Navigator ETF managed by Haghani/White since 2025-01; no 13F candidate.
+I238,Vitaliy Katsenelson,13f,12188,,,,C,none,unclear,0,0.00,1,yes,investor,60,160,214,"IMA WEALTH, INC.",IMA Wealth Inc is Investment Management Associates (identity by general knowledge); 14622 not matched.
+I239,Wilson Cheung,none,,,,,N,sector_specialist,us,1,1.00,1,yes,investor,,,,,Redwood funds not tied to this Cheung by the notes.
+I240,Ying,none,,,,,N,long_short,unclear,0,0.00,1,yes,investor,,,,,No candidates.
+I241,Zach,none,,,,,N,long_short,us,0,0.00,1,yes,investor,,,,,"No firm, no candidates."
