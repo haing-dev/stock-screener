@@ -11,7 +11,7 @@ the reader, the checker and the list of exempt jobs. Allowed on sealed months be
 (counts, coverage, date ranges, identifiers), correlations with published series, estimation inputs of the live
 book. Never a mean, Sharpe ratio, drawdown, stress result or chart of any portfolio, signal, factor or pod.
 
-Lock id: (set when the reader and checker are committed)
+Lock id: e680ca33c77ec51ed50372ec66e5733001cd4867adf1e692f88a4e2645015099 (2026-11-18; reader a99b5c80853e, checker 7fbfc654946e, exempt list f7f6560bc43c)
 
 ## A. Reads made before the seal existed
 | When | What | Years | What was seen |
@@ -28,3 +28,4 @@ Lock id: (set when the reader and checker are committed)
 ## B. Openings of the seal by the seal-exempt jobs
 | When | Job | Code hash | Inputs | What came back |
 |---|---|---|---|---|
+| 2026-11-18 | `eq_sc_pull_v1` (pulls only; re-runs v1b, v1c... until complete) | f7f542646da4... (input c77e38e77851...) | CRSP, 13F, firm_ratio, factors, CRSP funds, 2009-06 to 2025-12, stored on WRDS | Pull status lines only |

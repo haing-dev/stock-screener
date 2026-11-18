@@ -1,6 +1,6 @@
 # Equity pod shop, Stage 0: registration of the investor scorecard, the tier rule and the "follow the best managers" signal
 
-Status: DRAFT v2 (2026-11-17), after the independent review of v0.2 (`EQUITY_POD_SHOP_DESIGN_v0.2_review.md`, Part 1).
+Status: REGISTERED v2 (2026-11-18), after the independent review of v0.2 (`EQUITY_POD_SHOP_DESIGN_v0.2_review.md`, Part 1).
 It becomes binding when the line REGISTERED below carries a commit id, and that happens before the scorecard job
 computes any return. Plan: `EQUITY_POD_SHOP_PLAN_v0.3.md` sections 5, 6, 8.2 and 11. Every number here is fixed by
 this file. A later change is a new version of this file with its own date, and the old result is kept.
@@ -187,3 +187,11 @@ to 22, which the code implements. They are part of this registration. The ones t
   place.
 - Equity jobs use no pull or export steps outside the reader. The scorecard runs under names `eq_scorecard_v<n>`;
   a re-run on the same inputs fixes a logged bug only.
+- An investor that shares a record (`shares_record_with`) can still take an explicit place on its own documents.
+  If the holder of a shared record is not eligible, no one takes a place by record on it.
+- A change of `PULL_VERSION` means deleting every `eq_sc_*` data set on WRDS before the next pull.
+- Code reviewed: three independent reads (`SCORECARD_CODE_CHECK.md`: FIX FIRST 5, FIX FIRST 2, RUN), a hidden-error
+  test (6 of 6 planted defects found, no false alarm; `scorecard_check/`), smoke test with 6 of 6 registered and 13
+  of 14 extra planted errors caught. Module code sha256 f7f542646da4da43a96cbfdfe8e817247ccb519b7872519dab299188f6bb5db8
+  (input block excluded); input sha256 c77e38e77851ee3124548ca374ec78e0414cbde50d5e6f536c04380242ab0b6f (241 investors:
+  13F 77, fund 13, none 151; 635 documents); lock id e680ca33c77ec51ed50372ec66e5733001cd4867adf1e692f88a4e2645015099.

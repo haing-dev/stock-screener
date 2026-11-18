@@ -302,3 +302,75 @@ I ran the queries on PostgreSQL 16 with the real column names and types, through
 **Re-check verdict: FIX FIRST (2): R2.1 swapped template arguments print data rows; R2.2 `eq_reader.count` with
 free-text clauses leaks sealed values.** The scorecard computation itself is ready. Both fixes are in the checker,
 the reader and the exempt list; neither changes `eq_scorecard.py`.
+
+## Re-check 2 (2026-11-18)
+
+Commit f0c00ab ("second-round fixes"), lock id e680ca33c77e..., module code sha256 f7f54264.... Scripts in the work
+folder: `re2/attack3.py` (42 checker cases), `re2/refuse.py` (build refusals, run-time reader), plus the local
+Postgres. No repo file was edited except this one.
+
+### 1. Attacks (all earlier ones re-run, plus new ones)
+| Group | Result |
+|---|---|
+| Round 1: A1, A2, A3, A5, A8 (literal), A9 | all refused |
+| Round 2: swapped template arguments (T1 `pull_crsp(sql, out, out, 0)`, T2, T3, T5); `count` with `where` (C1) or the old positional form (C2) | all refused |
+| Exact templates: keyword arguments, extra spaces, a trailing comment, a semicolon, `export` or `pull` steps, a function under another job name (`report` in the pull job, `cleanup` in the build job), `DATA` replaced by a digit, a name suffix beyond the pattern, `eq_reader` imported in an exempt job | all refused |
+| Exact templates that pass but are harmless: a trailing newline; `report(load, out, 7, 3)` (prints part 7 of the stored report, or "empty"); `delete` of `eq_sc_report` in the pull job (loses the report, prints nothing) | no leak |
+| `count`: keyword `check=`, a built check name, reading `eq_reader.CHECKS`, a 5th positional, `where=` through a `from eq_reader import count as c` alias | all refused. Only the two named checks run; they return (year, n) and nothing else. `CHECKS` is a read-only mapping that jobs cannot reach |
+| `load_ds` from a non-exempt `eq_` job | Passes the checker. At run time it refuses sealed months (2015 file, 2015 months: SealError), returns 0 rows for design months of a 2015 file, and refuses `eq_sc_report` (not declared). The 2010 files return their 2010 rows (design era) |
+| `load_ds` from a non-`eq_` job | refused (literal name) |
+
+Still open (non-blocking, deliberate acts only):
+- A8b: a non-`eq_` job can read a scorecard data set through a built name (`'eq_s' + 'c_msf_2015'`).
+- L5/L6: any job can overwrite a scorecard data set, or the stored report, through `save` with a built name. That
+  would change the inputs `build` trusts.
+
+  Remedy: the report header prints a SHA-256 of each input data set (or of all of them together); the seal checker
+  refuses `save` with a non-literal name in `eq_` jobs; and the cleanup job runs right after the result is accepted.
+
+### 2. Build refusals (invented data, real module)
+| Case | Result |
+|---|---|
+| A pull is missing (`eq_sc_msf_2015`) | `build refused: 1 input data sets missing` |
+| `eq_sc_cand` carries another key | `build refused: ... 1 made for another investor input` |
+| A different `PULL_VERSION` | `build refused: ... 2 made for another investor input` |
+| Orphaned holdings years (cand deleted) | `pull_hold refused ... (orphans)`; build refuses (cand missing) |
+| Orphaned fund years (fmeta deleted) | `pull_funds refused ... (orphans)`; build refuses (fmeta missing) |
+
+`eq_sc_fmeta` is now written before the fund years. The pull key covers the code version and the library ids.
+The base, CRSP and aggregate data sets carry no key; they do not depend on the investor file, but a `PULL_VERSION`
+bump for a change in those queries would reuse them. Non-blocking: the rule "a version bump means delete every
+`eq_sc_*`" belongs in the build note.
+
+### 3. The real frozen file
+I generated the jobs in the work folder (241 investors, 635 documents). The pull job is identical to the one in the
+repo, and all four jobs PASS with the registered hash.
+- **`shares_record_with`**: I113→I084 (filer 54860, both grade C), I218→I171 (14968, both C), I229→I056 (11450, both
+  A). The holder has more own-words documents (I056 has 2), or the lower id on a tie (I084, I171).
+  - `_tiers` takes sharers out of the eligible set (so no record place and no control draw).
+  - They are listed under the holder's tier as "with I0xx (same record, no place)" and left out of tier B.
+  - Tested with invented scores: I229 joined I056's record tier and the record tier still held 30 places.
+  - Reading to state in section 12: a sharer may still take an explicit place on its own documents. The code allows
+    it; I229 has explicitness 0, so it cannot happen with this file.
+  - A case the file does not contain: a holder that is not eligible with a sharer that is (possible only if their
+    grades differ). Neither would then take the place.
+- **`start_ym` by rule**:
+  - Set by the new rule: I010 2012-01, I042 2017-01.
+  - From the matcher: I028 2016-01, I095 2014-01, I104 2024-03 (13F).
+  - On grade N rows, which have no record and are therefore unused: I170 2017-01, I237 2025-01.
+
+  The code cuts fund records (`lcut` in `_fund_windows`) and 13F books (`cut` in `_schedule` / `_books`) to these
+  months, as section 6 and section 12 say. I069 Fitch keeps the full period (the co-manager case named in section 6).
+  Grade F for I010 and I042 still holds after the cut (about 168 and 108 months).
+- **Everything else in the input is consistent**: grades follow record kind; the 21 allocators are C or N;
+  `known_*` ids are filled.
+
+### 4. Anything else
+- I re-ran both named count checks and the precheck's `first_versions` on the local Postgres: correct counts by year.
+  The SQL of the pulls and `build` is unchanged since re-check 1, which ran it.
+- The smoke test passes. Catch rate: 6 of 6 registered mutations, 13 of 14 extra (1 equivalent).
+- I found nothing that would give a wrong number or a leak in the registered jobs as generated.
+
+**Re-check 2 verdict: RUN.** No blocking finding. Before the run, log the lock id e680ca33... and the code hash
+f7f54264... in SEAL_LOG. Compare the code hash printed in the report header with the logged one. Run the cleanup job
+once the result is accepted.
