@@ -1,0 +1,242 @@
+id,name,other_spellings,role,ran_money,firms,documents,doc_ids,styles,region,explicit_max,explicit_mean
+I001,Brad Gerstner,,investor,yes,Altimeter (17); Altimeter Capital (4); BG2 Pod (1),27,27 50 51 52 81 82 83 112 113 114 115 116 118 119 120 121 122 123 124 125 126 193 335 348 393 474 542,growth (25); private_venture (10),us,2,0.11
+I002,Bill Gurley,,investor,yes,Benchmark (10); BG2 Pod (1),26,27 50 51 52 81 82 83 112 113 114 115 116 118 119 120 121 122 123 124 125 126 193 335 348 393 474,growth (24); private_venture (10),us,2,0.12
+I003,Stig Brodersen,,investor,unclear,The Investor's Podcast Network (11); The Investor's Podcast (6),21,6 60 95 177 352 353 354 355 356 357 358 359 360 361 362 363 372 452 475 476 477,deep_value (15); quality_compounders (14); macro_multi_asset (2); none (1); special_situations (1); growth (1),global,2,1.67
+I004,Tobias Carlisle,,investor,yes,Acquirers Funds (10); Acquirers Multiple (3); Acquirer's Funds (2); ZIG and DEEP funds (1),16,60 352 353 354 355 356 357 358 359 360 361 362 363 372 452 612,deep_value (15); quality_compounders (11); special_situations (1),global,2,2.00
+I005,Kyle Grieve,,investor,unclear,The Investor's Podcast Network (9); The Investor's Podcast (3),15,188 213 215 217 282 292 323 391 459 478 480 502 559 563 603,quality_compounders (11); small_micro_cap (6); none (3); index_allocation (1); deep_value (1); special_situations (1),global,3,1.60
+I006,Hari Ramachandra,,investor,unclear,,12,60 352 354 355 356 357 358 359 360 362 363 452,deep_value (12); quality_compounders (9); special_situations (1),us,2,2.00
+I007,Clay Finck,,investor,unclear,The Investor's Podcast Network (6); The Investor's Podcast (4),11,97 229 241 283 389 482 499 554 563 566 577,quality_compounders (10); growth (2); deep_value (2); none (1),global,2,1.73
+I008,Chris Davis,,investor,yes,Davis Advisors (7); Davis Advisers (1),10,1 55 62 67 77 78 202 550 582 596,quality_compounders (7); deep_value (6); none (3),us,2,1.00
+I009,Howard Marks,,investor,yes,Oaktree Capital Management (6); Oaktree Capital (3),9,20 48 131 168 246 259 260 281 570,credit_distressed (7); quality_compounders (1); none (1),global,1,0.89
+I010,Joel Greenblatt,,investor,yes,Gotham Capital (7); Gotham (1),9,77 78 281 306 307 308 309 310 311,deep_value (5); special_situations (4); quality_compounders (2); none (1); long_short (1); credit_distressed (1); quant_systematic (1),us,3,1.89
+I011,Robert Vinall,,investor,yes,RV Capital (7),9,72 258 265 428 429 430 431 520 602,quality_compounders (7); none (2),global,3,1.22
+I012,Ian Cassel,,investor,yes,MicroCapClub (3); Microcap Club (1); Intelligent Fanatics Capital Management (1); intelligent Fanatics Capital Management (1); MicroCap Club (1),7,237 243 274 386 522 573 608,small_micro_cap (7); macro_multi_asset (1),us,3,2.14
+I013,Mohnish Pabrai,,investor,yes,Pabrai Investment Funds (5); Pabrai Funds (2),7,77 286 379 380 381 382 595,quality_compounders (5); deep_value (5); none (1),global,2,1.14
+I014,Chris Bloomstran,,investor,yes,Semper Augustus (4); Semper Augustus Investments Group (2),6,56 78 254 295 547 594,quality_compounders (6); deep_value (1),us,2,1.67
+I015,Dev Kantesaria,,investor,yes,Valley Forge Capital Management (4); Valley Forge Capital (2),6,65 105 174 189 290 291,quality_compounders (6),us,3,2.17
+I016,François Rochon,,investor,yes,Giverny Capital (4),5,73 276 281 396 492,quality_compounders (4); none (1),us,3,2.00
+I017,Tom Gayner,,investor,yes,Markel (2); Markel Group (1); Markel Corp (1); Markel Corporation (1),5,223 346 347 506 574,quality_compounders (5),us,2,1.80
+I018,Guy Spier,,investor,yes,Aquamarine Fund (4),4,194 231 284 402,deep_value (2); quality_compounders (2); none (1),unclear,2,1.00
+I019,Jeremy Grantham,,investor,yes,GMO (4),4,17 274 303 304,macro_multi_asset (2); small_micro_cap (1); deep_value (1); none (1),global,1,0.75
+I020,Andrew Brenton,,investor,yes,Turtle Creek Asset Management (3),3,224 351 403,quality_compounders (3),other,3,2.33
+I021,Chris Hohn,,investor,yes,TCI Fund Management (3),3,279 466 688,quality_compounders (3); special_situations (1),global,2,2.00
+I022,Christopher Begg,,investor,yes,East Coast Asset Management (3),3,238 280 534,quality_compounders (3),us,2,2.00
+I023,Connor Haley,,investor,yes,Alta Fox Capital Management (2); Alta Fox Capital (1),3,2 184 387,special_situations (2); small_micro_cap (2); quality_compounders (1),us,3,2.33
+I024,Dan Sundheim,,investor,yes,D1 Capital (2); D1 Capital Partners (1),3,98 269 471,long_short (2); private_venture (1); quality_compounders (1); growth (1),global,2,1.33
+I025,David Einhorn,,investor,yes,Greenlight Capital (3),3,101 102 472,deep_value (2); long_short (1); macro_multi_asset (1),global,2,1.00
+I026,David Gardner,,investor,unclear,The Motley Fool (3),3,221 239 543,growth (3),us,2,2.00
+I027,Dmitry Balyasny,,investor,yes,Balyasny Asset Management (3),3,9 108 158,long_short (3),global,0,0.00
+I028,Joseph Shaposhnik,,investor,yes,TCW (2); Rainwater Equity (1),3,178 404 569,quality_compounders (3),us,2,2.00
+I029,Murray Stahl,,investor,yes,Horizon Kinetics (3),3,200 267 388,deep_value (2); macro_multi_asset (1); special_situations (1),us,2,1.33
+I030,Shawn O'Malley,,investor,unclear,"Intrinsic Value Podcast, The Investor's Podcast Network (1); The Investor's Podcast (1); Intrinsic Value portfolio (1)",3,511 566 615,growth (2); quality_compounders (2),us,2,1.67
+I031,Warren Buffett,,investor,yes,Berkshire Hathaway (3),3,57 58 59,quality_compounders (3); deep_value (1),global,1,1.00
+I032,Alex,,investor,yes,Whale Rock (2),2,275 614,growth (2); sector_specialist (1),global,2,1.00
+I033,Anthony Scaramucci,,allocator,yes,SkyBridge Capital (2),2,132 234,none (1); macro_multi_asset (1); growth (1),unclear,0,0.00
+I034,Arnold Van Den Berg,,investor,yes,Century Investment Management (1),2,199 485,none (1); deep_value (1); macro_multi_asset (1),unclear,1,0.50
+I035,Bill Miller,,investor,unclear,,2,67 281,none (2),unclear,1,0.50
+I036,Bill Nygren,,investor,yes,Harris Associates (1); Oakmark Funds (1),2,549 586,deep_value (2),us,3,2.50
+I037,Brian Feroldi,,investor,unclear,,2,192 250,growth (1); none (1),us,3,2.50
+I038,Chris Mayer,,investor,yes,Woodlock House Family Capital (1); Woodlock House (1),2,7 39,quality_compounders (2),global,2,2.00
+I039,Daniel Mahncke,,investor,unclear,TIP Intrinsic Value podcast (1); The Investor's Podcast (1),2,97 566,quality_compounders (2); growth (2),global,1,1.00
+I040,David Fagan,,investor,unclear,,2,69 611,none (1); index_allocation (1),unclear,3,1.50
+I041,David Rubenstein,,investor,yes,Carlyle Group (1); The Carlyle Group (1),2,598 599,private_venture (2),global,0,0.00
+I042,Derek Pilecki,,investor,yes,Gator Capital (1),2,94 418,sector_specialist (2); long_short (2),us,3,2.50
+I043,Eddy Elfenbein,,investor,yes,Crossing Wall Street (CWS ETF) (1); AdvisorShares Focused Equity ETF (CWS) (1),2,562 565,quality_compounders (2),us,2,2.00
+I044,Ernie Chan,,investor,yes,QTS (1); QTS Capital Management (1),2,208 584,quant_systematic (2),global,0,0.00
+I045,Gautam Baid,,investor,yes,Stellar Wealth Partners (1); Stella Wealth Partners (1),2,293 521,quality_compounders (2); special_situations (1),emerging,2,2.00
+I046,Gavin Baker,,investor,yes,Atreides Management (1); Atreides (1),2,163 542,growth (2),global,1,0.50
+I047,James Ferguson,,allocator,unclear,Global Endowment Management (1); Global Endowment (1),2,429 431,none (2),global,0,0.00
+I048,Jim Mellon,,investor,unclear,Master Investor (2),2,186 498,macro_multi_asset (2),global,0,0.00
+I049,John Huber,,investor,unclear,Saber Capital Management (1),2,241 579,quality_compounders (2); deep_value (1),global,2,2.00
+I050,John Spears,,investor,yes,"formerly Tweedy, Browne (1); Tweedy, Browne (1)",2,595 601,none (1); deep_value (1),unclear,2,1.00
+I051,Li Lu,,investor,yes,Himalaya Capital (1),2,333 334,deep_value (2); quality_compounders (1),global,2,1.50
+I052,Marc Rowan,,investor,unclear,Apollo Global Management (2),2,344 422,credit_distressed (2),global,1,1.00
+I053,Matthew McLennan,,investor,yes,First Eagle Investments (1); First Eagle (1),2,232 532,deep_value (2); macro_multi_asset (1); quality_compounders (1),global,2,2.00
+I054,Nima Shayegh,,investor,yes,Rumi Capital Partners (1); Rumi Partners (1),2,24 168,quality_compounders (2),us,1,1.00
+I055,Pat Dorsey,,investor,yes,Dorsey Asset Management (1),2,408 409,quality_compounders (2),global,2,2.00
+I056,Philippe Laffont,,investor,yes,Coatue (2),2,88 113,growth (2); private_venture (1),global,0,0.00
+I057,Ray Dalio,,investor,yes,Bridgewater Associates (2),2,67 421,none (1); macro_multi_asset (1),unclear,1,0.50
+I058,Robert Hagstrom,,investor,yes,Equity Compass (1),2,591 593,quality_compounders (2); growth (1),us,2,1.50
+I059,Samantha McLemore,,investor,yes,Patient Capital Management (1); Miller Value Partners (1),2,182 518,deep_value (2); quality_compounders (2),us,1,1.00
+I060,Sander Gerber,,investor,yes,Hudson Bay Capital (2),2,271 456,long_short (2); special_situations (1); credit_distressed (1),unclear,1,0.50
+I061,Seth Klarman,,investor,yes,Baupost Group (2),2,461 580,deep_value (2); special_situations (1); credit_distressed (1),global,2,1.50
+I062,Terry Smith,,investor,yes,Fundsmith (1),2,489 616,quality_compounders (2),global,2,2.00
+I063,Thomas Russo,,investor,yes,Gardner Russo & Quinn (1),2,78 93,quality_compounders (2),us,2,1.50
+I064,Vinod Khosla,,investor,yes,Khosla Ventures (2),2,197 583,private_venture (2); growth (1),global,1,1.00
+I065,Abby Zimmerman,,investor,yes,Lowell Capital (1),1,493,deep_value (1); quality_compounders (1),global,2,2.00
+I066,Adam Shapiro,,allocator,yes,Eastrock Capital (1),1,294,none (1),global,1,1.00
+I067,Adam Wilk,,investor,yes,Greystone Capital (1),1,535,small_micro_cap (1); quality_compounders (1),us,2,2.00
+I068,Alan Patricof,,investor,yes,"APAX Partners, Greycroft, Prime Time Partners (1)",1,165,private_venture (1),global,1,1.00
+I069,Alex Fitch,,investor,yes,Oakmark Funds (1),1,586,deep_value (1),us,2,2.00
+I070,Alex Morris,,investor,yes,TSOH Investment Research (1),1,328,quality_compounders (1),us,1,1.00
+I071,Alex Sacerdote,,investor,yes,Whale Rock Capital Management (1),1,36,growth (1); long_short (1),global,2,2.00
+I072,Alfonso Peccatiello,,investor,unclear,The Macro Compass (1),1,212,macro_multi_asset (1),global,0,0.00
+I073,Andrew Ballou,,investor,yes,General Equity Holdings (1),1,106,long_short (1); deep_value (1),global,1,1.00
+I074,Andrew Fox,,investor,unclear,Atreides (1),1,542,growth (1),us,0,0.00
+I075,Andrew Martin,,investor,yes,,1,433,small_micro_cap (1); deep_value (1),global,2,2.00
+I076,Andrew Wilkinson,,investor,unclear,Tiny (1),1,524,quality_compounders (1),global,2,2.00
+I077,Anthony Bolton,,investor,yes,Fidelity (1),1,43,deep_value (1); special_situations (1),global,2,2.00
+I078,Anthony Kingsley,,investor,yes,Finley Park (1),1,23,quality_compounders (1),us,2,2.00
+I079,Antonio Gracias,,investor,yes,Valor Equity Partners (1),1,152,growth (1); private_venture (1),global,2,2.00
+I080,Arif Karim,,investor,yes,Ensemble (1),1,397,quality_compounders (1); growth (1),global,1,1.00
+I081,Asher Edelman,,investor,yes,Edelman Companies (1),1,135,special_situations (1),us,0,0.00
+I082,Aswath Damodaran,,investor,yes,,1,47,deep_value (1),global,3,3.00
+I083,Barry Ritholtz,,investor,yes,Ritholtz Wealth Management (1),1,130,none (1),us,0,0.00
+I084,Ben Silver,,investor,yes,Maverick Capital (1),1,364,growth (1),global,1,1.00
+I085,Bill Gebhardt,,investor,yes,10 Dynamics (1),1,606,quant_systematic (1),global,1,1.00
+I086,Bill Miller IV,,investor,yes,Miller Value Funds (1),1,92,deep_value (1),us,2,2.00
+I087,Bill Priest,,investor,yes,BEA (1),1,419,quant_systematic (1),global,2,2.00
+I088,Bob Mylod,,investor,unclear,,1,122,growth (1),us,0,0.00
+I089,Bob Robotti,,investor,yes,Robotti & Company (1),1,19,deep_value (1),us,2,2.00
+I090,Brent Johnson,,investor,unclear,Santiago Capital (1),1,274,macro_multi_asset (1); small_micro_cap (1),global,1,1.00
+I091,Brian Gaines,,investor,yes,Springhouse Capital (1),1,310,deep_value (1); special_situations (1),us,2,2.00
+I092,Bruce Berkowitz,,investor,yes,Fairholme Fund (1),1,416,deep_value (1),us,1,1.00
+I093,Bryan Lawrence,,investor,yes,Oakcliff Capital (1),1,255,quality_compounders (1); deep_value (1),unclear,2,2.00
+I094,Carson Block,,investor,yes,Muddy Waters Capital (1),1,464,long_short (1),global,1,1.00
+I095,Cathie Wood,,investor,yes,ARK Invest (1),1,175,growth (1),us,1,1.00
+I096,Charlie Munger,,investor,yes,Berkshire Hathaway (1),1,57,quality_compounders (1); deep_value (1),global,1,1.00
+I097,Chris,,investor,yes,Ticker Tags (1),1,437,long_short (1); quant_systematic (1),us,1,1.00
+I098,Christian Angermayer,,investor,yes,Apeiron Investment Group (1),1,162,private_venture (1),global,0,0.00
+I099,Christian Billinger,,investor,yes,,1,424,quality_compounders (1),europe,2,2.00
+I100,Clark Tang,,investor,unclear,Altimeter (1),1,542,growth (1),us,0,0.00
+I101,Clay Fink,,investor,unclear,The Investor's Podcast Network (1),1,565,quality_compounders (1),us,2,2.00
+I102,Collin Roche,,investor,yes,GTCR (1),1,153,private_venture (1),us,1,1.00
+I103,Cory Paddock,,investor,yes,GBE (1),1,453,sector_specialist (1),us,0,0.00
+I104,Cristiano Souza,,investor,yes,Zeno Equity Partners (1),1,507,quality_compounders (1),global,2,2.00
+I105,Dan Loeb,,investor,yes,Third Point (1),1,329,special_situations (1); credit_distressed (1),global,1,1.00
+I106,Dan Rasmussen,,investor,yes,Verdad (1),1,274,macro_multi_asset (1); small_micro_cap (1),global,1,1.00
+I107,Daniel Pronk,,investor,unclear,Stock Unlocked (1),1,497,quality_compounders (1),us,2,2.00
+I108,David Booth,,investor,yes,Dimensional Fund Advisors (1),1,539,index_allocation (1); quant_systematic (1),us,1,1.00
+I109,David Orr,,investor,yes,Militia Capital (1),1,555,long_short (1),global,1,1.00
+I110,David Rosen,,investor,yes,Rubric Capital (1),1,106,long_short (1); deep_value (1),global,1,1.00
+I111,David Stein,,allocator,unclear,Fund Evaluation Group (1),1,395,macro_multi_asset (1),global,1,1.00
+I112,David Tepper,,investor,yes,,1,4,none (1),us,0,0.00
+I113,David Tykoczynski,,investor,yes,Maverick Capital (1),1,364,growth (1),global,1,1.00
+I114,Dede Eyesan,,investor,yes,Jenga IP (1),1,15,quality_compounders (1),global,2,2.00
+I115,Dilhan Pillay Sandrasegara,,allocator,unclear,Temasek (1),1,623,none (1),global,0,0.00
+I116,Django Davidson,,investor,yes,Hosking Partners (1),1,249,deep_value (1),global,2,2.00
+I117,Dwayne Louie,,investor,unclear,Versor (1),1,407,quant_systematic (1); special_situations (1),global,2,2.00
+I118,Ed Perks,,investor,yes,Franklin Templeton (1),1,266,none (1),us,1,1.00
+I119,Eduardo Marques,,investor,yes,Pretensul Partners (1),1,106,long_short (1); deep_value (1),global,1,1.00
+I120,Edwin Lugo,,investor,yes,EL2 Capital (1),1,519,quality_compounders (1); small_micro_cap (1),global,2,2.00
+I121,Fabrice Grinda,,investor,yes,FJ Labs (1),1,160,private_venture (1),global,2,2.00
+I122,Fred Martin,,investor,yes,Disciplined Growth Investors (1),1,18,growth (1),us,3,3.00
+I123,Freddie Lait,,investor,yes,Latitude Investment Management (1),1,512,quality_compounders (1),global,2,2.00
+I124,Garrett Finn,,investor,unclear,Alta Fox Capital (1),1,387,small_micro_cap (1),global,2,2.00
+I125,George Noble,,investor,yes,,1,481,long_short (1); macro_multi_asset (1),global,0,0.00
+I126,Gil Scrollback,,allocator,unclear,,1,431,none (1),global,0,0.00
+I127,Glenn Dubin,,allocator,yes,Dubin & Co (1),1,128,long_short (1); private_venture (1),us,0,0.00
+I128,Glenn Kacher,,investor,yes,Light Street Capital (1),1,289,growth (1); long_short (1),us,1,1.00
+I129,Graeme Forster,,investor,yes,Orbis (1),1,273,deep_value (1),global,2,2.00
+I130,Hamilton Helmer,,investor,unclear,Strategy Capital (1),1,12,quality_compounders (1),unclear,2,2.00
+I131,Hari Rama,,investor,unclear,,1,372,deep_value (1); quality_compounders (1),global,2,2.00
+I132,Harris Kupperman,,investor,yes,Praetorian Capital (1),1,296,special_situations (1); deep_value (1),us,3,3.00
+I133,Helena Morrissey,,investor,yes,Newton Investment Management (1),1,251,macro_multi_asset (1),europe,0,0.00
+I134,Henry Ellenbogen,,investor,yes,Durable Capital Partners (1),1,181,growth (1); small_micro_cap (1),us,2,2.00
+I135,Host of We Study Billionaires,,investor,unclear,The Investor's Podcast (1),1,578,quality_compounders (1); deep_value (1),us,2,2.00
+I136,Howard Lindzon,,investor,yes,Social Leverage (1),1,617,private_venture (1),us,1,1.00
+I137,Jack Raines,,investor,unclear,Slow Ventures (1),1,401,private_venture (1),us,0,0.00
+I138,James Anderson,,investor,yes,Kinnevik; formerly Baillie Gifford (1),1,324,growth (1); private_venture (1),global,1,1.00
+I139,James Zimmerman,,investor,yes,Lowell Capital (1),1,493,deep_value (1); quality_compounders (1),global,2,2.00
+I140,Jamin Ball,,investor,unclear,Altimeter (1),1,119,private_venture (1),us,0,0.00
+I141,Jared Kushner,,investor,yes,Affinity Partners (1),1,299,private_venture (1),global,1,1.00
+I142,Jason Donville,,investor,yes,Donville Kent Asset Management (1),1,180,growth (1); small_micro_cap (1),other,3,3.00
+I143,Jason Karp,,investor,yes,Tourbillon Capital Partners (1),1,533,none (1),unclear,0,0.00
+I144,Jay Bowen,,investor,yes,Bowen Haynes and Company (1),1,230,quality_compounders (1),us,1,1.00
+I145,Jeff Horing,,investor,yes,Insight Partners (1),1,10,private_venture (1); sector_specialist (1),unclear,2,2.00
+I146,Jeff Yass,,investor,yes,Susquehanna International Group (1),1,149,quant_systematic (1),us,0,0.00
+I147,Jens,,allocator,unclear,family office (1),1,429,none (1),global,0,0.00
+I148,Jesse Gamble,,investor,yes,Donville Kent Asset Management (1),1,180,growth (1); small_micro_cap (1),other,3,3.00
+I149,Jim Chanos,,investor,yes,Kynikos Associates (1),1,140,long_short (1),us,2,2.00
+I150,Joel Tillinghast,,investor,yes,Fidelity (1),1,61,deep_value (1),us,2,2.00
+I151,John Armitage,,investor,yes,Egerton Capital (1),1,313,quality_compounders (1); long_short (1),global,2,2.00
+I152,John Graham,,allocator,unclear,CPP Investments (1),1,315,macro_multi_asset (1),global,0,0.00
+I153,John Jennings,,allocator,yes,multi-family office (1),1,220,index_allocation (1),us,0,0.00
+I154,John Lennon,,investor,yes,Pleasant Lake Partners (1),1,106,long_short (1); deep_value (1),global,1,1.00
+I155,Jon Cukierwar,,investor,yes,Sor Peak Capital (1),1,179,small_micro_cap (1); quality_compounders (1),global,2,2.00
+I156,Jon Gray,,investor,yes,Blackstone (1),1,318,private_venture (1),global,2,2.00
+I157,Jonathan Boyar,,investor,yes,Boyar Research (1),1,564,small_micro_cap (1); special_situations (1),us,2,2.00
+I158,Josh Resnick,,investor,yes,,1,319,sector_specialist (1); long_short (1),global,1,1.00
+I159,Josh Wolfe,,investor,yes,Lux Capital (1),1,320,private_venture (1),global,1,1.00
+I160,Josh Young,,investor,yes,Bison Interests (1),1,274,macro_multi_asset (1); small_micro_cap (1),global,1,1.00
+I161,Jurrien Timmer,,allocator,unclear,Fidelity (1),1,3,macro_multi_asset (1),global,1,1.00
+I162,Keith Rabois,,investor,yes,Khosla Ventures (1),1,156,private_venture (1),us,1,1.00
+I163,Kelly Granat,,investor,yes,Lone Pine Capital (1),1,321,long_short (1); quality_compounders (1),global,1,1.00
+I164,Ken Fisher,,investor,yes,Fisher Investments (1),1,488,macro_multi_asset (1),global,1,1.00
+I165,Ken Griffin,,investor,yes,Citadel (1),1,322,long_short (1); quant_systematic (1),global,0,0.00
+I166,Kevin Hartz,,investor,yes,A* Capital (1),1,142,private_venture (1),us,1,1.00
+I167,Kris Sidial,,investor,yes,Ambrus Group (1),1,201,none (1),us,0,0.00
+I168,Kristof Gleich,,allocator,unclear,Harbor Capital (1),1,619,macro_multi_asset (1),us,1,1.00
+I169,Larry Connor,,investor,yes,The Connor Group (1),1,247,none (1),us,2,2.00
+I170,Laura Geritz,,investor,yes,Rondure Global Advisors (1),1,508,deep_value (1),emerging,2,2.00
+I171,Lauren Templeton,,investor,yes,Templeton & Phillips Capital Management (1),1,245,deep_value (1); small_micro_cap (1),global,2,2.00
+I172,Leah,,investor,yes,IMC (1),1,170,growth (1),us,0,0.00
+I173,Leon,,investor,yes,,1,275,sector_specialist (1); growth (1),global,0,0.00
+I174,Leon Cooperman,,investor,yes,Omega Advisors (1),1,406,none (1),us,0,0.00
+I175,Leon Shaulov,,investor,yes,,1,319,sector_specialist (1); long_short (1),global,1,1.00
+I176,Mala Gaonkar,,investor,yes,SurgoCap Partners (1),1,342,quality_compounders (1); growth (1),global,2,2.00
+I177,Marcus Wallenberg,,investor,unclear,Investor AB (1),1,345,quality_compounders (1),europe,0,0.00
+I178,Maria Vassalou,,investor,yes,Pictet (1),1,53,macro_multi_asset (1),global,0,0.00
+I179,Matt Cherwin,,investor,yes,Maric Capital (1),1,449,macro_multi_asset (1); credit_distressed (1),us,0,0.00
+I180,Matt Mark,,investor,yes,Jet Capital (1),1,309,special_situations (1); credit_distressed (1),us,2,2.00
+I181,Michael Anders,,allocator,unclear,ICONIQ Capital (1),1,146,none (1),unclear,0,0.00
+I182,Michael Buckley,,investor,unclear,Dukane (1),1,336,growth (1),us,1,1.00
+I183,Michael Chu,,investor,yes,L Catterton (1),1,144,private_venture (1); sector_specialist (1),global,1,1.00
+I184,Michael Moritz,,investor,yes,Sequoia Capital (1),1,575,private_venture (1),global,1,1.00
+I185,Michael Rees,,investor,yes,Blue Owl Capital (1),1,139,private_venture (1),us,1,1.00
+I186,Mike Paulus,,allocator,unclear,PCM Encore (1),1,161,index_allocation (1),us,0,0.00
+I187,Muhammad Andreala,,investor,unclear,Advent (1),1,336,growth (1),us,1,1.00
+I188,Nate Chesley,,allocator,unclear,MIT endowment (1),1,429,none (1),global,0,0.00
+I189,Nick Shallik,,investor,unclear,Ribbit Capital (1),1,336,growth (1),us,1,1.00
+I190,Nick Sleep,,investor,yes,Nomad Investment Partnership (1),1,78,quality_compounders (1),us,1,1.00
+I191,Nishant Gargnani,,investor,yes,Versor (1),1,407,quant_systematic (1); special_situations (1),global,2,2.00
+I192,Noah Yechiely,,investor,yes,Bridgewater Associates (1),1,150,macro_multi_asset (1),global,0,0.00
+I193,Omar Aguilar,,allocator,unclear,Schwab Asset Management (1),1,576,index_allocation (1),us,0,0.00
+I194,Orlando Bravo,,investor,yes,Thoma Bravo (1),1,604,private_venture (1); sector_specialist (1),global,1,1.00
+I195,Paul Andreola,,investor,yes,Small Cap Discoveries (1),1,571,small_micro_cap (1),other,3,3.00
+I196,Paul Black,,investor,yes,WCM Investment Management (1),1,410,growth (1),global,2,2.00
+I197,Paul Enright,,investor,yes,Kranos Capital; formerly Viking Global Investors (1),1,411,long_short (1),us,2,2.00
+I198,Paul Tudor Jones,,investor,yes,Tudor Investment Corporation (1),1,330,macro_multi_asset (1),global,0,0.00
+I199,Paul Marshall,,investor,yes,Marshall Wace (1),1,468,long_short (1); quant_systematic (1),global,1,1.00
+I200,Paul Singer,,investor,yes,Elliott Management (1),1,692,special_situations (1); credit_distressed (1),global,1,1.00
+I201,Paul Zummo,,allocator,yes,J.P. Morgan Alternative Asset Management (1),1,252,long_short (1),global,1,1.00
+I202,Pete Muller,,investor,yes,PDT Partners (1),1,157,quant_systematic (1),us,0,0.00
+I203,Peter Keefe,,investor,yes,Avenir Corporation (1),1,261,quality_compounders (1),us,2,2.00
+I204,Peter Thiel,,investor,yes,Founders Fund (1),1,414,private_venture (1),us,1,1.00
+I205,Pierre-Olivier Langevin,,investor,yes,Medich (1),1,74,quality_compounders (1),global,2,2.00
+I206,Prem Watsa,,investor,yes,Fairfax Financial (1),1,8,deep_value (1),global,2,2.00
+I207,Preston Pysh,,investor,unclear,The Investor's Podcast Network (1),1,475,macro_multi_asset (1),global,0,0.00
+I208,Reid Hoffman,,investor,yes,Greylock (1),1,435,private_venture (1); growth (1),global,1,1.00
+I209,Richard Lawrence,,investor,yes,Overlook Investments (1),1,331,deep_value (1); quality_compounders (1),asia,2,2.00
+I210,Rick Rieder,,investor,yes,BlackRock (1),1,367,none (1),global,1,1.00
+I211,Ricky Sandler,,investor,yes,Eminence Capital (1),1,448,long_short (1),unclear,2,2.00
+I212,Rob Goldstein,,investor,yes,Gotham Capital (1),1,311,deep_value (1); quant_systematic (1),us,3,3.00
+I213,Robert Carver,,investor,yes,Man AHL (1),1,690,quant_systematic (1); macro_multi_asset (1),global,2,2.00
+I214,Robert Wallace,,allocator,yes,Stanford Management Company (1),1,450,private_venture (1),global,1,1.00
+I215,Roger Fan,,investor,yes,RF Capital Management (1),1,620,special_situations (1),global,2,2.00
+I216,Ryan Tolkin,,investor,unclear,Schonfeld Strategic Advisors (1),1,154,long_short (1),global,0,0.00
+I217,Scott Barbee,,investor,yes,AIS Futures/AIS Funds (1),1,581,deep_value (1),global,2,2.00
+I218,Scott Phillips,,investor,yes,Templeton & Phillips Capital Management (1),1,91,deep_value (1),global,2,2.00
+I219,Shirley,,allocator,unclear,Inishmore (1),1,431,none (1),global,0,0.00
+I220,Shree Viswanathan,,investor,yes,SVN Capital (1),1,90,quality_compounders (1),global,2,2.00
+I221,Sinan Xin,,investor,yes,,1,694,long_short (1); sector_specialist (1),emerging,2,2.00
+I222,Soo Chuen Tan,,investor,yes,Discerene Group (1),1,618,deep_value (1),global,2,2.00
+I223,Stan Druckenmiller,,investor,yes,,1,272,macro_multi_asset (1),us,1,1.00
+I224,Stephanie Link,,investor,yes,Hightower Advisors (1),1,605,growth (1),us,2,2.00
+I225,Steve Cohen,,investor,yes,Point72 Asset Management (1),1,164,long_short (1); macro_multi_asset (1),global,1,1.00
+I226,Steve Eisman,,investor,yes,,1,481,long_short (1); macro_multi_asset (1),global,0,0.00
+I227,Steven Bregman,,investor,unclear,Horizon Kinetics (1),1,388,special_situations (1); deep_value (1),us,2,2.00
+I228,Thomas Kaplan,,investor,yes,The Electrum Group (1),1,145,sector_specialist (1),global,1,1.00
+I229,Thomas Laffont,,investor,yes,Coatue (1),1,88,growth (1),global,0,0.00
+I230,Thomas Mueller-Borja,,investor,yes,BlackRock (1),1,385,none (1),global,0,0.00
+I231,Tim Draper,,investor,yes,Draper Fisher Jurvetson (1),1,129,private_venture (1),us,1,1.00
+I232,Tom,,investor,yes,,1,437,long_short (1); quant_systematic (1),us,1,1.00
+I233,Tom Morgan,,investor,unclear,Sapiant (1),1,336,growth (1),us,1,1.00
+I234,Tully Friedman,,investor,yes,Hellman & Friedman (1),1,136,private_venture (1),us,1,1.00
+I235,Unnamed fund-of-managers allocator,,allocator,unclear,,1,429,none (1),global,0,0.00
+I236,Unnamed head of Liberty Mutual Investments,,allocator,yes,Liberty Mutual Group (1),1,287,private_venture (1),us,0,0.00
+I237,Victor Haghani,,investor,yes,Elm Wealth (1),1,25,index_allocation (1); quant_systematic (1),global,2,2.00
+I238,Vitaliy Katsenelson,,investor,yes,Investment Management Associates (IMA) (1),1,235,none (1),unclear,0,0.00
+I239,Wilson Cheung,,investor,yes,Slingshot Insights (1),1,257,sector_specialist (1),us,1,1.00
+I240,Ying,,investor,yes,Implied (1),1,169,quant_systematic (1); long_short (1),unclear,0,0.00
+I241,Zach,,investor,yes,,1,368,long_short (1),us,0,0.00

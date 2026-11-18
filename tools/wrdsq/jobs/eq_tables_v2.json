@@ -1,0 +1,52 @@
+{
+ "name": "eq_tables_v2",
+ "head_ok": true,
+ "steps": [
+  {
+   "do": "describe",
+   "table": "wrdssec.wrds_13f_holdings",
+   "date": "rdate"
+  },
+  {
+   "do": "describe",
+   "table": "wrdssec.wrds_13f_summary",
+   "date": "rdate"
+  },
+  {
+   "do": "describe",
+   "table": "wrdssec.wrds_13f_link"
+  },
+  {
+   "do": "describe",
+   "table": "crsp.holdings",
+   "date": "report_dt"
+  },
+  {
+   "do": "describe",
+   "table": "crsp.portnomap"
+  },
+  {
+   "do": "describe",
+   "table": "crsp.fund_names"
+  },
+  {
+   "do": "describe",
+   "table": "crsp.stkdelists",
+   "date": "delistingdt"
+  },
+  {
+   "do": "describe",
+   "table": "wrdssec.nonderivatives"
+  },
+  {
+   "do": "tables",
+   "libraries": [
+    "wrdssec"
+   ]
+  },
+  {
+   "do": "python",
+   "code": "\ndef q1(label, q):\n    try:\n        d = sql(q)\n        out(label)\n        for r in d.itertuples(index=False):\n            out('   ', *[x for x in r])\n    except Exception as e:\n        out(label, 'FAILED:', str(e)[:300])\nq1('wrds_13f_holdings by report year: filers, rows', \"select extract(year from rdate)::int y, count(distinct cik) f, count(*) n from wrdssec.wrds_13f_holdings where rdate >= '2009-12-31' group by 1 order by 1\")\nq1('wrds_13f_summary: filings by year of report and form type', \"select extract(year from rdate)::int y, form, count(*) n from wrdssec.wrds_13f_summary where rdate >= '2009-12-31' group by 1,2 order by 1,2\")\nq1('wrds_13f_link rows, distinct cik, distinct mgrno', \"select count(*), count(distinct cik), count(distinct mgrno) from wrdssec.wrds_13f_link\")\nq1('crsp.holdings range', \"select min(report_dt), max(report_dt), count(distinct crsp_portno) from crsp.holdings where report_dt >= '2024-01-01'\")\nq1('firm_ratio: permnos in the last month', \"select max(public_date), count(distinct permno) from wrdsapps_finratio.firm_ratio where public_date >= '2025-10-01'\")\nq1('JKP US rows in the last month', \"select max(eom), count(*) from contrib_global_factor.global_factor where excntry='USA' and eom >= '2025-10-01'\")\n"
+  }
+ ]
+}

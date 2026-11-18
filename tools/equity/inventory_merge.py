@@ -33,8 +33,13 @@ def norm(name):
     return re.sub(r"[^a-z ]", "", s).split()
 
 
+ALIAS = {k: v for k, v in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                                     "investor_aliases.json"), encoding="utf-8")).items()
+         if not k.startswith("_")}
+
+
 def key(name):
-    w = norm(name)
+    w = norm(ALIAS.get(name.strip(), name))
     return (w[0] + " " + w[-1]) if len(w) >= 2 else " ".join(w)
 
 
@@ -134,7 +139,7 @@ def main(pack, coded, out):
                     "; ".join(p["name"] for p in oth), "; ".join(r.get("absent") or [])])
         for p in inv:
             x = P[key(p["name"])]
-            x["names"][p["name"]] += 1
+            x["names"][ALIAS.get(p["name"].strip(), p["name"])] += 1
             if p.get("firm"):
                 x["firms"][p["firm"]] += 1
             x["docs"].append(d)

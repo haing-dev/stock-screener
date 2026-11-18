@@ -103,7 +103,7 @@ flowchart TD
 | E0.1 Inventory and typing (widened) | script reads the catalog; Sonnet reads the notes only; Opus recodes a tenth blind | One row per document: speakers and the role of each, kind (investor's own words, secondary, company, technique, macro), style tags, how explicit the criteria are | Agreement between the two coders per field; a field with low agreement is dropped |
 | E0.2 Audit of the existing screens and criteria workbook | Opus | One page; each existing screen becomes a candidate family, unverified until tied to quotes | as v0.2 |
 | E0.3 Equity paper pack | Sonnet; Opus blind read | Claims with quotes | as v0.2 |
-| E0.4 Investor table and scorecard (new) | Sonnet matches speakers to firms and filer ids, Opus checks a sample; script on WRDS | One row per investor: firm, filer id or fund, record grade, record columns (section 5) | Output form fixed first; code passes a planted-error test; the seal log exists before it runs (section 10) |
+| E0.4 Investor table and scorecard (new) | Sonnet matches speakers to firms and filer ids, Opus checks a sample; script on WRDS | One row per investor: firm, filer id or fund, record grade, record columns (section 5) | Output form fixed first; code passes a planted-error test; the seal log exists before it runs (section 10). Before any return is computed, each library investor's match to filer ids or a CRSP fund, the years the investor ran it, the grade, the primary style and the explicitness score are frozen in a logged file; whoever sets them sees no return |
 | E0.5 Tiers (new) | script; the tier rule and the "follow the best managers" signal (section 6) are registered before the scorecard is run | Tier A, control sample, tier B, foundation list, reading order | User go |
 | E1 Data, engine, risk model, reference book | Opus; WRDS and PC runners | as v0.2 E1.1-E1.8 | Gates G1-G9 of v0.2, with G8 as amended in section 11 |
 | E2.1 Pilot | Sonnet; Opus blind read | 16 documents: two per style for six styles, four technique documents. Cost per document, share of criteria a script can compute, whether investors say why the opportunity exists | Decides the size of E2.2 |
@@ -144,21 +144,37 @@ criteria behind every name.
 ### 5.2 What is computed (one script, for every filer in the 13F data, not only ours)
 - The copy portfolio: holdings as filed, bought the day after the 45-day deadline and held to the next filing,
   weighted as filed. Also the ten largest positions only, and new positions only. An amended filing counts from its
-  own filing date. Option positions are dropped.
+  own filing date where the data carry one (the LSEG 13F file on WRDS may carry only the quarter; then amendments
+  are ignored). Option positions are dropped. Exact form, for monthly CRSP data with delisting returns: a quarter's
+  holdings enter at the close of the month in which the 45-day deadline falls and are held to the same point after
+  the next quarter; a filer that stops filing leaves the record at that point after its last quarter, with no
+  return filled in. Holdings without a CRSP match or without peer-group data are left out and the weights
+  rescaled; the share of filed value used is a column. Peer group: the DGTW benchmarks (size, book-to-market and
+  momentum quintiles, 125 groups, re-formed each June); this replaces "size, value, profitability and momentum".
 - Windows: 2021-25 (the five years asked for), 2016-20, 2011-15 and 2011-25. The scorecard does not compute years
   before 2011: they are the design era, and a ranking on them would leak into its tests.
-- Columns: return; return minus the market; return minus each holding's peer group of similar size, value,
-  profitability and momentum (stock picking with style taken out); what is left after the standard factors (market,
+- Columns: return; return minus the market; return minus each holding's peer group of similar size, value
+  and momentum (stock picking with style taken out; profitability is covered by the factor column); what is left after the standard factors (market,
   size, value, profitability, investment, momentum), with its t-value; worst fall; share of years ahead of peers;
   number of positions; turnover; weight of the ten largest.
-- Each column also as a rank among all filers with 10-150 positions and at least $100M (proposal).
+- Each column also as a rank among all filers with 5-150 positions and at least $100M (proposal), both measured as
+  the median over the window's filings, so concentrated grade A books stay in and no filer is chosen by how it ended.
 - Grade F: real returns after fees for the same windows (CRSP mutual funds and exchange-traded funds on WRDS; other
-  funds through LSEG if the probe allows).
+  funds through LSEG if the probe allows; those are reported only and enter neither the tier rule nor the
+  persistence check).
 - A persistence check on all filers: how well does the rank in one five-year block predict the rank in the next
-  (2011-15 to 2016-20, 2016-20 to 2021-25)? This tests the ranking idea itself. If records do not persist, the
+  (2011-15 to 2016-20, 2016-20 to 2021-25)? This tests the ranking idea itself. Exact form: the rank correlation of
+  the six-factor alpha between the two blocks, among filers in the rank group in the first block with 36 months in
+  each; and a table of first-block quintile against second-block quintile with an extra column "stopped filing or
+  under 36 months". The same for CRSP funds, apart. Filers that stop are never dropped silently: weak records stop
+  more often, and dropping them hides persistence at the bottom. If records do not persist, the
   record columns still show who really ran money, but they say little about who to learn from. The tier rule (5.3)
   is fixed before this is known and does not change with it.
-- What comes back: statistics per manager. No holdings, no return series.
+- What comes back (WRDS rule: no data rows): all-filer ranks and the tier rule are computed on WRDS. Rows come back
+  only for the library's investors (statistics over at least 60 months, else rank shares only) and for the 25
+  best-ranked filers we hold no document for (name and rank share), plus the persistence tables and counts. No
+  holdings, no return series, and no average by style, sector or factor: the reference book's signals are not yet
+  registered and must not be chosen with 2011+ results in view.
 
 ### 5.3 Tier rule (proposal; committed before the scorecard is run)
 - **Tier A, 40 investors, read in depth.** 30 by record: the average of three ranks, all from 2011 onward
@@ -169,6 +185,19 @@ criteria behind every name.
   funds in CRSP (proposal). An investor needs at least five years of record after 2010; the ranks use the windows
   that exist. Plus up to 10 whose documents are the most explicit about criteria, whatever their grade: this keeps
   investors whose record cannot be measured, and styles that had a bad decade.
+  Definitions, fixed with this rule. (1) The ranked result is the six-factor alpha per year (5.2): of the copy
+  portfolio for grades A and B, of the fund's net return for grade F, over the months the investor ran the book
+  (frozen at E0.4). A window needs 36 months, else its rank is missing; the share of blocks counts only blocks with
+  36 months. The score is the mean of the ranks that exist; ties take the average rank. (2) Funds: US domestic
+  equity funds in CRSP, index funds excluded, share classes merged. An investor with both a CRSP fund and a 13F is
+  ranked on the fund. (3) Primary style: the tag given most often across the investor's own-words documents at
+  E0.1, ties by the order of the fixed style list; no tag forms the style "none". When the cap binds, the next
+  ranked investor of another style takes the place. (4) Explicit places: exactly 10 (fewer only if fewer are
+  eligible), from investors not already chosen, by the highest explicitness score of their own-words documents,
+  ties by number of such documents, then by investor id. (5) Style and explicitness are used here even if E0.1
+  drops them for low agreement; the value is then the mean of the two coders where both coded. (6) Control
+  population: library investors of grade A, B or F with an own-words document and 60 months of record after 2010,
+  outside tier A, sorted by investor id; the seed is written into the registration.
 - **Control, 10 investors.** Drawn by a script whose random draw can be repeated exactly, from grades A, B and F
   outside tier A. Same pipeline. No agent is told who is control. A family counts as control-sourced when most of
   its investors are control. Control pods take no slot. They run for Incubator status only, the way v0.2 section 10
@@ -188,6 +217,13 @@ criteria behind every name.
   once). It is a registered descriptive job: a run whose output form is fixed and checked before it runs, and which
   only describes. It sets the reading order through the tier rule and judges no strategy. The checker reads the
   code first, and nothing per stock comes back. Each run is logged as an opening of the seal (section 11, gate G8).
+  Definition ("seal-exempt"), so it cannot be stretched: there are exactly two such jobs, the scorecard and the
+  holdings job; a third needs a new plan version and an independent check. Each is registered with its code hash,
+  parameters and output form. Between runs only the inputs may change: the investor list and filer ids, and for
+  the holdings job the long list of a registered pod at E3.3. A re-run on the same inputs fixes a logged bug only,
+  and the log shows what changed. No output holds a return statistic of a pod, rule, signal or factor; the holdings
+  job holds no return at all. The scorecard output is read only by the user and the orchestrating session. A
+  design-era run labelled "descriptive" (8.1) is not such a job and reads no sealed month.
 - After the tests: do pods sourced from tier A do better on untouched data than control-sourced pods? Reported.
 
 ### 5.5 What the user sees first
@@ -283,9 +319,12 @@ section 10, with a maximum number of hygiene tests fixed at E3.5; a technique ca
   the run is labelled descriptive, is counted in the trial log, and cannot earn more than Incubator. A pod that is
   positive after costs and passes the placebo and tail tests (the Incubator conditions of v0.2 4.4) is an Incubator
   pod, judged on its live record. One that fails them is Shelved. A pod whose power check (v0.2 8.5) says the test
-  could not have told stays Incubator either way. So the measurement is the same for all; only the proof is
+  could not have told (proposal: a pass rate under 50% for these Incubator conditions at a true added return of 2% a
+  year, computed before the run) stays Incubator either way; this is the one stated exception to v0.2 4.4. So the measurement is the same for all; only the proof is
   rationed.
-- At the freeze the sealed samples are run once for every pod that is not Shelved. A verdict only where 8.2 allows;
+- At the freeze the sealed samples are run once for every pod with a registered spec, Shelved pods included: a
+  Shelved pod keeps its class whatever this run shows, and its result is reported so that the league table and the
+  comparison in 5.4 do not keep only survivors. A verdict only where 8.2 allows;
   everything else is reported.
 - A league table of every measured pod is published, labelled descriptive, with the number of trials behind it.
 
@@ -294,9 +333,24 @@ section 10, with a maximum number of hygiene tests fixed at E3.5; a technique ca
 |---|---|
 | Design era: US, 1975-2010 | Building and design tests |
 | Untouched regions: developed markets outside the US, 1990-2010 | Sealed; one run after the freeze |
-| Holdout, US, 2011 onward | Sealed until the freeze, except for the two registered descriptive jobs (5.4 and 6). One run. A verdict only for a family whose thesis is documented before 2011, whose sources have no career overlap (they did not build their record mainly after 2010), whose investors were not picked on those years, and whose spec took nothing from holdings after 2010. For every other family: reported, not a verdict |
-| Holdout, outside the US, 2011 onward | Sealed until the freeze; one run, reported apart from the US part. A verdict under the same conditions as the US part. For the other families it can support a promotion at the live checkpoint, and only if two things registered at E3.5 hold: the family's source investors built their records mainly in the US (proposal: under 20% outside, measured on fund holdings where they exist and on the stocks named in their claims), and in 1990-2010 the pod's added return in the US and outside it were not closely linked (proposal: correlation under 0.5) |
+| Holdout, US, 2011-01 to the seal end | Sealed until the freeze, except for the two registered descriptive jobs (5.4 and 6). One run. A verdict only for a family whose thesis is documented before 2011, whose sources have no career overlap (they did not build their record mainly after 2010), whose investors were not picked on those years, and whose spec took nothing from holdings after 2010. For every other family: reported, not a verdict |
+| Holdout, outside the US, 2011-01 to the seal end | Sealed until the freeze; one run, reported apart from the US part. A verdict under the same conditions as the US part. For the other families it can support a promotion at the live checkpoint, and only if two things registered at E3.5 hold: the family's source investors built their records mainly in the US (proposal: under 20% outside, measured on fund holdings where they exist and on the stocks named in their claims), and in 1990-2010 the pod's added return in the US and outside it were not closely linked (proposal: correlation under 0.5) |
 | Live | Reference book from Stage 1; each pod from registration; promotions at registered checkpoints |
+
+**The seal (made in Stage 0 before the scorecard; the seal part of E1.4).**
+- Sealed: US months from 2011-01 to the seal end, and non-US months from 1990-01 to the seal end. The seal end is
+  fixed in the seal log (proposal: the last CRSP month found at E1.2). Months after it are never holdout; the live
+  record starts at go-live, and months in between serve only as estimation inputs.
+- Mechanism: every equity job on WRDS or the PC reads through one reader whose date and region limits refuse sealed
+  months, and a script checks each job before it is sent and refuses direct table reads. Only the two
+  seal-exempt jobs (5.4) pass. The lock id is the hash of the reader, the checker and the list of exempt jobs.
+- Allowed on sealed months before the freeze: structure checks (counts, coverage, date ranges, identifiers),
+  correlations with published series, and estimation inputs of the live book (lookbacks, risk-model windows).
+  Never a mean, Sharpe ratio, drawdown, stress result or chart of any portfolio, signal, factor or pod.
+- The seal log starts with the reads made before it: the triage tests on WRDS (`docs/research/triage_wrds/`, 2008-24),
+  the top-performer test noted in crash-triage `pipeline/fit.py` (1998-2023) and the biotech re-run (2020-26), the
+  live screens on free data, and the CRSP, Compustat and 13F pulls kept on WRDS. The registration of the "follow
+  the best managers" signal (6) states which of these its author has seen; a setting copied from them is flagged.
 
 Tier A is picked on returns after 2010, and almost every thesis in the library is stated after 2010. So an investor
 family cannot become Core on history: v0.2 4.4 and the macro rule (a pod flagged for hindsight is never Core)
@@ -377,7 +431,7 @@ data whose licence allows it (step E5.5); the free SEC and price route in the re
 
 | Stage | Content | Output for the user |
 |---|---|---|
-| 0. Know the library and the data | Side by side: the independent review of v0.2 as a whole (its findings go into the next version of this plan), E0.1 inventory, E1.2 WRDS table check, E1.1 LSEG probe (one refresh by the user). Then, in this order: the seal log and lock id (the seal part of E1.4); registration of the tier rule and of the "follow the best managers" signal; E0.4 scorecard, logged as the first opening of the seal; E0.5 tiers | Investor league table; whether records persist; tier lists and reading order; what LSEG and WRDS return under these licences |
+| 0. Know the library and the data | Side by side: the independent review of v0.2 as a whole (its findings go into the next version of this plan), E0.1 inventory, E1.2 WRDS table check, E1.1 LSEG probe (one refresh by the user); both run before the seal and report metadata only (tables, columns, counts, date ranges, coverage), no price, return or performance figure for any year. Then, in this order: the seal log and lock id (the seal part of E1.4); registration of the tier rule and of the "follow the best managers" signal; E0.4 scorecard, logged as the first opening of the seal; E0.5 tiers | Investor league table; whether records persist; tier lists and reading order; what LSEG and WRDS return under these licences |
 | 1. Measurement engine and pilot | E0.2; E1.3-E1.7; Batch 0; reference book live on paper once the two-source check passes; E2.1 pilot | A working reference book with its weekly risk report; measured cost and yield per transcript |
 | 2. Library | E2.2-E2.11 for tier A, control and foundation; E0.3; E1.8 | Claim ledger, investor cards, holdings fingerprints, strategy map, charters, methods register |
 | 3. Specs, registration, tests | E3; Batch A; B1; B2; the Incubator pass | Verdict per registered pod; the same sheet for every other family; each pod's live screen from registration |
@@ -409,7 +463,7 @@ One Fable unit a day stays the rule.
 | 8.1 Spec | A threshold may also come from the revealed distribution, set on half of the purchases (section 6) |
 | 8.3 Say-do | Purchases (new positions and large additions) replace holdings. Ranks are taken at the end of the quarter before the purchase, price-based ones included, inside the registered descriptive job; this replaces "accounting measures only" for quarters after 2010. The check uses the half of the purchases that did not set a threshold. For quarters after 2010 it runs inside the registered holdings job and is logged the same way |
 | 8.5 Slots | Control-sourced pods run for Incubator status only and take no slot. Families without a slot are no longer left untested on history: each gets one run for Incubator status only (8.1). The "follow the best managers" pod is a candidate, its signal registered before the scorecard |
-| 10 Test sheet and budget | Reported lines add the test with the source investors' own holdings left out. Batch A has a maximum number of hygiene tests fixed at E3.5. Families with a spec and no slot get one run on the design era for Incubator status only, after the batch verdicts. At the freeze the sealed samples are run once for every pod that is not Shelved; a verdict only where 8.2 allows (8.1) |
+| 10 Test sheet and budget | Reported lines add the test with the source investors' own holdings left out. Batch A has a maximum number of hygiene tests fixed at E3.5. Families with a spec and no slot get one run on the design era for Incubator status only, after the batch verdicts. At the freeze the sealed samples are run once for every pod with a registered spec, Shelved ones included; a verdict only where 8.2 allows (8.1) |
 | 13 Steps | New: E0.4, E0.5, E2.11. Widened: E0.1, E2.5 |
 | 14 Order | Stage 0 precedes Stage 1 and has a fixed order (section 10). Step 0 (the independent review of v0.2) runs in Stage 0 and ends before the tier rule is registered; its findings go into the next version of this plan. The seal part of E1.4 moves to Stage 0, before the scorecard. E1.7 (the two-source check) moves to Stage 1, before the reference book goes live, as v0.2 6.1 requires |
 | 16 Reuse | Add the processed library (texts with line anchors, checked quotes, search index) and `tools/wrdsq/tri_wrds_adapter.py` (CRSP, Compustat and 13F panel with resumable pulls) |
@@ -480,12 +534,24 @@ this plan settles differently, again by rule:
   exception to v0.2 4.4. This plan applies v0.2 4.4 as written: they run for Incubator status only, like control
   pods and playbooks, and a pod that fails the Incubator conditions is Shelved (8.1).
 
-Added after the re-check and not seen by a checker: these two rules, and the line that the sealed samples are run
-once for every pod that is not Shelved (8.1). They go to the Stage 0 review.
+Added after the re-check: these two rules, and the line that the sealed samples are run once for every pod that
+is not Shelved (8.1). The Stage 0 review below checked them.
+
+**Stage 0 review (2026-11-17).** A third Opus agent reviewed v0.2 as a whole, as amended by this plan:
+`EQUITY_POD_SHOP_DESIGN_v0.2_review.md` (about 258k tokens). Part 1, what must change before the seal, the tier
+rule and the scorecard: CHANGE FIRST, 7 findings. All its fixes are applied in this text (5.2 to 5.4, 8.1, 8.2,
+10): what is frozen before any return is computed; one ranked result (the six-factor alpha) and a complete tier
+rule; the exact form of the copy portfolio and of the persistence check; rows back only for library investors;
+the definition of the seal and of the two seal-exempt jobs. Of the three rules above it found two sound and one
+flawed: Shelved pods are now also run once on the sealed samples, so comparisons do not keep only survivors.
+Part 2, v0.2 itself: PASS WITH CORRECTIONS, 6 must-fix, 15 should-fix, 10 notes. None of them touches Stage 0.
+They are amendments for the next plan version, due before the Stage 1 engine is built: the era test is too hard
+to pass as written; the reference book must be registered before it goes live; the construction rule contradicts
+itself; two seal leaks inside v0.2; the design era must start in 1980, not 1975; the placebo needs a fixed form.
 
 Not verified by anyone yet: whether the named managers file 13F with the coverage their grades assume (E0.4);
 Compustat Global delisting returns and short-interest coverage (E1.2); that the SEC 13F data sets start in 2013
-(the page did not load for the checker); v0.2 as a whole (the Stage 0 review).
+(the page did not load for the checker).
 
 ## 14. Needed from the user (facts, not design choices)
 1. A go for Stage 0.
