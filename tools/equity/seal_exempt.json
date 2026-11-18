@@ -1,0 +1,12 @@
+{
+ "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Exactly two may exist: the scorecard and the holdings job. code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Registered with the code, parameters and output form of STAGE0_REGISTRATION.md.",
+ "jobs": [
+  {
+   "job_pattern": "eq_scorecard_v\\d+[a-z]?",
+   "module": "eq_scorecard",
+   "code_sha256": "1de83e83c2951b8ecb370e91c8ea11d1cc1f7c4e87874af954953036c71b4612",
+   "registration": "docs/research/equity/STAGE0_REGISTRATION.md sections 2-9 and 11",
+   "output": "section 8"
+  }
+ ]
+}

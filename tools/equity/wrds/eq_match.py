@@ -58,11 +58,14 @@ def run(load, out, pd, part, parts):
             except re.error:
                 out("   bad pattern", x)
         sur = p.get("surname") or ""
+        f["sm"] = 0
         if sur:
-            m = f.mgr_name.str.contains(r"\b%s\b" % re.escape(sur), case=False, regex=True)
+            m0 = f.mgr_name.str.contains(r"\b%s\b" % re.escape(sur), case=False, regex=True)
+            m = m0.copy()
             if sur in COMMON or len(sur) < 6:
                 m &= f.mgr_name.str.contains(r"\b%s" % re.escape(p["first"][:4]), case=False, regex=True)
             fh |= m
+            f["sm"] = m0.astype(int)
         c = names[hit].groupby("mgrno").agg(nm=("nm", lambda s: " / ".join(sorted(set(s))[:3])),
                                             country=("country", "first"))
         c = c.join(g, how="left").sort_values(["nq", "val"], ascending=False)
@@ -79,12 +82,12 @@ def run(load, out, pd, part, parts):
                 fund=("fund_name", "first"), mgr=("mgr_name", "first"), mgr_dt=("mgr_dt", "first"),
                 mgmt=("mgmt_name", "first"), obj=("crsp_obj_cd", "first"), months=("months", "max"),
                 tna=("tna", "sum"), cls=("crsp_fundno", "count"), fno=("crsp_fundno", "first"),
-                idx=("index_fund_flag", "first"), etf=("et_flag", "first"), d0=("d0", lambda x: min([v for v in x if v] or [""])), d1=("d1", "max"))
-            k = k.sort_values(["months", "tna"], ascending=False)
-            out("   fund candidates: %d" % len(k))
-            for _, r in k.head(7).iterrows():
-                out("   M fundno %d (%d classes) | %s | mgr %s since %s | %s | obj %s | months since 2011: %s (%s to %s) | mean assets $%sM%s%s"
-                    % (r.fno, r.cls, r.fund[:60], r.mgr[:28], str(r.mgr_dt)[:7], r.mgmt[:30], r.obj,
+                idx=("index_fund_flag", "first"), etf=("et_flag", "first"), d0=("d0", lambda x: min([v for v in x if v] or [""])), d1=("d1", "max"), sm=("sm", "max"))
+            k = k.sort_values(["sm", "months", "tna"], ascending=False)
+            out("   fund candidates: %d (M* = the investor's surname is in the fund's manager field)" % len(k))
+            for _, r in k.head(9).iterrows():
+                out("   M%s fundno %d (%d classes) | %s | mgr %s since %s | %s | obj %s | months since 2011: %s (%s to %s) | mean assets $%sM%s%s"
+                    % ("*" if r.sm else "", r.fno, r.cls, r.fund[:60], r.mgr[:28], str(r.mgr_dt)[:7], r.mgmt[:30], r.obj,
                        "none" if pd.isna(r.months) else int(r.months), str(r.d0)[:7], str(r.d1)[:7],
                        "?" if pd.isna(r.tna) else int(r.tna), " | index" if r.idx else "",
                        " | ETF" if r.etf else ""))
