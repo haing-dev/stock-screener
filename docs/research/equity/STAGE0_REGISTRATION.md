@@ -39,9 +39,10 @@ claims, cards, charters or specs do not open it.
    held for three months, buy and hold (the 31 March holdings are held June, July, August). Monthly CRSP total
    returns, delisting returns included. A position whose return is missing in a month keeps its weight and earns
    zero that month; the share of weight affected is a column.
-5. **A filer that stops filing** leaves the record after the last three-month holding period of its last quarter.
-   No return is filled in. A gap of one missed quarter is bridged by holding the last filed portfolio three more
-   months; a longer gap ends the spell and a new one starts.
+5. **Missed quarters and stopping.** If a quarter's filing is missing, the last filed portfolio is held three more
+   months. If the following quarter is missing too, the spell ends there and no return is filled in; a later
+   filing starts a new spell. This is decided from what was public at the time: a copier cannot know whether a
+   filer has stopped or only skipped a quarter.
 6. **Rank group for a window:** filers whose median number of matched positions over the window's filings is 5 to
    150 and whose median matched value is at least $100M.
 7. **Variants** (reported, not ranked): the ten largest positions, weights rescaled; new positions only (securities
@@ -160,7 +161,11 @@ Where the sections above left room, the reading is the one written in `SCORECARD
 to 22, which the code implements. They are part of this registration. The ones that matter most:
 - A library investor's alpha over its frozen months takes the place of its own filers or funds in the window's rank
   group; the rank share is (number below + half the number equal) / (group size - 1).
-- Quarter-end weights are the weights at entry. Only a gap of exactly one missed quarter is bridged.
+- Quarter-end weights are the weights at entry. Section 3.5 replaces reading 4 of the build note: the three extra
+  months after a missed quarter are held whether or not the filer files again.
+- An investor's several funds are one record, combined by assets at the previous month-end.
+- The frozen file lists every filer and fund matched to a library investor (`known_mgrnos`, `known_fundnos`); all
+  of them are left out of the lists of best-scored filers and funds without a document.
 - Any CRSP security with a price at the quarter-end counts as matched (funds and ADRs included); peer groups cover
   common shares on NYSE, NYSE American and Nasdaq only.
 - The market is the Fama-French market return (excess return plus T-bill).

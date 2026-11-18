@@ -116,11 +116,11 @@ def main(mdir, report, inv_dir, out, agree=None):
                      p["role"], q if mg else "", pos if mg else "", val if mg else "",
                      ("; ".join(M[p["id"]][x]["fund"][:60] for x in fund_ok) if kind == "fund" else
                       "; ".join(F[p["id"]][x]["name"][:40] for x in mg)),
-                     (r.get("why") or "")[:160]])
+                     (r.get("why") or "")[:160], " ".join(map(str, mg)), " ".join(map(str, fn))])
     w = csv.writer(open(out, "w", newline="", encoding="utf-8"))
     w.writerow(["id", "name", "record_kind", "mgrnos", "fundnos", "start_ym", "end_ym", "grade", "primary_style",
                 "region", "explicit_max", "explicit_mean", "own_docs", "ran_money", "role", "quarters_after_2010",
-                "positions_median", "value_median_musd", "matched_name", "why"])
+                "positions_median", "value_median_musd", "matched_name", "why", "known_mgrnos", "known_fundnos"])
     w.writerows(rows)
     A = ["# E0.4 phase A2: matching check\n", "Investors: %d. Grades: %s. Form problems: %d.\n"
          % (len(rows), ", ".join("%s %d" % kv for kv in sorted(grades.items())), len(errs))] + ["- " + e for e in errs]
