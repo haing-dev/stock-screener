@@ -374,3 +374,48 @@ repo, and all four jobs PASS with the registered hash.
 **Re-check 2 verdict: RUN.** No blocking finding. Before the run, log the lock id e680ca33... and the code hash
 f7f54264... in SEAL_LOG. Compare the code hash printed in the report header with the logged one. Run the cleanup job
 once the result is accepted.
+
+## Check of Addendum A (2026-11-18)
+
+Checked: commit bcdea15 against c1a462b. Module eq_scorecard-1.1.0 (code sha256 49adb087...; the input block is
+byte-identical to v1.0.0, input sha256 c77e38e7...), job `eq_scorecard_v2.json`, `seal_exempt.json` (lock 66a9d9c6...),
+registration section 13 with its amendment. `seal_check.py` and `eq_reader.py` are unchanged. Work folder:
+`add/` (`v1diff.py`, `attack4.py`).
+
+1. **The lists match section 13.**
+   - **Population** (`_addendum`): 2021-25 window rows with `grp` true (the 3.6 rank group with a result) and
+     `bk >= 0`; median matched value `valm` over the 2021-25 filings within $1-30bn inclusive; no mgrno in
+     `mgrnos` or `known_mgrnos` of any frozen row (`_known_mgrnos`).
+   - **List 1**: the section 7.2 score, the same three-part mean as the best-scored lists. It requires 60 months
+     in 2011-25 and keeps the top 40, ties by filer number.
+   - **List 2**: the 2021-25 alpha rank share, 60 months in 2021-25, top 40.
+   - **Printed**: name, score, the three rank shares, a21/t21, a11/t11 (only with 60 months in 2011-25), median
+     value $bn, median positions and turnover (both 2021-25). Country and SIC share are dropped and say so, as the
+     amendment records.
+   - Nothing else is printed. The addendum of an invented-world run holds no permno or CUSIP string, and no
+     holding, stock name or return series is in the code path.
+   - Druckenmiller's addition is a reading-list matter outside the job; the job does not print it.
+2. **Nothing else changed.**
+   - The code diff (input block left out) is: `VERSION`, three constants `ADD_LO/ADD_HI/ADD_N`, `_addendum`
+     (read-only use of `tab`, the pools and the names), one key `addendum` in the result, and `_addendum_lines`
+     inserted just before `END OF SCORECARD`.
+   - Own run of the registered 1.0.0 code and of 1.1.0 on the same invented world and pulls: the v1 lines are
+     identical except the two header lines (version, code hash). The new code adds 34 addendum lines.
+   - `PULL_VERSION` and the input block are unchanged. The pull key is 45671094 for the real input, so the stored
+     pulls stay valid; on invented data both versions print ALL PULLS COMPLETE with the same key.
+3. **Seal.**
+   - All five jobs PASS under lock 66a9d9c6: `eq_sc_pull_v1`, `eq_scorecard_v1`, `eq_scorecard_v2`,
+     `eq_sc_cleanup_v1`, `eq_precheck_v1`.
+   - The 42 attack cases, re-run with `eq_scorecard_v2` as the build-job name, give the same results as in
+     Re-check 2. Swapped or keyword arguments, `exempt=`, `export`/`pull` steps, functions under the wrong name and
+     digits for `DATA` are refused. Only the known harmless or deliberate cases pass: trailing newline, odd report
+     parts, a delete of `eq_sc_report`, the legal named count, `load_ds` refused at run time, and built-name
+     read/write.
+4. **Size.** The real v1 report was 64,371 characters (2 parts). The addendum adds at most about 85 lines of up to
+   about 210 characters (about 13-18k), so the report stays within 2 of the 4 report steps of 55,000.
+
+The smoke test passes, including C36/C37 (population and lists) and V1 (v1 part unchanged against the registered
+1.0.0 reference).
+
+**Addendum A verdict: RUN.** No blocking finding. Log the second opening in SEAL_LOG with code hash 49adb087...,
+input hash c77e38e7..., pull key 45671094 and lock 66a9d9c6, and check that the report header shows the same code hash.

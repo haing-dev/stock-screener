@@ -11,7 +11,7 @@ the reader, the checker and the list of exempt jobs. Allowed on sealed months be
 (counts, coverage, date ranges, identifiers), correlations with published series, estimation inputs of the live
 book. Never a mean, Sharpe ratio, drawdown, stress result or chart of any portfolio, signal, factor or pod.
 
-Lock id: e680ca33c77ec51ed50372ec66e5733001cd4867adf1e692f88a4e2645015099 (2026-11-18; reader a99b5c80853e, checker 7fbfc654946e, exempt list f7f6560bc43c)
+Lock id: 66a9d9c66e431ec6e52ef263197c1e02d316513f0d274b60bd4b37847f11dba0 from Addendum A (before: e680ca33c77ec51ed50372ec66e5733001cd4867adf1e692f88a4e2645015099, 2026-11-18; reader a99b5c80853e, checker 7fbfc654946e, exempt list f7f6560bc43c)
 
 ## A. Reads made before the seal existed
 | When | What | Years | What was seen |
@@ -31,3 +31,4 @@ Lock id: e680ca33c77ec51ed50372ec66e5733001cd4867adf1e692f88a4e2645015099 (2026-
 | 2026-11-18 | `eq_sc_pull_v1` (pulls only; 3,177 s; base, CRSP and funds complete, 13F aggregates 2010-19 of 2010-25; report `scorecard_check/eq_sc_pull_v1_report.txt`), then `eq_sc_pull_v1b` | f7f542646da4... (input c77e38e77851...) | CRSP, 13F, firm_ratio, factors, CRSP funds, 2009-06 to 2025-12, stored on WRDS | Pull status lines only |
 | 2026-11-18 | `eq_sc_pull_v1b` (first attempt stopped by the runner's 3-hour watchdog after its saves; retry printed ALL PULLS COMPLETE, 73 data sets, pull key 45671094f38c9a10, 6,542 candidate filers; report `scorecard_check/eq_sc_pull_v1b_report.txt`) | f7f542646da4... | as above | Pull status lines only |
 | 2026-11-18 | `eq_scorecard_v1` (build + report: the opening of the seal; ran 243 s, 16:21 PC time, once) | f7f542646da4... printed at run time = registered (input c77e38e77851...; header input hash 1f58666e... is the module's own hash of the same table, reading 22; lock e680ca33...) | the stored `eq_sc_*` data sets | Section 8 only: 90 matched-investor rows, tiers, persistence, 25 filers and 10 funds without a document, counts. Report `scorecard_check/eq_scorecard_v1_report.txt`; results `SCORECARD_RESULTS_2026-11-18.md` |
+| 2026-11-18 | `eq_scorecard_v2` (Addendum A, registered before the run; second opening of the seal for the same reading-order purpose; code check RUN) | 49adb08739090e36... (input c77e38e77851...; pull key 45671094f38c9a10; lock 66a9d9c6...) | the stored `eq_sc_*` data sets | Section 8 plus Addendum A lists only |
