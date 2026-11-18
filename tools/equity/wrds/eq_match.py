@@ -38,6 +38,12 @@ def run(load, out, pd, part, parts):
     f = load("eq_fundhdr")
     for c in ("fund_name", "mgmt_name", "adv_name", "mgr_name"):
         f[c] = f[c].fillna("").astype(str)
+    for c in ("d0", "d1", "mgr_dt"):
+        f[c] = f[c].astype(object).where(f[c].notna(), "").astype(str).str[:10].replace({"nan": "", "None": "", "NaT": ""})
+    for c in ("index_fund_flag", "et_flag", "crsp_obj_cd"):
+        f[c] = f[c].fillna("").astype(str)
+    f["tna"] = pd.to_numeric(f.tna, errors="coerce")
+    f["months"] = pd.to_numeric(f.months, errors="coerce")
     f["txt"] = f.fund_name + " | " + f.mgmt_name + " | " + f.adv_name
     f["grp"] = f.crsp_cl_grp.fillna(-f.crsp_portno.fillna(f.crsp_fundno))
     mine = [p for i, p in enumerate(INV) if i % parts == part]
@@ -73,14 +79,14 @@ def run(load, out, pd, part, parts):
                 fund=("fund_name", "first"), mgr=("mgr_name", "first"), mgr_dt=("mgr_dt", "first"),
                 mgmt=("mgmt_name", "first"), obj=("crsp_obj_cd", "first"), months=("months", "max"),
                 tna=("tna", "sum"), cls=("crsp_fundno", "count"), fno=("crsp_fundno", "first"),
-                idx=("index_fund_flag", "first"), etf=("et_flag", "first"), d0=("d0", "min"), d1=("d1", "max"))
+                idx=("index_fund_flag", "first"), etf=("et_flag", "first"), d0=("d0", lambda x: min([v for v in x if v] or [""])), d1=("d1", "max"))
             k = k.sort_values(["months", "tna"], ascending=False)
             out("   fund candidates: %d" % len(k))
             for _, r in k.head(7).iterrows():
                 out("   M fundno %d (%d classes) | %s | mgr %s since %s | %s | obj %s | months since 2011: %s (%s to %s) | mean assets $%sM%s%s"
                     % (r.fno, r.cls, r.fund[:60], r.mgr[:28], str(r.mgr_dt)[:7], r.mgmt[:30], r.obj,
                        "none" if pd.isna(r.months) else int(r.months), str(r.d0)[:7], str(r.d1)[:7],
-                       "?" if pd.isna(r.tna) else int(r.tna), " | index" if str(r.idx) not in ("", "None", "nan") else "",
-                       " | ETF" if str(r.etf) not in ("", "None", "nan") else ""))
+                       "?" if pd.isna(r.tna) else int(r.tna), " | index" if r.idx else "",
+                       " | ETF" if r.etf else ""))
         else:
             out("   fund candidates: 0")
