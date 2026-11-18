@@ -1,0 +1,54 @@
+style,id,name,grade,record,alpha_2021_25,t_2021_25,return_2021_25,minus_market_2021_25,rank_share_2021_25,months_2021_25,alpha_2011_25,t_2011_25,rank_share_2011_25,months_2011_25,score,tier,record_name,own_docs
+deep_value,I206,Prem Watsa,A,13f,+8.92,+1.00,+16.8,+3.7,.946,60,-3.52,-0.73,.157,180,.636,A-record,FAIRFAX FINL HOLDINGS LIMITED / FAIRFAX ,1
+deep_value,I110,David Rosen,A,13f,+8.44,+2.58,+17.4,+4.3,.942,60,-0.12,-0.03,.720,124,.796,A-record,RUBRIC CAPITAL MANAGEMENT LP; RUBRIC CAPITAL ,1
+deep_value,I089,Bob Robotti,A,13f,+7.43,+0.73,+20.2,+7.2,.934,60,+0.54,+0.13,.784,180,.781,A-record,"ROBOTTI & CO ADVISORS, LLC",1
+deep_value,I010,Joel Greenblatt,F,fund,+1.99,+1.16,+15.6,+2.5,.922,60,-1.21,-1.02,.670,159,.833,A-record,FundVantage Trust: Gotham Absolute Return Fun,9
+deep_value,I092,Bruce Berkowitz,A,13f,+1.55,+0.13,+9.2,-3.9,.827,60,-1.55,-0.26,.446,180,.633,B,"FAIRHOLME CAPITAL MANAGEMENT, / FAIRHOLM",1
+deep_value,I051,Li Lu,A,13f,+1.37,+0.22,+15.7,+2.6,.820,60,-0.79,-0.12,.612,97,.719,A-record,"HIMALAYA CAPITAL, L.L.C.",2
+deep_value,I029,Murray Stahl,F,fund,+0.29,+0.02,+19.0,+5.9,.848,60,+0.65,+0.12,.919,180,.891,A-record,"Kinetics Mutual Funds, Inc: Paradigm Fund; No",3
+deep_value,I069,Alex Fitch,F,fund,-0.33,-0.09,+14.2,+1.1,.797,60,-0.62,-0.39,.786,180,.769,A-record,Harris Associates Investment Trust: Oakmark S,1
+deep_value,I036,Bill Nygren,F,fund,-0.38,-0.13,+15.0,+1.9,.794,60,+0.37,+0.31,.899,180,.806,A-record,Harris Associates Investment Trust: Oakmark F,2
+deep_value,I053,Matthew McLennan,F,fund,-1.14,-0.48,+12.8,-0.3,.733,60,-0.57,-0.57,.796,180,.616,B,First Eagle Funds: First Eagle US Fund; Class,2
+deep_value,I025,David Einhorn,B,13f,-1.24,-0.18,+15.2,+2.1,.601,60,-2.44,-0.78,.264,180,.383,control,GREENLIGHT CAPITAL INC / GREENLIGHT CAPI,3
+deep_value,I004,Tobias Carlisle,F,fund,-2.32,-0.70,+11.0,-2.1,.606,60,-5.37,-1.35,.053,79,.326,control,ETF Series Solutions: Acquirers Fund,16
+deep_value,I061,Seth Klarman,A,13f,-3.10,-0.74,+6.3,-6.7,.283,60,-4.59,-1.24,.106,180,.225,B,"BAUPOST GROUP INC / BAUPOST GROUP, INC. ",2
+deep_value,I034,Arnold Van Den Berg,F,fund,.,.,.,.,.,0,-3.13,-0.78,.222,85,.270,control,CM Advisors Family of Funds: CM Advisors Fund,2
+deep_value,I154,John Lennon,A,13f,.,.,+3.6,-19.0,.,34,-13.00,-1.66,.018,67,.018,control,PLEASANT LAKE PTNR LLC,1
+deep_value,I222,Soo Chuen Tan,A,13f,.,.,.,.,.925,58,.,.,.947,58,.930,B,DISCERENE GROUP LP,1
+growth,I071,Alex Sacerdote,A,13f,+10.51,+1.78,+12.6,-0.5,.958,60,+8.18,+2.98,.959,180,.945,A-record,WHALE ROCK CAPITAL MGMT LLC / WHALE ROCK,1
+growth,I046,Gavin Baker,A,13f,+8.22,+1.30,+11.8,-1.2,.940,60,+10.16,+1.82,.970,70,.943,A-record,"ATREIDES MANAGEMENT, LP",2
+growth,I001,Brad Gerstner,A,13f,+4.51,+0.48,+1.8,-11.3,.897,60,+4.88,+0.89,.928,166,.876,A-record,"ALTIMETER CAPITAL MGMT, LLC / ALTIMETER ",27
+growth,I122,Fred Martin,A,13f,-0.14,-0.02,+9.7,-3.4,.729,60,+0.02,+0.01,.737,180,.756,A-record,"DISCIPLINED GR INVESTORS, INC / DISCIPLI",1
+growth,I056,Philippe Laffont,A,13f,-2.78,-0.52,+2.1,-10.9,.330,60,+0.19,+0.08,.753,180,.629,A-record,"COATUE MANAGEMENT, LLC",2
+growth,I229,Thomas Laffont,A,13f,-2.78,-0.52,+2.1,-10.9,.330,60,+0.19,+0.08,.753,180,.629,A-record (shares I056),"COATUE MANAGEMENT, LLC",1
+growth,I095,Cathie Wood,F,fund,-4.21,-0.58,-9.5,-22.6,.320,60,+0.67,+0.17,.921,135,.694,A-record,ARK ETF Trust: ARK Innovation ETF; ARK ETF Tr,1
+growth,I134,Henry Ellenbogen,A,13f,-10.31,-1.68,-2.3,-15.4,.034,60,-10.51,-1.99,.030,70,.116,control,DURABLE CAPITAL PTNR LP,1
+long_short,I042,Derek Pilecki,F,fund,+7.92,+2.01,+21.0,+7.9,.988,60,+3.92,+1.24,.985,108,.938,A-record,"Caldwell & Orkin Funds, Inc: Gator Capital Lo",2
+long_short,I211,Ricky Sandler,B,13f,+1.64,+0.45,+11.3,-1.7,.830,60,+3.56,+1.97,.907,180,.885,A-record,"EMINENCE CAPITAL, L.L.C. / EMINENCE CAPI",1
+long_short,I024,Dan Sundheim,B,13f,-5.05,-0.84,+3.2,-9.9,.123,60,-0.12,-0.02,.720,82,.376,A-record,D1 CAPITAL PTNR L.P.,3
+long_short,I149,Jim Chanos,B,13f,.,.,+9.7,-17.7,.,20,-4.35,-2.46,.113,135,.200,control,KYNIKOS ASSOCIATES LP,1
+none,I174,Leon Cooperman,A,13f,+6.46,+1.70,+22.1,+9.0,.924,45,-3.54,-1.42,.154,165,.568,A-record,"OMEGA ADVISORS, INC. / OMEGA ADVR INC",1
+none,I112,David Tepper,A,13f,+5.84,+1.55,+20.6,+7.5,.917,60,+1.01,+0.37,.822,180,.847,A-record,"APPALOOSA MANAGEMENT, L.P. / APPALOOSA M",1
+quality_compounders,I011,Robert Vinall,A,13f,+6.09,+0.73,+16.3,+3.2,.919,60,+3.93,+0.56,.914,82,.917,A-record,RV CAPITAL GMBH,9
+quality_compounders,I055,Pat Dorsey,A,13f,+2.88,+0.32,+4.0,-9.0,.863,60,+5.89,+1.15,.938,106,.906,A-record,DORSEY ASSET MANAGEMENT LLC,2
+quality_compounders,I021,Chris Hohn,A,13f,+1.17,+0.39,+15.7,+2.6,.808,60,+4.69,+1.86,.925,180,.884,A-record,CHILDREN'S INV MGMT (UK) LLP / CHILDREN',3
+quality_compounders,I022,Christopher Begg,A,13f,+0.63,+0.26,+15.9,+2.9,.782,60,+0.37,+0.28,.769,154,.823,A-record,"EAST COAST ASSET MGMT, LLC.",3
+quality_compounders,I014,Chris Bloomstran,A,13f,-0.23,-0.05,+16.6,+3.6,.722,60,+1.18,+0.63,.832,180,.726,A-record,SEMPER AUGUSTUS INVTS GRP LLC,6
+quality_compounders,I059,Samantha McLemore,F,fund,-0.41,-0.10,+6.8,-6.2,.790,60,-2.09,-0.78,.443,180,.517,B,Advisor Managed Portfolios: Patient Opportuni,2
+quality_compounders,I008,Chris Davis,F,fund,-0.43,-0.13,+12.8,-0.3,.788,60,-0.76,-0.62,.763,180,.623,B,"Davis New York Venture Fund, Inc: Davis New Y",9
+quality_compounders,I018,Guy Spier,A,13f,-0.66,-0.23,+17.3,+4.2,.679,60,+0.06,+0.02,.739,130,.714,A-record,"AQUAMARINE CAPITAL MGMT, LLC; AQUAMARINE ZURI",4
+quality_compounders,I063,Thomas Russo,A,13f,-1.23,-0.41,+15.3,+2.2,.601,60,+1.21,+0.83,.834,180,.686,A-record,GARDNER RUSSO & GARDNER,2
+quality_compounders,I015,Dev Kantesaria,A,13f,-1.29,-0.22,+15.0,+1.9,.591,60,+4.76,+1.14,.927,106,.748,A-record,"VALLEY FORGE ADVISORS, LLC / VALLEY FORG",6
+quality_compounders,I031,Warren Buffett,A,13f,-1.55,-0.41,+12.0,-1.0,.549,60,-2.11,-1.17,.320,180,.385,control,BERKSHIRE HATHAWAY / BERKSHIRE HATHAWAY ,3
+quality_compounders,I017,Tom Gayner,A,13f,-3.87,-2.06,+11.9,-1.2,.202,60,-0.29,-0.33,.696,180,.567,B,MARKEL GAYNER ASSET MANAGEMENT / MARKEL ,5
+quality_compounders,I043,Eddy Elfenbein,F,fund,-4.02,-1.00,+10.0,-3.1,.343,60,-1.79,-0.87,.528,111,.397,control,AdvisorShares Trust: AdvisorShares Focused Eq,2
+quality_compounders,I163,Kelly Granat,A,13f,-4.12,-0.63,+2.8,-10.3,.179,60,-1.16,-0.52,.536,180,.506,B,LONE PINE CAPITAL LLC / LONE PINE CAPITA,1
+quality_compounders,I016,François Rochon,A,13f,-4.22,-1.56,+9.3,-3.7,.169,60,-2.75,-1.51,.226,127,.227,A-explicit,GIVERNY CAPITAL INC.,5
+quality_compounders,I203,Peter Keefe,A,13f,-5.22,-1.71,+7.5,-5.6,.117,60,-1.99,-1.18,.348,180,.423,control,AVENIR CORP / AVENIR CORPORATION,1
+quality_compounders,I151,John Armitage,A,13f,-5.27,-2.21,+9.7,-3.4,.114,60,+0.56,+0.40,.786,180,.568,B,EGERTON CAPITAL (UK) LLP / EGERTON CAPIT,1
+quality_compounders,I028,Joseph Shaposhnik,F,fund,-5.65,-1.31,+7.7,-5.3,.179,60,+0.19,+0.07,.886,119,.636,control,"TCW Funds, Inc: TCW New America Premier Equit",3
+quality_compounders,I062,Terry Smith,A,13f,-6.89,-2.10,+5.8,-7.2,.070,60,+0.96,+0.50,.818,154,.538,B,FUNDSMITH LLP,2
+quality_compounders,I020,Andrew Brenton,A,13f,-10.34,-2.61,+4.7,-8.4,.033,60,-5.19,-1.95,.087,133,.135,A-explicit,TURTLE CREEK ASSET MGMT INC.,3
+special_situations,I200,Paul Singer,A,13f,+9.22,+1.81,+25.5,+12.4,.950,60,-0.54,-0.17,.657,180,.744,A-record,ELLIOTT INTL CAP ADVISORS INC. / ELLIOTT,1
+special_situations,I180,Matt Mark,A,13f,-4.69,-0.57,+6.8,-4.8,.141,44,-0.85,-0.31,.601,164,.343,A-record,"JET CAPITAL INVESTORS, LP",1
+special_situations,I105,Dan Loeb,A,13f,-6.23,-1.54,+4.3,-8.8,.084,60,-1.89,-0.85,.368,180,.246,A-record,THIRD POINT LLC / THIRD POINT MANAGEMENT,1

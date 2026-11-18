@@ -1,0 +1,577 @@
+﻿=== WRDSQ REPORT v1.0.7 | job eq_scorecard_v1 | 2026-11-18 16:21 | metadata and results only ===
+
+## 1. python
+build: CRSP panel 19223 x 199                  2 s
+build: peer groups (bm ambiguous: 287)         3 s
+build: positions (non-quarter-end rdates: 0)     81 s
+build: copy books (6542 filers, 225765 filings)    162 s
+build: 13F windows                           187 s
+build: funds (11305 portfolios)              238 s
+build: ranks, tiers, persistence             240 s
+build: report 552 lines, 64371 characters
+
+## 2. python
+[report part 1 of 2]
+EQ SCORECARD eq_scorecard-1.0.0 | registration STAGE0_REGISTRATION.md s.8
+code sha256 f7f542646da4da43a96cbfdfe8e817247ccb519b7872519dab299188f6bb5db8 (computed at run time from the module file) | input sha256 1f58666e145ecd4c1573171942f779c1c9eac04652874a8d0f367120bc9c74e2 | pull key 45671094f38c9a10
+peer groups: CRSP common shares (EQTY/COM/NS) on NYSE, NYSE American, Nasdaq; foreign-incorporated and REIT/trust common shares included (registration reading 8)
+investors 241 (13f 77, fund 13, none 151) | record months 2011-01..2025-12 | seal-exempt run
+
+COUNTS window | filers in rank group | funds in rank group | filed value used (median) | value with a peer group (mean) | weight without a return (mean)
+  2011-15   1741   3271 .992 .651 .0111
+  2016-20   2250   3455 .977 .585 .0120
+  2021-25   3561   3225 .998 .487 .0069
+  2011-25   4681   4367 .991 .512 .0085
+
+LIBRARY INVESTORS (matched). Columns: n months | a six-factor alpha %/yr | t | r return %/yr (geometric) | rm minus CRSP VW market | pa peer-adjusted %/yr | pv value share with a peer group | dd worst fall % | yb share of calendar years ahead of the market | np median positions | tw median weight of ten largest | to turnover/yr | p10, pn peer-adjusted top-10 / new-positions variants | fv filed value used | ms weight share without a return | rk rank share. Statistics only where the window or the record has 60 months; '.' = none
+INV I001   Brad Gerstner                | grade A | 13f  | months 166 | style growth | score .876 | components .928 .897 .804
+  I001   2011-15 n46  a +18.95 t +3.30 r +39.6 rm +26.5 pa +22.65 pv .72 dd -10.1 yb 1.00 np 26 tw .88 to .69 p10 +24.17 pn +6.56 fv 1.00 ms .002 rk .991
+  I001   2016-20 n60  a -1.24 t -0.13 r +18.3 rm +1.9 pa -3.20 pv .88 dd -32.3 yb .40 np 23 tw .95 to .50 p10 -4.14 pn +2.51 fv .99 ms .012 rk .414
+  I001   2021-25 n60  a +4.51 t +0.48 r +1.8 rm -11.3 pa -12.51 pv .78 dd -60.1 yb .40 np 20 tw .91 to .58 p10 -13.18 pn -5.25 fv 1.00 ms .000 rk .897
+  I001   2011-25 n166 a +4.88 t +0.89 r +17.3 rm +3.0 pa +0.60 pv .80 dd -60.1 yb .54 np 23 tw .94 to .58 p10 +0.44 pn +1.01 fv 1.00 ms .005 rk .928
+INV I004   Tobias Carlisle              | grade F | fund | months  79 | style deep_value | score .326 | components .053 .606 .319
+  I004   2011-15 n0   a . t . r . rm . pa . pv . dd . yb . np . tw . to . p10 . pn . fv . ms . rk .
+  I004   2016-20 n19  a . t . r -1.0 rm -28.2 pa . pv . dd -27.6 yb .00 np . tw . to . p10 . pn . fv . ms . rk .
+  I004   2021-25 n60  a -2.32 t -0.70 r +11.0 rm -2.1 pa . pv . dd -28.7 yb .60 np . tw . to . p10 . pn . fv . ms . rk .606
+  I004   2011-25 n79  a -5.37 t -1.35 r +8.0 rm -8.3 pa . pv . dd -28.7 yb .50 np . tw . to . p10 . pn . fv . ms . rk .053
+INV I008   Chris Davis                  | grade F | fund | months 180 | style quality_compounders | score .623 | components .763 .788 .319
+  I008   2011-15 n60  a -3.04 t -2.57 r +9.1 rm -3.0 pa . pv . dd -20.0 yb .20 np . tw . to . p10 . pn . fv . ms . rk .234
+  I008   2016-20 n60  a -1.38 t -0.77 r +11.6 rm -4.8 pa . pv . dd -26.3 yb .20 np . tw . to . p10 . pn . fv . ms . rk .540
+  I008   2021-25 n60  a -0.43 t -0.13 r +12.8 rm -0.3 pa . pv . dd -31.5 yb .60 np . tw . to . p10 . pn . fv . ms . rk .788
+  I008   2011-25 n180 a -0.76 t -0.62 r +11.2 rm -2.7 pa . pv . dd -31.5 yb .33 np . tw . to . p10 . pn . fv . ms . rk .763
+INV I009   Howard Marks                 | grade C | 13f  | months 141 | style credit_distressed | score .862 | components .914 .947 .725
+  I009   2011-15 n60  a -6.60 t -1.34 r +6.0 rm -6.1 pa -7.88 pv .53 dd -28.9 yb .40 np 33 tw .84 to 1.00 p10 -8.65 pn +5.36 fv .75 ms .009 rk .099
+  I009   2016-20 n29  a . t . r +27.7 rm +11.8 pa -3.23 pv .40 dd -6.5 yb 1.00 np 42 tw .81 to .92 p10 -6.63 pn -7.61 fv .90 ms .025 rk .
+  I009   2021-25 n52  a +9.03 t +1.12 r +20.6 rm +10.0 pa +4.05 pv .31 dd -16.8 yb .50 np 64 tw .67 to .62 p10 +2.55 pn +12.09 fv .94 ms .006 rk .947
+  I009   2011-25 n141 a +3.93 t +0.89 r +15.5 rm +3.2 pa -2.52 pv .42 dd -28.9 yb .55 np 43 tw .77 to .84 p10 -4.10 pn +4.47 fv .85 ms .011 rk .914
+INV I010   Joel Greenblatt              | grade F | fund | months 159 | style deep_value | score .833 | components .670 .922 .906
+  I010   2011-15 n39  a +0.85 t +0.31 r +9.6 rm -4.1 pa . pv . dd -11.8 yb .00 np . tw . to . p10 . pn . fv . ms . rk .883
+  I010   2016-20 n60  a -5.03 t -2.93 r +3.6 rm -12.8 pa . pv . dd -19.0 yb .20 np . tw . to . p10 . pn . fv . ms . rk .091
+  I010   2021-25 n60  a +1.99 t +1.16 r +15.6 rm +2.5 pa . pv . dd -13.1 yb .40 np . tw . to . p10 . pn . fv . ms . rk .922
+  I010   2011-25 n159 a -1.21 t -1.02 r +9.5 rm -5.0 pa . pv . dd -19.0 yb .23 np . tw . to . p10 . pn . fv . ms . rk .670
+INV I011   Robert Vinall                | grade A | 13f  | months  82 | style quality_compounders | score .917 | components .914 .919 .917
+  I011   2016-20 n22  a . t . r +36.3 rm +14.3 pa +10.35 pv .78 dd -29.1 yb 1.00 np 5 tw 1.00 to .44 p10 +10.35 pn +219.51 fv 1.00 ms .000 rk .
+  I011   2021-25 n60  a +6.09 t +0.73 r +16.3 rm +3.2 pa +9.71 pv .78 dd -52.4 yb .60 np 6 tw 1.00 to .41 p10 +9.75 pn -26.26 fv 1.00 ms .009 rk .919
+  I011   2011-25 n82  a +3.93 t +0.56 r +21.3 rm +5.9 pa +9.88 pv .78 dd -52.4 yb .67 np 6 tw 1.00 to .42 p10 +9.91 pn +13.06 fv 1.00 ms .006 rk .914
+INV I013   Mohnish Pabrai               | grade C | 13f  | months 150 | style quality_compounders | score . | components 
+  I013   2011-15 n30  a . t . r -13.5 rm -17.6 pa -34.84 pv .42 dd -39.5 yb .00 np 12 tw .99 to .97 p10 -30.99 pn +32.54 fv .99 ms .007 rk .
+  I013   2016-20 n60  a +0.13 t +0.01 r +16.5 rm +0.1 pa -29.93 pv .46 dd -29.3 yb .40 np 2 tw 1.00 to .84 p10 -29.93 pn +26.66 fv .72 ms .002 rk .
+  I013   2021-25 n60  a -3.68 t -0.24 r -3.1 rm -16.2 pa +3.60 pv .82 dd -59.9 yb .20 np 3 tw 1.00 to .86 p10 +3.60 pn +45.53 fv .98 ms .000 rk .
+  I013   2011-25 n150 a -1.40 t -0.19 r +2.0 rm -10.5 pa -16.71 pv .59 dd -59.9 yb .27 np 4 tw 1.00 to .87 p10 -15.89 pn +35.66 fv .88 ms .002 rk .
+INV I014   Chris Bloomstran             | grade A | 13f  | months 180 | style quality_compounders | score .726 | components .832 .722 .624
+  I014   2011-15 n60  a -2.63 t -1.27 r +6.4 rm -5.7 pa -3.11 pv .72 dd -11.2 yb .20 np 29 tw .73 to .19 p10 -3.78 pn -11.64 fv 1.00 ms .000 rk .305
+  I014   2016-20 n60  a +2.86 t +1.29 r +14.6 rm -1.8 pa +2.53 pv .65 dd -21.5 yb .40 np 26 tw .73 to .28 p10 +3.70 pn +30.29 fv .99 ms .009 rk .856
+  I014   2021-25 n60  a -0.23 t -0.05 r +16.6 rm +3.6 pa +1.01 pv .65 dd -20.9 yb .40 np 34 tw .78 to .34 p10 +1.62 pn -12.14 fv .99 ms .002 rk .722
+  I014   2011-25 n180 a +1.18 t +0.63 r +12.4 rm -1.4 pa +0.14 pv .67 dd -21.5 yb .33 np 29 tw .74 to .27 p10 +0.52 pn +1.18 fv .99 ms .004 rk .832
+INV I015   Dev Kantesaria               | grade A | 13f  | months 106 | style quality_compounders | score .748 | components .927 .591 .725
+  I015   2016-20 n46  a +2.20 t +0.31 r +30.6 rm +14.4 pa +3.37 pv .88 dd -19.4 yb 1.00 np 9 tw 1.00 to .27 p10 +3.37 pn +4.51 fv 1.00 ms .000 rk .835
+  I015   2021-25 n60  a -1.29 t -0.22 r +15.0 rm +1.9 pa +3.60 pv .79 dd -28.9 yb .60 np 9 tw 1.00 to .17 p10 +3.60 pn +41.46 fv 1.00 ms .000 rk .591
+  I015   2011-25 n106 a +4.76 t +1.14 r +21.5 rm +7.1 pa +3.50 pv .83 dd -28.9 yb .75 np 9 tw 1.00 to .22 p10 +3.50 pn +9.33 fv 1.00 ms .000 rk .927
+INV I016   Fran?ois Rochon              | grade A | 13f  | months 127 | style quality_compounders | score .227 | components .226 .169 .286
+  I016   2011-15 n7   a . t . r -9.0 rm -3.3 pa +3.01 pv .78 dd -8.6 yb . np 24 tw .70 to .28 p10 +6.74 pn +13.00 fv 1.00 ms .000 rk .
+  I016   2016-20 n60  a -0.38 t -0.14 r +13.4 rm -3.0 pa +1.11 pv .75 dd -25.5 yb .40 np 34 tw .70 to .28 p10 +1.02 pn +23.36 fv .99 ms .000 rk .581
+  I016   2021-25 n60  a -4.22 t -1.56 r +9.3 rm -3.7 pa -1.83 pv .81 dd -26.9 yb .20 np 58 tw .58 to .28 p10 -5.39 pn +2.98 fv 1.00 ms .000 rk .169
+  I016   2011-25 n127 a -2.75 t -1.51 r +10.1 rm -3.4 pa -0.18 pv .78 dd -26.9 yb .30 np 49 tw .64 to .28 p10 -1.69 pn +11.86 fv 1.00 ms .000 rk .226
+INV I017   Tom Gayner                   | grade A | 13f  | months 180 | style quality_compounders | score .567 | components .696 .202 .804
+  I017   2011-15 n60  a +0.80 t +0.52 r +12.9 rm +0.8 pa +0.65 pv .72 dd -16.2 yb .60 np 93 tw .49 to .21 p10 -0.12 pn +10.52 fv .95 ms .000 rk .723
+  I017   2016-20 n60  a +0.71 t +0.50 r +16.2 rm -0.2 pa +0.62 pv .75 dd -22.0 yb .60 np 127 tw .43 to .22 p10 +0.39 pn -0.96 fv .99 ms .000 rk .730
+  I017   2021-25 n60  a -3.87 t -2.06 r +11.9 rm -1.2 pa +0.24 pv .75 dd -22.9 yb .40 np 129 tw .41 to .20 p10 -1.61 pn +20.17 fv .99 ms .001 rk .202
+  I017   2011-25 n180 a -0.29 t -0.33 r +13.6 rm -0.2 pa +0.50 pv .74 dd -22.9 yb .53 np 125 tw .43 to .21 p10 -0.45 pn +9.48 fv .98 ms .000 rk .696
+INV I018   Guy Spier                    | grade A | 13f  | months 130 | style quality_compounders | score .714 | components .739 .679 .725
+  I018   2011-15 n10  a . t . r -23.9 rm -20.9 pa -32.01 pv .57 dd -21.2 yb . np 10 tw 1.00 to .30 p10 -32.01 pn . fv 1.00 ms .000 rk .
+  I018   2016-20 n60  a +1.62 t +0.33 r +16.3 rm -0.1 pa +2.15 pv .53 dd -28.2 yb .60 np 12 tw .98 to .28 p10 +2.27 pn -0.25 fv .91 ms .002 rk .801
+  I018   2021-25 n60  a -0.66 t -0.23 r +17.3 rm +4.2 pa +7.96 pv .63 dd -24.2 yb .60 np 12 tw .97 to .19 p10 +8.19 pn -8.20 fv 1.00 ms .000 rk .679
+  I018   2011-25 n130 a +0.06 t +0.02 r +13.0 rm -0.2 pa +2.21 pv .58 dd -34.5 yb .60 np 12 tw .97 to .24 p10 +2.37 pn -3.50 fv .96 ms .001 rk .739
+INV I019   Jeremy Grantham              | grade C | 13f  | months 180 | style macro_multi_asset | score . | components 
+  I019   2011-15 n60  a +0.67 t +0.53 r +12.1 rm -0.0 pa +0.50 pv .88 dd -8.9 yb .40 np 559 tw .43 to .45 p10 +0.93 pn -3.38 fv .98 ms .006 rk .
+  I019   2016-20 n60  a +0.85 t +0.66 r +16.2 rm -0.2 pa +1.13 pv .72 dd -21.6 yb .40 np 518 tw .33 to .65 p10 +2.03 pn -0.41 fv .98 ms .017 rk .
+  I019   2021-25 n60  a -2.20 t -1.37 r +11.4 rm -1.7 pa +0.29 pv .78 dd -20.2 yb .40 np 666 tw .29 to .48 p10 -0.08 pn -5.59 fv .99 ms .011 rk .
+  I019   2011-25 n180 a +0.31 t +0.29 r +13.2 rm -0.6 pa +0.64 pv .79 dd -21.6 yb .40 np 570 tw .34 to .53 p10 +0.96 pn -3.12 fv .98 ms .011 rk .
+INV I020   Andrew Brenton               | grade A | 13f  | months 133 | style quality_compounders | score .135 | components .087 .033 .286
+  I020   2011-15 n13  a . t . r -7.5 rm -7.7 pa +0.39 pv .16 dd -14.7 yb .00 np 8 tw 1.00 to .30 p10 +0.39 pn +54.30 fv 1.00 ms .000 rk .
+  I020   2016-20 n60  a -2.35 t -0.55 r +13.8 rm -2.6 pa +3.57 pv .64 dd -35.7 yb .00 np 25 tw .86 to .43 p10 +3.31 pn +34.05 fv .99 ms .000 rk .253
+  I020   2021-25 n60  a -10.34 t -2.61 r +4.7 rm -8.4 pa -5.09 pv .76 dd -35.6 yb .40 np 37 tw .57 to .30 p10 -4.83 pn -5.00 fv 1.00 ms .003 rk .033
+  I020   2011-25 n133 a -5.19 t -1.95 r +7.4 rm -5.8 pa -0.65 pv .65 dd -35.7 yb .18 np 26 tw .78 to .36 p10 -0.65 pn +16.85 fv .99 ms .001 rk .087
+INV I021   Chris Hohn                   | grade A | 13f  | months 180 | style quality_compounders | score .884 | components .925 .808 .917
+  I021   2011-15 n60  a +7.26 t +1.40 r +26.1 rm +14.0 pa +9.19 pv .97 dd -22.2 yb 1.00 np 5 tw 1.00 to .93 p10 +9.19 pn +8.59 fv 1.00 ms .000 rk .949
+  I021   2016-20 n60  a +1.85 t +0.35 r +19.9 rm +3.6 pa +6.15 pv .74 dd -21.8 yb .80 np 11 tw 1.00 to .67 p10 +6.31 pn +5.60 fv .94 ms .052 rk .814
+  I021   2021-25 n60  a +1.17 t +0.39 r +15.7 rm +2.6 pa +2.06 pv .75 dd -27.8 yb .60 np 10 tw 1.00 to .35 p10 +1.74 pn -3.33 fv .98 ms .001 rk .808
+  I021   2011-25 n180 a +4.69 t +1.86 r +20.5 rm +6.6 pa +5.80 pv .82 dd -27.8 yb .80 np 9 tw 1.00 to .65 p10 +5.75 pn +4.88 fv .97 ms .018 rk .925
+INV I022   Christopher Begg             | grade A | 13f  | months 154 | style quality_compounders | score .823 | components .769 .782 .917
+  I022   2011-15 n34  a . t . r +7.8 rm -5.3 pa -0.76 pv .56 dd -9.0 yb .00 np 114 tw .29 to .34 p10 -6.29 pn +2.09 fv .97 ms .004 rk .
+  I022   2016-20 n60  a +1.95 t +1.32 r +20.0 rm +3.6 pa +3.30 pv .72 dd -19.1 yb .80 np 71 tw .67 to .42 p10 +5.00 pn +15.22 fv .99 ms .000 rk .818
+  I022   2021-25 n60  a +0.63 t +0.26 r +15.9 rm +2.9 pa +1.74 pv .68 dd -35.9 yb .60 np 63 tw .71 to .33 p10 +2.62 pn +1.61 fv 1.00 ms .000 rk .782
+  I022   2011-25 n154 a +0.37 t +0.28 r +15.6 rm +1.3 pa +1.80 pv .67 dd -35.9 yb .58 np 70 tw .68 to .37 p10 +1.58 pn +7.33 fv .99 ms .001 rk .769
+INV I023   Connor Haley                 | grade C | 13f  | months  46 | style small_micro_cap | score .309 | components .261 .380 .286
+  I023   2021-25 n46  rk .380
+  I023   2011-25 n46  rk .261
+INV I024   Dan Sundheim                 | grade B | 13f  | months  82 | style long_short | score .376 | components .720 .123 .286
+  I024   2016-20 n22  a . t . r +38.4 rm +16.4 pa +5.69 pv .71 dd -12.1 yb 1.00 np 29 tw .71 to 1.38 p10 +8.16 pn +1.12 fv 1.00 ms .003 rk .
+  I024   2021-25 n60  a -5.05 t -0.84 r +3.2 rm -9.9 pa -5.02 pv .65 dd -55.4 yb .60 np 35 tw .60 to 1.33 p10 -4.87 pn -3.29 fv .99 ms .002 rk .123
+  I024   2011-25 n82  a -0.12 t -0.02 r +11.7 rm -3.8 pa -2.15 pv .66 dd -55.4 yb .67 np 34 tw .62 to 1.35 p10 -1.38 pn -2.19 fv .99 ms .003 rk .720
+INV I025   David Einhorn                | grade B | 13f  | months 180 | style deep_value | score .383 | components .264 .601 .286
+  I025   2011-15 n60  a -3.66 t -0.79 r +7.9 rm -4.2 pa -1.83 pv .73 dd -32.9 yb .60 np 30 tw .69 to .80 p10 -4.26 pn +14.60 fv .96 ms .006 rk .205
+  I025   2016-20 n60  a -0.34 t -0.06 r +12.3 rm -4.1 pa +4.93 pv .68 dd -41.8 yb .40 np 29 tw .83 to .80 p10 +6.46 pn -4.34 fv .96 ms .007 rk .587
+  I025   2021-25 n60  a -1.24 t -0.18 r +15.2 rm +2.1 pa +9.00 pv .73 dd -21.7 yb .60 np 36 tw .77 to .66 p10 +12.37 pn -8.43 fv .99 ms .011 rk .601
+  I025   2011-25 n180 a -2.44 t -0.78 r +11.7 rm -2.1 pa +4.03 pv .71 dd -41.8 yb .53 np 32 tw .76 to .75 p10 +4.86 pn +1.00 fv .97 ms .008 rk .264
+INV I027   Dmitry Balyasny              | grade C | 13f  | months 180 | style long_short | score . | components 
+  I027   2011-15 n60  a -2.15 t -0.80 r +10.9 rm -1.2 pa +0.64 pv .74 dd -28.6 yb .20 np 319 tw .23 to 2.38 p10 +5.52 pn +0.30 fv .99 ms .004 rk .
+  I027   2016-20 n60  a -0.67 t -0.39 r +14.1 rm -2.3 pa +1.01 pv .74 dd -28.9 yb .40 np 1069 tw .11 to 2.15 p10 +2.05 pn -2.89 fv .97 ms .009 rk .
+  I027   2021-25 n60  a -1.34 t -1.12 r +11.1 rm -2.0 pa +1.42 pv .67 dd -22.7 yb .40 np 1810 tw .11 to 2.10 p10 +11.68 pn -3.12 fv .99 ms .034 rk .
+  I027   2011-25 n180 a -0.77 t -0.62 r +12.0 rm -1.8 pa +1.02 pv .71 dd -28.9 yb .33 np 1010 tw .12 to 2.21 p10 +6.41 pn -1.90 fv .98 ms .016 rk .
+INV I028   Joseph Shaposhnik            | grade F | fund | months 119 | style quality_compounders | score .636 | components .886 .179 .842
+  I028   2011-15 n0   a . t . r . rm . pa . pv . dd . yb . np . tw . to . p10 . pn . fv . ms . rk .
+  I028   2016-20 n59  a +4.75 t +2.00 r +24.3 rm +6.2 pa . pv . dd -19.5 yb 1.00 np . tw . to . p10 . pn . fv . ms . rk .979
+  I028   2021-25 n60  a -5.65 t -1.31 r +7.7 rm -5.3 pa . pv . dd -29.3 yb .20 np . tw . to . p10 . pn . fv . ms . rk .179
+  I028   2011-25 n119 a +0.19 t +0.07 r +15.6 rm +0.1 pa . pv . dd -29.3 yb .56 np . tw . to . p10 . pn . fv . ms . rk .886
+INV I029   Murray Stahl                 | grade F | fund | months 180 | style deep_value | score .891 | components .919 .848 .906
+  I029   2011-15 n60  a -5.32 t -1.53 r +6.4 rm -5.7 pa . pv . dd -24.9 yb .40 np . tw . to . p10 . pn . fv . ms . rk .062
+  I029   2016-20 n60  a +0.11 t +0.02 r +14.0 rm -2.4 pa . pv . dd -32.7 yb .40 np . tw . to . p10 . pn . fv . ms . rk .784
+  I029   2021-25 n60  a +0.29 t +0.02 r +19.0 rm +5.9 pa . pv . dd -36.5 yb .60 np . tw . to . p10 . pn . fv . ms . rk .848
+  I029   2011-25 n180 a +0.65 t +0.12 r +13.0 rm -0.8 pa . pv . dd -36.5 yb .47 np . tw . to . p10 . pn . fv . ms . rk .919
+INV I031   Warren Buffett               | grade A | 13f  | months 180 | style quality_compounders | score .385 | components .320 .549 .286
+  I031   2011-15 n60  a -0.58 t -0.25 r +9.8 rm -2.3 pa -4.78 pv .96 dd -9.0 yb .20 np 41 tw .86 to .24 p10 -5.54 pn +1.87 fv 1.00 ms .003 rk .566
+  I031   2016-20 n60  a -3.21 t -1.27 r +12.5 rm -3.9 pa -3.12 pv .90 dd -27.1 yb .20 np 46 tw .82 to .26 p10 -3.51 pn +5.39 fv 1.00 ms .002 rk .195
+  I031   2021-25 n60  a -1.55 t -0.41 r +12.0 rm -1.0 pa -0.20 pv .95 dd -21.5 yb .40 np 44 tw .89 to .24 p10 -0.13 pn -12.93 fv 1.00 ms .000 rk .549
+  I031   2011-25 n180 a -2.11 t -1.17 r +11.4 rm -2.4 pa -2.70 pv .94 dd -27.1 yb .27 np 44 tw .86 to .25 p10 -3.06 pn -1.42 fv 1.00 ms .002 rk .320
+INV I033   Anthony Scaramucci           | grade C | 13f  | months  58 | style growth | score .259 | components .233 .286
+  I033   2016-20 n48  rk .080
+  I033   2021-25 n10  rk .
+  I033   2011-25 n58  rk .233
+INV I034   Arnold Van Den Berg          | grade F | fund | months  85 | style deep_value | score .270 | components .222 .319
+  I034   2011-15 n60  a -6.68 t -2.01 r -1.6 rm -13.7 pa . pv . dd -35.3 yb .00 np . tw . to . p10 . pn . fv . ms . rk .038
+  I034   2016-20 n25  a . t . r +20.1 rm -0.1 pa . pv . dd -17.2 yb .50 np . tw . to . p10 . pn . fv . ms . rk .
+  I034   2021-25 n0   a . t . r . rm . pa . pv . dd . yb . np . tw . to . p10 . pn . fv . ms . rk .
+  I034   2011-25 n85  a -3.13 t -0.78 r +4.3 rm -10.1 pa . pv . dd -39.8 yb .14 np . tw . to . p10 . pn . fv . ms . rk .222
+INV I036   Bill Nygren                  | grade F | fund | months 180 | style deep_value | score .806 | components .899 .794 .725
+  I036   2011-15 n60  a +1.42 t +1.31 r +12.9 rm +0.8 pa . pv . dd -16.5 yb .80 np . tw . to . p10 . pn . fv . ms . rk .920
+  I036   2016-20 n60  a -3.41 t -2.86 r +11.2 rm -5.2 pa . pv . dd -30.9 yb .20 np . tw . to . p10 . pn . fv . ms . rk .205
+  I036   2021-25 n60  a -0.38 t -0.13 r +15.0 rm +1.9 pa . pv . dd -23.2 yb .60 np . tw . to . p10 . pn . fv . ms . rk .794
+  I036   2011-25 n180 a +0.37 t +0.31 r +13.0 rm -0.8 pa . pv . dd -30.9 yb .53 np . tw . to . p10 . pn . fv . ms . rk .899
+INV I041   David Rubenstein             | grade C | 13f  | months 160 | style private_venture | score .258 | components .135 .015 .624
+  I041   2011-15 n40  a +8.18 t +0.89 r +20.2 rm +6.0 pa +4.56 pv .54 dd -17.3 yb .67 np 15 tw .99 to .68 p10 +4.70 pn -26.02 fv 1.00 ms .000 rk .958
+  I041   2016-20 n60  a -0.32 t -0.04 r +8.5 rm -7.9 pa -22.38 pv .51 dd -34.8 yb .40 np 8 tw 1.00 to .89 p10 -22.03 pn -37.22 fv .78 ms .073 rk .590
+  I041   2021-25 n60  a -15.14 t -1.76 r -11.4 rm -24.4 pa -14.27 pv .44 dd -62.3 yb .40 np 9 tw 1.00 to .88 p10 -14.39 pn -32.30 fv 1.00 ms .061 rk .015
+  I041   2011-25 n160 a -3.94 t -0.74 r +3.2 rm -11.4 pa -12.60 pv .49 dd -62.3 yb .46 np 11 tw 1.00 to .83 p10 -12.48 pn -33.14 fv .91 ms .050 rk .135
+INV I042   Derek Pilecki                | grade F | fund | months 108 | style long_short | score .938 | components .985 .988 .842
+  I042   2011-15 n0   a . t . r . rm . pa . pv . dd . yb . np . tw . to . p10 . pn . fv . ms . rk .
+  I042   2016-20 n48  a -0.63 t -0.11 r +4.1 rm -13.0 pa . pv . dd -37.7 yb .00 np . tw . to . p10 . pn . fv . ms . rk .679
+  I042   2021-25 n60  a +7.92 t +2.01 r +21.0 rm +7.9 pa . pv . dd -17.8 yb 1.00 np . tw . to . p10 . pn . fv . ms . rk .988
+  I042   2011-25 n108 a +3.92 t +1.24 r +13.2 rm -1.7 pa . pv . dd -37.7 yb .56 np . tw . to . p10 . pn . fv . ms . rk .985
+INV I043   Eddy Elfenbein               | grade F | fund | months 111 | style quality_compounders | score .397 | components .528 .343 .319
+  I043   2011-15 n0   a . t . r . rm . pa . pv . dd . yb . np . tw . to . p10 . pn . fv . ms . rk .
+  I043   2016-20 n51  a -0.63 t -0.35 r +14.6 rm -2.7 pa . pv . dd -18.7 yb .00 np . tw . to . p10 . pn . fv . ms . rk .677
+  I043   2021-25 n60  a -4.02 t -1.00 r +10.0 rm -3.1 pa . pv . dd -21.8 yb .20 np . tw . to . p10 . pn . fv . ms . rk .343
+  I043   2011-25 n111 a -1.79 t -0.87 r +12.1 rm -2.9 pa . pv . dd -21.8 yb .11 np . tw . to . p10 . pn . fv . ms . rk .528
+INV I046   Gavin Baker                  | grade A | 13f  | months  70 | style growth | score .943 | components .970 .940 .917
+  I046   2016-20 n10  a . t . r +157.9 rm +114.7 pa +59.75 pv .81 dd -14.8 yb . np 25 tw .62 to 1.66 p10 +66.40 pn +58.53 fv 1.00 ms .000 rk .
+  I046   2021-25 n60  a +8.22 t +1.30 r +11.8 rm -1.2 pa +4.16 pv .81 dd -53.4 yb .60 np 35 tw .57 to 1.55 p10 +8.53 pn +7.33 fv 1.00 ms .000 rk .940
+  I046   2011-25 n70  a +10.16 t +1.82 r +26.0 rm +9.1 pa +12.10 pv .81 dd -53.4 yb .60 np 35 tw .58 to 1.56 p10 +16.80 pn +12.68 fv 1.00 ms .000 rk .970
+INV I051   Li Lu                        | grade A | 13f  | months  97 | style deep_value | score .719 | components .612 .820 .725
+  I051   2016-20 n37  a -6.54 t -0.44 r +1.1 rm -16.3 pa +3.22 pv .27 dd -55.7 yb .00 np 3 tw 1.00 to 1.02 p10 +3.22 pn -0.76 fv 1.00 ms .000 rk .
+  I051   2021-25 n60  a +1.37 t +0.22 r +15.7 rm +2.6 pa +3.70 pv .76 dd -36.9 yb .80 np 6 tw 1.00 to .32 p10 +3.70 pn +24.02 fv 1.00 ms .000 rk .820
+  I051   2011-25 n97  a -0.79 t -0.12 r +9.9 rm -4.8 pa +3.63 pv .57 dd -55.7 yb .67 np 6 tw 1.00 to .55 p10 +3.63 pn +15.76 fv 1.00 ms .000 rk .612
+INV I053   Matthew McLennan             | grade F | fund | months 180 | style deep_value | score .616 | components .796 .733 .319
+  I053   2011-15 n60  a -0.38 t -0.27 r +6.9 rm -5.2 pa . pv . dd -10.3 yb .20 np . tw . to . p10 . pn . fv . ms . rk .717
+  I053   2016-20 n60  a -1.84 t -1.29 r +9.1 rm -7.3 pa . pv . dd -21.6 yb .20 np . tw . to . p10 . pn . fv . ms . rk .446
+  I053   2021-25 n60  a -1.14 t -0.48 r +12.8 rm -0.3 pa . pv . dd -18.1 yb .40 np . tw . to . p10 . pn . fv . ms . rk .733
+  I053   2011-25 n180 a -0.57 t -0.57 r +9.6 rm -4.3 pa . pv . dd -21.6 yb .27 np . tw . to . p10 . pn . fv . ms . rk .796
+INV I055   Pat Dorsey                   | grade A | 13f  | months 106 | style quality_compounders | score .906 | components .938 .863 .917
+  I055   2016-20 n46  a +9.00 t +1.12 r +38.3 rm +22.0 pa +11.87 pv .81 dd -26.5 yb 1.00 np 9 tw 1.00 to .73 p10 +11.74 pn +15.09 fv .97 ms .000 rk .970
+  I055   2021-25 n60  a +2.88 t +0.32 r +4.0 rm -9.0 pa -5.00 pv .77 dd -60.4 yb .40 np 10 tw 1.00 to .54 p10 -5.28 pn -17.53 fv 1.00 ms .007 rk .863
+  I055   2011-25 n106 a +5.89 t +1.15 r +17.7 rm +3.3 pa +2.32 pv .79 dd -60.4 yb .62 np 9 tw 1.00 to .62 p10 +2.11 pn -0.10 fv .99 ms .004 rk .938
+INV I056   Philippe Laffont             | grade A | 13f  | months 180 | style growth | score .629 | components .753 .330 .804
+  I056   2011-15 n60  a +0.23 t +0.06 r +15.2 rm +3.1 pa +2.64 pv .79 dd -19.9 yb .80 np 37 tw .72 to 1.14 p10 +5.22 pn -2.22 fv .97 ms .005 rk .676
+  I056   2016-20 n60  a +3.69 t +0.96 r +29.1 rm +12.7 pa +8.36 pv .70 dd -23.6 yb .60 np 69 tw .63 to .96 p10 +9.30 pn +9.43 fv .99 ms .002 rk .888
+  I056   2021-25 n60  a -2.78 t -0.52 r +2.1 rm -10.9 pa -5.13 pv .73 dd -61.5 yb .60 np 73 tw .56 to .99 p10 -6.14 pn -8.00 fv 1.00 ms .001 rk .330
+  I056   2011-25 n180 a +0.19 t +0.08 r +15.0 rm +1.1 pa +1.96 pv .74 dd -61.5 yb .67 np 55 tw .63 to 1.03 p10 +2.79 pn -0.26 fv .99 ms .003 rk .753
+INV I057   Ray Dalio                    | grade C | 13f  | months 180 | style macro_multi_asset | score . | components 
+  I057   2011-15 n60  a -6.79 t -1.95 r +3.6 rm -8.5 pa -0.04 pv .17 dd -20.4 yb .20 np 304 tw .89 to .49 p10 +4.98 pn -2.31 fv 1.00 ms .000 rk .
+  I057   2016-20 n60  a -0.08 t -0.03 r +11.9 rm -4.5 pa -1.34 pv .13 dd -22.2 yb .40 np 329 tw .77 to .70 p10 +6.61 pn -2.60 fv .99 ms .000 rk .
+  I057   2021-25 n60  a -2.06 t -0.76 r +8.1 rm -5.0 pa -2.65 pv .60 dd -21.9 yb .40 np 709 tw .34 to .82 p10 +1.61 pn +4.98 fv .99 ms .001 rk .
+  I057   2011-25 n180 a -3.23 t -1.87 r +7.8 rm -6.0 pa -1.34 pv .30 dd -22.2 yb .33 np 355 tw .71 to .67 p10 +3.79 pn +0.02 fv .99 ms .000 rk .
+INV I059   Samantha McLemore            | grade F | fund | months 180 | style quality_compounders | score .517 | components .443 .790 .319
+  I059   2011-15 n60  a -0.97 t -0.18 r +11.2 rm -0.9 pa . pv . dd -39.7 yb .60 np . tw . to . p10 . pn . fv . ms . rk .606
+  I059   2016-20 n60  a -6.79 t -1.24 r +15.8 rm -0.6 pa . pv . dd -41.5 yb .60 np . tw . to . p10 . pn . fv . ms . rk .036
+  I059   2021-25 n60  a -0.41 t -0.10 r +6.8 rm -6.2 pa . pv . dd -50.0 yb .60 np . tw . to . p10 . pn . fv . ms . rk .790
+  I059   2011-25 n180 a -2.09 t -0.78 r +11.2 rm -2.6 pa . pv . dd -50.0 yb .60 np . tw . to . p10 . pn . fv . ms . rk .443
+INV I060   Sander Gerber                | grade C | 13f  | months 180 | style long_short | score .804 | components .804
+  I060   2011-15 n60  a +2.34 t +0.75 r +8.0 rm -4.1 pa -0.06 pv .55 dd -20.0 yb .40 np 76 tw .55 to 2.43 p10 +3.74 pn -1.30 fv .95 ms .252 rk .836
+  I060   2016-20 n60  a -2.57 t -0.96 r +15.4 rm -1.0 pa -0.84 pv .62 dd -21.8 yb .20 np 249 tw .34 to 2.15 p10 -7.83 pn -0.73 fv .84 ms .063 rk .
+  I060   2021-25 n60  a +4.00 t +2.33 r +10.9 rm -2.2 pa +1.24 pv .56 dd -19.5 yb .40 np 582 tw .33 to 1.81 p10 +0.07 pn +1.51 fv .94 ms .052 rk .
+  I060   2011-25 n180 a +1.30 t +0.75 r +11.4 rm -2.5 pa +0.11 pv .58 dd -24.2 yb .33 np 249 tw .40 to 2.13 p10 -1.34 pn -0.17 fv .91 ms .123 rk .
+INV I061   Seth Klarman                 | grade A | 13f  | months 180 | style deep_value | score .225 | components .106 .283 .286
+  I061   2011-15 n60  a -0.72 t -0.07 r +6.5 rm -5.7 pa -1.39 pv .73 dd -28.1 yb .20 np 15 tw .94 to .84 p10 -1.64 pn -6.11 fv 1.00 ms .013 rk .549
+  I061   2016-20 n60  a -12.43 t -3.57 r +3.7 rm -12.7 pa -8.32 pv .61 dd -40.9 yb .00 np 29 tw .76 to .71 p10 -9.04 pn +9.42 fv .92 ms .016 rk .030
+  I061   2021-25 n60  a -3.10 t -0.74 r +6.3 rm -6.7 pa -4.51 pv .54 dd -36.2 yb .40 np 29 tw .77 to .79 p10 -8.54 pn -18.31 fv .97 ms .010 rk .283
+  I061   2011-25 n180 a -4.59 t -1.24 r +5.5 rm -8.4 pa -4.74 pv .63 dd -44.4 yb .20 np 25 tw .80 to .78 p10 -6.41 pn -4.32 fv .96 ms .013 rk .106
+INV I062   Terry Smith                  | grade A | 13f  | months 154 | style quality_compounders | score .538 | components .818 .070 .725
+  I062   2011-15 n34  a . t . r +21.2 rm +8.1 pa +4.42 pv .86 dd -6.0 yb 1.00 np 16 tw .76 to .27 p10 +6.35 pn +8.06 fv 1.00 ms .000 rk .
+  I062   2016-20 n60  a +4.79 t +1.80 r +23.1 rm +6.7 pa +2.87 pv .88 dd -15.3 yb 1.00 np 19 tw .69 to .30 p10 +3.84 pn -12.93 fv 1.00 ms .002 rk .914
+  I062   2021-25 n60  a -6.89 t -2.10 r +5.8 rm -7.2 pa -7.35 pv .84 dd -33.5 yb .00 np 40 tw .65 to .27 p10 -6.36 pn -11.26 fv 1.00 ms .000 rk .070
+  I062   2011-25 n154 a +0.96 t +0.50 r +15.7 rm +1.3 pa -0.77 pv .86 dd -33.5 yb .58 np 31 tw .69 to .28 p10 +0.42 pn -9.04 fv 1.00 ms .001 rk .818
+INV I063   Thomas Russo                 | grade A | 13f  | months 180 | style quality_compounders | score .686 | components .834 .601 .624
+  I063   2011-15 n60  a +1.49 t +0.79 r +16.3 rm +4.2 pa +3.24 pv .69 dd -10.9 yb .80 np 78 tw .89 to .12 p10 +3.91 pn -0.90 fv .83 ms .000 rk .782
+  I063   2016-20 n60  a -0.98 t -0.50 r +12.5 rm -3.9 pa +1.81 pv .66 dd -21.5 yb .20 np 58 tw .94 to .17 p10 +1.85 pn -12.01 fv .66 ms .003 rk .474
+  I063   2021-25 n60  a -1.23 t -0.41 r +15.3 rm +2.2 pa +1.80 pv .76 dd -21.0 yb .60 np 55 tw .93 to .20 p10 +2.50 pn +24.38 fv .62 ms .003 rk .601
+  I063   2011-25 n180 a +1.21 t +0.83 r +14.7 rm +0.9 pa +2.28 pv .71 dd -21.5 yb .53 np 59 tw .92 to .16 p10 +2.75 pn +1.08 fv .71 ms .002 rk .834
+INV I068   Alan Patricof                | grade C | 13f  | months  46 | style private_venture | score .123 | components .038 .045 .286
+  I068   2021-25 n46  rk .045
+  I068   2011-25 n46  rk .038
+INV I069   Alex Fitch                   | grade F | fund | months 180 | style deep_value | score .769 | components .786 .797 .725
+  I069   2011-15 n60  a +2.15 t +1.40 r +13.6 rm +1.5 pa . pv . dd -16.9 yb .80 np . tw . to . p10 . pn . fv . ms . rk .945
+  I069   2016-20 n60  a -6.52 t -2.85 r +7.3 rm -9.1 pa . pv . dd -39.1 yb .20 np . tw . to . p10 . pn . fv . ms . rk .042
+  I069   2021-25 n60  a -0.33 t -0.09 r +14.2 rm +1.1 pa . pv . dd -26.6 yb .40 np . tw . to . p10 . pn . fv . ms . rk .797
+  I069   2011-25 n180 a -0.62 t -0.39 r +11.6 rm -2.2 pa . pv . dd -39.1 yb .47 np . tw . to . p10 . pn . fv . ms . rk .786
+INV I071   Alex Sacerdote               | grade A | 13f  | months 180 | style growth | score .945 | components .959 .958 .917
+  I071   2011-15 n60  a +6.61 t +1.92 r +19.6 rm +7.5 pa +5.78 pv .70 dd -22.3 yb .60 np 26 tw .64 to 1.51 p10 +8.60 pn +17.30 fv 1.00 ms .000 rk .941
+  I071   2016-20 n60  a +8.37 t +1.60 r +41.8 rm +25.4 pa +12.52 pv .71 dd -22.2 yb 1.00 np 32 tw .59 to 1.09 p10 +8.45 pn +19.76 fv .98 ms .002 rk .964
+  I071   2021-25 n60  a +10.51 t +1.78 r +12.6 rm -0.5 pa +2.77 pv .76 dd -56.1 yb .60 np 40 tw .53 to 1.32 p10 +3.40 pn +4.52 fv .99 ms .000 rk .958
+  I071   2011-25 n180 a +8.18 t +2.98 r +24.1 rm +10.2 pa +7.02 pv .72 dd -56.1 yb .73 np 33 tw .60 to 1.31 p10 +6.82 pn +14.07 fv .99 ms .001 rk .959
+INV I079   Antonio Gracias              | grade C | 13f  | months  46 | style growth | score . | components 
+  I079   2021-25 n46  rk .
+  I079   2011-25 n46  rk .
+INV I084   Ben Silver                   | grade C | 13f  | months 180 | style growth | score .624 | components .624
+  I084   2011-15 n60  a -0.44 t -0.16 r +9.4 rm -2.7 pa -1.55 pv .76 dd -22.2 yb .40 np 52 tw .46 to 1.39 p10 -8.02 pn -0.58 fv .98 ms .007 rk .588
+  I084   2016-20 n60  a -3.55 t -1.51 r +13.5 rm -2.9 pa +1.07 pv .82 dd -26.0 yb .20 np 206 tw .51 to 1.31 p10 -1.60 pn -5.59 fv .98 ms .008 rk .
+  I084   2021-25 n60  a +3.16 t +0.50 r +7.8 rm -5.3 pa +3.04 pv .74 dd -53.1 yb .60 np 333 tw .54 to 1.03 p10 +2.32 pn +9.20 fv .99 ms .003 rk .
+  I084   2011-25 n180 a -1.19 t -0.58 r +10.2 rm -3.7 pa +0.86 pv .77 dd -53.1 yb .40 np 200 tw .49 to 1.24 p10 -2.43 pn +1.01 fv .98 ms .006 rk .
+INV I089   Bob Robotti                  | grade A | 13f  | months 180 | style deep_value | score .781 | components .784 .934 .624
+  I089   2011-15 n60  a -2.27 t -0.35 r +6.0 rm -6.1 pa +1.66 pv .84 dd -26.4 yb .40 np 57 tw .63 to .41 p10 +3.30 pn -5.64 fv 1.00 ms .017 rk .344
+  I089   2016-20 n60  a -3.61 t -0.78 r +11.4 rm -5.0 pa +3.77 pv .78 dd -46.6 yb .40 np 52 tw .68 to .50 p10 +8.43 pn -14.98 fv .96 ms .004 rk .169
+  I089   2021-25 n60  a +7.43 t +0.73 r +20.2 rm +7.2 pa +9.23 pv .79 dd -33.9 yb .60 np 60 tw .68 to .39 p10 +9.00 pn -15.77 fv 1.00 ms .019 rk .934
+  I089   2011-25 n180 a +0.54 t +0.13 r +12.4 rm -1.5 pa +4.89 pv .80 dd -46.6 yb .47 np 57 tw .67 to .43 p10 +6.91 pn -12.07 fv .98 ms .013 rk .784
+INV I092   Bruce Berkowitz              | grade A | 13f  | months 180 | style deep_value | score .633 | components .446 .827 .624
+  I092   2011-15 n60  a -4.91 t -0.99 r +3.6 rm -8.5 pa -2.77 pv .95 dd -37.2 yb .40 np 15 tw 1.00 to .51 p10 -3.88 pn -4.37 fv 1.00 ms .002 rk .147
+  I092   2016-20 n60  a -7.91 t -0.61 r +3.3 rm -13.1 pa +6.48 pv .78 dd -58.2 yb .40 np 8 tw 1.00 to .44 p10 +6.20 pn +7.46 fv 1.00 ms .004 rk .061
+  I092   2021-25 n60  a +1.55 t +0.13 r +9.2 rm -3.9 pa +4.91 pv .90 dd -41.5 yb .80 np 12 tw 1.00 to .14 p10 +4.90 pn +4.16 fv 1.00 ms .000 rk .827
+  I092   2011-25 n180 a -1.55 t -0.26 r +5.3 rm -8.5 pa +2.88 pv .87 dd -62.6 yb .53 np 12 tw 1.00 to .36 p10 +2.41 pn +1.46 fv 1.00 ms .002 rk .446
+INV I093   Bryan Lawrence               | grade C | 13f  | months 103 | style quality_compounders | score .777 | components .875 .732 .725
+  I093   2016-20 n43  a +7.61 t +1.82 r +29.7 rm +13.0 pa +20.50 pv .65 dd -29.8 yb .67 np 10 tw 1.00 to .46 p10 +21.06 pn +22.15 fv 1.00 ms .001 rk .956
+  I093   2021-25 n60  a -0.09 t -0.01 r +8.9 rm -4.2 pa -4.05 pv .65 dd -50.8 yb .60 np 10 tw 1.00 to .37 p10 -4.11 pn -22.02 fv 1.00 ms .000 rk .732
+  I093   2011-25 n103 a +2.33 t +0.58 r +17.1 rm +2.5 pa +6.20 pv .65 dd -50.8 yb .62 np 10 tw 1.00 to .41 p10 +6.40 pn +1.29 fv 1.00 ms .000 rk .875
+INV I095   Cathie Wood                  | grade F | fund | months 135 | style growth | score .694 | components .921 .320 .843
+  I095   2011-15 n15  a . t . r -0.7 rm -5.0 pa . pv . dd -15.1 yb .00 np . tw . to . p10 . pn . fv . ms . rk .
+  I095   2016-20 n60  a +6.45 t +1.30 r +42.2 rm +25.8 pa . pv . dd -23.4 yb .80 np . tw . to . p10 . pn . fv . ms . rk .991
+  I095   2021-25 n60  a -4.21 t -0.58 r -9.5 rm -22.6 pa . pv . dd -74.6 yb .40 np . tw . to . p10 . pn . fv . ms . rk .320
+  I095   2011-25 n135 a +0.67 t +0.17 r +11.8 rm -1.7 pa . pv . dd -74.6 yb .55 np . tw . to . p10 . pn . fv . ms . rk .921
+INV I104   Cristiano Souza              | grade C | 13f  | months  19 | style quality_compounders | score . | components 
+  I104   2021-25 n19  rk .
+  I104   2011-25 n19  rk .
+INV I105   Dan Loeb                     | grade A | 13f  | months 180 | style special_situations | score .246 | components .368 .084 .286
+  I105   2011-15 n60  a -1.33 t -0.40 r +12.8 rm +0.7 pa +1.01 pv .68 dd -23.7 yb .40 np 28 tw .66 to 1.81 p10 +5.52 pn +2.68 fv .97 ms .018 rk .459
+  I105   2016-20 n60  a -2.97 t -0.94 r +15.2 rm -1.2 pa +0.31 pv .75 dd -19.9 yb .40 np 34 tw .69 to 1.02 p10 +0.87 pn -5.26 fv .94 ms .023 rk .210
+  I105   2021-25 n60  a -6.23 t -1.54 r +4.3 rm -8.8 pa -2.83 pv .73 dd -40.1 yb .00 np 38 tw .62 to 1.09 p10 -4.51 pn -5.75 fv .98 ms .008 rk .084
+  I105   2011-25 n180 a -1.89 t -0.85 r +10.7 rm -3.2 pa -0.50 pv .72 dd -40.1 yb .27 np 34 tw .66 to 1.31 p10 +0.63 pn -2.78 fv .96 ms .016 rk .368
+INV I108   David Booth                  | grade C | 13f  | months 180 | style quant_systematic | score . | components 
+  I108   2011-15 n60  a -1.54 t -1.34 r +9.8 rm -2.3 pa +0.73 pv .80 dd -23.6 yb .20 np 3174 tw .09 to .29 p10 +0.62 pn +7.26 fv .98 ms .009 rk .
+  I108   2016-20 n60  a -1.34 t -1.86 r +11.6 rm -4.8 pa -0.42 pv .81 dd -29.0 yb .20 np 3160 tw .10 to .27 p10 +1.09 pn -7.85 fv .97 ms .008 rk .
+  I108   2021-25 n60  a -1.73 t -2.04 r +12.1 rm -1.0 pa +0.51 pv .81 dd -20.8 yb .40 np 3393 tw .12 to .26 p10 -0.95 pn -3.59 fv 1.00 ms .005 rk .
+  I108   2011-25 n180 a -1.40 t -2.49 r +11.2 rm -2.7 pa +0.28 pv .81 dd -29.0 yb .27 np 3206 tw .10 to .27 p10 +0.25 pn -1.40 fv .98 ms .007 rk .
+INV I109   David Orr                    | grade C | 13f  | months   7 | style long_short | score . | components 
+  I109   2021-25 n7   rk .
+  I109   2011-25 n7   rk .
+INV I110   David Rosen                  | grade A | 13f  | months 124 | style deep_value | score .796 | components .720 .942 .725
+  I110   2011-15 n7   a . t . r -46.0 rm -40.2 pa -34.84 pv .94 dd -30.7 yb . np 41 tw .49 to 1.67 p10 -40.25 pn -3.76 fv 1.00 ms .000 rk .
+  I110   2016-20 n57  a -4.41 t -0.75 r +7.6 rm -7.9 pa -1.94 pv .72 dd -45.6 yb .00 np 42 tw .51 to 1.92 p10 -3.37 pn +10.95 fv .93 ms .033 rk .132
+  I110   2021-25 n60  a +8.44 t +2.58 r +17.4 rm +4.3 pa +3.19 pv .57 dd -17.3 yb .60 np 64 tw .44 to 1.01 p10 +0.33 pn +3.42 fv .99 ms .007 rk .942
+  I110   2011-25 n124 a -0.12 t -0.03 r +8.0 rm -5.1 pa -1.32 pv .66 dd -45.6 yb .38 np 54 tw .47 to 1.44 p10 -3.66 pn +6.62 fv .96 ms .018 rk .720
+INV I112   David Tepper                 | grade A | 13f  | months 180 | style none | score .847 | components .822 .917 .804
+  I112   2011-15 n60  a +1.14 t +0.27 r +12.5 rm +0.4 pa +0.83 pv .78 dd -29.5 yb .60 np 43 tw .62 to 1.13 p10 -1.11 pn +7.91 fv .97 ms .003 rk .753
+  I112   2016-20 n60  a -6.05 t -1.52 r +13.7 rm -2.7 pa +2.56 pv .70 dd -26.2 yb .40 np 36 tw .69 to 1.02 p10 +2.30 pn -1.04 fv .98 ms .015 rk .090
+  I112   2021-25 n60  a +5.84 t +1.55 r +20.6 rm +7.5 pa +3.64 pv .74 dd -17.4 yb .80 np 35 tw .67 to .79 p10 +1.16 pn +3.96 fv 1.00 ms .000 rk .917
+  I112   2011-25 n180 a +1.01 t +0.37 r +15.6 rm +1.7 pa +2.34 pv .74 dd -29.5 yb .60 np 37 tw .67 to .98 p10 +0.78 pn +3.54 fv .98 ms .006 rk .822
+INV I113   David Tykoczynski            | grade C | 13f  | months 180 | style growth | score .624 | components .624
+  I113   2011-15 n60  a -0.44 t -0.16 r +9.4 rm -2.7 pa -1.55 pv .76 dd -22.2 yb .40 np 52 tw .46 to 1.39 p10 -8.02 pn -0.58 fv .98 ms .007 rk .588
+  I113   2016-20 n60  a -3.55 t -1.51 r +13.5 rm -2.9 pa +1.07 pv .82 dd -26.0 yb .20 np 206 tw .51 to 1.31 p10 -1.60 pn -5.59 fv .98 ms .008 rk .
+  I113   2021-25 n60  a +3.16 t +0.50 r +7.8 rm -5.3 pa +3.04 pv .74 dd -53.1 yb .60 np 333 tw .54 to 1.03 p10 +2.32 pn +9.20 fv .99 ms .003 rk .
+  I113   2011-25 n180 a -1.19 t -0.58 r +10.2 rm -3.7 pa +0.86 pv .77 dd -53.1 yb .40 np 200 tw .49 to 1.24 p10 -2.43 pn +1.01 fv .98 ms .006 rk .
+INV I122   Fred Martin                  | grade A | 13f  | months 180 | style growth | score .756 | components .737 .729 .804
+  I122   2011-15 n60  a +1.65 t +0.79 r +13.6 rm +1.5 pa +0.98 pv .83 dd -24.0 yb .80 np 84 tw .41 to .28 p10 -1.40 pn +3.35 fv 1.00 ms .004 rk .795
+  I122   2016-20 n60  a +0.80 t +0.38 r +18.0 rm +1.6 pa +0.70 pv .84 dd -25.8 yb .60 np 82 tw .39 to .30 p10 +1.75 pn -22.96 fv .97 ms .007 rk .736
+  I122   2021-25 n60  a -0.14 t -0.02 r +9.7 rm -3.4 pa +1.54 pv .87 dd -31.1 yb .40 np 67 tw .45 to .41 p10 +6.24 pn +13.53 fv .99 ms .008 rk .729
+  I122   2011-25 n180 a +0.02 t +0.01 r +13.7 rm -0.1 pa +1.07 pv .85 dd -31.1 yb .60 np 81 tw .41 to .33 p10 +2.20 pn -0.66 fv .99 ms .006 rk .737
+INV I132   Harris Kupperman             | grade C | 13f  | months  34 | style deep_value | score . | components 
+  I132   2021-25 n34  rk .
+  I132   2011-25 n34  rk .
+INV I134   Henry Ellenbogen             | grade A | 13f  | months  70 | style growth | score .116 | components .030 .034 .286
+  I134   2016-20 n10  a . t . r +46.1 rm +2.9 pa +12.02 pv .36 dd -16.0 yb . np 42 tw .60 to 1.60 p10 +19.51 pn -3.26 fv .99 ms .000 rk .
+  I134   2021-25 n60  a -10.31 t -1.68 r -2.3 rm -15.4 pa -7.47 pv .70 dd -51.4 yb .20 np 51 tw .47 to .69 p10 -5.09 pn -1.74 fv .99 ms .000 rk .034
+  I134   2011-25 n70  a -10.51 t -1.99 r +3.5 rm -13.5 pa -5.44 pv .65 dd -51.4 yb .20 np 51 tw .47 to .81 p10 -2.52 pn -1.91 fv .99 ms .000 rk .030
+INV I141   Jared Kushner                | grade C | 13f  | months   7 | style private_venture | score . | components 
+  I141   2021-25 n7   rk .
+  I141   2011-25 n7   rk .
+INV I143   Jason Karp                   | grade C | 13f  | months  66 | style none | score .589 | components .892 .286
+  I143   2011-15 n22  a . t . r +21.7 rm +16.0 pa +14.14 pv .82 dd -13.0 yb 1.00 np 38 tw .59 to 1.58 p10 +21.05 pn +32.34 fv .98 ms .006 rk .
+  I143   2016-20 n44  a -3.41 t -0.29 r +2.9 rm -9.7 pa -3.01 pv .68 dd -39.6 yb .00 np 34 tw .64 to 1.71 p10 -0.32 pn +7.33 fv .97 ms .012 rk .184
+  I143   2011-25 n66  a +2.93 t +0.34 r +8.8 rm -1.5 pa +3.28 pv .73 dd -39.6 yb .25 np 35 tw .62 to 1.67 p10 +7.52 pn +15.66 fv .98 ms .010 rk .892
+INV I145   Jeff Horing                  | grade C | 13f  | months 159 | style private_venture | score .502 | components .694 .008 .804
+  I145   2011-15 n39  a +14.30 t +0.61 r +40.0 rm +26.1 pa -11.07 pv .20 dd -35.3 yb .50 np 5 tw 1.00 to .85 p10 -11.07 pn -1.06 fv 1.00 ms .000 rk .984
+  I145   2016-20 n60  a +4.67 t +0.33 r +31.1 rm +14.7 pa +23.89 pv .23 dd -35.2 yb .80 np 5 tw 1.00 to .93 p10 +23.89 pn . fv .97 ms .009 rk .910
+  I145   2021-25 n60  a -21.00 t -1.87 r -20.6 rm -33.7 pa -15.63 pv .52 dd -72.6 yb .20 np 25 tw .94 to .99 p10 -16.63 pn -8.36 fv .87 ms .011 rk .008
+  I145   2011-25 n159 a -0.31 t -0.04 r +10.2 rm -4.3 pa -2.35 pv .33 dd -72.6 yb .50 np 6 tw 1.00 to .94 p10 -2.83 pn -7.59 fv .95 ms .008 rk .694
+INV I149   Jim Chanos                   | grade B | 13f  | months 135 | style long_short | score .200 | components .113 .286
+  I149   2011-15 n55  a -3.72 t -1.15 r +8.4 rm -3.0 pa -2.84 pv .52 dd -22.9 yb .50 np 24 tw .54 to 1.22 p10 -6.62 pn +14.04 fv .98 ms .003 rk .201
+  I149   2016-20 n60  a -2.40 t -1.58 r +12.0 rm -4.4 pa -4.10 pv .14 dd -23.2 yb .20 np 32 tw .76 to 1.25 p10 -24.98 pn -3.62 fv .99 ms .001 rk .249
+  I149   2021-25 n20  a . t . r +9.7 rm -17.7 pa -508.76 pv .01 dd -14.1 yb . np 8 tw 1.00 to 2.87 p10 -508.76 pn -460.88 fv .99 ms .014 rk .
+  I149   2011-25 n135 a -4.35 t -2.46 r +10.2 rm -5.7 pa -30.05 pv .27 dd -23.2 yb .33 np 25 tw .73 to 1.35 p10 -46.74 pn -9.87 fv .99 ms .004 rk .113
+INV I151   John Armitage                | grade A | 13f  | months 180 | style quality_compounders | score .568 | components .786 .114 .804
+  I151   2011-15 n60  a +3.62 t +1.47 r +17.1 rm +5.0 pa +2.98 pv .84 dd -11.7 yb .60 np 21 tw .79 to 1.42 p10 +3.56 pn -0.55 fv .99 ms .000 rk .886
+  I151   2016-20 n60  a +1.26 t +0.54 r +19.4 rm +3.0 pa +4.63 pv .83 dd -19.8 yb .60 np 29 tw .62 to .90 p10 +4.24 pn +3.09 fv .97 ms .012 rk .775
+  I151   2021-25 n60  a -5.27 t -2.21 r +9.7 rm -3.4 pa -0.09 pv .71 dd -31.9 yb .00 np 26 tw .65 to .79 p10 -0.70 pn -14.16 fv .97 ms .001 rk .114
+  I151   2011-25 n180 a +0.56 t +0.40 r +15.3 rm +1.5 pa +2.51 pv .80 dd -31.9 yb .40 np 26 tw .65 to 1.04 p10 +2.37 pn -3.52 fv .98 ms .004 rk .786
+INV I154   John Lennon                  | grade A | 13f  | months  67 | style deep_value | score .018 | components .018
+  I154   2011-15 n10  a . t . r -37.0 rm -34.0 pa -48.10 pv .88 dd -32.4 yb . np 11 tw 1.00 to 1.42 p10 -48.06 pn +35.72 fv .99 ms .000 rk .
+  I154   2016-20 n23  a . t . r -1.7 rm -19.7 pa -4.85 pv .89 dd -13.6 yb .00 np 5 tw 1.00 to 1.52 p10 -4.96 pn +16.97 fv 1.00 ms .000 rk .
+  I154   2021-25 n34  a . t . r +3.6 rm -19.0 pa -4.49 pv .82 dd -23.5 yb .00 np 52 tw .69 to 1.44 p10 -4.57 pn +13.51 fv .99 ms .013 rk .
+  I154   2011-25 n67  a -13.00 t -1.66 r -5.6 rm -22.4 pa -11.12 pv .85 dd -43.9 yb .00 np 41 tw .76 to 1.46 p10 -11.20 pn +17.43 fv .99 ms .007 rk .018
+INV I163   Kelly Granat                 | grade A | 13f  | months 180 | style quality_compounders | score .506 | components .536 .179 .804
+  I163   2011-15 n60  a +0.07 t +0.04 r +11.6 rm -0.5 pa +1.01 pv .78 dd -15.3 yb .40 np 41 tw .48 to 1.05 p10 +1.22 pn +3.84 fv .98 ms .005 rk .655
+  I163   2016-20 n60  a +1.11 t +0.51 r +24.3 rm +7.9 pa +5.72 pv .75 dd -18.5 yb .60 np 32 tw .55 to 1.01 p10 +4.71 pn +4.03 fv .99 ms .001 rk .765
+  I163   2021-25 n60  a -4.12 t -0.63 r +2.8 rm -10.3 pa -4.11 pv .73 dd -56.7 yb .40 np 29 tw .57 to .91 p10 -10.26 pn +8.02 fv .99 ms .000 rk .179
+  I163   2011-25 n180 a -1.16 t -0.52 r +12.6 rm -1.3 pa +0.87 pv .75 dd -56.7 yb .47 np 34 tw .54 to .99 p10 -1.45 pn +5.25 fv .99 ms .002 rk .536
+INV I164   Ken Fisher                   | grade C | 13f  | months 180 | style macro_multi_asset | score . | components 
+  I164   2011-15 n60  a -4.93 t -2.61 r +7.8 rm -4.3 pa -0.34 pv .65 dd -23.4 yb .20 np 396 tw .24 to .44 p10 -0.93 pn -9.05 fv .90 ms .002 rk .
+  I164   2016-20 n60  a -0.35 t -0.37 r +15.4 rm -1.0 pa +1.93 pv .58 dd -16.8 yb .20 np 638 tw .33 to .30 p10 +3.22 pn +9.74 fv .85 ms .001 rk .
+  I164   2021-25 n60  a +0.11 t +0.08 r +12.8 rm -0.2 pa +0.68 pv .67 dd -28.5 yb .40 np 909 tw .33 to .31 p10 -1.89 pn -23.68 fv .95 ms .001 rk .
+  I164   2011-25 n180 a -1.44 t -1.57 r +12.0 rm -1.9 pa +0.76 pv .63 dd -28.5 yb .27 np 638 tw .30 to .35 p10 +0.13 pn -7.66 fv .90 ms .001 rk .
+INV I165   Ken Griffin                  | grade C | 13f  | months 180 | style long_short | score . | components 
+  I165   2011-15 n60  a -1.11 t -0.84 r +10.8 rm -1.3 pa +0.33 pv .82 dd -23.3 yb .40 np 2405 tw .10 to 1.56 p10 -1.26 pn +0.84 fv .98 ms .005 rk .
+  I165   2016-20 n60  a -0.57 t -0.41 r +14.4 rm -2.0 pa +1.52 pv .74 dd -26.9 yb .60 np 3397 tw .10 to 1.65 p10 +2.61 pn +0.70 fv .96 ms .010 rk .
+  I165   2021-25 n60  a -2.28 t -1.64 r +9.0 rm -4.0 pa -1.04 pv .69 dd -24.9 yb .20 np 5456 tw .09 to 1.59 p10 -2.50 pn -3.57 fv .99 ms .010 rk .
+  I165   2011-25 n180 a -1.01 t -1.24 r +11.4 rm -2.4 pa +0.27 pv .75 dd -26.9 yb .40 np 3397 tw .09 to 1.60 p10 -0.38 pn -0.68 fv .98 ms .009 rk .
+INV I171   Lauren Templeton             | grade C | 13f  | months  34 | style deep_value | score . | components 
+  I171   2021-25 n34  rk .
+  I171   2011-25 n34  rk .
+INV I174   Leon Cooperman               | grade A | 13f  | months 165 | style none | score .568 | components .154 .924 .624
+  I174   2011-15 n60  a -7.88 t -1.96 r +3.8 rm -8.3 pa -4.32 pv .60 dd -29.0 yb .20 np 64 tw .39 to .84 p10 -10.39 pn -4.47 fv .97 ms .022 rk .080
+  I174   2016-20 n60  a -7.70 t -2.20 r +7.5 rm -8.9 pa -2.81 pv .68 dd -40.3 yb .00 np 58 tw .50 to .85 p10 -2.11 pn -12.50 fv .94 ms .014 rk .063
+  I174   2021-25 n45  a +6.46 t +1.70 r +22.1 rm +9.0 pa +8.72 pv .69 dd -16.7 yb 1.00 np 47 tw .61 to .42 p10 +11.19 pn -13.36 fv 1.00 ms .030 rk .924
+  I174   2011-25 n165 a -3.54 t -1.42 r +9.9 rm -4.0 pa -0.21 pv .65 dd -40.3 yb .31 np 60 tw .47 to .74 p10 -1.49 pn -9.37 fv .97 ms .021 rk .154
+INV I176   Mala Gaonkar                 | grade C | 13f  | months  22 | style quality_compounders | score . | components 
+  I176   2021-25 n22  rk .
+  I176   2011-25 n22  rk .
+INV I180   Matt Mark                    | grade A | 13f  | months 164 | style special_situations | score .343 | components .601 .141 .286
+  I180   2011-15 n60  a -1.10 t -0.34 r +8.6 rm -3.5 pa -1.86 pv .57 dd -20.3 yb .20 np 15 tw .93 to 2.12 p10 +0.49 pn +7.81 fv .88 ms .121 rk .495
+  I180   2016-20 n60  a -2.40 t -0.93 r +9.3 rm -7.1 pa +1.72 pv .60 dd -11.5 yb .00 np 15 tw .95 to 1.94 p10 +1.45 pn +3.63 fv .86 ms .142 rk .248
+  I180   2021-25 n44  a -4.69 t -0.57 r +6.8 rm -4.8 pa -5.51 pv .59 dd -32.8 yb .67 np 13 tw .99 to 2.14 p10 -5.75 pn +2.35 fv .92 ms .133 rk .141
+  I180   2011-25 n164 a -0.85 t -0.31 r +8.4 rm -5.1 pa -1.53 pv .59 dd -32.8 yb .23 np 15 tw .95 to 2.06 p10 -0.83 pn +4.82 fv .88 ms .132 rk .601
+INV I185   Michael Rees                 | grade C | 13f  | months  46 | style private_venture | score .252 | components .188 .281 .286
+  I185   2021-25 n46  rk .281
+  I185   2011-25 n46  rk .188
+INV I194   Orlando Bravo                | grade C | 13f  | months  82 | style private_venture | score .933 | components .946 .936 .917
+  I194   2016-20 n22  a . t . r +29.4 rm +7.4 pa +33.92 pv .42 dd -26.2 yb 1.00 np 1 tw 1.00 to .68 p10 +33.92 pn +105.13 fv .45 ms .000 rk .
+  I194   2021-25 n60  a +7.66 t +0.71 r +11.9 rm -1.2 pa -1.54 pv .62 dd -38.9 yb .40 np 5 tw 1.00 to .64 p10 -1.54 pn -23.66 fv .94 ms .027 rk .936
+  I194   2011-25 n82  a +6.38 t +0.66 r +16.4 rm +0.9 pa +5.14 pv .57 dd -38.9 yb .50 np 5 tw 1.00 to .65 p10 +5.14 pn -9.35 fv .81 ms .020 rk .946
+INV I196   Paul Black                   | grade C | 13f  | months 180 | style growth | score .625 | components .625 .624
+  I196   2011-15 n60  a -2.54 t -1.04 r +10.0 rm -2.1 pa +0.76 pv .47 dd -24.4 yb .20 np 113 tw .46 to .56 p10 +13.86 pn -11.99 fv .86 ms .002 rk .314
+  I196   2016-20 n60  a +3.63 t +1.13 r +23.3 rm +6.9 pa +4.24 pv .25 dd -16.3 yb .60 np 108 tw .77 to .47 p10 +6.06 pn +4.14 fv .96 ms .003 rk .884
+  I196   2021-25 n60  a -4.04 t -1.41 r +8.6 rm -4.5 pa -1.06 pv .46 dd -33.0 yb .00 np 208 tw .48 to .50 p10 +8.39 pn +6.36 fv .98 ms .001 rk .
+  I196   2011-25 n180 a -0.72 t -0.40 r +13.8 rm -0.1 pa +1.31 pv .39 dd -33.0 yb .27 np 133 tw .56 to .51 p10 +9.35 pn -0.58 fv .93 ms .002 rk .625
+INV I198   Paul Tudor Jones             | grade C | 13f  | months 180 | style macro_multi_asset | score . | components 
+  I198   2011-15 n60  a -2.52 t -1.08 r +8.8 rm -3.3 pa +0.62 pv .65 dd -23.1 yb .20 np 707 tw .27 to 2.42 p10 -6.02 pn -0.02 fv .98 ms .010 rk .
+  I198   2016-20 n60  a -0.54 t -0.39 r +13.9 rm -2.5 pa +0.95 pv .66 dd -24.2 yb .20 np 1021 tw .23 to 2.18 p10 +0.46 pn -1.31 fv .96 ms .071 rk .
+  I198   2021-25 n60  a -2.12 t -1.37 r +8.1 rm -5.0 pa +0.31 pv .63 dd -25.4 yb .20 np 1461 tw .17 to 2.10 p10 +2.61 pn +0.35 fv .99 ms .058 rk .
+  I198   2011-25 n180 a -1.43 t -1.44 r +10.2 rm -3.6 pa +0.63 pv .65 dd -25.4 yb .20 np 1184 tw .22 to 2.23 p10 -1.00 pn -0.33 fv .98 ms .046 rk .
+INV I199   Paul Marshall                | grade C | 13f  | months 177 | style long_short | score .286 | components .286
+  I199   2011-15 n57  a -0.38 t -0.14 r +11.2 rm -1.0 pa -1.73 pv .73 dd -22.0 yb .75 np 113 tw .42 to 2.11 p10 +0.34 pn -1.06 fv .99 ms .010 rk .600
+  I199   2016-20 n60  a -2.24 t -1.53 r +13.6 rm -2.7 pa -0.21 pv .71 dd -24.7 yb .20 np 893 tw .19 to 1.97 p10 +2.95 pn +0.78 fv .96 ms .035 rk .
+  I199   2021-25 n60  a -1.32 t -1.00 r +9.4 rm -3.7 pa -1.84 pv .66 dd -25.8 yb .20 np 2191 tw .19 to 1.48 p10 -1.10 pn -7.09 fv .98 ms .009 rk .
+  I199   2011-25 n177 a -1.22 t -1.11 r +11.4 rm -2.5 pa -1.25 pv .70 dd -25.8 yb .36 np 941 tw .20 to 1.84 p10 +0.74 pn -2.50 fv .98 ms .018 rk .
+INV I200   Paul Singer                  | grade A | 13f  | months 180 | style special_situations | score .744 | components .657 .950 .624
+  I200   2011-15 n60  a -7.27 t -1.89 r +3.9 rm -8.2 pa -6.41 pv .73 dd -22.8 yb .20 np 23 tw .91 to 1.24 p10 -6.56 pn -1.54 fv .98 ms .089 rk .089
+  I200   2016-20 n60  a -9.98 t -2.59 r +6.1 rm -10.3 pa -4.13 pv .61 dd -43.5 yb .20 np 33 tw .81 to .98 p10 -3.68 pn +9.01 fv .91 ms .022 rk .046
+  I200   2021-25 n60  a +9.22 t +1.81 r +25.5 rm +12.4 pa +8.31 pv .58 dd -12.2 yb .60 np 23 tw .89 to .67 p10 +9.13 pn +15.13 fv 1.00 ms .016 rk .950
+  I200   2011-25 n180 a -0.54 t -0.17 r +11.4 rm -2.4 pa -0.74 pv .64 dd -43.5 yb .33 np 24 tw .87 to .96 p10 -0.37 pn +7.09 fv .96 ms .042 rk .657
+INV I202   Pete Muller                  | grade C | 13f  | months 151 | style quant_systematic | score . | components 
+  I202   2011-15 n31  a . t . r +8.9 rm -1.9 pa -0.35 pv .80 dd -11.4 yb .00 np 1210 tw .11 to 2.73 p10 -2.12 pn +1.58 fv .99 ms .002 rk .
+  I202   2016-20 n60  a +0.46 t +0.29 r +18.8 rm +2.4 pa +2.60 pv .83 dd -26.6 yb .80 np 477 tw .12 to 1.34 p10 +4.55 pn +2.29 fv .98 ms .004 rk .
+  I202   2021-25 n60  a -0.28 t -0.12 r +8.0 rm -5.1 pa +1.59 pv .76 dd -34.1 yb .40 np 694 tw .07 to 1.35 p10 -2.40 pn -1.45 fv 1.00 ms .003 rk .
+  I202   2011-25 n151 a -0.14 t -0.12 r +12.4 rm -1.6 pa +1.60 pv .80 dd -34.1 yb .50 np 620 tw .10 to 1.62 p10 +0.42 pn +0.64 fv .99 ms .003 rk .
+INV I203   Peter Keefe                  | grade A | 13f  | months 180 | style quality_compounders | score .423 | components .348 .117 .804
+  I203   2011-15 n60  a +1.93 t +0.77 r +11.2 rm -0.9 pa -0.65 pv .77 dd -21.2 yb .40 np 56 tw .62 to .37 p10 -0.49 pn +8.49 fv 1.00 ms .007 rk .816
+  I203   2016-20 n60  a +0.73 t +0.27 r +15.2 rm -1.2 pa +1.21 pv .75 dd -26.0 yb .20 np 61 tw .66 to .29 p10 -1.98 pn +5.14 fv 1.00 ms .003 rk .732
+  I203   2021-25 n60  a -5.22 t -1.71 r +7.5 rm -5.6 pa -4.20 pv .73 dd -24.8 yb .40 np 64 tw .71 to .25 p10 -2.97 pn -8.91 fv 1.00 ms .000 rk .117
+  I203   2011-25 n180 a -1.99 t -1.18 r +11.3 rm -2.6 pa -1.21 pv .75 dd -26.0 yb .33 np 61 tw .66 to .30 p10 -1.81 pn +1.35 fv 1.00 ms .003 rk .348
+INV I206   Prem Watsa                   | grade A | 13f  | months 180 | style deep_value | score .636 | components .157 .946 .804
+  I206   2011-15 n60  a +1.57 t +0.20 r +1.9 rm -10.2 pa -12.59 pv .83 dd -49.0 yb .60 np 36 tw .97 to .59 p10 -12.20 pn -13.33 fv 1.00 ms .007 rk .790
+  I206   2016-20 n60  a -20.90 t -3.61 r -2.0 rm -18.4 pa -11.85 pv .57 dd -61.9 yb .20 np 29 tw .97 to .46 p10 -12.04 pn +15.74 fv .87 ms .004 rk .006
+  I206   2021-25 n60  a +8.92 t +1.00 r +16.8 rm +3.7 pa -2.40 pv .46 dd -22.9 yb .60 np 57 tw .91 to .51 p10 -2.54 pn +7.35 fv 1.00 ms .028 rk .946
+  I206   2011-25 n180 a -3.52 t -0.73 r +5.3 rm -8.6 pa -8.94 pv .62 dd -71.1 yb .47 np 37 tw .96 to .52 p10 -8.92 pn +4.63 fv .95 ms .013 rk .157
+INV I211   Ricky Sandler                | grade B | 13f  | months 180 | style long_short | score .885 | components .907 .830 .917
+  I211   2011-15 n60  a +6.56 t +3.54 r +16.4 rm +4.3 pa +2.44 pv .88 dd -16.1 yb .80 np 48 tw .39 to .93 p10 +0.78 pn +5.79 fv .99 ms .004 rk .939
+  I211   2016-20 n60  a +3.54 t +1.20 r +20.8 rm +4.4 pa +3.08 pv .77 dd -29.1 yb 1.00 np 42 tw .46 to .99 p10 -3.77 pn +3.31 fv .99 ms .010 rk .882
+  I211   2021-25 n60  a +1.64 t +0.45 r +11.3 rm -1.7 pa +3.03 pv .79 dd -28.2 yb .40 np 60 tw .35 to .81 p10 +2.38 pn +18.66 fv .99 ms .005 rk .830
+  I211   2011-25 n180 a +3.56 t +1.97 r +16.1 rm +2.3 pa +2.85 pv .81 dd -29.1 yb .73 np 49 tw .38 to .91 p10 -0.20 pn +9.35 fv .99 ms .006 rk .907
+INV I214   Robert Wallace               | grade C | 13f  | months 180 | style private_venture | score .708 | components .899 .602 .624
+  I214   2011-15 n60  a -1.01 t -0.21 r +5.5 rm -6.7 pa +2.43 pv .16 dd -29.0 yb .20 np 13 tw .99 to 1.72 p10 -2.09 pn -5.12 fv .95 ms .000 rk .507
+  I214   2016-20 n60  a +10.75 t +0.88 r +23.0 rm +6.6 pa +2.93 pv .11 dd -22.3 yb .40 np 20 tw 1.00 to 1.26 p10 -15.90 pn -14.76 fv .97 ms .008 rk .980
+  I214   2021-25 n60  a -1.23 t -0.28 r +7.1 rm -6.0 pa +14.27 pv .15 dd -35.9 yb .40 np 32 tw .98 to .95 p10 +16.07 pn +19.50 fv 1.00 ms .006 rk .602
+  I214   2011-25 n180 a +3.13 t +0.65 r +11.6 rm -2.3 pa +6.61 pv .14 dd -35.9 yb .33 np 21 tw .99 to 1.32 p10 -0.45 pn -0.64 fv .97 ms .005 rk .899
+INV I218   Scott Phillips               | grade C | 13f  | months  34 | style deep_value | score . | components 
+  I218   2021-25 n34  rk .
+  I218   2011-25 n34  rk .
+INV I222   Soo Chuen Tan                | grade A | 13f  | months  58 | style deep_value | score .930 | components .947 .925 .917
+  I222   2021-25 n58  rk .925
+  I222   2011-25 n58  rk .947
+INV I223   Stan Druckenmiller           | grade C | 13f  | months 166 | style macro_multi_asset | score .922 | components .911 .939 .917
+  I223   2011-15 n46  a +1.57 t +0.28 r +16.9 rm +3.8 pa +2.04 pv .74 dd -12.6 yb 1.00 np 29 tw .65 to 2.35 p10 +1.05 pn +8.48 fv .98 ms .000 rk .790
+  I223   2016-20 n60  a +2.71 t +0.69 r +22.0 rm +5.6 pa +4.93 pv .73 dd -18.6 yb .80 np 37 tw .65 to 1.85 p10 +5.62 pn +1.18 fv .99 ms .001 rk .851
+  I223   2021-25 n60  a +8.10 t +1.57 r +20.8 rm +7.7 pa +9.35 pv .76 dd -38.0 yb .60 np 53 tw .63 to 1.33 p10 +14.16 pn +11.15 fv 1.00 ms .001 rk .939
+  I223   2011-25 n166 a +3.78 t +1.48 r +20.1 rm +5.9 pa +5.73 pv .74 dd -38.0 yb .77 np 41 tw .65 to 1.80 p10 +7.44 pn +6.78 fv .99 ms .001 rk .911
+INV I225   Steve Cohen                  | grade C | 13f  | months 180 | style long_short | score . | components 
+  I225   2011-15 n60  a -1.77 t -0.85 r +9.3 rm -2.8 pa -0.91 pv .79 dd -24.2 yb .40 np 1398 tw .14 to 2.01 p10 -1.02 pn -2.84 fv .99 ms .009 rk .
+  I225   2016-20 n60  a -2.55 t -1.32 r +14.8 rm -1.6 pa -0.00 pv .77 dd -26.6 yb .40 np 689 tw .15 to 2.05 p10 -0.27 pn -0.93 fv .97 ms .004 rk .
+  I225   2021-25 n60  a +1.83 t +1.18 r +12.4 rm -0.7 pa +1.74 pv .74 dd -24.2 yb .40 np 1092 tw .13 to 1.86 p10 +2.35 pn +2.10 fv .99 ms .002 rk .
+  I225   2011-25 n180 a -0.57 t -0.52 r +12.1 rm -1.7 pa +0.28 pv .77 dd -26.6 yb .40 np 924 tw .14 to 1.97 p10 +0.35 pn -0.56 fv .98 ms .005 rk .
+INV I229   Thomas Laffont               | grade A | 13f  | months 180 | style growth | score .629 | components .753 .330 .804
+  I229   2011-15 n60  a +0.23 t +0.06 r +15.2 rm +3.1 pa +2.64 pv .79 dd -19.9 yb .80 np 37 tw .72 to 1.14 p10 +5.22 pn -2.22 fv .97 ms .005 rk .676
+  I229   2016-20 n60  a +3.69 t +0.96 r +29.1 rm +12.7 pa +8.36 pv .70 dd -23.6 yb .60 np 69 tw .63 to .96 p10 +9.30 pn +9.43 fv .99 ms .002 rk .888
+  I229   2021-25 n60  a -2.78 t -0.52 r +2.1 rm -10.9 pa -5.13 pv .73 dd -61.5 yb .60 np 73 tw .56 to .99 p10 -6.14 pn -8.00 fv 1.00 ms .001 rk .330
+  I229   2011-25 n180 a +0.19 t +0.08 r +15.0 rm +1.1 pa +1.96 pv .74 dd -61.5 yb .67 np 55 tw .63 to 1.03 p10 +2.79 pn -0.26 fv .99 ms .003 rk .753
+
+## 3. python
+[report part 2 of 2]
+INV I234   Tully Friedman               | grade C | 13f  | months  57 | style private_venture | score . | components 
+  I234   2011-15 n18  rk .
+  I234   2016-20 n10  rk .
+  I234   2021-25 n29  rk .
+  I234   2011-25 n57  rk .
+INV I238   Vitaliy Katsenelson          | grade C | 13f  | months 180 | style none | score .286 | components .286
+  I238   2011-15 n60  a -2.16 t -1.67 r +8.8 rm -3.3 pa +0.12 pv .49 dd -15.3 yb .40 np 142 tw .32 to .73 p10 -0.33 pn -1.86 fv .98 ms .000 rk .357
+  I238   2016-20 n60  a -1.42 t -1.01 r +11.7 rm -4.7 pa +0.37 pv .40 dd -17.7 yb .00 np 184 tw .33 to .73 p10 +2.60 pn +8.59 fv .96 ms .001 rk .
+  I238   2021-25 n60  a -1.54 t -1.51 r +9.1 rm -4.0 pa -0.41 pv .46 dd -21.2 yb .20 np 289 tw .38 to .67 p10 -0.73 pn -9.58 fv 1.00 ms .005 rk .
+  I238   2011-25 n180 a -1.19 t -1.78 r +9.9 rm -4.0 pa +0.00 pv .45 dd -21.2 yb .20 np 154 tw .34 to .71 p10 +0.48 pn -1.81 fv .98 ms .002 rk .
+
+TIERS (section 7) | eligible by record 51
+TIER A by record (30):
+  I071   Alex Sacerdote               growth               score .945
+  I046   Gavin Baker                  growth               score .943
+  I042   Derek Pilecki                long_short           score .938
+  I011   Robert Vinall                quality_compounders  score .917
+  I055   Pat Dorsey                   quality_compounders  score .906
+  I029   Murray Stahl                 deep_value           score .891
+  I211   Ricky Sandler                long_short           score .885
+  I021   Chris Hohn                   quality_compounders  score .884
+  I001   Brad Gerstner                growth               score .876
+  I112   David Tepper                 none                 score .847
+  I010   Joel Greenblatt              deep_value           score .833
+  I022   Christopher Begg             quality_compounders  score .823
+  I036   Bill Nygren                  deep_value           score .806
+  I110   David Rosen                  deep_value           score .796
+  I089   Bob Robotti                  deep_value           score .781
+  I069   Alex Fitch                   deep_value           score .769
+  I122   Fred Martin                  growth               score .756
+  I015   Dev Kantesaria               quality_compounders  score .748
+  I200   Paul Singer                  special_situations   score .744
+  I014   Chris Bloomstran             quality_compounders  score .726
+  I051   Li Lu                        deep_value           score .719
+  I018   Guy Spier                    quality_compounders  score .714
+  I095   Cathie Wood                  growth               score .694
+  I063   Thomas Russo                 quality_compounders  score .686
+  I206   Prem Watsa                   deep_value           score .636
+  I056   Philippe Laffont             growth               score .629
+  I174   Leon Cooperman               none                 score .568
+  I024   Dan Sundheim                 long_short           score .376
+  I180   Matt Mark                    special_situations   score .343
+  I105   Dan Loeb                     special_situations   score .246
+  I229   Thomas Laffont               with I056 (same record, no place)
+TIER A by explicit criteria (10):
+  I082   Aswath Damodaran             explicit max 3 mean 3.00 docs 1
+  I132   Harris Kupperman             explicit max 3 mean 3.00 docs 1
+  I142   Jason Donville               explicit max 3 mean 3.00 docs 1
+  I148   Jesse Gamble                 explicit max 3 mean 3.00 docs 1
+  I195   Paul Andreola                explicit max 3 mean 3.00 docs 1
+  I212   Rob Goldstein                explicit max 3 mean 3.00 docs 1
+  I020   Andrew Brenton               explicit max 3 mean 2.33 docs 3
+  I023   Connor Haley                 explicit max 3 mean 2.33 docs 3
+  I012   Ian Cassel                   explicit max 3 mean 2.14 docs 7
+  I016   Fran?ois Rochon              explicit max 3 mean 2.00 docs 5
+CONTROL (seed 20261117, 10): I004 I025 I028 I031 I034 I043 I134 I149 I154 I203
+TIER B (188): I002 I003 I005 I006 I007 I008 I009 I013 I017 I019 I026 I027 I030 I032 I033 I035 I037 I038 I039 I040
+  I041 I044 I045 I047 I048 I049 I050 I052 I053 I054 I057 I058 I059 I060 I061 I062 I064 I065 I066 I067
+  I068 I070 I072 I073 I074 I075 I076 I077 I078 I079 I080 I081 I083 I084 I085 I086 I087 I088 I090 I091
+  I092 I093 I094 I096 I097 I098 I099 I100 I101 I102 I103 I104 I106 I107 I108 I109 I111 I114 I115 I116
+  I117 I118 I119 I120 I121 I123 I124 I125 I126 I127 I128 I129 I130 I131 I133 I135 I136 I137 I138 I139
+  I140 I141 I143 I144 I145 I146 I147 I150 I151 I152 I153 I155 I156 I157 I158 I159 I160 I161 I162 I163
+  I164 I165 I166 I167 I168 I169 I170 I171 I172 I173 I175 I176 I177 I178 I179 I181 I182 I183 I184 I185
+  I186 I187 I188 I189 I190 I191 I192 I193 I194 I196 I197 I198 I199 I201 I202 I204 I205 I207 I208 I209
+  I210 I213 I214 I215 I216 I217 I219 I220 I221 I222 I223 I224 I225 I226 I227 I228 I230 I231 I232 I233
+  I234 I235 I236 I237 I238 I239 I240 I241
+  I113   David Tykoczynski            with I084 (same record, no place)
+  I218   Scott Phillips               with I171 (same record, no place)
+FOUNDATION documents (50): 408 411 54 184 308 522 180 493 573 307 502 282 242 571 503 249 140 602 310 534 549 311 333 224 391
+  403 217 250 237 316 448 588 349 36 409 309 25 594 257 341 620 480 368 415 494 621 382 426 351 587
+
+BEST-SCORED FILERS WITHOUT A LIBRARY DOCUMENT (score | rank shares 2011-25, 2021-25, blocks)
+   1 CPMG, INC.                                   .998 | .998 . .
+   2 ADAMCAPITAL GESTAO DE RECURSOS               .974 | .974 . .
+   3 BLUE POOL MANAGEMENT LTD.                    .973 | .973 . .
+   4 COTA CAPITAL MANAGEMENT, LLC                 .972 | 1.000 1.000 .917
+   5 ARCH VENTURE PTNR                            .972 | .999 .999 .917
+   6 VK SERVICES, LLC                             .972 | .999 .999 .917
+   7 GENERAL EQUITY HOLDINGS LP                   .970 | .996 .998 .917
+   8 SCHWAB CHARITABLE FUND                       .969 | .992 .997 .917
+   9 FAIRMOUNT FUNDS MANAGEMENT LLC               .969 | .994 .995 .917
+  10 AISLING CAPITAL MANAGEMENT LP                .969 | .997 .992 .917
+  11 STONEPINE CAPITAL MGMT, LLC                  .968 | .995 .992 .917
+  12 KEYWISE CAPITAL MGMT LTD.                    .968 | .991 .996 .917
+  13 MYDA ADVR LLC                                .967 | .986 .999 .917
+  14 SOFINNOVA VENTURES (SIBLING)                 .967 | .992 .991 .917
+  15 GREAT POINT PARTNERS, LLC                    .966 | .993 .989 .917
+  16 EXOR INVESTMENTS (UK) LLP                    .966 | .989 .990 .917
+  17 L1 CAPITAL PTY LTD                           .966 | .994 .986 .917
+  18 BAIN CAP LIFE SCIENCES INVESTO               .965 | .991 .988 .917
+  19 MONACO ASSET MANAGEMENT S.A.M.               .964 | .986 .990 .917
+  20 WORM CAPITAL, LLC                            .964 | .990 .985 .917
+  21 CAPE ANN ASSET MGMT LIMITED                  .964 | .988 .987 .917
+  22 VENBIO PTNR LLC                              .963 | .981 .991 .917
+  23 CAS INVESTMENT PARTNERS, LLC                 .963 | .987 .984 .917
+  24 MAK CAPITAL ONE, LLC                         .963 | .984 .987 .917
+  25 MADISON AVENUE PTNR LP                       .962 | .985 .984 .917
+BEST-SCORED FUNDS WITHOUT A LIBRARY DOCUMENT (score | rank shares 2011-25, 2021-25, blocks)
+   1 Northern Lights Fund Trust II: Invenomic Fun .988 | .998 .995 .970
+   2 Fidelity Select Portfolios: Semiconductors P .987 | .995 .998 .970
+   3 Fidelity Advisor Series VII: Fidelity Adviso .987 | .995 .997 .970
+   4 Amplify ETF Trust: Amplify Blockchain Techno .987 | .996 .996 .970
+   5 VanEck VIP Trust: Global Gold Fund; Class S  .987 | .997 .993 .970
+   6 MSS Series Trust: True Rock Fund             .984 | . .998 .970
+   7 Advisors Preferred Trust: Quantified Gold Fu .983 | .991 .990 .970
+   8 Alger Portfolios: Alger Weatherbie Specializ .983 | .996 . .970
+   9 Mutual Fund Series Trust: AlphaCentric Life  .982 | .998 .979 .970
+  10 Columbia Funds Series Trust II: Columbia Sel .981 | .989 .985 .970
+
+PERSISTENCE (section 9): rank correlation of the six-factor alpha; rows = first-block fifth (1 worst), columns = second-block fifth 1..5 and 'stopped filing or under 36 months'
+  13f  2011-15 -> 2016-20 | in rank group 1741 | with both 1422 | rho +0.138
+     1:    83    42    39    34    47   104
+     2:    46    73    75    56    35    63
+     3:    32    62    79    76    40    59
+     4:    46    69    61    67    60    45
+     5:    78    38    31    51   102    48
+  13f  2016-20 -> 2021-25 | in rank group 2250 | with both 1809 | rho -0.050
+     1:    65    37    47    58   116   127
+     2:    70    77   100    84    46    73
+     3:    51    95   109    80    35    80
+     4:    75    97    77    79    42    80
+     5:   101    56    29    61   122    81
+  fund 2011-15 -> 2016-20 | in rank group 3271 | with both 2666 | rho +0.117
+     1:   121    94    94    55    78   213
+     2:    81   123   123   110    73   144
+     3:   100   112   127   121    86   108
+     4:   102   113   115   123   119    82
+     5:   130    91    74   124   177    58
+  fund 2016-20 -> 2021-25 | in rank group 3455 | with both 2802 | rho -0.002
+     1:   126    87    76    94    97   211
+     2:    87   104   165   112    92   131
+     3:    82   105   128   151   109   116
+     4:    86   146   127   110   110   112
+     5:   180   118    65    93   152    83
+END OF SCORECARD
+
+## 4. python
+[report part 3 of 2: empty]
+
+## 5. python
+[report part 4 of 2: empty]
+
+=== END (243 s) ===

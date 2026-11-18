@@ -417,6 +417,23 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   E0.5 tiers (= the investor league table and reading order). Then Stage 1 (engine, Batch 0, reference book live on
   paper, 16-document pilot). Vault: Method notes on macro-vault (61e384e); PC vault copy done 2026-11-15 (job
   vault_sync_20261115a, see the 1.3c entry).
+- STAGE 0 DONE 2026-11-18 (user's go 2026-11-17): v0.2 reviewed (EQUITY_POD_SHOP_DESIGN_v0.2_review.md: 7 gating fixes
+  applied to plan v0.3; Part 2 = 6 must / 15 should / 10 notes for the next plan version, due before the Stage 1 engine);
+  E0.1 inventory of 635 General documents (docs/research/equity/inventory/: inventory.csv, investors.csv 241 names,
+  agreement.md; Sonnet coders + Opus blind recode); E1.2 WRDS tables (no wrdssec/mfl: 13F = tfn.s34 first versions;
+  CRSP stock months end 2025-12 = SEAL END; delisting returns inside msf_v2 mthret); E1.1 LSEG equity probe
+  (LSEG_equity_probe_2026-11-18.md: first-reported vs restated accounts from 1983, consensus from 1990, holders from
+  ~1999, insiders from 1998, no StarMine history, no manager portfolios); matching + frozen file
+  (inventory/frozen_investors.csv: grades A 36, B 4, F 13, C 37, N 151); SEAL: reader tools/equity/wrds/eq_reader.py,
+  checker tools/equity/seal_check.py, exempt list tools/equity/seal_exempt.json, lock e680ca33, SEAL_LOG.md; REGISTERED
+  STAGE0_REGISTRATION.md at commit 184b5d0; scorecard code tools/equity/wrds/eq_scorecard.py (three independent reads +
+  hidden-error test, SCORECARD_CODE_CHECK.md, scorecard_check/); pulls eq_sc_pull_v1/v1b (73 data sets, eq_sc_* kept on
+  WRDS for a logged bug-fix rerun; job eq_sc_cleanup_v1 deletes them once the result is accepted); RUN eq_scorecard_v1
+  once (the opening of the seal). RESULTS: docs/research/equity/SCORECARD_RESULTS_2026-11-18.md (project doc
+  claude/equity_scorecard_results_2026-11-18.md) + scorecard_check/league_table_2026-11-18.csv. Records do NOT persist
+  (rank corr +0.14 / -0.05 for 13F, +0.12 / -0.00 funds); only 2 library investors have 2021-25 t > 2. Tiers: A by
+  record 30, A explicit 10, control 10, foundation 50 docs. NEXT (user's go): Stage 1 (plan v0.4 with the review's
+  Part 2, engine, Batch 0, reference book on paper, 16-document pilot drawn from tier A).
 - ANNEX docs/research/equity/EQUITY_POD_SHOP_DESIGN_v0.2.md (project doc claude/equity_pod_shop_design_v0.2_2026-11-15.md;
   replaces v0.1 of 2026-11-14, which was long-only): the macro pod-shop method applied to stocks as a LONG/SHORT book,
   market- and sector-neutral, slow (monthly signals, holdings of months to years, no intraday data; user 2026-11-15: no
