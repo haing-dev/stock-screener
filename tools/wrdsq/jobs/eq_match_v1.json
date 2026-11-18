@@ -1,0 +1,43 @@
+{
+ "name": "eq_match_v1",
+ "steps": [
+  {
+   "do": "pull",
+   "name": "eq_mgrq",
+   "date": "rdate",
+   "sql": "select mgrno, rdate, count(*) as npos, sum(shares*prc)/1e6 as val_m from tfn.s34 where rdate >= '2010-06-30' and fdate = rdate and shares > 0 group by mgrno, rdate"
+  },
+  {
+   "do": "python",
+   "code": "import eq_match\neq_match.prep(sql, save, out)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_match\neq_match.run(load, out, pd, 0, 7)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_match\neq_match.run(load, out, pd, 1, 7)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_match\neq_match.run(load, out, pd, 2, 7)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_match\neq_match.run(load, out, pd, 3, 7)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_match\neq_match.run(load, out, pd, 4, 7)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_match\neq_match.run(load, out, pd, 5, 7)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_match\neq_match.run(load, out, pd, 6, 7)"
+  }
+ ]
+}

@@ -1,123 +1,151 @@
 # Equity pod shop, Stage 0: registration of the investor scorecard, the tier rule and the "follow the best managers" signal
 
-Status: DRAFT (2026-11-17). It becomes binding when it is committed with the line "REGISTERED" below filled in, and
-that happens before the scorecard job reads any return from 2011 on. Plan: `EQUITY_POD_SHOP_PLAN_v0.3.md` sections
-5, 6, 8.2 and 11. Every number here is fixed by this file; nothing in it may be changed after the scorecard has run.
-A later change is a new version of this file with its own date, and the old result is kept.
+Status: DRAFT v2 (2026-11-17), after the independent review of v0.2 (`EQUITY_POD_SHOP_DESIGN_v0.2_review.md`, Part 1).
+It becomes binding when the line REGISTERED below carries a commit id, and that happens before the scorecard job
+computes any return. Plan: `EQUITY_POD_SHOP_PLAN_v0.3.md` sections 5, 6, 8.2 and 11. Every number here is fixed by
+this file. A later change is a new version of this file with its own date, and the old result is kept.
 
 REGISTERED: (not yet)
 
-## 1. What this job may read, and what comes back
-- The scorecard is a registered descriptive job (plan 5.4): its output form is fixed here and checked before it
-  runs, it describes records, it sets the reading order through the tier rule in section 4, and it judges no
-  strategy.
-- It runs on WRDS Cloud. It may read holdings and returns of US-listed securities and of mutual funds from 2010-06
-  to the latest month. It is logged in `SEAL_LOG.md` as an opening of the seal on the years from 2011.
-- What comes back: one row of statistics per library investor that could be matched, distribution tables for all
-  filers, the persistence table, and the names of up to 30 top-ranked filers for whom the library has no document.
-  No holdings, no return series, no stock names.
-- Who may open the output: the session that runs Stage 0 and the user. Sessions and agents that write claims,
-  cards, charters or specs do not open it (plan section 4).
+## 1. Order of work, and what each part may see
+| Phase | What | May read | Comes back |
+|---|---|---|---|
+| A. Match (job `eq_match_v1`) | Candidate 13F filers and CRSP funds for each library investor | Names, ids, dates, number of quarters and positions, size. No return | Candidate lists |
+| A2. Freeze (`inventory/frozen_investors.csv`) | For each investor: filer id or fund, the years the investor ran it, grade, primary style, explicitness. Set by an agent that sees the candidate lists and the notes, and no return; a tenth checked by a second agent | as phase A | The frozen file, committed with this registration |
+| B. Scorecard (seal-exempt job, plan 5.4) | Copy portfolios, fund returns, ranks, persistence, tier rule | Holdings and returns of US-listed securities and CRSP funds, 2010-06 to the seal end | Section 8 only |
 
-## 2. The copy portfolio of a 13F filer (grades A, B, C)
-Source tables are fixed in section 7 after the WRDS table check.
-1. **Filing.** For each manager and quarter-end, the first version of the holdings filed for that quarter-end. Later
-   amendments are not used. (The WRDS file has no filing date for amendments; using first versions only is the
-   conservative reading of plan 5.2.)
-2. **Positions.** Long positions in securities that match a CRSP security at the quarter-end. Option rows are not in
-   the file. The share of filed value that matches CRSP is reported.
-3. **Weights.** Value at the quarter-end (shares times the CRSP price at the quarter-end), as filed.
-4. **Timing.** A filing for quarter-end Q is public by day 45. The copy buys at the end of the second month after Q
-   and holds for three months at buy-and-hold weights (example: the 31 March filing is held June, July, August).
-   Monthly CRSP total returns, delisting returns included. A position without a return in a month earns zero that
-   month and is counted in a "missing return" share.
-5. **Which filer-quarters count.** 10 to 150 matched positions and at least $100M of matched value at that
-   quarter-end. A month counts for a filer only if its holding quarter passes this screen.
-6. **Variants**, same timing: (a) all positions; (b) the ten largest, weights rescaled; (c) new positions only:
-   securities not in the filer's previous quarter filing, weights rescaled, held three months.
+The scorecard output is read only by the user and the session that runs Stage 0. Sessions and agents that write
+claims, cards, charters or specs do not open it.
 
-## 3. Columns, windows and ranks
+## 2. Data (WRDS table check, jobs `eq_tables_v1` and `eq_tables_v2`, 2026-11-17)
+- 13F holdings: `tfn.s34` (LSEG). It carries the quarter and a file date, not the SEC filing date. The SEC-based
+  tables (`wrdssec`) are not in the subscription. So only the first version of each quarter's holdings is used (rows
+  with file date equal to report date) and amendments are ignored.
+- Stocks: `crsp.msf_v2` (monthly total return with delisting returns; ends 2025-12), `crsp.stocknames_v2` (match on
+  the 8-character CUSIP valid at the quarter-end).
+- Characteristics for peer groups: size from CRSP; book-to-market from `wrdsapps_finratio.firm_ratio` (as of its
+  public date); momentum from CRSP.
+- Factors: `ff.fivefactors_monthly` (market, size, value, profitability, investment, momentum, T-bill).
+- Funds: `crsp.monthly_tna_ret_nav`, `crsp.fund_hdr`, `crsp.fund_style`.
+- **Seal end: 2025-12** (the last CRSP stock month). Months after it are never holdout.
+
+## 3. The copy portfolio of a 13F filer
+1. **Filing.** First version of the holdings for each manager and quarter-end (section 2).
+2. **Positions.** Rows with positive shares whose CUSIP matches a CRSP security at the quarter-end. Holdings without
+   a match are left out and the weights rescaled. The share of filed value used is a column. Option rows are not in
+   the file.
+3. **Weights.** Shares times the CRSP price at the quarter-end.
+4. **Timing.** Holdings for quarter-end Q enter at the close of the month in which the 45-day deadline falls and are
+   held for three months, buy and hold (the 31 March holdings are held June, July, August). Monthly CRSP total
+   returns, delisting returns included. A position whose return is missing in a month keeps its weight and earns
+   zero that month; the share of weight affected is a column.
+5. **A filer that stops filing** leaves the record after the last three-month holding period of its last quarter.
+   No return is filled in. A gap of one missed quarter is bridged by holding the last filed portfolio three more
+   months; a longer gap ends the spell and a new one starts.
+6. **Rank group for a window:** filers whose median number of matched positions over the window's filings is 5 to
+   150 and whose median matched value is at least $100M.
+7. **Variants** (reported, not ranked): the ten largest positions, weights rescaled; new positions only (securities
+   not in the filer's previous quarter filing), weights rescaled.
+
+## 4. Columns, windows, ranks
 **Windows:** 2011-01 to 2015-12, 2016-01 to 2020-12, 2021-01 to 2025-12, and 2011-01 to 2025-12. No month before
-2011-01 is computed.
+2011-01 is computed. For a library investor the months are cut to the years the investor ran the book (frozen file).
+**A window has a result** if it holds at least 36 months of returns.
 
-**A filer has a result for a five-year window** if it has at least 54 of the 60 months. For 2011-25 it needs at
-least 60 months in total; statistics use the months it has.
+1. **Six-factor alpha (the ranked result),** percent a year, with its t-value: regression of the monthly return
+   minus the T-bill rate on the market, size, value, profitability, investment and momentum factors; Newey-West
+   errors, 3 lags.
+2. Return, percent a year (geometric); return minus the CRSP value-weighted market.
+3. **Peer-adjusted return** (reported), percent a year: each common stock's return minus the value-weighted return of
+   its peer group, weighted by the portfolio. Peer groups (after Daniel, Grinblatt, Titman and Wermers): each June,
+   size fifths on NYSE breakpoints, then book-to-market fifths inside each size group, then fifths of the return
+   over the twelve months to May inside each of those; 125 groups, held July to June. Holdings without a peer group
+   (no book value, ADRs, funds) are left out and the weights rescaled; the share of value used is a column.
+4. Worst fall from a peak (monthly). Share of calendar years in which the return beat the CRSP market.
+5. Median number of positions; median weight of the ten largest; turnover a year (half the sum of absolute weight
+   changes between consecutive filings, times four).
+6. Peer-adjusted return of the two variants.
 
-**Columns per window** (variant (a) unless stated):
-1. Return, percent a year (geometric).
-2. Return minus the CRSP value-weighted market, percent a year.
-3. **Style-adjusted return**, percent a year, and its t-value. For each common stock and month: its return minus
-   the value-weighted return of its peer group. Peer groups are formed every month from the characteristics known at
-   the end of the previous month: size (3 groups, NYSE breakpoints), book-to-market (3), operating profitability (3)
-   and return over months t-12 to t-2 (3), independent sorts, 81 groups. A group with fewer than 5 stocks is merged
-   into its size-by-value group. The portfolio figure is the weighted sum over its common stocks with weights
-   rescaled; the share of value outside common stocks or without characteristics is reported.
-4. Six-factor alpha, percent a year, and its t-value: regression of the monthly return over the T-bill rate on the
-   market, size, value, profitability, investment and momentum factors (Fama-French), Newey-West errors with 3 lags.
-5. Worst fall from a peak (monthly data).
-6. Share of calendar years with a positive style-adjusted return.
-7. Average number of positions; weight of the ten largest; turnover a year (half the sum of absolute weight changes
-   between consecutive filings, times four).
-8. Style-adjusted return of variants (b) and (c).
+**Ranks.** For each window, the filer's six-factor alpha as a share of the rank group from 0 (worst) to 1 (best);
+ties take the average rank.
 
-**Ranks.** For every window and for columns 3 and 4: the filer's place among all filers with a result in that
-window, as a share from 0 (worst) to 1 (best).
+## 5. Public funds
+- Monthly net return from CRSP, share classes of one portfolio combined by assets at the start of the month.
+- Rank group: US domestic equity funds in CRSP (objective code starting "ED"), index funds and exchange-traded index
+  funds left out, mean assets of at least $15M, with a result in the window. The ranked result is the six-factor
+  alpha of section 4, ranked among funds only.
+- Funds outside CRSP (for example UK funds) are reported if the LSEG probe returns them. They enter neither the tier
+  rule nor the persistence check.
+- An investor with both a CRSP fund and a 13F record is ranked on the fund (real returns after fees).
 
-## 4. Public funds (grade F)
-- Monthly net return of the fund from the CRSP mutual fund file, share classes combined by assets. Funds outside
-  CRSP are left for the LSEG probe and get no rank in this version.
-- Style-adjusted result of a fund = its six-factor alpha (column 4). Rank among US domestic equity funds in CRSP
-  (objective code starting "ED", index funds and funds under $15M left out) with a result in that window.
-- A fund is used for an investor only if the investor is named in the library as its manager for most of the window.
-
-## 5. Record grades (plan 5.1), by rule
+## 6. Record grades (frozen in phase A2, before any return)
 | Grade | Rule |
 |---|---|
-| A | Matched 13F filer; passes the screen of 2.5 in at least 20 quarters after 2010; inventory style is not long_short, macro_multi_asset, credit_distressed, quant_systematic, private_venture or index_allocation; inventory region is us or global |
-| B | Matched 13F filer that passes the screen in at least 20 quarters after 2010, with inventory style long_short, or inventory region europe, asia, emerging or other |
-| C | Matched 13F filer that fails the screen (too many or too few positions, too small, too few quarters), or whose inventory style is macro_multi_asset, credit_distressed, quant_systematic, private_venture or index_allocation |
-| F | No usable 13F record (not A or B), and a public fund matched under section 4 with at least 60 months after 2010 |
-| N | None of the above |
+| F | A CRSP fund in the rank group of section 5 that the investor managed for at least 60 months after 2010 |
+| A | Not F. Matched 13F filer with at least 20 quarters after 2010, median positions 5 to 150, median value at least $100M; primary style not long_short, macro_multi_asset, credit_distressed, quant_systematic, private_venture or index_allocation; region us or global |
+| B | Not F. Matched 13F filer with at least 20 quarters after 2010, median positions 5 to 150, median value at least $100M; primary style long_short, or region europe, asia, emerging or other |
+| C | Matched 13F filer that is not A or B (too many or too few positions, too small, too few quarters, or a style in the list under A) |
+| N | No match |
 
-"Inventory style" and "region" are the most frequent codes for that investor in the E0.1 inventory.
+"Primary style": the style code given most often across the investor's own-words documents (kind `investor_talk`)
+in the E0.1 inventory, ties by the order of the style list in the spec; none coded = "none". "Region": the most
+frequent region code in those documents. "Explicitness": the highest `explicit` value in those documents, then the
+mean. E0.1 agreement on the blind recode was 94% for style (any overlap), 88% for explicitness (98% within one step)
+and 70% for region; all three are used as coded.
 
-## 6. Persistence check (all filers, and all funds)
-Between 2011-15 and 2016-20, and between 2016-20 and 2021-25, for filers with a result in both blocks: the rank
-correlation of the style-adjusted return; the share of the top fifth that is again in the top fifth, and above the
-middle; the same for filers with 10 to 40 positions. The same three numbers for funds, on the six-factor alpha.
-The result is reported. It does not change the tier rule (plan 13).
+## 7. Tier rule (plan 5.3 with its definitions)
+1. **Eligible for the places by record:** grade A, B or F, at least one own-words document, and 60 months of record
+   after 2010.
+2. **Score:** the mean of the rank shares that exist: (i) window 2011-25; (ii) window 2021-25; (iii) the share of
+   the blocks 2011-15, 2016-20 and 2021-25 (those with 36 months) in which the six-factor alpha is positive, turned
+   into a rank share within the investor's record kind (13F filers, funds).
+3. **Tier A by record: 30 investors,** highest score first, at most eight per primary style; when the cap binds the
+   next ranked investor of another style takes the place. Ties by number of own-words documents, then investor id.
+   If fewer than 30 are eligible the places stay empty.
+4. **Tier A by explicit criteria: exactly 10** (fewer only if fewer are eligible), from people coded investor with
+   `ran_money` = yes who are not already chosen: highest explicitness, then mean explicitness, then number of
+   own-words documents, then investor id.
+5. **Control: 10,** drawn with seed 20261117 (Python `random.Random(seed).sample`) from the eligible investors of
+   point 1 outside tier A, sorted by investor id.
+6. **Tier B:** everyone else. **Foundation list:** the 50 documents with the highest `technique_depth`, ties by
+   number of technique areas, then by words, then by document number.
+7. The persistence result does not change this rule.
 
-## 7. Tier rule (plan 5.3)
-1. **Score.** For each investor with grade A, B or F and at least 60 months after 2010: the average of three rank
-   shares from section 3 (for F: section 4): (i) style-adjusted result 2011-25; (ii) the same for 2021-25; (iii) the
-   share of the blocks 2011-15, 2016-20, 2021-25 with a positive style-adjusted result, turned into a rank share
-   among the same group. A missing item is left out of the average. An investor with both a 13F record and a fund
-   is scored on the 13F record if graded A or B.
-2. **Tier A by record: 30 investors.** Highest score first, at most eight per inventory style (the investor's most
-   frequent style code). Ties go to the investor with more documents.
-3. **Tier A by explicit criteria: 10 investors**, whatever their grade, from those not yet chosen: highest
-   `explicit_max` in the inventory, then highest `explicit_mean`, then more documents. Only people coded as
-   investor with `ran_money` = yes or unclear.
-4. **Control: 10 investors**, drawn at random (seed 20261117) from grades A, B and F outside tier A.
-5. **Tier B:** everyone else. **Foundation list:** the 50 documents with the highest `technique_depth`, ties by
-   number of technique areas, then by words.
-6. If fewer than 30 investors have a score, the unfilled places are left empty. They are not filled by another rule.
+## 8. What comes back from the scorecard (WRDS rule: no data rows)
+- One row per matched library investor: grade, record kind, months, and for each window the columns of section 4
+  (statistics only where the window has 60 months or the whole record has 60 months; otherwise rank shares only).
+- The tier lists of section 7, computed in the same job.
+- The 25 best-scored filers and the 10 best-scored funds for which the library has no document: name and rank
+  share only.
+- Persistence (section 9) and counts: filers and funds in each rank group, coverage shares.
+- Nothing else. No holdings, no return series, no stock names, and no average by style, sector or factor.
 
-The league table shown to the user lists every scored investor by inventory style with the 2021-25 column first
-(the five years asked for), then the other columns, the grade, and tier.
+## 9. Persistence check
+Between 2011-15 and 2016-20, and between 2016-20 and 2021-25, among filers in the rank group in the first block
+with 36 months there: the rank correlation of the six-factor alpha with the second block (filers with 36 months in
+both); and the table of first-block fifth against second-block fifth with an extra column "stopped filing or under
+36 months". The same for CRSP funds, apart.
 
-## 8. "Follow the best managers" signal (plan section 6), registered before the scorecard runs
-- Each month t, take every filer that passes the screen of 2.5 in its latest public filing and has at least 36
-  months of copy-portfolio history ending at t.
-- Rank filers on the t-value of the style-adjusted return over the 60 months ending at t (or the months they have).
-- The 20 highest are "followed". The pod's score for a stock is the number of followed filers for whom the stock is
-  a new position in their latest public filing or the one before, divided by 20. Stocks nobody bought score zero.
-- Two versions, averaged: new positions only (above), and all positions of followed filers weighted as filed.
-- Its US result from 2011 is reported only. It is judged on the design era and the live record (plan section 6).
+## 10. "Follow the best managers" signal (plan section 6)
+- Each month t: every filer whose latest public filing is in the rank group form of 3.6 (5 to 150 positions, at
+  least $100M) and that has at least 36 months of copy-portfolio returns ending at t.
+- Rank on the t-value of the six-factor alpha over the 60 months ending at t (or the months it has).
+- The 20 highest are "followed". Version 1: a stock's score is the number of followed filers for whom it is a new
+  position in their latest public filing or the one before, divided by 20. Version 2: the sum over followed filers
+  of the stock's weight in their latest public filing, divided by 20. The pod averages the two.
+- Its US result from 2011 is reported only; it has no version outside the US; it is judged on the design era
+  (13F data start in 1980 and the rule needs three years of history) and the live record.
+- **What the author had seen when this was written** (review P6): the triage tests on WRDS 2008-24
+  (`docs/research/triage_wrds/RESULTS.md`: no test passed; the owner cells loaded on the profitability factor) and
+  the biotech re-run 2020-26 (the "top performer" subset of 23 buy calls carried the buy result). The settings
+  above (20 managers, 60 months, t-value of a six-factor alpha, new positions) were not copied from the triage
+  rules, whose "top performer" definition was not consulted. No result of a 13F-following rule on 2011-25 had been
+  seen. The scorecard has not run.
 
-## 9. Checks before the run
+## 11. Checks before the scorecard runs
 - The code is built by one agent and read by another that did not build it.
-- A planted-error test on invented data: a look-ahead of one quarter, a dropped delisting return, a peer group
-  built with the current month's size, a filer that stops filing, a doubled share class. The code check must catch
-  each one. Catch rate on record.
-- The run is logged in `SEAL_LOG.md` with the code version and the lock id.
+- A planted-error test on invented data: a look-ahead of one quarter in the holdings, a dropped delisting return,
+  a peer group built with the same month's size, a filer that stops filing kept with zero returns, a doubled share
+  class, a rank computed across record kinds. The code check must catch each one. Catch rate on record.
+- The job passes the seal checker as one of the two seal-exempt jobs, and the run is logged in `SEAL_LOG.md` with
+  the code hash and the lock id.
