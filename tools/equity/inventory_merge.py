@@ -1,7 +1,7 @@
 """Merge the coded inventory of step E0.1, check its form, measure agreement with the blind recode, and build the
 investor table.
 
-    python3 tools/equity/inventory_merge.py PACK_DIR CODED_DIR OUT_DIR
+    python3 tools/equity/inventory_merge.py PACK_DIR CODED_DIR OUT_DIR [MANIFEST.json]
 
 PACK_DIR: output of inventory_pack.py (docs.csv, recode_ids.json). CODED_DIR: pack_NN.jsonl files from the first
 coder and recode.jsonl from the second. Writes OUT_DIR/inventory.csv (one row per document), investors.csv (one row
@@ -69,8 +69,13 @@ def read(path):
     return rows
 
 
-def main(pack, coded, out):
+def main(pack, coded, out, manifest=None):
     os.makedirs(out, exist_ok=True)
+    words = {}
+    if manifest:
+        for d in json.load(open(manifest, encoding="utf-8"))["docs"].values():
+            if d["src"].startswith("General Transcripts/"):
+                words[d["txt"][len("General Transcripts/"):-4]] = int(d.get("words") or 0)
     files = dict((int(d), f) for d, f in list(csv.reader(open(os.path.join(pack, "docs.csv"), encoding="utf-8")))[1:])
     first, errs = {}, []
     for p in sorted(glob.glob(os.path.join(coded, "pack_*.jsonl"))):
@@ -125,7 +130,7 @@ def main(pack, coded, out):
     open(os.path.join(out, "agreement.md"), "w", encoding="utf-8").write("\n".join(A) + "\n")
     w = csv.writer(open(os.path.join(out, "inventory.csv"), "w", newline="", encoding="utf-8"))
     w.writerow(["doc", "file", "kind", "subject", "style", "sector", "region", "explicit", "technique",
-                "technique_depth", "short_side", "investors", "other_people", "absent"])
+                "technique_depth", "short_side", "investors", "other_people", "absent", "words"])
     P = collections.defaultdict(lambda: dict(names=collections.Counter(), firms=collections.Counter(), docs=[],
                                              styles=collections.Counter(), regions=collections.Counter(),
                                              roles=collections.Counter(), ran=collections.Counter(), explicit=[]))
@@ -136,13 +141,15 @@ def main(pack, coded, out):
         w.writerow([d, files[d], r["kind"], r["subject"], ";".join(r["style"] or []), r.get("sector", ""), r["region"],
                     r["explicit"], ";".join(r["technique"] or []), r["technique_depth"], r["short_side"],
                     "; ".join("%s (%s)" % (p["name"], p.get("firm", "")) for p in inv),
-                    "; ".join(p["name"] for p in oth), "; ".join(r.get("absent") or [])])
+                    "; ".join(p["name"] for p in oth), "; ".join(r.get("absent") or []), words.get(files[d], "")])
         for p in inv:
             x = P[key(p["name"])]
             x["names"][ALIAS.get(p["name"].strip(), p["name"])] += 1
             if p.get("firm"):
                 x["firms"][p["firm"]] += 1
             x["docs"].append(d)
+            if r["kind"] == "investor_talk":
+                x.setdefault("own", []).append((d, r["style"] or [], r["region"], r["explicit"]))
             x["roles"][p["role"]] += 1
             x["ran"][p["ran_money"]] += 1
             x["regions"][r["region"]] += 1
@@ -151,7 +158,7 @@ def main(pack, coded, out):
                 x["styles"][s] += 1
     w = csv.writer(open(os.path.join(out, "investors.csv"), "w", newline="", encoding="utf-8"))
     w.writerow(["id", "name", "other_spellings", "role", "ran_money", "firms", "documents", "doc_ids", "styles",
-                "region", "explicit_max", "explicit_mean"])
+                "region", "explicit_max", "explicit_mean", "own_docs", "own_styles", "own_regions", "own_explicit"])
     rows = sorted(P.items(), key=lambda kv: (-len(kv[1]["docs"]), kv[0]))
     for i, (k, x) in enumerate(rows, 1):
         nm = x["names"].most_common()
@@ -160,9 +167,12 @@ def main(pack, coded, out):
                     len(x["docs"]), " ".join(map(str, x["docs"])),
                     "; ".join("%s (%d)" % s for s in x["styles"].most_common()),
                     x["regions"].most_common(1)[0][0], max(x["explicit"]),
-                    "%.2f" % (sum(x["explicit"]) / len(x["explicit"]))])
+                    "%.2f" % (sum(x["explicit"]) / len(x["explicit"])), len(x.get("own", [])),
+                    " ".join(s_ for _, st, _, _ in x.get("own", []) for s_ in st),
+                    " ".join(rg for _, _, rg, _ in x.get("own", [])),
+                    " ".join(str(e) for _, _, _, e in x.get("own", []))])
     print(A[1].strip(), "| investors:", len(rows), "| recoded:", len(both))
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:4])
+    main(*sys.argv[1:5])
