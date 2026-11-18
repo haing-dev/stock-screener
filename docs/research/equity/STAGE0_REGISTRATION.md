@@ -195,3 +195,21 @@ to 22, which the code implements. They are part of this registration. The ones t
   of 14 extra planted errors caught. Module code sha256 f7f542646da4da43a96cbfdfe8e817247ccb519b7872519dab299188f6bb5db8
   (input block excluded); input sha256 c77e38e77851ee3124548ca374ec78e0414cbde50d5e6f536c04380242ab0b6f (241 investors:
   13F 77, fund 13, none 151; 635 documents); lock id e680ca33c77ec51ed50372ec66e5733001cd4867adf1e692f88a4e2645015099.
+
+## 13. Addendum A (2026-11-18, after the first run; registered before `eq_scorecard_v2` runs)
+Requested by the user after seeing the result: a list of high-scoring managers with no transcript in the library,
+of a given size, to find transcripts or letters to add. It changes no tier, grade or rule above; it is a second
+opening of the seal for the same descriptive purpose (reading order), logged in `SEAL_LOG.md`.
+- Population: 13F filers in the 2021-25 rank group (section 3.6) whose median matched 13F value over the 2021-25
+  filings is between $1bn and $30bn, with none of their filer numbers in any `known_mgrnos` of the frozen file.
+  "Value" is the US-listed long book in the 13F, not the firm's total assets.
+- List 1 (registered score): the same score as section 7.2, 60 months of record after 2010 required; top 40.
+- List 2 (the last five years, as asked): ranked on the 2021-25 six-factor alpha rank share, 60 months in 2021-25
+  required; top 40.
+- Printed per filer: name, country, score and its three rank shares, 2021-25 six-factor alpha and t, 2011-25 alpha
+  and t where 60 months exist, median 13F value 2021-25 ($bn), median positions, turnover, and the largest share of
+  the 2021-25 book in one SIC division plus that division's name (so that sector specialists such as biotech funds are
+  visible). Nothing else; no holdings, no stock names.
+- Grades and tiers stay as frozen. The user also asked to read Stanley Druckenmiller (grade C: his primary style in
+  the library is macro, so by the registered rule his 13F is not taken as his record); he is added to the reading
+  list as "added by the user after the result", outside tier A, with no effect on the control comparison.
