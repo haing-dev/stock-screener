@@ -22,6 +22,7 @@ Lock id: (set when the reader and checker are committed)
 | since 2026-10-22 | Live triage screens on free data (branch `triage-record`) | US 2024-26 | Live calls and marks |
 | 2026-10-30/31 | Pulls kept on WRDS Cloud (`tri_*`, `bio_*` data sets: CRSP, Compustat, 13F, I/B/E/S extracts) | to 2026 | Data stay on WRDS; used only by the jobs above |
 | 2026-11-17 | `eq_tables_v1`, `eq_tables_v2` | all | Metadata only: tables, columns, counts, date ranges |
+| 2026-11-18 | `eq_precheck_v1` (counts only, through the reader's named checks; report `Screenerdata\runner\results\eq_precheck_v1.txt`) | design era 2001-10; 13F counts by year 2010-25 | Counts only: every delisting 2001-10 has a monthly return in its last month (5,402 of 5,402); manager-quarters without a first version: 20 in 2010, 1 in 2017, 0 otherwise; factors in decimals; 958 firm_ratio permno-dates with two book-to-market values |
 | 2026-11-17 | `eq_match_v1` (phase A of the scorecard) | 13F from 2010-06 | Names and ids of filers and funds; per filer the number of quarters, positions and size. No return |
 
 ## B. Openings of the seal by the seal-exempt jobs

@@ -28,6 +28,11 @@ claims, cards, charters or specs do not open it.
 - Factors: `ff.fivefactors_monthly` (market, size, value, profitability, investment, momentum, T-bill).
 - Funds: `crsp.monthly_tna_ret_nav`, `crsp.fund_hdr`, `crsp.fund_style`.
 - **Seal end: 2025-12** (the last CRSP stock month). Months after it are never holdout.
+- Data facts checked before registration (`eq_precheck_v1`, counts only, 2026-11-18): `msf_v2` monthly return
+  already includes the delisting return (every one of 5,402 delistings in 2001-10 has a return in its delisting
+  month), so no separate delisting adjustment is made; first versions exist for all but 21 manager-quarters of
+  2010-25; Fama-French factors are in decimals; 958 of 311,949 firm_ratio permno-dates in 2005-10 carry two different
+  book-to-market values and get none that year (reading 8).
 
 ## 3. The copy portfolio of a 13F filer
 1. **Filing.** First version of the holdings for each manager and quarter-end (section 2).
