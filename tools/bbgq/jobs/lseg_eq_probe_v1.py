@@ -129,6 +129,8 @@ def read_block(sheet, pid, cols):
             if isinstance(v, str) and v.strip() and not v.lower().startswith("updated at") and len(headers) < 6:
                 headers.append(v.strip()[:45])
     data = rowv[hdr_last + 1:]
+    # the 'Instrument' column repeats our own inputs: never counted as returned text
+    instcol = 0 if any(isinstance(r[0], str) and r[0].strip().lower() in ("instrument", "instruments") for r in rowv[:hdr_last + 1] if r) else None
     loading = any(isinstance(v, str) and LOADING.match(v) for r in rowv[:60] for v in r)
     errors = []
     for r in rowv[:5]:      # messages sit at the top of a block; deeper rows are data and are never printed
@@ -187,6 +189,8 @@ def read_block(sheet, pid, cols):
             elif as_date(v):
                 alldates.append(as_date(v))
             elif isinstance(v, str):
+                if j == instcol:
+                    continue
                 if ERRISH.search(v) or LOADING.match(v) or v.startswith("#"):
                     continue
                 ntext += 1
