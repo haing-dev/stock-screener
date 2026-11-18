@@ -1,0 +1,136 @@
+{
+ "name": "eq_tables_v1",
+ "head_ok": true,
+ "steps": [
+  {
+   "do": "libraries"
+  },
+  {
+   "do": "search",
+   "terms": [
+    "13f",
+    "shortint",
+    "mflink",
+    "fund_summary",
+    "monthly_tna",
+    "fund_hdr",
+    "finratio",
+    "g_secd",
+    "g_funda",
+    "holdings",
+    "wciklink",
+    "cik"
+   ],
+   "libraries": [
+    "tfn",
+    "tr_13f",
+    "tr_mutualfunds",
+    "crsp",
+    "mfl",
+    "comp",
+    "wrdssec",
+    "wrdsapps",
+    "wrdsapps_finratio",
+    "contrib_global_factor",
+    "wrds_13f",
+    "wrdssec_13f"
+   ]
+  },
+  {
+   "do": "tables",
+   "libraries": [
+    "tfn",
+    "tr_mutualfunds",
+    "mfl",
+    "wrdsapps_finratio",
+    "contrib_global_factor",
+    "ff"
+   ]
+  },
+  {
+   "do": "describe",
+   "table": "tfn.s34type1",
+   "date": "rdate"
+  },
+  {
+   "do": "describe",
+   "table": "tfn.s34names"
+  },
+  {
+   "do": "describe",
+   "table": "tfn.s12",
+   "date": "fdate"
+  },
+  {
+   "do": "describe",
+   "table": "tfn.s12type1"
+  },
+  {
+   "do": "describe",
+   "table": "crsp.monthly_tna_ret_nav",
+   "date": "caldt"
+  },
+  {
+   "do": "describe",
+   "table": "crsp.fund_hdr"
+  },
+  {
+   "do": "describe",
+   "table": "crsp.fund_summary",
+   "date": "caldt"
+  },
+  {
+   "do": "describe",
+   "table": "crsp.fund_style",
+   "date": "begdt"
+  },
+  {
+   "do": "describe",
+   "table": "mfl.mflink1"
+  },
+  {
+   "do": "describe",
+   "table": "mfl.mflink2"
+  },
+  {
+   "do": "describe",
+   "table": "comp.sec_shortint",
+   "date": "datadate"
+  },
+  {
+   "do": "describe",
+   "table": "comp.g_funda",
+   "date": "datadate"
+  },
+  {
+   "do": "describe",
+   "table": "comp.g_security"
+  },
+  {
+   "do": "describe",
+   "table": "wrdsapps_finratio.firm_ratio",
+   "date": "public_date"
+  },
+  {
+   "do": "describe",
+   "table": "ff.fivefactors_monthly",
+   "date": "date"
+  },
+  {
+   "do": "describe",
+   "table": "crsp.msf_v2",
+   "date": "mthcaldt"
+  },
+  {
+   "do": "describe",
+   "table": "crsp.stocknames_v2"
+  },
+  {
+   "do": "python",
+   "code": "\ndef q1(label, q):\n    try:\n        d = sql(q)\n        out(label)\n        for r in d.itertuples(index=False):\n            out('   ', *[x for x in r])\n    except Exception as e:\n        out(label, 'FAILED:', str(e)[:200])\nq1('tfn.s34 by report year: filers, rows, last file date',\n   \"select extract(year from rdate)::int y, count(distinct mgrno) mgrs, count(*) n, max(fdate) last_fdate from tfn.s34 where rdate >= '2009-12-31' and rdate = fdate group by 1 order by 1\")\nq1('tfn.s34 report dates in the latest file dates',\n   \"select fdate, min(rdate) min_r, max(rdate) max_r, count(distinct mgrno) mgrs from tfn.s34 where fdate >= '2025-01-01' group by 1 order by 1\")\nq1('crsp.msf_v2 last month', \"select max(mthcaldt) from crsp.msf_v2\")\nq1('crsp mutual fund returns: last month and funds', \"select max(caldt), count(distinct crsp_fundno) from crsp.monthly_tna_ret_nav where caldt >= '2024-01-01'\")\nq1('tfn.s12 by report year: funds, rows', \"select extract(year from rdate)::int y, count(distinct fundno) f, count(*) n from tfn.s12 where rdate >= '2019-12-31' group by 1 order by 1\")\nq1('comp.sec_shortint range', \"select min(datadate), max(datadate), count(distinct gvkey) from comp.sec_shortint\")\nq1('comp.g_secd: last date', \"select max(datadate) from comp.g_secd where datadate >= '2025-06-01'\")\nq1('global factor data: last month, countries', \"select max(eom), count(distinct excntry) from contrib_global_factor.global_factor where eom >= '2025-01-01'\")\n"
+  },
+  {
+   "do": "datasets"
+  }
+ ]
+}
