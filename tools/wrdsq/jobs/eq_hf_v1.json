@@ -1,0 +1,17 @@
+{
+ "name": "eq_hf_v1",
+ "steps": [
+  {
+   "do": "python",
+   "code": "import eq_hf\neq_hf.report(load, out, 1, 3)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_hf\neq_hf.report(load, out, 2, 3)"
+  },
+  {
+   "do": "python",
+   "code": "import eq_hf\neq_hf.report(load, out, 3, 3)"
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "name": "eq_hf_pull_v1",
+ "steps": [
+  {
+   "do": "python",
+   "code": "import eq_hf\neq_hf.pull(sql, save, out, DATA, budget=7800)"
+  },
+  {
+   "do": "datasets"
+  }
+ ]
+}

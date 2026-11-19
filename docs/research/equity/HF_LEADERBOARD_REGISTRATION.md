@@ -46,3 +46,11 @@ From the fund pages' performance data (Jeffrey Gendell / Tontine, read in the br
 ## Latest activity (not from WRDS)
 For the top 50: the latest 13F (Q3 2026) top holdings and new, added, trimmed and sold-out positions, read from the
 public HedgeFollow fund pages in the browser. Nothing stock-level comes from WRDS.
+
+## Job and code (2026-11-19)
+Module `tools/equity/wrds/eq_hf.py` (code sha256 04b59fd5b396f7cd...), jobs `eq_hf_pull_v1` (resumable, one SQL
+aggregate per quarter-end) and `eq_hf_v1` (report, 3 parts: universe + SPY + validation; ranks 1-125; 126-250).
+Smoke test `tests/eq_hf_smoke.py` (invented data; also re-checks the website's Gendell chaining). Registered as the
+third seal-exempt job (`seal_exempt.json` entry `hf_leaderboard`); the plan's limit of two (v0.3 section 5.4) is
+amended for this user-requested descriptive job. The report prints both weight versions (HF and START) for the
+validation funds, so the check settles which one the website uses.

@@ -1,5 +1,5 @@
 {
- "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Exactly two registered jobs may exist: the scorecard and the holdings job. code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call, each with its exact argument list (a regular expression that the whole argument text must match, in order). code_history lists earlier registered hashes (record only; the checker uses code_sha256).",
+ "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Registered jobs: the scorecard, the holdings job (not built) and the hedge fund leaderboard (user request 2026-11-18, HF_LEADERBOARD_REGISTRATION.md). code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call, each with its exact argument list (a regular expression that the whole argument text must match, in order). code_history lists earlier registered hashes (record only; the checker uses code_sha256).",
  "jobs": [
   {
    "registered_job": "scorecard",
@@ -42,6 +42,28 @@
      "replaced_by": "49adb08739090e36ff7e77a976e408d82933015845c4513b45c687ee2ed5ee3d"
     }
    ]
+  },
+  {
+   "registered_job": "hf_leaderboard",
+   "module": "eq_hf",
+   "code_sha256": "04b59fd5b396f7cdfe445f351a59eebe6608b7946a1d697c11c55bf9cae8bc1e",
+   "registration": "docs/research/equity/HF_LEADERBOARD_REGISTRATION.md",
+   "output": "per-filer statistics and validation quarters (registration)",
+   "names": [
+    {
+     "pattern": "eq_hf_pull_v\\d+[a-z]?",
+     "functions": {
+      "pull": "sql, save, out, DATA, budget=\\d+"
+     }
+    },
+    {
+     "pattern": "eq_hf_v\\d+[a-z]?",
+     "functions": {
+      "report": "load, out, [1-9], [1-9]"
+     }
+    }
+   ],
+   "code_history": []
   }
  ]
 }
