@@ -54,3 +54,13 @@ Smoke test `tests/eq_hf_smoke.py` (invented data; also re-checks the website's G
 third seal-exempt job (`seal_exempt.json` entry `hf_leaderboard`); the plan's limit of two (v0.3 section 5.4) is
 amended for this user-requested descriptive job. The report prints both weight versions (HF and START) for the
 validation funds, so the check settles which one the website uses.
+
+## Correction after the first report (eq_hf_v1, 2026-11-19 08:28 PC)
+The check settled the weighting: the website uses the START version (weights from the 13F at the end of the
+PREVIOUS quarter, return over the quarter), not the end-of-quarter weights stated above. Atreides: our START MW
+equals the website in 8 of 9 quarters (13.3/17.9/-1.1/1.4/30.9/-22.6/24.6/13.2; Q2 2025 41.3 vs 37.0); Duquesne:
+7 of 9 (Q2 2024 11.8 vs 10.6, Q4 2025 17.7 vs 14.6). The end-weight version differs in most quarters. So the
+ranking is on the START version, which is also what the user asked for (allocation at the time of investment).
+Report-only change (`eq_hf` 1.1.0, code 0f78ced5...; pulls unchanged): rank on 5-year START MW, START columns
+(5y/3y MW and EW, Q4 2025), end-weight 5y MW kept for reference; validation adds START EW and the name GENDELL.
+Job `eq_hf_v2`. The first report (ranked on the end-weight version) is kept in `hf_leaderboard/eq_hf_v1_report.txt`.

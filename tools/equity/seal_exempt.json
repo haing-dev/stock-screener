@@ -46,7 +46,7 @@
   {
    "registered_job": "hf_leaderboard",
    "module": "eq_hf",
-   "code_sha256": "04b59fd5b396f7cdfe445f351a59eebe6608b7946a1d697c11c55bf9cae8bc1e",
+   "code_sha256": "0f78ced553b2d06687dcc49edc5cac29c8431d6fca0f8d3dd397346b2ca4dbb7",
    "registration": "docs/research/equity/HF_LEADERBOARD_REGISTRATION.md",
    "output": "per-filer statistics and validation quarters (registration)",
    "names": [
@@ -63,7 +63,14 @@
      }
     }
    ],
-   "code_history": []
+   "code_history": [
+    {
+     "code_sha256": "04b59fd5b396f7cdfe445f351a59eebe6608b7946a1d697c11c55bf9cae8bc1e",
+     "version": "eq_hf-1.0.0",
+     "runs": "eq_hf_pull_v1, eq_hf_v1 (2026-11-18/19)",
+     "replaced_by": "0f78ced553b2d06687dcc49edc5cac29c8431d6fca0f8d3dd397346b2ca4dbb7"
+    }
+   ]
   }
  ]
 }

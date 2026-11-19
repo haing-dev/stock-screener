@@ -30,7 +30,7 @@ US = {"UNITED STATES", "USA", "US", "UNITED STATES OF AMERICA"}
 MIN_VAL = 1e9
 MIN_POS = 5
 TOP = 20
-VALID = ["TONTINE", "ATREIDES", "WHALE ROCK", "DUQUESNE", "RENAISSANCE TECH", "SLATE PATH", "SPRUCE HOUSE",
+VALID = ["TONTINE", "GENDELL", "ATREIDES", "WHALE ROCK", "DUQUESNE", "RENAISSANCE TECH", "SLATE PATH", "SPRUCE HOUSE",
          "CAS INVESTMENT", "FAIRMOUNT FUNDS", "CALIGAN", "GREENOAKS", "HELIKON"]
 
 
@@ -192,7 +192,7 @@ def _stats(q):
         sm, se = piv["mw_next"].loc[m, st_q].to_numpy(float), piv["ew_next"].loc[m, st_q].to_numpy(float)
         rows.append({"mgrno": m, "hf5_mw": _chain(hm), "hf5_ew": _chain(he), "hf3_mw": _chain(hm[-12:]),
                      "hf3_ew": _chain(he[-12:]), "st5_mw": _chain(sm), "st5_ew": _chain(se),
-                     "st3_mw": _chain(sm[-12:]), "q4_mw": hm[-1], "val25": piv["vall"].loc[m, QENDS[-1]],
+                     "st3_mw": _chain(sm[-12:]), "st3_ew": _chain(se[-12:]), "q4_mw": hm[-1], "q4_st": sm[-1], "val25": piv["vall"].loc[m, QENDS[-1]],
                      "nall25": piv["nall"].loc[m, QENDS[-1]], "top20w": piv["v20"].loc[m, QENDS[-1]] /
                      piv["vall"].loc[m, QENDS[-1]] if piv["vall"].loc[m, QENDS[-1]] else float("nan")})
     return pd.DataFrame(rows), piv, int(ok.sum()), len(full)
@@ -207,12 +207,12 @@ def report(load, out, part=1, parts=3):
     st["val26"] = st.mgrno.map(last.vall)
     for c in ("hf5_mw", "hf5_ew", "st5_mw", "st5_ew"):
         st[c + "_a"] = st[c].map(lambda x: _ann(x, 5))
-    for c in ("hf3_mw", "hf3_ew", "st3_mw"):
+    for c in ("hf3_mw", "hf3_ew", "st3_mw", "st3_ew"):
         st[c + "_a"] = st[c].map(lambda x: _ann(x, 3))
     big = st[st.val25 >= MIN_VAL]
-    uni = big[big.region.isin(["US", "EU"])].sort_values("hf5_mw_a", ascending=False).reset_index(drop=True)
-    uni["rank_hf"] = np.arange(1, len(uni) + 1)
-    uni["rank_st"] = uni.st5_mw_a.rank(ascending=False, method="min").astype(int)
+    uni = big[big.region.isin(["US", "EU"])].sort_values("st5_mw_a", ascending=False).reset_index(drop=True)
+    uni["rank_st"] = np.arange(1, len(uni) + 1)
+    uni["rank_hf"] = uni.hf5_mw_a.rank(ascending=False, method="min").astype(int)
     spy = _spy(load)
     if part == 1:
         out("eq_hf report part 1 of %d: universe, SPY, validation" % parts)
@@ -246,7 +246,7 @@ def report(load, out, part=1, parts=3):
                     continue
                 inu = m in set(uni.mgrno)
                 out("  %-8d %s (%s)%s" % (m, str(r.mgrname).strip(), str(r.country).strip(),
-                                          "  rank %d" % int(uni.loc[uni.mgrno == m, "rank_hf"].iloc[0]) if inu else
+                                          "  rank %d" % int(uni.loc[uni.mgrno == m, "rank_st"].iloc[0]) if inu else
                                           "  not in the universe"))
                 out("      quarter  " + hdr)
                 mw = piv["mw_end"].reindex(columns=QENDS).loc[m]
@@ -256,17 +256,21 @@ def report(load, out, part=1, parts=3):
                 out("      HF EW    " + " ".join(_p(ew.get(d)) for d in QENDS[-9:]))
                 prev = {QENDS[i + 1]: mn.get(QENDS[i]) for i in range(len(QENDS) - 1)}
                 out("      ST MW    " + " ".join(_p(prev.get(d)) for d in QENDS[-9:]))
+                en = piv["ew_next"].reindex(columns=QENDS).loc[m]
+                preve = {QENDS[i + 1]: en.get(QENDS[i]) for i in range(len(QENDS) - 1)}
+                out("      ST EW    " + " ".join(_p(preve.get(d)) for d in QENDS[-9:]))
         return
     per = int(math.ceil(250.0 / (parts - 1)))
     lo = (part - 2) * per
     sub = uni.iloc[lo:lo + per]
-    out("eq_hf report part %d of %d: ranks %d-%d of %d (US + UK/Europe, 13F >= $1bn at 2025-12; ranked on 5y HF MW "
-        "annualised; returns %%; value $bn)" % (part, parts, lo + 1, lo + len(sub), len(uni)))
-    out("rank stR mgrno    name                              ctry  val25  val26  n25 top20 | 5y HF MW cum  ann | "
-        "5y HF EW ann | 3y HF MW cum  ann | 3y EW ann | 5y ST MW ann | 5y ST EW ann | Q4'25 MW")
+    out("eq_hf report part %d of %d: ranks %d-%d of %d (US + UK/Europe, 13F >= $1bn at 2025-12; ranked on 5y START "
+        "MW annualised = weights at the previous quarter end, the website's method; returns %%; value $bn)"
+        % (part, parts, lo + 1, lo + len(sub), len(uni)))
+    out("rank hfR mgrno    name                              ctry  val25  val26  n25 top20 | 5y MW cum    ann | "
+        "5y EW cum    ann | 3y MW cum    ann | 3y EW cum    ann | Q4'25 MW | 5y endW MW ann")
     for _, r in sub.iterrows():
-        out("%4d %3d %-8d %-34s %-4s %6.1f %6s %4d %5s | %8s %6s | %12s | %8s %6s | %9s | %12s | %12s | %7s" % (
-            r.rank_hf, r.rank_st, r.mgrno, r["name"][:34], r.region, r.val25 / 1e9,
+        out("%4d %4d %-8d %-34s %-4s %6.1f %6s %4d %5s | %9s %6s | %9s %6s | %9s %6s | %9s %6s | %8s | %14s" % (
+            r.rank_st, r.rank_hf, r.mgrno, r["name"][:34], r.region, r.val25 / 1e9,
             ("%6.1f" % (r.val26 / 1e9)) if np.isfinite(r.val26) else "    na", int(r.nall25), _p(r.top20w, 5),
-            _p(r.hf5_mw, 8), _p(r.hf5_mw_a, 6), _p(r.hf5_ew_a, 12), _p(r.hf3_mw, 8), _p(r.hf3_mw_a, 6),
-            _p(r.hf3_ew_a, 9), _p(r.st5_mw_a, 12), _p(r.st5_ew_a, 12), _p(r.q4_mw)))
+            _p(r.st5_mw, 9), _p(r.st5_mw_a, 6), _p(r.st5_ew, 9), _p(r.st5_ew_a, 6), _p(r.st3_mw, 9),
+            _p(r.st3_mw_a, 6), _p(r.st3_ew, 9), _p(r.st3_ew_a, 6), _p(r.q4_st, 8), _p(r.hf5_mw_a, 14)))

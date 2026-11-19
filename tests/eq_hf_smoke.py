@@ -28,7 +28,7 @@ lines = []
 for k in (1, 2, 3):
     eq_hf.report(lambda n: D[n].copy(), lines.append, k, 3)
 txt = "\n".join(lines)
-assert "rank stR" in txt and "TONTINE" in txt and "GAMMA" in txt and "DELTA" not in txt.split("part 2")[1]
+assert "rank hfR" in txt and "TONTINE" in txt and "GAMMA" in txt and "DELTA" not in txt.split("part 2")[1]
 assert "ALPHA LP" in txt.split("part 2")[1]
 # chaining check against the website's published Gendell quarters
 mw = [13.72, 31.49, 4.03, 26.5, -1.59, -18.07, 66.4, 33.28, 1.3, 21.38, 51.32, -11.94]
