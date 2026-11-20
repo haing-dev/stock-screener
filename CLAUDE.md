@@ -395,6 +395,13 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   claude/equity_build_structure_proposal_v0.1.md): five desks + referee on top of plan v0.3, five changes (roster
   rule v2, conviction holdings, tracker live early, owner panel + registered follow pod, valuation as version).
   SUGGESTION ONLY, nothing built or run; next on the user's go: plan v0.4 (with review M1-M6).
+  USER FEEDBACK 2026-11-20 (proposal section 11): (a) records and tests may use 2010-2026, not much further back
+  (funds did not exist, markets differ) -> roster on the long record too: 15 library investors in the top quarter
+  on 2011-25 pass the material bar (+9 leaderboard = 24, +6 with one document); a like-for-like 2010-2025 weighted
+  ranking needs one more eq_hf run (60 quarters), not run; tests: US 2010-2025 main period with three same-period
+  checks (non-US, control-investor pods, source holdings left out). (b) LICENCE: user states WRDS and LSEG data may
+  be used freely if not published; site with password; non-commercial -> LSEG figures may reach agents and the
+  password site. WRDS AI-tools term still open (asked the user); until answered WRDS rows stay on WRDS.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->

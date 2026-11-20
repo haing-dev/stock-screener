@@ -110,3 +110,25 @@ restates it as five desks and a referee, so that every step has an owner, an out
 2. More long-form material for the parked high-return names, or agreement that the roster is filled from
    well-documented library investors further down the return ranking.
 3. A go to write plan v0.4.
+
+## 11. User feedback of 2026-11-20 and what it changes (still suggestion only)
+1. **Records and tests may use 2010-2026, not much further back** (some funds did not exist; markets differ now).
+   - Roster: rank on the long record (2010 to 2025, where the fund existed, at least 5 years) next to the last 5
+     years. On the record the scorecard already holds (2011-25, rank among all managers), 15 library investors are
+     in the top quarter and pass the material bar (two or more own documents, explicit criteria): Pilecki, Dorsey,
+     Gerstner, Kantesaria, Hohn, Stahl, Vinall, Nygren, Shaposhnik, Russo, Bloomstran, Terry Smith, McLennan, Begg,
+     Chris Davis. With the 9 from the 5-year leaderboard that is 24; six more are in the top quarter with one
+     explicit document (Robotti, Fitch, Soo Chuen Tan, Sacerdote, Sandler, Armitage). That scorecard rank is
+     style-adjusted and partly real fund returns; a like-for-like weighted-return ranking for 2010-2025 needs one
+     more WRDS run of `eq_hf` (60 quarter-ends instead of 21), registered first.
+   - Tests: US 2010-2025 becomes the main test period. Because the roster is chosen on those years, three checks
+     inside the same period replace the reliance on 1980-2010: the same pod outside the US in 2010-2025; investor
+     pods against pods built from the control investors over the same years; each pod with its source investors'
+     own holdings left out. Years before 2010 are a side check where the inputs exist. The live record stays the
+     final word. This changes plan section 8.2 and the seal, so it is registered in v0.4 before any run.
+2. **Licence** (user's statement): WRDS and LSEG data may be used freely as long as nothing is published; the site
+   gets a password; the work is not commercial. Consequence: LSEG-built company figures may be read by the agents
+   and shown on the password-protected tracker. Open: WRDS has its own written term ("loading Data retrieved from
+   WRDS into LLMs and other Generative A.I. tools is prohibited", `tools/wrdsq/README.md`), which is about AI tools,
+   not publishing. Until the user confirms that term does not apply, WRDS rows stay on WRDS and jobs return results;
+   the tracker's company figures come from LSEG, so little is lost.
