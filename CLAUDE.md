@@ -385,6 +385,16 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   equity value/carry; WRDS revisions; econ on first-release data. Manual files: gm/data (RBI); MSCI kept out of git.
 
 ## Equity pod shop (DESIGN ONLY: plan v0.3 + annex v0.2, 2026-11-15; nothing built or run)
+- USER DIRECTION 2026-11-19 (remember): use a list of about 30 top investors, each with transcripts and 13F holding
+  history with conviction (largest weights), to build a book of strategies (like the earlier screeners), find stocks
+  from them, build paper portfolios and backtest historically and forward to see which strategies consistently
+  outperform. Purpose: an agentic workflow of independent, unbiased pods: investors' logic -> WRDS/LSEG company data
+  standardised into one like-for-like tracker (candidates at attractive valuation, plus the roster's latest 13F buys)
+  -> paper portfolios with backtests; scientific, data-driven, cross-checked between steps.
+  PROPOSAL v0.1 = docs/research/equity/EQUITY_BUILD_STRUCTURE_PROPOSAL_v0.1.md (project doc
+  claude/equity_build_structure_proposal_v0.1.md): five desks + referee on top of plan v0.3, five changes (roster
+  rule v2, conviction holdings, tracker live early, owner panel + registered follow pod, valuation as version).
+  SUGGESTION ONLY, nothing built or run; next on the user's go: plan v0.4 (with review M1-M6).
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->
