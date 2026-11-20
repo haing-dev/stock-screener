@@ -42,8 +42,10 @@ restates it as five desks and a referee, so that every step has an owner, an out
    recorded as dated forecasts and judged on the live record only.
 5. The control group and the placebo go through the same pipeline, so the result shows whether choosing investors by
    return helped at all.
-6. Slots for registered tests are given by a script on rules fixed beforehand (thesis grade, material, say-do
-   agreement), not by how promising a pod looks.
+6. The eight slots for registered tests are given by a script on rules fixed beforehand (number of independent
+   investors, a stated reason why the edge persists, share of criteria a script can compute, power, distance from
+   the reference book and from pods already chosen; v0.2 8.5), not by how promising a pod looks. Every other pod
+   gets one descriptive run and can reach Incubator at most.
 
 ## 5. Data routes
 - History: WRDS (CRSP, Compustat, I/B/E/S, 13F; Compustat Global outside the US). Jobs run on WRDS Cloud through the
