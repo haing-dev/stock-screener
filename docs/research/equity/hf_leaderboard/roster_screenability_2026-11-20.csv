@@ -1,0 +1,38 @@
+grade,investor,fund,record,material,computable,judgement
+A,Joel Greenblatt,Gotham,"2011-25 rank 0.67 (fund, real returns)",9 documents; 19 criteria already coded in the old screens,"Rank on return on capital and earnings yield (EV/EBIT), about 30 stocks, yearly; cheap cyclicals",Special situations (spin-offs) need event data
+A,Terry Smith,Fundsmith,2011-25 rank 0.82,2 documents; 13 criteria coded (11 easy),"Return on capital, gross margin, cash conversion, growth, sector exclusions",Why the numbers persist
+A,Dev Kantesaria,Valley Forge,2011-25 rank 0.93,6 documents; 6 criteria coded (5 easy),"No loss years, stable margins, low capital spending, steady organic growth, free-cash-flow yield against the 10-year Treasury",Monopoly or duopoly position
+A,Chris Hohn,TCI,2011-25 rank 0.93,3 documents; 4 criteria coded (all easy),"Excluded industries, return-on-capital floors, margins held through inflation",Type of moat
+A,Glenn Greenberg,Brave Warrior,"5-year leaderboard #43, 18.2% a year",1 deep interview (2010),"About 10 stocks, minimum 5% each, decent business at about a 10% free-cash-flow yield",Business quality beyond the numbers
+A,Val Zlatev,Analog Century,"5-year leaderboard #3, 33.8% a year",2 long interviews,"Earnings direction and revisions, market share change, balance sheet, multiple on 2-3 year earnings; cut a loser at 1-1.5% of assets. Sector: semiconductors and hardware",Theme choice
+A,Derek Pilecki,Gator Capital,"2011-25 rank 0.98 (fund, real returns)",2 documents,"Financials: price to earnings, price to tangible book, earnings growth; must be able to double in 3 years; buy once the price confirms, never add to losers. Sector: financials",Management change
+B,Bill Nygren and Alex Fitch,Oakmark,2011-25 rank 0.90 (fund),3 documents,"Price at about 60% of business value, dividend plus per-share growth of 8-9%, sell at 85-95% of value",The value estimate itself (a multiple-based stand-in is needed)
+B,Murray Stahl,Horizon Kinetics,2011-25 rank 0.92 (fund),3 documents; 7 criteria coded (4 easy),"Owner-operators (insider share), hard assets and royalties, high margins with little reinvestment, low index ownership",Which assets are scarce
+B,Pat Dorsey,Dorsey Asset,2011-25 rank 0.94,2 documents,"Return on capital above 15% sustained for years, valuation multiples, 10-15 stocks","Moat and management, which he calls mostly qualitative"
+B,Chris Davis,Davis Advisors,2011-25 rank 0.76 (fund),9 documents,"Return on capital, balance sheet, price to earnings against growth",Management character
+B,Joseph Shaposhnik,Rainwater (ex TCW),2011-25 rank 0.89 (fund),3 documents,"Free cash flow compounding in the mid-teens, predictability of revenue and margins",Recurring-revenue share and manager quality are not in standard data
+B,Alex Sacerdote,Whale Rock,2011-25 rank 0.96,1 document; 4 criteria coded (3 easy),"Growth that is not fading, rising operating margin, earnings growth against the multiple",Where a technology is on its adoption curve
+B,David Einhorn,Greenlight,"5-year leaderboard #39, 18.5% a year","3 documents; 9 criteria coded (2 easy, 7 partly)","Cyclical industries at below-normal margins, cash yield over the cycle, capacity not growing",Single-stock theses
+B,Stan Druckenmiller,Duquesne,"5-year leaderboard #12, 23.9% a year",8 documents; 6 criteria coded (5 easy); macro card,"Macro rules (policy, oil, dollar, rates) and resilience screens",His stock picks and sizing
+B,Todd Kantor,Encompass,"5-year leaderboard #34, 18.9% a year",2 interviews,"Energy producers: valuation, dividend cover, leverage",Years of top-tier drilling inventory needs industry data
+B,Bob Robotti,Robotti & Co,2011-25 rank 0.78,1 document,"Price below replacement cost of hard assets, owner-operators",Cycle judgement
+B,Fred Martin,Disciplined Growth Investors,2011-25 rank 0.74,1 document,Expected return of 12% (mid caps) or 15% (small caps) a year over 7 years,Needs a 7-year forecast; a growth-plus-valuation stand-in is needed
+B?,Brad Gerstner,Altimeter,2011-25 rank 0.93,"27 documents, mostly market commentary",Software: growth and free cash flow after stock pay,"Most of what he says is views, not criteria"
+B?,Chris Bloomstran,Semper Augustus,2011-25 rank 0.83,6 documents,Valuation and accounting adjustments,Only one of his notes read so far
+B?,Li Lu,Himalaya,2011-25 rank 0.61,2 documents,Balance-sheet value against price (2006 examples),Says the large returns come from a few deep insights
+C,Robert Vinall,,,,,"trust in management, a moat that is widening"
+C,Thomas Russo,,,,,"capacity to reinvest and to suffer, family control"
+C,Christopher Begg,,,,,"widening moat, reading the 'clouds' over a stock"
+C,Matthew McLennan,,,,,"scarce incumbents, with gold and cash"
+C,Soo Chuen Tan,,,,,philosophy and long horizon
+C,John Armitage,,,,,"modelling key drivers, judgement on management"
+C,Ricky Sandler,,,,,process and market structure
+C,Jonathan Ruffer,,,,,multi-asset macro judgement
+C,Ken Tropin,,,,,macro and futures
+C,Jos Shaver,,,,,an energy-transition theme without selection rules
+C,John Paulson,,,,,event bets that need deal data
+C,Guy Spier,,,,,"checklists, mostly temperament"
+C,Tom Gayner,,,,,"four filters, mostly judgement"
+C,Dan Sundheim,,,,,sizing 'as an art'
+C,Gavin Baker,,,,,technology themes
+C,David Rosen,,,,,single-stock pitches

@@ -132,3 +132,12 @@ restates it as five desks and a referee, so that every step has an owner, an out
    WRDS into LLMs and other Generative A.I. tools is prohibited", `tools/wrdsq/README.md`), which is about AI tools,
    not publishing. Until the user confirms that term does not apply, WRDS rows stay on WRDS and jobs return results;
    the tracker's company figures come from LSEG, so little is lost.
+
+## 12. User feedback of 2026-11-20 (second): source, roster size, screenability
+- Data: WRDS or LSEG, LSEG preferred -> LSEG first for company data (history from 2010 and live); managers'
+  portfolios from SEC 13F files or WRDS; WRDS as cross-check.
+- Roster: more investors may be added to reach 30, but each must allow a screen on consistently calculable measures.
+  First read (`hf_leaderboard/ROSTER_SCREENABILITY_2026-11-20.md`): 21 pass record and screenability (7 mostly
+  calculable, 14 partly, 3 of them borderline), 16 are judgement-led and set aside, 9 places open.
+- New roster gate for v0.4: screenability, measured in the pilot as the share of an investor's stated criteria that a
+  script can compute (proposal: at least half, and a calculable core that selects stocks on its own).

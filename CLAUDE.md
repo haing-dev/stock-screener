@@ -402,6 +402,13 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   checks (non-US, control-investor pods, source holdings left out). (b) LICENCE: user states WRDS and LSEG data may
   be used freely if not published; site with password; non-commercial -> LSEG figures may reach agents and the
   password site. WRDS AI-tools term still open (asked the user); until answered WRDS rows stay on WRDS.
+  SECOND FEEDBACK 2026-11-20: WRDS or LSEG both fine, LSEG PREFERRED (faster) -> LSEG first for company data;
+  managers' portfolios from SEC 13F / WRDS (not on LSEG). Roster may grow to 30 BUT each investor must allow a screen
+  on consistently calculable measures (qualitative investors are out). First read:
+  hf_leaderboard/ROSTER_SCREENABILITY_2026-11-20.md (+csv): 21 pass record + screenability (A: Greenblatt, T. Smith,
+  Kantesaria, Hohn, Greenberg, Zlatev, Pilecki; B: Nygren/Fitch, Stahl, Dorsey, C. Davis, Shaposhnik, Sacerdote,
+  Einhorn, Druckenmiller, Kantor, Robotti, F. Martin; borderline Gerstner, Bloomstran, Li Lu); 16 judgement-led set
+  aside (Vinall, Russo, Begg, McLennan, Ruffer, Tropin, Shaver, Paulson ...); 9 places open. Nothing built or run.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->
