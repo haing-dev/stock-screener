@@ -438,6 +438,11 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   2021-2025, HedgeFollow method (verified: weights = PREVIOUS quarter-end 13F; 46/54 quarters match the site).
   docs/research/equity/hf_leaderboard/ (LEADERBOARD_2026-11-19.md, top50 CSV, Q3 2026 activity, reports); job eq_hf
   (third seal-exempt job; HF_LEADERBOARD_REGISTRATION.md; data sets eq_hf_* on WRDS). 42 of 50 have no transcript.
+  FOUNDATION RANKING 2026-11-20 (hf_leaderboard/FOUNDATION_RANKING_2026-11-20.md + csv; project doc
+  claude/hf_foundation_ranking_2026-11-20.md): user added 19 interviews (Processed\General Transcripts 2) + 18 articles
+  (.md in raw General Transcripts, not processed). Return rank gated by process material: CORE Zlatev (Analog Century),
+  Druckenmiller, Kantor (Encompass); WITH LIMITS Ruffer, Tropin/Graham, Shaver (Electron), Einhorn, Greenberg, Paulson;
+  41 parked (29 with nothing, incl. #1 Gendell, #2 Harnisch). Sosin/CAS: 4 interviews but not in the WRDS universe.
 - ANNEX docs/research/equity/EQUITY_POD_SHOP_DESIGN_v0.2.md (project doc claude/equity_pod_shop_design_v0.2_2026-11-15.md;
   replaces v0.1 of 2026-11-14, which was long-only): the macro pod-shop method applied to stocks as a LONG/SHORT book,
   market- and sector-neutral, slow (monthly signals, holdings of months to years, no intraday data; user 2026-11-15: no
