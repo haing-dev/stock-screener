@@ -1,0 +1,53 @@
+id,group,item,lseg_field,cited_or_guess,alternates (field:c cited / :g guess)
+R01,income,Revenue,TR.F.TotRevenue,cited,
+R02,income,Cost of revenue,TR.F.CostOfOpRev,cited,
+R03,income,Gross profit,TR.F.GrossProfIndPropTot,guess,TR.F.GrossTotRevBizActiv:c
+R04,income,"Selling, general and administrative expense",TR.F.SGATot,cited,TR.F.SGA:c
+R05,income,Research and development expense,TR.F.RnD,cited,
+R06,income,Depreciation and amortisation,TR.F.DeprAmort,cited,TR.F.DeprDeplAmortCF:c
+R07,income,Operating income,TR.F.OpProfBefNonRecurIncExpn,cited,TR.F.OpExpnTot:c
+R08,income,EBIT,TR.F.EBIT,cited,
+R09,income,EBITDA,TR.F.EBITDA,cited,
+R10,income,Interest expense,TR.F.IntrExpn,cited,TR.F.IntrPaidCash:c
+R11,income,Income before tax,TR.F.IncBefTax,cited,
+R12,income,Income tax,TR.F.IncTax,guess,TR.F.IncTaxTot:g;TR.F.IncTaxPaidReimbIndirCF:c
+R13,income,Net income,TR.F.NetIncAfterTax,cited,TR.F.IncAvailToComShr:c;TR.F.ProfLossStartingLineCF:c;TR.F.NormNetIncContOps:c
+R14,income,Diluted earnings per share,TR.F.EPSDilInclExordItemsComTot,cited,TR.F.EPSBasicInclExordItemsComTot:c
+R15,income,Diluted weighted shares,TR.F.ShrUsedToCalcDilEPSTot,cited,TR.F.ShrUsedToCalcBasicEPSTot:c
+R16,income,Dividends per share,TR.F.DPSComGrossIssue,guess,TR.F.DivPerShr:g
+R17,balance,Cash and equivalents,TR.F.CashCashEquivTot,cited,
+R18,balance,Cash and short-term investments,TR.F.CashSTInvstTot,cited,
+R19,balance,Trade receivables,TR.F.AcctNotesRcvblTradeNet,cited,TR.F.LoansRcvblNetST:c
+R20,balance,Inventory,TR.F.InvntTot,cited,
+R21,balance,Current assets,TR.F.TotCurrAssets,cited,
+R22,balance,"Net property, plant and equipment",TR.F.PPENetTot,cited,
+R23,balance,Goodwill,TR.F.GoodwNet,cited,
+R24,balance,Intangibles incl. goodwill,TR.F.IntangTotNet,cited,TR.F.IntangExclGoodwNetTot:c
+R25,balance,Total assets,TR.F.TotAssets,cited,
+R26,balance,Trade payables,TR.F.TradeAcctPbleAccrualsST,cited,TR.F.AcctPble:c
+R27,balance,Current liabilities,TR.F.TotCurrLiab,cited,
+R28,balance,Short-term debt,TR.F.STDebtCurrPortOfLTDebt,guess,TR.F.STDebtFinlSectTot:c;TR.F.DebtSTTot:g
+R29,balance,Long-term debt,TR.F.DebtLTTot,cited,
+R30,balance,Total debt,TR.F.DebtTot,cited,
+R31,balance,Net debt,TR.F.NetDebt,cited,
+R32,balance,Total liabilities,TR.F.TotLiab,cited,
+R33,balance,Common equity,TR.F.ComEqTot,cited,
+R34,balance,Total equity incl. minorities,TR.F.TotShHoldEq,cited,
+R35,balance,Minority interest,TR.F.MinIntrNonCtrlIntrTot,cited,
+R36,balance,Preferred equity,TR.F.PrefShHoldEq,cited,
+R37,balance,Retained earnings,TR.F.RetainedEarnTot,cited,
+R38,balance,Deferred revenue,TR.F.DefRevST,guess,TR.F.DefRevLT:c
+R39,balance,Common shares outstanding,TR.F.ComShrOutsTot,cited,
+R40,balance,Lease obligations,TR.F.CapLeaseObligLT,cited,TR.F.CapLeaseCurrPort:c
+R41,cashflow,Cash flow from operations,TR.F.NetCashFlowOp,cited,
+R42,cashflow,Capital expenditure,TR.F.CAPEXNetCF,cited,TR.F.PPEPurchCF:c;TR.F.CAPEXTot:g
+R43,cashflow,Free cash flow (vendor),TR.F.NonGAAPFreeCashFlow,cited,TR.F.FOCF:g;TR.F.FreeCashFlow:g
+R44,cashflow,Share-based compensation,TR.F.ShrBasedPaymtCF,cited,
+R45,cashflow,Dividends paid,TR.F.DivComCashPaid,cited,TR.F.DivPaidCashTotCF:c
+R46,cashflow,Share repurchases,TR.F.StockComRepurchRetiredCF,cited,
+R47,cashflow,Share issuance,TR.F.StockComIssuedSoldCF,cited,TR.F.StockComNetCF:c
+R48,cashflow,Acquisitions,TR.F.AcqOfBizCF,cited,
+R49,cashflow,Net debt issuance,TR.F.DebtIssuedLTSTCF,cited,
+R50,cashflow,Change in working capital,TR.F.WkgCapCF,cited,
+R51,other,Employees,TR.F.EmpFTEEquivPrdEnd,guess,TR.F.NumOfEmp:g;TR.CompanyNumEmploy:g
+R52,other,Enterprise value (vendor),TR.F.EV,guess,TR.EV:g

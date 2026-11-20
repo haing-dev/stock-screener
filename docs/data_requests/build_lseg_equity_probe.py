@@ -21,6 +21,8 @@ from openpyxl.utils import get_column_letter as L
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "lseg_equity_probe_2026-11-17")
 NAME = "LSEG_equity_probe_v1.xlsx"
 END = "2026-11-17"
+TITLE = "LSEG Workspace equity probe v1 (stocks)"   # probe v2 imports this module and replaces TITLE, NAME, OUT, TEST, P
+READ_DATE = "2026-11-17"
 ROW0 = 6
 ROWN = {"Universe": 150000, "Limits": 150000, "Holders": 60000}   # last row counted on the Check sheet (default 15000)
 
@@ -385,7 +387,7 @@ def main():
         rows.append(dict(p, pid=pid, cell="'%s'!%s%d" % (sh, L(c), ROW0),
                          rng="'%s'!%s%d:%s%d" % (sh, L(c), ROW0, L(c + w - 2), rn), col=L(c), width=w))
     # Check sheet (live status, as in the macro probes)
-    ck["A1"] = "LSEG Workspace equity probe v1 (stocks)"
+    ck["A1"] = TITLE
     ck["A1"].font = Font(bold=True, size=14)
     ck["A2"] = ("1. Open in Excel with Workspace signed in (Workspace and Datastream tabs visible).   2. Wait until no cell on any sheet says "
                 "Retrieving and the number in B4 has not changed for two minutes.   3. Press Ctrl+S (keep the file name). Errors in some "
@@ -417,7 +419,7 @@ def main():
     for col, wd in zip("ABCDEFGHIJK", (8, 14, 11, 7, 7, 70, 12, 18, 8, 12, 90)):
         ix.column_dimensions[col].width = wd
     # Sources
-    for j, h in enumerate(("id", "url or file", "what it shows (read 2026-11-17)"), 1):
+    for j, h in enumerate(("id", "url or file", "what it shows (read %s)" % READ_DATE), 1):
         so.cell(1, j, h).font = B
     for k, (sid, url, note) in enumerate(SOURCES, 2):
         so.cell(k, 1, sid)
@@ -428,7 +430,7 @@ def main():
     so.column_dimensions["B"].width = 80
     so.column_dimensions["C"].width = 120
     # TestSet
-    ts["A1"] = "Test companies (formulas on the data sheets refer to B4:B15). Dead companies are given by ISIN."
+    ts["A1"] = "Test companies (formulas on the data sheets refer to B4:B%d). Dead companies are given by ISIN." % (3 + len(TEST))
     for j, h in enumerate(("company", "Workspace instrument", "ISIN", "delisted RIC (guess)", "kind"), 1):
         ts.cell(3, j, h).font = B
     for k, t in enumerate(TEST, 4):

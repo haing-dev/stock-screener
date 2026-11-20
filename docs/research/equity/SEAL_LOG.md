@@ -34,3 +34,11 @@ Lock id: 66a9d9c66e431ec6e52ef263197c1e02d316513f0d274b60bd4b37847f11dba0 from A
 | 2026-11-18 | `eq_scorecard_v2` CANCELLED BEFORE IT RAN at the user's request (the queued file was replaced by a metadata-only job `eq_scorecard_v2_cancelled`); no second opening. It was: (Addendum A, registered before the run; code check RUN) | 49adb08739090e36... (input c77e38e77851...; pull key 45671094f38c9a10; lock 66a9d9c6...) | the stored `eq_sc_*` data sets | Section 8 plus Addendum A lists only |
 | 2026-11-19 | `eq_hf_pull_v1` (queued; hedge fund leaderboard, user request 2026-11-18, `HF_LEADERBOARD_REGISTRATION.md`; third seal-exempt job, entry `hf_leaderboard` in `seal_exempt.json`) then `eq_hf_v1` (report) | 04b59fd5b396... (lock cc6c2920...) | 13F first versions 2020-12..2026-03, CRSP msf_v2 2020-10..2025-12, s34names, stocknames_v2 (SQL aggregates per filer-quarter, stored on WRDS as `eq_hf_*`) | Per-filer statistics (top 250 of US + UK/Europe >= $1bn) and quarterly top-20 returns of 12 named validation funds |
 | 2026-11-19 | `eq_hf_pull_v1` ran 3,153 s (ALL PULLS COMPLETE); `eq_hf_v1` report ran 08:27 PC (after a hung WRDS login, cleared by the watchdog); `eq_hf_v2` queued (report only, ranked on start-of-quarter weights = the website's method) | 04b59fd5... then 0f78ced5... | the stored `eq_hf_*` data sets | As registered |
+
+## Plan v0.4 (2026-11-20): what the seal means from here
+Registered in `V04_REGISTRATION.md` R3 (user decision of 20 Nov: tests on 2010-2025). US 2010-01 to 2025-12 is the
+main test period, not a holdout. Returns of portfolios, signals and factors in those months are computed only by
+the test desk's scripts in runs written to the trial log before they start; levels of company measures are open.
+Still sealed until the freeze: every market outside the US 2010-2025, and US months from 2026-01. The WRDS reader
+(`eq_reader.py`) and its lock are unchanged until the engine exists; the three seal-exempt jobs stay as logged; the
+conviction holdings job (R2) will be the fourth, with its code hash entered before it runs.

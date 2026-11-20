@@ -409,6 +409,24 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   Kantesaria, Hohn, Greenberg, Zlatev, Pilecki; B: Nygren/Fitch, Stahl, Dorsey, C. Davis, Shaposhnik, Sacerdote,
   Einhorn, Druckenmiller, Kantor, Robotti, F. Martin; borderline Gerstner, Bloomstran, Li Lu); 16 judgement-led set
   aside (Vinall, Russo, Begg, McLennan, Ruffer, Tropin, Shaver, Paulson ...); 9 places open. Nothing built or run.
+- PLAN v0.4 + REGISTRATION (2026-11-20, user's go for steps 1-2; nothing built or run; no independent check yet):
+  docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.4.md (project doc claude/equity_pod_shop_plan_v0.4_2026-11-20.md) +
+  V04_REGISTRATION.md (R1 roster rule v2: record rank_share >= 0.60 on 2011-25 or leaderboard top 50, material,
+  screenability measured >= half of criteria computable; 21 on the roster, 9 open, control 10; R2 conviction purchase
+  = new position / addition into the five largest weights OR >= 1% of the portfolio, both averaged; R3 main test
+  period US 2010-01..2025-12, eras 2010-14 / 2015-19 / 2020-25, universe 1,500 largest, side check 2001-09 on WRDS,
+  outside-US and 2026 months sealed until the freeze; R4 portfolio rule; R5 five tests (M1 era rule, M6 placebo of
+  1,000) + same-period checks A outside US, B control pods, C source holdings left out; best class on history =
+  "Passed on history", Core only by the live rule; LONG-ONLY against reference book + sector-matched universe is
+  decisive, long/short reported; R6 8 slots; R7 reference book v1 from pre-2011 sources). SEAL_LOG has the v0.4 entry.
+  Build order = plan section 10 (9 steps, user paces). Data: LSEG first (PC), WRDS 13F + cross-check.
+  FIELD DICTIONARY v0.1 (draft): docs/research/equity/FIELD_DICTIONARY_v0.1.md + field_dictionary_v0.1.csv (67
+  measures) + field_dictionary_raw_v0.1.csv (52 account items with TR.F names; source of names: kaxanuk loader map).
+  LSEG TEST FILE 2: docs/data_requests/build_lseg_equity_probe2.py (imports the v1 builder) ->
+  lseg_equity_probe2_2026-11-20/LSEG_equity_probe_v2.xlsx (184 formulas: field names, forms, universe incl. dead
+  2010-25, estimates, prices, short/owners, sizes); PC copy Documents\WRDS results\lseg\equity_probe2_2026-11-20;
+  reader job tools/bbgq/jobs/lseg_eq_probe_v2.py (NOT queued: put it in local\jobs AFTER the user has refreshed and
+  saved). NEXT: read it back -> dictionary v1.0 + LSEG file plan (step 3); WRDS conviction job (step 4).
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->

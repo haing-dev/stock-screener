@@ -1,0 +1,68 @@
+id,group,measure,definition,inputs,used by
+V01,Valuation,Earnings yield (EBIT / EV),EBIT of the last four quarters over enterprise value (market value + total debt + minorities + preferred - cash and short-term investments),"R08,R30,R35,R36,R18,market value","Greenblatt, reference book, Einhorn"
+V02,Valuation,"Earnings to price, trailing",Net income of the last four quarters over market value,"R13,market value","Davis, Pilecki"
+V03,Valuation,Forward earnings to price,Consensus EPS for the next 12 months over price,"EPS mean NTM, price","Zlatev, Sacerdote, Nygren"
+V04,Valuation,Free-cash-flow yield,(Cash flow from operations - capital expenditure) of the last four quarters over market value,"R41,R42,market value","Greenberg, Kantesaria, Shaposhnik"
+V05,Valuation,Free cash flow after share pay / EV,(Operations cash flow - capex - share-based pay) over enterprise value,"R41,R42,R44,EV",Gerstner
+V06,Valuation,Book to price,Common equity over market value,"R33,market value","reference book, Li Lu"
+V07,Valuation,Tangible book to price,(Common equity - intangibles incl. goodwill) over market value,"R33,R24,market value","Pilecki, Robotti"
+V08,Valuation,EV / sales,Enterprise value over revenue of the last four quarters,"EV,R01","Sacerdote, Gerstner"
+V09,Valuation,EV / EBITDA,Enterprise value over EBITDA of the last four quarters,"EV,R09","Kantor, Einhorn"
+V10,Valuation,Dividend yield,Dividends per share of the last 12 months over price,"R16 or R45, price","Nygren, Kantor"
+V11,Valuation,Shareholder yield,(Dividends paid + repurchases - issuance) over market value,"R45,R46,R47,market value","Nygren, Greenberg"
+V12,Valuation,Earnings yield against own history,Percentile of V01 in the stock's own last 60 months,V01 history,"valuation panel, triage"
+V13,Valuation,Free-cash-flow yield minus 10-year Treasury yield,V04 minus the 10-year Treasury yield on the day,"V04, Treasury yield",Kantesaria
+V14,Valuation,Price to earnings against growth,"Forward P/E over expected EPS growth (consensus long-term growth, else 3-year forward)","V03, growth mean","Davis, Sacerdote"
+Q01,Profitability,Return on invested capital,"EBIT x (1 - tax rate) over (total equity + total debt - cash and short-term investments), average of the year","R08,R12,R11,R34,R30,R18","Smith, Hohn, Dorsey, Davis"
+Q02,Profitability,Return on capital (Greenblatt),EBIT over (current assets - cash - current liabilities + short-term debt + net fixed assets),"R08,R21,R18,R27,R28,R22",Greenblatt
+Q03,Profitability,Return on equity,Net income over average common equity,"R13,R33","reference book, Pilecki"
+Q04,Profitability,Gross margin,Gross profit over revenue,"R03 or R01-R02,R01",Smith
+Q05,Profitability,Operating margin,Operating income over revenue,"R07,R01","Smith, Kantesaria, Sacerdote"
+Q06,Profitability,Free-cash-flow margin,Free cash flow over revenue,"R41,R42,R01","Shaposhnik, Stahl"
+Q07,Profitability,Cash conversion,Cash flow from operations over net income (3-year sums),"R41,R13",Smith
+Q08,Profitability,Accruals,(Net income - cash flow from operations) over average total assets,"R13,R41,R25",reference book
+Q09,Profitability,Gross profit to assets (hindsight-flagged),Gross profit over total assets,"R03,R25",flagged pod only
+S01,Stability,Loss years in the last 10,Number of fiscal years with net income below zero,R13 history,Kantesaria
+S02,Stability,Operating-margin stability,Standard deviation of the operating margin over the last 5 and 10 fiscal years,Q05 history,"Kantesaria, Hohn, Shaposhnik"
+S03,Stability,Revenue predictability,Standard deviation of yearly revenue growth over 10 years,R01 history,Shaposhnik
+S04,Stability,Years of high return on capital,Number of the last 10 years with Q01 above 15%,Q01 history,"Dorsey, Hohn"
+S05,Stability,Margin against the cycle,Operating margin minus its own 10-year median,Q05 history,Einhorn
+G01,Growth,"Revenue growth 1, 3, 5 years",Compound growth of revenue,R01 history,"Sacerdote, Smith"
+G02,Growth,"EPS growth 3, 5 years",Compound growth of diluted EPS,R14 history,"Davis, Pilecki"
+G03,Growth,Free cash flow per share growth 5 years,Compound growth of free cash flow per diluted share,"R41,R42,R15",Shaposhnik
+G04,Growth,Value per share growth,Growth of book value per share plus dividends per share,"R33,R39,R16",Nygren
+G05,Growth,Growth fade,Revenue growth of the last year minus the 3-year rate,G01,Sacerdote
+G06,Growth,Operating-margin change 3 years,Operating margin minus its level three years before,Q05 history,Sacerdote
+G07,Growth,Incremental return on capital,"Change in EBIT over change in invested capital, 3 years","R08,R34,R30,R18",Dorsey
+G08,Growth,Expected return (growth plus yield),"Forward earnings yield compounded at expected growth over 7 years, as a yearly rate (stand-in)","V03, G02, growth mean",Fred Martin
+C01,Capital use,Capital expenditure to revenue,Capex over revenue,"R42,R01","Kantesaria, Stahl"
+C02,Capital use,Capital expenditure to depreciation,Capex over depreciation and amortisation,"R42,R06","Einhorn, Robotti"
+C03,Capital use,Research spending to revenue,R&D over revenue,"R05,R01","Zlatev, Sacerdote"
+C04,Capital use,Share count change 3 years,Diluted shares against three years before,R15 history,"Greenberg, Gerstner"
+C05,Capital use,Share pay to revenue,Share-based compensation over revenue,"R44,R01",Gerstner
+C06,Capital use,Acquisition spending,"Acquisitions over cash flow from operations, 3-year sums","R48,R41",Smith
+B01,Balance sheet,Net debt to EBITDA,Net debt over EBITDA of the last four quarters,"R31 or R30-R18,R09","Kantor, Zlatev, Davis"
+B02,Balance sheet,Interest cover,EBIT over interest expense,"R08,R10","Smith, Kantor"
+B03,Balance sheet,Debt to equity,Total debt over total equity,"R30,R34",Davis
+B04,Balance sheet,Net cash to market value,(Cash and short-term investments - total debt) over market value,"R18,R30,market value","Li Lu, Zlatev"
+B05,Balance sheet,Piotroski score,Nine yes/no accounting signals,"R13,R41,R25,R29,R21,R27,R39,R03,R01",reference book
+B06,Balance sheet,Dividend cover,Free cash flow over dividends paid,"R41,R42,R45",Kantor
+E01,Expectations,Consensus revision 3 months,"Change in the FY1 EPS mean over three months, scaled by price","EPS mean FY1 history, price","reference book, Zlatev"
+E02,Expectations,Revision breadth,"(Estimates raised - lowered) over number of estimates, last month",up/down counts,Zlatev
+E03,Expectations,Earnings surprise,"Actual EPS minus the last consensus before the report, over price","actual EPS, EPS mean, report date","analyst layer, Zlatev"
+E04,Expectations,Forward EPS growth,FY2 EPS mean over FY1 EPS mean - 1,"EPS mean FY1, FY2","Sacerdote, Davis"
+E05,Expectations,Analyst coverage,Number of estimates in the FY1 mean,number of estimates,Stahl (low coverage)
+P01,Price,Momentum 12-1,Total return of months t-12 to t-2,total return,reference book
+P02,Price,Momentum 6-1,Total return of months t-6 to t-2,total return,Pilecki (price confirms)
+P03,Price,Distance from 12-month high,Close over the highest close of the last 12 months - 1,price,"triage, Einhorn"
+P04,Price,Volatility 12 months,"Standard deviation of daily returns, last 250 days",daily total return,risk model
+P05,Price,Market beta,"Slope on the US market, 36 months","total return, market return",risk model
+L01,Size and liquidity,Market value,Shares outstanding times price,"price, shares",universe
+L02,Size and liquidity,Median daily dollar volume,"Median of price times volume, last 63 days","price, volume","universe, costs"
+L03,Size and liquidity,Free float,Free-float share of shares outstanding,free float,universe
+O01,Ownership,Short interest to float,Shares sold short over free-float shares,"short interest, free float","exclusions, shortable set"
+O02,Ownership,Insider ownership,Share of the company held by officers and directors,insider holdings,"Stahl, Robotti"
+O03,Ownership,Net insider buying 6 months,"Shares bought less sold by insiders in open-market trades, over shares outstanding",insider transactions,triage cell
+O04,Ownership,Roster owners,"Number of roster investors holding the stock at the last 13F, and how many as a conviction holding",WRDS / SEC 13F,"owner panel, follow pod"
+O05,Ownership,Index-fund ownership,Share held by the three largest index managers,holders,Stahl
+X01,Classification,Sector and industry,"GICS sector, industry group, industry",GICS codes,ranking inside the sector
