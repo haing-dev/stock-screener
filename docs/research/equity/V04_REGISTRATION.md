@@ -154,3 +154,22 @@ and DEADUS12 (W-Z) from universe file 2 (input sha256 a18f916a...; 47,700 CUSIPs
    on WRDS; counts only come back.
 4. Control group overlap: David Einhorn and Joseph Shaposhnik are in the Stage 0 control group AND on the roster. They
    stay on the roster; the control group is 8 until two replacements are drawn by the Stage 0 rule (open).
+
+## Addendum A5 (2026-11-21): size selection, monthly files, conviction job v2
+1. Size file (LSEG_size_v1, year-end company market value 2009-2025; no block failed): TR.CompanyMarketCap is a
+   COMPANY figure, repeated on every line of a company (share classes, preferred and depositary lines, old debt
+   lines). Selection: drop lines whose name marks preferred, depositary, debt, fund, unit, warrant or right; group the
+   rest by company name; a company is selected when it is among the 2,500 largest companies at any year-end 2009-2025
+   (the 1,500th company is $0.9bn at 2009 and $3.3bn at 2025; the 2,500 cut leaves room for moves within a year). All
+   its remaining lines go to the monthly files: 5,065 companies, 5,537 lines. 1,312 candidates without an ISIN are not
+   in the size file (mostly old dead lines); the WRDS check found US coverage of 99.3-100% without them.
+2. Monthly files (3 workbooks): close, security shares, company market value, monthly volume, one-month total return,
+   2009-12 .. 2026-10. Security market value = close x security shares; when a company has several common lines the
+   R3 rule ranks each line on its own (as CRSP does). The $2m volume rule of R3 uses the average daily dollar value of
+   the last three months from monthly volume / trading days (a stand-in for the median, recorded here before any use);
+   a check block in part 1 tests whether monthly TR.Volume is the month's total.
+3. `eq_conv_v1` had a bug (quarter filter `mod(yyyymm, 3) = 0` kept only years divisible by 3: 24 quarters). v1's
+   counts are void. `eq_conv_v2` (code ad0dde91...): filter fixed; 13F ids from v1's name search added: Greenblatt
+   (Gotham 10969, 12775), Pilecki (Gator 8799), Nygren / Fitch (Harris Associates 43485, the whole firm), Stahl
+   (Horizon Kinetics / Kinetics 44850, 49373), Davis (Davis Selected 78320), Van Den Berg (Century Management 15095).
+   No 13F found: Shaposhnik, Carlisle; Elfenbein's hits (CrossingBridge, AdvisorShares) are other people's firms.

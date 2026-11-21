@@ -469,6 +469,14 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   20 investors with 13F ids; name search for Greenblatt (Gotham), Pilecki (Gator), Nygren/Fitch (Harris), Stahl (Horizon
   Kinetics), Davis (Davis Selected), Shaposhnik, Carlisle, Van Den Berg, Elfenbein -> ids into v2. Control overlap:
   Einhorn + Shaposhnik are in control AND roster (control = 8 until 2 replacements are drawn).
+  2026-11-21 (later): SIZE FILE READ (A5): TR.CompanyMarketCap is company-level (repeats on share classes / preferred /
+  depositary lines) -> drop non-common names, group by TR.CommonName, keep companies in the top 2,500 at any year-end ->
+  5,065 companies / 5,537 lines (G:\...\LSEG\02_size\selected_lines_v1.csv, PC only). MONTHLY FILES (stage A) given:
+  docs/data_requests/build_lseg_monthly.py SELECTED.csv OUT -> G:\...\LSEG\03_monthly\LSEG_monthly_part1-3_v1.xlsx
+  (close, shares, company value, volume, 1-month total return 2009-12..2026-10; 250 lines per block; part 1 has a
+  volume check block). The probe reader runs out of memory on big sheets -> write a streaming reader before reading
+  them. eq_conv_v1 BUG (mod(yyyymm,3)) -> counts void; eq_conv_v2 queued with ids for Greenblatt, Pilecki, Harris,
+  Stahl, Davis, Van Den Berg. NEXT: read eq_conv_v2; monthly files -> loader + lock; stage B account/estimate files.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->

@@ -1,0 +1,54 @@
+﻿=== WRDSQ REPORT v1.0.7 | job eq_conv_v1 | 2026-11-21 02:04 | metadata and results only ===
+Loading library list...
+Done
+
+## 1. python
+investors in input: 29 (with 13F ids: 20); 13F ids: 21
+name search 'GOTHAM ASSET' (Joel Greenblatt): 10969 GOTHAM ASSET MANAGEMENT LP; 12775 GOTHAM ASSET MANAGEMENT, LLC
+name search 'GATOR CAPITAL' (Derek Pilecki): 8799 GATOR CAPITAL MANAGEMENT, LLC
+name search 'HARRIS ASSOCIATES' (Bill Nygren and Alex Fitch): 43485 HARRIS ASSOCIATES L.P.
+name search 'HORIZON KINETICS' (Murray Stahl): 44850 HORIZON KINETICS
+name search 'KINETICS ASSET' (Murray Stahl): 49373 KINETICS ASSET MANAGEMENT, INC; 44850 KINETICS ASSET MGMT, INC.
+name search 'DAVIS SELECTED' (Chris Davis): 78320 DAVIS SELECTED ADVISERS, L.P.
+name search 'SHAPOSHNIK' (Joseph Shaposhnik): none
+name search 'TCW INVESTMENT' (Joseph Shaposhnik): none
+name search 'CENTURY MANAGEMENT' (Arnold Van Den Berg): 15095 CENTURY MANAGEMENT; 7142 ANALOG CENTURY MANAGEMENT LP
+name search 'CARBON BEACH' (Tobias Carlisle): none
+name search 'ACQUIRERS' (Tobias Carlisle): none
+name search 'CROSSINGBRIDGE' (Eddy Elfenbein): 16268 CROSSINGBRIDGE ADVISORS LLC
+name search 'ADVISORSHARES' (Eddy Elfenbein): 23232 ADVISORSHARES INVESTMENTS, LLC
+13F rows 37297; share factor column: mthcumfacshr
+panel saved on WRDS: eq_conv_panel (12431 rows); quarters 24 (201003 .. 202512)
+investor | 13F ids | quarters filed | median holdings | median top-5 weight % | conviction purchases a, b, either | new positions | additions
+Joel Greenblatt | - | 0
+Terry Smith | 13408 | 20 | 31 | 38 | 13, 59, 59 | 66 | 68
+Dev Kantesaria | 14460 | 13 | 9 | 91 | 10, 18, 18 | 8 | 15
+Chris Hohn | 11194 | 24 | 9 | 80 | 27, 48, 48 | 38 | 23
+Glenn Greenberg | 16080 | 24 | 17 | 66 | 35, 83, 83 | 87 | 44
+Val Zlatev | 7142 | 8 | 20 | 34 | 9, 51, 51 | 26 | 29
+Derek Pilecki | - | 0
+Bill Nygren and Alex Fitch | - | 0
+Murray Stahl | - | 0
+Pat Dorsey | 14201 | 13 | 9 | 69 | 24, 44, 44 | 23 | 21
+Chris Davis | - | 0
+Joseph Shaposhnik | - | 0
+Alex Sacerdote | 11405 | 24 | 32 | 39 | 43, 260, 260 | 276 | 102
+David Einhorn | 42315 | 24 | 28 | 57 | 31, 150, 150 | 173 | 73
+Stan Druckenmiller | 13021,23704 | 24 | 48 | 46 | 62, 308, 308 | 581 | 133
+Todd Kantor | 13431 | 20 | 34 | 37 | 59, 326, 327 | 344 | 115
+Bob Robotti | 10247 | 24 | 53 | 47 | 15, 52, 53 | 243 | 107
+Fred Martin | 23050 | 24 | 78 | 24 | 5, 47, 47 | 136 | 136
+Brad Gerstner | 13112 | 20 | 18 | 86 | 20, 64, 64 | 84 | 51
+Chris Bloomstran | 11757 | 24 | 28 | 56 | 14, 54, 54 | 48 | 50
+Li Lu | 14546 | 10 | 6 | 95 | 8, 13, 13 | 10 | 3
+Warren Buffett | 8350 | 24 | 42 | 70 | 6, 30, 30 | 109 | 46
+Henry Ellenbogen | 9442 | 9 | 49 | 32 | 13, 82, 84 | 116 | 61
+Jim Chanos | 12867 | 13 | 14 | 44 | 18, 52, 52 | 43 | 10
+John Lennon | 9090 | 9 | 43 | 53 | 11, 48, 48 | 97 | 27
+Peter Keefe | 5300 | 24 | 54 | 46 | 8, 50, 50 | 139 | 74
+Tobias Carlisle | - | 0
+Arnold Van Den Berg | - | 0
+Eddy Elfenbein | - | 0
+ALL DONE
+
+=== END (4 s) ===

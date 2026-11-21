@@ -1,0 +1,9 @@
+{
+ "name": "eq_conv_v2",
+ "steps": [
+  {
+   "do": "python",
+   "code": "import eq_conv\neq_conv.run(sql, save, out)"
+  }
+ ]
+}

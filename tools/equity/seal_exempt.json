@@ -98,7 +98,7 @@
   {
    "registered_job": "conviction_holdings",
    "module": "eq_conv",
-   "code_sha256": "d9320b04f29c6ff76dfd605d7aaa7d255b660d7678ec4697ebcfa732de05c65c",
+   "code_sha256": "ad0dde9132590e95f3d0bae47d8b6908f4d1ce09be01146ebfc0beb165fda51a",
    "registration": "docs/research/equity/V04_REGISTRATION.md R2 and addendum A4 (2026-11-21)",
    "output": "counts per investor; 13F manager names from name search; panel stays on WRDS (eq_conv_panel)",
    "names": [
@@ -108,6 +108,14 @@
      "functions": {
       "run": "sql, save, out"
      }
+    }
+   ],
+   "code_history": [
+    {
+     "code_sha256": "d9320b04f29c6ff76dfd605d7aaa7d255b660d7678ec4697ebcfa732de05c65c",
+     "version": "eq_conv-1.0.0",
+     "runs": "eq_conv_v1 (2026-11-21; quarter-filter bug)",
+     "replaced_by": "ad0dde9132590e95f3d0bae47d8b6908f4d1ce09be01146ebfc0beb165fda51a"
     }
    ]
   }
