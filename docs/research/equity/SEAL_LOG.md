@@ -48,3 +48,5 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
   Logged bug-fix rerun `eq_univ_check_v2` queued (code 8c28d777..., same data, counts and at most 70 names).
 - 2026-11-21: `eq_univ_check_v2` ran (rule not met: dead lists ended at S). `eq_univ_check_v3` queued: same code
   8c28d777..., input extended with DEADUS11-12 (V04_REGISTRATION.md A3).
+- 2026-11-21: `eq_univ_check_v3` ran: rule met (A4). Seal-exempt job 5 `conviction_holdings` registered and queued:
+  `eq_conv_v1` (code d9320b04...), 13F first versions + CRSP names / quarter-end prices 2009-12..2025-12, no returns.

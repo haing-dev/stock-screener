@@ -135,3 +135,22 @@ Canada, Unilever, ASML), as are depositary receipts. Check A (outside the US) is
 the freeze.
 `eq_univ_check_v3`: same code as v2 (sha256 8c28d777...), input extended with Datastream dead lists DEADUS11 (T-V)
 and DEADUS12 (W-Z) from universe file 2 (input sha256 a18f916a...; 47,700 CUSIPs, 86,680 names). Rule as in A2.
+
+## Addendum A4 (2026-11-21): universe check v3 result; universe rule; conviction holdings job
+1. `eq_univ_check_v3` (report `eq_univ_check_v3_report.txt`): US-incorporated 1,500 largest priced >= $5 found with
+   all three keys 99.3% to 100.0% in every year 2009-2025 (CUSIP alone 98.3-99.5%); US-incorporated companies leaving
+   CRSP with a peak in the 1,500: 97-100% found. Rule A2 MET. Still missing (10 in 2009, 0 in 2024): mostly renamed
+   or acquired companies (Yahoo, Dr Pepper Snapple, J.C. Penney, Legg Mason); added by hand to the candidate list if
+   their data come back by ISIN.
+2. Universe (user, 2026-11-21: "RBC, ASML" must not be in): candidates = Datastream equity lines with type EQ,
+   Datastream geography United States, primary line, alive at some point 2010-2025. This keeps US-run companies
+   incorporated abroad whose primary listing is in the US (Accenture, Medtronic, Spotify show geography United
+   States) and drops foreign companies with a US second listing or receipt (Royal Bank of Canada: Canada; ASML:
+   Netherlands; UBS: Switzerland; Shopify: Canada). 26,932 candidates (25,620 with ISIN). The monthly rule of R3
+   (1,500 largest, $5, $2m volume) selects from them; stage A0 (size file) narrows the set first.
+3. Conviction holdings job `eq_conv_v1` (module `tools/equity/wrds/eq_conv.py`, seal-exempt entry
+   `conviction_holdings`, code sha256 d9320b04...): R2 as registered, for 21 roster and 8 control investors with 13F
+   ids known (20 investors); name search printed for the other 9 (ids enter v2's input; not used in v1). Panel stays
+   on WRDS; counts only come back.
+4. Control group overlap: David Einhorn and Joseph Shaposhnik are in the Stage 0 control group AND on the roster. They
+   stay on the roster; the control group is 8 until two replacements are drawn by the Stage 0 rule (open).
