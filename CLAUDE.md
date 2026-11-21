@@ -427,6 +427,18 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   2010-25, estimates, prices, short/owners, sizes); PC copy Documents\WRDS results\lseg\equity_probe2_2026-11-20;
   reader job tools/bbgq/jobs/lseg_eq_probe_v2.py (NOT queued: put it in local\jobs AFTER the user has refreshed and
   saved). NEXT: read it back -> dictionary v1.0 + LSEG file plan (step 3); WRDS conviction job (step 4).
+  TEST FILE 2 READ BACK 2026-11-20 (docs/research/equity/LSEG_equity_probe2_2026-11-20.md; report
+  tools/bbgq/results/lseg_eq_probe_v2.txt; the user attached the saved file, read in the cloud with the reader):
+  48 of 52 account items have a working TR.F name as first reported (net income TR.F.NetIncAfterTax, capex
+  TR.F.CAPEXNetCF, FCF TR.F.FOCF); quarterly Orig vs Rsdt differ; S&P 500 x 8 fields x 18 years and ~100,000-row
+  monthly blocks work in one formula; dead companies work by ISIN; estimates, returns, past market cap, holders,
+  insiders work. MAIN RISK: the Workspace screen misses most dead companies (70 of 1,930 large 2010 companies marked
+  retired) -> universe must come from Datastream DEADUS1-7 + FAMER lists, checked against CRSP delisting counts.
+  Open: short-interest history (SHORTINT fails for code lists), no GICS on a past date, ownership totals, 4 items
+  to retest on a second company. Reader runs out of memory on 500-column Datastream grids (skip the Limits sheet or
+  cap columns). USER RULE 2026-11-20: every file for the user goes to a dedicated subfolder of
+  G:\My Drive\Screener project (folder connected), not Downloads / WRDS results.
+  NEXT: universe file (dead + research lists) + CRSP count check; dictionary v1.0; then the data files (step 3).
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->
