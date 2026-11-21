@@ -37,3 +37,19 @@ Consequences:
 | Datastream codes, GICS / SIC by year | Failed in this refresh (Datastream session error on single-series blocks) |
 
 Field dictionary: 51 of 52 raw items now have a working name (goodwill open).
+
+## WRDS check (2026-11-21; counts only; reports eq_univ_check_v1_report.txt, eq_univ_check_v2_report.txt)
+Rule (V04_REGISTRATION.md A1, A2): at least 99% of the 1,500 largest US-incorporated common shares priced at $5 or more
+found in every year 2010-2025. NOT met.
+- v1 (CUSIP key only): 83-87% found. Misleading: the key misses companies not incorporated in the US (no CUSIP in the
+  LSEG identifier) and companies whose CUSIP changed in 2026.
+- v2 (CUSIP, + current ticker, + normalised name), US-incorporated part of the 1,500: 94.7% (2010) rising to 99.8%
+  (2025); 99% is reached only from 2022. US-incorporated companies leaving CRSP: 80-90% found per year.
+- CAUSE of the rest: the Datastream dead lists are alphabetical and DEADUS1-10 end at the letter S. Every large
+  missing name starts with T to Y (Time Warner Cable, Tiffany, US Steel, Viacom, VMware, Walgreens, Xilinx, XTO,
+  Yahoo). Universe file 2 (`build_lseg_universe2.py`, LSEG_universe_v2.xlsx) pulls DEADUS11-16.
+- Not incorporated in the US (161-216 of the 1,500 each year): 74-89% found by any key. Missing ones are mostly
+  companies whose main listing is abroad (Canadian banks and railways, Unilever, UBS, Deutsche Bank, ASML, Ferrari).
+  Proposal for the universe rule: a company is in when LSEG shows its primary listing on a US exchange; foreign
+  companies with a second listing in New York are out. To be registered as an addendum before the data files.
+- CRSP names table has `hdrcusip`, `cusip9`, `ticker`, `usincflg`, `issuertype`, `siccd` (useful for later joins).

@@ -446,6 +446,16 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   (Twitter, Time Warner, Whole Foods) -> add SEC 13(f) securities lists (CUSIP->ISIN) + CRSP count-only check on WRDS.
   Retests: 51 of 52 raw items named (goodwill open); short interest history = TR.ShortInterest Frq=M from 2010;
   ownership = TR.CategoryOwnershipPct / Datastream NOSHST etc.
+  WRDS UNIVERSE CHECK 2026-11-21 (seal-exempt job 4 `universe_check`, module tools/equity/wrds/eq_univ.py 1.1.0; the
+  LSEG identifier input lives only on the PC runner lib, not in the repo; V04_REGISTRATION A1-A2; reports
+  docs/research/equity/eq_univ_check_v1/_v2_report.txt): rule 99% NOT met. US-incorporated top 1,500 (>= $5): 94.7%
+  (2010) -> 99.8% (2025) with CUSIP + ticker + name keys. CAUSE: Datastream dead lists are ALPHABETICAL and DEADUS1-10
+  stop at S -> universe file 2 (build_lseg_universe2.py, G:\My Drive\Screener project\LSEG\01_universe\
+  LSEG_universe_v2.xlsx, DEADUS11-16 + Datastream retests) given to the user. Non-US-incorporated: 74-89% found; the
+  missing are foreign primary listings (Canadian banks etc.) -> proposed rule "primary listing in the US" (addendum due).
+  AFTER the user saves file 2: add its rows to the input, rerun as eq_univ_check_v3 (input change only, log it).
+  Quiver vs Quantgress (2026-11-20): advised not to buy Quiver now; Quantgress free API covers Congress trades (history
+  start unknown; user to create a key as a GitHub secret if wanted). Quiver connector: account has no subscription.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->
