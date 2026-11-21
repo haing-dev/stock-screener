@@ -173,3 +173,15 @@ and DEADUS12 (W-Z) from universe file 2 (input sha256 a18f916a...; 47,700 CUSIPs
    (Gotham 10969, 12775), Pilecki (Gator 8799), Nygren / Fitch (Harris Associates 43485, the whole firm), Stahl
    (Horizon Kinetics / Kinetics 44850, 49373), Davis (Davis Selected 78320), Van Den Berg (Century Management 15095).
    No 13F found: Shaposhnik, Carlisle; Elfenbein's hits (CrossingBridge, AdvisorShares) are other people's firms.
+
+## Addendum A6 (2026-11-21): conviction holdings v2 result (counts only; report eq_conv_v2_report.txt)
+26 of 29 investors have 13F holdings; 65 quarters (2009-12..2025-12); panel `eq_conv_panel` on WRDS (132,980 rows).
+Conviction purchases (version a / b / either) range from 17 (Li Lu, 31 quarters) to about 760 (Kantor). Points for the
+holdings module (step 6), not changes to R2:
+- Greenblatt's 13F (Gotham) is a quantitative book of about 910 names with 6% in the top five: "conviction" in R2's
+  sense does not describe it; his pod is built from his stated rules, and his 13F is reported but not used for
+  revealed thresholds.
+- Firm-wide filings mix several managers (Harris Associates = Nygren / Fitch plus others; Davis Selected; Horizon
+  Kinetics 279 names): revealed thresholds from them are flagged "firm, not person".
+- Chanos files longs only (he is known for shorts): control use only, as registered.
+- No 13F: Shaposhnik, Carlisle, Elfenbein.

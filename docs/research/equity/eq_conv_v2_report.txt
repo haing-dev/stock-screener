@@ -1,0 +1,41 @@
+﻿=== WRDSQ REPORT v1.0.7 | job eq_conv_v2 | 2026-11-21 02:21 | metadata and results only ===
+Loading library list...
+Done
+
+## 1. python
+investors in input: 29 (with 13F ids: 26); 13F ids: 29
+13F rows 152908; share factor column: mthcumfacshr
+panel saved on WRDS: eq_conv_panel (132980 rows); quarters 65 (200912 .. 202512)
+investor | 13F ids | quarters filed | median holdings | median top-5 weight % | conviction purchases a, b, either | new positions | additions
+Joel Greenblatt | 10969,12775 | 61 | 910 | 6 | 100, 16, 104 | 11206 | 17086
+Terry Smith | 13408 | 53 | 31 | 39 | 17, 88, 88 | 73 | 136
+Dev Kantesaria | 14460 | 37 | 9 | 90 | 18, 32, 32 | 12 | 31
+Chris Hohn | 11194 | 65 | 9 | 85 | 68, 102, 107 | 72 | 82
+Glenn Greenberg | 16080 | 65 | 15 | 66 | 45, 145, 145 | 135 | 97
+Val Zlatev | 7142 | 21 | 21 | 34 | 30, 136, 136 | 46 | 115
+Derek Pilecki | 8799 | 27 | 54 | 31 | 17, 82, 83 | 189 | 128
+Bill Nygren and Alex Fitch | 43485 | 65 | 132 | 21 | 24, 70, 84 | 492 | 955
+Murray Stahl | 44850,49373 | 65 | 279 | 51 | 36, 134, 140 | 1221 | 1193
+Pat Dorsey | 14201 | 37 | 9 | 71 | 55, 88, 88 | 33 | 56
+Chris Davis | 78320 | 65 | 100 | 35 | 6, 82, 82 | 421 | 510
+Joseph Shaposhnik | - | 0
+Alex Sacerdote | 11405 | 65 | 31 | 39 | 105, 592, 593 | 589 | 329
+David Einhorn | 42315 | 65 | 28 | 59 | 64, 301, 301 | 360 | 254
+Stan Druckenmiller | 13021,23704 | 62 | 40 | 47 | 136, 726, 726 | 1204 | 352
+Todd Kantor | 13431 | 53 | 32 | 36 | 153, 758, 761 | 764 | 326
+Bob Robotti | 10247 | 65 | 53 | 48 | 21, 82, 83 | 347 | 238
+Fred Martin | 23050 | 65 | 78 | 24 | 8, 38, 41 | 193 | 286
+Brad Gerstner | 13112 | 57 | 20 | 81 | 41, 122, 122 | 190 | 170
+Chris Bloomstran | 11757 | 65 | 27 | 58 | 21, 79, 79 | 69 | 88
+Li Lu | 14546 | 31 | 6 | 95 | 11, 17, 17 | 10 | 7
+Warren Buffett | 8350 | 65 | 42 | 71 | 9, 33, 33 | 134 | 118
+Henry Ellenbogen | 9442 | 25 | 50 | 28 | 24, 153, 157 | 189 | 219
+Jim Chanos | 12867 | 40 | 13 | 46 | 65, 177, 178 | 121 | 64
+John Lennon | 9090 | 23 | 40 | 53 | 41, 151, 153 | 276 | 128
+Peter Keefe | 5300 | 65 | 52 | 44 | 7, 65, 65 | 190 | 178
+Tobias Carlisle | - | 0
+Arnold Van Den Berg | 15095 | 65 | 71 | 28 | 19, 175, 175 | 681 | 481
+Eddy Elfenbein | - | 0
+ALL DONE
+
+=== END (11 s) ===

@@ -476,7 +476,9 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   (close, shares, company value, volume, 1-month total return 2009-12..2026-10; 250 lines per block; part 1 has a
   volume check block). The probe reader runs out of memory on big sheets -> write a streaming reader before reading
   them. eq_conv_v1 BUG (mod(yyyymm,3)) -> counts void; eq_conv_v2 queued with ids for Greenblatt, Pilecki, Harris,
-  Stahl, Davis, Van Den Berg. NEXT: read eq_conv_v2; monthly files -> loader + lock; stage B account/estimate files.
+  Stahl, Davis, Van Den Berg. eq_conv_v2 DONE (A6; report docs/research/equity/eq_conv_v2_report.txt): 26 of 29 with 13F,
+  65 quarters, panel eq_conv_panel on WRDS; Greenblatt's Gotham 13F = quant book (910 names) -> not used for thresholds;
+  firm-wide filers flagged. NEXT: monthly files (user refreshing) -> streaming reader, loader + lock; stage B files.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->
