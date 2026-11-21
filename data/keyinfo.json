@@ -1,0 +1,1 @@
+{"plain": false, "salt": "YzHptFE8bMskZBXmqiNmVA==", "iter": 250000, "kdf": "PBKDF2-SHA256", "cipher": "AES-256-GCM", "check": "lFHNBme1iWHASEukhPJJ7RZbUPwjbCSWwbOm/TAvjuRyfcdb1dMoeN8qTALjBTV7j6R34UBPi/3kARY="}
