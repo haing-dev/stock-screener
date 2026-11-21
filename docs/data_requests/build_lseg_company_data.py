@@ -17,6 +17,10 @@ sys.path.insert(0, HERE)
 import build_lseg_equity_probe as v1  # noqa: E402
 
 COMP, OUT = sys.argv[1], sys.argv[2]
+# v2 (2026-11-21): smaller blocks. With 425 companies per quarterly block most requests stayed "Retrieving" (Q1, Q3);
+# only Q2 came back. Blocks are now about 170 companies (quarterly), 500 (annual, actuals), 125 (consensus).
+VER = "v2"
+QCH, ACH, ECH, SCH, XCH = 170, 500, 125, 250, 500
 rows = list(csv.DictReader(open(COMP)))
 RAW = {r["id"]: r["lseg_field"] for r in csv.DictReader(open(os.path.join(HERE, "..", "research", "equity", "field_dictionary_raw_v1.0.csv"))) if r["lseg_field"]}
 Q_IDS = ["R%02d" % i for i in list(range(1, 23)) + list(range(24, 51))]          # all but goodwill (open), employees, EV
@@ -80,24 +84,24 @@ def cut(n, size, start=0, stop=None):
 N = len(rows)
 # Q: 6 workbooks of about 850 companies, chunks of 425
 for k, lo in enumerate(range(0, N, 850), 1):
-    ch = cut(N, 425, lo, min(lo + 850, N))
+    ch = cut(N, QCH, lo, min(lo + 850, N))
     specs = [("G%d_" % (g + 1), "quarterly first-reported accounts, field group %d of %d" % (g + 1, len(QG)), f, QP, "series") for g, f in enumerate(QG)]
-    book("LSEG_accounts_Q%d_v1.xlsx" % k, "LSEG quarterly accounts part %d (first reported; companies %d-%d)" % (k, lo + 1, min(lo + 850, N)), ch, specs, 36000)
+    book("LSEG_accounts_Q%d_%s.xlsx" % (k, VER), "LSEG quarterly accounts part %d (first reported; companies %d-%d)" % (k, lo + 1, min(lo + 850, N)), ch, specs, 15000)
 # A1
 specs = [("A%d_" % (g + 1), "annual first-reported accounts, field group %d of %d" % (g + 1, len(AG)), f, AP, "series") for g, f in enumerate(AG)]
-book("LSEG_accounts_A1_v1.xlsx", "LSEG annual accounts (first reported, 27 fiscal years)", cut(N, 1000), specs, 28000)
+book("LSEG_accounts_A1_%s.xlsx" % VER, "LSEG annual accounts (first reported, 27 fiscal years)", cut(N, ACH), specs, 14000)
 # E: 3 workbooks; monthly consensus in chunks of 250, actuals in chunks of the workbook
 for k, lo in enumerate(range(0, N, 1700), 1):
     hi = min(lo + 1700, N)
-    ch = cut(N, 250, lo, hi)
+    ch = cut(N, ECH, lo, hi)
     v1.P.clear()
     specs = [("E", "monthly consensus (EPS FY1 / FY2 / 12 months, revenue FY1, estimates, growth, target)", EF, EP, "series")]
-    book("LSEG_estimates_E%d_v1.xlsx" % k, "LSEG estimates part %d (companies %d-%d)" % (k, lo + 1, hi), ch, specs, 52000)
+    book("LSEG_estimates_E%d_%s.xlsx" % (k, VER), "LSEG estimates part %d (companies %d-%d)" % (k, lo + 1, hi), ch, specs, 27000)
 # actual EPS goes into the S workbook to keep E files lighter
 v1.P.clear()
 specs = [("S", "monthly short interest from 2010", SF, SP, "series")]
-book("LSEG_short_S1_v1.xlsx", "LSEG short interest (monthly from 2010)", cut(N, 250), specs, 52000)
+book("LSEG_short_S1_%s.xlsx" % VER, "LSEG short interest (monthly from 2010)", cut(N, SCH), specs, 52000)
 specs = [("G", "GICS sector, industry group, industry, sub-industry (today), name, exchange", GF, "", "static"),
          ("X", "quarterly actual EPS with report date", AF, AQ, "series")]
-book("LSEG_sector_actuals_S2_v1.xlsx", "LSEG sector and actual EPS", cut(N, 1000), specs, 72000)
+book("LSEG_sector_actuals_S2_%s.xlsx" % VER, "LSEG sector and actual EPS", cut(N, XCH), specs, 36000)
 print("Q groups:", len(QG), [len(g) for g in QG]); print("A groups:", len(AG))
