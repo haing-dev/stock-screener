@@ -456,6 +456,19 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   AFTER the user saves file 2: add its rows to the input, rerun as eq_univ_check_v3 (input change only, log it).
   Quiver vs Quantgress (2026-11-20): advised not to buy Quiver now; Quantgress free API covers Congress trades (history
   start unknown; user to create a key as a GitHub secret if wanted). Quiver connector: account has no subscription.
+  2026-11-21: UNIVERSE CHECK v3 PASSES (US-incorporated top 1,500 >= $5: 99.3-100% every year with CUSIP + ticker + name;
+  file 2 added DEADUS11-12 = T-Z; DEADUS13+ do not exist). USER: US companies only, RBC / ASML must NOT be in ->
+  candidates = Datastream EQ lines with GEOGN 'UNITED STATES', primary line (ISINID P), alive 2010-2025: 26,932 (25,620
+  with ISIN); list on the PC only (G:\My Drive\Screener project\LSEG\01_universe\universe_candidates_v1.csv; scratch
+  recs.pkl lost if scratch is cleared -> rebuild from the two universe workbooks). STAGE A0 SIZE FILE given to the user:
+  docs/data_requests/build_lseg_size.py CANDIDATES.csv OUT -> G:\...\LSEG\02_size\LSEG_size_v1.xlsx (78 blocks:
+  year-end market cap 2009-2025 by ISIN, 1,000 companies per block, 3 sheets; Excel caps a text argument at 255 chars).
+  NEXT after it is saved: select companies that could be in the 1,500 largest -> stage A monthly files (price, market
+  value, volume, total return) + stage B account/estimate files (field_dictionary_raw_v1.0.csv: 51 of 52 names
+  confirmed; goodwill open). CONVICTION JOB eq_conv_v1 queued (seal-exempt job 5, tools/equity/wrds/eq_conv.py, R2 + A4):
+  20 investors with 13F ids; name search for Greenblatt (Gotham), Pilecki (Gator), Nygren/Fitch (Harris), Stahl (Horizon
+  Kinetics), Davis (Davis Selected), Shaposhnik, Carlisle, Van Den Berg, Elfenbein -> ids into v2. Control overlap:
+  Einhorn + Shaposhnik are in control AND roster (control = 8 until 2 replacements are drawn).
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->
