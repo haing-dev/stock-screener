@@ -478,7 +478,14 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   them. eq_conv_v1 BUG (mod(yyyymm,3)) -> counts void; eq_conv_v2 queued with ids for Greenblatt, Pilecki, Harris,
   Stahl, Davis, Van Den Berg. eq_conv_v2 DONE (A6; report docs/research/equity/eq_conv_v2_report.txt): 26 of 29 with 13F,
   65 quarters, panel eq_conv_panel on WRDS; Greenblatt's Gotham 13F = quant book (910 names) -> not used for thresholds;
-  firm-wide filers flagged. NEXT: monthly files (user refreshing) -> streaming reader, loader + lock; stage B files.
+  firm-wide filers flagged.
+  2026-11-21 MONTHLY FILES READ (docs/research/equity/LSEG_monthly_v1_2026-11-21.md; streaming reader
+  tools/equity/lseg/read_monthly.py -> panel_monthly_v1.csv.gz on the PC in LSEG\03_monthly): 5,436 lines, 99% filled,
+  returns aligned; monthly TR.Volume = LAST DAY's volume -> liquidity stand-in (A7). STAGE B FILES GIVEN (A7):
+  docs/data_requests/build_lseg_company_data.py COMPANIES.csv OUT -> G:\...\LSEG\04_accounts (Q1-Q6 quarterly first-reported,
+  A1 annual), 05_estimates (E1-E3 monthly consensus), 06_sector_short (S1 short interest, S2 GICS + actual EPS); company
+  list G:\...\LSEG\02_size\companies_v1.csv (one primary line per company). NEXT: read stage B (streaming reader for
+  accounts), build the measures (field dictionary v1.0) + lock; then the engine / reference book (step 5).
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->

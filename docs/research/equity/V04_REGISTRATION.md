@@ -185,3 +185,15 @@ holdings module (step 6), not changes to R2:
   Kinetics 279 names): revealed thresholds from them are flagged "firm, not person".
 - Chanos files longs only (he is known for shorts): control use only, as registered.
 - No 13F: Shaposhnik, Carlisle, Elfenbein.
+
+## Addendum A7 (2026-11-21): monthly data checks; liquidity stand-in; company data files
+1. Monthly files read (`LSEG_monthly_v1_2026-11-21.md`): 5,436 lines, 99% filled, total return aligned with prices.
+2. Liquidity in R3: monthly TR.Volume is one day's volume. The rule "median daily dollar volume of the last three
+   months >= $2m" is applied as "median of the last three month-end daily dollar volumes >= $2m" (zeros missing) until
+   daily volume is pulled; both are reported once daily data exist. Fixed before any return is computed.
+3. Accounts are pulled once per company on its primary line (the selected line with the largest median security
+   value; 371 of 5,065 companies have more than one common line). Universe ranking stays per line (R3).
+4. Company data files (stage B; builder `docs/data_requests/build_lseg_company_data.py`): quarterly accounts as first
+   reported (about 80 quarters, 49 items, period end and announcement date), annual first-reported accounts (27 years,
+   19 items), monthly consensus 2009-12..2026-10, quarterly actual EPS with report date, GICS (today), monthly short
+   interest from 2010. 12 workbooks.
