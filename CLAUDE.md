@@ -439,6 +439,13 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   cap columns). USER RULE 2026-11-20: every file for the user goes to a dedicated subfolder of
   G:\My Drive\Screener project (folder connected), not Downloads / WRDS results.
   NEXT: universe file (dead + research lists) + CRSP count check; dictionary v1.0; then the data files (step 3).
+  UNIVERSE FILE 1 READ BACK 2026-11-20 (docs/research/equity/LSEG_universe_v1_2026-11-20.md; builder
+  docs/data_requests/build_lseg_universe.py; file on the PC G:\My Drive\Screener project\LSEG\01_universe): DEADUS1-10 +
+  FAMERA-Z = 33,234 US common shares; main-exchange set alive 3,882 (2010) to 4,463 (2024). EXMNEM is the LAST exchange
+  (failed companies show OTC -> keep OTC, filter by monthly price/size/volume). 3 of 11 known dead companies missing
+  (Twitter, Time Warner, Whole Foods) -> add SEC 13(f) securities lists (CUSIP->ISIN) + CRSP count-only check on WRDS.
+  Retests: 51 of 52 raw items named (goodwill open); short interest history = TR.ShortInterest Frq=M from 2010;
+  ownership = TR.CategoryOwnershipPct / Datastream NOSHST etc.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->
