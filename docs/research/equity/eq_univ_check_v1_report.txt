@@ -1,0 +1,48 @@
+﻿=== WRDSQ REPORT v1.0.7 | job eq_univ_check_v1 | 2026-11-21 00:33 | metadata and results only ===
+Loading library list...
+Done
+
+## 1. python
+CRSP common shares (NYSE / American / Nasdaq), December of each year; found = any CUSIP the company ever had is in the LSEG list (D Datastream lists, W Workspace screens)
+year-end | all: n, found % (D only %, W only %) | 1,500 largest: found % | 1,500 largest priced >= $5: found %
+2009 | 4648, 81.7 (42.7, 0.7) | 83.5 | 83.4
+2010 | 4529, 82.2 (40.9, 0.7) | 82.8 | 83.0
+2011 | 4380, 82.0 (38.5, 0.8) | 82.9 | 82.9
+2012 | 4280, 82.0 (36.7, 0.7) | 82.7 | 82.8
+2013 | 4301, 82.1 (34.8, 0.8) | 83.3 | 83.6
+2014 | 4483, 82.0 (33.6, 1.0) | 83.7 | 83.7
+2015 | 4489, 81.9 (31.2, 1.1) | 84.3 | 84.7
+2016 | 4336, 82.3 (28.0, 1.1) | 83.7 | 84.1
+2017 | 4317, 82.7 (25.5, 1.1) | 84.3 | 84.6
+2018 | 4373, 82.1 (22.9, 1.2) | 84.8 | 85.2
+2019 | 4375, 82.0 (20.0, 1.4) | 85.7 | 86.0
+2020 | 4592, 81.6 (17.9, 1.5) | 86.6 | 86.6
+2021 | 5549, 77.5 (17.4, 1.5) | 85.9 | 86.1
+2022 | 5587, 76.6 (14.7, 1.7) | 86.7 | 87.1
+2023 | 5178, 77.0 (9.7, 1.8) | 86.8 | 86.7
+2024 | 4975, 75.8 (5.6, 1.8) | 86.6 | 87.0
+2025 | 5022, 72.5 (2.3, 1.6) | 85.7 | 85.9
+companies leaving CRSP common shares each year: n, found %
+2010 | 345, 72.2
+2011 | 325, 76.6
+2012 | 295, 72.9
+2013 | 262, 75.2
+2014 | 213, 72.3
+2015 | 280, 75.4
+2016 | 330, 73.9
+2017 | 298, 71.5
+2018 | 240, 77.1
+2019 | 267, 73.0
+2020 | 219, 66.2
+2021 | 253, 62.8
+2022 | 421, 65.3
+2023 | 593, 58.7
+2024 | 490, 63.1
+2025 | 352, 68.5
+largest NOT found at 2009 (size rank among all): EXXON MOBIL CORP (#1); ROYAL BANK CANADA MONTREAL Q (#32); ARCELORMITTAL S A LUXEMBOURG (#33); UNILEVER N V (#41); SUNCOR ENERGY INC NEW (#42); U B S AG (#43); DAIMLER A G (#44); TORONTO DOMINION BANK ONT (#45); ALCON INC (#48); MEDTRONIC PLC (#50)
+largest NOT found at 2017 (size rank among all): EXXON MOBIL CORP (#8); DUPONT DE NEMOURS INC (#31); ROYAL BANK CANADA MONTREAL Q (#43); HONEYWELL INTERNATIONAL INC (#45); MEDTRONIC PLC (#46); TORONTO DOMINION BANK ONT (#47); ACCENTURE PLC IRELAND (#54); UNILEVER N V (#55); BANK OF NOVA SCOTIA (#78); WALGREENS BOOTS ALLIANCE INC (#84)
+largest NOT found at 2024 (size rank among all): EXXON MOBIL CORP (#16); ACCENTURE PLC IRELAND (#34); LINDE PLC NEW (#43); ROYAL BANK CANADA MONTREAL Q (#54); HONEYWELL INTERNATIONAL INC (#66); EATON CORP PLC (#81); CHUBB LTD (#93); MEDTRONIC PLC (#98); U B S GROUP A G (#101); TORONTO DOMINION BANK ONT (#105)
+largest NOT found among companies that left: ALLERGAN PLC (2020); UNILEVER N V (2020); WALGREENS BOOTS ALLIANCE INC (2025); U B S AG (2015); DAIMLER A G (2010); I H S MARKIT LTD (2022); XILINX INC (2022); TIME WARNER CABLE INC (2016); VMWARE INC (2023); TWENTY FIRST CENTURY FOX INC (2019)
+ALL DONE
+
+=== END (4 s) ===

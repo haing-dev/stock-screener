@@ -112,3 +112,17 @@ no returns). Output: share of CRSP common shares found per year, for all, the 1,
 at $5 or more, and for companies leaving CRSP each year; names of at most 10 large companies not found. Pass rule for
 the universe (set before the run): at least 99% of the 1,500 largest priced at $5 or more found in every year 2010-2025;
 otherwise the missing ones are added from a further source before the data files are built.
+
+## Addendum A2 (2026-11-21): universe check, result of v1 and version 1.1
+Result of `eq_univ_check_v1` (`eq_univ_check_v1_report.txt`): 83-87% of the 1,500 largest priced at $5 or more found
+per year; 59-77% of companies leaving. The A1 rule (99%) is NOT met. Cause found in the LSEG files, not yet measured:
+the CUSIP key misses (a) companies not incorporated in the US (their LSEG identifier carries no CUSIP: Accenture,
+Medtronic, Royal Bank of Canada) and (b) companies whose CUSIP changed after CRSP ends in 2025-12 (Exxon Mobil,
+Honeywell, DuPont); all six are in the LSEG lists. So v1 measured the key, not the list.
+Logged bug-fix rerun `eq_univ_check_v2` (module version 1.1.0, code sha256 8c28d777..., input sha256 53a82235...):
+keys in steps (CUSIP; + current ticker for companies still listed at 2025-12; + normalised name), split by CRSP's
+US-incorporation flag. Same data read (CRSP names, December price and shares; no returns). The 99% rule is applied to
+the US-incorporated part with all three keys; the part not incorporated in the US is reported, and which of those
+companies belong to the universe (R3 says "US-listed primary common shares") is settled in an addendum before the
+data files are built. The name key is loose (first four words after dropping legal suffixes), so a pass on names alone
+is a lower bar than a CUSIP match and is reported separately.

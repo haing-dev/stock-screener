@@ -75,8 +75,8 @@
   {
    "registered_job": "universe_check",
    "module": "eq_univ",
-   "code_sha256": "46e6bcdc2a2f2b23624ac2faaa81b95ddd2ac8112f7216d9793be2eeb6723bf6",
-   "registration": "docs/research/equity/V04_REGISTRATION.md addendum A1 (2026-11-21)",
+   "code_sha256": "8c28d777f96828774ba4c9e6de25bbb91628aabcea5597d9558537ac714dd8cd",
+   "registration": "docs/research/equity/V04_REGISTRATION.md addenda A1, A2 (2026-11-21)",
    "output": "counts and shares per year; names of at most 10 largest companies not found per date",
    "names": [
     {
@@ -84,6 +84,14 @@
      "functions": {
       "check": "sql, out"
      }
+    }
+   ],
+   "code_history": [
+    {
+     "code_sha256": "46e6bcdc2a2f2b23624ac2faaa81b95ddd2ac8112f7216d9793be2eeb6723bf6",
+     "version": "eq_univ-1.0.0",
+     "runs": "eq_univ_check_v1 (2026-11-21)",
+     "replaced_by": "8c28d777f96828774ba4c9e6de25bbb91628aabcea5597d9558537ac714dd8cd"
     }
    ]
   }

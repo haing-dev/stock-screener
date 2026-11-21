@@ -44,3 +44,5 @@ Still sealed until the freeze: every market outside the US 2010-2025, and US mon
 conviction holdings job (R2) will be the fourth, with its code hash entered before it runs.
 - 2026-11-21: seal-exempt job 4 `universe_check` registered (V04_REGISTRATION.md A1): eq_univ_check_v1, CRSP listing
   levels 2009-2025 only (no returns); counts and at most 30 company names come back.
+- 2026-11-21: `eq_univ_check_v1` ran (code 46e6bcdc...): rule not met, cause = matching key (V04_REGISTRATION.md A2).
+  Logged bug-fix rerun `eq_univ_check_v2` queued (code 8c28d777..., same data, counts and at most 70 names).
