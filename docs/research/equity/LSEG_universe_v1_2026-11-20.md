@@ -53,3 +53,10 @@ found in every year 2010-2025. NOT met.
   Proposal for the universe rule: a company is in when LSEG shows its primary listing on a US exchange; foreign
   companies with a second listing in New York are out. To be registered as an addendum before the data files.
 - CRSP names table has `hdrcusip`, `cusip9`, `ticker`, `usincflg`, `issuertype`, `siccd` (useful for later joins).
+
+## WRDS check v3 (2026-11-21; report eq_univ_check_v3_report.txt): RULE MET
+With DEADUS11-12 (T-Z) added: US-incorporated 1,500 largest priced >= $5 found 99.3-100.0% every year 2009-2025
+(CUSIP alone 98.3-99.5%); US-incorporated leavers with a peak in the 1,500: 97-100%. Remaining misses are renamed or
+acquired names (Yahoo, Dr Pepper Snapple, J.C. Penney, Legg Mason; 10 in 2009, 0 in 2024). User decision: US companies
+only (UK / Europe dropped); foreign primary listings (RBC, ASML, UBS, Shopify) are out by the geography filter
+(V04_REGISTRATION.md A3, A4). Candidate list: 26,932 (PC only).
