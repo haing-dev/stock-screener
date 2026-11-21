@@ -1,5 +1,5 @@
 {
- "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Registered jobs: the scorecard, the holdings job (not built) and the hedge fund leaderboard (user request 2026-11-18, HF_LEADERBOARD_REGISTRATION.md). code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call, each with its exact argument list (a regular expression that the whole argument text must match, in order). code_history lists earlier registered hashes (record only; the checker uses code_sha256).",
+ "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Registered jobs: the scorecard, the holdings job (not built) the hedge fund leaderboard and the universe check (plan v0.4 step 3a) (user request 2026-11-18, HF_LEADERBOARD_REGISTRATION.md). code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call, each with its exact argument list (a regular expression that the whole argument text must match, in order). code_history lists earlier registered hashes (record only; the checker uses code_sha256).",
  "jobs": [
   {
    "registered_job": "scorecard",
@@ -69,6 +69,21 @@
      "version": "eq_hf-1.0.0",
      "runs": "eq_hf_pull_v1, eq_hf_v1 (2026-11-18/19)",
      "replaced_by": "0f78ced553b2d06687dcc49edc5cac29c8431d6fca0f8d3dd397346b2ca4dbb7"
+    }
+   ]
+  },
+  {
+   "registered_job": "universe_check",
+   "module": "eq_univ",
+   "code_sha256": "46e6bcdc2a2f2b23624ac2faaa81b95ddd2ac8112f7216d9793be2eeb6723bf6",
+   "registration": "docs/research/equity/V04_REGISTRATION.md addendum A1 (2026-11-21)",
+   "output": "counts and shares per year; names of at most 10 largest companies not found per date",
+   "names": [
+    {
+     "pattern": "eq_univ_check_v\\d+[a-z]?",
+     "functions": {
+      "check": "sql, out"
+     }
     }
    ]
   }

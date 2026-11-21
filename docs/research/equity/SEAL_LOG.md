@@ -42,3 +42,5 @@ the test desk's scripts in runs written to the trial log before they start; leve
 Still sealed until the freeze: every market outside the US 2010-2025, and US months from 2026-01. The WRDS reader
 (`eq_reader.py`) and its lock are unchanged until the engine exists; the three seal-exempt jobs stay as logged; the
 conviction holdings job (R2) will be the fourth, with its code hash entered before it runs.
+- 2026-11-21: seal-exempt job 4 `universe_check` registered (V04_REGISTRATION.md A1): eq_univ_check_v1, CRSP listing
+  levels 2009-2025 only (no returns); counts and at most 30 company names come back.

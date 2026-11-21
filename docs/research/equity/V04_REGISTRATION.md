@@ -103,3 +103,12 @@ hindsight-flagged pod.
 ## R8. What is not registered yet
 The pods themselves (charters, specs, versions), Batch A targets, the field dictionary v1.0, the data lock, the
 "follow the best managers" pod's place in B1 (it competes under R6), the non-US universe rule.
+
+## Addendum A1 (2026-11-21): universe completeness check
+Job `eq_univ_check_v1` (module `tools/equity/wrds/eq_univ.py`, seal-exempt entry `universe_check`, code sha256
+46e6bcdc..., input sha256 6eddb7ed...). Input: 43,678 8-digit CUSIPs of US common shares found in LSEG (Datastream dead
+and research lists, Workspace screens of test file 2). Reads CRSP names and December price and shares 2009-2025 (levels,
+no returns). Output: share of CRSP common shares found per year, for all, the 1,500 largest and the 1,500 largest priced
+at $5 or more, and for companies leaving CRSP each year; names of at most 10 large companies not found. Pass rule for
+the universe (set before the run): at least 99% of the 1,500 largest priced at $5 or more found in every year 2010-2025;
+otherwise the missing ones are added from a further source before the data files are built.
