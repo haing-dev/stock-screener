@@ -126,3 +126,12 @@ the US-incorporated part with all three keys; the part not incorporated in the U
 companies belong to the universe (R3 says "US-listed primary common shares") is settled in an addendum before the
 data files are built. The name key is loose (first four words after dropping legal suffixes), so a pass on names alone
 is a lower bar than a CUSIP match and is reported separately.
+
+## Addendum A3 (2026-11-21): universe = US companies; third check run
+User decision (20 Nov, after briefly considering UK / Europe): US companies only. Universe rule added to R3: a
+company is in when its primary listing is on a US exchange (NYSE, NYSE American, Nasdaq) as LSEG shows it, wherever
+it is incorporated (Accenture, Medtronic in); foreign companies whose primary listing is abroad are out (Royal Bank of
+Canada, Unilever, ASML), as are depositary receipts. Check A (outside the US) is unchanged: sealed, pulled only before
+the freeze.
+`eq_univ_check_v3`: same code as v2 (sha256 8c28d777...), input extended with Datastream dead lists DEADUS11 (T-V)
+and DEADUS12 (W-Z) from universe file 2 (input sha256 a18f916a...; 47,700 CUSIPs, 86,680 names). Rule as in A2.

@@ -46,3 +46,5 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
   levels 2009-2025 only (no returns); counts and at most 30 company names come back.
 - 2026-11-21: `eq_univ_check_v1` ran (code 46e6bcdc...): rule not met, cause = matching key (V04_REGISTRATION.md A2).
   Logged bug-fix rerun `eq_univ_check_v2` queued (code 8c28d777..., same data, counts and at most 70 names).
+- 2026-11-21: `eq_univ_check_v2` ran (rule not met: dead lists ended at S). `eq_univ_check_v3` queued: same code
+  8c28d777..., input extended with DEADUS11-12 (V04_REGISTRATION.md A3).

@@ -1,0 +1,9 @@
+{
+ "name": "eq_univ_check_v3",
+ "steps": [
+  {
+   "do": "python",
+   "code": "import eq_univ\neq_univ.check(sql, out)"
+  }
+ ]
+}
