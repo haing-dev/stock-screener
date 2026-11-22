@@ -52,3 +52,7 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
   `eq_conv_v1` (code d9320b04...), 13F first versions + CRSP names / quarter-end prices 2009-12..2025-12, no returns.
 - 2026-11-21: `eq_conv_v1` ran with a quarter-filter bug (counts void). Logged bug-fix rerun `eq_conv_v2` queued
   (code ad0dde91..., same data; ids added from v1's name search; V04_REGISTRATION.md A5).
+- 2026-11-22: seal-exempt job 6 `reference_book` registered (V04_REGISTRATION.md A8; TRIAL_LOG.md T001): `eq_ref_pull_v1`
+  (CRSP msf_v2 / dsf_v2 aggregates, CCM links, Compustat fundq, GICS history, I/B/E/S summary, CRSP names, FF
+  factors, 2007-2025, stored on WRDS as `ref_*`) then `eq_ref_v1` (Batch 0: reference book v1 and the published-form
+  checks of its measures, US 2010-2025; summary statistics only). Code 234fbb03...; lock 8d1e78fe...

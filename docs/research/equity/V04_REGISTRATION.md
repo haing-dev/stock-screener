@@ -197,3 +197,36 @@ holdings module (step 6), not changes to R2:
    reported (about 80 quarters, 49 items, period end and announcement date), annual first-reported accounts (27 years,
    19 items), monthly consensus 2009-12..2026-10, quarterly actual EPS with report date, GICS (today), monthly short
    interest from 2010. 12 workbooks.
+
+## Addendum A8 (2026-11-22): field dictionary v1.0 part 1; engine spec choices; Batch 0 (first counted run)
+Registered before any return of 2010-2025 is computed (user's go 2026-11-21: engine and reference book on WRDS while
+the LSEG files wait).
+1. **Field dictionary v1.0, part 1** = `FIELD_DICTIONARY_v1.0.md`: exact formulas of the seven reference-book
+   measures (V01, V06, P01, Q03, Q08, B05, E01), market value, liquidity and sector, each in its LSEG and WRDS form.
+   Part 2 (the other measures) is registered with the pod specs. No change to part 1 after this entry (= book v2).
+2. **Spec choices left open by R3, R4 and R7** (fixed here; the same in the LSEG run):
+   a. Universe order: the 1,500 largest US-incorporated common lines (CRSP `usincflg` = Y; LSEG GEOGN = US) by line
+      market value, then price >= $5 and liquidity >= $2m (WRDS: median of the last three monthly medians of daily
+      dollar volume; LSEG: A7 stand-in). Generic books exclude GICS groups 4010, 4030, 4040, sector 60 and
+      sub-industry 35201010 (biotech); a member without a GICS sector is not ranked.
+   b. Long book = top tenth of all ranked stocks by book score (not per sector). Monthly review: a holding whose
+      inside-sector book percentile is below 0.8, or that is no longer ranked, is sold; its proceeds sit in the
+      equal-weight universe of its sector (the sector basket) until the tranche ends. Cap 2.5% of the book per stock
+      at formation; the excess goes to the sector basket.
+   c. Trade timing: monthly data, so formation and trades at the month-end close (R4's next-day close needs daily
+      data; the difference is reported when the daily engine exists).
+   d. Costs: 10 bp per side for the 500 largest, 25 bp for the rest; basket trades 10 bp. Gross and net both reported.
+   e. Formations from 2009-01 (ramp-up: 1/12 of capital per month for the first 12, the rest in cash at the
+      risk-free rate); book returns 2010-01..2025-12.
+   f. Benchmarks: the sector-matched universe (the book's sector weights at the start of each month times the
+      equal-weight sector universe returns) and the equal-weight universe.
+3. **Batch 0** (plumbing; no verdict; nothing is adopted or changed because of its numbers). Run T001
+   (`TRIAL_LOG.md`): `eq_ref_pull_v1` then `eq_ref_v1` on WRDS, code 234fbb03... (seal-exempt job 6
+   `reference_book`). Prints: universe and coverage by year; rank correlations of the measures; published-form checks
+   of each measure (sign, NW t, correlation with the matching Fama-French factor); the reference book's statistics
+   (net, gross, against the two benchmarks, by era and by calendar year incl. 2020-21 = stress M4), turnover, costs,
+   names, cap and liquidity checks. Series stay on WRDS (`ref_series`, `ref_spreads`).
+4. **Known differences of the WRDS form** (reported, not fixed): Compustat values are not first-reported; I/B/E/S
+   prices put on the current share basis via CRSP factors; history of GICS (LSEG: today's GICS). The LSEG run of the
+   same engine (after the stage-B files) is the registered primary; Batch 0 compares the two.
+5. Still open: the second implementation by a separate agent (plan step 5) before Batch A; the daily engine.

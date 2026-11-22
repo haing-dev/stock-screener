@@ -1,5 +1,5 @@
 {
- "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Registered jobs: the scorecard, the holdings job (not built) the hedge fund leaderboard and the universe check (plan v0.4 step 3a) (user request 2026-11-18, HF_LEADERBOARD_REGISTRATION.md). code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call, each with its exact argument list (a regular expression that the whole argument text must match, in order). code_history lists earlier registered hashes (record only; the checker uses code_sha256).",
+ "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Registered jobs: the scorecard, the holdings job (not built) the hedge fund leaderboard the universe check (plan v0.4 step 3a), the conviction holdings job and the reference book (plan v0.4 step 5) (user request 2026-11-18, HF_LEADERBOARD_REGISTRATION.md). code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call, each with its exact argument list (a regular expression that the whole argument text must match, in order). code_history lists earlier registered hashes (record only; the checker uses code_sha256).",
  "jobs": [
   {
    "registered_job": "scorecard",
@@ -118,6 +118,28 @@
      "replaced_by": "ad0dde9132590e95f3d0bae47d8b6908f4d1ce09be01146ebfc0beb165fda51a"
     }
    ]
+  },
+  {
+   "registered_job": "reference_book",
+   "module": "eq_ref",
+   "code_sha256": "234fbb039234c1aab9bc9a194bdebe6b23a5a965975761429e3e3aa693bffc84",
+   "registration": "docs/research/equity/V04_REGISTRATION.md R3, R4, R7 and addendum A8; FIELD_DICTIONARY_v1.0.md; TRIAL_LOG.md T001",
+   "output": "eq_ref.run sections 1-3 (counts, coverage, published-form checks, reference book statistics; no company, no row)",
+   "names": [
+    {
+     "pattern": "eq_ref_pull_v\\d+[a-z]?",
+     "functions": {
+      "pull": "sql, save, load, out, budget=\\d+"
+     }
+    },
+    {
+     "pattern": "eq_ref_v\\d+[a-z]?",
+     "functions": {
+      "run": "load, save, out"
+     }
+    }
+   ],
+   "code_history": []
   }
  ]
 }
