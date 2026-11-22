@@ -600,7 +600,9 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   FY1 EPS 87-94% (as-of within 60 days; exact-month match only ~70%), GICS only 66% (2010) -> 99% (2025) because P01 is
   empty for 1,874 mostly dead companies (blocks have no instrument column; rows align with the list). FIX: piece P19
   (build_lseg_sector_fix.py; Datastream NAME/GGISN/INDM/ICBIN/WC07021 for all 5,065; in 08_pieces_v4, user refreshes)
-  + crosswalk rule A11 item 3. eq_prof_v1 QUEUED on the PC runner 2026-11-22 (lib read back, identical).
+  + crosswalk rule A11 item 3. eq_prof_v1 RAN 2026-11-22 (report docs/research/equity/eq_prof_v1_report.txt): effective
+  names Kantesaria 5.2 / Hohn 6.0 / Li Lu 4.1 / Greenblatt 278 (quant book); median holding (quarters) Kantesaria 10,
+  Zlatev 4, Sacerdote / Druckenmiller / Kantor 2, Nygren 31, Bloomstran 32; Zlatev 33% of the book new each year.
   NEXT: P19 read -> crosswalk -> LSEG run of the reference book (log in TRIAL_LOG first) -> dashboard v0 + names review.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
