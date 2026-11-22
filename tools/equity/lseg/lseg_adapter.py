@@ -19,6 +19,7 @@ Notes found on 2026-11-22 (Q2 file and the monthly panel):
   with only a period end otherwise), above 90% from 2022; 28% of quarters have no original announcement date (the
   45-day rule applies).
 """
+import glob
 import os
 import sys
 
@@ -37,16 +38,12 @@ MAP = {"saleq": "TR.F.TotRevenue", "cogsq": "TR.F.CostOfOpRev", "gp": "TR.F.Gros
 
 
 def quarterly_fq(d):
-    parts = []
-    for g in range(1, 6):
-        f = os.path.join(d, "Q_G%d.csv.gz" % g)
-        if not os.path.exists(f):
-            continue
+    q = None                     # v1-v3 groups Q_G*, v4 pieces Q_C* (book items) and Q_R* (other items)
+    for f in sorted(glob.glob(os.path.join(d, "Q_*.csv.gz"))):
         x = pd.read_csv(f, low_memory=False)
-        x = x[x[PE].notna()].drop_duplicates(["instrument", PE], keep="first")
-        parts.append(x.set_index(["instrument", PE]))
-    q = pd.concat(parts, axis=1)
-    q = q.loc[:, ~q.columns.duplicated()].reset_index()
+        x = x[x[PE].notna()].drop_duplicates(["instrument", PE], keep="first").set_index(["instrument", PE])
+        q = x if q is None else q.combine_first(x)
+    q = q.reset_index()
     fq = pd.DataFrame({"gvkey": q.instrument, "datadate": pd.to_datetime(q[PE], errors="coerce"),
                        "rdq": pd.to_datetime(q.get("TR.F.OriginalAnnouncementDate"), errors="coerce")})
     for k, c in MAP.items():

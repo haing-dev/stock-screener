@@ -18,7 +18,8 @@ import openpyxl
 
 def kind_of(fname):
     b = os.path.basename(fname)
-    for pat, k in (("accounts_Q", "Q"), ("accounts_A", "A"), ("estimates_E", "E"), ("short_S", "S"), ("sector_actuals", "S2")):
+    for pat, k in (("accounts_Q", "Q"), ("accounts_A", "A"), ("estimates_E", "E"), ("short_S", "S"), ("sector_actuals", "S2"),
+                   ("sector_GICS", "G"), ("unadjusted_close", "U"), ("actual_EPS", "X")):
         if pat in b:
             return k
     return "other"
