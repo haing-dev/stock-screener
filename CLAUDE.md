@@ -371,6 +371,19 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   NEXT when resumed: card 3 (macro relative value and risk: Graham, Elliott), Fable high, templates in
   pipeline/card_1.4_bridgewater.
   Vault branch dce020b; PC vault copy QUEUED (job vault_sync_20261121a in local\jobs).
+- 2026-11-21 PLAYBOOK CARD 1.4 (3 of 5) MACRO RELATIVE VALUE AND RISK (Graham Capital, Elliott) DONE, PASS WITH
+  CORRECTIONS (user's word; schedule stays PAUSED): docs/research/fable/CARD_1.4_relative_value_risk.md (Fable high,
+  ~0.32M tokens; 41 corrections of the Opus check applied) + _check.md. Inputs: macro-vault pipeline/card_1.4_graham_elliott
+  (361 claims, 11 recordings 2022-2025: Tropin, Calderini, 2022 Graham panel, Chris Jones; Paul Singer). RESULT: playbook =
+  liquid rates/FX/index/commodity trades on central banks vs market pricing; many small different bets; size by
+  volatility; shrink before events; keep capital intact (Singer). "Relative value" is thin (one definition, one curve
+  trade, one worked case). 4 rules, 16 versions (32 with sizing), all hindsight: R1 Hawkish currency (rank currencies by
+  12m change in 3m rates), R2 Steepener (2s10s below 1.0), R3 Cuts priced too early (likely = Carry; D1 decides), R4 No
+  alternative (S&P forward earnings yield minus T-bill low -> short S&P; both live uses wrong). 3 registered pod process
+  rules + 1 sizing version. Ledger: 15 of 40 (rates 10 of 17, mostly 2022; Graham stocks 0 of 5). Check: risk officer
+  McCann says crowded times have HIGHER PM information ratios (contradicts the card's stop condition); Tropin says
+  rules decay; Graham's quant side is trend/value/carry = our pods. 8 open judgement points (2.2-2.3, 3.1-3.2).
+  NEXT when resumed: card 4 (flows and volatility: Karsan), Fable high, templates in pipeline/card_1.4_graham_elliott.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
