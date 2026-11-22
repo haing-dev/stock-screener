@@ -518,6 +518,14 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   PC WRDS runner: eq_ref_pull_v1 (ref_* data sets); THEN queue tools/wrdsq/jobs/eq_ref_v1.json (Batch 0 report) once
   the pull prints ALL PULLS COMPLETE (run() refuses if pulls are incomplete). Still open: second implementation by a
   separate agent; LSEG run of the same engine after stage B; daily engine.
+  BATCH 0 DONE 2026-11-22 (eq_ref 1.0.2 e5a7ee9c, job eq_ref_v1c; v1 = gvkey key bug, v1b = stale code copy on the runner,
+  both stopped before returns, logged): docs/research/equity/BATCH0_REFERENCE_BOOK_2026-11-22.md + eq_ref_v1c_report.txt.
+  Plumbing passes (coverage 88-100%, ~1,100-1,190 ranked, GICS history, measures correlate with FF factors: mom/UMD 0.86,
+  bp/HML 0.70, roe/RMW 0.57). Spreads 2010-25: mom +0.68%/mo, rev +0.57, Piotroski +1.92, book +0.68; bp -0.28 (only
+  wrong sign). Book net 13.3%/yr vs sector-matched 12.2% (+1.0%/yr, t 1.24; eras +0.5 / -1.8 / +3.9; 2020 -7.1 pts). Cap
+  2.5% only at formation (drift to 2.99%). No verdict. LESSON: after writing a runner lib file, READ IT BACK (stage) and
+  compare before queuing (outputs copies can be stale). NEXT: second implementation (separate agent, from the written
+  spec) before Batch A; LSEG run after the stage-B files.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->

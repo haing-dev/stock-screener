@@ -61,3 +61,5 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
   lock 6243526a...
 - 2026-11-22: `eq_ref_v1b` ran the stale 1.0.1 code (delivery error) and stopped before any return. `eq_ref_v1c` queued with
   1.0.2 (e5a7ee9c..., PC lib file checked byte for byte before queuing).
+- 2026-11-22: `eq_ref_v1c` ran with 1.0.2 (52 s): Batch 0 = the first opening of 2010-2025 returns under plan v0.4 (reference
+  book v1 and its 7 measures' published-form spreads; summary statistics only). Result note BATCH0_REFERENCE_BOOK_2026-11-22.md.
