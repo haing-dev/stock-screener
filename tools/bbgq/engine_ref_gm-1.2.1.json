@@ -1,0 +1,2214 @@
+{
+ "book_year_sum": {
+  "BASE": {
+   "gross": {
+    "1965": 0.0651679514,
+    "1966": -0.0312626208,
+    "1967": -0.0526961813,
+    "1968": 0.0087876485,
+    "1969": 0.0725795332,
+    "1970": 0.09135456,
+    "1971": 0.029986967,
+    "1972": 0.0930189795,
+    "1973": 0.1501659476,
+    "1974": 0.1327110368,
+    "1975": 0.0511407207,
+    "1976": 0.1290146761,
+    "1977": 0.1506911898,
+    "1978": 0.0305772989,
+    "1979": 0.2495813289,
+    "1980": 0.1007088815,
+    "1981": 0.1534229068,
+    "1982": 0.0961516873,
+    "1983": 0.0300513692,
+    "1984": 0.0847901333,
+    "1985": 0.1737790531,
+    "1986": 0.1115619657,
+    "1987": 0.0305334506,
+    "1988": 0.0664181021,
+    "1989": 0.1051910386,
+    "1990": 0.1032572936,
+    "1991": 0.1808997967,
+    "1992": 0.1490266597,
+    "1993": 0.0698457752,
+    "1994": 0.1052481126,
+    "1995": 0.2296589742,
+    "1996": 0.2162850092,
+    "1997": 0.3442460737,
+    "1998": 0.2935808143,
+    "1999": -0.0802040238,
+    "2000": 0.0921200957,
+    "2001": 0.0779296938,
+    "2002": 0.2423979505,
+    "2003": 0.2975635442,
+    "2004": 0.1013823593,
+    "2005": 0.1072494502,
+    "2006": 0.0981928113,
+    "2007": 0.1965690564,
+    "2008": 0.3625784524,
+    "2009": 0.0014850191,
+    "2010": 0.0805857205
+   },
+   "net": {
+    "1965": 0.0582419725,
+    "1966": -0.036222063,
+    "1967": -0.0566849566,
+    "1968": 0.0059970883,
+    "1969": 0.0689291991,
+    "1970": 0.0881321535,
+    "1971": 0.0261248721,
+    "1972": 0.0882120589,
+    "1973": 0.1469968921,
+    "1974": 0.1286852694,
+    "1975": 0.0472427767,
+    "1976": 0.1227686743,
+    "1977": 0.1430912485,
+    "1978": 0.0226064446,
+    "1979": 0.2407039053,
+    "1980": 0.0960901351,
+    "1981": 0.1488913497,
+    "1982": 0.0917410257,
+    "1983": 0.0223006051,
+    "1984": 0.074521841,
+    "1985": 0.165207731,
+    "1986": 0.1048429536,
+    "1987": 0.0254786859,
+    "1988": 0.0633683859,
+    "1989": 0.0997155569,
+    "1990": 0.0964592162,
+    "1991": 0.1711667191,
+    "1992": 0.1321853106,
+    "1993": 0.0566043554,
+    "1994": 0.0830145201,
+    "1995": 0.2130725774,
+    "1996": 0.2037669908,
+    "1997": 0.3274793746,
+    "1998": 0.2820640666,
+    "1999": -0.0859996178,
+    "2000": 0.0869615797,
+    "2001": 0.0708301369,
+    "2002": 0.2304390004,
+    "2003": 0.2859302923,
+    "2004": 0.0892868967,
+    "2005": 0.0934094337,
+    "2006": 0.0856691536,
+    "2007": 0.1820982815,
+    "2008": 0.3502804827,
+    "2009": -0.0038756618,
+    "2010": 0.0752423117
+   }
+  },
+  "CANDIDATE": {
+   "gross": {
+    "1965": 0.0685775039,
+    "1966": -0.0110207214,
+    "1967": -0.0279585561,
+    "1968": 0.0227799101,
+    "1969": 0.0490620394,
+    "1970": 0.1032607172,
+    "1971": 0.0203623783,
+    "1972": 0.0519347428,
+    "1973": 0.1364635568,
+    "1974": 0.1282080787,
+    "1975": 0.041852463,
+    "1976": 0.1368550642,
+    "1977": 0.2116460983,
+    "1978": 0.0631520986,
+    "1979": 0.2809935381,
+    "1980": 0.0745337978,
+    "1981": 0.2484426352,
+    "1982": 0.1685183658,
+    "1983": -0.0206993337,
+    "1984": 0.0868654697,
+    "1985": 0.1471950443,
+    "1986": 0.1174679385,
+    "1987": 0.0795147781,
+    "1988": 0.0874981797,
+    "1989": 0.1265304446,
+    "1990": 0.1999848298,
+    "1991": 0.1912419061,
+    "1992": 0.1602697053,
+    "1993": 0.1233511301,
+    "1994": 0.1961842275,
+    "1995": 0.2878952398,
+    "1996": 0.2399572944,
+    "1997": 0.2845505201,
+    "1998": 0.4121313654,
+    "1999": -0.1253119569,
+    "2000": 0.0831181,
+    "2001": 0.0602616139,
+    "2002": 0.2771968129,
+    "2003": 0.3156828389,
+    "2004": 0.1266344775,
+    "2005": 0.0980325999,
+    "2006": 0.1124718254,
+    "2007": 0.1848885854,
+    "2008": 0.3865889784,
+    "2009": 0.0206451327,
+    "2010": 0.0716948183
+   },
+   "net": {
+    "1965": 0.0616692008,
+    "1966": -0.0154319266,
+    "1967": -0.0317577819,
+    "1968": 0.0197047663,
+    "1969": 0.0449026547,
+    "1970": 0.0999837041,
+    "1971": 0.0162402541,
+    "1972": 0.0449352856,
+    "1973": 0.1327090099,
+    "1974": 0.1242880469,
+    "1975": 0.0365574981,
+    "1976": 0.129604223,
+    "1977": 0.2031922789,
+    "1978": 0.0540380386,
+    "1979": 0.2709161363,
+    "1980": 0.0663683231,
+    "1981": 0.2416258368,
+    "1982": 0.1627669846,
+    "1983": -0.0309555743,
+    "1984": 0.075932241,
+    "1985": 0.13901486,
+    "1986": 0.1085972669,
+    "1987": 0.0704157494,
+    "1988": 0.0803440339,
+    "1989": 0.118358222,
+    "1990": 0.1896033153,
+    "1991": 0.1789493685,
+    "1992": 0.1452794244,
+    "1993": 0.1105898963,
+    "1994": 0.172820756,
+    "1995": 0.2677150564,
+    "1996": 0.2226838164,
+    "1997": 0.2678022822,
+    "1998": 0.3983250213,
+    "1999": -0.1317007553,
+    "2000": 0.0773511117,
+    "2001": 0.0534029992,
+    "2002": 0.2646162335,
+    "2003": 0.3036456394,
+    "2004": 0.1135239862,
+    "2005": 0.0819591529,
+    "2006": 0.0982322144,
+    "2007": 0.1685878802,
+    "2008": 0.3723956764,
+    "2009": 0.0132086874,
+    "2010": 0.0617933303
+   }
+  }
+ },
+ "code": {
+  "gm_commit": "a3b5218854a08f6836cdc1c4364d10d4f7f63505",
+  "gm_data_sha256": {
+   "RBI_CALLMONEY_M.csv": "9bb122c913492c0436042cf1e7f5beae5260f152544c3c76744830e8ece1ad4c"
+  },
+  "gm_dirty": true,
+  "gm_files_sha256": {
+   "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "audit.py": "e16260c9a3e521e92c94e741f8cbfd271498b3aa3e696606ffc6f940bcff91b6",
+   "bloomberg.py": "51ed8452b1b4b00afc4ca9d0534a31465e88dee4d1c976b9579936e5d34423c3",
+   "book.py": "bc0c7160779b2b76c451b68f34ff539ac0f1731e455963850722e379214b12eb",
+   "config.py": "e2f55a4c89773f036c464edd8b60e77b2eb188ff1e5541ff4ac8c7a4f2405329",
+   "daily.py": "eaf4d6673fc7d66639f9ba1d86ac24685a8962a1d24c8a224c0a5edd72d36c86",
+   "holdout.py": "546cdfdb3b5a48a29f7f72422fa98e89e52c714a0ba92397cf40c8405e8018bc",
+   "imf_revisions.py": "62e7f6aaa1fd13babdd0e40ba8dcdc8ae4abe8b12cb3a94189272358ba69037e",
+   "panel.py": "8f0a16328eb5559b0b55184d0ee55a6d357bd42c690ec4202742ef272f2fb9cf",
+   "plumbing.py": "2511a1b696ac0736e80ae28dd65601f086c910b53810020e95798329fb834553",
+   "protocol.py": "796424b17709b53fd2c1f0e8c85bef4e2c488a744d3f77f74e9b5539c69865af",
+   "run.py": "446826c3d2244ec2ba8353f0a695eb96dccdf36c3c747c3437cda6c7fce1dc21",
+   "signals.py": "9f08a5e0445d189fc83da56f327beb18c528bf064ae6740a29759b3575fe3a72",
+   "stats.py": "b599637d584ba70f923923a386eea8debd739776f1f6fc2bdae3413b2ecae9fd",
+   "timing.py": "43215ea94e5462a5d04f52a23c2086eccc0696ba339eb3b903fd98a0f6520320",
+   "trials.py": "2826099b09c5b71b7c5b4e1000b9b272fe7d34f8f3099314433ee6ba5a30f9b8",
+   "variants.py": "05cee496ce6b54b8bbd6c7b2f96f8ef94f9ea22cf8191efced84e01a1fdcb1b2",
+   "vol.py": "b650bda478767c3aabf877aeaa1f9de9921a72f650fc86e02fa07f56798a5952"
+  }
+ },
+ "configs": {
+  "BASE": "f7636d5622",
+  "CANDIDATE": "310de1d631"
+ },
+ "design_end": "2010-12",
+ "engine_helper": "gm_engine-1.0.0",
+ "fam_abs_sum": {
+  "BASE": {
+   "carry": {
+    "bd_au_10y": 5.99084646,
+    "bd_ca_10y": 4.60450406,
+    "bd_de_10y": 29.96964103,
+    "bd_gb_10y": 9.20942903,
+    "bd_jp_10y": 13.53706092,
+    "bd_us_10y": 46.08943118,
+    "bd_us_2y": 29.62986831,
+    "bd_us_30y": 15.40919893,
+    "bd_us_5y": 58.56019675,
+    "cm_aqr_ew": 0.0,
+    "cm_brent": 0.0,
+    "cm_cattle": 0.0,
+    "cm_coffee": 0.0,
+    "cm_copper": 0.0,
+    "cm_corn": 0.0,
+    "cm_cotton": 0.0,
+    "cm_gasoline": 0.85590115,
+    "cm_gold": 0.0,
+    "cm_heatoil": 3.67239996,
+    "cm_natgas": 2.89017759,
+    "cm_platinum": 0.0,
+    "cm_silver": 0.0,
+    "cm_soybeans": 0.0,
+    "cm_sugar": 0.0,
+    "cm_wheat": 0.0,
+    "cm_wti": 8.08034882,
+    "eq_au_asx": 0.0,
+    "eq_br_ibov": 0.0,
+    "eq_ca_tsx": 0.0,
+    "eq_cn": 0.0,
+    "eq_de_dax": 0.0,
+    "eq_eu_stoxx50": 0.0,
+    "eq_fr_cac": 0.0,
+    "eq_gb_ftse": 0.0,
+    "eq_hk_hsi": 0.0,
+    "eq_in": 0.0,
+    "eq_jp_nikkei": 0.0,
+    "eq_kr_kospi": 0.0,
+    "eq_mx_ipc": 0.0,
+    "eq_tw": 0.0,
+    "eq_us_ndx": 0.0,
+    "eq_us_r2k": 0.0,
+    "eq_us_spx": 0.0,
+    "eq_za": 0.0,
+    "fx_aud": 14.20237781,
+    "fx_brl": 6.27171785,
+    "fx_cad": 18.17578762,
+    "fx_chf": 16.08132099,
+    "fx_eur": 1.6488941,
+    "fx_gbp": 11.83266857,
+    "fx_jpy": 16.03440882,
+    "fx_krw": 20.70215256,
+    "fx_mxn": 5.73634055,
+    "fx_nok": 9.62188743,
+    "fx_nzd": 17.79682056,
+    "fx_sek": 7.70087351,
+    "fx_zar": 13.99676953,
+    "sp_de_2s10s": 0.0,
+    "sp_us_2s10s": 0.0,
+    "sp_us_breakeven10": 0.0,
+    "st_au_2y": 21.74293308,
+    "st_ca_2y": 8.2170802,
+    "st_de_2y": 71.67385127,
+    "st_gb_5y": 11.91633103,
+    "st_jp_2y": 96.67066481,
+    "st_us_2y": 29.62986831
+   },
+   "econ": {
+    "bd_au_10y": 3.36242669,
+    "bd_ca_10y": 2.15893055,
+    "bd_de_10y": 21.93406314,
+    "bd_gb_10y": 4.11761698,
+    "bd_jp_10y": 10.36515367,
+    "bd_us_10y": 27.19075494,
+    "bd_us_2y": 50.74185577,
+    "bd_us_30y": 11.36233393,
+    "bd_us_5y": 39.64985345,
+    "cm_aqr_ew": 0.0,
+    "cm_brent": 0.13845704,
+    "cm_cattle": 1.07703412,
+    "cm_coffee": 0.71934949,
+    "cm_copper": 0.71821118,
+    "cm_corn": 0.85314556,
+    "cm_cotton": 0.69571966,
+    "cm_gasoline": 0.41696959,
+    "cm_gold": 1.40977939,
+    "cm_heatoil": 1.82798317,
+    "cm_natgas": 1.14218018,
+    "cm_platinum": 1.61764921,
+    "cm_silver": 0.75298693,
+    "cm_soybeans": 0.802258,
+    "cm_sugar": 0.66396139,
+    "cm_wheat": 0.75377994,
+    "cm_wti": 6.87009233,
+    "eq_au_asx": 9.37591716,
+    "eq_br_ibov": 0.69283906,
+    "eq_ca_tsx": 9.10625165,
+    "eq_cn": 1.23741618,
+    "eq_de_dax": 3.5251604,
+    "eq_eu_stoxx50": 1.54265616,
+    "eq_fr_cac": 3.92932798,
+    "eq_gb_ftse": 8.94540241,
+    "eq_hk_hsi": 2.36919645,
+    "eq_in": 0.93555078,
+    "eq_jp_nikkei": 11.47032554,
+    "eq_kr_kospi": 0.56270217,
+    "eq_mx_ipc": 0.98884059,
+    "eq_tw": 0.63756566,
+    "eq_us_ndx": 3.8739805,
+    "eq_us_r2k": 3.4223141,
+    "eq_us_spx": 24.40779913,
+    "eq_za": 1.15059086,
+    "fx_aud": 20.48221232,
+    "fx_brl": 4.03449005,
+    "fx_cad": 32.72389283,
+    "fx_chf": 14.31053798,
+    "fx_eur": 3.72057532,
+    "fx_gbp": 16.31302937,
+    "fx_jpy": 18.9368992,
+    "fx_krw": 27.06421212,
+    "fx_mxn": 4.18021652,
+    "fx_nok": 12.36790294,
+    "fx_nzd": 17.60583445,
+    "fx_sek": 12.61308044,
+    "fx_zar": 12.88132343,
+    "sp_de_2s10s": 0.0,
+    "sp_us_2s10s": 0.0,
+    "sp_us_breakeven10": 0.0,
+    "st_au_2y": 12.83440641,
+    "st_ca_2y": 6.77742626,
+    "st_de_2y": 70.84538666,
+    "st_gb_5y": 6.66878957,
+    "st_jp_2y": 88.05800676,
+    "st_us_2y": 50.74185577
+   },
+   "trend": {
+    "bd_au_10y": 5.42875696,
+    "bd_ca_10y": 3.58329419,
+    "bd_de_10y": 25.17341721,
+    "bd_gb_10y": 6.85888793,
+    "bd_jp_10y": 11.32795224,
+    "bd_us_10y": 41.40018255,
+    "bd_us_2y": 53.04690242,
+    "bd_us_30y": 10.40445217,
+    "bd_us_5y": 59.34656334,
+    "cm_aqr_ew": 126.99610488,
+    "cm_brent": 0.09945424,
+    "cm_cattle": 1.44533738,
+    "cm_coffee": 1.04687819,
+    "cm_copper": 0.98770262,
+    "cm_corn": 1.19410845,
+    "cm_cotton": 1.04275724,
+    "cm_gasoline": 0.5289122,
+    "cm_gold": 1.97985347,
+    "cm_heatoil": 2.52625392,
+    "cm_natgas": 1.46125042,
+    "cm_platinum": 2.21552828,
+    "cm_silver": 1.10936243,
+    "cm_soybeans": 1.14415393,
+    "cm_sugar": 1.01480581,
+    "cm_wheat": 1.04938433,
+    "cm_wti": 6.32138199,
+    "eq_au_asx": 9.64666415,
+    "eq_br_ibov": 0.74168116,
+    "eq_ca_tsx": 10.05495117,
+    "eq_cn": 0.81676182,
+    "eq_de_dax": 3.07606703,
+    "eq_eu_stoxx50": 1.04953999,
+    "eq_fr_cac": 2.95601625,
+    "eq_gb_ftse": 9.49121467,
+    "eq_hk_hsi": 3.77724214,
+    "eq_in": 0.83087379,
+    "eq_jp_nikkei": 10.65681022,
+    "eq_kr_kospi": 0.74244906,
+    "eq_mx_ipc": 1.04886538,
+    "eq_tw": 0.83040931,
+    "eq_us_ndx": 4.17814482,
+    "eq_us_r2k": 3.78584209,
+    "eq_us_spx": 22.68057273,
+    "eq_za": 0.7679966,
+    "fx_aud": 18.21829556,
+    "fx_brl": 4.16536971,
+    "fx_cad": 34.91391418,
+    "fx_chf": 12.08545064,
+    "fx_eur": 3.07139349,
+    "fx_gbp": 16.20933157,
+    "fx_jpy": 15.34254889,
+    "fx_krw": 20.70425846,
+    "fx_mxn": 4.5438785,
+    "fx_nok": 10.48676783,
+    "fx_nzd": 15.96161013,
+    "fx_sek": 8.7468301,
+    "fx_zar": 9.72121617,
+    "sp_de_2s10s": 0.0,
+    "sp_us_2s10s": 0.0,
+    "sp_us_breakeven10": 0.0,
+    "st_au_2y": 20.940941,
+    "st_ca_2y": 12.31539632,
+    "st_de_2y": 81.47423348,
+    "st_gb_5y": 11.52259516,
+    "st_jp_2y": 128.36262696,
+    "st_us_2y": 53.04690242
+   },
+   "value": {
+    "bd_au_10y": 0.0,
+    "bd_ca_10y": 5.64484254,
+    "bd_de_10y": 48.17204645,
+    "bd_gb_10y": 23.42143423,
+    "bd_jp_10y": 28.06783858,
+    "bd_us_10y": 25.21891274,
+    "bd_us_2y": 0.0,
+    "bd_us_30y": 15.23486634,
+    "bd_us_5y": 0.0,
+    "cm_aqr_ew": 0.0,
+    "cm_brent": 0.0,
+    "cm_cattle": 0.0,
+    "cm_coffee": 0.0,
+    "cm_copper": 0.0,
+    "cm_corn": 0.0,
+    "cm_cotton": 0.0,
+    "cm_gasoline": 0.0,
+    "cm_gold": 0.0,
+    "cm_heatoil": 0.0,
+    "cm_natgas": 0.0,
+    "cm_platinum": 0.0,
+    "cm_silver": 0.0,
+    "cm_soybeans": 0.0,
+    "cm_sugar": 0.0,
+    "cm_wheat": 0.0,
+    "cm_wti": 0.0,
+    "eq_au_asx": 14.85502521,
+    "eq_br_ibov": 0.0,
+    "eq_ca_tsx": 11.3962271,
+    "eq_cn": 0.0,
+    "eq_de_dax": 2.27039419,
+    "eq_eu_stoxx50": 0.0,
+    "eq_fr_cac": 2.33822797,
+    "eq_gb_ftse": 15.93689713,
+    "eq_hk_hsi": 5.4302416,
+    "eq_in": 0.0,
+    "eq_jp_nikkei": 20.80835681,
+    "eq_kr_kospi": 0.0,
+    "eq_mx_ipc": 0.0,
+    "eq_tw": 0.0,
+    "eq_us_ndx": 0.0,
+    "eq_us_r2k": 0.0,
+    "eq_us_spx": 8.37705029,
+    "eq_za": 0.0,
+    "fx_aud": 0.0,
+    "fx_brl": 3.09696537,
+    "fx_cad": 30.69398855,
+    "fx_chf": 10.38759457,
+    "fx_eur": 1.94800263,
+    "fx_gbp": 11.07404601,
+    "fx_jpy": 14.37598837,
+    "fx_krw": 12.92989844,
+    "fx_mxn": 6.67828643,
+    "fx_nok": 7.42270101,
+    "fx_nzd": 0.0,
+    "fx_sek": 10.48621481,
+    "fx_zar": 9.19254092,
+    "sp_de_2s10s": 0.0,
+    "sp_us_2s10s": 0.0,
+    "sp_us_breakeven10": 0.0,
+    "st_au_2y": 0.0,
+    "st_ca_2y": 0.0,
+    "st_de_2y": 0.0,
+    "st_gb_5y": 0.0,
+    "st_jp_2y": 0.0,
+    "st_us_2y": 0.0
+   },
+   "xsmom": {
+    "bd_au_10y": 2.57349132,
+    "bd_ca_10y": 1.59468263,
+    "bd_de_10y": 8.03946872,
+    "bd_gb_10y": 2.78692509,
+    "bd_jp_10y": 4.20717688,
+    "bd_us_10y": 6.25262736,
+    "bd_us_2y": 13.46918311,
+    "bd_us_30y": 5.62787997,
+    "bd_us_5y": 5.99420519,
+    "cm_aqr_ew": 0.0,
+    "cm_brent": 0.00030885,
+    "cm_cattle": 0.00902122,
+    "cm_coffee": 0.0016455,
+    "cm_copper": 0.00200882,
+    "cm_corn": 0.00850068,
+    "cm_cotton": 0.46336697,
+    "cm_gasoline": 0.07911465,
+    "cm_gold": 0.3733049,
+    "cm_heatoil": 0.46307275,
+    "cm_natgas": 0.58632726,
+    "cm_platinum": 0.02479536,
+    "cm_silver": 0.13022707,
+    "cm_soybeans": 0.0077856,
+    "cm_sugar": 0.00453971,
+    "cm_wheat": 0.00831774,
+    "cm_wti": 0.77058195,
+    "eq_au_asx": 2.493923,
+    "eq_br_ibov": 0.40100731,
+    "eq_ca_tsx": 2.59035871,
+    "eq_cn": 0.52432024,
+    "eq_de_dax": 1.30077961,
+    "eq_eu_stoxx50": 0.501273,
+    "eq_fr_cac": 1.09527224,
+    "eq_gb_ftse": 2.20044306,
+    "eq_hk_hsi": 1.67690628,
+    "eq_in": 0.5434361,
+    "eq_jp_nikkei": 3.12468328,
+    "eq_kr_kospi": 0.46265885,
+    "eq_mx_ipc": 0.55632324,
+    "eq_tw": 0.47010507,
+    "eq_us_ndx": 1.64133073,
+    "eq_us_r2k": 1.18656649,
+    "eq_us_spx": 2.9383351,
+    "eq_za": 0.50080773,
+    "fx_aud": 3.87742258,
+    "fx_brl": 1.64763332,
+    "fx_cad": 8.54826983,
+    "fx_chf": 3.25825774,
+    "fx_eur": 0.54677348,
+    "fx_gbp": 3.60459404,
+    "fx_jpy": 4.38329463,
+    "fx_krw": 3.68721357,
+    "fx_mxn": 1.28055808,
+    "fx_nok": 2.16078979,
+    "fx_nzd": 3.91673613,
+    "fx_sek": 2.04035949,
+    "fx_zar": 2.6947298,
+    "sp_de_2s10s": 0.0,
+    "sp_us_2s10s": 0.0,
+    "sp_us_breakeven10": 0.0,
+    "st_au_2y": 7.7689015,
+    "st_ca_2y": 3.51451271,
+    "st_de_2y": 27.62940605,
+    "st_gb_5y": 2.71238648,
+    "st_jp_2y": 43.53924731,
+    "st_us_2y": 13.46918311
+   }
+  },
+  "CANDIDATE": {
+   "carry": {
+    "bd_au_10y": 6.91755185,
+    "bd_ca_10y": 6.75938057,
+    "bd_de_10y": 30.50573422,
+    "bd_gb_10y": 11.30170795,
+    "bd_jp_10y": 16.84657073,
+    "bd_us_10y": 42.05583988,
+    "bd_us_2y": 34.28362577,
+    "bd_us_30y": 19.37677877,
+    "bd_us_5y": 52.60704022,
+    "cm_aqr_ew": 0.0,
+    "cm_brent": 0.0,
+    "cm_cattle": 0.0,
+    "cm_coffee": 0.0,
+    "cm_copper": 0.0,
+    "cm_corn": 0.0,
+    "cm_cotton": 0.0,
+    "cm_gasoline": 1.4509672,
+    "cm_gold": 0.0,
+    "cm_heatoil": 4.9644713,
+    "cm_natgas": 4.665362,
+    "cm_platinum": 0.0,
+    "cm_silver": 0.0,
+    "cm_soybeans": 0.0,
+    "cm_sugar": 0.0,
+    "cm_wheat": 0.0,
+    "cm_wti": 9.75888064,
+    "eq_au_asx": 0.0,
+    "eq_br_ibov": 0.0,
+    "eq_ca_tsx": 0.0,
+    "eq_cn": 0.0,
+    "eq_de_dax": 0.0,
+    "eq_eu_stoxx50": 0.0,
+    "eq_fr_cac": 0.0,
+    "eq_gb_ftse": 0.0,
+    "eq_hk_hsi": 0.0,
+    "eq_in": 0.0,
+    "eq_jp_nikkei": 0.0,
+    "eq_kr_kospi": 0.0,
+    "eq_mx_ipc": 0.0,
+    "eq_tw": 0.0,
+    "eq_us_ndx": 0.0,
+    "eq_us_r2k": 0.0,
+    "eq_us_spx": 0.0,
+    "eq_za": 0.0,
+    "fx_aud": 16.26214093,
+    "fx_brl": 10.66749867,
+    "fx_cad": 22.7579988,
+    "fx_chf": 19.09717252,
+    "fx_eur": 2.28496568,
+    "fx_gbp": 14.14718349,
+    "fx_jpy": 19.92714825,
+    "fx_krw": 28.63500973,
+    "fx_mxn": 7.9851274,
+    "fx_nok": 12.65726813,
+    "fx_nzd": 18.93441996,
+    "fx_sek": 10.6486991,
+    "fx_zar": 16.52896329,
+    "sp_de_2s10s": 0.0,
+    "sp_us_2s10s": 0.0,
+    "sp_us_breakeven10": 0.0,
+    "st_au_2y": 26.46259259,
+    "st_ca_2y": 12.16106707,
+    "st_de_2y": 76.19881206,
+    "st_gb_5y": 14.96134251,
+    "st_jp_2y": 120.15775172,
+    "st_us_2y": 34.28362577
+   },
+   "econ": {
+    "bd_au_10y": 1.61347041,
+    "bd_ca_10y": 1.19843689,
+    "bd_de_10y": 8.94855965,
+    "bd_gb_10y": 2.05518598,
+    "bd_jp_10y": 5.5975376,
+    "bd_us_10y": 11.48649746,
+    "bd_us_2y": 24.14159206,
+    "bd_us_30y": 5.22956301,
+    "bd_us_5y": 17.00619071,
+    "cm_aqr_ew": 0.0,
+    "cm_brent": 0.11230181,
+    "cm_cattle": 0.68558915,
+    "cm_coffee": 0.3705202,
+    "cm_copper": 0.4627504,
+    "cm_corn": 0.43743725,
+    "cm_cotton": 0.39165606,
+    "cm_gasoline": 0.24441144,
+    "cm_gold": 0.73532123,
+    "cm_heatoil": 0.95540688,
+    "cm_natgas": 0.67945014,
+    "cm_platinum": 0.85149207,
+    "cm_silver": 0.46537532,
+    "cm_soybeans": 0.46369705,
+    "cm_sugar": 0.3285602,
+    "cm_wheat": 0.3869871,
+    "cm_wti": 3.57173865,
+    "eq_au_asx": 3.96712951,
+    "eq_br_ibov": 0.48670399,
+    "eq_ca_tsx": 4.29779683,
+    "eq_cn": 0.7211,
+    "eq_de_dax": 1.71041722,
+    "eq_eu_stoxx50": 0.6783076,
+    "eq_fr_cac": 1.76393148,
+    "eq_gb_ftse": 3.72244844,
+    "eq_hk_hsi": 1.04299471,
+    "eq_in": 0.50176595,
+    "eq_jp_nikkei": 7.63316115,
+    "eq_kr_kospi": 0.32042818,
+    "eq_mx_ipc": 0.89443009,
+    "eq_tw": 0.3876284,
+    "eq_us_ndx": 7.89905742,
+    "eq_us_r2k": 1.57673725,
+    "eq_us_spx": 9.44530609,
+    "eq_za": 0.51059563,
+    "fx_aud": 9.29722726,
+    "fx_brl": 5.2244761,
+    "fx_cad": 14.98956038,
+    "fx_chf": 6.5931023,
+    "fx_eur": 2.08534378,
+    "fx_gbp": 7.80481131,
+    "fx_jpy": 8.08324276,
+    "fx_krw": 24.24091308,
+    "fx_mxn": 2.94501678,
+    "fx_nok": 8.58427753,
+    "fx_nzd": 7.4508051,
+    "fx_sek": 10.72330323,
+    "fx_zar": 5.78337015,
+    "sp_de_2s10s": 0.0,
+    "sp_us_2s10s": 0.0,
+    "sp_us_breakeven10": 0.0,
+    "st_au_2y": 6.44646824,
+    "st_ca_2y": 4.01946918,
+    "st_de_2y": 29.9944464,
+    "st_gb_5y": 3.47892435,
+    "st_jp_2y": 45.40107924,
+    "st_us_2y": 24.14159206
+   },
+   "trend": {
+    "bd_au_10y": 7.29963944,
+    "bd_ca_10y": 5.56328404,
+    "bd_de_10y": 30.57281121,
+    "bd_gb_10y": 9.8132644,
+    "bd_jp_10y": 17.23539265,
+    "bd_us_10y": 48.03585255,
+    "bd_us_2y": 73.48890393,
+    "bd_us_30y": 13.97511324,
+    "bd_us_5y": 68.23597336,
+    "cm_aqr_ew": 149.66669832,
+    "cm_brent": 0.21348141,
+    "cm_cattle": 2.60423598,
+    "cm_coffee": 1.63001742,
+    "cm_copper": 1.71072428,
+    "cm_corn": 1.896306,
+    "cm_cotton": 1.7586553,
+    "cm_gasoline": 1.01251044,
+    "cm_gold": 3.10918647,
+    "cm_heatoil": 3.79426693,
+    "cm_natgas": 2.45958993,
+    "cm_platinum": 2.73057208,
+    "cm_silver": 1.86656009,
+    "cm_soybeans": 1.86476751,
+    "cm_sugar": 1.44833912,
+    "cm_wheat": 1.59050172,
+    "cm_wti": 9.38234971,
+    "eq_au_asx": 12.51298744,
+    "eq_br_ibov": 1.09956037,
+    "eq_ca_tsx": 14.27215479,
+    "eq_cn": 1.35492788,
+    "eq_de_dax": 4.5521351,
+    "eq_eu_stoxx50": 1.50647058,
+    "eq_fr_cac": 4.28712545,
+    "eq_gb_ftse": 11.76432239,
+    "eq_hk_hsi": 5.0218092,
+    "eq_in": 1.40143857,
+    "eq_jp_nikkei": 15.68771992,
+    "eq_kr_kospi": 1.1023054,
+    "eq_mx_ipc": 1.54629567,
+    "eq_tw": 1.30275096,
+    "eq_us_ndx": 6.14713315,
+    "eq_us_r2k": 5.4587414,
+    "eq_us_spx": 28.89240892,
+    "eq_za": 1.01077589,
+    "fx_aud": 28.9969174,
+    "fx_brl": 7.61036052,
+    "fx_cad": 50.66236645,
+    "fx_chf": 17.49312772,
+    "fx_eur": 4.81624507,
+    "fx_gbp": 23.48661111,
+    "fx_jpy": 20.94226716,
+    "fx_krw": 26.8368951,
+    "fx_mxn": 6.91570507,
+    "fx_nok": 15.86450496,
+    "fx_nzd": 20.32503978,
+    "fx_sek": 13.80611924,
+    "fx_zar": 11.96220117,
+    "sp_de_2s10s": 0.0,
+    "sp_us_2s10s": 0.0,
+    "sp_us_breakeven10": 0.0,
+    "st_au_2y": 29.03748684,
+    "st_ca_2y": 19.97664548,
+    "st_de_2y": 101.61176108,
+    "st_gb_5y": 17.23346161,
+    "st_jp_2y": 162.0357329,
+    "st_us_2y": 73.48890393
+   },
+   "value": {
+    "bd_au_10y": 0.0,
+    "bd_ca_10y": 7.39206519,
+    "bd_de_10y": 41.93855851,
+    "bd_gb_10y": 26.38237248,
+    "bd_jp_10y": 30.98042903,
+    "bd_us_10y": 24.89752725,
+    "bd_us_2y": 0.0,
+    "bd_us_30y": 14.87799478,
+    "bd_us_5y": 0.0,
+    "cm_aqr_ew": 0.0,
+    "cm_brent": 0.0,
+    "cm_cattle": 0.0,
+    "cm_coffee": 0.0,
+    "cm_copper": 0.0,
+    "cm_corn": 0.0,
+    "cm_cotton": 0.0,
+    "cm_gasoline": 0.0,
+    "cm_gold": 0.0,
+    "cm_heatoil": 0.0,
+    "cm_natgas": 0.0,
+    "cm_platinum": 0.0,
+    "cm_silver": 0.0,
+    "cm_soybeans": 0.0,
+    "cm_sugar": 0.0,
+    "cm_wheat": 0.0,
+    "cm_wti": 0.0,
+    "eq_au_asx": 14.41365155,
+    "eq_br_ibov": 0.0,
+    "eq_ca_tsx": 11.00393062,
+    "eq_cn": 0.0,
+    "eq_de_dax": 2.23871302,
+    "eq_eu_stoxx50": 0.0,
+    "eq_fr_cac": 2.60628112,
+    "eq_gb_ftse": 13.75065897,
+    "eq_hk_hsi": 5.01989257,
+    "eq_in": 0.0,
+    "eq_jp_nikkei": 19.41757535,
+    "eq_kr_kospi": 0.0,
+    "eq_mx_ipc": 0.0,
+    "eq_tw": 0.0,
+    "eq_us_ndx": 0.0,
+    "eq_us_r2k": 0.0,
+    "eq_us_spx": 7.50330795,
+    "eq_za": 0.0,
+    "fx_aud": 0.0,
+    "fx_brl": 3.28396486,
+    "fx_cad": 31.80307312,
+    "fx_chf": 10.04481519,
+    "fx_eur": 2.1125822,
+    "fx_gbp": 11.02631921,
+    "fx_jpy": 13.91948922,
+    "fx_krw": 28.14591241,
+    "fx_mxn": 6.91014144,
+    "fx_nok": 8.10397488,
+    "fx_nzd": 0.0,
+    "fx_sek": 12.86372051,
+    "fx_zar": 7.70890348,
+    "sp_de_2s10s": 0.0,
+    "sp_us_2s10s": 0.0,
+    "sp_us_breakeven10": 0.0,
+    "st_au_2y": 0.0,
+    "st_ca_2y": 0.0,
+    "st_de_2y": 0.0,
+    "st_gb_5y": 0.0,
+    "st_jp_2y": 0.0,
+    "st_us_2y": 0.0
+   }
+  }
+ },
+ "inputs": {
+  "files": {
+   "raw/IR3TIB01CAM156N.csv": {
+    "bytes": 15569
+   },
+   "raw/IR3TIB01CHM156N.csv": {
+    "bytes": 8533
+   },
+   "raw/IR3TIB01DEM156N.csv": {
+    "bytes": 15192
+   },
+   "raw/IR3TIB01EZM156N.csv": {
+    "bytes": 9897
+   },
+   "raw/IR3TIB01GBM156N.csv": {
+    "bytes": 15391
+   },
+   "raw/IR3TIB01JPM156N.csv": {
+    "bytes": 5287
+   },
+   "raw/IR3TIB01SEM156N.csv": {
+    "bytes": 9506
+   },
+   "raw/IRSTCI01CHM156N.csv": {
+    "bytes": 12501
+   },
+   "raw/IRSTCI01JPM156N.csv": {
+    "bytes": 9245
+   },
+   "raw/Y_SPY.csv": {
+    "bytes": 9127
+   },
+   "research/AUSLOLITONOSTSAM.csv": {
+    "bytes": 13852
+   },
+   "research/BAA10YM.csv": {
+    "bytes": 14110
+   },
+   "research/BRALOLITONOSTSAM.csv": {
+    "bytes": 8390
+   },
+   "research/CANLOLITONOSTSAM.csv": {
+    "bytes": 16257
+   },
+   "research/CHELOLITONOSTSAM.csv": {
+    "bytes": 18683
+   },
+   "research/CHNLOLITONOSTSAM.csv": {
+    "bytes": 7579
+   },
+   "research/CPALTT01BRM659N.csv": {
+    "bytes": 11680
+   },
+   "research/CPALTT01CAM659N.csv": {
+    "bytes": 29337
+   },
+   "research/CPALTT01CHM659N.csv": {
+    "bytes": 19178
+   },
+   "research/CPALTT01CNM659N.csv": {
+    "bytes": 6977
+   },
+   "research/CPALTT01DEM659N.csv": {
+    "bytes": 18976
+   },
+   "research/CPALTT01FRM659N.csv": {
+    "bytes": 18846
+   },
+   "research/CPALTT01GBM659N.csv": {
+    "bytes": 15418
+   },
+   "research/CPALTT01INM659N.csv": {
+    "bytes": 18075
+   },
+   "research/CPALTT01JPM659N.csv": {
+    "bytes": 13210
+   },
+   "research/CPALTT01KRM659N.csv": {
+    "bytes": 21439
+   },
+   "research/CPALTT01MXM659N.csv": {
+    "bytes": 15042
+   },
+   "research/CPALTT01NOM659N.csv": {
+    "bytes": 18519
+   },
+   "research/CPALTT01SEM659N.csv": {
+    "bytes": 18951
+   },
+   "research/CPALTT01USM659N.csv": {
+    "bytes": 18709
+   },
+   "research/CPALTT01ZAM659N.csv": {
+    "bytes": 17796
+   },
+   "research/DEULOLITONOSTSAM.csv": {
+    "bytes": 15067
+   },
+   "research/DEXBZUS.csv": {
+    "bytes": 143267
+   },
+   "research/DEXCAUS.csv": {
+    "bytes": 251793
+   },
+   "research/DEXCHUS.csv": {
+    "bytes": 205331
+   },
+   "research/DEXHKUS.csv": {
+    "bytes": 206662
+   },
+   "research/DEXINUS.csv": {
+    "bytes": 231994
+   },
+   "research/DEXJPUS.csv": {
+    "bytes": 255137
+   },
+   "research/DEXKOUS.csv": {
+    "bytes": 216293
+   },
+   "research/DEXMXUS.csv": {
+    "bytes": 150595
+   },
+   "research/DEXNOUS.csv": {
+    "bytes": 252495
+   },
+   "research/DEXSDUS.csv": {
+    "bytes": 252732
+   },
+   "research/DEXSFUS.csv": {
+    "bytes": 213687
+   },
+   "research/DEXSZUS.csv": {
+    "bytes": 251667
+   },
+   "research/DEXTAUS.csv": {
+    "bytes": 189641
+   },
+   "research/DEXUSAL.csv": {
+    "bytes": 251546
+   },
+   "research/DEXUSEU.csv": {
+    "bytes": 125274
+   },
+   "research/DEXUSNZ.csv": {
+    "bytes": 251392
+   },
+   "research/DEXUSUK.csv": {
+    "bytes": 251671
+   },
+   "research/DFII10.csv": {
+    "bytes": 96248
+   },
+   "research/DGS10.csv": {
+    "bytes": 260479
+   },
+   "research/DGS2.csv": {
+    "bytes": 210046
+   },
+   "research/DGS30.csv": {
+    "bytes": 200186
+   },
+   "research/DGS5.csv": {
+    "bytes": 260326
+   },
+   "research/D_000001_SS.csv": {
+    "bytes": 162215
+   },
+   "research/D_BZ_F.csv": {
+    "bytes": 98810
+   },
+   "research/D_CT_F.csv": {
+    "bytes": 136575
+   },
+   "research/D_EZA.csv": {
+    "bytes": 124464
+   },
+   "research/D_GC_F.csv": {
+    "bytes": 142199
+   },
+   "research/D_HG_F.csv": {
+    "bytes": 114552
+   },
+   "research/D_KC_F.csv": {
+    "bytes": 140377
+   },
+   "research/D_LE_F.csv": {
+    "bytes": 133446
+   },
+   "research/D_PL_F.csv": {
+    "bytes": 140216
+   },
+   "research/D_SB_F.csv": {
+    "bytes": 117017
+   },
+   "research/D_SI_F.csv": {
+    "bytes": 122508
+   },
+   "research/D_ZC_F.csv": {
+    "bytes": 114977
+   },
+   "research/D_ZS_F.csv": {
+    "bytes": 117685
+   },
+   "research/D_ZW_F.csv": {
+    "bytes": 115171
+   },
+   "research/D__AXJO.csv": {
+    "bytes": 189056
+   },
+   "research/D__BSESN.csv": {
+    "bytes": 169292
+   },
+   "research/D__BVSP.csv": {
+    "bytes": 161622
+   },
+   "research/D__FCHI.csv": {
+    "bytes": 209070
+   },
+   "research/D__FTSE.csv": {
+    "bytes": 238235
+   },
+   "research/D__GDAXI.csv": {
+    "bytes": 225929
+   },
+   "research/D__GSPC.csv": {
+    "bytes": 315810
+   },
+   "research/D__GSPTSE.csv": {
+    "bytes": 269689
+   },
+   "research/D__HSI.csv": {
+    "bytes": 227626
+   },
+   "research/D__IXIC.csv": {
+    "bytes": 312112
+   },
+   "research/D__KS11.csv": {
+    "bytes": 164631
+   },
+   "research/D__MXX.csv": {
+    "bytes": 203779
+   },
+   "research/D__N225.csv": {
+    "bytes": 327482
+   },
+   "research/D__RUT.csv": {
+    "bytes": 217264
+   },
+   "research/D__STOXX50E.csv": {
+    "bytes": 111391
+   },
+   "research/D__TWII.csv": {
+    "bytes": 166271
+   },
+   "research/FRALOLITONOSTSAM.csv": {
+    "bytes": 13676
+   },
+   "research/GBRLOLITONOSTSAM.csv": {
+    "bytes": 15815
+   },
+   "research/INDLOLITONOSTSAM.csv": {
+    "bytes": 7136
+   },
+   "research/INTDSRINM193N.csv": {
+    "bytes": 9045
+   },
+   "research/IR3TIB01AUM156N.csv": {
+    "bytes": 11363
+   },
+   "research/IR3TIB01CNM156N.csv": {
+    "bytes": 5683
+   },
+   "research/IR3TIB01FRM156N.csv": {
+    "bytes": 13111
+   },
+   "research/IR3TIB01KRM156N.csv": {
+    "bytes": 6913
+   },
+   "research/IR3TIB01MXM156N.csv": {
+    "bytes": 5765
+   },
+   "research/IR3TIB01NOM156N.csv": {
+    "bytes": 9315
+   },
+   "research/IR3TIB01NZM156N.csv": {
+    "bytes": 10225
+   },
+   "research/IR3TIB01USM156N.csv": {
+    "bytes": 11934
+   },
+   "research/IR3TIB01ZAM156N.csv": {
+    "bytes": 13188
+   },
+   "research/IRSTCB01JPM156N.csv": {
+    "bytes": 11596
+   },
+   "research/IRSTCI01BRM156N.csv": {
+    "bytes": 5858
+   },
+   "research/IRSTCI01KRM156N.csv": {
+    "bytes": 6947
+   },
+   "research/IRSTCI01ZAM156N.csv": {
+    "bytes": 13081
+   },
+   "research/JPNLOLITONOSTSAM.csv": {
+    "bytes": 15536
+   },
+   "research/KORLOLITONOSTSAM.csv": {
+    "bytes": 8152
+   },
+   "research/MEXLOLITONOSTSAM.csv": {
+    "bytes": 10048
+   },
+   "research/NBAUBIS.csv": {
+    "bytes": 6900
+   },
+   "research/NBBRBIS.csv": {
+    "bytes": 6990
+   },
+   "research/NBCABIS.csv": {
+    "bytes": 6840
+   },
+   "research/NBCHBIS.csv": {
+    "bytes": 6696
+   },
+   "research/NBCNBIS.csv": {
+    "bytes": 6737
+   },
+   "research/NBGBBIS.csv": {
+    "bytes": 6922
+   },
+   "research/NBINBIS.csv": {
+    "bytes": 6931
+   },
+   "research/NBJPBIS.csv": {
+    "bytes": 6697
+   },
+   "research/NBKRBIS.csv": {
+    "bytes": 6806
+   },
+   "research/NBMXBIS.csv": {
+    "bytes": 6997
+   },
+   "research/NBNOBIS.csv": {
+    "bytes": 6964
+   },
+   "research/NBNZBIS.csv": {
+    "bytes": 6803
+   },
+   "research/NBSEBIS.csv": {
+    "bytes": 6911
+   },
+   "research/NBUSBIS.csv": {
+    "bytes": 6687
+   },
+   "research/NBZABIS.csv": {
+    "bytes": 6968
+   },
+   "research/NORLOLITONOSTSAM.csv": {
+    "bytes": 16414
+   },
+   "research/NZLLOLITONOSTSAM.csv": {
+    "bytes": 11414
+   },
+   "research/RBI_CALLMONEY_M.csv": {
+    "bytes": 7545
+   },
+   "research/SWELOLITONOSTSAM.csv": {
+    "bytes": 17726
+   },
+   "research/T10YIE.csv": {
+    "bytes": 95184
+   },
+   "research/TB3MS.csv": {
+    "bytes": 17848
+   },
+   "research/USALOLITONOSTSAM.csv": {
+    "bytes": 16487
+   },
+   "research/Y_000001_SS.csv": {
+    "bytes": 8085
+   },
+   "research/Y_AUDUSD_X.csv": {
+    "bytes": 4839
+   },
+   "research/Y_BNO.csv": {
+    "bytes": 3739
+   },
+   "research/Y_BRL_X.csv": {
+    "bytes": 4607
+   },
+   "research/Y_BZ_F.csv": {
+    "bytes": 4136
+   },
+   "research/Y_CAD_X.csv": {
+    "bytes": 5141
+   },
+   "research/Y_CHF_X.csv": {
+    "bytes": 5140
+   },
+   "research/Y_CL_F.csv": {
+    "bytes": 5463
+   },
+   "research/Y_CNY_X.csv": {
+    "bytes": 5352
+   },
+   "research/Y_CORN.csv": {
+    "bytes": 3783
+   },
+   "research/Y_CPER.csv": {
+    "bytes": 3421
+   },
+   "research/Y_CT_F.csv": {
+    "bytes": 6531
+   },
+   "research/Y_EURUSD_X.csv": {
+    "bytes": 5473
+   },
+   "research/Y_EWA.csv": {
+    "bytes": 7555
+   },
+   "research/Y_EWC.csv": {
+    "bytes": 7604
+   },
+   "research/Y_EWG.csv": {
+    "bytes": 7645
+   },
+   "research/Y_EWH.csv": {
+    "bytes": 7529
+   },
+   "research/Y_EWJ.csv": {
+    "bytes": 7711
+   },
+   "research/Y_EWQ.csv": {
+    "bytes": 7649
+   },
+   "research/Y_EWT.csv": {
+    "bytes": 6613
+   },
+   "research/Y_EWU.csv": {
+    "bytes": 7692
+   },
+   "research/Y_EWW.csv": {
+    "bytes": 7630
+   },
+   "research/Y_EWY.csv": {
+    "bytes": 6676
+   },
+   "research/Y_EWZ.csv": {
+    "bytes": 6559
+   },
+   "research/Y_EZA.csv": {
+    "bytes": 5971
+   },
+   "research/Y_EZU.csv": {
+    "bytes": 6621
+   },
+   "research/Y_FXI.csv": {
+    "bytes": 5544
+   },
+   "research/Y_GBPUSD_X.csv": {
+    "bytes": 5454
+   },
+   "research/Y_GC_F.csv": {
+    "bytes": 5807
+   },
+   "research/Y_GLD.csv": {
+    "bytes": 5673
+   },
+   "research/Y_HG_F.csv": {
+    "bytes": 4704
+   },
+   "research/Y_HO_F.csv": {
+    "bytes": 4820
+   },
+   "research/Y_INDA.csv": {
+    "bytes": 3701
+   },
+   "research/Y_INR_X.csv": {
+    "bytes": 5628
+   },
+   "research/Y_IWM.csv": {
+    "bytes": 6826
+   },
+   "research/Y_JPY_X.csv": {
+    "bytes": 7764
+   },
+   "research/Y_KC_F.csv": {
+    "bytes": 5807
+   },
+   "research/Y_KRW_X.csv": {
+    "bytes": 6164
+   },
+   "research/Y_LE_F.csv": {
+    "bytes": 5383
+   },
+   "research/Y_MCHI.csv": {
+    "bytes": 3951
+   },
+   "research/Y_MXN_X.csv": {
+    "bytes": 5338
+   },
+   "research/Y_NG_F.csv": {
+    "bytes": 4565
+   },
+   "research/Y_NOKUSD_X.csv": {
+    "bytes": 5933
+   },
+   "research/Y_NZDUSD_X.csv": {
+    "bytes": 5446
+   },
+   "research/Y_PL_F.csv": {
+    "bytes": 6146
+   },
+   "research/Y_PPLT.csv": {
+    "bytes": 3553
+   },
+   "research/Y_QQQ.csv": {
+    "bytes": 7103
+   },
+   "research/Y_RB_F.csv": {
+    "bytes": 4773
+   },
+   "research/Y_SB_F.csv": {
+    "bytes": 4876
+   },
+   "research/Y_SEKUSD_X.csv": {
+    "bytes": 5935
+   },
+   "research/Y_SI_F.csv": {
+    "bytes": 5033
+   },
+   "research/Y_SLV.csv": {
+    "bytes": 4593
+   },
+   "research/Y_UNG.csv": {
+    "bytes": 4892
+   },
+   "research/Y_USO.csv": {
+    "bytes": 5210
+   },
+   "research/Y_WEAT.csv": {
+    "bytes": 3577
+   },
+   "research/Y_ZAR_X.csv": {
+    "bytes": 5198
+   },
+   "research/Y_ZC_F.csv": {
+    "bytes": 4730
+   },
+   "research/Y_ZS_F.csv": {
+    "bytes": 4835
+   },
+   "research/Y_ZW_F.csv": {
+    "bytes": 4738
+   },
+   "research/Y__AXJO.csv": {
+    "bytes": 8969
+   },
+   "research/Y__BSESN.csv": {
+    "bytes": 8280
+   },
+   "research/Y__BVSP.csv": {
+    "bytes": 7862
+   },
+   "research/Y__FCHI.csv": {
+    "bytes": 9884
+   },
+   "research/Y__FTSE.csv": {
+    "bytes": 11095
+   },
+   "research/Y__GDAXI.csv": {
+    "bytes": 10786
+   },
+   "research/Y__GSPC.csv": {
+    "bytes": 11226
+   },
+   "research/Y__GSPTSE.csv": {
+    "bytes": 11431
+   },
+   "research/Y__HSI.csv": {
+    "bytes": 11167
+   },
+   "research/Y__IXIC.csv": {
+    "bytes": 11344
+   },
+   "research/Y__JN0U_JO.csv": {
+    "bytes": 2535
+   },
+   "research/Y__KS11.csv": {
+    "bytes": 8087
+   },
+   "research/Y__MXX.csv": {
+    "bytes": 9760
+   },
+   "research/Y__N225.csv": {
+    "bytes": 11849
+   },
+   "research/Y__NSEI.csv": {
+    "bytes": 5200
+   },
+   "research/Y__RUT.csv": {
+    "bytes": 10372
+   },
+   "research/Y__STOXX50E.csv": {
+    "bytes": 5366
+   },
+   "research/Y__TWII.csv": {
+    "bytes": 8182
+   },
+   "research/ZAFLOLITONOSTSAM.csv": {
+    "bytes": 11737
+   },
+   "research/aqr_commodities_long_run.xlsx": {
+    "bytes": 454950
+   },
+   "research/cb_au_f2.csv": {
+    "bytes": 201855
+   },
+   "research/cb_au_f2_hist.xls": {
+    "bytes": 598016
+   },
+   "research/cb_ca_yields.csv": {
+    "bytes": 181560
+   },
+   "research/cb_ca_yields_legacy.csv": {
+    "bytes": 7689
+   },
+   "research/cb_de_10y.csv": {
+    "bytes": 231740
+   },
+   "research/cb_de_10y_m.csv": {
+    "bytes": 9519
+   },
+   "research/cb_de_2y.csv": {
+    "bytes": 233022
+   },
+   "research/cb_de_2y_m.csv": {
+    "bytes": 9579
+   },
+   "research/cb_gb_yields.csv": {
+    "bytes": 223212
+   },
+   "research/cb_jp_jgb_all.csv": {
+    "bytes": 1195548
+   },
+   "research/cb_jp_jgb_recent.csv": {
+    "bytes": 2257
+   },
+   "research/eia_cl1.xls": {
+    "bytes": 494592
+   },
+   "research/eia_cl2.xls": {
+    "bytes": 468480
+   },
+   "research/eia_cl3.xls": {
+    "bytes": 496640
+   },
+   "research/eia_cl4.xls": {
+    "bytes": 466944
+   },
+   "research/eia_ho1.xls": {
+    "bytes": 552448
+   },
+   "research/eia_ho2.xls": {
+    "bytes": 385536
+   },
+   "research/eia_ho3.xls": {
+    "bytes": 567808
+   },
+   "research/eia_ho4.xls": {
+    "bytes": 396800
+   },
+   "research/eia_ng1.xls": {
+    "bytes": 425472
+   },
+   "research/eia_ng2.xls": {
+    "bytes": 424960
+   },
+   "research/eia_ng3.xls": {
+    "bytes": 422912
+   },
+   "research/eia_ng4.xls": {
+    "bytes": 423424
+   },
+   "research/eia_rb1.xls": {
+    "bytes": 271872
+   },
+   "research/eia_rb2.xls": {
+    "bytes": 272384
+   },
+   "research/eia_rb3.xls": {
+    "bytes": 272896
+   },
+   "research/eia_rb4.xls": {
+    "bytes": 272896
+   },
+   "research/french_5f.zip": {
+    "bytes": 11971
+   },
+   "research/french_intl_countries_ff.zip": {
+    "bytes": 1281647
+   },
+   "research/french_intl_countries_ff_xdiv.zip": {
+    "bytes": 1281286
+   },
+   "research/msci_manual_gross_local.csv": {
+    "bytes": 75920
+   },
+   "research/oecd_cli.csv": {
+    "bytes": 1835507
+   },
+   "research/oecd_cpi_yoy.csv": {
+    "bytes": 2522791
+   },
+   "research/wb_pinksheet_monthly.xlsx": {
+    "bytes": 586099
+   }
+  },
+  "note": "research/ and raw/ ship in work\\free\\gm_free_inputs.zip; gm_data/ travels inside lib\\gm\\data"
+ },
+ "libraries": {
+  "numpy": "2.5.3",
+  "openpyxl": "3.1.5",
+  "pandas": "3.0.5",
+  "python": "3.13.16",
+  "scipy": "1.18.1",
+  "xlrd": "2.0.2"
+ },
+ "made": "2026-11-12",
+ "market_months": {
+  "bd_au_10y": 191,
+  "bd_ca_10y": 119,
+  "bd_de_10y": 459,
+  "bd_gb_10y": 205,
+  "bd_jp_10y": 293,
+  "bd_us_10y": 587,
+  "bd_us_2y": 414,
+  "bd_us_30y": 406,
+  "bd_us_5y": 587,
+  "cm_aqr_ew": 492,
+  "cm_brent": 33,
+  "cm_cattle": 84,
+  "cm_coffee": 96,
+  "cm_copper": 89,
+  "cm_corn": 92,
+  "cm_cotton": 131,
+  "cm_gasoline": 105,
+  "cm_gold": 108,
+  "cm_heatoil": 202,
+  "cm_natgas": 203,
+  "cm_platinum": 96,
+  "cm_silver": 104,
+  "cm_soybeans": 88,
+  "cm_sugar": 94,
+  "cm_wheat": 90,
+  "cm_wti": 311,
+  "eq_au_asx": 432,
+  "eq_br_ibov": 170,
+  "eq_ca_tsx": 408,
+  "eq_cn": 161,
+  "eq_de_dax": 276,
+  "eq_eu_stoxx50": 125,
+  "eq_fr_cac": 249,
+  "eq_gb_ftse": 432,
+  "eq_hk_hsi": 359,
+  "eq_in": 161,
+  "eq_jp_nikkei": 432,
+  "eq_kr_kospi": 168,
+  "eq_mx_ipc": 167,
+  "eq_tw": 161,
+  "eq_us_ndx": 311,
+  "eq_us_r2k": 279,
+  "eq_us_spx": 570,
+  "eq_za": 120,
+  "fx_aud": 479,
+  "fx_brl": 170,
+  "fx_cad": 479,
+  "fx_chf": 467,
+  "fx_eur": 143,
+  "fx_gbp": 479,
+  "fx_jpy": 479,
+  "fx_krw": 239,
+  "fx_mxn": 167,
+  "fx_nok": 383,
+  "fx_nzd": 444,
+  "fx_sek": 347,
+  "fx_zar": 371,
+  "sp_de_2s10s": 459,
+  "sp_us_2s10s": 414,
+  "sp_us_breakeven10": 95,
+  "st_au_2y": 191,
+  "st_ca_2y": 119,
+  "st_de_2y": 459,
+  "st_gb_5y": 204,
+  "st_jp_2y": 420,
+  "st_us_2y": 414
+ },
+ "pos_abs_sum": {
+  "BASE": {
+   "bd_au_10y": 10.84206636,
+   "bd_ca_10y": 10.26166077,
+   "bd_de_10y": 77.35661301,
+   "bd_gb_10y": 20.28084803,
+   "bd_jp_10y": 21.51848457,
+   "bd_us_10y": 75.30024139,
+   "bd_us_2y": 89.1867783,
+   "bd_us_30y": 37.07025899,
+   "bd_us_5y": 102.60775196,
+   "cm_aqr_ew": 93.23421067,
+   "cm_brent": 0.19515298,
+   "cm_cattle": 1.84913284,
+   "cm_coffee": 1.28825038,
+   "cm_copper": 1.37363875,
+   "cm_corn": 1.29731068,
+   "cm_cotton": 1.30740677,
+   "cm_gasoline": 1.32438493,
+   "cm_gold": 2.67020231,
+   "cm_heatoil": 5.19999037,
+   "cm_natgas": 3.97696919,
+   "cm_platinum": 2.70411987,
+   "cm_silver": 1.42867595,
+   "cm_soybeans": 1.2522127,
+   "cm_sugar": 1.36106366,
+   "cm_wheat": 1.11100099,
+   "cm_wti": 12.36878984,
+   "eq_au_asx": 25.58781757,
+   "eq_br_ibov": 1.19507175,
+   "eq_ca_tsx": 15.61738267,
+   "eq_cn": 1.57171819,
+   "eq_de_dax": 4.98741567,
+   "eq_eu_stoxx50": 2.09261296,
+   "eq_fr_cac": 7.10957599,
+   "eq_gb_ftse": 23.69638504,
+   "eq_hk_hsi": 8.77077026,
+   "eq_in": 1.80191369,
+   "eq_jp_nikkei": 24.12003068,
+   "eq_kr_kospi": 1.33208473,
+   "eq_mx_ipc": 2.28611873,
+   "eq_tw": 1.33613655,
+   "eq_us_ndx": 7.76716913,
+   "eq_us_r2k": 6.58843222,
+   "eq_us_spx": 42.21194888,
+   "eq_za": 1.79757,
+   "fx_aud": 34.62156919,
+   "fx_brl": 9.44627403,
+   "fx_cad": 74.70091094,
+   "fx_chf": 29.55852127,
+   "fx_eur": 5.72241096,
+   "fx_gbp": 33.47882006,
+   "fx_jpy": 34.92395622,
+   "fx_krw": 43.80111697,
+   "fx_mxn": 11.13827511,
+   "fx_nok": 21.05550607,
+   "fx_nzd": 32.19407435,
+   "fx_sek": 20.31050046,
+   "fx_zar": 23.44976591,
+   "sp_de_2s10s": 0.0,
+   "sp_us_2s10s": 0.0,
+   "sp_us_breakeven10": 0.0,
+   "st_au_2y": 33.86815373,
+   "st_ca_2y": 17.17294408,
+   "st_de_2y": 122.43015696,
+   "st_gb_5y": 17.42914295,
+   "st_jp_2y": 189.86457517,
+   "st_us_2y": 89.1867783
+  },
+  "CANDIDATE": {
+   "bd_au_10y": 10.40603525,
+   "bd_ca_10y": 12.8566517,
+   "bd_de_10y": 67.82471739,
+   "bd_gb_10y": 26.19258839,
+   "bd_jp_10y": 23.66488058,
+   "bd_us_10y": 65.5824832,
+   "bd_us_2y": 87.87357286,
+   "bd_us_30y": 36.29168936,
+   "bd_us_5y": 90.65805727,
+   "cm_aqr_ew": 98.69211546,
+   "cm_brent": 0.28167029,
+   "cm_cattle": 2.87843115,
+   "cm_coffee": 1.70370966,
+   "cm_copper": 1.87861092,
+   "cm_corn": 1.88055185,
+   "cm_cotton": 1.79939457,
+   "cm_gasoline": 2.06183363,
+   "cm_gold": 3.3987711,
+   "cm_heatoil": 6.39629425,
+   "cm_natgas": 5.41278489,
+   "cm_platinum": 3.04432384,
+   "cm_silver": 2.04506451,
+   "cm_soybeans": 1.8927499,
+   "cm_sugar": 1.60049837,
+   "cm_wheat": 1.54761693,
+   "cm_wti": 14.76983275,
+   "eq_au_asx": 24.70312836,
+   "eq_br_ibov": 1.38765067,
+   "eq_ca_tsx": 16.55597519,
+   "eq_cn": 1.55733812,
+   "eq_de_dax": 4.80613802,
+   "eq_eu_stoxx50": 1.76435181,
+   "eq_fr_cac": 6.59464527,
+   "eq_gb_ftse": 22.9749023,
+   "eq_hk_hsi": 8.34607686,
+   "eq_in": 1.61771644,
+   "eq_jp_nikkei": 23.96855855,
+   "eq_kr_kospi": 1.28936994,
+   "eq_mx_ipc": 2.33334734,
+   "eq_tw": 1.49322474,
+   "eq_us_ndx": 13.90175085,
+   "eq_us_r2k": 6.44948872,
+   "eq_us_spx": 38.25975017,
+   "eq_za": 1.35691728,
+   "fx_aud": 40.91017579,
+   "fx_brl": 17.21192463,
+   "fx_cad": 77.46913638,
+   "fx_chf": 30.03426608,
+   "fx_eur": 5.92921436,
+   "fx_gbp": 36.30350012,
+   "fx_jpy": 35.72689844,
+   "fx_krw": 69.29568117,
+   "fx_mxn": 15.2795944,
+   "fx_nok": 24.82622397,
+   "fx_nzd": 31.97681182,
+   "fx_sek": 26.46723596,
+   "fx_zar": 24.23159115,
+   "sp_de_2s10s": 0.0,
+   "sp_us_2s10s": 0.0,
+   "sp_us_breakeven10": 0.0,
+   "st_au_2y": 35.47712525,
+   "st_ca_2y": 23.53636558,
+   "st_de_2y": 112.01395516,
+   "st_gb_5y": 20.57698995,
+   "st_jp_2y": 207.48105762,
+   "st_us_2y": 87.87357286
+  }
+ },
+ "run_seconds": 52,
+ "signal_abs_sum": {
+  "C": {
+   "bd_au_10y": 1.64725952,
+   "bd_ca_10y": 2.020245,
+   "bd_de_10y": 7.52203891,
+   "bd_gb_10y": 2.5227704,
+   "bd_jp_10y": 3.6779544,
+   "bd_us_10y": 9.5901,
+   "bd_us_2y": 4.3958,
+   "bd_us_30y": 8.8296,
+   "bd_us_5y": 7.9845,
+   "cm_gasoline": 15.88407633,
+   "cm_heatoil": 56.4551895,
+   "cm_natgas": 91.00648982,
+   "cm_wti": 59.32997472,
+   "eq_au_asx": 21.06955952,
+   "eq_ca_tsx": 18.35681231,
+   "eq_de_dax": 9.75683485,
+   "eq_fr_cac": 14.92858531,
+   "eq_gb_ftse": 17.8729582,
+   "eq_hk_hsi": 11.0077,
+   "eq_jp_nikkei": 10.43763,
+   "eq_us_spx": 4.61210431,
+   "fx_aud": 17.37479048,
+   "fx_brl": 27.3761,
+   "fx_cad": 10.30346688,
+   "fx_chf": 15.59182577,
+   "fx_eur": 11.433217,
+   "fx_gbp": 16.3605698,
+   "fx_jpy": 15.8160392,
+   "fx_krw": 12.557,
+   "fx_mxn": 15.6264,
+   "fx_nok": 12.7736,
+   "fx_nzd": 21.3053,
+   "fx_sek": 9.9644,
+   "fx_zar": 31.33176867,
+   "st_au_2y": 0.92110952,
+   "st_ca_2y": 0.738535,
+   "st_de_2y": 3.90199751,
+   "st_gb_5y": 2.0038756,
+   "st_jp_2y": 3.0670146,
+   "st_us_2y": 4.3958
+  },
+  "E": {
+   "bd_au_10y": 90.75179238,
+   "bd_ca_10y": 119.62144744,
+   "bd_de_10y": 142.08355859,
+   "bd_gb_10y": 108.75424605,
+   "bd_jp_10y": 116.15432574,
+   "bd_us_10y": 145.07935309,
+   "bd_us_2y": 145.07935309,
+   "bd_us_30y": 145.07935309,
+   "bd_us_5y": 145.07935309,
+   "cm_aqr_ew": 59.41697374,
+   "cm_brent": 59.41697374,
+   "cm_cattle": 59.41697374,
+   "cm_coffee": 59.41697374,
+   "cm_copper": 59.41697374,
+   "cm_corn": 59.41697374,
+   "cm_cotton": 59.41697374,
+   "cm_gasoline": 59.41697374,
+   "cm_gold": 59.41697374,
+   "cm_heatoil": 59.41697374,
+   "cm_natgas": 59.41697374,
+   "cm_platinum": 59.41697374,
+   "cm_silver": 59.41697374,
+   "cm_soybeans": 59.41697374,
+   "cm_sugar": 59.41697374,
+   "cm_wheat": 59.41697374,
+   "cm_wti": 59.41697374,
+   "eq_au_asx": 97.7422249,
+   "eq_br_ibov": 57.49722423,
+   "eq_ca_tsx": 109.62994644,
+   "eq_cn": 41.73269764,
+   "eq_de_dax": 122.20089952,
+   "eq_eu_stoxx50": 122.20089952,
+   "eq_fr_cac": 126.48281486,
+   "eq_gb_ftse": 116.04981479,
+   "eq_hk_hsi": 41.73269764,
+   "eq_in": 113.40858527,
+   "eq_jp_nikkei": 122.79009368,
+   "eq_kr_kospi": 110.11164777,
+   "eq_mx_ipc": 102.34862544,
+   "eq_tw": 110.11164777,
+   "eq_us_ndx": 126.82692272,
+   "eq_us_r2k": 126.82692272,
+   "eq_us_spx": 126.82692272,
+   "eq_za": 118.64945087,
+   "fx_aud": 100.29335659,
+   "fx_brl": 76.10972755,
+   "fx_cad": 92.22697714,
+   "fx_chf": 110.25339216,
+   "fx_eur": 122.68758106,
+   "fx_gbp": 103.1858976,
+   "fx_jpy": 109.52697649,
+   "fx_krw": 108.32899624,
+   "fx_mxn": 95.29528618,
+   "fx_nok": 117.88764091,
+   "fx_nzd": 90.37799452,
+   "fx_sek": 122.20236637,
+   "fx_zar": 132.45653453,
+   "st_au_2y": 90.75179238,
+   "st_ca_2y": 119.62144744,
+   "st_de_2y": 142.08355859,
+   "st_gb_5y": 108.75424605,
+   "st_jp_2y": 116.15432574,
+   "st_us_2y": 145.07935309
+  },
+  "V": {
+   "bd_ca_10y": 2.51670182,
+   "bd_de_10y": 16.49398878,
+   "bd_gb_10y": 6.57978244,
+   "bd_jp_10y": 6.81592111,
+   "bd_us_10y": 16.08716773,
+   "bd_us_30y": 12.91690599,
+   "cm_cotton": 13.35806246,
+   "cm_gasoline": 1.31471447,
+   "cm_gold": 9.6842576,
+   "cm_heatoil": 113.58508597,
+   "cm_natgas": 107.41578092,
+   "cm_wti": 145.84775262,
+   "eq_au_asx": 17.2771,
+   "eq_ca_tsx": 10.9189,
+   "eq_de_dax": 13.8117,
+   "eq_fr_cac": 16.0645,
+   "eq_gb_ftse": 17.9886,
+   "eq_hk_hsi": 15.8887,
+   "eq_jp_nikkei": 5.1573,
+   "eq_us_spx": 3.65662461,
+   "fx_brl": 65.43623294,
+   "fx_cad": 57.92163136,
+   "fx_chf": 97.71414416,
+   "fx_eur": 15.20971672,
+   "fx_gbp": 73.59160003,
+   "fx_jpy": 92.36940104,
+   "fx_krw": 54.78219137,
+   "fx_mxn": 26.86310946,
+   "fx_nok": 82.60252256,
+   "fx_sek": 95.88752972,
+   "fx_zar": 80.58387153
+  },
+  "trend": {
+   "bd_au_10y": 116.33333333,
+   "bd_ca_10y": 67.0,
+   "bd_de_10y": 309.66666667,
+   "bd_gb_10y": 125.0,
+   "bd_jp_10y": 193.0,
+   "bd_us_10y": 383.66666667,
+   "bd_us_2y": 286.0,
+   "bd_us_30y": 260.0,
+   "bd_us_5y": 387.0,
+   "cm_aqr_ew": 331.66666667,
+   "cm_brent": 17.33333333,
+   "cm_cattle": 66.33333333,
+   "cm_coffee": 79.0,
+   "cm_copper": 68.66666667,
+   "cm_corn": 72.66666667,
+   "cm_cotton": 83.0,
+   "cm_gasoline": 65.0,
+   "cm_gold": 72.66666667,
+   "cm_heatoil": 130.33333333,
+   "cm_natgas": 127.66666667,
+   "cm_platinum": 88.0,
+   "cm_silver": 73.33333333,
+   "cm_soybeans": 68.33333333,
+   "cm_sugar": 68.33333333,
+   "cm_wheat": 70.0,
+   "cm_wti": 201.66666667,
+   "eq_au_asx": 281.33333333,
+   "eq_br_ibov": 97.33333333,
+   "eq_ca_tsx": 268.66666667,
+   "eq_cn": 100.33333333,
+   "eq_de_dax": 175.33333333,
+   "eq_eu_stoxx50": 77.0,
+   "eq_fr_cac": 161.0,
+   "eq_gb_ftse": 282.0,
+   "eq_hk_hsi": 235.0,
+   "eq_in": 102.33333333,
+   "eq_jp_nikkei": 284.66666667,
+   "eq_kr_kospi": 103.33333333,
+   "eq_mx_ipc": 105.66666667,
+   "eq_tw": 97.66666667,
+   "eq_us_ndx": 201.66666667,
+   "eq_us_r2k": 172.33333333,
+   "eq_us_spx": 379.33333333,
+   "eq_za": 72.0,
+   "fx_aud": 318.33333333,
+   "fx_brl": 114.0,
+   "fx_cad": 313.66666667,
+   "fx_chf": 309.0,
+   "fx_eur": 83.0,
+   "fx_gbp": 309.66666667,
+   "fx_jpy": 311.0,
+   "fx_krw": 161.66666667,
+   "fx_mxn": 114.33333333,
+   "fx_nok": 245.0,
+   "fx_nzd": 296.0,
+   "fx_sek": 224.33333333,
+   "fx_zar": 241.0,
+   "sp_de_2s10s": 380.33333333,
+   "sp_us_2s10s": 355.33333333,
+   "sp_us_breakeven10": 52.33333333,
+   "st_au_2y": 115.66666667,
+   "st_ca_2y": 72.33333333,
+   "st_de_2y": 316.33333333,
+   "st_gb_5y": 127.33333333,
+   "st_jp_2y": 295.0,
+   "st_us_2y": 286.0
+  }
+ },
+ "stats": {
+  "BASE": {
+   "1975-2010": {
+    "gross": {
+     "maxdd": -0.204510005211,
+     "mean": 0.134264234476,
+     "n": 432,
+     "sr": 1.325997314777,
+     "vol": 0.101255283838
+    },
+    "net": {
+     "maxdd": -0.205098940602,
+     "mean": 0.124851576099,
+     "n": 432,
+     "sr": 1.235538521393,
+     "vol": 0.101050330635
+    }
+   },
+   "1990-2010": {
+    "gross": {
+     "maxdd": -0.117935267913,
+     "mean": 0.155709458985,
+     "n": 252,
+     "sr": 1.589436017255,
+     "vol": 0.097965226215
+    },
+    "net": {
+     "maxdd": -0.122807375586,
+     "mean": 0.144099305732,
+     "n": 252,
+     "sr": 1.474488568819,
+     "vol": 0.097728330201
+    }
+   }
+  },
+  "CANDIDATE": {
+   "1975-2010": {
+    "gross": {
+     "maxdd": -0.163766621727,
+     "mean": 0.154384350757,
+     "n": 432,
+     "sr": 1.57446424707,
+     "vol": 0.098055164507
+    },
+    "net": {
+     "maxdd": -0.168324171726,
+     "mean": 0.143265589201,
+     "n": 432,
+     "sr": 1.464414053449,
+     "vol": 0.097831340026
+    }
+   },
+   "1990-2010": {
+    "gross": {
+     "maxdd": -0.163766621727,
+     "mean": 0.176546192621,
+     "n": 252,
+     "sr": 1.754249944157,
+     "vol": 0.10063913253
+    },
+    "net": {
+     "maxdd": -0.168324171726,
+     "mean": 0.163370718712,
+     "n": 252,
+     "sr": 1.628572671314,
+     "vol": 0.100315277046
+    }
+   }
+  }
+ },
+ "tolerances": {
+  "book": 1e-08,
+  "count": 0,
+  "positions": 1e-06,
+  "stats": 1e-06
+ },
+ "vol_sum": {
+  "BASE": {
+   "bd_au_10y": 12.32157354,
+   "bd_ca_10y": 5.98102634,
+   "bd_de_10y": 26.10606031,
+   "bd_gb_10y": 11.6980676,
+   "bd_jp_10y": 18.39089898,
+   "bd_us_10y": 42.3013382,
+   "bd_us_2y": 10.57953554,
+   "bd_us_30y": 47.27512891,
+   "bd_us_5y": 29.30679873,
+   "cm_aqr_ew": 60.1781193,
+   "cm_brent": 12.26405598,
+   "cm_cattle": 20.34691944,
+   "cm_coffee": 39.0119122,
+   "cm_copper": 33.04777973,
+   "cm_corn": 29.60893115,
+   "cm_cotton": 40.40454001,
+   "cm_gasoline": 55.25881381,
+   "cm_gold": 16.94737424,
+   "cm_heatoil": 65.36089959,
+   "cm_natgas": 103.11314707,
+   "cm_platinum": 27.54050006,
+   "cm_silver": 31.55098969,
+   "cm_soybeans": 31.27788876,
+   "cm_sugar": 38.38245139,
+   "cm_wheat": 32.80828621,
+   "cm_wti": 102.70864841,
+   "eq_au_asx": 73.29759044,
+   "eq_br_ibov": 49.99085647,
+   "eq_ca_tsx": 63.41428975,
+   "eq_cn": 42.51687086,
+   "eq_de_dax": 55.36733798,
+   "eq_eu_stoxx50": 21.01425903,
+   "eq_fr_cac": 45.6545624,
+   "eq_gb_ftse": 76.13608224,
+   "eq_hk_hsi": 99.85792854,
+   "eq_in": 40.7286755,
+   "eq_jp_nikkei": 74.55846063,
+   "eq_kr_kospi": 54.45241101,
+   "eq_mx_ipc": 37.86374941,
+   "eq_tw": 40.53026637,
+   "eq_us_ndx": 67.44106065,
+   "eq_us_r2k": 51.52237663,
+   "eq_us_spx": 82.04889123,
+   "eq_za": 22.20679001,
+   "fx_aud": 45.77783017,
+   "fx_brl": 29.93003099,
+   "fx_cad": 24.85113241,
+   "fx_chf": 55.30075499,
+   "fx_eur": 12.73985531,
+   "fx_gbp": 45.45294194,
+   "fx_jpy": 51.62379764,
+   "fx_krw": 23.93810649,
+   "fx_mxn": 13.83659834,
+   "fx_nok": 37.2342238,
+   "fx_nzd": 45.200805,
+   "fx_sek": 36.28006382,
+   "fx_zar": 48.91538344,
+   "sp_de_2s10s": 16.62107131,
+   "sp_us_2s10s": 15.40590316,
+   "sp_us_breakeven10": 4.25325217,
+   "st_au_2y": 3.3984277,
+   "st_ca_2y": 1.95137527,
+   "st_de_2y": 8.41493732,
+   "st_gb_5y": 6.99465436,
+   "st_jp_2y": 6.40485259,
+   "st_us_2y": 10.57953554
+  },
+  "CANDIDATE": {
+   "bd_au_10y": 14.91383612,
+   "bd_ca_10y": 7.16223902,
+   "bd_de_10y": 27.69064463,
+   "bd_gb_10y": 13.05381203,
+   "bd_jp_10y": 17.6605264,
+   "bd_us_10y": 39.74858789,
+   "bd_us_2y": 10.71962691,
+   "bd_us_30y": 47.31032785,
+   "bd_us_5y": 27.07964298,
+   "cm_aqr_ew": 71.37800191,
+   "cm_brent": 16.00461265,
+   "cm_cattle": 20.58414299,
+   "cm_coffee": 45.31448132,
+   "cm_copper": 35.18672697,
+   "cm_corn": 33.83893943,
+   "cm_cotton": 41.56635643,
+   "cm_gasoline": 49.56651348,
+   "cm_gold": 20.87573625,
+   "cm_heatoil": 71.97372675,
+   "cm_natgas": 105.55178062,
+   "cm_platinum": 39.08051046,
+   "cm_silver": 34.71696142,
+   "cm_soybeans": 33.6125106,
+   "cm_sugar": 47.2183301,
+   "cm_wheat": 38.70049729,
+   "cm_wti": 105.22527247,
+   "eq_au_asx": 75.18622115,
+   "eq_br_ibov": 79.08024176,
+   "eq_ca_tsx": 61.5647768,
+   "eq_cn": 42.42792924,
+   "eq_de_dax": 59.2660202,
+   "eq_eu_stoxx50": 24.23715514,
+   "eq_fr_cac": 51.58846248,
+   "eq_gb_ftse": 79.51757927,
+   "eq_hk_hsi": 100.13275148,
+   "eq_in": 43.10743837,
+   "eq_jp_nikkei": 90.02575195,
+   "eq_kr_kospi": 58.32318346,
+   "eq_mx_ipc": 58.63353583,
+   "eq_tw": 42.89106354,
+   "eq_us_ndx": 86.64138643,
+   "eq_us_r2k": 52.91898209,
+   "eq_us_spx": 83.65773857,
+   "eq_za": 31.82672464,
+   "fx_aud": 47.03406276,
+   "fx_brl": 30.27104256,
+   "fx_cad": 24.36114368,
+   "fx_chf": 54.80089779,
+   "fx_eur": 14.26273237,
+   "fx_gbp": 44.22532428,
+   "fx_jpy": 49.28583611,
+   "fx_krw": 27.01032794,
+   "fx_mxn": 23.45746644,
+   "fx_nok": 45.72177427,
+   "fx_nzd": 51.36905368,
+   "fx_sek": 46.81639568,
+   "fx_zar": 51.57861024,
+   "sp_de_2s10s": 20.70270745,
+   "sp_us_2s10s": 20.60672761,
+   "sp_us_breakeven10": 4.16050426,
+   "st_au_2y": 3.78858451,
+   "st_ca_2y": 2.1465005,
+   "st_de_2y": 8.71917158,
+   "st_gb_5y": 7.64782027,
+   "st_jp_2y": 5.93372646,
+   "st_us_2y": 10.71962691
+  }
+ },
+ "what": "book engine (gm/) on free data: design-period fingerprint (months <= 2010-12 only)"
+}
