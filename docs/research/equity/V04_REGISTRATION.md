@@ -242,3 +242,157 @@ cells with fewer than 20 purchases are blank. Job `eq_saydo_v1` = eq_ref 1.1.0 `
 unchanged). Levels only; no portfolio, signal or stock return is computed, so it is not a trial (fence 7). Use: the
 say-do table per investor (stated criteria against revealed purchases) and the "revealed by purchases" threshold tags
 of the strategy writers (odd years set, even years check). Not used to choose investors or pods.
+
+## Addendum A10 (2026-11-22): plan v0.5: judged on three uses; fidelity gates; scorecard W / R / C; investor form
+Source: the user's feedback of 22 Nov (`EQUITY_POD_SHOP_PLAN_v0.5.md`). Registered AFTER Batch 0 (T001: portfolio
+returns of the reference book and of its seven measures) and the say-do tables (A9) were seen, and BEFORE any recipe,
+pod, first flag, hit rate or concentrated portfolio exists. R1-R7 and A1-A9 stay in force except where stated.
+
+1. **Uses and product.** The tools are judged on three uses: spotting individual winners early (block W), controlling
+   risk (block R), constructing portfolios (block C). The product is a private dashboard. The scorecard below replaces
+   "added return over the reference book" as the only verdict; R5's tests 1-4 are C1, test 5 is R3.
+2. **Definitions.**
+   a. Eligible set of a pod at month-end t: the R3 universe members that pass price and liquidity and have a GICS
+      sector; a generic pod leaves out the industries of A8 2a; a sector pod takes its sector's members.
+   b. Pass set: the eligible stocks the recipe's entry criteria select at t. With several versions every statistic is
+      computed per version and averaged.
+   c. First flag: a stock in the pass set at t that was in it at none of the 12 month-ends before. A further first
+      flag of the same stock within 36 months of a counted one is not counted. Pass sets from 2009-01; first flags
+      counted from 2010-01.
+   d. Forward return over H months: total return from the close of t to the close of t+H. A stock that leaves the
+      data earlier takes its last (delisting) return, then the equal-weight return of the eligible stocks of its
+      sector to t+H. H = 36 is decisive (formation months 2010-01..2022-12); H = 12 and 60 are reported.
+   e. Outcome, ranked among the eligible stocks of the same sector and month: winner = top fifth, big winner = top
+      tenth, loser = bottom fifth, big loser = bottom tenth. Absolute marks: permanent loss = forward return
+      <= -50%; double = >= +100%.
+   f. Net hit rate = share of counted first flags that are winners minus the share that are losers.
+   g. Matched placebo: for each counted first flag one stock drawn at random from the eligible stocks of the same
+      month, sector and size third (thirds of market value inside sector and month), the flagged stock excluded;
+      5,000 sets, seed fixed in the code. One-sided p = (1 + number of sets at least as extreme) / 5,001.
+      Factor-matched placebo: the cell also matches the fifth of the reference-book score inside sector and month; a
+      cell with fewer than 5 other stocks drops the size third.
+   h. Eras by formation month: 2010-14, 2015-19, 2020-22.
+   i. Early flag: the stock's return over the 36 months to t was not in the top fifth of its sector and month (less
+      than 36 months of history counts as early). The early placebo draws from early stocks only.
+   j. Thesis date of a pod: the earliest document date of a verified rule in the buy part of its recipe.
+3. **W (winners early).**
+   W1, decisive: net hit rate at H = 36 above the matched placebo, Holm at 0.025 across the pods of a batch; in each
+   era with at least 30 counted first flags the net hit rate is not below that era's placebo mean by more than one
+   placebo standard deviation; at least 100 counted first flags (fewer: reported only).
+   W2, label "beyond the reference book": the same against the factor-matched placebo, p <= 0.05.
+   Label "finds them early": the same on early flags against the early placebo, p <= 0.05.
+   Reported: H = 12 and 60; share of the 36-month excess over the sector earned in months 13-36 for winners caught;
+   business winners (top fifth inside sector and month of the change in four-quarter operating profit from t to
+   t+36 months over total assets at t), their net hit rate, and the share of business winners that were price
+   winners; W1 on the flags after the thesis date where there are at least 30.
+4. **R (risk).**
+   R1: big-loser share of counted first flags below the matched placebo's, one-sided p <= 0.05. Permanent-loss share
+   reported against the placebo.
+   R2 (avoid rules; replaces R5's Exclusion test): on the first flags of the avoid rule (same definition, at least
+   100): (a) net hit rate below the matched placebo, Holm at 0.025 across the avoid rules of a batch; (b) loser
+   share at least 1.5 times the winner share; (c) big-winner share not above the placebo mean.
+   R3 = R5 test 5, unchanged, on the broad form.
+   Reported: the investor form under its stated sell rule against never selling and against R4's rank rule.
+5. **C (construction).**
+   Broad form = all passers under R4 and A8 2b-2f. C1 = R5 tests 1-4 on it.
+   Investor form:
+   a. N = the number of holdings the investor states (a range: its midpoint); else the median over quarters of the
+      effective number of names (1 / sum of squared weights) from `eq_prof`, rounded; bounds 8 and 50. Stated and
+      revealed N differing by more than a factor of two: two versions. Revealed N above 50 and none stated: the broad
+      form is the investor form. Filers flagged quantitative book or firm-wide (A6): stated N only.
+   b. Weights, two versions averaged: equal at purchase; and the revealed profile (median weight by rank over
+      quarters, cut at N, rescaled to 1) given in the order of the recipe's ranking. Ranking = the investor's stated
+      ranking; else the mean inside-sector percentile of the computable buy criteria.
+   c. Reviews at quarter-ends, trades at that month-end close. Entry needs the whole recipe. A holding is sold when a
+      stated sell rule fires, when it has failed the keep criteria at four quarter-ends in a row, or when it leaves
+      the data. Keep criteria = entry criteria without the price rule unless the investor states a sale on price.
+      Proceeds buy the best-ranked passer not held; with none, they sit in the equal-weight eligible universe.
+   d. No rebalancing; at a review a position above the cap is cut to it and the excess spread over the others in
+      proportion. Cap = the stated maximum position; else the 90th percentile over quarters of the investor's largest
+      weight (`eq_prof`); else 2.5 / N. Costs as A8 2d. Start 2010-01 from the 2009-12 pass set.
+   C2: 1,000 portfolios by rule c-d (equal weight at purchase) in which every purchase is drawn at random from the
+   passers not held. "Concentration sound at N": at least 60% of the draws end 2025-12 ahead of the broad form's
+   sector-matched universe (A8 2f) after costs, and at most 10% have a worst fall more than 15 points deeper than
+   it. "The ranking helps": the ranked run ends above the 95th percentile of the draws. Reported: the curve at
+   N = 5, 10, 20, 40 and all passers (median, 10th and 90th percentile of annual return and of the worst fall). N is
+   set by rule a before the run, never from the curve.
+6. **Classes** (replace R5's; a pod carries every label it earns).
+   Winner list = W1, with check B (the pod's net hit rate minus its placebo mean above the 90th percentile of the
+   control pods'; R5's rule of at least 20) and check C (first flags left out when a source investor of the pod held
+   the stock at a weight of at least 1% at any quarter-end from 12 months before to 36 months after the flag; the
+   excess over the placebo keeps its sign and at least half its size).
+   Portfolio = C1, R3 and R5's checks B and C (= "Passed on history").
+   Risk rule = R2: shown as a red flag for every company; an exclusion inside its own pod.
+   Full pass = Winner list + Portfolio + R1.
+   Tail sleeve = R5's Sleeve. Incubator = one descriptive run in which W1's placebo or test 4 is passed at 0.05
+   unadjusted. Shelved = the rest. Core by the live rule only. Check A at the freeze: as R5 for Portfolio; for a
+   Winner list the net hit rate outside the US above its placebo mean; a fail moves the pod to Incubator.
+   Test families: W1 across the pods of a batch, test 1 across the pods of a batch, R2 across the avoid rules of a
+   batch, each Holm at 0.025. The chance of at least one false label per batch is therefore up to 7.5% (was 2.5%).
+7. **Budget** (amends R6). B1 and B2: at most 4 pods each; a slot is ONE logged run that prints W, R1, C1, C2 and
+   R3 for all registered versions and both forms. At most 8 avoid rules per batch: those stated by the most roster
+   investors (ties: the earlier thesis date). Added slot conditions: the pod's source investors passed gates G1-G8 of
+   plan v0.5 (a pod none of whose source investors passed or could be measured on recall: one descriptive run); the
+   number of counted first flags, known from levels before any return, is at least 100. Power note fixed here: under
+   the placebo the standard deviation of the net hit rate is about sqrt(0.4 / n), so the strictest Holm level needs
+   about 16 points at n = 100, 11 at 200, 8 at 400, 5 at 1,000.
+8. **Reading** (desk 1; before a recipe is written).
+   Material bar: M1 at least 3 documents of 5,000 words or more in the investor's own words; M2 a primary written
+   source (letter, manual, book) or a document graded explicit 3 in the inventory; M3 a verified buy rule from
+   quotes, and for price, avoid, sell and size a verified rule, a verified statement that none applies, or "none
+   stated" (then from the 13F or a convention, tagged). A file below the bar is "thin": material is collected; the
+   investor stays on the roster (R1 unchanged).
+   Tags per claim: kind (rule / threshold / example / anecdote / principle / view / mistake), part (buy / price /
+   avoid / sell / size / other), scope (all holdings / sector / period / one company), date said, period meant,
+   computable (yes / by proxy / no), strength (always / usually / sometimes).
+   Verification: a different model tags blind all claims tagged rule or threshold, a random 30% of the rest and 10
+   planted items (5 anecdotes dressed as rules, 5 altered thresholds). Pass: agreement on rule-like or not >= 90%,
+   on part >= 85%, on computable >= 85%, at least 9 of 10 planted items caught. A claim is a rule only if both
+   readers say so; disputes go to a third reading on the quote alone. A file that fails is extracted again.
+   Held-out document (investors with at least 3 documents of 5,000 words or more): the one with the smallest
+   SHA-256 of investor name plus document id; the card writer never sees it or its claims. Pass: at least 70% of
+   its verified rule-like claims match a rule on the card (same part and measure; a number within 20%, or the same
+   direction where there is no number), and no open contradiction in the buy, price or sell part (closed = a dated
+   change of view or a different scope, recorded on the card). After the test the document is merged. A fail =
+   "file not complete": more material, then a new held-out draw.
+9. **Recall and the kill criterion.**
+   Purchases: the investor's conviction purchases (R2, either version) 2010-2025 whose stock was in the R3 universe
+   at the quarter-end before the purchase quarter; for a filer flagged quantitative book, all new positions.
+   Recall = share that passed the recipe's entry criteria at that quarter-end. Base rate = pass rate of the eligible
+   stocks of the same quarter-end, sector and size third, weighted as the purchases. Lift = recall / base rate; 90%
+   interval by bootstrap of quarters (2,000 draws). Decisive form of the recipe: thresholds tagged quote or
+   convention only; thresholds revealed by purchases are measured on even-year purchases only and reported.
+   Baselines: the same recipe on the pooled control investors' purchases; the reference-book screen (top fifth of
+   the book score inside the sector) on this investor's purchases. A cross table of all recipes against all
+   investors is reported.
+   Pass: lift >= 2.0 with the interval's lower end above 1.25; recall >= 25%; lift above both baselines. Fewer than
+   20 purchases in the universe: not measurable.
+   Feedback to the recipe writer: recall, base rate, lift and, per criterion, the share of purchases it rejects
+   (never names). One revision round per investor; every change cites a quote; old and new results are both logged.
+   Kill criterion: after the pilot (Greenblatt, Terry Smith, Zlatev; a pilot investor who is not measurable or whose
+   file stays thin is replaced by the next grade-A investor with a ready file, in the order Kantesaria, Hohn,
+   Greenberg, Pilecki), the premise stands if at least 2 of the 3 pass. Otherwise no further recipe is written and
+   the work switches to the analyst layer on the reference book and the owner panel.
+10. **Names review** (when the reference-book LSEG inputs are loaded). Per pilot recipe the current pass list is
+    shown beside the investor's latest 13F. Pass: at least 5 of the investor's 10 largest holdings in the universe
+    meet the recipe's non-price criteria at the latest quarter-end. Read by the referee and the user, never by the
+    recipe writer; a fail uses the same single revision round. It reads levels of current names: not a trial.
+11. **Analyst layer and live placebo** (live only; fence 4 unchanged). Per new first flag of a registered pod, and
+    per company the user adds: a dated memo with the investor's checklist answered from quoted sources, three
+    scenarios, probabilities of winner / loser / permanent loss at H = 36, kill criteria as observable conditions,
+    3 to 5 forecasts resolving within 12 months, a grade A / B / C. Append-only. Brier score by script against the
+    base rates and against the pod's historical rates. Checkpoint at 200 resolved forecasts: the grade ranks
+    candidates on the dashboard only if its Brier score beats the base rate. With every live first flag the script
+    records 20 matched random names (2g); live hit rates are compared with theirs.
+12. **Construction profile** (seal-exempt job 7 `construction_profile`, module `tools/equity/wrds/eq_prof.py`
+    1.0.0, code sha256 10724979..., job `eq_prof_v1`). Reads only the stored panel `eq_conv_panel` (weights, new and
+    add flags; no price, no return, no company data). Per roster and control investor: number of names, names of at
+    least 1%, effective number of names, largest / top-5 / top-10 weight, 90th percentile of the largest weight,
+    starting weight of new positions of at least 1%, holding time of such positions (Kaplan-Meier median and share
+    still held after 1, 3 and 5 years; positions already held in the first filing left out), share of the book new
+    per year, additions as a share of buys. One line of aggregates per investor comes back. Not a trial.
+13. **T002** (to be written in `TRIAL_LOG.md` before it runs): the reference book's own scorecard (W1, early split,
+    R1, C2 curve on its pass set = the top tenth by book score), as the bar every pod is shown against and as the
+    plumbing test of the scorecard code. No verdict. Implementation choices are fixed in an addendum before the run.
+14. **Not registered yet:** the recipes, pods and avoid rules; the analyst memo template; the dashboard; the
+    scorecard code and its implementation choices; the non-US universe rule.

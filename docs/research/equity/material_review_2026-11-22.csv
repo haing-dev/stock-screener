@@ -1,0 +1,22 @@
+grade,investor,documents,documents_5000_words,words,explicit_max,years_seen,parts_missing_first_read,volume_ok,depth_ok
+A,Joel Greenblatt,9,9,173356,3,2005,none,yes,yes
+A,Terry Smith,2,1,32943,2,2022,"price, avoid, sell, size",no,no
+A,Dev Kantesaria,6,6,58196,3,not in file names,avoid,yes,yes
+A,Chris Hohn,3,3,22601,2,not in file names,buy,yes,no
+A,Glenn Greenberg,1,1,6913,3,2010,not tagged,no,yes
+A,Val Zlatev,2,2,23101,3,"2022, 2025",not tagged,no,yes
+A,Derek Pilecki,2,2,23363,3,not in file names,price,no,yes
+B,Bill Nygren and Alex Fitch,2,2,30214,3,not in file names,buy,no,yes
+B,Murray Stahl,3,3,28000,2,2024,"price, avoid",yes,no
+B,Pat Dorsey,2,1,18399,2,not in file names,avoid,no,no
+B,Chris Davis,9,7,130618,2,not in file names,size,yes,no
+B,Joseph Shaposhnik,3,3,32358,2,not in file names,avoid,yes,no
+B,Alex Sacerdote,1,1,8471,2,not in file names,"price, sell",no,no
+B,David Einhorn,3,1,15997,2,"2022, 2024","buy, sell, size",no,no
+B,Stan Druckenmiller,8,8,60500,2,2018-2026,not tagged,yes,no
+B,Todd Kantor,2,2,15172,2,"2021, 2023",not tagged,no,no
+B,Bob Robotti,1,1,23129,2,not in file names,"buy, avoid",no,no
+B,Fred Martin,1,1,23626,3,not in file names,"buy, sell, size",no,yes
+B?,Brad Gerstner,27,27,340981,2,not in file names,"avoid, sell, size",yes,no
+B?,Chris Bloomstran,6,6,110730,2,"2024, 2025",avoid,yes,no
+B?,Li Lu,2,2,30822,2,"2006, 2024","avoid, size",no,no

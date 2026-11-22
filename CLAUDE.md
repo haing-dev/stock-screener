@@ -556,8 +556,40 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   packs must drop the count line. USER ASKED 2026-11-21 how fidelity to the investors is ensured and what a top
   investor would improve; answer given (deep read not started = step 6; proposed additions: primary writing, recall
   test of recipes on own purchases, held-out document, rule/example tags, sells and sizing, fewer investors deeper,
-  concentrated long-hold version, business-outcome tests, tracker early, kill criterion): NOT registered, awaiting
-  her choice.
+  concentrated long-hold version, business-outcome tests, tracker early, kill criterion): built into plan v0.5 (next).
+  PLAN v0.5 + A10 (2026-11-22; user accepted the proposals, two left unanswered; PURPOSE restated by the user: the
+  tools are used to (1) spot individual winners early, (2) control risk, (3) construct portfolios, and are judged on
+  that; END PRODUCT = private dashboard on the website): docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.5.md (project
+  doc claude/equity_pod_shop_plan_v0.5_2026-11-22.md) + V04_REGISTRATION.md A10; not independently checked.
+  Gates per investor: material bar (>= 3 own-words documents of >= 5,000 words; a written primary source or an
+  explicit-3 document) -> claims with tags (rule / threshold / example / anecdote ..., dated) -> blind verifier agent
+  on every rule-like claim (90% / 85% agreement, 9 of 10 planted errors) -> card built without one held-out document
+  -> held-out test (70% coverage, no open contradiction) -> recipe in five parts (buy, price, avoid, sell, size; every
+  number tagged quote / revealed by purchases / revealed by 13F / convention / grid) -> blind rebuild -> RECALL on the
+  investor's own conviction purchases at the quarter-end before (lift >= 2.0 with 90% interval > 1.25, recall >= 25%,
+  above the control and reference-screen lifts; quote-only thresholds decide) -> KILL CRITERION after the pilot (2 of
+  3 pass, one revision round by quote; else no more recipes, analyst-led work) -> names review on dashboard v0 (5 of
+  the 10 largest holdings pass the non-price criteria) -> history scorecard -> live.
+  SCORECARD (one logged run per pod): first flag = stock enters the pass set after 12 months outside; outcome = 36
+  months inside sector and month (winner top fifth, loser bottom fifth, big = tenths; permanent loss <= -50%); net hit
+  rate against a matched placebo (month, sector, size third; 5,000 sets). W1 decisive (Holm 2.5%, eras, >= 100 flags),
+  W2 factor-matched, "finds them early" label; R1 big losers, R2 avoid rules (losers >= 1.5 x winners, no excess big
+  winners), R3 = old tail test; C1 = old tests 1-4 on the broad form, C2 = INVESTOR FORM (N, weights, cap, holding
+  from quotes, else from the 13F; 1,000 random draws of N from the passers: >= 60% ahead of the sector-matched
+  universe, <= 10% with falls 15 points deeper; ranked top-N against the draws; concentration curve). Classes: Winner
+  list / Portfolio (= old Passed on history) / Risk rule / Full pass (+ Tail sleeve, Incubator, Shelved; Core live
+  only). Three test families -> up to 7.5% false labels per batch (was 2.5%). Analyst layer live only (memo,
+  probabilities, kill criteria, 3-5 forecasts, Brier, checkpoint 200); live placebo (20 matched names per flag).
+  Dashboard pages: Winners, Company, Investors, Portfolios, Risk, Scoreboard, Log (own page behind the site password).
+  MATERIAL REVIEW: docs/research/equity/MATERIAL_REVIEW_2026-11-22.md (+csv): only Greenblatt and Kantesaria are
+  ready; pilot investors Terry Smith and Zlatev are thin (collect the Fundsmith Owner's Manual + annual letters
+  2010-2025, Zlatev podcasts; the user saves documents into the raw transcripts folder). If Zlatev stays thin,
+  Kantesaria takes the pilot place. CONSTRUCTION PROFILE job eq_prof_v1 (seal-exempt job 7,
+  tools/equity/wrds/eq_prof.py 1.0.0 code 10724979..., tests/eq_prof_smoke.py; reads only eq_conv_panel) REGISTERED,
+  NOT QUEUED (PC offline 22 Nov): write eq_prof.py to the runner lib, read it back, then queue
+  tools/wrdsq/jobs/eq_prof_v1.json. NEXT: scorecard code in the engine + T002 (the reference book's own scorecard; log
+  it in TRIAL_LOG first); on the user's go: second implementation and plan check by separate agents, pilot reading
+  (Greenblatt first).
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->

@@ -1,5 +1,5 @@
 {
- "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Registered jobs: the scorecard, the holdings job (not built) the hedge fund leaderboard the universe check (plan v0.4 step 3a), the conviction holdings job and the reference book (plan v0.4 step 5) (user request 2026-11-18, HF_LEADERBOARD_REGISTRATION.md). code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call, each with its exact argument list (a regular expression that the whole argument text must match, in order). code_history lists earlier registered hashes (record only; the checker uses code_sha256).",
+ "note": "Seal-exempt jobs (plan v0.3 section 5.4; SEAL_LOG.md). Registered jobs: the scorecard, the holdings job (not built) the hedge fund leaderboard the universe check (plan v0.4 step 3a), the conviction holdings job, the reference book (plan v0.4 step 5) and the construction profile (plan v0.5) (user request 2026-11-18, HF_LEADERBOARD_REGISTRATION.md). code_sha256 = SHA-256 of the module with its FROZEN INPUT block left out (tools/equity/seal_check.py code_hash). Each job name pattern lists the module functions its template steps may call, each with its exact argument list (a regular expression that the whole argument text must match, in order). code_history lists earlier registered hashes (record only; the checker uses code_sha256).",
  "jobs": [
   {
    "registered_job": "scorecard",
@@ -159,6 +159,22 @@
      "replaced_by": "c6021bb1f6d28ff847fc46a50cecc63181173b581bd29bd24b81dca7c4a49063"
     }
    ]
+  },
+  {
+   "registered_job": "construction_profile",
+   "module": "eq_prof",
+   "code_sha256": "10724979e76ebaa52318349867ee42cc9372da9ab3bbae791ce71bf301a5778f",
+   "registration": "docs/research/equity/V04_REGISTRATION.md addendum A10 item 12 (plan v0.5 section 5)",
+   "output": "eq_prof.run: one line of aggregates per investor (names, concentration, starting weight, holding time, share new per year); reads only the stored panel eq_conv_panel; no price, no return, no company",
+   "names": [
+    {
+     "pattern": "eq_prof_v\\d+[a-z]?",
+     "functions": {
+      "run": "load, save, out"
+     }
+    }
+   ],
+   "code_history": []
   }
  ]
 }

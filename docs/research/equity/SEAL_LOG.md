@@ -68,3 +68,7 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
   ids; no return. Lock b7df559d...
 - 2026-11-22: `eq_saydo_v1` ran (37 s): 4,573 conviction purchases, 3,405 in the universe the quarter before; aggregates of
   measure percentiles only (report `eq_saydo_v1_report.txt`, note `saydo/SAYDO_2026-11-22.md`). No return computed.
+- 2026-11-22: plan v0.5 and V04_REGISTRATION A10 registered (scorecard W / R / C, investor form, fidelity gates), after
+  T001 and the say-do tables, before any recipe, first flag or hit rate exists. Seal-exempt job 7 `construction_profile`
+  registered: eq_prof 1.0.0 (code 10724979..., input 48b6a79f...), job `eq_prof_v1`; reads only `eq_conv_panel` (weights
+  and flags; no price, no return). NOT queued yet (PC offline). Lock 2a48c8d1...
