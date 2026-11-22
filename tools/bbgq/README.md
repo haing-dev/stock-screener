@@ -120,5 +120,7 @@ Engine on the PC (deploy with `python3 tools/bbgq/build_engine.py`, which fills 
 | C3 whole-sample 500-day gate | gm/daily.py | FIXED: gate dropped; no design number changes |
 | C4 whole-sample 24 / 36-month gates on Bloomberg series | gm/panel.py, signals.py, bloomberg.py, config.py | FIXED: counted up to each month; GSCI before BCOM by fixed order; inactive on free data |
 Truncation test: PASS at all 8 cut dates for BASE and CANDIDATE (free data), and at 3 dates with mock Bloomberg inputs.
-The reference `engine_ref.json` is for gm-1.2.1; `engine_ref_gm-1.2.0.json` keeps the old one.
+The reference `engine_ref.json` is for gm-1.2.2 (2026-11-22: doubled US 2-year market removed, registered in
+gm/CHANGES.md; truncation PASS at all 8 dates, results/engine_trunc_cloud_2026-11-22_gm-1.2.2.txt);
+`engine_ref_gm-1.2.1.json` and `engine_ref_gm-1.2.0.json` keep the old ones.
 

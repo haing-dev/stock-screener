@@ -416,6 +416,11 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   cocoa bear case omitted. 8 open judgement points (3.1-3.2, 1.5, 2.3). ALL 5 CARDS OF STEP 1.4 DONE.
   NEXT: step 1.5 thesis register (Opus); then 3.1-3.5 specs, checks, power check, registration.
   Vault branch d3ab196; PC vault copy DONE (job vault_sync_20261122b ran, no errors).
+  ENGINE gm-1.2.2 / gm-2.0.2-candidate (2026-11-22): doubled US 2-year market st_us_2y REMOVED (registered in
+  gm/CHANGES.md first, 17010c5; code dece1d0): 61 markets. Design net SR BASE 1975-2010 1.236 -> 1.222, 1990-2010
+  1.474 -> 1.452; CANDIDATE 1.464 -> 1.456, 1.629 -> 1.608. Truncation PASS at all 8 dates; new engine_ref.json (old
+  engine_ref_gm-1.2.1.json). Cloud inputs = the PC zip (staged; cache/ is git-ignored). PC redeploy + job
+  gm_repro_v2 queued (see next line when it ran).
   STEP 1.5 THESIS REGISTER started 2026-11-22 (Opus high, work dir scratchpad register_1.5; brief + id/quote checker
   tools/check_ids.py there). User 2026-11-22: NO MORE FABLE UNITS for now.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript

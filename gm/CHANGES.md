@@ -23,6 +23,19 @@ redeployed and reproduces the new reference. Reported once: design-period statis
 paper ledger: untouched (workflow disabled); the next live run restates under the new version name. Holdout not run.
 Texts that still say 62 markets (TESTING_PROTOCOL.md) are corrected at registration step 3.4.
 
+Result (2026-11-22, free data, design months only; inputs = the PC's gm_free_inputs.zip, the same 239 files as the
+gm-1.2.1 reference, which the cloud first reproduced 24/24 before the change): truncation test PASS at all 8 cut dates
+(1980-06 ... 2010-12), every stage, BASE and CANDIDATE (tools/bbgq/results/engine_trunc_cloud_2026-11-22_gm-1.2.2.txt).
+Net of costs, old -> new:
+| Config | Period | Sharpe | Mean %/yr | Vol %/yr | Worst drawdown % |
+|---|---|---|---|---|---|
+| BASE gm-1.2.1 -> gm-1.2.2 | 1975-2010 | 1.236 -> 1.222 | 12.49 -> 12.34 | 10.11 -> 10.10 | -20.5 -> -19.9 |
+| BASE gm-1.2.1 -> gm-1.2.2 | 1990-2010 | 1.474 -> 1.452 | 14.41 -> 14.27 | 9.77 -> 9.83 | -12.3 -> -12.5 |
+| CANDIDATE gm-2.0.1 -> gm-2.0.2 | 1975-2010 | 1.464 -> 1.456 | 14.33 -> 14.27 | 9.78 -> 9.81 | -16.8 -> -16.9 |
+| CANDIDATE gm-2.0.1 -> gm-2.0.2 | 1990-2010 | 1.629 -> 1.608 | 16.34 -> 16.23 | 10.03 -> 10.09 | -16.8 -> -16.9 |
+Logged in gm/trials.csv as family "fix" (two rows). Reference: tools/bbgq/engine_ref.json (old one kept as
+engine_ref_gm-1.2.1.json).
+
 ## gm-1.2.1 and gm-2.0.1 candidate (registered 2026-11-11, BEFORE the code change): input-layer look-ahead removed
 Found by the block 3 truncation test (docs/research/bbg/BLOCK3_engine_2026-11-11.md; 8 cut dates 1980-2010, loader-level
 cuts, stricter than the gm-1.2.0 audit). Signals, volatility, positions and book code are clean; four places in the
