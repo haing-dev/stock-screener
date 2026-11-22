@@ -526,6 +526,24 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   2.5% only at formation (drift to 2.99%). No verdict. LESSON: after writing a runner lib file, READ IT BACK (stage) and
   compare before queuing (outputs copies can be stale). NEXT: second implementation (separate agent, from the written
   spec) before Batch A; LSEG run after the stage-B files.
+  LSEG PIECES v4 (2026-11-22, user request): G:\...\LSEG\08_pieces_v4 = 56 small files (~0.5-0.7M values each; builder
+  docs/data_requests/build_lseg_pieces.py COMPANIES.csv SELECTED_LINES.csv OUT; README.md + README_order.csv in the
+  folder): P01-P18 FIRST (reference book: GICS, close as traded, 17 quarterly book items for companies 1-850 and
+  1701-5065, FY1 EPS by month), B01-B38 later (other quarterly items, annual, other consensus, short interest, actual
+  EPS). Old v1/v2/v3 templates DELETED on the PC (local job delete_old_lseg_templates_20261122: 34 files; folders
+  05_estimates, 06_sector_short, 07_stageB_v3 removed; 04_accounts keeps only LSEG_accounts_Q2_v1.xlsx).
+  read_stage_b.py / lseg_adapter.py accept the v4 groups (Q_C*, Q_R* merged with combine_first).
+  SAY-DO TABLES (A9, descriptive, no return) DONE 2026-11-22: eq_ref 1.1.0 saydo() (c6021bb1), job eq_saydo_v1;
+  docs/research/equity/saydo/SAYDO_2026-11-22.md + SAYDO_TABLE_2026-11-22.csv (masked ids) + eq_saydo_v1_report.txt.
+  4,573 conviction purchases, 76% of roster purchases inside the test universe. Roster ~ control on average (large,
+  profitable, low book to price; only gross margin differs > 0.05); investors differ widely (earnings yield 0.22-0.92);
+  tilts on valuation / size / sales growth / momentum are stable odd vs even years (corr 0.79-0.92), Piotroski and
+  revisions are not (0.37); high ROE is common to all incl. control. Mask is weak vs eq_conv_v2 counts -> writer
+  packs must drop the count line. USER ASKED 2026-11-21 how fidelity to the investors is ensured and what a top
+  investor would improve; answer given (deep read not started = step 6; proposed additions: primary writing, recall
+  test of recipes on own purchases, held-out document, rule/example tags, sells and sizing, fewer investors deeper,
+  concentrated long-hold version, business-outcome tests, tracker early, kill criterion): NOT registered, awaiting
+  her choice.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->

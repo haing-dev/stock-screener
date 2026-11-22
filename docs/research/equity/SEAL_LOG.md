@@ -66,3 +66,5 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
 - 2026-11-22: `eq_saydo_v1` queued (eq_ref 1.1.0 c6021bb1..., V04_REGISTRATION A9): say-do tables from the stored `ref_*` data
   sets and `eq_conv_panel`; measure levels / ranks at the quarter before conviction purchases, aggregates of >= 20, masked
   ids; no return. Lock b7df559d...
+- 2026-11-22: `eq_saydo_v1` ran (37 s): 4,573 conviction purchases, 3,405 in the universe the quarter before; aggregates of
+  measure percentiles only (report `eq_saydo_v1_report.txt`, note `saydo/SAYDO_2026-11-22.md`). No return computed.
