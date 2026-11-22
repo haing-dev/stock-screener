@@ -9,7 +9,8 @@ run(load, save, out)                   builds measures, ranks, the book under R4
 
 The engine (universe, measures, sector ranks, tranche book, costs, statistics) is in this one file: seal-exempt
 modules may import no lib module. Local LSEG runs import the same functions.
-1.0.0 (2026-11-22): first version.
+1.0.0 (2026-11-22): first version. 1.0.1 (same day, before any run of eq_ref_v1): quarterly_table accepts a one-quarter
+cash flow column `cfoq` (the LSEG form); the WRDS path is unchanged.
 """
 import json
 import math
@@ -27,7 +28,7 @@ MEASURES = ["ey", "bp", "mom", "roe", "acc", "pio", "rev"]
 GROUPS = {"value": ["ey", "bp"], "momentum": ["mom"], "quality": ["roe", "acc", "pio"], "expectations": ["rev"]}
 HIGH_GOOD = {"ey": 1, "bp": 1, "mom": 1, "roe": 1, "acc": -1, "pio": 1, "rev": 1}
 FF_PAIR = {"ey": "hml", "bp": "hml", "mom": "umd", "roe": "rmw", "acc": "cma", "pio": "rmw", "rev": "umd", "book": "hml"}
-VERSION = "eq_ref-1.0.0"
+VERSION = "eq_ref-1.0.1"
 
 
 # ----------------------------------------------------------------------------------------------------------- pulls
@@ -156,6 +157,8 @@ def quarterly_table(fq):
     f = f.dropna(subset=["fyearq", "fqtr"]).sort_values(["gvkey", "datadate"])
     f = f.drop_duplicates(["gvkey", "fyearq", "fqtr"], keep="last")
     f["qi"] = (f.fyearq * 4 + f.fqtr).astype(int)
+    if "oancfy" not in f.columns:
+        f["oancfy"] = np.nan
     num = ["saleq", "cogsq", "oiadpq", "niq", "oancfy", "atq", "ceqq", "cheq", "dlcq", "dlttq", "pstkq", "mibq",
            "actq", "lctq", "cshoq", "ajexq"]
     for c in num:
@@ -163,7 +166,10 @@ def quarterly_table(fq):
     g = f.groupby("gvkey", sort=False)
     prev_ytd = g.oancfy.shift(1)
     prev_same_year = (g.fyearq.shift(1) == f.fyearq) & (g.qi.shift(1) == f.qi - 1)
-    f["cfoq"] = np.where(f.fqtr == 1, f.oancfy, np.where(prev_same_year, f.oancfy - prev_ytd, np.nan))
+    if "cfoq" in f.columns:                     # LSEG: quarterly cash flow is already one quarter (not year to date)
+        f["cfoq"] = pd.to_numeric(f.cfoq, errors="coerce")
+    else:
+        f["cfoq"] = np.where(f.fqtr == 1, f.oancfy, np.where(prev_same_year, f.oancfy - prev_ytd, np.nan))
     f["gpq"] = f.saleq - f.cogsq
     g = f.groupby("gvkey", sort=False)
 

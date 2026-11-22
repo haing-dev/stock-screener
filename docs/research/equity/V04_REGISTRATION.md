@@ -221,7 +221,7 @@ the LSEG files wait).
    f. Benchmarks: the sector-matched universe (the book's sector weights at the start of each month times the
       equal-weight sector universe returns) and the equal-weight universe.
 3. **Batch 0** (plumbing; no verdict; nothing is adopted or changed because of its numbers). Run T001
-   (`TRIAL_LOG.md`): `eq_ref_pull_v1` then `eq_ref_v1` on WRDS, code 234fbb03... (seal-exempt job 6
+   (`TRIAL_LOG.md`): `eq_ref_pull_v1` then `eq_ref_v1` on WRDS, code c8705b6f... (eq_ref 1.0.1; seal-exempt job 6
    `reference_book`). Prints: universe and coverage by year; rank correlations of the measures; published-form checks
    of each measure (sign, NW t, correlation with the matching Fama-French factor); the reference book's statistics
    (net, gross, against the two benchmarks, by era and by calendar year incl. 2020-21 = stress M4), turnover, costs,
