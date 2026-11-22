@@ -59,3 +59,5 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
 - 2026-11-22: `eq_ref_pull_v1` ran (215 s, all tables). `eq_ref_v1` stopped before any return (account join bug; counts and
   coverage only came back). Logged bug-fix rerun `eq_ref_v1b` queued: eq_ref 1.0.2 (code e5a7ee9c...), same stored data;
   lock 6243526a...
+- 2026-11-22: `eq_ref_v1b` ran the stale 1.0.1 code (delivery error) and stopped before any return. `eq_ref_v1c` queued with
+  1.0.2 (e5a7ee9c..., PC lib file checked byte for byte before queuing).
