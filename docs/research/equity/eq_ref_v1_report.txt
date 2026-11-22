@@ -1,0 +1,51 @@
+﻿=== WRDSQ REPORT v1.0.7 | job eq_ref_v1 | 2026-11-21 20:00 | metadata and results only ===
+Loading library list...
+Done
+
+## 1. python
+eq_ref-1.0.1  config {"basket_cost": 0.001, "big_n": 500, "cap": 0.025, "cost_big": 0.001, "cost_small": 0.0025, "form0": 200901, "form1": 202511, "hold": 12, "ibes_tol_days": 35, "keep_frac": 0.2, "max_missing": 3, "min_dv": 2000000.0, "min_price": 5.0, "q_lag_days": 45, "ret0": 201001, "ret1": 202512, "stale_days": 270, "top_frac": 0.1, "top_n": 1500, "y0": 2007, "y1": 2025}
+inputs: msf 1074661, link 33324, fq 1024698, gics 46011, ibes 1032932, names 82395, ff 228, dv 1011714
+CRSP price factor 2020-09 / 2020-07 for AAPL: 0.250 -> direction -1
+GICS source: co_hgic; universe months 200810..202511
+panel built 33 s
+
+## 1. Universe and coverage (December of each year)
+year  top1500  in_univ  excluded  no_sector  ranked     ey     bp    mom    roe    acc    pio    rev   top10%
+2009     1500     1433       210         13       0      0      0     98      0      0      0     99        0
+2010     1500     1449       221         13       0      0      0     97      0      0      0     98        0
+2011     1500     1467       232         14       0      0      0     98      0      0      0     98        0
+2012     1500     1454       241         12       0      0      0     98      0      0      0     99        0
+2013     1500     1471       255         13       0      0      0     97      0      0      0     98        0
+2014     1500     1480       284         16       0      0      0     97      0      0      0     98        0
+2015     1500     1479       316         19       0      0      0     98      0      0      0     99        0
+2016     1500     1485       310         21       0      0      0     98      0      0      0     98        0
+2017     1500     1477       309         18       0      0      0     99      0      0      0     99        0
+2018     1500     1481       318         22       0      0      0     97      0      0      0     98        0
+2019     1500     1485       329         19       0      0      0     97      0      0      0     99        0
+2020     1500     1492       305         28       0      0      0     95      0      0      0     96        0
+2021     1500     1494       277         22       0      0      0     94      0      0      0     97        0
+2022     1500     1486       281         18       0      0      0     99      0      0      0     99        0
+2023     1500     1480       265         15       0      0      0     99      0      0      0     99        0
+2024     1500     1491       282         14       0      0      0     98      0      0      0     98        0
+2025     1500     1493       294         19       0      0      0     98      0      0      0     97        0
+coverage = %% of non-excluded universe members with the measure (before the sector-median fill)
+rank correlations between measures (mean over months, Spearman inside the month):
+
+ERROR:
+Traceback (most recent call last):
+  File "/home/ubc/ttdlisa/wrdsq/wrdsq.py", line 314, in s_python
+    exec(compile(st["code"], "<job:%s>" % R.name, "exec"), ns)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<job:eq_ref_v1>", line 2, in <module>
+  File "/home/ubc/ttdlisa/wrdsq/lib/eq_ref.py", line 570, in run
+    cm = r.groupby("yyyymm")[["rk_" + m for m in MEASURES]].corr(method="spearman").groupby(level=1).mean()
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/sas/grid/python3-prod/lib/python3.14/site-packages/pandas/core/frame.py", line 9183, in groupby
+    return DataFrameGroupBy(
+        obj=self,
+    ...<7 lines>...
+        dropna=dropna,
+    )
+ValueError: level > 0 or level < -1 only valid with MultiIndex
+
+=== END (35 s) ===

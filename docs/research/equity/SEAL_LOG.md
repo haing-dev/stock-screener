@@ -56,3 +56,6 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
   (CRSP msf_v2 / dsf_v2 aggregates, CCM links, Compustat fundq, GICS history, I/B/E/S summary, CRSP names, FF
   factors, 2007-2025, stored on WRDS as `ref_*`) then `eq_ref_v1` (Batch 0: reference book v1 and the published-form
   checks of its measures, US 2010-2025; summary statistics only). Code c8705b6f... (1.0.1); lock ca2e3b04...
+- 2026-11-22: `eq_ref_pull_v1` ran (215 s, all tables). `eq_ref_v1` stopped before any return (account join bug; counts and
+  coverage only came back). Logged bug-fix rerun `eq_ref_v1b` queued: eq_ref 1.0.2 (code e5a7ee9c...), same stored data;
+  lock 6243526a...

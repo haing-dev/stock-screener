@@ -10,7 +10,10 @@ run(load, save, out)                   builds measures, ranks, the book under R4
 The engine (universe, measures, sector ranks, tranche book, costs, statistics) is in this one file: seal-exempt
 modules may import no lib module. Local LSEG runs import the same functions.
 1.0.0 (2026-11-22): first version. 1.0.1 (same day, before any run of eq_ref_v1): quarterly_table accepts a one-quarter
-cash flow column `cfoq` (the LSEG form); the WRDS path is unchanged.
+cash flow column `cfoq` (the LSEG form); the WRDS path is unchanged. 1.0.2 (bug fix after eq_ref_v1, which stopped
+before any return: no account measure joined because gvkey came back from the stored CSV as a number and as a float
+after the link join, so the text keys differed; keys are now normalised; the measure-correlation table no longer
+assumes pandas' grouped corr layout, and the run stops before returns if nothing is ranked).
 """
 import json
 import math
@@ -28,7 +31,7 @@ MEASURES = ["ey", "bp", "mom", "roe", "acc", "pio", "rev"]
 GROUPS = {"value": ["ey", "bp"], "momentum": ["mom"], "quality": ["roe", "acc", "pio"], "expectations": ["rev"]}
 HIGH_GOOD = {"ey": 1, "bp": 1, "mom": 1, "roe": 1, "acc": -1, "pio": 1, "rev": 1}
 FF_PAIR = {"ey": "hml", "bp": "hml", "mom": "umd", "roe": "rmw", "acc": "cma", "pio": "rmw", "rev": "umd", "book": "hml"}
-VERSION = "eq_ref-1.0.1"
+VERSION = "eq_ref-1.0.2"
 
 
 # ----------------------------------------------------------------------------------------------------------- pulls
@@ -146,10 +149,20 @@ def stats(r):
                 t=nw_t(r), worst_fall=float(dd), worst_month=float(r.min()))
 
 
+def keynorm(s):
+    """company key as one canonical string: numeric keys (Compustat gvkey, which a CSV round trip turns into numbers,
+    and floats after a left join) -> integer text; other keys (ISIN) unchanged"""
+    n = pd.to_numeric(s, errors="coerce")
+    if len(s) and n.notna().mean() > 0.99:
+        return n.map(lambda v: "%d" % v if pd.notna(v) else None)
+    return s.astype(object).where(s.notna(), None).map(lambda v: None if v is None else str(v))
+
+
 # ---------------------------------------------------------------------------------------------- accounts (Compustat)
 def quarterly_table(fq):
     """one row per gvkey-quarter with TTM flows, balances, year-ago values; avail = rdq + 1 day else datadate + 45"""
     f = fq.copy()
+    f["gvkey"] = keynorm(f.gvkey)
     f["datadate"] = pd.to_datetime(f.datadate)
     f["rdq"] = pd.to_datetime(f.rdq)
     for c in ("fyearq", "fqtr"):
@@ -269,6 +282,7 @@ def build_panel(D, out):
     u["t_end"] = [ym_end(x) for x in u.yyyymm]
     # link permno -> gvkey at t
     lk = D["link"].copy()
+    lk["gvkey"] = keynorm(lk.gvkey)
     lk["linkdt"] = pd.to_datetime(lk.linkdt)
     lk["linkenddt"] = pd.to_datetime(lk.linkenddt).fillna(pd.Timestamp("2099-12-31"))
     lk["pri"] = (lk.linkprim == "P").astype(int)
@@ -278,6 +292,7 @@ def build_panel(D, out):
     u = u.merge(x, on=["permno", "yyyymm"], how="left")
     # GICS at t
     gi = D["gics"].copy()
+    gi["gvkey"] = keynorm(gi.gvkey)
     src = str(gi.src.iloc[0]) if len(gi) else "none"
     if src == "co_hgic":
         gi["indfrom"] = pd.to_datetime(gi.indfrom)
@@ -300,6 +315,8 @@ def build_panel(D, out):
     q = q.rename(columns={"avail": "avail_key"})
     left["gvkey"] = left.gvkey.astype(str)
     q["gvkey"] = q.gvkey.astype(str)
+    out("account join: %d of %d universe line-months have a gvkey; %d keys in the quarterly table, %d shared" % (
+        len(left), len(u), q.gvkey.nunique(), len(set(left.gvkey) & set(q.gvkey))))
     j = pd.merge_asof(left, q, on="avail_key", by="gvkey", direction="backward")
     j = j[(j.avail_key - j.datadate).dt.days <= CFG["stale_days"]]
     u = u.merge(j.drop(columns=["avail_key", "gvkey"]), on=["permno", "yyyymm"], how="left")
@@ -567,8 +584,12 @@ def run(load, save, out):
                                                      len(rr), "  ".join(cov), int((rr.all_pct >= 1 - CFG["top_frac"]).sum())))
     out("coverage = %% of non-excluded universe members with the measure (before the sector-median fill)")
     out("rank correlations between measures (mean over months, Spearman inside the month):")
-    cm = r.groupby("yyyymm")[["rk_" + m for m in MEASURES]].corr(method="spearman").groupby(level=1).mean()
-    cm = cm.loc[["rk_" + m for m in MEASURES], ["rk_" + m for m in MEASURES]]
+    rk = ["rk_" + m for m in MEASURES]
+    mats = [d[rk].corr(method="spearman").to_numpy() for _, d in r.groupby("yyyymm") if len(d) > 20]
+    if not mats:
+        out("NO RANKED STOCKS: stop before any return is computed")
+        return
+    cm = pd.DataFrame(np.nanmean(np.stack(mats), axis=0), index=rk, columns=rk)
     out("       " + " ".join("%6s" % m for m in MEASURES))
     for m in MEASURES:
         out("%6s " % m + " ".join("%6.2f" % cm.loc["rk_" + m, "rk_" + k] for k in MEASURES))

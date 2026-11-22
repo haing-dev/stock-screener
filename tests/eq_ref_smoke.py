@@ -49,14 +49,15 @@ for i, p in enumerate(permnos):
             ni = 10 + 5 * quality[i] + rng.normal(0, 2)
             cfo_q = ni + 3 + 2 * quality[i]
             ytd = cfo_q * qtr
-            fq.append(("g%05d" % i, dd, y, qtr, dd + pd.Timedelta(days=30), sale, sale * 0.6, ni * 1.5, ni, ytd, at,
+            fq.append(("%06d" % (1000 + i), dd, y, qtr, dd + pd.Timedelta(days=30), sale, sale * 0.6, ni * 1.5, ni, ytd, at,
                        400 + 50 * quality[i], 50, 20, 200, 0, 5, 300, 200, 100, 1.0))
             at *= 1.005
 fq = pd.DataFrame(fq, columns=["gvkey", "datadate", "fyearq", "fqtr", "rdq", "saleq", "cogsq", "oiadpq", "niq", "oancfy",
                                "atq", "ceqq", "cheq", "dlcq", "dlttq", "pstkq", "mibq", "actq", "lctq", "cshoq", "ajexq"])
-link = pd.DataFrame({"gvkey": ["g%05d" % i for i in range(N)], "permno": [pmap[p] for p in permnos], "linkprim": "P",
+link = pd.DataFrame({"gvkey": ["%06d" % (1000 + i) for i in range(N)], "permno": [pmap[p] for p in permnos], "linkprim": "P",
                      "linkdt": pd.Timestamp("1990-01-01"), "linkenddt": pd.NaT})
-gics = pd.DataFrame({"gvkey": ["g%05d" % i for i in range(N)], "indfrom": pd.Timestamp("1990-01-01"), "indthru": pd.NaT,
+link = link.iloc[20:]                           # some lines without a Compustat link (as in CRSP)
+gics = pd.DataFrame({"gvkey": ["%06d" % (1000 + i) for i in range(N)], "indfrom": pd.Timestamp("1990-01-01"), "indthru": pd.NaT,
                      "gsector": sectors, "ggroup": ggroup, "gind": [g + "10" for g in ggroup],
                      "gsubind": [g + "1010" for g in ggroup], "src": "co_hgic"})
 ib = []
@@ -83,7 +84,12 @@ lines = []
 
 
 def load(n):
-    return store[n].copy()
+    """as on WRDS: data sets are stored as CSV and read back (gvkey and dates come back as numbers / text)"""
+    import io
+    buf = io.StringIO()
+    store[n].to_csv(buf, index=False)
+    buf.seek(0)
+    return pd.read_csv(buf)
 
 
 def save(n, df):
