@@ -4,6 +4,25 @@ Every rule change gets a new VERSION in gm/run.py and a line here. Every variant
 (1990-2010; extra check 1975-89) is logged so the deflated Sharpe can count the trials. The holdout (2011-2026) is run
 once, after the rules are frozen, by gm/holdout.py.
 
+## gm-1.2.2 and gm-2.0.2 candidate (registered 2026-11-22, BEFORE the code change): doubled US 2-year market removed
+Found by code reading in the systematic charter (docs/research/fable/CHARTER_1.2.md section 9 item 2; confirmed by its
+independent Opus check): `st_us_2y` and `bd_us_2y` are the same series (the 2-year par note priced from DGS2, less the
+same US 3-month rate) wherever DGS2 exists, in monthly returns, daily volatility and every signal; `bd_us_2y` also
+carries any stooq months before DGS2. So the book has 61 distinct markets, not 62, and the US 2-year note holds 2/15 of
+the fixed-income block instead of 1/14 and can reach twice the per-market cap. The charter fixed the remedy before any
+number: drop `st_us_2y` (the subset), keep `bd_us_2y`; registered as a design change before the run.
+1. D1 gm/panel.py: "st_us_2y" leaves SHORT (the other short-end notes stay).
+2. D1 gm/signals.py: "st_us_2y" leaves BD.
+3. gm/variants.py, archived batch-1 variant S1 (US 3-month rate market): its signs are taken from `bd_us_2y` (the same
+   series), so S1 is unchanged wherever it can be rebuilt.
+No other rule, weight, threshold or cost changes. Which id goes is set by the data (the superset stays), not by results,
+and is not revisited after them. Batch A1 (data swap) therefore stays a pure data swap.
+Gate: the truncation test passes at all 8 cut dates for BASE and CANDIDATE on free data; tests pass; the PC engine is
+redeployed and reproduces the new reference. Reported once: design-period statistics before and after (1975-2010,
+1990-2010), as for C1-C4. Logged in gm/trials.csv as family "fix" (one row per config, not a selection trial). Live
+paper ledger: untouched (workflow disabled); the next live run restates under the new version name. Holdout not run.
+Texts that still say 62 markets (TESTING_PROTOCOL.md) are corrected at registration step 3.4.
+
 ## gm-1.2.1 and gm-2.0.1 candidate (registered 2026-11-11, BEFORE the code change): input-layer look-ahead removed
 Found by the block 3 truncation test (docs/research/bbg/BLOCK3_engine_2026-11-11.md; 8 cut dates 1980-2010, loader-level
 cuts, stricter than the gm-1.2.0 audit). Signals, volatility, positions and book code are clean; four places in the
