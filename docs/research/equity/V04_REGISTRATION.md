@@ -230,3 +230,15 @@ the LSEG files wait).
    prices put on the current share basis via CRSP factors; history of GICS (LSEG: today's GICS). The LSEG run of the
    same engine (after the stage-B files) is the registered primary; Batch 0 compares the two.
 5. Still open: the second implementation by a separate agent (plan step 5) before Batch A; the daily engine.
+
+## Addendum A9 (2026-11-22): say-do tables (desk 1 gate; descriptive, no return)
+What the roster's and control's conviction purchases (R2, `eq_conv_panel`, versions a and b) looked like at the end of
+the quarter BEFORE the purchase quarter: inside-sector percentile (all industries, universe members per R3) of 13
+measures: the seven book measures (FIELD_DICTIONARY_v1.0 part 1), market value, and five descriptive measures (gross
+margin, operating margin, sales growth and asset growth on four quarters, net debt to assets; WRDS form). Per investor
+(masked ids M01.., ordered by SHA-256 of the name; key = the frozen list, referee only) and pooled roster / control:
+median percentile for version a, version b, their average, share in the top 30%, odd-year and even-year medians;
+cells with fewer than 20 purchases are blank. Job `eq_saydo_v1` = eq_ref 1.1.0 `saydo()` (code c6021bb1...; run()
+unchanged). Levels only; no portfolio, signal or stock return is computed, so it is not a trial (fence 7). Use: the
+say-do table per investor (stated criteria against revealed purchases) and the "revealed by purchases" threshold tags
+of the strategy writers (odd years set, even years check). Not used to choose investors or pods.

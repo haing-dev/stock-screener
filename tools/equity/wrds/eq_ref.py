@@ -9,11 +9,17 @@ run(load, save, out)                   builds measures, ranks, the book under R4
 
 The engine (universe, measures, sector ranks, tranche book, costs, statistics) is in this one file: seal-exempt
 modules may import no lib module. Local LSEG runs import the same functions.
+saydo(load, save, out)                 descriptive say-do tables (V04_REGISTRATION A9): what the roster's and control's
+                                       conviction purchases looked like at the end of the quarter BEFORE purchase
+                                       (inside-sector ranks of measures, masked investor ids, >= 20 purchases per cell,
+                                       odd and even years); levels only, no return
 1.0.0 (2026-11-22): first version. 1.0.1 (same day, before any run of eq_ref_v1): quarterly_table accepts a one-quarter
 cash flow column `cfoq` (the LSEG form); the WRDS path is unchanged. 1.0.2 (bug fix after eq_ref_v1, which stopped
 before any return: no account measure joined because gvkey came back from the stored CSV as a number and as a float
 after the link join, so the text keys differed; keys are now normalised; the measure-correlation table no longer
-assumes pandas' grouped corr layout, and the run stops before returns if nothing is ranked).
+assumes pandas' grouped corr layout, and the run stops before returns if nothing is ranked). 1.1.0: saydo() added
+(descriptive, no return) with five descriptive measures (gross and operating margin, sales and asset growth, net debt
+to assets) computed beside the book measures; run() unchanged.
 """
 import json
 import math
@@ -24,6 +30,7 @@ import pandas as pd
 
 # >>> FROZEN INPUT
 CFG = json.loads("{\"y0\": 2007, \"y1\": 2025, \"form0\": 200901, \"form1\": 202511, \"ret0\": 201001, \"ret1\": 202512, \"top_n\": 1500, \"min_price\": 5.0, \"min_dv\": 2000000.0, \"top_frac\": 0.1, \"keep_frac\": 0.2, \"hold\": 12, \"cost_big\": 0.001, \"cost_small\": 0.0025, \"big_n\": 500, \"basket_cost\": 0.001, \"max_missing\": 3, \"stale_days\": 270, \"q_lag_days\": 45, \"ibes_tol_days\": 35, \"cap\": 0.025}")
+SAYDO = json.loads("[{\"name\": \"Joel Greenblatt\", \"group\": \"roster\", \"mgrnos\": [\"10969\", \"12775\"]}, {\"name\": \"Terry Smith\", \"group\": \"roster\", \"mgrnos\": [\"13408\"]}, {\"name\": \"Dev Kantesaria\", \"group\": \"roster\", \"mgrnos\": [\"14460\"]}, {\"name\": \"Chris Hohn\", \"group\": \"roster\", \"mgrnos\": [\"11194\"]}, {\"name\": \"Glenn Greenberg\", \"group\": \"roster\", \"mgrnos\": [\"16080\"]}, {\"name\": \"Val Zlatev\", \"group\": \"roster\", \"mgrnos\": [\"7142\"]}, {\"name\": \"Derek Pilecki\", \"group\": \"roster\", \"mgrnos\": [\"8799\"]}, {\"name\": \"Bill Nygren and Alex Fitch\", \"group\": \"roster\", \"mgrnos\": [\"43485\"]}, {\"name\": \"Murray Stahl\", \"group\": \"roster\", \"mgrnos\": [\"44850\", \"49373\"]}, {\"name\": \"Pat Dorsey\", \"group\": \"roster\", \"mgrnos\": [\"14201\"]}, {\"name\": \"Chris Davis\", \"group\": \"roster\", \"mgrnos\": [\"78320\"]}, {\"name\": \"Joseph Shaposhnik\", \"group\": \"roster\", \"mgrnos\": []}, {\"name\": \"Alex Sacerdote\", \"group\": \"roster\", \"mgrnos\": [\"11405\"]}, {\"name\": \"David Einhorn\", \"group\": \"roster\", \"mgrnos\": [\"42315\"]}, {\"name\": \"Stan Druckenmiller\", \"group\": \"roster\", \"mgrnos\": [\"13021\", \"23704\"]}, {\"name\": \"Todd Kantor\", \"group\": \"roster\", \"mgrnos\": [\"13431\"]}, {\"name\": \"Bob Robotti\", \"group\": \"roster\", \"mgrnos\": [\"10247\"]}, {\"name\": \"Fred Martin\", \"group\": \"roster\", \"mgrnos\": [\"23050\"]}, {\"name\": \"Brad Gerstner\", \"group\": \"roster\", \"mgrnos\": [\"13112\"]}, {\"name\": \"Chris Bloomstran\", \"group\": \"roster\", \"mgrnos\": [\"11757\"]}, {\"name\": \"Li Lu\", \"group\": \"roster\", \"mgrnos\": [\"14546\"]}, {\"name\": \"Warren Buffett\", \"group\": \"control\", \"mgrnos\": [\"8350\"]}, {\"name\": \"Henry Ellenbogen\", \"group\": \"control\", \"mgrnos\": [\"9442\"]}, {\"name\": \"Jim Chanos\", \"group\": \"control\", \"mgrnos\": [\"12867\"]}, {\"name\": \"John Lennon\", \"group\": \"control\", \"mgrnos\": [\"9090\"]}, {\"name\": \"Peter Keefe\", \"group\": \"control\", \"mgrnos\": [\"5300\"]}, {\"name\": \"Tobias Carlisle\", \"group\": \"control\", \"mgrnos\": []}, {\"name\": \"Arnold Van Den Berg\", \"group\": \"control\", \"mgrnos\": [\"15095\"]}, {\"name\": \"Eddy Elfenbein\", \"group\": \"control\", \"mgrnos\": []}]")
 # <<< FROZEN INPUT
 
 COM = ("securitytype = 'EQTY' and securitysubtype = 'COM' and sharetype = 'NS' and primaryexch in ('N','A','Q')")
@@ -31,7 +38,7 @@ MEASURES = ["ey", "bp", "mom", "roe", "acc", "pio", "rev"]
 GROUPS = {"value": ["ey", "bp"], "momentum": ["mom"], "quality": ["roe", "acc", "pio"], "expectations": ["rev"]}
 HIGH_GOOD = {"ey": 1, "bp": 1, "mom": 1, "roe": 1, "acc": -1, "pio": 1, "rev": 1}
 FF_PAIR = {"ey": "hml", "bp": "hml", "mom": "umd", "roe": "rmw", "acc": "cma", "pio": "rmw", "rev": "umd", "book": "hml"}
-VERSION = "eq_ref-1.0.2"
+VERSION = "eq_ref-1.1.0"
 
 
 # ----------------------------------------------------------------------------------------------------------- pulls
@@ -242,6 +249,12 @@ def account_measures(q):
     m["ceq"] = q.ceqq
     m["netdebt"] = q.dlcq.fillna(0) + q.dlttq.fillna(0) + q.pstkq.fillna(0) + q.mibq.fillna(0) - q.cheq.fillna(0)
     m["netdebt_ok"] = q[["dlcq", "dlttq", "cheq"]].notna().any(axis=1)
+    # descriptive extras (say-do tables only; not in the reference book)
+    m["gm"] = (q.gp_ttm / q.sale_ttm).where(q.sale_ttm > 0)
+    m["opm"] = (q.oiadp_ttm / q.sale_ttm).where(q.sale_ttm > 0)
+    m["sg"] = (q.sale_ttm / q.sale_ttm_l4 - 1).where(q.sale_ttm_l4 > 0)
+    m["ag"] = (q.atq / q.atq_l4 - 1).where(q.atq_l4 > 0)
+    m["lev"] = (m.netdebt / q.atq).where((q.atq > 0) & m.netdebt_ok)
     return m
 
 
@@ -643,3 +656,80 @@ def run(load, save, out):
         out("era %s: book net - sector-matched: mean/yr %.2f%%, NW t %.2f, months %d" % (nm_, 100 * st["mean"], st["t"], st["n"]))
     out("\nseries stored on WRDS: ref_series (book, gross, sector-matched, equal-weight, turnover, costs), ref_spreads")
     out("done %.0f s" % (time.time() - t0))
+
+
+# ------------------------------------------------------------------------------------------- say-do (descriptive)
+SAYDO_MEASURES = ["ey", "bp", "mom", "roe", "acc", "pio", "rev", "size", "gm", "opm", "sg", "ag", "lev"]
+
+
+def mask_ids(names):
+    import hashlib
+    order = sorted(names, key=lambda n: hashlib.sha256(n.encode()).hexdigest())
+    return {n: "M%02d" % (i + 1) for i, n in enumerate(order)}
+
+
+def saydo(load, save, out):
+    """aggregates of the measures of conviction purchases, ranked inside the GICS sector among universe members
+    (all industries) at the end of the quarter before the purchase quarter. No company, no name, no return."""
+    out("%s  say-do (descriptive; V04_REGISTRATION A9)" % VERSION)
+    D = load_inputs(load)
+    u = build_panel(D, out)
+    u["size"] = u.mcap
+    b = u[u.in_univ & u.gsector.notna()].copy()
+    for m in SAYDO_MEASURES:
+        b["p_" + m] = b[m].groupby([b.yyyymm, b.gsector]).rank(pct=True)
+    cp = load("eq_conv_panel")
+    for c in ("new", "add", "conv_a", "conv_b"):
+        cp[c] = cp[c].astype(str).str.lower().isin(["true", "1", "1.0"])
+    cp = cp[cp.conv_a | cp.conv_b].copy()
+    cp["prev"] = [ym_add(int(x), -3) for x in cp.yyyymm]
+    cols = ["permno", "yyyymm", "gsector"] + ["p_" + m for m in SAYDO_MEASURES]
+    x = cp.merge(b[cols].rename(columns={"yyyymm": "prev"}), on=["permno", "prev"], how="left")
+    who = {}
+    for r in SAYDO:
+        for mg in r["mgrnos"]:
+            who[int(mg)] = (r["name"], r["group"])
+    x["name"] = x.mgrno.map(lambda v: who.get(int(v), (None, None))[0])
+    x["group"] = x.mgrno.map(lambda v: who.get(int(v), (None, None))[1])
+    x = x[x.name.notna()]
+    mask = mask_ids(sorted({r["name"] for r in SAYDO}))
+    x["mid"] = x.name.map(mask)
+    x["year"] = x.yyyymm // 100
+    x["inu"] = x.gsector.notna()
+    out("conviction purchases matched to an investor: %d (version a %d, b %d); in the universe the quarter before: %d" % (
+        len(x), int(x.conv_a.sum()), int(x.conv_b.sum()), int(x.inu.sum())))
+    out("masked ids: M01.. ordered by SHA-256 of the investor name (key = the frozen SAYDO list; referee only)")
+    out("cell = median inside-sector percentile (0-1) of the measure at the end of the quarter before purchase; "
+        "'-' = fewer than 20 purchases with the measure. Columns: version a | version b | average of a and b | share "
+        "in the top 30%% (either version) | median odd years | median even years (either version)")
+
+    def cell(d, m):
+        v = d["p_" + m].dropna()
+        return (len(v), float(v.median()) if len(v) >= 20 else None)
+
+    def fmt(t):
+        return "%5s" % ("-" if t is None else "%.2f" % t)
+
+    rows = []
+    groups = [(mask[n], d) for n, d in x.groupby("name")]
+    groups.sort()
+    groups += [("ROSTER pooled", x[x.group == "roster"]), ("CONTROL pooled", x[x.group == "control"])]
+    for mid, d in groups:
+        du = d[d.inu]
+        out("\n### %s: purchases %d (a %d, b %d), in universe %d (%.0f%%); top sectors: %s" % (
+            mid, len(d),
+            int(d.conv_a.sum()), int(d.conv_b.sum()), len(du), 100 * len(du) / max(len(d), 1),
+            ", ".join("%s %.0f%%" % (k, 100 * v) for k, v in du.gsector.value_counts(normalize=True).head(3).items())))
+        out("measure |    a  |    b  |  avg  | top30 |  odd  | even  | n(either)")
+        for m in SAYDO_MEASURES:
+            na, ma = cell(du[du.conv_a], m)
+            nb, mb = cell(du[du.conv_b], m)
+            avg = None if ma is None or mb is None else (ma + mb) / 2
+            v = du["p_" + m].dropna()
+            top = float((v >= 0.7).mean()) if len(v) >= 20 else None
+            _, mo = cell(du[du.year % 2 == 1], m)
+            _, me = cell(du[du.year % 2 == 0], m)
+            out("%-7s | %s | %s | %s | %s | %s | %s | %d" % (m, fmt(ma), fmt(mb), fmt(avg), fmt(top), fmt(mo), fmt(me), len(v)))
+            rows.append(dict(mid=mid, measure=m, n=len(v), med_a=ma, med_b=mb, avg=avg, top30=top, odd=mo, even=me))
+    save("eq_saydo_table", pd.DataFrame(rows))
+    out("\ntable stored on WRDS: eq_saydo_table (the rows printed above)")

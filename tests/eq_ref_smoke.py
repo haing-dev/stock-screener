@@ -79,6 +79,12 @@ store = {"ref_msf": msf, "ref_link": link, "ref_fq": fq, "ref_gics": gics, "ref_
          "ref_ff": ff}
 for y in range(eq_ref.CFG["y0"] + 1, eq_ref.CFG["y1"] + 1):
     store["ref_dv_%d" % y] = dvf[dvf.yyyymm // 100 == y]
+cp = []
+for k, ym in enumerate([m for m in months if m % 100 in (3, 6, 9, 12) and m >= 200912]):
+    for j in range(40):
+        i = (k * 7 + j) % N
+        cp.append((8350 if j < 20 else 13408, ym, pmap[permnos[i]], 0.02, j % 10 + 1, j % 3 == 0, j % 3 == 1, j % 2 == 0, j % 2 == 1, 1))
+store["eq_conv_panel"] = pd.DataFrame(cp, columns=["mgrno", "yyyymm", "permno", "w", "rank", "new", "add", "conv_a", "conv_b", "q_held"])
 saved = {}
 lines = []
 
@@ -109,4 +115,9 @@ B = saved["ref_series"]
 assert len(B) == 192, len(B)
 assert B.invested.min() > 0.95, B.invested.min()
 assert "direction +1" in txt, "factor direction check"
+lines.clear()
+eq_ref.saydo(load, save, out)
+T = saved["eq_saydo_table"]
+assert len(T) == 4 * len(eq_ref.SAYDO_MEASURES), len(T)
+assert T[T.measure == "roe"].avg.notna().all()
 print("\nSMOKE OK")

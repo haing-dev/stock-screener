@@ -63,3 +63,6 @@ conviction holdings job (R2) will be the fourth, with its code hash entered befo
   1.0.2 (e5a7ee9c..., PC lib file checked byte for byte before queuing).
 - 2026-11-22: `eq_ref_v1c` ran with 1.0.2 (52 s): Batch 0 = the first opening of 2010-2025 returns under plan v0.4 (reference
   book v1 and its 7 measures' published-form spreads; summary statistics only). Result note BATCH0_REFERENCE_BOOK_2026-11-22.md.
+- 2026-11-22: `eq_saydo_v1` queued (eq_ref 1.1.0 c6021bb1..., V04_REGISTRATION A9): say-do tables from the stored `ref_*` data
+  sets and `eq_conv_panel`; measure levels / ranks at the quarter before conviction purchases, aggregates of >= 20, masked
+  ids; no return. Lock b7df559d...
