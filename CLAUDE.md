@@ -399,7 +399,23 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   (he expects a slow grind lower, not only a break); omitted two-strong-years rule added; agrees with card 1 on liquidity.
   9 open judgement points (2.1-2.2, 3.1-3.4, 4.3). NEXT when resumed: card 5 (commodity balances: Andurand, MT123-125),
   Fable high, templates in pipeline/card_1.4_karsan; then step 1.5 (Opus) and the 3.x registration work.
-  Vault branch add34e2; PC vault copy QUEUED (job vault_sync_20261122a in local\jobs).
+  Vault branch add34e2; PC vault copy DONE (job vault_sync_20261122a ran, no errors).
+- 2026-11-22 PLAYBOOK CARD 1.4 (5 of 5) COMMODITY BALANCES (Pierre Andurand) DONE, PASS WITH CORRECTIONS (user's word;
+  schedule stays PAUSED): docs/research/fable/CARD_1.4_commodity_balances.md (Fable high, ~0.27M; 33 corrections of the
+  Opus check applied) + _check.md (Opus high, ~0.24M). Inputs: macro-vault pipeline/card_1.4_andurand (201 claims: MT124
+  2022-03, MT125 2022-09, MT123 2024-05, MT115 late 2014 with identity only probable, flagged [P]). RESULT: playbook =
+  supply vs demand growth -> inventories -> the price that keeps them between empty and full; large moves where demand
+  cannot flex and supply is years away; never sell options; cut when the market stops making sense. Mostly already in
+  the book (curve = Carry / Curve carry, demand and inflation = Economic trend; overlaps Trend only while prices run his
+  way). 1 rule forward: R1 Range break where supply is slow (front contract at a new 120-month month-end high in base
+  metals or cocoa -> long 24/36 months; 8 versions, 16 with sizing; only if diagnostic D2 passes, D2 cut at 2008-12 to
+  keep 24-month outcomes out of the seal). R2 Paper fall in a tight market HELD BACK (in its source case he reduced,
+  MT125-C08-7). Ledger: 5 resolved, 3 right; two rows score output forecasts on the oil price (rescore at 2.3); the
+  "around 200" call is conditional and undated. Check: his 2022 structural long was held through a give-back (not
+  Trend); quotes against R1's slow-supply class were missed (agri responds "within a year" in 2022; copper scrap); his
+  cocoa bear case omitted. 8 open judgement points (3.1-3.2, 1.5, 2.3). ALL 5 CARDS OF STEP 1.4 DONE.
+  NEXT: step 1.5 thesis register (Opus); then 3.1-3.5 specs, checks, power check, registration.
+  Vault branch: see the next commit on macro-vault; PC vault copy job vault_sync_20261122b.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
