@@ -370,7 +370,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   (1930-45) had been missed. 9 open judgement points (3.1-3.4, 2.2-2.3); none is a decision for the user.
   NEXT when resumed: card 3 (macro relative value and risk: Graham, Elliott), Fable high, templates in
   pipeline/card_1.4_bridgewater.
-  Vault branch dce020b; PC vault copy QUEUED (job vault_sync_20261121a in local\jobs).
+  Vault branch dce020b; PC vault copy DONE (job vault_sync_20261121a ran, no errors).
 - 2026-11-21 PLAYBOOK CARD 1.4 (3 of 5) MACRO RELATIVE VALUE AND RISK (Graham Capital, Elliott) DONE, PASS WITH
   CORRECTIONS (user's word; schedule stays PAUSED): docs/research/fable/CARD_1.4_relative_value_risk.md (Fable high,
   ~0.32M tokens; 41 corrections of the Opus check applied) + _check.md. Inputs: macro-vault pipeline/card_1.4_graham_elliott
@@ -384,6 +384,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   McCann says crowded times have HIGHER PM information ratios (contradicts the card's stop condition); Tropin says
   rules decay; Graham's quant side is trend/value/carry = our pods. 8 open judgement points (2.2-2.3, 3.1-3.2).
   NEXT when resumed: card 4 (flows and volatility: Karsan), Fable high, templates in pipeline/card_1.4_graham_elliott.
+  Vault branch 6ea7c31; PC vault copy QUEUED (job vault_sync_20261121b in local\jobs).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
