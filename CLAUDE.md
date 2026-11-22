@@ -385,6 +385,20 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   rules decay; Graham's quant side is trend/value/carry = our pods. 8 open judgement points (2.2-2.3, 3.1-3.2).
   NEXT when resumed: card 4 (flows and volatility: Karsan), Fable high, templates in pipeline/card_1.4_graham_elliott.
   Vault branch 6ea7c31; PC vault copy QUEUED (job vault_sync_20261121b in local\jobs).
+- 2026-11-22 PLAYBOOK CARD 1.4 (4 of 5) FLOWS AND VOLATILITY (Cem Karsan) DONE, PASS WITH CORRECTIONS (user's word;
+  schedule stays PAUSED): docs/research/fable/CARD_1.4_flows_volatility.md (Fable high, ~0.38M; 26 corrections of the
+  Opus check applied) + _check.md. Inputs: macro-vault pipeline/card_1.4_karsan (785 claims, 16 recordings 2024-05..2026-07).
+  LESSON: build card packs WITH pipeline/speaker_aliases.json and cross-check sources against the forecast ledger's
+  'who' (captions misspell names: 'Jim Kasang', 'Cham', 'Jem'); the first run used 3 of 16 recordings and was discarded
+  unchecked (~0.29M Fable wasted; kept in run1_thin/). Cards 1-3 checked: no recording missed. RESULT: playbook = forced
+  flows (dealer hedging, volatility selling, calendar re-leveraging) set index paths over days to months; he trades path
+  and width with options. Engine NOT observable here (no options or positioning data; VIX only, which he rejects).
+  5 date/curve rules, 16 versions, all hindsight: R1 year-end window, R2 option-cycle window into monthly expiry, R3 after
+  the ramp (short mid-Jan / Feb-Mar expiry), R4 month-end re-leveraging, R5 disinflation steepener (overlaps card 3 R2;
+  his own "not playing out"). Ledger 28 of 68; stocks 5 of 18 (falls 0 of 8, rises 5 of 7). Check: falsifier rewritten
+  (he expects a slow grind lower, not only a break); omitted two-strong-years rule added; agrees with card 1 on liquidity.
+  9 open judgement points (2.1-2.2, 3.1-3.4, 4.3). NEXT when resumed: card 5 (commodity balances: Andurand, MT123-125),
+  Fable high, templates in pipeline/card_1.4_karsan; then step 1.5 (Opus) and the 3.x registration work.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
