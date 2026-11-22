@@ -486,6 +486,24 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   A1 annual), 05_estimates (E1-E3 monthly consensus), 06_sector_short (S1 short interest, S2 GICS + actual EPS); company
   list G:\...\LSEG\02_size\companies_v1.csv (one primary line per company). NEXT: read stage B (streaming reader for
   accounts), build the measures (field dictionary v1.0) + lock; then the engine / reference book (step 5).
+  2026-11-21/22 STAGE B LOADING: only LSEG_accounts_Q2_v1.xlsx (companies 851-1700) loaded and saved (04_accounts,
+  47.6 MB); Workspace/Excel stalled on everything else (likely LSEG throttle + add-in hang; Excel crashed once). User
+  REVOKED PC CONTROL (2026-11-21): no computer use; she refreshes herself. Fresh set = G:\...\LSEG\07_stageB_v3\
+  01..12 (builder build_lseg_company_data.py v3 = ~20 blocks per file, quarterly 851-1700 skipped; file 12 =
+  build_lseg_unadjusted.py, close as traded). Older v1/v2 files obsolete except Q2_v1. Reader for all stage-B files:
+  tools/equity/lseg/read_stage_b.py OUT_DIR FILES (-> <kind>_<group>.csv.gz, columns = formula field names).
+  FINDINGS (LSEG_measures_check_2026-11-22.md): quarterly CFO is one quarter (not YTD); MONTHLY CLOSE IS SPLIT-ADJUSTED
+  while shares are as reported (close x shares wrong before splits; TR.CompanyMarketCap right; file 12 fixes price
+  floor/line value); panel_monthly has repeated line-months (keep latest date); first-reported values thin in 2010
+  (~2/3 of quarter rows filled, >90% from 2022). Adapter tools/equity/lseg/lseg_adapter.py feeds LSEG data into the
+  same formulas as the WRDS engine.
+  STEP 5 STARTED 2026-11-22: engine + reference book v1 on WRDS = tools/equity/wrds/eq_ref.py 1.0.1 (code c8705b6f...;
+  seal-exempt job 6 reference_book; smoke test tests/eq_ref_smoke.py). Registered BEFORE any return: A8 in
+  V04_REGISTRATION.md (spec choices a-f, Batch 0 contents, WRDS-form differences), FIELD_DICTIONARY_v1.0.md part 1
+  (7 book measures + universe, LSEG and WRDS forms), TRIAL_LOG.md (NEW; T001 = Batch 0), SEAL_LOG entry. Queued on the
+  PC WRDS runner: eq_ref_pull_v1 (ref_* data sets); THEN queue tools/wrdsq/jobs/eq_ref_v1.json (Batch 0 report) once
+  the pull prints ALL PULLS COMPLETE (run() refuses if pulls are incomplete). Still open: second implementation by a
+  separate agent; LSEG run of the same engine after stage B; daily engine.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->
