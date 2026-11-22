@@ -355,8 +355,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   FABLE DAILY UNIT PAUSED (user 2026-11-18) until she says resume: NO next unit is scheduled. Next in order when
   resumed: 1.4 second card (regime and debt cycle, Bridgewater), Fable at effort high, same procedure as this unit
   (brief templates in pipeline/card_1.4_policy).
-  Vault branch 4c10eb7; PC vault copy QUEUED (job vault_sync_20261117a in local\jobs, 17 files; read
-  local\results\vault_sync_20261117a.txt to confirm).
+  Vault branch 4c10eb7; PC vault copy DONE (job vault_sync_20261117a ran, no errors).
 - 2026-11-21 PLAYBOOK CARD 1.4 (2 of 5) REGIME AND DEBT CYCLE (Bridgewater) DONE, PASS WITH CORRECTIONS (run on the
   user's word; daily schedule stays PAUSED): docs/research/fable/CARD_1.4_regime_debt_cycle.md (Fable high, ~0.26M tokens;
   29 corrections of the Opus check applied) + _check.md (Opus high, ~0.21M). Inputs: macro-vault pipeline/card_1.4_bridgewater
@@ -371,6 +370,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   (1930-45) had been missed. 9 open judgement points (3.1-3.4, 2.2-2.3); none is a decision for the user.
   NEXT when resumed: card 3 (macro relative value and risk: Graham, Elliott), Fable high, templates in
   pipeline/card_1.4_bridgewater.
+  Vault branch dce020b; PC vault copy QUEUED (job vault_sync_20261121a in local\jobs).
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
