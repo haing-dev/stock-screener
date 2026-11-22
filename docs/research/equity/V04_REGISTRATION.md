@@ -444,3 +444,10 @@ as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
 6. **Limits (reported with the result):** copying quarter-end weights ignores trades inside the quarter and shorts;
    fund returns are after fees while 13F returns are before; Hussman's fund hedges, his 13F shows only the long book;
    the 0.60 and "3 of 5" lines are noisy (one year can decide).
+7. **Amendment after the v1 output (2026-11-22, eq_rec 1.0.1, job eq_rec_v2).** v1 (report `eq_rec_v1_report.txt`)
+   applied the peer filter (at least 5 holdings) to the investor's own quarters too, which cut the windows of
+   concentrated investors (CAS to 1 quarter; Valley Forge, TCI and Dorsey to 2017 onward). Changed AFTER seeing v1:
+   an investor's own quarter needs at least 1 CRSP-matched holding with a return and 13F value at least $100m; the
+   peer group (at least 5 holdings) is unchanged. Mangrove's filer (13534) was not found by name in v1; its number is
+   now listed. Both reports are kept; v2 decides. Fund records with missing months (Shaposhnik's fund, Greenblatt's
+   fund before 2012-10) are unchanged.

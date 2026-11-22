@@ -179,7 +179,7 @@
   {
    "registered_job": "record_check",
    "module": "eq_rec",
-   "code_sha256": "d91c44c92170f88041f0cddd33ff55298b59bc9b9d6a5ece1ce965622751dfc7",
+   "code_sha256": "be0e950efecd97457689f3d56edee6c839ed87cc09974500ebaa4f3ca68eb114",
    "registration": "docs/research/equity/V04_REGISTRATION.md addendum A12 (roster rule v3)",
    "output": "eq_rec.report: per listed investor only: long-record rank share, 2021-25 and calendar-year returns against SPY, rule result; no holding, no stock, no other filer",
    "names": [
@@ -196,7 +196,13 @@
      }
     }
    ],
-   "code_history": []
+   "code_history": [
+    {
+     "code_sha256": "d91c44c92170f88041f0cddd33ff55298b59bc9b9d6a5ece1ce965622751dfc7",
+     "version": "eq_rec-1.0.0",
+     "note": "ran as eq_rec_v1 (report in docs/research/equity/eq_rec_v1_report.txt)"
+    }
+   ]
   }
  ]
 }
