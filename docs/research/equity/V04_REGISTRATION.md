@@ -418,3 +418,29 @@ pod, first flag, hit rate or concentrated portfolio exists. R1-R7 and A1-A9 stay
    universe members assigned this way and the result without them are reported.
 4. **FY1 consensus at a month-end** (LSEG form of E01): the latest FY1 EPS mean dated on or before the month-end and
    at most 60 days before it; dates after 2026-12-31 are dropped as errors.
+
+## Addendum A12 (2026-11-22): roster rule v3 (record)
+Source: the user, 22 Nov: managers must be among the top investors over 2011-25 and also beat the market
+consistently over the last five years. Registered BEFORE the record check below has run. It is decided with sight of
+the scorecard (2026-11-18) and the leaderboard (2026-11-19), so it is a choice made knowing recent results; logged
+as such. Replaces R1.1 (record); R1.2 (material) and R1.3 (screenability) stay.
+1. **Measure.** 13F copy portfolio: at each quarter-end 2010-12..2025-09, all CRSP-matched holdings of the filer
+   (first-version 13F), weighted by value at that quarter-end, earn their total return (CRSP msf_v2 mthret,
+   delisting returns included) over the next quarter. Several filers of one investor: value-weighted. Investors
+   whose registered record is a fund (R1, scorecard: Greenblatt, Pilecki, Nygren/Fitch, Stahl, Davis, Shaposhnik):
+   the fund's monthly return (class TNA-weighted, after fees) decides; the 13F view is reported. Market = SPY total
+   return over the same months. Data end 2025-12 (the 2026 months stay sealed).
+2. **(a) Long record:** over 2011-01..2025-12, or from the first quarter of the investor's last unbroken run of
+   eligible quarters if later (at least 20 quarters; under 40 flagged "short record"), the chained return ranks at
+   or above 0.60 among all 13F filers eligible in every quarter of the same window (eligible = at least 5
+   CRSP-matched holdings and 13F value at least $100m). Fund records are ranked against the same filers.
+3. **(b) Recent:** 2021-01..2025-12 annualised return above SPY's, and above SPY in at least 3 of the 5 calendar
+   years 2021-2025.
+4. **Pass = (a) and (b).** Applies to every roster member and every candidate; a member who fails leaves the roster
+   (logged), a candidate who passes may enter after R1.2-R1.3. The old route "leaderboard top 50" is dropped.
+5. **Job:** seal-exempt job 8 `record_check`, module tools/equity/wrds/eq_rec.py 1.0.0 (code d91c44c9...), jobs
+   eq_rec_pull_v1 then eq_rec_v1; prints per listed investor only. Listed: the 20 roster members, Terry Smith
+   (reference), candidates Harnisch (Peconic), Singer (Elliott), Sosin (CAS), August (Mangrove), Hussman.
+6. **Limits (reported with the result):** copying quarter-end weights ignores trades inside the quarter and shorts;
+   fund returns are after fees while 13F returns are before; Hussman's fund hedges, his 13F shows only the long book;
+   the 0.60 and "3 of 5" lines are noisy (one year can decide).

@@ -619,6 +619,12 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   names Kantesaria 5.2 / Hohn 6.0 / Li Lu 4.1 / Greenblatt 278 (quant book); median holding (quarters) Kantesaria 10,
   Zlatev 4, Sacerdote / Druckenmiller / Kantor 2, Nygren 31, Bloomstran 32; Zlatev 33% of the book new each year.
   NEXT: P19 read -> crosswalk -> LSEG run of the reference book (log in TRIAL_LOG first) -> dashboard v0 + names review.
+  ROSTER RULE v3 (user 2026-11-22; A12): record = (a) 13F copy-portfolio (or fund) chained return 2011-25 (or last unbroken
+  run, >= 20 quarters) ranks >= 0.60 among filers eligible over the same quarters AND (b) 2021-25 annualised above SPY
+  and ahead of SPY in >= 3 of 5 calendar years. Job 8 record_check: tools/equity/wrds/eq_rec.py 1.0.0 (d91c44c9...),
+  tests/eq_rec_smoke.py; eq_rec_pull_v1 QUEUED 2026-11-22 (60 quarter SQLs over all filers, ~2 h; re-run as
+  eq_rec_pull_v1b until ALL PULLS COMPLETE), then queue tools/wrdsq/jobs/eq_rec_v1.json (report). Listed: 20 roster +
+  T. Smith (reference) + candidates Harnisch, Singer, Sosin, August, Hussman. Then: apply the rule, new roster list.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->
