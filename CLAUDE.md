@@ -590,6 +590,18 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   tools/wrdsq/jobs/eq_prof_v1.json. NEXT: scorecard code in the engine + T002 (the reference book's own scorecard; log
   it in TRIAL_LOG first); on the user's go: second implementation and plan check by separate agents, pilot reading
   (Greenblatt first).
+  2026-11-22 (later): TERRY SMITH REMOVED from the roster (user: dislikes his style; A11, logged as decided with sight of
+  his weak 2021-25 record). Pilot = Greenblatt, Kantesaria (takes Smith's place), Zlatev (still 2 interviews: waits for
+  one more >= 5,000-word document; the 19 files in Processed\General Transcripts are the 19 Nov batch, already counted)
+  + 1 control. Replacement candidates + current list: docs/research/equity/ROSTER_2026-11-22.md (project doc
+  claude/equity_roster_2026-11-22.md); suggestion Cliff Sosin (CAS; only candidate with material ready: 4 interviews,
+  scorecard rank 0.987 / 0.984; record mostly Carvana) or, for an easy screen, Donald Smith & Co after a record check.
+  AWAITING the user's pick. LSEG P01-P18 READ (LSEG_pieces_P_read_2026-11-22.md): accounts 92-97%, traded close 99%,
+  FY1 EPS 87-94% (as-of within 60 days; exact-month match only ~70%), GICS only 66% (2010) -> 99% (2025) because P01 is
+  empty for 1,874 mostly dead companies (blocks have no instrument column; rows align with the list). FIX: piece P19
+  (build_lseg_sector_fix.py; Datastream NAME/GGISN/INDM/ICBIN/WC07021 for all 5,065; in 08_pieces_v4, user refreshes)
+  + crosswalk rule A11 item 3. eq_prof_v1 QUEUED on the PC runner 2026-11-22 (lib read back, identical).
+  NEXT: P19 read -> crosswalk -> LSEG run of the reference book (log in TRIAL_LOG first) -> dashboard v0 + names review.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->

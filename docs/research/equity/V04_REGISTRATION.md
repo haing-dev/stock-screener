@@ -396,3 +396,25 @@ pod, first flag, hit rate or concentrated portfolio exists. R1-R7 and A1-A9 stay
     plumbing test of the scorecard code. No verdict. Implementation choices are fixed in an addendum before the run.
 14. **Not registered yet:** the recipes, pods and avoid rules; the analyst memo template; the dashboard; the
     scorecard code and its implementation choices; the non-US universe rule.
+
+## Addendum A11 (2026-11-22): Terry Smith removed; pilot place; LSEG sector and consensus rules
+1. **Roster.** Terry Smith is removed from the roster at the user's request (22 Nov: she does not like his style). His
+   2021-25 record (scorecard 5.8% a year, 7.2 points behind the market) was known when this was decided, so the
+   removal is logged as a choice made with sight of returns. His 13F stays in `eq_conv_panel` and in the frozen input
+   of `eq_prof` (reported only; not used for any pod, threshold or check). His place stays open until the user picks a
+   replacement; the candidate list is `ROSTER_2026-11-22.md`. A replacement enters only by R1 (record, material,
+   screenability), each by a dated addendum. Roster: 20 investors, 10 open places.
+2. **Pilot.** Kantesaria takes Smith's pilot place (A10 item 9, first in the order, file ready). Zlatev's file is
+   unchanged (2 interviews, 23,100 words; the folder holds no newer Zlatev transcript): his reading waits for one
+   more document of 5,000 words or more. Hohn, Greenberg and Pilecki, next in the A10 order, are not ready either.
+3. **Sector of companies without a GICS code** (fixed before any LSEG return is computed): P01 gives today's GICS. For
+   a company with no GICS code, the sector is the GICS sector most frequent among companies with a GICS code that share
+   its Datastream GICS industry (GGISN, piece P19); else the one most frequent for its Datastream industry (INDM); else
+   for its ICB industry (ICBIN); else for its SIC code (WC07021, first two digits). A mapping cell needs at least 5
+   companies and a most frequent sector held by at least 60% of them; failing that, the next level is used; failing
+   all, the company is not ranked and counted in the report. The excluded industries of A8 2a are applied to the
+   assigned code at the deepest level it reaches; a company assigned only a sector is excluded when its sector is 60
+   or its Datastream industry names a bank, an insurer, a real estate company or biotechnology. Both the share of
+   universe members assigned this way and the result without them are reported.
+4. **FY1 consensus at a month-end** (LSEG form of E01): the latest FY1 EPS mean dated on or before the month-end and
+   at most 60 days before it; dates after 2026-12-31 are dropped as errors.
