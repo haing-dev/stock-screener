@@ -266,7 +266,7 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   from the lseg\...\bloomber 13 Nov 2026 folder into 'pulled results', then runs the bbg_build_v2 + bbg_check_v2 code (lock
   v2). RAN 2026-11-13 22:10 PC time (report tools/bbgq/results/bbg_visit_merge_v1.txt): all 5 R files used, 315 series
   re-pulled, 273 replaced a failed or copied first-pull block, 6 added, 0 re-pulled copies; LOCK v2 id d85a46cb2853...ea41fc9
-  (on the PC in local\work; docs/research/bbg/LOCK_v2.json NOT yet written in the repo). First-pull copies that were not
+  (on the PC in local\work; docs/research/bbg/LOCK_v2.json written to the repo 2026-11-22, metadata only). First-pull copies that were not
   re-pulled stay unusable in Bloomberg (e.g. 125 curve blocks, 28 bond futures): LSEG covers those families.
 - 2026-11-14 THESIS NOTE 1.3a RATES AND CURVE DONE, PASS WITH CORRECTIONS: docs/research/fable/THESIS_1.3_rates.md (Fable max,
   ~0.65M tokens; 20 corrections of the Opus check applied) + THESIS_1.3_rates_check.md (Opus high, ~0.28M; 36 of 38 numbers in
@@ -415,7 +415,9 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   Trend); quotes against R1's slow-supply class were missed (agri responds "within a year" in 2022; copper scrap); his
   cocoa bear case omitted. 8 open judgement points (3.1-3.2, 1.5, 2.3). ALL 5 CARDS OF STEP 1.4 DONE.
   NEXT: step 1.5 thesis register (Opus); then 3.1-3.5 specs, checks, power check, registration.
-  Vault branch: see the next commit on macro-vault; PC vault copy job vault_sync_20261122b.
+  Vault branch d3ab196; PC vault copy DONE (job vault_sync_20261122b ran, no errors).
+  STEP 1.5 THESIS REGISTER started 2026-11-22 (Opus high, work dir scratchpad register_1.5; brief + id/quote checker
+  tools/check_ids.py there). User 2026-11-22: NO MORE FABLE UNITS for now.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule

@@ -1,0 +1,204 @@
+{
+ "version": "v2",
+ "locked": "2026-11-14",
+ "lock_id": "d85a46cb2853646b24796f294f3ccab1d1507188c402e978fd59f5196ea41fc9",
+ "status": "LOCKED v2: first pull (files 1-7) merged with the visit re-pulls R8-R12 by bbgdata-1.2.0 (an ok re-pull replaces a failed or copied first-pull block unless shorter). Still unusable in Bloomberg: 661 copy blocks, 504 requesting (never loaded), 94 invalid, 48 empty; LSEG covers most of those families. Supersedes LOCK_v1.",
+ "seal_date": "2010-12-31",
+ "code": {
+  "version": "bbgdata-1.2.0",
+  "sha256": "0b26bb21b50671dca7c2153d3d66a2a09f7f33eeaa7c96ca536b69bbca8e6351"
+ },
+ "workbooks": {
+  "1": {
+   "mtime": "2026-11-11T04:32:12Z",
+   "name": "1_Bloomberg_macro_UBC_6 1.xlsx",
+   "sha256": "d9a815421c5f689996699b155a56b5502c9684d3318432a527c835c3fac1e123",
+   "size": 7213881
+  },
+  "2": {
+   "mtime": "2026-11-11T04:13:06Z",
+   "name": "2_Bloomberg_econ_policy_monthly (1).xlsx",
+   "sha256": "67443b3297bbd385e362f40188a24c72febb0c272277ff1abe5471e74180e899",
+   "size": 2045566
+  },
+  "3": {
+   "mtime": "2026-11-11T04:32:21Z",
+   "name": "3_Bloomberg_rates_credit_fx_monthly_6 1.xlsx",
+   "sha256": "c118d6b41e6b746488db4ad8dde44e1898df3c50e65be806ac568b494e624b47",
+   "size": 2595531
+  },
+  "4": {
+   "mtime": "2026-11-11T04:32:31Z",
+   "name": "4_Bloomberg_equity_vol_funds_monthly_5 1.xlsx",
+   "sha256": "26dee1308babbcad3d935daaa6a10ee361a4c7afbb407e7377c123fa4a5a1535",
+   "size": 5249478
+  },
+  "5": {
+   "mtime": "2026-11-11T04:32:36Z",
+   "name": "5_Bloomberg_commodities_ext_monthly_5 1.xlsx",
+   "sha256": "5d472f51054b765ca5094bbc89ae0b61c60c0718bae869eda952b1e1f149a32e",
+   "size": 1983564
+  },
+  "6": {
+   "mtime": "2026-11-11T04:32:52Z",
+   "name": "6_Bloomberg_daily_A_futures_fx_5 1.xlsx",
+   "sha256": "ad53cfce150cb824b070097fd90e89605c686436a518e1bb312c6aba561e39d1",
+   "size": 25862358
+  },
+  "7": {
+   "mtime": "2026-11-11T04:33:03Z",
+   "name": "7_Bloomberg_daily_B_rates_equity_vol_5 1.xlsx",
+   "sha256": "6583952192e8ba37c94b5b837789401876f5396ae8304ca4823b829d0b2f3be9",
+   "size": 17161759
+  },
+  "R10": {
+   "mtime": "2026-11-13T16:34:55Z",
+   "name": "R10_crosscheck_sample.xlsx",
+   "sha256": "e844b14f605a8271726423c7e47ad9a657ac1385acb6fe863ca76fe402c9b15a",
+   "size": 720561
+  },
+  "R11": {
+   "mtime": "2026-11-13T16:34:39Z",
+   "name": "R11_other_commodity_curves.xlsx",
+   "sha256": "93a76e45a9db76f80a5cba2638bba39102f76c6097d26fd0e1912059549bb9b1",
+   "size": 340996
+  },
+  "R12": {
+   "mtime": "2026-11-13T16:49:03Z",
+   "name": "R12_canada_bax_swaps.xlsx",
+   "sha256": "78d402f464e9c11b4653bd589814cf278568d2326d884876c5219f0c8a55b287",
+   "size": 93344
+  },
+  "R8": {
+   "mtime": "2026-11-13T16:34:44Z",
+   "name": "R8_bloomberg_only_rates.xlsx",
+   "sha256": "f3ef4786bbe1a39e000bd33301ba037dd3642eaebb1db69511fa1ec9227a0ed0",
+   "size": 253622
+  },
+  "R9": {
+   "mtime": "2026-11-13T16:34:50Z",
+   "name": "R9_bloomberg_only_credit_fundamentals.xlsx",
+   "sha256": "d6184d1fb5030519444cfbaad9462587028c6da69c1243387803b89383d50e87",
+   "size": 578610
+  }
+ },
+ "config": {
+  "live_sources.csv": "fe905d6d268d8e4a174fe1687c4523a06864e7f0b10002279cc182500f10e546",
+  "untouched_markets.csv": "95bce64e4313716abc0297796272db77b4a5ed505c0f90a0f2e553ae92395454"
+ },
+ "tables": {
+  "design/daily.pkl": {
+   "columns": 415,
+   "content_sha256": "37ce6f17140923e8378639b8966a39bd3f974302815dd7161f83e87dab236a69",
+   "first": "1990-01-01",
+   "last": "2010-12-31",
+   "rows": 5480
+  },
+  "design/monthly.pkl": {
+   "columns": 2488,
+   "content_sha256": "e332a7719b74f266f0a1367d5357e34832d188606c39f79edec1a322b53d06f6",
+   "first": "1969-12-31",
+   "last": "2010-12-31",
+   "rows": 493
+  },
+  "design/replaced_first.pkl": {
+   "columns": 11,
+   "content_sha256": "c9c444191c710a15ed897c7d17600744224ae5004bdca8ab3a104992218822a5",
+   "first": "1969-12-31",
+   "last": "2010-12-31",
+   "rows": 493
+  },
+  "sealed/daily.pkl": {
+   "columns": 415,
+   "content_sha256": "9de3a9a7a5ef0a2ccbe234bde0f98223175cc7ba6490218e6f7b94a7d3ea052f",
+   "first": "2011-01-03",
+   "last": "2026-11-05",
+   "rows": 4134
+  },
+  "sealed/monthly.pkl": {
+   "columns": 2488,
+   "content_sha256": "e1098b97f102b061ced441d15f6a3d41631be1c4f692d8617c27972e70387cc2",
+   "first": "2011-01-31",
+   "last": "2026-11-30",
+   "rows": 191
+  }
+ },
+ "catalog": {
+  "file": "catalog.csv",
+  "rows": 4210,
+  "sha256": "0f220ef4da62dd0361998e599798b73596eb4ba597b3ae56da7872456a907e28"
+ },
+ "counts": {
+  "blocks": 2476,
+  "copy_groups": [
+   {
+    "blocks": 355,
+    "file": "1",
+    "tickers": 354
+   },
+   {
+    "blocks": 481,
+    "file": "3",
+    "tickers": 481
+   }
+  ],
+  "duplicates_stored": 71,
+  "fields": 4210,
+  "kind": {
+   "date": 139,
+   "other": 1305,
+   "price": 1139,
+   "rate": 320
+  },
+  "live_source": {
+   "bloomberg_only": 1965,
+   "free_daily": 349,
+   "official_release": 589
+  },
+  "release_dated": 556,
+  "repull": {
+   "added": 6,
+   "by_source": {
+    "R10": 94,
+    "R11": 57,
+    "R12": 13,
+    "R8": 34,
+    "R9": 81,
+    "first": 3931
+   },
+   "files": [
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12"
+   ],
+   "kept_first": 35,
+   "kept_repull_copy": 0,
+   "later_R_won": 1,
+   "replaced": 273,
+   "replaced_copy_first": 175,
+   "replaced_failed_first": 262,
+   "repulled": 315,
+   "shorter": 0
+  },
+  "status": {
+   "copy": 661,
+   "empty": 48,
+   "invalid": 94,
+   "ok": 2903,
+   "requesting": 504
+  },
+  "stored": {
+   "D": 415,
+   "M": 2488
+  },
+  "untouched_listed": 269,
+  "untouched_series": 152,
+  "untouched_tickers": 269
+ },
+ "warnings": [
+  "same key in R10 and R12: 1 ticker fields (the later file wins only if ok and not shorter), e.g. BA4 Comdty|PX_LAST"
+ ],
+ "source": "PC local\\work\\bbg (job bbg_visit_merge_v1, 2026-11-13 22:10 PC time = 2026-11-14 UTC); metadata only, written to the repo 2026-11-22"
+}
