@@ -329,7 +329,8 @@ BONDS = {  # id: (country code for OECD 10y, daily FRED series for month-end yie
     "bd_us_30y": ("US", "DGS30", 30), "bd_de_10y": ("DE", None, 10), "bd_gb_10y": ("GB", None, 10),
     "bd_jp_10y": ("JP", None, 10), "bd_ca_10y": ("CA", None, 10), "bd_au_10y": ("AU", None, 10),
 }
-SHORT = {"st_us_2y": ("US", 2), "st_de_2y": ("DE", 2), "st_gb_5y": ("GB", 5), "st_ca_2y": ("CA", 2), "st_au_2y": ("AU", 2),
+SHORT = {"st_de_2y": ("DE", 2),   # D1 (gm-1.2.2): st_us_2y dropped, it was bd_us_2y again
+         "st_gb_5y": ("GB", 5), "st_ca_2y": ("CA", 2), "st_au_2y": ("AU", 2),
          "st_jp_2y": ("JP", 2)}   # BoE publishes 5y as its shortest par yield
 FXM = {  # id: (currency, FRED monthly, quoted USD per unit?, Yahoo month-end, 3m-rate country)
     "fx_eur": ("EUR", "EXUSEU", True, "EURUSD=X", "EZ"), "fx_jpy": ("JPY", "EXJPUS", False, "JPY=X", "JP"),

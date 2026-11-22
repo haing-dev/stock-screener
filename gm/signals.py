@@ -35,7 +35,7 @@ EQ_CC = {"eq_us_spx": "US", "eq_us_ndx": "US", "eq_us_r2k": "US", "eq_eu_stoxx50
          "eq_mx_ipc": "MX", "eq_za": "ZA"}
 BD = {"bd_us_2y": ("US", 2), "bd_us_5y": ("US", 5), "bd_us_10y": ("US", 10), "bd_us_30y": ("US", 30),
       "bd_de_10y": ("DE", 10), "bd_gb_10y": ("GB", 10), "bd_jp_10y": ("JP", 10), "bd_ca_10y": ("CA", 10),
-      "bd_au_10y": ("AU", 10), "st_us_2y": ("US", 2), "st_de_2y": ("DE", 2), "st_gb_5y": ("GB", 5),
+      "bd_au_10y": ("AU", 10), "st_de_2y": ("DE", 2), "st_gb_5y": ("GB", 5),
       "st_ca_2y": ("CA", 2), "st_au_2y": ("AU", 2), "st_jp_2y": ("JP", 2)}
 FX_CC = {k: (v[0], v[4]) for k, v in P.FXM.items()}
 G_EQ_RATE = {k: v[3] for k, v in P.EQUITY.items()}         # equity id -> 3m-rate country       # fx id -> (currency, rate country)

@@ -31,10 +31,10 @@ def us_3m_rate(cfg, R, S):
     R2 = R.copy()
     R2["st_us_3m"] = r
     S2 = _copy(S)
-    S2["E"]["st_us_3m"] = S["E"]["st_us_2y"]                 # same country, same bond signs
+    S2["E"]["st_us_3m"] = S["E"]["bd_us_2y"]                 # same country, same bond signs (gm-1.2.2: st_us_2y = bd_us_2y)
     if "ET" in S2:
         for t in S2["ET"]:
-            S2["ET"][t]["st_us_3m"] = S["ET"][t]["st_us_2y"]
+            S2["ET"][t]["st_us_3m"] = S["ET"][t]["bd_us_2y"]
     gw = dict(cfg.get("gross_weights", {}))
     gw["st_us_3m"] = 0.25 / 1.9
     return CF.variant(cfg, gross_weights=gw), R2, S2

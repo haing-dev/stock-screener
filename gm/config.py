@@ -3,8 +3,9 @@
 A config is a plain dict. `book.run(R, cfg=...)` reads only these keys, so a variant is a changed copy of a config
 (`variant(BASE, trend={"kind": "cont"})`) and every trial is reproducible from its config (gm/trials.py logs it).
 
-BASE = gm-1.2.1 (the live paper book; gm-1.2.0 with the registered input-layer look-ahead fixes C1-C4, gm/CHANGES.md
-2026-11-11). CANDIDATE = the gm-2.0.1 candidate (gm-2.0 + the same fixes), frozen only after the Bloomberg data
+BASE = gm-1.2.2 (the live paper book; gm-1.2.0 with the registered input-layer look-ahead fixes C1-C4, gm/CHANGES.md
+2026-11-11, and without the doubled US 2-year market, 2026-11-22). CANDIDATE = the gm-2.0.2 candidate (gm-2.0 + the
+same changes), frozen only after the Bloomberg data
 and the decisions in docs/research/global_macro/gap_review_crosscheck_2026-10-31.md.
 """
 import copy
@@ -12,7 +13,7 @@ import hashlib
 import json
 
 BASE = {
-    "name": "gm-1.2.1",
+    "name": "gm-1.2.2",
     # family risk shares (sum 1)
     "family_w": {"trend": 0.30, "econ": 0.30, "carry": 0.20, "value": 0.15, "xsmom": 0.05},
     # price trend: 'sign' = mean of sign(n-month excess return); 'cont' = mean of clip(z_n, -cap, cap) / cap, where
@@ -59,7 +60,7 @@ def cfg_hash(cfg):
     return hashlib.sha1(json.dumps(cfg, sort_keys=True, default=list).encode()).hexdigest()[:10]
 
 
-CANDIDATE = variant(BASE, name="gm-2.0.1-candidate",
+CANDIDATE = variant(BASE, name="gm-2.0.2-candidate",
                     family_w={"trend": 0.45, "econ": 0.15, "carry": 0.25, "value": 0.15, "xsmom": 0.0},
                     vol={"model": "hybrid"})
 
