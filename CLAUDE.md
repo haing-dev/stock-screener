@@ -357,6 +357,20 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   (brief templates in pipeline/card_1.4_policy).
   Vault branch 4c10eb7; PC vault copy QUEUED (job vault_sync_20261117a in local\jobs, 17 files; read
   local\results\vault_sync_20261117a.txt to confirm).
+- 2026-11-21 PLAYBOOK CARD 1.4 (2 of 5) REGIME AND DEBT CYCLE (Bridgewater) DONE, PASS WITH CORRECTIONS (run on the
+  user's word; daily schedule stays PAUSED): docs/research/fable/CARD_1.4_regime_debt_cycle.md (Fable high, ~0.26M tokens;
+  29 corrections of the Opus check applied) + _check.md (Opus high, ~0.21M). Inputs: macro-vault pipeline/card_1.4_bridgewater
+  (pack by script: 183 claims of Dalio, Prince, Jensen, Karniol-Tambour, Yechiely (former), 6 recordings 2022-2025).
+  RESULT: playbook = follow how debt, deficits and policy feed spending, profits and bond demand; work out what prices
+  assume; spread risk. Little is codable: 2 rules, 8 versions: R1 Not paid to hold (Dalio: real 10y yield below a bar ->
+  short US 10y; may overlap card 1 R4 in 1975-81), R2 Rates-only repricing (Karniol-Tambour: 10y up >= 1.0/1.5 pt in 12m
+  and S&P not yet down 10x that -> short S&P; her 2022 live call scored wrong at 12m). Both hindsight-flagged, Incubator
+  at best. The codable growth/inflation idea = our existing Economic trend pod. 10 analyst questions, 7 open forecasts,
+  2 diagnostics. Ledger: 5 of 11 resolved rows right after two disputed. Check: the no-override rule rests on Prince,
+  not Jensen (Jensen says systemizing a new shock was the error); a chain misread a quote; Dalio's debt-dynamic quote
+  (1930-45) had been missed. 9 open judgement points (3.1-3.4, 2.2-2.3); none is a decision for the user.
+  NEXT when resumed: card 3 (macro relative value and risk: Graham, Elliott), Fable high, templates in
+  pipeline/card_1.4_bridgewater.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
