@@ -666,6 +666,13 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   tests/eq_rec_smoke.py; eq_rec_pull_v1 QUEUED 2026-11-22 (60 quarter SQLs over all filers, ~2 h; re-run as
   eq_rec_pull_v1b until ALL PULLS COMPLETE), then queue tools/wrdsq/jobs/eq_rec_v1.json (report). Listed: 20 roster +
   T. Smith (reference) + candidates Harnisch, Singer, Sosin, August, Hussman. Then: apply the rule, new roster list.
+  RESULT (eq_rec_v2, 2026-11-22; v1 kept, A12 item 7 fixed own-quarter eligibility after v1): docs/research/equity/
+  ROSTER_v3_2026-11-22.md (project doc claude/equity_roster_v3_2026-11-22.md). PASS 10: Harnisch, Zlatev, Singer,
+  August, Druckenmiller, Robotti, Greenberg, Stahl (fund), Sacerdote, Nygren/Fitch (fund). FAIL: Kantesaria (-0.2 pt),
+  Li Lu (-0.0), Hohn, Einhorn, Bloomstran, Hussman (2 of 5 years), Sosin (2021-22 losses), Greenblatt (hedged fund rank
+  0.09), Pilecki (fund includes pre-Gator years), Kantor (long rank 0.02), Davis, Dorsey, Martin, Gerstner, Shaposhnik
+  (fund data end), Smith. PILOT must be redrawn: none of the 10 meets the material bar; screenability of Harnisch,
+  Singer, August not yet checked. AWAITING the user's view.
 - PLAN v0.3 (2026-11-15) = docs/research/equity/EQUITY_POD_SHOP_PLAN_v0.3.md (project doc
   claude/equity_pod_shop_plan_v0.3_2026-11-15.md): evaluation of the user's workflow idea (rank investors on 5-year
   returns to pick transcripts; technique transcripts as foundation; agentic pipeline transcript -> strategy -> portfolio ->
