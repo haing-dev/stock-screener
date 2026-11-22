@@ -419,10 +419,28 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   ENGINE gm-1.2.2 / gm-2.0.2-candidate (2026-11-22): doubled US 2-year market st_us_2y REMOVED (registered in
   gm/CHANGES.md first, 17010c5; code dece1d0): 61 markets. Design net SR BASE 1975-2010 1.236 -> 1.222, 1990-2010
   1.474 -> 1.452; CANDIDATE 1.464 -> 1.456, 1.629 -> 1.608. Truncation PASS at all 8 dates; new engine_ref.json (old
-  engine_ref_gm-1.2.1.json). Cloud inputs = the PC zip (staged; cache/ is git-ignored). PC redeploy + job
-  gm_repro_v2 queued (see next line when it ran).
-  STEP 1.5 THESIS REGISTER started 2026-11-22 (Opus high, work dir scratchpad register_1.5; brief + id/quote checker
-  tools/check_ids.py there). User 2026-11-22: NO MORE FABLE UNITS for now.
+  engine_ref_gm-1.2.1.json). Cloud inputs = the PC zip (staged; cache/ is git-ignored). PC lib redeployed (read back,
+  identical); job gm_repro_v2 FAILED AT SETUP on the PC: "DLL load failed while importing algos: An Application Control
+  policy has blocked this file" (Windows blocks pandas' compiled files in local\pylib; stdlib-only jobs such as
+  vault_sync still run). Every PC job that needs pandas/numpy (Bloomberg, LSEG readers, engine) is blocked until the
+  user clears it; the cloud reproduction (24/24 on the same inputs) stands meanwhile. Re-queue gm_repro_v2 after.
+- 2026-11-22 STEP 1.5 THESIS REGISTER DONE: docs/research/THESIS_REGISTER_1.5.md (Opus high, ~0.55M tokens; ids and quotes
+  script-checked, ALL OK; inputs macro-vault pipeline/register_1.5). 106 rows: 36 kept or held back (6 existing-pod legs,
+  3 version/market sets, 2 new pods = Curve carry B1 + Strip reversion B2, 17 card rule layers B2 Incubator at best,
+  2 held back, 5 analyst layers, 1 not registered), 70 dropped; 102 versions (154 with entry/sizing versions); 20
+  diagnostics (3 read sealed months as written: charter D3, card 4 D1, R1 by one day; five ask "already held" with five
+  thresholds); 20 protocol items (3 change a decisive test). FINDINGS for 3.1-3.4: (1) Economic trend has NO growth
+  theme (themes inflation/trade/monetary/risk), so growth ideas the cards drop as "held by Economic trend" are not held;
+  it already holds card 3 R1 (FX monetary theme) and card 1 R5's equity side (trade theme); (2) LSEG not registered
+  blocks history/live of Curve carry, Strip reversion, short-rate markets, card 5 R1, card 3 R4 (no Core under rule 7);
+  (3) silent Bloomberg switches: Value's equity measure -> Bloomberg composite, Carry adds farthest-contract curve
+  carry, a commodity value signal exists in signals.py (book.py use unchecked); panel has no cocoa and copper is the
+  only base metal; (4) rule 5: only currency carry (cross-sectional, Lustig-Verdelhan 2007) is fully documented before
+  2011; Trend/Value/commodity carry/Strip reversion partly; the rest hindsight -> 3.4 must fix how rule 5 is read;
+  (5) whether the card rule layers count against "at most 4 pods" per B batch is not settled. Preconditions D1 (doubled
+  2y) and D2 (LOCK_v2) resolved the same day. Vault 9ffc55d; PC vault copy job vault_sync_20261122c queued.
+  User 2026-11-22: NO MORE FABLE UNITS for now. NEXT: 3.1 pod specs (Opus), 3.2 spec check (fresh Opus), 3.3 power
+  check, 3.4 registration (TESTING_PROTOCOL), 3.5 checker test; LSEG reader + lock + seal to register LSEG as a source.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
   with dates: 733 claims (185 rules/tells, 188 dated forecasts), Sonnet single read, quotes script-checked, cross-check
   pending; macro-vault raw/sonnet/MT228.json, brief pipeline/X_EXTRACT_BRIEF.md. Use: forecast ledger (step 2), rule
