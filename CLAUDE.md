@@ -449,7 +449,26 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   1-month lag may read quarterly CPI (AU, NZ) early (release-date fix proposed); C3-D1 needs a "Core book" that does not
   exist yet; C4-D1 and R1 read 2011 (end state months 2010-06 / 2010-11); strip contracts need contract-month ids from
   the LSEG reader; spread pods sit far below 10% target under the caps; 5 card pods vs "at most 4" per B batch.
-  STEP 3.2 STARTED: three fresh Opus checkers (check_A/B/C in spec_3.1; BRIEF_CHECK_3.2.md; tools/apply_check.py).
+  STEP 3.2 DONE 2026-11-23: all 11 specs APPROVED WITH CORRECTIONS (none rejected; 94 corrections applied by script and
+  re-verified; tokens checkers A 0.39M, B 0.34M, C 0.40M). Final specs docs/research/specs/ (status block each) + checks/
+  CHECK_3.2_A/B/C.md (section 4 = items for 3.4). Vault 3efada9 (notes "Spec - ..." in Fable/); PC copy job
+  vault_sync_20261123a queued. KEY FINDINGS FOR 3.3-3.4: (1) engine monthly run earns from the SAME close the signal
+  reads (book.py:209, timing k=0) while WORKFLOW s5 wants the one-day delay (k=1): specs report k=1 for every version,
+  3.4 decides which is decisive; every holding is cut at the 2010-12-31 close (Dec-2010 tranches 1-3 and k=1 trades
+  reach 2011); (2) free-data history is short: WTI ~1985, most commodities 2000-03, gold ~2002, copper ~2003, euro 1999
+  (ALLOW_AVG False; no World Bank spot): card 1 R4-B basket empty in the 1970s, card 5 R1 copper only from ~2003 unless
+  A1 adds Bloomberg history; (3) Strip reversion: per-contract caps (book.py 200-201) break level neutrality -> scale
+  the whole strip vector by the tightest ratio; Curve carry cap from the front leg's own LSEG returns; both pods sit far
+  below target under the caps (3.3 simulates with caps on); 24-month scaler warm-up delays the first return ~48 months;
+  (4) Economic trend: euro trade theme reads Germany's NBDEBIS; Germany's risk theme reads eq_eu_stoxx50 (credit-only
+  to ~2003-07); several card overlaps are partial (levels vs 12m changes), core CPI not an input; (5) two card knobs
+  come from Macro Compass rules backtested through the holdout years (card 1 R3 10-month S&P average, card 2 R1 hedge
+  gate): counted as "seen in a related rule"; falsifiers reading 12 months ahead cut at 2009-12; (6) GB/euro 3m-rate
+  gap also kills fx_gbp, fx_eur, GB/DE bonds' returns from early 2027 (all pods); Value's live dividends lag up to 12
+  months vs the backtest; (7) strip carry corrected to the 2-year-equivalent basis; 3.4 confirms strip costs.
+  NEXT: step 3.3 power check (script + Opus): simulated pods with true Sharpe 0 / 0.2 / 0.4 through the test sheet ->
+  pass rates; then 3.4 registration (TESTING_PROTOCOL), 3.5 checker test. Engine fixes to register before A1: Bloomberg
+  switches OFF + bloomberg.py:52 map, CPI release dates, k=1 form, holding cut at 2010-12-31.
   User 2026-11-22: NO MORE FABLE UNITS for now. NEXT: 3.1 pod specs (Opus), 3.2 spec check (fresh Opus), 3.3 power
   check, 3.4 registration (TESTING_PROTOCOL), 3.5 checker test; LSEG reader + lock + seal to register LSEG as a source.
 - MT228 (2026-11-10): raw X posts of John Galt @AtlasShrug1 (1,359 posts, Jul 2025 - 8 Nov 2026) extracted like a transcript
