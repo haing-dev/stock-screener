@@ -1,0 +1,25 @@
+generator,true_SR,months,R,p_sr,p_dd,p_2022,p_corr_true0.0,p_corr_true0.2,p_all_corr_met,p_sr_dd,audit_sr>=0.3,audit_dd,audit_2022>0,audit_all
+GARCH-t5 (calibrated),0.0,189,20000,0.14205,0.15375,0.4886,1.0,0.9152,0.0515,0.08005,,,,
+GARCH-t5 (calibrated),0.4,189,20000,0.6576,0.48775,0.63875,1.0,0.9169,0.31065,0.43335,,,,
+GARCH-t5 (calibrated),0.8,189,20000,0.9568,0.7277,0.77745,0.99995,0.915,0.5835,0.724,,,,
+GARCH-t5 (calibrated),1.2,189,20000,0.9973,0.85765,0.87415,0.99995,0.91565,0.76275,0.8576,,,,
+Gaussian iid,0.0,189,20000,0.12165,0.1589,0.4793,1.0,0.92835,0.05185,0.0759,,,,
+Gaussian iid,0.4,189,20000,0.6553,0.55835,0.6323,1.0,0.92265,0.3378,0.4802,,,,
+Gaussian iid,0.8,189,20000,0.9768,0.87475,0.77665,1.0,0.9258,0.68655,0.8664,,,,
+Gaussian iid,1.2,189,20000,0.99985,0.97705,0.87695,1.0,0.9289,0.8599,0.977,,,,
+gm.audit.holdout_power on 10 synthetic design books,0.0,189,40000,,,,,,,,0.147775,,,
+gm.audit.holdout_power on 10 synthetic design books,0.0,189,40000,,,,,,,,,0.14547500000000002,,
+gm.audit.holdout_power on 10 synthetic design books,0.0,189,40000,,,,,,,,,,0.494425,
+gm.audit.holdout_power on 10 synthetic design books,0.0,189,40000,,,,,,,,,,,0.05655
+gm.audit.holdout_power on 10 synthetic design books,0.3,189,40000,,,,,,,,0.508225,,,
+gm.audit.holdout_power on 10 synthetic design books,0.3,189,40000,,,,,,,,,0.370725,,
+gm.audit.holdout_power on 10 synthetic design books,0.3,189,40000,,,,,,,,,,0.6088999999999999,
+gm.audit.holdout_power on 10 synthetic design books,0.3,189,40000,,,,,,,,,,,0.2191
+gm.audit.holdout_power on 10 synthetic design books,0.5,189,40000,,,,,,,,0.7669,,,
+gm.audit.holdout_power on 10 synthetic design books,0.5,189,40000,,,,,,,,,0.537025,,
+gm.audit.holdout_power on 10 synthetic design books,0.5,189,40000,,,,,,,,,,0.6779999999999999,
+gm.audit.holdout_power on 10 synthetic design books,0.5,189,40000,,,,,,,,,,,0.37235
+gm.audit.holdout_power on 10 synthetic design books,0.8,189,40000,,,,,,,,0.956575,,,
+gm.audit.holdout_power on 10 synthetic design books,0.8,189,40000,,,,,,,,,0.7309499999999999,,
+gm.audit.holdout_power on 10 synthetic design books,0.8,189,40000,,,,,,,,,,0.76765,
+gm.audit.holdout_power on 10 synthetic design books,0.8,189,40000,,,,,,,,,,,0.5781000000000001

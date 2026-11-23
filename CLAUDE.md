@@ -466,8 +466,19 @@ Triage workflow runs; read results with `git fetch origin triage-status && git s
   gate): counted as "seen in a related rule"; falsifiers reading 12 months ahead cut at 2009-12; (6) GB/euro 3m-rate
   gap also kills fx_gbp, fx_eur, GB/DE bonds' returns from early 2027 (all pods); Value's live dividends lag up to 12
   months vs the backtest; (7) strip carry corrected to the 2-year-equivalent basis; 3.4 confirms strip costs.
-  NEXT: step 3.3 power check (script + Opus): simulated pods with true Sharpe 0 / 0.2 / 0.4 through the test sheet ->
-  pass rates; then 3.4 registration (TESTING_PROTOCOL), 3.5 checker test. Engine fixes to register before A1: Bloomberg
+  STEP 3.3 DONE 2026-11-23 (Opus high ~0.36M; synthetic data only, registered test code): docs/research/power/POWER_3.3.md
+  + csv/ + validation.txt; script tools/power/power_3_3.py. RESULTS: test 1 alpha (bootstrap p, 2.5%) power 0.60 at
+  IR 0.4 over 432 months, ~0.41 over 250; 0.15-0.26 at IR 0.2. Against a book at Sharpe 1.23, a pod's own Sharpe is the
+  wrong yardstick (S 0.4 at corr 0.3 = IR 0.03): only near-uncorrelated pods can be found. Sharpe-difference form far
+  weaker (0.16 vs 0.60) -> register alpha (1.3c P2). Decisive era test halves pass rates (0.56 -> 0.23) -> report only.
+  Test 1 over-rejects in finite samples (2.5% nominal -> 3.0-3.3% measured in B2). Placebo with 12-month blocks kills
+  calendar rules (card 4 needs the within-year shift). Rule layers with < ~48 on-months or < 3 episodes cannot be judged
+  (<= 17% pass even at on-month Sharpe 1.2). Hygiene: non-inferiority (pooled lower bound > -0.10). Hidden-loss pod
+  adopted 0.41 x as often as a Sharpe-0.4 pod. Holdout pass-all on synthetic books 0.06/0.22/0.37/0.58 at Sharpe
+  0/0.4/0.8/1.2. PROPOSAL for 3.4: alpha + bootstrap p, Holm 2.5% over systematic pods only (state measured ~3%);
+  double costs, placebo, tail decisive; eras reported; hygiene by non-inferiority; >= 48 on-months and >= 3 episodes per
+  rule layer; A2 compared against the incumbent as run; break-even IR for equal-risk sizing ~0.24 (step 5.1).
+  NEXT: 3.4 registration (TESTING_PROTOCOL), 3.5 checker test. Engine fixes to register before A1: Bloomberg
   switches OFF + bloomberg.py:52 map, CPI release dates, k=1 form, holding cut at 2010-12-31.
   User 2026-11-22: NO MORE FABLE UNITS for now. NEXT: 3.1 pod specs (Opus), 3.2 spec check (fresh Opus), 3.3 power
   check, 3.4 registration (TESTING_PROTOCOL), 3.5 checker test; LSEG reader + lock + seal to register LSEG as a source.
